@@ -1,11 +1,11 @@
 package android.support.v4.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -52,11 +52,11 @@ final class BackStackState implements Parcelable {
         {
             numRemoved += op.removed.size();
             op = op.next;
-        } //End block
+        } 
         mOps = new int[bse.mNumOp*7 + numRemoved];
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Not on back stack");
-        } //End block
+        } 
         op = bse.mHead;
         int pos = 0;
         {
@@ -73,14 +73,14 @@ final class BackStackState implements Parcelable {
                     int i = 0;
                     {
                         mOps[pos++] = op.removed.get(i).mIndex;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 mOps[pos++] = 0;
-            } //End block
+            } 
             op = op.next;
-        } //End block
+        } 
         mTransition = bse.mTransition;
         mTransitionStyle = bse.mTransitionStyle;
         mName = bse.mName;
@@ -90,8 +90,8 @@ final class BackStackState implements Parcelable {
         mBreadCrumbShortTitleRes = bse.mBreadCrumbShortTitleRes;
         mBreadCrumbShortTitleText = bse.mBreadCrumbShortTitleText;
         addTaint(fm.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -106,22 +106,22 @@ final class BackStackState implements Parcelable {
         mBreadCrumbTitleText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
         mBreadCrumbShortTitleRes = in.readInt();
         mBreadCrumbShortTitleText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
-        // ---------- Original Method ----------
-        //mOps = in.createIntArray();
-        //mTransition = in.readInt();
-        //mTransitionStyle = in.readInt();
-        //mName = in.readString();
-        //mIndex = in.readInt();
-        //mBreadCrumbTitleRes = in.readInt();
-        //mBreadCrumbTitleText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
-        //mBreadCrumbShortTitleRes = in.readInt();
-        //mBreadCrumbShortTitleText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.557 -0400", hash_original_method = "3011E3887D3FBBD9FDB38984C5139A67", hash_generated_method = "14C32AC0FF1F2BA905973A89548A66AF")
     public BackStackRecord instantiate(FragmentManagerImpl fm) {
-        BackStackRecord varB4EAC82CA7396A68D541C85D26508E83_117681609 = null; //Variable for return #1
+        BackStackRecord varB4EAC82CA7396A68D541C85D26508E83_117681609 = null; 
         BackStackRecord bse = new BackStackRecord(fm);
         int pos = 0;
         int num = 0;
@@ -132,10 +132,10 @@ final class BackStackState implements Parcelable {
             {
                 Fragment f = fm.mActive.get(findex);
                 op.fragment = f;
-            } //End block
+            } 
             {
                 op.fragment = null;
-            } //End block
+            } 
             op.enterAnim = mOps[pos++];
             op.exitAnim = mOps[pos++];
             op.popEnterAnim = mOps[pos++];
@@ -148,11 +148,11 @@ final class BackStackState implements Parcelable {
                     {
                         Fragment r = fm.mActive.get(mOps[pos++]);
                         op.removed.add(r);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             bse.addOp(op);
-        } //End block
+        } 
         bse.mTransition = mTransition;
         bse.mTransitionStyle = mTransitionStyle;
         bse.mName = mName;
@@ -165,10 +165,10 @@ final class BackStackState implements Parcelable {
         bse.bumpBackStackNesting(1);
         varB4EAC82CA7396A68D541C85D26508E83_117681609 = bse;
         addTaint(fm.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_117681609.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_117681609.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_117681609;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -176,8 +176,8 @@ final class BackStackState implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2002405707 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2002405707;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -194,16 +194,16 @@ final class BackStackState implements Parcelable {
         TextUtils.writeToParcel(mBreadCrumbShortTitleText, dest, 0);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeIntArray(mOps);
-        //dest.writeInt(mTransition);
-        //dest.writeInt(mTransitionStyle);
-        //dest.writeString(mName);
-        //dest.writeInt(mIndex);
-        //dest.writeInt(mBreadCrumbTitleRes);
-        //TextUtils.writeToParcel(mBreadCrumbTitleText, dest, 0);
-        //dest.writeInt(mBreadCrumbShortTitleRes);
-        //TextUtils.writeToParcel(mBreadCrumbShortTitleText, dest, 0);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -283,47 +283,49 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.559 -0400", hash_original_method = "8E110563CDFB79724FBA0799BF0D3C19", hash_generated_method = "222018A87C5C0AD32DB56B9265BCFEC3")
     public  BackStackRecord(FragmentManagerImpl manager) {
         mManager = manager;
-        // ---------- Original Method ----------
-        //mManager = manager;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.560 -0400", hash_original_method = "0F20E0B479CF0E65111306B7DA0E9ECF", hash_generated_method = "E534FBBC9E4379DB07E4666297E8DC83")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1361128536 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1361128536 = null; 
         StringBuilder sb = new StringBuilder(128);
         sb.append("BackStackEntry{");
         sb.append(Integer.toHexString(System.identityHashCode(this)));
         {
             sb.append(" #");
             sb.append(mIndex);
-        } //End block
+        } 
         {
             sb.append(" ");
             sb.append(mName);
-        } //End block
+        } 
         sb.append("}");
         varB4EAC82CA7396A68D541C85D26508E83_1361128536 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1361128536.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1361128536.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1361128536;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(128);
-        //sb.append("BackStackEntry{");
-        //sb.append(Integer.toHexString(System.identityHashCode(this)));
-        //if (mIndex >= 0) {
-            //sb.append(" #");
-            //sb.append(mIndex);
-        //}
-        //if (mName != null) {
-            //sb.append(" ");
-            //sb.append(mName);
-        //}
-        //sb.append("}");
-        //return sb.toString();
+        
+        
+        
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.560 -0400", hash_original_method = "A173D988738B1BED0F12DBDA60D665B4", hash_generated_method = "43AC4FED1074F3C3447929A0B7A4C78C")
     public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
         dump(prefix, writer, true);
@@ -331,11 +333,12 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
         addTaint(fd.getTaint());
         addTaint(writer.getTaint());
         addTaint(args[0].getTaint());
-        // ---------- Original Method ----------
-        //dump(prefix, writer, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.562 -0400", hash_original_method = "856C187C4078543C316E968949741777", hash_generated_method = "0285FF93C917367F681EBC9271D816F3")
     public void dump(String prefix, PrintWriter writer, boolean full) {
         {
@@ -352,36 +355,36 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
                 writer.print(Integer.toHexString(mTransition));
                 writer.print(" mTransitionStyle=#");
                 writer.println(Integer.toHexString(mTransitionStyle));
-            } //End block
+            } 
             {
                 writer.print(prefix);
                 writer.print("mEnterAnim=#");
                 writer.print(Integer.toHexString(mEnterAnim));
                 writer.print(" mExitAnim=#");
                 writer.println(Integer.toHexString(mExitAnim));
-            } //End block
+            } 
             {
                 writer.print(prefix);
                 writer.print("mPopEnterAnim=#");
                 writer.print(Integer.toHexString(mPopEnterAnim));
                 writer.print(" mPopExitAnim=#");
                 writer.println(Integer.toHexString(mPopExitAnim));
-            } //End block
+            } 
             {
                 writer.print(prefix);
                 writer.print("mBreadCrumbTitleRes=#");
                 writer.print(Integer.toHexString(mBreadCrumbTitleRes));
                 writer.print(" mBreadCrumbTitleText=");
                 writer.println(mBreadCrumbTitleText);
-            } //End block
+            } 
             {
                 writer.print(prefix);
                 writer.print("mBreadCrumbShortTitleRes=#");
                 writer.print(Integer.toHexString(mBreadCrumbShortTitleRes));
                 writer.print(" mBreadCrumbShortTitleText=");
                 writer.println(mBreadCrumbShortTitleText);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             writer.print(prefix);
             writer.println("Operations:");
@@ -390,33 +393,33 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
             int num = 0;
             {
                 String cmdStr;
-                //Begin case OP_NULL 
+                
                 cmdStr="NULL";
-                //End case OP_NULL 
-                //Begin case OP_ADD 
+                
+                
                 cmdStr="ADD";
-                //End case OP_ADD 
-                //Begin case OP_REPLACE 
+                
+                
                 cmdStr="REPLACE";
-                //End case OP_REPLACE 
-                //Begin case OP_REMOVE 
+                
+                
                 cmdStr="REMOVE";
-                //End case OP_REMOVE 
-                //Begin case OP_HIDE 
+                
+                
                 cmdStr="HIDE";
-                //End case OP_HIDE 
-                //Begin case OP_SHOW 
+                
+                
                 cmdStr="SHOW";
-                //End case OP_SHOW 
-                //Begin case OP_DETACH 
+                
+                
                 cmdStr="DETACH";
-                //End case OP_DETACH 
-                //Begin case OP_ATTACH 
+                
+                
                 cmdStr="ATTACH";
-                //End case OP_ATTACH 
-                //Begin case default 
+                
+                
                 cmdStr="cmd=" + op.cmd;
-                //End case default 
+                
                 writer.print(prefix);
                 writer.print("  Op #");
                 writer.print(num);
@@ -431,15 +434,15 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
                         writer.print(Integer.toHexString(op.enterAnim));
                         writer.print(" exitAnim=#");
                         writer.println(Integer.toHexString(op.exitAnim));
-                    } //End block
+                    } 
                     {
                         writer.print(prefix);
                         writer.print("popEnterAnim=#");
                         writer.print(Integer.toHexString(op.popEnterAnim));
                         writer.print(" popExitAnim=#");
                         writer.println(Integer.toHexString(op.popExitAnim));
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     boolean varEDB78255635347BBB0E175782140D81C_881337891 = (op.removed != null && op.removed.size() > 0);
                     {
@@ -452,30 +455,30 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
                                     boolean var62D68A13440BF768A88904F93FC01D74_469494572 = (op.removed.size() == 1);
                                     {
                                         writer.print("Removed: ");
-                                    } //End block
+                                    } 
                                     {
                                         {
                                             writer.println("Removed:");
-                                        } //End block
+                                        } 
                                         writer.print(innerPrefix);
                                         writer.print("  #");
                                         writer.print(i);
                                         writer.print(": ");
-                                    } //End block
-                                } //End collapsed parenthetic
+                                    } 
+                                } 
                                 writer.println(op.removed.get(i));
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 op = op.next;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(prefix.getTaint());
         addTaint(writer.getTaint());
         addTaint(full);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -483,8 +486,8 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     public int getId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_116014907 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_116014907;
-        // ---------- Original Method ----------
-        //return mIndex;
+        
+        
     }
 
     
@@ -492,8 +495,8 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     public int getBreadCrumbTitleRes() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003797545 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003797545;
-        // ---------- Original Method ----------
-        //return mBreadCrumbTitleRes;
+        
+        
     }
 
     
@@ -501,62 +504,64 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     public int getBreadCrumbShortTitleRes() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_178907736 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_178907736;
-        // ---------- Original Method ----------
-        //return mBreadCrumbShortTitleRes;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.564 -0400", hash_original_method = "C2C5B49D77ECFC3F06C4280D5C67187D", hash_generated_method = "F86219C5404CDEFFAB4FB8992D267FAD")
     public CharSequence getBreadCrumbTitle() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2031780914 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1172653542 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2031780914 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1172653542 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2031780914 = mManager.mActivity.getText(mBreadCrumbTitleRes);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1172653542 = mBreadCrumbTitleText;
-        CharSequence varA7E53CE21691AB073D9660D615818899_2076315378; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_2076315378; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2076315378 = varB4EAC82CA7396A68D541C85D26508E83_2031780914;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2076315378 = varB4EAC82CA7396A68D541C85D26508E83_1172653542;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2076315378.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2076315378.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2076315378;
-        // ---------- Original Method ----------
-        //if (mBreadCrumbTitleRes != 0) {
-            //return mManager.mActivity.getText(mBreadCrumbTitleRes);
-        //}
-        //return mBreadCrumbTitleText;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.564 -0400", hash_original_method = "CEC326312BE69049B0B2FA6420FE6494", hash_generated_method = "E8D5290F4F82637593AD085D9752B534")
     public CharSequence getBreadCrumbShortTitle() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1402542303 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_305879906 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1402542303 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_305879906 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1402542303 = mManager.mActivity.getText(mBreadCrumbShortTitleRes);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_305879906 = mBreadCrumbShortTitleText;
-        CharSequence varA7E53CE21691AB073D9660D615818899_1629215716; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1629215716; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1629215716 = varB4EAC82CA7396A68D541C85D26508E83_1402542303;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1629215716 = varB4EAC82CA7396A68D541C85D26508E83_305879906;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1629215716.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1629215716.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1629215716;
-        // ---------- Original Method ----------
-        //if (mBreadCrumbShortTitleRes != 0) {
-            //return mManager.mActivity.getText(mBreadCrumbShortTitleRes);
-        //}
-        //return mBreadCrumbShortTitleText;
+        
+        
+            
+        
+        
     }
 
     
@@ -564,78 +569,82 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
      void addOp(Op op) {
         {
             mHead = mTail = op;
-        } //End block
+        } 
         {
             op.prev = mTail;
             mTail.next = op;
             mTail = op;
-        } //End block
+        } 
         op.enterAnim = mEnterAnim;
         op.exitAnim = mExitAnim;
         op.popEnterAnim = mPopEnterAnim;
         op.popExitAnim = mPopExitAnim;
-        // ---------- Original Method ----------
-        //if (mHead == null) {
-            //mHead = mTail = op;
-        //} else {
-            //op.prev = mTail;
-            //mTail.next = op;
-            //mTail = op;
-        //}
-        //op.enterAnim = mEnterAnim;
-        //op.exitAnim = mExitAnim;
-        //op.popEnterAnim = mPopEnterAnim;
-        //op.popExitAnim = mPopExitAnim;
-        //mNumOp++;
+        
+        
+            
+        
+            
+            
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.565 -0400", hash_original_method = "C1E47B5485B0B08AA827320F8BD79938", hash_generated_method = "3927354840F1FB13AFE3DDA9828BCBFA")
     public FragmentTransaction add(Fragment fragment, String tag) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_2132324906 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_2132324906 = null; 
         doAddOp(0, fragment, tag, OP_ADD);
         varB4EAC82CA7396A68D541C85D26508E83_2132324906 = this;
         addTaint(fragment.getTaint());
         addTaint(tag.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2132324906.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2132324906.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2132324906;
-        // ---------- Original Method ----------
-        //doAddOp(0, fragment, tag, OP_ADD);
-        //return this;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.566 -0400", hash_original_method = "F34A7243D750E416C8B46711401682C6", hash_generated_method = "9A818DD7213698962CFF1393E8CA747D")
     public FragmentTransaction add(int containerViewId, Fragment fragment) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_836377674 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_836377674 = null; 
         doAddOp(containerViewId, fragment, null, OP_ADD);
         varB4EAC82CA7396A68D541C85D26508E83_836377674 = this;
         addTaint(containerViewId);
         addTaint(fragment.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_836377674.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_836377674.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_836377674;
-        // ---------- Original Method ----------
-        //doAddOp(containerViewId, fragment, null, OP_ADD);
-        //return this;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.567 -0400", hash_original_method = "DCEB5E0B408763C7F0E9A3376CBD91C3", hash_generated_method = "16F92F473CE5DE2F94014B16540B0A4C")
     public FragmentTransaction add(int containerViewId, Fragment fragment, String tag) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_490276518 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_490276518 = null; 
         doAddOp(containerViewId, fragment, tag, OP_ADD);
         varB4EAC82CA7396A68D541C85D26508E83_490276518 = this;
         addTaint(containerViewId);
         addTaint(fragment.getTaint());
         addTaint(tag.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_490276518.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_490276518.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_490276518;
-        // ---------- Original Method ----------
-        //doAddOp(containerViewId, fragment, tag, OP_ADD);
-        //return this;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.568 -0400", hash_original_method = "F2F897C7BFD0AE6B1B051FF1D3DE8AB7", hash_generated_method = "A48157F3EF58F41A90DC4AAC07E1DCE8")
     private void doAddOp(int containerViewId, Fragment fragment, String tag, int opcmd) {
         fragment.mFragmentManager = mManager;
@@ -646,18 +655,18 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Can't change tag of fragment "
                         + fragment + ": was " + fragment.mTag
                         + " now " + tag);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             fragment.mTag = tag;
-        } //End block
+        } 
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Can't change container ID of fragment "
                         + fragment + ": was " + fragment.mFragmentId
                         + " now " + containerViewId);
-            } //End block
+            } 
             fragment.mContainerId = fragment.mFragmentId = containerViewId;
-        } //End block
+        } 
         Op op = new Op();
         op.cmd = opcmd;
         op.fragment = fragment;
@@ -666,225 +675,234 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
         addTaint(fragment.getTaint());
         addTaint(tag.getTaint());
         addTaint(opcmd);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.571 -0400", hash_original_method = "095D291C1CAFD923EC9CB9BF06EF4676", hash_generated_method = "488C5F264DE720A019C7C60290FB53E3")
     public FragmentTransaction replace(int containerViewId, Fragment fragment) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1049381159 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1049381159 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1049381159 = replace(containerViewId, fragment, null);
         addTaint(containerViewId);
         addTaint(fragment.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1049381159.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1049381159.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1049381159;
-        // ---------- Original Method ----------
-        //return replace(containerViewId, fragment, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.572 -0400", hash_original_method = "1C07811E78071E2352BF0C170F6491CA", hash_generated_method = "EEEDFEC7CB784653CE0423D8206FB884")
     public FragmentTransaction replace(int containerViewId, Fragment fragment, String tag) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_586295788 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_586295788 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Must use non-zero containerViewId");
-        } //End block
+        } 
         doAddOp(containerViewId, fragment, tag, OP_REPLACE);
         varB4EAC82CA7396A68D541C85D26508E83_586295788 = this;
         addTaint(containerViewId);
         addTaint(fragment.getTaint());
         addTaint(tag.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_586295788.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_586295788.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_586295788;
-        // ---------- Original Method ----------
-        //if (containerViewId == 0) {
-            //throw new IllegalArgumentException("Must use non-zero containerViewId");
-        //}
-        //doAddOp(containerViewId, fragment, tag, OP_REPLACE);
-        //return this;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.572 -0400", hash_original_method = "33682B1B727BD924F48FE7F483A5C004", hash_generated_method = "9C345984067EC70D7D0273818F21AF28")
     public FragmentTransaction remove(Fragment fragment) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1700948859 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1700948859 = null; 
         Op op = new Op();
         op.cmd = OP_REMOVE;
         op.fragment = fragment;
         addOp(op);
         varB4EAC82CA7396A68D541C85D26508E83_1700948859 = this;
         addTaint(fragment.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1700948859.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1700948859.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1700948859;
-        // ---------- Original Method ----------
-        //Op op = new Op();
-        //op.cmd = OP_REMOVE;
-        //op.fragment = fragment;
-        //addOp(op);
-        //return this;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.572 -0400", hash_original_method = "AB9058E54F9496DA8E33E643603CB0C7", hash_generated_method = "3789389741EB8300219E3B425B33A337")
     public FragmentTransaction hide(Fragment fragment) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_177213694 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_177213694 = null; 
         Op op = new Op();
         op.cmd = OP_HIDE;
         op.fragment = fragment;
         addOp(op);
         varB4EAC82CA7396A68D541C85D26508E83_177213694 = this;
         addTaint(fragment.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_177213694.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_177213694.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_177213694;
-        // ---------- Original Method ----------
-        //Op op = new Op();
-        //op.cmd = OP_HIDE;
-        //op.fragment = fragment;
-        //addOp(op);
-        //return this;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.573 -0400", hash_original_method = "2B6B1F1BD336D20AECF3763EE9DD5949", hash_generated_method = "E0190D8CA1FF683516A8A2471ED4FA78")
     public FragmentTransaction show(Fragment fragment) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_146740593 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_146740593 = null; 
         Op op = new Op();
         op.cmd = OP_SHOW;
         op.fragment = fragment;
         addOp(op);
         varB4EAC82CA7396A68D541C85D26508E83_146740593 = this;
         addTaint(fragment.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_146740593.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_146740593.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_146740593;
-        // ---------- Original Method ----------
-        //Op op = new Op();
-        //op.cmd = OP_SHOW;
-        //op.fragment = fragment;
-        //addOp(op);
-        //return this;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.573 -0400", hash_original_method = "60B4979E5A31C92DF6F58D0AB0599A51", hash_generated_method = "D05D6DF3D852BC8C2D96A1B2FA42C2A7")
     public FragmentTransaction detach(Fragment fragment) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_805169762 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_805169762 = null; 
         Op op = new Op();
         op.cmd = OP_DETACH;
         op.fragment = fragment;
         addOp(op);
         varB4EAC82CA7396A68D541C85D26508E83_805169762 = this;
         addTaint(fragment.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_805169762.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_805169762.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_805169762;
-        // ---------- Original Method ----------
-        //Op op = new Op();
-        //op.cmd = OP_DETACH;
-        //op.fragment = fragment;
-        //addOp(op);
-        //return this;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.574 -0400", hash_original_method = "71B1C0469F9D1680729415A070BB9988", hash_generated_method = "54706991E00AF428935F949EC61BEA51")
     public FragmentTransaction attach(Fragment fragment) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_158514897 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_158514897 = null; 
         Op op = new Op();
         op.cmd = OP_ATTACH;
         op.fragment = fragment;
         addOp(op);
         varB4EAC82CA7396A68D541C85D26508E83_158514897 = this;
         addTaint(fragment.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_158514897.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_158514897.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_158514897;
-        // ---------- Original Method ----------
-        //Op op = new Op();
-        //op.cmd = OP_ATTACH;
-        //op.fragment = fragment;
-        //addOp(op);
-        //return this;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.574 -0400", hash_original_method = "E8FBC41447C7F5B20E8F08F3A2F7FD58", hash_generated_method = "2B6C336D4C73B2B38B4CC3E3EEE4FAE5")
     public FragmentTransaction setCustomAnimations(int enter, int exit) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1847015222 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1847015222 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1847015222 = setCustomAnimations(enter, exit, 0, 0);
         addTaint(enter);
         addTaint(exit);
-        varB4EAC82CA7396A68D541C85D26508E83_1847015222.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1847015222.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1847015222;
-        // ---------- Original Method ----------
-        //return setCustomAnimations(enter, exit, 0, 0);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.575 -0400", hash_original_method = "A0614C8D91A2CFFC3B2827B585934661", hash_generated_method = "53F117CC12E72F9A64FDA0F93A2B4FCD")
     public FragmentTransaction setCustomAnimations(int enter, int exit,
             int popEnter, int popExit) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1040582365 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1040582365 = null; 
         mEnterAnim = enter;
         mExitAnim = exit;
         mPopEnterAnim = popEnter;
         mPopExitAnim = popExit;
         varB4EAC82CA7396A68D541C85D26508E83_1040582365 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1040582365.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1040582365.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1040582365;
-        // ---------- Original Method ----------
-        //mEnterAnim = enter;
-        //mExitAnim = exit;
-        //mPopEnterAnim = popEnter;
-        //mPopExitAnim = popExit;
-        //return this;
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.575 -0400", hash_original_method = "A455FB052D79EC1710E986C50AD0D972", hash_generated_method = "1B6EB51EF78D6778F79CC8168550EE58")
     public FragmentTransaction setTransition(int transition) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1601810057 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1601810057 = null; 
         mTransition = transition;
         varB4EAC82CA7396A68D541C85D26508E83_1601810057 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1601810057.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1601810057.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1601810057;
-        // ---------- Original Method ----------
-        //mTransition = transition;
-        //return this;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.576 -0400", hash_original_method = "A33CAFCA32BB4FD1A454655E75F4B6CB", hash_generated_method = "20CD4C7721D669AFBDF3925EA3AF3610")
     public FragmentTransaction setTransitionStyle(int styleRes) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_2086932406 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_2086932406 = null; 
         mTransitionStyle = styleRes;
         varB4EAC82CA7396A68D541C85D26508E83_2086932406 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_2086932406.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2086932406.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2086932406;
-        // ---------- Original Method ----------
-        //mTransitionStyle = styleRes;
-        //return this;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.576 -0400", hash_original_method = "438624ACF19A9F6511A0E99CD6264659", hash_generated_method = "09CCB94C6D2199E670F892C24AE71BEF")
     public FragmentTransaction addToBackStack(String name) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_380021851 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_380021851 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "This FragmentTransaction is not allowed to be added to the back stack.");
-        } //End block
+        } 
         mAddToBackStack = true;
         mName = name;
         varB4EAC82CA7396A68D541C85D26508E83_380021851 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_380021851.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_380021851.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_380021851;
-        // ---------- Original Method ----------
-        //if (!mAllowAddToBackStack) {
-            //throw new IllegalStateException(
-                    //"This FragmentTransaction is not allowed to be added to the back stack.");
-        //}
-        //mAddToBackStack = true;
-        //mName = name;
-        //return this;
+        
+        
+            
+                    
+        
+        
+        
+        
     }
 
     
@@ -892,89 +910,90 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     public boolean isAddToBackStackAllowed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2073546458 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2073546458;
-        // ---------- Original Method ----------
-        //return mAllowAddToBackStack;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.577 -0400", hash_original_method = "FA98892FC811CB8446B86919ACA0FBBA", hash_generated_method = "F3782EB0ADB5BB26F0A9A3D824854D4D")
     public FragmentTransaction disallowAddToBackStack() {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_490671200 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_490671200 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "This transaction is already being added to the back stack");
-        } //End block
+        } 
         mAllowAddToBackStack = false;
         varB4EAC82CA7396A68D541C85D26508E83_490671200 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_490671200.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_490671200.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_490671200;
-        // ---------- Original Method ----------
-        //if (mAddToBackStack) {
-            //throw new IllegalStateException(
-                    //"This transaction is already being added to the back stack");
-        //}
-        //mAllowAddToBackStack = false;
-        //return this;
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.578 -0400", hash_original_method = "3ED721B4C54764795D085FCDFAF2CFED", hash_generated_method = "3E437FE329451DEC0F87512B70092217")
     public FragmentTransaction setBreadCrumbTitle(int res) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1640171654 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1640171654 = null; 
         mBreadCrumbTitleRes = res;
         mBreadCrumbTitleText = null;
         varB4EAC82CA7396A68D541C85D26508E83_1640171654 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1640171654.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1640171654.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1640171654;
-        // ---------- Original Method ----------
-        //mBreadCrumbTitleRes = res;
-        //mBreadCrumbTitleText = null;
-        //return this;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.579 -0400", hash_original_method = "27CB0DA08C946E1C367250B9E9010CF2", hash_generated_method = "D897DBBF5404B983A49D56E24477C563")
     public FragmentTransaction setBreadCrumbTitle(CharSequence text) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_723714316 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_723714316 = null; 
         mBreadCrumbTitleRes = 0;
         mBreadCrumbTitleText = text;
         varB4EAC82CA7396A68D541C85D26508E83_723714316 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_723714316.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_723714316.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_723714316;
-        // ---------- Original Method ----------
-        //mBreadCrumbTitleRes = 0;
-        //mBreadCrumbTitleText = text;
-        //return this;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.580 -0400", hash_original_method = "F0E82E7069B2F6B7E25A71F53DDE4690", hash_generated_method = "282EF1F55BBF460031AF1FD5CDC6C550")
     public FragmentTransaction setBreadCrumbShortTitle(int res) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1346983178 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1346983178 = null; 
         mBreadCrumbShortTitleRes = res;
         mBreadCrumbShortTitleText = null;
         varB4EAC82CA7396A68D541C85D26508E83_1346983178 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1346983178.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1346983178.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1346983178;
-        // ---------- Original Method ----------
-        //mBreadCrumbShortTitleRes = res;
-        //mBreadCrumbShortTitleText = null;
-        //return this;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.580 -0400", hash_original_method = "0432E2D3026F58B259B18084E0B71CFD", hash_generated_method = "13B7829616286DF5009DB733FC1B4AA5")
     public FragmentTransaction setBreadCrumbShortTitle(CharSequence text) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1698952289 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1698952289 = null; 
         mBreadCrumbShortTitleRes = 0;
         mBreadCrumbShortTitleText = text;
         varB4EAC82CA7396A68D541C85D26508E83_1698952289 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1698952289.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1698952289.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1698952289;
-        // ---------- Original Method ----------
-        //mBreadCrumbShortTitleRes = 0;
-        //mBreadCrumbShortTitleText = text;
-        //return this;
+        
+        
+        
+        
     }
 
     
@@ -984,41 +1003,43 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
         {
             {
                 op.fragment.mBackStackNesting += amt;
-            } //End block
+            } 
             {
                 {
                     int i = op.removed.size()-1;
                     {
                         Fragment r = op.removed.get(i);
                         r.mBackStackNesting += amt;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             op = op.next;
-        } //End block
+        } 
         addTaint(amt);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.581 -0400", hash_original_method = "FD69B9F14C4FF1755ADA5F3EFF5DDDFB", hash_generated_method = "14E2F075AAD6A1ED42389EA59C65188C")
     public int commit() {
         int varA4BCCB8ECB291B501D37CCD084E598C0_1734968754 = (commitInternal(false));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1743225335 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1743225335;
-        // ---------- Original Method ----------
-        //return commitInternal(false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.582 -0400", hash_original_method = "034B152615D8FC6D1FD7AD2899313AE6", hash_generated_method = "6B74C806CB3BAABC5353768A17963E20")
     public int commitAllowingStateLoss() {
         int varF7F203ED57B6AC8381E1DDB9CA29847A_29647124 = (commitInternal(true));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658182667 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658182667;
-        // ---------- Original Method ----------
-        //return commitInternal(true);
+        
+        
     }
 
     
@@ -1029,55 +1050,56 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
             LogWriter logw = new LogWriter(TAG);
             PrintWriter pw = new PrintWriter(logw);
             dump("  ", null, pw, null);
-        } //End block
+        } 
         mCommitted = true;
         {
             mIndex = mManager.allocBackStackIndex(this);
-        } //End block
+        } 
         {
             mIndex = -1;
-        } //End block
+        } 
         mManager.enqueueAction(this, allowStateLoss);
         addTaint(allowStateLoss);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_15551683 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_15551683;
-        // ---------- Original Method ----------
-        //if (mCommitted) throw new IllegalStateException("commit already called");
-        //if (FragmentManagerImpl.DEBUG) {
-            //Log.v(TAG, "Commit: " + this);
-            //LogWriter logw = new LogWriter(TAG);
-            //PrintWriter pw = new PrintWriter(logw);
-            //dump("  ", null, pw, null);
-        //}
-        //mCommitted = true;
-        //if (mAddToBackStack) {
-            //mIndex = mManager.allocBackStackIndex(this);
-        //} else {
-            //mIndex = -1;
-        //}
-        //mManager.enqueueAction(this, allowStateLoss);
-        //return mIndex;
+        
+        
+        
+            
+            
+            
+            
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.583 -0400", hash_original_method = "F2F4246724AFA2458C4148B16BF6293A", hash_generated_method = "2824EB39DF79767F5615CA9D815596B6")
     public void run() {
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("addToBackStack() called after commit()");
-            } //End block
-        } //End block
+            } 
+        } 
         bumpBackStackNesting(1);
         Op op = mHead;
         {
-            //Begin case OP_ADD 
+            
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.enterAnim;
                 mManager.addFragment(f, false);
-            } //End block
-            //End case OP_ADD 
-            //Begin case OP_REPLACE 
+            } 
+            
+            
             {
                 Fragment f = op.fragment;
                 {
@@ -1089,100 +1111,101 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
                             {
                                 {
                                     op.fragment = f = null;
-                                } //End block
+                                } 
                                 {
                                     {
                                         op.removed = new ArrayList<Fragment>();
-                                    } //End block
+                                    } 
                                     op.removed.add(old);
                                     old.mNextAnim = op.exitAnim;
                                     {
                                         old.mBackStackNesting += 1;
-                                    } //End block
+                                    } 
                                     mManager.removeFragment(old, mTransition, mTransitionStyle);
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     f.mNextAnim = op.enterAnim;
                     mManager.addFragment(f, false);
-                } //End block
-            } //End block
-            //End case OP_REPLACE 
-            //Begin case OP_REMOVE 
+                } 
+            } 
+            
+            
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.exitAnim;
                 mManager.removeFragment(f, mTransition, mTransitionStyle);
-            } //End block
-            //End case OP_REMOVE 
-            //Begin case OP_HIDE 
+            } 
+            
+            
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.exitAnim;
                 mManager.hideFragment(f, mTransition, mTransitionStyle);
-            } //End block
-            //End case OP_HIDE 
-            //Begin case OP_SHOW 
+            } 
+            
+            
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.enterAnim;
                 mManager.showFragment(f, mTransition, mTransitionStyle);
-            } //End block
-            //End case OP_SHOW 
-            //Begin case OP_DETACH 
+            } 
+            
+            
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.exitAnim;
                 mManager.detachFragment(f, mTransition, mTransitionStyle);
-            } //End block
-            //End case OP_DETACH 
-            //Begin case OP_ATTACH 
+            } 
+            
+            
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.enterAnim;
                 mManager.attachFragment(f, mTransition, mTransitionStyle);
-            } //End block
-            //End case OP_ATTACH 
-            //Begin case default 
+            } 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown cmd: " + op.cmd);
-            } //End block
-            //End case default 
+            } 
+            
             op = op.next;
-        } //End block
+        } 
         mManager.moveToState(mManager.mCurState, mTransition,
                 mTransitionStyle, true);
         {
             mManager.addBackStackState(this);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.584 -0400", hash_original_method = "137917E20FC9A3B18E2DEEE98195320E", hash_generated_method = "22292F15CB8F629CFA6F7713005DC348")
     public void popFromBackStack(boolean doStateMove) {
         {
             LogWriter logw = new LogWriter(TAG);
             PrintWriter pw = new PrintWriter(logw);
             dump("  ", null, pw, null);
-        } //End block
+        } 
         bumpBackStackNesting(-1);
         Op op = mTail;
         {
-            //Begin case OP_ADD 
+            
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.popExitAnim;
                 mManager.removeFragment(f,
                             FragmentManagerImpl.reverseTransit(mTransition),
                             mTransitionStyle);
-            } //End block
-            //End case OP_ADD 
-            //Begin case OP_REPLACE 
+            } 
+            
+            
             {
                 Fragment f = op.fragment;
                 {
@@ -1190,7 +1213,7 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
                     mManager.removeFragment(f,
                                 FragmentManagerImpl.reverseTransit(mTransition),
                                 mTransitionStyle);
-                } //End block
+                } 
                 {
                     {
                         int i = 0;
@@ -1199,79 +1222,79 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
                             Fragment old = op.removed.get(i);
                             old.mNextAnim = op.popEnterAnim;
                             mManager.addFragment(old, false);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-            //End case OP_REPLACE 
-            //Begin case OP_REMOVE 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.popEnterAnim;
                 mManager.addFragment(f, false);
-            } //End block
-            //End case OP_REMOVE 
-            //Begin case OP_HIDE 
+            } 
+            
+            
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.popEnterAnim;
                 mManager.showFragment(f,
                             FragmentManagerImpl.reverseTransit(mTransition), mTransitionStyle);
-            } //End block
-            //End case OP_HIDE 
-            //Begin case OP_SHOW 
+            } 
+            
+            
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.popExitAnim;
                 mManager.hideFragment(f,
                             FragmentManagerImpl.reverseTransit(mTransition), mTransitionStyle);
-            } //End block
-            //End case OP_SHOW 
-            //Begin case OP_DETACH 
+            } 
+            
+            
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.popEnterAnim;
                 mManager.attachFragment(f,
                             FragmentManagerImpl.reverseTransit(mTransition), mTransitionStyle);
-            } //End block
-            //End case OP_DETACH 
-            //Begin case OP_ATTACH 
+            } 
+            
+            
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.popEnterAnim;
                 mManager.detachFragment(f,
                             FragmentManagerImpl.reverseTransit(mTransition), mTransitionStyle);
-            } //End block
-            //End case OP_ATTACH 
-            //Begin case default 
+            } 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown cmd: " + op.cmd);
-            } //End block
-            //End case default 
+            } 
+            
             op = op.prev;
-        } //End block
+        } 
         {
             mManager.moveToState(mManager.mCurState,
                     FragmentManagerImpl.reverseTransit(mTransition), mTransitionStyle, true);
-        } //End block
+        } 
         {
             mManager.freeBackStackIndex(mIndex);
             mIndex = -1;
-        } //End block
+        } 
         addTaint(doStateMove);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.585 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "A536D214A9B8C9784FB8C889B120EC69")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_167673757 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_167673757 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_167673757 = mName;
-        varB4EAC82CA7396A68D541C85D26508E83_167673757.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_167673757.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_167673757;
-        // ---------- Original Method ----------
-        //return mName;
+        
+        
     }
 
     
@@ -1279,8 +1302,8 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     public int getTransition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_263784076 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_263784076;
-        // ---------- Original Method ----------
-        //return mTransition;
+        
+        
     }
 
     
@@ -1288,8 +1311,8 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     public int getTransitionStyle() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_565297479 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_565297479;
-        // ---------- Original Method ----------
-        //return mTransitionStyle;
+        
+        
     }
 
     
@@ -1297,8 +1320,8 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_779888349 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_779888349;
-        // ---------- Original Method ----------
-        //return mNumOp == 0;
+        
+        
     }
 
     
@@ -1334,7 +1357,7 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.586 -0400", hash_original_method = "D7B482A7C55CFA7077AB6D8147480F87", hash_generated_method = "D7B482A7C55CFA7077AB6D8147480F87")
         public Op ()
         {
-            //Synthesized constructor
+            
         }
 
 

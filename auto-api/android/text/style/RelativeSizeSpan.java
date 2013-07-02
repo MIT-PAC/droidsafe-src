@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
@@ -20,16 +20,16 @@ public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableS
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.837 -0400", hash_original_method = "A7FADA85249F1B8943B2C3745C9AD73C", hash_generated_method = "525A76130EC8817067C8B8013EE73EC7")
     public  RelativeSizeSpan(float proportion) {
         mProportion = proportion;
-        // ---------- Original Method ----------
-        //mProportion = proportion;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.837 -0400", hash_original_method = "3E1E83FB4F6546C2007DF6E3D1177212", hash_generated_method = "E62FC47C3538C5889E4F568A97414710")
     public  RelativeSizeSpan(Parcel src) {
         mProportion = src.readFloat();
-        // ---------- Original Method ----------
-        //mProportion = src.readFloat();
+        
+        
     }
 
     
@@ -37,8 +37,8 @@ public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableS
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_469180904 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_469180904;
-        // ---------- Original Method ----------
-        //return TextUtils.RELATIVE_SIZE_SPAN;
+        
+        
     }
 
     
@@ -46,8 +46,8 @@ public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableS
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_926838148 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_926838148;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -56,8 +56,8 @@ public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableS
         dest.writeFloat(mProportion);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeFloat(mProportion);
+        
+        
     }
 
     
@@ -65,8 +65,8 @@ public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableS
     public float getSizeChange() {
         float var546ADE640B6EDFBC8A086EF31347E768_1696267340 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1696267340;
-        // ---------- Original Method ----------
-        //return mProportion;
+        
+        
     }
 
     
@@ -75,8 +75,8 @@ public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableS
     public void updateDrawState(TextPaint ds) {
         ds.setTextSize(ds.getTextSize() * mProportion);
         addTaint(ds.getTaint());
-        // ---------- Original Method ----------
-        //ds.setTextSize(ds.getTextSize() * mProportion);
+        
+        
     }
 
     
@@ -85,8 +85,8 @@ public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableS
     public void updateMeasureState(TextPaint ds) {
         ds.setTextSize(ds.getTextSize() * mProportion);
         addTaint(ds.getTaint());
-        // ---------- Original Method ----------
-        //ds.setTextSize(ds.getTextSize() * mProportion);
+        
+        
     }
 
     

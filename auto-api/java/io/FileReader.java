@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class FileReader extends InputStreamReader {
@@ -14,7 +14,7 @@ public class FileReader extends InputStreamReader {
     public  FileReader(File file) throws FileNotFoundException {
         super(new FileInputStream(file));
         addTaint(file.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class FileReader extends InputStreamReader {
     public  FileReader(FileDescriptor fd) {
         super(new FileInputStream(fd));
         addTaint(fd.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,7 +30,7 @@ public class FileReader extends InputStreamReader {
     public  FileReader(String filename) throws FileNotFoundException {
         super(new FileInputStream(filename));
         addTaint(filename.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

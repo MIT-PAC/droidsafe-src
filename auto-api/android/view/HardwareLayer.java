@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -25,7 +25,7 @@ abstract class HardwareLayer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.440 -0400", hash_original_method = "4AE458D6667BFFD1B9464B983848F2AB", hash_generated_method = "92D52C23F6DFF44BDBE3EFECA1FD8C4D")
       HardwareLayer() {
         this(DIMENSION_UNDEFINED, DIMENSION_UNDEFINED, false);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,10 +34,10 @@ abstract class HardwareLayer {
         mWidth = width;
         mHeight = height;
         mOpaque = isOpaque;
-        // ---------- Original Method ----------
-        //mWidth = width;
-        //mHeight = height;
-        //mOpaque = isOpaque;
+        
+        
+        
+        
     }
 
     
@@ -45,8 +45,8 @@ abstract class HardwareLayer {
      int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041915769 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041915769;
-        // ---------- Original Method ----------
-        //return mWidth;
+        
+        
     }
 
     
@@ -54,8 +54,8 @@ abstract class HardwareLayer {
      int getHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_119803600 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_119803600;
-        // ---------- Original Method ----------
-        //return mHeight;
+        
+        
     }
 
     
@@ -63,8 +63,8 @@ abstract class HardwareLayer {
      boolean isOpaque() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_207739376 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_207739376;
-        // ---------- Original Method ----------
-        //return mOpaque;
+        
+        
     }
 
     
@@ -94,10 +94,10 @@ abstract class HardwareLayer {
         mWidth = width;
         mHeight = height;
         mOpaque = isOpaque;
-        // ---------- Original Method ----------
-        //mWidth = width;
-        //mHeight = height;
-        //mOpaque = isOpaque;
+        
+        
+        
+        
     }
 
     

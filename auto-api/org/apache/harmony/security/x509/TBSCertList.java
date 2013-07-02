@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -60,15 +60,15 @@ public final class TBSCertList {
         this.revokedCertificates = revokedCertificates;
         this.crlExtensions = crlExtensions;
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.version = version;
-        //this.signature = signature;
-        //this.issuer = issuer;
-        //this.thisUpdate = thisUpdate;
-        //this.nextUpdate = nextUpdate;
-        //this.revokedCertificates = revokedCertificates;
-        //this.crlExtensions = crlExtensions;
-        //this.encoding = encoding;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -76,92 +76,95 @@ public final class TBSCertList {
     public int getVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123170073 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123170073;
-        // ---------- Original Method ----------
-        //return version;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.494 -0400", hash_original_method = "DD6542667BFDE70B879F723105C92A71", hash_generated_method = "BF66DD1B97D7FBCEA23F86F5048DBBA4")
     public AlgorithmIdentifier getSignature() {
-        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1896364740 = null; //Variable for return #1
+        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1896364740 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1896364740 = signature;
-        varB4EAC82CA7396A68D541C85D26508E83_1896364740.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1896364740.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1896364740;
-        // ---------- Original Method ----------
-        //return signature;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.495 -0400", hash_original_method = "EBC299B5141657B108909E991892F54F", hash_generated_method = "812EA015505A412EBB9D123CB1594DF8")
     public Name getIssuer() {
-        Name varB4EAC82CA7396A68D541C85D26508E83_610698688 = null; //Variable for return #1
+        Name varB4EAC82CA7396A68D541C85D26508E83_610698688 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_610698688 = issuer;
-        varB4EAC82CA7396A68D541C85D26508E83_610698688.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_610698688.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_610698688;
-        // ---------- Original Method ----------
-        //return issuer;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.495 -0400", hash_original_method = "3F952D48E5C3F549E0CF72E297E1768F", hash_generated_method = "AC9656C6CE5D410A5360818183ACF8D6")
     public Date getThisUpdate() {
-        Date varB4EAC82CA7396A68D541C85D26508E83_1664954174 = null; //Variable for return #1
+        Date varB4EAC82CA7396A68D541C85D26508E83_1664954174 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1664954174 = thisUpdate;
-        varB4EAC82CA7396A68D541C85D26508E83_1664954174.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1664954174.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1664954174;
-        // ---------- Original Method ----------
-        //return thisUpdate;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.495 -0400", hash_original_method = "F86AAF1D9B4DCB96185947A392CE29B0", hash_generated_method = "AB085744D996BCE05BA58866EE2883F9")
     public Date getNextUpdate() {
-        Date varB4EAC82CA7396A68D541C85D26508E83_1142762070 = null; //Variable for return #1
+        Date varB4EAC82CA7396A68D541C85D26508E83_1142762070 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1142762070 = nextUpdate;
-        varB4EAC82CA7396A68D541C85D26508E83_1142762070.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1142762070.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1142762070;
-        // ---------- Original Method ----------
-        //return nextUpdate;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.496 -0400", hash_original_method = "6BD535137A0D7C6092BE90399C5AC4FA", hash_generated_method = "9185E22F3B63C2EAC04A21313BC36645")
     public List<RevokedCertificate> getRevokedCertificates() {
-        List<RevokedCertificate> varB4EAC82CA7396A68D541C85D26508E83_980187476 = null; //Variable for return #1
+        List<RevokedCertificate> varB4EAC82CA7396A68D541C85D26508E83_980187476 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_980187476 = revokedCertificates;
-        varB4EAC82CA7396A68D541C85D26508E83_980187476.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_980187476.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_980187476;
-        // ---------- Original Method ----------
-        //return revokedCertificates;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.497 -0400", hash_original_method = "24898D069ADDF2B72D4CC75EC979A933", hash_generated_method = "7AE8A3667E7AF19D55A2ECF850699BC9")
     public Extensions getCrlExtensions() {
-        Extensions varB4EAC82CA7396A68D541C85D26508E83_1710947609 = null; //Variable for return #1
+        Extensions varB4EAC82CA7396A68D541C85D26508E83_1710947609 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1710947609 = crlExtensions;
-        varB4EAC82CA7396A68D541C85D26508E83_1710947609.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1710947609.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1710947609;
-        // ---------- Original Method ----------
-        //return crlExtensions;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.497 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "AF31FE6D1663D6124B61791B8B5EA782")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1284681506 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1284681506;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.498 -0400", hash_original_method = "44BD020D05A989BAC123F5B223D6D101", hash_generated_method = "D598C4CBEC9D01C9414D8E8F91F3FC50")
     @Override
     public boolean equals(Object other) {
@@ -180,15 +183,16 @@ public final class TBSCertList {
                 || revokedCertificates.equals(that.revokedCertificates))
             && (crlExtensions == null
                     ? that.crlExtensions == null
-                    : crlExtensions.equals(that.crlExtensions))); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                    : crlExtensions.equals(that.crlExtensions))); 
         addTaint(other.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_927809442 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_927809442;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.499 -0400", hash_original_method = "78A1F0B8BEA4B34BD8F201B7131E5881", hash_generated_method = "29677EAE8372D281151050EB146D6202")
     @Override
     public int hashCode() {
@@ -197,13 +201,14 @@ public final class TBSCertList {
                 + (int)thisUpdate.getTime() / 1000);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1861263792 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1861263792;
-        // ---------- Original Method ----------
-        //return ((version * 37 + signature.hashCode()) * 37
-                //+ Arrays.hashCode(issuer.getEncoded())) * 37
-                //+ (int)thisUpdate.getTime() / 1000;
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.504 -0400", hash_original_method = "8372CF0910098C0215CEE031DBAAD799", hash_generated_method = "455A562744B4B5CB48241CA33FD1EB29")
     public void dumpValue(StringBuilder sb) {
         sb.append("X.509 CRL v").append(version);
@@ -224,18 +229,18 @@ public final class TBSCertList {
                     sb.append("\n  [").append(number++).append(']');
                     revokedCertificate.dumpValue(sb, "  ");
                     sb.append('\n');
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             sb.append("]\n");
-        } //End block
+        } 
         {
             sb.append("\nCRL Extensions: ").append(crlExtensions.size()).append(" [");
             crlExtensions.dumpValue(sb, "  ");
             sb.append("]\n");
-        } //End block
+        } 
         addTaint(sb.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -265,91 +270,91 @@ public final class TBSCertList {
             this.userCertificate = userCertificate;
             this.revocationDate = revocationDate;
             this.crlEntryExtensions = crlEntryExtensions;
-            // ---------- Original Method ----------
-            //this.userCertificate = userCertificate;
-            //this.revocationDate = revocationDate;
-            //this.crlEntryExtensions = crlEntryExtensions;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.506 -0400", hash_original_method = "235B3774752183ABFC67FCFEA882E536", hash_generated_method = "6CBB9C0FBD9C13D82E65564D1CE3B432")
         public Extensions getCrlEntryExtensions() {
-            Extensions varB4EAC82CA7396A68D541C85D26508E83_510873723 = null; //Variable for return #1
+            Extensions varB4EAC82CA7396A68D541C85D26508E83_510873723 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_510873723 = crlEntryExtensions;
-            varB4EAC82CA7396A68D541C85D26508E83_510873723.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_510873723.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_510873723;
-            // ---------- Original Method ----------
-            //return crlEntryExtensions;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.506 -0400", hash_original_method = "95F3FA234A9F19C0F47C92249F7AFDCC", hash_generated_method = "9BFA58FBC05051BEB4B1B5C3551E49E3")
         public BigInteger getUserCertificate() {
-            BigInteger varB4EAC82CA7396A68D541C85D26508E83_230124980 = null; //Variable for return #1
+            BigInteger varB4EAC82CA7396A68D541C85D26508E83_230124980 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_230124980 = userCertificate;
-            varB4EAC82CA7396A68D541C85D26508E83_230124980.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_230124980.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_230124980;
-            // ---------- Original Method ----------
-            //return userCertificate;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.506 -0400", hash_original_method = "0C5E7D843026F709B3652BD32A196980", hash_generated_method = "6FBCC4A6D06FD14637D3F3C8D24BBCDD")
         public Date getRevocationDate() {
-            Date varB4EAC82CA7396A68D541C85D26508E83_279380189 = null; //Variable for return #1
+            Date varB4EAC82CA7396A68D541C85D26508E83_279380189 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_279380189 = revocationDate;
-            varB4EAC82CA7396A68D541C85D26508E83_279380189.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_279380189.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_279380189;
-            // ---------- Original Method ----------
-            //return revocationDate;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.507 -0400", hash_original_method = "CDE119A341F8D25B9AE6819B0711631F", hash_generated_method = "F51B68C3563E057891DC9CD9068EE080")
         public X500Principal getIssuer() {
-            X500Principal varB4EAC82CA7396A68D541C85D26508E83_1465506237 = null; //Variable for return #1
-            X500Principal varB4EAC82CA7396A68D541C85D26508E83_67011381 = null; //Variable for return #2
+            X500Principal varB4EAC82CA7396A68D541C85D26508E83_1465506237 = null; 
+            X500Principal varB4EAC82CA7396A68D541C85D26508E83_67011381 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1465506237 = null;
-            } //End block
+            } 
             {
                 try 
                 {
                     issuer =
                         crlEntryExtensions.valueOfCertificateIssuerExtension();
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     e.printStackTrace();
-                } //End block
+                } 
                 issuerRetrieved = true;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_67011381 = issuer;
-            X500Principal varA7E53CE21691AB073D9660D615818899_807523799; //Final return value
+            X500Principal varA7E53CE21691AB073D9660D615818899_807523799; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_807523799 = varB4EAC82CA7396A68D541C85D26508E83_1465506237;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_807523799 = varB4EAC82CA7396A68D541C85D26508E83_67011381;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_807523799.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_807523799.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_807523799;
-            // ---------- Original Method ----------
-            //if (crlEntryExtensions == null) {
-                //return null;
-            //}
-            //if (!issuerRetrieved) {
-                //try {
-                    //issuer =
-                        //crlEntryExtensions.valueOfCertificateIssuerExtension();
-                //} catch (IOException e) {
-                    //e.printStackTrace();
-                //}
-                //issuerRetrieved = true;
-            //}
-            //return issuer;
+            
+            
+                
+            
+            
+                
+                    
+                        
+                
+                    
+                
+                
+            
+            
         }
 
         
@@ -357,14 +362,14 @@ public final class TBSCertList {
         public byte[] getEncoded() {
             {
                 encoding = ASN1.encode(this);
-            } //End block
+            } 
             byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_148745305 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_148745305;
-            // ---------- Original Method ----------
-            //if (encoding == null) {
-                //encoding = ASN1.encode(this);
-            //}
-            //return encoding;
+            
+            
+                
+            
+            
         }
 
         
@@ -376,33 +381,33 @@ public final class TBSCertList {
                         == (rcert.revocationDate.getTime() / 1000))
                 && ((crlEntryExtensions == null)
                     ? rcert.crlEntryExtensions == null
-                    : crlEntryExtensions.equals(rcert.crlEntryExtensions))); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                    : crlEntryExtensions.equals(rcert.crlEntryExtensions))); 
             addTaint(rc.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1547366155 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1547366155;
-            // ---------- Original Method ----------
-            //if (!(rc instanceof RevokedCertificate)) {
-                //return false;
-            //}
-            //RevokedCertificate rcert = (RevokedCertificate) rc;
-            //return userCertificate.equals(rcert.userCertificate)
-                //&& ((revocationDate.getTime() / 1000)
-                        //== (rcert.revocationDate.getTime() / 1000))
-                //&& ((crlEntryExtensions == null)
-                    //? rcert.crlEntryExtensions == null
-                    //: crlEntryExtensions.equals(rcert.crlEntryExtensions));
+            
+            
+                
+            
+            
+            
+                
+                        
+                
+                    
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.509 -0400", hash_original_method = "524410A369A93135245C5EB9BC27F7C2", hash_generated_method = "1649150C5C575FA35B09E823BE190444")
         public int hashCode() {
             int var72DA3C28B9AFC66C53817C70139CF3EF_1593369294 = (userCertificate.hashCode() * 37 + (int)revocationDate.getTime() / 1000
-                    + (crlEntryExtensions == null ? 0 : crlEntryExtensions.hashCode())); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                    + (crlEntryExtensions == null ? 0 : crlEntryExtensions.hashCode())); 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1095640096 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1095640096;
-            // ---------- Original Method ----------
-            //return userCertificate.hashCode() * 37 + (int)revocationDate.getTime() / 1000
-                    //+ (crlEntryExtensions == null ? 0 : crlEntryExtensions.hashCode());
+            
+            
+                    
         }
 
         
@@ -414,17 +419,17 @@ public final class TBSCertList {
                 sb.append('\n').append(prefix).append("CRL Entry Extensions: [");
                 crlEntryExtensions.dumpValue(sb, prefix + "  ");
                 sb.append(prefix).append(']');
-            } //End block
+            } 
             addTaint(sb.getTaint());
             addTaint(prefix.getTaint());
-            // ---------- Original Method ----------
-            //sb.append(prefix).append("Certificate Serial Number: ").append(userCertificate).append('\n');
-            //sb.append(prefix).append("Revocation Date: ").append(revocationDate);
-            //if (crlEntryExtensions != null) {
-                //sb.append('\n').append(prefix).append("CRL Entry Extensions: [");
-                //crlEntryExtensions.dumpValue(sb, prefix + "  ");
-                //sb.append(prefix).append(']');
-            //}
+            
+            
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -453,26 +458,7 @@ public final class TBSCertList {
                 values[2] = rcert.crlEntryExtensions;
             }
         };
-        /*
-        // orphaned legacy method
-        @Override protected void getValues(Object object, Object[] values) {
-                RevokedCertificate rcert = (RevokedCertificate) object;
-                values[0] = rcert.userCertificate.toByteArray();
-                values[1] = rcert.revocationDate;
-                values[2] = rcert.crlEntryExtensions;
-            }
         
-        // orphaned legacy method
-        @Override protected Object getDecodedObject(BerInputStream in) {
-                Object[] values = (Object[]) in.content;
-                return new RevokedCertificate(
-                            new BigInteger((byte[]) values[0]),
-                            (Date) values[1],
-                            (Extensions) values[2]
-                        );
-            }
-        
-        */
     }
 
 
@@ -523,37 +509,6 @@ public final class TBSCertList {
             values[6] = tbs.crlExtensions;
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            TBSCertList tbs = (TBSCertList) object;
-            values[0] = (tbs.version > 1)
-                ? ASN1Integer.fromIntValue(tbs.version - 1) : null;
-            values[1] = tbs.signature;
-            values[2] = tbs.issuer;
-            values[3] = tbs.thisUpdate;
-            values[4] = tbs.nextUpdate;
-            values[5] = tbs.revokedCertificates;
-            values[6] = tbs.crlExtensions;
-        }
     
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
-            Object[] values = (Object[]) in.content;
-            return new TBSCertList(
-                        (values[0] == null)
-                            ? 1
-                            : ASN1Integer.toIntValue(values[0])+1,
-                        (AlgorithmIdentifier) values[1],
-                        (Name) values[2],
-                        (Date) values[3],
-                        (Date) values[4],
-                        (List<RevokedCertificate>) values[5],
-                        (Extensions) values[6],
-                        in.getEncoded()
-                    );
-        }
-    
-    */
 }
 

@@ -1,11 +1,11 @@
 package libcore.icu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -57,29 +57,29 @@ public final class NativeDecimalFormat {
                     dfs.getMonetaryDecimalSeparator(), dfs.getNaN(), dfs.getPatternSeparator(),
                     dfs.getPercent(), dfs.getPerMill(), dfs.getZeroDigit());
             this.lastPattern = pattern;
-        } //End block
+        } 
         catch (NullPointerException npe)
         {
             if (DroidSafeAndroidRuntime.control) throw npe;
-        } //End block
+        } 
         catch (RuntimeException re)
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("syntax error: " + re.getMessage() + ": " + pattern);
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //this.address = open(pattern, dfs.getCurrencySymbol(),
-                    //dfs.getDecimalSeparator(), dfs.getDigit(), dfs.getExponentSeparator(),
-                    //dfs.getGroupingSeparator(), dfs.getInfinity(),
-                    //dfs.getInternationalCurrencySymbol(), dfs.getMinusSign(),
-                    //dfs.getMonetaryDecimalSeparator(), dfs.getNaN(), dfs.getPatternSeparator(),
-                    //dfs.getPercent(), dfs.getPerMill(), dfs.getZeroDigit());
-            //this.lastPattern = pattern;
-        //} catch (NullPointerException npe) {
-            //throw npe;
-        //} catch (RuntimeException re) {
-            //throw new IllegalArgumentException("syntax error: " + re.getMessage() + ": " + pattern);
-        //}
+        } 
+        
+        
+            
+                    
+                    
+                    
+                    
+                    
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -91,13 +91,13 @@ public final class NativeDecimalFormat {
                 data.monetarySeparator, data.NaN, data.patternSeparator,
                 data.percent, data.perMill, data.zeroDigit);
         this.lastPattern = pattern;
-        // ---------- Original Method ----------
-        //this.address = open(pattern, data.currencySymbol,
-                //data.decimalSeparator, '#', data.exponentSeparator, data.groupingSeparator,
-                //data.infinity, data.internationalCurrencySymbol, data.minusSign,
-                //data.monetarySeparator, data.NaN, data.patternSeparator,
-                //data.percent, data.perMill, data.zeroDigit);
-        //this.lastPattern = pattern;
+        
+        
+                
+                
+                
+                
+        
     }
 
     
@@ -109,59 +109,63 @@ public final class NativeDecimalFormat {
         this.negSuffNull = other.negSuffNull;
         this.posPrefNull = other.posPrefNull;
         this.posSuffNull = other.posSuffNull;
-        // ---------- Original Method ----------
-        //this.address = cloneImpl(other.address);
-        //this.lastPattern = other.lastPattern;
-        //this.negPrefNull = other.negPrefNull;
-        //this.negSuffNull = other.negSuffNull;
-        //this.posPrefNull = other.posPrefNull;
-        //this.posSuffNull = other.posSuffNull;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.667 -0400", hash_original_method = "C197288C8DD3954567266901B60BE5B8", hash_generated_method = "B2926F2A13E0EE5AEFE1D187448163DB")
     @Override
     public int hashCode() {
         int var8C9A345D8B4C41F5F6C3E9546CE693DB_1932883180 = (this.getPositivePrefix().hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1280003994 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1280003994;
-        // ---------- Original Method ----------
-        //return this.getPositivePrefix().hashCode();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.667 -0400", hash_original_method = "5C171A463B7BB08FCE40648C7CE8F861", hash_generated_method = "36CAD6210CFA016FE9122A2E563AE993")
     public synchronized void close() {
         {
             close(address);
             address = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (address != 0) {
-            //close(address);
-            //address = 0;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.668 -0400", hash_original_method = "D252F6FD4E111780C248C256B2516FF2", hash_generated_method = "C361812F472423283FCA9024FB4F26EA")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1592016292 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1592016292 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1592016292 = new NativeDecimalFormat(this);
-        varB4EAC82CA7396A68D541C85D26508E83_1592016292.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1592016292.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1592016292;
-        // ---------- Original Method ----------
-        //return new NativeDecimalFormat(this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.669 -0400", hash_original_method = "220130DBC584D5B5D45771D972950D18", hash_generated_method = "94ADF234B6F36D9B4C0F539C7F2921FB")
     @Override
     public boolean equals(Object object) {
         {
             boolean var3F549205D4C262003697A031F89E5954_711877889 = (object == this);
-        } //End collapsed parenthetic
+        } 
         NativeDecimalFormat obj = (NativeDecimalFormat) object;
         boolean var18FBB52F731808A4077D23FDD981869A_672861029 = (obj.toPattern().equals(this.toPattern()) &&
                 obj.isDecimalSeparatorAlwaysShown() == this.isDecimalSeparatorAlwaysShown() &&
@@ -179,8 +183,8 @@ public final class NativeDecimalFormat {
         addTaint(object.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_952668373 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_952668373;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -192,12 +196,12 @@ public final class NativeDecimalFormat {
                 dfs.getMonetaryDecimalSeparator(), dfs.getNaN(), dfs.getPatternSeparator(),
                 dfs.getPercent(), dfs.getPerMill(), dfs.getZeroDigit());
         addTaint(dfs.getTaint());
-        // ---------- Original Method ----------
-        //setDecimalFormatSymbols(this.address, dfs.getCurrencySymbol(), dfs.getDecimalSeparator(),
-                //dfs.getDigit(), dfs.getExponentSeparator(), dfs.getGroupingSeparator(),
-                //dfs.getInfinity(), dfs.getInternationalCurrencySymbol(), dfs.getMinusSign(),
-                //dfs.getMonetaryDecimalSeparator(), dfs.getNaN(), dfs.getPatternSeparator(),
-                //dfs.getPercent(), dfs.getPerMill(), dfs.getZeroDigit());
+        
+        
+                
+                
+                
+                
     }
 
     
@@ -209,163 +213,171 @@ public final class NativeDecimalFormat {
                 localeData.monetarySeparator, localeData.NaN, localeData.patternSeparator,
                 localeData.percent, localeData.perMill, localeData.zeroDigit);
         addTaint(localeData.getTaint());
-        // ---------- Original Method ----------
-        //setDecimalFormatSymbols(this.address, localeData.currencySymbol, localeData.decimalSeparator,
-                //'#', localeData.exponentSeparator, localeData.groupingSeparator,
-                //localeData.infinity, localeData.internationalCurrencySymbol, localeData.minusSign,
-                //localeData.monetarySeparator, localeData.NaN, localeData.patternSeparator,
-                //localeData.percent, localeData.perMill, localeData.zeroDigit);
+        
+        
+                
+                
+                
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.671 -0400", hash_original_method = "E3DC36059DBEEA918EB4DAC2E3F69056", hash_generated_method = "39BF4338FB009C6CD6B3708FBAD0AADC")
     public char[] formatBigDecimal(BigDecimal value, FieldPosition field) {
         FieldPositionIterator fpi = FieldPositionIterator.forFieldPosition(field);
         char[] result = formatDigitList(this.address, value.toString(), fpi);
         {
             FieldPositionIterator.setFieldPosition(fpi, field);
-        } //End block
+        } 
         addTaint(value.getTaint());
         addTaint(field.getTaint());
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1161584332 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1161584332;
-        // ---------- Original Method ----------
-        //FieldPositionIterator fpi = FieldPositionIterator.forFieldPosition(field);
-        //char[] result = formatDigitList(this.address, value.toString(), fpi);
-        //if (fpi != null) {
-            //FieldPositionIterator.setFieldPosition(fpi, field);
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.671 -0400", hash_original_method = "AB58B0DEED1650663505F868BCDB9A76", hash_generated_method = "0277233A98920DBA8CC5AB72DABEE02B")
     public char[] formatBigInteger(BigInteger value, FieldPosition field) {
         FieldPositionIterator fpi = FieldPositionIterator.forFieldPosition(field);
         char[] result = formatDigitList(this.address, value.toString(10), fpi);
         {
             FieldPositionIterator.setFieldPosition(fpi, field);
-        } //End block
+        } 
         addTaint(value.getTaint());
         addTaint(field.getTaint());
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1664102226 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1664102226;
-        // ---------- Original Method ----------
-        //FieldPositionIterator fpi = FieldPositionIterator.forFieldPosition(field);
-        //char[] result = formatDigitList(this.address, value.toString(10), fpi);
-        //if (fpi != null) {
-            //FieldPositionIterator.setFieldPosition(fpi, field);
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.671 -0400", hash_original_method = "E280C21CEDC9C41E32AB3781E6354849", hash_generated_method = "994B73A6CB8871832DB92A1E025C1C12")
     public char[] formatLong(long value, FieldPosition field) {
         FieldPositionIterator fpi = FieldPositionIterator.forFieldPosition(field);
         char[] result = formatLong(this.address, value, fpi);
         {
             FieldPositionIterator.setFieldPosition(fpi, field);
-        } //End block
+        } 
         addTaint(value);
         addTaint(field.getTaint());
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1665727766 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1665727766;
-        // ---------- Original Method ----------
-        //FieldPositionIterator fpi = FieldPositionIterator.forFieldPosition(field);
-        //char[] result = formatLong(this.address, value, fpi);
-        //if (fpi != null) {
-            //FieldPositionIterator.setFieldPosition(fpi, field);
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.672 -0400", hash_original_method = "2B822D9FBF334F04026E765F63D8EA7D", hash_generated_method = "95228327C180FEE2566EDDF1D22491AD")
     public char[] formatDouble(double value, FieldPosition field) {
         FieldPositionIterator fpi = FieldPositionIterator.forFieldPosition(field);
         char[] result = formatDouble(this.address, value, fpi);
         {
             FieldPositionIterator.setFieldPosition(fpi, field);
-        } //End block
+        } 
         addTaint(value);
         addTaint(field.getTaint());
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_22659319 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_22659319;
-        // ---------- Original Method ----------
-        //FieldPositionIterator fpi = FieldPositionIterator.forFieldPosition(field);
-        //char[] result = formatDouble(this.address, value, fpi);
-        //if (fpi != null) {
-            //FieldPositionIterator.setFieldPosition(fpi, field);
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.672 -0400", hash_original_method = "521D68694A0F2FF9FD004D1F044248B6", hash_generated_method = "626CB7EAC0C2AC2D31677753DB78F3D3")
     public void applyLocalizedPattern(String pattern) {
         applyPattern(this.address, true, pattern);
         lastPattern = null;
         addTaint(pattern.getTaint());
-        // ---------- Original Method ----------
-        //applyPattern(this.address, true, pattern);
-        //lastPattern = null;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.672 -0400", hash_original_method = "105E6A8350C3ECD2CBDC93E6E74AA17C", hash_generated_method = "833BB0F24BB86ED21422DD8F2DDBDE6D")
     public void applyPattern(String pattern) {
         {
             boolean var30056E56F7633573B6C2DD284E929162_1881993685 = (lastPattern != null && pattern.equals(lastPattern));
-        } //End collapsed parenthetic
+        } 
         applyPattern(this.address, false, pattern);
         lastPattern = pattern;
-        // ---------- Original Method ----------
-        //if (lastPattern != null && pattern.equals(lastPattern)) {
-            //return;
-        //}
-        //applyPattern(this.address, false, pattern);
-        //lastPattern = pattern;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.673 -0400", hash_original_method = "9FEF3AE5E61C347D525A9585FBE19ECF", hash_generated_method = "7016E3136F382EDB5DC04B8618FE86F8")
     public AttributedCharacterIterator formatToCharacterIterator(Object object) {
-        AttributedCharacterIterator varB4EAC82CA7396A68D541C85D26508E83_885099565 = null; //Variable for return #1
+        AttributedCharacterIterator varB4EAC82CA7396A68D541C85D26508E83_885099565 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         Number number = (Number) object;
         FieldPositionIterator fpIter = new FieldPositionIterator();
         String text;
         {
             text = new String(formatDigitList(this.address, number.toString(), fpIter));
-        } //End block
+        } 
         {
             double dv = number.doubleValue();
             text = new String(formatDouble(this.address, dv, fpIter));
-        } //End block
+        } 
         {
             long lv = number.longValue();
             text = new String(formatLong(this.address, lv, fpIter));
-        } //End block
+        } 
         AttributedString as = new AttributedString(text);
         {
             boolean varC94C796D691F3725A70F62B7F781E92F_1993369111 = (fpIter.next());
             {
                 Format.Field field = fpIter.field();
                 as.addAttribute(field, field, fpIter.start(), fpIter.limit());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_885099565 = as.getIterator();
         addTaint(object.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_885099565.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_885099565.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_885099565;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.674 -0400", hash_original_method = "E9B105AB178BFBFEB280AF82F381CE84", hash_generated_method = "59F203B31B3097C78E7A1CB4F696DA43")
     private int makeScalePositive(int scale, StringBuilder val) {
         {
@@ -374,236 +386,250 @@ public final class NativeDecimalFormat {
                 int i = scale;
                 {
                     val.append('0');
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             scale = 0;
-        } //End block
+        } 
         addTaint(scale);
         addTaint(val.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_929547114 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_929547114;
-        // ---------- Original Method ----------
-        //if (scale < 0) {
-            //scale = -scale;
-            //for (int i = scale; i > 0; i--) {
-                //val.append('0');
-            //}
-            //scale = 0;
-        //}
-        //return scale;
+        
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.674 -0400", hash_original_method = "1F42A3AAFB142AE620B1A14F6DE6CCC5", hash_generated_method = "DE0215914E26CE563B1F059079C9F9C8")
     public String toLocalizedPattern() {
-        String varB4EAC82CA7396A68D541C85D26508E83_154443848 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_154443848 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_154443848 = toPatternImpl(this.address, true);
-        varB4EAC82CA7396A68D541C85D26508E83_154443848.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_154443848.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_154443848;
-        // ---------- Original Method ----------
-        //return toPatternImpl(this.address, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.674 -0400", hash_original_method = "D90F2C106608034D601A7F076DF301BD", hash_generated_method = "559AB3949B7F05AEFF824A6FE759BA9D")
     public String toPattern() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1860088974 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1860088974 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1860088974 = toPatternImpl(this.address, false);
-        varB4EAC82CA7396A68D541C85D26508E83_1860088974.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1860088974.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1860088974;
-        // ---------- Original Method ----------
-        //return toPatternImpl(this.address, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.675 -0400", hash_original_method = "C24C75386265F50BCF75B046D9BE3ACC", hash_generated_method = "265C3DEB827FAF54CD284DC03A98030B")
     public Number parse(String string, ParsePosition position) {
-        Number varB4EAC82CA7396A68D541C85D26508E83_641098157 = null; //Variable for return #1
+        Number varB4EAC82CA7396A68D541C85D26508E83_641098157 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_641098157 = parse(address, string, position, parseBigDecimal);
         addTaint(string.getTaint());
         addTaint(position.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_641098157.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_641098157.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_641098157;
-        // ---------- Original Method ----------
-        //return parse(address, string, position, parseBigDecimal);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.675 -0400", hash_original_method = "00B4402833BBD0AA4B8B3DAC69045BF5", hash_generated_method = "28292860FE5C80B882228C2909A957D2")
     public int getMaximumFractionDigits() {
         int var2031882FA64042FA8714F056BC326B77_2006222588 = (getAttribute(this.address, UNUM_MAX_FRACTION_DIGITS));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_956748369 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_956748369;
-        // ---------- Original Method ----------
-        //return getAttribute(this.address, UNUM_MAX_FRACTION_DIGITS);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.675 -0400", hash_original_method = "39458F699020062C4A2A7E5A13FEC803", hash_generated_method = "C42B719784F10348C147CC06CA273AFE")
     public int getMaximumIntegerDigits() {
         int var552BC4AA7CD66CB5C86DC39DD6F5EB61_664565450 = (getAttribute(this.address, UNUM_MAX_INTEGER_DIGITS));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1469083822 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1469083822;
-        // ---------- Original Method ----------
-        //return getAttribute(this.address, UNUM_MAX_INTEGER_DIGITS);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.676 -0400", hash_original_method = "2493C2169723FB0932E2841ED5413767", hash_generated_method = "5EBC8A6303AB7DBA50CAC41DE2D263ED")
     public int getMinimumFractionDigits() {
         int var651D9F7029A8FF147A685A36D32AA845_1203589061 = (getAttribute(this.address, UNUM_MIN_FRACTION_DIGITS));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_628452136 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_628452136;
-        // ---------- Original Method ----------
-        //return getAttribute(this.address, UNUM_MIN_FRACTION_DIGITS);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.677 -0400", hash_original_method = "C287E89D9CA249987BAB41DA58A603BE", hash_generated_method = "AF3E812F1125C0A9C0E15F8988A24B92")
     public int getMinimumIntegerDigits() {
         int varE7531A98F2A0AD2779754CD1B2865E0B_1160085465 = (getAttribute(this.address, UNUM_MIN_INTEGER_DIGITS));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1755387443 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1755387443;
-        // ---------- Original Method ----------
-        //return getAttribute(this.address, UNUM_MIN_INTEGER_DIGITS);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.677 -0400", hash_original_method = "C63E831A66DAEA25345E39BD0E8C902A", hash_generated_method = "F16DB2BF35ECDB8E9C2A519D534E2D8B")
     public int getGroupingSize() {
         int varEBCCDDFF415DDB22660365F0FC4A83FC_2122028024 = (getAttribute(this.address, UNUM_GROUPING_SIZE));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_566642255 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_566642255;
-        // ---------- Original Method ----------
-        //return getAttribute(this.address, UNUM_GROUPING_SIZE);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.677 -0400", hash_original_method = "195B15A30ECFDD2DA316EFD7F1135C74", hash_generated_method = "45D5FDDA7BD4BB14836E9804C022727F")
     public int getMultiplier() {
         int var2028C5EE807D8F87AD09F7ADE0783DF7_1926214797 = (getAttribute(this.address, UNUM_MULTIPLIER));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1718214232 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1718214232;
-        // ---------- Original Method ----------
-        //return getAttribute(this.address, UNUM_MULTIPLIER);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.678 -0400", hash_original_method = "6BE8F2BF8B3A5604EA6D6E250F279823", hash_generated_method = "E93E79F9D3B656EF666B2DD6E88F7698")
     public String getNegativePrefix() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1510265450 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1336436414 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1510265450 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1336436414 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1510265450 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1336436414 = getTextAttribute(this.address, UNUM_NEGATIVE_PREFIX);
-        String varA7E53CE21691AB073D9660D615818899_1098378333; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1098378333; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1098378333 = varB4EAC82CA7396A68D541C85D26508E83_1510265450;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1098378333 = varB4EAC82CA7396A68D541C85D26508E83_1336436414;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1098378333.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1098378333.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1098378333;
-        // ---------- Original Method ----------
-        //if (negPrefNull) {
-            //return null;
-        //}
-        //return getTextAttribute(this.address, UNUM_NEGATIVE_PREFIX);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.678 -0400", hash_original_method = "3B3EF8E26C12E3D51B48D0C30732D5F5", hash_generated_method = "A87C025DA1325FFA7B58A0B6DB40697E")
     public String getNegativeSuffix() {
-        String varB4EAC82CA7396A68D541C85D26508E83_677894135 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_95071411 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_677894135 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_95071411 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_677894135 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_95071411 = getTextAttribute(this.address, UNUM_NEGATIVE_SUFFIX);
-        String varA7E53CE21691AB073D9660D615818899_841228886; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_841228886; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_841228886 = varB4EAC82CA7396A68D541C85D26508E83_677894135;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_841228886 = varB4EAC82CA7396A68D541C85D26508E83_95071411;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_841228886.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_841228886.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_841228886;
-        // ---------- Original Method ----------
-        //if (negSuffNull) {
-            //return null;
-        //}
-        //return getTextAttribute(this.address, UNUM_NEGATIVE_SUFFIX);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.679 -0400", hash_original_method = "8D4D6B90A746E09AE36173ABA0AB4B15", hash_generated_method = "A81DCE1E0C0A6569D05ABDCEBE40B907")
     public String getPositivePrefix() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1410968848 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1949490375 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1410968848 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1949490375 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1410968848 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1949490375 = getTextAttribute(this.address, UNUM_POSITIVE_PREFIX);
-        String varA7E53CE21691AB073D9660D615818899_741419764; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_741419764; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_741419764 = varB4EAC82CA7396A68D541C85D26508E83_1410968848;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_741419764 = varB4EAC82CA7396A68D541C85D26508E83_1949490375;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_741419764.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_741419764.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_741419764;
-        // ---------- Original Method ----------
-        //if (posPrefNull) {
-            //return null;
-        //}
-        //return getTextAttribute(this.address, UNUM_POSITIVE_PREFIX);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.679 -0400", hash_original_method = "6CFE84E5B71B94B0DE7447BA68FEA246", hash_generated_method = "B9A46F13379AEB9C11586DC0E0E5BFE8")
     public String getPositiveSuffix() {
-        String varB4EAC82CA7396A68D541C85D26508E83_720156155 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1872649226 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_720156155 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1872649226 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_720156155 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1872649226 = getTextAttribute(this.address, UNUM_POSITIVE_SUFFIX);
-        String varA7E53CE21691AB073D9660D615818899_1414591119; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1414591119; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1414591119 = varB4EAC82CA7396A68D541C85D26508E83_720156155;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1414591119 = varB4EAC82CA7396A68D541C85D26508E83_1872649226;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1414591119.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1414591119.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1414591119;
-        // ---------- Original Method ----------
-        //if (posSuffNull) {
-            //return null;
-        //}
-        //return getTextAttribute(this.address, UNUM_POSITIVE_SUFFIX);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.680 -0400", hash_original_method = "F9B59ECC893A5B014F6155ABE9703BF1", hash_generated_method = "752513678210359658F53F9BA510339D")
     public boolean isDecimalSeparatorAlwaysShown() {
         boolean var3E4313CD429F3F78E13F34D688881F5E_1851044443 = (getAttribute(this.address, UNUM_DECIMAL_ALWAYS_SHOWN) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_762060310 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_762060310;
-        // ---------- Original Method ----------
-        //return getAttribute(this.address, UNUM_DECIMAL_ALWAYS_SHOWN) != 0;
+        
+        
     }
 
     
@@ -611,31 +637,34 @@ public final class NativeDecimalFormat {
     public boolean isParseBigDecimal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_101936727 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_101936727;
-        // ---------- Original Method ----------
-        //return parseBigDecimal;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.680 -0400", hash_original_method = "1D326E5349B9E5A9AED64258AB68CB41", hash_generated_method = "DE6BA8437DA31DB99BC36BD11D8C5A08")
     public boolean isParseIntegerOnly() {
         boolean var58CA17599706E2BD9D06C2CCBA6B89AB_1206274534 = (getAttribute(this.address, UNUM_PARSE_INT_ONLY) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1606145417 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1606145417;
-        // ---------- Original Method ----------
-        //return getAttribute(this.address, UNUM_PARSE_INT_ONLY) != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.680 -0400", hash_original_method = "00E8502D2DA3C0C73215E5BC5979A07C", hash_generated_method = "7162B71E67E463E352E414AD40C86AD4")
     public boolean isGroupingUsed() {
         boolean var875BD0DB8C0EE50D68D0C6793AE8DABD_702726433 = (getAttribute(this.address, UNUM_GROUPING_USED) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2026775995 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2026775995;
-        // ---------- Original Method ----------
-        //return getAttribute(this.address, UNUM_GROUPING_USED) != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.681 -0400", hash_original_method = "4515EB7BD614742B3D0DDD5748BC74D6", hash_generated_method = "B8B0456587560093071500C9C0FCAE5E")
     public void setDecimalSeparatorAlwaysShown(boolean value) {
         int i;
@@ -643,32 +672,35 @@ public final class NativeDecimalFormat {
         i = 0;
         setAttribute(this.address, UNUM_DECIMAL_ALWAYS_SHOWN, i);
         addTaint(value);
-        // ---------- Original Method ----------
-        //int i = value ? -1 : 0;
-        //setAttribute(this.address, UNUM_DECIMAL_ALWAYS_SHOWN, i);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.681 -0400", hash_original_method = "27959CC6793546F59976E7DBD15119DA", hash_generated_method = "E9FFB17EAD4EA0D712632E876D6C36D5")
     public void setCurrency(Currency currency) {
         setSymbol(this.address, UNUM_CURRENCY_SYMBOL, currency.getSymbol());
         setSymbol(this.address, UNUM_INTL_CURRENCY_SYMBOL, currency.getCurrencyCode());
         addTaint(currency.getTaint());
-        // ---------- Original Method ----------
-        //setSymbol(this.address, UNUM_CURRENCY_SYMBOL, currency.getSymbol());
-        //setSymbol(this.address, UNUM_INTL_CURRENCY_SYMBOL, currency.getCurrencyCode());
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.681 -0400", hash_original_method = "49FEA0DFBB56F17CB90E68E0F78CE577", hash_generated_method = "EC4442CDE4C2F319FBDABF66B7010AFB")
     public void setGroupingSize(int value) {
         setAttribute(this.address, UNUM_GROUPING_SIZE, value);
         addTaint(value);
-        // ---------- Original Method ----------
-        //setAttribute(this.address, UNUM_GROUPING_SIZE, value);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.682 -0400", hash_original_method = "E302CDF79A67421C2D7FEEF4C305D93F", hash_generated_method = "792F56F062246284C7ECE4AAAA26AE86")
     public void setGroupingUsed(boolean value) {
         int i;
@@ -676,122 +708,132 @@ public final class NativeDecimalFormat {
         i = 0;
         setAttribute(this.address, UNUM_GROUPING_USED, i);
         addTaint(value);
-        // ---------- Original Method ----------
-        //int i = value ? -1 : 0;
-        //setAttribute(this.address, UNUM_GROUPING_USED, i);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.682 -0400", hash_original_method = "758C6DB93C92764527C1135AD7160507", hash_generated_method = "64C5C48B47DB480798C2AFF0D3819358")
     public void setMaximumFractionDigits(int value) {
         setAttribute(this.address, UNUM_MAX_FRACTION_DIGITS, value);
         addTaint(value);
-        // ---------- Original Method ----------
-        //setAttribute(this.address, UNUM_MAX_FRACTION_DIGITS, value);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.683 -0400", hash_original_method = "89C5389B02F633081323A23C8FB84870", hash_generated_method = "9BE9DDE05F7F7A37CB2E326D3E2123B3")
     public void setMaximumIntegerDigits(int value) {
         setAttribute(this.address, UNUM_MAX_INTEGER_DIGITS, value);
         addTaint(value);
-        // ---------- Original Method ----------
-        //setAttribute(this.address, UNUM_MAX_INTEGER_DIGITS, value);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.686 -0400", hash_original_method = "62DF7CF1343955ADCD931CBCC029C545", hash_generated_method = "0D04383E51DB8E8945118D5D47457FCC")
     public void setMinimumFractionDigits(int value) {
         setAttribute(this.address, UNUM_MIN_FRACTION_DIGITS, value);
         addTaint(value);
-        // ---------- Original Method ----------
-        //setAttribute(this.address, UNUM_MIN_FRACTION_DIGITS, value);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.687 -0400", hash_original_method = "5D466EF26E9A120396C63069DE20CEB4", hash_generated_method = "D0CBC6A8D932BD845AF8513FB005E1E7")
     public void setMinimumIntegerDigits(int value) {
         setAttribute(this.address, UNUM_MIN_INTEGER_DIGITS, value);
         addTaint(value);
-        // ---------- Original Method ----------
-        //setAttribute(this.address, UNUM_MIN_INTEGER_DIGITS, value);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.688 -0400", hash_original_method = "B169BA3B31B9F8AB850C7AD451D65C7F", hash_generated_method = "09EBC652ED959626329C8BC07614B33D")
     public void setMultiplier(int value) {
         setAttribute(this.address, UNUM_MULTIPLIER, value);
         multiplierBigDecimal = BigDecimal.valueOf(value);
-        // ---------- Original Method ----------
-        //setAttribute(this.address, UNUM_MULTIPLIER, value);
-        //multiplierBigDecimal = BigDecimal.valueOf(value);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.688 -0400", hash_original_method = "74BB5921C2CC61F7BCF8D1B8841FD51E", hash_generated_method = "C4DAAC223C73D5280FF1AECBB891C728")
     public void setNegativePrefix(String value) {
         negPrefNull = value == null;
         {
             setTextAttribute(this.address, UNUM_NEGATIVE_PREFIX, value);
-        } //End block
-        // ---------- Original Method ----------
-        //negPrefNull = value == null;
-        //if (!negPrefNull) {
-            //setTextAttribute(this.address, UNUM_NEGATIVE_PREFIX, value);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.689 -0400", hash_original_method = "0FF0A51DFB17D23D2B0F182081F1472B", hash_generated_method = "79F6037D750EDFA1DC0ED4FD3C7377C7")
     public void setNegativeSuffix(String value) {
         negSuffNull = value == null;
         {
             setTextAttribute(this.address, UNUM_NEGATIVE_SUFFIX, value);
-        } //End block
-        // ---------- Original Method ----------
-        //negSuffNull = value == null;
-        //if (!negSuffNull) {
-            //setTextAttribute(this.address, UNUM_NEGATIVE_SUFFIX, value);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.690 -0400", hash_original_method = "FC20737C410620F82F4CED74F1142CF3", hash_generated_method = "7C1C2C38F30484A1BDBFC4383517B9CA")
     public void setPositivePrefix(String value) {
         posPrefNull = value == null;
         {
             setTextAttribute(this.address, UNUM_POSITIVE_PREFIX, value);
-        } //End block
-        // ---------- Original Method ----------
-        //posPrefNull = value == null;
-        //if (!posPrefNull) {
-            //setTextAttribute(this.address, UNUM_POSITIVE_PREFIX, value);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.690 -0400", hash_original_method = "48A175BA83D370BA86128EC6BAC61CB5", hash_generated_method = "132EBBDC2763FE4573B3F9983677074F")
     public void setPositiveSuffix(String value) {
         posSuffNull = value == null;
         {
             setTextAttribute(this.address, UNUM_POSITIVE_SUFFIX, value);
-        } //End block
-        // ---------- Original Method ----------
-        //posSuffNull = value == null;
-        //if (!posSuffNull) {
-            //setTextAttribute(this.address, UNUM_POSITIVE_SUFFIX, value);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.691 -0400", hash_original_method = "16B3A7386DF3851CB73D32D9A838D98B", hash_generated_method = "A04CC31A40B62965DB9042EEB28F4644")
     public void setParseBigDecimal(boolean value) {
         parseBigDecimal = value;
-        // ---------- Original Method ----------
-        //parseBigDecimal = value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.691 -0400", hash_original_method = "7FF47C5BC2EFAEE27B26A852A846EAFB", hash_generated_method = "CB50EF700F4EE81341E89A29CAB95719")
     public void setParseIntegerOnly(boolean value) {
         int i;
@@ -799,12 +841,13 @@ public final class NativeDecimalFormat {
         i = 0;
         setAttribute(this.address, UNUM_PARSE_INT_ONLY, i);
         addTaint(value);
-        // ---------- Original Method ----------
-        //int i = value ? -1 : 0;
-        //setAttribute(this.address, UNUM_PARSE_INT_ONLY, i);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static void applyPattern(int addr, boolean localized, String pattern) {
         try {
             applyPatternImpl(addr, localized, pattern);
@@ -816,49 +859,50 @@ public final class NativeDecimalFormat {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.693 -0400", hash_original_method = "D542BB733096020C1E39876D678697A7", hash_generated_method = "5601AC6A55BB8B8AC389EDE8D8DE38ED")
     public void setRoundingMode(RoundingMode roundingMode, double roundingIncrement) {
         int nativeRoundingMode;
-        //Begin case CEILING 
+        
         nativeRoundingMode = 0;
-        //End case CEILING 
-        //Begin case FLOOR 
+        
+        
         nativeRoundingMode = 1;
-        //End case FLOOR 
-        //Begin case DOWN 
+        
+        
         nativeRoundingMode = 2;
-        //End case DOWN 
-        //Begin case UP 
+        
+        
         nativeRoundingMode = 3;
-        //End case UP 
-        //Begin case HALF_EVEN 
+        
+        
         nativeRoundingMode = 4;
-        //End case HALF_EVEN 
-        //Begin case HALF_DOWN 
+        
+        
         nativeRoundingMode = 5;
-        //End case HALF_DOWN 
-        //Begin case HALF_UP 
+        
+        
         nativeRoundingMode = 6;
-        //End case HALF_UP 
-        //Begin case default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new AssertionError();
-        //End case default 
+        
         setRoundingMode(address, nativeRoundingMode, roundingIncrement);
         addTaint(roundingMode.getTaint());
         addTaint(roundingIncrement);
-        // ---------- Original Method ----------
-        //final int nativeRoundingMode;
-        //switch (roundingMode) {
-        //case CEILING: nativeRoundingMode = 0; break;
-        //case FLOOR: nativeRoundingMode = 1; break;
-        //case DOWN: nativeRoundingMode = 2; break;
-        //case UP: nativeRoundingMode = 3; break;
-        //case HALF_EVEN: nativeRoundingMode = 4; break;
-        //case HALF_DOWN: nativeRoundingMode = 5; break;
-        //case HALF_UP: nativeRoundingMode = 6; break;
-        //default: throw new AssertionError();
-        //}
-        //setRoundingMode(address, nativeRoundingMode, roundingIncrement);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -977,7 +1021,7 @@ public final class NativeDecimalFormat {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.697 -0400", hash_original_method = "3872533C5F4C6DF8E9B47456E87ABB09", hash_generated_method = "61C6C4E209B2EB1D194185007E303529")
         private  FieldPositionIterator() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1029,16 +1073,16 @@ public final class NativeDecimalFormat {
         public boolean next() {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-            } //End block
+            } 
             pos += 3;
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1365009316 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1365009316;
-            // ---------- Original Method ----------
-            //if (data == null || pos == data.length) {
-                //throw new NoSuchElementException();
-            //}
-            //pos += 3;
-            //return pos < data.length;
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -1046,11 +1090,11 @@ public final class NativeDecimalFormat {
         private void checkValid() {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-            } //End block
-            // ---------- Original Method ----------
-            //if (data == null || pos < 0 || pos == data.length) {
-                //throw new NoSuchElementException();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -1058,21 +1102,21 @@ public final class NativeDecimalFormat {
         public int fieldId() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1458965784 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1458965784;
-            // ---------- Original Method ----------
-            //return data[pos];
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.699 -0400", hash_original_method = "B152D64258DA85AB1020B78F45482139", hash_generated_method = "8EC959FA641F99F389801555323CF268")
         public Format.Field field() {
-            Format.Field varB4EAC82CA7396A68D541C85D26508E83_1893524538 = null; //Variable for return #1
+            Format.Field varB4EAC82CA7396A68D541C85D26508E83_1893524538 = null; 
             checkValid();
             varB4EAC82CA7396A68D541C85D26508E83_1893524538 = fields[data[pos]];
-            varB4EAC82CA7396A68D541C85D26508E83_1893524538.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1893524538.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1893524538;
-            // ---------- Original Method ----------
-            //checkValid();
-            //return fields[data[pos]];
+            
+            
+            
         }
 
         
@@ -1081,9 +1125,9 @@ public final class NativeDecimalFormat {
             checkValid();
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2014822582 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2014822582;
-            // ---------- Original Method ----------
-            //checkValid();
-            //return data[pos + 1];
+            
+            
+            
         }
 
         
@@ -1092,9 +1136,9 @@ public final class NativeDecimalFormat {
             checkValid();
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_152114980 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_152114980;
-            // ---------- Original Method ----------
-            //checkValid();
-            //return data[pos + 2];
+            
+            
+            
         }
 
         
@@ -1102,9 +1146,9 @@ public final class NativeDecimalFormat {
         private void setData(int[] data) {
             this.data = data;
             this.pos = -3;
-            // ---------- Original Method ----------
-            //this.data = data;
-            //this.pos = -3;
+            
+            
+            
         }
 
         

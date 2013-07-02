@@ -1,11 +1,11 @@
 package android.view.accessibility;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.content.Context;
@@ -49,8 +49,8 @@ public final class AccessibilityManager {
         public void setState(int state) {
             mHandler.obtainMessage(DO_SET_STATE, state, 0).sendToTarget();
             addTaint(state);
-            // ---------- Original Method ----------
-            //mHandler.obtainMessage(DO_SET_STATE, state, 0).sendToTarget();
+            
+            
         }
 
         
@@ -64,18 +64,18 @@ public final class AccessibilityManager {
         {
             final int stateFlags = mService.addClient(mClient);
             setState(stateFlags);
-        } //End block
+        } 
         catch (RemoteException re)
         { }
-        // ---------- Original Method ----------
-        //mHandler = new MyHandler(context.getMainLooper());
-        //mService = service;
-        //try {
-            //final int stateFlags = mService.addClient(mClient);
-            //setState(stateFlags);
-        //} catch (RemoteException re) {
-            //Log.e(LOG_TAG, "AccessibilityManagerService is dead", re);
-        //}
+        
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -95,10 +95,10 @@ public final class AccessibilityManager {
     public boolean isEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1548684764 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1548684764;
-        // ---------- Original Method ----------
-        //synchronized (mHandler) {
-            //return mIsEnabled;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -106,21 +106,21 @@ public final class AccessibilityManager {
     public boolean isTouchExplorationEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1369734560 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1369734560;
-        // ---------- Original Method ----------
-        //synchronized (mHandler) {
-            //return mIsTouchExplorationEnabled;
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.209 -0400", hash_original_method = "D3FF4CE091F652B646DDDB1D1AF726B0", hash_generated_method = "9FC5F7168768DE16E9AF134FC819FB4B")
     public IAccessibilityManagerClient getClient() {
-        IAccessibilityManagerClient varB4EAC82CA7396A68D541C85D26508E83_1818732298 = null; //Variable for return #1
+        IAccessibilityManagerClient varB4EAC82CA7396A68D541C85D26508E83_1818732298 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1818732298 = (IAccessibilityManagerClient) mClient.asBinder();
-        varB4EAC82CA7396A68D541C85D26508E83_1818732298.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1818732298.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1818732298;
-        // ---------- Original Method ----------
-        //return (IAccessibilityManagerClient) mClient.asBinder();
+        
+        
     }
 
     
@@ -128,7 +128,7 @@ public final class AccessibilityManager {
     public void sendAccessibilityEvent(AccessibilityEvent event) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Accessibility off. Did you forget to check that?");
-        } //End block
+        } 
         boolean doRecycle = false;
         try 
         {
@@ -136,36 +136,36 @@ public final class AccessibilityManager {
             long identityToken = Binder.clearCallingIdentity();
             doRecycle = mService.sendAccessibilityEvent(event);
             Binder.restoreCallingIdentity(identityToken);
-        } //End block
+        } 
         catch (RemoteException re)
         { }
         finally 
         {
             {
                 event.recycle();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //if (!mIsEnabled) {
-            //throw new IllegalStateException("Accessibility off. Did you forget to check that?");
-        //}
-        //boolean doRecycle = false;
-        //try {
-            //event.setEventTime(SystemClock.uptimeMillis());
-            //long identityToken = Binder.clearCallingIdentity();
-            //doRecycle = mService.sendAccessibilityEvent(event);
-            //Binder.restoreCallingIdentity(identityToken);
-            //if (DEBUG) {
-                //Log.i(LOG_TAG, event + " sent");
-            //}
-        //} catch (RemoteException re) {
-            //Log.e(LOG_TAG, "Error during sending " + event + " ", re);
-        //} finally {
-            //if (doRecycle) {
-                //event.recycle();
-            //}
-        //}
+        
+        
+            
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+        
+            
+        
+            
+                
+            
+        
     }
 
     
@@ -173,32 +173,32 @@ public final class AccessibilityManager {
     public void interrupt() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Accessibility off. Did you forget to check that?");
-        } //End block
+        } 
         try 
         {
             mService.interrupt();
-        } //End block
+        } 
         catch (RemoteException re)
         { }
-        // ---------- Original Method ----------
-        //if (!mIsEnabled) {
-            //throw new IllegalStateException("Accessibility off. Did you forget to check that?");
-        //}
-        //try {
-            //mService.interrupt();
-            //if (DEBUG) {
-                //Log.i(LOG_TAG, "Requested interrupt from all services");
-            //}
-        //} catch (RemoteException re) {
-            //Log.e(LOG_TAG, "Error while requesting interrupt from all services. ", re);
-        //}
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.211 -0400", hash_original_method = "E2D6992D14607757295701B76C880C8C", hash_generated_method = "F2F5584F39280382196CBEFC6C9819E0")
     @Deprecated
     public List<ServiceInfo> getAccessibilityServiceList() {
-        List<ServiceInfo> varB4EAC82CA7396A68D541C85D26508E83_1164796734 = null; //Variable for return #1
+        List<ServiceInfo> varB4EAC82CA7396A68D541C85D26508E83_1164796734 = null; 
         List<AccessibilityServiceInfo> infos = getInstalledAccessibilityServiceList();
         List<ServiceInfo> services = new ArrayList<ServiceInfo>();
         final int infoCount = infos.size();
@@ -207,76 +207,76 @@ public final class AccessibilityManager {
             {
                 AccessibilityServiceInfo info = infos.get(i);
                 services.add(info.getResolveInfo().serviceInfo);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1164796734 = Collections.unmodifiableList(services);
-        varB4EAC82CA7396A68D541C85D26508E83_1164796734.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1164796734.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1164796734;
-        // ---------- Original Method ----------
-        //List<AccessibilityServiceInfo> infos = getInstalledAccessibilityServiceList();
-        //List<ServiceInfo> services = new ArrayList<ServiceInfo>();
-        //final int infoCount = infos.size();
-        //for (int i = 0; i < infoCount; i++) {
-            //AccessibilityServiceInfo info = infos.get(i);
-            //services.add(info.getResolveInfo().serviceInfo);
-        //}
-        //return Collections.unmodifiableList(services);
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.212 -0400", hash_original_method = "4069133ECADF858B249C4B9AC03C2D2A", hash_generated_method = "10FB003240809CB0B1C609C0BC08D896")
     public List<AccessibilityServiceInfo> getInstalledAccessibilityServiceList() {
-        List<AccessibilityServiceInfo> varB4EAC82CA7396A68D541C85D26508E83_1311905096 = null; //Variable for return #1
+        List<AccessibilityServiceInfo> varB4EAC82CA7396A68D541C85D26508E83_1311905096 = null; 
         List<AccessibilityServiceInfo> services = null;
         try 
         {
             services = mService.getInstalledAccessibilityServiceList();
-        } //End block
+        } 
         catch (RemoteException re)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_1311905096 = Collections.unmodifiableList(services);
-        varB4EAC82CA7396A68D541C85D26508E83_1311905096.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1311905096.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1311905096;
-        // ---------- Original Method ----------
-        //List<AccessibilityServiceInfo> services = null;
-        //try {
-            //services = mService.getInstalledAccessibilityServiceList();
-            //if (DEBUG) {
-                //Log.i(LOG_TAG, "Installed AccessibilityServices " + services);
-            //}
-        //} catch (RemoteException re) {
-            //Log.e(LOG_TAG, "Error while obtaining the installed AccessibilityServices. ", re);
-        //}
-        //return Collections.unmodifiableList(services);
+        
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.213 -0400", hash_original_method = "0B36972F320E6D77C70DA2DE64F6CDA9", hash_generated_method = "BCCCA3CB02522A037DDEC48E8E53B182")
     public List<AccessibilityServiceInfo> getEnabledAccessibilityServiceList(
             int feedbackTypeFlags) {
-        List<AccessibilityServiceInfo> varB4EAC82CA7396A68D541C85D26508E83_1440183149 = null; //Variable for return #1
+        List<AccessibilityServiceInfo> varB4EAC82CA7396A68D541C85D26508E83_1440183149 = null; 
         List<AccessibilityServiceInfo> services = null;
         try 
         {
             services = mService.getEnabledAccessibilityServiceList(feedbackTypeFlags);
-        } //End block
+        } 
         catch (RemoteException re)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_1440183149 = Collections.unmodifiableList(services);
         addTaint(feedbackTypeFlags);
-        varB4EAC82CA7396A68D541C85D26508E83_1440183149.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1440183149.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1440183149;
-        // ---------- Original Method ----------
-        //List<AccessibilityServiceInfo> services = null;
-        //try {
-            //services = mService.getEnabledAccessibilityServiceList(feedbackTypeFlags);
-            //if (DEBUG) {
-                //Log.i(LOG_TAG, "Installed AccessibilityServices " + services);
-            //}
-        //} catch (RemoteException re) {
-            //Log.e(LOG_TAG, "Error while obtaining the installed AccessibilityServices. ", re);
-        //}
-        //return Collections.unmodifiableList(services);
+        
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -287,8 +287,8 @@ public final class AccessibilityManager {
         addTaint(listener.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_899885401 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_899885401;
-        // ---------- Original Method ----------
-        //return mAccessibilityStateChangeListeners.add(listener);
+        
+        
     }
 
     
@@ -299,8 +299,8 @@ public final class AccessibilityManager {
         addTaint(listener.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1582380869 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1582380869;
-        // ---------- Original Method ----------
-        //return mAccessibilityStateChangeListeners.remove(listener);
+        
+        
     }
 
     
@@ -309,10 +309,10 @@ public final class AccessibilityManager {
         final boolean accessibilityEnabled = (stateFlags & STATE_FLAG_ACCESSIBILITY_ENABLED) != 0;
         setAccessibilityState(accessibilityEnabled);
         mIsTouchExplorationEnabled = (stateFlags & STATE_FLAG_TOUCH_EXPLORATION_ENABLED) != 0;
-        // ---------- Original Method ----------
-        //final boolean accessibilityEnabled = (stateFlags & STATE_FLAG_ACCESSIBILITY_ENABLED) != 0;
-        //setAccessibilityState(accessibilityEnabled);
-        //mIsTouchExplorationEnabled = (stateFlags & STATE_FLAG_TOUCH_EXPLORATION_ENABLED) != 0;
+        
+        
+        
+        
     }
 
     
@@ -322,15 +322,15 @@ public final class AccessibilityManager {
             {
                 mIsEnabled = isEnabled;
                 notifyAccessibilityStateChanged();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mHandler) {
-            //if (isEnabled != mIsEnabled) {
-                //mIsEnabled = isEnabled;
-                //notifyAccessibilityStateChanged();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+            
+        
     }
 
     
@@ -341,13 +341,13 @@ public final class AccessibilityManager {
             int i = 0;
             {
                 mAccessibilityStateChangeListeners.get(i).onAccessibilityStateChanged(mIsEnabled);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //final int listenerCount = mAccessibilityStateChangeListeners.size();
-        //for (int i = 0; i < listenerCount; i++) {
-            //mAccessibilityStateChangeListeners.get(i).onAccessibilityStateChanged(mIsEnabled);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -357,20 +357,20 @@ public final class AccessibilityManager {
         try 
         {
             int var37F2D9A8621328C65259B1F23C1AB2E7_959674056 = (mService.addAccessibilityInteractionConnection(windowToken, connection));
-        } //End block
+        } 
         catch (RemoteException re)
         { }
         addTaint(windowToken.getTaint());
         addTaint(connection.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_251894880 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_251894880;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.addAccessibilityInteractionConnection(windowToken, connection);
-        //} catch (RemoteException re) {
-            //Log.e(LOG_TAG, "Error while adding an accessibility interaction connection. ", re);
-        //}
-        //return View.NO_ID;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -379,16 +379,16 @@ public final class AccessibilityManager {
         try 
         {
             mService.removeAccessibilityInteractionConnection(windowToken);
-        } //End block
+        } 
         catch (RemoteException re)
         { }
         addTaint(windowToken.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mService.removeAccessibilityInteractionConnection(windowToken);
-        //} catch (RemoteException re) {
-            //Log.e(LOG_TAG, "Error while removing an accessibility interaction connection. ", re);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -398,25 +398,25 @@ public final class AccessibilityManager {
           MyHandler(Looper mainLooper) {
             super(mainLooper);
             addTaint(mainLooper.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.216 -0400", hash_original_method = "0702CD151ACA01CFBFFCD70D188AF2A1", hash_generated_method = "373230158FA4C73B8339CEDC434F5FA7")
         @Override
         public void handleMessage(Message message) {
-            //Begin case DO_SET_STATE 
+            
             setState(message.arg1);
-            //End case DO_SET_STATE 
+            
             addTaint(message.getTaint());
-            // ---------- Original Method ----------
-            //switch (message.what) {
-                //case DO_SET_STATE :
-                    //setState(message.arg1);
-                    //return;
-                //default :
-                    //Log.w(LOG_TAG, "Unknown message type: " + message.what);
-            //}
+            
+            
+                
+                    
+                    
+                
+                    
+            
         }
 
         

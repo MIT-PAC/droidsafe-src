@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import static android.util.Patterns.GOOD_IRI_CHAR;
 import java.util.regex.Matcher;
@@ -32,7 +32,7 @@ public class WebAddress {
     public  WebAddress(String address) throws ParseException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         mScheme = "";
         mHost = "";
         mPort = -1;
@@ -56,13 +56,13 @@ public class WebAddress {
                         try 
                         {
                             mPort = Integer.parseInt(t);
-                        } //End block
+                        } 
                         catch (NumberFormatException ex)
                         {
                             if (DroidSafeAndroidRuntime.control) throw new ParseException("Bad port");
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 t = m.group(MATCH_GROUP_PATH);
                 {
                     boolean varEA86416E71243B1D7495AA261D0492BB_1932779034 = (t != null && t.length() > 0);
@@ -71,120 +71,121 @@ public class WebAddress {
                             boolean var417E218ACD2171E6AC979D71680E86ED_2035441213 = (t.charAt(0) == '/');
                             {
                                 mPath = t;
-                            } //End block
+                            } 
                             {
                                 mPath = "/" + t;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new ParseException("Bad address");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var3F759615AE256FE53A6BA5A88213F8CB_2014137525 = (mPort == 443 && mScheme.equals(""));
             {
                 mScheme = "https";
-            } //End block
+            } 
             {
                 {
                     boolean varEE91DE53B1B60E2014FF264884CAFBC8_1113674126 = (mScheme.equals("https"));
                     mPort = 443;
                     mPort = 80;
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             boolean varA8CE4303EFEFE0A964E5C4C256C9BF66_908631862 = (mScheme.equals(""));
             mScheme = "http";
-        } //End collapsed parenthetic
+        } 
         addTaint(address.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.438 -0400", hash_original_method = "1D4EF43F2688F01255D5CEBFE17AB398", hash_generated_method = "DC46428301E4CF42234FD2DDE4DD2700")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_510858977 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_510858977 = null; 
         String port = "";
         {
             boolean varD58DB772B4EE315C2342D62198B5F0D3_1974425230 = ((mPort != 443 && mScheme.equals("https")) ||
             (mPort != 80 && mScheme.equals("http")));
             {
                 port = ":" + Integer.toString(mPort);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String authInfo = "";
         {
             boolean var4C8A5E4E6D516D199FEDEA7ED2860CAF_1233707700 = (mAuthInfo.length() > 0);
             {
                 authInfo = mAuthInfo + "@";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_510858977 = mScheme + "://" + authInfo + mHost + port + mPath;
-        varB4EAC82CA7396A68D541C85D26508E83_510858977.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_510858977.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_510858977;
-        // ---------- Original Method ----------
-        //String port = "";
-        //if ((mPort != 443 && mScheme.equals("https")) ||
-            //(mPort != 80 && mScheme.equals("http"))) {
-            //port = ":" + Integer.toString(mPort);
-        //}
-        //String authInfo = "";
-        //if (mAuthInfo.length() > 0) {
-            //authInfo = mAuthInfo + "@";
-        //}
-        //return mScheme + "://" + authInfo + mHost + port + mPath;
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.438 -0400", hash_original_method = "67DD4047E44F32E39FC9F9A2588A82A9", hash_generated_method = "9EF399851C0503F706319A3887847965")
     public void setScheme(String scheme) {
         mScheme = scheme;
-        // ---------- Original Method ----------
-        //mScheme = scheme;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.439 -0400", hash_original_method = "631B0276BE6088C8DB198A5E8698D898", hash_generated_method = "7D45FFEB262F669EC98E3FFA3960F4B8")
     public String getScheme() {
-        String varB4EAC82CA7396A68D541C85D26508E83_831580323 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_831580323 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_831580323 = mScheme;
-        varB4EAC82CA7396A68D541C85D26508E83_831580323.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_831580323.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_831580323;
-        // ---------- Original Method ----------
-        //return mScheme;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.440 -0400", hash_original_method = "5915AC219B5071991752C386758578AC", hash_generated_method = "F8431D59CF529A7CBE808EEE2BEF2AA2")
     public void setHost(String host) {
         mHost = host;
-        // ---------- Original Method ----------
-        //mHost = host;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.440 -0400", hash_original_method = "B21C2297C1E60D4D2D92DDE75D931874", hash_generated_method = "4173BBC2FD8491617F9EE76914773EC5")
     public String getHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1569794387 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1569794387 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1569794387 = mHost;
-        varB4EAC82CA7396A68D541C85D26508E83_1569794387.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1569794387.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1569794387;
-        // ---------- Original Method ----------
-        //return mHost;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.441 -0400", hash_original_method = "0F13114466AF9A53F82890B2842E5497", hash_generated_method = "CECD3BF3EBF2D08F8055D744DC0ADDA2")
     public void setPort(int port) {
         mPort = port;
-        // ---------- Original Method ----------
-        //mPort = port;
+        
+        
     }
 
     
@@ -192,46 +193,46 @@ public class WebAddress {
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1883610660 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1883610660;
-        // ---------- Original Method ----------
-        //return mPort;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.441 -0400", hash_original_method = "33BABAA311E3F3938C433EAC08EFC3BD", hash_generated_method = "B815314BD25E18C6E7FAC198128A0270")
     public void setPath(String path) {
         mPath = path;
-        // ---------- Original Method ----------
-        //mPath = path;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.442 -0400", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "FF791ABAA0618CAE10B931EB68B7E7DE")
     public String getPath() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1719758735 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1719758735 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1719758735 = mPath;
-        varB4EAC82CA7396A68D541C85D26508E83_1719758735.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1719758735.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1719758735;
-        // ---------- Original Method ----------
-        //return mPath;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.442 -0400", hash_original_method = "F675A31B49A9379F049E4826FB854FCA", hash_generated_method = "50CF9B7BCF54D8FB72CC4A5C85F0D2A2")
     public void setAuthInfo(String authInfo) {
         mAuthInfo = authInfo;
-        // ---------- Original Method ----------
-        //mAuthInfo = authInfo;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.442 -0400", hash_original_method = "C7467B6BC58B66FEF459E374D8052C25", hash_generated_method = "422A44C7C6B9B97E7D8D8FC18038F3B3")
     public String getAuthInfo() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1687497574 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1687497574 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1687497574 = mAuthInfo;
-        varB4EAC82CA7396A68D541C85D26508E83_1687497574.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1687497574.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1687497574;
-        // ---------- Original Method ----------
-        //return mAuthInfo;
+        
+        
     }
 
     

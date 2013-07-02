@@ -1,11 +1,11 @@
 package org.apache.http.impl.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -33,9 +33,9 @@ public class ChunkedOutputStream extends OutputStream {
         super();
         this.cache = new byte[bufferSize];
         this.out = out;
-        // ---------- Original Method ----------
-        //this.cache = new byte[bufferSize];
-        //this.out = out;
+        
+        
+        
     }
 
     
@@ -43,10 +43,11 @@ public class ChunkedOutputStream extends OutputStream {
     public  ChunkedOutputStream(final SessionOutputBuffer out) throws IOException {
         this(out, 2048);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.741 -0400", hash_original_method = "320F140F8D57B27D338CDA0750999A03", hash_generated_method = "F4ADAB2E768CBA7F097BD62C13C8A9D1")
     protected void flushCache() throws IOException {
         {
@@ -54,17 +55,18 @@ public class ChunkedOutputStream extends OutputStream {
             this.out.write(this.cache, 0, this.cachePosition);
             this.out.writeLine("");
             this.cachePosition = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.cachePosition > 0) {
-            //this.out.writeLine(Integer.toHexString(this.cachePosition));
-            //this.out.write(this.cache, 0, this.cachePosition);
-            //this.out.writeLine("");
-            //this.cachePosition = 0;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.742 -0400", hash_original_method = "B6A1CB3240895E2E2F127D1796BCAECF", hash_generated_method = "853C864B36FD08640CAC73F31F232293")
     protected void flushCacheWithAppend(byte bufferToAppend[], int off, int len) throws IOException {
         this.out.writeLine(Integer.toHexString(this.cachePosition + len));
@@ -75,117 +77,124 @@ public class ChunkedOutputStream extends OutputStream {
         addTaint(bufferToAppend[0]);
         addTaint(off);
         addTaint(len);
-        // ---------- Original Method ----------
-        //this.out.writeLine(Integer.toHexString(this.cachePosition + len));
-        //this.out.write(this.cache, 0, this.cachePosition);
-        //this.out.write(bufferToAppend, off, len);
-        //this.out.writeLine("");
-        //this.cachePosition = 0;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.742 -0400", hash_original_method = "967E1BC0792D48B7189E3B566BF7EE9B", hash_generated_method = "A8D8CA5274DD64B5F9C5A1D621BA437B")
     protected void writeClosingChunk() throws IOException {
         this.out.writeLine("0");
         this.out.writeLine("");
-        // ---------- Original Method ----------
-        //this.out.writeLine("0");
-        //this.out.writeLine("");
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.742 -0400", hash_original_method = "48C91C3E7A4F39D8E60BF0ABE327AC31", hash_generated_method = "DEB456D23D0E980E4DFA059CC626C2A3")
     public void finish() throws IOException {
         {
             flushCache();
             writeClosingChunk();
             this.wroteLastChunk = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!this.wroteLastChunk) {
-            //flushCache();
-            //writeClosingChunk();
-            //this.wroteLastChunk = true;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.743 -0400", hash_original_method = "97963AB3B21DB4797CA6C19C718B8A38", hash_generated_method = "EF2C7269B1A4D3689E68893F77999E09")
     public void write(int b) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Attempted write to closed stream.");
-        } //End block
+        } 
         this.cache[this.cachePosition] = (byte) b;
         flushCache();
-        // ---------- Original Method ----------
-        //if (this.closed) {
-            //throw new IOException("Attempted write to closed stream.");
-        //}
-        //this.cache[this.cachePosition] = (byte) b;
-        //this.cachePosition++;
-        //if (this.cachePosition == this.cache.length) flushCache();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.743 -0400", hash_original_method = "3A39FD94F4678FF92F02222292608085", hash_generated_method = "7FD7B6C92E3CD9979BB6014E6C5DB9BD")
     public void write(byte b[]) throws IOException {
         write(b, 0, b.length);
         addTaint(b[0]);
-        // ---------- Original Method ----------
-        //write(b, 0, b.length);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.743 -0400", hash_original_method = "CCAB33DDE1A6D08280EC0BE0610A6B79", hash_generated_method = "1A7913C354D40574B6E9868550B3D211")
     public void write(byte src[], int off, int len) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Attempted write to closed stream.");
-        } //End block
+        } 
         {
             flushCacheWithAppend(src, off, len);
-        } //End block
+        } 
         {
             System.arraycopy(src, off, cache, this.cachePosition, len);
             this.cachePosition += len;
-        } //End block
+        } 
         addTaint(src[0]);
         addTaint(off);
-        // ---------- Original Method ----------
-        //if (this.closed) {
-            //throw new IOException("Attempted write to closed stream.");
-        //}
-        //if (len >= this.cache.length - this.cachePosition) {
-            //flushCacheWithAppend(src, off, len);
-        //} else {
-            //System.arraycopy(src, off, cache, this.cachePosition, len);
-            //this.cachePosition += len;
-        //}
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.744 -0400", hash_original_method = "1D035E07BE479B8A909681E6BF90CFBD", hash_generated_method = "A492F731C1F84352887E9BB507A040A1")
     public void flush() throws IOException {
         flushCache();
         this.out.flush();
-        // ---------- Original Method ----------
-        //flushCache();
-        //this.out.flush();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.744 -0400", hash_original_method = "E495FD5BB343CF99481A29E811E92BD2", hash_generated_method = "9153B3379D11BB22EA2E3DB06B85A5DD")
     public void close() throws IOException {
         {
             this.closed = true;
             finish();
             this.out.flush();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!this.closed) {
-            //this.closed = true;
-            //finish();
-            //this.out.flush();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     

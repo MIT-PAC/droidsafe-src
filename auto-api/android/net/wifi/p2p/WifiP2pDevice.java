@@ -1,11 +1,11 @@
 package android.net.wifi.p2p;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcelable;
 import android.os.Parcel;
@@ -43,7 +43,7 @@ public class WifiP2pDevice implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.684 -0400", hash_original_method = "6DEE1BC764FD2CB933A4912269652401", hash_generated_method = "F64008BCEC449AEC52DED02A9FF6F441")
     public  WifiP2pDevice() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -52,10 +52,10 @@ public class WifiP2pDevice implements Parcelable {
         String[] tokens = string.split(" ");
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Malformed supplicant event");
-        } //End block
+        } 
         {
             deviceAddress = string;
-        } //End block
+        } 
         {
             String token = tokens[0];
             {
@@ -64,48 +64,48 @@ public class WifiP2pDevice implements Parcelable {
                     boolean var8AC9DB9DC429149EDA79109543592BA6_1721646771 = (nameValue[0].equals("p2p_dev_addr"));
                     {
                         deviceAddress = nameValue[1];
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var0E731094D1437FC30119369BCBB0A589_1929714630 = (nameValue[0].equals("pri_dev_type"));
                     {
                         primaryDeviceType = nameValue[1];
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var09B981DCA6D84DEB8CD275F9C5F3EDB0_576251349 = (nameValue[0].equals("name"));
                     {
                         deviceName = trimQuotes(nameValue[1]);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var924CEDDD1099FF99F1FC46ADD3D9A1D8_2000847829 = (nameValue[0].equals("config_methods"));
                     {
                         wpsConfigMethodsSupported = parseHex(nameValue[1]);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var9063703FB99A098E2A9B6A2DA9A20F55_905864408 = (nameValue[0].equals("dev_capab"));
                     {
                         deviceCapability = parseHex(nameValue[1]);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var9D6445E80ABE9386BFD88F7AE226586D_1178308417 = (nameValue[0].equals("group_capab"));
                     {
                         groupCapability = parseHex(nameValue[1]);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var4E8A7E1B22B5D7A2E828A95A82927AD6_1814383344 = (tokens[0].startsWith("P2P-DEVICE-FOUND"));
             {
                 status = AVAILABLE;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -121,19 +121,19 @@ public class WifiP2pDevice implements Parcelable {
             deviceCapability = source.deviceCapability;
             groupCapability = source.groupCapability;
             status = source.status;
-        } //End block
-        // ---------- Original Method ----------
-        //if (source != null) {
-            //deviceName = source.deviceName;
-            //deviceAddress = source.deviceAddress;
-            //interfaceAddress = source.interfaceAddress;
-            //primaryDeviceType = source.primaryDeviceType;
-            //secondaryDeviceType = source.secondaryDeviceType;
-            //wpsConfigMethodsSupported = source.wpsConfigMethodsSupported;
-            //deviceCapability = source.deviceCapability;
-            //groupCapability = source.groupCapability;
-            //status = source.status;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -141,8 +141,8 @@ public class WifiP2pDevice implements Parcelable {
     public boolean wpsPbcSupported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1130737943 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1130737943;
-        // ---------- Original Method ----------
-        //return (wpsConfigMethodsSupported & WPS_CONFIG_PUSHBUTTON) != 0;
+        
+        
     }
 
     
@@ -150,8 +150,8 @@ public class WifiP2pDevice implements Parcelable {
     public boolean wpsKeypadSupported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1013234801 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1013234801;
-        // ---------- Original Method ----------
-        //return (wpsConfigMethodsSupported & WPS_CONFIG_KEYPAD) != 0;
+        
+        
     }
 
     
@@ -159,8 +159,8 @@ public class WifiP2pDevice implements Parcelable {
     public boolean wpsDisplaySupported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1221204241 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1221204241;
-        // ---------- Original Method ----------
-        //return (wpsConfigMethodsSupported & WPS_CONFIG_DISPLAY) != 0;
+        
+        
     }
 
     
@@ -168,8 +168,8 @@ public class WifiP2pDevice implements Parcelable {
     public boolean isServiceDiscoveryCapable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_752757843 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_752757843;
-        // ---------- Original Method ----------
-        //return (deviceCapability & DEVICE_CAPAB_SERVICE_DISCOVERY) != 0;
+        
+        
     }
 
     
@@ -177,11 +177,12 @@ public class WifiP2pDevice implements Parcelable {
     public boolean isGroupOwner() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2074801762 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2074801762;
-        // ---------- Original Method ----------
-        //return (groupCapability & GROUP_CAPAB_GROUP_OWNER) != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.690 -0400", hash_original_method = "09392A3C152DA1725DCCBD5DEBB248C2", hash_generated_method = "52B28DA45371B83B58C0F38E032F251C")
     @Override
     public boolean equals(Object obj) {
@@ -190,20 +191,21 @@ public class WifiP2pDevice implements Parcelable {
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_354106661 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_354106661;
-        // ---------- Original Method ----------
-        //if (this == obj) return true;
-        //if (!(obj instanceof WifiP2pDevice)) return false;
-        //WifiP2pDevice other = (WifiP2pDevice) obj;
-        //if (other == null || other.deviceAddress == null) {
-            //return (deviceAddress == null);
-        //}
-        //return other.deviceAddress.equals(deviceAddress);
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.691 -0400", hash_original_method = "016D59A2B811BA8203F4683B5513F2D5", hash_generated_method = "626D1B20EBB234A403EB76BCD80AFC1C")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1259349350 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1259349350 = null; 
         StringBuffer sbuf = new StringBuffer();
         sbuf.append("Device: ").append(deviceName);
         sbuf.append("\n deviceAddress: ").append(deviceAddress);
@@ -215,20 +217,20 @@ public class WifiP2pDevice implements Parcelable {
         sbuf.append("\n devcapab: ").append(deviceCapability);
         sbuf.append("\n status: ").append(status);
         varB4EAC82CA7396A68D541C85D26508E83_1259349350 = sbuf.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1259349350.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1259349350.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1259349350;
-        // ---------- Original Method ----------
-        //StringBuffer sbuf = new StringBuffer();
-        //sbuf.append("Device: ").append(deviceName);
-        //sbuf.append("\n deviceAddress: ").append(deviceAddress);
-        //sbuf.append("\n interfaceAddress: ").append(interfaceAddress);
-        //sbuf.append("\n primary type: ").append(primaryDeviceType);
-        //sbuf.append("\n secondary type: ").append(secondaryDeviceType);
-        //sbuf.append("\n wps: ").append(wpsConfigMethodsSupported);
-        //sbuf.append("\n grpcapab: ").append(groupCapability);
-        //sbuf.append("\n devcapab: ").append(deviceCapability);
-        //sbuf.append("\n status: ").append(status);
-        //return sbuf.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -236,11 +238,12 @@ public class WifiP2pDevice implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1871971323 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1871971323;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.692 -0400", hash_original_method = "F1F1C1D05E28ABD7E03ACA6C9259AC2F", hash_generated_method = "4338B9F77A063F8BEA4A8867424D1460")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(deviceName);
@@ -254,52 +257,54 @@ public class WifiP2pDevice implements Parcelable {
         dest.writeInt(status);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(deviceName);
-        //dest.writeString(deviceAddress);
-        //dest.writeString(interfaceAddress);
-        //dest.writeString(primaryDeviceType);
-        //dest.writeString(secondaryDeviceType);
-        //dest.writeInt(wpsConfigMethodsSupported);
-        //dest.writeInt(deviceCapability);
-        //dest.writeInt(groupCapability);
-        //dest.writeInt(status);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.693 -0400", hash_original_method = "81EACEB4EB0E2420630EBFC84E59B2A4", hash_generated_method = "9A1700A059CFF99A20257F09B26850FC")
     private String trimQuotes(String str) {
-        String varB4EAC82CA7396A68D541C85D26508E83_380327901 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_651949190 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_380327901 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_651949190 = null; 
         str = str.trim();
         {
             boolean varCCC98BB190CD9DF38348CFC1F7E10DC7_236991470 = (str.startsWith("'") && str.endsWith("'"));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_380327901 = str.substring(1, str.length()-1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_651949190 = str;
         addTaint(str.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_872615522; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_872615522; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_872615522 = varB4EAC82CA7396A68D541C85D26508E83_380327901;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_872615522 = varB4EAC82CA7396A68D541C85D26508E83_651949190;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_872615522.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_872615522.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_872615522;
-        // ---------- Original Method ----------
-        //str = str.trim();
-        //if (str.startsWith("'") && str.endsWith("'")) {
-            //return str.substring(1, str.length()-1);
-        //}
-        //return str;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.693 -0400", hash_original_method = "C0F4185566F115FC2220CE409C454DF3", hash_generated_method = "5A316540028538EE7E7B71BB8F4E9E0F")
     private int parseHex(String hexString) {
         int num = 0;
@@ -307,28 +312,28 @@ public class WifiP2pDevice implements Parcelable {
             boolean var67CDF86B1EA52DCF199AB47995A915FB_1645802480 = (hexString.startsWith("0x") || hexString.startsWith("0X"));
             {
                 hexString = hexString.substring(2);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             num = Integer.parseInt(hexString, 16);
-        } //End block
+        } 
         catch (NumberFormatException e)
         { }
         addTaint(hexString.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2079234067 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2079234067;
-        // ---------- Original Method ----------
-        //int num = 0;
-        //if (hexString.startsWith("0x") || hexString.startsWith("0X")) {
-            //hexString = hexString.substring(2);
-        //}
-        //try {
-            //num = Integer.parseInt(hexString, 16);
-        //} catch(NumberFormatException e) {
-            //Log.e(TAG, "Failed to parse hex string " + hexString);
-        //}
-        //return num;
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -420,7 +425,7 @@ public class WifiP2pDevice implements Parcelable {
                 return new WifiP2pDevice[size];
             }
         };
-    // orphaned legacy method
+    
     public WifiP2pDevice createFromParcel(Parcel in) {
                 WifiP2pDevice device = new WifiP2pDevice();
                 device.deviceName = in.readString();
@@ -435,7 +440,7 @@ public class WifiP2pDevice implements Parcelable {
                 return device;
             }
     
-    // orphaned legacy method
+    
     public WifiP2pDevice[] newArray(int size) {
                 return new WifiP2pDevice[size];
             }

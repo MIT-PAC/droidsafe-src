@@ -1,11 +1,11 @@
 package android.support.v4.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.Activity;
 import android.os.Bundle;
@@ -22,7 +22,7 @@ public abstract class LoaderManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.118 -0400", hash_original_method = "921B150ED82AB2739CD0194A062DB550", hash_generated_method = "921B150ED82AB2739CD0194A062DB550")
     public LoaderManager ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -52,8 +52,8 @@ public abstract class LoaderManager {
     public boolean hasRunningLoaders() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_343675916 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_343675916;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -101,25 +101,25 @@ class LoaderManagerImpl extends LoaderManager {
         mWho = who;
         mActivity = activity;
         mStarted = started;
-        // ---------- Original Method ----------
-        //mWho = who;
-        //mActivity = activity;
-        //mStarted = started;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.120 -0400", hash_original_method = "39148A68E08215CAB837BA67F40FAA62", hash_generated_method = "FD7298AAA1462E00D71BDFDBAB50C6A6")
      void updateActivity(FragmentActivity activity) {
         mActivity = activity;
-        // ---------- Original Method ----------
-        //mActivity = activity;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.121 -0400", hash_original_method = "31DF1B394D718AFF7F9D42E1B24A1D9F", hash_generated_method = "6E7C5D7F71D911222D981FB0E9ECD4E6")
     private LoaderInfo createLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<Object> callback) {
-        LoaderInfo varB4EAC82CA7396A68D541C85D26508E83_2142651357 = null; //Variable for return #1
+        LoaderInfo varB4EAC82CA7396A68D541C85D26508E83_2142651357 = null; 
         LoaderInfo info = new LoaderInfo(id, args,  (LoaderManager.LoaderCallbacks<Object>)callback);
         Loader<Object> loader = callback.onCreateLoader(id, args);
         info.mLoader = (Loader<Object>)loader;
@@ -127,45 +127,45 @@ class LoaderManagerImpl extends LoaderManager {
         addTaint(id);
         addTaint(args.getTaint());
         addTaint(callback.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2142651357.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2142651357.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2142651357;
-        // ---------- Original Method ----------
-        //LoaderInfo info = new LoaderInfo(id, args,  (LoaderManager.LoaderCallbacks<Object>)callback);
-        //Loader<Object> loader = callback.onCreateLoader(id, args);
-        //info.mLoader = (Loader<Object>)loader;
-        //return info;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.122 -0400", hash_original_method = "D2BDC915DCB9CB038EA75210255617B9", hash_generated_method = "644840DC5B314E77BF544FF67E5670ED")
     private LoaderInfo createAndInstallLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<Object> callback) {
-        LoaderInfo varB4EAC82CA7396A68D541C85D26508E83_181717668 = null; //Variable for return #1
+        LoaderInfo varB4EAC82CA7396A68D541C85D26508E83_181717668 = null; 
         try 
         {
             mCreatingLoader = true;
             LoaderInfo info = createLoader(id, args, callback);
             installLoader(info);
             varB4EAC82CA7396A68D541C85D26508E83_181717668 = info;
-        } //End block
+        } 
         finally 
         {
             mCreatingLoader = false;
-        } //End block
+        } 
         addTaint(id);
         addTaint(args.getTaint());
         addTaint(callback.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_181717668.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_181717668.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_181717668;
-        // ---------- Original Method ----------
-        //try {
-            //mCreatingLoader = true;
-            //LoaderInfo info = createLoader(id, args, callback);
-            //installLoader(info);
-            //return info;
-        //} finally {
-            //mCreatingLoader = false;
-        //}
+        
+        
+            
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -174,67 +174,67 @@ class LoaderManagerImpl extends LoaderManager {
         mLoaders.put(info.mId, info);
         {
             info.start();
-        } //End block
+        } 
         addTaint(info.getTaint());
-        // ---------- Original Method ----------
-        //mLoaders.put(info.mId, info);
-        //if (mStarted) {
-            //info.start();
-        //}
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.123 -0400", hash_original_method = "E04CC49F77F654C9D0B54FC39C94F2D8", hash_generated_method = "D5AB33F56213BC8DCD16A1EE326B487A")
     @SuppressWarnings("unchecked")
     public <D> Loader<D> initLoader(int id, Bundle args, LoaderManager.LoaderCallbacks<D> callback) {
-        Loader<D> varB4EAC82CA7396A68D541C85D26508E83_104373116 = null; //Variable for return #1
+        Loader<D> varB4EAC82CA7396A68D541C85D26508E83_104373116 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Called while creating a loader");
-        } //End block
+        } 
         LoaderInfo info = mLoaders.get(id);
         {
             info = createAndInstallLoader(id, args,  (LoaderManager.LoaderCallbacks<Object>)callback);
-        } //End block
+        } 
         {
             info.mCallbacks = (LoaderManager.LoaderCallbacks<Object>)callback;
-        } //End block
+        } 
         {
             info.callOnLoadFinished(info.mLoader, info.mData);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_104373116 = (Loader<D>)info.mLoader;
         addTaint(id);
         addTaint(args.getTaint());
         addTaint(callback.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_104373116.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_104373116.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_104373116;
-        // ---------- Original Method ----------
-        //if (mCreatingLoader) {
-            //throw new IllegalStateException("Called while creating a loader");
-        //}
-        //LoaderInfo info = mLoaders.get(id);
-        //if (DEBUG) Log.v(TAG, "initLoader in " + this + ": args=" + args);
-        //if (info == null) {
-            //info = createAndInstallLoader(id, args,  (LoaderManager.LoaderCallbacks<Object>)callback);
-            //if (DEBUG) Log.v(TAG, "  Created new loader " + info);
-        //} else {
-            //if (DEBUG) Log.v(TAG, "  Re-using existing loader " + info);
-            //info.mCallbacks = (LoaderManager.LoaderCallbacks<Object>)callback;
-        //}
-        //if (info.mHaveData && mStarted) {
-            //info.callOnLoadFinished(info.mLoader, info.mData);
-        //}
-        //return (Loader<D>)info.mLoader;
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+            
+            
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.125 -0400", hash_original_method = "54BE8D79606278ABB814838D7A2BEC9C", hash_generated_method = "106B90568739E78F39F900D7A5EE9936")
     @SuppressWarnings("unchecked")
     public <D> Loader<D> restartLoader(int id, Bundle args, LoaderManager.LoaderCallbacks<D> callback) {
-        Loader<D> varB4EAC82CA7396A68D541C85D26508E83_1250925196 = null; //Variable for return #1
-        Loader<D> varB4EAC82CA7396A68D541C85D26508E83_962876979 = null; //Variable for return #2
+        Loader<D> varB4EAC82CA7396A68D541C85D26508E83_1250925196 = null; 
+        Loader<D> varB4EAC82CA7396A68D541C85D26508E83_962876979 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Called while creating a loader");
-        } //End block
+        } 
         LoaderInfo info = mLoaders.get(id);
         {
             LoaderInfo inactive = mInactiveLoaders.get(id);
@@ -244,46 +244,46 @@ class LoaderManagerImpl extends LoaderManager {
                     inactive.destroy();
                     info.mLoader.abandon();
                     mInactiveLoaders.put(id, info);
-                } //End block
+                } 
                 {
                     {
                         mLoaders.put(id, null);
                         info.destroy();
-                    } //End block
+                    } 
                     {
                         {
                             info.mPendingLoader.destroy();
                             info.mPendingLoader = null;
-                        } //End block
+                        } 
                         info.mPendingLoader = createLoader(id, args, 
                                 (LoaderManager.LoaderCallbacks<Object>)callback);
                         varB4EAC82CA7396A68D541C85D26508E83_1250925196 = (Loader<D>)info.mPendingLoader.mLoader;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             {
                 info.mLoader.abandon();
                 mInactiveLoaders.put(id, info);
-            } //End block
-        } //End block
+            } 
+        } 
         info = createAndInstallLoader(id, args,  (LoaderManager.LoaderCallbacks<Object>)callback);
         varB4EAC82CA7396A68D541C85D26508E83_962876979 = (Loader<D>)info.mLoader;
         addTaint(id);
         addTaint(args.getTaint());
         addTaint(callback.getTaint());
-        Loader<D> varA7E53CE21691AB073D9660D615818899_1192983966; //Final return value
+        Loader<D> varA7E53CE21691AB073D9660D615818899_1192983966; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1192983966 = varB4EAC82CA7396A68D541C85D26508E83_1250925196;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1192983966 = varB4EAC82CA7396A68D541C85D26508E83_962876979;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1192983966.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1192983966.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1192983966;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -291,93 +291,93 @@ class LoaderManagerImpl extends LoaderManager {
     public void destroyLoader(int id) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Called while creating a loader");
-        } //End block
+        } 
         int idx = mLoaders.indexOfKey(id);
         {
             LoaderInfo info = mLoaders.valueAt(idx);
             mLoaders.removeAt(idx);
             info.destroy();
-        } //End block
+        } 
         idx = mInactiveLoaders.indexOfKey(id);
         {
             LoaderInfo info = mInactiveLoaders.valueAt(idx);
             mInactiveLoaders.removeAt(idx);
             info.destroy();
-        } //End block
+        } 
         {
             boolean varAA85D886B05D83FC0ED3196B796619BB_642763107 = (mActivity != null && !hasRunningLoaders());
             {
                 mActivity.mFragments.startPendingDeferredFragments();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(id);
-        // ---------- Original Method ----------
-        //if (mCreatingLoader) {
-            //throw new IllegalStateException("Called while creating a loader");
-        //}
-        //if (DEBUG) Log.v(TAG, "destroyLoader in " + this + " of " + id);
-        //int idx = mLoaders.indexOfKey(id);
-        //if (idx >= 0) {
-            //LoaderInfo info = mLoaders.valueAt(idx);
-            //mLoaders.removeAt(idx);
-            //info.destroy();
-        //}
-        //idx = mInactiveLoaders.indexOfKey(id);
-        //if (idx >= 0) {
-            //LoaderInfo info = mInactiveLoaders.valueAt(idx);
-            //mInactiveLoaders.removeAt(idx);
-            //info.destroy();
-        //}
-        //if (mActivity != null && !hasRunningLoaders()) {
-            //mActivity.mFragments.startPendingDeferredFragments();
-        //}
+        
+        
+            
+        
+        
+        
+        
+            
+            
+            
+        
+        
+        
+            
+            
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.126 -0400", hash_original_method = "01DF8472A2697DF2BC7C6D580583CD7C", hash_generated_method = "C94B789A1F65799597E23DD0200EE98D")
     @SuppressWarnings("unchecked")
     public <D> Loader<D> getLoader(int id) {
-        Loader<D> varB4EAC82CA7396A68D541C85D26508E83_261613159 = null; //Variable for return #1
-        Loader<D> varB4EAC82CA7396A68D541C85D26508E83_278716477 = null; //Variable for return #2
-        Loader<D> varB4EAC82CA7396A68D541C85D26508E83_906690783 = null; //Variable for return #3
+        Loader<D> varB4EAC82CA7396A68D541C85D26508E83_261613159 = null; 
+        Loader<D> varB4EAC82CA7396A68D541C85D26508E83_278716477 = null; 
+        Loader<D> varB4EAC82CA7396A68D541C85D26508E83_906690783 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Called while creating a loader");
-        } //End block
+        } 
         LoaderInfo loaderInfo = mLoaders.get(id);
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_261613159 = (Loader<D>)loaderInfo.mPendingLoader.mLoader;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_278716477 = (Loader<D>)loaderInfo.mLoader;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_906690783 = null;
         addTaint(id);
-        Loader<D> varA7E53CE21691AB073D9660D615818899_394061936; //Final return value
+        Loader<D> varA7E53CE21691AB073D9660D615818899_394061936; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_394061936 = varB4EAC82CA7396A68D541C85D26508E83_261613159;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_394061936 = varB4EAC82CA7396A68D541C85D26508E83_278716477;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_394061936 = varB4EAC82CA7396A68D541C85D26508E83_906690783;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_394061936.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_394061936.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_394061936;
-        // ---------- Original Method ----------
-        //if (mCreatingLoader) {
-            //throw new IllegalStateException("Called while creating a loader");
-        //}
-        //LoaderInfo loaderInfo = mLoaders.get(id);
-        //if (loaderInfo != null) {
-            //if (loaderInfo.mPendingLoader != null) {
-                //return (Loader<D>)loaderInfo.mPendingLoader.mLoader;
-            //}
-            //return (Loader<D>)loaderInfo.mLoader;
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -386,26 +386,26 @@ class LoaderManagerImpl extends LoaderManager {
         {
             RuntimeException e = new RuntimeException("here");
             e.fillInStackTrace();
-        } //End block
+        } 
         mStarted = true;
         {
             int i = mLoaders.size()-1;
             {
                 mLoaders.valueAt(i).start();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "Starting in " + this);
-        //if (mStarted) {
-            //RuntimeException e = new RuntimeException("here");
-            //e.fillInStackTrace();
-            //Log.w(TAG, "Called doStart when already started: " + this, e);
-            //return;
-        //}
-        //mStarted = true;
-        //for (int i = mLoaders.size()-1; i >= 0; i--) {
-            //mLoaders.valueAt(i).start();
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -414,26 +414,26 @@ class LoaderManagerImpl extends LoaderManager {
         {
             RuntimeException e = new RuntimeException("here");
             e.fillInStackTrace();
-        } //End block
+        } 
         {
             int i = mLoaders.size()-1;
             {
                 mLoaders.valueAt(i).stop();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mStarted = false;
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "Stopping in " + this);
-        //if (!mStarted) {
-            //RuntimeException e = new RuntimeException("here");
-            //e.fillInStackTrace();
-            //Log.w(TAG, "Called doStop when not started: " + this, e);
-            //return;
-        //}
-        //for (int i = mLoaders.size()-1; i >= 0; i--) {
-            //mLoaders.valueAt(i).stop();
-        //}
-        //mStarted = false;
+        
+        
+        
+            
+            
+            
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -442,28 +442,28 @@ class LoaderManagerImpl extends LoaderManager {
         {
             RuntimeException e = new RuntimeException("here");
             e.fillInStackTrace();
-        } //End block
+        } 
         mRetaining = true;
         mStarted = false;
         {
             int i = mLoaders.size()-1;
             {
                 mLoaders.valueAt(i).retain();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "Retaining in " + this);
-        //if (!mStarted) {
-            //RuntimeException e = new RuntimeException("here");
-            //e.fillInStackTrace();
-            //Log.w(TAG, "Called doRetain when not started: " + this, e);
-            //return;
-        //}
-        //mRetaining = true;
-        //mStarted = false;
-        //for (int i = mLoaders.size()-1; i >= 0; i--) {
-            //mLoaders.valueAt(i).retain();
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -475,17 +475,17 @@ class LoaderManagerImpl extends LoaderManager {
                 int i = mLoaders.size()-1;
                 {
                     mLoaders.valueAt(i).finishRetain();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //if (mRetaining) {
-            //if (DEBUG) Log.v(TAG, "Finished Retaining in " + this);
-            //mRetaining = false;
-            //for (int i = mLoaders.size()-1; i >= 0; i--) {
-                //mLoaders.valueAt(i).finishRetain();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -495,12 +495,12 @@ class LoaderManagerImpl extends LoaderManager {
             int i = mLoaders.size()-1;
             {
                 mLoaders.valueAt(i).mReportNextStart = true;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //for (int i = mLoaders.size()-1; i >= 0; i--) {
-            //mLoaders.valueAt(i).mReportNextStart = true;
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
@@ -510,12 +510,12 @@ class LoaderManagerImpl extends LoaderManager {
             int i = mLoaders.size()-1;
             {
                 mLoaders.valueAt(i).reportStart();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //for (int i = mLoaders.size()-1; i >= 0; i--) {
-            //mLoaders.valueAt(i).reportStart();
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
@@ -526,37 +526,37 @@ class LoaderManagerImpl extends LoaderManager {
                 int i = mLoaders.size()-1;
                 {
                     mLoaders.valueAt(i).destroy();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mLoaders.clear();
-        } //End block
+        } 
         {
             int i = mInactiveLoaders.size()-1;
             {
                 mInactiveLoaders.valueAt(i).destroy();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mInactiveLoaders.clear();
-        // ---------- Original Method ----------
-        //if (!mRetaining) {
-            //if (DEBUG) Log.v(TAG, "Destroying Active in " + this);
-            //for (int i = mLoaders.size()-1; i >= 0; i--) {
-                //mLoaders.valueAt(i).destroy();
-            //}
-            //mLoaders.clear();
-        //}
-        //if (DEBUG) Log.v(TAG, "Destroying Inactive in " + this);
-        //for (int i = mInactiveLoaders.size()-1; i >= 0; i--) {
-            //mInactiveLoaders.valueAt(i).destroy();
-        //}
-        //mInactiveLoaders.clear();
+        
+        
+            
+            
+                
+            
+            
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.130 -0400", hash_original_method = "A45A0DF363CA3802688DC012A3593E66", hash_generated_method = "15AF77F9951AF3517E3FDC198269D9A0")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1751089937 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1751089937 = null; 
         StringBuilder sb = new StringBuilder(128);
         sb.append("LoaderManager{");
         sb.append(Integer.toHexString(System.identityHashCode(this)));
@@ -564,16 +564,16 @@ class LoaderManagerImpl extends LoaderManager {
         DebugUtils.buildShortClassTag(mActivity, sb);
         sb.append("}}");
         varB4EAC82CA7396A68D541C85D26508E83_1751089937 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1751089937.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1751089937.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1751089937;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(128);
-        //sb.append("LoaderManager{");
-        //sb.append(Integer.toHexString(System.identityHashCode(this)));
-        //sb.append(" in ");
-        //DebugUtils.buildShortClassTag(mActivity, sb);
-        //sb.append("}}");
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -597,10 +597,10 @@ class LoaderManagerImpl extends LoaderManager {
                         writer.print(": ");
                         writer.println(li.toString());
                         li.dump(innerPrefix, fd, writer, args);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var282C5CDAE1350DAB1D040F1744D3C286_455710427 = (mInactiveLoaders.size() > 0);
             {
@@ -618,16 +618,16 @@ class LoaderManagerImpl extends LoaderManager {
                         writer.print(": ");
                         writer.println(li.toString());
                         li.dump(innerPrefix, fd, writer, args);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(prefix.getTaint());
         addTaint(fd.getTaint());
         addTaint(writer.getTaint());
         addTaint(args[0].getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -641,18 +641,18 @@ class LoaderManagerImpl extends LoaderManager {
             {
                 final LoaderInfo li = mLoaders.valueAt(i);
                 loadersRunning |= li.mStarted && !li.mDeliveredData;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1475434134 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1475434134;
-        // ---------- Original Method ----------
-        //boolean loadersRunning = false;
-        //final int count = mLoaders.size();
-        //for (int i = 0; i < count; i++) {
-            //final LoaderInfo li = mLoaders.valueAt(i);
-            //loadersRunning |= li.mStarted && !li.mDeliveredData;
-        //}
-        //return loadersRunning;
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -705,10 +705,10 @@ class LoaderManagerImpl extends LoaderManager {
             mId = id;
             mArgs = args;
             mCallbacks = callbacks;
-            // ---------- Original Method ----------
-            //mId = id;
-            //mArgs = args;
-            //mCallbacks = callbacks;
+            
+            
+            
+            
         }
 
         
@@ -716,11 +716,11 @@ class LoaderManagerImpl extends LoaderManager {
          void start() {
             {
                 mStarted = true;
-            } //End block
+            } 
             mStarted = true;
             {
                 mLoader = mCallbacks.onCreateLoader(mId, mArgs);
-            } //End block
+            } 
             {
                 {
                     boolean varC59DA0641E3D9EFCA2CBD395510230E2_785926468 = (mLoader.getClass().isMemberClass()
@@ -729,16 +729,16 @@ class LoaderManagerImpl extends LoaderManager {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                             "Object returned from onCreateLoader must not be a non-static inner member class: "
                             + mLoader);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     mLoader.registerListener(mId, this);
                     mListenerRegistered = true;
-                } //End block
+                } 
                 mLoader.startLoading();
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -748,12 +748,12 @@ class LoaderManagerImpl extends LoaderManager {
             mRetainingStarted = mStarted;
             mStarted = false;
             mCallbacks = null;
-            // ---------- Original Method ----------
-            //if (DEBUG) Log.v(TAG, "  Retaining: " + this);
-            //mRetaining = true;
-            //mRetainingStarted = mStarted;
-            //mStarted = false;
-            //mCallbacks = null;
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -764,25 +764,25 @@ class LoaderManagerImpl extends LoaderManager {
                 {
                     {
                         stop();
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             {
                 callOnLoadFinished(mLoader, mData);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mRetaining) {
-                //if (DEBUG) Log.v(TAG, "  Finished Retaining: " + this);
-                //mRetaining = false;
-                //if (mStarted != mRetainingStarted) {
-                    //if (!mStarted) {
-                        //stop();
-                    //}
-                //}
-            //}
-            //if (mStarted && mHaveData && !mReportNextStart) {
-                //callOnLoadFinished(mLoader, mData);
-            //}
+            } 
+            
+            
+                
+                
+                
+                    
+                        
+                    
+                
+            
+            
+                
+            
         }
 
         
@@ -793,18 +793,18 @@ class LoaderManagerImpl extends LoaderManager {
                     mReportNextStart = false;
                     {
                         callOnLoadFinished(mLoader, mData);
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if (mStarted) {
-                //if (mReportNextStart) {
-                    //mReportNextStart = false;
-                    //if (mHaveData) {
-                        //callOnLoadFinished(mLoader, mData);
-                    //}
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+                
+                    
+                    
+                        
+                    
+                
+            
         }
 
         
@@ -816,18 +816,18 @@ class LoaderManagerImpl extends LoaderManager {
                     mListenerRegistered = false;
                     mLoader.unregisterListener(this);
                     mLoader.stopLoading();
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if (DEBUG) Log.v(TAG, "  Stopping: " + this);
-            //mStarted = false;
-            //if (!mRetaining) {
-                //if (mLoader != null && mListenerRegistered) {
-                    //mListenerRegistered = false;
-                    //mLoader.unregisterListener(this);
-                    //mLoader.stopLoading();
-                //}
-            //}
+                } 
+            } 
+            
+            
+            
+            
+                
+                    
+                    
+                    
+                
+            
         }
 
         
@@ -841,18 +841,18 @@ class LoaderManagerImpl extends LoaderManager {
                 {
                     lastBecause = mActivity.mFragments.mNoTransactionsBecause;
                     mActivity.mFragments.mNoTransactionsBecause = "onLoaderReset";
-                } //End block
+                } 
                 try 
                 {
                     mCallbacks.onLoaderReset(mLoader);
-                } //End block
+                } 
                 finally 
                 {
                     {
                         mActivity.mFragments.mNoTransactionsBecause = lastBecause;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             mCallbacks = null;
             mData = null;
             mHaveData = false;
@@ -860,38 +860,38 @@ class LoaderManagerImpl extends LoaderManager {
                 {
                     mListenerRegistered = false;
                     mLoader.unregisterListener(this);
-                } //End block
+                } 
                 mLoader.reset();
-            } //End block
+            } 
             {
                 mPendingLoader.destroy();
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.137 -0400", hash_original_method = "5D6E68340AACAB27821B5B5851C94699", hash_generated_method = "B425FF8053424F3261686BE7161173E4")
         @Override
         public void onLoadComplete(Loader<Object> loader, Object data) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean var333CD009E2691114D1D942AFA1A276F0_1696759826 = (mLoaders.get(mId) != this);
-            } //End collapsed parenthetic
+            } 
             LoaderInfo pending = mPendingLoader;
             {
                 mPendingLoader = null;
                 mLoaders.put(mId, null);
                 destroy();
                 installLoader(pending);
-            } //End block
+            } 
             {
                 mData = data;
                 mHaveData = true;
                 {
                     callOnLoadFinished(loader, data);
-                } //End block
-            } //End block
+                } 
+            } 
             LoaderInfo info = mInactiveLoaders.get(mId);
             {
                 boolean var096B903244A3118F8D65EEC99906CE4F_164472542 = (info != null && info != this);
@@ -899,17 +899,17 @@ class LoaderManagerImpl extends LoaderManager {
                     info.mDeliveredData = false;
                     info.destroy();
                     mInactiveLoaders.remove(mId);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var6F7A2F80E7742D15ECC5F8E1556DAF45_95703288 = (mActivity != null && !hasRunningLoaders());
                 {
                     mActivity.mFragments.startPendingDeferredFragments();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(loader.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -920,46 +920,46 @@ class LoaderManagerImpl extends LoaderManager {
                 {
                     lastBecause = mActivity.mFragments.mNoTransactionsBecause;
                     mActivity.mFragments.mNoTransactionsBecause = "onLoadFinished";
-                } //End block
+                } 
                 try 
                 {
                     mCallbacks.onLoadFinished(loader, data);
-                } //End block
+                } 
                 finally 
                 {
                     {
                         mActivity.mFragments.mNoTransactionsBecause = lastBecause;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 mDeliveredData = true;
-            } //End block
+            } 
             addTaint(loader.getTaint());
             addTaint(data.getTaint());
-            // ---------- Original Method ----------
-            //if (mCallbacks != null) {
-                //String lastBecause = null;
-                //if (mActivity != null) {
-                    //lastBecause = mActivity.mFragments.mNoTransactionsBecause;
-                    //mActivity.mFragments.mNoTransactionsBecause = "onLoadFinished";
-                //}
-                //try {
-                    //if (DEBUG) Log.v(TAG, "  onLoadFinished in " + loader + ": "
-                            //+ loader.dataToString(data));
-                    //mCallbacks.onLoadFinished(loader, data);
-                //} finally {
-                    //if (mActivity != null) {
-                        //mActivity.mFragments.mNoTransactionsBecause = lastBecause;
-                    //}
-                //}
-                //mDeliveredData = true;
-            //}
+            
+            
+                
+                
+                    
+                    
+                
+                
+                    
+                            
+                    
+                
+                    
+                        
+                    
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.138 -0400", hash_original_method = "6152E6E73795403DAC53E06540200214", hash_generated_method = "B820032D301E3C55BD088E7A44E7F7D6")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1482217707 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1482217707 = null; 
             StringBuilder sb = new StringBuilder(64);
             sb.append("LoaderInfo{");
             sb.append(Integer.toHexString(System.identityHashCode(this)));
@@ -969,18 +969,18 @@ class LoaderManagerImpl extends LoaderManager {
             DebugUtils.buildShortClassTag(mLoader, sb);
             sb.append("}}");
             varB4EAC82CA7396A68D541C85D26508E83_1482217707 = sb.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1482217707.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1482217707.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1482217707;
-            // ---------- Original Method ----------
-            //StringBuilder sb = new StringBuilder(64);
-            //sb.append("LoaderInfo{");
-            //sb.append(Integer.toHexString(System.identityHashCode(this)));
-            //sb.append(" #");
-            //sb.append(mId);
-            //sb.append(" : ");
-            //DebugUtils.buildShortClassTag(mLoader, sb);
-            //sb.append("}}");
-            //return sb.toString();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -999,7 +999,7 @@ class LoaderManagerImpl extends LoaderManager {
             writer.println(mLoader);
             {
                 mLoader.dump(prefix + "  ", fd, writer, args);
-            } //End block
+            } 
             {
                 writer.print(prefix);
                 writer.print("mHaveData=");
@@ -1009,7 +1009,7 @@ class LoaderManagerImpl extends LoaderManager {
                 writer.print(prefix);
                 writer.print("mData=");
                 writer.println(mData);
-            } //End block
+            } 
             writer.print(prefix);
             writer.print("mStarted=");
             writer.print(mStarted);
@@ -1030,13 +1030,13 @@ class LoaderManagerImpl extends LoaderManager {
                 writer.print(mPendingLoader);
                 writer.println(":");
                 mPendingLoader.dump(prefix + "  ", fd, writer, args);
-            } //End block
+            } 
             addTaint(prefix.getTaint());
             addTaint(fd.getTaint());
             addTaint(writer.getTaint());
             addTaint(args[0].getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

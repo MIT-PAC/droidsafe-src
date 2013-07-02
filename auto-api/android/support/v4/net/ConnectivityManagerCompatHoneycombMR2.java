@@ -1,11 +1,11 @@
 package android.support.v4.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import static android.net.ConnectivityManager.TYPE_BLUETOOTH;
 import static android.net.ConnectivityManager.TYPE_ETHERNET;
@@ -24,11 +24,12 @@ class ConnectivityManagerCompatHoneycombMR2 {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.379 -0400", hash_original_method = "DBB1DDA1EFD9E85310CFFB51074803BD", hash_generated_method = "DBB1DDA1EFD9E85310CFFB51074803BD")
     public ConnectivityManagerCompatHoneycombMR2 ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static boolean isActiveNetworkMetered(ConnectivityManager cm) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isActiveNetworkMetered(ConnectivityManager cm) {
         final NetworkInfo info = cm.getActiveNetworkInfo();
         if (info == null) {
             return true;

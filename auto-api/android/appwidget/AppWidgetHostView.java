@@ -1,11 +1,11 @@
 package android.appwidget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ComponentName;
 import android.content.Context;
@@ -72,7 +72,7 @@ public class AppWidgetHostView extends FrameLayout {
     public  AppWidgetHostView(Context context) {
         this(context, android.R.anim.fade_in, android.R.anim.fade_out);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -84,12 +84,13 @@ public class AppWidgetHostView extends FrameLayout {
         setIsRootNamespace(true);
         addTaint(animationIn);
         addTaint(animationOut);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //setIsRootNamespace(true);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.900 -0400", hash_original_method = "F21DF7E5FB86A76CA26E20C03A95533E", hash_generated_method = "919D741050CBC34FB9F400F60B0E4004")
     public void setAppWidget(int appWidgetId, AppWidgetProviderInfo info) {
         mAppWidgetId = appWidgetId;
@@ -97,17 +98,18 @@ public class AppWidgetHostView extends FrameLayout {
         {
             Rect padding = getDefaultPaddingForWidget(mContext, info.provider, null);
             setPadding(padding.left, padding.top, padding.right, padding.bottom);
-        } //End block
-        // ---------- Original Method ----------
-        //mAppWidgetId = appWidgetId;
-        //mInfo = info;
-        //if (info != null) {
-            //Rect padding = getDefaultPaddingForWidget(mContext, info.provider, null);
-            //setPadding(padding.left, padding.top, padding.right, padding.bottom);
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Rect getDefaultPaddingForWidget(Context context, ComponentName component,
             Rect padding) {
         PackageManager packageManager = context.getPackageManager();
@@ -141,22 +143,23 @@ public class AppWidgetHostView extends FrameLayout {
     public int getAppWidgetId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_209801883 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_209801883;
-        // ---------- Original Method ----------
-        //return mAppWidgetId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.902 -0400", hash_original_method = "FF9792E81F5B9850F94285F82FEF7EB6", hash_generated_method = "195BA25D8FC79B0BBBFBF4011BF4BAEC")
     public AppWidgetProviderInfo getAppWidgetInfo() {
-        AppWidgetProviderInfo varB4EAC82CA7396A68D541C85D26508E83_1360637706 = null; //Variable for return #1
+        AppWidgetProviderInfo varB4EAC82CA7396A68D541C85D26508E83_1360637706 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1360637706 = mInfo;
-        varB4EAC82CA7396A68D541C85D26508E83_1360637706.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1360637706.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1360637706;
-        // ---------- Original Method ----------
-        //return mInfo;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.902 -0400", hash_original_method = "CAED7A09C12E7C14DF8180A45912C5C7", hash_generated_method = "2DA245BA2573FA691CC223B5E41B32C7")
     @Override
     protected void dispatchSaveInstanceState(SparseArray<Parcelable> container) {
@@ -164,24 +167,26 @@ public class AppWidgetHostView extends FrameLayout {
         super.dispatchSaveInstanceState(jail);
         container.put(generateId(), jail);
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //final ParcelableSparseArray jail = new ParcelableSparseArray();
-        //super.dispatchSaveInstanceState(jail);
-        //container.put(generateId(), jail);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.903 -0400", hash_original_method = "11D592545671EB0AE44582AC9EA105B8", hash_generated_method = "D886852F3279245A0E768832E5FF99E0")
     private int generateId() {
         final int id = getId();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_381137832 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_381137832;
-        // ---------- Original Method ----------
-        //final int id = getId();
-        //return id == View.NO_ID ? mAppWidgetId : id;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.904 -0400", hash_original_method = "9249C138593FE1EB2CAEA94EA5A08B6D", hash_generated_method = "9DD5091132390E22876BDEF0677398E7")
     @Override
     protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container) {
@@ -189,35 +194,36 @@ public class AppWidgetHostView extends FrameLayout {
         ParcelableSparseArray jail = null;
         {
             jail = (ParcelableSparseArray) parcelable;
-        } //End block
+        } 
         jail = new ParcelableSparseArray();
         super.dispatchRestoreInstanceState(jail);
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //final Parcelable parcelable = container.get(generateId());
-        //ParcelableSparseArray jail = null;
-        //if (parcelable != null && parcelable instanceof ParcelableSparseArray) {
-            //jail = (ParcelableSparseArray) parcelable;
-        //}
-        //if (jail == null) jail = new ParcelableSparseArray();
-        //super.dispatchRestoreInstanceState(jail);
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.904 -0400", hash_original_method = "C318CB495524FCFBB782D4C68E4F0A8D", hash_generated_method = "15A6E087157DBF5C500B665E59B73257")
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_736297529 = null; //Variable for return #1
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_736297529 = null; 
         Context context;
         context = mRemoteContext;
         context = mContext;
         varB4EAC82CA7396A68D541C85D26508E83_736297529 = new FrameLayout.LayoutParams(context, attrs);
         addTaint(attrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_736297529.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_736297529.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_736297529;
-        // ---------- Original Method ----------
-        //final Context context = mRemoteContext != null ? mRemoteContext : mContext;
-        //return new FrameLayout.LayoutParams(context, attrs);
+        
+        
+        
     }
 
     
@@ -226,13 +232,14 @@ public class AppWidgetHostView extends FrameLayout {
         mInfo = info;
         mViewMode = VIEW_MODE_NOINIT;
         updateAppWidget(null);
-        // ---------- Original Method ----------
-        //mInfo = info;
-        //mViewMode = VIEW_MODE_NOINIT;
-        //updateAppWidget(null);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.906 -0400", hash_original_method = "25975B2F0B8D4567FA791238963D6584", hash_generated_method = "9E75624493D30C84B518D3621DA16DCA")
     public void updateAppWidget(RemoteViews remoteViews) {
         Log.d(TAG, "updateAppWidget called mOld=" + mOld);
@@ -247,19 +254,19 @@ public class AppWidgetHostView extends FrameLayout {
                     try 
                     {
                         mOld = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-                    } //End block
+                    } 
                     catch (OutOfMemoryError e)
                     {
                         mOld = null;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             content = getDefaultView();
             mLayoutId = -1;
             mViewMode = VIEW_MODE_DEFAULT;
-        } //End block
+        } 
         {
             mRemoteContext = getRemoteContext(remoteViews);
             int layoutId = remoteViews.getLayoutId();
@@ -270,46 +277,46 @@ public class AppWidgetHostView extends FrameLayout {
                     content = mView;
                     recycled = true;
                     Log.d(TAG, "was able to recycled existing layout");
-                } //End block
+                } 
                 catch (RuntimeException e)
                 {
                     exception = e;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 try 
                 {
                     content = remoteViews.apply(mContext, this);
                     Log.d(TAG, "had to inflate new layout");
-                } //End block
+                } 
                 catch (RuntimeException e)
                 {
                     exception = e;
-                } //End block
-            } //End block
+                } 
+            } 
             mLayoutId = layoutId;
             mViewMode = VIEW_MODE_CONTENT;
-        } //End block
+        } 
         {
             content = getErrorView();
             mViewMode = VIEW_MODE_ERROR;
-        } //End block
+        } 
         {
             prepareView(content);
             addView(content);
-        } //End block
+        } 
         {
             removeView(mView);
             mView = content;
-        } //End block
+        } 
         {
             {
                 mFadeStartTime = SystemClock.uptimeMillis();
                 invalidate();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -322,69 +329,71 @@ public class AppWidgetHostView extends FrameLayout {
             {
                 BaseAdapter baseAdapter = (BaseAdapter) adapter;
                 baseAdapter.notifyDataSetChanged();
-            } //End block
+            } 
             {
                 ((RemoteAdapterConnectionCallback) adapterView).deferNotifyDataSetChanged();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(viewId);
-        // ---------- Original Method ----------
-        //View v = findViewById(viewId);
-        //if ((v != null) && (v instanceof AdapterView<?>)) {
-            //AdapterView<?> adapterView = (AdapterView<?>) v;
-            //Adapter adapter = adapterView.getAdapter();
-            //if (adapter instanceof BaseAdapter) {
-                //BaseAdapter baseAdapter = (BaseAdapter) adapter;
-                //baseAdapter.notifyDataSetChanged();
-            //}  else if (adapter == null && adapterView instanceof RemoteAdapterConnectionCallback) {
-                //((RemoteAdapterConnectionCallback) adapterView).deferNotifyDataSetChanged();
-            //}
-        //}
+        
+        
+        
+            
+            
+            
+                
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.908 -0400", hash_original_method = "D246979F206AF74202D8DE4F4ED2EC44", hash_generated_method = "52C611FCD02849652A61BC38B26AA757")
     private Context getRemoteContext(RemoteViews views) {
-        Context varB4EAC82CA7396A68D541C85D26508E83_2145021887 = null; //Variable for return #1
-        Context varB4EAC82CA7396A68D541C85D26508E83_2058462525 = null; //Variable for return #2
-        Context varB4EAC82CA7396A68D541C85D26508E83_925199426 = null; //Variable for return #3
+        Context varB4EAC82CA7396A68D541C85D26508E83_2145021887 = null; 
+        Context varB4EAC82CA7396A68D541C85D26508E83_2058462525 = null; 
+        Context varB4EAC82CA7396A68D541C85D26508E83_925199426 = null; 
         final String packageName = views.getPackage();
         varB4EAC82CA7396A68D541C85D26508E83_2145021887 = mContext;
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2058462525 = mContext.createPackageContext(packageName, Context.CONTEXT_RESTRICTED);
-        } //End block
+        } 
         catch (NameNotFoundException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_925199426 = mContext;
-        } //End block
+        } 
         addTaint(views.getTaint());
-        Context varA7E53CE21691AB073D9660D615818899_2106826231; //Final return value
+        Context varA7E53CE21691AB073D9660D615818899_2106826231; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2106826231 = varB4EAC82CA7396A68D541C85D26508E83_2145021887;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2106826231 = varB4EAC82CA7396A68D541C85D26508E83_2058462525;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2106826231 = varB4EAC82CA7396A68D541C85D26508E83_925199426;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2106826231.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2106826231.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2106826231;
-        // ---------- Original Method ----------
-        //final String packageName = views.getPackage();
-        //if (packageName == null) return mContext;
-        //try {
-            //return mContext.createPackageContext(packageName, Context.CONTEXT_RESTRICTED);
-        //} catch (NameNotFoundException e) {
-            //Log.e(TAG, "Package name " + packageName + " not found");
-            //return mContext;
-        //}
+        
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.909 -0400", hash_original_method = "5F7FD765CDC0571DEC8D0D27FF96F700", hash_generated_method = "912567437FCA492E061E051FB76625E5")
     @Override
     protected boolean drawChild(Canvas canvas, View child, long drawingTime) {
@@ -396,71 +405,73 @@ public class AppWidgetHostView extends FrameLayout {
                 alpha = (int)(((drawingTime-mFadeStartTime)*255)/FADE_DURATION);
                 {
                     alpha = 255;
-                } //End block
+                } 
                 Log.d(TAG, "drawChild alpha=" + alpha + " l=" + l + " t=" + t
                         + " w=" + child.getWidth());
                 {
                     mOldPaint.setAlpha(255-alpha);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 alpha = 255;
-            } //End block
+            } 
             int restoreTo = canvas.saveLayerAlpha(l, t, child.getWidth(), child.getHeight(), alpha,
                     Canvas.HAS_ALPHA_LAYER_SAVE_FLAG | Canvas.CLIP_TO_LAYER_SAVE_FLAG);
             boolean rv = super.drawChild(canvas, child, drawingTime);
             canvas.restoreToCount(restoreTo);
             {
                 invalidate();
-            } //End block
+            } 
             {
                 mFadeStartTime = -1;
                 {
                     mOld.recycle();
                     mOld = null;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean var4DFF002E926C8684D37B3C839E3F9C8C_1396592658 = (super.drawChild(canvas, child, drawingTime));
-        } //End block
+        } 
         addTaint(canvas.getTaint());
         addTaint(child.getTaint());
         addTaint(drawingTime);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1741264568 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1741264568;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.909 -0400", hash_original_method = "3CF04F67A6E046DD8821A82932E9934D", hash_generated_method = "2FAFD778D498F3F6850221C320B9390C")
     protected void prepareView(View view) {
         FrameLayout.LayoutParams requested = (FrameLayout.LayoutParams)view.getLayoutParams();
         {
             requested = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT,
                     LayoutParams.MATCH_PARENT);
-        } //End block
+        } 
         requested.gravity = Gravity.CENTER;
         view.setLayoutParams(requested);
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        //FrameLayout.LayoutParams requested = (FrameLayout.LayoutParams)view.getLayoutParams();
-        //if (requested == null) {
-            //requested = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT,
-                    //LayoutParams.MATCH_PARENT);
-        //}
-        //requested.gravity = Gravity.CENTER;
-        //view.setLayoutParams(requested);
+        
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.911 -0400", hash_original_method = "7ABED6F7F1F9E200368B812F1C939889", hash_generated_method = "6C9ED84C18FF404F50CF7CC83973820B")
     protected View getDefaultView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_1867240945 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1867240945 = null; 
         {
             Log.d(TAG, "getDefaultView");
-        } //End block
+        } 
         View defaultView = null;
         Exception exception = null;
         try 
@@ -474,42 +485,43 @@ public class AppWidgetHostView extends FrameLayout {
                 inflater = inflater.cloneInContext(theirContext);
                 inflater.setFilter(sInflaterFilter);
                 defaultView = inflater.inflate(mInfo.initialLayout, this, false);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (PackageManager.NameNotFoundException e)
         {
             exception = e;
-        } //End block
+        } 
         catch (RuntimeException e)
         {
             exception = e;
-        } //End block
+        } 
         {
             Log.d(TAG, "getDefaultView couldn't find any view, so inflating error");
             defaultView = getErrorView();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1867240945 = defaultView;
-        varB4EAC82CA7396A68D541C85D26508E83_1867240945.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1867240945.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1867240945;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.912 -0400", hash_original_method = "BCED01C90A318EA661B2B3B116D10B95", hash_generated_method = "BB0B1CCE757D550B383A8E6A2968535E")
     protected View getErrorView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_1658350196 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1658350196 = null; 
         TextView tv = new TextView(mContext);
         tv.setText(com.android.internal.R.string.gadget_host_error_inflating);
         tv.setBackgroundColor(Color.argb(127, 0, 0, 0));
         varB4EAC82CA7396A68D541C85D26508E83_1658350196 = tv;
-        varB4EAC82CA7396A68D541C85D26508E83_1658350196.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1658350196.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1658350196;
-        // ---------- Original Method ----------
-        //TextView tv = new TextView(mContext);
-        //tv.setText(com.android.internal.R.string.gadget_host_error_inflating);
-        //tv.setBackgroundColor(Color.argb(127, 0, 0, 0));
-        //return tv;
+        
+        
+        
+        
+        
     }
 
     
@@ -518,7 +530,7 @@ public class AppWidgetHostView extends FrameLayout {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.913 -0400", hash_original_method = "545E9F4FFC3CA9F22ED723B298F0D3D0", hash_generated_method = "545E9F4FFC3CA9F22ED723B298F0D3D0")
         public ParcelableSparseArray ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -526,8 +538,8 @@ public class AppWidgetHostView extends FrameLayout {
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1828128269 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1828128269;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
@@ -540,17 +552,17 @@ public class AppWidgetHostView extends FrameLayout {
                 {
                     dest.writeInt(keyAt(i));
                     dest.writeParcelable(valueAt(i), 0);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //final int count = size();
-            //dest.writeInt(count);
-            //for (int i = 0; i < count; i++) {
-                //dest.writeInt(keyAt(i));
-                //dest.writeParcelable(valueAt(i), 0);
-            //}
+            
+            
+            
+            
+                
+                
+            
         }
 
         
@@ -572,7 +584,7 @@ public class AppWidgetHostView extends FrameLayout {
                         return new ParcelableSparseArray[size];
                     }
                 };
-        // orphaned legacy method
+        
         public ParcelableSparseArray createFromParcel(Parcel source) {
                         final ParcelableSparseArray array = new ParcelableSparseArray();
                         final ClassLoader loader = array.getClass().getClassLoader();
@@ -583,7 +595,7 @@ public class AppWidgetHostView extends FrameLayout {
                         return array;
                     }
         
-        // orphaned legacy method
+        
         public ParcelableSparseArray[] newArray(int size) {
                         return new ParcelableSparseArray[size];
                     }
@@ -621,13 +633,13 @@ public class AppWidgetHostView extends FrameLayout {
     static final LayoutInflater.Filter sInflaterFilter = new LayoutInflater.Filter() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.916 -0400", hash_original_method = "F477B2C7A46FC6FC036CB698F9A6F774", hash_generated_method = "1B683B60B4AD6DEBDC1B0BCB27CC0F2B")
         public boolean onLoadClass(Class clazz) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             boolean varA10EEDB5B362CDB8AEA79625767F60A9_575585635 = (clazz.isAnnotationPresent(RemoteViews.RemoteView.class));
             addTaint(clazz.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_681207852 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_681207852;
-            // ---------- Original Method ----------
-            //return clazz.isAnnotationPresent(RemoteViews.RemoteView.class);
+            
+            
         }
 
         

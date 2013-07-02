@@ -1,11 +1,11 @@
 package javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.EventObject;
 
@@ -19,19 +19,19 @@ public class DialogTerminatedEvent extends EventObject {
         super(source);
         mDialog = dialog;
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
-        //mDialog = dialog;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.008 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "66528B83E0F4BB854340D4B1E6B5F7DD")
     public Dialog getDialog() {
-        Dialog varB4EAC82CA7396A68D541C85D26508E83_367898960 = null; //Variable for return #1
+        Dialog varB4EAC82CA7396A68D541C85D26508E83_367898960 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_367898960 = mDialog;
-        varB4EAC82CA7396A68D541C85D26508E83_367898960.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_367898960.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_367898960;
-        // ---------- Original Method ----------
-        //return mDialog;
+        
+        
     }
 
     

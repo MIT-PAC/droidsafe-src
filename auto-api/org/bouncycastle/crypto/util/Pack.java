@@ -1,11 +1,11 @@
 package org.bouncycastle.crypto.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class Pack {
@@ -13,7 +13,7 @@ public abstract class Pack {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.130 -0400", hash_original_method = "7D61F0FDEC5E1A91AB83D504A09E89B5", hash_generated_method = "7D61F0FDEC5E1A91AB83D504A09E89B5")
     public Pack ()
     {
-        //Synthesized constructor
+        
     }
 
 

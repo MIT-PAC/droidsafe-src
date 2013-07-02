@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class ProviderException extends RuntimeException {
@@ -14,13 +14,13 @@ public class ProviderException extends RuntimeException {
     public  ProviderException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.666 -0400", hash_original_method = "C6FD128032A25223FCE8DF59B6440EFD", hash_generated_method = "AE2C6FE8FA1DD7754D6AAA9F0ABC68D7")
     public  ProviderException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ public class ProviderException extends RuntimeException {
         super(message, cause);
         addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,7 +37,7 @@ public class ProviderException extends RuntimeException {
     public  ProviderException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

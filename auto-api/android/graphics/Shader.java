@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class Shader {
@@ -22,56 +22,59 @@ public class Shader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.422 -0400", hash_original_method = "2C9D5C9CBFF528B332FC0D9B3274B66B", hash_generated_method = "2C9D5C9CBFF528B332FC0D9B3274B66B")
     public Shader ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.422 -0400", hash_original_method = "68EE3A19E97B552C55745306F03EBBEA", hash_generated_method = "F5BFCC7C95DD6F01790DF0EE9372FB16")
     public boolean getLocalMatrix(Matrix localM) {
         {
             localM.set(mLocalMatrix);
             boolean varB38993D6AEB90B988AB61A4C363EDC6E_1864973320 = (!mLocalMatrix.isIdentity());
-        } //End block
+        } 
         addTaint(localM.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1789740841 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1789740841;
-        // ---------- Original Method ----------
-        //if (mLocalMatrix != null) {
-            //localM.set(mLocalMatrix);
-            //return !mLocalMatrix.isIdentity();
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.423 -0400", hash_original_method = "D9D7C5F09B6958B88F23796DCADEE0F6", hash_generated_method = "54D857A280BC189FD9876713FE1AEB6C")
     public void setLocalMatrix(Matrix localM) {
         mLocalMatrix = localM;
         nativeSetLocalMatrix(native_instance, native_shader,
                 localM == null ? 0 : localM.native_instance);
-        // ---------- Original Method ----------
-        //mLocalMatrix = localM;
-        //nativeSetLocalMatrix(native_instance, native_shader,
-                //localM == null ? 0 : localM.native_instance);
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.423 -0400", hash_original_method = "C66C3B2CF2D4E3C25A1D8C5724E65539", hash_generated_method = "82D789A5FB22E6C4C0B20EAD25E7E744")
     protected void finalize() throws Throwable {
         try 
         {
             super.finalize();
-        } //End block
+        } 
         finally 
         {
             nativeDestructor(native_instance, native_shader);
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //super.finalize();
-        //} finally {
-            //nativeDestructor(native_instance, native_shader);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     

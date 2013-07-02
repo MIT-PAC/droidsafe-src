@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.pkcs;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Enumeration;
 import org.bouncycastle.asn1.ASN1Encodable;
@@ -32,10 +32,10 @@ public class EncryptedPrivateKeyInfo extends ASN1Encodable {
         algId = AlgorithmIdentifier.getInstance(e.nextElement());
         data = (ASN1OctetString)e.nextElement();
         addTaint(seq.getTaint());
-        // ---------- Original Method ----------
-        //Enumeration e = seq.getObjects();
-        //algId = AlgorithmIdentifier.getInstance(e.nextElement());
-        //data = (ASN1OctetString)e.nextElement();
+        
+        
+        
+        
     }
 
     
@@ -45,12 +45,13 @@ public class EncryptedPrivateKeyInfo extends ASN1Encodable {
         byte[]              encoding) {
         this.algId = algId;
         this.data = new DEROctetString(encoding);
-        // ---------- Original Method ----------
-        //this.algId = algId;
-        //this.data = new DEROctetString(encoding);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static EncryptedPrivateKeyInfo getInstance(
         Object  obj) {
         if (obj instanceof EncryptedPrivateKeyInfo)
@@ -67,12 +68,12 @@ public class EncryptedPrivateKeyInfo extends ASN1Encodable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.018 -0400", hash_original_method = "742117C3F9E40BA83B51D9D3C5056A2D", hash_generated_method = "5C80102CBB1E2BFABE428F40ADEC6377")
     public AlgorithmIdentifier getEncryptionAlgorithm() {
-        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_246731451 = null; //Variable for return #1
+        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_246731451 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_246731451 = algId;
-        varB4EAC82CA7396A68D541C85D26508E83_246731451.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_246731451.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_246731451;
-        // ---------- Original Method ----------
-        //return algId;
+        
+        
     }
 
     
@@ -81,25 +82,26 @@ public class EncryptedPrivateKeyInfo extends ASN1Encodable {
         byte[] var061EFA52EC8FE48598A94BA0B5869281_1209262357 = (data.getOctets());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2130710469 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2130710469;
-        // ---------- Original Method ----------
-        //return data.getOctets();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.019 -0400", hash_original_method = "1A83B7862624E8339D74A705608FC69D", hash_generated_method = "D307168BE2DEF0722BFBA199F41AFE95")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_935124188 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_935124188 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(algId);
         v.add(data);
         varB4EAC82CA7396A68D541C85D26508E83_935124188 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_935124188.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_935124188.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_935124188;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector v = new ASN1EncodableVector();
-        //v.add(algId);
-        //v.add(data);
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
     }
 
     

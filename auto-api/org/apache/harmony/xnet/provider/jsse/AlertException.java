@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.net.ssl.SSLException;
 
@@ -22,20 +22,20 @@ public class AlertException extends RuntimeException {
         super(reason);
         this.reason = reason;
         this.description = description;
-        // ---------- Original Method ----------
-        //this.reason = reason;
-        //this.description = description;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.608 -0400", hash_original_method = "5B702ECC4BAE0D4CD4DED59A097CDBFC", hash_generated_method = "4BF4513777C1A6397E71EB3384BB30C5")
     protected SSLException getReason() {
-        SSLException varB4EAC82CA7396A68D541C85D26508E83_384046058 = null; //Variable for return #1
+        SSLException varB4EAC82CA7396A68D541C85D26508E83_384046058 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_384046058 = reason;
-        varB4EAC82CA7396A68D541C85D26508E83_384046058.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_384046058.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_384046058;
-        // ---------- Original Method ----------
-        //return reason;
+        
+        
     }
 
     
@@ -43,8 +43,8 @@ public class AlertException extends RuntimeException {
     protected byte getDescriptionCode() {
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1451878417 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1451878417;
-        // ---------- Original Method ----------
-        //return description;
+        
+        
     }
 
     

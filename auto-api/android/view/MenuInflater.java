@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.view.menu.MenuItemImpl;
 import org.xmlpull.v1.XmlPullParser;
@@ -37,13 +37,14 @@ public class MenuInflater {
         mContext = context;
         mActionViewConstructorArguments = new Object[] {context};
         mActionProviderConstructorArguments = mActionViewConstructorArguments;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mActionViewConstructorArguments = new Object[] {context};
-        //mActionProviderConstructorArguments = mActionViewConstructorArguments;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.509 -0400", hash_original_method = "7D92BCA17E1F22EC74058A02DB16DD4F", hash_generated_method = "2A5615694082BD607D348F1E7C4C4405")
     public void inflate(int menuRes, Menu menu) {
         XmlResourceParser parser = null;
@@ -52,37 +53,38 @@ public class MenuInflater {
             parser = mContext.getResources().getLayout(menuRes);
             AttributeSet attrs = Xml.asAttributeSet(parser);
             parseMenu(parser, attrs, menu);
-        } //End block
+        } 
         catch (XmlPullParserException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new InflateException("Error inflating menu XML", e);
-        } //End block
+        } 
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new InflateException("Error inflating menu XML", e);
-        } //End block
+        } 
         finally 
         {
             parser.close();
-        } //End block
+        } 
         addTaint(menuRes);
         addTaint(menu.getTaint());
-        // ---------- Original Method ----------
-        //XmlResourceParser parser = null;
-        //try {
-            //parser = mContext.getResources().getLayout(menuRes);
-            //AttributeSet attrs = Xml.asAttributeSet(parser);
-            //parseMenu(parser, attrs, menu);
-        //} catch (XmlPullParserException e) {
-            //throw new InflateException("Error inflating menu XML", e);
-        //} catch (IOException e) {
-            //throw new InflateException("Error inflating menu XML", e);
-        //} finally {
-            //if (parser != null) parser.close();
-        //}
+        
+        
+        
+            
+            
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.510 -0400", hash_original_method = "9930459085CDC2417094A7A8585D74E6", hash_generated_method = "4D7E17E72CE375131578B0A75D6980DB")
     private void parseMenu(XmlPullParser parser, AttributeSet attrs, Menu menu) throws XmlPullParserException, IOException {
         MenuState menuState = new MenuState(menu);
@@ -97,57 +99,57 @@ public class MenuInflater {
                     boolean var9CCB7BAC13C969AD362B259014E951BF_1539203506 = (tagName.equals(XML_MENU));
                     {
                         eventType = parser.next();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Expecting menu, got " + tagName);
-            } //End block
+            } 
             eventType = parser.next();
-        } //End block
+        } 
         boolean reachedEndOfMenu = false;
         {
-            //Begin case XmlPullParser.START_TAG 
+            
             tagName = parser.getName();
-            //End case XmlPullParser.START_TAG 
-            //Begin case XmlPullParser.START_TAG 
+            
+            
             {
                 boolean var06735938CC742DA237A5AA956C6C42C5_1868870160 = (tagName.equals(XML_GROUP));
                 {
                     menuState.readGroup(attrs);
-                } //End block
+                } 
                 {
                     boolean var17BF2DF7C65C8DAF0549CD525A38CEE3_1940969263 = (tagName.equals(XML_ITEM));
                     {
                         menuState.readItem(attrs);
-                    } //End block
+                    } 
                     {
                         boolean var2AD187A82C9BC290A155265942EB19F2_1184902836 = (tagName.equals(XML_MENU));
                         {
                             SubMenu subMenu = menuState.addSubMenuItem();
                             parseMenu(parser, attrs, subMenu);
-                        } //End block
+                        } 
                         {
                             lookingForEndOfUnknownTag = true;
                             unknownTagName = tagName;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-            //End case XmlPullParser.START_TAG 
-            //Begin case XmlPullParser.END_TAG 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
             tagName = parser.getName();
-            //End case XmlPullParser.END_TAG 
-            //Begin case XmlPullParser.END_TAG 
+            
+            
             {
                 boolean var24B02B07F0CCFAF88AE9E1B3596AB473_1094546365 = (lookingForEndOfUnknownTag && tagName.equals(unknownTagName));
                 {
                     lookingForEndOfUnknownTag = false;
                     unknownTagName = null;
-                } //End block
+                } 
                 {
                     boolean var5128EA2C37383EFE109673AABCB41757_1443864874 = (tagName.equals(XML_GROUP));
                     {
                         menuState.resetGroup();
-                    } //End block
+                    } 
                     {
                         boolean varAC2816D664C6A3E40FDF427ED6713CCB_933217888 = (tagName.equals(XML_ITEM));
                         {
@@ -159,34 +161,34 @@ public class MenuInflater {
                                     menuState.itemActionProvider.hasSubMenu());
                                         {
                                             menuState.addSubMenuItem();
-                                        } //End block
+                                        } 
                                         {
                                             menuState.addItem();
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
                         {
                             boolean var7BD40C7DE57A7C30CB915C9680E5EDD6_258547107 = (tagName.equals(XML_MENU));
                             {
                                 reachedEndOfMenu = true;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-            //End case XmlPullParser.END_TAG 
-            //Begin case XmlPullParser.END_DOCUMENT 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Unexpected end of document");
-            //End case XmlPullParser.END_DOCUMENT 
+            
             eventType = parser.next();
-        } //End block
+        } 
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
         addTaint(menu.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -205,7 +207,7 @@ public class MenuInflater {
             try 
             {
                 mMethod = c.getMethod(methodName, PARAM_TYPES);
-            } //End block
+            } 
             catch (Exception e)
             {
                 InflateException ex = new InflateException(
@@ -213,55 +215,55 @@ public class MenuInflater {
                         " in class " + c.getName());
                 ex.initCause(e);
                 if (DroidSafeAndroidRuntime.control) throw ex;
-            } //End block
-            // ---------- Original Method ----------
-            //mContext = context;
-            //Class<?> c = context.getClass();
-            //try {
-                //mMethod = c.getMethod(methodName, PARAM_TYPES);
-            //} catch (Exception e) {
-                //InflateException ex = new InflateException(
-                        //"Couldn't resolve menu item onClick handler " + methodName +
-                        //" in class " + c.getName());
-                //ex.initCause(e);
-                //throw ex;
-            //}
+            } 
+            
+            
+            
+            
+                
+            
+                
+                        
+                        
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.511 -0400", hash_original_method = "73DDD6FE1A9FD43CC9793E596C7A60B9", hash_generated_method = "B35120655AAFCCB294033D8F3A722DE9")
         public boolean onMenuItemClick(MenuItem item) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             try 
             {
                 {
                     boolean varD1E827A28BBA387F0A15B2DD410BC945_778060262 = (mMethod.getReturnType() == Boolean.TYPE);
                     {
                         boolean var823BC65078D4D4799D67201B185472A5_1757239270 = ((Boolean) mMethod.invoke(mContext, item));
-                    } //End block
+                    } 
                     {
                         mMethod.invoke(mContext, item);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             catch (Exception e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-            } //End block
+            } 
             addTaint(item.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1310689728 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1310689728;
-            // ---------- Original Method ----------
-            //try {
-                //if (mMethod.getReturnType() == Boolean.TYPE) {
-                    //return (Boolean) mMethod.invoke(mContext, item);
-                //} else {
-                    //mMethod.invoke(mContext, item);
-                    //return true;
-                //}
-            //} catch (Exception e) {
-                //throw new RuntimeException(e);
-            //}
+            
+            
+                
+                    
+                
+                    
+                    
+                
+            
+                
+            
         }
 
         
@@ -353,9 +355,9 @@ public class MenuInflater {
         public  MenuState(final Menu menu) {
             this.menu = menu;
             resetGroup();
-            // ---------- Original Method ----------
-            //this.menu = menu;
-            //resetGroup();
+            
+            
+            
         }
 
         
@@ -367,13 +369,13 @@ public class MenuInflater {
             groupCheckable = defaultItemCheckable;
             groupVisible = defaultItemVisible;
             groupEnabled = defaultItemEnabled;
-            // ---------- Original Method ----------
-            //groupId = defaultGroupId;
-            //groupCategory = defaultItemCategory;
-            //groupOrder = defaultItemOrder;
-            //groupCheckable = defaultItemCheckable;
-            //groupVisible = defaultItemVisible;
-            //groupEnabled = defaultItemEnabled;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -389,8 +391,8 @@ public class MenuInflater {
             groupEnabled = a.getBoolean(com.android.internal.R.styleable.MenuGroup_enabled, defaultItemEnabled);
             a.recycle();
             addTaint(attrs.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -413,11 +415,11 @@ public class MenuInflater {
                 boolean var8B68EBF2C32DFF7A57B9A2EFC06FDA44_842413202 = (a.hasValue(com.android.internal.R.styleable.MenuItem_checkable));
                 {
                     itemCheckable = a.getBoolean(com.android.internal.R.styleable.MenuItem_checkable, false) ? 1 : 0;
-                } //End block
+                } 
                 {
                     itemCheckable = groupCheckable;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             itemChecked = a.getBoolean(com.android.internal.R.styleable.MenuItem_checked, defaultItemChecked);
             itemVisible = a.getBoolean(com.android.internal.R.styleable.MenuItem_visible, groupVisible);
             itemEnabled = a.getBoolean(com.android.internal.R.styleable.MenuItem_enabled, groupEnabled);
@@ -431,15 +433,15 @@ public class MenuInflater {
                 itemActionProvider = newInstance(itemActionProviderClassName,
                             ACTION_PROVIDER_CONSTRUCTOR_SIGNATURE,
                             mActionProviderConstructorArguments);
-            } //End block
+            } 
             {
                 itemActionProvider = null;
-            } //End block
+            } 
             a.recycle();
             itemAdded = false;
             addTaint(attrs.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -447,16 +449,16 @@ public class MenuInflater {
         private char getShortcut(String shortcutString) {
             {
                 char var94DDD9FE6ADE092287A1BAC249BEBC0A_257591155 = (shortcutString.charAt(0));
-            } //End block
+            } 
             addTaint(shortcutString.getTaint());
             char varA87DEB01C5F539E6BDA34829C8EF2368_781432786 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_781432786;
-            // ---------- Original Method ----------
-            //if (shortcutString == null) {
-                //return 0;
-            //} else {
-                //return shortcutString.charAt(0);
-            //}
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -472,43 +474,43 @@ public class MenuInflater {
                 .setNumericShortcut(itemNumericShortcut);
             {
                 item.setShowAsAction(itemShowAsAction);
-            } //End block
+            } 
             {
                 {
                     boolean varEB9F229BDF825669A5F4C4A08D921F80_1849675561 = (mContext.isRestricted());
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("The android:onClick attribute cannot "
                             + "be used within a restricted context");
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 item.setOnMenuItemClickListener(
                         new InflatedOnMenuItemClickListener(mContext, itemListenerMethodName));
-            } //End block
+            } 
             {
                 MenuItemImpl impl = (MenuItemImpl) item;
                 {
                     impl.setExclusiveCheckable(true);
-                } //End block
-            } //End block
+                } 
+            } 
             boolean actionViewSpecified = false;
             {
                 View actionView = (View) newInstance(itemActionViewClassName,
                         ACTION_VIEW_CONSTRUCTOR_SIGNATURE, mActionViewConstructorArguments);
                 item.setActionView(actionView);
                 actionViewSpecified = true;
-            } //End block
+            } 
             {
                 {
                     item.setActionView(itemActionViewLayout);
                     actionViewSpecified = true;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 item.setActionProvider(itemActionProvider);
-            } //End block
+            } 
             addTaint(item.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -516,26 +518,26 @@ public class MenuInflater {
         public void addItem() {
             itemAdded = true;
             setItem(menu.add(groupId, itemId, itemCategoryOrder, itemTitle));
-            // ---------- Original Method ----------
-            //itemAdded = true;
-            //setItem(menu.add(groupId, itemId, itemCategoryOrder, itemTitle));
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.517 -0400", hash_original_method = "68ADA6E6B9635F44A93B8212F1D6D8E0", hash_generated_method = "E34DB1046DB640C7A6E17BC6FFF0E1A4")
         public SubMenu addSubMenuItem() {
-            SubMenu varB4EAC82CA7396A68D541C85D26508E83_791556098 = null; //Variable for return #1
+            SubMenu varB4EAC82CA7396A68D541C85D26508E83_791556098 = null; 
             itemAdded = true;
             SubMenu subMenu = menu.addSubMenu(groupId, itemId, itemCategoryOrder, itemTitle);
             setItem(subMenu.getItem());
             varB4EAC82CA7396A68D541C85D26508E83_791556098 = subMenu;
-            varB4EAC82CA7396A68D541C85D26508E83_791556098.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_791556098.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_791556098;
-            // ---------- Original Method ----------
-            //itemAdded = true;
-            //SubMenu subMenu = menu.addSubMenu(groupId, itemId, itemCategoryOrder, itemTitle);
-            //setItem(subMenu.getItem());
-            //return subMenu;
+            
+            
+            
+            
+            
         }
 
         
@@ -543,8 +545,8 @@ public class MenuInflater {
         public boolean hasAddedItem() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1463137955 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1463137955;
-            // ---------- Original Method ----------
-            //return itemAdded;
+            
+            
         }
 
         
@@ -552,40 +554,40 @@ public class MenuInflater {
         @SuppressWarnings("unchecked")
         private <T> T newInstance(String className, Class<?>[] constructorSignature,
                 Object[] arguments) {
-            T varB4EAC82CA7396A68D541C85D26508E83_1935926516 = null; //Variable for return #1
-            T varB4EAC82CA7396A68D541C85D26508E83_725244137 = null; //Variable for return #2
+            T varB4EAC82CA7396A68D541C85D26508E83_1935926516 = null; 
+            T varB4EAC82CA7396A68D541C85D26508E83_725244137 = null; 
             try 
             {
                 Class<?> clazz = mContext.getClassLoader().loadClass(className);
                 Constructor<?> constructor = clazz.getConstructor(constructorSignature);
                 varB4EAC82CA7396A68D541C85D26508E83_1935926516 = (T) constructor.newInstance(arguments);
-            } //End block
+            } 
             catch (Exception e)
             { }
             varB4EAC82CA7396A68D541C85D26508E83_725244137 = null;
             addTaint(className.getTaint());
             addTaint(constructorSignature[0].getTaint());
             addTaint(arguments[0].getTaint());
-            T varA7E53CE21691AB073D9660D615818899_1021270783; //Final return value
+            T varA7E53CE21691AB073D9660D615818899_1021270783; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1021270783 = varB4EAC82CA7396A68D541C85D26508E83_1935926516;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1021270783 = varB4EAC82CA7396A68D541C85D26508E83_725244137;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1021270783.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1021270783.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1021270783;
-            // ---------- Original Method ----------
-            //try {
-                //Class<?> clazz = mContext.getClassLoader().loadClass(className);
-                //Constructor<?> constructor = clazz.getConstructor(constructorSignature);
-                //return (T) constructor.newInstance(arguments);
-            //} catch (Exception e) {
-                //Log.w(LOG_TAG, "Cannot instantiate class: " + className, e);
-            //}
-            //return null;
+            
+            
+                
+                
+                
+            
+                
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package org.bouncycastle.util.io.pem;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -19,8 +19,8 @@ public class PemGenerationException extends IOException {
         super(message);
         this.cause = cause;
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //this.cause = cause;
+        
+        
     }
 
     
@@ -28,18 +28,18 @@ public class PemGenerationException extends IOException {
     public  PemGenerationException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.349 -0400", hash_original_method = "CDBDBC1C44563A9D34649A0018341F0E", hash_generated_method = "6F135F446635FC84C27E18730044504F")
     public Throwable getCause() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_208533650 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_208533650 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_208533650 = cause;
-        varB4EAC82CA7396A68D541C85D26508E83_208533650.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_208533650.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_208533650;
-        // ---------- Original Method ----------
-        //return cause;
+        
+        
     }
 
     

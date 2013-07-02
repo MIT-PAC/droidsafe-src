@@ -1,11 +1,11 @@
 package com.android.i18n.phonenumbers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.i18n.phonenumbers.Phonemetadata.NumberFormat;
 import com.android.i18n.phonenumbers.Phonemetadata.PhoneMetadata;
@@ -52,10 +52,11 @@ public class PhoneNumberUtil {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.180 -0400", hash_original_method = "3DBAF8008FFD9E53011E9436972AF77A", hash_generated_method = "E3CE9121B94C12BEE25C8B5EDF30F992")
     private  PhoneNumberUtil() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String createExtnPattern(String singleExtnSymbols) {
         return (RFC3966_EXTN_PREFIX + CAPTURING_EXTN_DIGITS + "|" + "[ \u00A0\\t,]*" +
             "(?:ext(?:ensi(?:o\u0301?|\u00F3))?n?|\uFF45\uFF58\uFF54\uFF4E?|" +
@@ -65,6 +66,7 @@ public class PhoneNumberUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.186 -0400", hash_original_method = "E42A7007FDB19817C28C648F3339DD4F", hash_generated_method = "78C610DB809EA4F224550548F03EE6D4")
     private void init(String filePrefix) {
         currentFilePrefix = filePrefix;
@@ -74,18 +76,19 @@ public class PhoneNumberUtil {
             List<String> regionCodes = var778680903355374D2ABCD15DF60BF74B_101926472.next();
             {
                 supportedRegions.addAll(regionCodes);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         nanpaRegions.addAll(countryCallingCodeToRegionCodeMap.get(NANPA_COUNTRY_CODE));
-        // ---------- Original Method ----------
-        //currentFilePrefix = filePrefix;
-        //for (List<String> regionCodes : countryCallingCodeToRegionCodeMap.values()) {
-      //supportedRegions.addAll(regionCodes);
-    //}
-        //nanpaRegions.addAll(countryCallingCodeToRegionCodeMap.get(NANPA_COUNTRY_CODE));
+        
+        
+        
+      
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.198 -0400", hash_original_method = "D4A5DED95C2EE22965F522507C270AF5", hash_generated_method = "79A2156CD074A49EB9923274507AA4E1")
     private void loadMetadataForRegionFromFile(String filePrefix, String regionCode) {
         InputStream source = PhoneNumberUtil.class.getResourceAsStream(filePrefix + "_" + regionCode);
@@ -101,62 +104,64 @@ public class PhoneNumberUtil {
                 PhoneMetadata metadata = var0ED4A94BB8726E6BB60B0FB5A23A1BC6_1672256635.next();
                 {
                     regionToMetadataMap.put(regionCode, metadata);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (IOException e)
         {
             LOGGER.log(Level.WARNING, e.toString());
-        } //End block
+        } 
         finally 
         {
             close(in);
-        } //End block
+        } 
         addTaint(filePrefix.getTaint());
         addTaint(regionCode.getTaint());
-        // ---------- Original Method ----------
-        //InputStream source =
-        //PhoneNumberUtil.class.getResourceAsStream(filePrefix + "_" + regionCode);
-        //ObjectInputStream in = null;
-        //try {
-      //in = new ObjectInputStream(source);
-      //PhoneMetadataCollection metadataCollection = new PhoneMetadataCollection();
-      //metadataCollection.readExternal(in);
-      //for (PhoneMetadata metadata : metadataCollection.getMetadataList()) {
-        //regionToMetadataMap.put(regionCode, metadata);
-      //}
-    //} catch (IOException e) {
-      //LOGGER.log(Level.WARNING, e.toString());
-    //} finally {
-      //close(in);
-    //}
+        
+        
+        
+        
+        
+      
+      
+      
+      
+        
+      
+    
+      
+    
+      
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.200 -0400", hash_original_method = "A1113EBAB3D0682FE612F1231142344C", hash_generated_method = "823D516066EE954167408BC1E65F4A41")
     private void close(InputStream in) {
         {
             try 
             {
                 in.close();
-            } //End block
+            } 
             catch (IOException e)
             {
                 LOGGER.log(Level.WARNING, e.toString());
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        //if (in != null) {
-      //try {
-        //in.close();
-      //} catch (IOException e) {
-        //LOGGER.log(Level.WARNING, e.toString());
-      //}
-    //}
+        
+        
+      
+        
+      
+        
+      
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String extractPossibleNumber(String number) {
         Matcher m = VALID_START_CHAR_PATTERN.matcher(number);
         if (m.find()) {
@@ -177,6 +182,7 @@ public class PhoneNumberUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isViablePhoneNumber(String number) {
         if (number.length() < MIN_LENGTH_FOR_NSN) {
       return false;
@@ -186,6 +192,7 @@ public class PhoneNumberUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String normalize(String number) {
         Matcher m = VALID_ALPHA_PHONE_PATTERN.matcher(number);
         if (m.matches()) {
@@ -196,17 +203,20 @@ public class PhoneNumberUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void normalize(StringBuilder number) {
         String normalizedNumber = normalize(number.toString());
         number.replace(0, number.length(), normalizedNumber);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String normalizeDigitsOnly(String number) {
         return normalizeDigits(number, false ).toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static StringBuilder normalizeDigits(String number, boolean keepNonDigits) {
         StringBuilder normalizedDigits = new StringBuilder(number.length());
         for (char c : number.toCharArray()) {
@@ -221,45 +231,48 @@ public class PhoneNumberUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String convertAlphaCharactersInNumber(String number) {
         return normalizeHelper(number, ALPHA_PHONE_MAPPINGS, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.210 -0400", hash_original_method = "E944B5FE31AE1466662F85766A880CA9", hash_generated_method = "00BE35C2240FD2332E95A6ACC62725D0")
     public int getLengthOfGeographicalAreaCode(PhoneNumber number) {
         String regionCode = getRegionCodeForNumber(number);
         {
             boolean varA4E49614424C964001097A22AEE7E7BD_1680481576 = (!isValidRegionCode(regionCode));
-        } //End collapsed parenthetic
+        } 
         PhoneMetadata metadata = getMetadataForRegion(regionCode);
         {
             boolean var0F19B7C791578713C08B724D7EF83463_960713125 = (!metadata.hasNationalPrefix());
-        } //End collapsed parenthetic
+        } 
         PhoneNumberType type = getNumberTypeHelper(getNationalSignificantNumber(number),
                                                metadata);
         int var1A7583635198F8188F31B01169649F72_2088279054 = (getLengthOfNationalDestinationCode(number));
         addTaint(number.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819526905 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819526905;
-        // ---------- Original Method ----------
-        //String regionCode = getRegionCodeForNumber(number);
-        //if (!isValidRegionCode(regionCode)) {
-      //return 0;
-    //}
-        //PhoneMetadata metadata = getMetadataForRegion(regionCode);
-        //if (!metadata.hasNationalPrefix()) {
-      //return 0;
-    //}
-        //PhoneNumberType type = getNumberTypeHelper(getNationalSignificantNumber(number),
-                                               //metadata);
-        //if (type != PhoneNumberType.FIXED_LINE && type != PhoneNumberType.FIXED_LINE_OR_MOBILE) {
-      //return 0;
-    //}
-        //return getLengthOfNationalDestinationCode(number);
+        
+        
+        
+      
+    
+        
+        
+      
+    
+        
+                                               
+        
+      
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.212 -0400", hash_original_method = "8F375C460DFE06AB35507021B2E67F57", hash_generated_method = "7683A9D4813E901BDE8CEB0165487723")
     public int getLengthOfNationalDestinationCode(PhoneNumber number) {
         PhoneNumber copiedProto;
@@ -269,11 +282,11 @@ public class PhoneNumberUtil {
                 copiedProto = new PhoneNumber();
                 copiedProto.mergeFrom(number);
                 copiedProto.clearExtension();
-            } //End block
+            } 
             {
                 copiedProto = number;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String nationalSignificantNumber = format(copiedProto,
                                               PhoneNumberUtil.PhoneNumberFormat.INTERNATIONAL);
         String[] numberGroups = NON_DIGITS_PATTERN.split(nationalSignificantNumber);
@@ -282,35 +295,36 @@ public class PhoneNumberUtil {
         getNumberType(number) == PhoneNumberType.MOBILE);
             {
                 int varBE9BA5C465177F729DAFFF7C34A984CE_269183153 = (numberGroups[3].length() + 1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int var9AE7A3309C2132BA3FD6101ABCDB2E2F_1137697181 = (numberGroups[2].length());
         addTaint(number.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2063544385 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2063544385;
-        // ---------- Original Method ----------
-        //PhoneNumber copiedProto;
-        //if (number.hasExtension()) {
-      //copiedProto = new PhoneNumber();
-      //copiedProto.mergeFrom(number);
-      //copiedProto.clearExtension();
-    //} else {
-      //copiedProto = number;
-    //}
-        //String nationalSignificantNumber = format(copiedProto,
-                                              //PhoneNumberUtil.PhoneNumberFormat.INTERNATIONAL);
-        //String[] numberGroups = NON_DIGITS_PATTERN.split(nationalSignificantNumber);
-        //if (numberGroups.length <= 3) {
-      //return 0;
-    //}
-        //if (getRegionCodeForNumber(number).equals("AR") &&
-        //getNumberType(number) == PhoneNumberType.MOBILE) {
-      //return numberGroups[3].length() + 1;
-    //}
-        //return numberGroups[2].length();
+        
+        
+        
+      
+      
+      
+    
+      
+    
+        
+                                              
+        
+        
+      
+    
+        
+        
+      
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String normalizeHelper(String number,
                                         Map<Character, Character> normalizationReplacements,
                                         boolean removeNonMatches) {
@@ -328,6 +342,7 @@ public class PhoneNumberUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static synchronized PhoneNumberUtil getInstance(
       String baseFileLocation,
       Map<Integer, List<String>> countryCallingCodeToRegionCodeMap) {
@@ -345,17 +360,19 @@ public class PhoneNumberUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.213 -0400", hash_original_method = "8806D3371D9E306571E478F8E387F5F6", hash_generated_method = "D0F2A57B1555FFD178A459AD51FDA627")
     public Set<String> getSupportedRegions() {
-        Set<String> varB4EAC82CA7396A68D541C85D26508E83_15284941 = null; //Variable for return #1
+        Set<String> varB4EAC82CA7396A68D541C85D26508E83_15284941 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_15284941 = supportedRegions;
-        varB4EAC82CA7396A68D541C85D26508E83_15284941.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_15284941.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_15284941;
-        // ---------- Original Method ----------
-        //return supportedRegions;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized PhoneNumberUtil getInstance() {
         if (instance == null) {
       return getInstance(META_DATA_FILE_PREFIX,
@@ -365,17 +382,19 @@ public class PhoneNumberUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.214 -0400", hash_original_method = "BD64224247A46B4F8D1913B12FB0926A", hash_generated_method = "6DC3E93E8DFE0EAF48B983AD802AE250")
     private boolean isValidRegionCode(String regionCode) {
         boolean var7DED5D1C831FA25A1913B196FCADCCAC_1878675861 = (regionCode != null && supportedRegions.contains(regionCode));
         addTaint(regionCode.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1945570960 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1945570960;
-        // ---------- Original Method ----------
-        //return regionCode != null && supportedRegions.contains(regionCode);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.214 -0400", hash_original_method = "8968A71862E924379D457A4D52F2E514", hash_generated_method = "D05E30512EBE2C5B37CF562FBB37ACE0")
     private boolean hasValidRegionCode(String regionCode,
                                      int countryCallingCode, String number) {
@@ -385,28 +404,29 @@ public class PhoneNumberUtil {
                 LOGGER.log(Level.WARNING,
                  "Number " + number + " has invalid or missing country calling code ("
                  + countryCallingCode + ")");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(regionCode.getTaint());
         addTaint(countryCallingCode);
         addTaint(number.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_865016237 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_865016237;
-        // ---------- Original Method ----------
-        //if (!isValidRegionCode(regionCode)) {
-      //LOGGER.log(Level.WARNING,
-                 //"Number " + number + " has invalid or missing country calling code ("
-                 //+ countryCallingCode + ")");
-      //return false;
-    //}
-        //return true;
+        
+        
+      
+                 
+                 
+      
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.214 -0400", hash_original_method = "92F92B14F8645805E8F2936964CC9FBD", hash_generated_method = "6853DD103B0EA47617A4EE49C31B0504")
     public String format(PhoneNumber number, PhoneNumberFormat numberFormat) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1550354338 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_349567326 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1550354338 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_349567326 = null; 
         {
             boolean varC5703F7758E4CCF6C68B52402D8E9ACF_130954096 = (number.getNationalNumber() == 0 && number.hasRawInput());
             {
@@ -415,39 +435,40 @@ public class PhoneNumberUtil {
                     boolean var555F97EE0F80891C0AF723C26C2ED746_717137637 = (rawInput.length() > 0);
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1550354338 = rawInput;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         StringBuilder formattedNumber = new StringBuilder(20);
         format(number, numberFormat, formattedNumber);
         varB4EAC82CA7396A68D541C85D26508E83_349567326 = formattedNumber.toString();
         addTaint(number.getTaint());
         addTaint(numberFormat.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1631071415; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1631071415; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1631071415 = varB4EAC82CA7396A68D541C85D26508E83_1550354338;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1631071415 = varB4EAC82CA7396A68D541C85D26508E83_349567326;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1631071415.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1631071415.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1631071415;
-        // ---------- Original Method ----------
-        //if (number.getNationalNumber() == 0 && number.hasRawInput()) {
-      //String rawInput = number.getRawInput();
-      //if (rawInput.length() > 0) {
-        //return rawInput;
-      //}
-    //}
-        //StringBuilder formattedNumber = new StringBuilder(20);
-        //format(number, numberFormat, formattedNumber);
-        //return formattedNumber.toString();
+        
+        
+      
+      
+        
+      
+    
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.215 -0400", hash_original_method = "0E0E29DD0B07020C65FE41B70E3EF74E", hash_generated_method = "7E9E8D4444253FCD103DDA5A0845AD27")
     public void format(PhoneNumber number, PhoneNumberFormat numberFormat,
                      StringBuilder formattedNumber) {
@@ -457,14 +478,14 @@ public class PhoneNumberUtil {
         {
             formattedNumber.append(nationalSignificantNumber);
             formatNumberByFormat(countryCallingCode, PhoneNumberFormat.E164, formattedNumber);
-        } //End block
+        } 
         String regionCode = getRegionCodeForCountryCode(countryCallingCode);
         {
             boolean varA4E49614424C964001097A22AEE7E7BD_1352340658 = (!isValidRegionCode(regionCode));
             {
                 formattedNumber.append(nationalSignificantNumber);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         formattedNumber.append(formatNationalNumber(nationalSignificantNumber,
                                                 regionCode, numberFormat));
         maybeGetFormattedExtension(number, regionCode, numberFormat, formattedNumber);
@@ -472,17 +493,18 @@ public class PhoneNumberUtil {
         addTaint(number.getTaint());
         addTaint(numberFormat.getTaint());
         addTaint(formattedNumber.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.224 -0400", hash_original_method = "9F9F17BED2EE6CF557E830A9924BD1F5", hash_generated_method = "589183557A8AA073DA5CBC4DE8B42CC3")
     public String formatByPattern(PhoneNumber number,
                                 PhoneNumberFormat numberFormat,
                                 List<NumberFormat> userDefinedFormats) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1036305994 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_207638444 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1036305994 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_207638444 = null; 
         int countryCallingCode = number.getCountryCode();
         String nationalSignificantNumber = getNationalSignificantNumber(number);
         String regionCode = getRegionCodeForCountryCode(countryCallingCode);
@@ -490,8 +512,8 @@ public class PhoneNumberUtil {
             boolean varBDF5BAB4A5910678A561C311D8F0FCE1_1038556408 = (!hasValidRegionCode(regionCode, countryCallingCode, nationalSignificantNumber));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1036305994 = nationalSignificantNumber;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         List<NumberFormat> userDefinedFormatsCopy = new ArrayList<NumberFormat>(userDefinedFormats.size());
         {
             Iterator<NumberFormat> varDE538608319C22BEA07652839B747B9B_1551427304 = (userDefinedFormats).iterator();
@@ -513,19 +535,19 @@ public class PhoneNumberUtil {
                                 nationalPrefixFormattingRule =
               FG_PATTERN.matcher(nationalPrefixFormattingRule).replaceFirst("\\$1");
                                 numFormatCopy.setNationalPrefixFormattingRule(nationalPrefixFormattingRule);
-                            } //End block
+                            } 
                             {
                                 numFormatCopy.clearNationalPrefixFormattingRule();
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         userDefinedFormatsCopy.add(numFormatCopy);
-                    } //End block
+                    } 
                     {
                         userDefinedFormatsCopy.add(numFormat);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         StringBuilder formattedNumber = new StringBuilder(formatAccordingToFormats(nationalSignificantNumber,
                                                    userDefinedFormatsCopy,
                                                    numberFormat));
@@ -535,26 +557,27 @@ public class PhoneNumberUtil {
         addTaint(number.getTaint());
         addTaint(numberFormat.getTaint());
         addTaint(userDefinedFormats.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1729711201; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1729711201; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1729711201 = varB4EAC82CA7396A68D541C85D26508E83_1036305994;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1729711201 = varB4EAC82CA7396A68D541C85D26508E83_207638444;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1729711201.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1729711201.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1729711201;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.226 -0400", hash_original_method = "91C4446CD1D629D514A31D665364644B", hash_generated_method = "049956384DA3A158A94E2221C0BA59CB")
     public String formatNationalNumberWithCarrierCode(PhoneNumber number, String carrierCode) {
-        String varB4EAC82CA7396A68D541C85D26508E83_885659942 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_257048286 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_885659942 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_257048286 = null; 
         int countryCallingCode = number.getCountryCode();
         String nationalSignificantNumber = getNationalSignificantNumber(number);
         String regionCode = getRegionCodeForCountryCode(countryCallingCode);
@@ -562,8 +585,8 @@ public class PhoneNumberUtil {
             boolean varBDF5BAB4A5910678A561C311D8F0FCE1_1175472679 = (!hasValidRegionCode(regionCode, countryCallingCode, nationalSignificantNumber));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_885659942 = nationalSignificantNumber;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         StringBuilder formattedNumber = new StringBuilder(20);
         formattedNumber.append(formatNationalNumber(nationalSignificantNumber,
                                                 regionCode,
@@ -574,54 +597,56 @@ public class PhoneNumberUtil {
         varB4EAC82CA7396A68D541C85D26508E83_257048286 = formattedNumber.toString();
         addTaint(number.getTaint());
         addTaint(carrierCode.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_905705213; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_905705213; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_905705213 = varB4EAC82CA7396A68D541C85D26508E83_885659942;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_905705213 = varB4EAC82CA7396A68D541C85D26508E83_257048286;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_905705213.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_905705213.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_905705213;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.227 -0400", hash_original_method = "4CA1ACD2C86EAA8A1981D39B6D2FA7BC", hash_generated_method = "82631ED5CC04679263DA0CD287852249")
     public String formatNationalNumberWithPreferredCarrierCode(PhoneNumber number,
                                                              String fallbackCarrierCode) {
-        String varB4EAC82CA7396A68D541C85D26508E83_345470814 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_345470814 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_345470814 = formatNationalNumberWithCarrierCode(number, number.hasPreferredDomesticCarrierCode()
                                                        ? number.getPreferredDomesticCarrierCode()
                                                        : fallbackCarrierCode);
         addTaint(number.getTaint());
         addTaint(fallbackCarrierCode.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_345470814.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_345470814.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_345470814;
-        // ---------- Original Method ----------
-        //return formatNationalNumberWithCarrierCode(number, number.hasPreferredDomesticCarrierCode()
-                                                       //? number.getPreferredDomesticCarrierCode()
-                                                       //: fallbackCarrierCode);
+        
+        
+                                                       
+                                                       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.228 -0400", hash_original_method = "F62393BCCF4A49D66E11EE7D750D9FD1", hash_generated_method = "ACBBF230DE66691B9C0AD82EC338CE91")
     public String formatOutOfCountryCallingNumber(PhoneNumber number,
                                                 String regionCallingFrom) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1124687728 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_17861425 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_979069875 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_1859396967 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_420645524 = null; //Variable for return #5
+        String varB4EAC82CA7396A68D541C85D26508E83_1124687728 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_17861425 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_979069875 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1859396967 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_420645524 = null; 
         {
             boolean varD048F64EC3C8401D282F486A6CF615B6_2077005567 = (!isValidRegionCode(regionCallingFrom));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1124687728 = format(number, PhoneNumberFormat.INTERNATIONAL);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int countryCallingCode = number.getCountryCode();
         String regionCode = getRegionCodeForCountryCode(countryCallingCode);
         String nationalSignificantNumber = getNationalSignificantNumber(number);
@@ -629,22 +654,22 @@ public class PhoneNumberUtil {
             boolean varBDF5BAB4A5910678A561C311D8F0FCE1_1814146292 = (!hasValidRegionCode(regionCode, countryCallingCode, nationalSignificantNumber));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_17861425 = nationalSignificantNumber;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 boolean var87EDDF67CA1AA758C72D3792FA55B762_2068765890 = (isNANPACountry(regionCallingFrom));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_979069875 = countryCallingCode + " " + format(number, PhoneNumberFormat.NATIONAL);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean var33EA6E04A6ABE181DFBBC2046931D651_1657280601 = (countryCallingCode == getCountryCodeForRegion(regionCallingFrom));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1859396967 = format(number, PhoneNumberFormat.NATIONAL);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String formattedNationalNumber = formatNationalNumber(nationalSignificantNumber,
                              regionCode, PhoneNumberFormat.INTERNATIONAL);
         PhoneMetadata metadata = getMetadataForRegion(regionCallingFrom);
@@ -654,14 +679,14 @@ public class PhoneNumberUtil {
             boolean var98D851996F7DA14EE57E4E408EF3864D_1203519080 = (UNIQUE_INTERNATIONAL_PREFIX.matcher(internationalPrefix).matches());
             {
                 internationalPrefixForFormatting = internationalPrefix;
-            } //End block
+            } 
             {
                 boolean var5BD90B38377E183DFAF5B829C5613FB1_1455872003 = (metadata.hasPreferredInternationalPrefix());
                 {
                     internationalPrefixForFormatting = metadata.getPreferredInternationalPrefix();
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         StringBuilder formattedNumber = new StringBuilder(formattedNationalNumber);
         maybeGetFormattedExtension(number, regionCode, PhoneNumberFormat.INTERNATIONAL,
                                formattedNumber);
@@ -670,75 +695,76 @@ public class PhoneNumberUtil {
             {
                 formattedNumber.insert(0, " ").insert(0, countryCallingCode).insert(0, " ")
           .insert(0, internationalPrefixForFormatting);
-            } //End block
+            } 
             {
                 formatNumberByFormat(countryCallingCode,
                            PhoneNumberFormat.INTERNATIONAL,
                            formattedNumber);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_420645524 = formattedNumber.toString();
         addTaint(number.getTaint());
         addTaint(regionCallingFrom.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_764301644; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_764301644; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_764301644 = varB4EAC82CA7396A68D541C85D26508E83_1124687728;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_764301644 = varB4EAC82CA7396A68D541C85D26508E83_17861425;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_764301644 = varB4EAC82CA7396A68D541C85D26508E83_979069875;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_764301644 = varB4EAC82CA7396A68D541C85D26508E83_1859396967;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_764301644 = varB4EAC82CA7396A68D541C85D26508E83_420645524;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_764301644.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_764301644.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_764301644;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.230 -0400", hash_original_method = "DB42BF938772B1A7D3909F64DD7B67BB", hash_generated_method = "2C05F4E207833AAB962D533B78FF2E26")
     public String formatInOriginalFormat(PhoneNumber number, String regionCallingFrom) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1651522902 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1060179188 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1951379145 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1651522902 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1060179188 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1951379145 = null; 
         {
             boolean var2BA36454AB1825117E50288B4F67202D_1945317512 = (number.hasRawInput() &&
         (!hasFormattingPatternForNumber(number) || !isValidNumber(number)));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1651522902 = number.getRawInput();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var6C260429A491FE6501FBF10C9A9A3E9D_303939763 = (!number.hasCountryCodeSource());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1060179188 = format(number, PhoneNumberFormat.NATIONAL);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String formattedNumber;
         {
             Object var3EC150F242A1103FEA1720F610B2B6E4_1011867991 = (number.getCountryCodeSource());
-            //Begin case FROM_NUMBER_WITH_PLUS_SIGN 
+            
             formattedNumber = format(number, PhoneNumberFormat.INTERNATIONAL);
-            //End case FROM_NUMBER_WITH_PLUS_SIGN 
-            //Begin case FROM_NUMBER_WITH_IDD 
+            
+            
             formattedNumber = formatOutOfCountryCallingNumber(number, regionCallingFrom);
-            //End case FROM_NUMBER_WITH_IDD 
-            //Begin case FROM_NUMBER_WITHOUT_PLUS_SIGN 
+            
+            
             formattedNumber = format(number, PhoneNumberFormat.INTERNATIONAL).substring(1);
-            //End case FROM_NUMBER_WITHOUT_PLUS_SIGN 
-            //Begin case FROM_DEFAULT_COUNTRY default 
+            
+            
             formattedNumber = format(number, PhoneNumberFormat.NATIONAL);
-            //End case FROM_DEFAULT_COUNTRY default 
-        } //End collapsed parenthetic
+            
+        } 
         String rawInput = number.getRawInput();
         varB4EAC82CA7396A68D541C85D26508E83_1951379145 = (formattedNumber != null &&
             normalizeDigitsOnly(formattedNumber).equals(normalizeDigitsOnly(rawInput)))
@@ -746,25 +772,26 @@ public class PhoneNumberUtil {
         : rawInput;
         addTaint(number.getTaint());
         addTaint(regionCallingFrom.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1592504070; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1592504070; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1592504070 = varB4EAC82CA7396A68D541C85D26508E83_1651522902;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1592504070 = varB4EAC82CA7396A68D541C85D26508E83_1060179188;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1592504070 = varB4EAC82CA7396A68D541C85D26508E83_1951379145;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1592504070.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1592504070.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1592504070;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.231 -0400", hash_original_method = "52E7EF7A7F940E41CFECD8D7BD9FA23C", hash_generated_method = "712CDDC46D81A272C1E324EA6CBA399D")
     private boolean hasFormattingPatternForNumber(PhoneNumber number) {
         String phoneNumberRegion = getRegionCodeForCountryCode(number.getCountryCode());
@@ -774,42 +801,43 @@ public class PhoneNumberUtil {
         addTaint(number.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1190184297 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1190184297;
-        // ---------- Original Method ----------
-        //String phoneNumberRegion = getRegionCodeForCountryCode(number.getCountryCode());
-        //PhoneMetadata metadata = getMetadataForRegion(phoneNumberRegion);
-        //if (metadata == null) {
-      //return false;
-    //}
-        //String nationalNumber = getNationalSignificantNumber(number);
-        //NumberFormat formatRule =
-        //chooseFormattingPatternForNumber(metadata.numberFormats(), nationalNumber);
-        //return formatRule != null;
+        
+        
+        
+        
+      
+    
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.244 -0400", hash_original_method = "4891B65BEA4A6D1403DAAAE11CCEEA80", hash_generated_method = "CD2312498D63032743636A2F73D7B6F7")
     public String formatOutOfCountryKeepingAlphaChars(PhoneNumber number,
                                                     String regionCallingFrom) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1824319822 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1456688213 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1119909126 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_1741425452 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_362439284 = null; //Variable for return #5
+        String varB4EAC82CA7396A68D541C85D26508E83_1824319822 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1456688213 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1119909126 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1741425452 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_362439284 = null; 
         String rawInput = number.getRawInput();
         {
             boolean var56DE431416D41900B1A303BCD67165AA_621864314 = (rawInput.length() == 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1824319822 = formatOutOfCountryCallingNumber(number, regionCallingFrom);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int countryCode = number.getCountryCode();
         String regionCode = getRegionCodeForCountryCode(countryCode);
         {
             boolean var6C6A5128B4A4E275737546ABC3B84693_1769219590 = (!hasValidRegionCode(regionCode, countryCode, rawInput));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1456688213 = rawInput;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         rawInput = normalizeHelper(rawInput, ALL_PLUS_NUMBER_GROUPING_SYMBOLS, true);
         String nationalNumber = getNationalSignificantNumber(number);
         {
@@ -818,18 +846,18 @@ public class PhoneNumberUtil {
                 int firstNationalNumberDigit = rawInput.indexOf(nationalNumber.substring(0, 3));
                 {
                     rawInput = rawInput.substring(firstNationalNumberDigit);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         PhoneMetadata metadata = getMetadataForRegion(regionCallingFrom);
         {
             {
                 boolean var87EDDF67CA1AA758C72D3792FA55B762_1105831987 = (isNANPACountry(regionCallingFrom));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1119909126 = countryCode + " " + rawInput;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean varC1B02B78273EEA3A2D0CE66FFC6E6BDD_448562619 = (countryCode == getCountryCodeForRegion(regionCallingFrom));
             {
@@ -844,11 +872,11 @@ public class PhoneNumberUtil {
                         newFormat.setPattern("(\\d+)(.*)");
                         newFormat.setFormat("$1$2");
                         availableFormats.add(newFormat);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1741425452 = formatAccordingToFormats(rawInput, availableFormats, PhoneNumberFormat.NATIONAL);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String internationalPrefix = metadata.getInternationalPrefix();
         String internationalPrefixForFormatting;
         boolean var6BBFED3C02F379AC58D09B7252F4F751_1152502742 = (UNIQUE_INTERNATIONAL_PREFIX.matcher(internationalPrefix).matches());
@@ -862,113 +890,117 @@ public class PhoneNumberUtil {
             {
                 formattedNumber.insert(0, " ").insert(0, countryCode).insert(0, " ")
           .insert(0, internationalPrefixForFormatting);
-            } //End block
+            } 
             {
                 formatNumberByFormat(countryCode,
                            PhoneNumberFormat.INTERNATIONAL,
                            formattedNumber);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_362439284 = formattedNumber.toString();
         addTaint(number.getTaint());
         addTaint(regionCallingFrom.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1511209859; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1511209859; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1511209859 = varB4EAC82CA7396A68D541C85D26508E83_1824319822;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1511209859 = varB4EAC82CA7396A68D541C85D26508E83_1456688213;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1511209859 = varB4EAC82CA7396A68D541C85D26508E83_1119909126;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1511209859 = varB4EAC82CA7396A68D541C85D26508E83_1741425452;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1511209859 = varB4EAC82CA7396A68D541C85D26508E83_362439284;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1511209859.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1511209859.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1511209859;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.246 -0400", hash_original_method = "D5C4512E5E6006B319585FD039F0D2D2", hash_generated_method = "CAACA3BEDE738E3E443CC2E5952CF29B")
     public String getNationalSignificantNumber(PhoneNumber number) {
-        String varB4EAC82CA7396A68D541C85D26508E83_264346753 = null; //Variable for return #1
-        StringBuilder nationalNumber = new StringBuilder(number.isItalianLeadingZero() ? "0" : "");//DSFIXME:  CODE0008: Nested ternary operator in expression
+        String varB4EAC82CA7396A68D541C85D26508E83_264346753 = null; 
+        StringBuilder nationalNumber = new StringBuilder(number.isItalianLeadingZero() ? "0" : "");
         nationalNumber.append(number.getNationalNumber());
         varB4EAC82CA7396A68D541C85D26508E83_264346753 = nationalNumber.toString();
         addTaint(number.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_264346753.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_264346753.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_264346753;
-        // ---------- Original Method ----------
-        //StringBuilder nationalNumber = new StringBuilder(number.isItalianLeadingZero() ? "0" : "");
-        //nationalNumber.append(number.getNationalNumber());
-        //return nationalNumber.toString();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.248 -0400", hash_original_method = "B30288467474491802F599221421F5DD", hash_generated_method = "25BA4C9E4452F6803D88A74F10F9E993")
     private void formatNumberByFormat(int countryCallingCode,
                                     PhoneNumberFormat numberFormat,
                                     StringBuilder formattedNumber) {
-        //Begin case E164 
+        
         formattedNumber.insert(0, countryCallingCode).insert(0, PLUS_SIGN);
-        //End case E164 
-        //Begin case INTERNATIONAL 
+        
+        
         formattedNumber.insert(0, " ").insert(0, countryCallingCode).insert(0, PLUS_SIGN);
-        //End case INTERNATIONAL 
-        //Begin case RFC3966 
+        
+        
         formattedNumber.insert(0, "-").insert(0, countryCallingCode) .insert(0, PLUS_SIGN);
-        //End case RFC3966 
+        
         addTaint(countryCallingCode);
         addTaint(numberFormat.getTaint());
         addTaint(formattedNumber.getTaint());
-        // ---------- Original Method ----------
-        //switch (numberFormat) {
-      //case E164:
-        //formattedNumber.insert(0, countryCallingCode).insert(0, PLUS_SIGN);
-        //return;
-      //case INTERNATIONAL:
-        //formattedNumber.insert(0, " ").insert(0, countryCallingCode).insert(0, PLUS_SIGN);
-        //return;
-      //case RFC3966:
-        //formattedNumber.insert(0, "-").insert(0, countryCallingCode) .insert(0, PLUS_SIGN);
-        //return;
-      //case NATIONAL:
-      //default:
-        //return;
-    //}
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+      
+        
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.250 -0400", hash_original_method = "E72DB4CB518547F268CF62BAEDE813DC", hash_generated_method = "1BAB822E3D531E70A535DD5E4885A2D6")
     private String formatNationalNumber(String number,
                                       String regionCode,
                                       PhoneNumberFormat numberFormat) {
-        String varB4EAC82CA7396A68D541C85D26508E83_2000912710 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2000912710 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2000912710 = formatNationalNumber(number, regionCode, numberFormat, null);
         addTaint(number.getTaint());
         addTaint(regionCode.getTaint());
         addTaint(numberFormat.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2000912710.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2000912710.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2000912710;
-        // ---------- Original Method ----------
-        //return formatNationalNumber(number, regionCode, numberFormat, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.251 -0400", hash_original_method = "C233FF64EBF86F393338B595D4311670", hash_generated_method = "DBEDFD8C63DF15D73179079A5C27F3FF")
     private String formatNationalNumber(String number,
                                       String regionCode,
                                       PhoneNumberFormat numberFormat,
                                       String carrierCode) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1934707103 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1934707103 = null; 
         PhoneMetadata metadata = getMetadataForRegion(regionCode);
         List<NumberFormat> intlNumberFormats = metadata.intlNumberFormats();
         List<NumberFormat> availableFormats;
@@ -979,36 +1011,37 @@ public class PhoneNumberUtil {
         {
             formattedNationalNumber =
           SEPARATOR_PATTERN.matcher(formattedNationalNumber).replaceAll("-");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1934707103 = formattedNationalNumber;
         addTaint(number.getTaint());
         addTaint(regionCode.getTaint());
         addTaint(numberFormat.getTaint());
         addTaint(carrierCode.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1934707103.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1934707103.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1934707103;
-        // ---------- Original Method ----------
-        //PhoneMetadata metadata = getMetadataForRegion(regionCode);
-        //List<NumberFormat> intlNumberFormats = metadata.intlNumberFormats();
-        //List<NumberFormat> availableFormats =
-        //(intlNumberFormats.size() == 0 || numberFormat == PhoneNumberFormat.NATIONAL)
-        //? metadata.numberFormats()
-        //: metadata.intlNumberFormats();
-        //String formattedNationalNumber =
-        //formatAccordingToFormats(number, availableFormats, numberFormat, carrierCode);
-        //if (numberFormat == PhoneNumberFormat.RFC3966) {
-      //formattedNationalNumber =
-          //SEPARATOR_PATTERN.matcher(formattedNationalNumber).replaceAll("-");
-    //}
-        //return formattedNationalNumber;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      
+          
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.258 -0400", hash_original_method = "8234956A6CF3F674EC2E620926354B88", hash_generated_method = "3ED114E58CBAD9FA79D9500DC28BD50C")
     private NumberFormat chooseFormattingPatternForNumber(List<NumberFormat> availableFormats,
                                                         String nationalNumber) {
-        NumberFormat varB4EAC82CA7396A68D541C85D26508E83_2054648241 = null; //Variable for return #1
-        NumberFormat varB4EAC82CA7396A68D541C85D26508E83_899581422 = null; //Variable for return #2
+        NumberFormat varB4EAC82CA7396A68D541C85D26508E83_2054648241 = null; 
+        NumberFormat varB4EAC82CA7396A68D541C85D26508E83_899581422 = null; 
         {
             Iterator<NumberFormat> varF2F667EBE5B32705ED5F28A1B5BB1A9A_219637191 = (availableFormats).iterator();
             varF2F667EBE5B32705ED5F28A1B5BB1A9A_219637191.hasNext();
@@ -1024,66 +1057,68 @@ public class PhoneNumberUtil {
                             boolean var21FF6A85D73745B4A18613C0C4E00A23_842192110 = (m.matches());
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_2054648241 = numFormat;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_899581422 = null;
         addTaint(availableFormats.getTaint());
         addTaint(nationalNumber.getTaint());
-        NumberFormat varA7E53CE21691AB073D9660D615818899_383879841; //Final return value
+        NumberFormat varA7E53CE21691AB073D9660D615818899_383879841; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_383879841 = varB4EAC82CA7396A68D541C85D26508E83_2054648241;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_383879841 = varB4EAC82CA7396A68D541C85D26508E83_899581422;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_383879841.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_383879841.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_383879841;
-        // ---------- Original Method ----------
-        //for (NumberFormat numFormat : availableFormats) {
-      //int size = numFormat.leadingDigitsPatternSize();
-      //if (size == 0 || regexCache.getPatternForRegex(
-              //numFormat.getLeadingDigitsPattern(size - 1)).matcher(nationalNumber).lookingAt()) {
-        //Matcher m = regexCache.getPatternForRegex(numFormat.getPattern()).matcher(nationalNumber);
-        //if (m.matches()) {
-          //return numFormat;
-        //}
-      //}
-    //}
-        //return null;
+        
+        
+      
+      
+              
+        
+        
+          
+        
+      
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.259 -0400", hash_original_method = "ABA7814B1012D26F514E5605C0CC3287", hash_generated_method = "F658BDA899B4529852BE2B7A34A55A89")
     private String formatAccordingToFormats(String nationalNumber,
                                           List<NumberFormat> availableFormats,
                                           PhoneNumberFormat numberFormat) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1930340096 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1930340096 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1930340096 = formatAccordingToFormats(nationalNumber, availableFormats, numberFormat, null);
         addTaint(nationalNumber.getTaint());
         addTaint(availableFormats.getTaint());
         addTaint(numberFormat.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1930340096.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1930340096.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1930340096;
-        // ---------- Original Method ----------
-        //return formatAccordingToFormats(nationalNumber, availableFormats, numberFormat, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.267 -0400", hash_original_method = "58A13E9521CF391FA7B0E516ACC9ED0C", hash_generated_method = "171AF5224318B894D2889D7DBE5E83B5")
     private String formatAccordingToFormats(String nationalNumber,
                                           List<NumberFormat> availableFormats,
                                           PhoneNumberFormat numberFormat,
                                           String carrierCode) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1891665248 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_2012967566 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1488266182 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_1718563554 = null; //Variable for return #4
+        String varB4EAC82CA7396A68D541C85D26508E83_1891665248 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2012967566 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1488266182 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1718563554 = null; 
         {
             Iterator<NumberFormat> varF2F667EBE5B32705ED5F28A1B5BB1A9A_445794733 = (availableFormats).iterator();
             varF2F667EBE5B32705ED5F28A1B5BB1A9A_445794733.hasNext();
@@ -1110,7 +1145,7 @@ public class PhoneNumberUtil {
                                         numberFormatRule = FIRST_GROUP_PATTERN.matcher(numberFormatRule)
                 .replaceFirst(carrierCodeFormattingRule);
                                         varB4EAC82CA7396A68D541C85D26508E83_1891665248 = m.replaceAll(numberFormatRule);
-                                    } //End block
+                                    } 
                                     {
                                         String nationalPrefixFormattingRule = numFormat.getNationalPrefixFormattingRule();
                                         {
@@ -1120,70 +1155,72 @@ public class PhoneNumberUtil {
                                             {
                                                 Matcher firstGroupMatcher = FIRST_GROUP_PATTERN.matcher(numberFormatRule);
                                                 varB4EAC82CA7396A68D541C85D26508E83_2012967566 = m.replaceAll(firstGroupMatcher.replaceFirst(nationalPrefixFormattingRule));
-                                            } //End block
+                                            } 
                                             {
                                                 varB4EAC82CA7396A68D541C85D26508E83_1488266182 = m.replaceAll(numberFormatRule);
-                                            } //End block
-                                        } //End collapsed parenthetic
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1718563554 = nationalNumber;
         addTaint(nationalNumber.getTaint());
         addTaint(availableFormats.getTaint());
         addTaint(numberFormat.getTaint());
         addTaint(carrierCode.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_957539320; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_957539320; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_957539320 = varB4EAC82CA7396A68D541C85D26508E83_1891665248;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_957539320 = varB4EAC82CA7396A68D541C85D26508E83_2012967566;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_957539320 = varB4EAC82CA7396A68D541C85D26508E83_1488266182;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_957539320 = varB4EAC82CA7396A68D541C85D26508E83_1718563554;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_957539320.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_957539320.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_957539320;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.267 -0400", hash_original_method = "B3C328ACE4FF3869EFF5C65F569BC538", hash_generated_method = "2D1F2E4F8E7C00C5BE87D9F37C4BD22C")
     public PhoneNumber getExampleNumber(String regionCode) {
-        PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1219096484 = null; //Variable for return #1
+        PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1219096484 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1219096484 = getExampleNumberForType(regionCode, PhoneNumberType.FIXED_LINE);
         addTaint(regionCode.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1219096484.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1219096484.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1219096484;
-        // ---------- Original Method ----------
-        //return getExampleNumberForType(regionCode, PhoneNumberType.FIXED_LINE);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.268 -0400", hash_original_method = "B7676779AEFA9EF56CC59B101D8DF6C5", hash_generated_method = "81DDDFDF46EC9B64D9303A0328D7EF62")
     public PhoneNumber getExampleNumberForType(String regionCode, PhoneNumberType type) {
-        PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_2112264900 = null; //Variable for return #1
-        PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1199256526 = null; //Variable for return #2
-        PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1765639861 = null; //Variable for return #3
+        PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_2112264900 = null; 
+        PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1199256526 = null; 
+        PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1765639861 = null; 
         {
             boolean varA4E49614424C964001097A22AEE7E7BD_188794651 = (!isValidRegionCode(regionCode));
             {
                 LOGGER.log(Level.WARNING, "Invalid or unknown region code provided.");
                 varB4EAC82CA7396A68D541C85D26508E83_2112264900 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         PhoneNumberDesc desc = getNumberDescByType(getMetadataForRegion(regionCode), type);
         try 
         {
@@ -1191,47 +1228,48 @@ public class PhoneNumberUtil {
                 boolean var332E3945C68B1E0C027A1E732CD697F2_2018362227 = (desc.hasExampleNumber());
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1199256526 = parse(desc.getExampleNumber(), regionCode);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (NumberParseException e)
         {
             LOGGER.log(Level.SEVERE, e.toString());
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1765639861 = null;
         addTaint(regionCode.getTaint());
         addTaint(type.getTaint());
-        PhoneNumber varA7E53CE21691AB073D9660D615818899_1529589161; //Final return value
+        PhoneNumber varA7E53CE21691AB073D9660D615818899_1529589161; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1529589161 = varB4EAC82CA7396A68D541C85D26508E83_2112264900;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1529589161 = varB4EAC82CA7396A68D541C85D26508E83_1199256526;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1529589161 = varB4EAC82CA7396A68D541C85D26508E83_1765639861;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1529589161.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1529589161.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1529589161;
-        // ---------- Original Method ----------
-        //if (!isValidRegionCode(regionCode)) {
-      //LOGGER.log(Level.WARNING, "Invalid or unknown region code provided.");
-      //return null;
-    //}
-        //PhoneNumberDesc desc = getNumberDescByType(getMetadataForRegion(regionCode), type);
-        //try {
-      //if (desc.hasExampleNumber()) {
-        //return parse(desc.getExampleNumber(), regionCode);
-      //}
-    //} catch (NumberParseException e) {
-      //LOGGER.log(Level.SEVERE, e.toString());
-    //}
-        //return null;
+        
+        
+      
+      
+    
+        
+        
+      
+        
+      
+    
+      
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.268 -0400", hash_original_method = "6C2C2EA977BB9169AEFD40896548847E", hash_generated_method = "D698A70A1A8148EA7D5150BFF5840B3F")
     private void maybeGetFormattedExtension(PhoneNumber number, String regionCode,
                                           PhoneNumberFormat numberFormat,
@@ -1241,27 +1279,28 @@ public class PhoneNumberUtil {
             {
                 {
                     formattedNumber.append(RFC3966_EXTN_PREFIX).append(number.getExtension());
-                } //End block
+                } 
                 {
                     formatExtension(number.getExtension(), regionCode, formattedNumber);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(number.getTaint());
         addTaint(regionCode.getTaint());
         addTaint(numberFormat.getTaint());
         addTaint(formattedNumber.getTaint());
-        // ---------- Original Method ----------
-        //if (number.hasExtension() && number.getExtension().length() > 0) {
-      //if (numberFormat == PhoneNumberFormat.RFC3966) {
-        //formattedNumber.append(RFC3966_EXTN_PREFIX).append(number.getExtension());
-      //} else {
-        //formatExtension(number.getExtension(), regionCode, formattedNumber);
-      //}
-    //}
+        
+        
+      
+        
+      
+        
+      
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.268 -0400", hash_original_method = "4E1A69FB5E070DF7BC56976B37027181", hash_generated_method = "559553FC6D5BB809F30419DAB02B868D")
     private void formatExtension(String extensionDigits, String regionCode,
                                StringBuilder extension) {
@@ -1270,349 +1309,352 @@ public class PhoneNumberUtil {
             boolean varE40ED1FD3A4A1BCF90B2F107CACB31BD_663781971 = (metadata.hasPreferredExtnPrefix());
             {
                 extension.append(metadata.getPreferredExtnPrefix()).append(extensionDigits);
-            } //End block
+            } 
             {
                 extension.append(DEFAULT_EXTN_PREFIX).append(extensionDigits);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(extensionDigits.getTaint());
         addTaint(regionCode.getTaint());
         addTaint(extension.getTaint());
-        // ---------- Original Method ----------
-        //PhoneMetadata metadata = getMetadataForRegion(regionCode);
-        //if (metadata.hasPreferredExtnPrefix()) {
-      //extension.append(metadata.getPreferredExtnPrefix()).append(extensionDigits);
-    //} else {
-      //extension.append(DEFAULT_EXTN_PREFIX).append(extensionDigits);
-    //}
+        
+        
+        
+      
+    
+      
+    
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.269 -0400", hash_original_method = "B508A0D4C9257AABA72DD1888D64C9E3", hash_generated_method = "B101D55F27418A24D722E33123D9AF90")
      PhoneNumberDesc getNumberDescByType(PhoneMetadata metadata, PhoneNumberType type) {
-        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_74430410 = null; //Variable for return #1
-        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_69917106 = null; //Variable for return #2
-        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_285006849 = null; //Variable for return #3
-        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_463342638 = null; //Variable for return #4
-        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_368929386 = null; //Variable for return #5
-        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_953679991 = null; //Variable for return #6
-        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_1972584932 = null; //Variable for return #7
-        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_314138633 = null; //Variable for return #8
-        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_1866252226 = null; //Variable for return #9
-        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_1422502460 = null; //Variable for return #10
-        //Begin case PREMIUM_RATE 
+        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_74430410 = null; 
+        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_69917106 = null; 
+        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_285006849 = null; 
+        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_463342638 = null; 
+        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_368929386 = null; 
+        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_953679991 = null; 
+        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_1972584932 = null; 
+        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_314138633 = null; 
+        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_1866252226 = null; 
+        PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_1422502460 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_74430410 = metadata.getPremiumRate();
-        //End case PREMIUM_RATE 
-        //Begin case TOLL_FREE 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_69917106 = metadata.getTollFree();
-        //End case TOLL_FREE 
-        //Begin case MOBILE 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_285006849 = metadata.getMobile();
-        //End case MOBILE 
-        //Begin case FIXED_LINE FIXED_LINE_OR_MOBILE 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_463342638 = metadata.getFixedLine();
-        //End case FIXED_LINE FIXED_LINE_OR_MOBILE 
-        //Begin case SHARED_COST 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_368929386 = metadata.getSharedCost();
-        //End case SHARED_COST 
-        //Begin case VOIP 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_953679991 = metadata.getVoip();
-        //End case VOIP 
-        //Begin case PERSONAL_NUMBER 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1972584932 = metadata.getPersonalNumber();
-        //End case PERSONAL_NUMBER 
-        //Begin case PAGER 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_314138633 = metadata.getPager();
-        //End case PAGER 
-        //Begin case UAN 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1866252226 = metadata.getUan();
-        //End case UAN 
-        //Begin case default 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1422502460 = metadata.getGeneralDesc();
-        //End case default 
+        
         addTaint(metadata.getTaint());
         addTaint(type.getTaint());
-        PhoneNumberDesc varA7E53CE21691AB073D9660D615818899_418627101; //Final return value
+        PhoneNumberDesc varA7E53CE21691AB073D9660D615818899_418627101; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_418627101 = varB4EAC82CA7396A68D541C85D26508E83_74430410;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_418627101 = varB4EAC82CA7396A68D541C85D26508E83_69917106;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_418627101 = varB4EAC82CA7396A68D541C85D26508E83_285006849;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_418627101 = varB4EAC82CA7396A68D541C85D26508E83_463342638;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_418627101 = varB4EAC82CA7396A68D541C85D26508E83_368929386;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_418627101 = varB4EAC82CA7396A68D541C85D26508E83_953679991;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_418627101 = varB4EAC82CA7396A68D541C85D26508E83_1972584932;
                 break;
-            case 8: //Assign result for return ordinal #8
+            case 8: 
                 varA7E53CE21691AB073D9660D615818899_418627101 = varB4EAC82CA7396A68D541C85D26508E83_314138633;
                 break;
-            case 9: //Assign result for return ordinal #9
+            case 9: 
                 varA7E53CE21691AB073D9660D615818899_418627101 = varB4EAC82CA7396A68D541C85D26508E83_1866252226;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_418627101 = varB4EAC82CA7396A68D541C85D26508E83_1422502460;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_418627101.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_418627101.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_418627101;
-        // ---------- Original Method ----------
-        //switch (type) {
-      //case PREMIUM_RATE:
-        //return metadata.getPremiumRate();
-      //case TOLL_FREE:
-        //return metadata.getTollFree();
-      //case MOBILE:
-        //return metadata.getMobile();
-      //case FIXED_LINE:
-      //case FIXED_LINE_OR_MOBILE:
-        //return metadata.getFixedLine();
-      //case SHARED_COST:
-        //return metadata.getSharedCost();
-      //case VOIP:
-        //return metadata.getVoip();
-      //case PERSONAL_NUMBER:
-        //return metadata.getPersonalNumber();
-      //case PAGER:
-        //return metadata.getPager();
-      //case UAN:
-        //return metadata.getUan();
-      //default:
-        //return metadata.getGeneralDesc();
-    //}
+        
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.269 -0400", hash_original_method = "261D2E3780968B6A389AA5653D83C66D", hash_generated_method = "CD95FDB39133927693EB3F61F8B9808D")
     public PhoneNumberType getNumberType(PhoneNumber number) {
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_967672509 = null; //Variable for return #1
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_1501860759 = null; //Variable for return #2
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_967672509 = null; 
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_1501860759 = null; 
         String regionCode = getRegionCodeForNumber(number);
         {
             boolean varA4E49614424C964001097A22AEE7E7BD_990158876 = (!isValidRegionCode(regionCode));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_967672509 = PhoneNumberType.UNKNOWN;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String nationalSignificantNumber = getNationalSignificantNumber(number);
         varB4EAC82CA7396A68D541C85D26508E83_1501860759 = getNumberTypeHelper(nationalSignificantNumber, getMetadataForRegion(regionCode));
         addTaint(number.getTaint());
-        PhoneNumberType varA7E53CE21691AB073D9660D615818899_1832157234; //Final return value
+        PhoneNumberType varA7E53CE21691AB073D9660D615818899_1832157234; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1832157234 = varB4EAC82CA7396A68D541C85D26508E83_967672509;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1832157234 = varB4EAC82CA7396A68D541C85D26508E83_1501860759;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1832157234.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1832157234.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1832157234;
-        // ---------- Original Method ----------
-        //String regionCode = getRegionCodeForNumber(number);
-        //if (!isValidRegionCode(regionCode)) {
-      //return PhoneNumberType.UNKNOWN;
-    //}
-        //String nationalSignificantNumber = getNationalSignificantNumber(number);
-        //return getNumberTypeHelper(nationalSignificantNumber, getMetadataForRegion(regionCode));
+        
+        
+        
+      
+    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.270 -0400", hash_original_method = "CFBB065FE396C61ECB0C897E1E4B66DC", hash_generated_method = "70DB86154FAF3275B4C25DC0333C4CBB")
     private PhoneNumberType getNumberTypeHelper(String nationalNumber, PhoneMetadata metadata) {
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_1378501759 = null; //Variable for return #1
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_1760116725 = null; //Variable for return #2
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_148856428 = null; //Variable for return #3
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_506603937 = null; //Variable for return #4
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_1938249403 = null; //Variable for return #5
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_513225790 = null; //Variable for return #6
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_1261226271 = null; //Variable for return #7
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_792616553 = null; //Variable for return #8
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_1916307452 = null; //Variable for return #9
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_1839765115 = null; //Variable for return #10
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_180605532 = null; //Variable for return #11
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_735407440 = null; //Variable for return #12
-        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_303088874 = null; //Variable for return #13
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_1378501759 = null; 
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_1760116725 = null; 
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_148856428 = null; 
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_506603937 = null; 
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_1938249403 = null; 
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_513225790 = null; 
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_1261226271 = null; 
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_792616553 = null; 
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_1916307452 = null; 
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_1839765115 = null; 
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_180605532 = null; 
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_735407440 = null; 
+        PhoneNumberType varB4EAC82CA7396A68D541C85D26508E83_303088874 = null; 
         PhoneNumberDesc generalNumberDesc = metadata.getGeneralDesc();
         {
             boolean var5B173D1DFC1562F0020B057904EE0B3C_436844516 = (!generalNumberDesc.hasNationalNumberPattern() ||
         !isNumberMatchingDesc(nationalNumber, generalNumberDesc));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1378501759 = PhoneNumberType.UNKNOWN;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varFC5517BA7F51C044D62329DD8DA33803_1855361534 = (isNumberMatchingDesc(nationalNumber, metadata.getPremiumRate()));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1760116725 = PhoneNumberType.PREMIUM_RATE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varC1B0D4362E20F4D15396EDA203322A7B_1602520763 = (isNumberMatchingDesc(nationalNumber, metadata.getTollFree()));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_148856428 = PhoneNumberType.TOLL_FREE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var4050D2117B44C187237158BD69941F37_1346765090 = (isNumberMatchingDesc(nationalNumber, metadata.getSharedCost()));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_506603937 = PhoneNumberType.SHARED_COST;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var391D271B9C8CED3D2BFA2E53ADE2C8A3_1606079083 = (isNumberMatchingDesc(nationalNumber, metadata.getVoip()));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1938249403 = PhoneNumberType.VOIP;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varBF02F0578A5A843F636ECA3493243BE6_1054286491 = (isNumberMatchingDesc(nationalNumber, metadata.getPersonalNumber()));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_513225790 = PhoneNumberType.PERSONAL_NUMBER;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var50FD2167C2C1685ED42EE82A11A93B25_880593529 = (isNumberMatchingDesc(nationalNumber, metadata.getPager()));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1261226271 = PhoneNumberType.PAGER;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var43080BFDC919D8A6AC3E511D3259EF4E_167401883 = (isNumberMatchingDesc(nationalNumber, metadata.getUan()));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_792616553 = PhoneNumberType.UAN;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean isFixedLine = isNumberMatchingDesc(nationalNumber, metadata.getFixedLine());
         {
             {
                 boolean var54343FDE9F348C9E4056CCA96B123FA1_1302669571 = (metadata.isSameMobileAndFixedLinePattern());
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1916307452 = PhoneNumberType.FIXED_LINE_OR_MOBILE;
-                } //End block
+                } 
                 {
                     boolean var0E0B18E4B567EBE5114CB7B2F558C5D5_228293317 = (isNumberMatchingDesc(nationalNumber, metadata.getMobile()));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1839765115 = PhoneNumberType.FIXED_LINE_OR_MOBILE;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_180605532 = PhoneNumberType.FIXED_LINE;
-        } //End block
+        } 
         {
             boolean varF3C8C9AD58504637AE43DDCCBED0DAE8_664535038 = (!metadata.isSameMobileAndFixedLinePattern() &&
         isNumberMatchingDesc(nationalNumber, metadata.getMobile()));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_735407440 = PhoneNumberType.MOBILE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_303088874 = PhoneNumberType.UNKNOWN;
         addTaint(nationalNumber.getTaint());
         addTaint(metadata.getTaint());
-        PhoneNumberType varA7E53CE21691AB073D9660D615818899_2084268396; //Final return value
+        PhoneNumberType varA7E53CE21691AB073D9660D615818899_2084268396; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2084268396 = varB4EAC82CA7396A68D541C85D26508E83_1378501759;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2084268396 = varB4EAC82CA7396A68D541C85D26508E83_1760116725;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_2084268396 = varB4EAC82CA7396A68D541C85D26508E83_148856428;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_2084268396 = varB4EAC82CA7396A68D541C85D26508E83_506603937;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_2084268396 = varB4EAC82CA7396A68D541C85D26508E83_1938249403;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_2084268396 = varB4EAC82CA7396A68D541C85D26508E83_513225790;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_2084268396 = varB4EAC82CA7396A68D541C85D26508E83_1261226271;
                 break;
-            case 8: //Assign result for return ordinal #8
+            case 8: 
                 varA7E53CE21691AB073D9660D615818899_2084268396 = varB4EAC82CA7396A68D541C85D26508E83_792616553;
                 break;
-            case 9: //Assign result for return ordinal #9
+            case 9: 
                 varA7E53CE21691AB073D9660D615818899_2084268396 = varB4EAC82CA7396A68D541C85D26508E83_1916307452;
                 break;
-            case 10: //Assign result for return ordinal #10
+            case 10: 
                 varA7E53CE21691AB073D9660D615818899_2084268396 = varB4EAC82CA7396A68D541C85D26508E83_1839765115;
                 break;
-            case 11: //Assign result for return ordinal #11
+            case 11: 
                 varA7E53CE21691AB073D9660D615818899_2084268396 = varB4EAC82CA7396A68D541C85D26508E83_180605532;
                 break;
-            case 12: //Assign result for return ordinal #12
+            case 12: 
                 varA7E53CE21691AB073D9660D615818899_2084268396 = varB4EAC82CA7396A68D541C85D26508E83_735407440;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2084268396 = varB4EAC82CA7396A68D541C85D26508E83_303088874;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2084268396.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2084268396.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2084268396;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.271 -0400", hash_original_method = "B7D0F615A2820F4964EA69968467492C", hash_generated_method = "83DB8742D57B35F671A0031C3110D3DC")
      PhoneMetadata getMetadataForRegion(String regionCode) {
-        PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1325972466 = null; //Variable for return #1
-        PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1266696338 = null; //Variable for return #2
+        PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1325972466 = null; 
+        PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1266696338 = null; 
         {
             boolean varA4E49614424C964001097A22AEE7E7BD_1479021752 = (!isValidRegionCode(regionCode));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1325972466 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 boolean var60A67063C3B37462B25FD4797CD4A0A0_1440697378 = (!regionToMetadataMap.containsKey(regionCode));
                 {
                     loadMetadataForRegionFromFile(currentFilePrefix, regionCode);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1266696338 = regionToMetadataMap.get(regionCode);
         addTaint(regionCode.getTaint());
-        PhoneMetadata varA7E53CE21691AB073D9660D615818899_158876328; //Final return value
+        PhoneMetadata varA7E53CE21691AB073D9660D615818899_158876328; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_158876328 = varB4EAC82CA7396A68D541C85D26508E83_1325972466;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_158876328 = varB4EAC82CA7396A68D541C85D26508E83_1266696338;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_158876328.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_158876328.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_158876328;
-        // ---------- Original Method ----------
-        //if (!isValidRegionCode(regionCode)) {
-      //return null;
-    //}
-        //synchronized (regionToMetadataMap) {
-      //if (!regionToMetadataMap.containsKey(regionCode)) {
-        //loadMetadataForRegionFromFile(currentFilePrefix, regionCode);
-      //}
-    //}
-        //return regionToMetadataMap.get(regionCode);
+        
+        
+      
+    
+        
+      
+        
+      
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.271 -0400", hash_original_method = "B17A0514C43E05EB90EE98CA4CB42983", hash_generated_method = "A770B18ACE1ACCC7667363A4E8F22B10")
     private boolean isNumberMatchingDesc(String nationalNumber, PhoneNumberDesc numberDesc) {
         Matcher possibleNumberPatternMatcher = regexCache.getPatternForRegex(numberDesc.getPossibleNumberPattern())
@@ -1624,17 +1666,18 @@ public class PhoneNumberUtil {
         addTaint(numberDesc.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1184514593 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1184514593;
-        // ---------- Original Method ----------
-        //Matcher possibleNumberPatternMatcher =
-        //regexCache.getPatternForRegex(numberDesc.getPossibleNumberPattern())
-            //.matcher(nationalNumber);
-        //Matcher nationalNumberPatternMatcher =
-        //regexCache.getPatternForRegex(numberDesc.getNationalNumberPattern())
-            //.matcher(nationalNumber);
-        //return possibleNumberPatternMatcher.matches() && nationalNumberPatternMatcher.matches();
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.272 -0400", hash_original_method = "31ADC24E14E9CE703FF2777ACEC876BF", hash_generated_method = "5756A5ECB51B4AAE1A5CA8687C056B4B")
     public boolean isValidNumber(PhoneNumber number) {
         String regionCode = getRegionCodeForNumber(number);
@@ -1642,17 +1685,18 @@ public class PhoneNumberUtil {
         addTaint(number.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1488628026 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1488628026;
-        // ---------- Original Method ----------
-        //String regionCode = getRegionCodeForNumber(number);
-        //return (isValidRegionCode(regionCode) && isValidNumberForRegion(number, regionCode));
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.272 -0400", hash_original_method = "C701813EA11D8E6ADA1ECC6BB90E9747", hash_generated_method = "EE7BADB479E7BD5BCAA4605AA1A9AAE1")
     public boolean isValidNumberForRegion(PhoneNumber number, String regionCode) {
         {
             boolean var98525ED7F2835E26F2B24C7F8233B726_1146568110 = (number.getCountryCode() != getCountryCodeForRegion(regionCode));
-        } //End collapsed parenthetic
+        } 
         PhoneMetadata metadata = getMetadataForRegion(regionCode);
         PhoneNumberDesc generalNumDesc = metadata.getGeneralDesc();
         String nationalSignificantNumber = getNationalSignificantNumber(number);
@@ -1660,82 +1704,84 @@ public class PhoneNumberUtil {
             boolean var6BBB06AEDF976ADEC9072013B0735BB1_769289524 = (!generalNumDesc.hasNationalNumberPattern());
             {
                 int numberLength = nationalSignificantNumber.length();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean varDB2FE427898C8D8020D29E442EFBBBDB_1615323646 = (getNumberTypeHelper(nationalSignificantNumber, metadata) != PhoneNumberType.UNKNOWN);
         addTaint(number.getTaint());
         addTaint(regionCode.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1792543083 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1792543083;
-        // ---------- Original Method ----------
-        //if (number.getCountryCode() != getCountryCodeForRegion(regionCode)) {
-      //return false;
-    //}
-        //PhoneMetadata metadata = getMetadataForRegion(regionCode);
-        //PhoneNumberDesc generalNumDesc = metadata.getGeneralDesc();
-        //String nationalSignificantNumber = getNationalSignificantNumber(number);
-        //if (!generalNumDesc.hasNationalNumberPattern()) {
-      //int numberLength = nationalSignificantNumber.length();
-      //return numberLength > MIN_LENGTH_FOR_NSN && numberLength <= MAX_LENGTH_FOR_NSN;
-    //}
-        //return getNumberTypeHelper(nationalSignificantNumber, metadata) != PhoneNumberType.UNKNOWN;
+        
+        
+      
+    
+        
+        
+        
+        
+      
+      
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.274 -0400", hash_original_method = "C5C9CB0E93474118DAA9D7A65CA1060A", hash_generated_method = "B5950B4CE34A32D33B1700813E08F48B")
     public String getRegionCodeForNumber(PhoneNumber number) {
-        String varB4EAC82CA7396A68D541C85D26508E83_337018800 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1050548294 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_2014651141 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_337018800 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1050548294 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2014651141 = null; 
         int countryCode = number.getCountryCode();
         List<String> regions = countryCallingCodeToRegionCodeMap.get(countryCode);
         {
             varB4EAC82CA7396A68D541C85D26508E83_337018800 = null;
-        } //End block
+        } 
         {
             boolean var10ED2DD9FF740B3AAF00BF9AEF0FF83C_1797438026 = (regions.size() == 1);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1050548294 = regions.get(0);
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2014651141 = getRegionCodeForNumberFromRegionList(number, regions);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(number.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1729662276; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1729662276; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1729662276 = varB4EAC82CA7396A68D541C85D26508E83_337018800;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1729662276 = varB4EAC82CA7396A68D541C85D26508E83_1050548294;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1729662276 = varB4EAC82CA7396A68D541C85D26508E83_2014651141;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1729662276.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1729662276.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1729662276;
-        // ---------- Original Method ----------
-        //int countryCode = number.getCountryCode();
-        //List<String> regions = countryCallingCodeToRegionCodeMap.get(countryCode);
-        //if (regions == null) {
-      //return null;
-    //}
-        //if (regions.size() == 1) {
-      //return regions.get(0);
-    //} else {
-      //return getRegionCodeForNumberFromRegionList(number, regions);
-    //}
+        
+        
+        
+        
+      
+    
+        
+      
+    
+      
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.284 -0400", hash_original_method = "814AB76683AFE761330E661D695A8B3F", hash_generated_method = "B03CA363361350B46A422C0436343C69")
     private String getRegionCodeForNumberFromRegionList(PhoneNumber number,
                                                       List<String> regionCodes) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1043137215 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_652384454 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1925406776 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1043137215 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_652384454 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1925406776 = null; 
         String nationalNumber = getNationalSignificantNumber(number);
         {
             Iterator<String> varCBD98C0A7F219455C413F8EC0E9FF73F_2061807617 = (regionCodes).iterator();
@@ -1751,150 +1797,154 @@ public class PhoneNumberUtil {
                 .matcher(nationalNumber).lookingAt());
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_1043137215 = regionCode;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         boolean varF0EA7F11B601F2E7D21312C63A7500A8_1817863250 = (getNumberTypeHelper(nationalNumber, metadata) != PhoneNumberType.UNKNOWN);
                         {
                             varB4EAC82CA7396A68D541C85D26508E83_652384454 = regionCode;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1925406776 = null;
         addTaint(number.getTaint());
         addTaint(regionCodes.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_2070436481; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_2070436481; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2070436481 = varB4EAC82CA7396A68D541C85D26508E83_1043137215;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2070436481 = varB4EAC82CA7396A68D541C85D26508E83_652384454;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2070436481 = varB4EAC82CA7396A68D541C85D26508E83_1925406776;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2070436481.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2070436481.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2070436481;
-        // ---------- Original Method ----------
-        //String nationalNumber = getNationalSignificantNumber(number);
-        //for (String regionCode : regionCodes) {
-      //PhoneMetadata metadata = getMetadataForRegion(regionCode);
-      //if (metadata.hasLeadingDigits()) {
-        //if (regexCache.getPatternForRegex(metadata.getLeadingDigits())
-                //.matcher(nationalNumber).lookingAt()) {
-          //return regionCode;
-        //}
-      //} else if (getNumberTypeHelper(nationalNumber, metadata) != PhoneNumberType.UNKNOWN) {
-        //return regionCode;
-      //}
-    //}
-        //return null;
+        
+        
+        
+      
+      
+        
+                
+          
+        
+      
+        
+      
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.285 -0400", hash_original_method = "DA9951AEFEAF4242112AA6281301B32F", hash_generated_method = "E7BC1A075F23519660B817BEB455153B")
     public String getRegionCodeForCountryCode(int countryCallingCode) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1534213826 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1534213826 = null; 
         List<String> regionCodes = countryCallingCodeToRegionCodeMap.get(countryCallingCode);
         varB4EAC82CA7396A68D541C85D26508E83_1534213826 = regionCodes == null ? UNKNOWN_REGION : regionCodes.get(0);
         addTaint(countryCallingCode);
-        varB4EAC82CA7396A68D541C85D26508E83_1534213826.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1534213826.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1534213826;
-        // ---------- Original Method ----------
-        //List<String> regionCodes = countryCallingCodeToRegionCodeMap.get(countryCallingCode);
-        //return regionCodes == null ? UNKNOWN_REGION : regionCodes.get(0);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.286 -0400", hash_original_method = "D7076C7EB39C8978E29A5CA27F40EEC9", hash_generated_method = "84AAFA8B468E373EBA2035E8B0FB214E")
     public int getCountryCodeForRegion(String regionCode) {
         {
             boolean varA4E49614424C964001097A22AEE7E7BD_1716832518 = (!isValidRegionCode(regionCode));
-        } //End collapsed parenthetic
+        } 
         PhoneMetadata metadata = getMetadataForRegion(regionCode);
         int varDD48F4FF04794DCC6ACB188903D09223_281771027 = (metadata.getCountryCode());
         addTaint(regionCode.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_558314394 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_558314394;
-        // ---------- Original Method ----------
-        //if (!isValidRegionCode(regionCode)) {
-      //return 0;
-    //}
-        //PhoneMetadata metadata = getMetadataForRegion(regionCode);
-        //return metadata.getCountryCode();
+        
+        
+      
+    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.287 -0400", hash_original_method = "E58B423D76AD6194B45901E123DB6EBF", hash_generated_method = "EBB2928EDD5625A911F583A8C8505384")
     public String getNddPrefixForRegion(String regionCode, boolean stripNonDigits) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1822798808 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_508346694 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_704210242 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1822798808 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_508346694 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_704210242 = null; 
         {
             boolean varA4E49614424C964001097A22AEE7E7BD_461734158 = (!isValidRegionCode(regionCode));
             {
                 LOGGER.log(Level.SEVERE, "Invalid or missing region code provided.");
                 varB4EAC82CA7396A68D541C85D26508E83_1822798808 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         PhoneMetadata metadata = getMetadataForRegion(regionCode);
         String nationalPrefix = metadata.getNationalPrefix();
         {
             boolean var01C0F06701D85CDE650BDE5E4D96FB06_774790678 = (nationalPrefix.length() == 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_508346694 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             nationalPrefix = nationalPrefix.replace("~", "");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_704210242 = nationalPrefix;
         addTaint(regionCode.getTaint());
         addTaint(stripNonDigits);
-        String varA7E53CE21691AB073D9660D615818899_240918725; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_240918725; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_240918725 = varB4EAC82CA7396A68D541C85D26508E83_1822798808;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_240918725 = varB4EAC82CA7396A68D541C85D26508E83_508346694;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_240918725 = varB4EAC82CA7396A68D541C85D26508E83_704210242;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_240918725.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_240918725.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_240918725;
-        // ---------- Original Method ----------
-        //if (!isValidRegionCode(regionCode)) {
-      //LOGGER.log(Level.SEVERE, "Invalid or missing region code provided.");
-      //return null;
-    //}
-        //PhoneMetadata metadata = getMetadataForRegion(regionCode);
-        //String nationalPrefix = metadata.getNationalPrefix();
-        //if (nationalPrefix.length() == 0) {
-      //return null;
-    //}
-        //if (stripNonDigits) {
-      //nationalPrefix = nationalPrefix.replace("~", "");
-    //}
-        //return nationalPrefix;
+        
+        
+      
+      
+    
+        
+        
+        
+      
+    
+        
+      
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.287 -0400", hash_original_method = "7B63C50F103D8DC60E8A2B15ED73A093", hash_generated_method = "64F8FC4F3C56C607AB62ADE2D5113B6C")
     public boolean isNANPACountry(String regionCode) {
         boolean var8AEB4252BA8A65A9B8C3173CF2CBF7D8_1023456554 = (nanpaRegions.contains(regionCode));
         addTaint(regionCode.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_370186904 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_370186904;
-        // ---------- Original Method ----------
-        //return nanpaRegions.contains(regionCode);
+        
+        
     }
 
     
@@ -1906,105 +1956,109 @@ public class PhoneNumberUtil {
         addTaint(countryCallingCode);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2101497504 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2101497504;
-        // ---------- Original Method ----------
-        //PhoneMetadata mainMetadataForCallingCode = getMetadataForRegion(
-        //getRegionCodeForCountryCode(countryCallingCode));
-        //if (mainMetadataForCallingCode == null) {
-      //return false;
-    //}
-        //return mainMetadataForCallingCode.isLeadingZeroPossible();
+        
+        
+        
+        
+      
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.288 -0400", hash_original_method = "4B80DFBB3D3B298395671B1C8C6F67DA", hash_generated_method = "3070027228EF2F254A26C207C7025A32")
     public boolean isAlphaNumber(String number) {
         {
             boolean var6F2D6DBE1E1842574CD6CB87FFC5DB6E_671149653 = (!isViablePhoneNumber(number));
-        } //End collapsed parenthetic
+        } 
         StringBuilder strippedNumber = new StringBuilder(number);
         maybeStripExtension(strippedNumber);
         boolean varAE4E32ECCF3EF15A647E2C1BB378DAA7_1251555023 = (VALID_ALPHA_PHONE_PATTERN.matcher(strippedNumber).matches());
         addTaint(number.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_446683455 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_446683455;
-        // ---------- Original Method ----------
-        //if (!isViablePhoneNumber(number)) {
-      //return false;
-    //}
-        //StringBuilder strippedNumber = new StringBuilder(number);
-        //maybeStripExtension(strippedNumber);
-        //return VALID_ALPHA_PHONE_PATTERN.matcher(strippedNumber).matches();
+        
+        
+      
+    
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.289 -0400", hash_original_method = "86FEA4033CCC520A9BCC7CD67C884B0D", hash_generated_method = "02B1C000F1972FBBCF32CB99CA2312E0")
     public boolean isPossibleNumber(PhoneNumber number) {
         boolean varB638E1EBE041FE51ED0B48C92300B1AB_308744456 = (isPossibleNumberWithReason(number) == ValidationResult.IS_POSSIBLE);
         addTaint(number.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_404068824 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_404068824;
-        // ---------- Original Method ----------
-        //return isPossibleNumberWithReason(number) == ValidationResult.IS_POSSIBLE;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.290 -0400", hash_original_method = "B3EB56A7047F0C0039433A6E9896FBEF", hash_generated_method = "04701ACE3D2C516D80150478BDD1FF70")
     private ValidationResult testNumberLengthAgainstPattern(Pattern numberPattern, String number) {
-        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_558282385 = null; //Variable for return #1
-        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_849525816 = null; //Variable for return #2
-        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_1596887442 = null; //Variable for return #3
+        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_558282385 = null; 
+        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_849525816 = null; 
+        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_1596887442 = null; 
         Matcher numberMatcher = numberPattern.matcher(number);
         {
             boolean var71179D25353510F4890F375B5AE981E3_1537680439 = (numberMatcher.matches());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_558282385 = ValidationResult.IS_POSSIBLE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var162373AA4FD3689E76A45288F34FBEF2_613953291 = (numberMatcher.lookingAt());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_849525816 = ValidationResult.TOO_LONG;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1596887442 = ValidationResult.TOO_SHORT;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(numberPattern.getTaint());
         addTaint(number.getTaint());
-        ValidationResult varA7E53CE21691AB073D9660D615818899_824267202; //Final return value
+        ValidationResult varA7E53CE21691AB073D9660D615818899_824267202; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_824267202 = varB4EAC82CA7396A68D541C85D26508E83_558282385;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_824267202 = varB4EAC82CA7396A68D541C85D26508E83_849525816;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_824267202 = varB4EAC82CA7396A68D541C85D26508E83_1596887442;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_824267202.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_824267202.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_824267202;
-        // ---------- Original Method ----------
-        //Matcher numberMatcher = numberPattern.matcher(number);
-        //if (numberMatcher.matches()) {
-      //return ValidationResult.IS_POSSIBLE;
-    //}
-        //if (numberMatcher.lookingAt()) {
-      //return ValidationResult.TOO_LONG;
-    //} else {
-      //return ValidationResult.TOO_SHORT;
-    //}
+        
+        
+        
+      
+    
+        
+      
+    
+      
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.292 -0400", hash_original_method = "5E4449198019FBA49E61EB3BB2D3E7CD", hash_generated_method = "E0C3AA4BFB059A4A0DEE3401F29A2FAD")
     public ValidationResult isPossibleNumberWithReason(PhoneNumber number) {
-        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_1480083859 = null; //Variable for return #1
-        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_1528779654 = null; //Variable for return #2
-        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_1334925533 = null; //Variable for return #3
-        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_1533963234 = null; //Variable for return #4
-        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_347604479 = null; //Variable for return #5
+        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_1480083859 = null; 
+        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_1528779654 = null; 
+        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_1334925533 = null; 
+        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_1533963234 = null; 
+        ValidationResult varB4EAC82CA7396A68D541C85D26508E83_347604479 = null; 
         String nationalNumber = getNationalSignificantNumber(number);
         int countryCode = number.getCountryCode();
         String regionCode = getRegionCodeForCountryCode(countryCode);
@@ -2012,8 +2066,8 @@ public class PhoneNumberUtil {
             boolean varA4E49614424C964001097A22AEE7E7BD_152052476 = (!isValidRegionCode(regionCode));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1480083859 = ValidationResult.INVALID_COUNTRY_CODE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         PhoneNumberDesc generalNumDesc = getMetadataForRegion(regionCode).getGeneralDesc();
         {
             boolean var6BBB06AEDF976ADEC9072013B0735BB1_318537899 = (!generalNumDesc.hasNationalNumberPattern());
@@ -2022,69 +2076,71 @@ public class PhoneNumberUtil {
                 int numberLength = nationalNumber.length();
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1528779654 = ValidationResult.TOO_SHORT;
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1334925533 = ValidationResult.TOO_LONG;
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1533963234 = ValidationResult.IS_POSSIBLE;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         Pattern possibleNumberPattern = regexCache.getPatternForRegex(generalNumDesc.getPossibleNumberPattern());
         varB4EAC82CA7396A68D541C85D26508E83_347604479 = testNumberLengthAgainstPattern(possibleNumberPattern, nationalNumber);
         addTaint(number.getTaint());
-        ValidationResult varA7E53CE21691AB073D9660D615818899_1246798168; //Final return value
+        ValidationResult varA7E53CE21691AB073D9660D615818899_1246798168; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1246798168 = varB4EAC82CA7396A68D541C85D26508E83_1480083859;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1246798168 = varB4EAC82CA7396A68D541C85D26508E83_1528779654;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1246798168 = varB4EAC82CA7396A68D541C85D26508E83_1334925533;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1246798168 = varB4EAC82CA7396A68D541C85D26508E83_1533963234;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1246798168 = varB4EAC82CA7396A68D541C85D26508E83_347604479;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1246798168.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1246798168.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1246798168;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.293 -0400", hash_original_method = "ABB46ACB6DF1697743B661541AD5E166", hash_generated_method = "8D4842B61B48C791242EFBD95B21C937")
     public boolean isPossibleNumber(String number, String regionDialingFrom) {
         try 
         {
             boolean var96F965C3B92FA5515239648FCAA605FA_476501478 = (isPossibleNumber(parse(number, regionDialingFrom)));
-        } //End block
+        } 
         catch (NumberParseException e)
         { }
         addTaint(number.getTaint());
         addTaint(regionDialingFrom.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2045313410 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2045313410;
-        // ---------- Original Method ----------
-        //try {
-      //return isPossibleNumber(parse(number, regionDialingFrom));
-    //} catch (NumberParseException e) {
-      //return false;
-    //}
+        
+        
+      
+    
+      
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.294 -0400", hash_original_method = "763BBE034FB297BC9C435FECAC40F4A1", hash_generated_method = "785750F645224B2C2A3609C196B375DB")
     public boolean truncateTooLongNumber(PhoneNumber number) {
         {
             boolean var4F293B781EB7DE5CEFDA17D5EE1DE4BB_1192642962 = (isValidNumber(number));
-        } //End collapsed parenthetic
+        } 
         PhoneNumber numberCopy = new PhoneNumber();
         numberCopy.mergeFrom(number);
         long nationalNumber = number.getNationalNumber();
@@ -2094,44 +2150,45 @@ public class PhoneNumberUtil {
             {
                 boolean var4DE93CDC578CDDBFB1C41949B44D9A20_1346200188 = (isPossibleNumberWithReason(numberCopy) == ValidationResult.TOO_SHORT ||
           nationalNumber == 0);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             boolean varFE57FF35897528475D20382F37EC3A95_1586365814 = (!isValidNumber(numberCopy));
-        } //End collapsed parenthetic
+        } 
         number.setNationalNumber(nationalNumber);
         addTaint(number.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2068713329 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2068713329;
-        // ---------- Original Method ----------
-        //if (isValidNumber(number)) {
-      //return true;
-    //}
-        //PhoneNumber numberCopy = new PhoneNumber();
-        //numberCopy.mergeFrom(number);
-        //long nationalNumber = number.getNationalNumber();
-        //do {
-      //nationalNumber /= 10;
-      //numberCopy.setNationalNumber(nationalNumber);
-      //if (isPossibleNumberWithReason(numberCopy) == ValidationResult.TOO_SHORT ||
-          //nationalNumber == 0) {
-        //return false;
-      //}
-    //} while (!isValidNumber(numberCopy));
-        //number.setNationalNumber(nationalNumber);
-        //return true;
+        
+        
+      
+    
+        
+        
+        
+        
+      
+      
+      
+          
+        
+      
+    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.295 -0400", hash_original_method = "719F2F8970F4EB169BEDB2820A702606", hash_generated_method = "2465FFA602633E811FE587AD5AA0061E")
     public AsYouTypeFormatter getAsYouTypeFormatter(String regionCode) {
-        AsYouTypeFormatter varB4EAC82CA7396A68D541C85D26508E83_1169067876 = null; //Variable for return #1
+        AsYouTypeFormatter varB4EAC82CA7396A68D541C85D26508E83_1169067876 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1169067876 = new AsYouTypeFormatter(regionCode);
         addTaint(regionCode.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1169067876.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1169067876.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1169067876;
-        // ---------- Original Method ----------
-        //return new AsYouTypeFormatter(regionCode);
+        
+        
     }
 
     
@@ -2147,25 +2204,25 @@ public class PhoneNumberUtil {
                     boolean varF6C470E7E096D4CAC6F27A27E3BF3621_1300933519 = (countryCallingCodeToRegionCodeMap.containsKey(potentialCountryCode));
                     {
                         nationalNumber.append(fullNumber.substring(i));
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(fullNumber.getTaint());
         addTaint(nationalNumber.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_120026955 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_120026955;
-        // ---------- Original Method ----------
-        //int potentialCountryCode;
-        //int numberLength = fullNumber.length();
-        //for (int i = 1; i <= MAX_LENGTH_COUNTRY_CODE && i <= numberLength; i++) {
-      //potentialCountryCode = Integer.parseInt(fullNumber.substring(0, i));
-      //if (countryCallingCodeToRegionCodeMap.containsKey(potentialCountryCode)) {
-        //nationalNumber.append(fullNumber.substring(i));
-        //return potentialCountryCode;
-      //}
-    //}
-        //return 0;
+        
+        
+        
+        
+      
+      
+        
+        
+      
+    
+        
     }
 
     
@@ -2175,16 +2232,16 @@ public class PhoneNumberUtil {
                               PhoneNumber phoneNumber) throws NumberParseException {
         {
             boolean varB5B34D967C3FC3EF34B11B7B3B931B11_1796664821 = (number.length() == 0);
-        } //End collapsed parenthetic
+        } 
         StringBuilder fullNumber = new StringBuilder(number);
         String possibleCountryIddPrefix = "NonMatch";
         {
             possibleCountryIddPrefix = defaultRegionMetadata.getInternationalPrefix();
-        } //End block
+        } 
         CountryCodeSource countryCodeSource = maybeStripInternationalPrefixAndNormalize(fullNumber, possibleCountryIddPrefix);
         {
             phoneNumber.setCountryCodeSource(countryCodeSource);
-        } //End block
+        } 
         {
             {
                 boolean varE7EE2B23EDD4C9364B0D3D150E7CC45E_1829329511 = (fullNumber.length() < MIN_LENGTH_FOR_NSN);
@@ -2192,15 +2249,15 @@ public class PhoneNumberUtil {
                     if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.TOO_SHORT_AFTER_IDD,
                                        "Phone number had an IDD, but after this was not "
                                        + "long enough to be a viable phone number.");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             int potentialCountryCode = extractCountryCode(fullNumber, nationalNumber);
             {
                 phoneNumber.setCountryCode(potentialCountryCode);
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.INVALID_COUNTRY_CODE,
                                      "Country calling code supplied was not recognised.");
-        } //End block
+        } 
         {
             int defaultCountryCode = defaultRegionMetadata.getCountryCode();
             String defaultCountryCodeString = String.valueOf(defaultCountryCode);
@@ -2222,13 +2279,13 @@ public class PhoneNumberUtil {
                             nationalNumber.append(potentialNationalNumber);
                             {
                                 phoneNumber.setCountryCodeSource(CountryCodeSource.FROM_NUMBER_WITHOUT_PLUS_SIGN);
-                            } //End block
+                            } 
                             phoneNumber.setCountryCode(defaultCountryCode);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         phoneNumber.setCountryCode(0);
         addTaint(number.getTaint());
         addTaint(defaultRegionMetadata.getTaint());
@@ -2237,11 +2294,12 @@ public class PhoneNumberUtil {
         addTaint(phoneNumber.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_853461167 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_853461167;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.297 -0400", hash_original_method = "0F0B6B28B590A156D8457E403790D50B", hash_generated_method = "101363DB5EB52F1C54C1EC72975DC8FC")
     private boolean parsePrefixAsIdd(Pattern iddPattern, StringBuilder number) {
         Matcher m = iddPattern.matcher(number);
@@ -2256,31 +2314,31 @@ public class PhoneNumberUtil {
                         String normalizedGroup = normalizeDigitsOnly(digitMatcher.group(1));
                         {
                             boolean var61EE828DD147AE02AC5DD8BACE4A9E86_1249221216 = (normalizedGroup.equals("0"));
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 number.delete(0, matchEnd);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(iddPattern.getTaint());
         addTaint(number.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_564394514 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_564394514;
-        // ---------- Original Method ----------
-        //Matcher m = iddPattern.matcher(number);
-        //if (m.lookingAt()) {
-      //int matchEnd = m.end();
-      //Matcher digitMatcher = CAPTURING_DIGIT_PATTERN.matcher(number.substring(matchEnd));
-      //if (digitMatcher.find()) {
-        //String normalizedGroup = normalizeDigitsOnly(digitMatcher.group(1));
-        //if (normalizedGroup.equals("0")) {
-          //return false;
-        //}
-      //}
-      //number.delete(0, matchEnd);
-      //return true;
-    //}
-        //return false;
+        
+        
+        
+      
+      
+      
+        
+        
+          
+        
+      
+      
+      
+    
+        
     }
 
     
@@ -2288,16 +2346,16 @@ public class PhoneNumberUtil {
      CountryCodeSource maybeStripInternationalPrefixAndNormalize(
       StringBuilder number,
       String possibleIddPrefix) {
-        CountryCodeSource varB4EAC82CA7396A68D541C85D26508E83_1847588533 = null; //Variable for return #1
-        CountryCodeSource varB4EAC82CA7396A68D541C85D26508E83_1457327892 = null; //Variable for return #2
-        CountryCodeSource varB4EAC82CA7396A68D541C85D26508E83_676015313 = null; //Variable for return #3
-        CountryCodeSource varB4EAC82CA7396A68D541C85D26508E83_1134656655 = null; //Variable for return #4
+        CountryCodeSource varB4EAC82CA7396A68D541C85D26508E83_1847588533 = null; 
+        CountryCodeSource varB4EAC82CA7396A68D541C85D26508E83_1457327892 = null; 
+        CountryCodeSource varB4EAC82CA7396A68D541C85D26508E83_676015313 = null; 
+        CountryCodeSource varB4EAC82CA7396A68D541C85D26508E83_1134656655 = null; 
         {
             boolean varB5B34D967C3FC3EF34B11B7B3B931B11_1254505217 = (number.length() == 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1847588533 = CountryCodeSource.FROM_DEFAULT_COUNTRY;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Matcher m = PLUS_CHARS_PATTERN.matcher(number);
         {
             boolean var2E90163ED89C1EED1C54F6911454B170_1503700874 = (m.lookingAt());
@@ -2305,67 +2363,67 @@ public class PhoneNumberUtil {
                 number.delete(0, m.end());
                 normalize(number);
                 varB4EAC82CA7396A68D541C85D26508E83_1457327892 = CountryCodeSource.FROM_NUMBER_WITH_PLUS_SIGN;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Pattern iddPattern = regexCache.getPatternForRegex(possibleIddPrefix);
         {
             boolean varCDD8918BAE2604CCF3C5EBF34E65E7DD_487549820 = (parsePrefixAsIdd(iddPattern, number));
             {
                 normalize(number);
                 varB4EAC82CA7396A68D541C85D26508E83_676015313 = CountryCodeSource.FROM_NUMBER_WITH_IDD;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         normalize(number);
         varB4EAC82CA7396A68D541C85D26508E83_1134656655 = parsePrefixAsIdd(iddPattern, number)
            ? CountryCodeSource.FROM_NUMBER_WITH_IDD
            : CountryCodeSource.FROM_DEFAULT_COUNTRY;
         addTaint(number.getTaint());
         addTaint(possibleIddPrefix.getTaint());
-        CountryCodeSource varA7E53CE21691AB073D9660D615818899_1424780057; //Final return value
+        CountryCodeSource varA7E53CE21691AB073D9660D615818899_1424780057; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1424780057 = varB4EAC82CA7396A68D541C85D26508E83_1847588533;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1424780057 = varB4EAC82CA7396A68D541C85D26508E83_1457327892;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1424780057 = varB4EAC82CA7396A68D541C85D26508E83_676015313;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1424780057 = varB4EAC82CA7396A68D541C85D26508E83_1134656655;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1424780057.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1424780057.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1424780057;
-        // ---------- Original Method ----------
-        //if (number.length() == 0) {
-      //return CountryCodeSource.FROM_DEFAULT_COUNTRY;
-    //}
-        //Matcher m = PLUS_CHARS_PATTERN.matcher(number);
-        //if (m.lookingAt()) {
-      //number.delete(0, m.end());
-      //normalize(number);
-      //return CountryCodeSource.FROM_NUMBER_WITH_PLUS_SIGN;
-    //}
-        //Pattern iddPattern = regexCache.getPatternForRegex(possibleIddPrefix);
-        //if (parsePrefixAsIdd(iddPattern, number)) {
-      //normalize(number);
-      //return CountryCodeSource.FROM_NUMBER_WITH_IDD;
-    //}
-        //normalize(number);
-        //return parsePrefixAsIdd(iddPattern, number)
-           //? CountryCodeSource.FROM_NUMBER_WITH_IDD
-           //: CountryCodeSource.FROM_DEFAULT_COUNTRY;
+        
+        
+      
+    
+        
+        
+      
+      
+      
+    
+        
+        
+      
+      
+    
+        
+        
+           
+           
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.303 -0400", hash_original_method = "8024CAA7B81A99B980BA01FE387839A1", hash_generated_method = "76B0CA6B15706DF84A758150E1DC9B74")
      String maybeStripNationalPrefixAndCarrierCode(StringBuilder number, PhoneMetadata metadata) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1273607730 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1699670932 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1563929467 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_1834896316 = null; //Variable for return #4
+        String varB4EAC82CA7396A68D541C85D26508E83_1273607730 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1699670932 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1563929467 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1834896316 = null; 
         String carrierCode = "";
         int numberLength = number.length();
         String possibleNationalPrefix = metadata.getNationalPrefixForParsing();
@@ -2373,8 +2431,8 @@ public class PhoneNumberUtil {
             boolean var2D1654E1B48CDA3CB899B11DA870015B_1800067168 = (numberLength == 0 || possibleNationalPrefix.length() == 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1273607730 = "";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Matcher prefixMatcher = regexCache.getPatternForRegex(possibleNationalPrefix).matcher(number);
         {
             boolean var51DEE301B078E28F95DDA21171B258E8_66630384 = (prefixMatcher.lookingAt());
@@ -2392,16 +2450,16 @@ public class PhoneNumberUtil {
             !nationalNumberRule.matcher(number.substring(prefixMatcher.end())).matches());
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_1699670932 = "";
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             boolean var731E647394C8AC8EAD72BD6A33D30533_2066793089 = (numOfGroups > 0 && prefixMatcher.group(numOfGroups) != null);
                             {
                                 carrierCode = prefixMatcher.group(1);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         number.delete(0, prefixMatcher.end());
-                    } //End block
+                    } 
                     {
                         StringBuilder transformedNumber = new StringBuilder(number);
                         transformedNumber.replace(0, numberLength, prefixMatcher.replaceFirst(transformRule));
@@ -2410,45 +2468,45 @@ public class PhoneNumberUtil {
             !nationalNumberRule.matcher(transformedNumber.toString()).matches());
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_1563929467 = "";
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             carrierCode = prefixMatcher.group(1);
-                        } //End block
+                        } 
                         number.replace(0, number.length(), transformedNumber.toString());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1834896316 = carrierCode;
         addTaint(number.getTaint());
         addTaint(metadata.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_295640057; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_295640057; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_295640057 = varB4EAC82CA7396A68D541C85D26508E83_1273607730;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_295640057 = varB4EAC82CA7396A68D541C85D26508E83_1699670932;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_295640057 = varB4EAC82CA7396A68D541C85D26508E83_1563929467;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_295640057 = varB4EAC82CA7396A68D541C85D26508E83_1834896316;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_295640057.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_295640057.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_295640057;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.305 -0400", hash_original_method = "D072FBB7A4080E317A5210E0DF61655A", hash_generated_method = "EA819D7B747984AA7F84A535C37D159D")
      String maybeStripExtension(StringBuilder number) {
-        String varB4EAC82CA7396A68D541C85D26508E83_892380619 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1815327049 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_892380619 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1815327049 = null; 
         Matcher m = EXTN_PATTERN.matcher(number);
         {
             boolean var361B236D5550943CE1D4B9E817C41F2D_2057083516 = (m.find() && isViablePhoneNumber(number.substring(0, m.start())));
@@ -2463,40 +2521,41 @@ public class PhoneNumberUtil {
                                 String extension = m.group(i);
                                 number.delete(m.start(), number.length());
                                 varB4EAC82CA7396A68D541C85D26508E83_892380619 = extension;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1815327049 = "";
         addTaint(number.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1483566754; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1483566754; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1483566754 = varB4EAC82CA7396A68D541C85D26508E83_892380619;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1483566754 = varB4EAC82CA7396A68D541C85D26508E83_1815327049;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1483566754.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1483566754.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1483566754;
-        // ---------- Original Method ----------
-        //Matcher m = EXTN_PATTERN.matcher(number);
-        //if (m.find() && isViablePhoneNumber(number.substring(0, m.start()))) {
-      //for (int i = 1, length = m.groupCount(); i <= length; i++) {
-        //if (m.group(i) != null) {
-          //String extension = m.group(i);
-          //number.delete(m.start(), number.length());
-          //return extension;
-        //}
-      //}
-    //}
-        //return "";
+        
+        
+        
+      
+        
+          
+          
+          
+        
+      
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.306 -0400", hash_original_method = "E1BA4484CA3B538698D9E39D9664F7DD", hash_generated_method = "6EE50AEF3E73DB1259364AF849BA08D4")
     private boolean checkRegionForParsing(String numberToParse, String defaultRegion) {
         {
@@ -2505,69 +2564,73 @@ public class PhoneNumberUtil {
                 {
                     boolean varAC73D73EEB94A3B214186B0F9C923AF3_53203181 = (numberToParse == null || numberToParse.length() == 0 ||
           !PLUS_CHARS_PATTERN.matcher(numberToParse).lookingAt());
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(numberToParse.getTaint());
         addTaint(defaultRegion.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1212223830 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1212223830;
-        // ---------- Original Method ----------
-        //if (!isValidRegionCode(defaultRegion)) {
-      //if (numberToParse == null || numberToParse.length() == 0 ||
-          //!PLUS_CHARS_PATTERN.matcher(numberToParse).lookingAt()) {
-        //return false;
-      //}
-    //}
-        //return true;
+        
+        
+      
+          
+        
+      
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.307 -0400", hash_original_method = "6012972DF706A584D5C83C6971CF9392", hash_generated_method = "A928AC59E19DEE61E98B5B23B6A1DB87")
     public PhoneNumber parse(String numberToParse, String defaultRegion) throws NumberParseException {
-        PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1385678255 = null; //Variable for return #1
+        PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1385678255 = null; 
         PhoneNumber phoneNumber = new PhoneNumber();
         parse(numberToParse, defaultRegion, phoneNumber);
         varB4EAC82CA7396A68D541C85D26508E83_1385678255 = phoneNumber;
         addTaint(numberToParse.getTaint());
         addTaint(defaultRegion.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1385678255.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1385678255.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1385678255;
-        // ---------- Original Method ----------
-        //PhoneNumber phoneNumber = new PhoneNumber();
-        //parse(numberToParse, defaultRegion, phoneNumber);
-        //return phoneNumber;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.307 -0400", hash_original_method = "6ECDB36C19DB49774718F5C4BA94B539", hash_generated_method = "0B03E5B379B81B8F5BEF078A04733AB3")
     public void parse(String numberToParse, String defaultRegion, PhoneNumber phoneNumber) throws NumberParseException {
         parseHelper(numberToParse, defaultRegion, false, true, phoneNumber);
         addTaint(numberToParse.getTaint());
         addTaint(defaultRegion.getTaint());
         addTaint(phoneNumber.getTaint());
-        // ---------- Original Method ----------
-        //parseHelper(numberToParse, defaultRegion, false, true, phoneNumber);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.308 -0400", hash_original_method = "19CBF359D0DD4BA30476F5C26D54CCE4", hash_generated_method = "DC54C79D096516F23E0B6EBECC579385")
     public PhoneNumber parseAndKeepRawInput(String numberToParse, String defaultRegion) throws NumberParseException {
-        PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1561832850 = null; //Variable for return #1
+        PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_1561832850 = null; 
         PhoneNumber phoneNumber = new PhoneNumber();
         parseAndKeepRawInput(numberToParse, defaultRegion, phoneNumber);
         varB4EAC82CA7396A68D541C85D26508E83_1561832850 = phoneNumber;
         addTaint(numberToParse.getTaint());
         addTaint(defaultRegion.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1561832850.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1561832850.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1561832850;
-        // ---------- Original Method ----------
-        //PhoneNumber phoneNumber = new PhoneNumber();
-        //parseAndKeepRawInput(numberToParse, defaultRegion, phoneNumber);
-        //return phoneNumber;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.309 -0400", hash_original_method = "56F5D9940BB01A0D66986596B5A9CF6E", hash_generated_method = "8CE39E71A4F75F548446D8BCEAB5DE37")
     public void parseAndKeepRawInput(String numberToParse, String defaultRegion,
                                    PhoneNumber phoneNumber) throws NumberParseException {
@@ -2575,21 +2638,22 @@ public class PhoneNumberUtil {
         addTaint(numberToParse.getTaint());
         addTaint(defaultRegion.getTaint());
         addTaint(phoneNumber.getTaint());
-        // ---------- Original Method ----------
-        //parseHelper(numberToParse, defaultRegion, true, true, phoneNumber);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.309 -0400", hash_original_method = "FC749C2F4DF483D491476DD9FB58E6D5", hash_generated_method = "79A5F6F3032DFADC321E22300D9BE70B")
     public Iterable<PhoneNumberMatch> findNumbers(CharSequence text, String defaultRegion) {
-        Iterable<PhoneNumberMatch> varB4EAC82CA7396A68D541C85D26508E83_11232986 = null; //Variable for return #1
+        Iterable<PhoneNumberMatch> varB4EAC82CA7396A68D541C85D26508E83_11232986 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_11232986 = findNumbers(text, defaultRegion, Leniency.VALID, Long.MAX_VALUE);
         addTaint(text.getTaint());
         addTaint(defaultRegion.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_11232986.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_11232986.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_11232986;
-        // ---------- Original Method ----------
-        //return findNumbers(text, defaultRegion, Leniency.VALID, Long.MAX_VALUE);
+        
+        
     }
 
     
@@ -2597,7 +2661,7 @@ public class PhoneNumberUtil {
     public Iterable<PhoneNumberMatch> findNumbers(
       final CharSequence text, final String defaultRegion, final Leniency leniency,
       final long maxTries) {
-        Iterable<PhoneNumberMatch> varB4EAC82CA7396A68D541C85D26508E83_1417013105 = null; //Variable for return #1
+        Iterable<PhoneNumberMatch> varB4EAC82CA7396A68D541C85D26508E83_1417013105 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1417013105 = new Iterable<PhoneNumberMatch>() {
       public Iterator<PhoneNumberMatch> iterator() {
         return new PhoneNumberMatcher(
@@ -2608,51 +2672,52 @@ public class PhoneNumberUtil {
         addTaint(defaultRegion.getTaint());
         addTaint(leniency.getTaint());
         addTaint(maxTries);
-        varB4EAC82CA7396A68D541C85D26508E83_1417013105.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1417013105.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1417013105;
-        // ---------- Original Method ----------
-        //return new Iterable<PhoneNumberMatch>() {
-      //public Iterator<PhoneNumberMatch> iterator() {
-        //return new PhoneNumberMatcher(
-            //PhoneNumberUtil.this, text, defaultRegion, leniency, maxTries);
-      //}
-    //};
+        
+        
+      
+        
+            
+      
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.311 -0400", hash_original_method = "B3135DA9F7C362E965D50679AE934189", hash_generated_method = "12212037E84063008C83998CF1994722")
     private void parseHelper(String numberToParse, String defaultRegion, boolean keepRawInput,
                            boolean checkRegion, PhoneNumber phoneNumber) throws NumberParseException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.NOT_A_NUMBER,
                                      "The phone number supplied was null.");
-        } //End block
+        } 
         String number = extractPossibleNumber(numberToParse);
         {
             boolean var6F2D6DBE1E1842574CD6CB87FFC5DB6E_215037631 = (!isViablePhoneNumber(number));
             {
                 if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.NOT_A_NUMBER,
                                      "The string supplied did not seem to be a phone number.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var06E9F76E4F889EF52DC311C4A976B26A_1087297115 = (checkRegion && !checkRegionForParsing(number, defaultRegion));
             {
                 if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.INVALID_COUNTRY_CODE,
                                      "Missing or invalid default region.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             phoneNumber.setRawInput(numberToParse);
-        } //End block
+        } 
         StringBuilder nationalNumber = new StringBuilder(number);
         String extension = maybeStripExtension(nationalNumber);
         {
             boolean var3CC30422F1FA8C39327BDA102088343B_373760939 = (extension.length() > 0);
             {
                 phoneNumber.setExtension(extension);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         PhoneMetadata regionMetadata = getMetadataForRegion(defaultRegion);
         StringBuilder normalizedNationalNumber = new StringBuilder();
         int countryCode = maybeExtractCountryCode(nationalNumber.toString(), regionMetadata,
@@ -2663,68 +2728,69 @@ public class PhoneNumberUtil {
                 boolean varF49D20E798CCB0BC5377F0D78E2C4831_495359553 = (!phoneNumberRegion.equals(defaultRegion));
                 {
                     regionMetadata = getMetadataForRegion(phoneNumberRegion);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             normalize(nationalNumber);
             normalizedNationalNumber.append(nationalNumber);
             {
                 countryCode = regionMetadata.getCountryCode();
                 phoneNumber.setCountryCode(countryCode);
-            } //End block
+            } 
             {
                 phoneNumber.clearCountryCodeSource();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean varE256D1ABB8A26FE912AD1B0C28F9428D_1248578101 = (normalizedNationalNumber.length() < MIN_LENGTH_FOR_NSN);
             {
                 if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.TOO_SHORT_NSN,
                                      "The string supplied is too short to be a phone number.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             String carrierCode = maybeStripNationalPrefixAndCarrierCode(normalizedNationalNumber, regionMetadata);
             {
                 phoneNumber.setPreferredDomesticCarrierCode(carrierCode);
-            } //End block
-        } //End block
+            } 
+        } 
         int lengthOfNationalNumber = normalizedNationalNumber.length();
         {
             if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.TOO_SHORT_NSN,
                                      "The string supplied is too short to be a phone number.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.TOO_LONG,
                                      "The string supplied is too long to be a phone number.");
-        } //End block
+        } 
         {
             boolean varACF04B28E2A0B5A46318EA7197F780A3_1573310895 = (normalizedNationalNumber.charAt(0) == '0');
             {
                 phoneNumber.setItalianLeadingZero(true);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         phoneNumber.setNationalNumber(Long.parseLong(normalizedNationalNumber.toString()));
         addTaint(numberToParse.getTaint());
         addTaint(defaultRegion.getTaint());
         addTaint(keepRawInput);
         addTaint(checkRegion);
         addTaint(phoneNumber.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.313 -0400", hash_original_method = "83C8E6F8520B32A4B2A265A569BAF2C9", hash_generated_method = "429F7127433AF6E0716D6D944A5729CD")
     public MatchType isNumberMatch(PhoneNumber firstNumberIn, PhoneNumber secondNumberIn) {
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_582132209 = null; //Variable for return #1
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_86978686 = null; //Variable for return #2
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_990745459 = null; //Variable for return #3
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_1526423564 = null; //Variable for return #4
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_558912344 = null; //Variable for return #5
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_1096216826 = null; //Variable for return #6
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_2064528042 = null; //Variable for return #7
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_582132209 = null; 
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_86978686 = null; 
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_990745459 = null; 
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_1526423564 = null; 
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_558912344 = null; 
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_1096216826 = null; 
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_2064528042 = null; 
         PhoneNumber firstNumber = new PhoneNumber();
         firstNumber.mergeFrom(firstNumberIn);
         PhoneNumber secondNumber = new PhoneNumber();
@@ -2740,22 +2806,22 @@ public class PhoneNumberUtil {
         firstNumber.getExtension().length() == 0);
             {
                 firstNumber.clearExtension();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var60C5BEE8803B911C5831EA8EC7969A40_861356748 = (secondNumber.hasExtension() &&
         secondNumber.getExtension().length() == 0);
             {
                 secondNumber.clearExtension();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varF31A145523293CCF9F54D3055A0EFC09_960675353 = (firstNumber.hasExtension() && secondNumber.hasExtension() &&
         !firstNumber.getExtension().equals(secondNumber.getExtension()));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_582132209 = MatchType.NO_MATCH;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int firstNumberCountryCode = firstNumber.getCountryCode();
         int secondNumberCountryCode = secondNumber.getCountryCode();
         {
@@ -2763,64 +2829,65 @@ public class PhoneNumberUtil {
                 boolean var9B921E1924AE2BDB9C722839D617A98E_1915191070 = (firstNumber.exactlySameAs(secondNumber));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_86978686 = MatchType.EXACT_MATCH;
-                } //End block
+                } 
                 {
                     boolean var51FF660A6085B2E42A72E7B10CEF8B05_1576434838 = (firstNumberCountryCode == secondNumberCountryCode &&
                  isNationalNumberSuffixOfTheOther(firstNumber, secondNumber));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_990745459 = MatchType.SHORT_NSN_MATCH;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1526423564 = MatchType.NO_MATCH;
-        } //End block
+        } 
         firstNumber.setCountryCode(secondNumberCountryCode);
         {
             boolean varFF0709B6FD4A212C6A2A3AAFF8AF6F2C_192991893 = (firstNumber.exactlySameAs(secondNumber));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_558912344 = MatchType.NSN_MATCH;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var5CAFDF8CDD6EF1F618DB5BB207D00EF6_96880418 = (isNationalNumberSuffixOfTheOther(firstNumber, secondNumber));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1096216826 = MatchType.SHORT_NSN_MATCH;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2064528042 = MatchType.NO_MATCH;
         addTaint(firstNumberIn.getTaint());
         addTaint(secondNumberIn.getTaint());
-        MatchType varA7E53CE21691AB073D9660D615818899_51181276; //Final return value
+        MatchType varA7E53CE21691AB073D9660D615818899_51181276; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_51181276 = varB4EAC82CA7396A68D541C85D26508E83_582132209;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_51181276 = varB4EAC82CA7396A68D541C85D26508E83_86978686;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_51181276 = varB4EAC82CA7396A68D541C85D26508E83_990745459;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_51181276 = varB4EAC82CA7396A68D541C85D26508E83_1526423564;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_51181276 = varB4EAC82CA7396A68D541C85D26508E83_558912344;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_51181276 = varB4EAC82CA7396A68D541C85D26508E83_1096216826;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_51181276 = varB4EAC82CA7396A68D541C85D26508E83_2064528042;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_51181276.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_51181276.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_51181276;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.314 -0400", hash_original_method = "B2A134716BB483331B78911F7265BAC6", hash_generated_method = "C88C1AB9BB24901F6D1267BCAEC57DC8")
     private boolean isNationalNumberSuffixOfTheOther(PhoneNumber firstNumber,
                                                    PhoneNumber secondNumber) {
@@ -2832,25 +2899,26 @@ public class PhoneNumberUtil {
         addTaint(secondNumber.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1012225075 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1012225075;
-        // ---------- Original Method ----------
-        //String firstNumberNationalNumber = String.valueOf(firstNumber.getNationalNumber());
-        //String secondNumberNationalNumber = String.valueOf(secondNumber.getNationalNumber());
-        //return firstNumberNationalNumber.endsWith(secondNumberNationalNumber) ||
-           //secondNumberNationalNumber.endsWith(firstNumberNationalNumber);
+        
+        
+        
+        
+           
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.316 -0400", hash_original_method = "3C9E8BD2D7E8FA6C3BECA5B02E481416", hash_generated_method = "30E45658CD0AE6748B46630050EBE34A")
     public MatchType isNumberMatch(String firstNumber, String secondNumber) {
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_860044442 = null; //Variable for return #1
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_545467880 = null; //Variable for return #2
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_490961615 = null; //Variable for return #3
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_1054847293 = null; //Variable for return #4
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_860044442 = null; 
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_545467880 = null; 
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_490961615 = null; 
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_1054847293 = null; 
         try 
         {
             PhoneNumber firstNumberAsProto = parse(firstNumber, UNKNOWN_REGION);
             varB4EAC82CA7396A68D541C85D26508E83_860044442 = isNumberMatch(firstNumberAsProto, secondNumber);
-        } //End block
+        } 
         catch (NumberParseException e)
         {
             {
@@ -2860,7 +2928,7 @@ public class PhoneNumberUtil {
                     {
                         PhoneNumber secondNumberAsProto = parse(secondNumber, UNKNOWN_REGION);
                         varB4EAC82CA7396A68D541C85D26508E83_545467880 = isNumberMatch(secondNumberAsProto, firstNumber);
-                    } //End block
+                    } 
                     catch (NumberParseException e2)
                     {
                         {
@@ -2873,52 +2941,53 @@ public class PhoneNumberUtil {
                                     parseHelper(firstNumber, null, false, false, firstNumberProto);
                                     parseHelper(secondNumber, null, false, false, secondNumberProto);
                                     varB4EAC82CA7396A68D541C85D26508E83_490961615 = isNumberMatch(firstNumberProto, secondNumberProto);
-                                } //End block
+                                } 
                                 catch (NumberParseException e3)
                                 { }
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1054847293 = MatchType.NOT_A_NUMBER;
         addTaint(firstNumber.getTaint());
         addTaint(secondNumber.getTaint());
-        MatchType varA7E53CE21691AB073D9660D615818899_470981795; //Final return value
+        MatchType varA7E53CE21691AB073D9660D615818899_470981795; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_470981795 = varB4EAC82CA7396A68D541C85D26508E83_860044442;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_470981795 = varB4EAC82CA7396A68D541C85D26508E83_545467880;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_470981795 = varB4EAC82CA7396A68D541C85D26508E83_490961615;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_470981795 = varB4EAC82CA7396A68D541C85D26508E83_1054847293;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_470981795.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_470981795.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_470981795;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.319 -0400", hash_original_method = "FA442F82D618375A0E3FFC54DA76D9E3", hash_generated_method = "FCEF003A3E070FD51D7EF21E4836DF15")
     public MatchType isNumberMatch(PhoneNumber firstNumber, String secondNumber) {
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_1241792174 = null; //Variable for return #1
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_2013066724 = null; //Variable for return #2
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_817839155 = null; //Variable for return #3
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_904744297 = null; //Variable for return #4
-        MatchType varB4EAC82CA7396A68D541C85D26508E83_1961902514 = null; //Variable for return #5
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_1241792174 = null; 
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_2013066724 = null; 
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_817839155 = null; 
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_904744297 = null; 
+        MatchType varB4EAC82CA7396A68D541C85D26508E83_1961902514 = null; 
         try 
         {
             PhoneNumber secondNumberAsProto = parse(secondNumber, UNKNOWN_REGION);
             varB4EAC82CA7396A68D541C85D26508E83_1241792174 = isNumberMatch(firstNumber, secondNumberAsProto);
-        } //End block
+        } 
         catch (NumberParseException e)
         {
             {
@@ -2934,46 +3003,46 @@ public class PhoneNumberUtil {
                                 MatchType match = isNumberMatch(firstNumber, secondNumberWithFirstNumberRegion);
                                 {
                                     varB4EAC82CA7396A68D541C85D26508E83_2013066724 = MatchType.NSN_MATCH;
-                                } //End block
+                                } 
                                 varB4EAC82CA7396A68D541C85D26508E83_817839155 = match;
-                            } //End block
+                            } 
                             {
                                 PhoneNumber secondNumberProto = new PhoneNumber();
                                 parseHelper(secondNumber, null, false, false, secondNumberProto);
                                 varB4EAC82CA7396A68D541C85D26508E83_904744297 = isNumberMatch(firstNumber, secondNumberProto);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     catch (NumberParseException e2)
                     { }
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1961902514 = MatchType.NOT_A_NUMBER;
         addTaint(firstNumber.getTaint());
         addTaint(secondNumber.getTaint());
-        MatchType varA7E53CE21691AB073D9660D615818899_598040391; //Final return value
+        MatchType varA7E53CE21691AB073D9660D615818899_598040391; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_598040391 = varB4EAC82CA7396A68D541C85D26508E83_1241792174;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_598040391 = varB4EAC82CA7396A68D541C85D26508E83_2013066724;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_598040391 = varB4EAC82CA7396A68D541C85D26508E83_817839155;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_598040391 = varB4EAC82CA7396A68D541C85D26508E83_904744297;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_598040391 = varB4EAC82CA7396A68D541C85D26508E83_1961902514;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_598040391.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_598040391.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_598040391;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2983,20 +3052,20 @@ public class PhoneNumberUtil {
         String nationalSignificantNumber = getNationalSignificantNumber(number);
         {
             boolean var49E3803795D2C1A2A31963B43E424E43_1841655887 = (!hasValidRegionCode(regionCode, number.getCountryCode(), nationalSignificantNumber));
-        } //End collapsed parenthetic
+        } 
         PhoneMetadata metadata = getMetadataForRegion(regionCode);
         boolean varB254B21720CD001C28A66C6976015DBA_553934880 = (!isNumberMatchingDesc(nationalSignificantNumber, metadata.getNoInternationalDialling()));
         addTaint(number.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1880631873 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1880631873;
-        // ---------- Original Method ----------
-        //String regionCode = getRegionCodeForNumber(number);
-        //String nationalSignificantNumber = getNationalSignificantNumber(number);
-        //if (!hasValidRegionCode(regionCode, number.getCountryCode(), nationalSignificantNumber)) {
-      //return true;
-    //}
-        //PhoneMetadata metadata = getMetadataForRegion(regionCode);
-        //return !isNumberMatchingDesc(nationalSignificantNumber, metadata.getNoInternationalDialling());
+        
+        
+        
+        
+      
+    
+        
+        
     }
 
     

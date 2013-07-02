@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -82,23 +82,23 @@ public abstract class Provider extends Properties {
         this.info = info;
         versionString = String.valueOf(version);
         putProviderInfo();
-        // ---------- Original Method ----------
-        //this.name = name;
-        //this.version = version;
-        //this.info = info;
-        //versionString = String.valueOf(version);
-        //putProviderInfo();
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.604 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "BE01B038A23644FF74C9E9923606E094")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1670595863 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1670595863 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1670595863 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_1670595863.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1670595863.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1670595863;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
@@ -106,79 +106,82 @@ public abstract class Provider extends Properties {
     public double getVersion() {
         double varE8CD7DA078A86726031AD64F35F5A6C0_803023441 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_803023441;
-        // ---------- Original Method ----------
-        //return version;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.604 -0400", hash_original_method = "90F1C2C1B854E8544A3CF05D4B3BD6E7", hash_generated_method = "2ADDEEBA7395246246A69A45FCE15FAC")
     public String getInfo() {
-        String varB4EAC82CA7396A68D541C85D26508E83_181584505 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_181584505 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_181584505 = info;
-        varB4EAC82CA7396A68D541C85D26508E83_181584505.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_181584505.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_181584505;
-        // ---------- Original Method ----------
-        //return info;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.605 -0400", hash_original_method = "58EC0A1A07497E3FA377B5366380E5E3", hash_generated_method = "FDBB5E14A2CFAD1ABB5623504D79AA4E")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1839059551 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1839059551 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1839059551 = name + " version " + version;
-        varB4EAC82CA7396A68D541C85D26508E83_1839059551.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1839059551.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1839059551;
-        // ---------- Original Method ----------
-        //return name + " version " + version;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.606 -0400", hash_original_method = "53793BFB01C9C5B2BDDE9F63C2E38535", hash_generated_method = "A19DC41C7A8FE29FEA9015506AFF42CE")
     @Override
     public synchronized void clear() {
         super.clear();
         {
             serviceTable.clear();
-        } //End block
+        } 
         {
             propertyServiceTable.clear();
-        } //End block
+        } 
         {
             aliasTable.clear();
-        } //End block
+        } 
         {
             propertyAliasTable.clear();
-        } //End block
+        } 
         changedProperties = null;
         putProviderInfo();
         {
             Services.setNeedRefresh();
-        } //End block
+        } 
         servicesChanged();
-        // ---------- Original Method ----------
-        //super.clear();
-        //if (serviceTable != null) {
-            //serviceTable.clear();
-        //}
-        //if (propertyServiceTable != null) {
-            //propertyServiceTable.clear();
-        //}
-        //if (aliasTable != null) {
-            //aliasTable.clear();
-        //}
-        //if (propertyAliasTable != null) {
-            //propertyAliasTable.clear();
-        //}
-        //changedProperties = null;
-        //putProviderInfo();
-        //if (providerNumber != -1) {
-            //Services.setNeedRefresh();
-        //}
-        //servicesChanged();
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.607 -0400", hash_original_method = "EB6BD048CAF9E12CFD99EC1891725291", hash_generated_method = "B3B9EAD32DC6E226819616E80D60B159")
     @Override
     public synchronized void load(InputStream inStream) throws IOException {
@@ -186,10 +189,10 @@ public abstract class Provider extends Properties {
         tmp.load(inStream);
         myPutAll(tmp);
         addTaint(inStream.getTaint());
-        // ---------- Original Method ----------
-        //Properties tmp = new Properties();
-        //tmp.load(inStream);
-        //myPutAll(tmp);
+        
+        
+        
+        
     }
 
     
@@ -198,8 +201,8 @@ public abstract class Provider extends Properties {
     public synchronized void putAll(Map<?,?> t) {
         myPutAll(t);
         addTaint(t.getTaint());
-        // ---------- Original Method ----------
-        //myPutAll(t);
+        
+        
     }
 
     
@@ -207,7 +210,7 @@ public abstract class Provider extends Properties {
     private void myPutAll(Map<?,?> t) {
         {
             changedProperties = new Properties();
-        } //End block
+        } 
         Iterator<? extends Map.Entry<?, ?>> it = t.entrySet().iterator();
         Object key;
         Object value;
@@ -218,133 +221,137 @@ public abstract class Provider extends Properties {
                 key = entry.getKey();
                 {
                     boolean var39D76CDDB13616FD0D42E75AC7C012F1_856252504 = (key instanceof String && ((String) key).startsWith("Provider."));
-                } //End collapsed parenthetic
+                } 
                 value = entry.getValue();
                 super.put(key, value);
                 {
                     boolean var557FC3098495809338F3BC3135E1280B_220843006 = (changedProperties.remove(key) == null);
                     {
                         removeFromPropertyServiceTable(key);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 changedProperties.put(key, value);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             Services.setNeedRefresh();
-        } //End block
+        } 
         addTaint(t.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.608 -0400", hash_original_method = "70D9A28808783B7E2708BCE915ECB209", hash_generated_method = "EB48C6AAA58CC5C265D262844D74A60F")
     @Override
     public synchronized Set<Map.Entry<Object,Object>> entrySet() {
-        Set<Map.Entry<Object,Object>> varB4EAC82CA7396A68D541C85D26508E83_522063911 = null; //Variable for return #1
+        Set<Map.Entry<Object,Object>> varB4EAC82CA7396A68D541C85D26508E83_522063911 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_522063911 = Collections.unmodifiableSet(super.entrySet());
-        varB4EAC82CA7396A68D541C85D26508E83_522063911.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_522063911.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_522063911;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableSet(super.entrySet());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.609 -0400", hash_original_method = "45BA03BABBCEC97C3CDEDDFAAD34C546", hash_generated_method = "450D49A45DD25D880B634AA9AFAA0918")
     @Override
     public Set<Object> keySet() {
-        Set<Object> varB4EAC82CA7396A68D541C85D26508E83_1690262323 = null; //Variable for return #1
+        Set<Object> varB4EAC82CA7396A68D541C85D26508E83_1690262323 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1690262323 = Collections.unmodifiableSet(super.keySet());
-        varB4EAC82CA7396A68D541C85D26508E83_1690262323.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1690262323.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1690262323;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableSet(super.keySet());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.609 -0400", hash_original_method = "4FF8F6E11AAD8FB860F173913A5840CE", hash_generated_method = "3437D79A042219D522C8AE1C97866F25")
     @Override
     public Collection<Object> values() {
-        Collection<Object> varB4EAC82CA7396A68D541C85D26508E83_987740283 = null; //Variable for return #1
+        Collection<Object> varB4EAC82CA7396A68D541C85D26508E83_987740283 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_987740283 = Collections.unmodifiableCollection(super.values());
-        varB4EAC82CA7396A68D541C85D26508E83_987740283.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_987740283.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_987740283;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableCollection(super.values());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.610 -0400", hash_original_method = "6B0BAE35C6955DE6DEF5897424A78326", hash_generated_method = "44A71E915018B28A70ACFE48507BEC7D")
     @Override
     public synchronized Object put(Object key, Object value) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_237501702 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_202382672 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_237501702 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_202382672 = null; 
         {
             boolean var615FFDC8C58E5DA9131CFD1E840EB61D_2081286628 = (key instanceof String && ((String) key).startsWith("Provider."));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_237501702 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             Services.setNeedRefresh();
-        } //End block
+        } 
         {
             boolean varF5120E22219DB168E3E6D91BEC202FF4_320261093 = (changedProperties != null && changedProperties.remove(key) == null);
             {
                 removeFromPropertyServiceTable(key);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             changedProperties = new Properties();
-        } //End block
+        } 
         changedProperties.put(key, value);
         varB4EAC82CA7396A68D541C85D26508E83_202382672 = super.put(key, value);
         addTaint(key.getTaint());
         addTaint(value.getTaint());
-        Object varA7E53CE21691AB073D9660D615818899_1746346561; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_1746346561; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1746346561 = varB4EAC82CA7396A68D541C85D26508E83_237501702;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1746346561 = varB4EAC82CA7396A68D541C85D26508E83_202382672;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1746346561.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1746346561.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1746346561;
-        // ---------- Original Method ----------
-        //if (key instanceof String && ((String) key).startsWith("Provider.")) {
-            //return null;
-        //}
-        //if (providerNumber != -1) {
-            //Services.setNeedRefresh();
-        //}
-        //if (changedProperties != null && changedProperties.remove(key) == null) {
-            //removeFromPropertyServiceTable(key);
-        //}
-        //if (changedProperties == null) {
-            //changedProperties = new Properties();
-        //}
-        //changedProperties.put(key, value);
-        //return super.put(key, value);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.611 -0400", hash_original_method = "8EA23C4ABA882E49A95AE531F4BFEB20", hash_generated_method = "58EB3FF56ABB622453ACB638074781A3")
     @Override
     public synchronized Object remove(Object key) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_384006954 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_1691662353 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_384006954 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_1691662353 = null; 
         {
             boolean var615FFDC8C58E5DA9131CFD1E840EB61D_1776836917 = (key instanceof String && ((String) key).startsWith("Provider."));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_384006954 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             Services.setNeedRefresh();
-        } //End block
+        } 
         {
             boolean varF5120E22219DB168E3E6D91BEC202FF4_586389482 = (changedProperties != null && changedProperties.remove(key) == null);
             {
@@ -353,37 +360,37 @@ public abstract class Provider extends Properties {
                     boolean var88F5A1A88583F68F084FEAD07CBA365C_1654146729 = (changedProperties.size() == 0);
                     {
                         changedProperties = null;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1691662353 = super.remove(key);
         addTaint(key.getTaint());
-        Object varA7E53CE21691AB073D9660D615818899_1568577229; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_1568577229; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1568577229 = varB4EAC82CA7396A68D541C85D26508E83_384006954;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1568577229 = varB4EAC82CA7396A68D541C85D26508E83_1691662353;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1568577229.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1568577229.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1568577229;
-        // ---------- Original Method ----------
-        //if (key instanceof String && ((String) key).startsWith("Provider.")) {
-            //return null;
-        //}
-        //if (providerNumber != -1) {
-            //Services.setNeedRefresh();
-        //}
-        //if (changedProperties != null && changedProperties.remove(key) == null) {
-            //removeFromPropertyServiceTable(key);
-            //if (changedProperties.size() == 0) {
-                //changedProperties = null;
-            //}
-        //}
-        //return super.remove(key);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -396,37 +403,38 @@ public abstract class Provider extends Properties {
             {
                 servAlg = serv + "." + alg;
                 prop = getPropertyIgnoreCase(servAlg);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean var83392DFFAC381D73DD8A3765EFB03BDF_634191208 = (checkAttribute(servAlg, attribute, val));
-        } //End block
+        } 
         addTaint(serv.getTaint());
         addTaint(alg.getTaint());
         addTaint(attribute.getTaint());
         addTaint(val.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1829051077 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1829051077;
-        // ---------- Original Method ----------
-        //String servAlg = serv + "." + alg;
-        //String prop = getPropertyIgnoreCase(servAlg);
-        //if (prop == null) {
-            //alg = getPropertyIgnoreCase("Alg.Alias." + servAlg);
-            //if (alg != null) {
-                //servAlg = serv + "." + alg;
-                //prop = getPropertyIgnoreCase(servAlg);
-            //}
-        //}
-        //if (prop != null) {
-            //if (attribute == null) {
-                //return true;
-            //}
-            //return checkAttribute(servAlg, attribute, val);
-        //}
-        //return false;
+        
+        
+        
+        
+            
+            
+                
+                
+            
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.612 -0400", hash_original_method = "205FEBDC4595F3CAF3DB8C26A01A3B21", hash_generated_method = "18BBB83B55E7DD039132F4A44DBE88E6")
     private boolean checkAttribute(String servAlg, String attribute, String val) {
         String attributeValue = getPropertyIgnoreCase(servAlg + ' ' + attribute);
@@ -436,42 +444,42 @@ public abstract class Provider extends Properties {
                 {
                     {
                         boolean var2CCBDA5D9949774AEDDE95DD101E1B5B_1049395350 = (Integer.parseInt(attributeValue) >= Integer.parseInt(val));
-                    } //End collapsed parenthetic
-                } //End block
+                    } 
+                } 
                 {
                     {
                         boolean varBE561380D0BC947AE323F09089366FE2_374420675 = (attributeValue.equalsIgnoreCase(val));
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(servAlg.getTaint());
         addTaint(attribute.getTaint());
         addTaint(val.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_545819080 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_545819080;
-        // ---------- Original Method ----------
-        //String attributeValue = getPropertyIgnoreCase(servAlg + ' ' + attribute);
-        //if (attributeValue != null) {
-            //if (attribute.equalsIgnoreCase("KeySize")) {
-                //if (Integer.parseInt(attributeValue) >= Integer.parseInt(val)) {
-                    //return true;
-                //}
-            //} else { 
-                //if (attributeValue.equalsIgnoreCase(val)) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.612 -0400", hash_original_method = "6418C82159D4FAB251CB16B6C408D61D", hash_generated_method = "BA9FDE46C0F8402C6FB4936CC36C7FAA")
      void setProviderNumber(int n) {
         providerNumber = n;
-        // ---------- Original Method ----------
-        //providerNumber = n;
+        
+        
     }
 
     
@@ -479,23 +487,23 @@ public abstract class Provider extends Properties {
      int getProviderNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_373272808 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_373272808;
-        // ---------- Original Method ----------
-        //return providerNumber;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.613 -0400", hash_original_method = "6BFCD4E62487080CD7F60A29BC4CC43B", hash_generated_method = "DB466ED334F33F53B1FBAC38CC56EB3F")
     synchronized Provider.Service getService(String type) {
-        Provider.Service varB4EAC82CA7396A68D541C85D26508E83_52657147 = null; //Variable for return #1
-        Provider.Service varB4EAC82CA7396A68D541C85D26508E83_755802166 = null; //Variable for return #2
-        Provider.Service varB4EAC82CA7396A68D541C85D26508E83_116348288 = null; //Variable for return #3
+        Provider.Service varB4EAC82CA7396A68D541C85D26508E83_52657147 = null; 
+        Provider.Service varB4EAC82CA7396A68D541C85D26508E83_755802166 = null; 
+        Provider.Service varB4EAC82CA7396A68D541C85D26508E83_116348288 = null; 
         updatePropertyServiceTable();
         {
             boolean varE8D1884AAD74E2F5DA1CD399B1822ECD_283482395 = (lastServicesByType != null && type.equals(lastType));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_52657147 = lastServicesByType;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Provider.Service service;
         {
             Iterator<Service> it = getServices().iterator();
@@ -508,146 +516,146 @@ public abstract class Provider extends Properties {
                         lastType = type;
                         lastServicesByType = service;
                         varB4EAC82CA7396A68D541C85D26508E83_755802166 = service;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_116348288 = null;
-        Provider.Service varA7E53CE21691AB073D9660D615818899_589263633; //Final return value
+        Provider.Service varA7E53CE21691AB073D9660D615818899_589263633; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_589263633 = varB4EAC82CA7396A68D541C85D26508E83_52657147;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_589263633 = varB4EAC82CA7396A68D541C85D26508E83_755802166;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_589263633 = varB4EAC82CA7396A68D541C85D26508E83_116348288;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_589263633.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_589263633.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_589263633;
-        // ---------- Original Method ----------
-        //updatePropertyServiceTable();
-        //if (lastServicesByType != null && type.equals(lastType)) {
-            //return lastServicesByType;
-        //}
-        //Provider.Service service;
-        //for (Iterator<Service> it = getServices().iterator(); it.hasNext();) {
-            //service = it.next();
-            //if (type.equals(service.type)) {
-                //lastType = type;
-                //lastServicesByType = service;
-                //return service;
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.614 -0400", hash_original_method = "6DABE02DE2A4DD1C36F9592BEF5E1C73", hash_generated_method = "43EF7D015D86A523D93AF3A24014FF32")
     public synchronized Provider.Service getService(String type,
             String algorithm) {
-        Provider.Service varB4EAC82CA7396A68D541C85D26508E83_2126327327 = null; //Variable for return #1
-        Provider.Service varB4EAC82CA7396A68D541C85D26508E83_999733178 = null; //Variable for return #2
-        Provider.Service varB4EAC82CA7396A68D541C85D26508E83_123279396 = null; //Variable for return #3
+        Provider.Service varB4EAC82CA7396A68D541C85D26508E83_2126327327 = null; 
+        Provider.Service varB4EAC82CA7396A68D541C85D26508E83_999733178 = null; 
+        Provider.Service varB4EAC82CA7396A68D541C85D26508E83_123279396 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         {
             boolean var5D9786D09CE430680B17444C7FCE5061_1867904375 = (type.equals(lastServiceName) && algorithm.equalsIgnoreCase(lastAlgorithm));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2126327327 = returnedService;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String alg = algorithm.toUpperCase(Locale.US);
         Object o = null;
         {
             o = serviceTable.get(type, alg);
-        } //End block
+        } 
         {
             o = aliasTable.get(type, alg);
-        } //End block
+        } 
         {
             updatePropertyServiceTable();
-        } //End block
+        } 
         {
             o = propertyServiceTable.get(type, alg);
-        } //End block
+        } 
         {
             o = propertyAliasTable.get(type, alg);
-        } //End block
+        } 
         {
             lastServiceName = type;
             lastAlgorithm = algorithm;
             returnedService = (Provider.Service) o;
             varB4EAC82CA7396A68D541C85D26508E83_999733178 = returnedService;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_123279396 = null;
-        Provider.Service varA7E53CE21691AB073D9660D615818899_1237272766; //Final return value
+        Provider.Service varA7E53CE21691AB073D9660D615818899_1237272766; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1237272766 = varB4EAC82CA7396A68D541C85D26508E83_2126327327;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1237272766 = varB4EAC82CA7396A68D541C85D26508E83_999733178;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1237272766 = varB4EAC82CA7396A68D541C85D26508E83_123279396;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1237272766.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1237272766.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1237272766;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.615 -0400", hash_original_method = "8008CDA805FE131E4E7ECE670E22E200", hash_generated_method = "40EC8FC146CE77F49C5E1CD093E6DDB0")
     public synchronized Set<Provider.Service> getServices() {
-        Set<Provider.Service> varB4EAC82CA7396A68D541C85D26508E83_1797450408 = null; //Variable for return #1
-        Set<Provider.Service> varB4EAC82CA7396A68D541C85D26508E83_1560152026 = null; //Variable for return #2
+        Set<Provider.Service> varB4EAC82CA7396A68D541C85D26508E83_1797450408 = null; 
+        Set<Provider.Service> varB4EAC82CA7396A68D541C85D26508E83_1560152026 = null; 
         updatePropertyServiceTable();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1797450408 = lastServicesSet;
-        } //End block
+        } 
         {
             lastServicesSet = new HashSet<Service>(serviceTable.values());
-        } //End block
+        } 
         {
             lastServicesSet = new HashSet<Service>();
-        } //End block
+        } 
         {
             lastServicesSet.addAll(propertyServiceTable.values());
-        } //End block
+        } 
         lastServicesSet = Collections.unmodifiableSet(lastServicesSet);
         varB4EAC82CA7396A68D541C85D26508E83_1560152026 = lastServicesSet;
-        Set<Provider.Service> varA7E53CE21691AB073D9660D615818899_93940921; //Final return value
+        Set<Provider.Service> varA7E53CE21691AB073D9660D615818899_93940921; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_93940921 = varB4EAC82CA7396A68D541C85D26508E83_1797450408;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_93940921 = varB4EAC82CA7396A68D541C85D26508E83_1560152026;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_93940921.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_93940921.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_93940921;
-        // ---------- Original Method ----------
-        //updatePropertyServiceTable();
-        //if (lastServicesSet != null) {
-            //return lastServicesSet;
-        //}
-        //if (serviceTable != null) {
-            //lastServicesSet = new HashSet<Service>(serviceTable.values());
-        //} else {
-            //lastServicesSet = new HashSet<Service>();
-        //}
-        //if (propertyServiceTable != null) {
-            //lastServicesSet.addAll(propertyServiceTable.values());
-        //}
-        //lastServicesSet = Collections.unmodifiableSet(lastServicesSet);
-        //return lastServicesSet;
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -655,51 +663,51 @@ public abstract class Provider extends Properties {
     protected synchronized void putService(Provider.Service s) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         {
             boolean varF52B1BD6E65C5078A2BDD1FFCE56BDE7_1078471789 = ("Provider".equals(s.getType()));
-        } //End collapsed parenthetic
+        } 
         servicesChanged();
         {
             serviceTable = new TwoKeyHashMap<String, String, Service>(128);
-        } //End block
+        } 
         serviceTable.put(s.type, s.algorithm.toUpperCase(Locale.US), s);
         {
             {
                 aliasTable = new TwoKeyHashMap<String, String, Service>(256);
-            } //End block
+            } 
             {
                 Iterator<String> var53A703E015EC0F90D15F82B6703EC2ED_958390088 = (s.getAliases()).iterator();
                 var53A703E015EC0F90D15F82B6703EC2ED_958390088.hasNext();
                 String alias = var53A703E015EC0F90D15F82B6703EC2ED_958390088.next();
                 {
                     aliasTable.put(s.type, alias.toUpperCase(Locale.US), s);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         serviceInfoToProperties(s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //if (s == null) {
-            //throw new NullPointerException();
-        //}
-        //if ("Provider".equals(s.getType())) { 
-            //return;
-        //}
-        //servicesChanged();
-        //if (serviceTable == null) {
-            //serviceTable = new TwoKeyHashMap<String, String, Service>(128);
-        //}
-        //serviceTable.put(s.type, s.algorithm.toUpperCase(Locale.US), s);
-        //if (s.aliases != null) {
-            //if (aliasTable == null) {
-                //aliasTable = new TwoKeyHashMap<String, String, Service>(256);
-            //}
-            //for (String alias : s.getAliases()) {
-                //aliasTable.put(s.type, alias.toUpperCase(Locale.US), s);
-            //}
-        //}
-        //serviceInfoToProperties(s);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+                
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -707,11 +715,11 @@ public abstract class Provider extends Properties {
     protected synchronized void removeService(Provider.Service s) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         servicesChanged();
         {
             serviceTable.remove(s.type, s.algorithm.toUpperCase(Locale.US));
-        } //End block
+        } 
         {
             {
                 Iterator<String> var0B0914451AB60F2FBE3FA1B1B21C1A4E_671705019 = (s.getAliases()).iterator();
@@ -719,25 +727,25 @@ public abstract class Provider extends Properties {
                 String alias = var0B0914451AB60F2FBE3FA1B1B21C1A4E_671705019.next();
                 {
                     aliasTable.remove(s.type, alias.toUpperCase(Locale.US));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         serviceInfoFromProperties(s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //if (s == null) {
-            //throw new NullPointerException();
-        //}
-        //servicesChanged();
-        //if (serviceTable != null) {
-            //serviceTable.remove(s.type, s.algorithm.toUpperCase(Locale.US));
-        //}
-        //if (aliasTable != null && s.aliases != null) {
-            //for (String alias: s.getAliases()) {
-                //aliasTable.remove(s.type, alias.toUpperCase(Locale.US));
-            //}
-        //}
-        //serviceInfoFromProperties(s);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -750,9 +758,9 @@ public abstract class Provider extends Properties {
                 boolean varD8B5E52A597500CBD863E52A46B42708_1735971482 = (i.hasNext());
                 {
                     super.put("Alg.Alias." + s.type + "." + i.next(), s.algorithm);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 Iterator<Map.Entry<String, String>> varEC591D00247358B530BCEAA3DE5F4B70_936021728 = (s.attributes.entrySet()).iterator();
@@ -761,29 +769,29 @@ public abstract class Provider extends Properties {
                 {
                     super.put(s.type + "." + s.algorithm + " " + entry.getKey(),
                         entry.getValue());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             Services.setNeedRefresh();
-        } //End block
+        } 
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //super.put(s.type + "." + s.algorithm, s.className);
-        //if (s.aliases != null) {
-            //for (Iterator<String> i = s.aliases.iterator(); i.hasNext();) {
-                //super.put("Alg.Alias." + s.type + "." + i.next(), s.algorithm);
-            //}
-        //}
-        //if (s.attributes != null) {
-            //for (Map.Entry<String, String> entry : s.attributes.entrySet()) {
-                //super.put(s.type + "." + s.algorithm + " " + entry.getKey(),
-                        //entry.getValue());
-            //}
-        //}
-        //if (providerNumber != -1) {
-            //Services.setNeedRefresh();
-        //}
+        
+        
+        
+            
+                
+            
+        
+        
+            
+                
+                        
+            
+        
+        
+            
+        
     }
 
     
@@ -796,9 +804,9 @@ public abstract class Provider extends Properties {
                 boolean varD8B5E52A597500CBD863E52A46B42708_526181373 = (i.hasNext());
                 {
                     super.remove("Alg.Alias." + s.type + "." + i.next());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 Iterator<Map.Entry<String, String>> varEC591D00247358B530BCEAA3DE5F4B70_925979581 = (s.attributes.entrySet()).iterator();
@@ -806,37 +814,38 @@ public abstract class Provider extends Properties {
                 Map.Entry<String, String> entry = varEC591D00247358B530BCEAA3DE5F4B70_925979581.next();
                 {
                     super.remove(s.type + "." + s.algorithm + " " + entry.getKey());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             Services.setNeedRefresh();
-        } //End block
+        } 
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //super.remove(s.type + "." + s.algorithm);
-        //if (s.aliases != null) {
-            //for (Iterator<String> i = s.aliases.iterator(); i.hasNext();) {
-                //super.remove("Alg.Alias." + s.type + "." + i.next());
-            //}
-        //}
-        //if (s.attributes != null) {
-            //for (Map.Entry<String, String> entry : s.attributes.entrySet()) {
-                //super.remove(s.type + "." + s.algorithm + " " + entry.getKey());
-            //}
-        //}
-        //if (providerNumber != -1) {
-            //Services.setNeedRefresh();
-        //}
+        
+        
+        
+            
+                
+            
+        
+        
+            
+                
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.638 -0400", hash_original_method = "C88E49400116B5906A9CAC0E8D20528B", hash_generated_method = "199B27991A6E203551BC30F40A04AFAB")
     private void removeFromPropertyServiceTable(Object key) {
         String k = (String) key;
         {
             boolean var51D0AB19C0E4EAD46591A8C66CC40542_308650152 = (k.startsWith("Provider."));
-        } //End collapsed parenthetic
+        } 
         Provider.Service s;
         String serviceName;
         String algorithm = null;
@@ -852,7 +861,7 @@ public abstract class Provider extends Properties {
                 aliasName = service_alias.substring(i + 1);
                 {
                     propertyAliasTable.remove(serviceName, aliasName.toUpperCase(Locale.US));
-                } //End block
+                } 
                 {
                     {
                         Iterator<Service> it = propertyServiceTable.values().iterator();
@@ -864,13 +873,13 @@ public abstract class Provider extends Properties {
                                 boolean var6F8C4AE25185D3231A2E4FD7E4E357C3_264175920 = (s.aliases.contains(aliasName));
                                 {
                                     s.aliases.remove(aliasName);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         int j = k.indexOf('.');
         i = k.indexOf(' ');
         {
@@ -886,11 +895,11 @@ public abstract class Provider extends Properties {
                         String alias = var3BE46C9A129D4D7F74F143C9623D7876_968136592.next();
                         {
                             propertyAliasTable.remove(serviceName, alias.toUpperCase(Locale.US));
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             attribute = k.substring(i + 1);
             serviceName = k.substring(0, j);
@@ -900,15 +909,16 @@ public abstract class Provider extends Properties {
                 {
                     s = (Provider.Service) o;
                     s.attributes.remove(attribute);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(key.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.640 -0400", hash_original_method = "C12B51396475B7F4EF23B74D619C33FD", hash_generated_method = "E1BC39756C2F7325111DD392EE64722B")
     private void updatePropertyServiceTable() {
         Object _key;
@@ -918,7 +928,7 @@ public abstract class Provider extends Properties {
         String algorithm;
         {
             boolean var9C86F49586631F13D865CF4B9FA9A44B_779743274 = (changedProperties == null || changedProperties.isEmpty());
-        } //End collapsed parenthetic
+        } 
         {
             Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterator();
             boolean var9D0EDA54CCAB017AFE33C830CCA36C58_940510703 = (it
@@ -931,7 +941,7 @@ public abstract class Provider extends Properties {
                 String value = (String) _value;
                 {
                     boolean var2F2AA442FA156A8F8BA53B7B622AD8C8_729967789 = (key.startsWith("Provider"));
-                } //End collapsed parenthetic
+                } 
                 int i;
                 {
                     boolean var95164A0B30E45315F7A1F2560FE7C960_790949677 = (key.startsWith("Alg.Alias."));
@@ -946,18 +956,18 @@ public abstract class Provider extends Properties {
                         Object o = null;
                         {
                             propertyServiceTable = new TwoKeyHashMap<String, String, Service>(128);
-                        } //End block
+                        } 
                         {
                             o = propertyServiceTable.get(serviceName, algUp);
-                        } //End block
+                        } 
                         {
                             s = (Provider.Service) o;
                             s.addAlias(aliasName);
                             {
                                 propertyAliasTable = new TwoKeyHashMap<String, String, Service>(256);
-                            } //End block
+                            } 
                             propertyAliasTable.put(serviceName, aliasName.toUpperCase(Locale.US), s);
-                        } //End block
+                        } 
                         {
                             String className = (String) changedProperties
                             .get(serviceName + "." + algorithm);
@@ -969,12 +979,12 @@ public abstract class Provider extends Properties {
                                 propertyServiceTable.put(serviceName, algUp, s);
                                 {
                                     propertyAliasTable = new TwoKeyHashMap<String, String, Service>(256);
-                                } //End block
+                                } 
                                 propertyAliasTable.put(serviceName, aliasName.toUpperCase(Locale.US), s);
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 int j = key.indexOf('.');
                 i = key.indexOf(' ');
                 {
@@ -984,21 +994,21 @@ public abstract class Provider extends Properties {
                     Object o = null;
                     {
                         o = propertyServiceTable.get(serviceName, alg);
-                    } //End block
+                    } 
                     {
                         s = (Provider.Service) o;
                         s.className = value;
-                    } //End block
+                    } 
                     {
                         s = new Provider.Service(this, serviceName, algorithm,
                             value, Collections.<String>emptyList(),
                             Collections.<String,String>emptyMap());
                         {
                             propertyServiceTable = new TwoKeyHashMap<String, String, Service>(128);
-                        } //End block
+                        } 
                         propertyServiceTable.put(serviceName, alg, s);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     serviceName = key.substring(0, j);
                     algorithm = key.substring(j + 1, i);
@@ -1007,11 +1017,11 @@ public abstract class Provider extends Properties {
                     Object o = null;
                     {
                         o = propertyServiceTable.get(serviceName, alg);
-                    } //End block
+                    } 
                     {
                         s = (Provider.Service) o;
                         s.putAttribute(attribute, value);
-                    } //End block
+                    } 
                     {
                         String className = (String) changedProperties
                             .get(serviceName + "." + algorithm);
@@ -1022,17 +1032,17 @@ public abstract class Provider extends Properties {
                                 className, new ArrayList<String>(), m);
                             {
                                 propertyServiceTable = new TwoKeyHashMap<String, String, Service>(128);
-                            } //End block
+                            } 
                             propertyServiceTable.put(serviceName, alg, s);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         servicesChanged();
         changedProperties = null;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1041,36 +1051,38 @@ public abstract class Provider extends Properties {
         lastServicesByType = null;
         lastServiceName = null;
         lastServicesSet = null;
-        // ---------- Original Method ----------
-        //lastServicesByType = null;
-        //lastServiceName = null;
-        //lastServicesSet = null;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.642 -0400", hash_original_method = "768CFC89B63FD1F782E3758D2BCFC6C0", hash_generated_method = "BEA2C42DB158CE6C3270D65A149F3B2E")
     private void putProviderInfo() {
         super.put("Provider.id name", (name != null) ? name : "null");
         super.put("Provider.id version", versionString);
         super.put("Provider.id info", (info != null) ? info : "null");
         super.put("Provider.id className", this.getClass().getName());
-        // ---------- Original Method ----------
-        //super.put("Provider.id name", (name != null) ? name : "null");
-        //super.put("Provider.id version", versionString);
-        //super.put("Provider.id info", (info != null) ? info : "null");
-        //super.put("Provider.id className", this.getClass().getName());
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.643 -0400", hash_original_method = "62DD35352FE8FA7B38C17798ED376C47", hash_generated_method = "906522DCB0F25C6AA2D77FBDD7E1C76D")
     private String getPropertyIgnoreCase(String key) {
-        String varB4EAC82CA7396A68D541C85D26508E83_920149551 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1298094647 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1078678938 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_920149551 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1298094647 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1078678938 = null; 
         String res = getProperty(key);
         {
             varB4EAC82CA7396A68D541C85D26508E83_920149551 = res;
-        } //End block
+        } 
         {
             Enumeration<?> e = propertyNames();
             boolean var3EB0A96682EDBE15308427BAC1EC4A4E_2098140399 = (e.hasMoreElements());
@@ -1080,38 +1092,38 @@ public abstract class Provider extends Properties {
                     boolean var7026A60BEF5468325737B39ADF42B3F9_902499015 = (key.equalsIgnoreCase(propertyName));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1298094647 = getProperty(propertyName);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1078678938 = null;
         addTaint(key.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1801720453; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1801720453; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1801720453 = varB4EAC82CA7396A68D541C85D26508E83_920149551;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1801720453 = varB4EAC82CA7396A68D541C85D26508E83_1298094647;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1801720453 = varB4EAC82CA7396A68D541C85D26508E83_1078678938;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1801720453.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1801720453.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1801720453;
-        // ---------- Original Method ----------
-        //String res = getProperty(key);
-        //if (res != null) {
-            //return res;
-        //}
-        //for (Enumeration<?> e = propertyNames(); e.hasMoreElements(); ) {
-            //String propertyName = (String) e.nextElement();
-            //if (key.equalsIgnoreCase(propertyName)) {
-                //return getProperty(propertyName);
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -1121,10 +1133,10 @@ public abstract class Provider extends Properties {
         versionString = String.valueOf(version);
         providerNumber = -1;
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        //in.defaultReadObject();
-        //versionString = String.valueOf(version);
-        //providerNumber = -1;
+        
+        
+        
+        
     }
 
     
@@ -1159,7 +1171,7 @@ public abstract class Provider extends Properties {
                 String className, List<String> aliases, Map<String, String> attributes) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             this.provider = provider;
             this.type = type;
             this.algorithm = algorithm;
@@ -1169,20 +1181,20 @@ public abstract class Provider extends Properties {
             this.attributes =
                     ((attributes != null) && (attributes.size() == 0))
                     ? Collections.<String,String>emptyMap() : attributes;
-            // ---------- Original Method ----------
-            //if (provider == null || type == null || algorithm == null
-                    //|| className == null) {
-                //throw new NullPointerException();
-            //}
-            //this.provider = provider;
-            //this.type = type;
-            //this.algorithm = algorithm;
-            //this.className = className;
-            //this.aliases = ((aliases != null) && (aliases.size() == 0))
-                    //? Collections.<String>emptyList() : aliases;
-            //this.attributes =
-                    //((attributes != null) && (attributes.size() == 0))
-                    //? Collections.<String,String>emptyMap() : attributes;
+            
+            
+                    
+                
+            
+            
+            
+            
+            
+            
+                    
+            
+                    
+                    
         }
 
         
@@ -1192,15 +1204,15 @@ public abstract class Provider extends Properties {
                 boolean var5374BEA4A10DF1C27BAE96F18BD3D766_788082826 = ((aliases == null) || (aliases.size() == 0));
                 {
                     aliases = new ArrayList<String>();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             aliases.add(alias);
             addTaint(alias.getTaint());
-            // ---------- Original Method ----------
-            //if ((aliases == null) || (aliases.size() == 0)) {
-                //aliases = new ArrayList<String>();
-            //}
-            //aliases.add(alias);
+            
+            
+                
+            
+            
         }
 
         
@@ -1210,153 +1222,153 @@ public abstract class Provider extends Properties {
                 boolean varEB4E27A2355C4FBDE3011F0D25AF36B4_308748620 = ((attributes == null) || (attributes.size() == 0));
                 {
                     attributes = new HashMap<String,String>();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             attributes.put(name, value);
             addTaint(name.getTaint());
             addTaint(value.getTaint());
-            // ---------- Original Method ----------
-            //if ((attributes == null) || (attributes.size() == 0)) {
-                //attributes = new HashMap<String,String>();
-            //}
-            //attributes.put(name, value);
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.648 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "1554FD12C7087797632692F2D89597B4")
         public final String getType() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1725031610 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1725031610 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1725031610 = type;
-            varB4EAC82CA7396A68D541C85D26508E83_1725031610.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1725031610.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1725031610;
-            // ---------- Original Method ----------
-            //return type;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.648 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "FD465BB5ADAF9BA5F0D394D64B6CEA66")
         public final String getAlgorithm() {
-            String varB4EAC82CA7396A68D541C85D26508E83_553382122 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_553382122 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_553382122 = algorithm;
-            varB4EAC82CA7396A68D541C85D26508E83_553382122.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_553382122.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_553382122;
-            // ---------- Original Method ----------
-            //return algorithm;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.649 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "578A995B1F48CCFC92267C436E0D184D")
         public final Provider getProvider() {
-            Provider varB4EAC82CA7396A68D541C85D26508E83_147422320 = null; //Variable for return #1
+            Provider varB4EAC82CA7396A68D541C85D26508E83_147422320 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_147422320 = provider;
-            varB4EAC82CA7396A68D541C85D26508E83_147422320.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_147422320.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_147422320;
-            // ---------- Original Method ----------
-            //return provider;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.649 -0400", hash_original_method = "8415940D3A1E5651F883E391EC68DA41", hash_generated_method = "CD9776548396DE0B4A2A1088DD59DAA8")
         public final String getClassName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1399461796 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1399461796 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1399461796 = className;
-            varB4EAC82CA7396A68D541C85D26508E83_1399461796.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1399461796.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1399461796;
-            // ---------- Original Method ----------
-            //return className;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.650 -0400", hash_original_method = "0C10317D01C11D1034B9356679E58CA0", hash_generated_method = "EB6AB2248F6A9FD44C414CF4094D8EBC")
         public final String getAttribute(String name) {
-            String varB4EAC82CA7396A68D541C85D26508E83_166617135 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_146773061 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_166617135 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_146773061 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_166617135 = null;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_146773061 = attributes.get(name);
             addTaint(name.getTaint());
-            String varA7E53CE21691AB073D9660D615818899_330459868; //Final return value
+            String varA7E53CE21691AB073D9660D615818899_330459868; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_330459868 = varB4EAC82CA7396A68D541C85D26508E83_166617135;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_330459868 = varB4EAC82CA7396A68D541C85D26508E83_146773061;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_330459868.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_330459868.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_330459868;
-            // ---------- Original Method ----------
-            //if (name == null) {
-                //throw new NullPointerException();
-            //}
-            //if (attributes == null) {
-                //return null;
-            //}
-            //return attributes.get(name);
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.650 -0400", hash_original_method = "7A6F8F40D5019A1C644CF7CAD3518923", hash_generated_method = "D3502A969B94CDCAF21856A0B94B2C87")
          List<String> getAliases() {
-            List<String> varB4EAC82CA7396A68D541C85D26508E83_1042321411 = null; //Variable for return #1
+            List<String> varB4EAC82CA7396A68D541C85D26508E83_1042321411 = null; 
             {
                 aliases = new ArrayList<String>(0);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1042321411 = aliases;
-            varB4EAC82CA7396A68D541C85D26508E83_1042321411.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1042321411.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1042321411;
-            // ---------- Original Method ----------
-            //if (aliases == null){
-                //aliases = new ArrayList<String>(0);
-            //}
-            //return aliases;
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.651 -0400", hash_original_method = "802A5A00EF15D2BF7FB674CB175B5DD7", hash_generated_method = "C7D3DCA7D89F95D0D1433D760B59F035")
         public Object newInstance(Object constructorParameter) throws NoSuchAlgorithmException {
-            Object varB4EAC82CA7396A68D541C85D26508E83_384908664 = null; //Variable for return #1
-            Object varB4EAC82CA7396A68D541C85D26508E83_1538274565 = null; //Variable for return #2
+            Object varB4EAC82CA7396A68D541C85D26508E83_384908664 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_1538274565 = null; 
             {
                 boolean var3339E2EE99840D316B470BF831351DB9_1982262449 = (implementation == null || !className.equals(lastClassName));
                 {
                     ClassLoader cl = provider.getClass().getClassLoader();
                     {
                         cl = ClassLoader.getSystemClassLoader();
-                    } //End block
+                    } 
                     try 
                     {
                         implementation = Class.forName(className, true, cl);
                         lastClassName = className;
-                    } //End block
+                    } 
                     catch (Exception e)
                     {
                         if (DroidSafeAndroidRuntime.control) throw new NoSuchAlgorithmException(type + " " + algorithm + " implementation not found: " + e);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 try 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_384908664 = implementation.newInstance();
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NoSuchAlgorithmException(
                             type + " " + algorithm + " implementation not found", e);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 boolean varF38959283B90E1EE47D3A31C8BA89AD9_282538529 = (!supportsParameter(constructorParameter));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new InvalidParameterException(type + ": service cannot use the parameter");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             Class[] parameterTypes = new Class[1];
             Object[] initargs = { constructorParameter };
             try 
@@ -1365,33 +1377,33 @@ public abstract class Provider extends Properties {
                     boolean var51E19F4634C2BA7E86B66347BB7D2C93_1886656419 = (type.equalsIgnoreCase("CertStore"));
                     {
                         parameterTypes[0] = Class.forName("java.security.cert.CertStoreParameters");
-                    } //End block
+                    } 
                     {
                         parameterTypes[0] = constructorParameter.getClass();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1538274565 = implementation.getConstructor(parameterTypes)
                         .newInstance(initargs);
-            } //End block
+            } 
             catch (Exception e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchAlgorithmException(type + " " + algorithm
                         + " implementation not found", e);
-            } //End block
+            } 
             addTaint(constructorParameter.getTaint());
-            Object varA7E53CE21691AB073D9660D615818899_178249381; //Final return value
+            Object varA7E53CE21691AB073D9660D615818899_178249381; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_178249381 = varB4EAC82CA7396A68D541C85D26508E83_384908664;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_178249381 = varB4EAC82CA7396A68D541C85D26508E83_1538274565;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_178249381.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_178249381.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_178249381;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1400,36 +1412,36 @@ public abstract class Provider extends Properties {
             addTaint(parameter.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1671162061 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1671162061;
-            // ---------- Original Method ----------
-            //return true;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.653 -0400", hash_original_method = "CD20F19EDED4066F9FA28FD55133940E", hash_generated_method = "D05C5421CEDCE5BF4C013A968A37C336")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_800250960 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_800250960 = null; 
             String result = "Provider " + provider.getName() + " Service "
                     + type + "." + algorithm + " " + className;
             {
                 result = result + "\nAliases " + aliases.toString();
-            } //End block
+            } 
             {
                 result = result + "\nAttributes " + attributes.toString();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_800250960 = result;
-            varB4EAC82CA7396A68D541C85D26508E83_800250960.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_800250960.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_800250960;
-            // ---------- Original Method ----------
-            //String result = "Provider " + provider.getName() + " Service "
-                    //+ type + "." + algorithm + " " + className;
-            //if (aliases != null) {
-                //result = result + "\nAliases " + aliases.toString();
-            //}
-            //if (attributes != null) {
-                //result = result + "\nAttributes " + attributes.toString();
-            //}
-            //return result;
+            
+            
+                    
+            
+                
+            
+            
+                
+            
+            
         }
 
         

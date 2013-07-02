@@ -1,18 +1,18 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class UnsupportedOperationException extends RuntimeException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.481 -0400", hash_original_method = "7F6DB5D5ED9D38F1F537736368EB0450", hash_generated_method = "A99A19AC28CD29E8B1E65D945AA0DFDA")
     public  UnsupportedOperationException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class UnsupportedOperationException extends RuntimeException {
     public  UnsupportedOperationException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ public class UnsupportedOperationException extends RuntimeException {
         super(message, cause);
         addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,7 +37,7 @@ public class UnsupportedOperationException extends RuntimeException {
     public  UnsupportedOperationException(Throwable cause) {
         super((cause == null ? null : cause.toString()), cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

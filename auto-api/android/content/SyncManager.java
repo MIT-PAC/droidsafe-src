@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.R;
 import com.android.internal.util.ArrayUtils;
@@ -111,45 +111,45 @@ public class SyncManager implements OnAccountsUpdateListener {
     private BroadcastReceiver mStorageIntentReceiver = new BroadcastReceiver() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.955 -0400", hash_original_method = "BC3DE36BD414D1E0AC1A290F3F999B72", hash_generated_method = "616D5C14DDD1CB50F92E18BD4160FC5A")
         public void onReceive(Context context, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             String action = intent.getAction();
             {
                 boolean var494408089C6C69852C6FEB8DA3256EBE_1424334157 = (Intent.ACTION_DEVICE_STORAGE_LOW.equals(action));
                 {
                     {
                         boolean var583468BD93EF069D3E21BBFA72DDD538_347870742 = (Log.isLoggable(TAG, Log.VERBOSE));
-                    } //End collapsed parenthetic
+                    } 
                     mStorageIsLow = true;
                     cancelActiveSync(null , null );
-                } //End block
+                } 
                 {
                     boolean varDA8C0F6155EB4E90A0DAEBEA890A0A28_1441786012 = (Intent.ACTION_DEVICE_STORAGE_OK.equals(action));
                     {
                         {
                             boolean var0C9C1F857EF1208EE3C75B6103EF6F6E_562227873 = (Log.isLoggable(TAG, Log.VERBOSE));
-                        } //End collapsed parenthetic
+                        } 
                         mStorageIsLow = false;
                         sendCheckAlarmsMessage();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            //String action = intent.getAction();
-            //if (Intent.ACTION_DEVICE_STORAGE_LOW.equals(action)) {
-                        //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                            //Log.v(TAG, "Internal storage is low.");
-                        //}
-                        //mStorageIsLow = true;
-                        //cancelActiveSync(null , null );
-                    //} else if (Intent.ACTION_DEVICE_STORAGE_OK.equals(action)) {
-                        //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                            //Log.v(TAG, "Internal storage is ok.");
-                        //}
-                        //mStorageIsLow = false;
-                        //sendCheckAlarmsMessage();
-                    //}
+            
+            
+            
+                        
+                            
+                        
+                        
+                        
+                    
+                        
+                            
+                        
+                        
+                        
+                    
         }
 
         
@@ -159,12 +159,12 @@ public class SyncManager implements OnAccountsUpdateListener {
     private BroadcastReceiver mBootCompletedReceiver = new BroadcastReceiver() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.955 -0400", hash_original_method = "48002FD0F3001594E3DAE34911FFCE18", hash_generated_method = "4B23DC7E7458A7DE52CE4CB804B826DF")
         public void onReceive(Context context, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mSyncHandler.onBootCompleted();
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            //mSyncHandler.onBootCompleted();
+            
+            
         }
 
         
@@ -174,21 +174,21 @@ public class SyncManager implements OnAccountsUpdateListener {
     private BroadcastReceiver mBackgroundDataSettingChanged = new BroadcastReceiver() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.956 -0400", hash_original_method = "8D0265854014D0DAAECDD8BFDBAC7B99", hash_generated_method = "91E3B3E5AC55482EA87CB637D007CF4E")
         public void onReceive(Context context, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean varC0E64E7A82D55EFFFB410CFD8BF972ED_1378566581 = (getConnectivityManager().getBackgroundDataSetting());
                 {
                     scheduleSync(null , null , new Bundle(), 0 ,
                         false );
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            //if (getConnectivityManager().getBackgroundDataSetting()) {
-                //scheduleSync(null , null , new Bundle(), 0 ,
-                        //false );
-            //}
+            
+            
+                
+                        
+            
         }
 
         
@@ -201,32 +201,32 @@ public class SyncManager implements OnAccountsUpdateListener {
     private BroadcastReceiver mConnectivityIntentReceiver = new BroadcastReceiver() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.957 -0400", hash_original_method = "252074B4EB0924016B2ADBE10E34C1F3", hash_generated_method = "5BF35A17A472123D83FE2028E7EC7098")
         public void onReceive(Context context, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             final boolean wasConnected = mDataConnectionIsConnected;
             mDataConnectionIsConnected = readDataConnectionState();
             {
                 {
                     {
                         boolean var583468BD93EF069D3E21BBFA72DDD538_1439842099 = (Log.isLoggable(TAG, Log.VERBOSE));
-                    } //End collapsed parenthetic
+                    } 
                     mSyncStorageEngine.clearAllBackoffs(mSyncQueue);
-                } //End block
+                } 
                 sendCheckAlarmsMessage();
-            } //End block
+            } 
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            //final boolean wasConnected = mDataConnectionIsConnected;
-            //mDataConnectionIsConnected = readDataConnectionState();
-            //if (mDataConnectionIsConnected) {
-                //if (!wasConnected) {
-                    //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                        //Log.v(TAG, "Reconnection detected: clearing all backoffs");
-                    //}
-                    //mSyncStorageEngine.clearAllBackoffs(mSyncQueue);
-                //}
-                //sendCheckAlarmsMessage();
-            //}
+            
+            
+            
+            
+                
+                    
+                        
+                    
+                    
+                
+                
+            
         }
 
         
@@ -236,13 +236,13 @@ public class SyncManager implements OnAccountsUpdateListener {
     private BroadcastReceiver mShutdownIntentReceiver = new BroadcastReceiver() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.958 -0400", hash_original_method = "C2982D871DFCE85BA68BED52BCB115FD", hash_generated_method = "4E850BAD6B340846E6D2CD9FCE56EC3A")
         public void onReceive(Context context, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             getSyncStorageEngine().writeAllState();
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            //Log.w(TAG, "Writing sync state before shutdown...");
-            //getSyncStorageEngine().writeAllState();
+            
+            
+            
         }
 
         
@@ -272,18 +272,18 @@ public class SyncManager implements OnAccountsUpdateListener {
         mSyncAdapters.setListener(new RegisteredServicesCacheListener<SyncAdapterType>() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.960 -0400", hash_original_method = "156EF77A103E5C10F6AA28A0B09EC843", hash_generated_method = "4ECDDC5E5A7426C563A7386848DEB420")
             public void onServiceChanged(SyncAdapterType type, boolean removed) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 {
                     scheduleSync(null, type.authority, null, 0 ,
                             false );
-                } //End block
+                } 
                 addTaint(type.getTaint());
                 addTaint(removed);
-                // ---------- Original Method ----------
-                //if (!removed) {
-                    //scheduleSync(null, type.authority, null, 0 ,
-                            //false );
-                //}
+                
+                
+                    
+                            
+                
             }
 }, mSyncHandler);
         mSyncAlarmIntent = PendingIntent.getBroadcast(
@@ -293,7 +293,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         {
             intentFilter = new IntentFilter(Intent.ACTION_BOOT_COMPLETED);
             context.registerReceiver(mBootCompletedReceiver, intentFilter);
-        } //End block
+        } 
         intentFilter = new IntentFilter(ConnectivityManager.ACTION_BACKGROUND_DATA_SETTING_CHANGED);
         context.registerReceiver(mBackgroundDataSettingChanged, intentFilter);
         intentFilter = new IntentFilter(Intent.ACTION_DEVICE_STORAGE_LOW);
@@ -307,10 +307,10 @@ public class SyncManager implements OnAccountsUpdateListener {
                 context.getSystemService(Context.NOTIFICATION_SERVICE);
             context.registerReceiver(new SyncAlarmIntentReceiver(),
                     new IntentFilter(ACTION_SYNC_ALARM));
-        } //End block
+        } 
         {
             mNotificationMgr = null;
-        } //End block
+        } 
         mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         mHandleAlarmWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                 HANDLE_SYNC_ALARM_WAKE_LOCK);
@@ -322,27 +322,28 @@ public class SyncManager implements OnAccountsUpdateListener {
                 ContentResolver.SYNC_OBSERVER_TYPE_SETTINGS, new ISyncStatusObserver.Stub() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.961 -0400", hash_original_method = "E2E5241731BE29D01E4993B391B00B92", hash_generated_method = "E877FE14261D351EFC08FE17A893B854")
             public void onStatusChanged(int which) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 sendCheckAlarmsMessage();
                 addTaint(which);
-                // ---------- Original Method ----------
-                //sendCheckAlarmsMessage();
+                
+                
             }
 });
         {
             AccountManager.get(mContext).addOnAccountsUpdatedListener(SyncManager.this,
                 mSyncHandler, false );
             onAccountsUpdated(AccountManager.get(mContext).getAccounts());
-        } //End block
+        } 
         addTaint(factoryTest);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.968 -0400", hash_original_method = "F68E26CE46C5E71DC7131B4E8982A697", hash_generated_method = "2AC0C9ADA463E003574AE86BEB096EA4")
     public void onAccountsUpdated(Account[] accounts) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final boolean justBootedUp = mAccounts == INITIAL_ACCOUNTS_ARRAY;
         mAccounts = accounts;
         {
@@ -356,58 +357,61 @@ public class SyncManager implements OnAccountsUpdateListener {
                         Log.d(TAG, "canceling sync since the account has been removed");
                         sendSyncFinishedOrCanceledMessage(currentSyncContext,
                         null );
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         sendCheckAlarmsMessage();
         {
             mSyncStorageEngine.doDatabaseCleanup(accounts);
-        } //End block
+        } 
         {
             boolean onlyThoseWithUnkownSyncableState = justBootedUp;
             scheduleSync(null, null, null, 0 , onlyThoseWithUnkownSyncableState);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.969 -0400", hash_original_method = "90A2C58DEF02026C184592212F85FF18", hash_generated_method = "3DCB114F1FD95C58A67FDAF80A44DEDD")
     private boolean readDataConnectionState() {
         NetworkInfo networkInfo = getConnectivityManager().getActiveNetworkInfo();
         boolean var53496D7038EE5B94BB35F9D43FD53DF1_42556499 = ((networkInfo != null) && networkInfo.isConnected());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1013935699 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1013935699;
-        // ---------- Original Method ----------
-        //NetworkInfo networkInfo = getConnectivityManager().getActiveNetworkInfo();
-        //return (networkInfo != null) && networkInfo.isConnected();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.971 -0400", hash_original_method = "85835365DA8D3F37E74A4C98C5566C52", hash_generated_method = "31EFE1514B59B46AA32E935D32AAD1E1")
     private ConnectivityManager getConnectivityManager() {
-        ConnectivityManager varB4EAC82CA7396A68D541C85D26508E83_1710970775 = null; //Variable for return #1
+        ConnectivityManager varB4EAC82CA7396A68D541C85D26508E83_1710970775 = null; 
         {
             {
                 mConnManagerDoNotUseDirectly = (ConnectivityManager)mContext.getSystemService(
                         Context.CONNECTIVITY_SERVICE);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1710970775 = mConnManagerDoNotUseDirectly;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1710970775.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1710970775.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1710970775;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mConnManagerDoNotUseDirectly == null) {
-                //mConnManagerDoNotUseDirectly = (ConnectivityManager)mContext.getSystemService(
-                        //Context.CONNECTIVITY_SERVICE);
-            //}
-            //return mConnManagerDoNotUseDirectly;
-        //}
+        
+        
+            
+                
+                        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.972 -0400", hash_original_method = "2C829A46E677D5FF63843A6B74A54E87", hash_generated_method = "CE1EB3943406869C358F723542C29A54")
     private long jitterize(long minValue, long maxValue) {
         Random random = new Random(SystemClock.elapsedRealtime());
@@ -415,56 +419,58 @@ public class SyncManager implements OnAccountsUpdateListener {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("the difference between the maxValue and the "
                     + "minValue must be less than " + Integer.MAX_VALUE);
-        } //End block
+        } 
         long varD1004F69028D356D16619D81D55BEACE_1637300328 = (minValue + random.nextInt((int)spread));
         addTaint(minValue);
         addTaint(maxValue);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2111755127 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2111755127;
-        // ---------- Original Method ----------
-        //Random random = new Random(SystemClock.elapsedRealtime());
-        //long spread = maxValue - minValue;
-        //if (spread > Integer.MAX_VALUE) {
-            //throw new IllegalArgumentException("the difference between the maxValue and the "
-                    //+ "minValue must be less than " + Integer.MAX_VALUE);
-        //}
-        //return minValue + random.nextInt((int)spread);
+        
+        
+        
+        
+            
+                    
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.974 -0400", hash_original_method = "BC7A6B22ABBE0EBF148B37C3B72645F0", hash_generated_method = "C01B1CDB8E12CD80591068BFEB712391")
     public SyncStorageEngine getSyncStorageEngine() {
-        SyncStorageEngine varB4EAC82CA7396A68D541C85D26508E83_1233003677 = null; //Variable for return #1
+        SyncStorageEngine varB4EAC82CA7396A68D541C85D26508E83_1233003677 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1233003677 = mSyncStorageEngine;
-        varB4EAC82CA7396A68D541C85D26508E83_1233003677.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1233003677.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1233003677;
-        // ---------- Original Method ----------
-        //return mSyncStorageEngine;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.974 -0400", hash_original_method = "51F169FF6EC2BB253880B74521EEDA04", hash_generated_method = "35DF559DA3A5DA237B231F2EE75E3A9C")
     private void ensureAlarmService() {
         {
             mAlarmService = (AlarmManager)mContext.getSystemService(Context.ALARM_SERVICE);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAlarmService == null) {
-            //mAlarmService = (AlarmManager)mContext.getSystemService(Context.ALARM_SERVICE);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.975 -0400", hash_original_method = "3B1126FA248635D8E240EE322F732C4B", hash_generated_method = "E9CAB79F42C75CAC8642D573BF1E596C")
     private void initializeSyncAdapter(Account account, String authority) {
         {
             boolean varF4C79785E609264B93BBE9F12FEBD33F_570487506 = (Log.isLoggable(TAG, Log.VERBOSE));
-        } //End collapsed parenthetic
+        } 
         SyncAdapterType syncAdapterType = SyncAdapterType.newKey(authority, account.type);
         RegisteredServicesCache.ServiceInfo<SyncAdapterType> syncAdapterInfo = mSyncAdapters.getServiceInfo(syncAdapterType);
         {
             mSyncStorageEngine.removeAuthority(account, authority);
-        } //End block
+        } 
         Intent intent = new Intent();
         intent.setAction("android.content.SyncAdapter");
         intent.setComponent(syncAdapterInfo.componentName);
@@ -473,14 +479,15 @@ public class SyncManager implements OnAccountsUpdateListener {
                 new InitializerServiceConnection(account, authority, mContext, mMainHandler),
                 Context.BIND_AUTO_CREATE | Context.BIND_NOT_FOREGROUND
                 | Context.BIND_ALLOW_OOM_MANAGEMENT));
-        } //End collapsed parenthetic
+        } 
         addTaint(account.getTaint());
         addTaint(authority.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:03.658 -0400", hash_original_method = "B73E52BAF4D022DC2D77FE197F842436", hash_generated_method = "F70D8EA371BFA624ED15340FF4A3FDF3")
     public void scheduleSync(Account requestedAccount, String requestedAuthority,
             Bundle extras, long delay, boolean onlyThoseWithUnkownSyncableState) {
@@ -494,14 +501,14 @@ public class SyncManager implements OnAccountsUpdateListener {
         expedited = extras.getBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, false);
         {
             delay = -1;
-        } //End block
+        } 
         Account[] accounts;
         {
             accounts = new Account[]{requestedAccount};
-        } //End block
+        } 
         {
             accounts = mAccounts;
-        } //End block
+        } 
         boolean uploadOnly;
         uploadOnly = extras.getBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, false);
         boolean manualSync;
@@ -509,22 +516,22 @@ public class SyncManager implements OnAccountsUpdateListener {
         {
             extras.putBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF, true);
             extras.putBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_SETTINGS, true);
-        } //End block
+        } 
         boolean ignoreSettings;
         ignoreSettings = extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_SETTINGS, false);
         int source;
         {
             source = SyncStorageEngine.SOURCE_LOCAL;
-        } //End block
+        } 
         {
             source = SyncStorageEngine.SOURCE_USER;
-        } //End block
+        } 
         {
             source = SyncStorageEngine.SOURCE_POLL;
-        } //End block
+        } 
         {
             source = SyncStorageEngine.SOURCE_SERVER;
-        } //End block
+        } 
         HashSet<String> syncableAuthorities;
         syncableAuthorities = new HashSet<String>();
         {
@@ -533,14 +540,14 @@ public class SyncManager implements OnAccountsUpdateListener {
             RegisteredServicesCache.ServiceInfo<SyncAdapterType> syncAdapter = varA460451BE61974D4E85B931D5CE391A8_2047117187.next();
             {
                 syncableAuthorities.add(syncAdapter.type.authority);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean hasSyncAdapter;
             hasSyncAdapter = syncableAuthorities.contains(requestedAuthority);
             syncableAuthorities.clear();
             syncableAuthorities.add(requestedAuthority);
-        } //End block
+        } 
         boolean masterSyncAutomatically;
         masterSyncAutomatically = mSyncStorageEngine.getMasterSyncAutomatically();
         {
@@ -563,10 +570,10 @@ public class SyncManager implements OnAccountsUpdateListener {
                         {
                             mSyncStorageEngine.setIsSyncable(account, authority, 1);
                             isSyncable = 1;
-                        } //End block
+                        } 
                         {
                             boolean varE5FC1CEDA70C1C0494947FABB12B6E86_1515505099 = (!syncAdapterInfo.type.supportsUploading() && uploadOnly);
-                        } //End collapsed parenthetic
+                        } 
                         boolean syncAllowed;
                         syncAllowed = (isSyncable < 0)
                         || ignoreSettings
@@ -576,8 +583,8 @@ public class SyncManager implements OnAccountsUpdateListener {
                             {
                                 Log.d(TAG, "scheduleSync: sync of " + account + ", " + authority
                                 + " is not allowed, dropping request");
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         Pair<Long, Long> backoff;
                         backoff = mSyncStorageEngine.getBackoff(account, authority);
                         long delayUntil;
@@ -593,27 +600,28 @@ public class SyncManager implements OnAccountsUpdateListener {
                             new SyncOperation(account, source, authority, newExtras, 0,
                                     backoffTime, delayUntil,
                                     allowParallelSyncs));
-                        } //End block
+                        } 
                         {
                             scheduleSyncOperation(
                             new SyncOperation(account, source, authority, extras, delay,
                                     backoffTime, delayUntil,
                                     allowParallelSyncs));
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(requestedAccount.getTaint());
         addTaint(requestedAuthority.getTaint());
         addTaint(extras.getTaint());
         addTaint(delay);
         addTaint(onlyThoseWithUnkownSyncableState);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.976 -0400", hash_original_method = "9A217D026FB5B08090F4BAFAA08C0DF7", hash_generated_method = "6449DABDB90B4BB5CCB5A2A2DFFBA1A7")
     public void scheduleLocalSync(Account account, String authority) {
         final Bundle extras = new Bundle();
@@ -622,17 +630,18 @@ public class SyncManager implements OnAccountsUpdateListener {
                 false );
         addTaint(account.getTaint());
         addTaint(authority.getTaint());
-        // ---------- Original Method ----------
-        //final Bundle extras = new Bundle();
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true);
-        //scheduleSync(account, authority, extras, LOCAL_SYNC_DELAY,
-                //false );
+        
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.985 -0400", hash_original_method = "0A2ACD1B7EA84D8FDEC2211873578368", hash_generated_method = "78D378485229C5114EC751A9166C9123")
     public SyncAdapterType[] getSyncAdapterTypes() {
-        SyncAdapterType[] varB4EAC82CA7396A68D541C85D26508E83_782813829 = null; //Variable for return #1
+        SyncAdapterType[] varB4EAC82CA7396A68D541C85D26508E83_782813829 = null; 
         final Collection<RegisteredServicesCache.ServiceInfo<SyncAdapterType>> serviceInfos = mSyncAdapters.getAllServices();
         SyncAdapterType[] types = new SyncAdapterType[serviceInfos.size()];
         int i = 0;
@@ -642,67 +651,70 @@ public class SyncManager implements OnAccountsUpdateListener {
             RegisteredServicesCache.ServiceInfo<SyncAdapterType> serviceInfo = var7AE0F59F3247E05923E8DDBDBBF91C7C_1953492282.next();
             {
                 types[i] = serviceInfo.type;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_782813829 = types;
-        varB4EAC82CA7396A68D541C85D26508E83_782813829.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_782813829.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_782813829;
-        // ---------- Original Method ----------
-        //final Collection<RegisteredServicesCache.ServiceInfo<SyncAdapterType>>
-                //serviceInfos =
-                //mSyncAdapters.getAllServices();
-        //SyncAdapterType[] types = new SyncAdapterType[serviceInfos.size()];
-        //int i = 0;
-        //for (RegisteredServicesCache.ServiceInfo<SyncAdapterType> serviceInfo : serviceInfos) {
-            //types[i] = serviceInfo.type;
-            //++i;
-        //}
-        //return types;
+        
+        
+                
+                
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.986 -0400", hash_original_method = "14A3D8C2E4B2E28E7EAE9416931B0D4D", hash_generated_method = "EE56F118AA0AFAE95F4F5D9CC047418A")
     private void sendSyncAlarmMessage() {
         {
             boolean varF4C79785E609264B93BBE9F12FEBD33F_972474904 = (Log.isLoggable(TAG, Log.VERBOSE));
-        } //End collapsed parenthetic
+        } 
         mSyncHandler.sendEmptyMessage(SyncHandler.MESSAGE_SYNC_ALARM);
-        // ---------- Original Method ----------
-        //if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "sending MESSAGE_SYNC_ALARM");
-        //mSyncHandler.sendEmptyMessage(SyncHandler.MESSAGE_SYNC_ALARM);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.986 -0400", hash_original_method = "48CD41A4FC7AAC6DBD3D417BDFF3952E", hash_generated_method = "61CCFC0A50948330711D920BD63F8F23")
     private void sendCheckAlarmsMessage() {
         {
             boolean varF4C79785E609264B93BBE9F12FEBD33F_907542677 = (Log.isLoggable(TAG, Log.VERBOSE));
-        } //End collapsed parenthetic
+        } 
         mSyncHandler.sendEmptyMessage(SyncHandler.MESSAGE_CHECK_ALARMS);
-        // ---------- Original Method ----------
-        //if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "sending MESSAGE_CHECK_ALARMS");
-        //mSyncHandler.sendEmptyMessage(SyncHandler.MESSAGE_CHECK_ALARMS);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.987 -0400", hash_original_method = "A4D4C528BED9CEDB160AF5BFC279888F", hash_generated_method = "A88D88D9D7B97CAFC7D4C70B1F3AC209")
     private void sendSyncFinishedOrCanceledMessage(ActiveSyncContext syncContext,
             SyncResult syncResult) {
         {
             boolean varF4C79785E609264B93BBE9F12FEBD33F_61784483 = (Log.isLoggable(TAG, Log.VERBOSE));
-        } //End collapsed parenthetic
+        } 
         Message msg = mSyncHandler.obtainMessage();
         msg.what = SyncHandler.MESSAGE_SYNC_FINISHED;
         msg.obj = new SyncHandlerMessagePayload(syncContext, syncResult);
         mSyncHandler.sendMessage(msg);
         addTaint(syncContext.getTaint());
         addTaint(syncResult.getTaint());
-        // ---------- Original Method ----------
-        //if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "sending MESSAGE_SYNC_FINISHED");
-        //Message msg = mSyncHandler.obtainMessage();
-        //msg.what = SyncHandler.MESSAGE_SYNC_FINISHED;
-        //msg.obj = new SyncHandlerMessagePayload(syncContext, syncResult);
-        //mSyncHandler.sendMessage(msg);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -710,39 +722,41 @@ public class SyncManager implements OnAccountsUpdateListener {
     private void sendCancelSyncsMessage(final Account account, final String authority) {
         {
             boolean varF4C79785E609264B93BBE9F12FEBD33F_1759352340 = (Log.isLoggable(TAG, Log.VERBOSE));
-        } //End collapsed parenthetic
+        } 
         Message msg = mSyncHandler.obtainMessage();
         msg.what = SyncHandler.MESSAGE_CANCEL;
         msg.obj = Pair.create(account, authority);
         mSyncHandler.sendMessage(msg);
         addTaint(account.getTaint());
         addTaint(authority.getTaint());
-        // ---------- Original Method ----------
-        //if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "sending MESSAGE_CANCEL");
-        //Message msg = mSyncHandler.obtainMessage();
-        //msg.what = SyncHandler.MESSAGE_CANCEL;
-        //msg.obj = Pair.create(account, authority);
-        //mSyncHandler.sendMessage(msg);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.988 -0400", hash_original_method = "1BD5650AC2366081E95971C40228D13F", hash_generated_method = "EE91EA44BF4DDE4D26866584ABAA7BA9")
     private void clearBackoffSetting(SyncOperation op) {
         mSyncStorageEngine.setBackoff(op.account, op.authority,
                 SyncStorageEngine.NOT_IN_BACKOFF_MODE, SyncStorageEngine.NOT_IN_BACKOFF_MODE);
         {
             mSyncQueue.onBackoffChanged(op.account, op.authority, 0);
-        } //End block
+        } 
         addTaint(op.getTaint());
-        // ---------- Original Method ----------
-        //mSyncStorageEngine.setBackoff(op.account, op.authority,
-                //SyncStorageEngine.NOT_IN_BACKOFF_MODE, SyncStorageEngine.NOT_IN_BACKOFF_MODE);
-        //synchronized (mSyncQueue) {
-            //mSyncQueue.onBackoffChanged(op.account, op.authority, 0);
-        //}
+        
+        
+                
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.990 -0400", hash_original_method = "42DD92B3EE29EAC346CC626BA6B5C78C", hash_generated_method = "5939E3148FE14550E0B45EBDD3B8343C")
     private void increaseBackoffSetting(SyncOperation op) {
         final long now = SystemClock.elapsedRealtime();
@@ -752,20 +766,20 @@ public class SyncManager implements OnAccountsUpdateListener {
             {
                 {
                     boolean var5FC87F7ECAA44100B96543687E8D1157_1234938894 = (Log.isLoggable(TAG, Log.VERBOSE));
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             newDelayInMs = previousSettings.second * 2;
-        } //End block
+        } 
         {
             newDelayInMs = jitterize(INITIAL_SYNC_RETRY_TIME_IN_MS,
                     (long)(INITIAL_SYNC_RETRY_TIME_IN_MS * 1.1));
-        } //End block
+        } 
         long maxSyncRetryTimeInSeconds = Settings.Secure.getLong(mContext.getContentResolver(),
                 Settings.Secure.SYNC_MAX_RETRY_DELAY_IN_SECONDS,
                 DEFAULT_MAX_SYNC_RETRY_TIME_IN_SECONDS);
         {
             newDelayInMs = maxSyncRetryTimeInSeconds * 1000;
-        } //End block
+        } 
         final long backoff = now + newDelayInMs;
         mSyncStorageEngine.setBackoff(op.account, op.authority,
                 backoff, newDelayInMs);
@@ -773,13 +787,14 @@ public class SyncManager implements OnAccountsUpdateListener {
         op.updateEffectiveRunTime();
         {
             mSyncQueue.onBackoffChanged(op.account, op.authority, backoff);
-        } //End block
+        } 
         addTaint(op.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.991 -0400", hash_original_method = "D0F8BD8389FAB953FA57BE172373CE33", hash_generated_method = "E42D36A48FCF3E10D0A676850606AD04")
     private void setDelayUntilTime(SyncOperation op, long delayUntilSeconds) {
         final long delayUntil = delayUntilSeconds * 1000;
@@ -787,94 +802,97 @@ public class SyncManager implements OnAccountsUpdateListener {
         long newDelayUntilTime;
         {
             newDelayUntilTime = SystemClock.elapsedRealtime() + (delayUntil - absoluteNow);
-        } //End block
+        } 
         {
             newDelayUntilTime = 0;
-        } //End block
+        } 
         mSyncStorageEngine.setDelayUntilTime(op.account, op.authority, newDelayUntilTime);
         {
             mSyncQueue.onDelayUntilTimeChanged(op.account, op.authority, newDelayUntilTime);
-        } //End block
+        } 
         addTaint(op.getTaint());
         addTaint(delayUntilSeconds);
-        // ---------- Original Method ----------
-        //final long delayUntil = delayUntilSeconds * 1000;
-        //final long absoluteNow = System.currentTimeMillis();
-        //long newDelayUntilTime;
-        //if (delayUntil > absoluteNow) {
-            //newDelayUntilTime = SystemClock.elapsedRealtime() + (delayUntil - absoluteNow);
-        //} else {
-            //newDelayUntilTime = 0;
-        //}
-        //mSyncStorageEngine.setDelayUntilTime(op.account, op.authority, newDelayUntilTime);
-        //synchronized (mSyncQueue) {
-            //mSyncQueue.onDelayUntilTimeChanged(op.account, op.authority, newDelayUntilTime);
-        //}
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.993 -0400", hash_original_method = "CC013A9497DA672D61638E0368F0173C", hash_generated_method = "694105C2C8F4F12B6E371ED5F65EA3D0")
     public void cancelActiveSync(Account account, String authority) {
         sendCancelSyncsMessage(account, authority);
         addTaint(account.getTaint());
         addTaint(authority.getTaint());
-        // ---------- Original Method ----------
-        //sendCancelSyncsMessage(account, authority);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.994 -0400", hash_original_method = "B18DC4486E3B23A71F43236C6D4E20D9", hash_generated_method = "23BE2127D49C7647FC656CD00579A406")
     public void scheduleSyncOperation(SyncOperation syncOperation) {
         boolean queueChanged;
         {
             queueChanged = mSyncQueue.add(syncOperation);
-        } //End block
+        } 
         {
             {
                 boolean var9C0394913D1D3E76433CD87690A4731B_1681761020 = (Log.isLoggable(TAG, Log.VERBOSE));
-            } //End collapsed parenthetic
+            } 
             sendCheckAlarmsMessage();
-        } //End block
+        } 
         {
             {
                 boolean var9C0394913D1D3E76433CD87690A4731B_695046897 = (Log.isLoggable(TAG, Log.VERBOSE));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(syncOperation.getTaint());
-        // ---------- Original Method ----------
-        //boolean queueChanged;
-        //synchronized (mSyncQueue) {
-            //queueChanged = mSyncQueue.add(syncOperation);
-        //}
-        //if (queueChanged) {
-            //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                //Log.v(TAG, "scheduleSyncOperation: enqueued " + syncOperation);
-            //}
-            //sendCheckAlarmsMessage();
-        //} else {
-            //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                //Log.v(TAG, "scheduleSyncOperation: dropping duplicate sync operation "
-                        //+ syncOperation);
-            //}
-        //}
+        
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
+            
+                
+                        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.994 -0400", hash_original_method = "A2720167EE002D05FE5DA0F6211150BE", hash_generated_method = "51CE72BEF915FEA979D106F602A7F3F3")
     public void clearScheduledSyncOperations(Account account, String authority) {
         {
             mSyncQueue.remove(account, authority);
-        } //End block
+        } 
         mSyncStorageEngine.setBackoff(account, authority,
                 SyncStorageEngine.NOT_IN_BACKOFF_MODE, SyncStorageEngine.NOT_IN_BACKOFF_MODE);
         addTaint(account.getTaint());
         addTaint(authority.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mSyncQueue) {
-            //mSyncQueue.remove(account, authority);
-        //}
-        //mSyncStorageEngine.setBackoff(account, authority,
-                //SyncStorageEngine.NOT_IN_BACKOFF_MODE, SyncStorageEngine.NOT_IN_BACKOFF_MODE);
+        
+        
+            
+        
+        
+                
     }
 
     
@@ -883,20 +901,20 @@ public class SyncManager implements OnAccountsUpdateListener {
         boolean isLoggable = Log.isLoggable(TAG, Log.DEBUG);
         {
             Log.d(TAG, "encountered error(s) during the sync: " + syncResult + ", " + operation);
-        } //End block
+        } 
         operation = new SyncOperation(operation);
         {
             boolean var136962CEFF8E97B7711EEA42390818DD_224763514 = (operation.extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF, false));
             {
                 operation.extras.remove(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var8F222CBFA0E1CEE9747F369F4C66D983_1294859417 = (operation.extras.getBoolean(ContentResolver.SYNC_EXTRAS_DO_NOT_RETRY, false));
             {
                 Log.d(TAG, "not retrying sync operation because SYNC_EXTRAS_DO_NOT_RETRY was specified "
                     + operation);
-            } //End block
+            } 
             {
                 boolean varCF7FCB45BDB21B5C6B94F23C48AB3F03_1817066722 = (operation.extras.getBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, false)
                 && !syncResult.syncAlreadyInProgress);
@@ -905,54 +923,55 @@ public class SyncManager implements OnAccountsUpdateListener {
                     Log.d(TAG, "retrying sync operation as a two-way sync because an upload-only sync "
                     + "encountered an error: " + operation);
                     scheduleSyncOperation(operation);
-                } //End block
+                } 
                 {
                     Log.d(TAG, "not retrying sync operation because it retried too many times: "
                     + operation);
-                } //End block
+                } 
                 {
                     boolean varAEB5246C7BAA2573F81B4D1F785CB99B_1533871442 = (syncResult.madeSomeProgress());
                     {
                         {
                             Log.d(TAG, "retrying sync operation because even though it had an error "
                         + "it achieved some success");
-                        } //End block
+                        } 
                         scheduleSyncOperation(operation);
-                    } //End block
+                    } 
                     {
                         {
                             Log.d(TAG, "retrying sync operation that failed because there was already a "
                         + "sync in progress: " + operation);
-                        } //End block
+                        } 
                         scheduleSyncOperation(new SyncOperation(operation.account, operation.syncSource,
                     operation.authority, operation.extras,
                     DELAY_RETRY_SYNC_IN_PROGRESS_IN_SECONDS * 1000,
                     operation.backoff, operation.delayUntil, operation.allowParallelSyncs));
-                    } //End block
+                    } 
                     {
                         boolean var2BF6670105BBC4F9CBE78135A10D2C2F_802618428 = (syncResult.hasSoftError());
                         {
                             {
                                 Log.d(TAG, "retrying sync operation because it encountered a soft error: "
                         + operation);
-                            } //End block
+                            } 
                             scheduleSyncOperation(operation);
-                        } //End block
+                        } 
                         {
                             Log.d(TAG, "not retrying sync operation because the error is a hard error: "
                     + operation);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(syncResult.getTaint());
         addTaint(operation.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:03.989 -0400", hash_original_method = "E59AB1EB4C672AE41E3C994B41A259B0", hash_generated_method = "1655E46725C471D36D54FD677CB9BD1A")
     protected void dump(FileDescriptor fd, PrintWriter pw) {
         dumpSyncState(pw);
@@ -965,28 +984,30 @@ public class SyncManager implements OnAccountsUpdateListener {
             RegisteredServicesCache.ServiceInfo info = var66FF787B46917F4C470825A4AACF9C4B_1213736860.next();
             {
                 pw.println("  " + info);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(fd.getTaint());
         addTaint(pw.getTaint());
-        // ---------- Original Method ----------
-        //dumpSyncState(pw);
-        //dumpSyncHistory(pw);
-        //pw.println();
-        //pw.println("SyncAdapters:");
-        //for (RegisteredServicesCache.ServiceInfo info : mSyncAdapters.getAllServices()) {
-            //pw.println("  " + info);
-        //}
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
-        static String formatTime(long time) {
+        @DSModeled(DSC.SPEC)
+    static String formatTime(long time) {
         Time tobj = new Time();
         tobj.set(time);
         return tobj.format("%Y-%m-%d %H:%M:%S");
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:05.423 -0400", hash_original_method = "A56698FB2481C281E3929C7135D64B8A", hash_generated_method = "71E2A0E32DE653593C542154F825573A")
     protected void dumpSyncState(PrintWriter pw) {
         pw.print("data connected: ");
@@ -998,10 +1019,10 @@ public class SyncManager implements OnAccountsUpdateListener {
         pw.print("accounts: ");
         {
             pw.println(accounts.length);
-        } //End block
+        } 
         {
             pw.println("not known yet");
-        } //End block
+        } 
         long now;
         now = SystemClock.elapsedRealtime();
         pw.print("now: ");
@@ -1022,10 +1043,10 @@ public class SyncManager implements OnAccountsUpdateListener {
             pw.print(" (");
             pw.print(DateUtils.formatElapsedTime((mSyncHandler.mAlarmScheduleTime-now)/1000));
             pw.println(" (HH:MM:SS) from now)");
-        } //End block
+        } 
         {
             pw.println("no alarm is scheduled (there had better not be any pending syncs)");
-        } //End block
+        } 
         pw.print("notification info: ");
         StringBuilder sb;
         sb = new StringBuilder();
@@ -1045,12 +1066,12 @@ public class SyncManager implements OnAccountsUpdateListener {
                 pw.print(" - ");
                 pw.print(activeSyncContext.mSyncOperation.dump(false));
                 pw.println();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             sb.setLength(0);
             mSyncQueue.dump(sb);
-        } //End block
+        } 
         pw.println();
         pw.print(sb.toString());
         pw.println();
@@ -1070,7 +1091,7 @@ public class SyncManager implements OnAccountsUpdateListener {
                     {
                         {
                             boolean varBFF66230831B803F3BB6FD65657B65E4_82873085 = (!syncAdapterType.type.accountType.equals(account.type));
-                        } //End collapsed parenthetic
+                        } 
                         SyncStorageEngine.AuthorityInfo settings;
                         settings = mSyncStorageEngine.getOrCreateAuthority(
                         account, syncAdapterType.type.authority);
@@ -1087,15 +1108,15 @@ public class SyncManager implements OnAccountsUpdateListener {
                         {
                             pw.print(", delay for "
                             + ((settings.delayUntil - now) / 1000) + " sec");
-                        } //End block
+                        } 
                         {
                             pw.print(", backoff for "
                             + ((settings.backoffTime - now) / 1000) + " sec");
-                        } //End block
+                        } 
                         {
                             pw.print(", the backoff increment is " + settings.backoffDelay / 1000
                                 + " sec");
-                        } //End block
+                        } 
                         pw.println();
                         {
                             int periodicIndex;
@@ -1111,8 +1132,8 @@ public class SyncManager implements OnAccountsUpdateListener {
                                 pw.println("      periodic period=" + info.second
                             + ", extras=" + info.first
                             + ", next=" + formatTime(nextPeriodicTime));
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         pw.print("      count: local=");
                         pw.print(status.numSourceLocal);
                         pw.print(" poll=");
@@ -1133,7 +1154,7 @@ public class SyncManager implements OnAccountsUpdateListener {
                             pw.print(SyncStorageEngine.SOURCES[status.lastSuccessSource]);
                             pw.print(" time=");
                             pw.println(formatTime(status.lastSuccessTime));
-                        } //End block
+                        } 
                         {
                             pw.print("      FAILURE: source=");
                             pw.print(SyncStorageEngine.SOURCES[
@@ -1147,93 +1168,94 @@ public class SyncManager implements OnAccountsUpdateListener {
                             pw.print("      message: ");
                             pw.println(
                             getLastFailureMessage(errCode) + " (" + errCode + ")");
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(pw.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.999 -0400", hash_original_method = "C2F823D43F1684BB9B7871B7A13E4AFA", hash_generated_method = "DCE9069535DCD31724F56B174010582E")
     private String getLastFailureMessage(int code) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1244034384 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_626172663 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_820955074 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_1862387688 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_552882737 = null; //Variable for return #5
-        String varB4EAC82CA7396A68D541C85D26508E83_1346586683 = null; //Variable for return #6
-        String varB4EAC82CA7396A68D541C85D26508E83_2059497797 = null; //Variable for return #7
-        String varB4EAC82CA7396A68D541C85D26508E83_1738924227 = null; //Variable for return #8
-        String varB4EAC82CA7396A68D541C85D26508E83_712047243 = null; //Variable for return #9
-        //Begin case ContentResolver.SYNC_ERROR_SYNC_ALREADY_IN_PROGRESS 
+        String varB4EAC82CA7396A68D541C85D26508E83_1244034384 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_626172663 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_820955074 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1862387688 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_552882737 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1346586683 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2059497797 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1738924227 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_712047243 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1244034384 = "sync already in progress";
-        //End case ContentResolver.SYNC_ERROR_SYNC_ALREADY_IN_PROGRESS 
-        //Begin case ContentResolver.SYNC_ERROR_AUTHENTICATION 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_626172663 = "authentication error";
-        //End case ContentResolver.SYNC_ERROR_AUTHENTICATION 
-        //Begin case ContentResolver.SYNC_ERROR_IO 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_820955074 = "I/O error";
-        //End case ContentResolver.SYNC_ERROR_IO 
-        //Begin case ContentResolver.SYNC_ERROR_PARSE 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1862387688 = "parse error";
-        //End case ContentResolver.SYNC_ERROR_PARSE 
-        //Begin case ContentResolver.SYNC_ERROR_CONFLICT 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_552882737 = "conflict error";
-        //End case ContentResolver.SYNC_ERROR_CONFLICT 
-        //Begin case ContentResolver.SYNC_ERROR_TOO_MANY_DELETIONS 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1346586683 = "too many deletions error";
-        //End case ContentResolver.SYNC_ERROR_TOO_MANY_DELETIONS 
-        //Begin case ContentResolver.SYNC_ERROR_TOO_MANY_RETRIES 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_2059497797 = "too many retries error";
-        //End case ContentResolver.SYNC_ERROR_TOO_MANY_RETRIES 
-        //Begin case ContentResolver.SYNC_ERROR_INTERNAL 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1738924227 = "internal error";
-        //End case ContentResolver.SYNC_ERROR_INTERNAL 
-        //Begin case default 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_712047243 = "unknown";
-        //End case default 
+        
         addTaint(code);
-        String varA7E53CE21691AB073D9660D615818899_283079761; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_283079761; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_283079761 = varB4EAC82CA7396A68D541C85D26508E83_1244034384;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_283079761 = varB4EAC82CA7396A68D541C85D26508E83_626172663;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_283079761 = varB4EAC82CA7396A68D541C85D26508E83_820955074;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_283079761 = varB4EAC82CA7396A68D541C85D26508E83_1862387688;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_283079761 = varB4EAC82CA7396A68D541C85D26508E83_552882737;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_283079761 = varB4EAC82CA7396A68D541C85D26508E83_1346586683;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_283079761 = varB4EAC82CA7396A68D541C85D26508E83_2059497797;
                 break;
-            case 8: //Assign result for return ordinal #8
+            case 8: 
                 varA7E53CE21691AB073D9660D615818899_283079761 = varB4EAC82CA7396A68D541C85D26508E83_1738924227;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_283079761 = varB4EAC82CA7396A68D541C85D26508E83_712047243;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_283079761.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_283079761.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_283079761;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.999 -0400", hash_original_method = "2E5C9A0C484B8BFAAD4FF120631D1FEC", hash_generated_method = "305BB8B34B8D9F46875ED7D3916192AB")
     private void dumpTimeSec(PrintWriter pw, long time) {
         pw.print(time/1000);
@@ -1242,11 +1264,11 @@ public class SyncManager implements OnAccountsUpdateListener {
         pw.print('s');
         addTaint(pw.getTaint());
         addTaint(time);
-        // ---------- Original Method ----------
-        //pw.print(time/1000);
-        //pw.print('.');
-        //pw.print((time/100)%10);
-        //pw.print('s');
+        
+        
+        
+        
+        
     }
 
     
@@ -1259,7 +1281,7 @@ public class SyncManager implements OnAccountsUpdateListener {
             dumpTimeSec(pw, ds.successTime);
             pw.print(" avg=");
             dumpTimeSec(pw, ds.successTime/ds.successCount);
-        } //End block
+        } 
         pw.print(") Failure (");
         pw.print(ds.failureCount);
         {
@@ -1267,38 +1289,40 @@ public class SyncManager implements OnAccountsUpdateListener {
             dumpTimeSec(pw, ds.failureTime);
             pw.print(" avg=");
             dumpTimeSec(pw, ds.failureTime/ds.failureCount);
-        } //End block
+        } 
         pw.println(")");
         addTaint(pw.getTaint());
         addTaint(ds.getTaint());
-        // ---------- Original Method ----------
-        //pw.print("Success (");
-        //pw.print(ds.successCount);
-        //if (ds.successCount > 0) {
-            //pw.print(" for "); dumpTimeSec(pw, ds.successTime);
-            //pw.print(" avg="); dumpTimeSec(pw, ds.successTime/ds.successCount);
-        //}
-        //pw.print(") Failure (");
-        //pw.print(ds.failureCount);
-        //if (ds.failureCount > 0) {
-            //pw.print(" for "); dumpTimeSec(pw, ds.failureTime);
-            //pw.print(" avg="); dumpTimeSec(pw, ds.failureTime/ds.failureCount);
-        //}
-        //pw.println(")");
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.001 -0400", hash_original_method = "47B1A67BEBB64EEFEE0789183294D0B7", hash_generated_method = "88DE272937D193BBA7929CAACDB2E481")
     protected void dumpSyncHistory(PrintWriter pw) {
         dumpRecentHistory(pw);
         dumpDayStatistics(pw);
         addTaint(pw.getTaint());
-        // ---------- Original Method ----------
-        //dumpRecentHistory(pw);
-        //dumpDayStatistics(pw);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.069 -0400", hash_original_method = "C137DBDBD7D2B9AF348453A35EDAB8EF", hash_generated_method = "C90676E5362D3878136E88697C11EB14")
     private void dumpRecentHistory(PrintWriter pw) {
         final ArrayList<SyncStorageEngine.SyncHistoryItem> items = mSyncStorageEngine.getSyncHistory();
@@ -1322,36 +1346,36 @@ public class SyncManager implements OnAccountsUpdateListener {
                         {
                             authorityName = authority.authority;
                             accountKey = authority.account.name + "/" + authority.account.type;
-                        } //End block
+                        } 
                         {
                             authorityName = "Unknown";
                             accountKey = "Unknown";
-                        } //End block
+                        } 
                         int length = authorityName.length();
                         {
                             maxAuthority = length;
-                        } //End block
+                        } 
                         length = accountKey.length();
                         {
                             maxAccount = length;
-                        } //End block
+                        } 
                         final long elapsedTime = item.elapsedTime;
                         totalElapsedTime += elapsedTime;
                         AuthoritySyncStats authoritySyncStats = authorityMap.get(authorityName);
                         {
                             authoritySyncStats = new AuthoritySyncStats(authorityName);
                             authorityMap.put(authorityName, authoritySyncStats);
-                        } //End block
+                        } 
                         authoritySyncStats.elapsedTime += elapsedTime;
                         final Map<String, AccountSyncStats> accountMap = authoritySyncStats.accountMap;
                         AccountSyncStats accountSyncStats = accountMap.get(accountKey);
                         {
                             accountSyncStats = new AccountSyncStats(accountKey);
                             accountMap.put(accountKey, accountSyncStats);
-                        } //End block
+                        } 
                         accountSyncStats.elapsedTime += elapsedTime;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 pw.println();
                 pw.printf("Detailed Statistics (Recent history):  %d (# of times) %ds (sync time)\n",
                     totalTimes, totalElapsedTime / 1000);
@@ -1363,17 +1387,17 @@ public class SyncManager implements OnAccountsUpdateListener {
                         int compare = Integer.compare(rhs.times, lhs.times);
                         {
                             compare = Long.compare(rhs.elapsedTime, lhs.elapsedTime);
-                        } //End block
+                        } 
                         addTaint(lhs.getTaint());
                         addTaint(rhs.getTaint());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1342777898 = getTaintInt();
                         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1342777898;
-                        // ---------- Original Method ----------
-                        //int compare = Integer.compare(rhs.times, lhs.times);
-                        //if (compare == 0) {
-                        //compare = Long.compare(rhs.elapsedTime, lhs.elapsedTime);
-                    //}
-                        //return compare;
+                        
+                        
+                        
+                        
+                    
+                        
                     }
 });
                 final int maxLength = Math.max(maxAuthority, maxAccount + 3);
@@ -1412,17 +1436,17 @@ public class SyncManager implements OnAccountsUpdateListener {
                                 int compare = Integer.compare(rhs.times, lhs.times);
                                 {
                                     compare = Long.compare(rhs.elapsedTime, lhs.elapsedTime);
-                                } //End block
+                                } 
                                 addTaint(lhs.getTaint());
                                 addTaint(rhs.getTaint());
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1327545022 = getTaintInt();
                                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1327545022;
-                                // ---------- Original Method ----------
-                                //int compare = Integer.compare(rhs.times, lhs.times);
-                                //if (compare == 0) {
-                            //compare = Long.compare(rhs.elapsedTime, lhs.elapsedTime);
-                        //}
-                                //return compare;
+                                
+                                
+                                
+                            
+                        
+                                
                             }
 });
                         {
@@ -1439,11 +1463,11 @@ public class SyncManager implements OnAccountsUpdateListener {
                             times,
                             times * 100 / totalTimes);
                                 pw.printf(accountFormat, stats.name, timesStr, timeStr);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         pw.println(separator);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 pw.println();
                 pw.println("Recent Sync History");
                 final String format = "  %-" + maxAccount + "s  %s\n";
@@ -1458,11 +1482,11 @@ public class SyncManager implements OnAccountsUpdateListener {
                         {
                             authorityName = authority.authority;
                             accountKey = authority.account.name + "/" + authority.account.type;
-                        } //End block
+                        } 
                         {
                             authorityName = "Unknown";
                             accountKey = "Unknown";
-                        } //End block
+                        } 
                         final long elapsedTime = item.elapsedTime;
                         final Time time = new Time();
                         final long eventTime = item.eventTime;
@@ -1472,21 +1496,21 @@ public class SyncManager implements OnAccountsUpdateListener {
                         String diffString;
                         {
                             diffString = "";
-                        } //End block
+                        } 
                         {
                             final long diff = (lastEventTime - eventTime) / 1000;
                             {
                                 diffString = String.valueOf(diff);
-                            } //End block
+                            } 
                             {
                                 diffString = String.format("%02d:%02d", diff / 60, diff % 60);
-                            } //End block
+                            } 
                             {
                                 final long sec = diff % 3600;
                                 diffString = String.format("%02d:%02d:%02d",
                                 diff / 3600, sec / 60, sec % 60);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         lastTimeMap.put(key, eventTime);
                         pw.printf("  #%-3d: %s %8s  %5.1fs  %8s",
                         i + 1,
@@ -1500,24 +1524,25 @@ public class SyncManager implements OnAccountsUpdateListener {
                             item.event,
                             item.upstreamActivity,
                             item.downstreamActivity);
-                        } //End block
+                        } 
                         {
                             boolean varFC5F873EDD9BB5AB47B6562574DA62BF_1155720669 = (item.mesg != null
                         && !SyncStorageEngine.MESG_SUCCESS.equals(item.mesg));
                             {
                                 pw.printf("    mesg=%s\n", item.mesg);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(pw.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.070 -0400", hash_original_method = "9349911975C50CB78B5A389074CC1BDC", hash_generated_method = "E1CC200BE7DF6E22310FE16D845BF23E")
     private void dumpDayStatistics(PrintWriter pw) {
         SyncStorageEngine.DayStats dses[] = mSyncStorageEngine.getDayStatistics();
@@ -1538,8 +1563,8 @@ public class SyncManager implements OnAccountsUpdateListener {
                     pw.print(delta);
                     pw.print(":  ");
                     dumpDayStatistic(pw, ds);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             int weekDay = today;
             {
                 SyncStorageEngine.DayStats aggr = null;
@@ -1548,47 +1573,48 @@ public class SyncManager implements OnAccountsUpdateListener {
                     ds = dses[i];
                     {
                         i = dses.length;
-                    } //End block
+                    } 
                     int delta = weekDay-ds.day;
                     {
                         aggr = new SyncStorageEngine.DayStats(weekDay);
-                    } //End block
+                    } 
                     aggr.successCount += ds.successCount;
                     aggr.successTime += ds.successTime;
                     aggr.failureCount += ds.failureCount;
                     aggr.failureTime += ds.failureTime;
-                } //End block
+                } 
                 {
                     pw.print("  Week-");
                     pw.print((today-weekDay)/7);
                     pw.print(": ");
                     dumpDayStatistic(pw, aggr);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(pw.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.075 -0400", hash_original_method = "3A4E555675ED758A699E30DB2B6A1D6C", hash_generated_method = "7BF63828CB5094D72A562DCC5FFD1DAE")
     private boolean isSyncStillActive(ActiveSyncContext activeSyncContext) {
         {
             Iterator<ActiveSyncContext> var38A241656A664BE053973521A7ED258D_1428266560 = (mActiveSyncContexts).iterator();
             var38A241656A664BE053973521A7ED258D_1428266560.hasNext();
             ActiveSyncContext sync = var38A241656A664BE053973521A7ED258D_1428266560.next();
-        } //End collapsed parenthetic
+        } 
         addTaint(activeSyncContext.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2116593544 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2116593544;
-        // ---------- Original Method ----------
-        //for (ActiveSyncContext sync : mActiveSyncContexts) {
-            //if (sync == activeSyncContext) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -1617,33 +1643,33 @@ public class SyncManager implements OnAccountsUpdateListener {
             mContext = context;
             mHandler = handler;
             mInitialized = false;
-            // ---------- Original Method ----------
-            //mAccount = account;
-            //mAuthority = authority;
-            //mContext = context;
-            //mHandler = handler;
-            //mInitialized = false;
+            
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.078 -0400", hash_original_method = "9C4A98A4ADBC598450E25E4EB304536B", hash_generated_method = "F9570B3E1B80C03E81B9C0CA1492B7FB")
         public void onServiceConnected(ComponentName name, IBinder service) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             try 
             {
                 {
                     mInitialized = true;
                     {
                         boolean var583468BD93EF069D3E21BBFA72DDD538_1430808347 = (Log.isLoggable(TAG, Log.VERBOSE));
-                    } //End collapsed parenthetic
+                    } 
                     ISyncAdapter.Stub.asInterface(service).initialize(mAccount, mAuthority);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (RemoteException e)
             {
                 Log.d(TAG, "error while initializing: " + mAccount + ", authority " + mAuthority,
                         e);
-            } //End block
+            } 
             finally 
             {
                 mHandler.postDelayed(new Runnable() {                    
@@ -1652,35 +1678,35 @@ public class SyncManager implements OnAccountsUpdateListener {
                         {
                             mContext.unbindService(InitializerServiceConnection.this);
                             mContext = null;
-                        } //End block
-                        // ---------- Original Method ----------
-                        //if (mContext != null) {
-                            //mContext.unbindService(InitializerServiceConnection.this);
-                            //mContext = null;
-                        //}
+                        } 
+                        
+                        
+                            
+                            
+                        
                     }
 }, INITIALIZATION_UNBIND_DELAY_MS);
-            } //End block
+            } 
             addTaint(name.getTaint());
             addTaint(service.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.079 -0400", hash_original_method = "7C8777D718751E565C82B5C1458835CE", hash_generated_method = "956FEBD81C7AB60A87B4B273B50F4D63")
         public void onServiceDisconnected(ComponentName name) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 mContext.unbindService(InitializerServiceConnection.this);
                 mContext = null;
-            } //End block
+            } 
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
-            //if (mContext != null) {
-                //mContext.unbindService(InitializerServiceConnection.this);
-                //mContext = null;
-            //}
+            
+            
+                
+                
+            
         }
 
         
@@ -1700,9 +1726,9 @@ public class SyncManager implements OnAccountsUpdateListener {
           SyncHandlerMessagePayload(ActiveSyncContext syncContext, SyncResult syncResult) {
             this.activeSyncContext = syncContext;
             this.syncResult = syncResult;
-            // ---------- Original Method ----------
-            //this.activeSyncContext = syncContext;
-            //this.syncResult = syncResult;
+            
+            
+            
         }
 
         
@@ -1715,20 +1741,20 @@ public class SyncManager implements OnAccountsUpdateListener {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.080 -0400", hash_original_method = "8972A0265D0AE4113C769D505643787E", hash_generated_method = "8972A0265D0AE4113C769D505643787E")
         public SyncAlarmIntentReceiver ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.082 -0400", hash_original_method = "B17BCAD698B90432E3978D14A6575096", hash_generated_method = "5BD8AF817AB4808B9D575FFF16CD1C8F")
         public void onReceive(Context context, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mHandleAlarmWakeLock.acquire();
             sendSyncAlarmMessage();
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            //mHandleAlarmWakeLock.acquire();
-            //sendSyncAlarmMessage();
+            
+            
+            
         }
 
         
@@ -1782,37 +1808,37 @@ public class SyncManager implements OnAccountsUpdateListener {
                     mSyncOperation.account, mSyncOperation.authority);
             mSyncWakeLock.setWorkSource(new WorkSource(syncAdapterUid));
             mSyncWakeLock.acquire();
-            // ---------- Original Method ----------
-            //mSyncAdapterUid = syncAdapterUid;
-            //mSyncOperation = syncOperation;
-            //mHistoryRowId = historyRowId;
-            //mSyncAdapter = null;
-            //mStartTime = SystemClock.elapsedRealtime();
-            //mTimeoutStartTime = mStartTime;
-            //mSyncWakeLock = mSyncHandler.getSyncWakeLock(
-                    //mSyncOperation.account, mSyncOperation.authority);
-            //mSyncWakeLock.setWorkSource(new WorkSource(syncAdapterUid));
-            //mSyncWakeLock.acquire();
+            
+            
+            
+            
+            
+            
+            
+            
+                    
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.084 -0400", hash_original_method = "7456DA1EA096E82DD762DA299B1797D3", hash_generated_method = "540CBBFBA53CA8CE698C636F326A356D")
         public void sendHeartbeat() {
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.085 -0400", hash_original_method = "2741CA480AE203CDFD1BCCBB420C487D", hash_generated_method = "DC9C4DBF7DABB67996D2F707E0092881")
         public void onFinished(SyncResult result) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean var9C0394913D1D3E76433CD87690A4731B_1917597865 = (Log.isLoggable(TAG, Log.VERBOSE));
-            } //End collapsed parenthetic
+            } 
             sendSyncFinishedOrCanceledMessage(this, result);
             addTaint(result.getTaint());
-            // ---------- Original Method ----------
-            //if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "onFinished: " + this);
-            //sendSyncFinishedOrCanceledMessage(this, result);
+            
+            
+            
         }
 
         
@@ -1823,44 +1849,44 @@ public class SyncManager implements OnAccountsUpdateListener {
                     .append(", mHistoryRowId ").append(mHistoryRowId)
                     .append(", syncOperation ").append(mSyncOperation);
             addTaint(sb.getTaint());
-            // ---------- Original Method ----------
-            //sb.append("startTime ").append(mStartTime)
-                    //.append(", mTimeoutStartTime ").append(mTimeoutStartTime)
-                    //.append(", mHistoryRowId ").append(mHistoryRowId)
-                    //.append(", syncOperation ").append(mSyncOperation);
+            
+            
+                    
+                    
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.087 -0400", hash_original_method = "CBDE36ABE821F23EF1CFAFB665E67134", hash_generated_method = "71CD2C8E4137441F5B70F914040D11B0")
         public void onServiceConnected(ComponentName name, IBinder service) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Message msg = mSyncHandler.obtainMessage();
             msg.what = SyncHandler.MESSAGE_SERVICE_CONNECTED;
             msg.obj = new ServiceConnectionData(this, ISyncAdapter.Stub.asInterface(service));
             mSyncHandler.sendMessage(msg);
             addTaint(name.getTaint());
             addTaint(service.getTaint());
-            // ---------- Original Method ----------
-            //Message msg = mSyncHandler.obtainMessage();
-            //msg.what = SyncHandler.MESSAGE_SERVICE_CONNECTED;
-            //msg.obj = new ServiceConnectionData(this, ISyncAdapter.Stub.asInterface(service));
-            //mSyncHandler.sendMessage(msg);
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.088 -0400", hash_original_method = "E604348BDB0F3F95B7C0274B0D40964D", hash_generated_method = "8A2C13413E867BDEC53650A9338C542B")
         public void onServiceDisconnected(ComponentName name) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Message msg = mSyncHandler.obtainMessage();
             msg.what = SyncHandler.MESSAGE_SERVICE_DISCONNECTED;
             msg.obj = new ServiceConnectionData(this, null);
             mSyncHandler.sendMessage(msg);
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
-            //Message msg = mSyncHandler.obtainMessage();
-            //msg.what = SyncHandler.MESSAGE_SERVICE_DISCONNECTED;
-            //msg.obj = new ServiceConnectionData(this, null);
-            //mSyncHandler.sendMessage(msg);
+            
+            
+            
+            
+            
         }
 
         
@@ -1870,8 +1896,8 @@ public class SyncManager implements OnAccountsUpdateListener {
                 boolean var9C0394913D1D3E76433CD87690A4731B_1639981126 = (Log.isLoggable(TAG, Log.VERBOSE));
                 {
                     Log.d(TAG, "bindToSyncAdapter: " + info.componentName + ", connection " + this);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             Intent intent = new Intent();
             intent.setAction("android.content.SyncAdapter");
             intent.setComponent(info.componentName);
@@ -1885,12 +1911,12 @@ public class SyncManager implements OnAccountsUpdateListener {
                     | Context.BIND_ALLOW_OOM_MANAGEMENT);
             {
                 mBound = false;
-            } //End block
+            } 
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1603574288 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1603574288;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1900,40 +1926,40 @@ public class SyncManager implements OnAccountsUpdateListener {
                 boolean var9C0394913D1D3E76433CD87690A4731B_1529155468 = (Log.isLoggable(TAG, Log.VERBOSE));
                 {
                     Log.d(TAG, "unBindFromSyncAdapter: connection " + this);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 mBound = false;
                 mContext.unbindService(this);
-            } //End block
+            } 
             mSyncWakeLock.release();
             mSyncWakeLock.setWorkSource(null);
-            // ---------- Original Method ----------
-            //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                //Log.d(TAG, "unBindFromSyncAdapter: connection " + this);
-            //}
-            //if (mBound) {
-                //mBound = false;
-                //mContext.unbindService(this);
-            //}
-            //mSyncWakeLock.release();
-            //mSyncWakeLock.setWorkSource(null);
+            
+            
+                
+            
+            
+                
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.093 -0400", hash_original_method = "C99E9A460C6F28DBA730EF38203534A2", hash_generated_method = "2F5A354818CAB6A02ECE34C11512BC4F")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1457668370 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1457668370 = null; 
             StringBuilder sb = new StringBuilder();
             toString(sb);
             varB4EAC82CA7396A68D541C85D26508E83_1457668370 = sb.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1457668370.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1457668370.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1457668370;
-            // ---------- Original Method ----------
-            //StringBuilder sb = new StringBuilder();
-            //toString(sb);
-            //return sb.toString();
+            
+            
+            
+            
         }
 
         
@@ -1941,8 +1967,8 @@ public class SyncManager implements OnAccountsUpdateListener {
         @Override
         public void binderDied() {
             sendSyncFinishedOrCanceledMessage(this, null);
-            // ---------- Original Method ----------
-            //sendSyncFinishedOrCanceledMessage(this, null);
+            
+            
         }
 
         
@@ -1967,8 +1993,8 @@ public class SyncManager implements OnAccountsUpdateListener {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.095 -0400", hash_original_method = "BA2AD08D9B4BF110732C8291C5F36CF8", hash_generated_method = "8FA9C8631A53370375CA7123AE4AF077")
         private  AuthoritySyncStats(String name) {
             this.name = name;
-            // ---------- Original Method ----------
-            //this.name = name;
+            
+            
         }
 
         
@@ -1990,8 +2016,8 @@ public class SyncManager implements OnAccountsUpdateListener {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.096 -0400", hash_original_method = "1D94286E4C9E35DF248CEA39D6389F91", hash_generated_method = "F1AB1770EB048E4049FC1577D48B72D8")
         private  AccountSyncStats(String name) {
             this.name = name;
-            // ---------- Original Method ----------
-            //this.name = name;
+            
+            
         }
 
         
@@ -2013,7 +2039,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.097 -0400", hash_original_method = "5641FE5F8977FB94C61AEE76E9EBD2B2", hash_generated_method = "5641FE5F8977FB94C61AEE76E9EBD2B2")
         public SyncTimeTracker ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2023,21 +2049,21 @@ public class SyncManager implements OnAccountsUpdateListener {
             final long now = SystemClock.elapsedRealtime();
             {
                 mWhenSyncStarted = now;
-            } //End block
+            } 
             {
                 mTimeSpentSyncing += now - mWhenSyncStarted;
-            } //End block
+            } 
             mLastWasSyncing = isSyncInProgress;
-            // ---------- Original Method ----------
-            //final boolean isSyncInProgress = !mActiveSyncContexts.isEmpty();
-            //if (isSyncInProgress == mLastWasSyncing) return;
-            //final long now = SystemClock.elapsedRealtime();
-            //if (isSyncInProgress) {
-                //mWhenSyncStarted = now;
-            //} else {
-                //mTimeSpentSyncing += now - mWhenSyncStarted;
-            //}
-            //mLastWasSyncing = isSyncInProgress;
+            
+            
+            
+            
+            
+                
+            
+                
+            
+            
         }
 
         
@@ -2046,10 +2072,10 @@ public class SyncManager implements OnAccountsUpdateListener {
             final long now = SystemClock.elapsedRealtime();
             long var0F5264038205EDFB1AC05FBB0E8C5E94_985720952 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_985720952;
-            // ---------- Original Method ----------
-            //if (!mLastWasSyncing) return mTimeSpentSyncing;
-            //final long now = SystemClock.elapsedRealtime();
-            //return mTimeSpentSyncing + (now - mWhenSyncStarted);
+            
+            
+            
+            
         }
 
         
@@ -2069,9 +2095,9 @@ public class SyncManager implements OnAccountsUpdateListener {
           ServiceConnectionData(ActiveSyncContext activeSyncContext, ISyncAdapter syncAdapter) {
             this.activeSyncContext = activeSyncContext;
             this.syncAdapter = syncAdapter;
-            // ---------- Original Method ----------
-            //this.activeSyncContext = activeSyncContext;
-            //this.syncAdapter = syncAdapter;
+            
+            
+            
         }
 
         
@@ -2100,30 +2126,30 @@ public class SyncManager implements OnAccountsUpdateListener {
         public  SyncHandler(Looper looper) {
             super(looper);
             addTaint(looper.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.103 -0400", hash_original_method = "A4C54FCCA01900F2BC7EC8A1E7F40380", hash_generated_method = "F8871811763F0C577983C96491676F31")
         public void onBootCompleted() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mBootCompleted = true;
             mSyncStorageEngine.doDatabaseCleanup(AccountManager.get(mContext).getAccounts());
             {
                 mReadyToRunLatch.countDown();
-            } //End block
-            // ---------- Original Method ----------
-            //mBootCompleted = true;
-            //mSyncStorageEngine.doDatabaseCleanup(AccountManager.get(mContext).getAccounts());
-            //if (mReadyToRunLatch != null) {
-                //mReadyToRunLatch.countDown();
-            //}
+            } 
+            
+            
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.105 -0400", hash_original_method = "F60450395CB7370B81745EFD5F3059FF", hash_generated_method = "0E0B1C6B806454F5AA15B8F2DAB6C147")
         private PowerManager.WakeLock getSyncWakeLock(Account account, String authority) {
-            PowerManager.WakeLock varB4EAC82CA7396A68D541C85D26508E83_623760980 = null; //Variable for return #1
+            PowerManager.WakeLock varB4EAC82CA7396A68D541C85D26508E83_623760980 = null; 
             final Pair<Account, String> wakeLockKey = Pair.create(account, authority);
             PowerManager.WakeLock wakeLock = mWakeLocks.get(wakeLockKey);
             {
@@ -2131,22 +2157,22 @@ public class SyncManager implements OnAccountsUpdateListener {
                 wakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, name);
                 wakeLock.setReferenceCounted(false);
                 mWakeLocks.put(wakeLockKey, wakeLock);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_623760980 = wakeLock;
             addTaint(account.getTaint());
             addTaint(authority.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_623760980.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_623760980.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_623760980;
-            // ---------- Original Method ----------
-            //final Pair<Account, String> wakeLockKey = Pair.create(account, authority);
-            //PowerManager.WakeLock wakeLock = mWakeLocks.get(wakeLockKey);
-            //if (wakeLock == null) {
-                //final String name = SYNC_WAKE_LOCK_PREFIX + "_" + authority + "_" + account;
-                //wakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, name);
-                //wakeLock.setReferenceCounted(false);
-                //mWakeLocks.put(wakeLockKey, wakeLock);
-            //}
-            //return wakeLock;
+            
+            
+            
+            
+                
+                
+                
+                
+            
+            
         }
 
         
@@ -2159,26 +2185,26 @@ public class SyncManager implements OnAccountsUpdateListener {
                     {
                         latch.await();
                         mReadyToRunLatch = null;
-                    } //End block
+                    } 
                     catch (InterruptedException e)
                     {
                         Thread.currentThread().interrupt();
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //CountDownLatch latch = mReadyToRunLatch;
-            //if (latch != null) {
-                //while (true) {
-                    //try {
-                        //latch.await();
-                        //mReadyToRunLatch = null;
-                        //return;
-                    //} catch (InterruptedException e) {
-                        //Thread.currentThread().interrupt();
-                    //}
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+            
+                
+                    
+                        
+                        
+                        
+                    
+                        
+                    
+                
+            
         }
 
         
@@ -2192,7 +2218,7 @@ public class SyncManager implements OnAccountsUpdateListener {
                 mDataConnectionIsConnected = readDataConnectionState();
                 mSyncManagerWakeLock.acquire();
                 earliestFuturePollTime = scheduleReadyPeriodicSyncs();
-                //Begin case SyncHandler.MESSAGE_CANCEL 
+                
                 {
                     Pair<Account, String> payload = (Pair<Account, String>)msg.obj;
                     {
@@ -2200,37 +2226,37 @@ public class SyncManager implements OnAccountsUpdateListener {
                         {
                             Log.d(TAG, "handleSyncHandlerMessage: MESSAGE_SERVICE_CANCEL: "
                                     + payload.first + ", " + payload.second);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     cancelActiveSyncLocked(payload.first, payload.second);
                     nextPendingSyncTime = maybeStartNextSyncLocked();
-                } //End block
-                //End case SyncHandler.MESSAGE_CANCEL 
-                //Begin case SyncHandler.MESSAGE_SYNC_FINISHED 
+                } 
+                
+                
                 {
                     boolean var5FC87F7ECAA44100B96543687E8D1157_1063891008 = (Log.isLoggable(TAG, Log.VERBOSE));
-                } //End collapsed parenthetic
-                //End case SyncHandler.MESSAGE_SYNC_FINISHED 
-                //Begin case SyncHandler.MESSAGE_SYNC_FINISHED 
+                } 
+                
+                
                 SyncHandlerMessagePayload payload = (SyncHandlerMessagePayload)msg.obj;
-                //End case SyncHandler.MESSAGE_SYNC_FINISHED 
-                //Begin case SyncHandler.MESSAGE_SYNC_FINISHED 
+                
+                
                 {
                     boolean varBA2B30809006AC87B4F9ED60448095E9_1235335478 = (!isSyncStillActive(payload.activeSyncContext));
                     {
                         Log.d(TAG, "handleSyncHandlerMessage: dropping since the "
                                     + "sync is no longer active: "
                                     + payload.activeSyncContext);
-                    } //End block
-                } //End collapsed parenthetic
-                //End case SyncHandler.MESSAGE_SYNC_FINISHED 
-                //Begin case SyncHandler.MESSAGE_SYNC_FINISHED 
+                    } 
+                } 
+                
+                
                 runSyncFinishedOrCanceledLocked(payload.syncResult, payload.activeSyncContext);
-                //End case SyncHandler.MESSAGE_SYNC_FINISHED 
-                //Begin case SyncHandler.MESSAGE_SYNC_FINISHED 
+                
+                
                 nextPendingSyncTime = maybeStartNextSyncLocked();
-                //End case SyncHandler.MESSAGE_SYNC_FINISHED 
-                //Begin case SyncHandler.MESSAGE_SERVICE_CONNECTED 
+                
+                
                 {
                     ServiceConnectionData msgData = (ServiceConnectionData)msg.obj;
                     {
@@ -2238,17 +2264,17 @@ public class SyncManager implements OnAccountsUpdateListener {
                         {
                             Log.d(TAG, "handleSyncHandlerMessage: MESSAGE_SERVICE_CONNECTED: "
                                     + msgData.activeSyncContext);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         boolean varC7FD95DDD2260EADDB8E624A9C0825F6_1341033206 = (isSyncStillActive(msgData.activeSyncContext));
                         {
                             runBoundToSyncAdapter(msgData.activeSyncContext, msgData.syncAdapter);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-                //End case SyncHandler.MESSAGE_SERVICE_CONNECTED 
-                //Begin case SyncHandler.MESSAGE_SERVICE_DISCONNECTED 
+                        } 
+                    } 
+                } 
+                
+                
                 {
                     final ActiveSyncContext currentSyncContext = ((ServiceConnectionData)msg.obj).activeSyncContext;
                     {
@@ -2256,8 +2282,8 @@ public class SyncManager implements OnAccountsUpdateListener {
                         {
                             Log.d(TAG, "handleSyncHandlerMessage: MESSAGE_SERVICE_DISCONNECTED: "
                                     + currentSyncContext);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         boolean var8ABF090AC2884C22D7C7551D49051447_1029986470 = (isSyncStillActive(currentSyncContext));
                         {
@@ -2265,50 +2291,50 @@ public class SyncManager implements OnAccountsUpdateListener {
                                 try 
                                 {
                                     currentSyncContext.mSyncAdapter.cancelSync(currentSyncContext);
-                                } //End block
+                                } 
                                 catch (RemoteException e)
                                 { }
-                            } //End block
+                            } 
                             SyncResult syncResult = new SyncResult();
                             runSyncFinishedOrCanceledLocked(syncResult, currentSyncContext);
                             nextPendingSyncTime = maybeStartNextSyncLocked();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-                //End case SyncHandler.MESSAGE_SERVICE_DISCONNECTED 
-                //Begin case SyncHandler.MESSAGE_SYNC_ALARM 
+                        } 
+                    } 
+                } 
+                
+                
                 {
                     boolean isLoggable = Log.isLoggable(TAG, Log.VERBOSE);
                     mAlarmScheduleTime = null;
                     try 
                     {
                         nextPendingSyncTime = maybeStartNextSyncLocked();
-                    } //End block
+                    } 
                     finally 
                     {
                         mHandleAlarmWakeLock.release();
-                    } //End block
-                } //End block
-                //End case SyncHandler.MESSAGE_SYNC_ALARM 
-                //Begin case SyncHandler.MESSAGE_CHECK_ALARMS 
+                    } 
+                } 
+                
+                
                 {
                     boolean var5FC87F7ECAA44100B96543687E8D1157_98033802 = (Log.isLoggable(TAG, Log.VERBOSE));
-                } //End collapsed parenthetic
-                //End case SyncHandler.MESSAGE_CHECK_ALARMS 
-                //Begin case SyncHandler.MESSAGE_CHECK_ALARMS 
+                } 
+                
+                
                 nextPendingSyncTime = maybeStartNextSyncLocked();
-                //End case SyncHandler.MESSAGE_CHECK_ALARMS 
-            } //End block
+                
+            } 
             finally 
             {
                 manageSyncNotificationLocked();
                 manageSyncAlarmLocked(earliestFuturePollTime, nextPendingSyncTime);
                 mSyncTimeTracker.update();
                 mSyncManagerWakeLock.release();
-            } //End block
+            } 
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2318,7 +2344,7 @@ public class SyncManager implements OnAccountsUpdateListener {
             long earliestFuturePollTime = Long.MAX_VALUE;
             {
                 boolean varC4F9DD6A708570A0C749B94E2E7FDF0F_120528911 = (!backgroundDataUsageAllowed || !mSyncStorageEngine.getMasterSyncAutomatically());
-            } //End collapsed parenthetic
+            } 
             final long nowAbsolute = System.currentTimeMillis();
             ArrayList<SyncStorageEngine.AuthorityInfo> infos = mSyncStorageEngine.getAuthorities();
             {
@@ -2328,13 +2354,13 @@ public class SyncManager implements OnAccountsUpdateListener {
                 {
                     {
                         boolean var4F72312E8BC45601DFFBAD51C30C06F1_199425709 = (!ArrayUtils.contains(mAccounts, info.account));
-                    } //End collapsed parenthetic
+                    } 
                     {
                         boolean var41663A909D23D063D4B5AFBCA7A8A368_1501379313 = (!mSyncStorageEngine.getSyncAutomatically(info.account, info.authority));
-                    } //End collapsed parenthetic
+                    } 
                     {
                         boolean varBF1A825481B58DFD24124DB4EE59FE57_1774184902 = (mSyncStorageEngine.getIsSyncable(info.account, info.authority) == 0);
-                    } //End collapsed parenthetic
+                    } 
                     SyncStatusInfo status = mSyncStorageEngine.getOrCreateSyncStatus(info);
                     {
                         int i = 0;
@@ -2358,24 +2384,24 @@ public class SyncManager implements OnAccountsUpdateListener {
                                                 info.account, info.authority),
                                         syncAdapterInfo.type.allowParallelSyncs()));
                                 status.setPeriodicSyncTime(i, nowAbsolute);
-                            } //End block
+                            } 
                             {
                                 {
                                     earliestFuturePollTime = nextPollTimeAbsolute;
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             long var377A5C4AB2ECC9D2ABC9EC45C6319817_69152077 = (SystemClock.elapsedRealtime()
                     + ((earliestFuturePollTime < nowAbsolute)
                       ? 0
-                      : (earliestFuturePollTime - nowAbsolute))); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                      : (earliestFuturePollTime - nowAbsolute))); 
             long var0F5264038205EDFB1AC05FBB0E8C5E94_2124183964 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_2124183964;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2399,18 +2425,18 @@ public class SyncManager implements OnAccountsUpdateListener {
                             {
                                 operationIterator.remove();
                                 mSyncStorageEngine.deleteFromPending(op.pendingOperation);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         int syncableState = mSyncStorageEngine.getIsSyncable(op.account, op.authority);
                         {
                             operationIterator.remove();
                             mSyncStorageEngine.deleteFromPending(op.pendingOperation);
-                        } //End block
+                        } 
                         {
                             {
                                 nextReadyToRunTime = op.effectiveRunTime;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         RegisteredServicesCache.ServiceInfo<SyncAdapterType> syncAdapterInfo;
                         syncAdapterInfo = mSyncAdapters.getServiceInfo(
                             SyncAdapterType.newKey(op.authority, op.account.type));
@@ -2419,10 +2445,10 @@ public class SyncManager implements OnAccountsUpdateListener {
                             final NetworkInfo networkInfo = getConnectivityManager()
                                 .getActiveNetworkInfoForUid(syncAdapterInfo.uid);
                             uidNetworkConnected = networkInfo != null && networkInfo.isConnected();
-                        } //End block
+                        } 
                         {
                             uidNetworkConnected = false;
-                        } //End block
+                        } 
                         {
                             boolean var5A423FA495D65808CF647D9D5D5D33E5_1476024175 = (!op.extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_SETTINGS, false)
                             && (syncableState > 0)
@@ -2434,12 +2460,12 @@ public class SyncManager implements OnAccountsUpdateListener {
                             {
                                 operationIterator.remove();
                                 mSyncStorageEngine.deleteFromPending(op.pendingOperation);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         operations.add(op);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             Collections.sort(operations);
             {
                 int i = 0;
@@ -2460,7 +2486,7 @@ public class SyncManager implements OnAccountsUpdateListener {
                             final SyncOperation activeOp = activeSyncContext.mSyncOperation;
                             {
                                 boolean var88156E87F289A86AB7CC4C7CE0A7364C_1045137318 = (activeOp.isInitialization());
-                            } //End collapsed parenthetic
+                            } 
                             {
                                 boolean var3BD76041BE9F72E30B119A23228D3264_2117448197 = (activeOp.account.type.equals(candidate.account.type)
                             && activeOp.authority.equals(candidate.authority)
@@ -2468,19 +2494,19 @@ public class SyncManager implements OnAccountsUpdateListener {
                                 || activeOp.account.name.equals(candidate.account.name)));
                                 {
                                     conflict = activeSyncContext;
-                                } //End block
+                                } 
                                 {
                                     {
                                         boolean var79DB07D9BA6372A590E984F48C84F69B_740985286 = (candidateIsInitialization == activeOp.isInitialization()
                                 && activeSyncContext.mStartTime + MAX_TIME_PER_SYNC < now);
                                         {
                                             longRunning = activeSyncContext;
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         {
                             boolean varD6CAC9C6C357DD6052AAB1ED368A7093_1415209512 = (candidateIsInitialization && !conflict.mSyncOperation.isInitialization()
@@ -2489,8 +2515,8 @@ public class SyncManager implements OnAccountsUpdateListener {
                                 toReschedule = conflict;
                                 {
                                     boolean varB886653DBE5AD63346733F0FC6D36E19_499782583 = (Log.isLoggable(TAG, Log.VERBOSE));
-                                } //End collapsed parenthetic
-                            } //End block
+                                } 
+                            } 
                             {
                                 boolean varEBD4A65C44B5C00E1C33A1C6DE2B79F3_1964847736 = (candidate.expedited && !conflict.mSyncOperation.expedited
                             && (candidateIsInitialization
@@ -2499,11 +2525,11 @@ public class SyncManager implements OnAccountsUpdateListener {
                                     toReschedule = conflict;
                                     {
                                         boolean varCF8461C47EF234EA3373DC7BC06410EC_1100954872 = (Log.isLoggable(TAG, Log.VERBOSE));
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         boolean roomAvailable;
                         roomAvailable = numInit < MAX_SIMULTANEOUS_INITIALIZATION_SYNCS;
@@ -2516,24 +2542,24 @@ public class SyncManager implements OnAccountsUpdateListener {
                                 toReschedule = longRunning;
                                 {
                                     boolean varB886653DBE5AD63346733F0FC6D36E19_1983725297 = (Log.isLoggable(TAG, Log.VERBOSE));
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         runSyncFinishedOrCanceledLocked(null, toReschedule);
                         scheduleSyncOperation(toReschedule.mSyncOperation);
-                    } //End block
+                    } 
                     {
                         mSyncQueue.remove(candidate);
-                    } //End block
+                    } 
                     dispatchSyncOperation(candidate);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             long var0F5264038205EDFB1AC05FBB0E8C5E94_136199213 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_136199213;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2546,33 +2572,33 @@ public class SyncManager implements OnAccountsUpdateListener {
                         Iterator<ActiveSyncContext> varBCD99CACB997EB3D1458946CDF6FE790_865756513 = (mActiveSyncContexts).iterator();
                         varBCD99CACB997EB3D1458946CDF6FE790_865756513.hasNext();
                         ActiveSyncContext syncContext = varBCD99CACB997EB3D1458946CDF6FE790_865756513.next();
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             SyncAdapterType syncAdapterType = SyncAdapterType.newKey(op.authority, op.account.type);
             RegisteredServicesCache.ServiceInfo<SyncAdapterType> syncAdapterInfo = mSyncAdapters.getServiceInfo(syncAdapterType);
             {
                 Log.d(TAG, "can't find a sync adapter for " + syncAdapterType
                         + ", removing settings for it");
                 mSyncStorageEngine.removeAuthority(op.account, op.authority);
-            } //End block
+            } 
             ActiveSyncContext activeSyncContext = new ActiveSyncContext(op, insertStartSyncEvent(op), syncAdapterInfo.uid);
             activeSyncContext.mSyncInfo = mSyncStorageEngine.addActiveSync(activeSyncContext);
             mActiveSyncContexts.add(activeSyncContext);
             {
                 boolean var9C0394913D1D3E76433CD87690A4731B_1483680569 = (Log.isLoggable(TAG, Log.VERBOSE));
-            } //End collapsed parenthetic
+            } 
             {
                 boolean var689CF975CE88D03CB21DEFF3F17DC74D_156925275 = (!activeSyncContext.bindToSyncAdapter(syncAdapterInfo));
                 {
                     closeActiveSyncContext(activeSyncContext);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(op.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_821603222 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_821603222;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2587,22 +2613,22 @@ public class SyncManager implements OnAccountsUpdateListener {
                 syncAdapter.asBinder().linkToDeath(activeSyncContext, 0);
                 syncAdapter.startSync(activeSyncContext, syncOperation.authority,
                         syncOperation.account, syncOperation.extras);
-            } //End block
+            } 
             catch (RemoteException remoteExc)
             {
                 Log.d(TAG, "maybeStartNextSync: caught a RemoteException, rescheduling", remoteExc);
                 closeActiveSyncContext(activeSyncContext);
                 increaseBackoffSetting(syncOperation);
                 scheduleSyncOperation(new SyncOperation(syncOperation));
-            } //End block
+            } 
             catch (RuntimeException exc)
             {
                 closeActiveSyncContext(activeSyncContext);
-            } //End block
+            } 
             addTaint(activeSyncContext.getTaint());
             addTaint(syncAdapter.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2618,22 +2644,22 @@ public class SyncManager implements OnAccountsUpdateListener {
                         {
                             {
                                 boolean var8037C8DE9F4E8AA58BB79ADB5D51F3E6_407850081 = (!account.equals(activeSyncContext.mSyncOperation.account));
-                            } //End collapsed parenthetic
-                        } //End block
+                            } 
+                        } 
                         {
                             {
                                 boolean varF9430EBD0568960E5EAFBC08F8B701A4_919217660 = (!authority.equals(activeSyncContext.mSyncOperation.authority));
-                            } //End collapsed parenthetic
-                        } //End block
+                            } 
+                        } 
                         runSyncFinishedOrCanceledLocked(null ,
                             activeSyncContext);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             addTaint(account.getTaint());
             addTaint(authority.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2644,7 +2670,7 @@ public class SyncManager implements OnAccountsUpdateListener {
             {
                 activeSyncContext.mSyncAdapter.asBinder().unlinkToDeath(activeSyncContext, 0);
                 activeSyncContext.mIsLinkedToDeath = false;
-            } //End block
+            } 
             closeActiveSyncContext(activeSyncContext);
             final SyncOperation syncOperation = activeSyncContext.mSyncOperation;
             final long elapsedTime = SystemClock.elapsedRealtime() - activeSyncContext.mStartTime;
@@ -2659,53 +2685,53 @@ public class SyncManager implements OnAccountsUpdateListener {
                         downstreamActivity = 0;
                         upstreamActivity = 0;
                         clearBackoffSetting(syncOperation);
-                    } //End block
+                    } 
                     {
                         Log.d(TAG, "failed sync operation " + syncOperation + ", " + syncResult);
                         {
                             increaseBackoffSetting(syncOperation);
-                        } //End block
+                        } 
                         maybeRescheduleSync(syncResult, syncOperation);
                         historyMessage = Integer.toString(syncResultToErrorNumber(syncResult));
                         downstreamActivity = 0;
                         upstreamActivity = 0;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 setDelayUntilTime(syncOperation, syncResult.delayUntil);
-            } //End block
+            } 
             {
                 {
                     try 
                     {
                         activeSyncContext.mSyncAdapter.cancelSync(activeSyncContext);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     { }
-                } //End block
+                } 
                 historyMessage = SyncStorageEngine.MESG_CANCELED;
                 downstreamActivity = 0;
                 upstreamActivity = 0;
-            } //End block
+            } 
             stopSyncEvent(activeSyncContext.mHistoryRowId, syncOperation, historyMessage,
                     upstreamActivity, downstreamActivity, elapsedTime);
             {
                 installHandleTooManyDeletesNotification(syncOperation.account,
                         syncOperation.authority, syncResult.stats.numDeletes);
-            } //End block
+            } 
             {
                 mNotificationMgr.cancel(
                         syncOperation.account.hashCode() ^ syncOperation.authority.hashCode());
-            } //End block
+            } 
             {
                 scheduleSyncOperation(new SyncOperation(syncOperation.account,
                         syncOperation.syncSource, syncOperation.authority, new Bundle(), 0,
                         syncOperation.backoff, syncOperation.delayUntil,
                         syncOperation.allowParallelSyncs));
-            } //End block
+            } 
             addTaint(syncResult.getTaint());
             addTaint(activeSyncContext.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2715,10 +2741,10 @@ public class SyncManager implements OnAccountsUpdateListener {
             mActiveSyncContexts.remove(activeSyncContext);
             mSyncStorageEngine.removeActiveSync(activeSyncContext.mSyncInfo);
             addTaint(activeSyncContext.getTaint());
-            // ---------- Original Method ----------
-            //activeSyncContext.close();
-            //mActiveSyncContexts.remove(activeSyncContext);
-            //mSyncStorageEngine.removeActiveSync(activeSyncContext.mSyncInfo);
+            
+            
+            
+            
         }
 
         
@@ -2728,8 +2754,8 @@ public class SyncManager implements OnAccountsUpdateListener {
             addTaint(syncResult.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_294898223 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_294898223;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2743,21 +2769,21 @@ public class SyncManager implements OnAccountsUpdateListener {
                     mSyncNotificationInfo.startTime = null;
                     shouldCancel = mSyncNotificationInfo.isActive;
                     shouldInstall = false;
-                } //End block
+                } 
                 {
                     final long now = SystemClock.elapsedRealtime();
                     {
                         mSyncNotificationInfo.startTime = now;
-                    } //End block
+                    } 
                     {
                         shouldInstall = shouldCancel = false;
-                    } //End block
+                    } 
                     {
                         shouldCancel = false;
                         final boolean timeToShowNotification = now > mSyncNotificationInfo.startTime + SYNC_NOTIFICATION_DELAY;
                         {
                             shouldInstall = true;
-                        } //End block
+                        } 
                         {
                             shouldInstall = false;
                             {
@@ -2769,25 +2795,25 @@ public class SyncManager implements OnAccountsUpdateListener {
                                     .getBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, false);
                                     {
                                         shouldInstall = true;
-                                    } //End block
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 mNeedSyncActiveNotification = false;
                 sendSyncStateIntent();
                 mSyncNotificationInfo.isActive = false;
-            } //End block
+            } 
             {
                 mNeedSyncActiveNotification = true;
                 sendSyncStateIntent();
                 mSyncNotificationInfo.isActive = true;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -2806,24 +2832,24 @@ public class SyncManager implements OnAccountsUpdateListener {
                     final long currentSyncTimeoutTime = currentSyncContext.mTimeoutStartTime + MAX_TIME_PER_SYNC;
                     {
                         boolean var583468BD93EF069D3E21BBFA72DDD538_1809316512 = (Log.isLoggable(TAG, Log.VERBOSE));
-                    } //End collapsed parenthetic
+                    } 
                     {
                         earliestTimeoutTime = currentSyncTimeoutTime;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 boolean var9C0394913D1D3E76433CD87690A4731B_1717831200 = (Log.isLoggable(TAG, Log.VERBOSE));
-            } //End collapsed parenthetic
+            } 
             {
                 boolean var9C0394913D1D3E76433CD87690A4731B_904364866 = (Log.isLoggable(TAG, Log.VERBOSE));
-            } //End collapsed parenthetic
+            } 
             {
                 boolean var9C0394913D1D3E76433CD87690A4731B_330595515 = (Log.isLoggable(TAG, Log.VERBOSE));
-            } //End collapsed parenthetic
+            } 
             {
                 boolean var9C0394913D1D3E76433CD87690A4731B_1600164422 = (Log.isLoggable(TAG, Log.VERBOSE));
-            } //End collapsed parenthetic
+            } 
             long alarmTime = Math.min(notificationTime, earliestTimeoutTime);
             alarmTime = Math.min(alarmTime, nextPeriodicEventElapsedTime);
             alarmTime = Math.min(alarmTime, nextPendingEventElapsedTime);
@@ -2831,15 +2857,15 @@ public class SyncManager implements OnAccountsUpdateListener {
             {
                 {
                     boolean var5FC87F7ECAA44100B96543687E8D1157_1861918100 = (Log.isLoggable(TAG, Log.VERBOSE));
-                } //End collapsed parenthetic
+                } 
                 alarmTime = now + SYNC_ALARM_TIMEOUT_MIN;
-            } //End block
+            } 
             {
                 {
                     boolean var5FC87F7ECAA44100B96543687E8D1157_1727143220 = (Log.isLoggable(TAG, Log.VERBOSE));
-                } //End collapsed parenthetic
+                } 
                 alarmTime = now + SYNC_ALARM_TIMEOUT_MAX;
-            } //End block
+            } 
             boolean shouldSet = false;
             boolean shouldCancel = false;
             final boolean alarmIsActive = mAlarmScheduleTime != null;
@@ -2847,28 +2873,28 @@ public class SyncManager implements OnAccountsUpdateListener {
             {
                 {
                     shouldSet = true;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 shouldCancel = alarmIsActive;
-            } //End block
+            } 
             ensureAlarmService();
             {
                 {
                     boolean var5FC87F7ECAA44100B96543687E8D1157_112690300 = (Log.isLoggable(TAG, Log.VERBOSE));
-                } //End collapsed parenthetic
+                } 
                 mAlarmScheduleTime = alarmTime;
                 mAlarmService.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, alarmTime,
                         mSyncAlarmIntent);
-            } //End block
+            } 
             {
                 mAlarmScheduleTime = null;
                 mAlarmService.cancel(mSyncAlarmIntent);
-            } //End block
+            } 
             addTaint(nextPeriodicEventElapsedTime);
             addTaint(nextPendingEventElapsedTime);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2879,12 +2905,12 @@ public class SyncManager implements OnAccountsUpdateListener {
             syncStateIntent.putExtra("active", mNeedSyncActiveNotification);
             syncStateIntent.putExtra("failing", false);
             mContext.sendBroadcast(syncStateIntent);
-            // ---------- Original Method ----------
-            //Intent syncStateIntent = new Intent(Intent.ACTION_SYNC_STATE_CHANGED);
-            //syncStateIntent.addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY_BEFORE_BOOT);
-            //syncStateIntent.putExtra("active", mNeedSyncActiveNotification);
-            //syncStateIntent.putExtra("failing", false);
-            //mContext.sendBroadcast(syncStateIntent);
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -2901,7 +2927,7 @@ public class SyncManager implements OnAccountsUpdateListener {
             clickIntent.putExtra("numDeletes", numDeletes);
             {
                 boolean varF70BDA0CA489003C43C444F0D1E24D31_2077959728 = (!isActivityAvailable(clickIntent));
-            } //End collapsed parenthetic
+            } 
             final PendingIntent pendingIntent = PendingIntent
                     .getActivity(mContext, 0, clickIntent, PendingIntent.FLAG_CANCEL_CURRENT);
             CharSequence tooManyDeletesDescFormat = mContext.getResources().getText(
@@ -2918,8 +2944,8 @@ public class SyncManager implements OnAccountsUpdateListener {
             addTaint(account.getTaint());
             addTaint(authority.getTaint());
             addTaint(numDeletes);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2932,23 +2958,23 @@ public class SyncManager implements OnAccountsUpdateListener {
                 int i = 0;
                 {
                     ResolveInfo resolveInfo = list.get(i);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(intent.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_387329992 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_387329992;
-            // ---------- Original Method ----------
-            //PackageManager pm = mContext.getPackageManager();
-            //List<ResolveInfo> list = pm.queryIntentActivities(intent, 0);
-            //int listSize = list.size();
-            //for (int i = 0; i < listSize; i++) {
-                //ResolveInfo resolveInfo = list.get(i);
-                //if ((resolveInfo.activityInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM)
-                        //!= 0) {
-                    //return true;
-                //}
-            //}
-            //return false;
+            
+            
+            
+            
+            
+                
+                
+                        
+                    
+                
+            
+            
         }
 
         
@@ -2964,14 +2990,14 @@ public class SyncManager implements OnAccountsUpdateListener {
             addTaint(syncOperation.getTaint());
             long var0F5264038205EDFB1AC05FBB0E8C5E94_2016845229 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_2016845229;
-            // ---------- Original Method ----------
-            //final int source = syncOperation.syncSource;
-            //final long now = System.currentTimeMillis();
-            //EventLog.writeEvent(2720, syncOperation.authority,
-                                //SyncStorageEngine.EVENT_START, source,
-                                //syncOperation.account.name.hashCode());
-            //return mSyncStorageEngine.insertStartSyncEvent(
-                    //syncOperation.account, syncOperation.authority, now, source);
+            
+            
+            
+            
+                                
+                                
+            
+                    
         }
 
         
@@ -2989,12 +3015,12 @@ public class SyncManager implements OnAccountsUpdateListener {
             addTaint(upstreamActivity);
             addTaint(downstreamActivity);
             addTaint(elapsedTime);
-            // ---------- Original Method ----------
-            //EventLog.writeEvent(2720, syncOperation.authority,
-                                //SyncStorageEngine.EVENT_STOP, syncOperation.syncSource,
-                                //syncOperation.account.name.hashCode());
-            //mSyncStorageEngine.stopSyncEvent(rowId, elapsedTime,
-                    //resultMessage, downstreamActivity, upstreamActivity);
+            
+            
+                                
+                                
+            
+                    
         }
 
         
@@ -3009,7 +3035,7 @@ public class SyncManager implements OnAccountsUpdateListener {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.142 -0400", hash_original_method = "4A2C88DB351F685B767C50ED28D568B0", hash_generated_method = "4A2C88DB351F685B767C50ED28D568B0")
             public SyncNotificationInfo ()
             {
-                //Synthesized constructor
+                
             }
 
 
@@ -3017,24 +3043,24 @@ public class SyncManager implements OnAccountsUpdateListener {
             public void toString(StringBuilder sb) {
                 sb.append("isActive ").append(isActive).append(", startTime ").append(startTime);
                 addTaint(sb.getTaint());
-                // ---------- Original Method ----------
-                //sb.append("isActive ").append(isActive).append(", startTime ").append(startTime);
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.145 -0400", hash_original_method = "C99E9A460C6F28DBA730EF38203534A2", hash_generated_method = "2CC4561B7C6D5E2B6B7ED1454F952D3D")
             @Override
             public String toString() {
-                String varB4EAC82CA7396A68D541C85D26508E83_839621816 = null; //Variable for return #1
+                String varB4EAC82CA7396A68D541C85D26508E83_839621816 = null; 
                 StringBuilder sb = new StringBuilder();
                 toString(sb);
                 varB4EAC82CA7396A68D541C85D26508E83_839621816 = sb.toString();
-                varB4EAC82CA7396A68D541C85D26508E83_839621816.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_839621816.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_839621816;
-                // ---------- Original Method ----------
-                //StringBuilder sb = new StringBuilder();
-                //toString(sb);
-                //return sb.toString();
+                
+                
+                
+                
             }
 
             

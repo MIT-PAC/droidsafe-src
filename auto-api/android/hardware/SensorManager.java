@@ -1,11 +1,11 @@
 package android.hardware;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Looper;
 import android.os.Process;
@@ -49,18 +49,18 @@ public class SensorManager {
                                 new IRotationWatcher.Stub() {                            
                             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.004 -0400", hash_original_method = "BE005D6720C412EC6EF9D753DC3A6572", hash_generated_method = "ABD597AB6D97EA2FD083DF4550868008")
                             public void onRotationChanged(int rotation) {
-                                //DSFIXME:  CODE0009: Possible callback target function detected
+                                
                                 SensorManager.this.onRotationChanged(rotation);
                                 addTaint(rotation);
-                                // ---------- Original Method ----------
-                                //SensorManager.this.onRotationChanged(rotation);
+                                
+                                
                             }
 }
                         );
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     { }
-                } //End block
+                } 
                 sensors_module_init();
                 final ArrayList<Sensor> fullList = sFullSensorsList;
                 int i = 0;
@@ -71,14 +71,14 @@ public class SensorManager {
                         sensor.setLegacyType(getLegacySensorType(sensor.getType()));
                         fullList.add(sensor);
                         sHandleToSensor.append(sensor.getHandle(), sensor);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 sPool = new SensorEventPool( sFullSensorsList.size()*2 );
                 sSensorThread = new SensorThread();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -87,21 +87,22 @@ public class SensorManager {
         addTaint(type);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_19991395 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_19991395;
-        // ---------- Original Method ----------
-        //switch (type) {
-            //case Sensor.TYPE_ACCELEROMETER:
-                //return SENSOR_ACCELEROMETER;
-            //case Sensor.TYPE_MAGNETIC_FIELD:
-                //return SENSOR_MAGNETIC_FIELD;
-            //case Sensor.TYPE_ORIENTATION:
-                //return SENSOR_ORIENTATION_RAW;
-            //case Sensor.TYPE_TEMPERATURE:
-                //return SENSOR_TEMPERATURE;
-        //}
-        //return 0;
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.010 -0400", hash_original_method = "9387EF1577B9728CF6A87474164955A1", hash_generated_method = "2E17078B11E952A75DDC08B6AC13C291")
     @Deprecated
     public int getSensors() {
@@ -114,45 +115,46 @@ public class SensorManager {
             {
                 {
                     Object var38AF2FBEBB9E1731747F2959C06CD9D2_2033175196 = (i.getType());
-                    //Begin case Sensor.TYPE_ACCELEROMETER 
+                    
                     result |= SensorManager.SENSOR_ACCELEROMETER;
-                    //End case Sensor.TYPE_ACCELEROMETER 
-                    //Begin case Sensor.TYPE_MAGNETIC_FIELD 
+                    
+                    
                     result |= SensorManager.SENSOR_MAGNETIC_FIELD;
-                    //End case Sensor.TYPE_MAGNETIC_FIELD 
-                    //Begin case Sensor.TYPE_ORIENTATION 
+                    
+                    
                     result |= SensorManager.SENSOR_ORIENTATION |
                     SensorManager.SENSOR_ORIENTATION_RAW;
-                    //End case Sensor.TYPE_ORIENTATION 
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_761125037 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_761125037;
-        // ---------- Original Method ----------
-        //int result = 0;
-        //final ArrayList<Sensor> fullList = sFullSensorsList;
-        //for (Sensor i : fullList) {
-            //switch (i.getType()) {
-                //case Sensor.TYPE_ACCELEROMETER:
-                    //result |= SensorManager.SENSOR_ACCELEROMETER;
-                    //break;
-                //case Sensor.TYPE_MAGNETIC_FIELD:
-                    //result |= SensorManager.SENSOR_MAGNETIC_FIELD;
-                    //break;
-                //case Sensor.TYPE_ORIENTATION:
-                    //result |= SensorManager.SENSOR_ORIENTATION |
-                    //SensorManager.SENSOR_ORIENTATION_RAW;
-                    //break;
-            //}
-        //}
-        //return result;
+        
+        
+        
+        
+            
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                    
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.014 -0400", hash_original_method = "D388F11CBE90143BC36FA3E001809013", hash_generated_method = "26D95EC67E49C7F26CF3DDC85922F261")
     public List<Sensor> getSensorList(int type) {
-        List<Sensor> varB4EAC82CA7396A68D541C85D26508E83_229458488 = null; //Variable for return #1
+        List<Sensor> varB4EAC82CA7396A68D541C85D26508E83_229458488 = null; 
         List<Sensor> list;
         final ArrayList<Sensor> fullList = sFullSensorsList;
         {
@@ -160,7 +162,7 @@ public class SensorManager {
             {
                 {
                     list = fullList;
-                } //End block
+                } 
                 {
                     list = new ArrayList<Sensor>();
                     {
@@ -171,73 +173,76 @@ public class SensorManager {
                             {
                                 boolean var7614D0966578B0CB10CCAAD9D58C74AC_717657160 = (i.getType() == type);
                                 list.add(i);
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 list = Collections.unmodifiableList(list);
                 sSensorListByType.append(type, list);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_229458488 = list;
         addTaint(type);
-        varB4EAC82CA7396A68D541C85D26508E83_229458488.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_229458488.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_229458488;
-        // ---------- Original Method ----------
-        //List<Sensor> list;
-        //final ArrayList<Sensor> fullList = sFullSensorsList;
-        //synchronized(fullList) {
-            //list = sSensorListByType.get(type);
-            //if (list == null) {
-                //if (type == Sensor.TYPE_ALL) {
-                    //list = fullList;
-                //} else {
-                    //list = new ArrayList<Sensor>();
-                    //for (Sensor i : fullList) {
-                        //if (i.getType() == type)
-                            //list.add(i);
-                    //}
-                //}
-                //list = Collections.unmodifiableList(list);
-                //sSensorListByType.append(type, list);
-            //}
-        //}
-        //return list;
+        
+        
+        
+        
+            
+            
+                
+                    
+                
+                    
+                    
+                        
+                            
+                    
+                
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.015 -0400", hash_original_method = "051BFE8F8271F52ABA0B8E99C6E74461", hash_generated_method = "25A18325DAA5BEA836789C8971CBED22")
     public Sensor getDefaultSensor(int type) {
-        Sensor varB4EAC82CA7396A68D541C85D26508E83_1916454720 = null; //Variable for return #1
+        Sensor varB4EAC82CA7396A68D541C85D26508E83_1916454720 = null; 
         List<Sensor> l = getSensorList(type);
         varB4EAC82CA7396A68D541C85D26508E83_1916454720 = l.isEmpty() ? null : l.get(0);
         addTaint(type);
-        varB4EAC82CA7396A68D541C85D26508E83_1916454720.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1916454720.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1916454720;
-        // ---------- Original Method ----------
-        //List<Sensor> l = getSensorList(type);
-        //return l.isEmpty() ? null : l.get(0);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.015 -0400", hash_original_method = "CA10DA2A107C571495F28D1A1A335E4D", hash_generated_method = "172C8996C928772B0E7E33CF52B5B809")
     @Deprecated
     public boolean registerListener(SensorListener listener, int sensors) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         boolean var0BF2B61900138CF1C60B85B7842D08C3_1166440901 = (registerListener(listener, sensors, SENSOR_DELAY_NORMAL));
         addTaint(listener.getTaint());
         addTaint(sensors);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_333555372 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_333555372;
-        // ---------- Original Method ----------
-        //return registerListener(listener, sensors, SENSOR_DELAY_NORMAL);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.016 -0400", hash_original_method = "B7C7A7F6BC1EDB860C06401873DD1A46", hash_generated_method = "4BC59BF39EDCB98EA1192553FD5C4A64")
     @Deprecated
     public boolean registerListener(SensorListener listener, int sensors, int rate) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         boolean result = false;
         result = registerLegacyListener(SENSOR_ACCELEROMETER, Sensor.TYPE_ACCELEROMETER,
                 listener, sensors, rate) || result;
@@ -254,25 +259,26 @@ public class SensorManager {
         addTaint(rate);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_81268103 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_81268103;
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //return false;
-        //}
-        //boolean result = false;
-        //result = registerLegacyListener(SENSOR_ACCELEROMETER, Sensor.TYPE_ACCELEROMETER,
-                //listener, sensors, rate) || result;
-        //result = registerLegacyListener(SENSOR_MAGNETIC_FIELD, Sensor.TYPE_MAGNETIC_FIELD,
-                //listener, sensors, rate) || result;
-        //result = registerLegacyListener(SENSOR_ORIENTATION_RAW, Sensor.TYPE_ORIENTATION,
-                //listener, sensors, rate) || result;
-        //result = registerLegacyListener(SENSOR_ORIENTATION, Sensor.TYPE_ORIENTATION,
-                //listener, sensors, rate) || result;
-        //result = registerLegacyListener(SENSOR_TEMPERATURE, Sensor.TYPE_TEMPERATURE,
-                //listener, sensors, rate) || result;
-        //return result;
+        
+        
+            
+        
+        
+        
+                
+        
+                
+        
+                
+        
+                
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.017 -0400", hash_original_method = "2BFEE9499E6BC093763ECA6BB97D348E", hash_generated_method = "E5DD29AF9DA362B61A70530F8D58DFFC")
     @SuppressWarnings("deprecation")
     private boolean registerLegacyListener(int legacyType, int type,
@@ -287,12 +293,12 @@ public class SensorManager {
                     {
                         legacyListener = new LegacyListener(listener);
                         mLegacyListenersMap.put(listener, legacyListener);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 legacyListener.registerSensor(legacyType);
                 result = registerListener(legacyListener, sensor, rate);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(legacyType);
         addTaint(type);
         addTaint(listener.getTaint());
@@ -300,11 +306,12 @@ public class SensorManager {
         addTaint(rate);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_176132873 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_176132873;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.018 -0400", hash_original_method = "08C00AEC5C2F4A8557AFE56DD5038FAA", hash_generated_method = "8F997475CDBEDBD28692C01E118FE905")
     @Deprecated
     public void unregisterListener(SensorListener listener, int sensors) {
@@ -320,20 +327,21 @@ public class SensorManager {
                 listener, sensors);
         addTaint(listener.getTaint());
         addTaint(sensors);
-        // ---------- Original Method ----------
-        //unregisterLegacyListener(SENSOR_ACCELEROMETER, Sensor.TYPE_ACCELEROMETER,
-                //listener, sensors);
-        //unregisterLegacyListener(SENSOR_MAGNETIC_FIELD, Sensor.TYPE_MAGNETIC_FIELD,
-                //listener, sensors);
-        //unregisterLegacyListener(SENSOR_ORIENTATION_RAW, Sensor.TYPE_ORIENTATION,
-                //listener, sensors);
-        //unregisterLegacyListener(SENSOR_ORIENTATION, Sensor.TYPE_ORIENTATION,
-                //listener, sensors);
-        //unregisterLegacyListener(SENSOR_TEMPERATURE, Sensor.TYPE_TEMPERATURE,
-                //listener, sensors);
+        
+        
+                
+        
+                
+        
+                
+        
+                
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.034 -0400", hash_original_method = "9C431FA18D1D7C546E542BF96DE5A08A", hash_generated_method = "717227CE390B052AD7BB58AB0B376515")
     @SuppressWarnings("deprecation")
     private void unregisterLegacyListener(int legacyType, int type,
@@ -341,7 +349,7 @@ public class SensorManager {
         LegacyListener legacyListener = null;
         {
             legacyListener = mLegacyListenersMap.get(listener);
-        } //End block
+        } 
         {
             {
                 Sensor sensor = getDefaultSensor(type);
@@ -361,73 +369,78 @@ public class SensorManager {
                                             boolean var52DC0C35F59BFF0EE51A50C3EAAAEE0B_1151730945 = (i.getListener() == legacyListener);
                                             {
                                                 found = true;
-                                            } //End block
-                                        } //End collapsed parenthetic
-                                    } //End block
-                                } //End collapsed parenthetic
+                                            } 
+                                        } 
+                                    } 
+                                } 
                                 {
                                     {
                                         mLegacyListenersMap.remove(listener);
-                                    } //End block
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(legacyType);
         addTaint(type);
         addTaint(listener.getTaint());
         addTaint(sensors);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.034 -0400", hash_original_method = "F024191DD75DA5578F802D33C834CE8F", hash_generated_method = "0CB929AA44D6B264065C3B4F5E539818")
     @Deprecated
     public void unregisterListener(SensorListener listener) {
         unregisterListener(listener, SENSOR_ALL | SENSOR_ORIENTATION_RAW);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //unregisterListener(listener, SENSOR_ALL | SENSOR_ORIENTATION_RAW);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.035 -0400", hash_original_method = "A245758148D9D81E2CADBC67CD903CC7", hash_generated_method = "4FE5F77871A96349261B2607FDC5D066")
     public void unregisterListener(SensorEventListener listener, Sensor sensor) {
         unregisterListener((Object)listener, sensor);
         addTaint(listener.getTaint());
         addTaint(sensor.getTaint());
-        // ---------- Original Method ----------
-        //unregisterListener((Object)listener, sensor);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.035 -0400", hash_original_method = "C9A0C02866BC64B5017A48A301526982", hash_generated_method = "C0126C5E58B1502478A3D21ABBF9555C")
     public void unregisterListener(SensorEventListener listener) {
         unregisterListener((Object)listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //unregisterListener((Object)listener);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.036 -0400", hash_original_method = "EEA9FC3069A1CEC2680F553E722797E3", hash_generated_method = "1A563EC7A552D095BC24FCDAB1B51A2D")
     public boolean registerListener(SensorEventListener listener, Sensor sensor, int rate) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         boolean varD3243FA077760CCBCBDDCB77D8EFCE42_217301604 = (registerListener(listener, sensor, rate, null));
         addTaint(listener.getTaint());
         addTaint(sensor.getTaint());
         addTaint(rate);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1601300925 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1601300925;
-        // ---------- Original Method ----------
-        //return registerListener(listener, sensor, rate, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.041 -0400", hash_original_method = "500C86ADE6AA4F4A0E12D1A653386772", hash_generated_method = "4F3833BE63D330A7352F25120CAFB82C")
     private boolean enableSensorLocked(Sensor sensor, int delay) {
         boolean result = false;
@@ -442,28 +455,29 @@ public class SensorManager {
                         String name = sensor.getName();
                         int handle = sensor.getHandle();
                         result = sensors_enable_sensor(sQueue, name, handle, delay);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(sensor.getTaint());
         addTaint(delay);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_737870657 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_737870657;
-        // ---------- Original Method ----------
-        //boolean result = false;
-        //for (ListenerDelegate i : sListeners) {
-            //if (i.hasSensor(sensor)) {
-                //String name = sensor.getName();
-                //int handle = sensor.getHandle();
-                //result = sensors_enable_sensor(sQueue, name, handle, delay);
-                //break;
-            //}
-        //}
-        //return result;
+        
+        
+        
+            
+                
+                
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.045 -0400", hash_original_method = "4F96C2E0F6181D20ADA1404B28BE0C37", hash_generated_method = "7E9CAA6D86D923E19029C448371A0679")
     private boolean disableSensorLocked(Sensor sensor) {
         {
@@ -473,48 +487,49 @@ public class SensorManager {
             {
                 {
                     boolean varD5C4AA45C80B3832F93AE2792FBE9608_659533770 = (i.hasSensor(sensor));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         String name = sensor.getName();
         int handle = sensor.getHandle();
         boolean var240274763501E0777166463484969D38_225063210 = (sensors_enable_sensor(sQueue, name, handle, SENSOR_DISABLE));
         addTaint(sensor.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_138684784 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_138684784;
-        // ---------- Original Method ----------
-        //for (ListenerDelegate i : sListeners) {
-            //if (i.hasSensor(sensor)) {
-                //return true;
-            //}
-        //}
-        //String name = sensor.getName();
-        //int handle = sensor.getHandle();
-        //return sensors_enable_sensor(sQueue, name, handle, SENSOR_DISABLE);
+        
+        
+            
+                
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.064 -0400", hash_original_method = "55FB0E0786574FCA30E9C20955CE2F64", hash_generated_method = "B3E41D7EA26461DA2902FF4075623B36")
     public boolean registerListener(SensorEventListener listener, Sensor sensor, int rate,
             Handler handler) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         boolean result = true;
         int delay = -1;
-        //Begin case SENSOR_DELAY_FASTEST 
+        
         delay = 0;
-        //End case SENSOR_DELAY_FASTEST 
-        //Begin case SENSOR_DELAY_GAME 
+        
+        
         delay = 20000;
-        //End case SENSOR_DELAY_GAME 
-        //Begin case SENSOR_DELAY_UI 
+        
+        
         delay = 66667;
-        //End case SENSOR_DELAY_UI 
-        //Begin case SENSOR_DELAY_NORMAL 
+        
+        
         delay = 200000;
-        //End case SENSOR_DELAY_NORMAL 
-        //Begin case default 
+        
+        
         delay = rate;
-        //End case default 
+        
         {
             ListenerDelegate l = null;
             {
@@ -526,10 +541,10 @@ public class SensorManager {
                         boolean var0BBE1CA9C28FD254D7916A3A201A9C57_197290643 = (i.getListener() == listener);
                         {
                             l = i;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             {
                 l = new ListenerDelegate(listener, sensor, handler);
                 sListeners.add(l);
@@ -544,20 +559,20 @@ public class SensorManager {
                                     {
                                         sListeners.remove(l);
                                         result = false;
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             {
                                 sListeners.remove(l);
                                 result = false;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         result = false;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 l.addSensor(sensor);
                 {
@@ -565,21 +580,22 @@ public class SensorManager {
                     {
                         l.removeSensor(sensor);
                         result = false;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(listener.getTaint());
         addTaint(sensor.getTaint());
         addTaint(rate);
         addTaint(handler.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1030260197 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1030260197;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.065 -0400", hash_original_method = "1441CD23D4F492BD7877A59C29F56827", hash_generated_method = "0A51E22BF72887ABFA7B497999EE7752")
     private void unregisterListener(Object listener, Sensor sensor) {
         {
@@ -595,36 +611,37 @@ public class SensorManager {
                                 boolean var254510C2CC6D8FB1AABA470DAF28ED32_1907750769 = (l.removeSensor(sensor) == 0);
                                 {
                                     sListeners.remove(i);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             disableSensorLocked(sensor);
-        } //End block
+        } 
         addTaint(listener.getTaint());
         addTaint(sensor.getTaint());
-        // ---------- Original Method ----------
-        //if (listener == null || sensor == null) {
-            //return;
-        //}
-        //synchronized (sListeners) {
-            //final int size = sListeners.size();
-            //for (int i=0 ; i<size ; i++) {
-                //ListenerDelegate l = sListeners.get(i);
-                //if (l.getListener() == listener) {
-                    //if (l.removeSensor(sensor) == 0) {
-                        //sListeners.remove(i);
-                    //}
-                    //break;
-                //}
-            //}
-            //disableSensorLocked(sensor);
-        //}
+        
+        
+            
+        
+        
+            
+            
+                
+                
+                    
+                        
+                    
+                    
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.072 -0400", hash_original_method = "63ADCF337C7E30C1A2DEC34D1892CFB3", hash_generated_method = "8868F5C3CE35680B284F12BFD938167D")
     private void unregisterListener(Object listener) {
         {
@@ -643,35 +660,36 @@ public class SensorManager {
                                 Sensor sensor = var8EE2CF31A277C918A8BE3D40E46B7476_1610288632.next();
                                 {
                                     disableSensorLocked(sensor);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //return;
-        //}
-        //synchronized (sListeners) {
-            //final int size = sListeners.size();
-            //for (int i=0 ; i<size ; i++) {
-                //ListenerDelegate l = sListeners.get(i);
-                //if (l.getListener() == listener) {
-                    //sListeners.remove(i);
-                    //for (Sensor sensor : l.getSensors()) {
-                        //disableSensorLocked(sensor);
-                    //}
-                    //break;
-                //}
-            //}
-        //}
+        
+        
+            
+        
+        
+            
+            
+                
+                
+                    
+                    
+                        
+                    
+                    
+                
+            
+        
     }
 
     
-        public static boolean getRotationMatrix(float[] R, float[] I,
+        @DSModeled(DSC.SAFE)
+    public static boolean getRotationMatrix(float[] R, float[] I,
             float[] gravity, float[] geomagnetic) {
         float Ax = gravity[0];
         float Ay = gravity[1];
@@ -729,7 +747,8 @@ public class SensorManager {
     }
 
     
-        public static float getInclination(float[] I) {
+        @DSModeled(DSC.SAFE)
+    public static float getInclination(float[] I) {
         if (I.length == 9) {
             return (float)Math.atan2(I[5], I[4]);
         } else {
@@ -738,7 +757,8 @@ public class SensorManager {
     }
 
     
-        public static boolean remapCoordinateSystem(float[] inR, int X, int Y,
+        @DSModeled(DSC.SAFE)
+    public static boolean remapCoordinateSystem(float[] inR, int X, int Y,
             float[] outR) {
         if (inR == outR) {
             final float[] temp = mTempMatrix;
@@ -794,7 +814,8 @@ public class SensorManager {
     }
 
     
-        public static float[] getOrientation(float[] R, float values[]) {
+        @DSModeled(DSC.SAFE)
+    public static float[] getOrientation(float[] R, float values[]) {
         if (R.length == 9) {
             values[0] = (float)Math.atan2(R[1], R[4]);
             values[1] = (float)Math.asin(-R[7]);
@@ -808,7 +829,8 @@ public class SensorManager {
     }
 
     
-        public static float getAltitude(float p0, float p) {
+        @DSModeled(DSC.SAFE)
+    public static float getAltitude(float p0, float p) {
         final float coef = 1.0f / 5.255f;
         return 44330.0f * (1.0f - (float)Math.pow(p/p0, coef));
     }
@@ -816,15 +838,15 @@ public class SensorManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.076 -0400", hash_original_method = "E0193DACD15BA8C3AC5F2C441048790B", hash_generated_method = "F45DE39634447C543023CA82667F0611")
     public void onRotationChanged(int rotation) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             sRotation  = rotation;
-        } //End block
+        } 
         addTaint(rotation);
-        // ---------- Original Method ----------
-        //synchronized(sListeners) {
-            //sRotation  = rotation;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -835,7 +857,8 @@ public class SensorManager {
     }
 
     
-        public static void getAngleChange( float[] angleChange, float[] R, float[] prevR) {
+        @DSModeled(DSC.SAFE)
+    public static void getAngleChange( float[] angleChange, float[] R, float[] prevR) {
         float rd1=0,rd4=0, rd6=0,rd7=0, rd8=0;
         float ri0=0,ri1=0,ri2=0,ri3=0,ri4=0,ri5=0,ri6=0,ri7=0,ri8=0;
         float pri0=0, pri1=0, pri2=0, pri3=0, pri4=0, pri5=0, pri6=0, pri7=0, pri8=0;
@@ -893,7 +916,8 @@ public class SensorManager {
     }
 
     
-        public static void getRotationMatrixFromVector(float[] R, float[] rotationVector) {
+        @DSModeled(DSC.SAFE)
+    public static void getRotationMatrixFromVector(float[] R, float[] rotationVector) {
         float q0;
         float q1 = rotationVector[0];
         float q2 = rotationVector[1];
@@ -942,7 +966,8 @@ public class SensorManager {
     }
 
     
-        public static void getQuaternionFromVector(float[] Q, float[] rv) {
+        @DSModeled(DSC.SAFE)
+    public static void getQuaternionFromVector(float[] Q, float[] rv) {
         if (rv.length == 4) {
             Q[0] = rv[3];
         } else {
@@ -1009,55 +1034,55 @@ public class SensorManager {
             mPoolSize = poolSize;
             mNumItemsInPool = poolSize;
             mPool = new SensorEvent[poolSize];
-            // ---------- Original Method ----------
-            //mPoolSize = poolSize;
-            //mNumItemsInPool = poolSize;
-            //mPool = new SensorEvent[poolSize];
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.081 -0400", hash_original_method = "7237223B63C43177AB2849F160B99FEC", hash_generated_method = "0FE204D229E605DDCFC2119EEE08567A")
         private SensorEvent createSensorEvent() {
-            SensorEvent varB4EAC82CA7396A68D541C85D26508E83_1616113565 = null; //Variable for return #1
+            SensorEvent varB4EAC82CA7396A68D541C85D26508E83_1616113565 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1616113565 = new SensorEvent(3);
-            varB4EAC82CA7396A68D541C85D26508E83_1616113565.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1616113565.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1616113565;
-            // ---------- Original Method ----------
-            //return new SensorEvent(3);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.082 -0400", hash_original_method = "91BAA7B0EF8F8AB0DA2081F8E926B4FD", hash_generated_method = "47143C6EA285FCED0C94A6ECB3F0866E")
          SensorEvent getFromPool() {
-            SensorEvent varB4EAC82CA7396A68D541C85D26508E83_1638978904 = null; //Variable for return #1
+            SensorEvent varB4EAC82CA7396A68D541C85D26508E83_1638978904 = null; 
             SensorEvent t = null;
             {
                 {
                     final int index = mPoolSize - mNumItemsInPool;
                     t = mPool[index];
                     mPool[index] = null;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 t = createSensorEvent();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1638978904 = t;
-            varB4EAC82CA7396A68D541C85D26508E83_1638978904.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1638978904.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1638978904;
-            // ---------- Original Method ----------
-            //SensorEvent t = null;
-            //synchronized (this) {
-                //if (mNumItemsInPool > 0) {
-                    //final int index = mPoolSize - mNumItemsInPool;
-                    //t = mPool[index];
-                    //mPool[index] = null;
-                    //mNumItemsInPool--;
-                //}
-            //}
-            //if (t == null) {
-                //t = createSensorEvent();
-            //}
-            //return t;
+            
+            
+            
+                
+                    
+                    
+                    
+                    
+                
+            
+            
+                
+            
+            
         }
 
         
@@ -1067,16 +1092,16 @@ public class SensorManager {
                 {
                     final int index = mPoolSize - mNumItemsInPool;
                     mPool[index] = t;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //if (mNumItemsInPool < mPoolSize) {
-                    //mNumItemsInPool++;
-                    //final int index = mPoolSize - mNumItemsInPool;
-                    //mPool[index] = t;
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                    
+                    
+                
+            
         }
 
         
@@ -1094,14 +1119,14 @@ public class SensorManager {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.083 -0400", hash_original_method = "900B05FC812E5D001EF6E5D26AE8C532", hash_generated_method = "2055EED44BADC56C62DBBEEFADC404FB")
           SensorThread() {
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.083 -0400", hash_original_method = "3012BD4162FEB4D4063E0B4E3944BED9", hash_generated_method = "0065A500F2AC1D21DA0CBFBF0E28A56E")
         @Override
         protected void finalize() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1117,32 +1142,32 @@ public class SensorManager {
                     {
                         {
                             runnable.wait();
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     mThread = thread;
-                } //End block
-            } //End block
+                } 
+            } 
             catch (InterruptedException e)
             { }
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1095783557 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1095783557;
-            // ---------- Original Method ----------
-            //try {
-                //if (mThread == null) {
-                    //mSensorsReady = false;
-                    //SensorThreadRunnable runnable = new SensorThreadRunnable();
-                    //Thread thread = new Thread(runnable, SensorThread.class.getName());
-                    //thread.start();
-                    //synchronized (runnable) {
-                        //while (mSensorsReady == false) {
-                            //runnable.wait();
-                        //}
-                    //}
-                    //mThread = thread;
-                //}
-            //} catch (InterruptedException e) {
-            //}
-            //return mThread == null ? false : true;
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+            
+            
+            
         }
 
         
@@ -1150,7 +1175,7 @@ public class SensorManager {
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.086 -0400", hash_original_method = "E6F9E1FFFEF800CB7D3BCE3C8792674F", hash_generated_method = "DAC559901444A2EC31580DBE05ABA227")
               SensorThreadRunnable() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -1159,9 +1184,9 @@ public class SensorManager {
                 sQueue = sensors_create_queue();
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_220635619 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_220635619;
-                // ---------- Original Method ----------
-                //sQueue = sensors_create_queue();
-                //return true;
+                
+                
+                
             }
 
             
@@ -1173,11 +1198,11 @@ public class SensorManager {
                 Process.setThreadPriority(Process.THREAD_PRIORITY_URGENT_DISPLAY);
                 {
                     boolean var985605CBA0A19C7C31CFE2830DD0F087_1816177729 = (!open());
-                } //End collapsed parenthetic
+                } 
                 {
                     mSensorsReady = true;
                     this.notify();
-                } //End block
+                } 
                 {
                     final int sensor = sensors_data_poll(sQueue, values, status, timestamp);
                     int accuracy = status[0];
@@ -1187,12 +1212,12 @@ public class SensorManager {
                             {
                                 {
                                     boolean var9D5E914AD6651B63A683B5BB46131EAC_409572581 = (sensor == -1 && !sListeners.isEmpty());
-                                } //End collapsed parenthetic
+                                } 
                                 sensors_destroy_queue(sQueue);
                                 sQueue = 0;
                                 mThread = null;
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         final Sensor sensorObject = sHandleToSensor.get(sensor);
                         {
                             final int size = sListeners.size();
@@ -1205,15 +1230,15 @@ public class SensorManager {
                                         {
                                             listener.onSensorChangedLocked(sensorObject,
                                             values, timestamp, accuracy);
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End block
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+                
+                
             }
 
             
@@ -1259,49 +1284,49 @@ public class SensorManager {
                     final int handle = t.sensor.getHandle();
                     {
                         Object var5D5C6575D3FD1676C12EC71766D80FCD_239975231 = (t.sensor.getType());
-                        //Begin case Sensor.TYPE_MAGNETIC_FIELD Sensor.TYPE_ORIENTATION 
+                        
                         final int accuracy = mSensorAccuracies.get(handle);
-                        //End case Sensor.TYPE_MAGNETIC_FIELD Sensor.TYPE_ORIENTATION 
-                        //Begin case Sensor.TYPE_MAGNETIC_FIELD Sensor.TYPE_ORIENTATION 
+                        
+                        
                         {
                             mSensorAccuracies.put(handle, t.accuracy);
                             mSensorEventListener.onAccuracyChanged(t.sensor, t.accuracy);
-                        } //End block
-                        //End case Sensor.TYPE_MAGNETIC_FIELD Sensor.TYPE_ORIENTATION 
-                        //Begin case default 
+                        } 
+                        
+                        
                         {
                             boolean var94EF3086E6F6B1D3D4536540A251DDF6_1369710946 = (mFirstEvent.get(handle) == false);
                             {
                                 mFirstEvent.put(handle, true);
                                 mSensorEventListener.onAccuracyChanged(
                                         t.sensor, SENSOR_STATUS_ACCURACY_HIGH);
-                            } //End block
-                        } //End collapsed parenthetic
-                        //End case default 
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                        
+                    } 
                     mSensorEventListener.onSensorChanged(t);
                     sPool.returnToPool(t);
                     addTaint(msg.getTaint());
-                    // ---------- Original Method ----------
-                    // Original Method Too Long, Refer to Original Implementation
+                    
+                    
                 }
 };
             addSensor(sensor);
             addTaint(sensor.getTaint());
             addTaint(handler.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.091 -0400", hash_original_method = "02DCCE55D13DD3643E30DA559E9BDE85", hash_generated_method = "78B4A75F49A9C5693983982D8C29D160")
          Object getListener() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_738562002 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_738562002 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_738562002 = mSensorEventListener;
-            varB4EAC82CA7396A68D541C85D26508E83_738562002.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_738562002.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_738562002;
-            // ---------- Original Method ----------
-            //return mSensorEventListener;
+            
+            
         }
 
         
@@ -1310,9 +1335,9 @@ public class SensorManager {
             mSensors.put(sensor.getHandle(), true);
             mSensorList.add(sensor);
             addTaint(sensor.getTaint());
-            // ---------- Original Method ----------
-            //mSensors.put(sensor.getHandle(), true);
-            //mSensorList.add(sensor);
+            
+            
+            
         }
 
         
@@ -1324,10 +1349,10 @@ public class SensorManager {
             addTaint(sensor.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_718376208 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_718376208;
-            // ---------- Original Method ----------
-            //mSensors.delete(sensor.getHandle());
-            //mSensorList.remove(sensor);
-            //return mSensors.size();
+            
+            
+            
+            
         }
 
         
@@ -1337,25 +1362,25 @@ public class SensorManager {
             addTaint(sensor.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1019175110 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1019175110;
-            // ---------- Original Method ----------
-            //return mSensors.get(sensor.getHandle());
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.093 -0400", hash_original_method = "DA37BCA933FDDA4900146E3A50CD9005", hash_generated_method = "9FC3BDF93479D4B25442D8003C6BF179")
          List<Sensor> getSensors() {
-            List<Sensor> varB4EAC82CA7396A68D541C85D26508E83_325038175 = null; //Variable for return #1
+            List<Sensor> varB4EAC82CA7396A68D541C85D26508E83_325038175 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_325038175 = mSensorList;
-            varB4EAC82CA7396A68D541C85D26508E83_325038175.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_325038175.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_325038175;
-            // ---------- Original Method ----------
-            //return mSensorList;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.094 -0400", hash_original_method = "16733F3375BBFC31BBB88791653112DA", hash_generated_method = "82AA40E7897B76622753884BEF23ECBF")
          void onSensorChangedLocked(Sensor sensor, float[] values, long[] timestamp, int accuracy) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             SensorEvent t = sPool.getFromPool();
             final float[] v = t.values;
             v[0] = values[0];
@@ -1372,19 +1397,19 @@ public class SensorManager {
             addTaint(values[0]);
             addTaint(timestamp[0]);
             addTaint(accuracy);
-            // ---------- Original Method ----------
-            //SensorEvent t = sPool.getFromPool();
-            //final float[] v = t.values;
-            //v[0] = values[0];
-            //v[1] = values[1];
-            //v[2] = values[2];
-            //t.timestamp = timestamp[0];
-            //t.accuracy = accuracy;
-            //t.sensor = sensor;
-            //Message msg = Message.obtain();
-            //msg.what = 0;
-            //msg.obj = t;
-            //mHandler.sendMessage(msg);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1411,18 +1436,18 @@ public class SensorManager {
           LegacyListener(SensorListener target) {
             mTarget = target;
             mSensors = 0;
-            // ---------- Original Method ----------
-            //mTarget = target;
-            //mSensors = 0;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.095 -0400", hash_original_method = "4097E1683A40A6DEAB5492A2296E3879", hash_generated_method = "8131930ADF7BA919DC4A2597B2FC2264")
          void registerSensor(int legacyType) {
-            //DSFIXME: CODE0010: Possible callback registration function detected
+            
             mSensors |= legacyType;
-            // ---------- Original Method ----------
-            //mSensors |= legacyType;
+            
+            
         }
 
         
@@ -1432,40 +1457,40 @@ public class SensorManager {
             int mask = SENSOR_ORIENTATION|SENSOR_ORIENTATION_RAW;
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_652638801 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_652638801;
-            // ---------- Original Method ----------
-            //mSensors &= ~legacyType;
-            //int mask = SENSOR_ORIENTATION|SENSOR_ORIENTATION_RAW;
-            //if (((legacyType&mask)!=0) && ((mSensors&mask)!=0)) {
-                //return false;
-            //}
-            //return true;
+            
+            
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.098 -0400", hash_original_method = "E64F8429635EF9F3222DE4609CE00D63", hash_generated_method = "0EEE162EB40C7200E2C069D37F6F5A40")
         @SuppressWarnings("deprecation")
         public void onAccuracyChanged(Sensor sensor, int accuracy) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             try 
             {
                 mTarget.onAccuracyChanged(sensor.getLegacyType(), accuracy);
-            } //End block
+            } 
             catch (AbstractMethodError e)
             { }
             addTaint(sensor.getTaint());
             addTaint(accuracy);
-            // ---------- Original Method ----------
-            //try {
-                //mTarget.onAccuracyChanged(sensor.getLegacyType(), accuracy);
-            //} catch (AbstractMethodError e) {
-            //}
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.099 -0400", hash_original_method = "7B74886508DCBDDEB63A3DDB570295F3", hash_generated_method = "30DB54115F42C4507C8A1AA1685CFDE2")
         @SuppressWarnings("deprecation")
         public void onSensorChanged(SensorEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             final float v[] = mValues;
             v[0] = event.values[0];
             v[1] = event.values[1];
@@ -1477,35 +1502,35 @@ public class SensorManager {
                 {
                     {
                         mTarget.onSensorChanged(SENSOR_ORIENTATION_RAW, v);
-                    } //End block
+                    } 
                     {
                         v[0] = mYawfilter.filter(event.timestamp, v[0]);
                         mTarget.onSensorChanged(SENSOR_ORIENTATION, v);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     mTarget.onSensorChanged(legacyType, v);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(event.getTaint());
-            // ---------- Original Method ----------
-            //final float v[] = mValues;
-            //v[0] = event.values[0];
-            //v[1] = event.values[1];
-            //v[2] = event.values[2];
-            //int legacyType = event.sensor.getLegacyType();
-            //mapSensorDataToWindow(legacyType, v, SensorManager.getRotation());
-            //if (event.sensor.getType() == Sensor.TYPE_ORIENTATION) {
-                //if ((mSensors & SENSOR_ORIENTATION_RAW)!=0) {
-                    //mTarget.onSensorChanged(SENSOR_ORIENTATION_RAW, v);
-                //}
-                //if ((mSensors & SENSOR_ORIENTATION)!=0) {
-                    //v[0] = mYawfilter.filter(event.timestamp, v[0]);
-                    //mTarget.onSensorChanged(SENSOR_ORIENTATION, v);
-                //}
-            //} else {
-                //mTarget.onSensorChanged(legacyType, v);
-            //}
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                    
+                
+                
+                    
+                    
+                
+            
+                
+            
         }
 
         
@@ -1515,24 +1540,24 @@ public class SensorManager {
             float x = values[0];
             float y = values[1];
             float z = values[2];
-            //Begin case SensorManager.SENSOR_ORIENTATION SensorManager.SENSOR_ORIENTATION_RAW 
+            
             z = -z;
-            //End case SensorManager.SENSOR_ORIENTATION SensorManager.SENSOR_ORIENTATION_RAW 
-            //Begin case SensorManager.SENSOR_ACCELEROMETER 
+            
+            
             x = -x;
-            //End case SensorManager.SENSOR_ACCELEROMETER 
-            //Begin case SensorManager.SENSOR_ACCELEROMETER 
+            
+            
             y = -y;
-            //End case SensorManager.SENSOR_ACCELEROMETER 
-            //Begin case SensorManager.SENSOR_ACCELEROMETER 
+            
+            
             z = -z;
-            //End case SensorManager.SENSOR_ACCELEROMETER 
-            //Begin case SensorManager.SENSOR_MAGNETIC_FIELD 
+            
+            
             x = -x;
-            //End case SensorManager.SENSOR_MAGNETIC_FIELD 
-            //Begin case SensorManager.SENSOR_MAGNETIC_FIELD 
+            
+            
             y = -y;
-            //End case SensorManager.SENSOR_MAGNETIC_FIELD 
+            
             values[0] = x;
             values[1] = y;
             values[2] = z;
@@ -1540,53 +1565,53 @@ public class SensorManager {
             values[4] = y;
             values[5] = z;
             {
-                //Begin case SENSOR_ACCELEROMETER SENSOR_MAGNETIC_FIELD 
+                
                 values[0] =-y;
-                //End case SENSOR_ACCELEROMETER SENSOR_MAGNETIC_FIELD 
-                //Begin case SENSOR_ACCELEROMETER SENSOR_MAGNETIC_FIELD 
+                
+                
                 values[1] = x;
-                //End case SENSOR_ACCELEROMETER SENSOR_MAGNETIC_FIELD 
-                //Begin case SENSOR_ACCELEROMETER SENSOR_MAGNETIC_FIELD 
+                
+                
                 values[2] = z;
-                //End case SENSOR_ACCELEROMETER SENSOR_MAGNETIC_FIELD 
-                //Begin case SENSOR_ORIENTATION SENSOR_ORIENTATION_RAW 
+                
+                
                 values[0] = x + ((x < 270) ? 90 : -270);
-                //End case SENSOR_ORIENTATION SENSOR_ORIENTATION_RAW 
-                //Begin case SENSOR_ORIENTATION SENSOR_ORIENTATION_RAW 
+                
+                
                 values[1] = z;
-                //End case SENSOR_ORIENTATION SENSOR_ORIENTATION_RAW 
-                //Begin case SENSOR_ORIENTATION SENSOR_ORIENTATION_RAW 
+                
+                
                 values[2] = y;
-                //End case SENSOR_ORIENTATION SENSOR_ORIENTATION_RAW 
-            } //End block
+                
+            } 
             {
                 x = values[0];
                 y = values[1];
                 z = values[2];
-                //Begin case SENSOR_ACCELEROMETER SENSOR_MAGNETIC_FIELD 
+                
                 values[0] =-x;
-                //End case SENSOR_ACCELEROMETER SENSOR_MAGNETIC_FIELD 
-                //Begin case SENSOR_ACCELEROMETER SENSOR_MAGNETIC_FIELD 
+                
+                
                 values[1] =-y;
-                //End case SENSOR_ACCELEROMETER SENSOR_MAGNETIC_FIELD 
-                //Begin case SENSOR_ACCELEROMETER SENSOR_MAGNETIC_FIELD 
+                
+                
                 values[2] = z;
-                //End case SENSOR_ACCELEROMETER SENSOR_MAGNETIC_FIELD 
-                //Begin case SENSOR_ORIENTATION SENSOR_ORIENTATION_RAW 
+                
+                
                 values[0] = (x >= 180) ? (x - 180) : (x + 180);
-                //End case SENSOR_ORIENTATION SENSOR_ORIENTATION_RAW 
-                //Begin case SENSOR_ORIENTATION SENSOR_ORIENTATION_RAW 
+                
+                
                 values[1] =-y;
-                //End case SENSOR_ORIENTATION SENSOR_ORIENTATION_RAW 
-                //Begin case SENSOR_ORIENTATION SENSOR_ORIENTATION_RAW 
+                
+                
                 values[2] =-z;
-                //End case SENSOR_ORIENTATION SENSOR_ORIENTATION_RAW 
-            } //End block
+                
+            } 
             addTaint(sensor);
             addTaint(values[0]);
             addTaint(orientation);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1608,8 +1633,8 @@ public class SensorManager {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.100 -0400", hash_original_method = "E02C377CCDCA56F06C1373683AAA5F27", hash_generated_method = "45D134E9ACF2C36E99725407618FA8B3")
         public  LmsFilter() {
             mIndex = COUNT;
-            // ---------- Original Method ----------
-            //mIndex = COUNT;
+            
+            
         }
 
         
@@ -1621,10 +1646,10 @@ public class SensorManager {
             float v1 = mV[mIndex];
             {
                 v -= 360;
-            } //End block
+            } 
             {
                 v += 360;
-            } //End block
+            } 
             mIndex = COUNT;
             mV[mIndex] = v;
             mT[mIndex] = t;
@@ -1652,8 +1677,8 @@ public class SensorManager {
                     C +=   (T*dT);
                     D += Z*(T*dT);
                     E += dT;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             b = (A*B + C*D) / (E*B + C*C);
             a = (E*b - A) / C;
             float f = b + PREDICTION_TIME*a;
@@ -1665,8 +1690,8 @@ public class SensorManager {
             addTaint(in);
             float var546ADE640B6EDFBC8A086EF31347E768_770179051 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_770179051;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import com.android.internal.telephony.*;
@@ -67,12 +67,13 @@ public final class GsmMmiCode extends Handler implements MmiCode {
         super(phone.getHandler().getLooper());
         this.phone = phone;
         this.context = phone.getContext();
-        // ---------- Original Method ----------
-        //this.phone = phone;
-        //this.context = phone.getContext();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static GsmMmiCode newFromDialString(String dialString, GSMPhone phone) {
         Matcher m;
         GsmMmiCode ret = null;
@@ -100,6 +101,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static GsmMmiCode newNetworkInitiatedUssd(String ussdMessage,
                                 boolean isUssdRequest, GSMPhone phone) {
         GsmMmiCode ret;
@@ -116,6 +118,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static GsmMmiCode newFromUssdUserInput(String ussdMessge, GSMPhone phone) {
         GsmMmiCode ret = new GsmMmiCode(phone);
         ret.message = ussdMessge;
@@ -125,17 +128,20 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String makeEmptyNull(String s) {
         if (s != null && s.length() == 0) return null;
         return s;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isEmptyOrNull(CharSequence s) {
         return s == null || (s.length() == 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int scToCallForwardReason(String sc) {
         if (sc == null) {
             throw new RuntimeException ("invalid call forward sc");
@@ -158,6 +164,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int siToServiceClass(String si) {
         if (si == null || si.length() == 0) {
                 return  SERVICE_CLASS_NONE;
@@ -184,6 +191,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int siToTime(String si) {
         if (si == null || si.length() == 0) {
             return 0;
@@ -193,6 +201,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isServiceCodeCallForwarding(String sc) {
         return sc != null &&
                 (sc.equals(SC_CFU)
@@ -202,6 +211,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isServiceCodeCallBarring(String sc) {
         return sc != null &&
                 (sc.equals(SC_BAOC)
@@ -215,6 +225,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String scToBarringFacility(String sc) {
         if (sc == null) {
             throw new RuntimeException ("invalid call barring sc");
@@ -243,45 +254,46 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.327 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "3A4A5397EDADC8AB93C0DBF42D244541")
     public State getState() {
-        State varB4EAC82CA7396A68D541C85D26508E83_280571811 = null; //Variable for return #1
+        State varB4EAC82CA7396A68D541C85D26508E83_280571811 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_280571811 = state;
-        varB4EAC82CA7396A68D541C85D26508E83_280571811.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_280571811.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_280571811;
-        // ---------- Original Method ----------
-        //return state;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.328 -0400", hash_original_method = "570FEAA437E41D0252DA00ACF07950A0", hash_generated_method = "C2BAC143CB326917BA7450A9135B6E32")
     public CharSequence getMessage() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1994533820 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1994533820 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1994533820 = message;
-        varB4EAC82CA7396A68D541C85D26508E83_1994533820.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1994533820.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1994533820;
-        // ---------- Original Method ----------
-        //return message;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.329 -0400", hash_original_method = "E883165C6689A3782C7AFFDB1FCF97C2", hash_generated_method = "DDD294D2F15DC82E2D473B5D0C41FEB6")
     public void cancel() {
         state = State.CANCELLED;
         {
             phone.mCM.cancelPendingUssd(obtainMessage(EVENT_USSD_CANCEL_COMPLETE, this));
-        } //End block
+        } 
         {
             phone.onMMIDone (this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (state == State.COMPLETE || state == State.FAILED) {
-            //return;
-        //}
-        //state = State.CANCELLED;
-        //if (isPendingUSSD) {
-            //phone.mCM.cancelPendingUssd(obtainMessage(EVENT_USSD_CANCEL_COMPLETE, this));
-        //} else {
-            //phone.onMMIDone (this);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -289,8 +301,8 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     public boolean isCancelable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1470174279 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1470174279;
-        // ---------- Original Method ----------
-        //return isPendingUSSD;
+        
+        
     }
 
     
@@ -298,8 +310,8 @@ public final class GsmMmiCode extends Handler implements MmiCode {
      boolean isMMI() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2087834489 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2087834489;
-        // ---------- Original Method ----------
-        //return poundString != null;
+        
+        
     }
 
     
@@ -309,12 +321,13 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                     && dialingNumber != null && dialingNumber.length() <= 2);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1659468070 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1659468070;
-        // ---------- Original Method ----------
-        //return poundString == null
-                    //&& dialingNumber != null && dialingNumber.length() <= 2;
+        
+        
+                    
     }
 
     
+    @DSModeled(DSC.SAFE)
     static private boolean isTwoDigitShortCode(Context context, String dialString) {
         Log.d(LOG_TAG, "isTwoDigitShortCode");
         if (dialString == null || dialString.length() != 2) return false;
@@ -334,6 +347,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static private boolean isShortCode(String dialString, GSMPhone phone) {
         if (dialString == null) {
             return false;
@@ -349,6 +363,7 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static private boolean isShortCodeUSSD(String dialString, GSMPhone phone) {
         if (dialString != null) {
             if (phone.isInCall()) {
@@ -372,9 +387,9 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                               || sc.equals(SC_PUK) || sc.equals(SC_PUK2)));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_344814274 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_344814274;
-        // ---------- Original Method ----------
-        //return sc != null && (sc.equals(SC_PIN) || sc.equals(SC_PIN2)
-                              //|| sc.equals(SC_PUK) || sc.equals(SC_PUK2));
+        
+        
+                              
     }
 
     
@@ -384,9 +399,9 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                 && (isActivate() || isDeactivate()));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1424975325 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1424975325;
-        // ---------- Original Method ----------
-        //return sc != null && sc.equals(SC_CLIR) && dialingNumber != null
-                //&& (isActivate() || isDeactivate());
+        
+        
+                
     }
 
     
@@ -399,21 +414,21 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                     boolean var6DAE9187104E5001F23DD333FAAFF7E8_1183723610 = (isActivate());
                     {
                         boolean var60B1109AE4AFCE40EC270D9BE8674276_1646929952 = (isDeactivate());
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_206469659 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_206469659;
-        // ---------- Original Method ----------
-        //if (sc != null && sc.equals(SC_CLIR)) {
-            //if (isActivate()) {
-                //return CommandsInterface.CLIR_SUPPRESSION;
-            //} else if (isDeactivate()) {
-                //return CommandsInterface.CLIR_INVOCATION;
-            //}
-        //}
-        //return CommandsInterface.CLIR_DEFAULT;
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -422,8 +437,8 @@ public final class GsmMmiCode extends Handler implements MmiCode {
         boolean varDA9476B1A494F0D070B1BF7D372D3355_2035787202 = (action != null && action.equals(ACTION_ACTIVATE));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_936041155 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_936041155;
-        // ---------- Original Method ----------
-        //return action != null && action.equals(ACTION_ACTIVATE);
+        
+        
     }
 
     
@@ -432,8 +447,8 @@ public final class GsmMmiCode extends Handler implements MmiCode {
         boolean varE0E3F7818F99EE86F25A069D66EF50F8_83512068 = (action != null && action.equals(ACTION_DEACTIVATE));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_904352423 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_904352423;
-        // ---------- Original Method ----------
-        //return action != null && action.equals(ACTION_DEACTIVATE);
+        
+        
     }
 
     
@@ -442,8 +457,8 @@ public final class GsmMmiCode extends Handler implements MmiCode {
         boolean var80F2797A4F74689C3AE333F5C724FB3D_1051719499 = (action != null && action.equals(ACTION_INTERROGATE));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_951812484 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_951812484;
-        // ---------- Original Method ----------
-        //return action != null && action.equals(ACTION_INTERROGATE);
+        
+        
     }
 
     
@@ -452,8 +467,8 @@ public final class GsmMmiCode extends Handler implements MmiCode {
         boolean var8F8DE4A6AF200F3CCE4ABD0A031FFBC0_1879095913 = (action != null && action.equals(ACTION_REGISTER));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2114961260 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2114961260;
-        // ---------- Original Method ----------
-        //return action != null && action.equals(ACTION_REGISTER);
+        
+        
     }
 
     
@@ -462,8 +477,8 @@ public final class GsmMmiCode extends Handler implements MmiCode {
         boolean var26E8FF1C98185BC2E63EA43F2B1F6AA7_1922398954 = (action != null && action.equals(ACTION_ERASURE));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1555081962 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1555081962;
-        // ---------- Original Method ----------
-        //return action != null && action.equals(ACTION_ERASURE);
+        
+        
     }
 
     
@@ -471,8 +486,8 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     public boolean isPendingUSSD() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_353892404 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_353892404;
-        // ---------- Original Method ----------
-        //return isPendingUSSD;
+        
+        
     }
 
     
@@ -480,8 +495,8 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     public boolean isUssdRequest() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1321798400 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1321798400;
-        // ---------- Original Method ----------
-        //return isUssdRequest;
+        
+        
     }
 
     
@@ -494,10 +509,10 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                 {
                     Log.d(LOG_TAG, "isShortCode");
                     sendUssd(dialingNumber);
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                } //End block
+                } 
                 {
                     boolean varD990A9821BF7C1A6CEBB4AF3A08286F4_2085069446 = (sc != null && sc.equals(SC_CLIP));
                     {
@@ -507,12 +522,12 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                             {
                                 phone.mCM.queryCLIP(
                             obtainMessage(EVENT_QUERY_COMPLETE, this));
-                            } //End block
+                            } 
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         boolean var0812373E25987806BA10DCBE1830B470_846569644 = (sc != null && sc.equals(SC_CLIR));
                         {
@@ -522,26 +537,26 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                                 {
                                     phone.mCM.setCLIR(CommandsInterface.CLIR_INVOCATION,
                         obtainMessage(EVENT_SET_COMPLETE, this));
-                                } //End block
+                                } 
                                 {
                                     boolean varDA9013164DD6CF176DBD049823930B6B_1758668458 = (isDeactivate());
                                     {
                                         phone.mCM.setCLIR(CommandsInterface.CLIR_SUPPRESSION,
                         obtainMessage(EVENT_SET_COMPLETE, this));
-                                    } //End block
+                                    } 
                                     {
                                         boolean var18717314843932DC2BFAB4258F743FFD_1822526408 = (isInterrogate());
                                         {
                                             phone.mCM.getCLIR(
                         obtainMessage(EVENT_GET_CLIR_COMPLETE, this));
-                                        } //End block
+                                        } 
                                         {
                                             if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End block
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
                         {
                             boolean var7312C42DD719B1CD668FCA247DDADED7_1847230007 = (isServiceCodeCallForwarding(sc));
                             {
@@ -556,36 +571,36 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                                         phone.mCM.queryCallForwardStatus(
                             reason, serviceClass,  dialingNumber,
                                 obtainMessage(EVENT_QUERY_CF_COMPLETE, this));
-                                    } //End block
+                                    } 
                                     {
                                         int cfAction;
                                         {
                                             boolean var4E150FF745CF73441F17C76F3D37B88B_1873976385 = (isActivate());
                                             {
                                                 cfAction = CommandsInterface.CF_ACTION_ENABLE;
-                                            } //End block
+                                            } 
                                             {
                                                 boolean var933AF435450C733B38ACA41F2D3FCAF9_1858073704 = (isDeactivate());
                                                 {
                                                     cfAction = CommandsInterface.CF_ACTION_DISABLE;
-                                                } //End block
+                                                } 
                                                 {
                                                     boolean varB2A81FB350799613F9E2D67A1BA1D4A7_718274003 = (isRegister());
                                                     {
                                                         cfAction = CommandsInterface.CF_ACTION_REGISTRATION;
-                                                    } //End block
+                                                    } 
                                                     {
                                                         boolean var25ADF80BDE86F8A8B3E8088E4D221AE4_433056109 = (isErasure());
                                                         {
                                                             cfAction = CommandsInterface.CF_ACTION_ERASURE;
-                                                        } //End block
+                                                        } 
                                                         {
                                                             if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("invalid action");
-                                                        } //End block
-                                                    } //End collapsed parenthetic
-                                                } //End collapsed parenthetic
-                                            } //End collapsed parenthetic
-                                        } //End collapsed parenthetic
+                                                        } 
+                                                    } 
+                                                } 
+                                            } 
+                                        } 
                                         int isSettingUnconditionalVoice;
                                         isSettingUnconditionalVoice = 1;
                                         isSettingUnconditionalVoice = 0;
@@ -598,9 +613,9 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                                     EVENT_SET_CFF_COMPLETE,
                                     isSettingUnconditionalVoice,
                                     isEnableDesired, this));
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             {
                                 boolean var12C22BB7EEA013327BEDC89EF49EBBAB_2020243367 = (isServiceCodeCallBarring(sc));
                                 {
@@ -612,19 +627,19 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                                         {
                                             phone.mCM.queryFacilityLock(facility, password,
                             serviceClass, obtainMessage(EVENT_QUERY_COMPLETE, this));
-                                        } //End block
+                                        } 
                                         {
                                             boolean var119A5D265CCF4791E780BDE84928E729_1877965030 = (isActivate() || isDeactivate());
                                             {
                                                 phone.mCM.setFacilityLock(facility, isActivate(), password,
                             serviceClass, obtainMessage(EVENT_SET_COMPLETE, this));
-                                            } //End block
+                                            } 
                                             {
                                                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                                            } //End block
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End block
+                                            } 
+                                        } 
+                                    } 
+                                } 
                                 {
                                     boolean varCDD454EC464ABD0A8BFA09F4744BB0C5_2127458343 = (sc != null && sc.equals(SC_PWD));
                                     {
@@ -637,26 +652,26 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                                                 action = ACTION_REGISTER;
                                                 {
                                                     facility = CommandsInterface.CB_FACILITY_BA_ALL;
-                                                } //End block
+                                                } 
                                                 {
                                                     facility = scToBarringFacility(sia);
-                                                } //End block
+                                                } 
                                                 {
                                                     boolean var0391FAAA3FE1381FC688FE40567A50CA_626627433 = (newPwd.equals(pwd));
                                                     {
                                                         phone.mCM.changeBarringPassword(facility, oldPwd,
                                 newPwd, obtainMessage(EVENT_SET_COMPLETE, this));
-                                                    } //End block
+                                                    } 
                                                     {
                                                         handlePasswordError(com.android.internal.R.string.passwordIncorrect);
-                                                    } //End block
-                                                } //End collapsed parenthetic
-                                            } //End block
+                                                    } 
+                                                } 
+                                            } 
                                             {
                                                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                                            } //End block
-                                        } //End collapsed parenthetic
-                                    } //End block
+                                            } 
+                                        } 
+                                    } 
                                     {
                                         boolean var572741C1390D1648B95B43B4EB591AAD_1611296713 = (sc != null && sc.equals(SC_WAIT));
                                         {
@@ -666,19 +681,19 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                                                 {
                                                     phone.mCM.setCallWaiting(isActivate(), serviceClass,
                             obtainMessage(EVENT_SET_COMPLETE, this));
-                                                } //End block
+                                                } 
                                                 {
                                                     boolean var75AAC492F8B008891AB83B5FB4B29791_1641567778 = (isInterrogate());
                                                     {
                                                         phone.mCM.queryCallWaiting(serviceClass,
                             obtainMessage(EVENT_QUERY_COMPLETE, this));
-                                                    } //End block
+                                                    } 
                                                     {
                                                         if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                                                    } //End block
-                                                } //End collapsed parenthetic
-                                            } //End collapsed parenthetic
-                                        } //End block
+                                                    } 
+                                                } 
+                                            } 
+                                        } 
                                         {
                                             boolean varE9E9769B3965CB509E03E906501C297B_951426170 = (isPinCommand());
                                             {
@@ -692,80 +707,81 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                                                             boolean var8AAFFDB78603D28040F2394F0AD529DA_196366262 = (!newPin.equals(sic));
                                                             {
                                                                 handlePasswordError(com.android.internal.R.string.mismatchPin);
-                                                            } //End block
+                                                            } 
                                                             {
                                                                 handlePasswordError(com.android.internal.R.string.invalidPin);
-                                                            } //End block
+                                                            } 
                                                             {
                                                                 boolean varB803AB2D427385C9994C2A4CADA7A133_442039311 = (sc.equals(SC_PIN) &&
                                phone.mIccCard.getState() == SimCard.State.PUK_REQUIRED);
                                                                 {
                                                                     handlePasswordError(com.android.internal.R.string.needPuk);
-                                                                } //End block
+                                                                } 
                                                                 {
                                                                     {
                                                                         boolean var1EDE5DF632D5A9C013C23432D6E0A17F_488474890 = (sc.equals(SC_PIN));
                                                                         {
                                                                             phone.mCM.changeIccPin(oldPinOrPuk, newPin,
                                     obtainMessage(EVENT_SET_COMPLETE, this));
-                                                                        } //End block
+                                                                        } 
                                                                         {
                                                                             boolean var0BF913DF155AAE543691723B891AE7DB_112939085 = (sc.equals(SC_PIN2));
                                                                             {
                                                                                 phone.mCM.changeIccPin2(oldPinOrPuk, newPin,
                                     obtainMessage(EVENT_SET_COMPLETE, this));
-                                                                            } //End block
+                                                                            } 
                                                                             {
                                                                                 boolean var3FF6DE7548056294F609BF66B6EE3C0F_1791487580 = (sc.equals(SC_PUK));
                                                                                 {
                                                                                     phone.mCM.supplyIccPuk(oldPinOrPuk, newPin,
                                     obtainMessage(EVENT_SET_COMPLETE, this));
-                                                                                } //End block
+                                                                                } 
                                                                                 {
                                                                                     boolean var5F1753C6264CCB0AFA8B9E811C51CEDC_133638745 = (sc.equals(SC_PUK2));
                                                                                     {
                                                                                         phone.mCM.supplyIccPuk2(oldPinOrPuk, newPin,
                                     obtainMessage(EVENT_SET_COMPLETE, this));
-                                                                                    } //End block
-                                                                                } //End collapsed parenthetic
-                                                                            } //End collapsed parenthetic
-                                                                        } //End collapsed parenthetic
-                                                                    } //End collapsed parenthetic
-                                                                } //End block
-                                                            } //End collapsed parenthetic
-                                                        } //End collapsed parenthetic
-                                                    } //End block
+                                                                                    } 
+                                                                                } 
+                                                                            } 
+                                                                        } 
+                                                                    } 
+                                                                } 
+                                                            } 
+                                                        } 
+                                                    } 
                                                     {
                                                         if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                                                    } //End block
-                                                } //End collapsed parenthetic
-                                            } //End block
+                                                    } 
+                                                } 
+                                            } 
                                             {
                                                 sendUssd(poundString);
-                                            } //End block
+                                            } 
                                             {
                                                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("Invalid or Unsupported MMI Code");
-                                            } //End block
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         catch (RuntimeException exc)
         {
             state = State.FAILED;
             message = context.getText(com.android.internal.R.string.mmiError);
             phone.onMMIDone(this);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.336 -0400", hash_original_method = "60196158E22905B06D5E62564673E5E1", hash_generated_method = "878F8042D8FA72C244D61D1029C0968B")
     private void handlePasswordError(int res) {
         state = State.FAILED;
@@ -775,62 +791,62 @@ public final class GsmMmiCode extends Handler implements MmiCode {
         message = sb;
         phone.onMMIDone(this);
         addTaint(res);
-        // ---------- Original Method ----------
-        //state = State.FAILED;
-        //StringBuilder sb = new StringBuilder(getScString());
-        //sb.append("\n");
-        //sb.append(context.getText(res));
-        //message = sb;
-        //phone.onMMIDone(this);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.337 -0400", hash_original_method = "A7DAC75B31530E6CD4845B1030678B66", hash_generated_method = "F06561A698D09354C2DBFD6BEBEC4386")
      void onUssdFinished(String ussdMessage, boolean isUssdRequest) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             {
                 message = context.getText(com.android.internal.R.string.mmiComplete);
-            } //End block
+            } 
             {
                 message = ussdMessage;
-            } //End block
+            } 
             this.isUssdRequest = isUssdRequest;
             {
                 state = State.COMPLETE;
-            } //End block
+            } 
             phone.onMMIDone(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (state == State.PENDING) {
-            //if (ussdMessage == null) {
-                //message = context.getText(com.android.internal.R.string.mmiComplete);
-            //} else {
-                //message = ussdMessage;
-            //}
-            //this.isUssdRequest = isUssdRequest;
-            //if (!isUssdRequest) {
-                //state = State.COMPLETE;
-            //}
-            //phone.onMMIDone(this);
-        //}
+        } 
+        
+        
+            
+                
+            
+                
+            
+            
+            
+                
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.337 -0400", hash_original_method = "6CB35EDB68C77D37EFB134F2D3B374DA", hash_generated_method = "D9A37A1161AFF010CC3D3C13DFD41836")
      void onUssdFinishedError() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             state = State.FAILED;
             message = context.getText(com.android.internal.R.string.mmiError);
             phone.onMMIDone(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (state == State.PENDING) {
-            //state = State.FAILED;
-            //message = context.getText(com.android.internal.R.string.mmiError);
-            //phone.onMMIDone(this);
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -840,195 +856,199 @@ public final class GsmMmiCode extends Handler implements MmiCode {
         phone.mCM.sendUSSD(ussdMessage,
             obtainMessage(EVENT_USSD_COMPLETE, this));
         addTaint(ussdMessage.getTaint());
-        // ---------- Original Method ----------
-        //isPendingUSSD = true;
-        //phone.mCM.sendUSSD(ussdMessage,
-            //obtainMessage(EVENT_USSD_COMPLETE, this));
+        
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.338 -0400", hash_original_method = "5C6BF8BFD3AA6C53F0FB54F2701C6A7B", hash_generated_method = "D54984FD8A04A6E2A5E4C8F825A8D64C")
     public void handleMessage(Message msg) {
         AsyncResult ar;
-        //Begin case EVENT_SET_COMPLETE 
+        
         ar = (AsyncResult) (msg.obj);
-        //End case EVENT_SET_COMPLETE 
-        //Begin case EVENT_SET_COMPLETE 
+        
+        
         onSetComplete(ar);
-        //End case EVENT_SET_COMPLETE 
-        //Begin case EVENT_SET_CFF_COMPLETE 
+        
+        
         ar = (AsyncResult) (msg.obj);
-        //End case EVENT_SET_CFF_COMPLETE 
-        //Begin case EVENT_SET_CFF_COMPLETE 
+        
+        
         {
             boolean cffEnabled = (msg.arg2 == 1);
             phone.mIccRecords.setVoiceCallForwardingFlag(1, cffEnabled);
-        } //End block
-        //End case EVENT_SET_CFF_COMPLETE 
-        //Begin case EVENT_SET_CFF_COMPLETE 
+        } 
+        
+        
         onSetComplete(ar);
-        //End case EVENT_SET_CFF_COMPLETE 
-        //Begin case EVENT_GET_CLIR_COMPLETE 
+        
+        
         ar = (AsyncResult) (msg.obj);
-        //End case EVENT_GET_CLIR_COMPLETE 
-        //Begin case EVENT_GET_CLIR_COMPLETE 
+        
+        
         onGetClirComplete(ar);
-        //End case EVENT_GET_CLIR_COMPLETE 
-        //Begin case EVENT_QUERY_CF_COMPLETE 
+        
+        
         ar = (AsyncResult) (msg.obj);
-        //End case EVENT_QUERY_CF_COMPLETE 
-        //Begin case EVENT_QUERY_CF_COMPLETE 
+        
+        
         onQueryCfComplete(ar);
-        //End case EVENT_QUERY_CF_COMPLETE 
-        //Begin case EVENT_QUERY_COMPLETE 
+        
+        
         ar = (AsyncResult) (msg.obj);
-        //End case EVENT_QUERY_COMPLETE 
-        //Begin case EVENT_QUERY_COMPLETE 
+        
+        
         onQueryComplete(ar);
-        //End case EVENT_QUERY_COMPLETE 
-        //Begin case EVENT_USSD_COMPLETE 
+        
+        
         ar = (AsyncResult) (msg.obj);
-        //End case EVENT_USSD_COMPLETE 
-        //Begin case EVENT_USSD_COMPLETE 
+        
+        
         {
             state = State.FAILED;
             message = getErrorMessage(ar);
             phone.onMMIDone(this);
-        } //End block
-        //End case EVENT_USSD_COMPLETE 
-        //Begin case EVENT_USSD_CANCEL_COMPLETE 
+        } 
+        
+        
         phone.onMMIDone(this);
-        //End case EVENT_USSD_CANCEL_COMPLETE 
+        
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.339 -0400", hash_original_method = "6FA8450E92822795C4AD46C68EFB0477", hash_generated_method = "DF7C512790D23D4AE2861750C57869EE")
     private CharSequence getErrorMessage(AsyncResult ar) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_233001841 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1360579128 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_233001841 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1360579128 = null; 
         {
             CommandException.Error err = ((CommandException)(ar.exception)).getCommandError();
             {
                 varB4EAC82CA7396A68D541C85D26508E83_233001841 = context.getText(com.android.internal.R.string.mmiFdnError);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1360579128 = context.getText(com.android.internal.R.string.mmiError);
         addTaint(ar.getTaint());
-        CharSequence varA7E53CE21691AB073D9660D615818899_973526793; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_973526793; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_973526793 = varB4EAC82CA7396A68D541C85D26508E83_233001841;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_973526793 = varB4EAC82CA7396A68D541C85D26508E83_1360579128;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_973526793.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_973526793.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_973526793;
-        // ---------- Original Method ----------
-        //if (ar.exception instanceof CommandException) {
-            //CommandException.Error err = ((CommandException)(ar.exception)).getCommandError();
-            //if (err == CommandException.Error.FDN_CHECK_FAILURE) {
-                //Log.i(LOG_TAG, "FDN_CHECK_FAILURE");
-                //return context.getText(com.android.internal.R.string.mmiFdnError);
-            //}
-        //}
-        //return context.getText(com.android.internal.R.string.mmiError);
+        
+        
+            
+            
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.342 -0400", hash_original_method = "F062B7C9E966AA410521C905675EBDA7", hash_generated_method = "9463DB9B8565F013578995852158A8E1")
     private CharSequence getScString() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1081797190 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_557707486 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1594352242 = null; //Variable for return #3
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1358373700 = null; //Variable for return #4
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1753276209 = null; //Variable for return #5
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1724083110 = null; //Variable for return #6
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_973268245 = null; //Variable for return #7
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1349489358 = null; //Variable for return #8
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1081797190 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_557707486 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1594352242 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1358373700 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1753276209 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1724083110 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_973268245 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1349489358 = null; 
         {
             {
                 boolean varCCA5F2A13C1993EFC5A1CF2F0165F813_269822741 = (isServiceCodeCallBarring(sc));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1081797190 = context.getText(com.android.internal.R.string.BaMmi);
-                } //End block
+                } 
                 {
                     boolean var32DC5B084701CD8CD9A8C906B0EEBD05_1432476076 = (isServiceCodeCallForwarding(sc));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_557707486 = context.getText(com.android.internal.R.string.CfMmi);
-                    } //End block
+                    } 
                     {
                         boolean var6914B4EC879BBBF42E2E74E4C168A160_948556835 = (sc.equals(SC_CLIP));
                         {
                             varB4EAC82CA7396A68D541C85D26508E83_1594352242 = context.getText(com.android.internal.R.string.ClipMmi);
-                        } //End block
+                        } 
                         {
                             boolean var0623604252E0864F742051097B6173BA_702793125 = (sc.equals(SC_CLIR));
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_1358373700 = context.getText(com.android.internal.R.string.ClirMmi);
-                            } //End block
+                            } 
                             {
                                 boolean var5C676F9701A0966D4E94DEF50F123275_983452504 = (sc.equals(SC_PWD));
                                 {
                                     varB4EAC82CA7396A68D541C85D26508E83_1753276209 = context.getText(com.android.internal.R.string.PwdMmi);
-                                } //End block
+                                } 
                                 {
                                     boolean varDA6852543E26402D459735260F444175_148500221 = (sc.equals(SC_WAIT));
                                     {
                                         varB4EAC82CA7396A68D541C85D26508E83_1724083110 = context.getText(com.android.internal.R.string.CwMmi);
-                                    } //End block
+                                    } 
                                     {
                                         boolean varD1C658B382FEF05BC29F9D45B74B0428_566835170 = (isPinCommand());
                                         {
                                             varB4EAC82CA7396A68D541C85D26508E83_973268245 = context.getText(com.android.internal.R.string.PinMmi);
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1349489358 = "";
-        CharSequence varA7E53CE21691AB073D9660D615818899_302561465; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_302561465; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_1081797190;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_557707486;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_1594352242;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_1358373700;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_1753276209;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_1724083110;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_973268245;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_302561465 = varB4EAC82CA7396A68D541C85D26508E83_1349489358;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_302561465.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_302561465.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_302561465;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.343 -0400", hash_original_method = "86E59952328AB1858ED821151A4A3DAE", hash_generated_method = "42331B7E0B587ADBA2F9AFA3909FB614")
     private void onSetComplete(AsyncResult ar) {
         StringBuilder sb = new StringBuilder(getScString());
@@ -1046,39 +1066,39 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                                 {
                                     sb.append(context.getText(
                                     com.android.internal.R.string.badPuk));
-                                } //End block
+                                } 
                                 {
                                     sb.append(context.getText(
                                     com.android.internal.R.string.badPin));
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         {
                             sb.append(context.getText(
                                 com.android.internal.R.string.passwordIncorrect));
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     sb.append(context.getText(
                             com.android.internal.R.string.badPin));
                     sb.append("\n");
                     sb.append(context.getText(
                             com.android.internal.R.string.needPuk2));
-                } //End block
+                } 
                 {
                     sb.append(context.getText(com.android.internal.R.string.mmiFdnError));
-                } //End block
+                } 
                 {
                     sb.append(context.getText(
                             com.android.internal.R.string.mmiError));
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 sb.append(context.getText(
                         com.android.internal.R.string.mmiError));
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean varD4B13402CFA6A550CEC0E5DDCA20FC61_322165858 = (isActivate());
             {
@@ -1089,9 +1109,9 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                     boolean var963F1E632E68242542E9A5B1692F1816_1023944219 = (sc.equals(SC_CLIR));
                     {
                         phone.saveClirSetting(CommandsInterface.CLIR_INVOCATION);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 boolean var0FE307E32DF6975EC6641BDD38B8A41D_854345263 = (isDeactivate());
                 {
@@ -1102,40 +1122,41 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                         boolean var767B63B127ECD6CE628AB160BBB58776_581394014 = (sc.equals(SC_CLIR));
                         {
                             phone.saveClirSetting(CommandsInterface.CLIR_SUPPRESSION);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     boolean varACC7E5A3F90406763366F9A6873CC87D_920668707 = (isRegister());
                     {
                         state = State.COMPLETE;
                         sb.append(context.getText(
                     com.android.internal.R.string.serviceRegistered));
-                    } //End block
+                    } 
                     {
                         boolean var4C83CC598DD8ACFB794FA2BD7EA1E761_1092950244 = (isErasure());
                         {
                             state = State.COMPLETE;
                             sb.append(context.getText(
                     com.android.internal.R.string.serviceErased));
-                        } //End block
+                        } 
                         {
                             state = State.FAILED;
                             sb.append(context.getText(
                     com.android.internal.R.string.mmiError));
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         message = sb;
         phone.onMMIDone(this);
         addTaint(ar.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.345 -0400", hash_original_method = "E00F9D791A3B8B3DD19100E46A3BBC7E", hash_generated_method = "3BCEDCB9E8486F8B6B0CD0752DB13127")
     private void onGetClirComplete(AsyncResult ar) {
         StringBuilder sb = new StringBuilder(getScString());
@@ -1143,153 +1164,155 @@ public final class GsmMmiCode extends Handler implements MmiCode {
         {
             state = State.FAILED;
             sb.append(getErrorMessage(ar));
-        } //End block
+        } 
         {
             int clirArgs[];
             clirArgs = (int[])ar.result;
-            //Begin case 0 
+            
             sb.append(context.getText(
                                 com.android.internal.R.string.serviceNotProvisioned));
-            //End case 0 
-            //Begin case 0 
+            
+            
             state = State.COMPLETE;
-            //End case 0 
-            //Begin case 1 
+            
+            
             sb.append(context.getText(
                                 com.android.internal.R.string.CLIRPermanent));
-            //End case 1 
-            //Begin case 1 
+            
+            
             state = State.COMPLETE;
-            //End case 1 
-            //Begin case 2 
+            
+            
             sb.append(context.getText(
                                 com.android.internal.R.string.mmiError));
-            //End case 2 
-            //Begin case 2 
+            
+            
             state = State.FAILED;
-            //End case 2 
-            //Begin case 3 
-            //Begin case default 0 
+            
+            
+            
             sb.append(context.getText(
                                     com.android.internal.R.string.CLIRDefaultOnNextCallOn));
-            //End case default 0 
-            //Begin case 1 
+            
+            
             sb.append(context.getText(
                                     com.android.internal.R.string.CLIRDefaultOnNextCallOn));
-            //End case 1 
-            //Begin case 2 
+            
+            
             sb.append(context.getText(
                                     com.android.internal.R.string.CLIRDefaultOnNextCallOff));
-            //End case 2 
-            //End case 3 
-            //Begin case 3 
+            
+            
+            
             state = State.COMPLETE;
-            //End case 3 
-            //Begin case 4 
-            //Begin case default 0 
+            
+            
+            
             sb.append(context.getText(
                                     com.android.internal.R.string.CLIRDefaultOffNextCallOff));
-            //End case default 0 
-            //Begin case 1 
+            
+            
             sb.append(context.getText(
                                     com.android.internal.R.string.CLIRDefaultOffNextCallOn));
-            //End case 1 
-            //Begin case 2 
+            
+            
             sb.append(context.getText(
                                     com.android.internal.R.string.CLIRDefaultOffNextCallOff));
-            //End case 2 
-            //End case 4 
-            //Begin case 4 
+            
+            
+            
             state = State.COMPLETE;
-            //End case 4 
-        } //End block
+            
+        } 
         message = sb;
         phone.onMMIDone(this);
         addTaint(ar.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.346 -0400", hash_original_method = "8B6CA3810AD4ECA237178B5B4043C8E2", hash_generated_method = "6DAF461CE6E1063494235A1CCAA54A06")
     private CharSequence serviceClassToCFString(int serviceClass) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_17881490 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_45169067 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1831165433 = null; //Variable for return #3
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_236588258 = null; //Variable for return #4
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_322427114 = null; //Variable for return #5
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1146237191 = null; //Variable for return #6
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_840481117 = null; //Variable for return #7
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_631830526 = null; //Variable for return #8
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_793227656 = null; //Variable for return #9
-        //Begin case SERVICE_CLASS_VOICE 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_17881490 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_45169067 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1831165433 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_236588258 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_322427114 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1146237191 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_840481117 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_631830526 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_793227656 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_17881490 = context.getText(com.android.internal.R.string.serviceClassVoice);
-        //End case SERVICE_CLASS_VOICE 
-        //Begin case SERVICE_CLASS_DATA 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_45169067 = context.getText(com.android.internal.R.string.serviceClassData);
-        //End case SERVICE_CLASS_DATA 
-        //Begin case SERVICE_CLASS_FAX 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1831165433 = context.getText(com.android.internal.R.string.serviceClassFAX);
-        //End case SERVICE_CLASS_FAX 
-        //Begin case SERVICE_CLASS_SMS 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_236588258 = context.getText(com.android.internal.R.string.serviceClassSMS);
-        //End case SERVICE_CLASS_SMS 
-        //Begin case SERVICE_CLASS_DATA_SYNC 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_322427114 = context.getText(com.android.internal.R.string.serviceClassDataSync);
-        //End case SERVICE_CLASS_DATA_SYNC 
-        //Begin case SERVICE_CLASS_DATA_ASYNC 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1146237191 = context.getText(com.android.internal.R.string.serviceClassDataAsync);
-        //End case SERVICE_CLASS_DATA_ASYNC 
-        //Begin case SERVICE_CLASS_PACKET 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_840481117 = context.getText(com.android.internal.R.string.serviceClassPacket);
-        //End case SERVICE_CLASS_PACKET 
-        //Begin case SERVICE_CLASS_PAD 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_631830526 = context.getText(com.android.internal.R.string.serviceClassPAD);
-        //End case SERVICE_CLASS_PAD 
-        //Begin case default 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_793227656 = null;
-        //End case default 
+        
         addTaint(serviceClass);
-        CharSequence varA7E53CE21691AB073D9660D615818899_536913980; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_536913980; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_17881490;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_45169067;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_1831165433;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_236588258;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_322427114;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_1146237191;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_840481117;
                 break;
-            case 8: //Assign result for return ordinal #8
+            case 8: 
                 varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_631830526;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_536913980 = varB4EAC82CA7396A68D541C85D26508E83_793227656;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_536913980.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_536913980.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_536913980;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.348 -0400", hash_original_method = "ECAE8AA4EBDE1134552CC635B1F3D0F6", hash_generated_method = "C6FC8B34101C158F6410D4A561E71652")
     private CharSequence makeCFQueryResultMessage(CallForwardInfo info, int serviceClassMask) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_226358780 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_226358780 = null; 
         CharSequence template;
         String sources[] = {"{0}", "{1}", "{2}"};
         CharSequence destinations[] = new CharSequence[3];
@@ -1300,46 +1323,47 @@ public final class GsmMmiCode extends Handler implements MmiCode {
             {
                 template = context.getText(
                         com.android.internal.R.string.cfTemplateForwardedTime);
-            } //End block
+            } 
             {
                 template = context.getText(
                         com.android.internal.R.string.cfTemplateForwarded);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean var8E4CE04EDC775CBCECD23931344407DA_2102997395 = (info.status == 0 && isEmptyOrNull(info.number));
             {
                 template = context.getText(
                         com.android.internal.R.string.cfTemplateNotForwarded);
-            } //End block
+            } 
             {
                 {
                     template = context.getText(
                         com.android.internal.R.string.cfTemplateRegisteredTime);
-                } //End block
+                } 
                 {
                     template = context.getText(
                         com.android.internal.R.string.cfTemplateRegistered);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         destinations[0] = serviceClassToCFString(info.serviceClass & serviceClassMask);
         destinations[1] = PhoneNumberUtils.stringFromStringAndTOA(info.number, info.toa);
         destinations[2] = Integer.toString(info.timeSeconds);
         {
             boolean cffEnabled = (info.status == 1);
             phone.mIccRecords.setVoiceCallForwardingFlag(1, cffEnabled);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_226358780 = TextUtils.replace(template, sources, destinations);
         addTaint(info.getTaint());
         addTaint(serviceClassMask);
-        varB4EAC82CA7396A68D541C85D26508E83_226358780.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_226358780.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_226358780;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.350 -0400", hash_original_method = "5082D13BAC647DFAEF8F3236E64BC951", hash_generated_method = "97E753E0D6C42AD836BBB9B6C20A79BD")
     private void onQueryCfComplete(AsyncResult ar) {
         StringBuilder sb = new StringBuilder(getScString());
@@ -1347,14 +1371,14 @@ public final class GsmMmiCode extends Handler implements MmiCode {
         {
             state = State.FAILED;
             sb.append(getErrorMessage(ar));
-        } //End block
+        } 
         {
             CallForwardInfo infos[];
             infos = (CallForwardInfo[]) ar.result;
             {
                 sb.append(context.getText(com.android.internal.R.string.serviceDisabled));
                 phone.mIccRecords.setVoiceCallForwardingFlag(1, false);
-            } //End block
+            } 
             {
                 SpannableStringBuilder tb = new SpannableStringBuilder();
                 {
@@ -1369,23 +1393,24 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                                     tb.append(makeCFQueryResultMessage(infos[i],
                                             serviceClassMask));
                                     tb.append("\n");
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 sb.append(tb);
-            } //End block
+            } 
             state = State.COMPLETE;
-        } //End block
+        } 
         message = sb;
         phone.onMMIDone(this);
         addTaint(ar.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.351 -0400", hash_original_method = "34E140E893F772F43554211DC345FDB0", hash_generated_method = "C3FD401C88BDD58D785DE45636968931")
     private void onQueryComplete(AsyncResult ar) {
         StringBuilder sb = new StringBuilder(getScString());
@@ -1393,48 +1418,49 @@ public final class GsmMmiCode extends Handler implements MmiCode {
         {
             state = State.FAILED;
             sb.append(getErrorMessage(ar));
-        } //End block
+        } 
         {
             int[] ints = (int[])ar.result;
             {
                 {
                     sb.append(context.getText(com.android.internal.R.string.serviceDisabled));
-                } //End block
+                } 
                 {
                     boolean var080A5A128C565A100A91BE3125C6E632_254156049 = (sc.equals(SC_WAIT));
                     {
                         sb.append(createQueryCallWaitingResultMessage(ints[1]));
-                    } //End block
+                    } 
                     {
                         boolean var5C4CEC64D984C092A00EC9F31984726F_1841995772 = (isServiceCodeCallBarring(sc));
                         {
                             sb.append(createQueryCallBarringResultMessage(ints[0]));
-                        } //End block
+                        } 
                         {
                             sb.append(context.getText(com.android.internal.R.string.serviceEnabled));
-                        } //End block
+                        } 
                         {
                             sb.append(context.getText(com.android.internal.R.string.mmiError));
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 sb.append(context.getText(com.android.internal.R.string.mmiError));
-            } //End block
+            } 
             state = State.COMPLETE;
-        } //End block
+        } 
         message = sb;
         phone.onMMIDone(this);
         addTaint(ar.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.355 -0400", hash_original_method = "8FB50CB401051839B48C4DBAEAA3D5D3", hash_generated_method = "F1BF189F16C77F9718700E93FEFD0C75")
     private CharSequence createQueryCallWaitingResultMessage(int serviceClass) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2060092274 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2060092274 = null; 
         StringBuilder sb = new StringBuilder(context.getText(com.android.internal.R.string.serviceEnabledFor));
         {
             int classMask = 1;
@@ -1443,32 +1469,33 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                 {
                     sb.append("\n");
                     sb.append(serviceClassToCFString(classMask & serviceClass));
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2060092274 = sb;
         addTaint(serviceClass);
-        varB4EAC82CA7396A68D541C85D26508E83_2060092274.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2060092274.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2060092274;
-        // ---------- Original Method ----------
-        //StringBuilder sb =
-                //new StringBuilder(context.getText(com.android.internal.R.string.serviceEnabledFor));
-        //for (int classMask = 1
-                    //; classMask <= SERVICE_CLASS_MAX
-                    //; classMask <<= 1
-        //) {
-            //if ((classMask & serviceClass) != 0) {
-                //sb.append("\n");
-                //sb.append(serviceClassToCFString(classMask & serviceClass));
-            //}
-        //}
-        //return sb;
+        
+        
+                
+        
+                    
+                    
+        
+            
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.357 -0400", hash_original_method = "C357AC638D1646361DDD93B23863C2E5", hash_generated_method = "017561D57D97658AB7F896E8159837F0")
     private CharSequence createQueryCallBarringResultMessage(int serviceClass) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1823456359 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1823456359 = null; 
         StringBuilder sb = new StringBuilder(context.getText(com.android.internal.R.string.serviceEnabledFor));
         {
             int classMask = 1;
@@ -1477,32 +1504,33 @@ public final class GsmMmiCode extends Handler implements MmiCode {
                 {
                     sb.append("\n");
                     sb.append(serviceClassToCFString(classMask & serviceClass));
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1823456359 = sb;
         addTaint(serviceClass);
-        varB4EAC82CA7396A68D541C85D26508E83_1823456359.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1823456359.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1823456359;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(context.getText(com.android.internal.R.string.serviceEnabledFor));
-        //for (int classMask = 1
-                    //; classMask <= SERVICE_CLASS_MAX
-                    //; classMask <<= 1
-        //) {
-            //if ((classMask & serviceClass) != 0) {
-                //sb.append("\n");
-                //sb.append(serviceClassToCFString(classMask & serviceClass));
-            //}
-        //}
-        //return sb;
+        
+        
+        
+                    
+                    
+        
+            
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.359 -0400", hash_original_method = "4616EBEA9D2FF88EEA02D51F5D1F1A7C", hash_generated_method = "98B27A77727AFB65F74FED4DC5E38878")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1783217405 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1783217405 = null; 
         StringBuilder sb = new StringBuilder("GsmMmiCode {");
         sb.append("State=" + getState());
         sb.append(" action=" + action);
@@ -1515,21 +1543,21 @@ public final class GsmMmiCode extends Handler implements MmiCode {
         sb.append(" pwd=" + pwd);
         sb.append("}");
         varB4EAC82CA7396A68D541C85D26508E83_1783217405 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1783217405.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1783217405.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1783217405;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder("GsmMmiCode {");
-        //sb.append("State=" + getState());
-        //if (action != null) sb.append(" action=" + action);
-        //if (sc != null) sb.append(" sc=" + sc);
-        //if (sia != null) sb.append(" sia=" + sia);
-        //if (sib != null) sb.append(" sib=" + sib);
-        //if (sic != null) sb.append(" sic=" + sic);
-        //if (poundString != null) sb.append(" poundString=" + poundString);
-        //if (dialingNumber != null) sb.append(" dialingNumber=" + dialingNumber);
-        //if (pwd != null) sb.append(" pwd=" + pwd);
-        //sb.append("}");
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

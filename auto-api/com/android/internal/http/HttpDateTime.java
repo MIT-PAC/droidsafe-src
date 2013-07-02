@@ -1,11 +1,11 @@
 package com.android.internal.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.text.format.Time;
 import java.util.Calendar;
@@ -17,10 +17,11 @@ public final class HttpDateTime {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.159 -0400", hash_original_method = "7CB4B1DA681A2A8A056262512BDE8871", hash_generated_method = "7CB4B1DA681A2A8A056262512BDE8871")
     public HttpDateTime ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static long parse(String timeString) throws IllegalArgumentException {
         int date = 1;
         int month = Calendar.JANUARY;
@@ -55,6 +56,7 @@ public final class HttpDateTime {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getDate(String dateString) {
         if (dateString.length() == 2) {
             return (dateString.charAt(0) - '0') * 10
@@ -65,6 +67,7 @@ public final class HttpDateTime {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getMonth(String monthString) {
         int hash = Character.toLowerCase(monthString.charAt(0)) +
                 Character.toLowerCase(monthString.charAt(1)) +
@@ -100,6 +103,7 @@ public final class HttpDateTime {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getYear(String yearString) {
         if (yearString.length() == 2) {
             int year = (yearString.charAt(0) - '0') * 10
@@ -125,6 +129,7 @@ public final class HttpDateTime {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static TimeOfDay getTime(String timeString) {
         int i = 0;
         int hour = timeString.charAt(i++) - '0';
@@ -156,10 +161,10 @@ public final class HttpDateTime {
             this.hour = h;
             this.minute = m;
             this.second = s;
-            // ---------- Original Method ----------
-            //this.hour = h;
-            //this.minute = m;
-            //this.second = s;
+            
+            
+            
+            
         }
 
         

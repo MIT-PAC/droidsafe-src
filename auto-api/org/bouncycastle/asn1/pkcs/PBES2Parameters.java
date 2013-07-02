@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.pkcs;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Enumeration;
 import org.bouncycastle.asn1.ASN1Encodable;
@@ -32,25 +32,25 @@ public class PBES2Parameters extends ASN1Encodable implements PKCSObjectIdentifi
             boolean varA792FD017A352E961DB7DCD6D1BF50FD_1369137357 = (funcSeq.getObjectAt(0).equals(id_PBKDF2));
             {
                 func = new KeyDerivationFunc(id_PBKDF2, PBKDF2Params.getInstance(funcSeq.getObjectAt(1)));
-            } //End block
+            } 
             {
                 func = new KeyDerivationFunc(funcSeq);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         scheme = (EncryptionScheme)EncryptionScheme.getInstance(e.nextElement());
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //Enumeration e = obj.getObjects();
-        //ASN1Sequence  funcSeq = ASN1Sequence.getInstance(((DEREncodable)e.nextElement()).getDERObject());
-        //if (funcSeq.getObjectAt(0).equals(id_PBKDF2))
-        //{
-            //func = new KeyDerivationFunc(id_PBKDF2, PBKDF2Params.getInstance(funcSeq.getObjectAt(1)));
-        //}
-        //else
-        //{
-            //func = new KeyDerivationFunc(funcSeq);
-        //}
-        //scheme = (EncryptionScheme)EncryptionScheme.getInstance(e.nextElement());
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -70,40 +70,40 @@ public class PBES2Parameters extends ASN1Encodable implements PKCSObjectIdentifi
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.079 -0400", hash_original_method = "EA8CB9021471F89DCA3D4DA5F755F4FC", hash_generated_method = "BC3E93C0E257E918D262EEDB6FDAC512")
     public KeyDerivationFunc getKeyDerivationFunc() {
-        KeyDerivationFunc varB4EAC82CA7396A68D541C85D26508E83_211277582 = null; //Variable for return #1
+        KeyDerivationFunc varB4EAC82CA7396A68D541C85D26508E83_211277582 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_211277582 = func;
-        varB4EAC82CA7396A68D541C85D26508E83_211277582.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_211277582.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_211277582;
-        // ---------- Original Method ----------
-        //return func;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.079 -0400", hash_original_method = "9053FDAC6FE0628F4B096189E8DDF584", hash_generated_method = "6E515C5818E3560A039FEE028201DD26")
     public EncryptionScheme getEncryptionScheme() {
-        EncryptionScheme varB4EAC82CA7396A68D541C85D26508E83_572772758 = null; //Variable for return #1
+        EncryptionScheme varB4EAC82CA7396A68D541C85D26508E83_572772758 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_572772758 = scheme;
-        varB4EAC82CA7396A68D541C85D26508E83_572772758.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_572772758.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_572772758;
-        // ---------- Original Method ----------
-        //return scheme;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.080 -0400", hash_original_method = "489B41034DC44CEDA69ABA933292B2BB", hash_generated_method = "7334E8FD313DACFCC5DEB950F3177115")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1126040103 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1126040103 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(func);
         v.add(scheme);
         varB4EAC82CA7396A68D541C85D26508E83_1126040103 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_1126040103.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1126040103.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1126040103;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(func);
-        //v.add(scheme);
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
     }
 
     

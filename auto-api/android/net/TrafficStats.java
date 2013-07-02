@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.DownloadManager;
 import android.app.backup.BackupManager;
@@ -24,30 +24,35 @@ public class TrafficStats {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.047 -0400", hash_original_method = "0A5769A7A7853AFB0195EA94063CCE5B", hash_generated_method = "0A5769A7A7853AFB0195EA94063CCE5B")
     public TrafficStats ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void setThreadStatsTag(int tag) {
         NetworkManagementSocketTagger.setThreadSocketStatsTag(tag);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getThreadStatsTag() {
         return NetworkManagementSocketTagger.getThreadSocketStatsTag();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void clearThreadStatsTag() {
         NetworkManagementSocketTagger.setThreadSocketStatsTag(-1);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setThreadStatsUid(int uid) {
         NetworkManagementSocketTagger.setThreadSocketStatsUid(uid);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void clearThreadStatsUid() {
         NetworkManagementSocketTagger.setThreadSocketStatsUid(-1);
     }
@@ -63,6 +68,7 @@ public class TrafficStats {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startDataProfiling(Context context) {
         synchronized (sProfilingLock) {
             if (sActiveProfilingStart != null) {
@@ -73,6 +79,7 @@ public class TrafficStats {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NetworkStats stopDataProfiling(Context context) {
         synchronized (sProfilingLock) {
             if (sActiveProfilingStart == null) {
@@ -90,12 +97,14 @@ public class TrafficStats {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void incrementOperationCount(int operationCount) {
         final int tag = getThreadStatsTag();
         incrementOperationCount(tag, operationCount);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void incrementOperationCount(int tag, int operationCount) {
         final INetworkStatsService statsService = INetworkStatsService.Stub.asInterface(
                 ServiceManager.getService(Context.NETWORK_STATS_SERVICE));
@@ -228,6 +237,7 @@ public class TrafficStats {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static NetworkStats getDataLayerSnapshotForUid(Context context) {
         final INetworkStatsService statsService = INetworkStatsService.Stub.asInterface(
                 ServiceManager.getService(Context.NETWORK_STATS_SERVICE));

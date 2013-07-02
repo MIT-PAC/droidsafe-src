@@ -1,11 +1,11 @@
 package javax.xml.parsers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.xml.validation.Schema;
 import org.apache.harmony.xml.parsers.SAXParserFactoryImpl;
@@ -23,10 +23,11 @@ public abstract class SAXParserFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.875 -0400", hash_original_method = "5B4969E70C1A248827CF399EDBDC2A24", hash_generated_method = "75917AE4861FBF4B1ABCA31AADA8B4D1")
     protected  SAXParserFactory() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SAXParserFactory newInstance() {
         return new SAXParserFactoryImpl();
     }
@@ -62,16 +63,16 @@ public abstract class SAXParserFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.876 -0400", hash_original_method = "6A0A7EFC1E675DD90B546C7A4C9B47EE", hash_generated_method = "98A9EE2B3964663F64D1613FA6F20ABE")
     public void setNamespaceAware(boolean awareness) {
         this.namespaceAware = awareness;
-        // ---------- Original Method ----------
-        //this.namespaceAware = awareness;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.876 -0400", hash_original_method = "55B714FD0DC17953A4D0F6C9203268D6", hash_generated_method = "599F2B5B61FB8B7D3C2CD0C1E871774F")
     public void setValidating(boolean validating) {
         this.validating = validating;
-        // ---------- Original Method ----------
-        //this.validating = validating;
+        
+        
     }
 
     
@@ -79,8 +80,8 @@ public abstract class SAXParserFactory {
     public boolean isNamespaceAware() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1545975173 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1545975173;
-        // ---------- Original Method ----------
-        //return namespaceAware;
+        
+        
     }
 
     
@@ -88,8 +89,8 @@ public abstract class SAXParserFactory {
     public boolean isValidating() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1608512977 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1608512977;
-        // ---------- Original Method ----------
-        //return validating;
+        
+        
     }
 
     
@@ -103,6 +104,7 @@ public abstract class SAXParserFactory {
                 SAXNotSupportedException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.877 -0400", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "2E2EBD7A2D5464481CAA84ECE27CE0D0")
     public Schema getSchema() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
@@ -114,17 +116,18 @@ public abstract class SAXParserFactory {
             );
         
         return (Schema)new Object();
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.878 -0400", hash_original_method = "15A4A50F8E3104FAC414471F9078A720", hash_generated_method = "10FDF01C45401D687ED9E46F9A9C2D8D")
     public void setSchema(Schema schema) {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
@@ -135,14 +138,14 @@ public abstract class SAXParserFactory {
             + "\""
             );
         addTaint(schema.getTaint());
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     
@@ -156,17 +159,18 @@ public abstract class SAXParserFactory {
             + "\""
             );
         addTaint(state);
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.879 -0400", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "F68BE2E02EC1B4E011C10D56E615F28D")
     public boolean isXIncludeAware() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
@@ -178,14 +182,14 @@ public abstract class SAXParserFactory {
             );
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_253117257 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_253117257;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     

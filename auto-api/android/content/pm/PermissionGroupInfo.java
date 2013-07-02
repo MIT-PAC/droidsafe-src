@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -21,7 +21,7 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.828 -0400", hash_original_method = "82344B3D2D2745586AE3E2C39F67E56D", hash_generated_method = "C344FD7EBA0ACA0405579BE9BC8FB4E5")
     public  PermissionGroupInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,9 +30,9 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
         super(orig);
         descriptionRes = orig.descriptionRes;
         nonLocalizedDescription = orig.nonLocalizedDescription;
-        // ---------- Original Method ----------
-        //descriptionRes = orig.descriptionRes;
-        //nonLocalizedDescription = orig.nonLocalizedDescription;
+        
+        
+        
     }
 
     
@@ -41,68 +41,70 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
         super(source);
         descriptionRes = source.readInt();
         nonLocalizedDescription = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        // ---------- Original Method ----------
-        //descriptionRes = source.readInt();
-        //nonLocalizedDescription = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.831 -0400", hash_original_method = "EA6AC5CC522A2884BAFD1D1CC4525D81", hash_generated_method = "B269D866A5E763F3E54EC20F7EC56B0A")
     public CharSequence loadDescription(PackageManager pm) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1219109283 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1137065099 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_992943612 = null; //Variable for return #3
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1219109283 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1137065099 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_992943612 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1219109283 = nonLocalizedDescription;
-        } //End block
+        } 
         {
             CharSequence label = pm.getText(packageName, descriptionRes, null);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1137065099 = label;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_992943612 = null;
         addTaint(pm.getTaint());
-        CharSequence varA7E53CE21691AB073D9660D615818899_178380663; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_178380663; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_178380663 = varB4EAC82CA7396A68D541C85D26508E83_1219109283;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_178380663 = varB4EAC82CA7396A68D541C85D26508E83_1137065099;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_178380663 = varB4EAC82CA7396A68D541C85D26508E83_992943612;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_178380663.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_178380663.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_178380663;
-        // ---------- Original Method ----------
-        //if (nonLocalizedDescription != null) {
-            //return nonLocalizedDescription;
-        //}
-        //if (descriptionRes != 0) {
-            //CharSequence label = pm.getText(packageName, descriptionRes, null);
-            //if (label != null) {
-                //return label;
-            //}
-        //}
-        //return null;
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.833 -0400", hash_original_method = "712313A7FB39E8068296CCC509012BB3", hash_generated_method = "694280D24492C11168723880D2E0D47B")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_384054110 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_384054110 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_384054110 = "PermissionGroupInfo{"
             + Integer.toHexString(System.identityHashCode(this))
             + " " + name + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_384054110.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_384054110.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_384054110;
-        // ---------- Original Method ----------
-        //return "PermissionGroupInfo{"
-            //+ Integer.toHexString(System.identityHashCode(this))
-            //+ " " + name + "}";
+        
+        
+            
+            
     }
 
     
@@ -110,11 +112,12 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_58784206 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_58784206;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.835 -0400", hash_original_method = "48DC2E300D4B0399A780C6669617C26B", hash_generated_method = "78475FB280E9FDF2A4BBFEC200A2A74F")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         super.writeToParcel(dest, parcelableFlags);
@@ -122,10 +125,10 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
         TextUtils.writeToParcel(nonLocalizedDescription, dest, parcelableFlags);
         addTaint(dest.getTaint());
         addTaint(parcelableFlags);
-        // ---------- Original Method ----------
-        //super.writeToParcel(dest, parcelableFlags);
-        //dest.writeInt(descriptionRes);
-        //TextUtils.writeToParcel(nonLocalizedDescription, dest, parcelableFlags);
+        
+        
+        
+        
     }
 
     
@@ -140,12 +143,12 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
             return new PermissionGroupInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public PermissionGroupInfo createFromParcel(Parcel source) {
             return new PermissionGroupInfo(source);
         }
     
-    // orphaned legacy method
+    
     public PermissionGroupInfo[] newArray(int size) {
             return new PermissionGroupInfo[size];
         }

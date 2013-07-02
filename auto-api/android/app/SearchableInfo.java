@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -156,16 +156,16 @@ public final class SearchableInfo implements Parcelable {
             ProviderInfo pi = pm.resolveContentProvider(mSuggestAuthority, 0);
             {
                 suggestProviderPackage = pi.packageName;
-            } //End block
-        } //End block
+            } 
+        } 
         mSuggestProviderPackage = suggestProviderPackage;
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Search label must be a resource reference.");
-        } //End block
+        } 
         addTaint(activityContext.getTaint());
         addTaint(attr.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -193,49 +193,49 @@ public final class SearchableInfo implements Parcelable {
             int count = in.readInt();
             {
                 addActionKey(new ActionKeyInfo(in));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mSuggestProviderPackage = in.readString();
         mVoiceSearchMode = in.readInt();
         mVoiceLanguageModeId = in.readInt();
         mVoicePromptTextId = in.readInt();
         mVoiceLanguageId = in.readInt();
         mVoiceMaxResults = in.readInt();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.340 -0400", hash_original_method = "9CC6B7578CF19F95DF8C884BF5987E46", hash_generated_method = "145E075B397CDE9A9578D57AB1D9175B")
     public String getSuggestAuthority() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1273857462 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1273857462 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1273857462 = mSuggestAuthority;
-        varB4EAC82CA7396A68D541C85D26508E83_1273857462.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1273857462.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1273857462;
-        // ---------- Original Method ----------
-        //return mSuggestAuthority;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.341 -0400", hash_original_method = "BE8BEFD3C329420CF7D6C5DA35EA0FF0", hash_generated_method = "37DF9BB531FC365F3C11C2C45C637313")
     public String getSuggestPackage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_434807813 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_434807813 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_434807813 = mSuggestProviderPackage;
-        varB4EAC82CA7396A68D541C85D26508E83_434807813.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_434807813.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_434807813;
-        // ---------- Original Method ----------
-        //return mSuggestProviderPackage;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.342 -0400", hash_original_method = "F3041DF7A3866005E32579E92AEBEE6A", hash_generated_method = "97A19A7F98D7961CCB45BCE251ADC8C8")
     public ComponentName getSearchActivity() {
-        ComponentName varB4EAC82CA7396A68D541C85D26508E83_1565265717 = null; //Variable for return #1
+        ComponentName varB4EAC82CA7396A68D541C85D26508E83_1565265717 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1565265717 = mSearchActivity;
-        varB4EAC82CA7396A68D541C85D26508E83_1565265717.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1565265717.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1565265717;
-        // ---------- Original Method ----------
-        //return mSearchActivity;
+        
+        
     }
 
     
@@ -243,8 +243,8 @@ public final class SearchableInfo implements Parcelable {
     public boolean useBadgeLabel() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_575605875 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_575605875;
-        // ---------- Original Method ----------
-        //return 0 != (mSearchMode & SEARCH_MODE_BADGE_LABEL);
+        
+        
     }
 
     
@@ -252,8 +252,8 @@ public final class SearchableInfo implements Parcelable {
     public boolean useBadgeIcon() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1313486974 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1313486974;
-        // ---------- Original Method ----------
-        //return (0 != (mSearchMode & SEARCH_MODE_BADGE_ICON)) && (mIconId != 0);
+        
+        
     }
 
     
@@ -261,8 +261,8 @@ public final class SearchableInfo implements Parcelable {
     public boolean shouldRewriteQueryFromData() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_940651581 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_940651581;
-        // ---------- Original Method ----------
-        //return 0 != (mSearchMode & SEARCH_MODE_QUERY_REWRITE_FROM_DATA);
+        
+        
     }
 
     
@@ -270,8 +270,8 @@ public final class SearchableInfo implements Parcelable {
     public boolean shouldRewriteQueryFromText() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1119734029 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1119734029;
-        // ---------- Original Method ----------
-        //return 0 != (mSearchMode & SEARCH_MODE_QUERY_REWRITE_FROM_TEXT);
+        
+        
     }
 
     
@@ -279,52 +279,52 @@ public final class SearchableInfo implements Parcelable {
     public int getSettingsDescriptionId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_401549345 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_401549345;
-        // ---------- Original Method ----------
-        //return mSettingsDescriptionId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.345 -0400", hash_original_method = "E8F19B2AFF47ACFE52244E7315CE6CBA", hash_generated_method = "8D4B90781218EA16C9F2FFB78D445ED1")
     public String getSuggestPath() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1608235765 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1608235765 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1608235765 = mSuggestPath;
-        varB4EAC82CA7396A68D541C85D26508E83_1608235765.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1608235765.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1608235765;
-        // ---------- Original Method ----------
-        //return mSuggestPath;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.346 -0400", hash_original_method = "03B94AF5E978777AF0A4DF7C1D53B2F0", hash_generated_method = "D087447E0014545D373E7677D7148CC5")
     public String getSuggestSelection() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1511305598 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1511305598 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1511305598 = mSuggestSelection;
-        varB4EAC82CA7396A68D541C85D26508E83_1511305598.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1511305598.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1511305598;
-        // ---------- Original Method ----------
-        //return mSuggestSelection;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.346 -0400", hash_original_method = "41669F0953535FACC4B7926CFCBDA8A1", hash_generated_method = "6EC763408CFD2C0693460C2B9CA747E3")
     public String getSuggestIntentAction() {
-        String varB4EAC82CA7396A68D541C85D26508E83_915914853 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_915914853 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_915914853 = mSuggestIntentAction;
-        varB4EAC82CA7396A68D541C85D26508E83_915914853.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_915914853.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_915914853;
-        // ---------- Original Method ----------
-        //return mSuggestIntentAction;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.347 -0400", hash_original_method = "E2551EFF005AD652F4CA5C2DEBD8F1C5", hash_generated_method = "DB0EE6EBA8B4D934B4F71A99DA33C75A")
     public String getSuggestIntentData() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2043246041 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2043246041 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2043246041 = mSuggestIntentData;
-        varB4EAC82CA7396A68D541C85D26508E83_2043246041.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2043246041.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2043246041;
-        // ---------- Original Method ----------
-        //return mSuggestIntentData;
+        
+        
     }
 
     
@@ -332,23 +332,25 @@ public final class SearchableInfo implements Parcelable {
     public int getSuggestThreshold() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1808277881 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1808277881;
-        // ---------- Original Method ----------
-        //return mSuggestThreshold;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.348 -0400", hash_original_method = "BBBE2BBFCBFB429E05BB475016E66C58", hash_generated_method = "342CF5C2733EC7EAD6581381645FAFA5")
     public Context getActivityContext(Context context) {
-        Context varB4EAC82CA7396A68D541C85D26508E83_1838625243 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_1838625243 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1838625243 = createActivityContext(context, mSearchActivity);
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1838625243.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1838625243.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1838625243;
-        // ---------- Original Method ----------
-        //return createActivityContext(context, mSearchActivity);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Context createActivityContext(Context context, ComponentName activity) {
         Context theirContext = null;
         try {
@@ -362,100 +364,104 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.350 -0400", hash_original_method = "B0B7C6DE2D55DA45CA53022A0C4DE186", hash_generated_method = "AA12DB7BC8A324407962257B02F0C886")
     public Context getProviderContext(Context context, Context activityContext) {
-        Context varB4EAC82CA7396A68D541C85D26508E83_1188146310 = null; //Variable for return #1
-        Context varB4EAC82CA7396A68D541C85D26508E83_1353672480 = null; //Variable for return #2
+        Context varB4EAC82CA7396A68D541C85D26508E83_1188146310 = null; 
+        Context varB4EAC82CA7396A68D541C85D26508E83_1353672480 = null; 
         Context theirContext = null;
         {
             boolean var662F2259AD79A168878A3D91EA7F3EAE_1172728414 = (mSearchActivity.getPackageName().equals(mSuggestProviderPackage));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1188146310 = activityContext;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             try 
             {
                 theirContext = context.createPackageContext(mSuggestProviderPackage, 0);
-            } //End block
+            } 
             catch (PackageManager.NameNotFoundException e)
             { }
             catch (java.lang.SecurityException e)
             { }
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1353672480 = theirContext;
         addTaint(context.getTaint());
         addTaint(activityContext.getTaint());
-        Context varA7E53CE21691AB073D9660D615818899_1019182417; //Final return value
+        Context varA7E53CE21691AB073D9660D615818899_1019182417; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1019182417 = varB4EAC82CA7396A68D541C85D26508E83_1188146310;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1019182417 = varB4EAC82CA7396A68D541C85D26508E83_1353672480;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1019182417.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1019182417.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1019182417;
-        // ---------- Original Method ----------
-        //Context theirContext = null;
-        //if (mSearchActivity.getPackageName().equals(mSuggestProviderPackage)) {
-            //return activityContext;
-        //}
-        //if (mSuggestProviderPackage != null) {
-            //try {
-                //theirContext = context.createPackageContext(mSuggestProviderPackage, 0);
-            //} catch (PackageManager.NameNotFoundException e) {
-            //} catch (java.lang.SecurityException e) {
-            //}
-        //}
-        //return theirContext;
+        
+        
+        
+            
+        
+        
+            
+                
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.351 -0400", hash_original_method = "642EB13C162B9C3DDBE9F6D8F3F1EFAB", hash_generated_method = "1754DBA7078661E2CBC9A46F59A56F04")
     public ActionKeyInfo findActionKey(int keyCode) {
-        ActionKeyInfo varB4EAC82CA7396A68D541C85D26508E83_1804398237 = null; //Variable for return #1
-        ActionKeyInfo varB4EAC82CA7396A68D541C85D26508E83_234810158 = null; //Variable for return #2
+        ActionKeyInfo varB4EAC82CA7396A68D541C85D26508E83_1804398237 = null; 
+        ActionKeyInfo varB4EAC82CA7396A68D541C85D26508E83_234810158 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1804398237 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_234810158 = mActionKeys.get(keyCode);
         addTaint(keyCode);
-        ActionKeyInfo varA7E53CE21691AB073D9660D615818899_825173180; //Final return value
+        ActionKeyInfo varA7E53CE21691AB073D9660D615818899_825173180; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_825173180 = varB4EAC82CA7396A68D541C85D26508E83_1804398237;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_825173180 = varB4EAC82CA7396A68D541C85D26508E83_234810158;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_825173180.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_825173180.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_825173180;
-        // ---------- Original Method ----------
-        //if (mActionKeys == null) {
-            //return null;
-        //}
-        //return mActionKeys.get(keyCode);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.352 -0400", hash_original_method = "0D70E2215A9C7B06033D45B8CD7DC306", hash_generated_method = "8B3885ADD5612164351FBAA64868DEDA")
     private void addActionKey(ActionKeyInfo keyInfo) {
         {
             mActionKeys = new HashMap<Integer,ActionKeyInfo>();
-        } //End block
+        } 
         mActionKeys.put(keyInfo.getKeyCode(), keyInfo);
         addTaint(keyInfo.getTaint());
-        // ---------- Original Method ----------
-        //if (mActionKeys == null) {
-            //mActionKeys = new HashMap<Integer,ActionKeyInfo>();
-        //}
-        //mActionKeys.put(keyInfo.getKeyCode(), keyInfo);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SearchableInfo getActivityMetaData(Context context, ActivityInfo activityInfo) {
         XmlResourceParser xml = 
                 activityInfo.loadXmlMetaData(context.getPackageManager(), MD_LABEL_SEARCHABLE);
@@ -536,8 +542,8 @@ public final class SearchableInfo implements Parcelable {
     public int getLabelId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_678762069 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_678762069;
-        // ---------- Original Method ----------
-        //return mLabelId;
+        
+        
     }
 
     
@@ -545,8 +551,8 @@ public final class SearchableInfo implements Parcelable {
     public int getHintId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_335382418 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_335382418;
-        // ---------- Original Method ----------
-        //return mHintId;
+        
+        
     }
 
     
@@ -554,8 +560,8 @@ public final class SearchableInfo implements Parcelable {
     public int getIconId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1952383746 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1952383746;
-        // ---------- Original Method ----------
-        //return mIconId;
+        
+        
     }
 
     
@@ -563,8 +569,8 @@ public final class SearchableInfo implements Parcelable {
     public boolean getVoiceSearchEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_305450102 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_305450102;
-        // ---------- Original Method ----------
-        //return 0 != (mVoiceSearchMode & VOICE_SEARCH_SHOW_BUTTON);
+        
+        
     }
 
     
@@ -572,8 +578,8 @@ public final class SearchableInfo implements Parcelable {
     public boolean getVoiceSearchLaunchWebSearch() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_347791163 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_347791163;
-        // ---------- Original Method ----------
-        //return 0 != (mVoiceSearchMode & VOICE_SEARCH_LAUNCH_WEB_SEARCH);
+        
+        
     }
 
     
@@ -581,8 +587,8 @@ public final class SearchableInfo implements Parcelable {
     public boolean getVoiceSearchLaunchRecognizer() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1279559710 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1279559710;
-        // ---------- Original Method ----------
-        //return 0 != (mVoiceSearchMode & VOICE_SEARCH_LAUNCH_RECOGNIZER);
+        
+        
     }
 
     
@@ -590,8 +596,8 @@ public final class SearchableInfo implements Parcelable {
     public int getVoiceLanguageModeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1425458837 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1425458837;
-        // ---------- Original Method ----------
-        //return mVoiceLanguageModeId;
+        
+        
     }
 
     
@@ -599,8 +605,8 @@ public final class SearchableInfo implements Parcelable {
     public int getVoicePromptTextId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_727721551 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_727721551;
-        // ---------- Original Method ----------
-        //return mVoicePromptTextId;
+        
+        
     }
 
     
@@ -608,8 +614,8 @@ public final class SearchableInfo implements Parcelable {
     public int getVoiceLanguageId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658300383 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658300383;
-        // ---------- Original Method ----------
-        //return mVoiceLanguageId;
+        
+        
     }
 
     
@@ -617,8 +623,8 @@ public final class SearchableInfo implements Parcelable {
     public int getVoiceMaxResults() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1279961772 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1279961772;
-        // ---------- Original Method ----------
-        //return mVoiceMaxResults;
+        
+        
     }
 
     
@@ -626,8 +632,8 @@ public final class SearchableInfo implements Parcelable {
     public int getSearchButtonText() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_572594019 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_572594019;
-        // ---------- Original Method ----------
-        //return mSearchButtonText;
+        
+        
     }
 
     
@@ -635,8 +641,8 @@ public final class SearchableInfo implements Parcelable {
     public int getInputType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1545919936 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1545919936;
-        // ---------- Original Method ----------
-        //return mSearchInputType;
+        
+        
     }
 
     
@@ -644,8 +650,8 @@ public final class SearchableInfo implements Parcelable {
     public int getImeOptions() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_591156661 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_591156661;
-        // ---------- Original Method ----------
-        //return mSearchImeOptions;
+        
+        
     }
 
     
@@ -653,8 +659,8 @@ public final class SearchableInfo implements Parcelable {
     public boolean shouldIncludeInGlobalSearch() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1976860576 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1976860576;
-        // ---------- Original Method ----------
-        //return mIncludeInGlobalSearch;
+        
+        
     }
 
     
@@ -662,8 +668,8 @@ public final class SearchableInfo implements Parcelable {
     public boolean queryAfterZeroResults() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_480238730 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_480238730;
-        // ---------- Original Method ----------
-        //return mQueryAfterZeroResults;
+        
+        
     }
 
     
@@ -671,8 +677,8 @@ public final class SearchableInfo implements Parcelable {
     public boolean autoUrlDetect() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1743069911 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1743069911;
-        // ---------- Original Method ----------
-        //return mAutoUrlDetect;
+        
+        
     }
 
     
@@ -680,11 +686,12 @@ public final class SearchableInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_403689373 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_403689373;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.386 -0400", hash_original_method = "72AC80AD69CAD17D9DB571EFE399D945", hash_generated_method = "68D3623F6B86A47770470255DB72EB27")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mLabelId);
@@ -707,7 +714,7 @@ public final class SearchableInfo implements Parcelable {
         dest.writeInt(mSuggestThreshold);
         {
             dest.writeInt(0);
-        } //End block
+        } 
         {
             dest.writeInt(mActionKeys.size());
             {
@@ -716,9 +723,9 @@ public final class SearchableInfo implements Parcelable {
                 ActionKeyInfo actionKey = var4354A710EE5726955FABE86B5D81C787_1090611088.next();
                 {
                     actionKey.writeToParcel(dest, flags);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         dest.writeString(mSuggestProviderPackage);
         dest.writeInt(mVoiceSearchMode);
         dest.writeInt(mVoiceLanguageModeId);
@@ -727,8 +734,8 @@ public final class SearchableInfo implements Parcelable {
         dest.writeInt(mVoiceMaxResults);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -761,14 +768,14 @@ public final class SearchableInfo implements Parcelable {
             a.recycle();
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("No keycode.");
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("No message information.");
-            } //End block
+            } 
             addTaint(activityContext.getTaint());
             addTaint(attr.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -778,11 +785,11 @@ public final class SearchableInfo implements Parcelable {
             mQueryActionMsg = in.readString();
             mSuggestActionMsg = in.readString();
             mSuggestActionMsgColumn = in.readString();
-            // ---------- Original Method ----------
-            //mKeyCode = in.readInt();
-            //mQueryActionMsg = in.readString();
-            //mSuggestActionMsg = in.readString();
-            //mSuggestActionMsgColumn = in.readString();
+            
+            
+            
+            
+            
         }
 
         
@@ -790,41 +797,41 @@ public final class SearchableInfo implements Parcelable {
         public int getKeyCode() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_139449763 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_139449763;
-            // ---------- Original Method ----------
-            //return mKeyCode;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.390 -0400", hash_original_method = "0A4F0AAE3D0D859714A4EE4638C2A280", hash_generated_method = "C551215E8D7B8B9B73AFD68688BB1F33")
         public String getQueryActionMsg() {
-            String varB4EAC82CA7396A68D541C85D26508E83_276636291 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_276636291 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_276636291 = mQueryActionMsg;
-            varB4EAC82CA7396A68D541C85D26508E83_276636291.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_276636291.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_276636291;
-            // ---------- Original Method ----------
-            //return mQueryActionMsg;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.391 -0400", hash_original_method = "EDCBBABEEE2D0A0DD8ABF8A81407A4FD", hash_generated_method = "6670A7914144B09969714F8563EFF3A5")
         public String getSuggestActionMsg() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1682874739 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1682874739 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1682874739 = mSuggestActionMsg;
-            varB4EAC82CA7396A68D541C85D26508E83_1682874739.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1682874739.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1682874739;
-            // ---------- Original Method ----------
-            //return mSuggestActionMsg;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.392 -0400", hash_original_method = "94611E44E9C4989C8B71AAF260F46112", hash_generated_method = "243359BC00BECA62A5F9B31B76257EEA")
         public String getSuggestActionMsgColumn() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1024335002 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1024335002 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1024335002 = mSuggestActionMsgColumn;
-            varB4EAC82CA7396A68D541C85D26508E83_1024335002.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1024335002.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1024335002;
-            // ---------- Original Method ----------
-            //return mSuggestActionMsgColumn;
+            
+            
         }
 
         
@@ -832,8 +839,8 @@ public final class SearchableInfo implements Parcelable {
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_629062042 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_629062042;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
@@ -845,11 +852,11 @@ public final class SearchableInfo implements Parcelable {
             dest.writeString(mSuggestActionMsgColumn);
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //dest.writeInt(mKeyCode);
-            //dest.writeString(mQueryActionMsg);
-            //dest.writeString(mSuggestActionMsg);
-            //dest.writeString(mSuggestActionMsgColumn);
+            
+            
+            
+            
+            
         }
 
         
@@ -905,12 +912,12 @@ public final class SearchableInfo implements Parcelable {
             return new SearchableInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public SearchableInfo createFromParcel(Parcel in) {
             return new SearchableInfo(in);
         }
     
-    // orphaned legacy method
+    
     public SearchableInfo[] newArray(int size) {
             return new SearchableInfo[size];
         }

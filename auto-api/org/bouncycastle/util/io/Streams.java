@@ -1,11 +1,11 @@
 package org.bouncycastle.util.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -17,7 +17,7 @@ public final class Streams {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.339 -0400", hash_original_method = "E89EB8DDFA560D5750506701D7919D33", hash_generated_method = "E89EB8DDFA560D5750506701D7919D33")
     public Streams ()
     {
-        //Synthesized constructor
+        
     }
 
 

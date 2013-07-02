@@ -1,11 +1,11 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -73,26 +73,27 @@ final class SelectorImpl extends AbstractSelector {
             IoUtils.setBlocking(wakeupIn, false);
             pollFds.add(new StructPollfd());
             setPollFd(0, wakeupIn, POLLIN, null);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsIOException();
-        } //End block
+        } 
         addTaint(selectorProvider.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //FileDescriptor[] pipeFds = Libcore.os.pipe();
-            //wakeupIn = pipeFds[0];
-            //wakeupOut = pipeFds[1];
-            //IoUtils.setBlocking(wakeupIn, false);
-            //pollFds.add(new StructPollfd());
-            //setPollFd(0, wakeupIn, POLLIN, null);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsIOException();
-        //}
+        
+        
+            
+            
+            
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.317 -0400", hash_original_method = "79B2402F6F8D60BF0FF9B9A0443FD747", hash_generated_method = "6B89124C0296855C6F6FFC2EF112ADDB")
     @Override
     protected void implCloseSelector() throws IOException {
@@ -109,39 +110,40 @@ final class SelectorImpl extends AbstractSelector {
                         SelectionKey sk = var94A27C4332B145E8CBFC3F6CC7B07713_1429462490.next();
                         {
                             deregister((AbstractSelectionKey) sk);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //wakeup();
-        //synchronized (this) {
-            //synchronized (unmodifiableKeys) {
-                //synchronized (selectedKeys) {
-                    //IoUtils.close(wakeupIn);
-                    //IoUtils.close(wakeupOut);
-                    //doCancel();
-                    //for (SelectionKey sk : mutableKeys) {
-                        //deregister((AbstractSelectionKey) sk);
-                    //}
-                //}
-            //}
-        //}
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+            
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.318 -0400", hash_original_method = "9A9EE2D9A12F669E7C7AAB88B3AE3EAA", hash_generated_method = "D9C2F045D248FE83037BCE5AF90437C9")
     @Override
     protected SelectionKey register(AbstractSelectableChannel channel,
             int operations, Object attachment) {
-        SelectionKey varB4EAC82CA7396A68D541C85D26508E83_1605046124 = null; //Variable for return #1
+        SelectionKey varB4EAC82CA7396A68D541C85D26508E83_1605046124 = null; 
         {
             boolean var4EE4FD3790A594C06AD092C3051A9466_600833181 = (!provider().equals(channel.provider()));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalSelectorException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 SelectionKeyImpl selectionKey = new SelectionKeyImpl(channel, operations,
@@ -149,98 +151,104 @@ final class SelectorImpl extends AbstractSelector {
                 mutableKeys.add(selectionKey);
                 ensurePollFdsCapacity();
                 varB4EAC82CA7396A68D541C85D26508E83_1605046124 = selectionKey;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(channel.getTaint());
         addTaint(operations);
         addTaint(attachment.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1605046124.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1605046124.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1605046124;
-        // ---------- Original Method ----------
-        //if (!provider().equals(channel.provider())) {
-            //throw new IllegalSelectorException();
-        //}
-        //synchronized (this) {
-            //synchronized (unmodifiableKeys) {
-                //SelectionKeyImpl selectionKey = new SelectionKeyImpl(channel, operations,
-                        //attachment, this);
-                //mutableKeys.add(selectionKey);
-                //ensurePollFdsCapacity();
-                //return selectionKey;
-            //}
-        //}
+        
+        
+            
+        
+        
+            
+                
+                        
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.318 -0400", hash_original_method = "6BEEFC0027B3DD3AFC5CFC7324737402", hash_generated_method = "30F27993D9BBCAD4A2EAF68AADB8DB77")
     @Override
     public synchronized Set<SelectionKey> keys() {
-        Set<SelectionKey> varB4EAC82CA7396A68D541C85D26508E83_1757960795 = null; //Variable for return #1
+        Set<SelectionKey> varB4EAC82CA7396A68D541C85D26508E83_1757960795 = null; 
         checkClosed();
         varB4EAC82CA7396A68D541C85D26508E83_1757960795 = unmodifiableKeys;
-        varB4EAC82CA7396A68D541C85D26508E83_1757960795.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1757960795.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1757960795;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //return unmodifiableKeys;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.318 -0400", hash_original_method = "16DB849132AADD2CAC6FB8494D5700D0", hash_generated_method = "BBC5CEB9A7EB9755A77C42EECFF583EA")
     private void checkClosed() {
         {
             boolean var3A7D61B68AE823F6A30349D498C59A5C_1544434713 = (!isOpen());
             {
                 if (DroidSafeAndroidRuntime.control) throw new ClosedSelectorException();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (!isOpen()) {
-            //throw new ClosedSelectorException();
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.319 -0400", hash_original_method = "0F4ACBA61BED328D03506D362DC34EE4", hash_generated_method = "362B221C55941AF1FE600BB209C6DE8C")
     @Override
     public int select() throws IOException {
         int varA6E105EBDACFBDA0A96F9A5F6DFD6B27_2088233246 = (selectInternal(-1));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_435278724 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_435278724;
-        // ---------- Original Method ----------
-        //return selectInternal(-1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.319 -0400", hash_original_method = "38CB8C7854E3817F0A25B22A5C37D9C3", hash_generated_method = "7E3615FB6977B064B5089DEA9B0DA89B")
     @Override
     public int select(long timeout) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
-        int var0D45F03F4A67BF8512466CC1D9DB130B_1159114826 = (selectInternal((timeout == 0) ? -1 : timeout)); //DSFIXME:  CODE0008: Nested ternary operator in expression
+        } 
+        int var0D45F03F4A67BF8512466CC1D9DB130B_1159114826 = (selectInternal((timeout == 0) ? -1 : timeout)); 
         addTaint(timeout);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2101464332 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2101464332;
-        // ---------- Original Method ----------
-        //if (timeout < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //return selectInternal((timeout == 0) ? -1 : timeout);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.319 -0400", hash_original_method = "06C4B09F10BB426C607790AD420FF9C5", hash_generated_method = "5098FEB390CA93AB82E00F700F56A514")
     @Override
     public int selectNow() throws IOException {
         int var6420D4C57EB6D1FFB885D8C0BE9626F3_1494426627 = (selectInternal(0));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43951820 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43951820;
-        // ---------- Original Method ----------
-        //return selectInternal(0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.320 -0400", hash_original_method = "07E877B82AC1C68A90F5E02CD6388406", hash_generated_method = "E896DC630582763C66F8291D540692AD")
     private int selectInternal(long timeout) throws IOException {
         checkClosed();
@@ -251,43 +259,44 @@ final class SelectorImpl extends AbstractSelector {
                     boolean isBlock = (timeout != 0);
                     {
                         preparePollFds();
-                    } //End block
+                    } 
                     int rc;
                     try 
                     {
                         {
                             begin();
-                        } //End block
+                        } 
                         try 
                         {
                             rc = Libcore.os.poll(pollFds.array(), (int) timeout);
-                        } //End block
+                        } 
                         catch (ErrnoException errnoException)
                         {
                             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsIOException();
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     finally 
                     {
                         {
                             end();
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     int readyCount;
                     readyCount = processPollFds();
                     readyCount = 0;
                     readyCount -= doCancel();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(timeout);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_786241734 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_786241734;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.320 -0400", hash_original_method = "1864B10FEC667AA8A534CE9CC6FD0BC2", hash_generated_method = "7E4614F9A1B5674332ED755BEFFFFC97")
     private void setPollFd(int i, FileDescriptor fd, int events, Object object) {
         StructPollfd pollFd = pollFds.get(i);
@@ -298,14 +307,15 @@ final class SelectorImpl extends AbstractSelector {
         addTaint(fd.getTaint());
         addTaint(events);
         addTaint(object.getTaint());
-        // ---------- Original Method ----------
-        //StructPollfd pollFd = pollFds.get(i);
-        //pollFd.fd = fd;
-        //pollFd.events = (short) events;
-        //pollFd.userData = object;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.326 -0400", hash_original_method = "C2C79FE5727E3E67D8033155BDE5FA42", hash_generated_method = "4DF0668E35C96C50D8E05CF657A7FED2")
     private void preparePollFds() {
         int i = 1;
@@ -318,48 +328,50 @@ final class SelectorImpl extends AbstractSelector {
                 short eventMask = 0;
                 {
                     eventMask |= POLLIN;
-                } //End block
+                } 
                 {
                     eventMask |= POLLOUT;
-                } //End block
+                } 
                 {
                     setPollFd(i++, ((FileDescriptorChannel) key.channel()).getFD(), eventMask, key);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //int i = 1;
-        //for (SelectionKeyImpl key : mutableKeys) {
-            //int interestOps = key.interestOpsNoCheck();
-            //short eventMask = 0;
-            //if (((OP_ACCEPT | OP_READ) & interestOps) != 0) {
-                //eventMask |= POLLIN;
-            //}
-            //if (((OP_CONNECT | OP_WRITE) & interestOps) != 0) {
-                //eventMask |= POLLOUT;
-            //}
-            //if (eventMask != 0) {
-                //setPollFd(i++, ((FileDescriptorChannel) key.channel()).getFD(), eventMask, key);
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+                
+            
+            
+                
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.326 -0400", hash_original_method = "561794DF92118E00B9893BD515660DDC", hash_generated_method = "893999A8376D49EFD4244AC014AFA7CA")
     private void ensurePollFdsCapacity() {
         {
             boolean varA3753910DB61ED73725373C90D948E3A_1437171397 = (pollFds.size() < mutableKeys.size() + 1);
             {
                 pollFds.add(new StructPollfd());
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //while (pollFds.size() < mutableKeys.size() + 1) {
-            //pollFds.add(new StructPollfd());
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.327 -0400", hash_original_method = "5DC934A1F65A8C13AADF3FD37642D2BD", hash_generated_method = "A92CF3393C3FF71263041324EA5B8F66")
     private int processPollFds() throws IOException {
         {
@@ -368,9 +380,9 @@ final class SelectorImpl extends AbstractSelector {
                 byte[] buffer = new byte[8];
                 {
                     boolean var25A6F2E6F62683C32BEB36E6FCEB6D40_687152312 = (IoBridge.read(wakeupIn, buffer, 0, 1) > 0);
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         int readyKeyCount = 0;
         {
             int i = 1;
@@ -384,54 +396,56 @@ final class SelectorImpl extends AbstractSelector {
                 int selectedOp = 0;
                 {
                     selectedOp = ops & (OP_ACCEPT | OP_READ);
-                } //End block
+                } 
                 {
                     {
                         boolean varDF87DE05B18E5A13B2FF52E824E84E5B_403634149 = (key.isConnected());
                         {
                             selectedOp = ops & OP_WRITE;
-                        } //End block
+                        } 
                         {
                             selectedOp = ops & OP_CONNECT;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     boolean wasSelected = mutableSelectedKeys.contains(key);
                     {
                         boolean var3F78B959DDDD2302D129DB39525D5E28_1035492198 = (wasSelected && key.readyOps() != selectedOp);
                         {
                             key.setReadyOps(key.readyOps() | selectedOp);
-                        } //End block
+                        } 
                         {
                             key.setReadyOps(selectedOp);
                             mutableSelectedKeys.add(key);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1535438893 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1535438893;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.328 -0400", hash_original_method = "0EB011B4E4087026D6BA472324142821", hash_generated_method = "ECD592BE9F3A420D800D2A84E02F0335")
     @Override
     public synchronized Set<SelectionKey> selectedKeys() {
-        Set<SelectionKey> varB4EAC82CA7396A68D541C85D26508E83_1984032750 = null; //Variable for return #1
+        Set<SelectionKey> varB4EAC82CA7396A68D541C85D26508E83_1984032750 = null; 
         checkClosed();
         varB4EAC82CA7396A68D541C85D26508E83_1984032750 = selectedKeys;
-        varB4EAC82CA7396A68D541C85D26508E83_1984032750.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1984032750.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1984032750;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //return selectedKeys;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.339 -0400", hash_original_method = "ECFBB6A45EE52702BEFF3EF78A8EE9C3", hash_generated_method = "DA0C6FB6638EF1FFBCB882054B5B2346")
     private int doCancel() {
         int deselected = 0;
@@ -449,53 +463,54 @@ final class SelectorImpl extends AbstractSelector {
                             deregister((AbstractSelectionKey) currentKey);
                             {
                                 boolean var7E2CA0DCD7677691B7BD67D99C584907_351173205 = (mutableSelectedKeys.remove(currentKey));
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
                     cancelledKeys.clear();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1566723107 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1566723107;
-        // ---------- Original Method ----------
-        //int deselected = 0;
-        //Set<SelectionKey> cancelledKeys = cancelledKeys();
-        //synchronized (cancelledKeys) {
-            //if (cancelledKeys.size() > 0) {
-                //for (SelectionKey currentKey : cancelledKeys) {
-                    //mutableKeys.remove(currentKey);
-                    //deregister((AbstractSelectionKey) currentKey);
-                    //if (mutableSelectedKeys.remove(currentKey)) {
-                        //deselected++;
-                    //}
-                //}
-                //cancelledKeys.clear();
-            //}
-        //}
-        //return deselected;
+        
+        
+        
+        
+            
+                
+                    
+                    
+                    
+                        
+                    
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.339 -0400", hash_original_method = "BDB632D034A5FFBF79564927E2AB1FFB", hash_generated_method = "D2A1B2DB70E4A86AC35C0CF2E55BA9D0")
     @Override
     public Selector wakeup() {
-        Selector varB4EAC82CA7396A68D541C85D26508E83_1338096906 = null; //Variable for return #1
+        Selector varB4EAC82CA7396A68D541C85D26508E83_1338096906 = null; 
         try 
         {
             Libcore.os.write(wakeupOut, new byte[] { 1 }, 0, 1);
-        } //End block
+        } 
         catch (ErrnoException ignored)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_1338096906 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1338096906.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1338096906.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1338096906;
-        // ---------- Original Method ----------
-        //try {
-            //Libcore.os.write(wakeupOut, new byte[] { 1 }, 0, 1);
-        //} catch (ErrnoException ignored) {
-        //}
-        //return this;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -507,8 +522,8 @@ final class SelectorImpl extends AbstractSelector {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.340 -0400", hash_original_method = "62B3F0681944A36B1514E173BA40D640", hash_generated_method = "24D039260CAE976729B60C3FC4D09830")
           UnaddableSet(Set<E> set) {
             this.set = set;
-            // ---------- Original Method ----------
-            //this.set = set;
+            
+            
         }
 
         
@@ -519,8 +534,8 @@ final class SelectorImpl extends AbstractSelector {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1893476345 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1893476345;
-            // ---------- Original Method ----------
-            //return set.equals(object);
+            
+            
         }
 
         
@@ -530,8 +545,8 @@ final class SelectorImpl extends AbstractSelector {
             int var687AE630E82E5F04D274B7201D441CA3_446334509 = (set.hashCode());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2129143116 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2129143116;
-            // ---------- Original Method ----------
-            //return set.hashCode();
+            
+            
         }
 
         
@@ -541,8 +556,8 @@ final class SelectorImpl extends AbstractSelector {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1737108326 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1737108326;
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -552,16 +567,16 @@ final class SelectorImpl extends AbstractSelector {
             addTaint(c.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1600689593 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1600689593;
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.341 -0400", hash_original_method = "3FA453B9F7C92A0D7DD94260C67D9514", hash_generated_method = "10CF0C52087B2BD183B302B8BEE1DA86")
         public void clear() {
             set.clear();
-            // ---------- Original Method ----------
-            //set.clear();
+            
+            
         }
 
         
@@ -571,8 +586,8 @@ final class SelectorImpl extends AbstractSelector {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_415887256 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_415887256;
-            // ---------- Original Method ----------
-            //return set.contains(object);
+            
+            
         }
 
         
@@ -582,8 +597,8 @@ final class SelectorImpl extends AbstractSelector {
             addTaint(c.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_848634826 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_848634826;
-            // ---------- Original Method ----------
-            //return set.containsAll(c);
+            
+            
         }
 
         
@@ -592,19 +607,19 @@ final class SelectorImpl extends AbstractSelector {
             boolean var59656714B8D007C863A242B248D8CAB2_1692363110 = (set.isEmpty());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2046164526 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2046164526;
-            // ---------- Original Method ----------
-            //return set.isEmpty();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.343 -0400", hash_original_method = "7FB7F4965058B71D097578895F541442", hash_generated_method = "C7E0D8AB822CD454B3E39D91BE380DD4")
         public Iterator<E> iterator() {
-            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_2139507227 = null; //Variable for return #1
+            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_2139507227 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2139507227 = set.iterator();
-            varB4EAC82CA7396A68D541C85D26508E83_2139507227.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2139507227.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2139507227;
-            // ---------- Original Method ----------
-            //return set.iterator();
+            
+            
         }
 
         
@@ -614,8 +629,8 @@ final class SelectorImpl extends AbstractSelector {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1620389592 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1620389592;
-            // ---------- Original Method ----------
-            //return set.remove(object);
+            
+            
         }
 
         
@@ -625,8 +640,8 @@ final class SelectorImpl extends AbstractSelector {
             addTaint(c.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_662260447 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_662260447;
-            // ---------- Original Method ----------
-            //return set.removeAll(c);
+            
+            
         }
 
         
@@ -636,8 +651,8 @@ final class SelectorImpl extends AbstractSelector {
             addTaint(c.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1850397206 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1850397206;
-            // ---------- Original Method ----------
-            //return set.retainAll(c);
+            
+            
         }
 
         
@@ -646,31 +661,31 @@ final class SelectorImpl extends AbstractSelector {
             int var1607BC970B04E573A253638C3626122E_1798084594 = (set.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_566925967 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_566925967;
-            // ---------- Original Method ----------
-            //return set.size();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.345 -0400", hash_original_method = "A39D4D1F48CDD6F8823B658123DCFC27", hash_generated_method = "71030E3C381581A5DF2552B25952A1E7")
         public Object[] toArray() {
-            Object[] varB4EAC82CA7396A68D541C85D26508E83_1869622394 = null; //Variable for return #1
+            Object[] varB4EAC82CA7396A68D541C85D26508E83_1869622394 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1869622394 = set.toArray();
-            varB4EAC82CA7396A68D541C85D26508E83_1869622394.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1869622394.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1869622394;
-            // ---------- Original Method ----------
-            //return set.toArray();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.345 -0400", hash_original_method = "820308A08287454AD26ACE5A2E12E893", hash_generated_method = "750798A77671A27F21B184D67DCFD414")
         public <T> T[] toArray(T[] a) {
-            T[] varB4EAC82CA7396A68D541C85D26508E83_1742308031 = null; //Variable for return #1
+            T[] varB4EAC82CA7396A68D541C85D26508E83_1742308031 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1742308031 = set.toArray(a);
             addTaint(a[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1742308031.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1742308031.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1742308031;
-            // ---------- Original Method ----------
-            //return set.toArray(a);
+            
+            
         }
 
         

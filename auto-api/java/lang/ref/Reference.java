@@ -1,11 +1,11 @@
 package java.lang.ref;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class Reference<T> {
@@ -24,7 +24,7 @@ public abstract class Reference<T> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.597 -0400", hash_original_method = "6CD3D0843AA30F3B07C5B27C93AA8456", hash_generated_method = "D75FE998C2119926819E778AB344D99C")
       Reference() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,17 +32,17 @@ public abstract class Reference<T> {
       Reference(T r, ReferenceQueue q) {
         referent = r;
         queue = q;
-        // ---------- Original Method ----------
-        //referent = r;
-        //queue = q;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.597 -0400", hash_original_method = "0AFD16A0602732B7092274BEFFE68A69", hash_generated_method = "3CA142A05BF69F5A64895A936ECBE10C")
     public void clear() {
         referent = null;
-        // ---------- Original Method ----------
-        //referent = null;
+        
+        
     }
 
     
@@ -51,37 +51,39 @@ public abstract class Reference<T> {
         {
             queue.enqueue(this);
             queue = null;
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_566157084 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_566157084;
-        // ---------- Original Method ----------
-        //if (queue != null && queueNext == null) {
-            //queue.enqueue(this);
-            //queue = null;
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.598 -0400", hash_original_method = "D897CF322202613DC6CC465308B391E4", hash_generated_method = "208D9EEC6B5F6986C8644F5AEA243C88")
     public boolean enqueue() {
         boolean var1A956F7B1D16A58A3C34850CA5FE4029_946035505 = (enqueueInternal());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2106288007 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2106288007;
-        // ---------- Original Method ----------
-        //return enqueueInternal();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.598 -0400", hash_original_method = "3B05713F718010AF3C5E0D5C54D10077", hash_generated_method = "A78BEB5954CF89A02A598B986661A4F5")
     public T get() {
-        T varB4EAC82CA7396A68D541C85D26508E83_354265966 = null; //Variable for return #1
+        T varB4EAC82CA7396A68D541C85D26508E83_354265966 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_354265966 = referent;
-        varB4EAC82CA7396A68D541C85D26508E83_354265966.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_354265966.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_354265966;
-        // ---------- Original Method ----------
-        //return referent;
+        
+        
     }
 
     
@@ -89,8 +91,8 @@ public abstract class Reference<T> {
     public boolean isEnqueued() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2136076586 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2136076586;
-        // ---------- Original Method ----------
-        //return queueNext != null;
+        
+        
     }
 
     

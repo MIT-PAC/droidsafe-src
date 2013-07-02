@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -38,7 +38,7 @@ public class AdnRecord implements Parcelable {
     public  AdnRecord(byte[] record) {
         this(0, 0, record);
         addTaint(record[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -48,10 +48,10 @@ public class AdnRecord implements Parcelable {
         this.recordNumber = recordNumber;
         parseRecord(record);
         addTaint(record[0]);
-        // ---------- Original Method ----------
-        //this.efid = efid;
-        //this.recordNumber = recordNumber;
-        //parseRecord(record);
+        
+        
+        
+        
     }
 
     
@@ -60,7 +60,7 @@ public class AdnRecord implements Parcelable {
         this(0, 0, alphaTag, number);
         addTaint(alphaTag.getTaint());
         addTaint(number.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -70,7 +70,7 @@ public class AdnRecord implements Parcelable {
         addTaint(alphaTag.getTaint());
         addTaint(number.getTaint());
         addTaint(emails[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -81,12 +81,12 @@ public class AdnRecord implements Parcelable {
         this.alphaTag = alphaTag;
         this.number = number;
         this.emails = emails;
-        // ---------- Original Method ----------
-        //this.efid = efid;
-        //this.recordNumber = recordNumber;
-        //this.alphaTag = alphaTag;
-        //this.number = number;
-        //this.emails = emails;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -97,74 +97,76 @@ public class AdnRecord implements Parcelable {
         this.alphaTag = alphaTag;
         this.number = number;
         this.emails = null;
-        // ---------- Original Method ----------
-        //this.efid = efid;
-        //this.recordNumber = recordNumber;
-        //this.alphaTag = alphaTag;
-        //this.number = number;
-        //this.emails = null;
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.188 -0400", hash_original_method = "AC3A7A9E3A191B711B11224D0DA9AF99", hash_generated_method = "5BE114DD858041627E2E7AC4385E251D")
     public String getAlphaTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_880050917 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_880050917 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_880050917 = alphaTag;
-        varB4EAC82CA7396A68D541C85D26508E83_880050917.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_880050917.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_880050917;
-        // ---------- Original Method ----------
-        //return alphaTag;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.189 -0400", hash_original_method = "EC6570D4091CFB302FD4A14DB7A9F4B4", hash_generated_method = "59C264357A36A7167E72BEE36BF61852")
     public String getNumber() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1911394474 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1911394474 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1911394474 = number;
-        varB4EAC82CA7396A68D541C85D26508E83_1911394474.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1911394474.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1911394474;
-        // ---------- Original Method ----------
-        //return number;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.189 -0400", hash_original_method = "92D2F53049B5866D80AA794995783C1B", hash_generated_method = "7845C9F831977DC8ECC7994374E0D733")
     public String[] getEmails() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1015415779 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1015415779 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1015415779 = emails;
-        varB4EAC82CA7396A68D541C85D26508E83_1015415779.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1015415779.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1015415779;
-        // ---------- Original Method ----------
-        //return emails;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.190 -0400", hash_original_method = "318E4DB00CD29A795BAB76EF64647C6C", hash_generated_method = "8AD750FE9F5EE2A604E640BF0FA92A76")
     public void setEmails(String[] emails) {
         this.emails = emails;
-        // ---------- Original Method ----------
-        //this.emails = emails;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.191 -0400", hash_original_method = "68220200E4F2B5D293B76BDD34BEE487", hash_generated_method = "4EF0FBC6414041F4DB41F2319AF9A687")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_892073185 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_892073185 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_892073185 = "ADN Record '" + alphaTag + "' '" + number + " " + emails + "'";
-        varB4EAC82CA7396A68D541C85D26508E83_892073185.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_892073185.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_892073185;
-        // ---------- Original Method ----------
-        //return "ADN Record '" + alphaTag + "' '" + number + " " + emails + "'";
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.191 -0400", hash_original_method = "5D6691CA551F86617D7220208AC31A8F", hash_generated_method = "A2D77F98FC271273695F3B8AD50A8FDE")
     public boolean isEmpty() {
         boolean var64ACE25E19B6897AA2A6A6E9C8F778BE_38831346 = (TextUtils.isEmpty(alphaTag) && TextUtils.isEmpty(number) && emails == null);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1106477641 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1106477641;
-        // ---------- Original Method ----------
-        //return TextUtils.isEmpty(alphaTag) && TextUtils.isEmpty(number) && emails == null;
+        
+        
     }
 
     
@@ -172,11 +174,12 @@ public class AdnRecord implements Parcelable {
     public boolean hasExtendedRecord() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_65345449 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_65345449;
-        // ---------- Original Method ----------
-        //return extRecord != 0 && extRecord != 0xff;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean stringCompareNullEqualsEmpty(String s1, String s2) {
         if (s1 == s2) {
             return true;
@@ -191,6 +194,7 @@ public class AdnRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.192 -0400", hash_original_method = "EA1ABD1A8E044AEC4146178ABB95A33B", hash_generated_method = "0D36C46ADCF78047B727D9C2189FA62E")
     public boolean isEqual(AdnRecord adn) {
         boolean var845971BACDC4C2202680A46C8D0E99B3_1154882754 = (( stringCompareNullEqualsEmpty(alphaTag, adn.alphaTag) &&
@@ -199,10 +203,10 @@ public class AdnRecord implements Parcelable {
         addTaint(adn.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_684747660 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_684747660;
-        // ---------- Original Method ----------
-        //return ( stringCompareNullEqualsEmpty(alphaTag, adn.alphaTag) &&
-                //stringCompareNullEqualsEmpty(number, adn.number) &&
-                //Arrays.equals(emails, adn.emails));
+        
+        
+                
+                
     }
 
     
@@ -210,11 +214,12 @@ public class AdnRecord implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1609297640 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1609297640;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.192 -0400", hash_original_method = "D94966D9C7C7FE5B7B9FBD39671B9050", hash_generated_method = "C0FEC0B47AC27DFAFD940695F65B5963")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(efid);
@@ -224,15 +229,16 @@ public class AdnRecord implements Parcelable {
         dest.writeStringArray(emails);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(efid);
-        //dest.writeInt(recordNumber);
-        //dest.writeString(alphaTag);
-        //dest.writeString(number);
-        //dest.writeStringArray(emails);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.193 -0400", hash_original_method = "43E5A3A3017D389C996FCD504E7A9103", hash_generated_method = "FE95684F3696B5A0DEB01B1985B53E86")
     public byte[] buildAdnString(int recordSize) {
         byte[] bcdNumber;
@@ -244,8 +250,8 @@ public class AdnRecord implements Parcelable {
             int i = 0;
             {
                 adnString[i] = (byte) 0xFF;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varDC814D5E0DD02381050A532714A4AE08_471911001 = (TextUtils.isEmpty(number));
             {
@@ -268,49 +274,51 @@ public class AdnRecord implements Parcelable {
                             {
                                 byteTag = GsmAlphabet.stringToGsm8BitPacked(alphaTag);
                                 System.arraycopy(byteTag, 0, adnString, 0, byteTag.length);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(recordSize);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_559394659 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_559394659;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.194 -0400", hash_original_method = "D43EB4B47E694B53E14D637B6CBB15DA", hash_generated_method = "A8D5BDF7DB633873D10A0DF4718B4849")
     public void appendExtRecord(byte[] extRecord) {
         try 
         {
             number += PhoneNumberUtils.calledPartyBCDFragmentToString(
                                         extRecord, 2, 0xff & extRecord[1]);
-        } //End block
+        } 
         catch (RuntimeException ex)
         { }
-        // ---------- Original Method ----------
-        //try {
-            //if (extRecord.length != EXT_RECORD_LENGTH_BYTES) {
-                //return;
-            //}
-            //if ((extRecord[0] & EXT_RECORD_TYPE_MASK)
-                    //!= EXT_RECORD_TYPE_ADDITIONAL_DATA) {
-                //return;
-            //}
-            //if ((0xff & extRecord[1]) > MAX_EXT_CALLED_PARTY_LENGTH) {
-                //return;
-            //}
-            //number += PhoneNumberUtils.calledPartyBCDFragmentToString(
-                                        //extRecord, 2, 0xff & extRecord[1]);
-        //} catch (RuntimeException ex) {
-            //Log.w(LOG_TAG, "Error parsing AdnRecord ext record", ex);
-        //}
+        
+        
+            
+                
+            
+            
+                    
+                
+            
+            
+                
+            
+            
+                                        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.194 -0400", hash_original_method = "C94E0153AA9A00481672837ABFA310B4", hash_generated_method = "0DB8B7F8FFF151CB604E4BC74875D088")
     private void parseRecord(byte[] record) {
         try 
@@ -321,20 +329,20 @@ public class AdnRecord implements Parcelable {
             int numberLength = 0xff & record[footerOffset];
             {
                 number = "";
-            } //End block
+            } 
             number = PhoneNumberUtils.calledPartyBCDToString(
                             record, footerOffset + 1, numberLength);
             extRecord = 0xff & record[record.length - 1];
             emails = null;
-        } //End block
+        } 
         catch (RuntimeException ex)
         {
             number = "";
             alphaTag = "";
             emails = null;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -401,7 +409,7 @@ public class AdnRecord implements Parcelable {
             return new AdnRecord[size];
         }
     };
-    // orphaned legacy method
+    
     public AdnRecord createFromParcel(Parcel source) {
             int efid;
             int recordNumber;
@@ -418,7 +426,7 @@ public class AdnRecord implements Parcelable {
             return new AdnRecord(efid, recordNumber, alphaTag, number, emails);
         }
     
-    // orphaned legacy method
+    
     public AdnRecord[] newArray(int size) {
             return new AdnRecord[size];
         }

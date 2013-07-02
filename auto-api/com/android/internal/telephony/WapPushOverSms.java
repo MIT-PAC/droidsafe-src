@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.Activity;
 import android.content.Context;
@@ -44,14 +44,15 @@ public class WapPushOverSms {
         mContext = phone.getContext();
         mWapConn = new WapPushConnection(mContext);
         mWapConn.bindWapPushManager();
-        // ---------- Original Method ----------
-        //mSmsDispatcher = smsDispatcher;
-        //mContext = phone.getContext();
-        //mWapConn = new WapPushConnection(mContext);
-        //mWapConn.bindWapPushManager();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.064 -0400", hash_original_method = "B943BA9A516C7D27398DA677689F619E", hash_generated_method = "339797C43465407A25BD9A51775CF9AB")
     public int dispatchWapPdu(byte[] pdu) {
         Log.d(LOG_TAG, "Rx: " + IccUtils.bytesToHexString(pdu));
@@ -62,13 +63,13 @@ public class WapPushOverSms {
         pduDecoder = new WspTypeDecoder(pdu);
         {
             boolean var35052BC982F7CCDBF4CA85F6551C0695_1513959773 = (pduDecoder.decodeUintvarInteger(index) == false);
-        } //End collapsed parenthetic
+        } 
         headerLength = (int)pduDecoder.getValue32();
         index += pduDecoder.getDecodedDataLength();
         int headerStartIndex = index;
         {
             boolean varDC974DB11A37B499191291CB84F1A7AB_1223155772 = (pduDecoder.decodeContentType(index) == false);
-        } //End collapsed parenthetic
+        } 
         String mimeType = pduDecoder.getValueString();
         long binaryContentType = pduDecoder.getValue32();
         index += pduDecoder.getDecodedDataLength();
@@ -79,13 +80,13 @@ public class WapPushOverSms {
             boolean varEA723A1CF765924E9A1722B0423C4C7B_832430861 = (mimeType != null && mimeType.equals(WspTypeDecoder.CONTENT_TYPE_B_PUSH_CO));
             {
                 intentData = pdu;
-            } //End block
+            } 
             {
                 int dataIndex = headerStartIndex + headerLength;
                 intentData = new byte[pdu.length - dataIndex];
                 System.arraycopy(pdu, dataIndex, intentData, 0, intentData.length);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var73A914DEAFC4E11C193B04C5E1414436_1700652578 = (pduDecoder.seekXWapApplicationId(index, index + headerLength - 1));
             {
@@ -94,9 +95,9 @@ public class WapPushOverSms {
                 String wapAppId = pduDecoder.getValueString();
                 {
                     wapAppId = Integer.toString((int) pduDecoder.getValue32());
-                } //End block
+                } 
                 String contentType = ((mimeType == null) ?
-                                  Long.toString(binaryContentType) : mimeType);//DSFIXME:  CODE0008: Nested ternary operator in expression
+                                  Long.toString(binaryContentType) : mimeType);
                 try 
                 {
                     boolean processFurther = true;
@@ -112,23 +113,23 @@ public class WapPushOverSms {
                         int procRet = wapPushMan.processMessage(wapAppId, contentType, intent);
                         {
                             processFurther = false;
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 catch (RemoteException e)
                 { }
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String permission;
         {
             boolean var8A3CC5996CA16A71178112B420F9FE7A_82543359 = (mimeType.equals(WspTypeDecoder.CONTENT_TYPE_B_MMS));
             {
                 permission = "android.permission.RECEIVE_MMS";
-            } //End block
+            } 
             {
                 permission = "android.permission.RECEIVE_WAP_PUSH";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Intent intent = new Intent(Intents.WAP_PUSH_RECEIVED_ACTION);
         intent.setType(mimeType);
         intent.putExtra("transactionId", transactionId);
@@ -139,8 +140,8 @@ public class WapPushOverSms {
         mSmsDispatcher.dispatch(intent, permission);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_345003969 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_345003969;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -155,33 +156,33 @@ public class WapPushOverSms {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.065 -0400", hash_original_method = "0BE0ADFB7F6B93B695220B7DE6F98A35", hash_generated_method = "6773F021BC021CF2B844CE5946D38111")
         public  WapPushConnection(Context ownerContext) {
             mOwner = ownerContext;
-            // ---------- Original Method ----------
-            //mOwner = ownerContext;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.065 -0400", hash_original_method = "D2C26FA4308EBF4ECDE771359B9348B6", hash_generated_method = "0500CED13690ED913CC525185DA34B63")
         public void onServiceConnected(ComponentName name, IBinder service) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mWapPushMan = IWapPushManager.Stub.asInterface(service);
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
-            //mWapPushMan = IWapPushManager.Stub.asInterface(service);
-            //if (false) Log.v(LOG_TAG, "wappush manager connected to " +
-                    //mOwner.hashCode());
+            
+            
+            
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.066 -0400", hash_original_method = "645B7220F43862050D99493B740CC6E9", hash_generated_method = "08D88AC5FFE531ACE9128776DECC72D1")
         public void onServiceDisconnected(ComponentName name) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mWapPushMan = null;
             rebindWapPushManager();
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
-            //mWapPushMan = null;
-            //if (false) Log.v(LOG_TAG, "wappush manager disconnected.");
-            //rebindWapPushManager();
+            
+            
+            
+            
         }
 
         
@@ -190,11 +191,11 @@ public class WapPushOverSms {
             final ServiceConnection wapPushConnection = this;
             mOwner.bindService(new Intent(IWapPushManager.class.getName()),
                     wapPushConnection, Context.BIND_AUTO_CREATE);
-            // ---------- Original Method ----------
-            //if (mWapPushMan != null) return;
-            //final ServiceConnection wapPushConnection = this;
-            //mOwner.bindService(new Intent(IWapPushManager.class.getName()),
-                    //wapPushConnection, Context.BIND_AUTO_CREATE);
+            
+            
+            
+            
+                    
         }
 
         
@@ -210,49 +211,49 @@ public class WapPushOverSms {
                         try 
                         {
                             Thread.sleep(BIND_RETRY_INTERVAL);
-                        } //End block
+                        } 
                         catch (InterruptedException e)
                         { }
-                    } //End block
-                    // ---------- Original Method ----------
-                    //while (mWapPushMan == null) {
-                        //mOwner.bindService(new Intent(IWapPushManager.class.getName()),
-                                //wapPushConnection, Context.BIND_AUTO_CREATE);
-                        //try {
-                            //Thread.sleep(BIND_RETRY_INTERVAL);
-                        //} catch (InterruptedException e) {
-                            //if (false) Log.v(LOG_TAG, "sleep interrupted.");
-                        //}
-                    //}
+                    } 
+                    
+                    
+                        
+                                
+                        
+                            
+                        
+                            
+                        
+                    
                 }
 }.start();
-            // ---------- Original Method ----------
-            //if (mWapPushMan != null) return;
-            //final ServiceConnection wapPushConnection = this;
-            //new Thread() {
-                //public void run() {
-                    //while (mWapPushMan == null) {
-                        //mOwner.bindService(new Intent(IWapPushManager.class.getName()),
-                                //wapPushConnection, Context.BIND_AUTO_CREATE);
-                        //try {
-                            //Thread.sleep(BIND_RETRY_INTERVAL);
-                        //} catch (InterruptedException e) {
-                            //if (false) Log.v(LOG_TAG, "sleep interrupted.");
-                        //}
-                    //}
-                //}
-            //}.start();
+            
+            
+            
+            
+                
+                    
+                        
+                                
+                        
+                            
+                        
+                            
+                        
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.068 -0400", hash_original_method = "12BA8034F310D7C3159CADAC53085388", hash_generated_method = "09E37F9B5AF99076F337DB57FE0D464E")
         public IWapPushManager getWapPushManager() {
-            IWapPushManager varB4EAC82CA7396A68D541C85D26508E83_1692295721 = null; //Variable for return #1
+            IWapPushManager varB4EAC82CA7396A68D541C85D26508E83_1692295721 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1692295721 = mWapPushMan;
-            varB4EAC82CA7396A68D541C85D26508E83_1692295721.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1692295721.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1692295721;
-            // ---------- Original Method ----------
-            //return mWapPushMan;
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -21,38 +21,40 @@ public final class InhibitAnyPolicy extends ExtensionValue {
         super(encoding);
         this.skipCerts = new BigInteger((byte[])
                 ASN1Integer.getInstance().decode(encoding)).intValue();
-        // ---------- Original Method ----------
-        //this.skipCerts = new BigInteger((byte[])
-                //ASN1Integer.getInstance().decode(encoding)).intValue();
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.137 -0400", hash_original_method = "3EBD51C43A05A1E4C8002DD6E78AE310", hash_generated_method = "A803893AA4DBF6705968F45A328CC9C6")
     @Override
     public byte[] getEncoded() {
         {
             encoding = ASN1Integer.getInstance()
                 .encode(ASN1Integer.fromIntValue(skipCerts));
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1924519991 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1924519991;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1Integer.getInstance()
-                //.encode(ASN1Integer.fromIntValue(skipCerts));
-        //}
-        //return encoding;
+        
+        
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.137 -0400", hash_original_method = "25B8E258E2717A4BB370159BACC96911", hash_generated_method = "AF858BEAF003225EBF3AECEAC9C6DC5E")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix).append("Inhibit Any-Policy: ").append(skipCerts).append('\n');
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //sb.append(prefix).append("Inhibit Any-Policy: ").append(skipCerts).append('\n');
+        
+        
     }
 
     

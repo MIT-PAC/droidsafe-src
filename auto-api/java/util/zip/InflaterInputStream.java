@@ -1,11 +1,11 @@
 package java.util.zip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.EOFException;
 import java.io.FilterInputStream;
@@ -38,7 +38,7 @@ public class InflaterInputStream extends FilterInputStream {
     public  InflaterInputStream(InputStream is) {
         this(is, new Inflater(), BUF_SIZE);
         addTaint(is.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -47,7 +47,7 @@ public class InflaterInputStream extends FilterInputStream {
         this(is, inflater, BUF_SIZE);
         addTaint(is.getTaint());
         addTaint(inflater.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -56,45 +56,47 @@ public class InflaterInputStream extends FilterInputStream {
         super(is);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         this.inf = inflater;
         {
             nativeEndBufSize = bsize;
-        } //End block
+        } 
         {
             buf = new byte[bsize];
-        } //End block
+        } 
         addTaint(is.getTaint());
-        // ---------- Original Method ----------
-        //if (is == null || inflater == null) {
-            //throw new NullPointerException();
-        //}
-        //if (bsize <= 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //this.inf = inflater;
-        //if (is instanceof ZipFile.RAFStream) {
-            //nativeEndBufSize = bsize;
-        //} else {
-            //buf = new byte[bsize];
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.850 -0400", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "71AB670A68AC5E7001CDEAE11C466EFC")
     @Override
     public int read() throws IOException {
         int var5941BF1153E2E81479FC3BECE4E461FF_137148627 = (Streams.readSingleByte(this));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_170676769 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_170676769;
-        // ---------- Original Method ----------
-        //return Streams.readSingleByte(this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.851 -0400", hash_original_method = "DE515D2D289FDA03BF01DDF0E0AD6AE1", hash_generated_method = "F9926178B4C10E94001FC62327D25114")
     @Override
     public int read(byte[] buffer, int offset, int byteCount) throws IOException {
@@ -105,8 +107,8 @@ public class InflaterInputStream extends FilterInputStream {
                 boolean var1A5A145F098DD1F555879555CE369339_108408646 = (inf.needsInput());
                 {
                     fill();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             try 
             {
                 int result = inf.inflate(buffer, offset, byteCount);
@@ -115,32 +117,33 @@ public class InflaterInputStream extends FilterInputStream {
                     boolean var7BCCDB7D901E7D3A1DF620C3DD5F899C_1308834453 = (inf.needsDictionary());
                     {
                         eof = true;
-                    } //End block
+                    } 
                     {
                         eof = true;
                         if (DroidSafeAndroidRuntime.control) throw new EOFException();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             catch (DataFormatException e)
             {
                 eof = true;
                 {
                     if (DroidSafeAndroidRuntime.control) throw new EOFException();
-                } //End block
+                } 
                 if (DroidSafeAndroidRuntime.control) throw (IOException) (new IOException().initCause(e));
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(buffer[0]);
         addTaint(offset);
         addTaint(byteCount);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_548029979 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_548029979;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.852 -0400", hash_original_method = "92AAFAE1121490A2E461EB88A6DC741C", hash_generated_method = "39B6CEFEA164ED8BE5AB537DD864D88A")
     protected void fill() throws IOException {
         checkClosed();
@@ -151,67 +154,70 @@ public class InflaterInputStream extends FilterInputStream {
                 len = nativeEndBufSize;
                 int cnt = inf.setFileInput(is.mSharedRaf.getFD(), is.mOffset, nativeEndBufSize);
                 is.skip(cnt);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 boolean var24AC157EF1A0A7950280F7E056FDB23C_1682726503 = ((len = in.read(buf)) > 0);
                 {
                     inf.setInput(buf, 0, len);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //checkClosed();
-        //if (nativeEndBufSize > 0) {
-            //ZipFile.RAFStream is = (ZipFile.RAFStream)in;
-            //synchronized (is.mSharedRaf) {
-                //long len = is.mLength - is.mOffset;
-                //if (len > nativeEndBufSize) len = nativeEndBufSize;
-                //int cnt = inf.setFileInput(is.mSharedRaf.getFD(), is.mOffset, nativeEndBufSize);
-                //is.skip(cnt);
-            //}
-        //} else {
-            //if ((len = in.read(buf)) > 0) {
-                //inf.setInput(buf, 0, len);
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+                
+                
+                
+            
+        
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.852 -0400", hash_original_method = "A9123C6756DDC4D0ED42EE705B1E650B", hash_generated_method = "B23677084320EE175FF63C44440ECE31")
     @Override
     public long skip(long byteCount) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("byteCount < 0");
-        } //End block
+        } 
         long var242616A7471CF01D821614D0D0C41129_92164428 = (Streams.skipByReading(this, byteCount));
         addTaint(byteCount);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1037845168 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1037845168;
-        // ---------- Original Method ----------
-        //if (byteCount < 0) {
-            //throw new IllegalArgumentException("byteCount < 0");
-        //}
-        //return Streams.skipByReading(this, byteCount);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.852 -0400", hash_original_method = "CA27A6E1F269DA8120632D3AC729E489", hash_generated_method = "AE850E6AD5ED75BB6D32DEE57BFAB71E")
     @Override
     public int available() throws IOException {
         checkClosed();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1978632334 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1978632334;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //if (eof) {
-            //return 0;
-        //}
-        //return 1;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.853 -0400", hash_original_method = "EA60532C802B6FAE0DE9014BA74F497F", hash_generated_method = "08938E98150C81F0A8FCB3BCD6A8821B")
     @Override
     public void close() throws IOException {
@@ -220,14 +226,14 @@ public class InflaterInputStream extends FilterInputStream {
             closed = true;
             eof = true;
             super.close();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!closed) {
-            //inf.end();
-            //closed = true;
-            //eof = true;
-            //super.close();
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -235,16 +241,17 @@ public class InflaterInputStream extends FilterInputStream {
     @Override
     public void mark(int readlimit) {
         addTaint(readlimit);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.854 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "A9C0F826408505F69F969DEF2E274553")
     @Override
     public void reset() throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new IOException();
-        // ---------- Original Method ----------
-        //throw new IOException();
+        
+        
     }
 
     
@@ -253,20 +260,21 @@ public class InflaterInputStream extends FilterInputStream {
     public boolean markSupported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1340947613 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1340947613;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.854 -0400", hash_original_method = "249965AABC06DCB5B5F50760C9E2C49A", hash_generated_method = "6CFA37B07466A20BDBB88E064EBD8E21")
     private void checkClosed() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Stream is closed");
-        } //End block
-        // ---------- Original Method ----------
-        //if (closed) {
-            //throw new IOException("Stream is closed");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     

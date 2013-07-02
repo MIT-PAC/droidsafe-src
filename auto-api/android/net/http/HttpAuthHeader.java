@@ -1,11 +1,11 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class HttpAuthHeader {
@@ -44,12 +44,12 @@ public class HttpAuthHeader {
     public  HttpAuthHeader(String header) {
         {
             parseHeader(header);
-        } //End block
+        } 
         addTaint(header.getTaint());
-        // ---------- Original Method ----------
-        //if (header != null) {
-            //parseHeader(header);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -57,54 +57,54 @@ public class HttpAuthHeader {
     public boolean isProxy() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1283225826 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1283225826;
-        // ---------- Original Method ----------
-        //return mIsProxy;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.875 -0400", hash_original_method = "F484596B8E11A4861D504E7FDD37DA10", hash_generated_method = "DD3E3DD04D17DDB30604953E8A9252B1")
     public void setProxy() {
         mIsProxy = true;
-        // ---------- Original Method ----------
-        //mIsProxy = true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.875 -0400", hash_original_method = "DC420B5834A563247800515BC4094ADD", hash_generated_method = "C15D5B05C42B729D87BEB70BBAAFF4F2")
     public String getUsername() {
-        String varB4EAC82CA7396A68D541C85D26508E83_55713467 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_55713467 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_55713467 = mUsername;
-        varB4EAC82CA7396A68D541C85D26508E83_55713467.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_55713467.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_55713467;
-        // ---------- Original Method ----------
-        //return mUsername;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.876 -0400", hash_original_method = "0E33D9E279BEDC5DAB4D3AD6DE953552", hash_generated_method = "3955AB7BA77A651158545815C33BA20C")
     public void setUsername(String username) {
         mUsername = username;
-        // ---------- Original Method ----------
-        //mUsername = username;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.876 -0400", hash_original_method = "352B20CA8286B4BCFAD735A80A162186", hash_generated_method = "B6D564C3995D1C80ADE103B2D4BD186D")
     public String getPassword() {
-        String varB4EAC82CA7396A68D541C85D26508E83_166547581 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_166547581 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_166547581 = mPassword;
-        varB4EAC82CA7396A68D541C85D26508E83_166547581.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_166547581.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_166547581;
-        // ---------- Original Method ----------
-        //return mPassword;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.877 -0400", hash_original_method = "5BECAD2A732AB83E1664BF3A6C903529", hash_generated_method = "0844A0EC752FFDF12DBAC561F066925A")
     public void setPassword(String password) {
         mPassword = password;
-        // ---------- Original Method ----------
-        //mPassword = password;
+        
+        
     }
 
     
@@ -112,8 +112,8 @@ public class HttpAuthHeader {
     public boolean isBasic() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1456732216 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1456732216;
-        // ---------- Original Method ----------
-        //return mScheme == BASIC;
+        
+        
     }
 
     
@@ -121,8 +121,8 @@ public class HttpAuthHeader {
     public boolean isDigest() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_418170681 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_418170681;
-        // ---------- Original Method ----------
-        //return mScheme == DIGEST;
+        
+        
     }
 
     
@@ -130,8 +130,8 @@ public class HttpAuthHeader {
     public int getScheme() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_387870854 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_387870854;
-        // ---------- Original Method ----------
-        //return mScheme;
+        
+        
     }
 
     
@@ -139,66 +139,67 @@ public class HttpAuthHeader {
     public boolean getStale() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2074589569 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2074589569;
-        // ---------- Original Method ----------
-        //return mStale;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.879 -0400", hash_original_method = "E61C0128BAAE9B474452BFCEF0497CDD", hash_generated_method = "9BEB6494428159CE71FA8733E39EC41A")
     public String getRealm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_737938622 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_737938622 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_737938622 = mRealm;
-        varB4EAC82CA7396A68D541C85D26508E83_737938622.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_737938622.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_737938622;
-        // ---------- Original Method ----------
-        //return mRealm;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.879 -0400", hash_original_method = "B08110B485A4DA24A232A0CC9BEA47F4", hash_generated_method = "EC307AADA62B90BA4562F999EA8C457D")
     public String getNonce() {
-        String varB4EAC82CA7396A68D541C85D26508E83_335173798 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_335173798 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_335173798 = mNonce;
-        varB4EAC82CA7396A68D541C85D26508E83_335173798.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_335173798.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_335173798;
-        // ---------- Original Method ----------
-        //return mNonce;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.880 -0400", hash_original_method = "40DED5E91C6F5AFDC12D505952D89AC1", hash_generated_method = "393688E85452EFBA269691166E93AD4C")
     public String getOpaque() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1608850622 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1608850622 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1608850622 = mOpaque;
-        varB4EAC82CA7396A68D541C85D26508E83_1608850622.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1608850622.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1608850622;
-        // ---------- Original Method ----------
-        //return mOpaque;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.880 -0400", hash_original_method = "7F9926D57780B6A835584FF0B4884044", hash_generated_method = "C436855635BE6C66E4A637DB2CE513C3")
     public String getQop() {
-        String varB4EAC82CA7396A68D541C85D26508E83_583702095 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_583702095 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_583702095 = mQop;
-        varB4EAC82CA7396A68D541C85D26508E83_583702095.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_583702095.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_583702095;
-        // ---------- Original Method ----------
-        //return mQop;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.881 -0400", hash_original_method = "0FF39221585FBFD96D2157CC36F75665", hash_generated_method = "28CE7A9757227CEDF0CA2D5B97D588B0")
     public String getAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1694083880 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1694083880 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1694083880 = mAlgorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_1694083880.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1694083880.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1694083880;
-        // ---------- Original Method ----------
-        //return mAlgorithm;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.881 -0400", hash_original_method = "1B2B63EC3C55FEF6363AE03FA64546E8", hash_generated_method = "CE1CF7B8073930E2EB8A09AA575AB35B")
     public boolean isSupportedScheme() {
         {
@@ -206,60 +207,62 @@ public class HttpAuthHeader {
                 {
                     boolean var74F77E97056CDC845905F625FD4FAE6E_1641629614 = (mAlgorithm.equals("md5") &&
                         (mQop == null || mQop.equals("auth")));
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1115111365 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1115111365;
-        // ---------- Original Method ----------
-        //if (mRealm != null) {
-            //if (mScheme == BASIC) {
-                //return true;
-            //} else {
-                //if (mScheme == DIGEST) {
-                    //return
-                        //mAlgorithm.equals("md5") &&
-                        //(mQop == null || mQop.equals("auth"));
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+                
+                    
+                        
+                        
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.881 -0400", hash_original_method = "5A9C556851102A9977303C7DFC694964", hash_generated_method = "0F34D68012D4AAEFF4D022CA4BD5D8CE")
     private void parseHeader(String header) {
         {
             HttpLog.v("HttpAuthHeader.parseHeader(): header: " + header);
-        } //End block
+        } 
         {
             String parameters = parseScheme(header);
             {
                 {
                     parseParameters(parameters);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(header.getTaint());
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("HttpAuthHeader.parseHeader(): header: " + header);
-        //}
-        //if (header != null) {
-            //String parameters = parseScheme(header);
-            //if (parameters != null) {
-                //if (mScheme != UNKNOWN) {
-                    //parseParameters(parameters);
-                //}
-            //}
-        //}
+        
+        
+            
+        
+        
+            
+            
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.882 -0400", hash_original_method = "BA2F0752C4374C507095962D429C28E1", hash_generated_method = "46BA9CBCC62413A80A631B5C95559D8D")
     private String parseScheme(String header) {
-        String varB4EAC82CA7396A68D541C85D26508E83_313763841 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_926543721 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_313763841 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_926543721 = null; 
         {
             int i = header.indexOf(' ');
             {
@@ -269,92 +272,94 @@ public class HttpAuthHeader {
                     {
                         mScheme = DIGEST;
                         mAlgorithm = "md5";
-                    } //End block
+                    } 
                     {
                         {
                             boolean var16CB325F43B7CEA678BFF5231E7CFB88_82693709 = (scheme.equalsIgnoreCase(BASIC_TOKEN));
                             {
                                 mScheme = BASIC;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_313763841 = header.substring(i + 1);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_926543721 = null;
         addTaint(header.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_9860920; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_9860920; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_9860920 = varB4EAC82CA7396A68D541C85D26508E83_313763841;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_9860920 = varB4EAC82CA7396A68D541C85D26508E83_926543721;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_9860920.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_9860920.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_9860920;
-        // ---------- Original Method ----------
-        //if (header != null) {
-            //int i = header.indexOf(' ');
-            //if (i >= 0) {
-                //String scheme = header.substring(0, i).trim();
-                //if (scheme.equalsIgnoreCase(DIGEST_TOKEN)) {
-                    //mScheme = DIGEST;
-                    //mAlgorithm = "md5";
-                //} else {
-                    //if (scheme.equalsIgnoreCase(BASIC_TOKEN)) {
-                        //mScheme = BASIC;
-                    //}
-                //}
-                //return header.substring(i + 1);
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+                
+                    
+                    
+                
+                    
+                        
+                    
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.883 -0400", hash_original_method = "2438A746B67FAB4E454DBFA828DCDAA3", hash_generated_method = "73CCFFF0CCC4B765FD35B53AD2A08E5E")
     private void parseParameters(String parameters) {
         {
             HttpLog.v("HttpAuthHeader.parseParameters():" +
                       " parameters: " + parameters);
-        } //End block
+        } 
         {
             int i;
             {
                 i = parameters.indexOf(',');
                 {
                     parseParameter(parameters);
-                } //End block
+                } 
                 {
                     parseParameter(parameters.substring(0, i));
                     parameters = parameters.substring(i + 1);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(parameters.getTaint());
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("HttpAuthHeader.parseParameters():" +
-                      //" parameters: " + parameters);
-        //}
-        //if (parameters != null) {
-            //int i;
-            //do {
-                //i = parameters.indexOf(',');
-                //if (i < 0) {
-                    //parseParameter(parameters);
-                //} else {
-                    //parseParameter(parameters.substring(0, i));
-                    //parameters = parameters.substring(i + 1);
-                //}
-            //} while (i >= 0);
-        //}
+        
+        
+            
+                      
+        
+        
+            
+            
+                
+                
+                    
+                
+                    
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.883 -0400", hash_original_method = "5835A4879F5A1904E0EE047AD8542D67", hash_generated_method = "5A08DF24BCA52FD79FD0937B25B2B745")
     private void parseParameter(String parameter) {
         {
@@ -366,45 +371,46 @@ public class HttpAuthHeader {
                     HttpLog.v("HttpAuthHeader.parseParameter():" +
                               " token: " + token +
                               " value: " + value);
-                } //End block
+                } 
                 {
                     boolean varCEC1DBC4ECC877291DF9F6E9273F6D58_165416871 = (token.equalsIgnoreCase(REALM_TOKEN));
                     {
                         mRealm = value;
-                    } //End block
+                    } 
                     {
                         {
                             parseParameter(token, value);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(parameter.getTaint());
-        // ---------- Original Method ----------
-        //if (parameter != null) {
-            //int i = parameter.indexOf('=');
-            //if (i >= 0) {
-                //String token = parameter.substring(0, i).trim();
-                //String value =
-                    //trimDoubleQuotesIfAny(parameter.substring(i + 1).trim());
-                //if (HttpLog.LOGV) {
-                    //HttpLog.v("HttpAuthHeader.parseParameter():" +
-                              //" token: " + token +
-                              //" value: " + value);
-                //}
-                //if (token.equalsIgnoreCase(REALM_TOKEN)) {
-                    //mRealm = value;
-                //} else {
-                    //if (mScheme == DIGEST) {
-                        //parseParameter(token, value);
-                    //}
-                //}
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+                    
+                
+                    
+                              
+                              
+                
+                
+                    
+                
+                    
+                        
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.884 -0400", hash_original_method = "5C1E65D88B1AA36ECF03FA5CEB305F59", hash_generated_method = "2CCDC817FD3A0B5A286ADB7612020F54")
     private void parseParameter(String token, String value) {
         {
@@ -412,60 +418,61 @@ public class HttpAuthHeader {
                 boolean var15BA235533ABCE547E0797A898456E7C_1721560878 = (token.equalsIgnoreCase(NONCE_TOKEN));
                 {
                     mNonce = value;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varB44C547194E6F53089412783571B2447_1549357496 = (token.equalsIgnoreCase(STALE_TOKEN));
                 {
                     parseStale(value);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var60D1503A4A333BAFF728E7D81DC09722_919901967 = (token.equalsIgnoreCase(OPAQUE_TOKEN));
                 {
                     mOpaque = value;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var22053CACB180CCB306D6CA26A6BD8471_938307381 = (token.equalsIgnoreCase(QOP_TOKEN));
                 {
                     mQop = value.toLowerCase();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varD433831E97890454AF3D37C7538A019B_1431571254 = (token.equalsIgnoreCase(ALGORITHM_TOKEN));
                 {
                     mAlgorithm = value.toLowerCase();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(token.getTaint());
-        // ---------- Original Method ----------
-        //if (token != null && value != null) {
-            //if (token.equalsIgnoreCase(NONCE_TOKEN)) {
-                //mNonce = value;
-                //return;
-            //}
-            //if (token.equalsIgnoreCase(STALE_TOKEN)) {
-                //parseStale(value);
-                //return;
-            //}
-            //if (token.equalsIgnoreCase(OPAQUE_TOKEN)) {
-                //mOpaque = value;
-                //return;
-            //}
-            //if (token.equalsIgnoreCase(QOP_TOKEN)) {
-                //mQop = value.toLowerCase();
-                //return;
-            //}
-            //if (token.equalsIgnoreCase(ALGORITHM_TOKEN)) {
-                //mAlgorithm = value.toLowerCase();
-                //return;
-            //}
-        //}
+        
+        
+            
+                
+                
+            
+            
+                
+                
+            
+            
+                
+                
+            
+            
+                
+                
+            
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.884 -0400", hash_original_method = "76A5C02B3DC683D5BF99D1052171A66C", hash_generated_method = "FC3984F4AE7C801EAAC19795B2520902")
     private void parseStale(String value) {
         {
@@ -473,19 +480,20 @@ public class HttpAuthHeader {
                 boolean varF9F03D746A978112631EA8BA624DD149_81577129 = (value.equalsIgnoreCase("true"));
                 {
                     mStale = true;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //if (value != null) {
-            //if (value.equalsIgnoreCase("true")) {
-                //mStale = true;
-            //}
-        //}
+        
+        
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static private String trimDoubleQuotesIfAny(String value) {
         if (value != null) {
             int len = value.length();

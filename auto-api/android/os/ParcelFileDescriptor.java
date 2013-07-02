@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.FileDescriptor;
@@ -36,9 +36,9 @@ public class ParcelFileDescriptor implements Parcelable {
         super();
         mParcelDescriptor = descriptor;
         mFileDescriptor = mParcelDescriptor.mFileDescriptor;
-        // ---------- Original Method ----------
-        //mParcelDescriptor = descriptor;
-        //mFileDescriptor = mParcelDescriptor.mFileDescriptor;
+        
+        
+        
     }
 
     
@@ -47,18 +47,19 @@ public class ParcelFileDescriptor implements Parcelable {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("descriptor must not be null");
-        } //End block
+        } 
         mFileDescriptor = descriptor;
         mParcelDescriptor = null;
-        // ---------- Original Method ----------
-        //if (descriptor == null) {
-            //throw new NullPointerException("descriptor must not be null");
-        //}
-        //mFileDescriptor = descriptor;
-        //mParcelDescriptor = null;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ParcelFileDescriptor open(File file, int mode) throws FileNotFoundException {
         String path = file.getPath();
         SecurityManager security = System.getSecurityManager();
@@ -77,23 +78,26 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ParcelFileDescriptor dup(FileDescriptor orig) throws IOException {
         FileDescriptor fd = Parcel.dupFileDescriptor(orig);
         return fd != null ? new ParcelFileDescriptor(fd) : null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.866 -0400", hash_original_method = "474327607EE56B056BCE4043FE865D8B", hash_generated_method = "B58C9C3760BDF94893BEA57F32C2EDF0")
     public ParcelFileDescriptor dup() throws IOException {
-        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1249206110 = null; //Variable for return #1
+        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1249206110 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1249206110 = dup(getFileDescriptor());
-        varB4EAC82CA7396A68D541C85D26508E83_1249206110.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1249206110.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1249206110;
-        // ---------- Original Method ----------
-        //return dup(getFileDescriptor());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ParcelFileDescriptor fromFd(int fd) throws IOException {
         FileDescriptor fdesc = getFileDescriptorFromFd(fd);
         return new ParcelFileDescriptor(fdesc);
@@ -105,6 +109,7 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ParcelFileDescriptor adoptFd(int fd) {
         FileDescriptor fdesc = getFileDescriptorFromFdNoDup(fd);
         return new ParcelFileDescriptor(fdesc);
@@ -122,12 +127,14 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ParcelFileDescriptor fromDatagramSocket(DatagramSocket datagramSocket) {
         FileDescriptor fd = datagramSocket.getFileDescriptor$();
         return fd != null ? new ParcelFileDescriptor(fd) : null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ParcelFileDescriptor[] createPipe() throws IOException {
         FileDescriptor[] fds = new FileDescriptor[2];
         createPipeNative(fds);
@@ -142,6 +149,7 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static ParcelFileDescriptor fromData(byte[] data, String name) throws IOException {
         if (data == null) return null;
@@ -157,12 +165,12 @@ public class ParcelFileDescriptor implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.869 -0400", hash_original_method = "949276D2764A2C9DACACDE44898698C8", hash_generated_method = "81B2C01F95111840AFF626401A6B9D61")
     public FileDescriptor getFileDescriptor() {
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_735870705 = null; //Variable for return #1
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_735870705 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_735870705 = mFileDescriptor;
-        varB4EAC82CA7396A68D541C85D26508E83_735870705.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_735870705.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_735870705;
-        // ---------- Original Method ----------
-        //return mFileDescriptor;
+        
+        
     }
 
     
@@ -180,19 +188,20 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.870 -0400", hash_original_method = "C747587E89EFBC650597F209F149B598", hash_generated_method = "8C2AC9AD04B8AD7CDA6E8DAAC23C212E")
     public int getFd() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Already closed");
-        } //End block
+        } 
         int var751A6E18182434738AFEB29212FB434D_222888602 = (getFdNative());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1251663227 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1251663227;
-        // ---------- Original Method ----------
-        //if (mClosed) {
-            //throw new IllegalStateException("Already closed");
-        //}
-        //return getFdNative();
+        
+        
+            
+        
+        
     }
 
     
@@ -203,72 +212,76 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.870 -0400", hash_original_method = "AECA8304F263BE3AD120D5996456D31E", hash_generated_method = "362763032FDCC525606D1DB6933FFD23")
     public int detachFd() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Already closed");
-        } //End block
+        } 
         {
             int fd = mParcelDescriptor.detachFd();
             mClosed = true;
-        } //End block
+        } 
         int fd = getFd();
         mClosed = true;
         Parcel.clearFileDescriptor(mFileDescriptor);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_126011799 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_126011799;
-        // ---------- Original Method ----------
-        //if (mClosed) {
-            //throw new IllegalStateException("Already closed");
-        //}
-        //if (mParcelDescriptor != null) {
-            //int fd = mParcelDescriptor.detachFd();
-            //mClosed = true;
-            //return fd;
-        //}
-        //int fd = getFd();
-        //mClosed = true;
-        //Parcel.clearFileDescriptor(mFileDescriptor);
-        //return fd;
+        
+        
+            
+        
+        
+            
+            
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.871 -0400", hash_original_method = "39939000D7522F3E727F0E3243089AE5", hash_generated_method = "C93AE2836E4766793DDE4FD6C28D9C61")
     public void close() throws IOException {
         {
             mClosed = true;
-        } //End block
+        } 
         {
             mParcelDescriptor.close();
-        } //End block
+        } 
         {
             Parcel.closeFileDescriptor(mFileDescriptor);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mClosed) return;
-            //mClosed = true;
-        //}
-        //if (mParcelDescriptor != null) {
-            //mParcelDescriptor.close();
-        //} else {
-            //Parcel.closeFileDescriptor(mFileDescriptor);
-        //}
+        } 
+        
+        
+            
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.871 -0400", hash_original_method = "BA9513A0FEF5B159A730B41F75EA216A", hash_generated_method = "BEBCFFBD3AF3CB61522B65F6D6BFB224")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_582510642 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_582510642 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_582510642 = "{ParcelFileDescriptor: " + mFileDescriptor + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_582510642.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_582510642.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_582510642;
-        // ---------- Original Method ----------
-        //return "{ParcelFileDescriptor: " + mFileDescriptor + "}";
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.871 -0400", hash_original_method = "47AC631E45892E7E44A62B81BC7ACB91", hash_generated_method = "5BFFCB83F2EFF1414AF3C5F71AB87D6E")
     @Override
     protected void finalize() throws Throwable {
@@ -276,20 +289,20 @@ public class ParcelFileDescriptor implements Parcelable {
         {
             {
                 close();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (!mClosed) {
-                //close();
-            //}
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -297,11 +310,12 @@ public class ParcelFileDescriptor implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117493792 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117493792;
-        // ---------- Original Method ----------
-        //return Parcelable.CONTENTS_FILE_DESCRIPTOR;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.872 -0400", hash_original_method = "D9382402A3E15CFE2B7948813716CC7C", hash_generated_method = "A4060D8882E09B4E89CBADE79B077B5E")
     public void writeToParcel(Parcel out, int flags) {
         out.writeFileDescriptor(mFileDescriptor);
@@ -309,20 +323,20 @@ public class ParcelFileDescriptor implements Parcelable {
             try 
             {
                 close();
-            } //End block
+            } 
             catch (IOException e)
             { }
-        } //End block
+        } 
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeFileDescriptor(mFileDescriptor);
-        //if ((flags&PARCELABLE_WRITE_RETURN_VALUE) != 0 && !mClosed) {
-            //try {
-                //close();
-            //} catch (IOException e) {
-            //}
-        //}
+        
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -335,8 +349,8 @@ public class ParcelFileDescriptor implements Parcelable {
         public  AutoCloseInputStream(ParcelFileDescriptor fd) {
             super(fd.getFileDescriptor());
             mFd = fd;
-            // ---------- Original Method ----------
-            //mFd = fd;
+            
+            
         }
 
         
@@ -346,17 +360,17 @@ public class ParcelFileDescriptor implements Parcelable {
             try 
             {
                 mFd.close();
-            } //End block
+            } 
             finally 
             {
                 super.close();
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //mFd.close();
-            //} finally {
-                //super.close();
-            //}
+            } 
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -373,8 +387,8 @@ public class ParcelFileDescriptor implements Parcelable {
         public  AutoCloseOutputStream(ParcelFileDescriptor fd) {
             super(fd.getFileDescriptor());
             mFd = fd;
-            // ---------- Original Method ----------
-            //mFd = fd;
+            
+            
         }
 
         
@@ -384,17 +398,17 @@ public class ParcelFileDescriptor implements Parcelable {
             try 
             {
                 mFd.close();
-            } //End block
+            } 
             finally 
             {
                 super.close();
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //mFd.close();
-            //} finally {
-                //super.close();
-            //}
+            } 
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -437,12 +451,12 @@ public class ParcelFileDescriptor implements Parcelable {
             return new ParcelFileDescriptor[size];
         }
     };
-    // orphaned legacy method
+    
     public ParcelFileDescriptor[] newArray(int size) {
             return new ParcelFileDescriptor[size];
         }
     
-    // orphaned legacy method
+    
     public ParcelFileDescriptor createFromParcel(Parcel in) {
             return in.readFileDescriptor();
         }

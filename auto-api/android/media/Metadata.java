@@ -1,11 +1,11 @@
 package android.media;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Bitmap;
 import android.os.Parcel;
@@ -27,10 +27,11 @@ public class Metadata {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.424 -0400", hash_original_method = "42EB03B7CCF72771EC09BC7329CF6561", hash_generated_method = "DA29DB50537B7681661C6C11E0C14FF9")
     public  Metadata() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.425 -0400", hash_original_method = "AD5931B1126E13DCBE3F825449AFE253", hash_generated_method = "8F1C821814115C546F8D0E961E02FC45")
     private boolean scanAllRecords(Parcel parcel, int bytesLeft) {
         int recCount = 0;
@@ -41,79 +42,81 @@ public class Metadata {
             final int size = parcel.readInt();
             {
                 error = true;
-            } //End block
+            } 
             final int metadataId = parcel.readInt();
             {
                 boolean varCE54963948EB187604DDE6A0205AC4AE_96247453 = (!checkMetadataId(metadataId));
                 {
                     error = true;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varF74D6B80DAC4C88D0ACC6CF48805058A_593551717 = (mKeyToPosMap.containsKey(metadataId));
                 {
                     error = true;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mKeyToPosMap.put(metadataId, parcel.dataPosition());
             final int metadataType = parcel.readInt();
             {
                 error = true;
-            } //End block
+            } 
             parcel.setDataPosition(start + size);
             bytesLeft -= size;
-        } //End block
+        } 
         {
             mKeyToPosMap.clear();
-        } //End block
+        } 
         addTaint(parcel.getTaint());
         addTaint(bytesLeft);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_196254621 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_196254621;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.426 -0400", hash_original_method = "35CAF9C1FD62AB3C548A70E81DF2A0C5", hash_generated_method = "C50887463C12943FF53F294606F35E0B")
     public boolean parse(Parcel parcel) {
         {
             boolean var21ABD0F2AE1309CFFF2D48D25194CD46_502730899 = (parcel.dataAvail() < kMetaHeaderSize);
-        } //End collapsed parenthetic
+        } 
         final int pin = parcel.dataPosition();
         final int size = parcel.readInt();
         {
             boolean varCFE361E1F3F172CEF6C287095882467E_1856871791 = (parcel.dataAvail() + kInt32Size < size || size < kMetaHeaderSize);
             {
                 parcel.setDataPosition(pin);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final int kShouldBeMetaMarker = parcel.readInt();
         {
             parcel.setDataPosition(pin);
-        } //End block
+        } 
         {
             boolean var63F06285359F6D9AE8103EB1263019E8_30028201 = (!scanAllRecords(parcel, size - kMetaHeaderSize));
             {
                 parcel.setDataPosition(pin);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mParcel = parcel;
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_91591182 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_91591182;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.427 -0400", hash_original_method = "87FE67157845253CBCE0E047F3C9B374", hash_generated_method = "F31820BBEA17B904845559BB7FB51D96")
     public Set<Integer> keySet() {
-        Set<Integer> varB4EAC82CA7396A68D541C85D26508E83_770574424 = null; //Variable for return #1
+        Set<Integer> varB4EAC82CA7396A68D541C85D26508E83_770574424 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_770574424 = mKeyToPosMap.keySet();
-        varB4EAC82CA7396A68D541C85D26508E83_770574424.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_770574424.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_770574424;
-        // ---------- Original Method ----------
-        //return mKeyToPosMap.keySet();
+        
+        
     }
 
     
@@ -123,31 +126,31 @@ public class Metadata {
             boolean var6AD40C80246678F8DA68E7C311DBB62B_526161013 = (!checkMetadataId(metadataId));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid key: " + metadataId);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var518C24368602C463B4298CCF83E598B1_595672837 = (mKeyToPosMap.containsKey(metadataId));
         addTaint(metadataId);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_178501061 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_178501061;
-        // ---------- Original Method ----------
-        //if (!checkMetadataId(metadataId)) {
-            //throw new IllegalArgumentException("Invalid key: " + metadataId);
-        //}
-        //return mKeyToPosMap.containsKey(metadataId);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.428 -0400", hash_original_method = "D07ADABDF4536425A343AFD4015AEABD", hash_generated_method = "B7FCE09150ADE24A93474EC497803AE4")
     public String getString(final int key) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1052446817 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1052446817 = null; 
         checkType(key, STRING_VAL);
         varB4EAC82CA7396A68D541C85D26508E83_1052446817 = mParcel.readString();
         addTaint(key);
-        varB4EAC82CA7396A68D541C85D26508E83_1052446817.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1052446817.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1052446817;
-        // ---------- Original Method ----------
-        //checkType(key, STRING_VAL);
-        //return mParcel.readString();
+        
+        
+        
     }
 
     
@@ -158,9 +161,9 @@ public class Metadata {
         addTaint(key);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1393620844 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1393620844;
-        // ---------- Original Method ----------
-        //checkType(key, INTEGER_VAL);
-        //return mParcel.readInt();
+        
+        
+        
     }
 
     
@@ -171,9 +174,9 @@ public class Metadata {
         addTaint(key);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1500392649 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1500392649;
-        // ---------- Original Method ----------
-        //checkType(key, BOOLEAN_VAL);
-        //return mParcel.readInt() == 1;
+        
+        
+        
     }
 
     
@@ -184,9 +187,9 @@ public class Metadata {
         addTaint(key);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1859747629 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1859747629;
-        // ---------- Original Method ----------
-        //checkType(key, LONG_VAL);
-        //return mParcel.readLong();
+        
+        
+        
     }
 
     
@@ -197,9 +200,9 @@ public class Metadata {
         addTaint(key);
         double varE8CD7DA078A86726031AD64F35F5A6C0_1697154236 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1697154236;
-        // ---------- Original Method ----------
-        //checkType(key, DOUBLE_VAL);
-        //return mParcel.readDouble();
+        
+        
+        
     }
 
     
@@ -210,16 +213,16 @@ public class Metadata {
         addTaint(key);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1682593047 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1682593047;
-        // ---------- Original Method ----------
-        //checkType(key, BYTE_ARRAY_VAL);
-        //return mParcel.createByteArray();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.431 -0400", hash_original_method = "AAEF3D01D729AC9D47A3AB4C5693312B", hash_generated_method = "7333FD84BC10869CDC051F4B7411E6E4")
     public Date getDate(final int key) {
-        Date varB4EAC82CA7396A68D541C85D26508E83_962608237 = null; //Variable for return #1
-        Date varB4EAC82CA7396A68D541C85D26508E83_1409202618 = null; //Variable for return #2
+        Date varB4EAC82CA7396A68D541C85D26508E83_962608237 = null; 
+        Date varB4EAC82CA7396A68D541C85D26508E83_1409202618 = null; 
         checkType(key, DATE_VAL);
         final long timeSinceEpoch = mParcel.readLong();
         final String timeZone = mParcel.readString();
@@ -227,38 +230,38 @@ public class Metadata {
             boolean var46731DD8B805A34A89DC28D55F445C86_318705049 = (timeZone.length() == 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_962608237 = new Date(timeSinceEpoch);
-            } //End block
+            } 
             {
                 TimeZone tz = TimeZone.getTimeZone(timeZone);
                 Calendar cal = Calendar.getInstance(tz);
                 cal.setTimeInMillis(timeSinceEpoch);
                 varB4EAC82CA7396A68D541C85D26508E83_1409202618 = cal.getTime();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(key);
-        Date varA7E53CE21691AB073D9660D615818899_242729143; //Final return value
+        Date varA7E53CE21691AB073D9660D615818899_242729143; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_242729143 = varB4EAC82CA7396A68D541C85D26508E83_962608237;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_242729143 = varB4EAC82CA7396A68D541C85D26508E83_1409202618;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_242729143.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_242729143.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_242729143;
-        // ---------- Original Method ----------
-        //checkType(key, DATE_VAL);
-        //final long timeSinceEpoch = mParcel.readLong();
-        //final String timeZone = mParcel.readString();
-        //if (timeZone.length() == 0) {
-            //return new Date(timeSinceEpoch);
-        //} else {
-            //TimeZone tz = TimeZone.getTimeZone(timeZone);
-            //Calendar cal = Calendar.getInstance(tz);
-            //cal.setTimeInMillis(timeSinceEpoch);
-            //return cal.getTime();
-        //}
+        
+        
+        
+        
+        
+            
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -282,12 +285,12 @@ public class Metadata {
         addTaint(val);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_584731085 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_584731085;
-        // ---------- Original Method ----------
-        //if (val <= ANY || (LAST_SYSTEM < val && val < FIRST_CUSTOM)) {
-            //Log.e(TAG, "Invalid metadata ID " + val);
-            //return false;
-        //}
-        //return true;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -298,16 +301,16 @@ public class Metadata {
         final int type = mParcel.readInt();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Wrong type " + expectedType + " but got " + type);
-        } //End block
+        } 
         addTaint(key);
         addTaint(expectedType);
-        // ---------- Original Method ----------
-        //final int pos = mKeyToPosMap.get(key);
-        //mParcel.setDataPosition(pos);
-        //final int type = mParcel.readInt();
-        //if (type != expectedType) {
-            //throw new IllegalStateException("Wrong type " + expectedType + " but got " + type);
-        //}
+        
+        
+        
+        
+        
+            
+        
     }
 
     

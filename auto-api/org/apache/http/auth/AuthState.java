@@ -1,11 +1,11 @@
 package org.apache.http.auth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class AuthState {
@@ -22,7 +22,7 @@ public class AuthState {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.626 -0400", hash_original_method = "42AD4E0626C603EC8E908340F6792E72", hash_generated_method = "141CC616389653FC1DF842DB00A69935")
     public  AuthState() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,10 +31,10 @@ public class AuthState {
         this.authScheme = null;
         this.authScope = null;
         this.credentials = null;
-        // ---------- Original Method ----------
-        //this.authScheme = null;
-        //this.authScope = null;
-        //this.credentials = null;
+        
+        
+        
+        
     }
 
     
@@ -42,8 +42,8 @@ public class AuthState {
     public boolean isValid() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1393569238 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1393569238;
-        // ---------- Original Method ----------
-        //return this.authScheme != null;
+        
+        
     }
 
     
@@ -51,70 +51,71 @@ public class AuthState {
     public void setAuthScheme(final AuthScheme authScheme) {
         {
             invalidate();
-        } //End block
+        } 
         this.authScheme = authScheme;
-        // ---------- Original Method ----------
-        //if (authScheme == null) {
-            //invalidate();
-            //return;
-        //}
-        //this.authScheme = authScheme;
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.628 -0400", hash_original_method = "C7CF977B6EF3E7F983B2AE16A4014379", hash_generated_method = "531AC3D9CBA0AAA3A0C0BDA94C666006")
     public AuthScheme getAuthScheme() {
-        AuthScheme varB4EAC82CA7396A68D541C85D26508E83_1920624008 = null; //Variable for return #1
+        AuthScheme varB4EAC82CA7396A68D541C85D26508E83_1920624008 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1920624008 = this.authScheme;
-        varB4EAC82CA7396A68D541C85D26508E83_1920624008.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1920624008.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1920624008;
-        // ---------- Original Method ----------
-        //return this.authScheme;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.628 -0400", hash_original_method = "57CD79A3968806BAC032754AA40A41DA", hash_generated_method = "393D7361805C4D11099EB654619A560E")
     public Credentials getCredentials() {
-        Credentials varB4EAC82CA7396A68D541C85D26508E83_1198666106 = null; //Variable for return #1
+        Credentials varB4EAC82CA7396A68D541C85D26508E83_1198666106 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1198666106 = this.credentials;
-        varB4EAC82CA7396A68D541C85D26508E83_1198666106.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1198666106.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1198666106;
-        // ---------- Original Method ----------
-        //return this.credentials;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.629 -0400", hash_original_method = "CA0BD3D3E2D3BF9E673535ADF196F87D", hash_generated_method = "3DD02DA100E700462E960E48422CA3F9")
     public void setCredentials(final Credentials credentials) {
         this.credentials = credentials;
-        // ---------- Original Method ----------
-        //this.credentials = credentials;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.629 -0400", hash_original_method = "BF313F23BCC888676D9F0166A2639A73", hash_generated_method = "3B95D00C3E82BE92151B923B64FD1E45")
     public AuthScope getAuthScope() {
-        AuthScope varB4EAC82CA7396A68D541C85D26508E83_283640859 = null; //Variable for return #1
+        AuthScope varB4EAC82CA7396A68D541C85D26508E83_283640859 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_283640859 = this.authScope;
-        varB4EAC82CA7396A68D541C85D26508E83_283640859.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_283640859.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_283640859;
-        // ---------- Original Method ----------
-        //return this.authScope;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.629 -0400", hash_original_method = "608941030C588F83A6C921F3D04280DF", hash_generated_method = "7D1366DFB32085A799B9EEC519DF7012")
     public void setAuthScope(final AuthScope authScope) {
         this.authScope = authScope;
-        // ---------- Original Method ----------
-        //this.authScope = authScope;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.630 -0400", hash_original_method = "CD2C06D38ABEB8110AC037A3B94BECA0", hash_generated_method = "058F340942FBC19F4A710C9EE24AB6B4")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2005898877 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2005898877 = null; 
         StringBuilder buffer = new StringBuilder();
         buffer.append("auth scope [");
         buffer.append(this.authScope);
@@ -122,16 +123,16 @@ public class AuthState {
         buffer.append(this.credentials != null ? "true" : "false");
         buffer.append("]");
         varB4EAC82CA7396A68D541C85D26508E83_2005898877 = buffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_2005898877.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2005898877.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2005898877;
-        // ---------- Original Method ----------
-        //StringBuilder buffer = new StringBuilder();
-        //buffer.append("auth scope [");
-        //buffer.append(this.authScope);
-        //buffer.append("]; credentials set [");
-        //buffer.append(this.credentials != null ? "true" : "false");
-        //buffer.append("]");
-        //return buffer.toString();
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

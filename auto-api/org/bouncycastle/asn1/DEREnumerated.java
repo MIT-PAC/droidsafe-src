@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -20,8 +20,8 @@ public class DEREnumerated extends ASN1Object {
     public  DEREnumerated(
         int         value) {
         bytes = BigInteger.valueOf(value).toByteArray();
-        // ---------- Original Method ----------
-        //bytes = BigInteger.valueOf(value).toByteArray();
+        
+        
     }
 
     
@@ -29,8 +29,8 @@ public class DEREnumerated extends ASN1Object {
     public  DEREnumerated(
         BigInteger   value) {
         bytes = value.toByteArray();
-        // ---------- Original Method ----------
-        //bytes = value.toByteArray();
+        
+        
     }
 
     
@@ -38,11 +38,12 @@ public class DEREnumerated extends ASN1Object {
     public  DEREnumerated(
         byte[]   bytes) {
         this.bytes = bytes;
-        // ---------- Original Method ----------
-        //this.bytes = bytes;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DEREnumerated getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DEREnumerated)
@@ -53,6 +54,7 @@ public class DEREnumerated extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DEREnumerated getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -68,14 +70,15 @@ public class DEREnumerated extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.367 -0400", hash_original_method = "9CD9452AB0CD35F4B73E8FBD8DC6F0C8", hash_generated_method = "F623D10CDE4A6E52118607AD12A1CF14")
     public BigInteger getValue() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_2145239716 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_2145239716 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2145239716 = new BigInteger(bytes);
-        varB4EAC82CA7396A68D541C85D26508E83_2145239716.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2145239716.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2145239716;
-        // ---------- Original Method ----------
-        //return new BigInteger(bytes);
+        
+        
     }
 
     
@@ -84,8 +87,8 @@ public class DEREnumerated extends ASN1Object {
         DEROutputStream out) throws IOException {
         out.writeEncoded(ENUMERATED, bytes);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.writeEncoded(ENUMERATED, bytes);
+        
+        
     }
 
     
@@ -97,23 +100,24 @@ public class DEREnumerated extends ASN1Object {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_328175086 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_328175086;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DEREnumerated))
-        //{
-            //return false;
-        //}
-        //DEREnumerated other = (DEREnumerated)o;
-        //return Arrays.areEqual(this.bytes, other.bytes);
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.368 -0400", hash_original_method = "ECC4B202736A567045152AD0D498E31B", hash_generated_method = "4C130B6F03CE7655163711F7DAF90EA8")
     public int hashCode() {
         int var88D4CD75A93BDF94B63A1DFF90FF8231_1079516484 = (Arrays.hashCode(bytes));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1765773628 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1765773628;
-        // ---------- Original Method ----------
-        //return Arrays.hashCode(bytes);
+        
+        
     }
 
     

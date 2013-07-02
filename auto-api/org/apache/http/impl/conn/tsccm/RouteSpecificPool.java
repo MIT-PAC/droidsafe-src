@@ -1,11 +1,11 @@
 package org.apache.http.impl.conn.tsccm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.ListIterator;
@@ -44,23 +44,23 @@ public class RouteSpecificPool {
         this.freeEntries = new LinkedList<BasicPoolEntry>();
         this.waitingThreads = new LinkedList<WaitingThread>();
         this.numEntries = 0;
-        // ---------- Original Method ----------
-        //this.route = route;
-        //this.maxEntries = maxEntries;
-        //this.freeEntries = new LinkedList<BasicPoolEntry>();
-        //this.waitingThreads = new LinkedList<WaitingThread>();
-        //this.numEntries = 0;
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.774 -0400", hash_original_method = "A51AC1237DD43D471744BBD4E881146C", hash_generated_method = "31338F92F4AF582A28E1C4406B93A121")
     public final HttpRoute getRoute() {
-        HttpRoute varB4EAC82CA7396A68D541C85D26508E83_1004366105 = null; //Variable for return #1
+        HttpRoute varB4EAC82CA7396A68D541C85D26508E83_1004366105 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1004366105 = route;
-        varB4EAC82CA7396A68D541C85D26508E83_1004366105.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1004366105.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1004366105;
-        // ---------- Original Method ----------
-        //return route;
+        
+        
     }
 
     
@@ -68,18 +68,19 @@ public class RouteSpecificPool {
     public final int getMaxEntries() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1724384994 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1724384994;
-        // ---------- Original Method ----------
-        //return maxEntries;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.775 -0400", hash_original_method = "039A6CD61F0359B07E2C6E71E77BA3EE", hash_generated_method = "DD78B718F6D79CA57D871C0C52660589")
     public boolean isUnused() {
         boolean var4F862F236C6B94449E929BC72D5EA775_833561767 = ((numEntries < 1) && waitingThreads.isEmpty());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_476289430 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_476289430;
-        // ---------- Original Method ----------
-        //return (numEntries < 1) && waitingThreads.isEmpty();
+        
+        
     }
 
     
@@ -87,8 +88,8 @@ public class RouteSpecificPool {
     public int getCapacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_306534461 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_306534461;
-        // ---------- Original Method ----------
-        //return maxEntries - numEntries;
+        
+        
     }
 
     
@@ -96,16 +97,16 @@ public class RouteSpecificPool {
     public final int getEntryCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1802480826 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1802480826;
-        // ---------- Original Method ----------
-        //return numEntries;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.776 -0400", hash_original_method = "7F86BE46F7391BA2A7A5B9B0529BB73E", hash_generated_method = "A59D71598B0156F5981011613CB5548B")
     public BasicPoolEntry allocEntry(final Object state) {
-        BasicPoolEntry varB4EAC82CA7396A68D541C85D26508E83_1173672380 = null; //Variable for return #1
-        BasicPoolEntry varB4EAC82CA7396A68D541C85D26508E83_2085788480 = null; //Variable for return #2
-        BasicPoolEntry varB4EAC82CA7396A68D541C85D26508E83_1454711022 = null; //Variable for return #3
+        BasicPoolEntry varB4EAC82CA7396A68D541C85D26508E83_1173672380 = null; 
+        BasicPoolEntry varB4EAC82CA7396A68D541C85D26508E83_2085788480 = null; 
+        BasicPoolEntry varB4EAC82CA7396A68D541C85D26508E83_1454711022 = null; 
         {
             boolean varCA4A88A9BD0576BD2AD4C28B0F740C62_1835932226 = (!freeEntries.isEmpty());
             {
@@ -119,12 +120,12 @@ public class RouteSpecificPool {
                             {
                                 it.remove();
                                 varB4EAC82CA7396A68D541C85D26508E83_1173672380 = entry;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             boolean varCA4A88A9BD0576BD2AD4C28B0F740C62_953330007 = (!freeEntries.isEmpty());
             {
@@ -134,63 +135,65 @@ public class RouteSpecificPool {
                 try 
                 {
                     conn.close();
-                } //End block
+                } 
                 catch (IOException ex)
                 {
                     log.debug("I/O error closing connection", ex);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_2085788480 = entry;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1454711022 = null;
         addTaint(state.getTaint());
-        BasicPoolEntry varA7E53CE21691AB073D9660D615818899_49298371; //Final return value
+        BasicPoolEntry varA7E53CE21691AB073D9660D615818899_49298371; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_49298371 = varB4EAC82CA7396A68D541C85D26508E83_1173672380;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_49298371 = varB4EAC82CA7396A68D541C85D26508E83_2085788480;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_49298371 = varB4EAC82CA7396A68D541C85D26508E83_1454711022;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_49298371.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_49298371.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_49298371;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.777 -0400", hash_original_method = "1F2F8066B3FF3FBE25C7998F0003547E", hash_generated_method = "3090D56704BE3BA9622250ECCCE4DD28")
     public void freeEntry(BasicPoolEntry entry) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
                 ("No entry created for this pool. " + route);
-        } //End block
+        } 
         {
             boolean varDEA0E0B979C7A24481B66E82D079F8AE_354618176 = (numEntries <= freeEntries.size());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
                 ("No entry allocated from this pool. " + route);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         freeEntries.add(entry);
         addTaint(entry.getTaint());
-        // ---------- Original Method ----------
-        //if (numEntries < 1) {
-            //throw new IllegalStateException
-                //("No entry created for this pool. " + route);
-        //}
-        //if (numEntries <= freeEntries.size()) {
-            //throw new IllegalStateException
-                //("No entry allocated from this pool. " + route);
-        //}
-        //freeEntries.add(entry);
+        
+        
+            
+                
+        
+        
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.778 -0400", hash_original_method = "89E23A0834C1E349262FA5BF4999548A", hash_generated_method = "696D18D87F635A2E52072F0EB2D37918")
     public void createdEntry(BasicPoolEntry entry) {
         {
@@ -200,95 +203,101 @@ public class RouteSpecificPool {
                 ("Entry not planned for this pool." +
                  "\npool: " + route +
                  "\nplan: " + entry.getPlannedRoute());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(entry.getTaint());
-        // ---------- Original Method ----------
-        //if (!route.equals(entry.getPlannedRoute())) {
-            //throw new IllegalArgumentException
-                //("Entry not planned for this pool." +
-                 //"\npool: " + route +
-                 //"\nplan: " + entry.getPlannedRoute());
-        //}
-        //numEntries++;
+        
+        
+            
+                
+                 
+                 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.779 -0400", hash_original_method = "77FA36706319170F1442C426C0507BB4", hash_generated_method = "855C96D0EC78AAB87A8E09570688C788")
     public boolean deleteEntry(BasicPoolEntry entry) {
         final boolean found = freeEntries.remove(entry);
         addTaint(entry.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2123350257 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2123350257;
-        // ---------- Original Method ----------
-        //final boolean found = freeEntries.remove(entry);
-        //if (found)
-            //numEntries--;
-        //return found;
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.779 -0400", hash_original_method = "E1123D840A968B4EB04AEFB90EABFC3B", hash_generated_method = "8A9E0915338880A71A1B9A36A81EA60C")
     public void dropEntry() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
                 ("There is no entry that could be dropped.");
-        } //End block
-        // ---------- Original Method ----------
-        //if (numEntries < 1) {
-            //throw new IllegalStateException
-                //("There is no entry that could be dropped.");
-        //}
-        //numEntries--;
+        } 
+        
+        
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.780 -0400", hash_original_method = "5F9CEBE3D4D005B8F7D968A4703E6CB7", hash_generated_method = "7791500A3875EAF64A3A7279C593C56F")
     public void queueThread(WaitingThread wt) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Waiting thread must not be null.");
-        } //End block
+        } 
         this.waitingThreads.add(wt);
         addTaint(wt.getTaint());
-        // ---------- Original Method ----------
-        //if (wt == null) {
-            //throw new IllegalArgumentException
-                //("Waiting thread must not be null.");
-        //}
-        //this.waitingThreads.add(wt);
+        
+        
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.780 -0400", hash_original_method = "C6B8ECCB9FBEF4C7E1D5D0DF0E82610C", hash_generated_method = "226F59EAE9886397AEC229D82944B6AA")
     public boolean hasThread() {
         boolean varCB1185E953B8DD83492CB6A85FCF2AA5_1695603733 = (!this.waitingThreads.isEmpty());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_449602311 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_449602311;
-        // ---------- Original Method ----------
-        //return !this.waitingThreads.isEmpty();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.781 -0400", hash_original_method = "AB0F908D6786932ABD8D14E657997D12", hash_generated_method = "7A2B4AB10E2590786EBCE199FCA4FB84")
     public WaitingThread nextThread() {
-        WaitingThread varB4EAC82CA7396A68D541C85D26508E83_1899593485 = null; //Variable for return #1
+        WaitingThread varB4EAC82CA7396A68D541C85D26508E83_1899593485 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1899593485 = this.waitingThreads.peek();
-        varB4EAC82CA7396A68D541C85D26508E83_1899593485.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1899593485.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1899593485;
-        // ---------- Original Method ----------
-        //return this.waitingThreads.peek();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.781 -0400", hash_original_method = "E4B9C02A964F427588494E2D80051654", hash_generated_method = "2804D5975A58578620B7B749C41B12E6")
     public void removeThread(WaitingThread wt) {
         this.waitingThreads.remove(wt);
         addTaint(wt.getTaint());
-        // ---------- Original Method ----------
-        //if (wt == null)
-            //return;
-        //this.waitingThreads.remove(wt);
+        
+        
+            
+        
     }
 
     

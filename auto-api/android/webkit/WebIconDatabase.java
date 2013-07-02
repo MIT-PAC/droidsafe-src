@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ContentResolver;
 import android.database.Cursor;
@@ -26,7 +26,7 @@ public final class WebIconDatabase {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.796 -0400", hash_original_method = "D97F7EFB28FBFEC67D724170FB0509C5", hash_generated_method = "282A0D53C15427A619DE121EA3CBF850")
     private  WebIconDatabase() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,21 +38,21 @@ public final class WebIconDatabase {
                 boolean varB622938D402E011904848985C78EB22E_1524725438 = (!db.exists());
                 {
                     db.mkdirs();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mEventHandler.postMessage(
                     Message.obtain(null, EventHandler.OPEN, db.getAbsolutePath()));
-        } //End block
+        } 
         addTaint(path.getTaint());
-        // ---------- Original Method ----------
-        //if (path != null) {
-            //File db = new File(path);
-            //if (!db.exists()) {
-                //db.mkdirs();
-            //}
-            //mEventHandler.postMessage(
-                    //Message.obtain(null, EventHandler.OPEN, db.getAbsolutePath()));
-        //}
+        
+        
+            
+            
+                
+            
+            
+                    
+        
     }
 
     
@@ -60,9 +60,9 @@ public final class WebIconDatabase {
     public void close() {
         mEventHandler.postMessage(
                 Message.obtain(null, EventHandler.CLOSE));
-        // ---------- Original Method ----------
-        //mEventHandler.postMessage(
-                //Message.obtain(null, EventHandler.CLOSE));
+        
+        
+                
     }
 
     
@@ -70,9 +70,9 @@ public final class WebIconDatabase {
     public void removeAllIcons() {
         mEventHandler.postMessage(
                 Message.obtain(null, EventHandler.REMOVE_ALL));
-        // ---------- Original Method ----------
-        //mEventHandler.postMessage(
-                //Message.obtain(null, EventHandler.REMOVE_ALL));
+        
+        
+                
     }
 
     
@@ -83,13 +83,13 @@ public final class WebIconDatabase {
         mEventHandler.postMessage(msg);
         addTaint(url.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (listener == null || url == null) {
-            //return;
-        //}
-        //Message msg = Message.obtain(null, EventHandler.REQUEST_ICON, listener);
-        //msg.getData().putString("url", url);
-        //mEventHandler.postMessage(msg);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -105,24 +105,24 @@ public final class WebIconDatabase {
                 map.put("listener", listener);
                 Message msg = Message.obtain(null, EventHandler.BULK_REQUEST_ICON, map);
                 mEventHandler.postMessage(msg);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(cr.getTaint());
         addTaint(where.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //return;
-        //}
-        //if (mEventHandler.hasHandler()) {
-            //HashMap<String, Object> map = new HashMap<String, Object>();
-            //map.put("contentResolver", cr);
-            //map.put("where", where);
-            //map.put("listener", listener);
-            //Message msg =
-                    //Message.obtain(null, EventHandler.BULK_REQUEST_ICON, map);
-            //mEventHandler.postMessage(msg);
-        //}
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+                    
+            
+        
     }
 
     
@@ -131,13 +131,13 @@ public final class WebIconDatabase {
         {
             mEventHandler.postMessage(
                     Message.obtain(null, EventHandler.RETAIN_ICON, url));
-        } //End block
+        } 
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //if (url != null) {
-            //mEventHandler.postMessage(
-                    //Message.obtain(null, EventHandler.RETAIN_ICON, url));
-        //}
+        
+        
+            
+                    
+        
     }
 
     
@@ -146,13 +146,13 @@ public final class WebIconDatabase {
         {
             mEventHandler.postMessage(
                     Message.obtain(null, EventHandler.RELEASE_ICON, url));
-        } //End block
+        } 
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //if (url != null) {
-            //mEventHandler.postMessage(
-                    //Message.obtain(null, EventHandler.RELEASE_ICON, url));
-        //}
+        
+        
+            
+                    
+        
     }
 
     
@@ -167,8 +167,8 @@ public final class WebIconDatabase {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.798 -0400", hash_original_method = "B1AD2CC25FCD72FA4E655F2F00EE9B34", hash_generated_method = "C9CAC81B44791934BB05AC045BCDD274")
      void createHandler() {
         mEventHandler.createHandler();
-        // ---------- Original Method ----------
-        //mEventHandler.createHandler();
+        
+        
     }
 
     
@@ -186,7 +186,7 @@ public final class WebIconDatabase {
     
     private static Bitmap nativeIconForPageUrl(String url) {
     	Bitmap bm = BitmapFactory.decodeByteArray(new byte[1], 0, 0);
-    	return bm; // DSFIXME: definitely a source
+    	return bm; 
     }
 
     
@@ -209,23 +209,23 @@ public final class WebIconDatabase {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.799 -0400", hash_original_method = "FFA7F4A8F990D2647EE1D5FBAEBEF779", hash_generated_method = "FFA7F4A8F990D2647EE1D5FBAEBEF779")
         public EventHandler ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.800 -0400", hash_original_method = "933A9372A0E78DFEA9569EC4FAF2FF2F", hash_generated_method = "024450BAD6A97B45D6A3096E3B694518")
         @Override
         public void handleMessage(Message msg) {
-            //Begin case ICON_RESULT 
+            
             ((IconResult) msg.obj).dispatch();
-            //End case ICON_RESULT 
+            
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //switch (msg.what) {
-                //case ICON_RESULT:
-                    //((IconResult) msg.obj).dispatch();
-                    //break;
-            //}
+            
+            
+                
+                    
+                    
+            
         }
 
         
@@ -236,48 +236,48 @@ public final class WebIconDatabase {
                     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.801 -0400", hash_original_method = "3C22CFB4454B8CCB86512982F7DADD26", hash_generated_method = "F0DF5A7D1379A74BBD6CFD91083775CF")
                     @Override
                     public void handleMessage(Message msg) {
-                        //Begin case OPEN 
+                        
                         nativeOpen((String) msg.obj);
-                        //End case OPEN 
-                        //Begin case CLOSE 
+                        
+                        
                         nativeClose();
-                        //End case CLOSE 
-                        //Begin case REMOVE_ALL 
+                        
+                        
                         nativeRemoveAllIcons();
-                        //End case REMOVE_ALL 
-                        //Begin case REQUEST_ICON 
+                        
+                        
                         IconListener l = (IconListener) msg.obj;
-                        //End case REQUEST_ICON 
-                        //Begin case REQUEST_ICON 
+                        
+                        
                         String url = msg.getData().getString("url");
-                        //End case REQUEST_ICON 
-                        //Begin case REQUEST_ICON 
+                        
+                        
                         requestIconAndSendResult(url, l);
-                        //End case REQUEST_ICON 
-                        //Begin case BULK_REQUEST_ICON 
+                        
+                        
                         bulkRequestIcons(msg);
-                        //End case BULK_REQUEST_ICON 
-                        //Begin case RETAIN_ICON 
+                        
+                        
                         nativeRetainIconForPageUrl((String) msg.obj);
-                        //End case RETAIN_ICON 
-                        //Begin case RELEASE_ICON 
+                        
+                        
                         nativeReleaseIconForPageUrl((String) msg.obj);
-                        //End case RELEASE_ICON 
+                        
                         addTaint(msg.getTaint());
-                        // ---------- Original Method ----------
-                        // Original Method Too Long, Refer to Original Implementation
+                        
+                        
                     }
 };
                 {
                     int size = mMessages.size();
                     {
                         mHandler.sendMessage(mMessages.remove(0));
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mMessages = null;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -285,8 +285,8 @@ public final class WebIconDatabase {
         private synchronized boolean hasHandler() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2102283487 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2102283487;
-            // ---------- Original Method ----------
-            //return mHandler != null;
+            
+            
         }
 
         
@@ -294,17 +294,17 @@ public final class WebIconDatabase {
         private synchronized void postMessage(Message msg) {
             {
                 mMessages.add(msg);
-            } //End block
+            } 
             {
                 mHandler.sendMessage(msg);
-            } //End block
+            } 
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //if (mMessages != null) {
-                //mMessages.add(msg);
-            //} else {
-                //mHandler.sendMessage(msg);
-            //}
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -327,22 +327,22 @@ public final class WebIconDatabase {
                         {
                             String url = c.getString(0);
                             requestIconAndSendResult(url, listener);
-                        } //End block
+                        } 
                         {
                             boolean varC617FF8D7663D3FF178F4C9831B26157_1274038208 = (c.moveToNext());
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             catch (IllegalStateException e)
             { }
             finally 
             {
                 c.close();
-            } //End block
+            } 
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -352,15 +352,15 @@ public final class WebIconDatabase {
             {
                 sendMessage(obtainMessage(ICON_RESULT,
                             new IconResult(url, icon, listener)));
-            } //End block
+            } 
             addTaint(url.getTaint());
             addTaint(listener.getTaint());
-            // ---------- Original Method ----------
-            //Bitmap icon = nativeIconForPageUrl(url);
-            //if (icon != null) {
-                //sendMessage(obtainMessage(ICON_RESULT,
-                            //new IconResult(url, icon, listener)));
-            //}
+            
+            
+            
+                
+                            
+            
         }
 
         
@@ -380,18 +380,18 @@ public final class WebIconDatabase {
                 mUrl = url;
                 mIcon = icon;
                 mListener = l;
-                // ---------- Original Method ----------
-                //mUrl = url;
-                //mIcon = icon;
-                //mListener = l;
+                
+                
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.805 -0400", hash_original_method = "0BD69C5EE78EDD047C8FC1E711DA2EA8", hash_generated_method = "37E27E327CE1FC5B9184E444CD4F387F")
              void dispatch() {
                 mListener.onReceivedIcon(mUrl, mIcon);
-                // ---------- Original Method ----------
-                //mListener.onReceivedIcon(mUrl, mIcon);
+                
+                
             }
 
             

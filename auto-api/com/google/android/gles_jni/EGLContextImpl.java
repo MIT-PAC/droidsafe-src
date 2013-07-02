@@ -1,11 +1,11 @@
 package com.google.android.gles_jni;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.microedition.khronos.egl.*;
 import javax.microedition.khronos.opengles.GL;
@@ -22,21 +22,21 @@ public class EGLContextImpl extends EGLContext {
     public  EGLContextImpl(int ctx) {
         mEGLContext = ctx;
         mGLContext = new GLImpl();
-        // ---------- Original Method ----------
-        //mEGLContext = ctx;
-        //mGLContext = new GLImpl();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.361 -0400", hash_original_method = "128F5F8CB79090E8F4914FDDEA205182", hash_generated_method = "4AD6270DE60E305DDD50A5484430ED9B")
     @Override
     public GL getGL() {
-        GL varB4EAC82CA7396A68D541C85D26508E83_1781790519 = null; //Variable for return #1
+        GL varB4EAC82CA7396A68D541C85D26508E83_1781790519 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1781790519 = mGLContext;
-        varB4EAC82CA7396A68D541C85D26508E83_1781790519.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1781790519.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1781790519;
-        // ---------- Original Method ----------
-        //return mGLContext;
+        
+        
     }
 
     
@@ -45,16 +45,16 @@ public class EGLContextImpl extends EGLContext {
     public boolean equals(Object o) {
         {
             boolean var62E9FD43E59369C472D5FDFD656300C3_507570401 = (o == null || getClass() != o.getClass());
-        } //End collapsed parenthetic
+        } 
         EGLContextImpl that = (EGLContextImpl) o;
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_26391265 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_26391265;
-        // ---------- Original Method ----------
-        //if (this == o) return true;
-        //if (o == null || getClass() != o.getClass()) return false;
-        //EGLContextImpl that = (EGLContextImpl) o;
-        //return mEGLContext == that.mEGLContext;
+        
+        
+        
+        
+        
     }
 
     
@@ -63,8 +63,8 @@ public class EGLContextImpl extends EGLContext {
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_617447457 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_617447457;
-        // ---------- Original Method ----------
-        //return mEGLContext;
+        
+        
     }
 
     

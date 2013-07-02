@@ -1,11 +1,11 @@
 package android.os.storage;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -46,14 +46,14 @@ public class StorageVolume implements Parcelable {
         mMtpReserveSpace = mtpReserveSpace;
         mAllowMassStorage = allowMassStorage;
         mMaxFileSize = maxFileSize;
-        // ---------- Original Method ----------
-        //mPath = path;
-        //mDescription = description;
-        //mRemovable = removable;
-        //mEmulated = emulated;
-        //mMtpReserveSpace = mtpReserveSpace;
-        //mAllowMassStorage = allowMassStorage;
-        //mMaxFileSize = maxFileSize;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -69,37 +69,37 @@ public class StorageVolume implements Parcelable {
         mAllowMassStorage = allowMassStorage;
         mStorageId = storageId;
         mMaxFileSize = maxFileSize;
-        // ---------- Original Method ----------
-        //mPath = path;
-        //mDescription = description;
-        //mRemovable = removable;
-        //mEmulated = emulated;
-        //mMtpReserveSpace = mtpReserveSpace;
-        //mAllowMassStorage = allowMassStorage;
-        //mStorageId = storageId;
-        //mMaxFileSize = maxFileSize;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.695 -0400", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "ED6B22CBB68032B5EC8CFD19D98A6A32")
     public String getPath() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1411317309 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1411317309 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1411317309 = mPath;
-        varB4EAC82CA7396A68D541C85D26508E83_1411317309.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1411317309.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1411317309;
-        // ---------- Original Method ----------
-        //return mPath;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.695 -0400", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "64B9CA12F6D528DE6033DEB0FDA12115")
     public String getDescription() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2146035456 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2146035456 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2146035456 = mDescription;
-        varB4EAC82CA7396A68D541C85D26508E83_2146035456.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2146035456.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2146035456;
-        // ---------- Original Method ----------
-        //return mDescription;
+        
+        
     }
 
     
@@ -107,8 +107,8 @@ public class StorageVolume implements Parcelable {
     public boolean isRemovable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1268490699 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1268490699;
-        // ---------- Original Method ----------
-        //return mRemovable;
+        
+        
     }
 
     
@@ -116,8 +116,8 @@ public class StorageVolume implements Parcelable {
     public boolean isEmulated() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1289912819 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1289912819;
-        // ---------- Original Method ----------
-        //return mEmulated;
+        
+        
     }
 
     
@@ -125,16 +125,16 @@ public class StorageVolume implements Parcelable {
     public int getStorageId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1181073293 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1181073293;
-        // ---------- Original Method ----------
-        //return mStorageId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.697 -0400", hash_original_method = "DF85DF3474DF218FD90EC56A476BBB47", hash_generated_method = "F681C9EB234C13040C7D4D682143B82F")
     public void setStorageId(int index) {
         mStorageId = ((index + 1) << 16) + 1;
-        // ---------- Original Method ----------
-        //mStorageId = ((index + 1) << 16) + 1;
+        
+        
     }
 
     
@@ -142,8 +142,8 @@ public class StorageVolume implements Parcelable {
     public int getMtpReserveSpace() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471879041 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471879041;
-        // ---------- Original Method ----------
-        //return mMtpReserveSpace;
+        
+        
     }
 
     
@@ -151,8 +151,8 @@ public class StorageVolume implements Parcelable {
     public boolean allowMassStorage() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2130336062 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2130336062;
-        // ---------- Original Method ----------
-        //return mAllowMassStorage;
+        
+        
     }
 
     
@@ -160,56 +160,59 @@ public class StorageVolume implements Parcelable {
     public long getMaxFileSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_742397204 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_742397204;
-        // ---------- Original Method ----------
-        //return mMaxFileSize;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.699 -0400", hash_original_method = "3EBFC06A3F5F08EEF4400F1412AD16A4", hash_generated_method = "091A5770FB6C539FAACD154192EF3BDD")
     @Override
     public boolean equals(Object obj) {
         {
             StorageVolume volume = (StorageVolume)obj;
             boolean var7864F794FC2EA795D75B513E41072C78_643343758 = ((mPath.equals(volume.mPath)));
-        } //End block
+        } 
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2003809850 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2003809850;
-        // ---------- Original Method ----------
-        //if (obj instanceof StorageVolume && mPath != null) {
-            //StorageVolume volume = (StorageVolume)obj;
-            //return (mPath.equals(volume.mPath));
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.699 -0400", hash_original_method = "828243B6D2ADC87A48F7C7C656C5F549", hash_generated_method = "78FF368483D951FDA9A7494D78799154")
     @Override
     public int hashCode() {
         int varF587C360B64C6313E1A58AC2DDD30596_977996625 = (mPath.hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1862898465 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1862898465;
-        // ---------- Original Method ----------
-        //return mPath.hashCode();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.700 -0400", hash_original_method = "D35752FC760ED96A302E69B1B40DBE8B", hash_generated_method = "AF9C6CFADEE574299091476C411B86B8")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1584736051 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1584736051 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1584736051 = "StorageVolume [mAllowMassStorage=" + mAllowMassStorage + ", mDescription="
                 + mDescription + ", mEmulated=" + mEmulated + ", mMaxFileSize=" + mMaxFileSize
                 + ", mMtpReserveSpace=" + mMtpReserveSpace + ", mPath=" + mPath + ", mRemovable="
                 + mRemovable + ", mStorageId=" + mStorageId + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_1584736051.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1584736051.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1584736051;
-        // ---------- Original Method ----------
-        //return "StorageVolume [mAllowMassStorage=" + mAllowMassStorage + ", mDescription="
-                //+ mDescription + ", mEmulated=" + mEmulated + ", mMaxFileSize=" + mMaxFileSize
-                //+ ", mMtpReserveSpace=" + mMtpReserveSpace + ", mPath=" + mPath + ", mRemovable="
-                //+ mRemovable + ", mStorageId=" + mStorageId + "]";
+        
+        
+                
+                
+                
     }
 
     
@@ -217,11 +220,12 @@ public class StorageVolume implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1874992991 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1874992991;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.700 -0400", hash_original_method = "39BDB7739C8FE16566F7ABF501D9091E", hash_generated_method = "62B80328C1FEA6B0D5D8CB76AFF4DA01")
     public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeString(mPath);
@@ -234,15 +238,15 @@ public class StorageVolume implements Parcelable {
         parcel.writeLong(mMaxFileSize);
         addTaint(parcel.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //parcel.writeString(mPath);
-        //parcel.writeString(mDescription);
-        //parcel.writeInt(mRemovable ? 1 : 0);
-        //parcel.writeInt(mEmulated ? 1 : 0);
-        //parcel.writeInt(mStorageId);
-        //parcel.writeInt(mMtpReserveSpace);
-        //parcel.writeInt(mAllowMassStorage ? 1 : 0);
-        //parcel.writeLong(mMaxFileSize);
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -271,7 +275,7 @@ public class StorageVolume implements Parcelable {
             return new StorageVolume[size];
         }
     };
-    // orphaned legacy method
+    
     public StorageVolume createFromParcel(Parcel in) {
             String path = in.readString();
             String description = in.readString();
@@ -286,7 +290,7 @@ public class StorageVolume implements Parcelable {
                     storageId, allowMassStorage == 1, maxFileSize);
         }
     
-    // orphaned legacy method
+    
     public StorageVolume[] newArray(int size) {
             return new StorageVolume[size];
         }

@@ -1,11 +1,11 @@
 package org.bouncycastle.math.ec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 
@@ -14,7 +14,7 @@ class Tnaf {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.867 -0400", hash_original_method = "6AFB421B9578CA1EB17678ABFF5836A8", hash_generated_method = "6AFB421B9578CA1EB17678ABFF5836A8")
     public Tnaf ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -61,6 +61,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ZTauElement round(SimpleBigDecimal lambda0,
             SimpleBigDecimal lambda1, byte mu) {
         int scale = lambda0.getScale();
@@ -144,6 +145,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SimpleBigDecimal approximateDivisionByN(BigInteger k,
             BigInteger s, BigInteger vm, byte a, int m, int c) {
         int _k = (m + 5)/2 + c;
@@ -161,6 +163,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] tauAdicNaf(byte mu, ZTauElement lambda) {
         if (!((mu == 1) || (mu == -1)))
         {
@@ -244,6 +247,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static BigInteger[] getLucas(byte mu, int k, boolean doV) {
         if (!((mu == 1) || (mu == -1)))
         {
@@ -282,6 +286,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static BigInteger getTw(byte mu, int w) {
         if (w == 4)
         {
@@ -352,6 +357,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ZTauElement partModReduction(BigInteger k, int m, byte a,
             BigInteger[] s, byte mu, byte c) {
         BigInteger d0;
@@ -416,6 +422,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] tauAdicWNaf(byte mu, ZTauElement lambda,
             byte width, BigInteger pow2w, BigInteger tw, ZTauElement[] alpha) {
         if (!((mu == 1) || (mu == -1)))

@@ -1,11 +1,11 @@
 package org.apache.commons.io.filefilter;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.Serializable;
@@ -24,7 +24,7 @@ public class PrefixFileFilter extends AbstractFileFilter implements Serializable
     public  PrefixFileFilter(String prefix) {
         this(prefix, IOCase.SENSITIVE);
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,16 +32,16 @@ public class PrefixFileFilter extends AbstractFileFilter implements Serializable
     public  PrefixFileFilter(String prefix, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The prefix must not be null");
-        } //End block
+        } 
         this.prefixes = new String[] {prefix};
         this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //if (prefix == null) {
-            //throw new IllegalArgumentException("The prefix must not be null");
-        //}
-        //this.prefixes = new String[] {prefix};
-        //this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -49,7 +49,7 @@ public class PrefixFileFilter extends AbstractFileFilter implements Serializable
     public  PrefixFileFilter(String[] prefixes) {
         this(prefixes, IOCase.SENSITIVE);
         addTaint(prefixes[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -57,17 +57,17 @@ public class PrefixFileFilter extends AbstractFileFilter implements Serializable
     public  PrefixFileFilter(String[] prefixes, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The array of prefixes must not be null");
-        } //End block
+        } 
         this.prefixes = new String[prefixes.length];
         System.arraycopy(prefixes, 0, this.prefixes, 0, prefixes.length);
         this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
-        // ---------- Original Method ----------
-        //if (prefixes == null) {
-            //throw new IllegalArgumentException("The array of prefixes must not be null");
-        //}
-        //this.prefixes = new String[prefixes.length];
-        //System.arraycopy(prefixes, 0, this.prefixes, 0, prefixes.length);
-        //this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -75,7 +75,7 @@ public class PrefixFileFilter extends AbstractFileFilter implements Serializable
     public  PrefixFileFilter(List<String> prefixes) {
         this(prefixes, IOCase.SENSITIVE);
         addTaint(prefixes.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -83,77 +83,80 @@ public class PrefixFileFilter extends AbstractFileFilter implements Serializable
     public  PrefixFileFilter(List<String> prefixes, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The list of prefixes must not be null");
-        } //End block
+        } 
         this.prefixes = prefixes.toArray(new String[prefixes.size()]);
         this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
-        // ---------- Original Method ----------
-        //if (prefixes == null) {
-            //throw new IllegalArgumentException("The list of prefixes must not be null");
-        //}
-        //this.prefixes = prefixes.toArray(new String[prefixes.size()]);
-        //this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.921 -0400", hash_original_method = "78167C09373DD6928792D289D7DC6BD6", hash_generated_method = "860A2EE9DE5A9F239835421ABE143CB6")
     @Override
     public boolean accept(File file) {
         String name = file.getName();
         {
-            //Iterator<String> var98C669A857944B4526CB9DC2FE1EC119_1607582392 = (this.prefixes).iterator();
-            //var98C669A857944B4526CB9DC2FE1EC119_1607582392.hasNext();
+            
+            
             String prefix = this.prefixes[0];
             {
                 {
                     boolean var112396BEC915222BC05CB4EFD4DD6376_788313734 = (caseSensitivity.checkStartsWith(name, prefix));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(file.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1312946744 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1312946744;
-        // ---------- Original Method ----------
-        //String name = file.getName();
-        //for (String prefix : this.prefixes) {
-            //if (caseSensitivity.checkStartsWith(name, prefix)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.924 -0400", hash_original_method = "45A7DB6D0E51F61500372E7D66178EF3", hash_generated_method = "0A85295E1387D9DC1A64B94C70A1F3FA")
     @Override
     public boolean accept(File file, String name) {
         {
-            //Iterator<String> var00D98A86401AE6211A371DB8CDF5D96D_1295123264 = (prefixes).iterator();
-            //var00D98A86401AE6211A371DB8CDF5D96D_1295123264.hasNext();
+            
+            
             String prefix = prefixes[0];
             {
                 {
                     boolean var112396BEC915222BC05CB4EFD4DD6376_1012003643 = (caseSensitivity.checkStartsWith(name, prefix));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(file.getTaint());
         addTaint(name.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_594620099 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_594620099;
-        // ---------- Original Method ----------
-        //for (String prefix : prefixes) {
-            //if (caseSensitivity.checkStartsWith(name, prefix)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.925 -0400", hash_original_method = "93C8E32B6EE68EAE0C3BFC84A4183EBE", hash_generated_method = "C6B4C1A13DA537F7ADB50843877E4667")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1996461178 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1996461178 = null; 
         StringBuilder buffer = new StringBuilder();
         buffer.append(super.toString());
         buffer.append("(");
@@ -163,29 +166,29 @@ public class PrefixFileFilter extends AbstractFileFilter implements Serializable
                 {
                     {
                         buffer.append(",");
-                    } //End block
+                    } 
                     buffer.append(prefixes[i]);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         buffer.append(")");
         varB4EAC82CA7396A68D541C85D26508E83_1996461178 = buffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1996461178.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1996461178.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1996461178;
-        // ---------- Original Method ----------
-        //StringBuilder buffer = new StringBuilder();
-        //buffer.append(super.toString());
-        //buffer.append("(");
-        //if (prefixes != null) {
-            //for (int i = 0; i < prefixes.length; i++) {
-                //if (i > 0) {
-                    //buffer.append(",");
-                //}
-                //buffer.append(prefixes[i]);
-            //}
-        //}
-        //buffer.append(")");
-        //return buffer.toString();
+        
+        
+        
+        
+        
+            
+                
+                    
+                
+                
+            
+        
+        
+        
     }
 
     

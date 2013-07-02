@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -31,7 +31,7 @@ public class NetworkState implements Parcelable {
         addTaint(networkInfo.getTaint());
         addTaint(linkProperties.getTaint());
         addTaint(linkCapabilities.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -42,11 +42,11 @@ public class NetworkState implements Parcelable {
         this.linkProperties = linkProperties;
         this.linkCapabilities = linkCapabilities;
         this.subscriberId = subscriberId;
-        // ---------- Original Method ----------
-        //this.networkInfo = networkInfo;
-        //this.linkProperties = linkProperties;
-        //this.linkCapabilities = linkCapabilities;
-        //this.subscriberId = subscriberId;
+        
+        
+        
+        
+        
     }
 
     
@@ -56,11 +56,11 @@ public class NetworkState implements Parcelable {
         linkProperties = in.readParcelable(null);
         linkCapabilities = in.readParcelable(null);
         subscriberId = in.readString();
-        // ---------- Original Method ----------
-        //networkInfo = in.readParcelable(null);
-        //linkProperties = in.readParcelable(null);
-        //linkCapabilities = in.readParcelable(null);
-        //subscriberId = in.readString();
+        
+        
+        
+        
+        
     }
 
     
@@ -68,11 +68,12 @@ public class NetworkState implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_960358043 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_960358043;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.456 -0400", hash_original_method = "EF66345FC72BF78BF99044E19149D234", hash_generated_method = "AF073625C65FBB2B40B40897ECFEF834")
     public void writeToParcel(Parcel out, int flags) {
         out.writeParcelable(networkInfo, flags);
@@ -81,11 +82,11 @@ public class NetworkState implements Parcelable {
         out.writeString(subscriberId);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeParcelable(networkInfo, flags);
-        //out.writeParcelable(linkProperties, flags);
-        //out.writeParcelable(linkCapabilities, flags);
-        //out.writeString(subscriberId);
+        
+        
+        
+        
+        
     }
 
     
@@ -100,12 +101,12 @@ public class NetworkState implements Parcelable {
             return new NetworkState[size];
         }
     };
-    // orphaned legacy method
+    
     public NetworkState createFromParcel(Parcel in) {
             return new NetworkState(in);
         }
     
-    // orphaned legacy method
+    
     public NetworkState[] newArray(int size) {
             return new NetworkState[size];
         }

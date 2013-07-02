@@ -1,11 +1,11 @@
 package javax.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.GeneralSecurityException;
 
@@ -15,13 +15,13 @@ public class IllegalBlockSizeException extends GeneralSecurityException {
     public  IllegalBlockSizeException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.069 -0400", hash_original_method = "1121F9F47707C37345E2BF72D04B622E", hash_generated_method = "61CD53D6E952A5BE6116CCCB75B86933")
     public  IllegalBlockSizeException() {
-        // ---------- Original Method ----------
+        
     }
 
     

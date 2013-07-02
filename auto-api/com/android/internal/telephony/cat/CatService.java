@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.Intent;
@@ -37,9 +37,9 @@ class RilMessage {
       RilMessage(int msgId, String rawData) {
         mId = msgId;
         mData = rawData;
-        // ---------- Original Method ----------
-        //mId = msgId;
-        //mData = rawData;
+        
+        
+        
     }
 
     
@@ -48,10 +48,10 @@ class RilMessage {
         this.mId = other.mId;
         this.mData = other.mData;
         this.mResCode = other.mResCode;
-        // ---------- Original Method ----------
-        //this.mId = other.mId;
-        //this.mData = other.mData;
-        //this.mResCode = other.mResCode;
+        
+        
+        
+        
     }
 
     
@@ -80,7 +80,7 @@ public class CatService extends Handler implements AppInterface {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                     "Service: Input parameters must not be null");
-        } //End block
+        } 
         mCmdIf = ci;
         mContext = context;
         mMsgDecoder = RilMessageDecoder.getInstance(this, fh);
@@ -96,11 +96,12 @@ public class CatService extends Handler implements AppInterface {
         CatLog.d(this, "Is running");
         addTaint(ir.getTaint());
         addTaint(ic.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.273 -0400", hash_original_method = "D708104FB5CF5762DDEBFF2BAD6B6B04", hash_generated_method = "E3620C337A6B286ABC08B087041B971D")
     public void dispose() {
         mIccRecords.unregisterForRecordsLoaded(this);
@@ -109,75 +110,78 @@ public class CatService extends Handler implements AppInterface {
         mCmdIf.unSetOnCatEvent(this);
         mCmdIf.unSetOnCatCallSetUp(this);
         this.removeCallbacksAndMessages(null);
-        // ---------- Original Method ----------
-        //mIccRecords.unregisterForRecordsLoaded(this);
-        //mCmdIf.unSetOnCatSessionEnd(this);
-        //mCmdIf.unSetOnCatProactiveCmd(this);
-        //mCmdIf.unSetOnCatEvent(this);
-        //mCmdIf.unSetOnCatCallSetUp(this);
-        //this.removeCallbacksAndMessages(null);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.273 -0400", hash_original_method = "0386F7586104C91B22CE4150238AFD39", hash_generated_method = "963AC07ED7DE6AEA46B3068BB242386B")
     protected void finalize() {
         CatLog.d(this, "Service finalized");
-        // ---------- Original Method ----------
-        //CatLog.d(this, "Service finalized");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.274 -0400", hash_original_method = "E9D273BBD1B8139BCAB5560E10ADE1AE", hash_generated_method = "FD3E36EEA0A047F4D9103D9D2BBA1346")
     private void handleRilMsg(RilMessage rilMsg) {
         CommandParams cmdParams = null;
-        //Begin case MSG_ID_EVENT_NOTIFY 
+        
         {
             cmdParams = (CommandParams) rilMsg.mData;
             {
                 handleProactiveCommand(cmdParams);
-            } //End block
-        } //End block
-        //End case MSG_ID_EVENT_NOTIFY 
-        //Begin case MSG_ID_PROACTIVE_COMMAND 
+            } 
+        } 
+        
+        
         try 
         {
             cmdParams = (CommandParams) rilMsg.mData;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             CatLog.d(this, "Fail to parse proactive command");
             sendTerminalResponse(mCurrntCmd.mCmdDet, ResultCode.CMD_DATA_NOT_UNDERSTOOD,
                                      false, 0x00, null);
-        } //End block
-        //End case MSG_ID_PROACTIVE_COMMAND 
-        //Begin case MSG_ID_PROACTIVE_COMMAND 
+        } 
+        
+        
         {
             {
                 handleProactiveCommand(cmdParams);
-            } //End block
+            } 
             {
                 sendTerminalResponse(cmdParams.cmdDet, rilMsg.mResCode,
                             false, 0, null);
-            } //End block
-        } //End block
-        //End case MSG_ID_PROACTIVE_COMMAND 
-        //Begin case MSG_ID_REFRESH 
+            } 
+        } 
+        
+        
         cmdParams = (CommandParams) rilMsg.mData;
-        //End case MSG_ID_REFRESH 
-        //Begin case MSG_ID_REFRESH 
+        
+        
         {
             handleProactiveCommand(cmdParams);
-        } //End block
-        //End case MSG_ID_REFRESH 
-        //Begin case MSG_ID_SESSION_END 
+        } 
+        
+        
         handleSessionEnd();
-        //End case MSG_ID_SESSION_END 
+        
         addTaint(rilMsg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.276 -0400", hash_original_method = "962D88968BE7A135485D50B41AC85213", hash_generated_method = "54705E41902E73D63A344D11B7B37170")
     private void handleProactiveCommand(CommandParams cmdParams) {
         CatLog.d(this, cmdParams.getCommandType().name());
@@ -185,112 +189,114 @@ public class CatService extends Handler implements AppInterface {
         CatCmdMessage cmdMsg = new CatCmdMessage(cmdParams);
         {
             Object varA74AB301753C81C1EF1463B16F741D65_318306998 = (cmdParams.getCommandType());
-            //Begin case SET_UP_MENU 
+            
             {
                 boolean varBDB939CADF418BD3B149DA2D195D52CC_1375826763 = (removeMenu(cmdMsg.getMenu()));
                 {
                     mMenuCmd = null;
-                } //End block
+                } 
                 {
                     mMenuCmd = cmdMsg;
-                } //End block
-            } //End collapsed parenthetic
-            //End case SET_UP_MENU 
-            //Begin case SET_UP_MENU 
+                } 
+            } 
+            
+            
             sendTerminalResponse(cmdParams.cmdDet, ResultCode.OK, false, 0, null);
-            //End case SET_UP_MENU 
-            //Begin case DISPLAY_TEXT 
+            
+            
             {
                 boolean var85EC808BECD69A26D4BEA7B0ABCBD691_543188176 = (!cmdMsg.geTextMessage().responseNeeded);
                 {
                     sendTerminalResponse(cmdParams.cmdDet, ResultCode.OK, false, 0, null);
-                } //End block
-            } //End collapsed parenthetic
-            //End case DISPLAY_TEXT 
-            //Begin case REFRESH 
+                } 
+            } 
+            
+            
             cmdParams.cmdDet.typeOfCommand = CommandType.SET_UP_IDLE_MODE_TEXT.value();
-            //End case REFRESH 
-            //Begin case SET_UP_IDLE_MODE_TEXT 
+            
+            
             sendTerminalResponse(cmdParams.cmdDet, ResultCode.OK, false, 0, null);
-            //End case SET_UP_IDLE_MODE_TEXT 
-            //Begin case PROVIDE_LOCAL_INFORMATION 
+            
+            
             ResponseData resp;
-            //End case PROVIDE_LOCAL_INFORMATION 
-            //Begin case PROVIDE_LOCAL_INFORMATION 
-            //Begin case CommandParamsFactory.DTTZ_SETTING 
+            
+            
+            
             resp = new DTTZResponseData(null);
-            //End case CommandParamsFactory.DTTZ_SETTING 
-            //Begin case CommandParamsFactory.DTTZ_SETTING 
+            
+            
             sendTerminalResponse(cmdParams.cmdDet, ResultCode.OK, false, 0, resp);
-            //End case CommandParamsFactory.DTTZ_SETTING 
-            //Begin case CommandParamsFactory.LANGUAGE_SETTING 
+            
+            
             resp = new LanguageResponseData(Locale.getDefault().getLanguage());
-            //End case CommandParamsFactory.LANGUAGE_SETTING 
-            //Begin case CommandParamsFactory.LANGUAGE_SETTING 
+            
+            
             sendTerminalResponse(cmdParams.cmdDet, ResultCode.OK, false, 0, resp);
-            //End case CommandParamsFactory.LANGUAGE_SETTING 
-            //Begin case default 
+            
+            
             sendTerminalResponse(cmdParams.cmdDet, ResultCode.OK, false, 0, null);
-            //End case default 
-            //End case PROVIDE_LOCAL_INFORMATION 
-            //Begin case LAUNCH_BROWSER 
+            
+            
+            
             {
                 boolean var289612E192C87C1C213531B7648CE2E4_888102221 = ((((LaunchBrowserParams) cmdParams).confirmMsg.text != null)
                         && (((LaunchBrowserParams) cmdParams).confirmMsg.text.equals(STK_DEFAULT)));
                 {
                     message = mContext.getText(com.android.internal.R.string.launchBrowserDefault);
                     ((LaunchBrowserParams) cmdParams).confirmMsg.text = message.toString();
-                } //End block
-            } //End collapsed parenthetic
-            //End case LAUNCH_BROWSER 
-            //Begin case SEND_DTMF SEND_SMS SEND_SS SEND_USSD 
+                } 
+            } 
+            
+            
             {
                 boolean varF0C118B2E2B35C6F3762B0AE0908E95F_1481003793 = ((((DisplayTextParams)cmdParams).textMsg.text != null)
                         && (((DisplayTextParams)cmdParams).textMsg.text.equals(STK_DEFAULT)));
                 {
                     message = mContext.getText(com.android.internal.R.string.sending);
                     ((DisplayTextParams)cmdParams).textMsg.text = message.toString();
-                } //End block
-            } //End collapsed parenthetic
-            //End case SEND_DTMF SEND_SMS SEND_SS SEND_USSD 
-            //Begin case SET_UP_CALL 
+                } 
+            } 
+            
+            
             {
                 boolean var748082CB986285C53A80D0C3B5EED825_261200934 = ((((CallSetupParams) cmdParams).confirmMsg.text != null)
                         && (((CallSetupParams) cmdParams).confirmMsg.text.equals(STK_DEFAULT)));
                 {
                     message = mContext.getText(com.android.internal.R.string.SetupCallDefault);
                     ((CallSetupParams) cmdParams).confirmMsg.text = message.toString();
-                } //End block
-            } //End collapsed parenthetic
-            //End case SET_UP_CALL 
-            //Begin case default 
+                } 
+            } 
+            
+            
             CatLog.d(this, "Unsupported command");
-            //End case default 
-        } //End collapsed parenthetic
+            
+        } 
         mCurrntCmd = cmdMsg;
         Intent intent = new Intent(AppInterface.CAT_CMD_ACTION);
         intent.putExtra("STK CMD", cmdMsg);
         mContext.sendBroadcast(intent);
         addTaint(cmdParams.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.276 -0400", hash_original_method = "F4FE7D680FC27736DB53FE02767C67C5", hash_generated_method = "AC347CF6457FB719998C7B2BD8B79CD1")
     private void handleSessionEnd() {
         CatLog.d(this, "SESSION END");
         mCurrntCmd = mMenuCmd;
         Intent intent = new Intent(AppInterface.CAT_SESSION_END_ACTION);
         mContext.sendBroadcast(intent);
-        // ---------- Original Method ----------
-        //CatLog.d(this, "SESSION END");
-        //mCurrntCmd = mMenuCmd;
-        //Intent intent = new Intent(AppInterface.CAT_SESSION_END_ACTION);
-        //mContext.sendBroadcast(intent);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.277 -0400", hash_original_method = "1946CA6BE8E37F5C447374ACD2229E75", hash_generated_method = "F5B0DA97139DD642CB080CA797F42E50")
     private void sendTerminalResponse(CommandDetails cmdDet,
             ResultCode resultCode, boolean includeAdditionalInfo,
@@ -299,11 +305,11 @@ public class CatService extends Handler implements AppInterface {
         Input cmdInput = null;
         {
             cmdInput = mCurrntCmd.geInput();
-        } //End block
+        } 
         int tag = ComprehensionTlvTag.COMMAND_DETAILS.value();
         {
             tag |= 0x80;
-        } //End block
+        } 
         buf.write(tag);
         buf.write(0x03);
         buf.write(cmdDet.commandNumber);
@@ -323,68 +329,70 @@ public class CatService extends Handler implements AppInterface {
         buf.write(resultCode.value());
         {
             buf.write(additionalInfo);
-        } //End block
+        } 
         {
             resp.format(buf);
-        } //End block
+        } 
         {
             encodeOptionalTags(cmdDet, resultCode, cmdInput, buf);
-        } //End block
+        } 
         byte[] rawData = buf.toByteArray();
         String hexString = IccUtils.bytesToHexString(rawData);
         {
             CatLog.d(this, "TERMINAL RESPONSE: " + hexString);
-        } //End block
+        } 
         mCmdIf.sendTerminalResponse(hexString, null);
         addTaint(cmdDet.getTaint());
         addTaint(resultCode.getTaint());
         addTaint(includeAdditionalInfo);
         addTaint(additionalInfo);
         addTaint(resp.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.278 -0400", hash_original_method = "638B326A6DB369CFE44B9E340F9EEB09", hash_generated_method = "921354C394EA3EE9B8BE082B2D72DE26")
     private void encodeOptionalTags(CommandDetails cmdDet,
             ResultCode resultCode, Input cmdInput, ByteArrayOutputStream buf) {
         CommandType cmdType = AppInterface.CommandType.fromInt(cmdDet.typeOfCommand);
         {
-            //Begin case GET_INKEY 
+            
             {
                 boolean var082860D7E23D30F4E1F73375F5BB4E0C_1329611127 = ((resultCode.value() == ResultCode.NO_RESPONSE_FROM_USER.value()) &&
                         (cmdInput != null) && (cmdInput.duration != null));
                 {
                     getInKeyResponse(buf, cmdInput);
-                } //End block
-            } //End collapsed parenthetic
-            //End case GET_INKEY 
-            //Begin case PROVIDE_LOCAL_INFORMATION 
+                } 
+            } 
+            
+            
             {
                 boolean varE61954B8FB8D644763D155CCE3759480_1976036012 = ((cmdDet.commandQualifier == CommandParamsFactory.LANGUAGE_SETTING) &&
                         (resultCode.value() == ResultCode.OK.value()));
                 {
                     getPliResponse(buf);
-                } //End block
-            } //End collapsed parenthetic
-            //End case PROVIDE_LOCAL_INFORMATION 
-            //Begin case default 
+                } 
+            } 
+            
+            
             CatLog.d(this, "encodeOptionalTags() Unsupported Cmd:" + cmdDet.typeOfCommand);
-            //End case default 
-        } //End block
+            
+        } 
         {
             CatLog.d(this, "encodeOptionalTags() bad Cmd:" + cmdDet.typeOfCommand);
-        } //End block
+        } 
         addTaint(cmdDet.getTaint());
         addTaint(resultCode.getTaint());
         addTaint(cmdInput.getTaint());
         addTaint(buf.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.279 -0400", hash_original_method = "0852EED8EE8FA95FED775B0B05726071", hash_generated_method = "E17F9058B3F80048A482D8C016190B6F")
     private void getInKeyResponse(ByteArrayOutputStream buf, Input cmdInput) {
         int tag = ComprehensionTlvTag.DURATION.value();
@@ -394,15 +402,16 @@ public class CatService extends Handler implements AppInterface {
         buf.write(cmdInput.duration.timeInterval);
         addTaint(buf.getTaint());
         addTaint(cmdInput.getTaint());
-        // ---------- Original Method ----------
-        //int tag = ComprehensionTlvTag.DURATION.value();
-        //buf.write(tag);
-        //buf.write(0x02);
-        //buf.write(cmdInput.duration.timeUnit.SECOND.value());
-        //buf.write(cmdInput.duration.timeInterval);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.279 -0400", hash_original_method = "9C18CC5EFDD0B345CA3B94FA3BA225B1", hash_generated_method = "FA849EAA445C3A957BD90BFA4F6F78A9")
     private void getPliResponse(ByteArrayOutputStream buf) {
         String lang = SystemProperties.get("persist.sys.language");
@@ -411,19 +420,20 @@ public class CatService extends Handler implements AppInterface {
             buf.write(tag);
             ResponseData.writeLength(buf, lang.length());
             buf.write(lang.getBytes(), 0, lang.length());
-        } //End block
+        } 
         addTaint(buf.getTaint());
-        // ---------- Original Method ----------
-        //String lang = SystemProperties.get("persist.sys.language");
-        //if (lang != null) {
-            //int tag = ComprehensionTlvTag.LANGUAGE.value();
-            //buf.write(tag);
-            //ResponseData.writeLength(buf, lang.length());
-            //buf.write(lang.getBytes(), 0, lang.length());
-        //}
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.280 -0400", hash_original_method = "8584D48A0DB0867CC39B0E747FD77F24", hash_generated_method = "0BBC625250CD7BBE2E43B42A9E5751C4")
     private void sendMenuSelection(int menuId, boolean helpRequired) {
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
@@ -443,7 +453,7 @@ public class CatService extends Handler implements AppInterface {
             tag = ComprehensionTlvTag.HELP_REQUEST.value();
             buf.write(tag);
             buf.write(0x00);
-        } //End block
+        } 
         byte[] rawData = buf.toByteArray();
         int len = rawData.length - 2;
         rawData[1] = (byte) len;
@@ -451,11 +461,12 @@ public class CatService extends Handler implements AppInterface {
         mCmdIf.sendEnvelope(hexString, null);
         addTaint(menuId);
         addTaint(helpRequired);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.291 -0400", hash_original_method = "BB297ADB158EDB6C7A0522557FDE81DF", hash_generated_method = "F8096443539AC2FFFF13AB83CCA803D0")
     private void eventDownload(int event, int sourceId, int destinationId,
             byte[] additionalInfo, boolean oneShot) {
@@ -477,9 +488,9 @@ public class CatService extends Handler implements AppInterface {
                 byte b = additionalInfo[0];
                 {
                     buf.write(b);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         byte[] rawData = buf.toByteArray();
         int len = rawData.length - 2;
         rawData[1] = (byte) len;
@@ -490,33 +501,34 @@ public class CatService extends Handler implements AppInterface {
         addTaint(destinationId);
         addTaint(additionalInfo[0]);
         addTaint(oneShot);
-        // ---------- Original Method ----------
-        //ByteArrayOutputStream buf = new ByteArrayOutputStream();
-        //int tag = BerTlv.BER_EVENT_DOWNLOAD_TAG;
-        //buf.write(tag);
-        //buf.write(0x00);
-        //tag = 0x80 | ComprehensionTlvTag.EVENT_LIST.value();
-        //buf.write(tag);
-        //buf.write(0x01);
-        //buf.write(event);
-        //tag = 0x80 | ComprehensionTlvTag.DEVICE_IDENTITIES.value();
-        //buf.write(tag);
-        //buf.write(0x02);
-        //buf.write(sourceId);
-        //buf.write(destinationId);
-        //if (additionalInfo != null) {
-            //for (byte b : additionalInfo) {
-                //buf.write(b);
-            //}
-        //}
-        //byte[] rawData = buf.toByteArray();
-        //int len = rawData.length - 2;
-        //rawData[1] = (byte) len;
-        //String hexString = IccUtils.bytesToHexString(rawData);
-        //mCmdIf.sendEnvelope(hexString, null);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+                
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CatService getInstance(CommandsInterface ci, IccRecords ir,
             Context context, IccFileHandler fh, IccCard ic) {
         synchronized (sInstanceLock) {
@@ -542,173 +554,179 @@ public class CatService extends Handler implements AppInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AppInterface getInstance() {
         return getInstance(null, null, null, null, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.292 -0400", hash_original_method = "08AB5E16EBCD81DA8811894A2C2969C7", hash_generated_method = "FB98718894B21CB262CC669B09886C42")
     @Override
     public void handleMessage(Message msg) {
-        //Begin case MSG_ID_SESSION_END MSG_ID_PROACTIVE_COMMAND MSG_ID_EVENT_NOTIFY MSG_ID_REFRESH 
+        
         CatLog.d(this, "ril message arrived");
-        //End case MSG_ID_SESSION_END MSG_ID_PROACTIVE_COMMAND MSG_ID_EVENT_NOTIFY MSG_ID_REFRESH 
-        //Begin case MSG_ID_SESSION_END MSG_ID_PROACTIVE_COMMAND MSG_ID_EVENT_NOTIFY MSG_ID_REFRESH 
+        
+        
         String data = null;
-        //End case MSG_ID_SESSION_END MSG_ID_PROACTIVE_COMMAND MSG_ID_EVENT_NOTIFY MSG_ID_REFRESH 
-        //Begin case MSG_ID_SESSION_END MSG_ID_PROACTIVE_COMMAND MSG_ID_EVENT_NOTIFY MSG_ID_REFRESH 
+        
+        
         {
             AsyncResult ar = (AsyncResult) msg.obj;
             {
                 try 
                 {
                     data = (String) ar.result;
-                } //End block
+                } 
                 catch (ClassCastException e)
                 { }
-            } //End block
-        } //End block
-        //End case MSG_ID_SESSION_END MSG_ID_PROACTIVE_COMMAND MSG_ID_EVENT_NOTIFY MSG_ID_REFRESH 
-        //Begin case MSG_ID_SESSION_END MSG_ID_PROACTIVE_COMMAND MSG_ID_EVENT_NOTIFY MSG_ID_REFRESH 
+            } 
+        } 
+        
+        
         mMsgDecoder.sendStartDecodingMessageParams(new RilMessage(msg.what, data));
-        //End case MSG_ID_SESSION_END MSG_ID_PROACTIVE_COMMAND MSG_ID_EVENT_NOTIFY MSG_ID_REFRESH 
-        //Begin case MSG_ID_CALL_SETUP 
+        
+        
         mMsgDecoder.sendStartDecodingMessageParams(new RilMessage(msg.what, null));
-        //End case MSG_ID_CALL_SETUP 
-        //Begin case MSG_ID_RIL_MSG_DECODED 
+        
+        
         handleRilMsg((RilMessage) msg.obj);
-        //End case MSG_ID_RIL_MSG_DECODED 
-        //Begin case MSG_ID_RESPONSE 
+        
+        
         handleCmdResponse((CatResponseMessage) msg.obj);
-        //End case MSG_ID_RESPONSE 
-        //Begin case MSG_ID_SIM_READY 
+        
+        
         CatLog.d(this, "SIM ready. Reporting STK service running now...");
-        //End case MSG_ID_SIM_READY 
-        //Begin case MSG_ID_SIM_READY 
+        
+        
         mCmdIf.reportStkServiceIsRunning(null);
-        //End case MSG_ID_SIM_READY 
-        //Begin case default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new AssertionError("Unrecognized CAT command: " + msg.what);
-        //End case default 
+        
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.292 -0400", hash_original_method = "8251947338311BFA45C2A2344891C68B", hash_generated_method = "2E5E6C1647EE59E72FF17D301BC930E2")
     public synchronized void onCmdResponse(CatResponseMessage resMsg) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         Message msg = this.obtainMessage(MSG_ID_RESPONSE, resMsg);
         msg.sendToTarget();
         addTaint(resMsg.getTaint());
-        // ---------- Original Method ----------
-        //if (resMsg == null) {
-            //return;
-        //}
-        //Message msg = this.obtainMessage(MSG_ID_RESPONSE, resMsg);
-        //msg.sendToTarget();
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.293 -0400", hash_original_method = "B0A9A02E0F2D96AF829ED175E58D2181", hash_generated_method = "50B18637A79142542911C3007DF34ECB")
     private boolean validateResponse(CatResponseMessage resMsg) {
         {
             boolean var36410395CD93C1DC7B6B62D97443551F_759765236 = ((resMsg.cmdDet.compareTo(mCurrntCmd.mCmdDet)));
-        } //End block
+        } 
         addTaint(resMsg.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_228464668 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_228464668;
-        // ---------- Original Method ----------
-        //if (mCurrntCmd != null) {
-            //return (resMsg.cmdDet.compareTo(mCurrntCmd.mCmdDet));
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.293 -0400", hash_original_method = "FED22D423ED234057B6FD28452B9EEF5", hash_generated_method = "7FE2C3F34629B55A0704E807AF5CEEDE")
     private boolean removeMenu(Menu menu) {
         try 
         {
             {
                 boolean var7A3FCD0C746293761DF6222920A6CC9F_839137984 = (menu.items.size() == 1 && menu.items.get(0) == null);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         catch (NullPointerException e)
         {
             CatLog.d(this, "Unable to get Menu's items size");
-        } //End block
+        } 
         addTaint(menu.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_442402042 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_442402042;
-        // ---------- Original Method ----------
-        //try {
-            //if (menu.items.size() == 1 && menu.items.get(0) == null) {
-                //return true;
-            //}
-        //} catch (NullPointerException e) {
-            //CatLog.d(this, "Unable to get Menu's items size");
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.294 -0400", hash_original_method = "48D7C107F944AA3B8D2770DC9FDB0ED7", hash_generated_method = "7D670000A3D57A009E2616B240E857CC")
     private void handleCmdResponse(CatResponseMessage resMsg) {
         {
             boolean varD22E38D970B07736EEDB0B746B6EF7EE_142529979 = (!validateResponse(resMsg));
-        } //End collapsed parenthetic
+        } 
         ResponseData resp = null;
         boolean helpRequired = false;
         CommandDetails cmdDet = resMsg.getCmdDetails();
-        //Begin case HELP_INFO_REQUIRED 
+        
         helpRequired = true;
-        //End case HELP_INFO_REQUIRED 
-        //Begin case OK PRFRMD_WITH_PARTIAL_COMPREHENSION PRFRMD_WITH_MISSING_INFO PRFRMD_WITH_ADDITIONAL_EFS_READ PRFRMD_ICON_NOT_DISPLAYED PRFRMD_MODIFIED_BY_NAA PRFRMD_LIMITED_SERVICE PRFRMD_WITH_MODIFICATION PRFRMD_NAA_NOT_ACTIVE PRFRMD_TONE_NOT_PLAYED 
+        
+        
         {
             Object var5A134572D68F084201EB42583661BD51_1426667924 = (AppInterface.CommandType.fromInt(cmdDet.typeOfCommand));
-            //Begin case SET_UP_MENU 
+            
             helpRequired = resMsg.resCode == ResultCode.HELP_INFO_REQUIRED;
-            //End case SET_UP_MENU 
-            //Begin case SET_UP_MENU 
+            
+            
             sendMenuSelection(resMsg.usersMenuSelection, helpRequired);
-            //End case SET_UP_MENU 
-            //Begin case SELECT_ITEM 
+            
+            
             resp = new SelectItemResponseData(resMsg.usersMenuSelection);
-            //End case SELECT_ITEM 
-            //Begin case GET_INPUT GET_INKEY 
+            
+            
             Input input = mCurrntCmd.geInput();
-            //End case GET_INPUT GET_INKEY 
-            //Begin case GET_INPUT GET_INKEY 
+            
+            
             {
                 {
                     resp = new GetInkeyInputResponseData(resMsg.usersInput,
                                 input.ucs2, input.packed);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 resp = new GetInkeyInputResponseData(
                             resMsg.usersYesNoSelection);
-            } //End block
-            //End case GET_INPUT GET_INKEY 
-            //Begin case SET_UP_CALL 
+            } 
+            
+            
             mCmdIf.handleCallSetupRequestFromSim(resMsg.usersConfirm, null);
-            //End case SET_UP_CALL 
-            //Begin case SET_UP_CALL 
+            
+            
             mCurrntCmd = null;
-            //End case SET_UP_CALL 
-        } //End collapsed parenthetic
-        //End case OK PRFRMD_WITH_PARTIAL_COMPREHENSION PRFRMD_WITH_MISSING_INFO PRFRMD_WITH_ADDITIONAL_EFS_READ PRFRMD_ICON_NOT_DISPLAYED PRFRMD_MODIFIED_BY_NAA PRFRMD_LIMITED_SERVICE PRFRMD_WITH_MODIFICATION PRFRMD_NAA_NOT_ACTIVE PRFRMD_TONE_NOT_PLAYED 
-        //Begin case NO_RESPONSE_FROM_USER UICC_SESSION_TERM_BY_USER BACKWARD_MOVE_BY_USER 
+            
+        } 
+        
+        
         resp = null;
-        //End case NO_RESPONSE_FROM_USER UICC_SESSION_TERM_BY_USER BACKWARD_MOVE_BY_USER 
+        
         sendTerminalResponse(cmdDet, resMsg.resCode, false, 0, resp);
         mCurrntCmd = null;
         addTaint(resMsg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

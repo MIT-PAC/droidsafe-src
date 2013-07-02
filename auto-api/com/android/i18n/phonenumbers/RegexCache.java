@@ -1,11 +1,11 @@
 package com.android.i18n.phonenumbers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -19,30 +19,31 @@ public class RegexCache {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.589 -0400", hash_original_method = "21C87B9404006AB8BDC70A7D87D605C9", hash_generated_method = "BA72428A9A53B792FB4D16D0540B1699")
     public  RegexCache(int size) {
         cache = new LRUCache<String, Pattern>(size);
-        // ---------- Original Method ----------
-        //cache = new LRUCache<String, Pattern>(size);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.590 -0400", hash_original_method = "625FF0438C87362FF750355AAC8DD91B", hash_generated_method = "F0C23FE92A8036255D9F3832666F4967")
     public Pattern getPatternForRegex(String regex) {
-        Pattern varB4EAC82CA7396A68D541C85D26508E83_2021709327 = null; //Variable for return #1
+        Pattern varB4EAC82CA7396A68D541C85D26508E83_2021709327 = null; 
         Pattern pattern = cache.get(regex);
         {
             pattern = Pattern.compile(regex);
             cache.put(regex, pattern);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2021709327 = pattern;
         addTaint(regex.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2021709327.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2021709327.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2021709327;
-        // ---------- Original Method ----------
-        //Pattern pattern = cache.get(regex);
-        //if (pattern == null) {
-      //pattern = Pattern.compile(regex);
-      //cache.put(regex, pattern);
-    //}
-        //return pattern;
+        
+        
+        
+      
+      
+    
+        
     }
 
     
@@ -52,8 +53,8 @@ public class RegexCache {
         addTaint(regex.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_384036882 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_384036882;
-        // ---------- Original Method ----------
-        //return cache.containsKey(regex);
+        
+        
     }
 
     
@@ -77,30 +78,30 @@ public class RegexCache {
                     addTaint(eldest.getTaint());
                     boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_662558881 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_662558881;
-                    // ---------- Original Method ----------
-                    //return size() > LRUCache.this.size;
+                    
+                    
                 }
 };
-            // ---------- Original Method ----------
-            //this.size = size;
-            //map = new LinkedHashMap<K, V>(size * 4 / 3 + 1, 0.75f, true) {
-        //@Override
-        //protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
-          //return size() > LRUCache.this.size;
-        //}
-      //};
+            
+            
+            
+        
+        
+          
+        
+      
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.594 -0400", hash_original_method = "EEC311F1C8E6E4405BF9A97AEC3D11BF", hash_generated_method = "2D78954A16CFAF5798BE325791984C83")
         public synchronized V get(K key) {
-            V varB4EAC82CA7396A68D541C85D26508E83_1672311579 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_1672311579 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1672311579 = map.get(key);
             addTaint(key.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1672311579.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1672311579.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1672311579;
-            // ---------- Original Method ----------
-            //return map.get(key);
+            
+            
         }
 
         
@@ -109,8 +110,8 @@ public class RegexCache {
             map.put(key, value);
             addTaint(key.getTaint());
             addTaint(value.getTaint());
-            // ---------- Original Method ----------
-            //map.put(key, value);
+            
+            
         }
 
         
@@ -120,8 +121,8 @@ public class RegexCache {
             addTaint(key.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_64036841 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_64036841;
-            // ---------- Original Method ----------
-            //return map.containsKey(key);
+            
+            
         }
 
         

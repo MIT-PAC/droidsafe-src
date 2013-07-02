@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -25,21 +25,21 @@ public class VerifierInfo implements Parcelable {
             boolean var81EEFDB302B8570AE8CB400E9D1576A0_1445976933 = (packageName == null || packageName.length() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("packageName must not be null or empty");
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("publicKey must not be null");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.packageName = packageName;
         this.publicKey = publicKey;
-        // ---------- Original Method ----------
-        //if (packageName == null || packageName.length() == 0) {
-            //throw new IllegalArgumentException("packageName must not be null or empty");
-        //} else if (publicKey == null) {
-            //throw new IllegalArgumentException("publicKey must not be null");
-        //}
-        //this.packageName = packageName;
-        //this.publicKey = publicKey;
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -47,9 +47,9 @@ public class VerifierInfo implements Parcelable {
     private  VerifierInfo(Parcel source) {
         packageName = source.readString();
         publicKey = (PublicKey) source.readSerializable();
-        // ---------- Original Method ----------
-        //packageName = source.readString();
-        //publicKey = (PublicKey) source.readSerializable();
+        
+        
+        
     }
 
     
@@ -58,11 +58,12 @@ public class VerifierInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_928948445 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_928948445;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.297 -0400", hash_original_method = "F898CE68252B35C4629787E370ED7F66", hash_generated_method = "514387663936A778AA1B269259E3670F")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -70,9 +71,9 @@ public class VerifierInfo implements Parcelable {
         dest.writeSerializable(publicKey);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(packageName);
-        //dest.writeSerializable(publicKey);
+        
+        
+        
     }
 
     
@@ -88,12 +89,12 @@ public class VerifierInfo implements Parcelable {
             return new VerifierInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public VerifierInfo createFromParcel(Parcel source) {
             return new VerifierInfo(source);
         }
     
-    // orphaned legacy method
+    
     public VerifierInfo[] newArray(int size) {
             return new VerifierInfo[size];
         }

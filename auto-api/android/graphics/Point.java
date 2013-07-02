@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -20,7 +20,7 @@ public class Point implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.062 -0400", hash_original_method = "D4552E1315F6D591F9A42261DB9D057B", hash_generated_method = "891355F007EC1345CA8AB753D7DD5962")
     public  Point() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,9 +28,9 @@ public class Point implements Parcelable {
     public  Point(int x, int y) {
         this.x = x;
         this.y = y;
-        // ---------- Original Method ----------
-        //this.x = x;
-        //this.y = y;
+        
+        
+        
     }
 
     
@@ -38,9 +38,9 @@ public class Point implements Parcelable {
     public  Point(Point src) {
         this.x = src.x;
         this.y = src.y;
-        // ---------- Original Method ----------
-        //this.x = src.x;
-        //this.y = src.y;
+        
+        
+        
     }
 
     
@@ -48,9 +48,9 @@ public class Point implements Parcelable {
     public void set(int x, int y) {
         this.x = x;
         this.y = y;
-        // ---------- Original Method ----------
-        //this.x = x;
-        //this.y = y;
+        
+        
+        
     }
 
     
@@ -58,9 +58,9 @@ public class Point implements Parcelable {
     public final void negate() {
         x = -x;
         y = -y;
-        // ---------- Original Method ----------
-        //x = -x;
-        //y = -y;
+        
+        
+        
     }
 
     
@@ -68,9 +68,9 @@ public class Point implements Parcelable {
     public final void offset(int dx, int dy) {
         x += dx;
         y += dy;
-        // ---------- Original Method ----------
-        //x += dx;
-        //y += dy;
+        
+        
+        
     }
 
     
@@ -80,8 +80,8 @@ public class Point implements Parcelable {
         addTaint(y);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1970697720 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1970697720;
-        // ---------- Original Method ----------
-        //return this.x == x && this.y == y;
+        
+        
     }
 
     
@@ -90,16 +90,16 @@ public class Point implements Parcelable {
     public boolean equals(Object o) {
         {
             Point p = (Point) o;
-        } //End block
+        } 
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_150434302 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_150434302;
-        // ---------- Original Method ----------
-        //if (o instanceof Point) {
-            //Point p = (Point) o;
-            //return this.x == p.x && this.y == p.y;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -108,20 +108,21 @@ public class Point implements Parcelable {
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_33006750 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_33006750;
-        // ---------- Original Method ----------
-        //return x * 32713 + y;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.068 -0400", hash_original_method = "9F61E49C995FA3CEC66850F11B9A08CD", hash_generated_method = "9C4B5A37A95533150BFE8260C16348D0")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1569584577 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1569584577 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1569584577 = "Point(" + x + ", " + y+ ")";
-        varB4EAC82CA7396A68D541C85D26508E83_1569584577.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1569584577.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1569584577;
-        // ---------- Original Method ----------
-        //return "Point(" + x + ", " + y+ ")";
+        
+        
     }
 
     
@@ -130,11 +131,12 @@ public class Point implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1393536511 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1393536511;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.069 -0400", hash_original_method = "54E86A99E3577FA18F65ED6CED3821E9", hash_generated_method = "50E44C5A133E451E53B0B4E3479576F0")
     @Override
     public void writeToParcel(Parcel out, int flags) {
@@ -142,19 +144,20 @@ public class Point implements Parcelable {
         out.writeInt(y);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeInt(x);
-        //out.writeInt(y);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.069 -0400", hash_original_method = "AD1ECB5F4974F92B096BCFEAE556C331", hash_generated_method = "7D18C675822037ED05AF6717B3061A57")
     public void readFromParcel(Parcel in) {
         x = in.readInt();
         y = in.readInt();
-        // ---------- Original Method ----------
-        //x = in.readInt();
-        //y = in.readInt();
+        
+        
+        
     }
 
     
@@ -173,14 +176,14 @@ public class Point implements Parcelable {
             return new Point[size];
         }
     };
-    // orphaned legacy method
+    
     public Point createFromParcel(Parcel in) {
             Point r = new Point();
             r.readFromParcel(in);
             return r;
         }
     
-    // orphaned legacy method
+    
     public Point[] newArray(int size) {
             return new Point[size];
         }

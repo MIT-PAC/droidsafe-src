@@ -1,11 +1,11 @@
 package javax.xml.parsers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class FactoryConfigurationError extends Error {
@@ -16,8 +16,8 @@ public class FactoryConfigurationError extends Error {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.686 -0400", hash_original_method = "6620C9D65D7B9B8AED04F1E2286BE37D", hash_generated_method = "3197EEE679B539DCD98F16DC71478ECF")
     public  FactoryConfigurationError() {
         this.exception = null;
-        // ---------- Original Method ----------
-        //this.exception = null;
+        
+        
     }
 
     
@@ -26,8 +26,8 @@ public class FactoryConfigurationError extends Error {
         super(msg);
         this.exception = null;
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //this.exception = null;
+        
+        
     }
 
     
@@ -35,8 +35,8 @@ public class FactoryConfigurationError extends Error {
     public  FactoryConfigurationError(Exception e) {
         super(e.toString());
         this.exception = e;
-        // ---------- Original Method ----------
-        //this.exception = e;
+        
+        
     }
 
     
@@ -45,48 +45,49 @@ public class FactoryConfigurationError extends Error {
         super(msg);
         this.exception = e;
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //this.exception = e;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.687 -0400", hash_original_method = "3CFCD04CF304E9364ADFC7DBDB377B80", hash_generated_method = "E405A951310032F6D07C2D696943562A")
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1071142025 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1013164721 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1071142025 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1013164721 = null; 
         String message = super.getMessage ();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1071142025 = exception.getMessage();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1013164721 = message;
-        String varA7E53CE21691AB073D9660D615818899_991331977; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_991331977; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_991331977 = varB4EAC82CA7396A68D541C85D26508E83_1071142025;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_991331977 = varB4EAC82CA7396A68D541C85D26508E83_1013164721;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_991331977.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_991331977.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_991331977;
-        // ---------- Original Method ----------
-        //String message = super.getMessage ();
-        //if (message == null && exception != null) {
-            //return exception.getMessage();
-        //}
-        //return message;
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.687 -0400", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "86951BCD0057D83C1A0F0327D511DC6F")
     public Exception getException() {
-        Exception varB4EAC82CA7396A68D541C85D26508E83_765876701 = null; //Variable for return #1
+        Exception varB4EAC82CA7396A68D541C85D26508E83_765876701 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_765876701 = exception;
-        varB4EAC82CA7396A68D541C85D26508E83_765876701.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_765876701.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_765876701;
-        // ---------- Original Method ----------
-        //return exception;
+        
+        
     }
 
     

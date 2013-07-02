@@ -1,11 +1,11 @@
 package org.apache.commons.io.filefilter;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.Serializable;
@@ -14,7 +14,7 @@ public class FalseFileFilter implements IOFileFilter, Serializable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.721 -0400", hash_original_method = "FFD73B06BFF281953B16F54803697DC3", hash_generated_method = "7209813E30987E0B494305DE2B1132C6")
     protected  FalseFileFilter() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,8 +23,8 @@ public class FalseFileFilter implements IOFileFilter, Serializable {
         addTaint(file.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_990500555 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_990500555;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -34,8 +34,8 @@ public class FalseFileFilter implements IOFileFilter, Serializable {
         addTaint(name.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1339530551 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1339530551;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     

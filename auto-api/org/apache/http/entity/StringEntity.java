@@ -1,11 +1,11 @@
 package org.apache.http.entity;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -24,21 +24,21 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Source string may not be null");
-        } //End block
+        } 
         {
             charset = HTTP.DEFAULT_CONTENT_CHARSET;
-        } //End block
+        } 
         this.content = s.getBytes(charset);
         setContentType(HTTP.PLAIN_TEXT_TYPE + HTTP.CHARSET_PARAM + charset);
-        // ---------- Original Method ----------
-        //if (s == null) {
-            //throw new IllegalArgumentException("Source string may not be null");
-        //}
-        //if (charset == null) {
-            //charset = HTTP.DEFAULT_CONTENT_CHARSET;
-        //}
-        //this.content = s.getBytes(charset);
-        //setContentType(HTTP.PLAIN_TEXT_TYPE + HTTP.CHARSET_PARAM + charset);
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -46,7 +46,7 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
     public  StringEntity(final String s) throws UnsupportedEncodingException {
         this(s, null);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -54,8 +54,8 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
     public boolean isRepeatable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_268298577 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_268298577;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -63,19 +63,20 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
     public long getContentLength() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1015390081 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1015390081;
-        // ---------- Original Method ----------
-        //return this.content.length;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.651 -0400", hash_original_method = "194171D7375452E3CA000FB317D6C6FC", hash_generated_method = "664597409BB19D4DF9B685F229866E05")
     public InputStream getContent() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1491094311 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1491094311 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1491094311 = new ByteArrayInputStream(this.content);
-        varB4EAC82CA7396A68D541C85D26508E83_1491094311.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1491094311.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1491094311;
-        // ---------- Original Method ----------
-        //return new ByteArrayInputStream(this.content);
+        
+        
     }
 
     
@@ -83,16 +84,16 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
     public void writeTo(final OutputStream outstream) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Output stream may not be null");
-        } //End block
+        } 
         outstream.write(this.content);
         outstream.flush();
         addTaint(outstream.getTaint());
-        // ---------- Original Method ----------
-        //if (outstream == null) {
-            //throw new IllegalArgumentException("Output stream may not be null");
-        //}
-        //outstream.write(this.content);
-        //outstream.flush();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -100,19 +101,20 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
     public boolean isStreaming() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1554588338 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1554588338;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.652 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "241B5AD86F225C99433B1441CCEE70FB")
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_42269526 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_42269526 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_42269526 = super.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_42269526.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_42269526.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_42269526;
-        // ---------- Original Method ----------
-        //return super.clone();
+        
+        
     }
 
     

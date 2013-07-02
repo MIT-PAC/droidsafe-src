@@ -1,11 +1,11 @@
 package android.nfc.tech;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.nfc.ErrorCodes;
 import android.nfc.Tag;
@@ -33,28 +33,29 @@ public final class MifareUltralight extends BasicTagTechnology {
                     boolean varEA469A2536A4896C86B6253DEA8C14F6_942985924 = (extras.getBoolean(EXTRA_IS_UL_C));
                     {
                         mType = TYPE_ULTRALIGHT_C;
-                    } //End block
+                    } 
                     {
                         mType = TYPE_ULTRALIGHT;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(tag.getTaint());
-        // ---------- Original Method ----------
-        //NfcA a = NfcA.get(tag);
-        //mType = TYPE_UNKNOWN;
-        //if (a.getSak() == 0x00 && tag.getId()[0] == NXP_MANUFACTURER_ID) {
-            //Bundle extras = tag.getTechExtras(TagTechnology.MIFARE_ULTRALIGHT);
-            //if (extras.getBoolean(EXTRA_IS_UL_C)) {
-                //mType = TYPE_ULTRALIGHT_C;
-            //} else {
-                //mType = TYPE_ULTRALIGHT;
-            //}
-        //}
+        
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MifareUltralight get(Tag tag) {
         if (!tag.hasTech(TagTechnology.MIFARE_ULTRALIGHT)) return null;
         try {
@@ -69,11 +70,12 @@ public final class MifareUltralight extends BasicTagTechnology {
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1045848532 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1045848532;
-        // ---------- Original Method ----------
-        //return mType;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.376 -0400", hash_original_method = "E6849E923D0A9327C443A073C34E8740", hash_generated_method = "061EB0CF5D3129279C1AA44300ED4BFE")
     public byte[] readPages(int pageOffset) throws IOException {
         validatePageIndex(pageOffset);
@@ -83,14 +85,15 @@ public final class MifareUltralight extends BasicTagTechnology {
         addTaint(pageOffset);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_596132374 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_596132374;
-        // ---------- Original Method ----------
-        //validatePageIndex(pageOffset);
-        //checkConnected();
-        //byte[] cmd = { 0x30, (byte) pageOffset};
-        //return transceive(cmd, false);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.376 -0400", hash_original_method = "76B1D0EF2AB1E41E6168EFDF0BF06314", hash_generated_method = "870EB1452F764544E92387991C9FC6B5")
     public void writePage(int pageOffset, byte[] data) throws IOException {
         validatePageIndex(pageOffset);
@@ -102,38 +105,41 @@ public final class MifareUltralight extends BasicTagTechnology {
         transceive(cmd, false);
         addTaint(pageOffset);
         addTaint(data[0]);
-        // ---------- Original Method ----------
-        //validatePageIndex(pageOffset);
-        //checkConnected();
-        //byte[] cmd = new byte[data.length + 2];
-        //cmd[0] = (byte) 0xA2;
-        //cmd[1] = (byte) pageOffset;
-        //System.arraycopy(data, 0, cmd, 2, data.length);
-        //transceive(cmd, false);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.377 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "E68FE3B6B0AEDD2DF9D9B7E9647F0B45")
     public byte[] transceive(byte[] data) throws IOException {
         byte[] var457CAD28AA5A950818B34ED801FB2565_82716737 = (transceive(data, true));
         addTaint(data[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_587252335 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_587252335;
-        // ---------- Original Method ----------
-        //return transceive(data, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.377 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "A63BC693C007A5943E54FBEB266ACEBC")
     public int getMaxTransceiveLength() {
         int varAD50EB2A6987338433A93D587AD15277_1737518335 = (getMaxTransceiveLengthInternal());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_545639931 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_545639931;
-        // ---------- Original Method ----------
-        //return getMaxTransceiveLengthInternal();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.378 -0400", hash_original_method = "D282B40A7C0A3209AA4502B842BB4FB3", hash_generated_method = "2FAD87782979C6A49EE08973DD3C10F2")
     public void setTimeout(int timeout) {
         try 
@@ -142,44 +148,46 @@ public final class MifareUltralight extends BasicTagTechnology {
                     TagTechnology.MIFARE_ULTRALIGHT, timeout);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The supplied timeout is not valid");
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         { }
         addTaint(timeout);
-        // ---------- Original Method ----------
-        //try {
-            //int err = mTag.getTagService().setTimeout(
-                    //TagTechnology.MIFARE_ULTRALIGHT, timeout);
-            //if (err != ErrorCodes.SUCCESS) {
-                //throw new IllegalArgumentException("The supplied timeout is not valid");
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-        //}
+        
+        
+            
+                    
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.379 -0400", hash_original_method = "849E2A68F4F80A968E68483D2D0B1744", hash_generated_method = "334C66E1754E20190ED5056D526573E2")
     public int getTimeout() {
         try 
         {
             int var0FDD3A6C9CC4EA5F9E59635B4F31C936_387578986 = (mTag.getTagService().getTimeout(TagTechnology.MIFARE_ULTRALIGHT));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_812938346 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_812938346;
-        // ---------- Original Method ----------
-        //try {
-            //return mTag.getTagService().getTimeout(TagTechnology.MIFARE_ULTRALIGHT);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-            //return 0;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void validatePageIndex(int pageIndex) {
         if (pageIndex < 0 || pageIndex >= MAX_PAGE_COUNT) {
             throw new IndexOutOfBoundsException("page out of bounds: " + pageIndex);

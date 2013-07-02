@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Locale;
 import android.util.LocaleUtil;
@@ -15,7 +15,7 @@ public class TextDirectionHeuristics {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.715 -0400", hash_original_method = "58EF974DE9597127C18BC29D51581A83", hash_generated_method = "58EF974DE9597127C18BC29D51581A83")
     public TextDirectionHeuristics ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -62,8 +62,8 @@ public class TextDirectionHeuristics {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.716 -0400", hash_original_method = "78BC1D5C61B057EE1329E0F2DC6F9F5C", hash_generated_method = "05B6DD8753C7F8E313E2DF2F8649E7E1")
         public  TextDirectionHeuristicImpl(TextDirectionAlgorithm algorithm) {
             mAlgorithm = algorithm;
-            // ---------- Original Method ----------
-            //mAlgorithm = algorithm;
+            
+            
         }
 
         
@@ -75,24 +75,24 @@ public class TextDirectionHeuristics {
         public boolean isRtl(char[] chars, int start, int count) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } //End block
+            } 
             {
                 boolean var325265FB9B90A3A9C3A7CE2178D0DFEC_181406064 = (defaultIsRtl());
-            } //End block
+            } 
             boolean var52B8FCB11F0767F7A8336B3C22B330D0_1512617593 = (doCheck(chars, start, count));
             addTaint(chars[0]);
             addTaint(start);
             addTaint(count);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1999710238 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1999710238;
-            // ---------- Original Method ----------
-            //if (chars == null || start < 0 || count < 0 || chars.length - count < start) {
-                //throw new IllegalArgumentException();
-            //}
-            //if (mAlgorithm == null) {
-                //return defaultIsRtl();
-            //}
-            //return doCheck(chars, start, count);
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
@@ -100,24 +100,24 @@ public class TextDirectionHeuristics {
         private boolean doCheck(char[] chars, int start, int count) {
             {
                 Object varDAB1BEF91BEF70B802203A689C42106C_730384364 = (mAlgorithm.checkRtl(chars, start, count));
-                //Begin case default 
+                
                 boolean var325265FB9B90A3A9C3A7CE2178D0DFEC_376067651 = (defaultIsRtl());
-                //End case default 
-            } //End collapsed parenthetic
+                
+            } 
             addTaint(chars[0]);
             addTaint(start);
             addTaint(count);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1856153385 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1856153385;
-            // ---------- Original Method ----------
-            //switch(mAlgorithm.checkRtl(chars, start, count)) {
-                //case TRUE:
-                    //return true;
-                //case FALSE:
-                    //return false;
-                //default:
-                    //return defaultIsRtl();
-            //}
+            
+            
+                
+                    
+                
+                    
+                
+                    
+            
         }
 
         
@@ -136,8 +136,8 @@ public class TextDirectionHeuristics {
             super(algorithm);
             mDefaultIsRtl = defaultIsRtl;
             addTaint(algorithm.getTaint());
-            // ---------- Original Method ----------
-            //mDefaultIsRtl = defaultIsRtl;
+            
+            
         }
 
         
@@ -146,8 +146,8 @@ public class TextDirectionHeuristics {
         protected boolean defaultIsRtl() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1261880343 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1261880343;
-            // ---------- Original Method ----------
-            //return mDefaultIsRtl;
+            
+            
         }
 
         
@@ -159,34 +159,34 @@ public class TextDirectionHeuristics {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.718 -0400", hash_original_method = "77800305F201A2CE86A750D63435A8FC", hash_generated_method = "BD69D77294A463FBAD983B34950F9BCE")
         private  FirstStrong() {
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.718 -0400", hash_original_method = "B12778B9891AAFECC2CB8B0C655200C4", hash_generated_method = "B226BC9790951A6049AA1BAEA584092F")
         @Override
         public TriState checkRtl(char[] text, int start, int count) {
-            TriState varB4EAC82CA7396A68D541C85D26508E83_1028134405 = null; //Variable for return #1
+            TriState varB4EAC82CA7396A68D541C85D26508E83_1028134405 = null; 
             TriState result = TriState.UNKNOWN;
             {
                 int i = start;
                 int e = start + count;
                 {
                     result = isRtlTextOrFormat(Character.getDirectionality(text[i]));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1028134405 = result;
             addTaint(text[0]);
             addTaint(start);
             addTaint(count);
-            varB4EAC82CA7396A68D541C85D26508E83_1028134405.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1028134405.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1028134405;
-            // ---------- Original Method ----------
-            //TriState result = TriState.UNKNOWN;
-            //for (int i = start, e = start + count; i < e && result == TriState.UNKNOWN; ++i) {
-                //result = isRtlTextOrFormat(Character.getDirectionality(text[i]));
-            //}
-            //return result;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -205,18 +205,18 @@ public class TextDirectionHeuristics {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.719 -0400", hash_original_method = "CE1C7FC082B7BD7DCEB5DEACBA006400", hash_generated_method = "FBA640D39B46307F538717C3F8D5574E")
         private  AnyStrong(boolean lookForRtl) {
             this.mLookForRtl = lookForRtl;
-            // ---------- Original Method ----------
-            //this.mLookForRtl = lookForRtl;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.719 -0400", hash_original_method = "2D65014765DBEAE21140F9644F3DEE55", hash_generated_method = "F4A243D0397B0A0C2826729CFA689155")
         @Override
         public TriState checkRtl(char[] text, int start, int count) {
-            TriState varB4EAC82CA7396A68D541C85D26508E83_1037331448 = null; //Variable for return #1
-            TriState varB4EAC82CA7396A68D541C85D26508E83_1495647173 = null; //Variable for return #2
-            TriState varB4EAC82CA7396A68D541C85D26508E83_590874263 = null; //Variable for return #3
-            TriState varB4EAC82CA7396A68D541C85D26508E83_861685196 = null; //Variable for return #4
+            TriState varB4EAC82CA7396A68D541C85D26508E83_1037331448 = null; 
+            TriState varB4EAC82CA7396A68D541C85D26508E83_1495647173 = null; 
+            TriState varB4EAC82CA7396A68D541C85D26508E83_590874263 = null; 
+            TriState varB4EAC82CA7396A68D541C85D26508E83_861685196 = null; 
             boolean haveUnlookedFor = false;
             {
                 int i = start;
@@ -224,51 +224,51 @@ public class TextDirectionHeuristics {
                 {
                     {
                         Object var0E539409CB864CE634AA444548E96C1F_2006964713 = (isRtlText(Character.getDirectionality(text[i])));
-                        //Begin case TRUE 
+                        
                         {
                             varB4EAC82CA7396A68D541C85D26508E83_1037331448 = TriState.TRUE;
-                        } //End block
-                        //End case TRUE 
-                        //Begin case TRUE 
+                        } 
+                        
+                        
                         haveUnlookedFor = true;
-                        //End case TRUE 
-                        //Begin case FALSE 
+                        
+                        
                         {
                             varB4EAC82CA7396A68D541C85D26508E83_1495647173 = TriState.FALSE;
-                        } //End block
-                        //End case FALSE 
-                        //Begin case FALSE 
+                        } 
+                        
+                        
                         haveUnlookedFor = true;
-                        //End case FALSE 
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        
+                    } 
+                } 
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_590874263 = mLookForRtl ? TriState.FALSE : TriState.TRUE;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_861685196 = TriState.UNKNOWN;
             addTaint(text[0]);
             addTaint(start);
             addTaint(count);
-            TriState varA7E53CE21691AB073D9660D615818899_1594941168; //Final return value
+            TriState varA7E53CE21691AB073D9660D615818899_1594941168; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1594941168 = varB4EAC82CA7396A68D541C85D26508E83_1037331448;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1594941168 = varB4EAC82CA7396A68D541C85D26508E83_1495647173;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_1594941168 = varB4EAC82CA7396A68D541C85D26508E83_590874263;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1594941168 = varB4EAC82CA7396A68D541C85D26508E83_861685196;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1594941168.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1594941168.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1594941168;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -287,7 +287,7 @@ public class TextDirectionHeuristics {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.720 -0400", hash_original_method = "CBB334D6CA70EC7E7043C3529CC3BCF6", hash_generated_method = "58F00443FB0688075F58A0CB5CD3BD72")
         public  TextDirectionHeuristicLocale() {
             super(null);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -297,9 +297,9 @@ public class TextDirectionHeuristics {
             final int dir = LocaleUtil.getLayoutDirectionFromLocale(java.util.Locale.getDefault());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_261850740 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_261850740;
-            // ---------- Original Method ----------
-            //final int dir = LocaleUtil.getLayoutDirectionFromLocale(java.util.Locale.getDefault());
-            //return (dir == LocaleUtil.TEXT_LAYOUT_DIRECTION_RTL_DO_NOT_USE);
+            
+            
+            
         }
 
         

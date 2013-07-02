@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -30,8 +30,8 @@ public abstract class Filter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.890 -0400", hash_original_method = "3A43B55E5FFADA496A080A897709E281", hash_generated_method = "224B7DC54A49D487A6B70021B3EAC24D")
     public  Filter() {
         mResultHandler = new ResultsHandler();
-        // ---------- Original Method ----------
-        //mResultHandler = new ResultsHandler();
+        
+        
     }
 
     
@@ -39,11 +39,11 @@ public abstract class Filter {
     public void setDelayer(Delayer delayer) {
         {
             mDelayer = delayer;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //mDelayer = delayer;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -51,8 +51,8 @@ public abstract class Filter {
     public final void filter(CharSequence constraint) {
         filter(constraint, null);
         addTaint(constraint.getTaint());
-        // ---------- Original Method ----------
-        //filter(constraint, null);
+        
+        
     }
 
     
@@ -64,7 +64,7 @@ public abstract class Filter {
                         THREAD_NAME, android.os.Process.THREAD_PRIORITY_BACKGROUND);
                 thread.start();
                 mThreadHandler = new RequestHandler(thread.getLooper());
-            } //End block
+            } 
             long delay;
             delay = 0;
             delay = mDelayer.getPostingDelay(constraint);
@@ -76,11 +76,11 @@ public abstract class Filter {
             mThreadHandler.removeMessages(FILTER_TOKEN);
             mThreadHandler.removeMessages(FINISH_TOKEN);
             mThreadHandler.sendMessageDelayed(message, delay);
-        } //End block
+        } 
         addTaint(constraint.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -91,15 +91,16 @@ public abstract class Filter {
             FilterResults results);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.892 -0400", hash_original_method = "5D0951FE3DB94952122FC0A58DABB40C", hash_generated_method = "B5B73AD7D9F408C0F1135F4D3A5771FE")
     public CharSequence convertResultToString(Object resultValue) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_12408689 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_12408689 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_12408689 = resultValue == null ? "" : resultValue.toString();
         addTaint(resultValue.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_12408689.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_12408689.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_12408689;
-        // ---------- Original Method ----------
-        //return resultValue == null ? "" : resultValue.toString();
+        
+        
     }
 
     
@@ -113,7 +114,7 @@ public abstract class Filter {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.892 -0400", hash_original_method = "4DBCD611B55919CEC0E695E7409A22D3", hash_generated_method = "2A33A130733322CE05C88516643CF5BD")
         public  FilterResults() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -127,7 +128,7 @@ public abstract class Filter {
         public  RequestHandler(Looper looper) {
             super(looper);
             addTaint(looper.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -135,44 +136,44 @@ public abstract class Filter {
         public void handleMessage(Message msg) {
             int what = msg.what;
             Message message;
-            //Begin case FILTER_TOKEN 
+            
             RequestArguments args = (RequestArguments) msg.obj;
-            //End case FILTER_TOKEN 
-            //Begin case FILTER_TOKEN 
+            
+            
             try 
             {
                 args.results = performFiltering(args.constraint);
-            } //End block
+            } 
             catch (Exception e)
             {
                 args.results = new FilterResults();
-            } //End block
+            } 
             finally 
             {
                 message = mResultHandler.obtainMessage(what);
                 message.obj = args;
                 message.sendToTarget();
-            } //End block
-            //End case FILTER_TOKEN 
-            //Begin case FILTER_TOKEN 
+            } 
+            
+            
             {
                 {
                     Message finishMessage = mThreadHandler.obtainMessage(FINISH_TOKEN);
                     mThreadHandler.sendMessageDelayed(finishMessage, 3000);
-                } //End block
-            } //End block
-            //End case FILTER_TOKEN 
-            //Begin case FINISH_TOKEN 
+                } 
+            } 
+            
+            
             {
                 {
                     mThreadHandler.getLooper().quit();
                     mThreadHandler = null;
-                } //End block
-            } //End block
-            //End case FINISH_TOKEN 
+                } 
+            } 
+            
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -185,7 +186,7 @@ public abstract class Filter {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.893 -0400", hash_original_method = "1E08EF8EFA185C4653CFFF0D7408C61C", hash_generated_method = "1E08EF8EFA185C4653CFFF0D7408C61C")
         public ResultsHandler ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -199,15 +200,15 @@ public abstract class Filter {
                 count = args.results.count;
                 count = -1;
                 args.listener.onFilterComplete(count);
-            } //End block
+            } 
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //RequestArguments args = (RequestArguments) msg.obj;
-            //publishResults(args.constraint, args.results);
-            //if (args.listener != null) {
-                //int count = args.results != null ? args.results.count : -1;
-                //args.listener.onFilterComplete(count);
-            //}
+            
+            
+            
+            
+                
+                
+            
         }
 
         
@@ -229,7 +230,7 @@ public abstract class Filter {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.893 -0400", hash_original_method = "6E50E95F99D18D81DCBEFDBA0A1A41EC", hash_generated_method = "6E50E95F99D18D81DCBEFDBA0A1A41EC")
         public RequestArguments ()
         {
-            //Synthesized constructor
+            
         }
 
 

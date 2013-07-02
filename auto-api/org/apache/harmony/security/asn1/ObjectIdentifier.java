@@ -1,11 +1,11 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Arrays;
 
@@ -21,9 +21,9 @@ public final class ObjectIdentifier {
     public  ObjectIdentifier(int[] oid) {
         validate(oid);
         this.oid = oid;
-        // ---------- Original Method ----------
-        //validate(oid);
-        //this.oid = oid;
+        
+        
+        
     }
 
     
@@ -31,48 +31,50 @@ public final class ObjectIdentifier {
     public  ObjectIdentifier(String strOid) {
         this.oid = toIntArray(strOid);
         this.soid = strOid;
-        // ---------- Original Method ----------
-        //this.oid = toIntArray(strOid);
-        //this.soid = strOid;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.903 -0400", hash_original_method = "7A1590EC642F64148081547F7DE77EEF", hash_generated_method = "75FAA06B39307FBF7C94C55E43B57D24")
     @Override
     public boolean equals(Object o) {
         {
             boolean var9B27E520BBC2DDC5CC18F0AC09DC0048_1948381952 = (o == null || this.getClass() != o.getClass());
-        } //End collapsed parenthetic
+        } 
         boolean var85CA6B7259588F8D393C14CCCE2DBEB8_431015278 = (Arrays.equals(oid, ((ObjectIdentifier) o).oid));
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1064317301 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1064317301;
-        // ---------- Original Method ----------
-        //if (this == o) {
-            //return true;
-        //}
-        //if (o == null || this.getClass() != o.getClass()) {
-            //return false;
-        //}
-        //return Arrays.equals(oid, ((ObjectIdentifier) o).oid);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.904 -0400", hash_original_method = "CBAF5DCAABB7CFC3E05C923E938DB148", hash_generated_method = "CDB32BF83BD2BCACD3F42403F1B7F655")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1224885886 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1224885886 = null; 
         {
             soid = toString(oid);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1224885886 = soid;
-        varB4EAC82CA7396A68D541C85D26508E83_1224885886.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1224885886.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1224885886;
-        // ---------- Original Method ----------
-        //if (soid == null) {
-            //soid = toString(oid);
-        //}
-        //return soid;
+        
+        
+            
+        
+        
     }
 
     
@@ -84,19 +86,20 @@ public final class ObjectIdentifier {
             int i = 0;
             {
                 intHash += oid[i] << (8 * i);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_365785289 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_365785289;
-        // ---------- Original Method ----------
-        //int intHash = 0;
-        //for (int i = 0; i < oid.length && i < 4; i++) {
-            //intHash += oid[i] << (8 * i); 
-        //}
-        //return intHash & 0x7FFFFFFF;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void validate(int[] oid) {
         if (oid == null) {
             throw new IllegalArgumentException("oid == null");
@@ -119,6 +122,7 @@ public final class ObjectIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(int[] oid) {
         StringBuilder sb = new StringBuilder(3 * oid.length);
         for (int i = 0; i < oid.length - 1; ++i) {
@@ -130,16 +134,19 @@ public final class ObjectIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int[] toIntArray(String str) {
         return toIntArray(str, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isOID(String str) {
         return toIntArray(str, false) != null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int[] toIntArray(String str, boolean shouldThrow) {
         if (str == null) {
             if (! shouldThrow) {

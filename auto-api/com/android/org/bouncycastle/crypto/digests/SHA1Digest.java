@@ -1,11 +1,11 @@
 package com.android.org.bouncycastle.crypto.digests;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.org.bouncycastle.crypto.util.Pack;
 
@@ -35,8 +35,8 @@ public class SHA1Digest extends GeneralDigest {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:43:17.808 -0400", hash_original_method = "1DF8B488961A33FC47935CC7CCD682F9", hash_generated_method = "5BEBE9232FDB549FC09A55F3A228E9E2")
     public  SHA1Digest() {
         reset();
-        // ---------- Original Method ----------
-        //reset();
+        
+        
     }
 
     
@@ -50,25 +50,25 @@ public class SHA1Digest extends GeneralDigest {
         H5 = t.H5;
         System.arraycopy(t.X, 0, X, 0, t.X.length);
         xOff = t.xOff;
-        // ---------- Original Method ----------
-        //H1 = t.H1;
-        //H2 = t.H2;
-        //H3 = t.H3;
-        //H4 = t.H4;
-        //H5 = t.H5;
-        //System.arraycopy(t.X, 0, X, 0, t.X.length);
-        //xOff = t.xOff;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:43:17.824 -0400", hash_original_method = "A93F195BA36C5C6DC02ECFC655EFA07D", hash_generated_method = "9699BF59CF51C60B23EC9EFE156D7EB4")
     public String getAlgorithmName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_691139264 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_691139264 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_691139264 = "SHA-1";
-        varB4EAC82CA7396A68D541C85D26508E83_691139264.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_691139264.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_691139264;
-        // ---------- Original Method ----------
-        //return "SHA-1";
+        
+        
     }
 
     
@@ -76,11 +76,12 @@ public class SHA1Digest extends GeneralDigest {
     public int getDigestSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_113110315 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_113110315;
-        // ---------- Original Method ----------
-        //return DIGEST_LENGTH;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:43:17.834 -0400", hash_original_method = "54433F6F6E3BCA59AD49A11DE4A21224", hash_generated_method = "E22DC88BD70ADBE3D285DB8E03E981DE")
     protected void processWord(
         byte[]  in,
@@ -92,40 +93,42 @@ public class SHA1Digest extends GeneralDigest {
         X[xOff] = n;
         {
             processBlock();
-        } //End block
+        } 
         addTaint(in[0]);
         addTaint(inOff);
-        // ---------- Original Method ----------
-        //int n = in[  inOff] << 24;
-        //n |= (in[++inOff] & 0xff) << 16;
-        //n |= (in[++inOff] & 0xff) << 8;
-        //n |= (in[++inOff] & 0xff);
-        //X[xOff] = n;
-        //if (++xOff == 16)
-        //{
-            //processBlock();
-        //}
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:43:17.838 -0400", hash_original_method = "E48925D533DC79A9930A6F42B92C0F9E", hash_generated_method = "328DE703BF93274E67C5AB9A832B3D85")
     protected void processLength(
         long    bitLength) {
         {
             processBlock();
-        } //End block
+        } 
         X[14] = (int)(bitLength >>> 32);
         X[15] = (int)(bitLength & 0xffffffff);
-        // ---------- Original Method ----------
-        //if (xOff > 14)
-        //{
-            //processBlock();
-        //}
-        //X[14] = (int)(bitLength >>> 32);
-        //X[15] = (int)(bitLength & 0xffffffff);
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:43:17.843 -0400", hash_original_method = "7A3A19F87647349D75F24CB81F80AF7C", hash_generated_method = "09FE995F05C870855290D16270CD5C3E")
     public int doFinal(
         byte[]  out,
@@ -141,18 +144,19 @@ public class SHA1Digest extends GeneralDigest {
         addTaint(outOff);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1522974593 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1522974593;
-        // ---------- Original Method ----------
-        //finish();
-        //Pack.intToBigEndian(H1, out, outOff);
-        //Pack.intToBigEndian(H2, out, outOff + 4);
-        //Pack.intToBigEndian(H3, out, outOff + 8);
-        //Pack.intToBigEndian(H4, out, outOff + 12);
-        //Pack.intToBigEndian(H5, out, outOff + 16);
-        //reset();
-        //return DIGEST_LENGTH;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:43:17.850 -0400", hash_original_method = "0BD8B4210E063DA673A9D4D2CF1851E6", hash_generated_method = "6E4BF35C87FB6E69931DEE93CDA81108")
     public void reset() {
         super.reset();
@@ -166,20 +170,20 @@ public class SHA1Digest extends GeneralDigest {
             int i = 0;
             {
                 X[i] = 0;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //super.reset();
-        //H1 = 0x67452301;
-        //H2 = 0xefcdab89;
-        //H3 = 0x98badcfe;
-        //H4 = 0x10325476;
-        //H5 = 0xc3d2e1f0;
-        //xOff = 0;
-        //for (int i = 0; i != X.length; i++)
-        //{
-            //X[i] = 0;
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -193,8 +197,8 @@ public class SHA1Digest extends GeneralDigest {
         addTaint(w);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_249121229 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_249121229;
-        // ---------- Original Method ----------
-        //return ((u & v) | ((~u) & w));
+        
+        
     }
 
     
@@ -208,8 +212,8 @@ public class SHA1Digest extends GeneralDigest {
         addTaint(w);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1948024858 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1948024858;
-        // ---------- Original Method ----------
-        //return (u ^ v ^ w);
+        
+        
     }
 
     
@@ -223,11 +227,12 @@ public class SHA1Digest extends GeneralDigest {
         addTaint(w);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_9047603 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_9047603;
-        // ---------- Original Method ----------
-        //return ((u & v) | (u & w) | (v & w));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:43:17.921 -0400", hash_original_method = "9525843836346F2F7CCC2D59A953FC80", hash_generated_method = "83A79CD4129F86820E6DC25E62DFF972")
     protected void processBlock() {
         {
@@ -235,8 +240,8 @@ public class SHA1Digest extends GeneralDigest {
             {
                 int t = X[i - 3] ^ X[i - 8] ^ X[i - 14] ^ X[i - 16];
                 X[i] = t << 1 | t >>> 31;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int A = H1;
         int B = H2;
         int C = H3;
@@ -256,8 +261,8 @@ public class SHA1Digest extends GeneralDigest {
                 D = D << 30 | D >>> 2;
                 A += (B << 5 | B >>> 27) + f(C, D, E) + X[idx++] + Y1;
                 C = C << 30 | C >>> 2;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int j = 0;
             {
@@ -271,8 +276,8 @@ public class SHA1Digest extends GeneralDigest {
                 D = D << 30 | D >>> 2;
                 A += (B << 5 | B >>> 27) + h(C, D, E) + X[idx++] + Y2;
                 C = C << 30 | C >>> 2;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int j = 0;
             {
@@ -286,8 +291,8 @@ public class SHA1Digest extends GeneralDigest {
                 D = D << 30 | D >>> 2;
                 A += (B << 5 | B >>> 27) + g(C, D, E) + X[idx++] + Y3;
                 C = C << 30 | C >>> 2;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int j = 0;
             {
@@ -301,8 +306,8 @@ public class SHA1Digest extends GeneralDigest {
                 D = D << 30 | D >>> 2;
                 A += (B << 5 | B >>> 27) + h(C, D, E) + X[idx++] + Y4;
                 C = C << 30 | C >>> 2;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         H1 += A;
         H2 += B;
         H3 += C;
@@ -313,10 +318,10 @@ public class SHA1Digest extends GeneralDigest {
             int i = 0;
             {
                 X[i] = 0;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     

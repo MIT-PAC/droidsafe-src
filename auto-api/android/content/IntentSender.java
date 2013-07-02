@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.ActivityManagerNative;
 import android.content.Context;
@@ -28,16 +28,16 @@ public class IntentSender implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.375 -0400", hash_original_method = "BB3BE3704C38C3CFAEE93A10A1B40CE3", hash_generated_method = "2663241EBD81A494CAEAE58B33F2DC66")
     public  IntentSender(IIntentSender target) {
         mTarget = target;
-        // ---------- Original Method ----------
-        //mTarget = target;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.376 -0400", hash_original_method = "34B28E745C82742C6DB129EED6A7ACD1", hash_generated_method = "14968660335B1B1B82B8A923154417D9")
     public  IntentSender(IBinder target) {
         mTarget = IIntentSender.Stub.asInterface(target);
-        // ---------- Original Method ----------
-        //mTarget = IIntentSender.Stub.asInterface(target);
+        
+        
     }
 
     
@@ -50,8 +50,8 @@ public class IntentSender implements Parcelable {
         addTaint(intent.getTaint());
         addTaint(onFinished.getTaint());
         addTaint(handler.getTaint());
-        // ---------- Original Method ----------
-        //sendIntent(context, code, intent, onFinished, handler, null);
+        
+        
     }
 
     
@@ -67,71 +67,71 @@ public class IntentSender implements Parcelable {
                     onFinished != null
                             ? new FinishedDispatcher(this, onFinished, handler)
                             : null,
-                    requiredPermission);//DSFIXME:  CODE0008: Nested ternary operator in expression
+                    requiredPermission);
             {
                 if (DroidSafeAndroidRuntime.control) throw new SendIntentException();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new SendIntentException();
-        } //End block
+        } 
         addTaint(context.getTaint());
         addTaint(code);
         addTaint(intent.getTaint());
         addTaint(onFinished.getTaint());
         addTaint(handler.getTaint());
         addTaint(requiredPermission.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //String resolvedType = intent != null ?
-                    //intent.resolveTypeIfNeeded(context.getContentResolver())
-                    //: null;
-            //int res = mTarget.send(code, intent, resolvedType,
-                    //onFinished != null
-                            //? new FinishedDispatcher(this, onFinished, handler)
-                            //: null,
-                    //requiredPermission);
-            //if (res < 0) {
-                //throw new SendIntentException();
-            //}
-        //} catch (RemoteException e) {
-            //throw new SendIntentException();
-        //}
+        
+        
+            
+                    
+                    
+            
+                    
+                            
+                            
+                    
+            
+                
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.380 -0400", hash_original_method = "1AE048A4984F76615C0EAE5393ABDA6D", hash_generated_method = "15AA7956730632C623BFAC8F397B01E0")
     public String getTargetPackage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1694468510 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_2125778562 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1694468510 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2125778562 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1694468510 = ActivityManagerNative.getDefault()
                 .getPackageForIntentSender(mTarget);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_2125778562 = null;
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_164054496; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_164054496; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_164054496 = varB4EAC82CA7396A68D541C85D26508E83_1694468510;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_164054496 = varB4EAC82CA7396A68D541C85D26508E83_2125778562;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_164054496.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_164054496.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_164054496;
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault()
-                //.getPackageForIntentSender(mTarget);
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        
+        
+            
+                
+        
+            
+        
     }
 
     
@@ -141,16 +141,16 @@ public class IntentSender implements Parcelable {
         {
             boolean var6AAA5F34DD06D56119CF1CEA2623D5C0_1961562982 = (mTarget.asBinder().equals(((IntentSender)otherObj)
                     .mTarget.asBinder()));
-        } //End block
+        } 
         addTaint(otherObj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_88855558 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_88855558;
-        // ---------- Original Method ----------
-        //if (otherObj instanceof IntentSender) {
-            //return mTarget.asBinder().equals(((IntentSender)otherObj)
-                    //.mTarget.asBinder());
-        //}
-        //return false;
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -160,15 +160,15 @@ public class IntentSender implements Parcelable {
         int varE5FBB4A5F6456F5D2CFFCAD33E59F123_195030033 = (mTarget.asBinder().hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1158808444 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1158808444;
-        // ---------- Original Method ----------
-        //return mTarget.asBinder().hashCode();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.382 -0400", hash_original_method = "E43F03B5A25195808BB96BD150CAE514", hash_generated_method = "A67E23AEC8D8CFAEEB61754782EA4D51")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1357038239 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1357038239 = null; 
         StringBuilder sb = new StringBuilder(128);
         sb.append("IntentSender{");
         sb.append(Integer.toHexString(System.identityHashCode(this)));
@@ -176,16 +176,16 @@ public class IntentSender implements Parcelable {
         sb.append(mTarget != null ? mTarget.asBinder() : null);
         sb.append('}');
         varB4EAC82CA7396A68D541C85D26508E83_1357038239 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1357038239.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1357038239.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1357038239;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(128);
-        //sb.append("IntentSender{");
-        //sb.append(Integer.toHexString(System.identityHashCode(this)));
-        //sb.append(": ");
-        //sb.append(mTarget != null ? mTarget.asBinder() : null);
-        //sb.append('}');
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -193,8 +193,8 @@ public class IntentSender implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_892253677 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_892253677;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -203,8 +203,8 @@ public class IntentSender implements Parcelable {
         out.writeStrongBinder(mTarget.asBinder());
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeStrongBinder(mTarget.asBinder());
+        
+        
     }
 
     
@@ -223,12 +223,12 @@ public class IntentSender implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.385 -0400", hash_original_method = "5A73019C5B7699A011E114A766F68ECD", hash_generated_method = "AF4ABAD0086807C7E7337EA7E269386F")
     public IIntentSender getTarget() {
-        IIntentSender varB4EAC82CA7396A68D541C85D26508E83_1179850807 = null; //Variable for return #1
+        IIntentSender varB4EAC82CA7396A68D541C85D26508E83_1179850807 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1179850807 = mTarget;
-        varB4EAC82CA7396A68D541C85D26508E83_1179850807.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1179850807.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1179850807;
-        // ---------- Original Method ----------
-        //return mTarget;
+        
+        
     }
 
     
@@ -236,7 +236,7 @@ public class IntentSender implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.386 -0400", hash_original_method = "3CCB3E3C6E6C65C0BEBBCAEF78CD6FBE", hash_generated_method = "CB8141C05BC43408A5593044AF4551A8")
         public  SendIntentException() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -244,7 +244,7 @@ public class IntentSender implements Parcelable {
         public  SendIntentException(String name) {
             super(name);
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -252,7 +252,7 @@ public class IntentSender implements Parcelable {
         public  SendIntentException(Exception cause) {
             super(cause);
             addTaint(cause.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -288,10 +288,10 @@ public class IntentSender implements Parcelable {
             mIntentSender = pi;
             mWho = who;
             mHandler = handler;
-            // ---------- Original Method ----------
-            //mIntentSender = pi;
-            //mWho = who;
-            //mHandler = handler;
+            
+            
+            
+            
         }
 
         
@@ -304,22 +304,22 @@ public class IntentSender implements Parcelable {
             mResultExtras = extras;
             {
                 run();
-            } //End block
+            } 
             {
                 mHandler.post(this);
-            } //End block
+            } 
             addTaint(serialized);
             addTaint(sticky);
-            // ---------- Original Method ----------
-            //mIntent = intent;
-            //mResultCode = resultCode;
-            //mResultData = data;
-            //mResultExtras = extras;
-            //if (mHandler == null) {
-                //run();
-            //} else {
-                //mHandler.post(this);
-            //}
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -327,9 +327,9 @@ public class IntentSender implements Parcelable {
         public void run() {
             mWho.onSendFinished(mIntentSender, mIntent, mResultCode,
                     mResultData, mResultExtras);
-            // ---------- Original Method ----------
-            //mWho.onSendFinished(mIntentSender, mIntent, mResultCode,
-                    //mResultData, mResultExtras);
+            
+            
+                    
         }
 
         
@@ -356,13 +356,13 @@ public class IntentSender implements Parcelable {
             return new IntentSender[size];
         }
     };
-    // orphaned legacy method
+    
     public IntentSender createFromParcel(Parcel in) {
             IBinder target = in.readStrongBinder();
             return target != null ? new IntentSender(target) : null;
         }
     
-    // orphaned legacy method
+    
     public IntentSender[] newArray(int size) {
             return new IntentSender[size];
         }

@@ -1,11 +1,11 @@
 package android.support.v4.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -169,8 +169,8 @@ public class ViewPager extends ViewGroup {
         super(context);
         initViewPager();
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //initViewPager();
+        
+        
     }
 
     
@@ -180,8 +180,8 @@ public class ViewPager extends ViewGroup {
         initViewPager();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //initViewPager();
+        
+        
     }
 
     
@@ -200,20 +200,20 @@ public class ViewPager extends ViewGroup {
         mRightEdge = new EdgeEffectCompat(context);
         final float density = context.getResources().getDisplayMetrics().density;
         mFlingDistance = (int) (MIN_DISTANCE_FOR_FLING * density);
-        // ---------- Original Method ----------
-        //setWillNotDraw(false);
-        //setDescendantFocusability(FOCUS_AFTER_DESCENDANTS);
-        //setFocusable(true);
-        //final Context context = getContext();
-        //mScroller = new Scroller(context, sInterpolator);
-        //final ViewConfiguration configuration = ViewConfiguration.get(context);
-        //mTouchSlop = ViewConfigurationCompat.getScaledPagingTouchSlop(configuration);
-        //mMinimumVelocity = configuration.getScaledMinimumFlingVelocity();
-        //mMaximumVelocity = configuration.getScaledMaximumFlingVelocity();
-        //mLeftEdge = new EdgeEffectCompat(context);
-        //mRightEdge = new EdgeEffectCompat(context);
-        //final float density = context.getResources().getDisplayMetrics().density;
-        //mFlingDistance = (int) (MIN_DISTANCE_FOR_FLING * density);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -222,15 +222,15 @@ public class ViewPager extends ViewGroup {
         mScrollState = newState;
         {
             mOnPageChangeListener.onPageScrollStateChanged(newState);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mScrollState == newState) {
-            //return;
-        //}
-        //mScrollState = newState;
-        //if (mOnPageChangeListener != null) {
-            //mOnPageChangeListener.onPageScrollStateChanged(newState);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -245,20 +245,20 @@ public class ViewPager extends ViewGroup {
                 {
                     final ItemInfo ii = mItems.get(i);
                     mAdapter.destroyItem(this, ii.position, ii.object);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mAdapter.finishUpdate(this);
             mItems.clear();
             removeNonDecorViews();
             mCurItem = 0;
             scrollTo(0, 0);
-        } //End block
+        } 
         final PagerAdapter oldAdapter = mAdapter;
         mAdapter = adapter;
         {
             {
                 mObserver = new PagerObserver();
-            } //End block
+            } 
             mAdapter.registerDataSetObserver(mObserver);
             mPopulatePending = false;
             {
@@ -267,16 +267,16 @@ public class ViewPager extends ViewGroup {
                 mRestoredCurItem = -1;
                 mRestoredAdapterState = null;
                 mRestoredClassLoader = null;
-            } //End block
+            } 
             {
                 populate();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mAdapterChangeListener.onAdapterChanged(oldAdapter, adapter);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -290,37 +290,37 @@ public class ViewPager extends ViewGroup {
                 final LayoutParams lp = (LayoutParams) child.getLayoutParams();
                 {
                     removeViewAt(i);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //for (int i = 0; i < getChildCount(); i++) {
-            //final View child = getChildAt(i);
-            //final LayoutParams lp = (LayoutParams) child.getLayoutParams();
-            //if (!lp.isDecor) {
-                //removeViewAt(i);
-                //i--;
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+            
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.800 -0400", hash_original_method = "F7E052C477B11777DA7EBFEE8452F40F", hash_generated_method = "ACB94D56AB7A7353028CF6EF8C33F916")
     public PagerAdapter getAdapter() {
-        PagerAdapter varB4EAC82CA7396A68D541C85D26508E83_1884748645 = null; //Variable for return #1
+        PagerAdapter varB4EAC82CA7396A68D541C85D26508E83_1884748645 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1884748645 = mAdapter;
-        varB4EAC82CA7396A68D541C85D26508E83_1884748645.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1884748645.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1884748645;
-        // ---------- Original Method ----------
-        //return mAdapter;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.801 -0400", hash_original_method = "36FAA41620F55873E46894195D62C0FE", hash_generated_method = "64B5029EE6627AF5DA8D33AFBF5EB153")
      void setOnAdapterChangeListener(OnAdapterChangeListener listener) {
         mAdapterChangeListener = listener;
-        // ---------- Original Method ----------
-        //mAdapterChangeListener = listener;
+        
+        
     }
 
     
@@ -329,9 +329,9 @@ public class ViewPager extends ViewGroup {
         mPopulatePending = false;
         setCurrentItemInternal(item, !mFirstLayout, false);
         addTaint(item);
-        // ---------- Original Method ----------
-        //mPopulatePending = false;
-        //setCurrentItemInternal(item, !mFirstLayout, false);
+        
+        
+        
     }
 
     
@@ -341,9 +341,9 @@ public class ViewPager extends ViewGroup {
         setCurrentItemInternal(item, smoothScroll, false);
         addTaint(item);
         addTaint(smoothScroll);
-        // ---------- Original Method ----------
-        //mPopulatePending = false;
-        //setCurrentItemInternal(item, smoothScroll, false);
+        
+        
+        
     }
 
     
@@ -351,8 +351,8 @@ public class ViewPager extends ViewGroup {
     public int getCurrentItem() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1989134782 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1989134782;
-        // ---------- Original Method ----------
-        //return mCurItem;
+        
+        
     }
 
     
@@ -362,8 +362,8 @@ public class ViewPager extends ViewGroup {
         addTaint(item);
         addTaint(smoothScroll);
         addTaint(always);
-        // ---------- Original Method ----------
-        //setCurrentItemInternal(item, smoothScroll, always, 0);
+        
+        
     }
 
     
@@ -373,23 +373,23 @@ public class ViewPager extends ViewGroup {
             boolean var184EA15FF1BD060C518D5D840F10745C_563704144 = (mAdapter == null || mAdapter.getCount() <= 0);
             {
                 setScrollingCacheEnabled(false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varE9CF88A8743AA53D96A667DB46509CB6_1939981080 = (!always && mCurItem == item && mItems.size() != 0);
             {
                 setScrollingCacheEnabled(false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             item = 0;
-        } //End block
+        } 
         {
             boolean var276A79D1E09E9FD0736BCDF9883FEC47_1418989406 = (item >= mAdapter.getCount());
             {
                 item = mAdapter.getCount() - 1;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final int pageLimit = mOffscreenPageLimit;
         {
             {
@@ -397,9 +397,9 @@ public class ViewPager extends ViewGroup {
                 boolean var96BE0E09AF82E1926A30E64302853022_583324960 = (i<mItems.size());
                 {
                     mItems.get(i).scrolling = true;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         final boolean dispatchSelected = mCurItem != item;
         mCurItem = item;
         populate();
@@ -408,49 +408,49 @@ public class ViewPager extends ViewGroup {
             smoothScrollTo(destX, 0, velocity);
             {
                 mOnPageChangeListener.onPageSelected(item);
-            } //End block
+            } 
             {
                 mInternalPageChangeListener.onPageSelected(item);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mOnPageChangeListener.onPageSelected(item);
-            } //End block
+            } 
             {
                 mInternalPageChangeListener.onPageSelected(item);
-            } //End block
+            } 
             completeScroll();
             scrollTo(destX, 0);
-        } //End block
+        } 
         addTaint(smoothScroll);
         addTaint(always);
         addTaint(velocity);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.812 -0400", hash_original_method = "FA06973225A603572F4FD6150255295F", hash_generated_method = "8762A57EBF81138B887037B32512FF60")
     public void setOnPageChangeListener(OnPageChangeListener listener) {
         mOnPageChangeListener = listener;
-        // ---------- Original Method ----------
-        //mOnPageChangeListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.813 -0400", hash_original_method = "BEC1D9D7EF0862149EE21D17618B274F", hash_generated_method = "7DC63B29E68293BEDF9A398ADD41F340")
      OnPageChangeListener setInternalPageChangeListener(OnPageChangeListener listener) {
-        OnPageChangeListener varB4EAC82CA7396A68D541C85D26508E83_1680763602 = null; //Variable for return #1
+        OnPageChangeListener varB4EAC82CA7396A68D541C85D26508E83_1680763602 = null; 
         OnPageChangeListener oldListener = mInternalPageChangeListener;
         mInternalPageChangeListener = listener;
         varB4EAC82CA7396A68D541C85D26508E83_1680763602 = oldListener;
-        varB4EAC82CA7396A68D541C85D26508E83_1680763602.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1680763602.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1680763602;
-        // ---------- Original Method ----------
-        //OnPageChangeListener oldListener = mInternalPageChangeListener;
-        //mInternalPageChangeListener = listener;
-        //return oldListener;
+        
+        
+        
+        
     }
 
     
@@ -458,8 +458,8 @@ public class ViewPager extends ViewGroup {
     public int getOffscreenPageLimit() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372994476 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372994476;
-        // ---------- Original Method ----------
-        //return mOffscreenPageLimit;
+        
+        
     }
 
     
@@ -467,21 +467,21 @@ public class ViewPager extends ViewGroup {
     public void setOffscreenPageLimit(int limit) {
         {
             limit = DEFAULT_OFFSCREEN_PAGES;
-        } //End block
+        } 
         {
             mOffscreenPageLimit = limit;
             populate();
-        } //End block
-        // ---------- Original Method ----------
-        //if (limit < DEFAULT_OFFSCREEN_PAGES) {
-            //Log.w(TAG, "Requested offscreen page limit " + limit + " too small; defaulting to " +
-                    //DEFAULT_OFFSCREEN_PAGES);
-            //limit = DEFAULT_OFFSCREEN_PAGES;
-        //}
-        //if (limit != mOffscreenPageLimit) {
-            //mOffscreenPageLimit = limit;
-            //populate();
-        //}
+        } 
+        
+        
+            
+                    
+            
+        
+        
+            
+            
+        
     }
 
     
@@ -492,12 +492,12 @@ public class ViewPager extends ViewGroup {
         final int width = getWidth();
         recomputeScrollPosition(width, width, marginPixels, oldMargin);
         requestLayout();
-        // ---------- Original Method ----------
-        //final int oldMargin = mPageMargin;
-        //mPageMargin = marginPixels;
-        //final int width = getWidth();
-        //recomputeScrollPosition(width, width, marginPixels, oldMargin);
-        //requestLayout();
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -505,8 +505,8 @@ public class ViewPager extends ViewGroup {
     public int getPageMargin() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_960206824 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_960206824;
-        // ---------- Original Method ----------
-        //return mPageMargin;
+        
+        
     }
 
     
@@ -516,11 +516,11 @@ public class ViewPager extends ViewGroup {
         refreshDrawableState();
         setWillNotDraw(d == null);
         invalidate();
-        // ---------- Original Method ----------
-        //mMarginDrawable = d;
-        //if (d != null) refreshDrawableState();
-        //setWillNotDraw(d == null);
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
@@ -528,8 +528,8 @@ public class ViewPager extends ViewGroup {
     public void setPageMarginDrawable(int resId) {
         setPageMarginDrawable(getContext().getResources().getDrawable(resId));
         addTaint(resId);
-        // ---------- Original Method ----------
-        //setPageMarginDrawable(getContext().getResources().getDrawable(resId));
+        
+        
     }
 
     
@@ -540,8 +540,8 @@ public class ViewPager extends ViewGroup {
         addTaint(who.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_811823900 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_811823900;
-        // ---------- Original Method ----------
-        //return super.verifyDrawable(who) || who == mMarginDrawable;
+        
+        
     }
 
     
@@ -554,14 +554,14 @@ public class ViewPager extends ViewGroup {
             boolean var9E4512E9555DA1255DDDA9AE20837176_2061158031 = (d != null && d.isStateful());
             {
                 d.setState(getDrawableState());
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //super.drawableStateChanged();
-        //final Drawable d = mMarginDrawable;
-        //if (d != null && d.isStateful()) {
-            //d.setState(getDrawableState());
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -573,10 +573,10 @@ public class ViewPager extends ViewGroup {
         addTaint(f);
         float var546ADE640B6EDFBC8A086EF31347E768_776191013 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_776191013;
-        // ---------- Original Method ----------
-        //f -= 0.5f;
-        //f *= 0.3f * Math.PI / 2.0f;
-        //return (float) Math.sin(f);
+        
+        
+        
+        
     }
 
     
@@ -585,8 +585,8 @@ public class ViewPager extends ViewGroup {
         smoothScrollTo(x, y, 0);
         addTaint(x);
         addTaint(y);
-        // ---------- Original Method ----------
-        //smoothScrollTo(x, y, 0);
+        
+        
     }
 
     
@@ -596,8 +596,8 @@ public class ViewPager extends ViewGroup {
             boolean varF370735710C80808B6618BA2D491D045_954322531 = (getChildCount() == 0);
             {
                 setScrollingCacheEnabled(false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int sx = getScrollX();
         int sy = getScrollY();
         int dx = x - sx;
@@ -605,7 +605,7 @@ public class ViewPager extends ViewGroup {
         {
             completeScroll();
             setScrollState(SCROLL_STATE_IDLE);
-        } //End block
+        } 
         setScrollingCacheEnabled(true);
         mScrolling = true;
         setScrollState(SCROLL_STATE_SETTLING);
@@ -618,19 +618,19 @@ public class ViewPager extends ViewGroup {
         velocity = Math.abs(velocity);
         {
             duration = 4 * Math.round(1000 * Math.abs(distance / velocity));
-        } //End block
+        } 
         {
             final float pageDelta = (float) Math.abs(dx) / (width + mPageMargin);
             duration = (int) ((pageDelta + 1) * 100);
-        } //End block
+        } 
         duration = Math.min(duration, MAX_SETTLE_DURATION);
         mScroller.startScroll(sx, sy, dx, dy, duration);
         invalidate();
         addTaint(x);
         addTaint(y);
         addTaint(velocity);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -641,21 +641,21 @@ public class ViewPager extends ViewGroup {
         ii.object = mAdapter.instantiateItem(this, position);
         {
             mItems.add(ii);
-        } //End block
+        } 
         {
             mItems.add(index, ii);
-        } //End block
+        } 
         addTaint(position);
         addTaint(index);
-        // ---------- Original Method ----------
-        //ItemInfo ii = new ItemInfo();
-        //ii.position = position;
-        //ii.object = mAdapter.instantiateItem(this, position);
-        //if (index < 0) {
-            //mItems.add(ii);
-        //} else {
-            //mItems.add(index, ii);
-        //}
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -675,36 +675,36 @@ public class ViewPager extends ViewGroup {
                     {
                         mAdapter.startUpdate(this);
                         isUpdating = true;
-                    } //End block
+                    } 
                     mAdapter.destroyItem(this, ii.position, ii.object);
                     needPopulate = true;
                     {
                         newCurrItem = Math.max(0, Math.min(mCurItem, mAdapter.getCount() - 1));
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     {
                         newCurrItem = newPos;
-                    } //End block
+                    } 
                     ii.position = newPos;
                     needPopulate = true;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             mAdapter.finishUpdate(this);
-        } //End block
+        } 
         Collections.sort(mItems, COMPARATOR);
         {
             setCurrentItemInternal(newCurrItem, false, true);
             needPopulate = true;
-        } //End block
+        } 
         {
             populate();
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -712,7 +712,7 @@ public class ViewPager extends ViewGroup {
      void populate() {
         {
             boolean varFF25C8C36D549896D247167EFDFCA86E_397259757 = (getWindowToken() == null);
-        } //End collapsed parenthetic
+        } 
         mAdapter.startUpdate(this);
         final int pageLimit = mOffscreenPageLimit;
         final int startPos = Math.max(0, mCurItem - pageLimit);
@@ -727,31 +727,31 @@ public class ViewPager extends ViewGroup {
                 {
                     mItems.remove(i);
                     mAdapter.destroyItem(this, ii.position, ii.object);
-                } //End block
+                } 
                 {
                     {
                         lastPos = startPos;
-                    } //End block
+                    } 
                     {
                         addNewItem(lastPos, i);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 lastPos = ii.position;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         lastPos = mItems.size() > 0 ? mItems.get(mItems.size()-1).position : -1;
         {
             lastPos = lastPos > startPos ? lastPos : startPos;
             {
                 addNewItem(lastPos, -1);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 int i = 0;
                 boolean var96BE0E09AF82E1926A30E64302853022_1736115571 = (i<mItems.size());
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         ItemInfo curItem = null;
         {
             int i = 0;
@@ -761,10 +761,10 @@ public class ViewPager extends ViewGroup {
                     boolean var526B7F7BBC73C99EEE08171F1332ADF1_995790219 = (mItems.get(i).position == mCurItem);
                     {
                         curItem = mItems.get(i);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         mAdapter.setPrimaryItem(this, mCurItem, curItem != null ? curItem.object : null);
         mAdapter.finishUpdate(this);
         {
@@ -784,77 +784,77 @@ public class ViewPager extends ViewGroup {
                             {
                                 {
                                     boolean var072CF4168F0C6139F56B61877BD695C3_1952962439 = (child.requestFocus(FOCUS_FORWARD));
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.884 -0400", hash_original_method = "14189B7A9DD30FC59304078756C5DA79", hash_generated_method = "999CBF77434386B2C48823E0C4A4E2B6")
     @Override
     public Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1892189077 = null; //Variable for return #1
+        
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1892189077 = null; 
         Parcelable superState = super.onSaveInstanceState();
         SavedState ss = new SavedState(superState);
         ss.position = mCurItem;
         {
             ss.adapterState = mAdapter.saveState();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1892189077 = ss;
-        varB4EAC82CA7396A68D541C85D26508E83_1892189077.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1892189077.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1892189077;
-        // ---------- Original Method ----------
-        //Parcelable superState = super.onSaveInstanceState();
-        //SavedState ss = new SavedState(superState);
-        //ss.position = mCurItem;
-        //if (mAdapter != null) {
-            //ss.adapterState = mAdapter.saveState();
-        //}
-        //return ss;
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.887 -0400", hash_original_method = "D24913A88F27B9FFD16DBB95EA1FF14B", hash_generated_method = "615B8CAE8F5C5EED0B2319C444A1EC36")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             super.onRestoreInstanceState(state);
-        } //End block
+        } 
         SavedState ss = (SavedState)state;
         super.onRestoreInstanceState(ss.getSuperState());
         {
             mAdapter.restoreState(ss.adapterState, ss.loader);
             setCurrentItemInternal(ss.position, false, true);
-        } //End block
+        } 
         {
             mRestoredCurItem = ss.position;
             mRestoredAdapterState = ss.adapterState;
             mRestoredClassLoader = ss.loader;
-        } //End block
+        } 
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //if (!(state instanceof SavedState)) {
-            //super.onRestoreInstanceState(state);
-            //return;
-        //}
-        //SavedState ss = (SavedState)state;
-        //super.onRestoreInstanceState(ss.getSuperState());
-        //if (mAdapter != null) {
-            //mAdapter.restoreState(ss.adapterState, ss.loader);
-            //setCurrentItemInternal(ss.position, false, true);
-        //} else {
-            //mRestoredCurItem = ss.position;
-            //mRestoredAdapterState = ss.adapterState;
-            //mRestoredClassLoader = ss.loader;
-        //}
+        
+        
+            
+            
+        
+        
+        
+        
+            
+            
+        
+            
+            
+            
+        
     }
 
     
@@ -865,43 +865,43 @@ public class ViewPager extends ViewGroup {
             boolean varDBEE735151EA33B4B64A3ED748755A2D_1832158335 = (!checkLayoutParams(params));
             {
                 params = generateLayoutParams(params);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final LayoutParams lp = (LayoutParams) params;
         lp.isDecor |= child instanceof Decor;
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Cannot add pager decor view during layout");
-            } //End block
+            } 
             addViewInLayout(child, index, params);
             child.measure(mChildWidthMeasureSpec, mChildHeightMeasureSpec);
-        } //End block
+        } 
         {
             super.addView(child, index, params);
-        } //End block
+        } 
         {
             {
                 boolean var4F747A471234350315F8F3D956EB4E30_1706727846 = (child.getVisibility() != GONE);
                 {
                     child.setDrawingCacheEnabled(mScrollingCacheEnabled);
-                } //End block
+                } 
                 {
                     child.setDrawingCacheEnabled(false);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(child.getTaint());
         addTaint(index);
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.895 -0400", hash_original_method = "3A127F64616A326BFDC211D8F4FB8341", hash_generated_method = "BCDC40F23CF5DE3495464D301860E9C3")
      ItemInfo infoForChild(View child) {
-        ItemInfo varB4EAC82CA7396A68D541C85D26508E83_253027878 = null; //Variable for return #1
-        ItemInfo varB4EAC82CA7396A68D541C85D26508E83_776832013 = null; //Variable for return #2
+        ItemInfo varB4EAC82CA7396A68D541C85D26508E83_253027878 = null; 
+        ItemInfo varB4EAC82CA7396A68D541C85D26508E83_776832013 = null; 
         {
             int i = 0;
             boolean var4A4E0EDDD1AFF42E2EABF8E0CFCE012A_873230392 = (i<mItems.size());
@@ -911,89 +911,89 @@ public class ViewPager extends ViewGroup {
                     boolean var1849777874F0A223C6B5DC629A9D42F2_792536310 = (mAdapter.isViewFromObject(child, ii.object));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_253027878 = ii;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_776832013 = null;
         addTaint(child.getTaint());
-        ItemInfo varA7E53CE21691AB073D9660D615818899_1695655402; //Final return value
+        ItemInfo varA7E53CE21691AB073D9660D615818899_1695655402; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1695655402 = varB4EAC82CA7396A68D541C85D26508E83_253027878;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1695655402 = varB4EAC82CA7396A68D541C85D26508E83_776832013;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1695655402.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1695655402.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1695655402;
-        // ---------- Original Method ----------
-        //for (int i=0; i<mItems.size(); i++) {
-            //ItemInfo ii = mItems.get(i);
-            //if (mAdapter.isViewFromObject(child, ii.object)) {
-                //return ii;
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.898 -0400", hash_original_method = "1D0A995632EA6711A9479487500A682E", hash_generated_method = "D4BEA9FAEB6A052A74F6109515BA3BD5")
      ItemInfo infoForAnyChild(View child) {
-        ItemInfo varB4EAC82CA7396A68D541C85D26508E83_1221124580 = null; //Variable for return #1
-        ItemInfo varB4EAC82CA7396A68D541C85D26508E83_130257036 = null; //Variable for return #2
+        ItemInfo varB4EAC82CA7396A68D541C85D26508E83_1221124580 = null; 
+        ItemInfo varB4EAC82CA7396A68D541C85D26508E83_130257036 = null; 
         ViewParent parent;
         {
             boolean var285CA96223EDDDC809B74A05CC171846_700622119 = ((parent=child.getParent()) != this);
             {
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1221124580 = null;
-                } //End block
+                } 
                 child = (View)parent;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_130257036 = infoForChild(child);
         addTaint(child.getTaint());
-        ItemInfo varA7E53CE21691AB073D9660D615818899_345606546; //Final return value
+        ItemInfo varA7E53CE21691AB073D9660D615818899_345606546; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_345606546 = varB4EAC82CA7396A68D541C85D26508E83_1221124580;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_345606546 = varB4EAC82CA7396A68D541C85D26508E83_130257036;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_345606546.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_345606546.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_345606546;
-        // ---------- Original Method ----------
-        //ViewParent parent;
-        //while ((parent=child.getParent()) != this) {
-            //if (parent == null || !(parent instanceof View)) {
-                //return null;
-            //}
-            //child = (View)parent;
-        //}
-        //return infoForChild(child);
+        
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.899 -0400", hash_original_method = "55E78F1E2A11C365755D77C284D387A2", hash_generated_method = "F620B046D3F9AED0D5778C8B88C50DA3")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
         mFirstLayout = true;
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //mFirstLayout = true;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.907 -0400", hash_original_method = "52B64CDCDB17F6464B1AA9D44D4C5C01", hash_generated_method = "789AE9528988B4F2EABFEFA054494934")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         setMeasuredDimension(getDefaultSize(0, widthMeasureSpec),
                 getDefaultSize(0, heightMeasureSpec));
         int childWidthSize = getMeasuredWidth() - getPaddingLeft() - getPaddingRight();
@@ -1017,24 +1017,24 @@ public class ViewPager extends ViewGroup {
                             boolean consumeHorizontal = hgrav == Gravity.LEFT || hgrav == Gravity.RIGHT;
                             {
                                 widthMode = MeasureSpec.EXACTLY;
-                            } //End block
+                            } 
                             {
                                 heightMode = MeasureSpec.EXACTLY;
-                            } //End block
+                            } 
                             final int widthSpec = MeasureSpec.makeMeasureSpec(childWidthSize, widthMode);
                             final int heightSpec = MeasureSpec.makeMeasureSpec(childHeightSize, heightMode);
                             child.measure(widthSpec, heightSpec);
                             {
                                 childHeightSize -= child.getMeasuredHeight();
-                            } //End block
+                            } 
                             {
                                 childWidthSize -= child.getMeasuredWidth();
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         mChildWidthMeasureSpec = MeasureSpec.makeMeasureSpec(childWidthSize, MeasureSpec.EXACTLY);
         mChildHeightMeasureSpec = MeasureSpec.makeMeasureSpec(childHeightSize, MeasureSpec.EXACTLY);
         mInLayout = true;
@@ -1051,35 +1051,35 @@ public class ViewPager extends ViewGroup {
                         final LayoutParams lp = (LayoutParams) child.getLayoutParams();
                         {
                             child.measure(mChildWidthMeasureSpec, mChildHeightMeasureSpec);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.910 -0400", hash_original_method = "D136D70D1C0AC62B68634CD89991503C", hash_generated_method = "7F993C9975B6FC2273EFA387BD115A55")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onSizeChanged(w, h, oldw, oldh);
         {
             recomputeScrollPosition(w, oldw, mPageMargin, mPageMargin);
-        } //End block
+        } 
         addTaint(w);
         addTaint(h);
         addTaint(oldw);
         addTaint(oldh);
-        // ---------- Original Method ----------
-        //super.onSizeChanged(w, h, oldw, oldh);
-        //if (w != oldw) {
-            //recomputeScrollPosition(w, oldw, mPageMargin, mPageMargin);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -1098,9 +1098,9 @@ public class ViewPager extends ViewGroup {
                 {
                     final int newDuration = mScroller.getDuration() - mScroller.timePassed();
                     mScroller.startScroll(scrollPos, 0, mCurItem * widthWithMargin, 0, newDuration);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             int scrollPos = mCurItem * widthWithMargin;
             {
@@ -1108,22 +1108,22 @@ public class ViewPager extends ViewGroup {
                 {
                     completeScroll();
                     scrollTo(scrollPos, getScrollY());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(width);
         addTaint(oldWidth);
         addTaint(margin);
         addTaint(oldMargin);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.934 -0400", hash_original_method = "91DBAE2CED1324F5F1E91DEC22CE5EE7", hash_generated_method = "0E7D1F43CA46F81CBD4637F2A9796B18")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mInLayout = true;
         populate();
         mInLayout = false;
@@ -1150,49 +1150,49 @@ public class ViewPager extends ViewGroup {
                         {
                             final int hgrav = lp.gravity & Gravity.HORIZONTAL_GRAVITY_MASK;
                             final int vgrav = lp.gravity & Gravity.VERTICAL_GRAVITY_MASK;
-                            //Begin case default 
+                            
                             childLeft = paddingLeft;
-                            //End case default 
-                            //Begin case Gravity.LEFT 
+                            
+                            
                             childLeft = paddingLeft;
-                            //End case Gravity.LEFT 
-                            //Begin case Gravity.LEFT 
+                            
+                            
                             paddingLeft += child.getMeasuredWidth();
-                            //End case Gravity.LEFT 
-                            //Begin case Gravity.CENTER_HORIZONTAL 
+                            
+                            
                             childLeft = Math.max((width - child.getMeasuredWidth()) / 2,
                                     paddingLeft);
-                            //End case Gravity.CENTER_HORIZONTAL 
-                            //Begin case Gravity.RIGHT 
+                            
+                            
                             childLeft = width - paddingRight - child.getMeasuredWidth();
-                            //End case Gravity.RIGHT 
-                            //Begin case Gravity.RIGHT 
+                            
+                            
                             paddingRight += child.getMeasuredWidth();
-                            //End case Gravity.RIGHT 
-                            //Begin case default 
+                            
+                            
                             childTop = paddingTop;
-                            //End case default 
-                            //Begin case Gravity.TOP 
+                            
+                            
                             childTop = paddingTop;
-                            //End case Gravity.TOP 
-                            //Begin case Gravity.TOP 
+                            
+                            
                             paddingTop += child.getMeasuredHeight();
-                            //End case Gravity.TOP 
-                            //Begin case Gravity.CENTER_VERTICAL 
+                            
+                            
                             childTop = Math.max((height - child.getMeasuredHeight()) / 2,
                                     paddingTop);
-                            //End case Gravity.CENTER_VERTICAL 
-                            //Begin case Gravity.BOTTOM 
+                            
+                            
                             childTop = height - paddingBottom - child.getMeasuredHeight();
-                            //End case Gravity.BOTTOM 
-                            //Begin case Gravity.BOTTOM 
+                            
+                            
                             paddingBottom += child.getMeasuredHeight();
-                            //End case Gravity.BOTTOM 
+                            
                             childLeft += scrollX;
                             child.layout(childLeft, childTop,
                             childLeft + child.getMeasuredWidth(),
                             childTop + child.getMeasuredHeight());
-                        } //End block
+                        } 
                         {
                             boolean varCA3C1135218ED5E6E7022FFF410323BE_617682050 = ((ii = infoForChild(child)) != null);
                             {
@@ -1202,12 +1202,12 @@ public class ViewPager extends ViewGroup {
                                 child.layout(childLeft, childTop,
                             childLeft + child.getMeasuredWidth(),
                             childTop + child.getMeasuredHeight());
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         mTopPageBounds = paddingTop;
         mBottomPageBounds = height - paddingBottom;
         mDecorChildCount = decorCount;
@@ -1217,8 +1217,8 @@ public class ViewPager extends ViewGroup {
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1238,31 +1238,31 @@ public class ViewPager extends ViewGroup {
                         {
                             scrollTo(x, y);
                             pageScrolled(x);
-                        } //End block
+                        } 
                         invalidate();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         completeScroll();
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.i(TAG, "computeScroll: finished=" + mScroller.isFinished());
-        //if (!mScroller.isFinished()) {
-            //if (mScroller.computeScrollOffset()) {
-                //if (DEBUG) Log.i(TAG, "computeScroll: still scrolling");
-                //int oldX = getScrollX();
-                //int oldY = getScrollY();
-                //int x = mScroller.getCurrX();
-                //int y = mScroller.getCurrY();
-                //if (oldX != x || oldY != y) {
-                    //scrollTo(x, y);
-                    //pageScrolled(x);
-                //}
-                //invalidate();
-                //return;
-            //}
-        //}
-        //completeScroll();
+        
+        
+        
+            
+                
+                
+                
+                
+                
+                
+                    
+                    
+                
+                
+                
+            
+        
+        
     }
 
     
@@ -1277,25 +1277,25 @@ public class ViewPager extends ViewGroup {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "onPageScrolled did not call superclass implementation");
-        } //End block
+        } 
         addTaint(xpos);
-        // ---------- Original Method ----------
-        //final int widthWithMargin = getWidth() + mPageMargin;
-        //final int position = xpos / widthWithMargin;
-        //final int offsetPixels = xpos % widthWithMargin;
-        //final float offset = (float) offsetPixels / widthWithMargin;
-        //mCalledSuper = false;
-        //onPageScrolled(position, offset, offsetPixels);
-        //if (!mCalledSuper) {
-            //throw new IllegalStateException(
-                    //"onPageScrolled did not call superclass implementation");
-        //}
+        
+        
+        
+        
+        
+        
+        
+        
+            
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.949 -0400", hash_original_method = "D3205253D12342035E86376912330E75", hash_generated_method = "7607BB24AD4CEA884A79511061EC88A1")
     protected void onPageScrolled(int position, float offset, int offsetPixels) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             final int scrollX = getScrollX();
             int paddingLeft = getPaddingLeft();
@@ -1309,45 +1309,45 @@ public class ViewPager extends ViewGroup {
                     final LayoutParams lp = (LayoutParams) child.getLayoutParams();
                     final int hgrav = lp.gravity & Gravity.HORIZONTAL_GRAVITY_MASK;
                     int childLeft = 0;
-                    //Begin case default 
+                    
                     childLeft = paddingLeft;
-                    //End case default 
-                    //Begin case Gravity.LEFT 
+                    
+                    
                     childLeft = paddingLeft;
-                    //End case Gravity.LEFT 
-                    //Begin case Gravity.LEFT 
+                    
+                    
                     paddingLeft += child.getWidth();
-                    //End case Gravity.LEFT 
-                    //Begin case Gravity.CENTER_HORIZONTAL 
+                    
+                    
                     childLeft = Math.max((width - child.getMeasuredWidth()) / 2,
                                 paddingLeft);
-                    //End case Gravity.CENTER_HORIZONTAL 
-                    //Begin case Gravity.RIGHT 
+                    
+                    
                     childLeft = width - paddingRight - child.getMeasuredWidth();
-                    //End case Gravity.RIGHT 
-                    //Begin case Gravity.RIGHT 
+                    
+                    
                     paddingRight += child.getMeasuredWidth();
-                    //End case Gravity.RIGHT 
+                    
                     childLeft += scrollX;
                     final int childOffset = childLeft - child.getLeft();
                     {
                         child.offsetLeftAndRight(childOffset);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             mOnPageChangeListener.onPageScrolled(position, offset, offsetPixels);
-        } //End block
+        } 
         {
             mInternalPageChangeListener.onPageScrolled(position, offset, offsetPixels);
-        } //End block
+        } 
         mCalledSuper = true;
         addTaint(position);
         addTaint(offset);
         addTaint(offsetPixels);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1363,9 +1363,9 @@ public class ViewPager extends ViewGroup {
             int y = mScroller.getCurrY();
             {
                 scrollTo(x, y);
-            } //End block
+            } 
             setScrollState(SCROLL_STATE_IDLE);
-        } //End block
+        } 
         mPopulatePending = false;
         mScrolling = false;
         {
@@ -1376,45 +1376,45 @@ public class ViewPager extends ViewGroup {
                 {
                     needPopulate = true;
                     ii.scrolling = false;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             populate();
-        } //End block
-        // ---------- Original Method ----------
-        //boolean needPopulate = mScrolling;
-        //if (needPopulate) {
-            //setScrollingCacheEnabled(false);
-            //mScroller.abortAnimation();
-            //int oldX = getScrollX();
-            //int oldY = getScrollY();
-            //int x = mScroller.getCurrX();
-            //int y = mScroller.getCurrY();
-            //if (oldX != x || oldY != y) {
-                //scrollTo(x, y);
-            //}
-            //setScrollState(SCROLL_STATE_IDLE);
-        //}
-        //mPopulatePending = false;
-        //mScrolling = false;
-        //for (int i=0; i<mItems.size(); i++) {
-            //ItemInfo ii = mItems.get(i);
-            //if (ii.scrolling) {
-                //needPopulate = true;
-                //ii.scrolling = false;
-            //}
-        //}
-        //if (needPopulate) {
-            //populate();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+            
+        
+        
+        
+        
+            
+            
+                
+                
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.985 -0400", hash_original_method = "965C57B2E8FC3C570BE548067A40E31E", hash_generated_method = "ACE71A3A64CE1288FFC46AF0985A3FB9")
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int action = ev.getAction() & MotionEventCompat.ACTION_MASK;
         {
             mIsBeingDragged = false;
@@ -1423,9 +1423,9 @@ public class ViewPager extends ViewGroup {
             {
                 mVelocityTracker.recycle();
                 mVelocityTracker = null;
-            } //End block
-        } //End block
-        //Begin case MotionEvent.ACTION_MOVE 
+            } 
+        } 
+        
         {
             final int activePointerId = mActivePointerId;
             final int pointerIndex = MotionEventCompat.findPointerIndex(ev, activePointerId);
@@ -1439,22 +1439,22 @@ public class ViewPager extends ViewGroup {
                 {
                     mInitialMotionX = mLastMotionX = x;
                     mLastMotionY = y;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 mIsBeingDragged = true;
                 setScrollState(SCROLL_STATE_DRAGGING);
                 mLastMotionX = x;
                 setScrollingCacheEnabled(true);
-            } //End block
+            } 
             {
                 {
                     mIsUnableToDrag = true;
-                } //End block
-            } //End block
-        } //End block
-        //End case MotionEvent.ACTION_MOVE 
-        //Begin case MotionEvent.ACTION_DOWN 
+                } 
+            } 
+        } 
+        
+        
         {
             mLastMotionX = mInitialMotionX = ev.getX();
             mLastMotionY = ev.getY();
@@ -1463,54 +1463,54 @@ public class ViewPager extends ViewGroup {
                 mIsBeingDragged = true;
                 mIsUnableToDrag = false;
                 setScrollState(SCROLL_STATE_DRAGGING);
-            } //End block
+            } 
             {
                 completeScroll();
                 mIsBeingDragged = false;
                 mIsUnableToDrag = false;
-            } //End block
-        } //End block
-        //End case MotionEvent.ACTION_DOWN 
-        //Begin case MotionEventCompat.ACTION_POINTER_UP 
+            } 
+        } 
+        
+        
         onSecondaryPointerUp(ev);
-        //End case MotionEventCompat.ACTION_POINTER_UP 
+        
         {
             {
                 mVelocityTracker = VelocityTracker.obtain();
-            } //End block
+            } 
             mVelocityTracker.addMovement(ev);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_820690625 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_820690625;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.012 -0400", hash_original_method = "88D861E2913027BDD6B43DC3209AC688", hash_generated_method = "664B59C5CB6FFB12285925CFAAAF4FE7")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var57171E6D7ADBA12F402579C6B252DB79_265486661 = (ev.getAction() == MotionEvent.ACTION_DOWN && ev.getEdgeFlags() != 0);
-        } //End collapsed parenthetic
+        } 
         {
             boolean varF7149958E5F2FB898FE7DABE8D6ABA54_1314697047 = (mAdapter == null || mAdapter.getCount() == 0);
-        } //End collapsed parenthetic
+        } 
         {
             mVelocityTracker = VelocityTracker.obtain();
-        } //End block
+        } 
         mVelocityTracker.addMovement(ev);
         final int action = ev.getAction();
         boolean needsInvalidate = false;
-        //Begin case MotionEvent.ACTION_DOWN 
+        
         {
             completeScroll();
             mLastMotionX = mInitialMotionX = ev.getX();
             mActivePointerId = MotionEventCompat.getPointerId(ev, 0);
-        } //End block
-        //End case MotionEvent.ACTION_DOWN 
-        //Begin case MotionEvent.ACTION_MOVE 
+        } 
+        
+        
         {
             final int pointerIndex = MotionEventCompat.findPointerIndex(ev, mActivePointerId);
             final float x = MotionEventCompat.getX(ev, pointerIndex);
@@ -1522,10 +1522,10 @@ public class ViewPager extends ViewGroup {
                 mLastMotionX = x;
                 setScrollState(SCROLL_STATE_DRAGGING);
                 setScrollingCacheEnabled(true);
-            } //End block
-        } //End block
-        //End case MotionEvent.ACTION_MOVE 
-        //Begin case MotionEvent.ACTION_MOVE 
+            } 
+        } 
+        
+        
         {
             final int activePointerIndex = MotionEventCompat.findPointerIndex(
                             ev, mActivePointerId);
@@ -1543,22 +1543,22 @@ public class ViewPager extends ViewGroup {
                 {
                     float over = -scrollX;
                     needsInvalidate = mLeftEdge.onPull(over / width);
-                } //End block
+                } 
                 scrollX = leftBound;
-            } //End block
+            } 
             {
                 {
                     float over = scrollX - rightBound;
                     needsInvalidate = mRightEdge.onPull(over / width);
-                } //End block
+                } 
                 scrollX = rightBound;
-            } //End block
+            } 
             mLastMotionX += scrollX - (int) scrollX;
             scrollTo((int) scrollX, getScrollY());
             pageScrolled((int) scrollX);
-        } //End block
-        //End case MotionEvent.ACTION_MOVE 
-        //Begin case MotionEvent.ACTION_UP 
+        } 
+        
+        
         {
             final VelocityTracker velocityTracker = mVelocityTracker;
             velocityTracker.computeCurrentVelocity(1000, mMaximumVelocity);
@@ -1578,38 +1578,38 @@ public class ViewPager extends ViewGroup {
             mActivePointerId = INVALID_POINTER;
             endDrag();
             needsInvalidate = mLeftEdge.onRelease() | mRightEdge.onRelease();
-        } //End block
-        //End case MotionEvent.ACTION_UP 
-        //Begin case MotionEvent.ACTION_CANCEL 
+        } 
+        
+        
         {
             setCurrentItemInternal(mCurItem, true, true);
             mActivePointerId = INVALID_POINTER;
             endDrag();
             needsInvalidate = mLeftEdge.onRelease() | mRightEdge.onRelease();
-        } //End block
-        //End case MotionEvent.ACTION_CANCEL 
-        //Begin case MotionEventCompat.ACTION_POINTER_DOWN 
+        } 
+        
+        
         {
             final int index = MotionEventCompat.getActionIndex(ev);
             final float x = MotionEventCompat.getX(ev, index);
             mLastMotionX = x;
             mActivePointerId = MotionEventCompat.getPointerId(ev, index);
-        } //End block
-        //End case MotionEventCompat.ACTION_POINTER_DOWN 
-        //Begin case MotionEventCompat.ACTION_POINTER_UP 
+        } 
+        
+        
         onSecondaryPointerUp(ev);
-        //End case MotionEventCompat.ACTION_POINTER_UP 
-        //Begin case MotionEventCompat.ACTION_POINTER_UP 
+        
+        
         mLastMotionX = MotionEventCompat.getX(ev,
                         MotionEventCompat.findPointerIndex(ev, mActivePointerId));
-        //End case MotionEventCompat.ACTION_POINTER_UP 
+        
         {
             invalidate();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2077158050 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2077158050;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1620,25 +1620,25 @@ public class ViewPager extends ViewGroup {
             boolean var53617FAAB7BF150477D52223C15E8704_388314191 = (Math.abs(deltaX) > mFlingDistance && Math.abs(velocity) > mMinimumVelocity);
             {
                 targetPage = velocity > 0 ? currentPage : currentPage + 1;
-            } //End block
+            } 
             {
                 targetPage = (int) (currentPage + pageOffset + 0.5f);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(currentPage);
         addTaint(pageOffset);
         addTaint(velocity);
         addTaint(deltaX);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_434623989 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_434623989;
-        // ---------- Original Method ----------
-        //int targetPage;
-        //if (Math.abs(deltaX) > mFlingDistance && Math.abs(velocity) > mMinimumVelocity) {
-            //targetPage = velocity > 0 ? currentPage : currentPage + 1;
-        //} else {
-            //targetPage = (int) (currentPage + pageOffset + 0.5f);
-        //}
-        //return targetPage;
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -1663,8 +1663,8 @@ public class ViewPager extends ViewGroup {
                         mLeftEdge.setSize(height, getWidth());
                         needsInvalidate |= mLeftEdge.draw(canvas);
                         canvas.restoreToCount(restoreCount);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varFE549372C17B79641E19CF160FE4C021_2066162386 = (!mRightEdge.isFinished());
                     {
@@ -1680,27 +1680,27 @@ public class ViewPager extends ViewGroup {
                         mRightEdge.setSize(height, width);
                         needsInvalidate |= mRightEdge.draw(canvas);
                         canvas.restoreToCount(restoreCount);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 mLeftEdge.finish();
                 mRightEdge.finish();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             invalidate();
-        } //End block
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.022 -0400", hash_original_method = "C696E5F5E436E83A9E43E2B41DDB422F", hash_generated_method = "18A598F88E8E6E63DF6C1CA5DE720ADC")
     @Override
     protected void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDraw(canvas);
         {
             final int scrollX = getScrollX();
@@ -1711,22 +1711,22 @@ public class ViewPager extends ViewGroup {
                 mMarginDrawable.setBounds(left, mTopPageBounds, left + mPageMargin,
                         mBottomPageBounds);
                 mMarginDrawable.draw(canvas);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        //super.onDraw(canvas);
-        //if (mPageMargin > 0 && mMarginDrawable != null) {
-            //final int scrollX = getScrollX();
-            //final int width = getWidth();
-            //final int offset = scrollX % (width + mPageMargin);
-            //if (offset != 0) {
-                //final int left = scrollX - offset + width;
-                //mMarginDrawable.setBounds(left, mTopPageBounds, left + mPageMargin,
-                        //mBottomPageBounds);
-                //mMarginDrawable.draw(canvas);
-            //}
-        //}
+        
+        
+        
+            
+            
+            
+            
+                
+                
+                        
+                
+            
+        
     }
 
     
@@ -1737,10 +1737,10 @@ public class ViewPager extends ViewGroup {
         mInitialMotionX = mLastMotionX = 0;
         {
             mVelocityTracker = VelocityTracker.obtain();
-        } //End block
+        } 
         {
             mVelocityTracker.clear();
-        } //End block
+        } 
         final long time = SystemClock.uptimeMillis();
         final MotionEvent ev = MotionEvent.obtain(time, time, MotionEvent.ACTION_DOWN, 0, 0, 0);
         mVelocityTracker.addMovement(ev);
@@ -1748,24 +1748,24 @@ public class ViewPager extends ViewGroup {
         mFakeDragBeginTime = time;
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_896361098 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_896361098;
-        // ---------- Original Method ----------
-        //if (mIsBeingDragged) {
-            //return false;
-        //}
-        //mFakeDragging = true;
-        //setScrollState(SCROLL_STATE_DRAGGING);
-        //mInitialMotionX = mLastMotionX = 0;
-        //if (mVelocityTracker == null) {
-            //mVelocityTracker = VelocityTracker.obtain();
-        //} else {
-            //mVelocityTracker.clear();
-        //}
-        //final long time = SystemClock.uptimeMillis();
-        //final MotionEvent ev = MotionEvent.obtain(time, time, MotionEvent.ACTION_DOWN, 0, 0, 0);
-        //mVelocityTracker.addMovement(ev);
-        //ev.recycle();
-        //mFakeDragBeginTime = time;
-        //return true;
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1773,7 +1773,7 @@ public class ViewPager extends ViewGroup {
     public void endFakeDrag() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No fake drag in progress. Call beginFakeDrag first.");
-        } //End block
+        } 
         final VelocityTracker velocityTracker = mVelocityTracker;
         velocityTracker.computeCurrentVelocity(1000, mMaximumVelocity);
         int initialVelocity = (int)VelocityTrackerCompat.getYVelocity(
@@ -1788,8 +1788,8 @@ public class ViewPager extends ViewGroup {
         setCurrentItemInternal(nextPage, true, true, initialVelocity);
         endDrag();
         mFakeDragging = false;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1797,7 +1797,7 @@ public class ViewPager extends ViewGroup {
     public void fakeDragBy(float xOffset) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No fake drag in progress. Call beginFakeDrag first.");
-        } //End block
+        } 
         mLastMotionX += xOffset;
         float scrollX = getScrollX() - xOffset;
         final int width = getWidth();
@@ -1806,10 +1806,10 @@ public class ViewPager extends ViewGroup {
         final float rightBound = Math.min(mCurItem + 1, mAdapter.getCount() - 1) * widthWithMargin;
         {
             scrollX = leftBound;
-        } //End block
+        } 
         {
             scrollX = rightBound;
-        } //End block
+        } 
         mLastMotionX += scrollX - (int) scrollX;
         scrollTo((int) scrollX, getScrollY());
         pageScrolled((int) scrollX);
@@ -1818,8 +1818,8 @@ public class ViewPager extends ViewGroup {
                 mLastMotionX, 0, 0);
         mVelocityTracker.addMovement(ev);
         ev.recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1827,8 +1827,8 @@ public class ViewPager extends ViewGroup {
     public boolean isFakeDragging() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_392790862 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_392790862;
-        // ---------- Original Method ----------
-        //return mFakeDragging;
+        
+        
     }
 
     
@@ -1844,19 +1844,19 @@ public class ViewPager extends ViewGroup {
             mActivePointerId = MotionEventCompat.getPointerId(ev, newPointerIndex);
             {
                 mVelocityTracker.clear();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final int pointerIndex = MotionEventCompat.getActionIndex(ev);
-        //final int pointerId = MotionEventCompat.getPointerId(ev, pointerIndex);
-        //if (pointerId == mActivePointerId) {
-            //final int newPointerIndex = pointerIndex == 0 ? 1 : 0;
-            //mLastMotionX = MotionEventCompat.getX(ev, newPointerIndex);
-            //mActivePointerId = MotionEventCompat.getPointerId(ev, newPointerIndex);
-            //if (mVelocityTracker != null) {
-                //mVelocityTracker.clear();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -1867,14 +1867,14 @@ public class ViewPager extends ViewGroup {
         {
             mVelocityTracker.recycle();
             mVelocityTracker = null;
-        } //End block
-        // ---------- Original Method ----------
-        //mIsBeingDragged = false;
-        //mIsUnableToDrag = false;
-        //if (mVelocityTracker != null) {
-            //mVelocityTracker.recycle();
-            //mVelocityTracker = null;
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -1892,25 +1892,25 @@ public class ViewPager extends ViewGroup {
                             boolean var9C6E2C1B9CB3A34CE46D1781E75F2F00_791953168 = (child.getVisibility() != GONE);
                             {
                                 child.setDrawingCacheEnabled(enabled);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mScrollingCacheEnabled != enabled) {
-            //mScrollingCacheEnabled = enabled;
-            //if (USE_CACHE) {
-                //final int size = getChildCount();
-                //for (int i = 0; i < size; ++i) {
-                    //final View child = getChildAt(i);
-                    //if (child.getVisibility() != GONE) {
-                        //child.setDrawingCacheEnabled(enabled);
-                    //}
-                //}
-            //}
-        //}
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                    
+                    
+                        
+                    
+                
+            
+        
     }
 
     
@@ -1930,10 +1930,10 @@ public class ViewPager extends ViewGroup {
                         y + scrollY >= child.getTop() && y + scrollY < child.getBottom() &&
                         canScroll(child, true, dx, x + scrollX - child.getLeft(),
                                 y + scrollY - child.getTop()));
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         boolean var9A14C50229F77D815D8CED6EC15CAD29_343246961 = (checkV && ViewCompat.canScrollHorizontally(v, -dx));
         addTaint(v.getTaint());
         addTaint(checkV);
@@ -1942,8 +1942,8 @@ public class ViewPager extends ViewGroup {
         addTaint(y);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1322071629 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1322071629;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1954,8 +1954,8 @@ public class ViewPager extends ViewGroup {
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_358633666 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_358633666;
-        // ---------- Original Method ----------
-        //return super.dispatchKeyEvent(event) || executeKeyEvent(event);
+        
+        
     }
 
     
@@ -1967,36 +1967,36 @@ public class ViewPager extends ViewGroup {
             {
                 {
                     Object varA0761DC6508339A4AD5D875712ADE561_925802148 = (event.getKeyCode());
-                    //Begin case KeyEvent.KEYCODE_DPAD_LEFT 
+                    
                     handled = arrowScroll(FOCUS_LEFT);
-                    //End case KeyEvent.KEYCODE_DPAD_LEFT 
-                    //Begin case KeyEvent.KEYCODE_DPAD_RIGHT 
+                    
+                    
                     handled = arrowScroll(FOCUS_RIGHT);
-                    //End case KeyEvent.KEYCODE_DPAD_RIGHT 
-                    //Begin case KeyEvent.KEYCODE_TAB 
+                    
+                    
                     {
                         {
                             boolean var3B0ACFC3BCBBDA6B6C439A7F1EF3544C_1053667586 = (KeyEventCompat.hasNoModifiers(event));
                             {
                                 handled = arrowScroll(FOCUS_FORWARD);
-                            } //End block
+                            } 
                             {
                                 boolean var891046CC944216B0B048DB693EE865A7_838691598 = (KeyEventCompat.hasModifiers(event, KeyEvent.META_SHIFT_ON));
                                 {
                                     handled = arrowScroll(FOCUS_BACKWARD);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End block
-                    //End case KeyEvent.KEYCODE_TAB 
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                    
+                } 
+            } 
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_717150452 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_717150452;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2006,7 +2006,7 @@ public class ViewPager extends ViewGroup {
         {
             boolean varF85CA3EE0100E1E3C5B0606F6BE9D9A9_1454511839 = (currentFocused == this);
             currentFocused = null;
-        } //End collapsed parenthetic
+        } 
         boolean handled = false;
         View nextFocused = FocusFinder.getInstance().findNextFocus(this, currentFocused,
                 direction);
@@ -2016,38 +2016,38 @@ public class ViewPager extends ViewGroup {
                     boolean var556B4744FB5504050F5109B0BE3E6A24_521766946 = (currentFocused != null && nextFocused.getLeft() >= currentFocused.getLeft());
                     {
                         handled = pageLeft();
-                    } //End block
+                    } 
                     {
                         handled = nextFocused.requestFocus();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 {
                     boolean var3606527969512105422C782854CF2BCF_367624588 = (currentFocused != null && nextFocused.getLeft() <= currentFocused.getLeft());
                     {
                         handled = pageRight();
-                    } //End block
+                    } 
                     {
                         handled = nextFocused.requestFocus();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             handled = pageLeft();
-        } //End block
+        } 
         {
             handled = pageRight();
-        } //End block
+        } 
         {
             playSoundEffect(SoundEffectConstants.getContantForFocusDirection(direction));
-        } //End block
+        } 
         addTaint(direction);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1371734313 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1371734313;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2055,15 +2055,15 @@ public class ViewPager extends ViewGroup {
      boolean pageLeft() {
         {
             setCurrentItem(mCurItem-1, true);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1248147840 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1248147840;
-        // ---------- Original Method ----------
-        //if (mCurItem > 0) {
-            //setCurrentItem(mCurItem-1, true);
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -2073,16 +2073,16 @@ public class ViewPager extends ViewGroup {
             boolean varD2B05568FD5ED514EE4265D17E9B0407_1643688320 = (mAdapter != null && mCurItem < (mAdapter.getCount()-1));
             {
                 setCurrentItem(mCurItem+1, true);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_226960983 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_226960983;
-        // ---------- Original Method ----------
-        //if (mAdapter != null && mCurItem < (mAdapter.getCount()-1)) {
-            //setCurrentItem(mCurItem+1, true);
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -2103,33 +2103,33 @@ public class ViewPager extends ViewGroup {
                             ItemInfo ii = infoForChild(child);
                             {
                                 child.addFocusables(views, direction, focusableMode);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var0F1BFD0DBC136B3E2580439E8453837C_615005350 = (descendantFocusability != FOCUS_AFTER_DESCENDANTS ||
                 (focusableCount == views.size()));
             {
                 {
                     boolean var6CECAFC64A8DD8EA38BD2BD71316C48E_1545140403 = (!isFocusable());
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean varD11AEC4760D895B334E0063CF7F61643_323406068 = ((focusableMode & FOCUSABLES_TOUCH_MODE) == FOCUSABLES_TOUCH_MODE &&
                     isInTouchMode() && !isFocusableInTouchMode());
-                } //End collapsed parenthetic
+                } 
                 {
                     views.add(this);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(views.getTaint());
         addTaint(direction);
         addTaint(focusableMode);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2147,22 +2147,22 @@ public class ViewPager extends ViewGroup {
                         ItemInfo ii = infoForChild(child);
                         {
                             child.addTouchables(views);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(views.getTaint());
-        // ---------- Original Method ----------
-        //for (int i = 0; i < getChildCount(); i++) {
-            //final View child = getChildAt(i);
-            //if (child.getVisibility() == VISIBLE) {
-                //ItemInfo ii = infoForChild(child);
-                //if (ii != null && ii.position == mCurItem) {
-                    //child.addTouchables(views);
-                //}
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
@@ -2170,7 +2170,7 @@ public class ViewPager extends ViewGroup {
     @Override
     protected boolean onRequestFocusInDescendants(int direction,
             Rect previouslyFocusedRect) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int index;
         int increment;
         int end;
@@ -2179,12 +2179,12 @@ public class ViewPager extends ViewGroup {
             index = 0;
             increment = 1;
             end = count;
-        } //End block
+        } 
         {
             index = count - 1;
             increment = -1;
             end = -1;
-        } //End block
+        } 
         {
             int i = index;
             i += increment;
@@ -2197,42 +2197,42 @@ public class ViewPager extends ViewGroup {
                         {
                             {
                                 boolean varC84830AEFD962841076673EE2C3A7CA2_526680052 = (child.requestFocus(direction, previouslyFocusedRect));
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_731382466 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_731382466;
-        // ---------- Original Method ----------
-        //int index;
-        //int increment;
-        //int end;
-        //int count = getChildCount();
-        //if ((direction & FOCUS_FORWARD) != 0) {
-            //index = 0;
-            //increment = 1;
-            //end = count;
-        //} else {
-            //index = count - 1;
-            //increment = -1;
-            //end = -1;
-        //}
-        //for (int i = index; i != end; i += increment) {
-            //View child = getChildAt(i);
-            //if (child.getVisibility() == VISIBLE) {
-                //ItemInfo ii = infoForChild(child);
-                //if (ii != null && ii.position == mCurItem) {
-                    //if (child.requestFocus(direction, previouslyFocusedRect)) {
-                        //return true;
-                    //}
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+            
+            
+            
+        
+        
+            
+            
+                
+                
+                    
+                        
+                    
+                
+            
+        
+        
     }
 
     
@@ -2251,52 +2251,52 @@ public class ViewPager extends ViewGroup {
                         {
                             boolean varDFCCF2BFEB2AA92D965713AC4F35AFDA_297611831 = (ii != null && ii.position == mCurItem &&
                         child.dispatchPopulateAccessibilityEvent(event));
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2056076891 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2056076891;
-        // ---------- Original Method ----------
-        //final int childCount = getChildCount();
-        //for (int i = 0; i < childCount; i++) {
-            //final View child = getChildAt(i);
-            //if (child.getVisibility() == VISIBLE) {
-                //final ItemInfo ii = infoForChild(child);
-                //if (ii != null && ii.position == mCurItem &&
-                        //child.dispatchPopulateAccessibilityEvent(event)) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+            
+                
+                
+                        
+                    
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.069 -0400", hash_original_method = "763708F2B4B4E396A96E9D3340F0B010", hash_generated_method = "63C5546667FFECBFEDE5F72065A14933")
     @Override
     protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
-        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1871713917 = null; //Variable for return #1
+        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1871713917 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1871713917 = new LayoutParams();
-        varB4EAC82CA7396A68D541C85D26508E83_1871713917.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1871713917.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1871713917;
-        // ---------- Original Method ----------
-        //return new LayoutParams();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.070 -0400", hash_original_method = "D8A26BF8CEB61DB2275E97CE7D907FB8", hash_generated_method = "FAD0F608B53A6D468EE3B3DA2B9E9AC4")
     @Override
     protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
-        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_832648091 = null; //Variable for return #1
+        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_832648091 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_832648091 = generateDefaultLayoutParams();
         addTaint(p.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_832648091.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_832648091.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_832648091;
-        // ---------- Original Method ----------
-        //return generateDefaultLayoutParams();
+        
+        
     }
 
     
@@ -2307,21 +2307,21 @@ public class ViewPager extends ViewGroup {
         addTaint(p.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1642461937 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1642461937;
-        // ---------- Original Method ----------
-        //return p instanceof LayoutParams && super.checkLayoutParams(p);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.072 -0400", hash_original_method = "1C9B9BBEC46A39865FCD3A7288415ECD", hash_generated_method = "09F13B1C596838222FD6EAC813097E49")
     @Override
     public ViewGroup.LayoutParams generateLayoutParams(AttributeSet attrs) {
-        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_337094059 = null; //Variable for return #1
+        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_337094059 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_337094059 = new LayoutParams(getContext(), attrs);
         addTaint(attrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_337094059.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_337094059.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_337094059;
-        // ---------- Original Method ----------
-        //return new LayoutParams(getContext(), attrs);
+        
+        
     }
 
     
@@ -2339,7 +2339,7 @@ public class ViewPager extends ViewGroup {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.074 -0400", hash_original_method = "0E65939D2C485463E4F8D82E04659E59", hash_generated_method = "0E65939D2C485463E4F8D82E04659E59")
         public ItemInfo ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2352,36 +2352,36 @@ public class ViewPager extends ViewGroup {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.074 -0400", hash_original_method = "11664B5E2C5AD85381CB52FAE0F3E160", hash_generated_method = "11664B5E2C5AD85381CB52FAE0F3E160")
         public SimpleOnPageChangeListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.075 -0400", hash_original_method = "FDA1A61FADE7F0C7FCCDCC2DC76C3CF3", hash_generated_method = "B2FBB2FB94B804AD0B70502C0D4396BB")
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(position);
             addTaint(positionOffset);
             addTaint(positionOffsetPixels);
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.076 -0400", hash_original_method = "53640E8AF66EBB8ED10DFFE2A0D2E8B4", hash_generated_method = "E14EBD5798939F6D36F12C55A8B6805A")
         @Override
         public void onPageSelected(int position) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(position);
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.078 -0400", hash_original_method = "257CCDCF3F3C71EC13191438C1C85826", hash_generated_method = "7D1A18F60472A016F9CCDF171AEF93EC")
         @Override
         public void onPageScrollStateChanged(int state) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(state);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2404,7 +2404,7 @@ public class ViewPager extends ViewGroup {
         public  SavedState(Parcelable superState) {
             super(superState);
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2413,17 +2413,17 @@ public class ViewPager extends ViewGroup {
             super(in);
             {
                 loader = getClass().getClassLoader();
-            } //End block
+            } 
             position = in.readInt();
             adapterState = in.readParcelable(loader);
             this.loader = loader;
-            // ---------- Original Method ----------
-            //if (loader == null) {
-                //loader = getClass().getClassLoader();
-            //}
-            //position = in.readInt();
-            //adapterState = in.readParcelable(loader);
-            //this.loader = loader;
+            
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -2435,26 +2435,26 @@ public class ViewPager extends ViewGroup {
             out.writeParcelable(adapterState, flags);
             addTaint(out.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //super.writeToParcel(out, flags);
-            //out.writeInt(position);
-            //out.writeParcelable(adapterState, flags);
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.086 -0400", hash_original_method = "7E681A9714B5A31F0FD1978F434F050F", hash_generated_method = "58AE95D95BE05A943BFC45848A9BE823")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1973694339 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1973694339 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1973694339 = "FragmentPager.SavedState{"
                     + Integer.toHexString(System.identityHashCode(this))
                     + " position=" + position + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_1973694339.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1973694339.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1973694339;
-            // ---------- Original Method ----------
-            //return "FragmentPager.SavedState{"
-                    //+ Integer.toHexString(System.identityHashCode(this))
-                    //+ " position=" + position + "}";
+            
+            
+                    
+                    
         }
 
         
@@ -2471,20 +2471,7 @@ public class ViewPager extends ViewGroup {
                         return new SavedState[size];
                     }
                 });
-        /*
-        // orphaned legacy method
-        @Override
-                    public SavedState createFromParcel(Parcel in, ClassLoader loader) {
-                        return new SavedState(in, loader);
-                    }
         
-        // orphaned legacy method
-        @Override
-                    public SavedState[] newArray(int size) {
-                        return new SavedState[size];
-                    }
-        
-        */
     }
 
 
@@ -2494,27 +2481,27 @@ public class ViewPager extends ViewGroup {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.087 -0400", hash_original_method = "9650588F08E5195A8869DD8AFCD0755C", hash_generated_method = "9650588F08E5195A8869DD8AFCD0755C")
         public PagerObserver ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.087 -0400", hash_original_method = "11C315FA7B2CA5C79402AC3B9B3CC875", hash_generated_method = "B9090479FFF1FB0FF809A60780229444")
         @Override
         public void onChanged() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             dataSetChanged();
-            // ---------- Original Method ----------
-            //dataSetChanged();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.088 -0400", hash_original_method = "75A3C506698EAB8F326C44C7FA27D020", hash_generated_method = "0BA8DD5F6D5DD6AD703761FCA7405F9D")
         @Override
         public void onInvalidated() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             dataSetChanged();
-            // ---------- Original Method ----------
-            //dataSetChanged();
+            
+            
         }
 
         
@@ -2533,7 +2520,7 @@ public class ViewPager extends ViewGroup {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.089 -0400", hash_original_method = "22352D37EA586BAB2B06261A9354918D", hash_generated_method = "92FA6B303DD2F574323DBD754522A067")
         public  LayoutParams() {
             super(FILL_PARENT, FILL_PARENT);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2545,10 +2532,10 @@ public class ViewPager extends ViewGroup {
             a.recycle();
             addTaint(context.getTaint());
             addTaint(attrs.getTaint());
-            // ---------- Original Method ----------
-            //final TypedArray a = context.obtainStyledAttributes(attrs, LAYOUT_ATTRS);
-            //gravity = a.getInteger(0, Gravity.NO_GRAVITY);
-            //a.recycle();
+            
+            
+            
+            
         }
 
         
@@ -2607,8 +2594,8 @@ public class ViewPager extends ViewGroup {
             addTaint(rhs.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_276796699 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_276796699;
-            // ---------- Original Method ----------
-            //return lhs.position - rhs.position;
+            
+            
         }
 
         
@@ -2622,9 +2609,9 @@ public class ViewPager extends ViewGroup {
             addTaint(t);
             float var546ADE640B6EDFBC8A086EF31347E768_354418954 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_354418954;
-            // ---------- Original Method ----------
-            //t -= 1.0f;
-            //return t * t * t * t * t + 1.0f;
+            
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.stack;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 import java.util.StringTokenizer;
@@ -35,17 +35,17 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
             {
                 boolean varFD50F873716FDE8220E1F82E415385FD_1825929782 = (host.indexOf("[") < 0);
                 host = "[" + host + "]";
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+            } 
+        } 
         port = portNumber;
         transport = trans;
-        // ---------- Original Method ----------
-        //host = hostName;
-        //if(host.indexOf(":") >= 0)
-            //if(host.indexOf("[") < 0)
-                //host = "[" + host + "]";
-        //port = portNumber;
-        //transport = trans;
+        
+        
+        
+            
+                
+        
+        
     }
 
     
@@ -61,44 +61,44 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
             {
                 portstr = hop.substring(colon+1,slash);
                 this.transport = hop.substring(slash+1);
-            } //End block
+            } 
             {
                 portstr = hop.substring(colon+1);
                 this.transport = "UDP";
-            } //End block
+            } 
             try 
             {
                 port = Integer.parseInt(portstr);
-            } //End block
+            } 
             catch (NumberFormatException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad port spec");
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 this.host = hop.substring(0,slash);
                 this.transport = hop.substring(slash+1);
                 this.port = transport.equalsIgnoreCase("TLS") ? 5061 : 5060;
-            } //End block
+            } 
             {
                 this.host = hop;
                 this.transport = "UDP";
                 this.port = 5060;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean var94DC33FE018780F22BEC5E2E9D5AFB43_613488013 = (host == null || host.length() == 0);
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("no host!");
-        } //End collapsed parenthetic
+        } 
         this.host = this.host.trim();
         this.transport = this.transport.trim();
         {
             boolean varEED6ACEF7545F30C1494588FA7A0B086_1367605080 = ((brack>0) && host.charAt(0)!='[');
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad IPv6 reference spec");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varE3C10444A14B2F33E1A5F230EB346878_307353408 = (transport.compareToIgnoreCase("UDP") != 0
             && transport.compareToIgnoreCase("TLS") != 0
@@ -106,32 +106,33 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
             {
                 System.err.println("Bad transport string " + transport);
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(hop);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.324 -0400", hash_original_method = "E930BE940ED709A9E92F64EC28520C28", hash_generated_method = "324A5A8B7A8D7E53949C49D5282A683B")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_520573532 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_520573532 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_520573532 = host + ":" + port + "/" + transport;
-        varB4EAC82CA7396A68D541C85D26508E83_520573532.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_520573532.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_520573532;
-        // ---------- Original Method ----------
-        //return host + ":" + port + "/" + transport;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.325 -0400", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "71780C0DF8DC7E12C87E1DAC76B83742")
     public String getHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1132589365 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1132589365 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1132589365 = host;
-        varB4EAC82CA7396A68D541C85D26508E83_1132589365.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1132589365.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1132589365;
-        // ---------- Original Method ----------
-        //return host;
+        
+        
     }
 
     
@@ -139,19 +140,19 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_256082873 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_256082873;
-        // ---------- Original Method ----------
-        //return port;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.325 -0400", hash_original_method = "43848E528F960D9C1F3B13D7D65AA4A4", hash_generated_method = "A704354483AC6F8F5F1FF7B2E4B194E8")
     public String getTransport() {
-        String varB4EAC82CA7396A68D541C85D26508E83_768834978 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_768834978 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_768834978 = transport;
-        varB4EAC82CA7396A68D541C85D26508E83_768834978.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_768834978.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_768834978;
-        // ---------- Original Method ----------
-        //return transport;
+        
+        
     }
 
     
@@ -159,16 +160,16 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
     public boolean isURIRoute() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1699595927 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1699595927;
-        // ---------- Original Method ----------
-        //return uriRoute;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.326 -0400", hash_original_method = "4D177A2C7A5E9A8C62FF46DC5D4CFB65", hash_generated_method = "B3EF0D7F68E6E1C436677D2677199934")
     public void setURIRouteFlag() {
         uriRoute = true;
-        // ---------- Original Method ----------
-        //uriRoute = true;
+        
+        
     }
 
     

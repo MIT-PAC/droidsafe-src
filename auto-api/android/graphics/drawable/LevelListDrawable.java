@@ -1,11 +1,11 @@
 package android.graphics.drawable;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.xmlpull.v1.XmlPullParser;
@@ -25,7 +25,7 @@ public class LevelListDrawable extends DrawableContainer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.327 -0400", hash_original_method = "44C08D01AD86FB5FD2CB8E648FBEEBE6", hash_generated_method = "8DEE93644819C11B01FE6D8DDDC1A0A5")
     public  LevelListDrawable() {
         this(null, null);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,52 +37,55 @@ public class LevelListDrawable extends DrawableContainer {
         onLevelChange(getLevel());
         addTaint(state.getTaint());
         addTaint(res.getTaint());
-        // ---------- Original Method ----------
-        //LevelListState as = new LevelListState(state, this, res);
-        //mLevelListState = as;
-        //setConstantState(as);
-        //onLevelChange(getLevel());
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.327 -0400", hash_original_method = "034C59859D302C36E8258EB9CAEDE0AF", hash_generated_method = "E8A7CEDE8DC8FCA2FB63DFBA65D0865B")
     public void addLevel(int low, int high, Drawable drawable) {
         {
             mLevelListState.addLevel(low, high, drawable);
             onLevelChange(getLevel());
-        } //End block
+        } 
         addTaint(low);
         addTaint(high);
         addTaint(drawable.getTaint());
-        // ---------- Original Method ----------
-        //if (drawable != null) {
-            //mLevelListState.addLevel(low, high, drawable);
-            //onLevelChange(getLevel());
-        //}
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.328 -0400", hash_original_method = "69975FEB6AC4D6000EB731D154CA4016", hash_generated_method = "C38CD075615ACE3512A95A7222DD9C74")
     @Override
     protected boolean onLevelChange(int level) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int idx = mLevelListState.indexOfLevel(level);
         {
             boolean var3E2B49468750734D46A6120849432D6B_1822525909 = (selectDrawable(idx));
-        } //End collapsed parenthetic
+        } 
         boolean varDB7AD9D2975F96CFC59CFC70C6A8F8CB_599913238 = (super.onLevelChange(level));
         addTaint(level);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_511815478 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_511815478;
-        // ---------- Original Method ----------
-        //int idx = mLevelListState.indexOfLevel(level);
-        //if (selectDrawable(idx)) {
-            //return true;
-        //}
-        //return super.onLevelChange(level);
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:15.759 -0400", hash_original_method = "D1DA3B3E6F995A3C0C835AA99D4132D2", hash_generated_method = "EBB28C023CED40CA4E26D54CC07A5038")
     @Override
     public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
@@ -100,7 +103,7 @@ public class LevelListDrawable extends DrawableContainer {
             {
                 {
                     boolean var03C44ADC0346A0FD12ECFE38D2A0612F_92083287 = (depth > innerDepth || !parser.getName().equals("item"));
-                } //End collapsed parenthetic
+                } 
                 TypedArray a;
                 a = r.obtainAttributes(attrs,
                     com.android.internal.R.styleable.LevelListDrawableItem);
@@ -116,57 +119,58 @@ public class LevelListDrawable extends DrawableContainer {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(parser.getPositionDescription()
                         + ": <item> tag requires a 'maxLevel' attribute");
-                } //End block
+                } 
                 Drawable dr;
                 {
                     dr = r.getDrawable(drawableRes);
-                } //End block
+                } 
                 {
                     {
                         boolean var16E7483EB4C069010E58346DA2B7701B_1073628862 = ((type = parser.next()) == XmlPullParser.TEXT);
-                    } //End collapsed parenthetic
+                    } 
                     {
                         if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                             parser.getPositionDescription()
                                     + ": <item> tag requires a 'drawable' attribute or "
                                     + "child tag defining a drawable");
-                    } //End block
+                    } 
                     dr = Drawable.createFromXmlInner(r, parser, attrs);
-                } //End block
+                } 
                 mLevelListState.addLevel(low, high, dr);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         onLevelChange(getLevel());
         addTaint(r.getTaint());
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.329 -0400", hash_original_method = "2F3DD5E6B39B84FDED94D3B2A7A7FBE8", hash_generated_method = "2033F1FD4301620A62DA100A0F8F6AFE")
     @Override
     public Drawable mutate() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1063161566 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1063161566 = null; 
         {
             boolean varC94B19053599294E7944C8C841976773_15157486 = (!mMutated && super.mutate() == this);
             {
                 mLevelListState.mLows = mLevelListState.mLows.clone();
                 mLevelListState.mHighs = mLevelListState.mHighs.clone();
                 mMutated = true;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1063161566 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1063161566.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1063161566.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1063161566;
-        // ---------- Original Method ----------
-        //if (!mMutated && super.mutate() == this) {
-            //mLevelListState.mLows = mLevelListState.mLows.clone();
-            //mLevelListState.mHighs = mLevelListState.mHighs.clone();
-            //mMutated = true;
-        //}
-        //return this;
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -184,21 +188,21 @@ public class LevelListDrawable extends DrawableContainer {
             {
                 mLows = orig.mLows;
                 mHighs = orig.mHighs;
-            } //End block
+            } 
             {
                 mLows = new int[getChildren().length];
                 mHighs = new int[getChildren().length];
-            } //End block
+            } 
             addTaint(owner.getTaint());
             addTaint(res.getTaint());
-            // ---------- Original Method ----------
-            //if (orig != null) {
-                //mLows = orig.mLows;
-                //mHighs = orig.mHighs;
-            //} else {
-                //mLows = new int[getChildren().length];
-                //mHighs = new int[getChildren().length];
-            //}
+            
+            
+                
+                
+            
+                
+                
+            
         }
 
         
@@ -208,10 +212,10 @@ public class LevelListDrawable extends DrawableContainer {
             mLows[pos] = low;
             mHighs[pos] = high;
             addTaint(drawable.getTaint());
-            // ---------- Original Method ----------
-            //int pos = addChild(drawable);
-            //mLows[pos] = low;
-            //mHighs[pos] = high;
+            
+            
+            
+            
         }
 
         
@@ -222,45 +226,45 @@ public class LevelListDrawable extends DrawableContainer {
             final int N = getChildCount();
             {
                 int i = 0;
-            } //End collapsed parenthetic
+            } 
             addTaint(level);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1350840637 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1350840637;
-            // ---------- Original Method ----------
-            //final int[] lows = mLows;
-            //final int[] highs = mHighs;
-            //final int N = getChildCount();
-            //for (int i = 0; i < N; i++) {
-                //if (level >= lows[i] && level <= highs[i]) {
-                    //return i;
-                //}
-            //}
-            //return -1;
+            
+            
+            
+            
+            
+                
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.332 -0400", hash_original_method = "578EA11BFBDE2C74EEB0B28EA6FDC468", hash_generated_method = "3C91D73D7C2B810271EC13A0C745E6C8")
         @Override
         public Drawable newDrawable() {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_575904095 = null; //Variable for return #1
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_575904095 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_575904095 = new LevelListDrawable(this, null);
-            varB4EAC82CA7396A68D541C85D26508E83_575904095.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_575904095.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_575904095;
-            // ---------- Original Method ----------
-            //return new LevelListDrawable(this, null);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.332 -0400", hash_original_method = "940707433A1F7319278E4F2386D7D30E", hash_generated_method = "483A6499F39DD59325778D332ED177B9")
         @Override
         public Drawable newDrawable(Resources res) {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_1913197365 = null; //Variable for return #1
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_1913197365 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1913197365 = new LevelListDrawable(this, res);
             addTaint(res.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1913197365.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1913197365.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1913197365;
-            // ---------- Original Method ----------
-            //return new LevelListDrawable(this, res);
+            
+            
         }
 
         
@@ -276,14 +280,14 @@ public class LevelListDrawable extends DrawableContainer {
             mHighs = newInts;
             addTaint(oldSize);
             addTaint(newSize);
-            // ---------- Original Method ----------
-            //super.growArray(oldSize, newSize);
-            //int[] newInts = new int[newSize];
-            //System.arraycopy(mLows, 0, newInts, 0, oldSize);
-            //mLows = newInts;
-            //newInts = new int[newSize];
-            //System.arraycopy(mHighs, 0, newInts, 0, oldSize);
-            //mHighs = newInts;
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         

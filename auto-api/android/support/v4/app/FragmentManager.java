@@ -1,11 +1,11 @@
 package android.support.v4.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -42,7 +42,7 @@ public abstract class FragmentManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.878 -0400", hash_original_method = "0D3FEDE97BC3242ED64134E1F014EA11", hash_generated_method = "0D3FEDE97BC3242ED64134E1F014EA11")
     public FragmentManager ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -52,12 +52,12 @@ public abstract class FragmentManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.878 -0400", hash_original_method = "0DA67415D41DB3C4C9D7AB80CD2D78FE", hash_generated_method = "D9BA6CE121155855A75915D67F5D8F08")
     @Deprecated
     public FragmentTransaction openTransaction() {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_890769715 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_890769715 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_890769715 = beginTransaction();
-        varB4EAC82CA7396A68D541C85D26508E83_890769715.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_890769715.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_890769715;
-        // ---------- Original Method ----------
-        //return beginTransaction();
+        
+        
     }
 
     
@@ -160,7 +160,7 @@ final class FragmentManagerState implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.882 -0400", hash_original_method = "4ADB2DBBD6899E89144480A7958A6490", hash_generated_method = "252DFEAE0ECB79838960A8B564DE42F6")
     public  FragmentManagerState() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -169,10 +169,10 @@ final class FragmentManagerState implements Parcelable {
         mActive = in.createTypedArray(FragmentState.CREATOR);
         mAdded = in.createIntArray();
         mBackStack = in.createTypedArray(BackStackState.CREATOR);
-        // ---------- Original Method ----------
-        //mActive = in.createTypedArray(FragmentState.CREATOR);
-        //mAdded = in.createIntArray();
-        //mBackStack = in.createTypedArray(BackStackState.CREATOR);
+        
+        
+        
+        
     }
 
     
@@ -180,8 +180,8 @@ final class FragmentManagerState implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1996846742 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1996846742;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -192,10 +192,10 @@ final class FragmentManagerState implements Parcelable {
         dest.writeTypedArray(mBackStack, flags);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeTypedArray(mActive, flags);
-        //dest.writeIntArray(mAdded);
-        //dest.writeTypedArray(mBackStack, flags);
+        
+        
+        
+        
     }
 
     
@@ -290,8 +290,8 @@ final class FragmentManagerImpl extends FragmentManager {
         @Override
         public void run() {
             execPendingActions();
-            // ---------- Original Method ----------
-            //execPendingActions();
+            
+            
         }
 
         
@@ -300,7 +300,7 @@ final class FragmentManagerImpl extends FragmentManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.884 -0400", hash_original_method = "57A648A59831AB7BB1637AFC6125C81E", hash_generated_method = "57A648A59831AB7BB1637AFC6125C81E")
     public FragmentManagerImpl ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -312,51 +312,51 @@ final class FragmentManagerImpl extends FragmentManager {
             try 
             {
                 mActivity.dump("  ", null, pw, new String[] { });
-            } //End block
+            } 
             catch (Exception e)
             { }
-        } //End block
+        } 
         {
             try 
             {
                 dump("  ", null, pw, new String[] { });
-            } //End block
+            } 
             catch (Exception e)
             { }
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw ex;
         addTaint(ex.getTaint());
-        // ---------- Original Method ----------
-        //Log.e(TAG, ex.getMessage());
-        //Log.e(TAG, "Activity state:");
-        //LogWriter logw = new LogWriter(TAG);
-        //PrintWriter pw = new PrintWriter(logw);
-        //if (mActivity != null) {
-            //try {
-                //mActivity.dump("  ", null, pw, new String[] { });
-            //} catch (Exception e) {
-                //Log.e(TAG, "Failed dumping state", e);
-            //}
-        //} else {
-            //try {
-                //dump("  ", null, pw, new String[] { });
-            //} catch (Exception e) {
-                //Log.e(TAG, "Failed dumping state", e);
-            //}
-        //}
-        //throw ex;
+        
+        
+        
+        
+        
+        
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.885 -0400", hash_original_method = "FD4DF6D1DA8CD9545895F43FA5CF7B0B", hash_generated_method = "9D643DF02CE195FFD7FA6691FABE63D2")
     @Override
     public FragmentTransaction beginTransaction() {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1089141982 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1089141982 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1089141982 = new BackStackRecord(this);
-        varB4EAC82CA7396A68D541C85D26508E83_1089141982.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1089141982.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1089141982;
-        // ---------- Original Method ----------
-        //return new BackStackRecord(this);
+        
+        
     }
 
     
@@ -366,8 +366,8 @@ final class FragmentManagerImpl extends FragmentManager {
         boolean varDEC74AD03B6C92C5F58BDD6F9B78062F_90083482 = (execPendingActions());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_156439309 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_156439309;
-        // ---------- Original Method ----------
-        //return execPendingActions();
+        
+        
     }
 
     
@@ -379,16 +379,16 @@ final class FragmentManagerImpl extends FragmentManager {
             @Override
             public void run() {
                 popBackStackState(mActivity.mHandler, null, -1, 0);
-                // ---------- Original Method ----------
-                //popBackStackState(mActivity.mHandler, null, -1, 0);
+                
+                
             }
 }, false);
-        // ---------- Original Method ----------
-        //enqueueAction(new Runnable() {
-            //@Override public void run() {
-                //popBackStackState(mActivity.mHandler, null, -1, 0);
-            //}
-        //}, false);
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -400,10 +400,10 @@ final class FragmentManagerImpl extends FragmentManager {
         boolean varE659918100A3B568A6F3D267CDA15217_147362849 = (popBackStackState(mActivity.mHandler, null, -1, 0));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2084587918 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2084587918;
-        // ---------- Original Method ----------
-        //checkStateLoss();
-        //executePendingTransactions();
-        //return popBackStackState(mActivity.mHandler, null, -1, 0);
+        
+        
+        
+        
     }
 
     
@@ -415,18 +415,18 @@ final class FragmentManagerImpl extends FragmentManager {
             @Override
             public void run() {
                 popBackStackState(mActivity.mHandler, name, -1, flags);
-                // ---------- Original Method ----------
-                //popBackStackState(mActivity.mHandler, name, -1, flags);
+                
+                
             }
 }, false);
         addTaint(name.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //enqueueAction(new Runnable() {
-            //@Override public void run() {
-                //popBackStackState(mActivity.mHandler, name, -1, flags);
-            //}
-        //}, false);
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -440,10 +440,10 @@ final class FragmentManagerImpl extends FragmentManager {
         addTaint(flags);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1782216483 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1782216483;
-        // ---------- Original Method ----------
-        //checkStateLoss();
-        //executePendingTransactions();
-        //return popBackStackState(mActivity.mHandler, name, -1, flags);
+        
+        
+        
+        
     }
 
     
@@ -452,27 +452,27 @@ final class FragmentManagerImpl extends FragmentManager {
     public void popBackStack(final int id, final int flags) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad id: " + id);
-        } //End block
+        } 
         enqueueAction(new Runnable() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.888 -0400", hash_original_method = "DBCE7037D51EB5153CDA373E6D392F0E", hash_generated_method = "905DCE3DB8D6804FD0D561A3F3EB2065")
             @Override
             public void run() {
                 popBackStackState(mActivity.mHandler, null, id, flags);
-                // ---------- Original Method ----------
-                //popBackStackState(mActivity.mHandler, null, id, flags);
+                
+                
             }
 }, false);
         addTaint(id);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (id < 0) {
-            //throw new IllegalArgumentException("Bad id: " + id);
-        //}
-        //enqueueAction(new Runnable() {
-            //@Override public void run() {
-                //popBackStackState(mActivity.mHandler, null, id, flags);
-            //}
-        //}, false);
+        
+        
+            
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -483,19 +483,19 @@ final class FragmentManagerImpl extends FragmentManager {
         executePendingTransactions();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad id: " + id);
-        } //End block
+        } 
         boolean var4EE663DB9CE1C64C129233E54BE6C6E6_440097316 = (popBackStackState(mActivity.mHandler, null, id, flags));
         addTaint(id);
         addTaint(flags);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_19813171 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_19813171;
-        // ---------- Original Method ----------
-        //checkStateLoss();
-        //executePendingTransactions();
-        //if (id < 0) {
-            //throw new IllegalArgumentException("Bad id: " + id);
-        //}
-        //return popBackStackState(mActivity.mHandler, null, id, flags);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -504,24 +504,24 @@ final class FragmentManagerImpl extends FragmentManager {
     public int getBackStackEntryCount() {
         {
             Object var0D23A520C4639C79F477D4746DB89D7E_1590366681 = (mBackStack.size());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145874124 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145874124;
-        // ---------- Original Method ----------
-        //return mBackStack != null ? mBackStack.size() : 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.889 -0400", hash_original_method = "898A7E40DF942FAA7422F0070AE7C2C0", hash_generated_method = "775B2A08AE22E35957F4AABDFAC69853")
     @Override
     public BackStackEntry getBackStackEntryAt(int index) {
-        BackStackEntry varB4EAC82CA7396A68D541C85D26508E83_2135060923 = null; //Variable for return #1
+        BackStackEntry varB4EAC82CA7396A68D541C85D26508E83_2135060923 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2135060923 = mBackStack.get(index);
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_2135060923.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2135060923.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2135060923;
-        // ---------- Original Method ----------
-        //return mBackStack.get(index);
+        
+        
     }
 
     
@@ -530,14 +530,14 @@ final class FragmentManagerImpl extends FragmentManager {
     public void addOnBackStackChangedListener(OnBackStackChangedListener listener) {
         {
             mBackStackChangeListeners = new ArrayList<OnBackStackChangedListener>();
-        } //End block
+        } 
         mBackStackChangeListeners.add(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (mBackStackChangeListeners == null) {
-            //mBackStackChangeListeners = new ArrayList<OnBackStackChangedListener>();
-        //}
-        //mBackStackChangeListeners.add(listener);
+        
+        
+            
+        
+        
     }
 
     
@@ -546,12 +546,12 @@ final class FragmentManagerImpl extends FragmentManager {
     public void removeOnBackStackChangedListener(OnBackStackChangedListener listener) {
         {
             mBackStackChangeListeners.remove(listener);
-        } //End block
+        } 
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (mBackStackChangeListeners != null) {
-            //mBackStackChangeListeners.remove(listener);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -561,142 +561,142 @@ final class FragmentManagerImpl extends FragmentManager {
         {
             throwException(new IllegalStateException("Fragment " + fragment
                     + " is not currently in the FragmentManager"));
-        } //End block
+        } 
         bundle.putInt(key, fragment.mIndex);
         addTaint(bundle.getTaint());
         addTaint(key.getTaint());
         addTaint(fragment.getTaint());
-        // ---------- Original Method ----------
-        //if (fragment.mIndex < 0) {
-            //throwException(new IllegalStateException("Fragment " + fragment
-                    //+ " is not currently in the FragmentManager"));
-        //}
-        //bundle.putInt(key, fragment.mIndex);
+        
+        
+            
+                    
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.892 -0400", hash_original_method = "4CDB8119120F20E16B511E77159C27B3", hash_generated_method = "CABFE8670A04103E872B91EAC1B8495F")
     @Override
     public Fragment getFragment(Bundle bundle, String key) {
-        Fragment varB4EAC82CA7396A68D541C85D26508E83_502072790 = null; //Variable for return #1
-        Fragment varB4EAC82CA7396A68D541C85D26508E83_1382529655 = null; //Variable for return #2
+        Fragment varB4EAC82CA7396A68D541C85D26508E83_502072790 = null; 
+        Fragment varB4EAC82CA7396A68D541C85D26508E83_1382529655 = null; 
         int index = bundle.getInt(key, -1);
         {
             varB4EAC82CA7396A68D541C85D26508E83_502072790 = null;
-        } //End block
+        } 
         {
             boolean var107AB73BAE9815E9603DA2E7CAF7C8B7_944562558 = (index >= mActive.size());
             {
                 throwException(new IllegalStateException("Fragement no longer exists for key "
                     + key + ": index " + index));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Fragment f = mActive.get(index);
         {
             throwException(new IllegalStateException("Fragement no longer exists for key "
                     + key + ": index " + index));
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1382529655 = f;
         addTaint(bundle.getTaint());
         addTaint(key.getTaint());
-        Fragment varA7E53CE21691AB073D9660D615818899_547354487; //Final return value
+        Fragment varA7E53CE21691AB073D9660D615818899_547354487; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_547354487 = varB4EAC82CA7396A68D541C85D26508E83_502072790;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_547354487 = varB4EAC82CA7396A68D541C85D26508E83_1382529655;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_547354487.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_547354487.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_547354487;
-        // ---------- Original Method ----------
-        //int index = bundle.getInt(key, -1);
-        //if (index == -1) {
-            //return null;
-        //}
-        //if (index >= mActive.size()) {
-            //throwException(new IllegalStateException("Fragement no longer exists for key "
-                    //+ key + ": index " + index));
-        //}
-        //Fragment f = mActive.get(index);
-        //if (f == null) {
-            //throwException(new IllegalStateException("Fragement no longer exists for key "
-                    //+ key + ": index " + index));
-        //}
-        //return f;
+        
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+        
+            
+                    
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.894 -0400", hash_original_method = "D25922C7B1DBFD38B1587BBC1D3E9AF4", hash_generated_method = "F1E6DF4A3F85E5C6EB8FBBB2818E7867")
     @Override
     public Fragment.SavedState saveFragmentInstanceState(Fragment fragment) {
-        Fragment.SavedState varB4EAC82CA7396A68D541C85D26508E83_1865577927 = null; //Variable for return #1
-        Fragment.SavedState varB4EAC82CA7396A68D541C85D26508E83_2097193067 = null; //Variable for return #2
+        Fragment.SavedState varB4EAC82CA7396A68D541C85D26508E83_1865577927 = null; 
+        Fragment.SavedState varB4EAC82CA7396A68D541C85D26508E83_2097193067 = null; 
         {
             throwException( new IllegalStateException("Fragment " + fragment
                     + " is not currently in the FragmentManager"));
-        } //End block
+        } 
         {
             Bundle result = saveFragmentBasicState(fragment);
             varB4EAC82CA7396A68D541C85D26508E83_1865577927 = result != null ? new Fragment.SavedState(result) : null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2097193067 = null;
         addTaint(fragment.getTaint());
-        Fragment.SavedState varA7E53CE21691AB073D9660D615818899_1039968672; //Final return value
+        Fragment.SavedState varA7E53CE21691AB073D9660D615818899_1039968672; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1039968672 = varB4EAC82CA7396A68D541C85D26508E83_1865577927;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1039968672 = varB4EAC82CA7396A68D541C85D26508E83_2097193067;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1039968672.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1039968672.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1039968672;
-        // ---------- Original Method ----------
-        //if (fragment.mIndex < 0) {
-            //throwException( new IllegalStateException("Fragment " + fragment
-                    //+ " is not currently in the FragmentManager"));
-        //}
-        //if (fragment.mState > Fragment.INITIALIZING) {
-            //Bundle result = saveFragmentBasicState(fragment);
-            //return result != null ? new Fragment.SavedState(result) : null;
-        //}
-        //return null;
+        
+        
+            
+                    
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.895 -0400", hash_original_method = "809378480DC9ABFE56F2FAE2E163A583", hash_generated_method = "51DFC63CECBF58466EDD427DCF8B369E")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1661423354 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1661423354 = null; 
         StringBuilder sb = new StringBuilder(128);
         sb.append("FragmentManager{");
         sb.append(Integer.toHexString(System.identityHashCode(this)));
         sb.append(" in ");
         {
             DebugUtils.buildShortClassTag(mParent, sb);
-        } //End block
+        } 
         {
             DebugUtils.buildShortClassTag(mActivity, sb);
-        } //End block
+        } 
         sb.append("}}");
         varB4EAC82CA7396A68D541C85D26508E83_1661423354 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1661423354.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1661423354.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1661423354;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(128);
-        //sb.append("FragmentManager{");
-        //sb.append(Integer.toHexString(System.identityHashCode(this)));
-        //sb.append(" in ");
-        //if (mParent != null) {
-            //DebugUtils.buildShortClassTag(mParent, sb);
-        //} else {
-            //DebugUtils.buildShortClassTag(mActivity, sb);
-        //}
-        //sb.append("}}");
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -723,11 +723,11 @@ final class FragmentManagerImpl extends FragmentManager {
                         writer.println(f);
                         {
                             f.dump(innerPrefix, fd, writer, args);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             N = mAdded.size();
             {
@@ -742,10 +742,10 @@ final class FragmentManagerImpl extends FragmentManager {
                         writer.print(i);
                         writer.print(": ");
                         writer.println(f.toString());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             N = mCreatedMenus.size();
             {
@@ -760,10 +760,10 @@ final class FragmentManagerImpl extends FragmentManager {
                         writer.print(i);
                         writer.print(": ");
                         writer.println(f.toString());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             N = mBackStack.size();
             {
@@ -779,10 +779,10 @@ final class FragmentManagerImpl extends FragmentManager {
                         writer.print(": ");
                         writer.println(bs.toString());
                         bs.dump(innerPrefix, fd, writer, args);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 N = mBackStackIndices.size();
@@ -798,19 +798,19 @@ final class FragmentManagerImpl extends FragmentManager {
                             writer.print(i);
                             writer.print(": ");
                             writer.println(bs);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 boolean varC3EC129F2815C61E4CC968B0C16B5E00_1306151060 = (mAvailBackStackIndices != null && mAvailBackStackIndices.size() > 0);
                 {
                     writer.print(prefix);
                     writer.print("mAvailBackStackIndices: ");
                     writer.println(Arrays.toString(mAvailBackStackIndices.toArray()));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             N = mPendingActions.size();
             {
@@ -825,10 +825,10 @@ final class FragmentManagerImpl extends FragmentManager {
                         writer.print(i);
                         writer.print(": ");
                         writer.println(r);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         writer.print(prefix);
         writer.println("FragmentManager misc state:");
         writer.print(prefix);
@@ -841,7 +841,7 @@ final class FragmentManagerImpl extends FragmentManager {
             writer.print(prefix);
             writer.print("  mParent=");
             writer.println(mParent);
-        } //End block
+        } 
         writer.print(prefix);
         writer.print("  mCurState=");
         writer.print(mCurState);
@@ -853,26 +853,26 @@ final class FragmentManagerImpl extends FragmentManager {
             writer.print(prefix);
             writer.print("  mNeedMenuInvalidate=");
             writer.println(mNeedMenuInvalidate);
-        } //End block
+        } 
         {
             writer.print(prefix);
             writer.print("  mNoTransactionsBecause=");
             writer.println(mNoTransactionsBecause);
-        } //End block
+        } 
         {
             boolean varD0CA0404E33A0C2149F9FC712F4B1B56_946014960 = (mAvailIndices != null && mAvailIndices.size() > 0);
             {
                 writer.print(prefix);
                 writer.print("  mAvailIndices: ");
                 writer.println(Arrays.toString(mAvailIndices.toArray()));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(prefix.getTaint());
         addTaint(fd.getTaint());
         addTaint(writer.getTaint());
         addTaint(args[0].getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -903,111 +903,111 @@ final class FragmentManagerImpl extends FragmentManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.898 -0400", hash_original_method = "1D86F34E1479CAC948F0E54CF5418376", hash_generated_method = "03EFC5911FB6FA48CE2A77D51BCD4CBF")
      Animation loadAnimation(Fragment fragment, int transit, boolean enter,
             int transitionStyle) {
-        Animation varB4EAC82CA7396A68D541C85D26508E83_2070574728 = null; //Variable for return #1
-        Animation varB4EAC82CA7396A68D541C85D26508E83_9428701 = null; //Variable for return #2
-        Animation varB4EAC82CA7396A68D541C85D26508E83_742782957 = null; //Variable for return #3
-        Animation varB4EAC82CA7396A68D541C85D26508E83_1950537726 = null; //Variable for return #4
-        Animation varB4EAC82CA7396A68D541C85D26508E83_64036492 = null; //Variable for return #5
-        Animation varB4EAC82CA7396A68D541C85D26508E83_914760731 = null; //Variable for return #6
-        Animation varB4EAC82CA7396A68D541C85D26508E83_1332841519 = null; //Variable for return #7
-        Animation varB4EAC82CA7396A68D541C85D26508E83_479605113 = null; //Variable for return #8
-        Animation varB4EAC82CA7396A68D541C85D26508E83_134396583 = null; //Variable for return #9
-        Animation varB4EAC82CA7396A68D541C85D26508E83_341128510 = null; //Variable for return #10
-        Animation varB4EAC82CA7396A68D541C85D26508E83_854935232 = null; //Variable for return #11
-        Animation varB4EAC82CA7396A68D541C85D26508E83_1885972072 = null; //Variable for return #12
+        Animation varB4EAC82CA7396A68D541C85D26508E83_2070574728 = null; 
+        Animation varB4EAC82CA7396A68D541C85D26508E83_9428701 = null; 
+        Animation varB4EAC82CA7396A68D541C85D26508E83_742782957 = null; 
+        Animation varB4EAC82CA7396A68D541C85D26508E83_1950537726 = null; 
+        Animation varB4EAC82CA7396A68D541C85D26508E83_64036492 = null; 
+        Animation varB4EAC82CA7396A68D541C85D26508E83_914760731 = null; 
+        Animation varB4EAC82CA7396A68D541C85D26508E83_1332841519 = null; 
+        Animation varB4EAC82CA7396A68D541C85D26508E83_479605113 = null; 
+        Animation varB4EAC82CA7396A68D541C85D26508E83_134396583 = null; 
+        Animation varB4EAC82CA7396A68D541C85D26508E83_341128510 = null; 
+        Animation varB4EAC82CA7396A68D541C85D26508E83_854935232 = null; 
+        Animation varB4EAC82CA7396A68D541C85D26508E83_1885972072 = null; 
         Animation animObj = fragment.onCreateAnimation(transit, enter,
                 fragment.mNextAnim);
         {
             varB4EAC82CA7396A68D541C85D26508E83_2070574728 = animObj;
-        } //End block
+        } 
         {
             Animation anim = AnimationUtils.loadAnimation(mActivity, fragment.mNextAnim);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_9428701 = anim;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_742782957 = null;
-        } //End block
+        } 
         int styleIndex = transitToStyleIndex(transit, enter);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1950537726 = null;
-        } //End block
-        //Begin case ANIM_STYLE_OPEN_ENTER 
+        } 
+        
         varB4EAC82CA7396A68D541C85D26508E83_64036492 = makeOpenCloseAnimation(mActivity, 1.125f, 1.0f, 0, 1);
-        //End case ANIM_STYLE_OPEN_ENTER 
-        //Begin case ANIM_STYLE_OPEN_EXIT 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_914760731 = makeOpenCloseAnimation(mActivity, 1.0f, .975f, 1, 0);
-        //End case ANIM_STYLE_OPEN_EXIT 
-        //Begin case ANIM_STYLE_CLOSE_ENTER 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1332841519 = makeOpenCloseAnimation(mActivity, .975f, 1.0f, 0, 1);
-        //End case ANIM_STYLE_CLOSE_ENTER 
-        //Begin case ANIM_STYLE_CLOSE_EXIT 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_479605113 = makeOpenCloseAnimation(mActivity, 1.0f, 1.075f, 1, 0);
-        //End case ANIM_STYLE_CLOSE_EXIT 
-        //Begin case ANIM_STYLE_FADE_ENTER 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_134396583 = makeFadeAnimation(mActivity, 0, 1);
-        //End case ANIM_STYLE_FADE_ENTER 
-        //Begin case ANIM_STYLE_FADE_EXIT 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_341128510 = makeFadeAnimation(mActivity, 1, 0);
-        //End case ANIM_STYLE_FADE_EXIT 
+        
         {
             boolean var7E1D31F47E4E5D9D781C22ACD7E0177E_473283518 = (transitionStyle == 0 && mActivity.getWindow() != null);
             {
                 transitionStyle = mActivity.getWindow().getAttributes().windowAnimations;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_854935232 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1885972072 = null;
         addTaint(fragment.getTaint());
         addTaint(transit);
         addTaint(enter);
         addTaint(transitionStyle);
-        Animation varA7E53CE21691AB073D9660D615818899_1129053770; //Final return value
+        Animation varA7E53CE21691AB073D9660D615818899_1129053770; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1129053770 = varB4EAC82CA7396A68D541C85D26508E83_2070574728;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1129053770 = varB4EAC82CA7396A68D541C85D26508E83_9428701;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1129053770 = varB4EAC82CA7396A68D541C85D26508E83_742782957;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1129053770 = varB4EAC82CA7396A68D541C85D26508E83_1950537726;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_1129053770 = varB4EAC82CA7396A68D541C85D26508E83_64036492;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_1129053770 = varB4EAC82CA7396A68D541C85D26508E83_914760731;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_1129053770 = varB4EAC82CA7396A68D541C85D26508E83_1332841519;
                 break;
-            case 8: //Assign result for return ordinal #8
+            case 8: 
                 varA7E53CE21691AB073D9660D615818899_1129053770 = varB4EAC82CA7396A68D541C85D26508E83_479605113;
                 break;
-            case 9: //Assign result for return ordinal #9
+            case 9: 
                 varA7E53CE21691AB073D9660D615818899_1129053770 = varB4EAC82CA7396A68D541C85D26508E83_134396583;
                 break;
-            case 10: //Assign result for return ordinal #10
+            case 10: 
                 varA7E53CE21691AB073D9660D615818899_1129053770 = varB4EAC82CA7396A68D541C85D26508E83_341128510;
                 break;
-            case 11: //Assign result for return ordinal #11
+            case 11: 
                 varA7E53CE21691AB073D9660D615818899_1129053770 = varB4EAC82CA7396A68D541C85D26508E83_854935232;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1129053770 = varB4EAC82CA7396A68D541C85D26508E83_1885972072;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1129053770.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1129053770.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1129053770;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1016,20 +1016,20 @@ final class FragmentManagerImpl extends FragmentManager {
         {
             {
                 mHavePendingDeferredStart = true;
-            } //End block
+            } 
             f.mDeferStart = false;
             moveToState(f, mCurState, 0, 0, false);
-        } //End block
+        } 
         addTaint(f.getTaint());
-        // ---------- Original Method ----------
-        //if (f.mDeferStart) {
-            //if (mExecutingActions) {
-                //mHavePendingDeferredStart = true;
-                //return;
-            //}
-            //f.mDeferStart = false;
-            //moveToState(f, mCurState, 0, 0, false);
-        //}
+        
+        
+            
+                
+                
+            
+            
+            
+        
     }
 
     
@@ -1038,19 +1038,19 @@ final class FragmentManagerImpl extends FragmentManager {
             boolean keepActive) {
         {
             newState = Fragment.CREATED;
-        } //End block
+        } 
         {
             newState = f.mState;
-        } //End block
+        } 
         {
             newState = Fragment.STOPPED;
-        } //End block
+        } 
         {
             {
                 f.mAnimatingAway = null;
                 moveToState(f, f.mStateAfterAnimating, 0, 0, true);
-            } //End block
-            //Begin case Fragment.INITIALIZING 
+            } 
+            
             {
                 f.mSavedViewState = f.mSavedFragmentState.getSparseParcelableArray(
                                 FragmentManagerImpl.VIEW_STATE_TAG);
@@ -1059,53 +1059,53 @@ final class FragmentManagerImpl extends FragmentManager {
                 {
                     f.mTargetRequestCode = f.mSavedFragmentState.getInt(
                                     FragmentManagerImpl.TARGET_REQUEST_CODE_STATE_TAG, 0);
-                } //End block
+                } 
                 f.mUserVisibleHint = f.mSavedFragmentState.getBoolean(
                                 FragmentManagerImpl.USER_VISIBLE_HINT_TAG, true);
                 {
                     f.mDeferStart = true;
                     {
                         newState = Fragment.STOPPED;
-                    } //End block
-                } //End block
-            } //End block
-            //End case Fragment.INITIALIZING 
-            //Begin case Fragment.INITIALIZING 
+                    } 
+                } 
+            } 
+            
+            
             f.mActivity = mActivity;
-            //End case Fragment.INITIALIZING 
-            //Begin case Fragment.INITIALIZING 
+            
+            
             f.mParentFragment = mParent;
-            //End case Fragment.INITIALIZING 
-            //Begin case Fragment.INITIALIZING 
+            
+            
             f.mFragmentManager = mParent != null
                             ? mParent.mChildFragmentManager : mActivity.mFragments;
-            //End case Fragment.INITIALIZING 
-            //Begin case Fragment.INITIALIZING 
+            
+            
             f.mCalled = false;
-            //End case Fragment.INITIALIZING 
-            //Begin case Fragment.INITIALIZING 
+            
+            
             f.onAttach(mActivity);
-            //End case Fragment.INITIALIZING 
-            //Begin case Fragment.INITIALIZING 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new SuperNotCalledException("Fragment " + f
                                 + " did not call through to super.onAttach()");
-            } //End block
-            //End case Fragment.INITIALIZING 
-            //Begin case Fragment.INITIALIZING 
+            } 
+            
+            
             {
                 mActivity.onAttachFragment(f);
-            } //End block
-            //End case Fragment.INITIALIZING 
-            //Begin case Fragment.INITIALIZING 
+            } 
+            
+            
             {
                 f.performCreate(f.mSavedFragmentState);
-            } //End block
-            //End case Fragment.INITIALIZING 
-            //Begin case Fragment.INITIALIZING 
+            } 
+            
+            
             f.mRetaining = false;
-            //End case Fragment.INITIALIZING 
-            //Begin case Fragment.INITIALIZING 
+            
+            
             {
                 f.mView = f.performCreateView(f.getLayoutInflater(
                                 f.mSavedFragmentState), null, f.mSavedFragmentState);
@@ -1114,13 +1114,13 @@ final class FragmentManagerImpl extends FragmentManager {
                     f.mView = NoSaveStateFrameLayout.wrap(f.mView);
                     f.mView.setVisibility(View.GONE);
                     f.onViewCreated(f.mView, f.mSavedFragmentState);
-                } //End block
+                } 
                 {
                     f.mInnerView = null;
-                } //End block
-            } //End block
-            //End case Fragment.INITIALIZING 
-            //Begin case Fragment.CREATED 
+                } 
+            } 
+            
+            
             {
                 {
                     ViewGroup container = null;
@@ -1132,8 +1132,8 @@ final class FragmentManagerImpl extends FragmentManager {
                                             + Integer.toHexString(f.mContainerId) + " ("
                                             + f.getResources().getResourceName(f.mContainerId)
                                             + ") for fragment " + f));
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     f.mContainer = container;
                     f.mView = f.performCreateView(f.getLayoutInflater(
                                     f.mSavedFragmentState), container, f.mSavedFragmentState);
@@ -1145,71 +1145,71 @@ final class FragmentManagerImpl extends FragmentManager {
                                             transitionStyle);
                             {
                                 f.mView.startAnimation(anim);
-                            } //End block
+                            } 
                             container.addView(f.mView);
-                        } //End block
+                        } 
                         f.mView.setVisibility(View.GONE);
                         f.onViewCreated(f.mView, f.mSavedFragmentState);
-                    } //End block
+                    } 
                     {
                         f.mInnerView = null;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 f.performActivityCreated(f.mSavedFragmentState);
                 {
                     f.restoreViewState(f.mSavedFragmentState);
-                } //End block
+                } 
                 f.mSavedFragmentState = null;
-            } //End block
-            //End case Fragment.CREATED 
-            //Begin case Fragment.ACTIVITY_CREATED Fragment.STOPPED 
+            } 
+            
+            
             {
                 f.performStart();
-            } //End block
-            //End case Fragment.ACTIVITY_CREATED Fragment.STOPPED 
-            //Begin case Fragment.STARTED 
+            } 
+            
+            
             {
                 f.mResumed = true;
                 f.performResume();
                 f.mSavedFragmentState = null;
                 f.mSavedViewState = null;
-            } //End block
-            //End case Fragment.STARTED 
-        } //End block
+            } 
+            
+        } 
         {
-            //Begin case Fragment.RESUMED 
+            
             {
                 f.performPause();
                 f.mResumed = false;
-            } //End block
-            //End case Fragment.RESUMED 
-            //Begin case Fragment.STARTED 
+            } 
+            
+            
             {
                 f.performStop();
-            } //End block
-            //End case Fragment.STARTED 
-            //Begin case Fragment.STOPPED 
+            } 
+            
+            
             {
                 f.performReallyStop();
-            } //End block
-            //End case Fragment.STOPPED 
-            //Begin case Fragment.ACTIVITY_CREATED 
+            } 
+            
+            
             {
                 {
                     {
                         boolean var96EB76334F7F0C83DB99A12D79366153_1109868264 = (!mActivity.isFinishing() && f.mSavedViewState == null);
                         {
                             saveFragmentViewState(f);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 f.performDestroyView();
                 {
                     Animation anim = null;
                     {
                         anim = loadAnimation(f, transit, false,
                                         transitionStyle);
-                    } //End block
+                    } 
                     {
                         final Fragment fragment = f;
                         f.mAnimatingAway = f.mView;
@@ -1218,87 +1218,87 @@ final class FragmentManagerImpl extends FragmentManager {
                             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.902 -0400", hash_original_method = "ADB37ED087A6B8FD09A7637E04A46959", hash_generated_method = "EE60C95D2F87FAAE5A6BCFE6A53C71D7")
                             @Override
                             public void onAnimationEnd(Animation animation) {
-                                //DSFIXME:  CODE0009: Possible callback target function detected
+                                
                                 {
                                     fragment.mAnimatingAway = null;
                                     moveToState(fragment, fragment.mStateAfterAnimating,
                                                     0, 0, false);
-                                } //End block
+                                } 
                                 addTaint(animation.getTaint());
-                                // ---------- Original Method ----------
-                                //if (fragment.mAnimatingAway != null) {
-                                            //fragment.mAnimatingAway = null;
-                                            //moveToState(fragment, fragment.mStateAfterAnimating,
-                                                    //0, 0, false);
-                                        //}
+                                
+                                
+                                            
+                                            
+                                                    
+                                        
                             }
                             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.903 -0400", hash_original_method = "C6539FC3721A6B610C21747FF87D7A97", hash_generated_method = "58C626A9D98C5CFBF993A93EFEF59553")
                             @Override
                             public void onAnimationRepeat(Animation animation) {
-                                //DSFIXME:  CODE0009: Possible callback target function detected
+                                
                                 addTaint(animation.getTaint());
-                                // ---------- Original Method ----------
+                                
                             }
                             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.904 -0400", hash_original_method = "72AD432A5D6B612A6CC4174C0C1E057D", hash_generated_method = "E455F4DC332660DC5ADFD15AC2AD6C17")
                             @Override
                             public void onAnimationStart(Animation animation) {
-                                //DSFIXME:  CODE0009: Possible callback target function detected
+                                
                                 addTaint(animation.getTaint());
-                                // ---------- Original Method ----------
+                                
                             }
 });
                         f.mView.startAnimation(anim);
-                    } //End block
+                    } 
                     f.mContainer.removeView(f.mView);
-                } //End block
+                } 
                 f.mContainer = null;
                 f.mView = null;
                 f.mInnerView = null;
-            } //End block
-            //End case Fragment.ACTIVITY_CREATED 
-            //Begin case Fragment.CREATED 
+            } 
+            
+            
             {
                 {
                     {
                         View v = f.mAnimatingAway;
                         f.mAnimatingAway = null;
                         v.clearAnimation();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     f.mStateAfterAnimating = newState;
                     newState = Fragment.CREATED;
-                } //End block
+                } 
                 {
                     {
                         f.performDestroy();
-                    } //End block
+                    } 
                     f.mCalled = false;
                     f.onDetach();
                     {
                         if (DroidSafeAndroidRuntime.control) throw new SuperNotCalledException("Fragment " + f
                                         + " did not call through to super.onDetach()");
-                    } //End block
+                    } 
                     {
                         {
                             makeInactive(f);
-                        } //End block
+                        } 
                         {
                             f.mActivity = null;
                             f.mFragmentManager = null;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-            //End case Fragment.CREATED 
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+            
+        } 
         f.mState = newState;
         addTaint(newState);
         addTaint(transit);
         addTaint(transitionStyle);
         addTaint(keepActive);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1306,8 +1306,8 @@ final class FragmentManagerImpl extends FragmentManager {
      void moveToState(Fragment f) {
         moveToState(f, mCurState, 0, 0, false);
         addTaint(f.getTaint());
-        // ---------- Original Method ----------
-        //moveToState(f, mCurState, 0, 0, false);
+        
+        
     }
 
     
@@ -1316,8 +1316,8 @@ final class FragmentManagerImpl extends FragmentManager {
         moveToState(newState, 0, 0, always);
         addTaint(newState);
         addTaint(always);
-        // ---------- Original Method ----------
-        //moveToState(newState, 0, 0, always);
+        
+        
     }
 
     
@@ -1325,7 +1325,7 @@ final class FragmentManagerImpl extends FragmentManager {
      void moveToState(int newState, int transit, int transitStyle, boolean always) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No activity");
-        } //End block
+        } 
         mCurState = newState;
         {
             boolean loadersRunning = false;
@@ -1338,23 +1338,23 @@ final class FragmentManagerImpl extends FragmentManager {
                         moveToState(f, newState, transit, transitStyle, false);
                         {
                             loadersRunning |= f.mLoaderManager.hasRunningLoaders();
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             {
                 startPendingDeferredFragments();
-            } //End block
+            } 
             {
                 mActivity.supportInvalidateOptionsMenu();
                 mNeedMenuInvalidate = false;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(transit);
         addTaint(transitStyle);
         addTaint(always);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1367,17 +1367,17 @@ final class FragmentManagerImpl extends FragmentManager {
                 Fragment f = mActive.get(i);
                 {
                     performPendingDeferredStart(f);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mActive == null) return;
-        //for (int i=0; i<mActive.size(); i++) {
-            //Fragment f = mActive.get(i);
-            //if (f != null) {
-                //performPendingDeferredStart(f);
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -1388,31 +1388,31 @@ final class FragmentManagerImpl extends FragmentManager {
             {
                 {
                     mActive = new ArrayList<Fragment>();
-                } //End block
+                } 
                 f.setIndex(mActive.size(), mParent);
                 mActive.add(f);
-            } //End block
+            } 
             {
                 f.setIndex(mAvailIndices.remove(mAvailIndices.size()-1), mParent);
                 mActive.set(f.mIndex, f);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(f.getTaint());
-        // ---------- Original Method ----------
-        //if (f.mIndex >= 0) {
-            //return;
-        //}
-        //if (mAvailIndices == null || mAvailIndices.size() <= 0) {
-            //if (mActive == null) {
-                //mActive = new ArrayList<Fragment>();
-            //}
-            //f.setIndex(mActive.size(), mParent);
-            //mActive.add(f);
-        //} else {
-            //f.setIndex(mAvailIndices.remove(mAvailIndices.size()-1), mParent);
-            //mActive.set(f.mIndex, f);
-        //}
-        //if (DEBUG) Log.v(TAG, "Allocated fragment index " + f);
+        
+        
+            
+        
+        
+            
+                
+            
+            
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -1421,23 +1421,23 @@ final class FragmentManagerImpl extends FragmentManager {
         mActive.set(f.mIndex, null);
         {
             mAvailIndices = new ArrayList<Integer>();
-        } //End block
+        } 
         mAvailIndices.add(f.mIndex);
         mActivity.invalidateSupportFragment(f.mWho);
         f.initState();
         addTaint(f.getTaint());
-        // ---------- Original Method ----------
-        //if (f.mIndex < 0) {
-            //return;
-        //}
-        //if (DEBUG) Log.v(TAG, "Freeing fragment index " + f);
-        //mActive.set(f.mIndex, null);
-        //if (mAvailIndices == null) {
-            //mAvailIndices = new ArrayList<Integer>();
-        //}
-        //mAvailIndices.add(f.mIndex);
-        //mActivity.invalidateSupportFragment(f.mWho);
-        //f.initState();
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -1445,46 +1445,46 @@ final class FragmentManagerImpl extends FragmentManager {
     public void addFragment(Fragment fragment, boolean moveToStateNow) {
         {
             mAdded = new ArrayList<Fragment>();
-        } //End block
+        } 
         makeActive(fragment);
         {
             {
                 boolean varD9E3BBCE1C55EA398A02EC19B3EB59D7_1139598186 = (mAdded.contains(fragment));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Fragment already added: " + fragment);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mAdded.add(fragment);
             fragment.mAdded = true;
             fragment.mRemoving = false;
             {
                 mNeedMenuInvalidate = true;
-            } //End block
+            } 
             {
                 moveToState(fragment);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(moveToStateNow);
-        // ---------- Original Method ----------
-        //if (mAdded == null) {
-            //mAdded = new ArrayList<Fragment>();
-        //}
-        //if (DEBUG) Log.v(TAG, "add: " + fragment);
-        //makeActive(fragment);
-        //if (!fragment.mDetached) {
-            //if (mAdded.contains(fragment)) {
-                //throw new IllegalStateException("Fragment already added: " + fragment);
-            //}
-            //mAdded.add(fragment);
-            //fragment.mAdded = true;
-            //fragment.mRemoving = false;
-            //if (fragment.mHasMenu && fragment.mMenuVisible) {
-                //mNeedMenuInvalidate = true;
-            //}
-            //if (moveToStateNow) {
-                //moveToState(fragment);
-            //}
-        //}
+        
+        
+            
+        
+        
+        
+        
+            
+                
+            
+            
+            
+            
+            
+                
+            
+            
+                
+            
+        
     }
 
     
@@ -1494,32 +1494,32 @@ final class FragmentManagerImpl extends FragmentManager {
         {
             {
                 mAdded.remove(fragment);
-            } //End block
+            } 
             {
                 mNeedMenuInvalidate = true;
-            } //End block
+            } 
             fragment.mAdded = false;
             fragment.mRemoving = true;
             moveToState(fragment, inactive ? Fragment.INITIALIZING : Fragment.CREATED,
                     transition, transitionStyle, false);
-        } //End block
+        } 
         addTaint(transition);
         addTaint(transitionStyle);
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "remove: " + fragment + " nesting=" + fragment.mBackStackNesting);
-        //final boolean inactive = !fragment.isInBackStack();
-        //if (!fragment.mDetached || inactive) {
-            //if (mAdded != null) {
-                //mAdded.remove(fragment);
-            //}
-            //if (fragment.mHasMenu && fragment.mMenuVisible) {
-                //mNeedMenuInvalidate = true;
-            //}
-            //fragment.mAdded = false;
-            //fragment.mRemoving = true;
-            //moveToState(fragment, inactive ? Fragment.INITIALIZING : Fragment.CREATED,
-                    //transition, transitionStyle, false);
-        //}
+        
+        
+        
+        
+            
+                
+            
+            
+                
+            
+            
+            
+            
+                    
+        
     }
 
     
@@ -1532,34 +1532,34 @@ final class FragmentManagerImpl extends FragmentManager {
                         transitionStyle);
                 {
                     fragment.mView.startAnimation(anim);
-                } //End block
+                } 
                 fragment.mView.setVisibility(View.GONE);
-            } //End block
+            } 
             {
                 mNeedMenuInvalidate = true;
-            } //End block
+            } 
             fragment.onHiddenChanged(true);
-        } //End block
+        } 
         addTaint(fragment.getTaint());
         addTaint(transition);
         addTaint(transitionStyle);
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "hide: " + fragment);
-        //if (!fragment.mHidden) {
-            //fragment.mHidden = true;
-            //if (fragment.mView != null) {
-                //Animation anim = loadAnimation(fragment, transition, false,
-                        //transitionStyle);
-                //if (anim != null) {
-                    //fragment.mView.startAnimation(anim);
-                //}
-                //fragment.mView.setVisibility(View.GONE);
-            //}
-            //if (fragment.mAdded && fragment.mHasMenu && fragment.mMenuVisible) {
-                //mNeedMenuInvalidate = true;
-            //}
-            //fragment.onHiddenChanged(true);
-        //}
+        
+        
+        
+            
+            
+                
+                        
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -1572,34 +1572,34 @@ final class FragmentManagerImpl extends FragmentManager {
                         transitionStyle);
                 {
                     fragment.mView.startAnimation(anim);
-                } //End block
+                } 
                 fragment.mView.setVisibility(View.VISIBLE);
-            } //End block
+            } 
             {
                 mNeedMenuInvalidate = true;
-            } //End block
+            } 
             fragment.onHiddenChanged(false);
-        } //End block
+        } 
         addTaint(fragment.getTaint());
         addTaint(transition);
         addTaint(transitionStyle);
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "show: " + fragment);
-        //if (fragment.mHidden) {
-            //fragment.mHidden = false;
-            //if (fragment.mView != null) {
-                //Animation anim = loadAnimation(fragment, transition, true,
-                        //transitionStyle);
-                //if (anim != null) {
-                    //fragment.mView.startAnimation(anim);
-                //}
-                //fragment.mView.setVisibility(View.VISIBLE);
-            //}
-            //if (fragment.mAdded && fragment.mHasMenu && fragment.mMenuVisible) {
-                //mNeedMenuInvalidate = true;
-            //}
-            //fragment.onHiddenChanged(false);
-        //}
+        
+        
+        
+            
+            
+                
+                        
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -1610,32 +1610,32 @@ final class FragmentManagerImpl extends FragmentManager {
             {
                 {
                     mAdded.remove(fragment);
-                } //End block
+                } 
                 {
                     mNeedMenuInvalidate = true;
-                } //End block
+                } 
                 fragment.mAdded = false;
                 moveToState(fragment, Fragment.CREATED, transition, transitionStyle, false);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(transition);
         addTaint(transitionStyle);
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "detach: " + fragment);
-        //if (!fragment.mDetached) {
-            //fragment.mDetached = true;
-            //if (fragment.mAdded) {
-                //if (mAdded != null) {
-                    //if (DEBUG) Log.v(TAG, "remove from detach: " + fragment);
-                    //mAdded.remove(fragment);
-                //}
-                //if (fragment.mHasMenu && fragment.mMenuVisible) {
-                    //mNeedMenuInvalidate = true;
-                //}
-                //fragment.mAdded = false;
-                //moveToState(fragment, Fragment.CREATED, transition, transitionStyle, false);
-            //}
-        //}
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+                    
+                
+                
+                
+            
+        
     }
 
     
@@ -1646,33 +1646,33 @@ final class FragmentManagerImpl extends FragmentManager {
             {
                 {
                     mAdded = new ArrayList<Fragment>();
-                } //End block
+                } 
                 {
                     boolean var4A590CAC6EAAD99B8C32C7FE40C0A339_1103614726 = (mAdded.contains(fragment));
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Fragment already added: " + fragment);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mAdded.add(fragment);
                 fragment.mAdded = true;
                 {
                     mNeedMenuInvalidate = true;
-                } //End block
+                } 
                 moveToState(fragment, mCurState, transition, transitionStyle, false);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(transition);
         addTaint(transitionStyle);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.912 -0400", hash_original_method = "369BBF881289C60802E9A80BDB6F1062", hash_generated_method = "0C1F1461BF0A401511A2321B56CEB633")
     public Fragment findFragmentById(int id) {
-        Fragment varB4EAC82CA7396A68D541C85D26508E83_514448648 = null; //Variable for return #1
-        Fragment varB4EAC82CA7396A68D541C85D26508E83_767126228 = null; //Variable for return #2
-        Fragment varB4EAC82CA7396A68D541C85D26508E83_1059867159 = null; //Variable for return #3
+        Fragment varB4EAC82CA7396A68D541C85D26508E83_514448648 = null; 
+        Fragment varB4EAC82CA7396A68D541C85D26508E83_767126228 = null; 
+        Fragment varB4EAC82CA7396A68D541C85D26508E83_1059867159 = null; 
         {
             {
                 int i = mAdded.size()-1;
@@ -1680,10 +1680,10 @@ final class FragmentManagerImpl extends FragmentManager {
                     Fragment f = mAdded.get(i);
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_514448648 = f;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 int i = mActive.size()-1;
@@ -1691,52 +1691,52 @@ final class FragmentManagerImpl extends FragmentManager {
                     Fragment f = mActive.get(i);
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_767126228 = f;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1059867159 = null;
         addTaint(id);
-        Fragment varA7E53CE21691AB073D9660D615818899_575540808; //Final return value
+        Fragment varA7E53CE21691AB073D9660D615818899_575540808; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_575540808 = varB4EAC82CA7396A68D541C85D26508E83_514448648;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_575540808 = varB4EAC82CA7396A68D541C85D26508E83_767126228;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_575540808 = varB4EAC82CA7396A68D541C85D26508E83_1059867159;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_575540808.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_575540808.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_575540808;
-        // ---------- Original Method ----------
-        //if (mAdded != null) {
-            //for (int i=mAdded.size()-1; i>=0; i--) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null && f.mFragmentId == id) {
-                    //return f;
-                //}
-            //}
-        //}
-        //if (mActive != null) {
-            //for (int i=mActive.size()-1; i>=0; i--) {
-                //Fragment f = mActive.get(i);
-                //if (f != null && f.mFragmentId == id) {
-                    //return f;
-                //}
-            //}
-        //}
-        //return null;
+        
+        
+            
+                
+                
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.914 -0400", hash_original_method = "A116F7F22C8FEEEBB3418EA3417C69EB", hash_generated_method = "04B708D305DF77E29396F7A8B76E926D")
     public Fragment findFragmentByTag(String tag) {
-        Fragment varB4EAC82CA7396A68D541C85D26508E83_1724141520 = null; //Variable for return #1
-        Fragment varB4EAC82CA7396A68D541C85D26508E83_586914462 = null; //Variable for return #2
-        Fragment varB4EAC82CA7396A68D541C85D26508E83_824452024 = null; //Variable for return #3
+        Fragment varB4EAC82CA7396A68D541C85D26508E83_1724141520 = null; 
+        Fragment varB4EAC82CA7396A68D541C85D26508E83_586914462 = null; 
+        Fragment varB4EAC82CA7396A68D541C85D26508E83_824452024 = null; 
         {
             {
                 int i = mAdded.size()-1;
@@ -1746,11 +1746,11 @@ final class FragmentManagerImpl extends FragmentManager {
                         boolean varE3A4AACA02673214B7ADB964E9FD7FFF_1172125280 = (f != null && tag.equals(f.mTag));
                         {
                             varB4EAC82CA7396A68D541C85D26508E83_1724141520 = f;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 int i = mActive.size()-1;
@@ -1760,52 +1760,52 @@ final class FragmentManagerImpl extends FragmentManager {
                         boolean varE3A4AACA02673214B7ADB964E9FD7FFF_1436274038 = (f != null && tag.equals(f.mTag));
                         {
                             varB4EAC82CA7396A68D541C85D26508E83_586914462 = f;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_824452024 = null;
         addTaint(tag.getTaint());
-        Fragment varA7E53CE21691AB073D9660D615818899_149406698; //Final return value
+        Fragment varA7E53CE21691AB073D9660D615818899_149406698; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_149406698 = varB4EAC82CA7396A68D541C85D26508E83_1724141520;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_149406698 = varB4EAC82CA7396A68D541C85D26508E83_586914462;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_149406698 = varB4EAC82CA7396A68D541C85D26508E83_824452024;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_149406698.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_149406698.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_149406698;
-        // ---------- Original Method ----------
-        //if (mAdded != null && tag != null) {
-            //for (int i=mAdded.size()-1; i>=0; i--) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null && tag.equals(f.mTag)) {
-                    //return f;
-                //}
-            //}
-        //}
-        //if (mActive != null && tag != null) {
-            //for (int i=mActive.size()-1; i>=0; i--) {
-                //Fragment f = mActive.get(i);
-                //if (f != null && tag.equals(f.mTag)) {
-                    //return f;
-                //}
-            //}
-        //}
-        //return null;
+        
+        
+            
+                
+                
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.916 -0400", hash_original_method = "9082D0FF97F62C4058EE52B6A6365151", hash_generated_method = "2BB991F35E07A07A9A73823EE8ED7477")
     public Fragment findFragmentByWho(String who) {
-        Fragment varB4EAC82CA7396A68D541C85D26508E83_1130456043 = null; //Variable for return #1
-        Fragment varB4EAC82CA7396A68D541C85D26508E83_915222647 = null; //Variable for return #2
+        Fragment varB4EAC82CA7396A68D541C85D26508E83_1130456043 = null; 
+        Fragment varB4EAC82CA7396A68D541C85D26508E83_915222647 = null; 
         {
             {
                 int i = mActive.size()-1;
@@ -1815,34 +1815,34 @@ final class FragmentManagerImpl extends FragmentManager {
                         boolean var8C929A471928159D9F345C3B4316EAE7_1874870198 = (f != null && (f=f.findFragmentByWho(who)) != null);
                         {
                             varB4EAC82CA7396A68D541C85D26508E83_1130456043 = f;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_915222647 = null;
         addTaint(who.getTaint());
-        Fragment varA7E53CE21691AB073D9660D615818899_353897038; //Final return value
+        Fragment varA7E53CE21691AB073D9660D615818899_353897038; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_353897038 = varB4EAC82CA7396A68D541C85D26508E83_1130456043;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_353897038 = varB4EAC82CA7396A68D541C85D26508E83_915222647;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_353897038.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_353897038.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_353897038;
-        // ---------- Original Method ----------
-        //if (mActive != null && who != null) {
-            //for (int i=mActive.size()-1; i>=0; i--) {
-                //Fragment f = mActive.get(i);
-                //if (f != null && (f=f.findFragmentByWho(who)) != null) {
-                    //return f;
-                //}
-            //}
-        //}
-        //return null;
+        
+        
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -1851,20 +1851,20 @@ final class FragmentManagerImpl extends FragmentManager {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "Can not perform this action after onSaveInstanceState");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "Can not perform this action inside of " + mNoTransactionsBecause);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mStateSaved) {
-            //throw new IllegalStateException(
-                    //"Can not perform this action after onSaveInstanceState");
-        //}
-        //if (mNoTransactionsBecause != null) {
-            //throw new IllegalStateException(
-                    //"Can not perform this action inside of " + mNoTransactionsBecause);
-        //}
+        } 
+        
+        
+            
+                    
+        
+        
+            
+                    
+        
     }
 
     
@@ -1872,42 +1872,42 @@ final class FragmentManagerImpl extends FragmentManager {
     public void enqueueAction(Runnable action, boolean allowStateLoss) {
         {
             checkStateLoss();
-        } //End block
+        } 
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Activity has been destroyed");
-            } //End block
+            } 
             {
                 mPendingActions = new ArrayList<Runnable>();
-            } //End block
+            } 
             mPendingActions.add(action);
             {
                 boolean varED396C6F84781DC21825B4A03F526E3B_60479198 = (mPendingActions.size() == 1);
                 {
                     mActivity.mHandler.removeCallbacks(mExecCommit);
                     mActivity.mHandler.post(mExecCommit);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(action.getTaint());
         addTaint(allowStateLoss);
-        // ---------- Original Method ----------
-        //if (!allowStateLoss) {
-            //checkStateLoss();
-        //}
-        //synchronized (this) {
-            //if (mActivity == null) {
-                //throw new IllegalStateException("Activity has been destroyed");
-            //}
-            //if (mPendingActions == null) {
-                //mPendingActions = new ArrayList<Runnable>();
-            //}
-            //mPendingActions.add(action);
-            //if (mPendingActions.size() == 1) {
-                //mActivity.mHandler.removeCallbacks(mExecCommit);
-                //mActivity.mHandler.post(mExecCommit);
-            //}
-        //}
+        
+        
+            
+        
+        
+            
+                
+            
+            
+                
+            
+            
+            
+                
+                
+            
+        
     }
 
     
@@ -1919,36 +1919,36 @@ final class FragmentManagerImpl extends FragmentManager {
                 {
                     {
                         mBackStackIndices = new ArrayList<BackStackRecord>();
-                    } //End block
+                    } 
                     int index = mBackStackIndices.size();
                     mBackStackIndices.add(bse);
-                } //End block
+                } 
                 {
                     int index = mAvailBackStackIndices.remove(mAvailBackStackIndices.size()-1);
                     mBackStackIndices.set(index, bse);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(bse.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_114825148 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_114825148;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mAvailBackStackIndices == null || mAvailBackStackIndices.size() <= 0) {
-                //if (mBackStackIndices == null) {
-                    //mBackStackIndices = new ArrayList<BackStackRecord>();
-                //}
-                //int index = mBackStackIndices.size();
-                //if (DEBUG) Log.v(TAG, "Setting back stack index " + index + " to " + bse);
-                //mBackStackIndices.add(bse);
-                //return index;
-            //} else {
-                //int index = mAvailBackStackIndices.remove(mAvailBackStackIndices.size()-1);
-                //if (DEBUG) Log.v(TAG, "Adding back stack index " + index + " with " + bse);
-                //mBackStackIndices.set(index, bse);
-                //return index;
-            //}
-        //}
+        
+        
+            
+                
+                    
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+            
+        
     }
 
     
@@ -1957,26 +1957,26 @@ final class FragmentManagerImpl extends FragmentManager {
         {
             {
                 mBackStackIndices = new ArrayList<BackStackRecord>();
-            } //End block
+            } 
             int N = mBackStackIndices.size();
             {
                 mBackStackIndices.set(index, bse);
-            } //End block
+            } 
             {
                 {
                     mBackStackIndices.add(null);
                     {
                         mAvailBackStackIndices = new ArrayList<Integer>();
-                    } //End block
+                    } 
                     mAvailBackStackIndices.add(N);
-                } //End block
+                } 
                 mBackStackIndices.add(bse);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(index);
         addTaint(bse.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1986,19 +1986,19 @@ final class FragmentManagerImpl extends FragmentManager {
             mBackStackIndices.set(index, null);
             {
                 mAvailBackStackIndices = new ArrayList<Integer>();
-            } //End block
+            } 
             mAvailBackStackIndices.add(index);
-        } //End block
+        } 
         addTaint(index);
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //mBackStackIndices.set(index, null);
-            //if (mAvailBackStackIndices == null) {
-                //mAvailBackStackIndices = new ArrayList<Integer>();
-            //}
-            //if (DEBUG) Log.v(TAG, "Freeing back stack index " + index);
-            //mAvailBackStackIndices.add(index);
-        //}
+        
+        
+            
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -2006,39 +2006,39 @@ final class FragmentManagerImpl extends FragmentManager {
     public boolean execPendingActions() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Recursive entry to executePendingTransactions");
-        } //End block
+        } 
         {
             boolean var92CCD900C583B95C908C1457DCFC97EB_1446185551 = (Looper.myLooper() != mActivity.mHandler.getLooper());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Must be called from main thread of process");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean didSomething = false;
         {
             int numActions;
             {
                 {
                     boolean var8F64D3B59DFFB1D978D9FFAE1E7D437D_271752804 = (mPendingActions == null || mPendingActions.size() == 0);
-                } //End collapsed parenthetic
+                } 
                 numActions = mPendingActions.size();
                 {
                     mTmpActions = new Runnable[numActions];
-                } //End block
+                } 
                 mPendingActions.toArray(mTmpActions);
                 mPendingActions.clear();
                 mActivity.mHandler.removeCallbacks(mExecCommit);
-            } //End block
+            } 
             mExecutingActions = true;
             {
                 int i = 0;
                 {
                     mTmpActions[i].run();
                     mTmpActions[i] = null;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mExecutingActions = false;
             didSomething = true;
-        } //End block
+        } 
         {
             boolean loadersRunning = false;
             {
@@ -2048,18 +2048,18 @@ final class FragmentManagerImpl extends FragmentManager {
                     Fragment f = mActive.get(i);
                     {
                         loadersRunning |= f.mLoaderManager.hasRunningLoaders();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 mHavePendingDeferredStart = false;
                 startPendingDeferredFragments();
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_703860431 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_703860431;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2071,15 +2071,15 @@ final class FragmentManagerImpl extends FragmentManager {
                 boolean var3737AEDF4226FD639F6461E15393E309_1437665562 = (i<mBackStackChangeListeners.size());
                 {
                     mBackStackChangeListeners.get(i).onBackStackChanged();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //if (mBackStackChangeListeners != null) {
-            //for (int i=0; i<mBackStackChangeListeners.size(); i++) {
-                //mBackStackChangeListeners.get(i).onBackStackChanged();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -2087,16 +2087,16 @@ final class FragmentManagerImpl extends FragmentManager {
      void addBackStackState(BackStackRecord state) {
         {
             mBackStack = new ArrayList<BackStackRecord>();
-        } //End block
+        } 
         mBackStack.add(state);
         reportBackStackChanged();
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //if (mBackStack == null) {
-            //mBackStack = new ArrayList<BackStackRecord>();
-        //}
-        //mBackStack.add(state);
-        //reportBackStackChanged();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -2107,7 +2107,7 @@ final class FragmentManagerImpl extends FragmentManager {
             final BackStackRecord bss = mBackStack.remove(last);
             bss.popFromBackStack(true);
             reportBackStackChanged();
-        } //End block
+        } 
         {
             int index = -1;
             {
@@ -2116,51 +2116,51 @@ final class FragmentManagerImpl extends FragmentManager {
                     BackStackRecord bss = mBackStack.get(index);
                     {
                         boolean varBEA6676FD08F9A893EB03C8E97D94F9C_1593279717 = (name != null && name.equals(bss.getName()));
-                    } //End collapsed parenthetic
-                } //End block
+                    } 
+                } 
                 {
                     {
                         BackStackRecord bss = mBackStack.get(index);
                         {
                             boolean varF7B12DD1A8F871B2F43DC36592D3ADBE_360150499 = ((name != null && name.equals(bss.getName()))
                                 || (id >= 0 && id == bss.mIndex));
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 boolean var4A958E5CC0AD80F8568B9E8089EACA0B_404129255 = (index == mBackStack.size()-1);
-            } //End collapsed parenthetic
+            } 
             final ArrayList<BackStackRecord> states = new ArrayList<BackStackRecord>();
             {
                 int i = mBackStack.size()-1;
                 {
                     states.add(mBackStack.remove(i));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             final int LAST = states.size()-1;
             {
                 int i = 0;
                 {
                     states.get(i).popFromBackStack(i == LAST);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             reportBackStackChanged();
-        } //End block
+        } 
         addTaint(handler.getTaint());
         addTaint(name.getTaint());
         addTaint(id);
         addTaint(flags);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_355967538 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_355967538;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.922 -0400", hash_original_method = "4601075007D50CE0BCD1D759D668CB84", hash_generated_method = "4469AED72CA90CB8D9AB58872EE9795D")
      ArrayList<Fragment> retainNonConfig() {
-        ArrayList<Fragment> varB4EAC82CA7396A68D541C85D26508E83_436360703 = null; //Variable for return #1
+        ArrayList<Fragment> varB4EAC82CA7396A68D541C85D26508E83_436360703 = null; 
         ArrayList<Fragment> fragments = null;
         {
             {
@@ -2171,34 +2171,34 @@ final class FragmentManagerImpl extends FragmentManager {
                     {
                         {
                             fragments = new ArrayList<Fragment>();
-                        } //End block
+                        } 
                         fragments.add(f);
                         f.mRetaining = true;
                         f.mTargetIndex = f.mTarget != null ? f.mTarget.mIndex : -1;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_436360703 = fragments;
-        varB4EAC82CA7396A68D541C85D26508E83_436360703.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_436360703.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_436360703;
-        // ---------- Original Method ----------
-        //ArrayList<Fragment> fragments = null;
-        //if (mActive != null) {
-            //for (int i=0; i<mActive.size(); i++) {
-                //Fragment f = mActive.get(i);
-                //if (f != null && f.mRetainInstance) {
-                    //if (fragments == null) {
-                        //fragments = new ArrayList<Fragment>();
-                    //}
-                    //fragments.add(f);
-                    //f.mRetaining = true;
-                    //f.mTargetIndex = f.mTarget != null ? f.mTarget.mIndex : -1;
-                    //if (DEBUG) Log.v(TAG, "retainNonConfig: keeping retained " + f);
-                //}
-            //}
-        //}
-        //return fragments;
+        
+        
+        
+            
+                
+                
+                    
+                        
+                    
+                    
+                    
+                    
+                    
+                
+            
+        
+        
     }
 
     
@@ -2206,91 +2206,91 @@ final class FragmentManagerImpl extends FragmentManager {
      void saveFragmentViewState(Fragment f) {
         {
             mStateArray = new SparseArray<Parcelable>();
-        } //End block
+        } 
         {
             mStateArray.clear();
-        } //End block
+        } 
         f.mInnerView.saveHierarchyState(mStateArray);
         {
             boolean var10CB5DFFB182D477A1F1C08C2A2A4D10_677290175 = (mStateArray.size() > 0);
             {
                 f.mSavedViewState = mStateArray;
                 mStateArray = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(f.getTaint());
-        // ---------- Original Method ----------
-        //if (f.mInnerView == null) {
-            //return;
-        //}
-        //if (mStateArray == null) {
-            //mStateArray = new SparseArray<Parcelable>();
-        //} else {
-            //mStateArray.clear();
-        //}
-        //f.mInnerView.saveHierarchyState(mStateArray);
-        //if (mStateArray.size() > 0) {
-            //f.mSavedViewState = mStateArray;
-            //mStateArray = null;
-        //}
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.925 -0400", hash_original_method = "4EAE6A1450E2744D0D17A0CBB3487A4E", hash_generated_method = "AD9E8E2554660DC296DB9CB821C05852")
      Bundle saveFragmentBasicState(Fragment f) {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_625635829 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_625635829 = null; 
         Bundle result = null;
         {
             mStateBundle = new Bundle();
-        } //End block
+        } 
         f.performSaveInstanceState(mStateBundle);
         {
             boolean var5AE1326457CED87C792B211942E81B2E_960926522 = (!mStateBundle.isEmpty());
             {
                 result = mStateBundle;
                 mStateBundle = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             saveFragmentViewState(f);
-        } //End block
+        } 
         {
             {
                 result = new Bundle();
-            } //End block
+            } 
             result.putSparseParcelableArray(
                     FragmentManagerImpl.VIEW_STATE_TAG, f.mSavedViewState);
-        } //End block
+        } 
         {
             {
                 result = new Bundle();
-            } //End block
+            } 
             result.putBoolean(FragmentManagerImpl.USER_VISIBLE_HINT_TAG, f.mUserVisibleHint);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_625635829 = result;
         addTaint(f.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_625635829.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_625635829.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_625635829;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.927 -0400", hash_original_method = "10343325EA0A9B349A8A31D89021E4C8", hash_generated_method = "2C98357A162EE23BBF45591B1EB9AF3B")
      Parcelable saveAllState() {
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1595042848 = null; //Variable for return #1
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_843489947 = null; //Variable for return #2
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1402414558 = null; //Variable for return #3
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1595042848 = null; 
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_843489947 = null; 
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1402414558 = null; 
         execPendingActions();
         {
             mStateSaved = true;
-        } //End block
+        } 
         {
             boolean var7B1A0FE06CC77C5BE5C8EE27C706FD90_797041978 = (mActive == null || mActive.size() <= 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1595042848 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int N = mActive.size();
         FragmentState[] active = new FragmentState[N];
         boolean haveFragments = false;
@@ -2303,7 +2303,7 @@ final class FragmentManagerImpl extends FragmentManager {
                         throwException(new IllegalStateException(
                             "Failure saving state: active " + f
                             + " has cleared index: " + f.mIndex));
-                    } //End block
+                    } 
                     haveFragments = true;
                     FragmentState fs = new FragmentState(f);
                     active[i] = fs;
@@ -2314,28 +2314,28 @@ final class FragmentManagerImpl extends FragmentManager {
                                 throwException(new IllegalStateException(
                                     "Failure saving state: " + f
                                     + " has target not in fragment manager: " + f.mTarget));
-                            } //End block
+                            } 
                             {
                                 fs.mSavedFragmentState = new Bundle();
-                            } //End block
+                            } 
                             putFragment(fs.mSavedFragmentState,
                                 FragmentManagerImpl.TARGET_STATE_TAG, f.mTarget);
                             {
                                 fs.mSavedFragmentState.putInt(
                                     FragmentManagerImpl.TARGET_REQUEST_CODE_STATE_TAG,
                                     f.mTargetRequestCode);
-                            } //End block
-                        } //End block
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         fs.mSavedFragmentState = f.mSavedFragmentState;
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_843489947 = null;
-        } //End block
+        } 
         int[] added = null;
         BackStackState[] backStack = null;
         {
@@ -2350,11 +2350,11 @@ final class FragmentManagerImpl extends FragmentManager {
                             throwException(new IllegalStateException(
                                 "Failure saving state: active " + mAdded.get(i)
                                 + " has cleared index: " + added[i]));
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             N = mBackStack.size();
             {
@@ -2363,31 +2363,31 @@ final class FragmentManagerImpl extends FragmentManager {
                     int i = 0;
                     {
                         backStack[i] = new BackStackState(this, mBackStack.get(i));
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         FragmentManagerState fms = new FragmentManagerState();
         fms.mActive = active;
         fms.mAdded = added;
         fms.mBackStack = backStack;
         varB4EAC82CA7396A68D541C85D26508E83_1402414558 = fms;
-        Parcelable varA7E53CE21691AB073D9660D615818899_1999692244; //Final return value
+        Parcelable varA7E53CE21691AB073D9660D615818899_1999692244; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1999692244 = varB4EAC82CA7396A68D541C85D26508E83_1595042848;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1999692244 = varB4EAC82CA7396A68D541C85D26508E83_843489947;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1999692244 = varB4EAC82CA7396A68D541C85D26508E83_1402414558;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1999692244.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1999692244.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1999692244;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2411,14 +2411,14 @@ final class FragmentManagerImpl extends FragmentManager {
                         fs.mSavedFragmentState.setClassLoader(mActivity.getClassLoader());
                         f.mSavedViewState = fs.mSavedFragmentState.getSparseParcelableArray(
                             FragmentManagerImpl.VIEW_STATE_TAG);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         mActive = new ArrayList<Fragment>(fms.mActive.length);
         {
             mAvailIndices.clear();
-        } //End block
+        } 
         {
             int i = 0;
             {
@@ -2427,16 +2427,16 @@ final class FragmentManagerImpl extends FragmentManager {
                     Fragment f = fs.instantiate(mActivity, mParent);
                     mActive.add(f);
                     fs.mInstance = null;
-                } //End block
+                } 
                 {
                     mActive.add(null);
                     {
                         mAvailIndices = new ArrayList<Integer>();
-                    } //End block
+                    } 
                     mAvailIndices.add(i);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             {
                 int i = 0;
@@ -2448,15 +2448,15 @@ final class FragmentManagerImpl extends FragmentManager {
                             boolean var487621A5D4BD2ACED481B16F5F5948D3_1201679379 = (f.mTargetIndex < mActive.size());
                             {
                                 f.mTarget = mActive.get(f.mTargetIndex);
-                            } //End block
+                            } 
                             {
                                 f.mTarget = null;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             mAdded = new ArrayList<Fragment>(fms.mAdded.length);
             {
@@ -2466,21 +2466,21 @@ final class FragmentManagerImpl extends FragmentManager {
                     {
                         throwException(new IllegalStateException(
                             "No instantiated fragment for index #" + fms.mAdded[i]));
-                    } //End block
+                    } 
                     f.mAdded = true;
                     {
                         boolean var9BF1C25340280F172CE0222A135FE437_613086145 = (mAdded.contains(f));
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Already added!");
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     mAdded.add(f);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             mAdded = null;
-        } //End block
+        } 
         {
             mBackStack = new ArrayList<BackStackRecord>(fms.mBackStack.length);
             {
@@ -2491,21 +2491,21 @@ final class FragmentManagerImpl extends FragmentManager {
                         LogWriter logw = new LogWriter(TAG);
                         PrintWriter pw = new PrintWriter(logw);
                         bse.dump("  ", pw, false);
-                    } //End block
+                    } 
                     mBackStack.add(bse);
                     {
                         setBackStackIndex(bse.mIndex, bse);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             mBackStack = null;
-        } //End block
+        } 
         addTaint(state.getTaint());
         addTaint(nonConfig.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2516,19 +2516,19 @@ final class FragmentManagerImpl extends FragmentManager {
         mActivity = activity;
         mContainer = container;
         mParent = parent;
-        // ---------- Original Method ----------
-        //if (mActivity != null) throw new IllegalStateException("Already attached");
-        //mActivity = activity;
-        //mContainer = container;
-        //mParent = parent;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.930 -0400", hash_original_method = "9E4E3FCA42BDE19CBF71140223B4B8D0", hash_generated_method = "B5C7E72CCEE273A62746EE3408615591")
     public void noteStateNotSaved() {
         mStateSaved = false;
-        // ---------- Original Method ----------
-        //mStateSaved = false;
+        
+        
     }
 
     
@@ -2536,9 +2536,9 @@ final class FragmentManagerImpl extends FragmentManager {
     public void dispatchCreate() {
         mStateSaved = false;
         moveToState(Fragment.CREATED, false);
-        // ---------- Original Method ----------
-        //mStateSaved = false;
-        //moveToState(Fragment.CREATED, false);
+        
+        
+        
     }
 
     
@@ -2546,9 +2546,9 @@ final class FragmentManagerImpl extends FragmentManager {
     public void dispatchActivityCreated() {
         mStateSaved = false;
         moveToState(Fragment.ACTIVITY_CREATED, false);
-        // ---------- Original Method ----------
-        //mStateSaved = false;
-        //moveToState(Fragment.ACTIVITY_CREATED, false);
+        
+        
+        
     }
 
     
@@ -2556,9 +2556,9 @@ final class FragmentManagerImpl extends FragmentManager {
     public void dispatchStart() {
         mStateSaved = false;
         moveToState(Fragment.STARTED, false);
-        // ---------- Original Method ----------
-        //mStateSaved = false;
-        //moveToState(Fragment.STARTED, false);
+        
+        
+        
     }
 
     
@@ -2566,17 +2566,17 @@ final class FragmentManagerImpl extends FragmentManager {
     public void dispatchResume() {
         mStateSaved = false;
         moveToState(Fragment.RESUMED, false);
-        // ---------- Original Method ----------
-        //mStateSaved = false;
-        //moveToState(Fragment.RESUMED, false);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.932 -0400", hash_original_method = "E6EE1A1408209BDB9066272C26AA9863", hash_generated_method = "806CEF702E5812DC1949A4F8EE32F575")
     public void dispatchPause() {
         moveToState(Fragment.STARTED, false);
-        // ---------- Original Method ----------
-        //moveToState(Fragment.STARTED, false);
+        
+        
     }
 
     
@@ -2584,25 +2584,25 @@ final class FragmentManagerImpl extends FragmentManager {
     public void dispatchStop() {
         mStateSaved = true;
         moveToState(Fragment.STOPPED, false);
-        // ---------- Original Method ----------
-        //mStateSaved = true;
-        //moveToState(Fragment.STOPPED, false);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.933 -0400", hash_original_method = "DCD943307D69805205EE4AFFC6D1EFE3", hash_generated_method = "89E0EF721C47E2DF40831E82789D0DE5")
     public void dispatchReallyStop() {
         moveToState(Fragment.ACTIVITY_CREATED, false);
-        // ---------- Original Method ----------
-        //moveToState(Fragment.ACTIVITY_CREATED, false);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.934 -0400", hash_original_method = "69F58A9B4E2F72C0D627B376DB1A1CDC", hash_generated_method = "7C0C65D29ADA12A03B42DDDA4BE52A2A")
     public void dispatchDestroyView() {
         moveToState(Fragment.CREATED, false);
-        // ---------- Original Method ----------
-        //moveToState(Fragment.CREATED, false);
+        
+        
     }
 
     
@@ -2614,13 +2614,13 @@ final class FragmentManagerImpl extends FragmentManager {
         mActivity = null;
         mContainer = null;
         mParent = null;
-        // ---------- Original Method ----------
-        //mDestroyed = true;
-        //execPendingActions();
-        //moveToState(Fragment.INITIALIZING, false);
-        //mActivity = null;
-        //mContainer = null;
-        //mParent = null;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -2634,20 +2634,20 @@ final class FragmentManagerImpl extends FragmentManager {
                     Fragment f = mAdded.get(i);
                     {
                         f.performConfigurationChanged(newConfig);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(newConfig.getTaint());
-        // ---------- Original Method ----------
-        //if (mAdded != null) {
-            //for (int i=0; i<mAdded.size(); i++) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null) {
-                    //f.performConfigurationChanged(newConfig);
-                //}
-            //}
-        //}
+        
+        
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
@@ -2661,19 +2661,19 @@ final class FragmentManagerImpl extends FragmentManager {
                     Fragment f = mAdded.get(i);
                     {
                         f.performLowMemory();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAdded != null) {
-            //for (int i=0; i<mAdded.size(); i++) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null) {
-                    //f.performLowMemory();
-                //}
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
@@ -2694,14 +2694,14 @@ final class FragmentManagerImpl extends FragmentManager {
                                 show = true;
                                 {
                                     newMenus = new ArrayList<Fragment>();
-                                } //End block
+                                } 
                                 newMenus.add(f);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 int i = 0;
@@ -2712,18 +2712,18 @@ final class FragmentManagerImpl extends FragmentManager {
                         boolean varF740BD6A5A57A11B5D73D0A67A04AEFC_1900843354 = (newMenus == null || !newMenus.contains(f));
                         {
                             f.onDestroyOptionsMenu();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         mCreatedMenus = newMenus;
         addTaint(menu.getTaint());
         addTaint(inflater.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_310603256 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_310603256;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2741,28 +2741,28 @@ final class FragmentManagerImpl extends FragmentManager {
                             boolean var7A9D124B4B5ACA00D3EAF8F312D52005_617637376 = (f.performPrepareOptionsMenu(menu));
                             {
                                 show = true;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(menu.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_481564870 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_481564870;
-        // ---------- Original Method ----------
-        //boolean show = false;
-        //if (mAdded != null) {
-            //for (int i=0; i<mAdded.size(); i++) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null) {
-                    //if (f.performPrepareOptionsMenu(menu)) {
-                        //show = true;
-                    //}
-                //}
-            //}
-        //}
-        //return show;
+        
+        
+        
+            
+                
+                
+                    
+                        
+                    
+                
+            
+        
+        
     }
 
     
@@ -2777,26 +2777,26 @@ final class FragmentManagerImpl extends FragmentManager {
                     {
                         {
                             boolean var5564C9E1EB2E8953D0F00B48E89AFC17_556523297 = (f.performOptionsItemSelected(item));
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(item.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_76409892 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_76409892;
-        // ---------- Original Method ----------
-        //if (mAdded != null) {
-            //for (int i=0; i<mAdded.size(); i++) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null) {
-                    //if (f.performOptionsItemSelected(item)) {
-                        //return true;
-                    //}
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+                
+                    
+                        
+                    
+                
+            
+        
+        
     }
 
     
@@ -2811,26 +2811,26 @@ final class FragmentManagerImpl extends FragmentManager {
                     {
                         {
                             boolean var4AA73CE006242FE3515CA0A67DA79788_1687893643 = (f.performContextItemSelected(item));
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(item.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1940450684 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1940450684;
-        // ---------- Original Method ----------
-        //if (mAdded != null) {
-            //for (int i=0; i<mAdded.size(); i++) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null) {
-                    //if (f.performContextItemSelected(item)) {
-                        //return true;
-                    //}
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+                
+                    
+                        
+                    
+                
+            
+        
+        
     }
 
     
@@ -2844,20 +2844,20 @@ final class FragmentManagerImpl extends FragmentManager {
                     Fragment f = mAdded.get(i);
                     {
                         f.performOptionsMenuClosed(menu);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(menu.getTaint());
-        // ---------- Original Method ----------
-        //if (mAdded != null) {
-            //for (int i=0; i<mAdded.size(); i++) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null) {
-                    //f.performOptionsMenuClosed(menu);
-                //}
-            //}
-        //}
+        
+        
+            
+                
+                
+                    
+                
+            
+        
     }
 
     

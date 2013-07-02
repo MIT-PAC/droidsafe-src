@@ -1,11 +1,11 @@
 package org.bouncycastle.openssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -19,7 +19,7 @@ public class PEMException extends IOException {
         String    message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,30 +30,30 @@ public class PEMException extends IOException {
         super(message);
         this.underlying = underlying;
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //this.underlying = underlying;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.008 -0400", hash_original_method = "8D4B98C08FC53F956480CC6A65685E20", hash_generated_method = "C650DD616A8E6BBC649DB00C8D3A6459")
     public Exception getUnderlyingException() {
-        Exception varB4EAC82CA7396A68D541C85D26508E83_1555947144 = null; //Variable for return #1
+        Exception varB4EAC82CA7396A68D541C85D26508E83_1555947144 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1555947144 = underlying;
-        varB4EAC82CA7396A68D541C85D26508E83_1555947144.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1555947144.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1555947144;
-        // ---------- Original Method ----------
-        //return underlying;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.008 -0400", hash_original_method = "F2813220852B09056C9C149C0538BE80", hash_generated_method = "BF94770209F8EE90C1EF649C8347BFDB")
     public Throwable getCause() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_822698260 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_822698260 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_822698260 = underlying;
-        varB4EAC82CA7396A68D541C85D26508E83_822698260.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_822698260.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_822698260;
-        // ---------- Original Method ----------
-        //return underlying;
+        
+        
     }
 
     

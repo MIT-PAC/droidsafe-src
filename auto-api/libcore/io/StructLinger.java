@@ -1,11 +1,11 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class StructLinger {
@@ -20,9 +20,9 @@ public final class StructLinger {
     public  StructLinger(int l_onoff, int l_linger) {
         this.l_onoff = l_onoff;
         this.l_linger = l_linger;
-        // ---------- Original Method ----------
-        //this.l_onoff = l_onoff;
-        //this.l_linger = l_linger;
+        
+        
+        
     }
 
     
@@ -30,20 +30,21 @@ public final class StructLinger {
     public boolean isOn() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1266621199 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1266621199;
-        // ---------- Original Method ----------
-        //return l_onoff != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.490 -0400", hash_original_method = "F93BE5BFF4FFDE74302B318FFC6DC0AC", hash_generated_method = "BE54E801AF364CD7C30FA527BDDE3D78")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_553939594 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_553939594 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_553939594 = "StructLinger[l_onoff=" + l_onoff + ",l_linger=" + l_linger + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_553939594.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_553939594.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_553939594;
-        // ---------- Original Method ----------
-        //return "StructLinger[l_onoff=" + l_onoff + ",l_linger=" + l_linger + "]";
+        
+        
     }
 
     

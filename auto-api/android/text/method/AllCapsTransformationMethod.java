@@ -1,11 +1,11 @@
 package android.text.method;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.graphics.Rect;
@@ -24,39 +24,40 @@ public class AllCapsTransformationMethod implements TransformationMethod2 {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.859 -0400", hash_original_method = "3B95B7992FFC661A96A84916391DF4EA", hash_generated_method = "3EE0716C8BD5BB93DA9729F2D1CDECCC")
     public  AllCapsTransformationMethod(Context context) {
         mLocale = context.getResources().getConfiguration().locale;
-        // ---------- Original Method ----------
-        //mLocale = context.getResources().getConfiguration().locale;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.859 -0400", hash_original_method = "78672DB29526C1EED454DBBBA0FA4686", hash_generated_method = "780BBA95D76F8BE755AF5E92A1E9A609")
     @Override
     public CharSequence getTransformation(CharSequence source, View view) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1352731914 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_304777342 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1352731914 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_304777342 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1352731914 = source != null ? source.toString().toUpperCase(mLocale) : null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_304777342 = source;
         addTaint(source.getTaint());
         addTaint(view.getTaint());
-        CharSequence varA7E53CE21691AB073D9660D615818899_231309816; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_231309816; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_231309816 = varB4EAC82CA7396A68D541C85D26508E83_1352731914;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_231309816 = varB4EAC82CA7396A68D541C85D26508E83_304777342;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_231309816.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_231309816.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_231309816;
-        // ---------- Original Method ----------
-        //if (mEnabled) {
-            //return source != null ? source.toString().toUpperCase(mLocale) : null;
-        //}
-        //Log.w(TAG, "Caller did not enable length changes; not transforming text");
-        //return source;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -64,13 +65,13 @@ public class AllCapsTransformationMethod implements TransformationMethod2 {
     @Override
     public void onFocusChanged(View view, CharSequence sourceText, boolean focused, int direction,
             Rect previouslyFocusedRect) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(view.getTaint());
         addTaint(sourceText.getTaint());
         addTaint(focused);
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -78,8 +79,8 @@ public class AllCapsTransformationMethod implements TransformationMethod2 {
     @Override
     public void setLengthChangesAllowed(boolean allowLengthChanges) {
         mEnabled = allowLengthChanges;
-        // ---------- Original Method ----------
-        //mEnabled = allowLengthChanges;
+        
+        
     }
 
     

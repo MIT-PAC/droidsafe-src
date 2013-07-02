@@ -1,11 +1,11 @@
 package java.nio.charset;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;
@@ -48,7 +48,7 @@ public abstract class CharsetEncoder {
         addTaint(cs.getTaint());
         addTaint(averageBytesPerChar);
         addTaint(maxBytesPerChar);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -59,7 +59,7 @@ public abstract class CharsetEncoder {
         addTaint(averageBytesPerChar);
         addTaint(maxBytesPerChar);
         addTaint(replacement[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -67,10 +67,10 @@ public abstract class CharsetEncoder {
       CharsetEncoder(Charset cs, float averageBytesPerChar, float maxBytesPerChar, byte[] replacement, boolean trusted) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("averageBytesPerChar and maxBytesPerChar must both be positive");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("averageBytesPerChar is greater than maxBytesPerChar");
-        } //End block
+        } 
         this.cs = cs;
         this.averageBytesPerChar = averageBytesPerChar;
         this.maxBytesPerChar = maxBytesPerChar;
@@ -79,29 +79,29 @@ public abstract class CharsetEncoder {
         unmappableCharacterAction = CodingErrorAction.REPORT;
         {
             this.replacementBytes = replacement;
-        } //End block
+        } 
         {
             replaceWith(replacement);
-        } //End block
+        } 
         addTaint(trusted);
-        // ---------- Original Method ----------
-        //if (averageBytesPerChar <= 0 || maxBytesPerChar <= 0) {
-            //throw new IllegalArgumentException("averageBytesPerChar and maxBytesPerChar must both be positive");
-        //}
-        //if (averageBytesPerChar > maxBytesPerChar) {
-            //throw new IllegalArgumentException("averageBytesPerChar is greater than maxBytesPerChar");
-        //}
-        //this.cs = cs;
-        //this.averageBytesPerChar = averageBytesPerChar;
-        //this.maxBytesPerChar = maxBytesPerChar;
-        //status = INIT;
-        //malformedInputAction = CodingErrorAction.REPORT;
-        //unmappableCharacterAction = CodingErrorAction.REPORT;
-        //if (trusted) {
-            //this.replacementBytes = replacement;
-        //} else {
-            //replaceWith(replacement);
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -109,30 +109,32 @@ public abstract class CharsetEncoder {
     public final float averageBytesPerChar() {
         float var546ADE640B6EDFBC8A086EF31347E768_1544349856 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1544349856;
-        // ---------- Original Method ----------
-        //return averageBytesPerChar;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.943 -0400", hash_original_method = "DF8D80CA8C09E77634765D8D414FAE26", hash_generated_method = "0DE490FB4A31B5D51A2B4A2FA9284F1E")
     public boolean canEncode(char c) {
         boolean varA7FD43173EF46EB747DE5BC527CFC0F0_2139367243 = (implCanEncode(CharBuffer.wrap(new char[] { c })));
         addTaint(c);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1399643061 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1399643061;
-        // ---------- Original Method ----------
-        //return implCanEncode(CharBuffer.wrap(new char[] { c }));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.944 -0400", hash_original_method = "8FE38300B66D2E408C3C937D4188B910", hash_generated_method = "71A018DBAD07800EA5C3097B7E18AE23")
     private boolean implCanEncode(CharBuffer cb) {
         {
             status = READY;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("encoding already in progress");
-        } //End block
+        } 
         CodingErrorAction malformBak = malformedInputAction;
         CodingErrorAction unmapBak = unmappableCharacterAction;
         onMalformedInput(CodingErrorAction.REPORT);
@@ -141,86 +143,87 @@ public abstract class CharsetEncoder {
         try 
         {
             this.encode(cb);
-        } //End block
+        } 
         catch (CharacterCodingException e)
         {
             result = false;
-        } //End block
+        } 
         onMalformedInput(malformBak);
         onUnmappableCharacter(unmapBak);
         reset();
         addTaint(cb.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_584785216 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_584785216;
-        // ---------- Original Method ----------
-        //if (status == FLUSH || status == INIT) {
-            //status = READY;
-        //}
-        //if (status != READY) {
-            //throw new IllegalStateException("encoding already in progress");
-        //}
-        //CodingErrorAction malformBak = malformedInputAction;
-        //CodingErrorAction unmapBak = unmappableCharacterAction;
-        //onMalformedInput(CodingErrorAction.REPORT);
-        //onUnmappableCharacter(CodingErrorAction.REPORT);
-        //boolean result = true;
-        //try {
-            //this.encode(cb);
-        //} catch (CharacterCodingException e) {
-            //result = false;
-        //}
-        //onMalformedInput(malformBak);
-        //onUnmappableCharacter(unmapBak);
-        //reset();
-        //return result;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.945 -0400", hash_original_method = "54A1B7BF9180636CA7E06E09FE414A09", hash_generated_method = "0D3C5B183EECF1F71B93E9DE9DC142EB")
     public boolean canEncode(CharSequence sequence) {
         CharBuffer cb;
         {
             cb = ((CharBuffer) sequence).duplicate();
-        } //End block
+        } 
         {
             cb = CharBuffer.wrap(sequence);
-        } //End block
+        } 
         boolean var023A5CE57CF042FFBBA2A26CD7409D7D_1630730411 = (implCanEncode(cb));
         addTaint(sequence.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_928268044 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_928268044;
-        // ---------- Original Method ----------
-        //CharBuffer cb;
-        //if (sequence instanceof CharBuffer) {
-            //cb = ((CharBuffer) sequence).duplicate();
-        //} else {
-            //cb = CharBuffer.wrap(sequence);
-        //}
-        //return implCanEncode(cb);
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.946 -0400", hash_original_method = "B98730A31745049759B27FC27542555A", hash_generated_method = "F33A9586754006ACBCFF772BF5FFE027")
     public final Charset charset() {
-        Charset varB4EAC82CA7396A68D541C85D26508E83_1541620048 = null; //Variable for return #1
+        Charset varB4EAC82CA7396A68D541C85D26508E83_1541620048 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1541620048 = cs;
-        varB4EAC82CA7396A68D541C85D26508E83_1541620048.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1541620048.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1541620048;
-        // ---------- Original Method ----------
-        //return cs;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.947 -0400", hash_original_method = "6617ED92398FABBB6F1186A03F59422C", hash_generated_method = "AFC947D4813A10EEAC4E6B334B049D01")
     public final ByteBuffer encode(CharBuffer in) throws CharacterCodingException {
-        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1054564426 = null; //Variable for return #1
-        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_955939511 = null; //Variable for return #2
+        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1054564426 = null; 
+        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_955939511 = null; 
         {
             boolean varB71CC61526E00AC9D330BA9C6FAE6AF4_1307700432 = (in.remaining() == 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1054564426 = ByteBuffer.allocate(0);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         reset();
         int length = (int) (in.remaining() * averageBytesPerChar);
         ByteBuffer output = ByteBuffer.allocate(length);
@@ -229,208 +232,210 @@ public abstract class CharsetEncoder {
             result = encode(in, output, false);
             {
                 output = allocateMore(output);
-            } //End block
+            } 
             checkCoderResult(result);
-        } //End block
+        } 
         result = encode(in, output, true);
         checkCoderResult(result);
         {
             result = flush(output);
             {
                 output.flip();
-            } //End block
+            } 
             {
                 output = allocateMore(output);
-            } //End block
+            } 
             checkCoderResult(result);
             output.flip();
             {
                 boolean var8469AFDE58F4B5BD8D7E58A7D8589BFA_931642073 = (result.isMalformed());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new MalformedInputException(result.length());
-                } //End block
+                } 
                 {
                     boolean var196B10A57454E4B497B11983F4E91B5B_1949284501 = (result.isUnmappable());
                     {
                         if (DroidSafeAndroidRuntime.control) throw new UnmappableCharacterException(result.length());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         status = READY;
         finished = true;
         varB4EAC82CA7396A68D541C85D26508E83_955939511 = output;
         addTaint(in.getTaint());
-        ByteBuffer varA7E53CE21691AB073D9660D615818899_704590995; //Final return value
+        ByteBuffer varA7E53CE21691AB073D9660D615818899_704590995; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_704590995 = varB4EAC82CA7396A68D541C85D26508E83_1054564426;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_704590995 = varB4EAC82CA7396A68D541C85D26508E83_955939511;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_704590995.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_704590995.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_704590995;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.947 -0400", hash_original_method = "AAF7B17852C8827C6D375001E4EF8669", hash_generated_method = "47FA5337AB8C72CDC5A0E01817B35DD6")
     private void checkCoderResult(CoderResult result) throws CharacterCodingException {
         {
             boolean varBC2698A81CD65EBF00573A40EB4CCB31_483998729 = (malformedInputAction == CodingErrorAction.REPORT && result.isMalformed());
             {
                 if (DroidSafeAndroidRuntime.control) throw new MalformedInputException(result.length());
-            } //End block
+            } 
             {
                 boolean var81194D29E7906F799C148A511B4F0E68_1559086424 = (unmappableCharacterAction == CodingErrorAction.REPORT && result.isUnmappable());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new UnmappableCharacterException(result.length());
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
-        //if (malformedInputAction == CodingErrorAction.REPORT && result.isMalformed() ) {
-            //throw new MalformedInputException(result.length());
-        //} else if (unmappableCharacterAction == CodingErrorAction.REPORT && result.isUnmappable()) {
-            //throw new UnmappableCharacterException(result.length());
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.948 -0400", hash_original_method = "46B614F003BDECDBAF0C028FA8A61DD7", hash_generated_method = "2555091FDE9E9458132E854F832BF473")
     private ByteBuffer allocateMore(ByteBuffer output) {
-        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_115418846 = null; //Variable for return #1
-        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_358929268 = null; //Variable for return #2
+        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_115418846 = null; 
+        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_358929268 = null; 
         {
             boolean var3DEB4C124602AAD988E7A1D53669DF60_1205722210 = (output.capacity() == 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_115418846 = ByteBuffer.allocate(1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         ByteBuffer result = ByteBuffer.allocate(output.capacity() * 2);
         output.flip();
         result.put(output);
         varB4EAC82CA7396A68D541C85D26508E83_358929268 = result;
         addTaint(output.getTaint());
-        ByteBuffer varA7E53CE21691AB073D9660D615818899_1888430021; //Final return value
+        ByteBuffer varA7E53CE21691AB073D9660D615818899_1888430021; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1888430021 = varB4EAC82CA7396A68D541C85D26508E83_115418846;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1888430021 = varB4EAC82CA7396A68D541C85D26508E83_358929268;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1888430021.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1888430021.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1888430021;
-        // ---------- Original Method ----------
-        //if (output.capacity() == 0) {
-            //return ByteBuffer.allocate(1);
-        //}
-        //ByteBuffer result = ByteBuffer.allocate(output.capacity() * 2);
-        //output.flip();
-        //result.put(output);
-        //return result;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.949 -0400", hash_original_method = "F53B4856D46D71BB987D9EC6F2ED08EE", hash_generated_method = "F42DCED7A17D26F926EE3BDA48FF38C5")
     public final CoderResult encode(CharBuffer in, ByteBuffer out, boolean endOfInput) {
-        CoderResult varB4EAC82CA7396A68D541C85D26508E83_1063360844 = null; //Variable for return #1
-        CoderResult varB4EAC82CA7396A68D541C85D26508E83_742264414 = null; //Variable for return #2
-        CoderResult varB4EAC82CA7396A68D541C85D26508E83_443878279 = null; //Variable for return #3
-        CoderResult varB4EAC82CA7396A68D541C85D26508E83_138181870 = null; //Variable for return #4
-        CoderResult varB4EAC82CA7396A68D541C85D26508E83_1343581796 = null; //Variable for return #5
+        CoderResult varB4EAC82CA7396A68D541C85D26508E83_1063360844 = null; 
+        CoderResult varB4EAC82CA7396A68D541C85D26508E83_742264414 = null; 
+        CoderResult varB4EAC82CA7396A68D541C85D26508E83_443878279 = null; 
+        CoderResult varB4EAC82CA7396A68D541C85D26508E83_138181870 = null; 
+        CoderResult varB4EAC82CA7396A68D541C85D26508E83_1343581796 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         CoderResult result;
         {
             try 
             {
                 result = encodeLoop(in, out);
-            } //End block
+            } 
             catch (BufferOverflowException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new CoderMalfunctionError(e);
-            } //End block
+            } 
             catch (BufferUnderflowException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new CoderMalfunctionError(e);
-            } //End block
+            } 
             {
                 status = endOfInput ? END : ONGOING;
                 {
                     int remaining = in.remaining();
                     {
                         result = CoderResult.malformedForLength(remaining);
-                    } //End block
+                    } 
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1063360844 = result;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_742264414 = result;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 status = endOfInput ? END : ONGOING;
                 varB4EAC82CA7396A68D541C85D26508E83_443878279 = result;
-            } //End block
+            } 
             CodingErrorAction action = malformedInputAction;
             {
                 boolean var7C71B56CE29CA100AFEFFA537CA1E5FD_1601801498 = (result.isUnmappable());
                 {
                     action = unmappableCharacterAction;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 {
                     boolean varD5123830D1882C75C40901CDBD4F3A20_1278078906 = (out.remaining() < replacementBytes.length);
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_138181870 = CoderResult.OVERFLOW;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 out.put(replacementBytes);
-            } //End block
+            } 
             {
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1343581796 = result;
-                } //End block
-            } //End block
+                } 
+            } 
             in.position(in.position() + result.length());
-        } //End block
+        } 
         addTaint(in.getTaint());
         addTaint(out.getTaint());
-        CoderResult varA7E53CE21691AB073D9660D615818899_792357193; //Final return value
+        CoderResult varA7E53CE21691AB073D9660D615818899_792357193; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_792357193 = varB4EAC82CA7396A68D541C85D26508E83_1063360844;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_792357193 = varB4EAC82CA7396A68D541C85D26508E83_742264414;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_792357193 = varB4EAC82CA7396A68D541C85D26508E83_443878279;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_792357193 = varB4EAC82CA7396A68D541C85D26508E83_138181870;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_792357193 = varB4EAC82CA7396A68D541C85D26508E83_1343581796;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_792357193.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_792357193.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_792357193;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -439,76 +444,77 @@ public abstract class CharsetEncoder {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.950 -0400", hash_original_method = "7DF66453B2225F37798DBF2842A3A344", hash_generated_method = "95F2FE4AFA956FF52A6D7DA59420F670")
     public final CoderResult flush(ByteBuffer out) {
-        CoderResult varB4EAC82CA7396A68D541C85D26508E83_1404888101 = null; //Variable for return #1
+        CoderResult varB4EAC82CA7396A68D541C85D26508E83_1404888101 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         CoderResult result = implFlush(out);
         {
             status = FLUSH;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1404888101 = result;
         addTaint(out.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1404888101.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1404888101.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1404888101;
-        // ---------- Original Method ----------
-        //if (status != END && status != READY) {
-            //throw new IllegalStateException();
-        //}
-        //CoderResult result = implFlush(out);
-        //if (result == CoderResult.UNDERFLOW) {
-            //status = FLUSH;
-        //}
-        //return result;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.951 -0400", hash_original_method = "A9BF2BD565E7966B3C6B16D11959F2CA", hash_generated_method = "E525C3DE9EE3F07285FA14432C97553A")
     protected CoderResult implFlush(ByteBuffer out) {
-        CoderResult varB4EAC82CA7396A68D541C85D26508E83_1739099312 = null; //Variable for return #1
+        CoderResult varB4EAC82CA7396A68D541C85D26508E83_1739099312 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1739099312 = CoderResult.UNDERFLOW;
         addTaint(out.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1739099312.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1739099312.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1739099312;
-        // ---------- Original Method ----------
-        //return CoderResult.UNDERFLOW;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.951 -0400", hash_original_method = "E03D9D5B6C40FD58B1EEECF43C9BC127", hash_generated_method = "C3493E75D383B088DEBB94344366E9DE")
     protected void implOnMalformedInput(CodingErrorAction newAction) {
         addTaint(newAction.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.951 -0400", hash_original_method = "33D941D09604A3F698502AE892B2B2F1", hash_generated_method = "4B30141303236D37DE62574A267B9AF0")
     protected void implOnUnmappableCharacter(CodingErrorAction newAction) {
         addTaint(newAction.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.952 -0400", hash_original_method = "BBBD9A68869312EDB40CCAE9146777D7", hash_generated_method = "C9C5333A73F363FD625EC04BC5CF9C82")
     protected void implReplaceWith(byte[] newReplacement) {
         addTaint(newReplacement[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.952 -0400", hash_original_method = "B1E265ECD4B779BE3343E27B901DC354", hash_generated_method = "2A58666B59F850117B41A249C7AD97D2")
     protected void implReset() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.952 -0400", hash_original_method = "0E6BADBD5D3BB826133FA0CE0CAA8F2B", hash_generated_method = "A9FA8DCA3C76E063FBD49BC0F4052FA3")
     public boolean isLegalReplacement(byte[] replacement) {
         {
             decoder = cs.newDecoder();
             decoder.onMalformedInput(CodingErrorAction.REPORT);
             decoder.onUnmappableCharacter(CodingErrorAction.REPORT);
-        } //End block
+        } 
         ByteBuffer in = ByteBuffer.wrap(replacement);
         CharBuffer out = CharBuffer.allocate((int) (replacement.length * decoder.maxCharsPerByte()));
         CoderResult result = decoder.decode(in, out, true);
@@ -516,27 +522,27 @@ public abstract class CharsetEncoder {
         addTaint(replacement[0]);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_766102088 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_766102088;
-        // ---------- Original Method ----------
-        //if (decoder == null) {
-            //decoder = cs.newDecoder();
-            //decoder.onMalformedInput(CodingErrorAction.REPORT);
-            //decoder.onUnmappableCharacter(CodingErrorAction.REPORT);
-        //}
-        //ByteBuffer in = ByteBuffer.wrap(replacement);
-        //CharBuffer out = CharBuffer.allocate((int) (replacement.length * decoder.maxCharsPerByte()));
-        //CoderResult result = decoder.decode(in, out, true);
-        //return !result.isError();
+        
+        
+            
+            
+            
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.953 -0400", hash_original_method = "14FFD5293B4145E0D4BC6D81F9598816", hash_generated_method = "0E8756548871145894F95708FFD131E3")
     public CodingErrorAction malformedInputAction() {
-        CodingErrorAction varB4EAC82CA7396A68D541C85D26508E83_1799371272 = null; //Variable for return #1
+        CodingErrorAction varB4EAC82CA7396A68D541C85D26508E83_1799371272 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1799371272 = malformedInputAction;
-        varB4EAC82CA7396A68D541C85D26508E83_1799371272.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1799371272.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1799371272;
-        // ---------- Original Method ----------
-        //return malformedInputAction;
+        
+        
     }
 
     
@@ -544,52 +550,52 @@ public abstract class CharsetEncoder {
     public final float maxBytesPerChar() {
         float var546ADE640B6EDFBC8A086EF31347E768_893267111 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_893267111;
-        // ---------- Original Method ----------
-        //return maxBytesPerChar;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.953 -0400", hash_original_method = "9AA0403DB22EF3A510B565026DCE2424", hash_generated_method = "9C6BB1F497D3B8152DE75724A9FA0D8B")
     public final CharsetEncoder onMalformedInput(CodingErrorAction newAction) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        CharsetEncoder varB4EAC82CA7396A68D541C85D26508E83_1258828640 = null; //Variable for return #1
+        
+        CharsetEncoder varB4EAC82CA7396A68D541C85D26508E83_1258828640 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("newAction == null");
-        } //End block
+        } 
         malformedInputAction = newAction;
         implOnMalformedInput(newAction);
         varB4EAC82CA7396A68D541C85D26508E83_1258828640 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1258828640.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1258828640.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1258828640;
-        // ---------- Original Method ----------
-        //if (newAction == null) {
-            //throw new IllegalArgumentException("newAction == null");
-        //}
-        //malformedInputAction = newAction;
-        //implOnMalformedInput(newAction);
-        //return this;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.954 -0400", hash_original_method = "8F9E9A5BA6AED0663F62AB88ADE1A1B8", hash_generated_method = "746F977B5C7754B86A9330C83FA55444")
     public final CharsetEncoder onUnmappableCharacter(CodingErrorAction newAction) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        CharsetEncoder varB4EAC82CA7396A68D541C85D26508E83_1284640948 = null; //Variable for return #1
+        
+        CharsetEncoder varB4EAC82CA7396A68D541C85D26508E83_1284640948 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("newAction == null");
-        } //End block
+        } 
         unmappableCharacterAction = newAction;
         implOnUnmappableCharacter(newAction);
         varB4EAC82CA7396A68D541C85D26508E83_1284640948 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1284640948.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1284640948.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1284640948;
-        // ---------- Original Method ----------
-        //if (newAction == null) {
-            //throw new IllegalArgumentException("newAction == null");
-        //}
-        //unmappableCharacterAction = newAction;
-        //implOnUnmappableCharacter(newAction);
-        //return this;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -597,81 +603,81 @@ public abstract class CharsetEncoder {
     public final byte[] replacement() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_23454562 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_23454562;
-        // ---------- Original Method ----------
-        //return replacementBytes;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.955 -0400", hash_original_method = "267C7D54312382305679F98E9AD49DA0", hash_generated_method = "8136485CBDF3292C04B733630126C149")
     public final CharsetEncoder replaceWith(byte[] replacement) {
-        CharsetEncoder varB4EAC82CA7396A68D541C85D26508E83_2019992492 = null; //Variable for return #1
+        CharsetEncoder varB4EAC82CA7396A68D541C85D26508E83_2019992492 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("replacement == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("replacement.length == 0");
-        } //End block
+        } 
         {
             boolean varB376EDDCE96EE6241256C0F96C9F4DFD_280739076 = (replacement.length > maxBytesPerChar());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("replacement length > maxBytesPerChar: " +
                     replacement.length + " > " + maxBytesPerChar());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var2BA55E348EDBBB6A73AD018C9E6D1F0A_1701897469 = (!isLegalReplacement(replacement));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("bad replacement: " + Arrays.toString(replacement));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.replacementBytes = replacement;
         implReplaceWith(replacementBytes);
         varB4EAC82CA7396A68D541C85D26508E83_2019992492 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_2019992492.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2019992492.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2019992492;
-        // ---------- Original Method ----------
-        //if (replacement == null) {
-            //throw new IllegalArgumentException("replacement == null");
-        //}
-        //if (replacement.length == 0) {
-            //throw new IllegalArgumentException("replacement.length == 0");
-        //}
-        //if (replacement.length > maxBytesPerChar()) {
-            //throw new IllegalArgumentException("replacement length > maxBytesPerChar: " +
-                    //replacement.length + " > " + maxBytesPerChar());
-        //}
-        //if (!isLegalReplacement(replacement)) {
-            //throw new IllegalArgumentException("bad replacement: " + Arrays.toString(replacement));
-        //}
-        //this.replacementBytes = replacement;
-        //implReplaceWith(replacementBytes);
-        //return this;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+            
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.956 -0400", hash_original_method = "939E78B196C94EAC65CBC7206A9E1DD0", hash_generated_method = "CF465A4436D79740BE5D3914196D88FE")
     public final CharsetEncoder reset() {
-        CharsetEncoder varB4EAC82CA7396A68D541C85D26508E83_1064804454 = null; //Variable for return #1
+        CharsetEncoder varB4EAC82CA7396A68D541C85D26508E83_1064804454 = null; 
         status = INIT;
         implReset();
         varB4EAC82CA7396A68D541C85D26508E83_1064804454 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1064804454.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1064804454.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1064804454;
-        // ---------- Original Method ----------
-        //status = INIT;
-        //implReset();
-        //return this;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.957 -0400", hash_original_method = "01254405DC3888434A269A87FF2AF4FB", hash_generated_method = "FA898BF704CBFF227B0D7BDB230ECF9B")
     public CodingErrorAction unmappableCharacterAction() {
-        CodingErrorAction varB4EAC82CA7396A68D541C85D26508E83_1761182742 = null; //Variable for return #1
+        CodingErrorAction varB4EAC82CA7396A68D541C85D26508E83_1761182742 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1761182742 = unmappableCharacterAction;
-        varB4EAC82CA7396A68D541C85D26508E83_1761182742.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1761182742.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1761182742;
-        // ---------- Original Method ----------
-        //return unmappableCharacterAction;
+        
+        
     }
 
     

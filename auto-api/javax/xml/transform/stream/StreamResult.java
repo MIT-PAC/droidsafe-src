@@ -1,11 +1,11 @@
 package javax.xml.transform.stream;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.OutputStream;
@@ -25,7 +25,7 @@ public class StreamResult implements Result {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.047 -0400", hash_original_method = "C19C2736EBF8CAB01BA3786E202D7316", hash_generated_method = "F31287276C2A464F5FF68A1022DE3F68")
     public  StreamResult() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,8 +33,8 @@ public class StreamResult implements Result {
     public  StreamResult(OutputStream outputStream) {
         setOutputStream(outputStream);
         addTaint(outputStream.getTaint());
-        // ---------- Original Method ----------
-        //setOutputStream(outputStream);
+        
+        
     }
 
     
@@ -42,16 +42,16 @@ public class StreamResult implements Result {
     public  StreamResult(Writer writer) {
         setWriter(writer);
         addTaint(writer.getTaint());
-        // ---------- Original Method ----------
-        //setWriter(writer);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.048 -0400", hash_original_method = "CE70A50578573A39D0EE1A321E1352B9", hash_generated_method = "6596525B6F4518BD897D217812ABED11")
     public  StreamResult(String systemId) {
         this.systemId = systemId;
-        // ---------- Original Method ----------
-        //this.systemId = systemId;
+        
+        
     }
 
     
@@ -59,73 +59,74 @@ public class StreamResult implements Result {
     public  StreamResult(File f) {
         setSystemId(f);
         addTaint(f.getTaint());
-        // ---------- Original Method ----------
-        //setSystemId(f);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.048 -0400", hash_original_method = "817A5A0ADE99B2865B232C517A9FCF0D", hash_generated_method = "F857F15E184B65891F5640F76C952DBE")
     public void setOutputStream(OutputStream outputStream) {
         this.outputStream = outputStream;
-        // ---------- Original Method ----------
-        //this.outputStream = outputStream;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.048 -0400", hash_original_method = "05E68097FF3105B2AAABD34E89C7728F", hash_generated_method = "102EB8640192E00915BD71D5403A9EF2")
     public OutputStream getOutputStream() {
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_1884614436 = null; //Variable for return #1
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_1884614436 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1884614436 = outputStream;
-        varB4EAC82CA7396A68D541C85D26508E83_1884614436.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1884614436.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1884614436;
-        // ---------- Original Method ----------
-        //return outputStream;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.049 -0400", hash_original_method = "5911383E76829BA237C0C98FFA879183", hash_generated_method = "5A42584FF7D14E5EEE57ABF668EF394C")
     public void setWriter(Writer writer) {
         this.writer = writer;
-        // ---------- Original Method ----------
-        //this.writer = writer;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.049 -0400", hash_original_method = "F0F74844AEEC9ABE14D7628D5DF26AE9", hash_generated_method = "BBA1AC37DBABF8504B2E299E3019DD9E")
     public Writer getWriter() {
-        Writer varB4EAC82CA7396A68D541C85D26508E83_2110064569 = null; //Variable for return #1
+        Writer varB4EAC82CA7396A68D541C85D26508E83_2110064569 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2110064569 = writer;
-        varB4EAC82CA7396A68D541C85D26508E83_2110064569.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2110064569.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2110064569;
-        // ---------- Original Method ----------
-        //return writer;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.049 -0400", hash_original_method = "77F5337B905F22D1C71F7C949FEF5117", hash_generated_method = "DE20300D341EFA9D9888E5637810608B")
     public void setSystemId(String systemId) {
         this.systemId = systemId;
-        // ---------- Original Method ----------
-        //this.systemId = systemId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.049 -0400", hash_original_method = "30231F16AB3AB378740EA121A3BAEA6C", hash_generated_method = "15625C9663782FB88EBA4526C2B24DF7")
     public void setSystemId(File f) {
         this.systemId = FilePathToURI.filepath2URI(f.getAbsolutePath());
-        // ---------- Original Method ----------
-        //this.systemId = FilePathToURI.filepath2URI(f.getAbsolutePath());
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.050 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "0392CFFB14BF527ADFCD313DB58D3F72")
     public String getSystemId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1379588557 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1379588557 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1379588557 = systemId;
-        varB4EAC82CA7396A68D541C85D26508E83_1379588557.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1379588557.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1379588557;
-        // ---------- Original Method ----------
-        //return systemId;
+        
+        
     }
 
     

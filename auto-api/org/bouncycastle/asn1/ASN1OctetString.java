@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -23,14 +23,14 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
         byte[]  string) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("string cannot be null");
-        } //End block
+        } 
         this.string = string;
-        // ---------- Original Method ----------
-        //if (string == null)
-        //{
-            //throw new NullPointerException("string cannot be null");
-        //}
-        //this.string = string;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -40,23 +40,24 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
         try 
         {
             this.string = obj.getDERObject().getEncoded(ASN1Encodable.DER);
-        } //End block
+        } 
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Error processing object : " + e.toString());
-        } //End block
-        // ---------- Original Method ----------
-        //try
-        //{
-            //this.string = obj.getDERObject().getEncoded(ASN1Encodable.DER);
-        //}
-        //catch (IOException e)
-        //{
-            //throw new IllegalArgumentException("Error processing object : " + e.toString());
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ASN1OctetString getInstance(
         ASN1TaggedObject    obj,
         boolean             explicit) {
@@ -72,6 +73,7 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ASN1OctetString getInstance(
         Object  obj) {
         if (obj == null || obj instanceof ASN1OctetString)
@@ -86,25 +88,26 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.927 -0400", hash_original_method = "34640A97A031BA78080CEBB6F9EA17E5", hash_generated_method = "16B1E992E6C15592BCDDE2DAF50564C2")
     public InputStream getOctetStream() {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1991390541 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1991390541 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1991390541 = new ByteArrayInputStream(string);
-        varB4EAC82CA7396A68D541C85D26508E83_1991390541.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1991390541.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1991390541;
-        // ---------- Original Method ----------
-        //return new ByteArrayInputStream(string);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.927 -0400", hash_original_method = "9D3ECD11646B7B9703C16B797DA8DA2E", hash_generated_method = "03CD060905CFA554824909EADE7D7F8C")
     public ASN1OctetStringParser parser() {
-        ASN1OctetStringParser varB4EAC82CA7396A68D541C85D26508E83_315310235 = null; //Variable for return #1
+        ASN1OctetStringParser varB4EAC82CA7396A68D541C85D26508E83_315310235 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_315310235 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_315310235.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_315310235.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_315310235;
-        // ---------- Original Method ----------
-        //return this;
+        
+        
     }
 
     
@@ -112,18 +115,19 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
     public byte[] getOctets() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_288522910 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_288522910;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.928 -0400", hash_original_method = "306C0053EB93BF3AE4D12BCDAA093AD0", hash_generated_method = "EE71CB960924541963D49300F75E324D")
     public int hashCode() {
         int var41933DA9B61B1D0D596F60166BA264CB_966180258 = (Arrays.hashCode(this.getOctets()));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1779114908 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1779114908;
-        // ---------- Original Method ----------
-        //return Arrays.hashCode(this.getOctets());
+        
+        
     }
 
     
@@ -135,24 +139,25 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1226401429 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1226401429;
-        // ---------- Original Method ----------
-        //if (!(o instanceof ASN1OctetString))
-        //{
-            //return false;
-        //}
-        //ASN1OctetString  other = (ASN1OctetString)o;
-        //return Arrays.areEqual(string, other.string);
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.929 -0400", hash_original_method = "D3363286272FDA8D05900543905FFBE8", hash_generated_method = "814B2171E11D5FAFC00A83F74AD83E8C")
     public DERObject getLoadedObject() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_175807687 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_175807687 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_175807687 = this.getDERObject();
-        varB4EAC82CA7396A68D541C85D26508E83_175807687.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_175807687.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_175807687;
-        // ---------- Original Method ----------
-        //return this.getDERObject();
+        
+        
     }
 
     
@@ -160,14 +165,15 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
         throws IOException;
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.930 -0400", hash_original_method = "A6F4AE428E861451DA18F2BDC0B16A3E", hash_generated_method = "37B5A9430E6DA3E6BE348738DD122E58")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1737126082 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1737126082 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1737126082 = "#"+new String(Hex.encode(string));
-        varB4EAC82CA7396A68D541C85D26508E83_1737126082.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1737126082.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1737126082;
-        // ---------- Original Method ----------
-        //return "#"+new String(Hex.encode(string));
+        
+        
     }
 
     

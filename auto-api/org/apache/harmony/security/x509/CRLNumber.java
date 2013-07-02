@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -21,46 +21,48 @@ public final class CRLNumber extends ExtensionValue {
     public  CRLNumber(byte[] encoding) throws IOException {
         super(encoding);
         number = new BigInteger((byte[]) ASN1.decode(encoding));
-        // ---------- Original Method ----------
-        //number = new BigInteger((byte[]) ASN1.decode(encoding));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.689 -0400", hash_original_method = "ABBA63B4278019F3F838A8B1357B04F0", hash_generated_method = "AEB4E1358A230BF6CF85F353CE98F91C")
     public BigInteger getNumber() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1742149489 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1742149489 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1742149489 = number;
-        varB4EAC82CA7396A68D541C85D26508E83_1742149489.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1742149489.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1742149489;
-        // ---------- Original Method ----------
-        //return number;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.689 -0400", hash_original_method = "264373D11CB6B7A95DC9A45E336ACDCB", hash_generated_method = "0A3747311B76CBD84AB60845BA99A1C5")
     @Override
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(number.toByteArray());
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_502774150 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_502774150;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(number.toByteArray());
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.690 -0400", hash_original_method = "C82E67A30D76F52198943C49A8E53C0F", hash_generated_method = "2A6D123AAAC0A36523C75A7BA374D166")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix).append("CRL Number: [ ").append(number).append(" ]\n");
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //sb.append(prefix).append("CRL Number: [ ").append(number).append(" ]\n");
+        
+        
     }
 
     

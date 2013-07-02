@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 
@@ -34,7 +34,7 @@ public class PerformanceCollector {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.937 -0400", hash_original_method = "405D2609A0193176D2AFC5D34E96663C", hash_generated_method = "3B2002EB63933A95B11D5472AF645642")
     public  PerformanceCollector() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -42,16 +42,16 @@ public class PerformanceCollector {
     public  PerformanceCollector(PerformanceResultsWriter writer) {
         setPerformanceResultsWriter(writer);
         addTaint(writer.getTaint());
-        // ---------- Original Method ----------
-        //setPerformanceResultsWriter(writer);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.937 -0400", hash_original_method = "37F3C4CB00E2065177941F440A1EB96E", hash_generated_method = "B9C8894AFEBF94656C66FAA8B38F355F")
     public void setPerformanceResultsWriter(PerformanceResultsWriter writer) {
         mPerfWriter = writer;
-        // ---------- Original Method ----------
-        //mPerfWriter = writer;
+        
+        
     }
 
     
@@ -60,26 +60,26 @@ public class PerformanceCollector {
         mPerfWriter.writeBeginSnapshot(label);
         startPerformanceSnapshot();
         addTaint(label.getTaint());
-        // ---------- Original Method ----------
-        //if (mPerfWriter != null)
-            //mPerfWriter.writeBeginSnapshot(label);
-        //startPerformanceSnapshot();
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.938 -0400", hash_original_method = "6B502666465A4C791D4C2AED784D2CB8", hash_generated_method = "9629ED59DD1CE15CDB311427C7BDA018")
     public Bundle endSnapshot() {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_1394867855 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_1394867855 = null; 
         endPerformanceSnapshot();
         mPerfWriter.writeEndSnapshot(mPerfSnapshot);
         varB4EAC82CA7396A68D541C85D26508E83_1394867855 = mPerfSnapshot;
-        varB4EAC82CA7396A68D541C85D26508E83_1394867855.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1394867855.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1394867855;
-        // ---------- Original Method ----------
-        //endPerformanceSnapshot();
-        //if (mPerfWriter != null)
-            //mPerfWriter.writeEndSnapshot(mPerfSnapshot);
-        //return mPerfSnapshot;
+        
+        
+        
+            
+        
     }
 
     
@@ -92,20 +92,20 @@ public class PerformanceCollector {
         mExecTime = SystemClock.uptimeMillis();
         mCpuTime = Process.getElapsedCpuTime();
         addTaint(label.getTaint());
-        // ---------- Original Method ----------
-        //if (mPerfWriter != null)
-            //mPerfWriter.writeStartTiming(label);
-        //mPerfMeasurement = new Bundle();
-        //mPerfMeasurement.putParcelableArrayList(
-                //METRIC_KEY_ITERATIONS, new ArrayList<Parcelable>());
-        //mExecTime = SystemClock.uptimeMillis();
-        //mCpuTime = Process.getElapsedCpuTime();
+        
+        
+            
+        
+        
+                
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.941 -0400", hash_original_method = "9C0B776255C5FFA271DF9EC0789087D7", hash_generated_method = "A500E485AF7AA1022E75EF18CA9227E5")
     public Bundle addIteration(String label) {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_1983916701 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_1983916701 = null; 
         mCpuTime = Process.getElapsedCpuTime() - mCpuTime;
         mExecTime = SystemClock.uptimeMillis() - mExecTime;
         Bundle iteration = new Bundle();
@@ -117,36 +117,36 @@ public class PerformanceCollector {
         mCpuTime = Process.getElapsedCpuTime();
         varB4EAC82CA7396A68D541C85D26508E83_1983916701 = iteration;
         addTaint(label.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1983916701.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1983916701.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1983916701;
-        // ---------- Original Method ----------
-        //mCpuTime = Process.getElapsedCpuTime() - mCpuTime;
-        //mExecTime = SystemClock.uptimeMillis() - mExecTime;
-        //Bundle iteration = new Bundle();
-        //iteration.putString(METRIC_KEY_LABEL, label);
-        //iteration.putLong(METRIC_KEY_EXECUTION_TIME, mExecTime);
-        //iteration.putLong(METRIC_KEY_CPU_TIME, mCpuTime);
-        //mPerfMeasurement.getParcelableArrayList(METRIC_KEY_ITERATIONS).add(iteration);
-        //mExecTime = SystemClock.uptimeMillis();
-        //mCpuTime = Process.getElapsedCpuTime();
-        //return iteration;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.942 -0400", hash_original_method = "CE19881A0670EADF6F440246450D4521", hash_generated_method = "D73619D8357D3898E79F700314224C2F")
     public Bundle stopTiming(String label) {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_548055083 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_548055083 = null; 
         addIteration(label);
         mPerfWriter.writeStopTiming(mPerfMeasurement);
         varB4EAC82CA7396A68D541C85D26508E83_548055083 = mPerfMeasurement;
         addTaint(label.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_548055083.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_548055083.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_548055083;
-        // ---------- Original Method ----------
-        //addIteration(label);
-        //if (mPerfWriter != null)
-            //mPerfWriter.writeStopTiming(mPerfMeasurement);
-        //return mPerfMeasurement;
+        
+        
+        
+            
+        
     }
 
     
@@ -155,9 +155,9 @@ public class PerformanceCollector {
         mPerfWriter.writeMeasurement(label, value);
         addTaint(label.getTaint());
         addTaint(value);
-        // ---------- Original Method ----------
-        //if (mPerfWriter != null)
-            //mPerfWriter.writeMeasurement(label, value);
+        
+        
+            
     }
 
     
@@ -166,9 +166,9 @@ public class PerformanceCollector {
         mPerfWriter.writeMeasurement(label, value);
         addTaint(label.getTaint());
         addTaint(value);
-        // ---------- Original Method ----------
-        //if (mPerfWriter != null)
-            //mPerfWriter.writeMeasurement(label, value);
+        
+        
+            
     }
 
     
@@ -177,9 +177,9 @@ public class PerformanceCollector {
         mPerfWriter.writeMeasurement(label, value);
         addTaint(label.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //if (mPerfWriter != null)
-            //mPerfWriter.writeMeasurement(label, value);
+        
+        
+            
     }
 
     
@@ -193,20 +193,20 @@ public class PerformanceCollector {
             String key = varC1F757575F721DB498F3C05BE0B52083_2042529006.next();
             {
                 mPerfSnapshot.putLong("pre_" + key, binderCounts.getLong(key));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         startAllocCounting();
         mSnapshotExecTime = SystemClock.uptimeMillis();
         mSnapshotCpuTime = Process.getElapsedCpuTime();
-        // ---------- Original Method ----------
-        //mPerfSnapshot = new Bundle();
-        //Bundle binderCounts = getBinderCounts();
-        //for (String key : binderCounts.keySet()) {
-            //mPerfSnapshot.putLong("pre_" + key, binderCounts.getLong(key));
-        //}
-        //startAllocCounting();
-        //mSnapshotExecTime = SystemClock.uptimeMillis();
-        //mSnapshotCpuTime = Process.getElapsedCpuTime();
+        
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -231,8 +231,8 @@ public class PerformanceCollector {
             String key = varC1F757575F721DB498F3C05BE0B52083_882604732.next();
             {
                 mPerfSnapshot.putLong(key, binderCounts.getLong(key));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Bundle allocCounts = getAllocCounts();
         {
             Iterator<String> var2BBFB4C3EA5780E4017714F0682556AF_1478463710 = (allocCounts.keySet()).iterator();
@@ -240,8 +240,8 @@ public class PerformanceCollector {
             String key = var2BBFB4C3EA5780E4017714F0682556AF_1478463710.next();
             {
                 mPerfSnapshot.putLong(key, allocCounts.getLong(key));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mPerfSnapshot.putLong(METRIC_KEY_EXECUTION_TIME, mSnapshotExecTime);
         mPerfSnapshot.putLong(METRIC_KEY_CPU_TIME, mSnapshotCpuTime);
         mPerfSnapshot.putLong(METRIC_KEY_NATIVE_SIZE, nativeMax);
@@ -259,8 +259,8 @@ public class PerformanceCollector {
         mPerfSnapshot.putLong(METRIC_KEY_OTHER_PSS, memInfo.otherPss);
         mPerfSnapshot.putLong(METRIC_KEY_OTHER_PRIVATE_DIRTY, memInfo.otherPrivateDirty);
         mPerfSnapshot.putLong(METRIC_KEY_OTHER_SHARED_DIRTY, memInfo.otherSharedDirty);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

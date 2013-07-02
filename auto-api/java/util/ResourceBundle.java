@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import dalvik.system.VMStack;
 import java.io.File;
@@ -31,10 +31,11 @@ public abstract class ResourceBundle {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.618 -0400", hash_original_method = "D851446F8E957DA41A03795AD93701D3", hash_generated_method = "5DB393969C6D50D5978689CA2C066976")
     public  ResourceBundle() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ResourceBundle getBundle(String bundleName) throws MissingResourceException {
         ClassLoader classLoader = VMStack.getCallingClassLoader();
         if (classLoader == null) {
@@ -44,6 +45,7 @@ public abstract class ResourceBundle {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ResourceBundle getBundle(String bundleName, Locale locale) {
         ClassLoader classLoader = VMStack.getCallingClassLoader();
         if (classLoader == null) {
@@ -77,6 +79,7 @@ public abstract class ResourceBundle {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static MissingResourceException missingResourceException(String className, String key) {
         String detail = "Can't find resource for bundle '" + className + "', key '" + key + "'";
         throw new MissingResourceException(detail, className, key);
@@ -205,67 +208,67 @@ public abstract class ResourceBundle {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.620 -0400", hash_original_method = "4C873AD5A0D4D89DBA836C1C6CEC9B8D", hash_generated_method = "9A4632412C1B56665F0D4048B962E462")
     public Locale getLocale() {
-        Locale varB4EAC82CA7396A68D541C85D26508E83_1738556197 = null; //Variable for return #1
+        Locale varB4EAC82CA7396A68D541C85D26508E83_1738556197 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1738556197 = locale;
-        varB4EAC82CA7396A68D541C85D26508E83_1738556197.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1738556197.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1738556197;
-        // ---------- Original Method ----------
-        //return locale;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.621 -0400", hash_original_method = "5F9FE4637FD5B65A8B96E90EE5158818", hash_generated_method = "21A2C307B4544986EE4AA4B0E8113049")
     public final Object getObject(String key) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1201033221 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1201033221 = null; 
         ResourceBundle last;
         ResourceBundle theParent = this;
         {
             Object result = theParent.handleGetObject(key);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1201033221 = result;
-            } //End block
+            } 
             last = theParent;
             theParent = theParent.parent;
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw missingResourceException(last.getClass().getName(), key);
         addTaint(key.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1201033221.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1201033221.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1201033221;
-        // ---------- Original Method ----------
-        //ResourceBundle last, theParent = this;
-        //do {
-            //Object result = theParent.handleGetObject(key);
-            //if (result != null) {
-                //return result;
-            //}
-            //last = theParent;
-            //theParent = theParent.parent;
-        //} while (theParent != null);
-        //throw missingResourceException(last.getClass().getName(), key);
+        
+        
+        
+            
+            
+                
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.622 -0400", hash_original_method = "BF93FB2083E0950C32E8F3481E34A9FB", hash_generated_method = "E63E3D7CFFA309B218E04322F0C843A0")
     public final String getString(String key) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1932733927 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1932733927 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1932733927 = (String) getObject(key);
         addTaint(key.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1932733927.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1932733927.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1932733927;
-        // ---------- Original Method ----------
-        //return (String) getObject(key);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.623 -0400", hash_original_method = "D1E41ED4E95B94C38D8DBD0F59139218", hash_generated_method = "CEE32EF5B2B54E30FEF2333EB0427E23")
     public final String[] getStringArray(String key) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1173201234 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1173201234 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1173201234 = (String[]) getObject(key);
         addTaint(key.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1173201234.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1173201234.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1173201234;
-        // ---------- Original Method ----------
-        //return (String[]) getObject(key);
+        
+        
     }
 
     
@@ -360,11 +363,12 @@ public abstract class ResourceBundle {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.624 -0400", hash_original_method = "D114069C12BFDC5397D50DBECBCF423F", hash_generated_method = "A62ECC3BD9BC4EEE3A10E4238EC03CC2")
     protected void setParent(ResourceBundle bundle) {
         parent = bundle;
-        // ---------- Original Method ----------
-        //parent = bundle;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Locale strip(Locale locale) {
         String language = locale.getLanguage();
         String country = locale.getCountry();
@@ -385,11 +389,12 @@ public abstract class ResourceBundle {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.625 -0400", hash_original_method = "B4C0A2B69538F3C9760ADE4F445366A0", hash_generated_method = "B437BB1B169BA6A1FAF1F1173446D3B3")
     private void setLocale(Locale locale) {
         this.locale = locale;
-        // ---------- Original Method ----------
-        //this.locale = locale;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void clearCache() {
         cache.remove(ClassLoader.getSystemClassLoader());
     }
@@ -403,50 +408,53 @@ public abstract class ResourceBundle {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.625 -0400", hash_original_method = "2C99687E9BDD3B9ED091517A1B0B0A5F", hash_generated_method = "9135B4954C46D0549948368BEBD483C6")
     public boolean containsKey(String key) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         boolean varC1F1394BBE1C1666EB466B1C1659D67F_1040520313 = (keySet().contains(key));
         addTaint(key.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1807067139 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1807067139;
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //throw new NullPointerException();
-        //}
-        //return keySet().contains(key);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.626 -0400", hash_original_method = "D187399FB44FEACCB04758A5D261BC63", hash_generated_method = "640DA5D6D526944321D1343A4007F8C2")
     public Set<String> keySet() {
-        Set<String> varB4EAC82CA7396A68D541C85D26508E83_475290792 = null; //Variable for return #1
+        Set<String> varB4EAC82CA7396A68D541C85D26508E83_475290792 = null; 
         Set<String> ret = new HashSet<String>();
         Enumeration<String> keys = getKeys();
         {
             boolean var92FA05435258CA7C805716F7AD9C73B4_1249138732 = (keys.hasMoreElements());
             {
                 ret.add(keys.nextElement());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_475290792 = ret;
-        varB4EAC82CA7396A68D541C85D26508E83_475290792.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_475290792.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_475290792;
-        // ---------- Original Method ----------
-        //Set<String> ret = new HashSet<String>();
-        //Enumeration<String> keys = getKeys();
-        //while (keys.hasMoreElements()) {
-            //ret.add(keys.nextElement());
-        //}
-        //return ret;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.628 -0400", hash_original_method = "DE22A4C1E400841A42E2FCE258F58109", hash_generated_method = "A7508734029470C495BF1F89A6171197")
     protected Set<String> handleKeySet() {
-        Set<String> varB4EAC82CA7396A68D541C85D26508E83_283995607 = null; //Variable for return #1
+        Set<String> varB4EAC82CA7396A68D541C85D26508E83_283995607 = null; 
         Set<String> set = keySet();
         Set<String> ret = new HashSet<String>();
         {
@@ -458,22 +466,22 @@ public abstract class ResourceBundle {
                     boolean var3EACB5F53EB01121F6C3A0A5551029B5_1358741402 = (handleGetObject(key) != null);
                     {
                         ret.add(key);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_283995607 = ret;
-        varB4EAC82CA7396A68D541C85D26508E83_283995607.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_283995607.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_283995607;
-        // ---------- Original Method ----------
-        //Set<String> set = keySet();
-        //Set<String> ret = new HashSet<String>();
-        //for (String key : set) {
-            //if (handleGetObject(key) != null) {
-                //ret.add(key);
-            //}
-        //}
-        //return ret;
+        
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -482,32 +490,32 @@ public abstract class ResourceBundle {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.629 -0400", hash_original_method = "5BE09748C47EC015C065AB0FE98F6425", hash_generated_method = "5BE09748C47EC015C065AB0FE98F6425")
         public MissingBundle ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.629 -0400", hash_original_method = "FAC6F24BFEFF063353B4F824D489D5CA", hash_generated_method = "73B1D44295A401E524F1CD8F1AD588B8")
         @Override
         public Enumeration<String> getKeys() {
-            Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_683304669 = null; //Variable for return #1
+            Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_683304669 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_683304669 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_683304669.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_683304669.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_683304669;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.630 -0400", hash_original_method = "F3BE912397EA9F5D184546387C802359", hash_generated_method = "7D0B38FEE9DBAE4051407AEEA4BEB34F")
         @Override
         public Object handleGetObject(String name) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1284166791 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1284166791 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1284166791 = null;
             addTaint(name.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1284166791.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1284166791.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1284166791;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
@@ -523,10 +531,10 @@ public abstract class ResourceBundle {
             listClass.add(format);
             super.format = Collections.unmodifiableList(listClass);
             addTaint(format.getTaint());
-            // ---------- Original Method ----------
-            //listClass = new ArrayList<String>();
-            //listClass.add(format);
-            //super.format = Collections.unmodifiableList(listClass);
+            
+            
+            
+            
         }
 
         
@@ -534,28 +542,28 @@ public abstract class ResourceBundle {
         public  NoFallbackControl(List<String> list) {
             super.format = list;
             addTaint(list.getTaint());
-            // ---------- Original Method ----------
-            //super.format = list;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.632 -0400", hash_original_method = "BF31820043735E3E2FECA9848CEFC17E", hash_generated_method = "AC1B401EE7A43C9C2C9EFDB06DA478E0")
         @Override
         public Locale getFallbackLocale(String baseName, Locale locale) {
-            Locale varB4EAC82CA7396A68D541C85D26508E83_111745060 = null; //Variable for return #1
+            Locale varB4EAC82CA7396A68D541C85D26508E83_111745060 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_111745060 = null;
             addTaint(baseName.getTaint());
             addTaint(locale.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_111745060.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_111745060.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_111745060;
-            // ---------- Original Method ----------
-            //if (baseName == null || locale == null) {
-                //throw new NullPointerException();
-            //}
-            //return null;
+            
+            
+                
+            
+            
         }
 
         
@@ -583,10 +591,10 @@ public abstract class ResourceBundle {
             listClass.add(format);
             super.format = Collections.unmodifiableList(listClass);
             addTaint(format.getTaint());
-            // ---------- Original Method ----------
-            //listClass = new ArrayList<String>();
-            //listClass.add(format);
-            //super.format = Collections.unmodifiableList(listClass);
+            
+            
+            
+            
         }
 
         
@@ -605,11 +613,11 @@ public abstract class ResourceBundle {
             listClass.add(JAVACLASS);
             listClass.add(JAVAPROPERTIES);
             format = Collections.unmodifiableList(listClass);
-            // ---------- Original Method ----------
-            //listClass = new ArrayList<String>();
-            //listClass.add(JAVACLASS);
-            //listClass.add(JAVAPROPERTIES);
-            //format = Collections.unmodifiableList(listClass);
+            
+            
+            
+            
+            
         }
 
         
@@ -655,10 +663,10 @@ public abstract class ResourceBundle {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.636 -0400", hash_original_method = "45631C4F246F185145A9ED45ADEA49D4", hash_generated_method = "0D1D1ABDF102E0F090FE9936ED34EA77")
         public List<Locale> getCandidateLocales(String baseName, Locale locale) {
-            List<Locale> varB4EAC82CA7396A68D541C85D26508E83_437142843 = null; //Variable for return #1
+            List<Locale> varB4EAC82CA7396A68D541C85D26508E83_437142843 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             List<Locale> retList = new ArrayList<Locale>();
             String language = locale.getLanguage();
             String country = locale.getCountry();
@@ -667,101 +675,101 @@ public abstract class ResourceBundle {
                 boolean varEC1127D11A1A0019D583D076F527D9CF_2069231101 = (!EMPTY_STRING.equals(variant));
                 {
                     retList.add(new Locale(language, country, variant));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varDEA1B14FA01AF7B442A3DD6CA499F74C_1165196512 = (!EMPTY_STRING.equals(country));
                 {
                     retList.add(new Locale(language, country));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varDCEF02BC51EEAFB5ACD7D89F7C557080_598794 = (!EMPTY_STRING.equals(language));
                 {
                     retList.add(new Locale(language));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             retList.add(Locale.ROOT);
             varB4EAC82CA7396A68D541C85D26508E83_437142843 = retList;
             addTaint(baseName.getTaint());
             addTaint(locale.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_437142843.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_437142843.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_437142843;
-            // ---------- Original Method ----------
-            //if (baseName == null || locale == null) {
-                //throw new NullPointerException();
-            //}
-            //List<Locale> retList = new ArrayList<Locale>();
-            //String language = locale.getLanguage();
-            //String country = locale.getCountry();
-            //String variant = locale.getVariant();
-            //if (!EMPTY_STRING.equals(variant)) {
-                //retList.add(new Locale(language, country, variant));
-            //}
-            //if (!EMPTY_STRING.equals(country)) {
-                //retList.add(new Locale(language, country));
-            //}
-            //if (!EMPTY_STRING.equals(language)) {
-                //retList.add(new Locale(language));
-            //}
-            //retList.add(Locale.ROOT);
-            //return retList;
+            
+            
+                
+            
+            
+            
+            
+            
+            
+                
+            
+            
+                
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.636 -0400", hash_original_method = "84F7301A6175FB80884F0D8355AEA589", hash_generated_method = "EE4D8B3A27CB2DADFB42BC1415D60CAC")
         public List<String> getFormats(String baseName) {
-            List<String> varB4EAC82CA7396A68D541C85D26508E83_1907271248 = null; //Variable for return #1
+            List<String> varB4EAC82CA7396A68D541C85D26508E83_1907271248 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1907271248 = format;
             addTaint(baseName.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1907271248.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1907271248.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1907271248;
-            // ---------- Original Method ----------
-            //if (baseName == null) {
-                //throw new NullPointerException();
-            //}
-            //return format;
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.637 -0400", hash_original_method = "42195BC54E9E8857F62CE9C9CCBB8A2E", hash_generated_method = "51D4958E8DEC4475135981345FB2F88D")
         public Locale getFallbackLocale(String baseName, Locale locale) {
-            Locale varB4EAC82CA7396A68D541C85D26508E83_2005977983 = null; //Variable for return #1
-            Locale varB4EAC82CA7396A68D541C85D26508E83_1865693614 = null; //Variable for return #2
+            Locale varB4EAC82CA7396A68D541C85D26508E83_2005977983 = null; 
+            Locale varB4EAC82CA7396A68D541C85D26508E83_1865693614 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             {
                 boolean varDEF5D6FEDD750F75376A958DD95E60D5_730149004 = (Locale.getDefault() != locale);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_2005977983 = Locale.getDefault();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1865693614 = null;
             addTaint(baseName.getTaint());
             addTaint(locale.getTaint());
-            Locale varA7E53CE21691AB073D9660D615818899_1358746106; //Final return value
+            Locale varA7E53CE21691AB073D9660D615818899_1358746106; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1358746106 = varB4EAC82CA7396A68D541C85D26508E83_2005977983;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1358746106 = varB4EAC82CA7396A68D541C85D26508E83_1865693614;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1358746106.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1358746106.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1358746106;
-            // ---------- Original Method ----------
-            //if (baseName == null || locale == null) {
-                //throw new NullPointerException();
-            //}
-            //if (Locale.getDefault() != locale) {
-                //return Locale.getDefault();
-            //}
-            //return null;
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
@@ -769,15 +777,15 @@ public abstract class ResourceBundle {
         public ResourceBundle newBundle(String baseName, Locale locale,
                 String format, ClassLoader loader, boolean reload) throws IllegalAccessException, InstantiationException,
                 IOException {
-            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_1627065801 = null; //Variable for return #1
-            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_1773894970 = null; //Variable for return #2
-            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_1030994065 = null; //Variable for return #3
-            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_32822887 = null; //Variable for return #4
-            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_592096044 = null; //Variable for return #5
-            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_1054788342 = null; //Variable for return #6
+            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_1627065801 = null; 
+            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_1773894970 = null; 
+            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_1030994065 = null; 
+            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_32822887 = null; 
+            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_592096044 = null; 
+            ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_1054788342 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             final String bundleName = toBundleName(baseName, locale);
             final ClassLoader clsloader = loader;
             ResourceBundle ret;
@@ -788,26 +796,26 @@ public abstract class ResourceBundle {
                     try 
                     {
                         cls = clsloader.loadClass(bundleName);
-                    } //End block
+                    } 
                     catch (Exception e)
                     { }
                     catch (NoClassDefFoundError e)
                     { }
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1627065801 = null;
-                    } //End block
+                    } 
                     try 
                     {
                         ResourceBundle bundle = (ResourceBundle) cls.newInstance();
                         bundle.setLocale(locale);
                         varB4EAC82CA7396A68D541C85D26508E83_1773894970 = bundle;
-                    } //End block
+                    } 
                     catch (NullPointerException e)
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1030994065 = null;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 boolean varD6A8253E2C839BC6EC4A2010754A1DCD_1122598986 = (format.equals(JAVAPROPERTIES));
                 {
@@ -818,70 +826,70 @@ public abstract class ResourceBundle {
                         try 
                         {
                             url = loader.getResource(resourceName);
-                        } //End block
+                        } 
                         catch (NullPointerException e)
                         { }
                         {
                             URLConnection con = url.openConnection();
                             con.setUseCaches(false);
                             streams = con.getInputStream();
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         try 
                         {
                             streams = clsloader.getResourceAsStream(resourceName);
-                        } //End block
+                        } 
                         catch (NullPointerException e)
                         { }
-                    } //End block
+                    } 
                     {
                         try 
                         {
                             ret = new PropertyResourceBundle(new InputStreamReader(streams));
                             ret.setLocale(locale);
                             streams.close();
-                        } //End block
+                        } 
                         catch (IOException e)
                         {
                             return null;
-                        } //End block
+                        } 
                         varB4EAC82CA7396A68D541C85D26508E83_592096044 = ret;
-                    } //End block
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_1054788342 = null;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
             addTaint(baseName.getTaint());
             addTaint(locale.getTaint());
             addTaint(format.getTaint());
             addTaint(loader.getTaint());
             addTaint(reload);
-            ResourceBundle varA7E53CE21691AB073D9660D615818899_1202625203; //Final return value
+            ResourceBundle varA7E53CE21691AB073D9660D615818899_1202625203; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1202625203 = varB4EAC82CA7396A68D541C85D26508E83_1627065801;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1202625203 = varB4EAC82CA7396A68D541C85D26508E83_1773894970;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_1202625203 = varB4EAC82CA7396A68D541C85D26508E83_1030994065;
                     break;
-                case 4: //Assign result for return ordinal #4
+                case 4: 
                     varA7E53CE21691AB073D9660D615818899_1202625203 = varB4EAC82CA7396A68D541C85D26508E83_32822887;
                     break;
-                case 5: //Assign result for return ordinal #5
+                case 5: 
                     varA7E53CE21691AB073D9660D615818899_1202625203 = varB4EAC82CA7396A68D541C85D26508E83_592096044;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1202625203 = varB4EAC82CA7396A68D541C85D26508E83_1054788342;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1202625203.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1202625203.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1202625203;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -889,16 +897,16 @@ public abstract class ResourceBundle {
         public long getTimeToLive(String baseName, Locale locale) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             addTaint(baseName.getTaint());
             addTaint(locale.getTaint());
             long var0F5264038205EDFB1AC05FBB0E8C5E94_1744883068 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1744883068;
-            // ---------- Original Method ----------
-            //if (baseName == null || locale == null) {
-                //throw new NullPointerException();
-            //}
-            //return TTL_NO_EXPIRATION_CONTROL;
+            
+            
+                
+            
+            
         }
 
         
@@ -908,27 +916,27 @@ public abstract class ResourceBundle {
                 long loadTime) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             String bundleName = toBundleName(baseName, locale);
             String suffix = format;
             {
                 boolean var363A8B2CC1CE315300A409E41427D499_1653360362 = (format.equals(JAVACLASS));
                 {
                     suffix = "class";
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varD6A8253E2C839BC6EC4A2010754A1DCD_836050670 = (format.equals(JAVAPROPERTIES));
                 {
                     suffix = "properties";
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             String urlname = toResourceName(bundleName, suffix);
             URL url = loader.getResource(urlname);
             {
                 String fileName = url.getFile();
                 long lastModified = new File(fileName).lastModified();
-            } //End block
+            } 
             addTaint(baseName.getTaint());
             addTaint(locale.getTaint());
             addTaint(format.getTaint());
@@ -937,40 +945,40 @@ public abstract class ResourceBundle {
             addTaint(loadTime);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_44975184 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_44975184;
-            // ---------- Original Method ----------
-            //if (bundle == null) {
-                //throw new NullPointerException();
-            //}
-            //String bundleName = toBundleName(baseName, locale);
-            //String suffix = format;
-            //if (format.equals(JAVACLASS)) {
-                //suffix = "class";
-            //}
-            //if (format.equals(JAVAPROPERTIES)) {
-                //suffix = "properties";
-            //}
-            //String urlname = toResourceName(bundleName, suffix);
-            //URL url = loader.getResource(urlname);
-            //if (url != null) {
-                //String fileName = url.getFile();
-                //long lastModified = new File(fileName).lastModified();
-                //if (lastModified > loadTime) {
-                    //return true;
-                //}
-            //}
-            //return false;
+            
+            
+                
+            
+            
+            
+            
+                
+            
+            
+                
+            
+            
+            
+            
+                
+                
+                
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.641 -0400", hash_original_method = "95EF33F16C513E472DD742F40E256E32", hash_generated_method = "26290CB3EC8A08B70E5F93EC7D7A4D00")
         public String toBundleName(String baseName, Locale locale) {
-            String varB4EAC82CA7396A68D541C85D26508E83_858811815 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_858811815 = null; 
             final String emptyString = EMPTY_STRING;
             final String preString = UNDER_SCORE;
             final String underline = UNDER_SCORE;
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             StringBuilder ret = new StringBuilder();
             StringBuilder prefix = new StringBuilder();
             ret.append(baseName);
@@ -979,11 +987,11 @@ public abstract class ResourceBundle {
                 {
                     ret.append(underline);
                     ret.append(locale.getLanguage());
-                } //End block
+                } 
                 {
                     prefix.append(preString);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var019626354072A0B1F8CE16171922D987_1394255929 = (!locale.getCountry().equals(emptyString));
                 {
@@ -991,51 +999,51 @@ public abstract class ResourceBundle {
                     ret.append(underline);
                     ret.append(locale.getCountry());
                     prefix = new StringBuilder();
-                } //End block
+                } 
                 {
                     prefix.append(preString);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var38517FCA653A00384EA828777964B7DD_845416492 = (!locale.getVariant().equals(emptyString));
                 {
                     ret.append((CharSequence) prefix);
                     ret.append(underline);
                     ret.append(locale.getVariant());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_858811815 = ret.toString();
             addTaint(baseName.getTaint());
             addTaint(locale.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_858811815.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_858811815.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_858811815;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.642 -0400", hash_original_method = "FCB3528CF98D643CACA491DF306BC818", hash_generated_method = "C679175326445015B196DA7963DD43AC")
         public final String toResourceName(String bundleName, String suffix) {
-            String varB4EAC82CA7396A68D541C85D26508E83_2116066450 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_2116066450 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             StringBuilder ret = new StringBuilder(bundleName.replace('.', '/'));
             ret.append('.');
             ret.append(suffix);
             varB4EAC82CA7396A68D541C85D26508E83_2116066450 = ret.toString();
             addTaint(bundleName.getTaint());
             addTaint(suffix.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2116066450.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2116066450.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2116066450;
-            // ---------- Original Method ----------
-            //if (suffix == null) {
-                //throw new NullPointerException();
-            //}
-            //StringBuilder ret = new StringBuilder(bundleName.replace('.', '/'));
-            //ret.append('.');
-            //ret.append(suffix);
-            //return ret.toString();
+            
+            
+                
+            
+            
+            
+            
+            
         }
 
         

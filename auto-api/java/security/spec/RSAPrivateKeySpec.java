@@ -1,11 +1,11 @@
 package java.security.spec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 
@@ -21,31 +21,31 @@ public class RSAPrivateKeySpec implements KeySpec {
     public  RSAPrivateKeySpec(BigInteger modulus, BigInteger privateExponent) {
         this.modulus = modulus;
         this.privateExponent = privateExponent;
-        // ---------- Original Method ----------
-        //this.modulus = modulus;
-        //this.privateExponent = privateExponent;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.136 -0400", hash_original_method = "A6C1BE2632CACEB59AFFE6BB866E7B69", hash_generated_method = "4BE7263C90E04767D981FB9396836A66")
     public BigInteger getModulus() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_550690109 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_550690109 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_550690109 = modulus;
-        varB4EAC82CA7396A68D541C85D26508E83_550690109.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_550690109.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_550690109;
-        // ---------- Original Method ----------
-        //return modulus;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.137 -0400", hash_original_method = "DA7C8A3DDA38443F1F2D4DBDF52134FD", hash_generated_method = "9C7E2F545F013EC10AC520FBA836ABEE")
     public BigInteger getPrivateExponent() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1013748224 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1013748224 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1013748224 = privateExponent;
-        varB4EAC82CA7396A68D541C85D26508E83_1013748224.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1013748224.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1013748224;
-        // ---------- Original Method ----------
-        //return privateExponent;
+        
+        
     }
 
     

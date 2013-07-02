@@ -1,11 +1,11 @@
 package org.apache.commons.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class FilenameUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.320 -0400", hash_original_method = "461960E755FB4E28A3B792846EE26E3A", hash_generated_method = "D1DDAB26E96BB650AFF4B4AA3C6F7EF3")
     public  FilenameUtils() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,28 +32,33 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String normalize(String filename) {
         return doNormalize(filename, SYSTEM_SEPARATOR, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String normalize(String filename, boolean unixSeparator) {
         char separator = unixSeparator ? UNIX_SEPARATOR : WINDOWS_SEPARATOR;
         return doNormalize(filename, separator, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String normalizeNoEndSeparator(String filename) {
         return doNormalize(filename, SYSTEM_SEPARATOR, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String normalizeNoEndSeparator(String filename, boolean unixSeparator) {
         char separator = unixSeparator ? UNIX_SEPARATOR : WINDOWS_SEPARATOR;
         return doNormalize(filename, separator, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String doNormalize(String filename, char separator, boolean keepSeparator) {
         if (filename == null) {
             return null;
@@ -134,6 +139,7 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String concat(String basePath, String fullFilenameToAdd) {
         int prefix = getPrefixLength(fullFilenameToAdd);
         if (prefix < 0) {
@@ -172,6 +178,7 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String separatorsToUnix(String path) {
         if (path == null || path.indexOf(WINDOWS_SEPARATOR) == -1) {
             return path;
@@ -180,6 +187,7 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String separatorsToWindows(String path) {
         if (path == null || path.indexOf(UNIX_SEPARATOR) == -1) {
             return path;
@@ -188,6 +196,7 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String separatorsToSystem(String path) {
         if (path == null) {
             return null;
@@ -200,6 +209,7 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getPrefixLength(String filename) {
         if (filename == null) {
             return -1;
@@ -254,6 +264,7 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int indexOfLastSeparator(String filename) {
         if (filename == null) {
             return -1;
@@ -264,6 +275,7 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int indexOfExtension(String filename) {
         if (filename == null) {
             return -1;
@@ -274,6 +286,7 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getPrefix(String filename) {
         if (filename == null) {
             return null;
@@ -289,16 +302,19 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getPath(String filename) {
         return doGetPath(filename, 1);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getPathNoEndSeparator(String filename) {
         return doGetPath(filename, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String doGetPath(String filename, int separatorAdd) {
         if (filename == null) {
             return null;
@@ -316,16 +332,19 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getFullPath(String filename) {
         return doGetFullPath(filename, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getFullPathNoEndSeparator(String filename) {
         return doGetFullPath(filename, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String doGetFullPath(String filename, boolean includeSeparator) {
         if (filename == null) {
             return null;
@@ -353,6 +372,7 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getName(String filename) {
         if (filename == null) {
             return null;
@@ -362,11 +382,13 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getBaseName(String filename) {
         return removeExtension(getName(filename));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getExtension(String filename) {
         if (filename == null) {
             return null;
@@ -380,6 +402,7 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String removeExtension(String filename) {
         if (filename == null) {
             return null;
@@ -393,26 +416,31 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean equals(String filename1, String filename2) {
         return equals(filename1, filename2, false, IOCase.SENSITIVE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean equalsOnSystem(String filename1, String filename2) {
         return equals(filename1, filename2, false, IOCase.SYSTEM);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean equalsNormalized(String filename1, String filename2) {
         return equals(filename1, filename2, true, IOCase.SENSITIVE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean equalsNormalizedOnSystem(String filename1, String filename2) {
         return equals(filename1, filename2, true, IOCase.SYSTEM);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean equals(
             String filename1, String filename2,
             boolean normalized, IOCase caseSensitivity) {
@@ -434,6 +462,7 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isExtension(String filename, String extension) {
         if (filename == null) {
             return false;
@@ -446,6 +475,7 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isExtension(String filename, String[] extensions) {
         if (filename == null) {
             return false;
@@ -463,6 +493,7 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isExtension(String filename, Collection<String> extensions) {
         if (filename == null) {
             return false;
@@ -480,16 +511,19 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean wildcardMatch(String filename, String wildcardMatcher) {
         return wildcardMatch(filename, wildcardMatcher, IOCase.SENSITIVE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean wildcardMatchOnSystem(String filename, String wildcardMatcher) {
         return wildcardMatch(filename, wildcardMatcher, IOCase.SYSTEM);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean wildcardMatch(String filename, String wildcardMatcher, IOCase caseSensitivity) {
         if (filename == null && wildcardMatcher == null) {
             return true;
@@ -552,6 +586,7 @@ public class FilenameUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String[] splitOnTokens(String text) {
         if (text.indexOf('?') == -1 && text.indexOf('*') == -1) {
             return new String[] { text };

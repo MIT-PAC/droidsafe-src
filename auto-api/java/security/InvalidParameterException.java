@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class InvalidParameterException extends IllegalArgumentException {
@@ -14,13 +14,13 @@ public class InvalidParameterException extends IllegalArgumentException {
     public  InvalidParameterException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.172 -0400", hash_original_method = "9CA8CE9AC39DC45F96DE6473AB9F71B5", hash_generated_method = "A364D8E4484CEE6C11C8D78768D38217")
     public  InvalidParameterException() {
-        // ---------- Original Method ----------
+        
     }
 
     

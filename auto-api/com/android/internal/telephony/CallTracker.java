@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.AsyncResult;
 import android.os.Handler;
@@ -30,10 +30,11 @@ public abstract class CallTracker extends Handler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.523 -0400", hash_original_method = "A8AA2346503563FF548E182F14163DE2", hash_generated_method = "A8AA2346503563FF548E182F14163DE2")
     public CallTracker ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.523 -0400", hash_original_method = "9E5AE1F19CA0B0DDA40DD7B38560CD23", hash_generated_method = "2B9BEB78CC6F0EE36F034B6960160DB4")
     protected void pollCallsWhenSafe() {
         needsPoll = true;
@@ -42,29 +43,31 @@ public abstract class CallTracker extends Handler {
             {
                 lastRelevantPoll = obtainMessage(EVENT_POLL_CALLS_RESULT);
                 cm.getCurrentCalls(lastRelevantPoll);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //needsPoll = true;
-        //if (checkNoOperationsPending()) {
-            //lastRelevantPoll = obtainMessage(EVENT_POLL_CALLS_RESULT);
-            //cm.getCurrentCalls(lastRelevantPoll);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.523 -0400", hash_original_method = "33B1B958F6F144EDE51B6E4EC19481A6", hash_generated_method = "5697EE82B0FA539118EB2A4DD834458B")
     protected void pollCallsAfterDelay() {
         Message msg = obtainMessage();
         msg.what = EVENT_REPOLL_AFTER_DELAY;
         sendMessageDelayed(msg, POLL_DELAY_MSEC);
-        // ---------- Original Method ----------
-        //Message msg = obtainMessage();
-        //msg.what = EVENT_REPOLL_AFTER_DELAY;
-        //sendMessageDelayed(msg, POLL_DELAY_MSEC);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.524 -0400", hash_original_method = "F4B21BAFF99BD772D70D384A80DFCDD5", hash_generated_method = "948DCFCCD84F2B74B81B5812D2D6C4A0")
     protected boolean isCommandExceptionRadioNotAvailable(Throwable e) {
         boolean var35FACE3E29BC603CF02727C2F654B8B3_1101562563 = (e != null && e instanceof CommandException
@@ -73,36 +76,38 @@ public abstract class CallTracker extends Handler {
         addTaint(e.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_884565725 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_884565725;
-        // ---------- Original Method ----------
-        //return e != null && e instanceof CommandException
-                //&& ((CommandException)e).getCommandError()
-                        //== CommandException.Error.RADIO_NOT_AVAILABLE;
+        
+        
+                
+                        
     }
 
     
     protected abstract void handlePollCalls(AsyncResult ar);
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.524 -0400", hash_original_method = "EE2AAD2C27709A74385988B0D484AC09", hash_generated_method = "FE80939189D3C44DD3848560891262C1")
     protected void handleRadioAvailable() {
         pollCallsWhenSafe();
-        // ---------- Original Method ----------
-        //pollCallsWhenSafe();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.524 -0400", hash_original_method = "91C44089CAD2AA24231C5131EC918B32", hash_generated_method = "C5BCB54485F563A2E6424268F80BD31A")
     protected Message obtainNoPollCompleteMessage(int what) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_937899618 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_937899618 = null; 
         lastRelevantPoll = null;
         varB4EAC82CA7396A68D541C85D26508E83_937899618 = obtainMessage(what);
         addTaint(what);
-        varB4EAC82CA7396A68D541C85D26508E83_937899618.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_937899618.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_937899618;
-        // ---------- Original Method ----------
-        //pendingOperations++;
-        //lastRelevantPoll = null;
-        //return obtainMessage(what);
+        
+        
+        
+        
     }
 
     
@@ -112,10 +117,10 @@ public abstract class CallTracker extends Handler {
                 pendingOperations);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_534507054 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_534507054;
-        // ---------- Original Method ----------
-        //if (DBG_POLL) log("checkNoOperationsPending: pendingOperations=" +
-                //pendingOperations);
-        //return pendingOperations == 0;
+        
+        
+                
+        
     }
 
     

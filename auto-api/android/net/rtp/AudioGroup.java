@@ -1,11 +1,11 @@
 package android.net.rtp;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.media.AudioManager;
 import java.util.HashMap;
@@ -25,23 +25,24 @@ public class AudioGroup {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.506 -0400", hash_original_method = "9E113DACC3DCFC949CC90EBD557A2ACA", hash_generated_method = "0A80C29DBACA16C4F76FC1A830D63EA7")
     public  AudioGroup() {
         mStreams = new HashMap<AudioStream, Integer>();
-        // ---------- Original Method ----------
-        //mStreams = new HashMap<AudioStream, Integer>();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.507 -0400", hash_original_method = "868089D57ED1EE56E9ACF33DE8DED38E", hash_generated_method = "FCEB2EB3849C4977C0E491ED3BB663DC")
     public AudioStream[] getStreams() {
-        AudioStream[] varB4EAC82CA7396A68D541C85D26508E83_1636437575 = null; //Variable for return #1
+        AudioStream[] varB4EAC82CA7396A68D541C85D26508E83_1636437575 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1636437575 = mStreams.keySet().toArray(new AudioStream[mStreams.size()]);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1636437575.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1636437575.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1636437575;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mStreams.keySet().toArray(new AudioStream[mStreams.size()]);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -49,28 +50,29 @@ public class AudioGroup {
     public int getMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1884088231 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1884088231;
-        // ---------- Original Method ----------
-        //return mMode;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.507 -0400", hash_original_method = "3B407E7A126047BBCD9831E47F9B5D99", hash_generated_method = "5221C08244862F3B8D3F235F45B991C1")
     public void setMode(int mode) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid mode");
-        } //End block
+        } 
         {
             nativeSetMode(mode);
             mMode = mode;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mode < 0 || mode > MODE_LAST) {
-            //throw new IllegalArgumentException("Invalid mode");
-        //}
-        //synchronized (this) {
-            //nativeSetMode(mode);
-            //mMode = mode;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
     }
 
     
@@ -79,6 +81,7 @@ public class AudioGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.508 -0400", hash_original_method = "91004DD6DF12C73407D3712D3F37E9FF", hash_generated_method = "D98A83DE6486C09E6BF77795712E877B")
     synchronized void add(AudioStream stream, AudioCodec codec, int dtmfType) {
         {
@@ -93,30 +96,30 @@ public class AudioGroup {
                         stream.getRemoteAddress().getHostAddress(),
                         stream.getRemotePort(), codecSpec, dtmfType);
                     mStreams.put(stream, socket);
-                } //End block
+                } 
                 catch (NullPointerException e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(e);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(stream.getTaint());
         addTaint(codec.getTaint());
         addTaint(dtmfType);
-        // ---------- Original Method ----------
-        //if (!mStreams.containsKey(stream)) {
-            //try {
-                //int socket = stream.dup();
-                //String codecSpec = String.format("%d %s %s", codec.type,
-                        //codec.rtpmap, codec.fmtp);
-                //nativeAdd(stream.getMode(), socket,
-                        //stream.getRemoteAddress().getHostAddress(),
-                        //stream.getRemotePort(), codecSpec, dtmfType);
-                //mStreams.put(stream, socket);
-            //} catch (NullPointerException e) {
-                //throw new IllegalStateException(e);
-            //}
-        //}
+        
+        
+            
+                
+                
+                        
+                
+                        
+                        
+                
+            
+                
+            
+        
     }
 
     
@@ -126,18 +129,19 @@ public class AudioGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.509 -0400", hash_original_method = "E79257D576B41A04A93E4BDE1747C69F", hash_generated_method = "29E5A59689E6CF73018BDE9EADEEFB40")
     synchronized void remove(AudioStream stream) {
         Integer socket = mStreams.remove(stream);
         {
             nativeRemove(socket);
-        } //End block
+        } 
         addTaint(stream.getTaint());
-        // ---------- Original Method ----------
-        //Integer socket = mStreams.remove(stream);
-        //if (socket != null) {
-            //nativeRemove(socket);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -146,22 +150,23 @@ public class AudioGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.510 -0400", hash_original_method = "9822465C491E40F2280BD966A816AB8D", hash_generated_method = "1D3C9B9BDA207982B79288C9F9B874D4")
     public void sendDtmf(int event) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid event");
-        } //End block
+        } 
         {
             nativeSendDtmf(event);
-        } //End block
+        } 
         addTaint(event);
-        // ---------- Original Method ----------
-        //if (event < 0 || event > 15) {
-            //throw new IllegalArgumentException("Invalid event");
-        //}
-        //synchronized (this) {
-            //nativeSendDtmf(event);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -170,28 +175,30 @@ public class AudioGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.511 -0400", hash_original_method = "C7FD23B4AAD822C8D51633C16B0BB499", hash_generated_method = "FEEADEC12D5D8DC1127D9ABF951EFE9D")
     public void clear() {
         {
             mStreams.clear();
             nativeRemove(-1);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //mStreams.clear();
-            //nativeRemove(-1);
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.511 -0400", hash_original_method = "33021D83EBB0A5B0B0CD9D3745D70974", hash_generated_method = "714CF28135346593C7022C3C55084927")
     @Override
     protected void finalize() throws Throwable {
         clear();
         super.finalize();
-        // ---------- Original Method ----------
-        //clear();
-        //super.finalize();
+        
+        
+        
     }
 
     

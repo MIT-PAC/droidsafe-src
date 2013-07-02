@@ -1,11 +1,11 @@
 package org.apache.http.impl.entity;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.Header;
 import org.apache.http.HeaderElement;
@@ -23,7 +23,7 @@ public class LaxContentLengthStrategy implements ContentLengthStrategy {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.565 -0400", hash_original_method = "8B5512428A3E2CA95F49978B80962BF4", hash_generated_method = "E15DC0A74431A761CB5419BD189E5032")
     public  LaxContentLengthStrategy() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,7 +31,7 @@ public class LaxContentLengthStrategy implements ContentLengthStrategy {
     public long determineLength(final HttpMessage message) throws HttpException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP message may not be null");
-        } //End block
+        } 
         HttpParams params = message.getParams();
         boolean strict = params.isParameterTrue(CoreProtocolPNames.STRICT_TRANSFER_ENCODING);
         Header transferEncodingHeader = message.getFirstHeader(HTTP.TRANSFER_ENCODING);
@@ -41,13 +41,13 @@ public class LaxContentLengthStrategy implements ContentLengthStrategy {
             try 
             {
                 encodings = transferEncodingHeader.getElements();
-            } //End block
+            } 
             catch (ParseException px)
             {
                 if (DroidSafeAndroidRuntime.control) throw new ProtocolException
                     ("Invalid Transfer-Encoding header value: " +
                      transferEncodingHeader, px);
-            } //End block
+            } 
             {
                 {
                     int i = 0;
@@ -59,11 +59,11 @@ public class LaxContentLengthStrategy implements ContentLengthStrategy {
                         && !encoding.equalsIgnoreCase(HTTP.IDENTITY_CODING));
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Unsupported transfer encoding: " + encoding);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             int len = encodings.length;
             {
                 boolean var2F568F79C173BB7064045C081F5F11B3_726615809 = (HTTP.IDENTITY_CODING.equalsIgnoreCase(transferEncodingHeader.getValue()));
@@ -73,17 +73,17 @@ public class LaxContentLengthStrategy implements ContentLengthStrategy {
                     {
                         {
                             if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Chunk-encoding must be the last one applied");
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             long contentlen = -1;
             Header[] headers = message.getHeaders(HTTP.CONTENT_LEN);
             {
                 if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Multiple content length headers");
-            } //End block
+            } 
             {
                 int i = headers.length - 1;
                 {
@@ -91,21 +91,21 @@ public class LaxContentLengthStrategy implements ContentLengthStrategy {
                     try 
                     {
                         contentlen = Long.parseLong(header.getValue());
-                    } //End block
+                    } 
                     catch (NumberFormatException e)
                     {
                         {
                             if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Invalid content length: " + header.getValue());
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(message.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_939206416 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_939206416;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

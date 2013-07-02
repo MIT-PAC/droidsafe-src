@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header.extensions;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.ParametersHeader;
 import java.text.ParseException;
@@ -20,37 +20,37 @@ public class References extends ParametersHeader implements ReferencesHeader, Ex
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.040 -0400", hash_original_method = "6B62E640F31436F860F8D9827B037777", hash_generated_method = "768BC1B29AB1FAC713C1D8CE0EE02B20")
     public  References() {
         super(ReferencesHeader.NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.041 -0400", hash_original_method = "EEE15C2182CFD7EA9CBDBFC60D7CEB59", hash_generated_method = "FC7E9092138A9369B9A8FCB995B0911D")
     public String getCallId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1587654818 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1587654818 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1587654818 = callId;
-        varB4EAC82CA7396A68D541C85D26508E83_1587654818.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1587654818.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1587654818;
-        // ---------- Original Method ----------
-        //return callId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.041 -0400", hash_original_method = "91B139942A314EFB2C4BD7B21FDCB20D", hash_generated_method = "659C5084D82F00F7E8F71F396773F308")
     public String getRel() {
-        String varB4EAC82CA7396A68D541C85D26508E83_335796145 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_335796145 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_335796145 = this.getParameter(REL);
-        varB4EAC82CA7396A68D541C85D26508E83_335796145.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_335796145.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_335796145;
-        // ---------- Original Method ----------
-        //return this.getParameter(REL);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.042 -0400", hash_original_method = "6391CCCA5D3045DA0366706159D24F88", hash_generated_method = "89EAE1F620DB52540F2B1E2C4575CE19")
     public void setCallId(String callId) {
         this.callId = callId;
-        // ---------- Original Method ----------
-        //this.callId = callId;
+        
+        
     }
 
     
@@ -58,35 +58,35 @@ public class References extends ParametersHeader implements ReferencesHeader, Ex
     public void setRel(String rel) throws ParseException {
         {
             this.setParameter(REL,rel);
-        } //End block
+        } 
         addTaint(rel.getTaint());
-        // ---------- Original Method ----------
-        //if ( rel != null ) {
-          //this.setParameter(REL,rel);
-      //}
+        
+        
+          
+      
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.043 -0400", hash_original_method = "1C9EBF6FB53478B12B2F8D939C3DAA09", hash_generated_method = "51E75AD2525DA69C6109E97102BE320E")
     public String getParameter(String name) {
-        String varB4EAC82CA7396A68D541C85D26508E83_483993535 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_483993535 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_483993535 = super.getParameter(name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_483993535.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_483993535.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_483993535;
-        // ---------- Original Method ----------
-        //return super.getParameter(name);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.043 -0400", hash_original_method = "5B135F944D95FEB85E76FF3C1A46B535", hash_generated_method = "9FBD59A1D4E00BC7885BB95EB2343B0E")
     public Iterator getParameterNames() {
-        Iterator varB4EAC82CA7396A68D541C85D26508E83_1726878630 = null; //Variable for return #1
+        Iterator varB4EAC82CA7396A68D541C85D26508E83_1726878630 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1726878630 = super.getParameterNames();
-        varB4EAC82CA7396A68D541C85D26508E83_1726878630.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1726878630.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1726878630;
-        // ---------- Original Method ----------
-        //return super.getParameterNames();
+        
+        
     }
 
     
@@ -94,8 +94,8 @@ public class References extends ParametersHeader implements ReferencesHeader, Ex
     public void removeParameter(String name) {
         super.removeParameter(name);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
-        //super.removeParameter(name);
+        
+        
     }
 
     
@@ -104,52 +104,52 @@ public class References extends ParametersHeader implements ReferencesHeader, Ex
         super.setParameter(name,value);
         addTaint(name.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //super.setParameter(name,value);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.045 -0400", hash_original_method = "E46EA6665F0CD807BC3E748EE65E1EE2", hash_generated_method = "258B14CD301924253B2E5266D876D21C")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2067839604 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2067839604 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2067839604 = ReferencesHeader.NAME;
-        varB4EAC82CA7396A68D541C85D26508E83_2067839604.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2067839604.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2067839604;
-        // ---------- Original Method ----------
-        //return ReferencesHeader.NAME;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.047 -0400", hash_original_method = "9EEB3319C6EED2658F191ED9602B88D2", hash_generated_method = "87B0CC8823905F273E1F56831D2FD731")
     protected String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1631727081 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_422302162 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1631727081 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_422302162 = null; 
         {
             boolean varE23E644C9FCA722BF2C7FAA084D9FBE4_1690851393 = (super.parameters.isEmpty());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1631727081 = callId;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_422302162 = callId + ";" + super.parameters.encode();
-            } //End block
-        } //End collapsed parenthetic
-        String varA7E53CE21691AB073D9660D615818899_783960929; //Final return value
+            } 
+        } 
+        String varA7E53CE21691AB073D9660D615818899_783960929; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_783960929 = varB4EAC82CA7396A68D541C85D26508E83_1631727081;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_783960929 = varB4EAC82CA7396A68D541C85D26508E83_422302162;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_783960929.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_783960929.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_783960929;
-        // ---------- Original Method ----------
-        //if ( super.parameters.isEmpty()) {
-            //return callId ;
-        //} else {
-            //return callId + ";" + super.parameters.encode();
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -157,8 +157,8 @@ public class References extends ParametersHeader implements ReferencesHeader, Ex
     public void setValue(String value) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("operation not supported");
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException("operation not supported");
+        
+        
     }
 
     

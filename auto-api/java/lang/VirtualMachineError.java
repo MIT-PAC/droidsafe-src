@@ -1,18 +1,18 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class VirtualMachineError extends Error {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.503 -0400", hash_original_method = "0F69B8238323DB052C2C0DA7A3D55736", hash_generated_method = "BD1C14FF154705C3FFBF881DDDA61EC6")
     public  VirtualMachineError() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public abstract class VirtualMachineError extends Error {
     public  VirtualMachineError(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Bitmap;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ class GLES20DisplayList extends DisplayList {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.224 -0400", hash_original_method = "AE604D63277D457D456549CB93FF76C1", hash_generated_method = "AE604D63277D457D456549CB93FF76C1")
     public GLES20DisplayList ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -35,38 +35,38 @@ class GLES20DisplayList extends DisplayList {
      int getNativeDisplayList() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("The display list is not valid.");
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1110741969 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1110741969;
-        // ---------- Original Method ----------
-        //if (!mValid || mFinalizer == null) {
-            //throw new IllegalStateException("The display list is not valid.");
-        //}
-        //return mFinalizer.mNativeDisplayList;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.225 -0400", hash_original_method = "E5C596CBDCD8BE3EF1855673907A59B8", hash_generated_method = "181316270BB17946587C1A2DE068403F")
     @Override
      HardwareCanvas start() {
-        HardwareCanvas varB4EAC82CA7396A68D541C85D26508E83_67522742 = null; //Variable for return #1
+        HardwareCanvas varB4EAC82CA7396A68D541C85D26508E83_67522742 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Recording has already started");
-        } //End block
+        } 
         mValid = false;
         mCanvas = GLES20RecordingCanvas.obtain(this);
         mCanvas.start();
         varB4EAC82CA7396A68D541C85D26508E83_67522742 = mCanvas;
-        varB4EAC82CA7396A68D541C85D26508E83_67522742.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_67522742.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_67522742;
-        // ---------- Original Method ----------
-        //if (mCanvas != null) {
-            //throw new IllegalStateException("Recording has already started");
-        //}
-        //mValid = false;
-        //mCanvas = GLES20RecordingCanvas.obtain(this);
-        //mCanvas.start();
-        //return mCanvas;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -76,14 +76,14 @@ class GLES20DisplayList extends DisplayList {
         {
             mCanvas.recycle();
             mCanvas = null;
-        } //End block
+        } 
         mValid = false;
-        // ---------- Original Method ----------
-        //if (mCanvas != null) {
-            //mCanvas.recycle();
-            //mCanvas = null;
-        //}
-        //mValid = false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -92,8 +92,8 @@ class GLES20DisplayList extends DisplayList {
      boolean isValid() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_625136850 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_625136850;
-        // ---------- Original Method ----------
-        //return mValid;
+        
+        
     }
 
     
@@ -103,25 +103,25 @@ class GLES20DisplayList extends DisplayList {
         {
             {
                 mCanvas.end(mFinalizer.mNativeDisplayList);
-            } //End block
+            } 
             {
                 mFinalizer = new DisplayListFinalizer(mCanvas.end(0));
-            } //End block
+            } 
             mCanvas.recycle();
             mCanvas = null;
             mValid = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCanvas != null) {
-            //if (mFinalizer != null) {
-                //mCanvas.end(mFinalizer.mNativeDisplayList);
-            //} else {
-                //mFinalizer = new DisplayListFinalizer(mCanvas.end(0));
-            //}
-            //mCanvas.recycle();
-            //mCanvas = null;
-            //mValid = true;
-        //}
+        } 
+        
+        
+            
+                
+            
+                
+            
+            
+            
+            
+        
     }
 
     
@@ -131,9 +131,9 @@ class GLES20DisplayList extends DisplayList {
         int varB2890EA812AE28FA4D154D7F2D962AEF_807596963 = (GLES20Canvas.getDisplayListSize(mFinalizer.mNativeDisplayList));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_949883468 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_949883468;
-        // ---------- Original Method ----------
-        //if (mFinalizer == null) return 0;
-        //return GLES20Canvas.getDisplayListSize(mFinalizer.mNativeDisplayList);
+        
+        
+        
     }
 
     
@@ -145,8 +145,8 @@ class GLES20DisplayList extends DisplayList {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.227 -0400", hash_original_method = "0B1B093880262044EED2D5421EB7C8E9", hash_generated_method = "DAAE4ADD86F9B0F97F318309228FD8AA")
         public  DisplayListFinalizer(int nativeDisplayList) {
             mNativeDisplayList = nativeDisplayList;
-            // ---------- Original Method ----------
-            //mNativeDisplayList = nativeDisplayList;
+            
+            
         }
 
         
@@ -156,17 +156,17 @@ class GLES20DisplayList extends DisplayList {
             try 
             {
                 GLES20Canvas.destroyDisplayList(mNativeDisplayList);
-            } //End block
+            } 
             finally 
             {
                 super.finalize();
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //GLES20Canvas.destroyDisplayList(mNativeDisplayList);
-            //} finally {
-                //super.finalize();
-            //}
+            } 
+            
+            
+                
+            
+                
+            
         }
 
         

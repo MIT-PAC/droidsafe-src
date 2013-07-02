@@ -1,11 +1,11 @@
 package org.apache.commons.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.Serializable;
@@ -20,11 +20,12 @@ public class TaggedIOException extends IOExceptionWithCause {
         super(original.getMessage(), original);
         this.tag = tag;
         addTaint(original.getTaint());
-        // ---------- Original Method ----------
-        //this.tag = tag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isTaggedWith(Throwable throwable, Object tag) {
         return tag != null
             && throwable instanceof TaggedIOException
@@ -32,6 +33,7 @@ public class TaggedIOException extends IOExceptionWithCause {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void throwCauseIfTaggedWith(Throwable throwable, Object tag) throws IOException {
         if (isTaggedWith(throwable, tag)) {
             throw ((TaggedIOException) throwable).getCause();
@@ -39,26 +41,28 @@ public class TaggedIOException extends IOExceptionWithCause {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.448 -0400", hash_original_method = "4F4B9B983AF73239615D861FCC97BC71", hash_generated_method = "FB0340E1F3C10E00B6C046206D5DB1B4")
     public Serializable getTag() {
-        Serializable varB4EAC82CA7396A68D541C85D26508E83_1912098909 = null; //Variable for return #1
+        Serializable varB4EAC82CA7396A68D541C85D26508E83_1912098909 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1912098909 = tag;
-        varB4EAC82CA7396A68D541C85D26508E83_1912098909.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1912098909.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1912098909;
-        // ---------- Original Method ----------
-        //return tag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.449 -0400", hash_original_method = "5CB5049271906C3DE2CF2601187D937A", hash_generated_method = "92D6AED3EDF04FA74C980305C573C495")
     @Override
     public IOException getCause() {
-        IOException varB4EAC82CA7396A68D541C85D26508E83_418461883 = null; //Variable for return #1
+        IOException varB4EAC82CA7396A68D541C85D26508E83_418461883 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_418461883 = (IOException) super.getCause();
-        varB4EAC82CA7396A68D541C85D26508E83_418461883.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_418461883.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_418461883;
-        // ---------- Original Method ----------
-        //return (IOException) super.getCause();
+        
+        
     }
 
     

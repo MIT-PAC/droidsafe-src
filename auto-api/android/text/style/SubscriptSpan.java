@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
@@ -16,14 +16,14 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.900 -0400", hash_original_method = "416865739F2C1ABBE61451113480FAB4", hash_generated_method = "431381B5FAFD384F6FEF99A75F935F86")
     public  SubscriptSpan() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.900 -0400", hash_original_method = "71E3921D1341E00E4D27F607004C29AC", hash_generated_method = "E3F85E1D6FA0CC2C53BEF83804B496BD")
     public  SubscriptSpan(Parcel src) {
         addTaint(src.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,8 +31,8 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819775634 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819775634;
-        // ---------- Original Method ----------
-        //return TextUtils.SUBSCRIPT_SPAN;
+        
+        
     }
 
     
@@ -40,8 +40,8 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_50092522 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_50092522;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -49,7 +49,7 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -58,8 +58,8 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     public void updateDrawState(TextPaint tp) {
         tp.baselineShift -= (int) (tp.ascent() / 2);
         addTaint(tp.getTaint());
-        // ---------- Original Method ----------
-        //tp.baselineShift -= (int) (tp.ascent() / 2);
+        
+        
     }
 
     
@@ -68,8 +68,8 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     public void updateMeasureState(TextPaint tp) {
         tp.baselineShift -= (int) (tp.ascent() / 2);
         addTaint(tp.getTaint());
-        // ---------- Original Method ----------
-        //tp.baselineShift -= (int) (tp.ascent() / 2);
+        
+        
     }
 
     

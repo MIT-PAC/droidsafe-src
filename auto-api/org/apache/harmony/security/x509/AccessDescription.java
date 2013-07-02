@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.harmony.security.asn1.ASN1Oid;
 import org.apache.harmony.security.asn1.ASN1Sequence;
@@ -29,32 +29,34 @@ public final class AccessDescription {
         this.accessMethod = accessMethod;
         this.accessLocation = accessLocation;
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.accessMethod = accessMethod;
-        //this.accessLocation = accessLocation;
-        //this.encoding = encoding;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.585 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "6D73ED0E4A123EEAD49ED7B3BE706E6E")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1662578898 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1662578898;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.586 -0400", hash_original_method = "4D59D0B3E432FF02219BDDB6D479EFFA", hash_generated_method = "9418AB7DB449EE02B193F4CD77218112")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_487039832 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_487039832 = null; 
         StringBuilder res = new StringBuilder();
         res.append("\n-- AccessDescription:");
         res.append("\naccessMethod:  ");
@@ -63,17 +65,17 @@ public final class AccessDescription {
         res.append(accessLocation);
         res.append("\n-- AccessDescription END\n");
         varB4EAC82CA7396A68D541C85D26508E83_487039832 = res.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_487039832.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_487039832.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_487039832;
-        // ---------- Original Method ----------
-        //StringBuilder res = new StringBuilder();
-        //res.append("\n-- AccessDescription:");
-        //res.append("\naccessMethod:  ");
-        //res.append(accessMethod);
-        //res.append("\naccessLocation:  ");
-        //res.append(accessLocation);
-        //res.append("\n-- AccessDescription END\n");
-        //return res.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -96,22 +98,7 @@ public final class AccessDescription {
             values[1] = ad.accessLocation;
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            AccessDescription ad = (AccessDescription) object;
-            values[0] = ObjectIdentifier.toIntArray(ad.accessMethod);
-            values[1] = ad.accessLocation;
-        }
     
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) {
-            Object[] values = (Object[]) in.content;
-            return new AccessDescription(
-                    ObjectIdentifier.toString((int[]) values[0]),
-                    (GeneralName) values[1], in.getEncoded());
-        }
-    */
     
 }
 

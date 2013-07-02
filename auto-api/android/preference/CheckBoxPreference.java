@@ -1,11 +1,11 @@
 package android.preference;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -28,14 +28,14 @@ public class CheckBoxPreference extends TwoStatePreference {
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.CheckBoxPreference, defStyle, 0);
-        //setSummaryOn(a.getString(com.android.internal.R.styleable.CheckBoxPreference_summaryOn));
-        //setSummaryOff(a.getString(com.android.internal.R.styleable.CheckBoxPreference_summaryOff));
-        //setDisableDependentsState(a.getBoolean(
-                //com.android.internal.R.styleable.CheckBoxPreference_disableDependentsState, false));
-        //a.recycle();
+        
+        
+                
+        
+        
+        
+                
+        
     }
 
     
@@ -44,7 +44,7 @@ public class CheckBoxPreference extends TwoStatePreference {
         this(context, attrs, com.android.internal.R.attr.checkBoxPreferenceStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -52,30 +52,31 @@ public class CheckBoxPreference extends TwoStatePreference {
     public  CheckBoxPreference(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.732 -0400", hash_original_method = "BFAE06CFE69D4939F40B9B050EA1DB64", hash_generated_method = "031089AD583399AD603CC9C50128B6A9")
     @Override
     protected void onBindView(View view) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onBindView(view);
         View checkboxView = view.findViewById(com.android.internal.R.id.checkbox);
         {
             ((Checkable) checkboxView).setChecked(mChecked);
             sendAccessibilityEvent(checkboxView);
-        } //End block
+        } 
         syncSummaryView(view);
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        //super.onBindView(view);
-        //View checkboxView = view.findViewById(com.android.internal.R.id.checkbox);
-        //if (checkboxView != null && checkboxView instanceof Checkable) {
-            //((Checkable) checkboxView).setChecked(mChecked);
-            //sendAccessibilityEvent(checkboxView);
-        //}
-        //syncSummaryView(view);
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     

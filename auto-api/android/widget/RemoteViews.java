@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -60,11 +60,11 @@ public class RemoteViews implements Parcelable, Filter {
         mLayoutId = layoutId;
         mMemoryUsageCounter = new MemoryUsageCounter();
         recalculateMemoryUsage();
-        // ---------- Original Method ----------
-        //mPackage = packageName;
-        //mLayoutId = layoutId;
-        //mMemoryUsageCounter = new MemoryUsageCounter();
-        //recalculateMemoryUsage();
+        
+        
+        
+        
+        
     }
 
     
@@ -80,76 +80,77 @@ public class RemoteViews implements Parcelable, Filter {
                 int i = 0;
                 {
                     int tag = parcel.readInt();
-                    //Begin case SetOnClickPendingIntent.TAG 
+                    
                     mActions.add(new SetOnClickPendingIntent(parcel));
-                    //End case SetOnClickPendingIntent.TAG 
-                    //Begin case SetDrawableParameters.TAG 
+                    
+                    
                     mActions.add(new SetDrawableParameters(parcel));
-                    //End case SetDrawableParameters.TAG 
-                    //Begin case ReflectionAction.TAG 
+                    
+                    
                     mActions.add(new ReflectionAction(parcel));
-                    //End case ReflectionAction.TAG 
-                    //Begin case ViewGroupAction.TAG 
+                    
+                    
                     mActions.add(new ViewGroupAction(parcel));
-                    //End case ViewGroupAction.TAG 
-                    //Begin case ReflectionActionWithoutParams.TAG 
+                    
+                    
                     mActions.add(new ReflectionActionWithoutParams(parcel));
-                    //End case ReflectionActionWithoutParams.TAG 
-                    //Begin case SetEmptyView.TAG 
+                    
+                    
                     mActions.add(new SetEmptyView(parcel));
-                    //End case SetEmptyView.TAG 
-                    //Begin case SetPendingIntentTemplate.TAG 
+                    
+                    
                     mActions.add(new SetPendingIntentTemplate(parcel));
-                    //End case SetPendingIntentTemplate.TAG 
-                    //Begin case SetOnClickFillInIntent.TAG 
+                    
+                    
                     mActions.add(new SetOnClickFillInIntent(parcel));
-                    //End case SetOnClickFillInIntent.TAG 
-                    //Begin case SetRemoteViewsAdapterIntent.TAG 
+                    
+                    
                     mActions.add(new SetRemoteViewsAdapterIntent(parcel));
-                    //End case SetRemoteViewsAdapterIntent.TAG 
-                    //Begin case default 
+                    
+                    
                     if (DroidSafeAndroidRuntime.control) throw new ActionException("Tag " + tag + " not found");
-                    //End case default 
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    
+                } 
+            } 
+        } 
         mMemoryUsageCounter = new MemoryUsageCounter();
         recalculateMemoryUsage();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.070 -0400", hash_original_method = "67D19BE5CA3BC69F21B2B2516A1FA2D6", hash_generated_method = "3BF8321E3C433F4529216E03A0CA3A3C")
     @Override
     public RemoteViews clone() {
-        RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1206250938 = null; //Variable for return #1
+        RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1206250938 = null; 
         final RemoteViews that = new RemoteViews(mPackage, mLayoutId);
         {
             that.mActions = (ArrayList<Action>)mActions.clone();
-        } //End block
+        } 
         that.recalculateMemoryUsage();
         varB4EAC82CA7396A68D541C85D26508E83_1206250938 = that;
-        varB4EAC82CA7396A68D541C85D26508E83_1206250938.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1206250938.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1206250938;
-        // ---------- Original Method ----------
-        //final RemoteViews that = new RemoteViews(mPackage, mLayoutId);
-        //if (mActions != null) {
-            //that.mActions = (ArrayList<Action>)mActions.clone();
-        //}
-        //that.recalculateMemoryUsage();
-        //return that;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.071 -0400", hash_original_method = "D6B19F05A1BF219922EA06A43EF822A3", hash_generated_method = "B94BF88443EF1EF5878B6F5EB0B1B141")
     public String getPackage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1217100516 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1217100516 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1217100516 = mPackage;
-        varB4EAC82CA7396A68D541C85D26508E83_1217100516.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1217100516.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1217100516;
-        // ---------- Original Method ----------
-        //return mPackage;
+        
+        
     }
 
     
@@ -157,19 +158,20 @@ public class RemoteViews implements Parcelable, Filter {
     public int getLayoutId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_882902467 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_882902467;
-        // ---------- Original Method ----------
-        //return mLayoutId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.072 -0400", hash_original_method = "B2E01CE5E210E0306AAEDD7A25572B15", hash_generated_method = "C504A5E5F8CCD8C6A31C201D44889892")
      void setIsWidgetCollectionChild(boolean isWidgetCollectionChild) {
         mIsWidgetCollectionChild = isWidgetCollectionChild;
-        // ---------- Original Method ----------
-        //mIsWidgetCollectionChild = isWidgetCollectionChild;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.073 -0400", hash_original_method = "F73414915FBB974B28CE5BE7CD6B07B1", hash_generated_method = "18FCC791DF8DA24D2368BBDE6F3D9188")
     private void recalculateMemoryUsage() {
         mMemoryUsageCounter.clear();
@@ -179,17 +181,17 @@ public class RemoteViews implements Parcelable, Filter {
                 int i = 0;
                 {
                     mActions.get(i).updateMemoryUsageEstimate(mMemoryUsageCounter);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //mMemoryUsageCounter.clear();
-        //if (mActions != null) {
-            //final int count = mActions.size();
-            //for (int i= 0; i < count; ++i) {
-                //mActions.get(i).updateMemoryUsageEstimate(mMemoryUsageCounter);
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -198,102 +200,111 @@ public class RemoteViews implements Parcelable, Filter {
         int var86B2D4DC43E82BB120116366B3BFF3DD_1557618620 = (mMemoryUsageCounter.getBitmapHeapMemoryUsage());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2146779254 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2146779254;
-        // ---------- Original Method ----------
-        //return mMemoryUsageCounter.getBitmapHeapMemoryUsage();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.074 -0400", hash_original_method = "17103049C6B2546A05BB76759DAB3B89", hash_generated_method = "14D85083847E9B9992C73BE5A5A1C108")
     private void addAction(Action a) {
         {
             mActions = new ArrayList<Action>();
-        } //End block
+        } 
         mActions.add(a);
         a.updateMemoryUsageEstimate(mMemoryUsageCounter);
         addTaint(a.getTaint());
-        // ---------- Original Method ----------
-        //if (mActions == null) {
-            //mActions = new ArrayList<Action>();
-        //}
-        //mActions.add(a);
-        //a.updateMemoryUsageEstimate(mMemoryUsageCounter);
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.074 -0400", hash_original_method = "4A1BA0269DB90E506DB0959643DF475B", hash_generated_method = "BE51826B6DFABF603D3CC9C5EB042AB8")
     public void addView(int viewId, RemoteViews nestedView) {
         addAction(new ViewGroupAction(viewId, nestedView));
         addTaint(viewId);
         addTaint(nestedView.getTaint());
-        // ---------- Original Method ----------
-        //addAction(new ViewGroupAction(viewId, nestedView));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.074 -0400", hash_original_method = "E70CF2F379D754A9B2BAC52704294677", hash_generated_method = "7DAFE72427A04B46D6AE7A6C690B16CF")
     public void removeAllViews(int viewId) {
         addAction(new ViewGroupAction(viewId, null));
         addTaint(viewId);
-        // ---------- Original Method ----------
-        //addAction(new ViewGroupAction(viewId, null));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.075 -0400", hash_original_method = "715372503FFB1BBD9EE3BEF4F54CECDE", hash_generated_method = "E5E7094C78B0342C8FBE818E967BED88")
     public void showNext(int viewId) {
         addAction(new ReflectionActionWithoutParams(viewId, "showNext"));
         addTaint(viewId);
-        // ---------- Original Method ----------
-        //addAction(new ReflectionActionWithoutParams(viewId, "showNext"));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.075 -0400", hash_original_method = "92870339C0CC6AF77A420F74F896E688", hash_generated_method = "7058F26D9AECA826E789F6C83BE8A1AC")
     public void showPrevious(int viewId) {
         addAction(new ReflectionActionWithoutParams(viewId, "showPrevious"));
         addTaint(viewId);
-        // ---------- Original Method ----------
-        //addAction(new ReflectionActionWithoutParams(viewId, "showPrevious"));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.075 -0400", hash_original_method = "D726270A4D4DC2D53B195715D168181D", hash_generated_method = "51948C5BA528D0BF0C16FC0DB8B9C456")
     public void setDisplayedChild(int viewId, int childIndex) {
         setInt(viewId, "setDisplayedChild", childIndex);
         addTaint(viewId);
         addTaint(childIndex);
-        // ---------- Original Method ----------
-        //setInt(viewId, "setDisplayedChild", childIndex);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.075 -0400", hash_original_method = "DEE52A50DF8AF905161D8440F9C7FD6B", hash_generated_method = "5042AB34DE0B094F8693F57AAD5EBDBE")
     public void setViewVisibility(int viewId, int visibility) {
         setInt(viewId, "setVisibility", visibility);
         addTaint(viewId);
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //setInt(viewId, "setVisibility", visibility);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.075 -0400", hash_original_method = "5F8A789C1791A65B082D971694A97107", hash_generated_method = "C1686747B60B04994A641AC32DF00106")
     public void setTextViewText(int viewId, CharSequence text) {
         setCharSequence(viewId, "setText", text);
         addTaint(viewId);
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
-        //setCharSequence(viewId, "setText", text);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.076 -0400", hash_original_method = "BA7406E13895A91025A0507F41BF6313", hash_generated_method = "9EC64FFF95AE3A7F8A73FA6F77C9F492")
     public void setImageViewResource(int viewId, int srcId) {
         setInt(viewId, "setImageResource", srcId);
         addTaint(viewId);
         addTaint(srcId);
-        // ---------- Original Method ----------
-        //setInt(viewId, "setImageResource", srcId);
+        
+        
     }
 
     
@@ -302,31 +313,34 @@ public class RemoteViews implements Parcelable, Filter {
         setUri(viewId, "setImageURI", uri);
         addTaint(viewId);
         addTaint(uri.getTaint());
-        // ---------- Original Method ----------
-        //setUri(viewId, "setImageURI", uri);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.076 -0400", hash_original_method = "957E8B822330AC731DF30A1543908B02", hash_generated_method = "254ADF3EE07F981DCF1CB0DDFC394ADA")
     public void setImageViewBitmap(int viewId, Bitmap bitmap) {
         setBitmap(viewId, "setImageBitmap", bitmap);
         addTaint(viewId);
         addTaint(bitmap.getTaint());
-        // ---------- Original Method ----------
-        //setBitmap(viewId, "setImageBitmap", bitmap);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.076 -0400", hash_original_method = "4F3E7FFD56A31D2F2A8813C161A91D32", hash_generated_method = "46FFB0E9FA7C74856D21886F6686577C")
     public void setEmptyView(int viewId, int emptyViewId) {
         addAction(new SetEmptyView(viewId, emptyViewId));
         addTaint(viewId);
         addTaint(emptyViewId);
-        // ---------- Original Method ----------
-        //addAction(new SetEmptyView(viewId, emptyViewId));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.077 -0400", hash_original_method = "47E59AC623A4BD9BB48A3F2CB501DFB4", hash_generated_method = "190450189383961E1AE7EA8D7C6C9468")
     public void setChronometer(int viewId, long base, String format, boolean started) {
         setLong(viewId, "setBase", base);
@@ -336,13 +350,14 @@ public class RemoteViews implements Parcelable, Filter {
         addTaint(base);
         addTaint(format.getTaint());
         addTaint(started);
-        // ---------- Original Method ----------
-        //setLong(viewId, "setBase", base);
-        //setString(viewId, "setFormat", format);
-        //setBoolean(viewId, "setStarted", started);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.077 -0400", hash_original_method = "A929EFC8DD62C6A3F9A2F8FB0663D928", hash_generated_method = "E780DF68AF578C84D517E94BB1814E96")
     public void setProgressBar(int viewId, int max, int progress, 
             boolean indeterminate) {
@@ -350,37 +365,39 @@ public class RemoteViews implements Parcelable, Filter {
         {
             setInt(viewId, "setMax", max);
             setInt(viewId, "setProgress", progress);
-        } //End block
+        } 
         addTaint(viewId);
         addTaint(max);
         addTaint(progress);
         addTaint(indeterminate);
-        // ---------- Original Method ----------
-        //setBoolean(viewId, "setIndeterminate", indeterminate);
-        //if (!indeterminate) {
-            //setInt(viewId, "setMax", max);
-            //setInt(viewId, "setProgress", progress);
-        //}
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.077 -0400", hash_original_method = "84C6A4280B6852D03015FA2AE8D65E64", hash_generated_method = "10205052AA7B567FB33A85370542456A")
     public void setOnClickPendingIntent(int viewId, PendingIntent pendingIntent) {
         addAction(new SetOnClickPendingIntent(viewId, pendingIntent));
         addTaint(viewId);
         addTaint(pendingIntent.getTaint());
-        // ---------- Original Method ----------
-        //addAction(new SetOnClickPendingIntent(viewId, pendingIntent));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.077 -0400", hash_original_method = "A434A09AC636025A142B2CC781D07FF1", hash_generated_method = "E5A0C10ED8F0807662E89DC6DC1B2D0E")
     public void setPendingIntentTemplate(int viewId, PendingIntent pendingIntentTemplate) {
         addAction(new SetPendingIntentTemplate(viewId, pendingIntentTemplate));
         addTaint(viewId);
         addTaint(pendingIntentTemplate.getTaint());
-        // ---------- Original Method ----------
-        //addAction(new SetPendingIntentTemplate(viewId, pendingIntentTemplate));
+        
+        
     }
 
     
@@ -389,8 +406,8 @@ public class RemoteViews implements Parcelable, Filter {
         addAction(new SetOnClickFillInIntent(viewId, fillInIntent));
         addTaint(viewId);
         addTaint(fillInIntent.getTaint());
-        // ---------- Original Method ----------
-        //addAction(new SetOnClickFillInIntent(viewId, fillInIntent));
+        
+        
     }
 
     
@@ -405,19 +422,20 @@ public class RemoteViews implements Parcelable, Filter {
         addTaint(colorFilter);
         addTaint(mode.getTaint());
         addTaint(level);
-        // ---------- Original Method ----------
-        //addAction(new SetDrawableParameters(viewId, targetBackground, alpha,
-                //colorFilter, mode, level));
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.078 -0400", hash_original_method = "F51B3B3FB58685A967056786739D5D5A", hash_generated_method = "D4C5BBDF3D4007BC29A57A35CC4C2DBE")
     public void setTextColor(int viewId, int color) {
         setInt(viewId, "setTextColor", color);
         addTaint(viewId);
         addTaint(color);
-        // ---------- Original Method ----------
-        //setInt(viewId, "setTextColor", color);
+        
+        
     }
 
     
@@ -428,8 +446,8 @@ public class RemoteViews implements Parcelable, Filter {
         addTaint(appWidgetId);
         addTaint(viewId);
         addTaint(intent.getTaint());
-        // ---------- Original Method ----------
-        //setRemoteAdapter(viewId, intent);
+        
+        
     }
 
     
@@ -438,138 +456,150 @@ public class RemoteViews implements Parcelable, Filter {
         addAction(new SetRemoteViewsAdapterIntent(viewId, intent));
         addTaint(viewId);
         addTaint(intent.getTaint());
-        // ---------- Original Method ----------
-        //addAction(new SetRemoteViewsAdapterIntent(viewId, intent));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.079 -0400", hash_original_method = "15753F5F29C6091CCB595496C38B1963", hash_generated_method = "F2669B0CFFF5FCDD28D213E02584C3EE")
     public void setScrollPosition(int viewId, int position) {
         setInt(viewId, "smoothScrollToPosition", position);
         addTaint(viewId);
         addTaint(position);
-        // ---------- Original Method ----------
-        //setInt(viewId, "smoothScrollToPosition", position);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.079 -0400", hash_original_method = "62C951046FF905CA4D61721F847C4DC5", hash_generated_method = "FF4FFBDC32144F1C0691C17995ADC9EC")
     public void setRelativeScrollPosition(int viewId, int offset) {
         setInt(viewId, "smoothScrollByOffset", offset);
         addTaint(viewId);
         addTaint(offset);
-        // ---------- Original Method ----------
-        //setInt(viewId, "smoothScrollByOffset", offset);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.079 -0400", hash_original_method = "ACF50C9E2E7A3E77B399A3E9AD77138B", hash_generated_method = "0AFE7CCC20496291CDC8599C5C3EA0B7")
     public void setBoolean(int viewId, String methodName, boolean value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BOOLEAN, value));
         addTaint(viewId);
         addTaint(methodName.getTaint());
         addTaint(value);
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BOOLEAN, value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.079 -0400", hash_original_method = "6577642D84CE42EC3FAE93CD4A676A48", hash_generated_method = "7E26476BD99A864F4C92D35888DC678E")
     public void setByte(int viewId, String methodName, byte value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BYTE, value));
         addTaint(viewId);
         addTaint(methodName.getTaint());
         addTaint(value);
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BYTE, value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.079 -0400", hash_original_method = "1EF837BE87322E5A782B07EBE8F017ED", hash_generated_method = "12E51C0AF74AA8C03D8BC102B801C7D3")
     public void setShort(int viewId, String methodName, short value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.SHORT, value));
         addTaint(viewId);
         addTaint(methodName.getTaint());
         addTaint(value);
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.SHORT, value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.080 -0400", hash_original_method = "2BA2097F7597ED476DFE96444FF2B47B", hash_generated_method = "C629D01D0D3E96687E0080FB6FB1AAFB")
     public void setInt(int viewId, String methodName, int value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.INT, value));
         addTaint(viewId);
         addTaint(methodName.getTaint());
         addTaint(value);
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.INT, value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.080 -0400", hash_original_method = "7BBB498795ABAEC2FC5C9E80D1FF1F8F", hash_generated_method = "7C9D858AD1C83D5BB6E0436A433BE27A")
     public void setLong(int viewId, String methodName, long value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.LONG, value));
         addTaint(viewId);
         addTaint(methodName.getTaint());
         addTaint(value);
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.LONG, value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.080 -0400", hash_original_method = "877DFBEE5EFFB4333EA4E3E01D628209", hash_generated_method = "6750497552EE6EB3729A84ADF4EEF057")
     public void setFloat(int viewId, String methodName, float value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.FLOAT, value));
         addTaint(viewId);
         addTaint(methodName.getTaint());
         addTaint(value);
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.FLOAT, value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.080 -0400", hash_original_method = "36511416C0ED3D737A57750DB7E0C821", hash_generated_method = "B8A6727A0CF67717F2DE5CAF6A58BC37")
     public void setDouble(int viewId, String methodName, double value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.DOUBLE, value));
         addTaint(viewId);
         addTaint(methodName.getTaint());
         addTaint(value);
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.DOUBLE, value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.081 -0400", hash_original_method = "E7DFE8EB27DC5DF6C76291F003DE876E", hash_generated_method = "B472EFE0AD720EB489982CE2CEAE8034")
     public void setChar(int viewId, String methodName, char value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.CHAR, value));
         addTaint(viewId);
         addTaint(methodName.getTaint());
         addTaint(value);
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.CHAR, value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.081 -0400", hash_original_method = "12B33E0B58F238F52279DFEB1871046D", hash_generated_method = "8E1CB0C5EB1F17AC4E89D030D09AA625")
     public void setString(int viewId, String methodName, String value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.STRING, value));
         addTaint(viewId);
         addTaint(methodName.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.STRING, value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.081 -0400", hash_original_method = "93A93353A27881B93F029E1CB8E38561", hash_generated_method = "E36A98006B1B4913E74FBA5EB0D8EF9C")
     public void setCharSequence(int viewId, String methodName, CharSequence value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.CHAR_SEQUENCE, value));
         addTaint(viewId);
         addTaint(methodName.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.CHAR_SEQUENCE, value));
+        
+        
     }
 
     
@@ -579,30 +609,32 @@ public class RemoteViews implements Parcelable, Filter {
         addTaint(viewId);
         addTaint(methodName.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.URI, value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.082 -0400", hash_original_method = "BE18885A2548A0B5EB1C1E6420A7D63A", hash_generated_method = "5CB35D7C885AEB01DBD476D41B93F218")
     public void setBitmap(int viewId, String methodName, Bitmap value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BITMAP, value));
         addTaint(viewId);
         addTaint(methodName.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BITMAP, value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.082 -0400", hash_original_method = "0BCEFBE1ECC6F937E30E64CCDC160671", hash_generated_method = "96318BAF418FC1F368282EF2A9AC9B79")
     public void setBundle(int viewId, String methodName, Bundle value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BUNDLE, value));
         addTaint(viewId);
         addTaint(methodName.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BUNDLE, value));
+        
+        
     }
 
     
@@ -612,24 +644,26 @@ public class RemoteViews implements Parcelable, Filter {
         addTaint(viewId);
         addTaint(methodName.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.INTENT, value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.082 -0400", hash_original_method = "DAF30AB9823DD59C17B2FD226E498806", hash_generated_method = "DE3CA1090F90BFFEA2A4EE8FDBC30AAA")
     public void setContentDescription(int viewId, CharSequence contentDescription) {
         setCharSequence(viewId, "setContentDescription", contentDescription);
         addTaint(viewId);
         addTaint(contentDescription.getTaint());
-        // ---------- Original Method ----------
-        //setCharSequence(viewId, "setContentDescription", contentDescription);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.084 -0400", hash_original_method = "389CE470D5FBF8918932B7CDEB2F38A1", hash_generated_method = "70B3AAA80417C65E5C1CAD9A6C94E40D")
     public View apply(Context context, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_472772246 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_472772246 = null; 
         View result;
         Context c = prepareContext(context);
         LayoutInflater inflater = (LayoutInflater)
@@ -641,33 +675,35 @@ public class RemoteViews implements Parcelable, Filter {
         varB4EAC82CA7396A68D541C85D26508E83_472772246 = result;
         addTaint(context.getTaint());
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_472772246.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_472772246.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_472772246;
-        // ---------- Original Method ----------
-        //View result;
-        //Context c = prepareContext(context);
-        //LayoutInflater inflater = (LayoutInflater)
-                //c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //inflater = inflater.cloneInContext(c);
-        //inflater.setFilter(this);
-        //result = inflater.inflate(mLayoutId, parent, false);
-        //performApply(result, parent);
-        //return result;
+        
+        
+        
+        
+                
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.085 -0400", hash_original_method = "721D0331C9411BF86340BE2E97293121", hash_generated_method = "4E7B42AA9410C09239E197B17AC0EA6D")
     public void reapply(Context context, View v) {
         prepareContext(context);
         performApply(v, (ViewGroup) v.getParent());
         addTaint(context.getTaint());
         addTaint(v.getTaint());
-        // ---------- Original Method ----------
-        //prepareContext(context);
-        //performApply(v, (ViewGroup) v.getParent());
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.085 -0400", hash_original_method = "8E5E3E88ABCC69E3321D1346316340C9", hash_generated_method = "3201E724637A8710801D274491977564")
     private void performApply(View v, ViewGroup parent) {
         {
@@ -677,70 +713,72 @@ public class RemoteViews implements Parcelable, Filter {
                 {
                     Action a = mActions.get(i);
                     a.apply(v, parent);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(v.getTaint());
         addTaint(parent.getTaint());
-        // ---------- Original Method ----------
-        //if (mActions != null) {
-            //final int count = mActions.size();
-            //for (int i = 0; i < count; i++) {
-                //Action a = mActions.get(i);
-                //a.apply(v, parent);
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.086 -0400", hash_original_method = "22DA97EA1494F0F193EF18C8ED8C5634", hash_generated_method = "A710FDDB923705F1C52D44120AD8121B")
     private Context prepareContext(Context context) {
-        Context varB4EAC82CA7396A68D541C85D26508E83_160495205 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_160495205 = null; 
         Context c;
         String packageName = mPackage;
         {
             try 
             {
                 c = context.createPackageContext(packageName, Context.CONTEXT_RESTRICTED);
-            } //End block
+            } 
             catch (NameNotFoundException e)
             {
                 c = context;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             c = context;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_160495205 = c;
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_160495205.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_160495205.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_160495205;
-        // ---------- Original Method ----------
-        //Context c;
-        //String packageName = mPackage;
-        //if (packageName != null) {
-            //try {
-                //c = context.createPackageContext(packageName, Context.CONTEXT_RESTRICTED);
-            //} catch (NameNotFoundException e) {
-                //Log.e(LOG_TAG, "Package name " + packageName + " not found");
-                //c = context;
-            //}
-        //} else {
-            //c = context;
-        //}
-        //return c;
+        
+        
+        
+        
+            
+                
+            
+                
+                
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.086 -0400", hash_original_method = "02A046D25F4E9D374E474E21F6366163", hash_generated_method = "2E74A3A932E4FE864911AA94BE15F6D9")
     public boolean onLoadClass(Class clazz) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean var240EFB7114C55D0ABD9923D7086CE184_47870541 = (clazz.isAnnotationPresent(RemoteView.class));
         addTaint(clazz.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1194429198 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1194429198;
-        // ---------- Original Method ----------
-        //return clazz.isAnnotationPresent(RemoteView.class);
+        
+        
     }
 
     
@@ -748,11 +786,12 @@ public class RemoteViews implements Parcelable, Filter {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_315381495 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_315381495;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.087 -0400", hash_original_method = "E42048CF3CAA5A680CE684B09E27CD46", hash_generated_method = "699B8F4384ABCFD65D9AA3729A397E46")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mPackage);
@@ -761,35 +800,35 @@ public class RemoteViews implements Parcelable, Filter {
         int count;
         {
             count = mActions.size();
-        } //End block
+        } 
         {
             count = 0;
-        } //End block
+        } 
         dest.writeInt(count);
         {
             int i = 0;
             {
                 Action a = mActions.get(i);
                 a.writeToParcel(dest, 0);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(mPackage);
-        //dest.writeInt(mLayoutId);
-        //dest.writeInt(mIsWidgetCollectionChild ? 1 : 0);
-        //int count;
-        //if (mActions != null) {
-            //count = mActions.size();
-        //} else {
-            //count = 0;
-        //}
-        //dest.writeInt(count);
-        //for (int i=0; i<count; i++) {
-            //Action a = mActions.get(i);
-            //a.writeToParcel(dest, 0);
-        //}
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -799,7 +838,7 @@ public class RemoteViews implements Parcelable, Filter {
         public  ActionException(Exception ex) {
             super(ex);
             addTaint(ex.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -807,7 +846,7 @@ public class RemoteViews implements Parcelable, Filter {
         public  ActionException(String message) {
             super(message);
             addTaint(message.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -820,7 +859,7 @@ public class RemoteViews implements Parcelable, Filter {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.088 -0400", hash_original_method = "6EEA56B449227AEBD2AEF88874F9C864", hash_generated_method = "6EEA56B449227AEBD2AEF88874F9C864")
         public Action ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -831,16 +870,16 @@ public class RemoteViews implements Parcelable, Filter {
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_496208840 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_496208840;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.089 -0400", hash_original_method = "F71AEDBFF608C755FB28C9D45BA8F347", hash_generated_method = "E6544460AD15DE17E386E7E557B83699")
         public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
             addTaint(counter.getTaint());
-            // ---------- Original Method ----------
-            //return;
+            
+            
         }
 
         
@@ -853,36 +892,36 @@ public class RemoteViews implements Parcelable, Filter {
                         pendingIntent.getIntentSender(), fillInIntent,
                         Intent.FLAG_ACTIVITY_NEW_TASK,
                         Intent.FLAG_ACTIVITY_NEW_TASK, 0);
-            } //End block
+            } 
             catch (IntentSender.SendIntentException e)
             {
                 android.util.Log.e(LOG_TAG, "Cannot send pending intent: ", e);
-            } //End block
+            } 
             catch (Exception e)
             {
                 android.util.Log.e(LOG_TAG, "Cannot send pending intent due to " +
                         "unknown exception: ", e);
-            } //End block
+            } 
             addTaint(context.getTaint());
             addTaint(pendingIntent.getTaint());
             addTaint(fillInIntent.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_845581278 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_845581278;
-            // ---------- Original Method ----------
-            //try {
-                //context.startIntentSender(
-                        //pendingIntent.getIntentSender(), fillInIntent,
-                        //Intent.FLAG_ACTIVITY_NEW_TASK,
-                        //Intent.FLAG_ACTIVITY_NEW_TASK, 0);
-            //} catch (IntentSender.SendIntentException e) {
-                //android.util.Log.e(LOG_TAG, "Cannot send pending intent: ", e);
-                //return false;
-            //} catch (Exception e) {
-                //android.util.Log.e(LOG_TAG, "Cannot send pending intent due to " +
-                        //"unknown exception: ", e);
-                //return false;
-            //}
-            //return true;
+            
+            
+                
+                        
+                        
+                        
+            
+                
+                
+            
+                
+                        
+                
+            
+            
         }
 
         
@@ -902,9 +941,9 @@ public class RemoteViews implements Parcelable, Filter {
           SetEmptyView(int viewId, int emptyViewId) {
             this.viewId = viewId;
             this.emptyViewId = emptyViewId;
-            // ---------- Original Method ----------
-            //this.viewId = viewId;
-            //this.emptyViewId = emptyViewId;
+            
+            
+            
         }
 
         
@@ -912,9 +951,9 @@ public class RemoteViews implements Parcelable, Filter {
           SetEmptyView(Parcel in) {
             this.viewId = in.readInt();
             this.emptyViewId = in.readInt();
-            // ---------- Original Method ----------
-            //this.viewId = in.readInt();
-            //this.emptyViewId = in.readInt();
+            
+            
+            
         }
 
         
@@ -925,10 +964,10 @@ public class RemoteViews implements Parcelable, Filter {
             out.writeInt(this.emptyViewId);
             addTaint(out.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //out.writeInt(TAG);
-            //out.writeInt(this.viewId);
-            //out.writeInt(this.emptyViewId);
+            
+            
+            
+            
         }
 
         
@@ -941,13 +980,13 @@ public class RemoteViews implements Parcelable, Filter {
             adapterView.setEmptyView(emptyView);
             addTaint(root.getTaint());
             addTaint(rootParent.getTaint());
-            // ---------- Original Method ----------
-            //final View view = root.findViewById(viewId);
-            //if (!(view instanceof AdapterView<?>)) return;
-            //AdapterView<?> adapterView = (AdapterView<?>) view;
-            //final View emptyView = root.findViewById(emptyViewId);
-            //if (emptyView == null) return;
-            //adapterView.setEmptyView(emptyView);
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -970,9 +1009,9 @@ public class RemoteViews implements Parcelable, Filter {
         public  SetOnClickFillInIntent(int id, Intent fillInIntent) {
             this.viewId = id;
             this.fillInIntent = fillInIntent;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.fillInIntent = fillInIntent;
+            
+            
+            
         }
 
         
@@ -980,9 +1019,9 @@ public class RemoteViews implements Parcelable, Filter {
         public  SetOnClickFillInIntent(Parcel parcel) {
             viewId = parcel.readInt();
             fillInIntent = Intent.CREATOR.createFromParcel(parcel);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //fillInIntent = Intent.CREATOR.createFromParcel(parcel);
+            
+            
+            
         }
 
         
@@ -993,10 +1032,10 @@ public class RemoteViews implements Parcelable, Filter {
             fillInIntent.writeToParcel(dest, 0 );
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //fillInIntent.writeToParcel(dest, 0 );
+            
+            
+            
+            
         }
 
         
@@ -1006,7 +1045,7 @@ public class RemoteViews implements Parcelable, Filter {
             final View target = root.findViewById(viewId);
             {
                 target.setTagInternal(com.android.internal.R.id.fillInIntent, fillInIntent);
-            } //End block
+            } 
             {
                 OnClickListener listener = new OnClickListener() {
                     public void onClick(View v) {
@@ -1039,18 +1078,18 @@ public class RemoteViews implements Parcelable, Filter {
                     }
                 };
                 target.setOnClickListener(listener);
-            } //End block
+            } 
             addTaint(root.getTaint());
             addTaint(rootParent.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.093 -0400", hash_original_field = "D91A2B10EDD4F80880F9239AF8DAACE6", hash_generated_field = "257D5F310A82D1AE988E43617C7394F4")
 
         public final static int TAG = 9;
-        // orphaned legacy method
+        
         public void onClick(View v) {
                         View parent = (View) v.getParent();
                         while (!(parent instanceof AdapterView<?>)
@@ -1096,9 +1135,9 @@ public class RemoteViews implements Parcelable, Filter {
         public  SetPendingIntentTemplate(int id, PendingIntent pendingIntentTemplate) {
             this.viewId = id;
             this.pendingIntentTemplate = pendingIntentTemplate;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.pendingIntentTemplate = pendingIntentTemplate;
+            
+            
+            
         }
 
         
@@ -1106,9 +1145,9 @@ public class RemoteViews implements Parcelable, Filter {
         public  SetPendingIntentTemplate(Parcel parcel) {
             viewId = parcel.readInt();
             pendingIntentTemplate = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //pendingIntentTemplate = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
+            
+            
+            
         }
 
         
@@ -1119,10 +1158,10 @@ public class RemoteViews implements Parcelable, Filter {
             pendingIntentTemplate.writeToParcel(dest, 0 );
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //pendingIntentTemplate.writeToParcel(dest, 0 );
+            
+            
+            
+            
         }
 
         
@@ -1168,18 +1207,18 @@ public class RemoteViews implements Parcelable, Filter {
                 };
                 av.setOnItemClickListener(listener);
                 av.setTag(pendingIntentTemplate);
-            } //End block
+            } 
             addTaint(root.getTaint());
             addTaint(rootParent.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.096 -0400", hash_original_field = "6065CCBD64FD6BA819686C609CBF3FA3", hash_generated_field = "999B6A111CF47CD01BFB86C10E0DFDAF")
 
         public final static int TAG = 8;
-        // orphaned legacy method
+        
         public void onItemClick(AdapterView<?> parent, View view,
                             int position, long id) {
                         if (view instanceof ViewGroup) {
@@ -1229,9 +1268,9 @@ public class RemoteViews implements Parcelable, Filter {
         public  SetRemoteViewsAdapterIntent(int id, Intent intent) {
             this.viewId = id;
             this.intent = intent;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.intent = intent;
+            
+            
+            
         }
 
         
@@ -1239,9 +1278,9 @@ public class RemoteViews implements Parcelable, Filter {
         public  SetRemoteViewsAdapterIntent(Parcel parcel) {
             viewId = parcel.readInt();
             intent = Intent.CREATOR.createFromParcel(parcel);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //intent = Intent.CREATOR.createFromParcel(parcel);
+            
+            
+            
         }
 
         
@@ -1252,10 +1291,10 @@ public class RemoteViews implements Parcelable, Filter {
             intent.writeToParcel(dest, flags);
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //intent.writeToParcel(dest, flags);
+            
+            
+            
+            
         }
 
         
@@ -1268,15 +1307,15 @@ public class RemoteViews implements Parcelable, Filter {
             {
                 AbsListView v = (AbsListView) target;
                 v.setRemoteViewsAdapter(intent);
-            } //End block
+            } 
             {
                 AdapterViewAnimator v = (AdapterViewAnimator) target;
                 v.setRemoteViewsAdapter(intent);
-            } //End block
+            } 
             addTaint(root.getTaint());
             addTaint(rootParent.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1299,9 +1338,9 @@ public class RemoteViews implements Parcelable, Filter {
         public  SetOnClickPendingIntent(int id, PendingIntent pendingIntent) {
             this.viewId = id;
             this.pendingIntent = pendingIntent;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.pendingIntent = pendingIntent;
+            
+            
+            
         }
 
         
@@ -1309,9 +1348,9 @@ public class RemoteViews implements Parcelable, Filter {
         public  SetOnClickPendingIntent(Parcel parcel) {
             viewId = parcel.readInt();
             pendingIntent = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //pendingIntent = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
+            
+            
+            
         }
 
         
@@ -1322,10 +1361,10 @@ public class RemoteViews implements Parcelable, Filter {
             pendingIntent.writeToParcel(dest, 0 );
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //pendingIntent.writeToParcel(dest, 0 );
+            
+            
+            
+            
         }
 
         
@@ -1351,18 +1390,18 @@ public class RemoteViews implements Parcelable, Filter {
                     }
                 };
                 target.setOnClickListener(listener);
-            } //End block
+            } 
             addTaint(root.getTaint());
             addTaint(rootParent.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.099 -0400", hash_original_field = "300A66DF77BAB65489ADB988403DB41B", hash_generated_field = "993712AACA5BFFF68C7775B3C6B7EE8B")
 
         public final static int TAG = 1;
-        // orphaned legacy method
+        
         public void onClick(View v) {
                         final float appScale = v.getContext().getResources()
                                 .getCompatibilityInfo().applicationScale;
@@ -1411,13 +1450,13 @@ public class RemoteViews implements Parcelable, Filter {
             this.colorFilter = colorFilter;
             this.filterMode = mode;
             this.level = level;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.targetBackground = targetBackground;
-            //this.alpha = alpha;
-            //this.colorFilter = colorFilter;
-            //this.filterMode = mode;
-            //this.level = level;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1430,23 +1469,23 @@ public class RemoteViews implements Parcelable, Filter {
             boolean hasMode = parcel.readInt() != 0;
             {
                 filterMode = PorterDuff.Mode.valueOf(parcel.readString());
-            } //End block
+            } 
             {
                 filterMode = null;
-            } //End block
+            } 
             level = parcel.readInt();
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //targetBackground = parcel.readInt() != 0;
-            //alpha = parcel.readInt();
-            //colorFilter = parcel.readInt();
-            //boolean hasMode = parcel.readInt() != 0;
-            //if (hasMode) {
-                //filterMode = PorterDuff.Mode.valueOf(parcel.readString());
-            //} else {
-                //filterMode = null;
-            //}
-            //level = parcel.readInt();
+            
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+            
         }
 
         
@@ -1460,26 +1499,26 @@ public class RemoteViews implements Parcelable, Filter {
             {
                 dest.writeInt(1);
                 dest.writeString(filterMode.toString());
-            } //End block
+            } 
             {
                 dest.writeInt(0);
-            } //End block
+            } 
             dest.writeInt(level);
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //dest.writeInt(targetBackground ? 1 : 0);
-            //dest.writeInt(alpha);
-            //dest.writeInt(colorFilter);
-            //if (filterMode != null) {
-                //dest.writeInt(1);
-                //dest.writeString(filterMode.toString());
-            //} else {
-                //dest.writeInt(0);
-            //}
-            //dest.writeInt(level);
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+                
+            
+            
         }
 
         
@@ -1490,26 +1529,26 @@ public class RemoteViews implements Parcelable, Filter {
             Drawable targetDrawable = null;
             {
                 targetDrawable = target.getBackground();
-            } //End block
+            } 
             {
                 ImageView imageView = (ImageView) target;
                 targetDrawable = imageView.getDrawable();
-            } //End block
+            } 
             {
                 {
                     targetDrawable.setAlpha(alpha);
-                } //End block
+                } 
                 {
                     targetDrawable.setColorFilter(colorFilter, filterMode);
-                } //End block
+                } 
                 {
                     targetDrawable.setLevel(level);
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(root.getTaint());
             addTaint(rootParent.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1532,9 +1571,9 @@ public class RemoteViews implements Parcelable, Filter {
           ReflectionActionWithoutParams(int viewId, String methodName) {
             this.viewId = viewId;
             this.methodName = methodName;
-            // ---------- Original Method ----------
-            //this.viewId = viewId;
-            //this.methodName = methodName;
+            
+            
+            
         }
 
         
@@ -1542,9 +1581,9 @@ public class RemoteViews implements Parcelable, Filter {
           ReflectionActionWithoutParams(Parcel in) {
             this.viewId = in.readInt();
             this.methodName = in.readString();
-            // ---------- Original Method ----------
-            //this.viewId = in.readInt();
-            //this.methodName = in.readString();
+            
+            
+            
         }
 
         
@@ -1555,10 +1594,10 @@ public class RemoteViews implements Parcelable, Filter {
             out.writeString(this.methodName);
             addTaint(out.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //out.writeInt(TAG);
-            //out.writeInt(this.viewId);
-            //out.writeString(this.methodName);
+            
+            
+            
+            
         }
 
         
@@ -1571,36 +1610,36 @@ public class RemoteViews implements Parcelable, Filter {
             try 
             {
                 method = klass.getMethod(this.methodName);
-            } //End block
+            } 
             catch (NoSuchMethodException ex)
             {
             	throw new ActionException("view: " + klass.getName() + " doesn't have method: "
                         + this.methodName + "()");
-            } //End block
+            } 
             {
                 boolean varDF1EFAF7A9352F1C3347271AD170B8BD_226441401 = (!method.isAnnotationPresent(RemotableViewMethod.class));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ActionException("view: " + klass.getName()
                         + " can't use method with RemoteViews: "
                         + this.methodName + "()");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             try 
             {
                 {
                     Log.d("RemoteViews", "view: " + klass.getName() + " calling method: "
                         + this.methodName + "()");
-                } //End block
+                } 
                 method.invoke(view);
-            } //End block
+            } 
             catch (Exception ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw new ActionException(ex);
-            } //End block
+            } 
             addTaint(root.getTaint());
             addTaint(rootParent.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1631,11 +1670,11 @@ public class RemoteViews implements Parcelable, Filter {
             this.methodName = methodName;
             this.type = type;
             this.value = value;
-            // ---------- Original Method ----------
-            //this.viewId = viewId;
-            //this.methodName = methodName;
-            //this.type = type;
-            //this.value = value;
+            
+            
+            
+            
+            
         }
 
         
@@ -1647,51 +1686,51 @@ public class RemoteViews implements Parcelable, Filter {
             {
                 Log.d("RemoteViews", "read viewId=0x" + Integer.toHexString(this.viewId)
                         + " methodName=" + this.methodName + " type=" + this.type);
-            } //End block
-            //Begin case BOOLEAN 
+            } 
+            
             this.value = in.readInt() != 0;
-            //End case BOOLEAN 
-            //Begin case BYTE 
+            
+            
             this.value = in.readByte();
-            //End case BYTE 
-            //Begin case SHORT 
+            
+            
             this.value = (short)in.readInt();
-            //End case SHORT 
-            //Begin case INT 
+            
+            
             this.value = in.readInt();
-            //End case INT 
-            //Begin case LONG 
+            
+            
             this.value = in.readLong();
-            //End case LONG 
-            //Begin case FLOAT 
+            
+            
             this.value = in.readFloat();
-            //End case FLOAT 
-            //Begin case DOUBLE 
+            
+            
             this.value = in.readDouble();
-            //End case DOUBLE 
-            //Begin case CHAR 
+            
+            
             this.value = (char)in.readInt();
-            //End case CHAR 
-            //Begin case STRING 
+            
+            
             this.value = in.readString();
-            //End case STRING 
-            //Begin case CHAR_SEQUENCE 
+            
+            
             this.value = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
-            //End case CHAR_SEQUENCE 
-            //Begin case URI 
+            
+            
             this.value = Uri.CREATOR.createFromParcel(in);
-            //End case URI 
-            //Begin case BITMAP 
+            
+            
             this.value = Bitmap.CREATOR.createFromParcel(in);
-            //End case BITMAP 
-            //Begin case BUNDLE 
+            
+            
             this.value = in.readBundle();
-            //End case BUNDLE 
-            //Begin case INTENT 
+            
+            
             this.value = Intent.CREATOR.createFromParcel(in);
-            //End case INTENT 
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
+            
         }
 
         
@@ -1704,170 +1743,170 @@ public class RemoteViews implements Parcelable, Filter {
             {
                 Log.d("RemoteViews", "write viewId=0x" + Integer.toHexString(this.viewId)
                         + " methodName=" + this.methodName + " type=" + this.type);
-            } //End block
-            //Begin case BOOLEAN 
+            } 
+            
             out.writeInt((Boolean) this.value ? 1 : 0);
-            //End case BOOLEAN 
-            //Begin case BYTE 
+            
+            
             out.writeByte((Byte) this.value);
-            //End case BYTE 
-            //Begin case SHORT 
+            
+            
             out.writeInt((Short) this.value);
-            //End case SHORT 
-            //Begin case INT 
+            
+            
             out.writeInt((Integer) this.value);
-            //End case INT 
-            //Begin case LONG 
+            
+            
             out.writeLong((Long) this.value);
-            //End case LONG 
-            //Begin case FLOAT 
+            
+            
             out.writeFloat((Float) this.value);
-            //End case FLOAT 
-            //Begin case DOUBLE 
+            
+            
             out.writeDouble((Double) this.value);
-            //End case DOUBLE 
-            //Begin case CHAR 
+            
+            
             out.writeInt((int)((Character)this.value).charValue());
-            //End case CHAR 
-            //Begin case STRING 
+            
+            
             out.writeString((String)this.value);
-            //End case STRING 
-            //Begin case CHAR_SEQUENCE 
+            
+            
             TextUtils.writeToParcel((CharSequence)this.value, out, flags);
-            //End case CHAR_SEQUENCE 
-            //Begin case URI 
+            
+            
             ((Uri)this.value).writeToParcel(out, flags);
-            //End case URI 
-            //Begin case BITMAP 
+            
+            
             ((Bitmap)this.value).writeToParcel(out, flags);
-            //End case BITMAP 
-            //Begin case BUNDLE 
+            
+            
             out.writeBundle((Bundle) this.value);
-            //End case BUNDLE 
-            //Begin case INTENT 
+            
+            
             ((Intent)this.value).writeToParcel(out, flags);
-            //End case INTENT 
+            
             addTaint(out.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.108 -0400", hash_original_method = "E66E0BF97844CCF37DCED039A425AFDA", hash_generated_method = "B6AD99CEF31BD84E25924E4205CB7F91")
         private Class getParameterType() {
-            Class varB4EAC82CA7396A68D541C85D26508E83_1383944493 = null; //Variable for return #1
-            Class varB4EAC82CA7396A68D541C85D26508E83_1954732381 = null; //Variable for return #2
-            Class varB4EAC82CA7396A68D541C85D26508E83_405695124 = null; //Variable for return #3
-            Class varB4EAC82CA7396A68D541C85D26508E83_175357225 = null; //Variable for return #4
-            Class varB4EAC82CA7396A68D541C85D26508E83_548429297 = null; //Variable for return #5
-            Class varB4EAC82CA7396A68D541C85D26508E83_994023474 = null; //Variable for return #6
-            Class varB4EAC82CA7396A68D541C85D26508E83_1735111876 = null; //Variable for return #7
-            Class varB4EAC82CA7396A68D541C85D26508E83_1407779697 = null; //Variable for return #8
-            Class varB4EAC82CA7396A68D541C85D26508E83_325051821 = null; //Variable for return #9
-            Class varB4EAC82CA7396A68D541C85D26508E83_755329361 = null; //Variable for return #10
-            Class varB4EAC82CA7396A68D541C85D26508E83_1728448430 = null; //Variable for return #11
-            Class varB4EAC82CA7396A68D541C85D26508E83_1502072829 = null; //Variable for return #12
-            Class varB4EAC82CA7396A68D541C85D26508E83_1169075059 = null; //Variable for return #13
-            Class varB4EAC82CA7396A68D541C85D26508E83_1754099758 = null; //Variable for return #14
-            Class varB4EAC82CA7396A68D541C85D26508E83_1153338551 = null; //Variable for return #15
-            //Begin case BOOLEAN 
+            Class varB4EAC82CA7396A68D541C85D26508E83_1383944493 = null; 
+            Class varB4EAC82CA7396A68D541C85D26508E83_1954732381 = null; 
+            Class varB4EAC82CA7396A68D541C85D26508E83_405695124 = null; 
+            Class varB4EAC82CA7396A68D541C85D26508E83_175357225 = null; 
+            Class varB4EAC82CA7396A68D541C85D26508E83_548429297 = null; 
+            Class varB4EAC82CA7396A68D541C85D26508E83_994023474 = null; 
+            Class varB4EAC82CA7396A68D541C85D26508E83_1735111876 = null; 
+            Class varB4EAC82CA7396A68D541C85D26508E83_1407779697 = null; 
+            Class varB4EAC82CA7396A68D541C85D26508E83_325051821 = null; 
+            Class varB4EAC82CA7396A68D541C85D26508E83_755329361 = null; 
+            Class varB4EAC82CA7396A68D541C85D26508E83_1728448430 = null; 
+            Class varB4EAC82CA7396A68D541C85D26508E83_1502072829 = null; 
+            Class varB4EAC82CA7396A68D541C85D26508E83_1169075059 = null; 
+            Class varB4EAC82CA7396A68D541C85D26508E83_1754099758 = null; 
+            Class varB4EAC82CA7396A68D541C85D26508E83_1153338551 = null; 
+            
             varB4EAC82CA7396A68D541C85D26508E83_1383944493 = boolean.class;
-            //End case BOOLEAN 
-            //Begin case BYTE 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_1954732381 = byte.class;
-            //End case BYTE 
-            //Begin case SHORT 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_405695124 = short.class;
-            //End case SHORT 
-            //Begin case INT 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_175357225 = int.class;
-            //End case INT 
-            //Begin case LONG 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_548429297 = long.class;
-            //End case LONG 
-            //Begin case FLOAT 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_994023474 = float.class;
-            //End case FLOAT 
-            //Begin case DOUBLE 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_1735111876 = double.class;
-            //End case DOUBLE 
-            //Begin case CHAR 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_1407779697 = char.class;
-            //End case CHAR 
-            //Begin case STRING 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_325051821 = String.class;
-            //End case STRING 
-            //Begin case CHAR_SEQUENCE 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_755329361 = CharSequence.class;
-            //End case CHAR_SEQUENCE 
-            //Begin case URI 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_1728448430 = Uri.class;
-            //End case URI 
-            //Begin case BITMAP 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_1502072829 = Bitmap.class;
-            //End case BITMAP 
-            //Begin case BUNDLE 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_1169075059 = Bundle.class;
-            //End case BUNDLE 
-            //Begin case INTENT 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_1754099758 = Intent.class;
-            //End case INTENT 
-            //Begin case default 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_1153338551 = null;
-            //End case default 
-            Class varA7E53CE21691AB073D9660D615818899_170462816; //Final return value
+            
+            Class varA7E53CE21691AB073D9660D615818899_170462816; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_1383944493;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_1954732381;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_405695124;
                     break;
-                case 4: //Assign result for return ordinal #4
+                case 4: 
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_175357225;
                     break;
-                case 5: //Assign result for return ordinal #5
+                case 5: 
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_548429297;
                     break;
-                case 6: //Assign result for return ordinal #6
+                case 6: 
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_994023474;
                     break;
-                case 7: //Assign result for return ordinal #7
+                case 7: 
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_1735111876;
                     break;
-                case 8: //Assign result for return ordinal #8
+                case 8: 
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_1407779697;
                     break;
-                case 9: //Assign result for return ordinal #9
+                case 9: 
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_325051821;
                     break;
-                case 10: //Assign result for return ordinal #10
+                case 10: 
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_755329361;
                     break;
-                case 11: //Assign result for return ordinal #11
+                case 11: 
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_1728448430;
                     break;
-                case 12: //Assign result for return ordinal #12
+                case 12: 
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_1502072829;
                     break;
-                case 13: //Assign result for return ordinal #13
+                case 13: 
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_1169075059;
                     break;
-                case 14: //Assign result for return ordinal #14
+                case 14: 
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_1754099758;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_170462816 = varB4EAC82CA7396A68D541C85D26508E83_1153338551;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_170462816.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_170462816.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_170462816;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1878,71 +1917,71 @@ public class RemoteViews implements Parcelable, Filter {
             Class param = getParameterType();
             {
                 if (DroidSafeAndroidRuntime.control) throw new ActionException("bad type: " + this.type);
-            } //End block
+            } 
             Class klass = view.getClass();
             Method method;
             try 
             {
                 method = klass.getMethod(this.methodName, getParameterType());
-            } //End block
+            } 
             catch (NoSuchMethodException ex)
             {
             	throw new ActionException("view: " + klass.getName() + " doesn't have method: "
                         + this.methodName + "(" + param.getName() + ")");
-            } //End block
+            } 
             {
                 boolean varDF1EFAF7A9352F1C3347271AD170B8BD_1929110065 = (!method.isAnnotationPresent(RemotableViewMethod.class));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ActionException("view: " + klass.getName()
                         + " can't use method with RemoteViews: "
                         + this.methodName + "(" + param.getName() + ")");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             try 
             {
                 {
                     Log.d("RemoteViews", "view: " + klass.getName() + " calling method: "
                         + this.methodName + "(" + param.getName() + ") with "
                         + (this.value == null ? "null" : this.value.getClass().getName()));
-                } //End block
+                } 
                 method.invoke(view, this.value);
-            } //End block
+            } 
             catch (Exception ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw new ActionException(ex);
-            } //End block
+            } 
             addTaint(root.getTaint());
             addTaint(rootParent.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.110 -0400", hash_original_method = "1F301B790026760CE401FF57484A4A78", hash_generated_method = "A0D97F6132EE85ED062867E2AA8F0876")
         @Override
         public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
-            //Begin case BITMAP 
+            
             {
                 final Bitmap b = (Bitmap) this.value;
                 final Bitmap.Config c = b.getConfig();
                 int bpp = 4;
                 {
-                    //Begin case ALPHA_8 
+                    
                     bpp = 1;
-                    //End case ALPHA_8 
-                    //Begin case RGB_565 ARGB_4444 
+                    
+                    
                     bpp = 2;
-                    //End case RGB_565 ARGB_4444 
-                    //Begin case ARGB_8888 
+                    
+                    
                     bpp = 4;
-                    //End case ARGB_8888 
-                } //End block
+                    
+                } 
                 counter.bitmapIncrement(b.getWidth() * b.getHeight() * bpp);
-            } //End block
-            //End case BITMAP 
+            } 
+            
             addTaint(counter.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2007,9 +2046,9 @@ public class RemoteViews implements Parcelable, Filter {
         public  ViewGroupAction(int viewId, RemoteViews nestedViews) {
             this.viewId = viewId;
             this.nestedViews = nestedViews;
-            // ---------- Original Method ----------
-            //this.viewId = viewId;
-            //this.nestedViews = nestedViews;
+            
+            
+            
         }
 
         
@@ -2017,9 +2056,9 @@ public class RemoteViews implements Parcelable, Filter {
         public  ViewGroupAction(Parcel parcel) {
             viewId = parcel.readInt();
             nestedViews = parcel.readParcelable(null);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //nestedViews = parcel.readParcelable(null);
+            
+            
+            
         }
 
         
@@ -2030,10 +2069,10 @@ public class RemoteViews implements Parcelable, Filter {
             dest.writeParcelable(nestedViews, 0 );
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //dest.writeParcelable(nestedViews, 0 );
+            
+            
+            
+            
         }
 
         
@@ -2044,21 +2083,21 @@ public class RemoteViews implements Parcelable, Filter {
             final ViewGroup target = (ViewGroup) root.findViewById(viewId);
             {
                 target.addView(nestedViews.apply(context, target));
-            } //End block
+            } 
             {
                 target.removeAllViews();
-            } //End block
+            } 
             addTaint(root.getTaint());
             addTaint(rootParent.getTaint());
-            // ---------- Original Method ----------
-            //final Context context = root.getContext();
-            //final ViewGroup target = (ViewGroup) root.findViewById(viewId);
-            //if (target == null) return;
-            //if (nestedViews != null) {
-                //target.addView(nestedViews.apply(context, target));
-            //} else {
-                //target.removeAllViews();
-            //}
+            
+            
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -2067,12 +2106,12 @@ public class RemoteViews implements Parcelable, Filter {
         public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
             {
                 counter.bitmapIncrement(nestedViews.estimateBitmapMemoryUsage());
-            } //End block
+            } 
             addTaint(counter.getTaint());
-            // ---------- Original Method ----------
-            //if (nestedViews != null) {
-                //counter.bitmapIncrement(nestedViews.estimateBitmapMemoryUsage());
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2091,23 +2130,23 @@ public class RemoteViews implements Parcelable, Filter {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.112 -0400", hash_original_method = "35D450C627251B011B80F5473DD04513", hash_generated_method = "35D450C627251B011B80F5473DD04513")
         public MemoryUsageCounter ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.113 -0400", hash_original_method = "F68FB7282799CC52F4314E5E47499FED", hash_generated_method = "980B3E80527B474B5039262E61BD9D48")
         public void clear() {
             mBitmapHeapMemoryUsage = 0;
-            // ---------- Original Method ----------
-            //mBitmapHeapMemoryUsage = 0;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.113 -0400", hash_original_method = "9C864F7ABFEE7832A18F21C728CCE23F", hash_generated_method = "583FD2D740DF0E423E81CC172F08A31C")
         public void bitmapIncrement(int numBytes) {
             mBitmapHeapMemoryUsage += numBytes;
-            // ---------- Original Method ----------
-            //mBitmapHeapMemoryUsage += numBytes;
+            
+            
         }
 
         
@@ -2115,8 +2154,8 @@ public class RemoteViews implements Parcelable, Filter {
         public int getBitmapHeapMemoryUsage() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_505455615 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_505455615;
-            // ---------- Original Method ----------
-            //return mBitmapHeapMemoryUsage;
+            
+            
         }
 
         
@@ -2144,12 +2183,12 @@ public class RemoteViews implements Parcelable, Filter {
             return new RemoteViews[size];
         }
     };
-    // orphaned legacy method
+    
     public RemoteViews createFromParcel(Parcel parcel) {
             return new RemoteViews(parcel);
         }
     
-    // orphaned legacy method
+    
     public RemoteViews[] newArray(int size) {
             return new RemoteViews[size];
         }

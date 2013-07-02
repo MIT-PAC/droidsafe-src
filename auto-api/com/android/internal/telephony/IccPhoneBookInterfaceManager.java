@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.pm.PackageManager;
 import android.os.AsyncResult;
@@ -42,49 +42,49 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
         @Override
         public void handleMessage(Message msg) {
             AsyncResult ar;
-            //Begin case EVENT_GET_SIZE_DONE 
+            
             ar = (AsyncResult) msg.obj;
-            //End case EVENT_GET_SIZE_DONE 
-            //Begin case EVENT_GET_SIZE_DONE 
+            
+            
             {
                 {
                     recordSize = (int[])ar.result;
                     logd("GET_RECORD_SIZE Size " + recordSize[0] +
                                     " total " + recordSize[1] +
                                     " #record " + recordSize[2]);
-                } //End block
+                } 
                 notifyPending(ar);
-            } //End block
-            //End case EVENT_GET_SIZE_DONE 
-            //Begin case EVENT_UPDATE_DONE 
+            } 
+            
+            
             ar = (AsyncResult) msg.obj;
-            //End case EVENT_UPDATE_DONE 
-            //Begin case EVENT_UPDATE_DONE 
+            
+            
             {
                 success = (ar.exception == null);
                 notifyPending(ar);
-            } //End block
-            //End case EVENT_UPDATE_DONE 
-            //Begin case EVENT_LOAD_DONE 
+            } 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_LOAD_DONE 
-            //Begin case EVENT_LOAD_DONE 
+            
+            
             {
                 {
                     records = (List<AdnRecord>) ar.result;
-                } //End block
+                } 
                 {
                     logd("Cannot load ADN records");
                     {
                         records.clear();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 notifyPending(ar);
-            } //End block
-            //End case EVENT_LOAD_DONE 
+            } 
+            
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -94,13 +94,13 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             status.set(true);
             mLock.notifyAll();
             addTaint(ar.getTaint());
-            // ---------- Original Method ----------
-            //if (ar.userObj == null) {
-                //return;
-            //}
-            //AtomicBoolean status = (AtomicBoolean) ar.userObj;
-            //status.set(true);
-            //mLock.notifyAll();
+            
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -109,22 +109,23 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.989 -0400", hash_original_method = "A61AB5A9E61C78C524F0A299EDDA8B31", hash_generated_method = "F8239CE1F53CC35117D554BE23C34DE0")
     public  IccPhoneBookInterfaceManager(PhoneBase phone) {
         this.phone = phone;
-        // ---------- Original Method ----------
-        //this.phone = phone;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.990 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.990 -0400", hash_original_method = "96914FA697D4DDB9AE25582FAB4A6818", hash_generated_method = "1E7A9ED6D1CCD6DE353231DD77EAE9D8")
     protected void publish() {
         ServiceManager.addService("simphonebook", this);
-        // ---------- Original Method ----------
-        //ServiceManager.addService("simphonebook", this);
+        
+        
     }
 
     
@@ -134,6 +135,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     protected abstract void loge(String msg);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.991 -0400", hash_original_method = "6BE84EAB1F25CDC10E8188E3A1C3A959", hash_generated_method = "82A915CED6DB7022A612433D6C477FAB")
     public boolean updateAdnRecordsInEfBySearch(int efid,
             String oldTag, String oldPhoneNumber,
@@ -145,8 +147,8 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             {
                 if (DroidSafeAndroidRuntime.control) throw new SecurityException(
                     "Requires android.permission.WRITE_CONTACTS permission");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         logd("updateAdnRecordsInEfBySearch: efid=" + efid +
                 " ("+ oldTag + "," + oldPhoneNumber + ")"+ "==>" +
                 " ("+ newTag + "," + newPhoneNumber + ")"+ " pin2=" + pin2);
@@ -160,7 +162,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             AdnRecord newAdn = new AdnRecord(newTag, newPhoneNumber);
             adnCache.updateAdnBySearch(efid, oldAdn, newAdn, pin2, response);
             waitForResult(status);
-        } //End block
+        } 
         addTaint(efid);
         addTaint(oldTag.getTaint());
         addTaint(oldPhoneNumber.getTaint());
@@ -169,11 +171,12 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
         addTaint(pin2.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1209836579 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1209836579;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.992 -0400", hash_original_method = "102FC1C0583C00426ED85686CB9EA64E", hash_generated_method = "D6A40277E5522AF244C7DA1730A501F7")
     public boolean updateAdnRecordsInEfByIndex(int efid, String newTag,
             String newPhoneNumber, int index, String pin2) {
@@ -184,8 +187,8 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             {
                 if (DroidSafeAndroidRuntime.control) throw new SecurityException(
                     "Requires android.permission.WRITE_CONTACTS permission");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         logd("updateAdnRecordsInEfByIndex: efid=" + efid +
                 " Index=" + index + " ==> " +
                 "("+ newTag + "," + newPhoneNumber + ")"+ " pin2=" + pin2);
@@ -197,7 +200,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             AdnRecord newAdn = new AdnRecord(newTag, newPhoneNumber);
             adnCache.updateAdnByIndex(efid, newAdn, index, pin2, response);
             waitForResult(status);
-        } //End block
+        } 
         addTaint(efid);
         addTaint(newTag.getTaint());
         addTaint(newPhoneNumber.getTaint());
@@ -205,17 +208,18 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
         addTaint(pin2.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1568339438 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1568339438;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     public abstract int[] getAdnRecordsSize(int efid);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.993 -0400", hash_original_method = "2EC5B47F5C71460FB1C246E071649E17", hash_generated_method = "2DC9D7850AB287AB00EAEE14E8BA3814")
     public List<AdnRecord> getAdnRecordsInEf(int efid) {
-        List<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_997254673 = null; //Variable for return #1
+        List<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_997254673 = null; 
         {
             boolean var539E4FD5A70571EEC200A34F44B8BBBA_1812877308 = (phone.getContext().checkCallingOrSelfPermission(
                 android.Manifest.permission.READ_CONTACTS)
@@ -223,8 +227,8 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             {
                 if (DroidSafeAndroidRuntime.control) throw new SecurityException(
                     "Requires android.permission.READ_CONTACTS permission");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         efid = updateEfForIccType(efid);
         logd("getAdnRecordsInEF: efid=" + efid);
         {
@@ -233,31 +237,32 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             Message response = mBaseHandler.obtainMessage(EVENT_LOAD_DONE, status);
             adnCache.requestLoadAllAdnLike(efid, adnCache.extensionEfForEf(efid), response);
             waitForResult(status);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_997254673 = records;
         addTaint(efid);
-        varB4EAC82CA7396A68D541C85D26508E83_997254673.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_997254673.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_997254673;
-        // ---------- Original Method ----------
-        //if (phone.getContext().checkCallingOrSelfPermission(
-                //android.Manifest.permission.READ_CONTACTS)
-                //!= PackageManager.PERMISSION_GRANTED) {
-            //throw new SecurityException(
-                    //"Requires android.permission.READ_CONTACTS permission");
-        //}
-        //efid = updateEfForIccType(efid);
-        //if (DBG) logd("getAdnRecordsInEF: efid=" + efid);
-        //synchronized(mLock) {
-            //checkThread();
-            //AtomicBoolean status = new AtomicBoolean(false);
-            //Message response = mBaseHandler.obtainMessage(EVENT_LOAD_DONE, status);
-            //adnCache.requestLoadAllAdnLike(efid, adnCache.extensionEfForEf(efid), response);
-            //waitForResult(status);
-        //}
-        //return records;
+        
+        
+                
+                
+            
+                    
+        
+        
+        
+        
+            
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.994 -0400", hash_original_method = "323B98E2749A47EA83AB3530A004F85D", hash_generated_method = "53A04C736ED66D1FB5BFAF46D302A403")
     protected void checkThread() {
         {
@@ -267,20 +272,21 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
                     loge("query() called on the main UI thread!");
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                         "You cannot call query on this provder from the main UI thread.");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //if (!ALLOW_SIM_OP_IN_UI_THREAD) {
-            //if (mBaseHandler.getLooper().equals(Looper.myLooper())) {
-                //loge("query() called on the main UI thread!");
-                //throw new IllegalStateException(
-                        //"You cannot call query on this provder from the main UI thread.");
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+                
+                
+                        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.994 -0400", hash_original_method = "FD540EF7FFA0769933308F8586A1F0A4", hash_generated_method = "4FA976BEE349EABB1BB7AA3CF5D403AB")
     protected void waitForResult(AtomicBoolean status) {
         {
@@ -289,42 +295,43 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
                 try 
                 {
                     mLock.wait();
-                } //End block
+                } 
                 catch (InterruptedException e)
                 {
                     logd("interrupted while trying to update by search");
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(status.getTaint());
-        // ---------- Original Method ----------
-        //while (!status.get()) {
-            //try {
-                //mLock.wait();
-            //} catch (InterruptedException e) {
-                //logd("interrupted while trying to update by search");
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.995 -0400", hash_original_method = "6710BA71BBE2AF73325E69DE756B39B5", hash_generated_method = "4F72EE1F380E1793FE443A43819AFEBB")
     private int updateEfForIccType(int efid) {
         {
             {
                 boolean var13648D229DF6DF3D9FC1C8923B7156DF_67036362 = (phone.getIccCard().isApplicationOnIcc(IccCardApplication.AppType.APPTYPE_USIM));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(efid);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041462197 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041462197;
-        // ---------- Original Method ----------
-        //if (efid == IccConstants.EF_ADN) {
-            //if (phone.getIccCard().isApplicationOnIcc(IccCardApplication.AppType.APPTYPE_USIM)) {
-                //return IccConstants.EF_PBR;
-            //}
-        //}
-        //return efid;
+        
+        
+            
+                
+            
+        
+        
     }
 
     

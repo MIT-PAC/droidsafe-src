@@ -1,11 +1,11 @@
 package android.graphics.drawable;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -75,7 +75,7 @@ public class GradientDrawable extends Drawable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.051 -0400", hash_original_method = "64287040FBFB7F81692AADB4245B0378", hash_generated_method = "78296307B8E83E1FC392EC6080C25EE7")
     public  GradientDrawable() {
         this(new GradientState(Orientation.TOP_BOTTOM, null));
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -84,7 +84,7 @@ public class GradientDrawable extends Drawable {
         this(new GradientState(orientation, colors));
         addTaint(orientation.getTaint());
         addTaint(colors[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -93,107 +93,113 @@ public class GradientDrawable extends Drawable {
         mGradientState = state;
         initializeWithState(state);
         mRectIsDirty = true;
-        // ---------- Original Method ----------
-        //mGradientState = state;
-        //initializeWithState(state);
-        //mRectIsDirty = true;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.052 -0400", hash_original_method = "0B8807A1903E03E118A45AC647AD9F24", hash_generated_method = "85DD39DB58D1D4B7E34B954D2D49997A")
     @Override
     public boolean getPadding(Rect padding) {
         {
             padding.set(mPadding);
-        } //End block
+        } 
         {
             boolean var26681595319194856AEB3747307B6E08_1410545213 = (super.getPadding(padding));
-        } //End block
+        } 
         addTaint(padding.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1895756835 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1895756835;
-        // ---------- Original Method ----------
-        //if (mPadding != null) {
-            //padding.set(mPadding);
-            //return true;
-        //} else {
-            //return super.getPadding(padding);
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.052 -0400", hash_original_method = "71F948CC6AEC5EB6067752059DA33574", hash_generated_method = "FCBE9193C12F25CC29BBDD2EEC566408")
     public void setCornerRadii(float[] radii) {
         mGradientState.setCornerRadii(radii);
         mPathIsDirty = true;
         invalidateSelf();
         addTaint(radii[0]);
-        // ---------- Original Method ----------
-        //mGradientState.setCornerRadii(radii);
-        //mPathIsDirty = true;
-        //invalidateSelf();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.053 -0400", hash_original_method = "AFB7C3E5AE7C3BBB28B141F7A3B472BE", hash_generated_method = "F22FBE70113DC36528EF20A07EA57260")
     public void setCornerRadius(float radius) {
         mGradientState.setCornerRadius(radius);
         mPathIsDirty = true;
         invalidateSelf();
         addTaint(radius);
-        // ---------- Original Method ----------
-        //mGradientState.setCornerRadius(radius);
-        //mPathIsDirty = true;
-        //invalidateSelf();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.053 -0400", hash_original_method = "6A0F62EB2F02BD455327DA9DA2DD0568", hash_generated_method = "B4F773A1BF847FFF8CF641E8B9C6EC52")
     public void setStroke(int width, int color) {
         setStroke(width, color, 0, 0);
         addTaint(width);
         addTaint(color);
-        // ---------- Original Method ----------
-        //setStroke(width, color, 0, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.054 -0400", hash_original_method = "F36B912577B048DA0236870F939930FC", hash_generated_method = "E5F62C1BFBB92649199D5C8AE50CD813")
     public void setStroke(int width, int color, float dashWidth, float dashGap) {
         mGradientState.setStroke(width, color, dashWidth, dashGap);
         {
             mStrokePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
             mStrokePaint.setStyle(Paint.Style.STROKE);
-        } //End block
+        } 
         mStrokePaint.setStrokeWidth(width);
         mStrokePaint.setColor(color);
         DashPathEffect e = null;
         {
             e = new DashPathEffect(new float[] { dashWidth, dashGap }, 0);
-        } //End block
+        } 
         mStrokePaint.setPathEffect(e);
         invalidateSelf();
         addTaint(width);
         addTaint(color);
         addTaint(dashWidth);
         addTaint(dashGap);
-        // ---------- Original Method ----------
-        //mGradientState.setStroke(width, color, dashWidth, dashGap);
-        //if (mStrokePaint == null)  {
-            //mStrokePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-            //mStrokePaint.setStyle(Paint.Style.STROKE);
-        //}
-        //mStrokePaint.setStrokeWidth(width);
-        //mStrokePaint.setColor(color);
-        //DashPathEffect e = null;
-        //if (dashWidth > 0) {
-            //e = new DashPathEffect(new float[] { dashWidth, dashGap }, 0);
-        //}
-        //mStrokePaint.setPathEffect(e);
-        //invalidateSelf();
+        
+        
+        
+            
+            
+        
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.055 -0400", hash_original_method = "DBF55AE12AFE7021A6EFA67946A43E31", hash_generated_method = "5FA98507D9A924147867D5A9D89417D1")
     public void setSize(int width, int height) {
         mGradientState.setSize(width, height);
@@ -201,13 +207,14 @@ public class GradientDrawable extends Drawable {
         invalidateSelf();
         addTaint(width);
         addTaint(height);
-        // ---------- Original Method ----------
-        //mGradientState.setSize(width, height);
-        //mPathIsDirty = true;
-        //invalidateSelf();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.055 -0400", hash_original_method = "70A303A49D3D529F927A8B25154245C2", hash_generated_method = "D4D504E2107E4EA1E51D16F22F9DF437")
     public void setShape(int shape) {
         mRingPath = null;
@@ -215,27 +222,29 @@ public class GradientDrawable extends Drawable {
         mGradientState.setShape(shape);
         invalidateSelf();
         addTaint(shape);
-        // ---------- Original Method ----------
-        //mRingPath = null;
-        //mPathIsDirty = true;
-        //mGradientState.setShape(shape);
-        //invalidateSelf();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.056 -0400", hash_original_method = "18DB26B14B71A02370E6DE427E61924A", hash_generated_method = "0D656E63F355DADB6011279EABB75D59")
     public void setGradientType(int gradient) {
         mGradientState.setGradientType(gradient);
         mRectIsDirty = true;
         invalidateSelf();
         addTaint(gradient);
-        // ---------- Original Method ----------
-        //mGradientState.setGradientType(gradient);
-        //mRectIsDirty = true;
-        //invalidateSelf();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.056 -0400", hash_original_method = "45A2D9788BC882B134EC764255BF8E5D", hash_generated_method = "022B292683128C415AAABCEE5B536C2C")
     public void setGradientCenter(float x, float y) {
         mGradientState.setGradientCenter(x, y);
@@ -243,35 +252,37 @@ public class GradientDrawable extends Drawable {
         invalidateSelf();
         addTaint(x);
         addTaint(y);
-        // ---------- Original Method ----------
-        //mGradientState.setGradientCenter(x, y);
-        //mRectIsDirty = true;
-        //invalidateSelf();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.056 -0400", hash_original_method = "C7CA2F8177799FD0AFA978CBCB22DF14", hash_generated_method = "20562707949A618B0A95C187F377DF41")
     public void setGradientRadius(float gradientRadius) {
         mGradientState.setGradientRadius(gradientRadius);
         mRectIsDirty = true;
         invalidateSelf();
         addTaint(gradientRadius);
-        // ---------- Original Method ----------
-        //mGradientState.setGradientRadius(gradientRadius);
-        //mRectIsDirty = true;
-        //invalidateSelf();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.057 -0400", hash_original_method = "76C6B5A7FB76D454B2D8C7EAA5B46C4F", hash_generated_method = "2E9C7352FC465108C4CB664D03418E5C")
     public void setUseLevel(boolean useLevel) {
         mGradientState.mUseLevel = useLevel;
         mRectIsDirty = true;
         invalidateSelf();
-        // ---------- Original Method ----------
-        //mGradientState.mUseLevel = useLevel;
-        //mRectIsDirty = true;
-        //invalidateSelf();
+        
+        
+        
+        
     }
 
     
@@ -281,18 +292,19 @@ public class GradientDrawable extends Drawable {
         addTaint(alpha);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1515243057 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1515243057;
-        // ---------- Original Method ----------
-        //int scale = mAlpha + (mAlpha >> 7);
-        //return alpha * scale >> 8;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.059 -0400", hash_original_method = "ACDDE907D9101C7CDDBBB954BA4F617E", hash_generated_method = "C861316E2BC17CAFCFD53D56C4732F41")
     @Override
     public void draw(Canvas canvas) {
         {
             boolean varBA9DE832C2A11F9FBBE974DC63DFFCC8_1236984266 = (!ensureValidRect());
-        } //End collapsed parenthetic
+        } 
         final int prevFillAlpha = mFillPaint.getAlpha();
         int prevStrokeAlpha;
         prevStrokeAlpha = mStrokePaint.getAlpha();
@@ -307,7 +319,7 @@ public class GradientDrawable extends Drawable {
         {
             {
                 mLayerPaint = new Paint();
-            } //End block
+            } 
             mLayerPaint.setDither(mDither);
             mLayerPaint.setAlpha(mAlpha);
             mLayerPaint.setColorFilter(mColorFilter);
@@ -317,7 +329,7 @@ public class GradientDrawable extends Drawable {
                              mLayerPaint, Canvas.HAS_ALPHA_LAYER_SAVE_FLAG);
             mFillPaint.setColorFilter(null);
             mStrokePaint.setColorFilter(null);
-        } //End block
+        } 
         {
             mFillPaint.setAlpha(currFillAlpha);
             mFillPaint.setDither(mDither);
@@ -326,83 +338,84 @@ public class GradientDrawable extends Drawable {
                 mStrokePaint.setAlpha(currStrokeAlpha);
                 mStrokePaint.setDither(mDither);
                 mStrokePaint.setColorFilter(mColorFilter);
-            } //End block
-        } //End block
-        //Begin case RECTANGLE 
+            } 
+        } 
+        
         {
             {
                 mPath.reset();
                 mPath.addRoundRect(mRect, st.mRadiusArray, Path.Direction.CW);
                 mPathIsDirty = mRectIsDirty = false;
-            } //End block
+            } 
             canvas.drawPath(mPath, mFillPaint);
             {
                 canvas.drawPath(mPath, mStrokePaint);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             float rad = st.mRadius;
             float r = Math.min(mRect.width(), mRect.height()) * 0.5f;
             {
                 rad = r;
-            } //End block
+            } 
             canvas.drawRoundRect(mRect, rad, rad, mFillPaint);
             {
                 canvas.drawRoundRect(mRect, rad, rad, mStrokePaint);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             canvas.drawRect(mRect, mFillPaint);
             {
                 canvas.drawRect(mRect, mStrokePaint);
-            } //End block
-        } //End block
-        //End case RECTANGLE 
-        //Begin case OVAL 
+            } 
+        } 
+        
+        
         canvas.drawOval(mRect, mFillPaint);
-        //End case OVAL 
-        //Begin case OVAL 
+        
+        
         {
             canvas.drawOval(mRect, mStrokePaint);
-        } //End block
-        //End case OVAL 
-        //Begin case LINE 
+        } 
+        
+        
         {
             RectF r = mRect;
             float y = r.centerY();
             canvas.drawLine(r.left, y, r.right, y, mStrokePaint);
-        } //End block
-        //End case LINE 
-        //Begin case RING 
+        } 
+        
+        
         Path path = buildRing(st);
-        //End case RING 
-        //Begin case RING 
+        
+        
         canvas.drawPath(path, mFillPaint);
-        //End case RING 
-        //Begin case RING 
+        
+        
         {
             canvas.drawPath(path, mStrokePaint);
-        } //End block
-        //End case RING 
+        } 
+        
         {
             canvas.restore();
-        } //End block
+        } 
         {
             mFillPaint.setAlpha(prevFillAlpha);
             {
                 mStrokePaint.setAlpha(prevStrokeAlpha);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.060 -0400", hash_original_method = "FA54FBF5F964BB48C4F923A57A9FF840", hash_generated_method = "63A5F3A395617F02ECC148880B87EB98")
     private Path buildRing(GradientState st) {
-        Path varB4EAC82CA7396A68D541C85D26508E83_623806410 = null; //Variable for return #1
-        Path varB4EAC82CA7396A68D541C85D26508E83_1396089583 = null; //Variable for return #2
+        Path varB4EAC82CA7396A68D541C85D26508E83_623806410 = null; 
+        Path varB4EAC82CA7396A68D541C85D26508E83_1396089583 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_623806410 = mRingPath;
         mPathIsDirty = false;
         float sweep;
@@ -423,10 +436,10 @@ public class GradientDrawable extends Drawable {
         bounds.inset(-thickness, -thickness);
         {
             mRingPath = new Path();
-        } //End block
+        } 
         {
             mRingPath.reset();
-        } //End block
+        } 
         final Path ringPath = mRingPath;
         {
             ringPath.setFillType(Path.FillType.EVEN_ODD);
@@ -435,42 +448,44 @@ public class GradientDrawable extends Drawable {
             ringPath.arcTo(bounds, 0.0f, sweep, false);
             ringPath.arcTo(innerBounds, sweep, -sweep, false);
             ringPath.close();
-        } //End block
+        } 
         {
             ringPath.addOval(bounds, Path.Direction.CW);
             ringPath.addOval(innerBounds, Path.Direction.CCW);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1396089583 = ringPath;
         addTaint(st.getTaint());
-        Path varA7E53CE21691AB073D9660D615818899_1558291710; //Final return value
+        Path varA7E53CE21691AB073D9660D615818899_1558291710; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1558291710 = varB4EAC82CA7396A68D541C85D26508E83_623806410;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1558291710 = varB4EAC82CA7396A68D541C85D26508E83_1396089583;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1558291710.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1558291710.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1558291710;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.061 -0400", hash_original_method = "A6E3DC666A9DC913CF167BAEE3BA3755", hash_generated_method = "E2AFD499F4A73DF66FCF79C1BF8F2229")
     public void setColor(int argb) {
         mGradientState.setSolidColor(argb);
         mFillPaint.setColor(argb);
         invalidateSelf();
         addTaint(argb);
-        // ---------- Original Method ----------
-        //mGradientState.setSolidColor(argb);
-        //mFillPaint.setColor(argb);
-        //invalidateSelf();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.061 -0400", hash_original_method = "3865DA4989774EEF9AAAD48E0098B1D2", hash_generated_method = "7E521BA8AA56314CCF7929971DCAA5BF")
     @Override
     public int getChangingConfigurations() {
@@ -478,54 +493,57 @@ public class GradientDrawable extends Drawable {
                 | mGradientState.mChangingConfigurations);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_744182994 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_744182994;
-        // ---------- Original Method ----------
-        //return super.getChangingConfigurations()
-                //| mGradientState.mChangingConfigurations;
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.061 -0400", hash_original_method = "5182E1ED546D38ED0370680C356A26EE", hash_generated_method = "9B771BA6D3F8B2E7E865EBADFD3BB5CB")
     @Override
     public void setAlpha(int alpha) {
         {
             mAlpha = alpha;
             invalidateSelf();
-        } //End block
-        // ---------- Original Method ----------
-        //if (alpha != mAlpha) {
-            //mAlpha = alpha;
-            //invalidateSelf();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.062 -0400", hash_original_method = "9DFE5D886E6229E65D3F438DE9F28624", hash_generated_method = "E96FC7737BDCFE119580C5267A1996E3")
     @Override
     public void setDither(boolean dither) {
         {
             mDither = dither;
             invalidateSelf();
-        } //End block
-        // ---------- Original Method ----------
-        //if (dither != mDither) {
-            //mDither = dither;
-            //invalidateSelf();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.062 -0400", hash_original_method = "0D338CBBF9E8A18D18E6BF68648024B0", hash_generated_method = "51C58ED617FC753572A6A9D0C9CB4655")
     @Override
     public void setColorFilter(ColorFilter cf) {
         {
             mColorFilter = cf;
             invalidateSelf();
-        } //End block
-        // ---------- Original Method ----------
-        //if (cf != mColorFilter) {
-            //mColorFilter = cf;
-            //invalidateSelf();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -534,32 +552,34 @@ public class GradientDrawable extends Drawable {
     public int getOpacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_930111777 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_930111777;
-        // ---------- Original Method ----------
-        //return PixelFormat.TRANSLUCENT;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.063 -0400", hash_original_method = "8123137F2C4F03B6AAC99B13B8B696DA", hash_generated_method = "5580BDE6A3C74A2FE32C5823D03C8EB0")
     @Override
     protected void onBoundsChange(Rect r) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onBoundsChange(r);
         mRingPath = null;
         mPathIsDirty = true;
         mRectIsDirty = true;
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //super.onBoundsChange(r);
-        //mRingPath = null;
-        //mPathIsDirty = true;
-        //mRectIsDirty = true;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.064 -0400", hash_original_method = "394C06781A7C1BB568DD9A62F4177986", hash_generated_method = "8A0ADB6FF552F78B16BA9F32C29B2159")
     @Override
     protected boolean onLevelChange(int level) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onLevelChange(level);
         mRectIsDirty = true;
         mPathIsDirty = true;
@@ -567,15 +587,16 @@ public class GradientDrawable extends Drawable {
         addTaint(level);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_142689192 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_142689192;
-        // ---------- Original Method ----------
-        //super.onLevelChange(level);
-        //mRectIsDirty = true;
-        //mPathIsDirty = true;
-        //invalidateSelf();
-        //return true;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.068 -0400", hash_original_method = "A926FB4015A038016094FA9870012FFA", hash_generated_method = "D2EBA124C0241DD40A12785C847D0247")
     private boolean ensureValidRect() {
         {
@@ -584,7 +605,7 @@ public class GradientDrawable extends Drawable {
             float inset = 0;
             {
                 inset = mStrokePaint.getStrokeWidth() * 0.5f;
-            } //End block
+            } 
             final GradientState st = mGradientState;
             mRect.set(bounds.left + inset, bounds.top + inset,
                       bounds.right - inset, bounds.bottom - inset);
@@ -599,105 +620,105 @@ public class GradientDrawable extends Drawable {
                     float level;
                     level = (float) getLevel() / 10000.0f;
                     level = 1.0f;
-                    //Begin case TOP_BOTTOM 
+                    
                     x0 = r.left;
-                    //End case TOP_BOTTOM 
-                    //Begin case TOP_BOTTOM 
+                    
+                    
                     y0 = r.top;
-                    //End case TOP_BOTTOM 
-                    //Begin case TOP_BOTTOM 
+                    
+                    
                     x1 = x0;
-                    //End case TOP_BOTTOM 
-                    //Begin case TOP_BOTTOM 
+                    
+                    
                     y1 = level * r.bottom;
-                    //End case TOP_BOTTOM 
-                    //Begin case TR_BL 
+                    
+                    
                     x0 = r.right;
-                    //End case TR_BL 
-                    //Begin case TR_BL 
+                    
+                    
                     y0 = r.top;
-                    //End case TR_BL 
-                    //Begin case TR_BL 
+                    
+                    
                     x1 = level * r.left;
-                    //End case TR_BL 
-                    //Begin case TR_BL 
+                    
+                    
                     y1 = level * r.bottom;
-                    //End case TR_BL 
-                    //Begin case RIGHT_LEFT 
+                    
+                    
                     x0 = r.right;
-                    //End case RIGHT_LEFT 
-                    //Begin case RIGHT_LEFT 
+                    
+                    
                     y0 = r.top;
-                    //End case RIGHT_LEFT 
-                    //Begin case RIGHT_LEFT 
+                    
+                    
                     x1 = level * r.left;
-                    //End case RIGHT_LEFT 
-                    //Begin case RIGHT_LEFT 
+                    
+                    
                     y1 = y0;
-                    //End case RIGHT_LEFT 
-                    //Begin case BR_TL 
+                    
+                    
                     x0 = r.right;
-                    //End case BR_TL 
-                    //Begin case BR_TL 
+                    
+                    
                     y0 = r.bottom;
-                    //End case BR_TL 
-                    //Begin case BR_TL 
+                    
+                    
                     x1 = level * r.left;
-                    //End case BR_TL 
-                    //Begin case BR_TL 
+                    
+                    
                     y1 = level * r.top;
-                    //End case BR_TL 
-                    //Begin case BOTTOM_TOP 
+                    
+                    
                     x0 = r.left;
-                    //End case BOTTOM_TOP 
-                    //Begin case BOTTOM_TOP 
+                    
+                    
                     y0 = r.bottom;
-                    //End case BOTTOM_TOP 
-                    //Begin case BOTTOM_TOP 
+                    
+                    
                     x1 = x0;
-                    //End case BOTTOM_TOP 
-                    //Begin case BOTTOM_TOP 
+                    
+                    
                     y1 = level * r.top;
-                    //End case BOTTOM_TOP 
-                    //Begin case BL_TR 
+                    
+                    
                     x0 = r.left;
-                    //End case BL_TR 
-                    //Begin case BL_TR 
+                    
+                    
                     y0 = r.bottom;
-                    //End case BL_TR 
-                    //Begin case BL_TR 
+                    
+                    
                     x1 = level * r.right;
-                    //End case BL_TR 
-                    //Begin case BL_TR 
+                    
+                    
                     y1 = level * r.top;
-                    //End case BL_TR 
-                    //Begin case LEFT_RIGHT 
+                    
+                    
                     x0 = r.left;
-                    //End case LEFT_RIGHT 
-                    //Begin case LEFT_RIGHT 
+                    
+                    
                     y0 = r.top;
-                    //End case LEFT_RIGHT 
-                    //Begin case LEFT_RIGHT 
+                    
+                    
                     x1 = level * r.right;
-                    //End case LEFT_RIGHT 
-                    //Begin case LEFT_RIGHT 
+                    
+                    
                     y1 = y0;
-                    //End case LEFT_RIGHT 
-                    //Begin case default 
+                    
+                    
                     x0 = r.left;
-                    //End case default 
-                    //Begin case default 
+                    
+                    
                     y0 = r.top;
-                    //End case default 
-                    //Begin case default 
+                    
+                    
                     x1 = level * r.right;
-                    //End case default 
-                    //Begin case default 
+                    
+                    
                     y1 = level * r.bottom;
-                    //End case default 
+                    
                     mFillPaint.setShader(new LinearGradient(x0, y0, x1, y1,
                             colors, st.mPositions, Shader.TileMode.CLAMP));
-                } //End block
+                } 
                 {
                     x0 = r.left + (r.right - r.left) * st.mCenterX;
                     y0 = r.top + (r.bottom - r.top) * st.mCenterY;
@@ -707,7 +728,7 @@ public class GradientDrawable extends Drawable {
                     mFillPaint.setShader(new RadialGradient(x0, y0,
                             level * st.mGradientRadius, colors, null,
                             Shader.TileMode.CLAMP));
-                } //End block
+                } 
                 {
                     x0 = r.left + (r.right - r.left) * st.mCenterX;
                     y0 = r.top + (r.bottom - r.top) * st.mCenterY;
@@ -718,35 +739,36 @@ public class GradientDrawable extends Drawable {
                         final int length = colors.length;
                         {
                             tempColors = st.mTempColors = new int[length + 1];
-                        } //End block
+                        } 
                         System.arraycopy(colors, 0, tempColors, 0, length);
                         tempColors[length] = colors[length - 1];
                         tempPositions = st.mTempPositions;
                         final float fraction = 1.0f / (float) (length - 1);
                         {
                             tempPositions = st.mTempPositions = new float[length + 1];
-                        } //End block
+                        } 
                         final float level = (float) getLevel() / 10000.0f;
                         {
                             int i = 0;
                             {
                                 tempPositions[i] = i * fraction * level;
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         tempPositions[length] = 1.0f;
-                    } //End block
+                    } 
                     mFillPaint.setShader(new SweepGradient(x0, y0, tempColors, tempPositions));
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         boolean var30E025E3B836A2C788D549C3B113FC2D_1575878643 = (!mRect.isEmpty());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1127643962 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1127643962;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.072 -0400", hash_original_method = "E432865D544D266B015263529D7B28D5", hash_generated_method = "F2E2E808D7EF968E7C23FA07D6A4094E")
     @Override
     public void inflate(Resources r, XmlPullParser parser,
@@ -766,16 +788,16 @@ public class GradientDrawable extends Drawable {
             {
                 st.mInnerRadiusRatio = a.getFloat(
                         com.android.internal.R.styleable.GradientDrawable_innerRadiusRatio, 3.0f);
-            } //End block
+            } 
             st.mThickness = a.getDimensionPixelSize(
                     com.android.internal.R.styleable.GradientDrawable_thickness, -1);
             {
                 st.mThicknessRatio = a.getFloat(
                         com.android.internal.R.styleable.GradientDrawable_thicknessRatio, 9.0f);
-            } //End block
+            } 
             st.mUseLevelForShape = a.getBoolean(
                     com.android.internal.R.styleable.GradientDrawable_useLevel, true);
-        } //End block
+        } 
         a.recycle();
         setShape(shapeType);
         setDither(dither);
@@ -799,7 +821,7 @@ public class GradientDrawable extends Drawable {
                         com.android.internal.R.styleable.GradientDrawableSize_height, -1);
                         a.recycle();
                         setSize(width, height);
-                    } //End block
+                    } 
                     {
                         boolean var13D3F8D713AACA51C37FD91C445A32D1_1912902305 = (name.equals("gradient"));
                         {
@@ -835,32 +857,32 @@ public class GradientDrawable extends Drawable {
                                     if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(a.getPositionDescription()
                                 + "<gradient> tag requires 'angle' attribute to "
                                 + "be a multiple of 45");
-                                } //End block
-                                //Begin case 0 
+                                } 
+                                
                                 st.mOrientation = Orientation.LEFT_RIGHT;
-                                //End case 0 
-                                //Begin case 45 
+                                
+                                
                                 st.mOrientation = Orientation.BL_TR;
-                                //End case 45 
-                                //Begin case 90 
+                                
+                                
                                 st.mOrientation = Orientation.BOTTOM_TOP;
-                                //End case 90 
-                                //Begin case 135 
+                                
+                                
                                 st.mOrientation = Orientation.BR_TL;
-                                //End case 135 
-                                //Begin case 180 
+                                
+                                
                                 st.mOrientation = Orientation.RIGHT_LEFT;
-                                //End case 180 
-                                //Begin case 225 
+                                
+                                
                                 st.mOrientation = Orientation.TR_BL;
-                                //End case 225 
-                                //Begin case 270 
+                                
+                                
                                 st.mOrientation = Orientation.TOP_BOTTOM;
-                                //End case 270 
-                                //Begin case 315 
+                                
+                                
                                 st.mOrientation = Orientation.TL_BR;
-                                //End case 315 
-                            } //End block
+                                
+                            } 
                             {
                                 TypedValue tv = a.peekValue(
                             com.android.internal.R.styleable.GradientDrawableGradient_gradientRadius);
@@ -868,14 +890,14 @@ public class GradientDrawable extends Drawable {
                                     boolean radiusRel = tv.type == TypedValue.TYPE_FRACTION;
                                     st.mGradientRadius = radiusRel ?
                                 tv.getFraction(1.0f, 1.0f) : tv.getFloat();
-                                } //End block
+                                } 
                                 {
                                     if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                                 a.getPositionDescription()
                                 + "<gradient> tag requires 'gradientRadius' "
                                 + "attribute with radial type");
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             a.recycle();
                             {
                                 st.mColors = new int[3];
@@ -886,13 +908,13 @@ public class GradientDrawable extends Drawable {
                                 st.mPositions[0] = 0.0f;
                                 st.mPositions[1] = st.mCenterX != 0.5f ? st.mCenterX : st.mCenterY;
                                 st.mPositions[2] = 1f;
-                            } //End block
+                            } 
                             {
                                 st.mColors = new int[2];
                                 st.mColors[0] = startColor;
                                 st.mColors[1] = endColor;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             boolean var77525D664C592F28B26A6CD8C67737E6_244833470 = (name.equals("solid"));
                             {
@@ -902,7 +924,7 @@ public class GradientDrawable extends Drawable {
                         com.android.internal.R.styleable.GradientDrawableSolid_color, 0);
                                 a.recycle();
                                 setColor(argb);
-                            } //End block
+                            } 
                             {
                                 boolean varC0495157E2DDB9B86006CF2755D3E0C5_255348617 = (name.equals("stroke"));
                                 {
@@ -918,12 +940,12 @@ public class GradientDrawable extends Drawable {
                                         float dashGap = a.getDimension(
                             com.android.internal.R.styleable.GradientDrawableStroke_dashGap, 0);
                                         setStroke(width, color, dashWidth, dashGap);
-                                    } //End block
+                                    } 
                                     {
                                         setStroke(width, color);
-                                    } //End block
+                                    } 
                                     a.recycle();
-                                } //End block
+                                } 
                                 {
                                     boolean varC5E3FCBC94B952A08166FFFCCC10F540_634418039 = (name.equals("corners"));
                                     {
@@ -947,9 +969,9 @@ public class GradientDrawable extends Drawable {
                             bottomRightRadius, bottomRightRadius,
                             bottomLeftRadius, bottomLeftRadius
                     });
-                                        } //End block
+                                        } 
                                         a.recycle();
-                                    } //End block
+                                    } 
                                     {
                                         boolean var73614EBC6E52B1FB538E626BACD291BD_531462343 = (name.equals("padding"));
                                         {
@@ -966,23 +988,24 @@ public class GradientDrawable extends Drawable {
                                 com.android.internal.R.styleable.GradientDrawablePadding_bottom, 0));
                                             a.recycle();
                                             mGradientState.mPadding = mPadding;
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(r.getTaint());
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static float getFloatOrFraction(TypedArray a, int index, float defaultValue) {
         TypedValue tv = a.peekValue(index);
         float v = defaultValue;
@@ -999,8 +1022,8 @@ public class GradientDrawable extends Drawable {
     public int getIntrinsicWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_660051282 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_660051282;
-        // ---------- Original Method ----------
-        //return mGradientState.mWidth;
+        
+        
     }
 
     
@@ -1009,55 +1032,58 @@ public class GradientDrawable extends Drawable {
     public int getIntrinsicHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_665923971 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_665923971;
-        // ---------- Original Method ----------
-        //return mGradientState.mHeight;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.074 -0400", hash_original_method = "DD96D81CE576A9B12867099611327831", hash_generated_method = "5AB5407FD47E4DF24134C35B67CC0E78")
     @Override
     public ConstantState getConstantState() {
-        ConstantState varB4EAC82CA7396A68D541C85D26508E83_567869971 = null; //Variable for return #1
+        ConstantState varB4EAC82CA7396A68D541C85D26508E83_567869971 = null; 
         mGradientState.mChangingConfigurations = getChangingConfigurations();
         varB4EAC82CA7396A68D541C85D26508E83_567869971 = mGradientState;
-        varB4EAC82CA7396A68D541C85D26508E83_567869971.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_567869971.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_567869971;
-        // ---------- Original Method ----------
-        //mGradientState.mChangingConfigurations = getChangingConfigurations();
-        //return mGradientState;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.076 -0400", hash_original_method = "D4EF431721248824E2CCEA5FA3C5FD74", hash_generated_method = "BAEB89A99570576947D04AFD4B36C22B")
     @Override
     public Drawable mutate() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_691197034 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_691197034 = null; 
         {
             boolean varC94B19053599294E7944C8C841976773_721792322 = (!mMutated && super.mutate() == this);
             {
                 mGradientState = new GradientState(mGradientState);
                 initializeWithState(mGradientState);
                 mMutated = true;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_691197034 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_691197034.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_691197034.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_691197034;
-        // ---------- Original Method ----------
-        //if (!mMutated && super.mutate() == this) {
-            //mGradientState = new GradientState(mGradientState);
-            //initializeWithState(mGradientState);
-            //mMutated = true;
-        //}
-        //return this;
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.077 -0400", hash_original_method = "7FA7686AE1E8AEF57BBE0E6293CFBCA1", hash_generated_method = "F943DA008040FEF0891EBCD600DE11AF")
     private void initializeWithState(GradientState state) {
         {
             mFillPaint.setColor(state.mSolidColor);
-        } //End block
+        } 
         mPadding = state.mPadding;
         {
             mStrokePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -1068,24 +1094,24 @@ public class GradientDrawable extends Drawable {
                 DashPathEffect e = new DashPathEffect(
                         new float[] { state.mStrokeDashWidth, state.mStrokeDashGap }, 0);
                 mStrokePaint.setPathEffect(e);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (state.mHasSolidColor) {
-            //mFillPaint.setColor(state.mSolidColor);
-        //}
-        //mPadding = state.mPadding;
-        //if (state.mStrokeWidth >= 0) {
-            //mStrokePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-            //mStrokePaint.setStyle(Paint.Style.STROKE);
-            //mStrokePaint.setStrokeWidth(state.mStrokeWidth);
-            //mStrokePaint.setColor(state.mStrokeColor);
-            //if (state.mStrokeDashWidth != 0.0f) {
-                //DashPathEffect e = new DashPathEffect(
-                        //new float[] { state.mStrokeDashWidth, state.mStrokeDashGap }, 0);
-                //mStrokePaint.setPathEffect(e);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+            
+            
+            
+            
+            
+                
+                        
+                
+            
+        
     }
 
     
@@ -1190,8 +1216,8 @@ public class GradientDrawable extends Drawable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.080 -0400", hash_original_method = "9C4B8156D5998AA4F070091BFAC51297", hash_generated_method = "36EA0AD2FEF9D7DF957604ED73351F6F")
           GradientState() {
             mOrientation = Orientation.TOP_BOTTOM;
-            // ---------- Original Method ----------
-            //mOrientation = Orientation.TOP_BOTTOM;
+            
+            
         }
 
         
@@ -1199,9 +1225,9 @@ public class GradientDrawable extends Drawable {
           GradientState(Orientation orientation, int[] colors) {
             mOrientation = orientation;
             mColors = colors;
-            // ---------- Original Method ----------
-            //mOrientation = orientation;
-            //mColors = colors;
+            
+            
+            
         }
 
         
@@ -1213,10 +1239,10 @@ public class GradientDrawable extends Drawable {
             mOrientation = state.mOrientation;
             {
                 mColors = state.mColors.clone();
-            } //End block
+            } 
             {
                 mPositions = state.mPositions.clone();
-            } //End block
+            } 
             mHasSolidColor = state.mHasSolidColor;
             mSolidColor = state.mSolidColor;
             mStrokeWidth = state.mStrokeWidth;
@@ -1226,10 +1252,10 @@ public class GradientDrawable extends Drawable {
             mRadius = state.mRadius;
             {
                 mRadiusArray = state.mRadiusArray.clone();
-            } //End block
+            } 
             {
                 mPadding = new Rect(state.mPadding);
-            } //End block
+            } 
             mWidth = state.mWidth;
             mHeight = state.mHeight;
             mInnerRadiusRatio = state.mInnerRadiusRatio;
@@ -1241,33 +1267,33 @@ public class GradientDrawable extends Drawable {
             mGradientRadius = state.mGradientRadius;
             mUseLevel = state.mUseLevel;
             mUseLevelForShape = state.mUseLevelForShape;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.083 -0400", hash_original_method = "995801C56CB4C9E6715A12BAA40CCB03", hash_generated_method = "FDBD6E71D67F79E04AAA1C93D5048533")
         @Override
         public Drawable newDrawable() {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_1469777756 = null; //Variable for return #1
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_1469777756 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1469777756 = new GradientDrawable(this);
-            varB4EAC82CA7396A68D541C85D26508E83_1469777756.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1469777756.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1469777756;
-            // ---------- Original Method ----------
-            //return new GradientDrawable(this);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.083 -0400", hash_original_method = "C54DA0CD853A4A5864DFD734D15AF82F", hash_generated_method = "19DD6CC1B4B1DA7CBA98AAC439199EF5")
         @Override
         public Drawable newDrawable(Resources res) {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_583784935 = null; //Variable for return #1
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_583784935 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_583784935 = new GradientDrawable(this);
             addTaint(res.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_583784935.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_583784935.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_583784935;
-            // ---------- Original Method ----------
-            //return new GradientDrawable(this);
+            
+            
         }
 
         
@@ -1276,24 +1302,24 @@ public class GradientDrawable extends Drawable {
         public int getChangingConfigurations() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1815422597 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1815422597;
-            // ---------- Original Method ----------
-            //return mChangingConfigurations;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.085 -0400", hash_original_method = "0F10CA732F07DD9FE38CDA7CBCDABA95", hash_generated_method = "A3BF6B156577AD7EA2864200A6B2814C")
         public void setShape(int shape) {
             mShape = shape;
-            // ---------- Original Method ----------
-            //mShape = shape;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.086 -0400", hash_original_method = "6060B2E1C6E57F715C4E87E13018C121", hash_generated_method = "3AF067B4A790D8213658929FBB0E68D9")
         public void setGradientType(int gradient) {
             mGradient = gradient;
-            // ---------- Original Method ----------
-            //mGradient = gradient;
+            
+            
         }
 
         
@@ -1301,9 +1327,9 @@ public class GradientDrawable extends Drawable {
         public void setGradientCenter(float x, float y) {
             mCenterX = x;
             mCenterY = y;
-            // ---------- Original Method ----------
-            //mCenterX = x;
-            //mCenterY = y;
+            
+            
+            
         }
 
         
@@ -1312,10 +1338,10 @@ public class GradientDrawable extends Drawable {
             mHasSolidColor = true;
             mSolidColor = argb;
             mColors = null;
-            // ---------- Original Method ----------
-            //mHasSolidColor = true;
-            //mSolidColor = argb;
-            //mColors = null;
+            
+            
+            
+            
         }
 
         
@@ -1323,9 +1349,9 @@ public class GradientDrawable extends Drawable {
         public void setStroke(int width, int color) {
             mStrokeWidth = width;
             mStrokeColor = color;
-            // ---------- Original Method ----------
-            //mStrokeWidth = width;
-            //mStrokeColor = color;
+            
+            
+            
         }
 
         
@@ -1335,11 +1361,11 @@ public class GradientDrawable extends Drawable {
             mStrokeColor = color;
             mStrokeDashWidth = dashWidth;
             mStrokeDashGap = dashGap;
-            // ---------- Original Method ----------
-            //mStrokeWidth = width;
-            //mStrokeColor = color;
-            //mStrokeDashWidth = dashWidth;
-            //mStrokeDashGap = dashGap;
+            
+            
+            
+            
+            
         }
 
         
@@ -1347,15 +1373,15 @@ public class GradientDrawable extends Drawable {
         public void setCornerRadius(float radius) {
             {
                 radius = 0;
-            } //End block
+            } 
             mRadius = radius;
             mRadiusArray = null;
-            // ---------- Original Method ----------
-            //if (radius < 0) {
-                //radius = 0;
-            //}
-            //mRadius = radius;
-            //mRadiusArray = null;
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -1364,12 +1390,12 @@ public class GradientDrawable extends Drawable {
             mRadiusArray = radii;
             {
                 mRadius = 0;
-            } //End block
-            // ---------- Original Method ----------
-            //mRadiusArray = radii;
-            //if (radii == null) {
-                //mRadius = 0;
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
@@ -1377,17 +1403,17 @@ public class GradientDrawable extends Drawable {
         public void setSize(int width, int height) {
             mWidth = width;
             mHeight = height;
-            // ---------- Original Method ----------
-            //mWidth = width;
-            //mHeight = height;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.092 -0400", hash_original_method = "2D6DAC1104AA515AA78A28549F71CF0A", hash_generated_method = "47173080DDFD0B34A1D1F0DBFA24FE39")
         public void setGradientRadius(float gradientRadius) {
             mGradientRadius = gradientRadius;
-            // ---------- Original Method ----------
-            //mGradientRadius = gradientRadius;
+            
+            
         }
 
         

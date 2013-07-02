@@ -1,11 +1,11 @@
 package android.support.v4.view.accessibility;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Rect;
 import android.os.Build;
@@ -22,19 +22,19 @@ public class AccessibilityNodeInfoCompat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.614 -0400", hash_original_method = "27EEB78B664A0859CE9D2482B14EDA44", hash_generated_method = "5D13B8B7945325E456070CD74C88BF1B")
     public  AccessibilityNodeInfoCompat(Object info) {
         mInfo = info;
-        // ---------- Original Method ----------
-        //mInfo = info;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.615 -0400", hash_original_method = "180B11831FF091AFD58918B491DA5734", hash_generated_method = "0FEFC318914C76792234B19DF0FC6855")
     public Object getImpl() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1186166230 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1186166230 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1186166230 = mInfo;
-        varB4EAC82CA7396A68D541C85D26508E83_1186166230.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1186166230.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1186166230;
-        // ---------- Original Method ----------
-        //return mInfo;
+        
+        
     }
 
     
@@ -57,8 +57,8 @@ public class AccessibilityNodeInfoCompat {
     public void setSource(View source) {
         IMPL.setSource(mInfo, source);
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
-        //IMPL.setSource(mInfo, source);
+        
+        
     }
 
     
@@ -67,8 +67,8 @@ public class AccessibilityNodeInfoCompat {
         int var2C540017C5FDBD06182064294FB65830_1164829326 = (IMPL.getWindowId(mInfo));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1127391789 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1127391789;
-        // ---------- Original Method ----------
-        //return IMPL.getWindowId(mInfo);
+        
+        
     }
 
     
@@ -77,20 +77,20 @@ public class AccessibilityNodeInfoCompat {
         int varE2F87AC99FDBC7ACD964CC797AE1EB45_900650486 = (IMPL.getChildCount(mInfo));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1218364938 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1218364938;
-        // ---------- Original Method ----------
-        //return IMPL.getChildCount(mInfo);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.620 -0400", hash_original_method = "8EA123998643A19BBF17F459FF07BE7E", hash_generated_method = "7A6B6D6E25F833F9F4B07B820EE02143")
     public AccessibilityNodeInfoCompat getChild(int index) {
-        AccessibilityNodeInfoCompat varB4EAC82CA7396A68D541C85D26508E83_2118636637 = null; //Variable for return #1
+        AccessibilityNodeInfoCompat varB4EAC82CA7396A68D541C85D26508E83_2118636637 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2118636637 = new AccessibilityNodeInfoCompat(IMPL.getChild(mInfo, index));
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_2118636637.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2118636637.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2118636637;
-        // ---------- Original Method ----------
-        //return new AccessibilityNodeInfoCompat(IMPL.getChild(mInfo, index));
+        
+        
     }
 
     
@@ -98,8 +98,8 @@ public class AccessibilityNodeInfoCompat {
     public void addChild(View child) {
         IMPL.addChild(mInfo, child);
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //IMPL.addChild(mInfo, child);
+        
+        
     }
 
     
@@ -108,8 +108,8 @@ public class AccessibilityNodeInfoCompat {
         int var78B020D21D062A4C783B30E843B22FA5_1502865920 = (IMPL.getActions(mInfo));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_148753756 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_148753756;
-        // ---------- Original Method ----------
-        //return IMPL.getActions(mInfo);
+        
+        
     }
 
     
@@ -117,8 +117,8 @@ public class AccessibilityNodeInfoCompat {
     public void addAction(int action) {
         IMPL.addAction(mInfo, action);
         addTaint(action);
-        // ---------- Original Method ----------
-        //IMPL.addAction(mInfo, action);
+        
+        
     }
 
     
@@ -128,14 +128,14 @@ public class AccessibilityNodeInfoCompat {
         addTaint(action);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_809436715 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_809436715;
-        // ---------- Original Method ----------
-        //return IMPL.performAction(mInfo, action);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.625 -0400", hash_original_method = "D972868A6ABA9BEE83DE29ABCCDE4A4C", hash_generated_method = "7B4C3D76FAC5B5D4F7D232DDE5BDEF6A")
     public List<AccessibilityNodeInfoCompat> findAccessibilityNodeInfosByText(String text) {
-        List<AccessibilityNodeInfoCompat> varB4EAC82CA7396A68D541C85D26508E83_1076339625 = null; //Variable for return #1
+        List<AccessibilityNodeInfoCompat> varB4EAC82CA7396A68D541C85D26508E83_1076339625 = null; 
         List<AccessibilityNodeInfoCompat> result = new ArrayList<AccessibilityNodeInfoCompat>();
         List<Object> infos = IMPL.findAccessibilityNodeInfosByText(mInfo, text);
         final int infoCount = infos.size();
@@ -144,32 +144,32 @@ public class AccessibilityNodeInfoCompat {
             {
                 Object info = infos.get(i);
                 result.add(new AccessibilityNodeInfoCompat(info));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1076339625 = result;
         addTaint(text.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1076339625.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1076339625.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1076339625;
-        // ---------- Original Method ----------
-        //List<AccessibilityNodeInfoCompat> result = new ArrayList<AccessibilityNodeInfoCompat>();
-        //List<Object> infos = IMPL.findAccessibilityNodeInfosByText(mInfo, text);
-        //final int infoCount = infos.size();
-        //for (int i = 0; i < infoCount; i++) {
-            //Object info = infos.get(i);
-            //result.add(new AccessibilityNodeInfoCompat(info));
-        //}
-        //return result;
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.628 -0400", hash_original_method = "2E852E0313CFFDFAD47286627DB8F00F", hash_generated_method = "2EABA2AA0C2A17CA8DDA44084E431D2E")
     public AccessibilityNodeInfoCompat getParent() {
-        AccessibilityNodeInfoCompat varB4EAC82CA7396A68D541C85D26508E83_1182041339 = null; //Variable for return #1
+        AccessibilityNodeInfoCompat varB4EAC82CA7396A68D541C85D26508E83_1182041339 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1182041339 = new AccessibilityNodeInfoCompat(IMPL.getParent(mInfo));
-        varB4EAC82CA7396A68D541C85D26508E83_1182041339.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1182041339.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1182041339;
-        // ---------- Original Method ----------
-        //return new AccessibilityNodeInfoCompat(IMPL.getParent(mInfo));
+        
+        
     }
 
     
@@ -177,8 +177,8 @@ public class AccessibilityNodeInfoCompat {
     public void setParent(View parent) {
         IMPL.setParent(mInfo, parent);
         addTaint(parent.getTaint());
-        // ---------- Original Method ----------
-        //IMPL.setParent(mInfo, parent);
+        
+        
     }
 
     
@@ -186,8 +186,8 @@ public class AccessibilityNodeInfoCompat {
     public void getBoundsInParent(Rect outBounds) {
         IMPL.getBoundsInParent(mInfo, outBounds);
         addTaint(outBounds.getTaint());
-        // ---------- Original Method ----------
-        //IMPL.getBoundsInParent(mInfo, outBounds);
+        
+        
     }
 
     
@@ -195,8 +195,8 @@ public class AccessibilityNodeInfoCompat {
     public void setBoundsInParent(Rect bounds) {
         IMPL.setBoundsInParent(mInfo, bounds);
         addTaint(bounds.getTaint());
-        // ---------- Original Method ----------
-        //IMPL.setBoundsInParent(mInfo, bounds);
+        
+        
     }
 
     
@@ -204,8 +204,8 @@ public class AccessibilityNodeInfoCompat {
     public void getBoundsInScreen(Rect outBounds) {
         IMPL.getBoundsInScreen(mInfo, outBounds);
         addTaint(outBounds.getTaint());
-        // ---------- Original Method ----------
-        //IMPL.getBoundsInScreen(mInfo, outBounds);
+        
+        
     }
 
     
@@ -213,8 +213,8 @@ public class AccessibilityNodeInfoCompat {
     public void setBoundsInScreen(Rect bounds) {
         IMPL.setBoundsInParent(mInfo, bounds);
         addTaint(bounds.getTaint());
-        // ---------- Original Method ----------
-        //IMPL.setBoundsInParent(mInfo, bounds);
+        
+        
     }
 
     
@@ -223,8 +223,8 @@ public class AccessibilityNodeInfoCompat {
         boolean var881652E9087A67FD47CD951364E58936_1455446408 = (IMPL.isCheckable(mInfo));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1628047455 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1628047455;
-        // ---------- Original Method ----------
-        //return IMPL.isCheckable(mInfo);
+        
+        
     }
 
     
@@ -232,8 +232,8 @@ public class AccessibilityNodeInfoCompat {
     public void setCheckable(boolean checkable) {
         IMPL.setCheckable(mInfo, checkable);
         addTaint(checkable);
-        // ---------- Original Method ----------
-        //IMPL.setCheckable(mInfo, checkable);
+        
+        
     }
 
     
@@ -242,8 +242,8 @@ public class AccessibilityNodeInfoCompat {
         boolean var08DAE480D25E6F8A460CE20163A37E73_1225327629 = (IMPL.isChecked(mInfo));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_395313592 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_395313592;
-        // ---------- Original Method ----------
-        //return IMPL.isChecked(mInfo);
+        
+        
     }
 
     
@@ -251,8 +251,8 @@ public class AccessibilityNodeInfoCompat {
     public void setChecked(boolean checked) {
         IMPL.setChecked(mInfo, checked);
         addTaint(checked);
-        // ---------- Original Method ----------
-        //IMPL.setChecked(mInfo, checked);
+        
+        
     }
 
     
@@ -261,8 +261,8 @@ public class AccessibilityNodeInfoCompat {
         boolean var6DA275B257371FC0A6EA50877523FCE1_818417549 = (IMPL.isFocusable(mInfo));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2122448708 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2122448708;
-        // ---------- Original Method ----------
-        //return IMPL.isFocusable(mInfo);
+        
+        
     }
 
     
@@ -270,8 +270,8 @@ public class AccessibilityNodeInfoCompat {
     public void setFocusable(boolean focusable) {
         IMPL.setFocusable(mInfo, focusable);
         addTaint(focusable);
-        // ---------- Original Method ----------
-        //IMPL.setFocusable(mInfo, focusable);
+        
+        
     }
 
     
@@ -280,8 +280,8 @@ public class AccessibilityNodeInfoCompat {
         boolean var4C52A5799DFA7B577F2FD98012268A29_499700849 = (IMPL.isFocused(mInfo));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_480562998 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_480562998;
-        // ---------- Original Method ----------
-        //return IMPL.isFocused(mInfo);
+        
+        
     }
 
     
@@ -289,8 +289,8 @@ public class AccessibilityNodeInfoCompat {
     public void setFocused(boolean focused) {
         IMPL.setFocused(mInfo, focused);
         addTaint(focused);
-        // ---------- Original Method ----------
-        //IMPL.setFocused(mInfo, focused);
+        
+        
     }
 
     
@@ -299,8 +299,8 @@ public class AccessibilityNodeInfoCompat {
         boolean var446F6294CD18EF13CA938F2E472AA4FE_496600911 = (IMPL.isSelected(mInfo));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_858590181 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_858590181;
-        // ---------- Original Method ----------
-        //return IMPL.isSelected(mInfo);
+        
+        
     }
 
     
@@ -308,8 +308,8 @@ public class AccessibilityNodeInfoCompat {
     public void setSelected(boolean selected) {
         IMPL.setSelected(mInfo, selected);
         addTaint(selected);
-        // ---------- Original Method ----------
-        //IMPL.setSelected(mInfo, selected);
+        
+        
     }
 
     
@@ -318,8 +318,8 @@ public class AccessibilityNodeInfoCompat {
         boolean var7963C53F1A95ED1807A5BE44364C92C9_251597217 = (IMPL.isClickable(mInfo));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_637000836 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_637000836;
-        // ---------- Original Method ----------
-        //return IMPL.isClickable(mInfo);
+        
+        
     }
 
     
@@ -327,8 +327,8 @@ public class AccessibilityNodeInfoCompat {
     public void setClickable(boolean clickable) {
         IMPL.setClickable(mInfo, clickable);
         addTaint(clickable);
-        // ---------- Original Method ----------
-        //IMPL.setClickable(mInfo, clickable);
+        
+        
     }
 
     
@@ -337,8 +337,8 @@ public class AccessibilityNodeInfoCompat {
         boolean varCBF69A98DE422BCAE8DA88D6A2AE3DDE_591228512 = (IMPL.isLongClickable(mInfo));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_216162340 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_216162340;
-        // ---------- Original Method ----------
-        //return IMPL.isLongClickable(mInfo);
+        
+        
     }
 
     
@@ -346,8 +346,8 @@ public class AccessibilityNodeInfoCompat {
     public void setLongClickable(boolean longClickable) {
         IMPL.setLongClickable(mInfo, longClickable);
         addTaint(longClickable);
-        // ---------- Original Method ----------
-        //IMPL.setLongClickable(mInfo, longClickable);
+        
+        
     }
 
     
@@ -356,8 +356,8 @@ public class AccessibilityNodeInfoCompat {
         boolean var0B12C276488CF1B63F0507AD6C9DCF14_2027329738 = (IMPL.isEnabled(mInfo));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1444824473 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1444824473;
-        // ---------- Original Method ----------
-        //return IMPL.isEnabled(mInfo);
+        
+        
     }
 
     
@@ -365,8 +365,8 @@ public class AccessibilityNodeInfoCompat {
     public void setEnabled(boolean enabled) {
         IMPL.setEnabled(mInfo, enabled);
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //IMPL.setEnabled(mInfo, enabled);
+        
+        
     }
 
     
@@ -375,8 +375,8 @@ public class AccessibilityNodeInfoCompat {
         boolean varAAFD846A9F01B82DE0FF7DF944363E05_1006309745 = (IMPL.isPassword(mInfo));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1249030400 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1249030400;
-        // ---------- Original Method ----------
-        //return IMPL.isPassword(mInfo);
+        
+        
     }
 
     
@@ -384,8 +384,8 @@ public class AccessibilityNodeInfoCompat {
     public void setPassword(boolean password) {
         IMPL.setPassword(mInfo, password);
         addTaint(password);
-        // ---------- Original Method ----------
-        //IMPL.setPassword(mInfo, password);
+        
+        
     }
 
     
@@ -394,8 +394,8 @@ public class AccessibilityNodeInfoCompat {
         boolean var7484613912CCC955D33633FC9864C9AD_1692277999 = (IMPL.isScrollable(mInfo));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_412217709 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_412217709;
-        // ---------- Original Method ----------
-        //return IMPL.isScrollable(mInfo);
+        
+        
     }
 
     
@@ -403,19 +403,19 @@ public class AccessibilityNodeInfoCompat {
     public void setScrollable(boolean scrollable) {
         IMPL.setScrollable(mInfo, scrollable);
         addTaint(scrollable);
-        // ---------- Original Method ----------
-        //IMPL.setScrollable(mInfo, scrollable);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.649 -0400", hash_original_method = "11DA2F2F6D35A0A5BD4D3AD5855546F2", hash_generated_method = "F6152BE6133A92BBB6322988BAD7E346")
     public CharSequence getPackageName() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1473758079 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1473758079 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1473758079 = IMPL.getPackageName(mInfo);
-        varB4EAC82CA7396A68D541C85D26508E83_1473758079.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1473758079.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1473758079;
-        // ---------- Original Method ----------
-        //return IMPL.getPackageName(mInfo);
+        
+        
     }
 
     
@@ -423,19 +423,19 @@ public class AccessibilityNodeInfoCompat {
     public void setPackageName(CharSequence packageName) {
         IMPL.setPackageName(mInfo, packageName);
         addTaint(packageName.getTaint());
-        // ---------- Original Method ----------
-        //IMPL.setPackageName(mInfo, packageName);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.652 -0400", hash_original_method = "80725931141339E528C95BCDFA69AC67", hash_generated_method = "8516419502154CCCEE67E8CAC30912D9")
     public CharSequence getClassName() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1775754834 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1775754834 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1775754834 = IMPL.getClassName(mInfo);
-        varB4EAC82CA7396A68D541C85D26508E83_1775754834.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1775754834.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1775754834;
-        // ---------- Original Method ----------
-        //return IMPL.getClassName(mInfo);
+        
+        
     }
 
     
@@ -443,19 +443,19 @@ public class AccessibilityNodeInfoCompat {
     public void setClassName(CharSequence className) {
         IMPL.setClassName(mInfo, className);
         addTaint(className.getTaint());
-        // ---------- Original Method ----------
-        //IMPL.setClassName(mInfo, className);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.656 -0400", hash_original_method = "384621808EBD921F20A6EB28B91ADAD5", hash_generated_method = "4179F081FB6C5C3C44C6226183ED507E")
     public CharSequence getText() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_97091778 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_97091778 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_97091778 = IMPL.getText(mInfo);
-        varB4EAC82CA7396A68D541C85D26508E83_97091778.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_97091778.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_97091778;
-        // ---------- Original Method ----------
-        //return IMPL.getText(mInfo);
+        
+        
     }
 
     
@@ -463,19 +463,19 @@ public class AccessibilityNodeInfoCompat {
     public void setText(CharSequence text) {
         IMPL.setText(mInfo, text);
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
-        //IMPL.setText(mInfo, text);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.658 -0400", hash_original_method = "17A5AE651613EAEE40274E28D0DBF3CB", hash_generated_method = "A3E40AD4724E9D481138B0F1647EB42E")
     public CharSequence getContentDescription() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1670322549 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1670322549 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1670322549 = IMPL.getContentDescription(mInfo);
-        varB4EAC82CA7396A68D541C85D26508E83_1670322549.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1670322549.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1670322549;
-        // ---------- Original Method ----------
-        //return IMPL.getContentDescription(mInfo);
+        
+        
     }
 
     
@@ -483,16 +483,16 @@ public class AccessibilityNodeInfoCompat {
     public void setContentDescription(CharSequence contentDescription) {
         IMPL.setContentDescription(mInfo, contentDescription);
         addTaint(contentDescription.getTaint());
-        // ---------- Original Method ----------
-        //IMPL.setContentDescription(mInfo, contentDescription);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.660 -0400", hash_original_method = "4012C2A77CF6E1C54F1B4372AFDF8962", hash_generated_method = "C65940CB1FE55E31C8C8CA907DBC92D5")
     public void recycle() {
         IMPL.recycle(mInfo);
-        // ---------- Original Method ----------
-        //IMPL.recycle(mInfo);
+        
+        
     }
 
     
@@ -501,11 +501,11 @@ public class AccessibilityNodeInfoCompat {
     public int hashCode() {
         {
             Object var74F5A1A70F8B87BC71D4D158E73D3C48_1856548034 = (mInfo.hashCode());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1848876185 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1848876185;
-        // ---------- Original Method ----------
-        //return (mInfo == null) ? 0 : mInfo.hashCode();
+        
+        
     }
 
     
@@ -514,33 +514,33 @@ public class AccessibilityNodeInfoCompat {
     public boolean equals(Object obj) {
         {
             boolean var0BDD716692710C348B07111E17BD2B29_481194931 = (getClass() != obj.getClass());
-        } //End collapsed parenthetic
+        } 
         AccessibilityNodeInfoCompat other = (AccessibilityNodeInfoCompat) obj;
         {
             boolean varCAB2F203900AEB7FB5D4E82EBD4544A0_1716498546 = (!mInfo.equals(other.mInfo));
-        } //End collapsed parenthetic
+        } 
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_517997634 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_517997634;
-        // ---------- Original Method ----------
-        //if (this == obj) {
-            //return true;
-        //}
-        //if (obj == null) {
-            //return false;
-        //}
-        //if (getClass() != obj.getClass()) {
-            //return false;
-        //}
-        //AccessibilityNodeInfoCompat other = (AccessibilityNodeInfoCompat) obj;
-        //if (mInfo == null) {
-            //if (other.mInfo != null) {
-                //return false;
-            //}
-        //} else if (!mInfo.equals(other.mInfo)) {
-            //return false;
-        //}
-        //return true;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -549,42 +549,42 @@ public class AccessibilityNodeInfoCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.666 -0400", hash_original_method = "D9A4AFBF5AD5A775B6C1281730E5BA11", hash_generated_method = "D9A4AFBF5AD5A775B6C1281730E5BA11")
         public AccessibilityNodeInfoStubImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.668 -0400", hash_original_method = "817FD8D623FDA4524F619AFC293F09EC", hash_generated_method = "7BCC0B443AAC494C811C352437985B63")
         public Object obtain() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1491404459 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1491404459 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1491404459 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_1491404459.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1491404459.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1491404459;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.670 -0400", hash_original_method = "92695667FFAB3FACD22606EFAA0A43BA", hash_generated_method = "0D728D13C832E43E7731B9C704695239")
         public Object obtain(View source) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_610279554 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_610279554 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_610279554 = null;
             addTaint(source.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_610279554.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_610279554.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_610279554;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.672 -0400", hash_original_method = "773588C99ADE780DBDFC19514017BC1F", hash_generated_method = "9079873DA7145CBE6C909DEF39E42452")
         public Object obtain(Object info) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_858746405 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_858746405 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_858746405 = null;
             addTaint(info.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_858746405.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_858746405.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_858746405;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
@@ -592,7 +592,7 @@ public class AccessibilityNodeInfoCompat {
         public void addAction(Object info, int action) {
             addTaint(info.getTaint());
             addTaint(action);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -600,20 +600,20 @@ public class AccessibilityNodeInfoCompat {
         public void addChild(Object info, View child) {
             addTaint(info.getTaint());
             addTaint(child.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.675 -0400", hash_original_method = "DDFBD7F537083E060F4196E4CBB1F004", hash_generated_method = "23B5D8597342E681BB26A8C3277B48EE")
         public List<Object> findAccessibilityNodeInfosByText(Object info, String text) {
-            List<Object> varB4EAC82CA7396A68D541C85D26508E83_1069970448 = null; //Variable for return #1
+            List<Object> varB4EAC82CA7396A68D541C85D26508E83_1069970448 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1069970448 = Collections.emptyList();
             addTaint(info.getTaint());
             addTaint(text.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1069970448.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1069970448.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1069970448;
-            // ---------- Original Method ----------
-            //return Collections.emptyList();
+            
+            
         }
 
         
@@ -622,8 +622,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_181066658 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_181066658;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
@@ -631,7 +631,7 @@ public class AccessibilityNodeInfoCompat {
         public void getBoundsInParent(Object info, Rect outBounds) {
             addTaint(info.getTaint());
             addTaint(outBounds.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -639,20 +639,20 @@ public class AccessibilityNodeInfoCompat {
         public void getBoundsInScreen(Object info, Rect outBounds) {
             addTaint(info.getTaint());
             addTaint(outBounds.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.678 -0400", hash_original_method = "3EFC24789BAB789DBA02244C19291A8A", hash_generated_method = "A8506AD221CD6E7DE084BEEE98039526")
         public Object getChild(Object info, int index) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_179065164 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_179065164 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_179065164 = null;
             addTaint(info.getTaint());
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_179065164.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_179065164.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_179065164;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
@@ -661,68 +661,68 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_720440625 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_720440625;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.680 -0400", hash_original_method = "0F7CFAB631E1B134DCF395A7797DAF67", hash_generated_method = "BF426D925D8DABD7A64D8744EDA5A0EC")
         public CharSequence getClassName(Object info) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1666751436 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1666751436 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1666751436 = null;
             addTaint(info.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1666751436.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1666751436.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1666751436;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.681 -0400", hash_original_method = "7D3E1748FD6A5B3BAF1D83AAF2AE15DE", hash_generated_method = "6C08F3DC1B7C52920DD2E806DF534609")
         public CharSequence getContentDescription(Object info) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_522162040 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_522162040 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_522162040 = null;
             addTaint(info.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_522162040.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_522162040.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_522162040;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.682 -0400", hash_original_method = "D7A11002847EF3E5746055DA2B429105", hash_generated_method = "25CBD10BC64D285586EF15C3A549DE7F")
         public CharSequence getPackageName(Object info) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_757009682 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_757009682 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_757009682 = null;
             addTaint(info.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_757009682.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_757009682.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_757009682;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.683 -0400", hash_original_method = "6E57EFC15A3C835051BC240D78A056B3", hash_generated_method = "3FF0986648F4C80E73D1A74E4D4761EE")
         public AccessibilityNodeInfoCompat getParent(Object info) {
-            AccessibilityNodeInfoCompat varB4EAC82CA7396A68D541C85D26508E83_1345922351 = null; //Variable for return #1
+            AccessibilityNodeInfoCompat varB4EAC82CA7396A68D541C85D26508E83_1345922351 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1345922351 = null;
             addTaint(info.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1345922351.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1345922351.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1345922351;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.684 -0400", hash_original_method = "CA1AE5519AB49B9F955ADEDF9C3C214E", hash_generated_method = "1ECF77CEC5408B644FE4DF68F2A67260")
         public CharSequence getText(Object info) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_837199938 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_837199938 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_837199938 = null;
             addTaint(info.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_837199938.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_837199938.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_837199938;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
@@ -731,8 +731,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1598921686 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1598921686;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
@@ -741,8 +741,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1606636476 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1606636476;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -751,8 +751,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1695982053 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1695982053;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -761,8 +761,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1727241851 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1727241851;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -771,8 +771,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_379767221 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_379767221;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -781,8 +781,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1816042703 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1816042703;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -791,8 +791,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_589067196 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_589067196;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -801,8 +801,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1108463077 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1108463077;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -811,8 +811,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1018305727 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1018305727;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -821,8 +821,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_678492483 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_678492483;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -831,8 +831,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1035606715 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1035606715;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -842,8 +842,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(action);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1625913460 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1625913460;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -851,7 +851,7 @@ public class AccessibilityNodeInfoCompat {
         public void setBoundsInParent(Object info, Rect bounds) {
             addTaint(info.getTaint());
             addTaint(bounds.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -859,7 +859,7 @@ public class AccessibilityNodeInfoCompat {
         public void setBoundsInScreen(Object info, Rect bounds) {
             addTaint(info.getTaint());
             addTaint(bounds.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -867,7 +867,7 @@ public class AccessibilityNodeInfoCompat {
         public void setCheckable(Object info, boolean checkable) {
             addTaint(info.getTaint());
             addTaint(checkable);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -875,7 +875,7 @@ public class AccessibilityNodeInfoCompat {
         public void setChecked(Object info, boolean checked) {
             addTaint(info.getTaint());
             addTaint(checked);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -883,7 +883,7 @@ public class AccessibilityNodeInfoCompat {
         public void setClassName(Object info, CharSequence className) {
             addTaint(info.getTaint());
             addTaint(className.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -891,7 +891,7 @@ public class AccessibilityNodeInfoCompat {
         public void setClickable(Object info, boolean clickable) {
             addTaint(info.getTaint());
             addTaint(clickable);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -899,7 +899,7 @@ public class AccessibilityNodeInfoCompat {
         public void setContentDescription(Object info, CharSequence contentDescription) {
             addTaint(info.getTaint());
             addTaint(contentDescription.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -907,7 +907,7 @@ public class AccessibilityNodeInfoCompat {
         public void setEnabled(Object info, boolean enabled) {
             addTaint(info.getTaint());
             addTaint(enabled);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -915,7 +915,7 @@ public class AccessibilityNodeInfoCompat {
         public void setFocusable(Object info, boolean focusable) {
             addTaint(info.getTaint());
             addTaint(focusable);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -923,7 +923,7 @@ public class AccessibilityNodeInfoCompat {
         public void setFocused(Object info, boolean focused) {
             addTaint(info.getTaint());
             addTaint(focused);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -931,7 +931,7 @@ public class AccessibilityNodeInfoCompat {
         public void setLongClickable(Object info, boolean longClickable) {
             addTaint(info.getTaint());
             addTaint(longClickable);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -939,7 +939,7 @@ public class AccessibilityNodeInfoCompat {
         public void setPackageName(Object info, CharSequence packageName) {
             addTaint(info.getTaint());
             addTaint(packageName.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -947,7 +947,7 @@ public class AccessibilityNodeInfoCompat {
         public void setParent(Object info, View parent) {
             addTaint(info.getTaint());
             addTaint(parent.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -955,7 +955,7 @@ public class AccessibilityNodeInfoCompat {
         public void setPassword(Object info, boolean password) {
             addTaint(info.getTaint());
             addTaint(password);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -963,7 +963,7 @@ public class AccessibilityNodeInfoCompat {
         public void setScrollable(Object info, boolean scrollable) {
             addTaint(info.getTaint());
             addTaint(scrollable);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -971,7 +971,7 @@ public class AccessibilityNodeInfoCompat {
         public void setSelected(Object info, boolean selected) {
             addTaint(info.getTaint());
             addTaint(selected);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -979,7 +979,7 @@ public class AccessibilityNodeInfoCompat {
         public void setSource(Object info, View source) {
             addTaint(info.getTaint());
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -987,14 +987,14 @@ public class AccessibilityNodeInfoCompat {
         public void setText(Object info, CharSequence text) {
             addTaint(info.getTaint());
             addTaint(text.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.709 -0400", hash_original_method = "83070C3537D062E3CF530D85D02FB919", hash_generated_method = "9CA19930CBA17161800873D06B09C0C2")
         public void recycle(Object info) {
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1007,45 +1007,45 @@ public class AccessibilityNodeInfoCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.710 -0400", hash_original_method = "21FE378E79CF4BF2260F84D20D666AC8", hash_generated_method = "21FE378E79CF4BF2260F84D20D666AC8")
         public AccessibilityNodeInfoIcsImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.711 -0400", hash_original_method = "E5E40CEE71B96A750609FB525C810C40", hash_generated_method = "8927368BA017EA3E6E2017F3124A15E6")
         @Override
         public Object obtain() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1946136820 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1946136820 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1946136820 = AccessibilityNodeInfoCompatIcs.obtain();
-            varB4EAC82CA7396A68D541C85D26508E83_1946136820.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1946136820.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1946136820;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.obtain();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.712 -0400", hash_original_method = "8DA77B182C4547DFE3D4092985103CE0", hash_generated_method = "0C36B084F504D945A76CD6C9AE2EBB6A")
         @Override
         public Object obtain(View source) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1707997052 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1707997052 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1707997052 = AccessibilityNodeInfoCompatIcs.obtain(source);
             addTaint(source.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1707997052.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1707997052.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1707997052;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.obtain(source);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.713 -0400", hash_original_method = "AAB3A8D4C437B198564587B92520BA15", hash_generated_method = "3E621BD0A87512524CD8F8DD76AB9A5D")
         @Override
         public Object obtain(Object info) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1041507289 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1041507289 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1041507289 = AccessibilityNodeInfoCompatIcs.obtain(info);
             addTaint(info.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1041507289.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1041507289.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1041507289;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.obtain(info);
+            
+            
         }
 
         
@@ -1055,8 +1055,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.addAction(info, action);
             addTaint(info.getTaint());
             addTaint(action);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.addAction(info, action);
+            
+            
         }
 
         
@@ -1066,22 +1066,22 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.addChild(info, child);
             addTaint(info.getTaint());
             addTaint(child.getTaint());
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.addChild(info, child);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.715 -0400", hash_original_method = "E451DF79B85F7C5360B2FFDA4305ECB9", hash_generated_method = "C11ECEC11D3FEE04E59933F575739316")
         @Override
         public List<Object> findAccessibilityNodeInfosByText(Object info, String text) {
-            List<Object> varB4EAC82CA7396A68D541C85D26508E83_2104756853 = null; //Variable for return #1
+            List<Object> varB4EAC82CA7396A68D541C85D26508E83_2104756853 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2104756853 = AccessibilityNodeInfoCompatIcs.findAccessibilityNodeInfosByText(info, text);
             addTaint(info.getTaint());
             addTaint(text.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2104756853.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2104756853.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2104756853;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.findAccessibilityNodeInfosByText(info, text);
+            
+            
         }
 
         
@@ -1092,8 +1092,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1621338630 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1621338630;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getActions(info);
+            
+            
         }
 
         
@@ -1103,8 +1103,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.getBoundsInParent(info, outBounds);
             addTaint(info.getTaint());
             addTaint(outBounds.getTaint());
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.getBoundsInParent(info, outBounds);
+            
+            
         }
 
         
@@ -1114,22 +1114,22 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.getBoundsInScreen(info, outBounds);
             addTaint(info.getTaint());
             addTaint(outBounds.getTaint());
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.getBoundsInScreen(info, outBounds);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.719 -0400", hash_original_method = "11896B02F65554BEE96755430EF5F8E2", hash_generated_method = "2D21B795B1CCC1B3A88AC4EEA8DF5840")
         @Override
         public AccessibilityNodeInfoCompat getChild(Object info, int index) {
-            AccessibilityNodeInfoCompat varB4EAC82CA7396A68D541C85D26508E83_1345575532 = null; //Variable for return #1
+            AccessibilityNodeInfoCompat varB4EAC82CA7396A68D541C85D26508E83_1345575532 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1345575532 = new AccessibilityNodeInfoCompat(IMPL.getChild(info, index));
             addTaint(info.getTaint());
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_1345575532.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1345575532.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1345575532;
-            // ---------- Original Method ----------
-            //return new AccessibilityNodeInfoCompat(IMPL.getChild(info, index));
+            
+            
         }
 
         
@@ -1140,73 +1140,73 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1307615112 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1307615112;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getChildCount(info);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.720 -0400", hash_original_method = "001ED67ACCB05215E0C0C1269607FAAC", hash_generated_method = "A68499C2E32A05C12B032BD08D7774A2")
         @Override
         public CharSequence getClassName(Object info) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_413969730 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_413969730 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_413969730 = AccessibilityNodeInfoCompatIcs.getClassName(info);
             addTaint(info.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_413969730.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_413969730.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_413969730;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getClassName(info);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.721 -0400", hash_original_method = "49E68BE928284122DC1CE4D1F9B3E016", hash_generated_method = "6A0D172818003A186E68E25DEAE812F0")
         @Override
         public CharSequence getContentDescription(Object info) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1034355176 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1034355176 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1034355176 = AccessibilityNodeInfoCompatIcs.getContentDescription(info);
             addTaint(info.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1034355176.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1034355176.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1034355176;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getContentDescription(info);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.722 -0400", hash_original_method = "E8A4C3E3432029A8834D6142201B45ED", hash_generated_method = "9A72B192B89ADCEE2D4BA9A056C83EC2")
         @Override
         public CharSequence getPackageName(Object info) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_2117390567 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_2117390567 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2117390567 = AccessibilityNodeInfoCompatIcs.getPackageName(info);
             addTaint(info.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2117390567.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2117390567.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2117390567;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getPackageName(info);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.723 -0400", hash_original_method = "D663E14A044DAD7A809F789DAE716A60", hash_generated_method = "0E04BE531F2D3B44CD86C52CC6A6AAA6")
         @Override
         public AccessibilityNodeInfoCompat getParent(Object info) {
-            AccessibilityNodeInfoCompat varB4EAC82CA7396A68D541C85D26508E83_583962712 = null; //Variable for return #1
+            AccessibilityNodeInfoCompat varB4EAC82CA7396A68D541C85D26508E83_583962712 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_583962712 = new AccessibilityNodeInfoCompat(IMPL.getParent(info));
             addTaint(info.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_583962712.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_583962712.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_583962712;
-            // ---------- Original Method ----------
-            //return new AccessibilityNodeInfoCompat(IMPL.getParent(info));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.724 -0400", hash_original_method = "E0898B972D5792ED49F6E082AA078009", hash_generated_method = "A5EFC459978205A3A6EC2EFEB71B0280")
         @Override
         public CharSequence getText(Object info) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_325612375 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_325612375 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_325612375 = AccessibilityNodeInfoCompatIcs.getText(info);
             addTaint(info.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_325612375.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_325612375.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_325612375;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getText(info);
+            
+            
         }
 
         
@@ -1217,8 +1217,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1259588426 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1259588426;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getWindowId(info);
+            
+            
         }
 
         
@@ -1229,8 +1229,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_69083348 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_69083348;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isCheckable(info);
+            
+            
         }
 
         
@@ -1241,8 +1241,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_961505077 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_961505077;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isChecked(info);
+            
+            
         }
 
         
@@ -1253,8 +1253,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1189289899 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1189289899;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isClickable(info);
+            
+            
         }
 
         
@@ -1265,8 +1265,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_404097607 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_404097607;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isEnabled(info);
+            
+            
         }
 
         
@@ -1277,8 +1277,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_595589036 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_595589036;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isFocusable(info);
+            
+            
         }
 
         
@@ -1289,8 +1289,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1746780591 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1746780591;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isFocused(info);
+            
+            
         }
 
         
@@ -1301,8 +1301,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1156459941 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1156459941;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isLongClickable(info);
+            
+            
         }
 
         
@@ -1313,8 +1313,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_356975619 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_356975619;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isPassword(info);
+            
+            
         }
 
         
@@ -1325,8 +1325,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1676217580 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1676217580;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isScrollable(info);
+            
+            
         }
 
         
@@ -1337,8 +1337,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(info.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1751799783 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1751799783;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isSelected(info);
+            
+            
         }
 
         
@@ -1350,8 +1350,8 @@ public class AccessibilityNodeInfoCompat {
             addTaint(action);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_268360754 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_268360754;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.performAction(info, action);
+            
+            
         }
 
         
@@ -1361,8 +1361,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setBoundsInParent(info, bounds);
             addTaint(info.getTaint());
             addTaint(bounds.getTaint());
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setBoundsInParent(info, bounds);
+            
+            
         }
 
         
@@ -1372,8 +1372,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setBoundsInScreen(info, bounds);
             addTaint(info.getTaint());
             addTaint(bounds.getTaint());
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setBoundsInScreen(info, bounds);
+            
+            
         }
 
         
@@ -1383,8 +1383,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setCheckable(info, checkable);
             addTaint(info.getTaint());
             addTaint(checkable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setCheckable(info, checkable);
+            
+            
         }
 
         
@@ -1394,8 +1394,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setChecked(info, checked);
             addTaint(info.getTaint());
             addTaint(checked);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setChecked(info, checked);
+            
+            
         }
 
         
@@ -1405,8 +1405,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setClassName(info, className);
             addTaint(info.getTaint());
             addTaint(className.getTaint());
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setClassName(info, className);
+            
+            
         }
 
         
@@ -1416,8 +1416,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setClickable(info, clickable);
             addTaint(info.getTaint());
             addTaint(clickable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setClickable(info, clickable);
+            
+            
         }
 
         
@@ -1427,8 +1427,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setContentDescription(info, contentDescription);
             addTaint(info.getTaint());
             addTaint(contentDescription.getTaint());
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setContentDescription(info, contentDescription);
+            
+            
         }
 
         
@@ -1438,8 +1438,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setEnabled(info, enabled);
             addTaint(info.getTaint());
             addTaint(enabled);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setEnabled(info, enabled);
+            
+            
         }
 
         
@@ -1449,8 +1449,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setFocusable(info, focusable);
             addTaint(info.getTaint());
             addTaint(focusable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setFocusable(info, focusable);
+            
+            
         }
 
         
@@ -1460,8 +1460,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setFocused(info, focused);
             addTaint(info.getTaint());
             addTaint(focused);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setFocused(info, focused);
+            
+            
         }
 
         
@@ -1471,8 +1471,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setLongClickable(info, longClickable);
             addTaint(info.getTaint());
             addTaint(longClickable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setLongClickable(info, longClickable);
+            
+            
         }
 
         
@@ -1482,8 +1482,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setPackageName(info, packageName);
             addTaint(info.getTaint());
             addTaint(packageName.getTaint());
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setPackageName(info, packageName);
+            
+            
         }
 
         
@@ -1493,8 +1493,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setParent(info, parent);
             addTaint(info.getTaint());
             addTaint(parent.getTaint());
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setParent(info, parent);
+            
+            
         }
 
         
@@ -1504,8 +1504,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setPassword(info, password);
             addTaint(info.getTaint());
             addTaint(password);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setPassword(info, password);
+            
+            
         }
 
         
@@ -1515,8 +1515,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setScrollable(info, scrollable);
             addTaint(info.getTaint());
             addTaint(scrollable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setScrollable(info, scrollable);
+            
+            
         }
 
         
@@ -1526,8 +1526,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setSelected(info, selected);
             addTaint(info.getTaint());
             addTaint(selected);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setSelected(info, selected);
+            
+            
         }
 
         
@@ -1537,8 +1537,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setSource(info, source);
             addTaint(info.getTaint());
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setSource(info, source);
+            
+            
         }
 
         
@@ -1548,8 +1548,8 @@ public class AccessibilityNodeInfoCompat {
             AccessibilityNodeInfoCompatIcs.setText(info, text);
             addTaint(info.getTaint());
             addTaint(text.getTaint());
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setText(info, text);
+            
+            
         }
 
         
@@ -1558,8 +1558,8 @@ public class AccessibilityNodeInfoCompat {
         public void recycle(Object info) {
             AccessibilityNodeInfoCompatIcs.recycle(info);
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.recycle(info);
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.EventObject;
 import javax.sip.message.Request;
@@ -29,43 +29,43 @@ public class RequestEvent extends EventObject {
         mRequest = request;
         mServerTransaction = serverTransaction;
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
-        //mDialog  = dialog;
-        //mRequest = request;
-        //mServerTransaction = serverTransaction;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.050 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "4E42276EADA33BB6AABF4DB64C97E0DA")
     public Dialog getDialog() {
-        Dialog varB4EAC82CA7396A68D541C85D26508E83_411304872 = null; //Variable for return #1
+        Dialog varB4EAC82CA7396A68D541C85D26508E83_411304872 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_411304872 = mDialog;
-        varB4EAC82CA7396A68D541C85D26508E83_411304872.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_411304872.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_411304872;
-        // ---------- Original Method ----------
-        //return mDialog;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.051 -0400", hash_original_method = "4D383BC0FA934F7D1FD2321C898D3E04", hash_generated_method = "3205B6F68C2CB1C139E337D32C43EAE1")
     public Request getRequest() {
-        Request varB4EAC82CA7396A68D541C85D26508E83_1459813495 = null; //Variable for return #1
+        Request varB4EAC82CA7396A68D541C85D26508E83_1459813495 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1459813495 = mRequest;
-        varB4EAC82CA7396A68D541C85D26508E83_1459813495.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1459813495.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1459813495;
-        // ---------- Original Method ----------
-        //return mRequest;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.052 -0400", hash_original_method = "8D21BCE8DC60E722EE457FD9027E91F0", hash_generated_method = "05C98439D2BC3A34360AA8459DE0E637")
     public ServerTransaction getServerTransaction() {
-        ServerTransaction varB4EAC82CA7396A68D541C85D26508E83_1727496910 = null; //Variable for return #1
+        ServerTransaction varB4EAC82CA7396A68D541C85D26508E83_1727496910 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1727496910 = mServerTransaction;
-        varB4EAC82CA7396A68D541C85D26508E83_1727496910.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1727496910.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1727496910;
-        // ---------- Original Method ----------
-        //return mServerTransaction;
+        
+        
     }
 
     

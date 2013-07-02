@@ -1,11 +1,11 @@
 package android.net.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -59,7 +59,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.119 -0400", hash_original_method = "A9E3259F33F9DE91C391F7016F4793EF", hash_generated_method = "F93E0B2FF811F46C0359831D1336A6D7")
     private  SipProfile() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -76,21 +76,22 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         mCallingUid = in.readInt();
         mPort = in.readInt();
         mAuthUserName = in.readString();
-        // ---------- Original Method ----------
-        //mAddress = (Address) in.readSerializable();
-        //mProxyAddress = in.readString();
-        //mPassword = in.readString();
-        //mDomain = in.readString();
-        //mProtocol = in.readString();
-        //mProfileName = in.readString();
-        //mSendKeepAlive = (in.readInt() == 0) ? false : true;
-        //mAutoRegistration = (in.readInt() == 0) ? false : true;
-        //mCallingUid = in.readInt();
-        //mPort = in.readInt();
-        //mAuthUserName = in.readString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.120 -0400", hash_original_method = "0F86B1263AA1167A9BA85D0781C26BDD", hash_generated_method = "5D1D71606B6D603B5019FA278AF04028")
     @Override
     public void writeToParcel(Parcel out, int flags) {
@@ -107,18 +108,18 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         out.writeString(mAuthUserName);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeSerializable(mAddress);
-        //out.writeString(mProxyAddress);
-        //out.writeString(mPassword);
-        //out.writeString(mDomain);
-        //out.writeString(mProtocol);
-        //out.writeString(mProfileName);
-        //out.writeInt(mSendKeepAlive ? 1 : 0);
-        //out.writeInt(mAutoRegistration ? 1 : 0);
-        //out.writeInt(mCallingUid);
-        //out.writeInt(mPort);
-        //out.writeString(mAuthUserName);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -127,115 +128,119 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_72081704 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_72081704;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.121 -0400", hash_original_method = "95F156513507BA474AAADC0CAD04DB56", hash_generated_method = "CE0F18B0265C572DD603CB552ECE0029")
     public SipURI getUri() {
-        SipURI varB4EAC82CA7396A68D541C85D26508E83_985350576 = null; //Variable for return #1
+        SipURI varB4EAC82CA7396A68D541C85D26508E83_985350576 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_985350576 = (SipURI) mAddress.getURI();
-        varB4EAC82CA7396A68D541C85D26508E83_985350576.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_985350576.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_985350576;
-        // ---------- Original Method ----------
-        //return (SipURI) mAddress.getURI();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.122 -0400", hash_original_method = "8967C0A1855BD4ECE9D4EFBDFCF47E43", hash_generated_method = "FADAA38FDA67768B1EFD7353ADE7C895")
     public String getUriString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_890732765 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_2096047747 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_890732765 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2096047747 = null; 
         {
             boolean var517335D4258242B1870AB0217C15F9B0_1370047300 = (!TextUtils.isEmpty(mProxyAddress));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_890732765 = "sip:" + getUserName() + "@" + mDomain;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2096047747 = getUri().toString();
-        String varA7E53CE21691AB073D9660D615818899_305352710; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_305352710; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_305352710 = varB4EAC82CA7396A68D541C85D26508E83_890732765;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_305352710 = varB4EAC82CA7396A68D541C85D26508E83_2096047747;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_305352710.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_305352710.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_305352710;
-        // ---------- Original Method ----------
-        //if (!TextUtils.isEmpty(mProxyAddress)) {
-            //return "sip:" + getUserName() + "@" + mDomain;
-        //}
-        //return getUri().toString();
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.123 -0400", hash_original_method = "15923319AE2A6D9E076B860EB8423C19", hash_generated_method = "224180F65674C6CF8BDBF23E028A59DC")
     public Address getSipAddress() {
-        Address varB4EAC82CA7396A68D541C85D26508E83_1314682442 = null; //Variable for return #1
+        Address varB4EAC82CA7396A68D541C85D26508E83_1314682442 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1314682442 = mAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_1314682442.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1314682442.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1314682442;
-        // ---------- Original Method ----------
-        //return mAddress;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.123 -0400", hash_original_method = "986E0B7E655AC166DA3BC65E473D37F3", hash_generated_method = "9F852B419D504F3EA0EA43DA26A6C71C")
     public String getDisplayName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_171504735 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_171504735 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_171504735 = mAddress.getDisplayName();
-        varB4EAC82CA7396A68D541C85D26508E83_171504735.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_171504735.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_171504735;
-        // ---------- Original Method ----------
-        //return mAddress.getDisplayName();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.124 -0400", hash_original_method = "5CC4F03701178BF5DF2B7731C175F0C0", hash_generated_method = "335D9A9CF10B5A32E91112E6AD2E4277")
     public String getUserName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2011134293 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2011134293 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2011134293 = getUri().getUser();
-        varB4EAC82CA7396A68D541C85D26508E83_2011134293.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2011134293.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2011134293;
-        // ---------- Original Method ----------
-        //return getUri().getUser();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.125 -0400", hash_original_method = "95E3B173DEC08F5D485CDBF035AFC6AC", hash_generated_method = "B3A99E7023D9237C86B4776E8FDC9B2F")
     public String getAuthUserName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_622337314 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_622337314 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_622337314 = mAuthUserName;
-        varB4EAC82CA7396A68D541C85D26508E83_622337314.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_622337314.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_622337314;
-        // ---------- Original Method ----------
-        //return mAuthUserName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.125 -0400", hash_original_method = "352B20CA8286B4BCFAD735A80A162186", hash_generated_method = "3F726842851DE59137BD60C7D98D0D49")
     public String getPassword() {
-        String varB4EAC82CA7396A68D541C85D26508E83_890576971 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_890576971 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_890576971 = mPassword;
-        varB4EAC82CA7396A68D541C85D26508E83_890576971.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_890576971.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_890576971;
-        // ---------- Original Method ----------
-        //return mPassword;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.126 -0400", hash_original_method = "B8163CA1BE0927DF0B70D99008321B49", hash_generated_method = "FD4F38F9ACE3C1F402C663CF59269D2E")
     public String getSipDomain() {
-        String varB4EAC82CA7396A68D541C85D26508E83_958770494 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_958770494 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_958770494 = mDomain;
-        varB4EAC82CA7396A68D541C85D26508E83_958770494.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_958770494.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_958770494;
-        // ---------- Original Method ----------
-        //return mDomain;
+        
+        
     }
 
     
@@ -243,41 +248,41 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1108389174 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1108389174;
-        // ---------- Original Method ----------
-        //return mPort;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.127 -0400", hash_original_method = "259570BEE3678204ECD026726561CF7F", hash_generated_method = "C0E4224287A2783BCF3A7E4F37E40E0A")
     public String getProtocol() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1732300069 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1732300069 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1732300069 = mProtocol;
-        varB4EAC82CA7396A68D541C85D26508E83_1732300069.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1732300069.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1732300069;
-        // ---------- Original Method ----------
-        //return mProtocol;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.127 -0400", hash_original_method = "3AA5E492CF333F83039FEED9B349A3B0", hash_generated_method = "2795F163D9E63C2BA6DEA2413D988EA7")
     public String getProxyAddress() {
-        String varB4EAC82CA7396A68D541C85D26508E83_648439619 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_648439619 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_648439619 = mProxyAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_648439619.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_648439619.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_648439619;
-        // ---------- Original Method ----------
-        //return mProxyAddress;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.127 -0400", hash_original_method = "9B8D5C45DA02E326FD388B2D1055F434", hash_generated_method = "67A76036AC45F4FE9D2063D790598A5C")
     public String getProfileName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1231878443 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1231878443 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1231878443 = mProfileName;
-        varB4EAC82CA7396A68D541C85D26508E83_1231878443.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1231878443.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1231878443;
-        // ---------- Original Method ----------
-        //return mProfileName;
+        
+        
     }
 
     
@@ -285,8 +290,8 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     public boolean getSendKeepAlive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1696636592 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1696636592;
-        // ---------- Original Method ----------
-        //return mSendKeepAlive;
+        
+        
     }
 
     
@@ -294,16 +299,16 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     public boolean getAutoRegistration() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1723279837 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1723279837;
-        // ---------- Original Method ----------
-        //return mAutoRegistration;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.128 -0400", hash_original_method = "24890DFC4ECCC257FBD9D683C57D0141", hash_generated_method = "0A7C123223C7B04C699C67D459550FF6")
     public void setCallingUid(int uid) {
         mCallingUid = uid;
-        // ---------- Original Method ----------
-        //mCallingUid = uid;
+        
+        
     }
 
     
@@ -311,21 +316,21 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     public int getCallingUid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1368288063 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1368288063;
-        // ---------- Original Method ----------
-        //return mCallingUid;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.129 -0400", hash_original_method = "0A3380549EECCCE1451002357806ED2B", hash_generated_method = "E0AACA21A4F78096225C87222E95798A")
     private Object readResolve() throws ObjectStreamException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1599043347 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1599043347 = null; 
         mPort = DEFAULT_PORT;
         varB4EAC82CA7396A68D541C85D26508E83_1599043347 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1599043347.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1599043347.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1599043347;
-        // ---------- Original Method ----------
-        //if (mPort == 0) mPort = DEFAULT_PORT;
-        //return this;
+        
+        
+        
     }
 
     
@@ -361,30 +366,30 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
             try 
             {
                 mProfile = (SipProfile) profile.clone();
-            } //End block
+            } 
             catch (CloneNotSupportedException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("should not occur", e);
-            } //End block
+            } 
             mProfile.mAddress = null;
             mUri = profile.getUri();
             mUri.setUserPassword(profile.getPassword());
             mDisplayName = profile.getDisplayName();
             mProxyAddress = profile.getProxyAddress();
             mProfile.mPort = profile.getPort();
-            // ---------- Original Method ----------
-            //if (profile == null) throw new NullPointerException();
-            //try {
-                //mProfile = (SipProfile) profile.clone();
-            //} catch (CloneNotSupportedException e) {
-                //throw new RuntimeException("should not occur", e);
-            //}
-            //mProfile.mAddress = null;
-            //mUri = profile.getUri();
-            //mUri.setUserPassword(profile.getPassword());
-            //mDisplayName = profile.getDisplayName();
-            //mProxyAddress = profile.getProxyAddress();
-            //mProfile.mPort = profile.getPort();
+            
+            
+            
+                
+            
+                
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -392,27 +397,27 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         public  Builder(String uriString) throws ParseException {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("uriString cannot be null");
-            } //End block
+            } 
             URI uri = mAddressFactory.createURI(fix(uriString));
             {
                 mUri = (SipURI) uri;
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new ParseException(uriString + " is not a SIP URI", 0);
-            } //End block
+            } 
             mProfile.mDomain = mUri.getHost();
             addTaint(uriString.getTaint());
-            // ---------- Original Method ----------
-            //if (uriString == null) {
-                //throw new NullPointerException("uriString cannot be null");
-            //}
-            //URI uri = mAddressFactory.createURI(fix(uriString));
-            //if (uri instanceof SipURI) {
-                //mUri = (SipURI) uri;
-            //} else {
-                //throw new ParseException(uriString + " is not a SIP URI", 0);
-            //}
-            //mProfile.mDomain = mUri.getHost();
+            
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
         }
 
         
@@ -421,181 +426,181 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                         "username and serverDomain cannot be null");
-            } //End block
+            } 
             mUri = mAddressFactory.createSipURI(username, serverDomain);
             mProfile.mDomain = serverDomain;
-            // ---------- Original Method ----------
-            //if ((username == null) || (serverDomain == null)) {
-                //throw new NullPointerException(
-                        //"username and serverDomain cannot be null");
-            //}
-            //mUri = mAddressFactory.createSipURI(username, serverDomain);
-            //mProfile.mDomain = serverDomain;
+            
+            
+                
+                        
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.131 -0400", hash_original_method = "9B9A6C83AA85ED9069AF543EFC545200", hash_generated_method = "694456D8EDB40CBBF049241B4EC928EF")
         private String fix(String uriString) {
-            String varB4EAC82CA7396A68D541C85D26508E83_402877936 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_402877936 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_402877936 = (uriString.trim().toLowerCase().startsWith("sip:")
                     ? uriString
                     : "sip:" + uriString);
             addTaint(uriString.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_402877936.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_402877936.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_402877936;
-            // ---------- Original Method ----------
-            //return (uriString.trim().toLowerCase().startsWith("sip:")
-                    //? uriString
-                    //: "sip:" + uriString);
+            
+            
+                    
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.132 -0400", hash_original_method = "18250D1818A49995026FA15C7D9E3273", hash_generated_method = "FAFDF988EE40168A65C7DEFF7A542BB0")
         public Builder setAuthUserName(String name) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_266806293 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_266806293 = null; 
             mProfile.mAuthUserName = name;
             varB4EAC82CA7396A68D541C85D26508E83_266806293 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_266806293.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_266806293.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_266806293;
-            // ---------- Original Method ----------
-            //mProfile.mAuthUserName = name;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.133 -0400", hash_original_method = "296C55D6980E7D56ABE421835C15F41F", hash_generated_method = "5DCE0116299C46CB97FED0AC241360C8")
         public Builder setProfileName(String name) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1248239675 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1248239675 = null; 
             mProfile.mProfileName = name;
             varB4EAC82CA7396A68D541C85D26508E83_1248239675 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1248239675.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1248239675.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1248239675;
-            // ---------- Original Method ----------
-            //mProfile.mProfileName = name;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.135 -0400", hash_original_method = "BC6826AF1B9FCC986900D7A0D38FE546", hash_generated_method = "1C6FE5512B2F0FCC65542C007EFA492D")
         public Builder setPassword(String password) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1740155729 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1740155729 = null; 
             mUri.setUserPassword(password);
             varB4EAC82CA7396A68D541C85D26508E83_1740155729 = this;
             addTaint(password.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1740155729.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1740155729.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1740155729;
-            // ---------- Original Method ----------
-            //mUri.setUserPassword(password);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.137 -0400", hash_original_method = "F3098A99A5C246234AF1DF8489EE5D8A", hash_generated_method = "3E9EBBDBDACEDBBA7A8A26A22A497254")
         public Builder setPort(int port) throws IllegalArgumentException {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_124370252 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_124370252 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("incorrect port arugment: " + port);
-            } //End block
+            } 
             mProfile.mPort = port;
             varB4EAC82CA7396A68D541C85D26508E83_124370252 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_124370252.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_124370252.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_124370252;
-            // ---------- Original Method ----------
-            //if ((port > 65535) || (port < 1000)) {
-                //throw new IllegalArgumentException("incorrect port arugment: " + port);
-            //}
-            //mProfile.mPort = port;
-            //return this;
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.138 -0400", hash_original_method = "3D9493D9C057190A447294828E62D209", hash_generated_method = "9F77AA87F37FD9C246C283A4E7155C09")
         public Builder setProtocol(String protocol) throws IllegalArgumentException {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1478333639 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1478333639 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("protocol cannot be null");
-            } //End block
+            } 
             protocol = protocol.toUpperCase();
             {
                 boolean var8ABDBE23B05570927D7C85EC139C7CA5_576696006 = (!protocol.equals(UDP) && !protocol.equals(TCP));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                         "unsupported protocol: " + protocol);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mProfile.mProtocol = protocol;
             varB4EAC82CA7396A68D541C85D26508E83_1478333639 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1478333639.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1478333639.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1478333639;
-            // ---------- Original Method ----------
-            //if (protocol == null) {
-                //throw new NullPointerException("protocol cannot be null");
-            //}
-            //protocol = protocol.toUpperCase();
-            //if (!protocol.equals(UDP) && !protocol.equals(TCP)) {
-                //throw new IllegalArgumentException(
-                        //"unsupported protocol: " + protocol);
-            //}
-            //mProfile.mProtocol = protocol;
-            //return this;
+            
+            
+                
+            
+            
+            
+                
+                        
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.139 -0400", hash_original_method = "3904E95A10FA919CA386CED8B9FE2A62", hash_generated_method = "9635B54CD40AB4C56B4C1281959B8400")
         public Builder setOutboundProxy(String outboundProxy) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1506155703 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1506155703 = null; 
             mProxyAddress = outboundProxy;
             varB4EAC82CA7396A68D541C85D26508E83_1506155703 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1506155703.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1506155703.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1506155703;
-            // ---------- Original Method ----------
-            //mProxyAddress = outboundProxy;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.140 -0400", hash_original_method = "6E9362DA0DBE9DD97645F0D0015D1E5C", hash_generated_method = "C608568AE04EA866E218C55FCC35AE9A")
         public Builder setDisplayName(String displayName) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_664780008 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_664780008 = null; 
             mDisplayName = displayName;
             varB4EAC82CA7396A68D541C85D26508E83_664780008 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_664780008.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_664780008.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_664780008;
-            // ---------- Original Method ----------
-            //mDisplayName = displayName;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.141 -0400", hash_original_method = "34498E182A6A75F890ADDB0BA3DE0052", hash_generated_method = "56C612B71C2F77BCAEFBC665EB85D38C")
         public Builder setSendKeepAlive(boolean flag) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1061809229 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1061809229 = null; 
             mProfile.mSendKeepAlive = flag;
             varB4EAC82CA7396A68D541C85D26508E83_1061809229 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1061809229.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1061809229.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1061809229;
-            // ---------- Original Method ----------
-            //mProfile.mSendKeepAlive = flag;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.142 -0400", hash_original_method = "7257964704D967B57FF3B17ACA4002E0", hash_generated_method = "0FD0510A47D745275C23F60D92462CDF")
         public Builder setAutoRegistration(boolean flag) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1710155298 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1710155298 = null; 
             mProfile.mAutoRegistration = flag;
             varB4EAC82CA7396A68D541C85D26508E83_1710155298 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1710155298.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1710155298.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1710155298;
-            // ---------- Original Method ----------
-            //mProfile.mAutoRegistration = flag;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.143 -0400", hash_original_method = "9D6052B0DC59ACBDB83E3EF9051B1CBF", hash_generated_method = "6FFF31A84B75C740482D4CDE94BE3B7B")
         public SipProfile build() {
-            SipProfile varB4EAC82CA7396A68D541C85D26508E83_695975726 = null; //Variable for return #1
+            SipProfile varB4EAC82CA7396A68D541C85D26508E83_695975726 = null; 
             mProfile.mPassword = mUri.getUserPassword();
             mUri.setUserPassword(null);
             try 
@@ -606,35 +611,35 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
                         SipURI uri = (SipURI)
                             mAddressFactory.createURI(fix(mProxyAddress));
                         mProfile.mProxyAddress = uri.getHost();
-                    } //End block
+                    } 
                     {
                         {
                             boolean varEE92B79E70486E4A2D42217EE70AA432_937151520 = (!mProfile.mProtocol.equals(UDP));
                             {
                                 mUri.setTransportParam(mProfile.mProtocol);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             mUri.setPort(mProfile.mPort);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 mProfile.mAddress = mAddressFactory.createAddress(
                         mDisplayName, mUri);
-            } //End block
+            } 
             catch (InvalidArgumentException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-            } //End block
+            } 
             catch (ParseException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_695975726 = mProfile;
-            varB4EAC82CA7396A68D541C85D26508E83_695975726.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_695975726.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_695975726;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -666,12 +671,12 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
                     return new SipProfile[size];
                 }
             };
-    // orphaned legacy method
+    
     public SipProfile createFromParcel(Parcel in) {
                     return new SipProfile(in);
                 }
     
-    // orphaned legacy method
+    
     public SipProfile[] newArray(int size) {
                     return new SipProfile[size];
                 }

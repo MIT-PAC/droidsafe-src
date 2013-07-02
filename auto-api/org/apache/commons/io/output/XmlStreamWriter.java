@@ -1,11 +1,11 @@
 package org.apache.commons.io.output;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -40,7 +40,7 @@ public class XmlStreamWriter extends Writer {
     public  XmlStreamWriter(OutputStream out) {
         this(out, null);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -48,9 +48,9 @@ public class XmlStreamWriter extends Writer {
     public  XmlStreamWriter(OutputStream out, String defaultEncoding) {
         this.out = out;
         this.defaultEncoding = defaultEncoding != null ? defaultEncoding : "UTF-8";
-        // ---------- Original Method ----------
-        //this.out = out;
-        //this.defaultEncoding = defaultEncoding != null ? defaultEncoding : "UTF-8";
+        
+        
+        
     }
 
     
@@ -58,7 +58,7 @@ public class XmlStreamWriter extends Writer {
     public  XmlStreamWriter(File file) throws FileNotFoundException {
         this(file, null);
         addTaint(file.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -67,32 +67,35 @@ public class XmlStreamWriter extends Writer {
         this(new FileOutputStream(file), defaultEncoding);
         addTaint(file.getTaint());
         addTaint(defaultEncoding.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.841 -0400", hash_original_method = "ECC6E581C26F132636CDCE9C9A5E5807", hash_generated_method = "47881047A36DA3CA0BD8F57C85BFA957")
     public String getEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_462391634 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_462391634 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_462391634 = encoding;
-        varB4EAC82CA7396A68D541C85D26508E83_462391634.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_462391634.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_462391634;
-        // ---------- Original Method ----------
-        //return encoding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.841 -0400", hash_original_method = "F443D1F05E85BC7B1454291BD7671BD0", hash_generated_method = "48C18ECE42A4928A65A98D48B83E9956")
     public String getDefaultEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1117175947 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1117175947 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1117175947 = defaultEncoding;
-        varB4EAC82CA7396A68D541C85D26508E83_1117175947.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1117175947.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1117175947;
-        // ---------- Original Method ----------
-        //return defaultEncoding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.842 -0400", hash_original_method = "FA1D85D28CEAB4A4964615D0CD6BE099", hash_generated_method = "03962F4131E01C5529A0AA392200B1E0")
     @Override
     public void close() throws IOException {
@@ -100,31 +103,33 @@ public class XmlStreamWriter extends Writer {
             encoding = defaultEncoding;
             writer = new OutputStreamWriter(out, encoding);
             writer.write(xmlPrologWriter.toString());
-        } //End block
+        } 
         writer.close();
-        // ---------- Original Method ----------
-        //if (writer == null) {
-            //encoding = defaultEncoding;
-            //writer = new OutputStreamWriter(out, encoding);
-            //writer.write(xmlPrologWriter.toString());
-        //}
-        //writer.close();
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.842 -0400", hash_original_method = "1CF6DC5DA7BB65AAE6632CB394BB4ED7", hash_generated_method = "398F8A52357FFC35C6508A83FB165B25")
     @Override
     public void flush() throws IOException {
         {
             writer.flush();
-        } //End block
-        // ---------- Original Method ----------
-        //if (writer != null) {
-            //writer.flush();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.843 -0400", hash_original_method = "5F0F76B2AEC559A82852132C77730119", hash_generated_method = "AD32C5CCE814BF938DC64996226BCC8E")
     private void detectEncoding(char[] cbuf, int off, int len) throws IOException {
         int size = len;
@@ -133,8 +138,8 @@ public class XmlStreamWriter extends Writer {
             boolean varD9957D3FD4CB10228126C5F962847E92_291860036 = (xmlProlog.length() + len > BUFFER_SIZE);
             {
                 size = BUFFER_SIZE - xmlProlog.length();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         xmlPrologWriter.write(cbuf, off, size);
         {
             boolean varDF24240208512C3DF755D8EE557D0A72_1926652339 = (xmlProlog.length() >= 5);
@@ -151,61 +156,62 @@ public class XmlStreamWriter extends Writer {
                                 {
                                     encoding = m.group(1).toUpperCase();
                                     encoding = encoding.substring(1, encoding.length() - 1);
-                                } //End block
+                                } 
                                 {
                                     encoding = defaultEncoding;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         {
                             {
                                 boolean var7E3F1E5C2978757E3C07EAB3109B998A_1297562077 = (xmlProlog.length() >= BUFFER_SIZE);
                                 {
                                     encoding = defaultEncoding;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         encoding = defaultEncoding;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     xmlPrologWriter = null;
                     writer = new OutputStreamWriter(out, encoding);
                     writer.write(xmlProlog.toString());
                     {
                         writer.write(cbuf, off + size, len - size);
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(cbuf[0]);
         addTaint(off);
         addTaint(len);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.843 -0400", hash_original_method = "C7BCA488F553457389C8980637630468", hash_generated_method = "F8E23E27BBBA26CB6130B1844D6AF095")
     @Override
     public void write(char[] cbuf, int off, int len) throws IOException {
         {
             detectEncoding(cbuf, off, len);
-        } //End block
+        } 
         {
             writer.write(cbuf, off, len);
-        } //End block
+        } 
         addTaint(cbuf[0]);
         addTaint(off);
         addTaint(len);
-        // ---------- Original Method ----------
-        //if (xmlPrologWriter != null) {
-            //detectEncoding(cbuf, off, len);
-        //} else {
-            //writer.write(cbuf, off, len);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     

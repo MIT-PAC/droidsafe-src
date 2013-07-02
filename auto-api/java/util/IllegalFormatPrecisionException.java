@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class IllegalFormatPrecisionException extends IllegalFormatException {
@@ -16,8 +16,8 @@ public class IllegalFormatPrecisionException extends IllegalFormatException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.520 -0400", hash_original_method = "1F9B0D4B155F0DC19F08720A34E7C4BD", hash_generated_method = "13646296FDF6AF63AF33B67CE5FD65FA")
     public  IllegalFormatPrecisionException(int p) {
         this.p = p;
-        // ---------- Original Method ----------
-        //this.p = p;
+        
+        
     }
 
     
@@ -25,20 +25,21 @@ public class IllegalFormatPrecisionException extends IllegalFormatException {
     public int getPrecision() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1129345460 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1129345460;
-        // ---------- Original Method ----------
-        //return p;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.523 -0400", hash_original_method = "5619344DED486463EA63A3A2966EBEEE", hash_generated_method = "A723EC285A79B132A2976DAD66EA4830")
     @Override
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1426836696 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1426836696 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1426836696 = Integer.toString(p);
-        varB4EAC82CA7396A68D541C85D26508E83_1426836696.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1426836696.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1426836696;
-        // ---------- Original Method ----------
-        //return Integer.toString(p);
+        
+        
     }
 
     

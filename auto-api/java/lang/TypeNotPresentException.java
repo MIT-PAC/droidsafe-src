@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class TypeNotPresentException extends RuntimeException {
@@ -18,19 +18,19 @@ public class TypeNotPresentException extends RuntimeException {
         super("Type " + typeName + " not present", cause);
         this.typeName = typeName;
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-        //this.typeName = typeName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.443 -0400", hash_original_method = "4654D488024911B4CA912D2186B5898B", hash_generated_method = "9C47EECD2A59B17FF2916B4BE51DCED6")
     public String typeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1578720812 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1578720812 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1578720812 = typeName;
-        varB4EAC82CA7396A68D541C85D26508E83_1578720812.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1578720812.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1578720812;
-        // ---------- Original Method ----------
-        //return typeName;
+        
+        
     }
 
     

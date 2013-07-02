@@ -1,11 +1,11 @@
 package android.view.textservice;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -58,22 +58,22 @@ public final class SpellCheckerInfo implements Parcelable {
             {
                 if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("No "
                         + SpellCheckerSession.SERVICE_META_DATA + " meta-data");
-            } //End block
+            } 
             final Resources res = pm.getResourcesForApplication(si.applicationInfo);
             final AttributeSet attrs = Xml.asAttributeSet(parser);
             int type;
             {
                 boolean var995057C222283DCE9E465AE35974357A_730601334 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
                     && type != XmlPullParser.START_TAG);
-            } //End collapsed parenthetic
+            } 
             final String nodeName = parser.getName();
             {
                 boolean varB5CFADE7245E4FEF78AB00B840C32F3B_1696735429 = (!"spell-checker".equals(nodeName));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                         "Meta-data does not start with spell-checker tag");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             TypedArray sa = res.obtainAttributes(attrs,
                     com.android.internal.R.styleable.SpellChecker);
             label = sa.getResourceId(com.android.internal.R.styleable.SpellChecker_label, 0);
@@ -92,8 +92,8 @@ public final class SpellCheckerInfo implements Parcelable {
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                                 "Meta-data in spell-checker does not start with subtype tag");
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         final TypedArray a = res.obtainAttributes(
                             attrs, com.android.internal.R.styleable.SpellChecker_Subtype);
                         SpellCheckerSubtype subtype = new SpellCheckerSubtype(
@@ -104,24 +104,24 @@ public final class SpellCheckerInfo implements Parcelable {
                             a.getString(com.android.internal.R.styleable
                                     .SpellChecker_Subtype_subtypeExtraValue));
                         mSubtypes.add(subtype);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         catch (Exception e)
         {
             if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                     "Unable to create context for: " + si.packageName);
-        } //End block
+        } 
         finally 
         {
             parser.close();
-        } //End block
+        } 
         mLabel = label;
         mSettingsActivityName = settingsActivityComponent;
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -132,50 +132,52 @@ public final class SpellCheckerInfo implements Parcelable {
         mSettingsActivityName = source.readString();
         mService = ResolveInfo.CREATOR.createFromParcel(source);
         source.readTypedList(mSubtypes, SpellCheckerSubtype.CREATOR);
-        // ---------- Original Method ----------
-        //mLabel = source.readInt();
-        //mId = source.readString();
-        //mSettingsActivityName = source.readString();
-        //mService = ResolveInfo.CREATOR.createFromParcel(source);
-        //source.readTypedList(mSubtypes, SpellCheckerSubtype.CREATOR);
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.349 -0400", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "B59860F0541885FC6C96D873BA85F328")
     public String getId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_992484029 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_992484029 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_992484029 = mId;
-        varB4EAC82CA7396A68D541C85D26508E83_992484029.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_992484029.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_992484029;
-        // ---------- Original Method ----------
-        //return mId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.350 -0400", hash_original_method = "A035D08443F3F9853C50476F9CD3E50F", hash_generated_method = "0A0FEDA92AAB1307D27DC59C0D71026B")
     public ComponentName getComponent() {
-        ComponentName varB4EAC82CA7396A68D541C85D26508E83_1352120255 = null; //Variable for return #1
+        ComponentName varB4EAC82CA7396A68D541C85D26508E83_1352120255 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1352120255 = new ComponentName(
                 mService.serviceInfo.packageName, mService.serviceInfo.name);
-        varB4EAC82CA7396A68D541C85D26508E83_1352120255.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1352120255.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1352120255;
-        // ---------- Original Method ----------
-        //return new ComponentName(
-                //mService.serviceInfo.packageName, mService.serviceInfo.name);
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.351 -0400", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "94DE522BD985B0A8409969A2499C3F34")
     public String getPackageName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_148437986 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_148437986 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_148437986 = mService.serviceInfo.packageName;
-        varB4EAC82CA7396A68D541C85D26508E83_148437986.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_148437986.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_148437986;
-        // ---------- Original Method ----------
-        //return mService.serviceInfo.packageName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.351 -0400", hash_original_method = "2F472510FA9E87ADC65F29887FB84501", hash_generated_method = "A06D3D0929585487CD60797ED6A8E14C")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -186,92 +188,96 @@ public final class SpellCheckerInfo implements Parcelable {
         dest.writeTypedList(mSubtypes);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mLabel);
-        //dest.writeString(mId);
-        //dest.writeString(mSettingsActivityName);
-        //mService.writeToParcel(dest, flags);
-        //dest.writeTypedList(mSubtypes);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.352 -0400", hash_original_method = "440496C0C039EAF57937C0E12546E16A", hash_generated_method = "9078FAD1C36DCCFD9203DDEEF3C39EBE")
     public CharSequence loadLabel(PackageManager pm) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_31444712 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1921237592 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_31444712 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1921237592 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_31444712 = "";
         varB4EAC82CA7396A68D541C85D26508E83_1921237592 = pm.getText(getPackageName(), mLabel, mService.serviceInfo.applicationInfo);
         addTaint(pm.getTaint());
-        CharSequence varA7E53CE21691AB073D9660D615818899_1653543028; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1653543028; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1653543028 = varB4EAC82CA7396A68D541C85D26508E83_31444712;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1653543028 = varB4EAC82CA7396A68D541C85D26508E83_1921237592;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1653543028.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1653543028.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1653543028;
-        // ---------- Original Method ----------
-        //if (mLabel == 0 || pm == null) return "";
-        //return pm.getText(getPackageName(), mLabel, mService.serviceInfo.applicationInfo);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.352 -0400", hash_original_method = "0598EE9DB236F7268C8A7877021962D5", hash_generated_method = "17B5346015AE61E90222E0FA9AC14189")
     public Drawable loadIcon(PackageManager pm) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_299117744 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_299117744 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_299117744 = mService.loadIcon(pm);
         addTaint(pm.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_299117744.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_299117744.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_299117744;
-        // ---------- Original Method ----------
-        //return mService.loadIcon(pm);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.353 -0400", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "A684532516BD3542A2AE6868CED1D5B1")
     public ServiceInfo getServiceInfo() {
-        ServiceInfo varB4EAC82CA7396A68D541C85D26508E83_1655255538 = null; //Variable for return #1
+        ServiceInfo varB4EAC82CA7396A68D541C85D26508E83_1655255538 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1655255538 = mService.serviceInfo;
-        varB4EAC82CA7396A68D541C85D26508E83_1655255538.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1655255538.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1655255538;
-        // ---------- Original Method ----------
-        //return mService.serviceInfo;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.353 -0400", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "861EE5347B3FC0680304F4A976AC75A4")
     public String getSettingsActivity() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1505974517 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1505974517 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1505974517 = mSettingsActivityName;
-        varB4EAC82CA7396A68D541C85D26508E83_1505974517.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1505974517.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1505974517;
-        // ---------- Original Method ----------
-        //return mSettingsActivityName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.353 -0400", hash_original_method = "CC228A570F36729F1778728092FDBD7B", hash_generated_method = "51EEE144125B1D6050322892D1C8A582")
     public int getSubtypeCount() {
         int var2A2E26F2E1FE9603006EE3A64DF7EF6B_1606791154 = (mSubtypes.size());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2089279559 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2089279559;
-        // ---------- Original Method ----------
-        //return mSubtypes.size();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.354 -0400", hash_original_method = "A5CD061EE9765DD17A95FDAD389682DB", hash_generated_method = "E866E1C55E7111C03DA4A4F73AB9EE63")
     public SpellCheckerSubtype getSubtypeAt(int index) {
-        SpellCheckerSubtype varB4EAC82CA7396A68D541C85D26508E83_1917874592 = null; //Variable for return #1
+        SpellCheckerSubtype varB4EAC82CA7396A68D541C85D26508E83_1917874592 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1917874592 = mSubtypes.get(index);
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_1917874592.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1917874592.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1917874592;
-        // ---------- Original Method ----------
-        //return mSubtypes.get(index);
+        
+        
     }
 
     
@@ -280,8 +286,8 @@ public final class SpellCheckerInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_536374914 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_536374914;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     

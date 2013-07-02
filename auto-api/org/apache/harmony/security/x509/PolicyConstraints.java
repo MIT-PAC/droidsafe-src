@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -31,9 +31,9 @@ public final class PolicyConstraints extends ExtensionValue {
             BigInteger inhibitPolicyMapping) {
         this.requireExplicitPolicy = requireExplicitPolicy;
         this.inhibitPolicyMapping = inhibitPolicyMapping;
-        // ---------- Original Method ----------
-        //this.requireExplicitPolicy = requireExplicitPolicy;
-        //this.inhibitPolicyMapping = inhibitPolicyMapping;
+        
+        
+        
     }
 
     
@@ -44,10 +44,10 @@ public final class PolicyConstraints extends ExtensionValue {
         this.requireExplicitPolicy = pc.requireExplicitPolicy;
         this.inhibitPolicyMapping = pc.inhibitPolicyMapping;
         addTaint(encoding[0]);
-        // ---------- Original Method ----------
-        //PolicyConstraints pc = (PolicyConstraints) ASN1.decode(encoding);
-        //this.requireExplicitPolicy = pc.requireExplicitPolicy;
-        //this.inhibitPolicyMapping = pc.inhibitPolicyMapping;
+        
+        
+        
+        
     }
 
     
@@ -58,49 +58,51 @@ public final class PolicyConstraints extends ExtensionValue {
         this.encoding = encoding;
         addTaint(requireExplicitPolicy.getTaint());
         addTaint(inhibitPolicyMapping.getTaint());
-        // ---------- Original Method ----------
-        //this.encoding = encoding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.286 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "2CF7D40F000D866ED4423CC98EC93D90")
     @Override
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_726457605 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_726457605;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.287 -0400", hash_original_method = "6254749C2BCE6B73C098F3685BA802AD", hash_generated_method = "CAD53FC8EFC0B99077A6D9D16F33700C")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix).append("PolicyConstraints: [\n");
         {
             sb.append(prefix).append("  requireExplicitPolicy: ").append(requireExplicitPolicy).append('\n');
-        } //End block
+        } 
         {
             sb.append(prefix).append("  inhibitPolicyMapping: ").append(inhibitPolicyMapping).append('\n');
-        } //End block
+        } 
         sb.append(prefix).append("]\n");
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //sb.append(prefix).append("PolicyConstraints: [\n");
-        //if (requireExplicitPolicy != null) {
-            //sb.append(prefix).append("  requireExplicitPolicy: ").append(requireExplicitPolicy).append('\n');
-        //}
-        //if (inhibitPolicyMapping != null) {
-            //sb.append(prefix).append("  inhibitPolicyMapping: ").append(inhibitPolicyMapping).append('\n');
-        //}
-        //sb.append(prefix).append("]\n");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -135,30 +137,6 @@ public final class PolicyConstraints extends ExtensionValue {
             values[1] = pc.inhibitPolicyMapping.toByteArray();
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            PolicyConstraints pc = (PolicyConstraints) object;
-            values[0] = pc.requireExplicitPolicy.toByteArray();
-            values[1] = pc.inhibitPolicyMapping.toByteArray();
-        }
     
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) {
-            Object[] values = (Object[]) in.content;
-            BigInteger requireExplicitPolicy = null;
-            BigInteger inhibitPolicyMapping = null;
-            if (values[0] != null) {
-                requireExplicitPolicy = new BigInteger((byte[]) values[0]);
-            }
-            if (values[1] != null) {
-                inhibitPolicyMapping = new BigInteger((byte[]) values[1]);
-            }
-            return new PolicyConstraints(
-                requireExplicitPolicy, inhibitPolicyMapping,
-                    in.getEncoded());
-        }
-    
-    */
 }
 

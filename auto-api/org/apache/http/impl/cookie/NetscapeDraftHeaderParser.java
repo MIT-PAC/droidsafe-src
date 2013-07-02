@@ -1,11 +1,11 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +26,8 @@ public class NetscapeDraftHeaderParser {
     public  NetscapeDraftHeaderParser() {
         super();
         this.nvpParser = BasicHeaderValueParser.DEFAULT;
-        // ---------- Original Method ----------
-        //this.nvpParser = BasicHeaderValueParser.DEFAULT;
+        
+        
     }
 
     
@@ -35,13 +35,13 @@ public class NetscapeDraftHeaderParser {
     public HeaderElement parseHeader(
             final CharArrayBuffer buffer,
             final ParserCursor cursor) throws ParseException {
-        HeaderElement varB4EAC82CA7396A68D541C85D26508E83_593097374 = null; //Variable for return #1
+        HeaderElement varB4EAC82CA7396A68D541C85D26508E83_593097374 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Char array buffer may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Parser cursor may not be null");
-        } //End block
+        } 
         NameValuePair nvp = this.nvpParser.parseNameValuePair(buffer, cursor, DELIMITERS);
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         {
@@ -49,31 +49,31 @@ public class NetscapeDraftHeaderParser {
             {
                 NameValuePair param = this.nvpParser.parseNameValuePair(buffer, cursor, DELIMITERS);
                 params.add(param);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_593097374 = new BasicHeaderElement(
                 nvp.getName(), 
                 nvp.getValue(), params.toArray(new NameValuePair[params.size()]));
         addTaint(buffer.getTaint());
         addTaint(cursor.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_593097374.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_593097374.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_593097374;
-        // ---------- Original Method ----------
-        //if (buffer == null) {
-            //throw new IllegalArgumentException("Char array buffer may not be null");
-        //}
-        //if (cursor == null) {
-            //throw new IllegalArgumentException("Parser cursor may not be null");
-        //}
-        //NameValuePair nvp = this.nvpParser.parseNameValuePair(buffer, cursor, DELIMITERS);
-        //List<NameValuePair> params = new ArrayList<NameValuePair>();
-        //while (!cursor.atEnd()) {
-            //NameValuePair param = this.nvpParser.parseNameValuePair(buffer, cursor, DELIMITERS);
-            //params.add(param);
-        //}
-        //return new BasicHeaderElement(
-                //nvp.getName(), 
-                //nvp.getValue(), params.toArray(new NameValuePair[params.size()]));
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
+                
+                
     }
 
     

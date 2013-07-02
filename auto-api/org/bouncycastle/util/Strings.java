@@ -1,11 +1,11 @@
 package org.bouncycastle.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayOutputStream;
 import java.util.Vector;
@@ -15,10 +15,11 @@ public final class Strings {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.223 -0400", hash_original_method = "C84AA02E5DB471302FEEBC62E754E49D", hash_generated_method = "C84AA02E5DB471302FEEBC62E754E49D")
     public Strings ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String fromUTF8ByteArray(byte[] bytes) {
         int i = 0;
         int length = 0;
@@ -91,6 +92,7 @@ public final class Strings {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toUTF8ByteArray(char[] string) {
         ByteArrayOutputStream bOut = new ByteArrayOutputStream();
         char[] c = string;
@@ -138,6 +140,7 @@ public final class Strings {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toUpperCase(String string) {
         boolean changed = false;
         char[] chars = string.toCharArray();
@@ -158,6 +161,7 @@ public final class Strings {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toLowerCase(String string) {
         boolean changed = false;
         char[] chars = string.toCharArray();
@@ -188,6 +192,7 @@ public final class Strings {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static byte[] toByteArray(String string) {
         byte[] bytes = new byte[string.length()];
         for (int i = 0; i != bytes.length; i++)
@@ -199,6 +204,7 @@ public final class Strings {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static String[] split(String input, char delimiter) {
         Vector           v = new Vector();
         boolean moreTokens = true;

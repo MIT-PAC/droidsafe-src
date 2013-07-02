@@ -1,11 +1,11 @@
 package java.security.spec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class MGF1ParameterSpec implements AlgorithmParameterSpec {
@@ -18,23 +18,23 @@ public class MGF1ParameterSpec implements AlgorithmParameterSpec {
         this.mdName = mdName;
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("mdName == null");
-        } //End block
-        // ---------- Original Method ----------
-        //this.mdName = mdName;
-        //if (this.mdName == null) {
-            //throw new NullPointerException("mdName == null");
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.101 -0400", hash_original_method = "F76E00B788282743E863E8A91477E027", hash_generated_method = "8108BF1B9AB5D71E18A1CED160C67AAA")
     public String getDigestAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1160475775 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1160475775 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1160475775 = mdName;
-        varB4EAC82CA7396A68D541C85D26508E83_1160475775.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1160475775.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1160475775;
-        // ---------- Original Method ----------
-        //return mdName;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.apache.harmony.security.asn1.ASN1Explicit;
@@ -30,59 +30,60 @@ public final class DistributionPoint {
             ReasonFlags reasons, GeneralNames cRLIssuer) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("DistributionPoint MUST NOT consist of only the reasons field");
-        } //End block
+        } 
         this.distributionPoint = distributionPoint;
         this.reasons = reasons;
         this.cRLIssuer = cRLIssuer;
-        // ---------- Original Method ----------
-        //if ((reasons != null) && (distributionPoint == null) && (cRLIssuer == null)) {
-            //throw new IllegalArgumentException("DistributionPoint MUST NOT consist of only the reasons field");
-        //}
-        //this.distributionPoint = distributionPoint;
-        //this.reasons = reasons;
-        //this.cRLIssuer = cRLIssuer;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.815 -0400", hash_original_method = "190306EE5A9877A74E1ACB7BA25B44A2", hash_generated_method = "353A9694B0FAC3DC05887072FF6CE14C")
     public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix);
         sb.append("Distribution Point: [\n");
         {
             distributionPoint.dumpValue(sb, prefix + "  ");
-        } //End block
+        } 
         {
             reasons.dumpValue(sb, prefix + "  ");
-        } //End block
+        } 
         {
             sb.append(prefix);
             sb.append("  CRL Issuer: [\n");
             cRLIssuer.dumpValue(sb, prefix + "    ");
             sb.append(prefix);
             sb.append("  ]\n");
-        } //End block
+        } 
         sb.append(prefix);
         sb.append("]\n");
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //sb.append(prefix);
-        //sb.append("Distribution Point: [\n");
-        //if (distributionPoint != null) {
-            //distributionPoint.dumpValue(sb, prefix + "  ");
-        //}
-        //if (reasons != null) {
-            //reasons.dumpValue(sb, prefix + "  ");
-        //}
-        //if (cRLIssuer != null) {
-            //sb.append(prefix);
-            //sb.append("  CRL Issuer: [\n");
-            //cRLIssuer.dumpValue(sb, prefix + "    ");
-            //sb.append(prefix);
-            //sb.append("  ]\n");
-        //}
-        //sb.append(prefix);
-        //sb.append("]\n");
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+        
+        
+        
     }
 
     
@@ -112,22 +113,6 @@ public final class DistributionPoint {
             values[2] = dp.cRLIssuer;
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            DistributionPoint dp = (DistributionPoint) object;
-            values[0] = dp.distributionPoint;
-            values[1] = dp.reasons;
-            values[2] = dp.cRLIssuer;
-        }
     
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
-            Object[] values = (Object[]) in.content;
-            return new DistributionPoint((DistributionPointName) values[0],
-                    (ReasonFlags) values[1], (GeneralNames) values[2]);
-        }
-    
-    */
 }
 

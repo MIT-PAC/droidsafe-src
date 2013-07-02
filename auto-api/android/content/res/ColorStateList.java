@@ -1,11 +1,11 @@
 package android.content.res;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.util.ArrayUtils;
 import org.xmlpull.v1.XmlPullParser;
@@ -33,7 +33,7 @@ public class ColorStateList implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.523 -0400", hash_original_method = "A1B9AA8D55CC71F4C566F389AC3D8BBC", hash_generated_method = "B853D9FA4CC0F774905FDCA69D04F16F")
     private  ColorStateList() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -48,24 +48,25 @@ public class ColorStateList implements Parcelable {
                 {
                     {
                         mDefaultColor = colors[i];
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //mStateSpecs = states;
-        //mColors = colors;
-        //if (states.length > 0) {
-            //mDefaultColor = colors[0];
-            //for (int i = 0; i < states.length; i++) {
-                //if (states[i].length == 0) {
-                    //mDefaultColor = colors[i];
-                //}
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ColorStateList valueOf(int color) {
         synchronized (sCache) {
             WeakReference<ColorStateList> ref = sCache.get(color);
@@ -80,6 +81,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ColorStateList createFromXml(Resources r, XmlPullParser parser) throws XmlPullParserException, IOException {
         AttributeSet attrs = Xml.asAttributeSet(parser);
         int type;
@@ -93,6 +95,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static ColorStateList createFromXmlInner(Resources r, XmlPullParser parser,
             AttributeSet attrs) throws XmlPullParserException, IOException {
         ColorStateList colorStateList;
@@ -108,31 +111,33 @@ public class ColorStateList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.525 -0400", hash_original_method = "C02A6B069CD8C9360FEC8CA407C14B4A", hash_generated_method = "EB747186EA8B3BD870D7A5A0C5E4381D")
     public ColorStateList withAlpha(int alpha) {
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_103895614 = null; //Variable for return #1
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_103895614 = null; 
         int[] colors = new int[mColors.length];
         int len = colors.length;
         {
             int i = 0;
             {
                 colors[i] = (mColors[i] & 0xFFFFFF) | (alpha << 24);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_103895614 = new ColorStateList(mStateSpecs, colors);
         addTaint(alpha);
-        varB4EAC82CA7396A68D541C85D26508E83_103895614.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_103895614.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_103895614;
-        // ---------- Original Method ----------
-        //int[] colors = new int[mColors.length];
-        //int len = colors.length;
-        //for (int i = 0; i < len; i++) {
-            //colors[i] = (mColors[i] & 0xFFFFFF) | (alpha << 24);
-        //}
-        //return new ColorStateList(mStateSpecs, colors);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.376 -0400", hash_original_method = "096D4D4F0EE82FD61B43B813E755281E", hash_generated_method = "4BD665673C7E701B7026116D2AFC4DBA")
     private void inflate(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
         int type;
@@ -154,7 +159,7 @@ public class ColorStateList implements Parcelable {
             {
                 {
                     boolean var03C44ADC0346A0FD12ECFE38D2A0612F_745435210 = (depth > innerDepth || !parser.getName().equals("item"));
-                } //End collapsed parenthetic
+                } 
                 int colorRes;
                 colorRes = 0;
                 int color;
@@ -178,27 +183,27 @@ public class ColorStateList implements Parcelable {
                             {
                                 color = attrs.getAttributeIntValue(i, color);
                                 haveColor = true;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             stateSpec[j++] = attrs.getAttributeBooleanValue(i, false)
                                   ? stateResId
                                   : -stateResId;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 stateSpec = StateSet.trimStateSet(stateSpec, j);
                 {
                     color = r.getColor(colorRes);
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                         parser.getPositionDescription()
                         + ": <item> tag requires a 'android:color' attribute.");
-                } //End block
+                } 
                 {
                     mDefaultColor = color;
-                } //End block
+                } 
                 {
                     listAllocated = ArrayUtils.idealIntArraySize(listSize + 1);
                     int[] ncolor;
@@ -209,11 +214,11 @@ public class ColorStateList implements Parcelable {
                     System.arraycopy(stateSpecList, 0, nstate, 0, listSize);
                     colorList = ncolor;
                     stateSpecList = nstate;
-                } //End block
+                } 
                 colorList[listSize] = color;
                 stateSpecList[listSize] = stateSpec;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mColors = new int[listSize];
         mStateSpecs = new int[listSize][];
         System.arraycopy(colorList, 0, mColors, 0, listSize);
@@ -221,8 +226,8 @@ public class ColorStateList implements Parcelable {
         addTaint(r.getTaint());
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -230,11 +235,12 @@ public class ColorStateList implements Parcelable {
     public boolean isStateful() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_696671904 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_696671904;
-        // ---------- Original Method ----------
-        //return mStateSpecs.length > 1;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.528 -0400", hash_original_method = "4327A241B2C451B5F5DDB6DF79352F03", hash_generated_method = "BE309A20F90CED83CE2CA312D63144F1")
     public int getColorForState(int[] stateSet, int defaultColor) {
         final int setLength = mStateSpecs.length;
@@ -244,22 +250,22 @@ public class ColorStateList implements Parcelable {
                 int[] stateSpec = mStateSpecs[i];
                 {
                     boolean var0BC14A81E745300E188A9AE767EF71BA_1695234420 = (StateSet.stateSetMatches(stateSpec, stateSet));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(stateSet[0]);
         addTaint(defaultColor);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1281117553 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1281117553;
-        // ---------- Original Method ----------
-        //final int setLength = mStateSpecs.length;
-        //for (int i = 0; i < setLength; i++) {
-            //int[] stateSpec = mStateSpecs[i];
-            //if (StateSet.stateSetMatches(stateSpec, stateSet)) {
-                //return mColors[i];
-            //}
-        //}
-        //return defaultColor;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -267,25 +273,26 @@ public class ColorStateList implements Parcelable {
     public int getDefaultColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2079169662 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2079169662;
-        // ---------- Original Method ----------
-        //return mDefaultColor;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.530 -0400", hash_original_method = "1483B624C0E3738F481F261D24FE0627", hash_generated_method = "8E0AAF6F0EAB6F3701BAF7E46A562F83")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_895378040 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_895378040 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_895378040 = "ColorStateList{" +
                "mStateSpecs=" + Arrays.deepToString(mStateSpecs) +
                "mColors=" + Arrays.toString(mColors) +
                "mDefaultColor=" + mDefaultColor + '}';
-        varB4EAC82CA7396A68D541C85D26508E83_895378040.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_895378040.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_895378040;
-        // ---------- Original Method ----------
-        //return "ColorStateList{" +
-               //"mStateSpecs=" + Arrays.deepToString(mStateSpecs) +
-               //"mColors=" + Arrays.toString(mColors) +
-               //"mDefaultColor=" + mDefaultColor + '}';
+        
+        
+               
+               
+               
     }
 
     
@@ -293,11 +300,12 @@ public class ColorStateList implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2039654779 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2039654779;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.531 -0400", hash_original_method = "E1B2D8F50F6285FEE430316C6FD92D49", hash_generated_method = "12C276F1F67DD6CE000F5D90294DADB4")
     public void writeToParcel(Parcel dest, int flags) {
         final int N = mStateSpecs.length;
@@ -306,18 +314,18 @@ public class ColorStateList implements Parcelable {
             int i = 0;
             {
                 dest.writeIntArray(mStateSpecs[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         dest.writeIntArray(mColors);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //final int N = mStateSpecs.length;
-        //dest.writeInt(N);
-        //for (int i=0; i<N; i++) {
-            //dest.writeIntArray(mStateSpecs[i]);
-        //}
-        //dest.writeIntArray(mColors);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -345,7 +353,7 @@ public class ColorStateList implements Parcelable {
             return new ColorStateList(stateSpecs, colors);
         }
     };
-    // orphaned legacy method
+    
     public ColorStateList createFromParcel(Parcel source) {
             final int N = source.readInt();
             int[][] stateSpecs = new int[N][];
@@ -356,7 +364,7 @@ public class ColorStateList implements Parcelable {
             return new ColorStateList(stateSpecs, colors);
         }
     
-    // orphaned legacy method
+    
     public ColorStateList[] newArray(int size) {
             return new ColorStateList[size];
         }

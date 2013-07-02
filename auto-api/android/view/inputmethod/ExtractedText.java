@@ -1,11 +1,11 @@
 package android.view.inputmethod;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -37,10 +37,11 @@ public class ExtractedText implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.984 -0400", hash_original_method = "B20DB5D63D0394BA39DC79D6F40BFDA5", hash_generated_method = "B20DB5D63D0394BA39DC79D6F40BFDA5")
     public ExtractedText ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.984 -0400", hash_original_method = "A6AF00275518DDDF6E9928CFE924AB5A", hash_generated_method = "331087C279E4ADA58829446677CB8C8C")
     public void writeToParcel(Parcel dest, int flags) {
         TextUtils.writeToParcel(text, dest, flags);
@@ -52,14 +53,14 @@ public class ExtractedText implements Parcelable {
         dest.writeInt(this.flags);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //TextUtils.writeToParcel(text, dest, flags);
-        //dest.writeInt(startOffset);
-        //dest.writeInt(partialStartOffset);
-        //dest.writeInt(partialEndOffset);
-        //dest.writeInt(selectionStart);
-        //dest.writeInt(selectionEnd);
-        //dest.writeInt(this.flags);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -67,8 +68,8 @@ public class ExtractedText implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1037066088 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1037066088;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -97,7 +98,7 @@ public class ExtractedText implements Parcelable {
             return new ExtractedText[size];
         }
     };
-    // orphaned legacy method
+    
     public ExtractedText createFromParcel(Parcel source) {
             ExtractedText res = new ExtractedText();
             res.text = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
@@ -110,7 +111,7 @@ public class ExtractedText implements Parcelable {
             return res;
         }
     
-    // orphaned legacy method
+    
     public ExtractedText[] newArray(int size) {
             return new ExtractedText[size];
         }

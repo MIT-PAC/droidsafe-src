@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.ccil.cowan.tagsoup.HTMLSchema;
 import org.ccil.cowan.tagsoup.Parser;
@@ -46,7 +46,7 @@ public class Html {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.748 -0400", hash_original_method = "488A9EC3609F7D856C4CDBBB151F13E2", hash_generated_method = "03497373D06A453313C747AE9BCD9BA5")
     private  Html() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -296,7 +296,7 @@ public class Html {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.750 -0400", hash_original_method = "2BD8172A597CA1F4EC32CC40B5134462", hash_generated_method = "2BD8172A597CA1F4EC32CC40B5134462")
         public HtmlParser ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -346,31 +346,31 @@ class HtmlToSpannedConverter implements ContentHandler {
         mImageGetter = imageGetter;
         mTagHandler = tagHandler;
         mReader = parser;
-        // ---------- Original Method ----------
-        //mSource = source;
-        //mSpannableStringBuilder = new SpannableStringBuilder();
-        //mImageGetter = imageGetter;
-        //mTagHandler = tagHandler;
-        //mReader = parser;
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.752 -0400", hash_original_method = "E9DCA093295E5055C16F068195A6DE9F", hash_generated_method = "D76EED4C36A5F4FF801CCFE235BEA240")
     public Spanned convert() {
-        Spanned varB4EAC82CA7396A68D541C85D26508E83_64506454 = null; //Variable for return #1
+        Spanned varB4EAC82CA7396A68D541C85D26508E83_64506454 = null; 
         mReader.setContentHandler(this);
         try 
         {
             mReader.parse(new InputSource(new StringReader(mSource)));
-        } //End block
+        } 
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         catch (SAXException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         Object[] obj = mSpannableStringBuilder.getSpans(0, mSpannableStringBuilder.length(), ParagraphStyle.class);
         {
             int i = 0;
@@ -381,21 +381,21 @@ class HtmlToSpannedConverter implements ContentHandler {
                     {
                         boolean var716F8958D699C3D544224ADAF48BFCBA_1749012476 = (mSpannableStringBuilder.charAt(end - 1) == '\n' &&
                     mSpannableStringBuilder.charAt(end - 2) == '\n');
-                    } //End collapsed parenthetic
-                } //End block
+                    } 
+                } 
                 {
                     mSpannableStringBuilder.removeSpan(obj[i]);
-                } //End block
+                } 
                 {
                     mSpannableStringBuilder.setSpan(obj[i], start, end, Spannable.SPAN_PARAGRAPH);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_64506454 = mSpannableStringBuilder;
-        varB4EAC82CA7396A68D541C85D26508E83_64506454.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_64506454.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_64506454;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -407,88 +407,88 @@ class HtmlToSpannedConverter implements ContentHandler {
                 boolean var1F0B931F68E02F4B2BF58F33EF2E156C_1928803355 = (tag.equalsIgnoreCase("p"));
                 {
                     handleP(mSpannableStringBuilder);
-                } //End block
+                } 
                 {
                     boolean var19C918E43201EC22B7B6DB02B72DE5B8_1772508827 = (tag.equalsIgnoreCase("div"));
                     {
                         handleP(mSpannableStringBuilder);
-                    } //End block
+                    } 
                     {
                         boolean var5151B7FECFE28D253B355C3B2974606B_333664278 = (tag.equalsIgnoreCase("strong"));
                         {
                             start(mSpannableStringBuilder, new Bold());
-                        } //End block
+                        } 
                         {
                             boolean varF1110B9C6F8D35B519CC4C091E12B52F_1611395507 = (tag.equalsIgnoreCase("b"));
                             {
                                 start(mSpannableStringBuilder, new Bold());
-                            } //End block
+                            } 
                             {
                                 boolean var3CC3277E9E14A6D42305C53ECC316837_271858854 = (tag.equalsIgnoreCase("em"));
                                 {
                                     start(mSpannableStringBuilder, new Italic());
-                                } //End block
+                                } 
                                 {
                                     boolean var776EA7735AD2143B53E5A4E343741CF4_1216008139 = (tag.equalsIgnoreCase("cite"));
                                     {
                                         start(mSpannableStringBuilder, new Italic());
-                                    } //End block
+                                    } 
                                     {
                                         boolean var6B2DBF912EBE3FB506C1B9BD8646C397_453248548 = (tag.equalsIgnoreCase("dfn"));
                                         {
                                             start(mSpannableStringBuilder, new Italic());
-                                        } //End block
+                                        } 
                                         {
                                             boolean var228054E982F6964C38947AD2E275B043_1789287612 = (tag.equalsIgnoreCase("i"));
                                             {
                                                 start(mSpannableStringBuilder, new Italic());
-                                            } //End block
+                                            } 
                                             {
                                                 boolean varA80484FAF7DA24FED004D22F0C75A187_1916132091 = (tag.equalsIgnoreCase("big"));
                                                 {
                                                     start(mSpannableStringBuilder, new Big());
-                                                } //End block
+                                                } 
                                                 {
                                                     boolean var98C02BB504930A45B94739781B848355_15711634 = (tag.equalsIgnoreCase("small"));
                                                     {
                                                         start(mSpannableStringBuilder, new Small());
-                                                    } //End block
+                                                    } 
                                                     {
                                                         boolean var2DDBEAB56702C208098AA7037A784BDC_420230732 = (tag.equalsIgnoreCase("font"));
                                                         {
                                                             startFont(mSpannableStringBuilder, attributes);
-                                                        } //End block
+                                                        } 
                                                         {
                                                             boolean var3B99ABCA36391C4F88F05090BA03A8C2_254150687 = (tag.equalsIgnoreCase("blockquote"));
                                                             {
                                                                 handleP(mSpannableStringBuilder);
                                                                 start(mSpannableStringBuilder, new Blockquote());
-                                                            } //End block
+                                                            } 
                                                             {
                                                                 boolean var93C70F85AC549217F8C5A3F6739D0C32_147748203 = (tag.equalsIgnoreCase("tt"));
                                                                 {
                                                                     start(mSpannableStringBuilder, new Monospace());
-                                                                } //End block
+                                                                } 
                                                                 {
                                                                     boolean var758F09D2541583CACC63FDA8A4AAFD62_763356843 = (tag.equalsIgnoreCase("a"));
                                                                     {
                                                                         startA(mSpannableStringBuilder, attributes);
-                                                                    } //End block
+                                                                    } 
                                                                     {
                                                                         boolean var96C3E44C7108BC6AD081BBF129F6A269_1696969073 = (tag.equalsIgnoreCase("u"));
                                                                         {
                                                                             start(mSpannableStringBuilder, new Underline());
-                                                                        } //End block
+                                                                        } 
                                                                         {
                                                                             boolean var8274A80A7CECB4C9BE83FFF7CA89B885_365275922 = (tag.equalsIgnoreCase("sup"));
                                                                             {
                                                                                 start(mSpannableStringBuilder, new Super());
-                                                                            } //End block
+                                                                            } 
                                                                             {
                                                                                 boolean var30431EF8926D39F930CB68D182B5832A_988025109 = (tag.equalsIgnoreCase("sub"));
                                                                                 {
                                                                                     start(mSpannableStringBuilder, new Sub());
-                                                                                } //End block
+                                                                                } 
                                                                                 {
                                                                                     boolean varC0AAE376FA82D90C4B32912FEBDC9403_1715950003 = (tag.length() == 2 &&
                    Character.toLowerCase(tag.charAt(0)) == 'h' &&
@@ -496,39 +496,39 @@ class HtmlToSpannedConverter implements ContentHandler {
                                                                                     {
                                                                                         handleP(mSpannableStringBuilder);
                                                                                         start(mSpannableStringBuilder, new Header(tag.charAt(1) - '1'));
-                                                                                    } //End block
+                                                                                    } 
                                                                                     {
                                                                                         boolean var614EE65A4F09D51A07720962715D70BC_990638274 = (tag.equalsIgnoreCase("img"));
                                                                                         {
                                                                                             startImg(mSpannableStringBuilder, attributes, mImageGetter);
-                                                                                        } //End block
+                                                                                        } 
                                                                                         {
                                                                                             mTagHandler.handleTag(true, tag, mSpannableStringBuilder, mReader);
-                                                                                        } //End block
-                                                                                    } //End collapsed parenthetic
-                                                                                } //End collapsed parenthetic
-                                                                            } //End collapsed parenthetic
-                                                                        } //End collapsed parenthetic
-                                                                    } //End collapsed parenthetic
-                                                                } //End collapsed parenthetic
-                                                            } //End collapsed parenthetic
-                                                        } //End collapsed parenthetic
-                                                    } //End collapsed parenthetic
-                                                } //End collapsed parenthetic
-                                            } //End collapsed parenthetic
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                                                                                        } 
+                                                                                    } 
+                                                                                } 
+                                                                            } 
+                                                                        } 
+                                                                    } 
+                                                                } 
+                                                            } 
+                                                        } 
+                                                    } 
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(tag.getTaint());
         addTaint(attributes.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -538,94 +538,94 @@ class HtmlToSpannedConverter implements ContentHandler {
             boolean var57A2353F0195A760F3120898165F6EA4_1350507171 = (tag.equalsIgnoreCase("br"));
             {
                 handleBr(mSpannableStringBuilder);
-            } //End block
+            } 
             {
                 boolean var1F0B931F68E02F4B2BF58F33EF2E156C_2107246634 = (tag.equalsIgnoreCase("p"));
                 {
                     handleP(mSpannableStringBuilder);
-                } //End block
+                } 
                 {
                     boolean var19C918E43201EC22B7B6DB02B72DE5B8_731642708 = (tag.equalsIgnoreCase("div"));
                     {
                         handleP(mSpannableStringBuilder);
-                    } //End block
+                    } 
                     {
                         boolean var5151B7FECFE28D253B355C3B2974606B_1100395867 = (tag.equalsIgnoreCase("strong"));
                         {
                             end(mSpannableStringBuilder, Bold.class, new StyleSpan(Typeface.BOLD));
-                        } //End block
+                        } 
                         {
                             boolean varF1110B9C6F8D35B519CC4C091E12B52F_1509983859 = (tag.equalsIgnoreCase("b"));
                             {
                                 end(mSpannableStringBuilder, Bold.class, new StyleSpan(Typeface.BOLD));
-                            } //End block
+                            } 
                             {
                                 boolean var3CC3277E9E14A6D42305C53ECC316837_834723676 = (tag.equalsIgnoreCase("em"));
                                 {
                                     end(mSpannableStringBuilder, Italic.class, new StyleSpan(Typeface.ITALIC));
-                                } //End block
+                                } 
                                 {
                                     boolean var776EA7735AD2143B53E5A4E343741CF4_177832541 = (tag.equalsIgnoreCase("cite"));
                                     {
                                         end(mSpannableStringBuilder, Italic.class, new StyleSpan(Typeface.ITALIC));
-                                    } //End block
+                                    } 
                                     {
                                         boolean var6B2DBF912EBE3FB506C1B9BD8646C397_1471540974 = (tag.equalsIgnoreCase("dfn"));
                                         {
                                             end(mSpannableStringBuilder, Italic.class, new StyleSpan(Typeface.ITALIC));
-                                        } //End block
+                                        } 
                                         {
                                             boolean var228054E982F6964C38947AD2E275B043_1429483455 = (tag.equalsIgnoreCase("i"));
                                             {
                                                 end(mSpannableStringBuilder, Italic.class, new StyleSpan(Typeface.ITALIC));
-                                            } //End block
+                                            } 
                                             {
                                                 boolean varA80484FAF7DA24FED004D22F0C75A187_1372678009 = (tag.equalsIgnoreCase("big"));
                                                 {
                                                     end(mSpannableStringBuilder, Big.class, new RelativeSizeSpan(1.25f));
-                                                } //End block
+                                                } 
                                                 {
                                                     boolean var98C02BB504930A45B94739781B848355_1444288192 = (tag.equalsIgnoreCase("small"));
                                                     {
                                                         end(mSpannableStringBuilder, Small.class, new RelativeSizeSpan(0.8f));
-                                                    } //End block
+                                                    } 
                                                     {
                                                         boolean var2DDBEAB56702C208098AA7037A784BDC_229656373 = (tag.equalsIgnoreCase("font"));
                                                         {
                                                             endFont(mSpannableStringBuilder);
-                                                        } //End block
+                                                        } 
                                                         {
                                                             boolean var3B99ABCA36391C4F88F05090BA03A8C2_1115254338 = (tag.equalsIgnoreCase("blockquote"));
                                                             {
                                                                 handleP(mSpannableStringBuilder);
                                                                 end(mSpannableStringBuilder, Blockquote.class, new QuoteSpan());
-                                                            } //End block
+                                                            } 
                                                             {
                                                                 boolean var93C70F85AC549217F8C5A3F6739D0C32_402600553 = (tag.equalsIgnoreCase("tt"));
                                                                 {
                                                                     end(mSpannableStringBuilder, Monospace.class,
                     new TypefaceSpan("monospace"));
-                                                                } //End block
+                                                                } 
                                                                 {
                                                                     boolean var758F09D2541583CACC63FDA8A4AAFD62_782068035 = (tag.equalsIgnoreCase("a"));
                                                                     {
                                                                         endA(mSpannableStringBuilder);
-                                                                    } //End block
+                                                                    } 
                                                                     {
                                                                         boolean var96C3E44C7108BC6AD081BBF129F6A269_1239777729 = (tag.equalsIgnoreCase("u"));
                                                                         {
                                                                             end(mSpannableStringBuilder, Underline.class, new UnderlineSpan());
-                                                                        } //End block
+                                                                        } 
                                                                         {
                                                                             boolean var8274A80A7CECB4C9BE83FFF7CA89B885_724315056 = (tag.equalsIgnoreCase("sup"));
                                                                             {
                                                                                 end(mSpannableStringBuilder, Super.class, new SuperscriptSpan());
-                                                                            } //End block
+                                                                            } 
                                                                             {
                                                                                 boolean var30431EF8926D39F930CB68D182B5832A_1074264523 = (tag.equalsIgnoreCase("sub"));
                                                                                 {
                                                                                     end(mSpannableStringBuilder, Sub.class, new SubscriptSpan());
-                                                                                } //End block
+                                                                                } 
                                                                                 {
                                                                                     boolean varA6B2680B8AC78E6BB5781BA2C37ADB27_1246173452 = (tag.length() == 2 &&
                 Character.toLowerCase(tag.charAt(0)) == 'h' &&
@@ -633,32 +633,32 @@ class HtmlToSpannedConverter implements ContentHandler {
                                                                                     {
                                                                                         handleP(mSpannableStringBuilder);
                                                                                         endHeader(mSpannableStringBuilder);
-                                                                                    } //End block
+                                                                                    } 
                                                                                     {
                                                                                         mTagHandler.handleTag(false, tag, mSpannableStringBuilder, mReader);
-                                                                                    } //End block
-                                                                                } //End collapsed parenthetic
-                                                                            } //End collapsed parenthetic
-                                                                        } //End collapsed parenthetic
-                                                                    } //End collapsed parenthetic
-                                                                } //End collapsed parenthetic
-                                                            } //End collapsed parenthetic
-                                                        } //End collapsed parenthetic
-                                                    } //End collapsed parenthetic
-                                                } //End collapsed parenthetic
-                                            } //End collapsed parenthetic
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                                                                                    } 
+                                                                                } 
+                                                                            } 
+                                                                        } 
+                                                                    } 
+                                                                } 
+                                                            } 
+                                                        } 
+                                                    } 
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(tag.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -817,19 +817,19 @@ class HtmlToSpannedConverter implements ContentHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.757 -0400", hash_original_method = "764EC710ED4FDFB68C9E6FE9ED249649", hash_generated_method = "8982242C86C53DDD9F8374B3C93C1CFB")
     public void setDocumentLocator(Locator locator) {
         addTaint(locator.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.757 -0400", hash_original_method = "FAA725B72A2ADC391C781CAB49B849AD", hash_generated_method = "F5ABC17320CB17FAFC02F6F62510312E")
     public void startDocument() throws SAXException {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.758 -0400", hash_original_method = "08AD4CBC251CA96B103DE58FB6AA2921", hash_generated_method = "3ACBE0E14DE791A4A89F8374A54B4D72")
     public void endDocument() throws SAXException {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -837,14 +837,14 @@ class HtmlToSpannedConverter implements ContentHandler {
     public void startPrefixMapping(String prefix, String uri) throws SAXException {
         addTaint(prefix.getTaint());
         addTaint(uri.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.758 -0400", hash_original_method = "0E90E85A66154559EA3C98CC7177C34F", hash_generated_method = "5B3A24B5853AE441BDBBB759C4F775AE")
     public void endPrefixMapping(String prefix) throws SAXException {
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -855,8 +855,8 @@ class HtmlToSpannedConverter implements ContentHandler {
         addTaint(localName.getTaint());
         addTaint(qName.getTaint());
         addTaint(attributes.getTaint());
-        // ---------- Original Method ----------
-        //handleStartTag(localName, attributes);
+        
+        
     }
 
     
@@ -866,8 +866,8 @@ class HtmlToSpannedConverter implements ContentHandler {
         addTaint(uri.getTaint());
         addTaint(localName.getTaint());
         addTaint(qName.getTaint());
-        // ---------- Original Method ----------
-        //handleEndTag(localName);
+        
+        
     }
 
     
@@ -885,29 +885,29 @@ class HtmlToSpannedConverter implements ContentHandler {
                         len = mSpannableStringBuilder.length();
                         {
                             pred = '\n';
-                        } //End block
+                        } 
                         {
                             pred = mSpannableStringBuilder.charAt(len - 1);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         pred = sb.charAt(len - 1);
-                    } //End block
+                    } 
                     {
                         sb.append(' ');
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     sb.append(c);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         mSpannableStringBuilder.append(sb);
         addTaint(ch[0]);
         addTaint(start);
         addTaint(length);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -916,7 +916,7 @@ class HtmlToSpannedConverter implements ContentHandler {
         addTaint(ch[0]);
         addTaint(start);
         addTaint(length);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -924,14 +924,14 @@ class HtmlToSpannedConverter implements ContentHandler {
     public void processingInstruction(String target, String data) throws SAXException {
         addTaint(target.getTaint());
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.761 -0400", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "78177C3306D49108B776A6C694C380AB")
     public void skippedEntity(String name) throws SAXException {
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -976,7 +976,7 @@ class HtmlToSpannedConverter implements ContentHandler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.762 -0400", hash_original_method = "360EF21B8D8783EFA444B4BE5FDC6AD7", hash_generated_method = "360EF21B8D8783EFA444B4BE5FDC6AD7")
         public Bold ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -989,7 +989,7 @@ class HtmlToSpannedConverter implements ContentHandler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.762 -0400", hash_original_method = "49A8CF03F12E3553DCC23BB27643EAFC", hash_generated_method = "49A8CF03F12E3553DCC23BB27643EAFC")
         public Italic ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1002,7 +1002,7 @@ class HtmlToSpannedConverter implements ContentHandler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.762 -0400", hash_original_method = "84D51255F87B8DD26833841AC6851E69", hash_generated_method = "84D51255F87B8DD26833841AC6851E69")
         public Underline ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1015,7 +1015,7 @@ class HtmlToSpannedConverter implements ContentHandler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.762 -0400", hash_original_method = "273608B63D858A3552D83E6F68A870F3", hash_generated_method = "273608B63D858A3552D83E6F68A870F3")
         public Big ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1028,7 +1028,7 @@ class HtmlToSpannedConverter implements ContentHandler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.762 -0400", hash_original_method = "30BB2E22576FED131404001997B90E83", hash_generated_method = "30BB2E22576FED131404001997B90E83")
         public Small ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1041,7 +1041,7 @@ class HtmlToSpannedConverter implements ContentHandler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.763 -0400", hash_original_method = "9E34A0C6710AE2CB78083EA433BD9375", hash_generated_method = "9E34A0C6710AE2CB78083EA433BD9375")
         public Monospace ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1054,7 +1054,7 @@ class HtmlToSpannedConverter implements ContentHandler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.763 -0400", hash_original_method = "8510635EE940E5512FA9DD7C2C1B8599", hash_generated_method = "8510635EE940E5512FA9DD7C2C1B8599")
         public Blockquote ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1067,7 +1067,7 @@ class HtmlToSpannedConverter implements ContentHandler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.763 -0400", hash_original_method = "7F9EC2B6EDB6C576D6E7F20FD0DA4CCE", hash_generated_method = "7F9EC2B6EDB6C576D6E7F20FD0DA4CCE")
         public Super ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1080,7 +1080,7 @@ class HtmlToSpannedConverter implements ContentHandler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.763 -0400", hash_original_method = "35CBF4C3F1CE0FC70451AFA9D19DB301", hash_generated_method = "35CBF4C3F1CE0FC70451AFA9D19DB301")
         public Sub ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1100,9 +1100,9 @@ class HtmlToSpannedConverter implements ContentHandler {
         public  Font(String color, String face) {
             mColor = color;
             mFace = face;
-            // ---------- Original Method ----------
-            //mColor = color;
-            //mFace = face;
+            
+            
+            
         }
 
         
@@ -1118,8 +1118,8 @@ class HtmlToSpannedConverter implements ContentHandler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.764 -0400", hash_original_method = "1859394720661AA4B03D475EFD821F3A", hash_generated_method = "41EF2A9AC6A4FA312215BBCF14E58CAD")
         public  Href(String href) {
             mHref = href;
-            // ---------- Original Method ----------
-            //mHref = href;
+            
+            
         }
 
         
@@ -1135,8 +1135,8 @@ class HtmlToSpannedConverter implements ContentHandler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.764 -0400", hash_original_method = "9C6EFC5AFAADDC937EF8FD6D30D1EF2D", hash_generated_method = "19FC55A0458E0C1D397B9A48B86FB54E")
         public  Header(int level) {
             mLevel = level;
-            // ---------- Original Method ----------
-            //mLevel = level;
+            
+            
         }
 
         

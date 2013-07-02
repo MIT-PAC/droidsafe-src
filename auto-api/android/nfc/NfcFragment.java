@@ -1,11 +1,11 @@
 package android.nfc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.Activity;
 import android.app.Fragment;
@@ -16,10 +16,11 @@ public final class NfcFragment extends Fragment {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.189 -0400", hash_original_method = "F4666E8353F6FA3AAFC2948046892751", hash_generated_method = "F4666E8353F6FA3AAFC2948046892751")
     public NfcFragment ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void attach(Activity activity) {
         FragmentManager manager = activity.getFragmentManager();
         if (manager.findFragmentByTag(FRAGMENT_TAG) == null) {
@@ -28,6 +29,7 @@ public final class NfcFragment extends Fragment {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void remove(Activity activity) {
         FragmentManager manager = activity.getFragmentManager();
         Fragment fragment = manager.findFragmentByTag(FRAGMENT_TAG);
@@ -37,10 +39,11 @@ public final class NfcFragment extends Fragment {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.190 -0400", hash_original_method = "9E8EF57626D62E2B7C3743DD3C3689D3", hash_generated_method = "9F5D6EBAF09C359A7E41FA9A0D3B7610")
     @Override
     public void onAttach(Activity activity) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttach(activity);
         {
             sIsInitialized = true;
@@ -48,67 +51,70 @@ public final class NfcFragment extends Fragment {
                     activity.getApplicationContext());
             {
                 sNfcActivityManager = adapter.mNfcActivityManager;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(activity.getTaint());
-        // ---------- Original Method ----------
-        //super.onAttach(activity);
-        //if (!sIsInitialized) {
-            //sIsInitialized = true;
-            //NfcAdapter adapter = NfcAdapter.getDefaultAdapter(
-                    //activity.getApplicationContext());
-            //if (adapter != null) {
-                //sNfcActivityManager = adapter.mNfcActivityManager;
-            //}
-        //}
+        
+        
+        
+            
+            
+                    
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.190 -0400", hash_original_method = "94292D3BC9674D261A6EF4BCCF7C8037", hash_generated_method = "68B5D5F3B18DB6952F55B8B21397896C")
     @Override
     public void onResume() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onResume();
         {
             sNfcActivityManager.onResume(getActivity());
-        } //End block
-        // ---------- Original Method ----------
-        //super.onResume();
-        //if (sNfcActivityManager != null) {
-            //sNfcActivityManager.onResume(getActivity());
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.190 -0400", hash_original_method = "3DB00EC587E995AABF9F1C949970BD43", hash_generated_method = "37A9EF1185C26C2CFB6FCDB1B9416AE3")
     @Override
     public void onPause() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onPause();
         {
             sNfcActivityManager.onPause(getActivity());
-        } //End block
-        // ---------- Original Method ----------
-        //super.onPause();
-        //if (sNfcActivityManager != null) {
-            //sNfcActivityManager.onPause(getActivity());
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.191 -0400", hash_original_method = "CC535C4F2465D6A6983D04B0B890F971", hash_generated_method = "E43DF23E0003B4EF6862A5BEC5E75CCD")
     @Override
     public void onDestroy() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDestroy();
         {
             sNfcActivityManager.onDestroy(getActivity());
-        } //End block
-        // ---------- Original Method ----------
-        //super.onDestroy();
-        //if (sNfcActivityManager != null) {
-            //sNfcActivityManager.onDestroy(getActivity());
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     

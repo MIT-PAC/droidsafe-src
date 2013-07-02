@@ -1,11 +1,11 @@
 package android.hardware.usb;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -31,11 +31,11 @@ public class UsbEndpoint implements Parcelable {
         mAttributes = attributes;
         mMaxPacketSize = maxPacketSize;
         mInterval = interval;
-        // ---------- Original Method ----------
-        //mAddress = address;
-        //mAttributes = attributes;
-        //mMaxPacketSize = maxPacketSize;
-        //mInterval = interval;
+        
+        
+        
+        
+        
     }
 
     
@@ -43,8 +43,8 @@ public class UsbEndpoint implements Parcelable {
     public int getAddress() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1900465477 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1900465477;
-        // ---------- Original Method ----------
-        //return mAddress;
+        
+        
     }
 
     
@@ -52,8 +52,8 @@ public class UsbEndpoint implements Parcelable {
     public int getEndpointNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_339024452 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_339024452;
-        // ---------- Original Method ----------
-        //return mAddress & UsbConstants.USB_ENDPOINT_NUMBER_MASK;
+        
+        
     }
 
     
@@ -61,8 +61,8 @@ public class UsbEndpoint implements Parcelable {
     public int getDirection() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1092962814 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1092962814;
-        // ---------- Original Method ----------
-        //return mAddress & UsbConstants.USB_ENDPOINT_DIR_MASK;
+        
+        
     }
 
     
@@ -70,8 +70,8 @@ public class UsbEndpoint implements Parcelable {
     public int getAttributes() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2096460873 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2096460873;
-        // ---------- Original Method ----------
-        //return mAttributes;
+        
+        
     }
 
     
@@ -79,8 +79,8 @@ public class UsbEndpoint implements Parcelable {
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1154039486 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1154039486;
-        // ---------- Original Method ----------
-        //return mAttributes & UsbConstants.USB_ENDPOINT_XFERTYPE_MASK;
+        
+        
     }
 
     
@@ -88,8 +88,8 @@ public class UsbEndpoint implements Parcelable {
     public int getMaxPacketSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2047697029 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2047697029;
-        // ---------- Original Method ----------
-        //return mMaxPacketSize;
+        
+        
     }
 
     
@@ -97,22 +97,23 @@ public class UsbEndpoint implements Parcelable {
     public int getInterval() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1280311219 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1280311219;
-        // ---------- Original Method ----------
-        //return mInterval;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.381 -0400", hash_original_method = "B003A6A19E3A4AFD160CE93D619076F2", hash_generated_method = "E891B1C9303441F21C35472184329A61")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_841775154 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_841775154 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_841775154 = "UsbEndpoint[mAddress=" + mAddress + ",mAttributes=" + mAttributes +
                 ",mMaxPacketSize=" + mMaxPacketSize + ",mInterval=" + mInterval +"]";
-        varB4EAC82CA7396A68D541C85D26508E83_841775154.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_841775154.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_841775154;
-        // ---------- Original Method ----------
-        //return "UsbEndpoint[mAddress=" + mAddress + ",mAttributes=" + mAttributes +
-                //",mMaxPacketSize=" + mMaxPacketSize + ",mInterval=" + mInterval +"]";
+        
+        
+                
     }
 
     
@@ -120,11 +121,12 @@ public class UsbEndpoint implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1585431158 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1585431158;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.383 -0400", hash_original_method = "BC3F7EF4329C93155CA4CAEEEA5C5049", hash_generated_method = "67220704BB1DF65EC3DB238A27C2BE1B")
     public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeInt(mAddress);
@@ -133,11 +135,11 @@ public class UsbEndpoint implements Parcelable {
         parcel.writeInt(mInterval);
         addTaint(parcel.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //parcel.writeInt(mAddress);
-        //parcel.writeInt(mAttributes);
-        //parcel.writeInt(mMaxPacketSize);
-        //parcel.writeInt(mInterval);
+        
+        
+        
+        
+        
     }
 
     
@@ -157,7 +159,7 @@ public class UsbEndpoint implements Parcelable {
             return new UsbEndpoint[size];
         }
     };
-    // orphaned legacy method
+    
     public UsbEndpoint createFromParcel(Parcel in) {
             int address = in.readInt();
             int attributes = in.readInt();
@@ -166,7 +168,7 @@ public class UsbEndpoint implements Parcelable {
             return new UsbEndpoint(address, attributes, maxPacketSize, interval);
         }
     
-    // orphaned legacy method
+    
     public UsbEndpoint[] newArray(int size) {
             return new UsbEndpoint[size];
         }

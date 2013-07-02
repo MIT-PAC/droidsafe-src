@@ -1,11 +1,11 @@
 package java.nio.channels.spi;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.channels.SelectionKey;
 
@@ -16,7 +16,7 @@ public abstract class AbstractSelectionKey extends SelectionKey {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.775 -0400", hash_original_method = "A659BC27757815EB634E5D963F0A56EB", hash_generated_method = "52C6E15195C092E6066AA2AE54BDD2E1")
     protected  AbstractSelectionKey() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,8 +25,8 @@ public abstract class AbstractSelectionKey extends SelectionKey {
     public final boolean isValid() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_685563900 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_685563900;
-        // ---------- Original Method ----------
-        //return isValid;
+        
+        
     }
 
     
@@ -36,12 +36,12 @@ public abstract class AbstractSelectionKey extends SelectionKey {
         {
             isValid = false;
             ((AbstractSelector) selector()).cancel(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (isValid) {
-            //isValid = false;
-            //((AbstractSelector) selector()).cancel(this);
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     

@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ListIterator;
 import javax.sip.header.ExtensionHeader;
@@ -17,35 +17,37 @@ public class ExtensionHeaderList extends SIPHeaderList<ExtensionHeaderImpl> {
     public  ExtensionHeaderList(String hName) {
         super( ExtensionHeaderImpl.class, hName);
         addTaint(hName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.541 -0400", hash_original_method = "52FAE424BADAAEF22385083D45DE9281", hash_generated_method = "B4759EE8D9DB6DE8172FBD3EF60E4182")
     public  ExtensionHeaderList() {
         super(ExtensionHeaderImpl.class,null);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.541 -0400", hash_original_method = "C859D426E02BE595D55C2FAA9CB97225", hash_generated_method = "9FCC66DB1DF2BE071C6305F4C228919A")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1044010652 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1044010652 = null; 
         ExtensionHeaderList retval = new ExtensionHeaderList(headerName);
         retval.clonehlist(this.hlist);
         varB4EAC82CA7396A68D541C85D26508E83_1044010652 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_1044010652.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1044010652.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1044010652;
-        // ---------- Original Method ----------
-        //ExtensionHeaderList retval = new ExtensionHeaderList(headerName);
-        //retval.clonehlist(this.hlist);
-        //return retval;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.541 -0400", hash_original_method = "05F9E55197B7F8BF967FE19D758EB1FB", hash_generated_method = "7AD4BBEDF40DDF9FBB1BB0EAE3225708")
     public String encode() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1612405668 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1612405668 = null; 
         StringBuffer retval = new StringBuffer();
         ListIterator<ExtensionHeaderImpl> it = this.listIterator();
         {
@@ -53,19 +55,19 @@ public class ExtensionHeaderList extends SIPHeaderList<ExtensionHeaderImpl> {
             {
                 ExtensionHeaderImpl eh = (ExtensionHeaderImpl) it.next();
                 retval.append(eh.encode());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1612405668 = retval.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1612405668.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1612405668.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1612405668;
-        // ---------- Original Method ----------
-        //StringBuffer retval = new StringBuffer();
-        //ListIterator<ExtensionHeaderImpl> it = this.listIterator();
-        //while(it.hasNext()) {
-           //ExtensionHeaderImpl eh = (ExtensionHeaderImpl) it.next();
-           //retval.append(eh.encode());
-        //}
-        //return retval.toString();
+        
+        
+        
+        
+           
+           
+        
+        
     }
 
     

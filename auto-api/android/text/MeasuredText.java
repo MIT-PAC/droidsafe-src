@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -49,11 +49,12 @@ class MeasuredText {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.053 -0400", hash_original_method = "D598B3CBC464CFD963CF00BDB269B2BE", hash_generated_method = "42783F836CB64369EF4A69ACD2229E3E")
     private  MeasuredText() {
         mWorkPaint = new TextPaint();
-        // ---------- Original Method ----------
-        //mWorkPaint = new TextPaint();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     static MeasuredText obtain() {
         MeasuredText mt;
         synchronized (sLock) {
@@ -99,10 +100,10 @@ class MeasuredText {
         mPos = 0;
         {
             mWidths = new float[ArrayUtils.idealFloatArraySize(len)];
-        } //End block
+        } 
         {
             mChars = new char[ArrayUtils.idealCharArraySize(len)];
-        } //End block
+        } 
         TextUtils.getChars(text, start, end, mChars, 0);
         {
             Spanned spanned = (Spanned) text;
@@ -117,11 +118,11 @@ class MeasuredText {
                         int j = startInPara;
                         {
                             mChars[j] = '\uFFFC';
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var82EDE20A06D36920DD87167C8229ACD8_279022920 = ((textDir == TextDirectionHeuristics.LTR ||
                 textDir == TextDirectionHeuristics.FIRSTSTRONG_LTR ||
@@ -130,36 +131,36 @@ class MeasuredText {
             {
                 mDir = Layout.DIR_LEFT_TO_RIGHT;
                 mEasy = true;
-            } //End block
+            } 
             {
                 {
                     mLevels = new byte[ArrayUtils.idealByteArraySize(len)];
-                } //End block
+                } 
                 int bidiRequest;
                 {
                     bidiRequest = Layout.DIR_REQUEST_LTR;
-                } //End block
+                } 
                 {
                     bidiRequest = Layout.DIR_REQUEST_RTL;
-                } //End block
+                } 
                 {
                     bidiRequest = Layout.DIR_REQUEST_DEFAULT_LTR;
-                } //End block
+                } 
                 {
                     bidiRequest = Layout.DIR_REQUEST_DEFAULT_RTL;
-                } //End block
+                } 
                 {
                     boolean isRtl = textDir.isRtl(mChars, 0, len);
                     bidiRequest = isRtl ? Layout.DIR_REQUEST_RTL : Layout.DIR_REQUEST_LTR;
-                } //End block
+                } 
                 mDir = AndroidBidi.bidi(bidiRequest, mChars, mLevels, len, false);
                 mEasy = false;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(end);
         addTaint(textDir.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -167,7 +168,7 @@ class MeasuredText {
      float addStyleRun(TextPaint paint, int len, Paint.FontMetricsInt fm) {
         {
             paint.getFontMetricsInt(fm);
-        } //End block
+        } 
         int p = mPos;
         mPos = p + len;
         {
@@ -175,7 +176,7 @@ class MeasuredText {
             flags = Canvas.DIRECTION_LTR;
             flags = Canvas.DIRECTION_RTL;
             float varEEDF1E9BF171FF1DF27B67B290C34949_1606621058 = (paint.getTextRunAdvances(mChars, p, len, p, len, flags, mWidths, p));
-        } //End block
+        } 
         float totalAdvance = 0;
         int level = mLevels[p];
         {
@@ -191,15 +192,15 @@ class MeasuredText {
                         paint.getTextRunAdvances(mChars, q, i - q, q, i - q, flags, mWidths, q);
                     q = i;
                     level = mLevels[i];
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(paint.getTaint());
         addTaint(fm.getTaint());
         float var546ADE640B6EDFBC8A086EF31347E768_713796747 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_713796747;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -216,16 +217,16 @@ class MeasuredText {
                 MetricAffectingSpan span = spans[i];
                 {
                     replacement = (ReplacementSpan)span;
-                } //End block
+                } 
                 {
                     span.updateMeasureState(workPaint);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         float wid;
         {
             wid = addStyleRun(workPaint, len, fm);
-        } //End block
+        } 
         {
             wid = replacement.getSize(workPaint, mText, mTextStart + mPos,
                     mTextStart + mPos + len, fm);
@@ -235,26 +236,26 @@ class MeasuredText {
                 int i = mPos + 1;
                 int e = mPos + len;
                 w[i] = 0;
-            } //End collapsed parenthetic
+            } 
             mPos += len;
-        } //End block
+        } 
         {
             {
                 fm.ascent += workPaint.baselineShift;
                 fm.top += workPaint.baselineShift;
-            } //End block
+            } 
             {
                 fm.descent += workPaint.baselineShift;
                 fm.bottom += workPaint.baselineShift;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(paint.getTaint());
         addTaint(spans[0].getTaint());
         addTaint(fm.getTaint());
         float var546ADE640B6EDFBC8A086EF31347E768_610617787 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_610617787;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -267,42 +268,42 @@ class MeasuredText {
                 {
                     {
                         boolean varF1EB4927EB76265507D93088705D8094_994121069 = ((width -= w[i]) < 0);
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 int i = limit;
                 {
                     {
                         boolean varF1EB4927EB76265507D93088705D8094_1614824686 = ((width -= w[i]) < 0);
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(start);
         addTaint(limit);
         addTaint(forwards);
         addTaint(width);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_697878549 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_697878549;
-        // ---------- Original Method ----------
-        //float[] w = mWidths;
-        //if (forwards) {
-            //for (int i = start; i < limit; ++i) {
-                //if ((width -= w[i]) < 0) {
-                    //return i - start;
-                //}
-            //}
-        //} else {
-            //for (int i = limit; --i >= start;) {
-                //if ((width -= w[i]) < 0) {
-                    //return limit - i -1;
-                //}
-            //}
-        //}
-        //return limit - start;
+        
+        
+        
+            
+                
+                    
+                
+            
+        
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -314,19 +315,19 @@ class MeasuredText {
             int i = start;
             {
                 width += w[i];
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(start);
         addTaint(limit);
         float var546ADE640B6EDFBC8A086EF31347E768_1772284600 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1772284600;
-        // ---------- Original Method ----------
-        //float width = 0;
-        //float[] w = mWidths;
-        //for (int i = start; i < limit; ++i) {
-            //width += w[i];
-        //}
-        //return width;
+        
+        
+        
+        
+            
+        
+        
     }
 
     

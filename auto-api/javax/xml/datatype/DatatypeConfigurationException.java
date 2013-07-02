@@ -1,11 +1,11 @@
 package javax.xml.datatype;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -23,7 +23,7 @@ public class DatatypeConfigurationException extends Exception {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.312 -0400", hash_original_method = "FA9B26A3FDAB1D1435C1EE09FF5CBDA4", hash_generated_method = "EF6F7C05D75E625DDBD76F811F0CA833")
     public  DatatypeConfigurationException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,7 +31,7 @@ public class DatatypeConfigurationException extends Exception {
     public  DatatypeConfigurationException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -41,8 +41,8 @@ public class DatatypeConfigurationException extends Exception {
         initCauseByReflection(cause);
         addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-        //initCauseByReflection(cause);
+        
+        
     }
 
     
@@ -51,80 +51,85 @@ public class DatatypeConfigurationException extends Exception {
         super(cause == null ? null : cause.toString());
         initCauseByReflection(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-        //initCauseByReflection(cause);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.315 -0400", hash_original_method = "CCE4521801FE6F597C78D6C168B382AB", hash_generated_method = "3752FFA9378700C6F95880D7C1526F87")
     public void printStackTrace() {
         {
             printStackTrace0(new PrintWriter(System.err, true));
-        } //End block
+        } 
         {
             super.printStackTrace();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isJDK14OrAbove && causeOnJDK13OrBelow != null) {
-            //printStackTrace0(new PrintWriter(System.err, true));
-        //}
-        //else {
-            //super.printStackTrace();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.316 -0400", hash_original_method = "95D2E13F17DCF7DA7C7DF3B620874594", hash_generated_method = "FE7A94BB32100F98F7133A86E7B208CF")
     public void printStackTrace(PrintStream s) {
         {
             printStackTrace0(new PrintWriter(s));
-        } //End block
+        } 
         {
             super.printStackTrace(s);
-        } //End block
+        } 
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //if (!isJDK14OrAbove && causeOnJDK13OrBelow != null) {
-            //printStackTrace0(new PrintWriter(s));
-        //}
-        //else {
-            //super.printStackTrace(s);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.317 -0400", hash_original_method = "A5330178C54B8D14125F5B342A0C5097", hash_generated_method = "07190128A3ACB0EF522746FE784B3944")
     public void printStackTrace(PrintWriter s) {
         {
             printStackTrace0(s);
-        } //End block
+        } 
         {
             super.printStackTrace(s);
-        } //End block
+        } 
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //if (!isJDK14OrAbove && causeOnJDK13OrBelow != null) {
-            //printStackTrace0(s);
-        //}
-        //else {
-            //super.printStackTrace(s);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.318 -0400", hash_original_method = "201997E377D1A9819050705CDC59C69C", hash_generated_method = "AEDA32A600DBB53F52187310E9B6746E")
     private void printStackTrace0(PrintWriter s) {
         causeOnJDK13OrBelow.printStackTrace(s);
         s.println("------------------------------------------");
         super.printStackTrace(s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //causeOnJDK13OrBelow.printStackTrace(s);
-        //s.println("------------------------------------------");
-        //super.printStackTrace(s);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.319 -0400", hash_original_method = "0D16643DF8DCD1D306FB0B7D763D3EEC", hash_generated_method = "B2C4EB97EE33CDA9E2467AC4E8964358")
     private void initCauseByReflection(Throwable cause) {
         causeOnJDK13OrBelow = cause;
@@ -133,20 +138,21 @@ public class DatatypeConfigurationException extends Exception {
             Method m = this.getClass().getMethod("initCause", new Class[] {Throwable.class});
             m.invoke(this, new Object[] {cause});
             isJDK14OrAbove = true;
-        } //End block
+        } 
         catch (Exception e)
         { }
-        // ---------- Original Method ----------
-        //causeOnJDK13OrBelow = cause;
-        //try {
-            //Method m = this.getClass().getMethod("initCause", new Class[] {Throwable.class});
-            //m.invoke(this, new Object[] {cause});
-            //isJDK14OrAbove = true;
-        //}
-        //catch (Exception e) {}
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.319 -0400", hash_original_method = "9F6FAC775CE9C55C625DEF5D55F39862", hash_generated_method = "33A01372685A8197A8FBFEB9657895EC")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
@@ -156,31 +162,31 @@ public class DatatypeConfigurationException extends Exception {
             Throwable cause = (Throwable) m1.invoke(this, new Object[] {});
             {
                 causeOnJDK13OrBelow = cause;
-            } //End block
+            } 
             {
                 Method m2 = this.getClass().getMethod("initCause", new Class[] {Throwable.class});
                 m2.invoke(this, new Object[] {causeOnJDK13OrBelow});
-            } //End block
+            } 
             isJDK14OrAbove = true;
-        } //End block
+        } 
         catch (Exception e)
         { }
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        //in.defaultReadObject();
-        //try {
-            //Method m1 = this.getClass().getMethod("getCause", new Class[] {});
-            //Throwable cause = (Throwable) m1.invoke(this, new Object[] {});
-            //if (causeOnJDK13OrBelow == null) {
-                //causeOnJDK13OrBelow = cause;
-            //}
-            //else if (cause == null) {
-                //Method m2 = this.getClass().getMethod("initCause", new Class[] {Throwable.class});
-                //m2.invoke(this, new Object[] {causeOnJDK13OrBelow});
-            //}
-            //isJDK14OrAbove = true;
-        //}
-        //catch (Exception e) {}
+        
+        
+        
+            
+            
+            
+                
+            
+            
+                
+                
+            
+            
+        
+        
     }
 
     

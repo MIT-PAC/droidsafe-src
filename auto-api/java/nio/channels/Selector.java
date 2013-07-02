@@ -1,11 +1,11 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.nio.channels.spi.SelectorProvider;
@@ -15,10 +15,11 @@ public abstract class Selector {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.700 -0400", hash_original_method = "9524E27FB2E16D9605DE08EA9659D1CB", hash_generated_method = "43B86B7B1C3DAE791684BCEE03F22EB0")
     protected  Selector() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Selector open() throws IOException {
         return SelectorProvider.provider().openSelector();
     }

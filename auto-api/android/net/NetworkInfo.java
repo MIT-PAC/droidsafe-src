@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcelable;
 import android.os.Parcel;
@@ -49,7 +49,7 @@ public class NetworkInfo implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.350 -0400", hash_original_method = "E0E0B5DCE71AAA01C628F35001B06F62", hash_generated_method = "EFE69ABEC541A13B58B9BCC4C8E2BBA7")
     public  NetworkInfo(int type) {
         addTaint(type);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -59,8 +59,8 @@ public class NetworkInfo implements Parcelable {
             boolean var0BB46F15A21E680BDCAF3097C1FB24EA_989150573 = (!ConnectivityManager.isNetworkTypeValid(type));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid network type: " + type);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mNetworkType = type;
         mSubtype = subtype;
         mTypeName = typeName;
@@ -69,18 +69,18 @@ public class NetworkInfo implements Parcelable {
         mState = State.UNKNOWN;
         mIsAvailable = false;
         mIsRoaming = false;
-        // ---------- Original Method ----------
-        //if (!ConnectivityManager.isNetworkTypeValid(type)) {
-            //throw new IllegalArgumentException("Invalid network type: " + type);
-        //}
-        //mNetworkType = type;
-        //mSubtype = subtype;
-        //mTypeName = typeName;
-        //mSubtypeName = subtypeName;
-        //setDetailedState(DetailedState.IDLE, null, null);
-        //mState = State.UNKNOWN;
-        //mIsAvailable = false;
-        //mIsRoaming = false;
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -98,21 +98,21 @@ public class NetworkInfo implements Parcelable {
             mIsFailover = source.mIsFailover;
             mIsRoaming = source.mIsRoaming;
             mIsAvailable = source.mIsAvailable;
-        } //End block
-        // ---------- Original Method ----------
-        //if (source != null) {
-            //mNetworkType = source.mNetworkType;
-            //mSubtype = source.mSubtype;
-            //mTypeName = source.mTypeName;
-            //mSubtypeName = source.mSubtypeName;
-            //mState = source.mState;
-            //mDetailedState = source.mDetailedState;
-            //mReason = source.mReason;
-            //mExtraInfo = source.mExtraInfo;
-            //mIsFailover = source.mIsFailover;
-            //mIsRoaming = source.mIsRoaming;
-            //mIsAvailable = source.mIsAvailable;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -120,10 +120,10 @@ public class NetworkInfo implements Parcelable {
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_798055560 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_798055560;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mNetworkType;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -131,10 +131,10 @@ public class NetworkInfo implements Parcelable {
     public int getSubtype() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_964887049 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_964887049;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mSubtype;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -143,42 +143,42 @@ public class NetworkInfo implements Parcelable {
         {
             mSubtype = subtype;
             mSubtypeName = subtypeName;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //mSubtype = subtype;
-            //mSubtypeName = subtypeName;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.354 -0400", hash_original_method = "55AF35A663CF7527013DF4B2AE75FC8F", hash_generated_method = "82A016D5D3B9197A1C6102FA5820ACA4")
     public String getTypeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1801395146 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1801395146 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1801395146 = mTypeName;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1801395146.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1801395146.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1801395146;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mTypeName;
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.354 -0400", hash_original_method = "0043E0CF1F933E5EC5CD97392CA0E5B0", hash_generated_method = "7AFD6116B7F1D6C7EABB99EDD55F2124")
     public String getSubtypeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1695367020 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1695367020 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1695367020 = mSubtypeName;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1695367020.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1695367020.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1695367020;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mSubtypeName;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -186,10 +186,10 @@ public class NetworkInfo implements Parcelable {
     public boolean isConnectedOrConnecting() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_216703921 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_216703921;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mState == State.CONNECTED || mState == State.CONNECTING;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -197,10 +197,10 @@ public class NetworkInfo implements Parcelable {
     public boolean isConnected() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_966001725 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_966001725;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mState == State.CONNECTED;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -208,10 +208,10 @@ public class NetworkInfo implements Parcelable {
     public boolean isAvailable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_377073798 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_377073798;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mIsAvailable;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -219,11 +219,11 @@ public class NetworkInfo implements Parcelable {
     public void setIsAvailable(boolean isAvailable) {
         {
             mIsAvailable = isAvailable;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //mIsAvailable = isAvailable;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -231,10 +231,10 @@ public class NetworkInfo implements Parcelable {
     public boolean isFailover() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1304703438 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1304703438;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mIsFailover;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -242,11 +242,11 @@ public class NetworkInfo implements Parcelable {
     public void setFailover(boolean isFailover) {
         {
             mIsFailover = isFailover;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //mIsFailover = isFailover;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -254,10 +254,10 @@ public class NetworkInfo implements Parcelable {
     public boolean isRoaming() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1342407499 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1342407499;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mIsRoaming;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -265,44 +265,45 @@ public class NetworkInfo implements Parcelable {
      void setRoaming(boolean isRoaming) {
         {
             mIsRoaming = isRoaming;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //mIsRoaming = isRoaming;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.357 -0400", hash_original_method = "7B78C01516FA6C80A9332B33D7F2C1E4", hash_generated_method = "75DC47A0CDB8AE11B151D4526B7952C5")
     public State getState() {
-        State varB4EAC82CA7396A68D541C85D26508E83_662919798 = null; //Variable for return #1
+        State varB4EAC82CA7396A68D541C85D26508E83_662919798 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_662919798 = mState;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_662919798.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_662919798.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_662919798;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mState;
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.358 -0400", hash_original_method = "EF299E7A8E902EE5662452C8EC565B0C", hash_generated_method = "1378C873F2B99A3460C0D75289EF2674")
     public DetailedState getDetailedState() {
-        DetailedState varB4EAC82CA7396A68D541C85D26508E83_1032356930 = null; //Variable for return #1
+        DetailedState varB4EAC82CA7396A68D541C85D26508E83_1032356930 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1032356930 = mDetailedState;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1032356930.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1032356930.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1032356930;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mDetailedState;
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.358 -0400", hash_original_method = "F9B4E8192C3BAB2B942149B3B4357918", hash_generated_method = "E71EAA3D48085C0A311AA5180CC511DE")
     public void setDetailedState(DetailedState detailedState, String reason, String extraInfo) {
         {
@@ -310,51 +311,52 @@ public class NetworkInfo implements Parcelable {
             this.mState = stateMap.get(detailedState);
             this.mReason = reason;
             this.mExtraInfo = extraInfo;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //this.mDetailedState = detailedState;
-            //this.mState = stateMap.get(detailedState);
-            //this.mReason = reason;
-            //this.mExtraInfo = extraInfo;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.359 -0400", hash_original_method = "788F68C9DAC18237AEDF0C4BED188B0D", hash_generated_method = "57377A49E709B1D7CFC86B973C0174BC")
     public String getReason() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1085741263 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1085741263 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1085741263 = mReason;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1085741263.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1085741263.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1085741263;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mReason;
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.359 -0400", hash_original_method = "74D0311B373A7BB37462D7229B3CD3F9", hash_generated_method = "FBE99A68E084D98B5E99207897A0489D")
     public String getExtraInfo() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1848151765 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1848151765 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1848151765 = mExtraInfo;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1848151765.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1848151765.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1848151765;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mExtraInfo;
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.360 -0400", hash_original_method = "AD77F99801D246295506D70C39DE289C", hash_generated_method = "933E088F1D18C708C7524651C27DC778")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2092390328 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2092390328 = null; 
         {
             StringBuilder builder = new StringBuilder("NetworkInfo: ");
             builder.append("type: ").append(getTypeName()).append("[").append(getSubtypeName()).
@@ -365,21 +367,21 @@ public class NetworkInfo implements Parcelable {
             append(", failover: ").append(mIsFailover).
             append(", isAvailable: ").append(mIsAvailable);
             varB4EAC82CA7396A68D541C85D26508E83_2092390328 = builder.toString();
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2092390328.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_2092390328.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2092390328;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //StringBuilder builder = new StringBuilder("NetworkInfo: ");
-            //builder.append("type: ").append(getTypeName()).append("[").append(getSubtypeName()).
-            //append("], state: ").append(mState).append("/").append(mDetailedState).
-            //append(", reason: ").append(mReason == null ? "(unspecified)" : mReason).
-            //append(", extra: ").append(mExtraInfo == null ? "(none)" : mExtraInfo).
-            //append(", roaming: ").append(mIsRoaming).
-            //append(", failover: ").append(mIsFailover).
-            //append(", isAvailable: ").append(mIsAvailable);
-            //return builder.toString();
-        //}
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -387,11 +389,12 @@ public class NetworkInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_518789885 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_518789885;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.362 -0400", hash_original_method = "EF9852F5CC5A1C9C509E333ACBA9ED14", hash_generated_method = "A4D8A7352ED2C7B64B074447678BE1FC")
     public void writeToParcel(Parcel dest, int flags) {
         {
@@ -406,23 +409,23 @@ public class NetworkInfo implements Parcelable {
             dest.writeInt(mIsRoaming ? 1 : 0);
             dest.writeString(mReason);
             dest.writeString(mExtraInfo);
-        } //End block
+        } 
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //dest.writeInt(mNetworkType);
-            //dest.writeInt(mSubtype);
-            //dest.writeString(mTypeName);
-            //dest.writeString(mSubtypeName);
-            //dest.writeString(mState.name());
-            //dest.writeString(mDetailedState.name());
-            //dest.writeInt(mIsFailover ? 1 : 0);
-            //dest.writeInt(mIsAvailable ? 1 : 0);
-            //dest.writeInt(mIsRoaming ? 1 : 0);
-            //dest.writeString(mReason);
-            //dest.writeString(mExtraInfo);
-        //}
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.text.method;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.view.KeyEvent;
 import android.view.View;
@@ -28,12 +28,13 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
                                boolean autotext) {
         mCapitalize = cap;
         mAutoText = autotext;
-        // ---------- Original Method ----------
-        //mCapitalize = cap;
-        //mAutoText = autotext;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MultiTapKeyListener getInstance(boolean autotext,
                                                   Capitalize cap) {
         int off = cap.ordinal() * 2 + (autotext ? 1 : 0);
@@ -44,32 +45,34 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.263 -0400", hash_original_method = "0F62DAE08CCEDDF88EBED8C62070D6C5", hash_generated_method = "CE223E4BFA5D3F51D6A8C2C9E2434CE2")
     public int getInputType() {
         int var761B1FE077E1E2212DB3E7575B066EB4_883524537 = (makeTextContentType(mCapitalize, mAutoText));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368275540 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368275540;
-        // ---------- Original Method ----------
-        //return makeTextContentType(mCapitalize, mAutoText);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.283 -0400", hash_original_method = "A5D3B5CD1C27B709A733246605C23357", hash_generated_method = "DA00DBBECFA1920775DE05222B910D85")
     public boolean onKeyDown(View view, Editable content,
                              int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int selStart;
         int selEnd;
         int pref = 0;
         {
             pref = TextKeyListener.getInstance().getPrefs(view.getContext());
-        } //End block
+        } 
         {
             int a = Selection.getSelectionStart(content);
             int b = Selection.getSelectionEnd(content);
             selStart = Math.min(a, b);
             selEnd = Math.max(a, b);
-        } //End block
+        } 
         int activeStart = content.getSpanStart(TextKeyListener.ACTIVE);
         int activeEnd = content.getSpanEnd(TextKeyListener.ACTIVE);
         int rec = (content.getSpanFlags(TextKeyListener.ACTIVE)
@@ -88,8 +91,8 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
                                     String.valueOf(current).toUpperCase());
                             removeTimeouts(content);
                             new Timeout(content);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         boolean varA4A8BEA93337021ED4F924C9AED72D94_1414893766 = (Character.isUpperCase(current));
                         {
@@ -97,9 +100,9 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
                                     String.valueOf(current).toLowerCase());
                             removeTimeouts(content);
                             new Timeout(content);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     boolean var9134ACFA70B8D3CDF322E502E8A7178E_1251734345 = (sRecs.indexOfKey(keyCode) == rec);
                     {
@@ -111,19 +114,19 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
                             content.replace(selStart, selEnd, val, ix, ix + 1);
                             removeTimeouts(content);
                             new Timeout(content);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 rec = sRecs.indexOfKey(keyCode);
                 {
                     Selection.setSelection(content, selEnd, selEnd);
                     selStart = selEnd;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 rec = sRecs.indexOfKey(keyCode);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             String val = sRecs.valueAt(rec);
             int off = 0;
@@ -139,15 +142,15 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
                                 boolean var35387AA0E3A3FB9F9E99322F4F894FE7_255767974 = (Character.isUpperCase(val.charAt(i)));
                                 {
                                     off = i;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 Selection.setSelection(content, selEnd);
-            } //End block
+            } 
             content.setSpan(OLD_SEL_START, selStart, selStart,
                             Spannable.SPAN_MARK_MARK);
             content.replace(selStart, selEnd, val, off, off + 1);
@@ -162,7 +165,7 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
                             oldStart, selEnd,
                             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE |
                             (rec << Spannable.SPAN_USER_SHIFT));
-            } //End block
+            } 
             removeTimeouts(content);
             new Timeout(content);
             {
@@ -174,13 +177,13 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
                         Object method = methods[0];
                         {
                             content.removeSpan(method);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     content.setSpan(this, 0, content.length(),
                                 Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         boolean var250B4652E205BB567180858BBC354846_798807301 = (super.onKeyDown(view, content, keyCode, event));
         addTaint(view.getTaint());
         addTaint(content.getTaint());
@@ -188,33 +191,35 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_650974291 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_650974291;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.283 -0400", hash_original_method = "32D49D04D14DFD2D5D5762D6E8E59602", hash_generated_method = "EA480FB765F446E2BD875D4224CC19DE")
     public void onSpanChanged(Spannable buf,
                               Object what, int s, int e, int start, int stop) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             buf.removeSpan(TextKeyListener.ACTIVE);
             removeTimeouts(buf);
-        } //End block
+        } 
         addTaint(buf.getTaint());
         addTaint(what.getTaint());
         addTaint(s);
         addTaint(e);
         addTaint(start);
         addTaint(stop);
-        // ---------- Original Method ----------
-        //if (what == Selection.SELECTION_END) {
-            //buf.removeSpan(TextKeyListener.ACTIVE);
-            //removeTimeouts(buf);
-        //}
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void removeTimeouts(Spannable buf) {
         Timeout[] timeout = buf.getSpans(0, buf.length(), Timeout.class);
         for (int i = 0; i < timeout.length; i++) {
@@ -228,23 +233,23 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.284 -0400", hash_original_method = "A7E02D03E9AB7CF614DD169102D03FAF", hash_generated_method = "7B286C8C34C0CB912482A9582E50ADC8")
     public void onSpanAdded(Spannable s, Object what, int start, int end) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(s.getTaint());
         addTaint(what.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.284 -0400", hash_original_method = "2C716670C272F54C9EB4064D90DB3C4E", hash_generated_method = "F033A2BD7F1AB312500D2F37A623D63A")
     public void onSpanRemoved(Spannable s, Object what, int start, int end) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(s.getTaint());
         addTaint(what.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -259,11 +264,11 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
             mBuffer.setSpan(Timeout.this, 0, mBuffer.length(),
                             Spannable.SPAN_INCLUSIVE_INCLUSIVE);
             postAtTime(this, SystemClock.uptimeMillis() + 2000);
-            // ---------- Original Method ----------
-            //mBuffer = buffer;
-            //mBuffer.setSpan(Timeout.this, 0, mBuffer.length(),
-                            //Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-            //postAtTime(this, SystemClock.uptimeMillis() + 2000);
+            
+            
+            
+                            
+            
         }
 
         
@@ -277,21 +282,21 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
                 int end = buf.getSpanEnd(TextKeyListener.ACTIVE);
                 {
                     Selection.setSelection(buf, Selection.getSelectionEnd(buf));
-                } //End block
+                } 
                 buf.removeSpan(Timeout.this);
-            } //End block
-            // ---------- Original Method ----------
-            //Spannable buf = mBuffer;
-            //if (buf != null) {
-                //int st = Selection.getSelectionStart(buf);
-                //int en = Selection.getSelectionEnd(buf);
-                //int start = buf.getSpanStart(TextKeyListener.ACTIVE);
-                //int end = buf.getSpanEnd(TextKeyListener.ACTIVE);
-                //if (st == start && en == end) {
-                    //Selection.setSelection(buf, Selection.getSelectionEnd(buf));
-                //}
-                //buf.removeSpan(Timeout.this);
-            //}
+            } 
+            
+            
+            
+                
+                
+                
+                
+                
+                    
+                
+                
+            
         }
 
         

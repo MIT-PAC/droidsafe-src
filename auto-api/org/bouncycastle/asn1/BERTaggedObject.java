@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.Enumeration;
@@ -19,7 +19,7 @@ public class BERTaggedObject extends DERTaggedObject {
         super(tagNo, obj);
         addTaint(tagNo);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,7 +32,7 @@ public class BERTaggedObject extends DERTaggedObject {
         addTaint(explicit);
         addTaint(tagNo);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -41,7 +41,7 @@ public class BERTaggedObject extends DERTaggedObject {
         int             tagNo) {
         super(false, tagNo, new BERSequence());
         addTaint(tagNo);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -57,42 +57,42 @@ public class BERTaggedObject extends DERTaggedObject {
                     {
                         {
                             e = ((BERConstructedOctetString)obj).getObjects();
-                        } //End block
+                        } 
                         {
                             ASN1OctetString octs = (ASN1OctetString)obj;
                             BERConstructedOctetString berO = new BERConstructedOctetString(octs.getOctets());
                             e = berO.getObjects();
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         e = ((ASN1Sequence)obj).getObjects();
-                    } //End block
+                    } 
                     {
                         e = ((ASN1Set)obj).getObjects();
-                    } //End block
+                    } 
                     {
                         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("not implemented: " + obj.getClass().getName());
-                    } //End block
+                    } 
                     {
                         boolean varDAE76E52B86B173593FF9665A973FC54_261926762 = (e.hasMoreElements());
                         {
                             out.writeObject(e.nextElement());
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     out.writeObject(obj);
-                } //End block
-            } //End block
+                } 
+            } 
             out.write(0x00);
             out.write(0x00);
-        } //End block
+        } 
         {
             super.encode(out);
-        } //End block
+        } 
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

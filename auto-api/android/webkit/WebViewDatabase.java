@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,18 +49,18 @@ public class WebViewDatabase {
             @Override
             public void run() {
                 init(context);
-                // ---------- Original Method ----------
-                //init(context);
+                
+                
             }
 }.start();
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //new Thread() {
-            //@Override
-            //public void run() {
-                //init(context);
-            //}
-        //}.start();
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -72,6 +72,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.988 -0400", hash_original_method = "AC87AD0E19559694D58F1943BD15C1D5", hash_generated_method = "146D28A96EAE252B3E40F53A223B33A2")
     private synchronized void init(Context context) {
         initDatabase(context);
@@ -79,35 +80,36 @@ public class WebViewDatabase {
             boolean var9ACB1B3B30D2C0CED704DA8C8B3FC1B9_1958463389 = (JniUtil.useChromiumHttpStack());
             {
                 context.deleteDatabase(CACHE_DATABASE_FILE);
-            } //End block
+            } 
             {
                 initCacheDatabase(context);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mInitialized = true;
         notify();
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //if (mInitialized) {
-            //return;
-        //}
-        //initDatabase(context);
-        //if (JniUtil.useChromiumHttpStack()) {
-            //context.deleteDatabase(CACHE_DATABASE_FILE);
-        //} else {
-            //initCacheDatabase(context);
-        //}
-        //mInitialized = true;
-        //notify();
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.988 -0400", hash_original_method = "CE06D258DB88B89F42DED68141C198E0", hash_generated_method = "6CF3EB7E30F6FAA94B9B0ABE550D64C9")
     private void initDatabase(Context context) {
         try 
         {
             mDatabase = context.openOrCreateDatabase(DATABASE_FILE, 0, null);
-        } //End block
+        } 
         catch (SQLiteException e)
         {
             {
@@ -115,14 +117,14 @@ public class WebViewDatabase {
                 {
                     mDatabase = context.openOrCreateDatabase(DATABASE_FILE, 0,
                         null);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mDatabase.enableWriteAheadLogging();
         {
             mInitialized = true;
             notify();
-        } //End block
+        } 
         {
             boolean varA450E818A17AB5CEAFA5DCA2D2F53F99_1590450301 = (mDatabase.getVersion() != DATABASE_VERSION);
             {
@@ -131,27 +133,28 @@ public class WebViewDatabase {
                 {
                     upgradeDatabase();
                     mDatabase.setTransactionSuccessful();
-                } //End block
+                } 
                 finally 
                 {
                     mDatabase.endTransaction();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         mDatabase.setLockingEnabled(false);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.990 -0400", hash_original_method = "C7A89DE182CA76C10CB3961C893695C2", hash_generated_method = "37B88A5928D876D410FD912F204A4F09")
     private void initCacheDatabase(Context context) {
         try 
         {
             mCacheDatabase = context.openOrCreateDatabase(
                     CACHE_DATABASE_FILE, 0, null);
-        } //End block
+        } 
         catch (SQLiteException e)
         {
             {
@@ -159,14 +162,14 @@ public class WebViewDatabase {
                 {
                     mCacheDatabase = context.openOrCreateDatabase(
                         CACHE_DATABASE_FILE, 0, null);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mCacheDatabase.enableWriteAheadLogging();
         {
             mInitialized = true;
             notify();
-        } //End block
+        } 
         {
             boolean var9F5CCB2C1429C972D5DCFFA8EAC58C5C_386114013 = (mCacheDatabase.getVersion() != CACHE_DATABASE_VERSION);
             {
@@ -176,14 +179,14 @@ public class WebViewDatabase {
                     upgradeCacheDatabase();
                     bootstrapCacheDatabase();
                     mCacheDatabase.setTransactionSuccessful();
-                } //End block
+                } 
                 finally 
                 {
                     mCacheDatabase.endTransaction();
-                } //End block
+                } 
                 CacheManager.removeAllCacheFiles();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mCacheDatabase.execSQL("PRAGMA read_uncommitted = true;");
         mCacheDatabase.setLockingEnabled(false);
         mCacheInserter =
@@ -216,19 +219,21 @@ public class WebViewDatabase {
         mCacheCrossDomainColIndex = mCacheInserter
                 .getColumnIndex(CACHE_CROSSDOMAIN_COL);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
-        private static void upgradeDatabase() {
+        @DSModeled(DSC.SAFE)
+    private static void upgradeDatabase() {
         upgradeDatabaseToV10();
         upgradeDatabaseFromV10ToV11();
         mDatabase.setVersion(DATABASE_VERSION);
     }
 
     
-        private static void upgradeDatabaseFromV10ToV11() {
+        @DSModeled(DSC.SAFE)
+    private static void upgradeDatabaseFromV10ToV11() {
         int oldVersion = mDatabase.getVersion();
         if (oldVersion >= 11) {
             return;
@@ -251,7 +256,8 @@ public class WebViewDatabase {
     }
 
     
-        private static void upgradeDatabaseToV10() {
+        @DSModeled(DSC.SAFE)
+    private static void upgradeDatabaseToV10() {
         int oldVersion = mDatabase.getVersion();
         if (oldVersion >= 10) {
             return;
@@ -356,26 +362,26 @@ public class WebViewDatabase {
                 try 
                 {
                     wait();
-                } //End block
+                } 
                 catch (InterruptedException e)
                 { }
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1223268050 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1223268050;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //while (!mInitialized) {
-                //try {
-                    //wait();
-                //} catch (InterruptedException e) {
-                    //Log.e(LOGTAG, "Caught exception while checking " +
-                                  //"initialization");
-                    //Log.e(LOGTAG, Log.getStackTraceString(e));
-                //}
-            //}
-        //}
-        //return mDatabase != null;
+        
+        
+            
+                
+                    
+                
+                    
+                                  
+                    
+                
+            
+        
+        
     }
 
     
@@ -383,7 +389,7 @@ public class WebViewDatabase {
     private boolean hasEntries(int tableId) {
         {
             boolean var886CAF4B0310A6130F03FD63561B8234_1910752798 = (!checkInitialized());
-        } //End collapsed parenthetic
+        } 
         Cursor cursor = null;
         boolean ret = false;
         try 
@@ -391,46 +397,46 @@ public class WebViewDatabase {
             cursor = mDatabase.query(mTableNames[tableId], ID_PROJECTION,
                     null, null, null, null, null);
             ret = cursor.moveToFirst() == true;
-        } //End block
+        } 
         catch (IllegalStateException e)
         { }
         finally 
         {
             cursor.close();
-        } //End block
+        } 
         addTaint(tableId);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1235481857 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1235481857;
-        // ---------- Original Method ----------
-        //if (!checkInitialized()) {
-            //return false;
-        //}
-        //Cursor cursor = null;
-        //boolean ret = false;
-        //try {
-            //cursor = mDatabase.query(mTableNames[tableId], ID_PROJECTION,
-                    //null, null, null, null, null);
-            //ret = cursor.moveToFirst() == true;
-        //} catch (IllegalStateException e) {
-            //Log.e(LOGTAG, "hasEntries", e);
-        //} finally {
-            //if (cursor != null) cursor.close();
-        //}
-        //return ret;
+        
+        
+            
+        
+        
+        
+        
+            
+                    
+            
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.993 -0400", hash_original_method = "4D94521780B9AD3D8F70E78E8CBCD3E0", hash_generated_method = "1A34BC38654B7F28FCC0FA62C4022CE2")
      ArrayList<Cookie> getCookiesForDomain(String domain) {
-        ArrayList<Cookie> varB4EAC82CA7396A68D541C85D26508E83_977649692 = null; //Variable for return #1
-        ArrayList<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1394652958 = null; //Variable for return #2
+        ArrayList<Cookie> varB4EAC82CA7396A68D541C85D26508E83_977649692 = null; 
+        ArrayList<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1394652958 = null; 
         ArrayList<Cookie> list = new ArrayList<Cookie>();
         {
             boolean varA8DB3C3C11FB3F67134323DBA3E29A4F_1966232174 = (domain == null || !checkInitialized());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_977649692 = list;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             final String[] columns = new String[] {
                     ID_COL, COOKIES_DOMAIN_COL, COOKIES_PATH_COL,
@@ -464,43 +470,43 @@ public class WebViewDatabase {
                                 boolean var80D05DB7C23C7A8C68D1BD5C13F8B946_1922327597 = (cursor.isNull(expiresCol));
                                 {
                                     cookie.expires = -1;
-                                } //End block
+                                } 
                                 {
                                     cookie.expires = cursor.getLong(expiresCol);
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             cookie.secure = cursor.getShort(secureCol) != 0;
                             cookie.mode = Cookie.MODE_NORMAL;
                             list.add(cookie);
-                        } //End block
+                        } 
                         {
                             boolean varEEE3E1704288A6D03EB8C70F2484A2B3_1835498160 = (cursor.moveToNext());
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             catch (IllegalStateException e)
             { }
             finally 
             {
                 cursor.close();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1394652958 = list;
-        } //End block
+        } 
         addTaint(domain.getTaint());
-        ArrayList<Cookie> varA7E53CE21691AB073D9660D615818899_1232730710; //Final return value
+        ArrayList<Cookie> varA7E53CE21691AB073D9660D615818899_1232730710; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1232730710 = varB4EAC82CA7396A68D541C85D26508E83_977649692;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1232730710 = varB4EAC82CA7396A68D541C85D26508E83_1394652958;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1232730710.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1232730710.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1232730710;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -508,28 +514,28 @@ public class WebViewDatabase {
      void deleteCookies(String domain, String path, String name) {
         {
             boolean varA8DB3C3C11FB3F67134323DBA3E29A4F_570856495 = (domain == null || !checkInitialized());
-        } //End collapsed parenthetic
+        } 
         {
             final String where = "(" + COOKIES_DOMAIN_COL + " == ?) AND ("
                     + COOKIES_PATH_COL + " == ?) AND (" + COOKIES_NAME_COL
                     + " == ?)";
             mDatabase.delete(mTableNames[TABLE_COOKIES_ID], where,
                     new String[] { domain, path, name });
-        } //End block
+        } 
         addTaint(domain.getTaint());
         addTaint(path.getTaint());
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
-        //if (domain == null || !checkInitialized()) {
-            //return;
-        //}
-        //synchronized (mCookieLock) {
-            //final String where = "(" + COOKIES_DOMAIN_COL + " == ?) AND ("
-                    //+ COOKIES_PATH_COL + " == ?) AND (" + COOKIES_NAME_COL
-                    //+ " == ?)";
-            //mDatabase.delete(mTableNames[TABLE_COOKIES_ID], where,
-                    //new String[] { domain, path, name });
-        //}
+        
+        
+            
+        
+        
+            
+                    
+                    
+            
+                    
+        
     }
 
     
@@ -538,7 +544,7 @@ public class WebViewDatabase {
         {
             boolean var39BA779873F941960A4C4EA6029A7B0F_646256268 = (cookie.domain == null || cookie.path == null || cookie.name == null
                 || !checkInitialized());
-        } //End collapsed parenthetic
+        } 
         {
             ContentValues cookieVal = new ContentValues();
             cookieVal.put(COOKIES_DOMAIN_COL, cookie.domain);
@@ -547,28 +553,28 @@ public class WebViewDatabase {
             cookieVal.put(COOKIES_VALUE_COL, cookie.value);
             {
                 cookieVal.put(COOKIES_EXPIRES_COL, cookie.expires);
-            } //End block
+            } 
             cookieVal.put(COOKIES_SECURE_COL, cookie.secure);
             mDatabase.insert(mTableNames[TABLE_COOKIES_ID], null, cookieVal);
-        } //End block
+        } 
         addTaint(cookie.getTaint());
-        // ---------- Original Method ----------
-        //if (cookie.domain == null || cookie.path == null || cookie.name == null
-                //|| !checkInitialized()) {
-            //return;
-        //}
-        //synchronized (mCookieLock) {
-            //ContentValues cookieVal = new ContentValues();
-            //cookieVal.put(COOKIES_DOMAIN_COL, cookie.domain);
-            //cookieVal.put(COOKIES_PATH_COL, cookie.path);
-            //cookieVal.put(COOKIES_NAME_COL, cookie.name);
-            //cookieVal.put(COOKIES_VALUE_COL, cookie.value);
-            //if (cookie.expires != -1) {
-                //cookieVal.put(COOKIES_EXPIRES_COL, cookie.expires);
-            //}
-            //cookieVal.put(COOKIES_SECURE_COL, cookie.secure);
-            //mDatabase.insert(mTableNames[TABLE_COOKIES_ID], null, cookieVal);
-        //}
+        
+        
+                
+            
+        
+        
+            
+            
+            
+            
+            
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -576,13 +582,13 @@ public class WebViewDatabase {
      boolean hasCookies() {
         {
             boolean varDB253D8D15C430D06B36D069D7680A2A_1214259506 = (hasEntries(TABLE_COOKIES_ID));
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1066883261 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1066883261;
-        // ---------- Original Method ----------
-        //synchronized (mCookieLock) {
-            //return hasEntries(TABLE_COOKIES_ID);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -590,17 +596,17 @@ public class WebViewDatabase {
      void clearCookies() {
         {
             boolean var886CAF4B0310A6130F03FD63561B8234_768158508 = (!checkInitialized());
-        } //End collapsed parenthetic
+        } 
         {
             mDatabase.delete(mTableNames[TABLE_COOKIES_ID], null, null);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!checkInitialized()) {
-            //return;
-        //}
-        //synchronized (mCookieLock) {
-            //mDatabase.delete(mTableNames[TABLE_COOKIES_ID], null, null);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -608,21 +614,21 @@ public class WebViewDatabase {
      void clearSessionCookies() {
         {
             boolean var886CAF4B0310A6130F03FD63561B8234_1083350822 = (!checkInitialized());
-        } //End collapsed parenthetic
+        } 
         final String sessionExpired = COOKIES_EXPIRES_COL + " ISNULL";
         {
             mDatabase.delete(mTableNames[TABLE_COOKIES_ID], sessionExpired,
                     null);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!checkInitialized()) {
-            //return;
-        //}
-        //final String sessionExpired = COOKIES_EXPIRES_COL + " ISNULL";
-        //synchronized (mCookieLock) {
-            //mDatabase.delete(mTableNames[TABLE_COOKIES_ID], sessionExpired,
-                    //null);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+                    
+        
     }
 
     
@@ -630,22 +636,22 @@ public class WebViewDatabase {
      void clearExpiredCookies(long now) {
         {
             boolean var886CAF4B0310A6130F03FD63561B8234_1506432175 = (!checkInitialized());
-        } //End collapsed parenthetic
+        } 
         final String expires = COOKIES_EXPIRES_COL + " <= ?";
         {
             mDatabase.delete(mTableNames[TABLE_COOKIES_ID], expires,
                     new String[] { Long.toString(now) });
-        } //End block
+        } 
         addTaint(now);
-        // ---------- Original Method ----------
-        //if (!checkInitialized()) {
-            //return;
-        //}
-        //final String expires = COOKIES_EXPIRES_COL + " <= ?";
-        //synchronized (mCookieLock) {
-            //mDatabase.delete(mTableNames[TABLE_COOKIES_ID], expires,
-                    //new String[] { Long.toString(now) });
-        //}
+        
+        
+            
+        
+        
+        
+            
+                    
+        
     }
 
     
@@ -655,23 +661,23 @@ public class WebViewDatabase {
             {
                 boolean var19CEF9F46A61A60E9C53BA833277B14B_1883018689 = (!Thread.currentThread().equals(
                     WebViewWorker.getHandler().getLooper().getThread()));
-            } //End collapsed parenthetic
+            } 
             mCacheDatabase.beginTransactionNonExclusive();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1796807561 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1796807561;
-        // ---------- Original Method ----------
-        //if (++mCacheTransactionRefcount == 1) {
-            //if (!Thread.currentThread().equals(
-                    //WebViewWorker.getHandler().getLooper().getThread())) {
-                //Log.w(LOGTAG, "startCacheTransaction should be called from "
-                        //+ "WebViewWorkerThread instead of from "
-                        //+ Thread.currentThread().getName());
-            //}
-            //mCacheDatabase.beginTransactionNonExclusive();
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+                    
+                
+                        
+                        
+            
+            
+            
+        
+        
     }
 
     
@@ -681,48 +687,48 @@ public class WebViewDatabase {
             {
                 boolean var19CEF9F46A61A60E9C53BA833277B14B_1950640349 = (!Thread.currentThread().equals(
                     WebViewWorker.getHandler().getLooper().getThread()));
-            } //End collapsed parenthetic
+            } 
             try 
             {
                 mCacheDatabase.setTransactionSuccessful();
-            } //End block
+            } 
             finally 
             {
                 mCacheDatabase.endTransaction();
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1065863125 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1065863125;
-        // ---------- Original Method ----------
-        //if (--mCacheTransactionRefcount == 0) {
-            //if (!Thread.currentThread().equals(
-                    //WebViewWorker.getHandler().getLooper().getThread())) {
-                //Log.w(LOGTAG, "endCacheTransaction should be called from "
-                        //+ "WebViewWorkerThread instead of from "
-                        //+ Thread.currentThread().getName());
-            //}
-            //try {
-                //mCacheDatabase.setTransactionSuccessful();
-            //} finally {
-                //mCacheDatabase.endTransaction();
-            //}
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+                    
+                
+                        
+                        
+            
+            
+                
+            
+                
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.998 -0400", hash_original_method = "BF73224910862A6343E046C49771A81E", hash_generated_method = "8E1E957D3F1FCF47EEC5FBEA0E345AB5")
      CacheResult getCache(String url) {
-        CacheResult varB4EAC82CA7396A68D541C85D26508E83_173943745 = null; //Variable for return #1
-        CacheResult varB4EAC82CA7396A68D541C85D26508E83_1239863773 = null; //Variable for return #2
-        CacheResult varB4EAC82CA7396A68D541C85D26508E83_854839426 = null; //Variable for return #3
+        CacheResult varB4EAC82CA7396A68D541C85D26508E83_173943745 = null; 
+        CacheResult varB4EAC82CA7396A68D541C85D26508E83_1239863773 = null; 
+        CacheResult varB4EAC82CA7396A68D541C85D26508E83_854839426 = null; 
         {
             boolean var5AE2624D4B934FA39D4CA4D237A622F0_51827205 = (url == null || !checkInitialized());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_173943745 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Cursor cursor = null;
         final String query = "SELECT filepath, lastmodify, etag, expires, "
                 + "expiresstring, mimetype, encoding, httpstatus, location, contentlength, "
@@ -747,33 +753,33 @@ public class WebViewDatabase {
                     ret.contentdisposition = cursor.getString(10);
                     ret.crossDomain = cursor.getString(11);
                     varB4EAC82CA7396A68D541C85D26508E83_1239863773 = ret;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (IllegalStateException e)
         { }
         finally 
         {
             cursor.close();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_854839426 = null;
         addTaint(url.getTaint());
-        CacheResult varA7E53CE21691AB073D9660D615818899_1682191685; //Final return value
+        CacheResult varA7E53CE21691AB073D9660D615818899_1682191685; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1682191685 = varB4EAC82CA7396A68D541C85D26508E83_173943745;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1682191685 = varB4EAC82CA7396A68D541C85D26508E83_1239863773;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1682191685 = varB4EAC82CA7396A68D541C85D26508E83_854839426;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1682191685.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1682191685.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1682191685;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -781,15 +787,15 @@ public class WebViewDatabase {
      void removeCache(String url) {
         {
             boolean var5AE2624D4B934FA39D4CA4D237A622F0_669134210 = (url == null || !checkInitialized());
-        } //End collapsed parenthetic
+        } 
         mCacheDatabase.execSQL("DELETE FROM cache WHERE url = ?", new String[] { url });
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //assert !JniUtil.useChromiumHttpStack();
-        //if (url == null || !checkInitialized()) {
-            //return;
-        //}
-        //mCacheDatabase.execSQL("DELETE FROM cache WHERE url = ?", new String[] { url });
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -797,7 +803,7 @@ public class WebViewDatabase {
      void addCache(String url, CacheResult c) {
         {
             boolean var5AE2624D4B934FA39D4CA4D237A622F0_1578321306 = (url == null || !checkInitialized());
-        } //End collapsed parenthetic
+        } 
         mCacheInserter.prepareForInsert();
         mCacheInserter.bind(mCacheUrlColIndex, url);
         mCacheInserter.bind(mCacheFilePathColIndex, c.localPath);
@@ -816,8 +822,8 @@ public class WebViewDatabase {
         mCacheInserter.execute();
         addTaint(url.getTaint());
         addTaint(c.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -825,13 +831,13 @@ public class WebViewDatabase {
      void clearCache() {
         {
             boolean var886CAF4B0310A6130F03FD63561B8234_413982854 = (!checkInitialized());
-        } //End collapsed parenthetic
+        } 
         mCacheDatabase.delete("cache", null, null);
-        // ---------- Original Method ----------
-        //if (!checkInitialized()) {
-            //return;
-        //}
-        //mCacheDatabase.delete("cache", null, null);
+        
+        
+            
+        
+        
     }
 
     
@@ -839,7 +845,7 @@ public class WebViewDatabase {
      boolean hasCache() {
         {
             boolean var886CAF4B0310A6130F03FD63561B8234_1646233854 = (!checkInitialized());
-        } //End collapsed parenthetic
+        } 
         Cursor cursor = null;
         boolean ret = false;
         try 
@@ -847,31 +853,31 @@ public class WebViewDatabase {
             cursor = mCacheDatabase.query("cache", ID_PROJECTION,
                     null, null, null, null, null);
             ret = cursor.moveToFirst() == true;
-        } //End block
+        } 
         catch (IllegalStateException e)
         { }
         finally 
         {
             cursor.close();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_280869556 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_280869556;
-        // ---------- Original Method ----------
-        //if (!checkInitialized()) {
-            //return false;
-        //}
-        //Cursor cursor = null;
-        //boolean ret = false;
-        //try {
-            //cursor = mCacheDatabase.query("cache", ID_PROJECTION,
-                    //null, null, null, null, null);
-            //ret = cursor.moveToFirst() == true;
-        //} catch (IllegalStateException e) {
-            //Log.e(LOGTAG, "hasCache", e);
-        //} finally {
-            //if (cursor != null) cursor.close();
-        //}
-        //return ret;
+        
+        
+            
+        
+        
+        
+        
+            
+                    
+            
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -887,41 +893,41 @@ public class WebViewDatabase {
                 boolean varCDEB7019138899FEAFBEC62FC2A4BF86_857391459 = (cursor.moveToFirst());
                 {
                     size = cursor.getLong(0);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (IllegalStateException e)
         { }
         finally 
         {
             cursor.close();
-        } //End block
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1574066507 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1574066507;
-        // ---------- Original Method ----------
-        //if (mCacheDatabase == null) {
-            //return 0;
-        //}
-        //long size = 0;
-        //Cursor cursor = null;
-        //final String query = "SELECT SUM(contentlength) as sum FROM cache";
-        //try {
-            //cursor = mCacheDatabase.rawQuery(query, null);
-            //if (cursor.moveToFirst()) {
-                //size = cursor.getLong(0);
-            //}
-        //} catch (IllegalStateException e) {
-            //Log.e(LOGTAG, "getCacheTotalSize", e);
-        //} finally {
-            //if (cursor != null) cursor.close();
-        //}
-        //return size;
+        
+        
+            
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.003 -0400", hash_original_method = "E1CB3EA921D4F41F15D60CB73EFC3B4C", hash_generated_method = "0DB734BC8669DE60E56F480947773C8E")
      List<String> trimCache(long amount) {
-        List<String> varB4EAC82CA7396A68D541C85D26508E83_1383646375 = null; //Variable for return #1
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_1383646375 = null; 
         ArrayList<String> pathList = new ArrayList<String>(100);
         Cursor cursor = null;
         final String query = "SELECT contentlength, filepath FROM cache ORDER BY expires ASC";
@@ -938,8 +944,8 @@ public class WebViewDatabase {
                         int i = 1;
                         {
                             pathStr.append(", ?");
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     pathStr.append(")");
                     SQLiteStatement statement = null;
                     try 
@@ -957,42 +963,42 @@ public class WebViewDatabase {
                                 statement.execute();
                                 statement.clearBindings();
                                 index = 1;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             boolean var08B9D1EA537DD23B549DE53E3C14608E_1570650410 = (cursor.moveToNext() && amount > 0);
-                        } //End collapsed parenthetic
+                        } 
                         {
                             statement.execute();
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     catch (IllegalStateException e)
                     { }
                     finally 
                     {
                         statement.close();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         catch (IllegalStateException e)
         { }
         finally 
         {
             cursor.close();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1383646375 = pathList;
         addTaint(amount);
-        varB4EAC82CA7396A68D541C85D26508E83_1383646375.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1383646375.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1383646375;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.004 -0400", hash_original_method = "791DEB22BE9B55B5A0DA04ED6BE6D08D", hash_generated_method = "3497682D801607408DF6D0C6B7FEF45E")
      List<String> getAllCacheFileNames() {
-        List<String> varB4EAC82CA7396A68D541C85D26508E83_1525505630 = null; //Variable for return #1
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_1525505630 = null; 
         ArrayList<String> pathList = null;
         Cursor cursor = null;
         try 
@@ -1005,40 +1011,40 @@ public class WebViewDatabase {
                     pathList = new ArrayList<String>(cursor.getCount());
                     {
                         pathList.add(cursor.getString(0));
-                    } //End block
+                    } 
                     {
                         boolean var4B88A4E0CCE1DD5CDA31BC6F14F1DD3B_227927262 = (cursor.moveToNext());
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         catch (IllegalStateException e)
         { }
         finally 
         {
             cursor.close();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1525505630 = pathList;
-        varB4EAC82CA7396A68D541C85D26508E83_1525505630.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1525505630.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1525505630;
-        // ---------- Original Method ----------
-        //ArrayList<String> pathList = null;
-        //Cursor cursor = null;
-        //try {
-            //cursor = mCacheDatabase.rawQuery("SELECT filepath FROM cache",
-                    //null);
-            //if (cursor != null && cursor.moveToFirst()) {
-                //pathList = new ArrayList<String>(cursor.getCount());
-                //do {
-                    //pathList.add(cursor.getString(0));
-                //} while (cursor.moveToNext());
-            //}
-        //} catch (IllegalStateException e) {
-            //Log.e(LOGTAG, "getAllCacheFileNames", e);
-        //} finally {
-            //if (cursor != null) cursor.close();
-        //}
-        //return pathList;
+        
+        
+        
+        
+            
+                    
+            
+                
+                
+                    
+                
+            
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -1047,7 +1053,7 @@ public class WebViewDatabase {
                 String password) {
         {
             boolean var2649EC25D0E6A1FFB35B0F283FC7CC36_1319653790 = (schemePlusHost == null || !checkInitialized());
-        } //End collapsed parenthetic
+        } 
         {
             final ContentValues c = new ContentValues();
             c.put(PASSWORD_HOST_COL, schemePlusHost);
@@ -1055,35 +1061,35 @@ public class WebViewDatabase {
             c.put(PASSWORD_PASSWORD_COL, password);
             mDatabase.insert(mTableNames[TABLE_PASSWORD_ID], PASSWORD_HOST_COL,
                     c);
-        } //End block
+        } 
         addTaint(schemePlusHost.getTaint());
         addTaint(username.getTaint());
         addTaint(password.getTaint());
-        // ---------- Original Method ----------
-        //if (schemePlusHost == null || !checkInitialized()) {
-            //return;
-        //}
-        //synchronized (mPasswordLock) {
-            //final ContentValues c = new ContentValues();
-            //c.put(PASSWORD_HOST_COL, schemePlusHost);
-            //c.put(PASSWORD_USERNAME_COL, username);
-            //c.put(PASSWORD_PASSWORD_COL, password);
-            //mDatabase.insert(mTableNames[TABLE_PASSWORD_ID], PASSWORD_HOST_COL,
-                    //c);
-        //}
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.006 -0400", hash_original_method = "AA29CF1F05823526F8013A43811B3B7E", hash_generated_method = "0303A4D9CBCC39DD5C876220F3734F98")
      String[] getUsernamePassword(String schemePlusHost) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1713044408 = null; //Variable for return #1
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1759050835 = null; //Variable for return #2
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1713044408 = null; 
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1759050835 = null; 
         {
             boolean var2649EC25D0E6A1FFB35B0F283FC7CC36_356552058 = (schemePlusHost == null || !checkInitialized());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1713044408 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final String[] columns = new String[] {
                 PASSWORD_USERNAME_COL, PASSWORD_PASSWORD_COL
         };
@@ -1104,63 +1110,65 @@ public class WebViewDatabase {
                             cursor.getColumnIndex(PASSWORD_USERNAME_COL));
                         ret[1] = cursor.getString(
                             cursor.getColumnIndex(PASSWORD_PASSWORD_COL));
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             catch (IllegalStateException e)
             { }
             finally 
             {
                 cursor.close();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1759050835 = ret;
-        } //End block
+        } 
         addTaint(schemePlusHost.getTaint());
-        String[] varA7E53CE21691AB073D9660D615818899_1988621267; //Final return value
+        String[] varA7E53CE21691AB073D9660D615818899_1988621267; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1988621267 = varB4EAC82CA7396A68D541C85D26508E83_1713044408;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1988621267 = varB4EAC82CA7396A68D541C85D26508E83_1759050835;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1988621267.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1988621267.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1988621267;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.006 -0400", hash_original_method = "048A7854E0D4842D61BAD40D57C0F82F", hash_generated_method = "54D1553CE9C6E258053C3443D21403B2")
     public boolean hasUsernamePassword() {
         {
             boolean var07B2D4F64AFC2C93C8D780D2FCE02B3B_1253699788 = (hasEntries(TABLE_PASSWORD_ID));
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2067200804 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2067200804;
-        // ---------- Original Method ----------
-        //synchronized (mPasswordLock) {
-            //return hasEntries(TABLE_PASSWORD_ID);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.006 -0400", hash_original_method = "1884CD7855F3B6349631839451D5E408", hash_generated_method = "318A85CD089C52F9A57457860FD35DC3")
     public void clearUsernamePassword() {
         {
             boolean var886CAF4B0310A6130F03FD63561B8234_1410380669 = (!checkInitialized());
-        } //End collapsed parenthetic
+        } 
         {
             mDatabase.delete(mTableNames[TABLE_PASSWORD_ID], null, null);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!checkInitialized()) {
-            //return;
-        //}
-        //synchronized (mPasswordLock) {
-            //mDatabase.delete(mTableNames[TABLE_PASSWORD_ID], null, null);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -1169,7 +1177,7 @@ public class WebViewDatabase {
             String password) {
         {
             boolean var344A515C901BE55759AAD36F5C91CBAB_1592347229 = (host == null || realm == null || !checkInitialized());
-        } //End collapsed parenthetic
+        } 
         {
             final ContentValues c = new ContentValues();
             c.put(HTTPAUTH_HOST_COL, host);
@@ -1178,37 +1186,37 @@ public class WebViewDatabase {
             c.put(HTTPAUTH_PASSWORD_COL, password);
             mDatabase.insert(mTableNames[TABLE_HTTPAUTH_ID], HTTPAUTH_HOST_COL,
                     c);
-        } //End block
+        } 
         addTaint(host.getTaint());
         addTaint(realm.getTaint());
         addTaint(username.getTaint());
         addTaint(password.getTaint());
-        // ---------- Original Method ----------
-        //if (host == null || realm == null || !checkInitialized()) {
-            //return;
-        //}
-        //synchronized (mHttpAuthLock) {
-            //final ContentValues c = new ContentValues();
-            //c.put(HTTPAUTH_HOST_COL, host);
-            //c.put(HTTPAUTH_REALM_COL, realm);
-            //c.put(HTTPAUTH_USERNAME_COL, username);
-            //c.put(HTTPAUTH_PASSWORD_COL, password);
-            //mDatabase.insert(mTableNames[TABLE_HTTPAUTH_ID], HTTPAUTH_HOST_COL,
-                    //c);
-        //}
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+            
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.008 -0400", hash_original_method = "6E1D9953804AC08BC6DDA66478F3E8B6", hash_generated_method = "19638BB93FCD4562289D9914D7E199B7")
      String[] getHttpAuthUsernamePassword(String host, String realm) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1560253044 = null; //Variable for return #1
-        String[] varB4EAC82CA7396A68D541C85D26508E83_616764990 = null; //Variable for return #2
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1560253044 = null; 
+        String[] varB4EAC82CA7396A68D541C85D26508E83_616764990 = null; 
         {
             boolean var344A515C901BE55759AAD36F5C91CBAB_1967270497 = (host == null || realm == null || !checkInitialized());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1560253044 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final String[] columns = new String[] {
                 HTTPAUTH_USERNAME_COL, HTTPAUTH_PASSWORD_COL
         };
@@ -1230,64 +1238,66 @@ public class WebViewDatabase {
                             cursor.getColumnIndex(HTTPAUTH_USERNAME_COL));
                         ret[1] = cursor.getString(
                             cursor.getColumnIndex(HTTPAUTH_PASSWORD_COL));
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             catch (IllegalStateException e)
             { }
             finally 
             {
                 cursor.close();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_616764990 = ret;
-        } //End block
+        } 
         addTaint(host.getTaint());
         addTaint(realm.getTaint());
-        String[] varA7E53CE21691AB073D9660D615818899_1428880974; //Final return value
+        String[] varA7E53CE21691AB073D9660D615818899_1428880974; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1428880974 = varB4EAC82CA7396A68D541C85D26508E83_1560253044;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1428880974 = varB4EAC82CA7396A68D541C85D26508E83_616764990;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1428880974.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1428880974.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1428880974;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.008 -0400", hash_original_method = "50C83C4F45D13310D76D1C1AF4DB3EDF", hash_generated_method = "5B3A2522259687FED1D7EC66EF0E19B2")
     public boolean hasHttpAuthUsernamePassword() {
         {
             boolean var3C1434142A0FDF9785EF38B5A38F85FE_1558136186 = (hasEntries(TABLE_HTTPAUTH_ID));
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1395651220 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1395651220;
-        // ---------- Original Method ----------
-        //synchronized (mHttpAuthLock) {
-            //return hasEntries(TABLE_HTTPAUTH_ID);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.009 -0400", hash_original_method = "447C774EFBF83BDF0A062EB0F2F80455", hash_generated_method = "217235795F5F2C3B0627ACC9D2890462")
     public void clearHttpAuthUsernamePassword() {
         {
             boolean var886CAF4B0310A6130F03FD63561B8234_334111792 = (!checkInitialized());
-        } //End collapsed parenthetic
+        } 
         {
             mDatabase.delete(mTableNames[TABLE_HTTPAUTH_ID], null, null);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!checkInitialized()) {
-            //return;
-        //}
-        //synchronized (mHttpAuthLock) {
-            //mDatabase.delete(mTableNames[TABLE_HTTPAUTH_ID], null, null);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -1295,7 +1305,7 @@ public class WebViewDatabase {
      void setFormData(String url, HashMap<String, String> formdata) {
         {
             boolean varEAA6464961CE63B8309DF6A515888FBD_1915540170 = (url == null || formdata == null || !checkInitialized());
-        } //End collapsed parenthetic
+        } 
         final String selection = "(" + FORMURL_URL_COL + " == ?)";
         {
             long urlid = -1;
@@ -1309,21 +1319,21 @@ public class WebViewDatabase {
                     boolean var77D7361540339637C7B1B1A9F784B876_321645616 = (cursor.moveToFirst());
                     {
                         urlid = cursor.getLong(cursor.getColumnIndex(ID_COL));
-                    } //End block
+                    } 
                     {
                         ContentValues c = new ContentValues();
                         c.put(FORMURL_URL_COL, url);
                         urlid = mDatabase.insert(
                             mTableNames[TABLE_FORMURL_ID], null, c);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             catch (IllegalStateException e)
             { }
             finally 
             {
                 cursor.close();
-            } //End block
+            } 
             {
                 Set<Entry<String, String>> set = formdata.entrySet();
                 Iterator<Entry<String, String>> iter = set.iterator();
@@ -1336,28 +1346,28 @@ public class WebViewDatabase {
                         map.put(FORMDATA_NAME_COL, entry.getKey());
                         map.put(FORMDATA_VALUE_COL, entry.getValue());
                         mDatabase.insert(mTableNames[TABLE_FORMDATA_ID], null, map);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(url.getTaint());
         addTaint(formdata.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.013 -0400", hash_original_method = "699FE9DC5ACA57A32D74F51785DE679D", hash_generated_method = "AE5975E3CD0E4039E44F01A3104B122D")
      ArrayList<String> getFormData(String url, String name) {
-        ArrayList<String> varB4EAC82CA7396A68D541C85D26508E83_1840212567 = null; //Variable for return #1
-        ArrayList<String> varB4EAC82CA7396A68D541C85D26508E83_573502513 = null; //Variable for return #2
+        ArrayList<String> varB4EAC82CA7396A68D541C85D26508E83_1840212567 = null; 
+        ArrayList<String> varB4EAC82CA7396A68D541C85D26508E83_573502513 = null; 
         ArrayList<String> values = new ArrayList<String>();
         {
             boolean var117B0C9C104D1BD8746A9A506D51BADA_287500809 = (url == null || name == null || !checkInitialized());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1840212567 = values;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final String urlSelection = "(" + FORMURL_URL_COL + " == ?)";
         final String dataSelection = "(" + FORMDATA_URLID_COL + " == ?) AND ("
                 + FORMDATA_NAME_COL + " == ?)";
@@ -1388,79 +1398,81 @@ public class WebViewDatabase {
                                     FORMDATA_VALUE_COL);
                                     {
                                         values.add(dataCursor.getString(valueCol));
-                                    } //End block
+                                    } 
                                     {
                                         boolean var041EBA3F0B4A68A2FACFE169A0256538_2085953719 = (dataCursor.moveToNext());
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
                         catch (IllegalStateException e)
                         { }
                         finally 
                         {
                             dataCursor.close();
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             catch (IllegalStateException e)
             { }
             finally 
             {
                 cursor.close();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_573502513 = values;
-        } //End block
+        } 
         addTaint(url.getTaint());
         addTaint(name.getTaint());
-        ArrayList<String> varA7E53CE21691AB073D9660D615818899_2489497; //Final return value
+        ArrayList<String> varA7E53CE21691AB073D9660D615818899_2489497; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2489497 = varB4EAC82CA7396A68D541C85D26508E83_1840212567;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2489497 = varB4EAC82CA7396A68D541C85D26508E83_573502513;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2489497.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2489497.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2489497;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.013 -0400", hash_original_method = "6553D4A66AD572AF8668D3FA13E3C7D5", hash_generated_method = "05181152AEDAB6731851B6A67E50FD1E")
     public boolean hasFormData() {
         {
             boolean var187874045FD9FFC3AB266955A077A815_855276281 = (hasEntries(TABLE_FORMURL_ID));
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2059063162 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2059063162;
-        // ---------- Original Method ----------
-        //synchronized (mFormLock) {
-            //return hasEntries(TABLE_FORMURL_ID);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.014 -0400", hash_original_method = "9C11F1BCAAD785FEF89EC2FF8E172198", hash_generated_method = "DD6DCB08E4583A8C7A4F0309331370C9")
     public void clearFormData() {
         {
             boolean var886CAF4B0310A6130F03FD63561B8234_1700618069 = (!checkInitialized());
-        } //End collapsed parenthetic
+        } 
         {
             mDatabase.delete(mTableNames[TABLE_FORMURL_ID], null, null);
             mDatabase.delete(mTableNames[TABLE_FORMDATA_ID], null, null);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!checkInitialized()) {
-            //return;
-        //}
-        //synchronized (mFormLock) {
-            //mDatabase.delete(mTableNames[TABLE_FORMURL_ID], null, null);
-            //mDatabase.delete(mTableNames[TABLE_FORMDATA_ID], null, null);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
     }
 
     

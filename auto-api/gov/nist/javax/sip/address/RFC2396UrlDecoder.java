@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.address;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.UnsupportedEncodingException;
 
@@ -14,10 +14,11 @@ public class RFC2396UrlDecoder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.318 -0400", hash_original_method = "9568D8B70D3A77B07F9F9DE5F70834DD", hash_generated_method = "9568D8B70D3A77B07F9F9DE5F70834DD")
     public RFC2396UrlDecoder ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String decode(String uri) {
         StringBuffer translatedUri = new StringBuffer(uri.length());
         byte[] encodedchars = new byte[uri.length() / 3];

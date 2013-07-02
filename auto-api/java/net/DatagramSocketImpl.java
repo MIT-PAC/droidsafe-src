@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -22,8 +22,8 @@ public abstract class DatagramSocketImpl implements SocketOptions {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.136 -0400", hash_original_method = "36741B3348F3C30E5BB773EA210AEA7B", hash_generated_method = "BE9AB5AB91B36FA3C83AE715C819627B")
     public  DatagramSocketImpl() {
         localPort = -1;
-        // ---------- Original Method ----------
-        //localPort = -1;
+        
+        
     }
 
     
@@ -38,23 +38,23 @@ public abstract class DatagramSocketImpl implements SocketOptions {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.137 -0400", hash_original_method = "C1B4172ED9A628993584DE4384B8AF55", hash_generated_method = "E450D7FF55725A6AEDF2CB9E6DA6A28D")
     protected FileDescriptor getFileDescriptor() {
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_2128124717 = null; //Variable for return #1
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_2128124717 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2128124717 = fd;
-        varB4EAC82CA7396A68D541C85D26508E83_2128124717.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2128124717.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2128124717;
-        // ---------- Original Method ----------
-        //return fd;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.137 -0400", hash_original_method = "0E5E291FF84E111D5E99E4DCFA7BD180", hash_generated_method = "8FD9050DE0480D63444DDF261EF78351")
      InetAddress getLocalAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1216826811 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1216826811 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1216826811 = IoBridge.getSocketLocalAddress(fd);
-        varB4EAC82CA7396A68D541C85D26508E83_1216826811.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1216826811.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1216826811;
-        // ---------- Original Method ----------
-        //return IoBridge.getSocketLocalAddress(fd);
+        
+        
     }
 
     
@@ -62,8 +62,8 @@ public abstract class DatagramSocketImpl implements SocketOptions {
     protected int getLocalPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_158529451 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_158529451;
-        // ---------- Original Method ----------
-        //return localPort;
+        
+        
     }
 
     
@@ -108,13 +108,13 @@ protected abstract void setTTL(byte ttl) throws IOException;
     protected void connect(InetAddress inetAddr, int port) throws SocketException {
         addTaint(inetAddr.getTaint());
         addTaint(port);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.140 -0400", hash_original_method = "E948DE2D4A723F3312DB782756156847", hash_generated_method = "CD37B12F2AD777DD5DE0335AE279D597")
     protected void disconnect() {
-        // ---------- Original Method ----------
+        
     }
 
     

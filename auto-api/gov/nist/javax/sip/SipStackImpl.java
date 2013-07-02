@@ -1,11 +1,11 @@
 package gov.nist.javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.core.ServerLogger;
 import gov.nist.core.StackLogger;
@@ -102,13 +102,13 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
         this.eventScanner = new EventScanner(this);
         this.listeningPoints = new Hashtable<String, ListeningPointImpl>();
         this.sipProviders = new LinkedList<SipProviderImpl>();
-        // ---------- Original Method ----------
-        //NistSipMessageFactoryImpl msgFactory = new NistSipMessageFactoryImpl(
-				//this);
-        //super.setMessageFactory(msgFactory);
-        //this.eventScanner = new EventScanner(this);
-        //this.listeningPoints = new Hashtable<String, ListeningPointImpl>();
-        //this.sipProviders = new LinkedList<SipProviderImpl>();
+        
+        
+				
+        
+        
+        
+        
     }
 
     
@@ -121,12 +121,12 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
         {
             {
                 super.setHostAddress(address);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (java.net.UnknownHostException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new PeerUnavailableException("bad address " + address);
-        } //End block
+        } 
         String name = configurationProperties
 				.getProperty("javax.sip.STACK_NAME");
         if (DroidSafeAndroidRuntime.control) throw new PeerUnavailableException("stack name is missing");
@@ -144,7 +144,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
             StackLogger stackLogger = (StackLogger) cons.newInstance(args);
             stackLogger.setStackProperties(configurationProperties);
             super.setStackLogger(stackLogger);
-        } //End block
+        } 
         catch (InvocationTargetException ex1)
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
@@ -152,7 +152,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 								+ stackLoggerClassName
 								+ "- check that it is present on the classpath and that there is a no-args constructor defined",
 						ex1);
-        } //End block
+        } 
         catch (Exception ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
@@ -160,7 +160,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 								+ stackLoggerClassName
 								+ "- check that it is present on the classpath and that there is a no-args constructor defined",
 						ex);
-        } //End block
+        } 
         String serverLoggerClassName = configurationProperties
 				.getProperty("gov.nist.javax.sip.SERVER_LOGGER");
         serverLoggerClassName = "gov.nist.javax.sip.stack.ServerLog";
@@ -175,7 +175,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
             this.serverLogger = (ServerLogger) cons.newInstance(args);
             serverLogger.setSipStack(this);
             serverLogger.setStackProperties(configurationProperties);
-        } //End block
+        } 
         catch (InvocationTargetException ex1)
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
@@ -183,7 +183,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 								+ stackLoggerClassName
 								+ "- check that it is present on the classpath and that there is a no-args constructor defined",
 						ex1);
-        } //End block
+        } 
         catch (Exception ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
@@ -191,7 +191,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 								+ stackLoggerClassName
 								+ "- check that it is present on the classpath and that there is a no-args constructor defined",
 						ex);
-        } //End block
+        } 
         this.outboundProxy = configurationProperties
 				.getProperty("javax.sip.OUTBOUND_PROXY");
         this.defaultRouter = new DefaultRouter(this, outboundProxy);
@@ -210,7 +210,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
             args[1] = outboundProxy;
             Router router = (Router) cons.newInstance(args);
             super.setRouter(router);
-        } //End block
+        } 
         catch (InvocationTargetException ex1)
         {
             getStackLogger()
@@ -219,20 +219,20 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 							(Exception) ex1.getCause());
             if (DroidSafeAndroidRuntime.control) throw new PeerUnavailableException(
 					"Cound not instantiate router - check constructor", ex1);
-        } //End block
+        } 
         catch (Exception ex)
         {
             getStackLogger().logError("could not instantiate router",
 					(Exception) ex.getCause());
             if (DroidSafeAndroidRuntime.control) throw new PeerUnavailableException("Could not instantiate router",
 					ex);
-        } //End block
+        } 
         String useRouterForAll = configurationProperties
 				.getProperty("javax.sip.USE_ROUTER_FOR_ALL_URIS");
         this.useRouterForAll = true;
         {
             this.useRouterForAll = "true".equalsIgnoreCase(useRouterForAll);
-        } //End block
+        } 
         String extensionMethods = configurationProperties
 				.getProperty("javax.sip.EXTENSION_METHODS");
         {
@@ -252,10 +252,10 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
                         if (DroidSafeAndroidRuntime.control) throw new PeerUnavailableException("Bad extension method "
 							+ em);
                         this.addExtensionMethod(em);
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         String keyStoreFile = configurationProperties
 				.getProperty("javax.net.ssl.keyStore");
         String trustStoreFile = configurationProperties
@@ -263,7 +263,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
         {
             {
                 trustStoreFile = keyStoreFile;
-            } //End block
+            } 
             String keyStorePassword = configurationProperties
 					.getProperty("javax.net.ssl.keyStorePassword");
             try 
@@ -272,13 +272,13 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 						keyStoreFile, keyStorePassword.toCharArray(),
 						configurationProperties
 								.getProperty("javax.net.ssl.keyStoreType"));
-            } //End block
+            } 
             catch (Exception e1)
             {
                 getStackLogger().logError(
 						"could not instantiate SSL networking", e1);
-            } //End block
-        } //End block
+            } 
+        } 
         super.isAutomaticDialogSupportEnabled = configurationProperties
 				.getProperty("javax.sip.AUTOMATIC_DIALOG_SUPPORT", "on")
 				.equalsIgnoreCase("on");
@@ -287,7 +287,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 					.equals(Boolean.TRUE.toString());
         {
             super.isAutomaticDialogErrorHandlingEnabled = true;
-        } //End block
+        } 
         {
             boolean var1C3541C2E25E99D1D76736CA13213A2E_1467328893 = (configurationProperties
 				.getProperty("gov.nist.javax.sip.MAX_LISTENER_RESPONSE_TIME") != null);
@@ -297,11 +297,11 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 							.getProperty("gov.nist.javax.sip.MAX_LISTENER_RESPONSE_TIME"));
                 if (DroidSafeAndroidRuntime.control) throw new PeerUnavailableException(
 						"Bad configuration parameter gov.nist.javax.sip.MAX_LISTENER_RESPONSE_TIME : should be positive");
-            } //End block
+            } 
             {
                 super.maxListenerResponseTime = -1;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.deliverTerminatedEventForAck = configurationProperties
 				.getProperty(
 						"gov.nist.javax.sip.DELIVER_TERMINATED_EVENT_FOR_ACK",
@@ -318,9 +318,9 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
                 {
                     String nextEvent = st.nextToken();
                     this.forkedEvents.add(nextEvent);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         final String NETWORK_LAYER_KEY = "gov.nist.javax.sip.NETWORK_LAYER";
         {
             boolean varF258C0FAA8E1F85954E47A799F455F6E_430247571 = (configurationProperties.containsKey(NETWORK_LAYER_KEY));
@@ -332,15 +332,15 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
                     Class<?> clazz = Class.forName(path);
                     Constructor<?> c = clazz.getConstructor(new Class[0]);
                     networkLayer = (NetworkLayer) c.newInstance(new Object[0]);
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw new PeerUnavailableException(
 						"can't find or instantiate NetworkLayer implementation: "
 								+ path);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         final String ADDRESS_RESOLVER_KEY = "gov.nist.javax.sip.ADDRESS_RESOLVER";
         {
             boolean var886A0DD9CBB41591ABEEBB662D860AF3_877824847 = (configurationProperties.containsKey(ADDRESS_RESOLVER_KEY));
@@ -353,47 +353,47 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
                     Constructor<?> c = clazz.getConstructor(new Class[0]);
                     this.addressResolver = (AddressResolver) c
 						.newInstance(new Object[0]);
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw new PeerUnavailableException(
 						"can't find or instantiate AddressResolver implementation: "
 								+ path);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         String maxConnections = configurationProperties
 				.getProperty("gov.nist.javax.sip.MAX_CONNECTIONS");
         {
             try 
             {
                 this.maxConnections = new Integer(maxConnections).intValue();
-            } //End block
+            } 
             catch (NumberFormatException ex)
             {
                 {
                     boolean var31F413A3670DDB7C3047C6D6166E3CCF_2023973577 = (isLoggingEnabled());
                     getStackLogger().logError(
 						"max connections - bad value " + ex.getMessage());
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         String threadPoolSize = configurationProperties
 				.getProperty("gov.nist.javax.sip.THREAD_POOL_SIZE");
         {
             try 
             {
                 this.threadPoolSize = new Integer(threadPoolSize).intValue();
-            } //End block
+            } 
             catch (NumberFormatException ex)
             {
                 {
                     boolean var31F413A3670DDB7C3047C6D6166E3CCF_1784291241 = (isLoggingEnabled());
                     this.getStackLogger().logError(
 						"thread pool size - bad value " + ex.getMessage());
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         String serverTransactionTableSize = configurationProperties
 				.getProperty("gov.nist.javax.sip.MAX_SERVER_TRANSACTIONS");
         {
@@ -402,7 +402,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
                 this.serverTransactionTableHighwaterMark = new Integer(
 						serverTransactionTableSize).intValue();
                 this.serverTransactionTableLowaterMark = this.serverTransactionTableHighwaterMark * 80 / 100;
-            } //End block
+            } 
             catch (NumberFormatException ex)
             {
                 {
@@ -411,12 +411,12 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 						.logError(
 								"transaction table size - bad value "
 										+ ex.getMessage());
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             this.unlimitedServerTransactionTableSize = true;
-        } //End block
+        } 
         String clientTransactionTableSize = configurationProperties
 				.getProperty("gov.nist.javax.sip.MAX_CLIENT_TRANSACTIONS");
         {
@@ -425,7 +425,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
                 this.clientTransactionTableHiwaterMark = new Integer(
 						clientTransactionTableSize).intValue();
                 this.clientTransactionTableLowaterMark = this.clientTransactionTableLowaterMark * 80 / 100;
-            } //End block
+            } 
             catch (NumberFormatException ex)
             {
                 {
@@ -434,12 +434,12 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 						.logError(
 								"transaction table size - bad value "
 										+ ex.getMessage());
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             this.unlimitedClientTransactionTableSize = true;
-        } //End block
+        } 
         super.cacheServerConnections = true;
         String flag = configurationProperties
 				.getProperty("gov.nist.javax.sip.CACHE_SERVER_CONNECTIONS");
@@ -447,8 +447,8 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
             boolean var62D017072D65FD1D09DBD7F6061DE1CE_451957681 = (flag != null && "false".equalsIgnoreCase(flag.trim()));
             {
                 super.cacheServerConnections = false;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         super.cacheClientConnections = true;
         String cacheflag = configurationProperties
 				.getProperty("gov.nist.javax.sip.CACHE_CLIENT_CONNECTIONS");
@@ -456,8 +456,8 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
             boolean var5C60FBB93A7763124F4B58FC1DB64B9C_511771354 = (cacheflag != null && "false".equalsIgnoreCase(cacheflag.trim()));
             {
                 super.cacheClientConnections = false;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String readTimeout = configurationProperties
 				.getProperty("gov.nist.javax.sip.READ_TIMEOUT");
         {
@@ -466,19 +466,19 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
                 int rt = Integer.parseInt(readTimeout);
                 {
                     super.readTimeout = rt;
-                } //End block
+                } 
                 {
                     System.err.println("Value too low " + readTimeout);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (NumberFormatException nfe)
             {
                 {
                     boolean var31F413A3670DDB7C3047C6D6166E3CCF_1554621331 = (isLoggingEnabled());
                     getStackLogger().logError("Bad read timeout " + readTimeout);
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         String stunAddr = configurationProperties
 				.getProperty("gov.nist.javax.sip.STUN_SERVER");
         this.getStackLogger().logWarning(
@@ -491,19 +491,19 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
             {
                 super.maxMessageSize = new Integer(maxMsgSize).intValue();
                 super.maxMessageSize = 4096;
-            } //End block
+            } 
             {
                 super.maxMessageSize = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (NumberFormatException ex)
         {
             {
                 boolean var3AA2E1654FE39F4FB102DBD7DEE5C388_1990095697 = (isLoggingEnabled());
                 getStackLogger().logError(
 					"maxMessageSize - bad value " + ex.getMessage());
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         String rel = configurationProperties
 				.getProperty("gov.nist.javax.sip.REENTRANT_LISTENER");
         this.reEntrantListener = (rel != null && "true".equalsIgnoreCase(rel));
@@ -514,7 +514,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
             {
                 getThreadAuditor().setPingIntervalInMillisecs(
 						Long.valueOf(interval).longValue() / 2);
-            } //End block
+            } 
             catch (NumberFormatException ex)
             {
                 {
@@ -522,9 +522,9 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
                     getStackLogger().logError(
 						"THREAD_AUDIT_INTERVAL_IN_MILLISECS - bad value ["
 								+ interval + "] " + ex.getMessage());
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         this
 				.setNon2XXAckPassedToListener(Boolean
 						.valueOf(
@@ -545,7 +545,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
                 Constructor<?> c = clazz.getConstructor(new Class[0]);
                 this.logRecordFactory = (LogRecordFactory) c
 						.newInstance(new Object[0]);
-            } //End block
+            } 
             catch (Exception ex)
             {
                 {
@@ -553,13 +553,13 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
                     getStackLogger()
 						.logError(
 								"Bad configuration value for LOG_FACTORY -- using default logger");
-                } //End collapsed parenthetic
+                } 
                 this.logRecordFactory = new DefaultMessageLogFactory();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             this.logRecordFactory = new DefaultMessageLogFactory();
-        } //End block
+        } 
         boolean computeContentLength = configurationProperties.getProperty(
 				"gov.nist.javax.sip.COMPUTE_CONTENT_LENGTH_FROM_MESSAGE_BODY",
 				"false").equalsIgnoreCase("true");
@@ -575,10 +575,10 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
                 boolean varA9BBA9119DD90070115272E6F9D4D419_1750603143 = (st.hasMoreTokens());
                 {
                     protocols[i++] = st.nextToken();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             this.enabledProtocols = protocols;
-        } //End block
+        } 
         super.rfc2543Supported = configurationProperties.getProperty(
 				"gov.nist.javax.sip.RFC_2543_SUPPORT_ENABLED", "true")
 				.equalsIgnoreCase("true");
@@ -593,7 +593,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
             boolean var53869E3A88D96F4415B2EAEAC904AA86_2108698630 = (isLoggingEnabled());
             getStackLogger().logDebug(
 				"created Sip stack. Properties = " + configurationProperties);
-        } //End collapsed parenthetic
+        } 
         InputStream in = getClass().getResourceAsStream("/TIMESTAMP");
         {
             BufferedReader streamReader = new BufferedReader(
@@ -603,14 +603,14 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
                 String buildTimeStamp = streamReader.readLine();
                 {
                     in.close();
-                } //End block
+                } 
                 getStackLogger().setBuildTimeStamp(buildTimeStamp);
-            } //End block
+            } 
             catch (IOException ex)
             {
                 getStackLogger().logError("Could not open build timestamp.");
-            } //End block
-        } //End block
+            } 
+        } 
         String bufferSize = configurationProperties.getProperty(
 				"gov.nist.javax.sip.RECEIVE_UDP_BUFFER_SIZE", MAX_DATAGRAM_SIZE
 						.toString());
@@ -637,11 +637,12 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 		        Boolean.FALSE.toString())));
         super.maxForkTime = Integer.parseInt(
 		        configurationProperties.getProperty("gov.nist.javax.sip.MAX_FORK_TIME_SECONDS","0"));
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.006 -0400", hash_original_method = "4F314CDF94BE73A82A3392DB747CDD4B", hash_generated_method = "8970D290BC5634C680040A422CAB7B77")
     private void reInitialize() {
         super.reInit();
@@ -649,12 +650,12 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
         this.listeningPoints = new Hashtable<String, ListeningPointImpl>();
         this.sipProviders = new LinkedList<SipProviderImpl>();
         this.sipListener = null;
-        // ---------- Original Method ----------
-        //super.reInit();
-        //this.eventScanner = new EventScanner(this);
-        //this.listeningPoints = new Hashtable<String, ListeningPointImpl>();
-        //this.sipProviders = new LinkedList<SipProviderImpl>();
-        //this.sipListener = null;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -662,23 +663,24 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
      boolean isAutomaticDialogSupportEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1226970552 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1226970552;
-        // ---------- Original Method ----------
-        //return super.isAutomaticDialogSupportEnabled;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.007 -0400", hash_original_method = "20194A28F7CD206898B50945BA95F1CA", hash_generated_method = "52C97510CC0136503A5C828D2E87C9D6")
     public synchronized ListeningPoint createListeningPoint(String address,
 			int port, String transport) throws TransportNotSupportedException,
 			InvalidArgumentException {
-        ListeningPoint varB4EAC82CA7396A68D541C85D26508E83_725923256 = null; //Variable for return #1
-        ListeningPoint varB4EAC82CA7396A68D541C85D26508E83_1399950834 = null; //Variable for return #2
+        ListeningPoint varB4EAC82CA7396A68D541C85D26508E83_725923256 = null; 
+        ListeningPoint varB4EAC82CA7396A68D541C85D26508E83_1399950834 = null; 
         {
             boolean var53869E3A88D96F4415B2EAEAC904AA86_990772077 = (isLoggingEnabled());
             getStackLogger().logDebug(
 				"createListeningPoint : address = " + address + " port = "
 						+ port + " transport = " + transport);
-        } //End collapsed parenthetic
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
 					"Address for listening point is null!");
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null transport");
@@ -690,19 +692,19 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 				&& !transport.equalsIgnoreCase("SCTP"));
             if (DroidSafeAndroidRuntime.control) throw new TransportNotSupportedException("bad transport "
 					+ transport);
-        } //End collapsed parenthetic
+        } 
         {
             boolean var77293F5E778B02817B1FCCDD8603CFF1_197607817 = (!this.isAlive());
             {
                 this.toExit = false;
                 this.reInitialize();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String key = ListeningPointImpl.makeKey(address, port, transport);
         ListeningPointImpl lip = (ListeningPointImpl) listeningPoints.get(key);
         {
             varB4EAC82CA7396A68D541C85D26508E83_725923256 = lip;
-        } //End block
+        } 
         {
             try 
             {
@@ -716,15 +718,15 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 							"Created Message Processor: " + address
 									+ " port = " + port + " transport = "
 									+ transport);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 lip = new ListeningPointImpl(this, port, transport);
                 lip.messageProcessor = messageProcessor;
                 messageProcessor.setListeningPoint(lip);
                 this.listeningPoints.put(key, lip);
                 messageProcessor.start();
                 varB4EAC82CA7396A68D541C85D26508E83_1399950834 = (ListeningPoint) lip;
-            } //End block
+            } 
             catch (java.io.IOException ex)
             {
                 {
@@ -732,38 +734,39 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
                     getStackLogger().logError(
 						"Invalid argument address = " + address + " port = "
 								+ port + " transport = " + transport);
-                } //End collapsed parenthetic
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException(ex.getMessage(), ex);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(address.getTaint());
         addTaint(port);
         addTaint(transport.getTaint());
-        ListeningPoint varA7E53CE21691AB073D9660D615818899_1945251141; //Final return value
+        ListeningPoint varA7E53CE21691AB073D9660D615818899_1945251141; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1945251141 = varB4EAC82CA7396A68D541C85D26508E83_725923256;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1945251141 = varB4EAC82CA7396A68D541C85D26508E83_1399950834;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1945251141.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1945251141.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1945251141;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.008 -0400", hash_original_method = "BBB69BC5565AF0A227A798564DF93404", hash_generated_method = "B29777EFDCF8DDD141402C4520DEC959")
     public SipProvider createSipProvider(ListeningPoint listeningPoint) throws ObjectInUseException {
-        SipProvider varB4EAC82CA7396A68D541C85D26508E83_1317245184 = null; //Variable for return #1
+        SipProvider varB4EAC82CA7396A68D541C85D26508E83_1317245184 = null; 
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null listeningPoint");
         {
             boolean var3D7F860628E378FC3C92E3EDB5A5C1DB_1620889294 = (this.isLoggingEnabled());
             this.getStackLogger().logDebug(
 					"createSipProvider: " + listeningPoint);
-        } //End collapsed parenthetic
+        } 
         ListeningPointImpl listeningPointImpl = (ListeningPointImpl) listeningPoint;
         if (DroidSafeAndroidRuntime.control) throw new ObjectInUseException("Provider already attached!");
         SipProviderImpl provider = new SipProviderImpl(this);
@@ -772,25 +775,26 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
         this.sipProviders.add(provider);
         varB4EAC82CA7396A68D541C85D26508E83_1317245184 = provider;
         addTaint(listeningPoint.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1317245184.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1317245184.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1317245184;
-        // ---------- Original Method ----------
-        //if (listeningPoint == null)
-			//throw new NullPointerException("null listeningPoint");
-        //if (this.isLoggingEnabled())
-			//this.getStackLogger().logDebug(
-					//"createSipProvider: " + listeningPoint);
-        //ListeningPointImpl listeningPointImpl = (ListeningPointImpl) listeningPoint;
-        //if (listeningPointImpl.sipProvider != null)
-			//throw new ObjectInUseException("Provider already attached!");
-        //SipProviderImpl provider = new SipProviderImpl(this);
-        //provider.setListeningPoint(listeningPointImpl);
-        //listeningPointImpl.sipProvider = provider;
-        //this.sipProviders.add(provider);
-        //return provider;
+        
+        
+			
+        
+			
+					
+        
+        
+			
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.008 -0400", hash_original_method = "A92DFE7C9B9D7EE522B2B525B8C69A65", hash_generated_method = "242DD40FB2C4F6EB31DCF011D4821E29")
     public void deleteListeningPoint(ListeningPoint listeningPoint) throws ObjectInUseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null listeningPoint arg");
@@ -799,16 +803,17 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
         String key = lip.getKey();
         this.listeningPoints.remove(key);
         addTaint(listeningPoint.getTaint());
-        // ---------- Original Method ----------
-        //if (listeningPoint == null)
-			//throw new NullPointerException("null listeningPoint arg");
-        //ListeningPointImpl lip = (ListeningPointImpl) listeningPoint;
-        //super.removeMessageProcessor(lip.messageProcessor);
-        //String key = lip.getKey();
-        //this.listeningPoints.remove(key);
+        
+        
+			
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.009 -0400", hash_original_method = "0933EE30851621D7E3F65B407D39A5B8", hash_generated_method = "F5DE79122DD497F8379A4765DC5DEDF3")
     public void deleteSipProvider(SipProvider sipProvider) throws ObjectInUseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null provider arg");
@@ -818,8 +823,8 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
             {
                 if (DroidSafeAndroidRuntime.control) throw new ObjectInUseException(
 					"SipProvider still has an associated SipListener!");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         sipProviderImpl.removeListeningPoints();
         sipProviderImpl.stop();
         sipProviders.remove(sipProvider);
@@ -827,45 +832,46 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
             boolean varC8D7C599E8FF3D1091C8CDC607D82580_1676039272 = (sipProviders.isEmpty());
             {
                 this.stopStack();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(sipProvider.getTaint());
-        // ---------- Original Method ----------
-        //if (sipProvider == null)
-			//throw new NullPointerException("null provider arg");
-        //SipProviderImpl sipProviderImpl = (SipProviderImpl) sipProvider;
-        //if (sipProviderImpl.getSipListener() != null) {
-			//throw new ObjectInUseException(
-					//"SipProvider still has an associated SipListener!");
-		//}
-        //sipProviderImpl.removeListeningPoints();
-        //sipProviderImpl.stop();
-        //sipProviders.remove(sipProvider);
-        //if (sipProviders.isEmpty()) {
-			//this.stopStack();
-		//}
+        
+        
+			
+        
+        
+			
+					
+		
+        
+        
+        
+        
+			
+		
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.009 -0400", hash_original_method = "81685A4D06B7F9B5E6CCB2DE2C1BD9F0", hash_generated_method = "671E4C934E872BCA7FEF74EFBD011F76")
     public String getIPAddress() {
-        String varB4EAC82CA7396A68D541C85D26508E83_879614913 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_879614913 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_879614913 = super.getHostAddress();
-        varB4EAC82CA7396A68D541C85D26508E83_879614913.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_879614913.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_879614913;
-        // ---------- Original Method ----------
-        //return super.getHostAddress();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.010 -0400", hash_original_method = "287349EDD4D46CE4DB7C5F6D8E2D772E", hash_generated_method = "79646B574DF103EFDCDD72E2569246FA")
     public java.util.Iterator getListeningPoints() {
-        java.util.Iterator varB4EAC82CA7396A68D541C85D26508E83_1825245872 = null; //Variable for return #1
+        java.util.Iterator varB4EAC82CA7396A68D541C85D26508E83_1825245872 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1825245872 = this.listeningPoints.values().iterator();
-        varB4EAC82CA7396A68D541C85D26508E83_1825245872.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1825245872.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1825245872;
-        // ---------- Original Method ----------
-        //return this.listeningPoints.values().iterator();
+        
+        
     }
 
     
@@ -873,194 +879,200 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     public boolean isRetransmissionFilterActive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_345140295 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_345140295;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.010 -0400", hash_original_method = "88A6DC9DED9CE5F7635E348CD4A3C5F8", hash_generated_method = "0D37A2D3A22BAB3D1279C5DDD80BF792")
     public java.util.Iterator<SipProviderImpl> getSipProviders() {
-        java.util.Iterator<SipProviderImpl> varB4EAC82CA7396A68D541C85D26508E83_322421843 = null; //Variable for return #1
+        java.util.Iterator<SipProviderImpl> varB4EAC82CA7396A68D541C85D26508E83_322421843 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_322421843 = this.sipProviders.iterator();
-        varB4EAC82CA7396A68D541C85D26508E83_322421843.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_322421843.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_322421843;
-        // ---------- Original Method ----------
-        //return this.sipProviders.iterator();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.011 -0400", hash_original_method = "98CDA556C50A8E057D89E8EADBB5B35E", hash_generated_method = "BE796237B61AB11826ADD34248C4D4A7")
     public String getStackName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_159206260 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_159206260 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_159206260 = this.stackName;
-        varB4EAC82CA7396A68D541C85D26508E83_159206260.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_159206260.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_159206260;
-        // ---------- Original Method ----------
-        //return this.stackName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.011 -0400", hash_original_method = "E5E5510E122401D8059641DFB570004B", hash_generated_method = "4F65158BCEAB41157A8538BE408747AF")
     protected void finalize() {
         this.stopStack();
-        // ---------- Original Method ----------
-        //this.stopStack();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.012 -0400", hash_original_method = "E9BAFB829F6434607FADA475E44C9773", hash_generated_method = "A23DE73F56ED3E13611C41374F4B437B")
     public ListeningPoint createListeningPoint(int port, String transport) throws TransportNotSupportedException, InvalidArgumentException {
-        ListeningPoint varB4EAC82CA7396A68D541C85D26508E83_1833494621 = null; //Variable for return #1
+        ListeningPoint varB4EAC82CA7396A68D541C85D26508E83_1833494621 = null; 
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
 					"Stack does not have a default IP Address!");
         varB4EAC82CA7396A68D541C85D26508E83_1833494621 = this.createListeningPoint(super.stackAddress, port, transport);
         addTaint(port);
         addTaint(transport.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1833494621.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1833494621.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1833494621;
-        // ---------- Original Method ----------
-        //if (super.stackAddress == null)
-			//throw new NullPointerException(
-					//"Stack does not have a default IP Address!");
-        //return this.createListeningPoint(super.stackAddress, port, transport);
+        
+        
+			
+					
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.013 -0400", hash_original_method = "8379090E51BF18D65A472A61653181B8", hash_generated_method = "6A6A995BD3D843B40CFECFFBBCCFAFA0")
     public void stop() {
         {
             boolean var53869E3A88D96F4415B2EAEAC904AA86_1284550409 = (isLoggingEnabled());
             {
                 getStackLogger().logDebug("stopStack -- stoppping the stack");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.stopStack();
         this.sipProviders = new LinkedList<SipProviderImpl>();
         this.listeningPoints = new Hashtable<String, ListeningPointImpl>();
         this.eventScanner.forceStop();
         this.eventScanner = null;
-        // ---------- Original Method ----------
-        //if (isLoggingEnabled()) {
-			//getStackLogger().logDebug("stopStack -- stoppping the stack");
-		//}
-        //this.stopStack();
-        //this.sipProviders = new LinkedList<SipProviderImpl>();
-        //this.listeningPoints = new Hashtable<String, ListeningPointImpl>();
-        //if (this.eventScanner != null)
-			//this.eventScanner.forceStop();
-        //this.eventScanner = null;
+        
+        
+			
+		
+        
+        
+        
+        
+			
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.013 -0400", hash_original_method = "64980175D45C88025DB0BF7ED31DD55C", hash_generated_method = "66A76CF67CCD26E199C0BC50C8ED70B6")
     public void start() throws ProviderDoesNotExistException, SipException {
         {
             this.eventScanner = new EventScanner(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.eventScanner == null) {
-			//this.eventScanner = new EventScanner(this);
-		//}
+        } 
+        
+        
+			
+		
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.014 -0400", hash_original_method = "007AB23FB90DEFAA901334391BCA8574", hash_generated_method = "32DFA3A2C8407BC6AF990736A11A7D35")
     public SipListener getSipListener() {
-        SipListener varB4EAC82CA7396A68D541C85D26508E83_318573002 = null; //Variable for return #1
+        SipListener varB4EAC82CA7396A68D541C85D26508E83_318573002 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_318573002 = this.sipListener;
-        varB4EAC82CA7396A68D541C85D26508E83_318573002.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_318573002.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_318573002;
-        // ---------- Original Method ----------
-        //return this.sipListener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.014 -0400", hash_original_method = "41341CEB98E5DA012DCAACB9910CCA31", hash_generated_method = "B23B6FD6389726F40148A30D2321BBCA")
     public LogRecordFactory getLogRecordFactory() {
-        LogRecordFactory varB4EAC82CA7396A68D541C85D26508E83_1518828465 = null; //Variable for return #1
+        LogRecordFactory varB4EAC82CA7396A68D541C85D26508E83_1518828465 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1518828465 = super.logRecordFactory;
-        varB4EAC82CA7396A68D541C85D26508E83_1518828465.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1518828465.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1518828465;
-        // ---------- Original Method ----------
-        //return super.logRecordFactory;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.014 -0400", hash_original_method = "DD6917F16C5DC825A79D8F74525C77AA", hash_generated_method = "EC0D82D717281AF44D905CDE0BE8A54E")
     @Deprecated
     public EventScanner getEventScanner() {
-        EventScanner varB4EAC82CA7396A68D541C85D26508E83_677870536 = null; //Variable for return #1
+        EventScanner varB4EAC82CA7396A68D541C85D26508E83_677870536 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_677870536 = eventScanner;
-        varB4EAC82CA7396A68D541C85D26508E83_677870536.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_677870536.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_677870536;
-        // ---------- Original Method ----------
-        //return eventScanner;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.015 -0400", hash_original_method = "DDBB9B823124CA2B241AC7D56A934729", hash_generated_method = "66B0E669B3EBB706E1AF7F86F7E4C365")
     public AuthenticationHelper getAuthenticationHelper(
 			AccountManager accountManager, HeaderFactory headerFactory) {
-        AuthenticationHelper varB4EAC82CA7396A68D541C85D26508E83_1177474625 = null; //Variable for return #1
+        AuthenticationHelper varB4EAC82CA7396A68D541C85D26508E83_1177474625 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1177474625 = new AuthenticationHelperImpl(this, accountManager, headerFactory);
         addTaint(accountManager.getTaint());
         addTaint(headerFactory.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1177474625.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1177474625.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1177474625;
-        // ---------- Original Method ----------
-        //return new AuthenticationHelperImpl(this, accountManager, headerFactory);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.016 -0400", hash_original_method = "9BC4A63758F96D1DFC890C8072E9A8F9", hash_generated_method = "E2A8CCD771189AF61F226F471447E59D")
     public AuthenticationHelper getSecureAuthenticationHelper(
 			SecureAccountManager accountManager, HeaderFactory headerFactory) {
-        AuthenticationHelper varB4EAC82CA7396A68D541C85D26508E83_258344022 = null; //Variable for return #1
+        AuthenticationHelper varB4EAC82CA7396A68D541C85D26508E83_258344022 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_258344022 = new AuthenticationHelperImpl(this, accountManager, headerFactory);
         addTaint(accountManager.getTaint());
         addTaint(headerFactory.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_258344022.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_258344022.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_258344022;
-        // ---------- Original Method ----------
-        //return new AuthenticationHelperImpl(this, accountManager, headerFactory);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.016 -0400", hash_original_method = "23CB36659469F37B2B1A4E89C6C5A109", hash_generated_method = "EEF876C7AA37CA82F9A54624D848F42A")
     public void setEnabledCipherSuites(String[] newCipherSuites) {
         cipherSuites = newCipherSuites;
-        // ---------- Original Method ----------
-        //cipherSuites = newCipherSuites;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.017 -0400", hash_original_method = "15C35F67057574B0384681051DA88AFD", hash_generated_method = "E3A8A09491B24509780FCB84717941D4")
     public String[] getEnabledCipherSuites() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1713122065 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1713122065 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1713122065 = cipherSuites;
-        varB4EAC82CA7396A68D541C85D26508E83_1713122065.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1713122065.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1713122065;
-        // ---------- Original Method ----------
-        //return cipherSuites;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.018 -0400", hash_original_method = "146720FA6D9E688CD139244E691C1622", hash_generated_method = "367AACC0BB535AEDE0F21EE0BE1604FA")
     public void setEnabledProtocols(String[] newProtocols) {
         enabledProtocols = newProtocols;
-        // ---------- Original Method ----------
-        //enabledProtocols = newProtocols;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.021 -0400", hash_original_method = "36B040AE4C1B32E20301E5CF570A7C53", hash_generated_method = "D4BF67CAAB7DD2572AC64211035654F4")
     public String[] getEnabledProtocols() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_595502972 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_595502972 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_595502972 = enabledProtocols;
-        varB4EAC82CA7396A68D541C85D26508E83_595502972.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_595502972.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_595502972;
-        // ---------- Original Method ----------
-        //return enabledProtocols;
+        
+        
     }
 
     
@@ -1068,8 +1080,8 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     public void setIsBackToBackUserAgent(boolean flag) {
         super.isBackToBackUserAgent = flag;
         addTaint(flag);
-        // ---------- Original Method ----------
-        //super.isBackToBackUserAgent = flag;
+        
+        
     }
 
     
@@ -1077,8 +1089,8 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     public boolean isBackToBackUserAgent() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2082214435 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2082214435;
-        // ---------- Original Method ----------
-        //return super.isBackToBackUserAgent;
+        
+        
     }
 
     
@@ -1086,35 +1098,37 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     public boolean isAutomaticDialogErrorHandlingEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1663982792 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1663982792;
-        // ---------- Original Method ----------
-        //return super.isAutomaticDialogErrorHandlingEnabled;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.025 -0400", hash_original_method = "1CDF5A6FEBA76AB1A61A70742324066C", hash_generated_method = "E22EBB38C88902561FC85A582C9E340B")
     public boolean acquireSem() {
         try 
         {
             boolean var6CD91398C6667EFBFA92956988AFCF80_1410270279 = (this.stackSemaphore.tryAcquire(10, TimeUnit.SECONDS));
-        } //End block
+        } 
         catch (InterruptedException ex)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2008737483 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2008737483;
-        // ---------- Original Method ----------
-        //try {
-            //return this.stackSemaphore.tryAcquire(10, TimeUnit.SECONDS);
-        //} catch ( InterruptedException ex) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.025 -0400", hash_original_method = "2B4EDB484E691FD8761CF130C9353BAF", hash_generated_method = "ABCF4EEA47ACCF6FD64218E3A8D948F5")
     public void releaseSem() {
         this.stackSemaphore.release();
-        // ---------- Original Method ----------
-        //this.stackSemaphore.release();
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.net.ssl.SSLSession;
 
@@ -17,35 +17,36 @@ public class ServerSessionContext extends AbstractSessionContext {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.302 -0400", hash_original_method = "9FA739694DBACEAA071D2AEDBA51A05E", hash_generated_method = "519FB45F9A385F0AC73A51E91875A433")
     public  ServerSessionContext() {
         super(100, 0);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.303 -0400", hash_original_method = "72569EA6711DBA1D81D9BBC862AD3D03", hash_generated_method = "98DC823E6DF5392957E496FAD00FA2DE")
     public void setPersistentCache(SSLServerSessionCache persistentCache) {
         this.persistentCache = persistentCache;
-        // ---------- Original Method ----------
-        //this.persistentCache = persistentCache;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.303 -0400", hash_original_method = "D4D4D8A9ED5E99BC7DD197F41DEEDD43", hash_generated_method = "16DEE84B347D7E24654B9D4FF767833A")
     protected void sessionRemoved(SSLSession session) {
         addTaint(session.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.304 -0400", hash_original_method = "B67FD63429286D10E1FBB2A9ED634511", hash_generated_method = "C98EF8731D2A286D633F7064649BBD36")
     @Override
     public SSLSession getSession(byte[] sessionId) {
-        SSLSession varB4EAC82CA7396A68D541C85D26508E83_1228860890 = null; //Variable for return #1
-        SSLSession varB4EAC82CA7396A68D541C85D26508E83_1847490628 = null; //Variable for return #2
-        SSLSession varB4EAC82CA7396A68D541C85D26508E83_1160805242 = null; //Variable for return #3
+        SSLSession varB4EAC82CA7396A68D541C85D26508E83_1228860890 = null; 
+        SSLSession varB4EAC82CA7396A68D541C85D26508E83_1847490628 = null; 
+        SSLSession varB4EAC82CA7396A68D541C85D26508E83_1160805242 = null; 
         SSLSession session = super.getSession(sessionId);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1228860890 = session;
-        } //End block
+        } 
         {
             byte[] data = persistentCache.getSessionData(sessionId);
             {
@@ -55,42 +56,42 @@ public class ServerSessionContext extends AbstractSessionContext {
                     {
                         super.putSession(session);
                         varB4EAC82CA7396A68D541C85D26508E83_1847490628 = session;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1160805242 = null;
         addTaint(sessionId[0]);
-        SSLSession varA7E53CE21691AB073D9660D615818899_176990289; //Final return value
+        SSLSession varA7E53CE21691AB073D9660D615818899_176990289; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_176990289 = varB4EAC82CA7396A68D541C85D26508E83_1228860890;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_176990289 = varB4EAC82CA7396A68D541C85D26508E83_1847490628;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_176990289 = varB4EAC82CA7396A68D541C85D26508E83_1160805242;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_176990289.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_176990289.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_176990289;
-        // ---------- Original Method ----------
-        //SSLSession session = super.getSession(sessionId);
-        //if (session != null) {
-            //return session;
-        //}
-        //if (persistentCache != null) {
-            //byte[] data = persistentCache.getSessionData(sessionId);
-            //if (data != null) {
-                //session = toSession(data, null, -1);
-                //if (session != null && session.isValid()) {
-                    //super.putSession(session);
-                    //return session;
-                //}
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
+            
+            
+                
+                
+                    
+                    
+                
+            
+        
+        
     }
 
     
@@ -102,17 +103,17 @@ public class ServerSessionContext extends AbstractSessionContext {
             byte[] data = toBytes(session);
             {
                 persistentCache.putSessionData(session, data);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(session.getTaint());
-        // ---------- Original Method ----------
-        //super.putSession(session);
-        //if (persistentCache != null) {
-            //byte[] data = toBytes(session);
-            //if (data != null) {
-                //persistentCache.putSessionData(session, data);
-            //}
-        //}
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     

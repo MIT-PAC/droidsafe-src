@@ -1,11 +1,11 @@
 package org.bouncycastle.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.util.Strings;
 
@@ -22,7 +22,7 @@ public abstract class PBEParametersGenerator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.566 -0400", hash_original_method = "1EFCFCAED54D10FE929FE2EAEA704D32", hash_generated_method = "3C2B98B5AB2577359A7BA81A6CF7EC83")
     protected  PBEParametersGenerator() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,10 +34,10 @@ public abstract class PBEParametersGenerator {
         this.password = password;
         this.salt = salt;
         this.iterationCount = iterationCount;
-        // ---------- Original Method ----------
-        //this.password = password;
-        //this.salt = salt;
-        //this.iterationCount = iterationCount;
+        
+        
+        
+        
     }
 
     
@@ -45,8 +45,8 @@ public abstract class PBEParametersGenerator {
     public byte[] getPassword() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_113277090 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_113277090;
-        // ---------- Original Method ----------
-        //return password;
+        
+        
     }
 
     
@@ -54,8 +54,8 @@ public abstract class PBEParametersGenerator {
     public byte[] getSalt() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_238604180 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_238604180;
-        // ---------- Original Method ----------
-        //return salt;
+        
+        
     }
 
     
@@ -63,8 +63,8 @@ public abstract class PBEParametersGenerator {
     public int getIterationCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_314119425 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_314119425;
-        // ---------- Original Method ----------
-        //return iterationCount;
+        
+        
     }
 
     
@@ -88,6 +88,7 @@ public abstract class PBEParametersGenerator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] PKCS5PasswordToUTF8Bytes(
         char[]  password) {
         return Strings.toUTF8ByteArray(password);

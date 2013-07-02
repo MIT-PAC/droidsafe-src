@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,10 +27,11 @@ public class Xml {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.782 -0400", hash_original_method = "6C88D7BAFDCBAE4F23C5F1A45165C3FD", hash_generated_method = "2C6DE3496EE724680E95E9E6CED96C9B")
     public  Xml() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void parse(String xml, ContentHandler contentHandler) throws SAXException {
         try {
             XMLReader reader = new ExpatReader();
@@ -42,6 +43,7 @@ public class Xml {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void parse(Reader in, ContentHandler contentHandler) throws IOException, SAXException {
         XMLReader reader = new ExpatReader();
         reader.setContentHandler(contentHandler);
@@ -49,6 +51,7 @@ public class Xml {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void parse(InputStream in, Encoding encoding,
             ContentHandler contentHandler) throws IOException, SAXException {
         XMLReader reader = new ExpatReader();
@@ -59,6 +62,7 @@ public class Xml {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static XmlPullParser newPullParser() {
         try {
             KXmlParser parser = new KXmlParser();
@@ -71,6 +75,7 @@ public class Xml {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static XmlSerializer newSerializer() {
         try {
             return XmlSerializerFactory.instance.newSerializer();
@@ -80,6 +85,7 @@ public class Xml {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Encoding findEncodingByName(String encodingName) throws UnsupportedEncodingException {
         if (encodingName == null) {
             return Encoding.UTF_8;
@@ -92,6 +98,7 @@ public class Xml {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AttributeSet asAttributeSet(XmlPullParser parser) {
         return (parser instanceof AttributeSet)
                 ? (AttributeSet) parser
@@ -104,7 +111,7 @@ public class Xml {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.783 -0400", hash_original_method = "C9EFF15750F86CC83530A41F4DEECEE2", hash_generated_method = "C9EFF15750F86CC83530A41F4DEECEE2")
         public XmlSerializerFactory ()
         {
-            //Synthesized constructor
+            
         }
 
 

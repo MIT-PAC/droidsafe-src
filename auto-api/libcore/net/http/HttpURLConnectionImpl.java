@@ -1,11 +1,11 @@
 package libcore.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -52,8 +52,8 @@ class HttpURLConnectionImpl extends HttpURLConnection {
         super(url);
         defaultPort = port;
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //defaultPort = port;
+        
+        
     }
 
     
@@ -63,8 +63,8 @@ class HttpURLConnectionImpl extends HttpURLConnection {
         this.proxy = proxy;
         addTaint(url.getTaint());
         addTaint(port);
-        // ---------- Original Method ----------
-        //this.proxy = proxy;
+        
+        
     }
 
     
@@ -75,20 +75,20 @@ class HttpURLConnectionImpl extends HttpURLConnection {
         try 
         {
             httpEngine.sendRequest();
-        } //End block
+        } 
         catch (IOException e)
         {
             httpEngineFailure = e;
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
-        // ---------- Original Method ----------
-        //initHttpEngine();
-        //try {
-            //httpEngine.sendRequest();
-        //} catch (IOException e) {
-            //httpEngineFailure = e;
-            //throw e;
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -97,20 +97,20 @@ class HttpURLConnectionImpl extends HttpURLConnection {
     public final void disconnect() {
         {
             httpEngine.release(false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (httpEngine != null) {
-            //httpEngine.release(false);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.130 -0400", hash_original_method = "1368F0D99A95C3E16EFCFEF5107A78C1", hash_generated_method = "DA2AAE183B5F290FE0C09E7ED2940DCA")
     @Override
     public final InputStream getErrorStream() {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_33740445 = null; //Variable for return #1
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_98823714 = null; //Variable for return #2
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_31071283 = null; //Variable for return #3
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_33740445 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_98823714 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_31071283 = null; 
         try 
         {
             HttpEngine response = getResponse();
@@ -119,299 +119,301 @@ class HttpURLConnectionImpl extends HttpURLConnection {
                     && response.getResponseCode() >= HTTP_BAD_REQUEST);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_33740445 = response.getResponseBody();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_98823714 = null;
-        } //End block
+        } 
         catch (IOException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_31071283 = null;
-        } //End block
-        InputStream varA7E53CE21691AB073D9660D615818899_1869625062; //Final return value
+        } 
+        InputStream varA7E53CE21691AB073D9660D615818899_1869625062; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1869625062 = varB4EAC82CA7396A68D541C85D26508E83_33740445;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1869625062 = varB4EAC82CA7396A68D541C85D26508E83_98823714;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1869625062 = varB4EAC82CA7396A68D541C85D26508E83_31071283;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1869625062.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1869625062.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1869625062;
-        // ---------- Original Method ----------
-        //try {
-            //HttpEngine response = getResponse();
-            //if (response.hasResponseBody()
-                    //&& response.getResponseCode() >= HTTP_BAD_REQUEST) {
-                //return response.getResponseBody();
-            //}
-            //return null;
-        //} catch (IOException e) {
-            //return null;
-        //}
+        
+        
+            
+            
+                    
+                
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.131 -0400", hash_original_method = "2FDBF8E663ECDF1396771B3FB2E938AE", hash_generated_method = "39675AC2C2ACFD37226F14565C64E210")
     @Override
     public final String getHeaderField(int position) {
-        String varB4EAC82CA7396A68D541C85D26508E83_126387277 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_462343015 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_126387277 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_462343015 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_126387277 = getResponse().getResponseHeaders().getHeaders().getValue(position);
-        } //End block
+        } 
         catch (IOException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_462343015 = null;
-        } //End block
+        } 
         addTaint(position);
-        String varA7E53CE21691AB073D9660D615818899_567230967; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_567230967; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_567230967 = varB4EAC82CA7396A68D541C85D26508E83_126387277;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_567230967 = varB4EAC82CA7396A68D541C85D26508E83_462343015;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_567230967.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_567230967.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_567230967;
-        // ---------- Original Method ----------
-        //try {
-            //return getResponse().getResponseHeaders().getHeaders().getValue(position);
-        //} catch (IOException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.132 -0400", hash_original_method = "8E358A78EB7A8F16DBAC360C5AE52593", hash_generated_method = "0D9F2A124BD1C557F8BF109E479C5855")
     @Override
     public final String getHeaderField(String fieldName) {
-        String varB4EAC82CA7396A68D541C85D26508E83_294007448 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1894046226 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_294007448 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1894046226 = null; 
         try 
         {
             RawHeaders rawHeaders = getResponse().getResponseHeaders().getHeaders();
             varB4EAC82CA7396A68D541C85D26508E83_294007448 = fieldName == null
                     ? rawHeaders.getStatusLine()
                     : rawHeaders.get(fieldName);
-        } //End block
+        } 
         catch (IOException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1894046226 = null;
-        } //End block
+        } 
         addTaint(fieldName.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_236063576; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_236063576; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_236063576 = varB4EAC82CA7396A68D541C85D26508E83_294007448;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_236063576 = varB4EAC82CA7396A68D541C85D26508E83_1894046226;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_236063576.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_236063576.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_236063576;
-        // ---------- Original Method ----------
-        //try {
-            //RawHeaders rawHeaders = getResponse().getResponseHeaders().getHeaders();
-            //return fieldName == null
-                    //? rawHeaders.getStatusLine()
-                    //: rawHeaders.get(fieldName);
-        //} catch (IOException e) {
-            //return null;
-        //}
+        
+        
+            
+            
+                    
+                    
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.134 -0400", hash_original_method = "6CE04EB06299A563E0E12D5A9A984EA5", hash_generated_method = "B7A0A8E2E7BFA38A609F2B6EDB51F970")
     @Override
     public final String getHeaderFieldKey(int position) {
-        String varB4EAC82CA7396A68D541C85D26508E83_975883653 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_42329630 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_975883653 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_42329630 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_975883653 = getResponse().getResponseHeaders().getHeaders().getFieldName(position);
-        } //End block
+        } 
         catch (IOException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_42329630 = null;
-        } //End block
+        } 
         addTaint(position);
-        String varA7E53CE21691AB073D9660D615818899_111193364; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_111193364; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_111193364 = varB4EAC82CA7396A68D541C85D26508E83_975883653;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_111193364 = varB4EAC82CA7396A68D541C85D26508E83_42329630;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_111193364.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_111193364.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_111193364;
-        // ---------- Original Method ----------
-        //try {
-            //return getResponse().getResponseHeaders().getHeaders().getFieldName(position);
-        //} catch (IOException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.134 -0400", hash_original_method = "D21D6124D988B0F314746165ED1B208D", hash_generated_method = "4A362F285082284148317D84F7CB89C5")
     @Override
     public final Map<String, List<String>> getHeaderFields() {
-        Map<String, List<String>> varB4EAC82CA7396A68D541C85D26508E83_1846261825 = null; //Variable for return #1
-        Map<String, List<String>> varB4EAC82CA7396A68D541C85D26508E83_1383930913 = null; //Variable for return #2
+        Map<String, List<String>> varB4EAC82CA7396A68D541C85D26508E83_1846261825 = null; 
+        Map<String, List<String>> varB4EAC82CA7396A68D541C85D26508E83_1383930913 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1846261825 = getResponse().getResponseHeaders().getHeaders().toMultimap();
-        } //End block
+        } 
         catch (IOException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1383930913 = null;
-        } //End block
-        Map<String, List<String>> varA7E53CE21691AB073D9660D615818899_935759273; //Final return value
+        } 
+        Map<String, List<String>> varA7E53CE21691AB073D9660D615818899_935759273; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_935759273 = varB4EAC82CA7396A68D541C85D26508E83_1846261825;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_935759273 = varB4EAC82CA7396A68D541C85D26508E83_1383930913;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_935759273.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_935759273.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_935759273;
-        // ---------- Original Method ----------
-        //try {
-            //return getResponse().getResponseHeaders().getHeaders().toMultimap();
-        //} catch (IOException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.135 -0400", hash_original_method = "AC69DF55837DC027461A6B3E8E60D121", hash_generated_method = "DDE7B05D60D2B9CC53F5DACF5BA7DFA8")
     @Override
     public final Map<String, List<String>> getRequestProperties() {
-        Map<String, List<String>> varB4EAC82CA7396A68D541C85D26508E83_181107960 = null; //Variable for return #1
+        Map<String, List<String>> varB4EAC82CA7396A68D541C85D26508E83_181107960 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "Cannot access request header fields after connection is set");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_181107960 = rawRequestHeaders.toMultimap();
-        varB4EAC82CA7396A68D541C85D26508E83_181107960.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_181107960.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_181107960;
-        // ---------- Original Method ----------
-        //if (connected) {
-            //throw new IllegalStateException(
-                    //"Cannot access request header fields after connection is set");
-        //}
-        //return rawRequestHeaders.toMultimap();
+        
+        
+            
+                    
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.135 -0400", hash_original_method = "45F412B75FA838EAF632FEA7E5AD9CE7", hash_generated_method = "5A869E163A123CDF04E1D9ABA8AFB34B")
     @Override
     public final InputStream getInputStream() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_2000869348 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_2000869348 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new ProtocolException("This protocol does not support input");
-        } //End block
+        } 
         HttpEngine response = getResponse();
         {
             boolean varD8022199865993DD9F92A0CC3F71EE2C_1738738412 = (getResponseCode() >= HTTP_BAD_REQUEST);
             {
                 if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException(url.toString());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         InputStream result = response.getResponseBody();
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("No response body exists; responseCode=" + getResponseCode());
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2000869348 = result;
-        varB4EAC82CA7396A68D541C85D26508E83_2000869348.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2000869348.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2000869348;
-        // ---------- Original Method ----------
-        //if (!doInput) {
-            //throw new ProtocolException("This protocol does not support input");
-        //}
-        //HttpEngine response = getResponse();
-        //if (getResponseCode() >= HTTP_BAD_REQUEST) {
-            //throw new FileNotFoundException(url.toString());
-        //}
-        //InputStream result = response.getResponseBody();
-        //if (result == null) {
-            //throw new IOException("No response body exists; responseCode=" + getResponseCode());
-        //}
-        //return result;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.136 -0400", hash_original_method = "37EC8C214191B016BC801CEDA20A2C80", hash_generated_method = "EBA6ED8D36F5045A3D7CE4050120AAD9")
     @Override
     public final OutputStream getOutputStream() throws IOException {
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_282764697 = null; //Variable for return #1
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_282764697 = null; 
         connect();
         OutputStream result = httpEngine.getRequestBody();
         {
             if (DroidSafeAndroidRuntime.control) throw new ProtocolException("method does not support a request body: " + method);
-        } //End block
+        } 
         {
             boolean var3DBD39046D71FCFAFF45606FCDE17FF5_1637832355 = (httpEngine.hasResponse());
             {
                 if (DroidSafeAndroidRuntime.control) throw new ProtocolException("cannot write request body after response has been read");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_282764697 = result;
-        varB4EAC82CA7396A68D541C85D26508E83_282764697.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_282764697.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_282764697;
-        // ---------- Original Method ----------
-        //connect();
-        //OutputStream result = httpEngine.getRequestBody();
-        //if (result == null) {
-            //throw new ProtocolException("method does not support a request body: " + method);
-        //} else if (httpEngine.hasResponse()) {
-            //throw new ProtocolException("cannot write request body after response has been read");
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.136 -0400", hash_original_method = "E4EEF5ABFFEA53BFCAB2562386B86E28", hash_generated_method = "350CE3374661642D28B74FE4CA57847C")
     @Override
     public final Permission getPermission() throws IOException {
-        Permission varB4EAC82CA7396A68D541C85D26508E83_1234463723 = null; //Variable for return #1
+        Permission varB4EAC82CA7396A68D541C85D26508E83_1234463723 = null; 
         String connectToAddress = getConnectToHost() + ":" + getConnectToPort();
         varB4EAC82CA7396A68D541C85D26508E83_1234463723 = new SocketPermission(connectToAddress, "connect, resolve");
-        varB4EAC82CA7396A68D541C85D26508E83_1234463723.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1234463723.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1234463723;
-        // ---------- Original Method ----------
-        //String connectToAddress = getConnectToHost() + ":" + getConnectToPort();
-        //return new SocketPermission(connectToAddress, "connect, resolve");
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.137 -0400", hash_original_method = "B5D2FEB67E0E8EA367DFCE05C581AB69", hash_generated_method = "97A3C7355F55182F398BC3FA21371EFC")
     private String getConnectToHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2058744467 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2058744467 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2058744467 = usingProxy()
                 ? ((InetSocketAddress) proxy.address()).getHostName()
                 : getURL().getHost();
-        varB4EAC82CA7396A68D541C85D26508E83_2058744467.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2058744467.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2058744467;
-        // ---------- Original Method ----------
-        //return usingProxy()
-                //? ((InetSocketAddress) proxy.address()).getHostName()
-                //: getURL().getHost();
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.137 -0400", hash_original_method = "D34A028DDA4370B463B41421A37DF230", hash_generated_method = "A0089B1F0ED099189A86A7051C21635D")
     private int getConnectToPort() {
         int hostPort;
@@ -420,119 +422,122 @@ class HttpURLConnectionImpl extends HttpURLConnection {
         hostPort = getURL().getPort();
         {
             Object var55AFC7D50DDC7EC77B4E62135E02DAE7_1697192210 = (getDefaultPort());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_903357742 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_903357742;
-        // ---------- Original Method ----------
-        //int hostPort = usingProxy()
-                //? ((InetSocketAddress) proxy.address()).getPort()
-                //: getURL().getPort();
-        //return hostPort < 0 ? getDefaultPort() : hostPort;
+        
+        
+                
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.138 -0400", hash_original_method = "8A514716C0CABE10C77E4E0516E7C928", hash_generated_method = "01A428E32AE3B45920253566204DD0D8")
     @Override
     public final String getRequestProperty(String field) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1545377359 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_909575788 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1545377359 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_909575788 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1545377359 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_909575788 = rawRequestHeaders.get(field);
         addTaint(field.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_186091671; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_186091671; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_186091671 = varB4EAC82CA7396A68D541C85D26508E83_1545377359;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_186091671 = varB4EAC82CA7396A68D541C85D26508E83_909575788;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_186091671.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_186091671.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_186091671;
-        // ---------- Original Method ----------
-        //if (field == null) {
-            //return null;
-        //}
-        //return rawRequestHeaders.get(field);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.138 -0400", hash_original_method = "D46D1C92B88A5C8C0BC8F8E633D4D9BD", hash_generated_method = "1ED67F477FF202290349A8C07FD13747")
     private void initHttpEngine() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw httpEngineFailure;
-        } //End block
+        } 
         connected = true;
         try 
         {
             {
                 {
                     method = HttpEngine.POST;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ProtocolException(method + " does not support writing");
-                } //End block
-            } //End block
+                } 
+            } 
             httpEngine = newHttpEngine(method, rawRequestHeaders, null, null);
-        } //End block
+        } 
         catch (IOException e)
         {
             httpEngineFailure = e;
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
-        // ---------- Original Method ----------
-        //if (httpEngineFailure != null) {
-            //throw httpEngineFailure;
-        //} else if (httpEngine != null) {
-            //return;
-        //}
-        //connected = true;
-        //try {
-            //if (doOutput) {
-                //if (method == HttpEngine.GET) {
-                    //method = HttpEngine.POST;
-                //} else if (method != HttpEngine.POST && method != HttpEngine.PUT) {
-                    //throw new ProtocolException(method + " does not support writing");
-                //}
-            //}
-            //httpEngine = newHttpEngine(method, rawRequestHeaders, null, null);
-        //} catch (IOException e) {
-            //httpEngineFailure = e;
-            //throw e;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+        
+        
+            
+                
+                    
+                
+                    
+                
+            
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.139 -0400", hash_original_method = "AFF3FB19470EAA9A5BE239431B6A906A", hash_generated_method = "89881DD346236DFCA4A8FF6C6F5F7926")
     protected HttpEngine newHttpEngine(String method, RawHeaders requestHeaders,
             HttpConnection connection, RetryableOutputStream requestBody) throws IOException {
-        HttpEngine varB4EAC82CA7396A68D541C85D26508E83_561523001 = null; //Variable for return #1
+        HttpEngine varB4EAC82CA7396A68D541C85D26508E83_561523001 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_561523001 = new HttpEngine(this, method, requestHeaders, connection, requestBody);
         addTaint(method.getTaint());
         addTaint(requestHeaders.getTaint());
         addTaint(connection.getTaint());
         addTaint(requestBody.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_561523001.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_561523001.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_561523001;
-        // ---------- Original Method ----------
-        //return new HttpEngine(this, method, requestHeaders, connection, requestBody);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.140 -0400", hash_original_method = "DF359A1395A825950E7AA2723E1FBB6D", hash_generated_method = "357075426617CEE5B9F7D1919A360983")
     private HttpEngine getResponse() throws IOException {
-        HttpEngine varB4EAC82CA7396A68D541C85D26508E83_380258777 = null; //Variable for return #1
-        HttpEngine varB4EAC82CA7396A68D541C85D26508E83_1446387064 = null; //Variable for return #2
+        HttpEngine varB4EAC82CA7396A68D541C85D26508E83_380258777 = null; 
+        HttpEngine varB4EAC82CA7396A68D541C85D26508E83_1446387064 = null; 
         initHttpEngine();
         {
             boolean var3DBD39046D71FCFAFF45606FCDE17FF5_954580106 = (httpEngine.hasResponse());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_380258777 = httpEngine;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             {
@@ -541,165 +546,166 @@ class HttpURLConnectionImpl extends HttpURLConnection {
                 Retry retry = processResponseHeaders();
                 {
                     httpEngine.automaticallyReleaseConnectionToPool();
-                } //End block
+                } 
                 String retryMethod = method;
                 OutputStream requestBody = httpEngine.getRequestBody();
                 int responseCode = getResponseCode();
                 {
                     retryMethod = HttpEngine.GET;
                     requestBody = null;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new HttpRetryException("Cannot retry streamed HTTP body",
                             httpEngine.getResponseCode());
-                } //End block
+                } 
                 {
                     httpEngine.automaticallyReleaseConnectionToPool();
-                } //End block
+                } 
                 httpEngine.release(true);
                 httpEngine = newHttpEngine(retryMethod, rawRequestHeaders,
                         httpEngine.getConnection(), (RetryableOutputStream) requestBody);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1446387064 = httpEngine;
-        } //End block
+        } 
         catch (IOException e)
         {
             httpEngineFailure = e;
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
-        HttpEngine varA7E53CE21691AB073D9660D615818899_1754380856; //Final return value
+        } 
+        HttpEngine varA7E53CE21691AB073D9660D615818899_1754380856; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1754380856 = varB4EAC82CA7396A68D541C85D26508E83_380258777;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1754380856 = varB4EAC82CA7396A68D541C85D26508E83_1446387064;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1754380856.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1754380856.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1754380856;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.140 -0400", hash_original_method = "1D777298E2B9DEBB3E2DB7ADA4E2C95B", hash_generated_method = "4E84B2F726FF5FA3D3CE5BAAB552255C")
      HttpEngine getHttpEngine() {
-        HttpEngine varB4EAC82CA7396A68D541C85D26508E83_413291152 = null; //Variable for return #1
+        HttpEngine varB4EAC82CA7396A68D541C85D26508E83_413291152 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_413291152 = httpEngine;
-        varB4EAC82CA7396A68D541C85D26508E83_413291152.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_413291152.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_413291152;
-        // ---------- Original Method ----------
-        //return httpEngine;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.141 -0400", hash_original_method = "CCC24799A0A4E36EF41D9DC91181B3F5", hash_generated_method = "40EE529A036214919941E7964E684533")
     private Retry processResponseHeaders() throws IOException {
-        Retry varB4EAC82CA7396A68D541C85D26508E83_787720590 = null; //Variable for return #1
-        Retry varB4EAC82CA7396A68D541C85D26508E83_2095589334 = null; //Variable for return #2
-        Retry varB4EAC82CA7396A68D541C85D26508E83_1219565023 = null; //Variable for return #3
-        Retry varB4EAC82CA7396A68D541C85D26508E83_1460607696 = null; //Variable for return #4
-        Retry varB4EAC82CA7396A68D541C85D26508E83_293877160 = null; //Variable for return #5
-        Retry varB4EAC82CA7396A68D541C85D26508E83_1116249612 = null; //Variable for return #6
-        Retry varB4EAC82CA7396A68D541C85D26508E83_32036001 = null; //Variable for return #7
+        Retry varB4EAC82CA7396A68D541C85D26508E83_787720590 = null; 
+        Retry varB4EAC82CA7396A68D541C85D26508E83_2095589334 = null; 
+        Retry varB4EAC82CA7396A68D541C85D26508E83_1219565023 = null; 
+        Retry varB4EAC82CA7396A68D541C85D26508E83_1460607696 = null; 
+        Retry varB4EAC82CA7396A68D541C85D26508E83_293877160 = null; 
+        Retry varB4EAC82CA7396A68D541C85D26508E83_1116249612 = null; 
+        Retry varB4EAC82CA7396A68D541C85D26508E83_32036001 = null; 
         {
             Object var20F042546572D69C7A9AC081DF38D953_651540064 = (getResponseCode());
-            //Begin case HTTP_PROXY_AUTH 
+            
             {
                 boolean var2930139243087265820932B7BDB2A558_978591734 = (!usingProxy());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException(
                         "Received HTTP_PROXY_AUTH (407) code while not using proxy");
-                } //End block
-            } //End collapsed parenthetic
-            //End case HTTP_PROXY_AUTH 
-            //Begin case HTTP_UNAUTHORIZED 
+                } 
+            } 
+            
+            
             boolean credentialsFound = processAuthHeader(getResponseCode(),
                     httpEngine.getResponseHeaders(), rawRequestHeaders);
-            //End case HTTP_UNAUTHORIZED 
-            //Begin case HTTP_UNAUTHORIZED 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_787720590 = credentialsFound ? Retry.SAME_CONNECTION : Retry.NONE;
-            //End case HTTP_UNAUTHORIZED 
-            //Begin case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
+            
+            
             {
                 boolean var4231036716F9E7BE127364976920804F_833270498 = (!getInstanceFollowRedirects());
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_2095589334 = Retry.NONE;
-                } //End block
-            } //End collapsed parenthetic
-            //End case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
-            //Begin case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
+                } 
+            } 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Too many redirects");
-            } //End block
-            //End case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
-            //Begin case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
+            } 
+            
+            
             String location = getHeaderField("Location");
-            //End case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
-            //Begin case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
+            
+            
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1219565023 = Retry.NONE;
-            } //End block
-            //End case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
-            //Begin case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
+            } 
+            
+            
             URL previousUrl = url;
-            //End case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
-            //Begin case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
+            
+            
             url = new URL(previousUrl, location);
-            //End case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
-            //Begin case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
+            
+            
             {
                 boolean var127C9F96D37ED4D3E737D93D37262DCE_2027686855 = (!previousUrl.getProtocol().equals(url.getProtocol()));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1460607696 = Retry.NONE;
-                } //End block
-            } //End collapsed parenthetic
-            //End case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
-            //Begin case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
+                } 
+            } 
+            
+            
             {
                 boolean var75E1451812FE086497460E33682B0EAF_1137730731 = (previousUrl.getHost().equals(url.getHost())
                     && previousUrl.getEffectivePort() == url.getEffectivePort());
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_293877160 = Retry.SAME_CONNECTION;
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1116249612 = Retry.DIFFERENT_CONNECTION;
-                } //End block
-            } //End collapsed parenthetic
-            //End case HTTP_MULT_CHOICE HTTP_MOVED_PERM HTTP_MOVED_TEMP HTTP_SEE_OTHER 
-            //Begin case default 
+                } 
+            } 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_32036001 = Retry.NONE;
-            //End case default 
-        } //End collapsed parenthetic
-        Retry varA7E53CE21691AB073D9660D615818899_1071583286; //Final return value
+            
+        } 
+        Retry varA7E53CE21691AB073D9660D615818899_1071583286; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1071583286 = varB4EAC82CA7396A68D541C85D26508E83_787720590;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1071583286 = varB4EAC82CA7396A68D541C85D26508E83_2095589334;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1071583286 = varB4EAC82CA7396A68D541C85D26508E83_1219565023;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1071583286 = varB4EAC82CA7396A68D541C85D26508E83_1460607696;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_1071583286 = varB4EAC82CA7396A68D541C85D26508E83_293877160;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_1071583286 = varB4EAC82CA7396A68D541C85D26508E83_1116249612;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1071583286 = varB4EAC82CA7396A68D541C85D26508E83_32036001;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1071583286.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1071583286.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1071583286;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -708,13 +714,13 @@ class HttpURLConnectionImpl extends HttpURLConnection {
             RawHeaders successorRequestHeaders) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         String challenge;
         challenge = response.getProxyAuthenticate();
         challenge = response.getWwwAuthenticate();
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Received authentication challenge is null");
-        } //End block
+        } 
         String credentials = getAuthorizationCredentials(challenge);
         String fieldName;
         fieldName = "Proxy-Authorization";
@@ -725,37 +731,38 @@ class HttpURLConnectionImpl extends HttpURLConnection {
         addTaint(successorRequestHeaders.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_785265105 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_785265105;
-        // ---------- Original Method ----------
-        //if (responseCode != HTTP_PROXY_AUTH && responseCode != HTTP_UNAUTHORIZED) {
-            //throw new IllegalArgumentException();
-        //}
-        //String challenge = responseCode == HTTP_PROXY_AUTH
-                //? response.getProxyAuthenticate()
-                //: response.getWwwAuthenticate();
-        //if (challenge == null) {
-            //throw new IOException("Received authentication challenge is null");
-        //}
-        //String credentials = getAuthorizationCredentials(challenge);
-        //if (credentials == null) {
-            //return false; 
-        //}
-        //String fieldName = responseCode == HTTP_PROXY_AUTH
-                //? "Proxy-Authorization"
-                //: "Authorization";
-        //successorRequestHeaders.set(fieldName, credentials);
-        //return true;
+        
+        
+            
+        
+        
+                
+                
+        
+            
+        
+        
+        
+            
+        
+        
+                
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.144 -0400", hash_original_method = "3D7D8508CEE0817C42F7A7AE8F461D7F", hash_generated_method = "E643457A534390CD2CB545438490FDB9")
     private String getAuthorizationCredentials(String challenge) throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_699948173 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_490246452 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1028042742 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_699948173 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_490246452 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1028042742 = null; 
         int idx = challenge.indexOf(" ");
         {
             varB4EAC82CA7396A68D541C85D26508E83_699948173 = null;
-        } //End block
+        } 
         String scheme = challenge.substring(0, idx);
         int realm = challenge.indexOf("realm=\"") + 7;
         String prompt = null;
@@ -763,49 +770,50 @@ class HttpURLConnectionImpl extends HttpURLConnection {
             int end = challenge.indexOf('"', realm);
             {
                 prompt = challenge.substring(realm, end);
-            } //End block
-        } //End block
+            } 
+        } 
         PasswordAuthentication pa = Authenticator.requestPasswordAuthentication(
                 getConnectToInetAddress(), getConnectToPort(), url.getProtocol(), prompt, scheme);
         {
             varB4EAC82CA7396A68D541C85D26508E83_490246452 = null;
-        } //End block
+        } 
         String usernameAndPassword = pa.getUserName() + ":" + new String(pa.getPassword());
         byte[] bytes = usernameAndPassword.getBytes(Charsets.ISO_8859_1);
         String encoded = Base64.encode(bytes);
         varB4EAC82CA7396A68D541C85D26508E83_1028042742 = scheme + " " + encoded;
         addTaint(challenge.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_477177065; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_477177065; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_477177065 = varB4EAC82CA7396A68D541C85D26508E83_699948173;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_477177065 = varB4EAC82CA7396A68D541C85D26508E83_490246452;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_477177065 = varB4EAC82CA7396A68D541C85D26508E83_1028042742;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_477177065.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_477177065.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_477177065;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.146 -0400", hash_original_method = "1B9895D1709534856DAC9B7A8958AAC2", hash_generated_method = "01714574BDD96A2691394EC7C524658C")
     private InetAddress getConnectToInetAddress() throws IOException {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_251000964 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_251000964 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_251000964 = usingProxy()
                 ? ((InetSocketAddress) proxy.address()).getAddress()
                 : InetAddress.getByName(getURL().getHost());
-        varB4EAC82CA7396A68D541C85D26508E83_251000964.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_251000964.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_251000964;
-        // ---------- Original Method ----------
-        //return usingProxy()
-                //? ((InetSocketAddress) proxy.address()).getAddress()
-                //: InetAddress.getByName(getURL().getHost());
+        
+        
+                
+                
     }
 
     
@@ -813,8 +821,8 @@ class HttpURLConnectionImpl extends HttpURLConnection {
     final int getDefaultPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003646013 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003646013;
-        // ---------- Original Method ----------
-        //return defaultPort;
+        
+        
     }
 
     
@@ -822,8 +830,8 @@ class HttpURLConnectionImpl extends HttpURLConnection {
     final int getFixedContentLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1128675476 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1128675476;
-        // ---------- Original Method ----------
-        //return fixedContentLength;
+        
+        
     }
 
     
@@ -831,27 +839,27 @@ class HttpURLConnectionImpl extends HttpURLConnection {
     final int getChunkLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_832338132 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_832338132;
-        // ---------- Original Method ----------
-        //return chunkLength;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.148 -0400", hash_original_method = "19AE87D83FEEE8E799F844F8A7A84495", hash_generated_method = "D120E17525CAD3265BF0787870935C21")
     final Proxy getProxy() {
-        Proxy varB4EAC82CA7396A68D541C85D26508E83_2025162916 = null; //Variable for return #1
+        Proxy varB4EAC82CA7396A68D541C85D26508E83_2025162916 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2025162916 = proxy;
-        varB4EAC82CA7396A68D541C85D26508E83_2025162916.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2025162916.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2025162916;
-        // ---------- Original Method ----------
-        //return proxy;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.148 -0400", hash_original_method = "AA3CF596E23C06E2ACCB3F9CB3C07696", hash_generated_method = "8F3413271570AEBF18F485ACB70ADDF9")
     final void setProxy(Proxy proxy) {
         this.proxy = proxy;
-        // ---------- Original Method ----------
-        //this.proxy = proxy;
+        
+        
     }
 
     
@@ -861,20 +869,21 @@ class HttpURLConnectionImpl extends HttpURLConnection {
         boolean var16D5082FA751067548E744F8E069E68A_1593838586 = ((proxy != null && proxy.type() != Proxy.Type.DIRECT));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1243953318 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1243953318;
-        // ---------- Original Method ----------
-        //return (proxy != null && proxy.type() != Proxy.Type.DIRECT);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.149 -0400", hash_original_method = "9D8B4374AC98844408DFFFE370FDA266", hash_generated_method = "755308C631A0052D1055B066161BC2FC")
     @Override
     public String getResponseMessage() throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_273512050 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_273512050 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_273512050 = getResponse().getResponseHeaders().getHeaders().getResponseMessage();
-        varB4EAC82CA7396A68D541C85D26508E83_273512050.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_273512050.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_273512050;
-        // ---------- Original Method ----------
-        //return getResponse().getResponseHeaders().getHeaders().getResponseMessage();
+        
+        
     }
 
     
@@ -884,8 +893,8 @@ class HttpURLConnectionImpl extends HttpURLConnection {
         int varDC13817E00562421F93742BC26746AB9_497634364 = (getResponse().getResponseCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1870196781 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1870196781;
-        // ---------- Original Method ----------
-        //return getResponse().getResponseCode();
+        
+        
     }
 
     
@@ -894,21 +903,21 @@ class HttpURLConnectionImpl extends HttpURLConnection {
     public final void setRequestProperty(String field, String newValue) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Cannot set request property after connection is made");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("field == null");
-        } //End block
+        } 
         rawRequestHeaders.set(field, newValue);
         addTaint(field.getTaint());
         addTaint(newValue.getTaint());
-        // ---------- Original Method ----------
-        //if (connected) {
-            //throw new IllegalStateException("Cannot set request property after connection is made");
-        //}
-        //if (field == null) {
-            //throw new NullPointerException("field == null");
-        //}
-        //rawRequestHeaders.set(field, newValue);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -917,21 +926,21 @@ class HttpURLConnectionImpl extends HttpURLConnection {
     public final void addRequestProperty(String field, String value) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Cannot add request property after connection is made");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("field == null");
-        } //End block
+        } 
         rawRequestHeaders.add(field, value);
         addTaint(field.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //if (connected) {
-            //throw new IllegalStateException("Cannot add request property after connection is made");
-        //}
-        //if (field == null) {
-            //throw new NullPointerException("field == null");
-        //}
-        //rawRequestHeaders.add(field, value);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     

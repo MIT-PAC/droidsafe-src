@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class Property<T, V> {
@@ -20,9 +20,9 @@ public abstract class Property<T, V> {
     public  Property(Class<V> type, String name) {
         mName = name;
         mType = type;
-        // ---------- Original Method ----------
-        //mName = name;
-        //mType = type;
+        
+        
+        
     }
 
     
@@ -35,18 +35,19 @@ public abstract class Property<T, V> {
     public boolean isReadOnly() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1677059520 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1677059520;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.525 -0400", hash_original_method = "D4D656EA66F575192422159E9E949A42", hash_generated_method = "CF7AF90578EF14A26AC67B01CA9626CA")
     public void set(T object, V value) {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Property " + getName() +" is read-only");
         addTaint(object.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException("Property " + getName() +" is read-only");
+        
+        
     }
 
     
@@ -55,23 +56,24 @@ public abstract class Property<T, V> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.526 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "4707546506C70AEDA4A1CE601837A224")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_302999802 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_302999802 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_302999802 = mName;
-        varB4EAC82CA7396A68D541C85D26508E83_302999802.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_302999802.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_302999802;
-        // ---------- Original Method ----------
-        //return mName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.527 -0400", hash_original_method = "016782D9983A30CCA54FD921B5345587", hash_generated_method = "D145CF7C674041C860508726A64A410F")
     public Class<V> getType() {
-        Class<V> varB4EAC82CA7396A68D541C85D26508E83_618396903 = null; //Variable for return #1
+        Class<V> varB4EAC82CA7396A68D541C85D26508E83_618396903 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_618396903 = mType;
-        varB4EAC82CA7396A68D541C85D26508E83_618396903.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_618396903.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_618396903;
-        // ---------- Original Method ----------
-        //return mType;
+        
+        
     }
 
     

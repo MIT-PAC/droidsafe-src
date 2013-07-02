@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 import java.security.cert.CertPath;
@@ -26,104 +26,108 @@ public final class Timestamp implements Serializable {
     public  Timestamp(Date timestamp, CertPath signerCertPath) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("timestamp == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("signerCertPath == null");
-        } //End block
+        } 
         this.timestamp = new Date(timestamp.getTime());
         this.signerCertPath = signerCertPath;
-        // ---------- Original Method ----------
-        //if (timestamp == null) {
-            //throw new NullPointerException("timestamp == null");
-        //}
-        //if (signerCertPath == null) {
-            //throw new NullPointerException("signerCertPath == null");
-        //}
-        //this.timestamp = new Date(timestamp.getTime());
-        //this.signerCertPath = signerCertPath;
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.893 -0400", hash_original_method = "5EC26C09389FD151E3B15C0B386F0A3D", hash_generated_method = "BCC388A9BCB60B221DD63490463467C9")
     @Override
     public boolean equals(Object obj) {
         {
             boolean var8D1D3E5F4C020ED4FA594AED365B4BD8_1023360633 = (obj == this);
-        } //End collapsed parenthetic
+        } 
         {
             Timestamp that = (Timestamp) obj;
             boolean var2709CFC34CE811BA8682DC086775E595_1157845208 = (timestamp.equals(that.timestamp)
                     && signerCertPath.equals(that.signerCertPath));
-        } //End block
+        } 
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_570928637 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_570928637;
-        // ---------- Original Method ----------
-        //if (obj == this) {
-            //return true;
-        //}
-        //if (obj instanceof Timestamp) {
-            //Timestamp that = (Timestamp) obj;
-            //return timestamp.equals(that.timestamp)
-                    //&& signerCertPath.equals(that.signerCertPath);
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+            
+                    
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.894 -0400", hash_original_method = "30F2DDB76579221F80A186A0F4D6B0C1", hash_generated_method = "F466F77F90FBE021A492768AA54A7539")
     public CertPath getSignerCertPath() {
-        CertPath varB4EAC82CA7396A68D541C85D26508E83_1849077674 = null; //Variable for return #1
+        CertPath varB4EAC82CA7396A68D541C85D26508E83_1849077674 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1849077674 = signerCertPath;
-        varB4EAC82CA7396A68D541C85D26508E83_1849077674.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1849077674.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1849077674;
-        // ---------- Original Method ----------
-        //return signerCertPath;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.894 -0400", hash_original_method = "9F5E9DF58C2165A57C2B03C2ABFACB32", hash_generated_method = "DB5439DE2D80160CBD4839D0BFFE8637")
     public Date getTimestamp() {
-        Date varB4EAC82CA7396A68D541C85D26508E83_118822948 = null; //Variable for return #1
+        Date varB4EAC82CA7396A68D541C85D26508E83_118822948 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_118822948 = (Date) timestamp.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_118822948.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_118822948.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_118822948;
-        // ---------- Original Method ----------
-        //return (Date) timestamp.clone();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.895 -0400", hash_original_method = "31DF5B7E8A0074E9903AAC481766C16B", hash_generated_method = "0DF57FA2DAFD3AE6373EC4ECD493A2B0")
     @Override
     public int hashCode() {
         {
             hash = timestamp.hashCode() ^ signerCertPath.hashCode();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1701652358 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1701652358;
-        // ---------- Original Method ----------
-        //if (hash == 0) {
-            //hash = timestamp.hashCode() ^ signerCertPath.hashCode();
-        //}
-        //return hash;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.895 -0400", hash_original_method = "515CC78E7249E5726FD47C9B8B62F1A0", hash_generated_method = "2DDA3043ACC45E91660DF7121885FAF8")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_299890405 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_299890405 = null; 
         StringBuilder buf = new StringBuilder(256);
         buf.append("Timestamp [").append(timestamp).append(" certPath=");
         buf.append(signerCertPath.getCertificates().get(0)).append("]");
         varB4EAC82CA7396A68D541C85D26508E83_299890405 = buf.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_299890405.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_299890405.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_299890405;
-        // ---------- Original Method ----------
-        //StringBuilder buf = new StringBuilder(256);
-        //buf.append("Timestamp [").append(timestamp).append(" certPath=");
-        //buf.append(signerCertPath.getCertificates().get(0)).append("]");
-        //return buf.toString();
+        
+        
+        
+        
+        
     }
 
     

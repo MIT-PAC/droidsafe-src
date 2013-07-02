@@ -1,11 +1,11 @@
 package android.view.inputmethod;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.IBinder;
 import android.os.Parcel;
@@ -33,11 +33,11 @@ public final class InputBinding implements Parcelable {
         mConnectionToken = connToken;
         mUid = uid;
         mPid = pid;
-        // ---------- Original Method ----------
-        //mConnection = conn;
-        //mConnectionToken = connToken;
-        //mUid = uid;
-        //mPid = pid;
+        
+        
+        
+        
+        
     }
 
     
@@ -47,11 +47,11 @@ public final class InputBinding implements Parcelable {
         mConnectionToken = binding.getConnectionToken();
         mUid = binding.getUid();
         mPid = binding.getPid();
-        // ---------- Original Method ----------
-        //mConnection = conn;
-        //mConnectionToken = binding.getConnectionToken();
-        //mUid = binding.getUid();
-        //mPid = binding.getPid();
+        
+        
+        
+        
+        
     }
 
     
@@ -61,33 +61,33 @@ public final class InputBinding implements Parcelable {
         mConnectionToken = source.readStrongBinder();
         mUid = source.readInt();
         mPid = source.readInt();
-        // ---------- Original Method ----------
-        //mConnection = null;
-        //mConnectionToken = source.readStrongBinder();
-        //mUid = source.readInt();
-        //mPid = source.readInt();
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.003 -0400", hash_original_method = "EE079552217D9D3D337BCB42A3B90EF3", hash_generated_method = "4D96E8059571E06CFE7EABF12A8A6ECC")
     public InputConnection getConnection() {
-        InputConnection varB4EAC82CA7396A68D541C85D26508E83_5983923 = null; //Variable for return #1
+        InputConnection varB4EAC82CA7396A68D541C85D26508E83_5983923 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_5983923 = mConnection;
-        varB4EAC82CA7396A68D541C85D26508E83_5983923.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_5983923.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_5983923;
-        // ---------- Original Method ----------
-        //return mConnection;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.003 -0400", hash_original_method = "A8756053877C567C0ECF2796084552D6", hash_generated_method = "9A3DF771CD71C38C0590A858CF4E37DA")
     public IBinder getConnectionToken() {
-        IBinder varB4EAC82CA7396A68D541C85D26508E83_557431727 = null; //Variable for return #1
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_557431727 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_557431727 = mConnectionToken;
-        varB4EAC82CA7396A68D541C85D26508E83_557431727.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_557431727.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_557431727;
-        // ---------- Original Method ----------
-        //return mConnectionToken;
+        
+        
     }
 
     
@@ -95,8 +95,8 @@ public final class InputBinding implements Parcelable {
     public int getUid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_979212226 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_979212226;
-        // ---------- Original Method ----------
-        //return mUid;
+        
+        
     }
 
     
@@ -104,25 +104,27 @@ public final class InputBinding implements Parcelable {
     public int getPid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1603031006 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1603031006;
-        // ---------- Original Method ----------
-        //return mPid;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.004 -0400", hash_original_method = "30B5CA44D3BF64A2B8A74435F40F5258", hash_generated_method = "7BF422D0898A9CC92C2A8419268C2472")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1469664631 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1469664631 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1469664631 = "InputBinding{" + mConnectionToken
                 + " / uid " + mUid + " / pid " + mPid + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_1469664631.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1469664631.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1469664631;
-        // ---------- Original Method ----------
-        //return "InputBinding{" + mConnectionToken
-                //+ " / uid " + mUid + " / pid " + mPid + "}";
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.005 -0400", hash_original_method = "CF6195886A2216F7801132B22F3EB428", hash_generated_method = "4ADD8AA231D7444C2F9164CD47718CDE")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeStrongBinder(mConnectionToken);
@@ -130,10 +132,10 @@ public final class InputBinding implements Parcelable {
         dest.writeInt(mPid);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeStrongBinder(mConnectionToken);
-        //dest.writeInt(mUid);
-        //dest.writeInt(mPid);
+        
+        
+        
+        
     }
 
     
@@ -141,8 +143,8 @@ public final class InputBinding implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_776231122 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_776231122;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -160,12 +162,12 @@ public final class InputBinding implements Parcelable {
             return new InputBinding[size];
         }
     };
-    // orphaned legacy method
+    
     public InputBinding createFromParcel(Parcel source) {
             return new InputBinding(source);
         }
     
-    // orphaned legacy method
+    
     public InputBinding[] newArray(int size) {
             return new InputBinding[size];
         }

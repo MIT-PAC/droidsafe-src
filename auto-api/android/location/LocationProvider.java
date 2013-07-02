@@ -1,11 +1,11 @@
 package android.location;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.RemoteException;
 import android.util.Log;
@@ -25,49 +25,50 @@ public abstract class LocationProvider {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("name " + name +
                 " contains an illegal character");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mName = name;
         mService = service;
-        // ---------- Original Method ----------
-        //if (name.matches(BAD_CHARS_REGEX)) {
-            //throw new IllegalArgumentException("name " + name +
-                //" contains an illegal character");
-        //}
-        //mName = name;
-        //mService = service;
+        
+        
+            
+                
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.867 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "72D3B97C0CB70923D1F174358A799887")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1793724483 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1793724483 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1793724483 = mName;
-        varB4EAC82CA7396A68D541C85D26508E83_1793724483.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1793724483.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1793724483;
-        // ---------- Original Method ----------
-        //return mName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.868 -0400", hash_original_method = "635BF1E9CDC5B7DBCFDF1ACD3F6E624D", hash_generated_method = "1F24B5A1681D2F491215226E29639388")
     public boolean meetsCriteria(Criteria criteria) {
         try 
         {
             boolean var195CD10D7384B80733627E7A4A95E4BA_289722977 = (mService.providerMeetsCriteria(mName, criteria));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(criteria.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2075572274 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2075572274;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.providerMeetsCriteria(mName, criteria);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "meetsCriteria: RemoteException", e);
-            //return false;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     

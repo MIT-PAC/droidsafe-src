@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,7 +36,7 @@ public abstract class HttpURLConnection extends URLConnection {
     protected  HttpURLConnection(URL url) {
         super(url);
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -45,12 +45,12 @@ public abstract class HttpURLConnection extends URLConnection {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.186 -0400", hash_original_method = "6640096D2D877ED3E740627246DA5AF9", hash_generated_method = "73599F92A7A429FD47209F6E8FA1B8F5")
     public InputStream getErrorStream() {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_118087106 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_118087106 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_118087106 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_118087106.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_118087106.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_118087106;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -62,36 +62,37 @@ public abstract class HttpURLConnection extends URLConnection {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.187 -0400", hash_original_method = "ED24FB1ED5E1E919D525362B14A80DB6", hash_generated_method = "F1889400B187337493DA36C67D2F619F")
     @Override
     public java.security.Permission getPermission() throws IOException {
-        java.security.Permission varB4EAC82CA7396A68D541C85D26508E83_435899399 = null; //Variable for return #1
+        java.security.Permission varB4EAC82CA7396A68D541C85D26508E83_435899399 = null; 
         int port = url.getPort();
         {
             port = 80;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_435899399 = new SocketPermission(url.getHost() + ":" + port,
                 "connect, resolve");
-        varB4EAC82CA7396A68D541C85D26508E83_435899399.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_435899399.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_435899399;
-        // ---------- Original Method ----------
-        //int port = url.getPort();
-        //if (port < 0) {
-            //port = 80;
-        //}
-        //return new SocketPermission(url.getHost() + ":" + port,
-                //"connect, resolve");
+        
+        
+        
+            
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.188 -0400", hash_original_method = "0D9C6E3C645DAD49E763E30DD315D3EF", hash_generated_method = "324B5078B198E3C45139B9ECC44405D5")
     public String getRequestMethod() {
-        String varB4EAC82CA7396A68D541C85D26508E83_363304571 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_363304571 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_363304571 = method;
-        varB4EAC82CA7396A68D541C85D26508E83_363304571.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_363304571.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_363304571;
-        // ---------- Original Method ----------
-        //return method;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.188 -0400", hash_original_method = "7D3B203196D55AEFB0033919830A54D2", hash_generated_method = "1B1259B29FA974A8BFCDF1649CDF1741")
     public int getResponseCode() throws IOException {
         getInputStream();
@@ -103,66 +104,67 @@ public abstract class HttpURLConnection extends URLConnection {
             boolean varDBC82FD2C27D040346DED1825365290A_592530190 = (last > response.length());
             {
                 last = response.length();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         responseCode = Integer.parseInt(response.substring(mark, last));
         {
             boolean varEB8258B2AD4A2C7B13D11C42060FD010_940211808 = (last + 1 <= response.length());
             {
                 responseMessage = response.substring(last + 1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716413746 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716413746;
-        // ---------- Original Method ----------
-        //getInputStream();
-        //String response = getHeaderField(0);
-        //if (response == null) {
-            //return -1;
-        //}
-        //response = response.trim();
-        //int mark = response.indexOf(" ") + 1;
-        //if (mark == 0) {
-            //return -1;
-        //}
-        //int last = mark + 3;
-        //if (last > response.length()) {
-            //last = response.length();
-        //}
-        //responseCode = Integer.parseInt(response.substring(mark, last));
-        //if (last + 1 <= response.length()) {
-            //responseMessage = response.substring(last + 1);
-        //}
-        //return responseCode;
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.189 -0400", hash_original_method = "2B517AE93F70715BB09FC42E79EE9551", hash_generated_method = "39EEFE3D1176D9A799FD7F94BCD91201")
     public String getResponseMessage() throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_867406483 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_466065396 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_867406483 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_466065396 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_867406483 = responseMessage;
-        } //End block
+        } 
         getResponseCode();
         varB4EAC82CA7396A68D541C85D26508E83_466065396 = responseMessage;
-        String varA7E53CE21691AB073D9660D615818899_152429305; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_152429305; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_152429305 = varB4EAC82CA7396A68D541C85D26508E83_867406483;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_152429305 = varB4EAC82CA7396A68D541C85D26508E83_466065396;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_152429305.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_152429305.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_152429305;
-        // ---------- Original Method ----------
-        //if (responseMessage != null) {
-            //return responseMessage;
-        //}
-        //getResponseCode();
-        //return responseMessage;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -171,11 +173,12 @@ public abstract class HttpURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.199 -0400", hash_original_method = "3B5EB6833E70FFDCB063E860A5177AF6", hash_generated_method = "15B5FFB3E13BB5DBE53EE681A16BC4D8")
     public void setRequestMethod(String method) throws ProtocolException {
         {
             if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Connection already established");
-        } //End block
+        } 
         {
             String permittedUserMethod = PERMITTED_USER_METHODS[0];
             {
@@ -183,39 +186,40 @@ public abstract class HttpURLConnection extends URLConnection {
                     boolean var754B48AB70D95830F89825504CF59187_1214984392 = (permittedUserMethod.equals(method));
                     {
                         this.method = permittedUserMethod;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Unknown method '" + method + "'; must be one of " +
                 Arrays.toString(PERMITTED_USER_METHODS));
-        // ---------- Original Method ----------
-        //if (connected) {
-            //throw new ProtocolException("Connection already established");
-        //}
-        //for (String permittedUserMethod : PERMITTED_USER_METHODS) {
-            //if (permittedUserMethod.equals(method)) {
-                //this.method = permittedUserMethod;
-                //return;
-            //}
-        //}
-        //throw new ProtocolException("Unknown method '" + method + "'; must be one of " +
-                //Arrays.toString(PERMITTED_USER_METHODS));
+        
+        
+            
+        
+        
+            
+                
+                
+            
+        
+        
+                
     }
 
     
     public abstract boolean usingProxy();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.200 -0400", hash_original_method = "17A4A6C99056147BEFFA252CAD4737D6", hash_generated_method = "6D63CD0BD782685E24472C8CA0568773")
     @Override
     public String getContentEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_896465373 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_896465373 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_896465373 = super.getContentEncoding();
-        varB4EAC82CA7396A68D541C85D26508E83_896465373.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_896465373.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_896465373;
-        // ---------- Original Method ----------
-        //return super.getContentEncoding();
+        
+        
     }
 
     
@@ -223,19 +227,20 @@ public abstract class HttpURLConnection extends URLConnection {
     public boolean getInstanceFollowRedirects() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_603148432 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_603148432;
-        // ---------- Original Method ----------
-        //return instanceFollowRedirects;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.200 -0400", hash_original_method = "BB71B8E9C2D3F0EF20C7720F9E44016D", hash_generated_method = "A4E72D6C11951C7D0B323DF1D1093EEE")
     public void setInstanceFollowRedirects(boolean followRedirects) {
         instanceFollowRedirects = followRedirects;
-        // ---------- Original Method ----------
-        //instanceFollowRedirects = followRedirects;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.201 -0400", hash_original_method = "6E2F3B7733832056F416A461A3655623", hash_generated_method = "1164F49FB28C7564FBD4528ECB509E83")
     @Override
     public long getHeaderFieldDate(String field, long defaultValue) {
@@ -244,63 +249,65 @@ public abstract class HttpURLConnection extends URLConnection {
         addTaint(defaultValue);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_618469612 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_618469612;
-        // ---------- Original Method ----------
-        //return super.getHeaderFieldDate(field, defaultValue);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.201 -0400", hash_original_method = "746797ABBB47B5E996C092A3E4D56421", hash_generated_method = "99C4BBA191CF4D95A3CB1FB600F1F87A")
     public void setFixedLengthStreamingMode(int contentLength) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Already connected");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Already in chunked mode");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("contentLength < 0");
-        } //End block
+        } 
         this.fixedContentLength = contentLength;
-        // ---------- Original Method ----------
-        //if (super.connected) {
-            //throw new IllegalStateException("Already connected");
-        //}
-        //if (chunkLength > 0) {
-            //throw new IllegalStateException("Already in chunked mode");
-        //}
-        //if (contentLength < 0) {
-            //throw new IllegalArgumentException("contentLength < 0");
-        //}
-        //this.fixedContentLength = contentLength;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.201 -0400", hash_original_method = "21470E1D7A697F6C3367E1B80C1F2447", hash_generated_method = "DFB29A65776264CF3984605F629099D1")
     public void setChunkedStreamingMode(int chunkLength) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Already connected");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Already in fixed-length mode");
-        } //End block
+        } 
         {
             this.chunkLength = HttpEngine.DEFAULT_CHUNK_LENGTH;
-        } //End block
+        } 
         {
             this.chunkLength = chunkLength;
-        } //End block
-        // ---------- Original Method ----------
-        //if (super.connected) {
-            //throw new IllegalStateException("Already connected");
-        //}
-        //if (fixedContentLength >= 0) {
-            //throw new IllegalStateException("Already in fixed-length mode");
-        //}
-        //if (chunkLength <= 0) {
-            //this.chunkLength = HttpEngine.DEFAULT_CHUNK_LENGTH;
-        //} else {
-            //this.chunkLength = chunkLength;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     

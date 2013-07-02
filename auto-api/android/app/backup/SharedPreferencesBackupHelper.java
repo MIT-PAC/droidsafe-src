@@ -1,11 +1,11 @@
 package android.app.backup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.QueuedWork;
 import android.content.Context;
@@ -27,12 +27,13 @@ public class SharedPreferencesBackupHelper extends FileBackupHelperBase implemen
         super(context);
         mContext = context;
         mPrefGroups = prefGroups;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mPrefGroups = prefGroups;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.839 -0400", hash_original_method = "32B5B5F877732DB4D4CE78DD30722FCF", hash_generated_method = "361EEBA1125A39CDA04F4921DEB21C48")
     public void performBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
             ParcelFileDescriptor newState) {
@@ -45,25 +46,26 @@ public class SharedPreferencesBackupHelper extends FileBackupHelperBase implemen
             int i = 0;
             {
                 files[i] = context.getSharedPrefsFile(prefGroups[i]).getAbsolutePath();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         performBackup_checked(oldState, data, newState, files, prefGroups);
         addTaint(oldState.getTaint());
         addTaint(data.getTaint());
         addTaint(newState.getTaint());
-        // ---------- Original Method ----------
-        //Context context = mContext;
-        //QueuedWork.waitToFinish();
-        //String[] prefGroups = mPrefGroups;
-        //final int N = prefGroups.length;
-        //String[] files = new String[N];
-        //for (int i=0; i<N; i++) {
-            //files[i] = context.getSharedPrefsFile(prefGroups[i]).getAbsolutePath();
-        //}
-        //performBackup_checked(oldState, data, newState, files, prefGroups);
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.840 -0400", hash_original_method = "4157DB54FF0EFBF9F8662A7A8A8DB6F2", hash_generated_method = "D2F0CFC992C15CA9B379ADEC4C844D4B")
     public void restoreEntity(BackupDataInputStream data) {
         Context context = mContext;
@@ -74,17 +76,17 @@ public class SharedPreferencesBackupHelper extends FileBackupHelperBase implemen
             {
                 File f = context.getSharedPrefsFile(key).getAbsoluteFile();
                 writeFile(f, data);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        //Context context = mContext;
-        //String key = data.getKey();
-        //if (DEBUG) Log.d(TAG, "got entity '" + key + "' size=" + data.size());
-        //if (isKeyInList(key, mPrefGroups)) {
-            //File f = context.getSharedPrefsFile(key).getAbsoluteFile();
-            //writeFile(f, data);
-        //}
+        
+        
+        
+        
+        
+            
+            
+        
     }
 
     

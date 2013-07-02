@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 import java.net.URL;
@@ -17,7 +17,7 @@ public class CodeSource implements Serializable {
     public  CodeSource(URL location, Certificate[] certs) {
         addTaint(location.getTaint());
         addTaint(certs[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,40 +25,40 @@ public class CodeSource implements Serializable {
     public  CodeSource(URL location, CodeSigner[] signers) {
         addTaint(location.getTaint());
         addTaint(signers[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.136 -0400", hash_original_method = "6020A065662221000E3F20D70138382C", hash_generated_method = "B3192394A377EBB8D45C36F5EE0793A1")
     public final Certificate[] getCertificates() {
-        Certificate[] varB4EAC82CA7396A68D541C85D26508E83_1329956850 = null; //Variable for return #1
+        Certificate[] varB4EAC82CA7396A68D541C85D26508E83_1329956850 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1329956850 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1329956850.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1329956850.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1329956850;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.137 -0400", hash_original_method = "38815E69C10DF8AAA74DCF93B8EB81FB", hash_generated_method = "C9F42EBFE541421E0D9FB3621234C406")
     public final CodeSigner[] getCodeSigners() {
-        CodeSigner[] varB4EAC82CA7396A68D541C85D26508E83_1313254383 = null; //Variable for return #1
+        CodeSigner[] varB4EAC82CA7396A68D541C85D26508E83_1313254383 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1313254383 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1313254383.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1313254383.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1313254383;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.137 -0400", hash_original_method = "7F43974786C9B6766E0F06D3AFC89834", hash_generated_method = "44F47912EFC202D32C02F301638D5D50")
     public final URL getLocation() {
-        URL varB4EAC82CA7396A68D541C85D26508E83_323026204 = null; //Variable for return #1
+        URL varB4EAC82CA7396A68D541C85D26508E83_323026204 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_323026204 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_323026204.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_323026204.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_323026204;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -67,8 +67,8 @@ public class CodeSource implements Serializable {
         addTaint(cs.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_661114270 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_661114270;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     

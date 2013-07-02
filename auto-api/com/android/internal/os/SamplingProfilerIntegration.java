@@ -1,11 +1,11 @@
 package com.android.internal.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.pm.PackageInfo;
 import android.os.Build;
@@ -31,7 +31,7 @@ public class SamplingProfilerIntegration {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.706 -0400", hash_original_method = "C843367E35B636EBAF34BDED63CFE66E", hash_generated_method = "C843367E35B636EBAF34BDED63CFE66E")
     public SamplingProfilerIntegration ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -40,6 +40,7 @@ public class SamplingProfilerIntegration {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void start() {
         if (!enabled) {
             return;
@@ -78,6 +79,7 @@ public class SamplingProfilerIntegration {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeZygoteSnapshot() {
         if (!enabled) {
             return;
@@ -89,6 +91,7 @@ public class SamplingProfilerIntegration {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void writeSnapshotFile(String processName, PackageInfo packageInfo) {
         if (!enabled) {
             return;
@@ -119,6 +122,7 @@ public class SamplingProfilerIntegration {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void generateSnapshotHeader(String processName, PackageInfo packageInfo,
             PrintStream out) {
         out.println("Version: 3");

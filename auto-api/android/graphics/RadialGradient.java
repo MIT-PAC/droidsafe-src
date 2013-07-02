@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class RadialGradient extends Shader {
@@ -16,13 +16,13 @@ public class RadialGradient extends Shader {
                           int colors[], float positions[], TileMode tile) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("radius must be > 0");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("needs >= 2 number of colors");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("color and position arrays must be of equal length");
-        } //End block
+        } 
         native_instance = nativeCreate1(x, y, radius, colors, positions, tile.nativeInt);
         native_shader = nativePostCreate1(native_instance, x, y, radius, colors, positions,
                 tile.nativeInt);
@@ -32,19 +32,19 @@ public class RadialGradient extends Shader {
         addTaint(colors[0]);
         addTaint(positions[0]);
         addTaint(tile.getTaint());
-        // ---------- Original Method ----------
-        //if (radius <= 0) {
-            //throw new IllegalArgumentException("radius must be > 0");
-        //}
-        //if (colors.length < 2) {
-            //throw new IllegalArgumentException("needs >= 2 number of colors");
-        //}
-        //if (positions != null && colors.length != positions.length) {
-            //throw new IllegalArgumentException("color and position arrays must be of equal length");
-        //}
-        //native_instance = nativeCreate1(x, y, radius, colors, positions, tile.nativeInt);
-        //native_shader = nativePostCreate1(native_instance, x, y, radius, colors, positions,
-                //tile.nativeInt);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+                
     }
 
     
@@ -53,7 +53,7 @@ public class RadialGradient extends Shader {
                           int color0, int color1, TileMode tile) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("radius must be > 0");
-        } //End block
+        } 
         native_instance = nativeCreate2(x, y, radius, color0, color1, tile.nativeInt);
         native_shader = nativePostCreate2(native_instance, x, y, radius, color0, color1,
                 tile.nativeInt);
@@ -63,16 +63,17 @@ public class RadialGradient extends Shader {
         addTaint(color0);
         addTaint(color1);
         addTaint(tile.getTaint());
-        // ---------- Original Method ----------
-        //if (radius <= 0) {
-            //throw new IllegalArgumentException("radius must be > 0");
-        //}
-        //native_instance = nativeCreate2(x, y, radius, color0, color1, tile.nativeInt);
-        //native_shader = nativePostCreate2(native_instance, x, y, radius, color0, color1,
-                //tile.nativeInt);
+        
+        
+            
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static int nativeCreate1(float x, float y, float radius,
             int colors[], float positions[], int tileMode) {
         return DSUtils.UNKNOWN_INT;
@@ -85,6 +86,7 @@ public class RadialGradient extends Shader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static int nativePostCreate1(int native_shader, float x, float y, float radius,
             int colors[], float positions[], int tileMode) {
         return DSUtils.UNKNOWN_INT;

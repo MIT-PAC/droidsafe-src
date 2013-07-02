@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.INotificationManager;
 import android.app.ITransientNotification;
@@ -44,19 +44,20 @@ public class Toast {
         mTN = new TN();
         mTN.mY = context.getResources().getDimensionPixelSize(
                 com.android.internal.R.dimen.toast_y_offset);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mTN = new TN();
-        //mTN.mY = context.getResources().getDimensionPixelSize(
-                //com.android.internal.R.dimen.toast_y_offset);
+        
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.200 -0400", hash_original_method = "EBD8B8572362DD92CF984D93DE6E4FF9", hash_generated_method = "240C26A73D3CB18071BF2F3A3ABF268B")
     public void show() {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("setView must have been called");
-        } //End block
+        } 
         INotificationManager service = getService();
         String pkg = mContext.getPackageName();
         TN tn = mTN;
@@ -64,56 +65,57 @@ public class Toast {
         try 
         {
             service.enqueueToast(pkg, tn, mDuration);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
-        // ---------- Original Method ----------
-        //if (mNextView == null) {
-            //throw new RuntimeException("setView must have been called");
-        //}
-        //INotificationManager service = getService();
-        //String pkg = mContext.getPackageName();
-        //TN tn = mTN;
-        //tn.mNextView = mNextView;
-        //try {
-            //service.enqueueToast(pkg, tn, mDuration);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.200 -0400", hash_original_method = "905E110A9D66070AD259EFE2B60EBDFA", hash_generated_method = "5E755949284AFD2F0E09AB46034EB948")
     public void cancel() {
         mTN.hide();
-        // ---------- Original Method ----------
-        //mTN.hide();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.201 -0400", hash_original_method = "A152CAEDF892AE03EF7992276FE51073", hash_generated_method = "BEBF20515F3CF648B66FD299727BC65E")
     public void setView(View view) {
         mNextView = view;
-        // ---------- Original Method ----------
-        //mNextView = view;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.201 -0400", hash_original_method = "2CED2C577EBE287B42B9009F6CFBB820", hash_generated_method = "0BBA19E8F1E3663875BC98D757A08768")
     public View getView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_1647900362 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1647900362 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1647900362 = mNextView;
-        varB4EAC82CA7396A68D541C85D26508E83_1647900362.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1647900362.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1647900362;
-        // ---------- Original Method ----------
-        //return mNextView;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.201 -0400", hash_original_method = "CFB561A2B5CB71F6E4A1F9C7A12A3738", hash_generated_method = "F9C7C4EC13468CD19CD7C7E3AFD925F1")
     public void setDuration(int duration) {
         mDuration = duration;
-        // ---------- Original Method ----------
-        //mDuration = duration;
+        
+        
     }
 
     
@@ -121,8 +123,8 @@ public class Toast {
     public int getDuration() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394287606 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394287606;
-        // ---------- Original Method ----------
-        //return mDuration;
+        
+        
     }
 
     
@@ -130,9 +132,9 @@ public class Toast {
     public void setMargin(float horizontalMargin, float verticalMargin) {
         mTN.mHorizontalMargin = horizontalMargin;
         mTN.mVerticalMargin = verticalMargin;
-        // ---------- Original Method ----------
-        //mTN.mHorizontalMargin = horizontalMargin;
-        //mTN.mVerticalMargin = verticalMargin;
+        
+        
+        
     }
 
     
@@ -140,8 +142,8 @@ public class Toast {
     public float getHorizontalMargin() {
         float var546ADE640B6EDFBC8A086EF31347E768_569734310 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_569734310;
-        // ---------- Original Method ----------
-        //return mTN.mHorizontalMargin;
+        
+        
     }
 
     
@@ -149,8 +151,8 @@ public class Toast {
     public float getVerticalMargin() {
         float var546ADE640B6EDFBC8A086EF31347E768_730760058 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_730760058;
-        // ---------- Original Method ----------
-        //return mTN.mVerticalMargin;
+        
+        
     }
 
     
@@ -159,10 +161,10 @@ public class Toast {
         mTN.mGravity = gravity;
         mTN.mX = xOffset;
         mTN.mY = yOffset;
-        // ---------- Original Method ----------
-        //mTN.mGravity = gravity;
-        //mTN.mX = xOffset;
-        //mTN.mY = yOffset;
+        
+        
+        
+        
     }
 
     
@@ -170,8 +172,8 @@ public class Toast {
     public int getGravity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_223209581 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_223209581;
-        // ---------- Original Method ----------
-        //return mTN.mGravity;
+        
+        
     }
 
     
@@ -179,8 +181,8 @@ public class Toast {
     public int getXOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500439875 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500439875;
-        // ---------- Original Method ----------
-        //return mTN.mX;
+        
+        
     }
 
     
@@ -188,11 +190,12 @@ public class Toast {
     public int getYOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_305159765 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_305159765;
-        // ---------- Original Method ----------
-        //return mTN.mY;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Toast makeText(Context context, CharSequence text, int duration) {
         Toast result = new Toast(context);
         LayoutInflater inflate = (LayoutInflater)
@@ -206,43 +209,47 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Toast makeText(Context context, int resId, int duration) throws Resources.NotFoundException {
         return makeText(context, context.getResources().getText(resId), duration);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.204 -0400", hash_original_method = "FD3914B9295A9EB352EBE416E97ECCF2", hash_generated_method = "B1E626708B182B1A5A89AB5D8ED65930")
     public void setText(int resId) {
         setText(mContext.getText(resId));
         addTaint(resId);
-        // ---------- Original Method ----------
-        //setText(mContext.getText(resId));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.205 -0400", hash_original_method = "75C0E785CBEB5D5B8434AF0D1C3897A8", hash_generated_method = "BA591BA071D7B68FBB68A60DD618FCB4")
     public void setText(CharSequence s) {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("This Toast was not created with Toast.makeText()");
-        } //End block
+        } 
         TextView tv = (TextView) mNextView.findViewById(com.android.internal.R.id.message);
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("This Toast was not created with Toast.makeText()");
-        } //End block
+        } 
         tv.setText(s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //if (mNextView == null) {
-            //throw new RuntimeException("This Toast was not created with Toast.makeText()");
-        //}
-        //TextView tv = (TextView) mNextView.findViewById(com.android.internal.R.id.message);
-        //if (tv == null) {
-            //throw new RuntimeException("This Toast was not created with Toast.makeText()");
-        //}
-        //tv.setText(s);
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static private INotificationManager getService() {
         if (sService != null) {
             return sService;
@@ -259,8 +266,8 @@ public class Toast {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.205 -0400", hash_original_method = "44EABCAA91D08F4C06482A1ED1EE7668", hash_generated_method = "C9938375C8B8C21D868647BA643A9E49")
             public void run() {
                 handleShow();
-                // ---------- Original Method ----------
-                //handleShow();
+                
+                
             }
 
             
@@ -272,9 +279,9 @@ public class Toast {
             public void run() {
                 handleHide();
                 mNextView = null;
-                // ---------- Original Method ----------
-                //handleHide();
-                //mNextView = null;
+                
+                
+                
             }
 
             
@@ -322,35 +329,35 @@ public class Toast {
             params.windowAnimations = com.android.internal.R.style.Animation_Toast;
             params.type = WindowManager.LayoutParams.TYPE_TOAST;
             params.setTitle("Toast");
-            // ---------- Original Method ----------
-            //final WindowManager.LayoutParams params = mParams;
-            //params.height = WindowManager.LayoutParams.WRAP_CONTENT;
-            //params.width = WindowManager.LayoutParams.WRAP_CONTENT;
-            //params.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
-                    //| WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
-                    //| WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
-            //params.format = PixelFormat.TRANSLUCENT;
-            //params.windowAnimations = com.android.internal.R.style.Animation_Toast;
-            //params.type = WindowManager.LayoutParams.TYPE_TOAST;
-            //params.setTitle("Toast");
+            
+            
+            
+            
+            
+                    
+                    
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.206 -0400", hash_original_method = "3E96BAE0A73C07217EE9E69C0532B078", hash_generated_method = "DB21D5FEBA237BDEFB3DEAADE3B14154")
         public void show() {
             mHandler.post(mShow);
-            // ---------- Original Method ----------
-            //if (localLOGV) Log.v(TAG, "SHOW: " + this);
-            //mHandler.post(mShow);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.207 -0400", hash_original_method = "FE787FFB2514635467B163AE42817C6A", hash_generated_method = "1CA4F3CC11777FC85B713964648F2E8A")
         public void hide() {
             mHandler.post(mHide);
-            // ---------- Original Method ----------
-            //if (localLOGV) Log.v(TAG, "HIDE: " + this);
-            //mHandler.post(mHide);
+            
+            
+            
         }
 
         
@@ -364,10 +371,10 @@ public class Toast {
                 mParams.gravity = gravity;
                 {
                     mParams.horizontalWeight = 1.0f;
-                } //End block
+                } 
                 {
                     mParams.verticalWeight = 1.0f;
-                } //End block
+                } 
                 mParams.x = mX;
                 mParams.y = mY;
                 mParams.verticalMargin = mVerticalMargin;
@@ -376,13 +383,13 @@ public class Toast {
                     boolean var343900A41CC12F4354B7979405515384_1747808597 = (mView.getParent() != null);
                     {
                         mWM.removeView(mView);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mWM.addView(mView, mParams);
                 trySendAccessibilityEvent();
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -391,25 +398,25 @@ public class Toast {
             AccessibilityManager accessibilityManager = AccessibilityManager.getInstance(mView.getContext());
             {
                 boolean var08EDE530C2FAA323754F9BC061A1BF41_1174467458 = (!accessibilityManager.isEnabled());
-            } //End collapsed parenthetic
+            } 
             AccessibilityEvent event = AccessibilityEvent.obtain(
                     AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED);
             event.setClassName(getClass().getName());
             event.setPackageName(mView.getContext().getPackageName());
             mView.dispatchPopulateAccessibilityEvent(event);
             accessibilityManager.sendAccessibilityEvent(event);
-            // ---------- Original Method ----------
-            //AccessibilityManager accessibilityManager =
-                    //AccessibilityManager.getInstance(mView.getContext());
-            //if (!accessibilityManager.isEnabled()) {
-                //return;
-            //}
-            //AccessibilityEvent event = AccessibilityEvent.obtain(
-                    //AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED);
-            //event.setClassName(getClass().getName());
-            //event.setPackageName(mView.getContext().getPackageName());
-            //mView.dispatchPopulateAccessibilityEvent(event);
-            //accessibilityManager.sendAccessibilityEvent(event);
+            
+            
+                    
+            
+                
+            
+            
+                    
+            
+            
+            
+            
         }
 
         
@@ -420,19 +427,19 @@ public class Toast {
                     boolean var343900A41CC12F4354B7979405515384_902570935 = (mView.getParent() != null);
                     {
                         mWM.removeView(mView);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mView = null;
-            } //End block
-            // ---------- Original Method ----------
-            //if (localLOGV) Log.v(TAG, "HANDLE HIDE: " + this + " mView=" + mView);
-            //if (mView != null) {
-                //if (mView.getParent() != null) {
-                    //if (localLOGV) Log.v(TAG, "REMOVE! " + mView + " in " + this);
-                    //mWM.removeView(mView);
-                //}
-                //mView = null;
-            //}
+            } 
+            
+            
+            
+                
+                    
+                    
+                
+                
+            
         }
 
         

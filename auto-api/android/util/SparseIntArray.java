@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.util.ArrayUtils;
 
@@ -23,7 +23,7 @@ public class SparseIntArray implements Cloneable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.665 -0400", hash_original_method = "3CB703BA4BBEFDD58F8198A538C651FA", hash_generated_method = "DD3187CC4240A3B6F7662B05387FA78D")
     public  SparseIntArray() {
         this(10);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,53 +33,56 @@ public class SparseIntArray implements Cloneable {
         mKeys = new int[initialCapacity];
         mValues = new int[initialCapacity];
         mSize = 0;
-        // ---------- Original Method ----------
-        //initialCapacity = ArrayUtils.idealIntArraySize(initialCapacity);
-        //mKeys = new int[initialCapacity];
-        //mValues = new int[initialCapacity];
-        //mSize = 0;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.666 -0400", hash_original_method = "A8A0500EAB2E651EC2684F9205BC101D", hash_generated_method = "DFDFFEC94506794CA890EC1C25F473A6")
     @Override
     public SparseIntArray clone() {
-        SparseIntArray varB4EAC82CA7396A68D541C85D26508E83_391168118 = null; //Variable for return #1
+        SparseIntArray varB4EAC82CA7396A68D541C85D26508E83_391168118 = null; 
         SparseIntArray clone = null;
         try 
         {
             clone = (SparseIntArray) super.clone();
             clone.mKeys = mKeys.clone();
             clone.mValues = mValues.clone();
-        } //End block
+        } 
         catch (CloneNotSupportedException cnse)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_391168118 = clone;
-        varB4EAC82CA7396A68D541C85D26508E83_391168118.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_391168118.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_391168118;
-        // ---------- Original Method ----------
-        //SparseIntArray clone = null;
-        //try {
-            //clone = (SparseIntArray) super.clone();
-            //clone.mKeys = mKeys.clone();
-            //clone.mValues = mValues.clone();
-        //} catch (CloneNotSupportedException cnse) {
-        //}
-        //return clone;
+        
+        
+        
+            
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.666 -0400", hash_original_method = "31C2EB74F838DC49D6A7CCB91DEC9730", hash_generated_method = "4D42441ABC8A8840F54268FEE393FBD6")
     public int get(int key) {
         int var2681AF3C27FD52FDD48BA1C704E320C9_866465021 = (get(key, 0));
         addTaint(key);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_339755801 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_339755801;
-        // ---------- Original Method ----------
-        //return get(key, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.667 -0400", hash_original_method = "F09A11123BBC4B0EABD4FD786A922B87", hash_generated_method = "0ECDE08792B5D57BE4C871F6678F4843")
     public int get(int key, int valueIfKeyNotFound) {
         int i = binarySearch(mKeys, 0, mSize, key);
@@ -87,49 +90,52 @@ public class SparseIntArray implements Cloneable {
         addTaint(valueIfKeyNotFound);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_219585252 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_219585252;
-        // ---------- Original Method ----------
-        //int i = binarySearch(mKeys, 0, mSize, key);
-        //if (i < 0) {
-            //return valueIfKeyNotFound;
-        //} else {
-            //return mValues[i];
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.667 -0400", hash_original_method = "8400B64AA446E0EFD1887423DF561D32", hash_generated_method = "060395FF769BDF9006F60752B891C48E")
     public void delete(int key) {
         int i = binarySearch(mKeys, 0, mSize, key);
         {
             removeAt(i);
-        } //End block
+        } 
         addTaint(key);
-        // ---------- Original Method ----------
-        //int i = binarySearch(mKeys, 0, mSize, key);
-        //if (i >= 0) {
-            //removeAt(i);
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.668 -0400", hash_original_method = "95F6538276A47A94F5635C5979B3D205", hash_generated_method = "E3E4526070D7FA71B63F2740C50E5CFB")
     public void removeAt(int index) {
         System.arraycopy(mKeys, index + 1, mKeys, index, mSize - (index + 1));
         System.arraycopy(mValues, index + 1, mValues, index, mSize - (index + 1));
         addTaint(index);
-        // ---------- Original Method ----------
-        //System.arraycopy(mKeys, index + 1, mKeys, index, mSize - (index + 1));
-        //System.arraycopy(mValues, index + 1, mValues, index, mSize - (index + 1));
-        //mSize--;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.669 -0400", hash_original_method = "22FC701C5FD198EE89684FFAA296E5FF", hash_generated_method = "B60F1D5309101AB8222910C5466998F5")
     public void put(int key, int value) {
         int i = binarySearch(mKeys, 0, mSize, key);
         {
             mValues[i] = value;
-        } //End block
+        } 
         {
             i = ~i;
             {
@@ -140,16 +146,16 @@ public class SparseIntArray implements Cloneable {
                 System.arraycopy(mValues, 0, nvalues, 0, mValues.length);
                 mKeys = nkeys;
                 mValues = nvalues;
-            } //End block
+            } 
             {
                 System.arraycopy(mKeys, i, mKeys, i + 1, mSize - i);
                 System.arraycopy(mValues, i, mValues, i + 1, mSize - i);
-            } //End block
+            } 
             mKeys[i] = key;
             mValues[i] = value;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -157,8 +163,8 @@ public class SparseIntArray implements Cloneable {
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723260385 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723260385;
-        // ---------- Original Method ----------
-        //return mSize;
+        
+        
     }
 
     
@@ -167,8 +173,8 @@ public class SparseIntArray implements Cloneable {
         addTaint(index);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1349284523 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1349284523;
-        // ---------- Original Method ----------
-        //return mKeys[index];
+        
+        
     }
 
     
@@ -177,19 +183,20 @@ public class SparseIntArray implements Cloneable {
         addTaint(index);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1168658512 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1168658512;
-        // ---------- Original Method ----------
-        //return mValues[index];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.671 -0400", hash_original_method = "AE2F6996EFD9E2EE7383268F20118C3E", hash_generated_method = "138B6FA48A7FA0B18BEA7918C2F30683")
     public int indexOfKey(int key) {
         int varEF803A1EE726CA2553B95F3E48B65AD1_1741920803 = (binarySearch(mKeys, 0, mSize, key));
         addTaint(key);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1309693357 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1309693357;
-        // ---------- Original Method ----------
-        //return binarySearch(mKeys, 0, mSize, key);
+        
+        
     }
 
     
@@ -197,31 +204,32 @@ public class SparseIntArray implements Cloneable {
     public int indexOfValue(int value) {
         {
             int i = 0;
-        } //End collapsed parenthetic
+        } 
         addTaint(value);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1589627989 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1589627989;
-        // ---------- Original Method ----------
-        //for (int i = 0; i < mSize; i++)
-            //if (mValues[i] == value)
-                //return i;
-        //return -1;
+        
+        
+            
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.673 -0400", hash_original_method = "78B640B3511AD026106C387D36058FFC", hash_generated_method = "2F55AFCAF967A1646FEBDAF6AC2C8455")
     public void clear() {
         mSize = 0;
-        // ---------- Original Method ----------
-        //mSize = 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.674 -0400", hash_original_method = "582360498D222FA3AC7FD1DD315CF583", hash_generated_method = "B126810FBA0B9DDB07AA88EDADD209C0")
     public void append(int key, int value) {
         {
             put(key, value);
-        } //End block
+        } 
         int pos = mSize;
         {
             int n = ArrayUtils.idealIntArraySize(pos + 1);
@@ -231,28 +239,28 @@ public class SparseIntArray implements Cloneable {
             System.arraycopy(mValues, 0, nvalues, 0, mValues.length);
             mKeys = nkeys;
             mValues = nvalues;
-        } //End block
+        } 
         mKeys[pos] = key;
         mValues[pos] = value;
         mSize = pos + 1;
-        // ---------- Original Method ----------
-        //if (mSize != 0 && key <= mKeys[mSize - 1]) {
-            //put(key, value);
-            //return;
-        //}
-        //int pos = mSize;
-        //if (pos >= mKeys.length) {
-            //int n = ArrayUtils.idealIntArraySize(pos + 1);
-            //int[] nkeys = new int[n];
-            //int[] nvalues = new int[n];
-            //System.arraycopy(mKeys, 0, nkeys, 0, mKeys.length);
-            //System.arraycopy(mValues, 0, nvalues, 0, mValues.length);
-            //mKeys = nkeys;
-            //mValues = nvalues;
-        //}
-        //mKeys[pos] = key;
-        //mValues[pos] = value;
-        //mSize = pos + 1;
+        
+        
+            
+            
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
+        
+        
+        
     }
 
     

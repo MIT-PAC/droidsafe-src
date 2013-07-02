@@ -1,11 +1,11 @@
 package org.bouncycastle.math.ec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 
@@ -21,9 +21,9 @@ class ZTauElement {
     public  ZTauElement(BigInteger u, BigInteger v) {
         this.u = u;
         this.v = v;
-        // ---------- Original Method ----------
-        //this.u = u;
-        //this.v = v;
+        
+        
+        
     }
 
     

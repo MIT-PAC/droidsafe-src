@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -56,17 +56,18 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         mWebView.setHTML5VideoViewProxy(this);
         mNativePointer = nativePtr;
         createWebCoreHandler();
-        // ---------- Original Method ----------
-        //mWebView = webView;
-        //mWebView.setHTML5VideoViewProxy(this);
-        //mNativePointer = nativePtr;
-        //createWebCoreHandler();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.882 -0400", hash_original_method = "CDB2DD287D3DEEC004B192544DE39644", hash_generated_method = "2B0A8A62540FA73EFDB0F859E2AC47F5")
     public void onPrepared(MediaPlayer mp) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         VideoPlayer.onPrepared();
         Message msg = Message.obtain(mWebCoreHandler, PREPARED);
         Map<String, Object> map = new HashMap<String, Object>();
@@ -76,173 +77,183 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         msg.obj = map;
         mWebCoreHandler.sendMessage(msg);
         addTaint(mp.getTaint());
-        // ---------- Original Method ----------
-        //VideoPlayer.onPrepared();
-        //Message msg = Message.obtain(mWebCoreHandler, PREPARED);
-        //Map<String, Object> map = new HashMap<String, Object>();
-        //map.put("dur", new Integer(mp.getDuration()));
-        //map.put("width", new Integer(mp.getVideoWidth()));
-        //map.put("height", new Integer(mp.getVideoHeight()));
-        //msg.obj = map;
-        //mWebCoreHandler.sendMessage(msg);
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.883 -0400", hash_original_method = "82FFD8A4379253187C5EBB8D52946D71", hash_generated_method = "3A0D8BA20E75ACFF1E9B14EFADEF9862")
     public void onCompletion(MediaPlayer mp) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         sendMessage(obtainMessage(ENDED, 1, 0));
         addTaint(mp.getTaint());
-        // ---------- Original Method ----------
-        //sendMessage(obtainMessage(ENDED, 1, 0));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.883 -0400", hash_original_method = "655E6549044B32921535D006F146EAB8", hash_generated_method = "034380452E2A06E8E90E5D05ED9786AB")
     public boolean onError(MediaPlayer mp, int what, int extra) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         sendMessage(obtainMessage(ERROR));
         addTaint(mp.getTaint());
         addTaint(what);
         addTaint(extra);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1243047847 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1243047847;
-        // ---------- Original Method ----------
-        //sendMessage(obtainMessage(ERROR));
-        //return false;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.883 -0400", hash_original_method = "62621EBDF8B0A4EDB36AB4D032595D91", hash_generated_method = "2F375E48F6E447CCC226130CA39C8C1A")
     public void dispatchOnEnded() {
         Message msg = Message.obtain(mWebCoreHandler, ENDED);
         mWebCoreHandler.sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain(mWebCoreHandler, ENDED);
-        //mWebCoreHandler.sendMessage(msg);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.884 -0400", hash_original_method = "94DCE2F6FC10D862635A4D190DE0DC1E", hash_generated_method = "9A9C288C348B9F13F50F33873C67974C")
     public void dispatchOnPaused() {
         Message msg = Message.obtain(mWebCoreHandler, PAUSED);
         mWebCoreHandler.sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain(mWebCoreHandler, PAUSED);
-        //mWebCoreHandler.sendMessage(msg);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.884 -0400", hash_original_method = "550ED954EF76D5F12E77A6BAA299B5BF", hash_generated_method = "963875518E6A9E46050D8C97B41525B1")
     public void dispatchOnStopFullScreen() {
         Message msg = Message.obtain(mWebCoreHandler, STOPFULLSCREEN);
         mWebCoreHandler.sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain(mWebCoreHandler, STOPFULLSCREEN);
-        //mWebCoreHandler.sendMessage(msg);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.884 -0400", hash_original_method = "C11D465DE26E4E34CC2ED3EA3C5CA265", hash_generated_method = "C4D6A72BC32251196FAB8B8FF9FCA05A")
     public void onTimeupdate() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         sendMessage(obtainMessage(TIMEUPDATE));
-        // ---------- Original Method ----------
-        //sendMessage(obtainMessage(TIMEUPDATE));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.885 -0400", hash_original_method = "BC25893B84FEC7EF5FFFF0FB0B5B6C05", hash_generated_method = "8C53EBBD3511D2D6B89B0EF019383F39")
     @Override
     public void onFrameAvailable(SurfaceTexture surfaceTexture) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mWebView.invalidate();
         addTaint(surfaceTexture.getTaint());
-        // ---------- Original Method ----------
-        //mWebView.invalidate();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.886 -0400", hash_original_method = "A79112D38F42B48A9F0E0FABCCDF1611", hash_generated_method = "01C2EADB7387D6B344A8ECE7BE0D4F03")
     @Override
     public void handleMessage(Message msg) {
-        //Begin case PLAY 
+        
         {
             String url = (String) msg.obj;
             WebChromeClient client = mWebView.getWebChromeClient();
             int videoLayerID = msg.arg1;
             {
                 VideoPlayer.play(url, mSeekPosition, this, client, videoLayerID);
-            } //End block
-        } //End block
-        //End case PLAY 
-        //Begin case SEEK 
+            } 
+        } 
+        
+        
         {
             Integer time = (Integer) msg.obj;
             mSeekPosition = time;
             VideoPlayer.seek(mSeekPosition, this);
-        } //End block
-        //End case SEEK 
-        //Begin case PAUSE 
+        } 
+        
+        
         {
             VideoPlayer.pause(this);
-        } //End block
-        //End case PAUSE 
-        //Begin case ENDED 
+        } 
+        
+        
         VideoPlayer.isVideoSelfEnded = true;
-        //End case ENDED 
-        //Begin case ENDED 
+        
+        
         VideoPlayer.end();
-        //End case ENDED 
-        //Begin case ERROR 
+        
+        
         {
             WebChromeClient client = mWebView.getWebChromeClient();
             {
                 client.onHideCustomView();
-            } //End block
-        } //End block
-        //End case ERROR 
-        //Begin case LOAD_DEFAULT_POSTER 
+            } 
+        } 
+        
+        
         {
             WebChromeClient client = mWebView.getWebChromeClient();
             {
                 doSetPoster(client.getDefaultVideoPoster());
-            } //End block
-        } //End block
-        //End case LOAD_DEFAULT_POSTER 
-        //Begin case TIMEUPDATE 
+            } 
+        } 
+        
+        
         {
             {
                 boolean var5B158A5B0EFB46B96646F59F4969BBB6_1019519471 = (VideoPlayer.isPlaying(this));
                 {
                     sendTimeupdate();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        //End case TIMEUPDATE 
-        //Begin case BUFFERING_START 
+                } 
+            } 
+        } 
+        
+        
         {
             VideoPlayer.setPlayerBuffering(true);
-        } //End block
-        //End case BUFFERING_START 
-        //Begin case BUFFERING_END 
+        } 
+        
+        
         {
             VideoPlayer.setPlayerBuffering(false);
-        } //End block
-        //End case BUFFERING_END 
+        } 
+        
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.887 -0400", hash_original_method = "1A016E6492F3E166AEDA862A5517C526", hash_generated_method = "0DC9774143CD1E736CE5A15E87FDB3D3")
     private void createWebCoreHandler() {
         mWebCoreHandler = new Handler() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.887 -0400", hash_original_method = "B10F0183A0FABB1F34A9FD1B81A4AF54", hash_generated_method = "35C8BC06724C02613EA65853CEEFE442")
+            @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.887 -0400", hash_original_method = "B10F0183A0FABB1F34A9FD1B81A4AF54", hash_generated_method = "35C8BC06724C02613EA65853CEEFE442")
             @Override
             public void handleMessage(Message msg) {
-                //Begin case PREPARED 
+                
                 {
                     Map<String, Object> map = (Map<String, Object>) msg.obj;
                     Integer duration = (Integer) map.get("dur");
@@ -250,84 +261,88 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
                     Integer height = (Integer) map.get("height");
                     nativeOnPrepared(duration.intValue(), width.intValue(),
                                 height.intValue(), mNativePointer);
-                } //End block
-                //End case PREPARED 
-                //Begin case ENDED 
+                } 
+                
+                
                 mSeekPosition = 0;
-                //End case ENDED 
-                //Begin case ENDED 
+                
+                
                 nativeOnEnded(mNativePointer);
-                //End case ENDED 
-                //Begin case PAUSED 
+                
+                
                 nativeOnPaused(mNativePointer);
-                //End case PAUSED 
-                //Begin case POSTER_FETCHED 
+                
+                
                 Bitmap poster = (Bitmap) msg.obj;
-                //End case POSTER_FETCHED 
-                //Begin case POSTER_FETCHED 
+                
+                
                 nativeOnPosterFetched(poster, mNativePointer);
-                //End case POSTER_FETCHED 
-                //Begin case TIMEUPDATE 
+                
+                
                 nativeOnTimeupdate(msg.arg1, mNativePointer);
-                //End case TIMEUPDATE 
-                //Begin case STOPFULLSCREEN 
+                
+                
                 nativeOnStopFullscreen(mNativePointer);
-                //End case STOPFULLSCREEN 
+                
                 addTaint(msg.getTaint());
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 };
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.887 -0400", hash_original_method = "76142FB417205DB77C8AC002D1DDBF45", hash_generated_method = "5DA359C0A3FBC53D349C252CEE46C2E6")
     private void doSetPoster(Bitmap poster) {
         mPoster = poster;
         Message msg = Message.obtain(mWebCoreHandler, POSTER_FETCHED);
         msg.obj = poster;
         mWebCoreHandler.sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (poster == null) {
-            //return;
-        //}
-        //mPoster = poster;
-        //Message msg = Message.obtain(mWebCoreHandler, POSTER_FETCHED);
-        //msg.obj = poster;
-        //mWebCoreHandler.sendMessage(msg);
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.888 -0400", hash_original_method = "16EE14075D106C858D6DFA77C5B90D85", hash_generated_method = "A1D8F1A3BA5BF901EA3EB26973B98198")
     private void sendTimeupdate() {
         Message msg = Message.obtain(mWebCoreHandler, TIMEUPDATE);
         msg.arg1 = VideoPlayer.getCurrentPosition();
         mWebCoreHandler.sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain(mWebCoreHandler, TIMEUPDATE);
-        //msg.arg1 = VideoPlayer.getCurrentPosition();
-        //mWebCoreHandler.sendMessage(msg);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.888 -0400", hash_original_method = "87AB58F6C80364970DB0BE0C32B4800B", hash_generated_method = "FE8F5B0BCF2BABF7667C6B49205DB37B")
     public Context getContext() {
-        Context varB4EAC82CA7396A68D541C85D26508E83_1614899379 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_1614899379 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1614899379 = mWebView.getContext();
-        varB4EAC82CA7396A68D541C85D26508E83_1614899379.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1614899379.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1614899379;
-        // ---------- Original Method ----------
-        //return mWebView.getContext();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.889 -0400", hash_original_method = "93A8BD8C1053222363E314544DFAB05A", hash_generated_method = "2FACBDD91EA906166912C3DA3832B122")
     public void play(String url, int position, int videoLayerID) {
         {
             seek(position);
-        } //End block
+        } 
         Message message = obtainMessage(PLAY);
         message.arg1 = videoLayerID;
         message.obj = url;
@@ -335,122 +350,130 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         addTaint(url.getTaint());
         addTaint(position);
         addTaint(videoLayerID);
-        // ---------- Original Method ----------
-        //if (url == null) {
-            //return;
-        //}
-        //if (position > 0) {
-            //seek(position);
-        //}
-        //Message message = obtainMessage(PLAY);
-        //message.arg1 = videoLayerID;
-        //message.obj = url;
-        //sendMessage(message);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.889 -0400", hash_original_method = "5C4141091F743804B15461232C997D85", hash_generated_method = "24D61B45829243DA6CD386F5655B4933")
     public void seek(int time) {
         Message message = obtainMessage(SEEK);
         message.obj = new Integer(time);
         sendMessage(message);
         addTaint(time);
-        // ---------- Original Method ----------
-        //Message message = obtainMessage(SEEK);
-        //message.obj = new Integer(time);
-        //sendMessage(message);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.889 -0400", hash_original_method = "46912449E5F27493E09DC38DC6351C19", hash_generated_method = "09CCCB37480D8E69FE8536E537982B51")
     public void pause() {
         Message message = obtainMessage(PAUSE);
         sendMessage(message);
-        // ---------- Original Method ----------
-        //Message message = obtainMessage(PAUSE);
-        //sendMessage(message);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.889 -0400", hash_original_method = "9E02A818380AAE8C95423CA4DF6BB0F2", hash_generated_method = "41E3FC28AA66F4582EE0BE4C6F05BBC7")
     public void teardown() {
         {
             mPosterDownloader.cancelAndReleaseQueue();
-        } //End block
+        } 
         mNativePointer = 0;
-        // ---------- Original Method ----------
-        //if (mPosterDownloader != null) {
-            //mPosterDownloader.cancelAndReleaseQueue();
-        //}
-        //mNativePointer = 0;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.890 -0400", hash_original_method = "F3233AD918CF97E4872803E9BFDDE6E6", hash_generated_method = "63D1A3E6FF67CB3B691D5E46A5156594")
     public void loadPoster(String url) {
         {
             Message message = obtainMessage(LOAD_DEFAULT_POSTER);
             sendMessage(message);
-        } //End block
+        } 
         {
             mPosterDownloader.cancelAndReleaseQueue();
-        } //End block
+        } 
         mPosterDownloader = new PosterDownloader(url, this);
         mPosterDownloader.start();
-        // ---------- Original Method ----------
-        //if (url == null) {
-            //Message message = obtainMessage(LOAD_DEFAULT_POSTER);
-            //sendMessage(message);
-            //return;
-        //}
-        //if (mPosterDownloader != null) {
-            //mPosterDownloader.cancelAndReleaseQueue();
-        //}
-        //mPosterDownloader = new PosterDownloader(url, this);
-        //mPosterDownloader.start();
+        
+        
+            
+            
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.890 -0400", hash_original_method = "6B4B481A9DF2B25B735CB7B52B3C6386", hash_generated_method = "DD8955AAEDBDDA53AE90B8C09815DBF5")
     public void setBaseLayer(int layer) {
         VideoPlayer.setBaseLayer(layer);
         addTaint(layer);
-        // ---------- Original Method ----------
-        //VideoPlayer.setBaseLayer(layer);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.890 -0400", hash_original_method = "6A592A0539FD41CAB4A89EA53CE8C509", hash_generated_method = "74BD114EA9D2C02C1D31A902EB31DAE1")
     public void pauseAndDispatch() {
         VideoPlayer.pauseAndDispatch();
-        // ---------- Original Method ----------
-        //VideoPlayer.pauseAndDispatch();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.890 -0400", hash_original_method = "096DB59D6464AC209548B8DCB36CACB7", hash_generated_method = "6CF5FD669908F45D8D29648358F6AC08")
     public void enterFullScreenVideo(int layerId, String url) {
         VideoPlayer.enterFullScreenVideo(layerId, url, this, mWebView);
         addTaint(layerId);
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //VideoPlayer.enterFullScreenVideo(layerId, url, this, mWebView);
+        
+        
     }
 
     
-        public static HTML5VideoViewProxy getInstance(WebViewCore webViewCore, int nativePtr) {
+        @DSModeled(DSC.SAFE)
+    public static HTML5VideoViewProxy getInstance(WebViewCore webViewCore, int nativePtr) {
         return new HTML5VideoViewProxy(webViewCore.getWebView(), nativePtr);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.891 -0400", hash_original_method = "D61E1D458239E8CEF9B36F4B5C04FED9", hash_generated_method = "D256D41A914078146CE9E0B381CB8E5F")
      WebView getWebView() {
-        WebView varB4EAC82CA7396A68D541C85D26508E83_2070735467 = null; //Variable for return #1
+        WebView varB4EAC82CA7396A68D541C85D26508E83_2070735467 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2070735467 = mWebView;
-        varB4EAC82CA7396A68D541C85D26508E83_2070735467.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2070735467.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2070735467;
-        // ---------- Original Method ----------
-        //return mWebView;
+        
+        
     }
 
     
@@ -492,28 +515,29 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.893 -0400", hash_original_method = "F17ABD2D26205A567E8F07C068E86E0A", hash_generated_method = "8208C75A8452E2FAE099A88E05540607")
     @Override
     public boolean onInfo(MediaPlayer mp, int what, int extra) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             sendMessage(obtainMessage(BUFFERING_START, what, extra));
-        } //End block
+        } 
         {
             sendMessage(obtainMessage(BUFFERING_END, what, extra));
-        } //End block
+        } 
         addTaint(mp.getTaint());
         addTaint(what);
         addTaint(extra);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_536027781 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_536027781;
-        // ---------- Original Method ----------
-        //if (what == MediaPlayer.MEDIA_INFO_BUFFERING_START) {
-            //sendMessage(obtainMessage(BUFFERING_START, what, extra));
-        //} else if (what == MediaPlayer.MEDIA_INFO_BUFFERING_END) {
-            //sendMessage(obtainMessage(BUFFERING_END, what, extra));
-        //}
-        //return false;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -522,7 +546,7 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.893 -0400", hash_original_method = "9A68A6C42721A074DDF281539068301A", hash_generated_method = "9A68A6C42721A074DDF281539068301A")
         public VideoPlayer ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -646,7 +670,7 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
 
         
                 public static void onPrepared() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             if (!mHTML5VideoView.isFullScreenMode() || mHTML5VideoView.getAutostart()) {
                 mHTML5VideoView.start();
             }
@@ -711,21 +735,21 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
             try 
             {
                 mUrl = new URL(url);
-            } //End block
+            } 
             catch (MalformedURLException e)
             {
                 mUrl = null;
-            } //End block
+            } 
             mProxy = proxy;
             mHandler = new Handler();
-            // ---------- Original Method ----------
-            //try {
-                //mUrl = new URL(url);
-            //} catch (MalformedURLException e) {
-                //mUrl = null;
-            //}
-            //mProxy = proxy;
-            //mHandler = new Handler();
+            
+            
+                
+            
+                
+            
+            
+            
         }
 
         
@@ -738,18 +762,18 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
                 {
                     mRequestHandle = mRequestQueue.queueRequest(mUrl.toString(), "GET", null,
                         this, null, 0);
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //retainQueue();
-            //if (mUrl == null) {
-                //return;
-            //}
-            //String protocol = mUrl.getProtocol();
-            //if ("http".equals(protocol) || "https".equals(protocol)) {
-                //mRequestHandle = mRequestQueue.queueRequest(mUrl.toString(), "GET", null,
-                        //this, null, 0);
-            //}
+                } 
+            } 
+            
+            
+            
+                
+            
+            
+            
+                
+                        
+            
         }
 
         
@@ -758,14 +782,14 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
             {
                 mRequestHandle.cancel();
                 mRequestHandle = null;
-            } //End block
+            } 
             releaseQueue();
-            // ---------- Original Method ----------
-            //if (mRequestHandle != null) {
-                //mRequestHandle.cancel();
-                //mRequestHandle = null;
-            //}
-            //releaseQueue();
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -778,16 +802,16 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
             addTaint(major_version);
             addTaint(minor_version);
             addTaint(reason_phrase.getTaint());
-            // ---------- Original Method ----------
-            //mStatusCode = code;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.898 -0400", hash_original_method = "BF40C4FA5E162E01EBED02AABC1482F3", hash_generated_method = "E45FA39053CF44926A6AA06D774A1F7D")
         public void headers(Headers headers) {
             mHeaders = headers;
-            // ---------- Original Method ----------
-            //mHeaders = headers;
+            
+            
         }
 
         
@@ -795,15 +819,15 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         public void data(byte[] data, int len) {
             {
                 mPosterBytes = new ByteArrayOutputStream();
-            } //End block
+            } 
             mPosterBytes.write(data, 0, len);
             addTaint(data[0]);
             addTaint(len);
-            // ---------- Original Method ----------
-            //if (mPosterBytes == null) {
-                //mPosterBytes = new ByteArrayOutputStream();
-            //}
-            //mPosterBytes.write(data, 0, len);
+            
+            
+                
+            
+            
         }
 
         
@@ -816,19 +840,19 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
                         Bitmap poster = BitmapFactory.decodeByteArray(
                             mPosterBytes.toByteArray(), 0, mPosterBytes.size());
                         mProxy.doSetPoster(poster);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 cleanup();
-            } //End block
+            } 
             {
                 try 
                 {
                     mUrl = new URL(mHeaders.getLocation());
-                } //End block
+                } 
                 catch (MalformedURLException e)
                 {
                     mUrl = null;
-                } //End block
+                } 
                 {
                     mHandler.post(new Runnable() {                        
                         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.900 -0400", hash_original_method = "92B9FBCB479F24310DB8CA88B9363005", hash_generated_method = "4A4AEE36678852CC5C424FF536C502D0")
@@ -836,25 +860,25 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
                             {
                                 mRequestHandle.setupRedirect(mUrl.toString(), mStatusCode,
                                        new HashMap<String, String>());
-                            } //End block
-                            // ---------- Original Method ----------
-                            //if (mRequestHandle != null) {
-                               //mRequestHandle.setupRedirect(mUrl.toString(), mStatusCode,
-                                       //new HashMap<String, String>());
-                           //}
+                            } 
+                            
+                            
+                               
+                                       
+                           
                         }
 });
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.900 -0400", hash_original_method = "1CF1F157C74C81DF70E7D72EFED2A778", hash_generated_method = "BA975D17C2A9DCB3141CC03D45651106")
         public void certificate(SslCertificate certificate) {
             addTaint(certificate.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -863,8 +887,8 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
             cleanup();
             addTaint(id);
             addTaint(description.getTaint());
-            // ---------- Original Method ----------
-            //cleanup();
+            
+            
         }
 
         
@@ -873,8 +897,8 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
             addTaint(error.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1053517604 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1053517604;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -884,23 +908,23 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
                 try 
                 {
                     mPosterBytes.close();
-                } //End block
+                } 
                 catch (IOException ignored)
                 { }
                 finally 
                 {
                     mPosterBytes = null;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if (mPosterBytes != null) {
-                //try {
-                    //mPosterBytes.close();
-                //} catch (IOException ignored) {
-                //} finally {
-                    //mPosterBytes = null;
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                
+                
+                    
+                
+            
         }
 
         
@@ -908,12 +932,12 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         private void retainQueue() {
             {
                 mRequestQueue = new RequestQueue(mProxy.getContext());
-            } //End block
-            // ---------- Original Method ----------
-            //if (mRequestQueue == null) {
-                //mRequestQueue = new RequestQueue(mProxy.getContext());
-            //}
-            //mQueueRefCount++;
+            } 
+            
+            
+                
+            
+            
         }
 
         
@@ -922,15 +946,15 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
             {
                 mRequestQueue.shutdown();
                 mRequestQueue = null;
-            } //End block
-            // ---------- Original Method ----------
-            //if (mQueueRefCount == 0) {
-                //return;
-            //}
-            //if (--mQueueRefCount == 0) {
-                //mRequestQueue.shutdown();
-                //mRequestQueue = null;
-            //}
+            } 
+            
+            
+                
+            
+            
+                
+                
+            
         }
 
         

@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.ByteBuffer;
 import java.security.cert.Certificate;
@@ -29,11 +29,12 @@ public abstract class Signature extends SignatureSpi {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.831 -0400", hash_original_method = "007DE01FB6A8AC35B06025EDE803711E", hash_generated_method = "64FBEE7041AF14FFB5E58DA4CDF89A1A")
     protected  Signature(String algorithm) {
         this.algorithm = algorithm;
-        // ---------- Original Method ----------
-        //this.algorithm = algorithm;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Signature getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -51,6 +52,7 @@ public abstract class Signature extends SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Signature getInstance(String algorithm, String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -66,6 +68,7 @@ public abstract class Signature extends SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Signature getInstance(String algorithm, Provider provider) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -77,6 +80,7 @@ public abstract class Signature extends SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Signature getSignatureInstance(String algorithm,
             Provider provider) throws NoSuchAlgorithmException {
         Object spi = ENGINE.getInstance(algorithm, provider, null);
@@ -92,23 +96,23 @@ public abstract class Signature extends SignatureSpi {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.832 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "BCD2B880BBF994FB1AB48702ABD67AB5")
     public final Provider getProvider() {
-        Provider varB4EAC82CA7396A68D541C85D26508E83_505275587 = null; //Variable for return #1
+        Provider varB4EAC82CA7396A68D541C85D26508E83_505275587 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_505275587 = provider;
-        varB4EAC82CA7396A68D541C85D26508E83_505275587.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_505275587.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_505275587;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.832 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "16D38C7AFD1844B295B173B85A42B20B")
     public final String getAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_958763076 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_958763076 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_958763076 = algorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_958763076.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_958763076.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_958763076;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
@@ -117,9 +121,9 @@ public abstract class Signature extends SignatureSpi {
         engineInitVerify(publicKey);
         state = VERIFY;
         addTaint(publicKey.getTaint());
-        // ---------- Original Method ----------
-        //engineInitVerify(publicKey);
-        //state = VERIFY;
+        
+        
+        
     }
 
     
@@ -139,25 +143,25 @@ public abstract class Signature extends SignatureSpi {
                                 boolean varB9F24731C04BED7035E9A2BB39B9E036_205280638 = ("2.5.29.15".equals(i.next()));
                                 {
                                     critical = true;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         boolean[] keyUsage = ((X509Certificate) certificate)
                             .getKeyUsage();
                         {
                             if (DroidSafeAndroidRuntime.control) throw new InvalidKeyException("The public key in the certificate cannot be used for digital signature purposes");
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         engineInitVerify(certificate.getPublicKey());
         state = VERIFY;
         addTaint(certificate.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -166,9 +170,9 @@ public abstract class Signature extends SignatureSpi {
         engineInitSign(privateKey);
         state = SIGN;
         addTaint(privateKey.getTaint());
-        // ---------- Original Method ----------
-        //engineInitSign(privateKey);
-        //state = SIGN;
+        
+        
+        
     }
 
     
@@ -178,9 +182,9 @@ public abstract class Signature extends SignatureSpi {
         state = SIGN;
         addTaint(privateKey.getTaint());
         addTaint(random.getTaint());
-        // ---------- Original Method ----------
-        //engineInitSign(privateKey, random);
-        //state = SIGN;
+        
+        
+        
     }
 
     
@@ -188,15 +192,15 @@ public abstract class Signature extends SignatureSpi {
     public final byte[] sign() throws SignatureException {
         {
             if (DroidSafeAndroidRuntime.control) throw new SignatureException("Signature object is not initialized properly");
-        } //End block
+        } 
         byte[] var2BF540A96FDD13E31EC65A887FD9474C_741835412 = (engineSign());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_887477940 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_887477940;
-        // ---------- Original Method ----------
-        //if (state != SIGN) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //return engineSign();
+        
+        
+            
+        
+        
     }
 
     
@@ -204,25 +208,25 @@ public abstract class Signature extends SignatureSpi {
     public final int sign(byte[] outbuf, int offset, int len) throws SignatureException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new SignatureException("Signature object is not initialized properly");
-        } //End block
+        } 
         int varAD8681934276A1CD16B838C3AB96F96D_278866125 = (engineSign(outbuf, offset, len));
         addTaint(outbuf[0]);
         addTaint(offset);
         addTaint(len);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_583022767 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_583022767;
-        // ---------- Original Method ----------
-        //if (outbuf == null || offset < 0 || len < 0 ||
-                //offset + len > outbuf.length) {
-            //throw new IllegalArgumentException();
-        //}
-        //if (state != SIGN) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //return engineSign(outbuf, offset, len);
+        
+        
+                
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -230,16 +234,16 @@ public abstract class Signature extends SignatureSpi {
     public final boolean verify(byte[] signature) throws SignatureException {
         {
             if (DroidSafeAndroidRuntime.control) throw new SignatureException("Signature object is not initialized properly");
-        } //End block
+        } 
         boolean var94E832A3545B70CECCD924171C5ED0C7_2133052230 = (engineVerify(signature));
         addTaint(signature[0]);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1869800075 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1869800075;
-        // ---------- Original Method ----------
-        //if (state != VERIFY) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //return engineVerify(signature);
+        
+        
+            
+        
+        
     }
 
     
@@ -247,25 +251,25 @@ public abstract class Signature extends SignatureSpi {
     public final boolean verify(byte[] signature, int offset, int length) throws SignatureException {
         {
             if (DroidSafeAndroidRuntime.control) throw new SignatureException("Signature object is not initialized properly");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         boolean varFB0754D41DA9EDEE16772952DEAC8EBB_1896900139 = (engineVerify(signature, offset, length));
         addTaint(signature[0]);
         addTaint(offset);
         addTaint(length);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1593329955 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1593329955;
-        // ---------- Original Method ----------
-        //if (state != VERIFY) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //if (signature == null || offset < 0 || length < 0 ||
-                //offset + length > signature.length) {
-            //throw new IllegalArgumentException();
-        //}
-        //return engineVerify(signature, offset, length);
+        
+        
+            
+        
+        
+                
+            
+        
+        
     }
 
     
@@ -273,14 +277,14 @@ public abstract class Signature extends SignatureSpi {
     public final void update(byte b) throws SignatureException {
         {
             if (DroidSafeAndroidRuntime.control) throw new SignatureException("Signature object is not initialized properly");
-        } //End block
+        } 
         engineUpdate(b);
         addTaint(b);
-        // ---------- Original Method ----------
-        //if (state == UNINITIALIZED) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //engineUpdate(b);
+        
+        
+            
+        
+        
     }
 
     
@@ -288,14 +292,14 @@ public abstract class Signature extends SignatureSpi {
     public final void update(byte[] data) throws SignatureException {
         {
             if (DroidSafeAndroidRuntime.control) throw new SignatureException("Signature object is not initialized properly");
-        } //End block
+        } 
         engineUpdate(data, 0, data.length);
         addTaint(data[0]);
-        // ---------- Original Method ----------
-        //if (state == UNINITIALIZED) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //engineUpdate(data, 0, data.length);
+        
+        
+            
+        
+        
     }
 
     
@@ -303,23 +307,23 @@ public abstract class Signature extends SignatureSpi {
     public final void update(byte[] data, int off, int len) throws SignatureException {
         {
             if (DroidSafeAndroidRuntime.control) throw new SignatureException("Signature object is not initialized properly");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         engineUpdate(data, off, len);
         addTaint(data[0]);
         addTaint(off);
         addTaint(len);
-        // ---------- Original Method ----------
-        //if (state == UNINITIALIZED) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //if (data == null || off < 0 || len < 0 ||
-                //off + len > data.length) {
-            //throw new IllegalArgumentException();
-        //}
-        //engineUpdate(data, off, len);
+        
+        
+            
+        
+        
+                
+            
+        
+        
     }
 
     
@@ -327,76 +331,77 @@ public abstract class Signature extends SignatureSpi {
     public final void update(ByteBuffer data) throws SignatureException {
         {
             if (DroidSafeAndroidRuntime.control) throw new SignatureException("Signature object is not initialized properly");
-        } //End block
+        } 
         engineUpdate(data);
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        //if (state == UNINITIALIZED) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //engineUpdate(data);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.846 -0400", hash_original_method = "300ADD63628A84B0D8F725B1BA1E9A8E", hash_generated_method = "743D9D49ADE429492E8BC2EC0387C3E8")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1938425593 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1938425593 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1938425593 = "SIGNATURE " + algorithm + " state: " + stateToString(state);
-        varB4EAC82CA7396A68D541C85D26508E83_1938425593.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1938425593.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1938425593;
-        // ---------- Original Method ----------
-        //return "SIGNATURE " + algorithm + " state: " + stateToString(state);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.848 -0400", hash_original_method = "C1A460A3B710FBA1ED28C52AC5BBE911", hash_generated_method = "F41208CCB380A3B85AFCC04ECFF83E3B")
     private String stateToString(int state) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1247721809 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_108163905 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1495056310 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_518735611 = null; //Variable for return #4
-        //Begin case UNINITIALIZED 
+        String varB4EAC82CA7396A68D541C85D26508E83_1247721809 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_108163905 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1495056310 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_518735611 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1247721809 = "UNINITIALIZED";
-        //End case UNINITIALIZED 
-        //Begin case SIGN 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_108163905 = "SIGN";
-        //End case SIGN 
-        //Begin case VERIFY 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1495056310 = "VERIFY";
-        //End case VERIFY 
-        //Begin case default 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_518735611 = "";
-        //End case default 
+        
         addTaint(state);
-        String varA7E53CE21691AB073D9660D615818899_1610859299; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1610859299; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1610859299 = varB4EAC82CA7396A68D541C85D26508E83_1247721809;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1610859299 = varB4EAC82CA7396A68D541C85D26508E83_108163905;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1610859299 = varB4EAC82CA7396A68D541C85D26508E83_1495056310;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1610859299 = varB4EAC82CA7396A68D541C85D26508E83_518735611;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1610859299.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1610859299.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1610859299;
-        // ---------- Original Method ----------
-        //switch (state) {
-        //case UNINITIALIZED:
-            //return "UNINITIALIZED";
-        //case SIGN:
-            //return "SIGN";
-        //case VERIFY:
-            //return "VERIFY";
-        //default:
-            //return "";
-        //}
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -406,8 +411,8 @@ public abstract class Signature extends SignatureSpi {
         engineSetParameter(param, value);
         addTaint(param.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //engineSetParameter(param, value);
+        
+        
     }
 
     
@@ -415,50 +420,51 @@ public abstract class Signature extends SignatureSpi {
     public final void setParameter(AlgorithmParameterSpec params) throws InvalidAlgorithmParameterException {
         engineSetParameter(params);
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //engineSetParameter(params);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.850 -0400", hash_original_method = "8EDBC3AD900BE7B10A8F191CA049C5A8", hash_generated_method = "CBA6CD929DE47ADE1FB22CD36FF60898")
     public final AlgorithmParameters getParameters() {
-        AlgorithmParameters varB4EAC82CA7396A68D541C85D26508E83_1413436193 = null; //Variable for return #1
+        AlgorithmParameters varB4EAC82CA7396A68D541C85D26508E83_1413436193 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1413436193 = engineGetParameters();
-        varB4EAC82CA7396A68D541C85D26508E83_1413436193.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1413436193.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1413436193;
-        // ---------- Original Method ----------
-        //return engineGetParameters();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.851 -0400", hash_original_method = "3218EA86DC018EF694546DAFA3BC417D", hash_generated_method = "77884633804C7C8957F9AD112E9E9E53")
     @Deprecated
     public final Object getParameter(String param) throws InvalidParameterException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_792712223 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_792712223 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_792712223 = engineGetParameter(param);
         addTaint(param.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_792712223.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_792712223.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_792712223;
-        // ---------- Original Method ----------
-        //return engineGetParameter(param);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.851 -0400", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "4B936D8EF00D6BF19B54E82A57CCA721")
     @Override
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_36891461 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_36891461 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_36891461 = super.clone();
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException();
-        varB4EAC82CA7396A68D541C85D26508E83_36891461.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_36891461.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_36891461;
-        // ---------- Original Method ----------
-        //if (this instanceof Cloneable) {
-            //return super.clone();
-        //}
-        //throw new CloneNotSupportedException();
+        
+        
+            
+        
+        
     }
 
     
@@ -475,9 +481,9 @@ public abstract class Signature extends SignatureSpi {
             spiImpl = signatureSpi;
             addTaint(provider.getTaint());
             addTaint(algorithm.getTaint());
-            // ---------- Original Method ----------
-            //super.provider = provider;
-            //spiImpl = signatureSpi;
+            
+            
+            
         }
 
         
@@ -487,8 +493,8 @@ public abstract class Signature extends SignatureSpi {
             byte[] var3C6A4D7933B903A8370E3026808FCCC3_205459690 = (spiImpl.engineSign());
             byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_163693910 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_163693910;
-            // ---------- Original Method ----------
-            //return spiImpl.engineSign();
+            
+            
         }
 
         
@@ -497,8 +503,8 @@ public abstract class Signature extends SignatureSpi {
         protected void engineUpdate(byte arg0) throws SignatureException {
             spiImpl.engineUpdate(arg0);
             addTaint(arg0);
-            // ---------- Original Method ----------
-            //spiImpl.engineUpdate(arg0);
+            
+            
         }
 
         
@@ -509,8 +515,8 @@ public abstract class Signature extends SignatureSpi {
             addTaint(arg0[0]);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1744838267 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1744838267;
-            // ---------- Original Method ----------
-            //return spiImpl.engineVerify(arg0);
+            
+            
         }
 
         
@@ -521,8 +527,8 @@ public abstract class Signature extends SignatureSpi {
             addTaint(arg0[0]);
             addTaint(arg1);
             addTaint(arg2);
-            // ---------- Original Method ----------
-            //spiImpl.engineUpdate(arg0, arg1, arg2);
+            
+            
         }
 
         
@@ -531,8 +537,8 @@ public abstract class Signature extends SignatureSpi {
         protected void engineInitSign(PrivateKey arg0) throws InvalidKeyException {
             spiImpl.engineInitSign(arg0);
             addTaint(arg0.getTaint());
-            // ---------- Original Method ----------
-            //spiImpl.engineInitSign(arg0);
+            
+            
         }
 
         
@@ -541,21 +547,21 @@ public abstract class Signature extends SignatureSpi {
         protected void engineInitVerify(PublicKey arg0) throws InvalidKeyException {
             spiImpl.engineInitVerify(arg0);
             addTaint(arg0.getTaint());
-            // ---------- Original Method ----------
-            //spiImpl.engineInitVerify(arg0);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.854 -0400", hash_original_method = "BC25730F2F2C84CFB445E50D8EAB3A12", hash_generated_method = "F709B955CC7ADCDB4035F50AE9FEE86A")
         @Override
         protected Object engineGetParameter(String arg0) throws InvalidParameterException {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1565082973 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1565082973 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1565082973 = spiImpl.engineGetParameter(arg0);
             addTaint(arg0.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1565082973.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1565082973.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1565082973;
-            // ---------- Original Method ----------
-            //return spiImpl.engineGetParameter(arg0);
+            
+            
         }
 
         
@@ -565,28 +571,28 @@ public abstract class Signature extends SignatureSpi {
             spiImpl.engineSetParameter(arg0, arg1);
             addTaint(arg0.getTaint());
             addTaint(arg1.getTaint());
-            // ---------- Original Method ----------
-            //spiImpl.engineSetParameter(arg0, arg1);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.855 -0400", hash_original_method = "E18D3A064C93BFFE53C93A44BEF059CB", hash_generated_method = "00D76B7B54215CC66A1B4F87EEE95FD9")
         @Override
         public Object clone() throws CloneNotSupportedException {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1270625636 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1270625636 = null; 
             {
                 SignatureSpi spi = (SignatureSpi) spiImpl.clone();
                 varB4EAC82CA7396A68D541C85D26508E83_1270625636 = new SignatureImpl(spi, getProvider(), getAlgorithm());
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException();
-            varB4EAC82CA7396A68D541C85D26508E83_1270625636.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1270625636.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1270625636;
-            // ---------- Original Method ----------
-            //if (spiImpl instanceof Cloneable) {
-                //SignatureSpi spi = (SignatureSpi) spiImpl.clone();
-                //return new SignatureImpl(spi, getProvider(), getAlgorithm());
-            //}
-            //throw new CloneNotSupportedException();
+            
+            
+                
+                
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package javax.xml.parsers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.xml.validation.Schema;
 import org.apache.harmony.xml.parsers.DocumentBuilderFactoryImpl;
@@ -32,10 +32,11 @@ public abstract class DocumentBuilderFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.674 -0400", hash_original_method = "49D4E4D47C8CF413B98AC9B42DF82DC4", hash_generated_method = "E213E77723289B6F2040F5B0C8C9D45D")
     protected  DocumentBuilderFactory() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DocumentBuilderFactory newInstance() {
         return new DocumentBuilderFactoryImpl();
     }
@@ -71,48 +72,48 @@ public abstract class DocumentBuilderFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.675 -0400", hash_original_method = "6A0A7EFC1E675DD90B546C7A4C9B47EE", hash_generated_method = "98A9EE2B3964663F64D1613FA6F20ABE")
     public void setNamespaceAware(boolean awareness) {
         this.namespaceAware = awareness;
-        // ---------- Original Method ----------
-        //this.namespaceAware = awareness;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.675 -0400", hash_original_method = "55B714FD0DC17953A4D0F6C9203268D6", hash_generated_method = "599F2B5B61FB8B7D3C2CD0C1E871774F")
     public void setValidating(boolean validating) {
         this.validating = validating;
-        // ---------- Original Method ----------
-        //this.validating = validating;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.675 -0400", hash_original_method = "247761D9B12D676DDB4CAC3CDF600276", hash_generated_method = "26ED015FC946531D730ED6E76280B99E")
     public void setIgnoringElementContentWhitespace(boolean whitespace) {
         this.whitespace = whitespace;
-        // ---------- Original Method ----------
-        //this.whitespace = whitespace;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.675 -0400", hash_original_method = "671BE4D371F0581E5B97389628916E7F", hash_generated_method = "3FE510027D542AC62DDDAC498BFA12AF")
     public void setExpandEntityReferences(boolean expandEntityRef) {
         this.expandEntityRef = expandEntityRef;
-        // ---------- Original Method ----------
-        //this.expandEntityRef = expandEntityRef;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.676 -0400", hash_original_method = "1FD1C35E28B34CBCC42CB14E4FC91862", hash_generated_method = "7FB77D001D57BE7E94A5C374DB0B5CC1")
     public void setIgnoringComments(boolean ignoreComments) {
         this.ignoreComments = ignoreComments;
-        // ---------- Original Method ----------
-        //this.ignoreComments = ignoreComments;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.676 -0400", hash_original_method = "221C7C3610A4998C18C0CAC31215B4A1", hash_generated_method = "529C53B32FE70E25B8EF95B49C7157F7")
     public void setCoalescing(boolean coalescing) {
         this.coalescing = coalescing;
-        // ---------- Original Method ----------
-        //this.coalescing = coalescing;
+        
+        
     }
 
     
@@ -120,8 +121,8 @@ public abstract class DocumentBuilderFactory {
     public boolean isNamespaceAware() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_399184536 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_399184536;
-        // ---------- Original Method ----------
-        //return namespaceAware;
+        
+        
     }
 
     
@@ -129,8 +130,8 @@ public abstract class DocumentBuilderFactory {
     public boolean isValidating() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_691940422 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_691940422;
-        // ---------- Original Method ----------
-        //return validating;
+        
+        
     }
 
     
@@ -138,8 +139,8 @@ public abstract class DocumentBuilderFactory {
     public boolean isIgnoringElementContentWhitespace() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1245921884 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1245921884;
-        // ---------- Original Method ----------
-        //return whitespace;
+        
+        
     }
 
     
@@ -147,8 +148,8 @@ public abstract class DocumentBuilderFactory {
     public boolean isExpandEntityReferences() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_367197954 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_367197954;
-        // ---------- Original Method ----------
-        //return expandEntityRef;
+        
+        
     }
 
     
@@ -156,8 +157,8 @@ public abstract class DocumentBuilderFactory {
     public boolean isIgnoringComments() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1054445497 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1054445497;
-        // ---------- Original Method ----------
-        //return ignoreComments;
+        
+        
     }
 
     
@@ -165,8 +166,8 @@ public abstract class DocumentBuilderFactory {
     public boolean isCoalescing() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1516452658 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1516452658;
-        // ---------- Original Method ----------
-        //return coalescing;
+        
+        
     }
 
     
@@ -186,6 +187,7 @@ public abstract class DocumentBuilderFactory {
         throws ParserConfigurationException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.678 -0400", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "2E2EBD7A2D5464481CAA84ECE27CE0D0")
     public Schema getSchema() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
@@ -197,17 +199,18 @@ public abstract class DocumentBuilderFactory {
             );
         
         return (Schema) new Object();
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.679 -0400", hash_original_method = "15A4A50F8E3104FAC414471F9078A720", hash_generated_method = "10FDF01C45401D687ED9E46F9A9C2D8D")
     public void setSchema(Schema schema) {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
@@ -218,14 +221,14 @@ public abstract class DocumentBuilderFactory {
             + "\""
             );
         addTaint(schema.getTaint());
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     
@@ -239,17 +242,18 @@ public abstract class DocumentBuilderFactory {
             + "\""
             );
         addTaint(state);
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.679 -0400", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "294EE9B6A2E000B455BD918C677DF216")
     public boolean isXIncludeAware() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
@@ -261,14 +265,14 @@ public abstract class DocumentBuilderFactory {
             );
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2080334026 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2080334026;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     

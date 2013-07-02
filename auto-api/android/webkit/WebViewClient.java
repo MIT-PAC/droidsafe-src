@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Bitmap;
 import android.net.http.SslError;
@@ -17,7 +17,7 @@ public class WebViewClient {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.389 -0400", hash_original_method = "B78AAF28C2768A73FBC0F670C8F6188A", hash_generated_method = "B78AAF28C2768A73FBC0F670C8F6188A")
     public WebViewClient ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -27,89 +27,91 @@ public class WebViewClient {
         addTaint(url.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_565918051 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_565918051;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.390 -0400", hash_original_method = "5314B6B2031A7AB7127460792C15BEA8", hash_generated_method = "8CF19BF8AB58A2E9400D25D274F7E0F5")
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(view.getTaint());
         addTaint(url.getTaint());
         addTaint(favicon.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.390 -0400", hash_original_method = "3C74EFC6CC5DEEE74470BD61275572DD", hash_generated_method = "F3EEDF32F8F97D52AE282E549FFDECB4")
     public void onPageFinished(WebView view, String url) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(view.getTaint());
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.390 -0400", hash_original_method = "854E1155516A65D2A0AC69045B4275C1", hash_generated_method = "301A2E56108AABAD3D657642C28C094D")
     public void onLoadResource(WebView view, String url) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(view.getTaint());
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.391 -0400", hash_original_method = "B5801BDD799BA7062410BD396AAB4B71", hash_generated_method = "14BB939FD225B539B2E7E8B9C49B2892")
     public WebResourceResponse shouldInterceptRequest(WebView view,
             String url) {
-        WebResourceResponse varB4EAC82CA7396A68D541C85D26508E83_361018242 = null; //Variable for return #1
+        WebResourceResponse varB4EAC82CA7396A68D541C85D26508E83_361018242 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_361018242 = null;
         addTaint(view.getTaint());
         addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_361018242.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_361018242.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_361018242;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.391 -0400", hash_original_method = "79CA4CDBF662362D6AFDE76E65301125", hash_generated_method = "0A4BB1121836D26B07C8FBCEE73542AE")
     @Deprecated
     public void onTooManyRedirects(WebView view, Message cancelMsg,
             Message continueMsg) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         cancelMsg.sendToTarget();
         addTaint(view.getTaint());
         addTaint(cancelMsg.getTaint());
         addTaint(continueMsg.getTaint());
-        // ---------- Original Method ----------
-        //cancelMsg.sendToTarget();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.391 -0400", hash_original_method = "12ABA78EBE10E417F0C1B2A97120946D", hash_generated_method = "8E08FC52ED5F8697EB4ABC241E570844")
     public void onReceivedError(WebView view, int errorCode,
             String description, String failingUrl) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(view.getTaint());
         addTaint(errorCode);
         addTaint(description.getTaint());
         addTaint(failingUrl.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.392 -0400", hash_original_method = "F404DEEFBF7AA691DD4FBAFA7C65E80C", hash_generated_method = "93388CC9F239834DCB4F6BAE902B2975")
     public void onFormResubmission(WebView view, Message dontResend,
             Message resend) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         dontResend.sendToTarget();
         addTaint(view.getTaint());
         addTaint(dontResend.getTaint());
         addTaint(resend.getTaint());
-        // ---------- Original Method ----------
-        //dontResend.sendToTarget();
+        
+        
     }
 
     
@@ -119,56 +121,59 @@ public class WebViewClient {
         addTaint(view.getTaint());
         addTaint(url.getTaint());
         addTaint(isReload);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.392 -0400", hash_original_method = "292FE6324BA8FDA19777928FD16DC874", hash_generated_method = "7C5B347D2826EBB462188668A16CFCA4")
     public void onReceivedSslError(WebView view, SslErrorHandler handler,
             SslError error) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         handler.cancel();
         addTaint(view.getTaint());
         addTaint(handler.getTaint());
         addTaint(error.getTaint());
-        // ---------- Original Method ----------
-        //handler.cancel();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.392 -0400", hash_original_method = "B2EE2F5677BCC95DB5D614A683A4C62D", hash_generated_method = "C21C7E62F36C4232D664A6E0E0C16B22")
     public void onProceededAfterSslError(WebView view, SslError error) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(view.getTaint());
         addTaint(error.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.393 -0400", hash_original_method = "C5A42222BD6D7B11B03E8E8DC75486E5", hash_generated_method = "B51A73B48F7095041FA27F9E975520E5")
     public void onReceivedClientCertRequest(WebView view,
             ClientCertRequestHandler handler, String host_and_port) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         handler.cancel();
         addTaint(view.getTaint());
         addTaint(handler.getTaint());
         addTaint(host_and_port.getTaint());
-        // ---------- Original Method ----------
-        //handler.cancel();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.393 -0400", hash_original_method = "99DC3611344E7F5F6B557A987ADB25FE", hash_generated_method = "E674AA9BA1D615B50834CAF483A1F41D")
     public void onReceivedHttpAuthRequest(WebView view,
             HttpAuthHandler handler, String host, String realm) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         handler.cancel();
         addTaint(view.getTaint());
         addTaint(handler.getTaint());
         addTaint(host.getTaint());
         addTaint(realm.getTaint());
-        // ---------- Original Method ----------
-        //handler.cancel();
+        
+        
     }
 
     
@@ -178,39 +183,39 @@ public class WebViewClient {
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_476929850 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_476929850;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.393 -0400", hash_original_method = "0A322E8BE1639A0DBED358F3919BFB99", hash_generated_method = "82FA2AA75F185AEA1F1C538A3CC5C338")
     public void onUnhandledKeyEvent(WebView view, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(view.getTaint());
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.393 -0400", hash_original_method = "E786223707BD58A877E8AD07E09750F2", hash_generated_method = "165D8F6DF52EF43FE5A9D14E430D9375")
     public void onScaleChanged(WebView view, float oldScale, float newScale) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(view.getTaint());
         addTaint(oldScale);
         addTaint(newScale);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.394 -0400", hash_original_method = "61AD7355C99E5A8A7ACA8AE385985070", hash_generated_method = "0919EFD4F655A6F89A1711FDD34B5AF5")
     public void onReceivedLoginRequest(WebView view, String realm,
             String account, String args) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(view.getTaint());
         addTaint(realm.getTaint());
         addTaint(account.getTaint());
         addTaint(args.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

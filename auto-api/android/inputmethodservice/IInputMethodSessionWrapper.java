@@ -1,11 +1,11 @@
 package android.inputmethodservice;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.os.HandlerCaller;
 import com.android.internal.view.IInputMethodCallback;
@@ -35,36 +35,36 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
             InputMethodSession inputMethodSession) {
         mCaller = new HandlerCaller(context, this);
         mInputMethodSession = inputMethodSession;
-        // ---------- Original Method ----------
-        //mCaller = new HandlerCaller(context, this);
-        //mInputMethodSession = inputMethodSession;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.577 -0400", hash_original_method = "FE0809D61F310D1DE2584DA263F14DCD", hash_generated_method = "9309B84F37B0E2F68640EDE775CD8F42")
     public InputMethodSession getInternalInputMethodSession() {
-        InputMethodSession varB4EAC82CA7396A68D541C85D26508E83_1147184943 = null; //Variable for return #1
+        InputMethodSession varB4EAC82CA7396A68D541C85D26508E83_1147184943 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1147184943 = mInputMethodSession;
-        varB4EAC82CA7396A68D541C85D26508E83_1147184943.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1147184943.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1147184943;
-        // ---------- Original Method ----------
-        //return mInputMethodSession;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.578 -0400", hash_original_method = "00877500C4B72645AB17DC7FDAE0E34A", hash_generated_method = "CDDBD87615185964D82BFCA0FC175938")
     public void executeMessage(Message msg) {
-        //Begin case DO_FINISH_INPUT 
+        
         mInputMethodSession.finishInput();
-        //End case DO_FINISH_INPUT 
-        //Begin case DO_DISPLAY_COMPLETIONS 
+        
+        
         mInputMethodSession.displayCompletions((CompletionInfo[])msg.obj);
-        //End case DO_DISPLAY_COMPLETIONS 
-        //Begin case DO_UPDATE_EXTRACTED_TEXT 
+        
+        
         mInputMethodSession.updateExtractedText(msg.arg1,
                         (ExtractedText)msg.obj);
-        //End case DO_UPDATE_EXTRACTED_TEXT 
-        //Begin case DO_DISPATCH_KEY_EVENT 
+        
+        
         {
             HandlerCaller.SomeArgs args = (HandlerCaller.SomeArgs)msg.obj;
             mInputMethodSession.dispatchKeyEvent(msg.arg1,
@@ -72,9 +72,9 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
                         new InputMethodEventCallbackWrapper(
                                 (IInputMethodCallback)args.arg2));
             mCaller.recycleArgs(args);
-        } //End block
-        //End case DO_DISPATCH_KEY_EVENT 
-        //Begin case DO_DISPATCH_TRACKBALL_EVENT 
+        } 
+        
+        
         {
             HandlerCaller.SomeArgs args = (HandlerCaller.SomeArgs)msg.obj;
             mInputMethodSession.dispatchTrackballEvent(msg.arg1,
@@ -82,55 +82,55 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
                         new InputMethodEventCallbackWrapper(
                                 (IInputMethodCallback)args.arg2));
             mCaller.recycleArgs(args);
-        } //End block
-        //End case DO_DISPATCH_TRACKBALL_EVENT 
-        //Begin case DO_UPDATE_SELECTION 
+        } 
+        
+        
         {
             HandlerCaller.SomeArgs args = (HandlerCaller.SomeArgs)msg.obj;
             mInputMethodSession.updateSelection(args.argi1, args.argi2,
                         args.argi3, args.argi4, args.argi5, args.argi6);
             mCaller.recycleArgs(args);
-        } //End block
-        //End case DO_UPDATE_SELECTION 
-        //Begin case DO_UPDATE_CURSOR 
+        } 
+        
+        
         {
             mInputMethodSession.updateCursor((Rect)msg.obj);
-        } //End block
-        //End case DO_UPDATE_CURSOR 
-        //Begin case DO_APP_PRIVATE_COMMAND 
+        } 
+        
+        
         {
             HandlerCaller.SomeArgs args = (HandlerCaller.SomeArgs)msg.obj;
             mInputMethodSession.appPrivateCommand((String)args.arg1,
                         (Bundle)args.arg2);
             mCaller.recycleArgs(args);
-        } //End block
-        //End case DO_APP_PRIVATE_COMMAND 
-        //Begin case DO_TOGGLE_SOFT_INPUT 
+        } 
+        
+        
         {
             mInputMethodSession.toggleSoftInput(msg.arg1, msg.arg2);
-        } //End block
-        //End case DO_TOGGLE_SOFT_INPUT 
-        //Begin case DO_FINISH_SESSION 
+        } 
+        
+        
         {
             mInputMethodSession = null;
-        } //End block
-        //End case DO_FINISH_SESSION 
-        //Begin case DO_VIEW_CLICKED 
+        } 
+        
+        
         {
             mInputMethodSession.viewClicked(msg.arg1 == 1);
-        } //End block
-        //End case DO_VIEW_CLICKED 
+        } 
+        
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.579 -0400", hash_original_method = "79448A7650CDA21C9A89B7B8FD63C46C", hash_generated_method = "7E0A06F0572B1B49A610780F58FEC54C")
     public void finishInput() {
         mCaller.executeOrSendMessage(mCaller.obtainMessage(DO_FINISH_INPUT));
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessage(DO_FINISH_INPUT));
+        
+        
     }
 
     
@@ -139,9 +139,9 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
         mCaller.executeOrSendMessage(mCaller.obtainMessageO(
                 DO_DISPLAY_COMPLETIONS, completions));
         addTaint(completions[0].getTaint());
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageO(
-                //DO_DISPLAY_COMPLETIONS, completions));
+        
+        
+                
     }
 
     
@@ -151,9 +151,9 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
                 DO_UPDATE_EXTRACTED_TEXT, token, text));
         addTaint(token);
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageIO(
-                //DO_UPDATE_EXTRACTED_TEXT, token, text));
+        
+        
+                
     }
 
     
@@ -164,9 +164,9 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
         addTaint(seq);
         addTaint(event.getTaint());
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageIOO(DO_DISPATCH_KEY_EVENT, seq,
-                //event, callback));
+        
+        
+                
     }
 
     
@@ -177,9 +177,9 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
         addTaint(seq);
         addTaint(event.getTaint());
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageIOO(DO_DISPATCH_TRACKBALL_EVENT, seq,
-                //event, callback));
+        
+        
+                
     }
 
     
@@ -195,10 +195,10 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
         addTaint(newSelEnd);
         addTaint(candidatesStart);
         addTaint(candidatesEnd);
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageIIIIII(DO_UPDATE_SELECTION,
-                //oldSelStart, oldSelEnd, newSelStart, newSelEnd,
-                //candidatesStart, candidatesEnd));
+        
+        
+                
+                
     }
 
     
@@ -206,8 +206,8 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
     public void viewClicked(boolean focusChanged) {
         mCaller.executeOrSendMessage(mCaller.obtainMessageI(DO_VIEW_CLICKED, focusChanged ? 1 : 0));
         addTaint(focusChanged);
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageI(DO_VIEW_CLICKED, focusChanged ? 1 : 0));
+        
+        
     }
 
     
@@ -216,9 +216,9 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
         mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_UPDATE_CURSOR,
                 newCursor));
         addTaint(newCursor.getTaint());
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_UPDATE_CURSOR,
-                //newCursor));
+        
+        
+                
     }
 
     
@@ -227,8 +227,8 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
         mCaller.executeOrSendMessage(mCaller.obtainMessageOO(DO_APP_PRIVATE_COMMAND, action, data));
         addTaint(action.getTaint());
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageOO(DO_APP_PRIVATE_COMMAND, action, data));
+        
+        
     }
 
     
@@ -237,16 +237,16 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
         mCaller.executeOrSendMessage(mCaller.obtainMessageII(DO_TOGGLE_SOFT_INPUT, showFlags, hideFlags));
         addTaint(showFlags);
         addTaint(hideFlags);
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageII(DO_TOGGLE_SOFT_INPUT, showFlags, hideFlags));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.584 -0400", hash_original_method = "DD8E8E4C57A8296FF535720B90D4809B", hash_generated_method = "DA2B56A0945E112EFB6C9022E5AD067E")
     public void finishSession() {
         mCaller.executeOrSendMessage(mCaller.obtainMessage(DO_FINISH_SESSION));
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessage(DO_FINISH_SESSION));
+        
+        
     }
 
     
@@ -258,8 +258,8 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.584 -0400", hash_original_method = "F69C5DA54CCE399124E2B79C8542153D", hash_generated_method = "B2C17F4C817962B7FCAE664250BDA861")
           InputMethodEventCallbackWrapper(IInputMethodCallback cb) {
             mCb = cb;
-            // ---------- Original Method ----------
-            //mCb = cb;
+            
+            
         }
 
         
@@ -268,16 +268,16 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
             try 
             {
                 mCb.finishedEvent(seq, handled);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
             addTaint(seq);
             addTaint(handled);
-            // ---------- Original Method ----------
-            //try {
-                //mCb.finishedEvent(seq, handled);
-            //} catch (RemoteException e) {
-            //}
+            
+            
+                
+            
+            
         }
 
         

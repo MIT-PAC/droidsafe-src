@@ -1,11 +1,11 @@
 package android.hardware;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class Sensor {
@@ -42,29 +42,29 @@ public class Sensor {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.716 -0400", hash_original_method = "80AB5568838CD06B7C5D0D01375BC87D", hash_generated_method = "85A61CCE8B57CD17B4BC62899E7E3FBC")
       Sensor() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.716 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "9A29248A1996CC6DC545F85043441D1C")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_459871380 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_459871380 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_459871380 = mName;
-        varB4EAC82CA7396A68D541C85D26508E83_459871380.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_459871380.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_459871380;
-        // ---------- Original Method ----------
-        //return mName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.717 -0400", hash_original_method = "F6DBA9B895A9F6BE7E05CE87ECD019F4", hash_generated_method = "AC8FB78CD2636F073D0694DF78B6D4DF")
     public String getVendor() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1781958533 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1781958533 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1781958533 = mVendor;
-        varB4EAC82CA7396A68D541C85D26508E83_1781958533.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1781958533.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1781958533;
-        // ---------- Original Method ----------
-        //return mVendor;
+        
+        
     }
 
     
@@ -72,8 +72,8 @@ public class Sensor {
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_838315843 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_838315843;
-        // ---------- Original Method ----------
-        //return mType;
+        
+        
     }
 
     
@@ -81,8 +81,8 @@ public class Sensor {
     public int getVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1791817566 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1791817566;
-        // ---------- Original Method ----------
-        //return mVersion;
+        
+        
     }
 
     
@@ -90,8 +90,8 @@ public class Sensor {
     public float getMaximumRange() {
         float var546ADE640B6EDFBC8A086EF31347E768_63777568 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_63777568;
-        // ---------- Original Method ----------
-        //return mMaxRange;
+        
+        
     }
 
     
@@ -99,8 +99,8 @@ public class Sensor {
     public float getResolution() {
         float var546ADE640B6EDFBC8A086EF31347E768_2047809551 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2047809551;
-        // ---------- Original Method ----------
-        //return mResolution;
+        
+        
     }
 
     
@@ -108,8 +108,8 @@ public class Sensor {
     public float getPower() {
         float var546ADE640B6EDFBC8A086EF31347E768_1157060549 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1157060549;
-        // ---------- Original Method ----------
-        //return mPower;
+        
+        
     }
 
     
@@ -117,8 +117,8 @@ public class Sensor {
     public int getMinDelay() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_474178560 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_474178560;
-        // ---------- Original Method ----------
-        //return mMinDelay;
+        
+        
     }
 
     
@@ -126,8 +126,8 @@ public class Sensor {
      int getHandle() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471400634 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471400634;
-        // ---------- Original Method ----------
-        //return mHandle;
+        
+        
     }
 
     
@@ -135,17 +135,17 @@ public class Sensor {
      void setRange(float max, float res) {
         mMaxRange = max;
         mResolution = res;
-        // ---------- Original Method ----------
-        //mMaxRange = max;
-        //mResolution = res;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.722 -0400", hash_original_method = "16ED5C2A25AA97BC63C7DA19CC8F6BA9", hash_generated_method = "2395A4BE1A50167E3283C7DDD34B5E2E")
      void setLegacyType(int legacyType) {
         mLegacyType = legacyType;
-        // ---------- Original Method ----------
-        //mLegacyType = legacyType;
+        
+        
     }
 
     
@@ -153,8 +153,8 @@ public class Sensor {
      int getLegacyType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_767658108 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_767658108;
-        // ---------- Original Method ----------
-        //return mLegacyType;
+        
+        
     }
 
     

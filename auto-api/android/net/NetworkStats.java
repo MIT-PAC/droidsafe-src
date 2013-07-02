@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import static com.android.internal.util.Preconditions.checkNotNull;
 import android.os.Parcel;
@@ -66,18 +66,18 @@ public class NetworkStats implements Parcelable {
         this.txBytes = new long[initialSize];
         this.txPackets = new long[initialSize];
         this.operations = new long[initialSize];
-        // ---------- Original Method ----------
-        //this.elapsedRealtime = elapsedRealtime;
-        //this.size = 0;
-        //this.iface = new String[initialSize];
-        //this.uid = new int[initialSize];
-        //this.set = new int[initialSize];
-        //this.tag = new int[initialSize];
-        //this.rxBytes = new long[initialSize];
-        //this.rxPackets = new long[initialSize];
-        //this.txBytes = new long[initialSize];
-        //this.txPackets = new long[initialSize];
-        //this.operations = new long[initialSize];
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -94,21 +94,22 @@ public class NetworkStats implements Parcelable {
         txBytes = parcel.createLongArray();
         txPackets = parcel.createLongArray();
         operations = parcel.createLongArray();
-        // ---------- Original Method ----------
-        //elapsedRealtime = parcel.readLong();
-        //size = parcel.readInt();
-        //iface = parcel.createStringArray();
-        //uid = parcel.createIntArray();
-        //set = parcel.createIntArray();
-        //tag = parcel.createIntArray();
-        //rxBytes = parcel.createLongArray();
-        //rxPackets = parcel.createLongArray();
-        //txBytes = parcel.createLongArray();
-        //txPackets = parcel.createLongArray();
-        //operations = parcel.createLongArray();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.607 -0400", hash_original_method = "747F845D1C1DAB9F1E978429A723A0B0", hash_generated_method = "47F8FC7BB28866F7EAA7D2E17BF43E8D")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(elapsedRealtime);
@@ -124,25 +125,26 @@ public class NetworkStats implements Parcelable {
         dest.writeLongArray(operations);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeLong(elapsedRealtime);
-        //dest.writeInt(size);
-        //dest.writeStringArray(iface);
-        //dest.writeIntArray(uid);
-        //dest.writeIntArray(set);
-        //dest.writeIntArray(tag);
-        //dest.writeLongArray(rxBytes);
-        //dest.writeLongArray(rxPackets);
-        //dest.writeLongArray(txBytes);
-        //dest.writeLongArray(txPackets);
-        //dest.writeLongArray(operations);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.608 -0400", hash_original_method = "2B258B3B735A82A55EB3270F9E3A7FB6", hash_generated_method = "681C7690DDC6D4F08BAF31EA3CE5BD71")
     @Override
     public NetworkStats clone() {
-        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_1222733632 = null; //Variable for return #1
+        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_1222733632 = null; 
         final NetworkStats clone = new NetworkStats(elapsedRealtime, size);
         NetworkStats.Entry entry = null;
         {
@@ -150,26 +152,27 @@ public class NetworkStats implements Parcelable {
             {
                 entry = getValues(i, entry);
                 clone.addValues(entry);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1222733632 = clone;
-        varB4EAC82CA7396A68D541C85D26508E83_1222733632.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1222733632.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1222733632;
-        // ---------- Original Method ----------
-        //final NetworkStats clone = new NetworkStats(elapsedRealtime, size);
-        //NetworkStats.Entry entry = null;
-        //for (int i = 0; i < size; i++) {
-            //entry = getValues(i, entry);
-            //clone.addValues(entry);
-        //}
-        //return clone;
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.609 -0400", hash_original_method = "C4F6601144FE185F7636CD51AD058501", hash_generated_method = "CAF34D12A3348A86177961E8D92A3F0F")
     public NetworkStats addIfaceValues(
             String iface, long rxBytes, long rxPackets, long txBytes, long txPackets) {
-        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_898943273 = null; //Variable for return #1
+        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_898943273 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_898943273 = addValues(
                 iface, UID_ALL, SET_DEFAULT, TAG_NONE, rxBytes, rxPackets, txBytes, txPackets, 0L);
         addTaint(iface.getTaint());
@@ -177,18 +180,19 @@ public class NetworkStats implements Parcelable {
         addTaint(rxPackets);
         addTaint(txBytes);
         addTaint(txPackets);
-        varB4EAC82CA7396A68D541C85D26508E83_898943273.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_898943273.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_898943273;
-        // ---------- Original Method ----------
-        //return addValues(
-                //iface, UID_ALL, SET_DEFAULT, TAG_NONE, rxBytes, rxPackets, txBytes, txPackets, 0L);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.610 -0400", hash_original_method = "F572451A01AB0326B364A96213456AFC", hash_generated_method = "2F15FC5434BD2B7424666C71AC7F9E6E")
     public NetworkStats addValues(String iface, int uid, int set, int tag, long rxBytes,
             long rxPackets, long txBytes, long txPackets, long operations) {
-        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_376459345 = null; //Variable for return #1
+        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_376459345 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_376459345 = addValues(new Entry(
                 iface, uid, set, tag, rxBytes, rxPackets, txBytes, txPackets, operations));
         addTaint(iface.getTaint());
@@ -200,17 +204,18 @@ public class NetworkStats implements Parcelable {
         addTaint(txBytes);
         addTaint(txPackets);
         addTaint(operations);
-        varB4EAC82CA7396A68D541C85D26508E83_376459345.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_376459345.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_376459345;
-        // ---------- Original Method ----------
-        //return addValues(new Entry(
-                //iface, uid, set, tag, rxBytes, rxPackets, txBytes, txPackets, operations));
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.611 -0400", hash_original_method = "BA5E7818DCBE1852CDC81090E5B13339", hash_generated_method = "920D75A540086E88D1A045522D2376A8")
     public NetworkStats addValues(Entry entry) {
-        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_1879709724 = null; //Variable for return #1
+        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_1879709724 = null; 
         {
             final int newLength = Math.max(iface.length, 10) * 3 / 2;
             iface = Arrays.copyOf(iface, newLength);
@@ -222,7 +227,7 @@ public class NetworkStats implements Parcelable {
             txBytes = Arrays.copyOf(txBytes, newLength);
             txPackets = Arrays.copyOf(txPackets, newLength);
             operations = Arrays.copyOf(operations, newLength);
-        } //End block
+        } 
         iface[size] = entry.iface;
         uid[size] = entry.uid;
         set[size] = entry.set;
@@ -233,16 +238,17 @@ public class NetworkStats implements Parcelable {
         txPackets[size] = entry.txPackets;
         operations[size] = entry.operations;
         varB4EAC82CA7396A68D541C85D26508E83_1879709724 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1879709724.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1879709724.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1879709724;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.612 -0400", hash_original_method = "784A932AD4193748EF13A1422BBA3C89", hash_generated_method = "56529C8F28F323DB280A1EA71DDD8E9D")
     public Entry getValues(int i, Entry recycle) {
-        Entry varB4EAC82CA7396A68D541C85D26508E83_474667290 = null; //Variable for return #1
+        Entry varB4EAC82CA7396A68D541C85D26508E83_474667290 = null; 
         Entry entry;
         entry = recycle;
         entry = new Entry();
@@ -257,20 +263,20 @@ public class NetworkStats implements Parcelable {
         entry.operations = operations[i];
         varB4EAC82CA7396A68D541C85D26508E83_474667290 = entry;
         addTaint(recycle.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_474667290.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_474667290.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_474667290;
-        // ---------- Original Method ----------
-        //final Entry entry = recycle != null ? recycle : new Entry();
-        //entry.iface = iface[i];
-        //entry.uid = uid[i];
-        //entry.set = set[i];
-        //entry.tag = tag[i];
-        //entry.rxBytes = rxBytes[i];
-        //entry.rxPackets = rxPackets[i];
-        //entry.txBytes = txBytes[i];
-        //entry.txPackets = txPackets[i];
-        //entry.operations = operations[i];
-        //return entry;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -278,18 +284,19 @@ public class NetworkStats implements Parcelable {
     public long getElapsedRealtime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1830170570 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1830170570;
-        // ---------- Original Method ----------
-        //return elapsedRealtime;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.613 -0400", hash_original_method = "A28F8D44EDD8B5977D1B4B03F62008BC", hash_generated_method = "4F9F17388B8033CB16812EEA6700BBC5")
     public long getElapsedRealtimeAge() {
         long var31F8EE92B793C7898ABD2D03A99BDBC1_945391262 = (SystemClock.elapsedRealtime() - elapsedRealtime);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1210036685 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1210036685;
-        // ---------- Original Method ----------
-        //return SystemClock.elapsedRealtime() - elapsedRealtime;
+        
+        
     }
 
     
@@ -297,8 +304,8 @@ public class NetworkStats implements Parcelable {
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1461562043 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1461562043;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
@@ -306,16 +313,17 @@ public class NetworkStats implements Parcelable {
     public int internalSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_990190257 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_990190257;
-        // ---------- Original Method ----------
-        //return iface.length;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.614 -0400", hash_original_method = "60A49D4C2C28DC0F7F89BE32E32B8D66", hash_generated_method = "08B387B9DE24BCEFFE7A78DD1B2A47F2")
     @Deprecated
     public NetworkStats combineValues(String iface, int uid, int tag, long rxBytes, long rxPackets,
             long txBytes, long txPackets, long operations) {
-        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_1580245902 = null; //Variable for return #1
+        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_1580245902 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1580245902 = combineValues(
                 iface, uid, SET_DEFAULT, tag, rxBytes, rxPackets, txBytes, txPackets, operations);
         addTaint(iface.getTaint());
@@ -326,18 +334,19 @@ public class NetworkStats implements Parcelable {
         addTaint(txBytes);
         addTaint(txPackets);
         addTaint(operations);
-        varB4EAC82CA7396A68D541C85D26508E83_1580245902.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1580245902.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1580245902;
-        // ---------- Original Method ----------
-        //return combineValues(
-                //iface, uid, SET_DEFAULT, tag, rxBytes, rxPackets, txBytes, txPackets, operations);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.615 -0400", hash_original_method = "F71B507E3E7A764789F38FD5530E9585", hash_generated_method = "A8B07E6537D2C322D77FA5862DB296D7")
     public NetworkStats combineValues(String iface, int uid, int set, int tag, long rxBytes,
             long rxPackets, long txBytes, long txPackets, long operations) {
-        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_206975323 = null; //Variable for return #1
+        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_206975323 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_206975323 = combineValues(new Entry(
                 iface, uid, set, tag, rxBytes, rxPackets, txBytes, txPackets, operations));
         addTaint(iface.getTaint());
@@ -349,46 +358,48 @@ public class NetworkStats implements Parcelable {
         addTaint(txBytes);
         addTaint(txPackets);
         addTaint(operations);
-        varB4EAC82CA7396A68D541C85D26508E83_206975323.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_206975323.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_206975323;
-        // ---------- Original Method ----------
-        //return combineValues(new Entry(
-                //iface, uid, set, tag, rxBytes, rxPackets, txBytes, txPackets, operations));
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.615 -0400", hash_original_method = "49582C07F79A6507E237CBEC2438E36C", hash_generated_method = "0634408BB5E72F97EECDED85307D0AAA")
     public NetworkStats combineValues(Entry entry) {
-        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_1029796883 = null; //Variable for return #1
+        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_1029796883 = null; 
         final int i = findIndex(entry.iface, entry.uid, entry.set, entry.tag);
         {
             addValues(entry);
-        } //End block
+        } 
         {
             rxBytes[i] += entry.rxBytes;
             rxPackets[i] += entry.rxPackets;
             txBytes[i] += entry.txBytes;
             txPackets[i] += entry.txPackets;
             operations[i] += entry.operations;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1029796883 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1029796883.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1029796883.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1029796883;
-        // ---------- Original Method ----------
-        //final int i = findIndex(entry.iface, entry.uid, entry.set, entry.tag);
-        //if (i == -1) {
-            //addValues(entry);
-        //} else {
-            //rxBytes[i] += entry.rxBytes;
-            //rxPackets[i] += entry.rxPackets;
-            //txBytes[i] += entry.txBytes;
-            //txPackets[i] += entry.txPackets;
-            //operations[i] += entry.operations;
-        //}
-        //return this;
+        
+        
+        
+            
+        
+            
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.616 -0400", hash_original_method = "0A31FFFE210F2775172111CD7E8C7EC0", hash_generated_method = "98D9489EC98CEAD691AFBD9576449D68")
     public void combineAllValues(NetworkStats another) {
         NetworkStats.Entry entry = null;
@@ -397,18 +408,19 @@ public class NetworkStats implements Parcelable {
             {
                 entry = another.getValues(i, entry);
                 combineValues(entry);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(another.getTaint());
-        // ---------- Original Method ----------
-        //NetworkStats.Entry entry = null;
-        //for (int i = 0; i < another.size; i++) {
-            //entry = another.getValues(i, entry);
-            //combineValues(entry);
-        //}
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.616 -0400", hash_original_method = "FEC91070502C1195B6460B4D97DFCE73", hash_generated_method = "B57CAAB10A0B2E13C6D9DF75ADA4A6BD")
     public int findIndex(String iface, int uid, int set, int tag) {
         {
@@ -417,26 +429,27 @@ public class NetworkStats implements Parcelable {
                 {
                     boolean var7F51CCC0D3B646294AFFFFFDFF3BBE72_722763651 = (uid == this.uid[i] && set == this.set[i] && tag == this.tag[i]
                     && Objects.equal(iface, this.iface[i]));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(iface.getTaint());
         addTaint(uid);
         addTaint(set);
         addTaint(tag);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1388394365 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1388394365;
-        // ---------- Original Method ----------
-        //for (int i = 0; i < size; i++) {
-            //if (uid == this.uid[i] && set == this.set[i] && tag == this.tag[i]
-                    //&& Objects.equal(iface, this.iface[i])) {
-                //return i;
-            //}
-        //}
-        //return -1;
+        
+        
+            
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.617 -0400", hash_original_method = "09F077C80C4F986B6C39E3E7ABC587EB", hash_generated_method = "AB46F0E5F1A27A12A265D66EEE88910F")
     public int findIndexHinted(String iface, int uid, int set, int tag, int hintIndex) {
         {
@@ -446,16 +459,16 @@ public class NetworkStats implements Parcelable {
                 int i;
                 {
                     i = (hintIndex + halfOffset) % size;
-                } //End block
+                } 
                 {
                     i = (size + hintIndex - halfOffset - 1) % size;
-                } //End block
+                } 
                 {
                     boolean var7F51CCC0D3B646294AFFFFFDFF3BBE72_197542903 = (uid == this.uid[i] && set == this.set[i] && tag == this.tag[i]
                     && Objects.equal(iface, this.iface[i]));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(iface.getTaint());
         addTaint(uid);
         addTaint(set);
@@ -463,24 +476,25 @@ public class NetworkStats implements Parcelable {
         addTaint(hintIndex);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1069928578 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1069928578;
-        // ---------- Original Method ----------
-        //for (int offset = 0; offset < size; offset++) {
-            //final int halfOffset = offset / 2;
-            //final int i;
-            //if (offset % 2 == 0) {
-                //i = (hintIndex + halfOffset) % size;
-            //} else {
-                //i = (size + hintIndex - halfOffset - 1) % size;
-            //}
-            //if (uid == this.uid[i] && set == this.set[i] && tag == this.tag[i]
-                    //&& Objects.equal(iface, this.iface[i])) {
-                //return i;
-            //}
-        //}
-        //return -1;
+        
+        
+            
+            
+            
+                
+            
+                
+            
+            
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.618 -0400", hash_original_method = "6E339B821B6FB4996B911B569AAD524F", hash_generated_method = "952D9448A5A786C9F5EF3D0D513E09EE")
     public void spliceOperationsFrom(NetworkStats stats) {
         {
@@ -489,50 +503,52 @@ public class NetworkStats implements Parcelable {
                 final int j = stats.findIndex(IFACE_ALL, uid[i], set[i], tag[i]);
                 {
                     operations[i] = 0;
-                } //End block
+                } 
                 {
                     operations[i] = stats.operations[j];
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //for (int i = 0; i < size; i++) {
-            //final int j = stats.findIndex(IFACE_ALL, uid[i], set[i], tag[i]);
-            //if (j == -1) {
-                //operations[i] = 0;
-            //} else {
-                //operations[i] = stats.operations[j];
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.625 -0400", hash_original_method = "2B2C9B0B02A7A72C63A74815DF58D4A4", hash_generated_method = "8291342365F71B1DF825FEC4441E025D")
     public String[] getUniqueIfaces() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1232772278 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1232772278 = null; 
         final HashSet<String> ifaces = new HashSet<String>();
         {
             String iface = this.iface[0];
             {
                 {
                     ifaces.add(iface);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1232772278 = ifaces.toArray(new String[ifaces.size()]);
-        varB4EAC82CA7396A68D541C85D26508E83_1232772278.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1232772278.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1232772278;
-        // ---------- Original Method ----------
-        //final HashSet<String> ifaces = new HashSet<String>();
-        //for (String iface : this.iface) {
-            //if (iface != IFACE_ALL) {
-                //ifaces.add(iface);
-            //}
-        //}
-        //return ifaces.toArray(new String[ifaces.size()]);
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.630 -0400", hash_original_method = "C948A3950E5BB6DBF87B62BBDA0B02C8", hash_generated_method = "59C8C0ACD5380C6588CCAFAEF5F56A76")
     public int[] getUniqueUids() {
         final SparseBooleanArray uids = new SparseBooleanArray();
@@ -540,84 +556,89 @@ public class NetworkStats implements Parcelable {
             int uid = this.uid[0];
             {
                 uids.put(uid, true);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final int size = uids.size();
         final int[] result = new int[size];
         {
             int i = 0;
             {
                 result[i] = uids.keyAt(i);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1897808004 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1897808004;
-        // ---------- Original Method ----------
-        //final SparseBooleanArray uids = new SparseBooleanArray();
-        //for (int uid : this.uid) {
-            //uids.put(uid, true);
-        //}
-        //final int size = uids.size();
-        //final int[] result = new int[size];
-        //for (int i = 0; i < size; i++) {
-            //result[i] = uids.keyAt(i);
-        //}
-        //return result;
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.631 -0400", hash_original_method = "277B11F09A23B8E4B361A93BBF3584B2", hash_generated_method = "C4FAD222D6395364C94588E76B2B95A1")
     public long getTotalBytes() {
         final Entry entry = getTotal(null);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_922032978 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_922032978;
-        // ---------- Original Method ----------
-        //final Entry entry = getTotal(null);
-        //return entry.rxBytes + entry.txBytes;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.632 -0400", hash_original_method = "4A2B09728CEDE32F9C68EF92F6D5889E", hash_generated_method = "B86E750952304300312674711648C5F1")
     public Entry getTotal(Entry recycle) {
-        Entry varB4EAC82CA7396A68D541C85D26508E83_872687525 = null; //Variable for return #1
+        Entry varB4EAC82CA7396A68D541C85D26508E83_872687525 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_872687525 = getTotal(recycle, null, UID_ALL);
         addTaint(recycle.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_872687525.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_872687525.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_872687525;
-        // ---------- Original Method ----------
-        //return getTotal(recycle, null, UID_ALL);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.633 -0400", hash_original_method = "D5D19E4CD939B7A0BD1C3BDE2A399415", hash_generated_method = "FE85911A29EFE56BED4981FC0A278281")
     public Entry getTotal(Entry recycle, int limitUid) {
-        Entry varB4EAC82CA7396A68D541C85D26508E83_2039888871 = null; //Variable for return #1
+        Entry varB4EAC82CA7396A68D541C85D26508E83_2039888871 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2039888871 = getTotal(recycle, null, limitUid);
         addTaint(recycle.getTaint());
         addTaint(limitUid);
-        varB4EAC82CA7396A68D541C85D26508E83_2039888871.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2039888871.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2039888871;
-        // ---------- Original Method ----------
-        //return getTotal(recycle, null, limitUid);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.634 -0400", hash_original_method = "A8C67127F98A8F27D6DD2D10C54926B1", hash_generated_method = "AD7E32972F6EEC8FE03DE24057F3442C")
     public Entry getTotal(Entry recycle, HashSet<String> limitIface) {
-        Entry varB4EAC82CA7396A68D541C85D26508E83_75698565 = null; //Variable for return #1
+        Entry varB4EAC82CA7396A68D541C85D26508E83_75698565 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_75698565 = getTotal(recycle, limitIface, UID_ALL);
         addTaint(recycle.getTaint());
         addTaint(limitIface.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_75698565.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_75698565.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_75698565;
-        // ---------- Original Method ----------
-        //return getTotal(recycle, limitIface, UID_ALL);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.635 -0400", hash_original_method = "7B779B0B251D8F12031ECAB7F83EFE1D", hash_generated_method = "D79AACA99CF3B75C8DB61C8D52338E4D")
     private Entry getTotal(Entry recycle, HashSet<String> limitIface, int limitUid) {
-        Entry varB4EAC82CA7396A68D541C85D26508E83_1135117447 = null; //Variable for return #1
+        Entry varB4EAC82CA7396A68D541C85D26508E83_1135117447 = null; 
         Entry entry;
         entry = recycle;
         entry = new Entry();
@@ -641,38 +662,40 @@ public class NetworkStats implements Parcelable {
                     entry.txBytes += txBytes[i];
                     entry.txPackets += txPackets[i];
                     entry.operations += operations[i];
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1135117447 = entry;
         addTaint(recycle.getTaint());
         addTaint(limitIface.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1135117447.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1135117447.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1135117447;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.636 -0400", hash_original_method = "0B77BD3659EBAD0CA6247F62089B29FF", hash_generated_method = "C8CD23DC3810DC241FC93905C2B16132")
     public NetworkStats subtract(NetworkStats value) throws NonMonotonicException {
-        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_419886759 = null; //Variable for return #1
+        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_419886759 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_419886759 = subtract(value, false);
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_419886759.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_419886759.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_419886759;
-        // ---------- Original Method ----------
-        //return subtract(value, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.637 -0400", hash_original_method = "04678C1B7F1434E233D6434823B40504", hash_generated_method = "5612EDB8A3A84598645B0CA72D838912")
     public NetworkStats subtract(NetworkStats value, boolean clampNonMonotonic) throws NonMonotonicException {
-        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_1993917682 = null; //Variable for return #1
+        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_1993917682 = null; 
         final long deltaRealtime = this.elapsedRealtime - value.elapsedRealtime;
         {
             if (DroidSafeAndroidRuntime.control) throw new NonMonotonicException(this, value);
-        } //End block
+        } 
         final Entry entry = new Entry();
         final NetworkStats result = new NetworkStats(deltaRealtime, size);
         {
@@ -689,7 +712,7 @@ public class NetworkStats implements Parcelable {
                     entry.txBytes = txBytes[i];
                     entry.txPackets = txPackets[i];
                     entry.operations = operations[i];
-                } //End block
+                } 
                 {
                     entry.rxBytes = rxBytes[i] - value.rxBytes[j];
                     entry.rxPackets = rxPackets[i] - value.rxPackets[j];
@@ -703,27 +726,28 @@ public class NetworkStats implements Parcelable {
                             entry.txBytes = Math.max(entry.txBytes, 0);
                             entry.txPackets = Math.max(entry.txPackets, 0);
                             entry.operations = Math.max(entry.operations, 0);
-                        } //End block
+                        } 
                         {
                             if (DroidSafeAndroidRuntime.control) throw new NonMonotonicException(this, i, value, j);
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 result.addValues(entry);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1993917682 = result;
         addTaint(clampNonMonotonic);
-        varB4EAC82CA7396A68D541C85D26508E83_1993917682.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1993917682.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1993917682;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.638 -0400", hash_original_method = "AB3FDA05B945C3AC93E7C4BBCBA41D8F", hash_generated_method = "F1B6E2141FC62256DB152538664388D3")
     public NetworkStats groupedByIface() {
-        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_1712332280 = null; //Variable for return #1
+        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_1712332280 = null; 
         final NetworkStats stats = new NetworkStats(elapsedRealtime, 10);
         final Entry entry = new Entry();
         entry.uid = UID_ALL;
@@ -739,34 +763,35 @@ public class NetworkStats implements Parcelable {
                 entry.txBytes = txBytes[i];
                 entry.txPackets = txPackets[i];
                 stats.combineValues(entry);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1712332280 = stats;
-        varB4EAC82CA7396A68D541C85D26508E83_1712332280.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1712332280.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1712332280;
-        // ---------- Original Method ----------
-        //final NetworkStats stats = new NetworkStats(elapsedRealtime, 10);
-        //final Entry entry = new Entry();
-        //entry.uid = UID_ALL;
-        //entry.set = SET_ALL;
-        //entry.tag = TAG_NONE;
-        //entry.operations = 0L;
-        //for (int i = 0; i < size; i++) {
-            //if (tag[i] != TAG_NONE) continue;
-            //entry.iface = iface[i];
-            //entry.rxBytes = rxBytes[i];
-            //entry.rxPackets = rxPackets[i];
-            //entry.txBytes = txBytes[i];
-            //entry.txPackets = txPackets[i];
-            //stats.combineValues(entry);
-        //}
-        //return stats;
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.640 -0400", hash_original_method = "F7B5ADC030AABE070FE0AF3D1DEEC4FF", hash_generated_method = "C5E1B7C4ACFA375E05C6469536DDF16E")
     public NetworkStats groupedByUid() {
-        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_144250974 = null; //Variable for return #1
+        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_144250974 = null; 
         final NetworkStats stats = new NetworkStats(elapsedRealtime, 10);
         final Entry entry = new Entry();
         entry.iface = IFACE_ALL;
@@ -782,34 +807,35 @@ public class NetworkStats implements Parcelable {
                 entry.txPackets = txPackets[i];
                 entry.operations = operations[i];
                 stats.combineValues(entry);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_144250974 = stats;
-        varB4EAC82CA7396A68D541C85D26508E83_144250974.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_144250974.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_144250974;
-        // ---------- Original Method ----------
-        //final NetworkStats stats = new NetworkStats(elapsedRealtime, 10);
-        //final Entry entry = new Entry();
-        //entry.iface = IFACE_ALL;
-        //entry.set = SET_ALL;
-        //entry.tag = TAG_NONE;
-        //for (int i = 0; i < size; i++) {
-            //if (tag[i] != TAG_NONE) continue;
-            //entry.uid = uid[i];
-            //entry.rxBytes = rxBytes[i];
-            //entry.rxPackets = rxPackets[i];
-            //entry.txBytes = txBytes[i];
-            //entry.txPackets = txPackets[i];
-            //entry.operations = operations[i];
-            //stats.combineValues(entry);
-        //}
-        //return stats;
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.642 -0400", hash_original_method = "9245ED01B44F4BC6EDE26C84298E681C", hash_generated_method = "D85DA26B0471E1D71CD5C85423BB8617")
     public NetworkStats withoutUid(int uid) {
-        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_1303751447 = null; //Variable for return #1
+        NetworkStats varB4EAC82CA7396A68D541C85D26508E83_1303751447 = null; 
         final NetworkStats stats = new NetworkStats(elapsedRealtime, 10);
         Entry entry = new Entry();
         {
@@ -818,26 +844,27 @@ public class NetworkStats implements Parcelable {
                 entry = getValues(i, entry);
                 {
                     stats.addValues(entry);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1303751447 = stats;
         addTaint(uid);
-        varB4EAC82CA7396A68D541C85D26508E83_1303751447.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1303751447.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1303751447;
-        // ---------- Original Method ----------
-        //final NetworkStats stats = new NetworkStats(elapsedRealtime, 10);
-        //Entry entry = new Entry();
-        //for (int i = 0; i < size; i++) {
-            //entry = getValues(i, entry);
-            //if (entry.uid != uid) {
-                //stats.addValues(entry);
-            //}
-        //}
-        //return stats;
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.643 -0400", hash_original_method = "130412F853181F3DE6D8909F69FBB580", hash_generated_method = "ACEC7404F5BB8B108F4708F42DF7A512")
     public void dump(String prefix, PrintWriter pw) {
         pw.print(prefix);
@@ -868,27 +895,27 @@ public class NetworkStats implements Parcelable {
                 pw.print(txPackets[i]);
                 pw.print(" operations=");
                 pw.println(operations[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(prefix.getTaint());
         addTaint(pw.getTaint());
-        // ---------- Original Method ----------
-        //pw.print(prefix);
-        //pw.print("NetworkStats: elapsedRealtime=");
-        //pw.println(elapsedRealtime);
-        //for (int i = 0; i < size; i++) {
-            //pw.print(prefix);
-            //pw.print("  ["); pw.print(i); pw.print("]");
-            //pw.print(" iface="); pw.print(iface[i]);
-            //pw.print(" uid="); pw.print(uid[i]);
-            //pw.print(" set="); pw.print(setToString(set[i]));
-            //pw.print(" tag="); pw.print(tagToString(tag[i]));
-            //pw.print(" rxBytes="); pw.print(rxBytes[i]);
-            //pw.print(" rxPackets="); pw.print(rxPackets[i]);
-            //pw.print(" txBytes="); pw.print(txBytes[i]);
-            //pw.print(" txPackets="); pw.print(txPackets[i]);
-            //pw.print(" operations="); pw.println(operations[i]);
-        //}
+        
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -906,24 +933,26 @@ public class NetworkStats implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String tagToString(int tag) {
         return "0x" + Integer.toHexString(tag);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.644 -0400", hash_original_method = "C185C780AB6AF420802BBBCB2A0DA03E", hash_generated_method = "6347A390EBA9F2F81CECBF38E6764BA7")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1150618364 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1150618364 = null; 
         final CharArrayWriter writer = new CharArrayWriter();
         dump("", new PrintWriter(writer));
         varB4EAC82CA7396A68D541C85D26508E83_1150618364 = writer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1150618364.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1150618364.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1150618364;
-        // ---------- Original Method ----------
-        //final CharArrayWriter writer = new CharArrayWriter();
-        //dump("", new PrintWriter(writer));
-        //return writer.toString();
+        
+        
+        
+        
     }
 
     
@@ -931,8 +960,8 @@ public class NetworkStats implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_519752076 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_519752076;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -968,7 +997,7 @@ public class NetworkStats implements Parcelable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.645 -0400", hash_original_method = "CF147DC846E9FA9CFBACF54E998579AF", hash_generated_method = "F7D90DFA18CB5A7447228376F168D3F6")
         public  Entry() {
             this(IFACE_ALL, UID_ALL, SET_DEFAULT, TAG_NONE, 0L, 0L, 0L, 0L, 0L);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -981,7 +1010,7 @@ public class NetworkStats implements Parcelable {
             addTaint(txBytes);
             addTaint(txPackets);
             addTaint(operations);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -997,23 +1026,23 @@ public class NetworkStats implements Parcelable {
             this.txBytes = txBytes;
             this.txPackets = txPackets;
             this.operations = operations;
-            // ---------- Original Method ----------
-            //this.iface = iface;
-            //this.uid = uid;
-            //this.set = set;
-            //this.tag = tag;
-            //this.rxBytes = rxBytes;
-            //this.rxPackets = rxPackets;
-            //this.txBytes = txBytes;
-            //this.txPackets = txPackets;
-            //this.operations = operations;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.647 -0400", hash_original_method = "8BA58A1912534045F7A50ACBC1B00F2F", hash_generated_method = "71190BF4EE04E7889680063989C697D9")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_359815037 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_359815037 = null; 
             final StringBuilder builder = new StringBuilder();
             builder.append("iface=").append(iface);
             builder.append(" uid=").append(uid);
@@ -1025,20 +1054,20 @@ public class NetworkStats implements Parcelable {
             builder.append(" txPackets=").append(txPackets);
             builder.append(" operations=").append(operations);
             varB4EAC82CA7396A68D541C85D26508E83_359815037 = builder.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_359815037.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_359815037.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_359815037;
-            // ---------- Original Method ----------
-            //final StringBuilder builder = new StringBuilder();
-            //builder.append("iface=").append(iface);
-            //builder.append(" uid=").append(uid);
-            //builder.append(" set=").append(setToString(set));
-            //builder.append(" tag=").append(tagToString(tag));
-            //builder.append(" rxBytes=").append(rxBytes);
-            //builder.append(" rxPackets=").append(rxPackets);
-            //builder.append(" txBytes=").append(txBytes);
-            //builder.append(" txPackets=").append(txPackets);
-            //builder.append(" operations=").append(operations);
-            //return builder.toString();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1065,7 +1094,7 @@ public class NetworkStats implements Parcelable {
             this(left, -1, right, -1);
             addTaint(left.getTaint());
             addTaint(right.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1076,11 +1105,11 @@ public class NetworkStats implements Parcelable {
             this.right = checkNotNull(right, "missing right");
             this.leftIndex = leftIndex;
             this.rightIndex = rightIndex;
-            // ---------- Original Method ----------
-            //this.left = checkNotNull(left, "missing left");
-            //this.right = checkNotNull(right, "missing right");
-            //this.leftIndex = leftIndex;
-            //this.rightIndex = rightIndex;
+            
+            
+            
+            
+            
         }
 
         
@@ -1120,12 +1149,12 @@ public class NetworkStats implements Parcelable {
             return new NetworkStats[size];
         }
     };
-    // orphaned legacy method
+    
     public NetworkStats createFromParcel(Parcel in) {
             return new NetworkStats(in);
         }
     
-    // orphaned legacy method
+    
     public NetworkStats[] newArray(int size) {
             return new NetworkStats[size];
         }

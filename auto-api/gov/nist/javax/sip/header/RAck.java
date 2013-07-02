@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.sip.InvalidArgumentException;
 import java.text.ParseException;
@@ -24,20 +24,21 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.961 -0400", hash_original_method = "7C5933C28B73D77B67311599A1BD6348", hash_generated_method = "B9F10F92D666D06433633A2E45A818B7")
     public  RAck() {
         super(NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.962 -0400", hash_original_method = "31F6FBF38938A8E830748EA5A3D758B3", hash_generated_method = "85648D95B034230A3FCB77C7CFBEE114")
     protected String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_93215108 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_93215108 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_93215108 = new StringBuffer().append(rSeqNumber).append(SP).append(
                 cSeqNumber).append(SP).append(method).toString();
-        varB4EAC82CA7396A68D541C85D26508E83_93215108.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_93215108.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_93215108;
-        // ---------- Original Method ----------
-        //return new StringBuffer().append(rSeqNumber).append(SP).append(
-                //cSeqNumber).append(SP).append(method).toString();
+        
+        
+                
     }
 
     
@@ -45,8 +46,8 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
     public int getCSeqNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_487547808 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_487547808;
-        // ---------- Original Method ----------
-        //return (int) cSeqNumber;
+        
+        
     }
 
     
@@ -54,19 +55,19 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
     public long getCSeqNumberLong() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1044394604 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1044394604;
-        // ---------- Original Method ----------
-        //return cSeqNumber;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.964 -0400", hash_original_method = "691C5451C67574E660997BC2056A5F23", hash_generated_method = "8C9B74321C2F57B50BD7767BB4E96388")
     public String getMethod() {
-        String varB4EAC82CA7396A68D541C85D26508E83_343281912 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_343281912 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_343281912 = this.method;
-        varB4EAC82CA7396A68D541C85D26508E83_343281912.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_343281912.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_343281912;
-        // ---------- Original Method ----------
-        //return this.method;
+        
+        
     }
 
     
@@ -74,25 +75,26 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
     public int getRSeqNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_365031310 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_365031310;
-        // ---------- Original Method ----------
-        //return (int) rSeqNumber;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.964 -0400", hash_original_method = "C47555692F5984E7397D2D721232A447", hash_generated_method = "53177C635774DC77B478B0105EFC25A9")
     public void setCSeqNumber(int cSeqNumber) throws InvalidArgumentException {
         this.setCSequenceNumber(cSeqNumber);
         addTaint(cSeqNumber);
-        // ---------- Original Method ----------
-        //this.setCSequenceNumber(cSeqNumber);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.965 -0400", hash_original_method = "417A86B1B77116D6C3275A494BFCD4D5", hash_generated_method = "E85DCEE65E2288E3D9797383EC01CCC2")
     public void setMethod(String method) throws ParseException {
         this.method = method;
-        // ---------- Original Method ----------
-        //this.method = method;
+        
+        
     }
 
     
@@ -100,8 +102,8 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
     public long getCSequenceNumber() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1292498435 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1292498435;
-        // ---------- Original Method ----------
-        //return this.cSeqNumber;
+        
+        
     }
 
     
@@ -109,39 +111,42 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
     public long getRSequenceNumber() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_297382354 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_297382354;
-        // ---------- Original Method ----------
-        //return this.rSeqNumber;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.965 -0400", hash_original_method = "61A1EA2F1C73324A7B71E464128A3BB2", hash_generated_method = "E90B1195C679AE24147FA20DAB07F4F0")
     public void setCSequenceNumber(long cSeqNumber) throws InvalidArgumentException {
         if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException("Bad CSeq # " + cSeqNumber);
         this.cSeqNumber = cSeqNumber;
-        // ---------- Original Method ----------
-        //if (cSeqNumber <= 0 || cSeqNumber > ((long) 1) << 32 - 1)
-            //throw new InvalidArgumentException("Bad CSeq # " + cSeqNumber);
-        //this.cSeqNumber = cSeqNumber;
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.966 -0400", hash_original_method = "CBE5EB0602C16E16F46451A7279E3ED5", hash_generated_method = "18E329379FFB53E1CDA712ADE9DBB9F2")
     public void setRSeqNumber(int rSeqNumber) throws InvalidArgumentException {
         this.setRSequenceNumber(rSeqNumber);
         addTaint(rSeqNumber);
-        // ---------- Original Method ----------
-        //this.setRSequenceNumber(rSeqNumber);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.966 -0400", hash_original_method = "31F5BB280EB4BE3CAFCEE8170222695A", hash_generated_method = "580E610E2255CA085CEFD25F89BADB1B")
     public void setRSequenceNumber(long rSeqNumber) throws InvalidArgumentException {
         if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException("Bad rSeq # " + rSeqNumber);
         this.rSeqNumber = rSeqNumber;
-        // ---------- Original Method ----------
-        //if (rSeqNumber <= 0 || cSeqNumber > ((long) 1) << 32 - 1)
-            //throw new InvalidArgumentException("Bad rSeq # " + rSeqNumber);
-        //this.rSeqNumber = rSeqNumber;
+        
+        
+            
+        
     }
 
     

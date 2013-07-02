@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -64,12 +64,12 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         addTaint(spacingadd);
         addTaint(metrics.getTaint());
         addTaint(includepad);
-        // ---------- Original Method ----------
-        //mEllipsizedWidth = outerwidth;
-        //mEllipsizedStart = 0;
-        //mEllipsizedCount = 0;
-        //init(source, paint, outerwidth, align, spacingmult, spacingadd,
-             //metrics, includepad, true);
+        
+        
+        
+        
+        
+             
     }
 
     
@@ -87,7 +87,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
             mEllipsizedStart = 0;
             mEllipsizedCount = 0;
             trust = true;
-        } //End block
+        } 
         {
             replaceWith(TextUtils.ellipsize(source, paint, ellipsizedWidth,
                                            ellipsize, true, this),
@@ -95,7 +95,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
                         spacingadd);
             mEllipsizedWidth = ellipsizedWidth;
             trust = false;
-        } //End block
+        } 
         init(getText(), paint, outerwidth, align, spacingmult, spacingadd,
              metrics, includepad, trust);
         addTaint(source.getTaint());
@@ -106,23 +106,23 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         addTaint(metrics.getTaint());
         addTaint(includepad);
         addTaint(ellipsize.getTaint());
-        // ---------- Original Method ----------
-        //boolean trust;
-        //if (ellipsize == null || ellipsize == TextUtils.TruncateAt.MARQUEE) {
-            //mEllipsizedWidth = outerwidth;
-            //mEllipsizedStart = 0;
-            //mEllipsizedCount = 0;
-            //trust = true;
-        //} else {
-            //replaceWith(TextUtils.ellipsize(source, paint, ellipsizedWidth,
-                                           //ellipsize, true, this),
-                        //paint, outerwidth, align, spacingmult,
-                        //spacingadd);
-            //mEllipsizedWidth = ellipsizedWidth;
-            //trust = false;
-        //}
-        //init(getText(), paint, outerwidth, align, spacingmult, spacingadd,
-             //metrics, includepad, trust);
+        
+        
+        
+            
+            
+            
+            
+        
+            
+                                           
+                        
+                        
+            
+            
+        
+        
+             
     }
 
     
@@ -155,7 +155,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
                                       float spacingmult, float spacingadd,
                                       BoringLayout.Metrics metrics,
                                       boolean includepad) {
-        BoringLayout varB4EAC82CA7396A68D541C85D26508E83_1896463367 = null; //Variable for return #1
+        BoringLayout varB4EAC82CA7396A68D541C85D26508E83_1896463367 = null; 
         replaceWith(source, paint, outerwidth, align, spacingmult,
                     spacingadd);
         mEllipsizedWidth = outerwidth;
@@ -171,17 +171,17 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         addTaint(spacingadd);
         addTaint(metrics.getTaint());
         addTaint(includepad);
-        varB4EAC82CA7396A68D541C85D26508E83_1896463367.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1896463367.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1896463367;
-        // ---------- Original Method ----------
-        //replaceWith(source, paint, outerwidth, align, spacingmult,
-                    //spacingadd);
-        //mEllipsizedWidth = outerwidth;
-        //mEllipsizedStart = 0;
-        //mEllipsizedCount = 0;
-        //init(source, paint, outerwidth, align, spacingmult, spacingadd,
-             //metrics, includepad, true);
-        //return this;
+        
+        
+                    
+        
+        
+        
+        
+             
+        
     }
 
     
@@ -193,7 +193,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
                                       boolean includepad,
                                       TextUtils.TruncateAt ellipsize,
                                       int ellipsizedWidth) {
-        BoringLayout varB4EAC82CA7396A68D541C85D26508E83_2085516092 = null; //Variable for return #1
+        BoringLayout varB4EAC82CA7396A68D541C85D26508E83_2085516092 = null; 
         boolean trust;
         {
             replaceWith(source, paint, outerwidth, align, spacingmult,
@@ -202,7 +202,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
             mEllipsizedStart = 0;
             mEllipsizedCount = 0;
             trust = true;
-        } //End block
+        } 
         {
             replaceWith(TextUtils.ellipsize(source, paint, ellipsizedWidth,
                                            ellipsize, true, this),
@@ -210,7 +210,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
                         spacingadd);
             mEllipsizedWidth = ellipsizedWidth;
             trust = false;
-        } //End block
+        } 
         init(getText(), paint, outerwidth, align, spacingmult, spacingadd,
              metrics, includepad, trust);
         varB4EAC82CA7396A68D541C85D26508E83_2085516092 = this;
@@ -222,10 +222,10 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         addTaint(metrics.getTaint());
         addTaint(includepad);
         addTaint(ellipsize.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2085516092.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2085516092.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2085516092;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -239,58 +239,60 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         int spacing;
         {
             mDirect = source.toString();
-        } //End block
+        } 
         {
             mDirect = null;
-        } //End block
+        } 
         mPaint = paint;
         {
             spacing = metrics.bottom - metrics.top;
-        } //End block
+        } 
         {
             spacing = metrics.descent - metrics.ascent;
-        } //End block
+        } 
         {
             spacing = (int)(spacing * spacingmult + spacingadd + 0.5f);
-        } //End block
+        } 
         mBottom = spacing;
         {
             mDesc = spacing + metrics.top;
-        } //End block
+        } 
         {
             mDesc = spacing + metrics.ascent;
-        } //End block
+        } 
         {
             mMax = metrics.width;
-        } //End block
+        } 
         {
             TextLine line = TextLine.obtain();
             line.set(paint, source, 0, source.length(), Layout.DIR_LEFT_TO_RIGHT,
                     Layout.DIRS_ALL_LEFT_TO_RIGHT, false, null);
             mMax = (int) FloatMath.ceil(line.metrics(null));
             TextLine.recycle(line);
-        } //End block
+        } 
         {
             mTopPadding = metrics.top - metrics.ascent;
             mBottomPadding = metrics.bottom - metrics.descent;
-        } //End block
+        } 
         addTaint(outerwidth);
         addTaint(align.getTaint());
         addTaint(spacingmult);
         addTaint(spacingadd);
         addTaint(includepad);
         addTaint(trustWidth);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Metrics isBoring(CharSequence text,
                                    TextPaint paint) {
         return isBoring(text, paint, TextDirectionHeuristics.FIRSTSTRONG_LTR, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Metrics isBoring(CharSequence text,
                                    TextPaint paint,
                                    TextDirectionHeuristic textDir) {
@@ -298,11 +300,13 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Metrics isBoring(CharSequence text, TextPaint paint, Metrics metrics) {
         return isBoring(text, paint, TextDirectionHeuristics.FIRSTSTRONG_LTR, metrics);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Metrics isBoring(CharSequence text, TextPaint paint,
             TextDirectionHeuristic textDir, Metrics metrics) {
         char[] temp = TextUtils.obtain(500);
@@ -357,8 +361,8 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     public int getHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1459388223 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1459388223;
-        // ---------- Original Method ----------
-        //return mBottom;
+        
+        
     }
 
     
@@ -367,8 +371,8 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     public int getLineCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1099782886 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1099782886;
-        // ---------- Original Method ----------
-        //return 1;
+        
+        
     }
 
     
@@ -378,11 +382,11 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_837759980 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_837759980;
-        // ---------- Original Method ----------
-        //if (line == 0)
-            //return 0;
-        //else
-            //return mBottom;
+        
+        
+            
+        
+            
     }
 
     
@@ -392,11 +396,12 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1935646112 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1935646112;
-        // ---------- Original Method ----------
-        //return mDesc;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.555 -0400", hash_original_method = "01507A0D62D72F853366982B51A08E39", hash_generated_method = "56761B0313E18D2B82FD81C3BC375577")
     @Override
     public int getLineStart(int line) {
@@ -404,11 +409,11 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1016108073 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1016108073;
-        // ---------- Original Method ----------
-        //if (line == 0)
-            //return 0;
-        //else
-            //return getText().length();
+        
+        
+            
+        
+            
     }
 
     
@@ -418,8 +423,8 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_202513581 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_202513581;
-        // ---------- Original Method ----------
-        //return DIR_LEFT_TO_RIGHT;
+        
+        
     }
 
     
@@ -429,8 +434,8 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         addTaint(line);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_983098829 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_983098829;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -440,21 +445,21 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         addTaint(line);
         float var546ADE640B6EDFBC8A086EF31347E768_1772137455 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1772137455;
-        // ---------- Original Method ----------
-        //return mMax;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.556 -0400", hash_original_method = "6C6069268CAFC6462BC63ED1C5A7526F", hash_generated_method = "87F2F3ED25996BF38CBB7E1F89C698D4")
     @Override
     public final Directions getLineDirections(int line) {
-        Directions varB4EAC82CA7396A68D541C85D26508E83_1983222828 = null; //Variable for return #1
+        Directions varB4EAC82CA7396A68D541C85D26508E83_1983222828 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1983222828 = Layout.DIRS_ALL_LEFT_TO_RIGHT;
         addTaint(line);
-        varB4EAC82CA7396A68D541C85D26508E83_1983222828.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1983222828.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1983222828;
-        // ---------- Original Method ----------
-        //return Layout.DIRS_ALL_LEFT_TO_RIGHT;
+        
+        
     }
 
     
@@ -463,8 +468,8 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     public int getTopPadding() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1569718648 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1569718648;
-        // ---------- Original Method ----------
-        //return mTopPadding;
+        
+        
     }
 
     
@@ -473,8 +478,8 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     public int getBottomPadding() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1526124707 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1526124707;
-        // ---------- Original Method ----------
-        //return mBottomPadding;
+        
+        
     }
 
     
@@ -484,8 +489,8 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_144434182 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_144434182;
-        // ---------- Original Method ----------
-        //return mEllipsizedCount;
+        
+        
     }
 
     
@@ -495,8 +500,8 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_5698581 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_5698581;
-        // ---------- Original Method ----------
-        //return mEllipsizedStart;
+        
+        
     }
 
     
@@ -505,31 +510,32 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     public int getEllipsizedWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_131855403 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_131855403;
-        // ---------- Original Method ----------
-        //return mEllipsizedWidth;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.558 -0400", hash_original_method = "5DBC6B0379E5085B5017E1E8304BC3E8", hash_generated_method = "B33B46ED2203911B6BD4D350C47C8053")
     @Override
     public void draw(Canvas c, Path highlight, Paint highlightpaint,
                      int cursorOffset) {
         {
             c.drawText(mDirect, 0, mBottom - mDesc, mPaint);
-        } //End block
+        } 
         {
             super.draw(c, highlight, highlightpaint, cursorOffset);
-        } //End block
+        } 
         addTaint(c.getTaint());
         addTaint(highlight.getTaint());
         addTaint(highlightpaint.getTaint());
         addTaint(cursorOffset);
-        // ---------- Original Method ----------
-        //if (mDirect != null && highlight == null) {
-            //c.drawText(mDirect, 0, mBottom - mDesc, mPaint);
-        //} else {
-            //super.draw(c, highlight, highlightpaint, cursorOffset);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -537,9 +543,9 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     public void ellipsized(int start, int end) {
         mEllipsizedStart = start;
         mEllipsizedCount = end - start;
-        // ---------- Original Method ----------
-        //mEllipsizedStart = start;
-        //mEllipsizedCount = end - start;
+        
+        
+        
     }
 
     
@@ -551,19 +557,19 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.559 -0400", hash_original_method = "5093089FD85953828BC1A867B844524A", hash_generated_method = "5093089FD85953828BC1A867B844524A")
         public Metrics ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.559 -0400", hash_original_method = "12CBEFE116384BBA88EB750F89F5AC01", hash_generated_method = "594BA3D38C7851541E33652BCD8C5E15")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_998647371 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_998647371 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_998647371 = super.toString() + " width=" + width;
-            varB4EAC82CA7396A68D541C85D26508E83_998647371.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_998647371.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_998647371;
-            // ---------- Original Method ----------
-            //return super.toString() + " width=" + width;
+            
+            
         }
 
         

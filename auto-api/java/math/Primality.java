@@ -1,11 +1,11 @@
 package java.math;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Arrays;
 
@@ -13,10 +13,11 @@ class Primality {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.984 -0400", hash_original_method = "3E56E5809677C3FC79921E23C4FBCC34", hash_generated_method = "BF7E1FB696DD619FEE28860391904779")
     private  Primality() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger nextProbablePrime(BigInteger n) {
         int i, j;
         int gapSize = 1024;

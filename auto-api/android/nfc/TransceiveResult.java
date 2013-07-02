@@ -1,11 +1,11 @@
 package android.nfc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -23,36 +23,37 @@ public final class TransceiveResult implements Parcelable {
     public  TransceiveResult(final int result, final byte[] data) {
         mResult = result;
         mResponseData = data;
-        // ---------- Original Method ----------
-        //mResult = result;
-        //mResponseData = data;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.282 -0400", hash_original_method = "B3157A12430DB97B40C44B33A50DEAC2", hash_generated_method = "3EB1174D42D3DA61C28209D3FF2DD1AE")
     public byte[] getResponseOrThrow() throws IOException {
-        //Begin case RESULT_TAGLOST 
+        
         if (DroidSafeAndroidRuntime.control) throw new TagLostException("Tag was lost.");
-        //End case RESULT_TAGLOST 
-        //Begin case RESULT_EXCEEDED_LENGTH 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new IOException("Transceive length exceeds supported maximum");
-        //End case RESULT_EXCEEDED_LENGTH 
-        //Begin case default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new IOException("Transceive failed");
-        //End case default 
+        
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1827491915 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1827491915;
-        // ---------- Original Method ----------
-        //switch (mResult) {
-            //case RESULT_SUCCESS:
-                //return mResponseData;
-            //case RESULT_TAGLOST:
-                //throw new TagLostException("Tag was lost.");
-            //case RESULT_EXCEEDED_LENGTH:
-                //throw new IOException("Transceive length exceeds supported maximum");
-            //default:
-                //throw new IOException("Transceive failed");
-        //}
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+        
     }
 
     
@@ -61,11 +62,12 @@ public final class TransceiveResult implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1268271655 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1268271655;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.283 -0400", hash_original_method = "561D73418397BF7826CB5BA2EBF58A4C", hash_generated_method = "AE5C41012813B141CADE3CEF7CE376C0")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -73,15 +75,15 @@ public final class TransceiveResult implements Parcelable {
         {
             dest.writeInt(mResponseData.length);
             dest.writeByteArray(mResponseData);
-        } //End block
+        } 
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mResult);
-        //if (mResult == RESULT_SUCCESS) {
-            //dest.writeInt(mResponseData.length);
-            //dest.writeByteArray(mResponseData);
-        //}
+        
+        
+        
+            
+            
+        
     }
 
     

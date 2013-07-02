@@ -1,11 +1,11 @@
 package android.support.v4.view.accessibility;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.os.Build;
@@ -19,7 +19,7 @@ public class AccessibilityManagerCompat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.475 -0400", hash_original_method = "AC829248F02C50B724A8B55AAAADE1B7", hash_generated_method = "AC829248F02C50B724A8B55AAAADE1B7")
     public AccessibilityManagerCompat ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -57,20 +57,20 @@ public class AccessibilityManagerCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.476 -0400", hash_original_method = "791165FA7321030127E802C0974A5551", hash_generated_method = "791165FA7321030127E802C0974A5551")
         public AccessibilityManagerStubImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.477 -0400", hash_original_method = "7D59B8882263E438CB4361275EA728A2", hash_generated_method = "4DEE1B92670BFB39B4262816636D3180")
         public Object newAccessiblityStateChangeListener(
                 AccessibilityStateChangeListenerCompat listener) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1042257569 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1042257569 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1042257569 = null;
             addTaint(listener.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1042257569.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1042257569.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1042257569;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
@@ -81,8 +81,8 @@ public class AccessibilityManagerCompat {
             addTaint(listener.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_656064537 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_656064537;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -93,35 +93,35 @@ public class AccessibilityManagerCompat {
             addTaint(listener.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_712909522 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_712909522;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.481 -0400", hash_original_method = "0B155E7439E18F95389B186D3A0B1547", hash_generated_method = "94A4E30112F40116B6C9A85C91403236")
         public List<AccessibilityServiceInfo> getEnabledAccessibilityServiceList(
                 AccessibilityManager manager, int feedbackTypeFlags) {
-            List<AccessibilityServiceInfo> varB4EAC82CA7396A68D541C85D26508E83_44844729 = null; //Variable for return #1
+            List<AccessibilityServiceInfo> varB4EAC82CA7396A68D541C85D26508E83_44844729 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_44844729 = Collections.emptyList();
             addTaint(manager.getTaint());
             addTaint(feedbackTypeFlags);
-            varB4EAC82CA7396A68D541C85D26508E83_44844729.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_44844729.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_44844729;
-            // ---------- Original Method ----------
-            //return Collections.emptyList();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.482 -0400", hash_original_method = "1B9F4BA5149600AFD41B481B12F75C04", hash_generated_method = "D2BC79D79090CB24595CAFB59753A6D8")
         public List<AccessibilityServiceInfo> getInstalledAccessibilityServiceList(
                 AccessibilityManager manager) {
-            List<AccessibilityServiceInfo> varB4EAC82CA7396A68D541C85D26508E83_1192411801 = null; //Variable for return #1
+            List<AccessibilityServiceInfo> varB4EAC82CA7396A68D541C85D26508E83_1192411801 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1192411801 = Collections.emptyList();
             addTaint(manager.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1192411801.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1192411801.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1192411801;
-            // ---------- Original Method ----------
-            //return Collections.emptyList();
+            
+            
         }
 
         
@@ -130,8 +130,8 @@ public class AccessibilityManagerCompat {
             addTaint(manager.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_897288857 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_897288857;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -144,7 +144,7 @@ public class AccessibilityManagerCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.483 -0400", hash_original_method = "23F636143C406EB5E850140D3B3826C9", hash_generated_method = "23F636143C406EB5E850140D3B3826C9")
         public AccessibilityManagerIcsImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -152,7 +152,7 @@ public class AccessibilityManagerCompat {
         @Override
         public Object newAccessiblityStateChangeListener(
                 final AccessibilityStateChangeListenerCompat listener) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1225361307 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1225361307 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1225361307 = AccessibilityManagerCompatIcs.newAccessibilityStateChangeListener(
                 new AccessibilityStateChangeListenerBridge() {
                     public void onAccessibilityStateChanged(boolean enabled) {
@@ -160,15 +160,15 @@ public class AccessibilityManagerCompat {
                     }
                 });
             addTaint(listener.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1225361307.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1225361307.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1225361307;
-            // ---------- Original Method ----------
-            //return AccessibilityManagerCompatIcs.newAccessibilityStateChangeListener(
-                //new AccessibilityStateChangeListenerBridge() {
-                    //public void onAccessibilityStateChanged(boolean enabled) {
-                        //listener.onAccessibilityStateChanged(enabled);
-                    //}
-                //});
+            
+            
+                
+                    
+                        
+                    
+                
         }
 
         
@@ -182,9 +182,9 @@ public class AccessibilityManagerCompat {
             addTaint(listener.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2032320523 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2032320523;
-            // ---------- Original Method ----------
-            //return AccessibilityManagerCompatIcs.addAccessibilityStateChangeListener(manager,
-                    //listener.mListener);
+            
+            
+                    
         }
 
         
@@ -198,9 +198,9 @@ public class AccessibilityManagerCompat {
             addTaint(listener.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_510024640 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_510024640;
-            // ---------- Original Method ----------
-            //return AccessibilityManagerCompatIcs.removeAccessibilityStateChangeListener(manager,
-                    //listener.mListener);
+            
+            
+                    
         }
 
         
@@ -208,16 +208,16 @@ public class AccessibilityManagerCompat {
         @Override
         public List<AccessibilityServiceInfo> getEnabledAccessibilityServiceList(
                 AccessibilityManager manager, int feedbackTypeFlags) {
-            List<AccessibilityServiceInfo> varB4EAC82CA7396A68D541C85D26508E83_552656669 = null; //Variable for return #1
+            List<AccessibilityServiceInfo> varB4EAC82CA7396A68D541C85D26508E83_552656669 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_552656669 = AccessibilityManagerCompatIcs.getEnabledAccessibilityServiceList(manager,
                     feedbackTypeFlags);
             addTaint(manager.getTaint());
             addTaint(feedbackTypeFlags);
-            varB4EAC82CA7396A68D541C85D26508E83_552656669.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_552656669.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_552656669;
-            // ---------- Original Method ----------
-            //return AccessibilityManagerCompatIcs.getEnabledAccessibilityServiceList(manager,
-                    //feedbackTypeFlags);
+            
+            
+                    
         }
 
         
@@ -225,13 +225,13 @@ public class AccessibilityManagerCompat {
         @Override
         public List<AccessibilityServiceInfo> getInstalledAccessibilityServiceList(
                 AccessibilityManager manager) {
-            List<AccessibilityServiceInfo> varB4EAC82CA7396A68D541C85D26508E83_846740342 = null; //Variable for return #1
+            List<AccessibilityServiceInfo> varB4EAC82CA7396A68D541C85D26508E83_846740342 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_846740342 = AccessibilityManagerCompatIcs.getInstalledAccessibilityServiceList(manager);
             addTaint(manager.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_846740342.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_846740342.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_846740342;
-            // ---------- Original Method ----------
-            //return AccessibilityManagerCompatIcs.getInstalledAccessibilityServiceList(manager);
+            
+            
         }
 
         
@@ -242,18 +242,12 @@ public class AccessibilityManagerCompat {
             addTaint(manager.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1438572114 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1438572114;
-            // ---------- Original Method ----------
-            //return AccessibilityManagerCompatIcs.isTouchExplorationEnabled(manager);
+            
+            
         }
 
         
-        /*
-        // orphaned legacy method
-        public void onAccessibilityStateChanged(boolean enabled) {
-                        listener.onAccessibilityStateChanged(enabled);
-                    }
         
-        */
     }
 
 
@@ -266,8 +260,8 @@ public class AccessibilityManagerCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.490 -0400", hash_original_method = "FA0620266C265FA0D90FCFE5DA96B3B2", hash_generated_method = "741FF0BD831ABCAEAE97E46DD6866A08")
         public  AccessibilityStateChangeListenerCompat() {
             mListener = IMPL.newAccessiblityStateChangeListener(this);
-            // ---------- Original Method ----------
-            //mListener = IMPL.newAccessiblityStateChangeListener(this);
+            
+            
         }
 
         

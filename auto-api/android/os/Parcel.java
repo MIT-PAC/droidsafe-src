@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.text.TextUtils;
 import android.util.Log;
@@ -41,17 +41,18 @@ public final class Parcel {
 	private Parcel(int obj) {
 		{
 			mStack = new RuntimeException();
-		} // End block
+		} 
 		init(obj);
 		addTaint(obj);
-		// ---------- Original Method ----------
-		// if (DEBUG_RECYCLE) {
-		// mStack = new RuntimeException();
-		// }
-		// init(obj);
+		
+		
+		
+		
+		
 	}
 
-	public static Parcel obtain() {
+	@DSModeled(DSC.SAFE)
+    public static Parcel obtain() {
 		final Parcel[] pool = sOwnedPool;
 		synchronized (pool) {
 			Parcel p;
@@ -82,22 +83,22 @@ public final class Parcel {
 				{
 					{
 						pool[i] = this;
-					} // End block
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
-			// ---------- Original Method ----------
-			// if (DEBUG_RECYCLE) mStack = null;
-			// freeBuffer();
-			// final Parcel[] pool = mOwnObject != 0 ? sOwnedPool : sHolderPool;
-			// synchronized (pool) {
-			// for (int i=0; i<POOL_SIZE; i++) {
-			// if (pool[i] == null) {
-			// pool[i] = this;
-			// return;
-		// }
-		// }
-		// }
+					} 
+				} 
+			} 
+		} 
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.769 -0400", hash_original_method = "DD534262B78755109918F5DCE98072D4", hash_generated_method = "B9F64836FAEBC9616826078463BDF310")
@@ -178,27 +179,27 @@ public final class Parcel {
 	public final void writeByteArray(byte[] b) {
 		writeByteArray(b, 0, (b != null) ? b.length : 0);
 		addTaint(b[0]);
-		// ---------- Original Method ----------
-		// writeByteArray(b, 0, (b != null) ? b.length : 0);
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.774 -0400", hash_original_method = "292A0D9A6E9AD589E2915A38A2AF794D", hash_generated_method = "5914254446C5E9C25C64599B3132C419")
 	public final void writeByteArray(byte[] b, int offset, int len) {
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		Arrays.checkOffsetAndCount(b.length, offset, len);
 		writeNative(b, offset, len);
 		addTaint(b[0]);
 		addTaint(offset);
 		addTaint(len);
-		// ---------- Original Method ----------
-		// if (b == null) {
-		// writeInt(-1);
-		// return;
-		// }
-		// Arrays.checkOffsetAndCount(b.length, offset, len);
-		// writeNative(b, offset, len);
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.774 -0400", hash_original_method = "13EF9FAE46E0DC273567B76840FE8431", hash_generated_method = "B7B1791B1819FAA4AC4DF261A54493B1")
@@ -229,8 +230,8 @@ public final class Parcel {
 	public final void writeCharSequence(CharSequence val) {
 		TextUtils.writeToParcel(val, this, 0);
 		addTaint(val.getTaint());
-		// ---------- Original Method ----------
-		// TextUtils.writeToParcel(val, this, 0);
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.776 -0400", hash_original_method = "7DA1E5E6DC1856828FF2B443CF2EA2D0", hash_generated_method = "0D95721DBACCC6601CFE11D2E34CD1FF")
@@ -241,8 +242,8 @@ public final class Parcel {
 	public final void writeStrongInterface(IInterface val) {
 		writeStrongBinder(val == null ? null : val.asBinder());
 		addTaint(val.getTaint());
-		// ---------- Original Method ----------
-		// writeStrongBinder(val == null ? null : val.asBinder());
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.776 -0400", hash_original_method = "F228581B9954F98E592DA68C1EE89409", hash_generated_method = "159C24B95EAD1045C52B3F0E4DD0B66A")
@@ -253,23 +254,23 @@ public final class Parcel {
 	public final void writeByte(byte val) {
 		writeInt(val);
 		addTaint(val);
-		// ---------- Original Method ----------
-		// writeInt(val);
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.777 -0400", hash_original_method = "028C08B0E96835B592DD57E92E1A9654", hash_generated_method = "7CC3F53AC45D033B1436BAAAF054C373")
 	public final void writeMap(Map val) {
 		writeMapInternal((Map<String, Object>) val);
 		addTaint(val.getTaint());
-		// ---------- Original Method ----------
-		// writeMapInternal((Map<String,Object>) val);
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.783 -0400", hash_original_method = "254CF4BDBF55D33C4656934F15F7844A", hash_generated_method = "48605E73DD17BAB76B2CDA6A5B1B3719")
 	void writeMapInternal(Map<String, Object> val) {
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		Set<Map.Entry<String, Object>> entries = val.entrySet();
 		writeInt(entries.size());
 		{
@@ -279,143 +280,143 @@ public final class Parcel {
 			{
 				writeValue(e.getKey());
 				writeValue(e.getValue());
-			} // End block
-		} // End collapsed parenthetic
+			} 
+		} 
 		addTaint(val.getTaint());
-		// ---------- Original Method ----------
-		// if (val == null) {
-		// writeInt(-1);
-		// return;
-		// }
-		// Set<Map.Entry<String,Object>> entries = val.entrySet();
-		// writeInt(entries.size());
-		// for (Map.Entry<String,Object> e : entries) {
-		// writeValue(e.getKey());
-		// writeValue(e.getValue());
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.784 -0400", hash_original_method = "1B271C6B96886293B3F46C86D8594D62", hash_generated_method = "2FFA68CA9C86DB44455DF2AE49798B9A")
 	public final void writeBundle(Bundle val) {
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		val.writeToParcel(this, 0);
 		addTaint(val.getTaint());
-		// ---------- Original Method ----------
-		// if (val == null) {
-		// writeInt(-1);
-		// return;
-		// }
-		// val.writeToParcel(this, 0);
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.784 -0400", hash_original_method = "E7219AA1C86EB1036E36A514DFF44066", hash_generated_method = "F2B07749CC535A3460F31E6B1ED70783")
 	public final void writeList(List val) {
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		int N = val.size();
 		int i = 0;
 		writeInt(N);
 		{
 			writeValue(val.get(i));
-		} // End block
+		} 
 		addTaint(val.getTaint());
-		// ---------- Original Method ----------
-		// if (val == null) {
-		// writeInt(-1);
-		// return;
-		// }
-		// int N = val.size();
-		// int i=0;
-		// writeInt(N);
-		// while (i < N) {
-		// writeValue(val.get(i));
-		// i++;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.785 -0400", hash_original_method = "903390B15749D4F099959DBD9D939641", hash_generated_method = "1866C6133F4A985007521467365A1F4B")
 	public final void writeArray(Object[] val) {
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		int N = val.length;
 		int i = 0;
 		writeInt(N);
 		{
 			writeValue(val[i]);
-		} // End block
+		} 
 		addTaint(val[0].getTaint());
-		// ---------- Original Method ----------
-		// if (val == null) {
-		// writeInt(-1);
-		// return;
-		// }
-		// int N = val.length;
-		// int i=0;
-		// writeInt(N);
-		// while (i < N) {
-		// writeValue(val[i]);
-		// i++;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.785 -0400", hash_original_method = "932B15FDC26AECB59BA0DEB9D7727076", hash_generated_method = "B7500221DB1CDEA1D80F330EC6626D58")
 	public final void writeSparseArray(SparseArray<Object> val) {
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		int N = val.size();
 		writeInt(N);
 		int i = 0;
 		{
 			writeInt(val.keyAt(i));
 			writeValue(val.valueAt(i));
-		} // End block
+		} 
 		addTaint(val.getTaint());
-		// ---------- Original Method ----------
-		// if (val == null) {
-		// writeInt(-1);
-		// return;
-		// }
-		// int N = val.size();
-		// writeInt(N);
-		// int i=0;
-		// while (i < N) {
-		// writeInt(val.keyAt(i));
-		// writeValue(val.valueAt(i));
-		// i++;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.786 -0400", hash_original_method = "501AACE22AB4AEC41E440B95E2BF337F", hash_generated_method = "05E140D393E45CA21F55EF2481201B6F")
 	public final void writeSparseBooleanArray(SparseBooleanArray val) {
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		int N = val.size();
 		writeInt(N);
 		int i = 0;
 		{
 			writeInt(val.keyAt(i));
 			writeByte((byte) (val.valueAt(i) ? 1 : 0));
-		} // End block
+		} 
 		addTaint(val.getTaint());
-		// ---------- Original Method ----------
-		// if (val == null) {
-		// writeInt(-1);
-		// return;
-		// }
-		// int N = val.size();
-		// writeInt(N);
-		// int i=0;
-		// while (i < N) {
-		// writeInt(val.keyAt(i));
-		// writeByte((byte)(val.valueAt(i) ? 1 : 0));
-		// i++;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.786 -0400", hash_original_method = "D75DEF1EB05EA54B4B0A6C775E789115", hash_generated_method = "2A98AB1564AEE07F88C034175A77E96E")
@@ -427,23 +428,23 @@ public final class Parcel {
 				int i = 0;
 				{
 					writeInt(val[i] ? 1 : 0);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		addTaint(val[0]);
-		// ---------- Original Method ----------
-		// if (val != null) {
-		// int N = val.length;
-		// writeInt(N);
-		// for (int i=0; i<N; i++) {
-		// writeInt(val[i] ? 1 : 0);
-		// }
-		// } else {
-		// writeInt(-1);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.787 -0400", hash_original_method = "636C08B3912226F5C58D74422D1E9CB4", hash_generated_method = "CFE2562568E880AE20655FB43FE9876D")
@@ -457,23 +458,23 @@ public final class Parcel {
 					int i = 0;
 					{
 						val[i] = readInt() != 0;
-					} // End block
-				} // End collapsed parenthetic
-			} // End block
-		} // End collapsed parenthetic
+					} 
+				} 
+			} 
+		} 
 		boolean[] var503EB2F420079C4024483971CE5EDEA8_381550882 = { getTaintBoolean() };
 		return var503EB2F420079C4024483971CE5EDEA8_381550882;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N >= 0 && N <= (dataAvail() >> 2)) {
-		// boolean[] val = new boolean[N];
-		// for (int i=0; i<N; i++) {
-		// val[i] = readInt() != 0;
-		// }
-		// return val;
-		// } else {
-		// return null;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.787 -0400", hash_original_method = "15202BE45A888A7FAE449643C1F651D3", hash_generated_method = "5803D4E8BE7505BB9B451A8D8EC62400")
@@ -484,23 +485,23 @@ public final class Parcel {
 				int i = 0;
 				{
 					val[i] = readInt() != 0;
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException("bad array lengths");
-		} // End block
+		} 
 		addTaint(val[0]);
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N == val.length) {
-		// for (int i=0; i<N; i++) {
-		// val[i] = readInt() != 0;
-		// }
-		// } else {
-		// throw new RuntimeException("bad array lengths");
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.788 -0400", hash_original_method = "FC1109029B4BAAFE0FA31EEEF8F95A5F", hash_generated_method = "A0FAF98D19F74F9A4DB926ED5CAB75BB")
@@ -512,23 +513,23 @@ public final class Parcel {
 				int i = 0;
 				{
 					writeInt((int) val[i]);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		addTaint(val[0]);
-		// ---------- Original Method ----------
-		// if (val != null) {
-		// int N = val.length;
-		// writeInt(N);
-		// for (int i=0; i<N; i++) {
-		// writeInt((int)val[i]);
-		// }
-		// } else {
-		// writeInt(-1);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.788 -0400", hash_original_method = "0F2CB9A0B4BA672805C5DC7ABC31D142", hash_generated_method = "D369B6E003C7E46DADA02F2A079B2F95")
@@ -542,23 +543,23 @@ public final class Parcel {
 					int i = 0;
 					{
 						val[i] = (char) readInt();
-					} // End block
-				} // End collapsed parenthetic
-			} // End block
-		} // End collapsed parenthetic
+					} 
+				} 
+			} 
+		} 
 		char[] var50607924ABD4C17119BAF3A1CE41C0EC_1874004234 = { getTaintChar() };
 		return var50607924ABD4C17119BAF3A1CE41C0EC_1874004234;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N >= 0 && N <= (dataAvail() >> 2)) {
-		// char[] val = new char[N];
-		// for (int i=0; i<N; i++) {
-		// val[i] = (char)readInt();
-		// }
-		// return val;
-		// } else {
-		// return null;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.792 -0400", hash_original_method = "3577ABA10B4218BCCE6B69B6327658D6", hash_generated_method = "EE4F00CE6CD4A38BC02AEFC0749867AB")
@@ -569,23 +570,23 @@ public final class Parcel {
 				int i = 0;
 				{
 					val[i] = (char) readInt();
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException("bad array lengths");
-		} // End block
+		} 
 		addTaint(val[0]);
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N == val.length) {
-		// for (int i=0; i<N; i++) {
-		// val[i] = (char)readInt();
-		// }
-		// } else {
-		// throw new RuntimeException("bad array lengths");
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.793 -0400", hash_original_method = "426B3599371B897BFC6196C71A9C351C", hash_generated_method = "E793B7204395593C9A6EF1178F89021F")
@@ -597,23 +598,23 @@ public final class Parcel {
 				int i = 0;
 				{
 					writeInt(val[i]);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		addTaint(val[0]);
-		// ---------- Original Method ----------
-		// if (val != null) {
-		// int N = val.length;
-		// writeInt(N);
-		// for (int i=0; i<N; i++) {
-		// writeInt(val[i]);
-		// }
-		// } else {
-		// writeInt(-1);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.793 -0400", hash_original_method = "2BFE53BE4AFBC39913D7CD537675C77F", hash_generated_method = "B05D5C429315FA7591E0C99BCEBB51A5")
@@ -627,23 +628,23 @@ public final class Parcel {
 					int i = 0;
 					{
 						val[i] = readInt();
-					} // End block
-				} // End collapsed parenthetic
-			} // End block
-		} // End collapsed parenthetic
+					} 
+				} 
+			} 
+		} 
 		int[] varB4CCCA26F9DB9189C32F33E82D425CFB_379556173 = { getTaintInt() };
 		return varB4CCCA26F9DB9189C32F33E82D425CFB_379556173;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N >= 0 && N <= (dataAvail() >> 2)) {
-		// int[] val = new int[N];
-		// for (int i=0; i<N; i++) {
-		// val[i] = readInt();
-		// }
-		// return val;
-		// } else {
-		// return null;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.794 -0400", hash_original_method = "D30E6FBEFEE072DBADEACBC994232724", hash_generated_method = "B3FA7DF2E6B343C2554B2B79F98A3259")
@@ -654,23 +655,23 @@ public final class Parcel {
 				int i = 0;
 				{
 					val[i] = readInt();
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException("bad array lengths");
-		} // End block
+		} 
 		addTaint(val[0]);
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N == val.length) {
-		// for (int i=0; i<N; i++) {
-		// val[i] = readInt();
-		// }
-		// } else {
-		// throw new RuntimeException("bad array lengths");
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.794 -0400", hash_original_method = "6AE17F1911C710D67F0B38E1A6953312", hash_generated_method = "4005DCC97220EAD3B2E1E1CF04E52441")
@@ -682,23 +683,23 @@ public final class Parcel {
 				int i = 0;
 				{
 					writeLong(val[i]);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		addTaint(val[0]);
-		// ---------- Original Method ----------
-		// if (val != null) {
-		// int N = val.length;
-		// writeInt(N);
-		// for (int i=0; i<N; i++) {
-		// writeLong(val[i]);
-		// }
-		// } else {
-		// writeInt(-1);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.795 -0400", hash_original_method = "539AEF1878CDD8393DEC7B15A779334D", hash_generated_method = "CAA64DEDFF976366C7F1A0831FF029E1")
@@ -712,23 +713,23 @@ public final class Parcel {
 					int i = 0;
 					{
 						val[i] = readLong();
-					} // End block
-				} // End collapsed parenthetic
-			} // End block
-		} // End collapsed parenthetic
+					} 
+				} 
+			} 
+		} 
 		long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_1530835055 = { getTaintLong() };
 		return var3908C7C3AF5171CEE1F112DAE77A5C4D_1530835055;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N >= 0 && N <= (dataAvail() >> 3)) {
-		// long[] val = new long[N];
-		// for (int i=0; i<N; i++) {
-		// val[i] = readLong();
-		// }
-		// return val;
-		// } else {
-		// return null;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.796 -0400", hash_original_method = "EB1FE051AE6270C29877E320D05D2B1C", hash_generated_method = "D7AE615F993C394509D6C43F404A7099")
@@ -739,23 +740,23 @@ public final class Parcel {
 				int i = 0;
 				{
 					val[i] = readLong();
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException("bad array lengths");
-		} // End block
+		} 
 		addTaint(val[0]);
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N == val.length) {
-		// for (int i=0; i<N; i++) {
-		// val[i] = readLong();
-		// }
-		// } else {
-		// throw new RuntimeException("bad array lengths");
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.797 -0400", hash_original_method = "914127CC1FF235613675A4097238AE87", hash_generated_method = "2EBC9A3CADCE45D0DF59082FD6380DCB")
@@ -767,23 +768,23 @@ public final class Parcel {
 				int i = 0;
 				{
 					writeFloat(val[i]);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		addTaint(val[0]);
-		// ---------- Original Method ----------
-		// if (val != null) {
-		// int N = val.length;
-		// writeInt(N);
-		// for (int i=0; i<N; i++) {
-		// writeFloat(val[i]);
-		// }
-		// } else {
-		// writeInt(-1);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.798 -0400", hash_original_method = "AD11D1594D734C1EBF478FFED3A5EA0B", hash_generated_method = "FDBA09860B48ED0DD8FE8A979F7AFC35")
@@ -797,23 +798,23 @@ public final class Parcel {
 					int i = 0;
 					{
 						val[i] = readFloat();
-					} // End block
-				} // End collapsed parenthetic
-			} // End block
-		} // End collapsed parenthetic
+					} 
+				} 
+			} 
+		} 
 		float[] varB2C245003BAB9224CFB496218F7DAFE0_58190586 = { getTaintFloat() };
 		return varB2C245003BAB9224CFB496218F7DAFE0_58190586;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N >= 0 && N <= (dataAvail() >> 2)) {
-		// float[] val = new float[N];
-		// for (int i=0; i<N; i++) {
-		// val[i] = readFloat();
-		// }
-		// return val;
-		// } else {
-		// return null;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.799 -0400", hash_original_method = "5BAAFA2155FE07D9BA992B0E92A02429", hash_generated_method = "1B11D9AABA6F5E20364E4383C4CCD9A3")
@@ -824,23 +825,23 @@ public final class Parcel {
 				int i = 0;
 				{
 					val[i] = readFloat();
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException("bad array lengths");
-		} // End block
+		} 
 		addTaint(val[0]);
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N == val.length) {
-		// for (int i=0; i<N; i++) {
-		// val[i] = readFloat();
-		// }
-		// } else {
-		// throw new RuntimeException("bad array lengths");
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.799 -0400", hash_original_method = "30BB607A5C46B583A0E7A88D0830BB99", hash_generated_method = "7AAC9AACC8F6C87826416D94CCC7F76C")
@@ -852,23 +853,23 @@ public final class Parcel {
 				int i = 0;
 				{
 					writeDouble(val[i]);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		addTaint(val[0]);
-		// ---------- Original Method ----------
-		// if (val != null) {
-		// int N = val.length;
-		// writeInt(N);
-		// for (int i=0; i<N; i++) {
-		// writeDouble(val[i]);
-		// }
-		// } else {
-		// writeInt(-1);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.800 -0400", hash_original_method = "EADE9932A44C79075558F2C2E2C44BF9", hash_generated_method = "D7EE82085928B40F498B991358F64D94")
@@ -882,23 +883,23 @@ public final class Parcel {
 					int i = 0;
 					{
 						val[i] = readDouble();
-					} // End block
-				} // End collapsed parenthetic
-			} // End block
-		} // End collapsed parenthetic
+					} 
+				} 
+			} 
+		} 
 		double[] var74D44D7D9EE6FE6C3433D694F869E521_1169933129 = { getTaintDouble() };
 		return var74D44D7D9EE6FE6C3433D694F869E521_1169933129;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N >= 0 && N <= (dataAvail() >> 3)) {
-		// double[] val = new double[N];
-		// for (int i=0; i<N; i++) {
-		// val[i] = readDouble();
-		// }
-		// return val;
-		// } else {
-		// return null;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.800 -0400", hash_original_method = "1E5CFF0988982B6DD3E5010F6E58EAB2", hash_generated_method = "6FF3C4079675C059AA99C82A4F3A1D5D")
@@ -909,23 +910,23 @@ public final class Parcel {
 				int i = 0;
 				{
 					val[i] = readDouble();
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException("bad array lengths");
-		} // End block
+		} 
 		addTaint(val[0]);
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N == val.length) {
-		// for (int i=0; i<N; i++) {
-		// val[i] = readDouble();
-		// }
-		// } else {
-		// throw new RuntimeException("bad array lengths");
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.800 -0400", hash_original_method = "869784FDBD7A62BA6DC61589E5325593", hash_generated_method = "8C626EA11D1D9510398CF8E8EED8F580")
@@ -937,35 +938,35 @@ public final class Parcel {
 				int i = 0;
 				{
 					writeString(val[i]);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		addTaint(val[0].getTaint());
-		// ---------- Original Method ----------
-		// if (val != null) {
-		// int N = val.length;
-		// writeInt(N);
-		// for (int i=0; i<N; i++) {
-		// writeString(val[i]);
-		// }
-		// } else {
-		// writeInt(-1);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.801 -0400", hash_original_method = "E25A6435806EEE9817C8F94878902077", hash_generated_method = "7EA9293E08FED213649E39111380344D")
 	public final String[] createStringArray() {
-		String[] varB4EAC82CA7396A68D541C85D26508E83_76913018 = null; // Variable
-																		// for
-																		// return
-																		// #1
-		String[] varB4EAC82CA7396A68D541C85D26508E83_1694210913 = null; // Variable
-																		// for
-																		// return
-																		// #2
+		String[] varB4EAC82CA7396A68D541C85D26508E83_76913018 = null; 
+																		
+																		
+																		
+		String[] varB4EAC82CA7396A68D541C85D26508E83_1694210913 = null; 
+																		
+																		
+																		
 		int N = readInt();
 		{
 			String[] val = new String[N];
@@ -973,39 +974,39 @@ public final class Parcel {
 				int i = 0;
 				{
 					val[i] = readString();
-				} // End block
-			} // End collapsed parenthetic
+				} 
+			} 
 			varB4EAC82CA7396A68D541C85D26508E83_76913018 = val;
-		} // End block
+		} 
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_1694210913 = null;
-		} // End block
-		String[] varA7E53CE21691AB073D9660D615818899_1523032269; // Final return
-																	// value
+		} 
+		String[] varA7E53CE21691AB073D9660D615818899_1523032269; 
+																	
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_1523032269 = varB4EAC82CA7396A68D541C85D26508E83_76913018;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_1523032269 = varB4EAC82CA7396A68D541C85D26508E83_1694210913;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_1523032269.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varA7E53CE21691AB073D9660D615818899_1523032269.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varA7E53CE21691AB073D9660D615818899_1523032269;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N >= 0) {
-		// String[] val = new String[N];
-		// for (int i=0; i<N; i++) {
-		// val[i] = readString();
-		// }
-		// return val;
-		// } else {
-		// return null;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.801 -0400", hash_original_method = "856C598346084C5A7CB0C8EC3C30AFE8", hash_generated_method = "D69FCB1A188A39A54E5D49E779FBE02B")
@@ -1016,23 +1017,23 @@ public final class Parcel {
 				int i = 0;
 				{
 					val[i] = readString();
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException("bad array lengths");
-		} // End block
+		} 
 		addTaint(val[0].getTaint());
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N == val.length) {
-		// for (int i=0; i<N; i++) {
-		// val[i] = readString();
-		// }
-		// } else {
-		// throw new RuntimeException("bad array lengths");
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.802 -0400", hash_original_method = "EF4C8799E7CA7F11199E2A94E26473B3", hash_generated_method = "F00FFDCA7721A21132A90A2999F5EEA7")
@@ -1044,23 +1045,23 @@ public final class Parcel {
 				int i = 0;
 				{
 					writeStrongBinder(val[i]);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		addTaint(val[0].getTaint());
-		// ---------- Original Method ----------
-		// if (val != null) {
-		// int N = val.length;
-		// writeInt(N);
-		// for (int i=0; i<N; i++) {
-		// writeStrongBinder(val[i]);
-		// }
-		// } else {
-		// writeInt(-1);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.802 -0400", hash_original_method = "47477B6B20C2841826851A1DC451409B", hash_generated_method = "0B0BDCD7A074B6BE282A86A509D1E76B")
@@ -1072,35 +1073,35 @@ public final class Parcel {
 				int i = 0;
 				{
 					writeCharSequence(val[i]);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		addTaint(val[0].getTaint());
-		// ---------- Original Method ----------
-		// if (val != null) {
-		// int N = val.length;
-		// writeInt(N);
-		// for (int i=0; i<N; i++) {
-		// writeCharSequence(val[i]);
-		// }
-		// } else {
-		// writeInt(-1);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.803 -0400", hash_original_method = "4DE08401A529CB5616CDC9DFD50DAFB3", hash_generated_method = "5EA3B5F2C2F5358E07C6770D8AC34139")
 	public final IBinder[] createBinderArray() {
-		IBinder[] varB4EAC82CA7396A68D541C85D26508E83_1880544796 = null; // Variable
-																			// for
-																			// return
-																			// #1
-		IBinder[] varB4EAC82CA7396A68D541C85D26508E83_2061088831 = null; // Variable
-																			// for
-																			// return
-																			// #2
+		IBinder[] varB4EAC82CA7396A68D541C85D26508E83_1880544796 = null; 
+																			
+																			
+																			
+		IBinder[] varB4EAC82CA7396A68D541C85D26508E83_2061088831 = null; 
+																			
+																			
+																			
 		int N = readInt();
 		{
 			IBinder[] val = new IBinder[N];
@@ -1108,40 +1109,40 @@ public final class Parcel {
 				int i = 0;
 				{
 					val[i] = readStrongBinder();
-				} // End block
-			} // End collapsed parenthetic
+				} 
+			} 
 			varB4EAC82CA7396A68D541C85D26508E83_1880544796 = val;
-		} // End block
+		} 
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_2061088831 = null;
-		} // End block
-		IBinder[] varA7E53CE21691AB073D9660D615818899_1147832672; // Final
-																	// return
-																	// value
+		} 
+		IBinder[] varA7E53CE21691AB073D9660D615818899_1147832672; 
+																	
+																	
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_1147832672 = varB4EAC82CA7396A68D541C85D26508E83_1880544796;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_1147832672 = varB4EAC82CA7396A68D541C85D26508E83_2061088831;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_1147832672.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varA7E53CE21691AB073D9660D615818899_1147832672.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varA7E53CE21691AB073D9660D615818899_1147832672;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N >= 0) {
-		// IBinder[] val = new IBinder[N];
-		// for (int i=0; i<N; i++) {
-		// val[i] = readStrongBinder();
-		// }
-		// return val;
-		// } else {
-		// return null;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.804 -0400", hash_original_method = "3E3D11ECAF89B0D6B7212074DA0FB112", hash_generated_method = "CDF75625FA6605B8478A5C034D404B4D")
@@ -1152,30 +1153,30 @@ public final class Parcel {
 				int i = 0;
 				{
 					val[i] = readStrongBinder();
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException("bad array lengths");
-		} // End block
+		} 
 		addTaint(val[0].getTaint());
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N == val.length) {
-		// for (int i=0; i<N; i++) {
-		// val[i] = readStrongBinder();
-		// }
-		// } else {
-		// throw new RuntimeException("bad array lengths");
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.805 -0400", hash_original_method = "5826C07CBD3614FC61FFE172F3E36C59", hash_generated_method = "5B7E13C104D8AA9BCF0E1B40898B0CAA")
 	public final <T extends Parcelable> void writeTypedList(List<T> val) {
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		int N = val.size();
 		int i = 0;
 		writeInt(N);
@@ -1184,82 +1185,82 @@ public final class Parcel {
 			{
 				writeInt(1);
 				item.writeToParcel(this, 0);
-			} // End block
+			} 
 			{
 				writeInt(0);
-			} // End block
-		} // End block
+			} 
+		} 
 		addTaint(val.getTaint());
-		// ---------- Original Method ----------
-		// if (val == null) {
-		// writeInt(-1);
-		// return;
-		// }
-		// int N = val.size();
-		// int i=0;
-		// writeInt(N);
-		// while (i < N) {
-		// T item = val.get(i);
-		// if (item != null) {
-		// writeInt(1);
-		// item.writeToParcel(this, 0);
-		// } else {
-		// writeInt(0);
-		// }
-		// i++;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.805 -0400", hash_original_method = "D0AECB36946CE861852315E400637CFF", hash_generated_method = "4A3E1D0692F22D30B3CC1F79B6075600")
 	public final void writeStringList(List<String> val) {
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		int N = val.size();
 		int i = 0;
 		writeInt(N);
 		{
 			writeString(val.get(i));
-		} // End block
+		} 
 		addTaint(val.getTaint());
-		// ---------- Original Method ----------
-		// if (val == null) {
-		// writeInt(-1);
-		// return;
-		// }
-		// int N = val.size();
-		// int i=0;
-		// writeInt(N);
-		// while (i < N) {
-		// writeString(val.get(i));
-		// i++;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.807 -0400", hash_original_method = "7137D7435CDB5CC040EE6A964998B66D", hash_generated_method = "EF498ACD099A2BEB06418D24116CFDB6")
 	public final void writeBinderList(List<IBinder> val) {
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		int N = val.size();
 		int i = 0;
 		writeInt(N);
 		{
 			writeStrongBinder(val.get(i));
-		} // End block
+		} 
 		addTaint(val.getTaint());
-		// ---------- Original Method ----------
-		// if (val == null) {
-		// writeInt(-1);
-		// return;
-		// }
-		// int N = val.size();
-		// int i=0;
-		// writeInt(N);
-		// while (i < N) {
-		// writeStrongBinder(val.get(i));
-		// i++;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.808 -0400", hash_original_method = "029988DBA55E380B93A4CDBDA2CB7F3E", hash_generated_method = "71188B12456C3D515D1930D3FBC9A231")
@@ -1274,171 +1275,171 @@ public final class Parcel {
 					{
 						writeInt(1);
 						item.writeToParcel(this, parcelableFlags);
-					} // End block
+					} 
 					{
 						writeInt(0);
-					} // End block
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+					} 
+				} 
+			} 
+		} 
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		addTaint(val[0].getTaint());
 		addTaint(parcelableFlags);
-		// ---------- Original Method ----------
-		// if (val != null) {
-		// int N = val.length;
-		// writeInt(N);
-		// for (int i=0; i<N; i++) {
-		// T item = val[i];
-		// if (item != null) {
-		// writeInt(1);
-		// item.writeToParcel(this, parcelableFlags);
-		// } else {
-		// writeInt(0);
-		// }
-		// }
-		// } else {
-		// writeInt(-1);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.809 -0400", hash_original_method = "D9566C4BE63552F29703FA1385C84129", hash_generated_method = "013DA4F999026AAE579652781535EF9B")
 	public final void writeValue(Object v) {
 		{
 			writeInt(VAL_NULL);
-		} // End block
+		} 
 		{
 			writeInt(VAL_STRING);
 			writeString((String) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_INTEGER);
 			writeInt((Integer) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_MAP);
 			writeMap((Map) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_BUNDLE);
 			writeBundle((Bundle) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_PARCELABLE);
 			writeParcelable((Parcelable) v, 0);
-		} // End block
+		} 
 		{
 			writeInt(VAL_SHORT);
 			writeInt(((Short) v).intValue());
-		} // End block
+		} 
 		{
 			writeInt(VAL_LONG);
 			writeLong((Long) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_FLOAT);
 			writeFloat((Float) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_DOUBLE);
 			writeDouble((Double) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_BOOLEAN);
 			writeInt((Boolean) v ? 1 : 0);
-		} // End block
+		} 
 		{
 			writeInt(VAL_CHARSEQUENCE);
 			writeCharSequence((CharSequence) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_LIST);
 			writeList((List) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_SPARSEARRAY);
 			writeSparseArray((SparseArray) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_BOOLEANARRAY);
 			writeBooleanArray((boolean[]) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_BYTEARRAY);
 			writeByteArray((byte[]) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_STRINGARRAY);
 			writeStringArray((String[]) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_CHARSEQUENCEARRAY);
 			writeCharSequenceArray((CharSequence[]) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_IBINDER);
 			writeStrongBinder((IBinder) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_PARCELABLEARRAY);
 			writeParcelableArray((Parcelable[]) v, 0);
-		} // End block
+		} 
 		{
 			writeInt(VAL_OBJECTARRAY);
 			writeArray((Object[]) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_INTARRAY);
 			writeIntArray((int[]) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_LONGARRAY);
 			writeLongArray((long[]) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_BYTE);
 			writeInt((Byte) v);
-		} // End block
+		} 
 		{
 			writeInt(VAL_SERIALIZABLE);
 			writeSerializable((Serializable) v);
-		} // End block
+		} 
 		{
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException("Parcel: unable to marshal value " + v);
-		} // End block
+		} 
 		addTaint(v.getTaint());
-		// ---------- Original Method ----------
-		// Original Method Too Long, Refer to Original Implementation
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.809 -0400", hash_original_method = "A58184BC725C2FE85E17C583E1DA6016", hash_generated_method = "25BAD11D779A82C20E13B7A0DC184E29")
 	public final void writeParcelable(Parcelable p, int parcelableFlags) {
 		{
 			writeString(null);
-		} // End block
+		} 
 		String name = p.getClass().getName();
 		writeString(name);
 		p.writeToParcel(this, parcelableFlags);
 		addTaint(p.getTaint());
 		addTaint(parcelableFlags);
-		// ---------- Original Method ----------
-		// if (p == null) {
-		// writeString(null);
-		// return;
-		// }
-		// String name = p.getClass().getName();
-		// writeString(name);
-		// p.writeToParcel(this, parcelableFlags);
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.810 -0400", hash_original_method = "BCB9F78F7EC1F484C61BF7865779B2F9", hash_generated_method = "04B67A41CD196848485DCC8D7CD78180")
 	public final void writeSerializable(Serializable s) {
 		{
 			writeString(null);
-		} // End block
+		} 
 		String name = s.getClass().getName();
 		writeString(name);
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -1447,30 +1448,30 @@ public final class Parcel {
 			oos.writeObject(s);
 			oos.close();
 			writeByteArray(baos.toByteArray());
-		} // End block
+		} 
 		catch (IOException ioe) {
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException("Parcelable encountered " + "IOException writing serializable object (name = " + name + ")", ioe);
-		} // End block
+		} 
 		addTaint(s.getTaint());
-		// ---------- Original Method ----------
-		// if (s == null) {
-		// writeString(null);
-		// return;
-		// }
-		// String name = s.getClass().getName();
-		// writeString(name);
-		// ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		// try {
-		// ObjectOutputStream oos = new ObjectOutputStream(baos);
-		// oos.writeObject(s);
-		// oos.close();
-		// writeByteArray(baos.toByteArray());
-		// } catch (IOException ioe) {
-		// throw new RuntimeException("Parcelable encountered " +
-		// "IOException writing serializable object (name = " + name +
-		// ")", ioe);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.810 -0400", hash_original_method = "7DD11AC8769A37C0F9583E9AAFAA7192", hash_generated_method = "9BE712E3A4DD3BF1A61E70590E0E931F")
@@ -1478,53 +1479,53 @@ public final class Parcel {
 		int code = 0;
 		{
 			code = EX_SECURITY;
-		} // End block
+		} 
 		{
 			code = EX_BAD_PARCELABLE;
-		} // End block
+		} 
 		{
 			code = EX_ILLEGAL_ARGUMENT;
-		} // End block
+		} 
 		{
 			code = EX_NULL_POINTER;
-		} // End block
+		} 
 		{
 			code = EX_ILLEGAL_STATE;
-		} // End block
+		} 
 		writeInt(code);
 		StrictMode.clearGatheredViolations();
 		{
 			{
 				if (DroidSafeAndroidRuntime.control)
 					throw (RuntimeException) e;
-			} // End block
+			} 
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException(e);
-		} // End block
+		} 
 		writeString(e.getMessage());
 		addTaint(e.getTaint());
-		// ---------- Original Method ----------
-		// int code = 0;
-		// if (e instanceof SecurityException) {
-		// code = EX_SECURITY;
-		// } else if (e instanceof BadParcelableException) {
-		// code = EX_BAD_PARCELABLE;
-		// } else if (e instanceof IllegalArgumentException) {
-		// code = EX_ILLEGAL_ARGUMENT;
-		// } else if (e instanceof NullPointerException) {
-		// code = EX_NULL_POINTER;
-		// } else if (e instanceof IllegalStateException) {
-		// code = EX_ILLEGAL_STATE;
-		// }
-		// writeInt(code);
-		// StrictMode.clearGatheredViolations();
-		// if (code == 0) {
-		// if (e instanceof RuntimeException) {
-		// throw (RuntimeException) e;
-		// }
-		// throw new RuntimeException(e);
-		// }
-		// writeString(e.getMessage());
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.811 -0400", hash_original_method = "123C62676F5EFD49547DAF82EF108740", hash_generated_method = "66C7B5EA3F6FD85544EA30F9AF0730EA")
@@ -1540,24 +1541,24 @@ public final class Parcel {
 				setDataPosition(sizePosition);
 				writeInt(payloadPosition - sizePosition);
 				setDataPosition(payloadPosition);
-			} // End block
+			} 
 			{
 				writeInt(0);
-			} // End block
-		} // End collapsed parenthetic
-			// ---------- Original Method ----------
-			// if (StrictMode.hasGatheredViolations()) {
-			// writeInt(EX_HAS_REPLY_HEADER);
-			// final int sizePosition = dataPosition();
-			// writeInt(0);
-			// StrictMode.writeGatheredViolationsToParcel(this);
-			// final int payloadPosition = dataPosition();
-			// setDataPosition(sizePosition);
-			// writeInt(payloadPosition - sizePosition);
-			// setDataPosition(payloadPosition);
-		// } else {
-		// writeInt(0);
-		// }
+			} 
+		} 
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.811 -0400", hash_original_method = "82EBD768B4FCE70E559935E5298055BB", hash_generated_method = "1CD8C245A8813DF6CD811477877B0667")
@@ -1566,13 +1567,13 @@ public final class Parcel {
 		{
 			String msg = readString();
 			readException(code, msg);
-		} // End block
-			// ---------- Original Method ----------
-			// int code = readExceptionCode();
-			// if (code != 0) {
-			// String msg = readString();
-			// readException(code, msg);
-		// }
+		} 
+			
+			
+			
+			
+			
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.811 -0400", hash_original_method = "38AAEB1276A409D21345CE71D5A4968D", hash_generated_method = "5953F2EB0A87D5D7EDEAC4BA16398DAF")
@@ -1582,65 +1583,65 @@ public final class Parcel {
 			int headerSize = readInt();
 			{
 				StrictMode.readAndHandleBinderCallViolations(this);
-			} // End block
-		} // End block
+			} 
+		} 
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1547636276 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1547636276;
-		// ---------- Original Method ----------
-		// int code = readInt();
-		// if (code == EX_HAS_REPLY_HEADER) {
-		// int headerSize = readInt();
-		// if (headerSize == 0) {
-		// Log.e(TAG, "Unexpected zero-sized Parcel reply header.");
-		// } else {
-		// StrictMode.readAndHandleBinderCallViolations(this);
-		// }
-		// return 0;
-		// }
-		// return code;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.812 -0400", hash_original_method = "16B6C7096EAAE541E38738222303A695", hash_generated_method = "E1A6625007DA31B04BDAEDD7DCD27DD3")
 	public final void readException(int code, String msg) {
-		// Begin case EX_SECURITY
+		
 		if (DroidSafeAndroidRuntime.control)
 			throw new SecurityException(msg);
-		// End case EX_SECURITY
-		// Begin case EX_BAD_PARCELABLE
+		
+		
 		if (DroidSafeAndroidRuntime.control)
 			throw new BadParcelableException(msg);
-		// End case EX_BAD_PARCELABLE
-		// Begin case EX_ILLEGAL_ARGUMENT
+		
+		
 		if (DroidSafeAndroidRuntime.control)
 			throw new IllegalArgumentException(msg);
-		// End case EX_ILLEGAL_ARGUMENT
-		// Begin case EX_NULL_POINTER
+		
+		
 		if (DroidSafeAndroidRuntime.control)
 			throw new NullPointerException(msg);
-		// End case EX_NULL_POINTER
-		// Begin case EX_ILLEGAL_STATE
+		
+		
 		if (DroidSafeAndroidRuntime.control)
 			throw new IllegalStateException(msg);
-		// End case EX_ILLEGAL_STATE
+		
 		if (DroidSafeAndroidRuntime.control)
 			throw new RuntimeException("Unknown exception code: " + code + " msg " + msg);
 		addTaint(code);
 		addTaint(msg.getTaint());
-		// ---------- Original Method ----------
-		// switch (code) {
-		// case EX_SECURITY:
-		// throw new SecurityException(msg);
-		// case EX_BAD_PARCELABLE:
-		// throw new BadParcelableException(msg);
-		// case EX_ILLEGAL_ARGUMENT:
-		// throw new IllegalArgumentException(msg);
-		// case EX_NULL_POINTER:
-		// throw new NullPointerException(msg);
-		// case EX_ILLEGAL_STATE:
-		// throw new IllegalStateException(msg);
-		// }
-		// throw new RuntimeException("Unknown exception code: " + code
-		// + " msg " + msg);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.812 -0400", hash_original_method = "97FB920EA9544B24495059FF8518145E", hash_generated_method = "B932D00AFBFBA6CE14C7ACF1C7AFC448")
@@ -1674,18 +1675,18 @@ public final class Parcel {
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.814 -0400", hash_original_method = "1E262BAA6376F101519B67935298363E", hash_generated_method = "73D30E3418F0DF45E343539664DB5E45")
 	public final CharSequence readCharSequence() {
-		CharSequence varB4EAC82CA7396A68D541C85D26508E83_1737118328 = null; // Variable
-																			// for
-																			// return
-																			// #1
+		CharSequence varB4EAC82CA7396A68D541C85D26508E83_1737118328 = null; 
+																			
+																			
+																			
 		varB4EAC82CA7396A68D541C85D26508E83_1737118328 = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(this);
-		varB4EAC82CA7396A68D541C85D26508E83_1737118328.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1737118328.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1737118328;
-		// ---------- Original Method ----------
-		// return TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(this);
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.814 -0400", hash_original_method = "5B57CBCFFAE68CC288C10DD7232B6ED1", hash_generated_method = "44CAE844D4E5A4CBF2E99C7605E5B931")
@@ -1697,20 +1698,20 @@ public final class Parcel {
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.815 -0400", hash_original_method = "624419D3E87C84C27536CFAE1C7248DF", hash_generated_method = "9584F170256FC97C276440AE5E1C9420")
 	public final ParcelFileDescriptor readFileDescriptor() {
-		ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_804521395 = null; // Variable
-																					// for
-																					// return
-																					// #1
+		ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_804521395 = null; 
+																					
+																					
+																					
 		FileDescriptor fd = internalReadFileDescriptor();
 		varB4EAC82CA7396A68D541C85D26508E83_804521395 = fd != null ? new ParcelFileDescriptor(fd) : null;
-		varB4EAC82CA7396A68D541C85D26508E83_804521395.addTaint(getTaint()); // Add
-																			// taint
-																			// from
-																			// parent
+		varB4EAC82CA7396A68D541C85D26508E83_804521395.addTaint(getTaint()); 
+																			
+																			
+																			
 		return varB4EAC82CA7396A68D541C85D26508E83_804521395;
-		// ---------- Original Method ----------
-		// FileDescriptor fd = internalReadFileDescriptor();
-		// return fd != null ? new ParcelFileDescriptor(fd) : null;
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.816 -0400", hash_original_method = "33B415422717616FBFFA4D8F233FE3A4", hash_generated_method = "0FD8D4B30F488C8E04BA04A3C811CF90")
@@ -1739,8 +1740,8 @@ public final class Parcel {
 		byte varA3491D8E17C6029A18B5C5A7657736E0_1603428365 = ((byte) (readInt() & 0xff));
 		byte var40EA57D3EE3C07BF1C102B466E1C3091_414929780 = getTaintByte();
 		return var40EA57D3EE3C07BF1C102B466E1C3091_414929780;
-		// ---------- Original Method ----------
-		// return (byte)(readInt() & 0xff);
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.819 -0400", hash_original_method = "82825CDD252FB884333A0468F1B46F6F", hash_generated_method = "FFB96033B2A4BC37872D54359F1A77B7")
@@ -1749,9 +1750,9 @@ public final class Parcel {
 		readMapInternal(outVal, N, loader);
 		addTaint(outVal.getTaint());
 		addTaint(loader.getTaint());
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// readMapInternal(outVal, N, loader);
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.819 -0400", hash_original_method = "C60DBA65518C72AFC52918F8818E7A4A", hash_generated_method = "01C8FB37955CA6F70FAC5667AAD90338")
@@ -1760,115 +1761,115 @@ public final class Parcel {
 		readListInternal(outVal, N, loader);
 		addTaint(outVal.getTaint());
 		addTaint(loader.getTaint());
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// readListInternal(outVal, N, loader);
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.820 -0400", hash_original_method = "0DC8809E3B9E75AF0CC28567E6782BE5", hash_generated_method = "A65872F79D7C301520F949B65B1629B2")
 	public final HashMap readHashMap(ClassLoader loader) {
-		HashMap varB4EAC82CA7396A68D541C85D26508E83_166096724 = null; // Variable
-																		// for
-																		// return
-																		// #1
-		HashMap varB4EAC82CA7396A68D541C85D26508E83_1616919407 = null; // Variable
-																		// for
-																		// return
-																		// #2
+		HashMap varB4EAC82CA7396A68D541C85D26508E83_166096724 = null; 
+																		
+																		
+																		
+		HashMap varB4EAC82CA7396A68D541C85D26508E83_1616919407 = null; 
+																		
+																		
+																		
 		int N = readInt();
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_166096724 = null;
-		} // End block
+		} 
 		HashMap m = new HashMap(N);
 		readMapInternal(m, N, loader);
 		varB4EAC82CA7396A68D541C85D26508E83_1616919407 = m;
 		addTaint(loader.getTaint());
-		HashMap varA7E53CE21691AB073D9660D615818899_74198370; // Final return
-																// value
+		HashMap varA7E53CE21691AB073D9660D615818899_74198370; 
+																
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_74198370 = varB4EAC82CA7396A68D541C85D26508E83_166096724;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_74198370 = varB4EAC82CA7396A68D541C85D26508E83_1616919407;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_74198370.addTaint(getTaint()); // Add
-																			// taint
-																			// from
-																			// parent
+		varA7E53CE21691AB073D9660D615818899_74198370.addTaint(getTaint()); 
+																			
+																			
+																			
 		return varA7E53CE21691AB073D9660D615818899_74198370;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N < 0) {
-		// return null;
-		// }
-		// HashMap m = new HashMap(N);
-		// readMapInternal(m, N, loader);
-		// return m;
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.821 -0400", hash_original_method = "30B879800FFE3D55BB9B30F39E994273", hash_generated_method = "CCFBE894BA4AC9C30A41D60558D32244")
 	public final Bundle readBundle() {
-		Bundle varB4EAC82CA7396A68D541C85D26508E83_279583024 = null; // Variable
-																		// for
-																		// return
-																		// #1
+		Bundle varB4EAC82CA7396A68D541C85D26508E83_279583024 = null; 
+																		
+																		
+																		
 		varB4EAC82CA7396A68D541C85D26508E83_279583024 = readBundle(null);
-		varB4EAC82CA7396A68D541C85D26508E83_279583024.addTaint(getTaint()); // Add
-																			// taint
-																			// from
-																			// parent
+		varB4EAC82CA7396A68D541C85D26508E83_279583024.addTaint(getTaint()); 
+																			
+																			
+																			
 		return varB4EAC82CA7396A68D541C85D26508E83_279583024;
-		// ---------- Original Method ----------
-		// return readBundle(null);
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.822 -0400", hash_original_method = "7DBD463E649AEA6A8616F4943C405C7A", hash_generated_method = "91E79C4FF7E28AA21C24373C8C84A423")
 	public final Bundle readBundle(ClassLoader loader) {
-		Bundle varB4EAC82CA7396A68D541C85D26508E83_1814659209 = null; // Variable
-																		// for
-																		// return
-																		// #1
-		Bundle varB4EAC82CA7396A68D541C85D26508E83_1648482506 = null; // Variable
-																		// for
-																		// return
-																		// #2
+		Bundle varB4EAC82CA7396A68D541C85D26508E83_1814659209 = null; 
+																		
+																		
+																		
+		Bundle varB4EAC82CA7396A68D541C85D26508E83_1648482506 = null; 
+																		
+																		
+																		
 		int length = readInt();
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_1814659209 = null;
-		} // End block
+		} 
 		final Bundle bundle = new Bundle(this, length);
 		{
 			bundle.setClassLoader(loader);
-		} // End block
+		} 
 		varB4EAC82CA7396A68D541C85D26508E83_1648482506 = bundle;
 		addTaint(loader.getTaint());
-		Bundle varA7E53CE21691AB073D9660D615818899_1998826212; // Final return
-																// value
+		Bundle varA7E53CE21691AB073D9660D615818899_1998826212; 
+																
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_1998826212 = varB4EAC82CA7396A68D541C85D26508E83_1814659209;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_1998826212 = varB4EAC82CA7396A68D541C85D26508E83_1648482506;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_1998826212.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varA7E53CE21691AB073D9660D615818899_1998826212.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varA7E53CE21691AB073D9660D615818899_1998826212;
-		// ---------- Original Method ----------
-		// int length = readInt();
-		// if (length < 0) {
-		// return null;
-		// }
-		// final Bundle bundle = new Bundle(this, length);
-		// if (loader != null) {
-		// bundle.setClassLoader(loader);
-		// }
-		// return bundle;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.823 -0400", hash_original_method = "DCFF48487CDF8628FF2244CC4810775C", hash_generated_method = "F2F00236DA8CE3D646D1E7E9C7D8D6B6")
@@ -1882,27 +1883,27 @@ public final class Parcel {
 		byte[] ba = createByteArray();
 		{
 			System.arraycopy(ba, 0, val, 0, ba.length);
-		} // End block
+		} 
 		{
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException("bad array lengths");
-		} // End block
+		} 
 		addTaint(val[0]);
-		// ---------- Original Method ----------
-		// byte[] ba = createByteArray();
-		// if (ba.length == val.length) {
-		// System.arraycopy(ba, 0, val, 0, ba.length);
-		// } else {
-		// throw new RuntimeException("bad array lengths");
-		// }
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.824 -0400", hash_original_method = "3F4E1D573E001DD6503628882E161682", hash_generated_method = "2B6C13C020AAFE05B6863897C357F49B")
 	public final String[] readStringArray() {
-		String[] varB4EAC82CA7396A68D541C85D26508E83_1076562175 = null; // Variable
-																		// for
-																		// return
-																		// #1
+		String[] varB4EAC82CA7396A68D541C85D26508E83_1076562175 = null; 
+																		
+																		
+																		
 		String[] array = null;
 		int length = readInt();
 		{
@@ -1911,35 +1912,35 @@ public final class Parcel {
 				int i = 0;
 				{
 					array[i] = readString();
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		varB4EAC82CA7396A68D541C85D26508E83_1076562175 = array;
-		varB4EAC82CA7396A68D541C85D26508E83_1076562175.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1076562175.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1076562175;
-		// ---------- Original Method ----------
-		// String[] array = null;
-		// int length = readInt();
-		// if (length >= 0)
-		// {
-		// array = new String[length];
-		// for (int i = 0 ; i < length ; i++)
-		// {
-		// array[i] = readString();
-		// }
-		// }
-		// return array;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.826 -0400", hash_original_method = "0A6BC69D8060353BD0BABF3E9B4D1085", hash_generated_method = "0E8C03E891BD626DF770A4C073B6D69E")
 	public final CharSequence[] readCharSequenceArray() {
-		CharSequence[] varB4EAC82CA7396A68D541C85D26508E83_1848957308 = null; // Variable
-																				// for
-																				// return
-																				// #1
+		CharSequence[] varB4EAC82CA7396A68D541C85D26508E83_1848957308 = null; 
+																				
+																				
+																				
 		CharSequence[] array = null;
 		int length = readInt();
 		{
@@ -1948,261 +1949,261 @@ public final class Parcel {
 				int i = 0;
 				{
 					array[i] = readCharSequence();
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		varB4EAC82CA7396A68D541C85D26508E83_1848957308 = array;
-		varB4EAC82CA7396A68D541C85D26508E83_1848957308.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1848957308.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1848957308;
-		// ---------- Original Method ----------
-		// CharSequence[] array = null;
-		// int length = readInt();
-		// if (length >= 0)
-		// {
-		// array = new CharSequence[length];
-		// for (int i = 0 ; i < length ; i++)
-		// {
-		// array[i] = readCharSequence();
-		// }
-		// }
-		// return array;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.827 -0400", hash_original_method = "0CB879EE6020D3E02716A43BE19D4D51", hash_generated_method = "D0B2F4435FC4B838580BBC946DC0D822")
 	public final ArrayList readArrayList(ClassLoader loader) {
-		ArrayList varB4EAC82CA7396A68D541C85D26508E83_698019879 = null; // Variable
-																		// for
-																		// return
-																		// #1
-		ArrayList varB4EAC82CA7396A68D541C85D26508E83_867330974 = null; // Variable
-																		// for
-																		// return
-																		// #2
+		ArrayList varB4EAC82CA7396A68D541C85D26508E83_698019879 = null; 
+																		
+																		
+																		
+		ArrayList varB4EAC82CA7396A68D541C85D26508E83_867330974 = null; 
+																		
+																		
+																		
 		int N = readInt();
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_698019879 = null;
-		} // End block
+		} 
 		ArrayList l = new ArrayList(N);
 		readListInternal(l, N, loader);
 		varB4EAC82CA7396A68D541C85D26508E83_867330974 = l;
 		addTaint(loader.getTaint());
-		ArrayList varA7E53CE21691AB073D9660D615818899_971229971; // Final return
-																	// value
+		ArrayList varA7E53CE21691AB073D9660D615818899_971229971; 
+																	
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_971229971 = varB4EAC82CA7396A68D541C85D26508E83_698019879;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_971229971 = varB4EAC82CA7396A68D541C85D26508E83_867330974;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_971229971.addTaint(getTaint()); // Add
-																			// taint
-																			// from
-																			// parent
+		varA7E53CE21691AB073D9660D615818899_971229971.addTaint(getTaint()); 
+																			
+																			
+																			
 		return varA7E53CE21691AB073D9660D615818899_971229971;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N < 0) {
-		// return null;
-		// }
-		// ArrayList l = new ArrayList(N);
-		// readListInternal(l, N, loader);
-		// return l;
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.828 -0400", hash_original_method = "BFE5C5C5F5678C281D93BB53C31E26A0", hash_generated_method = "D8D2A31BA4FFA157EA6F4352A5631056")
 	public final Object[] readArray(ClassLoader loader) {
-		Object[] varB4EAC82CA7396A68D541C85D26508E83_1051212437 = null; // Variable
-																		// for
-																		// return
-																		// #1
-		Object[] varB4EAC82CA7396A68D541C85D26508E83_3193171 = null; // Variable
-																		// for
-																		// return
-																		// #2
+		Object[] varB4EAC82CA7396A68D541C85D26508E83_1051212437 = null; 
+																		
+																		
+																		
+		Object[] varB4EAC82CA7396A68D541C85D26508E83_3193171 = null; 
+																		
+																		
+																		
 		int N = readInt();
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_1051212437 = null;
-		} // End block
+		} 
 		Object[] l = new Object[N];
 		readArrayInternal(l, N, loader);
 		varB4EAC82CA7396A68D541C85D26508E83_3193171 = l;
 		addTaint(loader.getTaint());
-		Object[] varA7E53CE21691AB073D9660D615818899_784137440; // Final return
-																// value
+		Object[] varA7E53CE21691AB073D9660D615818899_784137440; 
+																
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_784137440 = varB4EAC82CA7396A68D541C85D26508E83_1051212437;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_784137440 = varB4EAC82CA7396A68D541C85D26508E83_3193171;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_784137440.addTaint(getTaint()); // Add
-																			// taint
-																			// from
-																			// parent
+		varA7E53CE21691AB073D9660D615818899_784137440.addTaint(getTaint()); 
+																			
+																			
+																			
 		return varA7E53CE21691AB073D9660D615818899_784137440;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N < 0) {
-		// return null;
-		// }
-		// Object[] l = new Object[N];
-		// readArrayInternal(l, N, loader);
-		// return l;
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.829 -0400", hash_original_method = "53952EC2EA973438719A76F49C86D9F1", hash_generated_method = "3996729CBEB1A47A9FCC3CAC3389AC81")
 	public final SparseArray readSparseArray(ClassLoader loader) {
-		SparseArray varB4EAC82CA7396A68D541C85D26508E83_158385725 = null; // Variable
-																			// for
-																			// return
-																			// #1
-		SparseArray varB4EAC82CA7396A68D541C85D26508E83_1263177273 = null; // Variable
-																			// for
-																			// return
-																			// #2
+		SparseArray varB4EAC82CA7396A68D541C85D26508E83_158385725 = null; 
+																			
+																			
+																			
+		SparseArray varB4EAC82CA7396A68D541C85D26508E83_1263177273 = null; 
+																			
+																			
+																			
 		int N = readInt();
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_158385725 = null;
-		} // End block
+		} 
 		SparseArray sa = new SparseArray(N);
 		readSparseArrayInternal(sa, N, loader);
 		varB4EAC82CA7396A68D541C85D26508E83_1263177273 = sa;
 		addTaint(loader.getTaint());
-		SparseArray varA7E53CE21691AB073D9660D615818899_1602119489; // Final
-																	// return
-																	// value
+		SparseArray varA7E53CE21691AB073D9660D615818899_1602119489; 
+																	
+																	
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_1602119489 = varB4EAC82CA7396A68D541C85D26508E83_158385725;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_1602119489 = varB4EAC82CA7396A68D541C85D26508E83_1263177273;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_1602119489.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varA7E53CE21691AB073D9660D615818899_1602119489.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varA7E53CE21691AB073D9660D615818899_1602119489;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N < 0) {
-		// return null;
-		// }
-		// SparseArray sa = new SparseArray(N);
-		// readSparseArrayInternal(sa, N, loader);
-		// return sa;
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.830 -0400", hash_original_method = "04DCF387CF40E8397784231DC7CB64F8", hash_generated_method = "48C8552EDEDEA5F27B13B8F3476DD7E8")
 	public final SparseBooleanArray readSparseBooleanArray() {
-		SparseBooleanArray varB4EAC82CA7396A68D541C85D26508E83_1579946323 = null; // Variable
-																					// for
-																					// return
-																					// #1
-		SparseBooleanArray varB4EAC82CA7396A68D541C85D26508E83_303572187 = null; // Variable
-																					// for
-																					// return
-																					// #2
+		SparseBooleanArray varB4EAC82CA7396A68D541C85D26508E83_1579946323 = null; 
+																					
+																					
+																					
+		SparseBooleanArray varB4EAC82CA7396A68D541C85D26508E83_303572187 = null; 
+																					
+																					
+																					
 		int N = readInt();
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_1579946323 = null;
-		} // End block
+		} 
 		SparseBooleanArray sa = new SparseBooleanArray(N);
 		readSparseBooleanArrayInternal(sa, N);
 		varB4EAC82CA7396A68D541C85D26508E83_303572187 = sa;
-		SparseBooleanArray varA7E53CE21691AB073D9660D615818899_202089173; // Final
-																			// return
-																			// value
+		SparseBooleanArray varA7E53CE21691AB073D9660D615818899_202089173; 
+																			
+																			
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_202089173 = varB4EAC82CA7396A68D541C85D26508E83_1579946323;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_202089173 = varB4EAC82CA7396A68D541C85D26508E83_303572187;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_202089173.addTaint(getTaint()); // Add
-																			// taint
-																			// from
-																			// parent
+		varA7E53CE21691AB073D9660D615818899_202089173.addTaint(getTaint()); 
+																			
+																			
+																			
 		return varA7E53CE21691AB073D9660D615818899_202089173;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N < 0) {
-		// return null;
-		// }
-		// SparseBooleanArray sa = new SparseBooleanArray(N);
-		// readSparseBooleanArrayInternal(sa, N);
-		// return sa;
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.831 -0400", hash_original_method = "456F7B8C59883BEB9D747B5AF3A070B1", hash_generated_method = "83AB2C754E671E1B2EB58A5D4866DC7F")
 	public final <T> ArrayList<T> createTypedArrayList(Parcelable.Creator<T> c) {
-		ArrayList<T> varB4EAC82CA7396A68D541C85D26508E83_1163565105 = null; // Variable
-																			// for
-																			// return
-																			// #1
-		ArrayList<T> varB4EAC82CA7396A68D541C85D26508E83_1525894710 = null; // Variable
-																			// for
-																			// return
-																			// #2
+		ArrayList<T> varB4EAC82CA7396A68D541C85D26508E83_1163565105 = null; 
+																			
+																			
+																			
+		ArrayList<T> varB4EAC82CA7396A68D541C85D26508E83_1525894710 = null; 
+																			
+																			
+																			
 		int N = readInt();
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_1163565105 = null;
-		} // End block
+		} 
 		ArrayList<T> l = new ArrayList<T>(N);
 		{
 			{
 				boolean var3DB8322DDBEA41253B55CFA78FBE3A8A_373294250 = (readInt() != 0);
 				{
 					l.add(c.createFromParcel(this));
-				} // End block
+				} 
 				{
 					l.add(null);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		varB4EAC82CA7396A68D541C85D26508E83_1525894710 = l;
 		addTaint(c.getTaint());
-		ArrayList<T> varA7E53CE21691AB073D9660D615818899_1254042929; // Final
-																		// return
-																		// value
+		ArrayList<T> varA7E53CE21691AB073D9660D615818899_1254042929; 
+																		
+																		
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_1254042929 = varB4EAC82CA7396A68D541C85D26508E83_1163565105;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_1254042929 = varB4EAC82CA7396A68D541C85D26508E83_1525894710;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_1254042929.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varA7E53CE21691AB073D9660D615818899_1254042929.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varA7E53CE21691AB073D9660D615818899_1254042929;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N < 0) {
-		// return null;
-		// }
-		// ArrayList<T> l = new ArrayList<T>(N);
-		// while (N > 0) {
-		// if (readInt() != 0) {
-		// l.add(c.createFromParcel(this));
-		// } else {
-		// l.add(null);
-		// }
-		// N--;
-		// }
-		// return l;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.831 -0400", hash_original_method = "B9FCE8B620ADC76BF3A577C32D057CDB", hash_generated_method = "CC41D5758DCB2424A14CC643983FB806")
@@ -2215,145 +2216,145 @@ public final class Parcel {
 				boolean var3DB8322DDBEA41253B55CFA78FBE3A8A_2121165555 = (readInt() != 0);
 				{
 					list.set(i, c.createFromParcel(this));
-				} // End block
+				} 
 				{
 					list.set(i, null);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			{
 				boolean var3DB8322DDBEA41253B55CFA78FBE3A8A_1408859145 = (readInt() != 0);
 				{
 					list.add(c.createFromParcel(this));
-				} // End block
+				} 
 				{
 					list.add(null);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			list.remove(N);
-		} // End block
+		} 
 		addTaint(list.getTaint());
 		addTaint(c.getTaint());
-		// ---------- Original Method ----------
-		// int M = list.size();
-		// int N = readInt();
-		// int i = 0;
-		// for (; i < M && i < N; i++) {
-		// if (readInt() != 0) {
-		// list.set(i, c.createFromParcel(this));
-		// } else {
-		// list.set(i, null);
-		// }
-		// }
-		// for (; i<N; i++) {
-		// if (readInt() != 0) {
-		// list.add(c.createFromParcel(this));
-		// } else {
-		// list.add(null);
-		// }
-		// }
-		// for (; i<M; i++) {
-		// list.remove(N);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.832 -0400", hash_original_method = "6BB9790DD7CE6638433A98D5801460E1", hash_generated_method = "03DAD2903DBCA749E71FA6AF3B5475B6")
 	public final ArrayList<String> createStringArrayList() {
-		ArrayList<String> varB4EAC82CA7396A68D541C85D26508E83_1725555521 = null; // Variable
-																					// for
-																					// return
-																					// #1
-		ArrayList<String> varB4EAC82CA7396A68D541C85D26508E83_1874851639 = null; // Variable
-																					// for
-																					// return
-																					// #2
+		ArrayList<String> varB4EAC82CA7396A68D541C85D26508E83_1725555521 = null; 
+																					
+																					
+																					
+		ArrayList<String> varB4EAC82CA7396A68D541C85D26508E83_1874851639 = null; 
+																					
+																					
+																					
 		int N = readInt();
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_1725555521 = null;
-		} // End block
+		} 
 		ArrayList<String> l = new ArrayList<String>(N);
 		{
 			l.add(readString());
-		} // End block
+		} 
 		varB4EAC82CA7396A68D541C85D26508E83_1874851639 = l;
-		ArrayList<String> varA7E53CE21691AB073D9660D615818899_2107115726; // Final
-																			// return
-																			// value
+		ArrayList<String> varA7E53CE21691AB073D9660D615818899_2107115726; 
+																			
+																			
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_2107115726 = varB4EAC82CA7396A68D541C85D26508E83_1725555521;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_2107115726 = varB4EAC82CA7396A68D541C85D26508E83_1874851639;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_2107115726.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varA7E53CE21691AB073D9660D615818899_2107115726.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varA7E53CE21691AB073D9660D615818899_2107115726;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N < 0) {
-		// return null;
-		// }
-		// ArrayList<String> l = new ArrayList<String>(N);
-		// while (N > 0) {
-		// l.add(readString());
-		// N--;
-		// }
-		// return l;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.833 -0400", hash_original_method = "4AA47F929C1AD4C6AA4FF7E97EBA01C3", hash_generated_method = "868FB74DDD3AC410AA264FD4BB10CDA0")
 	public final ArrayList<IBinder> createBinderArrayList() {
-		ArrayList<IBinder> varB4EAC82CA7396A68D541C85D26508E83_1090141721 = null; // Variable
-																					// for
-																					// return
-																					// #1
-		ArrayList<IBinder> varB4EAC82CA7396A68D541C85D26508E83_1020680039 = null; // Variable
-																					// for
-																					// return
-																					// #2
+		ArrayList<IBinder> varB4EAC82CA7396A68D541C85D26508E83_1090141721 = null; 
+																					
+																					
+																					
+		ArrayList<IBinder> varB4EAC82CA7396A68D541C85D26508E83_1020680039 = null; 
+																					
+																					
+																					
 		int N = readInt();
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_1090141721 = null;
-		} // End block
+		} 
 		ArrayList<IBinder> l = new ArrayList<IBinder>(N);
 		{
 			l.add(readStrongBinder());
-		} // End block
+		} 
 		varB4EAC82CA7396A68D541C85D26508E83_1020680039 = l;
-		ArrayList<IBinder> varA7E53CE21691AB073D9660D615818899_1968887043; // Final
-																			// return
-																			// value
+		ArrayList<IBinder> varA7E53CE21691AB073D9660D615818899_1968887043; 
+																			
+																			
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_1968887043 = varB4EAC82CA7396A68D541C85D26508E83_1090141721;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_1968887043 = varB4EAC82CA7396A68D541C85D26508E83_1020680039;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_1968887043.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varA7E53CE21691AB073D9660D615818899_1968887043.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varA7E53CE21691AB073D9660D615818899_1968887043;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N < 0) {
-		// return null;
-		// }
-		// ArrayList<IBinder> l = new ArrayList<IBinder>(N);
-		// while (N > 0) {
-		// l.add(readStrongBinder());
-		// N--;
-		// }
-		// return l;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.834 -0400", hash_original_method = "9CB504FEFB4242E237E17E2EB9A48FBD", hash_generated_method = "D072453E6B98467F82B67B578A05EBEE")
@@ -2363,27 +2364,27 @@ public final class Parcel {
 		int i = 0;
 		{
 			list.set(i, readString());
-		} // End block
+		} 
 		{
 			list.add(readString());
-		} // End block
+		} 
 		{
 			list.remove(N);
-		} // End block
+		} 
 		addTaint(list.getTaint());
-		// ---------- Original Method ----------
-		// int M = list.size();
-		// int N = readInt();
-		// int i = 0;
-		// for (; i < M && i < N; i++) {
-		// list.set(i, readString());
-		// }
-		// for (; i<N; i++) {
-		// list.add(readString());
-		// }
-		// for (; i<M; i++) {
-		// list.remove(N);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.834 -0400", hash_original_method = "BD5E31C17A1894DBD3B1CCAA7C1D6816", hash_generated_method = "2ED43DB882EA9C45A559591DAD1EFCC8")
@@ -2393,41 +2394,41 @@ public final class Parcel {
 		int i = 0;
 		{
 			list.set(i, readStrongBinder());
-		} // End block
+		} 
 		{
 			list.add(readStrongBinder());
-		} // End block
+		} 
 		{
 			list.remove(N);
-		} // End block
+		} 
 		addTaint(list.getTaint());
-		// ---------- Original Method ----------
-		// int M = list.size();
-		// int N = readInt();
-		// int i = 0;
-		// for (; i < M && i < N; i++) {
-		// list.set(i, readStrongBinder());
-		// }
-		// for (; i<N; i++) {
-		// list.add(readStrongBinder());
-		// }
-		// for (; i<M; i++) {
-		// list.remove(N);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.836 -0400", hash_original_method = "3CEF6E6386B4F00BA8155F93C3068CB0", hash_generated_method = "79552BADDDC0C799E9E0E050D885460E")
 	public final <T> T[] createTypedArray(Parcelable.Creator<T> c) {
-		T[] varB4EAC82CA7396A68D541C85D26508E83_1418242770 = null; // Variable
-																	// for
-																	// return #1
-		T[] varB4EAC82CA7396A68D541C85D26508E83_1666849312 = null; // Variable
-																	// for
-																	// return #2
+		T[] varB4EAC82CA7396A68D541C85D26508E83_1418242770 = null; 
+																	
+																	
+		T[] varB4EAC82CA7396A68D541C85D26508E83_1666849312 = null; 
+																	
+																	
 		int N = readInt();
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_1418242770 = null;
-		} // End block
+		} 
 		T[] l = c.newArray(N);
 		{
 			int i = 0;
@@ -2436,39 +2437,39 @@ public final class Parcel {
 					boolean varF3F4117B020949AD5A99383C367C3DCB_1444651954 = (readInt() != 0);
 					{
 						l[i] = c.createFromParcel(this);
-					} // End block
-				} // End collapsed parenthetic
-			} // End block
-		} // End collapsed parenthetic
+					} 
+				} 
+			} 
+		} 
 		varB4EAC82CA7396A68D541C85D26508E83_1666849312 = l;
 		addTaint(c.getTaint());
-		T[] varA7E53CE21691AB073D9660D615818899_1880661450; // Final return
-															// value
+		T[] varA7E53CE21691AB073D9660D615818899_1880661450; 
+															
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_1880661450 = varB4EAC82CA7396A68D541C85D26508E83_1418242770;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_1880661450 = varB4EAC82CA7396A68D541C85D26508E83_1666849312;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_1880661450.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varA7E53CE21691AB073D9660D615818899_1880661450.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varA7E53CE21691AB073D9660D615818899_1880661450;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N < 0) {
-		// return null;
-		// }
-		// T[] l = c.newArray(N);
-		// for (int i=0; i<N; i++) {
-		// if (readInt() != 0) {
-		// l[i] = c.createFromParcel(this);
-		// }
-		// }
-		// return l;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.836 -0400", hash_original_method = "94DCFDEC159CF16A54AB9BC1543AACB0", hash_generated_method = "F70B7F71F2DA4F6C16CCC7C41FC02810")
@@ -2482,50 +2483,50 @@ public final class Parcel {
 						boolean varDA2468261896472593A672B57BF55D76_355992281 = (readInt() != 0);
 						{
 							val[i] = c.createFromParcel(this);
-						} // End block
+						} 
 						{
 							val[i] = null;
-						} // End block
-					} // End collapsed parenthetic
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+						} 
+					} 
+				} 
+			} 
+		} 
 		{
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException("bad array lengths");
-		} // End block
+		} 
 		addTaint(val[0].getTaint());
 		addTaint(c.getTaint());
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N == val.length) {
-		// for (int i=0; i<N; i++) {
-		// if (readInt() != 0) {
-		// val[i] = c.createFromParcel(this);
-		// } else {
-		// val[i] = null;
-		// }
-		// }
-		// } else {
-		// throw new RuntimeException("bad array lengths");
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.838 -0400", hash_original_method = "6C2CF48F71A46FC325FBB3DF7C6E0C74", hash_generated_method = "C318F8D5FDD3884811CDEC9D51E82AB3")
 	@Deprecated
 	public final <T> T[] readTypedArray(Parcelable.Creator<T> c) {
-		T[] varB4EAC82CA7396A68D541C85D26508E83_1101667391 = null; // Variable
-																	// for
-																	// return #1
+		T[] varB4EAC82CA7396A68D541C85D26508E83_1101667391 = null; 
+																	
+																	
 		varB4EAC82CA7396A68D541C85D26508E83_1101667391 = createTypedArray(c);
 		addTaint(c.getTaint());
-		varB4EAC82CA7396A68D541C85D26508E83_1101667391.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1101667391.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1101667391;
-		// ---------- Original Method ----------
-		// return createTypedArray(c);
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.839 -0400", hash_original_method = "B6CF25F021EC35EAE7839E69AD502686", hash_generated_method = "5D9AC2DE6B742A8033AA0DA0A55E7B4C")
@@ -2537,328 +2538,328 @@ public final class Parcel {
 				int i = 0;
 				{
 					writeParcelable(value[i], parcelableFlags);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		{
 			writeInt(-1);
-		} // End block
+		} 
 		addTaint(value[0].getTaint());
 		addTaint(parcelableFlags);
-		// ---------- Original Method ----------
-		// if (value != null) {
-		// int N = value.length;
-		// writeInt(N);
-		// for (int i=0; i<N; i++) {
-		// writeParcelable(value[i], parcelableFlags);
-		// }
-		// } else {
-		// writeInt(-1);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.841 -0400", hash_original_method = "BC2BD16709D000C887B8D48E60CFBD74", hash_generated_method = "EB947FFD2017D0059129C667CFB825AA")
 	public final Object readValue(ClassLoader loader) {
-		Object varB4EAC82CA7396A68D541C85D26508E83_1684051088 = null; // Variable
-																		// for
-																		// return
-																		// #1
-		Object varB4EAC82CA7396A68D541C85D26508E83_1166194923 = null; // Variable
-																		// for
-																		// return
-																		// #2
-		Object varB4EAC82CA7396A68D541C85D26508E83_386845387 = null; // Variable
-																		// for
-																		// return
-																		// #3
-		Object varB4EAC82CA7396A68D541C85D26508E83_722922380 = null; // Variable
-																		// for
-																		// return
-																		// #4
-		Object varB4EAC82CA7396A68D541C85D26508E83_1016839958 = null; // Variable
-																		// for
-																		// return
-																		// #5
-		Object varB4EAC82CA7396A68D541C85D26508E83_26924907 = null; // Variable
-																	// for
-																	// return #6
-		Object varB4EAC82CA7396A68D541C85D26508E83_198992746 = null; // Variable
-																		// for
-																		// return
-																		// #7
-		Object varB4EAC82CA7396A68D541C85D26508E83_143286103 = null; // Variable
-																		// for
-																		// return
-																		// #8
-		Object varB4EAC82CA7396A68D541C85D26508E83_710711622 = null; // Variable
-																		// for
-																		// return
-																		// #9
-		Object varB4EAC82CA7396A68D541C85D26508E83_1426139008 = null; // Variable
-																		// for
-																		// return
-																		// #10
-		Object varB4EAC82CA7396A68D541C85D26508E83_867965014 = null; // Variable
-																		// for
-																		// return
-																		// #11
-		Object varB4EAC82CA7396A68D541C85D26508E83_1783002410 = null; // Variable
-																		// for
-																		// return
-																		// #12
-		Object varB4EAC82CA7396A68D541C85D26508E83_1748671942 = null; // Variable
-																		// for
-																		// return
-																		// #13
-		Object varB4EAC82CA7396A68D541C85D26508E83_2093787363 = null; // Variable
-																		// for
-																		// return
-																		// #14
-		Object varB4EAC82CA7396A68D541C85D26508E83_1475522107 = null; // Variable
-																		// for
-																		// return
-																		// #15
-		Object varB4EAC82CA7396A68D541C85D26508E83_1866232980 = null; // Variable
-																		// for
-																		// return
-																		// #16
-		Object varB4EAC82CA7396A68D541C85D26508E83_1960501370 = null; // Variable
-																		// for
-																		// return
-																		// #17
-		Object varB4EAC82CA7396A68D541C85D26508E83_1254745871 = null; // Variable
-																		// for
-																		// return
-																		// #18
-		Object varB4EAC82CA7396A68D541C85D26508E83_2023700597 = null; // Variable
-																		// for
-																		// return
-																		// #19
-		Object varB4EAC82CA7396A68D541C85D26508E83_536684528 = null; // Variable
-																		// for
-																		// return
-																		// #20
-		Object varB4EAC82CA7396A68D541C85D26508E83_1320682209 = null; // Variable
-																		// for
-																		// return
-																		// #21
-		Object varB4EAC82CA7396A68D541C85D26508E83_337485411 = null; // Variable
-																		// for
-																		// return
-																		// #22
-		Object varB4EAC82CA7396A68D541C85D26508E83_307793637 = null; // Variable
-																		// for
-																		// return
-																		// #23
-		Object varB4EAC82CA7396A68D541C85D26508E83_1422827906 = null; // Variable
-																		// for
-																		// return
-																		// #24
-		Object varB4EAC82CA7396A68D541C85D26508E83_441909283 = null; // Variable
-																		// for
-																		// return
-																		// #25
-		Object varB4EAC82CA7396A68D541C85D26508E83_1276083288 = null; // Variable
-																		// for
-																		// return
-																		// #26
+		Object varB4EAC82CA7396A68D541C85D26508E83_1684051088 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_1166194923 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_386845387 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_722922380 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_1016839958 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_26924907 = null; 
+																	
+																	
+		Object varB4EAC82CA7396A68D541C85D26508E83_198992746 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_143286103 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_710711622 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_1426139008 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_867965014 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_1783002410 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_1748671942 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_2093787363 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_1475522107 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_1866232980 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_1960501370 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_1254745871 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_2023700597 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_536684528 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_1320682209 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_337485411 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_307793637 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_1422827906 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_441909283 = null; 
+																		
+																		
+																		
+		Object varB4EAC82CA7396A68D541C85D26508E83_1276083288 = null; 
+																		
+																		
+																		
 		int type = readInt();
-		// Begin case VAL_NULL
+		
 		varB4EAC82CA7396A68D541C85D26508E83_1684051088 = null;
-		// End case VAL_NULL
-		// Begin case VAL_STRING
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_1166194923 = readString();
-		// End case VAL_STRING
-		// Begin case VAL_INTEGER
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_386845387 = readInt();
-		// End case VAL_INTEGER
-		// Begin case VAL_MAP
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_722922380 = readHashMap(loader);
-		// End case VAL_MAP
-		// Begin case VAL_PARCELABLE
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_1016839958 = readParcelable(loader);
-		// End case VAL_PARCELABLE
-		// Begin case VAL_SHORT
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_26924907 = (short) readInt();
-		// End case VAL_SHORT
-		// Begin case VAL_LONG
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_198992746 = readLong();
-		// End case VAL_LONG
-		// Begin case VAL_FLOAT
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_143286103 = readFloat();
-		// End case VAL_FLOAT
-		// Begin case VAL_DOUBLE
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_710711622 = readDouble();
-		// End case VAL_DOUBLE
-		// Begin case VAL_BOOLEAN
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_1426139008 = readInt() == 1;
-		// End case VAL_BOOLEAN
-		// Begin case VAL_CHARSEQUENCE
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_867965014 = readCharSequence();
-		// End case VAL_CHARSEQUENCE
-		// Begin case VAL_LIST
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_1783002410 = readArrayList(loader);
-		// End case VAL_LIST
-		// Begin case VAL_BOOLEANARRAY
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_1748671942 = createBooleanArray();
-		// End case VAL_BOOLEANARRAY
-		// Begin case VAL_BYTEARRAY
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_2093787363 = createByteArray();
-		// End case VAL_BYTEARRAY
-		// Begin case VAL_STRINGARRAY
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_1475522107 = readStringArray();
-		// End case VAL_STRINGARRAY
-		// Begin case VAL_CHARSEQUENCEARRAY
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_1866232980 = readCharSequenceArray();
-		// End case VAL_CHARSEQUENCEARRAY
-		// Begin case VAL_IBINDER
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_1960501370 = readStrongBinder();
-		// End case VAL_IBINDER
-		// Begin case VAL_OBJECTARRAY
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_1254745871 = readArray(loader);
-		// End case VAL_OBJECTARRAY
-		// Begin case VAL_INTARRAY
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_2023700597 = createIntArray();
-		// End case VAL_INTARRAY
-		// Begin case VAL_LONGARRAY
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_536684528 = createLongArray();
-		// End case VAL_LONGARRAY
-		// Begin case VAL_BYTE
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_1320682209 = readByte();
-		// End case VAL_BYTE
-		// Begin case VAL_SERIALIZABLE
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_337485411 = readSerializable();
-		// End case VAL_SERIALIZABLE
-		// Begin case VAL_PARCELABLEARRAY
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_307793637 = readParcelableArray(loader);
-		// End case VAL_PARCELABLEARRAY
-		// Begin case VAL_SPARSEARRAY
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_1422827906 = readSparseArray(loader);
-		// End case VAL_SPARSEARRAY
-		// Begin case VAL_SPARSEBOOLEANARRAY
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_441909283 = readSparseBooleanArray();
-		// End case VAL_SPARSEBOOLEANARRAY
-		// Begin case VAL_BUNDLE
+		
+		
 		varB4EAC82CA7396A68D541C85D26508E83_1276083288 = readBundle(loader);
-		// End case VAL_BUNDLE
-		// Begin case default
+		
+		
 		int off = dataPosition() - 4;
-		// End case default
-		// Begin case default
+		
+		
 		if (DroidSafeAndroidRuntime.control)
 			throw new RuntimeException("Parcel " + this + ": Unmarshalling unknown type code " + type + " at offset " + off);
-		// End case default
+		
 		addTaint(loader.getTaint());
-		Object varA7E53CE21691AB073D9660D615818899_1186569650; // Final return
-																// value
+		Object varA7E53CE21691AB073D9660D615818899_1186569650; 
+																
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_1684051088;
 			break;
-		case 2: // Assign result for return ordinal #2
+		case 2: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_1166194923;
 			break;
-		case 3: // Assign result for return ordinal #3
+		case 3: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_386845387;
 			break;
-		case 4: // Assign result for return ordinal #4
+		case 4: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_722922380;
 			break;
-		case 5: // Assign result for return ordinal #5
+		case 5: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_1016839958;
 			break;
-		case 6: // Assign result for return ordinal #6
+		case 6: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_26924907;
 			break;
-		case 7: // Assign result for return ordinal #7
+		case 7: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_198992746;
 			break;
-		case 8: // Assign result for return ordinal #8
+		case 8: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_143286103;
 			break;
-		case 9: // Assign result for return ordinal #9
+		case 9: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_710711622;
 			break;
-		case 10: // Assign result for return ordinal #10
+		case 10: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_1426139008;
 			break;
-		case 11: // Assign result for return ordinal #11
+		case 11: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_867965014;
 			break;
-		case 12: // Assign result for return ordinal #12
+		case 12: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_1783002410;
 			break;
-		case 13: // Assign result for return ordinal #13
+		case 13: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_1748671942;
 			break;
-		case 14: // Assign result for return ordinal #14
+		case 14: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_2093787363;
 			break;
-		case 15: // Assign result for return ordinal #15
+		case 15: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_1475522107;
 			break;
-		case 16: // Assign result for return ordinal #16
+		case 16: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_1866232980;
 			break;
-		case 17: // Assign result for return ordinal #17
+		case 17: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_1960501370;
 			break;
-		case 18: // Assign result for return ordinal #18
+		case 18: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_1254745871;
 			break;
-		case 19: // Assign result for return ordinal #19
+		case 19: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_2023700597;
 			break;
-		case 20: // Assign result for return ordinal #20
+		case 20: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_536684528;
 			break;
-		case 21: // Assign result for return ordinal #21
+		case 21: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_1320682209;
 			break;
-		case 22: // Assign result for return ordinal #22
+		case 22: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_337485411;
 			break;
-		case 23: // Assign result for return ordinal #23
+		case 23: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_307793637;
 			break;
-		case 24: // Assign result for return ordinal #24
+		case 24: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_1422827906;
 			break;
-		case 25: // Assign result for return ordinal #25
+		case 25: 
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_441909283;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_1186569650 = varB4EAC82CA7396A68D541C85D26508E83_1276083288;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_1186569650.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varA7E53CE21691AB073D9660D615818899_1186569650.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varA7E53CE21691AB073D9660D615818899_1186569650;
-		// ---------- Original Method ----------
-		// Original Method Too Long, Refer to Original Implementation
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.842 -0400", hash_original_method = "973DB4BA749CEAB3796DAD314F27DB98", hash_generated_method = "0CB95AE51CF4E41F05D3AC6A36F8C47D")
 	public final <T extends Parcelable> T readParcelable(ClassLoader loader) {
-		T varB4EAC82CA7396A68D541C85D26508E83_743233603 = null; // Variable for
-																// return #1
-		T varB4EAC82CA7396A68D541C85D26508E83_1067709877 = null; // Variable for
-																	// return #2
-		T varB4EAC82CA7396A68D541C85D26508E83_297758736 = null; // Variable for
-																// return #3
+		T varB4EAC82CA7396A68D541C85D26508E83_743233603 = null; 
+																
+		T varB4EAC82CA7396A68D541C85D26508E83_1067709877 = null; 
+																	
+		T varB4EAC82CA7396A68D541C85D26508E83_297758736 = null; 
+																
 		String name = readString();
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_743233603 = null;
-		} // End block
+		} 
 		Parcelable.Creator<T> creator;
 		{
 			HashMap<String, Parcelable.Creator> map = mCreators.get(loader);
 			{
 				map = new HashMap<String, Parcelable.Creator>();
 				mCreators.put(loader, map);
-			} // End block
+			} 
 			creator = map.get(name);
 			{
 				try {
@@ -2867,153 +2868,153 @@ public final class Parcel {
 					c = Class.forName(name, true, loader);
 					Field f = c.getField("CREATOR");
 					creator = (Parcelable.Creator) f.get(null);
-				} // End block
+				} 
 				catch (IllegalAccessException e) {
 					if (DroidSafeAndroidRuntime.control)
 						throw new BadParcelableException("IllegalAccessException when unmarshalling: " + name);
-				} // End block
+				} 
 				catch (ClassNotFoundException e) {
 					if (DroidSafeAndroidRuntime.control)
 						throw new BadParcelableException("ClassNotFoundException when unmarshalling: " + name);
-				} // End block
+				} 
 				catch (ClassCastException e) {
 					if (DroidSafeAndroidRuntime.control)
 						throw new BadParcelableException("Parcelable protocol requires a " + "Parcelable.Creator object called " + " CREATOR on class " + name);
-				} // End block
+				} 
 				catch (NoSuchFieldException e) {
 					if (DroidSafeAndroidRuntime.control)
 						throw new BadParcelableException("Parcelable protocol requires a " + "Parcelable.Creator object called " + " CREATOR on class " + name);
-				} // End block
+				} 
 				{
 					if (DroidSafeAndroidRuntime.control)
 						throw new BadParcelableException("Parcelable protocol requires a " + "Parcelable.Creator object called " + " CREATOR on class " + name);
-				} // End block
+				} 
 				map.put(name, creator);
-			} // End block
-		} // End block
+			} 
+		} 
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_1067709877 = ((Parcelable.ClassLoaderCreator<T>) creator).createFromParcel(this, loader);
-		} // End block
+		} 
 		varB4EAC82CA7396A68D541C85D26508E83_297758736 = creator.createFromParcel(this);
 		addTaint(loader.getTaint());
-		T varA7E53CE21691AB073D9660D615818899_462959774; // Final return value
+		T varA7E53CE21691AB073D9660D615818899_462959774; 
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_462959774 = varB4EAC82CA7396A68D541C85D26508E83_743233603;
 			break;
-		case 2: // Assign result for return ordinal #2
+		case 2: 
 			varA7E53CE21691AB073D9660D615818899_462959774 = varB4EAC82CA7396A68D541C85D26508E83_1067709877;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_462959774 = varB4EAC82CA7396A68D541C85D26508E83_297758736;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_462959774.addTaint(getTaint()); // Add
-																			// taint
-																			// from
-																			// parent
+		varA7E53CE21691AB073D9660D615818899_462959774.addTaint(getTaint()); 
+																			
+																			
+																			
 		return varA7E53CE21691AB073D9660D615818899_462959774;
-		// ---------- Original Method ----------
-		// Original Method Too Long, Refer to Original Implementation
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.843 -0400", hash_original_method = "7F7B3246FDA8DADD28F39102743A1FDB", hash_generated_method = "882408FC1FCB1FC6A28D4EDD8E7E8E39")
 	public final Parcelable[] readParcelableArray(ClassLoader loader) {
-		Parcelable[] varB4EAC82CA7396A68D541C85D26508E83_436141177 = null; // Variable
-																			// for
-																			// return
-																			// #1
-		Parcelable[] varB4EAC82CA7396A68D541C85D26508E83_771677713 = null; // Variable
-																			// for
-																			// return
-																			// #2
+		Parcelable[] varB4EAC82CA7396A68D541C85D26508E83_436141177 = null; 
+																			
+																			
+																			
+		Parcelable[] varB4EAC82CA7396A68D541C85D26508E83_771677713 = null; 
+																			
+																			
+																			
 		int N = readInt();
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_436141177 = null;
-		} // End block
+		} 
 		Parcelable[] p = new Parcelable[N];
 		{
 			int i = 0;
 			{
 				p[i] = (Parcelable) readParcelable(loader);
-			} // End block
-		} // End collapsed parenthetic
+			} 
+		} 
 		varB4EAC82CA7396A68D541C85D26508E83_771677713 = p;
 		addTaint(loader.getTaint());
-		Parcelable[] varA7E53CE21691AB073D9660D615818899_1162640187; // Final
-																		// return
-																		// value
+		Parcelable[] varA7E53CE21691AB073D9660D615818899_1162640187; 
+																		
+																		
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_1162640187 = varB4EAC82CA7396A68D541C85D26508E83_436141177;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_1162640187 = varB4EAC82CA7396A68D541C85D26508E83_771677713;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_1162640187.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varA7E53CE21691AB073D9660D615818899_1162640187.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varA7E53CE21691AB073D9660D615818899_1162640187;
-		// ---------- Original Method ----------
-		// int N = readInt();
-		// if (N < 0) {
-		// return null;
-		// }
-		// Parcelable[] p = new Parcelable[N];
-		// for (int i = 0; i < N; i++) {
-		// p[i] = (Parcelable) readParcelable(loader);
-		// }
-		// return p;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.844 -0400", hash_original_method = "71C92188775A0F7E9317C601C7CC8BB5", hash_generated_method = "42511A77D4B1277BF46061731CE9C39C")
 	public final Serializable readSerializable() {
-		Serializable varB4EAC82CA7396A68D541C85D26508E83_900333484 = null; // Variable
-																			// for
-																			// return
-																			// #1
-		Serializable varB4EAC82CA7396A68D541C85D26508E83_1967018485 = null; // Variable
-																			// for
-																			// return
-																			// #2
+		Serializable varB4EAC82CA7396A68D541C85D26508E83_900333484 = null; 
+																			
+																			
+																			
+		Serializable varB4EAC82CA7396A68D541C85D26508E83_1967018485 = null; 
+																			
+																			
+																			
 		String name = readString();
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_900333484 = null;
-		} // End block
+		} 
 		byte[] serializedData = createByteArray();
 		ByteArrayInputStream bais = new ByteArrayInputStream(serializedData);
 		try {
 			ObjectInputStream ois = new ObjectInputStream(bais);
 			varB4EAC82CA7396A68D541C85D26508E83_1967018485 = (Serializable) ois.readObject();
-		} // End block
+		} 
 		catch (IOException ioe) {
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException("Parcelable encountered " + "IOException reading a Serializable object (name = " + name + ")", ioe);
-		} // End block
+		} 
 		catch (ClassNotFoundException cnfe) {
 			if (DroidSafeAndroidRuntime.control)
 				throw new RuntimeException("Parcelable encountered" + "ClassNotFoundException reading a Serializable object (name = " + name + ")", cnfe);
-		} // End block
-		Serializable varA7E53CE21691AB073D9660D615818899_2021129513; // Final
-																		// return
-																		// value
+		} 
+		Serializable varA7E53CE21691AB073D9660D615818899_2021129513; 
+																		
+																		
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_2021129513 = varB4EAC82CA7396A68D541C85D26508E83_900333484;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_2021129513 = varB4EAC82CA7396A68D541C85D26508E83_1967018485;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_2021129513.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varA7E53CE21691AB073D9660D615818899_2021129513.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varA7E53CE21691AB073D9660D615818899_2021129513;
-		// ---------- Original Method ----------
-		// Original Method Too Long, Refer to Original Implementation
+		
+		
 	}
 
 	static protected final Parcel obtain(int obj) {
@@ -3035,17 +3036,18 @@ public final class Parcel {
 		return new Parcel(obj);
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.845 -0400", hash_original_method = "8123E4A6E665502F6F718041F61607F2", hash_generated_method = "CB3AB49BF1BB21FE6CF409EBFB0090B3")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.845 -0400", hash_original_method = "8123E4A6E665502F6F718041F61607F2", hash_generated_method = "CB3AB49BF1BB21FE6CF409EBFB0090B3")
 	@Override
 	protected void finalize() throws Throwable {
 		destroy();
-		// ---------- Original Method ----------
-		// if (DEBUG_RECYCLE) {
-		// if (mStack != null) {
-		// Log.w(TAG, "Client did not call Parcel.recycle()", mStack);
-		// }
-		// }
-		// destroy();
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.845 -0400", hash_original_method = "C0427B473F1AF57292972C32F441E719", hash_generated_method = "61A4E66F7E3CD1708E9FB208543A8E37")
@@ -3066,17 +3068,17 @@ public final class Parcel {
 			Object key = readValue(loader);
 			Object value = readValue(loader);
 			outVal.put(key, value);
-		} // End block
+		} 
 		addTaint(outVal.getTaint());
 		addTaint(N);
 		addTaint(loader.getTaint());
-		// ---------- Original Method ----------
-		// while (N > 0) {
-		// Object key = readValue(loader);
-		// Object value = readValue(loader);
-		// outVal.put(key, value);
-		// N--;
-		// }
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.847 -0400", hash_original_method = "9EEE2505D88E68CC65378BE9FEB363CC", hash_generated_method = "C3DDBC1DA80EBB50B48A827FDC0D2353")
@@ -3084,16 +3086,16 @@ public final class Parcel {
 		{
 			Object value = readValue(loader);
 			outVal.add(value);
-		} // End block
+		} 
 		addTaint(outVal.getTaint());
 		addTaint(N);
 		addTaint(loader.getTaint());
-		// ---------- Original Method ----------
-		// while (N > 0) {
-		// Object value = readValue(loader);
-		// outVal.add(value);
-		// N--;
-		// }
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.848 -0400", hash_original_method = "8048910DC1D629DD4CA2AB6051E757D5", hash_generated_method = "53D16C40149542FDB787F6413EC7F88F")
@@ -3103,16 +3105,16 @@ public final class Parcel {
 			{
 				Object value = readValue(loader);
 				outVal[i] = value;
-			} // End block
-		} // End collapsed parenthetic
+			} 
+		} 
 		addTaint(outVal[0].getTaint());
 		addTaint(N);
 		addTaint(loader.getTaint());
-		// ---------- Original Method ----------
-		// for (int i = 0; i < N; i++) {
-		// Object value = readValue(loader);
-		// outVal[i] = value;
-		// }
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.848 -0400", hash_original_method = "43DDAB261C65CF1F1B4E5B19576BB376", hash_generated_method = "B4D5B9DE693BAA74BA9255235886081D")
@@ -3121,35 +3123,36 @@ public final class Parcel {
 			int key = readInt();
 			Object value = readValue(loader);
 			outVal.append(key, value);
-		} // End block
+		} 
 		addTaint(outVal.getTaint());
 		addTaint(N);
 		addTaint(loader.getTaint());
-		// ---------- Original Method ----------
-		// while (N > 0) {
-		// int key = readInt();
-		// Object value = readValue(loader);
-		// outVal.append(key, value);
-		// N--;
-		// }
+		
+		
+		
+		
+		
+		
+		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.849 -0400", hash_original_method = "687B1CF2F9242ACE26C54A0109BE177B", hash_generated_method = "791C42C924954608147774279732E9E7")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.849 -0400", hash_original_method = "687B1CF2F9242ACE26C54A0109BE177B", hash_generated_method = "791C42C924954608147774279732E9E7")
 	private void readSparseBooleanArrayInternal(SparseBooleanArray outVal, int N) {
 		{
 			int key = readInt();
 			boolean value = this.readByte() == 1;
 			outVal.append(key, value);
-		} // End block
+		} 
 		addTaint(outVal.getTaint());
 		addTaint(N);
-		// ---------- Original Method ----------
-		// while (N > 0) {
-		// int key = readInt();
-		// boolean value = this.readByte() == 1;
-		// outVal.append(key, value);
-		// N--;
-		// }
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.849 -0400", hash_original_field = "A71BA10A20EF888B1EF8CA16D55D9309", hash_generated_field = "4C4C82AEA5D9854FC45DA5375C35C2B9")
@@ -3239,12 +3242,12 @@ public final class Parcel {
 	@DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.850 -0400", hash_original_field = "EAE59FB152640F6C5452B3D15C76FF4C", hash_generated_field = "30232A053737FDB52FF30B185E9D15EC")
 	private static final HashMap<ClassLoader, HashMap<String, Parcelable.Creator>> mCreators = new HashMap<ClassLoader, HashMap<String, Parcelable.Creator>>();
 
-	// orphaned legacy method
+	
 	public String createFromParcel(Parcel source) {
 		return source.readString();
 	}
 
-	// orphaned legacy method
+	
 	public String[] newArray(int size) {
 		return new String[size];
 	}

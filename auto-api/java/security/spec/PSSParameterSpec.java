@@ -1,11 +1,11 @@
 package java.security.spec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class PSSParameterSpec implements AlgorithmParameterSpec {
@@ -29,21 +29,21 @@ public class PSSParameterSpec implements AlgorithmParameterSpec {
     public  PSSParameterSpec(int saltLen) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("saltLen < 0");
-        } //End block
+        } 
         this.saltLen = saltLen;
         this.mdName = "SHA-1";
         this.mgfName = "MGF1";
         this.mgfSpec = MGF1ParameterSpec.SHA1;
         this.trailerField = 1;
-        // ---------- Original Method ----------
-        //if (saltLen < 0) {
-            //throw new IllegalArgumentException("saltLen < 0");
-        //}
-        //this.saltLen = saltLen;
-        //this.mdName = "SHA-1";
-        //this.mgfName = "MGF1";
-        //this.mgfSpec = MGF1ParameterSpec.SHA1;
-        //this.trailerField = 1;
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -52,39 +52,39 @@ public class PSSParameterSpec implements AlgorithmParameterSpec {
             AlgorithmParameterSpec mgfSpec, int saltLen, int trailerField) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("mdName == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("mgfName == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("saltLen < 0");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("trailerField < 0");
-        } //End block
+        } 
         this.mdName = mdName;
         this.mgfName = mgfName;
         this.mgfSpec = mgfSpec;
         this.saltLen = saltLen;
         this.trailerField = trailerField;
-        // ---------- Original Method ----------
-        //if (mdName == null) {
-            //throw new NullPointerException("mdName == null");
-        //}
-        //if (mgfName == null) {
-            //throw new NullPointerException("mgfName == null");
-        //}
-        //if (saltLen < 0) {
-            //throw new IllegalArgumentException("saltLen < 0");
-        //}
-        //if (trailerField < 0) {
-            //throw new IllegalArgumentException("trailerField < 0");
-        //}
-        //this.mdName = mdName;
-        //this.mgfName = mgfName;
-        //this.mgfSpec = mgfSpec;
-        //this.saltLen = saltLen;
-        //this.trailerField = trailerField;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -92,41 +92,41 @@ public class PSSParameterSpec implements AlgorithmParameterSpec {
     public int getSaltLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1503555562 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1503555562;
-        // ---------- Original Method ----------
-        //return saltLen;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.114 -0400", hash_original_method = "F76E00B788282743E863E8A91477E027", hash_generated_method = "7CDF333F78EFCB89B8285B4A9D9D78EC")
     public String getDigestAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2072457039 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2072457039 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2072457039 = mdName;
-        varB4EAC82CA7396A68D541C85D26508E83_2072457039.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2072457039.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2072457039;
-        // ---------- Original Method ----------
-        //return mdName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.117 -0400", hash_original_method = "11682E81B271E60CD76F4E3CFB1D831D", hash_generated_method = "9D4F0151E3C5368BAB9228458B2E3D8B")
     public String getMGFAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_466000623 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_466000623 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_466000623 = mgfName;
-        varB4EAC82CA7396A68D541C85D26508E83_466000623.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_466000623.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_466000623;
-        // ---------- Original Method ----------
-        //return mgfName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.119 -0400", hash_original_method = "79BC41FB5304035884EA00639B685A6D", hash_generated_method = "65195582D1EC56C105BF6552597CFDB0")
     public AlgorithmParameterSpec getMGFParameters() {
-        AlgorithmParameterSpec varB4EAC82CA7396A68D541C85D26508E83_1943738111 = null; //Variable for return #1
+        AlgorithmParameterSpec varB4EAC82CA7396A68D541C85D26508E83_1943738111 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1943738111 = mgfSpec;
-        varB4EAC82CA7396A68D541C85D26508E83_1943738111.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1943738111.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1943738111;
-        // ---------- Original Method ----------
-        //return mgfSpec;
+        
+        
     }
 
     
@@ -134,8 +134,8 @@ public class PSSParameterSpec implements AlgorithmParameterSpec {
     public int getTrailerField() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1585043499 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1585043499;
-        // ---------- Original Method ----------
-        //return trailerField;
+        
+        
     }
 
     

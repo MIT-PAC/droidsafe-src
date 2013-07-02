@@ -1,11 +1,11 @@
 package javax.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.ByteBuffer;
 import java.security.InvalidAlgorithmParameterException;
@@ -38,33 +38,33 @@ public class Mac implements Cloneable {
         this.algorithm = algorithm;
         this.spiImpl = macSpi;
         this.isInitMac = false;
-        // ---------- Original Method ----------
-        //this.provider = provider;
-        //this.algorithm = algorithm;
-        //this.spiImpl = macSpi;
-        //this.isInitMac = false;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.136 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "2F3E58C66D8A9645E99EAE7E41B050AD")
     public final String getAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1163900663 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1163900663 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1163900663 = algorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_1163900663.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1163900663.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1163900663;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.137 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "2B40D59BE51C1954760BDAF7878E5C8B")
     public final Provider getProvider() {
-        Provider varB4EAC82CA7396A68D541C85D26508E83_864947029 = null; //Variable for return #1
+        Provider varB4EAC82CA7396A68D541C85D26508E83_864947029 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_864947029 = provider;
-        varB4EAC82CA7396A68D541C85D26508E83_864947029.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_864947029.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_864947029;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
@@ -106,8 +106,8 @@ public class Mac implements Cloneable {
         int varDE0776842F57D1FBC8679CFC79D95000_606553062 = (spiImpl.engineGetMacLength());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1592695737 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1592695737;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGetMacLength();
+        
+        
     }
 
     
@@ -115,17 +115,17 @@ public class Mac implements Cloneable {
     public final void init(Key key, AlgorithmParameterSpec params) throws InvalidKeyException, InvalidAlgorithmParameterException {
         {
             if (DroidSafeAndroidRuntime.control) throw new InvalidKeyException("key == null");
-        } //End block
+        } 
         spiImpl.engineInit(key, params);
         isInitMac = true;
         addTaint(key.getTaint());
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //throw new InvalidKeyException("key == null");
-        //}
-        //spiImpl.engineInit(key, params);
-        //isInitMac = true;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -133,27 +133,27 @@ public class Mac implements Cloneable {
     public final void init(Key key) throws InvalidKeyException {
         {
             if (DroidSafeAndroidRuntime.control) throw new InvalidKeyException("key == null");
-        } //End block
+        } 
         try 
         {
             spiImpl.engineInit(key, null);
             isInitMac = true;
-        } //End block
+        } 
         catch (InvalidAlgorithmParameterException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         addTaint(key.getTaint());
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //throw new InvalidKeyException("key == null");
-        //}
-        //try {
-            //spiImpl.engineInit(key, null);
-            //isInitMac = true;
-        //} catch (InvalidAlgorithmParameterException e) {
-            //throw new RuntimeException(e);
-        //}
+        
+        
+            
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -161,14 +161,14 @@ public class Mac implements Cloneable {
     public final void update(byte input) throws IllegalStateException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         spiImpl.engineUpdate(input);
         addTaint(input);
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //spiImpl.engineUpdate(input);
+        
+        
+            
+        
+        
     }
 
     
@@ -176,25 +176,25 @@ public class Mac implements Cloneable {
     public final void update(byte[] input, int offset, int len) throws IllegalStateException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Incorrect arguments");
-        } //End block
+        } 
         spiImpl.engineUpdate(input, offset, len);
         addTaint(input[0]);
         addTaint(offset);
         addTaint(len);
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (input == null) {
-            //return;
-        //}
-        //if ((offset < 0) || (len < 0) || ((offset + len) > input.length)) {
-            //throw new IllegalArgumentException("Incorrect arguments");
-        //}
-        //spiImpl.engineUpdate(input, offset, len);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -202,18 +202,18 @@ public class Mac implements Cloneable {
     public final void update(byte[] input) throws IllegalStateException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             spiImpl.engineUpdate(input, 0, input.length);
-        } //End block
+        } 
         addTaint(input[0]);
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (input != null) {
-            //spiImpl.engineUpdate(input, 0, input.length);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -221,23 +221,23 @@ public class Mac implements Cloneable {
     public final void update(ByteBuffer input) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             spiImpl.engineUpdate(input);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("input == null");
-        } //End block
+        } 
         addTaint(input.getTaint());
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (input != null) {
-            //spiImpl.engineUpdate(input);
-        //} else {
-            //throw new IllegalArgumentException("input == null");
-        //}
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -245,15 +245,15 @@ public class Mac implements Cloneable {
     public final byte[] doFinal() throws IllegalStateException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         byte[] varF2FE2E7531EFB386D123AA3F78BCA993_900795885 = (spiImpl.engineDoFinal());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1312697744 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1312697744;
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //return spiImpl.engineDoFinal();
+        
+        
+            
+        
+        
     }
 
     
@@ -261,37 +261,37 @@ public class Mac implements Cloneable {
     public final void doFinal(byte[] output, int outOffset) throws ShortBufferException, IllegalStateException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new ShortBufferException("output == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new ShortBufferException("Incorrect outOffset: " + outOffset);
-        } //End block
+        } 
         int t = spiImpl.engineGetMacLength();
         {
             if (DroidSafeAndroidRuntime.control) throw new ShortBufferException("Output buffer is short. Needed " + t + " bytes.");
-        } //End block
+        } 
         byte[] result = spiImpl.engineDoFinal();
         System.arraycopy(result, 0, output, outOffset, result.length);
         addTaint(output[0]);
         addTaint(outOffset);
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (output == null) {
-            //throw new ShortBufferException("output == null");
-        //}
-        //if ((outOffset < 0) || (outOffset >= output.length)) {
-            //throw new ShortBufferException("Incorrect outOffset: " + outOffset);
-        //}
-        //int t = spiImpl.engineGetMacLength();
-        //if (t > (output.length - outOffset)) {
-            //throw new ShortBufferException("Output buffer is short. Needed " + t + " bytes.");
-        //}
-        //byte[] result = spiImpl.engineDoFinal();
-        //System.arraycopy(result, 0, output, outOffset, result.length);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -299,48 +299,48 @@ public class Mac implements Cloneable {
     public final byte[] doFinal(byte[] input) throws IllegalStateException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             spiImpl.engineUpdate(input, 0, input.length);
-        } //End block
+        } 
         byte[] varF2FE2E7531EFB386D123AA3F78BCA993_1975953163 = (spiImpl.engineDoFinal());
         addTaint(input[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_86021723 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_86021723;
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (input != null) {
-            //spiImpl.engineUpdate(input, 0, input.length);
-        //}
-        //return spiImpl.engineDoFinal();
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.142 -0400", hash_original_method = "81378E48B4C25C37826FA808778D1291", hash_generated_method = "77C57E72DC7D91B702D238A17B41BD51")
     public final void reset() {
         spiImpl.engineReset();
-        // ---------- Original Method ----------
-        //spiImpl.engineReset();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.142 -0400", hash_original_method = "D491B3C29A973D07513DEBD79BD84B18", hash_generated_method = "1E0967AF4026781213ACD8411F522434")
     @Override
     public final Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1822273074 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1822273074 = null; 
         MacSpi newSpiImpl = (MacSpi)spiImpl.clone();
         Mac mac = new Mac(newSpiImpl, this.provider, this.algorithm);
         mac.isInitMac = this.isInitMac;
         varB4EAC82CA7396A68D541C85D26508E83_1822273074 = mac;
-        varB4EAC82CA7396A68D541C85D26508E83_1822273074.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1822273074.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1822273074;
-        // ---------- Original Method ----------
-        //MacSpi newSpiImpl = (MacSpi)spiImpl.clone();
-        //Mac mac = new Mac(newSpiImpl, this.provider, this.algorithm);
-        //mac.isInitMac = this.isInitMac;
-        //return mac;
+        
+        
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -73,8 +73,8 @@ public class TranslateAnimation extends Animation {
         a.recycle();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -88,15 +88,15 @@ public class TranslateAnimation extends Animation {
         mToXType = ABSOLUTE;
         mFromYType = ABSOLUTE;
         mToYType = ABSOLUTE;
-        // ---------- Original Method ----------
-        //mFromXValue = fromXDelta;
-        //mToXValue = toXDelta;
-        //mFromYValue = fromYDelta;
-        //mToYValue = toYDelta;
-        //mFromXType = ABSOLUTE;
-        //mToXType = ABSOLUTE;
-        //mFromYType = ABSOLUTE;
-        //mToYType = ABSOLUTE;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -111,18 +111,19 @@ public class TranslateAnimation extends Animation {
         mToXType = toXType;
         mFromYType = fromYType;
         mToYType = toYType;
-        // ---------- Original Method ----------
-        //mFromXValue = fromXValue;
-        //mToXValue = toXValue;
-        //mFromYValue = fromYValue;
-        //mToYValue = toYValue;
-        //mFromXType = fromXType;
-        //mToXType = toXType;
-        //mFromYType = fromYType;
-        //mToYType = toYType;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.815 -0400", hash_original_method = "A766E69C82E8D177EAD959BF3BB9235A", hash_generated_method = "F8A8782003A27D044BF0F7FFFDC7F781")
     @Override
     protected void applyTransformation(float interpolatedTime, Transformation t) {
@@ -130,26 +131,27 @@ public class TranslateAnimation extends Animation {
         float dy = mFromYDelta;
         {
             dx = mFromXDelta + ((mToXDelta - mFromXDelta) * interpolatedTime);
-        } //End block
+        } 
         {
             dy = mFromYDelta + ((mToYDelta - mFromYDelta) * interpolatedTime);
-        } //End block
+        } 
         t.getMatrix().setTranslate(dx, dy);
         addTaint(interpolatedTime);
         addTaint(t.getTaint());
-        // ---------- Original Method ----------
-        //float dx = mFromXDelta;
-        //float dy = mFromYDelta;
-        //if (mFromXDelta != mToXDelta) {
-            //dx = mFromXDelta + ((mToXDelta - mFromXDelta) * interpolatedTime);
-        //}
-        //if (mFromYDelta != mToYDelta) {
-            //dy = mFromYDelta + ((mToYDelta - mFromYDelta) * interpolatedTime);
-        //}
-        //t.getMatrix().setTranslate(dx, dy);
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.815 -0400", hash_original_method = "8DB34CFBDCDCD857D21DC05DC5D03D8B", hash_generated_method = "DF56667F248A77764539EC597F374BEC")
     @Override
     public void initialize(int width, int height, int parentWidth, int parentHeight) {
@@ -158,12 +160,12 @@ public class TranslateAnimation extends Animation {
         mToXDelta = resolveSize(mToXType, mToXValue, width, parentWidth);
         mFromYDelta = resolveSize(mFromYType, mFromYValue, height, parentHeight);
         mToYDelta = resolveSize(mToYType, mToYValue, height, parentHeight);
-        // ---------- Original Method ----------
-        //super.initialize(width, height, parentWidth, parentHeight);
-        //mFromXDelta = resolveSize(mFromXType, mFromXValue, width, parentWidth);
-        //mToXDelta = resolveSize(mToXType, mToXValue, width, parentWidth);
-        //mFromYDelta = resolveSize(mFromYType, mFromYValue, height, parentHeight);
-        //mToYDelta = resolveSize(mToYType, mToYValue, height, parentHeight);
+        
+        
+        
+        
+        
+        
     }
 
     

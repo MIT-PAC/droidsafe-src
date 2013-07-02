@@ -1,11 +1,11 @@
 package android.graphics.drawable;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -49,30 +49,32 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.852 -0400", hash_original_method = "094684F7E86BAEC8B113ECD0EF1A35E3", hash_generated_method = "094684F7E86BAEC8B113ECD0EF1A35E3")
     public DrawableContainer ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.853 -0400", hash_original_method = "4C0F5C22B9C7136183C2CC55D1B2C479", hash_generated_method = "3B933255E36ECAF022F256AF890A8CF1")
     @Override
     public void draw(Canvas canvas) {
         {
             mCurrDrawable.draw(canvas);
-        } //End block
+        } 
         {
             mLastDrawable.draw(canvas);
-        } //End block
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        //if (mCurrDrawable != null) {
-            //mCurrDrawable.draw(canvas);
-        //}
-        //if (mLastDrawable != null) {
-            //mLastDrawable.draw(canvas);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.853 -0400", hash_original_method = "91A12202891A2BC9DA6AA80DC6DB676A", hash_generated_method = "D42E09C69321F3048F9F6B1F32C8C075")
     @Override
     public int getChangingConfigurations() {
@@ -81,43 +83,45 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
                 | mDrawableContainerState.mChildrenChangingConfigurations);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_284507621 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_284507621;
-        // ---------- Original Method ----------
-        //return super.getChangingConfigurations()
-                //| mDrawableContainerState.mChangingConfigurations
-                //| mDrawableContainerState.mChildrenChangingConfigurations;
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.853 -0400", hash_original_method = "8B17DDF51BCD655A61A83DE84247EF99", hash_generated_method = "6B0B7A9A611289C2F4D9B4D01EB3B7B4")
     @Override
     public boolean getPadding(Rect padding) {
         final Rect r = mDrawableContainerState.getConstantPadding();
         {
             padding.set(r);
-        } //End block
+        } 
         {
             boolean var9D17F75DD17A1079B3E7BB26332DA382_586886016 = (mCurrDrawable.getPadding(padding));
-        } //End block
+        } 
         {
             boolean var26681595319194856AEB3747307B6E08_1123796027 = (super.getPadding(padding));
-        } //End block
+        } 
         addTaint(padding.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_745089441 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_745089441;
-        // ---------- Original Method ----------
-        //final Rect r = mDrawableContainerState.getConstantPadding();
-        //if (r != null) {
-            //padding.set(r);
-            //return true;
-        //}
-        //if (mCurrDrawable != null) {
-            //return mCurrDrawable.getPadding(padding);
-        //} else {
-            //return super.getPadding(padding);
-        //}
+        
+        
+        
+            
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.854 -0400", hash_original_method = "33F48EB62D0DC564AE5544FE28781DA5", hash_generated_method = "DFEEACD8D90C281096E76DEDB5145E03")
     @Override
     public void setAlpha(int alpha) {
@@ -126,26 +130,27 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             {
                 {
                     mCurrDrawable.setAlpha(alpha);
-                } //End block
+                } 
                 {
                     animate(false);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAlpha != alpha) {
-            //mAlpha = alpha;
-            //if (mCurrDrawable != null) {
-                //if (mEnterAnimationEnd == 0) {
-                    //mCurrDrawable.setAlpha(alpha);
-                //} else {
-                    //animate(false);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.854 -0400", hash_original_method = "9C07B593875E6134F95EF1337402CCE4", hash_generated_method = "C4810DE924EA062E5BE16527990391D2")
     @Override
     public void setDither(boolean dither) {
@@ -153,18 +158,19 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             mDrawableContainerState.mDither = dither;
             {
                 mCurrDrawable.setDither(mDrawableContainerState.mDither);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mDrawableContainerState.mDither != dither) {
-            //mDrawableContainerState.mDither = dither;
-            //if (mCurrDrawable != null) {
-                //mCurrDrawable.setDither(mDrawableContainerState.mDither);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.855 -0400", hash_original_method = "AE256967E0AC09F2540019B105CEB308", hash_generated_method = "B5D4110B90A635D888D13ED6952D19CF")
     @Override
     public void setColorFilter(ColorFilter cf) {
@@ -172,66 +178,69 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             mColorFilter = cf;
             {
                 mCurrDrawable.setColorFilter(cf);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mColorFilter != cf) {
-            //mColorFilter = cf;
-            //if (mCurrDrawable != null) {
-                //mCurrDrawable.setColorFilter(cf);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.856 -0400", hash_original_method = "7519B8FEB07821EB54C84C24ACFADDFA", hash_generated_method = "178B1F3F50B4632FA54670FF64888C5C")
     public void setEnterFadeDuration(int ms) {
         mDrawableContainerState.mEnterFadeDuration = ms;
-        // ---------- Original Method ----------
-        //mDrawableContainerState.mEnterFadeDuration = ms;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.856 -0400", hash_original_method = "037AE4EFE359E0A64F3D29E228D5C257", hash_generated_method = "BC4F4832E0DF7B103CB719B318AB9698")
     public void setExitFadeDuration(int ms) {
         mDrawableContainerState.mExitFadeDuration = ms;
-        // ---------- Original Method ----------
-        //mDrawableContainerState.mExitFadeDuration = ms;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.857 -0400", hash_original_method = "6D25AB5CD33FA39A7528151D77324281", hash_generated_method = "AB6518B50353017CCC67182BC014DBC2")
     @Override
     protected void onBoundsChange(Rect bounds) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mLastDrawable.setBounds(bounds);
-        } //End block
+        } 
         {
             mCurrDrawable.setBounds(bounds);
-        } //End block
+        } 
         addTaint(bounds.getTaint());
-        // ---------- Original Method ----------
-        //if (mLastDrawable != null) {
-            //mLastDrawable.setBounds(bounds);
-        //}
-        //if (mCurrDrawable != null) {
-            //mCurrDrawable.setBounds(bounds);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.857 -0400", hash_original_method = "C66859AD1DDD72E10B118943143E6E81", hash_generated_method = "10AA92B83E163B46D8FBF44B6D325447")
     @Override
     public boolean isStateful() {
         boolean varA0DBABDA86F80BDA76204D706B1453DD_880137693 = (mDrawableContainerState.isStateful());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_201008624 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_201008624;
-        // ---------- Original Method ----------
-        //return mDrawableContainerState.isStateful();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.858 -0400", hash_original_method = "27D546A1CE7DA293AA4ECB359818692F", hash_generated_method = "AD9773C43619E7AC269F9CFD060232E0")
     @Override
     public void jumpToCurrentState() {
@@ -240,95 +249,98 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             mLastDrawable.jumpToCurrentState();
             mLastDrawable = null;
             changed = true;
-        } //End block
+        } 
         {
             mCurrDrawable.jumpToCurrentState();
             mCurrDrawable.setAlpha(mAlpha);
-        } //End block
+        } 
         {
             mExitAnimationEnd = 0;
             changed = true;
-        } //End block
+        } 
         {
             mEnterAnimationEnd = 0;
             changed = true;
-        } //End block
+        } 
         {
             invalidateSelf();
-        } //End block
-        // ---------- Original Method ----------
-        //boolean changed = false;
-        //if (mLastDrawable != null) {
-            //mLastDrawable.jumpToCurrentState();
-            //mLastDrawable = null;
-            //changed = true;
-        //}
-        //if (mCurrDrawable != null) {
-            //mCurrDrawable.jumpToCurrentState();
-            //mCurrDrawable.setAlpha(mAlpha);
-        //}
-        //if (mExitAnimationEnd != 0) {
-            //mExitAnimationEnd = 0;
-            //changed = true;
-        //}
-        //if (mEnterAnimationEnd != 0) {
-            //mEnterAnimationEnd = 0;
-            //changed = true;
-        //}
-        //if (changed) {
-            //invalidateSelf();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.858 -0400", hash_original_method = "19BC6D466BAAC5E8F9FD1F6AF6038AC5", hash_generated_method = "27F983195532E29A8BBF6D59CF5BD4B2")
     @Override
     protected boolean onStateChange(int[] state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var7D9D27628859DC760669C5E95CEC9347_1671485537 = (mLastDrawable.setState(state));
-        } //End block
+        } 
         {
             boolean var34BF092C138BEF3A5446BB229E4C4465_1447374745 = (mCurrDrawable.setState(state));
-        } //End block
+        } 
         addTaint(state[0]);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_484519510 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_484519510;
-        // ---------- Original Method ----------
-        //if (mLastDrawable != null) {
-            //return mLastDrawable.setState(state);
-        //}
-        //if (mCurrDrawable != null) {
-            //return mCurrDrawable.setState(state);
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.859 -0400", hash_original_method = "370D8F089D3CBC7A83FFF71A722725DE", hash_generated_method = "6BF64F5307CF2AB7276E0C213979E77C")
     @Override
     protected boolean onLevelChange(int level) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var805174EC0CB8E349AD8B0CFED368D4ED_1061668197 = (mLastDrawable.setLevel(level));
-        } //End block
+        } 
         {
             boolean var9F2927B783DF9D88F186D5048323875C_541873514 = (mCurrDrawable.setLevel(level));
-        } //End block
+        } 
         addTaint(level);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_58367528 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_58367528;
-        // ---------- Original Method ----------
-        //if (mLastDrawable != null) {
-            //return mLastDrawable.setLevel(level);
-        //}
-        //if (mCurrDrawable != null) {
-            //return mCurrDrawable.setLevel(level);
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.859 -0400", hash_original_method = "DE0AA10FF6502448C6D350B4086CE53A", hash_generated_method = "12C84BA424F4539C0C5E12BCD1665131")
     @Override
     public int getIntrinsicWidth() {
@@ -336,21 +348,22 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             boolean var0B340EAF1309515EAF1CC7DA3839F9FB_874296937 = (mDrawableContainerState.isConstantSize());
             {
                 int var0F0058AD5FC72A5A68BC291FFE8E2602_1377032241 = (mDrawableContainerState.getConstantWidth());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             Object var804AA1F51D4684C6DA855574F2183237_1412756544 = (mCurrDrawable.getIntrinsicWidth());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_496481987 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_496481987;
-        // ---------- Original Method ----------
-        //if (mDrawableContainerState.isConstantSize()) {
-            //return mDrawableContainerState.getConstantWidth();
-        //}
-        //return mCurrDrawable != null ? mCurrDrawable.getIntrinsicWidth() : -1;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.860 -0400", hash_original_method = "FA2E61AFB9D6236C0B64D53932A9175C", hash_generated_method = "9096D423DFBB84FC9DF7602810E5B268")
     @Override
     public int getIntrinsicHeight() {
@@ -358,21 +371,22 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             boolean var0B340EAF1309515EAF1CC7DA3839F9FB_524133058 = (mDrawableContainerState.isConstantSize());
             {
                 int var7D93BD4EA71DF412B81C3919D19F8E98_1907469536 = (mDrawableContainerState.getConstantHeight());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             Object var2AC8A5422442A65DE13D9D7D1E47A33C_435597567 = (mCurrDrawable.getIntrinsicHeight());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1434075018 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1434075018;
-        // ---------- Original Method ----------
-        //if (mDrawableContainerState.isConstantSize()) {
-            //return mDrawableContainerState.getConstantHeight();
-        //}
-        //return mCurrDrawable != null ? mCurrDrawable.getIntrinsicHeight() : -1;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.861 -0400", hash_original_method = "758162C9EFC5A9F0A72A174E63E68436", hash_generated_method = "69F4783D099E034D2F9D6DCA14CEBE36")
     @Override
     public int getMinimumWidth() {
@@ -380,21 +394,22 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             boolean var0B340EAF1309515EAF1CC7DA3839F9FB_227914415 = (mDrawableContainerState.isConstantSize());
             {
                 int var794C9156EA4DDD9998CC96EDE4443CB4_632055824 = (mDrawableContainerState.getConstantMinimumWidth());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             Object var24E11FA644681FD383649322A0C3A058_1972045923 = (mCurrDrawable.getMinimumWidth());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1945252203 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1945252203;
-        // ---------- Original Method ----------
-        //if (mDrawableContainerState.isConstantSize()) {
-            //return mDrawableContainerState.getConstantMinimumWidth();
-        //}
-        //return mCurrDrawable != null ? mCurrDrawable.getMinimumWidth() : 0;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.861 -0400", hash_original_method = "4272F469B4A869660F9BDAF1177E3127", hash_generated_method = "37FA8A8F0A0455E4DD53BF07E280C80D")
     @Override
     public int getMinimumHeight() {
@@ -402,113 +417,119 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             boolean var0B340EAF1309515EAF1CC7DA3839F9FB_973130698 = (mDrawableContainerState.isConstantSize());
             {
                 int varCA7D9B9EAB1185685A20A079B1E1CCCF_1054533359 = (mDrawableContainerState.getConstantMinimumHeight());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             Object var8E08C5272C558A8669F131FA4FB6EE24_1943905778 = (mCurrDrawable.getMinimumHeight());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2039086262 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2039086262;
-        // ---------- Original Method ----------
-        //if (mDrawableContainerState.isConstantSize()) {
-            //return mDrawableContainerState.getConstantMinimumHeight();
-        //}
-        //return mCurrDrawable != null ? mCurrDrawable.getMinimumHeight() : 0;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.862 -0400", hash_original_method = "4797F0F1C7EC2DAE5A1D44FF8AA06A3E", hash_generated_method = "D921D207D2A51997815359741034686B")
     public void invalidateDrawable(Drawable who) {
         {
             boolean var7C6FCB42D88C4A46B669C493EC47FC13_1247714736 = (who == mCurrDrawable && getCallback() != null);
             {
                 getCallback().invalidateDrawable(this);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(who.getTaint());
-        // ---------- Original Method ----------
-        //if (who == mCurrDrawable && getCallback() != null) {
-            //getCallback().invalidateDrawable(this);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.863 -0400", hash_original_method = "D79EA559DF51F16BABDD5FAB2B1074A7", hash_generated_method = "04D155E43E5A3899771DB71F5775E366")
     public void scheduleDrawable(Drawable who, Runnable what, long when) {
         {
             boolean var7C6FCB42D88C4A46B669C493EC47FC13_1974196720 = (who == mCurrDrawable && getCallback() != null);
             {
                 getCallback().scheduleDrawable(this, what, when);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(who.getTaint());
         addTaint(what.getTaint());
         addTaint(when);
-        // ---------- Original Method ----------
-        //if (who == mCurrDrawable && getCallback() != null) {
-            //getCallback().scheduleDrawable(this, what, when);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.863 -0400", hash_original_method = "BF197FFA306784FCC1A1C762AD43B7D1", hash_generated_method = "4F7CC71D29FB2EFA8349A3AF37692C95")
     public void unscheduleDrawable(Drawable who, Runnable what) {
         {
             boolean var7C6FCB42D88C4A46B669C493EC47FC13_1794164631 = (who == mCurrDrawable && getCallback() != null);
             {
                 getCallback().unscheduleDrawable(this, what);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(who.getTaint());
         addTaint(what.getTaint());
-        // ---------- Original Method ----------
-        //if (who == mCurrDrawable && getCallback() != null) {
-            //getCallback().unscheduleDrawable(this, what);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.864 -0400", hash_original_method = "29A0A86F8B666C86609CA80FF461C32C", hash_generated_method = "04BCC2B276D4334FF4A975CF61A61D62")
     @Override
     public boolean setVisible(boolean visible, boolean restart) {
         boolean changed = super.setVisible(visible, restart);
         {
             mLastDrawable.setVisible(visible, restart);
-        } //End block
+        } 
         {
             mCurrDrawable.setVisible(visible, restart);
-        } //End block
+        } 
         addTaint(visible);
         addTaint(restart);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_192418060 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_192418060;
-        // ---------- Original Method ----------
-        //boolean changed = super.setVisible(visible, restart);
-        //if (mLastDrawable != null) {
-            //mLastDrawable.setVisible(visible, restart);
-        //}
-        //if (mCurrDrawable != null) {
-            //mCurrDrawable.setVisible(visible, restart);
-        //}
-        //return changed;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.864 -0400", hash_original_method = "1234F5DF929258DFDBB23F3D48CB2B3B", hash_generated_method = "AC3DAC930DC187F7CC795EE4254ADB11")
     @Override
     public int getOpacity() {
         {
             boolean var43C2AE0F0A427F69D13410F1C256ECD1_830145272 = (mCurrDrawable == null || !mCurrDrawable.isVisible());
             Object varA261B893D3519856DD56BE7D2273C99F_1304564464 = (mDrawableContainerState.getOpacity());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_95418904 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_95418904;
-        // ---------- Original Method ----------
-        //return mCurrDrawable == null || !mCurrDrawable.isVisible() ? PixelFormat.TRANSPARENT :
-                //mDrawableContainerState.getOpacity();
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.867 -0400", hash_original_method = "DF0D8C256AB252B9122AE282C5336A53", hash_generated_method = "CB5D1455D14A493049CF89EC8C8109B9")
     public boolean selectDrawable(int idx) {
         final long now = SystemClock.uptimeMillis();
@@ -518,19 +539,19 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         {
             {
                 mLastDrawable.setVisible(false, false);
-            } //End block
+            } 
             {
                 mLastDrawable = mCurrDrawable;
                 mExitAnimationEnd = now + mDrawableContainerState.mExitFadeDuration;
-            } //End block
+            } 
             {
                 mLastDrawable = null;
                 mExitAnimationEnd = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mCurrDrawable.setVisible(false, false);
-        } //End block
+        } 
         {
             Drawable d = mDrawableContainerState.mDrawables[idx];
             mCurrDrawable = d;
@@ -538,22 +559,22 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             {
                 {
                     mEnterAnimationEnd = now + mDrawableContainerState.mEnterFadeDuration;
-                } //End block
+                } 
                 {
                     d.setAlpha(mAlpha);
-                } //End block
+                } 
                 d.setVisible(isVisible(), true);
                 d.setDither(mDrawableContainerState.mDither);
                 d.setColorFilter(mColorFilter);
                 d.setState(getState());
                 d.setLevel(getLevel());
                 d.setBounds(getBounds());
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mCurrDrawable = null;
             mCurIndex = -1;
-        } //End block
+        } 
         {
             {
                 mAnimationRunnable = new Runnable() {                    
@@ -562,22 +583,22 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
                     public void run() {
                         animate(true);
                         invalidateSelf();
-                        // ---------- Original Method ----------
-                        //animate(true);
-                        //invalidateSelf();
+                        
+                        
+                        
                     }
 };
-            } //End block
+            } 
             {
                 unscheduleSelf(mAnimationRunnable);
-            } //End block
+            } 
             animate(true);
-        } //End block
+        } 
         invalidateSelf();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_335337440 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_335337440;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -590,96 +611,98 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
                 {
                     mCurrDrawable.setAlpha(mAlpha);
                     mEnterAnimationEnd = 0;
-                } //End block
+                } 
                 {
                     int animAlpha = (int)((mEnterAnimationEnd-now)*255)
                             / mDrawableContainerState.mEnterFadeDuration;
                     android.util.Log.i(TAG, toString() + " cur alpha " + animAlpha);
                     mCurrDrawable.setAlpha(((255-animAlpha)*mAlpha)/255);
                     animating = true;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             mEnterAnimationEnd = 0;
-        } //End block
+        } 
         {
             {
                 {
                     mLastDrawable.setVisible(false, false);
                     mLastDrawable = null;
                     mExitAnimationEnd = 0;
-                } //End block
+                } 
                 {
                     int animAlpha = (int)((mExitAnimationEnd-now)*255)
                             / mDrawableContainerState.mExitFadeDuration;
                     android.util.Log.i(TAG, toString() + " last alpha " + animAlpha);
                     mLastDrawable.setAlpha((animAlpha*mAlpha)/255);
                     animating = true;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             mExitAnimationEnd = 0;
-        } //End block
+        } 
         {
             scheduleSelf(mAnimationRunnable, now + 1000/60);
-        } //End block
+        } 
         addTaint(schedule);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.869 -0400", hash_original_method = "2271215EA07D061295E4A17A597D4C85", hash_generated_method = "36DD56DB95A366C4F366BBE30EE092E0")
     @Override
     public Drawable getCurrent() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1038626166 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1038626166 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1038626166 = mCurrDrawable;
-        varB4EAC82CA7396A68D541C85D26508E83_1038626166.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1038626166.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1038626166;
-        // ---------- Original Method ----------
-        //return mCurrDrawable;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.870 -0400", hash_original_method = "7CCE0C3F432CC06D16574FAD35E80869", hash_generated_method = "A6D33A161552E59DD8BAFCB7561D6947")
     @Override
     public ConstantState getConstantState() {
-        ConstantState varB4EAC82CA7396A68D541C85D26508E83_177057753 = null; //Variable for return #1
-        ConstantState varB4EAC82CA7396A68D541C85D26508E83_1816135516 = null; //Variable for return #2
+        ConstantState varB4EAC82CA7396A68D541C85D26508E83_177057753 = null; 
+        ConstantState varB4EAC82CA7396A68D541C85D26508E83_1816135516 = null; 
         {
             boolean varCF83176F78BEA6477EA3D34B3F17AD89_523967058 = (mDrawableContainerState.canConstantState());
             {
                 mDrawableContainerState.mChangingConfigurations = getChangingConfigurations();
                 varB4EAC82CA7396A68D541C85D26508E83_177057753 = mDrawableContainerState;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1816135516 = null;
-        ConstantState varA7E53CE21691AB073D9660D615818899_510145587; //Final return value
+        ConstantState varA7E53CE21691AB073D9660D615818899_510145587; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_510145587 = varB4EAC82CA7396A68D541C85D26508E83_177057753;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_510145587 = varB4EAC82CA7396A68D541C85D26508E83_1816135516;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_510145587.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_510145587.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_510145587;
-        // ---------- Original Method ----------
-        //if (mDrawableContainerState.canConstantState()) {
-            //mDrawableContainerState.mChangingConfigurations = getChangingConfigurations();
-            //return mDrawableContainerState;
-        //}
-        //return null;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.871 -0400", hash_original_method = "9CED290C930F72A121B65658EE47F79B", hash_generated_method = "8B234DD851AF3143EB3BEB9ED5DEC3BB")
     @Override
     public Drawable mutate() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1619372843 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1619372843 = null; 
         {
             boolean varC94B19053599294E7944C8C841976773_1544408752 = (!mMutated && super.mutate() == this);
             {
@@ -689,32 +712,32 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
                     int i = 0;
                     {
                         drawables[i].mutate();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mMutated = true;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1619372843 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1619372843.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1619372843.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1619372843;
-        // ---------- Original Method ----------
-        //if (!mMutated && super.mutate() == this) {
-            //final int N = mDrawableContainerState.getChildCount();
-            //final Drawable[] drawables = mDrawableContainerState.getChildren();
-            //for (int i = 0; i < N; i++) {
-                //if (drawables[i] != null) drawables[i].mutate();
-            //}
-            //mMutated = true;
-        //}
-        //return this;
+        
+        
+            
+            
+            
+                
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.872 -0400", hash_original_method = "8007C958EC09F138BD431BCAF111D646", hash_generated_method = "C420DDEC89C73B6C63F887832E2D9CA4")
     protected void setConstantState(DrawableContainerState state) {
         mDrawableContainerState = state;
-        // ---------- Original Method ----------
-        //mDrawableContainerState = state;
+        
+        
     }
 
     
@@ -805,18 +828,18 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
                     {
                         {
                             mDrawables[i] = origDr[i].getConstantState().newDrawable(res);
-                        } //End block
+                        } 
                         {
                             mDrawables[i] = origDr[i].getConstantState().newDrawable();
-                        } //End block
+                        } 
                         mDrawables[i].setCallback(owner);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mCheckedConstantState = mCanConstantState = true;
                 mVariablePadding = orig.mVariablePadding;
                 {
                     mConstantPadding = new Rect(orig.mConstantPadding);
-                } //End block
+                } 
                 mConstantSize = orig.mConstantSize;
                 mComputedConstantSize = orig.mComputedConstantSize;
                 mConstantWidth = orig.mConstantWidth;
@@ -828,14 +851,14 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
                 mDither = orig.mDither;
                 mEnterFadeDuration = orig.mEnterFadeDuration;
                 mExitFadeDuration = orig.mExitFadeDuration;
-            } //End block
+            } 
             {
                 mDrawables = new Drawable[10];
                 mNumChildren = 0;
                 mCheckedConstantState = mCanConstantState = false;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -844,8 +867,8 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         public int getChangingConfigurations() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_935655886 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_935655886;
-            // ---------- Original Method ----------
-            //return mChangingConfigurations;
+            
+            
         }
 
         
@@ -854,7 +877,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             final int pos = mNumChildren;
             {
                 growArray(pos, pos+10);
-            } //End block
+            } 
             dr.setVisible(false, true);
             dr.setCallback(mOwner);
             mDrawables[pos] = dr;
@@ -866,22 +889,22 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             mComputedConstantSize = false;
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2068360615 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2068360615;
-            // ---------- Original Method ----------
-            //final int pos = mNumChildren;
-            //if (pos >= mDrawables.length) {
-                //growArray(pos, pos+10);
-            //}
-            //dr.setVisible(false, true);
-            //dr.setCallback(mOwner);
-            //mDrawables[pos] = dr;
-            //mNumChildren++;
-            //mChildrenChangingConfigurations |= dr.getChangingConfigurations();
-            //mHaveOpacity = false;
-            //mHaveStateful = false;
-            //mConstantPadding = null;
-            //mPaddingChecked = false;
-            //mComputedConstantSize = false;
-            //return pos;
+            
+            
+            
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -889,41 +912,41 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         public final int getChildCount() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_233469817 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_233469817;
-            // ---------- Original Method ----------
-            //return mNumChildren;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.876 -0400", hash_original_method = "F5C2CB0FAF6BF41EBD2EF1D322F89AD5", hash_generated_method = "430BE889FE8B9AC4D82929504B1D7963")
         public final Drawable[] getChildren() {
-            Drawable[] varB4EAC82CA7396A68D541C85D26508E83_1904092083 = null; //Variable for return #1
+            Drawable[] varB4EAC82CA7396A68D541C85D26508E83_1904092083 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1904092083 = mDrawables;
-            varB4EAC82CA7396A68D541C85D26508E83_1904092083.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1904092083.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1904092083;
-            // ---------- Original Method ----------
-            //return mDrawables;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.877 -0400", hash_original_method = "291079EAD380D117FACCF8E598F58B57", hash_generated_method = "9E63340C83EEEB40E3F74E85F49DB546")
         public final void setVariablePadding(boolean variable) {
             mVariablePadding = variable;
-            // ---------- Original Method ----------
-            //mVariablePadding = variable;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.879 -0400", hash_original_method = "F49D2F39EC6FEC96BF9263C8B9281632", hash_generated_method = "B9F0CF1EF405C8BB85C97608D22861D0")
         public final Rect getConstantPadding() {
-            Rect varB4EAC82CA7396A68D541C85D26508E83_1738542351 = null; //Variable for return #1
-            Rect varB4EAC82CA7396A68D541C85D26508E83_1186157720 = null; //Variable for return #2
-            Rect varB4EAC82CA7396A68D541C85D26508E83_1547986448 = null; //Variable for return #3
+            Rect varB4EAC82CA7396A68D541C85D26508E83_1738542351 = null; 
+            Rect varB4EAC82CA7396A68D541C85D26508E83_1186157720 = null; 
+            Rect varB4EAC82CA7396A68D541C85D26508E83_1547986448 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1738542351 = null;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1186157720 = mConstantPadding;
-            } //End block
+            } 
             Rect r = null;
             final Rect t = new Rect();
             final int N = getChildCount();
@@ -939,36 +962,36 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
                             r.top = t.top;
                             r.right = t.right;
                             r.bottom = t.bottom;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             mPaddingChecked = true;
             varB4EAC82CA7396A68D541C85D26508E83_1547986448 = (mConstantPadding = r);
-            Rect varA7E53CE21691AB073D9660D615818899_1833547660; //Final return value
+            Rect varA7E53CE21691AB073D9660D615818899_1833547660; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1833547660 = varB4EAC82CA7396A68D541C85D26508E83_1738542351;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1833547660 = varB4EAC82CA7396A68D541C85D26508E83_1186157720;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1833547660 = varB4EAC82CA7396A68D541C85D26508E83_1547986448;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1833547660.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1833547660.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1833547660;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.880 -0400", hash_original_method = "1BEAC422BABD76426588E9F434C2D5CD", hash_generated_method = "0B85399E5ECA2518EC987CAE64EFA9F0")
         public final void setConstantSize(boolean constant) {
             mConstantSize = constant;
-            // ---------- Original Method ----------
-            //mConstantSize = constant;
+            
+            
         }
 
         
@@ -976,8 +999,8 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         public final boolean isConstantSize() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1907811653 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1907811653;
-            // ---------- Original Method ----------
-            //return mConstantSize;
+            
+            
         }
 
         
@@ -985,14 +1008,14 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         public final int getConstantWidth() {
             {
                 computeConstantSize();
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_469175422 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_469175422;
-            // ---------- Original Method ----------
-            //if (!mComputedConstantSize) {
-                //computeConstantSize();
-            //}
-            //return mConstantWidth;
+            
+            
+                
+            
+            
         }
 
         
@@ -1000,14 +1023,14 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         public final int getConstantHeight() {
             {
                 computeConstantSize();
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1336446897 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1336446897;
-            // ---------- Original Method ----------
-            //if (!mComputedConstantSize) {
-                //computeConstantSize();
-            //}
-            //return mConstantHeight;
+            
+            
+                
+            
+            
         }
 
         
@@ -1015,14 +1038,14 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         public final int getConstantMinimumWidth() {
             {
                 computeConstantSize();
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1579653659 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1579653659;
-            // ---------- Original Method ----------
-            //if (!mComputedConstantSize) {
-                //computeConstantSize();
-            //}
-            //return mConstantMinimumWidth;
+            
+            
+                
+            
+            
         }
 
         
@@ -1030,14 +1053,14 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         public final int getConstantMinimumHeight() {
             {
                 computeConstantSize();
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_381647887 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_381647887;
-            // ---------- Original Method ----------
-            //if (!mComputedConstantSize) {
-                //computeConstantSize();
-            //}
-            //return mConstantMinimumHeight;
+            
+            
+                
+            
+            
         }
 
         
@@ -1060,33 +1083,33 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
                     mConstantMinimumWidth = s;
                     s = dr.getMinimumHeight();
                     mConstantMinimumHeight = s;
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //mComputedConstantSize = true;
-            //final int N = getChildCount();
-            //final Drawable[] drawables = mDrawables;
-            //mConstantWidth = mConstantHeight = -1;
-            //mConstantMinimumWidth = mConstantMinimumHeight = 0;
-            //for (int i = 0; i < N; i++) {
-                //Drawable dr = drawables[i];
-                //int s = dr.getIntrinsicWidth();
-                //if (s > mConstantWidth) mConstantWidth = s;
-                //s = dr.getIntrinsicHeight();
-                //if (s > mConstantHeight) mConstantHeight = s;
-                //s = dr.getMinimumWidth();
-                //if (s > mConstantMinimumWidth) mConstantMinimumWidth = s;
-                //s = dr.getMinimumHeight();
-                //if (s > mConstantMinimumHeight) mConstantMinimumHeight = s;
-            //}
+                } 
+            } 
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.883 -0400", hash_original_method = "C7A92F60FC2D3E73CF200C7144A831FD", hash_generated_method = "31EA4832DE115AD3D1ED2D154F4F3A0E")
         public final void setEnterFadeDuration(int duration) {
             mEnterFadeDuration = duration;
-            // ---------- Original Method ----------
-            //mEnterFadeDuration = duration;
+            
+            
         }
 
         
@@ -1094,16 +1117,16 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         public final int getEnterFadeDuration() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_625237455 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_625237455;
-            // ---------- Original Method ----------
-            //return mEnterFadeDuration;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.884 -0400", hash_original_method = "1ED7E9EB98364255825D9EFA32269162", hash_generated_method = "93C0A2E6B640F643574AA208A98DA016")
         public final void setExitFadeDuration(int duration) {
             mExitFadeDuration = duration;
-            // ---------- Original Method ----------
-            //mExitFadeDuration = duration;
+            
+            
         }
 
         
@@ -1111,8 +1134,8 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         public final int getExitFadeDuration() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_385365974 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_385365974;
-            // ---------- Original Method ----------
-            //return mExitFadeDuration;
+            
+            
         }
 
         
@@ -1127,25 +1150,25 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
                 int i = 1;
                 {
                     op = Drawable.resolveOpacity(op, drawables[i].getOpacity());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mOpacity = op;
             mHaveOpacity = true;
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_588699288 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_588699288;
-            // ---------- Original Method ----------
-            //if (mHaveOpacity) {
-                //return mOpacity;
-            //}
-            //final int N = getChildCount();
-            //final Drawable[] drawables = mDrawables;
-            //int op = N > 0 ? drawables[0].getOpacity() : PixelFormat.TRANSPARENT;
-            //for (int i = 1; i < N; i++) {
-                //op = Drawable.resolveOpacity(op, drawables[i].getOpacity());
-            //}
-            //mOpacity = op;
-            //mHaveOpacity = true;
-            //return op;
+            
+            
+                
+            
+            
+            
+            
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -1160,29 +1183,29 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
                         boolean varFD66FD269DB3E977FED32CCF0B77624A_466501997 = (mDrawables[i].isStateful());
                         {
                             stateful = true;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             mStateful = stateful;
             mHaveStateful = true;
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1051792477 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1051792477;
-            // ---------- Original Method ----------
-            //if (mHaveStateful) {
-                //return mStateful;
-            //}
-            //boolean stateful = false;
-            //final int N = getChildCount();
-            //for (int i = 0; i < N; i++) {
-                //if (mDrawables[i].isStateful()) {
-                    //stateful = true;
-                    //break;
-                //}
-            //}
-            //mStateful = stateful;
-            //mHaveStateful = true;
-            //return stateful;
+            
+            
+                
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+            
+            
+            
         }
 
         
@@ -1193,10 +1216,10 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             mDrawables = newDrawables;
             addTaint(oldSize);
             addTaint(newSize);
-            // ---------- Original Method ----------
-            //Drawable[] newDrawables = new Drawable[newSize];
-            //System.arraycopy(mDrawables, 0, newDrawables, 0, oldSize);
-            //mDrawables = newDrawables;
+            
+            
+            
+            
         }
 
         
@@ -1212,27 +1235,27 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
                             boolean var67C8694F6E7AAF6172CA9B1F09577060_710452735 = (mDrawables[i].getConstantState() == null);
                             {
                                 mCanConstantState = false;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 mCheckedConstantState = true;
-            } //End block
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_442023668 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_442023668;
-            // ---------- Original Method ----------
-            //if (!mCheckedConstantState) {
-                //mCanConstantState = true;
-                //final int N = mNumChildren;
-                //for (int i=0; i<N; i++) {
-                    //if (mDrawables[i].getConstantState() == null) {
-                        //mCanConstantState = false;
-                        //break;
-                    //}
-                //}
-                //mCheckedConstantState = true;
-            //}
-            //return mCanConstantState;
+            
+            
+                
+                
+                
+                    
+                        
+                        
+                    
+                
+                
+            
+            
         }
 
         

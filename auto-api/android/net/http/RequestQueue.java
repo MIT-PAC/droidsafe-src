@@ -1,11 +1,11 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -52,7 +52,7 @@ public class RequestQueue implements RequestFeeder {
     public  RequestQueue(Context context) {
         this(context, CONNECTION_COUNT);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -64,16 +64,17 @@ public class RequestQueue implements RequestFeeder {
         mActivePool.startup();
         mConnectivityManager = (ConnectivityManager)
                 context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mPending = new LinkedHashMap<HttpHost, LinkedList<Request>>(32);
-        //mActivePool = new ActivePool(connectionCount);
-        //mActivePool.startup();
-        //mConnectivityManager = (ConnectivityManager)
-                //context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        
+        
+        
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.338 -0400", hash_original_method = "192F6D29BBECFA47E09E7D8D48EF8859", hash_generated_method = "76FEDFB3372B70C8260AEFF8EB55F7A3")
     public synchronized void enablePlatformNotifications() {
         HttpLog.v("RequestQueue.enablePlatformNotifications() network");
@@ -83,51 +84,53 @@ public class RequestQueue implements RequestFeeder {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.338 -0400", hash_original_method = "3CB2B7FAEA507C11972A385D868E1E52", hash_generated_method = "50705C8A9D00ADEEB2A67E3959DD9EA8")
                 @Override
                 public void onReceive(Context ctx, Intent intent) {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     setProxyConfig();
                     addTaint(ctx.getTaint());
                     addTaint(intent.getTaint());
-                    // ---------- Original Method ----------
-                    //setProxyConfig();
+                    
+                    
                 }
 };
             mContext.registerReceiver(mProxyChangeReceiver,
                                       new IntentFilter(Proxy.PROXY_CHANGE_ACTION));
-        } //End block
+        } 
         setProxyConfig();
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) HttpLog.v("RequestQueue.enablePlatformNotifications() network");
-        //if (mProxyChangeReceiver == null) {
-            //mProxyChangeReceiver =
-                    //new BroadcastReceiver() {
-                        //@Override
-                        //public void onReceive(Context ctx, Intent intent) {
-                            //setProxyConfig();
-                        //}
-                    //};
-            //mContext.registerReceiver(mProxyChangeReceiver,
-                                      //new IntentFilter(Proxy.PROXY_CHANGE_ACTION));
-        //}
-        //setProxyConfig();
+        
+        
+        
+            
+                    
+                        
+                        
+                            
+                        
+                    
+            
+                                      
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.338 -0400", hash_original_method = "B133918A77AADD577D84EC4FDA196DDC", hash_generated_method = "A37E9AEDA43DF86F46832B3F924735F1")
     public synchronized void disablePlatformNotifications() {
         HttpLog.v("RequestQueue.disablePlatformNotifications() network");
         {
             mContext.unregisterReceiver(mProxyChangeReceiver);
             mProxyChangeReceiver = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) HttpLog.v("RequestQueue.disablePlatformNotifications() network");
-        //if (mProxyChangeReceiver != null) {
-            //mContext.unregisterReceiver(mProxyChangeReceiver);
-            //mProxyChangeReceiver = null;
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.339 -0400", hash_original_method = "381746B4CF404D7B9FDB43420AECD746", hash_generated_method = "CD64FAE9321EC3B9C9BBBD7F4B0DE9BA")
     private synchronized void setProxyConfig() {
         NetworkInfo info = mConnectivityManager.getActiveNetworkInfo();
@@ -135,53 +138,54 @@ public class RequestQueue implements RequestFeeder {
             boolean var24FBA6C722421408BD9DC8A74F9723F7_497247293 = (info != null && info.getType() == ConnectivityManager.TYPE_WIFI);
             {
                 mProxyHost = null;
-            } //End block
+            } 
             {
                 String host = Proxy.getHost(mContext);
                 HttpLog.v("RequestQueue.setProxyConfig " + host);
                 {
                     mProxyHost = null;
-                } //End block
+                } 
                 {
                     mActivePool.disablePersistence();
                     mProxyHost = new HttpHost(host, Proxy.getPort(mContext), "http");
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //NetworkInfo info = mConnectivityManager.getActiveNetworkInfo();
-        //if (info != null && info.getType() == ConnectivityManager.TYPE_WIFI) {
-            //mProxyHost = null;
-        //} else {
-            //String host = Proxy.getHost(mContext);
-            //if (HttpLog.LOGV) HttpLog.v("RequestQueue.setProxyConfig " + host);
-            //if (host == null) {
-                //mProxyHost = null;
-            //} else {
-                //mActivePool.disablePersistence();
-                //mProxyHost = new HttpHost(host, Proxy.getPort(mContext), "http");
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+        
+            
+            
+            
+                
+            
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.340 -0400", hash_original_method = "36781366BC2C228EA97F354BC28E7BDA", hash_generated_method = "D1F524E696F931CECE88102481354808")
     public HttpHost getProxyHost() {
-        HttpHost varB4EAC82CA7396A68D541C85D26508E83_1081479702 = null; //Variable for return #1
+        HttpHost varB4EAC82CA7396A68D541C85D26508E83_1081479702 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1081479702 = mProxyHost;
-        varB4EAC82CA7396A68D541C85D26508E83_1081479702.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1081479702.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1081479702;
-        // ---------- Original Method ----------
-        //return mProxyHost;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.341 -0400", hash_original_method = "D4465F27265450A81D8D5C54F66A3578", hash_generated_method = "D71100226ED1300CA3ED03C5EE400945")
     public RequestHandle queueRequest(
             String url, String method,
             Map<String, String> headers, EventHandler eventHandler,
             InputStream bodyProvider, int bodyLength) {
-        RequestHandle varB4EAC82CA7396A68D541C85D26508E83_777518769 = null; //Variable for return #1
+        RequestHandle varB4EAC82CA7396A68D541C85D26508E83_777518769 = null; 
         WebAddress uri = new WebAddress(url);
         varB4EAC82CA7396A68D541C85D26508E83_777518769 = queueRequest(url, uri, method, headers, eventHandler,
                             bodyProvider, bodyLength);
@@ -191,25 +195,26 @@ public class RequestQueue implements RequestFeeder {
         addTaint(eventHandler.getTaint());
         addTaint(bodyProvider.getTaint());
         addTaint(bodyLength);
-        varB4EAC82CA7396A68D541C85D26508E83_777518769.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_777518769.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_777518769;
-        // ---------- Original Method ----------
-        //WebAddress uri = new WebAddress(url);
-        //return queueRequest(url, uri, method, headers, eventHandler,
-                            //bodyProvider, bodyLength);
+        
+        
+        
+                            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.341 -0400", hash_original_method = "5EE74AB0AE90D0DA727E01E7B767B670", hash_generated_method = "E42DA219D7C6F3359AE49DB8F27368A7")
     public RequestHandle queueRequest(
             String url, WebAddress uri, String method, Map<String, String> headers,
             EventHandler eventHandler,
             InputStream bodyProvider, int bodyLength) {
-        RequestHandle varB4EAC82CA7396A68D541C85D26508E83_1202445895 = null; //Variable for return #1
+        RequestHandle varB4EAC82CA7396A68D541C85D26508E83_1202445895 = null; 
         HttpLog.v("RequestQueue.queueRequest " + uri);
         {
             eventHandler = new LoggingEventHandler();
-        } //End block
+        } 
         Request req;
         HttpHost httpHost = new HttpHost(uri.getHost(), uri.getPort(), uri.getScheme());
         req = new Request(method, httpHost, mProxyHost, uri.getPath(), bodyProvider,
@@ -226,35 +231,36 @@ public class RequestQueue implements RequestFeeder {
         addTaint(eventHandler.getTaint());
         addTaint(bodyProvider.getTaint());
         addTaint(bodyLength);
-        varB4EAC82CA7396A68D541C85D26508E83_1202445895.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1202445895.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1202445895;
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) HttpLog.v("RequestQueue.queueRequest " + uri);
-        //if (eventHandler == null) {
-            //eventHandler = new LoggingEventHandler();
-        //}
-        //Request req;
-        //HttpHost httpHost = new HttpHost(uri.getHost(), uri.getPort(), uri.getScheme());
-        //req = new Request(method, httpHost, mProxyHost, uri.getPath(), bodyProvider,
-                          //bodyLength, eventHandler, headers);
-        //queueRequest(req, false);
-        //mActivePool.mTotalRequest++;
-        //mActivePool.startConnectionThread();
-        //return new RequestHandle(
-                //this, url, uri, method, headers, bodyProvider, bodyLength,
-                //req);
+        
+        
+        
+            
+        
+        
+        
+        
+                          
+        
+        
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.342 -0400", hash_original_method = "5ADB9D7A6CBFB38DBDB876B33452D400", hash_generated_method = "2FBB1FD03D4B4F78B0345E3BF6A75253")
     public RequestHandle queueSynchronousRequest(String url, WebAddress uri,
             String method, Map<String, String> headers,
             EventHandler eventHandler, InputStream bodyProvider,
             int bodyLength) {
-        RequestHandle varB4EAC82CA7396A68D541C85D26508E83_1084200540 = null; //Variable for return #1
+        RequestHandle varB4EAC82CA7396A68D541C85D26508E83_1084200540 = null; 
         {
             HttpLog.v("RequestQueue.dispatchSynchronousRequest " + uri);
-        } //End block
+        } 
         HttpHost host = new HttpHost(uri.getHost(), uri.getPort(), uri.getScheme());
         Request req = new Request(method, host, mProxyHost, uri.getPath(),
                 bodyProvider, bodyLength, eventHandler, headers);
@@ -270,47 +276,50 @@ public class RequestQueue implements RequestFeeder {
         addTaint(eventHandler.getTaint());
         addTaint(bodyProvider.getTaint());
         addTaint(bodyLength);
-        varB4EAC82CA7396A68D541C85D26508E83_1084200540.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1084200540.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1084200540;
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("RequestQueue.dispatchSynchronousRequest " + uri);
-        //}
-        //HttpHost host = new HttpHost(uri.getHost(), uri.getPort(), uri.getScheme());
-        //Request req = new Request(method, host, mProxyHost, uri.getPath(),
-                //bodyProvider, bodyLength, eventHandler, headers);
-        //host = determineHost(host);
-        //Connection conn = Connection.getConnection(mContext, host, mProxyHost,
-                //new SyncFeeder());
-        //return new RequestHandle(this, url, uri, method, headers, bodyProvider,
-                //bodyLength, req, conn);
+        
+        
+            
+        
+        
+        
+                
+        
+        
+                
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.343 -0400", hash_original_method = "19FC52B8DC895C49DAE0ECA4EB6CA639", hash_generated_method = "60EF57F53742A9E3DDEF6DB10A95341F")
     private HttpHost determineHost(HttpHost host) {
-        HttpHost varB4EAC82CA7396A68D541C85D26508E83_490105118 = null; //Variable for return #1
+        HttpHost varB4EAC82CA7396A68D541C85D26508E83_490105118 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_490105118 = (mProxyHost == null || "https".equals(host.getSchemeName()))
                 ? host : mProxyHost;
         addTaint(host.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_490105118.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_490105118.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_490105118;
-        // ---------- Original Method ----------
-        //return (mProxyHost == null || "https".equals(host.getSchemeName()))
-                //? host : mProxyHost;
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.343 -0400", hash_original_method = "EFE82EE341DC6BD22EFE3AAE27ABB231", hash_generated_method = "49892FCEEA6FB988DC08DF2DC1CC6196")
     synchronized boolean requestsPending() {
         boolean var7133BF04DDB95C8FD1854EE006C98F4A_960655780 = (!mPending.isEmpty());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_979415553 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_979415553;
-        // ---------- Original Method ----------
-        //return !mPending.isEmpty();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.344 -0400", hash_original_method = "5E944A5C3AFB2FB0842C37E33C83D8D2", hash_generated_method = "7625A713B5BC90931CFAD875001249E6")
     synchronized void dump() {
         HttpLog.v("dump()");
@@ -334,47 +343,49 @@ public class RequestQueue implements RequestFeeder {
                             {
                                 Request request = (Request)iter.next();
                                 line.append(request + " ");
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         dump.append(line);
                         dump.append("\n");
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         HttpLog.v(dump.toString());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.345 -0400", hash_original_method = "8F04B443A564D50EFFE076AEA97295A7", hash_generated_method = "2273C2ABB79D02E99684EBB4EABD673B")
     public synchronized Request getRequest() {
-        Request varB4EAC82CA7396A68D541C85D26508E83_1943145871 = null; //Variable for return #1
+        Request varB4EAC82CA7396A68D541C85D26508E83_1943145871 = null; 
         Request ret = null;
         {
             boolean varE9BD97FE1B3E4E52EC25D85BE293A34F_1891824499 = (!mPending.isEmpty());
             {
                 ret = removeFirst(mPending);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         HttpLog.v("RequestQueue.getRequest() => " + ret);
         varB4EAC82CA7396A68D541C85D26508E83_1943145871 = ret;
-        varB4EAC82CA7396A68D541C85D26508E83_1943145871.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1943145871.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1943145871;
-        // ---------- Original Method ----------
-        //Request ret = null;
-        //if (!mPending.isEmpty()) {
-            //ret = removeFirst(mPending);
-        //}
-        //if (HttpLog.LOGV) HttpLog.v("RequestQueue.getRequest() => " + ret);
-        //return ret;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.346 -0400", hash_original_method = "871E1F4E9BD2BA7BA6F72CE2CEEFAC66", hash_generated_method = "E7E9E5F925BCF4516A8FDA310FCCDDCE")
     public synchronized Request getRequest(HttpHost host) {
-        Request varB4EAC82CA7396A68D541C85D26508E83_1476825780 = null; //Variable for return #1
+        Request varB4EAC82CA7396A68D541C85D26508E83_1476825780 = null; 
         Request ret = null;
         {
             boolean varE7ABDF5A35A014790A801A2680C4A1A8_1449677135 = (mPending.containsKey(host));
@@ -385,57 +396,61 @@ public class RequestQueue implements RequestFeeder {
                     boolean var4CB5D81D4471F38D594288457A576223_2116886939 = (reqList.isEmpty());
                     {
                         mPending.remove(host);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         HttpLog.v("RequestQueue.getRequest(" + host + ") => " + ret);
         varB4EAC82CA7396A68D541C85D26508E83_1476825780 = ret;
         addTaint(host.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1476825780.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1476825780.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1476825780;
-        // ---------- Original Method ----------
-        //Request ret = null;
-        //if (mPending.containsKey(host)) {
-            //LinkedList<Request> reqList = mPending.get(host);
-            //ret = reqList.removeFirst();
-            //if (reqList.isEmpty()) {
-                //mPending.remove(host);
-            //}
-        //}
-        //if (HttpLog.LOGV) HttpLog.v("RequestQueue.getRequest(" + host + ") => " + ret);
-        //return ret;
+        
+        
+        
+            
+            
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.346 -0400", hash_original_method = "A6996F44457236E27DB2C5C55302FCBE", hash_generated_method = "D22A90E745DF4769E48C9FE6E8A26535")
     public synchronized boolean haveRequest(HttpHost host) {
         boolean var0F2263933ABF4CF4E5A684F5D02ACF6E_1973822398 = (mPending.containsKey(host));
         addTaint(host.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1610930832 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1610930832;
-        // ---------- Original Method ----------
-        //return mPending.containsKey(host);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.346 -0400", hash_original_method = "5DF1C437E9ED58A9D928A0798F1B9425", hash_generated_method = "08E6B360C8DA7DA38817DD6704BA0DFA")
     public void requeueRequest(Request request) {
         queueRequest(request, true);
         addTaint(request.getTaint());
-        // ---------- Original Method ----------
-        //queueRequest(request, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.347 -0400", hash_original_method = "36DEBCDEC4EFDB8CF8346CFD81066CDA", hash_generated_method = "305FCD4CBF7749B7023C16A68C3F0EFC")
     public void shutdown() {
         mActivePool.shutdown();
-        // ---------- Original Method ----------
-        //mActivePool.shutdown();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.347 -0400", hash_original_method = "99743D8700F7CD0272109FAA55D49D1A", hash_generated_method = "CE754A62811DC0AB8CA03E0344AE90E1")
     protected synchronized void queueRequest(Request request, boolean head) {
         HttpHost host;
@@ -446,56 +461,59 @@ public class RequestQueue implements RequestFeeder {
             boolean varE7ABDF5A35A014790A801A2680C4A1A8_1027379063 = (mPending.containsKey(host));
             {
                 reqList = mPending.get(host);
-            } //End block
+            } 
             {
                 reqList = new LinkedList<Request>();
                 mPending.put(host, reqList);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             reqList.addFirst(request);
-        } //End block
+        } 
         {
             reqList.add(request);
-        } //End block
+        } 
         addTaint(request.getTaint());
         addTaint(head);
-        // ---------- Original Method ----------
-        //HttpHost host = request.mProxyHost == null ? request.mHost : request.mProxyHost;
-        //LinkedList<Request> reqList;
-        //if (mPending.containsKey(host)) {
-            //reqList = mPending.get(host);
-        //} else {
-            //reqList = new LinkedList<Request>();
-            //mPending.put(host, reqList);
-        //}
-        //if (head) {
-            //reqList.addFirst(request);
-        //} else {
-            //reqList.add(request);
-        //}
+        
+        
+        
+        
+            
+        
+            
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.347 -0400", hash_original_method = "D615BD22372BF27837008A0B674B3672", hash_generated_method = "68F8461F4FB60C27086B594BAC5A2D5C")
     public void startTiming() {
         mActivePool.startTiming();
-        // ---------- Original Method ----------
-        //mActivePool.startTiming();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.348 -0400", hash_original_method = "93BD6698DCB4A99EC2C52A706270C860", hash_generated_method = "79A321F150AAF5DF19960FC8264B094B")
     public void stopTiming() {
         mActivePool.stopTiming();
-        // ---------- Original Method ----------
-        //mActivePool.stopTiming();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.349 -0400", hash_original_method = "F363C5354CB9B81208E7FAC033526D24", hash_generated_method = "CAF6F88C6C542A90FBF839F4881CF651")
     private Request removeFirst(LinkedHashMap<HttpHost, LinkedList<Request>> requestQueue) {
-        Request varB4EAC82CA7396A68D541C85D26508E83_1866987716 = null; //Variable for return #1
+        Request varB4EAC82CA7396A68D541C85D26508E83_1866987716 = null; 
         Request ret = null;
         Iterator<Map.Entry<HttpHost, LinkedList<Request>>> iter = requestQueue.entrySet().iterator();
         {
@@ -508,26 +526,26 @@ public class RequestQueue implements RequestFeeder {
                     boolean var4CB5D81D4471F38D594288457A576223_720626813 = (reqList.isEmpty());
                     {
                         requestQueue.remove(entry.getKey());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1866987716 = ret;
         addTaint(requestQueue.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1866987716.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1866987716.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1866987716;
-        // ---------- Original Method ----------
-        //Request ret = null;
-        //Iterator<Map.Entry<HttpHost, LinkedList<Request>>> iter = requestQueue.entrySet().iterator();
-        //if (iter.hasNext()) {
-            //Map.Entry<HttpHost, LinkedList<Request>> entry = iter.next();
-            //LinkedList<Request> reqList = entry.getValue();
-            //ret = reqList.removeFirst();
-            //if (reqList.isEmpty()) {
-                //requestQueue.remove(entry.getKey());
-            //}
-        //}
-        //return ret;
+        
+        
+        
+        
+            
+            
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -558,16 +576,16 @@ public class RequestQueue implements RequestFeeder {
                 {
                     mThreads[i] = new ConnectionThread(
                         mContext, i, this, RequestQueue.this);
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //mIdleCache = new IdleCache();
-            //mConnectionCount = connectionCount;
-            //mThreads = new ConnectionThread[mConnectionCount];
-            //for (int i = 0; i < mConnectionCount; i++) {
-                //mThreads[i] = new ConnectionThread(
-                        //mContext, i, this, RequestQueue.this);
-            //}
+                } 
+            } 
+            
+            
+            
+            
+            
+                
+                        
+            
         }
 
         
@@ -577,12 +595,12 @@ public class RequestQueue implements RequestFeeder {
                 int i = 0;
                 {
                     mThreads[i].start();
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //for (int i = 0; i < mConnectionCount; i++) {
-                //mThreads[i].start();
-            //}
+                } 
+            } 
+            
+            
+                
+            
         }
 
         
@@ -592,12 +610,12 @@ public class RequestQueue implements RequestFeeder {
                 int i = 0;
                 {
                     mThreads[i].requestStop();
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //for (int i = 0; i < mConnectionCount; i++) {
-                //mThreads[i].requestStop();
-            //}
+                } 
+            } 
+            
+            
+                
+            
         }
 
         
@@ -607,12 +625,12 @@ public class RequestQueue implements RequestFeeder {
                 Object varE793CDC2A4AC9B4DAF10C6DB63F4C18F_484162854 = (RequestQueue.this);
                 {
                     RequestQueue.this.notify();
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //synchronized (RequestQueue.this) {
-                //RequestQueue.this.notify();
-            //}
+                } 
+            } 
+            
+            
+                
+            
         }
 
         
@@ -624,18 +642,18 @@ public class RequestQueue implements RequestFeeder {
                     ConnectionThread rt = mThreads[i];
                     rt.mCurrentThreadTime = -1;
                     rt.mTotalThreadTime = 0;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mTotalRequest = 0;
             mTotalConnection = 0;
-            // ---------- Original Method ----------
-            //for (int i = 0; i < mConnectionCount; i++) {
-                //ConnectionThread rt = mThreads[i];
-                //rt.mCurrentThreadTime = -1;
-                //rt.mTotalThreadTime = 0;
-            //}
-            //mTotalRequest = 0;
-            //mTotalConnection = 0;
+            
+            
+                
+                
+                
+            
+            
+            
         }
 
         
@@ -648,25 +666,25 @@ public class RequestQueue implements RequestFeeder {
                     ConnectionThread rt = mThreads[i];
                     {
                         totalTime += rt.mTotalThreadTime;
-                    } //End block
+                    } 
                     rt.mCurrentThreadTime = 0;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             Log.d("Http", "Http thread used " + totalTime + " ms " + " for "
                     + mTotalRequest + " requests and " + mTotalConnection
                     + " new connections");
-            // ---------- Original Method ----------
-            //int totalTime = 0;
-            //for (int i = 0; i < mConnectionCount; i++) {
-                //ConnectionThread rt = mThreads[i];
-                //if (rt.mCurrentThreadTime != -1) {
-                    //totalTime += rt.mTotalThreadTime;
-                //}
-                //rt.mCurrentThreadTime = 0;
-            //}
-            //Log.d("Http", "Http thread used " + totalTime + " ms " + " for "
-                    //+ mTotalRequest + " requests and " + mTotalConnection
-                    //+ " new connections");
+            
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                    
+                    
         }
 
         
@@ -677,26 +695,26 @@ public class RequestQueue implements RequestFeeder {
                 int i = 0;
                 {
                     dump.append(mThreads[i] + "\n");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             HttpLog.v(dump.toString());
-            // ---------- Original Method ----------
-            //StringBuilder dump = new StringBuilder();
-            //for (int i = 0; i < mConnectionCount; i++) {
-                //dump.append(mThreads[i] + "\n");
-            //}
-            //HttpLog.v(dump.toString());
+            
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.354 -0400", hash_original_method = "36781366BC2C228EA97F354BC28E7BDA", hash_generated_method = "367E9611CC70D0B7CB274274CB5DB7D9")
         public HttpHost getProxyHost() {
-            HttpHost varB4EAC82CA7396A68D541C85D26508E83_893076974 = null; //Variable for return #1
+            HttpHost varB4EAC82CA7396A68D541C85D26508E83_893076974 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_893076974 = mProxyHost;
-            varB4EAC82CA7396A68D541C85D26508E83_893076974.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_893076974.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_893076974;
-            // ---------- Original Method ----------
-            //return mProxyHost;
+            
+            
         }
 
         
@@ -707,22 +725,22 @@ public class RequestQueue implements RequestFeeder {
                 {
                     Connection connection = mThreads[i].mConnection;
                     connection.setCanPersist(false);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mIdleCache.clear();
-            // ---------- Original Method ----------
-            //for (int i = 0; i < mConnectionCount; i++) {
-                //Connection connection = mThreads[i].mConnection;
-                //if (connection != null) connection.setCanPersist(false);
-            //}
-            //mIdleCache.clear();
+            
+            
+                
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.355 -0400", hash_original_method = "4350BDA0BFA960DC6ECB5B267907B720", hash_generated_method = "0B481C083E9F6F4D92CD7974D3B626CA")
          ConnectionThread getThread(HttpHost host) {
-            ConnectionThread varB4EAC82CA7396A68D541C85D26508E83_152523724 = null; //Variable for return #1
-            ConnectionThread varB4EAC82CA7396A68D541C85D26508E83_1484070703 = null; //Variable for return #2
+            ConnectionThread varB4EAC82CA7396A68D541C85D26508E83_152523724 = null; 
+            ConnectionThread varB4EAC82CA7396A68D541C85D26508E83_1484070703 = null; 
             {
                 Object varE793CDC2A4AC9B4DAF10C6DB63F4C18F_700392559 = (RequestQueue.this);
                 {
@@ -735,62 +753,62 @@ public class RequestQueue implements RequestFeeder {
                                 boolean var8E44A46CE9E7F837465A12630555EC7E_1848426044 = (connection != null && connection.mHost.equals(host));
                                 {
                                     varB4EAC82CA7396A68D541C85D26508E83_152523724 = ct;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1484070703 = null;
             addTaint(host.getTaint());
-            ConnectionThread varA7E53CE21691AB073D9660D615818899_2038158987; //Final return value
+            ConnectionThread varA7E53CE21691AB073D9660D615818899_2038158987; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_2038158987 = varB4EAC82CA7396A68D541C85D26508E83_152523724;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_2038158987 = varB4EAC82CA7396A68D541C85D26508E83_1484070703;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_2038158987.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_2038158987.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_2038158987;
-            // ---------- Original Method ----------
-            //synchronized(RequestQueue.this) {
-                //for (int i = 0; i < mThreads.length; i++) {
-                    //ConnectionThread ct = mThreads[i];
-                    //Connection connection = ct.mConnection;
-                    //if (connection != null && connection.mHost.equals(host)) {
-                        //return ct;
-                    //}
-                //}
-            //}
-            //return null;
+            
+            
+                
+                    
+                    
+                    
+                        
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.356 -0400", hash_original_method = "FFEAD5D96A31C5526086E61D15C11F62", hash_generated_method = "B1E466C3C515F77250B35836C19B33A3")
         public Connection getConnection(Context context, HttpHost host) {
-            Connection varB4EAC82CA7396A68D541C85D26508E83_571829886 = null; //Variable for return #1
+            Connection varB4EAC82CA7396A68D541C85D26508E83_571829886 = null; 
             host = RequestQueue.this.determineHost(host);
             Connection con = mIdleCache.getConnection(host);
             {
                 con = Connection.getConnection(mContext, host, mProxyHost,
                         RequestQueue.this);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_571829886 = con;
             addTaint(context.getTaint());
             addTaint(host.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_571829886.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_571829886.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_571829886;
-            // ---------- Original Method ----------
-            //host = RequestQueue.this.determineHost(host);
-            //Connection con = mIdleCache.getConnection(host);
-            //if (con == null) {
-                //mTotalConnection++;
-                //con = Connection.getConnection(mContext, host, mProxyHost,
-                        //RequestQueue.this);
-            //}
-            //return con;
+            
+            
+            
+            
+                
+                
+                        
+            
+            
         }
 
         
@@ -800,8 +818,8 @@ public class RequestQueue implements RequestFeeder {
             addTaint(connection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_569323155 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_569323155;
-            // ---------- Original Method ----------
-            //return mIdleCache.cacheConnection(connection.getHost(), connection);
+            
+            
         }
 
         
@@ -816,34 +834,34 @@ public class RequestQueue implements RequestFeeder {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.357 -0400", hash_original_method = "4463F8298E503AEAFD22486DF3099826", hash_generated_method = "E6A6A8CDE9B9C9FF0F1FF74192A505FE")
           SyncFeeder() {
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.358 -0400", hash_original_method = "E0C38BA5AF5E9B7363BEA9E204F697F3", hash_generated_method = "775B69EAB26AB987768E0EE5B033EFD8")
         public Request getRequest() {
-            Request varB4EAC82CA7396A68D541C85D26508E83_1904602906 = null; //Variable for return #1
+            Request varB4EAC82CA7396A68D541C85D26508E83_1904602906 = null; 
             Request r = mRequest;
             mRequest = null;
             varB4EAC82CA7396A68D541C85D26508E83_1904602906 = r;
-            varB4EAC82CA7396A68D541C85D26508E83_1904602906.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1904602906.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1904602906;
-            // ---------- Original Method ----------
-            //Request r = mRequest;
-            //mRequest = null;
-            //return r;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.359 -0400", hash_original_method = "DE8B4E1CA9B86F476AFDBAF1FF7FD442", hash_generated_method = "29A2365F6BB9BCCB5640FA8F24A08A51")
         public Request getRequest(HttpHost host) {
-            Request varB4EAC82CA7396A68D541C85D26508E83_2051391816 = null; //Variable for return #1
+            Request varB4EAC82CA7396A68D541C85D26508E83_2051391816 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2051391816 = getRequest();
             addTaint(host.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2051391816.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2051391816.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2051391816;
-            // ---------- Original Method ----------
-            //return getRequest();
+            
+            
         }
 
         
@@ -852,16 +870,16 @@ public class RequestQueue implements RequestFeeder {
             addTaint(host.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1802048183 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1802048183;
-            // ---------- Original Method ----------
-            //return mRequest != null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.359 -0400", hash_original_method = "D0AA652C1F1A28EE12BADC892C348224", hash_generated_method = "0490D711BBE9F89E677FF31CE7FA801F")
         public void requeueRequest(Request r) {
             mRequest = r;
-            // ---------- Original Method ----------
-            //mRequest = r;
+            
+            
         }
 
         

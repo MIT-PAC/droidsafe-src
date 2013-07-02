@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.Intent;
@@ -46,8 +46,8 @@ public class ShareActionProvider extends ActionProvider {
     public  ShareActionProvider(Context context) {
         super(context);
         mContext = context;
-        // ---------- Original Method ----------
-        //mContext = context;
+        
+        
     }
 
     
@@ -55,17 +55,17 @@ public class ShareActionProvider extends ActionProvider {
     public void setOnShareTargetSelectedListener(OnShareTargetSelectedListener listener) {
         mOnShareTargetSelectedListener = listener;
         setActivityChooserPolicyIfNeeded();
-        // ---------- Original Method ----------
-        //mOnShareTargetSelectedListener = listener;
-        //setActivityChooserPolicyIfNeeded();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.845 -0400", hash_original_method = "457E9B3A86A4C9D09DD81D115C288523", hash_generated_method = "3AB81B7345BCF0491CC3BA6E5DCE9C7E")
     @Override
     public View onCreateActionView() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        View varB4EAC82CA7396A68D541C85D26508E83_2028178011 = null; //Variable for return #1
+        
+        View varB4EAC82CA7396A68D541C85D26508E83_2028178011 = null; 
         ActivityChooserModel dataModel = ActivityChooserModel.get(mContext, mShareHistoryFileName);
         ActivityChooserView activityChooserView = new ActivityChooserView(mContext);
         activityChooserView.setActivityChooserModel(dataModel);
@@ -79,10 +79,10 @@ public class ShareActionProvider extends ActionProvider {
         activityChooserView.setExpandActivityOverflowButtonContentDescription(
                 R.string.shareactionprovider_share_with);
         varB4EAC82CA7396A68D541C85D26508E83_2028178011 = activityChooserView;
-        varB4EAC82CA7396A68D541C85D26508E83_2028178011.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2028178011.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2028178011;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -91,15 +91,15 @@ public class ShareActionProvider extends ActionProvider {
     public boolean hasSubMenu() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1091760927 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1091760927;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.846 -0400", hash_original_method = "780159D1510500332D77DB35C815CAE0", hash_generated_method = "40D2B35D5DFE2ABC046670FC3693010D")
     @Override
     public void onPrepareSubMenu(SubMenu subMenu) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         subMenu.clear();
         ActivityChooserModel dataModel = ActivityChooserModel.get(mContext, mShareHistoryFileName);
         PackageManager packageManager = mContext.getPackageManager();
@@ -112,8 +112,8 @@ public class ShareActionProvider extends ActionProvider {
                 subMenu.add(0, i, i, activity.loadLabel(packageManager))
                 .setIcon(activity.loadIcon(packageManager))
                 .setOnMenuItemClickListener(mOnMenuItemClickListener);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             SubMenu expandedSubMenu = subMenu.addSubMenu(Menu.NONE, collapsedActivityCount,
                     collapsedActivityCount,
@@ -125,12 +125,12 @@ public class ShareActionProvider extends ActionProvider {
                     expandedSubMenu.add(0, i, i, activity.loadLabel(packageManager))
                     .setIcon(activity.loadIcon(packageManager))
                     .setOnMenuItemClickListener(mOnMenuItemClickListener);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(subMenu.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -138,9 +138,9 @@ public class ShareActionProvider extends ActionProvider {
     public void setShareHistoryFileName(String shareHistoryFile) {
         mShareHistoryFileName = shareHistoryFile;
         setActivityChooserPolicyIfNeeded();
-        // ---------- Original Method ----------
-        //mShareHistoryFileName = shareHistoryFile;
-        //setActivityChooserPolicyIfNeeded();
+        
+        
+        
     }
 
     
@@ -150,10 +150,10 @@ public class ShareActionProvider extends ActionProvider {
             mShareHistoryFileName);
         dataModel.setIntent(shareIntent);
         addTaint(shareIntent.getTaint());
-        // ---------- Original Method ----------
-        //ActivityChooserModel dataModel = ActivityChooserModel.get(mContext,
-            //mShareHistoryFileName);
-        //dataModel.setIntent(shareIntent);
+        
+        
+            
+        
     }
 
     
@@ -161,18 +161,18 @@ public class ShareActionProvider extends ActionProvider {
     private void setActivityChooserPolicyIfNeeded() {
         {
             mOnChooseActivityListener = new ShareAcitivityChooserModelPolicy();
-        } //End block
+        } 
         ActivityChooserModel dataModel = ActivityChooserModel.get(mContext, mShareHistoryFileName);
         dataModel.setOnChooseActivityListener(mOnChooseActivityListener);
-        // ---------- Original Method ----------
-        //if (mOnShareTargetSelectedListener == null) {
-            //return;
-        //}
-        //if (mOnChooseActivityListener == null) {
-            //mOnChooseActivityListener = new ShareAcitivityChooserModelPolicy();
-        //}
-        //ActivityChooserModel dataModel = ActivityChooserModel.get(mContext, mShareHistoryFileName);
-        //dataModel.setOnChooseActivityListener(mOnChooseActivityListener);
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -181,33 +181,33 @@ public class ShareActionProvider extends ActionProvider {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.847 -0400", hash_original_method = "C6BD26BFC91AD355EDD4802746345224", hash_generated_method = "C6BD26BFC91AD355EDD4802746345224")
         public ShareMenuItemOnMenuItemClickListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.847 -0400", hash_original_method = "9C4E8B2E808FE0B52E60FC78C14CA469", hash_generated_method = "B0171F3904F61B9D141F21B6968625D0")
         @Override
         public boolean onMenuItemClick(MenuItem item) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             ActivityChooserModel dataModel = ActivityChooserModel.get(mContext,
                     mShareHistoryFileName);
             final int itemId = item.getItemId();
             Intent launchIntent = dataModel.chooseActivity(itemId);
             {
                 mContext.startActivity(launchIntent);
-            } //End block
+            } 
             addTaint(item.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1783776059 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1783776059;
-            // ---------- Original Method ----------
-            //ActivityChooserModel dataModel = ActivityChooserModel.get(mContext,
-                    //mShareHistoryFileName);
-            //final int itemId = item.getItemId();
-            //Intent launchIntent = dataModel.chooseActivity(itemId);
-            //if (launchIntent != null) {
-                //mContext.startActivity(launchIntent);
-            //}
-            //return true;
+            
+            
+                    
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -220,28 +220,28 @@ public class ShareActionProvider extends ActionProvider {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.847 -0400", hash_original_method = "89F1CDD786658ECF01B61D572BA79B4B", hash_generated_method = "89F1CDD786658ECF01B61D572BA79B4B")
         public ShareAcitivityChooserModelPolicy ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.848 -0400", hash_original_method = "5A8A50866214BBC9FA1FE4AEB29A128B", hash_generated_method = "81E1F29E9AC7961BD52608C9DC877BBF")
         @Override
         public boolean onChooseActivity(ActivityChooserModel host, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean varA017A0751FC8C1DCA427D1CE2F01B57B_335394664 = (mOnShareTargetSelectedListener.onShareTargetSelected(
                         ShareActionProvider.this, intent));
-            } //End block
+            } 
             addTaint(host.getTaint());
             addTaint(intent.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1620297255 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1620297255;
-            // ---------- Original Method ----------
-            //if (mOnShareTargetSelectedListener != null) {
-                //return mOnShareTargetSelectedListener.onShareTargetSelected(
-                        //ShareActionProvider.this, intent);
-            //}
-            //return false;
+            
+            
+                
+                        
+            
+            
         }
 
         

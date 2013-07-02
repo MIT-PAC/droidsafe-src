@@ -1,11 +1,11 @@
 package gov.nist.core;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.ParseException;
 import java.util.Hashtable;
@@ -25,9 +25,9 @@ public class LexerCore extends StringTokenizer {
     protected  LexerCore() {
         this.currentLexer = new Hashtable();
         this.currentLexerName = "charLexer";
-        // ---------- Original Method ----------
-        //this.currentLexer = new Hashtable();
-        //this.currentLexerName = "charLexer";
+        
+        
+        
     }
 
     
@@ -36,11 +36,12 @@ public class LexerCore extends StringTokenizer {
         super(buffer);
         this.currentLexerName = lexerName;
         addTaint(buffer.getTaint());
-        // ---------- Original Method ----------
-        //this.currentLexerName = lexerName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.620 -0400", hash_original_method = "AD96F60DA08AE9E896CB042D3CC5B1A1", hash_generated_method = "ECA4F27C267CC0B752C932ED88345A62")
     protected void addKeyword(String name, int value) {
         Integer val = Integer.valueOf(value);
@@ -48,134 +49,140 @@ public class LexerCore extends StringTokenizer {
         {
             boolean var6BCD19598A2E704832C01FED740DFE30_1112276701 = (!globalSymbolTable.containsKey(val));
             globalSymbolTable.put(val, name);
-        } //End collapsed parenthetic
+        } 
         addTaint(name.getTaint());
         addTaint(value);
-        // ---------- Original Method ----------
-        //Integer val = Integer.valueOf(value);
-        //currentLexer.put(name, val);
-        //if (!globalSymbolTable.containsKey(val))
-            //globalSymbolTable.put(val, name);
+        
+        
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.621 -0400", hash_original_method = "3D857462C470E4A1F5CD1262364F803E", hash_generated_method = "C5385858BB06AE5AC512519F18EBFF10")
     public String lookupToken(int value) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1204544693 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_417898779 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1204544693 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_417898779 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1204544693 = (String) globalSymbolTable.get(Integer.valueOf(value));
-        } //End block
+        } 
         {
             Character ch = Character.valueOf((char) value);
             varB4EAC82CA7396A68D541C85D26508E83_417898779 = ch.toString();
-        } //End block
+        } 
         addTaint(value);
-        String varA7E53CE21691AB073D9660D615818899_1610851210; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1610851210; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1610851210 = varB4EAC82CA7396A68D541C85D26508E83_1204544693;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1610851210 = varB4EAC82CA7396A68D541C85D26508E83_417898779;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1610851210.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1610851210.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1610851210;
-        // ---------- Original Method ----------
-        //if (value > START) {
-            //return (String) globalSymbolTable.get(Integer.valueOf(value));
-        //} else {
-            //Character ch = Character.valueOf((char) value);
-            //return ch.toString();
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.622 -0400", hash_original_method = "A9968CF51D1D67FF8D3FB6DE23BFC8AA", hash_generated_method = "D12A7C3F96F381BC87A9027DA24F477E")
     protected Hashtable addLexer(String lexerName) {
-        Hashtable varB4EAC82CA7396A68D541C85D26508E83_1542911634 = null; //Variable for return #1
+        Hashtable varB4EAC82CA7396A68D541C85D26508E83_1542911634 = null; 
         currentLexer = (Hashtable) lexerTables.get(lexerName);
         {
             currentLexer = new Hashtable();
             lexerTables.put(lexerName, currentLexer);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1542911634 = currentLexer;
-        varB4EAC82CA7396A68D541C85D26508E83_1542911634.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1542911634.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1542911634;
-        // ---------- Original Method ----------
-        //currentLexer = (Hashtable) lexerTables.get(lexerName);
-        //if (currentLexer == null) {
-            //currentLexer = new Hashtable();
-            //lexerTables.put(lexerName, currentLexer);
-        //}
-        //return currentLexer;
+        
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.622 -0400", hash_original_method = "D20C9FA92CD9B4968A44EC6CC8CD338F", hash_generated_method = "B54E7BB236C631028B1E4228D89A1C2D")
     public void selectLexer(String lexerName) {
         this.currentLexerName = lexerName;
-        // ---------- Original Method ----------
-        //this.currentLexerName = lexerName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.623 -0400", hash_original_method = "490BF814B9BDCA5834E18A73438F6256", hash_generated_method = "75D10C7174715C66C4190201848ACA01")
     public String peekNextId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_994407832 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_994407832 = null; 
         int oldPtr = ptr;
         String retval = ttoken();
         savedPtr = ptr;
         ptr = oldPtr;
         varB4EAC82CA7396A68D541C85D26508E83_994407832 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_994407832.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_994407832.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_994407832;
-        // ---------- Original Method ----------
-        //int oldPtr = ptr;
-        //String retval = ttoken();
-        //savedPtr = ptr;
-        //ptr = oldPtr;
-        //return retval;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.624 -0400", hash_original_method = "7F6D0FFBB3DD0E896E18057F7DC876B2", hash_generated_method = "5FBC5CA54EA9594FD2806C3021AC8A92")
     public String getNextId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_239150273 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_239150273 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_239150273 = ttoken();
-        varB4EAC82CA7396A68D541C85D26508E83_239150273.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_239150273.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_239150273;
-        // ---------- Original Method ----------
-        //return ttoken();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.625 -0400", hash_original_method = "DD3F66B83694243DF059D5B5621ADB54", hash_generated_method = "FFD0643F89C4D7AD2CD8CE96A7E3FE50")
     public Token getNextToken() {
-        Token varB4EAC82CA7396A68D541C85D26508E83_929007247 = null; //Variable for return #1
+        Token varB4EAC82CA7396A68D541C85D26508E83_929007247 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_929007247 = this.currentMatch;
-        varB4EAC82CA7396A68D541C85D26508E83_929007247.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_929007247.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_929007247;
-        // ---------- Original Method ----------
-        //return this.currentMatch;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.625 -0400", hash_original_method = "7245F245408FA6FEC683585F2431BE34", hash_generated_method = "F99FAA26156C29E1D888C12E462E9AE4")
     public Token peekNextToken() throws ParseException {
-        Token varB4EAC82CA7396A68D541C85D26508E83_564204948 = null; //Variable for return #1
+        Token varB4EAC82CA7396A68D541C85D26508E83_564204948 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_564204948 = (Token) peekNextToken(1)[0];
-        varB4EAC82CA7396A68D541C85D26508E83_564204948.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_564204948.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_564204948;
-        // ---------- Original Method ----------
-        //return (Token) peekNextToken(1)[0];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.626 -0400", hash_original_method = "E053A5C6A0917BEE124D59DA4B3EBFD6", hash_generated_method = "9FC1F0A7D64EED1AD887E058BD5D7DFA")
     public Token[] peekNextToken(int ntokens) throws ParseException {
-        Token[] varB4EAC82CA7396A68D541C85D26508E83_1218995352 = null; //Variable for return #1
+        Token[] varB4EAC82CA7396A68D541C85D26508E83_1218995352 = null; 
         int old = ptr;
         Token[] retval = new Token[ntokens];
         {
@@ -193,10 +200,10 @@ public class LexerCore extends StringTokenizer {
                             {
                                 Integer type = (Integer) currentLexer.get(idUppercase);
                                 tok.tokenType = type.intValue();
-                            } //End block
+                            } 
                             tok.tokenType = ID;
-                        } //End collapsed parenthetic
-                    } //End block
+                        } 
+                    } 
                     {
                         char nextChar = getNextChar();
                         tok.tokenValue = String.valueOf(nextChar);
@@ -204,58 +211,59 @@ public class LexerCore extends StringTokenizer {
                             boolean varBFE1D722068425B257052762429B9184_321811183 = (isAlpha(nextChar));
                             {
                                 tok.tokenType = ALPHA;
-                            } //End block
+                            } 
                             {
                                 boolean var5DD5E4511A8FB8DAC33F081A94D239C7_1393526481 = (isDigit(nextChar));
                                 {
                                     tok.tokenType = DIGIT;
-                                } //End block
+                                } 
                                 tok.tokenType = (int) nextChar;
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 retval[i] = tok;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         savedPtr = ptr;
         ptr = old;
         varB4EAC82CA7396A68D541C85D26508E83_1218995352 = retval;
         addTaint(ntokens);
-        varB4EAC82CA7396A68D541C85D26508E83_1218995352.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1218995352.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1218995352;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.627 -0400", hash_original_method = "EF527252962F704D7452C6B99500917D", hash_generated_method = "6190AEA0C856BBA1EFF439FBC4CF9F66")
     public Token match(int tok) throws ParseException {
-        Token varB4EAC82CA7396A68D541C85D26508E83_807108853 = null; //Variable for return #1
+        Token varB4EAC82CA7396A68D541C85D26508E83_807108853 = null; 
         {
             Debug.println("match " + tok);
-        } //End block
+        } 
         {
             {
                 {
                     boolean var6E2CC31084E3F8D8952DBE336CCE3669_1110588261 = (!startsId());
                     if (DroidSafeAndroidRuntime.control) throw new ParseException(buffer + "\nID expected", ptr);
-                } //End collapsed parenthetic
+                } 
                 String id = getNextId();
                 this.currentMatch = new Token();
                 this.currentMatch.tokenValue = id;
                 this.currentMatch.tokenType = ID;
-            } //End block
+            } 
             {
                 {
                     boolean var546D2F1C74D692B241A5033F36725EA8_306574587 = (!startsSafeToken());
                     if (DroidSafeAndroidRuntime.control) throw new ParseException(buffer + "\nID expected", ptr);
-                } //End collapsed parenthetic
+                } 
                 String id = ttokenSafe();
                 this.currentMatch = new Token();
                 this.currentMatch.tokenValue = id;
                 this.currentMatch.tokenType = SAFE;
-            } //End block
+            } 
             {
                 String nexttok = getNextId();
                 Integer cur = (Integer) currentLexer.get(nexttok.toUpperCase());
@@ -264,55 +272,56 @@ public class LexerCore extends StringTokenizer {
                     if (DroidSafeAndroidRuntime.control) throw new ParseException(
                         buffer + "\nUnexpected Token : " + nexttok,
                         ptr);
-                } //End collapsed parenthetic
+                } 
                 this.currentMatch = new Token();
                 this.currentMatch.tokenValue = nexttok;
                 this.currentMatch.tokenType = tok;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             char next = lookAhead(0);
             {
                 {
                     boolean varBC6D825D0D339757C6F1B31506495F57_709215723 = (!isDigit(next));
                     if (DroidSafeAndroidRuntime.control) throw new ParseException(buffer + "\nExpecting DIGIT", ptr);
-                } //End collapsed parenthetic
+                } 
                 this.currentMatch = new Token();
                 this.currentMatch.tokenValue =
                     String.valueOf(next);
                 this.currentMatch.tokenType = tok;
                 consume(1);
-            } //End block
+            } 
             {
                 {
                     boolean varD257F4500317009031DA40167F5103F8_1496164821 = (!isAlpha(next));
                     if (DroidSafeAndroidRuntime.control) throw new ParseException(buffer + "\nExpecting ALPHA", ptr);
-                } //End collapsed parenthetic
+                } 
                 this.currentMatch = new Token();
                 this.currentMatch.tokenValue =
                     String.valueOf(next);
                 this.currentMatch.tokenType = tok;
                 consume(1);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             char ch = (char) tok;
             char next = lookAhead(0);
             {
                 consume(1);
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new ParseException(
                     buffer + "\nExpecting  >>>" + ch + "<<< got >>>"
                     + next + "<<<", ptr);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_807108853 = this.currentMatch;
-        varB4EAC82CA7396A68D541C85D26508E83_807108853.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_807108853.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_807108853;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.628 -0400", hash_original_method = "2A2C3BB94776A03619BA392D0DD9FA22", hash_generated_method = "BCE5DC91C5FC7D93AF1C96C2DCBA0337")
     public void SPorHT() {
         try 
@@ -321,19 +330,19 @@ public class LexerCore extends StringTokenizer {
             {
                 consume(1);
                 c = lookAhead(0);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ParseException ex)
         { }
-        // ---------- Original Method ----------
-        //try {
-            //char c = lookAhead(0);
-            //while (c == ' ' || c == '\t') {
-                //consume(1);
-                //c = lookAhead(0);
-            //}
-        //} catch (ParseException ex) {
-        //}
+        
+        
+            
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -358,27 +367,29 @@ public class LexerCore extends StringTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.628 -0400", hash_original_method = "F58976B32EA8A9502EE0AC2AF2B6A7AB", hash_generated_method = "B1C6021F3FBA6F5D8396393EFB05E614")
     public boolean startsId() {
         try 
         {
             char nextChar = lookAhead(0);
             boolean varC9CB33171B8AC07DD05859930688B5A3_2043202583 = (isTokenChar(nextChar));
-        } //End block
+        } 
         catch (ParseException ex)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_230606595 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_230606595;
-        // ---------- Original Method ----------
-        //try {
-            //char nextChar = lookAhead(0);
-            //return isTokenChar(nextChar);
-        //} catch (ParseException ex) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.629 -0400", hash_original_method = "F94CBEE0A9F2E4712D2EBE65CDCE3A2F", hash_generated_method = "706BD5F1266DC9F6316BA969F8175908")
     public boolean startsSafeToken() {
         try 
@@ -386,21 +397,22 @@ public class LexerCore extends StringTokenizer {
             char nextChar = lookAhead(0);
             {
                 boolean varB9799D33A7FAD7D3A9B64C6D30D5EE67_70604385 = (isAlphaDigit(nextChar));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         catch (ParseException ex)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_290101059 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_290101059;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.630 -0400", hash_original_method = "263A0804A198D7BD9F45ED20C20E2FC4", hash_generated_method = "138C325D0FB210164C72A3E5D269804B")
     public String ttoken() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1120240365 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_2122971078 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1120240365 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2122971078 = null; 
         int startIdx = ptr;
         try 
         {
@@ -412,49 +424,50 @@ public class LexerCore extends StringTokenizer {
                         boolean varF08C6CED36AB15EBFFC61DC416694C63_1920297466 = (isTokenChar(nextChar));
                         {
                             consume(1);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1120240365 = buffer.substring(startIdx, ptr);
-        } //End block
+        } 
         catch (ParseException ex)
         {
             varB4EAC82CA7396A68D541C85D26508E83_2122971078 = null;
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_1931151495; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1931151495; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1931151495 = varB4EAC82CA7396A68D541C85D26508E83_1120240365;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1931151495 = varB4EAC82CA7396A68D541C85D26508E83_2122971078;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1931151495.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1931151495.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1931151495;
-        // ---------- Original Method ----------
-        //int startIdx = ptr;
-        //try {
-            //while (hasMoreChars()) {
-                //char nextChar = lookAhead(0);
-                //if ( isTokenChar(nextChar) ) {
-                    //consume(1);
-                //} else {
-                    //break;
-                //}
-            //}
-            //return buffer.substring(startIdx, ptr);
-        //} catch (ParseException ex) {
-            //return null;
-        //}
+        
+        
+        
+            
+                
+                
+                    
+                
+                    
+                
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.630 -0400", hash_original_method = "888B4B5B30F6453059C386257A5A6804", hash_generated_method = "6AC57BE6BF5B79F4FC3F4770D42CCD74")
     public String ttokenSafe() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1976626595 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1834159535 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1976626595 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1834159535 = null; 
         int startIdx = ptr;
         try 
         {
@@ -466,41 +479,42 @@ public class LexerCore extends StringTokenizer {
                         boolean var6BD0A8D80AA92D21A2EFDD59A567221A_1421770978 = (isAlphaDigit(nextChar));
                         {
                             consume(1);
-                        } //End block
+                        } 
                         {
                             boolean isValidChar = false;
-                            //Begin case '_' '+' '-' '!' '`' '\'' '.' '/' '}' '{' ']' '[' '^' '|' '~' '%' '#' '@' '$' ':' ';' '?' '\"' '*' 
+                            
                             isValidChar = true;
-                            //End case '_' '+' '-' '!' '`' '\'' '.' '/' '}' '{' ']' '[' '^' '|' '~' '%' '#' '@' '$' ':' ';' '?' '\"' '*' 
+                            
                             {
                                 consume(1);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1976626595 = buffer.substring(startIdx, ptr);
-        } //End block
+        } 
         catch (ParseException ex)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1834159535 = null;
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_194443898; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_194443898; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_194443898 = varB4EAC82CA7396A68D541C85D26508E83_1976626595;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_194443898 = varB4EAC82CA7396A68D541C85D26508E83_1834159535;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_194443898.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_194443898.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_194443898;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.631 -0400", hash_original_method = "8CC0A9D05C89C60DBFAAF7C7ED88483F", hash_generated_method = "4A03DEEEB85A7920068390031C4C9DC8")
     public void consumeValidChars(char[] validChars) {
         int validCharsLength = validChars.length;
@@ -515,43 +529,44 @@ public class LexerCore extends StringTokenizer {
                         int i = 0;
                         {
                             char validChar = validChars[i];
-                            //Begin case ALPHA_VALID_CHARS 
+                            
                             isValid = isAlpha(nextChar);
-                            //End case ALPHA_VALID_CHARS 
-                            //Begin case DIGIT_VALID_CHARS 
+                            
+                            
                             isValid = isDigit(nextChar);
-                            //End case DIGIT_VALID_CHARS 
-                            //Begin case ALPHADIGIT_VALID_CHARS 
+                            
+                            
                             isValid = isAlphaDigit(nextChar);
-                            //End case ALPHADIGIT_VALID_CHARS 
-                            //Begin case default 
+                            
+                            
                             isValid = nextChar == validChar;
-                            //End case default 
-                        } //End block
-                    } //End collapsed parenthetic
+                            
+                        } 
+                    } 
                     {
                         consume(1);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         catch (ParseException ex)
         { }
         addTaint(validChars[0]);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.632 -0400", hash_original_method = "17D25E29F0B0C1524A5E10AF751238A3", hash_generated_method = "A4F12C53E9F373779D2ACC674B490326")
     public String quotedString() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_232136393 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1112922390 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_232136393 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1112922390 = null; 
         int startIdx = ptr + 1;
         {
             boolean var1A3B0F27C9B40ABA2B7F84D92888D260_1747496913 = (lookAhead(0) != '\"');
             varB4EAC82CA7396A68D541C85D26508E83_232136393 = null;
-        } //End collapsed parenthetic
+        } 
         consume(1);
         {
             char next = getNextChar();
@@ -559,53 +574,54 @@ public class LexerCore extends StringTokenizer {
                 if (DroidSafeAndroidRuntime.control) throw new ParseException(
                     this.buffer + " :unexpected EOL",
                     this.ptr);
-            } //End block
+            } 
             {
                 consume(1);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1112922390 = buffer.substring(startIdx, ptr - 1);
-        String varA7E53CE21691AB073D9660D615818899_1318553332; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1318553332; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1318553332 = varB4EAC82CA7396A68D541C85D26508E83_232136393;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1318553332 = varB4EAC82CA7396A68D541C85D26508E83_1112922390;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1318553332.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1318553332.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1318553332;
-        // ---------- Original Method ----------
-        //int startIdx = ptr + 1;
-        //if (lookAhead(0) != '\"')
-            //return null;
-        //consume(1);
-        //while (true) {
-            //char next = getNextChar();
-            //if (next == '\"') {
-                //break;
-            //} else if (next == '\0') {
-                //throw new ParseException(
-                    //this.buffer + " :unexpected EOL",
-                    //this.ptr);
-            //} else if (next == '\\') {
-                //consume(1);
-            //}
-        //}
-        //return buffer.substring(startIdx, ptr - 1);
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+                
+                    
+                    
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.634 -0400", hash_original_method = "0DEFD663D479F88E7A114CE703AF8835", hash_generated_method = "EDF07336C1BC4F525074B09D9222C604")
     public String comment() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_970733416 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1170633219 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_970733416 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1170633219 = null; 
         StringBuffer retval = new StringBuffer();
         {
             boolean varA3777A54AF9C0C8A86BF4BF49027F727_1859215189 = (lookAhead(0) != '(');
             varB4EAC82CA7396A68D541C85D26508E83_970733416 = null;
-        } //End collapsed parenthetic
+        } 
         consume(1);
         {
             char next = getNextChar();
@@ -613,7 +629,7 @@ public class LexerCore extends StringTokenizer {
                 if (DroidSafeAndroidRuntime.control) throw new ParseException(
                     this.buffer + " :unexpected EOL",
                     this.ptr);
-            } //End block
+            } 
             {
                 retval.append(next);
                 next = getNextChar();
@@ -621,32 +637,33 @@ public class LexerCore extends StringTokenizer {
                         this.buffer + " : unexpected EOL",
                         this.ptr);
                 retval.append(next);
-            } //End block
+            } 
             {
                 retval.append(next);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1170633219 = retval.toString();
-        String varA7E53CE21691AB073D9660D615818899_1665317414; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1665317414; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1665317414 = varB4EAC82CA7396A68D541C85D26508E83_970733416;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1665317414 = varB4EAC82CA7396A68D541C85D26508E83_1170633219;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1665317414.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1665317414.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1665317414;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.635 -0400", hash_original_method = "86F26DE68AB39CE9DEE1E486630D72BD", hash_generated_method = "FB76FC2E2B26B99CAFC8C2EB93469A9A")
     public String byteStringNoSemicolon() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1096417401 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1124438692 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1096417401 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1124438692 = null; 
         StringBuffer retval = new StringBuffer();
         try 
         {
@@ -655,48 +672,49 @@ public class LexerCore extends StringTokenizer {
                 {
                     consume(1);
                     retval.append(next);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (ParseException ex)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1096417401 = retval.toString();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1124438692 = retval.toString();
-        String varA7E53CE21691AB073D9660D615818899_426678888; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_426678888; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_426678888 = varB4EAC82CA7396A68D541C85D26508E83_1096417401;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_426678888 = varB4EAC82CA7396A68D541C85D26508E83_1124438692;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_426678888.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_426678888.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_426678888;
-        // ---------- Original Method ----------
-        //StringBuffer retval = new StringBuffer();
-        //try {
-            //while (true) {
-                //char next = lookAhead(0);
-                //if (next == '\0' || next == '\n' || next == ';' || next == ',' ) {
-                    //break;
-                //} else {
-                    //consume(1);
-                    //retval.append(next);
-                //}
-            //}
-        //} catch (ParseException ex) {
-            //return retval.toString();
-        //}
-        //return retval.toString();
+        
+        
+        
+            
+                
+                
+                    
+                
+                    
+                    
+                
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.637 -0400", hash_original_method = "B2A0AA5C97E9078316CA6FEBE65DB0C3", hash_generated_method = "06E88172A5951A3DB9C116030A3095E9")
     public String byteStringNoSlash() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1058777398 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_862556454 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1058777398 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_862556454 = null; 
         StringBuffer retval = new StringBuffer();
         try 
         {
@@ -705,47 +723,48 @@ public class LexerCore extends StringTokenizer {
                 {
                     consume(1);
                     retval.append(next);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (ParseException ex)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1058777398 = retval.toString();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_862556454 = retval.toString();
-        String varA7E53CE21691AB073D9660D615818899_1152141572; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1152141572; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1152141572 = varB4EAC82CA7396A68D541C85D26508E83_1058777398;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1152141572 = varB4EAC82CA7396A68D541C85D26508E83_862556454;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1152141572.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1152141572.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1152141572;
-        // ---------- Original Method ----------
-        //StringBuffer retval = new StringBuffer();
-        //try {
-            //while (true) {
-                //char next = lookAhead(0);
-                //if (next == '\0' || next == '\n' || next == '/'  ) {
-                    //break;
-                //} else {
-                    //consume(1);
-                    //retval.append(next);
-                //}
-            //}
-        //} catch (ParseException ex) {
-            //return retval.toString();
-        //}
-        //return retval.toString();
+        
+        
+        
+            
+                
+                
+                    
+                
+                    
+                    
+                
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.638 -0400", hash_original_method = "03994A77D1324F910A7EC2E8D4C779CB", hash_generated_method = "388767173D1143A697AB2C833B4317A0")
     public String byteStringNoComma() {
-        String varB4EAC82CA7396A68D541C85D26508E83_670767169 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_670767169 = null; 
         StringBuffer retval = new StringBuffer();
         try 
         {
@@ -754,53 +773,56 @@ public class LexerCore extends StringTokenizer {
                 {
                     consume(1);
                     retval.append(next);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (ParseException ex)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_670767169 = retval.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_670767169.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_670767169.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_670767169;
-        // ---------- Original Method ----------
-        //StringBuffer retval = new StringBuffer();
-        //try {
-            //while (true) {
-                //char next = lookAhead(0);
-                //if (next == '\n' || next == ',') {
-                    //break;
-                //} else {
-                    //consume(1);
-                    //retval.append(next);
-                //}
-            //}
-        //} catch (ParseException ex) {
-        //}
-        //return retval.toString();
+        
+        
+        
+            
+                
+                
+                    
+                
+                    
+                    
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String charAsString(char ch) {
         return String.valueOf(ch);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.639 -0400", hash_original_method = "5A32401256C252E56BBB94CC59C2BA04", hash_generated_method = "5622E764E916A8DBDA170840B6FE20F9")
     public String charAsString(int nchars) {
-        String varB4EAC82CA7396A68D541C85D26508E83_988429274 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_988429274 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_988429274 = buffer.substring(ptr, ptr + nchars);
         addTaint(nchars);
-        varB4EAC82CA7396A68D541C85D26508E83_988429274.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_988429274.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_988429274;
-        // ---------- Original Method ----------
-        //return buffer.substring(ptr, ptr + nchars);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.640 -0400", hash_original_method = "322A7AA8BD0B180616D94A352B3FE7FA", hash_generated_method = "B2CF591F97B81261EC751044743D902D")
     public String number() throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_2004491412 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_184967614 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_2004491412 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_184967614 = null; 
         int startIdx = ptr;
         try 
         {
@@ -810,8 +832,8 @@ public class LexerCore extends StringTokenizer {
                     if (DroidSafeAndroidRuntime.control) throw new ParseException(
                     buffer + ": Unexpected token at " + lookAhead(0),
                     ptr);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             consume(1);
             {
                 char next = lookAhead(0);
@@ -819,46 +841,46 @@ public class LexerCore extends StringTokenizer {
                     boolean var6D60BC145196548E6219EEB7B8C58E26_1206962743 = (isDigit(next));
                     {
                         consume(1);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_2004491412 = buffer.substring(startIdx, ptr);
-        } //End block
+        } 
         catch (ParseException ex)
         {
             varB4EAC82CA7396A68D541C85D26508E83_184967614 = buffer.substring(startIdx, ptr);
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_1359401644; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1359401644; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1359401644 = varB4EAC82CA7396A68D541C85D26508E83_2004491412;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1359401644 = varB4EAC82CA7396A68D541C85D26508E83_184967614;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1359401644.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1359401644.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1359401644;
-        // ---------- Original Method ----------
-        //int startIdx = ptr;
-        //try {
-            //if (!isDigit(lookAhead(0))) {
-                //throw new ParseException(
-                    //buffer + ": Unexpected token at " + lookAhead(0),
-                    //ptr);
-            //}
-            //consume(1);
-            //while (true) {
-                //char next = lookAhead(0);
-                //if (isDigit(next)) {
-                    //consume(1);
-                //} else
-                    //break;
-            //}
-            //return buffer.substring(startIdx, ptr);
-        //} catch (ParseException ex) {
-            //return buffer.substring(startIdx, ptr);
-        //}
+        
+        
+        
+            
+                
+                    
+                    
+            
+            
+            
+                
+                
+                    
+                
+                    
+            
+            
+        
+            
+        
     }
 
     
@@ -866,8 +888,8 @@ public class LexerCore extends StringTokenizer {
     public int markInputPosition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1716378815 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1716378815;
-        // ---------- Original Method ----------
-        //return ptr;
+        
+        
     }
 
     
@@ -875,42 +897,44 @@ public class LexerCore extends StringTokenizer {
     public void rewindInputPosition(int position) {
         this.ptr = position;
         addTaint(position);
-        // ---------- Original Method ----------
-        //this.ptr = position;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.641 -0400", hash_original_method = "2FDB8C189AB11331619907255B1EC94B", hash_generated_method = "AE54E6CF405F51650997B5DC35D49446")
     public String getRest() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1862440271 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_972097549 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1862440271 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_972097549 = null; 
         {
             boolean var192220A640380CAF8B177C93C71998C2_499221956 = (ptr >= buffer.length());
             varB4EAC82CA7396A68D541C85D26508E83_1862440271 = null;
             varB4EAC82CA7396A68D541C85D26508E83_972097549 = buffer.substring(ptr);
-        } //End collapsed parenthetic
-        String varA7E53CE21691AB073D9660D615818899_1263473692; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1263473692; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1263473692 = varB4EAC82CA7396A68D541C85D26508E83_1862440271;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1263473692 = varB4EAC82CA7396A68D541C85D26508E83_972097549;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1263473692.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1263473692.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1263473692;
-        // ---------- Original Method ----------
-        //if (ptr >= buffer.length())
-            //return null;
-        //else
-            //return buffer.substring(ptr);
+        
+        
+            
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.642 -0400", hash_original_method = "720A9C8698AD8EBEF63DE1F048944846", hash_generated_method = "E21121AB34E55B5911707D919E2F00A6")
     public String getString(char c) throws ParseException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1665505867 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1665505867 = null; 
         StringBuffer retval = new StringBuffer();
         {
             char next = lookAhead(0);
@@ -918,10 +942,10 @@ public class LexerCore extends StringTokenizer {
                 if (DroidSafeAndroidRuntime.control) throw new ParseException(
                     this.buffer + "unexpected EOL",
                     this.ptr);
-            } //End block
+            } 
             {
                 consume(1);
-            } //End block
+            } 
             {
                 consume(1);
                 char nextchar = lookAhead(0);
@@ -929,23 +953,23 @@ public class LexerCore extends StringTokenizer {
                     if (DroidSafeAndroidRuntime.control) throw new ParseException(
                         this.buffer + "unexpected EOL",
                         this.ptr);
-                } //End block
+                } 
                 {
                     consume(1);
                     retval.append(nextchar);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 consume(1);
                 retval.append(next);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1665505867 = retval.toString();
         addTaint(c);
-        varB4EAC82CA7396A68D541C85D26508E83_1665505867.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1665505867.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1665505867;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -953,30 +977,31 @@ public class LexerCore extends StringTokenizer {
     public int getPtr() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1151745780 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1151745780;
-        // ---------- Original Method ----------
-        //return this.ptr;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.643 -0400", hash_original_method = "E132864DD50CA73C29855C29E535CA90", hash_generated_method = "E73461FB8A6283C2EB8BD55B66B60064")
     public String getBuffer() {
-        String varB4EAC82CA7396A68D541C85D26508E83_54640570 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_54640570 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_54640570 = this.buffer;
-        varB4EAC82CA7396A68D541C85D26508E83_54640570.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_54640570.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_54640570;
-        // ---------- Original Method ----------
-        //return this.buffer;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.644 -0400", hash_original_method = "3D7442B3A5CE831DBB9C36AFA9551D12", hash_generated_method = "FF501C8181105444554F3E010901B982")
     public ParseException createParseException() {
-        ParseException varB4EAC82CA7396A68D541C85D26508E83_843024342 = null; //Variable for return #1
+        ParseException varB4EAC82CA7396A68D541C85D26508E83_843024342 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_843024342 = new ParseException(this.buffer, this.ptr);
-        varB4EAC82CA7396A68D541C85D26508E83_843024342.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_843024342.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_843024342;
-        // ---------- Original Method ----------
-        //return new ParseException(this.buffer, this.ptr);
+        
+        
     }
 
     

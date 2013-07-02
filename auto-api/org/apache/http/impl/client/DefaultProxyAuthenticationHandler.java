@@ -1,11 +1,11 @@
 package org.apache.http.impl.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Map;
 import org.apache.http.Header;
@@ -20,7 +20,7 @@ public class DefaultProxyAuthenticationHandler extends AbstractAuthenticationHan
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.132 -0400", hash_original_method = "BD7E104E787325F5148E620FC3E1650F", hash_generated_method = "0FC8DC66C07D5E2A8088944BE78BACE6")
     public  DefaultProxyAuthenticationHandler() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,18 +30,18 @@ public class DefaultProxyAuthenticationHandler extends AbstractAuthenticationHan
             final HttpContext context) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP response may not be null");
-        } //End block
+        } 
         int status = response.getStatusLine().getStatusCode();
         addTaint(response.getTaint());
         addTaint(context.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_904941336 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_904941336;
-        // ---------- Original Method ----------
-        //if (response == null) {
-            //throw new IllegalArgumentException("HTTP response may not be null");
-        //}
-        //int status = response.getStatusLine().getStatusCode();
-        //return status == HttpStatus.SC_PROXY_AUTHENTICATION_REQUIRED;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -49,22 +49,22 @@ public class DefaultProxyAuthenticationHandler extends AbstractAuthenticationHan
     public Map<String, Header> getChallenges(
             final HttpResponse response, 
             final HttpContext context) throws MalformedChallengeException {
-        Map<String, Header> varB4EAC82CA7396A68D541C85D26508E83_472498112 = null; //Variable for return #1
+        Map<String, Header> varB4EAC82CA7396A68D541C85D26508E83_472498112 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP response may not be null");
-        } //End block
+        } 
         Header[] headers = response.getHeaders(AUTH.PROXY_AUTH);
         varB4EAC82CA7396A68D541C85D26508E83_472498112 = parseChallenges(headers);
         addTaint(response.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_472498112.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_472498112.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_472498112;
-        // ---------- Original Method ----------
-        //if (response == null) {
-            //throw new IllegalArgumentException("HTTP response may not be null");
-        //}
-        //Header[] headers = response.getHeaders(AUTH.PROXY_AUTH);
-        //return parseChallenges(headers);
+        
+        
+            
+        
+        
+        
     }
 
     

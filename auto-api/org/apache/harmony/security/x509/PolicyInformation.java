@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.harmony.security.asn1.ASN1Any;
 import org.apache.harmony.security.asn1.ASN1Oid;
@@ -25,43 +25,45 @@ public final class PolicyInformation {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.294 -0400", hash_original_method = "97521BA30F23785F6A554ACA63DC6021", hash_generated_method = "9C337939CB6B38E442B16C9693BA1B39")
     public  PolicyInformation(String policyIdentifier) {
         this.policyIdentifier = policyIdentifier;
-        // ---------- Original Method ----------
-        //this.policyIdentifier = policyIdentifier;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.294 -0400", hash_original_method = "012FFA67DCC82ECD3E1505D0CB12E6E1", hash_generated_method = "22937885C5320E3FF8408418A04C8D41")
     public String getPolicyIdentifier() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1652091486 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1652091486 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1652091486 = policyIdentifier;
-        varB4EAC82CA7396A68D541C85D26508E83_1652091486.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1652091486.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1652091486;
-        // ---------- Original Method ----------
-        //return policyIdentifier;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.294 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "FFB8FA52C83E297DE0BCADDC82FA5ACC")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_767015393 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_767015393;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.295 -0400", hash_original_method = "76E469F93D4AF204B8C17A8AD4618A81", hash_generated_method = "6BC387305FF8D06C2387001AE9AB45D7")
     public void dumpValue(StringBuilder sb) {
         sb.append("Policy Identifier [").append(policyIdentifier).append(']');
         addTaint(sb.getTaint());
-        // ---------- Original Method ----------
-        //sb.append("Policy Identifier [").append(policyIdentifier).append(']');
+        
+        
     }
 
     
@@ -83,19 +85,6 @@ public final class PolicyInformation {
             values[0] = ObjectIdentifier.toIntArray(pi.policyIdentifier);
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            PolicyInformation pi = (PolicyInformation) object;
-            values[0] = ObjectIdentifier.toIntArray(pi.policyIdentifier);
-        }
     
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) {
-            Object[] values = (Object[]) in.content;
-            return new PolicyInformation(ObjectIdentifier.toString((int[]) values[0]));
-        }
-    
-    */
 }
 

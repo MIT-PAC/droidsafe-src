@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.clientauthutils;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -25,8 +25,8 @@ class CredentialsCache {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.666 -0400", hash_original_method = "27F7597F884C45C17FD9F63A315334B1", hash_generated_method = "A4870380C2579D8A506F75F9CC2B9DB5")
       CredentialsCache(Timer timer) {
         this.timer = timer;
-        // ---------- Original Method ----------
-        //this.timer = timer;
+        
+        
     }
 
     
@@ -40,7 +40,7 @@ class CredentialsCache {
         {
             authHeaders = new LinkedList<AuthorizationHeader>();
             authorizationHeaders.put(callId, authHeaders);
-        } //End block
+        } 
         {
             String realm = authorization.getRealm();
             {
@@ -52,44 +52,45 @@ class CredentialsCache {
                         boolean varC5EB1AADFCCC32D729356E600B7D4975_1846880519 = (realm.equals(authHeader.getRealm()));
                         {
                             li.remove();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         authHeaders.add(authorization);
         TimeoutTask timeoutTask = new TimeoutTask( callId,user);
         this.timer.schedule(timeoutTask, cacheTime*1000);
         addTaint(callId.getTaint());
         addTaint(authorization.getTaint());
         addTaint(cacheTime);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.668 -0400", hash_original_method = "0B5572B5CD4E87519D0DA5EDF97CD6AB", hash_generated_method = "460503E4DE408D32E22AB1BC0DFFA334")
      Collection<AuthorizationHeader> getCachedAuthorizationHeaders(
             String callid) {
-        Collection<AuthorizationHeader> varB4EAC82CA7396A68D541C85D26508E83_1802952561 = null; //Variable for return #1
+        Collection<AuthorizationHeader> varB4EAC82CA7396A68D541C85D26508E83_1802952561 = null; 
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Null arg!");
         varB4EAC82CA7396A68D541C85D26508E83_1802952561 = this.authorizationHeaders.get(callid);
         addTaint(callid.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1802952561.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1802952561.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1802952561;
-        // ---------- Original Method ----------
-        //if (callid == null)
-            //throw new NullPointerException("Null arg!");
-        //return this.authorizationHeaders.get(callid);
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.669 -0400", hash_original_method = "F30D19D7197AEDE7B7CBD76BE8FA4C90", hash_generated_method = "5E8CACA192C4F9B49DE743916C47141A")
     public void removeAuthenticationHeader(String callId) {
         this.authorizationHeaders.remove(callId);
         addTaint(callId.getTaint());
-        // ---------- Original Method ----------
-        //this.authorizationHeaders.remove(callId);
+        
+        
     }
 
     
@@ -105,9 +106,9 @@ class CredentialsCache {
         public  TimeoutTask(String userName, String proxyDomain) {
             this.callId = proxyDomain;
             this.userName = userName;
-            // ---------- Original Method ----------
-            //this.callId = proxyDomain;
-            //this.userName = userName;
+            
+            
+            
         }
 
         
@@ -115,8 +116,8 @@ class CredentialsCache {
         @Override
         public void run() {
             authorizationHeaders.remove(callId);
-            // ---------- Original Method ----------
-            //authorizationHeaders.remove(callId);
+            
+            
         }
 
         

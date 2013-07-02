@@ -1,11 +1,11 @@
 package org.apache.commons.io.filefilter;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.Serializable;
@@ -24,7 +24,7 @@ public class NameFileFilter extends AbstractFileFilter implements Serializable {
     public  NameFileFilter(String name) {
         this(name, null);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,16 +32,16 @@ public class NameFileFilter extends AbstractFileFilter implements Serializable {
     public  NameFileFilter(String name, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The wildcard must not be null");
-        } //End block
+        } 
         this.names = new String[] {name};
         this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException("The wildcard must not be null");
-        //}
-        //this.names = new String[] {name};
-        //this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -49,7 +49,7 @@ public class NameFileFilter extends AbstractFileFilter implements Serializable {
     public  NameFileFilter(String[] names) {
         this(names, null);
         addTaint(names[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -57,17 +57,17 @@ public class NameFileFilter extends AbstractFileFilter implements Serializable {
     public  NameFileFilter(String[] names, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The array of names must not be null");
-        } //End block
+        } 
         this.names = new String[names.length];
         System.arraycopy(names, 0, this.names, 0, names.length);
         this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
-        // ---------- Original Method ----------
-        //if (names == null) {
-            //throw new IllegalArgumentException("The array of names must not be null");
-        //}
-        //this.names = new String[names.length];
-        //System.arraycopy(names, 0, this.names, 0, names.length);
-        //this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -75,7 +75,7 @@ public class NameFileFilter extends AbstractFileFilter implements Serializable {
     public  NameFileFilter(List<String> names) {
         this(names, null);
         addTaint(names.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -83,77 +83,80 @@ public class NameFileFilter extends AbstractFileFilter implements Serializable {
     public  NameFileFilter(List<String> names, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The list of names must not be null");
-        } //End block
+        } 
         this.names = names.toArray(new String[names.size()]);
         this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
-        // ---------- Original Method ----------
-        //if (names == null) {
-            //throw new IllegalArgumentException("The list of names must not be null");
-        //}
-        //this.names = names.toArray(new String[names.size()]);
-        //this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.842 -0400", hash_original_method = "8143C5E13483113836748794199B1228", hash_generated_method = "F59C85F1E6F53BA4E75ACD4227978AD2")
     @Override
     public boolean accept(File file) {
         String name = file.getName();
         {
-            //Iterator<String> var191FF989E4EF127CFFBFFEAAE33FDB9D_1699131717 = (this.names).iterator();
-            //var191FF989E4EF127CFFBFFEAAE33FDB9D_1699131717.hasNext();
+            
+            
             String name2 = this.names[0];
             {
                 {
                     boolean varC3DF969BB52F0D3A0B24B0EAC1A92D53_672560223 = (caseSensitivity.checkEquals(name, name2));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(file.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_492081753 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_492081753;
-        // ---------- Original Method ----------
-        //String name = file.getName();
-        //for (String name2 : this.names) {
-            //if (caseSensitivity.checkEquals(name, name2)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.845 -0400", hash_original_method = "F0ECCB0CC9BF3CE73728CA922CC18037", hash_generated_method = "EA08E233E624A1EF8721A4A4DAF94C87")
     @Override
     public boolean accept(File dir, String name) {
         {
-            //Iterator<String> var06CC19F24C2393D64DAD0F5C7DBD3B96_519227717 = (names).iterator();
-            //var06CC19F24C2393D64DAD0F5C7DBD3B96_519227717.hasNext();
+            
+            
             String name2 = names[0];
             {
                 {
                     boolean varC3DF969BB52F0D3A0B24B0EAC1A92D53_299781609 = (caseSensitivity.checkEquals(name, name2));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(dir.getTaint());
         addTaint(name.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_163838144 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_163838144;
-        // ---------- Original Method ----------
-        //for (String name2 : names) {
-            //if (caseSensitivity.checkEquals(name, name2)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.846 -0400", hash_original_method = "2C08B488ADA93371BD5A437FB37025E7", hash_generated_method = "42A273A6A42EEC3ED13D41446CA24463")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_608051250 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_608051250 = null; 
         StringBuilder buffer = new StringBuilder();
         buffer.append(super.toString());
         buffer.append("(");
@@ -163,29 +166,29 @@ public class NameFileFilter extends AbstractFileFilter implements Serializable {
                 {
                     {
                         buffer.append(",");
-                    } //End block
+                    } 
                     buffer.append(names[i]);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         buffer.append(")");
         varB4EAC82CA7396A68D541C85D26508E83_608051250 = buffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_608051250.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_608051250.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_608051250;
-        // ---------- Original Method ----------
-        //StringBuilder buffer = new StringBuilder();
-        //buffer.append(super.toString());
-        //buffer.append("(");
-        //if (names != null) {
-            //for (int i = 0; i < names.length; i++) {
-                //if (i > 0) {
-                    //buffer.append(",");
-                //}
-                //buffer.append(names[i]);
-            //}
-        //}
-        //buffer.append(")");
-        //return buffer.toString();
+        
+        
+        
+        
+        
+            
+                
+                    
+                
+                
+            
+        
+        
+        
     }
 
     

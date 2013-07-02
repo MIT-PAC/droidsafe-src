@@ -1,18 +1,17 @@
 package java.util;
 
-// Droidsafe Imports
+
 import java.util.Calendar;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-// needed for enhanced for control translations
+import droidsafe.annotations.*;
+
 
 class Grego {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.571 -0400", hash_original_method = "C0174AAA570C46558C7AC4376248DE88", hash_generated_method = "C0174AAA570C46558C7AC4376248DE88")
     public Grego ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -31,6 +30,7 @@ class Grego {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long fieldsToDay(int year, int month, int dom) {
         int y = year - 1;
         long julian =
@@ -41,6 +41,7 @@ class Grego {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int dayOfWeek(long day) {
         long[] remainder = new long[1];
         floorDivide(day + Calendar.THURSDAY, 7, remainder);
@@ -50,6 +51,7 @@ class Grego {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int[] dayToFields(long day, int[] fields) {
         if (fields == null || fields.length < 5) {
             fields = new int[5];
@@ -90,6 +92,7 @@ class Grego {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int[] timeToFields(long time, int[] fields) {
         if (fields == null || fields.length < 6) {
             fields = new int[6];
@@ -120,6 +123,7 @@ class Grego {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getDayOfWeekInMonth(int year, int month, int dayOfMonth) {
         int weekInMonth = (dayOfMonth + 6)/7;
         if (weekInMonth == 4) {

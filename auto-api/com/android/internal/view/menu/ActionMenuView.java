@@ -1,11 +1,11 @@
 package com.android.internal.view.menu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -47,7 +47,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     public  ActionMenuView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -60,19 +60,19 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         mGeneratedItemPadding = (int) (GENERATED_ITEM_PADDING * density);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //setBaselineAligned(false);
-        //final float density = context.getResources().getDisplayMetrics().density;
-        //mMinCellSize = (int) (MIN_CELL_SIZE * density);
-        //mGeneratedItemPadding = (int) (GENERATED_ITEM_PADDING * density);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.037 -0400", hash_original_method = "F8B2E0B9AF6B77951E8DA779DE9E37B4", hash_generated_method = "2D2E0A69D628FF0C713DCBD58D8FEF6B")
     public void setPresenter(ActionMenuPresenter presenter) {
         mPresenter = presenter;
-        // ---------- Original Method ----------
-        //mPresenter = presenter;
+        
+        
     }
 
     
@@ -80,15 +80,16 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     public boolean isExpandedFormat() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1059515851 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1059515851;
-        // ---------- Original Method ----------
-        //return mFormatItems;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.038 -0400", hash_original_method = "8C9F73227D09E5C25F24B8EE1F20BF37", hash_generated_method = "C330A2DBAC1838C510CABEA6193C4D42")
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onConfigurationChanged(newConfig);
         mPresenter.updateMenuView(false);
         {
@@ -96,59 +97,61 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
             {
                 mPresenter.hideOverflowMenu();
                 mPresenter.showOverflowMenu();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(newConfig.getTaint());
-        // ---------- Original Method ----------
-        //super.onConfigurationChanged(newConfig);
-        //mPresenter.updateMenuView(false);
-        //if (mPresenter != null && mPresenter.isOverflowMenuShowing()) {
-            //mPresenter.hideOverflowMenu();
-            //mPresenter.showOverflowMenu();
-        //}
+        
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.038 -0400", hash_original_method = "7A0AC3F9A12B78835921801D3FB6DAA4", hash_generated_method = "D0EE72DA6327C4CE4864E657ED394F31")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final boolean wasFormatted = mFormatItems;
         mFormatItems = MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.EXACTLY;
         {
             mFormatItemsWidth = 0;
-        } //End block
+        } 
         final int widthSize = MeasureSpec.getMode(widthMeasureSpec);
         {
             mFormatItemsWidth = widthSize;
             mMenu.onItemsChanged(true);
-        } //End block
+        } 
         {
             onMeasureExactFormat(widthMeasureSpec, heightMeasureSpec);
-        } //End block
+        } 
         {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        } //End block
+        } 
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        //final boolean wasFormatted = mFormatItems;
-        //mFormatItems = MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.EXACTLY;
-        //if (wasFormatted != mFormatItems) {
-            //mFormatItemsWidth = 0; 
-        //}
-        //final int widthSize = MeasureSpec.getMode(widthMeasureSpec);
-        //if (mFormatItems && mMenu != null && widthSize != mFormatItemsWidth) {
-            //mFormatItemsWidth = widthSize;
-            //mMenu.onItemsChanged(true);
-        //}
-        //if (mFormatItems) {
-            //onMeasureExactFormat(widthMeasureSpec, heightMeasureSpec);
-        //} else {
-            //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        //}
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.042 -0400", hash_original_method = "904CFC5C82A7517026F4582C82215F76", hash_generated_method = "FB5008145639E98863CB190A1B03B6C6")
     private void onMeasureExactFormat(int widthMeasureSpec, int heightMeasureSpec) {
         final int heightMode = MeasureSpec.getMode(heightMeasureSpec);
@@ -161,7 +164,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         final int cellSizeRemaining = widthSize % mMinCellSize;
         {
             setMeasuredDimension(widthSize, 0);
-        } //End block
+        } 
         final int cellSize = mMinCellSize + cellSizeRemaining / cellCount;
         int cellsRemaining = cellCount;
         int maxChildHeight = 0;
@@ -177,11 +180,11 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                 final View child = getChildAt(i);
                 {
                     boolean varE5A6421440835A22FD9C00B75E3D1565_520767611 = (child.getVisibility() == GONE);
-                } //End collapsed parenthetic
+                } 
                 final boolean isGeneratedItem = child instanceof ActionMenuItemView;
                 {
                     child.setPadding(mGeneratedItemPadding, 0, mGeneratedItemPadding, 0);
-                } //End block
+                } 
                 final LayoutParams lp = (LayoutParams) child.getLayoutParams();
                 lp.expanded = false;
                 lp.extraPixels = 0;
@@ -200,8 +203,8 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                 cellsRemaining -= cellsUsed;
                 maxChildHeight = Math.max(maxChildHeight, child.getMeasuredHeight());
                 smallestItemsAt |= (1 << i);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final boolean centerSingleExpandedItem = hasOverflow && visibleItemCount == 2;
         boolean needsExpansion = false;
         {
@@ -217,12 +220,12 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                         minCells = lp.cellsUsed;
                         minCellsAt = 1 << i;
                         minCellsItemCount = 1;
-                    } //End block
+                    } 
                     {
                         minCellsAt |= 1 << i;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             smallestItemsAt |= minCellsAt;
             {
                 int i = 0;
@@ -231,15 +234,15 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                     final LayoutParams lp = (LayoutParams) child.getLayoutParams();
                     {
                         smallestItemsAt |= 1 << i;
-                    } //End block
+                    } 
                     {
                         child.setPadding(mGeneratedItemPadding + cellSize, 0, mGeneratedItemPadding, 0);
-                    } //End block
+                    } 
                     lp.expanded = true;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             needsExpansion = true;
-        } //End block
+        } 
         final boolean singleItem = !hasOverflow && visibleItemCount == 1;
         {
             float expandCount = Long.bitCount(smallestItemsAt);
@@ -247,12 +250,12 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                 {
                     LayoutParams lp = (LayoutParams) getChildAt(0).getLayoutParams();
                     expandCount -= 0.5f;
-                } //End block
+                } 
                 {
                     LayoutParams lp = ((LayoutParams) getChildAt(childCount - 1).getLayoutParams());
                     expandCount -= 0.5f;
-                } //End block
-            } //End block
+                } 
+            } 
             int extraPixels;
             extraPixels = (int) (cellsRemaining * cellSize / expandCount);
             extraPixels = 0;
@@ -266,27 +269,27 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                         lp.expanded = true;
                         {
                             lp.leftMargin = -extraPixels / 2;
-                        } //End block
+                        } 
                         needsExpansion = true;
-                    } //End block
+                    } 
                     {
                         lp.extraPixels = extraPixels;
                         lp.expanded = true;
                         lp.rightMargin = -extraPixels / 2;
                         needsExpansion = true;
-                    } //End block
+                    } 
                     {
                         {
                             lp.leftMargin = extraPixels / 2;
-                        } //End block
+                        } 
                         {
                             lp.rightMargin = extraPixels / 2;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             cellsRemaining = 0;
-        } //End block
+        } 
         {
             int heightSpec = MeasureSpec.makeMeasureSpec(heightSize - heightPadding, heightMode);
             {
@@ -296,21 +299,22 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                     final LayoutParams lp = (LayoutParams) child.getLayoutParams();
                     final int width = lp.cellsUsed * cellSize + lp.extraPixels;
                     child.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), heightSpec);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             heightSize = maxChildHeight;
-        } //End block
+        } 
         setMeasuredDimension(widthSize, heightSize);
         mMeasuredExtraWidth = cellsRemaining * cellSize;
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int measureChildForCells(View child, int cellSize, int cellsRemaining,
             int parentHeightMeasureSpec, int parentHeightPadding) {
         final LayoutParams lp = (LayoutParams) child.getLayoutParams();
@@ -339,13 +343,14 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.043 -0400", hash_original_method = "CF95DF9C40DBA0243EC42554D6345F0F", hash_generated_method = "03AFC73D1E70E9B1200DE4690A1B257D")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             super.onLayout(changed, left, top, right, bottom);
-        } //End block
+        } 
         final int childCount = getChildCount();
         final int midVertical = (top + bottom) / 2;
         final int dividerWidth = getDividerWidth();
@@ -360,7 +365,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                 final View v = getChildAt(i);
                 {
                     boolean varDA63034006064F4C7F0A3E1C4DB8D066_1679965009 = (v.getVisibility() == GONE);
-                } //End collapsed parenthetic
+                } 
                 LayoutParams p = (LayoutParams) v.getLayoutParams();
                 {
                     overflowWidth = v.getMeasuredWidth();
@@ -368,8 +373,8 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                         boolean varCAC00097357B8B7C575A4308C6C0DBA2_568719820 = (hasDividerBeforeChildAt(i));
                         {
                             overflowWidth += dividerWidth;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     int height = v.getMeasuredHeight();
                     int r = getWidth() - getPaddingRight() - p.rightMargin;
                     int l = r - overflowWidth;
@@ -378,7 +383,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                     v.layout(l, t, r, b);
                     widthRemaining -= overflowWidth;
                     hasOverflow = true;
-                } //End block
+                } 
                 {
                     final int size = v.getMeasuredWidth() + p.leftMargin + p.rightMargin;
                     nonOverflowWidth += size;
@@ -387,11 +392,11 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                         boolean varCAC00097357B8B7C575A4308C6C0DBA2_1959539213 = (hasDividerBeforeChildAt(i));
                         {
                             nonOverflowWidth += dividerWidth;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             final View v = getChildAt(0);
             final int width = v.getMeasuredWidth();
@@ -400,9 +405,9 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
             final int l = midHorizontal - width / 2;
             final int t = midVertical - height / 2;
             v.layout(l, t, l + width, t + height);
-        } //End block
-        final int spacerCount = nonOverflowCount - (hasOverflow ? 0 : 1);//DSFIXME:  CODE0008: Nested ternary operator in expression
-        final int spacerSize = Math.max(0, spacerCount > 0 ? widthRemaining / spacerCount : 0);//DSFIXME:  CODE0008: Nested ternary operator in expression
+        } 
+        final int spacerCount = nonOverflowCount - (hasOverflow ? 0 : 1);
+        final int spacerSize = Math.max(0, spacerCount > 0 ? widthRemaining / spacerCount : 0);
         int startLeft = getPaddingLeft();
         {
             int i = 0;
@@ -411,34 +416,35 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                 final LayoutParams lp = (LayoutParams) v.getLayoutParams();
                 {
                     boolean var49B93947E8B636089049537FC51034AE_1374502491 = (v.getVisibility() == GONE || lp.isOverflowButton);
-                } //End collapsed parenthetic
+                } 
                 startLeft += lp.leftMargin;
                 int width = v.getMeasuredWidth();
                 int height = v.getMeasuredHeight();
                 int t = midVertical - height / 2;
                 v.layout(startLeft, t, startLeft + width, t + height);
                 startLeft += width + lp.rightMargin + spacerSize;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(changed);
         addTaint(left);
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.044 -0400", hash_original_method = "BCFF92F724E40A93547AD27810B374B7", hash_generated_method = "20B039D9957A5ED6936C442629CD13D4")
     @Override
     public void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDetachedFromWindow();
         mPresenter.dismissPopupMenus();
-        // ---------- Original Method ----------
-        //super.onDetachedFromWindow();
-        //mPresenter.dismissPopupMenus();
+        
+        
+        
     }
 
     
@@ -446,84 +452,86 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     public boolean isOverflowReserved() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_76459072 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_76459072;
-        // ---------- Original Method ----------
-        //return mReserveOverflow;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.044 -0400", hash_original_method = "F5103BD0EA93D884CF8413DB778005C1", hash_generated_method = "15B323109E8BF25E66710A01C5BEDE02")
     public void setOverflowReserved(boolean reserveOverflow) {
         mReserveOverflow = reserveOverflow;
-        // ---------- Original Method ----------
-        //mReserveOverflow = reserveOverflow;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.045 -0400", hash_original_method = "DEBB4048965D8045F192555AB279F2BA", hash_generated_method = "8DD856CA8D356A2EBECD078666C80554")
     @Override
     protected LayoutParams generateDefaultLayoutParams() {
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1808188493 = null; //Variable for return #1
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1808188493 = null; 
         LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT,
                 LayoutParams.WRAP_CONTENT);
         params.gravity = Gravity.CENTER_VERTICAL;
         varB4EAC82CA7396A68D541C85D26508E83_1808188493 = params;
-        varB4EAC82CA7396A68D541C85D26508E83_1808188493.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1808188493.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1808188493;
-        // ---------- Original Method ----------
-        //LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT,
-                //LayoutParams.WRAP_CONTENT);
-        //params.gravity = Gravity.CENTER_VERTICAL;
-        //return params;
+        
+        
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.045 -0400", hash_original_method = "AED9080C69042489485342721EE0B0B1", hash_generated_method = "2F0FC8FCF5EE311B307725FD000BDBDD")
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_406312679 = null; //Variable for return #1
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_406312679 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_406312679 = new LayoutParams(getContext(), attrs);
         addTaint(attrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_406312679.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_406312679.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_406312679;
-        // ---------- Original Method ----------
-        //return new LayoutParams(getContext(), attrs);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.046 -0400", hash_original_method = "6543FCE3043AA8E09E4AB46D137D1290", hash_generated_method = "50E3BB4A61B2179DD8F603A74A2164A3")
     @Override
     protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1132718823 = null; //Variable for return #1
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_222110269 = null; //Variable for return #2
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1132718823 = null; 
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_222110269 = null; 
         {
             LayoutParams result = new LayoutParams((LayoutParams) p);
             {
                 result.gravity = Gravity.CENTER_VERTICAL;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1132718823 = result;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_222110269 = generateDefaultLayoutParams();
         addTaint(p.getTaint());
-        LayoutParams varA7E53CE21691AB073D9660D615818899_1184056355; //Final return value
+        LayoutParams varA7E53CE21691AB073D9660D615818899_1184056355; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1184056355 = varB4EAC82CA7396A68D541C85D26508E83_1132718823;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1184056355 = varB4EAC82CA7396A68D541C85D26508E83_222110269;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1184056355.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1184056355.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1184056355;
-        // ---------- Original Method ----------
-        //if (p instanceof LayoutParams) {
-            //LayoutParams result = new LayoutParams((LayoutParams) p);
-            //if (result.gravity <= Gravity.NO_GRAVITY) {
-                //result.gravity = Gravity.CENTER_VERTICAL;
-            //}
-            //return result;
-        //}
-        //return generateDefaultLayoutParams();
+        
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -533,34 +541,36 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         addTaint(p.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_358048680 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_358048680;
-        // ---------- Original Method ----------
-        //return p != null && p instanceof LayoutParams;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.047 -0400", hash_original_method = "AF673847AD60845228ED5C7DBF294789", hash_generated_method = "E84C5809E7645AC184EB9ABB2DC1B8D8")
     public LayoutParams generateOverflowButtonLayoutParams() {
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1126159426 = null; //Variable for return #1
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1126159426 = null; 
         LayoutParams result = generateDefaultLayoutParams();
         result.isOverflowButton = true;
         varB4EAC82CA7396A68D541C85D26508E83_1126159426 = result;
-        varB4EAC82CA7396A68D541C85D26508E83_1126159426.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1126159426.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1126159426;
-        // ---------- Original Method ----------
-        //LayoutParams result = generateDefaultLayoutParams();
-        //result.isOverflowButton = true;
-        //return result;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.047 -0400", hash_original_method = "52251A4D38FF83C9B55C46C571A25CAE", hash_generated_method = "F958E6D54D5C913791B64D50C3C5E839")
     public boolean invokeItem(MenuItemImpl item) {
         boolean varC4283B859DE61FC835DAD199DF70A5FF_1957850860 = (mMenu.performItemAction(item, 0));
         addTaint(item.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1551468869 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1551468869;
-        // ---------- Original Method ----------
-        //return mMenu.performItemAction(item, 0);
+        
+        
     }
 
     
@@ -568,19 +578,20 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     public int getWindowAnimations() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1314623281 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1314623281;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.047 -0400", hash_original_method = "EDB3B7E883C1486DD9AED3AB15C0E44B", hash_generated_method = "E50EB2D0FDCBBA00CCFEFF4A83375DDF")
     public void initialize(MenuBuilder menu) {
         mMenu = menu;
-        // ---------- Original Method ----------
-        //mMenu = menu;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.048 -0400", hash_original_method = "9B32BE6DC23F13B511A55013BB42C488", hash_generated_method = "951571323057A0B340D290FD58C91F41")
     @Override
     protected boolean hasDividerBeforeChildAt(int childIndex) {
@@ -591,25 +602,25 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
             boolean var208B2155B1BCB653E775DCCF74C07E92_1738566379 = (childIndex < getChildCount() && childBefore instanceof ActionMenuChildView);
             {
                 result |= ((ActionMenuChildView) childBefore).needsDividerAfter();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             result |= ((ActionMenuChildView) child).needsDividerBefore();
-        } //End block
+        } 
         addTaint(childIndex);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_592013783 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_592013783;
-        // ---------- Original Method ----------
-        //final View childBefore = getChildAt(childIndex - 1);
-        //final View child = getChildAt(childIndex);
-        //boolean result = false;
-        //if (childIndex < getChildCount() && childBefore instanceof ActionMenuChildView) {
-            //result |= ((ActionMenuChildView) childBefore).needsDividerAfter();
-        //}
-        //if (childIndex > 0 && child instanceof ActionMenuChildView) {
-            //result |= ((ActionMenuChildView) child).needsDividerBefore();
-        //}
-        //return result;
+        
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -618,8 +629,8 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1192532941 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1192532941;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -648,7 +659,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
             super(c, attrs);
             addTaint(c.getTaint());
             addTaint(attrs.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -656,8 +667,8 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         public  LayoutParams(LayoutParams other) {
             super((LinearLayout.LayoutParams) other);
             isOverflowButton = other.isOverflowButton;
-            // ---------- Original Method ----------
-            //isOverflowButton = other.isOverflowButton;
+            
+            
         }
 
         
@@ -667,8 +678,8 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
             isOverflowButton = false;
             addTaint(width);
             addTaint(height);
-            // ---------- Original Method ----------
-            //isOverflowButton = false;
+            
+            
         }
 
         
@@ -678,8 +689,8 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
             this.isOverflowButton = isOverflowButton;
             addTaint(width);
             addTaint(height);
-            // ---------- Original Method ----------
-            //this.isOverflowButton = isOverflowButton;
+            
+            
         }
 
         

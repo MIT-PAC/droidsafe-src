@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1Sequence;
@@ -63,12 +63,12 @@ public class TBSCertificateStructure extends ASN1Encodable implements X509Object
             boolean var3988B84B0073E20EECE1CAE51F086249_64493538 = (seq.getObjectAt(0) instanceof DERTaggedObject);
             {
                 version = DERInteger.getInstance((ASN1TaggedObject)seq.getObjectAt(0), true);
-            } //End block
+            } 
             {
                 seqStart = -1;
                 version = new DERInteger(0);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         serialNumber = DERInteger.getInstance(seq.getObjectAt(seqStart + 1));
         signature = AlgorithmIdentifier.getInstance(seq.getObjectAt(seqStart + 2));
         issuer = X509Name.getInstance(seq.getObjectAt(seqStart + 3));
@@ -83,23 +83,24 @@ public class TBSCertificateStructure extends ASN1Encodable implements X509Object
                 DERTaggedObject extra = (DERTaggedObject)seq.getObjectAt(seqStart + 6 + extras);
                 {
                     Object var30FBA01FAEE674C40D117DCDD4D83491_1941265705 = (extra.getTagNo());
-                    //Begin case 1 
+                    
                     issuerUniqueId = DERBitString.getInstance(extra, false);
-                    //End case 1 
-                    //Begin case 2 
+                    
+                    
                     subjectUniqueId = DERBitString.getInstance(extra, false);
-                    //End case 2 
-                    //Begin case 3 
+                    
+                    
                     extensions = X509Extensions.getInstance(extra);
-                    //End case 3 
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                    
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static TBSCertificateStructure getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -107,6 +108,7 @@ public class TBSCertificateStructure extends ASN1Encodable implements X509Object
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static TBSCertificateStructure getInstance(
         Object  obj) {
         if (obj instanceof TBSCertificateStructure)
@@ -121,145 +123,146 @@ public class TBSCertificateStructure extends ASN1Encodable implements X509Object
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.024 -0400", hash_original_method = "FDACF2D9FDD982F7370FC1531628D869", hash_generated_method = "52323FBDEED8C61CA329DC7D2A8DCD79")
     public int getVersion() {
         int varB5DB73F7B840BF8BC35281016B62125C_1153036717 = (version.getValue().intValue() + 1);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1790817445 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1790817445;
-        // ---------- Original Method ----------
-        //return version.getValue().intValue() + 1;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.024 -0400", hash_original_method = "AC16A6F43E56B222CBB33342980501D7", hash_generated_method = "9AD2BB0B83E7609B1011AADFC6D02150")
     public DERInteger getVersionNumber() {
-        DERInteger varB4EAC82CA7396A68D541C85D26508E83_1051113941 = null; //Variable for return #1
+        DERInteger varB4EAC82CA7396A68D541C85D26508E83_1051113941 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1051113941 = version;
-        varB4EAC82CA7396A68D541C85D26508E83_1051113941.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1051113941.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1051113941;
-        // ---------- Original Method ----------
-        //return version;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.025 -0400", hash_original_method = "FB637D35FB72ECF5302334390BEEB5AC", hash_generated_method = "C2F203BDA2E73F14725A3582252E7DF7")
     public DERInteger getSerialNumber() {
-        DERInteger varB4EAC82CA7396A68D541C85D26508E83_880505194 = null; //Variable for return #1
+        DERInteger varB4EAC82CA7396A68D541C85D26508E83_880505194 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_880505194 = serialNumber;
-        varB4EAC82CA7396A68D541C85D26508E83_880505194.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_880505194.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_880505194;
-        // ---------- Original Method ----------
-        //return serialNumber;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.025 -0400", hash_original_method = "DD6542667BFDE70B879F723105C92A71", hash_generated_method = "A1AB30AD3FE9FEF7C7FFB546F519C69C")
     public AlgorithmIdentifier getSignature() {
-        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_638686593 = null; //Variable for return #1
+        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_638686593 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_638686593 = signature;
-        varB4EAC82CA7396A68D541C85D26508E83_638686593.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_638686593.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_638686593;
-        // ---------- Original Method ----------
-        //return signature;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.026 -0400", hash_original_method = "45BDDD2025565616026FAE1CCD324C0F", hash_generated_method = "FCD7A5712966E4BD8B0CED771A840506")
     public X509Name getIssuer() {
-        X509Name varB4EAC82CA7396A68D541C85D26508E83_998322243 = null; //Variable for return #1
+        X509Name varB4EAC82CA7396A68D541C85D26508E83_998322243 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_998322243 = issuer;
-        varB4EAC82CA7396A68D541C85D26508E83_998322243.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_998322243.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_998322243;
-        // ---------- Original Method ----------
-        //return issuer;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.027 -0400", hash_original_method = "909D374C3F5E114020E1939F16D3CF76", hash_generated_method = "F95B853645BCF1852712A3F355B9838D")
     public Time getStartDate() {
-        Time varB4EAC82CA7396A68D541C85D26508E83_1751630416 = null; //Variable for return #1
+        Time varB4EAC82CA7396A68D541C85D26508E83_1751630416 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1751630416 = startDate;
-        varB4EAC82CA7396A68D541C85D26508E83_1751630416.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1751630416.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1751630416;
-        // ---------- Original Method ----------
-        //return startDate;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.027 -0400", hash_original_method = "B4A95AF8DCBBCB951EF2EC33D2077725", hash_generated_method = "4741B1953CBBCC3EF3F3929FAC3AE941")
     public Time getEndDate() {
-        Time varB4EAC82CA7396A68D541C85D26508E83_1601364984 = null; //Variable for return #1
+        Time varB4EAC82CA7396A68D541C85D26508E83_1601364984 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1601364984 = endDate;
-        varB4EAC82CA7396A68D541C85D26508E83_1601364984.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1601364984.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1601364984;
-        // ---------- Original Method ----------
-        //return endDate;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.027 -0400", hash_original_method = "CA422C660E8CA6347A77201218B988AE", hash_generated_method = "609D9C301C834ED80AE28C3F287477F8")
     public X509Name getSubject() {
-        X509Name varB4EAC82CA7396A68D541C85D26508E83_414602408 = null; //Variable for return #1
+        X509Name varB4EAC82CA7396A68D541C85D26508E83_414602408 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_414602408 = subject;
-        varB4EAC82CA7396A68D541C85D26508E83_414602408.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_414602408.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_414602408;
-        // ---------- Original Method ----------
-        //return subject;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.028 -0400", hash_original_method = "EE5B5FDD20BC2C4F67CD8D0C39F17B3D", hash_generated_method = "B14B68D3343DC124AA3480BB17D21946")
     public SubjectPublicKeyInfo getSubjectPublicKeyInfo() {
-        SubjectPublicKeyInfo varB4EAC82CA7396A68D541C85D26508E83_822460147 = null; //Variable for return #1
+        SubjectPublicKeyInfo varB4EAC82CA7396A68D541C85D26508E83_822460147 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_822460147 = subjectPublicKeyInfo;
-        varB4EAC82CA7396A68D541C85D26508E83_822460147.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_822460147.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_822460147;
-        // ---------- Original Method ----------
-        //return subjectPublicKeyInfo;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.028 -0400", hash_original_method = "6F6E1D43C4C5F3E57DDB874B276B463E", hash_generated_method = "A2C3160BBA8E2C34B0247FBB33D887D9")
     public DERBitString getIssuerUniqueId() {
-        DERBitString varB4EAC82CA7396A68D541C85D26508E83_1527911431 = null; //Variable for return #1
+        DERBitString varB4EAC82CA7396A68D541C85D26508E83_1527911431 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1527911431 = issuerUniqueId;
-        varB4EAC82CA7396A68D541C85D26508E83_1527911431.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1527911431.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1527911431;
-        // ---------- Original Method ----------
-        //return issuerUniqueId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.028 -0400", hash_original_method = "9788F7D9ABBC525B6D86ECC001203156", hash_generated_method = "940A16CD5ABB9AB9C3F1D8E95899400F")
     public DERBitString getSubjectUniqueId() {
-        DERBitString varB4EAC82CA7396A68D541C85D26508E83_1194451112 = null; //Variable for return #1
+        DERBitString varB4EAC82CA7396A68D541C85D26508E83_1194451112 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1194451112 = subjectUniqueId;
-        varB4EAC82CA7396A68D541C85D26508E83_1194451112.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1194451112.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1194451112;
-        // ---------- Original Method ----------
-        //return subjectUniqueId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.029 -0400", hash_original_method = "0A664DE086A2ED08A47FCC7544F0D12E", hash_generated_method = "70FB2069734D9749BC2CCBF2F2F56558")
     public X509Extensions getExtensions() {
-        X509Extensions varB4EAC82CA7396A68D541C85D26508E83_1566792948 = null; //Variable for return #1
+        X509Extensions varB4EAC82CA7396A68D541C85D26508E83_1566792948 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1566792948 = extensions;
-        varB4EAC82CA7396A68D541C85D26508E83_1566792948.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1566792948.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1566792948;
-        // ---------- Original Method ----------
-        //return extensions;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.029 -0400", hash_original_method = "0BE753B103EB5E27F0AD9CE4B67E8D14", hash_generated_method = "39164668397D7A0B3FE6A56F6987A32E")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1984190714 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1984190714 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1984190714 = seq;
-        varB4EAC82CA7396A68D541C85D26508E83_1984190714.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1984190714.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1984190714;
-        // ---------- Original Method ----------
-        //return seq;
+        
+        
     }
 
     

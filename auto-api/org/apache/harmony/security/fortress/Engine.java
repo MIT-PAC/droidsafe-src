@@ -1,11 +1,11 @@
 package org.apache.harmony.security.fortress;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.NoSuchAlgorithmException;
 import java.security.Provider;
@@ -22,17 +22,18 @@ public class Engine {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.919 -0400", hash_original_method = "197C44846842D871388F9BC9DA5E7C36", hash_generated_method = "E075FDC3EE78D0EB2810A12FFECF67F0")
     public  Engine(String service) {
         this.serviceName = service;
-        // ---------- Original Method ----------
-        //this.serviceName = service;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.920 -0400", hash_original_method = "5C42DE2D9EE07142D674B5F3DD7E1F43", hash_generated_method = "ABEF23ED3CB683D4ECFB456FF3286F59")
     public SpiAndProvider getInstance(String algorithm, Object param) throws NoSuchAlgorithmException {
-        SpiAndProvider varB4EAC82CA7396A68D541C85D26508E83_1724198950 = null; //Variable for return #1
+        SpiAndProvider varB4EAC82CA7396A68D541C85D26508E83_1724198950 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new NoSuchAlgorithmException("Null algorithm name");
-        } //End block
+        } 
         Services.refresh();
         Provider.Service service;
         ServiceCacheEntry cacheEntry = this.serviceCache;
@@ -42,67 +43,69 @@ public class Engine {
                 && Services.refreshNumber == cacheEntry.refreshNumber);
             {
                 service = cacheEntry.service;
-            } //End block
+            } 
             {
                 {
                     boolean var389040427F16F8BE8ECA38F38187B5F5_56507341 = (Services.isEmpty());
                     {
                         if (DroidSafeAndroidRuntime.control) throw notFound(serviceName, algorithm);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 String name = this.serviceName + "." + algorithm.toUpperCase(Locale.US);
                 service = Services.getService(name);
                 {
                     if (DroidSafeAndroidRuntime.control) throw notFound(serviceName, algorithm);
-                } //End block
+                } 
                 this.serviceCache = new ServiceCacheEntry(algorithm, Services.refreshNumber, service);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1724198950 = new SpiAndProvider(service.newInstance(param), service.getProvider());
         addTaint(param.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1724198950.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1724198950.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1724198950;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.921 -0400", hash_original_method = "A7EA60582CEFDE50341F39C3F4FF4289", hash_generated_method = "2A854E598A6285EA5D6111D68E07409B")
     public Object getInstance(String algorithm, Provider provider, Object param) throws NoSuchAlgorithmException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1092308255 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1092308255 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new NoSuchAlgorithmException("algorithm == null");
-        } //End block
+        } 
         Provider.Service service = provider.getService(serviceName, algorithm);
         {
             if (DroidSafeAndroidRuntime.control) throw notFound(serviceName, algorithm);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1092308255 = service.newInstance(param);
         addTaint(algorithm.getTaint());
         addTaint(provider.getTaint());
         addTaint(param.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1092308255.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1092308255.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1092308255;
-        // ---------- Original Method ----------
-        //if (algorithm == null) {
-            //throw new NoSuchAlgorithmException("algorithm == null");
-        //}
-        //Provider.Service service = provider.getService(serviceName, algorithm);
-        //if (service == null) {
-            //throw notFound(serviceName, algorithm);
-        //}
-        //return service.newInstance(param);
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.922 -0400", hash_original_method = "30EA070B5875ADB1FAA05CA3F6CF14E2", hash_generated_method = "7422BC79848CB708CA056224AB168949")
     private NoSuchAlgorithmException notFound(String serviceName, String algorithm) throws NoSuchAlgorithmException {
         addTaint(serviceName.getTaint());
         addTaint(algorithm.getTaint());
         throw new NoSuchAlgorithmException(serviceName + " " + algorithm + " implementation not found");
-        // ---------- Original Method ----------
-        //throw new NoSuchAlgorithmException(serviceName + " " + algorithm
-                                           //+ " implementation not found");
+        
+        
+                                           
     }
 
     
@@ -124,10 +127,10 @@ public class Engine {
             this.algorithm = algorithm;
             this.refreshNumber = refreshNumber;
             this.service = service;
-            // ---------- Original Method ----------
-            //this.algorithm = algorithm;
-            //this.refreshNumber = refreshNumber;
-            //this.service = service;
+            
+            
+            
+            
         }
 
         
@@ -147,9 +150,9 @@ public class Engine {
         private  SpiAndProvider(Object spi, Provider provider) {
             this.spi = spi;
             this.provider = provider;
-            // ---------- Original Method ----------
-            //this.spi = spi;
-            //this.provider = provider;
+            
+            
+            
         }
 
         

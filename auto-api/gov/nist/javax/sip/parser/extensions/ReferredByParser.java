@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.extensions;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.javax.sip.header.*;
@@ -18,7 +18,7 @@ public class ReferredByParser extends AddressParametersParser {
     public  ReferredByParser(String referBy) {
         super(referBy);
         addTaint(referBy.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,29 +26,31 @@ public class ReferredByParser extends AddressParametersParser {
     protected  ReferredByParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.030 -0400", hash_original_method = "17616601F399F4EC4152D86BF5F11B96", hash_generated_method = "B3808804A640A51C318EBD36A2BE6768")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1668613540 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1668613540 = null; 
         headerName(TokenTypes.REFERREDBY_TO);
         ReferredBy referBy = new ReferredBy();
         super.parse(referBy);
         this.lexer.match('\n');
         varB4EAC82CA7396A68D541C85D26508E83_1668613540 = referBy;
-        varB4EAC82CA7396A68D541C85D26508E83_1668613540.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1668613540.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1668613540;
-        // ---------- Original Method ----------
-        //headerName(TokenTypes.REFERREDBY_TO);
-        //ReferredBy referBy = new ReferredBy();
-        //super.parse(referBy);
-        //this.lexer.match('\n');
-        //return referBy;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void main(String args[]) throws ParseException {
         String to[] =
             {   "Referred-By: <sip:dave@denver.example.org?" +

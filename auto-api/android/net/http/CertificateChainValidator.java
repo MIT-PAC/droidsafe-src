@@ -1,11 +1,11 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.net.DomainNameValidator;
 import org.apache.harmony.security.provider.cert.X509CertImpl;
@@ -30,7 +30,7 @@ class CertificateChainValidator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.643 -0400", hash_original_method = "2F959D748394792DE55923600092C8E9", hash_generated_method = "249781E5FCB4B7182831503E258AE636")
     private  CertificateChainValidator() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -42,38 +42,39 @@ class CertificateChainValidator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.646 -0400", hash_original_method = "5B87AA85F76367E84F6A87186CEADEE5", hash_generated_method = "72F51D8A9F748E64E19290E4E9DD71C1")
     public SslError doHandshakeAndValidateServerCertificates(
             HttpsConnection connection, SSLSocket sslSocket, String domain) throws IOException {
-        SslError varB4EAC82CA7396A68D541C85D26508E83_693308183 = null; //Variable for return #1
+        SslError varB4EAC82CA7396A68D541C85D26508E83_693308183 = null; 
         SSLSession sslSession = sslSocket.getSession();
         {
             boolean var93330143B7CECBEE557BABA2F99073AF_249523245 = (!sslSession.isValid());
             {
                 closeSocketThrowException(sslSocket, "failed to perform SSL handshake");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Certificate[] peerCertificates = sslSocket.getSession().getPeerCertificates();
         {
             closeSocketThrowException(
                 sslSocket, "failed to retrieve peer certificates");
-        } //End block
+        } 
         {
             {
                 {
                     connection.setCertificate(
                         new SslCertificate((X509Certificate)peerCertificates[0]));
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_693308183 = verifyServerDomainAndCertificates((X509Certificate[]) peerCertificates, domain, "RSA");
         addTaint(connection.getTaint());
         addTaint(sslSocket.getTaint());
         addTaint(domain.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_693308183.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_693308183.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_693308183;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SslError verifyServerCertificates(
         byte[][] certChain, String domain, String authType) throws IOException {
         if (certChain == null || certChain.length == 0) {
@@ -87,6 +88,7 @@ class CertificateChainValidator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static SslError verifyServerDomainAndCertificates(
             X509Certificate[] chain, String domain, String authType) throws IOException {
         X509Certificate currCertificate = chain[0];
@@ -120,9 +122,9 @@ class CertificateChainValidator {
         addTaint(socket.getTaint());
         addTaint(errorMessage.getTaint());
         addTaint(defaultErrorMessage.getTaint());
-        // ---------- Original Method ----------
-        //closeSocketThrowException(
-            //socket, errorMessage != null ? errorMessage : defaultErrorMessage);
+        
+        
+            
     }
 
     
@@ -131,29 +133,29 @@ class CertificateChainValidator {
             String errorMessage) throws IOException {
         {
             HttpLog.v("validation error: " + errorMessage);
-        } //End block
+        } 
         {
             SSLSession session = socket.getSession();
             {
                 session.invalidate();
-            } //End block
+            } 
             socket.close();
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new SSLHandshakeException(errorMessage);
         addTaint(socket.getTaint());
         addTaint(errorMessage.getTaint());
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("validation error: " + errorMessage);
-        //}
-        //if (socket != null) {
-            //SSLSession session = socket.getSession();
-            //if (session != null) {
-                //session.invalidate();
-            //}
-            //socket.close();
-        //}
-        //throw new SSLHandshakeException(errorMessage);
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     

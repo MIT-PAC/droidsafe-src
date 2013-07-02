@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class ImageDescriptor {
@@ -40,17 +40,18 @@ public class ImageDescriptor {
         highOffset = 0;
         lowOffset = 0;
         length = 0;
-        // ---------- Original Method ----------
-        //width = 0;
-        //height = 0;
-        //codingScheme = 0;
-        //imageId = 0;
-        //highOffset = 0;
-        //lowOffset = 0;
-        //length = 0;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ImageDescriptor parse(byte[] rawData, int valueIndex) {
         ImageDescriptor d = new ImageDescriptor();
         try {

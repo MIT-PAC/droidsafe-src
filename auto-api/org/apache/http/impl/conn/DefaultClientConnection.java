@@ -1,11 +1,11 @@
 package org.apache.http.impl.conn;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.net.Socket;
@@ -50,18 +50,18 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.418 -0400", hash_original_method = "90469C020BD0C2691C8C778F609E10DE", hash_generated_method = "F008BABB63E20BD366844A0FEDDC4004")
     public  DefaultClientConnection() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.418 -0400", hash_original_method = "00F8E4422BF57DE6758D681F4A99BDB6", hash_generated_method = "2F55BF6D7DD690B47BDCACB35782DFDA")
     public final HttpHost getTargetHost() {
-        HttpHost varB4EAC82CA7396A68D541C85D26508E83_1886078666 = null; //Variable for return #1
+        HttpHost varB4EAC82CA7396A68D541C85D26508E83_1886078666 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1886078666 = this.targetHost;
-        varB4EAC82CA7396A68D541C85D26508E83_1886078666.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1886078666.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1886078666;
-        // ---------- Original Method ----------
-        //return this.targetHost;
+        
+        
     }
 
     
@@ -69,20 +69,20 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
     public final boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1311046842 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1311046842;
-        // ---------- Original Method ----------
-        //return this.connSecure;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.419 -0400", hash_original_method = "B12AAA9EA995C0C9BE2466476E8BAC96", hash_generated_method = "8934F527F9DEDABC9A9EDFFFC751AA8C")
     @Override
     public final Socket getSocket() {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1776035747 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1776035747 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1776035747 = this.socket;
-        varB4EAC82CA7396A68D541C85D26508E83_1776035747.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1776035747.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1776035747;
-        // ---------- Original Method ----------
-        //return this.socket;
+        
+        
     }
 
     
@@ -94,39 +94,41 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
         {
             sock.close();
             if (DroidSafeAndroidRuntime.control) throw new IOException("Connection already shutdown");
-        } //End block
-        // ---------- Original Method ----------
-        //assertNotOpen();
-        //this.socket = sock;
-        //this.targetHost = target;
-        //if (this.shutdown) {
-            //sock.close(); 
-            //throw new IOException("Connection already shutdown");
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.421 -0400", hash_original_method = "238B4BA0F77ED507B3FA0211642C8510", hash_generated_method = "A00D3B1C54A9CCBCE3F91E9745C08C1B")
     public void openCompleted(boolean secure, HttpParams params) throws IOException {
         assertNotOpen();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Parameters must not be null.");
-        } //End block
+        } 
         this.connSecure = secure;
         bind(this.socket, params);
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //assertNotOpen();
-        //if (params == null) {
-            //throw new IllegalArgumentException
-                //("Parameters must not be null.");
-        //}
-        //this.connSecure = secure;
-        //bind(this.socket, params);
+        
+        
+        
+            
+                
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.422 -0400", hash_original_method = "2C3D09F7EAB3530485FB76A4EFF6AEB8", hash_generated_method = "D209411216CE395DCA9FE956BF56C769")
     @Override
     public void shutdown() throws IOException {
@@ -135,24 +137,25 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
         super.shutdown();
         Socket sock = this.socket;
         sock.close();
-        // ---------- Original Method ----------
-        //log.debug("Connection shut down");
-        //shutdown = true;
-        //super.shutdown();
-        //Socket sock = this.socket;
-        //if (sock != null)
-            //sock.close();
+        
+        
+        
+        
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.423 -0400", hash_original_method = "4ADF205732DDD49A8E02AC6258F60F5A", hash_generated_method = "F2BDB9F1383ABE509042E4DA4F117CFB")
     @Override
     public void close() throws IOException {
         log.debug("Connection closed");
         super.close();
-        // ---------- Original Method ----------
-        //log.debug("Connection closed");
-        //super.close();
+        
+        
+        
     }
 
     
@@ -162,7 +165,7 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
             final Socket socket,
             int buffersize,
             final HttpParams params) throws IOException {
-        SessionInputBuffer varB4EAC82CA7396A68D541C85D26508E83_1044997052 = null; //Variable for return #1
+        SessionInputBuffer varB4EAC82CA7396A68D541C85D26508E83_1044997052 = null; 
         SessionInputBuffer inbuffer = super.createSessionInputBuffer(
                 socket, 
                 buffersize,
@@ -171,23 +174,23 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
             boolean var6E6E95DC97CB46C75DB0192C96CAD471_1850751295 = (wireLog.isDebugEnabled());
             {
                 inbuffer = new LoggingSessionInputBuffer(inbuffer, new Wire(wireLog));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1044997052 = inbuffer;
         addTaint(socket.getTaint());
         addTaint(buffersize);
         addTaint(params.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1044997052.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1044997052.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1044997052;
-        // ---------- Original Method ----------
-        //SessionInputBuffer inbuffer = super.createSessionInputBuffer(
-                //socket, 
-                //buffersize,
-                //params);
-        //if (wireLog.isDebugEnabled()) {
-            //inbuffer = new LoggingSessionInputBuffer(inbuffer, new Wire(wireLog));
-        //}
-        //return inbuffer;
+        
+        
+                
+                
+                
+        
+            
+        
+        
     }
 
     
@@ -197,7 +200,7 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
             final Socket socket,
             int buffersize,
             final HttpParams params) throws IOException {
-        SessionOutputBuffer varB4EAC82CA7396A68D541C85D26508E83_606737100 = null; //Variable for return #1
+        SessionOutputBuffer varB4EAC82CA7396A68D541C85D26508E83_606737100 = null; 
         SessionOutputBuffer outbuffer = super.createSessionOutputBuffer(
                 socket,
                 buffersize,
@@ -206,23 +209,23 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
             boolean var6E6E95DC97CB46C75DB0192C96CAD471_384183169 = (wireLog.isDebugEnabled());
             {
                 outbuffer = new LoggingSessionOutputBuffer(outbuffer, new Wire(wireLog));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_606737100 = outbuffer;
         addTaint(socket.getTaint());
         addTaint(buffersize);
         addTaint(params.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_606737100.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_606737100.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_606737100;
-        // ---------- Original Method ----------
-        //SessionOutputBuffer outbuffer = super.createSessionOutputBuffer(
-                //socket,
-                //buffersize,
-                //params);
-        //if (wireLog.isDebugEnabled()) {
-            //outbuffer = new LoggingSessionOutputBuffer(outbuffer, new Wire(wireLog));
-        //}
-        //return outbuffer;
+        
+        
+                
+                
+                
+        
+            
+        
+        
     }
 
     
@@ -232,17 +235,17 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
             final SessionInputBuffer buffer,
             final HttpResponseFactory responseFactory, 
             final HttpParams params) {
-        HttpMessageParser varB4EAC82CA7396A68D541C85D26508E83_229235098 = null; //Variable for return #1
+        HttpMessageParser varB4EAC82CA7396A68D541C85D26508E83_229235098 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_229235098 = new DefaultResponseParser
             (buffer, null, responseFactory, params);
         addTaint(buffer.getTaint());
         addTaint(responseFactory.getTaint());
         addTaint(params.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_229235098.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_229235098.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_229235098;
-        // ---------- Original Method ----------
-        //return new DefaultResponseParser
-            //(buffer, null, responseFactory, params);
+        
+        
+            
     }
 
     
@@ -253,41 +256,42 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Target host must not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Parameters must not be null.");
-        } //End block
+        } 
         {
             this.socket = sock;
             bind(sock, params);
-        } //End block
+        } 
         targetHost = target;
         connSecure = secure;
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //assertOpen();
-        //if (target == null) {
-            //throw new IllegalArgumentException
-                //("Target host must not be null.");
-        //}
-        //if (params == null) {
-            //throw new IllegalArgumentException
-                //("Parameters must not be null.");
-        //}
-        //if (sock != null) {
-            //this.socket = sock;
-            //bind(sock, params);
-        //}
-        //targetHost = target;
-        //connSecure = secure;
+        
+        
+        
+            
+                
+        
+        
+            
+                
+        
+        
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.436 -0400", hash_original_method = "74E39E85D143527EEDE4A43C784BFAA2", hash_generated_method = "C69AAF1D76D9DF4540977520D8661E64")
     @Override
     public HttpResponse receiveResponseHeader() throws HttpException, IOException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_2007320236 = null; //Variable for return #1
+        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_2007320236 = null; 
         HttpResponse response = super.receiveResponseHeader();
         {
             boolean var8A04A6DFBC2B2DD9ACD4C1D4F84EB0D9_673689200 = (headerLog.isDebugEnabled());
@@ -298,26 +302,27 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
                     Header header = headers[0];
                     {
                         headerLog.debug("<< " + header.toString());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2007320236 = response;
-        varB4EAC82CA7396A68D541C85D26508E83_2007320236.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2007320236.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2007320236;
-        // ---------- Original Method ----------
-        //HttpResponse response = super.receiveResponseHeader();
-        //if (headerLog.isDebugEnabled()) {
-            //headerLog.debug("<< " + response.getStatusLine().toString());
-            //Header[] headers = response.getAllHeaders();
-            //for (Header header : headers) {
-                //headerLog.debug("<< " + header.toString());
-            //}
-        //}
-        //return response;
+        
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.442 -0400", hash_original_method = "8184260E56E5B05281BA00158DD30362", hash_generated_method = "3072684D12719050EA9DD0AAE9B658AB")
     @Override
     public void sendRequestHeader(HttpRequest request) throws HttpException, IOException {
@@ -331,20 +336,20 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
                     Header header = headers[0];
                     {
                         headerLog.debug(">> " + header.toString());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(request.getTaint());
-        // ---------- Original Method ----------
-        //super.sendRequestHeader(request);
-        //if (headerLog.isDebugEnabled()) {
-            //headerLog.debug(">> " + request.getRequestLine().toString());
-            //Header[] headers = request.getAllHeaders();
-            //for (Header header : headers) {
-                //headerLog.debug(">> " + header.toString());
-            //}
-        //}
+        
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     

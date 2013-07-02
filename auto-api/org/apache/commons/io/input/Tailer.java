@@ -1,11 +1,11 @@
 package org.apache.commons.io.input;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -42,7 +42,7 @@ public class Tailer implements Runnable {
         this(file, listener, DEFAULT_DELAY_MILLIS);
         addTaint(file.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -52,7 +52,7 @@ public class Tailer implements Runnable {
         addTaint(file.getTaint());
         addTaint(listener.getTaint());
         addTaint(delayMillis);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -63,7 +63,7 @@ public class Tailer implements Runnable {
         addTaint(listener.getTaint());
         addTaint(delayMillis);
         addTaint(end);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -75,7 +75,7 @@ public class Tailer implements Runnable {
         addTaint(delayMillis);
         addTaint(end);
         addTaint(reOpen);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -87,7 +87,7 @@ public class Tailer implements Runnable {
         addTaint(delayMillis);
         addTaint(end);
         addTaint(bufSize);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -100,17 +100,18 @@ public class Tailer implements Runnable {
         this.listener = listener;
         listener.init(this);
         this.reOpen = reOpen;
-        // ---------- Original Method ----------
-        //this.file = file;
-        //this.delayMillis = delayMillis;
-        //this.end = end;
-        //this.inbuf = new byte[bufSize];
-        //this.listener = listener;
-        //listener.init(this);
-        //this.reOpen = reOpen;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Tailer create(File file, TailerListener listener, long delayMillis, boolean end, int bufSize) {
         Tailer tailer = new Tailer(file, listener, delayMillis, end, bufSize);
         Thread thread = new Thread(tailer);
@@ -120,6 +121,7 @@ public class Tailer implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Tailer create(File file, TailerListener listener, long delayMillis, boolean end, boolean reOpen, 
             int bufSize) {
         Tailer tailer = new Tailer(file, listener, delayMillis, end, reOpen, bufSize);
@@ -130,46 +132,53 @@ public class Tailer implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Tailer create(File file, TailerListener listener, long delayMillis, boolean end) {
         return create(file, listener, delayMillis, end, DEFAULT_BUFSIZE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Tailer create(File file, TailerListener listener, long delayMillis, boolean end, boolean reOpen) {
         return create(file, listener, delayMillis, end, reOpen, DEFAULT_BUFSIZE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Tailer create(File file, TailerListener listener, long delayMillis) {
         return create(file, listener, delayMillis, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Tailer create(File file, TailerListener listener) {
         return create(file, listener, DEFAULT_DELAY_MILLIS, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.283 -0400", hash_original_method = "254E9EB55B544E07E2A606FED2225F70", hash_generated_method = "44E7D4634C3DABD21DC3661ED9320D03")
     public File getFile() {
-        File varB4EAC82CA7396A68D541C85D26508E83_455309570 = null; //Variable for return #1
+        File varB4EAC82CA7396A68D541C85D26508E83_455309570 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_455309570 = file;
-        varB4EAC82CA7396A68D541C85D26508E83_455309570.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_455309570.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_455309570;
-        // ---------- Original Method ----------
-        //return file;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.283 -0400", hash_original_method = "585B2EFA3032D4C482695ACE1752FB74", hash_generated_method = "8B74F16419A72DC94E07A6BE67849AB9")
     public long getDelay() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_842925092 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_842925092;
-        // ---------- Original Method ----------
-        //return delayMillis;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.284 -0400", hash_original_method = "FBA32DA5B44CA2DA8EFD603946A54B03", hash_generated_method = "161BD614F30C8707D19DA4DD5B2241D7")
     public void run() {
         RandomAccessFile reader = null;
@@ -181,25 +190,25 @@ public class Tailer implements Runnable {
                 try 
                 {
                     reader = new RandomAccessFile(file, RAF_MODE);
-                } //End block
+                } 
                 catch (FileNotFoundException e)
                 {
                     listener.fileNotFound();
-                } //End block
+                } 
                 {
                     try 
                     {
                         Thread.sleep(delayMillis);
-                    } //End block
+                    } 
                     catch (InterruptedException e)
                     { }
-                } //End block
+                } 
                 {
                     position = end ? file.length() : 0;
                     last = System.currentTimeMillis();
                     reader.seek(position);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 boolean newer = FileUtils.isFileNewer(file, last);
                 long length = file.length();
@@ -211,60 +220,62 @@ public class Tailer implements Runnable {
                         reader = new RandomAccessFile(file, RAF_MODE);
                         position = 0;
                         IOUtils.closeQuietly(save);
-                    } //End block
+                    } 
                     catch (FileNotFoundException e)
                     {
                         listener.fileNotFound();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     {
                         position = readLines(reader);
                         last = System.currentTimeMillis();
-                    } //End block
+                    } 
                     {
                         position = 0;
                         reader.seek(position);
                         position = readLines(reader);
                         last = System.currentTimeMillis();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     IOUtils.closeQuietly(reader);
-                } //End block
+                } 
                 try 
                 {
                     Thread.sleep(delayMillis);
-                } //End block
+                } 
                 catch (InterruptedException e)
                 { }
                 {
                     reader = new RandomAccessFile(file, RAF_MODE);
                     reader.seek(position);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (Exception e)
         {
             listener.handle(e);
-        } //End block
+        } 
         finally 
         {
             IOUtils.closeQuietly(reader);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.285 -0400", hash_original_method = "51D98BC23EDBD98D3C1A640CAE368CF4", hash_generated_method = "A99E9D9E7028B77DB889D68C21A6F480")
     public void stop() {
         this.run = false;
-        // ---------- Original Method ----------
-        //this.run = false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.285 -0400", hash_original_method = "BAA3ED875E19911C3E75F2F82717033E", hash_generated_method = "542575E88821A9C3E2559A0E2F1D43A8")
     private long readLines(RandomAccessFile reader) throws IOException {
         StringBuilder sb = new StringBuilder();
@@ -279,48 +290,48 @@ public class Tailer implements Runnable {
                     int i = 0;
                     {
                         byte ch = inbuf[i];
-                        //Begin case '\n' 
+                        
                         seenCR = false;
-                        //End case '\n' 
-                        //Begin case '\n' 
+                        
+                        
                         listener.handle(sb.toString());
-                        //End case '\n' 
-                        //Begin case '\n' 
+                        
+                        
                         sb.setLength(0);
-                        //End case '\n' 
-                        //Begin case '\n' 
+                        
+                        
                         rePos = pos + i + 1;
-                        //End case '\n' 
-                        //Begin case '\r' 
+                        
+                        
                         {
                             sb.append('\r');
-                        } //End block
-                        //End case '\r' 
-                        //Begin case '\r' 
+                        } 
+                        
+                        
                         seenCR = true;
-                        //End case '\r' 
-                        //Begin case default 
+                        
+                        
                         {
                             seenCR = false;
                             listener.handle(sb.toString());
                             sb.setLength(0);
                             rePos = pos + i + 1;
-                        } //End block
-                        //End case default 
-                        //Begin case default 
+                        } 
+                        
+                        
                         sb.append((char) ch);
-                        //End case default 
-                    } //End block
-                } //End collapsed parenthetic
+                        
+                    } 
+                } 
                 pos = reader.getFilePointer();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         reader.seek(rePos);
         addTaint(reader.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1015106723 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1015106723;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

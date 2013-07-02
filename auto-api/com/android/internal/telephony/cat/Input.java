@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Bitmap;
 import android.os.Parcel;
@@ -63,19 +63,19 @@ public class Input implements Parcelable {
         yesNo = false;
         helpAvailable = false;
         duration = null;
-        // ---------- Original Method ----------
-        //text = "";
-        //defaultText = null;
-        //icon = null;
-        //minLen = 0;
-        //maxLen = 1;
-        //ucs2 = false;
-        //packed = false;
-        //digitOnly = false;
-        //echo = false;
-        //yesNo = false;
-        //helpAvailable = false;
-        //duration = null;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -93,19 +93,19 @@ public class Input implements Parcelable {
         yesNo = in.readInt() == 1 ? true : false;
         helpAvailable = in.readInt() == 1 ? true : false;
         duration = in.readParcelable(null);
-        // ---------- Original Method ----------
-        //text = in.readString();
-        //defaultText = in.readString();
-        //icon = in.readParcelable(null);
-        //minLen = in.readInt();
-        //maxLen = in.readInt();
-        //ucs2 = in.readInt() == 1 ? true : false;
-        //packed = in.readInt() == 1 ? true : false;
-        //digitOnly = in.readInt() == 1 ? true : false;
-        //echo = in.readInt() == 1 ? true : false;
-        //yesNo = in.readInt() == 1 ? true : false;
-        //helpAvailable = in.readInt() == 1 ? true : false;
-        //duration = in.readParcelable(null);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -113,11 +113,12 @@ public class Input implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1351642245 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1351642245;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.616 -0400", hash_original_method = "B53B93ABACC072A2D5F958A02DC16FEB", hash_generated_method = "0A0237B2C51AF1380E2260C1DFB8790D")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(text);
@@ -134,19 +135,19 @@ public class Input implements Parcelable {
         dest.writeParcelable(duration, 0);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(text);
-        //dest.writeString(defaultText);
-        //dest.writeParcelable(icon, 0);
-        //dest.writeInt(minLen);
-        //dest.writeInt(maxLen);
-        //dest.writeInt(ucs2 ? 1 : 0);
-        //dest.writeInt(packed ? 1 : 0);
-        //dest.writeInt(digitOnly ? 1 : 0);
-        //dest.writeInt(echo ? 1 : 0);
-        //dest.writeInt(yesNo ? 1 : 0);
-        //dest.writeInt(helpAvailable ? 1 : 0);
-        //dest.writeParcelable(duration, 0);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -155,8 +156,8 @@ public class Input implements Parcelable {
         addTaint(Icon.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1457169001 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1457169001;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -171,12 +172,12 @@ public class Input implements Parcelable {
             return new Input[size];
         }
     };
-    // orphaned legacy method
+    
     public Input createFromParcel(Parcel in) {
             return new Input(in);
         }
     
-    // orphaned legacy method
+    
     public Input[] newArray(int size) {
             return new Input[size];
         }

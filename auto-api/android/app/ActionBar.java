@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -24,7 +24,7 @@ public abstract class ActionBar {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.192 -0400", hash_original_method = "6A41438E0ABBC5F08FB907D4E02D20B4", hash_generated_method = "6A41438E0ABBC5F08FB907D4E02D20B4")
     public ActionBar ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -101,14 +101,14 @@ public abstract class ActionBar {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.201 -0400", hash_original_method = "1C087D5A46FF67AB400586D7FD9EC5DB", hash_generated_method = "184ECC6E3A17064DE6557B26863E8FD7")
     public void setStackedBackgroundDrawable(Drawable d) {
         addTaint(d.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.201 -0400", hash_original_method = "195D6A86B8711735C7C3591D31E1AD73", hash_generated_method = "F99303F8EA7438E1CAFBF97E7B14E49B")
     public void setSplitBackgroundDrawable(Drawable d) {
         addTaint(d.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -187,18 +187,18 @@ public abstract class ActionBar {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.210 -0400", hash_original_method = "B663ADC8583DEAC97152A4FAD7E4AA4D", hash_generated_method = "6820886889E9AAC2524F4C6D5D9C8B77")
     public void setHomeButtonEnabled(boolean enabled) {
         addTaint(enabled);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.211 -0400", hash_original_method = "1844047509BF7744FF58A8E07C1F4469", hash_generated_method = "155CC78B045B1065C82EC2BEFE1F4BF9")
     public Context getThemedContext() {
-        Context varB4EAC82CA7396A68D541C85D26508E83_1114896093 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_1114896093 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1114896093 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1114896093.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1114896093.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1114896093;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -207,7 +207,7 @@ public abstract class ActionBar {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.211 -0400", hash_original_method = "FF0150C0A74BE2A44D0E92299D724EF7", hash_generated_method = "FF0150C0A74BE2A44D0E92299D724EF7")
         public Tab ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -297,12 +297,12 @@ public abstract class ActionBar {
             a.recycle();
             addTaint(c.getTaint());
             addTaint(attrs.getTaint());
-            // ---------- Original Method ----------
-            //TypedArray a = c.obtainStyledAttributes(attrs,
-                    //com.android.internal.R.styleable.ActionBar_LayoutParams);
-            //gravity = a.getInt(
-                    //com.android.internal.R.styleable.ActionBar_LayoutParams_layout_gravity, -1);
-            //a.recycle();
+            
+            
+                    
+            
+                    
+            
         }
 
         
@@ -312,8 +312,8 @@ public abstract class ActionBar {
             this.gravity = Gravity.CENTER_VERTICAL | Gravity.LEFT;
             addTaint(width);
             addTaint(height);
-            // ---------- Original Method ----------
-            //this.gravity = Gravity.CENTER_VERTICAL | Gravity.LEFT;
+            
+            
         }
 
         
@@ -323,8 +323,8 @@ public abstract class ActionBar {
             this.gravity = gravity;
             addTaint(width);
             addTaint(height);
-            // ---------- Original Method ----------
-            //this.gravity = gravity;
+            
+            
         }
 
         
@@ -332,7 +332,7 @@ public abstract class ActionBar {
         public  LayoutParams(int gravity) {
             this(WRAP_CONTENT, MATCH_PARENT, gravity);
             addTaint(gravity);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -340,8 +340,8 @@ public abstract class ActionBar {
         public  LayoutParams(LayoutParams source) {
             super(source);
             this.gravity = source.gravity;
-            // ---------- Original Method ----------
-            //this.gravity = source.gravity;
+            
+            
         }
 
         
@@ -349,7 +349,7 @@ public abstract class ActionBar {
         public  LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

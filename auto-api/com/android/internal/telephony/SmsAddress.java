@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class SmsAddress {
@@ -22,18 +22,18 @@ public abstract class SmsAddress {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.864 -0400", hash_original_method = "B8327960B9CD15772A1562BB89169838", hash_generated_method = "B8327960B9CD15772A1562BB89169838")
     public SmsAddress ()
     {
-        //Synthesized constructor
+        
     }
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.865 -0400", hash_original_method = "EAD8B5BB0DBAF5034E5C9FE6C7B0909A", hash_generated_method = "B9927172AA47F54BE0D99235F50888B7")
     public String getAddressString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1850055276 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1850055276 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1850055276 = address;
-        varB4EAC82CA7396A68D541C85D26508E83_1850055276.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1850055276.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1850055276;
-        // ---------- Original Method ----------
-        //return address;
+        
+        
     }
 
     
@@ -41,8 +41,8 @@ public abstract class SmsAddress {
     public boolean isAlphanumeric() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1625470722 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1625470722;
-        // ---------- Original Method ----------
-        //return ton == TON_ALPHANUMERIC;
+        
+        
     }
 
     
@@ -50,18 +50,19 @@ public abstract class SmsAddress {
     public boolean isNetworkSpecific() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_265942568 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_265942568;
-        // ---------- Original Method ----------
-        //return ton == TON_NETWORK;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.866 -0400", hash_original_method = "62AA39399884507545860A1B63B7D677", hash_generated_method = "745F9A9FD1D3C6083D834A3AEF6E6329")
     public boolean couldBeEmailGateway() {
         boolean var5F8CA1C53D86A02AC2A1F17461AE53DF_1960268006 = (address.length() <= 4);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1725993145 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1725993145;
-        // ---------- Original Method ----------
-        //return address.length() <= 4;
+        
+        
     }
 
     

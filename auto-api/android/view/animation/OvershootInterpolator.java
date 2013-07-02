@@ -1,11 +1,11 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -19,16 +19,16 @@ public class OvershootInterpolator implements Interpolator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.705 -0400", hash_original_method = "3B6B46657965F6A20EBA4BBC6ADB2DCC", hash_generated_method = "A80BEDF24C62F5BB949AF4EB0447BF7C")
     public  OvershootInterpolator() {
         mTension = 2.0f;
-        // ---------- Original Method ----------
-        //mTension = 2.0f;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.705 -0400", hash_original_method = "AC62500F6876F098739AD852AB3DA2C8", hash_generated_method = "3342901F331D73E8DB6BB4CD2D2DD8A1")
     public  OvershootInterpolator(float tension) {
         mTension = tension;
-        // ---------- Original Method ----------
-        //mTension = tension;
+        
+        
     }
 
     
@@ -41,12 +41,12 @@ public class OvershootInterpolator implements Interpolator {
         a.recycle();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.OvershootInterpolator);
-        //mTension =
-                //a.getFloat(com.android.internal.R.styleable.OvershootInterpolator_tension, 2.0f);
-        //a.recycle();
+        
+        
+                
+        
+                
+        
     }
 
     
@@ -56,9 +56,9 @@ public class OvershootInterpolator implements Interpolator {
         addTaint(t);
         float var546ADE640B6EDFBC8A086EF31347E768_882164432 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_882164432;
-        // ---------- Original Method ----------
-        //t -= 1.0f;
-        //return t * t * ((mTension + 1) * t + mTension) + 1.0f;
+        
+        
+        
     }
 
     

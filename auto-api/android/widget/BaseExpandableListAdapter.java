@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.database.DataSetObservable;
 import android.database.DataSetObserver;
@@ -18,42 +18,46 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.996 -0400", hash_original_method = "7B80614A139C618C091804954249D80D", hash_generated_method = "7B80614A139C618C091804954249D80D")
     public BaseExpandableListAdapter ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.997 -0400", hash_original_method = "5BE178AB760CC925EF7E1111F1B4915D", hash_generated_method = "D80BACDB53770E495497918A52F212CE")
     public void registerDataSetObserver(DataSetObserver observer) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         mDataSetObservable.registerObserver(observer);
         addTaint(observer.getTaint());
-        // ---------- Original Method ----------
-        //mDataSetObservable.registerObserver(observer);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.997 -0400", hash_original_method = "8548074F279CEB9C75C60995B3E76B4B", hash_generated_method = "18957645919BC1B25C95D955828DA072")
     public void unregisterDataSetObserver(DataSetObserver observer) {
         mDataSetObservable.unregisterObserver(observer);
         addTaint(observer.getTaint());
-        // ---------- Original Method ----------
-        //mDataSetObservable.unregisterObserver(observer);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.997 -0400", hash_original_method = "733D96117EC068A88A560CFA24913D79", hash_generated_method = "A7F0E4AF3D0109D819E8AFDA57AB77CC")
     public void notifyDataSetInvalidated() {
         mDataSetObservable.notifyInvalidated();
-        // ---------- Original Method ----------
-        //mDataSetObservable.notifyInvalidated();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.998 -0400", hash_original_method = "6B5DF5B4CDDD51D923DE488520E93535", hash_generated_method = "3158F3A56E63A128E4489E6003CA7FEA")
     public void notifyDataSetChanged() {
         mDataSetObservable.notifyChanged();
-        // ---------- Original Method ----------
-        //mDataSetObservable.notifyChanged();
+        
+        
     }
 
     
@@ -61,24 +65,24 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     public boolean areAllItemsEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2056396757 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2056396757;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.998 -0400", hash_original_method = "C8A32BD5B228826DAE8ECAF9C52D77CC", hash_generated_method = "4AB5127AC0DCCE6566F0CDD02EC70069")
     public void onGroupCollapsed(int groupPosition) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(groupPosition);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.999 -0400", hash_original_method = "EDE3519F9C72D4A644C7E6D1DFFECD4D", hash_generated_method = "5C64D6D0F3D5AA2D9DE1377CB3A7558C")
     public void onGroupExpanded(int groupPosition) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(groupPosition);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -88,8 +92,8 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
         addTaint(childId);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_885111183 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_885111183;
-        // ---------- Original Method ----------
-        //return 0x8000000000000000L | ((groupId & 0x7FFFFFFF) << 32) | (childId & 0xFFFFFFFF);
+        
+        
     }
 
     
@@ -98,18 +102,19 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
         addTaint(groupId);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_9056238 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_9056238;
-        // ---------- Original Method ----------
-        //return (groupId & 0x7FFFFFFF) << 32;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.000 -0400", hash_original_method = "5FAC6FB77FD1E9F9E1ADE9FFEE4D8A44", hash_generated_method = "954A8B3F53299E86E029B0D72DD6A97C")
     public boolean isEmpty() {
         boolean varF04683A2E6644A2E953AB70856E2B39D_1785413889 = (getGroupCount() == 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_184903623 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_184903623;
-        // ---------- Original Method ----------
-        //return getGroupCount() == 0;
+        
+        
     }
 
     
@@ -119,8 +124,8 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
         addTaint(childPosition);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_762969036 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_762969036;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -128,8 +133,8 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     public int getChildTypeCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_341666282 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_341666282;
-        // ---------- Original Method ----------
-        //return 1;
+        
+        
     }
 
     
@@ -138,8 +143,8 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
         addTaint(groupPosition);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1608433985 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1608433985;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -147,8 +152,8 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     public int getGroupTypeCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_38240341 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_38240341;
-        // ---------- Original Method ----------
-        //return 1;
+        
+        
     }
 
     

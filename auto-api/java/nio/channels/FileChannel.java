@@ -1,11 +1,11 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -16,7 +16,7 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.623 -0400", hash_original_method = "EC2F86678151C05272A58EBF4D3007B7", hash_generated_method = "CAA1890A7E9ABFD404DD3FE2B64245BB")
     protected  FileChannel() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,12 +25,12 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.624 -0400", hash_original_method = "DFAB2BF3C1A891B83AFBA77A43B03809", hash_generated_method = "CF0794A8244CFF1C39ADFF1A0BD03B11")
     public final FileLock lock() throws IOException {
-        FileLock varB4EAC82CA7396A68D541C85D26508E83_1334336074 = null; //Variable for return #1
+        FileLock varB4EAC82CA7396A68D541C85D26508E83_1334336074 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1334336074 = lock(0L, Long.MAX_VALUE, false);
-        varB4EAC82CA7396A68D541C85D26508E83_1334336074.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1334336074.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1334336074;
-        // ---------- Original Method ----------
-        //return lock(0L, Long.MAX_VALUE, false);
+        
+        
     }
 
     
@@ -61,8 +61,8 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
         addTaint(buffers[0].getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1296841667 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1296841667;
-        // ---------- Original Method ----------
-        //return read(buffers, 0, buffers.length);
+        
+        
     }
 
     
@@ -86,12 +86,12 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.626 -0400", hash_original_method = "F4B810DA7C3314CA042E76DA336480A9", hash_generated_method = "23CFB4EC4FC59D93BE2DEE23C73A5BBF")
     public final FileLock tryLock() throws IOException {
-        FileLock varB4EAC82CA7396A68D541C85D26508E83_2087223553 = null; //Variable for return #1
+        FileLock varB4EAC82CA7396A68D541C85D26508E83_2087223553 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2087223553 = tryLock(0L, Long.MAX_VALUE, false);
-        varB4EAC82CA7396A68D541C85D26508E83_2087223553.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2087223553.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2087223553;
-        // ---------- Original Method ----------
-        //return tryLock(0L, Long.MAX_VALUE, false);
+        
+        
     }
 
     
@@ -112,8 +112,8 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
         addTaint(buffers[0].getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_754144828 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_754144828;
-        // ---------- Original Method ----------
-        //return write(buffers, 0, buffers.length);
+        
+        
     }
 
     
@@ -129,20 +129,20 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.627 -0400", hash_original_method = "CA25667E00C4DE16C856657D4E26E93A", hash_generated_method = "2A634FD4036420DE1BBF3037D197C63F")
         private  MapMode(String displayName) {
             this.displayName = displayName;
-            // ---------- Original Method ----------
-            //this.displayName = displayName;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.628 -0400", hash_original_method = "224E04BA70E2891F43254A5C70CBC214", hash_generated_method = "106C54ADD84AFAE7B75CEDFAFF4384A9")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_157359741 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_157359741 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_157359741 = displayName;
-            varB4EAC82CA7396A68D541C85D26508E83_157359741.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_157359741.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_157359741;
-            // ---------- Original Method ----------
-            //return displayName;
+            
+            
         }
 
         

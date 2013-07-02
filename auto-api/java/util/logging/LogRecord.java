@@ -1,11 +1,11 @@
 package java.util.logging;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -59,7 +59,7 @@ public class LogRecord implements Serializable {
     public  LogRecord(Level level, String msg) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("level == null");
-        } //End block
+        } 
         this.level = level;
         this.message = msg;
         this.millis = System.currentTimeMillis();
@@ -69,11 +69,11 @@ public class LogRecord implements Serializable {
             {
                 this.threadID = initThreadId;
                 currentThreadId.set(Integer.valueOf(initThreadId++));
-            } //End block
+            } 
             {
                 this.threadID = id.intValue();
-            } //End block
-        } //End block
+            } 
+        } 
         this.sourceClassName = null;
         this.sourceMethodName = null;
         this.loggerName = null;
@@ -81,71 +81,72 @@ public class LogRecord implements Serializable {
         this.resourceBundle = null;
         this.resourceBundleName = null;
         this.thrown = null;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.418 -0400", hash_original_method = "0FEEFD0C4767A5B5B477CADC6D101FDE", hash_generated_method = "45A23A1F549667DCF00F280FB8B55B41")
     public Level getLevel() {
-        Level varB4EAC82CA7396A68D541C85D26508E83_1375430504 = null; //Variable for return #1
+        Level varB4EAC82CA7396A68D541C85D26508E83_1375430504 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1375430504 = level;
-        varB4EAC82CA7396A68D541C85D26508E83_1375430504.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1375430504.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1375430504;
-        // ---------- Original Method ----------
-        //return level;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.418 -0400", hash_original_method = "1C71253C97024F86DF08173E2DC14542", hash_generated_method = "9F039328858FB7C37A14527D741AC03E")
     public void setLevel(Level level) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("level == null");
-        } //End block
+        } 
         this.level = level;
-        // ---------- Original Method ----------
-        //if (level == null) {
-            //throw new NullPointerException("level == null");
-        //}
-        //this.level = level;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.418 -0400", hash_original_method = "F91ED8A8026304D4EB26E347DCDA5498", hash_generated_method = "34E313F6B36AE110E3CE2B2738D12262")
     public String getLoggerName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_810886459 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_810886459 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_810886459 = loggerName;
-        varB4EAC82CA7396A68D541C85D26508E83_810886459.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_810886459.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_810886459;
-        // ---------- Original Method ----------
-        //return loggerName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.419 -0400", hash_original_method = "A458AA58D2D6B65ABAE0935E2AD2D855", hash_generated_method = "4107C4AC85EC187BD5ACF284D6F4D27F")
     public void setLoggerName(String loggerName) {
         this.loggerName = loggerName;
-        // ---------- Original Method ----------
-        //this.loggerName = loggerName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.419 -0400", hash_original_method = "AF20B727F6E1F2FE1F73E3107355CAA7", hash_generated_method = "00D049DA67AF45421E1C22C5BB9A070D")
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_805800289 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_805800289 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_805800289 = message;
-        varB4EAC82CA7396A68D541C85D26508E83_805800289.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_805800289.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_805800289;
-        // ---------- Original Method ----------
-        //return message;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.419 -0400", hash_original_method = "9A40E46319AC2A39DCEE47C689D1B957", hash_generated_method = "ECD2FD94E8E1263A481FCAA4BA79136D")
     public void setMessage(String message) {
         this.message = message;
-        // ---------- Original Method ----------
-        //this.message = message;
+        
+        
     }
 
     
@@ -153,73 +154,73 @@ public class LogRecord implements Serializable {
     public long getMillis() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_68827217 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_68827217;
-        // ---------- Original Method ----------
-        //return millis;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.420 -0400", hash_original_method = "AAA6B913A1F36A93830487DCD9FBEB6E", hash_generated_method = "4A5286A8D3BAD575DF87ABE37A21528A")
     public void setMillis(long millis) {
         this.millis = millis;
-        // ---------- Original Method ----------
-        //this.millis = millis;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.421 -0400", hash_original_method = "7E2CB3B3486574EE0A68176991A0ECCF", hash_generated_method = "CE7895FA0FC6E10EEC5AD24DE2D4B61E")
     public Object[] getParameters() {
-        Object[] varB4EAC82CA7396A68D541C85D26508E83_845789163 = null; //Variable for return #1
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_845789163 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_845789163 = parameters;
-        varB4EAC82CA7396A68D541C85D26508E83_845789163.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_845789163.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_845789163;
-        // ---------- Original Method ----------
-        //return parameters;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.421 -0400", hash_original_method = "A8B44ED180D604C73C7E6D3CC47CE208", hash_generated_method = "EAAF5364DA7321CF27F377D30F3727EC")
     public void setParameters(Object[] parameters) {
         this.parameters = parameters;
-        // ---------- Original Method ----------
-        //this.parameters = parameters;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.422 -0400", hash_original_method = "A55D46251237391AC4070653DF8FD1F0", hash_generated_method = "931FA60E09637C4210C4C24B0ABC516D")
     public ResourceBundle getResourceBundle() {
-        ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_2050728300 = null; //Variable for return #1
+        ResourceBundle varB4EAC82CA7396A68D541C85D26508E83_2050728300 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2050728300 = resourceBundle;
-        varB4EAC82CA7396A68D541C85D26508E83_2050728300.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2050728300.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2050728300;
-        // ---------- Original Method ----------
-        //return resourceBundle;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.422 -0400", hash_original_method = "22E19C2BD30D13ED1AEAB526931847D2", hash_generated_method = "82DB922AF0E3D816DBC8DF664756776E")
     public void setResourceBundle(ResourceBundle resourceBundle) {
         this.resourceBundle = resourceBundle;
-        // ---------- Original Method ----------
-        //this.resourceBundle = resourceBundle;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.422 -0400", hash_original_method = "73FB3843FBEEE5F85EEE27DAD4E6665A", hash_generated_method = "A9C157F1F3F98ACE5B39E95FF385F95E")
     public String getResourceBundleName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1125593951 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1125593951 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1125593951 = resourceBundleName;
-        varB4EAC82CA7396A68D541C85D26508E83_1125593951.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1125593951.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1125593951;
-        // ---------- Original Method ----------
-        //return resourceBundleName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.423 -0400", hash_original_method = "953EDB4ADFDF1563BD9A241A7063EF86", hash_generated_method = "DB340DADBDA61DCE3A5BCDCFF788C469")
     public void setResourceBundleName(String resourceBundleName) {
         this.resourceBundleName = resourceBundleName;
-        // ---------- Original Method ----------
-        //this.resourceBundleName = resourceBundleName;
+        
+        
     }
 
     
@@ -227,32 +228,34 @@ public class LogRecord implements Serializable {
     public long getSequenceNumber() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_263774235 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_263774235;
-        // ---------- Original Method ----------
-        //return sequenceNumber;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.423 -0400", hash_original_method = "A872117CAF84BB70B3F50AB7DBB15709", hash_generated_method = "36A35E268F041883EE2560486480F2F4")
     public void setSequenceNumber(long sequenceNumber) {
         this.sequenceNumber = sequenceNumber;
-        // ---------- Original Method ----------
-        //this.sequenceNumber = sequenceNumber;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.424 -0400", hash_original_method = "17474CC4607EF1F80968125D954E4F2F", hash_generated_method = "139467894BC7B86EE190A30D4E2646EA")
     public String getSourceClassName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_901781790 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_901781790 = null; 
         initSource();
         varB4EAC82CA7396A68D541C85D26508E83_901781790 = sourceClassName;
-        varB4EAC82CA7396A68D541C85D26508E83_901781790.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_901781790.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_901781790;
-        // ---------- Original Method ----------
-        //initSource();
-        //return sourceClassName;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.428 -0400", hash_original_method = "598A8AAA0AD5798486DE87D6CFFB0E3D", hash_generated_method = "74734CBFADD829FA5E5200B169A0FAFA")
     private void initSource() {
         boolean sawLogger = false;
@@ -264,31 +267,31 @@ public class LogRecord implements Serializable {
                     boolean varD3C8C54B33E01F84E69DE674172CDD86_371894112 = (current.startsWith(Logger.class.getName()));
                     {
                         sawLogger = true;
-                    } //End block
+                    } 
                     {
                         this.sourceClassName = element.getClassName();
                         this.sourceMethodName = element.getMethodName();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         sourceInitialized = true;
-        // ---------- Original Method ----------
-        //if (sourceInitialized) {
-            //return;
-        //}
-        //boolean sawLogger = false;
-        //for (StackTraceElement element : new Throwable().getStackTrace()) {
-            //String current = element.getClassName();
-            //if (current.startsWith(Logger.class.getName())) {
-                //sawLogger = true;
-            //} else if (sawLogger) {
-                //this.sourceClassName = element.getClassName();
-                //this.sourceMethodName = element.getMethodName();
-                //break;
-            //}
-        //}
-        //sourceInitialized = true;
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+                
+                
+                
+            
+        
+        
     }
 
     
@@ -296,22 +299,23 @@ public class LogRecord implements Serializable {
     public void setSourceClassName(String sourceClassName) {
         sourceInitialized = true;
         this.sourceClassName = sourceClassName;
-        // ---------- Original Method ----------
-        //sourceInitialized = true;
-        //this.sourceClassName = sourceClassName;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.430 -0400", hash_original_method = "997894DE44F9E4C217C990670A2096CD", hash_generated_method = "EDAB12E4C0C9CDF48EC0FFC55CEC63FB")
     public String getSourceMethodName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_300329053 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_300329053 = null; 
         initSource();
         varB4EAC82CA7396A68D541C85D26508E83_300329053 = sourceMethodName;
-        varB4EAC82CA7396A68D541C85D26508E83_300329053.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_300329053.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_300329053;
-        // ---------- Original Method ----------
-        //initSource();
-        //return sourceMethodName;
+        
+        
+        
     }
 
     
@@ -319,9 +323,9 @@ public class LogRecord implements Serializable {
     public void setSourceMethodName(String sourceMethodName) {
         sourceInitialized = true;
         this.sourceMethodName = sourceMethodName;
-        // ---------- Original Method ----------
-        //sourceInitialized = true;
-        //this.sourceMethodName = sourceMethodName;
+        
+        
+        
     }
 
     
@@ -329,38 +333,39 @@ public class LogRecord implements Serializable {
     public int getThreadID() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_505062828 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_505062828;
-        // ---------- Original Method ----------
-        //return threadID;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.432 -0400", hash_original_method = "BFD778F3BC25BE448B5B49F6297DA90A", hash_generated_method = "242E8DAC4BAF6C1976325C1A9D10F46A")
     public void setThreadID(int threadID) {
         this.threadID = threadID;
-        // ---------- Original Method ----------
-        //this.threadID = threadID;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.433 -0400", hash_original_method = "9281C9177DD0647B668ECFF1744AEA20", hash_generated_method = "56F4E53206B361591F1106665EB76430")
     public Throwable getThrown() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_1810693441 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_1810693441 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1810693441 = thrown;
-        varB4EAC82CA7396A68D541C85D26508E83_1810693441.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1810693441.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1810693441;
-        // ---------- Original Method ----------
-        //return thrown;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.433 -0400", hash_original_method = "11A0184E1F2F67806A14E7D6384E1936", hash_generated_method = "D3014FF7E704F60A198DAA6CB1A11C82")
     public void setThrown(Throwable thrown) {
         this.thrown = thrown;
-        // ---------- Original Method ----------
-        //this.thrown = thrown;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.439 -0400", hash_original_method = "D3EC386C5EF05328C43DBAC50DDD8B32", hash_generated_method = "487AC3F2F1B42EFFBD0E4F541FD37679")
     private void writeObject(ObjectOutputStream out) throws IOException {
         out.defaultWriteObject();
@@ -368,32 +373,33 @@ public class LogRecord implements Serializable {
         out.writeByte(MINOR);
         {
             out.writeInt(-1);
-        } //End block
+        } 
         {
             out.writeInt(parameters.length);
             {
                 Object element = parameters[0];
                 {
                     out.writeObject((element == null) ? null : element.toString());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.defaultWriteObject();
-        //out.writeByte(MAJOR);
-        //out.writeByte(MINOR);
-        //if (parameters == null) {
-            //out.writeInt(-1);
-        //} else {
-            //out.writeInt(parameters.length);
-            //for (Object element : parameters) {
-                //out.writeObject((element == null) ? null : element.toString());
-            //}
-        //}
+        
+        
+        
+        
+        
+            
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.440 -0400", hash_original_method = "807ED1C9D5895C8055BA2AC3A6A18BB7", hash_generated_method = "4F94F78B3079506F1BCE08FD9AE55CB7")
     private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {
@@ -402,7 +408,7 @@ public class LogRecord implements Serializable {
         byte minor = in.readByte();
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Different version " + Byte.valueOf(major) + "." + Byte.valueOf(minor));
-        } //End block
+        } 
         int length = in.readInt();
         {
             parameters = new Object[length];
@@ -410,40 +416,40 @@ public class LogRecord implements Serializable {
                 int i = 0;
                 {
                     parameters[i] = in.readObject();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             try 
             {
                 resourceBundle = Logger.loadResourceBundle(resourceBundleName);
-            } //End block
+            } 
             catch (MissingResourceException e)
             {
                 resourceBundle = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //in.defaultReadObject();
-        //byte major = in.readByte();
-        //byte minor = in.readByte();
-        //if (major != MAJOR) {
-            //throw new IOException("Different version " + Byte.valueOf(major) + "." + Byte.valueOf(minor));
-        //}
-        //int length = in.readInt();
-        //if (length >= 0) {
-            //parameters = new Object[length];
-            //for (int i = 0; i < parameters.length; i++) {
-                //parameters[i] = in.readObject();
-            //}
-        //}
-        //if (resourceBundleName != null) {
-            //try {
-                //resourceBundle = Logger.loadResourceBundle(resourceBundleName);
-            //} catch (MissingResourceException e) {
-                //resourceBundle = null;
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     

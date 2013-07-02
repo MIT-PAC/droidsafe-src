@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -21,56 +21,56 @@ public class BERApplicationSpecificParser implements ASN1ApplicationSpecificPars
       BERApplicationSpecificParser(int tag, ASN1StreamParser parser) {
         this.tag = tag;
         this.parser = parser;
-        // ---------- Original Method ----------
-        //this.tag = tag;
-        //this.parser = parser;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.099 -0400", hash_original_method = "FC19FBA5450B1E3458DF66BAD498F5C7", hash_generated_method = "22B360C6E13993C8FBF29720CE5BB5CB")
     public DEREncodable readObject() throws IOException {
-        DEREncodable varB4EAC82CA7396A68D541C85D26508E83_1206445314 = null; //Variable for return #1
+        DEREncodable varB4EAC82CA7396A68D541C85D26508E83_1206445314 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1206445314 = parser.readObject();
-        varB4EAC82CA7396A68D541C85D26508E83_1206445314.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1206445314.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1206445314;
-        // ---------- Original Method ----------
-        //return parser.readObject();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.100 -0400", hash_original_method = "B2A8CB4DD75EA6F990011FAB1A0E301F", hash_generated_method = "8AB714B8B54D983699AB02AA733C975C")
     public DERObject getLoadedObject() throws IOException {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_2008229275 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_2008229275 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2008229275 = new BERApplicationSpecific(tag, parser.readVector());
-        varB4EAC82CA7396A68D541C85D26508E83_2008229275.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2008229275.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2008229275;
-        // ---------- Original Method ----------
-        //return new BERApplicationSpecific(tag, parser.readVector());
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.100 -0400", hash_original_method = "C25B7E6814F316F8AC8F55D830DF862A", hash_generated_method = "F6B986AE09886FD3888A9C55E4F8FDD1")
     public DERObject getDERObject() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_355169937 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_355169937 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_355169937 = getLoadedObject();
-        } //End block
+        } 
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new ASN1ParsingException(e.getMessage(), e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_355169937.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_355169937.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_355169937;
-        // ---------- Original Method ----------
-        //try
-        //{
-            //return getLoadedObject();
-        //}
-        //catch (IOException e)
-        //{
-            //throw new ASN1ParsingException(e.getMessage(), e);
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     

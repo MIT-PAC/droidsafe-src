@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.reflect.Array;
 
@@ -24,12 +24,13 @@ public class UnsafeArrayList<T> extends AbstractList<T> {
     public  UnsafeArrayList(Class<T> elementType, int initialCapacity) {
         this.array = (T[]) Array.newInstance(elementType, initialCapacity);
         this.elementType = elementType;
-        // ---------- Original Method ----------
-        //this.array = (T[]) Array.newInstance(elementType, initialCapacity);
-        //this.elementType = elementType;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.674 -0400", hash_original_method = "B6C593001C4EDD88B75B904464FE5D63", hash_generated_method = "A949E78BC2B09DAAD6E943D4139267BC")
     @Override
     public boolean add(T element) {
@@ -37,42 +38,44 @@ public class UnsafeArrayList<T> extends AbstractList<T> {
             T[] newArray = (T[]) Array.newInstance(elementType, size * 2);
             System.arraycopy(array, 0, newArray, 0, size);
             array = newArray;
-        } //End block
+        } 
         array[size++] = element;
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1116315591 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1116315591;
-        // ---------- Original Method ----------
-        //if (size == array.length) {
-            //T[] newArray = (T[]) Array.newInstance(elementType, size * 2);
-            //System.arraycopy(array, 0, newArray, 0, size);
-            //array = newArray;
-        //}
-        //array[size++] = element;
-        //++modCount;
-        //return true;
+        
+        
+            
+            
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.675 -0400", hash_original_method = "E1B1B3AC94057B841216C896CA029484", hash_generated_method = "AA881C3A2307AA07BE71C48B1EB49041")
     public T[] array() {
-        T[] varB4EAC82CA7396A68D541C85D26508E83_444319196 = null; //Variable for return #1
+        T[] varB4EAC82CA7396A68D541C85D26508E83_444319196 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_444319196 = array;
-        varB4EAC82CA7396A68D541C85D26508E83_444319196.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_444319196.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_444319196;
-        // ---------- Original Method ----------
-        //return array;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.676 -0400", hash_original_method = "6AAD1AE5FDA036294C1A8E6B43833A30", hash_generated_method = "92380C6949CFAF8C4B08E7BF939246F4")
     public T get(int i) {
-        T varB4EAC82CA7396A68D541C85D26508E83_731597315 = null; //Variable for return #1
+        T varB4EAC82CA7396A68D541C85D26508E83_731597315 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_731597315 = array[i];
         addTaint(i);
-        varB4EAC82CA7396A68D541C85D26508E83_731597315.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_731597315.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_731597315;
-        // ---------- Original Method ----------
-        //return array[i];
+        
+        
     }
 
     
@@ -80,8 +83,8 @@ public class UnsafeArrayList<T> extends AbstractList<T> {
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1805567145 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1805567145;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     

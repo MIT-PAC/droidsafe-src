@@ -1,18 +1,18 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class NotSerializableException extends ObjectStreamException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.129 -0400", hash_original_method = "F05776C79D2C056D2A5E9037EDB03920", hash_generated_method = "E3071F25014A23D137F4E1B852E7E0CA")
     public  NotSerializableException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class NotSerializableException extends ObjectStreamException {
     public  NotSerializableException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

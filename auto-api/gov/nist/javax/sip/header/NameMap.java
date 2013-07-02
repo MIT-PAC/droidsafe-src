@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.core.*;
 import gov.nist.javax.sip.header.ims.*;
@@ -16,10 +16,11 @@ public class NameMap implements SIPHeaderNames, PackageNames {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.827 -0400", hash_original_method = "4E6FA555129DB964A8E35D51AC605671", hash_generated_method = "4E6FA555129DB964A8E35D51AC605671")
     public NameMap ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected static void putNameMap(String headerName, String className) {
         nameMap.put(
             headerName.toLowerCase(),
@@ -27,6 +28,7 @@ public class NameMap implements SIPHeaderNames, PackageNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Class getClassFromName(String headerName) {
         String className = (String) nameMap.get(headerName.toLowerCase());
         if (className == null)
@@ -41,6 +43,7 @@ public class NameMap implements SIPHeaderNames, PackageNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void addExtensionHeader(
         String headerName,
         String className) {
@@ -48,6 +51,7 @@ public class NameMap implements SIPHeaderNames, PackageNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void initializeNameMap() {
         nameMap = new Hashtable();
         putNameMap(MinExpires.NAME, MinExpires.class.getName());

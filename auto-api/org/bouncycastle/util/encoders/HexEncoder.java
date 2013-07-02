@@ -1,11 +1,11 @@
 package org.bouncycastle.util.encoders;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -24,8 +24,8 @@ public class HexEncoder implements Encoder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.325 -0400", hash_original_method = "E555776B59F5150257DBB59B34D3D923", hash_generated_method = "7737B06D97A40AC486E2D8BE989DC087")
     public  HexEncoder() {
         initialiseDecodingTable();
-        // ---------- Original Method ----------
-        //initialiseDecodingTable();
+        
+        
     }
 
     
@@ -35,28 +35,29 @@ public class HexEncoder implements Encoder {
             int i = 0;
             {
                 decodingTable[encodingTable[i]] = (byte)i;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         decodingTable['A'] = decodingTable['a'];
         decodingTable['B'] = decodingTable['b'];
         decodingTable['C'] = decodingTable['c'];
         decodingTable['D'] = decodingTable['d'];
         decodingTable['E'] = decodingTable['e'];
         decodingTable['F'] = decodingTable['f'];
-        // ---------- Original Method ----------
-        //for (int i = 0; i < encodingTable.length; i++)
-        //{
-            //decodingTable[encodingTable[i]] = (byte)i;
-        //}
-        //decodingTable['A'] = decodingTable['a'];
-        //decodingTable['B'] = decodingTable['b'];
-        //decodingTable['C'] = decodingTable['c'];
-        //decodingTable['D'] = decodingTable['d'];
-        //decodingTable['E'] = decodingTable['e'];
-        //decodingTable['F'] = decodingTable['f'];
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.326 -0400", hash_original_method = "BD9F8FC335D977E935DA4351136AEC70", hash_generated_method = "D6AF59B169EFD784A9A0561805343F17")
     public int encode(
         byte[]                data,
@@ -69,22 +70,22 @@ public class HexEncoder implements Encoder {
                 int v = data[i] & 0xff;
                 out.write(encodingTable[(v >>> 4)]);
                 out.write(encodingTable[v & 0xf]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(data[0]);
         addTaint(off);
         addTaint(length);
         addTaint(out.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_14344016 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_14344016;
-        // ---------- Original Method ----------
-        //for (int i = off; i < (off + length); i++)
-        //{
-            //int    v = data[i] & 0xff;
-            //out.write(encodingTable[(v >>> 4)]);
-            //out.write(encodingTable[v & 0xf]);
-        //}
-        //return length * 2;
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -94,11 +95,12 @@ public class HexEncoder implements Encoder {
         addTaint(c);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_926192900 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_926192900;
-        // ---------- Original Method ----------
-        //return (c == '\n' || c =='\r' || c == '\t' || c == ' ');
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.327 -0400", hash_original_method = "B7EDB63E53FAEFA939E2D19889BCA5A2", hash_generated_method = "304B8F23C6CCC9785FDE2A61501D292F")
     public int decode(
         byte[]          data,
@@ -112,58 +114,59 @@ public class HexEncoder implements Encoder {
         {
             {
                 boolean var8734AAABA8B2B8BCF029CC1C18593F13_2140518680 = (!ignore((char)data[end - 1]));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         int i = off;
         {
             {
                 boolean var54C7BE422D589D4EE3EB334BCFD700ED_234143177 = (i < end && ignore((char)data[i]));
-            } //End collapsed parenthetic
+            } 
             b1 = decodingTable[data[i++]];
             {
                 boolean var54C7BE422D589D4EE3EB334BCFD700ED_1326116509 = (i < end && ignore((char)data[i]));
-            } //End collapsed parenthetic
+            } 
             b2 = decodingTable[data[i++]];
             out.write((b1 << 4) | b2);
-        } //End block
+        } 
         addTaint(data[0]);
         addTaint(off);
         addTaint(length);
         addTaint(out.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1853508023 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1853508023;
-        // ---------- Original Method ----------
-        //byte    b1, b2;
-        //int     outLen = 0;
-        //int     end = off + length;
-        //while (end > off)
-        //{
-            //if (!ignore((char)data[end - 1]))
-            //{
-                //break;
-            //}
-            //end--;
-        //}
-        //int i = off;
-        //while (i < end)
-        //{
-            //while (i < end && ignore((char)data[i]))
-            //{
-                //i++;
-            //}
-            //b1 = decodingTable[data[i++]];
-            //while (i < end && ignore((char)data[i]))
-            //{
-                //i++;
-            //}
-            //b2 = decodingTable[data[i++]];
-            //out.write((b1 << 4) | b2);
-            //outLen++;
-        //}
-        //return outLen;
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
+        
+        
+            
+            
+                
+            
+            
+            
+            
+                
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.329 -0400", hash_original_method = "6D8A267573E3557F73C2709EF9053C58", hash_generated_method = "C3FB01C435F46C944AC4AD23F6852836")
     public int decode(
         String          data,
@@ -175,53 +178,53 @@ public class HexEncoder implements Encoder {
         {
             {
                 boolean varC2A9184A6FDB10F7AA879085E67E2E47_269128251 = (!ignore(data.charAt(end - 1)));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         int i = 0;
         {
             {
                 boolean varF0244F9F9EF55F67FCF89B8CEA49201D_1524631847 = (i < end && ignore(data.charAt(i)));
-            } //End collapsed parenthetic
+            } 
             b1 = decodingTable[data.charAt(i++)];
             {
                 boolean varF0244F9F9EF55F67FCF89B8CEA49201D_489885426 = (i < end && ignore(data.charAt(i)));
-            } //End collapsed parenthetic
+            } 
             b2 = decodingTable[data.charAt(i++)];
             out.write((b1 << 4) | b2);
-        } //End block
+        } 
         addTaint(data.getTaint());
         addTaint(out.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1080056334 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1080056334;
-        // ---------- Original Method ----------
-        //byte    b1, b2;
-        //int     length = 0;
-        //int     end = data.length();
-        //while (end > 0)
-        //{
-            //if (!ignore(data.charAt(end - 1)))
-            //{
-                //break;
-            //}
-            //end--;
-        //}
-        //int i = 0;
-        //while (i < end)
-        //{
-            //while (i < end && ignore(data.charAt(i)))
-            //{
-                //i++;
-            //}
-            //b1 = decodingTable[data.charAt(i++)];
-            //while (i < end && ignore(data.charAt(i)))
-            //{
-                //i++;
-            //}
-            //b2 = decodingTable[data.charAt(i++)];
-            //out.write((b1 << 4) | b2);
-            //length++;
-        //}
-        //return length;
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
+        
+        
+            
+            
+                
+            
+            
+            
+            
+                
+            
+            
+            
+            
+        
+        
     }
 
     

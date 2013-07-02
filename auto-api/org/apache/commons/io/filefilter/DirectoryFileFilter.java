@@ -1,11 +1,11 @@
 package org.apache.commons.io.filefilter;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.Serializable;
@@ -14,10 +14,11 @@ public class DirectoryFileFilter extends AbstractFileFilter implements Serializa
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.713 -0400", hash_original_method = "271A2DD2196E2818F8A34D7CEDB3A1A7", hash_generated_method = "0D5911F1A17B74E32BF0921AEF88F306")
     protected  DirectoryFileFilter() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.713 -0400", hash_original_method = "39BD0BE636DBD4121253CD6DED7A982C", hash_generated_method = "924C55AA0D8B8533D7708A2B5689E9F5")
     @Override
     public boolean accept(File file) {
@@ -25,8 +26,8 @@ public class DirectoryFileFilter extends AbstractFileFilter implements Serializa
         addTaint(file.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_352409670 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_352409670;
-        // ---------- Original Method ----------
-        //return file.isDirectory();
+        
+        
     }
 
     

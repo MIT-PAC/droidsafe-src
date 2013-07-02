@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class OperationApplicationException extends Exception {
@@ -17,8 +17,8 @@ public class OperationApplicationException extends Exception {
     public  OperationApplicationException() {
         super();
         mNumSuccessfulYieldPoints = 0;
-        // ---------- Original Method ----------
-        //mNumSuccessfulYieldPoints = 0;
+        
+        
     }
 
     
@@ -27,8 +27,8 @@ public class OperationApplicationException extends Exception {
         super(message);
         mNumSuccessfulYieldPoints = 0;
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //mNumSuccessfulYieldPoints = 0;
+        
+        
     }
 
     
@@ -38,8 +38,8 @@ public class OperationApplicationException extends Exception {
         mNumSuccessfulYieldPoints = 0;
         addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-        //mNumSuccessfulYieldPoints = 0;
+        
+        
     }
 
     
@@ -48,8 +48,8 @@ public class OperationApplicationException extends Exception {
         super(cause);
         mNumSuccessfulYieldPoints = 0;
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-        //mNumSuccessfulYieldPoints = 0;
+        
+        
     }
 
     
@@ -57,8 +57,8 @@ public class OperationApplicationException extends Exception {
     public  OperationApplicationException(int numSuccessfulYieldPoints) {
         super();
         mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
-        // ---------- Original Method ----------
-        //mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
+        
+        
     }
 
     
@@ -67,8 +67,8 @@ public class OperationApplicationException extends Exception {
         super(message);
         mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
+        
+        
     }
 
     
@@ -76,8 +76,8 @@ public class OperationApplicationException extends Exception {
     public int getNumSuccessfulYieldPoints() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_660434232 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_660434232;
-        // ---------- Original Method ----------
-        //return mNumSuccessfulYieldPoints;
+        
+        
     }
 
     

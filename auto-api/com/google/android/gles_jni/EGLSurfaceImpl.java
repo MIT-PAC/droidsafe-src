@@ -1,11 +1,11 @@
 package com.google.android.gles_jni;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.microedition.khronos.egl.*;
 
@@ -21,9 +21,9 @@ public class EGLSurfaceImpl extends EGLSurface {
     public  EGLSurfaceImpl() {
         mEGLSurface = 0;
         mNativePixelRef = 0;
-        // ---------- Original Method ----------
-        //mEGLSurface = 0;
-        //mNativePixelRef = 0;
+        
+        
+        
     }
 
     
@@ -31,9 +31,9 @@ public class EGLSurfaceImpl extends EGLSurface {
     public  EGLSurfaceImpl(int surface) {
         mEGLSurface = surface;
         mNativePixelRef = 0;
-        // ---------- Original Method ----------
-        //mEGLSurface = surface;
-        //mNativePixelRef = 0;
+        
+        
+        
     }
 
     
@@ -42,16 +42,16 @@ public class EGLSurfaceImpl extends EGLSurface {
     public boolean equals(Object o) {
         {
             boolean var62E9FD43E59369C472D5FDFD656300C3_1943111443 = (o == null || getClass() != o.getClass());
-        } //End collapsed parenthetic
+        } 
         EGLSurfaceImpl that = (EGLSurfaceImpl) o;
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1608358326 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1608358326;
-        // ---------- Original Method ----------
-        //if (this == o) return true;
-        //if (o == null || getClass() != o.getClass()) return false;
-        //EGLSurfaceImpl that = (EGLSurfaceImpl) o;
-        //return mEGLSurface == that.mEGLSurface;
+        
+        
+        
+        
+        
     }
 
     
@@ -60,8 +60,8 @@ public class EGLSurfaceImpl extends EGLSurface {
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1559506902 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1559506902;
-        // ---------- Original Method ----------
-        //return mEGLSurface;
+        
+        
     }
 
     

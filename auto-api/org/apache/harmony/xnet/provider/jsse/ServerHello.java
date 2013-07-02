@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.security.SecureRandom;
@@ -43,18 +43,18 @@ public class ServerHello extends Message {
         this.server_version = server_version;
         length = 38 + session_id.length;
         addTaint(sr.getTaint());
-        // ---------- Original Method ----------
-        //long gmt_unix_time = new java.util.Date().getTime() / 1000;
-        //sr.nextBytes(random);
-        //random[0] = (byte) ((gmt_unix_time & 0xFF000000) >>> 24);
-        //random[1] = (byte) ((gmt_unix_time & 0xFF0000) >>> 16);
-        //random[2] = (byte) ((gmt_unix_time & 0xFF00) >>> 8);
-        //random[3] = (byte) (gmt_unix_time & 0xFF);
-        //this.session_id = session_id;
-        //this.cipher_suite = cipher_suite;
-        //this.compression_method = compression_method;
-        //this.server_version = server_version;
-        //length = 38 + session_id.length;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -73,26 +73,27 @@ public class ServerHello extends Message {
         this.length = 38 + session_id.length;
         {
             fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect ServerHello");
-        } //End block
+        } 
         addTaint(length);
-        // ---------- Original Method ----------
-        //server_version[0] = (byte) in.read();
-        //server_version[1] = (byte) in.read();
-        //Streams.readFully(in, random);
-        //int size = in.readUint8();
-        //session_id = new byte[size];
-        //in.read(session_id, 0, size);
-        //byte b0 = (byte) in.read();
-        //byte b1 = (byte) in.read();
-        //cipher_suite = CipherSuite.getByCode(b0, b1);
-        //compression_method = (byte) in.read();
-        //this.length = 38 + session_id.length;
-        //if (this.length != length) {
-            //fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect ServerHello");
-        //}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.258 -0400", hash_original_method = "58B711F614C57C81491E703600BC8F27", hash_generated_method = "F9C83BCB1D601E4FD82B8356902C7E65")
     @Override
     public void send(HandshakeIODataStream out) {
@@ -104,14 +105,14 @@ public class ServerHello extends Message {
         out.write(compression_method);
         length = 38 + session_id.length;
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.write(server_version);
-        //out.write(random);
-        //out.writeUint8(session_id.length);
-        //out.write(session_id);
-        //out.write(cipher_suite.toBytes());
-        //out.write(compression_method);
-        //length = 38 + session_id.length;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -119,8 +120,8 @@ public class ServerHello extends Message {
     public byte[] getRandom() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_684625917 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_684625917;
-        // ---------- Original Method ----------
-        //return random;
+        
+        
     }
 
     
@@ -129,8 +130,8 @@ public class ServerHello extends Message {
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_179567336 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_179567336;
-        // ---------- Original Method ----------
-        //return Handshake.SERVER_HELLO;
+        
+        
     }
 
     

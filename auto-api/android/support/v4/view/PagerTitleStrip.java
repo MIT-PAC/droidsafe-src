@@ -1,11 +1,11 @@
 package android.support.v4.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -68,7 +68,7 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
     public  PagerTitleStrip(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -84,11 +84,11 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
             mPrevText.setTextAppearance(context, textAppearance);
             mCurrText.setTextAppearance(context, textAppearance);
             mNextText.setTextAppearance(context, textAppearance);
-        } //End block
+        } 
         final int textSize = a.getDimensionPixelSize(1, 0);
         {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
-        } //End block
+        } 
         {
             boolean varC56E456E9D7D5394B1593532B89D4F9D_1492017136 = (a.hasValue(2));
             {
@@ -96,8 +96,8 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
                 mPrevText.setTextColor(textColor);
                 mCurrText.setTextColor(textColor);
                 mNextText.setTextColor(textColor);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mGravity = a.getInteger(3, Gravity.BOTTOM);
         a.recycle();
         mTextColor = mCurrText.getTextColors().getDefaultColor();
@@ -110,23 +110,23 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
             final TypedArray ta = context.obtainStyledAttributes(textAppearance, TEXT_ATTRS);
             allCaps = ta.getBoolean(0, false);
             ta.recycle();
-        } //End block
+        } 
         {
             setSingleLineAllCaps(mPrevText);
             setSingleLineAllCaps(mCurrText);
             setSingleLineAllCaps(mNextText);
-        } //End block
+        } 
         {
             mPrevText.setSingleLine();
             mCurrText.setSingleLine();
             mNextText.setSingleLine();
-        } //End block
+        } 
         final float density = context.getResources().getDisplayMetrics().density;
         mScaledTextSpacing = (int) (TEXT_SPACING * density);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -139,9 +139,9 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
     public void setTextSpacing(int spacingPixels) {
         mScaledTextSpacing = spacingPixels;
         requestLayout();
-        // ---------- Original Method ----------
-        //mScaledTextSpacing = spacingPixels;
-        //requestLayout();
+        
+        
+        
     }
 
     
@@ -149,8 +149,8 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
     public int getTextSpacing() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2007287066 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2007287066;
-        // ---------- Original Method ----------
-        //return mScaledTextSpacing;
+        
+        
     }
 
     
@@ -160,11 +160,11 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         final int transparentColor = (mNonPrimaryAlpha << 24) | (mTextColor & 0xFFFFFF);
         mPrevText.setTextColor(transparentColor);
         mNextText.setTextColor(transparentColor);
-        // ---------- Original Method ----------
-        //mNonPrimaryAlpha = (int) (alpha * 255) & 0xFF;
-        //final int transparentColor = (mNonPrimaryAlpha << 24) | (mTextColor & 0xFFFFFF);
-        //mPrevText.setTextColor(transparentColor);
-        //mNextText.setTextColor(transparentColor);
+        
+        
+        
+        
+        
     }
 
     
@@ -175,12 +175,12 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         final int transparentColor = (mNonPrimaryAlpha << 24) | (mTextColor & 0xFFFFFF);
         mPrevText.setTextColor(transparentColor);
         mNextText.setTextColor(transparentColor);
-        // ---------- Original Method ----------
-        //mTextColor = color;
-        //mCurrText.setTextColor(color);
-        //final int transparentColor = (mNonPrimaryAlpha << 24) | (mTextColor & 0xFFFFFF);
-        //mPrevText.setTextColor(transparentColor);
-        //mNextText.setTextColor(transparentColor);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -191,10 +191,10 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         mNextText.setTextSize(unit, size);
         addTaint(unit);
         addTaint(size);
-        // ---------- Original Method ----------
-        //mPrevText.setTextSize(unit, size);
-        //mCurrText.setTextSize(unit, size);
-        //mNextText.setTextSize(unit, size);
+        
+        
+        
+        
     }
 
     
@@ -202,63 +202,63 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
     public void setGravity(int gravity) {
         mGravity = gravity;
         requestLayout();
-        // ---------- Original Method ----------
-        //mGravity = gravity;
-        //requestLayout();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.957 -0400", hash_original_method = "848B9DD252B5642B635212FB2317B5E7", hash_generated_method = "6BA87DF307EE10CC7A3FE3B0F9E02665")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
         final ViewParent parent = getParent();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "PagerTitleStrip must be a direct child of a ViewPager.");
-        } //End block
+        } 
         final ViewPager pager = (ViewPager) parent;
         final PagerAdapter adapter = pager.getAdapter();
         pager.setInternalPageChangeListener(mPageListener);
         pager.setOnAdapterChangeListener(mPageListener);
         mPager = pager;
         updateAdapter(mWatchingAdapter != null ? mWatchingAdapter.get() : null, adapter);
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //final ViewParent parent = getParent();
-        //if (!(parent instanceof ViewPager)) {
-            //throw new IllegalStateException(
-                    //"PagerTitleStrip must be a direct child of a ViewPager.");
-        //}
-        //final ViewPager pager = (ViewPager) parent;
-        //final PagerAdapter adapter = pager.getAdapter();
-        //pager.setInternalPageChangeListener(mPageListener);
-        //pager.setOnAdapterChangeListener(mPageListener);
-        //mPager = pager;
-        //updateAdapter(mWatchingAdapter != null ? mWatchingAdapter.get() : null, adapter);
+        
+        
+        
+        
+            
+                    
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.959 -0400", hash_original_method = "226181D55AB267E2F315638FEE6EF6D6", hash_generated_method = "51688AE78D1E4CF76ECDC8182F465AC7")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDetachedFromWindow();
         {
             updateAdapter(mPager.getAdapter(), null);
             mPager.setInternalPageChangeListener(null);
             mPager.setOnAdapterChangeListener(null);
             mPager = null;
-        } //End block
-        // ---------- Original Method ----------
-        //super.onDetachedFromWindow();
-        //if (mPager != null) {
-            //updateAdapter(mPager.getAdapter(), null);
-            //mPager.setInternalPageChangeListener(null);
-            //mPager.setOnAdapterChangeListener(null);
-            //mPager = null;
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -271,14 +271,14 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         CharSequence text = null;
         {
             text = adapter.getPageTitle(currentItem - 1);
-        } //End block
+        } 
         mPrevText.setText(text);
         mCurrText.setText(adapter != null && currentItem < itemCount ?
                 adapter.getPageTitle(currentItem) : null);
         text = null;
         {
             text = adapter.getPageTitle(currentItem + 1);
-        } //End block
+        } 
         mNextText.setText(text);
         final int width = getWidth() - getPaddingLeft() - getPaddingRight();
         final int childHeight = getHeight() - getPaddingTop() - getPaddingBottom();
@@ -291,11 +291,11 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         mLastKnownCurrentPage = currentItem;
         {
             updateTextPositions(currentItem, mLastKnownPositionOffset, false);
-        } //End block
+        } 
         mUpdatingText = false;
         addTaint(adapter.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -304,11 +304,11 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
     public void requestLayout() {
         {
             super.requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mUpdatingText) {
-            //super.requestLayout();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -317,33 +317,33 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         {
             oldAdapter.unregisterDataSetObserver(mPageListener);
             mWatchingAdapter = null;
-        } //End block
+        } 
         {
             newAdapter.registerDataSetObserver(mPageListener);
             mWatchingAdapter = new WeakReference<PagerAdapter>(newAdapter);
-        } //End block
+        } 
         {
             mLastKnownCurrentPage = -1;
             mLastKnownPositionOffset = -1;
             updateText(mPager.getCurrentItem(), newAdapter);
             requestLayout();
-        } //End block
+        } 
         addTaint(oldAdapter.getTaint());
-        // ---------- Original Method ----------
-        //if (oldAdapter != null) {
-            //oldAdapter.unregisterDataSetObserver(mPageListener);
-            //mWatchingAdapter = null;
-        //}
-        //if (newAdapter != null) {
-            //newAdapter.registerDataSetObserver(mPageListener);
-            //mWatchingAdapter = new WeakReference<PagerAdapter>(newAdapter);
-        //}
-        //if (mPager != null) {
-            //mLastKnownCurrentPage = -1;
-            //mLastKnownPositionOffset = -1;
-            //updateText(mPager.getCurrentItem(), newAdapter);
-            //requestLayout();
-        //}
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -351,7 +351,7 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
      void updateTextPositions(int position, float positionOffset, boolean force) {
         {
             updateText(position, mPager.getAdapter());
-        } //End block
+        } 
         mUpdatingPositions = true;
         final int prevWidth = mPrevText.getMeasuredWidth();
         final int currWidth = mCurrText.getMeasuredWidth();
@@ -369,7 +369,7 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         float currOffset = positionOffset + 0.5f;
         {
             currOffset -= 1.f;
-        } //End block
+        } 
         final int currCenter = stripWidth - textPaddedRight - (int) (contentWidth * currOffset);
         final int currLeft = currCenter - currWidth / 2;
         final int currRight = currLeft + currWidth;
@@ -389,42 +389,42 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         int prevTop;
         int currTop;
         int nextTop;
-        //Begin case default Gravity.TOP 
+        
         prevTop = paddingTop + prevTopOffset;
-        //End case default Gravity.TOP 
-        //Begin case default Gravity.TOP 
+        
+        
         currTop = paddingTop + currTopOffset;
-        //End case default Gravity.TOP 
-        //Begin case default Gravity.TOP 
+        
+        
         nextTop = paddingTop + nextTopOffset;
-        //End case default Gravity.TOP 
-        //Begin case Gravity.CENTER_VERTICAL 
+        
+        
         final int paddedHeight = stripHeight - paddingTop - paddingBottom;
-        //End case Gravity.CENTER_VERTICAL 
-        //Begin case Gravity.CENTER_VERTICAL 
+        
+        
         final int centeredTop = (paddedHeight - maxTextHeight) / 2;
-        //End case Gravity.CENTER_VERTICAL 
-        //Begin case Gravity.CENTER_VERTICAL 
+        
+        
         prevTop = centeredTop + prevTopOffset;
-        //End case Gravity.CENTER_VERTICAL 
-        //Begin case Gravity.CENTER_VERTICAL 
+        
+        
         currTop = centeredTop + currTopOffset;
-        //End case Gravity.CENTER_VERTICAL 
-        //Begin case Gravity.CENTER_VERTICAL 
+        
+        
         nextTop = centeredTop + nextTopOffset;
-        //End case Gravity.CENTER_VERTICAL 
-        //Begin case Gravity.BOTTOM 
+        
+        
         final int bottomGravTop = stripHeight - paddingBottom - maxTextHeight;
-        //End case Gravity.BOTTOM 
-        //Begin case Gravity.BOTTOM 
+        
+        
         prevTop = bottomGravTop + prevTopOffset;
-        //End case Gravity.BOTTOM 
-        //Begin case Gravity.BOTTOM 
+        
+        
         currTop = bottomGravTop + currTopOffset;
-        //End case Gravity.BOTTOM 
-        //Begin case Gravity.BOTTOM 
+        
+        
         nextTop = bottomGravTop + nextTopOffset;
-        //End case Gravity.BOTTOM 
+        
         mCurrText.layout(currLeft, currTop, currRight,
                 currTop + mCurrText.getMeasuredHeight());
         final int prevLeft = Math.min(paddingLeft, currLeft - mScaledTextSpacing - prevWidth);
@@ -438,22 +438,22 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         mUpdatingPositions = false;
         addTaint(position);
         addTaint(force);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.995 -0400", hash_original_method = "51FB66892937CB37A2CA53CCF8BF865D", hash_generated_method = "2B6E9C40AB276DC4E66616E5C8206AAC")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         final int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         final int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         final int heightSize = MeasureSpec.getSize(heightMeasureSpec);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Must measure with an exact width");
-        } //End block
+        } 
         int childHeight = heightSize;
         int minHeight = getMinHeight();
         int padding = 0;
@@ -467,38 +467,38 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         mNextText.measure(childWidthSpec, childHeightSpec);
         {
             setMeasuredDimension(widthSize, heightSize);
-        } //End block
+        } 
         {
             int textHeight = mCurrText.getMeasuredHeight();
             setMeasuredDimension(widthSize, Math.max(minHeight, textHeight + padding));
-        } //End block
+        } 
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.996 -0400", hash_original_method = "EE71B2554045A13705C826A4155956FA", hash_generated_method = "CA7F586C592DF7ADD77F84757F368378")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             float offset;
             offset = mLastKnownPositionOffset;
             offset = 0;
             updateTextPositions(mLastKnownCurrentPage, offset, true);
-        } //End block
+        } 
         addTaint(changed);
         addTaint(l);
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        //if (mPager != null) {
-            //final float offset = mLastKnownPositionOffset >= 0 ? mLastKnownPositionOffset : 0;
-            //updateTextPositions(mLastKnownCurrentPage, offset, true);
-        //}
+        
+        
+            
+            
+        
     }
 
     
@@ -508,16 +508,16 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         final Drawable bg = getBackground();
         {
             minHeight = bg.getIntrinsicHeight();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_998699818 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_998699818;
-        // ---------- Original Method ----------
-        //int minHeight = 0;
-        //final Drawable bg = getBackground();
-        //if (bg != null) {
-            //minHeight = bg.getIntrinsicHeight();
-        //}
-        //return minHeight;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -526,7 +526,7 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.001 -0400", hash_original_method = "F69C6EF9306BD49237C6BD65EE477BFD", hash_generated_method = "F69C6EF9306BD49237C6BD65EE477BFD")
         public PagerTitleStripImplBase ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -534,8 +534,8 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         public void setSingleLineAllCaps(TextView text) {
             text.setSingleLine();
             addTaint(text.getTaint());
-            // ---------- Original Method ----------
-            //text.setSingleLine();
+            
+            
         }
 
         
@@ -548,7 +548,7 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.003 -0400", hash_original_method = "A7C2803E0C7980F7789FD2B4F1224805", hash_generated_method = "A7C2803E0C7980F7789FD2B4F1224805")
         public PagerTitleStripImplIcs ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -556,8 +556,8 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         public void setSingleLineAllCaps(TextView text) {
             PagerTitleStripIcs.setSingleLineAllCaps(text);
             addTaint(text.getTaint());
-            // ---------- Original Method ----------
-            //PagerTitleStripIcs.setSingleLineAllCaps(text);
+            
+            
         }
 
         
@@ -573,82 +573,82 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.005 -0400", hash_original_method = "7F155FC4DE697EB9B965E1AE5F0C4BA5", hash_generated_method = "7F155FC4DE697EB9B965E1AE5F0C4BA5")
         public PageListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.007 -0400", hash_original_method = "6C358B1B424AD01247E78823B26F3317", hash_generated_method = "0479882258325BD62F9AB3A235A9EB8A")
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             updateTextPositions(position, positionOffset, false);
             addTaint(position);
             addTaint(positionOffset);
             addTaint(positionOffsetPixels);
-            // ---------- Original Method ----------
-            //if (positionOffset > 0.5f) {
-                //position++;
-            //}
-            //updateTextPositions(position, positionOffset, false);
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.009 -0400", hash_original_method = "BDE5366BD51457451209BD696A487B58", hash_generated_method = "938F88A31ABDE1F4CC51F0769C0C8799")
         @Override
         public void onPageSelected(int position) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 updateText(mPager.getCurrentItem(), mPager.getAdapter());
                 float offset;
                 offset = mLastKnownPositionOffset;
                 offset = 0;
                 updateTextPositions(mPager.getCurrentItem(), offset, true);
-            } //End block
+            } 
             addTaint(position);
-            // ---------- Original Method ----------
-            //if (mScrollState == ViewPager.SCROLL_STATE_IDLE) {
-                //updateText(mPager.getCurrentItem(), mPager.getAdapter());
-                //final float offset = mLastKnownPositionOffset >= 0 ? mLastKnownPositionOffset : 0;
-                //updateTextPositions(mPager.getCurrentItem(), offset, true);
-            //}
+            
+            
+                
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.011 -0400", hash_original_method = "7D09E30D83D104D1B391B393C60F770D", hash_generated_method = "BEA820A471F67E44B05AC7485AEA4512")
         @Override
         public void onPageScrollStateChanged(int state) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mScrollState = state;
-            // ---------- Original Method ----------
-            //mScrollState = state;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.012 -0400", hash_original_method = "61B15A1B041ED988FCE0F531C9B4D949", hash_generated_method = "031D2C6A847E244D986A5FC12BAD1016")
         @Override
         public void onAdapterChanged(PagerAdapter oldAdapter, PagerAdapter newAdapter) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             updateAdapter(oldAdapter, newAdapter);
             addTaint(oldAdapter.getTaint());
             addTaint(newAdapter.getTaint());
-            // ---------- Original Method ----------
-            //updateAdapter(oldAdapter, newAdapter);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.014 -0400", hash_original_method = "14F4D00F7C7AD3110DA52FF41E59ABFF", hash_generated_method = "DD52C67B8B86C72372E708F93543653D")
         @Override
         public void onChanged() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             updateText(mPager.getCurrentItem(), mPager.getAdapter());
             float offset;
             offset = mLastKnownPositionOffset;
             offset = 0;
             updateTextPositions(mPager.getCurrentItem(), offset, true);
-            // ---------- Original Method ----------
-            //updateText(mPager.getCurrentItem(), mPager.getAdapter());
-            //final float offset = mLastKnownPositionOffset >= 0 ? mLastKnownPositionOffset : 0;
-            //updateTextPositions(mPager.getCurrentItem(), offset, true);
+            
+            
+            
+            
         }
 
         

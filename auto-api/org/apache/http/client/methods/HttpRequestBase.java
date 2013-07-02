@@ -1,11 +1,11 @@
 package org.apache.http.client.methods;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.net.URI;
@@ -43,75 +43,77 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
     public  HttpRequestBase() {
         super();
         this.abortLock = new ReentrantLock();
-        // ---------- Original Method ----------
-        //this.abortLock = new ReentrantLock();
+        
+        
     }
 
     
     public abstract String getMethod();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.785 -0400", hash_original_method = "E43BB65B6EAF4E56B5A8181704221BD7", hash_generated_method = "04F2856A5FF28305FFDD4564C2C13127")
     public ProtocolVersion getProtocolVersion() {
-        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_1599938441 = null; //Variable for return #1
+        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_1599938441 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1599938441 = HttpProtocolParams.getVersion(getParams());
-        varB4EAC82CA7396A68D541C85D26508E83_1599938441.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1599938441.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1599938441;
-        // ---------- Original Method ----------
-        //return HttpProtocolParams.getVersion(getParams());
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.786 -0400", hash_original_method = "548D933490D1B58733888D02043A11B0", hash_generated_method = "04DB8882503441DBE436213F7FE76FBA")
     public URI getURI() {
-        URI varB4EAC82CA7396A68D541C85D26508E83_1700024656 = null; //Variable for return #1
+        URI varB4EAC82CA7396A68D541C85D26508E83_1700024656 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1700024656 = this.uri;
-        varB4EAC82CA7396A68D541C85D26508E83_1700024656.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1700024656.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1700024656;
-        // ---------- Original Method ----------
-        //return this.uri;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.788 -0400", hash_original_method = "93E6AFEE57EFDA4898CAE2DF347D0D02", hash_generated_method = "EF6CD4FCE7393C67BF6FD1AAC340EEAD")
     public RequestLine getRequestLine() {
-        RequestLine varB4EAC82CA7396A68D541C85D26508E83_1362581914 = null; //Variable for return #1
+        RequestLine varB4EAC82CA7396A68D541C85D26508E83_1362581914 = null; 
         String method = getMethod();
         ProtocolVersion ver = getProtocolVersion();
         URI uri = getURI();
         String uritext = null;
         {
             uritext = uri.toASCIIString();
-        } //End block
+        } 
         {
             boolean var03A1675A35EE77EC28D14B979DA97E09_22992995 = (uritext == null || uritext.length() == 0);
             {
                 uritext = "/";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1362581914 = new BasicRequestLine(method, uritext, ver);
-        varB4EAC82CA7396A68D541C85D26508E83_1362581914.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1362581914.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1362581914;
-        // ---------- Original Method ----------
-        //String method = getMethod();
-        //ProtocolVersion ver = getProtocolVersion();
-        //URI uri = getURI();
-        //String uritext = null;
-        //if (uri != null) {
-            //uritext = uri.toASCIIString();
-        //}
-        //if (uritext == null || uritext.length() == 0) {
-            //uritext = "/";
-        //}
-        //return new BasicRequestLine(method, uritext, ver);
+        
+        
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.789 -0400", hash_original_method = "3320A765B2CE48350AC27D9599EAC026", hash_generated_method = "C72876729647E8A3A80A7FBC268F56B2")
     public void setURI(final URI uri) {
         this.uri = uri;
-        // ---------- Original Method ----------
-        //this.uri = uri;
+        
+        
     }
 
     
@@ -122,25 +124,25 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("Request already aborted");
-            } //End block
+            } 
             this.releaseTrigger = null;
             this.connRequest = connRequest;
-        } //End block
+        } 
         finally 
         {
             this.abortLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //this.abortLock.lock();
-        //try {
-            //if (this.aborted) {
-                //throw new IOException("Request already aborted");
-            //}
-            //this.releaseTrigger = null;
-            //this.connRequest = connRequest;
-        //} finally {
-            //this.abortLock.unlock();
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -151,28 +153,29 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("Request already aborted");
-            } //End block
+            } 
             this.connRequest = null;
             this.releaseTrigger = releaseTrigger;
-        } //End block
+        } 
         finally 
         {
             this.abortLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //this.abortLock.lock();
-        //try {
-            //if (this.aborted) {
-                //throw new IOException("Request already aborted");
-            //}
-            //this.connRequest = null;
-            //this.releaseTrigger = releaseTrigger;
-        //} finally {
-            //this.abortLock.unlock();
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.792 -0400", hash_original_method = "DAE61D1D90E50FDB083EDE1BB1F7240A", hash_generated_method = "39B5294C93A96E696DC9CB0E4440C3C9")
     public void abort() {
         ClientConnectionRequest localRequest;
@@ -183,45 +186,45 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
             this.aborted = true;
             localRequest = connRequest;
             localTrigger = releaseTrigger;
-        } //End block
+        } 
         finally 
         {
             this.abortLock.unlock();
-        } //End block
+        } 
         {
             localRequest.abortRequest();
-        } //End block
+        } 
         {
             try 
             {
                 localTrigger.abortConnection();
-            } //End block
+            } 
             catch (IOException ex)
             { }
-        } //End block
-        // ---------- Original Method ----------
-        //ClientConnectionRequest localRequest;
-        //ConnectionReleaseTrigger localTrigger;
-        //this.abortLock.lock();
-        //try {
-            //if (this.aborted) {
-                //return;
-            //}            
-            //this.aborted = true;
-            //localRequest = connRequest;
-            //localTrigger = releaseTrigger;
-        //} finally {
-            //this.abortLock.unlock();
-        //}
-        //if (localRequest != null) {
-            //localRequest.abortRequest();
-        //}
-        //if (localTrigger != null) {
-            //try {
-                //localTrigger.abortConnection();
-            //} catch (IOException ex) {
-            //}
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+                
+            
+            
+            
+            
+        
+            
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -229,15 +232,16 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
     public boolean isAborted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_557226697 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_557226697;
-        // ---------- Original Method ----------
-        //return this.aborted;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.794 -0400", hash_original_method = "7E78C92898A9406CD028D56B8CBA9D93", hash_generated_method = "E422ED76A3AEA7B40BF10EF5E2F22215")
     @Override
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1503684256 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1503684256 = null; 
         HttpRequestBase clone = (HttpRequestBase) super.clone();
         clone.abortLock = new ReentrantLock();
         clone.aborted = false;
@@ -246,17 +250,17 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
         clone.headergroup = (HeaderGroup) CloneUtils.clone(this.headergroup);
         clone.params = (HttpParams) CloneUtils.clone(this.params);
         varB4EAC82CA7396A68D541C85D26508E83_1503684256 = clone;
-        varB4EAC82CA7396A68D541C85D26508E83_1503684256.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1503684256.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1503684256;
-        // ---------- Original Method ----------
-        //HttpRequestBase clone = (HttpRequestBase) super.clone();
-        //clone.abortLock = new ReentrantLock();
-        //clone.aborted = false;
-        //clone.releaseTrigger = null;
-        //clone.connRequest = null;
-        //clone.headergroup = (HeaderGroup) CloneUtils.clone(this.headergroup);
-        //clone.params = (HttpParams) CloneUtils.clone(this.params);
-        //return clone;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

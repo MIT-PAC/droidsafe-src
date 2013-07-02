@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.R;
 import android.content.Context;
@@ -62,8 +62,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         super(context);
         initAbsSpinner();
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //initAbsSpinner();
+        
+        
     }
 
     
@@ -72,7 +72,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         this(context, attrs, 0);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -88,44 +88,46 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
                             R.layout.simple_spinner_item, entries);
             adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
             setAdapter(adapter);
-        } //End block
+        } 
         a.recycle();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        //initAbsSpinner();
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.AbsSpinner, defStyle, 0);
-        //CharSequence[] entries = a.getTextArray(R.styleable.AbsSpinner_entries);
-        //if (entries != null) {
-            //ArrayAdapter<CharSequence> adapter =
-                    //new ArrayAdapter<CharSequence>(context,
-                            //R.layout.simple_spinner_item, entries);
-            //adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
-            //setAdapter(adapter);
-        //}
-        //a.recycle();
+        
+        
+        
+                
+        
+        
+            
+                    
+                            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.168 -0400", hash_original_method = "189B5B9E645B86B5245C2FF55DEC5907", hash_generated_method = "95F290FF3D8900B1A5D05DB6AC9E34A4")
     private void initAbsSpinner() {
         setFocusable(true);
         setWillNotDraw(false);
-        // ---------- Original Method ----------
-        //setFocusable(true);
-        //setWillNotDraw(false);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.168 -0400", hash_original_method = "E5824BE9B0ACFF3A1B32EE310E006300", hash_generated_method = "865730D782B64768A3794AC6F204E276")
     @Override
     public void setAdapter(SpinnerAdapter adapter) {
         {
             mAdapter.unregisterDataSetObserver(mDataSetObserver);
             resetList();
-        } //End block
+        } 
         mAdapter = adapter;
         mOldSelectedPosition = INVALID_POSITION;
         mOldSelectedRowId = INVALID_ROW_ID;
@@ -142,16 +144,16 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
             setNextSelectedPositionInt(position);
             {
                 checkSelectionChanged();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             checkFocus();
             resetList();
             checkSelectionChanged();
-        } //End block
+        } 
         requestLayout();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -165,22 +167,23 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         setSelectedPositionInt(INVALID_POSITION);
         setNextSelectedPositionInt(INVALID_POSITION);
         invalidate();
-        // ---------- Original Method ----------
-        //mDataChanged = false;
-        //mNeedSync = false;
-        //removeAllViewsInLayout();
-        //mOldSelectedPosition = INVALID_POSITION;
-        //mOldSelectedRowId = INVALID_ROW_ID;
-        //setSelectedPositionInt(INVALID_POSITION);
-        //setNextSelectedPositionInt(INVALID_POSITION);
-        //invalidate();
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.170 -0400", hash_original_method = "29BB60D69D80C0C6339E2E86482D98C0", hash_generated_method = "07F06A4367A4E6B52768CCB3A2740AAD")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSize;
         int heightSize;
@@ -194,7 +197,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
                 : mSelectionBottomPadding;
         {
             handleDataChanged();
-        } //End block
+        } 
         int preferredHeight = 0;
         int preferredWidth = 0;
         boolean needsMeasuring = true;
@@ -205,10 +208,10 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
                 View view = mRecycler.get(selectedPosition);
                 {
                     view = mAdapter.getView(selectedPosition, null, this);
-                } //End block
+                } 
                 {
                     mRecycler.put(selectedPosition, view);
-                } //End block
+                } 
                 {
                     {
                         boolean var5796118831C98F47A208EF62E7CCA9A9_894529429 = (view.getLayoutParams() == null);
@@ -216,21 +219,21 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
                             mBlockLayoutRequests = true;
                             view.setLayoutParams(generateDefaultLayoutParams());
                             mBlockLayoutRequests = false;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     measureChild(view, widthMeasureSpec, heightMeasureSpec);
                     preferredHeight = getChildHeight(view) + mSpinnerPadding.top + mSpinnerPadding.bottom;
                     preferredWidth = getChildWidth(view) + mSpinnerPadding.left + mSpinnerPadding.right;
                     needsMeasuring = false;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             preferredHeight = mSpinnerPadding.top + mSpinnerPadding.bottom;
             {
                 preferredWidth = mSpinnerPadding.left + mSpinnerPadding.right;
-            } //End block
-        } //End block
+            } 
+        } 
         preferredHeight = Math.max(preferredHeight, getSuggestedMinimumHeight());
         preferredWidth = Math.max(preferredWidth, getSuggestedMinimumWidth());
         heightSize = resolveSizeAndState(preferredHeight, heightMeasureSpec, 0);
@@ -238,8 +241,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         setMeasuredDimension(widthSize, heightSize);
         mHeightMeasureSpec = heightMeasureSpec;
         mWidthMeasureSpec = widthMeasureSpec;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -249,8 +252,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         addTaint(child.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1811277488 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1811277488;
-        // ---------- Original Method ----------
-        //return child.getMeasuredHeight();
+        
+        
     }
 
     
@@ -260,24 +263,24 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         addTaint(child.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_390542201 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_390542201;
-        // ---------- Original Method ----------
-        //return child.getMeasuredWidth();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.172 -0400", hash_original_method = "2179BEF90E842D00377926E5531ABF89", hash_generated_method = "D306C3DBF781B259A76C683126CCC316")
     @Override
     protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
-        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_638468478 = null; //Variable for return #1
+        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_638468478 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_638468478 = new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
-        varB4EAC82CA7396A68D541C85D26508E83_638468478.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_638468478.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_638468478;
-        // ---------- Original Method ----------
-        //return new ViewGroup.LayoutParams(
-                //ViewGroup.LayoutParams.MATCH_PARENT,
-                //ViewGroup.LayoutParams.WRAP_CONTENT);
+        
+        
+                
+                
     }
 
     
@@ -292,20 +295,21 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
                 View v = getChildAt(i);
                 int index = position + i;
                 recycleBin.put(index, v);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //final int childCount = getChildCount();
-        //final AbsSpinner.RecycleBin recycleBin = mRecycler;
-        //final int position = mFirstPosition;
-        //for (int i = 0; i < childCount; i++) {
-            //View v = getChildAt(i);
-            //int index = position + i;
-            //recycleBin.put(index, v);
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.172 -0400", hash_original_method = "D2708A7FDB907C7B6958E15DD672DA8E", hash_generated_method = "F39CE9F5ED7467029EAC46A2BB511D86")
     public void setSelection(int position, boolean animate) {
         boolean shouldAnimate = animate && mFirstPosition <= position &&
@@ -313,13 +317,14 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         setSelectionInt(position, shouldAnimate);
         addTaint(position);
         addTaint(animate);
-        // ---------- Original Method ----------
-        //boolean shouldAnimate = animate && mFirstPosition <= position &&
-                //position <= mFirstPosition + getChildCount() - 1;
-        //setSelectionInt(position, shouldAnimate);
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.173 -0400", hash_original_method = "7E33360CBDBF59A4E473BBC01C4A9D09", hash_generated_method = "9104B6006943BC06479683337877C3BB")
     @Override
     public void setSelection(int position) {
@@ -327,10 +332,10 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         requestLayout();
         invalidate();
         addTaint(position);
-        // ---------- Original Method ----------
-        //setNextSelectedPositionInt(position);
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
     }
 
     
@@ -342,76 +347,78 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
             setNextSelectedPositionInt(position);
             layout(delta, animate);
             mBlockLayoutRequests = false;
-        } //End block
+        } 
         addTaint(position);
         addTaint(animate);
-        // ---------- Original Method ----------
-        //if (position != mOldSelectedPosition) {
-            //mBlockLayoutRequests = true;
-            //int delta  = position - mSelectedPosition;
-            //setNextSelectedPositionInt(position);
-            //layout(delta, animate);
-            //mBlockLayoutRequests = false;
-        //}
+        
+        
+            
+            
+            
+            
+            
+        
     }
 
     
     abstract void layout(int delta, boolean animate);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.174 -0400", hash_original_method = "B9D708BD110913DD38C752A46A05BBB4", hash_generated_method = "F8830D8EAD02158F7104B711DCC8D86E")
     @Override
     public View getSelectedView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_1712597896 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1795881546 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_1712597896 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1795881546 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1712597896 = getChildAt(mSelectedPosition - mFirstPosition);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1795881546 = null;
-        } //End block
-        View varA7E53CE21691AB073D9660D615818899_1488100949; //Final return value
+        } 
+        View varA7E53CE21691AB073D9660D615818899_1488100949; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1488100949 = varB4EAC82CA7396A68D541C85D26508E83_1712597896;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1488100949 = varB4EAC82CA7396A68D541C85D26508E83_1795881546;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1488100949.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1488100949.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1488100949;
-        // ---------- Original Method ----------
-        //if (mItemCount > 0 && mSelectedPosition >= 0) {
-            //return getChildAt(mSelectedPosition - mFirstPosition);
-        //} else {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.174 -0400", hash_original_method = "7199FF25ED586C3851E847C0919D8CB4", hash_generated_method = "4DAA914E3ADF769173AA0207A91E4AEA")
     @Override
     public void requestLayout() {
         {
             super.requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mBlockLayoutRequests) {
-            //super.requestLayout();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.175 -0400", hash_original_method = "0B2662100CCA74662649DCCD28954A76", hash_generated_method = "14D27C6525BFD7EB7D696933C008D797")
     @Override
     public SpinnerAdapter getAdapter() {
-        SpinnerAdapter varB4EAC82CA7396A68D541C85D26508E83_1051455248 = null; //Variable for return #1
+        SpinnerAdapter varB4EAC82CA7396A68D541C85D26508E83_1051455248 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1051455248 = mAdapter;
-        varB4EAC82CA7396A68D541C85D26508E83_1051455248.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1051455248.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1051455248;
-        // ---------- Original Method ----------
-        //return mAdapter;
+        
+        
     }
 
     
@@ -420,18 +427,19 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     public int getCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1164872065 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1164872065;
-        // ---------- Original Method ----------
-        //return mItemCount;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.175 -0400", hash_original_method = "AD87FEA47379DE9B1BE65A322C86E61D", hash_generated_method = "00030337FD7E28B459A9E6BC1575DDED")
     public int pointToPosition(int x, int y) {
         Rect frame = mTouchFrame;
         {
             mTouchFrame = new Rect();
             frame = mTouchFrame;
-        } //End block
+        } 
         final int count = getChildCount();
         {
             int i = count - 1;
@@ -443,69 +451,71 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
                         child.getHitRect(frame);
                         {
                             boolean var9F1DF48D8B435FACEEE6B40EFD85C398_112076740 = (frame.contains(x, y));
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(x);
         addTaint(y);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_901846496 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_901846496;
-        // ---------- Original Method ----------
-        //Rect frame = mTouchFrame;
-        //if (frame == null) {
-            //mTouchFrame = new Rect();
-            //frame = mTouchFrame;
-        //}
-        //final int count = getChildCount();
-        //for (int i = count - 1; i >= 0; i--) {
-            //View child = getChildAt(i);
-            //if (child.getVisibility() == View.VISIBLE) {
-                //child.getHitRect(frame);
-                //if (frame.contains(x, y)) {
-                    //return mFirstPosition + i;
-                //}
-            //}
-        //}
-        //return INVALID_POSITION;
+        
+        
+        
+            
+            
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.176 -0400", hash_original_method = "2B2E0178AF4521152109C90D1424ECD0", hash_generated_method = "DCDD27BF6D79DD2411D0FF9C5EA6BACF")
     @Override
     public Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_775814061 = null; //Variable for return #1
+        
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_775814061 = null; 
         Parcelable superState = super.onSaveInstanceState();
         SavedState ss = new SavedState(superState);
         ss.selectedId = getSelectedItemId();
         {
             ss.position = getSelectedItemPosition();
-        } //End block
+        } 
         {
             ss.position = INVALID_POSITION;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_775814061 = ss;
-        varB4EAC82CA7396A68D541C85D26508E83_775814061.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_775814061.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_775814061;
-        // ---------- Original Method ----------
-        //Parcelable superState = super.onSaveInstanceState();
-        //SavedState ss = new SavedState(superState);
-        //ss.selectedId = getSelectedItemId();
-        //if (ss.selectedId >= 0) {
-            //ss.position = getSelectedItemPosition();
-        //} else {
-            //ss.position = INVALID_POSITION;
-        //}
-        //return ss;
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.176 -0400", hash_original_method = "41BC9B1A20EF7E956C712A8B84EE3401", hash_generated_method = "4E2383EB48CC9843E9907B01556FC731")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         SavedState ss = (SavedState) state;
         super.onRestoreInstanceState(ss.getSuperState());
         {
@@ -515,19 +525,19 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
             mSyncPosition = ss.position;
             mSyncMode = SYNC_SELECTED_POSITION;
             requestLayout();
-        } //End block
+        } 
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //SavedState ss = (SavedState) state;
-        //super.onRestoreInstanceState(ss.getSuperState());
-        //if (ss.selectedId >= 0) {
-            //mDataChanged = true;
-            //mNeedSync = true;
-            //mSyncRowId = ss.selectedId;
-            //mSyncPosition = ss.position;
-            //mSyncMode = SYNC_SELECTED_POSITION;
-            //requestLayout();
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -543,7 +553,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
           SavedState(Parcelable superState) {
             super(superState);
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -552,9 +562,9 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
             super(in);
             selectedId = in.readLong();
             position = in.readInt();
-            // ---------- Original Method ----------
-            //selectedId = in.readLong();
-            //position = in.readInt();
+            
+            
+            
         }
 
         
@@ -566,28 +576,28 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
             out.writeInt(position);
             addTaint(out.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //super.writeToParcel(out, flags);
-            //out.writeLong(selectedId);
-            //out.writeInt(position);
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.178 -0400", hash_original_method = "7A4BA85F6ACBC7FE9656B24BA8A57B9A", hash_generated_method = "D407363F2B3793C2AEF6B75D0E8820DC")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1785075716 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1785075716 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1785075716 = "AbsSpinner.SavedState{"
                     + Integer.toHexString(System.identityHashCode(this))
                     + " selectedId=" + selectedId
                     + " position=" + position + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_1785075716.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1785075716.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1785075716;
-            // ---------- Original Method ----------
-            //return "AbsSpinner.SavedState{"
-                    //+ Integer.toHexString(System.identityHashCode(this))
-                    //+ " selectedId=" + selectedId
-                    //+ " position=" + position + "}";
+            
+            
+                    
+                    
+                    
         }
 
         
@@ -603,12 +613,12 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
                 return new SavedState[size];
             }
         };
-        // orphaned legacy method
+        
         public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
         
-        // orphaned legacy method
+        
         public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }
@@ -625,7 +635,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.178 -0400", hash_original_method = "8B96BADF61C6544CC3B73116E3B60C53", hash_generated_method = "8B96BADF61C6544CC3B73116E3B60C53")
         public RecycleBin ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -634,29 +644,29 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
             mScrapHeap.put(position, v);
             addTaint(position);
             addTaint(v.getTaint());
-            // ---------- Original Method ----------
-            //mScrapHeap.put(position, v);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.179 -0400", hash_original_method = "13D5A4FF59BF1643EBD5228E429384EA", hash_generated_method = "1D3E6EDB09EA7671798C830346D8574A")
          View get(int position) {
-            View varB4EAC82CA7396A68D541C85D26508E83_2010319263 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_2010319263 = null; 
             View result = mScrapHeap.get(position);
             {
                 mScrapHeap.delete(position);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_2010319263 = result;
             addTaint(position);
-            varB4EAC82CA7396A68D541C85D26508E83_2010319263.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2010319263.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2010319263;
-            // ---------- Original Method ----------
-            //View result = mScrapHeap.get(position);
-            //if (result != null) {
-                //mScrapHeap.delete(position);
-            //} else {
-            //}
-            //return result;
+            
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -670,20 +680,20 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
                     final View view = scrapHeap.valueAt(i);
                     {
                         removeDetachedView(view, true);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             scrapHeap.clear();
-            // ---------- Original Method ----------
-            //final SparseArray<View> scrapHeap = mScrapHeap;
-            //final int count = scrapHeap.size();
-            //for (int i = 0; i < count; i++) {
-                //final View view = scrapHeap.valueAt(i);
-                //if (view != null) {
-                    //removeDetachedView(view, true);
-                //}
-            //}
-            //scrapHeap.clear();
+            
+            
+            
+            
+                
+                
+                    
+                
+            
+            
         }
 
         

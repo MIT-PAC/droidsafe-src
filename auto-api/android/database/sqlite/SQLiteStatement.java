@@ -1,11 +1,11 @@
 package android.database.sqlite;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.database.DatabaseUtils;
 import android.os.ParcelFileDescriptor;
@@ -28,18 +28,20 @@ public class SQLiteStatement extends SQLiteProgram {
         addTaint(db.getTaint());
         addTaint(sql.getTaint());
         addTaint(bindArgs[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.892 -0400", hash_original_method = "AF1FDD5D94DA5350C3682852D1772235", hash_generated_method = "9731E3368F2C01BE2CC3A6FD5F2FC446")
     public void execute() {
         executeUpdateDelete();
-        // ---------- Original Method ----------
-        //executeUpdateDelete();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.893 -0400", hash_original_method = "66D9912335771E2036ED62B64CF3BC86", hash_generated_method = "713211F8695D0F853523565F4DE421F1")
     public int executeUpdateDelete() {
         try 
@@ -49,34 +51,35 @@ public class SQLiteStatement extends SQLiteProgram {
             int numChanges = 0;
             {
                 native_executeSql(mSql);
-            } //End block
+            } 
             {
                 numChanges = native_execute();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             releaseAndUnlock();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1912835866 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1912835866;
-        // ---------- Original Method ----------
-        //try {
-            //saveSqlAsLastSqlStatement();
-            //acquireAndLock(WRITE);
-            //int numChanges = 0;
-            //if ((mStatementType & STATEMENT_DONT_PREPARE) > 0) {
-                //native_executeSql(mSql);
-            //} else {
-                //numChanges = native_execute();
-            //}
-            //return numChanges;
-        //} finally {
-            //releaseAndUnlock();
-        //}
+        
+        
+            
+            
+            
+            
+                
+            
+                
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.893 -0400", hash_original_method = "78D2410201CEBD83C87275DB09AEC8B4", hash_generated_method = "E3034287735FE633F7273E84404F882C")
     public long executeInsert() {
         try 
@@ -84,39 +87,41 @@ public class SQLiteStatement extends SQLiteProgram {
             saveSqlAsLastSqlStatement();
             acquireAndLock(WRITE);
             long var6BAFE9A3CDD3D607224AE3DAB50F7575_634032778 = (native_executeInsert());
-        } //End block
+        } 
         finally 
         {
             releaseAndUnlock();
-        } //End block
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_258328760 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_258328760;
-        // ---------- Original Method ----------
-        //try {
-            //saveSqlAsLastSqlStatement();
-            //acquireAndLock(WRITE);
-            //return native_executeInsert();
-        //} finally {
-            //releaseAndUnlock();
-        //}
+        
+        
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.894 -0400", hash_original_method = "7424F80A42A729003FCB274AD124711E", hash_generated_method = "48903C4E449BC1F2AB6E6660E7AAF1CD")
     private void saveSqlAsLastSqlStatement() {
         {
             mDatabase.setLastSqlStatement(mSql);
-        } //End block
-        // ---------- Original Method ----------
-        //if (((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
-                //DatabaseUtils.STATEMENT_UPDATE) ||
-                //(mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
-                //DatabaseUtils.STATEMENT_BEGIN) {
-            //mDatabase.setLastSqlStatement(mSql);
-        //}
+        } 
+        
+        
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.895 -0400", hash_original_method = "12DB780B550F95E5C10FD5998E83FEFD", hash_generated_method = "C68799E4BB378E51BCB8CA6970D8DF66")
     public long simpleQueryForLong() {
         try 
@@ -124,128 +129,131 @@ public class SQLiteStatement extends SQLiteProgram {
             long timeStart = acquireAndLock(READ);
             long retValue = native_1x1_long();
             mDatabase.logTimeStat(mSql, timeStart);
-        } //End block
+        } 
         catch (SQLiteDoneException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new SQLiteDoneException(
                     "expected 1 row from this query but query returned no data. check the query: " +
                     mSql);
-        } //End block
+        } 
         finally 
         {
             releaseAndUnlock();
-        } //End block
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_96962066 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_96962066;
-        // ---------- Original Method ----------
-        //try {
-            //long timeStart = acquireAndLock(READ);
-            //long retValue = native_1x1_long();
-            //mDatabase.logTimeStat(mSql, timeStart);
-            //return retValue;
-        //} catch (SQLiteDoneException e) {
-            //throw new SQLiteDoneException(
-                    //"expected 1 row from this query but query returned no data. check the query: " +
-                    //mSql);
-        //} finally {
-            //releaseAndUnlock();
-        //}
+        
+        
+            
+            
+            
+            
+        
+            
+                    
+                    
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.896 -0400", hash_original_method = "6D794A242164C6F60D732256A15CB380", hash_generated_method = "19DF09B5C31CDC67E0F7B63201E8E5E9")
     public String simpleQueryForString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1558809014 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1558809014 = null; 
         try 
         {
             long timeStart = acquireAndLock(READ);
             String retValue = native_1x1_string();
             mDatabase.logTimeStat(mSql, timeStart);
             varB4EAC82CA7396A68D541C85D26508E83_1558809014 = retValue;
-        } //End block
+        } 
         catch (SQLiteDoneException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new SQLiteDoneException(
                     "expected 1 row from this query but query returned no data. check the query: " +
                     mSql);
-        } //End block
+        } 
         finally 
         {
             releaseAndUnlock();
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1558809014.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1558809014.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1558809014;
-        // ---------- Original Method ----------
-        //try {
-            //long timeStart = acquireAndLock(READ);
-            //String retValue = native_1x1_string();
-            //mDatabase.logTimeStat(mSql, timeStart);
-            //return retValue;
-        //} catch (SQLiteDoneException e) {
-            //throw new SQLiteDoneException(
-                    //"expected 1 row from this query but query returned no data. check the query: " +
-                    //mSql);
-        //} finally {
-            //releaseAndUnlock();
-        //}
+        
+        
+            
+            
+            
+            
+        
+            
+                    
+                    
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.897 -0400", hash_original_method = "6321C559FCE18D31DAAE4496BAD49A23", hash_generated_method = "47CF6E3EA17971D513AFF907F0EE2B4B")
     public ParcelFileDescriptor simpleQueryForBlobFileDescriptor() {
-        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_60490812 = null; //Variable for return #1
-        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1776470237 = null; //Variable for return #2
+        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_60490812 = null; 
+        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1776470237 = null; 
         try 
         {
             long timeStart = acquireAndLock(READ);
             ParcelFileDescriptor retValue = native_1x1_blob_ashmem();
             mDatabase.logTimeStat(mSql, timeStart);
             varB4EAC82CA7396A68D541C85D26508E83_60490812 = retValue;
-        } //End block
+        } 
         catch (IOException ex)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1776470237 = null;
-        } //End block
+        } 
         catch (SQLiteDoneException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new SQLiteDoneException(
                     "expected 1 row from this query but query returned no data. check the query: " +
                     mSql);
-        } //End block
+        } 
         finally 
         {
             releaseAndUnlock();
-        } //End block
-        ParcelFileDescriptor varA7E53CE21691AB073D9660D615818899_225862304; //Final return value
+        } 
+        ParcelFileDescriptor varA7E53CE21691AB073D9660D615818899_225862304; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_225862304 = varB4EAC82CA7396A68D541C85D26508E83_60490812;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_225862304 = varB4EAC82CA7396A68D541C85D26508E83_1776470237;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_225862304.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_225862304.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_225862304;
-        // ---------- Original Method ----------
-        //try {
-            //long timeStart = acquireAndLock(READ);
-            //ParcelFileDescriptor retValue = native_1x1_blob_ashmem();
-            //mDatabase.logTimeStat(mSql, timeStart);
-            //return retValue;
-        //} catch (IOException ex) {
-            //Log.e(TAG, "simpleQueryForBlobFileDescriptor() failed", ex);
-            //return null;
-        //} catch (SQLiteDoneException e) {
-            //throw new SQLiteDoneException(
-                    //"expected 1 row from this query but query returned no data. check the query: " +
-                    //mSql);
-        //} finally {
-            //releaseAndUnlock();
-        //}
+        
+        
+            
+            
+            
+            
+        
+            
+            
+        
+            
+                    
+                    
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.898 -0400", hash_original_method = "7802DA1EF14C1A6C860FAB64147EEA65", hash_generated_method = "4D5517DD41D7157A1839DAE56EBB72BA")
     private long acquireAndLock(boolean rwFlag) {
         mState = 0;
@@ -258,34 +266,34 @@ public class SQLiteStatement extends SQLiteProgram {
         setNativeHandle(mDatabase.mNativeHandle);
         {
             BlockGuard.getThreadPolicy().onWriteToDisk();
-        } //End block
+        } 
         {
             BlockGuard.getThreadPolicy().onReadFromDisk();
-        } //End block
+        } 
         {
             {
                 boolean var097D1FF015F3B6F2369065167A2F156B_970882137 = (!mDatabase.isDbLockedByCurrentThread());
                 {
                     mDatabase.setTransactionUsingExecSqlFlag();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 boolean var37036F713C62CC107A333C2F5C92276E_1104127029 = (!mDatabase.inTransaction());
                 {
                     mDatabase.beginTransactionNonExclusive();
                     mState = TRANS_STARTED;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean var13D935343B6F3D3934E3A49ACF169DA9_389007708 = (!mDatabase.isDbLockedByCurrentThread());
             {
                 mDatabase.lock(mSql);
                 mState = LOCK_ACQUIRED;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         acquireReference();
         long startTime = SystemClock.uptimeMillis();
         mDatabase.closePendingStatements();
@@ -293,11 +301,12 @@ public class SQLiteStatement extends SQLiteProgram {
         addTaint(rwFlag);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1537268328 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1537268328;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.899 -0400", hash_original_method = "3195EF2C5595E73848E74AA3B0A84A6E", hash_generated_method = "0B213DBB94FF0232F335C3289B944420")
     private void releaseAndUnlock() {
         releaseReference();
@@ -305,43 +314,43 @@ public class SQLiteStatement extends SQLiteProgram {
             try 
             {
                 mDatabase.setTransactionSuccessful();
-            } //End block
+            } 
             finally 
             {
                 mDatabase.endTransaction();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mDatabase.unlock();
-        } //End block
+        } 
         {
             mDatabase.resetTransactionUsingExecSqlFlag();
-        } //End block
+        } 
         clearBindings();
         release();
         mDatabase = mOrigDb;
         setNativeHandle(mDatabase.mNativeHandle);
-        // ---------- Original Method ----------
-        //releaseReference();
-        //if (mState == TRANS_STARTED) {
-            //try {
-                //mDatabase.setTransactionSuccessful();
-            //} finally {
-                //mDatabase.endTransaction();
-            //}
-        //} else if (mState == LOCK_ACQUIRED) {
-            //mDatabase.unlock();
-        //}
-        //if ((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
-                //DatabaseUtils.STATEMENT_COMMIT ||
-                //(mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
-                //DatabaseUtils.STATEMENT_ABORT) {
-            //mDatabase.resetTransactionUsingExecSqlFlag();
-        //}
-        //clearBindings();
-        //release();
-        //mDatabase = mOrigDb;
-        //setNativeHandle(mDatabase.mNativeHandle);
+        
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
+        
+                
+                
+                
+            
+        
+        
+        
+        
+        
     }
 
     

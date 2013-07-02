@@ -1,11 +1,11 @@
 package org.apache.commons.io.filefilter;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.Serializable;
@@ -21,8 +21,8 @@ public class OrFileFilter extends AbstractFileFilter implements ConditionalFileF
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.878 -0400", hash_original_method = "261B8A78A48F018A582463F22AA23698", hash_generated_method = "7D485639331927B9A3A6F58F24829C08")
     public  OrFileFilter() {
         this.fileFilters = new ArrayList<IOFileFilter>();
-        // ---------- Original Method ----------
-        //this.fileFilters = new ArrayList<IOFileFilter>();
+        
+        
     }
 
     
@@ -30,16 +30,16 @@ public class OrFileFilter extends AbstractFileFilter implements ConditionalFileF
     public  OrFileFilter(final List<IOFileFilter> fileFilters) {
         {
             this.fileFilters = new ArrayList<IOFileFilter>();
-        } //End block
+        } 
         {
             this.fileFilters = new ArrayList<IOFileFilter>(fileFilters);
-        } //End block
-        // ---------- Original Method ----------
-        //if (fileFilters == null) {
-            //this.fileFilters = new ArrayList<IOFileFilter>();
-        //} else {
-            //this.fileFilters = new ArrayList<IOFileFilter>(fileFilters);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -47,19 +47,19 @@ public class OrFileFilter extends AbstractFileFilter implements ConditionalFileF
     public  OrFileFilter(IOFileFilter filter1, IOFileFilter filter2) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The filters must not be null");
-        } //End block
+        } 
         this.fileFilters = new ArrayList<IOFileFilter>(2);
         addFileFilter(filter1);
         addFileFilter(filter2);
         addTaint(filter1.getTaint());
         addTaint(filter2.getTaint());
-        // ---------- Original Method ----------
-        //if (filter1 == null || filter2 == null) {
-            //throw new IllegalArgumentException("The filters must not be null");
-        //}
-        //this.fileFilters = new ArrayList<IOFileFilter>(2);
-        //addFileFilter(filter1);
-        //addFileFilter(filter2);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -67,30 +67,32 @@ public class OrFileFilter extends AbstractFileFilter implements ConditionalFileF
     public void addFileFilter(final IOFileFilter ioFileFilter) {
         this.fileFilters.add(ioFileFilter);
         addTaint(ioFileFilter.getTaint());
-        // ---------- Original Method ----------
-        //this.fileFilters.add(ioFileFilter);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.882 -0400", hash_original_method = "C6000DDE181BCE52214EEFCE5C901DFA", hash_generated_method = "8C850761D2AF76D356AE449E3A3905CB")
     public List<IOFileFilter> getFileFilters() {
-        List<IOFileFilter> varB4EAC82CA7396A68D541C85D26508E83_1104808105 = null; //Variable for return #1
+        List<IOFileFilter> varB4EAC82CA7396A68D541C85D26508E83_1104808105 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1104808105 = Collections.unmodifiableList(this.fileFilters);
-        varB4EAC82CA7396A68D541C85D26508E83_1104808105.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1104808105.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1104808105;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableList(this.fileFilters);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.883 -0400", hash_original_method = "116FFFDA4CB65AECB7B5B648545FB2AD", hash_generated_method = "50EFA07BE7CDBF35E005C90EE336381C")
     public boolean removeFileFilter(IOFileFilter ioFileFilter) {
         boolean varE103009338EBD181485E8675A8D57039_1423557036 = (this.fileFilters.remove(ioFileFilter));
         addTaint(ioFileFilter.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1626236435 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1626236435;
-        // ---------- Original Method ----------
-        //return this.fileFilters.remove(ioFileFilter);
+        
+        
     }
 
     
@@ -99,9 +101,9 @@ public class OrFileFilter extends AbstractFileFilter implements ConditionalFileF
         this.fileFilters.clear();
         this.fileFilters.addAll(fileFilters);
         addTaint(fileFilters.getTaint());
-        // ---------- Original Method ----------
-        //this.fileFilters.clear();
-        //this.fileFilters.addAll(fileFilters);
+        
+        
+        
     }
 
     
@@ -115,19 +117,19 @@ public class OrFileFilter extends AbstractFileFilter implements ConditionalFileF
             {
                 {
                     boolean varA44DD0887845936DDFD2FE7BA55D365F_2063438987 = (fileFilter.accept(file));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(file.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1468493246 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1468493246;
-        // ---------- Original Method ----------
-        //for (IOFileFilter fileFilter : fileFilters) {
-            //if (fileFilter.accept(file)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -141,27 +143,28 @@ public class OrFileFilter extends AbstractFileFilter implements ConditionalFileF
             {
                 {
                     boolean var03651AB236C81D98D3C0234D83404CD5_1614703947 = (fileFilter.accept(file, name));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(file.getTaint());
         addTaint(name.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1651910161 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1651910161;
-        // ---------- Original Method ----------
-        //for (IOFileFilter fileFilter : fileFilters) {
-            //if (fileFilter.accept(file, name)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.891 -0400", hash_original_method = "1E761CCD4DDE3C2CB8242721D590B88B", hash_generated_method = "1F1C99ADD8559285C16AF2C6533C8186")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1831578302 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1831578302 = null; 
         StringBuilder buffer = new StringBuilder();
         buffer.append(super.toString());
         buffer.append("(");
@@ -172,31 +175,31 @@ public class OrFileFilter extends AbstractFileFilter implements ConditionalFileF
                 {
                     {
                         buffer.append(",");
-                    } //End block
+                    } 
                     Object filter = fileFilters.get(i);
                     buffer.append(filter == null ? "null" : filter.toString());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         buffer.append(")");
         varB4EAC82CA7396A68D541C85D26508E83_1831578302 = buffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1831578302.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1831578302.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1831578302;
-        // ---------- Original Method ----------
-        //StringBuilder buffer = new StringBuilder();
-        //buffer.append(super.toString());
-        //buffer.append("(");
-        //if (fileFilters != null) {
-            //for (int i = 0; i < fileFilters.size(); i++) {
-                //if (i > 0) {
-                    //buffer.append(",");
-                //}
-                //Object filter = fileFilters.get(i);
-                //buffer.append(filter == null ? "null" : filter.toString());
-            //}
-        //}
-        //buffer.append(")");
-        //return buffer.toString();
+        
+        
+        
+        
+        
+            
+                
+                    
+                
+                
+                
+            
+        
+        
+        
     }
 
     

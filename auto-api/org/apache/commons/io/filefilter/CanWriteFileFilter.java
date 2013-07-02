@@ -1,11 +1,11 @@
 package org.apache.commons.io.filefilter;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.Serializable;
@@ -14,10 +14,11 @@ public class CanWriteFileFilter extends AbstractFileFilter implements Serializab
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.693 -0400", hash_original_method = "AE68C1645286560831358DD2BB3F1723", hash_generated_method = "0B6033D5281775EE9204ED7901AE31EE")
     protected  CanWriteFileFilter() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.693 -0400", hash_original_method = "B6CCE4550C29DDD6A02AB62B3A5D936A", hash_generated_method = "6D5712D088C2A2F034307F0B7BA37F5B")
     @Override
     public boolean accept(File file) {
@@ -25,8 +26,8 @@ public class CanWriteFileFilter extends AbstractFileFilter implements Serializab
         addTaint(file.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_856400135 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_856400135;
-        // ---------- Original Method ----------
-        //return file.canWrite();
+        
+        
     }
 
     

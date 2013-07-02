@@ -1,18 +1,18 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class UnrecoverableEntryException extends GeneralSecurityException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.901 -0400", hash_original_method = "B211A6D1B8B83310D4292B140A3F159B", hash_generated_method = "2CFD6E9360722DF4615CD31ABBF0A51F")
     public  UnrecoverableEntryException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class UnrecoverableEntryException extends GeneralSecurityException {
     public  UnrecoverableEntryException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

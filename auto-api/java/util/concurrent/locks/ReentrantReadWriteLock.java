@@ -1,11 +1,11 @@
 package java.util.concurrent.locks;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
@@ -25,7 +25,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.890 -0400", hash_original_method = "1C7ADE1C43258ED1B8231199DCC94C2F", hash_generated_method = "A2362B6FC27126ECCCC3F80E71268B1E")
     public  ReentrantReadWriteLock() {
         this(false);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,32 +34,32 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         sync = fair ? new FairSync() : new NonfairSync();
         readerLock = new ReadLock(this);
         writerLock = new WriteLock(this);
-        // ---------- Original Method ----------
-        //sync = fair ? new FairSync() : new NonfairSync();
-        //readerLock = new ReadLock(this);
-        //writerLock = new WriteLock(this);
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.890 -0400", hash_original_method = "0C7BC9C54BE00E03201ACF18B2913309", hash_generated_method = "02F0DE52E028FE70DE7167A2A559095A")
     public ReentrantReadWriteLock.WriteLock writeLock() {
-        ReentrantReadWriteLock.WriteLock varB4EAC82CA7396A68D541C85D26508E83_2104056646 = null; //Variable for return #1
+        ReentrantReadWriteLock.WriteLock varB4EAC82CA7396A68D541C85D26508E83_2104056646 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2104056646 = writerLock;
-        varB4EAC82CA7396A68D541C85D26508E83_2104056646.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2104056646.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2104056646;
-        // ---------- Original Method ----------
-        //return writerLock;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.891 -0400", hash_original_method = "22D8B34ECDA1804C5F879E9731CF210D", hash_generated_method = "F8F94105818A859093206C95A404AA14")
     public ReentrantReadWriteLock.ReadLock readLock() {
-        ReentrantReadWriteLock.ReadLock varB4EAC82CA7396A68D541C85D26508E83_164154840 = null; //Variable for return #1
+        ReentrantReadWriteLock.ReadLock varB4EAC82CA7396A68D541C85D26508E83_164154840 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_164154840 = readerLock;
-        varB4EAC82CA7396A68D541C85D26508E83_164154840.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_164154840.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_164154840;
-        // ---------- Original Method ----------
-        //return readerLock;
+        
+        
     }
 
     
@@ -67,91 +67,99 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
     public final boolean isFair() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_525186820 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_525186820;
-        // ---------- Original Method ----------
-        //return sync instanceof FairSync;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.892 -0400", hash_original_method = "DB009A0944F572B5167ED6D51E109787", hash_generated_method = "DD22B389DAD5C28EA714F40295A702EE")
     protected Thread getOwner() {
-        Thread varB4EAC82CA7396A68D541C85D26508E83_1398104901 = null; //Variable for return #1
+        Thread varB4EAC82CA7396A68D541C85D26508E83_1398104901 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1398104901 = sync.getOwner();
-        varB4EAC82CA7396A68D541C85D26508E83_1398104901.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1398104901.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1398104901;
-        // ---------- Original Method ----------
-        //return sync.getOwner();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.892 -0400", hash_original_method = "BDA3BC7F9F6754233D710BB1E8BDA625", hash_generated_method = "80AC3B5029ADFDF37394BD285CB5F546")
     public int getReadLockCount() {
         int var5CF7DD4739FB0661883910CE3127C2D4_426195794 = (sync.getReadLockCount());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1581728947 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1581728947;
-        // ---------- Original Method ----------
-        //return sync.getReadLockCount();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.892 -0400", hash_original_method = "D1234101A768FDEE737EDDFEC7DD19A3", hash_generated_method = "F41F21D16D175F1B6F856A6E73839B6C")
     public boolean isWriteLocked() {
         boolean varC09930903B4B15334864667BA6922CA7_104343493 = (sync.isWriteLocked());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1970202296 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1970202296;
-        // ---------- Original Method ----------
-        //return sync.isWriteLocked();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.893 -0400", hash_original_method = "B77A8CC69384EA638697FDA5B4AC3CDF", hash_generated_method = "990FFDD1CD2ED4EB84B8EAEC7DEF194C")
     public boolean isWriteLockedByCurrentThread() {
         boolean var12281D4A72DEB9F8816A0A46604F1374_1865032738 = (sync.isHeldExclusively());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1259787129 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1259787129;
-        // ---------- Original Method ----------
-        //return sync.isHeldExclusively();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.893 -0400", hash_original_method = "F72E2C7B278B975FDBAAB080F7322122", hash_generated_method = "033C1BC929C394C00D0867DBF1A42A63")
     public int getWriteHoldCount() {
         int var4B7ADBEF86627032166821903A70F5D0_478209174 = (sync.getWriteHoldCount());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889158947 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889158947;
-        // ---------- Original Method ----------
-        //return sync.getWriteHoldCount();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.893 -0400", hash_original_method = "026686F812EC7870B6E447136A7E8B3A", hash_generated_method = "E0EE31FF9B67896DE399BCC4CAF969D8")
     public int getReadHoldCount() {
         int var4CA9F99F5577509EFAE445B14D1ED825_264426307 = (sync.getReadHoldCount());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1878527881 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1878527881;
-        // ---------- Original Method ----------
-        //return sync.getReadHoldCount();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.894 -0400", hash_original_method = "2F9252966607830729245C7251D0E4B8", hash_generated_method = "F98CBBD87B63D7E7EDC241AD5B8F9591")
     protected Collection<Thread> getQueuedWriterThreads() {
-        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_1575893068 = null; //Variable for return #1
+        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_1575893068 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1575893068 = sync.getExclusiveQueuedThreads();
-        varB4EAC82CA7396A68D541C85D26508E83_1575893068.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1575893068.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1575893068;
-        // ---------- Original Method ----------
-        //return sync.getExclusiveQueuedThreads();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.894 -0400", hash_original_method = "956CE594FDB46F8FEF252F1FDB068D3D", hash_generated_method = "4720E7ED081E728CCEB51A042EAD4196")
     protected Collection<Thread> getQueuedReaderThreads() {
-        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_2100815144 = null; //Variable for return #1
+        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_2100815144 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2100815144 = sync.getSharedQueuedThreads();
-        varB4EAC82CA7396A68D541C85D26508E83_2100815144.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2100815144.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2100815144;
-        // ---------- Original Method ----------
-        //return sync.getSharedQueuedThreads();
+        
+        
     }
 
     
@@ -160,8 +168,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         boolean var4C0A0AB508905DA8D619627A5EEFD574_644313673 = (sync.hasQueuedThreads());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2043514597 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2043514597;
-        // ---------- Original Method ----------
-        //return sync.hasQueuedThreads();
+        
+        
     }
 
     
@@ -171,8 +179,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         addTaint(thread.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_568956482 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_568956482;
-        // ---------- Original Method ----------
-        //return sync.isQueued(thread);
+        
+        
     }
 
     
@@ -181,22 +189,24 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         int var2545CC142A0CD1008911850681315651_76783963 = (sync.getQueueLength());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_22855580 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_22855580;
-        // ---------- Original Method ----------
-        //return sync.getQueueLength();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.895 -0400", hash_original_method = "4BC73C35668DA24636BE58FB68209032", hash_generated_method = "5DC66C6D17B77C9EE60ED93796C5E466")
     protected Collection<Thread> getQueuedThreads() {
-        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_1570873321 = null; //Variable for return #1
+        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_1570873321 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1570873321 = sync.getQueuedThreads();
-        varB4EAC82CA7396A68D541C85D26508E83_1570873321.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1570873321.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1570873321;
-        // ---------- Original Method ----------
-        //return sync.getQueuedThreads();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.896 -0400", hash_original_method = "BF91F0F13FB6E88A38744502E21F1F2D", hash_generated_method = "CBACC89A2C6717A921B6EE35FE1426EA")
     public boolean hasWaiters(Condition condition) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -205,15 +215,16 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         addTaint(condition.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_523454465 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_523454465;
-        // ---------- Original Method ----------
-        //if (condition == null)
-            //throw new NullPointerException();
-        //if (!(condition instanceof AbstractQueuedSynchronizer.ConditionObject))
-            //throw new IllegalArgumentException("not owner");
-        //return sync.hasWaiters((AbstractQueuedSynchronizer.ConditionObject)condition);
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.896 -0400", hash_original_method = "D4277B3B6ED39F705D915D3806A5548A", hash_generated_method = "F00E5063CE3575D2D0E6C94676489516")
     public int getWaitQueueLength(Condition condition) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -222,49 +233,51 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         addTaint(condition.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1905763788 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1905763788;
-        // ---------- Original Method ----------
-        //if (condition == null)
-            //throw new NullPointerException();
-        //if (!(condition instanceof AbstractQueuedSynchronizer.ConditionObject))
-            //throw new IllegalArgumentException("not owner");
-        //return sync.getWaitQueueLength((AbstractQueuedSynchronizer.ConditionObject)condition);
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.896 -0400", hash_original_method = "29738EA386BFBB41E36C961DB4B1CBE5", hash_generated_method = "5190882875F79B0E81ABE150778FBD5B")
     protected Collection<Thread> getWaitingThreads(Condition condition) {
-        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_823153492 = null; //Variable for return #1
+        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_823153492 = null; 
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("not owner");
         varB4EAC82CA7396A68D541C85D26508E83_823153492 = sync.getWaitingThreads((AbstractQueuedSynchronizer.ConditionObject)condition);
         addTaint(condition.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_823153492.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_823153492.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_823153492;
-        // ---------- Original Method ----------
-        //if (condition == null)
-            //throw new NullPointerException();
-        //if (!(condition instanceof AbstractQueuedSynchronizer.ConditionObject))
-            //throw new IllegalArgumentException("not owner");
-        //return sync.getWaitingThreads((AbstractQueuedSynchronizer.ConditionObject)condition);
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.897 -0400", hash_original_method = "03D5EBF343C873E095999F30626DADA2", hash_generated_method = "043CD1F78B43C067AC1311DDABAC4A1F")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_195445621 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_195445621 = null; 
         int c = sync.getCount();
         int w = Sync.exclusiveCount(c);
         int r = Sync.sharedCount(c);
         varB4EAC82CA7396A68D541C85D26508E83_195445621 = super.toString() +
             "[Write locks = " + w + ", Read locks = " + r + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_195445621.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_195445621.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_195445621;
-        // ---------- Original Method ----------
-        //int c = sync.getCount();
-        //int w = Sync.exclusiveCount(c);
-        //int r = Sync.sharedCount(c);
-        //return super.toString() +
-            //"[Write locks = " + w + ", Read locks = " + r + "]";
+        
+        
+        
+        
+        
+            
     }
 
     
@@ -286,9 +299,9 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
           Sync() {
             readHolds = new ThreadLocalHoldCounter();
             setState(getState());
-            // ---------- Original Method ----------
-            //readHolds = new ThreadLocalHoldCounter();
-            //setState(getState());
+            
+            
+            
         }
 
         
@@ -313,7 +326,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             {
                 boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_506249592 = (!isHeldExclusively());
                 if (DroidSafeAndroidRuntime.control) throw new IllegalMonitorStateException();
-            } //End collapsed parenthetic
+            } 
             int nextc = getState() - releases;
             boolean free = exclusiveCount(nextc) == 0;
             setExclusiveOwnerThread(null);
@@ -321,15 +334,15 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             addTaint(releases);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_270079993 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_270079993;
-            // ---------- Original Method ----------
-            //if (!isHeldExclusively())
-                //throw new IllegalMonitorStateException();
-            //int nextc = getState() - releases;
-            //boolean free = exclusiveCount(nextc) == 0;
-            //if (free)
-                //setExclusiveOwnerThread(null);
-            //setState(nextc);
-            //return free;
+            
+            
+                
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -341,38 +354,38 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             {
                 {
                     boolean var90979142887A20EB72C8964C86EB9321_723926211 = (w == 0 || current != getExclusiveOwnerThread());
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean var318575A0FEE61BCA2C1999503B3E7456_809182493 = (w + exclusiveCount(acquires) > MAX_COUNT);
                     if (DroidSafeAndroidRuntime.control) throw new Error("Maximum lock count exceeded");
-                } //End collapsed parenthetic
+                } 
                 setState(c + acquires);
-            } //End block
+            } 
             {
                 boolean var33B66AF91B134BC4CCDF9A857D584490_655289459 = (writerShouldBlock() ||
                 !compareAndSetState(c, c + acquires));
-            } //End collapsed parenthetic
+            } 
             setExclusiveOwnerThread(current);
             addTaint(acquires);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1076376642 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1076376642;
-            // ---------- Original Method ----------
-            //Thread current = Thread.currentThread();
-            //int c = getState();
-            //int w = exclusiveCount(c);
-            //if (c != 0) {
-                //if (w == 0 || current != getExclusiveOwnerThread())
-                    //return false;
-                //if (w + exclusiveCount(acquires) > MAX_COUNT)
-                    //throw new Error("Maximum lock count exceeded");
-                //setState(c + acquires);
-                //return true;
-            //}
-            //if (writerShouldBlock() ||
-                //!compareAndSetState(c, c + acquires))
-                //return false;
-            //setExclusiveOwnerThread(current);
-            //return true;
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+                
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -381,44 +394,44 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             Thread current = Thread.currentThread();
             {
                 firstReader = null;
-            } //End block
+            } 
             {
                 HoldCounter rh = cachedHoldCounter;
                 {
                     boolean var742A69B23BBDDB423EC138DCBB7B9545_1855534482 = (rh == null || rh.tid != current.getId());
                     rh = readHolds.get();
-                } //End collapsed parenthetic
+                } 
                 int count = rh.count;
                 {
                     readHolds.remove();
                     if (DroidSafeAndroidRuntime.control) throw unmatchedUnlockException();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 int c = getState();
                 int nextc = c - SHARED_UNIT;
                 {
                     boolean var525F59EF5A984E7DE1A679CCEEFC8101_1116148746 = (compareAndSetState(c, nextc));
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             addTaint(unused);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1079383637 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1079383637;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.900 -0400", hash_original_method = "4AE7D8D2A940AB168E8F2908DE9ACCF1", hash_generated_method = "BAD2845E8D978EED7C5F4CC35A379E72")
         private IllegalMonitorStateException unmatchedUnlockException() {
-            IllegalMonitorStateException varB4EAC82CA7396A68D541C85D26508E83_1699514260 = null; //Variable for return #1
+            IllegalMonitorStateException varB4EAC82CA7396A68D541C85D26508E83_1699514260 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1699514260 = new IllegalMonitorStateException(
                 "attempt to unlock read lock, not locked by current thread");
-            varB4EAC82CA7396A68D541C85D26508E83_1699514260.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1699514260.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1699514260;
-            // ---------- Original Method ----------
-            //return new IllegalMonitorStateException(
-                //"attempt to unlock read lock, not locked by current thread");
+            
+            
+                
         }
 
         
@@ -429,7 +442,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             {
                 boolean varCBCE136FFBA6AA5474A803A63D00FAD1_1987496627 = (exclusiveCount(c) != 0 &&
                 getExclusiveOwnerThread() != current);
-            } //End collapsed parenthetic
+            } 
             int r = sharedCount(c);
             {
                 boolean varC705F9493B1FAEA076FDA3794FAA0183_1972523906 = (!readerShouldBlock() &&
@@ -439,23 +452,23 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
                     {
                         firstReader = current;
                         firstReaderHoldCount = 1;
-                    } //End block
+                    } 
                     {
                         HoldCounter rh = cachedHoldCounter;
                         {
                             boolean varDB55354BA83BD531EC70083B969F9FA7_881096441 = (rh == null || rh.tid != current.getId());
                             cachedHoldCounter = rh = readHolds.get();
                             readHolds.set(rh);
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             int var203CD572536C941A4B1A477F089EE192_1137287148 = (fullTryAcquireShared(current));
             addTaint(unused);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716635623 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716635623;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -469,8 +482,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
                     {
                         {
                             boolean varD3F580BFEF90DED8D0695E9E6E71809D_1951827905 = (getExclusiveOwnerThread() != current);
-                        } //End collapsed parenthetic
-                    } //End block
+                        } 
+                    } 
                     {
                         boolean var860368E133590F744493740787A52E27_173592117 = (readerShouldBlock());
                         {
@@ -482,17 +495,17 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
                                         {
                                             rh = readHolds.get();
                                             readHolds.remove();
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     boolean var81C9C11D2632075F5A3FC662D0DAC8FC_90211954 = (sharedCount(c) == MAX_COUNT);
                     if (DroidSafeAndroidRuntime.control) throw new Error("Maximum lock count exceeded");
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean varED20116B0BB1734240062BCE3EF53974_754880157 = (compareAndSetState(c, c + SHARED_UNIT));
                     {
@@ -501,24 +514,24 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
                             {
                                 firstReader = current;
                                 firstReaderHoldCount = 1;
-                            } //End block
+                            } 
                             {
                                 rh = cachedHoldCounter;
                                 {
                                     boolean var50B8EA88D62C62CC9B48E69494903B06_1456178365 = (rh == null || rh.tid != current.getId());
                                     rh = readHolds.get();
                                     readHolds.set(rh);
-                                } //End collapsed parenthetic
+                                } 
                                 cachedHoldCounter = rh;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1653396126 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1653396126;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -530,29 +543,29 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
                 int w = exclusiveCount(c);
                 {
                     boolean var90979142887A20EB72C8964C86EB9321_1727781594 = (w == 0 || current != getExclusiveOwnerThread());
-                } //End collapsed parenthetic
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new Error("Maximum lock count exceeded");
-            } //End block
+            } 
             {
                 boolean var42EFECE5F4E2BBE5A5608C37A8B687F3_1332367954 = (!compareAndSetState(c, c + 1));
-            } //End collapsed parenthetic
+            } 
             setExclusiveOwnerThread(current);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1638163916 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1638163916;
-            // ---------- Original Method ----------
-            //Thread current = Thread.currentThread();
-            //int c = getState();
-            //if (c != 0) {
-                //int w = exclusiveCount(c);
-                //if (w == 0 || current != getExclusiveOwnerThread())
-                    //return false;
-                //if (w == MAX_COUNT)
-                    //throw new Error("Maximum lock count exceeded");
-            //}
-            //if (!compareAndSetState(c, c + 1))
-                //return false;
-            //setExclusiveOwnerThread(current);
-            //return true;
+            
+            
+            
+            
+                
+                
+                    
+                
+                    
+            
+            
+                
+            
+            
         }
 
         
@@ -564,7 +577,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
                 {
                     boolean varEA7F18DF3FD18041706E4732508BA651_468002244 = (exclusiveCount(c) != 0 &&
                     getExclusiveOwnerThread() != current);
-                } //End collapsed parenthetic
+                } 
                 int r = sharedCount(c);
                 if (DroidSafeAndroidRuntime.control) throw new Error("Maximum lock count exceeded");
                 {
@@ -573,22 +586,22 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
                         {
                             firstReader = current;
                             firstReaderHoldCount = 1;
-                        } //End block
+                        } 
                         {
                             HoldCounter rh = cachedHoldCounter;
                             {
                                 boolean varD70438DD2BB853F7AACBE7CBC6449999_308347420 = (rh == null || rh.tid != current.getId());
                                 cachedHoldCounter = rh = readHolds.get();
                                 readHolds.set(rh);
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2121298172 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2121298172;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -597,34 +610,34 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             boolean var3CE6B8DE56D5A33803435E843AACF76A_1842819625 = (getExclusiveOwnerThread() == Thread.currentThread());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2143319314 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2143319314;
-            // ---------- Original Method ----------
-            //return getExclusiveOwnerThread() == Thread.currentThread();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.904 -0400", hash_original_method = "093F0D0E6A279CA43864791B6FD65040", hash_generated_method = "A02108D276CE90C5381912DB252AB6F1")
         final ConditionObject newCondition() {
-            ConditionObject varB4EAC82CA7396A68D541C85D26508E83_437747717 = null; //Variable for return #1
+            ConditionObject varB4EAC82CA7396A68D541C85D26508E83_437747717 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_437747717 = new ConditionObject();
-            varB4EAC82CA7396A68D541C85D26508E83_437747717.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_437747717.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_437747717;
-            // ---------- Original Method ----------
-            //return new ConditionObject();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.905 -0400", hash_original_method = "3F3DE8BCF9BFC159EB93FF2ABA8024D7", hash_generated_method = "34D310B93F552000EF67B9A6A5036583")
         final Thread getOwner() {
-            Thread varB4EAC82CA7396A68D541C85D26508E83_993968735 = null; //Variable for return #1
+            Thread varB4EAC82CA7396A68D541C85D26508E83_993968735 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_993968735 = ((exclusiveCount(getState()) == 0) ?
                     null :
                     getExclusiveOwnerThread());
-            varB4EAC82CA7396A68D541C85D26508E83_993968735.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_993968735.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_993968735;
-            // ---------- Original Method ----------
-            //return ((exclusiveCount(getState()) == 0) ?
-                    //null :
-                    //getExclusiveOwnerThread());
+            
+            
+                    
+                    
         }
 
         
@@ -633,8 +646,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             int var5073DFD1A27AB6C474CC24F8B7EC3CD3_169377317 = (sharedCount(getState()));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2050361991 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2050361991;
-            // ---------- Original Method ----------
-            //return sharedCount(getState());
+            
+            
         }
 
         
@@ -643,8 +656,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             boolean var01CAC84C2F38392161F4E16039D7DE44_1211481157 = (exclusiveCount(getState()) != 0);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1818489978 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1818489978;
-            // ---------- Original Method ----------
-            //return exclusiveCount(getState()) != 0;
+            
+            
         }
 
         
@@ -653,11 +666,11 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             {
                 boolean var34E827331B4BC7F16DFC99E8B4EE154E_555884148 = (isHeldExclusively());
                 Object var0847481376D95B453E4DA8F62DB7ADA1_1897575864 = (exclusiveCount(getState()));
-            } //End flattened ternary
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1865702247 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1865702247;
-            // ---------- Original Method ----------
-            //return isHeldExclusively() ? exclusiveCount(getState()) : 0;
+            
+            
         }
 
         
@@ -665,28 +678,28 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         final int getReadHoldCount() {
             {
                 boolean varCF77250596B8C839BEFAC301F344C853_754074966 = (getReadLockCount() == 0);
-            } //End collapsed parenthetic
+            } 
             Thread current = Thread.currentThread();
             HoldCounter rh = cachedHoldCounter;
             {
                 boolean var12BC8C81E89FF6364E7C14D490B5B984_1556015295 = (rh != null && rh.tid == current.getId());
-            } //End collapsed parenthetic
+            } 
             int count = readHolds.get().count;
             readHolds.remove();
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_447751123 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_447751123;
-            // ---------- Original Method ----------
-            //if (getReadLockCount() == 0)
-                //return 0;
-            //Thread current = Thread.currentThread();
-            //if (firstReader == current)
-                //return firstReaderHoldCount;
-            //HoldCounter rh = cachedHoldCounter;
-            //if (rh != null && rh.tid == current.getId())
-                //return rh.count;
-            //int count = readHolds.get().count;
-            //if (count == 0) readHolds.remove();
-            //return count;
+            
+            
+                
+            
+            
+                
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -696,10 +709,10 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             readHolds = new ThreadLocalHoldCounter();
             setState(0);
             addTaint(s.getTaint());
-            // ---------- Original Method ----------
-            //s.defaultReadObject();
-            //readHolds = new ThreadLocalHoldCounter();
-            //setState(0);
+            
+            
+            
+            
         }
 
         
@@ -708,8 +721,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             int var376B5C2087169E76FB6628D31DCC9663_834313824 = (getState());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_809304763 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_809304763;
-            // ---------- Original Method ----------
-            //return getState();
+            
+            
         }
 
         
@@ -724,7 +737,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.908 -0400", hash_original_method = "F1D8E352EDEF0AB237A69949FE7423C4", hash_generated_method = "F1D8E352EDEF0AB237A69949FE7423C4")
             public HoldCounter ()
             {
-                //Synthesized constructor
+                
             }
 
 
@@ -737,18 +750,18 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.908 -0400", hash_original_method = "2811BFD99460ECBD8E7948B925FFB736", hash_generated_method = "2811BFD99460ECBD8E7948B925FFB736")
             public ThreadLocalHoldCounter ()
             {
-                //Synthesized constructor
+                
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.908 -0400", hash_original_method = "65FB587992A751B61B2E99AB391905DE", hash_generated_method = "01F792024FBC2F93A85AE31E7F31DDE3")
             public HoldCounter initialValue() {
-                HoldCounter varB4EAC82CA7396A68D541C85D26508E83_379640942 = null; //Variable for return #1
+                HoldCounter varB4EAC82CA7396A68D541C85D26508E83_379640942 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_379640942 = new HoldCounter();
-                varB4EAC82CA7396A68D541C85D26508E83_379640942.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_379640942.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_379640942;
-                // ---------- Original Method ----------
-                //return new HoldCounter();
+                
+                
             }
 
             
@@ -780,7 +793,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.909 -0400", hash_original_method = "92700F1FF079627760B83F1F338B8E6E", hash_generated_method = "92700F1FF079627760B83F1F338B8E6E")
         public NonfairSync ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -788,8 +801,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         final boolean writerShouldBlock() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_565596818 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_565596818;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -798,8 +811,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             boolean var42C6C6A77390D0F65AEC7AEAAD6B4F91_529909789 = (apparentlyFirstQueuedIsExclusive());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_176629331 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_176629331;
-            // ---------- Original Method ----------
-            //return apparentlyFirstQueuedIsExclusive();
+            
+            
         }
 
         
@@ -815,7 +828,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.909 -0400", hash_original_method = "76BFFA90730B34917875BAE48AE8B396", hash_generated_method = "76BFFA90730B34917875BAE48AE8B396")
         public FairSync ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -824,8 +837,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             boolean var5D9F3BF4621CB4A60B96236F06AF2405_1018758611 = (hasQueuedPredecessors());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_235305711 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_235305711;
-            // ---------- Original Method ----------
-            //return hasQueuedPredecessors();
+            
+            
         }
 
         
@@ -834,8 +847,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             boolean var5D9F3BF4621CB4A60B96236F06AF2405_1895652621 = (hasQueuedPredecessors());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1959059979 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1959059979;
-            // ---------- Original Method ----------
-            //return hasQueuedPredecessors();
+            
+            
         }
 
         
@@ -854,24 +867,24 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.910 -0400", hash_original_method = "86296C44CAAC51998FCC18AC6C334852", hash_generated_method = "90987B1257AE5908AD98C331E68E3B50")
         protected  ReadLock(ReentrantReadWriteLock lock) {
             sync = lock.sync;
-            // ---------- Original Method ----------
-            //sync = lock.sync;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.911 -0400", hash_original_method = "8D72D73F25D8DE6C9209D04669F96039", hash_generated_method = "F147980700CF869A8D6F7133099FA372")
         public void lock() {
             sync.acquireShared(1);
-            // ---------- Original Method ----------
-            //sync.acquireShared(1);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.911 -0400", hash_original_method = "61D542FCA692219B5199CDDD1A71CCC6", hash_generated_method = "87CEA29C19FE66B6CBD3C0925E99729C")
         public void lockInterruptibly() throws InterruptedException {
             sync.acquireSharedInterruptibly(1);
-            // ---------- Original Method ----------
-            //sync.acquireSharedInterruptibly(1);
+            
+            
         }
 
         
@@ -880,8 +893,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             boolean var82642F761C8CC4EFB1E9891565A562E0_1460524610 = (sync.tryReadLock());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1931539667 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1931539667;
-            // ---------- Original Method ----------
-            //return sync.tryReadLock();
+            
+            
         }
 
         
@@ -892,39 +905,39 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             addTaint(unit.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_894105286 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_894105286;
-            // ---------- Original Method ----------
-            //return sync.tryAcquireSharedNanos(1, unit.toNanos(timeout));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.912 -0400", hash_original_method = "2E2DA507FE1EE35FD0E649F791C4FA62", hash_generated_method = "CE7F47B976DC7C53582533934AC31AFE")
         public void unlock() {
             sync.releaseShared(1);
-            // ---------- Original Method ----------
-            //sync.releaseShared(1);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.912 -0400", hash_original_method = "9996D083DB29CA9E935A73F01FAD8A4F", hash_generated_method = "AA6177806CFC2176E106167AD695F2AC")
         public Condition newCondition() {
         	throw new UnsupportedOperationException();
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.913 -0400", hash_original_method = "4EA811A9ADBECD9416D19B5EBD75BF53", hash_generated_method = "4057578D00BADBA337466D741FF16977")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_2074920168 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_2074920168 = null; 
             int r = sync.getReadLockCount();
             varB4EAC82CA7396A68D541C85D26508E83_2074920168 = super.toString() +
                 "[Read locks = " + r + "]";
-            varB4EAC82CA7396A68D541C85D26508E83_2074920168.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2074920168.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2074920168;
-            // ---------- Original Method ----------
-            //int r = sync.getReadLockCount();
-            //return super.toString() +
-                //"[Read locks = " + r + "]";
+            
+            
+            
+                
         }
 
         
@@ -943,24 +956,24 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.913 -0400", hash_original_method = "2F59DA9CAF578BD2524C05A37F86DF01", hash_generated_method = "A7C2CC6406BCF200D20C7B5AD2A21C1A")
         protected  WriteLock(ReentrantReadWriteLock lock) {
             sync = lock.sync;
-            // ---------- Original Method ----------
-            //sync = lock.sync;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.913 -0400", hash_original_method = "4197ECA2CFEBBAA5B9BD7C840B7670C7", hash_generated_method = "DDE8BF3B445A2924BC3E70FCADFAA419")
         public void lock() {
             sync.acquire(1);
-            // ---------- Original Method ----------
-            //sync.acquire(1);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.914 -0400", hash_original_method = "5966BE77DAE264B5F21646B0E7A08FC1", hash_generated_method = "CFF689BB53A067D7B9EB5F12CA3F00CC")
         public void lockInterruptibly() throws InterruptedException {
             sync.acquireInterruptibly(1);
-            // ---------- Original Method ----------
-            //sync.acquireInterruptibly(1);
+            
+            
         }
 
         
@@ -969,8 +982,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             boolean var55CFE4E4F15027819D6679D2F0F9E5EB_984744023 = (sync.tryWriteLock());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_533279639 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_533279639;
-            // ---------- Original Method ----------
-            //return sync.tryWriteLock();
+            
+            
         }
 
         
@@ -981,44 +994,44 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             addTaint(unit.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_28801339 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_28801339;
-            // ---------- Original Method ----------
-            //return sync.tryAcquireNanos(1, unit.toNanos(timeout));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.915 -0400", hash_original_method = "7AD42B9E2BC6DD4A4DE0EB9EBA3A2515", hash_generated_method = "87142E80D82254348B0CA43367BBC9B7")
         public void unlock() {
             sync.release(1);
-            // ---------- Original Method ----------
-            //sync.release(1);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.915 -0400", hash_original_method = "6BB095C6835043568D960ACB9C15058D", hash_generated_method = "758CE82BBE867E5AD1DBA08A4D6D8DBD")
         public Condition newCondition() {
-            Condition varB4EAC82CA7396A68D541C85D26508E83_341202708 = null; //Variable for return #1
+            Condition varB4EAC82CA7396A68D541C85D26508E83_341202708 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_341202708 = sync.newCondition();
-            varB4EAC82CA7396A68D541C85D26508E83_341202708.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_341202708.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_341202708;
-            // ---------- Original Method ----------
-            //return sync.newCondition();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.916 -0400", hash_original_method = "E0C199518E39715763AFB28F76F97305", hash_generated_method = "11B2F9A03E0014E2E295E38B891D6D35")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1480566140 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1480566140 = null; 
             Thread o = sync.getOwner();
             varB4EAC82CA7396A68D541C85D26508E83_1480566140 = super.toString() + ((o == null) ?
                                        "[Unlocked]" :
                                        "[Locked by thread " + o.getName() + "]");
-            varB4EAC82CA7396A68D541C85D26508E83_1480566140.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1480566140.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1480566140;
-            // ---------- Original Method ----------
-            //Thread o = sync.getOwner();
-            //return super.toString() + ((o == null) ?
-                                       //"[Unlocked]" :
-                                       //"[Locked by thread " + o.getName() + "]");
+            
+            
+            
+                                       
+                                       
         }
 
         
@@ -1027,8 +1040,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             boolean var8A9E5BF2F58F6E9DAF336A434F65DD91_613493350 = (sync.isHeldExclusively());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1653087667 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1653087667;
-            // ---------- Original Method ----------
-            //return sync.isHeldExclusively();
+            
+            
         }
 
         
@@ -1037,8 +1050,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             int varE800E928AAA5AF8116F9B878EB5C4BA2_1299672044 = (sync.getWriteHoldCount());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1352566918 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1352566918;
-            // ---------- Original Method ----------
-            //return sync.getWriteHoldCount();
+            
+            
         }
 
         

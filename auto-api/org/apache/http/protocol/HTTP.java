@@ -1,18 +1,18 @@
 package org.apache.http.protocol;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class HTTP {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.571 -0400", hash_original_method = "3A6FCD823D5B25065B735A0BBABE71E6", hash_generated_method = "A1337A31689D4A05956686C0F56DC7FB")
     private  HTTP() {
-        // ---------- Original Method ----------
+        
     }
 
     

@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 
@@ -18,36 +18,36 @@ public class IllegalFormatFlagsException extends IllegalFormatException implemen
     public  IllegalFormatFlagsException(String flags) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         this.flags = flags;
-        // ---------- Original Method ----------
-        //if (flags == null) {
-            //throw new NullPointerException();
-        //}
-        //this.flags = flags;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.498 -0400", hash_original_method = "29D28F2D87A5BF440E9E6F54EB537F58", hash_generated_method = "9F30592ABC32DB8D137CFD56F2401051")
     public String getFlags() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1548245408 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1548245408 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1548245408 = flags;
-        varB4EAC82CA7396A68D541C85D26508E83_1548245408.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1548245408.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1548245408;
-        // ---------- Original Method ----------
-        //return flags;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.500 -0400", hash_original_method = "EC94AFCF80AA730DDC49A1A93BB12591", hash_generated_method = "987F6E6525D537864E07D94F5D2D43DC")
     @Override
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1892661076 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1892661076 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1892661076 = flags;
-        varB4EAC82CA7396A68D541C85D26508E83_1892661076.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1892661076.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1892661076;
-        // ---------- Original Method ----------
-        //return flags;
+        
+        
     }
 
     

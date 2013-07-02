@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
@@ -17,7 +17,7 @@ public class UnsupportedParser extends HeaderParser {
     public  UnsupportedParser(String unsupported) {
         super(unsupported);
         addTaint(unsupported.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class UnsupportedParser extends HeaderParser {
     protected  UnsupportedParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.920 -0400", hash_original_method = "9F68B71E39A8D368C1910EB63F18B506", hash_generated_method = "E8377DAE56E24A6227C89F60F5095F1B")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1228854723 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1228854723 = null; 
         UnsupportedList unsupportedList = new UnsupportedList();
         dbg_enter("UnsupportedParser.parse");
         try 
@@ -59,20 +60,20 @@ public class UnsupportedParser extends HeaderParser {
                             unsupported.setOptionTag(token.getTokenValue());
                             this.lexer.SPorHT();
                             unsupportedList.add(unsupported);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
             dbg_leave("UnsupportedParser.parse");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1228854723 = unsupportedList;
-        varB4EAC82CA7396A68D541C85D26508E83_1228854723.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1228854723.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1228854723;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

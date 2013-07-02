@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x9;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 import org.bouncycastle.asn1.ASN1Encodable;
@@ -28,9 +28,9 @@ public class X9FieldID extends ASN1Encodable implements X9ObjectIdentifiers {
     public  X9FieldID(BigInteger primeP) {
         this.id = prime_field;
         this.parameters = new DERInteger(primeP);
-        // ---------- Original Method ----------
-        //this.id = prime_field;
-        //this.parameters = new DERInteger(primeP);
+        
+        
+        
     }
 
     
@@ -42,7 +42,7 @@ public class X9FieldID extends ASN1Encodable implements X9ObjectIdentifiers {
         {
             fieldIdParams.add(tpBasis);
             fieldIdParams.add(new DERInteger(k1));
-        } //End block
+        } 
         {
             fieldIdParams.add(ppBasis);
             ASN1EncodableVector pentanomialParams = new ASN1EncodableVector();
@@ -50,31 +50,31 @@ public class X9FieldID extends ASN1Encodable implements X9ObjectIdentifiers {
             pentanomialParams.add(new DERInteger(k2));
             pentanomialParams.add(new DERInteger(k3));
             fieldIdParams.add(new DERSequence(pentanomialParams));
-        } //End block
+        } 
         this.parameters = new DERSequence(fieldIdParams);
         addTaint(m);
         addTaint(k1);
         addTaint(k2);
         addTaint(k3);
-        // ---------- Original Method ----------
-        //this.id = characteristic_two_field;
-        //ASN1EncodableVector fieldIdParams = new ASN1EncodableVector();
-        //fieldIdParams.add(new DERInteger(m));
-        //if (k2 == 0) 
-        //{
-            //fieldIdParams.add(tpBasis);
-            //fieldIdParams.add(new DERInteger(k1));
-        //} 
-        //else 
-        //{
-            //fieldIdParams.add(ppBasis);
-            //ASN1EncodableVector pentanomialParams = new ASN1EncodableVector();
-            //pentanomialParams.add(new DERInteger(k1));
-            //pentanomialParams.add(new DERInteger(k2));
-            //pentanomialParams.add(new DERInteger(k3));
-            //fieldIdParams.add(new DERSequence(pentanomialParams));
-        //}
-        //this.parameters = new DERSequence(fieldIdParams);
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -83,48 +83,49 @@ public class X9FieldID extends ASN1Encodable implements X9ObjectIdentifiers {
         ASN1Sequence  seq) {
         this.id = (DERObjectIdentifier)seq.getObjectAt(0);
         this.parameters = (DERObject)seq.getObjectAt(1);
-        // ---------- Original Method ----------
-        //this.id = (DERObjectIdentifier)seq.getObjectAt(0);
-        //this.parameters = (DERObject)seq.getObjectAt(1);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.472 -0400", hash_original_method = "A03C04E1D63CA4FFA1D88D7678177C2A", hash_generated_method = "656A93224BA85030569699000E6F6538")
     public DERObjectIdentifier getIdentifier() {
-        DERObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1029093829 = null; //Variable for return #1
+        DERObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1029093829 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1029093829 = id;
-        varB4EAC82CA7396A68D541C85D26508E83_1029093829.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1029093829.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1029093829;
-        // ---------- Original Method ----------
-        //return id;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.472 -0400", hash_original_method = "1898F00B5F10CC32C939404F88AE77E4", hash_generated_method = "80BF440BB7CA86AF2D8E2D53D00A1C3E")
     public DERObject getParameters() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1447304803 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1447304803 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1447304803 = parameters;
-        varB4EAC82CA7396A68D541C85D26508E83_1447304803.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1447304803.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1447304803;
-        // ---------- Original Method ----------
-        //return parameters;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.473 -0400", hash_original_method = "F64CE532B89E0DF8480CF348DC73F510", hash_generated_method = "E839CBD2299C7AD131F9F164492356EE")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1763369408 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1763369408 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(this.id);
         v.add(this.parameters);
         varB4EAC82CA7396A68D541C85D26508E83_1763369408 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_1763369408.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1763369408.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1763369408;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector v = new ASN1EncodableVector();
-        //v.add(this.id);
-        //v.add(this.parameters);
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
     }
 
     

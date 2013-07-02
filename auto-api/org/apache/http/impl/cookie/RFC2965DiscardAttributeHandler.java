@@ -1,11 +1,11 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.cookie.CookieAttributeHandler;
@@ -19,7 +19,7 @@ public class RFC2965DiscardAttributeHandler implements CookieAttributeHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.421 -0400", hash_original_method = "40A04040358E10BE463BC9E2FF4354F7", hash_generated_method = "A8A4D4F0913E8CA95AF486E5DDC0A437")
     public  RFC2965DiscardAttributeHandler() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,14 +28,14 @@ public class RFC2965DiscardAttributeHandler implements CookieAttributeHandler {
         {
             SetCookie2 cookie2 = (SetCookie2) cookie;
             cookie2.setDiscard(true);
-        } //End block
+        } 
         addTaint(cookie.getTaint());
         addTaint(commenturl.getTaint());
-        // ---------- Original Method ----------
-        //if (cookie instanceof SetCookie2) {
-              //SetCookie2 cookie2 = (SetCookie2) cookie;
-              //cookie2.setDiscard(true);
-          //}
+        
+        
+              
+              
+          
     }
 
     
@@ -43,7 +43,7 @@ public class RFC2965DiscardAttributeHandler implements CookieAttributeHandler {
     public void validate(final Cookie cookie, final CookieOrigin origin) throws MalformedCookieException {
         addTaint(cookie.getTaint());
         addTaint(origin.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -53,8 +53,8 @@ public class RFC2965DiscardAttributeHandler implements CookieAttributeHandler {
         addTaint(origin.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_86868130 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_86868130;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     

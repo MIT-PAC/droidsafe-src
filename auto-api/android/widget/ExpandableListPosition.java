@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 
@@ -25,7 +25,7 @@ class ExpandableListPosition {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.654 -0400", hash_original_method = "AC719FEF152399BDA1BD5A5CA7FBB765", hash_generated_method = "CA9DC1117656D5954D084C62466145DC")
     private  ExpandableListPosition() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -35,11 +35,11 @@ class ExpandableListPosition {
         childPos = 0;
         flatListPos = 0;
         type = 0;
-        // ---------- Original Method ----------
-        //groupPos = 0;
-        //childPos = 0;
-        //flatListPos = 0;
-        //type = 0;
+        
+        
+        
+        
+        
     }
 
     
@@ -49,22 +49,25 @@ class ExpandableListPosition {
         long varC88519A853E40A47ED20C816E0704D5D_434315381 = (ExpandableListView.getPackedPositionForGroup(groupPos));
         long var0F5264038205EDFB1AC05FBB0E8C5E94_956507102 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_956507102;
-        // ---------- Original Method ----------
-        //if (type == CHILD) return ExpandableListView.getPackedPositionForChild(groupPos, childPos);
-        //else return ExpandableListView.getPackedPositionForGroup(groupPos);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ExpandableListPosition obtainGroupPosition(int groupPosition) {
         return obtain(GROUP, groupPosition, 0, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ExpandableListPosition obtainChildPosition(int groupPosition, int childPosition) {
         return obtain(CHILD, groupPosition, childPosition, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ExpandableListPosition obtainPosition(long packedPosition) {
         if (packedPosition == ExpandableListView.PACKED_POSITION_VALUE_NULL) {
             return null;
@@ -82,6 +85,7 @@ class ExpandableListPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ExpandableListPosition obtain(int type, int groupPos, int childPos, int flatListPos) {
         ExpandableListPosition elp = getRecycledOrCreate();
         elp.type = type;
@@ -92,6 +96,7 @@ class ExpandableListPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static ExpandableListPosition getRecycledOrCreate() {
         ExpandableListPosition elp;
         synchronized (sPool) {
@@ -106,6 +111,7 @@ class ExpandableListPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.656 -0400", hash_original_method = "8A154BA1D9B394A3D67E04E6A86589B2", hash_generated_method = "72E7CF7D84067ED90EC39AED70BF8D6D")
     public void recycle() {
         {
@@ -113,15 +119,15 @@ class ExpandableListPosition {
                 boolean varFD1AE4DE39490BAA16F88E57693E4F3C_2063079529 = (sPool.size() < MAX_POOL_SIZE);
                 {
                     sPool.add(this);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (sPool) {
-            //if (sPool.size() < MAX_POOL_SIZE) {
-                //sPool.add(this);
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+                
+            
+        
     }
 
     

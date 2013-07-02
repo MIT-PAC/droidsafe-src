@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,16 +20,16 @@ public class PropertyResourceBundle extends ResourceBundle {
     public  PropertyResourceBundle(InputStream stream) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         resources = new Properties();
         resources.load(stream);
         addTaint(stream.getTaint());
-        // ---------- Original Method ----------
-        //if (stream == null) {
-            //throw new NullPointerException();
-        //}
-        //resources = new Properties();
-        //resources.load(stream);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -38,43 +38,46 @@ public class PropertyResourceBundle extends ResourceBundle {
         resources = new Properties();
         resources.load(reader);
         addTaint(reader.getTaint());
-        // ---------- Original Method ----------
-        //resources = new Properties();
-        //resources.load(reader);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.482 -0400", hash_original_method = "18F63E7C5AB3934B8351CB4BC2CE0CC3", hash_generated_method = "1EABEC2F73059E84FFA530E0D2943DD5")
     protected Set<String> handleKeySet() {
-        Set<String> varB4EAC82CA7396A68D541C85D26508E83_406231614 = null; //Variable for return #1
+        Set<String> varB4EAC82CA7396A68D541C85D26508E83_406231614 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_406231614 = resources.stringPropertyNames();
-        varB4EAC82CA7396A68D541C85D26508E83_406231614.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_406231614.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_406231614;
-        // ---------- Original Method ----------
-        //return resources.stringPropertyNames();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.482 -0400", hash_original_method = "94C0F4CF2CD414C406604EC575DAD3DD", hash_generated_method = "0FF1E47A732268292B380E74D4EFAA2F")
     @SuppressWarnings("unchecked")
     private Enumeration<String> getLocalKeys() {
-        Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_717064166 = null; //Variable for return #1
+        Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_717064166 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_717064166 = (Enumeration<String>) resources.propertyNames();
-        varB4EAC82CA7396A68D541C85D26508E83_717064166.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_717064166.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_717064166;
-        // ---------- Original Method ----------
-        //return (Enumeration<String>) resources.propertyNames();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.483 -0400", hash_original_method = "8070DEE7B7CBE3EB8E3AF8AF6FE9DBC6", hash_generated_method = "1A964180A58883289AC6FE49490DDE1C")
     @Override
     public Enumeration<String> getKeys() {
-        Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_1293183610 = null; //Variable for return #1
-        Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_372181081 = null; //Variable for return #2
+        Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_1293183610 = null; 
+        Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_372181081 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1293183610 = getLocalKeys();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_372181081 = new Enumeration<String>() {
             Enumeration<String> local = getLocalKeys();
             Enumeration<String> pEnum = parent.getKeys();
@@ -110,36 +113,37 @@ public class PropertyResourceBundle extends ResourceBundle {
                 return pEnum.nextElement();
             }
         };
-        Enumeration<String> varA7E53CE21691AB073D9660D615818899_496778526; //Final return value
+        Enumeration<String> varA7E53CE21691AB073D9660D615818899_496778526; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_496778526 = varB4EAC82CA7396A68D541C85D26508E83_1293183610;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_496778526 = varB4EAC82CA7396A68D541C85D26508E83_372181081;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_496778526.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_496778526.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_496778526;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.484 -0400", hash_original_method = "23544B256E22E0E7C2784DAFEBE5A56C", hash_generated_method = "41E9D424173A45A796A84F16498AA876")
     @Override
     public Object handleGetObject(String key) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1554001868 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1554001868 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1554001868 = resources.get(key);
         addTaint(key.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1554001868.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1554001868.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1554001868;
-        // ---------- Original Method ----------
-        //return resources.get(key);
+        
+        
     }
 
     
-    // orphaned legacy method
+    
     public String nextElement() {
                 if (local.hasMoreElements()) {
                     return local.nextElement();
@@ -152,7 +156,7 @@ public class PropertyResourceBundle extends ResourceBundle {
                 return pEnum.nextElement();
             }
     
-    // orphaned legacy method
+    
     private boolean findNext() {
                 if (nextElement != null) {
                     return true;
@@ -167,7 +171,7 @@ public class PropertyResourceBundle extends ResourceBundle {
                 return false;
             }
     
-    // orphaned legacy method
+    
     public boolean hasMoreElements() {
                 if (local.hasMoreElements()) {
                     return true;
@@ -175,13 +179,13 @@ public class PropertyResourceBundle extends ResourceBundle {
                 return findNext();
             }
     
-    // orphaned legacy field
+    
     Enumeration<String> local = getLocalKeys();
     
-    // orphaned legacy field
+    
     Enumeration<String> pEnum = parent.getKeys();
     
-    // orphaned legacy field
+    
     String nextElement;
     
 }

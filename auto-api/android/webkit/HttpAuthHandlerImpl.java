@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.os.Handler;
@@ -38,105 +38,109 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
       HttpAuthHandlerImpl(Network network) {
         mNetwork = network;
         mLoaderQueue = new LinkedList<LoadListener>();
-        // ---------- Original Method ----------
-        //mNetwork = network;
-        //mLoaderQueue = new LinkedList<LoadListener>();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.925 -0400", hash_original_method = "92EA526117BA58D828A346DC2F14E6C7", hash_generated_method = "B6ECC97991ACBFA8B203A90A435F3C66")
     @Override
     public void handleMessage(Message msg) {
         LoadListener loader = null;
         {
             loader = mLoaderQueue.poll();
-        } //End block
-        //Begin case AUTH_PROCEED 
+        } 
+        
         String username = msg.getData().getString("username");
-        //End case AUTH_PROCEED 
-        //Begin case AUTH_PROCEED 
+        
+        
         String password = msg.getData().getString("password");
-        //End case AUTH_PROCEED 
-        //Begin case AUTH_PROCEED 
+        
+        
         loader.handleAuthResponse(username, password);
-        //End case AUTH_PROCEED 
-        //Begin case AUTH_CANCEL 
+        
+        
         loader.handleAuthResponse(null, null);
-        //End case AUTH_CANCEL 
+        
         processNextLoader();
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //LoadListener loader = null;
-        //synchronized (mLoaderQueue) {
-            //loader = mLoaderQueue.poll();
-        //}
-        //assert(loader.isSynchronous() == false);
-        //switch (msg.what) {
-            //case AUTH_PROCEED:
-                //String username = msg.getData().getString("username");
-                //String password = msg.getData().getString("password");
-                //loader.handleAuthResponse(username, password);
-                //break;
-            //case AUTH_CANCEL:
-                //loader.handleAuthResponse(null, null);
-                //break;
-        //}
-        //processNextLoader();
+        
+        
+        
+            
+        
+        
+        
+            
+                
+                
+                
+                
+            
+                
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.925 -0400", hash_original_method = "633BAC1354102784355BBDC241836385", hash_generated_method = "31ED78E36F5BEE0BD746378F349CE30A")
     private boolean handleResponseForSynchronousRequest(String username, String password) {
         LoadListener loader = null;
         {
             loader = mLoaderQueue.peek();
-        } //End block
+        } 
         {
             boolean var221166D89B647BFDA3D85F45A3E4348F_376835623 = (loader.isSynchronous());
             {
                 mUsername = username;
                 mPassword = password;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1743385297 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1743385297;
-        // ---------- Original Method ----------
-        //LoadListener loader = null;
-        //synchronized (mLoaderQueue) {
-            //loader = mLoaderQueue.peek();
-        //}
-        //if (loader.isSynchronous()) {
-            //mUsername = username;
-            //mPassword = password;
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+            
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.925 -0400", hash_original_method = "D0913A95E2E0984BDC30D85F1A6DD6EF", hash_generated_method = "C96FDDEB25AEAE33C868369E88FC51C0")
     private void signalRequestComplete() {
         {
             mRequestInFlight = false;
             mRequestInFlightLock.notify();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mRequestInFlightLock) {
-            //assert(mRequestInFlight);
-            //mRequestInFlight = false;
-            //mRequestInFlightLock.notify();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.926 -0400", hash_original_method = "3FC26787C5211E44D8B34B9447EFC8D6", hash_generated_method = "73B0212023C036597A5161C8288DA1C7")
     public void proceed(String username, String password) {
         {
             boolean var48EB5472B994D58361A4636BAEC97DA1_1315528789 = (handleResponseForSynchronousRequest(username, password));
             {
                 signalRequestComplete();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Message msg = obtainMessage(AUTH_PROCEED);
         msg.getData().putString("username", username);
         msg.getData().putString("password", password);
@@ -144,59 +148,61 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
         signalRequestComplete();
         addTaint(username.getTaint());
         addTaint(password.getTaint());
-        // ---------- Original Method ----------
-        //if (handleResponseForSynchronousRequest(username, password)) {
-            //signalRequestComplete();
-            //return;
-        //}
-        //Message msg = obtainMessage(AUTH_PROCEED);
-        //msg.getData().putString("username", username);
-        //msg.getData().putString("password", password);
-        //sendMessage(msg);
-        //signalRequestComplete();
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.926 -0400", hash_original_method = "1C78A3648C04874A6B02C5BA2CA8304A", hash_generated_method = "39AFB90B1C151792BEA7D066D91A65D2")
     public void cancel() {
         {
             boolean varE3A4C0A30ABB3BD770ADE223EB4A6CC1_369243076 = (handleResponseForSynchronousRequest(null, null));
             {
                 signalRequestComplete();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         sendMessage(obtainMessage(AUTH_CANCEL));
         signalRequestComplete();
-        // ---------- Original Method ----------
-        //if (handleResponseForSynchronousRequest(null, null)) {
-            //signalRequestComplete();
-            //return;
-        //}
-        //sendMessage(obtainMessage(AUTH_CANCEL));
-        //signalRequestComplete();
+        
+        
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.927 -0400", hash_original_method = "0DB7D7C368B555F88B0E01139A6FA13A", hash_generated_method = "B6BD55B1A77BDC752E82F0C273DFEAEB")
     public boolean useHttpAuthUsernamePassword() {
         LoadListener loader = null;
         {
             loader = mLoaderQueue.peek();
-        } //End block
+        } 
         {
             boolean varE8520BA1038614FF7EE7C51C46F527D1_338659491 = (!loader.authCredentialsInvalid());
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1778602136 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1778602136;
-        // ---------- Original Method ----------
-        //LoadListener loader = null;
-        //synchronized (mLoaderQueue) {
-            //loader = mLoaderQueue.peek();
-        //}
-        //if (loader != null) {
-            //return !loader.authCredentialsInvalid();
-        //}
-        //return false;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -208,30 +214,31 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
                 waitForRequestToComplete();
                 {
                     mLoaderQueue.addFirst(loader);
-                } //End block
+                } 
                 processNextLoader();
                 waitForRequestToComplete();
                 {
                     mLoaderQueue.poll();
-                } //End block
+                } 
                 loader.handleAuthResponse(mUsername, mPassword);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean processNext = false;
         {
             mLoaderQueue.offer(loader);
             processNext =
                 (mLoaderQueue.size() == 1);
-        } //End block
+        } 
         {
             processNextLoader();
-        } //End block
+        } 
         addTaint(loader.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.927 -0400", hash_original_method = "886E13332A9209796D68B57BD4AA101D", hash_generated_method = "8E8DD249AB23742088627630533DAA85")
     private void waitForRequestToComplete() {
         {
@@ -239,34 +246,35 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
                 try 
                 {
                     mRequestInFlightLock.wait();
-                } //End block
+                } 
                 catch (InterruptedException e)
                 { }
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mRequestInFlightLock) {
-            //while (mRequestInFlight) {
-                //try {
-                    //mRequestInFlightLock.wait();
-                //} catch(InterruptedException e) {
-                    //Log.e(LOGTAG, "Interrupted while waiting for request to complete");
-                //}
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                    
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.928 -0400", hash_original_method = "915750F5CD3DA8563236F4856CDF7624", hash_generated_method = "37BBD98BB102B001E8404FC664779A20")
     private void processNextLoader() {
         LoadListener loader = null;
         {
             loader = mLoaderQueue.peek();
-        } //End block
+        } 
         {
             {
                 mRequestInFlight = true;
-            } //End block
+            } 
             CallbackProxy proxy = loader.getFrame().getCallbackProxy();
             String hostname;
             boolean varB1DB9B9D9A13B0735B7565BED708C327_1165585488 = (loader.proxyAuthenticate());
@@ -274,29 +282,30 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
             hostname = loader.host();
             String realm = loader.realm();
             proxy.onReceivedHttpAuthRequest(this, hostname, realm);
-        } //End block
-        // ---------- Original Method ----------
-        //LoadListener loader = null;
-        //synchronized (mLoaderQueue) {
-            //loader = mLoaderQueue.peek();
-        //}
-        //if (loader != null) {
-            //synchronized (mRequestInFlightLock) {
-                //assert(mRequestInFlight == false);
-                //mRequestInFlight = true;
-            //}
-            //CallbackProxy proxy = loader.getFrame().getCallbackProxy();
-            //String hostname = loader.proxyAuthenticate() ?
-                //mNetwork.getProxyHostname() : loader.host();
-            //String realm = loader.realm();
-            //proxy.onReceivedHttpAuthRequest(this, hostname, realm);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+                
+                
+            
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void onReceivedCredentials(LoadListener loader,
             String host, String realm, String username, String password) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         CallbackProxy proxy = loader.getFrame().getCallbackProxy();
         proxy.onReceivedHttpAuthCredentials(host, realm, username, password);
     }

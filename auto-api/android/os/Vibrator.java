@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.Log;
 
@@ -21,106 +21,110 @@ public class Vibrator {
     public  Vibrator() {
         mService = IVibratorService.Stub.asInterface(
                 ServiceManager.getService("vibrator"));
-        // ---------- Original Method ----------
-        //mService = IVibratorService.Stub.asInterface(
-                //ServiceManager.getService("vibrator"));
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.427 -0400", hash_original_method = "340743421AEB659E5123D51116E8257B", hash_generated_method = "AB8A6699E4B4701CA9E0E7789237D3EE")
     public boolean hasVibrator() {
         try 
         {
             boolean var5CDAA7782E0492C697AE35EAB5CE95A3_1399268364 = (mService.hasVibrator());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2110350674 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2110350674;
-        // ---------- Original Method ----------
-        //if (mService == null) {
-            //Log.w(TAG, "Failed to vibrate; no vibrator service.");
-            //return false;
-        //}
-        //try {
-            //return mService.hasVibrator();
-        //} catch (RemoteException e) {
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.428 -0400", hash_original_method = "7274B01F62B26782B2CB11F21188B55D", hash_generated_method = "F037A67D35643E415E9C55D7CEECE9AE")
     public void vibrate(long milliseconds) {
         try 
         {
             mService.vibrate(milliseconds, mToken);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(milliseconds);
-        // ---------- Original Method ----------
-        //if (mService == null) {
-            //Log.w(TAG, "Failed to vibrate; no vibrator service.");
-            //return;
-        //}
-        //try {
-            //mService.vibrate(milliseconds, mToken);
-        //} catch (RemoteException e) {
-            //Log.w(TAG, "Failed to vibrate.", e);
-        //}
+        
+        
+            
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.428 -0400", hash_original_method = "7A7D54B587DD258FAC49023E7C932C75", hash_generated_method = "746057240AF49A69237F19353942DFA9")
     public void vibrate(long[] pattern, int repeat) {
         {
             try 
             {
                 mService.vibratePattern(pattern, repeat, mToken);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-        } //End block
+        } 
         addTaint(pattern[0]);
         addTaint(repeat);
-        // ---------- Original Method ----------
-        //if (mService == null) {
-            //Log.w(TAG, "Failed to vibrate; no vibrator service.");
-            //return;
-        //}
-        //if (repeat < pattern.length) {
-            //try {
-                //mService.vibratePattern(pattern, repeat, mToken);
-            //} catch (RemoteException e) {
-                //Log.w(TAG, "Failed to vibrate.", e);
-            //}
-        //} else {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
+        
+        
+            
+            
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.429 -0400", hash_original_method = "9CFB04510A80ABA723862EE634095A2D", hash_generated_method = "CA18ED2B0743D8CDB9503A504E4ABAFF")
     public void cancel() {
         try 
         {
             mService.cancelVibrate(mToken);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
-        // ---------- Original Method ----------
-        //if (mService == null) {
-            //return;
-        //}
-        //try {
-            //mService.cancelVibrate(mToken);
-        //} catch (RemoteException e) {
-            //Log.w(TAG, "Failed to cancel vibration.", e);
-        //}
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.location;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -22,12 +22,12 @@ public final class GpsStatus {
     private Iterable<GpsSatellite> mSatelliteList = new Iterable<GpsSatellite>() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.273 -0400", hash_original_method = "9983CD5442E4C518DD699220FBA30311", hash_generated_method = "D802BB52D632FD31E6502E4338BAE5D2")
         public Iterator<GpsSatellite> iterator() {
-            Iterator<GpsSatellite> varB4EAC82CA7396A68D541C85D26508E83_399552892 = null; //Variable for return #1
+            Iterator<GpsSatellite> varB4EAC82CA7396A68D541C85D26508E83_399552892 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_399552892 = new SatelliteIterator(mSatellites);
-            varB4EAC82CA7396A68D541C85D26508E83_399552892.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_399552892.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_399552892;
-            // ---------- Original Method ----------
-            //return new SatelliteIterator(mSatellites);
+            
+            
         }
 
         
@@ -39,12 +39,12 @@ public final class GpsStatus {
             int i = 0;
             {
                 mSatellites[i] = new GpsSatellite(i + 1);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //for (int i = 0; i < mSatellites.length; i++) {
-            //mSatellites[i] = new GpsSatellite(i + 1);
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
@@ -57,8 +57,8 @@ public final class GpsStatus {
             i = 0;
             {
                 mSatellites[i].mValid = false;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             i = 0;
             {
@@ -73,9 +73,9 @@ public final class GpsStatus {
                     satellite.mHasEphemeris = ((ephemerisMask & prnShift) != 0);
                     satellite.mHasAlmanac = ((almanacMask & prnShift) != 0);
                     satellite.mUsedInFix = ((usedInFixMask & prnShift) != 0);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(svCount);
         addTaint(prns[0]);
         addTaint(snrs[0]);
@@ -84,25 +84,25 @@ public final class GpsStatus {
         addTaint(ephemerisMask);
         addTaint(almanacMask);
         addTaint(usedInFixMask);
-        // ---------- Original Method ----------
-        //int i;
-        //for (i = 0; i < mSatellites.length; i++) {
-            //mSatellites[i].mValid = false;
-        //}
-        //for (i = 0; i < svCount; i++) {
-            //int prn = prns[i] - 1;
-            //int prnShift = (1 << prn);
-            //if (prn >= 0 && prn < mSatellites.length) {
-                //GpsSatellite satellite = mSatellites[prn];
-                //satellite.mValid = true;
-                //satellite.mSnr = snrs[i];
-                //satellite.mElevation = elevations[i];
-                //satellite.mAzimuth = azimuths[i];
-                //satellite.mHasEphemeris = ((ephemerisMask & prnShift) != 0);
-                //satellite.mHasAlmanac = ((almanacMask & prnShift) != 0);
-                //satellite.mUsedInFix = ((usedInFixMask & prnShift) != 0);
-            //}
-        //}
+        
+        
+        
+            
+        
+        
+            
+            
+            
+                
+                
+                
+                
+                
+                
+                
+                
+            
+        
     }
 
     
@@ -113,21 +113,21 @@ public final class GpsStatus {
             int i = 0;
             {
                 mSatellites[i].setStatus(status.mSatellites[i]);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //mTimeToFirstFix = status.getTimeToFirstFix();
-        //for (int i = 0; i < mSatellites.length; i++) {
-            //mSatellites[i].setStatus(status.mSatellites[i]);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.276 -0400", hash_original_method = "DB9D2F6104F17C34589316947F2A601E", hash_generated_method = "67EFC13BBD63DDF4ED5824FCE6033C6E")
      void setTimeToFirstFix(int ttff) {
         mTimeToFirstFix = ttff;
-        // ---------- Original Method ----------
-        //mTimeToFirstFix = ttff;
+        
+        
     }
 
     
@@ -135,19 +135,19 @@ public final class GpsStatus {
     public int getTimeToFirstFix() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_147016549 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_147016549;
-        // ---------- Original Method ----------
-        //return mTimeToFirstFix;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.276 -0400", hash_original_method = "8623867703A7BB23EDE8EB2AB29E2B88", hash_generated_method = "3C1C185293B8FC0F4DAF858E1FF2C4A3")
     public Iterable<GpsSatellite> getSatellites() {
-        Iterable<GpsSatellite> varB4EAC82CA7396A68D541C85D26508E83_83621081 = null; //Variable for return #1
+        Iterable<GpsSatellite> varB4EAC82CA7396A68D541C85D26508E83_83621081 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_83621081 = mSatelliteList;
-        varB4EAC82CA7396A68D541C85D26508E83_83621081.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_83621081.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_83621081;
-        // ---------- Original Method ----------
-        //return mSatelliteList;
+        
+        
     }
 
     
@@ -155,8 +155,8 @@ public final class GpsStatus {
     public int getMaxSatellites() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1652142535 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1652142535;
-        // ---------- Original Method ----------
-        //return NUM_SATELLITES;
+        
+        
     }
 
     
@@ -171,8 +171,8 @@ public final class GpsStatus {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.277 -0400", hash_original_method = "AEF39F6B14389CFD613D955A0F70C3EF", hash_generated_method = "28BB9F681E40E1A19CFE5F015D2B2BB4")
           SatelliteIterator(GpsSatellite[] satellites) {
             mSatellites = satellites;
-            // ---------- Original Method ----------
-            //mSatellites = satellites;
+            
+            
         }
 
         
@@ -180,47 +180,47 @@ public final class GpsStatus {
         public boolean hasNext() {
             {
                 int i = mIndex;
-            } //End collapsed parenthetic
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_278014677 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_278014677;
-            // ---------- Original Method ----------
-            //for (int i = mIndex; i < mSatellites.length; i++) {
-                //if (mSatellites[i].mValid) {
-                    //return true;
-                //}
-            //}
-            //return false;
+            
+            
+                
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.279 -0400", hash_original_method = "2172205C4F18481DAEA9224F778B255B", hash_generated_method = "D416D4413A134582AD6633D2AC968EA3")
         public GpsSatellite next() {
-            GpsSatellite varB4EAC82CA7396A68D541C85D26508E83_963270405 = null; //Variable for return #1
+            GpsSatellite varB4EAC82CA7396A68D541C85D26508E83_963270405 = null; 
             {
                 GpsSatellite satellite = mSatellites[mIndex++];
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_963270405 = satellite;
-                } //End block
-            } //End block
+                } 
+            } 
             if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-            varB4EAC82CA7396A68D541C85D26508E83_963270405.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_963270405.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_963270405;
-            // ---------- Original Method ----------
-            //while (mIndex < mSatellites.length) {
-                //GpsSatellite satellite = mSatellites[mIndex++];
-                //if (satellite.mValid) {
-                    //return satellite;
-                //}
-            //}
-            //throw new NoSuchElementException();
+            
+            
+                
+                
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.279 -0400", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "BD0416D7797F4CCA5C01710103DCE99D")
         public void remove() {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class SpannedString extends SpannableStringInternal implements CharSequence, GetChars, Spanned {
@@ -14,7 +14,7 @@ public final class SpannedString extends SpannableStringInternal implements Char
     public  SpannedString(CharSequence source) {
         super(source, 0, source.length());
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,23 +24,25 @@ public final class SpannedString extends SpannableStringInternal implements Char
         addTaint(source.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.529 -0400", hash_original_method = "5C8F718730EE97469BD91F870902B78A", hash_generated_method = "BA551110AF1EF8EBC4490721C42B0B97")
     public CharSequence subSequence(int start, int end) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_222126006 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_222126006 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_222126006 = new SpannedString(this, start, end);
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_222126006.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_222126006.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_222126006;
-        // ---------- Original Method ----------
-        //return new SpannedString(this, start, end);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SpannedString valueOf(CharSequence source) {
         if (source instanceof SpannedString) {
             return (SpannedString) source;

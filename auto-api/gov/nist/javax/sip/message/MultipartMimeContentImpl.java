@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.HeaderFactoryExt;
 import gov.nist.javax.sip.header.HeaderFactoryImpl;
@@ -35,38 +35,40 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
     public  MultipartMimeContentImpl(ContentTypeHeader contentTypeHeader) {
         this.multipartMimeContentTypeHeader = contentTypeHeader;
         this.boundary = contentTypeHeader.getParameter(BOUNDARY);
-        // ---------- Original Method ----------
-        //this.multipartMimeContentTypeHeader = contentTypeHeader;
-        //this.boundary = contentTypeHeader.getParameter(BOUNDARY);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.871 -0400", hash_original_method = "B89677B4178E2DAF7E61A39544E04AE5", hash_generated_method = "20B5BE9E33992F83D4D8092A6FA5541D")
     public boolean add(Content content) {
         boolean varA68F685D0CC10459739E65FD0BF87C7D_519382280 = (contentList.add((ContentImpl) content));
         addTaint(content.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1174615571 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1174615571;
-        // ---------- Original Method ----------
-        //return contentList.add((ContentImpl) content);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.872 -0400", hash_original_method = "4590DD0C77A768FED1E8ACE7CF0313E8", hash_generated_method = "B11A61E4DD0E2261A0627BFA5212E68A")
     public ContentTypeHeader getContentTypeHeader() {
-        ContentTypeHeader varB4EAC82CA7396A68D541C85D26508E83_116858198 = null; //Variable for return #1
+        ContentTypeHeader varB4EAC82CA7396A68D541C85D26508E83_116858198 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_116858198 = multipartMimeContentTypeHeader;
-        varB4EAC82CA7396A68D541C85D26508E83_116858198.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_116858198.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_116858198;
-        // ---------- Original Method ----------
-        //return multipartMimeContentTypeHeader;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.876 -0400", hash_original_method = "1253C501D0F5CE66AF0270C83E3A62D6", hash_generated_method = "CC9BA702855130F429C4AE1815C16108")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_380236936 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_380236936 = null; 
         StringBuffer stringBuffer = new StringBuffer();
         {
             Iterator<Content> var6E413069D239ECC55CE8E2D17947347F_1760371584 = (this.contentList).iterator();
@@ -74,20 +76,21 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
             Content content = var6E413069D239ECC55CE8E2D17947347F_1760371584.next();
             {
                 stringBuffer.append(content.toString());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_380236936 = stringBuffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_380236936.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_380236936.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_380236936;
-        // ---------- Original Method ----------
-        //StringBuffer stringBuffer = new StringBuffer();
-        //for (Content content : this.contentList) {
-            //stringBuffer.append(content.toString());
-        //}
-        //return stringBuffer.toString();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.898 -0400", hash_original_method = "968D057F7853F8246DB89EBE38C4B30E", hash_generated_method = "772B39E9A7DA43C686418A218ABBEC4C")
     public void createContentList(String body) throws ParseException {
         try 
@@ -99,7 +102,7 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
                 ContentImpl content = new ContentImpl(body, delimiter);
                 content.setContentTypeHeader(this.getContentTypeHeader());
                 this.contentList.add(content);
-            } //End block
+            } 
             String[] fragments = body.split("--" + delimiter + "\r\n");
             {
                 String nextPart = fragments[0];
@@ -109,17 +112,17 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
                         boolean varF6B34452D9317EB430FD16C9EB750636_1210883093 = (strbuf.length() > 0
                         && (strbuf.charAt(0) == '\r' || strbuf.charAt(0) == '\n'));
                         strbuf.deleteCharAt(0);
-                    } //End collapsed parenthetic
+                    } 
                     {
                         boolean var86EAD981F1663D4F8BE3173251430A52_1608303888 = (strbuf.length() == 0);
-                    } //End collapsed parenthetic
+                    } 
                     nextPart = strbuf.toString();
                     int position = nextPart.indexOf("\r\n\r\n");
                     int off = 4;
                     {
                         position = nextPart.indexOf("\n");
                         off = 2;
-                    } //End block
+                    } 
                     if (DroidSafeAndroidRuntime.control) throw new ParseException("no content type header found in " + nextPart, 0);
                     String rest = nextPart.substring(position + off);
                     if (DroidSafeAndroidRuntime.control) throw new ParseException("No content [" + nextPart + "]", 0);
@@ -132,33 +135,34 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
                             Header header = headerFactory.createHeader(hdr);
                             {
                                 content.setContentTypeHeader((ContentTypeHeader) header);
-                            } //End block
+                            } 
                             {
                                 content.setContentDispositionHeader((ContentDispositionHeader) header);
-                            } //End block
+                            } 
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new ParseException("Unexpected header type " + header.getName(), 0);
-                            } //End block
+                            } 
                             contentList.add(content);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         catch (StringIndexOutOfBoundsException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new ParseException("Invalid Multipart mime format", 0);
-        } //End block
+        } 
         addTaint(body.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.903 -0400", hash_original_method = "3C7197D83A3DC33713AACEA2691D16BA", hash_generated_method = "4B0529C9913DE7515512EEB36929774A")
     public Content getContentByType(String contentType, String contentSubtype) {
-        Content varB4EAC82CA7396A68D541C85D26508E83_1529035201 = null; //Variable for return #1
-        Content varB4EAC82CA7396A68D541C85D26508E83_1343674635 = null; //Variable for return #2
+        Content varB4EAC82CA7396A68D541C85D26508E83_1529035201 = null; 
+        Content varB4EAC82CA7396A68D541C85D26508E83_1343674635 = null; 
         Content retval = null;
         varB4EAC82CA7396A68D541C85D26508E83_1529035201 = null;
         {
@@ -172,67 +176,70 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
                             contentSubtype));
                     {
                         retval = content;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1343674635 = retval;
         addTaint(contentType.getTaint());
         addTaint(contentSubtype.getTaint());
-        Content varA7E53CE21691AB073D9660D615818899_2035532650; //Final return value
+        Content varA7E53CE21691AB073D9660D615818899_2035532650; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2035532650 = varB4EAC82CA7396A68D541C85D26508E83_1529035201;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2035532650 = varB4EAC82CA7396A68D541C85D26508E83_1343674635;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2035532650.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2035532650.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2035532650;
-        // ---------- Original Method ----------
-        //Content retval = null;
-        //if (contentList == null)
-            //return null;
-        //for (Content content : contentList) {
-            //if (content.getContentTypeHeader().getContentType().equalsIgnoreCase(contentType)
-                    //&& content.getContentTypeHeader().getContentSubType().equalsIgnoreCase(
-                            //contentSubtype)) {
-                //retval = content;
-                //break;
-            //}
-        //}
-        //return retval;
+        
+        
+        
+            
+        
+            
+                    
+                            
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.903 -0400", hash_original_method = "5D236D4E42081CC93B2BC0976B6D3581", hash_generated_method = "61FDD4044E49C6BE51FF0776C167A96C")
     public void addContent(Content content) {
         this.add(content);
         addTaint(content.getTaint());
-        // ---------- Original Method ----------
-        //this.add(content);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.904 -0400", hash_original_method = "DFB35A5106E2AD2A9D629D81C13D382C", hash_generated_method = "A32DD3431E5FDC69EC0CD76139C571B0")
     public Iterator<Content> getContents() {
-        Iterator<Content> varB4EAC82CA7396A68D541C85D26508E83_496433213 = null; //Variable for return #1
+        Iterator<Content> varB4EAC82CA7396A68D541C85D26508E83_496433213 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_496433213 = this.contentList.iterator();
-        varB4EAC82CA7396A68D541C85D26508E83_496433213.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_496433213.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_496433213;
-        // ---------- Original Method ----------
-        //return this.contentList.iterator();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.904 -0400", hash_original_method = "B0C4727628A80D66AB97702342F94FFA", hash_generated_method = "5F8C6B3850750FD4AB1BF39DC5626C7E")
     public int getContentCount() {
         int var48A67136D94FF8B65B3931EDBD6C7D85_1506599067 = (this.contentList.size());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1596783309 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1596783309;
-        // ---------- Original Method ----------
-        //return this.contentList.size();
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package javax.net.ssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -27,12 +27,13 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
         hostnameVerifier = defaultHostnameVerifier;
         sslSocketFactory = defaultSSLSocketFactory;
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //hostnameVerifier = defaultHostnameVerifier;
-        //sslSocketFactory = defaultSSLSocketFactory;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setDefaultHostnameVerifier(HostnameVerifier v) {
         if (v == null) {
             throw new IllegalArgumentException("HostnameVerifier is null");
@@ -46,6 +47,7 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setDefaultSSLSocketFactory(SSLSocketFactory sf) {
         if (sf == null) {
             throw new IllegalArgumentException("SSLSocketFactory is null");
@@ -68,101 +70,105 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
     public abstract Certificate[] getServerCertificates() throws SSLPeerUnverifiedException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.537 -0400", hash_original_method = "3002E4037B6FC8FCCD4931764B6D5235", hash_generated_method = "1780CD2005C46F8912CB08E106A9E073")
     public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
-        Principal varB4EAC82CA7396A68D541C85D26508E83_783678134 = null; //Variable for return #1
+        Principal varB4EAC82CA7396A68D541C85D26508E83_783678134 = null; 
         Certificate[] certs = getServerCertificates();
         {
             if (DroidSafeAndroidRuntime.control) throw new SSLPeerUnverifiedException("No server's end-entity certificate");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_783678134 = ((X509Certificate) certs[0]).getSubjectX500Principal();
-        varB4EAC82CA7396A68D541C85D26508E83_783678134.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_783678134.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_783678134;
-        // ---------- Original Method ----------
-        //Certificate[] certs = getServerCertificates();
-        //if (certs == null || certs.length == 0 || (!(certs[0] instanceof X509Certificate))) {
-            //throw new SSLPeerUnverifiedException("No server's end-entity certificate");
-        //}
-        //return ((X509Certificate) certs[0]).getSubjectX500Principal();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.538 -0400", hash_original_method = "F7626DF75E46EFB83E8F38373F84B563", hash_generated_method = "C2E186B6D63E86F7BB7C5DE661301B32")
     public Principal getLocalPrincipal() {
-        Principal varB4EAC82CA7396A68D541C85D26508E83_78379854 = null; //Variable for return #1
-        Principal varB4EAC82CA7396A68D541C85D26508E83_425947337 = null; //Variable for return #2
+        Principal varB4EAC82CA7396A68D541C85D26508E83_78379854 = null; 
+        Principal varB4EAC82CA7396A68D541C85D26508E83_425947337 = null; 
         Certificate[] certs = getLocalCertificates();
         {
             varB4EAC82CA7396A68D541C85D26508E83_78379854 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_425947337 = ((X509Certificate) certs[0]).getSubjectX500Principal();
-        Principal varA7E53CE21691AB073D9660D615818899_722924027; //Final return value
+        Principal varA7E53CE21691AB073D9660D615818899_722924027; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_722924027 = varB4EAC82CA7396A68D541C85D26508E83_78379854;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_722924027 = varB4EAC82CA7396A68D541C85D26508E83_425947337;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_722924027.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_722924027.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_722924027;
-        // ---------- Original Method ----------
-        //Certificate[] certs = getLocalCertificates();
-        //if (certs == null || certs.length == 0 || (!(certs[0] instanceof X509Certificate))) {
-            //return null;
-        //}
-        //return ((X509Certificate) certs[0]).getSubjectX500Principal();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.539 -0400", hash_original_method = "1F574C02EC6D9C57C280B3A1D2132BB4", hash_generated_method = "AFAAF09D886207DB34F1171074A47881")
     public void setHostnameVerifier(HostnameVerifier v) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HostnameVerifier is null");
-        } //End block
+        } 
         hostnameVerifier = v;
-        // ---------- Original Method ----------
-        //if (v == null) {
-            //throw new IllegalArgumentException("HostnameVerifier is null");
-        //}
-        //hostnameVerifier = v;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.540 -0400", hash_original_method = "ECCA6A5C3EF4993C1CFD64A0404A993B", hash_generated_method = "1E0D307AE2890B8A54FA554EA82B9F28")
     public HostnameVerifier getHostnameVerifier() {
-        HostnameVerifier varB4EAC82CA7396A68D541C85D26508E83_769862155 = null; //Variable for return #1
+        HostnameVerifier varB4EAC82CA7396A68D541C85D26508E83_769862155 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_769862155 = hostnameVerifier;
-        varB4EAC82CA7396A68D541C85D26508E83_769862155.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_769862155.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_769862155;
-        // ---------- Original Method ----------
-        //return hostnameVerifier;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.541 -0400", hash_original_method = "C38E7A94B75C24B6865C99F80CA80171", hash_generated_method = "11E17E5F52B0EC573A60C7E8547EB9A9")
     public void setSSLSocketFactory(SSLSocketFactory sf) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("SSLSocketFactory is null");
-        } //End block
+        } 
         sslSocketFactory = sf;
-        // ---------- Original Method ----------
-        //if (sf == null) {
-            //throw new IllegalArgumentException("SSLSocketFactory is null");
-        //}
-        //sslSocketFactory = sf;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.541 -0400", hash_original_method = "9F872E117F4FD1E88D0B5BA15C4E96B2", hash_generated_method = "927200D7F1C8244041F59318B8ABB241")
     public SSLSocketFactory getSSLSocketFactory() {
-        SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_1832565985 = null; //Variable for return #1
+        SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_1832565985 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1832565985 = sslSocketFactory;
-        varB4EAC82CA7396A68D541C85D26508E83_1832565985.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1832565985.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1832565985;
-        // ---------- Original Method ----------
-        //return sslSocketFactory;
+        
+        
     }
 
     

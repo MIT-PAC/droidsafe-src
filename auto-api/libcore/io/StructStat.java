@@ -1,11 +1,11 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class StructStat {
@@ -66,20 +66,20 @@ public final class StructStat {
         this.st_ctime = st_ctime;
         this.st_blksize = st_blksize;
         this.st_blocks = st_blocks;
-        // ---------- Original Method ----------
-        //this.st_dev = st_dev;
-        //this.st_ino = st_ino;
-        //this.st_mode = st_mode;
-        //this.st_nlink = st_nlink;
-        //this.st_uid = st_uid;
-        //this.st_gid = st_gid;
-        //this.st_rdev = st_rdev;
-        //this.st_size = st_size;
-        //this.st_atime = st_atime;
-        //this.st_mtime = st_mtime;
-        //this.st_ctime = st_ctime;
-        //this.st_blksize = st_blksize;
-        //this.st_blocks = st_blocks;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

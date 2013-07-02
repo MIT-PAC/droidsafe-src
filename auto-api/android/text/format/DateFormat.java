@@ -1,11 +1,11 @@
 package android.text.format;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.provider.Settings;
@@ -25,10 +25,11 @@ public class DateFormat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.525 -0400", hash_original_method = "4FB6BE40E4FA388ABA6A7CE788B3C64B", hash_generated_method = "4FB6BE40E4FA388ABA6A7CE788B3C64B")
     public DateFormat ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static boolean is24HourFormat(Context context) {
         String value = Settings.System.getString(context.getContentResolver(),
                 Settings.System.TIME_12_24);
@@ -89,6 +90,7 @@ public class DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getDateFormatStringForSetting(Context context, String value) {
         if (value != null) {
             int month = value.indexOf('M');
@@ -161,6 +163,7 @@ public class DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getDateFormatString(Context context) {
         String value = Settings.System.getString(context.getContentResolver(),
                 Settings.System.DATE_FORMAT);

@@ -1,11 +1,11 @@
 package java.util.concurrent.locks;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.*;
 import java.util.concurrent.*;
@@ -25,7 +25,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.705 -0400", hash_original_method = "C7F1FA27B1E7517E25F1C7951B5E8CA8", hash_generated_method = "D0F5CBC29675A9CABCA264BF6F7A7644")
     protected  AbstractQueuedSynchronizer() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,16 +33,16 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     protected final int getState() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1234711999 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1234711999;
-        // ---------- Original Method ----------
-        //return state;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.705 -0400", hash_original_method = "57BE013BA515294E586014B30A336C04", hash_generated_method = "B9B29E2146A9DFA0E89C5BBC08072583")
     protected final void setState(int newState) {
         state = newState;
-        // ---------- Original Method ----------
-        //state = newState;
+        
+        
     }
 
     
@@ -53,22 +53,22 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         addTaint(update);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_535197664 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_535197664;
-        // ---------- Original Method ----------
-        //return unsafe.compareAndSwapInt(this, stateOffset, expect, update);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.706 -0400", hash_original_method = "D115C79C5FCCB59668763118EBD8CBBB", hash_generated_method = "79CD1373BAB5661540C601C6DAC4B80F")
     private Node enq(final Node node) {
-        Node varB4EAC82CA7396A68D541C85D26508E83_2109861736 = null; //Variable for return #1
+        Node varB4EAC82CA7396A68D541C85D26508E83_2109861736 = null; 
         {
             Node t = tail;
             {
                 {
                     boolean varC2BD7D899FDAEA316177871081826EFD_1835505141 = (compareAndSetHead(new Node()));
                     tail = head;
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             {
                 node.prev = t;
                 {
@@ -76,34 +76,35 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                     {
                         t.next = node;
                         varB4EAC82CA7396A68D541C85D26508E83_2109861736 = t;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(node.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2109861736.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2109861736.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2109861736;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //Node t = tail;
-            //if (t == null) { 
-                //if (compareAndSetHead(new Node()))
-                    //tail = head;
-            //} else {
-                //node.prev = t;
-                //if (compareAndSetTail(t, node)) {
-                    //t.next = node;
-                    //return t;
-                //}
-            //}
-        //}
+        
+        
+            
+            
+                
+                    
+            
+                
+                
+                    
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.707 -0400", hash_original_method = "7269E5EC16B8883F661BF745CCC5E6A6", hash_generated_method = "DDDD7469357FF159CDF3D6C39FF9C167")
     private Node addWaiter(Node mode) {
-        Node varB4EAC82CA7396A68D541C85D26508E83_336580903 = null; //Variable for return #1
-        Node varB4EAC82CA7396A68D541C85D26508E83_701469997 = null; //Variable for return #2
+        Node varB4EAC82CA7396A68D541C85D26508E83_336580903 = null; 
+        Node varB4EAC82CA7396A68D541C85D26508E83_701469997 = null; 
         Node node = new Node(Thread.currentThread(), mode);
         Node pred = tail;
         {
@@ -113,35 +114,35 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 {
                     pred.next = node;
                     varB4EAC82CA7396A68D541C85D26508E83_336580903 = node;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         enq(node);
         varB4EAC82CA7396A68D541C85D26508E83_701469997 = node;
         addTaint(mode.getTaint());
-        Node varA7E53CE21691AB073D9660D615818899_1486768151; //Final return value
+        Node varA7E53CE21691AB073D9660D615818899_1486768151; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1486768151 = varB4EAC82CA7396A68D541C85D26508E83_336580903;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1486768151 = varB4EAC82CA7396A68D541C85D26508E83_701469997;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1486768151.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1486768151.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1486768151;
-        // ---------- Original Method ----------
-        //Node node = new Node(Thread.currentThread(), mode);
-        //Node pred = tail;
-        //if (pred != null) {
-            //node.prev = pred;
-            //if (compareAndSetTail(pred, node)) {
-                //pred.next = node;
-                //return node;
-            //}
-        //}
-        //enq(node);
-        //return node;
+        
+        
+        
+        
+            
+            
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -150,13 +151,14 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         head = node;
         node.thread = null;
         node.prev = null;
-        // ---------- Original Method ----------
-        //head = node;
-        //node.thread = null;
-        //node.prev = null;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.709 -0400", hash_original_method = "F262A3A18BABECF7EC492736953EAF6E", hash_generated_method = "BA63E2A4F1706F856E287648A720CEA3")
     private void unparkSuccessor(Node node) {
         int ws = node.waitStatus;
@@ -168,26 +170,27 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 Node t = tail;
                 t = t.prev;
                 s = t;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         LockSupport.unpark(s.thread);
         addTaint(node.getTaint());
-        // ---------- Original Method ----------
-        //int ws = node.waitStatus;
-        //if (ws < 0)
-            //compareAndSetWaitStatus(node, ws, 0);
-        //Node s = node.next;
-        //if (s == null || s.waitStatus > 0) {
-            //s = null;
-            //for (Node t = tail; t != null && t != node; t = t.prev)
-                //if (t.waitStatus <= 0)
-                    //s = t;
-        //}
-        //if (s != null)
-            //LockSupport.unpark(s.thread);
+        
+        
+        
+            
+        
+        
+            
+            
+                
+                    
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.710 -0400", hash_original_method = "D8D55646997B45206CD2F0528B603753", hash_generated_method = "96AB632C94BE7BA4DF6019BE7B2467D0")
     private void doReleaseShared() {
         {
@@ -197,35 +200,36 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 {
                     {
                         boolean varCC865867FC8DEDE4843F9E3D62245755_1085527604 = (!compareAndSetWaitStatus(h, Node.SIGNAL, 0));
-                    } //End collapsed parenthetic
+                    } 
                     unparkSuccessor(h);
-                } //End block
+                } 
                 {
                     boolean var658C7F41A73D231A5E38D15A1070790F_2115788686 = (ws == 0 &&
                          !compareAndSetWaitStatus(h, 0, Node.PROPAGATE));
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (;;) {
-            //Node h = head;
-            //if (h != null && h != tail) {
-                //int ws = h.waitStatus;
-                //if (ws == Node.SIGNAL) {
-                    //if (!compareAndSetWaitStatus(h, Node.SIGNAL, 0))
-                        //continue;            
-                    //unparkSuccessor(h);
-                //}
-                //else if (ws == 0 &&
-                         //!compareAndSetWaitStatus(h, 0, Node.PROPAGATE))
-                    //continue;                
-            //}
-            //if (h == head)                   
-                //break;
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                    
+                        
+                    
+                
+                
+                         
+                    
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.710 -0400", hash_original_method = "A2FB30DAE399AEFA487E20396027BD36", hash_generated_method = "CE60629F46D285715C7B8141C545C72E")
     private void setHeadAndPropagate(Node node, int propagate) {
         Node h = head;
@@ -235,21 +239,22 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             {
                 boolean varB6D0E63ACFCFA5DA33C33F91435930F9_290957775 = (s == null || s.isShared());
                 doReleaseShared();
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(node.getTaint());
         addTaint(propagate);
-        // ---------- Original Method ----------
-        //Node h = head;
-        //setHead(node);
-        //if (propagate > 0 || h == null || h.waitStatus < 0) {
-            //Node s = node.next;
-            //if (s == null || s.isShared())
-                //doReleaseShared();
-        //}
+        
+        
+        
+        
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.711 -0400", hash_original_method = "1CA41B58715410C4216B9DE6C43BB9D4", hash_generated_method = "34B828A04341C07B6E9860DA17643FEC")
     private void cancelAcquire(Node node) {
         node.thread = null;
@@ -261,7 +266,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             boolean var9C67AE94C69ECBB4560E786F86E10C76_1151066679 = (node == tail && compareAndSetTail(node, pred));
             {
                 compareAndSetNext(pred, predNext, null);
-            } //End block
+            } 
             {
                 int ws;
                 {
@@ -272,20 +277,21 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                     {
                         Node next = node.next;
                         compareAndSetNext(pred, predNext, next);
-                    } //End block
+                    } 
                     {
                         unparkSuccessor(node);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 node.next = node;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(node.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
         int ws = pred.waitStatus;
         if (ws == Node.SIGNAL)
@@ -302,6 +308,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void selfInterrupt() {
         Thread.currentThread().interrupt();
     }
@@ -313,9 +320,9 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         boolean var17A536D12FEB0466CF9F0EDC1509A805_1387697008 = (Thread.interrupted());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1327459925 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1327459925;
-        // ---------- Original Method ----------
-        //LockSupport.park(this);
-        //return Thread.interrupted();
+        
+        
+        
     }
 
     
@@ -333,46 +340,47 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                         setHead(node);
                         p.next = null;
                         failed = false;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var9C0B051AA94D017E376D03A90C5698A7_1785987823 = (shouldParkAfterFailedAcquire(p, node) &&
                     parkAndCheckInterrupt());
                     interrupted = true;
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             cancelAcquire(node);
-        } //End block
+        } 
         addTaint(node.getTaint());
         addTaint(arg);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_659001063 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_659001063;
-        // ---------- Original Method ----------
-        //boolean failed = true;
-        //try {
-            //boolean interrupted = false;
-            //for (;;) {
-                //final Node p = node.predecessor();
-                //if (p == head && tryAcquire(arg)) {
-                    //setHead(node);
-                    //p.next = null; 
-                    //failed = false;
-                    //return interrupted;
-                //}
-                //if (shouldParkAfterFailedAcquire(p, node) &&
-                    //parkAndCheckInterrupt())
-                    //interrupted = true;
-            //}
-        //} finally {
-            //if (failed)
-                //cancelAcquire(node);
-        //}
+        
+        
+        
+            
+            
+                
+                
+                    
+                    
+                    
+                    
+                
+                
+                    
+                    
+            
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.712 -0400", hash_original_method = "E74C4677EAF9B6C97A4A9A93D88FC71E", hash_generated_method = "63619401F22A8EBB89CBA5021C19113D")
     private void doAcquireInterruptibly(int arg) throws InterruptedException {
         final Node node = addWaiter(Node.EXCLUSIVE);
@@ -387,43 +395,44 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                         setHead(node);
                         p.next = null;
                         failed = false;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var9C0B051AA94D017E376D03A90C5698A7_385021405 = (shouldParkAfterFailedAcquire(p, node) &&
                     parkAndCheckInterrupt());
                     if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             cancelAcquire(node);
-        } //End block
+        } 
         addTaint(arg);
-        // ---------- Original Method ----------
-        //final Node node = addWaiter(Node.EXCLUSIVE);
-        //boolean failed = true;
-        //try {
-            //for (;;) {
-                //final Node p = node.predecessor();
-                //if (p == head && tryAcquire(arg)) {
-                    //setHead(node);
-                    //p.next = null; 
-                    //failed = false;
-                    //return;
-                //}
-                //if (shouldParkAfterFailedAcquire(p, node) &&
-                    //parkAndCheckInterrupt())
-                    //throw new InterruptedException();
-            //}
-        //} finally {
-            //if (failed)
-                //cancelAcquire(node);
-        //}
+        
+        
+        
+        
+            
+                
+                
+                    
+                    
+                    
+                    
+                
+                
+                    
+                    
+            
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.713 -0400", hash_original_method = "AF980EBAC4BC6C4AB1174BED3B10073B", hash_generated_method = "A73C8F7EB50C99D78F738ABE4B6BE3C0")
     private boolean doAcquireNanos(int arg, long nanosTimeout) throws InterruptedException {
         long lastTime = System.nanoTime();
@@ -439,35 +448,36 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                         setHead(node);
                         p.next = null;
                         failed = false;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var00B5F1835D8E1D445CE64BB60FAD1503_500808659 = (shouldParkAfterFailedAcquire(p, node) &&
                     nanosTimeout > spinForTimeoutThreshold);
                     LockSupport.parkNanos(this, nanosTimeout);
-                } //End collapsed parenthetic
+                } 
                 long now = System.nanoTime();
                 nanosTimeout -= now - lastTime;
                 lastTime = now;
                 {
                     boolean varFDD1D09D0FE11E5BCA86E55DE77A8E11_952796889 = (Thread.interrupted());
                     if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             cancelAcquire(node);
-        } //End block
+        } 
         addTaint(arg);
         addTaint(nanosTimeout);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_7797559 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_7797559;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.713 -0400", hash_original_method = "D66678B4038334D8E14600B3A8FC8FD7", hash_generated_method = "645160197E089548B306FDF5498B827D")
     private void doAcquireShared(int arg) {
         final Node node = addWaiter(Node.SHARED);
@@ -484,25 +494,26 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                         p.next = null;
                         selfInterrupt();
                         failed = false;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     boolean var9C0B051AA94D017E376D03A90C5698A7_2069770199 = (shouldParkAfterFailedAcquire(p, node) &&
                     parkAndCheckInterrupt());
                     interrupted = true;
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             cancelAcquire(node);
-        } //End block
+        } 
         addTaint(arg);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.714 -0400", hash_original_method = "4E093FA1B6FCF5593272CE0DEA00D69B", hash_generated_method = "9222FF4340AF9C44C6BD83E5419FFE38")
     private void doAcquireSharedInterruptibly(int arg) throws InterruptedException {
         final Node node = addWaiter(Node.SHARED);
@@ -517,46 +528,47 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                         setHeadAndPropagate(node, r);
                         p.next = null;
                         failed = false;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     boolean var9C0B051AA94D017E376D03A90C5698A7_587591179 = (shouldParkAfterFailedAcquire(p, node) &&
                     parkAndCheckInterrupt());
                     if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             cancelAcquire(node);
-        } //End block
+        } 
         addTaint(arg);
-        // ---------- Original Method ----------
-        //final Node node = addWaiter(Node.SHARED);
-        //boolean failed = true;
-        //try {
-            //for (;;) {
-                //final Node p = node.predecessor();
-                //if (p == head) {
-                    //int r = tryAcquireShared(arg);
-                    //if (r >= 0) {
-                        //setHeadAndPropagate(node, r);
-                        //p.next = null; 
-                        //failed = false;
-                        //return;
-                    //}
-                //}
-                //if (shouldParkAfterFailedAcquire(p, node) &&
-                    //parkAndCheckInterrupt())
-                    //throw new InterruptedException();
-            //}
-        //} finally {
-            //if (failed)
-                //cancelAcquire(node);
-        //}
+        
+        
+        
+        
+            
+                
+                
+                    
+                    
+                        
+                        
+                        
+                        
+                    
+                
+                
+                    
+                    
+            
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.715 -0400", hash_original_method = "873D99639E9E59C87CD3A574B36E4573", hash_generated_method = "C27B7C5E29B2285217558CA115AD31AC")
     private boolean doAcquireSharedNanos(int arg, long nanosTimeout) throws InterruptedException {
         long lastTime = System.nanoTime();
@@ -572,86 +584,91 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                         setHeadAndPropagate(node, r);
                         p.next = null;
                         failed = false;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     boolean var00B5F1835D8E1D445CE64BB60FAD1503_1788546416 = (shouldParkAfterFailedAcquire(p, node) &&
                     nanosTimeout > spinForTimeoutThreshold);
                     LockSupport.parkNanos(this, nanosTimeout);
-                } //End collapsed parenthetic
+                } 
                 long now = System.nanoTime();
                 nanosTimeout -= now - lastTime;
                 lastTime = now;
                 {
                     boolean varFDD1D09D0FE11E5BCA86E55DE77A8E11_1070300985 = (Thread.interrupted());
                     if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             cancelAcquire(node);
-        } //End block
+        } 
         addTaint(arg);
         addTaint(nanosTimeout);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_285614536 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_285614536;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.715 -0400", hash_original_method = "FADA99D99649E8B049B596B89A86AFE3", hash_generated_method = "6186CBA75D5C3CB57C903D2970A24689")
     protected boolean tryAcquire(int arg) {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(arg);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2014289430 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2014289430;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.715 -0400", hash_original_method = "0AA9B3926B88397CF769442818D9CA16", hash_generated_method = "C4529D16593C4AC1692E033991BCC742")
     protected boolean tryRelease(int arg) {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(arg);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1686347411 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1686347411;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.715 -0400", hash_original_method = "143AB2DE4C7A8CA8F45FD3C862AFB93B", hash_generated_method = "B785BAF3A5CC16FF7B8E7F0F7734331C")
     protected int tryAcquireShared(int arg) {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(arg);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1718345025 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1718345025;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.716 -0400", hash_original_method = "57760B0E19163CFD26451EB4C702B2B7", hash_generated_method = "59B7D4419C2E895B97A4B53440954327")
     protected boolean tryReleaseShared(int arg) {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(arg);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_123768375 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_123768375;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.716 -0400", hash_original_method = "B1A3EF7BA2A74EEB6B3236F0A99ED9FE", hash_generated_method = "C607744BF850779675539FD7CA8C5569")
     protected boolean isHeldExclusively() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_132435959 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_132435959;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -661,12 +678,12 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             boolean varFCEF5DD222F9CABA3FDCCFE99D21AA7A_915816171 = (!tryAcquire(arg) &&
             acquireQueued(addWaiter(Node.EXCLUSIVE), arg));
             selfInterrupt();
-        } //End collapsed parenthetic
+        } 
         addTaint(arg);
-        // ---------- Original Method ----------
-        //if (!tryAcquire(arg) &&
-            //acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
-            //selfInterrupt();
+        
+        
+            
+            
     }
 
     
@@ -675,17 +692,17 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         {
             boolean var59C8EE922E8B3738507C43FFF99EACF7_1386886646 = (Thread.interrupted());
             if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
-        } //End collapsed parenthetic
+        } 
         {
             boolean var6C80CD83DDCC36721F42CDF9EFE1FC97_1045155900 = (!tryAcquire(arg));
             doAcquireInterruptibly(arg);
-        } //End collapsed parenthetic
+        } 
         addTaint(arg);
-        // ---------- Original Method ----------
-        //if (Thread.interrupted())
-            //throw new InterruptedException();
-        //if (!tryAcquire(arg))
-            //doAcquireInterruptibly(arg);
+        
+        
+            
+        
+            
     }
 
     
@@ -694,18 +711,18 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         {
             boolean var59C8EE922E8B3738507C43FFF99EACF7_666879237 = (Thread.interrupted());
             if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
-        } //End collapsed parenthetic
+        } 
         boolean var34DCAB88C8A0F240E32D599EDB2FE196_1112184574 = (tryAcquire(arg) ||
             doAcquireNanos(arg, nanosTimeout));
         addTaint(arg);
         addTaint(nanosTimeout);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1409396926 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1409396926;
-        // ---------- Original Method ----------
-        //if (Thread.interrupted())
-            //throw new InterruptedException();
-        //return tryAcquire(arg) ||
-            //doAcquireNanos(arg, nanosTimeout);
+        
+        
+            
+        
+            
     }
 
     
@@ -716,19 +733,19 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             {
                 Node h = head;
                 unparkSuccessor(h);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(arg);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_806958487 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_806958487;
-        // ---------- Original Method ----------
-        //if (tryRelease(arg)) {
-            //Node h = head;
-            //if (h != null && h.waitStatus != 0)
-                //unparkSuccessor(h);
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -737,11 +754,11 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         {
             boolean varE24C999E8142A86B0EF4E6AFA805A8A0_1493693582 = (tryAcquireShared(arg) < 0);
             doAcquireShared(arg);
-        } //End collapsed parenthetic
+        } 
         addTaint(arg);
-        // ---------- Original Method ----------
-        //if (tryAcquireShared(arg) < 0)
-            //doAcquireShared(arg);
+        
+        
+            
     }
 
     
@@ -750,17 +767,17 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         {
             boolean var59C8EE922E8B3738507C43FFF99EACF7_1187438706 = (Thread.interrupted());
             if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
-        } //End collapsed parenthetic
+        } 
         {
             boolean varE24C999E8142A86B0EF4E6AFA805A8A0_917392534 = (tryAcquireShared(arg) < 0);
             doAcquireSharedInterruptibly(arg);
-        } //End collapsed parenthetic
+        } 
         addTaint(arg);
-        // ---------- Original Method ----------
-        //if (Thread.interrupted())
-            //throw new InterruptedException();
-        //if (tryAcquireShared(arg) < 0)
-            //doAcquireSharedInterruptibly(arg);
+        
+        
+            
+        
+            
     }
 
     
@@ -769,18 +786,18 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         {
             boolean var59C8EE922E8B3738507C43FFF99EACF7_1093696651 = (Thread.interrupted());
             if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
-        } //End collapsed parenthetic
+        } 
         boolean varE4B1D6DE7AE03DFEE28CA37F75A87EB4_331259007 = (tryAcquireShared(arg) >= 0 ||
             doAcquireSharedNanos(arg, nanosTimeout));
         addTaint(arg);
         addTaint(nanosTimeout);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_617791659 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_617791659;
-        // ---------- Original Method ----------
-        //if (Thread.interrupted())
-            //throw new InterruptedException();
-        //return tryAcquireShared(arg) >= 0 ||
-            //doAcquireSharedNanos(arg, nanosTimeout);
+        
+        
+            
+        
+            
     }
 
     
@@ -790,17 +807,17 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             boolean varEB9480595F3C382515F926391F6AAE14_1854542519 = (tryReleaseShared(arg));
             {
                 doReleaseShared();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(arg);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_949220971 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_949220971;
-        // ---------- Original Method ----------
-        //if (tryReleaseShared(arg)) {
-            //doReleaseShared();
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -808,8 +825,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     public final boolean hasQueuedThreads() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1801218413 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1801218413;
-        // ---------- Original Method ----------
-        //return head != tail;
+        
+        
     }
 
     
@@ -817,26 +834,26 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     public final boolean hasContended() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_261355073 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_261355073;
-        // ---------- Original Method ----------
-        //return head != null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.722 -0400", hash_original_method = "DB23AE447B60E978D848F5CEAEC8257B", hash_generated_method = "EC94D9EB97F5A2B75526EF90A6C1A5D1")
     public final Thread getFirstQueuedThread() {
-        Thread varB4EAC82CA7396A68D541C85D26508E83_1896521069 = null; //Variable for return #1
+        Thread varB4EAC82CA7396A68D541C85D26508E83_1896521069 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1896521069 = (head == tail) ? null : fullGetFirstQueuedThread();
-        varB4EAC82CA7396A68D541C85D26508E83_1896521069.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1896521069.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1896521069;
-        // ---------- Original Method ----------
-        //return (head == tail) ? null : fullGetFirstQueuedThread();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.724 -0400", hash_original_method = "18818CB637EBC5CF82DC4C50B37FB17C", hash_generated_method = "32B11DD8B096F0D416A698B4F9745DF9")
     private Thread fullGetFirstQueuedThread() {
-        Thread varB4EAC82CA7396A68D541C85D26508E83_375213537 = null; //Variable for return #1
-        Thread varB4EAC82CA7396A68D541C85D26508E83_297603398 = null; //Variable for return #2
+        Thread varB4EAC82CA7396A68D541C85D26508E83_375213537 = null; 
+        Thread varB4EAC82CA7396A68D541C85D26508E83_297603398 = null; 
         Node h;
         Node s;
         Thread st = null;
@@ -846,43 +863,43 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             ((h = head) != null && (s = h.next) != null &&
              s.prev == head && (st = s.thread) != null));
             varB4EAC82CA7396A68D541C85D26508E83_375213537 = st;
-        } //End collapsed parenthetic
+        } 
         Node t = tail;
         Thread firstThread = null;
         {
             Thread tt = t.thread;
             firstThread = tt;
             t = t.prev;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_297603398 = firstThread;
-        Thread varA7E53CE21691AB073D9660D615818899_1159699408; //Final return value
+        Thread varA7E53CE21691AB073D9660D615818899_1159699408; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1159699408 = varB4EAC82CA7396A68D541C85D26508E83_375213537;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1159699408 = varB4EAC82CA7396A68D541C85D26508E83_297603398;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1159699408.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1159699408.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1159699408;
-        // ---------- Original Method ----------
-        //Node h, s;
-        //Thread st;
-        //if (((h = head) != null && (s = h.next) != null &&
-             //s.prev == head && (st = s.thread) != null) ||
-            //((h = head) != null && (s = h.next) != null &&
-             //s.prev == head && (st = s.thread) != null))
-            //return st;
-        //Node t = tail;
-        //Thread firstThread = null;
-        //while (t != null && t != head) {
-            //Thread tt = t.thread;
-            //if (tt != null)
-                //firstThread = tt;
-            //t = t.prev;
-        //}
-        //return firstThread;
+        
+        
+        
+        
+             
+            
+             
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -892,17 +909,17 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         {
             Node p = tail;
             p = p.prev;
-        } //End collapsed parenthetic
+        } 
         addTaint(thread.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1311867274 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1311867274;
-        // ---------- Original Method ----------
-        //if (thread == null)
-            //throw new NullPointerException();
-        //for (Node p = tail; p != null; p = p.prev)
-            //if (p.thread == thread)
-                //return true;
-        //return false;
+        
+        
+            
+        
+            
+                
+        
     }
 
     
@@ -916,12 +933,12 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             s.thread != null);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2136468824 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2136468824;
-        // ---------- Original Method ----------
-        //Node h, s;
-        //return (h = head) != null &&
-            //(s = h.next)  != null &&
-            //!s.isShared()         &&
-            //s.thread != null;
+        
+        
+        
+            
+            
+            
     }
 
     
@@ -934,12 +951,12 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             ((s = h.next) == null || s.thread != Thread.currentThread()));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_890809151 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_890809151;
-        // ---------- Original Method ----------
-        //Node t = tail;
-        //Node h = head;
-        //Node s;
-        //return h != t &&
-            //((s = h.next) == null || s.thread != Thread.currentThread());
+        
+        
+        
+        
+        
+            
     }
 
     
@@ -949,22 +966,22 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         {
             Node p = tail;
             p = p.prev;
-        } //End collapsed parenthetic
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_805454916 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_805454916;
-        // ---------- Original Method ----------
-        //int n = 0;
-        //for (Node p = tail; p != null; p = p.prev) {
-            //if (p.thread != null)
-                //++n;
-        //}
-        //return n;
+        
+        
+        
+            
+                
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.730 -0400", hash_original_method = "BA97C075FB0E9B39CEF398B585209CAD", hash_generated_method = "7EE677674F2954A1B5874C6F4C1F870C")
     public final Collection<Thread> getQueuedThreads() {
-        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_1156636360 = null; //Variable for return #1
+        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_1156636360 = null; 
         ArrayList<Thread> list = new ArrayList<Thread>();
         {
             Node p = tail;
@@ -972,25 +989,25 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             {
                 Thread t = p.thread;
                 list.add(t);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1156636360 = list;
-        varB4EAC82CA7396A68D541C85D26508E83_1156636360.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1156636360.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1156636360;
-        // ---------- Original Method ----------
-        //ArrayList<Thread> list = new ArrayList<Thread>();
-        //for (Node p = tail; p != null; p = p.prev) {
-            //Thread t = p.thread;
-            //if (t != null)
-                //list.add(t);
-        //}
-        //return list;
+        
+        
+        
+            
+            
+                
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.731 -0400", hash_original_method = "8F9C05C78C38CDEC6B94C7386A00C30C", hash_generated_method = "639BF49E31174ECB0766C3AEEBBA0636")
     public final Collection<Thread> getExclusiveQueuedThreads() {
-        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_699509453 = null; //Variable for return #1
+        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_699509453 = null; 
         ArrayList<Thread> list = new ArrayList<Thread>();
         {
             Node p = tail;
@@ -1001,29 +1018,29 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                     {
                         Thread t = p.thread;
                         list.add(t);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_699509453 = list;
-        varB4EAC82CA7396A68D541C85D26508E83_699509453.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_699509453.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_699509453;
-        // ---------- Original Method ----------
-        //ArrayList<Thread> list = new ArrayList<Thread>();
-        //for (Node p = tail; p != null; p = p.prev) {
-            //if (!p.isShared()) {
-                //Thread t = p.thread;
-                //if (t != null)
-                    //list.add(t);
-            //}
-        //}
-        //return list;
+        
+        
+        
+            
+                
+                
+                    
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.734 -0400", hash_original_method = "3B2BC348731488178C75B0F7C3256BE4", hash_generated_method = "F0A69F903ED909CAD09E90175D0F0D19")
     public final Collection<Thread> getSharedQueuedThreads() {
-        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_900978619 = null; //Variable for return #1
+        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_900978619 = null; 
         ArrayList<Thread> list = new ArrayList<Thread>();
         {
             Node p = tail;
@@ -1034,29 +1051,30 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                     {
                         Thread t = p.thread;
                         list.add(t);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_900978619 = list;
-        varB4EAC82CA7396A68D541C85D26508E83_900978619.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_900978619.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_900978619;
-        // ---------- Original Method ----------
-        //ArrayList<Thread> list = new ArrayList<Thread>();
-        //for (Node p = tail; p != null; p = p.prev) {
-            //if (p.isShared()) {
-                //Thread t = p.thread;
-                //if (t != null)
-                    //list.add(t);
-            //}
-        //}
-        //return list;
+        
+        
+        
+            
+                
+                
+                    
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.735 -0400", hash_original_method = "2C49C090DBE6788B4A91D995132AEECA", hash_generated_method = "76069C5F287ADD7952D07F390173AA41")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_852403564 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_852403564 = null; 
         int s = getState();
         String q;
         boolean var58703E822CB7EE24CF8A625587E1C63E_1461847503 = (hasQueuedThreads());
@@ -1064,13 +1082,13 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         q = "";
         varB4EAC82CA7396A68D541C85D26508E83_852403564 = super.toString() +
             "[State = " + s + ", " + q + "empty queue]";
-        varB4EAC82CA7396A68D541C85D26508E83_852403564.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_852403564.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_852403564;
-        // ---------- Original Method ----------
-        //int s = getState();
-        //String q  = hasQueuedThreads() ? "non" : "";
-        //return super.toString() +
-            //"[State = " + s + ", " + q + "empty queue]";
+        
+        
+        
+        
+            
     }
 
     
@@ -1080,12 +1098,12 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         addTaint(node.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_827888665 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_827888665;
-        // ---------- Original Method ----------
-        //if (node.waitStatus == Node.CONDITION || node.prev == null)
-            //return false;
-        //if (node.next != null) 
-            //return true;
-        //return findNodeFromTail(node);
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1094,19 +1112,19 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         Node t = tail;
         {
             t = t.prev;
-        } //End block
+        } 
         addTaint(node.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1603262664 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1603262664;
-        // ---------- Original Method ----------
-        //Node t = tail;
-        //for (;;) {
-            //if (t == node)
-                //return true;
-            //if (t == null)
-                //return false;
-            //t = t.prev;
-        //}
+        
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -1114,24 +1132,24 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     final boolean transferForSignal(Node node) {
         {
             boolean var8F78D6E41179A92913D59E278DAF4713_1939888298 = (!compareAndSetWaitStatus(node, Node.CONDITION, 0));
-        } //End collapsed parenthetic
+        } 
         Node p = enq(node);
         int ws = p.waitStatus;
         {
             boolean var11909F9DE762D0C62EFBB539D3DF08AB_1804562332 = (ws > 0 || !compareAndSetWaitStatus(p, ws, Node.SIGNAL));
             LockSupport.unpark(node.thread);
-        } //End collapsed parenthetic
+        } 
         addTaint(node.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1201021473 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1201021473;
-        // ---------- Original Method ----------
-        //if (!compareAndSetWaitStatus(node, Node.CONDITION, 0))
-            //return false;
-        //Node p = enq(node);
-        //int ws = p.waitStatus;
-        //if (ws > 0 || !compareAndSetWaitStatus(p, ws, Node.SIGNAL))
-            //LockSupport.unpark(node.thread);
-        //return true;
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -1141,23 +1159,23 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             boolean varAB52CB6F165D0797C877670E5EE00069_169509516 = (compareAndSetWaitStatus(node, Node.CONDITION, 0));
             {
                 enq(node);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varA5ECD06A31929CB111AEF5ECED825AFB_164287980 = (!isOnSyncQueue(node));
             Thread.yield();
-        } //End collapsed parenthetic
+        } 
         addTaint(node.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_358475470 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_358475470;
-        // ---------- Original Method ----------
-        //if (compareAndSetWaitStatus(node, Node.CONDITION, 0)) {
-            //enq(node);
-            //return true;
-        //}
-        //while (!isOnSyncQueue(node))
-            //Thread.yield();
-        //return false;
+        
+        
+            
+            
+        
+        
+            
+        
     }
 
     
@@ -1171,33 +1189,33 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 boolean var3C6705464C8EDF86A554C3C7455FE111_1154393664 = (release(savedState));
                 {
                     failed = false;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalMonitorStateException();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             node.waitStatus = Node.CANCELLED;
-        } //End block
+        } 
         addTaint(node.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_381199163 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_381199163;
-        // ---------- Original Method ----------
-        //boolean failed = true;
-        //try {
-            //int savedState = getState();
-            //if (release(savedState)) {
-                //failed = false;
-                //return savedState;
-            //} else {
-                //throw new IllegalMonitorStateException();
-            //}
-        //} finally {
-            //if (failed)
-                //node.waitStatus = Node.CANCELLED;
-        //}
+        
+        
+        
+            
+            
+                
+                
+            
+                
+            
+        
+            
+                
+        
     }
 
     
@@ -1208,10 +1226,10 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         addTaint(condition.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_105671770 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_105671770;
-        // ---------- Original Method ----------
-        //if (condition == null)
-            //throw new NullPointerException();
-        //return condition.isOwnedBy(this);
+        
+        
+            
+        
     }
 
     
@@ -1220,15 +1238,15 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         {
             boolean varF6FA8CE34847109F1EDDCFA2A2B550C8_1083169856 = (!owns(condition));
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Not owner");
-        } //End collapsed parenthetic
+        } 
         boolean var335079E40CDAA9EFDA14CFAFE44A0835_1385786759 = (condition.hasWaiters());
         addTaint(condition.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1652385121 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1652385121;
-        // ---------- Original Method ----------
-        //if (!owns(condition))
-            //throw new IllegalArgumentException("Not owner");
-        //return condition.hasWaiters();
+        
+        
+            
+        
     }
 
     
@@ -1237,33 +1255,33 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         {
             boolean varF6FA8CE34847109F1EDDCFA2A2B550C8_614113763 = (!owns(condition));
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Not owner");
-        } //End collapsed parenthetic
+        } 
         int var5991F4798FCDE9B9D32781CE8A86C9C1_1170891625 = (condition.getWaitQueueLength());
         addTaint(condition.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1234008745 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1234008745;
-        // ---------- Original Method ----------
-        //if (!owns(condition))
-            //throw new IllegalArgumentException("Not owner");
-        //return condition.getWaitQueueLength();
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.740 -0400", hash_original_method = "70972013E049E7504ADBD56143485C77", hash_generated_method = "38AA3E5A511926B6E62CFBE24452436B")
     public final Collection<Thread> getWaitingThreads(ConditionObject condition) {
-        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_950885959 = null; //Variable for return #1
+        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_950885959 = null; 
         {
             boolean varF6FA8CE34847109F1EDDCFA2A2B550C8_744818510 = (!owns(condition));
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Not owner");
-        } //End collapsed parenthetic
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_950885959 = condition.getWaitingThreads();
         addTaint(condition.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_950885959.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_950885959.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_950885959;
-        // ---------- Original Method ----------
-        //if (!owns(condition))
-            //throw new IllegalArgumentException("Not owner");
-        //return condition.getWaitingThreads();
+        
+        
+            
+        
     }
 
     
@@ -1273,8 +1291,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         addTaint(update.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_30547462 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_30547462;
-        // ---------- Original Method ----------
-        //return unsafe.compareAndSwapObject(this, headOffset, null, update);
+        
+        
     }
 
     
@@ -1285,8 +1303,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         addTaint(update.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1612048255 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1612048255;
-        // ---------- Original Method ----------
-        //return unsafe.compareAndSwapObject(this, tailOffset, expect, update);
+        
+        
     }
 
     
@@ -1324,7 +1342,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.743 -0400", hash_original_method = "2DD8BF5485F2495811D83404AF44A29C", hash_generated_method = "AAE5751DE21B256CB4EDD0DDB605F24E")
           Node() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1332,9 +1350,9 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
           Node(Thread thread, Node mode) {
             this.nextWaiter = mode;
             this.thread = thread;
-            // ---------- Original Method ----------
-            //this.nextWaiter = mode;
-            //this.thread = thread;
+            
+            
+            
         }
 
         
@@ -1342,9 +1360,9 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
           Node(Thread thread, int waitStatus) {
             this.waitStatus = waitStatus;
             this.thread = thread;
-            // ---------- Original Method ----------
-            //this.waitStatus = waitStatus;
-            //this.thread = thread;
+            
+            
+            
         }
 
         
@@ -1352,25 +1370,25 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         final boolean isShared() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1019449087 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1019449087;
-            // ---------- Original Method ----------
-            //return nextWaiter == SHARED;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.745 -0400", hash_original_method = "7AA5CFB77F71DE2C6FFA937BCE62ADAE", hash_generated_method = "A22B73EED7F91B8A93B5B3FCF3DEE20A")
         final Node predecessor() throws NullPointerException {
-            Node varB4EAC82CA7396A68D541C85D26508E83_1713237132 = null; //Variable for return #1
+            Node varB4EAC82CA7396A68D541C85D26508E83_1713237132 = null; 
             Node p = prev;
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             varB4EAC82CA7396A68D541C85D26508E83_1713237132 = p;
-            varB4EAC82CA7396A68D541C85D26508E83_1713237132.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1713237132.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1713237132;
-            // ---------- Original Method ----------
-            //Node p = prev;
-            //if (p == null)
-                //throw new NullPointerException();
-            //else
-                //return p;
+            
+            
+            
+                
+            
+                
         }
 
         
@@ -1406,38 +1424,38 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.746 -0400", hash_original_method = "0A3E2C1E27BAEA738FDF96AD17500BEE", hash_generated_method = "6AF9B0E3D406E6C56AA07F09E795B0E2")
         public  ConditionObject() {
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.747 -0400", hash_original_method = "43F5E066353E431B2C9AD7CD0397BCCF", hash_generated_method = "E4601E87B43629C38561E7C95AC641BF")
         private Node addConditionWaiter() {
-            Node varB4EAC82CA7396A68D541C85D26508E83_1112391234 = null; //Variable for return #1
+            Node varB4EAC82CA7396A68D541C85D26508E83_1112391234 = null; 
             Node t = lastWaiter;
             {
                 unlinkCancelledWaiters();
                 t = lastWaiter;
-            } //End block
+            } 
             Node node = new Node(Thread.currentThread(), Node.CONDITION);
             firstWaiter = node;
             t.nextWaiter = node;
             lastWaiter = node;
             varB4EAC82CA7396A68D541C85D26508E83_1112391234 = node;
-            varB4EAC82CA7396A68D541C85D26508E83_1112391234.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1112391234.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1112391234;
-            // ---------- Original Method ----------
-            //Node t = lastWaiter;
-            //if (t != null && t.waitStatus != Node.CONDITION) {
-                //unlinkCancelledWaiters();
-                //t = lastWaiter;
-            //}
-            //Node node = new Node(Thread.currentThread(), Node.CONDITION);
-            //if (t == null)
-                //firstWaiter = node;
-            //else
-                //t.nextWaiter = node;
-            //lastWaiter = node;
-            //return node;
+            
+            
+            
+                
+                
+            
+            
+            
+                
+            
+                
+            
+            
         }
 
         
@@ -1447,21 +1465,21 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 {
                     boolean varBC585BCE36C017A7C94055DA929092A7_1035336831 = ((firstWaiter = first.nextWaiter) == null);
                     lastWaiter = null;
-                } //End collapsed parenthetic
+                } 
                 first.nextWaiter = null;
-            } //End block
+            } 
             {
                 boolean var608C6B17E7E10DD5072B7876717FB9A1_579743315 = (!transferForSignal(first) &&
                      (first = firstWaiter) != null);
-            } //End collapsed parenthetic
+            } 
             addTaint(first.getTaint());
-            // ---------- Original Method ----------
-            //do {
-                //if ( (firstWaiter = first.nextWaiter) == null)
-                    //lastWaiter = null;
-                //first.nextWaiter = null;
-            //} while (!transferForSignal(first) &&
-                     //(first = firstWaiter) != null);
+            
+            
+                
+                    
+                
+            
+                     
         }
 
         
@@ -1473,16 +1491,16 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 first.nextWaiter = null;
                 transferForSignal(first);
                 first = next;
-            } //End block
+            } 
             addTaint(first.getTaint());
-            // ---------- Original Method ----------
-            //lastWaiter = firstWaiter = null;
-            //do {
-                //Node next = first.nextWaiter;
-                //first.nextWaiter = null;
-                //transferForSignal(first);
-                //first = next;
-            //} while (first != null);
+            
+            
+            
+                
+                
+                
+                
+            
         }
 
         
@@ -1497,28 +1515,28 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                     firstWaiter = next;
                     trail.nextWaiter = next;
                     lastWaiter = trail;
-                } //End block
+                } 
                 trail = t;
                 t = next;
-            } //End block
-            // ---------- Original Method ----------
-            //Node t = firstWaiter;
-            //Node trail = null;
-            //while (t != null) {
-                //Node next = t.nextWaiter;
-                //if (t.waitStatus != Node.CONDITION) {
-                    //t.nextWaiter = null;
-                    //if (trail == null)
-                        //firstWaiter = next;
-                    //else
-                        //trail.nextWaiter = next;
-                    //if (next == null)
-                        //lastWaiter = trail;
-                //}
-                //else
-                    //trail = t;
-                //t = next;
-            //}
+            } 
+            
+            
+            
+            
+                
+                
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                
+                
+                    
+                
+            
         }
 
         
@@ -1527,15 +1545,15 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             {
                 boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_775799455 = (!isHeldExclusively());
                 if (DroidSafeAndroidRuntime.control) throw new IllegalMonitorStateException();
-            } //End collapsed parenthetic
+            } 
             Node first = firstWaiter;
             doSignal(first);
-            // ---------- Original Method ----------
-            //if (!isHeldExclusively())
-                //throw new IllegalMonitorStateException();
-            //Node first = firstWaiter;
-            //if (first != null)
-                //doSignal(first);
+            
+            
+                
+            
+            
+                
         }
 
         
@@ -1544,15 +1562,15 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             {
                 boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_851805465 = (!isHeldExclusively());
                 if (DroidSafeAndroidRuntime.control) throw new IllegalMonitorStateException();
-            } //End collapsed parenthetic
+            } 
             Node first = firstWaiter;
             doSignalAll(first);
-            // ---------- Original Method ----------
-            //if (!isHeldExclusively())
-                //throw new IllegalMonitorStateException();
-            //Node first = firstWaiter;
-            //if (first != null)
-                //doSignalAll(first);
+            
+            
+                
+            
+            
+                
         }
 
         
@@ -1568,24 +1586,24 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                     {
                         boolean varA664C6144AE4C03C0F8F972E8F70F7E8_360381649 = (Thread.interrupted());
                         interrupted = true;
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 boolean var17DE45DCF221A6E3B338FD5BCAB95962_1553760668 = (acquireQueued(node, savedState) || interrupted);
                 selfInterrupt();
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //Node node = addConditionWaiter();
-            //int savedState = fullyRelease(node);
-            //boolean interrupted = false;
-            //while (!isOnSyncQueue(node)) {
-                //LockSupport.park(this);
-                //if (Thread.interrupted())
-                    //interrupted = true;
-            //}
-            //if (acquireQueued(node, savedState) || interrupted)
-                //selfInterrupt();
+            } 
+            
+            
+            
+            
+            
+                
+                
+                    
+            
+            
+                
         }
 
         
@@ -1593,16 +1611,16 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         private int checkInterruptWhileWaiting(Node node) {
             {
                 boolean var0E37FE7B424140ECEE412D02939B568B_420952605 = (Thread.interrupted());
-                Object varE3D941AA1F8858C4DCE68CB723942357_1425431015 = ((transferAfterCancelledWait(node) ? THROW_IE : REINTERRUPT)); //DSFIXME:  CODE0008: Nested ternary operator in expression
-            } //End flattened ternary
-            //DSFIXME:  CODE0008: Nested ternary operator in expression
+                Object varE3D941AA1F8858C4DCE68CB723942357_1425431015 = ((transferAfterCancelledWait(node) ? THROW_IE : REINTERRUPT)); 
+            } 
+            
             addTaint(node.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_615638950 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_615638950;
-            // ---------- Original Method ----------
-            //return Thread.interrupted() ?
-                //(transferAfterCancelledWait(node) ? THROW_IE : REINTERRUPT) :
-                //0;
+            
+            
+                
+                
         }
 
         
@@ -1611,11 +1629,11 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
             selfInterrupt();
             addTaint(interruptMode);
-            // ---------- Original Method ----------
-            //if (interruptMode == THROW_IE)
-                //throw new InterruptedException();
-            //else if (interruptMode == REINTERRUPT)
-                //selfInterrupt();
+            
+            
+                
+            
+                
         }
 
         
@@ -1624,7 +1642,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             {
                 boolean var0E37FE7B424140ECEE412D02939B568B_195518832 = (Thread.interrupted());
                 if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
-            } //End collapsed parenthetic
+            } 
             Node node = addConditionWaiter();
             int savedState = fullyRelease(node);
             int interruptMode = 0;
@@ -1634,32 +1652,32 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                     LockSupport.park(this);
                     {
                         boolean var6AE23BDEA9D63180A0E3C204AF41FD36_481495260 = ((interruptMode = checkInterruptWhileWaiting(node)) != 0);
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 boolean var9A8AD69289DFCA583A17189FA6FE1B11_1645933393 = (acquireQueued(node, savedState) && interruptMode != THROW_IE);
                 interruptMode = REINTERRUPT;
-            } //End collapsed parenthetic
+            } 
             unlinkCancelledWaiters();
             reportInterruptAfterWait(interruptMode);
-            // ---------- Original Method ----------
-            //if (Thread.interrupted())
-                //throw new InterruptedException();
-            //Node node = addConditionWaiter();
-            //int savedState = fullyRelease(node);
-            //int interruptMode = 0;
-            //while (!isOnSyncQueue(node)) {
-                //LockSupport.park(this);
-                //if ((interruptMode = checkInterruptWhileWaiting(node)) != 0)
-                    //break;
-            //}
-            //if (acquireQueued(node, savedState) && interruptMode != THROW_IE)
-                //interruptMode = REINTERRUPT;
-            //if (node.nextWaiter != null) 
-                //unlinkCancelledWaiters();
-            //if (interruptMode != 0)
-                //reportInterruptAfterWait(interruptMode);
+            
+            
+                
+            
+            
+            
+            
+                
+                
+                    
+            
+            
+                
+            
+                
+            
+                
         }
 
         
@@ -1668,7 +1686,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             {
                 boolean var0E37FE7B424140ECEE412D02939B568B_1382428378 = (Thread.interrupted());
                 if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
-            } //End collapsed parenthetic
+            } 
             Node node = addConditionWaiter();
             int savedState = fullyRelease(node);
             long lastTime = System.nanoTime();
@@ -1678,28 +1696,28 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 {
                     {
                         transferAfterCancelledWait(node);
-                    } //End block
+                    } 
                     LockSupport.parkNanos(this, nanosTimeout);
                     {
                         boolean var6AE23BDEA9D63180A0E3C204AF41FD36_1675764074 = ((interruptMode = checkInterruptWhileWaiting(node)) != 0);
-                    } //End collapsed parenthetic
+                    } 
                     long now = System.nanoTime();
                     nanosTimeout -= now - lastTime;
                     lastTime = now;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var9A8AD69289DFCA583A17189FA6FE1B11_1420374532 = (acquireQueued(node, savedState) && interruptMode != THROW_IE);
                 interruptMode = REINTERRUPT;
-            } //End collapsed parenthetic
+            } 
             unlinkCancelledWaiters();
             reportInterruptAfterWait(interruptMode);
             long var0AE99C9194A9E8813170658867C876DB_157758778 = (nanosTimeout - (System.nanoTime() - lastTime));
             addTaint(nanosTimeout);
             long var0F5264038205EDFB1AC05FBB0E8C5E94_163996876 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_163996876;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1710,7 +1728,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             {
                 boolean var0E37FE7B424140ECEE412D02939B568B_816167846 = (Thread.interrupted());
                 if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
-            } //End collapsed parenthetic
+            } 
             Node node = addConditionWaiter();
             int savedState = fullyRelease(node);
             boolean timedout = false;
@@ -1722,25 +1740,25 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                         boolean varD36E947A894CF1227DF67FCDA3A195E9_2142871862 = (System.currentTimeMillis() > abstime);
                         {
                             timedout = transferAfterCancelledWait(node);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     LockSupport.parkUntil(this, abstime);
                     {
                         boolean var6AE23BDEA9D63180A0E3C204AF41FD36_549847767 = ((interruptMode = checkInterruptWhileWaiting(node)) != 0);
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 boolean var9A8AD69289DFCA583A17189FA6FE1B11_1111677 = (acquireQueued(node, savedState) && interruptMode != THROW_IE);
                 interruptMode = REINTERRUPT;
-            } //End collapsed parenthetic
+            } 
             unlinkCancelledWaiters();
             reportInterruptAfterWait(interruptMode);
             addTaint(deadline.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_858074751 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_858074751;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1751,7 +1769,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             {
                 boolean var0E37FE7B424140ECEE412D02939B568B_375455379 = (Thread.interrupted());
                 if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
-            } //End collapsed parenthetic
+            } 
             Node node = addConditionWaiter();
             int savedState = fullyRelease(node);
             long lastTime = System.nanoTime();
@@ -1762,28 +1780,28 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 {
                     {
                         timedout = transferAfterCancelledWait(node);
-                    } //End block
+                    } 
                     LockSupport.parkNanos(this, nanosTimeout);
                     {
                         boolean var6AE23BDEA9D63180A0E3C204AF41FD36_1652261930 = ((interruptMode = checkInterruptWhileWaiting(node)) != 0);
-                    } //End collapsed parenthetic
+                    } 
                     long now = System.nanoTime();
                     nanosTimeout -= now - lastTime;
                     lastTime = now;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var9A8AD69289DFCA583A17189FA6FE1B11_925941317 = (acquireQueued(node, savedState) && interruptMode != THROW_IE);
                 interruptMode = REINTERRUPT;
-            } //End collapsed parenthetic
+            } 
             unlinkCancelledWaiters();
             reportInterruptAfterWait(interruptMode);
             addTaint(time);
             addTaint(unit.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_215973819 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_215973819;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1793,8 +1811,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             addTaint(sync.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_625945269 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_625945269;
-            // ---------- Original Method ----------
-            //return sync == AbstractQueuedSynchronizer.this;
+            
+            
         }
 
         
@@ -1803,21 +1821,21 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             {
                 boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_1510730291 = (!isHeldExclusively());
                 if (DroidSafeAndroidRuntime.control) throw new IllegalMonitorStateException();
-            } //End collapsed parenthetic
+            } 
             {
                 Node w = firstWaiter;
                 w = w.nextWaiter;
-            } //End collapsed parenthetic
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_318440210 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_318440210;
-            // ---------- Original Method ----------
-            //if (!isHeldExclusively())
-                //throw new IllegalMonitorStateException();
-            //for (Node w = firstWaiter; w != null; w = w.nextWaiter) {
-                //if (w.waitStatus == Node.CONDITION)
-                    //return true;
-            //}
-            //return false;
+            
+            
+                
+            
+                
+                    
+            
+            
         }
 
         
@@ -1826,33 +1844,33 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             {
                 boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_1152775642 = (!isHeldExclusively());
                 if (DroidSafeAndroidRuntime.control) throw new IllegalMonitorStateException();
-            } //End collapsed parenthetic
+            } 
             int n = 0;
             {
                 Node w = firstWaiter;
                 w = w.nextWaiter;
-            } //End collapsed parenthetic
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_821147461 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_821147461;
-            // ---------- Original Method ----------
-            //if (!isHeldExclusively())
-                //throw new IllegalMonitorStateException();
-            //int n = 0;
-            //for (Node w = firstWaiter; w != null; w = w.nextWaiter) {
-                //if (w.waitStatus == Node.CONDITION)
-                    //++n;
-            //}
-            //return n;
+            
+            
+                
+            
+            
+                
+                    
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.763 -0400", hash_original_method = "D1136CB2B0FE173AD3F139F996FAE8B5", hash_generated_method = "ED0F1D1C89002519D305EDC0108EF990")
         protected final Collection<Thread> getWaitingThreads() {
-            Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_542938738 = null; //Variable for return #1
+            Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_542938738 = null; 
             {
                 boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_808643821 = (!isHeldExclusively());
                 if (DroidSafeAndroidRuntime.control) throw new IllegalMonitorStateException();
-            } //End collapsed parenthetic
+            } 
             ArrayList<Thread> list = new ArrayList<Thread>();
             {
                 Node w = firstWaiter;
@@ -1861,24 +1879,24 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                     {
                         Thread t = w.thread;
                         list.add(t);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_542938738 = list;
-            varB4EAC82CA7396A68D541C85D26508E83_542938738.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_542938738.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_542938738;
-            // ---------- Original Method ----------
-            //if (!isHeldExclusively())
-                //throw new IllegalMonitorStateException();
-            //ArrayList<Thread> list = new ArrayList<Thread>();
-            //for (Node w = firstWaiter; w != null; w = w.nextWaiter) {
-                //if (w.waitStatus == Node.CONDITION) {
-                    //Thread t = w.thread;
-                    //if (t != null)
-                        //list.add(t);
-                //}
-            //}
-            //return list;
+            
+            
+                
+            
+            
+                
+                    
+                    
+                        
+                
+            
+            
         }
 
         

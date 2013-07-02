@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -17,7 +17,7 @@ public abstract class HardwareCanvas extends Canvas {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.433 -0400", hash_original_method = "B9875B3DDCC23B593D0FCAB83616982C", hash_generated_method = "B9875B3DDCC23B593D0FCAB83616982C")
     public HardwareCanvas ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -26,18 +26,19 @@ public abstract class HardwareCanvas extends Canvas {
     public boolean isHardwareAccelerated() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1655197646 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1655197646;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.434 -0400", hash_original_method = "09BF352B013BE09D7407EC81EDFAD3C9", hash_generated_method = "BF1514EE48C976A7758AB254865300FC")
     @Override
     public void setBitmap(Bitmap bitmap) {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(bitmap.getTaint());
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -61,8 +62,8 @@ public abstract class HardwareCanvas extends Canvas {
         addTaint(drawGLFunction);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1937969822 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1937969822;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.cert.X509Certificate;
 
@@ -26,7 +26,7 @@ public class SslError {
         this(error, certificate, "");
         addTaint(error);
         addTaint(certificate.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -36,7 +36,7 @@ public class SslError {
         this(error, certificate, "");
         addTaint(error);
         addTaint(certificate.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -46,12 +46,12 @@ public class SslError {
         mCertificate = certificate;
         mUrl = url;
         addTaint(error);
-        // ---------- Original Method ----------
-        //assert certificate != null;
-        //assert url != null;
-        //addError(error);
-        //mCertificate = certificate;
-        //mUrl = url;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -61,10 +61,11 @@ public class SslError {
         addTaint(error);
         addTaint(certificate.getTaint());
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SslError SslErrorFromChromiumErrorCode(
             int error, SslCertificate cert, String url) {
         assert (error >= -299 && error <= -200);
@@ -80,23 +81,23 @@ public class SslError {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.446 -0400", hash_original_method = "7F448377575EC929DDEDD2BF1EB435C4", hash_generated_method = "4F5C7F5C930D4AADDEC9EFA13D0625BB")
     public SslCertificate getCertificate() {
-        SslCertificate varB4EAC82CA7396A68D541C85D26508E83_1943418116 = null; //Variable for return #1
+        SslCertificate varB4EAC82CA7396A68D541C85D26508E83_1943418116 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1943418116 = mCertificate;
-        varB4EAC82CA7396A68D541C85D26508E83_1943418116.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1943418116.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1943418116;
-        // ---------- Original Method ----------
-        //return mCertificate;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.447 -0400", hash_original_method = "13CE30FBE362EA44FDCE282CA01E7BBC", hash_generated_method = "E6A0F7ABADC1164363DA2B29FB8C4A07")
     public String getUrl() {
-        String varB4EAC82CA7396A68D541C85D26508E83_576852814 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_576852814 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_576852814 = mUrl;
-        varB4EAC82CA7396A68D541C85D26508E83_576852814.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_576852814.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_576852814;
-        // ---------- Original Method ----------
-        //return mUrl;
+        
+        
     }
 
     
@@ -105,15 +106,15 @@ public class SslError {
         boolean rval = (0 <= error && error < SslError.SSL_MAX_ERROR);
         {
             mErrors |= (0x1 << error);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_351280628 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_351280628;
-        // ---------- Original Method ----------
-        //boolean rval = (0 <= error && error < SslError.SSL_MAX_ERROR);
-        //if (rval) {
-            //mErrors |= (0x1 << error);
-        //}
-        //return rval;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -122,53 +123,55 @@ public class SslError {
         boolean rval = (0 <= error && error < SslError.SSL_MAX_ERROR);
         {
             rval = ((mErrors & (0x1 << error)) != 0);
-        } //End block
+        } 
         addTaint(error);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_654916283 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_654916283;
-        // ---------- Original Method ----------
-        //boolean rval = (0 <= error && error < SslError.SSL_MAX_ERROR);
-        //if (rval) {
-            //rval = ((mErrors & (0x1 << error)) != 0);
-        //}
-        //return rval;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.448 -0400", hash_original_method = "3A5499989FF366B2E4D135ECA3891E4C", hash_generated_method = "17646D1FF167FF1302BC3A32C8DF7545")
     public int getPrimaryError() {
         {
             {
                 int error = SslError.SSL_MAX_ERROR - 1;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1534199481 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1534199481;
-        // ---------- Original Method ----------
-        //if (mErrors != 0) {
-            //for (int error = SslError.SSL_MAX_ERROR - 1; error >= 0; --error) {
-                //if ((mErrors & (0x1 << error)) != 0) {
-                    //return error;
-                //}
-            //}
-            //assert false;
-        //}
-        //return -1;
+        
+        
+            
+                
+                    
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.449 -0400", hash_original_method = "18A0C6CD1FD66E60B7FF0A9F205CF54C", hash_generated_method = "FACB556B82317A46A836650C641E9DC1")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2011230471 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2011230471 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2011230471 = "primary error: " + getPrimaryError() +
                 " certificate: " + getCertificate() +
                 " on URL: " + getUrl();
-        varB4EAC82CA7396A68D541C85D26508E83_2011230471.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2011230471.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2011230471;
-        // ---------- Original Method ----------
-        //return "primary error: " + getPrimaryError() +
-                //" certificate: " + getCertificate() +
-                //" on URL: " + getUrl();
+        
+        
+                
+                
     }
 
     

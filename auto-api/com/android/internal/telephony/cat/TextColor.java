@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public enum TextColor {
@@ -29,6 +29,7 @@ public enum TextColor {
     TextColor(int value) {
         mValue = value;
     }
+    @DSModeled(DSC.SAFE)
     public static TextColor fromInt(int value) {
         for (TextColor e : TextColor.values()) {
             if (e.mValue == value) {

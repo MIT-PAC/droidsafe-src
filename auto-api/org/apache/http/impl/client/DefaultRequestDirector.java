@@ -1,11 +1,11 @@
 package org.apache.http.impl.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -142,51 +142,51 @@ public class DefaultRequestDirector implements RequestDirector {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Request executor may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Client connection manager may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Connection reuse strategy may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Connection keep alive strategy may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Route planner may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("HTTP protocol processor may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("HTTP request retry handler may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Redirect handler may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Target authentication handler may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Proxy authentication handler may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("User token handler may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("HTTP parameters may not be null");
-        } //End block
+        } 
         this.requestExec       = requestExec;
         this.connManager       = conman;
         this.reuseStrategy     = reustrat;
@@ -204,44 +204,44 @@ public class DefaultRequestDirector implements RequestDirector {
         this.maxRedirects = this.params.getIntParameter(ClientPNames.MAX_REDIRECTS, 100);
         this.targetAuthState = new AuthState();
         this.proxyAuthState = new AuthState();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.229 -0400", hash_original_method = "61E87BBE33E8E65E80E9F3F1C82F2660", hash_generated_method = "205F08F6535E9FFB28888D704705F021")
     private RequestWrapper wrapRequest(
             final HttpRequest request) throws ProtocolException {
-        RequestWrapper varB4EAC82CA7396A68D541C85D26508E83_1323424882 = null; //Variable for return #1
-        RequestWrapper varB4EAC82CA7396A68D541C85D26508E83_2137951602 = null; //Variable for return #2
+        RequestWrapper varB4EAC82CA7396A68D541C85D26508E83_1323424882 = null; 
+        RequestWrapper varB4EAC82CA7396A68D541C85D26508E83_2137951602 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1323424882 = new EntityEnclosingRequestWrapper(
                     (HttpEntityEnclosingRequest) request);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2137951602 = new RequestWrapper(
                     request);
-        } //End block
+        } 
         addTaint(request.getTaint());
-        RequestWrapper varA7E53CE21691AB073D9660D615818899_519809428; //Final return value
+        RequestWrapper varA7E53CE21691AB073D9660D615818899_519809428; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_519809428 = varB4EAC82CA7396A68D541C85D26508E83_1323424882;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_519809428 = varB4EAC82CA7396A68D541C85D26508E83_2137951602;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_519809428.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_519809428.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_519809428;
-        // ---------- Original Method ----------
-        //if (request instanceof HttpEntityEnclosingRequest) {
-            //return new EntityEnclosingRequestWrapper(
-                    //(HttpEntityEnclosingRequest) request);
-        //} else {
-            //return new RequestWrapper(
-                    //request);
-        //}
+        
+        
+            
+                    
+        
+            
+                    
+        
     }
 
     
@@ -261,53 +261,54 @@ public class DefaultRequestDirector implements RequestDirector {
                             HttpHost target = route.getTargetHost();
                             uri = URIUtils.rewriteURI(uri, target);
                             request.setURI(uri);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     {
                         boolean var1CCFF1BB4998DF61105F8536006544AB_853421237 = (uri.isAbsolute());
                         {
                             uri = URIUtils.rewriteURI(uri, null);
                             request.setURI(uri);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         catch (URISyntaxException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Invalid URI: " + 
                     request.getRequestLine().getUri(), ex);
-        } //End block
+        } 
         addTaint(request.getTaint());
         addTaint(route.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //URI uri = request.getURI();
-            //if (route.getProxyHost() != null && !route.isTunnelled()) {
-                //if (!uri.isAbsolute()) {
-                    //HttpHost target = route.getTargetHost();
-                    //uri = URIUtils.rewriteURI(uri, target);
-                    //request.setURI(uri);
-                //}
-            //} else {
-                //if (uri.isAbsolute()) {
-                    //uri = URIUtils.rewriteURI(uri, null);
-                    //request.setURI(uri);
-                //}
-            //}
-        //} catch (URISyntaxException ex) {
-            //throw new ProtocolException("Invalid URI: " + 
-                    //request.getRequestLine().getUri(), ex);
-        //}
+        
+        
+            
+            
+                
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                
+            
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.234 -0400", hash_original_method = "FF11182248C158BE9943CC5E99D59AB1", hash_generated_method = "966728E61CF3E8A50F0334F6DA974B86")
     public HttpResponse execute(HttpHost target, HttpRequest request,
                                 HttpContext context) throws HttpException, IOException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1314383345 = null; //Variable for return #1
+        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1314383345 = null; 
         HttpRequest orig = request;
         RequestWrapper origWrapper = wrapRequest(orig);
         origWrapper.setParams(params);
@@ -329,17 +330,17 @@ public class DefaultRequestDirector implements RequestDirector {
                             route, userToken);
                     {
                         ((AbortableHttpRequest) orig).setConnectionRequest(connRequest);
-                    } //End block
+                    } 
                     try 
                     {
                         managedConn = connRequest.getConnection(timeout, TimeUnit.MILLISECONDS);
-                    } //End block
+                    } 
                     catch (InterruptedException interrupted)
                     {
                         InterruptedIOException iox = new InterruptedIOException();
                         iox.initCause(interrupted);
                         if (DroidSafeAndroidRuntime.control) throw iox;
-                    } //End block
+                    } 
                     {
                         boolean var5923320BEBC54ED630F34B0E65757066_2007979011 = (HttpConnectionParams.isStaleCheckingEnabled(params));
                         {
@@ -351,47 +352,47 @@ public class DefaultRequestDirector implements RequestDirector {
                                     try 
                                     {
                                         managedConn.close();
-                                    } //End block
+                                    } 
                                     catch (IOException ignored)
                                     { }
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     ((AbortableHttpRequest) orig).setReleaseTrigger(managedConn);
-                } //End block
+                } 
                 {
                     boolean var57A1BB929F724922F42032281AF99B55_396664830 = (!managedConn.isOpen());
                     {
                         managedConn.open(route, context, params);
-                    } //End block
+                    } 
                     {
                         managedConn.setSocketTimeout(HttpConnectionParams.getSoTimeout(params));
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 try 
                 {
                     establishRoute(route, context);
-                } //End block
+                } 
                 catch (TunnelRefusedException ex)
                 {
                     {
                         boolean var1F07AE7CFC0030A6905273861F288C94_327008315 = (this.log.isDebugEnabled());
                         {
                             this.log.debug(ex.getMessage());
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     response = ex.getResponse();
-                } //End block
+                } 
                 wrapper.resetHeaders();
                 rewriteRequestURI(wrapper, route);
                 target = (HttpHost) wrapper.getParams().getParameter(
                         ClientPNames.VIRTUAL_HOST);
                 {
                     target = route.getTargetHost();
-                } //End block
+                } 
                 HttpHost proxy = route.getProxyHost();
                 context.setAttribute(ExecutionContext.HTTP_TARGET_HOST,
                         target);
@@ -414,19 +415,19 @@ public class DefaultRequestDirector implements RequestDirector {
                         {
                             if (DroidSafeAndroidRuntime.control) throw new NonRepeatableRequestException("Cannot retry request " +
                                 "with a non-repeatable request entity");
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     try 
                     {
                         {
                             boolean var77FE74E3FD18153DC8BA47A287E94E9C_1289851959 = (this.log.isDebugEnabled());
                             {
                                 this.log.debug("Attempt " + execCount + " to execute request");
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         response = requestExec.execute(wrapper, managedConn, context);
                         retrying = false;
-                    } //End block
+                    } 
                     catch (IOException ex)
                     {
                         this.log.debug("Closing the connection.");
@@ -440,139 +441,141 @@ public class DefaultRequestDirector implements RequestDirector {
                                         this.log.info("I/O exception ("+ ex.getClass().getName() + 
                                         ") caught when processing request: "
                                         + ex.getMessage());
-                                    } //End block
-                                } //End collapsed parenthetic
+                                    } 
+                                } 
                                 {
                                     boolean var3DF9FAF67937974C7A395023CF7157D0_2005150917 = (this.log.isDebugEnabled());
                                     {
                                         this.log.debug(ex.getMessage(), ex);
-                                    } //End block
-                                } //End collapsed parenthetic
+                                    } 
+                                } 
                                 this.log.info("Retrying request");
-                            } //End block
+                            } 
                             {
                                 if (DroidSafeAndroidRuntime.control) throw ex;
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             boolean varB974659626623043E5194C43AFB0E343_276875624 = (route.getHopCount() == 1);
                             {
                                 this.log.debug("Reopening the direct connection.");
                                 managedConn.open(route, context, params);
-                            } //End block
+                            } 
                             {
                                 if (DroidSafeAndroidRuntime.control) throw ex;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 response.setParams(params);
                 requestExec.postProcess(response, httpProcessor, context);
                 reuse = reuseStrategy.keepAlive(response, context);
                 {
                     long duration = keepAliveStrategy.getKeepAliveDuration(response, context);
                     managedConn.setIdleDuration(duration, TimeUnit.MILLISECONDS);
-                } //End block
+                } 
                 RoutedRequest followup = handleResponse(roureq, response, context);
                 {
                     done = true;
-                } //End block
+                } 
                 {
                     {
                         this.log.debug("Connection kept alive");
                         HttpEntity entity = response.getEntity();
                         {
                             entity.consumeContent();
-                        } //End block
+                        } 
                         managedConn.markReusable();
-                    } //End block
+                    } 
                     {
                         managedConn.close();
-                    } //End block
+                    } 
                     {
                         boolean varACB18F1E94F33836161DA99EE30F4796_1614894474 = (!followup.getRoute().equals(roureq.getRoute()));
                         {
                             releaseConnection();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     roureq = followup;
-                } //End block
+                } 
                 userToken = this.userTokenHandler.getUserToken(context);
                 context.setAttribute(ClientContext.USER_TOKEN, userToken);
                 {
                     managedConn.setState(userToken);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 boolean var4E1C49B8CE08FFA416DD620F8EF57B0D_1858719000 = ((response == null) || (response.getEntity() == null) ||
                 !response.getEntity().isStreaming());
                 {
                     managedConn.markReusable();
                     releaseConnection();
-                } //End block
+                } 
                 {
                     HttpEntity entity = response.getEntity();
                     entity = new BasicManagedEntity(entity, managedConn, reuse);
                     response.setEntity(entity);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1314383345 = response;
-        } //End block
+        } 
         catch (HttpException ex)
         {
             abortConnection();
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
+        } 
         catch (IOException ex)
         {
             abortConnection();
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
+        } 
         catch (RuntimeException ex)
         {
             abortConnection();
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
+        } 
         addTaint(target.getTaint());
         addTaint(request.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1314383345.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1314383345.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1314383345;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.234 -0400", hash_original_method = "72FBB2C6656BE4AE3AB40DA6CB70F970", hash_generated_method = "715CF4FA77516E276A6E0260E216C641")
     protected void releaseConnection() {
         try 
         {
             managedConn.releaseConnection();
-        } //End block
+        } 
         catch (IOException ignored)
         {
             this.log.debug("IOException releasing connection", ignored);
-        } //End block
+        } 
         managedConn = null;
-        // ---------- Original Method ----------
-        //try {
-            //managedConn.releaseConnection();
-        //} catch(IOException ignored) {
-            //this.log.debug("IOException releasing connection", ignored);
-        //}
-        //managedConn = null;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.235 -0400", hash_original_method = "855E342C251EB2356D381DD4230A53C3", hash_generated_method = "C305A885C8E3A3D8CA852D7C7A0D0F24")
     protected HttpRoute determineRoute(HttpHost    target,
                                            HttpRequest request,
                                            HttpContext context) throws HttpException {
-        HttpRoute varB4EAC82CA7396A68D541C85D26508E83_2133957786 = null; //Variable for return #1
+        HttpRoute varB4EAC82CA7396A68D541C85D26508E83_2133957786 = null; 
         {
             target = (HttpHost) request.getParams().getParameter(
                 ClientPNames.DEFAULT_HOST);
-        } //End block
+        } 
         {
             String scheme = null;
             String host = null;
@@ -585,22 +588,23 @@ public class DefaultRequestDirector implements RequestDirector {
                     scheme = uri.getScheme();
                     host = uri.getHost();
                     path = uri.getPath();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException( "Target host must not be null, or set in parameters."
                     + " scheme=" + scheme + ", host=" + host + ", path=" + path);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2133957786 = this.routePlanner.determineRoute(target, request, context);
         addTaint(target.getTaint());
         addTaint(request.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2133957786.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2133957786.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2133957786;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.236 -0400", hash_original_method = "7601A49E11EC8C911923D57ABD663D23", hash_generated_method = "42A200EB0B5E9867F4DEC7BEB9C6E6C2")
     protected void establishRoute(HttpRoute route, HttpContext context) throws HttpException, IOException {
         HttpRouteDirector rowdy = new BasicRouteDirector();
@@ -608,46 +612,47 @@ public class DefaultRequestDirector implements RequestDirector {
         {
             HttpRoute fact = managedConn.getRoute();
             step = rowdy.nextStep(route, fact);
-            //Begin case HttpRouteDirector.CONNECT_TARGET HttpRouteDirector.CONNECT_PROXY 
+            
             managedConn.open(route, context, this.params);
-            //End case HttpRouteDirector.CONNECT_TARGET HttpRouteDirector.CONNECT_PROXY 
-            //Begin case HttpRouteDirector.TUNNEL_TARGET 
+            
+            
             {
                 boolean secure = createTunnelToTarget(route, context);
                 this.log.debug("Tunnel to target created.");
                 managedConn.tunnelTarget(secure, this.params);
-            } //End block
-            //End case HttpRouteDirector.TUNNEL_TARGET 
-            //Begin case HttpRouteDirector.TUNNEL_PROXY 
+            } 
+            
+            
             {
                 final int hop = fact.getHopCount()-1;
                 boolean secure = createTunnelToProxy(route, hop, context);
                 this.log.debug("Tunnel to proxy created.");
                 managedConn.tunnelProxy(route.getHopTarget(hop),
                                         secure, this.params);
-            } //End block
-            //End case HttpRouteDirector.TUNNEL_PROXY 
-            //Begin case HttpRouteDirector.LAYER_PROTOCOL 
+            } 
+            
+            
             managedConn.layerProtocol(context, this.params);
-            //End case HttpRouteDirector.LAYER_PROTOCOL 
-            //Begin case HttpRouteDirector.UNREACHABLE 
+            
+            
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
                     ("Unable to establish route." +
                      "\nplanned = " + route +
                      "\ncurrent = " + fact);
-            //End case HttpRouteDirector.UNREACHABLE 
-            //Begin case default 
+            
+            
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
                     ("Unknown step indicator "+step+" from RouteDirector.");
-            //End case default 
-        } //End block
+            
+        } 
         addTaint(route.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.237 -0400", hash_original_method = "135ABB51CD042C7BF2D35A5F6450399E", hash_generated_method = "0B68B0EDFD34142AAB5DFA471FAB41CC")
     protected boolean createTunnelToTarget(HttpRoute route,
                                            HttpContext context) throws HttpException, IOException {
@@ -661,13 +666,13 @@ public class DefaultRequestDirector implements RequestDirector {
                 boolean varE24C8D9987FCAD565418104E3ED22290_1161557525 = (!this.managedConn.isOpen());
                 {
                     this.managedConn.open(route, context, this.params);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             HttpRequest connect = createConnectRequest(route, context);
             String agent = HttpProtocolParams.getUserAgent(params);
             {
                 connect.addHeader(HTTP.USER_AGENT, agent);
-            } //End block
+            } 
             connect.addHeader(HTTP.TARGET_HOST, target.toHostString());
             AuthScheme authScheme = this.proxyAuthState.getAuthScheme();
             AuthScope authScope = this.proxyAuthState.getAuthScope();
@@ -679,25 +684,25 @@ public class DefaultRequestDirector implements RequestDirector {
                         try 
                         {
                             connect.addHeader(authScheme.authenticate(creds, connect));
-                        } //End block
+                        } 
                         catch (AuthenticationException ex)
                         {
                             {
                                 boolean var223C02AC5155576C5BF33EBDE2BF71D4_1303459177 = (this.log.isErrorEnabled());
                                 {
                                     this.log.error("Proxy authentication error: " + ex.getMessage());
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             response = requestExec.execute(connect, this.managedConn, context);
             int status = response.getStatusLine().getStatusCode();
             {
                 if (DroidSafeAndroidRuntime.control) throw new HttpException("Unexpected response to CONNECT request: " +
                         response.getStatusLine());
-            } //End block
+            } 
             CredentialsProvider credsProvider = (CredentialsProvider)
                 context.getAttribute(ClientContext.CREDS_PROVIDER);
             {
@@ -714,16 +719,16 @@ public class DefaultRequestDirector implements RequestDirector {
                                 processChallenges(
                                 challenges, this.proxyAuthState, this.proxyAuthHandler, 
                                 response, context);
-                            } //End block
+                            } 
                             catch (AuthenticationException ex)
                             {
                                 {
                                     boolean var98AE6279036784B25F38A97DC5F00031_1290335362 = (this.log.isWarnEnabled());
                                     {
                                         this.log.warn("Authentication error: " +  ex.getMessage());
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             updateAuthState(this.proxyAuthState, proxy, credsProvider);
                             {
                                 boolean varD9595AFA908A709C14DF611A51BAB79F_785177286 = (this.proxyAuthState.getCredentials() != null);
@@ -736,42 +741,43 @@ public class DefaultRequestDirector implements RequestDirector {
                                             HttpEntity entity = response.getEntity();
                                             {
                                                 entity.consumeContent();
-                                            } //End block
-                                        } //End block
+                                            } 
+                                        } 
                                         {
                                             this.managedConn.close();
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
                         {
                             this.proxyAuthState.setAuthScope(null);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         int status = response.getStatusLine().getStatusCode();
         {
             HttpEntity entity = response.getEntity();
             {
                 response.setEntity(new BufferedHttpEntity(entity));
-            } //End block
+            } 
             this.managedConn.close();
             if (DroidSafeAndroidRuntime.control) throw new TunnelRefusedException("CONNECT refused by proxy: " +
                     response.getStatusLine(), response);
-        } //End block
+        } 
         this.managedConn.markReusable();
         addTaint(route.getTaint());
         addTaint(context.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_901742936 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_901742936;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.238 -0400", hash_original_method = "F6C0B77A6F010BA1F972A9366C7E6CE6", hash_generated_method = "93705B5ABA12007D4DDCB0DB8FE6BE06")
     protected boolean createTunnelToProxy(HttpRoute route, int hop,
                                           HttpContext context) throws HttpException, IOException {
@@ -782,16 +788,17 @@ public class DefaultRequestDirector implements RequestDirector {
         addTaint(context.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_573133852 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_573133852;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException
-            //("Proxy chains are not supported.");
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.238 -0400", hash_original_method = "7799E26CF8933DA985404F8B4CB5983A", hash_generated_method = "009B6F083714C35D30671F2ED223594A")
     protected HttpRequest createConnectRequest(HttpRoute route,
                                                HttpContext context) {
-        HttpRequest varB4EAC82CA7396A68D541C85D26508E83_1512773839 = null; //Variable for return #1
+        HttpRequest varB4EAC82CA7396A68D541C85D26508E83_1512773839 = null; 
         HttpHost target = route.getTargetHost();
         String host = target.getHostName();
         int port = target.getPort();
@@ -799,7 +806,7 @@ public class DefaultRequestDirector implements RequestDirector {
             Scheme scheme = connManager.getSchemeRegistry().
                 getScheme(target.getSchemeName());
             port = scheme.getDefaultPort();
-        } //End block
+        } 
         StringBuilder buffer = new StringBuilder(host.length() + 6);
         buffer.append(host);
         buffer.append(':');
@@ -811,41 +818,42 @@ public class DefaultRequestDirector implements RequestDirector {
         varB4EAC82CA7396A68D541C85D26508E83_1512773839 = req;
         addTaint(route.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1512773839.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1512773839.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1512773839;
-        // ---------- Original Method ----------
-        //HttpHost target = route.getTargetHost();
-        //String host = target.getHostName();
-        //int port = target.getPort();
-        //if (port < 0) {
-            //Scheme scheme = connManager.getSchemeRegistry().
-                //getScheme(target.getSchemeName());
-            //port = scheme.getDefaultPort();
-        //}
-        //StringBuilder buffer = new StringBuilder(host.length() + 6);
-        //buffer.append(host);
-        //buffer.append(':');
-        //buffer.append(Integer.toString(port));
-        //String authority = buffer.toString();
-        //ProtocolVersion ver = HttpProtocolParams.getVersion(params);
-        //HttpRequest req = new BasicHttpRequest
-            //("CONNECT", authority, ver);
-        //return req;
+        
+        
+        
+        
+        
+            
+                
+            
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.241 -0400", hash_original_method = "E253F133593C4FA5CC62D333761B1C94", hash_generated_method = "D0CAAB061D55044B8DCD332D25DA07B4")
     protected RoutedRequest handleResponse(RoutedRequest roureq,
                                            HttpResponse response,
                                            HttpContext context) throws HttpException, IOException {
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_1913365870 = null; //Variable for return #1
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_1241533478 = null; //Variable for return #2
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_1683021894 = null; //Variable for return #3
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_127553016 = null; //Variable for return #4
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_658981719 = null; //Variable for return #5
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_124839749 = null; //Variable for return #6
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_12412634 = null; //Variable for return #7
-        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_369761948 = null; //Variable for return #8
+        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_1913365870 = null; 
+        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_1241533478 = null; 
+        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_1683021894 = null; 
+        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_127553016 = null; 
+        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_658981719 = null; 
+        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_124839749 = null; 
+        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_12412634 = null; 
+        RoutedRequest varB4EAC82CA7396A68D541C85D26508E83_369761948 = null; 
         HttpRoute route = roureq.getRoute();
         HttpHost proxy = route.getProxyHost();
         RequestWrapper request = roureq.getRequest();
@@ -857,7 +865,7 @@ public class DefaultRequestDirector implements RequestDirector {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new RedirectException("Maximum redirects ("
                         + maxRedirects + ") exceeded");
-                } //End block
+                } 
                 URI uri = this.redirectHandler.getLocationURI(response, context);
                 HttpHost newTarget = new HttpHost(
                     uri.getHost(), 
@@ -874,11 +882,11 @@ public class DefaultRequestDirector implements RequestDirector {
                     boolean varF9D042902FC0F3D680F077033613BA0E_1316243717 = (this.log.isDebugEnabled());
                     {
                         this.log.debug("Redirecting to '" + uri + "' via " + newRoute);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1913365870 = newRequest;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         CredentialsProvider credsProvider = (CredentialsProvider)
             context.getAttribute(ClientContext.CREDS_PROVIDER);
         {
@@ -891,7 +899,7 @@ public class DefaultRequestDirector implements RequestDirector {
                     context.getAttribute(ExecutionContext.HTTP_TARGET_HOST);
                         {
                             target = route.getTargetHost();
-                        } //End block
+                        } 
                         this.log.debug("Target requested authentication");
                         Map<String, Header> challenges = this.targetAuthHandler.getChallenges(
                         response, context);
@@ -900,7 +908,7 @@ public class DefaultRequestDirector implements RequestDirector {
                             processChallenges(challenges, 
                             this.targetAuthState, this.targetAuthHandler,
                             response, context);
-                        } //End block
+                        } 
                         catch (AuthenticationException ex)
                         {
                             {
@@ -908,24 +916,24 @@ public class DefaultRequestDirector implements RequestDirector {
                                 {
                                     this.log.warn("Authentication error: " +  ex.getMessage());
                                     varB4EAC82CA7396A68D541C85D26508E83_1241533478 = null;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         updateAuthState(this.targetAuthState, target, credsProvider);
                         {
                             boolean varCEE5FFFE2D53D6DFBF73746E861AD022_1944906342 = (this.targetAuthState.getCredentials() != null);
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_1683021894 = roureq;
-                            } //End block
+                            } 
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_127553016 = null;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         this.targetAuthState.setAuthScope(null);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varC782DE64FF63336D4149D154B1120F13_1609101207 = (this.proxyAuthHandler.isAuthenticationRequested(response, context));
                     {
@@ -937,7 +945,7 @@ public class DefaultRequestDirector implements RequestDirector {
                             processChallenges(challenges, 
                             this.proxyAuthState, this.proxyAuthHandler, 
                             response, context);
-                        } //End block
+                        } 
                         catch (AuthenticationException ex)
                         {
                             {
@@ -945,64 +953,65 @@ public class DefaultRequestDirector implements RequestDirector {
                                 {
                                     this.log.warn("Authentication error: " +  ex.getMessage());
                                     varB4EAC82CA7396A68D541C85D26508E83_658981719 = null;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         updateAuthState(this.proxyAuthState, proxy, credsProvider);
                         {
                             boolean var6529B8BD0070542F140B39A735A7433F_327300038 = (this.proxyAuthState.getCredentials() != null);
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_124839749 = roureq;
-                            } //End block
+                            } 
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_12412634 = null;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         this.proxyAuthState.setAuthScope(null);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_369761948 = null;
         addTaint(roureq.getTaint());
         addTaint(response.getTaint());
         addTaint(context.getTaint());
-        RoutedRequest varA7E53CE21691AB073D9660D615818899_148535817; //Final return value
+        RoutedRequest varA7E53CE21691AB073D9660D615818899_148535817; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_1913365870;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_1241533478;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_1683021894;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_127553016;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_658981719;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_124839749;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_12412634;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_148535817 = varB4EAC82CA7396A68D541C85D26508E83_369761948;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_148535817.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_148535817.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_148535817;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.242 -0400", hash_original_method = "1B42C243E9B570B37B5AA18DF368B31A", hash_generated_method = "0D9336F8D211B5A3FE8873C16343C5D6")
     private void abortConnection() {
         ManagedClientConnection mcc = managedConn;
@@ -1011,42 +1020,42 @@ public class DefaultRequestDirector implements RequestDirector {
             try 
             {
                 mcc.abortConnection();
-            } //End block
+            } 
             catch (IOException ex)
             {
                 {
                     boolean varF9D042902FC0F3D680F077033613BA0E_88795009 = (this.log.isDebugEnabled());
                     {
                         this.log.debug(ex.getMessage(), ex);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             try 
             {
                 mcc.releaseConnection();
-            } //End block
+            } 
             catch (IOException ignored)
             {
                 this.log.debug("Error releasing connection", ignored);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //ManagedClientConnection mcc = managedConn;
-        //if (mcc != null) {
-            //managedConn = null;
-            //try {
-                //mcc.abortConnection();
-            //} catch (IOException ex) {
-                //if (this.log.isDebugEnabled()) {
-                    //this.log.debug(ex.getMessage(), ex);
-                //}
-            //}
-            //try {
-                //mcc.releaseConnection();
-            //} catch(IOException ignored) {
-                //this.log.debug("Error releasing connection", ignored);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+            
+                
+                    
+                
+            
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -1061,13 +1070,13 @@ public class DefaultRequestDirector implements RequestDirector {
         {
             authScheme = authHandler.selectScheme(challenges, response, context);
             authState.setAuthScheme(authScheme);
-        } //End block
+        } 
         String id = authScheme.getSchemeName();
         Header challenge = challenges.get(id.toLowerCase(Locale.ENGLISH));
         {
             if (DroidSafeAndroidRuntime.control) throw new AuthenticationException(id + 
                 " authorization challenge expected, but not found");
-        } //End block
+        } 
         authScheme.processChallenge(challenge);
         this.log.debug("Authorization challenge processed");
         addTaint(challenges.getTaint());
@@ -1075,20 +1084,20 @@ public class DefaultRequestDirector implements RequestDirector {
         addTaint(authHandler.getTaint());
         addTaint(response.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //AuthScheme authScheme = authState.getAuthScheme();
-        //if (authScheme == null) {
-            //authScheme = authHandler.selectScheme(challenges, response, context);
-            //authState.setAuthScheme(authScheme);
-        //}
-        //String id = authScheme.getSchemeName();
-        //Header challenge = challenges.get(id.toLowerCase(Locale.ENGLISH));
-        //if (challenge == null) {
-            //throw new AuthenticationException(id + 
-                //" authorization challenge expected, but not found");
-        //}
-        //authScheme.processChallenge(challenge);
-        //this.log.debug("Authorization challenge processed");
+        
+        
+        
+            
+            
+        
+        
+        
+        
+            
+                
+        
+        
+        
     }
 
     
@@ -1099,13 +1108,13 @@ public class DefaultRequestDirector implements RequestDirector {
             final CredentialsProvider credsProvider) {
         {
             boolean varE294CD19057AAD4F26C11D0C7F9699FD_1749758544 = (!authState.isValid());
-        } //End collapsed parenthetic
+        } 
         String hostname = host.getHostName();
         int port = host.getPort();
         {
             Scheme scheme = connManager.getSchemeRegistry().getScheme(host);
             port = scheme.getDefaultPort();
-        } //End block
+        } 
         AuthScheme authScheme = authState.getAuthScheme();
         AuthScope authScope = new AuthScope(
                 hostname,
@@ -1116,8 +1125,8 @@ public class DefaultRequestDirector implements RequestDirector {
             boolean var2083B5DFA3893791124BEF94A917A00D_1866681854 = (this.log.isDebugEnabled());
             {
                 this.log.debug("Authentication scope: " + authScope);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Credentials creds = authState.getCredentials();
         {
             creds = credsProvider.getCredentials(authScope);
@@ -1126,29 +1135,29 @@ public class DefaultRequestDirector implements RequestDirector {
                 {
                     {
                         this.log.debug("Found credentials");
-                    } //End block
+                    } 
                     {
                         this.log.debug("Credentials not found");
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 boolean varE472D8780DAACC1D5EBE21FE38AF2EDA_1407316420 = (authScheme.isComplete());
                 {
                     this.log.debug("Authentication failed");
                     creds = null;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         authState.setAuthScope(authScope);
         authState.setCredentials(creds);
         addTaint(authState.getTaint());
         addTaint(host.getTaint());
         addTaint(credsProvider.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

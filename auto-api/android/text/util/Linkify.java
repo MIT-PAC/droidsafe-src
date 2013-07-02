@@ -1,11 +1,11 @@
 package android.text.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.text.method.LinkMovementMethod;
 import android.text.method.MovementMethod;
@@ -29,7 +29,7 @@ public class Linkify {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.124 -0400", hash_original_method = "D1670E1FC2F10CF19A8A5BA1D0122F80", hash_generated_method = "D1670E1FC2F10CF19A8A5BA1D0122F80")
     public Linkify ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -339,7 +339,7 @@ public class Linkify {
             return Patterns.digitsAndPlusOnly(match);
         }
     };
-    // orphaned legacy method
+    
     public final boolean acceptMatch(CharSequence s, int start, int end) {
             int digitCount = 0;
 
@@ -354,7 +354,7 @@ public class Linkify {
             return false;
         }
     
-    // orphaned legacy method
+    
     public final int compare(LinkSpec a, LinkSpec b) {
                 if (a.start < b.start) {
                     return -1;
@@ -371,12 +371,12 @@ public class Linkify {
                 return 0;
             }
     
-    // orphaned legacy method
+    
     public final boolean equals(Object o) {
                 return false;
             }
     
-    // orphaned legacy method
+    
     public final String transformUrl(final Matcher match, String url) {
             return Patterns.digitsAndPlusOnly(match);
         }
@@ -397,7 +397,7 @@ class LinkSpec {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.127 -0400", hash_original_method = "556B7BFA52BBBC98785B42B203495262", hash_generated_method = "556B7BFA52BBBC98785B42B203495262")
     public LinkSpec ()
     {
-        //Synthesized constructor
+        
     }
 
 

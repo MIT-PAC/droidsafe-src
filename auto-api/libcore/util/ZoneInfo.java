@@ -1,11 +1,11 @@
 package libcore.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -45,25 +45,25 @@ public final class ZoneInfo extends TimeZone {
         int lastStd;
         {
             lastStd = mTransitions.length - 1;
-        } //End collapsed parenthetic
+        } 
         {
             lastStd = 0;
-        } //End block
+        } 
         {
             mRawOffset = gmtOffsets[0];
-        } //End block
+        } 
         {
             mRawOffset = gmtOffsets[mTypes[lastStd] & 0xff];
-        } //End block
+        } 
         int firstStd = -1;
         {
             int i = 0;
             {
                 {
                     firstStd = i;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         int earliestRawOffset;
         earliestRawOffset = gmtOffsets[mTypes[firstStd] & 0xff];
         earliestRawOffset = mRawOffset;
@@ -72,25 +72,26 @@ public final class ZoneInfo extends TimeZone {
             int i = 0;
             {
                 mOffsets[i] -= mRawOffset;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean usesDst = false;
         long currentUnixTime = System.currentTimeMillis() / 1000;
         {
             long latestScheduleTime = ((long) mTransitions[mTransitions.length - 1]) & 0xffffffff;
             {
                 usesDst = true;
-            } //End block
-        } //End block
+            } 
+        } 
         mUseDst = usesDst;
         mRawOffset *= 1000;
         mEarliestRawOffset = earliestRawOffset * 1000;
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.081 -0400", hash_original_method = "F24BAF6EEBE3E0E7B99D03D590A46295", hash_generated_method = "25B09CFFC3B1599AF5C8CC404D9B884A")
     @Override
     public int getOffset(int era, int year, int month, int day, int dayOfWeek, int millis) {
@@ -100,7 +101,7 @@ public final class ZoneInfo extends TimeZone {
         calc += ((year + 3) / 4) * MILLISECONDS_PER_DAY;
         {
             calc -= ((year - 1) / 100) * MILLISECONDS_PER_DAY;
-        } //End block
+        } 
         boolean isLeap = (year == 0 || (year % 4 == 0 && year % 100 != 0));
         int[] mlen;
         mlen = LEAP;
@@ -119,25 +120,26 @@ public final class ZoneInfo extends TimeZone {
         addTaint(millis);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1915025518 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1915025518;
-        // ---------- Original Method ----------
-        //long calc = (year / 400) * MILLISECONDS_PER_400_YEARS;
-        //year %= 400;
-        //calc += year * (365 * MILLISECONDS_PER_DAY);
-        //calc += ((year + 3) / 4) * MILLISECONDS_PER_DAY;
-        //if (year > 0) {
-            //calc -= ((year - 1) / 100) * MILLISECONDS_PER_DAY;
-        //}
-        //boolean isLeap = (year == 0 || (year % 4 == 0 && year % 100 != 0));
-        //int[] mlen = isLeap ? LEAP : NORMAL;
-        //calc += mlen[month] * MILLISECONDS_PER_DAY;
-        //calc += (day - 1) * MILLISECONDS_PER_DAY;
-        //calc += millis;
-        //calc -= mRawOffset;
-        //calc -= UNIX_OFFSET;
-        //return getOffset(calc);
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.082 -0400", hash_original_method = "1DD2E67C6E4C7148C355A1BA56BEEEAB", hash_generated_method = "0EF95901BC340D299EF4A73680AA8EE8")
     @Override
     public int getOffset(long when) {
@@ -145,23 +147,24 @@ public final class ZoneInfo extends TimeZone {
         int transition = Arrays.binarySearch(mTransitions, unix);
         {
             transition = ~transition - 1;
-        } //End block
+        } 
         addTaint(when);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1774084689 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1774084689;
-        // ---------- Original Method ----------
-        //int unix = (int) (when / 1000);
-        //int transition = Arrays.binarySearch(mTransitions, unix);
-        //if (transition < 0) {
-            //transition = ~transition - 1;
-            //if (transition < 0) {
-                //return mEarliestRawOffset;
-            //}
-        //}
-        //return mRawOffset + mOffsets[mTypes[transition] & 0xff] * 1000;
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.082 -0400", hash_original_method = "B2B7B20D9A81D2665491427CA669DC48", hash_generated_method = "4CF343D4061346C1E0F0C2A9D5D1FD8C")
     @Override
     public boolean inDaylightTime(Date time) {
@@ -170,21 +173,21 @@ public final class ZoneInfo extends TimeZone {
         int transition = Arrays.binarySearch(mTransitions, unix);
         {
             transition = ~transition - 1;
-        } //End block
+        } 
         addTaint(time.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1527914435 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1527914435;
-        // ---------- Original Method ----------
-        //long when = time.getTime();
-        //int unix = (int) (when / 1000);
-        //int transition = Arrays.binarySearch(mTransitions, unix);
-        //if (transition < 0) {
-            //transition = ~transition - 1;
-            //if (transition < 0) {
-                //return false;
-            //}
-        //}
-        //return mIsDsts[mTypes[transition] & 0xff] == 1;
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -193,8 +196,8 @@ public final class ZoneInfo extends TimeZone {
     public int getRawOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1706223316 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1706223316;
-        // ---------- Original Method ----------
-        //return mRawOffset;
+        
+        
     }
 
     
@@ -202,8 +205,8 @@ public final class ZoneInfo extends TimeZone {
     @Override
     public void setRawOffset(int off) {
         mRawOffset = off;
-        // ---------- Original Method ----------
-        //mRawOffset = off;
+        
+        
     }
 
     
@@ -212,11 +215,12 @@ public final class ZoneInfo extends TimeZone {
     public boolean useDaylightTime() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1508182913 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1508182913;
-        // ---------- Original Method ----------
-        //return mUseDst;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.085 -0400", hash_original_method = "73AAAC31DDE42029904964FC44B684BD", hash_generated_method = "D5E677E6DFB85B3EB7D5CBD8A5FC2DAC")
     @Override
     public boolean hasSameRules(TimeZone timeZone) {
@@ -229,25 +233,26 @@ public final class ZoneInfo extends TimeZone {
         addTaint(timeZone.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_881886677 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_881886677;
-        // ---------- Original Method ----------
-        //if (!(timeZone instanceof ZoneInfo)) {
-            //return false;
-        //}
-        //ZoneInfo other = (ZoneInfo) timeZone;
-        //if (mUseDst != other.mUseDst) {
-            //return false;
-        //}
-        //if (!mUseDst) {
-            //return mRawOffset == other.mRawOffset;
-        //}
-        //return mRawOffset == other.mRawOffset
-                //&& Arrays.equals(mOffsets, other.mOffsets)
-                //&& Arrays.equals(mIsDsts, other.mIsDsts)
-                //&& Arrays.equals(mTypes, other.mTypes)
-                //&& Arrays.equals(mTransitions, other.mTransitions);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
+                
+                
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.085 -0400", hash_original_method = "ECC5255AD9E8EF75737AB68867396FFB", hash_generated_method = "7451D80991AF947D2F5F58B751B5422E")
     @Override
     public boolean equals(Object obj) {
@@ -256,15 +261,16 @@ public final class ZoneInfo extends TimeZone {
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1771044118 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1771044118;
-        // ---------- Original Method ----------
-        //if (!(obj instanceof ZoneInfo)) {
-            //return false;
-        //}
-        //ZoneInfo other = (ZoneInfo) obj;
-        //return getID().equals(other.getID()) && hasSameRules(other);
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.086 -0400", hash_original_method = "8C2336163065486F5E05E5E7E360E4D3", hash_generated_method = "B32F7B2CB857373498898DE38A27BC32")
     @Override
     public int hashCode() {
@@ -279,24 +285,25 @@ public final class ZoneInfo extends TimeZone {
         result = prime * result + (mUseDst ? 1231 : 1237);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681906078 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681906078;
-        // ---------- Original Method ----------
-        //final int prime = 31;
-        //int result = 1;
-        //result = prime * result + getID().hashCode();
-        //result = prime * result + Arrays.hashCode(mOffsets);
-        //result = prime * result + Arrays.hashCode(mIsDsts);
-        //result = prime * result + mRawOffset;
-        //result = prime * result + Arrays.hashCode(mTransitions);
-        //result = prime * result + Arrays.hashCode(mTypes);
-        //result = prime * result + (mUseDst ? 1231 : 1237);
-        //return result;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.086 -0400", hash_original_method = "0C13B49DB3B5709653F75D972BEB7E8A", hash_generated_method = "4A702E1A1D73DD1C8F96C2834F058456")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_106248968 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_106248968 = null; 
         StringBuilder sb = new StringBuilder();
         sb.append(getClass().getName() + "[" + getID() + ",mRawOffset=" + mRawOffset +
                 ",mUseDst=" + mUseDst + "]");
@@ -312,30 +319,31 @@ public final class ZoneInfo extends TimeZone {
                 int gmtOffset = mRawOffset/1000 + offset;
                 f.format("%4d : time=%11d %s = %s isDst=%d offset=%5d gmtOffset=%d\n",
                     i, mTransitions[i], utcTime, localTime, mIsDsts[type], offset, gmtOffset);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_106248968 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_106248968.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_106248968.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_106248968;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder();
-        //sb.append(getClass().getName() + "[" + getID() + ",mRawOffset=" + mRawOffset +
-                //",mUseDst=" + mUseDst + "]");
-        //sb.append("\n");
-        //Formatter f = new Formatter(sb);
-        //for (int i = 0; i < mTransitions.length; ++i) {
-            //int type = mTypes[i] & 0xff;
-            //String utcTime = formatTime(mTransitions[i], TimeZone.getTimeZone("UTC"));
-            //String localTime = formatTime(mTransitions[i], this);
-            //int offset = mOffsets[type];
-            //int gmtOffset = mRawOffset/1000 + offset;
-            //f.format("%4d : time=%11d %s = %s isDst=%d offset=%5d gmtOffset=%d\n",
-                    //i, mTransitions[i], utcTime, localTime, mIsDsts[type], offset, gmtOffset);
-        //}
-        //return sb.toString();
+        
+        
+        
+                
+        
+        
+        
+            
+            
+            
+            
+            
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String formatTime(int s, TimeZone tz) {
         SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy zzz");
         sdf.setTimeZone(tz);

@@ -1,11 +1,11 @@
 package javax.microedition.khronos.egl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.microedition.khronos.opengles.GL;
 
@@ -14,7 +14,7 @@ public abstract class EGLContext {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.382 -0400", hash_original_method = "08AE013F5F70C27B6C3BCCA082C95AAF", hash_generated_method = "08AE013F5F70C27B6C3BCCA082C95AAF")
     public EGLContext ()
     {
-        //Synthesized constructor
+        
     }
 
 

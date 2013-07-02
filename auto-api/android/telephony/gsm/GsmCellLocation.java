@@ -1,11 +1,11 @@
 package android.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.telephony.CellLocation;
@@ -26,10 +26,10 @@ public class GsmCellLocation extends CellLocation {
         mLac = -1;
         mCid = -1;
         mPsc = -1;
-        // ---------- Original Method ----------
-        //mLac = -1;
-        //mCid = -1;
-        //mPsc = -1;
+        
+        
+        
+        
     }
 
     
@@ -38,10 +38,10 @@ public class GsmCellLocation extends CellLocation {
         mLac = bundle.getInt("lac", mLac);
         mCid = bundle.getInt("cid", mCid);
         mPsc = bundle.getInt("psc", mPsc);
-        // ---------- Original Method ----------
-        //mLac = bundle.getInt("lac", mLac);
-        //mCid = bundle.getInt("cid", mCid);
-        //mPsc = bundle.getInt("psc", mPsc);
+        
+        
+        
+        
     }
 
     
@@ -49,8 +49,8 @@ public class GsmCellLocation extends CellLocation {
     public int getLac() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_527279334 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_527279334;
-        // ---------- Original Method ----------
-        //return mLac;
+        
+        
     }
 
     
@@ -58,8 +58,8 @@ public class GsmCellLocation extends CellLocation {
     public int getCid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1722097647 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1722097647;
-        // ---------- Original Method ----------
-        //return mCid;
+        
+        
     }
 
     
@@ -67,8 +67,8 @@ public class GsmCellLocation extends CellLocation {
     public int getPsc() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1320026990 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1320026990;
-        // ---------- Original Method ----------
-        //return mPsc;
+        
+        
     }
 
     
@@ -77,10 +77,10 @@ public class GsmCellLocation extends CellLocation {
         mLac = -1;
         mCid = -1;
         mPsc = -1;
-        // ---------- Original Method ----------
-        //mLac = -1;
-        //mCid = -1;
-        //mPsc = -1;
+        
+        
+        
+        
     }
 
     
@@ -88,17 +88,17 @@ public class GsmCellLocation extends CellLocation {
     public void setLacAndCid(int lac, int cid) {
         mLac = lac;
         mCid = cid;
-        // ---------- Original Method ----------
-        //mLac = lac;
-        //mCid = cid;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.458 -0400", hash_original_method = "C81AA559E9201CC662BD56FE57EC5612", hash_generated_method = "FBA4344E835EEEB4D9AAE7A0BA923E04")
     public void setPsc(int psc) {
         mPsc = psc;
-        // ---------- Original Method ----------
-        //mPsc = psc;
+        
+        
     }
 
     
@@ -107,11 +107,12 @@ public class GsmCellLocation extends CellLocation {
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1857452871 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1857452871;
-        // ---------- Original Method ----------
-        //return mLac ^ mCid;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.126 -0400", hash_original_method = "A65316AC0F6A2A4C5019C1501720E22E", hash_generated_method = "DE1100069A2FE3488789164DE76E2E0F")
     @Override
     public boolean equals(Object o) {
@@ -119,7 +120,7 @@ public class GsmCellLocation extends CellLocation {
         try 
         {
             s = (GsmCellLocation)o;
-        } //End block
+        } 
         catch (ClassCastException ex)
         { }
         boolean var5848B7138A7FC4EE07B45FD1B33E0121_116967673 = (equalsHandlesNulls(mLac, s.mLac) && equalsHandlesNulls(mCid, s.mCid)
@@ -127,48 +128,51 @@ public class GsmCellLocation extends CellLocation {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_336751656 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_336751656;
-        // ---------- Original Method ----------
-        //GsmCellLocation s;
-        //try {
-            //s = (GsmCellLocation)o;
-        //} catch (ClassCastException ex) {
-            //return false;
-        //}
-        //if (o == null) {
-            //return false;
-        //}
-        //return equalsHandlesNulls(mLac, s.mLac) && equalsHandlesNulls(mCid, s.mCid)
-            //&& equalsHandlesNulls(mPsc, s.mPsc);
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.459 -0400", hash_original_method = "ECC0B1700594AB1E58D4785492DA1471", hash_generated_method = "29D73A738E9E3A39570D97B794085FF8")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_717602255 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_717602255 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_717602255 = "["+ mLac + "," + mCid + "," + mPsc + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_717602255.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_717602255.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_717602255;
-        // ---------- Original Method ----------
-        //return "["+ mLac + "," + mCid + "," + mPsc + "]";
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean equalsHandlesNulls(Object a, Object b) {
         return (a == null) ? (b == null) : a.equals (b);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.459 -0400", hash_original_method = "B1833CAE05CF94C17F526310C03CDC81", hash_generated_method = "E95A18F0550C66C1C56C7DFC21D1992B")
     public void fillInNotifierBundle(Bundle m) {
         m.putInt("lac", mLac);
         m.putInt("cid", mCid);
         m.putInt("psc", mPsc);
         addTaint(m.getTaint());
-        // ---------- Original Method ----------
-        //m.putInt("lac", mLac);
-        //m.putInt("cid", mCid);
-        //m.putInt("psc", mPsc);
+        
+        
+        
+        
     }
 
     
@@ -176,8 +180,8 @@ public class GsmCellLocation extends CellLocation {
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1862609754 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1862609754;
-        // ---------- Original Method ----------
-        //return (mLac == -1 && mCid == -1 && mPsc == -1);
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.http.conn.routing;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.net.InetAddress;
 import org.apache.http.HttpHost;
@@ -37,19 +37,19 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     public  RouteTracker(HttpHost target, InetAddress local) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Target host may not be null.");
-        } //End block
+        } 
         this.targetHost   = target;
         this.localAddress = local;
         this.tunnelled    = TunnelType.PLAIN;
         this.layered      = LayerType.PLAIN;
-        // ---------- Original Method ----------
-        //if (target == null) {
-            //throw new IllegalArgumentException("Target host may not be null.");
-        //}
-        //this.targetHost   = target;
-        //this.localAddress = local;
-        //this.tunnelled    = TunnelType.PLAIN;
-        //this.layered      = LayerType.PLAIN;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -57,7 +57,7 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     public  RouteTracker(HttpRoute route) {
         this(route.getTargetHost(), route.getLocalAddress());
         addTaint(route.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -65,15 +65,15 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     public final void connectTarget(boolean secure) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Already connected.");
-        } //End block
+        } 
         this.connected = true;
         this.secure = secure;
-        // ---------- Original Method ----------
-        //if (this.connected) {
-            //throw new IllegalStateException("Already connected.");
-        //}
-        //this.connected = true;
-        //this.secure = secure;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -81,24 +81,24 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     public final void connectProxy(HttpHost proxy, boolean secure) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Proxy host may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Already connected.");
-        } //End block
+        } 
         this.connected  = true;
         this.proxyChain = new HttpHost[]{ proxy };
         this.secure     = secure;
         addTaint(proxy.getTaint());
-        // ---------- Original Method ----------
-        //if (proxy == null) {
-            //throw new IllegalArgumentException("Proxy host may not be null.");
-        //}
-        //if (this.connected) {
-            //throw new IllegalStateException("Already connected.");
-        //}
-        //this.connected  = true;
-        //this.proxyChain = new HttpHost[]{ proxy };
-        //this.secure     = secure;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -106,21 +106,21 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     public final void tunnelTarget(boolean secure) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No tunnel unless connected.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No tunnel without proxy.");
-        } //End block
+        } 
         this.tunnelled = TunnelType.TUNNELLED;
         this.secure    = secure;
-        // ---------- Original Method ----------
-        //if (!this.connected) {
-            //throw new IllegalStateException("No tunnel unless connected.");
-        //}
-        //if (this.proxyChain == null) {
-            //throw new IllegalStateException("No tunnel without proxy.");
-        //}
-        //this.tunnelled = TunnelType.TUNNELLED;
-        //this.secure    = secure;
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -128,13 +128,13 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     public final void tunnelProxy(HttpHost proxy, boolean secure) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Proxy host may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No tunnel unless connected.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No proxy tunnel without proxy.");
-        } //End block
+        } 
         HttpHost[] proxies = new HttpHost[this.proxyChain.length+1];
         System.arraycopy(this.proxyChain, 0,
                          proxies, 0, this.proxyChain.length);
@@ -142,22 +142,22 @@ public final class RouteTracker implements RouteInfo, Cloneable {
         this.proxyChain = proxies;
         this.secure     = secure;
         addTaint(proxy.getTaint());
-        // ---------- Original Method ----------
-        //if (proxy == null) {
-            //throw new IllegalArgumentException("Proxy host may not be null.");
-        //}
-        //if (!this.connected) {
-            //throw new IllegalStateException("No tunnel unless connected.");
-        //}
-        //if (this.proxyChain == null) {
-            //throw new IllegalStateException("No proxy tunnel without proxy.");
-        //}
-        //HttpHost[] proxies = new HttpHost[this.proxyChain.length+1];
-        //System.arraycopy(this.proxyChain, 0,
-                         //proxies, 0, this.proxyChain.length);
-        //proxies[proxies.length-1] = proxy;
-        //this.proxyChain = proxies;
-        //this.secure     = secure;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+                         
+        
+        
+        
     }
 
     
@@ -166,38 +166,38 @@ public final class RouteTracker implements RouteInfo, Cloneable {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
                 ("No layered protocol unless connected.");
-        } //End block
+        } 
         this.layered = LayerType.LAYERED;
         this.secure  = secure;
-        // ---------- Original Method ----------
-        //if (!this.connected) {
-            //throw new IllegalStateException
-                //("No layered protocol unless connected.");
-        //}
-        //this.layered = LayerType.LAYERED;
-        //this.secure  = secure;
+        
+        
+            
+                
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.260 -0400", hash_original_method = "00F8E4422BF57DE6758D681F4A99BDB6", hash_generated_method = "BEC8611FB03A5AA2716EBB3BDB525E39")
     public final HttpHost getTargetHost() {
-        HttpHost varB4EAC82CA7396A68D541C85D26508E83_568297437 = null; //Variable for return #1
+        HttpHost varB4EAC82CA7396A68D541C85D26508E83_568297437 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_568297437 = this.targetHost;
-        varB4EAC82CA7396A68D541C85D26508E83_568297437.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_568297437.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_568297437;
-        // ---------- Original Method ----------
-        //return this.targetHost;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.261 -0400", hash_original_method = "28495B9032685860E947A62701D0E919", hash_generated_method = "B242B7CD68285EA5CB913B777972F7CA")
     public final InetAddress getLocalAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_198511465 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_198511465 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_198511465 = this.localAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_198511465.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_198511465.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_198511465;
-        // ---------- Original Method ----------
-        //return this.localAddress;
+        
+        
     }
 
     
@@ -207,24 +207,24 @@ public final class RouteTracker implements RouteInfo, Cloneable {
         {
             hops = 1;
             hops = proxyChain.length + 1;
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_549259528 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_549259528;
-        // ---------- Original Method ----------
-        //int hops = 0;
-        //if (this.connected) {
-            //if (proxyChain == null)
-                //hops = 1;
-            //else
-                //hops = proxyChain.length + 1;
-        //}
-        //return hops;
+        
+        
+        
+            
+                
+            
+                
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.262 -0400", hash_original_method = "CFC4B3441FDC551CC1F391519968AE1F", hash_generated_method = "00D2ED9160ED6AF0F66DB6190B4D2D70")
     public final HttpHost getHopTarget(int hop) {
-        HttpHost varB4EAC82CA7396A68D541C85D26508E83_1127806296 = null; //Variable for return #1
+        HttpHost varB4EAC82CA7396A68D541C85D26508E83_1127806296 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Hop index must not be negative: " + hop);
         final int hopcount = getHopCount();
@@ -232,41 +232,41 @@ public final class RouteTracker implements RouteInfo, Cloneable {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Hop index " + hop +
                  " exceeds tracked route length " + hopcount +".");
-        } //End block
+        } 
         HttpHost result = null;
         result = this.proxyChain[hop];
         result = this.targetHost;
         varB4EAC82CA7396A68D541C85D26508E83_1127806296 = result;
         addTaint(hop);
-        varB4EAC82CA7396A68D541C85D26508E83_1127806296.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1127806296.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1127806296;
-        // ---------- Original Method ----------
-        //if (hop < 0)
-            //throw new IllegalArgumentException
-                //("Hop index must not be negative: " + hop);
-        //final int hopcount = getHopCount();
-        //if (hop >= hopcount) {
-            //throw new IllegalArgumentException
-                //("Hop index " + hop +
-                 //" exceeds tracked route length " + hopcount +".");
-        //}
-        //HttpHost result = null;
-        //if (hop < hopcount-1)
-            //result = this.proxyChain[hop];
-        //else
-            //result = this.targetHost;
-        //return result;
+        
+        
+            
+                
+        
+        
+            
+                
+                 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.263 -0400", hash_original_method = "E9E1E8AC6D9C2477F7E0F63BF0C4ED60", hash_generated_method = "676DF9D223572DE74521C8782AF68C97")
     public final HttpHost getProxyHost() {
-        HttpHost varB4EAC82CA7396A68D541C85D26508E83_1897330404 = null; //Variable for return #1
+        HttpHost varB4EAC82CA7396A68D541C85D26508E83_1897330404 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1897330404 = (this.proxyChain == null) ? null : this.proxyChain[0];
-        varB4EAC82CA7396A68D541C85D26508E83_1897330404.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1897330404.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1897330404;
-        // ---------- Original Method ----------
-        //return (this.proxyChain == null) ? null : this.proxyChain[0];
+        
+        
     }
 
     
@@ -274,19 +274,19 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     public final boolean isConnected() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1475822597 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1475822597;
-        // ---------- Original Method ----------
-        //return this.connected;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.264 -0400", hash_original_method = "350E5C2EB4A104FE6F444729C8CD5444", hash_generated_method = "E9E333F6393AFA4E5F185B4B19C62A9A")
     public final TunnelType getTunnelType() {
-        TunnelType varB4EAC82CA7396A68D541C85D26508E83_1722325150 = null; //Variable for return #1
+        TunnelType varB4EAC82CA7396A68D541C85D26508E83_1722325150 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1722325150 = this.tunnelled;
-        varB4EAC82CA7396A68D541C85D26508E83_1722325150.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1722325150.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1722325150;
-        // ---------- Original Method ----------
-        //return this.tunnelled;
+        
+        
     }
 
     
@@ -294,19 +294,19 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     public final boolean isTunnelled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_900046780 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_900046780;
-        // ---------- Original Method ----------
-        //return (this.tunnelled == TunnelType.TUNNELLED);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.264 -0400", hash_original_method = "24DDB6A6987422E004B186B027F8E19E", hash_generated_method = "A18A8DC68E078331EA95A64BF95C6019")
     public final LayerType getLayerType() {
-        LayerType varB4EAC82CA7396A68D541C85D26508E83_1317762903 = null; //Variable for return #1
+        LayerType varB4EAC82CA7396A68D541C85D26508E83_1317762903 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1317762903 = this.layered;
-        varB4EAC82CA7396A68D541C85D26508E83_1317762903.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1317762903.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1317762903;
-        // ---------- Original Method ----------
-        //return this.layered;
+        
+        
     }
 
     
@@ -314,8 +314,8 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     public final boolean isLayered() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1895112224 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1895112224;
-        // ---------- Original Method ----------
-        //return (this.layered == LayerType.LAYERED);
+        
+        
     }
 
     
@@ -323,25 +323,25 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     public final boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1404994766 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1404994766;
-        // ---------- Original Method ----------
-        //return this.secure;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.265 -0400", hash_original_method = "F708D9F908B17C9085BF9A499A01375A", hash_generated_method = "0CA0966648DC3F11E2C62313A00D4FF4")
     public final HttpRoute toRoute() {
-        HttpRoute varB4EAC82CA7396A68D541C85D26508E83_930866949 = null; //Variable for return #1
+        HttpRoute varB4EAC82CA7396A68D541C85D26508E83_930866949 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_930866949 = !this.connected ?
             null : new HttpRoute(this.targetHost, this.localAddress,
                                  this.proxyChain, this.secure,
                                  this.tunnelled, this.layered);
-        varB4EAC82CA7396A68D541C85D26508E83_930866949.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_930866949.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_930866949;
-        // ---------- Original Method ----------
-        //return !this.connected ?
-            //null : new HttpRoute(this.targetHost, this.localAddress,
-                                 //this.proxyChain, this.secure,
-                                 //this.tunnelled, this.layered);
+        
+        
+            
+                                 
+                                 
     }
 
     
@@ -350,7 +350,7 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     public final boolean equals(Object o) {
         {
             boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_271167467 = (o == this);
-        } //End collapsed parenthetic
+        } 
         RouteTracker that = (RouteTracker) o;
         boolean equal = this.targetHost.equals(that.targetHost);
         equal &=
@@ -371,13 +371,13 @@ public final class RouteTracker implements RouteInfo, Cloneable {
             {
                 int i = 0;
                 equal = this.proxyChain[i].equals(that.proxyChain[i]);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1775755042 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1775755042;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -391,43 +391,43 @@ public final class RouteTracker implements RouteInfo, Cloneable {
             {
                 int i = 0;
                 hc ^= proxyChain[i].hashCode();
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         hc ^= 0x11111111;
         hc ^= 0x22222222;
         hc ^= this.tunnelled.hashCode();
         hc ^= this.layered.hashCode();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_110339490 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_110339490;
-        // ---------- Original Method ----------
-        //int hc = this.targetHost.hashCode();
-        //if (this.localAddress != null)
-            //hc ^= localAddress.hashCode();
-        //if (this.proxyChain != null) {
-            //hc ^= proxyChain.length;
-            //for (int i=0; i<proxyChain.length; i++)
-                //hc ^= proxyChain[i].hashCode();
-        //}
-        //if (this.connected)
-            //hc ^= 0x11111111;
-        //if (this.secure)
-            //hc ^= 0x22222222;
-        //hc ^= this.tunnelled.hashCode();
-        //hc ^= this.layered.hashCode();
-        //return hc;
+        
+        
+        
+            
+        
+            
+            
+                
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.268 -0400", hash_original_method = "B9AFE31805DA49D5CF66B21B19FA6A72", hash_generated_method = "ACC39BE7CACF836A6F7CB5D48873E5FC")
     @Override
     public final String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1877270617 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1877270617 = null; 
         StringBuilder cab = new StringBuilder(50 + getHopCount()*30);
         cab.append("RouteTracker[");
         {
             cab.append(this.localAddress);
             cab.append("->");
-        } //End block
+        } 
         cab.append('{');
         cab.append('c');
         cab.append('t');
@@ -440,28 +440,29 @@ public final class RouteTracker implements RouteInfo, Cloneable {
                 {
                     cab.append(this.proxyChain[i]);
                     cab.append("->");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         cab.append(this.targetHost);
         cab.append(']');
         varB4EAC82CA7396A68D541C85D26508E83_1877270617 = cab.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1877270617.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1877270617.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1877270617;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.274 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "87018FEDA9811AE118498D07D8723F7F")
     @Override
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_322438240 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_322438240 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_322438240 = super.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_322438240.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_322438240.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_322438240;
-        // ---------- Original Method ----------
-        //return super.clone();
+        
+        
     }
 
     

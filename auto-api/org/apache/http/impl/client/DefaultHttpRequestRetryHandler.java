@@ -1,11 +1,11 @@
 package org.apache.http.impl.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -29,16 +29,16 @@ public class DefaultHttpRequestRetryHandler implements HttpRequestRetryHandler {
         super();
         this.retryCount = retryCount;
         this.requestSentRetryEnabled = requestSentRetryEnabled;
-        // ---------- Original Method ----------
-        //this.retryCount = retryCount;
-        //this.requestSentRetryEnabled = requestSentRetryEnabled;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.126 -0400", hash_original_method = "5F4132CBD367F2EB70F7284BB1D2E959", hash_generated_method = "2BF645713EE7B0044C6A526FDD62C704")
     public  DefaultHttpRequestRetryHandler() {
         this(3, false);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,10 +49,10 @@ public class DefaultHttpRequestRetryHandler implements HttpRequestRetryHandler {
             final HttpContext context) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Exception parameter may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } //End block
+        } 
         Boolean b = (Boolean)
             context.getAttribute(ExecutionContext.HTTP_REQ_SENT);
         boolean sent = (b != null && b.booleanValue());
@@ -61,8 +61,8 @@ public class DefaultHttpRequestRetryHandler implements HttpRequestRetryHandler {
         addTaint(context.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_87256990 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_87256990;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -70,8 +70,8 @@ public class DefaultHttpRequestRetryHandler implements HttpRequestRetryHandler {
     public boolean isRequestSentRetryEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_139192896 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_139192896;
-        // ---------- Original Method ----------
-        //return requestSentRetryEnabled;
+        
+        
     }
 
     
@@ -79,8 +79,8 @@ public class DefaultHttpRequestRetryHandler implements HttpRequestRetryHandler {
     public int getRetryCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1518454558 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1518454558;
-        // ---------- Original Method ----------
-        //return retryCount;
+        
+        
     }
 
     

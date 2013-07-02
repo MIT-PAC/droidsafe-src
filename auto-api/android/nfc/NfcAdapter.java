@@ -1,11 +1,11 @@
 package android.nfc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.HashMap;
 import android.annotation.SdkConstant;
@@ -40,11 +40,11 @@ public final class NfcAdapter {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.133 -0400", hash_original_method = "20720EE87497F4AA75409509758C29CB", hash_generated_method = "CCDF3879995637CE1FE9CE6838EC2B7B")
         @Override
         public void onPaused(Activity activity) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             disableForegroundDispatchInternal(activity, true);
             addTaint(activity.getTaint());
-            // ---------- Original Method ----------
-            //disableForegroundDispatchInternal(activity, true);
+            
+            
         }
 
         
@@ -54,9 +54,9 @@ public final class NfcAdapter {
       NfcAdapter(Context context) {
         mContext = context;
         mNfcActivityManager = new NfcActivityManager(this);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mNfcActivityManager = new NfcActivityManager(this);
+        
+        
+        
     }
 
     
@@ -141,38 +141,38 @@ public final class NfcAdapter {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.135 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "8317E53C1FE64B5134D77D6B25F84FD4")
     public Context getContext() {
-        Context varB4EAC82CA7396A68D541C85D26508E83_232971793 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_232971793 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_232971793 = mContext;
-        varB4EAC82CA7396A68D541C85D26508E83_232971793.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_232971793.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_232971793;
-        // ---------- Original Method ----------
-        //return mContext;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.137 -0400", hash_original_method = "5DC17A5CA100E57D93FCA0A10242D110", hash_generated_method = "DCBCF40D4D7F91A92A33D3D46A56C236")
     public INfcAdapter getService() {
-        INfcAdapter varB4EAC82CA7396A68D541C85D26508E83_2000740135 = null; //Variable for return #1
+        INfcAdapter varB4EAC82CA7396A68D541C85D26508E83_2000740135 = null; 
         isEnabled();
         varB4EAC82CA7396A68D541C85D26508E83_2000740135 = sService;
-        varB4EAC82CA7396A68D541C85D26508E83_2000740135.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2000740135.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2000740135;
-        // ---------- Original Method ----------
-        //isEnabled();
-        //return sService;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.137 -0400", hash_original_method = "1AA3314EB2D88084AC95E9F76A714199", hash_generated_method = "94A530C420F902E0BCBCE42EC14F9AA0")
     public INfcTag getTagService() {
-        INfcTag varB4EAC82CA7396A68D541C85D26508E83_1817244382 = null; //Variable for return #1
+        INfcTag varB4EAC82CA7396A68D541C85D26508E83_1817244382 = null; 
         isEnabled();
         varB4EAC82CA7396A68D541C85D26508E83_1817244382 = sTagService;
-        varB4EAC82CA7396A68D541C85D26508E83_1817244382.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1817244382.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1817244382;
-        // ---------- Original Method ----------
-        //isEnabled();
-        //return sTagService;
+        
+        
+        
     }
 
     
@@ -183,24 +183,24 @@ public final class NfcAdapter {
         try 
         {
             sTagService = service.getNfcTagInterface();
-        } //End block
+        } 
         catch (RemoteException ee)
         { }
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
-        //Log.e(TAG, "NFC service dead - attempting to recover", e);
-        //INfcAdapter service = getServiceInterface();
-        //if (service == null) {
-            //Log.e(TAG, "could not retrieve NFC service during service recovery");
-            //return;
-        //}
-        //sService = service;
-        //try {
-            //sTagService = service.getNfcTagInterface();
-        //} catch (RemoteException ee) {
-            //Log.e(TAG, "could not retrieve NFC tag service during service recovery");
-        //}
-        //return;
+        
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -209,20 +209,20 @@ public final class NfcAdapter {
         try 
         {
             boolean var9B2C015C131CB94BEE2438D1D075B98D_1718857915 = (sService.getState() == STATE_ON);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_839227549 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_839227549;
-        // ---------- Original Method ----------
-        //try {
-            //return sService.getState() == STATE_ON;
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return false;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -231,20 +231,20 @@ public final class NfcAdapter {
         try 
         {
             int var6449D0D3156979B73A59EC4ECBBA4C78_2121633374 = (sService.getState());
-        } //End block
+        } 
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1610851360 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1610851360;
-        // ---------- Original Method ----------
-        //try {
-            //return sService.getState();
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return NfcAdapter.STATE_OFF;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -253,20 +253,20 @@ public final class NfcAdapter {
         try 
         {
             boolean var94A6AC21F9F97AA82B3508BC1013B2F8_1425330445 = (sService.enable());
-        } //End block
+        } 
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_470997977 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_470997977;
-        // ---------- Original Method ----------
-        //try {
-            //return sService.enable();
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return false;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -275,20 +275,20 @@ public final class NfcAdapter {
         try 
         {
             boolean var9B2DAF29C8816F81E7CE2B74803B55C0_664746637 = (sService.disable());
-        } //End block
+        } 
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1885204518 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1885204518;
-        // ---------- Original Method ----------
-        //try {
-            //return sService.disable();
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return false;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -297,31 +297,31 @@ public final class NfcAdapter {
             Activity ... activities) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("activity cannot be null");
-        } //End block
+        } 
         mNfcActivityManager.setNdefPushMessage(activity, message);
         {
             Activity a = activities[0];
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NullPointerException("activities cannot contain null");
-                } //End block
+                } 
                 mNfcActivityManager.setNdefPushMessage(a, message);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(message.getTaint());
         addTaint(activity.getTaint());
         addTaint(activities[0].getTaint());
-        // ---------- Original Method ----------
-        //if (activity == null) {
-            //throw new NullPointerException("activity cannot be null");
-        //}
-        //mNfcActivityManager.setNdefPushMessage(activity, message);
-        //for (Activity a : activities) {
-            //if (a == null) {
-                //throw new NullPointerException("activities cannot contain null");
-            //}
-            //mNfcActivityManager.setNdefPushMessage(a, message);
-        //}
+        
+        
+            
+        
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -330,31 +330,31 @@ public final class NfcAdapter {
             Activity ... activities) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("activity cannot be null");
-        } //End block
+        } 
         mNfcActivityManager.setNdefPushMessageCallback(activity, callback);
         {
             Activity a = activities[0];
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NullPointerException("activities cannot contain null");
-                } //End block
+                } 
                 mNfcActivityManager.setNdefPushMessageCallback(a, callback);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(callback.getTaint());
         addTaint(activity.getTaint());
         addTaint(activities[0].getTaint());
-        // ---------- Original Method ----------
-        //if (activity == null) {
-            //throw new NullPointerException("activity cannot be null");
-        //}
-        //mNfcActivityManager.setNdefPushMessageCallback(activity, callback);
-        //for (Activity a : activities) {
-            //if (a == null) {
-                //throw new NullPointerException("activities cannot contain null");
-            //}
-            //mNfcActivityManager.setNdefPushMessageCallback(a, callback);
-        //}
+        
+        
+            
+        
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -363,31 +363,31 @@ public final class NfcAdapter {
             Activity activity, Activity ... activities) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("activity cannot be null");
-        } //End block
+        } 
         mNfcActivityManager.setOnNdefPushCompleteCallback(activity, callback);
         {
             Activity a = activities[0];
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NullPointerException("activities cannot contain null");
-                } //End block
+                } 
                 mNfcActivityManager.setOnNdefPushCompleteCallback(a, callback);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(callback.getTaint());
         addTaint(activity.getTaint());
         addTaint(activities[0].getTaint());
-        // ---------- Original Method ----------
-        //if (activity == null) {
-            //throw new NullPointerException("activity cannot be null");
-        //}
-        //mNfcActivityManager.setOnNdefPushCompleteCallback(activity, callback);
-        //for (Activity a : activities) {
-            //if (a == null) {
-                //throw new NullPointerException("activities cannot contain null");
-            //}
-            //mNfcActivityManager.setOnNdefPushCompleteCallback(a, callback);
-        //}
+        
+        
+            
+        
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -396,51 +396,51 @@ public final class NfcAdapter {
             IntentFilter[] filters, String[][] techLists) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         {
             boolean var61F963C719C1888518BA6D81025614C4_602076866 = (!activity.isResumed());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Foreground dispatch can only be enabled " +
                     "when your activity is resumed");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             TechListParcel parcel = null;
             {
                 parcel = new TechListParcel(techLists);
-            } //End block
+            } 
             ActivityThread.currentActivityThread().registerOnActivityPausedListener(activity,
                     mForegroundDispatchListener);
             sService.setForegroundDispatch(intent, filters, parcel);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
-        } //End block
+        } 
         addTaint(activity.getTaint());
         addTaint(intent.getTaint());
         addTaint(filters[0].getTaint());
         addTaint(techLists[0][0].getTaint());
-        // ---------- Original Method ----------
-        //if (activity == null || intent == null) {
-            //throw new NullPointerException();
-        //}
-        //if (!activity.isResumed()) {
-            //throw new IllegalStateException("Foreground dispatch can only be enabled " +
-                    //"when your activity is resumed");
-        //}
-        //try {
-            //TechListParcel parcel = null;
-            //if (techLists != null && techLists.length > 0) {
-                //parcel = new TechListParcel(techLists);
-            //}
-            //ActivityThread.currentActivityThread().registerOnActivityPausedListener(activity,
-                    //mForegroundDispatchListener);
-            //sService.setForegroundDispatch(intent, filters, parcel);
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-        //}
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+            
+            
+                
+            
+            
+                    
+            
+        
+            
+        
     }
 
     
@@ -450,10 +450,10 @@ public final class NfcAdapter {
                 mForegroundDispatchListener);
         disableForegroundDispatchInternal(activity, false);
         addTaint(activity.getTaint());
-        // ---------- Original Method ----------
-        //ActivityThread.currentActivityThread().unregisterOnActivityPausedListener(activity,
-                //mForegroundDispatchListener);
-        //disableForegroundDispatchInternal(activity, false);
+        
+        
+                
+        
     }
 
     
@@ -467,25 +467,25 @@ public final class NfcAdapter {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("You must disable foreground dispatching " +
                         "while your activity is still resumed");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
-        } //End block
+        } 
         addTaint(activity.getTaint());
         addTaint(force);
-        // ---------- Original Method ----------
-        //try {
-            //sService.setForegroundDispatch(null, null, null);
-            //if (!force && !activity.isResumed()) {
-                //throw new IllegalStateException("You must disable foreground dispatching " +
-                        //"while your activity is still resumed");
-            //}
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-        //}
+        
+        
+            
+            
+                
+                        
+            
+        
+            
+        
     }
 
     
@@ -494,17 +494,17 @@ public final class NfcAdapter {
     public void enableForegroundNdefPush(Activity activity, NdefMessage message) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         enforceResumed(activity);
         mNfcActivityManager.setNdefPushMessage(activity, message);
         addTaint(activity.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //if (activity == null || message == null) {
-            //throw new NullPointerException();
-        //}
-        //enforceResumed(activity);
-        //mNfcActivityManager.setNdefPushMessage(activity, message);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -512,20 +512,20 @@ public final class NfcAdapter {
     public void disableForegroundNdefPush(Activity activity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         enforceResumed(activity);
         mNfcActivityManager.setNdefPushMessage(activity, null);
         mNfcActivityManager.setNdefPushMessageCallback(activity, null);
         mNfcActivityManager.setOnNdefPushCompleteCallback(activity, null);
         addTaint(activity.getTaint());
-        // ---------- Original Method ----------
-        //if (activity == null) {
-            //throw new NullPointerException();
-        //}
-        //enforceResumed(activity);
-        //mNfcActivityManager.setNdefPushMessage(activity, null);
-        //mNfcActivityManager.setNdefPushMessageCallback(activity, null);
-        //mNfcActivityManager.setOnNdefPushCompleteCallback(activity, null);
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -534,21 +534,21 @@ public final class NfcAdapter {
     public void enableForegroundNdefPush(Activity activity, final NdefPushCallback callback) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         enforceResumed(activity);
         LegacyCallbackWrapper callbackWrapper = new LegacyCallbackWrapper(callback);
         mNfcActivityManager.setNdefPushMessageCallback(activity, callbackWrapper);
         mNfcActivityManager.setOnNdefPushCompleteCallback(activity, callbackWrapper);
         addTaint(activity.getTaint());
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //if (activity == null || callback == null) {
-            //throw new NullPointerException();
-        //}
-        //enforceResumed(activity);
-        //LegacyCallbackWrapper callbackWrapper = new LegacyCallbackWrapper(callback);
-        //mNfcActivityManager.setNdefPushMessageCallback(activity, callbackWrapper);
-        //mNfcActivityManager.setOnNdefPushCompleteCallback(activity, callbackWrapper);
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -557,20 +557,20 @@ public final class NfcAdapter {
         try 
         {
             boolean var1C97FF4517A05CA1B5AB7AF9B34BD479_1135043126 = (sService.enableNdefPush());
-        } //End block
+        } 
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_47581779 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_47581779;
-        // ---------- Original Method ----------
-        //try {
-            //return sService.enableNdefPush();
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return false;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -579,20 +579,20 @@ public final class NfcAdapter {
         try 
         {
             boolean var7FC0C61F6E9FE1578E3A4E1BAA577792_1309101590 = (sService.disableNdefPush());
-        } //End block
+        } 
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_481971340 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_481971340;
-        // ---------- Original Method ----------
-        //try {
-            //return sService.disableNdefPush();
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return false;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -601,62 +601,62 @@ public final class NfcAdapter {
         try 
         {
             boolean varD08156D55243F22D33636CAEA468845B_1644387870 = (sService.isNdefPushEnabled());
-        } //End block
+        } 
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1604930039 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1604930039;
-        // ---------- Original Method ----------
-        //try {
-            //return sService.isNdefPushEnabled();
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return false;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.177 -0400", hash_original_method = "AC9BE1816495D76DB77DE4C0C93B101E", hash_generated_method = "0DE8DDCF4F0FEAEC5366C79947F44DAE")
     public INfcAdapterExtras getNfcAdapterExtrasInterface() {
-        INfcAdapterExtras varB4EAC82CA7396A68D541C85D26508E83_271052924 = null; //Variable for return #1
-        INfcAdapterExtras varB4EAC82CA7396A68D541C85D26508E83_137213643 = null; //Variable for return #2
+        INfcAdapterExtras varB4EAC82CA7396A68D541C85D26508E83_271052924 = null; 
+        INfcAdapterExtras varB4EAC82CA7396A68D541C85D26508E83_137213643 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("You need a context on NfcAdapter to use the "
                     + " NFC extras APIs");
-        } //End block
+        } 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_271052924 = sService.getNfcAdapterExtrasInterface(mContext.getPackageName());
-        } //End block
+        } 
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
             varB4EAC82CA7396A68D541C85D26508E83_137213643 = null;
-        } //End block
-        INfcAdapterExtras varA7E53CE21691AB073D9660D615818899_1563671646; //Final return value
+        } 
+        INfcAdapterExtras varA7E53CE21691AB073D9660D615818899_1563671646; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1563671646 = varB4EAC82CA7396A68D541C85D26508E83_271052924;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1563671646 = varB4EAC82CA7396A68D541C85D26508E83_137213643;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1563671646.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1563671646.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1563671646;
-        // ---------- Original Method ----------
-        //if (mContext == null) {
-            //throw new UnsupportedOperationException("You need a context on NfcAdapter to use the "
-                    //+ " NFC extras APIs");
-        //}
-        //try {
-            //return sService.getNfcAdapterExtrasInterface(mContext.getPackageName());
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return null;
-        //}
+        
+        
+            
+                    
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -666,13 +666,13 @@ public final class NfcAdapter {
             boolean var61F963C719C1888518BA6D81025614C4_2128912551 = (!activity.isResumed());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("API cannot be called while activity is paused");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(activity.getTaint());
-        // ---------- Original Method ----------
-        //if (!activity.isResumed()) {
-            //throw new IllegalStateException("API cannot be called while activity is paused");
-        //}
+        
+        
+            
+        
     }
 
     
@@ -684,32 +684,32 @@ public final class NfcAdapter {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.178 -0400", hash_original_method = "6BEF15BCF15DD0D85DE3520BB316E0D4", hash_generated_method = "21E11278C209B656E61A1BA349ACB39A")
           LegacyCallbackWrapper(NdefPushCallback legacyCallback) {
             mLegacyCallback = legacyCallback;
-            // ---------- Original Method ----------
-            //mLegacyCallback = legacyCallback;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.178 -0400", hash_original_method = "D841E457F2B17E12C1E2098B1C645A79", hash_generated_method = "DE2859A882AB04BA5FBC6AF833946175")
         @Override
         public void onNdefPushComplete(NfcEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mLegacyCallback.onMessagePushed();
             addTaint(event.getTaint());
-            // ---------- Original Method ----------
-            //mLegacyCallback.onMessagePushed();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.178 -0400", hash_original_method = "FCA6320615812CADE55DD6047E7D7630", hash_generated_method = "30B89F7A0F36A414FB4E1703CBC799D9")
         @Override
         public NdefMessage createNdefMessage(NfcEvent event) {
-            NdefMessage varB4EAC82CA7396A68D541C85D26508E83_473648761 = null; //Variable for return #1
+            NdefMessage varB4EAC82CA7396A68D541C85D26508E83_473648761 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_473648761 = mLegacyCallback.createMessage();
             addTaint(event.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_473648761.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_473648761.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_473648761;
-            // ---------- Original Method ----------
-            //return mLegacyCallback.createMessage();
+            
+            
         }
 
         

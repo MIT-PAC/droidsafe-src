@@ -1,18 +1,18 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class AssertionError extends Error {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.320 -0400", hash_original_method = "632C9A91920500ECFBFF7CDB1241885E", hash_generated_method = "8BB24CECD8503B4A4EB9C799C7E7073F")
     public  AssertionError() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class AssertionError extends Error {
         super(detailMessage, cause);
         addTaint(detailMessage.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,7 +30,7 @@ public class AssertionError extends Error {
         super(String.valueOf(detailMessage),
                 (detailMessage instanceof Throwable ? (Throwable) detailMessage : null));
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,7 +38,7 @@ public class AssertionError extends Error {
     public  AssertionError(boolean detailMessage) {
         this(String.valueOf(detailMessage));
         addTaint(detailMessage);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -46,7 +46,7 @@ public class AssertionError extends Error {
     public  AssertionError(char detailMessage) {
         this(String.valueOf(detailMessage));
         addTaint(detailMessage);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -54,7 +54,7 @@ public class AssertionError extends Error {
     public  AssertionError(int detailMessage) {
         this(Integer.toString(detailMessage));
         addTaint(detailMessage);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -62,7 +62,7 @@ public class AssertionError extends Error {
     public  AssertionError(long detailMessage) {
         this(Long.toString(detailMessage));
         addTaint(detailMessage);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -70,7 +70,7 @@ public class AssertionError extends Error {
     public  AssertionError(float detailMessage) {
         this(Float.toString(detailMessage));
         addTaint(detailMessage);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -78,7 +78,7 @@ public class AssertionError extends Error {
     public  AssertionError(double detailMessage) {
         this(Double.toString(detailMessage));
         addTaint(detailMessage);
-        // ---------- Original Method ----------
+        
     }
 
     

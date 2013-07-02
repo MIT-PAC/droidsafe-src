@@ -1,11 +1,11 @@
 package org.apache.commons.codec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class EncoderException extends Exception {
@@ -14,7 +14,7 @@ public class EncoderException extends Exception {
     public  EncoderException(String pMessage) {
         super(pMessage);
         addTaint(pMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

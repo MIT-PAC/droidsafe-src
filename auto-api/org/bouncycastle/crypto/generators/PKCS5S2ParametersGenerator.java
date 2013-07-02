@@ -1,11 +1,11 @@
 package org.bouncycastle.crypto.generators;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.crypto.CipherParameters;
 import org.bouncycastle.crypto.Mac;
@@ -22,10 +22,11 @@ public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.045 -0400", hash_original_method = "B69BB14B43B673ED175B53A442E5BA52", hash_generated_method = "8185A6FBD8116F10F37B5ADDD415EEE5")
     public  PKCS5S2ParametersGenerator() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.046 -0400", hash_original_method = "5838C1952069FB825926D87DA007F2C4", hash_generated_method = "A69B5BE89F8557D61FEC34EA73D3C5F2")
     private void F(
         byte[]  P,
@@ -39,13 +40,13 @@ public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
         hMac.init(param);
         {
             hMac.update(S, 0, S.length);
-        } //End block
+        } 
         hMac.update(iBuf, 0, iBuf.length);
         hMac.doFinal(state, 0);
         System.arraycopy(state, 0, out, outOff, state.length);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("iteration count must be at least 1.");
-        } //End block
+        } 
         {
             int count = 1;
             {
@@ -56,41 +57,41 @@ public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
                     int j = 0;
                     {
                         out[outOff + j] ^= state[j];
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(P[0]);
         addTaint(S[0]);
         addTaint(c);
         addTaint(iBuf[0]);
         addTaint(out[0]);
         addTaint(outOff);
-        // ---------- Original Method ----------
-        //byte[]              state = new byte[hMac.getMacSize()];
-        //CipherParameters    param = new KeyParameter(P);
-        //hMac.init(param);
-        //if (S != null)
-        //{
-            //hMac.update(S, 0, S.length);
-        //}
-        //hMac.update(iBuf, 0, iBuf.length);
-        //hMac.doFinal(state, 0);
-        //System.arraycopy(state, 0, out, outOff, state.length);
-        //if (c == 0)
-        //{
-            //throw new IllegalArgumentException("iteration count must be at least 1.");
-        //}
-        //for (int count = 1; count < c; count++)
-        //{
-            //hMac.init(param);
-            //hMac.update(state, 0, state.length);
-            //hMac.doFinal(state, 0);
-            //for (int j = 0; j != state.length; j++)
-            //{
-                //out[outOff + j] ^= state[j];
-            //}
-        //}
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -104,14 +105,15 @@ public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
         buf[3] = (byte)i;
         addTaint(buf[0]);
         addTaint(i);
-        // ---------- Original Method ----------
-        //buf[0] = (byte)(i >>> 24);
-        //buf[1] = (byte)(i >>> 16);
-        //buf[2] = (byte)(i >>> 8);
-        //buf[3] = (byte)i;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.048 -0400", hash_original_method = "9180E4FA1A99F957676BE4B76909E69A", hash_generated_method = "DDABF247778E47DEA2C9BB98CF7A96D4")
     private byte[] generateDerivedKey(
         int dkLen) {
@@ -124,73 +126,76 @@ public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
             {
                 intToOctet(iBuf, i);
                 F(password, salt, iterationCount, iBuf, out, (i - 1) * hLen);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(dkLen);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1612076751 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1612076751;
-        // ---------- Original Method ----------
-        //int     hLen = hMac.getMacSize();
-        //int     l = (dkLen + hLen - 1) / hLen;
-        //byte[]  iBuf = new byte[4];
-        //byte[]  out = new byte[l * hLen];
-        //for (int i = 1; i <= l; i++)
-        //{
-            //intToOctet(iBuf, i);
-            //F(password, salt, iterationCount, iBuf, out, (i - 1) * hLen);
-        //}
-        //return out;
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.050 -0400", hash_original_method = "47F03A4B7607EC42FAB580BDD530C12C", hash_generated_method = "28FFFB51FBA48BF1A3CD93C94919E8E6")
     public CipherParameters generateDerivedParameters(
         int keySize) {
-        CipherParameters varB4EAC82CA7396A68D541C85D26508E83_1301409286 = null; //Variable for return #1
+        CipherParameters varB4EAC82CA7396A68D541C85D26508E83_1301409286 = null; 
         keySize = keySize / 8;
         byte[] dKey = generateDerivedKey(keySize);
         varB4EAC82CA7396A68D541C85D26508E83_1301409286 = new KeyParameter(dKey, 0, keySize);
         addTaint(keySize);
-        varB4EAC82CA7396A68D541C85D26508E83_1301409286.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1301409286.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1301409286;
-        // ---------- Original Method ----------
-        //keySize = keySize / 8;
-        //byte[]  dKey = generateDerivedKey(keySize);
-        //return new KeyParameter(dKey, 0, keySize);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.051 -0400", hash_original_method = "51142E64B42932805E0B604E9F91CFAD", hash_generated_method = "F43AC003E06178379310C07E3769768E")
     public CipherParameters generateDerivedParameters(
         int     keySize,
         int     ivSize) {
-        CipherParameters varB4EAC82CA7396A68D541C85D26508E83_1051188493 = null; //Variable for return #1
+        CipherParameters varB4EAC82CA7396A68D541C85D26508E83_1051188493 = null; 
         keySize = keySize / 8;
         ivSize = ivSize / 8;
         byte[] dKey = generateDerivedKey(keySize + ivSize);
         varB4EAC82CA7396A68D541C85D26508E83_1051188493 = new ParametersWithIV(new KeyParameter(dKey, 0, keySize), dKey, keySize, ivSize);
         addTaint(keySize);
         addTaint(ivSize);
-        varB4EAC82CA7396A68D541C85D26508E83_1051188493.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1051188493.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1051188493;
-        // ---------- Original Method ----------
-        //keySize = keySize / 8;
-        //ivSize = ivSize / 8;
-        //byte[]  dKey = generateDerivedKey(keySize + ivSize);
-        //return new ParametersWithIV(new KeyParameter(dKey, 0, keySize), dKey, keySize, ivSize);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.052 -0400", hash_original_method = "9CBF59A81FEE9822185147DE8DCD075A", hash_generated_method = "60A8DCC975A0654962560C216F9A3AA7")
     public CipherParameters generateDerivedMacParameters(
         int keySize) {
-        CipherParameters varB4EAC82CA7396A68D541C85D26508E83_1433769595 = null; //Variable for return #1
+        CipherParameters varB4EAC82CA7396A68D541C85D26508E83_1433769595 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1433769595 = generateDerivedParameters(keySize);
         addTaint(keySize);
-        varB4EAC82CA7396A68D541C85D26508E83_1433769595.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1433769595.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1433769595;
-        // ---------- Original Method ----------
-        //return generateDerivedParameters(keySize);
+        
+        
     }
 
     

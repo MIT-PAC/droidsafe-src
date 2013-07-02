@@ -1,11 +1,11 @@
 package libcore.icu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
@@ -27,51 +27,53 @@ public final class NativeBreakIterator implements Cloneable {
         this.address = address;
         this.type = type;
         this.charIter = new StringCharacterIterator("");
-        // ---------- Original Method ----------
-        //this.address = address;
-        //this.type = type;
-        //this.charIter = new StringCharacterIterator("");
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:26.942 -0400", hash_original_method = "E8D9FE5FD19A07CF96575F06CB3EDCC6", hash_generated_method = "6153EEEDA0D26A4EC0F0B2F6C7F50EBB")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_420710464 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_420710464 = null; 
         int cloneAddr = cloneImpl(this.address);
         NativeBreakIterator clone = new NativeBreakIterator(cloneAddr, this.type);
         clone.charIter = this.charIter;
         varB4EAC82CA7396A68D541C85D26508E83_420710464 = clone;
-        varB4EAC82CA7396A68D541C85D26508E83_420710464.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_420710464.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_420710464;
-        // ---------- Original Method ----------
-        //int cloneAddr = cloneImpl(this.address);
-        //NativeBreakIterator clone = new NativeBreakIterator(cloneAddr, this.type);
-        //clone.charIter = this.charIter;
-        //return clone;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:26.942 -0400", hash_original_method = "C0D37969DD3FDF8DABA3E38E17F8673F", hash_generated_method = "C33FBE4F1B07124835F0B9832E413011")
     @Override
     public boolean equals(Object object) {
         {
             boolean var3F549205D4C262003697A031F89E5954_350707278 = (object == this);
-        } //End collapsed parenthetic
+        } 
         NativeBreakIterator rhs = (NativeBreakIterator) object;
         boolean var11AE9D85BACBD82FFFD804E90F7E9FC5_1029250574 = (type == rhs.type && charIter.equals(rhs.charIter));
         addTaint(object.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1149984556 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1149984556;
-        // ---------- Original Method ----------
-        //if (object == this) {
-            //return true;
-        //}
-        //if (!(object instanceof NativeBreakIterator)) {
-            //return false;
-        //}
-        //NativeBreakIterator rhs = (NativeBreakIterator) object;
-        //return type == rhs.type && charIter.equals(rhs.charIter);
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -80,8 +82,8 @@ public final class NativeBreakIterator implements Cloneable {
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_653227993 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_653227993;
-        // ---------- Original Method ----------
-        //return 42;
+        
+        
     }
 
     
@@ -91,17 +93,17 @@ public final class NativeBreakIterator implements Cloneable {
         try 
         {
             closeBreakIteratorImpl(this.address);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //closeBreakIteratorImpl(this.address);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -110,8 +112,8 @@ public final class NativeBreakIterator implements Cloneable {
         int varAE8CE53C0E425A9DE4B6B8685A7B4EC5_168475040 = (currentImpl(this.address));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_475514787 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_475514787;
-        // ---------- Original Method ----------
-        //return currentImpl(this.address);
+        
+        
     }
 
     
@@ -120,8 +122,8 @@ public final class NativeBreakIterator implements Cloneable {
         int varFF8095A8131627AFC1D17DEB90DF743E_1458776323 = (firstImpl(this.address));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_339770525 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_339770525;
-        // ---------- Original Method ----------
-        //return firstImpl(this.address);
+        
+        
     }
 
     
@@ -131,23 +133,23 @@ public final class NativeBreakIterator implements Cloneable {
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_210955657 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_210955657;
-        // ---------- Original Method ----------
-        //return followingImpl(this.address, offset);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:26.944 -0400", hash_original_method = "9A8EEEA70A76B239B3603BC6AAF004E0", hash_generated_method = "EADC09B690E8225B5E14421A4607415C")
     public CharacterIterator getText() {
-        CharacterIterator varB4EAC82CA7396A68D541C85D26508E83_1356415759 = null; //Variable for return #1
+        CharacterIterator varB4EAC82CA7396A68D541C85D26508E83_1356415759 = null; 
         int newLoc = currentImpl(this.address);
         this.charIter.setIndex(newLoc);
         varB4EAC82CA7396A68D541C85D26508E83_1356415759 = this.charIter;
-        varB4EAC82CA7396A68D541C85D26508E83_1356415759.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1356415759.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1356415759;
-        // ---------- Original Method ----------
-        //int newLoc = currentImpl(this.address);
-        //this.charIter.setIndex(newLoc);
-        //return this.charIter;
+        
+        
+        
+        
     }
 
     
@@ -156,8 +158,8 @@ public final class NativeBreakIterator implements Cloneable {
         int var86EADFE0A758E62B0D053B5253AFFAC7_571485342 = (lastImpl(this.address));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2142991886 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2142991886;
-        // ---------- Original Method ----------
-        //return lastImpl(this.address);
+        
+        
     }
 
     
@@ -167,8 +169,8 @@ public final class NativeBreakIterator implements Cloneable {
         addTaint(n);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_317210338 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_317210338;
-        // ---------- Original Method ----------
-        //return nextImpl(this.address, n);
+        
+        
     }
 
     
@@ -177,8 +179,8 @@ public final class NativeBreakIterator implements Cloneable {
         int varCA823075C77E55F1D629CC474D5B1FB3_1805550839 = (nextImpl(this.address, 1));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_767434129 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_767434129;
-        // ---------- Original Method ----------
-        //return nextImpl(this.address, 1);
+        
+        
     }
 
     
@@ -187,8 +189,8 @@ public final class NativeBreakIterator implements Cloneable {
         int var04ECAC957A62BD50BF2486A732DDED70_1991347459 = (previousImpl(this.address));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1074403180 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1074403180;
-        // ---------- Original Method ----------
-        //return previousImpl(this.address);
+        
+        
     }
 
     
@@ -200,16 +202,16 @@ public final class NativeBreakIterator implements Cloneable {
             c = newText.next();
             {
                 sb.append(c);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         setText(sb.toString(), newText);
         addTaint(newText.getTaint());
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder();
-        //for (char c = newText.first(); c != CharacterIterator.DONE; c = newText.next()) {
-            //sb.append(c);
-        //}
-        //setText(sb.toString(), newText);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -217,8 +219,8 @@ public final class NativeBreakIterator implements Cloneable {
     public void setText(String newText) {
         setText(newText, new StringCharacterIterator(newText));
         addTaint(newText.getTaint());
-        // ---------- Original Method ----------
-        //setText(newText, new StringCharacterIterator(newText));
+        
+        
     }
 
     
@@ -227,9 +229,9 @@ public final class NativeBreakIterator implements Cloneable {
         this.charIter = it;
         setTextImpl(this.address, s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //this.charIter = it;
-        //setTextImpl(this.address, s);
+        
+        
+        
     }
 
     
@@ -239,8 +241,8 @@ public final class NativeBreakIterator implements Cloneable {
         addTaint(offset);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_568299998 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_568299998;
-        // ---------- Original Method ----------
-        //return isBoundaryImpl(this.address, offset);
+        
+        
     }
 
     
@@ -250,8 +252,8 @@ public final class NativeBreakIterator implements Cloneable {
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145860431 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145860431;
-        // ---------- Original Method ----------
-        //return precedingImpl(this.address, offset);
+        
+        
     }
 
     

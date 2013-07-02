@@ -1,11 +1,11 @@
 package java.util.regex;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -26,77 +26,80 @@ public final class Pattern implements Serializable {
     private  Pattern(String pattern, int flags) throws PatternSyntaxException {
         {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("CANON_EQ flag not supported");
-        } //End block
+        } 
         this.pattern = pattern;
         this.flags = flags;
         compile();
-        // ---------- Original Method ----------
-        //if ((flags & CANON_EQ) != 0) {
-            //throw new UnsupportedOperationException("CANON_EQ flag not supported");
-        //}
-        //this.pattern = pattern;
-        //this.flags = flags;
-        //compile();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.640 -0400", hash_original_method = "82136F98856305B5433C94AE9E660844", hash_generated_method = "A00BE5E8E758F6EFD8F2EAC1A973F751")
     public Matcher matcher(CharSequence input) {
-        Matcher varB4EAC82CA7396A68D541C85D26508E83_1877044237 = null; //Variable for return #1
+        Matcher varB4EAC82CA7396A68D541C85D26508E83_1877044237 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1877044237 = new Matcher(this, input);
         addTaint(input.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1877044237.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1877044237.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1877044237;
-        // ---------- Original Method ----------
-        //return new Matcher(this, input);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.641 -0400", hash_original_method = "F7B5873C63BE8AA500AA3CBEE5803928", hash_generated_method = "75E59E567BABED2A9A9E9B7370A1312B")
     public String[] split(CharSequence input, int limit) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_73129872 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_73129872 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_73129872 = Splitter.split(this, pattern, input.toString(), limit);
         addTaint(input.getTaint());
         addTaint(limit);
-        varB4EAC82CA7396A68D541C85D26508E83_73129872.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_73129872.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_73129872;
-        // ---------- Original Method ----------
-        //return Splitter.split(this, pattern, input.toString(), limit);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.641 -0400", hash_original_method = "B852F916561127A3CF7FAAC0D8165D0A", hash_generated_method = "E049B35FE59A52B5D852EC9F6854DC04")
     public String[] split(CharSequence input) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_488898851 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_488898851 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_488898851 = split(input, 0);
         addTaint(input.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_488898851.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_488898851.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_488898851;
-        // ---------- Original Method ----------
-        //return split(input, 0);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.642 -0400", hash_original_method = "266BA96807DA041E9813A92F169CCF9C", hash_generated_method = "3352ED04AE57CA42A5382433C9524721")
     public String pattern() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1201324713 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1201324713 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1201324713 = pattern;
-        varB4EAC82CA7396A68D541C85D26508E83_1201324713.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1201324713.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1201324713;
-        // ---------- Original Method ----------
-        //return pattern;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.642 -0400", hash_original_method = "78D8A2FB7B521C80E554EF489653C471", hash_generated_method = "45798BDC91D3C3547C03C754288F2876")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_775293449 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_775293449 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_775293449 = pattern;
-        varB4EAC82CA7396A68D541C85D26508E83_775293449.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_775293449.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_775293449;
-        // ---------- Original Method ----------
-        //return pattern;
+        
+        
     }
 
     
@@ -104,50 +107,55 @@ public final class Pattern implements Serializable {
     public int flags() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749339072 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749339072;
-        // ---------- Original Method ----------
-        //return flags;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Pattern compile(String regularExpression, int flags) throws PatternSyntaxException {
         return new Pattern(regularExpression, flags);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Pattern compile(String pattern) {
         return new Pattern(pattern, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.644 -0400", hash_original_method = "7197179B856EBAB7792F85CCE5015D4A", hash_generated_method = "CA9802B8C6120735363A30A4494D9CB8")
     private void compile() throws PatternSyntaxException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("pattern == null");
-        } //End block
+        } 
         String icuPattern = pattern;
         {
             icuPattern = quote(pattern);
-        } //End block
+        } 
         int icuFlags = flags & (CASE_INSENSITIVE | COMMENTS | MULTILINE | DOTALL | UNIX_LINES);
         address = compileImpl(icuPattern, icuFlags);
-        // ---------- Original Method ----------
-        //if (pattern == null) {
-            //throw new NullPointerException("pattern == null");
-        //}
-        //String icuPattern = pattern;
-        //if ((flags & LITERAL) != 0) {
-            //icuPattern = quote(pattern);
-        //}
-        //int icuFlags = flags & (CASE_INSENSITIVE | COMMENTS | MULTILINE | DOTALL | UNIX_LINES);
-        //address = compileImpl(icuPattern, icuFlags);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean matches(String regularExpression, CharSequence input) {
         return new Matcher(new Pattern(regularExpression, 0), input).matches();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String quote(String string) {
         StringBuilder sb = new StringBuilder();
         sb.append("\\Q");
@@ -161,34 +169,36 @@ public final class Pattern implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.646 -0400", hash_original_method = "40BF36D36128D4529051C108E3BC0352", hash_generated_method = "268F081DD9CF1446BB7E8CE24D74FE6E")
     @Override
     protected void finalize() throws Throwable {
         try 
         {
             closeImpl(address);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //closeImpl(address);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.647 -0400", hash_original_method = "53B6DF024185B8C2D6E69EA267F8FA46", hash_generated_method = "A775E837CCF05AA9A662A32272561C79")
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
         compile();
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //s.defaultReadObject();
-        //compile();
+        
+        
+        
     }
 
     

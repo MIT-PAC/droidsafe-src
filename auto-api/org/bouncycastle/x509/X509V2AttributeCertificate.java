@@ -1,11 +1,11 @@
 package org.bouncycastle.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -53,7 +53,7 @@ public class X509V2AttributeCertificate implements X509AttributeCertificate {
         InputStream encIn) throws IOException {
         this(getObject(encIn));
         addTaint(encIn.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -62,7 +62,7 @@ public class X509V2AttributeCertificate implements X509AttributeCertificate {
         byte[]  encoded) throws IOException {
         this(new ByteArrayInputStream(encoded));
         addTaint(encoded[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -74,25 +74,26 @@ public class X509V2AttributeCertificate implements X509AttributeCertificate {
         {
             this.notAfter = cert.getAcinfo().getAttrCertValidityPeriod().getNotAfterTime().getDate();
             this.notBefore = cert.getAcinfo().getAttrCertValidityPeriod().getNotBeforeTime().getDate();
-        } //End block
+        } 
         catch (ParseException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("invalid data structure in certificate!");
-        } //End block
-        // ---------- Original Method ----------
-        //this.cert = cert;
-        //try
-        //{
-            //this.notAfter = cert.getAcinfo().getAttrCertValidityPeriod().getNotAfterTime().getDate();
-            //this.notBefore = cert.getAcinfo().getAttrCertValidityPeriod().getNotBeforeTime().getDate();
-        //}
-        //catch (ParseException e)
-        //{
-            //throw new IOException("invalid data structure in certificate!");
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static AttributeCertificate getObject(InputStream in) throws IOException {
         try
         {
@@ -109,71 +110,76 @@ public class X509V2AttributeCertificate implements X509AttributeCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.590 -0400", hash_original_method = "5FE4A45F92CB5E44CD6499FACBF2EDEC", hash_generated_method = "21B4065F6A95606684AC923FE7D525A6")
     public int getVersion() {
         int var43188AF0ED861B053ED9493C9D018178_1450463849 = (cert.getAcinfo().getVersion().getValue().intValue() + 1);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1505279167 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1505279167;
-        // ---------- Original Method ----------
-        //return cert.getAcinfo().getVersion().getValue().intValue() + 1;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.590 -0400", hash_original_method = "6D79F8D94B9C23855CFDC1454EEDA264", hash_generated_method = "3FE7696328CA9A08D5DF612C33D0F189")
     public BigInteger getSerialNumber() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1338931858 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1338931858 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1338931858 = cert.getAcinfo().getSerialNumber().getValue();
-        varB4EAC82CA7396A68D541C85D26508E83_1338931858.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1338931858.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1338931858;
-        // ---------- Original Method ----------
-        //return cert.getAcinfo().getSerialNumber().getValue();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.591 -0400", hash_original_method = "020DE1897FEFE364249BEA87F131F85A", hash_generated_method = "2B5C4E0DA0926CD2D3F81327A903434B")
     public AttributeCertificateHolder getHolder() {
-        AttributeCertificateHolder varB4EAC82CA7396A68D541C85D26508E83_1611584300 = null; //Variable for return #1
+        AttributeCertificateHolder varB4EAC82CA7396A68D541C85D26508E83_1611584300 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1611584300 = new AttributeCertificateHolder((ASN1Sequence)cert.getAcinfo().getHolder().toASN1Object());
-        varB4EAC82CA7396A68D541C85D26508E83_1611584300.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1611584300.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1611584300;
-        // ---------- Original Method ----------
-        //return new AttributeCertificateHolder((ASN1Sequence)cert.getAcinfo().getHolder().toASN1Object());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.592 -0400", hash_original_method = "BBF141CF5A1E02D76A470DA06D7E0741", hash_generated_method = "E2F7FEB69563AFB9BEB2D15A43434F72")
     public AttributeCertificateIssuer getIssuer() {
-        AttributeCertificateIssuer varB4EAC82CA7396A68D541C85D26508E83_368049127 = null; //Variable for return #1
+        AttributeCertificateIssuer varB4EAC82CA7396A68D541C85D26508E83_368049127 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_368049127 = new AttributeCertificateIssuer(cert.getAcinfo().getIssuer());
-        varB4EAC82CA7396A68D541C85D26508E83_368049127.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_368049127.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_368049127;
-        // ---------- Original Method ----------
-        //return new AttributeCertificateIssuer(cert.getAcinfo().getIssuer());
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.592 -0400", hash_original_method = "CB2A2B3C356F1AD47950BB2253ACA4BD", hash_generated_method = "67E5703500D61F17BF1F8BB90A1A7129")
     public Date getNotBefore() {
-        Date varB4EAC82CA7396A68D541C85D26508E83_1143907297 = null; //Variable for return #1
+        Date varB4EAC82CA7396A68D541C85D26508E83_1143907297 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1143907297 = notBefore;
-        varB4EAC82CA7396A68D541C85D26508E83_1143907297.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1143907297.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1143907297;
-        // ---------- Original Method ----------
-        //return notBefore;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.593 -0400", hash_original_method = "9EADF7E1E76408811693CE379F621727", hash_generated_method = "3C346232A47A5BC1F630DA4217F5050B")
     public Date getNotAfter() {
-        Date varB4EAC82CA7396A68D541C85D26508E83_1253085301 = null; //Variable for return #1
+        Date varB4EAC82CA7396A68D541C85D26508E83_1253085301 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1253085301 = notAfter;
-        varB4EAC82CA7396A68D541C85D26508E83_1253085301.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1253085301.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1253085301;
-        // ---------- Original Method ----------
-        //return notAfter;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.593 -0400", hash_original_method = "9BC89181E6C1277EBE257648E61E1A79", hash_generated_method = "34408CDB0D159172EE8C3F4805B1A8AC")
     public boolean[] getIssuerUniqueID() {
         DERBitString id = cert.getAcinfo().getIssuerUniqueID();
@@ -184,35 +190,37 @@ public class X509V2AttributeCertificate implements X509AttributeCertificate {
                 int i = 0;
                 {
                     boolId[i] = (bytes[i / 8] & (0x80 >>> (i % 8))) != 0;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         boolean[] var503EB2F420079C4024483971CE5EDEA8_427961568 = {getTaintBoolean()};
         return var503EB2F420079C4024483971CE5EDEA8_427961568;
-        // ---------- Original Method ----------
-        //DERBitString    id = cert.getAcinfo().getIssuerUniqueID();
-        //if (id != null)
-        //{
-            //byte[]          bytes = id.getBytes();
-            //boolean[]       boolId = new boolean[bytes.length * 8 - id.getPadBits()];
-            //for (int i = 0; i != boolId.length; i++)
-            //{
-                //boolId[i] = (bytes[i / 8] & (0x80 >>> (i % 8))) != 0;
-            //}
-            //return boolId;
-        //}
-        //return null;
+        
+        
+        
+        
+            
+            
+            
+            
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.594 -0400", hash_original_method = "21EA5C7301B68DB7B0091D4882BC7F7A", hash_generated_method = "3AF3691FECB84D9AA63CDDD8C60E66DF")
     public void checkValidity() throws CertificateExpiredException, CertificateNotYetValidException {
         this.checkValidity(new Date());
-        // ---------- Original Method ----------
-        //this.checkValidity(new Date());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.594 -0400", hash_original_method = "C7ABADDDE42159C03B4715171CE7A75D", hash_generated_method = "F25FB62A2CC4D63D341991794E3B109D")
     public void checkValidity(
         Date    date) throws CertificateExpiredException, CertificateNotYetValidException {
@@ -220,34 +228,35 @@ public class X509V2AttributeCertificate implements X509AttributeCertificate {
             boolean var938055BAB3BA3D99176A733B2B72FD0A_948865427 = (date.after(this.getNotAfter()));
             {
                 if (DroidSafeAndroidRuntime.control) throw new CertificateExpiredException("certificate expired on " + this.getNotAfter());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var9E5357C476E1D269B0818F407DABDB7B_767268586 = (date.before(this.getNotBefore()));
             {
                 if (DroidSafeAndroidRuntime.control) throw new CertificateNotYetValidException("certificate not valid till " + this.getNotBefore());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(date.getTaint());
-        // ---------- Original Method ----------
-        //if (date.after(this.getNotAfter()))
-        //{
-            //throw new CertificateExpiredException("certificate expired on " + this.getNotAfter());
-        //}
-        //if (date.before(this.getNotBefore()))
-        //{
-            //throw new CertificateNotYetValidException("certificate not valid till " + this.getNotBefore());
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.595 -0400", hash_original_method = "12695EBC2BF1A0C9FFF47E032B23EFDD", hash_generated_method = "3952E433F9C905467FDFC797E5AAE730")
     public byte[] getSignature() {
         byte[] varA590625ED1805BA8DD8751D4EA289962_847929739 = (cert.getSignatureValue().getBytes());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_25490241 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_25490241;
-        // ---------- Original Method ----------
-        //return cert.getSignatureValue().getBytes();
+        
+        
     }
 
     
@@ -261,59 +270,61 @@ public class X509V2AttributeCertificate implements X509AttributeCertificate {
             boolean var19446C785F6DBF82763E5AF35CF35767_608447446 = (!cert.getSignatureAlgorithm().equals(cert.getAcinfo().getSignature()));
             {
                 if (DroidSafeAndroidRuntime.control) throw new CertificateException("Signature algorithm in certificate info not same as outer certificate");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         signature = Signature.getInstance(cert.getSignatureAlgorithm().getObjectId().getId(), provider);
         signature.initVerify(key);
         try 
         {
             signature.update(cert.getAcinfo().getEncoded());
-        } //End block
+        } 
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new SignatureException("Exception encoding certificate info object");
-        } //End block
+        } 
         {
             boolean varC2CE6383A33B34726D848A5B5FF1E5AA_43133991 = (!signature.verify(this.getSignature()));
             {
                 if (DroidSafeAndroidRuntime.control) throw new InvalidKeyException("Public key presented not for certificate signature");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(key.getTaint());
         addTaint(provider.getTaint());
-        // ---------- Original Method ----------
-        //Signature   signature = null;
-        //if (!cert.getSignatureAlgorithm().equals(cert.getAcinfo().getSignature()))
-        //{
-            //throw new CertificateException("Signature algorithm in certificate info not same as outer certificate");
-        //}
-        //signature = Signature.getInstance(cert.getSignatureAlgorithm().getObjectId().getId(), provider);
-        //signature.initVerify(key);
-        //try
-        //{
-            //signature.update(cert.getAcinfo().getEncoded());
-        //}
-        //catch (IOException e)
-        //{
-            //throw new SignatureException("Exception encoding certificate info object");
-        //}
-        //if (!signature.verify(this.getSignature()))
-        //{
-            //throw new InvalidKeyException("Public key presented not for certificate signature");
-        //}
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.595 -0400", hash_original_method = "C092EBBC5365A2A25EF301186F9FC908", hash_generated_method = "E1178CE1FA0C6A0FA1FBD380D93D88D0")
     public byte[] getEncoded() throws IOException {
         byte[] var23DA858403631F55A5468B58A8F35F7A_18652245 = (cert.getEncoded());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1036524719 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1036524719;
-        // ---------- Original Method ----------
-        //return cert.getEncoded();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.596 -0400", hash_original_method = "174EB6531B05B4A912F07FC1EA279D8F", hash_generated_method = "CCFCEAD866D018CD56CE4F7031AF16C2")
     public byte[] getExtensionValue(String oid) {
         X509Extensions extensions = cert.getAcinfo().getExtensions();
@@ -323,42 +334,43 @@ public class X509V2AttributeCertificate implements X509AttributeCertificate {
                 try 
                 {
                     byte[] var2207C2F4DEA9B59FFC3AA697A89C9510_1727732972 = (ext.getValue().getEncoded(ASN1Encodable.DER));
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException("error encoding " + e.toString());
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(oid.getTaint());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1756163824 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1756163824;
-        // ---------- Original Method ----------
-        //X509Extensions  extensions = cert.getAcinfo().getExtensions();
-        //if (extensions != null)
-        //{
-            //X509Extension   ext = extensions.getExtension(new DERObjectIdentifier(oid));
-            //if (ext != null)
-            //{
-                //try
-                //{
-                    //return ext.getValue().getEncoded(ASN1Encodable.DER);
-                //}
-                //catch (Exception e)
-                //{
-                    //throw new RuntimeException("error encoding " + e.toString());
-                //}
-            //}
-        //}
-        //return null;
+        
+        
+        
+        
+            
+            
+            
+                
+                
+                    
+                
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.597 -0400", hash_original_method = "EEE6D6FB39ABCE0441C4E0B5FB99D1CC", hash_generated_method = "5DAE12B32925B7327289E6C21A94DA8F")
     private Set getExtensionOIDs(
         boolean critical) {
-        Set varB4EAC82CA7396A68D541C85D26508E83_878641851 = null; //Variable for return #1
-        Set varB4EAC82CA7396A68D541C85D26508E83_220513866 = null; //Variable for return #2
+        Set varB4EAC82CA7396A68D541C85D26508E83_878641851 = null; 
+        Set varB4EAC82CA7396A68D541C85D26508E83_220513866 = null; 
         X509Extensions extensions = cert.getAcinfo().getExtensions();
         {
             Set set = new HashSet();
@@ -372,83 +384,87 @@ public class X509V2AttributeCertificate implements X509AttributeCertificate {
                         boolean var25B4D70B251BC642691C6F1F019085E5_1635841314 = (ext.isCritical() == critical);
                         {
                             set.add(oid.getId());
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_878641851 = set;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_220513866 = null;
         addTaint(critical);
-        Set varA7E53CE21691AB073D9660D615818899_676914863; //Final return value
+        Set varA7E53CE21691AB073D9660D615818899_676914863; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_676914863 = varB4EAC82CA7396A68D541C85D26508E83_878641851;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_676914863 = varB4EAC82CA7396A68D541C85D26508E83_220513866;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_676914863.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_676914863.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_676914863;
-        // ---------- Original Method ----------
-        //X509Extensions  extensions = cert.getAcinfo().getExtensions();
-        //if (extensions != null)
-        //{
-            //Set             set = new HashSet();
-            //Enumeration     e = extensions.oids();
-            //while (e.hasMoreElements())
-            //{
-                //DERObjectIdentifier oid = (DERObjectIdentifier)e.nextElement();
-                //X509Extension       ext = extensions.getExtension(oid);
-                //if (ext.isCritical() == critical)
-                //{
-                    //set.add(oid.getId());
-                //}
-            //}
-            //return set;
-        //}
-        //return null;
+        
+        
+        
+        
+            
+            
+            
+            
+                
+                
+                
+                
+                    
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.597 -0400", hash_original_method = "5436A1880A3E8EACEF801692C5DC1E5D", hash_generated_method = "DB64C859B20E7B64D3204491526A373B")
     public Set getNonCriticalExtensionOIDs() {
-        Set varB4EAC82CA7396A68D541C85D26508E83_685800005 = null; //Variable for return #1
+        Set varB4EAC82CA7396A68D541C85D26508E83_685800005 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_685800005 = getExtensionOIDs(false);
-        varB4EAC82CA7396A68D541C85D26508E83_685800005.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_685800005.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_685800005;
-        // ---------- Original Method ----------
-        //return getExtensionOIDs(false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.598 -0400", hash_original_method = "95A4F309A27080538E4E315B4E15DBCF", hash_generated_method = "DD67AFEF51D22AB8F4847779D3610A5F")
     public Set getCriticalExtensionOIDs() {
-        Set varB4EAC82CA7396A68D541C85D26508E83_1409939656 = null; //Variable for return #1
+        Set varB4EAC82CA7396A68D541C85D26508E83_1409939656 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1409939656 = getExtensionOIDs(true);
-        varB4EAC82CA7396A68D541C85D26508E83_1409939656.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1409939656.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1409939656;
-        // ---------- Original Method ----------
-        //return getExtensionOIDs(true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.598 -0400", hash_original_method = "DC43BBF9B96B5410825BE22446F9B294", hash_generated_method = "8407FC5D004772BBBFF89CFB690F583B")
     public boolean hasUnsupportedCriticalExtension() {
         Set extensions = getCriticalExtensionOIDs();
         boolean var4952DC1337533857B4886D4294445F8B_1947271721 = (extensions != null && !extensions.isEmpty());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_490270537 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_490270537;
-        // ---------- Original Method ----------
-        //Set  extensions = getCriticalExtensionOIDs();
-        //return extensions != null && !extensions.isEmpty();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.599 -0400", hash_original_method = "D9A39E0FBB510DE2D7B256831A61B9D2", hash_generated_method = "B31DB988B4D2944248021BF7CC71FAB6")
     public X509Attribute[] getAttributes() {
-        X509Attribute[] varB4EAC82CA7396A68D541C85D26508E83_333332376 = null; //Variable for return #1
+        X509Attribute[] varB4EAC82CA7396A68D541C85D26508E83_333332376 = null; 
         ASN1Sequence seq = cert.getAcinfo().getAttributes();
         X509Attribute[] attrs = new X509Attribute[seq.size()];
         {
@@ -456,26 +472,27 @@ public class X509V2AttributeCertificate implements X509AttributeCertificate {
             boolean varA93A8909C6B18B3F6367766A0DBBDCF3_144664380 = (i != seq.size());
             {
                 attrs[i] = new X509Attribute((ASN1Encodable)seq.getObjectAt(i));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_333332376 = attrs;
-        varB4EAC82CA7396A68D541C85D26508E83_333332376.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_333332376.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_333332376;
-        // ---------- Original Method ----------
-        //ASN1Sequence    seq = cert.getAcinfo().getAttributes();
-        //X509Attribute[] attrs = new X509Attribute[seq.size()];
-        //for (int i = 0; i != seq.size(); i++)
-        //{
-            //attrs[i] = new X509Attribute((ASN1Encodable)seq.getObjectAt(i));
-        //}
-        //return attrs;
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.601 -0400", hash_original_method = "1BDF84262F391CC05FF0C51BDEDDB7BE", hash_generated_method = "A725A8501A5D9FCBF01075E66A11904D")
     public X509Attribute[] getAttributes(String oid) {
-        X509Attribute[] varB4EAC82CA7396A68D541C85D26508E83_2077534418 = null; //Variable for return #1
-        X509Attribute[] varB4EAC82CA7396A68D541C85D26508E83_58190585 = null; //Variable for return #2
+        X509Attribute[] varB4EAC82CA7396A68D541C85D26508E83_2077534418 = null; 
+        X509Attribute[] varB4EAC82CA7396A68D541C85D26508E83_58190585 = null; 
         ASN1Sequence seq = cert.getAcinfo().getAttributes();
         List list = new ArrayList();
         {
@@ -487,108 +504,110 @@ public class X509V2AttributeCertificate implements X509AttributeCertificate {
                     boolean var2F5F55D4013D954821849A0E6919F562_1879280792 = (attr.getOID().equals(oid));
                     {
                         list.add(attr);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var8D5789A37F50667ED0EB03D7F7D9B0AE_1864917340 = (list.size() == 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2077534418 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_58190585 = (X509Attribute[])list.toArray(new X509Attribute[list.size()]);
         addTaint(oid.getTaint());
-        X509Attribute[] varA7E53CE21691AB073D9660D615818899_373282932; //Final return value
+        X509Attribute[] varA7E53CE21691AB073D9660D615818899_373282932; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_373282932 = varB4EAC82CA7396A68D541C85D26508E83_2077534418;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_373282932 = varB4EAC82CA7396A68D541C85D26508E83_58190585;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_373282932.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_373282932.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_373282932;
-        // ---------- Original Method ----------
-        //ASN1Sequence    seq = cert.getAcinfo().getAttributes();
-        //List            list = new ArrayList();
-        //for (int i = 0; i != seq.size(); i++)
-        //{
-            //X509Attribute attr = new X509Attribute((ASN1Encodable)seq.getObjectAt(i));
-            //if (attr.getOID().equals(oid))
-            //{
-                //list.add(attr);
-            //}
-        //}
-        //if (list.size() == 0)
-        //{
-            //return null;
-        //}
-        //return (X509Attribute[])list.toArray(new X509Attribute[list.size()]);
+        
+        
+        
+        
+        
+            
+            
+            
+                
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.602 -0400", hash_original_method = "60181B32C72761B75B31B405BBC4804E", hash_generated_method = "FDF372395B7CA538CAF67AF504521D1F")
     public boolean equals(
         Object o) {
         {
             boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_1676789321 = (o == this);
-        } //End collapsed parenthetic
+        } 
         X509AttributeCertificate other = (X509AttributeCertificate)o;
         try 
         {
             byte[] b1 = this.getEncoded();
             byte[] b2 = other.getEncoded();
             boolean varF556B23283157278437840C590049CEF_2082246089 = (Arrays.areEqual(b1, b2));
-        } //End block
+        } 
         catch (IOException e)
         { }
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1659365706 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1659365706;
-        // ---------- Original Method ----------
-        //if (o == this)
-        //{
-            //return true;
-        //}
-        //if (!(o instanceof X509AttributeCertificate))
-        //{
-            //return false;
-        //}
-        //X509AttributeCertificate other = (X509AttributeCertificate)o;
-        //try
-        //{
-            //byte[] b1 = this.getEncoded();
-            //byte[] b2 = other.getEncoded();
-            //return Arrays.areEqual(b1, b2);
-        //}
-        //catch (IOException e)
-        //{
-            //return false;
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+            
+            
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.603 -0400", hash_original_method = "C5506CF7B2024CB4E09A9FBA2D111DDF", hash_generated_method = "18917163FF15B694C2BCC1FF97E6876C")
     public int hashCode() {
         try 
         {
             int varF50CBEEE6EAE5D8CC5480F703A4578C5_1500727611 = (Arrays.hashCode(this.getEncoded()));
-        } //End block
+        } 
         catch (IOException e)
         { }
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_162328877 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_162328877;
-        // ---------- Original Method ----------
-        //try
-        //{
-            //return Arrays.hashCode(this.getEncoded());
-        //}
-        //catch (IOException e)
-        //{
-            //return 0;
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     

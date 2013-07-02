@@ -1,11 +1,11 @@
 package org.apache.commons.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.charset.Charset;
 import java.nio.charset.UnsupportedCharsetException;
@@ -15,15 +15,17 @@ public class Charsets {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.211 -0400", hash_original_method = "8FD756146451E8C119EC3E5D748CAC81", hash_generated_method = "8FD756146451E8C119EC3E5D748CAC81")
     public Charsets ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static Charset toCharset(Charset charset) {
         return charset == null ? Charset.defaultCharset() : charset;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Charset toCharset(String charset) {
         return charset == null ? Charset.defaultCharset() : Charset.forName(charset);
     }

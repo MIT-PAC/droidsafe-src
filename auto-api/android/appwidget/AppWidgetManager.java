@@ -1,11 +1,11 @@
 package android.appwidget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ComponentName;
 import android.content.Context;
@@ -33,12 +33,13 @@ public class AppWidgetManager {
     private  AppWidgetManager(Context context) {
         mContext = context;
         mDisplayMetrics = context.getResources().getDisplayMetrics();
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mDisplayMetrics = context.getResources().getDisplayMetrics();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AppWidgetManager getInstance(Context context) {
         synchronized (sManagerCache) {
             if (sService == null) {
@@ -59,126 +60,134 @@ public class AppWidgetManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.945 -0400", hash_original_method = "C145E9C7D3CA673896555FC1E9B6614C", hash_generated_method = "4E75448DCB6A8B9B6C58F7797F6B56DB")
     public void updateAppWidget(int[] appWidgetIds, RemoteViews views) {
         try 
         {
             sService.updateAppWidgetIds(appWidgetIds, views);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("system server dead?", e);
-        } //End block
+        } 
         addTaint(appWidgetIds[0]);
         addTaint(views.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //sService.updateAppWidgetIds(appWidgetIds, views);
-        //}
-        //catch (RemoteException e) {
-            //throw new RuntimeException("system server dead?", e);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.946 -0400", hash_original_method = "779A0F382601F89CF93810A3753ED0EE", hash_generated_method = "259DBC6BC4063451DE57241D3B22A0D0")
     public void updateAppWidget(int appWidgetId, RemoteViews views) {
         updateAppWidget(new int[] { appWidgetId }, views);
         addTaint(appWidgetId);
         addTaint(views.getTaint());
-        // ---------- Original Method ----------
-        //updateAppWidget(new int[] { appWidgetId }, views);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.946 -0400", hash_original_method = "448529D0A668E34D001BA74CD6140A42", hash_generated_method = "425F32A99CB4379DFBFBAF5D37BB7B2C")
     public void partiallyUpdateAppWidget(int[] appWidgetIds, RemoteViews views) {
         try 
         {
             sService.partiallyUpdateAppWidgetIds(appWidgetIds, views);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("system server dead?", e);
-        } //End block
+        } 
         addTaint(appWidgetIds[0]);
         addTaint(views.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //sService.partiallyUpdateAppWidgetIds(appWidgetIds, views);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("system server dead?", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.947 -0400", hash_original_method = "79B313F4E0736B5248A2188C502CE883", hash_generated_method = "4D304565F6AAA45FE45AF7BCCE448F61")
     public void partiallyUpdateAppWidget(int appWidgetId, RemoteViews views) {
         partiallyUpdateAppWidget(new int[] { appWidgetId }, views);
         addTaint(appWidgetId);
         addTaint(views.getTaint());
-        // ---------- Original Method ----------
-        //partiallyUpdateAppWidget(new int[] { appWidgetId }, views);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.948 -0400", hash_original_method = "E171ADDB89C92A829FC0A5D980C9CF1B", hash_generated_method = "BFC7BE365D3EA1C397D214BFBA2499A7")
     public void updateAppWidget(ComponentName provider, RemoteViews views) {
         try 
         {
             sService.updateAppWidgetProvider(provider, views);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("system server dead?", e);
-        } //End block
+        } 
         addTaint(provider.getTaint());
         addTaint(views.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //sService.updateAppWidgetProvider(provider, views);
-        //}
-        //catch (RemoteException e) {
-            //throw new RuntimeException("system server dead?", e);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.948 -0400", hash_original_method = "7C2BF1F364031ACAC78067E68F83C77E", hash_generated_method = "7B8CF863FE4F0ACB21E6ED215A1114A0")
     public void notifyAppWidgetViewDataChanged(int[] appWidgetIds, int viewId) {
         try 
         {
             sService.notifyAppWidgetViewDataChanged(appWidgetIds, viewId);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("system server dead?", e);
-        } //End block
+        } 
         addTaint(appWidgetIds[0]);
         addTaint(viewId);
-        // ---------- Original Method ----------
-        //try {
-            //sService.notifyAppWidgetViewDataChanged(appWidgetIds, viewId);
-        //}
-        //catch (RemoteException e) {
-            //throw new RuntimeException("system server dead?", e);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.948 -0400", hash_original_method = "C96E973D3DD249985D67DC789B41FB05", hash_generated_method = "1E9FE83E9138D7DA0BAF6881F9C3E652")
     public void notifyAppWidgetViewDataChanged(int appWidgetId, int viewId) {
         notifyAppWidgetViewDataChanged(new int[] { appWidgetId }, viewId);
         addTaint(appWidgetId);
         addTaint(viewId);
-        // ---------- Original Method ----------
-        //notifyAppWidgetViewDataChanged(new int[] { appWidgetId }, viewId);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.951 -0400", hash_original_method = "3DBC7B8000EA7185811CAD52683B35D0", hash_generated_method = "E7786716154DE987F66DF2A66A779C67")
     public List<AppWidgetProviderInfo> getInstalledProviders() {
-        List<AppWidgetProviderInfo> varB4EAC82CA7396A68D541C85D26508E83_1981535176 = null; //Variable for return #1
+        List<AppWidgetProviderInfo> varB4EAC82CA7396A68D541C85D26508E83_1981535176 = null; 
         try 
         {
             List<AppWidgetProviderInfo> providers = sService.getInstalledProviders();
@@ -195,24 +204,25 @@ public class AppWidgetManager {
                     TypedValue.complexToDimensionPixelSize(info.minResizeWidth, mDisplayMetrics);
                     info.minResizeHeight =
                     TypedValue.complexToDimensionPixelSize(info.minResizeHeight, mDisplayMetrics);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1981535176 = providers;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("system server dead?", e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1981535176.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1981535176.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1981535176;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.953 -0400", hash_original_method = "57B0FB21059F64A76489662CF361FBD9", hash_generated_method = "EA2F3F6C422753AF782512493E88058A")
     public AppWidgetProviderInfo getAppWidgetInfo(int appWidgetId) {
-        AppWidgetProviderInfo varB4EAC82CA7396A68D541C85D26508E83_1972098304 = null; //Variable for return #1
+        AppWidgetProviderInfo varB4EAC82CA7396A68D541C85D26508E83_1972098304 = null; 
         try 
         {
             AppWidgetProviderInfo info = sService.getAppWidgetInfo(appWidgetId);
@@ -225,40 +235,41 @@ public class AppWidgetManager {
                     TypedValue.complexToDimensionPixelSize(info.minResizeWidth, mDisplayMetrics);
                 info.minResizeHeight =
                     TypedValue.complexToDimensionPixelSize(info.minResizeHeight, mDisplayMetrics);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1972098304 = info;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("system server dead?", e);
-        } //End block
+        } 
         addTaint(appWidgetId);
-        varB4EAC82CA7396A68D541C85D26508E83_1972098304.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1972098304.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1972098304;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.953 -0400", hash_original_method = "1B2C655DAB3EC9AC1A1945226B92611F", hash_generated_method = "807EB520C7684D37E55B92C9CF1CF8C1")
     public void bindAppWidgetId(int appWidgetId, ComponentName provider) {
         try 
         {
             sService.bindAppWidgetId(appWidgetId, provider);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("system server dead?", e);
-        } //End block
+        } 
         addTaint(appWidgetId);
         addTaint(provider.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //sService.bindAppWidgetId(appWidgetId, provider);
-        //}
-        //catch (RemoteException e) {
-            //throw new RuntimeException("system server dead?", e);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -267,21 +278,21 @@ public class AppWidgetManager {
         try 
         {
             sService.bindRemoteViewsService(appWidgetId, intent, connection);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("system server dead?", e);
-        } //End block
+        } 
         addTaint(appWidgetId);
         addTaint(intent.getTaint());
         addTaint(connection.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //sService.bindRemoteViewsService(appWidgetId, intent, connection);
-        //}
-        //catch (RemoteException e) {
-            //throw new RuntimeException("system server dead?", e);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -290,43 +301,44 @@ public class AppWidgetManager {
         try 
         {
             sService.unbindRemoteViewsService(appWidgetId, intent);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("system server dead?", e);
-        } //End block
+        } 
         addTaint(appWidgetId);
         addTaint(intent.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //sService.unbindRemoteViewsService(appWidgetId, intent);
-        //}
-        //catch (RemoteException e) {
-            //throw new RuntimeException("system server dead?", e);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.955 -0400", hash_original_method = "A8A608804967C37EB91DAF26AED4E71B", hash_generated_method = "1614FDD22E2D9FD0F0A5B05866249B0B")
     public int[] getAppWidgetIds(ComponentName provider) {
         try 
         {
             int[] var3E2B13D6168A7D0206465B3AAF79C430_464039626 = (sService.getAppWidgetIds(provider));
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("system server dead?", e);
-        } //End block
+        } 
         addTaint(provider.getTaint());
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_959031888 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_959031888;
-        // ---------- Original Method ----------
-        //try {
-            //return sService.getAppWidgetIds(provider);
-        //}
-        //catch (RemoteException e) {
-            //throw new RuntimeException("system server dead?", e);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -18,7 +18,7 @@ public class CheckBox extends CompoundButton {
     public  CheckBox(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,7 +27,7 @@ public class CheckBox extends CompoundButton {
         this(context, attrs, com.android.internal.R.attr.checkboxStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,32 +37,33 @@ public class CheckBox extends CompoundButton {
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.189 -0400", hash_original_method = "270C42284D505CD6CA182328DD88ED30", hash_generated_method = "4D95B253B5F4B0348F8C4FC100B09387")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onPopulateAccessibilityEvent(event);
         {
             boolean varCEC0E711DC0F7C8E920C6F998438D53D_1929102066 = (isChecked());
             {
                 event.getText().add(mContext.getString(R.string.checkbox_checked));
-            } //End block
+            } 
             {
                 event.getText().add(mContext.getString(R.string.checkbox_not_checked));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //super.onPopulateAccessibilityEvent(event);
-        //if (isChecked()) {
-            //event.getText().add(mContext.getString(R.string.checkbox_checked));
-        //} else {
-            //event.getText().add(mContext.getString(R.string.checkbox_not_checked));
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     

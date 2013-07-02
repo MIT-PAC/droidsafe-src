@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.javax.sip.parser.Lexer;
@@ -20,7 +20,7 @@ public class PPreferredIdentityParser extends AddressParametersParser implements
     public  PPreferredIdentityParser(String preferredIdentity) {
         super(preferredIdentity);
         addTaint(preferredIdentity.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,13 +28,14 @@ public class PPreferredIdentityParser extends AddressParametersParser implements
     protected  PPreferredIdentityParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.160 -0400", hash_original_method = "CA1397CFDA33B56E4743CDCAB79EF328", hash_generated_method = "35375DCA3F9048333B80682E3291D242")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_368224890 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_368224890 = null; 
         dbg_enter("PreferredIdentityParser.parse");
         try 
         {
@@ -45,28 +46,28 @@ public class PPreferredIdentityParser extends AddressParametersParser implements
             PPreferredIdentity p = new PPreferredIdentity();
             super.parse( p );
             varB4EAC82CA7396A68D541C85D26508E83_368224890 = p;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("PreferredIdentityParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_368224890.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_368224890.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_368224890;
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("PreferredIdentityParser.parse");
-        //try {
-            //this.lexer.match(TokenTypes.P_PREFERRED_IDENTITY);
-            //this.lexer.SPorHT();
-            //this.lexer.match(':');
-            //this.lexer.SPorHT();
-            //PPreferredIdentity p = new PPreferredIdentity();
-            //super.parse( p );
-            //return p;
-        //} finally {
-            //if (debug)
-                //dbg_leave("PreferredIdentityParser.parse");
-            //}
+        
+        
+            
+        
+            
+            
+            
+            
+            
+            
+            
+        
+            
+                
+            
     }
 
     

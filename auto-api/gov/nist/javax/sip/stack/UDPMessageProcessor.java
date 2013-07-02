@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.stack;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -49,22 +49,22 @@ public class UDPMessageProcessor extends MessageProcessor {
                 boolean var46FED3B4BFF5116E71958BFD793E43B5_896040852 = (sipStack.getThreadAuditor().isEnabled());
                 {
                     sock.setSoTimeout((int) sipStack.getThreadAuditor().getPingIntervalInMillisecs());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varD1BE6C23219ED1C9F3C841855E84D09F_1184803719 = (ipAddress.getHostAddress().equals(IN_ADDR_ANY)  ||
                  ipAddress.getHostAddress().equals(IN6_ADDR_ANY));
                 {
                     super.setIpAddress( sock.getLocalAddress() );
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (SocketException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException(ex.getMessage());
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -72,11 +72,12 @@ public class UDPMessageProcessor extends MessageProcessor {
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1777791535 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1777791535;
-        // ---------- Original Method ----------
-        //return this.port;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.256 -0400", hash_original_method = "5E3073F0FEC53FA8E5673A840E14FE8B", hash_generated_method = "A0972AE4DD5850B550374F0CE8279628")
     public void start() throws IOException {
         this.isRunning = true;
@@ -85,16 +86,17 @@ public class UDPMessageProcessor extends MessageProcessor {
         thread.setName("UDPMessageProcessorThread");
         thread.setPriority(Thread.MAX_PRIORITY);
         thread.start();
-        // ---------- Original Method ----------
-        //this.isRunning = true;
-        //Thread thread = new Thread(this);
-        //thread.setDaemon(true);
-        //thread.setName("UDPMessageProcessorThread");
-        //thread.setPriority(Thread.MAX_PRIORITY);
-        //thread.start();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.257 -0400", hash_original_method = "5BA484CD985BE2E9792A2B4863AB23E2", hash_generated_method = "9E428EF511DE1006CD71C2E9E29909F8")
     public void run() {
         this.messageChannels = new LinkedList();
@@ -105,9 +107,9 @@ public class UDPMessageProcessor extends MessageProcessor {
                     UDPMessageChannel channel = new UDPMessageChannel(sipStack,
                         this);
                     this.messageChannels.add(channel);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         ThreadAuditor.ThreadHandle threadHandle = sipStack.getThreadAuditor().addCurrentThread();
         {
             try 
@@ -125,9 +127,9 @@ public class UDPMessageProcessor extends MessageProcessor {
                                 boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_1850323104 = (sipStack.isLoggingEnabled());
                                 {
                                     sipStack.getStackLogger().logDebug("Dropping message -- queue length exceeded");
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         {
                             boolean var5FE425B75B6597412D9AB90A0E23C029_499041088 = (this.messageQueue.size() > LOWAT && this .messageQueue.size() < HIGHWAT);
                             {
@@ -138,23 +140,23 @@ public class UDPMessageProcessor extends MessageProcessor {
                                         boolean var6FE8ACC5352DCA3449210F8EDED912B3_1707580942 = (sipStack.isLoggingEnabled());
                                         {
                                             sipStack.getStackLogger().logDebug("Dropping message with probability  " + (1.0 - threshold));
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End block
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     {
                         this.messageQueue.add(packet);
                         this.messageQueue.notify();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     new UDPMessageChannel(sipStack, this, packet);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (SocketTimeoutException ex)
             { }
             catch (SocketException ex)
@@ -163,12 +165,12 @@ public class UDPMessageProcessor extends MessageProcessor {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_819607739 = (sipStack.isLoggingEnabled());
                     getSIPStack().getStackLogger()
                             .logDebug("UDPMessageProcessor: Stopping");
-                } //End collapsed parenthetic
+                } 
                 isRunning = false;
                 {
                     this.messageQueue.notifyAll();
-                } //End block
-            } //End block
+                } 
+            } 
             catch (IOException ex)
             {
                 isRunning = false;
@@ -177,85 +179,88 @@ public class UDPMessageProcessor extends MessageProcessor {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_741252170 = (sipStack.isLoggingEnabled());
                     getSIPStack().getStackLogger()
                             .logDebug("UDPMessageProcessor: Got an IO Exception");
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             catch (Exception ex)
             {
                 {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1154825794 = (sipStack.isLoggingEnabled());
                     getSIPStack().getStackLogger()
                             .logDebug("UDPMessageProcessor: Unexpected Exception - quitting");
-                } //End collapsed parenthetic
+                } 
                 InternalErrorHandler.handleException(ex);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.258 -0400", hash_original_method = "98470A6BD6E1C018549BCC7706D1DEF2", hash_generated_method = "932E19E0176FC6DC67FFB37935BC33B9")
     public void stop() {
         {
             this.isRunning = false;
             this.messageQueue.notifyAll();
             sock.close();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this.messageQueue) {
-            //this.isRunning = false;
-            //this.messageQueue.notifyAll();
-            //sock.close();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.259 -0400", hash_original_method = "026D790579A301E1D49F85E52A57E43F", hash_generated_method = "BA17D630F68A96E79DD85188A6DBFD1D")
     public String getTransport() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1375721119 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1375721119 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1375721119 = "udp";
-        varB4EAC82CA7396A68D541C85D26508E83_1375721119.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1375721119.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1375721119;
-        // ---------- Original Method ----------
-        //return "udp";
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.259 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "6791ABDF8BE113CE37EDA8DAF1054689")
     public SIPTransactionStack getSIPStack() {
-        SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_941541027 = null; //Variable for return #1
+        SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_941541027 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_941541027 = sipStack;
-        varB4EAC82CA7396A68D541C85D26508E83_941541027.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_941541027.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_941541027;
-        // ---------- Original Method ----------
-        //return sipStack;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.260 -0400", hash_original_method = "886709B501C0AFC116858EC5EEF3AF72", hash_generated_method = "AC3C3F17CEF3368EB158A839E63D2FD3")
     public MessageChannel createMessageChannel(HostPort targetHostPort) throws UnknownHostException {
-        MessageChannel varB4EAC82CA7396A68D541C85D26508E83_1710232669 = null; //Variable for return #1
+        MessageChannel varB4EAC82CA7396A68D541C85D26508E83_1710232669 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1710232669 = new UDPMessageChannel(targetHostPort.getInetAddress(),
                 targetHostPort.getPort(), sipStack, this);
         addTaint(targetHostPort.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1710232669.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1710232669.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1710232669;
-        // ---------- Original Method ----------
-        //return new UDPMessageChannel(targetHostPort.getInetAddress(),
-                //targetHostPort.getPort(), sipStack, this);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.260 -0400", hash_original_method = "3D05557B9B28DB0617B949ABC7CCF983", hash_generated_method = "51AB9993C2AD0D8050BDE02FE6366435")
     public MessageChannel createMessageChannel(InetAddress host, int port) throws IOException {
-        MessageChannel varB4EAC82CA7396A68D541C85D26508E83_828506076 = null; //Variable for return #1
+        MessageChannel varB4EAC82CA7396A68D541C85D26508E83_828506076 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_828506076 = new UDPMessageChannel(host, port, sipStack, this);
         addTaint(host.getTaint());
         addTaint(port);
-        varB4EAC82CA7396A68D541C85D26508E83_828506076.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_828506076.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_828506076;
-        // ---------- Original Method ----------
-        //return new UDPMessageChannel(host, port, sipStack, this);
+        
+        
     }
 
     
@@ -263,8 +268,8 @@ public class UDPMessageProcessor extends MessageProcessor {
     public int getDefaultTargetPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1920985104 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1920985104;
-        // ---------- Original Method ----------
-        //return 5060;
+        
+        
     }
 
     
@@ -272,8 +277,8 @@ public class UDPMessageProcessor extends MessageProcessor {
     public boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2006106903 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2006106903;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -281,22 +286,23 @@ public class UDPMessageProcessor extends MessageProcessor {
     public int getMaximumMessageSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2083800168 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2083800168;
-        // ---------- Original Method ----------
-        //return 8*1024;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.261 -0400", hash_original_method = "08919BACEEB275448156EA2ACF7B3D6A", hash_generated_method = "CCFFF397EF28DC152A0DAC7E6C448143")
     public boolean inUse() {
         {
             boolean var47A9601AF273D53C51D4724029DABDA6_194134881 = (messageQueue.size() != 0);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1142270491 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1142270491;
-        // ---------- Original Method ----------
-        //synchronized (messageQueue) {
-            //return messageQueue.size() != 0;
-        //}
+        
+        
+            
+        
     }
 
     

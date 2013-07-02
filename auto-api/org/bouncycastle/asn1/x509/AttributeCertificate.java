@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1EncodableVector;
@@ -33,10 +33,10 @@ public class AttributeCertificate extends ASN1Encodable {
         this.acinfo = acinfo;
         this.signatureAlgorithm = signatureAlgorithm;
         this.signatureValue = signatureValue;
-        // ---------- Original Method ----------
-        //this.acinfo = acinfo;
-        //this.signatureAlgorithm = signatureAlgorithm;
-        //this.signatureValue = signatureValue;
+        
+        
+        
+        
     }
 
     
@@ -48,23 +48,24 @@ public class AttributeCertificate extends ASN1Encodable {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad sequence size: "
                     + seq.size());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.acinfo = AttributeCertificateInfo.getInstance(seq.getObjectAt(0));
         this.signatureAlgorithm = AlgorithmIdentifier.getInstance(seq.getObjectAt(1));
         this.signatureValue = DERBitString.getInstance(seq.getObjectAt(2));
-        // ---------- Original Method ----------
-        //if (seq.size() != 3)
-        //{
-            //throw new IllegalArgumentException("Bad sequence size: "
-                    //+ seq.size());
-        //}
-        //this.acinfo = AttributeCertificateInfo.getInstance(seq.getObjectAt(0));
-        //this.signatureAlgorithm = AlgorithmIdentifier.getInstance(seq.getObjectAt(1));
-        //this.signatureValue = DERBitString.getInstance(seq.getObjectAt(2));
+        
+        
+        
+            
+                    
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AttributeCertificate getInstance(Object obj) {
         if (obj instanceof AttributeCertificate)
         {
@@ -80,53 +81,54 @@ public class AttributeCertificate extends ASN1Encodable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.678 -0400", hash_original_method = "B550BE2A3120BC2739AC35C67600D16E", hash_generated_method = "0CD218E8D21663E8713F3DC7F87D01CC")
     public AttributeCertificateInfo getAcinfo() {
-        AttributeCertificateInfo varB4EAC82CA7396A68D541C85D26508E83_1737130972 = null; //Variable for return #1
+        AttributeCertificateInfo varB4EAC82CA7396A68D541C85D26508E83_1737130972 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1737130972 = acinfo;
-        varB4EAC82CA7396A68D541C85D26508E83_1737130972.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1737130972.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1737130972;
-        // ---------- Original Method ----------
-        //return acinfo;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.678 -0400", hash_original_method = "7848C69970B1A1FD0A4AF2994EC6E56B", hash_generated_method = "43E31F87F80876E8AF3114F620E6FC5B")
     public AlgorithmIdentifier getSignatureAlgorithm() {
-        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1690562427 = null; //Variable for return #1
+        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1690562427 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1690562427 = signatureAlgorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_1690562427.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1690562427.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1690562427;
-        // ---------- Original Method ----------
-        //return signatureAlgorithm;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.679 -0400", hash_original_method = "C8410B5B4D26900579B7A994FFDFFA14", hash_generated_method = "9A8B5484CC3E3298F7E7A6AEE4041951")
     public DERBitString getSignatureValue() {
-        DERBitString varB4EAC82CA7396A68D541C85D26508E83_590532681 = null; //Variable for return #1
+        DERBitString varB4EAC82CA7396A68D541C85D26508E83_590532681 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_590532681 = signatureValue;
-        varB4EAC82CA7396A68D541C85D26508E83_590532681.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_590532681.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_590532681;
-        // ---------- Original Method ----------
-        //return signatureValue;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.679 -0400", hash_original_method = "EEF14432CC16BDD5140583520373DF2D", hash_generated_method = "F59C7C7F869C0D3112565DECF2084C67")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1047713365 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1047713365 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(acinfo);
         v.add(signatureAlgorithm);
         v.add(signatureValue);
         varB4EAC82CA7396A68D541C85D26508E83_1047713365 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_1047713365.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1047713365.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1047713365;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(acinfo);
-        //v.add(signatureAlgorithm);
-        //v.add(signatureValue);
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
+        
     }
 
     

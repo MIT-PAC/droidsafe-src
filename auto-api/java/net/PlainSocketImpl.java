@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import dalvik.system.CloseGuard;
 import java.io.FileDescriptor;
@@ -51,14 +51,14 @@ public class PlainSocketImpl extends SocketImpl {
             boolean varF60ABC869823C7B081E571E9390323D2_1785865194 = (fd.valid());
             {
                 guard.open("close");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(fd.getTaint());
-        // ---------- Original Method ----------
-        //this.fd = fd;
-        //if (fd.valid()) {
-            //guard.open("close");
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -66,15 +66,15 @@ public class PlainSocketImpl extends SocketImpl {
     public  PlainSocketImpl(Proxy proxy) {
         this(new FileDescriptor());
         this.proxy = proxy;
-        // ---------- Original Method ----------
-        //this.proxy = proxy;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.612 -0400", hash_original_method = "9AFAA74CF852E1C405941486398C4C8B", hash_generated_method = "8644C6045E743F187FD836913AA183B7")
     public  PlainSocketImpl() {
         this(new FileDescriptor());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -88,23 +88,24 @@ public class PlainSocketImpl extends SocketImpl {
             boolean varF60ABC869823C7B081E571E9390323D2_1679596751 = (fd.valid());
             {
                 guard.open("close");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(fd.getTaint());
         addTaint(localport);
         addTaint(addr.getTaint());
         addTaint(port);
-        // ---------- Original Method ----------
-        //this.fd = fd;
-        //this.localport = localport;
-        //this.address = addr;
-        //this.port = port;
-        //if (fd.valid()) {
-            //guard.open("close");
-        //}
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.613 -0400", hash_original_method = "7A83CE97AECF8C418E9A73B613D40E3A", hash_generated_method = "F71C242005410FD0C04ACFCF9E706DF6")
     @Override
     protected void accept(SocketImpl newImpl) throws IOException {
@@ -113,8 +114,8 @@ public class PlainSocketImpl extends SocketImpl {
             {
                 ((PlainSocketImpl) newImpl).socksBind();
                 ((PlainSocketImpl) newImpl).socksAccept();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             InetSocketAddress peerAddress = new InetSocketAddress();
@@ -122,29 +123,30 @@ public class PlainSocketImpl extends SocketImpl {
             newImpl.fd.setInt$(clientFd.getInt$());
             newImpl.address = peerAddress.getAddress();
             newImpl.port = peerAddress.getPort();
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new SocketTimeoutException(errnoException);
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsSocketException();
-        } //End block
+        } 
         newImpl.setOption(SocketOptions.SO_TIMEOUT, Integer.valueOf(0));
         newImpl.localport = IoBridge.getSocketLocalPort(newImpl.fd);
         addTaint(newImpl.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.613 -0400", hash_original_method = "933F73796CB698722A986AC13FC9BFF8", hash_generated_method = "729917F591D29978FF12C52ADB8A4E33")
     private boolean usingSocks() {
         boolean var78F22D973B8E4232A59324CAA691F0AB_1884367619 = (proxy != null && proxy.type() == Proxy.Type.SOCKS);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1022355486 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1022355486;
-        // ---------- Original Method ----------
-        //return proxy != null && proxy.type() == Proxy.Type.SOCKS;
+        
+        
     }
 
     
@@ -152,8 +154,8 @@ public class PlainSocketImpl extends SocketImpl {
     public void initLocalPort(int localPort) {
         this.localport = localPort;
         addTaint(localPort);
-        // ---------- Original Method ----------
-        //this.localport = localPort;
+        
+        
     }
 
     
@@ -163,27 +165,29 @@ public class PlainSocketImpl extends SocketImpl {
         this.port = remotePort;
         addTaint(remoteAddress.getTaint());
         addTaint(remotePort);
-        // ---------- Original Method ----------
-        //this.address = remoteAddress;
-        //this.port = remotePort;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.613 -0400", hash_original_method = "000D9AECCAE4DD07D923EE0ADC4BD644", hash_generated_method = "64081A53F414BBBB956607DC5FE04823")
     private void checkNotClosed() throws IOException {
         {
             boolean varE59BFD645E8CFB789878AA5C4C3DD887_635213302 = (!fd.valid());
             {
                 if (DroidSafeAndroidRuntime.control) throw new SocketException("Socket is closed");
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (!fd.valid()) {
-            //throw new SocketException("Socket is closed");
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.614 -0400", hash_original_method = "4AE73BDFE66EC427EEC7327D1955F75B", hash_generated_method = "2F983EAE2CE735CAC4CCE6C0B5B37E3A")
     @Override
     protected synchronized int available() throws IOException {
@@ -191,15 +195,16 @@ public class PlainSocketImpl extends SocketImpl {
         int var9C891A36C646640680B2116257EF3205_925957850 = (IoBridge.available(fd));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1599776959 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1599776959;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //if (shutdownInput) {
-            //return 0;
-        //}
-        //return IoBridge.available(fd);
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.614 -0400", hash_original_method = "9F1E5C79CA0AA6C434B736E50E58B125", hash_generated_method = "0826E3620A6995B297F91D8DA30227E9")
     @Override
     protected void bind(InetAddress address, int port) throws IOException {
@@ -207,56 +212,60 @@ public class PlainSocketImpl extends SocketImpl {
         this.address = address;
         {
             this.localport = port;
-        } //End block
+        } 
         {
             this.localport = IoBridge.getSocketLocalPort(fd);
-        } //End block
+        } 
         addTaint(address.getTaint());
         addTaint(port);
-        // ---------- Original Method ----------
-        //IoBridge.bind(fd, address, port);
-        //this.address = address;
-        //if (port != 0) {
-            //this.localport = port;
-        //} else {
-            //this.localport = IoBridge.getSocketLocalPort(fd);
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.614 -0400", hash_original_method = "0DC75F7C7240FEBBF9FD4E0AED069D80", hash_generated_method = "028C30BDF845EBB6CAF2C41AC41890BC")
     @Override
     protected synchronized void close() throws IOException {
         guard.close();
         IoBridge.closeSocket(fd);
-        // ---------- Original Method ----------
-        //guard.close();
-        //IoBridge.closeSocket(fd);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.615 -0400", hash_original_method = "D48633DD95102A35EC1C995654D6F3E8", hash_generated_method = "E2AAD0075B441D118F9D7CF11BD73182")
     @Override
     protected void connect(String aHost, int aPort) throws IOException {
         connect(InetAddress.getByName(aHost), aPort);
         addTaint(aHost.getTaint());
         addTaint(aPort);
-        // ---------- Original Method ----------
-        //connect(InetAddress.getByName(aHost), aPort);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.615 -0400", hash_original_method = "AC6D281722BA029F05A67510D93D7EBD", hash_generated_method = "EEE033DDA2022CC2ED94333067904E83")
     @Override
     protected void connect(InetAddress anAddr, int aPort) throws IOException {
         connect(anAddr, aPort, 0);
         addTaint(anAddr.getTaint());
         addTaint(aPort);
-        // ---------- Original Method ----------
-        //connect(anAddr, aPort, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.615 -0400", hash_original_method = "CF0E894E8F0E8260CA9CE5027C85CCBC", hash_generated_method = "5A047D0BE84B78E5662E7287F32142FF")
     private void connect(InetAddress anAddr, int aPort, int timeout) throws IOException {
         InetAddress normalAddr;
@@ -267,39 +276,41 @@ public class PlainSocketImpl extends SocketImpl {
             boolean var400AC900BEFEE49F89BB8165B8EB5056_1405199849 = (streaming && usingSocks());
             {
                 socksConnect(anAddr, aPort, 0);
-            } //End block
+            } 
             {
                 IoBridge.connect(fd, normalAddr, aPort, timeout);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         super.address = normalAddr;
         super.port = aPort;
         addTaint(anAddr.getTaint());
         addTaint(aPort);
         addTaint(timeout);
-        // ---------- Original Method ----------
-        //InetAddress normalAddr = anAddr.isAnyLocalAddress() ? InetAddress.getLocalHost() : anAddr;
-        //if (streaming && usingSocks()) {
-            //socksConnect(anAddr, aPort, 0);
-        //} else {
-            //IoBridge.connect(fd, normalAddr, aPort, timeout);
-        //}
-        //super.address = normalAddr;
-        //super.port = aPort;
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.616 -0400", hash_original_method = "E78DD5CBE2B052B946F0A3B4178F9290", hash_generated_method = "5CA4F9F37FE885627E57D0C5486A5E2A")
     @Override
     protected void create(boolean streaming) throws IOException {
         this.streaming = streaming;
         this.fd = IoBridge.socket(streaming);
-        // ---------- Original Method ----------
-        //this.streaming = streaming;
-        //this.fd = IoBridge.socket(streaming);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.616 -0400", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "9FC9D50BDD14E42CF33F4D9E8C015023")
     @Override
     protected void finalize() throws Throwable {
@@ -307,167 +318,176 @@ public class PlainSocketImpl extends SocketImpl {
         {
             {
                 guard.warnIfOpen();
-            } //End block
+            } 
             close();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (guard != null) {
-                //guard.warnIfOpen();
-            //}
-            //close();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.617 -0400", hash_original_method = "2248E71A4E4A8097B0C4AD58D0A7C2D1", hash_generated_method = "DA54F7A333A3A2AAF2E91ECA6A702317")
     @Override
     protected synchronized InputStream getInputStream() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1409774453 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1409774453 = null; 
         checkNotClosed();
         varB4EAC82CA7396A68D541C85D26508E83_1409774453 = new PlainSocketInputStream(this);
-        varB4EAC82CA7396A68D541C85D26508E83_1409774453.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1409774453.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1409774453;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //return new PlainSocketInputStream(this);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.618 -0400", hash_original_method = "2F19BF683B55893709E7099E07E46044", hash_generated_method = "2E5AEDBD99552FF5AE1852A6300F8AFB")
     @Override
     public Object getOption(int option) throws SocketException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_744470674 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_744470674 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_744470674 = IoBridge.getSocketOption(fd, option);
         addTaint(option);
-        varB4EAC82CA7396A68D541C85D26508E83_744470674.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_744470674.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_744470674;
-        // ---------- Original Method ----------
-        //return IoBridge.getSocketOption(fd, option);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.619 -0400", hash_original_method = "A64D8FD75C66D0E7EE62C06614C117E8", hash_generated_method = "59752B96FF5F6ACC69CF3908FA51A2CA")
     @Override
     protected synchronized OutputStream getOutputStream() throws IOException {
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_614306901 = null; //Variable for return #1
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_614306901 = null; 
         checkNotClosed();
         varB4EAC82CA7396A68D541C85D26508E83_614306901 = new PlainSocketOutputStream(this);
-        varB4EAC82CA7396A68D541C85D26508E83_614306901.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_614306901.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_614306901;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //return new PlainSocketOutputStream(this);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.620 -0400", hash_original_method = "92B125776FD98ACD40A53B9D967365FC", hash_generated_method = "885F8EBCDE37CC6C6236ACCA34585A11")
     @Override
     protected void listen(int backlog) throws IOException {
         {
             boolean varC406138A2988833B68553822CD3B489E_897988614 = (usingSocks());
-        } //End collapsed parenthetic
+        } 
         try 
         {
             Libcore.os.listen(fd, backlog);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsSocketException();
-        } //End block
+        } 
         addTaint(backlog);
-        // ---------- Original Method ----------
-        //if (usingSocks()) {
-            //return;
-        //}
-        //try {
-            //Libcore.os.listen(fd, backlog);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsSocketException();
-        //}
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.621 -0400", hash_original_method = "F61FA251C1FD1E3875B2C69F1E04AD45", hash_generated_method = "3D26DE208CF202E2A774CE8E05434E41")
     @Override
     public void setOption(int option, Object value) throws SocketException {
         IoBridge.setSocketOption(fd, option, value);
         addTaint(option);
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //IoBridge.setSocketOption(fd, option, value);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.621 -0400", hash_original_method = "64392856CD4BE8946E6224874D95C0C3", hash_generated_method = "5E6910647E642F270C32C381FA5C5BE6")
     private int socksGetServerPort() {
         InetSocketAddress addr = (InetSocketAddress) proxy.address();
         int var87288984078DF9FAA63BC2E896AA02F3_191328446 = (addr.getPort());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43090232 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43090232;
-        // ---------- Original Method ----------
-        //InetSocketAddress addr = (InetSocketAddress) proxy.address();
-        //return addr.getPort();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.622 -0400", hash_original_method = "FA814969259FF99D2E9F464DE776F517", hash_generated_method = "B3D54A6E2289EC8454D3BFF691CD5DC4")
     private InetAddress socksGetServerAddress() throws UnknownHostException {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_69162253 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_69162253 = null; 
         String proxyName;
         InetSocketAddress addr = (InetSocketAddress) proxy.address();
         proxyName = addr.getHostName();
         {
             proxyName = addr.getAddress().getHostAddress();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_69162253 = InetAddress.getByName(proxyName);
-        varB4EAC82CA7396A68D541C85D26508E83_69162253.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_69162253.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_69162253;
-        // ---------- Original Method ----------
-        //String proxyName;
-        //InetSocketAddress addr = (InetSocketAddress) proxy.address();
-        //proxyName = addr.getHostName();
-        //if (proxyName == null) {
-            //proxyName = addr.getAddress().getHostAddress();
-        //}
-        //return InetAddress.getByName(proxyName);
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.623 -0400", hash_original_method = "679FA19AE8A4DD99CA71F6CF7886F900", hash_generated_method = "F9B03D97E27A95F69BFA852232BE7426")
     private void socksConnect(InetAddress applicationServerAddress, int applicationServerPort, int timeout) throws IOException {
         try 
         {
             IoBridge.connect(fd, socksGetServerAddress(), socksGetServerPort(), timeout);
-        } //End block
+        } 
         catch (Exception e)
         {
             if (DroidSafeAndroidRuntime.control) throw new SocketException("SOCKS connection failed", e);
-        } //End block
+        } 
         socksRequestConnection(applicationServerAddress, applicationServerPort);
         lastConnectedAddress = applicationServerAddress;
         lastConnectedPort = applicationServerPort;
         addTaint(applicationServerAddress.getTaint());
         addTaint(applicationServerPort);
         addTaint(timeout);
-        // ---------- Original Method ----------
-        //try {
-            //IoBridge.connect(fd, socksGetServerAddress(), socksGetServerPort(), timeout);
-        //} catch (Exception e) {
-            //throw new SocketException("SOCKS connection failed", e);
-        //}
-        //socksRequestConnection(applicationServerAddress, applicationServerPort);
-        //lastConnectedAddress = applicationServerAddress;
-        //lastConnectedPort = applicationServerPort;
+        
+        
+            
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.623 -0400", hash_original_method = "0ACA5DB4B67DEB9A055E1E45DC82A265", hash_generated_method = "1BA3FA8D6B998CF595DC6EBBCA2AF96D")
     private void socksRequestConnection(InetAddress applicationServerAddress,
             int applicationServerPort) throws IOException {
@@ -478,20 +498,21 @@ public class PlainSocketImpl extends SocketImpl {
             boolean varB90FD30C634CD2BE843BCFA5E143701E_582730020 = (reply.getCommandOrResult() != Socks4Message.RETURN_SUCCESS);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException(reply.getErrorString(reply.getCommandOrResult()));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(applicationServerAddress.getTaint());
         addTaint(applicationServerPort);
-        // ---------- Original Method ----------
-        //socksSendRequest(Socks4Message.COMMAND_CONNECT,
-                //applicationServerAddress, applicationServerPort);
-        //Socks4Message reply = socksReadReply();
-        //if (reply.getCommandOrResult() != Socks4Message.RETURN_SUCCESS) {
-            //throw new IOException(reply.getErrorString(reply.getCommandOrResult()));
-        //}
+        
+        
+                
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.624 -0400", hash_original_method = "0B2DE5EAED23ABC2AB533476CA60B194", hash_generated_method = "B1F7FBE9F757E49F091B15998671D43C")
     public void socksAccept() throws IOException {
         Socks4Message reply = socksReadReply();
@@ -499,16 +520,17 @@ public class PlainSocketImpl extends SocketImpl {
             boolean varB90FD30C634CD2BE843BCFA5E143701E_122098908 = (reply.getCommandOrResult() != Socks4Message.RETURN_SUCCESS);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException(reply.getErrorString(reply.getCommandOrResult()));
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //Socks4Message reply = socksReadReply();
-        //if (reply.getCommandOrResult() != Socks4Message.RETURN_SUCCESS) {
-            //throw new IOException(reply.getErrorString(reply.getCommandOrResult()));
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.624 -0400", hash_original_method = "69EAD59EF006B3A496038767E7251C79", hash_generated_method = "C60F93F0813BA3D29D92F1EF88F13EDA")
     @Override
     protected void shutdownInput() throws IOException {
@@ -516,54 +538,56 @@ public class PlainSocketImpl extends SocketImpl {
         try 
         {
             Libcore.os.shutdown(fd, SHUT_RD);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsSocketException();
-        } //End block
-        // ---------- Original Method ----------
-        //shutdownInput = true;
-        //try {
-            //Libcore.os.shutdown(fd, SHUT_RD);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsSocketException();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.625 -0400", hash_original_method = "40C13EAB5470D8D1FC8D6DE9CC466037", hash_generated_method = "1D4FE6DE101B7F0AC7CB44B4170473EF")
     @Override
     protected void shutdownOutput() throws IOException {
         try 
         {
             Libcore.os.shutdown(fd, SHUT_WR);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsSocketException();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Libcore.os.shutdown(fd, SHUT_WR);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsSocketException();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.625 -0400", hash_original_method = "D66101C95E8A449E156BD86059B4B4F6", hash_generated_method = "B3B192C558FD943D4C9F8D677C5D38F9")
     private void socksBind() throws IOException {
         try 
         {
             IoBridge.connect(fd, socksGetServerAddress(), socksGetServerPort());
-        } //End block
+        } 
         catch (Exception e)
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Unable to connect to SOCKS server", e);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new SocketException("Invalid SOCKS client");
-        } //End block
+        } 
         socksSendRequest(Socks4Message.COMMAND_BIND, lastConnectedAddress,
                 lastConnectedPort);
         Socks4Message reply = socksReadReply();
@@ -571,25 +595,26 @@ public class PlainSocketImpl extends SocketImpl {
             boolean varB90FD30C634CD2BE843BCFA5E143701E_1961729614 = (reply.getCommandOrResult() != Socks4Message.RETURN_SUCCESS);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException(reply.getErrorString(reply.getCommandOrResult()));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varF52642BBE0E60EBE2FFA3951D938EA0F_1503002505 = (reply.getIP() == 0);
             {
                 address = socksGetServerAddress();
-            } //End block
+            } 
             {
                 byte[] replyBytes = new byte[4];
                 Memory.pokeInt(replyBytes, 0, reply.getIP(), ByteOrder.BIG_ENDIAN);
                 address = InetAddress.getByAddress(replyBytes);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         localport = reply.getPort();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.626 -0400", hash_original_method = "6D223BF7FD79AD9333E45AB0A54AA37D", hash_generated_method = "F4B4D3BFE00C5285097595A88C064781")
     private void socksSendRequest(int command, InetAddress address, int port) throws IOException {
         Socks4Message request = new Socks4Message();
@@ -601,50 +626,52 @@ public class PlainSocketImpl extends SocketImpl {
         addTaint(command);
         addTaint(address.getTaint());
         addTaint(port);
-        // ---------- Original Method ----------
-        //Socks4Message request = new Socks4Message();
-        //request.setCommandOrResult(command);
-        //request.setPort(port);
-        //request.setIP(address.getAddress());
-        //request.setUserId("default");
-        //getOutputStream().write(request.getBytes(), 0, request.getLength());
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.628 -0400", hash_original_method = "8280AE4C517B666A0E69D98449480DDD", hash_generated_method = "A28F44CF4F2418C94A128602F30D4030")
     private Socks4Message socksReadReply() throws IOException {
-        Socks4Message varB4EAC82CA7396A68D541C85D26508E83_1713948975 = null; //Variable for return #1
+        Socks4Message varB4EAC82CA7396A68D541C85D26508E83_1713948975 = null; 
         Socks4Message reply = new Socks4Message();
         int bytesRead = 0;
         {
             int count = getInputStream().read(reply.getBytes(), bytesRead,
                     Socks4Message.REPLY_LENGTH - bytesRead);
             bytesRead += count;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new SocketException("Malformed reply from SOCKS server");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1713948975 = reply;
-        varB4EAC82CA7396A68D541C85D26508E83_1713948975.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1713948975.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1713948975;
-        // ---------- Original Method ----------
-        //Socks4Message reply = new Socks4Message();
-        //int bytesRead = 0;
-        //while (bytesRead < Socks4Message.REPLY_LENGTH) {
-            //int count = getInputStream().read(reply.getBytes(), bytesRead,
-                    //Socks4Message.REPLY_LENGTH - bytesRead);
-            //if (count == -1) {
-                //break;
-            //}
-            //bytesRead += count;
-        //}
-        //if (Socks4Message.REPLY_LENGTH != bytesRead) {
-            //throw new SocketException("Malformed reply from SOCKS server");
-        //}
-        //return reply;
+        
+        
+        
+        
+            
+                    
+            
+                
+            
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.628 -0400", hash_original_method = "A07BD72481E91ED1ACC24877AC862F5F", hash_generated_method = "827F0EE63DD76EB02AAD8DD99601BC38")
     @Override
     protected void connect(SocketAddress remoteAddr, int timeout) throws IOException {
@@ -652,9 +679,9 @@ public class PlainSocketImpl extends SocketImpl {
         connect(inetAddr.getAddress(), inetAddr.getPort(), timeout);
         addTaint(remoteAddr.getTaint());
         addTaint(timeout);
-        // ---------- Original Method ----------
-        //InetSocketAddress inetAddr = (InetSocketAddress) remoteAddr;
-        //connect(inetAddr.getAddress(), inetAddr.getPort(), timeout);
+        
+        
+        
     }
 
     
@@ -663,11 +690,12 @@ public class PlainSocketImpl extends SocketImpl {
     protected boolean supportsUrgentData() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2111654934 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2111654934;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.629 -0400", hash_original_method = "A7E9EDD729A11A6482B0E5B153D87499", hash_generated_method = "0EC76369CE18369AA05188FC0F1E908E")
     @Override
     protected void sendUrgentData(int value) throws IOException {
@@ -675,56 +703,58 @@ public class PlainSocketImpl extends SocketImpl {
         {
             byte[] buffer = new byte[] { (byte) value };
             Libcore.os.sendto(fd, buffer, 0, 1, MSG_OOB, null, 0);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsSocketException();
-        } //End block
+        } 
         addTaint(value);
-        // ---------- Original Method ----------
-        //try {
-            //byte[] buffer = new byte[] { (byte) value };
-            //Libcore.os.sendto(fd, buffer, 0, 1, MSG_OOB, null, 0);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsSocketException();
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.630 -0400", hash_original_method = "8E8D9564EE0B9256E101864557DD238B", hash_generated_method = "70922E9BA5D48886610B026D01281438")
     private int read(byte[] buffer, int offset, int byteCount) throws IOException {
         Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
         int readCount = IoBridge.recvfrom(true, fd, buffer, offset, byteCount, 0, null, false);
         {
             if (DroidSafeAndroidRuntime.control) throw new SocketTimeoutException();
-        } //End block
+        } 
         {
             shutdownInput = true;
-        } //End block
+        } 
         addTaint(buffer[0]);
         addTaint(offset);
         addTaint(byteCount);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521205377 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521205377;
-        // ---------- Original Method ----------
-        //if (byteCount == 0) {
-            //return 0;
-        //}
-        //Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
-        //if (shutdownInput) {
-            //return -1;
-        //}
-        //int readCount = IoBridge.recvfrom(true, fd, buffer, offset, byteCount, 0, null, false);
-        //if (readCount == 0) {
-            //throw new SocketTimeoutException();
-        //}
-        //if (readCount == -1) {
-            //shutdownInput = true;
-        //}
-        //return readCount;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.630 -0400", hash_original_method = "0BAFEFFE1F4A4A29CFC7D3BD2B2D732D", hash_generated_method = "917B8D670A4D0D5670CD044EF0039E14")
     private void write(byte[] buffer, int offset, int byteCount) throws IOException {
         Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
@@ -733,25 +763,25 @@ public class PlainSocketImpl extends SocketImpl {
                 int bytesWritten = IoBridge.sendto(fd, buffer, offset, byteCount, 0, null, 0);
                 byteCount -= bytesWritten;
                 offset += bytesWritten;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             IoBridge.sendto(fd, buffer, offset, byteCount, 0, address, port);
-        } //End block
+        } 
         addTaint(buffer[0]);
         addTaint(offset);
         addTaint(byteCount);
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
-        //if (streaming) {
-            //while (byteCount > 0) {
-                //int bytesWritten = IoBridge.sendto(fd, buffer, offset, byteCount, 0, null, 0);
-                //byteCount -= bytesWritten;
-                //offset += bytesWritten;
-            //}
-        //} else {
-            //IoBridge.sendto(fd, buffer, offset, byteCount, 0, address, port);
-        //}
+        
+        
+        
+            
+                
+                
+                
+            
+        
+            
+        
     }
 
     
@@ -763,8 +793,8 @@ public class PlainSocketImpl extends SocketImpl {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.631 -0400", hash_original_method = "9707F729DB9DE0F069F9B6F666CEAF41", hash_generated_method = "C543451A717B658BC3AAB7E48B419774")
         public  PlainSocketInputStream(PlainSocketImpl socketImpl) {
             this.socketImpl = socketImpl;
-            // ---------- Original Method ----------
-            //this.socketImpl = socketImpl;
+            
+            
         }
 
         
@@ -774,8 +804,8 @@ public class PlainSocketImpl extends SocketImpl {
             int var86CF5DFFEEA217678DC644B06FA451FF_1989109003 = (socketImpl.available());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2004988448 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2004988448;
-            // ---------- Original Method ----------
-            //return socketImpl.available();
+            
+            
         }
 
         
@@ -783,8 +813,8 @@ public class PlainSocketImpl extends SocketImpl {
         @Override
         public void close() throws IOException {
             socketImpl.close();
-            // ---------- Original Method ----------
-            //socketImpl.close();
+            
+            
         }
 
         
@@ -794,8 +824,8 @@ public class PlainSocketImpl extends SocketImpl {
             int var27157AD7296922C5499EDCD13E8A2ED8_1325668564 = (Streams.readSingleByte(this));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_402979048 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_402979048;
-            // ---------- Original Method ----------
-            //return Streams.readSingleByte(this);
+            
+            
         }
 
         
@@ -808,8 +838,8 @@ public class PlainSocketImpl extends SocketImpl {
             addTaint(byteCount);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1291490608 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1291490608;
-            // ---------- Original Method ----------
-            //return socketImpl.read(buffer, offset, byteCount);
+            
+            
         }
 
         
@@ -825,8 +855,8 @@ public class PlainSocketImpl extends SocketImpl {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.632 -0400", hash_original_method = "1A4D21BF9006CF014C027978C481D31A", hash_generated_method = "0BF9D04DB29AB8AC4588EA1E9EC7AFA4")
         public  PlainSocketOutputStream(PlainSocketImpl socketImpl) {
             this.socketImpl = socketImpl;
-            // ---------- Original Method ----------
-            //this.socketImpl = socketImpl;
+            
+            
         }
 
         
@@ -834,8 +864,8 @@ public class PlainSocketImpl extends SocketImpl {
         @Override
         public void close() throws IOException {
             socketImpl.close();
-            // ---------- Original Method ----------
-            //socketImpl.close();
+            
+            
         }
 
         
@@ -844,8 +874,8 @@ public class PlainSocketImpl extends SocketImpl {
         public void write(int oneByte) throws IOException {
             Streams.writeSingleByte(this, oneByte);
             addTaint(oneByte);
-            // ---------- Original Method ----------
-            //Streams.writeSingleByte(this, oneByte);
+            
+            
         }
 
         
@@ -856,8 +886,8 @@ public class PlainSocketImpl extends SocketImpl {
             addTaint(buffer[0]);
             addTaint(offset);
             addTaint(byteCount);
-            // ---------- Original Method ----------
-            //socketImpl.write(buffer, offset, byteCount);
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.R;
 
@@ -13,7 +13,7 @@ public class StateSet {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.705 -0400", hash_original_method = "79AB7B9503F54BBEB1788CC595AD92D4", hash_generated_method = "8101277388431BDA9DE6F2CA5C72C0FA")
     public  StateSet() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,6 +22,7 @@ public class StateSet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean stateSetMatches(int[] stateSpec, int[] stateSet) {
         if (stateSet == null) {
             return (stateSpec == null || isWildCard(stateSpec));
@@ -88,6 +89,7 @@ public class StateSet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int[] trimStateSet(int[] states, int newSize) {
         if (states.length == newSize) {
             return states;
@@ -98,6 +100,7 @@ public class StateSet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String dump(int[] states) {
         StringBuilder sb = new StringBuilder();
         int count = states.length;

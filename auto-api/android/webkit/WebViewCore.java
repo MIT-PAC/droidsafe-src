@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.ActivityManager;
 import android.content.Context;
@@ -163,11 +163,11 @@ public final class WebViewCore {
                 try 
                 {
                     WebViewCore.class.wait();
-                } //End block
+                } 
                 catch (InterruptedException e)
                 { }
-            } //End block
-        } //End block
+            } 
+        } 
         mEventHub = new EventHub();
         mSettings = new WebSettings(mContext, mWebView);
         WebIconDatabase.getInstance();
@@ -183,11 +183,12 @@ public final class WebViewCore {
         Message init = sWebCoreHandler.obtainMessage(
                 WebCoreThread.INITIALIZE, this);
         sWebCoreHandler.sendMessage(init);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.663 -0400", hash_original_method = "A9E80124E796ABAB018EC6550B6A2293", hash_generated_method = "75DB4DF1240284E133DB00C9A96C8EF2")
     private void initialize() {
         mBrowserFrame = new BrowserFrame(mContext, this, mCallbackProxy,
@@ -202,21 +203,21 @@ public final class WebViewCore {
             Message.obtain(mWebView.mPrivateHandler,
                     WebView.WEBCORE_INITIALIZED_MSG_ID,
                     mNativeClass, 0).sendToTarget();
-        } //End block
-        // ---------- Original Method ----------
-        //mBrowserFrame = new BrowserFrame(mContext, this, mCallbackProxy,
-                //mSettings, mJavascriptInterfaces);
-        //mJavascriptInterfaces = null;
-        //mSettings.syncSettingsAndCreateHandler(mBrowserFrame);
-        //WebIconDatabase.getInstance().createHandler();
-        //WebStorage.getInstance().createHandler();
-        //GeolocationPermissions.getInstance().createHandler();
-        //mEventHub.transferMessages();
-        //if (mWebView != null) {
-            //Message.obtain(mWebView.mPrivateHandler,
-                    //WebView.WEBCORE_INITIALIZED_MSG_ID,
-                    //mNativeClass, 0).sendToTarget();
-        //}
+        } 
+        
+        
+                
+        
+        
+        
+        
+        
+        
+        
+            
+                    
+                    
+        
     }
 
     
@@ -224,23 +225,24 @@ public final class WebViewCore {
      void initializeSubwindow() {
         initialize();
         sWebCoreHandler.removeMessages(WebCoreThread.INITIALIZE, this);
-        // ---------- Original Method ----------
-        //initialize();
-        //sWebCoreHandler.removeMessages(WebCoreThread.INITIALIZE, this);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.664 -0400", hash_original_method = "49E2B5EDCA0AFC5006663CDC7A5CE915", hash_generated_method = "6A8CEBCC3EABA4D5928FB085B8BFAB0A")
     synchronized BrowserFrame getBrowserFrame() {
-        BrowserFrame varB4EAC82CA7396A68D541C85D26508E83_1064045607 = null; //Variable for return #1
+        BrowserFrame varB4EAC82CA7396A68D541C85D26508E83_1064045607 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1064045607 = mBrowserFrame;
-        varB4EAC82CA7396A68D541C85D26508E83_1064045607.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1064045607.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1064045607;
-        // ---------- Original Method ----------
-        //return mBrowserFrame;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void pauseTimers() {
         if (BrowserFrame.sJavaBridge == null) {
             throw new IllegalStateException(
@@ -250,6 +252,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resumeTimers() {
         if (BrowserFrame.sJavaBridge == null) {
             throw new IllegalStateException(
@@ -261,15 +264,16 @@ public final class WebViewCore {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.665 -0400", hash_original_method = "FDAB4AC776E0B1BB8BD354A47F4FA51B", hash_generated_method = "C64017BBCDAEB74B47ECD93EC27EFA4D")
     public WebSettings getSettings() {
-        WebSettings varB4EAC82CA7396A68D541C85D26508E83_499245740 = null; //Variable for return #1
+        WebSettings varB4EAC82CA7396A68D541C85D26508E83_499245740 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_499245740 = mSettings;
-        varB4EAC82CA7396A68D541C85D26508E83_499245740.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_499245740.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_499245740;
-        // ---------- Original Method ----------
-        //return mSettings;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isSupportedMediaMimeType(String mimeType) {
         int fileType = MediaFile.getFileTypeForMimeType(mimeType);
         return MediaFile.isAudioFileType(fileType)
@@ -279,6 +283,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.665 -0400", hash_original_method = "1CDEF814C342D7BC6571C7725C279513", hash_generated_method = "5E6173ED51111B8D4133059CBDC19F1C")
     protected void addMessageToConsole(String message, int lineNumber, String sourceID,
             int msgLevel) {
@@ -287,37 +292,40 @@ public final class WebViewCore {
         addTaint(lineNumber);
         addTaint(sourceID.getTaint());
         addTaint(msgLevel);
-        // ---------- Original Method ----------
-        //mCallbackProxy.addMessageToConsole(message, lineNumber, sourceID, msgLevel);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.666 -0400", hash_original_method = "F33520EFD859046BA24511601C4E309A", hash_generated_method = "39BD09E24A50E03D8F706849C0ED9CA8")
     protected void jsAlert(String url, String message) {
         mCallbackProxy.onJsAlert(url, message);
         addTaint(url.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //mCallbackProxy.onJsAlert(url, message);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.666 -0400", hash_original_method = "91FEA98D86997027CFAF7FA478DE35E9", hash_generated_method = "DC4D8A9B8767CE40760777ADF2AC7211")
     private void formDidBlur(int nodePointer) {
         Message.obtain(mWebView.mPrivateHandler, WebView.FORM_DID_BLUR,
                 nodePointer, 0).sendToTarget();
         addTaint(nodePointer);
-        // ---------- Original Method ----------
-        //if (mWebView == null) return;
-        //Message.obtain(mWebView.mPrivateHandler, WebView.FORM_DID_BLUR,
-                //nodePointer, 0).sendToTarget();
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.667 -0400", hash_original_method = "A33837A6F28FD62D569A3757B4A4C37F", hash_generated_method = "41C377855A64D1DC2943DC47D45F6DFA")
     private String openFileChooser(String acceptType) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1275717603 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1521098266 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1275717603 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1521098266 = null; 
         Uri uri = mCallbackProxy.openFileChooser(acceptType);
         {
             String filePath = "";
@@ -332,39 +340,40 @@ public final class WebViewCore {
                         boolean var4B88A4E0CCE1DD5CDA31BC6F14F1DD3B_177750443 = (cursor.moveToNext());
                         {
                             filePath = cursor.getString(0);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 finally 
                 {
                     cursor.close();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 filePath = uri.getLastPathSegment();
-            } //End block
+            } 
             String uriString = uri.toString();
             BrowserFrame.sJavaBridge.storeFilePathForContentUri(filePath, uriString);
             varB4EAC82CA7396A68D541C85D26508E83_1275717603 = uriString;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1521098266 = "";
         addTaint(acceptType.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_18284844; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_18284844; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_18284844 = varB4EAC82CA7396A68D541C85D26508E83_1275717603;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_18284844 = varB4EAC82CA7396A68D541C85D26508E83_1521098266;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_18284844.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_18284844.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_18284844;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.668 -0400", hash_original_method = "EA467B8C1E05E16A088413F72C42053A", hash_generated_method = "7F741963971494E750D42CDECC33F52A")
     protected void exceededDatabaseQuota(String url,
                                          String databaseIdentifier,
@@ -377,25 +386,26 @@ public final class WebViewCore {
             public void updateQuota(long quota) {
                 nativeSetNewStorageLimit(quota);
                 addTaint(quota);
-                // ---------- Original Method ----------
-                //nativeSetNewStorageLimit(quota);
+                
+                
             }
 });
         addTaint(url.getTaint());
         addTaint(databaseIdentifier.getTaint());
         addTaint(currentQuota);
         addTaint(estimatedSize);
-        // ---------- Original Method ----------
-        //mCallbackProxy.onExceededDatabaseQuota(url, databaseIdentifier,
-                //currentQuota, estimatedSize, getUsedQuota(),
-                //new WebStorage.QuotaUpdater() {
-                        //public void updateQuota(long quota) {
-                            //nativeSetNewStorageLimit(quota);
-                        //}
-                //});
+        
+        
+                
+                
+                        
+                            
+                        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.668 -0400", hash_original_method = "6EBBAAC7ADAC02435B9F41E378724466", hash_generated_method = "10AFF8554C0EF47651A777C4F12773B3")
     protected void reachedMaxAppCacheSize(long spaceNeeded) {
         mCallbackProxy.onReachedMaxAppCacheSize(spaceNeeded, getUsedQuota(),
@@ -404,21 +414,22 @@ public final class WebViewCore {
             public void updateQuota(long quota) {
                 nativeSetNewStorageLimit(quota);
                 addTaint(quota);
-                // ---------- Original Method ----------
-                //nativeSetNewStorageLimit(quota);
+                
+                
             }
 });
         addTaint(spaceNeeded);
-        // ---------- Original Method ----------
-        //mCallbackProxy.onReachedMaxAppCacheSize(spaceNeeded, getUsedQuota(),
-                //new WebStorage.QuotaUpdater() {
-                    //public void updateQuota(long quota) {
-                        //nativeSetNewStorageLimit(quota);
-                    //}
-                //});
+        
+        
+                
+                    
+                        
+                    
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.669 -0400", hash_original_method = "08A818E5335EEC34FB33D96D932556A7", hash_generated_method = "B2DE55DCA504CA62806941DC1037C09E")
     protected void populateVisitedLinks() {
         ValueCallback callback = new ValueCallback<String[]>() {
@@ -427,16 +438,17 @@ public final class WebViewCore {
             }
         };
         mCallbackProxy.getVisitedHistory(callback);
-        // ---------- Original Method ----------
-        //ValueCallback callback = new ValueCallback<String[]>() {
-            //public void onReceiveValue(String[] value) {
-                //sendMessage(EventHub.POPULATE_VISITED_LINKS, (Object)value);
-            //}
-        //};
-        //mCallbackProxy.getVisitedHistory(callback);
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.669 -0400", hash_original_method = "AEE66291188900A80051B984C26C1180", hash_generated_method = "55C23700A19D9F247F07A5E6437A09EA")
     protected void geolocationPermissionsShowPrompt(String origin) {
         mCallbackProxy.onGeolocationPermissionsShowPrompt(origin,
@@ -451,37 +463,39 @@ public final class WebViewCore {
                 addTaint(origin.getTaint());
                 addTaint(allow);
                 addTaint(remember);
-                // ---------- Original Method ----------
-                //GeolocationPermissionsData data = new GeolocationPermissionsData();
-                //data.mOrigin = origin;
-                //data.mAllow = allow;
-                //data.mRemember = remember;
-                //sendMessage(EventHub.GEOLOCATION_PERMISSIONS_PROVIDE, data);
+                
+                
+                
+                
+                
+                
             }
 });
         addTaint(origin.getTaint());
-        // ---------- Original Method ----------
-        //mCallbackProxy.onGeolocationPermissionsShowPrompt(origin,
-                //new GeolocationPermissions.Callback() {
-          //public void invoke(String origin, boolean allow, boolean remember) {
-            //GeolocationPermissionsData data = new GeolocationPermissionsData();
-            //data.mOrigin = origin;
-            //data.mAllow = allow;
-            //data.mRemember = remember;
-            //sendMessage(EventHub.GEOLOCATION_PERMISSIONS_PROVIDE, data);
-          //}
-        //});
+        
+        
+                
+          
+            
+            
+            
+            
+            
+          
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.670 -0400", hash_original_method = "4D4892762A483BC675FC4A10EF44F79C", hash_generated_method = "1FB8371D825E9FE10F0BBD945183511A")
     protected void geolocationPermissionsHidePrompt() {
         mCallbackProxy.onGeolocationPermissionsHidePrompt();
-        // ---------- Original Method ----------
-        //mCallbackProxy.onGeolocationPermissionsHidePrompt();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.670 -0400", hash_original_method = "8F6A3F44BB46AEBAF13827E865603705", hash_generated_method = "1A37385A11443EC1447114D870C1BE49")
     protected boolean jsConfirm(String url, String message) {
         boolean var273421F44D5E62654B8C3EBBBD266C64_873541606 = (mCallbackProxy.onJsConfirm(url, message));
@@ -489,25 +503,27 @@ public final class WebViewCore {
         addTaint(message.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_891314567 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_891314567;
-        // ---------- Original Method ----------
-        //return mCallbackProxy.onJsConfirm(url, message);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.671 -0400", hash_original_method = "048D73921D9D83B7AF6D9F369B7BCD1A", hash_generated_method = "F588B7D4F8BC1DD547BA2B3EF83A39D9")
     protected String jsPrompt(String url, String message, String defaultValue) {
-        String varB4EAC82CA7396A68D541C85D26508E83_389611549 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_389611549 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_389611549 = mCallbackProxy.onJsPrompt(url, message, defaultValue);
         addTaint(url.getTaint());
         addTaint(message.getTaint());
         addTaint(defaultValue.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_389611549.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_389611549.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_389611549;
-        // ---------- Original Method ----------
-        //return mCallbackProxy.onJsPrompt(url, message, defaultValue);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.671 -0400", hash_original_method = "E5A121F239BD1583646FB80C30646EA4", hash_generated_method = "9451011C4F7097A1B0325113D6EC0830")
     protected boolean jsUnload(String url, String message) {
         boolean varE6D95A02CA880D9BAAC68CEDF4C7FB76_1368537769 = (mCallbackProxy.onJsBeforeUnload(url, message));
@@ -515,29 +531,32 @@ public final class WebViewCore {
         addTaint(message.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1885472283 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1885472283;
-        // ---------- Original Method ----------
-        //return mCallbackProxy.onJsBeforeUnload(url, message);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.671 -0400", hash_original_method = "3FA5335C13C08E21D5C9AA51DF388549", hash_generated_method = "2C2F681CB0BB8E0AEA9843D9B09D063F")
     protected boolean jsInterrupt() {
         boolean var2160B208215B2B209E59CF0BAA02BAF8_388496231 = (mCallbackProxy.onJsTimeout());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_415925363 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_415925363;
-        // ---------- Original Method ----------
-        //return mCallbackProxy.onJsTimeout();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.671 -0400", hash_original_method = "1C765D2623C528E50D87B3709395270F", hash_generated_method = "A1EADBB5CBDDCBDE6CD56C582AB32869")
     protected void setInstallableWebApp() {
         mCallbackProxy.setInstallableWebApp();
-        // ---------- Original Method ----------
-        //mCallbackProxy.setInstallableWebApp();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.672 -0400", hash_original_method = "CEB9108623A7C7A0C2BFBDCA074B84FE", hash_generated_method = "0BCA3B0936DDCBE1EA155054445380D7")
     protected void enterFullscreenForVideoLayer(int layerId, String url) {
         Message message = Message.obtain(mWebView.mPrivateHandler,
@@ -546,12 +565,12 @@ public final class WebViewCore {
         message.sendToTarget();
         addTaint(layerId);
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //if (mWebView == null) return;
-        //Message message = Message.obtain(mWebView.mPrivateHandler,
-                       //WebView.ENTER_FULLSCREEN_VIDEO, layerId, 0);
-        //message.obj = url;
-        //message.sendToTarget();
+        
+        
+        
+                       
+        
+        
     }
 
     
@@ -805,21 +824,22 @@ public final class WebViewCore {
      void stopLoading() {
         {
             mBrowserFrame.stopLoading();
-        } //End block
-        // ---------- Original Method ----------
-        //if (DebugFlags.WEB_VIEW_CORE) Log.v(LOGTAG, "CORE stopLoading");
-        //if (mBrowserFrame != null) {
-            //mBrowserFrame.stopLoading();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.681 -0400", hash_original_method = "7711F35529A80997737E0C04E1483C72", hash_generated_method = "3405D4CF27FC33344C6F22946E77E7F1")
     public void sendMessage(Message msg) {
         mEventHub.sendMessage(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //mEventHub.sendMessage(msg);
+        
+        
     }
 
     
@@ -827,8 +847,8 @@ public final class WebViewCore {
      void sendMessage(int what) {
         mEventHub.sendMessage(Message.obtain(null, what));
         addTaint(what);
-        // ---------- Original Method ----------
-        //mEventHub.sendMessage(Message.obtain(null, what));
+        
+        
     }
 
     
@@ -837,8 +857,8 @@ public final class WebViewCore {
         mEventHub.sendMessage(Message.obtain(null, what, obj));
         addTaint(what);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //mEventHub.sendMessage(Message.obtain(null, what, obj));
+        
+        
     }
 
     
@@ -847,8 +867,8 @@ public final class WebViewCore {
         mEventHub.sendMessage(Message.obtain(null, what, arg1, 0));
         addTaint(what);
         addTaint(arg1);
-        // ---------- Original Method ----------
-        //mEventHub.sendMessage(Message.obtain(null, what, arg1, 0));
+        
+        
     }
 
     
@@ -858,8 +878,8 @@ public final class WebViewCore {
         addTaint(what);
         addTaint(arg1);
         addTaint(arg2);
-        // ---------- Original Method ----------
-        //mEventHub.sendMessage(Message.obtain(null, what, arg1, arg2));
+        
+        
     }
 
     
@@ -869,8 +889,8 @@ public final class WebViewCore {
         addTaint(what);
         addTaint(arg1);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //mEventHub.sendMessage(Message.obtain(null, what, arg1, 0, obj));
+        
+        
     }
 
     
@@ -881,8 +901,8 @@ public final class WebViewCore {
         addTaint(arg1);
         addTaint(arg2);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //mEventHub.sendMessage(Message.obtain(null, what, arg1, arg2, obj));
+        
+        
     }
 
     
@@ -892,9 +912,9 @@ public final class WebViewCore {
                 null, what, obj));
         addTaint(what);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //mEventHub.sendMessageAtFrontOfQueue(Message.obtain(
-                //null, what, obj));
+        
+        
+                
     }
 
     
@@ -904,8 +924,8 @@ public final class WebViewCore {
         addTaint(what);
         addTaint(obj.getTaint());
         addTaint(delay);
-        // ---------- Original Method ----------
-        //mEventHub.sendMessageDelayed(Message.obtain(null, what, obj), delay);
+        
+        
     }
 
     
@@ -913,16 +933,16 @@ public final class WebViewCore {
      void removeMessages(int what) {
         mEventHub.removeMessages(what);
         addTaint(what);
-        // ---------- Original Method ----------
-        //mEventHub.removeMessages(what);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.683 -0400", hash_original_method = "24F837264907471F101C9345660807F0", hash_generated_method = "4EB910573394E1C2C40C4AC009188F44")
      void removeMessages() {
         mEventHub.removeMessages();
-        // ---------- Original Method ----------
-        //mEventHub.removeMessages();
+        
+        
     }
 
     
@@ -933,59 +953,63 @@ public final class WebViewCore {
             mEventHub.sendMessage(
                     Message.obtain(null, EventHub.DESTROY));
             mEventHub.blockMessages();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mEventHub) {
-            //mEventHub.mDestroying = true;
-            //mEventHub.sendMessage(
-                    //Message.obtain(null, EventHub.DESTROY));
-            //mEventHub.blockMessages();
-        //}
+        } 
+        
+        
+            
+            
+                    
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.684 -0400", hash_original_method = "4EA5384F21A7BECF7B7E7FDA52086518", hash_generated_method = "1E4D118FD4F4F77A4E150A42A9A67640")
     private void clearCache(boolean includeDiskFiles) {
         mBrowserFrame.clearCache();
         {
             CacheManager.removeAllCacheFiles();
-        } //End block
+        } 
         addTaint(includeDiskFiles);
-        // ---------- Original Method ----------
-        //mBrowserFrame.clearCache();
-        //if (includeDiskFiles) {
-            //CacheManager.removeAllCacheFiles();
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.684 -0400", hash_original_method = "AA9F9969DB77E536EC07D516D83D1BCB", hash_generated_method = "C6248571311F421449A1C8B79DB2BE97")
     private void loadUrl(String url, Map<String, String> extraHeaders) {
         mBrowserFrame.loadUrl(url, extraHeaders);
         addTaint(url.getTaint());
         addTaint(extraHeaders.getTaint());
-        // ---------- Original Method ----------
-        //if (DebugFlags.WEB_VIEW_CORE) Log.v(LOGTAG, " CORE loadUrl " + url);
-        //mBrowserFrame.loadUrl(url, extraHeaders);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.685 -0400", hash_original_method = "39AB37F211BE7296755FEECD44D0BABF", hash_generated_method = "12AF5E5A6C409D4CA0EAB97664ABACD6")
     private String saveWebArchive(String filename, boolean autoname) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1379773652 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1379773652 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1379773652 = mBrowserFrame.saveWebArchive(filename, autoname);
         addTaint(filename.getTaint());
         addTaint(autoname);
-        varB4EAC82CA7396A68D541C85D26508E83_1379773652.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1379773652.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1379773652;
-        // ---------- Original Method ----------
-        //if (DebugFlags.WEB_VIEW_CORE) {
-            //Log.v(LOGTAG, " CORE saveWebArchive " + filename + " " + autoname);
-        //}
-        //return mBrowserFrame.saveWebArchive(filename, autoname);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.685 -0400", hash_original_method = "E69496F6C06CA8A97AAA7658612739AE", hash_generated_method = "4A237C68420CD5EF43A370A4A6354899")
     private void key(KeyEvent evt, boolean isDown) {
         int keyCode = evt.getKeyCode();
@@ -995,8 +1019,8 @@ public final class WebViewCore {
                 && evt.getCharacters().length() > 0);
             {
                 unicodeChar = evt.getCharacters().codePointAt(0);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varB7AF9169DA51A962128A0C1EE416A901_1030236274 = (!nativeKey(keyCode, unicodeChar, evt.getRepeatCount(), evt.isShiftPressed(),
                 evt.isAltPressed(), evt.isSymPressed(),
@@ -1009,16 +1033,16 @@ public final class WebViewCore {
                             Message.obtain(mWebView.mPrivateHandler,
                             WebView.UNHANDLED_NAV_KEY, keyCode,
                             0).sendToTarget();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 mCallbackProxy.onUnhandledKeyEvent(evt);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(evt.getTaint());
         addTaint(isDown);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1036,7 +1060,7 @@ public final class WebViewCore {
             ratio = heightWidthRatio;
             ratio = (float) h / w;
             height = Math.round(ratio * width);
-        } //End block
+        } 
         nativeSetSize(width, height, textwrapWidth, scale, w,
                 data.mActualViewHeight > 0 ? data.mActualViewHeight : h,
                 data.mAnchorX, data.mAnchorY, data.mIgnoreHeight);
@@ -1046,15 +1070,16 @@ public final class WebViewCore {
         mCurrentViewScale = scale;
         {
             contentDraw();
-        } //End block
+        } 
         mEventHub.sendMessage(Message.obtain(null,
                 EventHub.UPDATE_CACHE_AND_TEXT_ENTRY));
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.688 -0400", hash_original_method = "D41B819EC6CC76FA3A89B783D40CD109", hash_generated_method = "98103B130F92A077F84ACF310DB2989A")
     private int calculateWindowWidth(int viewWidth) {
         int width = viewWidth;
@@ -1063,47 +1088,49 @@ public final class WebViewCore {
             {
                 {
                     width = WebView.DEFAULT_VIEWPORT_WIDTH;
-                } //End block
+                } 
                 {
                     width = mViewportWidth;
-                } //End block
+                } 
                 {
                     width = Math.round(mWebView.getViewWidth() / mWebView.getDefaultZoomScale());
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(viewWidth);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1052505412 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1052505412;
-        // ---------- Original Method ----------
-        //int width = viewWidth;
-        //if (mSettings.getUseWideViewPort()) {
-            //if (mViewportWidth == -1) {
-                //width = WebView.DEFAULT_VIEWPORT_WIDTH;
-            //} else if (mViewportWidth > 0) {
-                //width = mViewportWidth;
-            //} else {
-                //width = Math.round(mWebView.getViewWidth() / mWebView.getDefaultZoomScale());
-            //}
-        //}
-        //return width;
+        
+        
+        
+            
+                
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.688 -0400", hash_original_method = "261CDCDC6F5C121338E8B1C49F51F57D", hash_generated_method = "7D15B5B8FCE7F9110E7559E6E5BB85FA")
     private void sendUpdateTextEntry() {
         {
             Message.obtain(mWebView.mPrivateHandler,
                     WebView.UPDATE_TEXT_ENTRY_MSG_ID).sendToTarget();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mWebView != null) {
-            //Message.obtain(mWebView.mPrivateHandler,
-                    //WebView.UPDATE_TEXT_ENTRY_MSG_ID).sendToTarget();
-        //}
+        } 
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.695 -0400", hash_original_method = "C9A09E0BE5548FD8F21659E9C96899A7", hash_generated_method = "C836B23EFD2134F98AC9CC29D6429BC6")
     private long getUsedQuota() {
         WebStorage webStorage = WebStorage.getInstance();
@@ -1115,21 +1142,21 @@ public final class WebViewCore {
             WebStorage.Origin website = var947ACF580B48AA109FD95C7D4B051270_1794770993.next();
             {
                 usedQuota += website.getQuota();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1643882935 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1643882935;
-        // ---------- Original Method ----------
-        //WebStorage webStorage = WebStorage.getInstance();
-        //Collection<WebStorage.Origin> origins = webStorage.getOriginsSync();
-        //if (origins == null) {
-            //return 0;
-        //}
-        //long usedQuota = 0;
-        //for (WebStorage.Origin website : origins) {
-            //usedQuota += website.getQuota();
-        //}
-        //return usedQuota;
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1138,48 +1165,50 @@ public final class WebViewCore {
         {
             mSplitPictureIsScheduled = true;
             sendMessage(EventHub.SPLIT_PICTURE_SET, content, 0);
-        } //End block
+        } 
         addTaint(content);
-        // ---------- Original Method ----------
-        //if (!mSplitPictureIsScheduled) {
-            //mSplitPictureIsScheduled = true;
-            //sendMessage(EventHub.SPLIT_PICTURE_SET, content, 0);
-        //}
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.696 -0400", hash_original_method = "16C23BC9F883695D8B710B8E94BB257A", hash_generated_method = "0E2A12269754EBF15098BEAF9F93C0F8")
     private void webkitDrawLayers() {
         mDrawLayersIsScheduled = false;
         {
             removeMessages(EventHub.WEBKIT_DRAW);
             webkitDraw();
-        } //End block
+        } 
         {
             boolean var039A9D9A35DD87BA5CA4F1479333A022_458561065 = (nativeUpdateLayers(mNativeClass, mLastDrawData.mBaseLayer));
             {
                 webkitDraw();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mWebView.mPrivateHandler.removeMessages(WebView.INVAL_RECT_MSG_ID);
         mWebView.mPrivateHandler.sendMessageAtFrontOfQueue(mWebView.mPrivateHandler
                 .obtainMessage(WebView.INVAL_RECT_MSG_ID));
-        // ---------- Original Method ----------
-        //mDrawLayersIsScheduled = false;
-        //if (mDrawIsScheduled || mLastDrawData == null) {
-            //removeMessages(EventHub.WEBKIT_DRAW);
-            //webkitDraw();
-            //return;
-        //}
-        //if (nativeUpdateLayers(mNativeClass, mLastDrawData.mBaseLayer)) {
-            //webkitDraw();
-        //}
-        //mWebView.mPrivateHandler.removeMessages(WebView.INVAL_RECT_MSG_ID);
-        //mWebView.mPrivateHandler.sendMessageAtFrontOfQueue(mWebView.mPrivateHandler
-                //.obtainMessage(WebView.INVAL_RECT_MSG_ID));
+        
+        
+        
+            
+            
+            
+        
+        
+            
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.697 -0400", hash_original_method = "BB9CB43D2CFBC69EF1EE145BAE6ACA31", hash_generated_method = "14B354E66546E597D8415E1DCF804B13")
     private void webkitDraw() {
         mDrawIsScheduled = false;
@@ -1190,30 +1219,31 @@ public final class WebViewCore {
                 boolean var91328F1EF17FDBCA677D8BD72BECFE5F_1289865291 = (mWebView != null && !mWebView.isPaused());
                 {
                     mEventHub.sendMessage(Message.obtain(null, EventHub.WEBKIT_DRAW));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mLastDrawData = draw;
         webkitDraw(draw);
-        // ---------- Original Method ----------
-        //mDrawIsScheduled = false;
-        //DrawData draw = new DrawData();
-        //if (DebugFlags.WEB_VIEW_CORE) Log.v(LOGTAG, "webkitDraw start");
-        //draw.mBaseLayer = nativeRecordContent(draw.mInvalRegion, draw.mContentSize);
-        //if (draw.mBaseLayer == 0) {
-            //if (mWebView != null && !mWebView.isPaused()) {
-                //if (DebugFlags.WEB_VIEW_CORE) Log.v(LOGTAG, "webkitDraw abort, resending draw message");
-                //mEventHub.sendMessage(Message.obtain(null, EventHub.WEBKIT_DRAW));
-            //} else {
-                //if (DebugFlags.WEB_VIEW_CORE) Log.v(LOGTAG, "webkitDraw abort, webview paused");
-            //}
-            //return;
-        //}
-        //mLastDrawData = draw;
-        //webkitDraw(draw);
+        
+        
+        
+        
+        
+        
+            
+                
+                
+            
+                
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.698 -0400", hash_original_method = "9C55B9902567F10864019D1DAA55A307", hash_generated_method = "D84DFBDE76ADBA1B9C2BBF12764F6193")
     private void webkitDraw(DrawData draw) {
         {
@@ -1227,25 +1257,26 @@ public final class WebViewCore {
                                 : (mViewportWidth == 0 ? mCurrentViewWidth
                                         : mViewportWidth),
                         nativeGetContentMinPrefWidth());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 draw.mViewState = mInitialViewState;
                 mInitialViewState = null;
-            } //End block
+            } 
             {
                 draw.mFirstLayoutForNonStandardLoad = true;
                 mFirstLayoutForNonStandardLoad = false;
-            } //End block
+            } 
             Message.obtain(mWebView.mPrivateHandler,
                     WebView.NEW_PICTURE_MSG_ID, draw).sendToTarget();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
-        static void reducePriority() {
+        @DSModeled(DSC.SAFE)
+    static void reducePriority() {
         sWebCoreHandler.removeMessages(WebCoreThread.REDUCE_PRIORITY);
         sWebCoreHandler.removeMessages(WebCoreThread.RESUME_PRIORITY);
         sWebCoreHandler.sendMessageAtFrontOfQueue(sWebCoreHandler
@@ -1253,7 +1284,8 @@ public final class WebViewCore {
     }
 
     
-        static void resumePriority() {
+        @DSModeled(DSC.SAFE)
+    static void resumePriority() {
         sWebCoreHandler.removeMessages(WebCoreThread.REDUCE_PRIORITY);
         sWebCoreHandler.removeMessages(WebCoreThread.RESUME_PRIORITY);
         sWebCoreHandler.sendMessageAtFrontOfQueue(sWebCoreHandler
@@ -1261,14 +1293,16 @@ public final class WebViewCore {
     }
 
     
-        static void sendStaticMessage(int messageType, Object argument) {
+        @DSModeled(DSC.SPEC)
+    static void sendStaticMessage(int messageType, Object argument) {
         if (sWebCoreHandler == null)
             return;
         sWebCoreHandler.sendMessage(sWebCoreHandler.obtainMessage(messageType, argument));
     }
 
     
-        static void pauseUpdatePicture(WebViewCore core) {
+        @DSModeled(DSC.SAFE)
+    static void pauseUpdatePicture(WebViewCore core) {
         if (core != null) {
             if (!core.getSettings().enableSmoothTransition()) return;
             synchronized (core) {
@@ -1283,7 +1317,8 @@ public final class WebViewCore {
     }
 
     
-        static void resumeUpdatePicture(WebViewCore core) {
+        @DSModeled(DSC.SAFE)
+    static void resumeUpdatePicture(WebViewCore core) {
         if (core != null) {
             if (!core.mDrawIsPaused)
                 return;
@@ -1305,6 +1340,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.700 -0400", hash_original_method = "F63E17FBEAA6E278B676F177339490F6", hash_generated_method = "DCDC17A3EBA934FE7BA8C6986123CD05")
     private void restoreState(int index) {
         WebBackForwardList list = mCallbackProxy.getBackForwardList();
@@ -1313,21 +1349,21 @@ public final class WebViewCore {
             int i = 0;
             {
                 list.getItemAtIndex(i).inflate(mBrowserFrame.mNativeFrame);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mBrowserFrame.mLoadInitFromJava = true;
         list.restoreIndex(mBrowserFrame.mNativeFrame, index);
         mBrowserFrame.mLoadInitFromJava = false;
         addTaint(index);
-        // ---------- Original Method ----------
-        //WebBackForwardList list = mCallbackProxy.getBackForwardList();
-        //int size = list.getSize();
-        //for (int i = 0; i < size; i++) {
-            //list.getItemAtIndex(i).inflate(mBrowserFrame.mNativeFrame);
-        //}
-        //mBrowserFrame.mLoadInitFromJava = true;
-        //list.restoreIndex(mBrowserFrame.mNativeFrame, index);
-        //mBrowserFrame.mLoadInitFromJava = false;
+        
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -1336,22 +1372,22 @@ public final class WebViewCore {
         {
             {
                 boolean var9E195732C0279075ECC2E1148458FA76_9387500 = (mCurrentViewWidth == 0 || !mBrowserFrame.firstLayoutDone());
-            } //End collapsed parenthetic
+            } 
             mDrawIsScheduled = true;
             mEventHub.sendMessage(Message.obtain(null, EventHub.WEBKIT_DRAW));
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mWebView == null || mBrowserFrame == null) {
-                //return;
-            //}
-            //if (mCurrentViewWidth == 0 || !mBrowserFrame.firstLayoutDone()) {
-                //return;
-            //}
-            //if (mDrawIsScheduled) return;
-            //mDrawIsScheduled = true;
-            //mEventHub.sendMessage(Message.obtain(null, EventHub.WEBKIT_DRAW));
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+                
+            
+            
+            
+            
+        
     }
 
     
@@ -1360,16 +1396,17 @@ public final class WebViewCore {
         {
             mDrawLayersIsScheduled = true;
             mEventHub.sendMessage(Message.obtain(null, EventHub.WEBKIT_DRAW_LAYERS));
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mDrawLayersIsScheduled) return;
-            //mDrawLayersIsScheduled = true;
-            //mEventHub.sendMessage(Message.obtain(null, EventHub.WEBKIT_DRAW_LAYERS));
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.701 -0400", hash_original_method = "05930F26D8EA77E9D23F45CCAA386679", hash_generated_method = "CBCB20B65768920127275F593ABDF26F")
     private void contentScrollTo(int x, int y, boolean animate,
             boolean onlyIfImeIsShowing) {
@@ -1378,42 +1415,43 @@ public final class WebViewCore {
             {
                 mRestoredX = x;
                 mRestoredY = y;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             Message msg = Message.obtain(mWebView.mPrivateHandler,
                     WebView.SCROLL_TO_MSG_ID, animate ? 1 : 0,
-                    onlyIfImeIsShowing ? 1 : 0, new Point(x, y));//DSFIXME:  CODE0008: Nested ternary operator in expression
+                    onlyIfImeIsShowing ? 1 : 0, new Point(x, y));
             {
                 mEventHub.sendMessage(Message.obtain(null,
                         EventHub.MESSAGE_RELAY, msg));
-            } //End block
+            } 
             {
                 msg.sendToTarget();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(animate);
         addTaint(onlyIfImeIsShowing);
-        // ---------- Original Method ----------
-        //if (!mBrowserFrame.firstLayoutDone()) {
-            //mRestoredX = x;
-            //mRestoredY = y;
-            //return;
-        //}
-        //if (mWebView != null) {
-            //Message msg = Message.obtain(mWebView.mPrivateHandler,
-                    //WebView.SCROLL_TO_MSG_ID, animate ? 1 : 0,
-                    //onlyIfImeIsShowing ? 1 : 0, new Point(x, y));
-            //if (mDrawIsScheduled) {
-                //mEventHub.sendMessage(Message.obtain(null,
-                        //EventHub.MESSAGE_RELAY, msg));
-            //} else {
-                //msg.sendToTarget();
-            //}
-        //}
+        
+        
+            
+            
+            
+        
+        
+            
+                    
+                    
+            
+                
+                        
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.702 -0400", hash_original_method = "064E6EE33123304FAB79F7D8FF122B00", hash_generated_method = "D2A66E2772700B0B57D485704C266B9A")
     private void sendNotifyProgressFinished() {
         sendUpdateTextEntry();
@@ -1424,57 +1462,58 @@ public final class WebViewCore {
                     WebViewWorker.MSG_CACHE_TRANSACTION_TICKER);
                 WebViewWorker.getHandler().sendEmptyMessage(
                     WebViewWorker.MSG_CACHE_TRANSACTION_TICKER);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         contentDraw();
-        // ---------- Original Method ----------
-        //sendUpdateTextEntry();
-        //if (!JniUtil.useChromiumHttpStack()) {
-            //WebViewWorker.getHandler().removeMessages(
-                    //WebViewWorker.MSG_CACHE_TRANSACTION_TICKER);
-            //WebViewWorker.getHandler().sendEmptyMessage(
-                    //WebViewWorker.MSG_CACHE_TRANSACTION_TICKER);
-        //}
-        //contentDraw();
+        
+        
+        
+            
+                    
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.702 -0400", hash_original_method = "05A7A351E8C6AEA76F720C36B865E14E", hash_generated_method = "765302561E864E771B3A805F53A86B58")
     private void sendViewInvalidate(int left, int top, int right, int bottom) {
         {
             Message.obtain(mWebView.mPrivateHandler,
                            WebView.INVAL_RECT_MSG_ID,
                            new Rect(left, top, right, bottom)).sendToTarget();
-        } //End block
+        } 
         addTaint(left);
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        //if (mWebView != null) {
-            //Message.obtain(mWebView.mPrivateHandler,
-                           //WebView.INVAL_RECT_MSG_ID,
-                           //new Rect(left, top, right, bottom)).sendToTarget();
-        //}
+        
+        
+            
+                           
+                           
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.702 -0400", hash_original_method = "BF48D6F46DE128F968473CE7B0F81CDD", hash_generated_method = "3BC68C12777C31B302D2AC712929E186")
      void signalRepaintDone() {
         mRepaintScheduled = false;
-        // ---------- Original Method ----------
-        //mRepaintScheduled = false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.703 -0400", hash_original_method = "D61E1D458239E8CEF9B36F4B5C04FED9", hash_generated_method = "EE15D5909492C94311936DD06B44161E")
      WebView getWebView() {
-        WebView varB4EAC82CA7396A68D541C85D26508E83_729969469 = null; //Variable for return #1
+        WebView varB4EAC82CA7396A68D541C85D26508E83_729969469 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_729969469 = mWebView;
-        varB4EAC82CA7396A68D541C85D26508E83_729969469.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_729969469.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_729969469;
-        // ---------- Original Method ----------
-        //return mWebView;
+        
+        
     }
 
     
@@ -1483,6 +1522,7 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.703 -0400", hash_original_method = "7A9CDB44172FF868DD9DADCEEAD05D82", hash_generated_method = "0CD953CF8B3030301131E70AA43F1E5C")
     private void didFirstLayout(boolean standardLoad) {
         mBrowserFrame.didFirstLayout();
@@ -1490,47 +1530,49 @@ public final class WebViewCore {
         setupViewport(updateViewState);
         {
             mWebView.mViewManager.postReadyToDrawAll();
-        } //End block
+        } 
         {
             boolean varF62A4D41575FA673A4E6CD9E1EF24EDD_521072046 = (WebView.USE_WEBKIT_RINGS || getSettings().supportTouchOnly());
             {
                 mWebView.mPrivateHandler.sendEmptyMessage(
                     WebView.SET_TOUCH_HIGHLIGHT_RECTS);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mRestoredX = mRestoredY = 0;
         mIsRestored = false;
         mRestoredScale = mRestoredTextWrapScale = 0;
         addTaint(standardLoad);
-        // ---------- Original Method ----------
-        //if (DebugFlags.WEB_VIEW_CORE) {
-            //Log.v(LOGTAG, "didFirstLayout standardLoad =" + standardLoad);
-        //}
-        //mBrowserFrame.didFirstLayout();
-        //if (mWebView == null) return;
-        //boolean updateViewState = standardLoad || mIsRestored;
-        //setupViewport(updateViewState);
-        //if (!updateViewState) {
-            //mWebView.mViewManager.postReadyToDrawAll();
-        //}
-        //if (WebView.USE_WEBKIT_RINGS || getSettings().supportTouchOnly()) {
-            //mWebView.mPrivateHandler.sendEmptyMessage(
-                    //WebView.SET_TOUCH_HIGHLIGHT_RECTS);
-        //}
-        //mRestoredX = mRestoredY = 0;
-        //mIsRestored = false;
-        //mRestoredScale = mRestoredTextWrapScale = 0;
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.704 -0400", hash_original_method = "A32352A77D85042345402A4E856F6371", hash_generated_method = "1068B405466FDB182CCA070760A4D34B")
     private void updateViewport() {
         setupViewport(true);
-        // ---------- Original Method ----------
-        //setupViewport(true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.707 -0400", hash_original_method = "D5D0316515645CA1EE6304290B6F23F6", hash_generated_method = "B9A58816FF2E4CCE3337718AED475F02")
     private void setupViewport(boolean updateViewState) {
         setViewportSettingsFromNative();
@@ -1538,12 +1580,12 @@ public final class WebViewCore {
             {
                 mViewportInitialScale = Math.max(mViewportInitialScale,
                         mViewportMinimumScale);
-            } //End block
+            } 
             {
                 mViewportInitialScale = Math.min(mViewportInitialScale,
                         mViewportMaximumScale);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean var2C40C72ED9495C662481F10E1A7BC080_356292012 = (mSettings.forceUserScalable());
             {
@@ -1552,71 +1594,71 @@ public final class WebViewCore {
                     {
                         mViewportMinimumScale = Math.min(mViewportMinimumScale,
                             mViewportInitialScale / 2);
-                    } //End block
+                    } 
                     {
                         mViewportMaximumScale = Math.max(mViewportMaximumScale,
                             mViewportInitialScale * 2);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     {
                         mViewportMinimumScale = Math.min(mViewportMinimumScale, 50);
-                    } //End block
+                    } 
                     {
                         mViewportMaximumScale = Math.max(mViewportMaximumScale, 200);
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         float adjust = 1.0f;
         {
             {
                 boolean var095106DB1305D8C0DF73B5AC45213B00_414677661 = (mWebView != null && (int)(mWebView.getDefaultZoomScale() * 100) != 100);
                 {
                     adjust = mWebView.getDefaultZoomScale();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             adjust = (float) mContext.getResources().getDisplayMetrics().densityDpi
                     / mViewportDensityDpi;
-        } //End block
+        } 
         {
             boolean varAA9F420BC13982494ED8D1FAB46D4380_173106603 = (adjust != mWebView.getDefaultZoomScale());
             {
                 Message.obtain(mWebView.mPrivateHandler,
                     WebView.UPDATE_ZOOM_DENSITY, adjust).sendToTarget();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int defaultScale = (int) (adjust * 100);
         {
             mViewportInitialScale *= adjust;
-        } //End block
+        } 
         {
             mViewportMinimumScale *= adjust;
-        } //End block
+        } 
         {
             mViewportMaximumScale *= adjust;
-        } //End block
+        } 
         {
             {
                 mViewportInitialScale = defaultScale;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mViewportInitialScale = defaultScale;
             mViewportMinimumScale = defaultScale;
             mViewportMaximumScale = defaultScale;
-        } //End block
+        } 
         {
             mViewportMinimumScale = mViewportInitialScale;
-        } //End block
+        } 
         {
             mViewportMaximumScale = mViewportInitialScale;
-        } //End block
+        } 
         {
             mViewportWidth = 0;
-        } //End block
+        } 
         {
             mFirstLayoutForNonStandardLoad = true;
             ViewState viewState = new ViewState();
@@ -1628,16 +1670,16 @@ public final class WebViewCore {
             viewState.mShouldStartScrolledRight = false;
             Message.obtain(mWebView.mPrivateHandler,
                     WebView.UPDATE_ZOOM_RANGE, viewState).sendToTarget();
-        } //End block
+        } 
         int webViewWidth;
         int viewportWidth = mCurrentViewWidth;
         {
             webViewWidth = mWebView.getViewWidth();
             viewportWidth = (int) (webViewWidth / adjust);
-        } //End block
+        } 
         {
             webViewWidth = Math.round(viewportWidth * mCurrentViewScale);
-        } //End block
+        } 
         mInitialViewState = new ViewState();
         mInitialViewState.mMinScale = mViewportMinimumScale / 100.0f;
         mInitialViewState.mMaxScale = mViewportMaximumScale / 100.0f;
@@ -1654,37 +1696,37 @@ public final class WebViewCore {
             mInitialViewState.mViewScale = mRestoredScale;
             {
                 mInitialViewState.mTextWrapScale = mRestoredTextWrapScale;
-            } //End block
+            } 
             {
                 mInitialViewState.mTextWrapScale = mInitialViewState.mViewScale;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mInitialViewState.mViewScale = mInitialViewState.mTextWrapScale =
                         mViewportInitialScale / 100.0f;
-            } //End block
+            } 
             {
                 boolean varDEB9F10F1388468BDE78E7CEBFF00566_801390388 = (mViewportWidth > 0 && mViewportWidth < webViewWidth &&
                 !getSettings().getUseFixedViewport());
                 {
                     mInitialViewState.mViewScale = mInitialViewState.mTextWrapScale =
                         (float) webViewWidth / mViewportWidth;
-                } //End block
+                } 
                 {
                     mInitialViewState.mTextWrapScale = adjust;
                     {
                         boolean varA6856BD93D50A87AC1D99B72D3E49073_462521014 = (mSettings.getUseWideViewPort());
                         {
                             mInitialViewState.mViewScale = 0;
-                        } //End block
+                        } 
                         {
                             mInitialViewState.mViewScale = adjust;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             mWebView.mLastHeightSent = 0;
             WebView.ViewSizeData data = new WebView.ViewSizeData();
@@ -1697,11 +1739,11 @@ public final class WebViewCore {
             mEventHub.removeMessages(EventHub.VIEW_SIZE_CHANGED);
             mEventHub.sendMessageAtFrontOfQueue(Message.obtain(null,
                     EventHub.VIEW_SIZE_CHANGED, data));
-        } //End block
+        } 
         {
             {
                 mWebView.mLastWidthSent = 0;
-            } //End block
+            } 
             {
                 WebView.ViewSizeData data = new WebView.ViewSizeData();
                 float tentativeScale = mInitialViewState.mViewScale;
@@ -1714,19 +1756,19 @@ public final class WebViewCore {
                         boolean var702626CF71171EB0C8490DD1835B6456_1010008512 = (!mSettings.getLoadWithOverviewMode());
                         {
                             data.mScale = Math.max(data.mScale, tentativeScale);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         boolean var4472321233F900C5CC1F3910B5372E99_715678035 = (mSettings.isNarrowColumnLayout());
                         {
                             mInitialViewState.mTextWrapScale =
                                 mWebView.getReadingLevelScale();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     data.mScale = tentativeScale;
-                } //End block
+                } 
                 data.mWidth = Math.round(webViewWidth / data.mScale);
                 data.mHeight = mCurrentViewHeight == 0 ?
                         Math.round(mWebView.getViewHeight() / data.mScale)
@@ -1737,14 +1779,15 @@ public final class WebViewCore {
                 data.mAnchorX = data.mAnchorY = 0;
                 mEventHub.removeMessages(EventHub.VIEW_SIZE_CHANGED);
                 viewSizeChanged(data);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(updateViewState);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.708 -0400", hash_original_method = "6F3A82A96A28D1D6CB79A2B2419B2F76", hash_generated_method = "6106458B76BB5D28F97A0582B087BD7D")
     private void restoreScale(float scale, float textWrapScale) {
         {
@@ -1756,38 +1799,40 @@ public final class WebViewCore {
                     boolean var4BFA491A55D7EADB3D22EDD12F06D767_1674011047 = (mSettings.getUseWideViewPort());
                     {
                         mRestoredTextWrapScale = textWrapScale;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mBrowserFrame.firstLayoutDone() == false) {
-            //mIsRestored = true;
-            //mRestoredScale = scale;
-            //if (mSettings.getUseWideViewPort()) {
-                //mRestoredTextWrapScale = textWrapScale;
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.709 -0400", hash_original_method = "F9FDE50E9F3FDE0981BF3551CCB9A219", hash_generated_method = "88A9E365379F793A0A12045678209B2E")
     private void needTouchEvents(boolean need) {
         {
             Message.obtain(mWebView.mPrivateHandler,
                     WebView.WEBCORE_NEED_TOUCH_EVENTS, need ? 1 : 0, 0)
                     .sendToTarget();
-        } //End block
+        } 
         addTaint(need);
-        // ---------- Original Method ----------
-        //if (mWebView != null) {
-            //Message.obtain(mWebView.mPrivateHandler,
-                    //WebView.WEBCORE_NEED_TOUCH_EVENTS, need ? 1 : 0, 0)
-                    //.sendToTarget();
-        //}
+        
+        
+            
+                    
+                    
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.709 -0400", hash_original_method = "117690D9297C0397B62CA4A9AAF175F7", hash_generated_method = "6CE8807213CABB2CBBE3A70BD433B8BC")
     private void updateTextfield(int ptr, boolean changeToPassword,
             String text, int textGeneration) {
@@ -1797,22 +1842,23 @@ public final class WebViewCore {
                     textGeneration, text);
             msg.getData().putBoolean("password", changeToPassword);
             msg.sendToTarget();
-        } //End block
+        } 
         addTaint(ptr);
         addTaint(changeToPassword);
         addTaint(text.getTaint());
         addTaint(textGeneration);
-        // ---------- Original Method ----------
-        //if (mWebView != null) {
-            //Message msg = Message.obtain(mWebView.mPrivateHandler,
-                    //WebView.UPDATE_TEXTFIELD_TEXT_MSG_ID, ptr,
-                    //textGeneration, text);
-            //msg.getData().putBoolean("password", changeToPassword);
-            //msg.sendToTarget();
-        //}
+        
+        
+            
+                    
+                    
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.710 -0400", hash_original_method = "4C7D3AD0862D2CA84FE64B9856BAA28B", hash_generated_method = "DD9B3C063DDD2F0B02BDB608A414B726")
     private void updateTextSelection(int pointer, int start, int end,
             int textGeneration) {
@@ -1820,39 +1866,41 @@ public final class WebViewCore {
             Message.obtain(mWebView.mPrivateHandler,
                 WebView.UPDATE_TEXT_SELECTION_MSG_ID, pointer, textGeneration,
                 new TextSelectionData(start, end)).sendToTarget();
-        } //End block
+        } 
         addTaint(pointer);
         addTaint(start);
         addTaint(end);
         addTaint(textGeneration);
-        // ---------- Original Method ----------
-        //if (mWebView != null) {
-            //Message.obtain(mWebView.mPrivateHandler,
-                //WebView.UPDATE_TEXT_SELECTION_MSG_ID, pointer, textGeneration,
-                //new TextSelectionData(start, end)).sendToTarget();
-        //}
+        
+        
+            
+                
+                
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.710 -0400", hash_original_method = "C4BB5E4EA56AD7707D8515F7F4BEC247", hash_generated_method = "6D3322017AAF9488D423867036C5988F")
     private void clearTextEntry() {
         Message.obtain(mWebView.mPrivateHandler,
                 WebView.CLEAR_TEXT_ENTRY).sendToTarget();
-        // ---------- Original Method ----------
-        //if (mWebView == null) return;
-        //Message.obtain(mWebView.mPrivateHandler,
-                //WebView.CLEAR_TEXT_ENTRY).sendToTarget();
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.711 -0400", hash_original_method = "862481A256A95A2E1B26E19ED8AB682F", hash_generated_method = "8FA3E94989B7908AC2EFBFFCF957D5BE")
     private void sendFindAgain() {
         Message.obtain(mWebView.mPrivateHandler,
                 WebView.FIND_AGAIN).sendToTarget();
-        // ---------- Original Method ----------
-        //if (mWebView == null) return;
-        //Message.obtain(mWebView.mPrivateHandler,
-                //WebView.FIND_AGAIN).sendToTarget();
+        
+        
+        
+                
     }
 
     
@@ -1889,38 +1937,41 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.712 -0400", hash_original_method = "AECCF0A7E8C40F57D58CA373D809DB0E", hash_generated_method = "FAEB65CFBFAA197C3CE71DF0DECC8282")
     private void requestListBox(String[] array, int[] enabledArray,
             int[] selectedArray) {
         {
             mWebView.requestListBox(array, enabledArray, selectedArray);
-        } //End block
+        } 
         addTaint(array[0].getTaint());
         addTaint(enabledArray[0]);
         addTaint(selectedArray[0]);
-        // ---------- Original Method ----------
-        //if (mWebView != null) {
-            //mWebView.requestListBox(array, enabledArray, selectedArray);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.713 -0400", hash_original_method = "9DBC344B8D87A71D6BD3CB15F0701F64", hash_generated_method = "5FEF4FCFC0792B9C49EBD77C8B4E57E6")
     private void requestListBox(String[] array, int[] enabledArray,
             int selection) {
         {
             mWebView.requestListBox(array, enabledArray, selection);
-        } //End block
+        } 
         addTaint(array[0].getTaint());
         addTaint(enabledArray[0]);
         addTaint(selection);
-        // ---------- Original Method ----------
-        //if (mWebView != null) {
-            //mWebView.requestListBox(array, enabledArray, selection);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.713 -0400", hash_original_method = "2EB26549510C49A5C07788F5DA665EE0", hash_generated_method = "FA4EAF197F0989DC95337A6CB677D7DD")
     private void requestKeyboardWithSelection(int pointer, int selStart,
             int selEnd, int textGeneration) {
@@ -1929,102 +1980,106 @@ public final class WebViewCore {
                     WebView.REQUEST_KEYBOARD_WITH_SELECTION_MSG_ID, pointer,
                     textGeneration, new TextSelectionData(selStart, selEnd))
                     .sendToTarget();
-        } //End block
+        } 
         addTaint(pointer);
         addTaint(selStart);
         addTaint(selEnd);
         addTaint(textGeneration);
-        // ---------- Original Method ----------
-        //if (mWebView != null) {
-            //Message.obtain(mWebView.mPrivateHandler,
-                    //WebView.REQUEST_KEYBOARD_WITH_SELECTION_MSG_ID, pointer,
-                    //textGeneration, new TextSelectionData(selStart, selEnd))
-                    //.sendToTarget();
-        //}
+        
+        
+            
+                    
+                    
+                    
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.713 -0400", hash_original_method = "C7739CA97531242F19EB30C6F079B5B2", hash_generated_method = "BB1A34F786E4377363389440B90483F5")
     private void requestKeyboard(boolean showKeyboard) {
         {
             Message.obtain(mWebView.mPrivateHandler,
                     WebView.REQUEST_KEYBOARD, showKeyboard ? 1 : 0, 0)
                     .sendToTarget();
-        } //End block
+        } 
         addTaint(showKeyboard);
-        // ---------- Original Method ----------
-        //if (mWebView != null) {
-            //Message.obtain(mWebView.mPrivateHandler,
-                    //WebView.REQUEST_KEYBOARD, showKeyboard ? 1 : 0, 0)
-                    //.sendToTarget();
-        //}
+        
+        
+            
+                    
+                    
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.714 -0400", hash_original_method = "DC8BC22A6F75F1D5B407274C2907FB6A", hash_generated_method = "6FAE3D8318BB7FE914A9CF34FD43AB3E")
     private void setWebTextViewAutoFillable(int queryId, String preview) {
         {
             Message.obtain(mWebView.mPrivateHandler, WebView.SET_AUTOFILLABLE,
                     new AutoFillData(queryId, preview))
                     .sendToTarget();
-        } //End block
+        } 
         addTaint(queryId);
         addTaint(preview.getTaint());
-        // ---------- Original Method ----------
-        //if (mWebView != null) {
-            //Message.obtain(mWebView.mPrivateHandler, WebView.SET_AUTOFILLABLE,
-                    //new AutoFillData(queryId, preview))
-                    //.sendToTarget();
-        //}
+        
+        
+            
+                    
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.714 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "8784C66C2D5528B9C8973E7B96ACE6A3")
      Context getContext() {
-        Context varB4EAC82CA7396A68D541C85D26508E83_806428528 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_806428528 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_806428528 = mContext;
-        varB4EAC82CA7396A68D541C85D26508E83_806428528.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_806428528.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_806428528;
-        // ---------- Original Method ----------
-        //return mContext;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.715 -0400", hash_original_method = "06D3F71D264B84B5441A889608149189", hash_generated_method = "904970B6E806A2E5374D4392946508FA")
     private void keepScreenOn(boolean screenOn) {
         {
             Message message = mWebView.mPrivateHandler.obtainMessage(WebView.SCREEN_ON);
             message.arg1 = screenOn ? 1 : 0;
             message.sendToTarget();
-        } //End block
+        } 
         addTaint(screenOn);
-        // ---------- Original Method ----------
-        //if (mWebView != null) {
-            //Message message = mWebView.mPrivateHandler.obtainMessage(WebView.SCREEN_ON);
-            //message.arg1 = screenOn ? 1 : 0;
-            //message.sendToTarget();
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.716 -0400", hash_original_method = "10FFBA7C056FD6BA9A1C610F1A172C8D", hash_generated_method = "976BE1E453CCE4C21039EE1A7370DEB9")
     private Class<?> getPluginClass(String libName, String clsName) {
-        Class<?> varB4EAC82CA7396A68D541C85D26508E83_639387006 = null; //Variable for return #1
-        Class<?> varB4EAC82CA7396A68D541C85D26508E83_2019132107 = null; //Variable for return #2
-        Class<?> varB4EAC82CA7396A68D541C85D26508E83_152953667 = null; //Variable for return #3
-        Class<?> varB4EAC82CA7396A68D541C85D26508E83_1660937935 = null; //Variable for return #4
+        Class<?> varB4EAC82CA7396A68D541C85D26508E83_639387006 = null; 
+        Class<?> varB4EAC82CA7396A68D541C85D26508E83_2019132107 = null; 
+        Class<?> varB4EAC82CA7396A68D541C85D26508E83_152953667 = null; 
+        Class<?> varB4EAC82CA7396A68D541C85D26508E83_1660937935 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_639387006 = null;
-        } //End block
+        } 
         PluginManager pluginManager = PluginManager.getInstance(null);
         String pkgName = pluginManager.getPluginsAPKName(libName);
         {
             varB4EAC82CA7396A68D541C85D26508E83_2019132107 = null;
-        } //End block
+        } 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_152953667 = pluginManager.getPluginClass(pkgName, clsName);
-        } //End block
+        } 
         catch (NameNotFoundException e)
         { }
         catch (ClassNotFoundException e)
@@ -2032,42 +2087,42 @@ public final class WebViewCore {
         varB4EAC82CA7396A68D541C85D26508E83_1660937935 = null;
         addTaint(libName.getTaint());
         addTaint(clsName.getTaint());
-        Class<?> varA7E53CE21691AB073D9660D615818899_565760482; //Final return value
+        Class<?> varA7E53CE21691AB073D9660D615818899_565760482; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_565760482 = varB4EAC82CA7396A68D541C85D26508E83_639387006;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_565760482 = varB4EAC82CA7396A68D541C85D26508E83_2019132107;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_565760482 = varB4EAC82CA7396A68D541C85D26508E83_152953667;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_565760482 = varB4EAC82CA7396A68D541C85D26508E83_1660937935;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_565760482.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_565760482.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_565760482;
-        // ---------- Original Method ----------
-        //if (mWebView == null) {
-            //return null;
-        //}
-        //PluginManager pluginManager = PluginManager.getInstance(null);
-        //String pkgName = pluginManager.getPluginsAPKName(libName);
-        //if (pkgName == null) {
-            //Log.w(LOGTAG, "Unable to resolve " + libName + " to a plugin APK");
-            //return null;
-        //}
-        //try {
-            //return pluginManager.getPluginClass(pkgName, clsName);
-        //} catch (NameNotFoundException e) {
-            //Log.e(LOGTAG, "Unable to find plugin classloader for the apk (" + pkgName + ")");
-        //} catch (ClassNotFoundException e) {
-            //Log.e(LOGTAG, "Unable to find plugin class (" + clsName +
-                    //") in the apk (" + pkgName + ")");
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
+            
+        
+            
+        
+            
+                    
+        
+        
     }
 
     
@@ -2081,83 +2136,84 @@ public final class WebViewCore {
         addTaint(childView.getTaint());
         addTaint(orientation);
         addTaint(npp);
-        // ---------- Original Method ----------
-        //if (mWebView == null) {
-            //return;
-        //}
-        //Message message = mWebView.mPrivateHandler.obtainMessage(WebView.SHOW_FULLSCREEN);
-        //message.obj = childView.mView;
-        //message.arg1 = orientation;
-        //message.arg2 = npp;
-        //message.sendToTarget();
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.717 -0400", hash_original_method = "98BEE7CF6CD4E23C3FBAA61970F9B21C", hash_generated_method = "17095E7CD399502293E2AFE11736CEEB")
     private void hideFullScreenPlugin() {
         mWebView.mPrivateHandler.obtainMessage(WebView.HIDE_FULLSCREEN)
                 .sendToTarget();
-        // ---------- Original Method ----------
-        //if (mWebView == null) {
-            //return;
-        //}
-        //mWebView.mPrivateHandler.obtainMessage(WebView.HIDE_FULLSCREEN)
-                //.sendToTarget();
+        
+        
+            
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.719 -0400", hash_original_method = "A3E933C7DAB8D83D100D1E88122325C7", hash_generated_method = "62830653F3E42E14200B6DEFB8017606")
     private ViewManager.ChildView createSurface(View pluginView) {
-        ViewManager.ChildView varB4EAC82CA7396A68D541C85D26508E83_1432313348 = null; //Variable for return #1
-        ViewManager.ChildView varB4EAC82CA7396A68D541C85D26508E83_1207698516 = null; //Variable for return #2
-        ViewManager.ChildView varB4EAC82CA7396A68D541C85D26508E83_15580650 = null; //Variable for return #3
+        ViewManager.ChildView varB4EAC82CA7396A68D541C85D26508E83_1432313348 = null; 
+        ViewManager.ChildView varB4EAC82CA7396A68D541C85D26508E83_1207698516 = null; 
+        ViewManager.ChildView varB4EAC82CA7396A68D541C85D26508E83_15580650 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1432313348 = null;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1207698516 = null;
-        } //End block
+        } 
         pluginView.setWillNotDraw(false);
         ((SurfaceView)pluginView).setZOrderOnTop(true);
         ViewManager.ChildView view = mWebView.mViewManager.createView();
         view.mView = pluginView;
         varB4EAC82CA7396A68D541C85D26508E83_15580650 = view;
         addTaint(pluginView.getTaint());
-        ViewManager.ChildView varA7E53CE21691AB073D9660D615818899_592200828; //Final return value
+        ViewManager.ChildView varA7E53CE21691AB073D9660D615818899_592200828; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_592200828 = varB4EAC82CA7396A68D541C85D26508E83_1432313348;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_592200828 = varB4EAC82CA7396A68D541C85D26508E83_1207698516;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_592200828 = varB4EAC82CA7396A68D541C85D26508E83_15580650;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_592200828.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_592200828.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_592200828;
-        // ---------- Original Method ----------
-        //if (mWebView == null) {
-            //return null;
-        //}
-        //if (pluginView == null) {
-            //Log.e(LOGTAG, "Attempted to add an empty plugin view to the view hierarchy");
-            //return null;
-        //}
-        //pluginView.setWillNotDraw(false);
-        //if(pluginView instanceof SurfaceView)
-            //((SurfaceView)pluginView).setZOrderOnTop(true);
-        //ViewManager.ChildView view = mWebView.mViewManager.createView();
-        //view.mView = pluginView;
-        //return view;
+        
+        
+            
+        
+        
+            
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.719 -0400", hash_original_method = "97AE1F230CE0C97985778B5B23111878", hash_generated_method = "FA6A3925A341DEFB9DE87845233026DD")
     private ViewManager.ChildView addSurface(View pluginView, int x, int y,
                                              int width, int height) {
-        ViewManager.ChildView varB4EAC82CA7396A68D541C85D26508E83_2051570238 = null; //Variable for return #1
+        ViewManager.ChildView varB4EAC82CA7396A68D541C85D26508E83_2051570238 = null; 
         ViewManager.ChildView view = createSurface(pluginView);
         view.attachView(x, y, width, height);
         varB4EAC82CA7396A68D541C85D26508E83_2051570238 = view;
@@ -2166,12 +2222,12 @@ public final class WebViewCore {
         addTaint(y);
         addTaint(width);
         addTaint(height);
-        varB4EAC82CA7396A68D541C85D26508E83_2051570238.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2051570238.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2051570238;
-        // ---------- Original Method ----------
-        //ViewManager.ChildView view = createSurface(pluginView);
-        //view.attachView(x, y, width, height);
-        //return view;
+        
+        
+        
+        
     }
 
     
@@ -2184,8 +2240,8 @@ public final class WebViewCore {
         addTaint(y);
         addTaint(width);
         addTaint(height);
-        // ---------- Original Method ----------
-        //childView.attachView(x, y, width, height);
+        
+        
     }
 
     
@@ -2193,11 +2249,12 @@ public final class WebViewCore {
     private void destroySurface(ViewManager.ChildView childView) {
         childView.removeView();
         addTaint(childView.getTaint());
-        // ---------- Original Method ----------
-        //childView.removeView();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.720 -0400", hash_original_method = "22185D2849BB84C82B1605DF19FAA2EB", hash_generated_method = "155909D2B020C2FED4A7EBE6A553914F")
     private void showRect(int left, int top, int width, int height,
             int contentWidth, int contentHeight, float xPercentInDoc,
@@ -2216,7 +2273,7 @@ public final class WebViewCore {
             data.mYPercentInView = yPercentInView;
             Message.obtain(mWebView.mPrivateHandler, WebView.SHOW_RECT_MSG_ID,
                     data).sendToTarget();
-        } //End block
+        } 
         addTaint(left);
         addTaint(top);
         addTaint(width);
@@ -2227,25 +2284,26 @@ public final class WebViewCore {
         addTaint(xPercentInView);
         addTaint(yPercentInDoc);
         addTaint(yPercentInView);
-        // ---------- Original Method ----------
-        //if (mWebView != null) {
-            //ShowRectData data = new ShowRectData();
-            //data.mLeft = left;
-            //data.mTop = top;
-            //data.mWidth = width;
-            //data.mHeight = height;
-            //data.mContentWidth = contentWidth;
-            //data.mContentHeight = contentHeight;
-            //data.mXPercentInDoc = xPercentInDoc;
-            //data.mXPercentInView = xPercentInView;
-            //data.mYPercentInDoc = yPercentInDoc;
-            //data.mYPercentInView = yPercentInView;
-            //Message.obtain(mWebView.mPrivateHandler, WebView.SHOW_RECT_MSG_ID,
-                    //data).sendToTarget();
-        //}
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.721 -0400", hash_original_method = "1DA5EF32A9FA7AF08D14A38F102400D4", hash_generated_method = "14FF1544425D83ED0403051112314F7A")
     private void centerFitRect(int x, int y, int width, int height) {
         mWebView.mPrivateHandler.obtainMessage(WebView.CENTER_FIT_RECT,
@@ -2254,53 +2312,57 @@ public final class WebViewCore {
         addTaint(y);
         addTaint(width);
         addTaint(height);
-        // ---------- Original Method ----------
-        //if (mWebView == null) {
-            //return;
-        //}
-        //mWebView.mPrivateHandler.obtainMessage(WebView.CENTER_FIT_RECT,
-                //new Rect(x, y, x + width, y + height)).sendToTarget();
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.721 -0400", hash_original_method = "D8FA837CEB894605C45672F0DC41EFFC", hash_generated_method = "D5C4557214274D4B7A6B90A1C97EC1E7")
     private void setScrollbarModes(int hMode, int vMode) {
         mWebView.mPrivateHandler.obtainMessage(WebView.SET_SCROLLBAR_MODES,
                 hMode, vMode).sendToTarget();
         addTaint(hMode);
         addTaint(vMode);
-        // ---------- Original Method ----------
-        //if (mWebView == null) {
-            //return;
-        //}
-        //mWebView.mPrivateHandler.obtainMessage(WebView.SET_SCROLLBAR_MODES,
-                //hMode, vMode).sendToTarget();
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.721 -0400", hash_original_method = "07DD7AFD4B9B08AAE72EF7B16777A3F8", hash_generated_method = "6B22B3B552A58A938865DA7EA5D03D41")
     @SuppressWarnings("unused")
     private void selectAt(int x, int y) {
         {
             mWebView.mPrivateHandler.obtainMessage(WebView.SELECT_AT, x, y).sendToTarget();
-        } //End block
+        } 
         addTaint(x);
         addTaint(y);
-        // ---------- Original Method ----------
-        //if (mWebView != null) {
-            //mWebView.mPrivateHandler.obtainMessage(WebView.SELECT_AT, x, y).sendToTarget();
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.722 -0400", hash_original_method = "6A70D904110AF22683C1DB763A75BE10", hash_generated_method = "A305859D91500836C604DC6AC8AB2802")
     private void useMockDeviceOrientation() {
         mDeviceMotionAndOrientationManager.useMock();
-        // ---------- Original Method ----------
-        //mDeviceMotionAndOrientationManager.useMock();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.722 -0400", hash_original_method = "F3DDD41A8D23B4AE9E9585A561AEE4C2", hash_generated_method = "E2D9D772C2CAA3469C277EB35DCD20B7")
     public void setMockDeviceOrientation(boolean canProvideAlpha, double alpha,
             boolean canProvideBeta, double beta, boolean canProvideGamma, double gamma) {
@@ -2312,47 +2374,49 @@ public final class WebViewCore {
         addTaint(beta);
         addTaint(canProvideGamma);
         addTaint(gamma);
-        // ---------- Original Method ----------
-        //mDeviceMotionAndOrientationManager.setMockOrientation(canProvideAlpha, alpha,
-                //canProvideBeta, beta, canProvideGamma, gamma);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.723 -0400", hash_original_method = "2C35CA4A669368B8EA54C6F975558D19", hash_generated_method = "D4BE03648A8288377DC02A00EABF949C")
     protected DeviceMotionService getDeviceMotionService() {
-        DeviceMotionService varB4EAC82CA7396A68D541C85D26508E83_927003992 = null; //Variable for return #1
+        DeviceMotionService varB4EAC82CA7396A68D541C85D26508E83_927003992 = null; 
         {
             mDeviceMotionService =
                     new DeviceMotionService(mDeviceMotionAndOrientationManager, mContext);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_927003992 = mDeviceMotionService;
-        varB4EAC82CA7396A68D541C85D26508E83_927003992.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_927003992.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_927003992;
-        // ---------- Original Method ----------
-        //if (mDeviceMotionService == null) {
-            //mDeviceMotionService =
-                    //new DeviceMotionService(mDeviceMotionAndOrientationManager, mContext);
-        //}
-        //return mDeviceMotionService;
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.723 -0400", hash_original_method = "C07B296E9A86FE4EA87FDBAE8692F74E", hash_generated_method = "5D601DDFF0D2B65A8F5E39B975B9D8C2")
     protected DeviceOrientationService getDeviceOrientationService() {
-        DeviceOrientationService varB4EAC82CA7396A68D541C85D26508E83_1802570908 = null; //Variable for return #1
+        DeviceOrientationService varB4EAC82CA7396A68D541C85D26508E83_1802570908 = null; 
         {
             mDeviceOrientationService =
                     new DeviceOrientationService(mDeviceMotionAndOrientationManager, mContext);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1802570908 = mDeviceOrientationService;
-        varB4EAC82CA7396A68D541C85D26508E83_1802570908.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1802570908.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1802570908;
-        // ---------- Original Method ----------
-        //if (mDeviceOrientationService == null) {
-            //mDeviceOrientationService =
-                    //new DeviceOrientationService(mDeviceMotionAndOrientationManager, mContext);
-        //}
-        //return mDeviceOrientationService;
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -2394,10 +2458,11 @@ public final class WebViewCore {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.725 -0400", hash_original_method = "7FB813C3814F61AA4E8EC557BEB4DCCC", hash_generated_method = "6B922F36DFF8369A6FE3889E21482C11")
     private ArrayList<Rect> nativeGetTouchHighlightRects(int x, int y,
             int slop) {
-    	// DSFIXME: will be a source
+    	
     	ArrayList<Rect> ret = new ArrayList<>();
     	ret.addTaint(taint);
     	return ret;
@@ -2419,7 +2484,7 @@ public final class WebViewCore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.725 -0400", hash_original_method = "2F45E06CFBCB348B09D51D400BB9B9A9", hash_generated_method = "2F45E06CFBCB348B09D51D400BB9B9A9")
         public WebCoreThread ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2432,58 +2497,58 @@ public final class WebViewCore {
                     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.727 -0400", hash_original_method = "C9135F359ACD716A893B99167F5F2188", hash_generated_method = "42941B9E4DFD3F358CDB3BE5C8CBCF7C")
                     @Override
                     public void handleMessage(Message msg) {
-                        //Begin case INITIALIZE 
+                        
                         WebViewCore core = (WebViewCore) msg.obj;
-                        //End case INITIALIZE 
-                        //Begin case INITIALIZE 
+                        
+                        
                         core.initialize();
-                        //End case INITIALIZE 
-                        //Begin case REDUCE_PRIORITY 
+                        
+                        
                         Process.setThreadPriority(
                                         Process.THREAD_PRIORITY_DEFAULT + 3 *
                                         Process.THREAD_PRIORITY_LESS_FAVORABLE);
-                        //End case REDUCE_PRIORITY 
-                        //Begin case RESUME_PRIORITY 
+                        
+                        
                         Process.setThreadPriority(
                                         Process.THREAD_PRIORITY_DEFAULT);
-                        //End case RESUME_PRIORITY 
-                        //Begin case EventHub.ADD_PACKAGE_NAME 
+                        
+                        
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                                             "No WebView has been created in this process!");
-                        } //End block
-                        //End case EventHub.ADD_PACKAGE_NAME 
-                        //Begin case EventHub.ADD_PACKAGE_NAME 
+                        } 
+                        
+                        
                         BrowserFrame.sJavaBridge.addPackageName((String) msg.obj);
-                        //End case EventHub.ADD_PACKAGE_NAME 
-                        //Begin case EventHub.REMOVE_PACKAGE_NAME 
+                        
+                        
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                                             "No WebView has been created in this process!");
-                        } //End block
-                        //End case EventHub.REMOVE_PACKAGE_NAME 
-                        //Begin case EventHub.REMOVE_PACKAGE_NAME 
+                        } 
+                        
+                        
                         BrowserFrame.sJavaBridge.removePackageName((String) msg.obj);
-                        //End case EventHub.REMOVE_PACKAGE_NAME 
-                        //Begin case EventHub.PROXY_CHANGED 
+                        
+                        
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                                             "No WebView has been created in this process!");
-                        } //End block
-                        //End case EventHub.PROXY_CHANGED 
-                        //Begin case EventHub.PROXY_CHANGED 
+                        } 
+                        
+                        
                         BrowserFrame.sJavaBridge.updateProxy((ProxyProperties)msg.obj);
-                        //End case EventHub.PROXY_CHANGED 
+                        
                         addTaint(msg.getTaint());
-                        // ---------- Original Method ----------
-                        // Original Method Too Long, Refer to Original Implementation
+                        
+                        
                     }
 };
                 WebViewCore.class.notify();
-            } //End block
+            } 
             Looper.loop();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2520,7 +2585,7 @@ public final class WebViewCore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.728 -0400", hash_original_method = "AAC8AA273862AA8B9D6E5E4822EA2513", hash_generated_method = "AAC8AA273862AA8B9D6E5E4822EA2513")
         public BaseUrlData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2547,7 +2612,7 @@ public final class WebViewCore {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.729 -0400", hash_original_method = "CB52479A54028E5EA2D022FBED517AD0", hash_generated_method = "2AF2198D7D90862DF6B793FD22A2BE79")
           CursorData() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2557,11 +2622,11 @@ public final class WebViewCore {
             mNode = node;
             mX = x;
             mY = y;
-            // ---------- Original Method ----------
-            //mFrame = frame;
-            //mNode = node;
-            //mX = x;
-            //mY = y;
+            
+            
+            
+            
+            
         }
 
         
@@ -2580,7 +2645,7 @@ public final class WebViewCore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.730 -0400", hash_original_method = "C47EAF7170BE00EF188AF129D614A9F5", hash_generated_method = "C47EAF7170BE00EF188AF129D614A9F5")
         public JSInterfaceData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2599,7 +2664,7 @@ public final class WebViewCore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.730 -0400", hash_original_method = "95B0202B54BCEE663EF275E1A8F4EB03", hash_generated_method = "95B0202B54BCEE663EF275E1A8F4EB03")
         public JSKeyData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2627,7 +2692,7 @@ public final class WebViewCore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.730 -0400", hash_original_method = "4355A8BB53AC7F3F83470ED46BB47437", hash_generated_method = "4355A8BB53AC7F3F83470ED46BB47437")
         public MotionUpData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2646,7 +2711,7 @@ public final class WebViewCore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.730 -0400", hash_original_method = "CF502CDAA78836D9E58C0BF8CE098EA6", hash_generated_method = "CF502CDAA78836D9E58C0BF8CE098EA6")
         public GetUrlData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2665,7 +2730,7 @@ public final class WebViewCore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.730 -0400", hash_original_method = "7059AB3E9E778C04182440D5313C7DC6", hash_generated_method = "7059AB3E9E778C04182440D5313C7DC6")
         public PostUrlData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2690,7 +2755,7 @@ public final class WebViewCore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.730 -0400", hash_original_method = "006F168E0387BB00C04A074431FA3645", hash_generated_method = "006F168E0387BB00C04A074431FA3645")
         public ReplaceTextData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2710,9 +2775,9 @@ public final class WebViewCore {
         public  TextSelectionData(int start, int end) {
             mStart = start;
             mEnd = end;
-            // ---------- Original Method ----------
-            //mStart = start;
-            //mEnd = end;
+            
+            
+            
         }
 
         
@@ -2746,7 +2811,7 @@ public final class WebViewCore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.731 -0400", hash_original_method = "4711CC26AC513031C3BD47600FF5375E", hash_generated_method = "4711CC26AC513031C3BD47600FF5375E")
         public TouchUpData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2774,7 +2839,7 @@ public final class WebViewCore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.731 -0400", hash_original_method = "7EBB6E831321FAB695A1CB0442A597EC", hash_generated_method = "7EBB6E831321FAB695A1CB0442A597EC")
         public TouchHighlightData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2794,9 +2859,9 @@ public final class WebViewCore {
         public  AutoFillData() {
             mQueryId = WebTextView.FORM_NOT_AUTOFILLABLE;
             mPreview = "";
-            // ---------- Original Method ----------
-            //mQueryId = WebTextView.FORM_NOT_AUTOFILLABLE;
-            //mPreview = "";
+            
+            
+            
         }
 
         
@@ -2804,9 +2869,9 @@ public final class WebViewCore {
         public  AutoFillData(int queryId, String preview) {
             mQueryId = queryId;
             mPreview = preview;
-            // ---------- Original Method ----------
-            //mQueryId = queryId;
-            //mPreview = preview;
+            
+            
+            
         }
 
         
@@ -2814,19 +2879,19 @@ public final class WebViewCore {
         public int getQueryId() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_845109488 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_845109488;
-            // ---------- Original Method ----------
-            //return mQueryId;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.732 -0400", hash_original_method = "E4F5699DB01CFB534A6B08E3CFDC42EF", hash_generated_method = "2813A250753314C3DCF08AA833CF4DDD")
         public String getPreviewString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1699908789 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1699908789 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1699908789 = mPreview;
-            varB4EAC82CA7396A68D541C85D26508E83_1699908789.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1699908789.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1699908789;
-            // ---------- Original Method ----------
-            //return mPreview;
+            
+            
         }
 
         
@@ -2875,7 +2940,7 @@ public final class WebViewCore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.733 -0400", hash_original_method = "5D833927D3B75D4A9450986FF605CB3C", hash_generated_method = "5D833927D3B75D4A9450986FF605CB3C")
         public TouchEventData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2897,7 +2962,7 @@ public final class WebViewCore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.733 -0400", hash_original_method = "D46B71F5C8BC4DF5D7976DC461AFF808", hash_generated_method = "D46B71F5C8BC4DF5D7976DC461AFF808")
         public GeolocationPermissionsData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2927,7 +2992,7 @@ public final class WebViewCore {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.733 -0400", hash_original_method = "E81290CBA9EBCD5546A9E9277FAE0605", hash_generated_method = "A52E68C7F77102AEF2A85166BA2DF4B3")
         private  EventHub() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2939,13 +3004,13 @@ public final class WebViewCore {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.744 -0400", hash_original_method = "F0B3B381C6E702A698555C74D6931FF7", hash_generated_method = "1537FB90035EA73DF7E47A328C7F3F57")
                 @Override
                 public void handleMessage(Message msg) {
-                    //Begin case WEBKIT_DRAW 
+                    
                     webkitDraw();
-                    //End case WEBKIT_DRAW 
-                    //Begin case WEBKIT_DRAW_LAYERS 
+                    
+                    
                     webkitDrawLayers();
-                    //End case WEBKIT_DRAW_LAYERS 
-                    //Begin case DESTROY 
+                    
+                    
                     {
                         Object var57F7C9E62F50237F3839461924AB4285_373106889 = (WebViewCore.this);
                         {
@@ -2954,13 +3019,13 @@ public final class WebViewCore {
                             mSettings.onDestroyed();
                             mNativeClass = 0;
                             mWebView = null;
-                        } //End block
-                    } //End collapsed parenthetic
-                    //End case DESTROY 
-                    //Begin case REVEAL_SELECTION 
+                        } 
+                    } 
+                    
+                    
                     nativeRevealSelection();
-                    //End case REVEAL_SELECTION 
-                    //Begin case REQUEST_LABEL 
+                    
+                    
                     {
                         int nodePointer = msg.arg2;
                         String label = nativeRequestLabel(msg.arg1,
@@ -2971,51 +3036,51 @@ public final class WebViewCore {
                                 Message.obtain(mWebView.mPrivateHandler,
                                             WebView.RETURN_LABEL, nodePointer,
                                             0, label).sendToTarget();
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                    //End case REQUEST_LABEL 
-                    //Begin case UPDATE_FRAME_CACHE_IF_LOADING 
+                            } 
+                        } 
+                    } 
+                    
+                    
                     nativeUpdateFrameCacheIfLoading();
-                    //End case UPDATE_FRAME_CACHE_IF_LOADING 
-                    //Begin case SCROLL_TEXT_INPUT 
+                    
+                    
                     float xPercent;
-                    //End case SCROLL_TEXT_INPUT 
-                    //Begin case SCROLL_TEXT_INPUT 
+                    
+                    
                     {
                         xPercent = 0f;
-                    } //End block
+                    } 
                     {
                         xPercent = ((Float) msg.obj).floatValue();
-                    } //End block
-                    //End case SCROLL_TEXT_INPUT 
-                    //Begin case SCROLL_TEXT_INPUT 
+                    } 
+                    
+                    
                     nativeScrollFocusedTextInput(xPercent, msg.arg2);
-                    //End case SCROLL_TEXT_INPUT 
-                    //Begin case LOAD_URL 
+                    
+                    
                     {
                         CookieManager.getInstance().waitForCookieOperationsToComplete();
                         GetUrlData param = (GetUrlData) msg.obj;
                         loadUrl(param.mUrl, param.mExtraHeaders);
-                    } //End block
-                    //End case LOAD_URL 
-                    //Begin case POST_URL 
+                    } 
+                    
+                    
                     {
                         CookieManager.getInstance().waitForCookieOperationsToComplete();
                         PostUrlData param = (PostUrlData) msg.obj;
                         mBrowserFrame.postUrl(param.mUrl, param.mPostData);
-                    } //End block
-                    //End case POST_URL 
-                    //Begin case LOAD_DATA 
+                    } 
+                    
+                    
                     CookieManager.getInstance().waitForCookieOperationsToComplete();
-                    //End case LOAD_DATA 
-                    //Begin case LOAD_DATA 
+                    
+                    
                     BaseUrlData loadParams = (BaseUrlData) msg.obj;
-                    //End case LOAD_DATA 
-                    //Begin case LOAD_DATA 
+                    
+                    
                     String baseUrl = loadParams.mBaseUrl;
-                    //End case LOAD_DATA 
-                    //Begin case LOAD_DATA 
+                    
+                    
                     {
                         int i = baseUrl.indexOf(':');
                         {
@@ -3027,174 +3092,174 @@ public final class WebViewCore {
                                             !scheme.startsWith("javascript"));
                                 {
                                     nativeRegisterURLSchemeAsLocal(scheme);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                    //End case LOAD_DATA 
-                    //Begin case LOAD_DATA 
+                                } 
+                            } 
+                        } 
+                    } 
+                    
+                    
                     mBrowserFrame.loadData(baseUrl,
                                     loadParams.mData,
                                     loadParams.mMimeType,
                                     loadParams.mEncoding,
                                     loadParams.mHistoryUrl);
-                    //End case LOAD_DATA 
-                    //Begin case LOAD_DATA 
+                    
+                    
                     nativeContentInvalidateAll();
-                    //End case LOAD_DATA 
-                    //Begin case STOP_LOADING 
+                    
+                    
                     {
                         boolean var1CDB79E5CA9506E38E9F47122C3F2A81_1682534786 = (mBrowserFrame.committed()
                                     && !mBrowserFrame.firstLayoutDone());
                         {
                             mBrowserFrame.didFirstLayout();
-                        } //End block
-                    } //End collapsed parenthetic
-                    //End case STOP_LOADING 
-                    //Begin case STOP_LOADING 
+                        } 
+                    } 
+                    
+                    
                     stopLoading();
-                    //End case STOP_LOADING 
-                    //Begin case RELOAD 
+                    
+                    
                     mBrowserFrame.reload(false);
-                    //End case RELOAD 
-                    //Begin case KEY_DOWN 
+                    
+                    
                     key((KeyEvent) msg.obj, true);
-                    //End case KEY_DOWN 
-                    //Begin case KEY_UP 
+                    
+                    
                     key((KeyEvent) msg.obj, false);
-                    //End case KEY_UP 
-                    //Begin case FAKE_CLICK 
+                    
+                    
                     nativeClick(msg.arg1, msg.arg2, true);
-                    //End case FAKE_CLICK 
-                    //Begin case CLICK 
+                    
+                    
                     nativeClick(msg.arg1, msg.arg2, false);
-                    //End case CLICK 
-                    //Begin case VIEW_SIZE_CHANGED 
+                    
+                    
                     {
                         viewSizeChanged((WebView.ViewSizeData) msg.obj);
-                    } //End block
-                    //End case VIEW_SIZE_CHANGED 
-                    //Begin case SET_SCROLL_OFFSET 
+                    } 
+                    
+                    
                     Point pt = (Point) msg.obj;
-                    //End case SET_SCROLL_OFFSET 
-                    //Begin case SET_SCROLL_OFFSET 
+                    
+                    
                     nativeSetScrollOffset(msg.arg1, msg.arg2 == 1,
                                     pt.x, pt.y);
-                    //End case SET_SCROLL_OFFSET 
-                    //Begin case SET_GLOBAL_BOUNDS 
+                    
+                    
                     Rect r = (Rect) msg.obj;
-                    //End case SET_GLOBAL_BOUNDS 
-                    //Begin case SET_GLOBAL_BOUNDS 
+                    
+                    
                     nativeSetGlobalBounds(r.left, r.top, r.width(),
                                 r.height());
-                    //End case SET_GLOBAL_BOUNDS 
-                    //Begin case GO_BACK_FORWARD 
+                    
+                    
                     {
                         boolean var893023BC55997FD9309032550EA6349B_1846643489 = (!mBrowserFrame.committed() && msg.arg1 == -1 &&
                                     (mBrowserFrame.loadType() ==
                                     BrowserFrame.FRAME_LOADTYPE_STANDARD));
                         {
                             mBrowserFrame.reload(true);
-                        } //End block
+                        } 
                         {
                             mBrowserFrame.goBackOrForward(msg.arg1);
-                        } //End block
-                    } //End collapsed parenthetic
-                    //End case GO_BACK_FORWARD 
-                    //Begin case RESTORE_STATE 
+                        } 
+                    } 
+                    
+                    
                     stopLoading();
-                    //End case RESTORE_STATE 
-                    //Begin case RESTORE_STATE 
+                    
+                    
                     restoreState(msg.arg1);
-                    //End case RESTORE_STATE 
-                    //Begin case PAUSE_TIMERS 
+                    
+                    
                     mSavedPriority = Process.getThreadPriority(mTid);
-                    //End case PAUSE_TIMERS 
-                    //Begin case PAUSE_TIMERS 
+                    
+                    
                     Process.setThreadPriority(mTid,
                                     Process.THREAD_PRIORITY_BACKGROUND);
-                    //End case PAUSE_TIMERS 
-                    //Begin case PAUSE_TIMERS 
+                    
+                    
                     pauseTimers();
-                    //End case PAUSE_TIMERS 
-                    //Begin case PAUSE_TIMERS 
+                    
+                    
                     {
                         boolean var2DDC5BD4BB2F6B2978F909E7F34AB06D_1648996105 = (!JniUtil.useChromiumHttpStack());
                         {
                             WebViewWorker.getHandler().sendEmptyMessage(
                                         WebViewWorker.MSG_PAUSE_CACHE_TRANSACTION);
-                        } //End block
+                        } 
                         {
                             nativeCloseIdleConnections();
-                        } //End block
-                    } //End collapsed parenthetic
-                    //End case PAUSE_TIMERS 
-                    //Begin case RESUME_TIMERS 
+                        } 
+                    } 
+                    
+                    
                     Process.setThreadPriority(mTid, mSavedPriority);
-                    //End case RESUME_TIMERS 
-                    //Begin case RESUME_TIMERS 
+                    
+                    
                     resumeTimers();
-                    //End case RESUME_TIMERS 
-                    //Begin case RESUME_TIMERS 
+                    
+                    
                     {
                         boolean var2DDC5BD4BB2F6B2978F909E7F34AB06D_5657031 = (!JniUtil.useChromiumHttpStack());
                         {
                             WebViewWorker.getHandler().sendEmptyMessage(
                                         WebViewWorker.MSG_RESUME_CACHE_TRANSACTION);
-                        } //End block
-                    } //End collapsed parenthetic
-                    //End case RESUME_TIMERS 
-                    //Begin case ON_PAUSE 
+                        } 
+                    } 
+                    
+                    
                     nativePause();
-                    //End case ON_PAUSE 
-                    //Begin case ON_RESUME 
+                    
+                    
                     nativeResume();
-                    //End case ON_RESUME 
-                    //Begin case FREE_MEMORY 
+                    
+                    
                     clearCache(false);
-                    //End case FREE_MEMORY 
-                    //Begin case FREE_MEMORY 
+                    
+                    
                     nativeFreeMemory();
-                    //End case FREE_MEMORY 
-                    //Begin case SET_NETWORK_STATE 
+                    
+                    
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No WebView " +
                                         "has been created in this process!");
-                    } //End block
-                    //End case SET_NETWORK_STATE 
-                    //Begin case SET_NETWORK_STATE 
+                    } 
+                    
+                    
                     BrowserFrame.sJavaBridge
                                     .setNetworkOnLine(msg.arg1 == 1);
-                    //End case SET_NETWORK_STATE 
-                    //Begin case SET_NETWORK_TYPE 
+                    
+                    
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No WebView " +
                                         "has been created in this process!");
-                    } //End block
-                    //End case SET_NETWORK_TYPE 
-                    //Begin case SET_NETWORK_TYPE 
+                    } 
+                    
+                    
                     Map<String, String> map = (Map<String, String>) msg.obj;
-                    //End case SET_NETWORK_TYPE 
-                    //Begin case SET_NETWORK_TYPE 
+                    
+                    
                     BrowserFrame.sJavaBridge
                                     .setNetworkType(map.get("type"), map.get("subtype"));
-                    //End case SET_NETWORK_TYPE 
-                    //Begin case CLEAR_CACHE 
+                    
+                    
                     clearCache(msg.arg1 == 1);
-                    //End case CLEAR_CACHE 
-                    //Begin case CLEAR_HISTORY 
+                    
+                    
                     mCallbackProxy.getBackForwardList().
                                     close(mBrowserFrame.mNativeFrame);
-                    //End case CLEAR_HISTORY 
-                    //Begin case REPLACE_TEXT 
+                    
+                    
                     ReplaceTextData rep = (ReplaceTextData) msg.obj;
-                    //End case REPLACE_TEXT 
-                    //Begin case REPLACE_TEXT 
+                    
+                    
                     nativeReplaceTextfieldText(msg.arg1, msg.arg2,
                                     rep.mReplace, rep.mNewStart, rep.mNewEnd,
                                     rep.mTextGeneration);
-                    //End case REPLACE_TEXT 
-                    //Begin case PASS_TO_JS 
+                    
+                    
                     {
                         JSKeyData jsData = (JSKeyData) msg.obj;
                         KeyEvent evt = jsData.mEvent;
@@ -3208,41 +3273,41 @@ public final class WebViewCore {
                                     evt.isDown(),
                                     evt.isShiftPressed(), evt.isAltPressed(),
                                     evt.isSymPressed());
-                    } //End block
-                    //End case PASS_TO_JS 
-                    //Begin case SAVE_DOCUMENT_STATE 
+                    } 
+                    
+                    
                     {
                         CursorData cDat = (CursorData) msg.obj;
                         nativeSaveDocumentState(cDat.mFrame);
-                    } //End block
-                    //End case SAVE_DOCUMENT_STATE 
-                    //Begin case CLEAR_SSL_PREF_TABLE 
+                    } 
+                    
+                    
                     {
                         boolean varF3475F759DD108C1DC11D60361B928EA_620787888 = (JniUtil.useChromiumHttpStack());
                         {
                             SslCertLookupTable.getInstance().clear();
                             nativeCloseIdleConnections();
-                        } //End block
+                        } 
                         {
                             Network.getInstance(mContext).clearUserSslPrefTable();
-                        } //End block
-                    } //End collapsed parenthetic
-                    //End case CLEAR_SSL_PREF_TABLE 
-                    //Begin case TOUCH_UP 
+                        } 
+                    } 
+                    
+                    
                     TouchUpData touchUpData = (TouchUpData) msg.obj;
-                    //End case TOUCH_UP 
-                    //Begin case TOUCH_UP 
+                    
+                    
                     {
                         nativeScrollLayer(touchUpData.mNativeLayer,
                                         touchUpData.mNativeLayerRect);
-                    } //End block
-                    //End case TOUCH_UP 
-                    //Begin case TOUCH_UP 
+                    } 
+                    
+                    
                     nativeTouchUp(touchUpData.mMoveGeneration,
                                     touchUpData.mFrame, touchUpData.mNode,
                                     touchUpData.mX, touchUpData.mY);
-                    //End case TOUCH_UP 
-                    //Begin case TOUCH_EVENT 
+                    
+                    
                     {
                         TouchEventData ted = (TouchEventData) msg.obj;
                         final int count = ted.mPoints.length;
@@ -3253,12 +3318,12 @@ public final class WebViewCore {
                             {
                                 xArray[c] = ted.mPoints[c].x;
                                 yArray[c] = ted.mPoints[c].y;
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             nativeScrollLayer(ted.mNativeLayer,
                                         ted.mNativeLayerRect);
-                        } //End block
+                        } 
                         ted.mNativeResult = nativeHandleTouchEvent(ted.mAction, ted.mIds,
                                     xArray, yArray, count, ted.mActionIndex, ted.mMetaState);
                         Message.obtain(
@@ -3267,59 +3332,59 @@ public final class WebViewCore {
                                     ted.mAction,
                                     ted.mNativeResult ? 1 : 0,
                                     ted).sendToTarget();
-                    } //End block
-                    //End case TOUCH_EVENT 
-                    //Begin case SET_ACTIVE 
+                    } 
+                    
+                    
                     nativeSetFocusControllerActive(msg.arg1 == 1);
-                    //End case SET_ACTIVE 
-                    //Begin case ADD_JS_INTERFACE 
+                    
+                    
                     JSInterfaceData jsData = (JSInterfaceData) msg.obj;
-                    //End case ADD_JS_INTERFACE 
-                    //Begin case ADD_JS_INTERFACE 
+                    
+                    
                     mBrowserFrame.addJavascriptInterface(jsData.mObject,
                                     jsData.mInterfaceName);
-                    //End case ADD_JS_INTERFACE 
-                    //Begin case REMOVE_JS_INTERFACE 
+                    
+                    
                     jsData = (JSInterfaceData) msg.obj;
-                    //End case REMOVE_JS_INTERFACE 
-                    //Begin case REMOVE_JS_INTERFACE 
+                    
+                    
                     mBrowserFrame.removeJavascriptInterface(
                                     jsData.mInterfaceName);
-                    //End case REMOVE_JS_INTERFACE 
-                    //Begin case REQUEST_EXT_REPRESENTATION 
+                    
+                    
                     mBrowserFrame.externalRepresentation(
                                     (Message) msg.obj);
-                    //End case REQUEST_EXT_REPRESENTATION 
-                    //Begin case REQUEST_DOC_AS_TEXT 
+                    
+                    
                     mBrowserFrame.documentAsText((Message) msg.obj);
-                    //End case REQUEST_DOC_AS_TEXT 
-                    //Begin case SET_MOVE_FOCUS 
+                    
+                    
                     CursorData focusData = (CursorData) msg.obj;
-                    //End case SET_MOVE_FOCUS 
-                    //Begin case SET_MOVE_FOCUS 
+                    
+                    
                     nativeMoveFocus(focusData.mFrame, focusData.mNode);
-                    //End case SET_MOVE_FOCUS 
-                    //Begin case SET_MOVE_MOUSE 
+                    
+                    
                     CursorData cursorData = (CursorData) msg.obj;
-                    //End case SET_MOVE_MOUSE 
-                    //Begin case SET_MOVE_MOUSE 
+                    
+                    
                     nativeMoveMouse(cursorData.mFrame,
                                      cursorData.mX, cursorData.mY);
-                    //End case SET_MOVE_MOUSE 
-                    //Begin case SET_MOVE_MOUSE_IF_LATEST 
+                    
+                    
                     CursorData cData = (CursorData) msg.obj;
-                    //End case SET_MOVE_MOUSE_IF_LATEST 
-                    //Begin case SET_MOVE_MOUSE_IF_LATEST 
+                    
+                    
                     nativeMoveMouseIfLatest(cData.mMoveGeneration,
                                     cData.mFrame,
                                     cData.mX, cData.mY);
-                    //End case SET_MOVE_MOUSE_IF_LATEST 
-                    //Begin case SET_MOVE_MOUSE_IF_LATEST 
+                    
+                    
                     {
                         nativeStopPaintingCaret();
-                    } //End block
-                    //End case SET_MOVE_MOUSE_IF_LATEST 
-                    //Begin case REQUEST_CURSOR_HREF 
+                    } 
+                    
+                    
                     {
                         Message hrefMsg = (Message) msg.obj;
                         hrefMsg.getData().putString("url",
@@ -3329,131 +3394,131 @@ public final class WebViewCore {
                         hrefMsg.getData().putString("src",
                                     nativeRetrieveImageSource(msg.arg1, msg.arg2));
                         hrefMsg.sendToTarget();
-                    } //End block
-                    //End case REQUEST_CURSOR_HREF 
-                    //Begin case UPDATE_CACHE_AND_TEXT_ENTRY 
+                    } 
+                    
+                    
                     nativeUpdateFrameCache();
-                    //End case UPDATE_CACHE_AND_TEXT_ENTRY 
-                    //Begin case UPDATE_CACHE_AND_TEXT_ENTRY 
+                    
+                    
                     {
                         mWebView.postInvalidate();
-                    } //End block
-                    //End case UPDATE_CACHE_AND_TEXT_ENTRY 
-                    //Begin case UPDATE_CACHE_AND_TEXT_ENTRY 
+                    } 
+                    
+                    
                     sendUpdateTextEntry();
-                    //End case UPDATE_CACHE_AND_TEXT_ENTRY 
-                    //Begin case DOC_HAS_IMAGES 
+                    
+                    
                     Message imageResult = (Message) msg.obj;
-                    //End case DOC_HAS_IMAGES 
-                    //Begin case DOC_HAS_IMAGES 
+                    
+                    
                     imageResult.arg1 =
                                     mBrowserFrame.documentHasImages() ? 1 : 0;
-                    //End case DOC_HAS_IMAGES 
-                    //Begin case DOC_HAS_IMAGES 
+                    
+                    
                     imageResult.sendToTarget();
-                    //End case DOC_HAS_IMAGES 
-                    //Begin case DELETE_SELECTION 
+                    
+                    
                     TextSelectionData deleteSelectionData = (TextSelectionData) msg.obj;
-                    //End case DELETE_SELECTION 
-                    //Begin case DELETE_SELECTION 
+                    
+                    
                     nativeDeleteSelection(deleteSelectionData.mStart,
                                     deleteSelectionData.mEnd, msg.arg1);
-                    //End case DELETE_SELECTION 
-                    //Begin case SET_SELECTION 
+                    
+                    
                     nativeSetSelection(msg.arg1, msg.arg2);
-                    //End case SET_SELECTION 
-                    //Begin case MODIFY_SELECTION 
+                    
+                    
                     String modifiedSelectionString = nativeModifySelection(msg.arg1,
                                     msg.arg2);
-                    //End case MODIFY_SELECTION 
-                    //Begin case MODIFY_SELECTION 
+                    
+                    
                     mWebView.mPrivateHandler.obtainMessage(WebView.SELECTION_STRING_CHANGED,
                                     modifiedSelectionString).sendToTarget();
-                    //End case MODIFY_SELECTION 
-                    //Begin case LISTBOX_CHOICES 
+                    
+                    
                     SparseBooleanArray choices = (SparseBooleanArray)
                                     msg.obj;
-                    //End case LISTBOX_CHOICES 
-                    //Begin case LISTBOX_CHOICES 
+                    
+                    
                     int choicesSize = msg.arg1;
-                    //End case LISTBOX_CHOICES 
-                    //Begin case LISTBOX_CHOICES 
+                    
+                    
                     boolean[] choicesArray = new boolean[choicesSize];
-                    //End case LISTBOX_CHOICES 
-                    //Begin case LISTBOX_CHOICES 
+                    
+                    
                     {
                         int c = 0;
                         {
                             choicesArray[c] = choices.get(c);
-                        } //End block
-                    } //End collapsed parenthetic
-                    //End case LISTBOX_CHOICES 
-                    //Begin case LISTBOX_CHOICES 
+                        } 
+                    } 
+                    
+                    
                     nativeSendListBoxChoices(choicesArray,
                                     choicesSize);
-                    //End case LISTBOX_CHOICES 
-                    //Begin case SINGLE_LISTBOX_CHOICE 
+                    
+                    
                     nativeSendListBoxChoice(msg.arg1);
-                    //End case SINGLE_LISTBOX_CHOICE 
-                    //Begin case SET_BACKGROUND_COLOR 
+                    
+                    
                     nativeSetBackgroundColor(msg.arg1);
-                    //End case SET_BACKGROUND_COLOR 
-                    //Begin case DUMP_DOMTREE 
+                    
+                    
                     nativeDumpDomTree(msg.arg1 == 1);
-                    //End case DUMP_DOMTREE 
-                    //Begin case DUMP_RENDERTREE 
+                    
+                    
                     nativeDumpRenderTree(msg.arg1 == 1);
-                    //End case DUMP_RENDERTREE 
-                    //Begin case DUMP_NAVTREE 
+                    
+                    
                     nativeDumpNavTree();
-                    //End case DUMP_NAVTREE 
-                    //Begin case DUMP_V8COUNTERS 
+                    
+                    
                     nativeDumpV8Counters();
-                    //End case DUMP_V8COUNTERS 
-                    //Begin case SET_JS_FLAGS 
+                    
+                    
                     nativeSetJsFlags((String)msg.obj);
-                    //End case SET_JS_FLAGS 
-                    //Begin case CONTENT_INVALIDATE_ALL 
+                    
+                    
                     nativeContentInvalidateAll();
-                    //End case CONTENT_INVALIDATE_ALL 
-                    //Begin case SAVE_WEBARCHIVE 
+                    
+                    
                     WebView.SaveWebArchiveMessage saveMessage = (WebView.SaveWebArchiveMessage)msg.obj;
-                    //End case SAVE_WEBARCHIVE 
-                    //Begin case SAVE_WEBARCHIVE 
+                    
+                    
                     saveMessage.mResultFile =
                                 saveWebArchive(saveMessage.mBasename, saveMessage.mAutoname);
-                    //End case SAVE_WEBARCHIVE 
-                    //Begin case SAVE_WEBARCHIVE 
+                    
+                    
                     mWebView.mPrivateHandler.obtainMessage(
                                 WebView.SAVE_WEBARCHIVE_FINISHED, saveMessage).sendToTarget();
-                    //End case SAVE_WEBARCHIVE 
-                    //Begin case GEOLOCATION_PERMISSIONS_PROVIDE 
+                    
+                    
                     GeolocationPermissionsData data = (GeolocationPermissionsData) msg.obj;
-                    //End case GEOLOCATION_PERMISSIONS_PROVIDE 
-                    //Begin case GEOLOCATION_PERMISSIONS_PROVIDE 
+                    
+                    
                     nativeGeolocationPermissionsProvide(data.mOrigin,
                                     data.mAllow, data.mRemember);
-                    //End case GEOLOCATION_PERMISSIONS_PROVIDE 
-                    //Begin case SPLIT_PICTURE_SET 
+                    
+                    
                     nativeSplitContent(msg.arg1);
-                    //End case SPLIT_PICTURE_SET 
-                    //Begin case SPLIT_PICTURE_SET 
+                    
+                    
                     mWebView.mPrivateHandler.obtainMessage(
                                     WebView.REPLACE_BASE_CONTENT, msg.arg1, 0);
-                    //End case SPLIT_PICTURE_SET 
-                    //Begin case SPLIT_PICTURE_SET 
+                    
+                    
                     mSplitPictureIsScheduled = false;
-                    //End case SPLIT_PICTURE_SET 
-                    //Begin case CLEAR_CONTENT 
+                    
+                    
                     nativeClearContent();
-                    //End case CLEAR_CONTENT 
-                    //Begin case MESSAGE_RELAY 
+                    
+                    
                     ((Message) msg.obj).sendToTarget();
-                    //End case MESSAGE_RELAY 
-                    //Begin case POPULATE_VISITED_LINKS 
+                    
+                    
                     nativeProvideVisitedHistory((String[])msg.obj);
-                    //End case POPULATE_VISITED_LINKS 
-                    //Begin case VALID_NODE_BOUNDS 
+                    
+                    
                     {
                         MotionUpData motionUpData = (MotionUpData) msg.obj;
                         {
@@ -3462,73 +3527,73 @@ public final class WebViewCore {
                                     motionUpData.mBounds));
                             {
                                 nativeUpdateFrameCache();
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         Message message = mWebView.mPrivateHandler
                                     .obtainMessage(WebView.DO_MOTION_UP,
                                     motionUpData.mX, motionUpData.mY);
                         mWebView.mPrivateHandler.sendMessageAtFrontOfQueue(
                                     message);
-                    } //End block
-                    //End case VALID_NODE_BOUNDS 
-                    //Begin case HIDE_FULLSCREEN 
+                    } 
+                    
+                    
                     nativeFullScreenPluginHidden(msg.arg1);
-                    //End case HIDE_FULLSCREEN 
-                    //Begin case PLUGIN_SURFACE_READY 
+                    
+                    
                     nativePluginSurfaceReady();
-                    //End case PLUGIN_SURFACE_READY 
-                    //Begin case NOTIFY_ANIMATION_STARTED 
+                    
+                    
                     nativeNotifyAnimationStarted(mNativeClass);
-                    //End case NOTIFY_ANIMATION_STARTED 
-                    //Begin case ADD_PACKAGE_NAMES 
+                    
+                    
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No WebView " +
                                         "has been created in this process!");
-                    } //End block
-                    //End case ADD_PACKAGE_NAMES 
-                    //Begin case ADD_PACKAGE_NAMES 
+                    } 
+                    
+                    
                     BrowserFrame.sJavaBridge.addPackageNames(
                                     (Set<String>) msg.obj);
-                    //End case ADD_PACKAGE_NAMES 
-                    //Begin case GET_TOUCH_HIGHLIGHT_RECTS 
+                    
+                    
                     TouchHighlightData d = (TouchHighlightData) msg.obj;
-                    //End case GET_TOUCH_HIGHLIGHT_RECTS 
-                    //Begin case GET_TOUCH_HIGHLIGHT_RECTS 
+                    
+                    
                     {
                         nativeScrollLayer(d.mNativeLayer,
                                         d.mNativeLayerRect);
-                    } //End block
-                    //End case GET_TOUCH_HIGHLIGHT_RECTS 
-                    //Begin case GET_TOUCH_HIGHLIGHT_RECTS 
+                    } 
+                    
+                    
                     ArrayList<Rect> rects = nativeGetTouchHighlightRects
                                     (d.mX, d.mY, d.mSlop);
-                    //End case GET_TOUCH_HIGHLIGHT_RECTS 
-                    //Begin case GET_TOUCH_HIGHLIGHT_RECTS 
+                    
+                    
                     mWebView.mPrivateHandler.obtainMessage(
                                     WebView.SET_TOUCH_HIGHLIGHT_RECTS, rects)
                                     .sendToTarget();
-                    //End case GET_TOUCH_HIGHLIGHT_RECTS 
-                    //Begin case USE_MOCK_DEVICE_ORIENTATION 
+                    
+                    
                     useMockDeviceOrientation();
-                    //End case USE_MOCK_DEVICE_ORIENTATION 
-                    //Begin case AUTOFILL_FORM 
+                    
+                    
                     nativeAutoFillForm(msg.arg1);
-                    //End case AUTOFILL_FORM 
-                    //Begin case AUTOFILL_FORM 
+                    
+                    
                     mWebView.mPrivateHandler.obtainMessage(WebView.AUTOFILL_COMPLETE, null)
                                     .sendToTarget();
-                    //End case AUTOFILL_FORM 
-                    //Begin case EXECUTE_JS 
+                    
+                    
                     {
                         {
                             Log.d(LOGTAG, "Executing JS : " + msg.obj);
-                        } //End block
+                        } 
                         mBrowserFrame.stringByEvaluatingJavaScriptFromString((String) msg.obj);
-                    } //End block
-                    //End case EXECUTE_JS 
+                    } 
+                    
                     addTaint(msg.getTaint());
-                    // ---------- Original Method ----------
-                    // Original Method Too Long, Refer to Original Implementation
+                    
+                    
                 }
 };
             {
@@ -3537,12 +3602,12 @@ public final class WebViewCore {
                     int i = 0;
                     {
                         mHandler.sendMessage(mMessages.get(i));
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mMessages = null;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -3550,20 +3615,20 @@ public final class WebViewCore {
         private synchronized void sendMessage(Message msg) {
             {
                 mMessages.add(msg);
-            } //End block
+            } 
             {
                 mHandler.sendMessage(msg);
-            } //End block
+            } 
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //if (mBlockMessages) {
-                //return;
-            //}
-            //if (mMessages != null) {
-                //mMessages.add(msg);
-            //} else {
-                //mHandler.sendMessage(msg);
-            //}
+            
+            
+                
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -3571,31 +3636,31 @@ public final class WebViewCore {
         private synchronized void removeMessages(int what) {
             {
                 mDrawIsScheduled = false;
-            } //End block
+            } 
             {
                 Throwable throwable = new Throwable(
                         "EventHub.removeMessages(int what = " + what + ") is not supported " +
                         "before the WebViewCore is set up.");
-            } //End block
+            } 
             {
                 mHandler.removeMessages(what);
-            } //End block
+            } 
             addTaint(what);
-            // ---------- Original Method ----------
-            //if (mBlockMessages) {
-                //return;
-            //}
-            //if (what == EventHub.WEBKIT_DRAW) {
-                //mDrawIsScheduled = false;
-            //}
-            //if (mMessages != null) {
-                //Throwable throwable = new Throwable(
-                        //"EventHub.removeMessages(int what = " + what + ") is not supported " +
-                        //"before the WebViewCore is set up.");
-                //Log.w(LOGTAG, Log.getStackTraceString(throwable));
-            //} else {
-                //mHandler.removeMessages(what);
-            //}
+            
+            
+                
+            
+            
+                
+            
+            
+                
+                        
+                        
+                
+            
+                
+            
         }
 
         
@@ -3604,11 +3669,11 @@ public final class WebViewCore {
             mHandler.sendMessageDelayed(msg, delay);
             addTaint(msg.getTaint());
             addTaint(delay);
-            // ---------- Original Method ----------
-            //if (mBlockMessages) {
-                //return;
-            //}
-            //mHandler.sendMessageDelayed(msg, delay);
+            
+            
+                
+            
+            
         }
 
         
@@ -3616,20 +3681,20 @@ public final class WebViewCore {
         private synchronized void sendMessageAtFrontOfQueue(Message msg) {
             {
                 mMessages.add(0, msg);
-            } //End block
+            } 
             {
                 mHandler.sendMessageAtFrontOfQueue(msg);
-            } //End block
+            } 
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //if (mBlockMessages) {
-                //return;
-            //}
-            //if (mMessages != null) {
-                //mMessages.add(0, msg);
-            //} else {
-                //mHandler.sendMessageAtFrontOfQueue(msg);
-            //}
+            
+            
+                
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -3639,26 +3704,26 @@ public final class WebViewCore {
             mSplitPictureIsScheduled = false;
             {
                 mMessages.clear();
-            } //End block
+            } 
             {
                 mHandler.removeCallbacksAndMessages(null);
-            } //End block
-            // ---------- Original Method ----------
-            //mDrawIsScheduled = false;
-            //mSplitPictureIsScheduled = false;
-            //if (mMessages != null) {
-                //mMessages.clear();
-            //} else {
-                //mHandler.removeCallbacksAndMessages(null);
-            //}
+            } 
+            
+            
+            
+            
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.749 -0400", hash_original_method = "7F4FC3BA20FD4185DE24EC53F9CE84DB", hash_generated_method = "26B51E76D19EB36CD02103295CF60E9F")
         private synchronized void blockMessages() {
             mBlockMessages = true;
-            // ---------- Original Method ----------
-            //mBlockMessages = true;
+            
+            
         }
 
         
@@ -3938,7 +4003,7 @@ public final class WebViewCore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.751 -0400", hash_original_method = "FF705DB5257E6CA3790C30389112B4B7", hash_generated_method = "FF705DB5257E6CA3790C30389112B4B7")
         public ViewState ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -3977,10 +4042,10 @@ public final class WebViewCore {
             mBaseLayer = 0;
             mInvalRegion = new Region();
             mContentSize = new Point();
-            // ---------- Original Method ----------
-            //mBaseLayer = 0;
-            //mInvalRegion = new Region();
-            //mContentSize = new Point();
+            
+            
+            
+            
         }
 
         
@@ -4023,7 +4088,7 @@ public final class WebViewCore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.752 -0400", hash_original_method = "C48E9140E1D319035D16E0B3D36DB69D", hash_generated_method = "C48E9140E1D319035D16E0B3D36DB69D")
         public ShowRectData ()
         {
-            //Synthesized constructor
+            
         }
 
 

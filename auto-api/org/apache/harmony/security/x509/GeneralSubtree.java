@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.harmony.security.asn1.ASN1Implicit;
 import org.apache.harmony.security.asn1.ASN1Integer;
@@ -32,39 +32,41 @@ public final class GeneralSubtree {
         this.base = base;
         this.minimum = minimum;
         this.maximum = maximum;
-        // ---------- Original Method ----------
-        //this.base = base;
-        //this.minimum = minimum;
-        //this.maximum = maximum;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.098 -0400", hash_original_method = "FBC8A3DE80F48DE1891C2D6208F82433", hash_generated_method = "F89111C440021DAEB5809D4B7BD1FDB2")
     public GeneralName getBase() {
-        GeneralName varB4EAC82CA7396A68D541C85D26508E83_375964635 = null; //Variable for return #1
+        GeneralName varB4EAC82CA7396A68D541C85D26508E83_375964635 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_375964635 = base;
-        varB4EAC82CA7396A68D541C85D26508E83_375964635.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_375964635.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_375964635;
-        // ---------- Original Method ----------
-        //return base;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.098 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "74554E23FB4CC3516CB9BF55C83D005F")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_708862661 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_708862661;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.099 -0400", hash_original_method = "EBC343B993E4A537A05E52D600D1ECC2", hash_generated_method = "524E6BE43385872B7ADD5827E62BE6BC")
     public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix).append("General Subtree: [\n");
@@ -72,18 +74,18 @@ public final class GeneralSubtree {
         sb.append(prefix).append("  minimum: ").append(minimum).append('\n');
         {
             sb.append(prefix).append("  maximum: ").append(maximum).append('\n');
-        } //End block
+        } 
         sb.append(prefix).append("]\n");
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //sb.append(prefix).append("General Subtree: [\n");
-        //sb.append(prefix).append("  base: ").append(base).append('\n');
-        //sb.append(prefix).append("  minimum: ").append(minimum).append('\n');
-        //if (maximum >= 0) {
-            //sb.append(prefix).append("  maximum: ").append(maximum).append('\n');
-        //}
-        //sb.append(prefix).append("]\n");
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -118,29 +120,6 @@ public final class GeneralSubtree {
             }
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            GeneralSubtree gs = (GeneralSubtree) object;
-            values[0] = gs.base;
-            values[1] = ASN1Integer.fromIntValue(gs.minimum);
-            if (gs.maximum > -1) {
-                values[2] = ASN1Integer.fromIntValue(gs.maximum);
-            }
-        }
     
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) {
-            Object[] values = (Object[]) in.content;
-            int maximum = -1; 
-            if (values[2] != null) {
-                maximum = ASN1Integer.toIntValue(values[2]); 
-            }
-            return new GeneralSubtree((GeneralName) values[0],
-                    ASN1Integer.toIntValue(values[1]),
-                    maximum);
-        }
-    
-    */
 }
 

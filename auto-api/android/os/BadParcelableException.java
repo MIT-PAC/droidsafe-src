@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.AndroidRuntimeException;
 
@@ -15,7 +15,7 @@ public class BadParcelableException extends AndroidRuntimeException {
     public  BadParcelableException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,7 +23,7 @@ public class BadParcelableException extends AndroidRuntimeException {
     public  BadParcelableException(Exception cause) {
         super(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

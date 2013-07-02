@@ -1,11 +1,11 @@
 package org.bouncycastle.math.ec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 
@@ -14,10 +14,11 @@ class WNafMultiplier implements ECMultiplier {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.893 -0400", hash_original_method = "C00227C22ED402D319A853243DDBC230", hash_generated_method = "C00227C22ED402D319A853243DDBC230")
     public WNafMultiplier ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.894 -0400", hash_original_method = "1459872133D83D08012D8F1A13CEC4DA", hash_generated_method = "B3D368199CFD518FC1CCB87BD4860BAB")
     public byte[] windowNaf(byte width, BigInteger k) {
         byte[] wnaf = new byte[k.bitLength() + 1];
@@ -36,95 +37,96 @@ class WNafMultiplier implements ECMultiplier {
                             boolean var1DBB8A5A29EBE1DCC5BC003EFB8FD3E2_1073894253 = (remainder.testBit(width - 1));
                             {
                                 wnaf[i] = (byte)(remainder.intValue() - pow2wB);
-                            } //End block
+                            } 
                             {
                                 wnaf[i] = (byte)remainder.intValue();
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         k = k.subtract(BigInteger.valueOf(wnaf[i]));
                         length = i;
-                    } //End block
+                    } 
                     {
                         wnaf[i] = 0;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 k = k.shiftRight(1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         byte[] wnafShort = new byte[length];
         System.arraycopy(wnaf, 0, wnafShort, 0, length);
         addTaint(width);
         addTaint(k.getTaint());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1145183222 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1145183222;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.897 -0400", hash_original_method = "6B924519E3A0D968D1CF685546CDD2FF", hash_generated_method = "A4B251DC9CDE5AB9FDD850B4272B4AC0")
     public ECPoint multiply(ECPoint p, BigInteger k, PreCompInfo preCompInfo) {
-        ECPoint varB4EAC82CA7396A68D541C85D26508E83_667666737 = null; //Variable for return #1
+        ECPoint varB4EAC82CA7396A68D541C85D26508E83_667666737 = null; 
         WNafPreCompInfo wnafPreCompInfo;
         {
             wnafPreCompInfo = (WNafPreCompInfo)preCompInfo;
-        } //End block
+        } 
         {
             wnafPreCompInfo = new WNafPreCompInfo();
-        } //End block
+        } 
         int m = k.bitLength();
         byte width;
         int reqPreCompLen;
         {
             width = 2;
             reqPreCompLen = 1;
-        } //End block
+        } 
         {
             {
                 width = 3;
                 reqPreCompLen = 2;
-            } //End block
+            } 
             {
                 {
                     width = 4;
                     reqPreCompLen = 4;
-                } //End block
+                } 
                 {
                     {
                         width = 5;
                         reqPreCompLen = 8;
-                    } //End block
+                    } 
                     {
                         {
                             width = 6;
                             reqPreCompLen = 16;
-                        } //End block
+                        } 
                         {
                             {
                                 width = 7;
                                 reqPreCompLen = 32;
-                            } //End block
+                            } 
                             {
                                 width = 8;
                                 reqPreCompLen = 127;
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         int preCompLen = 1;
         ECPoint[] preComp = wnafPreCompInfo.getPreComp();
         ECPoint twiceP = wnafPreCompInfo.getTwiceP();
         {
             preComp = new ECPoint[]{ p };
-        } //End block
+        } 
         {
             preCompLen = preComp.length;
-        } //End block
+        } 
         {
             twiceP = p.twice();
-        } //End block
+        } 
         {
             ECPoint[] oldPreComp = preComp;
             preComp = new ECPoint[reqPreCompLen];
@@ -133,9 +135,9 @@ class WNafMultiplier implements ECMultiplier {
                 int i = preCompLen;
                 {
                     preComp[i] = twiceP.add(preComp[i - 1]);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         byte[] wnaf = windowNaf(width, k);
         int l = wnaf.length;
         ECPoint q = p.getCurve().getInfinity();
@@ -146,13 +148,13 @@ class WNafMultiplier implements ECMultiplier {
                 {
                     {
                         q = q.add(preComp[(wnaf[i] - 1)/2]);
-                    } //End block
+                    } 
                     {
                         q = q.subtract(preComp[(-wnaf[i] - 1)/2]);
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         wnafPreCompInfo.setPreComp(preComp);
         wnafPreCompInfo.setTwiceP(twiceP);
         p.setPreCompInfo(wnafPreCompInfo);
@@ -160,10 +162,10 @@ class WNafMultiplier implements ECMultiplier {
         addTaint(p.getTaint());
         addTaint(k.getTaint());
         addTaint(preCompInfo.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_667666737.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_667666737.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_667666737;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

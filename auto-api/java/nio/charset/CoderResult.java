@@ -1,11 +1,11 @@
 package java.nio.charset;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;
@@ -23,12 +23,13 @@ public class CoderResult {
     private  CoderResult(int type, int length) {
         this.type = type;
         this.length = length;
-        // ---------- Original Method ----------
-        //this.type = type;
-        //this.length = length;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized CoderResult malformedForLength(int length) throws IllegalArgumentException {
         if (length > 0) {
             Integer key = Integer.valueOf(length);
@@ -45,6 +46,7 @@ public class CoderResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized CoderResult unmappableForLength(int length) throws IllegalArgumentException {
         if (length > 0) {
             Integer key = Integer.valueOf(length);
@@ -65,8 +67,8 @@ public class CoderResult {
     public boolean isUnderflow() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_173777278 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_173777278;
-        // ---------- Original Method ----------
-        //return this.type == TYPE_UNDERFLOW;
+        
+        
     }
 
     
@@ -74,9 +76,9 @@ public class CoderResult {
     public boolean isError() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1121933034 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1121933034;
-        // ---------- Original Method ----------
-        //return this.type == TYPE_MALFORMED_INPUT
-                //|| this.type == TYPE_UNMAPPABLE_CHAR;
+        
+        
+                
     }
 
     
@@ -84,8 +86,8 @@ public class CoderResult {
     public boolean isMalformed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_288971261 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_288971261;
-        // ---------- Original Method ----------
-        //return this.type == TYPE_MALFORMED_INPUT;
+        
+        
     }
 
     
@@ -93,8 +95,8 @@ public class CoderResult {
     public boolean isOverflow() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_130944382 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_130944382;
-        // ---------- Original Method ----------
-        //return this.type == TYPE_OVERFLOW;
+        
+        
     }
 
     
@@ -102,106 +104,109 @@ public class CoderResult {
     public boolean isUnmappable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_631480977 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_631480977;
-        // ---------- Original Method ----------
-        //return this.type == TYPE_UNMAPPABLE_CHAR;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.997 -0400", hash_original_method = "9DF3E8EF203785D8A82D753745232C5B", hash_generated_method = "DBD74B9F15E890B12093B558E67B4FC8")
     public int length() throws UnsupportedOperationException {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("length meaningless for " + toString());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_554026394 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_554026394;
-        // ---------- Original Method ----------
-        //if (this.type == TYPE_MALFORMED_INPUT || this.type == TYPE_UNMAPPABLE_CHAR) {
-            //return this.length;
-        //}
-        //throw new UnsupportedOperationException("length meaningless for " + toString());
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.997 -0400", hash_original_method = "8994A4AB686221398F6DD6413AEB03CF", hash_generated_method = "9CC9D9B5F697ABA775A97FBE154CCC83")
     public void throwException() throws BufferUnderflowException,
             BufferOverflowException, UnmappableCharacterException,
             MalformedInputException, CharacterCodingException {
-        //Begin case TYPE_UNDERFLOW 
+        
         if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
-        //End case TYPE_UNDERFLOW 
-        //Begin case TYPE_OVERFLOW 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new BufferOverflowException();
-        //End case TYPE_OVERFLOW 
-        //Begin case TYPE_UNMAPPABLE_CHAR 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new UnmappableCharacterException(this.length);
-        //End case TYPE_UNMAPPABLE_CHAR 
-        //Begin case TYPE_MALFORMED_INPUT 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new MalformedInputException(this.length);
-        //End case TYPE_MALFORMED_INPUT 
-        //Begin case default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new CharacterCodingException();
-        //End case default 
-        // ---------- Original Method ----------
-        //switch (this.type) {
-            //case TYPE_UNDERFLOW:
-                //throw new BufferUnderflowException();
-            //case TYPE_OVERFLOW:
-                //throw new BufferOverflowException();
-            //case TYPE_UNMAPPABLE_CHAR:
-                //throw new UnmappableCharacterException(this.length);
-            //case TYPE_MALFORMED_INPUT:
-                //throw new MalformedInputException(this.length);
-            //default:
-                //throw new CharacterCodingException();
-        //}
+        
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.998 -0400", hash_original_method = "1AD631AC990AF6BF0D5460B8B5F54BE7", hash_generated_method = "B171209D5785D3FC4357610D55D2788D")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1955482884 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1955482884 = null; 
         String dsc = null;
-        //Begin case TYPE_UNDERFLOW 
+        
         dsc = "UNDERFLOW error";
-        //End case TYPE_UNDERFLOW 
-        //Begin case TYPE_OVERFLOW 
+        
+        
         dsc = "OVERFLOW error";
-        //End case TYPE_OVERFLOW 
-        //Begin case TYPE_UNMAPPABLE_CHAR 
+        
+        
         dsc = "Unmappable-character error with erroneous input length "
                         + this.length;
-        //End case TYPE_UNMAPPABLE_CHAR 
-        //Begin case TYPE_MALFORMED_INPUT 
+        
+        
         dsc = "Malformed-input error with erroneous input length "
                         + this.length;
-        //End case TYPE_MALFORMED_INPUT 
-        //Begin case default 
+        
+        
         dsc = "";
-        //End case default 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1955482884 = getClass().getName() + "[" + dsc + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_1955482884.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1955482884.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1955482884;
-        // ---------- Original Method ----------
-        //String dsc = null;
-        //switch (this.type) {
-            //case TYPE_UNDERFLOW:
-                //dsc = "UNDERFLOW error";
-                //break;
-            //case TYPE_OVERFLOW:
-                //dsc = "OVERFLOW error";
-                //break;
-            //case TYPE_UNMAPPABLE_CHAR:
-                //dsc = "Unmappable-character error with erroneous input length "
-                        //+ this.length;
-                //break;
-            //case TYPE_MALFORMED_INPUT:
-                //dsc = "Malformed-input error with erroneous input length "
-                        //+ this.length;
-                //break;
-            //default:
-                //dsc = "";
-                //break;
-        //}
-        //return getClass().getName() + "[" + dsc + "]";
+        
+        
+        
+            
+                
+                
+            
+                
+                
+            
+                
+                        
+                
+            
+                
+                        
+                
+            
+                
+                
+        
+        
     }
 
     

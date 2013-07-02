@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.harmony.security.asn1.ASN1BitString;
 import org.apache.harmony.security.asn1.ASN1Sequence;
@@ -37,12 +37,12 @@ public final class CertificateList {
         this.signatureValue = new byte[signatureValue.length];
         System.arraycopy(signatureValue, 0, this.signatureValue, 0,
                                                     signatureValue.length);
-        // ---------- Original Method ----------
-        //this.tbsCertList = tbsCertList;
-        //this.signatureAlgorithm = signatureAlgorithm;
-        //this.signatureValue = new byte[signatureValue.length];
-        //System.arraycopy(signatureValue, 0, this.signatureValue, 0,
-                                                    //signatureValue.length);
+        
+        
+        
+        
+        
+                                                    
     }
 
     
@@ -55,67 +55,70 @@ public final class CertificateList {
         addTaint(tbsCertList.getTaint());
         addTaint(signatureAlgorithm.getTaint());
         addTaint(signatureValue[0]);
-        // ---------- Original Method ----------
-        //this.encoding = encoding;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.730 -0400", hash_original_method = "C6096C9759CF7088E874A2A2D3801E56", hash_generated_method = "7486B4D364A36E5C3259A87535EB39B7")
     public TBSCertList getTbsCertList() {
-        TBSCertList varB4EAC82CA7396A68D541C85D26508E83_451097700 = null; //Variable for return #1
+        TBSCertList varB4EAC82CA7396A68D541C85D26508E83_451097700 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_451097700 = tbsCertList;
-        varB4EAC82CA7396A68D541C85D26508E83_451097700.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_451097700.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_451097700;
-        // ---------- Original Method ----------
-        //return tbsCertList;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.730 -0400", hash_original_method = "FD6792B7396143D84E51253527677292", hash_generated_method = "CE5DD0E55D4AFA2C748D9DA2028B9C70")
     public byte[] getSignatureValue() {
         byte[] result = new byte[signatureValue.length];
         System.arraycopy(signatureValue, 0, result, 0, signatureValue.length);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_386546161 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_386546161;
-        // ---------- Original Method ----------
-        //byte[] result = new byte[signatureValue.length];
-        //System.arraycopy(signatureValue, 0, result, 0, signatureValue.length);
-        //return result;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.730 -0400", hash_original_method = "80C69E334C5CE31111385C23EECA9331", hash_generated_method = "CBEBF90756DA93D626B9D3F5B0E3AAD0")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1681596176 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1681596176 = null; 
         StringBuilder result = new StringBuilder();
         tbsCertList.dumpValue(result);
         result.append("\nSignature Value:\n");
         result.append(Array.toString(signatureValue, ""));
         varB4EAC82CA7396A68D541C85D26508E83_1681596176 = result.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1681596176.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1681596176.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1681596176;
-        // ---------- Original Method ----------
-        //StringBuilder result = new StringBuilder();
-        //tbsCertList.dumpValue(result);
-        //result.append("\nSignature Value:\n");
-        //result.append(Array.toString(signatureValue, ""));
-        //return result.toString();
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.731 -0400", hash_original_method = "32DCE62651649D85CD3AB4D018999455", hash_generated_method = "324C85D226E914CA212C7D78C51FCFD1")
     public byte[] getEncoded() {
         {
             encoding = CertificateList.ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2077508312 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2077508312;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = CertificateList.ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
@@ -143,26 +146,6 @@ public final class CertificateList {
             values[2] = new BitString(certificateList.signatureValue, 0);
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            CertificateList certificateList = (CertificateList) object;
-            values[0] = certificateList.tbsCertList;
-            values[1] = certificateList.signatureAlgorithm;
-            values[2] = new BitString(certificateList.signatureValue, 0);
-        }
     
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) {
-            Object[] values = (Object[]) in.content;
-            return new CertificateList(
-                    (TBSCertList) values[0],
-                    (AlgorithmIdentifier) values[1],
-                    ((BitString) values[2]).bytes, 
-                    in.getEncoded()
-                    );
-        }
-    
-    */
 }
 

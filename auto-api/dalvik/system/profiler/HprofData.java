@@ -1,11 +1,11 @@
 package dalvik.system.profiler;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,13 +41,13 @@ public final class HprofData {
     public  HprofData(Map<StackTrace, int[]> stackTraces) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("stackTraces == null");
-        } //End block
+        } 
         this.stackTraces = stackTraces;
-        // ---------- Original Method ----------
-        //if (stackTraces == null) {
-            //throw new NullPointerException("stackTraces == null");
-        //}
-        //this.stackTraces = stackTraces;
+        
+        
+            
+        
+        
     }
 
     
@@ -55,16 +55,16 @@ public final class HprofData {
     public long getStartMillis() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2029881342 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2029881342;
-        // ---------- Original Method ----------
-        //return startMillis;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.056 -0400", hash_original_method = "B0BB2E1F2492EC486CB4460593218E46", hash_generated_method = "32E114486602338DC0FFC6C493371EE3")
     public void setStartMillis(long startMillis) {
         this.startMillis = startMillis;
-        // ---------- Original Method ----------
-        //this.startMillis = startMillis;
+        
+        
     }
 
     
@@ -72,16 +72,16 @@ public final class HprofData {
     public int getFlags() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1985953678 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1985953678;
-        // ---------- Original Method ----------
-        //return flags;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.056 -0400", hash_original_method = "E55E0ED6FE66EB0D458BFDED224C9943", hash_generated_method = "F61A3B65ECD9BA445206989DF2EF1A1F")
     public void setFlags(int flags) {
         this.flags = flags;
-        // ---------- Original Method ----------
-        //this.flags = flags;
+        
+        
     }
 
     
@@ -89,33 +89,35 @@ public final class HprofData {
     public int getDepth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1448025043 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1448025043;
-        // ---------- Original Method ----------
-        //return depth;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.056 -0400", hash_original_method = "7E87B9040AF172D5ADB37F7AF7F75CA6", hash_generated_method = "FFC7D812D0FFB494BA967C34F7E21CCC")
     public void setDepth(int depth) {
         this.depth = depth;
-        // ---------- Original Method ----------
-        //this.depth = depth;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.057 -0400", hash_original_method = "8C7F14531209B0BE4CB8ACECEBC720CC", hash_generated_method = "C3E5F166DDD11FA946412B762A206E28")
     public List<ThreadEvent> getThreadHistory() {
-        List<ThreadEvent> varB4EAC82CA7396A68D541C85D26508E83_357137246 = null; //Variable for return #1
+        List<ThreadEvent> varB4EAC82CA7396A68D541C85D26508E83_357137246 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_357137246 = Collections.unmodifiableList(threadHistory);
-        varB4EAC82CA7396A68D541C85D26508E83_357137246.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_357137246.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_357137246;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableList(threadHistory);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.064 -0400", hash_original_method = "F4E32CE6895396BD588CC20D263E2FB4", hash_generated_method = "F31DA47C096889D17B8E513E22E8B70A")
     public Set<Sample> getSamples() {
-        Set<Sample> varB4EAC82CA7396A68D541C85D26508E83_129841385 = null; //Variable for return #1
+        Set<Sample> varB4EAC82CA7396A68D541C85D26508E83_129841385 = null; 
         Set<Sample> samples = new HashSet<Sample>(stackTraces.size());
         {
             Iterator<Entry<StackTrace, int[]>> var90BB71089607029678F04EF3DD4C4774_1298533215 = (stackTraces.entrySet()).iterator();
@@ -127,21 +129,21 @@ public final class HprofData {
                 int count = countCell[0];
                 Sample sample = new Sample(stackTrace, count);
                 samples.add(sample);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_129841385 = samples;
-        varB4EAC82CA7396A68D541C85D26508E83_129841385.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_129841385.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_129841385;
-        // ---------- Original Method ----------
-        //Set<Sample> samples = new HashSet<Sample>(stackTraces.size());
-        //for (Entry<StackTrace, int[]> e : stackTraces.entrySet()) {
-            //StackTrace stackTrace = e.getKey();
-            //int countCell[] = e.getValue();
-            //int count = countCell[0];
-            //Sample sample = new Sample(stackTrace, count);
-            //samples.add(sample);
-        //}
-        //return samples;
+        
+        
+        
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -149,24 +151,24 @@ public final class HprofData {
     public void addThreadEvent(ThreadEvent event) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("event == null");
-        } //End block
+        } 
         ThreadEvent old = threadIdToThreadEvent.put(event.threadId, event);
-        //Begin case START 
+        
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("ThreadEvent already registered for id "
                                                        + event.threadId);
-        } //End block
-        //End case START 
-        //Begin case END 
+        } 
+        
+        
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Duplicate ThreadEvent.end for id "
                                                        + event.threadId);
-        } //End block
-        //End case END 
+        } 
+        
         threadHistory.add(event);
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -176,24 +178,24 @@ public final class HprofData {
             boolean varF730A1A3EABF99869C11ED3AF87B008F_1108894586 = (!threadIdToThreadEvent.containsKey(stackTrace.threadId));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown thread id " + stackTrace.threadId);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int[] old = stackTraces.put(stackTrace, countCell);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("StackTrace already registered for id "
                                                + stackTrace.stackTraceId + ":\n" + stackTrace);
-        } //End block
+        } 
         addTaint(stackTrace.getTaint());
         addTaint(countCell[0]);
-        // ---------- Original Method ----------
-        //if (!threadIdToThreadEvent.containsKey(stackTrace.threadId)) {
-            //throw new IllegalArgumentException("Unknown thread id " + stackTrace.threadId);
-        //}
-        //int[] old = stackTraces.put(stackTrace, countCell);
-        //if (old != null) {
-            //throw new IllegalArgumentException("StackTrace already registered for id "
-                                               //+ stackTrace.stackTraceId + ":\n" + stackTrace);
-        //}
+        
+        
+            
+        
+        
+        
+            
+                                               
+        
     }
 
     
@@ -225,23 +227,23 @@ public final class HprofData {
                             String threadName, String groupName, String parentGroupName) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("threadName == null");
-            } //End block
+            } 
             this.type = ThreadEventType.START;
             this.objectId = objectId;
             this.threadId = threadId;
             this.threadName = threadName;
             this.groupName = groupName;
             this.parentGroupName = parentGroupName;
-            // ---------- Original Method ----------
-            //if (threadName == null) {
-                //throw new NullPointerException("threadName == null");
-            //}
-            //this.type = ThreadEventType.START;
-            //this.objectId = objectId;
-            //this.threadId = threadId;
-            //this.threadName = threadName;
-            //this.groupName = groupName;
-            //this.parentGroupName = parentGroupName;
+            
+            
+                
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -253,13 +255,13 @@ public final class HprofData {
             this.threadName = null;
             this.groupName = null;
             this.parentGroupName = null;
-            // ---------- Original Method ----------
-            //this.type = ThreadEventType.END;
-            //this.objectId = -1;
-            //this.threadId = threadId;
-            //this.threadName = null;
-            //this.groupName = null;
-            //this.parentGroupName = null;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -286,14 +288,14 @@ public final class HprofData {
             result = 31 * result + hashCode(parentGroupName);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429360751 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429360751;
-            // ---------- Original Method ----------
-            //int result = 17;
-            //result = 31 * result + objectId;
-            //result = 31 * result + threadId;
-            //result = 31 * result + hashCode(threadName);
-            //result = 31 * result + hashCode(groupName);
-            //result = 31 * result + hashCode(parentGroupName);
-            //return result;
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -315,17 +317,17 @@ public final class HprofData {
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_264653393 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_264653393;
-            // ---------- Original Method ----------
-            //if (!(o instanceof ThreadEvent)) {
-                //return false;
-            //}
-            //ThreadEvent event = (ThreadEvent) o;
-            //return (this.type == event.type
-                    //&& this.objectId == event.objectId
-                    //&& this.threadId == event.threadId
-                    //&& equal(this.threadName, event.threadName)
-                    //&& equal(this.groupName, event.groupName)
-                    //&& equal(this.parentGroupName, event.parentGroupName));
+            
+            
+                
+            
+            
+            
+                    
+                    
+                    
+                    
+                    
         }
 
         
@@ -337,38 +339,38 @@ public final class HprofData {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.074 -0400", hash_original_method = "B2760D4380298F8E4BDF009F5947B547", hash_generated_method = "8F9D65EE5FD1CBB76D6CBCCB4CFF4494")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1013603380 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_1605857930 = null; //Variable for return #2
-            //Begin case START 
+            String varB4EAC82CA7396A68D541C85D26508E83_1013603380 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1605857930 = null; 
+            
             varB4EAC82CA7396A68D541C85D26508E83_1013603380 = String.format(
                             "THREAD START (obj=%d, id = %d, name=\"%s\", group=\"%s\")",
                             objectId, threadId, threadName, groupName);
-            //End case START 
-            //Begin case END 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_1605857930 = String.format("THREAD END (id = %d)", threadId);
-            //End case END 
+            
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(type.toString());
-            String varA7E53CE21691AB073D9660D615818899_1304261715; //Final return value
+            String varA7E53CE21691AB073D9660D615818899_1304261715; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1304261715 = varB4EAC82CA7396A68D541C85D26508E83_1013603380;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1304261715 = varB4EAC82CA7396A68D541C85D26508E83_1605857930;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1304261715.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1304261715.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1304261715;
-            // ---------- Original Method ----------
-            //switch (type) {
-                //case START:
-                    //return String.format(
-                            //"THREAD START (obj=%d, id = %d, name=\"%s\", group=\"%s\")",
-                            //objectId, threadId, threadName, groupName);
-                //case END:
-                    //return String.format("THREAD END (id = %d)", threadId);
-            //}
-            //throw new IllegalStateException(type.toString());
+            
+            
+                
+                    
+                            
+                            
+                
+                    
+            
+            
         }
 
         
@@ -390,8 +392,8 @@ public final class HprofData {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.074 -0400", hash_original_method = "937A3F2A08E08A14F8EC24A94B9A8468", hash_generated_method = "B8B05431485364C1F4F77D04A35AC9F2")
           StackTrace() {
             this.stackTraceId = -1;
-            // ---------- Original Method ----------
-            //this.stackTraceId = -1;
+            
+            
         }
 
         
@@ -399,17 +401,17 @@ public final class HprofData {
         public  StackTrace(int stackTraceId, int threadId, StackTraceElement[] stackFrames) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("stackFrames == null");
-            } //End block
+            } 
             this.stackTraceId = stackTraceId;
             this.threadId = threadId;
             this.stackFrames = stackFrames;
-            // ---------- Original Method ----------
-            //if (stackFrames == null) {
-                //throw new NullPointerException("stackFrames == null");
-            //}
-            //this.stackTraceId = stackTraceId;
-            //this.threadId = threadId;
-            //this.stackFrames = stackFrames;
+            
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -417,19 +419,19 @@ public final class HprofData {
         public int getThreadId() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2046741135 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2046741135;
-            // ---------- Original Method ----------
-            //return threadId;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.076 -0400", hash_original_method = "825D6A57778B026225A4AA6FF793AA6E", hash_generated_method = "A6074E76A31D44F42ABAADE00B99E8DF")
         public StackTraceElement[] getStackFrames() {
-            StackTraceElement[] varB4EAC82CA7396A68D541C85D26508E83_1959729994 = null; //Variable for return #1
+            StackTraceElement[] varB4EAC82CA7396A68D541C85D26508E83_1959729994 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1959729994 = stackFrames;
-            varB4EAC82CA7396A68D541C85D26508E83_1959729994.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1959729994.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1959729994;
-            // ---------- Original Method ----------
-            //return stackFrames;
+            
+            
         }
 
         
@@ -441,11 +443,11 @@ public final class HprofData {
             result = 31 * result + Arrays.hashCode(stackFrames);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2122904945 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2122904945;
-            // ---------- Original Method ----------
-            //int result = 17;
-            //result = 31 * result + threadId;
-            //result = 31 * result + Arrays.hashCode(stackFrames);
-            //return result;
+            
+            
+            
+            
+            
         }
 
         
@@ -457,19 +459,19 @@ public final class HprofData {
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1871880532 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1871880532;
-            // ---------- Original Method ----------
-            //if (!(o instanceof StackTrace)) {
-                //return false;
-            //}
-            //StackTrace s = (StackTrace) o;
-            //return threadId == s.threadId && Arrays.equals(stackFrames, s.stackFrames);
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.086 -0400", hash_original_method = "2C975038FABEA62C51E7521430E68593", hash_generated_method = "E796FC4CE82F7ACBEDFDE7780C126F29")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_2124514530 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_2124514530 = null; 
             StringBuilder frames = new StringBuilder();
             {
                 frames.append('\n');
@@ -479,32 +481,32 @@ public final class HprofData {
                         frames.append("\t at ");
                         frames.append(stackFrame);
                         frames.append('\n');
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 frames.append("<empty>");
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_2124514530 = "StackTrace[stackTraceId=" + stackTraceId
                     + ", threadId=" + threadId
                     + ", frames=" + frames + "]";
-            varB4EAC82CA7396A68D541C85D26508E83_2124514530.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2124514530.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2124514530;
-            // ---------- Original Method ----------
-            //StringBuilder frames = new StringBuilder();
-            //if (stackFrames.length > 0) {
-                //frames.append('\n');
-                //for (StackTraceElement stackFrame : stackFrames) {
-                    //frames.append("\t at ");
-                    //frames.append(stackFrame);
-                    //frames.append('\n');
-                //}
-            //} else {
-                //frames.append("<empty>");
-            //}
-            //return "StackTrace[stackTraceId=" + stackTraceId
-                    //+ ", threadId=" + threadId
-                    //+ ", frames=" + frames + "]";
+            
+            
+            
+                
+                
+                    
+                    
+                    
+                
+            
+                
+            
+            
+                    
+                    
         }
 
         
@@ -524,21 +526,21 @@ public final class HprofData {
         private  Sample(StackTrace stackTrace, int count) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("stackTrace == null");
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("count < 0:" + count);
-            } //End block
+            } 
             this.stackTrace = stackTrace;
             this.count = count;
-            // ---------- Original Method ----------
-            //if (stackTrace == null) {
-                //throw new NullPointerException("stackTrace == null");
-            //}
-            //if (count < 0) {
-                //throw new IllegalArgumentException("count < 0:" + count);
-            //}
-            //this.stackTrace = stackTrace;
-            //this.count = count;
+            
+            
+                
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -550,11 +552,11 @@ public final class HprofData {
             result = 31 * result + count;
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819451191 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819451191;
-            // ---------- Original Method ----------
-            //int result = 17;
-            //result = 31 * result + stackTrace.hashCode();
-            //result = 31 * result + count;
-            //return result;
+            
+            
+            
+            
+            
         }
 
         
@@ -566,24 +568,24 @@ public final class HprofData {
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1271299389 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1271299389;
-            // ---------- Original Method ----------
-            //if (!(o instanceof Sample)) {
-                //return false;
-            //}
-            //Sample s = (Sample) o;
-            //return count == s.count && stackTrace.equals(s.stackTrace);
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.091 -0400", hash_original_method = "27C27C8BDAE57781C2B46A818775E5B8", hash_generated_method = "EF00CA4472AE9456BAC64EBEC6AAD010")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1499287359 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1499287359 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1499287359 = "Sample[count=" + count + " " + stackTrace + "]";
-            varB4EAC82CA7396A68D541C85D26508E83_1499287359.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1499287359.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1499287359;
-            // ---------- Original Method ----------
-            //return "Sample[count=" + count + " " + stackTrace + "]";
+            
+            
         }
 
         

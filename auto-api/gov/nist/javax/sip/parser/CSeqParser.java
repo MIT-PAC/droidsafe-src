@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.javax.sip.message.SIPRequest;
@@ -19,7 +19,7 @@ public class CSeqParser extends HeaderParser {
     public  CSeqParser(String cseq) {
         super(cseq);
         addTaint(cseq.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,13 +27,14 @@ public class CSeqParser extends HeaderParser {
     protected  CSeqParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.788 -0400", hash_original_method = "25983B4EEF6E8D8834C12C4F0FEB872C", hash_generated_method = "6ED81F8177B68EA17387CD4175E76976")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1457339015 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1457339015 = null; 
         try 
         {
             CSeq c = new CSeq();
@@ -49,21 +50,21 @@ public class CSeqParser extends HeaderParser {
             this.lexer.SPorHT();
             this.lexer.match('\n');
             varB4EAC82CA7396A68D541C85D26508E83_1457339015 = c;
-        } //End block
+        } 
         catch (NumberFormatException ex)
         {
             Debug.printStackTrace(ex);
             if (DroidSafeAndroidRuntime.control) throw createParseException("Number format exception");
-        } //End block
+        } 
         catch (InvalidArgumentException ex)
         {
             Debug.printStackTrace(ex);
             if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1457339015.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1457339015.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1457339015;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

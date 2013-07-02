@@ -1,11 +1,11 @@
 package android.app.backup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.backup.RestoreObserver;
 import android.app.backup.RestoreSet;
@@ -32,12 +32,13 @@ public class RestoreSession {
       RestoreSession(Context context, IRestoreSession binder) {
         mContext = context;
         mBinder = binder;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mBinder = binder;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.772 -0400", hash_original_method = "85E5CD06982622FBF40B882974335BE2", hash_generated_method = "7CF18FD6D40E413E910C102B352B82C7")
     public int getAvailableRestoreSets(RestoreObserver observer) {
         int err = -1;
@@ -45,151 +46,155 @@ public class RestoreSession {
         try 
         {
             err = mBinder.getAvailableRestoreSets(obsWrapper);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             Log.d(TAG, "Can't contact server to get available sets");
-        } //End block
+        } 
         addTaint(observer.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1957458813 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1957458813;
-        // ---------- Original Method ----------
-        //int err = -1;
-        //RestoreObserverWrapper obsWrapper = new RestoreObserverWrapper(mContext, observer);
-        //try {
-            //err = mBinder.getAvailableRestoreSets(obsWrapper);
-        //} catch (RemoteException e) {
-            //Log.d(TAG, "Can't contact server to get available sets");
-        //}
-        //return err;
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.773 -0400", hash_original_method = "C8DAB2ADB788499C67FF0E8E9408ECE5", hash_generated_method = "7241D36773FBAF449173A6BEBCD1AE7D")
     public int restoreAll(long token, RestoreObserver observer) {
         int err = -1;
         {
             Log.d(TAG, "restoreAll() called during active restore");
-        } //End block
+        } 
         mObserver = new RestoreObserverWrapper(mContext, observer);
         try 
         {
             err = mBinder.restoreAll(token, mObserver);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             Log.d(TAG, "Can't contact server to restore");
-        } //End block
+        } 
         addTaint(token);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_106188439 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_106188439;
-        // ---------- Original Method ----------
-        //int err = -1;
-        //if (mObserver != null) {
-            //Log.d(TAG, "restoreAll() called during active restore");
-            //return -1;
-        //}
-        //mObserver = new RestoreObserverWrapper(mContext, observer);
-        //try {
-            //err = mBinder.restoreAll(token, mObserver);
-        //} catch (RemoteException e) {
-            //Log.d(TAG, "Can't contact server to restore");
-        //}
-        //return err;
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.774 -0400", hash_original_method = "F5EFDD74303F049C8AACBA4BE897E134", hash_generated_method = "8C07AE306E007F3214DB23209E57FB29")
     public int restoreSome(long token, RestoreObserver observer, String[] packages) {
         int err = -1;
         {
             Log.d(TAG, "restoreAll() called during active restore");
-        } //End block
+        } 
         mObserver = new RestoreObserverWrapper(mContext, observer);
         try 
         {
             err = mBinder.restoreSome(token, mObserver, packages);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             Log.d(TAG, "Can't contact server to restore packages");
-        } //End block
+        } 
         addTaint(token);
         addTaint(packages[0].getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1724978974 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1724978974;
-        // ---------- Original Method ----------
-        //int err = -1;
-        //if (mObserver != null) {
-            //Log.d(TAG, "restoreAll() called during active restore");
-            //return -1;
-        //}
-        //mObserver = new RestoreObserverWrapper(mContext, observer);
-        //try {
-            //err = mBinder.restoreSome(token, mObserver, packages);
-        //} catch (RemoteException e) {
-            //Log.d(TAG, "Can't contact server to restore packages");
-        //}
-        //return err;
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.775 -0400", hash_original_method = "45656BEA7940AC3102C43782877B83F7", hash_generated_method = "1021AF544E5058C444B595C4C06B388A")
     public int restorePackage(String packageName, RestoreObserver observer) {
         int err = -1;
         {
             Log.d(TAG, "restorePackage() called during active restore");
-        } //End block
+        } 
         mObserver = new RestoreObserverWrapper(mContext, observer);
         try 
         {
             err = mBinder.restorePackage(packageName, mObserver);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             Log.d(TAG, "Can't contact server to restore package");
-        } //End block
+        } 
         addTaint(packageName.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2044855183 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2044855183;
-        // ---------- Original Method ----------
-        //int err = -1;
-        //if (mObserver != null) {
-            //Log.d(TAG, "restorePackage() called during active restore");
-            //return -1;
-        //}
-        //mObserver = new RestoreObserverWrapper(mContext, observer);
-        //try {
-            //err = mBinder.restorePackage(packageName, mObserver);
-        //} catch (RemoteException e) {
-            //Log.d(TAG, "Can't contact server to restore package");
-        //}
-        //return err;
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.776 -0400", hash_original_method = "97A09429CDECAD0EA89948A618DDD793", hash_generated_method = "612247F4837A4CAF2A74D43F84ECBE92")
     public void endRestoreSession() {
         try 
         {
             mBinder.endRestoreSession();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             Log.d(TAG, "Can't contact server to get available sets");
-        } //End block
+        } 
         finally 
         {
             mBinder = null;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mBinder.endRestoreSession();
-        //} catch (RemoteException e) {
-            //Log.d(TAG, "Can't contact server to get available sets");
-        //} finally {
-            //mBinder = null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -207,39 +212,39 @@ public class RestoreSession {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.778 -0400", hash_original_method = "84BAABEE28F8F0BF3FE3DAD5813E1DC7", hash_generated_method = "DCE9EE46CEA488FF69889BC84D9BFD0F")
                 @Override
                 public void handleMessage(Message msg) {
-                    //Begin case MSG_RESTORE_STARTING 
+                    
                     mAppObserver.restoreStarting(msg.arg1);
-                    //End case MSG_RESTORE_STARTING 
-                    //Begin case MSG_UPDATE 
+                    
+                    
                     mAppObserver.onUpdate(msg.arg1, (String)msg.obj);
-                    //End case MSG_UPDATE 
-                    //Begin case MSG_RESTORE_FINISHED 
+                    
+                    
                     mAppObserver.restoreFinished(msg.arg1);
-                    //End case MSG_RESTORE_FINISHED 
-                    //Begin case MSG_RESTORE_SETS_AVAILABLE 
+                    
+                    
                     mAppObserver.restoreSetsAvailable((RestoreSet[])msg.obj);
-                    //End case MSG_RESTORE_SETS_AVAILABLE 
+                    
                     addTaint(msg.getTaint());
-                    // ---------- Original Method ----------
-                    //switch (msg.what) {
-                    //case MSG_RESTORE_STARTING:
-                        //mAppObserver.restoreStarting(msg.arg1);
-                        //break;
-                    //case MSG_UPDATE:
-                        //mAppObserver.onUpdate(msg.arg1, (String)msg.obj);
-                        //break;
-                    //case MSG_RESTORE_FINISHED:
-                        //mAppObserver.restoreFinished(msg.arg1);
-                        //break;
-                    //case MSG_RESTORE_SETS_AVAILABLE:
-                        //mAppObserver.restoreSetsAvailable((RestoreSet[])msg.obj);
-                        //break;
-                    //}
+                    
+                    
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
                 }
 };
             mAppObserver = appObserver;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -248,9 +253,9 @@ public class RestoreSession {
             mHandler.sendMessage(
                     mHandler.obtainMessage(MSG_RESTORE_SETS_AVAILABLE, result));
             addTaint(result[0].getTaint());
-            // ---------- Original Method ----------
-            //mHandler.sendMessage(
-                    //mHandler.obtainMessage(MSG_RESTORE_SETS_AVAILABLE, result));
+            
+            
+                    
         }
 
         
@@ -259,22 +264,22 @@ public class RestoreSession {
             mHandler.sendMessage(
                     mHandler.obtainMessage(MSG_RESTORE_STARTING, numPackages, 0));
             addTaint(numPackages);
-            // ---------- Original Method ----------
-            //mHandler.sendMessage(
-                    //mHandler.obtainMessage(MSG_RESTORE_STARTING, numPackages, 0));
+            
+            
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.780 -0400", hash_original_method = "4CFF49A8B007F8B448F2967D6A75009D", hash_generated_method = "D71A39D5EA6E0448F3E7603350D16E7C")
         public void onUpdate(int nowBeingRestored, String currentPackage) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mHandler.sendMessage(
                     mHandler.obtainMessage(MSG_UPDATE, nowBeingRestored, 0, currentPackage));
             addTaint(nowBeingRestored);
             addTaint(currentPackage.getTaint());
-            // ---------- Original Method ----------
-            //mHandler.sendMessage(
-                    //mHandler.obtainMessage(MSG_UPDATE, nowBeingRestored, 0, currentPackage));
+            
+            
+                    
         }
 
         
@@ -283,9 +288,9 @@ public class RestoreSession {
             mHandler.sendMessage(
                     mHandler.obtainMessage(MSG_RESTORE_FINISHED, error, 0));
             addTaint(error);
-            // ---------- Original Method ----------
-            //mHandler.sendMessage(
-                    //mHandler.obtainMessage(MSG_RESTORE_FINISHED, error, 0));
+            
+            
+                    
         }
 
         

@@ -1,11 +1,11 @@
 package java.beans;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class IndexedPropertyChangeEvent extends PropertyChangeEvent {
@@ -22,8 +22,8 @@ public class IndexedPropertyChangeEvent extends PropertyChangeEvent {
         addTaint(propertyName.getTaint());
         addTaint(oldValue.getTaint());
         addTaint(newValue.getTaint());
-        // ---------- Original Method ----------
-        //this.index = index;
+        
+        
     }
 
     
@@ -31,8 +31,8 @@ public class IndexedPropertyChangeEvent extends PropertyChangeEvent {
     public int getIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_370718512 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_370718512;
-        // ---------- Original Method ----------
-        //return index;
+        
+        
     }
 
     

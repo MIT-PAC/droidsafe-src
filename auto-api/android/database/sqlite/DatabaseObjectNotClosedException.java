@@ -1,11 +1,11 @@
 package android.database.sqlite;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class DatabaseObjectNotClosedException extends RuntimeException {
@@ -13,7 +13,7 @@ public class DatabaseObjectNotClosedException extends RuntimeException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.122 -0400", hash_original_method = "94780EE97E0D3B24B7301C55822424F4", hash_generated_method = "2D2E511949251DC58070A74B02AFBEEF")
     public  DatabaseObjectNotClosedException() {
         super(s);
-        // ---------- Original Method ----------
+        
     }
 
     

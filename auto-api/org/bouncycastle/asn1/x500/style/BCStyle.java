@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x500.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.Hashtable;
@@ -26,97 +26,100 @@ public class BCStyle implements X500NameStyle {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.543 -0400", hash_original_method = "0ABD618DA1E5963140699C4BF03983EF", hash_generated_method = "62EA560CCC47607A51180F5CADA7A74F")
     protected  BCStyle() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.544 -0400", hash_original_method = "BD2E63080765E1C5F0301383BAEA0055", hash_generated_method = "C06CD1502D537D23850A96BBCEBDE798")
     public ASN1Encodable stringToValue(ASN1ObjectIdentifier oid, String value) {
-        ASN1Encodable varB4EAC82CA7396A68D541C85D26508E83_2074032720 = null; //Variable for return #1
-        ASN1Encodable varB4EAC82CA7396A68D541C85D26508E83_424019760 = null; //Variable for return #2
-        ASN1Encodable varB4EAC82CA7396A68D541C85D26508E83_1456470362 = null; //Variable for return #3
-        ASN1Encodable varB4EAC82CA7396A68D541C85D26508E83_1054713158 = null; //Variable for return #4
-        ASN1Encodable varB4EAC82CA7396A68D541C85D26508E83_1198826114 = null; //Variable for return #5
+        ASN1Encodable varB4EAC82CA7396A68D541C85D26508E83_2074032720 = null; 
+        ASN1Encodable varB4EAC82CA7396A68D541C85D26508E83_424019760 = null; 
+        ASN1Encodable varB4EAC82CA7396A68D541C85D26508E83_1456470362 = null; 
+        ASN1Encodable varB4EAC82CA7396A68D541C85D26508E83_1054713158 = null; 
+        ASN1Encodable varB4EAC82CA7396A68D541C85D26508E83_1198826114 = null; 
         {
             boolean var6AB4A1536900027F51CF72957960A845_1346331693 = (value.length() != 0 && value.charAt(0) == '#');
             {
                 try 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_2074032720 = IETFUtils.valueFromHexString(value, 1);
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException("can't recode value for oid " + oid.getId());
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 {
                     boolean var2F99FAD1BF6C9CE40AAB172EEF759C4E_449408172 = (value.length() != 0 && value.charAt(0) == '\\');
                     {
                         value = value.substring(1);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varDD3C80EEB6562B7D2A8F9E6B77D53787_1230306038 = (oid.equals(EmailAddress) || oid.equals(DC));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_424019760 = new DERIA5String(value);
-                    } //End block
+                    } 
                     {
                         boolean var23BFADBCF03399108BE0E72E9ED62863_76326464 = (oid.equals(DATE_OF_BIRTH));
                         {
                             varB4EAC82CA7396A68D541C85D26508E83_1456470362 = new DERGeneralizedTime(value);
-                        } //End block
+                        } 
                         {
                             boolean var1B7ED6455ADA3B36E385699AAA46E198_1740450241 = (oid.equals(C) || oid.equals(SN) || oid.equals(DN_QUALIFIER)
                 || oid.equals(TELEPHONE_NUMBER));
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_1054713158 = new DERPrintableString(value);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1198826114 = new DERUTF8String(value);
         addTaint(oid.getTaint());
         addTaint(value.getTaint());
-        ASN1Encodable varA7E53CE21691AB073D9660D615818899_602447758; //Final return value
+        ASN1Encodable varA7E53CE21691AB073D9660D615818899_602447758; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_602447758 = varB4EAC82CA7396A68D541C85D26508E83_2074032720;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_602447758 = varB4EAC82CA7396A68D541C85D26508E83_424019760;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_602447758 = varB4EAC82CA7396A68D541C85D26508E83_1456470362;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_602447758 = varB4EAC82CA7396A68D541C85D26508E83_1054713158;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_602447758 = varB4EAC82CA7396A68D541C85D26508E83_1198826114;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_602447758.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_602447758.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_602447758;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.545 -0400", hash_original_method = "9484E4F8104F6AF4F123D2A5FD97E1FE", hash_generated_method = "C5C4B7D1399ABD700100372CAFA24C09")
     public ASN1ObjectIdentifier attrNameToOID(String attrName) {
-        ASN1ObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1078415255 = null; //Variable for return #1
+        ASN1ObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1078415255 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1078415255 = IETFUtils.decodeAttrName(attrName, DefaultLookUp);
         addTaint(attrName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1078415255.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1078415255.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1078415255;
-        // ---------- Original Method ----------
-        //return IETFUtils.decodeAttrName(attrName, DefaultLookUp);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.546 -0400", hash_original_method = "3E0470485E902738E6BF6ED5F1A7F39D", hash_generated_method = "6DB48569BBC1E2B71DFC678BEAF0ED57")
     public boolean areEqual(X500Name name1, X500Name name2) {
         RDN[] rdns1 = name1.getRDNs();
@@ -126,43 +129,44 @@ public class BCStyle implements X500NameStyle {
             boolean var3CF8B4208AA266E89B64209D0AD42344_869519382 = (rdns1[0].getFirst() != null && rdns2[0].getFirst() != null);
             {
                 reverse = !rdns1[0].getFirst().getType().equals(rdns2[0].getFirst().getType());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int i = 0;
             {
                 {
                     boolean varD1BED891781B9C3919290DC1406D5352_1181008818 = (!foundMatch(reverse, rdns1[i], rdns2));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(name1.getTaint());
         addTaint(name2.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1498175203 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1498175203;
-        // ---------- Original Method ----------
-        //RDN[] rdns1 = name1.getRDNs();
-        //RDN[] rdns2 = name2.getRDNs();
-        //if (rdns1.length != rdns2.length)
-        //{
-            //return false;
-        //}
-        //boolean reverse = false;
-        //if (rdns1[0].getFirst() != null && rdns2[0].getFirst() != null)
-        //{
-            //reverse = !rdns1[0].getFirst().getType().equals(rdns2[0].getFirst().getType());  
-        //}
-        //for (int i = 0; i != rdns1.length; i++)
-        //{
-            //if (!foundMatch(reverse, rdns1[i], rdns2))
-            //{
-                //return false;
-            //}
-        //}
-        //return true;
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.547 -0400", hash_original_method = "54A0483298F3DFD022315937FBAF5933", hash_generated_method = "3CD81F890736A3D2C852771AB47BD38F")
     private boolean foundMatch(boolean reverse, RDN rdn, RDN[] possRDNs) {
         {
@@ -173,11 +177,11 @@ public class BCStyle implements X500NameStyle {
                         boolean var24CA10F052830BC2F1D71B2B697391CC_2074401011 = (possRDNs[i] != null && rdnAreEqual(rdn, possRDNs[i]));
                         {
                             possRDNs[i] = null;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 int i = 0;
@@ -186,43 +190,44 @@ public class BCStyle implements X500NameStyle {
                         boolean var24CA10F052830BC2F1D71B2B697391CC_944556547 = (possRDNs[i] != null && rdnAreEqual(rdn, possRDNs[i]));
                         {
                             possRDNs[i] = null;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(reverse);
         addTaint(rdn.getTaint());
         addTaint(possRDNs[0].getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_551753514 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_551753514;
-        // ---------- Original Method ----------
-        //if (reverse)
-        //{
-            //for (int i = possRDNs.length - 1; i >= 0; i--)
-            //{
-                //if (possRDNs[i] != null && rdnAreEqual(rdn, possRDNs[i]))
-                //{
-                    //possRDNs[i] = null;
-                    //return true;
-                //}
-            //}
-        //}
-        //else
-        //{
-            //for (int i = 0; i != possRDNs.length; i++)
-            //{
-                //if (possRDNs[i] != null && rdnAreEqual(rdn, possRDNs[i]))
-                //{
-                    //possRDNs[i] = null;
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+            
+                
+                
+                    
+                    
+                
+            
+        
+        
+        
+            
+            
+                
+                
+                    
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.548 -0400", hash_original_method = "D45006114E7131F95F9CCEC1C09C1466", hash_generated_method = "E3460609B0098AA56BC6139091E8E51D")
     protected boolean rdnAreEqual(RDN rdn1, RDN rdn2) {
         {
@@ -238,87 +243,90 @@ public class BCStyle implements X500NameStyle {
                             {
                                 {
                                     boolean var68706703FC3D700F254A8481D2E3537E_1092564953 = (!atvAreEqual(atvs1[i], atvs2[i]));
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 {
                     boolean varFC29D2B6FBCC487110941A7DBEA1A593_1250668912 = (!rdn2.isMultiValued());
                     {
                         boolean varE02A595D303F95596A542C5E4A41A7A3_1866699274 = (atvAreEqual(rdn1.getFirst(), rdn2.getFirst()));
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(rdn1.getTaint());
         addTaint(rdn2.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_590675539 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_590675539;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.548 -0400", hash_original_method = "9BB2C53F6636F1E7BA3066DC2FBD5F40", hash_generated_method = "62602741C714C005330A1D314E62D2CB")
     private boolean atvAreEqual(AttributeTypeAndValue atv1, AttributeTypeAndValue atv2) {
         ASN1ObjectIdentifier o1 = atv1.getType();
         ASN1ObjectIdentifier o2 = atv2.getType();
         {
             boolean varE31BF4A402DCD70B05643594EEE8F1F9_1771391917 = (!o1.equals(o2));
-        } //End collapsed parenthetic
+        } 
         String v1 = IETFUtils.canonicalize(IETFUtils.valueToString(atv1.getValue()));
         String v2 = IETFUtils.canonicalize(IETFUtils.valueToString(atv2.getValue()));
         {
             boolean var88A4A714452C76FEF76B954E82557FD4_441155233 = (!v1.equals(v2));
-        } //End collapsed parenthetic
+        } 
         addTaint(atv1.getTaint());
         addTaint(atv2.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2147008690 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2147008690;
-        // ---------- Original Method ----------
-        //if (atv1 == atv2)
-        //{
-            //return true;
-        //}
-        //if (atv1 == null)
-        //{
-            //return false;
-        //}
-        //if (atv2 == null)
-        //{
-            //return false;
-        //}
-        //ASN1ObjectIdentifier o1 = atv1.getType();
-        //ASN1ObjectIdentifier o2 = atv2.getType();
-        //if (!o1.equals(o2))
-        //{
-            //return false;
-        //}
-        //String v1 = IETFUtils.canonicalize(IETFUtils.valueToString(atv1.getValue()));
-        //String v2 = IETFUtils.canonicalize(IETFUtils.valueToString(atv2.getValue()));
-        //if (!v1.equals(v2))
-        //{
-            //return false;
-        //}
-        //return true;
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.549 -0400", hash_original_method = "A9463F881D57C8D610E0B84E4769BF0F", hash_generated_method = "65566806D1BC601A2AD63DF7DC484EE8")
     public RDN[] fromString(String dirName) {
-        RDN[] varB4EAC82CA7396A68D541C85D26508E83_746779538 = null; //Variable for return #1
+        RDN[] varB4EAC82CA7396A68D541C85D26508E83_746779538 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_746779538 = IETFUtils.rDNsFromString(dirName, this);
         addTaint(dirName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_746779538.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_746779538.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_746779538;
-        // ---------- Original Method ----------
-        //return IETFUtils.rDNsFromString(dirName, this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.549 -0400", hash_original_method = "EA77324623CE6D0B04D0F275B161435F", hash_generated_method = "C71DAB515B76F9AA633A44174A4024F1")
     public int calculateHashCode(X500Name name) {
         int hashCodeValue = 0;
@@ -335,43 +343,44 @@ public class BCStyle implements X500NameStyle {
                             {
                                 hashCodeValue ^= atv[j].getType().hashCode();
                                 hashCodeValue ^= calcHashCode(atv[j].getValue());
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         hashCodeValue ^= rdns[i].getFirst().getType().hashCode();
                         hashCodeValue ^= calcHashCode(rdns[i].getFirst().getValue());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(name.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1308331616 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1308331616;
-        // ---------- Original Method ----------
-        //int hashCodeValue = 0;
-        //RDN[] rdns = name.getRDNs();
-        //for (int i = 0; i != rdns.length; i++)
-        //{
-            //if (rdns[i].isMultiValued())
-            //{
-                //AttributeTypeAndValue[] atv = rdns[i].getTypesAndValues();
-                //for (int j = 0; j != atv.length; j++)
-                //{
-                    //hashCodeValue ^= atv[j].getType().hashCode();
-                    //hashCodeValue ^= calcHashCode(atv[j].getValue());
-                //}
-            //}
-            //else
-            //{
-                //hashCodeValue ^= rdns[i].getFirst().getType().hashCode();
-                //hashCodeValue ^= calcHashCode(rdns[i].getFirst().getValue());
-            //}
-        //}
-        //return hashCodeValue;
+        
+        
+        
+        
+        
+            
+            
+                
+                
+                
+                    
+                    
+                
+            
+            
+            
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.550 -0400", hash_original_method = "D9D0265B1123594600F423F1ABB5E8A9", hash_generated_method = "DDE8833C285FF5742EBF8F5712E97F51")
     private int calcHashCode(ASN1Encodable enc) {
         String value = IETFUtils.valueToString(enc);
@@ -380,16 +389,17 @@ public class BCStyle implements X500NameStyle {
         addTaint(enc.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_114122499 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_114122499;
-        // ---------- Original Method ----------
-        //String value = IETFUtils.valueToString(enc);
-        //value = IETFUtils.canonicalize(value);
-        //return value.hashCode();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.551 -0400", hash_original_method = "C53C9B056BF6D42B40010FA6E5F8B1BD", hash_generated_method = "CF7C96D7B8C861D503A3A8124169EA42")
     public String toString(X500Name name) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1799375946 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1799375946 = null; 
         StringBuffer buf = new StringBuffer();
         boolean first = true;
         RDN[] rdns = name.getRDNs();
@@ -398,10 +408,10 @@ public class BCStyle implements X500NameStyle {
             {
                 {
                     first = false;
-                } //End block
+                } 
                 {
                     buf.append(',');
-                } //End block
+                } 
                 {
                     boolean var3CEF5396700878D4FB80BD44EA008508_121865406 = (rdns[i].isMultiValued());
                     {
@@ -412,26 +422,26 @@ public class BCStyle implements X500NameStyle {
                             {
                                 {
                                     firstAtv = false;
-                                } //End block
+                                } 
                                 {
                                     buf.append('+');
-                                } //End block
+                                } 
                                 IETFUtils.appendTypeAndValue(buf, atv[j], DefaultSymbols);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         IETFUtils.appendTypeAndValue(buf, rdns[i].getFirst(), DefaultSymbols);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1799375946 = buf.toString();
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1799375946.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1799375946.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1799375946;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

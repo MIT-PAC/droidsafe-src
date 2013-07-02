@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.util.DisplayMetrics;
@@ -99,39 +99,39 @@ public class ScaleGestureDetector {
         mContext = context;
         mListener = listener;
         mEdgeSlop = config.getScaledEdgeSlop();
-        // ---------- Original Method ----------
-        //ViewConfiguration config = ViewConfiguration.get(context);
-        //mContext = context;
-        //mListener = listener;
-        //mEdgeSlop = config.getScaledEdgeSlop();
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.782 -0400", hash_original_method = "3D0907AC17DE553CA8E37D6A8A0F580A", hash_generated_method = "E73F6B623ABC4F0A84304F425DA4593D")
     public boolean onTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mInputEventConsistencyVerifier.onTouchEvent(event, 0);
-        } //End block
+        } 
         final int action = event.getActionMasked();
         {
             reset();
-        } //End block
+        } 
         boolean handled = true;
         {
             handled = false;
-        } //End block
+        } 
         {
-            //Begin case MotionEvent.ACTION_DOWN 
+            
             {
                 mActiveId0 = event.getPointerId(0);
                 mActive0MostRecent = true;
-            } //End block
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_UP 
+            } 
+            
+            
             reset();
-            //End case MotionEvent.ACTION_UP 
-            //Begin case MotionEvent.ACTION_POINTER_DOWN 
+            
+            
             {
                 DisplayMetrics metrics = mContext.getResources().getDisplayMetrics();
                 mRightSlopEdge = metrics.widthPixels - mEdgeSlop;
@@ -145,7 +145,7 @@ public class ScaleGestureDetector {
                 {
                     index0 = findNewActiveIndex(event, index0 == index1 ? -1 : mActiveId1, index0);
                     mActiveId0 = event.getPointerId(index0);
-                } //End block
+                } 
                 mActive0MostRecent = false;
                 setContext(event);
                 final float edgeSlop = mEdgeSlop;
@@ -163,24 +163,24 @@ public class ScaleGestureDetector {
                     mFocusX = -1;
                     mFocusY = -1;
                     mSloppyGesture = true;
-                } //End block
+                } 
                 {
                     mFocusX = event.getX(index1);
                     mFocusY = event.getY(index1);
                     mSloppyGesture = true;
-                } //End block
+                } 
                 {
                     mFocusX = event.getX(index0);
                     mFocusY = event.getY(index0);
                     mSloppyGesture = true;
-                } //End block
+                } 
                 {
                     mSloppyGesture = false;
                     mGestureInProgress = mListener.onScaleBegin(this);
-                } //End block
-            } //End block
-            //End case MotionEvent.ACTION_POINTER_DOWN 
-            //Begin case MotionEvent.ACTION_MOVE 
+                } 
+            } 
+            
+            
             {
                 final float edgeSlop = mEdgeSlop;
                 final float rightSlop = mRightSlopEdge;
@@ -203,8 +203,8 @@ public class ScaleGestureDetector {
                         x0 = getRawX(event, index);
                         y0 = getRawY(event, index);
                         p0sloppy = false;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     int index = findNewActiveIndex(event, mActiveId0, index1);
                     {
@@ -213,27 +213,27 @@ public class ScaleGestureDetector {
                         x1 = getRawX(event, index);
                         y1 = getRawY(event, index);
                         p1sloppy = false;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     mFocusX = -1;
                     mFocusY = -1;
-                } //End block
+                } 
                 {
                     mFocusX = event.getX(index1);
                     mFocusY = event.getY(index1);
-                } //End block
+                } 
                 {
                     mFocusX = event.getX(index0);
                     mFocusY = event.getY(index0);
-                } //End block
+                } 
                 {
                     mSloppyGesture = false;
                     mGestureInProgress = mListener.onScaleBegin(this);
-                } //End block
-            } //End block
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_POINTER_UP 
+                } 
+            } 
+            
+            
             {
                 final int pointerCount = event.getPointerCount();
                 final int actionIndex = event.getActionIndex();
@@ -242,32 +242,32 @@ public class ScaleGestureDetector {
                     {
                         final int newIndex = findNewActiveIndex(event, mActiveId1, actionIndex);
                         mActiveId0 = event.getPointerId(newIndex);
-                    } //End block
+                    } 
                     {
                         final int newIndex = findNewActiveIndex(event, mActiveId0, actionIndex);
                         mActiveId1 = event.getPointerId(newIndex);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     final int index = event.findPointerIndex(actionId == mActiveId0 ?
-                                mActiveId1 : mActiveId0);//DSFIXME:  CODE0008: Nested ternary operator in expression
+                                mActiveId1 : mActiveId0);
                     {
                         mInvalidGesture = true;
                         {
                             mListener.onScaleEnd(this);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     mActiveId0 = event.getPointerId(index);
                     mActive0MostRecent = true;
                     mActiveId1 = -1;
                     mFocusX = event.getX(index);
                     mFocusY = event.getY(index);
-                } //End block
-            } //End block
-            //End case MotionEvent.ACTION_POINTER_UP 
-        } //End block
+                } 
+            } 
+            
+        } 
         {
-            //Begin case MotionEvent.ACTION_POINTER_DOWN 
+            
             {
                 mListener.onScaleEnd(this);
                 final int oldActive0 = mActiveId0;
@@ -282,12 +282,12 @@ public class ScaleGestureDetector {
                     index0 = findNewActiveIndex(event,
                                 mActiveId0 == mActiveId1 ? -1 : mActiveId1, index0);
                     mActiveId0 = event.getPointerId(index0);
-                } //End block
+                } 
                 setContext(event);
                 mGestureInProgress = mListener.onScaleBegin(this);
-            } //End block
-            //End case MotionEvent.ACTION_POINTER_DOWN 
-            //Begin case MotionEvent.ACTION_POINTER_UP 
+            } 
+            
+            
             {
                 final int pointerCount = event.getPointerCount();
                 final int actionIndex = event.getActionIndex();
@@ -303,11 +303,11 @@ public class ScaleGestureDetector {
                             mPrevEvent = MotionEvent.obtain(event);
                             setContext(event);
                             mGestureInProgress = mListener.onScaleBegin(this);
-                        } //End block
+                        } 
                         {
                             gestureEnded = true;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         final int newIndex = findNewActiveIndex(event, mActiveId0, actionIndex);
                         {
@@ -317,18 +317,18 @@ public class ScaleGestureDetector {
                             mPrevEvent = MotionEvent.obtain(event);
                             setContext(event);
                             mGestureInProgress = mListener.onScaleBegin(this);
-                        } //End block
+                        } 
                         {
                             gestureEnded = true;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     mPrevEvent.recycle();
                     mPrevEvent = MotionEvent.obtain(event);
                     setContext(event);
-                } //End block
+                } 
                 {
                     gestureEnded = true;
-                } //End block
+                } 
                 {
                     setContext(event);
                     int activeId;
@@ -341,19 +341,19 @@ public class ScaleGestureDetector {
                     reset();
                     mActiveId0 = activeId;
                     mActive0MostRecent = true;
-                } //End block
-            } //End block
-            //End case MotionEvent.ACTION_POINTER_UP 
-            //Begin case MotionEvent.ACTION_CANCEL 
+                } 
+            } 
+            
+            
             mListener.onScaleEnd(this);
-            //End case MotionEvent.ACTION_CANCEL 
-            //Begin case MotionEvent.ACTION_CANCEL 
+            
+            
             reset();
-            //End case MotionEvent.ACTION_CANCEL 
-            //Begin case MotionEvent.ACTION_UP 
+            
+            
             reset();
-            //End case MotionEvent.ACTION_UP 
-            //Begin case MotionEvent.ACTION_MOVE 
+            
+            
             {
                 setContext(event);
                 {
@@ -361,18 +361,18 @@ public class ScaleGestureDetector {
                     {
                         mPrevEvent.recycle();
                         mPrevEvent = MotionEvent.obtain(event);
-                    } //End block
-                } //End block
-            } //End block
-            //End case MotionEvent.ACTION_MOVE 
-        } //End block
+                    } 
+                } 
+            } 
+            
+        } 
         {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_641964623 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_641964623;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -392,33 +392,33 @@ public class ScaleGestureDetector {
                     float y = getRawY(ev, i);
                     {
                         newActiveIndex = i;
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(ev.getTaint());
         addTaint(otherActiveId);
         addTaint(oldIndex);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1613951334 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1613951334;
-        // ---------- Original Method ----------
-        //final int pointerCount = ev.getPointerCount();
-        //final int otherActiveIndex = ev.findPointerIndex(otherActiveId);
-        //int newActiveIndex = -1;
-        //for (int i = 0; i < pointerCount; i++) {
-            //if (i != oldIndex && i != otherActiveIndex) {
-                //final float edgeSlop = mEdgeSlop;
-                //final float rightSlop = mRightSlopEdge;
-                //final float bottomSlop = mBottomSlopEdge;
-                //float x = getRawX(ev, i);
-                //float y = getRawY(ev, i);
-                //if (x >= edgeSlop && y >= edgeSlop && x <= rightSlop && y <= bottomSlop) {
-                    //newActiveIndex = i;
-                    //break;
-                //}
-            //}
-        //}
-        //return newActiveIndex;
+        
+        
+        
+        
+        
+            
+                
+                
+                
+                
+                
+                
+                    
+                    
+                
+            
+        
+        
     }
 
     
@@ -442,7 +442,7 @@ public class ScaleGestureDetector {
     private void setContext(MotionEvent curr) {
         {
             mCurrEvent.recycle();
-        } //End block
+        } 
         mCurrEvent = MotionEvent.obtain(curr);
         mCurrLen = -1;
         mPrevLen = -1;
@@ -456,8 +456,8 @@ public class ScaleGestureDetector {
             mInvalidGesture = true;
             {
                 mListener.onScaleEnd(this);
-            } //End block
-        } //End block
+            } 
+        } 
         final float px0 = prev.getX(prevIndex0);
         final float py0 = prev.getY(prevIndex0);
         final float px1 = prev.getX(prevIndex1);
@@ -479,8 +479,8 @@ public class ScaleGestureDetector {
         mTimeDelta = curr.getEventTime() - prev.getEventTime();
         mCurrPressure = curr.getPressure(currIndex0) + curr.getPressure(currIndex1);
         mPrevPressure = prev.getPressure(prevIndex0) + prev.getPressure(prevIndex1);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -489,30 +489,30 @@ public class ScaleGestureDetector {
         {
             mPrevEvent.recycle();
             mPrevEvent = null;
-        } //End block
+        } 
         {
             mCurrEvent.recycle();
             mCurrEvent = null;
-        } //End block
+        } 
         mSloppyGesture = false;
         mGestureInProgress = false;
         mActiveId0 = -1;
         mActiveId1 = -1;
         mInvalidGesture = false;
-        // ---------- Original Method ----------
-        //if (mPrevEvent != null) {
-            //mPrevEvent.recycle();
-            //mPrevEvent = null;
-        //}
-        //if (mCurrEvent != null) {
-            //mCurrEvent.recycle();
-            //mCurrEvent = null;
-        //}
-        //mSloppyGesture = false;
-        //mGestureInProgress = false;
-        //mActiveId0 = -1;
-        //mActiveId1 = -1;
-        //mInvalidGesture = false;
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -520,8 +520,8 @@ public class ScaleGestureDetector {
     public boolean isInProgress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_292601368 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_292601368;
-        // ---------- Original Method ----------
-        //return mGestureInProgress;
+        
+        
     }
 
     
@@ -529,8 +529,8 @@ public class ScaleGestureDetector {
     public float getFocusX() {
         float var546ADE640B6EDFBC8A086EF31347E768_1832640479 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1832640479;
-        // ---------- Original Method ----------
-        //return mFocusX;
+        
+        
     }
 
     
@@ -538,8 +538,8 @@ public class ScaleGestureDetector {
     public float getFocusY() {
         float var546ADE640B6EDFBC8A086EF31347E768_603968210 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_603968210;
-        // ---------- Original Method ----------
-        //return mFocusY;
+        
+        
     }
 
     
@@ -549,16 +549,16 @@ public class ScaleGestureDetector {
             final float cvx = mCurrFingerDiffX;
             final float cvy = mCurrFingerDiffY;
             mCurrLen = FloatMath.sqrt(cvx*cvx + cvy*cvy);
-        } //End block
+        } 
         float var546ADE640B6EDFBC8A086EF31347E768_689648084 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_689648084;
-        // ---------- Original Method ----------
-        //if (mCurrLen == -1) {
-            //final float cvx = mCurrFingerDiffX;
-            //final float cvy = mCurrFingerDiffY;
-            //mCurrLen = FloatMath.sqrt(cvx*cvx + cvy*cvy);
-        //}
-        //return mCurrLen;
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -566,8 +566,8 @@ public class ScaleGestureDetector {
     public float getCurrentSpanX() {
         float var546ADE640B6EDFBC8A086EF31347E768_925133810 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_925133810;
-        // ---------- Original Method ----------
-        //return mCurrFingerDiffX;
+        
+        
     }
 
     
@@ -575,8 +575,8 @@ public class ScaleGestureDetector {
     public float getCurrentSpanY() {
         float var546ADE640B6EDFBC8A086EF31347E768_1253594037 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1253594037;
-        // ---------- Original Method ----------
-        //return mCurrFingerDiffY;
+        
+        
     }
 
     
@@ -586,16 +586,16 @@ public class ScaleGestureDetector {
             final float pvx = mPrevFingerDiffX;
             final float pvy = mPrevFingerDiffY;
             mPrevLen = FloatMath.sqrt(pvx*pvx + pvy*pvy);
-        } //End block
+        } 
         float var546ADE640B6EDFBC8A086EF31347E768_1821094387 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1821094387;
-        // ---------- Original Method ----------
-        //if (mPrevLen == -1) {
-            //final float pvx = mPrevFingerDiffX;
-            //final float pvy = mPrevFingerDiffY;
-            //mPrevLen = FloatMath.sqrt(pvx*pvx + pvy*pvy);
-        //}
-        //return mPrevLen;
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -603,8 +603,8 @@ public class ScaleGestureDetector {
     public float getPreviousSpanX() {
         float var546ADE640B6EDFBC8A086EF31347E768_1502447716 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1502447716;
-        // ---------- Original Method ----------
-        //return mPrevFingerDiffX;
+        
+        
     }
 
     
@@ -612,8 +612,8 @@ public class ScaleGestureDetector {
     public float getPreviousSpanY() {
         float var546ADE640B6EDFBC8A086EF31347E768_1182573078 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1182573078;
-        // ---------- Original Method ----------
-        //return mPrevFingerDiffY;
+        
+        
     }
 
     
@@ -621,14 +621,14 @@ public class ScaleGestureDetector {
     public float getScaleFactor() {
         {
             mScaleFactor = getCurrentSpan() / getPreviousSpan();
-        } //End block
+        } 
         float var546ADE640B6EDFBC8A086EF31347E768_246806039 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_246806039;
-        // ---------- Original Method ----------
-        //if (mScaleFactor == -1) {
-            //mScaleFactor = getCurrentSpan() / getPreviousSpan();
-        //}
-        //return mScaleFactor;
+        
+        
+            
+        
+        
     }
 
     
@@ -636,8 +636,8 @@ public class ScaleGestureDetector {
     public long getTimeDelta() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1992878315 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1992878315;
-        // ---------- Original Method ----------
-        //return mTimeDelta;
+        
+        
     }
 
     
@@ -646,8 +646,8 @@ public class ScaleGestureDetector {
         long var1C6AD87B9864EE888540D94E95CFDF79_171136254 = (mCurrEvent.getEventTime());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2136588200 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2136588200;
-        // ---------- Original Method ----------
-        //return mCurrEvent.getEventTime();
+        
+        
     }
 
     
@@ -656,37 +656,37 @@ public class ScaleGestureDetector {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.788 -0400", hash_original_method = "AD1F4E6C43CD567296DC4B26B7E79B23", hash_generated_method = "AD1F4E6C43CD567296DC4B26B7E79B23")
         public SimpleOnScaleGestureListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.788 -0400", hash_original_method = "F1A51F1E1A44A60BDE5250CC79B6BF22", hash_generated_method = "438C189907AFC947701616D25DE070AE")
         public boolean onScale(ScaleGestureDetector detector) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(detector.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_885217775 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_885217775;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.789 -0400", hash_original_method = "2018A466C052949DAB40F7C8547E8FA5", hash_generated_method = "05794F51D80370DD96E11460B6B6174F")
         public boolean onScaleBegin(ScaleGestureDetector detector) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(detector.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_97792164 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_97792164;
-            // ---------- Original Method ----------
-            //return true;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.789 -0400", hash_original_method = "5B9499EAA38A4A49EE469DC4AE83A358", hash_generated_method = "60B04B78A4A04F6C7A1F2B5D39D8EB97")
         public void onScaleEnd(ScaleGestureDetector detector) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(detector.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

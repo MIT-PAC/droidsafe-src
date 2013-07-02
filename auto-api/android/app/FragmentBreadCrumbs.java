@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.animation.LayoutTransition;
 import android.app.FragmentManager.BackStackEntry;
@@ -47,7 +47,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     private OnClickListener mOnClickListener = new OnClickListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.986 -0400", hash_original_method = "EAECB23237EE3153081334DE62E2D4D2", hash_generated_method = "75778D2D640CE701F917A01DC35D30EC")
         public void onClick(View v) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean varE4A1F40585B065B640BAA48725C67E73_185977171 = (v.getTag() instanceof BackStackEntry);
                 {
@@ -55,27 +55,27 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
                     {
                         {
                             mParentClickListener.onClick(v);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         {
                             {
                                 boolean varDC9EADFAD769EB2BF5EC7B29105E5747_1506299499 = (mOnBreadCrumbClickListener.onBreadCrumbClick(
-                                bse == mTopEntry ? null : bse, 0)); //DSFIXME:  CODE0008: Nested ternary operator in expression
-                            } //End collapsed parenthetic
-                        } //End block
+                                bse == mTopEntry ? null : bse, 0)); 
+                            } 
+                        } 
                         {
                             mActivity.getFragmentManager().popBackStack();
-                        } //End block
+                        } 
                         {
                             mActivity.getFragmentManager().popBackStack(bse.getId(), 0);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             addTaint(v.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -85,7 +85,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     public  FragmentBreadCrumbs(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -94,7 +94,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
         this(context, attrs, android.R.style.Widget_FragmentBreadCrumbs);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -104,7 +104,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -119,16 +119,16 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
         a.getFragmentManager().addOnBackStackChangedListener(this);
         updateCrumbs();
         setLayoutTransition(new LayoutTransition());
-        // ---------- Original Method ----------
-        //mActivity = a;
-        //mInflater = (LayoutInflater)a.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //mContainer = (LinearLayout)mInflater.inflate(
-                //com.android.internal.R.layout.fragment_bread_crumbs,
-                //this, false);
-        //addView(mContainer);
-        //a.getFragmentManager().addOnBackStackChangedListener(this);
-        //updateCrumbs();
-        //setLayoutTransition(new LayoutTransition());
+        
+        
+        
+        
+                
+                
+        
+        
+        
+        
     }
 
     
@@ -136,13 +136,13 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     public void setMaxVisible(int visibleCrumbs) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("visibleCrumbs must be greater than zero");
-        } //End block
+        } 
         mMaxVisible = visibleCrumbs;
-        // ---------- Original Method ----------
-        //if (visibleCrumbs < 1) {
-            //throw new IllegalArgumentException("visibleCrumbs must be greater than zero");
-        //}
-        //mMaxVisible = visibleCrumbs;
+        
+        
+            
+        
+        
     }
 
     
@@ -152,25 +152,25 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
         mParentEntry = createBackStackEntry(title, shortTitle);
         mParentClickListener = listener;
         updateCrumbs();
-        // ---------- Original Method ----------
-        //mParentEntry = createBackStackEntry(title, shortTitle);
-        //mParentClickListener = listener;
-        //updateCrumbs();
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.993 -0400", hash_original_method = "2512D126AA76678C0FD3EA5EF92C167A", hash_generated_method = "86CEEB80EAE109905A6293EE27933D7C")
     public void setOnBreadCrumbClickListener(OnBreadCrumbClickListener listener) {
         mOnBreadCrumbClickListener = listener;
-        // ---------- Original Method ----------
-        //mOnBreadCrumbClickListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.995 -0400", hash_original_method = "2DFBE29D707A4E78CDFA68237F5B82AC", hash_generated_method = "7E1C1804D3408A29CD691CE40A31BA0D")
     private BackStackRecord createBackStackEntry(CharSequence title, CharSequence shortTitle) {
-        BackStackRecord varB4EAC82CA7396A68D541C85D26508E83_1962419028 = null; //Variable for return #1
-        BackStackRecord varB4EAC82CA7396A68D541C85D26508E83_1428045192 = null; //Variable for return #2
+        BackStackRecord varB4EAC82CA7396A68D541C85D26508E83_1962419028 = null; 
+        BackStackRecord varB4EAC82CA7396A68D541C85D26508E83_1428045192 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1962419028 = null;
         final BackStackRecord entry = new BackStackRecord(
                 (FragmentManagerImpl) mActivity.getFragmentManager());
@@ -179,24 +179,24 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
         varB4EAC82CA7396A68D541C85D26508E83_1428045192 = entry;
         addTaint(title.getTaint());
         addTaint(shortTitle.getTaint());
-        BackStackRecord varA7E53CE21691AB073D9660D615818899_327056909; //Final return value
+        BackStackRecord varA7E53CE21691AB073D9660D615818899_327056909; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_327056909 = varB4EAC82CA7396A68D541C85D26508E83_1962419028;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_327056909 = varB4EAC82CA7396A68D541C85D26508E83_1428045192;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_327056909.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_327056909.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_327056909;
-        // ---------- Original Method ----------
-        //if (title == null) return null;
-        //final BackStackRecord entry = new BackStackRecord(
-                //(FragmentManagerImpl) mActivity.getFragmentManager());
-        //entry.setBreadCrumbTitle(title);
-        //entry.setBreadCrumbShortTitle(shortTitle);
-        //return entry;
+        
+        
+        
+                
+        
+        
+        
     }
 
     
@@ -204,16 +204,16 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     public void setTitle(CharSequence title, CharSequence shortTitle) {
         mTopEntry = createBackStackEntry(title, shortTitle);
         updateCrumbs();
-        // ---------- Original Method ----------
-        //mTopEntry = createBackStackEntry(title, shortTitle);
-        //updateCrumbs();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.997 -0400", hash_original_method = "0BB4F9B64E73CA7A8C38A4967E9CC22C", hash_generated_method = "7C8B5127DF66EEFA737BEEE37C4AACC9")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int childCount = getChildCount();
         {
             int i = 0;
@@ -222,28 +222,28 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
                 int childRight = mPaddingLeft + child.getMeasuredWidth() - mPaddingRight;
                 int childBottom = mPaddingTop + child.getMeasuredHeight() - mPaddingBottom;
                 child.layout(mPaddingLeft, mPaddingTop, childRight, childBottom);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(changed);
         addTaint(l);
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        //final int childCount = getChildCount();
-        //for (int i = 0; i < childCount; i++) {
-            //final View child = getChildAt(i);
-            //int childRight = mPaddingLeft + child.getMeasuredWidth() - mPaddingRight;
-            //int childBottom = mPaddingTop + child.getMeasuredHeight() - mPaddingBottom;
-            //child.layout(mPaddingLeft, mPaddingTop, childRight, childBottom);
-        //}
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.998 -0400", hash_original_method = "6660D304081A4852C20DD013035B63D1", hash_generated_method = "D1C18631B72D97E947239EE8CC0F76A7")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int count = getChildCount();
         int maxHeight = 0;
         int maxWidth = 0;
@@ -260,10 +260,10 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
                         maxHeight = Math.max(maxHeight, child.getMeasuredHeight());
                         measuredChildState = combineMeasuredStates(measuredChildState,
                         child.getMeasuredState());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         maxWidth += mPaddingLeft + mPaddingRight;
         maxHeight += mPaddingTop + mPaddingBottom;
         maxHeight = Math.max(maxHeight, getSuggestedMinimumHeight());
@@ -273,18 +273,18 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
                         measuredChildState<<MEASURED_HEIGHT_STATE_SHIFT));
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.999 -0400", hash_original_method = "2DCC9D501B82BF951374A63720FD5438", hash_generated_method = "5C65DFD1D77C80E48E1238CADCC22076")
     @Override
     public void onBackStackChanged() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         updateCrumbs();
-        // ---------- Original Method ----------
-        //updateCrumbs();
+        
+        
     }
 
     
@@ -292,39 +292,39 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     private int getPreEntryCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_788823463 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_788823463;
-        // ---------- Original Method ----------
-        //return (mTopEntry != null ? 1 : 0) + (mParentEntry != null ? 1 : 0);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.003 -0400", hash_original_method = "A88BBDCBE11FD6391FA665272F0534CD", hash_generated_method = "3C49FBA8F4724E8671B011916CBE544F")
     private BackStackEntry getPreEntry(int index) {
-        BackStackEntry varB4EAC82CA7396A68D541C85D26508E83_163789121 = null; //Variable for return #1
-        BackStackEntry varB4EAC82CA7396A68D541C85D26508E83_1554974191 = null; //Variable for return #2
+        BackStackEntry varB4EAC82CA7396A68D541C85D26508E83_163789121 = null; 
+        BackStackEntry varB4EAC82CA7396A68D541C85D26508E83_1554974191 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_163789121 = index == 0 ? mParentEntry : mTopEntry;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1554974191 = mTopEntry;
-        } //End block
+        } 
         addTaint(index);
-        BackStackEntry varA7E53CE21691AB073D9660D615818899_1271544220; //Final return value
+        BackStackEntry varA7E53CE21691AB073D9660D615818899_1271544220; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1271544220 = varB4EAC82CA7396A68D541C85D26508E83_163789121;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1271544220 = varB4EAC82CA7396A68D541C85D26508E83_1554974191;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1271544220.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1271544220.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1271544220;
-        // ---------- Original Method ----------
-        //if (mParentEntry != null) {
-            //return index == 0 ? mParentEntry : mTopEntry;
-        //} else {
-            //return mTopEntry;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -348,11 +348,11 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
                             int j = i;
                             {
                                 mContainer.removeViewAt(i);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         numViews = i;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     final View item = mInflater.inflate(
                         com.android.internal.R.layout.fragment_bread_crumb_item,
@@ -362,17 +362,17 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
                     text.setTag(bse);
                     {
                         item.findViewById(com.android.internal.R.id.left_icon).setVisibility(View.GONE);
-                    } //End block
+                    } 
                     mContainer.addView(item);
                     text.setOnClickListener(mOnClickListener);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         int viewI = numEntries + numPreEntries;
         numViews = mContainer.getChildCount();
         {
             mContainer.removeViewAt(numViews - 1);
-        } //End block
+        } 
         {
             int i = 0;
             {
@@ -383,11 +383,11 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
                     final View leftIcon = child.findViewById(com.android.internal.R.id.left_icon);
                     leftIcon.setVisibility(i > numViews - mMaxVisible && i != 0 ? View.VISIBLE
                         : View.GONE);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     

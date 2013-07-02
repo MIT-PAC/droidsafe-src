@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.R;
 import android.content.Context;
@@ -82,8 +82,8 @@ public class Notification implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.728 -0400", hash_original_method = "1CE373DE78E11DB8401FDC6F724116BB", hash_generated_method = "3BC0A224E78F0325AA3722F16B15028A")
     public  Notification() {
         this.when = System.currentTimeMillis();
-        // ---------- Original Method ----------
-        //this.when = System.currentTimeMillis();
+        
+        
     }
 
     
@@ -99,12 +99,12 @@ public class Notification implements Parcelable {
         addTaint(contentTitle.getTaint());
         addTaint(contentText.getTaint());
         addTaint(contentIntent.getTaint());
-        // ---------- Original Method ----------
-        //this.when = when;
-        //this.icon = icon;
-        //this.tickerText = tickerText;
-        //setLatestEventInfo(context, contentTitle, contentText,
-                //PendingIntent.getActivity(context, 0, contentIntent, 0));
+        
+        
+        
+        
+        
+                
     }
 
     
@@ -114,10 +114,10 @@ public class Notification implements Parcelable {
         this.icon = icon;
         this.tickerText = tickerText;
         this.when = when;
-        // ---------- Original Method ----------
-        //this.icon = icon;
-        //this.tickerText = tickerText;
-        //this.when = when;
+        
+        
+        
+        
     }
 
     
@@ -131,46 +131,46 @@ public class Notification implements Parcelable {
             boolean var60F8D07B3C0E7118926980924B5BD631_1497782107 = (parcel.readInt() != 0);
             {
                 contentIntent = PendingIntent.CREATOR.createFromParcel(parcel);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var60F8D07B3C0E7118926980924B5BD631_1468659351 = (parcel.readInt() != 0);
             {
                 deleteIntent = PendingIntent.CREATOR.createFromParcel(parcel);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var60F8D07B3C0E7118926980924B5BD631_1469882081 = (parcel.readInt() != 0);
             {
                 tickerText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var60F8D07B3C0E7118926980924B5BD631_899235693 = (parcel.readInt() != 0);
             {
                 tickerView = RemoteViews.CREATOR.createFromParcel(parcel);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var60F8D07B3C0E7118926980924B5BD631_1261285754 = (parcel.readInt() != 0);
             {
                 contentView = RemoteViews.CREATOR.createFromParcel(parcel);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var60F8D07B3C0E7118926980924B5BD631_1964967349 = (parcel.readInt() != 0);
             {
                 largeIcon = Bitmap.CREATOR.createFromParcel(parcel);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         defaults = parcel.readInt();
         flags = parcel.readInt();
         {
             boolean var60F8D07B3C0E7118926980924B5BD631_86711696 = (parcel.readInt() != 0);
             {
                 sound = Uri.CREATOR.createFromParcel(parcel);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         audioStreamType = parcel.readInt();
         vibrate = parcel.createLongArray();
         ledARGB = parcel.readInt();
@@ -181,17 +181,18 @@ public class Notification implements Parcelable {
             boolean var60F8D07B3C0E7118926980924B5BD631_586860864 = (parcel.readInt() != 0);
             {
                 fullScreenIntent = PendingIntent.CREATOR.createFromParcel(parcel);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.737 -0400", hash_original_method = "6AF2D89F1A077EC9692C07FAE6A31E51", hash_generated_method = "AA87BA55B6312D1F82ABAEE0611FD395")
     @Override
     public Notification clone() {
-        Notification varB4EAC82CA7396A68D541C85D26508E83_1638965012 = null; //Variable for return #1
+        Notification varB4EAC82CA7396A68D541C85D26508E83_1638965012 = null; 
         Notification that = new Notification();
         that.when = this.when;
         that.icon = this.icon;
@@ -201,16 +202,16 @@ public class Notification implements Parcelable {
         that.fullScreenIntent = this.fullScreenIntent;
         {
             that.tickerText = this.tickerText.toString();
-        } //End block
+        } 
         {
             that.tickerView = this.tickerView.clone();
-        } //End block
+        } 
         {
             that.contentView = this.contentView.clone();
-        } //End block
+        } 
         {
             that.largeIcon = Bitmap.createBitmap(this.largeIcon);
-        } //End block
+        } 
         that.iconLevel = this.iconLevel;
         that.sound = this.sound;
         that.audioStreamType = this.audioStreamType;
@@ -219,17 +220,17 @@ public class Notification implements Parcelable {
             final int N = vibrate.length;
             final long[] vib = that.vibrate = new long[N];
             System.arraycopy(vibrate, 0, vib, 0, N);
-        } //End block
+        } 
         that.ledARGB = this.ledARGB;
         that.ledOnMS = this.ledOnMS;
         that.ledOffMS = this.ledOffMS;
         that.defaults = this.defaults;
         that.flags = this.flags;
         varB4EAC82CA7396A68D541C85D26508E83_1638965012 = that;
-        varB4EAC82CA7396A68D541C85D26508E83_1638965012.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1638965012.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1638965012;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -237,11 +238,12 @@ public class Notification implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_494489106 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_494489106;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.743 -0400", hash_original_method = "2E97C8DA884DBA934FB3E6EBE25C30F5", hash_generated_method = "7892EA518F88AC44F30830C58D1C1DE0")
     public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeInt(1);
@@ -251,54 +253,54 @@ public class Notification implements Parcelable {
         {
             parcel.writeInt(1);
             contentIntent.writeToParcel(parcel, 0);
-        } //End block
+        } 
         {
             parcel.writeInt(0);
-        } //End block
+        } 
         {
             parcel.writeInt(1);
             deleteIntent.writeToParcel(parcel, 0);
-        } //End block
+        } 
         {
             parcel.writeInt(0);
-        } //End block
+        } 
         {
             parcel.writeInt(1);
             TextUtils.writeToParcel(tickerText, parcel, flags);
-        } //End block
+        } 
         {
             parcel.writeInt(0);
-        } //End block
+        } 
         {
             parcel.writeInt(1);
             tickerView.writeToParcel(parcel, 0);
-        } //End block
+        } 
         {
             parcel.writeInt(0);
-        } //End block
+        } 
         {
             parcel.writeInt(1);
             contentView.writeToParcel(parcel, 0);
-        } //End block
+        } 
         {
             parcel.writeInt(0);
-        } //End block
+        } 
         {
             parcel.writeInt(1);
             largeIcon.writeToParcel(parcel, 0);
-        } //End block
+        } 
         {
             parcel.writeInt(0);
-        } //End block
+        } 
         parcel.writeInt(defaults);
         parcel.writeInt(this.flags);
         {
             parcel.writeInt(1);
             sound.writeToParcel(parcel, 0);
-        } //End block
+        } 
         {
             parcel.writeInt(0);
-        } //End block
+        } 
         parcel.writeInt(audioStreamType);
         parcel.writeLongArray(vibrate);
         parcel.writeInt(ledARGB);
@@ -308,17 +310,18 @@ public class Notification implements Parcelable {
         {
             parcel.writeInt(1);
             fullScreenIntent.writeToParcel(parcel, 0);
-        } //End block
+        } 
         {
             parcel.writeInt(0);
-        } //End block
+        } 
         addTaint(parcel.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.744 -0400", hash_original_method = "15C64B5C143E30BF8DB14A898F7C5E53", hash_generated_method = "CBCC7926436C482DD3274B814ADCD5FF")
     @Deprecated
     public void setLatestEventInfo(Context context,
@@ -327,55 +330,56 @@ public class Notification implements Parcelable {
                 R.layout.status_bar_latest_event_content);
         {
             contentView.setImageViewResource(R.id.icon, this.icon);
-        } //End block
+        } 
         {
             contentView.setTextViewText(R.id.title, contentTitle);
-        } //End block
+        } 
         {
             contentView.setTextViewText(R.id.text, contentText);
-        } //End block
+        } 
         {
             contentView.setLong(R.id.time, "setTime", when);
-        } //End block
+        } 
         this.contentView = contentView;
         this.contentIntent = contentIntent;
         addTaint(context.getTaint());
         addTaint(contentTitle.getTaint());
         addTaint(contentText.getTaint());
-        // ---------- Original Method ----------
-        //RemoteViews contentView = new RemoteViews(context.getPackageName(),
-                //R.layout.status_bar_latest_event_content);
-        //if (this.icon != 0) {
-            //contentView.setImageViewResource(R.id.icon, this.icon);
-        //}
-        //if (contentTitle != null) {
-            //contentView.setTextViewText(R.id.title, contentTitle);
-        //}
-        //if (contentText != null) {
-            //contentView.setTextViewText(R.id.text, contentText);
-        //}
-        //if (this.when != 0) {
-            //contentView.setLong(R.id.time, "setTime", when);
-        //}
-        //this.contentView = contentView;
-        //this.contentIntent = contentIntent;
+        
+        
+                
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.748 -0400", hash_original_method = "12C6B6D4BE06143C5E4298E3E5EDBF7E", hash_generated_method = "440B35E2903A610F7B46538503A56ACA")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1087220864 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1087220864 = null; 
         StringBuilder sb = new StringBuilder();
         sb.append("Notification(contentView=");
         {
             sb.append(contentView.getPackage());
             sb.append("/0x");
             sb.append(Integer.toHexString(contentView.getLayoutId()));
-        } //End block
+        } 
         {
             sb.append("null");
-        } //End block
+        } 
         sb.append(" vibrate=");
         {
             int N = this.vibrate.length-1;
@@ -385,42 +389,42 @@ public class Notification implements Parcelable {
                 {
                     sb.append(this.vibrate[i]);
                     sb.append(',');
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 sb.append(this.vibrate[N]);
-            } //End block
+            } 
             sb.append("]");
-        } //End block
+        } 
         {
             sb.append("default");
-        } //End block
+        } 
         {
             sb.append("null");
-        } //End block
+        } 
         sb.append(",sound=");
         {
             sb.append(this.sound.toString());
-        } //End block
+        } 
         {
             sb.append("default");
-        } //End block
+        } 
         {
             sb.append("null");
-        } //End block
+        } 
         sb.append(",defaults=0x");
         sb.append(Integer.toHexString(this.defaults));
         sb.append(",flags=0x");
         sb.append(Integer.toHexString(this.flags));
         {
             sb.append("!!!1!one!");
-        } //End block
+        } 
         sb.append(")");
         varB4EAC82CA7396A68D541C85D26508E83_1087220864 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1087220864.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1087220864.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1087220864;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -509,331 +513,331 @@ public class Notification implements Parcelable {
             mContext = context;
             mWhen = System.currentTimeMillis();
             mAudioStreamType = STREAM_DEFAULT;
-            // ---------- Original Method ----------
-            //mContext = context;
-            //mWhen = System.currentTimeMillis();
-            //mAudioStreamType = STREAM_DEFAULT;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.757 -0400", hash_original_method = "F33CFE0DDEF1BDE88E81CA07B2B4AF4A", hash_generated_method = "D21079D9D53A1151A2DC046114D66F2F")
         public Builder setWhen(long when) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_241996922 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_241996922 = null; 
             mWhen = when;
             varB4EAC82CA7396A68D541C85D26508E83_241996922 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_241996922.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_241996922.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_241996922;
-            // ---------- Original Method ----------
-            //mWhen = when;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.763 -0400", hash_original_method = "76509FA1EC330D1A963F56DC8E00B5D8", hash_generated_method = "ADA23C367BFEBED892BE343410DB9106")
         public Builder setSmallIcon(int icon) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1976086283 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1976086283 = null; 
             mSmallIcon = icon;
             varB4EAC82CA7396A68D541C85D26508E83_1976086283 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1976086283.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1976086283.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1976086283;
-            // ---------- Original Method ----------
-            //mSmallIcon = icon;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.767 -0400", hash_original_method = "686130331B3575C911C4ACE6437F15B8", hash_generated_method = "FA65DB93E0EA907FDE2E939D1F929139")
         public Builder setSmallIcon(int icon, int level) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_747061149 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_747061149 = null; 
             mSmallIcon = icon;
             mSmallIconLevel = level;
             varB4EAC82CA7396A68D541C85D26508E83_747061149 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_747061149.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_747061149.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_747061149;
-            // ---------- Original Method ----------
-            //mSmallIcon = icon;
-            //mSmallIconLevel = level;
-            //return this;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.771 -0400", hash_original_method = "51D215D9B594EB5434D1A4893B0851B6", hash_generated_method = "00D9ED9018A7CA2C599700936F6A9680")
         public Builder setContentTitle(CharSequence title) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1967616580 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1967616580 = null; 
             mContentTitle = title;
             varB4EAC82CA7396A68D541C85D26508E83_1967616580 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1967616580.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1967616580.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1967616580;
-            // ---------- Original Method ----------
-            //mContentTitle = title;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.776 -0400", hash_original_method = "3B85C73BAA4531891B097F4FBFA7845D", hash_generated_method = "7576D680CF740BEE2DD447F89A9F4ABF")
         public Builder setContentText(CharSequence text) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_528372050 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_528372050 = null; 
             mContentText = text;
             varB4EAC82CA7396A68D541C85D26508E83_528372050 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_528372050.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_528372050.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_528372050;
-            // ---------- Original Method ----------
-            //mContentText = text;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.780 -0400", hash_original_method = "5E0FC1F68404C1057ACE1D67E6ED676A", hash_generated_method = "229A8A5858CF0AC10791BB2DF03A9477")
         public Builder setNumber(int number) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1828375858 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1828375858 = null; 
             mNumber = number;
             varB4EAC82CA7396A68D541C85D26508E83_1828375858 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1828375858.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1828375858.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1828375858;
-            // ---------- Original Method ----------
-            //mNumber = number;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.785 -0400", hash_original_method = "52A8AABE54D5BDFE521B8B41861DFCD9", hash_generated_method = "C71D33037A63D95906D256B1E3C12953")
         public Builder setContentInfo(CharSequence info) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_612260578 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_612260578 = null; 
             mContentInfo = info;
             varB4EAC82CA7396A68D541C85D26508E83_612260578 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_612260578.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_612260578.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_612260578;
-            // ---------- Original Method ----------
-            //mContentInfo = info;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.788 -0400", hash_original_method = "D0B2BE14A572EFF2EC3981BC799BA989", hash_generated_method = "C84D6A2F7155EA8F9A04641A13907CF2")
         public Builder setProgress(int max, int progress, boolean indeterminate) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_999465274 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_999465274 = null; 
             mProgressMax = max;
             mProgress = progress;
             mProgressIndeterminate = indeterminate;
             varB4EAC82CA7396A68D541C85D26508E83_999465274 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_999465274.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_999465274.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_999465274;
-            // ---------- Original Method ----------
-            //mProgressMax = max;
-            //mProgress = progress;
-            //mProgressIndeterminate = indeterminate;
-            //return this;
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.792 -0400", hash_original_method = "0C2B2238CAAAD5F7B913F4DC0C6DE3C5", hash_generated_method = "1787BE795E69F71707A26BC664541755")
         public Builder setContent(RemoteViews views) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1361967900 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1361967900 = null; 
             mContentView = views;
             varB4EAC82CA7396A68D541C85D26508E83_1361967900 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1361967900.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1361967900.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1361967900;
-            // ---------- Original Method ----------
-            //mContentView = views;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.797 -0400", hash_original_method = "13AF9850EB916E3E1CD09235309F6318", hash_generated_method = "B1B439F872C1E19351AE303A946462B8")
         public Builder setContentIntent(PendingIntent intent) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_362147367 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_362147367 = null; 
             mContentIntent = intent;
             varB4EAC82CA7396A68D541C85D26508E83_362147367 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_362147367.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_362147367.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_362147367;
-            // ---------- Original Method ----------
-            //mContentIntent = intent;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.800 -0400", hash_original_method = "F48B9AE94AA7354563811F0226E4C56E", hash_generated_method = "C9F94D3BBCE0A60778509F87F2507741")
         public Builder setDeleteIntent(PendingIntent intent) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1816323067 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1816323067 = null; 
             mDeleteIntent = intent;
             varB4EAC82CA7396A68D541C85D26508E83_1816323067 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1816323067.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1816323067.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1816323067;
-            // ---------- Original Method ----------
-            //mDeleteIntent = intent;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.803 -0400", hash_original_method = "CE5C618F1F516DEBBF5EC70FA84B35B1", hash_generated_method = "3132BDB6BEE08CA9722DA4D860D4F9D3")
         public Builder setFullScreenIntent(PendingIntent intent, boolean highPriority) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_550232344 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_550232344 = null; 
             mFullScreenIntent = intent;
             setFlag(FLAG_HIGH_PRIORITY, highPriority);
             varB4EAC82CA7396A68D541C85D26508E83_550232344 = this;
             addTaint(highPriority);
-            varB4EAC82CA7396A68D541C85D26508E83_550232344.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_550232344.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_550232344;
-            // ---------- Original Method ----------
-            //mFullScreenIntent = intent;
-            //setFlag(FLAG_HIGH_PRIORITY, highPriority);
-            //return this;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.805 -0400", hash_original_method = "43D2B64A31B6B61BB554BA691C460973", hash_generated_method = "96002492A6C2D8759DFD99C147875D47")
         public Builder setTicker(CharSequence tickerText) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1897919922 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1897919922 = null; 
             mTickerText = tickerText;
             varB4EAC82CA7396A68D541C85D26508E83_1897919922 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1897919922.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1897919922.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1897919922;
-            // ---------- Original Method ----------
-            //mTickerText = tickerText;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.806 -0400", hash_original_method = "4C6C26DEDB76E0CF44BFBAEE6FBE84BC", hash_generated_method = "691C9407C9AFD4AE3DEE8B54E842E605")
         public Builder setTicker(CharSequence tickerText, RemoteViews views) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_2027104404 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_2027104404 = null; 
             mTickerText = tickerText;
             mTickerView = views;
             varB4EAC82CA7396A68D541C85D26508E83_2027104404 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_2027104404.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2027104404.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2027104404;
-            // ---------- Original Method ----------
-            //mTickerText = tickerText;
-            //mTickerView = views;
-            //return this;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.808 -0400", hash_original_method = "7DCB1EA67ACA56F0B2754C8E360CAB68", hash_generated_method = "47E2B056659AB0E58D926E16F2C23C0E")
         public Builder setLargeIcon(Bitmap icon) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_249465677 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_249465677 = null; 
             mLargeIcon = icon;
             varB4EAC82CA7396A68D541C85D26508E83_249465677 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_249465677.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_249465677.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_249465677;
-            // ---------- Original Method ----------
-            //mLargeIcon = icon;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.809 -0400", hash_original_method = "E4D966D2AF4F815A75885EB0928B9225", hash_generated_method = "7EB04CCDB08B33A36105EFBD82E62012")
         public Builder setSound(Uri sound) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1226635147 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1226635147 = null; 
             mSound = sound;
             mAudioStreamType = STREAM_DEFAULT;
             varB4EAC82CA7396A68D541C85D26508E83_1226635147 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1226635147.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1226635147.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1226635147;
-            // ---------- Original Method ----------
-            //mSound = sound;
-            //mAudioStreamType = STREAM_DEFAULT;
-            //return this;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.810 -0400", hash_original_method = "2D9F8E95A20AD7FBCF7EC4A8FF50BED5", hash_generated_method = "F5972504734FF259EC9C32124084A519")
         public Builder setSound(Uri sound, int streamType) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_344822955 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_344822955 = null; 
             mSound = sound;
             mAudioStreamType = streamType;
             varB4EAC82CA7396A68D541C85D26508E83_344822955 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_344822955.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_344822955.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_344822955;
-            // ---------- Original Method ----------
-            //mSound = sound;
-            //mAudioStreamType = streamType;
-            //return this;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.812 -0400", hash_original_method = "A86D234FAB504C5B3A4DEC6712517174", hash_generated_method = "1D76B18A8C96C159987335F80A942988")
         public Builder setVibrate(long[] pattern) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_450137818 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_450137818 = null; 
             mVibrate = pattern;
             varB4EAC82CA7396A68D541C85D26508E83_450137818 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_450137818.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_450137818.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_450137818;
-            // ---------- Original Method ----------
-            //mVibrate = pattern;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.815 -0400", hash_original_method = "06C76CABA696566E00D48B5A1D10E8B9", hash_generated_method = "8E26CF8962FD33C34B1CCC93DB50E154")
         public Builder setLights(int argb, int onMs, int offMs) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1047937043 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1047937043 = null; 
             mLedArgb = argb;
             mLedOnMs = onMs;
             mLedOffMs = offMs;
             varB4EAC82CA7396A68D541C85D26508E83_1047937043 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1047937043.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1047937043.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1047937043;
-            // ---------- Original Method ----------
-            //mLedArgb = argb;
-            //mLedOnMs = onMs;
-            //mLedOffMs = offMs;
-            //return this;
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.816 -0400", hash_original_method = "4EE6022E7B7D173E4F9ABC4B52771BC1", hash_generated_method = "8BA3C6ACD1BA7CBEAD812C0DDC359D10")
         public Builder setOngoing(boolean ongoing) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_160616392 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_160616392 = null; 
             setFlag(FLAG_ONGOING_EVENT, ongoing);
             varB4EAC82CA7396A68D541C85D26508E83_160616392 = this;
             addTaint(ongoing);
-            varB4EAC82CA7396A68D541C85D26508E83_160616392.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_160616392.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_160616392;
-            // ---------- Original Method ----------
-            //setFlag(FLAG_ONGOING_EVENT, ongoing);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.818 -0400", hash_original_method = "19CD7AC7B316FEB13981077CC28EC4D6", hash_generated_method = "B472401C359F81BE67DE4DA93B175C4A")
         public Builder setOnlyAlertOnce(boolean onlyAlertOnce) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_305605856 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_305605856 = null; 
             setFlag(FLAG_ONLY_ALERT_ONCE, onlyAlertOnce);
             varB4EAC82CA7396A68D541C85D26508E83_305605856 = this;
             addTaint(onlyAlertOnce);
-            varB4EAC82CA7396A68D541C85D26508E83_305605856.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_305605856.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_305605856;
-            // ---------- Original Method ----------
-            //setFlag(FLAG_ONLY_ALERT_ONCE, onlyAlertOnce);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.819 -0400", hash_original_method = "65E737424C5371C7C5FE30C163FA340D", hash_generated_method = "D81B6E88C3351EC43FB44FE7951AFA70")
         public Builder setAutoCancel(boolean autoCancel) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1205464796 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1205464796 = null; 
             setFlag(FLAG_AUTO_CANCEL, autoCancel);
             varB4EAC82CA7396A68D541C85D26508E83_1205464796 = this;
             addTaint(autoCancel);
-            varB4EAC82CA7396A68D541C85D26508E83_1205464796.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1205464796.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1205464796;
-            // ---------- Original Method ----------
-            //setFlag(FLAG_AUTO_CANCEL, autoCancel);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.821 -0400", hash_original_method = "413289369D1534DD93CD0DF6E13619C0", hash_generated_method = "90424D2C053A66F56271C486AC909240")
         public Builder setDefaults(int defaults) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1695368254 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1695368254 = null; 
             mDefaults = defaults;
             varB4EAC82CA7396A68D541C85D26508E83_1695368254 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1695368254.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1695368254.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1695368254;
-            // ---------- Original Method ----------
-            //mDefaults = defaults;
-            //return this;
+            
+            
+            
         }
 
         
@@ -841,166 +845,166 @@ public class Notification implements Parcelable {
         private void setFlag(int mask, boolean value) {
             {
                 mFlags |= mask;
-            } //End block
+            } 
             {
                 mFlags &= ~mask;
-            } //End block
+            } 
             addTaint(value);
-            // ---------- Original Method ----------
-            //if (value) {
-                //mFlags |= mask;
-            //} else {
-                //mFlags &= ~mask;
-            //}
+            
+            
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.825 -0400", hash_original_method = "874AA4550BEDC5FDB0E26F145D0FEF64", hash_generated_method = "D75B2780FD2D30FF83641B804303F85E")
         private RemoteViews makeRemoteViews(int resId) {
-            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1029509569 = null; //Variable for return #1
+            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1029509569 = null; 
             RemoteViews contentView = new RemoteViews(mContext.getPackageName(), resId);
             boolean hasLine3 = false;
             {
                 contentView.setImageViewResource(R.id.icon, mSmallIcon);
                 contentView.setViewVisibility(R.id.icon, View.VISIBLE);
-            } //End block
+            } 
             {
                 contentView.setViewVisibility(R.id.icon, View.GONE);
-            } //End block
+            } 
             {
                 contentView.setTextViewText(R.id.title, mContentTitle);
-            } //End block
+            } 
             {
                 contentView.setTextViewText(R.id.text, mContentText);
                 hasLine3 = true;
-            } //End block
+            } 
             {
                 contentView.setTextViewText(R.id.info, mContentInfo);
                 contentView.setViewVisibility(R.id.info, View.VISIBLE);
                 hasLine3 = true;
-            } //End block
+            } 
             {
                 final int tooBig = mContext.getResources().getInteger(
                         R.integer.status_bar_notification_info_maxnum);
                 {
                     contentView.setTextViewText(R.id.info, mContext.getResources().getString(
                                 R.string.status_bar_notification_info_overflow));
-                } //End block
+                } 
                 {
                     NumberFormat f = NumberFormat.getIntegerInstance();
                     contentView.setTextViewText(R.id.info, f.format(mNumber));
-                } //End block
+                } 
                 contentView.setViewVisibility(R.id.info, View.VISIBLE);
                 hasLine3 = true;
-            } //End block
+            } 
             {
                 contentView.setViewVisibility(R.id.info, View.GONE);
-            } //End block
+            } 
             {
                 contentView.setProgressBar(
                         R.id.progress, mProgressMax, mProgress, mProgressIndeterminate);
                 contentView.setViewVisibility(R.id.progress, View.VISIBLE);
-            } //End block
+            } 
             {
                 contentView.setViewVisibility(R.id.progress, View.GONE);
-            } //End block
+            } 
             {
                 contentView.setLong(R.id.time, "setTime", mWhen);
-            } //End block
+            } 
             contentView.setViewVisibility(R.id.line3, hasLine3 ? View.VISIBLE : View.GONE);
             varB4EAC82CA7396A68D541C85D26508E83_1029509569 = contentView;
             addTaint(resId);
-            varB4EAC82CA7396A68D541C85D26508E83_1029509569.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1029509569.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1029509569;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.827 -0400", hash_original_method = "BA4EC765F0E429DA930DFC57746DA461", hash_generated_method = "D1A8BE8824CE14F4166DE9443460203D")
         private RemoteViews makeContentView() {
-            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_859083156 = null; //Variable for return #1
-            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1768508421 = null; //Variable for return #2
+            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_859083156 = null; 
+            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1768508421 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_859083156 = mContentView;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1768508421 = makeRemoteViews(mLargeIcon == null
                             ? R.layout.status_bar_latest_event_content
                         : R.layout.status_bar_latest_event_content_large_icon);
-            } //End block
-            RemoteViews varA7E53CE21691AB073D9660D615818899_1684674338; //Final return value
+            } 
+            RemoteViews varA7E53CE21691AB073D9660D615818899_1684674338; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1684674338 = varB4EAC82CA7396A68D541C85D26508E83_859083156;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1684674338 = varB4EAC82CA7396A68D541C85D26508E83_1768508421;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1684674338.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1684674338.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1684674338;
-            // ---------- Original Method ----------
-            //if (mContentView != null) {
-                //return mContentView;
-            //} else {
-                    //return makeRemoteViews(mLargeIcon == null
-                            //? R.layout.status_bar_latest_event_content
-                        //: R.layout.status_bar_latest_event_content_large_icon);
-            //}
+            
+            
+                
+            
+                    
+                            
+                        
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.828 -0400", hash_original_method = "E7ABF10FCA5C3841BF6DB5E454736B56", hash_generated_method = "F4A932907647DA045036D663E24FDA63")
         private RemoteViews makeTickerView() {
-            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1204001753 = null; //Variable for return #1
-            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1233365294 = null; //Variable for return #2
-            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_391060082 = null; //Variable for return #3
+            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1204001753 = null; 
+            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1233365294 = null; 
+            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_391060082 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1204001753 = mTickerView;
-            } //End block
+            } 
             {
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1233365294 = makeRemoteViews(mLargeIcon == null
                             ? R.layout.status_bar_latest_event_ticker
                             : R.layout.status_bar_latest_event_ticker_large_icon);
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_391060082 = null;
-                } //End block
-            } //End block
-            RemoteViews varA7E53CE21691AB073D9660D615818899_1766756802; //Final return value
+                } 
+            } 
+            RemoteViews varA7E53CE21691AB073D9660D615818899_1766756802; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1766756802 = varB4EAC82CA7396A68D541C85D26508E83_1204001753;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1766756802 = varB4EAC82CA7396A68D541C85D26508E83_1233365294;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1766756802 = varB4EAC82CA7396A68D541C85D26508E83_391060082;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1766756802.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1766756802.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1766756802;
-            // ---------- Original Method ----------
-            //if (mTickerView != null) {
-                //return mTickerView;
-            //} else {
-                //if (mContentView == null) {
-                    //return makeRemoteViews(mLargeIcon == null
-                            //? R.layout.status_bar_latest_event_ticker
-                            //: R.layout.status_bar_latest_event_ticker_large_icon);
-                //} else {
-                    //return null;
-                //}
-            //}
+            
+            
+                
+            
+                
+                    
+                            
+                            
+                
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.831 -0400", hash_original_method = "ACBCD2459BD592E66E9A1B94FF396B6B", hash_generated_method = "0B1041B3B05773F5BFE8D97F9134DB23")
         public Notification getNotification() {
-            Notification varB4EAC82CA7396A68D541C85D26508E83_2020436569 = null; //Variable for return #1
+            Notification varB4EAC82CA7396A68D541C85D26508E83_2020436569 = null; 
             Notification n = new Notification();
             n.when = mWhen;
             n.icon = mSmallIcon;
@@ -1023,15 +1027,15 @@ public class Notification implements Parcelable {
             n.flags = mFlags;
             {
                 n.flags |= FLAG_SHOW_LIGHTS;
-            } //End block
+            } 
             {
                 n.flags |= FLAG_SHOW_LIGHTS;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_2020436569 = n;
-            varB4EAC82CA7396A68D541C85D26508E83_2020436569.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2020436569.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2020436569;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1093,13 +1097,13 @@ public class Notification implements Parcelable {
             return new Notification[size];
         }
     };
-    // orphaned legacy method
+    
     public Notification createFromParcel(Parcel parcel)
         {
             return new Notification(parcel);
         }
     
-    // orphaned legacy method
+    
     public Notification[] newArray(int size)
         {
             return new Notification[size];

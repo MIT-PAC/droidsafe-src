@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.core.*;
 import gov.nist.javax.sip.header.SIPHeader;
@@ -23,7 +23,7 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
     public  PrivacyParser(String privacyType) {
         super(privacyType);
         addTaint(privacyType.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,13 +31,14 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
     protected  PrivacyParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.196 -0400", hash_original_method = "8BE7913EB9359A0AA04D67D7439E50B1", hash_generated_method = "9B4342883E6FC1BBF382FC16CEBBE515")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1789887799 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1789887799 = null; 
         dbg_enter("PrivacyParser.parse");
         PrivacyList privacyList = new PrivacyList();
         try 
@@ -65,23 +66,24 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
                             privacy.setPrivacy(token.getTokenValue());
                             this.lexer.SPorHT();
                             privacyList.add(privacy);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1789887799 = privacyList;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("PrivacyParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1789887799.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1789887799.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1789887799;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void main(String args[]) throws ParseException {
         String rou[] = {
                 "Privacy: none\n",

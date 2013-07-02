@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.harmony.security.asn1.ASN1BitString;
 import org.apache.harmony.security.asn1.ASN1Sequence;
@@ -37,12 +37,12 @@ public final class Certificate {
         this.signatureValue = new byte[signatureValue.length];
         System.arraycopy(signatureValue, 0, this.signatureValue, 0,
                                                     signatureValue.length);
-        // ---------- Original Method ----------
-        //this.tbsCertificate = tbsCertificate;
-        //this.signatureAlgorithm = signatureAlgorithm;
-        //this.signatureValue = new byte[signatureValue.length];
-        //System.arraycopy(signatureValue, 0, this.signatureValue, 0,
-                                                    //signatureValue.length);
+        
+        
+        
+        
+        
+                                                    
     }
 
     
@@ -55,36 +55,38 @@ public final class Certificate {
         addTaint(tbsCertificate.getTaint());
         addTaint(signatureAlgorithm.getTaint());
         addTaint(signatureValue[0]);
-        // ---------- Original Method ----------
-        //this.encoding = encoding;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.702 -0400", hash_original_method = "FF2C12E3D498720C4C6A280928F0E345", hash_generated_method = "A06651FC0689D5034782185952D9C44F")
     public TBSCertificate getTbsCertificate() {
-        TBSCertificate varB4EAC82CA7396A68D541C85D26508E83_296734477 = null; //Variable for return #1
+        TBSCertificate varB4EAC82CA7396A68D541C85D26508E83_296734477 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_296734477 = tbsCertificate;
-        varB4EAC82CA7396A68D541C85D26508E83_296734477.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_296734477.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_296734477;
-        // ---------- Original Method ----------
-        //return tbsCertificate;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.703 -0400", hash_original_method = "8722C62E4FA981F57078A28963CBFC5B", hash_generated_method = "7869767622DC82E8572188313C3E7482")
     public byte[] getSignatureValue() {
         byte[] var5A125AC02AA8E2DE3385FFE660D9090E_1224363853 = (signatureValue.clone());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1264243800 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1264243800;
-        // ---------- Original Method ----------
-        //return signatureValue.clone();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.703 -0400", hash_original_method = "AB851A8A0A531CFA5FA89690A5B67B6A", hash_generated_method = "47F03003999A5A1FBED609845913FD10")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_949158102 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_949158102 = null; 
         StringBuilder result = new StringBuilder();
         result.append("X.509 Certificate:\n[\n");
         tbsCertificate.dumpValue(result);
@@ -95,34 +97,35 @@ public final class Certificate {
         result.append(Array.toString(signatureValue, ""));
         result.append(']');
         varB4EAC82CA7396A68D541C85D26508E83_949158102 = result.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_949158102.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_949158102.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_949158102;
-        // ---------- Original Method ----------
-        //StringBuilder result = new StringBuilder();
-        //result.append("X.509 Certificate:\n[\n");
-        //tbsCertificate.dumpValue(result);
-        //result.append("\n  Algorithm: [");
-        //signatureAlgorithm.dumpValue(result);
-        //result.append(']');
-        //result.append("\n  Signature Value:\n");
-        //result.append(Array.toString(signatureValue, ""));
-        //result.append(']');
-        //return result.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.703 -0400", hash_original_method = "40E68AC9D0BBD7DBB7B922A2DC357EC3", hash_generated_method = "52FE063BFF3A72433947EB742A614B0B")
     public byte[] getEncoded() {
         {
             encoding = Certificate.ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_995299383 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_995299383;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = Certificate.ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
@@ -148,25 +151,6 @@ public final class Certificate {
             values[2] = new BitString(cert.signatureValue, 0);
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            Certificate cert = (Certificate) object;
-            values[0] = cert.tbsCertificate;
-            values[1] = cert.signatureAlgorithm;
-            values[2] = new BitString(cert.signatureValue, 0);
-        }
     
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) {
-            Object[] values = (Object[]) in.content;
-            return new Certificate(
-                    (TBSCertificate) values[0],
-                    (AlgorithmIdentifier) values[1],
-                    ((BitString) values[2]).bytes, 
-                    in.getEncoded());
-        }
-    
-    */
 }
 

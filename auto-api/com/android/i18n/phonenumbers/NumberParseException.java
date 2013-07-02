@@ -1,11 +1,11 @@
 package com.android.i18n.phonenumbers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class NumberParseException extends Exception {
@@ -21,32 +21,33 @@ public class NumberParseException extends Exception {
         super(message);
         this.message = message;
         this.errorType = errorType;
-        // ---------- Original Method ----------
-        //this.message = message;
-        //this.errorType = errorType;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.618 -0400", hash_original_method = "D589126B13584B530A9FB2F071914799", hash_generated_method = "8517CD2BCD8F21AC35359BF1F75F86EC")
     public ErrorType getErrorType() {
-        ErrorType varB4EAC82CA7396A68D541C85D26508E83_1973672239 = null; //Variable for return #1
+        ErrorType varB4EAC82CA7396A68D541C85D26508E83_1973672239 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1973672239 = errorType;
-        varB4EAC82CA7396A68D541C85D26508E83_1973672239.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1973672239.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1973672239;
-        // ---------- Original Method ----------
-        //return errorType;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.619 -0400", hash_original_method = "6D8405A96F8D5D279CAA6C0BAAB6D3AE", hash_generated_method = "5D0E184FA4FE8041D0DD9D6AA870A55A")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_690376206 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_690376206 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_690376206 = "Error type: " + errorType + ". " + message;
-        varB4EAC82CA7396A68D541C85D26508E83_690376206.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_690376206.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_690376206;
-        // ---------- Original Method ----------
-        //return "Error type: " + errorType + ". " + message;
+        
+        
     }
 
     

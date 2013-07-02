@@ -1,11 +1,11 @@
 package com.android.internal.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.Handler;
@@ -38,11 +38,11 @@ public class HandlerCaller {
         mMainLooper = context.getMainLooper();
         mH = new MyHandler(mMainLooper);
         mCallback = callback;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mMainLooper = context.getMainLooper();
-        //mH = new MyHandler(mMainLooper);
-        //mCallback = callback;
+        
+        
+        
+        
+        
     }
 
     
@@ -52,49 +52,49 @@ public class HandlerCaller {
         mMainLooper = looper;
         mH = new MyHandler(mMainLooper);
         mCallback = callback;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mMainLooper = looper;
-        //mH = new MyHandler(mMainLooper);
-        //mCallback = callback;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.499 -0400", hash_original_method = "C7D786B1A8326469A6C4DF3167D826A7", hash_generated_method = "1CBF5F7FDE76EBEA63E3FB7B75F1D920")
     public SomeArgs obtainArgs() {
-        SomeArgs varB4EAC82CA7396A68D541C85D26508E83_1333653850 = null; //Variable for return #1
-        SomeArgs varB4EAC82CA7396A68D541C85D26508E83_888531079 = null; //Variable for return #2
+        SomeArgs varB4EAC82CA7396A68D541C85D26508E83_1333653850 = null; 
+        SomeArgs varB4EAC82CA7396A68D541C85D26508E83_888531079 = null; 
         {
             SomeArgs args = mArgsPool;
             {
                 mArgsPool = args.next;
                 args.next = null;
                 varB4EAC82CA7396A68D541C85D26508E83_1333653850 = args;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_888531079 = new SomeArgs();
-        SomeArgs varA7E53CE21691AB073D9660D615818899_905090106; //Final return value
+        SomeArgs varA7E53CE21691AB073D9660D615818899_905090106; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_905090106 = varB4EAC82CA7396A68D541C85D26508E83_1333653850;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_905090106 = varB4EAC82CA7396A68D541C85D26508E83_888531079;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_905090106.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_905090106.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_905090106;
-        // ---------- Original Method ----------
-        //synchronized (mH) {
-            //SomeArgs args = mArgsPool;
-            //if (args != null) {
-                //mArgsPool = args.next;
-                //args.next = null;
-                //mArgsPoolSize--;
-                //return args;
-            //}
-        //}
-        //return new SomeArgs();
+        
+        
+            
+            
+                
+                
+                
+                
+            
+        
+        
     }
 
     
@@ -104,16 +104,16 @@ public class HandlerCaller {
             {
                 args.next = mArgsPool;
                 mArgsPool = args;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mH) {
-            //if (mArgsPoolSize < ARGS_POOL_MAX_SIZE) {
-                //args.next = mArgsPool;
-                //mArgsPool = args;
-                //mArgsPoolSize++;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+                
+            
+        
     }
 
     
@@ -124,17 +124,17 @@ public class HandlerCaller {
             {
                 mCallback.executeMessage(msg);
                 msg.recycle();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mH.sendMessage(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //if (Looper.myLooper() == mMainLooper) {
-            //mCallback.executeMessage(msg);
-            //msg.recycle();
-            //return;
-        //}
-        //mH.sendMessage(msg);
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -144,8 +144,8 @@ public class HandlerCaller {
         addTaint(what);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1620753306 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1620753306;
-        // ---------- Original Method ----------
-        //return mH.hasMessages(what);
+        
+        
     }
 
     
@@ -153,8 +153,8 @@ public class HandlerCaller {
     public void removeMessages(int what) {
         mH.removeMessages(what);
         addTaint(what);
-        // ---------- Original Method ----------
-        //mH.removeMessages(what);
+        
+        
     }
 
     
@@ -163,8 +163,8 @@ public class HandlerCaller {
         mH.removeMessages(what, obj);
         addTaint(what);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //mH.removeMessages(what, obj);
+        
+        
     }
 
     
@@ -172,40 +172,40 @@ public class HandlerCaller {
     public void sendMessage(Message msg) {
         mH.sendMessage(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //mH.sendMessage(msg);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.501 -0400", hash_original_method = "92301CED384526FAE2562FC8E2BD0E1D", hash_generated_method = "90F73B4EBC11D717A3EA6ACA10EFC766")
     public Message obtainMessage(int what) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1633081197 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1633081197 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1633081197 = mH.obtainMessage(what);
         addTaint(what);
-        varB4EAC82CA7396A68D541C85D26508E83_1633081197.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1633081197.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1633081197;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.502 -0400", hash_original_method = "9B5888B6830AED9D93456049A7F2C369", hash_generated_method = "0DEC295CA51445B04059D27E26A1D869")
     public Message obtainMessageBO(int what, boolean arg1, Object arg2) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_356644642 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_356644642 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_356644642 = mH.obtainMessage(what, arg1 ? 1 : 0, 0, arg2);
         addTaint(what);
         addTaint(arg1);
         addTaint(arg2.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_356644642.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_356644642.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_356644642;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, arg1 ? 1 : 0, 0, arg2);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.505 -0400", hash_original_method = "EB72AC22C9F7D2FB44688CD09996973C", hash_generated_method = "6AC25064E3BDF8BB446315C0076EA49C")
     public Message obtainMessageBOO(int what, boolean arg1, Object arg2, Object arg3) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1984823295 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1984823295 = null; 
         SomeArgs args = obtainArgs();
         args.arg1 = arg2;
         args.arg2 = arg3;
@@ -214,89 +214,89 @@ public class HandlerCaller {
         addTaint(arg1);
         addTaint(arg2.getTaint());
         addTaint(arg3.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1984823295.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1984823295.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1984823295;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.arg1 = arg2;
-        //args.arg2 = arg3;
-        //return mH.obtainMessage(what, arg1 ? 1 : 0, 0, args);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.506 -0400", hash_original_method = "E41B1E1C050A3613D52D3D6F2431F5B0", hash_generated_method = "1B2079769083084E0591AD3BE552506F")
     public Message obtainMessageO(int what, Object arg1) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_638315356 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_638315356 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_638315356 = mH.obtainMessage(what, 0, 0, arg1);
         addTaint(what);
         addTaint(arg1.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_638315356.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_638315356.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_638315356;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, 0, 0, arg1);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.508 -0400", hash_original_method = "5C01371734D93F096340C1C928E9C4EB", hash_generated_method = "8D5DE93D29241B38FA8194528387B54A")
     public Message obtainMessageI(int what, int arg1) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_438506937 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_438506937 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_438506937 = mH.obtainMessage(what, arg1, 0);
         addTaint(what);
         addTaint(arg1);
-        varB4EAC82CA7396A68D541C85D26508E83_438506937.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_438506937.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_438506937;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, arg1, 0);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.509 -0400", hash_original_method = "1D375F3B5B7A421102D544B0D8C99910", hash_generated_method = "127945A60A690DA87229FF8ACFA53DB5")
     public Message obtainMessageII(int what, int arg1, int arg2) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_184098549 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_184098549 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_184098549 = mH.obtainMessage(what, arg1, arg2);
         addTaint(what);
         addTaint(arg1);
         addTaint(arg2);
-        varB4EAC82CA7396A68D541C85D26508E83_184098549.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_184098549.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_184098549;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, arg1, arg2);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.510 -0400", hash_original_method = "BDB545C9895C4A044C116EE5375794DB", hash_generated_method = "05E9BB401DF69D7BBEF615FC50C0EA51")
     public Message obtainMessageIO(int what, int arg1, Object arg2) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1050349988 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1050349988 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1050349988 = mH.obtainMessage(what, arg1, 0, arg2);
         addTaint(what);
         addTaint(arg1);
         addTaint(arg2.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1050349988.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1050349988.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1050349988;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, arg1, 0, arg2);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.511 -0400", hash_original_method = "C859EEB4CE33BF0B4768A3A7456BD68F", hash_generated_method = "52B622B9434B08C39994FEE26AB4E8E2")
     public Message obtainMessageIIO(int what, int arg1, int arg2, Object arg3) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1098627912 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1098627912 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1098627912 = mH.obtainMessage(what, arg1, arg2, arg3);
         addTaint(what);
         addTaint(arg1);
         addTaint(arg2);
         addTaint(arg3.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1098627912.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1098627912.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1098627912;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, arg1, arg2, arg3);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.511 -0400", hash_original_method = "BCB5A1A15368DDA8D81813390243701E", hash_generated_method = "BD555F43212C68BACF5277B6D1797945")
     public Message obtainMessageIIOO(int what, int arg1, int arg2,
             Object arg3, Object arg4) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_681674195 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_681674195 = null; 
         SomeArgs args = obtainArgs();
         args.arg1 = arg3;
         args.arg2 = arg4;
@@ -306,19 +306,19 @@ public class HandlerCaller {
         addTaint(arg2);
         addTaint(arg3.getTaint());
         addTaint(arg4.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_681674195.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_681674195.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_681674195;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.arg1 = arg3;
-        //args.arg2 = arg4;
-        //return mH.obtainMessage(what, arg1, arg2, args);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.513 -0400", hash_original_method = "CB509D134FCA9E5B151CFC9C40C64D1B", hash_generated_method = "7834841D6A346D01D5C19CC67DB448C5")
     public Message obtainMessageIOO(int what, int arg1, Object arg2, Object arg3) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1236184530 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1236184530 = null; 
         SomeArgs args = obtainArgs();
         args.arg1 = arg2;
         args.arg2 = arg3;
@@ -327,19 +327,19 @@ public class HandlerCaller {
         addTaint(arg1);
         addTaint(arg2.getTaint());
         addTaint(arg3.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1236184530.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1236184530.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1236184530;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.arg1 = arg2;
-        //args.arg2 = arg3;
-        //return mH.obtainMessage(what, arg1, 0, args);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.514 -0400", hash_original_method = "36F936CCD9DE9DB810A79A5E8B7C79D8", hash_generated_method = "58335DA237CB110F83804AB365A35731")
     public Message obtainMessageOO(int what, Object arg1, Object arg2) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_2125592460 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_2125592460 = null; 
         SomeArgs args = obtainArgs();
         args.arg1 = arg1;
         args.arg2 = arg2;
@@ -347,19 +347,19 @@ public class HandlerCaller {
         addTaint(what);
         addTaint(arg1.getTaint());
         addTaint(arg2.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2125592460.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2125592460.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2125592460;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.arg1 = arg1;
-        //args.arg2 = arg2;
-        //return mH.obtainMessage(what, 0, 0, args);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.515 -0400", hash_original_method = "7B7B88DAF1A325732DD11D87B8FA8090", hash_generated_method = "6B3D7DB5FE4C1CE26FCF3CEDFFB81E4A")
     public Message obtainMessageOOO(int what, Object arg1, Object arg2, Object arg3) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_77704118 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_77704118 = null; 
         SomeArgs args = obtainArgs();
         args.arg1 = arg1;
         args.arg2 = arg2;
@@ -369,21 +369,21 @@ public class HandlerCaller {
         addTaint(arg1.getTaint());
         addTaint(arg2.getTaint());
         addTaint(arg3.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_77704118.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_77704118.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_77704118;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.arg1 = arg1;
-        //args.arg2 = arg2;
-        //args.arg3 = arg3;
-        //return mH.obtainMessage(what, 0, 0, args);
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.516 -0400", hash_original_method = "43873BAF9CC556751B2F5A72A399C999", hash_generated_method = "62A30C9DF2CE75C5F937F004CD814018")
     public Message obtainMessageOOOO(int what, Object arg1, Object arg2,
             Object arg3, Object arg4) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1646683939 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1646683939 = null; 
         SomeArgs args = obtainArgs();
         args.arg1 = arg1;
         args.arg2 = arg2;
@@ -395,22 +395,22 @@ public class HandlerCaller {
         addTaint(arg2.getTaint());
         addTaint(arg3.getTaint());
         addTaint(arg4.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1646683939.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1646683939.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1646683939;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.arg1 = arg1;
-        //args.arg2 = arg2;
-        //args.arg3 = arg3;
-        //args.arg4 = arg4;
-        //return mH.obtainMessage(what, 0, 0, args);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.517 -0400", hash_original_method = "1D875093D7ACE086FCDFA3A9B952F51E", hash_generated_method = "9F46A1F193D814C1CBA55FE6F8750764")
     public Message obtainMessageIIII(int what, int arg1, int arg2,
             int arg3, int arg4) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_33028551 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_33028551 = null; 
         SomeArgs args = obtainArgs();
         args.argi1 = arg1;
         args.argi2 = arg2;
@@ -422,22 +422,22 @@ public class HandlerCaller {
         addTaint(arg2);
         addTaint(arg3);
         addTaint(arg4);
-        varB4EAC82CA7396A68D541C85D26508E83_33028551.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_33028551.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_33028551;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.argi1 = arg1;
-        //args.argi2 = arg2;
-        //args.argi3 = arg3;
-        //args.argi4 = arg4;
-        //return mH.obtainMessage(what, 0, 0, args);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.517 -0400", hash_original_method = "3AF5B3474072AA5DC94AC3405EBF7B29", hash_generated_method = "054341C617F51897FECA339CAD916D42")
     public Message obtainMessageIIIIII(int what, int arg1, int arg2,
             int arg3, int arg4, int arg5, int arg6) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_2083036226 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_2083036226 = null; 
         SomeArgs args = obtainArgs();
         args.argi1 = arg1;
         args.argi2 = arg2;
@@ -453,24 +453,24 @@ public class HandlerCaller {
         addTaint(arg4);
         addTaint(arg5);
         addTaint(arg6);
-        varB4EAC82CA7396A68D541C85D26508E83_2083036226.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2083036226.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2083036226;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.argi1 = arg1;
-        //args.argi2 = arg2;
-        //args.argi3 = arg3;
-        //args.argi4 = arg4;
-        //args.argi5 = arg5;
-        //args.argi6 = arg6;
-        //return mH.obtainMessage(what, 0, 0, args);
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.518 -0400", hash_original_method = "1605D92F345EA1B31CBE383F462424A6", hash_generated_method = "0A73BE99E821E5BE998DA73D441E7F3A")
     public Message obtainMessageIIIIO(int what, int arg1, int arg2,
             int arg3, int arg4, Object arg5) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1775888424 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1775888424 = null; 
         SomeArgs args = obtainArgs();
         args.arg1 = arg5;
         args.argi1 = arg1;
@@ -484,16 +484,16 @@ public class HandlerCaller {
         addTaint(arg3);
         addTaint(arg4);
         addTaint(arg5.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1775888424.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1775888424.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1775888424;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.arg1 = arg5;
-        //args.argi1 = arg1;
-        //args.argi2 = arg2;
-        //args.argi3 = arg3;
-        //args.argi4 = arg4;
-        //return mH.obtainMessage(what, 0, 0, args);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -535,7 +535,7 @@ public class HandlerCaller {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.518 -0400", hash_original_method = "C08D0E88500332C6E0DD16EFE525CF46", hash_generated_method = "C08D0E88500332C6E0DD16EFE525CF46")
         public SomeArgs ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -549,7 +549,7 @@ public class HandlerCaller {
           MyHandler(Looper looper) {
             super(looper);
             addTaint(looper.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -558,8 +558,8 @@ public class HandlerCaller {
         public void handleMessage(Message msg) {
             mCallback.executeMessage(msg);
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //mCallback.executeMessage(msg);
+            
+            
         }
 
         

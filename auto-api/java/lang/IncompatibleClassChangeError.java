@@ -1,18 +1,18 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class IncompatibleClassChangeError extends LinkageError {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.106 -0400", hash_original_method = "38CC6ACCD85379A3B9DD104582709484", hash_generated_method = "E2CC95403ED1D8F0D7622D45695DC5F3")
     public  IncompatibleClassChangeError() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class IncompatibleClassChangeError extends LinkageError {
     public  IncompatibleClassChangeError(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

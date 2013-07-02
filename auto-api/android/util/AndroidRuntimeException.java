@@ -1,18 +1,18 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class AndroidRuntimeException extends RuntimeException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.136 -0400", hash_original_method = "8C5786A2A5252DB156BAEEC9B2143392", hash_generated_method = "41A0B8709066AE39095C72A04CE366E3")
     public  AndroidRuntimeException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class AndroidRuntimeException extends RuntimeException {
     public  AndroidRuntimeException(String name) {
         super(name);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ public class AndroidRuntimeException extends RuntimeException {
         super(name, cause);
         addTaint(name.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,7 +37,7 @@ public class AndroidRuntimeException extends RuntimeException {
     public  AndroidRuntimeException(Exception cause) {
         super(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

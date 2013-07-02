@@ -1,18 +1,18 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class ActivityNotFoundException extends RuntimeException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.992 -0400", hash_original_method = "56CBB1B0D6656A7AA127BFCDE1D30401", hash_generated_method = "4E0E0AF74E2E85C69CA75532FB0A998B")
     public  ActivityNotFoundException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class ActivityNotFoundException extends RuntimeException {
     public  ActivityNotFoundException(String name) {
         super(name);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

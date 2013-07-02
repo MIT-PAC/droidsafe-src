@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.net.LinkCapabilities;
 import android.net.LinkProperties;
@@ -26,12 +26,13 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
       DefaultPhoneNotifier() {
         mRegistry = ITelephonyRegistry.Stub.asInterface(ServiceManager.getService(
                     "telephony.registry"));
-        // ---------- Original Method ----------
-        //mRegistry = ITelephonyRegistry.Stub.asInterface(ServiceManager.getService(
-                    //"telephony.registry"));
+        
+        
+                    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.063 -0400", hash_original_method = "B1B04D5C561E6616E6BB5E666E01B9EA", hash_generated_method = "D4E8847C887AB70E0087EC79781F4E09")
     public void notifyPhoneState(Phone sender) {
         Call ringingCall = sender.getRingingCall();
@@ -40,120 +41,125 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
             boolean varB2F9A460C50567A982B58D3FB96A1538_458144459 = (ringingCall != null && ringingCall.getEarliestConnection() != null);
             {
                 incomingNumber = ringingCall.getEarliestConnection().getAddress();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             mRegistry.notifyCallState(convertCallState(sender.getState()), incomingNumber);
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         addTaint(sender.getTaint());
-        // ---------- Original Method ----------
-        //Call ringingCall = sender.getRingingCall();
-        //String incomingNumber = "";
-        //if (ringingCall != null && ringingCall.getEarliestConnection() != null){
-            //incomingNumber = ringingCall.getEarliestConnection().getAddress();
-        //}
-        //try {
-            //mRegistry.notifyCallState(convertCallState(sender.getState()), incomingNumber);
-        //} catch (RemoteException ex) {
-        //}
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.064 -0400", hash_original_method = "8120B7915F3C7B653A108168FE940FC9", hash_generated_method = "E6688BDAFED716A21D713C6643EB77AB")
     public void notifyServiceState(Phone sender) {
         ServiceState ss = sender.getServiceState();
         {
             ss = new ServiceState();
             ss.setStateOutOfService();
-        } //End block
+        } 
         try 
         {
             mRegistry.notifyServiceState(ss);
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         addTaint(sender.getTaint());
-        // ---------- Original Method ----------
-        //ServiceState ss = sender.getServiceState();
-        //if (ss == null) {
-            //ss = new ServiceState();
-            //ss.setStateOutOfService();
-        //}
-        //try {
-            //mRegistry.notifyServiceState(ss);
-        //} catch (RemoteException ex) {
-        //}
+        
+        
+        
+            
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.064 -0400", hash_original_method = "51C3EBD9D5F86649F01134EE2C844096", hash_generated_method = "5EAC87B18CC4F279FD8999C7C7149B06")
     public void notifySignalStrength(Phone sender) {
         try 
         {
             mRegistry.notifySignalStrength(sender.getSignalStrength());
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         addTaint(sender.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mRegistry.notifySignalStrength(sender.getSignalStrength());
-        //} catch (RemoteException ex) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.065 -0400", hash_original_method = "EEA6E3D036FE30A21A0E7B01738A2091", hash_generated_method = "6CBFD25648C8FF77BE6DCD7F8710C9BB")
     public void notifyMessageWaitingChanged(Phone sender) {
         try 
         {
             mRegistry.notifyMessageWaitingChanged(sender.getMessageWaitingIndicator());
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         addTaint(sender.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mRegistry.notifyMessageWaitingChanged(sender.getMessageWaitingIndicator());
-        //} catch (RemoteException ex) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.066 -0400", hash_original_method = "61F204C17435F73A0638C1B2194C11D4", hash_generated_method = "349712B2920A4FEA7C33E1DD6933682A")
     public void notifyCallForwardingChanged(Phone sender) {
         try 
         {
             mRegistry.notifyCallForwardingChanged(sender.getCallForwardingIndicator());
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         addTaint(sender.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mRegistry.notifyCallForwardingChanged(sender.getCallForwardingIndicator());
-        //} catch (RemoteException ex) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.066 -0400", hash_original_method = "6186BE83E934F018920409C47A141A66", hash_generated_method = "0C4FD0525427BDC6CD03B9D20D4B640B")
     public void notifyDataActivity(Phone sender) {
         try 
         {
             mRegistry.notifyDataActivity(convertDataActivityState(sender.getDataActivityState()));
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         addTaint(sender.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mRegistry.notifyDataActivity(convertDataActivityState(sender.getDataActivityState()));
-        //} catch (RemoteException ex) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
@@ -165,8 +171,8 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
         addTaint(reason.getTaint());
         addTaint(apnType.getTaint());
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //doNotifyDataConnection(sender, reason, apnType, state);
+        
+        
     }
 
     
@@ -180,7 +186,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
         {
             linkProperties = sender.getLinkProperties(apnType);
             linkCapabilities = sender.getLinkCapabilities(apnType);
-        } //End block
+        } 
         ServiceState ss = sender.getServiceState();
         roaming = ss.getRoaming();
         try 
@@ -195,37 +201,39 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
                     ((telephony!=null) ? telephony.getNetworkType() :
                     TelephonyManager.NETWORK_TYPE_UNKNOWN),
                     roaming);
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         addTaint(sender.getTaint());
         addTaint(reason.getTaint());
         addTaint(apnType.getTaint());
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.068 -0400", hash_original_method = "67482F4F9D9E6F44C4639F27C32CCD68", hash_generated_method = "E97A741C6B570CE3A8934B1D4214F16B")
     public void notifyDataConnectionFailed(Phone sender, String reason, String apnType) {
         try 
         {
             mRegistry.notifyDataConnectionFailed(reason, apnType);
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         addTaint(sender.getTaint());
         addTaint(reason.getTaint());
         addTaint(apnType.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mRegistry.notifyDataConnectionFailed(reason, apnType);
-        //} catch (RemoteException ex) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.068 -0400", hash_original_method = "200E0849AE67515A7A87FAAD1F0CCF5A", hash_generated_method = "8D7210620E03AE298ABC431DABFFC375")
     public void notifyCellLocation(Phone sender) {
         Bundle data = new Bundle();
@@ -233,44 +241,46 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
         try 
         {
             mRegistry.notifyCellLocation(data);
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         addTaint(sender.getTaint());
-        // ---------- Original Method ----------
-        //Bundle data = new Bundle();
-        //sender.getCellLocation().fillInNotifierBundle(data);
-        //try {
-            //mRegistry.notifyCellLocation(data);
-        //} catch (RemoteException ex) {
-        //}
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.069 -0400", hash_original_method = "E58B6ECC0D24F432EA477897C3B146BA", hash_generated_method = "332D44B9638D2AFF2029BF7B0A47D264")
     public void notifyOtaspChanged(Phone sender, int otaspMode) {
         try 
         {
             mRegistry.notifyOtaspChanged(otaspMode);
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         addTaint(sender.getTaint());
         addTaint(otaspMode);
-        // ---------- Original Method ----------
-        //try {
-            //mRegistry.notifyOtaspChanged(otaspMode);
-        //} catch (RemoteException ex) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.069 -0400", hash_original_method = "2A392D1FEF0E39928D559AB442BF53B9", hash_generated_method = "C7D03FB155FFDF71D6836A4B5D6F6366")
     private void log(String s) {
         Log.d(LOG_TAG, "[PhoneNotifier] " + s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[PhoneNotifier] " + s);
+        
+        
     }
 
     

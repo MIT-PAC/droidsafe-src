@@ -1,11 +1,11 @@
 package java.beans;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.EventObject;
 
@@ -31,62 +31,62 @@ public class PropertyChangeEvent extends EventObject {
         this.oldValue = oldValue;
         this.newValue = newValue;
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
-        //this.propertyName = propertyName;
-        //this.oldValue = oldValue;
-        //this.newValue = newValue;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.293 -0400", hash_original_method = "F855330D0A49F166D335D3D735B1EC12", hash_generated_method = "2D85D5BB89F86A8D1AE1C0C0177C468B")
     public String getPropertyName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1468710993 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1468710993 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1468710993 = propertyName;
-        varB4EAC82CA7396A68D541C85D26508E83_1468710993.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1468710993.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1468710993;
-        // ---------- Original Method ----------
-        //return propertyName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.293 -0400", hash_original_method = "570268AC213ADE0DD8E583FF2E0DF2D9", hash_generated_method = "99F56DD866E50C8B6DA45D24B96D6C66")
     public void setPropagationId(Object propagationId) {
         this.propagationId = propagationId;
-        // ---------- Original Method ----------
-        //this.propagationId = propagationId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.294 -0400", hash_original_method = "B4EBBB8113E4594B079A51C3F9A7BBBF", hash_generated_method = "8316B802D498BBC8FEA7B8E25C6E2367")
     public Object getPropagationId() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_764275430 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_764275430 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_764275430 = propagationId;
-        varB4EAC82CA7396A68D541C85D26508E83_764275430.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_764275430.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_764275430;
-        // ---------- Original Method ----------
-        //return propagationId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.294 -0400", hash_original_method = "F6F859A65246176318D5EFB34CCA1A19", hash_generated_method = "14FA1A26C54B0A34D115721A02235A12")
     public Object getOldValue() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1254636291 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1254636291 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1254636291 = oldValue;
-        varB4EAC82CA7396A68D541C85D26508E83_1254636291.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1254636291.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1254636291;
-        // ---------- Original Method ----------
-        //return oldValue;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.294 -0400", hash_original_method = "623578C48E0252EB5211DBCA0AAE39FA", hash_generated_method = "9EB8F9770DE5C07477408565AACFBBFC")
     public Object getNewValue() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1734023643 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1734023643 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1734023643 = newValue;
-        varB4EAC82CA7396A68D541C85D26508E83_1734023643.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1734023643.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1734023643;
-        // ---------- Original Method ----------
-        //return newValue;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.SearchDialog;
 import android.app.SearchManager;
@@ -107,38 +107,38 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
                 mPreviousLength = constraint.length();
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_2121881651 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_2121881651;
-                // ---------- Original Method ----------
-                //if (constraint == null) return 0;
-                //long delay = constraint.length() < mPreviousLength ? DELETE_KEY_POST_DELAY : 0;
-                //mPreviousLength = constraint.length();
-                //return delay;
+                
+                
+                
+                
+                
             }
 });
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //mSearchManager = (SearchManager) mContext.getSystemService(Context.SEARCH_SERVICE);
-        //mSearchView = searchView;
-        //mSearchable = searchable;
-        //Context activityContext = mSearchable.getActivityContext(mContext);
-        //mProviderContext = mSearchable.getProviderContext(mContext, activityContext);
-        //mOutsideDrawablesCache = outsideDrawablesCache;
-        //getFilter().setDelayer(new Filter.Delayer() {
-            //private int mPreviousLength = 0;
-            //public long getPostingDelay(CharSequence constraint) {
-                //if (constraint == null) return 0;
-                //long delay = constraint.length() < mPreviousLength ? DELETE_KEY_POST_DELAY : 0;
-                //mPreviousLength = constraint.length();
-                //return delay;
-            //}
-        //});
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+                
+                
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.144 -0400", hash_original_method = "7E34E1FAECF41C65A10194A4E061AD6D", hash_generated_method = "C864B094F1586B649248412EF85B9AC7")
     public void setQueryRefinement(int refineWhat) {
         mQueryRefinement = refineWhat;
-        // ---------- Original Method ----------
-        //mQueryRefinement = refineWhat;
+        
+        
     }
 
     
@@ -146,8 +146,8 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
     public int getQueryRefinement() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_192588840 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_192588840;
-        // ---------- Original Method ----------
-        //return mQueryRefinement;
+        
+        
     }
 
     
@@ -156,17 +156,18 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
     public boolean hasStableIds() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1228732105 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1228732105;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.146 -0400", hash_original_method = "94A214A70A9BD5FB24F7DC72C91FA8E3", hash_generated_method = "A43335D972CB308454C34D6A752C13A7")
     @Override
     public Cursor runQueryOnBackgroundThread(CharSequence constraint) {
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_2111649664 = null; //Variable for return #1
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_2085865254 = null; //Variable for return #2
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_369680945 = null; //Variable for return #3
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_2111649664 = null; 
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_2085865254 = null; 
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_369680945 = null; 
         Log.d(LOG_TAG, "runQueryOnBackgroundThread(" + constraint + ")");
         String query;
         query = "";
@@ -177,93 +178,97 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
                 || mSearchView.getWindowVisibility() != View.VISIBLE);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2111649664 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             cursor = mSearchManager.getSuggestions(mSearchable, query, QUERY_LIMIT);
             {
                 cursor.getCount();
                 varB4EAC82CA7396A68D541C85D26508E83_2085865254 = cursor;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RuntimeException e)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_369680945 = null;
         addTaint(constraint.getTaint());
-        Cursor varA7E53CE21691AB073D9660D615818899_1949496635; //Final return value
+        Cursor varA7E53CE21691AB073D9660D615818899_1949496635; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1949496635 = varB4EAC82CA7396A68D541C85D26508E83_2111649664;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1949496635 = varB4EAC82CA7396A68D541C85D26508E83_2085865254;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1949496635 = varB4EAC82CA7396A68D541C85D26508E83_369680945;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1949496635.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1949496635.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1949496635;
-        // ---------- Original Method ----------
-        //if (DBG) Log.d(LOG_TAG, "runQueryOnBackgroundThread(" + constraint + ")");
-        //String query = (constraint == null) ? "" : constraint.toString();
-        //Cursor cursor = null;
-        //if (mSearchView.getVisibility() != View.VISIBLE
-                //|| mSearchView.getWindowVisibility() != View.VISIBLE) {
-            //return null;
-        //}
-        //try {
-            //cursor = mSearchManager.getSuggestions(mSearchable, query, QUERY_LIMIT);
-            //if (cursor != null) {
-                //cursor.getCount();
-                //return cursor;
-            //}
-        //} catch (RuntimeException e) {
-            //Log.w(LOG_TAG, "Search suggestions query threw an exception.", e);
-        //}
-        //return null;
+        
+        
+        
+        
+        
+                
+            
+        
+        
+            
+            
+                
+                
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.147 -0400", hash_original_method = "31DDF4DC630B78B5374FE58E89B45EA8", hash_generated_method = "C7D7BD489C69CF8812EDED66E65A8F4C")
     public void close() {
         Log.d(LOG_TAG, "close()");
         changeCursor(null);
         mClosed = true;
-        // ---------- Original Method ----------
-        //if (DBG) Log.d(LOG_TAG, "close()");
-        //changeCursor(null);
-        //mClosed = true;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.147 -0400", hash_original_method = "6C6F9D84444AF89C1AA3B4F24466FCA3", hash_generated_method = "8B9EEDC1009B20B2D1E17A6FA08ADD72")
     @Override
     public void notifyDataSetChanged() {
         Log.d(LOG_TAG, "notifyDataSetChanged");
         super.notifyDataSetChanged();
         updateSpinnerState(getCursor());
-        // ---------- Original Method ----------
-        //if (DBG) Log.d(LOG_TAG, "notifyDataSetChanged");
-        //super.notifyDataSetChanged();
-        //updateSpinnerState(getCursor());
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.148 -0400", hash_original_method = "C9146AC3C36F793606A0389850806FAD", hash_generated_method = "6B93AEE0079E5CB1BBCFFD1FCD57FEA0")
     @Override
     public void notifyDataSetInvalidated() {
         Log.d(LOG_TAG, "notifyDataSetInvalidated");
         super.notifyDataSetInvalidated();
         updateSpinnerState(getCursor());
-        // ---------- Original Method ----------
-        //if (DBG) Log.d(LOG_TAG, "notifyDataSetInvalidated");
-        //super.notifyDataSetInvalidated();
-        //updateSpinnerState(getCursor());
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.148 -0400", hash_original_method = "1E3B20B61BE1D7016BA8A5BF351CC500", hash_generated_method = "2CC389BD65C5AB933DB3396B46C09F5D")
     private void updateSpinnerState(Cursor cursor) {
         Bundle extras;
@@ -274,34 +279,35 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
                 + (extras != null
                         ? extras.getBoolean(SearchManager.CURSOR_EXTRA_KEY_IN_PROGRESS)
                         : null));
-        } //End block
+        } 
         {
             boolean var50462C069FC0D18F392466D196957EC9_1167030327 = (extras != null
                 && extras.getBoolean(SearchManager.CURSOR_EXTRA_KEY_IN_PROGRESS));
-        } //End collapsed parenthetic
+        } 
         addTaint(cursor.getTaint());
-        // ---------- Original Method ----------
-        //Bundle extras = cursor != null ? cursor.getExtras() : null;
-        //if (DBG) {
-            //Log.d(LOG_TAG, "updateSpinnerState - extra = "
-                //+ (extras != null
-                        //? extras.getBoolean(SearchManager.CURSOR_EXTRA_KEY_IN_PROGRESS)
-                        //: null));
-        //}
-        //if (extras != null
-                //&& extras.getBoolean(SearchManager.CURSOR_EXTRA_KEY_IN_PROGRESS)) {
-            //return;
-        //}
+        
+        
+        
+            
+                
+                        
+                        
+        
+        
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.149 -0400", hash_original_method = "148392FC8CA03B9EFECB202A68AE28AE", hash_generated_method = "13DB8FA6532C059DCDAD7D2B0364B6D8")
     @Override
     public void changeCursor(Cursor c) {
         Log.d(LOG_TAG, "changeCursor(" + c + ")");
         {
             c.close();
-        } //End block
+        } 
         try 
         {
             super.changeCursor(c);
@@ -312,34 +318,36 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
                 mIconName1Col = c.getColumnIndex(SearchManager.SUGGEST_COLUMN_ICON_1);
                 mIconName2Col = c.getColumnIndex(SearchManager.SUGGEST_COLUMN_ICON_2);
                 mFlagsCol = c.getColumnIndex(SearchManager.SUGGEST_COLUMN_FLAGS);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (Exception e)
         { }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.149 -0400", hash_original_method = "FF2C15D5C77CB986FFC483C5693D319F", hash_generated_method = "BCD61EEB5FBC9A266C2CA4779555AD83")
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_767418046 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_767418046 = null; 
         View v = super.newView(context, cursor, parent);
         v.setTag(new ChildViewCache(v));
         varB4EAC82CA7396A68D541C85D26508E83_767418046 = v;
         addTaint(context.getTaint());
         addTaint(cursor.getTaint());
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_767418046.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_767418046.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_767418046;
-        // ---------- Original Method ----------
-        //View v = super.newView(context, cursor, parent);
-        //v.setTag(new ChildViewCache(v));
-        //return v;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.150 -0400", hash_original_method = "9ABFACDD3FE80D43883DC10EAA51920C", hash_generated_method = "5D693FE87D35D13DAC95C7F01BF8F322")
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
@@ -347,104 +355,107 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
         int flags = 0;
         {
             flags = cursor.getInt(mFlagsCol);
-        } //End block
+        } 
         {
             String text1 = getStringOrNull(cursor, mText1Col);
             setViewText(views.mText1, text1);
-        } //End block
+        } 
         {
             CharSequence text2 = getStringOrNull(cursor, mText2UrlCol);
             {
                 text2 = formatUrl(text2);
-            } //End block
+            } 
             {
                 text2 = getStringOrNull(cursor, mText2Col);
-            } //End block
+            } 
             {
                 boolean varB9DE4693D5C635CA8EC30AA4FD17DA9F_116100174 = (TextUtils.isEmpty(text2));
                 {
                     {
                         views.mText1.setSingleLine(false);
                         views.mText1.setMaxLines(2);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     {
                         views.mText1.setSingleLine(true);
                         views.mText1.setMaxLines(1);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             setViewText(views.mText2, text2);
-        } //End block
+        } 
         {
             setViewDrawable(views.mIcon1, getIcon1(cursor), View.INVISIBLE);
-        } //End block
+        } 
         {
             setViewDrawable(views.mIcon2, getIcon2(cursor), View.GONE);
-        } //End block
+        } 
         {
             views.mIconRefine.setVisibility(View.VISIBLE);
             views.mIconRefine.setTag(views.mText1.getText());
             views.mIconRefine.setOnClickListener(this);
-        } //End block
+        } 
         {
             views.mIconRefine.setVisibility(View.GONE);
-        } //End block
+        } 
         addTaint(view.getTaint());
         addTaint(context.getTaint());
         addTaint(cursor.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.150 -0400", hash_original_method = "21562F430356DF0ADAE2AB54659D8C55", hash_generated_method = "3F35649B722ADA0A948D4A742B0BD9B1")
     public void onClick(View v) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         Object tag = v.getTag();
         {
             mSearchView.onQueryRefine((CharSequence) tag);
-        } //End block
+        } 
         addTaint(v.getTaint());
-        // ---------- Original Method ----------
-        //Object tag = v.getTag();
-        //if (tag instanceof CharSequence) {
-            //mSearchView.onQueryRefine((CharSequence) tag);
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.151 -0400", hash_original_method = "9779DF5ADEE23E8777317BAD132048A5", hash_generated_method = "9041F272FCBA20855D1CF5B7A987BE5E")
     private CharSequence formatUrl(CharSequence url) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1406257448 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1406257448 = null; 
         {
             TypedValue colorValue = new TypedValue();
             mContext.getTheme().resolveAttribute(R.attr.textColorSearchUrl, colorValue, true);
             mUrlColor = mContext.getResources().getColorStateList(colorValue.resourceId);
-        } //End block
+        } 
         SpannableString text = new SpannableString(url);
         text.setSpan(new TextAppearanceSpan(null, 0, 0, mUrlColor, null),
                 0, url.length(),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         varB4EAC82CA7396A68D541C85D26508E83_1406257448 = text;
         addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1406257448.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1406257448.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1406257448;
-        // ---------- Original Method ----------
-        //if (mUrlColor == null) {
-            //TypedValue colorValue = new TypedValue();
-            //mContext.getTheme().resolveAttribute(R.attr.textColorSearchUrl, colorValue, true);
-            //mUrlColor = mContext.getResources().getColorStateList(colorValue.resourceId);
-        //}
-        //SpannableString text = new SpannableString(url);
-        //text.setSpan(new TextAppearanceSpan(null, 0, 0, mUrlColor, null),
-                //0, url.length(),
-                //Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //return text;
+        
+        
+            
+            
+            
+        
+        
+        
+                
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.151 -0400", hash_original_method = "8F61D57F1A865E44B5C7D5D6842EB2D0", hash_generated_method = "116CF76F26AB33429D01727449C59DBB")
     private void setViewText(TextView v, CharSequence text) {
         v.setText(text);
@@ -452,209 +463,214 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
             boolean var6C86A511CD0D2845B6E0259573F6A612_1766828480 = (TextUtils.isEmpty(text));
             {
                 v.setVisibility(View.GONE);
-            } //End block
+            } 
             {
                 v.setVisibility(View.VISIBLE);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(v.getTaint());
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
-        //v.setText(text);
-        //if (TextUtils.isEmpty(text)) {
-            //v.setVisibility(View.GONE);
-        //} else {
-            //v.setVisibility(View.VISIBLE);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.152 -0400", hash_original_method = "11EBBD91023FF77979C98F4482283D5C", hash_generated_method = "7A1F0CF494DF9886D8F249A60E586129")
     private Drawable getIcon1(Cursor cursor) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_373680985 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_39307229 = null; //Variable for return #2
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1348921753 = null; //Variable for return #3
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_373680985 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_39307229 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1348921753 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_373680985 = null;
-        } //End block
+        } 
         String value = cursor.getString(mIconName1Col);
         Drawable drawable = getDrawableFromResourceValue(value);
         {
             varB4EAC82CA7396A68D541C85D26508E83_39307229 = drawable;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1348921753 = getDefaultIcon1(cursor);
         addTaint(cursor.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_1163567551; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_1163567551; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1163567551 = varB4EAC82CA7396A68D541C85D26508E83_373680985;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1163567551 = varB4EAC82CA7396A68D541C85D26508E83_39307229;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1163567551 = varB4EAC82CA7396A68D541C85D26508E83_1348921753;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1163567551.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1163567551.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1163567551;
-        // ---------- Original Method ----------
-        //if (mIconName1Col == INVALID_INDEX) {
-            //return null;
-        //}
-        //String value = cursor.getString(mIconName1Col);
-        //Drawable drawable = getDrawableFromResourceValue(value);
-        //if (drawable != null) {
-            //return drawable;
-        //}
-        //return getDefaultIcon1(cursor);
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.153 -0400", hash_original_method = "E54FBD6C00322E8129D2706226F8DB3F", hash_generated_method = "55ABB29D3F0E6FBB09B39DE07ADC414F")
     private Drawable getIcon2(Cursor cursor) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_527369927 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1169494897 = null; //Variable for return #2
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_527369927 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1169494897 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_527369927 = null;
-        } //End block
+        } 
         String value = cursor.getString(mIconName2Col);
         varB4EAC82CA7396A68D541C85D26508E83_1169494897 = getDrawableFromResourceValue(value);
         addTaint(cursor.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_973368988; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_973368988; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_973368988 = varB4EAC82CA7396A68D541C85D26508E83_527369927;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_973368988 = varB4EAC82CA7396A68D541C85D26508E83_1169494897;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_973368988.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_973368988.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_973368988;
-        // ---------- Original Method ----------
-        //if (mIconName2Col == INVALID_INDEX) {
-            //return null;
-        //}
-        //String value = cursor.getString(mIconName2Col);
-        //return getDrawableFromResourceValue(value);
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.153 -0400", hash_original_method = "DC13C6A1012A85758DE954F51DF05728", hash_generated_method = "9D85F41AC2B492F8E8C048A9E3029074")
     private void setViewDrawable(ImageView v, Drawable drawable, int nullVisibility) {
         v.setImageDrawable(drawable);
         {
             v.setVisibility(nullVisibility);
-        } //End block
+        } 
         {
             v.setVisibility(View.VISIBLE);
             drawable.setVisible(false, false);
             drawable.setVisible(true, false);
-        } //End block
+        } 
         addTaint(v.getTaint());
         addTaint(drawable.getTaint());
         addTaint(nullVisibility);
-        // ---------- Original Method ----------
-        //v.setImageDrawable(drawable);
-        //if (drawable == null) {
-            //v.setVisibility(nullVisibility);
-        //} else {
-            //v.setVisibility(View.VISIBLE);
-            //drawable.setVisible(false, false);
-            //drawable.setVisible(true, false);
-        //}
+        
+        
+        
+            
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.154 -0400", hash_original_method = "EEAFA1105ED04DD7E614744D210BB1BA", hash_generated_method = "E3BE558B46DCB899E82688C2D66CA1ED")
     @Override
     public CharSequence convertToString(Cursor cursor) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1659813062 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_831210557 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_665887122 = null; //Variable for return #3
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1882843960 = null; //Variable for return #4
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1352337354 = null; //Variable for return #5
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1659813062 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_831210557 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_665887122 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1882843960 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1352337354 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1659813062 = null;
-        } //End block
+        } 
         String query = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_QUERY);
         {
             varB4EAC82CA7396A68D541C85D26508E83_831210557 = query;
-        } //End block
+        } 
         {
             boolean varE8FE5C36D8FE1523056BAB9AB236D1EA_1287283854 = (mSearchable.shouldRewriteQueryFromData());
             {
                 String data = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_INTENT_DATA);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_665887122 = data;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             boolean var29845B1F9A9491B3FE6CECDC2E20A3FE_48218834 = (mSearchable.shouldRewriteQueryFromText());
             {
                 String text1 = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_TEXT_1);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1882843960 = text1;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1352337354 = null;
         addTaint(cursor.getTaint());
-        CharSequence varA7E53CE21691AB073D9660D615818899_1353174011; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1353174011; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1353174011 = varB4EAC82CA7396A68D541C85D26508E83_1659813062;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1353174011 = varB4EAC82CA7396A68D541C85D26508E83_831210557;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1353174011 = varB4EAC82CA7396A68D541C85D26508E83_665887122;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1353174011 = varB4EAC82CA7396A68D541C85D26508E83_1882843960;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1353174011 = varB4EAC82CA7396A68D541C85D26508E83_1352337354;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1353174011.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1353174011.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1353174011;
-        // ---------- Original Method ----------
-        //if (cursor == null) {
-            //return null;
-        //}
-        //String query = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_QUERY);
-        //if (query != null) {
-            //return query;
-        //}
-        //if (mSearchable.shouldRewriteQueryFromData()) {
-            //String data = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_INTENT_DATA);
-            //if (data != null) {
-                //return data;
-            //}
-        //}
-        //if (mSearchable.shouldRewriteQueryFromText()) {
-            //String text1 = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_TEXT_1);
-            //if (text1 != null) {
-                //return text1;
-            //}
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.155 -0400", hash_original_method = "EC9A6ABF4CBFA211B4EDA728AA0B1D68", hash_generated_method = "5E7FF96EE0BB90A8714050597FB98ACD")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_2100652972 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_256203736 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_2100652972 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_256203736 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2100652972 = super.getView(position, convertView, parent);
-        } //End block
+        } 
         catch (RuntimeException e)
         {
             View v = newView(mContext, mCursor, parent);
@@ -662,53 +678,54 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
                 ChildViewCache views = (ChildViewCache) v.getTag();
                 TextView tv = views.mText1;
                 tv.setText(e.toString());
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_256203736 = v;
-        } //End block
+        } 
         addTaint(position);
         addTaint(convertView.getTaint());
         addTaint(parent.getTaint());
-        View varA7E53CE21691AB073D9660D615818899_45019080; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_45019080; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_45019080 = varB4EAC82CA7396A68D541C85D26508E83_2100652972;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_45019080 = varB4EAC82CA7396A68D541C85D26508E83_256203736;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_45019080.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_45019080.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_45019080;
-        // ---------- Original Method ----------
-        //try {
-            //return super.getView(position, convertView, parent);
-        //} catch (RuntimeException e) {
-            //Log.w(LOG_TAG, "Search suggestions cursor threw exception.", e);
-            //View v = newView(mContext, mCursor, parent);
-            //if (v != null) {
-                //ChildViewCache views = (ChildViewCache) v.getTag();
-                //TextView tv = views.mText1;
-                //tv.setText(e.toString());
-            //}
-            //return v;
-        //}
+        
+        
+            
+        
+            
+            
+            
+                
+                
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.157 -0400", hash_original_method = "2062B3ECC79D4C838F6E4FC0FEE6243A", hash_generated_method = "992BA7410A15C8ADD1FEF9026F64EA1A")
     private Drawable getDrawableFromResourceValue(String drawableId) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1943472222 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_172320186 = null; //Variable for return #2
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1044845214 = null; //Variable for return #3
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1707851178 = null; //Variable for return #4
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_578201372 = null; //Variable for return #5
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_44965849 = null; //Variable for return #6
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1943472222 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_172320186 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1044845214 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1707851178 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_578201372 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_44965849 = null; 
         {
             boolean var28BB864B60CF8C657D6DC33CCB43E344_141677341 = (drawableId == null || drawableId.length() == 0 || "0".equals(drawableId));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1943472222 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             int resourceId = Integer.parseInt(drawableId);
@@ -717,60 +734,60 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
             Drawable drawable = checkIconCache(drawableUri);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_172320186 = drawable;
-            } //End block
+            } 
             drawable = mProviderContext.getResources().getDrawable(resourceId);
             storeInIconCache(drawableUri, drawable);
             varB4EAC82CA7396A68D541C85D26508E83_1044845214 = drawable;
-        } //End block
+        } 
         catch (NumberFormatException nfe)
         {
             Drawable drawable = checkIconCache(drawableId);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1707851178 = drawable;
-            } //End block
+            } 
             Uri uri = Uri.parse(drawableId);
             drawable = getDrawable(uri);
             storeInIconCache(drawableId, drawable);
             varB4EAC82CA7396A68D541C85D26508E83_578201372 = drawable;
-        } //End block
+        } 
         catch (Resources.NotFoundException nfe)
         {
             varB4EAC82CA7396A68D541C85D26508E83_44965849 = null;
-        } //End block
+        } 
         addTaint(drawableId.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_2135728044; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_2135728044; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2135728044 = varB4EAC82CA7396A68D541C85D26508E83_1943472222;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2135728044 = varB4EAC82CA7396A68D541C85D26508E83_172320186;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_2135728044 = varB4EAC82CA7396A68D541C85D26508E83_1044845214;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_2135728044 = varB4EAC82CA7396A68D541C85D26508E83_1707851178;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_2135728044 = varB4EAC82CA7396A68D541C85D26508E83_578201372;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2135728044 = varB4EAC82CA7396A68D541C85D26508E83_44965849;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2135728044.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2135728044.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2135728044;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.159 -0400", hash_original_method = "3801EEB25227B54F215AA02CEF91B89D", hash_generated_method = "8D832724488DCF3F96159B7B06D65744")
     private Drawable getDrawable(Uri uri) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_204283167 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1185299870 = null; //Variable for return #2
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1799891153 = null; //Variable for return #3
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_204283167 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1185299870 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1799891153 = null; 
         try 
         {
             String scheme = uri.getScheme();
@@ -781,145 +798,149 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
                     try 
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_204283167 = r.r.getDrawable(r.id);
-                    } //End block
+                    } 
                     catch (Resources.NotFoundException ex)
                     {
                         if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Resource does not exist: " + uri);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     InputStream stream = mProviderContext.getContentResolver().openInputStream(uri);
                     {
                         if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Failed to open " + uri);
-                    } //End block
+                    } 
                     try 
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1185299870 = Drawable.createFromStream(stream, null);
-                    } //End block
+                    } 
                     finally 
                     {
                         try 
                         {
                             stream.close();
-                        } //End block
+                        } 
                         catch (IOException ex)
                         { }
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         catch (FileNotFoundException fnfe)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1799891153 = null;
-        } //End block
+        } 
         addTaint(uri.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_572615660; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_572615660; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_572615660 = varB4EAC82CA7396A68D541C85D26508E83_204283167;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_572615660 = varB4EAC82CA7396A68D541C85D26508E83_1185299870;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_572615660 = varB4EAC82CA7396A68D541C85D26508E83_1799891153;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_572615660.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_572615660.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_572615660;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.160 -0400", hash_original_method = "9553535B4A93F8E44A1EFE31D535ED8E", hash_generated_method = "890445DA3B460BDD26B5A154E6216441")
     private Drawable checkIconCache(String resourceUri) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1104704724 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_12541546 = null; //Variable for return #2
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1104704724 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_12541546 = null; 
         Drawable.ConstantState cached = mOutsideDrawablesCache.get(resourceUri);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1104704724 = null;
-        } //End block
+        } 
         Log.d(LOG_TAG, "Found icon in cache: " + resourceUri);
         varB4EAC82CA7396A68D541C85D26508E83_12541546 = cached.newDrawable();
         addTaint(resourceUri.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_1933024904; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_1933024904; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1933024904 = varB4EAC82CA7396A68D541C85D26508E83_1104704724;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1933024904 = varB4EAC82CA7396A68D541C85D26508E83_12541546;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1933024904.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1933024904.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1933024904;
-        // ---------- Original Method ----------
-        //Drawable.ConstantState cached = mOutsideDrawablesCache.get(resourceUri);
-        //if (cached == null) {
-            //return null;
-        //}
-        //if (DBG) Log.d(LOG_TAG, "Found icon in cache: " + resourceUri);
-        //return cached.newDrawable();
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.161 -0400", hash_original_method = "7BF5C76588E6E73B227833C6CD1AD962", hash_generated_method = "498CEB28618E44C78E4C28702419267A")
     private void storeInIconCache(String resourceUri, Drawable drawable) {
         {
             mOutsideDrawablesCache.put(resourceUri, drawable.getConstantState());
-        } //End block
+        } 
         addTaint(resourceUri.getTaint());
         addTaint(drawable.getTaint());
-        // ---------- Original Method ----------
-        //if (drawable != null) {
-            //mOutsideDrawablesCache.put(resourceUri, drawable.getConstantState());
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.161 -0400", hash_original_method = "24C6C5F14DA2AC5DBA34633E0C5BC43B", hash_generated_method = "CD233370925F4E7DDF973027C506AA9F")
     private Drawable getDefaultIcon1(Cursor cursor) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1767196459 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1869762838 = null; //Variable for return #2
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1767196459 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1869762838 = null; 
         Drawable drawable = getActivityIconWithCache(mSearchable.getSearchActivity());
         {
             varB4EAC82CA7396A68D541C85D26508E83_1767196459 = drawable;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1869762838 = mContext.getPackageManager().getDefaultActivityIcon();
         addTaint(cursor.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_1265933194; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_1265933194; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1265933194 = varB4EAC82CA7396A68D541C85D26508E83_1767196459;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1265933194 = varB4EAC82CA7396A68D541C85D26508E83_1869762838;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1265933194.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1265933194.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1265933194;
-        // ---------- Original Method ----------
-        //Drawable drawable = getActivityIconWithCache(mSearchable.getSearchActivity());
-        //if (drawable != null) {
-            //return drawable;
-        //}
-        //return mContext.getPackageManager().getDefaultActivityIcon();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.162 -0400", hash_original_method = "1ABDDD143C3A87EFB8B7D38CA2C4068F", hash_generated_method = "6B543F517C0D23C96327315D4535EEDF")
     private Drawable getActivityIconWithCache(ComponentName component) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_981377096 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_333643595 = null; //Variable for return #2
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_981377096 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_333643595 = null; 
         String componentIconKey = component.flattenToShortString();
         {
             boolean var5A3FED2D0F34D844AB05B6B3BADFCD1F_251542924 = (mOutsideDrawablesCache.containsKey(componentIconKey));
             {
                 Drawable.ConstantState cached = mOutsideDrawablesCache.get(componentIconKey);
                 varB4EAC82CA7396A68D541C85D26508E83_981377096 = cached == null ? null : cached.newDrawable(mProviderContext.getResources());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Drawable drawable = getActivityIcon(component);
         Drawable.ConstantState toCache;
         toCache = null;
@@ -927,101 +948,104 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
         mOutsideDrawablesCache.put(componentIconKey, toCache);
         varB4EAC82CA7396A68D541C85D26508E83_333643595 = drawable;
         addTaint(component.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_1978890620; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_1978890620; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1978890620 = varB4EAC82CA7396A68D541C85D26508E83_981377096;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1978890620 = varB4EAC82CA7396A68D541C85D26508E83_333643595;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1978890620.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1978890620.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1978890620;
-        // ---------- Original Method ----------
-        //String componentIconKey = component.flattenToShortString();
-        //if (mOutsideDrawablesCache.containsKey(componentIconKey)) {
-            //Drawable.ConstantState cached = mOutsideDrawablesCache.get(componentIconKey);
-            //return cached == null ? null : cached.newDrawable(mProviderContext.getResources());
-        //}
-        //Drawable drawable = getActivityIcon(component);
-        //Drawable.ConstantState toCache = drawable == null ? null : drawable.getConstantState();
-        //mOutsideDrawablesCache.put(componentIconKey, toCache);
-        //return drawable;
+        
+        
+        
+            
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.163 -0400", hash_original_method = "62EED478ECA0AB495E91A21A2EB22E87", hash_generated_method = "53D1FB0283BBEC3E3DE3476B26ABE31D")
     private Drawable getActivityIcon(ComponentName component) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_385434468 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1120282568 = null; //Variable for return #2
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1431439062 = null; //Variable for return #3
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_635193383 = null; //Variable for return #4
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_385434468 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1120282568 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1431439062 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_635193383 = null; 
         PackageManager pm = mContext.getPackageManager();
         ActivityInfo activityInfo = null;
         try 
         {
             activityInfo = pm.getActivityInfo(component, PackageManager.GET_META_DATA);
-        } //End block
+        } 
         catch (NameNotFoundException ex)
         {
             varB4EAC82CA7396A68D541C85D26508E83_385434468 = null;
-        } //End block
+        } 
         int iconId = activityInfo.getIconResource();
         varB4EAC82CA7396A68D541C85D26508E83_1120282568 = null;
         String pkg = component.getPackageName();
         Drawable drawable = pm.getDrawable(pkg, iconId, activityInfo.applicationInfo);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1431439062 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_635193383 = drawable;
         addTaint(component.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_989232212; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_989232212; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_989232212 = varB4EAC82CA7396A68D541C85D26508E83_385434468;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_989232212 = varB4EAC82CA7396A68D541C85D26508E83_1120282568;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_989232212 = varB4EAC82CA7396A68D541C85D26508E83_1431439062;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_989232212 = varB4EAC82CA7396A68D541C85D26508E83_635193383;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_989232212.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_989232212.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_989232212;
-        // ---------- Original Method ----------
-        //PackageManager pm = mContext.getPackageManager();
-        //final ActivityInfo activityInfo;
-        //try {
-            //activityInfo = pm.getActivityInfo(component, PackageManager.GET_META_DATA);
-        //} catch (NameNotFoundException ex) {
-            //Log.w(LOG_TAG, ex.toString());
-            //return null;
-        //}
-        //int iconId = activityInfo.getIconResource();
-        //if (iconId == 0) return null;
-        //String pkg = component.getPackageName();
-        //Drawable drawable = pm.getDrawable(pkg, iconId, activityInfo.applicationInfo);
-        //if (drawable == null) {
-            //Log.w(LOG_TAG, "Invalid icon resource " + iconId + " for "
-                    //+ component.flattenToShortString());
-            //return null;
-        //}
-        //return drawable;
+        
+        
+        
+        
+            
+        
+            
+            
+        
+        
+        
+        
+        
+        
+            
+                    
+            
+        
+        
     }
 
     
-        public static String getColumnString(Cursor cursor, String columnName) {
+        @DSModeled(DSC.SAFE)
+    public static String getColumnString(Cursor cursor, String columnName) {
         int col = cursor.getColumnIndex(columnName);
         return getStringOrNull(cursor, col);
     }
 
     
-        private static String getStringOrNull(Cursor cursor, int col) {
+        @DSModeled(DSC.SAFE)
+    private static String getStringOrNull(Cursor cursor, int col) {
         if (col == INVALID_INDEX) {
             return null;
         }
@@ -1060,12 +1084,12 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
             mIcon1 = (ImageView) v.findViewById(com.android.internal.R.id.icon1);
             mIcon2 = (ImageView) v.findViewById(com.android.internal.R.id.icon2);
             mIconRefine = (ImageView) v.findViewById(com.android.internal.R.id.edit_query);
-            // ---------- Original Method ----------
-            //mText1 = (TextView) v.findViewById(com.android.internal.R.id.text1);
-            //mText2 = (TextView) v.findViewById(com.android.internal.R.id.text2);
-            //mIcon1 = (ImageView) v.findViewById(com.android.internal.R.id.icon1);
-            //mIcon2 = (ImageView) v.findViewById(com.android.internal.R.id.icon2);
-            //mIconRefine = (ImageView) v.findViewById(com.android.internal.R.id.edit_query);
+            
+            
+            
+            
+            
+            
         }
 
         

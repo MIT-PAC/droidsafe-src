@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.sip.header.*;
 import java.text.ParseException;
@@ -25,13 +25,14 @@ public class Warning extends SIPHeader implements WarningHeader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.977 -0400", hash_original_method = "EC205AAA0E57D7457805C01D650D3D4C", hash_generated_method = "4BBA6FE432398CF7B15E3E65F123726B")
     public  Warning() {
         super(WARNING);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.978 -0400", hash_original_method = "F1B6F008CE79EB2FBE5188D2B8BB2F2C", hash_generated_method = "6A61BD818768483343BCE1B6BC145219")
     public String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_705789341 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_705789341 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_705789341 = text != null
             ? Integer.toString(code)
                 + SP
@@ -41,18 +42,18 @@ public class Warning extends SIPHeader implements WarningHeader {
                 + text
                 + DOUBLE_QUOTE
             : Integer.toString(code) + SP + agent;
-        varB4EAC82CA7396A68D541C85D26508E83_705789341.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_705789341.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_705789341;
-        // ---------- Original Method ----------
-        //return text != null
-            //? Integer.toString(code)
-                //+ SP
-                //+ agent
-                //+ SP
-                //+ DOUBLE_QUOTE
-                //+ text
-                //+ DOUBLE_QUOTE
-            //: Integer.toString(code) + SP + agent;
+        
+        
+            
+                
+                
+                
+                
+                
+                
+            
     }
 
     
@@ -60,81 +61,84 @@ public class Warning extends SIPHeader implements WarningHeader {
     public int getCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464857820 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464857820;
-        // ---------- Original Method ----------
-        //return code;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.979 -0400", hash_original_method = "7B2F86C2E403FA4426A7AF0306AE1B67", hash_generated_method = "031E64AD3BF50FF76C055EB726ADB840")
     public String getAgent() {
-        String varB4EAC82CA7396A68D541C85D26508E83_518355566 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_518355566 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_518355566 = agent;
-        varB4EAC82CA7396A68D541C85D26508E83_518355566.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_518355566.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_518355566;
-        // ---------- Original Method ----------
-        //return agent;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.979 -0400", hash_original_method = "C0F9B3C9D6FFAEB2F99491C721442157", hash_generated_method = "516DC96E7EE79D64340C679A085127AB")
     public String getText() {
-        String varB4EAC82CA7396A68D541C85D26508E83_465976906 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_465976906 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_465976906 = text;
-        varB4EAC82CA7396A68D541C85D26508E83_465976906.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_465976906.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_465976906;
-        // ---------- Original Method ----------
-        //return text;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.980 -0400", hash_original_method = "741202B8F1CEFA0CCA05AB4A3FC24738", hash_generated_method = "31D212E5EF29FD1CCC704240FB7F030F")
     public void setCode(int code) throws InvalidArgumentException {
         {
             this.code = code;
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException(
                 "Code parameter in the Warning header is invalid: code="
                     + code);
-        // ---------- Original Method ----------
-        //if (code >99  && code < 1000) { 
-            //this.code = code;
-        //} else
-            //throw new InvalidArgumentException(
-                //"Code parameter in the Warning header is invalid: code="
-                    //+ code);
+        
+        
+            
+        
+            
+                
+                    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.980 -0400", hash_original_method = "25CC32B68A77A53B595C551260404BAA", hash_generated_method = "0AE30176A2C042C23F83F20B34F2A654")
     public void setAgent(String host) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("the host parameter in the Warning header is null");
         {
             this.agent = host;
-        } //End block
-        // ---------- Original Method ----------
-        //if (host == null)
-            //throw new NullPointerException("the host parameter in the Warning header is null");
-        //else {
-            //this.agent = host;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.981 -0400", hash_original_method = "8DD43A4484C9753D191B662ECF9B8CD6", hash_generated_method = "1B3D01A069E0FCE32BE4580F74CBF798")
     public void setText(String text) throws ParseException {
         {
             if (DroidSafeAndroidRuntime.control) throw new ParseException(
                 "The text parameter in the Warning header is null",
                 0);
-        } //End block
+        } 
         this.text = text;
-        // ---------- Original Method ----------
-        //if (text == null) {
-            //throw new ParseException(
-                //"The text parameter in the Warning header is null",
-                //0);
-        //} else
-            //this.text = text;
+        
+        
+            
+                
+                
+        
+            
     }
 
     

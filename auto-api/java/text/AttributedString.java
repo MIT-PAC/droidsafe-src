@@ -1,11 +1,11 @@
 package java.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.AttributedCharacterIterator.Attribute;
 import java.util.ArrayList;
@@ -32,8 +32,8 @@ public class AttributedString {
             boolean var5791DB9351E60242F3260BB947788691_1337134354 = (iterator.getBeginIndex() > iterator.getEndIndex());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid substring range");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         StringBuilder buffer = new StringBuilder();
         {
             int i = iterator.getBeginIndex();
@@ -41,8 +41,8 @@ public class AttributedString {
             {
                 buffer.append(iterator.current());
                 iterator.next();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         text = buffer.toString();
         Set<AttributedCharacterIterator.Attribute> attributes = iterator
                 .getAllAttributeKeys();
@@ -62,15 +62,15 @@ public class AttributedString {
                         Object value = iterator.getAttribute(attribute);
                         {
                             addAttribute(attribute, value, start, limit);
-                        } //End block
+                        } 
                         iterator.setIndex(limit);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(iterator.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -82,8 +82,8 @@ public class AttributedString {
                 || start > end);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         StringBuilder buffer = new StringBuilder();
         iterator.setIndex(start);
         {
@@ -91,8 +91,8 @@ public class AttributedString {
             {
                 buffer.append(iterator.current());
                 iterator.next();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         text = buffer.toString();
         attributeMap = new HashMap<Attribute, List<Range>>(
                 (attributes.size() * 4 / 3) + 1);
@@ -112,17 +112,17 @@ public class AttributedString {
                             addAttribute(attribute, value, (runStart < start ? start
                             : runStart)
                             - start, (limit > end ? end : limit) - start);
-                        } //End block
+                        } 
                         iterator.setIndex(limit);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(iterator.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -133,7 +133,7 @@ public class AttributedString {
         addTaint(iterator.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -147,7 +147,7 @@ public class AttributedString {
         addTaint(start);
         addTaint(end);
         addTaint(attributes[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -155,15 +155,15 @@ public class AttributedString {
     public  AttributedString(String value) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         text = value;
         attributeMap = new HashMap<Attribute, List<Range>>(11);
-        // ---------- Original Method ----------
-        //if (value == null) {
-            //throw new NullPointerException();
-        //}
-        //text = value;
-        //attributeMap = new HashMap<Attribute, List<Range>>(11);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -172,13 +172,13 @@ public class AttributedString {
             Map<? extends AttributedCharacterIterator.Attribute, ?> attributes) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         {
             boolean varF38D1CF4F9C3BE6C8047C579649A2A1F_1898682126 = (value.length() == 0 && !attributes.isEmpty());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cannot add attributes to empty string");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         text = value;
         attributeMap = new HashMap<Attribute, List<Range>>(
                 (attributes.size() * 4 / 3) + 1);
@@ -191,26 +191,26 @@ public class AttributedString {
                 ranges.add(new Range(0, text.length(), entry.getValue()));
                 attributeMap.put((AttributedCharacterIterator.Attribute) entry
                     .getKey(), ranges);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (value == null) {
-            //throw new NullPointerException();
-        //}
-        //if (value.length() == 0 && !attributes.isEmpty()) {
-            //throw new IllegalArgumentException("Cannot add attributes to empty string");
-        //}
-        //text = value;
-        //attributeMap = new HashMap<Attribute, List<Range>>(
-                //(attributes.size() * 4 / 3) + 1);
-        //Iterator<?> it = attributes.entrySet().iterator();
-        //while (it.hasNext()) {
-            //Map.Entry<?, ?> entry = (Map.Entry<?, ?>) it.next();
-            //ArrayList<Range> ranges = new ArrayList<Range>(1);
-            //ranges.add(new Range(0, text.length(), entry.getValue()));
-            //attributeMap.put((AttributedCharacterIterator.Attribute) entry
-                    //.getKey(), ranges);
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+        
+                
+        
+        
+            
+            
+            
+            
+                    
+        
     }
 
     
@@ -218,39 +218,39 @@ public class AttributedString {
     public void addAttribute(AttributedCharacterIterator.Attribute attribute, Object value) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         {
             boolean var2E3F580615CDCAA5961A2E6CF25EC4EB_589749624 = (text.length() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         List<Range> ranges = attributeMap.get(attribute);
         {
             ranges = new ArrayList<Range>(1);
             attributeMap.put(attribute, ranges);
-        } //End block
+        } 
         {
             ranges.clear();
-        } //End block
+        } 
         ranges.add(new Range(0, text.length(), value));
         addTaint(attribute.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //if (attribute == null) {
-            //throw new NullPointerException();
-        //}
-        //if (text.length() == 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //List<Range> ranges = attributeMap.get(attribute);
-        //if (ranges == null) {
-            //ranges = new ArrayList<Range>(1);
-            //attributeMap.put(attribute, ranges);
-        //} else {
-            //ranges.clear();
-        //}
-        //ranges.add(new Range(0, text.length(), value));
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -259,19 +259,19 @@ public class AttributedString {
             Object value, int start, int end) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         {
             boolean varC9BCC04F7A62407C3BA13DEEA6DE5168_2056846647 = (start < 0 || end > text.length() || start >= end);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         List<Range> ranges = attributeMap.get(attribute);
         {
             ranges = new ArrayList<Range>(1);
             ranges.add(new Range(start, end, value));
             attributeMap.put(attribute, ranges);
-        } //End block
+        } 
         ListIterator<Range> it = ranges.listIterator();
         {
             boolean var03729FD53960D8DCA3A41A13A0229637_1946113122 = (it.hasNext());
@@ -279,7 +279,7 @@ public class AttributedString {
                 Range range = it.next();
                 {
                     it.previous();
-                } //End block
+                } 
                 {
                     boolean varEF40E1D978FA25419409FAB7F79E01F6_1339828684 = (start < range.end
                     || (start == range.end && value.equals(range.value)));
@@ -300,14 +300,14 @@ public class AttributedString {
                                         {
                                             it.remove();
                                             r3 = new Range(end, range.end, range.value);
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
+                                        } 
+                                    } 
+                                } 
                                 {
                                     it.remove();
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
                         {
                             boolean var1027DC60E68FD42C72653BFC2EFF2C3B_726217082 = (value.equals(r1.value));
                             {
@@ -316,49 +316,49 @@ public class AttributedString {
                                     {
                                         it.add(new Range(r1.start < start ? r1.start : start,
                                 r3.end > end ? r3.end : end, r1.value));
-                                    } //End block
+                                    } 
                                     {
                                         it.add(new Range(r1.start < start ? r1.start : start,
                                 end, r1.value));
                                         {
                                             it.add(r3);
-                                        } //End block
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
+                                        } 
+                                    } 
+                                } 
+                            } 
                             {
                                 {
                                     boolean var25819F3F4E6FA285B1052DA41FF64523_924073071 = (value.equals(r3.value));
                                     {
                                         {
                                             it.add(r1);
-                                        } //End block
+                                        } 
                                         it.add(new Range(start, r3.end > end ? r3.end : end,
                                 r3.value));
-                                    } //End block
+                                    } 
                                     {
                                         {
                                             it.add(r1);
-                                        } //End block
+                                        } 
                                         it.add(new Range(start, end, value));
                                         {
                                             it.add(r3);
-                                        } //End block
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         it.add(new Range(start, end, value));
         addTaint(attribute.getTaint());
         addTaint(value.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -374,43 +374,44 @@ public class AttributedString {
                 addAttribute(
                     (AttributedCharacterIterator.Attribute) entry.getKey(),
                     entry.getValue(), start, end);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(attributes.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //Iterator<?> it = attributes.entrySet().iterator();
-        //while (it.hasNext()) {
-            //Map.Entry<?, ?> entry = (Map.Entry<?, ?>) it.next();
-            //addAttribute(
-                    //(AttributedCharacterIterator.Attribute) entry.getKey(),
-                    //entry.getValue(), start, end);
-        //}
+        
+        
+        
+            
+            
+                    
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.488 -0400", hash_original_method = "3C3A14639543169375B4E8491231683C", hash_generated_method = "269F69BA4ED110AC2CCB05DD7775BD1B")
     public AttributedCharacterIterator getIterator() {
-        AttributedCharacterIterator varB4EAC82CA7396A68D541C85D26508E83_1381105378 = null; //Variable for return #1
+        AttributedCharacterIterator varB4EAC82CA7396A68D541C85D26508E83_1381105378 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1381105378 = new AttributedIterator(this);
-        varB4EAC82CA7396A68D541C85D26508E83_1381105378.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1381105378.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1381105378;
-        // ---------- Original Method ----------
-        //return new AttributedIterator(this);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.489 -0400", hash_original_method = "AFA08901CAEF730E40B185484FAABB29", hash_generated_method = "AD8E714D65ED591CCA2DA5964B4BC82E")
     public AttributedCharacterIterator getIterator(
             AttributedCharacterIterator.Attribute[] attributes) {
-        AttributedCharacterIterator varB4EAC82CA7396A68D541C85D26508E83_2013311768 = null; //Variable for return #1
+        AttributedCharacterIterator varB4EAC82CA7396A68D541C85D26508E83_2013311768 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2013311768 = new AttributedIterator(this, attributes, 0, text.length());
         addTaint(attributes[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2013311768.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2013311768.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2013311768;
-        // ---------- Original Method ----------
-        //return new AttributedIterator(this, attributes, 0, text.length());
+        
+        
     }
 
     
@@ -418,15 +419,15 @@ public class AttributedString {
     public AttributedCharacterIterator getIterator(
             AttributedCharacterIterator.Attribute[] attributes, int start,
             int end) {
-        AttributedCharacterIterator varB4EAC82CA7396A68D541C85D26508E83_887694744 = null; //Variable for return #1
+        AttributedCharacterIterator varB4EAC82CA7396A68D541C85D26508E83_887694744 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_887694744 = new AttributedIterator(this, attributes, start, end);
         addTaint(attributes[0].getTaint());
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_887694744.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_887694744.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_887694744;
-        // ---------- Original Method ----------
-        //return new AttributedIterator(this, attributes, start, end);
+        
+        
     }
 
     
@@ -446,10 +447,10 @@ public class AttributedString {
             start = s;
             end = e;
             value = v;
-            // ---------- Original Method ----------
-            //start = s;
-            //end = e;
-            //value = v;
+            
+            
+            
+            
         }
 
         
@@ -480,11 +481,11 @@ public class AttributedString {
             begin = 0;
             end = attrString.text.length();
             offset = 0;
-            // ---------- Original Method ----------
-            //this.attrString = attrString;
-            //begin = 0;
-            //end = attrString.text.length();
-            //offset = 0;
+            
+            
+            
+            
+            
         }
 
         
@@ -496,8 +497,8 @@ public class AttributedString {
                 boolean varFFD07E130858E065814762E8E384F7BD_193717468 = (begin < 0 || end > attrString.text.length() || begin > end);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             this.begin = begin;
             this.end = end;
             offset = begin;
@@ -509,27 +510,27 @@ public class AttributedString {
                     int i = attributes.length;
                     {
                         set.add(attributes[i]);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 attributesAllowed = set;
-            } //End block
+            } 
             addTaint(attributes[0].getTaint());
-            // ---------- Original Method ----------
-            //if (begin < 0 || end > attrString.text.length() || begin > end) {
-                //throw new IllegalArgumentException();
-            //}
-            //this.begin = begin;
-            //this.end = end;
-            //offset = begin;
-            //this.attrString = attrString;
-            //if (attributes != null) {
-                //HashSet<Attribute> set = new HashSet<Attribute>(
-                        //(attributes.length * 4 / 3) + 1);
-                //for (int i = attributes.length; --i >= 0;) {
-                    //set.add(attributes[i]);
-                //}
-                //attributesAllowed = set;
-            //}
+            
+            
+                
+            
+            
+            
+            
+            
+            
+                
+                        
+                
+                    
+                
+                
+            
         }
 
         
@@ -537,33 +538,33 @@ public class AttributedString {
         @Override
         @SuppressWarnings("unchecked")
         public Object clone() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1498227340 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1498227340 = null; 
             try 
             {
                 AttributedIterator clone = (AttributedIterator) super.clone();
                 {
                     clone.attributesAllowed = (HashSet<Attribute>) attributesAllowed
                             .clone();
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1498227340 = clone;
-            } //End block
+            } 
             catch (CloneNotSupportedException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1498227340.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_1498227340.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1498227340;
-            // ---------- Original Method ----------
-            //try {
-                //AttributedIterator clone = (AttributedIterator) super.clone();
-                //if (attributesAllowed != null) {
-                    //clone.attributesAllowed = (HashSet<Attribute>) attributesAllowed
-                            //.clone();
-                //}
-                //return clone;
-            //} catch (CloneNotSupportedException e) {
-                //throw new AssertionError(e);
-            //}
+            
+            
+                
+                
+                    
+                            
+                
+                
+            
+                
+            
         }
 
         
@@ -572,11 +573,11 @@ public class AttributedString {
             char var7471FC70B539530D7206B8BC1B31F802_988158402 = (attrString.text.charAt(offset));
             char varA87DEB01C5F539E6BDA34829C8EF2368_2100903191 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_2100903191;
-            // ---------- Original Method ----------
-            //if (offset == end) {
-                //return DONE;
-            //}
-            //return attrString.text.charAt(offset);
+            
+            
+                
+            
+            
         }
 
         
@@ -586,12 +587,12 @@ public class AttributedString {
             char var7471FC70B539530D7206B8BC1B31F802_1289497574 = (attrString.text.charAt(offset));
             char varA87DEB01C5F539E6BDA34829C8EF2368_2065056212 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_2065056212;
-            // ---------- Original Method ----------
-            //if (begin == end) {
-                //return DONE;
-            //}
-            //offset = begin;
-            //return attrString.text.charAt(offset);
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -599,8 +600,8 @@ public class AttributedString {
         public int getBeginIndex() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1866068366 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1866068366;
-            // ---------- Original Method ----------
-            //return begin;
+            
+            
         }
 
         
@@ -608,8 +609,8 @@ public class AttributedString {
         public int getEndIndex() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_296255665 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_296255665;
-            // ---------- Original Method ----------
-            //return end;
+            
+            
         }
 
         
@@ -617,8 +618,8 @@ public class AttributedString {
         public int getIndex() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1562436713 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1562436713;
-            // ---------- Original Method ----------
-            //return offset;
+            
+            
         }
 
         
@@ -627,12 +628,12 @@ public class AttributedString {
             addTaint(range.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_361987525 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_361987525;
-            // ---------- Original Method ----------
-            //if (!(range.value instanceof Annotation)) {
-                //return true;
-            //}
-            //return range.start >= begin && range.start < end
-                    //&& range.end > begin && range.end <= end;
+            
+            
+                
+            
+            
+                    
         }
 
         
@@ -643,38 +644,38 @@ public class AttributedString {
                 boolean varB2FF4435B274CC4BE01D264DEA08F957_1073248198 = (it.hasNext());
                 {
                     Range range = it.next();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(ranges.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1228308811 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1228308811;
-            // ---------- Original Method ----------
-            //Iterator<Range> it = ranges.iterator();
-            //while (it.hasNext()) {
-                //Range range = it.next();
-                //if (range.start >= begin && range.start < end) {
-                    //return !(range.value instanceof Annotation)
-                            //|| (range.end > begin && range.end <= end);
-                //} else if (range.end > begin && range.end <= end) {
-                    //return !(range.value instanceof Annotation)
-                            //|| (range.start >= begin && range.start < end);
-                //}
-            //}
-            //return false;
+            
+            
+            
+                
+                
+                    
+                            
+                
+                    
+                            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.494 -0400", hash_original_method = "1F90FC3406D3E88B418E6F5A05B249D4", hash_generated_method = "D09EC881B8AEEEB273CBC7506D08C477")
         public Set<AttributedIterator.Attribute> getAllAttributeKeys() {
-            Set<AttributedIterator.Attribute> varB4EAC82CA7396A68D541C85D26508E83_1623397152 = null; //Variable for return #1
-            Set<AttributedIterator.Attribute> varB4EAC82CA7396A68D541C85D26508E83_1392592973 = null; //Variable for return #2
+            Set<AttributedIterator.Attribute> varB4EAC82CA7396A68D541C85D26508E83_1623397152 = null; 
+            Set<AttributedIterator.Attribute> varB4EAC82CA7396A68D541C85D26508E83_1392592973 = null; 
             {
                 boolean var440E9841255491133E314328640A0B67_1952458919 = (begin == 0 && end == attrString.text.length()
                     && attributesAllowed == null);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1623397152 = attrString.attributeMap.keySet();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             Set<AttributedIterator.Attribute> result = new HashSet<Attribute>(
                     (attrString.attributeMap.size() * 4 / 3) + 1);
             Iterator<Map.Entry<Attribute, List<Range>>> it = attrString.attributeMap
@@ -692,33 +693,33 @@ public class AttributedString {
                                 boolean var48BA0119E6136D30C1769489A0BAEB46_577438068 = (inRange(ranges));
                                 {
                                     result.add(entry.getKey());
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1392592973 = result;
-            Set<AttributedIterator.Attribute> varA7E53CE21691AB073D9660D615818899_350976105; //Final return value
+            Set<AttributedIterator.Attribute> varA7E53CE21691AB073D9660D615818899_350976105; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_350976105 = varB4EAC82CA7396A68D541C85D26508E83_1623397152;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_350976105 = varB4EAC82CA7396A68D541C85D26508E83_1392592973;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_350976105.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_350976105.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_350976105;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.495 -0400", hash_original_method = "7F47FD199B74CEDC765420E2B0AD1B85", hash_generated_method = "DA66C050A3411AD7AB8FD29F3B0F5A0A")
         private Object currentValue(List<Range> ranges) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1566278480 = null; //Variable for return #1
-            Object varB4EAC82CA7396A68D541C85D26508E83_802862953 = null; //Variable for return #2
+            Object varB4EAC82CA7396A68D541C85D26508E83_1566278480 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_802862953 = null; 
             Iterator<Range> it = ranges.iterator();
             {
                 boolean varB2FF4435B274CC4BE01D264DEA08F957_1219050183 = (it.hasNext());
@@ -726,85 +727,85 @@ public class AttributedString {
                     Range range = it.next();
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1566278480 = inRange(range) ? range.value : null;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_802862953 = null;
             addTaint(ranges.getTaint());
-            Object varA7E53CE21691AB073D9660D615818899_770876426; //Final return value
+            Object varA7E53CE21691AB073D9660D615818899_770876426; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_770876426 = varB4EAC82CA7396A68D541C85D26508E83_1566278480;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_770876426 = varB4EAC82CA7396A68D541C85D26508E83_802862953;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_770876426.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_770876426.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_770876426;
-            // ---------- Original Method ----------
-            //Iterator<Range> it = ranges.iterator();
-            //while (it.hasNext()) {
-                //Range range = it.next();
-                //if (offset >= range.start && offset < range.end) {
-                    //return inRange(range) ? range.value : null;
-                //}
-            //}
-            //return null;
+            
+            
+            
+                
+                
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.496 -0400", hash_original_method = "9256DFDAE9CB8C43C18A44C8B3AC6DAC", hash_generated_method = "DA88E5E7FE9D4BC1913513DA4615BAC5")
         public Object getAttribute(
                 AttributedCharacterIterator.Attribute attribute) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1385739446 = null; //Variable for return #1
-            Object varB4EAC82CA7396A68D541C85D26508E83_443039342 = null; //Variable for return #2
-            Object varB4EAC82CA7396A68D541C85D26508E83_66790449 = null; //Variable for return #3
+            Object varB4EAC82CA7396A68D541C85D26508E83_1385739446 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_443039342 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_66790449 = null; 
             {
                 boolean var12D36913C4CC9B92E6CFDE0A26E3CD6F_697415133 = (attributesAllowed != null
                     && !attributesAllowed.contains(attribute));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1385739446 = null;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             ArrayList<Range> ranges = (ArrayList<Range>) attrString.attributeMap
                     .get(attribute);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_443039342 = null;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_66790449 = currentValue(ranges);
             addTaint(attribute.getTaint());
-            Object varA7E53CE21691AB073D9660D615818899_2041416861; //Final return value
+            Object varA7E53CE21691AB073D9660D615818899_2041416861; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_2041416861 = varB4EAC82CA7396A68D541C85D26508E83_1385739446;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_2041416861 = varB4EAC82CA7396A68D541C85D26508E83_443039342;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_2041416861 = varB4EAC82CA7396A68D541C85D26508E83_66790449;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_2041416861.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_2041416861.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_2041416861;
-            // ---------- Original Method ----------
-            //if (attributesAllowed != null
-                    //&& !attributesAllowed.contains(attribute)) {
-                //return null;
-            //}
-            //ArrayList<Range> ranges = (ArrayList<Range>) attrString.attributeMap
-                    //.get(attribute);
-            //if (ranges == null) {
-                //return null;
-            //}
-            //return currentValue(ranges);
+            
+            
+                    
+                
+            
+            
+                    
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.498 -0400", hash_original_method = "AAAFE2E009783E25A93A8B590538D893", hash_generated_method = "2783D1734BA23950AFBD816214B53AD2")
         public Map<Attribute, Object> getAttributes() {
-            Map<Attribute, Object> varB4EAC82CA7396A68D541C85D26508E83_2049147793 = null; //Variable for return #1
+            Map<Attribute, Object> varB4EAC82CA7396A68D541C85D26508E83_2049147793 = null; 
             Map<Attribute, Object> result = new HashMap<Attribute, Object>(
                     (attrString.attributeMap.size() * 4 / 3) + 1);
             Iterator<Map.Entry<Attribute, List<Range>>> it = attrString.attributeMap
@@ -820,30 +821,30 @@ public class AttributedString {
                             Object value = currentValue(entry.getValue());
                             {
                                 result.put(entry.getKey(), value);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_2049147793 = result;
-            varB4EAC82CA7396A68D541C85D26508E83_2049147793.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2049147793.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2049147793;
-            // ---------- Original Method ----------
-            //Map<Attribute, Object> result = new HashMap<Attribute, Object>(
-                    //(attrString.attributeMap.size() * 4 / 3) + 1);
-            //Iterator<Map.Entry<Attribute, List<Range>>> it = attrString.attributeMap
-                    //.entrySet().iterator();
-            //while (it.hasNext()) {
-                //Map.Entry<Attribute, List<Range>> entry = it.next();
-                //if (attributesAllowed == null
-                        //|| attributesAllowed.contains(entry.getKey())) {
-                    //Object value = currentValue(entry.getValue());
-                    //if (value != null) {
-                        //result.put(entry.getKey(), value);
-                    //}
-                //}
-            //}
-            //return result;
+            
+            
+                    
+            
+                    
+            
+                
+                
+                        
+                    
+                    
+                        
+                    
+                
+            
+            
         }
 
         
@@ -852,8 +853,8 @@ public class AttributedString {
             int varB8CB18E7DB26C804CE1E291715EC4085_1100052799 = (getRunLimit(getAllAttributeKeys()));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658958228 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658958228;
-            // ---------- Original Method ----------
-            //return getRunLimit(getAllAttributeKeys());
+            
+            
         }
 
         
@@ -868,30 +869,30 @@ public class AttributedString {
                     {
                         {
                             boolean var2FAF37F82B41CCA38F243EDFFC0955AC_1459747839 = (inRange(range));
-                        } //End flattened ternary
-                    } //End block
+                        } 
+                    } 
                     result = range.start;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(ranges.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_37009986 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_37009986;
-            // ---------- Original Method ----------
-            //int result = end;
-            //ListIterator<Range> it = ranges.listIterator(ranges.size());
-            //while (it.hasPrevious()) {
-                //Range range = it.previous();
-                //if (range.end <= begin) {
-                    //break;
-                //}
-                //if (offset >= range.start && offset < range.end) {
-                    //return inRange(range) ? range.end : result;
-                //} else if (offset >= range.end) {
-                    //break;
-                //}
-                //result = range.start;
-            //}
-            //return result;
+            
+            
+            
+            
+                
+                
+                    
+                
+                
+                    
+                
+                    
+                
+                
+            
+            
         }
 
         
@@ -900,24 +901,24 @@ public class AttributedString {
             {
                 boolean var12D36913C4CC9B92E6CFDE0A26E3CD6F_211464149 = (attributesAllowed != null
                     && !attributesAllowed.contains(attribute));
-            } //End collapsed parenthetic
+            } 
             ArrayList<Range> ranges = (ArrayList<Range>) attrString.attributeMap
                     .get(attribute);
             int var3243E9C702621CDA5FC8AD3026FC7D28_2049068561 = (runLimit(ranges));
             addTaint(attribute.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_354240941 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_354240941;
-            // ---------- Original Method ----------
-            //if (attributesAllowed != null
-                    //&& !attributesAllowed.contains(attribute)) {
-                //return end;
-            //}
-            //ArrayList<Range> ranges = (ArrayList<Range>) attrString.attributeMap
-                    //.get(attribute);
-            //if (ranges == null) {
-                //return end;
-            //}
-            //return runLimit(ranges);
+            
+            
+                    
+                
+            
+            
+                    
+            
+                
+            
+            
         }
 
         
@@ -932,23 +933,23 @@ public class AttributedString {
                     int newLimit = getRunLimit(attribute);
                     {
                         limit = newLimit;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             addTaint(attributes.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1006722198 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1006722198;
-            // ---------- Original Method ----------
-            //int limit = end;
-            //Iterator<? extends Attribute> it = attributes.iterator();
-            //while (it.hasNext()) {
-                //AttributedCharacterIterator.Attribute attribute = it.next();
-                //int newLimit = getRunLimit(attribute);
-                //if (newLimit < limit) {
-                    //limit = newLimit;
-                //}
-            //}
-            //return limit;
+            
+            
+            
+            
+                
+                
+                
+                    
+                
+            
+            
         }
 
         
@@ -957,8 +958,8 @@ public class AttributedString {
             int varD479F53F5B086C7131ABCE733DD47303_78226506 = (getRunStart(getAllAttributeKeys()));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1123052139 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1123052139;
-            // ---------- Original Method ----------
-            //return getRunStart(getAllAttributeKeys());
+            
+            
         }
 
         
@@ -973,30 +974,30 @@ public class AttributedString {
                     {
                         {
                             boolean var2FAF37F82B41CCA38F243EDFFC0955AC_559331150 = (inRange(range));
-                        } //End flattened ternary
-                    } //End block
+                        } 
+                    } 
                     result = range.end;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(ranges.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724879324 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724879324;
-            // ---------- Original Method ----------
-            //int result = begin;
-            //Iterator<Range> it = ranges.iterator();
-            //while (it.hasNext()) {
-                //Range range = it.next();
-                //if (range.start >= end) {
-                    //break;
-                //}
-                //if (offset >= range.start && offset < range.end) {
-                    //return inRange(range) ? range.start : result;
-                //} else if (offset < range.start) {
-                    //break;
-                //}
-                //result = range.end;
-            //}
-            //return result;
+            
+            
+            
+            
+                
+                
+                    
+                
+                
+                    
+                
+                    
+                
+                
+            
+            
         }
 
         
@@ -1005,24 +1006,24 @@ public class AttributedString {
             {
                 boolean var12D36913C4CC9B92E6CFDE0A26E3CD6F_892590719 = (attributesAllowed != null
                     && !attributesAllowed.contains(attribute));
-            } //End collapsed parenthetic
+            } 
             ArrayList<Range> ranges = (ArrayList<Range>) attrString.attributeMap
                     .get(attribute);
             int varF7B3B9AA84E9A9D092AE2BE6817D6B1C_1554966599 = (runStart(ranges));
             addTaint(attribute.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2073470122 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2073470122;
-            // ---------- Original Method ----------
-            //if (attributesAllowed != null
-                    //&& !attributesAllowed.contains(attribute)) {
-                //return begin;
-            //}
-            //ArrayList<Range> ranges = (ArrayList<Range>) attrString.attributeMap
-                    //.get(attribute);
-            //if (ranges == null) {
-                //return begin;
-            //}
-            //return runStart(ranges);
+            
+            
+                    
+                
+            
+            
+                    
+            
+                
+            
+            
         }
 
         
@@ -1037,23 +1038,23 @@ public class AttributedString {
                     int newStart = getRunStart(attribute);
                     {
                         start = newStart;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             addTaint(attributes.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1713466433 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1713466433;
-            // ---------- Original Method ----------
-            //int start = begin;
-            //Iterator<? extends Attribute> it = attributes.iterator();
-            //while (it.hasNext()) {
-                //AttributedCharacterIterator.Attribute attribute = it.next();
-                //int newStart = getRunStart(attribute);
-                //if (newStart > start) {
-                    //start = newStart;
-                //}
-            //}
-            //return start;
+            
+            
+            
+            
+                
+                
+                
+                    
+                
+            
+            
         }
 
         
@@ -1063,12 +1064,12 @@ public class AttributedString {
             char var7471FC70B539530D7206B8BC1B31F802_765719024 = (attrString.text.charAt(offset));
             char varA87DEB01C5F539E6BDA34829C8EF2368_1282249429 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_1282249429;
-            // ---------- Original Method ----------
-            //if (begin == end) {
-                //return DONE;
-            //}
-            //offset = end - 1;
-            //return attrString.text.charAt(offset);
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -1076,16 +1077,16 @@ public class AttributedString {
         public char next() {
             {
                 offset = end;
-            } //End block
+            } 
             char varCD2A465A117ACDFD77E8F731FFBCF3CF_1243558211 = (attrString.text.charAt(++offset));
             char varA87DEB01C5F539E6BDA34829C8EF2368_526253127 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_526253127;
-            // ---------- Original Method ----------
-            //if (offset >= (end - 1)) {
-                //offset = end;
-                //return DONE;
-            //}
-            //return attrString.text.charAt(++offset);
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -1094,11 +1095,11 @@ public class AttributedString {
             char var2ECEAF615C1A7B98A9B5DA51518FE2D8_1107072248 = (attrString.text.charAt(--offset));
             char varA87DEB01C5F539E6BDA34829C8EF2368_349807335 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_349807335;
-            // ---------- Original Method ----------
-            //if (offset == begin) {
-                //return DONE;
-            //}
-            //return attrString.text.charAt(--offset);
+            
+            
+                
+            
+            
         }
 
         
@@ -1106,20 +1107,20 @@ public class AttributedString {
         public char setIndex(int location) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } //End block
+            } 
             offset = location;
             char var7471FC70B539530D7206B8BC1B31F802_332197870 = (attrString.text.charAt(offset));
             char varA87DEB01C5F539E6BDA34829C8EF2368_484669439 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_484669439;
-            // ---------- Original Method ----------
-            //if (location < begin || location > end) {
-                //throw new IllegalArgumentException();
-            //}
-            //offset = location;
-            //if (offset == end) {
-                //return DONE;
-            //}
-            //return attrString.text.charAt(offset);
+            
+            
+                
+            
+            
+            
+                
+            
+            
         }
 
         

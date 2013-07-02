@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.harmony.xnet.provider.jsse.TrustManagerImpl;
 import java.security.KeyManagementException;
@@ -67,63 +67,64 @@ public class SSLParametersImpl implements Cloneable {
         this.clientSessionContext = clientSessionContext;
         {
             keyManager = getDefaultKeyManager();
-        } //End block
+        } 
         {
             keyManager = findX509KeyManager(kms);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new KeyManagementException("No X509KeyManager found");
-        } //End block
+        } 
         {
             trustManager = getDefaultTrustManager();
-        } //End block
+        } 
         {
             trustManager = findX509TrustManager(tms);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new KeyManagementException("No X509TrustManager found");
-        } //End block
+        } 
         secureRandom = sr;
-        // ---------- Original Method ----------
-        //this.serverSessionContext = serverSessionContext;
-        //this.clientSessionContext = clientSessionContext;
-        //if ((kms == null) || (kms.length == 0)) {
-            //keyManager = getDefaultKeyManager();
-        //} else {
-            //keyManager = findX509KeyManager(kms);
-        //}
-        //if (keyManager == null) {
-            //throw new KeyManagementException("No X509KeyManager found");
-        //}
-        //if ((tms == null) || (tms.length == 0)) {
-            //trustManager = getDefaultTrustManager();
-        //} else {
-            //trustManager = findX509TrustManager(tms);
-        //}
-        //if (trustManager == null) {
-            //throw new KeyManagementException("No X509TrustManager found");
-        //}
-        //secureRandom = sr;
+        
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.831 -0400", hash_original_method = "F41241796D4BD57A765BA19A5F557DE2", hash_generated_method = "5797C318688557145F978EE2BBFC3B4D")
     protected CipherSuite[] getEnabledCipherSuitesMember() {
-        CipherSuite[] varB4EAC82CA7396A68D541C85D26508E83_694065468 = null; //Variable for return #1
+        CipherSuite[] varB4EAC82CA7396A68D541C85D26508E83_694065468 = null; 
         {
             this.enabledCipherSuites = CipherSuite.DEFAULT_CIPHER_SUITES;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_694065468 = enabledCipherSuites;
-        varB4EAC82CA7396A68D541C85D26508E83_694065468.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_694065468.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_694065468;
-        // ---------- Original Method ----------
-        //if (enabledCipherSuites == null) {
-            //this.enabledCipherSuites = CipherSuite.DEFAULT_CIPHER_SUITES;
-        //}
-        //return enabledCipherSuites;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static SSLParametersImpl getDefault() throws KeyManagementException {
         SSLParametersImpl result = defaultParameters;
         if (result == null) {
@@ -139,99 +140,101 @@ public class SSLParametersImpl implements Cloneable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.832 -0400", hash_original_method = "658F9BFC8B9B3779298360EB3ED283E0", hash_generated_method = "1887394B9A0531442539F4C903D085CF")
     protected ServerSessionContext getServerSessionContext() {
-        ServerSessionContext varB4EAC82CA7396A68D541C85D26508E83_1664927060 = null; //Variable for return #1
+        ServerSessionContext varB4EAC82CA7396A68D541C85D26508E83_1664927060 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1664927060 = serverSessionContext;
-        varB4EAC82CA7396A68D541C85D26508E83_1664927060.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1664927060.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1664927060;
-        // ---------- Original Method ----------
-        //return serverSessionContext;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.834 -0400", hash_original_method = "F2ACF841A45F78E0C0C46B366B8BBEF0", hash_generated_method = "76D80CF3EF07D3FB212B7FEAD6502BE9")
     protected ClientSessionContext getClientSessionContext() {
-        ClientSessionContext varB4EAC82CA7396A68D541C85D26508E83_1885968628 = null; //Variable for return #1
+        ClientSessionContext varB4EAC82CA7396A68D541C85D26508E83_1885968628 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1885968628 = clientSessionContext;
-        varB4EAC82CA7396A68D541C85D26508E83_1885968628.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1885968628.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1885968628;
-        // ---------- Original Method ----------
-        //return clientSessionContext;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.836 -0400", hash_original_method = "55EECB48B318CBDDE6A76E7D2964C45E", hash_generated_method = "5D910A4EC277C569E89820151547505D")
     protected X509KeyManager getKeyManager() {
-        X509KeyManager varB4EAC82CA7396A68D541C85D26508E83_1319975757 = null; //Variable for return #1
+        X509KeyManager varB4EAC82CA7396A68D541C85D26508E83_1319975757 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1319975757 = keyManager;
-        varB4EAC82CA7396A68D541C85D26508E83_1319975757.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1319975757.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1319975757;
-        // ---------- Original Method ----------
-        //return keyManager;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.837 -0400", hash_original_method = "6C6A481BDDE46D9B11307A3C2E7627FB", hash_generated_method = "1C4B663D599C1A1C974B9BC24026CDBC")
     protected X509TrustManager getTrustManager() {
-        X509TrustManager varB4EAC82CA7396A68D541C85D26508E83_1766981302 = null; //Variable for return #1
+        X509TrustManager varB4EAC82CA7396A68D541C85D26508E83_1766981302 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1766981302 = trustManager;
-        varB4EAC82CA7396A68D541C85D26508E83_1766981302.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1766981302.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1766981302;
-        // ---------- Original Method ----------
-        //return trustManager;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.838 -0400", hash_original_method = "067B45F1A56F6A0D2A18E621BA5CC8CE", hash_generated_method = "325875F6302968D80F44FAB9A5925439")
     protected SecureRandom getSecureRandom() {
-        SecureRandom varB4EAC82CA7396A68D541C85D26508E83_1511902684 = null; //Variable for return #1
-        SecureRandom varB4EAC82CA7396A68D541C85D26508E83_307007696 = null; //Variable for return #2
+        SecureRandom varB4EAC82CA7396A68D541C85D26508E83_1511902684 = null; 
+        SecureRandom varB4EAC82CA7396A68D541C85D26508E83_307007696 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1511902684 = secureRandom;
-        } //End block
+        } 
         SecureRandom result = defaultSecureRandom;
         {
             defaultSecureRandom = result = new SecureRandom();
-        } //End block
+        } 
         secureRandom = result;
         varB4EAC82CA7396A68D541C85D26508E83_307007696 = secureRandom;
-        SecureRandom varA7E53CE21691AB073D9660D615818899_186563939; //Final return value
+        SecureRandom varA7E53CE21691AB073D9660D615818899_186563939; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_186563939 = varB4EAC82CA7396A68D541C85D26508E83_1511902684;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_186563939 = varB4EAC82CA7396A68D541C85D26508E83_307007696;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_186563939.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_186563939.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_186563939;
-        // ---------- Original Method ----------
-        //if (secureRandom != null) {
-            //return secureRandom;
-        //}
-        //SecureRandom result = defaultSecureRandom;
-        //if (result == null) {
-            //defaultSecureRandom = result = new SecureRandom();
-        //}
-        //secureRandom = result;
-        //return secureRandom;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.839 -0400", hash_original_method = "3F930A54995EF963563BF853943EBA6D", hash_generated_method = "6A68BAA70AF6396F3C547644254BD9A8")
     protected SecureRandom getSecureRandomMember() {
-        SecureRandom varB4EAC82CA7396A68D541C85D26508E83_1390457312 = null; //Variable for return #1
+        SecureRandom varB4EAC82CA7396A68D541C85D26508E83_1390457312 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1390457312 = secureRandom;
-        varB4EAC82CA7396A68D541C85D26508E83_1390457312.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1390457312.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1390457312;
-        // ---------- Original Method ----------
-        //return secureRandom;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.840 -0400", hash_original_method = "9646311778F84C20B1374BE7EFA44ADB", hash_generated_method = "F1B00D25CC5B9A2FF1D527F5831FFE93")
     protected String[] getEnabledCipherSuites() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_379234878 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_379234878 = null; 
         {
             CipherSuite[] enabledCipherSuites = getEnabledCipherSuitesMember();
             enabledCipherSuiteNames = new String[enabledCipherSuites.length];
@@ -239,29 +242,30 @@ public class SSLParametersImpl implements Cloneable {
                 int i = 0;
                 {
                     enabledCipherSuiteNames[i] = enabledCipherSuites[i].getName();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_379234878 = enabledCipherSuiteNames.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_379234878.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_379234878.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_379234878;
-        // ---------- Original Method ----------
-        //if (enabledCipherSuiteNames == null) {
-            //CipherSuite[] enabledCipherSuites = getEnabledCipherSuitesMember();
-            //enabledCipherSuiteNames = new String[enabledCipherSuites.length];
-            //for (int i = 0; i< enabledCipherSuites.length; i++) {
-                //enabledCipherSuiteNames[i] = enabledCipherSuites[i].getName();
-            //}
-        //}
-        //return enabledCipherSuiteNames.clone();
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.840 -0400", hash_original_method = "C91A557B3D523F3F985021D6CA71D94C", hash_generated_method = "67386CB914D6DDCC4523EBBAE93FB7A0")
     protected void setEnabledCipherSuites(String[] suites) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("suites == null");
-        } //End block
+        } 
         CipherSuite[] cipherSuites = new CipherSuite[suites.length];
         {
             int i = 0;
@@ -269,89 +273,91 @@ public class SSLParametersImpl implements Cloneable {
                 String suite = suites[i];
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("suites[" + i + "] == null");
-                } //End block
+                } 
                 cipherSuites[i] = CipherSuite.getByName(suite);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(suite + " is not supported.");
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         enabledCipherSuites = cipherSuites;
         enabledCipherSuiteNames = suites;
-        // ---------- Original Method ----------
-        //if (suites == null) {
-            //throw new IllegalArgumentException("suites == null");
-        //}
-        //CipherSuite[] cipherSuites = new CipherSuite[suites.length];
-        //for (int i=0; i<suites.length; i++) {
-            //String suite = suites[i];
-            //if (suite == null) {
-                //throw new IllegalArgumentException("suites[" + i + "] == null");
-            //}
-            //cipherSuites[i] = CipherSuite.getByName(suite);
-            //if (cipherSuites[i] == null || !cipherSuites[i].supported) {
-                //throw new IllegalArgumentException(suite + " is not supported.");
-            //}
-        //}
-        //enabledCipherSuites = cipherSuites;
-        //enabledCipherSuiteNames = suites;
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+            
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.841 -0400", hash_original_method = "26510D7872AB5791B4C2075CD3368FCD", hash_generated_method = "01427527FFD6066A2B5126DDC6132DC5")
     protected String[] getEnabledProtocols() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_2070697770 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_2070697770 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2070697770 = enabledProtocols.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_2070697770.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2070697770.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2070697770;
-        // ---------- Original Method ----------
-        //return enabledProtocols.clone();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.841 -0400", hash_original_method = "2B0D33614474781D29E26E9E317355EA", hash_generated_method = "B87D32AE7DC5B4FB1F9306A986DD5886")
     protected void setEnabledProtocols(String[] protocols) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("protocols == null");
-        } //End block
+        } 
         {
             int i = 0;
             {
                 String protocol = protocols[i];
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("protocols[" + i + "] == null");
-                } //End block
+                } 
                 {
                     boolean var62D8EE37F0681C110B52FBB58EB4EBEE_1772443729 = (!ProtocolVersion.isSupported(protocol));
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Protocol " + protocol + " is not supported.");
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         enabledProtocols = protocols;
-        // ---------- Original Method ----------
-        //if (protocols == null) {
-            //throw new IllegalArgumentException("protocols == null");
-        //}
-        //for (int i=0; i<protocols.length; i++) {
-            //String protocol = protocols[i];
-            //if (protocol == null) {
-                //throw new IllegalArgumentException("protocols[" + i + "] == null");
-            //}
-            //if (!ProtocolVersion.isSupported(protocol)) {
-                //throw new IllegalArgumentException("Protocol " + protocol + " is not supported.");
-            //}
-        //}
-        //enabledProtocols = protocols;
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.841 -0400", hash_original_method = "D4C2A3C88DBFC7AAADB7163E376EACA1", hash_generated_method = "887DE4735EDEE4C8E4C83849AF3EB99A")
     protected void setUseClientMode(boolean mode) {
         client_mode = mode;
-        // ---------- Original Method ----------
-        //client_mode = mode;
+        
+        
     }
 
     
@@ -359,8 +365,8 @@ public class SSLParametersImpl implements Cloneable {
     protected boolean getUseClientMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_148853933 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_148853933;
-        // ---------- Original Method ----------
-        //return client_mode;
+        
+        
     }
 
     
@@ -368,9 +374,9 @@ public class SSLParametersImpl implements Cloneable {
     protected void setNeedClientAuth(boolean need) {
         need_client_auth = need;
         want_client_auth = false;
-        // ---------- Original Method ----------
-        //need_client_auth = need;
-        //want_client_auth = false;
+        
+        
+        
     }
 
     
@@ -378,8 +384,8 @@ public class SSLParametersImpl implements Cloneable {
     protected boolean getNeedClientAuth() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_423227370 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_423227370;
-        // ---------- Original Method ----------
-        //return need_client_auth;
+        
+        
     }
 
     
@@ -387,9 +393,9 @@ public class SSLParametersImpl implements Cloneable {
     protected void setWantClientAuth(boolean want) {
         want_client_auth = want;
         need_client_auth = false;
-        // ---------- Original Method ----------
-        //want_client_auth = want;
-        //need_client_auth = false;
+        
+        
+        
     }
 
     
@@ -397,16 +403,16 @@ public class SSLParametersImpl implements Cloneable {
     protected boolean getWantClientAuth() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_368361555 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_368361555;
-        // ---------- Original Method ----------
-        //return want_client_auth;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.843 -0400", hash_original_method = "982E0D6CA0433DE88B1B4310D3610067", hash_generated_method = "28552D8F807A40A67118E4FFED07DB76")
     protected void setEnableSessionCreation(boolean flag) {
         enable_session_creation = flag;
-        // ---------- Original Method ----------
-        //enable_session_creation = flag;
+        
+        
     }
 
     
@@ -414,34 +420,36 @@ public class SSLParametersImpl implements Cloneable {
     protected boolean getEnableSessionCreation() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2061602144 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2061602144;
-        // ---------- Original Method ----------
-        //return enable_session_creation;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.844 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "6DC51F7B915D63130ABC00396FA18F9C")
     @Override
     protected Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_35487269 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_35487269 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_35487269 = super.clone();
-        } //End block
+        } 
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_35487269.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_35487269.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_35487269;
-        // ---------- Original Method ----------
-        //try {
-            //return super.clone();
-        //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError(e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static X509KeyManager getDefaultKeyManager() {
         X509KeyManager result = defaultKeyManager;
         if (result == null) {
@@ -451,6 +459,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static X509KeyManager createDefaultKeyManager() {
         try {
             String algorithm = KeyManagerFactory.getDefaultAlgorithm();
@@ -478,6 +487,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X509TrustManager getDefaultTrustManager() {
         X509TrustManager result = defaultTrustManager;
         if (result == null) {
@@ -487,6 +497,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static X509TrustManager createDefaultTrustManager() {
         try {
             String algorithm = TrustManagerFactory.getDefaultAlgorithm();

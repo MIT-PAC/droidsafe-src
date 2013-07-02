@@ -1,11 +1,11 @@
 package libcore.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -23,12 +23,13 @@ final class FixedLengthOutputStream extends AbstractHttpOutputStream {
     public  FixedLengthOutputStream(OutputStream socketOut, int bytesRemaining) {
         this.socketOut = socketOut;
         this.bytesRemaining = bytesRemaining;
-        // ---------- Original Method ----------
-        //this.socketOut = socketOut;
-        //this.bytesRemaining = bytesRemaining;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.668 -0400", hash_original_method = "954563C6DA4D081D04FBFCB6C3DCBDF3", hash_generated_method = "3F7D3C53F861B6117A40A51DDBDBE677")
     @Override
     public void write(byte[] buffer, int offset, int count) throws IOException {
@@ -36,49 +37,51 @@ final class FixedLengthOutputStream extends AbstractHttpOutputStream {
         Arrays.checkOffsetAndCount(buffer.length, offset, count);
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("expected " + bytesRemaining + " bytes but received " + count);
-        } //End block
+        } 
         socketOut.write(buffer, offset, count);
         bytesRemaining -= count;
         addTaint(buffer[0]);
         addTaint(offset);
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //Arrays.checkOffsetAndCount(buffer.length, offset, count);
-        //if (count > bytesRemaining) {
-            //throw new IOException("expected " + bytesRemaining + " bytes but received " + count);
-        //}
-        //socketOut.write(buffer, offset, count);
-        //bytesRemaining -= count;
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.668 -0400", hash_original_method = "5CB5A053EE4A231C6D0A0D598E9BEDBB", hash_generated_method = "282F73A2D581CA790CBC32B2052C7F72")
     @Override
     public void flush() throws IOException {
         socketOut.flush();
-        // ---------- Original Method ----------
-        //if (closed) {
-            //return; 
-        //}
-        //socketOut.flush();
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.668 -0400", hash_original_method = "FCB6BF5DC7C6AA8912495FC6DAF3D35C", hash_generated_method = "ECF0EB4A98E0F2E8B7857344CADB6CEE")
     @Override
     public void close() throws IOException {
         closed = true;
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("unexpected end of stream");
-        } //End block
-        // ---------- Original Method ----------
-        //if (closed) {
-            //return;
-        //}
-        //closed = true;
-        //if (bytesRemaining > 0) {
-            //throw new IOException("unexpected end of stream");
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     

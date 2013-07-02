@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.Log;
 import android.util.Printer;
@@ -32,31 +32,31 @@ public class Handler {
             {
                 boolean var21C0A6071D67597815EE38AB22BE22C0_221696865 = ((klass.isAnonymousClass() || klass.isMemberClass() || klass.isLocalClass()) &&
                     (klass.getModifiers() & Modifier.STATIC) == 0);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         mLooper = Looper.myLooper();
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                 "Can't create handler inside thread that has not called Looper.prepare()");
-        } //End block
+        } 
         mQueue = mLooper.mQueue;
         mCallback = null;
-        // ---------- Original Method ----------
-        //if (FIND_POTENTIAL_LEAKS) {
-            //final Class<? extends Handler> klass = getClass();
-            //if ((klass.isAnonymousClass() || klass.isMemberClass() || klass.isLocalClass()) &&
-                    //(klass.getModifiers() & Modifier.STATIC) == 0) {
-                //Log.w(TAG, "The following Handler class should be static or leaks might occur: " +
-                    //klass.getCanonicalName());
-            //}
-        //}
-        //mLooper = Looper.myLooper();
-        //if (mLooper == null) {
-            //throw new RuntimeException(
-                //"Can't create handler inside thread that has not called Looper.prepare()");
-        //}
-        //mQueue = mLooper.mQueue;
-        //mCallback = null;
+        
+        
+            
+            
+                    
+                
+                    
+            
+        
+        
+        
+            
+                
+        
+        
+        
     }
 
     
@@ -67,31 +67,31 @@ public class Handler {
             {
                 boolean var21C0A6071D67597815EE38AB22BE22C0_294295454 = ((klass.isAnonymousClass() || klass.isMemberClass() || klass.isLocalClass()) &&
                     (klass.getModifiers() & Modifier.STATIC) == 0);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         mLooper = Looper.myLooper();
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                 "Can't create handler inside thread that has not called Looper.prepare()");
-        } //End block
+        } 
         mQueue = mLooper.mQueue;
         mCallback = callback;
-        // ---------- Original Method ----------
-        //if (FIND_POTENTIAL_LEAKS) {
-            //final Class<? extends Handler> klass = getClass();
-            //if ((klass.isAnonymousClass() || klass.isMemberClass() || klass.isLocalClass()) &&
-                    //(klass.getModifiers() & Modifier.STATIC) == 0) {
-                //Log.w(TAG, "The following Handler class should be static or leaks might occur: " +
-                    //klass.getCanonicalName());
-            //}
-        //}
-        //mLooper = Looper.myLooper();
-        //if (mLooper == null) {
-            //throw new RuntimeException(
-                //"Can't create handler inside thread that has not called Looper.prepare()");
-        //}
-        //mQueue = mLooper.mQueue;
-        //mCallback = callback;
+        
+        
+            
+            
+                    
+                
+                    
+            
+        
+        
+        
+            
+                
+        
+        
+        
     }
 
     
@@ -100,10 +100,10 @@ public class Handler {
         mLooper = looper;
         mQueue = looper.mQueue;
         mCallback = null;
-        // ---------- Original Method ----------
-        //mLooper = looper;
-        //mQueue = looper.mQueue;
-        //mCallback = null;
+        
+        
+        
+        
     }
 
     
@@ -112,17 +112,17 @@ public class Handler {
         mLooper = looper;
         mQueue = looper.mQueue;
         mCallback = callback;
-        // ---------- Original Method ----------
-        //mLooper = looper;
-        //mQueue = looper.mQueue;
-        //mCallback = callback;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.256 -0400", hash_original_method = "C13ECA453D39BD1621DCBD4764283A41", hash_generated_method = "6C9E5B782C82352543D0D7A957AAB817")
     public void handleMessage(Message msg) {
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -130,120 +130,120 @@ public class Handler {
     public void dispatchMessage(Message msg) {
         {
             handleCallback(msg);
-        } //End block
+        } 
         {
             {
                 {
                     boolean var40429B7E6C52EDCF4719B5E6B95BAF9A_291605266 = (mCallback.handleMessage(msg));
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             handleMessage(msg);
-        } //End block
+        } 
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //if (msg.callback != null) {
-            //handleCallback(msg);
-        //} else {
-            //if (mCallback != null) {
-                //if (mCallback.handleMessage(msg)) {
-                    //return;
-                //}
-            //}
-            //handleMessage(msg);
-        //}
+        
+        
+            
+        
+            
+                
+                    
+                
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.257 -0400", hash_original_method = "7AEB9F9BBB8F24805A35E34BFA8BA452", hash_generated_method = "D2A625E0269F4BC1D3F76B8A5CCE6218")
     public String getMessageName(Message message) {
-        String varB4EAC82CA7396A68D541C85D26508E83_15789435 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1395542592 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_15789435 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1395542592 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_15789435 = message.callback.getClass().getName();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1395542592 = "0x" + Integer.toHexString(message.what);
         addTaint(message.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_462398323; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_462398323; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_462398323 = varB4EAC82CA7396A68D541C85D26508E83_15789435;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_462398323 = varB4EAC82CA7396A68D541C85D26508E83_1395542592;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_462398323.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_462398323.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_462398323;
-        // ---------- Original Method ----------
-        //if (message.callback != null) {
-            //return message.callback.getClass().getName();
-        //}
-        //return "0x" + Integer.toHexString(message.what);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.258 -0400", hash_original_method = "3FA1D1E6850485EFDFF54C55EBFDD1CC", hash_generated_method = "F18F2BBA937F858099E2D8E7F38AE314")
     public final Message obtainMessage() {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1264868245 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1264868245 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1264868245 = Message.obtain(this);
-        varB4EAC82CA7396A68D541C85D26508E83_1264868245.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1264868245.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1264868245;
-        // ---------- Original Method ----------
-        //return Message.obtain(this);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.258 -0400", hash_original_method = "83ED22E0C23176DA2E639FBDA9F30743", hash_generated_method = "7C147784C8E20F061919ABE350F955D9")
     public final Message obtainMessage(int what) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1994560359 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1994560359 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1994560359 = Message.obtain(this, what);
         addTaint(what);
-        varB4EAC82CA7396A68D541C85D26508E83_1994560359.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1994560359.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1994560359;
-        // ---------- Original Method ----------
-        //return Message.obtain(this, what);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.259 -0400", hash_original_method = "16AA2451698F7981D4974062DB733B90", hash_generated_method = "C69574EB588468284EE04DECC01E190D")
     public final Message obtainMessage(int what, Object obj) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1917007416 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1917007416 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1917007416 = Message.obtain(this, what, obj);
         addTaint(what);
         addTaint(obj.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1917007416.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1917007416.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1917007416;
-        // ---------- Original Method ----------
-        //return Message.obtain(this, what, obj);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.259 -0400", hash_original_method = "E0C335742F8D26DCA388CDB62E97551F", hash_generated_method = "DAC072B71EFCA5B1827BBDF82C468425")
     public final Message obtainMessage(int what, int arg1, int arg2) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1270770872 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1270770872 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1270770872 = Message.obtain(this, what, arg1, arg2);
         addTaint(what);
         addTaint(arg1);
         addTaint(arg2);
-        varB4EAC82CA7396A68D541C85D26508E83_1270770872.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1270770872.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1270770872;
-        // ---------- Original Method ----------
-        //return Message.obtain(this, what, arg1, arg2);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.260 -0400", hash_original_method = "73E3B8E788E4FE19D8B1D7007BFD268C", hash_generated_method = "9256854F42156C8CCB67DDE9325B27F5")
     public final Message obtainMessage(int what, int arg1, int arg2, Object obj) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1903921911 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1903921911 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1903921911 = Message.obtain(this, what, arg1, arg2, obj);
         addTaint(what);
         addTaint(arg1);
         addTaint(arg2);
         addTaint(obj.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1903921911.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1903921911.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1903921911;
-        // ---------- Original Method ----------
-        //return Message.obtain(this, what, arg1, arg2, obj);
+        
+        
     }
 
     
@@ -253,8 +253,8 @@ public class Handler {
         addTaint(r.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394310334 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1394310334;
-        // ---------- Original Method ----------
-        //return  sendMessageDelayed(getPostMessage(r), 0);
+        
+        
     }
 
     
@@ -265,8 +265,8 @@ public class Handler {
         addTaint(uptimeMillis);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_724487365 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_724487365;
-        // ---------- Original Method ----------
-        //return sendMessageAtTime(getPostMessage(r), uptimeMillis);
+        
+        
     }
 
     
@@ -278,8 +278,8 @@ public class Handler {
         addTaint(uptimeMillis);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1539897456 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1539897456;
-        // ---------- Original Method ----------
-        //return sendMessageAtTime(getPostMessage(r, token), uptimeMillis);
+        
+        
     }
 
     
@@ -290,8 +290,8 @@ public class Handler {
         addTaint(delayMillis);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_305517846 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_305517846;
-        // ---------- Original Method ----------
-        //return sendMessageDelayed(getPostMessage(r), delayMillis);
+        
+        
     }
 
     
@@ -301,8 +301,8 @@ public class Handler {
         addTaint(r.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2013355077 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2013355077;
-        // ---------- Original Method ----------
-        //return sendMessageAtFrontOfQueue(getPostMessage(r));
+        
+        
     }
 
     
@@ -310,8 +310,8 @@ public class Handler {
     public final void removeCallbacks(Runnable r) {
         mQueue.removeMessages(this, r, null);
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //mQueue.removeMessages(this, r, null);
+        
+        
     }
 
     
@@ -320,8 +320,8 @@ public class Handler {
         mQueue.removeMessages(this, r, token);
         addTaint(r.getTaint());
         addTaint(token.getTaint());
-        // ---------- Original Method ----------
-        //mQueue.removeMessages(this, r, token);
+        
+        
     }
 
     
@@ -331,8 +331,8 @@ public class Handler {
         addTaint(msg.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1047071253 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1047071253;
-        // ---------- Original Method ----------
-        //return sendMessageDelayed(msg, 0);
+        
+        
     }
 
     
@@ -342,8 +342,8 @@ public class Handler {
         addTaint(what);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1693149691 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1693149691;
-        // ---------- Original Method ----------
-        //return sendEmptyMessageDelayed(what, 0);
+        
+        
     }
 
     
@@ -356,10 +356,10 @@ public class Handler {
         addTaint(delayMillis);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_598042004 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_598042004;
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //return sendMessageDelayed(msg, delayMillis);
+        
+        
+        
+        
     }
 
     
@@ -372,10 +372,10 @@ public class Handler {
         addTaint(uptimeMillis);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1480432644 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1480432644;
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //return sendMessageAtTime(msg, uptimeMillis);
+        
+        
+        
+        
     }
 
     
@@ -383,17 +383,17 @@ public class Handler {
     public final boolean sendMessageDelayed(Message msg, long delayMillis) {
         {
             delayMillis = 0;
-        } //End block
+        } 
         boolean var1761F03F3EEFC16009DC3CA8E9725E10_1832126661 = (sendMessageAtTime(msg, SystemClock.uptimeMillis() + delayMillis));
         addTaint(msg.getTaint());
         addTaint(delayMillis);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_191041135 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_191041135;
-        // ---------- Original Method ----------
-        //if (delayMillis < 0) {
-            //delayMillis = 0;
-        //}
-        //return sendMessageAtTime(msg, SystemClock.uptimeMillis() + delayMillis);
+        
+        
+            
+        
+        
     }
 
     
@@ -404,28 +404,28 @@ public class Handler {
         {
             msg.target = this;
             sent = queue.enqueueMessage(msg, uptimeMillis);
-        } //End block
+        } 
         {
             RuntimeException e = new RuntimeException(
                 this + " sendMessageAtTime() called with no mQueue");
-        } //End block
+        } 
         addTaint(msg.getTaint());
         addTaint(uptimeMillis);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2045443230 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2045443230;
-        // ---------- Original Method ----------
-        //boolean sent = false;
-        //MessageQueue queue = mQueue;
-        //if (queue != null) {
-            //msg.target = this;
-            //sent = queue.enqueueMessage(msg, uptimeMillis);
-        //}
-        //else {
-            //RuntimeException e = new RuntimeException(
-                //this + " sendMessageAtTime() called with no mQueue");
-            //Log.w("Looper", e.getMessage(), e);
-        //}
-        //return sent;
+        
+        
+        
+        
+            
+            
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -436,27 +436,27 @@ public class Handler {
         {
             msg.target = this;
             sent = queue.enqueueMessage(msg, 0);
-        } //End block
+        } 
         {
             RuntimeException e = new RuntimeException(
                 this + " sendMessageAtTime() called with no mQueue");
-        } //End block
+        } 
         addTaint(msg.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2129072618 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2129072618;
-        // ---------- Original Method ----------
-        //boolean sent = false;
-        //MessageQueue queue = mQueue;
-        //if (queue != null) {
-            //msg.target = this;
-            //sent = queue.enqueueMessage(msg, 0);
-        //}
-        //else {
-            //RuntimeException e = new RuntimeException(
-                //this + " sendMessageAtTime() called with no mQueue");
-            //Log.w("Looper", e.getMessage(), e);
-        //}
-        //return sent;
+        
+        
+        
+        
+            
+            
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -464,8 +464,8 @@ public class Handler {
     public final void removeMessages(int what) {
         mQueue.removeMessages(this, what, null, true);
         addTaint(what);
-        // ---------- Original Method ----------
-        //mQueue.removeMessages(this, what, null, true);
+        
+        
     }
 
     
@@ -474,8 +474,8 @@ public class Handler {
         mQueue.removeMessages(this, what, object, true);
         addTaint(what);
         addTaint(object.getTaint());
-        // ---------- Original Method ----------
-        //mQueue.removeMessages(this, what, object, true);
+        
+        
     }
 
     
@@ -483,8 +483,8 @@ public class Handler {
     public final void removeCallbacksAndMessages(Object token) {
         mQueue.removeCallbacksAndMessages(this, token);
         addTaint(token.getTaint());
-        // ---------- Original Method ----------
-        //mQueue.removeCallbacksAndMessages(this, token);
+        
+        
     }
 
     
@@ -494,8 +494,8 @@ public class Handler {
         addTaint(what);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1377419256 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1377419256;
-        // ---------- Original Method ----------
-        //return mQueue.removeMessages(this, what, null, false);
+        
+        
     }
 
     
@@ -506,19 +506,19 @@ public class Handler {
         addTaint(object.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_117272259 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_117272259;
-        // ---------- Original Method ----------
-        //return mQueue.removeMessages(this, what, object, false);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.267 -0400", hash_original_method = "6CA5860A95ACD9BB8C844ECC1E567192", hash_generated_method = "5AFC68D79E5FE4EC8F6C299A605E70A9")
     public final Looper getLooper() {
-        Looper varB4EAC82CA7396A68D541C85D26508E83_527747846 = null; //Variable for return #1
+        Looper varB4EAC82CA7396A68D541C85D26508E83_527747846 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_527747846 = mLooper;
-        varB4EAC82CA7396A68D541C85D26508E83_527747846.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_527747846.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_527747846;
-        // ---------- Original Method ----------
-        //return mLooper;
+        
+        
     }
 
     
@@ -527,103 +527,103 @@ public class Handler {
         pw.println(prefix + this + " @ " + SystemClock.uptimeMillis());
         {
             pw.println(prefix + "looper uninitialized");
-        } //End block
+        } 
         {
             mLooper.dump(pw, prefix + "  ");
-        } //End block
+        } 
         addTaint(pw.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //pw.println(prefix + this + " @ " + SystemClock.uptimeMillis());
-        //if (mLooper == null) {
-            //pw.println(prefix + "looper uninitialized");
-        //} else {
-            //mLooper.dump(pw, prefix + "  ");
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.268 -0400", hash_original_method = "05520CD35CB4412A1070385C35DB25A1", hash_generated_method = "97A527EA45A8AEED44CDD80005CA5DE8")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_645424487 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_645424487 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_645424487 = "Handler (" + getClass().getName() + ") {"
         + Integer.toHexString(System.identityHashCode(this))
         + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_645424487.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_645424487.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_645424487;
-        // ---------- Original Method ----------
-        //return "Handler (" + getClass().getName() + ") {"
-        //+ Integer.toHexString(System.identityHashCode(this))
-        //+ "}";
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.269 -0400", hash_original_method = "022CD131F6EA96B24851C91C40C740AA", hash_generated_method = "F4571C57E4BBB3F3CC876665CB460FD6")
     final IMessenger getIMessenger() {
-        IMessenger varB4EAC82CA7396A68D541C85D26508E83_1727900204 = null; //Variable for return #1
-        IMessenger varB4EAC82CA7396A68D541C85D26508E83_283352959 = null; //Variable for return #2
+        IMessenger varB4EAC82CA7396A68D541C85D26508E83_1727900204 = null; 
+        IMessenger varB4EAC82CA7396A68D541C85D26508E83_283352959 = null; 
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1727900204 = mMessenger;
-            } //End block
+            } 
             mMessenger = new MessengerImpl();
             varB4EAC82CA7396A68D541C85D26508E83_283352959 = mMessenger;
-        } //End block
-        IMessenger varA7E53CE21691AB073D9660D615818899_1117210616; //Final return value
+        } 
+        IMessenger varA7E53CE21691AB073D9660D615818899_1117210616; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1117210616 = varB4EAC82CA7396A68D541C85D26508E83_1727900204;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1117210616 = varB4EAC82CA7396A68D541C85D26508E83_283352959;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1117210616.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1117210616.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1117210616;
-        // ---------- Original Method ----------
-        //synchronized (mQueue) {
-            //if (mMessenger != null) {
-                //return mMessenger;
-            //}
-            //mMessenger = new MessengerImpl();
-            //return mMessenger;
-        //}
+        
+        
+            
+                
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.270 -0400", hash_original_method = "9DFB5128F30D3CFE7C2F086A6667AA29", hash_generated_method = "1BB82D361F1C6B31E1B8802A7972E30D")
     private final Message getPostMessage(Runnable r) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1876531813 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1876531813 = null; 
         Message m = Message.obtain();
         m.callback = r;
         varB4EAC82CA7396A68D541C85D26508E83_1876531813 = m;
         addTaint(r.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1876531813.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1876531813.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1876531813;
-        // ---------- Original Method ----------
-        //Message m = Message.obtain();
-        //m.callback = r;
-        //return m;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.271 -0400", hash_original_method = "001850E10F072AF670657F2F37A16A9C", hash_generated_method = "71355708AF17265B22195D2DFE0901B4")
     private final Message getPostMessage(Runnable r, Object token) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_926723829 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_926723829 = null; 
         Message m = Message.obtain();
         m.obj = token;
         m.callback = r;
         varB4EAC82CA7396A68D541C85D26508E83_926723829 = m;
         addTaint(r.getTaint());
         addTaint(token.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_926723829.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_926723829.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_926723829;
-        // ---------- Original Method ----------
-        //Message m = Message.obtain();
-        //m.obj = token;
-        //m.callback = r;
-        //return m;
+        
+        
+        
+        
+        
     }
 
     
@@ -631,8 +631,8 @@ public class Handler {
     private final void handleCallback(Message message) {
         message.callback.run();
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //message.callback.run();
+        
+        
     }
 
     
@@ -641,7 +641,7 @@ public class Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.271 -0400", hash_original_method = "68A768E132C1125DE9510AF39EB42EE7", hash_generated_method = "68A768E132C1125DE9510AF39EB42EE7")
         public MessengerImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -649,8 +649,8 @@ public class Handler {
         public void send(Message msg) {
             Handler.this.sendMessage(msg);
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //Handler.this.sendMessage(msg);
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Arrays;
 
@@ -27,9 +27,9 @@ public class StringReader extends Reader {
     public  StringReader(String str) {
         this.str = str;
         this.count = str.length();
-        // ---------- Original Method ----------
-        //this.str = str;
-        //this.count = str.length();
+        
+        
+        
     }
 
     
@@ -37,8 +37,8 @@ public class StringReader extends Reader {
     @Override
     public void close() {
         str = null;
-        // ---------- Original Method ----------
-        //str = null;
+        
+        
     }
 
     
@@ -46,45 +46,47 @@ public class StringReader extends Reader {
     private boolean isClosed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1431017085 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1431017085;
-        // ---------- Original Method ----------
-        //return str == null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.132 -0400", hash_original_method = "F8F979F8EBA759C2F6A839AF0D90FFA4", hash_generated_method = "9477A35EF17C11B1D62E277F2ABD71F9")
     @Override
     public void mark(int readLimit) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         {
             checkNotClosed();
             markpos = pos;
-        } //End block
+        } 
         addTaint(readLimit);
-        // ---------- Original Method ----------
-        //if (readLimit < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //synchronized (lock) {
-            //checkNotClosed();
-            //markpos = pos;
-        //}
+        
+        
+            
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.132 -0400", hash_original_method = "52097AD3D6FE0975840C468FF1E0F766", hash_generated_method = "B03221C5178A35BBB1B7C5E3FDFABAD9")
     private void checkNotClosed() throws IOException {
         {
             boolean varF463C9E3EC09CF3DDC0E11AE27E5A7FD_400762468 = (isClosed());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("StringReader is closed");
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (isClosed()) {
-            //throw new IOException("StringReader is closed");
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
@@ -93,11 +95,12 @@ public class StringReader extends Reader {
     public boolean markSupported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_21497415 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_21497415;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.133 -0400", hash_original_method = "7FFE2BA54C7A195E9FE8B5D995EC9572", hash_generated_method = "AEEA13121AC35730AF98833138DE9982")
     @Override
     public int read() throws IOException {
@@ -105,21 +108,22 @@ public class StringReader extends Reader {
             checkNotClosed();
             {
                 int var0F580E3D69302FA8221AA508D5192A84_720464772 = (str.charAt(pos++));
-            } //End block
-        } //End block
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2053654014 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2053654014;
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //if (pos != count) {
-                //return str.charAt(pos++);
-            //}
-            //return -1;
-        //}
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.133 -0400", hash_original_method = "85EEB2DAA826BA4238F8F98E34D3FBD9", hash_generated_method = "D6EAA1E2D5D76DA05E4F969FAB3AA265")
     @Override
     public int read(char[] buf, int offset, int len) throws IOException {
@@ -132,62 +136,65 @@ public class StringReader extends Reader {
             str.getChars(pos, end, buf, offset);
             int read = end - pos;
             pos = end;
-        } //End block
+        } 
         addTaint(buf[0]);
         addTaint(offset);
         addTaint(len);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500000140 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500000140;
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //Arrays.checkOffsetAndCount(buf.length, offset, len);
-            //if (len == 0) {
-                //return 0;
-            //}
-            //if (pos == this.count) {
-                //return -1;
-            //}
-            //int end = pos + len > this.count ? this.count : pos + len;
-            //str.getChars(pos, end, buf, offset);
-            //int read = end - pos;
-            //pos = end;
-            //return read;
-        //}
+        
+        
+            
+            
+            
+                
+            
+            
+                
+            
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.134 -0400", hash_original_method = "3162F271739E7EAF4DA155264EC5FC94", hash_generated_method = "FFF6169A670DC9821D17C0D18517FEDC")
     @Override
     public boolean ready() throws IOException {
         {
             checkNotClosed();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2023889537 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2023889537;
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //return true;
-        //}
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.134 -0400", hash_original_method = "038BDF0065CA5B8ADE3B96C7C6A96C49", hash_generated_method = "83AB864F4946B1529535589675BD20F1")
     @Override
     public void reset() throws IOException {
         {
             checkNotClosed();
             pos = markpos != -1 ? markpos : 0;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //pos = markpos != -1 ? markpos : 0;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.134 -0400", hash_original_method = "62CF7546C0F2369A3238D86713E4D3AD", hash_generated_method = "2D65208240C8860990639194B5F07D38")
     @Override
     public long skip(long charCount) throws IOException {
@@ -197,27 +204,27 @@ public class StringReader extends Reader {
             int maxSkip = count - pos;
             {
                 charCount = maxSkip;
-            } //End block
+            } 
             {
                 charCount = minSkip;
-            } //End block
+            } 
             pos += charCount;
-        } //End block
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_368858065 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_368858065;
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //int minSkip = -pos;
-            //int maxSkip = count - pos;
-            //if (maxSkip == 0 || charCount > maxSkip) {
-                //charCount = maxSkip; 
-            //} else if (charCount < minSkip) {
-                //charCount = minSkip;
-            //}
-            //pos += charCount;
-            //return charCount;
-        //}
+        
+        
+            
+            
+            
+            
+                
+            
+                
+            
+            
+            
+        
     }
 
     

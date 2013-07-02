@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class SpannableString extends SpannableStringInternal implements CharSequence, GetChars, Spannable {
@@ -14,7 +14,7 @@ public class SpannableString extends SpannableStringInternal implements CharSequ
     public  SpannableString(CharSequence source) {
         super(source, 0, source.length());
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,10 +24,11 @@ public class SpannableString extends SpannableStringInternal implements CharSequ
         addTaint(source.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SpannableString valueOf(CharSequence source) {
         if (source instanceof SpannableString) {
             return (SpannableString) source;
@@ -37,6 +38,7 @@ public class SpannableString extends SpannableStringInternal implements CharSequ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.193 -0400", hash_original_method = "703A4E3A5DC432A077E52C12DF31C39D", hash_generated_method = "D92FC83AB79BD7ADAF72DC01FE600A6A")
     public void setSpan(Object what, int start, int end, int flags) {
         super.setSpan(what, start, end, flags);
@@ -44,30 +46,31 @@ public class SpannableString extends SpannableStringInternal implements CharSequ
         addTaint(start);
         addTaint(end);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //super.setSpan(what, start, end, flags);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.193 -0400", hash_original_method = "A032FB453304A8E0F8BC7978F037ECF6", hash_generated_method = "522F06EDA081212E675FA60D631FF0E0")
     public void removeSpan(Object what) {
         super.removeSpan(what);
         addTaint(what.getTaint());
-        // ---------- Original Method ----------
-        //super.removeSpan(what);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.194 -0400", hash_original_method = "2D77EB0B8B2B37960A9B77E6DDEED655", hash_generated_method = "51F55AE38C37917F65FCB52A84C355E6")
     public final CharSequence subSequence(int start, int end) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_767515345 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_767515345 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_767515345 = new SpannableString(this, start, end);
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_767515345.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_767515345.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_767515345;
-        // ---------- Original Method ----------
-        //return new SpannableString(this, start, end);
+        
+        
     }
 
     

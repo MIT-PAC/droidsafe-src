@@ -1,11 +1,11 @@
 package dalvik.system.profiler;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -17,7 +17,7 @@ public final class BinaryHprof {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.850 -0400", hash_original_method = "5337F4C002A0025B40CFBFFF348D94A9", hash_generated_method = "5337F4C002A0025B40CFBFFF348D94A9")
     public BinaryHprof ()
     {
-        //Synthesized constructor
+        
     }
 
 

@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.net.InetAddress;
 import java.net.Inet4Address;
@@ -19,7 +19,7 @@ public class NetworkUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.834 -0400", hash_original_method = "F1C492907C316113D8B010C69392B76F", hash_generated_method = "F1C492907C316113D8B010C69392B76F")
     public NetworkUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -70,6 +70,7 @@ public class NetworkUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InetAddress intToInetAddress(int hostAddress) {
         byte[] addressBytes = { (byte)(0xff & hostAddress),
                                 (byte)(0xff & (hostAddress >> 8)),
@@ -83,6 +84,7 @@ public class NetworkUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int inetAddressToInt(InetAddress inetAddr) throws IllegalArgumentException {
         byte [] addr = inetAddr.getAddress();
         if (addr.length != 4) {
@@ -93,6 +95,7 @@ public class NetworkUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int prefixLengthToNetmaskInt(int prefixLength) throws IllegalArgumentException {
         if (prefixLength < 0 || prefixLength > 32) {
             throw new IllegalArgumentException("Invalid prefix length (0 <= prefix <= 32)");
@@ -102,16 +105,19 @@ public class NetworkUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int netmaskIntToPrefixLength(int netmask) {
         return Integer.bitCount(netmask);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InetAddress numericToInetAddress(String addrString) throws IllegalArgumentException {
         return InetAddress.parseNumericAddress(addrString);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InetAddress getNetworkPart(InetAddress address, int prefixLength) {
         if (address == null) {
             throw new RuntimeException("getNetworkPart doesn't accept null address");
@@ -144,6 +150,7 @@ public class NetworkUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InetAddress hexToInet6Address(String addrHexString) throws IllegalArgumentException {
         try {
             return numericToInetAddress(String.format("%s:%s:%s:%s:%s:%s:%s:%s",
@@ -158,6 +165,7 @@ public class NetworkUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] makeStrings(Collection<InetAddress> addrs) {
         String[] result = new String[addrs.size()];
         int i = 0;
@@ -168,6 +176,7 @@ public class NetworkUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String trimV4AddrZeros(String addr) {
         if (addr == null) return null;
         String[] octets = addr.split("\\.");

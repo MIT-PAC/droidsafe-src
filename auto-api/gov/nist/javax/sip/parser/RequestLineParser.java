@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.address.*;
 import java.text.ParseException;
@@ -17,8 +17,8 @@ public class RequestLineParser extends Parser {
     public  RequestLineParser(String requestLine) {
         this.lexer = new Lexer("method_keywordLexer", requestLine);
         addTaint(requestLine.getTaint());
-        // ---------- Original Method ----------
-        //this.lexer = new Lexer("method_keywordLexer", requestLine);
+        
+        
     }
 
     
@@ -27,15 +27,16 @@ public class RequestLineParser extends Parser {
         this.lexer = lexer;
         this.lexer.selectLexer("method_keywordLexer");
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
-        //this.lexer = lexer;
-        //this.lexer.selectLexer("method_keywordLexer");
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.494 -0400", hash_original_method = "3F5CD164E270AAF338C0D4B97DF78E19", hash_generated_method = "515B8D488E98767FFAD2B70072B6F7C5")
     public RequestLine parse() throws ParseException {
-        RequestLine varB4EAC82CA7396A68D541C85D26508E83_1440136424 = null; //Variable for return #1
+        RequestLine varB4EAC82CA7396A68D541C85D26508E83_1440136424 = null; 
         dbg_enter("parse");
         try 
         {
@@ -54,39 +55,40 @@ public class RequestLineParser extends Parser {
             lexer.SPorHT();
             lexer.match('\n');
             varB4EAC82CA7396A68D541C85D26508E83_1440136424 = retval;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1440136424.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1440136424.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1440136424;
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("parse");
-        //try {
-            //RequestLine retval = new RequestLine();
-            //String m = method();
-            //lexer.SPorHT();
-            //retval.setMethod(m);
-            //this.lexer.selectLexer("sip_urlLexer");
-            //URLParser urlParser = new URLParser(this.getLexer());
-            //GenericURI url = urlParser.uriReference(true);
-            //lexer.SPorHT();
-            //retval.setUri(url);
-            //this.lexer.selectLexer("request_lineLexer");
-            //String v = sipVersion();
-            //retval.setSipVersion(v);
-            //lexer.SPorHT();
-            //lexer.match('\n');
-            //return retval;
-        //} finally {
-            //if (debug)
-                //dbg_leave("parse");
-        //}
+        
+        
+            
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void main(String args[]) throws ParseException {
         String requestLines[] = {
                 "REGISTER sip:192.168.0.68 SIP/2.0\n",

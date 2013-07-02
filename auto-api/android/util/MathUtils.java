@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Random;
 
@@ -13,7 +13,7 @@ public final class MathUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.456 -0400", hash_original_method = "36B7D6354601651DD814431AA0DFA6C7", hash_generated_method = "DED0A2D08FDE4310446B2635C520DAE6")
     private  MathUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,16 +32,19 @@ public final class MathUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float log(float a) {
         return (float) Math.log(a);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float exp(float a) {
         return (float) Math.exp(a);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float pow(float a, float b) {
         return (float) Math.pow(a, b);
     }
@@ -87,6 +90,7 @@ public final class MathUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float dist(float x1, float y1, float x2, float y2) {
         final float x = (x2 - x1);
         final float y = (y2 - y1);
@@ -94,6 +98,7 @@ public final class MathUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float dist(float x1, float y1, float z1, float x2, float y2, float z2) {
         final float x = (x2 - x1);
         final float y = (y2 - y1);
@@ -102,11 +107,13 @@ public final class MathUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float mag(float a, float b) {
         return (float) Math.sqrt(a * a + b * b);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float mag(float a, float b, float c) {
         return (float) Math.sqrt(a * a + b * b + c * c);
     }
@@ -127,26 +134,31 @@ public final class MathUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float acos(float value) {
         return (float) Math.acos(value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float asin(float value) {
         return (float) Math.asin(value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float atan(float value) {
         return (float) Math.atan(value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float atan2(float a, float b) {
         return (float) Math.atan2(a, b);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float tan(float angle) {
         return (float) Math.tan(angle);
     }
@@ -167,28 +179,33 @@ public final class MathUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int random(int howbig) {
         return (int) (sRandom.nextFloat() * howbig);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int random(int howsmall, int howbig) {
         if (howsmall >= howbig) return howsmall;
         return (int) (sRandom.nextFloat() * (howbig - howsmall) + howsmall);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float random(float howbig) {
         return sRandom.nextFloat() * howbig;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float random(float howsmall, float howbig) {
         if (howsmall >= howbig) return howsmall;
         return sRandom.nextFloat() * (howbig - howsmall) + howsmall;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void randomSeed(long seed) {
         sRandom.setSeed(seed);
     }

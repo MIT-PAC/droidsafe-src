@@ -1,11 +1,11 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 abstract class LongArrayBuffer extends LongBuffer {
@@ -20,7 +20,7 @@ abstract class LongArrayBuffer extends LongBuffer {
       LongArrayBuffer(long[] array) {
         this(array.length, array, 0);
         addTaint(array[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,7 +28,7 @@ abstract class LongArrayBuffer extends LongBuffer {
       LongArrayBuffer(int capacity) {
         this(capacity, new long[capacity], 0);
         addTaint(capacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,9 +38,9 @@ abstract class LongArrayBuffer extends LongBuffer {
         this.backingArray = backingArray;
         this.offset = offset;
         addTaint(capacity);
-        // ---------- Original Method ----------
-        //this.backingArray = backingArray;
-        //this.offset = offset;
+        
+        
+        
     }
 
     
@@ -49,14 +49,14 @@ abstract class LongArrayBuffer extends LongBuffer {
     public final long get() {
         {
             if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
-        } //End block
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1929364750 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1929364750;
-        // ---------- Original Method ----------
-        //if (position == limit) {
-            //throw new BufferUnderflowException();
-        //}
-        //return backingArray[offset + position++];
+        
+        
+            
+        
+        
     }
 
     
@@ -67,37 +67,37 @@ abstract class LongArrayBuffer extends LongBuffer {
         addTaint(index);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_392858037 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_392858037;
-        // ---------- Original Method ----------
-        //checkIndex(index);
-        //return backingArray[offset + index];
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.605 -0400", hash_original_method = "E85CBDF91AD45B8A94165F7B57575CBE", hash_generated_method = "67F2A09A757FCCE3DA35305EA69F9F4D")
     @Override
     public final LongBuffer get(long[] dst, int dstOffset, int longCount) {
-        LongBuffer varB4EAC82CA7396A68D541C85D26508E83_1020087626 = null; //Variable for return #1
+        LongBuffer varB4EAC82CA7396A68D541C85D26508E83_1020087626 = null; 
         {
             boolean var689C4001D724360528D46748438966DA_2013171220 = (longCount > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         System.arraycopy(backingArray, offset + position, dst, dstOffset, longCount);
         position += longCount;
         varB4EAC82CA7396A68D541C85D26508E83_1020087626 = this;
         addTaint(dst[0]);
         addTaint(dstOffset);
         addTaint(longCount);
-        varB4EAC82CA7396A68D541C85D26508E83_1020087626.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1020087626.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1020087626;
-        // ---------- Original Method ----------
-        //if (longCount > remaining()) {
-            //throw new BufferUnderflowException();
-        //}
-        //System.arraycopy(backingArray, offset + position, dst, dstOffset, longCount);
-        //position += longCount;
-        //return this;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -106,20 +106,20 @@ abstract class LongArrayBuffer extends LongBuffer {
     public final boolean isDirect() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_789088406 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_789088406;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.609 -0400", hash_original_method = "A08DEC6C777D2C1D29E23F2F39FEA4AD", hash_generated_method = "9DB72DE7A45857B7D812097511AE7BB9")
     @Override
     public final ByteOrder order() {
-        ByteOrder varB4EAC82CA7396A68D541C85D26508E83_33163649 = null; //Variable for return #1
+        ByteOrder varB4EAC82CA7396A68D541C85D26508E83_33163649 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_33163649 = ByteOrder.nativeOrder();
-        varB4EAC82CA7396A68D541C85D26508E83_33163649.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_33163649.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_33163649;
-        // ---------- Original Method ----------
-        //return ByteOrder.nativeOrder();
+        
+        
     }
 
     

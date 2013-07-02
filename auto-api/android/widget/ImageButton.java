@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.Handler;
@@ -21,7 +21,7 @@ public class ImageButton extends ImageView {
     public  ImageButton(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,7 +30,7 @@ public class ImageButton extends ImageView {
         this(context, attrs, com.android.internal.R.attr.imageButtonStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -41,20 +41,20 @@ public class ImageButton extends ImageView {
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        //setFocusable(true);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.681 -0400", hash_original_method = "DC47911C20E58BC47F643D76AAAF3E73", hash_generated_method = "85ED27F50732C9648A8ACF36E9C27CA7")
     @Override
     protected boolean onSetAlpha(int alpha) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(alpha);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_235237493 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_235237493;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     

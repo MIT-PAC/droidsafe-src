@@ -1,11 +1,11 @@
 package javax.crypto.spec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.spec.AlgorithmParameterSpec;
 
@@ -21,30 +21,31 @@ public class PBEParameterSpec implements AlgorithmParameterSpec {
     public  PBEParameterSpec(byte[] salt, int iterationCount) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("salt == null");
-        } //End block
+        } 
         this.salt = new byte[salt.length];
         System.arraycopy(salt, 0, this.salt, 0, salt.length);
         this.iterationCount = iterationCount;
-        // ---------- Original Method ----------
-        //if (salt == null) {
-            //throw new NullPointerException("salt == null");
-        //}
-        //this.salt = new byte[salt.length];
-        //System.arraycopy(salt, 0, this.salt, 0, salt.length);
-        //this.iterationCount = iterationCount;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.289 -0400", hash_original_method = "DE7716C6003A9CBA24C4421C19D5F40E", hash_generated_method = "F1252DA12D6E85E4EE620EA1775080A8")
     public byte[] getSalt() {
         byte[] result = new byte[salt.length];
         System.arraycopy(salt, 0, result, 0, salt.length);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_95035304 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_95035304;
-        // ---------- Original Method ----------
-        //byte[] result = new byte[salt.length];
-        //System.arraycopy(salt, 0, result, 0, salt.length);
-        //return result;
+        
+        
+        
+        
     }
 
     
@@ -52,8 +53,8 @@ public class PBEParameterSpec implements AlgorithmParameterSpec {
     public int getIterationCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806908759 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806908759;
-        // ---------- Original Method ----------
-        //return iterationCount;
+        
+        
     }
 
     

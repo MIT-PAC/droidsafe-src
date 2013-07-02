@@ -1,11 +1,11 @@
 package com.android.internal.telephony.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.Handler;
@@ -21,7 +21,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
       SipCommandInterface(Context context) {
         super(context);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,14 +31,14 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(h.getTaint());
         addTaint(what);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.028 -0400", hash_original_method = "4FF9B345C0ACD80EE0490BCC729EF93D", hash_generated_method = "F24701863F5458CA56139F025132F419")
     public void getIccCardStatus(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -46,7 +46,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void supplyIccPin(String pin, Message result) {
         addTaint(pin.getTaint());
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -55,7 +55,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(puk.getTaint());
         addTaint(newPin.getTaint());
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -63,7 +63,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void supplyIccPin2(String pin, Message result) {
         addTaint(pin.getTaint());
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -72,7 +72,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(puk.getTaint());
         addTaint(newPin2.getTaint());
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -81,7 +81,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(oldPin.getTaint());
         addTaint(newPin.getTaint());
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -90,7 +90,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(oldPin2.getTaint());
         addTaint(newPin2.getTaint());
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -101,7 +101,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(oldPwd.getTaint());
         addTaint(newPwd.getTaint());
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -109,14 +109,14 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void supplyNetworkDepersonalization(String netpin, Message result) {
         addTaint(netpin.getTaint());
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.030 -0400", hash_original_method = "0065DCF0A6FA35BBD3B5D6CD7BC5264B", hash_generated_method = "A9FD7129926168194F8C81738F73B523")
     public void getCurrentCalls(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -124,14 +124,14 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     @Deprecated
     public void getPDPContextList(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.031 -0400", hash_original_method = "327D3ACFB77EFA2CD859CBEFD5183E40", hash_generated_method = "6B4B0DFBD4A658CE1D78BA583D8B89B4")
     public void getDataCallList(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -140,7 +140,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(address.getTaint());
         addTaint(clirMode);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -151,28 +151,28 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(clirMode);
         addTaint(uusInfo.getTaint());
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.031 -0400", hash_original_method = "1348EC8F8E592B792A235EF8BDA1A728", hash_generated_method = "1BC3CF6348D02C0F570A871C8BBFFA45")
     public void getIMSI(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.032 -0400", hash_original_method = "9CFFA6883C5B8E59E96AC7EBA98411BF", hash_generated_method = "4A2BAF0F00DC24A2AA69BBF374CCA3DD")
     public void getIMEI(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.032 -0400", hash_original_method = "16825ADE4AEE806A281B5593AC7D63E8", hash_generated_method = "3BB7929D47817BC305092EC99E5B8635")
     public void getIMEISV(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -180,35 +180,35 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void hangupConnection(int gsmIndex, Message result) {
         addTaint(gsmIndex);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.033 -0400", hash_original_method = "24CF4908E9C6B567B8992DC13D635451", hash_generated_method = "9CF931A7984CF9D3DFD49C044AD9E861")
     public void hangupWaitingOrBackground(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.033 -0400", hash_original_method = "B6BFA6F3A6A105C9D4B6C1E698A66938", hash_generated_method = "EB5FF15763B981051CDE84C45FC37FDD")
     public void hangupForegroundResumeBackground(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.033 -0400", hash_original_method = "E5CA3DEE020231D0A58CD27DCC9A3298", hash_generated_method = "2EB6B5FB9DD529E12232CA700C580183")
     public void switchWaitingOrHoldingAndActive(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.033 -0400", hash_original_method = "1DEC6D6ED7076F247D9C03337753D9B5", hash_generated_method = "00621E9ACCB42DF5B85E6254C9122846")
     public void conference(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -216,14 +216,14 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setPreferredVoicePrivacy(boolean enable, Message result) {
         addTaint(enable);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.034 -0400", hash_original_method = "7AC939257493C8EDA50728ACBE47AB6E", hash_generated_method = "044CDAD52FE5D5F0B5C779E0CE297612")
     public void getPreferredVoicePrivacy(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -231,49 +231,49 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void separateConnection(int gsmIndex, Message result) {
         addTaint(gsmIndex);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.034 -0400", hash_original_method = "5D47CDCEE79D220D19ED199AB41576BB", hash_generated_method = "DFE95CFD54ECEF124528CED319D5697E")
     public void acceptCall(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.034 -0400", hash_original_method = "B0370CE1AC140C2D8FD8DDB138D51178", hash_generated_method = "0FE53FDD0041F1BCA7DF741C14DBE141")
     public void rejectCall(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.035 -0400", hash_original_method = "423F7E66395D67C4DDE50E0CD115AB32", hash_generated_method = "FD83E185257D53510C5E0E9D216695F3")
     public void explicitCallTransfer(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.035 -0400", hash_original_method = "452E3A07FEEB48EC41C26B70B19470A7", hash_generated_method = "682C0B022992F413C4D7A22CF5F801C5")
     public void getLastCallFailCause(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.035 -0400", hash_original_method = "866637DA865C177743D4ACCECF2320D1", hash_generated_method = "335BC2681608A5C56412A2FD0E8D2C2F")
     public void getLastPdpFailCause(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.035 -0400", hash_original_method = "5E09CD605032BAD12B5071D1198B480C", hash_generated_method = "5010C1BF40DDE1230AD9415958DAD666")
     public void getLastDataCallFailCause(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -281,42 +281,42 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setMute(boolean enableMute, Message response) {
         addTaint(enableMute);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.036 -0400", hash_original_method = "18914EB1B73273C70F170F17B7ABD9F7", hash_generated_method = "61548E4FA53247DA0988874CDE5990B2")
     public void getMute(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.036 -0400", hash_original_method = "2E5F50302D75BF22D071DDE735D84DDB", hash_generated_method = "5BCBB88C39ABDACE5025F557438913AA")
     public void getSignalStrength(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.036 -0400", hash_original_method = "E48AE2BAAEA38C3013B3567C40E7D695", hash_generated_method = "1DD98F561D2F66B1206EACD26CAB0AA4")
     public void getVoiceRegistrationState(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.036 -0400", hash_original_method = "3D40BE498077599AA87C5D11079E9906", hash_generated_method = "53BCA2DDD180EE45B506353788C026C0")
     public void getDataRegistrationState(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.037 -0400", hash_original_method = "0ABE511CA2DC2D12C96958F57DAAD741", hash_generated_method = "27B44CA05C8A23318034154BD171C433")
     public void getOperator(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -324,7 +324,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void sendDtmf(char c, Message result) {
         addTaint(c);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -332,14 +332,14 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void startDtmf(char c, Message result) {
         addTaint(c);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.037 -0400", hash_original_method = "CE80A91715BFB5541CB44AB81DDE6D0F", hash_generated_method = "C6E4F2B30088D852AF2F167D7624A826")
     public void stopDtmf(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -350,7 +350,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(on);
         addTaint(off);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -359,7 +359,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(smscPDU.getTaint());
         addTaint(pdu.getTaint());
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -367,7 +367,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void sendCdmaSms(byte[] pdu, Message result) {
         addTaint(pdu[0]);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -375,7 +375,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void deleteSmsOnSim(int index, Message response) {
         addTaint(index);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -383,7 +383,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void deleteSmsOnRuim(int index, Message response) {
         addTaint(index);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -393,7 +393,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(smsc.getTaint());
         addTaint(pdu.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -402,7 +402,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(status);
         addTaint(pdu.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -418,7 +418,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(authType.getTaint());
         addTaint(protocol.getTaint());
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -427,7 +427,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(cid);
         addTaint(reason);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -435,7 +435,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setRadioPower(boolean on, Message result) {
         addTaint(on);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -443,7 +443,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setSuppServiceNotifications(boolean enable, Message result) {
         addTaint(enable);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -453,7 +453,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(success);
         addTaint(cause);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -463,7 +463,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(success);
         addTaint(cause);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -473,7 +473,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(success);
         addTaint(ackPdu.getTaint());
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -489,14 +489,14 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(data.getTaint());
         addTaint(pin2.getTaint());
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.044 -0400", hash_original_method = "97A78B1A23DB91BDC82BEB1858BCD95E", hash_generated_method = "DEFE694FDA9832A3244B7548A67F8BEA")
     public void getCLIR(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -504,7 +504,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setCLIR(int clirMode, Message result) {
         addTaint(clirMode);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -512,7 +512,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void queryCallWaiting(int serviceClass, Message response) {
         addTaint(serviceClass);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -522,14 +522,14 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(enable);
         addTaint(serviceClass);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.045 -0400", hash_original_method = "958A118B1D6DEAAC3F2CD7A0471E8E5A", hash_generated_method = "7A56B99868460FC0089A1CFE78EAEABC")
     public void setNetworkSelectionModeAutomatic(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -538,21 +538,21 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
             String operatorNumeric, Message response) {
         addTaint(operatorNumeric.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.046 -0400", hash_original_method = "37E66FF0A3AEDBEF007D30C9E2FF98CD", hash_generated_method = "CE677D930885CD53D9A4B104247DF930")
     public void getNetworkSelectionMode(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.046 -0400", hash_original_method = "F3D2B6350F8E1C278AFA7ECA9187C8D7", hash_generated_method = "8DE8805B27756ABC38F4FA4C3F7580C2")
     public void getAvailableNetworks(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -565,7 +565,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(number.getTaint());
         addTaint(timeSeconds);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -576,21 +576,21 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(serviceClass);
         addTaint(number.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.047 -0400", hash_original_method = "1E5E60364AF2DDDA55FE9584B8EF0B2C", hash_generated_method = "9147641EFFDAF93914A6EABC0CFE6AB9")
     public void queryCLIP(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.048 -0400", hash_original_method = "EE7857BCB5A1D2385833186B6353BDF6", hash_generated_method = "8EF8B502E5543E4FA6B8D0E9B9B758FD")
     public void getBasebandVersion(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -602,7 +602,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(password.getTaint());
         addTaint(serviceClass);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -615,7 +615,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(serviceClass);
         addTaint(appId.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -628,7 +628,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(password.getTaint());
         addTaint(serviceClass);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -642,7 +642,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(serviceClass);
         addTaint(appId.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -650,21 +650,21 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void sendUSSD(String ussdString, Message response) {
         addTaint(ussdString.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.050 -0400", hash_original_method = "087B5572C84FB61528C8D96F1C079352", hash_generated_method = "236723AE7FCF2BF8A022AB9F84BA8CF8")
     public void cancelPendingUssd(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.051 -0400", hash_original_method = "B603C96410E7BFF356539653D85D8A4B", hash_generated_method = "48880F5B99EA0990FA58F3834AFA969F")
     public void resetRadio(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -672,7 +672,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void invokeOemRilRequestRaw(byte[] data, Message response) {
         addTaint(data[0]);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -680,7 +680,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void invokeOemRilRequestStrings(String[] strings, Message response) {
         addTaint(strings[0].getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -688,14 +688,14 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setBandMode(int bandMode, Message response) {
         addTaint(bandMode);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.052 -0400", hash_original_method = "CDBADCA8574456832760B996C8943606", hash_generated_method = "9E905752474D54F07494DE0266882C50")
     public void queryAvailableBandMode(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -703,7 +703,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void sendTerminalResponse(String contents, Message response) {
         addTaint(contents.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -711,7 +711,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void sendEnvelope(String contents, Message response) {
         addTaint(contents.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -719,7 +719,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void sendEnvelopeWithStatus(String contents, Message response) {
         addTaint(contents.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -728,7 +728,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
             boolean accept, Message response) {
         addTaint(accept);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -736,21 +736,21 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setPreferredNetworkType(int networkType , Message response) {
         addTaint(networkType);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.053 -0400", hash_original_method = "C86073EB20CA48BDFFC81AAA868A3BB1", hash_generated_method = "1AE3884B7769F676D97B43ED8992EB06")
     public void getPreferredNetworkType(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.054 -0400", hash_original_method = "1E1F359D4473F2441E02E8FE890DEF1C", hash_generated_method = "803A54BA31E9F8CEE7211DF5B414A74F")
     public void getNeighboringCids(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -758,14 +758,14 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setLocationUpdates(boolean enable, Message response) {
         addTaint(enable);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.054 -0400", hash_original_method = "341ECD479C88F08657B8FDC222C9F79A", hash_generated_method = "E69DF1715AEE0C76AF6DD5DA6BDA2970")
     public void getSmscAddress(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -773,7 +773,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setSmscAddress(String address, Message result) {
         addTaint(address.getTaint());
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -781,14 +781,14 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void reportSmsMemoryStatus(boolean available, Message result) {
         addTaint(available);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.055 -0400", hash_original_method = "F7AB9C173D1A57BFEBFB44A47237DF7D", hash_generated_method = "9B2A5E8BC9430E71FAC3D943F3EDA078")
     public void reportStkServiceIsRunning(Message result) {
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -796,22 +796,23 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     @Override
     public void getCdmaSubscriptionSource(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.055 -0400", hash_original_method = "4329D3CD35E915BD99C5B818B449ACA1", hash_generated_method = "0F983DDFECA339A2571F58256E842EC7")
     public void getGsmBroadcastConfig(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.056 -0400", hash_original_method = "BEC32E28BD6A6EC85956F36B9D44924D", hash_generated_method = "CCE6EDDD9797C9D5B693C28D767C0D86")
     public void setGsmBroadcastConfig(SmsBroadcastConfigInfo[] config, Message response) {
         addTaint(config[0].getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -819,35 +820,35 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setGsmBroadcastActivation(boolean activate, Message response) {
         addTaint(activate);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.056 -0400", hash_original_method = "BB255671D9D9AE82C00FD12FF12E7590", hash_generated_method = "DB24117E6DE10F13EFAC1A8522F70166")
     public void getDeviceIdentity(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.056 -0400", hash_original_method = "A28D6B43032903DAFA850C3B9E02D39E", hash_generated_method = "F4357765C51371751C336814DDF5280D")
     public void getCDMASubscription(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.056 -0400", hash_original_method = "6A64EDF04D6CCF6DA11C17A9004CF963", hash_generated_method = "A6502C086B19911110474955EBB8B371")
     public void setPhoneType(int phoneType) {
         addTaint(phoneType);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.057 -0400", hash_original_method = "A9CEBF170D0F656D33BCE6259BBB358F", hash_generated_method = "23F0FDDC3F629DFEEBDB3B08BA87060C")
     public void queryCdmaRoamingPreference(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -855,7 +856,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setCdmaRoamingPreference(int cdmaRoamingType, Message response) {
         addTaint(cdmaRoamingType);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -863,14 +864,14 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setCdmaSubscriptionSource(int cdmaSubscription , Message response) {
         addTaint(cdmaSubscription);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.057 -0400", hash_original_method = "DC6F83E2EE7B0408161F523478208FCE", hash_generated_method = "E756AE3736151DA11240B89608D0CA53")
     public void queryTTYMode(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -878,7 +879,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setTTYMode(int ttyMode, Message response) {
         addTaint(ttyMode);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -886,14 +887,14 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void sendCDMAFeatureCode(String FeatureCode, Message response) {
         addTaint(FeatureCode.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.058 -0400", hash_original_method = "DCBE6B932ED9844344E5753E79DB999C", hash_generated_method = "58AC89E2B35F1C53FBB37DBB95FBFBCF")
     public void getCdmaBroadcastConfig(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -901,7 +902,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setCdmaBroadcastConfig(int[] configValuesArray, Message response) {
         addTaint(configValuesArray[0]);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -909,14 +910,14 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void setCdmaBroadcastActivation(boolean activate, Message response) {
         addTaint(activate);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.058 -0400", hash_original_method = "B73B7043BB86BD20367E2BA4C1F7579D", hash_generated_method = "F59E0E4F5F3C654DF2D57C3B4CF2BC39")
     public void exitEmergencyCallbackMode(Message response) {
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -926,7 +927,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(pin.getTaint());
         addTaint(aid.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -937,7 +938,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(newPin.getTaint());
         addTaint(aid.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -947,7 +948,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(pin2.getTaint());
         addTaint(aid.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -958,7 +959,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(newPin2.getTaint());
         addTaint(aid.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -969,7 +970,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(newPin.getTaint());
         addTaint(aidPtr.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -981,7 +982,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
         addTaint(newPin2.getTaint());
         addTaint(aidPtr.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -989,7 +990,7 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void requestIsimAuthentication(String nonce, Message response) {
         addTaint(nonce.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

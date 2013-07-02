@@ -1,11 +1,11 @@
 package com.android.internal.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
@@ -36,7 +36,7 @@ public class ZygoteInit {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.861 -0400", hash_original_method = "428A10BCE5663B72CCCACBE02D386E37", hash_generated_method = "B822867C5762398B852DFCB190C609C4")
     private  ZygoteInit() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -69,6 +69,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void registerZygoteSocket() {
         if (sServerSocket == null) {
             int fileDesc;
@@ -90,6 +91,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static ZygoteConnection acceptCommandPeer() {
         try {
             return new ZygoteConnection(sServerSocket.accept());
@@ -100,6 +102,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void closeServerSocket() {
         try {
             if (sServerSocket != null) {
@@ -112,6 +115,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setEffectiveUser(int uid) {
         int errno = setreuid(ROOT_UID, uid);
         if (errno != 0) {
@@ -120,6 +124,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setEffectiveGroup(int gid) {
         int errno = setregid(ROOT_GID, gid);
         if (errno != 0) {
@@ -128,12 +133,14 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void preload() {
         preloadClasses();
         preloadResources();
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void preloadClasses() {
         final VMRuntime runtime = VMRuntime.getRuntime();
         InputStream is = ZygoteInit.class.getClassLoader().getResourceAsStream(
@@ -203,6 +210,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void preloadResources() {
         final VMRuntime runtime = VMRuntime.getRuntime();
         Debug.startAllocCounting();
@@ -235,6 +243,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int preloadColorStateLists(VMRuntime runtime, TypedArray ar) {
         int N = ar.length();
         for (int i=0; i<N; i++) {
@@ -258,6 +267,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int preloadDrawables(VMRuntime runtime, TypedArray ar) {
         int N = ar.length();
         for (int i=0; i<N; i++) {
@@ -286,6 +296,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void gc() {
         final VMRuntime runtime = VMRuntime.getRuntime();
         System.gc();
@@ -314,6 +325,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean startSystemServer() throws MethodAndArgsCaller, RuntimeException {
         String args[] = {
             "--setuid=1000",
@@ -347,6 +359,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void main(String argv[]) {
         try {
             SamplingProfilerIntegration.start();
@@ -383,6 +396,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void runForkMode() throws MethodAndArgsCaller {
         while (true) {
             ZygoteConnection peer = acceptCommandPeer();
@@ -407,6 +421,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void runSelectLoopMode() throws MethodAndArgsCaller {
         ArrayList<FileDescriptor> fds = new ArrayList();
         ArrayList<ZygoteConnection> peers = new ArrayList();
@@ -514,9 +529,9 @@ public class ZygoteInit {
         public  MethodAndArgsCaller(Method method, String[] args) {
             mMethod = method;
             mArgs = args;
-            // ---------- Original Method ----------
-            //mMethod = method;
-            //mArgs = args;
+            
+            
+            
         }
 
         
@@ -525,36 +540,36 @@ public class ZygoteInit {
             try 
             {
                 mMethod.invoke(null, new Object[] { mArgs });
-            } //End block
+            } 
             catch (IllegalAccessException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
-            } //End block
+            } 
             catch (InvocationTargetException ex)
             {
                 Throwable cause = ex.getCause();
                 {
                     if (DroidSafeAndroidRuntime.control) throw (RuntimeException) cause;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw (Error) cause;
-                } //End block
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //mMethod.invoke(null, new Object[] { mArgs });
-            //} catch (IllegalAccessException ex) {
-                //throw new RuntimeException(ex);
-            //} catch (InvocationTargetException ex) {
-                //Throwable cause = ex.getCause();
-                //if (cause instanceof RuntimeException) {
-                    //throw (RuntimeException) cause;
-                //} else if (cause instanceof Error) {
-                    //throw (Error) cause;
-                //}
-                //throw new RuntimeException(ex);
-            //}
+            } 
+            
+            
+                
+            
+                
+            
+                
+                
+                    
+                
+                    
+                
+                
+            
         }
 
         

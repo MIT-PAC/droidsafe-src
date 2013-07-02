@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.SystemProperties;
 import android.util.Log;
@@ -57,7 +57,7 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
     public  SSLCertificateSocketFactory(int handshakeTimeoutMillis) {
         this(handshakeTimeoutMillis, null, true);
         addTaint(handshakeTimeoutMillis);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -67,23 +67,26 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
         mHandshakeTimeoutMillis = handshakeTimeoutMillis;
         mSessionCache = cache == null ? null : cache.mSessionCache;
         mSecure = secure;
-        // ---------- Original Method ----------
-        //mHandshakeTimeoutMillis = handshakeTimeoutMillis;
-        //mSessionCache = cache == null ? null : cache.mSessionCache;
-        //mSecure = secure;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SocketFactory getDefault(int handshakeTimeoutMillis) {
         return new SSLCertificateSocketFactory(handshakeTimeoutMillis, null, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SSLSocketFactory getDefault(int handshakeTimeoutMillis, SSLSessionCache cache) {
         return new SSLCertificateSocketFactory(handshakeTimeoutMillis, cache, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SSLSocketFactory getInsecure(int handshakeTimeoutMillis, SSLSessionCache cache) {
         return new SSLCertificateSocketFactory(handshakeTimeoutMillis, cache, false);
     }
@@ -114,173 +117,178 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.010 -0400", hash_original_method = "EA6C3E571993A79CC59A9005D7F049FF", hash_generated_method = "6696DB29CD855C021D4C0E4AEE5797F7")
     private SSLSocketFactory makeSocketFactory(
             KeyManager[] keyManagers, TrustManager[] trustManagers) {
-        SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_1721485027 = null; //Variable for return #1
-        SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_2045411136 = null; //Variable for return #2
+        SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_1721485027 = null; 
+        SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_2045411136 = null; 
         try 
         {
             OpenSSLContextImpl sslContext = new OpenSSLContextImpl();
             sslContext.engineInit(keyManagers, trustManagers, null);
             sslContext.engineGetClientSessionContext().setPersistentCache(mSessionCache);
             varB4EAC82CA7396A68D541C85D26508E83_1721485027 = sslContext.engineGetSocketFactory();
-        } //End block
+        } 
         catch (KeyManagementException e)
         {
             Log.wtf(TAG, e);
             varB4EAC82CA7396A68D541C85D26508E83_2045411136 = (SSLSocketFactory) SSLSocketFactory.getDefault();
-        } //End block
+        } 
         addTaint(keyManagers[0].getTaint());
         addTaint(trustManagers[0].getTaint());
-        SSLSocketFactory varA7E53CE21691AB073D9660D615818899_1968473036; //Final return value
+        SSLSocketFactory varA7E53CE21691AB073D9660D615818899_1968473036; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1968473036 = varB4EAC82CA7396A68D541C85D26508E83_1721485027;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1968473036 = varB4EAC82CA7396A68D541C85D26508E83_2045411136;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1968473036.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1968473036.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1968473036;
-        // ---------- Original Method ----------
-        //try {
-            //OpenSSLContextImpl sslContext = new OpenSSLContextImpl();
-            //sslContext.engineInit(keyManagers, trustManagers, null);
-            //sslContext.engineGetClientSessionContext().setPersistentCache(mSessionCache);
-            //return sslContext.engineGetSocketFactory();
-        //} catch (KeyManagementException e) {
-            //Log.wtf(TAG, e);
-            //return (SSLSocketFactory) SSLSocketFactory.getDefault();  
-        //}
+        
+        
+            
+            
+            
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isSslCheckRelaxed() {
         return "1".equals(SystemProperties.get("ro.debuggable")) &&
             "yes".equals(SystemProperties.get("socket.relaxsslcheck"));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.012 -0400", hash_original_method = "293C785CB66F2E86F228FEC441D5947A", hash_generated_method = "B4792B3DDD906679F8415ED7341FEBC9")
     private synchronized SSLSocketFactory getDelegate() {
-        SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_1111392552 = null; //Variable for return #1
-        SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_2016771121 = null; //Variable for return #2
+        SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_1111392552 = null; 
+        SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_2016771121 = null; 
         {
             boolean var275D6A805F1C7FE5A1E02E6A1ECC80AC_1476929224 = (!mSecure || isSslCheckRelaxed());
             {
                 {
                     mInsecureFactory = makeSocketFactory(mKeyManagers, INSECURE_TRUST_MANAGER);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1111392552 = mInsecureFactory;
-            } //End block
+            } 
             {
                 {
                     mSecureFactory = makeSocketFactory(mKeyManagers, mTrustManagers);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_2016771121 = mSecureFactory;
-            } //End block
-        } //End collapsed parenthetic
-        SSLSocketFactory varA7E53CE21691AB073D9660D615818899_1750085137; //Final return value
+            } 
+        } 
+        SSLSocketFactory varA7E53CE21691AB073D9660D615818899_1750085137; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1750085137 = varB4EAC82CA7396A68D541C85D26508E83_1111392552;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1750085137 = varB4EAC82CA7396A68D541C85D26508E83_2016771121;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1750085137.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1750085137.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1750085137;
-        // ---------- Original Method ----------
-        //if (!mSecure || isSslCheckRelaxed()) {
-            //if (mInsecureFactory == null) {
-                //if (mSecure) {
-                    //Log.w(TAG, "*** BYPASSING SSL SECURITY CHECKS (socket.relaxsslcheck=yes) ***");
-                //} else {
-                    //Log.w(TAG, "Bypassing SSL security checks at caller's request");
-                //}
-                //mInsecureFactory = makeSocketFactory(mKeyManagers, INSECURE_TRUST_MANAGER);
-            //}
-            //return mInsecureFactory;
-        //} else {
-            //if (mSecureFactory == null) {
-                //mSecureFactory = makeSocketFactory(mKeyManagers, mTrustManagers);
-            //}
-            //return mSecureFactory;
-        //}
+        
+        
+            
+                
+                    
+                
+                    
+                
+                
+            
+            
+        
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.012 -0400", hash_original_method = "530A7515F3DC833E4C613AF46D6ECFB7", hash_generated_method = "998FF20F6D3A9FFEA40D588C8CF2D350")
     public void setTrustManagers(TrustManager[] trustManager) {
         mTrustManagers = trustManager;
         mSecureFactory = null;
-        // ---------- Original Method ----------
-        //mTrustManagers = trustManager;
-        //mSecureFactory = null;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.012 -0400", hash_original_method = "C01FA00736C8FD8CD5B4AF14DA0E6BC6", hash_generated_method = "B5237A04FD9BED9F29D5F0DEB5F5A971")
     public void setKeyManagers(KeyManager[] keyManagers) {
         mKeyManagers = keyManagers;
         mSecureFactory = null;
         mInsecureFactory = null;
-        // ---------- Original Method ----------
-        //mKeyManagers = keyManagers;
-        //mSecureFactory = null;
-        //mInsecureFactory = null;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.013 -0400", hash_original_method = "4304AB31317AB234B33A24A3097FC48A", hash_generated_method = "E707050FD6562CCE9D9CF40885EDC233")
     @Override
     public Socket createSocket(Socket k, String host, int port, boolean close) throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1695611960 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1695611960 = null; 
         OpenSSLSocketImpl s = (OpenSSLSocketImpl) getDelegate().createSocket(k, host, port, close);
         s.setHandshakeTimeout(mHandshakeTimeoutMillis);
         {
             verifyHostname(s, host);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1695611960 = s;
         addTaint(k.getTaint());
         addTaint(host.getTaint());
         addTaint(port);
         addTaint(close);
-        varB4EAC82CA7396A68D541C85D26508E83_1695611960.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1695611960.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1695611960;
-        // ---------- Original Method ----------
-        //OpenSSLSocketImpl s = (OpenSSLSocketImpl) getDelegate().createSocket(k, host, port, close);
-        //s.setHandshakeTimeout(mHandshakeTimeoutMillis);
-        //if (mSecure) {
-            //verifyHostname(s, host);
-        //}
-        //return s;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.014 -0400", hash_original_method = "A93A66D768B2246423C7BE25AD8A2DA8", hash_generated_method = "2D2907823180B060CC47408F351F0499")
     @Override
     public Socket createSocket() throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1190345139 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1190345139 = null; 
         OpenSSLSocketImpl s = (OpenSSLSocketImpl) getDelegate().createSocket();
         s.setHandshakeTimeout(mHandshakeTimeoutMillis);
         varB4EAC82CA7396A68D541C85D26508E83_1190345139 = s;
-        varB4EAC82CA7396A68D541C85D26508E83_1190345139.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1190345139.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1190345139;
-        // ---------- Original Method ----------
-        //OpenSSLSocketImpl s = (OpenSSLSocketImpl) getDelegate().createSocket();
-        //s.setHandshakeTimeout(mHandshakeTimeoutMillis);
-        //return s;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.014 -0400", hash_original_method = "B1DE7D9F10AA772C2BD2AA45E50C7AB6", hash_generated_method = "A3EAB3B54948E4A471BBD581C0285DA9")
     @Override
     public Socket createSocket(InetAddress addr, int port, InetAddress localAddr, int localPort) throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1567088312 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1567088312 = null; 
         OpenSSLSocketImpl s = (OpenSSLSocketImpl) getDelegate().createSocket(
                 addr, port, localAddr, localPort);
         s.setHandshakeTimeout(mHandshakeTimeoutMillis);
@@ -289,107 +297,109 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
         addTaint(port);
         addTaint(localAddr.getTaint());
         addTaint(localPort);
-        varB4EAC82CA7396A68D541C85D26508E83_1567088312.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1567088312.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1567088312;
-        // ---------- Original Method ----------
-        //OpenSSLSocketImpl s = (OpenSSLSocketImpl) getDelegate().createSocket(
-                //addr, port, localAddr, localPort);
-        //s.setHandshakeTimeout(mHandshakeTimeoutMillis);
-        //return s;
+        
+        
+                
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.015 -0400", hash_original_method = "FFBF9F2950A9BB08EFE61A5F32F42B11", hash_generated_method = "CAC22F2BAB0A14D1E095CE7B27C20A2A")
     @Override
     public Socket createSocket(InetAddress addr, int port) throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1460264940 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1460264940 = null; 
         OpenSSLSocketImpl s = (OpenSSLSocketImpl) getDelegate().createSocket(addr, port);
         s.setHandshakeTimeout(mHandshakeTimeoutMillis);
         varB4EAC82CA7396A68D541C85D26508E83_1460264940 = s;
         addTaint(addr.getTaint());
         addTaint(port);
-        varB4EAC82CA7396A68D541C85D26508E83_1460264940.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1460264940.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1460264940;
-        // ---------- Original Method ----------
-        //OpenSSLSocketImpl s = (OpenSSLSocketImpl) getDelegate().createSocket(addr, port);
-        //s.setHandshakeTimeout(mHandshakeTimeoutMillis);
-        //return s;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.016 -0400", hash_original_method = "1DBE2FFA1790A1D0791947337B43D86B", hash_generated_method = "99BAD785792FD41CC41AEC5EB5DCD09C")
     @Override
     public Socket createSocket(String host, int port, InetAddress localAddr, int localPort) throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1681376362 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1681376362 = null; 
         OpenSSLSocketImpl s = (OpenSSLSocketImpl) getDelegate().createSocket(
                 host, port, localAddr, localPort);
         s.setHandshakeTimeout(mHandshakeTimeoutMillis);
         {
             verifyHostname(s, host);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1681376362 = s;
         addTaint(host.getTaint());
         addTaint(port);
         addTaint(localAddr.getTaint());
         addTaint(localPort);
-        varB4EAC82CA7396A68D541C85D26508E83_1681376362.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1681376362.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1681376362;
-        // ---------- Original Method ----------
-        //OpenSSLSocketImpl s = (OpenSSLSocketImpl) getDelegate().createSocket(
-                //host, port, localAddr, localPort);
-        //s.setHandshakeTimeout(mHandshakeTimeoutMillis);
-        //if (mSecure) {
-            //verifyHostname(s, host);
-        //}
-        //return s;
+        
+        
+                
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.016 -0400", hash_original_method = "29FB194599A9B20E43B819582316EFA2", hash_generated_method = "0229BE65AFC5EF49F417B0AAFC7F857C")
     @Override
     public Socket createSocket(String host, int port) throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1676925642 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1676925642 = null; 
         OpenSSLSocketImpl s = (OpenSSLSocketImpl) getDelegate().createSocket(host, port);
         s.setHandshakeTimeout(mHandshakeTimeoutMillis);
         {
             verifyHostname(s, host);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1676925642 = s;
         addTaint(host.getTaint());
         addTaint(port);
-        varB4EAC82CA7396A68D541C85D26508E83_1676925642.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1676925642.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1676925642;
-        // ---------- Original Method ----------
-        //OpenSSLSocketImpl s = (OpenSSLSocketImpl) getDelegate().createSocket(host, port);
-        //s.setHandshakeTimeout(mHandshakeTimeoutMillis);
-        //if (mSecure) {
-            //verifyHostname(s, host);
-        //}
-        //return s;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.017 -0400", hash_original_method = "6359CF219DCC414C7F8837CF1055EDC0", hash_generated_method = "00385504C02B8C09BEF0D9381D00E319")
     @Override
     public String[] getDefaultCipherSuites() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1070360241 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1070360241 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1070360241 = getDelegate().getSupportedCipherSuites();
-        varB4EAC82CA7396A68D541C85D26508E83_1070360241.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1070360241.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1070360241;
-        // ---------- Original Method ----------
-        //return getDelegate().getSupportedCipherSuites();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.017 -0400", hash_original_method = "51E2A3335139F25255D5BC1DBCD2892E", hash_generated_method = "FA0DE0AED486CA10F333E559A8276530")
     @Override
     public String[] getSupportedCipherSuites() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_845333477 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_845333477 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_845333477 = getDelegate().getSupportedCipherSuites();
-        varB4EAC82CA7396A68D541C85D26508E83_845333477.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_845333477.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_845333477;
-        // ---------- Original Method ----------
-        //return getDelegate().getSupportedCipherSuites();
+        
+        
     }
 
     
@@ -408,13 +418,13 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.018 -0400", hash_original_field = "6343101D0F76EABC0D4977BB28AE6A22", hash_generated_field = "381FF51A80ACF1B95AF4D1EAD812AEC8")
 
     private static final HostnameVerifier HOSTNAME_VERIFIER = HttpsURLConnection.getDefaultHostnameVerifier();
-    // orphaned legacy method
+    
     public void checkServerTrusted(X509Certificate[] certs, String authType) { }
     
-    // orphaned legacy method
+    
     public void checkClientTrusted(X509Certificate[] certs, String authType) { }
     
-    // orphaned legacy method
+    
     public X509Certificate[] getAcceptedIssuers() { return null; }
     
 }

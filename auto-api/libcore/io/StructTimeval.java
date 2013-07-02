@@ -1,11 +1,11 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class StructTimeval {
@@ -20,12 +20,13 @@ public final class StructTimeval {
     private  StructTimeval(long tv_sec, long tv_usec) {
         this.tv_sec = tv_sec;
         this.tv_usec = tv_usec;
-        // ---------- Original Method ----------
-        //this.tv_sec = tv_sec;
-        //this.tv_usec = tv_usec;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static StructTimeval fromMillis(long millis) {
         long tv_sec = millis / 1000;
         long tv_usec = (millis - (tv_sec * 1000)) * 1000;
@@ -37,20 +38,21 @@ public final class StructTimeval {
     public long toMillis() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1426884787 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1426884787;
-        // ---------- Original Method ----------
-        //return (tv_sec * 1000) + (tv_usec / 1000);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.511 -0400", hash_original_method = "0C66DEC6052711C5671EFCEF17FE1D94", hash_generated_method = "274BA490C186393B1238F5B1214EBB91")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2070688844 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2070688844 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2070688844 = "StructTimeval[tv_sec=" + tv_sec + ",tv_usec=" + tv_usec + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_2070688844.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2070688844.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2070688844;
-        // ---------- Original Method ----------
-        //return "StructTimeval[tv_sec=" + tv_sec + ",tv_usec=" + tv_usec + "]";
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package com.android.internal.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class CharSequences {
@@ -13,7 +13,7 @@ public class CharSequences {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.644 -0400", hash_original_method = "1F7BA79C239DAD6228A2DB1150F5EF80", hash_generated_method = "1F7BA79C239DAD6228A2DB1150F5EF80")
     public CharSequences ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -58,6 +58,7 @@ public class CharSequences {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void validate(int start, int end, int length) {
         if (start < 0) throw new IndexOutOfBoundsException();
         if (end < 0) throw new IndexOutOfBoundsException();
@@ -66,6 +67,7 @@ public class CharSequences {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean equals(CharSequence a, CharSequence b) {
         if (a.length() != b.length()) {
             return false;
@@ -80,6 +82,7 @@ public class CharSequences {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int compareToIgnoreCase(CharSequence me, CharSequence another) {
         int myLen = me.length(), anotherLen = another.length();
         int myPos = 0, anotherPos = 0, result;

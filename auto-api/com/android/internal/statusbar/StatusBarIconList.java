@@ -1,11 +1,11 @@
 package com.android.internal.statusbar;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -21,7 +21,7 @@ public class StatusBarIconList implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.087 -0400", hash_original_method = "AE97EF368FDECF0406590DF857395AB5", hash_generated_method = "3C82B70756425BA4C061A618891AA5A0")
     public  StatusBarIconList() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,8 +29,8 @@ public class StatusBarIconList implements Parcelable {
     public  StatusBarIconList(Parcel in) {
         readFromParcel(in);
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        //readFromParcel(in);
+        
+        
     }
 
     
@@ -40,7 +40,7 @@ public class StatusBarIconList implements Parcelable {
         final int N = in.readInt();
         {
             mIcons = null;
-        } //End block
+        } 
         {
             mIcons = new StatusBarIcon[N];
             {
@@ -50,24 +50,24 @@ public class StatusBarIconList implements Parcelable {
                         boolean varD162EE4369D7CB8E98B458E3838F8A63_1592869494 = (in.readInt() != 0);
                         {
                             mIcons[i] = new StatusBarIcon(in);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //this.mSlots = in.readStringArray();
-        //final int N = in.readInt();
-        //if (N < 0) {
-            //mIcons = null;
-        //} else {
-            //mIcons = new StatusBarIcon[N];
-            //for (int i=0; i<N; i++) {
-                //if (in.readInt() != 0) {
-                    //mIcons[i] = new StatusBarIcon(in);
-                //}
-            //}
-        //}
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+        
+            
+        
+            
+            
+                
+                    
+                
+            
+        
     }
 
     
@@ -76,7 +76,7 @@ public class StatusBarIconList implements Parcelable {
         out.writeStringArray(mSlots);
         {
             out.writeInt(-1);
-        } //End block
+        } 
         {
             final int N = mIcons.length;
             out.writeInt(N);
@@ -86,33 +86,33 @@ public class StatusBarIconList implements Parcelable {
                     StatusBarIcon ic = mIcons[i];
                     {
                         out.writeInt(0);
-                    } //End block
+                    } 
                     {
                         out.writeInt(1);
                         ic.writeToParcel(out, flags);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeStringArray(mSlots);
-        //if (mIcons == null) {
-            //out.writeInt(-1);
-        //} else {
-            //final int N = mIcons.length;
-            //out.writeInt(N);
-            //for (int i=0; i<N; i++) {
-                //StatusBarIcon ic = mIcons[i];
-                //if (ic == null) {
-                    //out.writeInt(0);
-                //} else {
-                    //out.writeInt(1);
-                    //ic.writeToParcel(out, flags);
-                //}
-            //}
-        //}
+        
+        
+        
+            
+        
+            
+            
+            
+                
+                
+                    
+                
+                    
+                    
+                
+            
+        
     }
 
     
@@ -120,8 +120,8 @@ public class StatusBarIconList implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1250380587 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1250380587;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -133,20 +133,21 @@ public class StatusBarIconList implements Parcelable {
             int i = 0;
             {
                 s[i] = slots[i];
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mIcons = new StatusBarIcon[N];
         addTaint(slots[0].getTaint());
-        // ---------- Original Method ----------
-        //final int N = slots.length;
-        //String[] s = mSlots = new String[N];
-        //for (int i=0; i<N; i++) {
-            //s[i] = slots[i];
-        //}
-        //mIcons = new StatusBarIcon[N];
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.089 -0400", hash_original_method = "8024CC157D8FAF0FCD4261460DE3C083", hash_generated_method = "F8A2F24F40F1E334FFDAA3F890B32585")
     public int getSlotIndex(String slot) {
         final int N = mSlots.length;
@@ -155,20 +156,20 @@ public class StatusBarIconList implements Parcelable {
             {
                 {
                     boolean varDA2112855640F5DF68D5231FB240552B_1834400094 = (slot.equals(mSlots[i]));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(slot.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_692733223 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_692733223;
-        // ---------- Original Method ----------
-        //final int N = mSlots.length;
-        //for (int i=0; i<N; i++) {
-            //if (slot.equals(mSlots[i])) {
-                //return i;
-            //}
-        //}
-        //return -1;
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -176,48 +177,49 @@ public class StatusBarIconList implements Parcelable {
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1720134170 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1720134170;
-        // ---------- Original Method ----------
-        //return mSlots.length;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.090 -0400", hash_original_method = "F5C28F866C5BC55B13E5B475658140A5", hash_generated_method = "AC62024623008080371D9E7FBC0FCB36")
     public void setIcon(int index, StatusBarIcon icon) {
         mIcons[index] = icon.clone();
-        // ---------- Original Method ----------
-        //mIcons[index] = icon.clone();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.090 -0400", hash_original_method = "5EB075B9B4A8FCAA3C94C3EC3DFC81DD", hash_generated_method = "84A66CD0BE0474DA3AABDED324FB9352")
     public void removeIcon(int index) {
         mIcons[index] = null;
-        // ---------- Original Method ----------
-        //mIcons[index] = null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.091 -0400", hash_original_method = "28B506564CF04E7E4762309FF5F1124B", hash_generated_method = "F492D242D4F2426E1C808F3305687BDC")
     public String getSlot(int index) {
-        String varB4EAC82CA7396A68D541C85D26508E83_89955962 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_89955962 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_89955962 = mSlots[index];
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_89955962.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_89955962.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_89955962;
-        // ---------- Original Method ----------
-        //return mSlots[index];
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.091 -0400", hash_original_method = "6B1D8C3B652540022F161D426C6FAB9E", hash_generated_method = "1A455A2246BAE3A6E7B389AA809B404C")
     public StatusBarIcon getIcon(int index) {
-        StatusBarIcon varB4EAC82CA7396A68D541C85D26508E83_1284863368 = null; //Variable for return #1
+        StatusBarIcon varB4EAC82CA7396A68D541C85D26508E83_1284863368 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1284863368 = mIcons[index];
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_1284863368.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1284863368.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1284863368;
-        // ---------- Original Method ----------
-        //return mIcons[index];
+        
+        
     }
 
     
@@ -226,27 +228,28 @@ public class StatusBarIconList implements Parcelable {
         int count = 0;
         {
             int i = 0;
-        } //End collapsed parenthetic
+        } 
         addTaint(index);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_939461464 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_939461464;
-        // ---------- Original Method ----------
-        //int count = 0;
-        //for (int i=0; i<index; i++) {
-            //if (mIcons[i] != null) {
-                //count++;
-            //}
-        //}
-        //return count;
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.092 -0400", hash_original_method = "2696800C6093D03F49CA8649D9AB9ADB", hash_generated_method = "43010A6420695787C297B74D461CFE98")
     public void copyFrom(StatusBarIconList that) {
         {
             this.mSlots = null;
             this.mIcons = null;
-        } //End block
+        } 
         {
             final int N = that.mSlots.length;
             this.mSlots = new String[N];
@@ -256,25 +259,26 @@ public class StatusBarIconList implements Parcelable {
                 {
                     this.mSlots[i] = that.mSlots[i];
                     this.mIcons[i] = that.mIcons[i] != null ? that.mIcons[i].clone() : null;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //if (that.mSlots == null) {
-            //this.mSlots = null;
-            //this.mIcons = null;
-        //} else {
-            //final int N = that.mSlots.length;
-            //this.mSlots = new String[N];
-            //this.mIcons = new StatusBarIcon[N];
-            //for (int i=0; i<N; i++) {
-                //this.mSlots[i] = that.mSlots[i];
-                //this.mIcons[i] = that.mIcons[i] != null ? that.mIcons[i].clone() : null;
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+        
+            
+            
+            
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.092 -0400", hash_original_method = "CDB2EE3714C17FCEED2F6D337D2E6DCE", hash_generated_method = "25FCAC181F41877B8AE9B1A9CFA48336")
     public void dump(PrintWriter pw) {
         final int N = mSlots.length;
@@ -283,15 +287,15 @@ public class StatusBarIconList implements Parcelable {
             int i = 0;
             {
                 pw.printf("  %2d: (%s) %s\n", i, mSlots[i], mIcons[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(pw.getTaint());
-        // ---------- Original Method ----------
-        //final int N = mSlots.length;
-        //pw.println("Icon list:");
-        //for (int i=0; i<N; i++) {
-            //pw.printf("  %2d: (%s) %s\n", i, mSlots[i], mIcons[i]);
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -310,13 +314,13 @@ public class StatusBarIconList implements Parcelable {
             return new StatusBarIconList[size];
         }
     };
-    // orphaned legacy method
+    
     public StatusBarIconList createFromParcel(Parcel parcel)
         {
             return new StatusBarIconList(parcel);
         }
     
-    // orphaned legacy method
+    
     public StatusBarIconList[] newArray(int size)
         {
             return new StatusBarIconList[size];

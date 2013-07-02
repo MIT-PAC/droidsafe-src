@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.ByteOrder;
 import java.nio.charset.ModifiedUtf8;
@@ -24,16 +24,17 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
     public  DataOutputStream(OutputStream out) {
         super(out);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.652 -0400", hash_original_method = "85FD61C7B117729DDA17405FA5EDFA09", hash_generated_method = "44E353C81F2F5BBACFB91689B686E7A5")
     @Override
     public void flush() throws IOException {
         super.flush();
-        // ---------- Original Method ----------
-        //super.flush();
+        
+        
     }
 
     
@@ -41,44 +42,46 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
     public final int size() {
         {
             written = Integer.MAX_VALUE;
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_728505029 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_728505029;
-        // ---------- Original Method ----------
-        //if (written < 0) {
-            //written = Integer.MAX_VALUE;
-        //}
-        //return written;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.653 -0400", hash_original_method = "91D255AEAD2ED7375F2242249D64C3A6", hash_generated_method = "74A0825E9A717E8A1D423283AB8624CB")
     @Override
     public void write(byte[] buffer, int offset, int count) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("buffer == null");
-        } //End block
+        } 
         out.write(buffer, offset, count);
         written += count;
         addTaint(buffer[0]);
         addTaint(offset);
-        // ---------- Original Method ----------
-        //if (buffer == null) {
-            //throw new NullPointerException("buffer == null");
-        //}
-        //out.write(buffer, offset, count);
-        //written += count;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.653 -0400", hash_original_method = "480870EC6BADBB21CCFBD983315F3126", hash_generated_method = "60AB6CE8A4E02876865F585A7643BE17")
     @Override
     public void write(int oneByte) throws IOException {
         out.write(oneByte);
         addTaint(oneByte);
-        // ---------- Original Method ----------
-        //out.write(oneByte);
-        //written++;
+        
+        
+        
     }
 
     
@@ -86,9 +89,9 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
     public final void writeBoolean(boolean val) throws IOException {
         out.write(val ? 1 : 0);
         addTaint(val);
-        // ---------- Original Method ----------
-        //out.write(val ? 1 : 0);
-        //written++;
+        
+        
+        
     }
 
     
@@ -96,9 +99,9 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
     public final void writeByte(int val) throws IOException {
         out.write(val);
         addTaint(val);
-        // ---------- Original Method ----------
-        //out.write(val);
-        //written++;
+        
+        
+        
     }
 
     
@@ -106,28 +109,28 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
     public final void writeBytes(String str) throws IOException {
         {
             boolean var3944F5EA93E11499373F86E2F272CA9A_1290996194 = (str.length() == 0);
-        } //End collapsed parenthetic
+        } 
         byte[] bytes = new byte[str.length()];
         {
             int index = 0;
             boolean varA02C1B1CDA6C37943246730579D9D4AA_1527979273 = (index < str.length());
             {
                 bytes[index] = (byte) str.charAt(index);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         out.write(bytes);
         written += bytes.length;
         addTaint(str.getTaint());
-        // ---------- Original Method ----------
-        //if (str.length() == 0) {
-            //return;
-        //}
-        //byte[] bytes = new byte[str.length()];
-        //for (int index = 0; index < str.length(); index++) {
-            //bytes[index] = (byte) str.charAt(index);
-        //}
-        //out.write(bytes);
-        //written += bytes.length;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -135,8 +138,8 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
     public final void writeChar(int val) throws IOException {
         writeShort(val);
         addTaint(val);
-        // ---------- Original Method ----------
-        //writeShort(val);
+        
+        
     }
 
     
@@ -146,10 +149,10 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
         out.write(bytes);
         written += bytes.length;
         addTaint(str.getTaint());
-        // ---------- Original Method ----------
-        //byte[] bytes = str.getBytes("UTF-16BE");
-        //out.write(bytes);
-        //written += bytes.length;
+        
+        
+        
+        
     }
 
     
@@ -157,8 +160,8 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
     public final void writeDouble(double val) throws IOException {
         writeLong(Double.doubleToLongBits(val));
         addTaint(val);
-        // ---------- Original Method ----------
-        //writeLong(Double.doubleToLongBits(val));
+        
+        
     }
 
     
@@ -166,8 +169,8 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
     public final void writeFloat(float val) throws IOException {
         writeInt(Float.floatToIntBits(val));
         addTaint(val);
-        // ---------- Original Method ----------
-        //writeInt(Float.floatToIntBits(val));
+        
+        
     }
 
     
@@ -177,10 +180,10 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
         out.write(scratch, 0, SizeOf.INT);
         written += SizeOf.INT;
         addTaint(val);
-        // ---------- Original Method ----------
-        //Memory.pokeInt(scratch, 0, val, ByteOrder.BIG_ENDIAN);
-        //out.write(scratch, 0, SizeOf.INT);
-        //written += SizeOf.INT;
+        
+        
+        
+        
     }
 
     
@@ -190,10 +193,10 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
         out.write(scratch, 0, SizeOf.LONG);
         written += SizeOf.LONG;
         addTaint(val);
-        // ---------- Original Method ----------
-        //Memory.pokeLong(scratch, 0, val, ByteOrder.BIG_ENDIAN);
-        //out.write(scratch, 0, SizeOf.LONG);
-        //written += SizeOf.LONG;
+        
+        
+        
+        
     }
 
     
@@ -203,10 +206,10 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
         out.write(scratch, 0, SizeOf.SHORT);
         written += SizeOf.SHORT;
         addTaint(val);
-        // ---------- Original Method ----------
-        //Memory.pokeShort(scratch, 0, (short) val, ByteOrder.BIG_ENDIAN);
-        //out.write(scratch, 0, SizeOf.SHORT);
-        //written += SizeOf.SHORT;
+        
+        
+        
+        
     }
 
     
@@ -214,8 +217,8 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
     public final void writeUTF(String str) throws IOException {
         write(ModifiedUtf8.encode(str));
         addTaint(str.getTaint());
-        // ---------- Original Method ----------
-        //write(ModifiedUtf8.encode(str));
+        
+        
     }
 
     

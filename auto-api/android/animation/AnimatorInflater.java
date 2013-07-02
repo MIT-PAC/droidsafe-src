@@ -1,11 +1,11 @@
 package android.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.Resources;
@@ -26,10 +26,11 @@ public class AnimatorInflater {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.954 -0400", hash_original_method = "755519606CB6AC3A2C6456CA27261C19", hash_generated_method = "755519606CB6AC3A2C6456CA27261C19")
     public AnimatorInflater ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static Animator loadAnimator(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {
@@ -53,11 +54,13 @@ public class AnimatorInflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Animator createAnimatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         return createAnimatorFromXml(c, parser, Xml.asAttributeSet(parser), null, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Animator createAnimatorFromXml(Context c, XmlPullParser parser,
             AttributeSet attrs, AnimatorSet parent, int sequenceOrdering) throws XmlPullParserException, IOException {
         Animator anim = null;
@@ -108,6 +111,7 @@ public class AnimatorInflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static ObjectAnimator loadObjectAnimator(Context context, AttributeSet attrs) throws NotFoundException {
         ObjectAnimator anim = new ObjectAnimator();
         loadAnimator(context, attrs, anim);
@@ -120,6 +124,7 @@ public class AnimatorInflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static ValueAnimator loadAnimator(Context context, AttributeSet attrs, ValueAnimator anim) throws NotFoundException {
         TypedArray a =
                 context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.Animator);

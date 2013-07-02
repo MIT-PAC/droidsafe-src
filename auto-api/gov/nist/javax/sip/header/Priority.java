@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.sip.header.*;
 import java.text.ParseException;
@@ -18,44 +18,45 @@ public class Priority extends SIPHeader implements PriorityHeader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.890 -0400", hash_original_method = "33A980E78264A96D694E0BA8D4330749", hash_generated_method = "2DAB64ED9F1F75184A9783CA81667401")
     public  Priority() {
         super(NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.890 -0400", hash_original_method = "275A06F50E7B2077A23380B094FCE956", hash_generated_method = "6E4D272C3F7479DA34081527667BAB25")
     public String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1948976386 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1948976386 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1948976386 = priority;
-        varB4EAC82CA7396A68D541C85D26508E83_1948976386.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1948976386.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1948976386;
-        // ---------- Original Method ----------
-        //return priority;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.891 -0400", hash_original_method = "6DFC1BDF5FFE5EB6A183C3674CCE0974", hash_generated_method = "796E9E52B1AE89494396DAE260708B4A")
     public String getPriority() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1652557494 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1652557494 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1652557494 = priority;
-        varB4EAC82CA7396A68D541C85D26508E83_1652557494.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1652557494.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1652557494;
-        // ---------- Original Method ----------
-        //return priority;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.891 -0400", hash_original_method = "5B52FF98236754242B91AFCB31F1DBDC", hash_generated_method = "460B0D4664E2B38364BA71E6D9DBE70B")
     public void setPriority(String p) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                 "JAIN-SIP Exception,"
                     + "Priority, setPriority(), the priority parameter is null");
         priority = p;
-        // ---------- Original Method ----------
-        //if (p == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception,"
-                    //+ "Priority, setPriority(), the priority parameter is null");
-        //priority = p;
+        
+        
+            
+                
+                    
+        
     }
 
     

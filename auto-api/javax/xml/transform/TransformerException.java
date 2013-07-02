@@ -1,11 +1,11 @@
 package javax.xml.transform;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class TransformerException extends Exception {
@@ -22,9 +22,9 @@ public class TransformerException extends Exception {
         this.containedException = null;
         this.locator            = null;
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //this.containedException = null;
-        //this.locator            = null;
+        
+        
+        
     }
 
     
@@ -33,9 +33,9 @@ public class TransformerException extends Exception {
         super(e.toString());
         this.containedException = e;
         this.locator            = null;
-        // ---------- Original Method ----------
-        //this.containedException = e;
-        //this.locator            = null;
+        
+        
+        
     }
 
     
@@ -47,9 +47,9 @@ public class TransformerException extends Exception {
         this.containedException = e;
         this.locator            = null;
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //this.containedException = e;
-        //this.locator            = null;
+        
+        
+        
     }
 
     
@@ -59,9 +59,9 @@ public class TransformerException extends Exception {
         this.containedException = null;
         this.locator            = locator;
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //this.containedException = null;
-        //this.locator            = locator;
+        
+        
+        
     }
 
     
@@ -72,95 +72,97 @@ public class TransformerException extends Exception {
         this.containedException = e;
         this.locator            = locator;
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //this.containedException = e;
-        //this.locator            = locator;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.963 -0400", hash_original_method = "78CCEDF93B9D36FA2F4D6EE8483F521D", hash_generated_method = "33ECC7045678AC73E7DC4B067DE59ACA")
     public SourceLocator getLocator() {
-        SourceLocator varB4EAC82CA7396A68D541C85D26508E83_1909750926 = null; //Variable for return #1
+        SourceLocator varB4EAC82CA7396A68D541C85D26508E83_1909750926 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1909750926 = locator;
-        varB4EAC82CA7396A68D541C85D26508E83_1909750926.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1909750926.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1909750926;
-        // ---------- Original Method ----------
-        //return locator;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.964 -0400", hash_original_method = "2730D26302DDFE02DFC9B94C57BA2229", hash_generated_method = "3A60D6D9C48F9C8CC784DDE0EBAB1BA2")
     public void setLocator(SourceLocator location) {
         locator = location;
-        // ---------- Original Method ----------
-        //locator = location;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.964 -0400", hash_original_method = "4E3501B9804FC98D0826FF297E292112", hash_generated_method = "444BB89EEBBB682E2C3B3D7E6ABB605E")
     public Throwable getException() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_1373795111 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_1373795111 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1373795111 = containedException;
-        varB4EAC82CA7396A68D541C85D26508E83_1373795111.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1373795111.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1373795111;
-        // ---------- Original Method ----------
-        //return containedException;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.964 -0400", hash_original_method = "CFB99AF15EF81FE883309E381BCDFD32", hash_generated_method = "1E8EDD4CC618E02021FC268FDFB036E7")
     public Throwable getCause() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_253156563 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_253156563 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_253156563 = ((containedException == this)
                 ? null
                 : containedException);
-        varB4EAC82CA7396A68D541C85D26508E83_253156563.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_253156563.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_253156563;
-        // ---------- Original Method ----------
-        //return ((containedException == this)
-                //? null
-                //: containedException);
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.965 -0400", hash_original_method = "480EED18E1765067FE991AF0B4A8D2D9", hash_generated_method = "27B3A02FD0A515001E8B6D244C1F1BBD")
     public synchronized Throwable initCause(Throwable cause) {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_299589538 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_299589538 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Can't overwrite cause");
-        } //End block
+        } 
         {
             boolean var974C88151AE5388A12E2F75475C2D5B4_827586782 = (cause == this);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                 "Self-causation not permitted");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.containedException = cause;
         varB4EAC82CA7396A68D541C85D26508E83_299589538 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_299589538.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_299589538.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_299589538;
-        // ---------- Original Method ----------
-        //if (this.containedException != null) {
-            //throw new IllegalStateException("Can't overwrite cause");
-        //}
-        //if (cause == this) {
-            //throw new IllegalArgumentException(
-                //"Self-causation not permitted");
-        //}
-        //this.containedException = cause;
-        //return this;
+        
+        
+            
+        
+        
+            
+                
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.966 -0400", hash_original_method = "5F0314D1FF4AABD6580ED0D63B1DE248", hash_generated_method = "1D4D6E10BE3697848094F47791069CC9")
     public String getMessageAndLocation() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1348509574 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1348509574 = null; 
         StringBuilder sbuffer = new StringBuilder();
         String message = super.getMessage();
         {
             sbuffer.append(message);
-        } //End block
+        } 
         {
             String systemID = locator.getSystemId();
             int line = locator.getLineNumber();
@@ -168,28 +170,29 @@ public class TransformerException extends Exception {
             {
                 sbuffer.append("; SystemID: ");
                 sbuffer.append(systemID);
-            } //End block
+            } 
             {
                 sbuffer.append("; Line#: ");
                 sbuffer.append(line);
-            } //End block
+            } 
             {
                 sbuffer.append("; Column#: ");
                 sbuffer.append(column);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1348509574 = sbuffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1348509574.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1348509574.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1348509574;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.966 -0400", hash_original_method = "066E0A6F600039820661DC1AB443CC5D", hash_generated_method = "C15532D0686B4C98EC71394E63D1F435")
     public String getLocationAsString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1002816948 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1602785078 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1002816948 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1602785078 = null; 
         {
             StringBuilder sbuffer = new StringBuilder();
             String systemID = locator.getSystemId();
@@ -198,61 +201,62 @@ public class TransformerException extends Exception {
             {
                 sbuffer.append("; SystemID: ");
                 sbuffer.append(systemID);
-            } //End block
+            } 
             {
                 sbuffer.append("; Line#: ");
                 sbuffer.append(line);
-            } //End block
+            } 
             {
                 sbuffer.append("; Column#: ");
                 sbuffer.append(column);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1002816948 = sbuffer.toString();
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1602785078 = null;
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_925970245; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_925970245; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_925970245 = varB4EAC82CA7396A68D541C85D26508E83_1002816948;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_925970245 = varB4EAC82CA7396A68D541C85D26508E83_1602785078;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_925970245.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_925970245.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_925970245;
-        // ---------- Original Method ----------
-        //if (null != locator) {
-            //StringBuilder sbuffer  = new StringBuilder();
-            //String       systemID = locator.getSystemId();
-            //int          line     = locator.getLineNumber();
-            //int          column   = locator.getColumnNumber();
-            //if (null != systemID) {
-                //sbuffer.append("; SystemID: ");
-                //sbuffer.append(systemID);
-            //}
-            //if (0 != line) {
-                //sbuffer.append("; Line#: ");
-                //sbuffer.append(line);
-            //}
-            //if (0 != column) {
-                //sbuffer.append("; Column#: ");
-                //sbuffer.append(column);
-            //}
-            //return sbuffer.toString();
-        //} else {
-            //return null;
-        //}
+        
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            
+                
+                
+            
+            
+                
+                
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.967 -0400", hash_original_method = "BFEE5D773C8C1A637BA8549A5548CE5E", hash_generated_method = "5DE43A2AD9D57F579CB99E2DD2DEBB6F")
     public void printStackTrace() {
         printStackTrace(new java.io.PrintWriter(System.err, true));
-        // ---------- Original Method ----------
-        //printStackTrace(new java.io.PrintWriter(System.err, true));
+        
+        
     }
 
     
@@ -260,8 +264,8 @@ public class TransformerException extends Exception {
     public void printStackTrace(java.io.PrintStream s) {
         printStackTrace(new java.io.PrintWriter(s));
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //printStackTrace(new java.io.PrintWriter(s));
+        
+        
     }
 
     
@@ -269,29 +273,29 @@ public class TransformerException extends Exception {
     public void printStackTrace(java.io.PrintWriter s) {
         {
             s = new java.io.PrintWriter(System.err, true);
-        } //End block
+        } 
         try 
         {
             String locInfo = getLocationAsString();
             {
                 s.println(locInfo);
-            } //End block
+            } 
             super.printStackTrace(s);
-        } //End block
+        } 
         catch (Throwable e)
         { }
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //if (s == null) {
-            //s = new java.io.PrintWriter(System.err, true);
-        //}
-        //try {
-            //String locInfo = getLocationAsString();
-            //if (null != locInfo) {
-                //s.println(locInfo);
-            //}
-            //super.printStackTrace(s);
-        //} catch (Throwable e) {}
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     

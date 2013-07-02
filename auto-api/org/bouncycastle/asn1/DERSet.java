@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class DERSet extends ASN1Set {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.691 -0400", hash_original_method = "80B25DE2FCBFBCCF6E0A2A88A3316812", hash_generated_method = "E2F348A362CEF042606CF762BF3B5EB7")
     public  DERSet() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,8 +24,8 @@ public class DERSet extends ASN1Set {
         DEREncodable   obj) {
         this.addObject(obj);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //this.addObject(obj);
+        
+        
     }
 
     
@@ -34,7 +34,7 @@ public class DERSet extends ASN1Set {
         ASN1EncodableVector   v) {
         this(v, true);
         addTaint(v.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -45,16 +45,16 @@ public class DERSet extends ASN1Set {
             int i = 0;
             {
                 this.addObject(a[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.sort();
         addTaint(a[0].getTaint());
-        // ---------- Original Method ----------
-        //for (int i = 0; i != a.length; i++)
-        //{
-            //this.addObject(a[i]);
-        //}
-        //this.sort();
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -67,22 +67,22 @@ public class DERSet extends ASN1Set {
             boolean varC646FCC9A1C4B2837DAC7D6B1995FA10_859689900 = (i != v.size());
             {
                 this.addObject(v.get(i));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             this.sort();
-        } //End block
+        } 
         addTaint(v.getTaint());
         addTaint(needsSorting);
-        // ---------- Original Method ----------
-        //for (int i = 0; i != v.size(); i++)
-        //{
-            //this.addObject(v.get(i));
-        //}
-        //if (needsSorting)
-        //{
-            //this.sort();
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -97,24 +97,24 @@ public class DERSet extends ASN1Set {
             {
                 Object obj = e.nextElement();
                 dOut.writeObject(obj);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         dOut.close();
         byte[] bytes = bOut.toByteArray();
         out.writeEncoded(SET | CONSTRUCTED, bytes);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //ByteArrayOutputStream   bOut = new ByteArrayOutputStream();
-        //DEROutputStream         dOut = new DEROutputStream(bOut);
-        //Enumeration             e = this.getObjects();
-        //while (e.hasMoreElements())
-        //{
-            //Object    obj = e.nextElement();
-            //dOut.writeObject(obj);
-        //}
-        //dOut.close();
-        //byte[]  bytes = bOut.toByteArray();
-        //out.writeEncoded(SET | CONSTRUCTED, bytes);
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     

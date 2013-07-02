@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ComponentName;
 import android.content.ContentResolver;
@@ -63,98 +63,98 @@ final class ApplicationPackageManager extends PackageManager {
                               IPackageManager pm) {
         mContext = context;
         mPM = pm;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mPM = pm;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.481 -0400", hash_original_method = "B0DADC2DBFEC092F753C36E8DEB385A1", hash_generated_method = "BD7241B1894D7940C5B5899F7A5E7385")
     @Override
     public PackageInfo getPackageInfo(String packageName, int flags) throws NameNotFoundException {
-        PackageInfo varB4EAC82CA7396A68D541C85D26508E83_1309188198 = null; //Variable for return #1
+        PackageInfo varB4EAC82CA7396A68D541C85D26508E83_1309188198 = null; 
         try 
         {
             PackageInfo pi = mPM.getPackageInfo(packageName, flags);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1309188198 = pi;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException(packageName);
         addTaint(packageName.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1309188198.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1309188198.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1309188198;
-        // ---------- Original Method ----------
-        //try {
-            //PackageInfo pi = mPM.getPackageInfo(packageName, flags);
-            //if (pi != null) {
-                //return pi;
-            //}
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
-        //throw new NameNotFoundException(packageName);
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.482 -0400", hash_original_method = "C5CDEAB4FF073C2ACB7E7915B56F1D0F", hash_generated_method = "4C8E946F2BF467CFCBB822B270E9C311")
     @Override
     public String[] currentToCanonicalPackageNames(String[] names) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_497464883 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_497464883 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_497464883 = mPM.currentToCanonicalPackageNames(names);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(names[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_497464883.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_497464883.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_497464883;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.currentToCanonicalPackageNames(names);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.484 -0400", hash_original_method = "9BD980F14E9EC05077595EA826722236", hash_generated_method = "72035CFD7061A25C56007FEBDEA46D92")
     @Override
     public String[] canonicalToCurrentPackageNames(String[] names) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1683411653 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1683411653 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1683411653 = mPM.canonicalToCurrentPackageNames(names);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(names[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1683411653.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1683411653.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1683411653;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.canonicalToCurrentPackageNames(names);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.486 -0400", hash_original_method = "A679E3857CF73FF4B9C2EA4F09C7DBB7", hash_generated_method = "5AC91BBF6A67A69FA67BAF31CB72E5DB")
     @Override
     public Intent getLaunchIntentForPackage(String packageName) {
-        Intent varB4EAC82CA7396A68D541C85D26508E83_2021843061 = null; //Variable for return #1
-        Intent varB4EAC82CA7396A68D541C85D26508E83_1507909222 = null; //Variable for return #2
+        Intent varB4EAC82CA7396A68D541C85D26508E83_2021843061 = null; 
+        Intent varB4EAC82CA7396A68D541C85D26508E83_1507909222 = null; 
         Intent intentToResolve = new Intent(Intent.ACTION_MAIN);
         intentToResolve.addCategory(Intent.CATEGORY_INFO);
         intentToResolve.setPackage(packageName);
@@ -166,33 +166,33 @@ final class ApplicationPackageManager extends PackageManager {
                 intentToResolve.addCategory(Intent.CATEGORY_LAUNCHER);
                 intentToResolve.setPackage(packageName);
                 ris = queryIntentActivities(intentToResolve, 0);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varBFFD11AFF4B06D0E1D653A2E50FC1BFF_1700408526 = (ris == null || ris.size() <= 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2021843061 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Intent intent = new Intent(intentToResolve);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.setClassName(ris.get(0).activityInfo.packageName,
                 ris.get(0).activityInfo.name);
         varB4EAC82CA7396A68D541C85D26508E83_1507909222 = intent;
         addTaint(packageName.getTaint());
-        Intent varA7E53CE21691AB073D9660D615818899_1263383625; //Final return value
+        Intent varA7E53CE21691AB073D9660D615818899_1263383625; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1263383625 = varB4EAC82CA7396A68D541C85D26508E83_2021843061;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1263383625 = varB4EAC82CA7396A68D541C85D26508E83_1507909222;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1263383625.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1263383625.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1263383625;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -202,91 +202,91 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             int[] gids = mPM.getPackageGids(packageName);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException(packageName);
         addTaint(packageName.getTaint());
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1718005966 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1718005966;
-        // ---------- Original Method ----------
-        //try {
-            //int[] gids = mPM.getPackageGids(packageName);
-            //if (gids == null || gids.length > 0) {
-                //return gids;
-            //}
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
-        //throw new NameNotFoundException(packageName);
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.488 -0400", hash_original_method = "16E2B9223A8B92626D3604D0E58E2278", hash_generated_method = "235D6D1D3DB7CD731365218439535C11")
     @Override
     public PermissionInfo getPermissionInfo(String name, int flags) throws NameNotFoundException {
-        PermissionInfo varB4EAC82CA7396A68D541C85D26508E83_1992211085 = null; //Variable for return #1
+        PermissionInfo varB4EAC82CA7396A68D541C85D26508E83_1992211085 = null; 
         try 
         {
             PermissionInfo pi = mPM.getPermissionInfo(name, flags);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1992211085 = pi;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException(name);
         addTaint(name.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1992211085.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1992211085.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1992211085;
-        // ---------- Original Method ----------
-        //try {
-            //PermissionInfo pi = mPM.getPermissionInfo(name, flags);
-            //if (pi != null) {
-                //return pi;
-            //}
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
-        //throw new NameNotFoundException(name);
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.489 -0400", hash_original_method = "2283AA5BDEF3F8B3341260BB74FBE8C3", hash_generated_method = "B61C59E6153FCD04549D1DC69D2364FB")
     @Override
     public List<PermissionInfo> queryPermissionsByGroup(String group, int flags) throws NameNotFoundException {
-        List<PermissionInfo> varB4EAC82CA7396A68D541C85D26508E83_906466885 = null; //Variable for return #1
+        List<PermissionInfo> varB4EAC82CA7396A68D541C85D26508E83_906466885 = null; 
         try 
         {
             List<PermissionInfo> pi = mPM.queryPermissionsByGroup(group, flags);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_906466885 = pi;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException(group);
         addTaint(group.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_906466885.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_906466885.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_906466885;
-        // ---------- Original Method ----------
-        //try {
-            //List<PermissionInfo> pi = mPM.queryPermissionsByGroup(group, flags);
-            //if (pi != null) {
-                //return pi;
-            //}
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
-        //throw new NameNotFoundException(group);
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -294,268 +294,268 @@ final class ApplicationPackageManager extends PackageManager {
     @Override
     public PermissionGroupInfo getPermissionGroupInfo(String name,
                                                       int flags) throws NameNotFoundException {
-        PermissionGroupInfo varB4EAC82CA7396A68D541C85D26508E83_314870164 = null; //Variable for return #1
+        PermissionGroupInfo varB4EAC82CA7396A68D541C85D26508E83_314870164 = null; 
         try 
         {
             PermissionGroupInfo pgi = mPM.getPermissionGroupInfo(name, flags);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_314870164 = pgi;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException(name);
         addTaint(name.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_314870164.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_314870164.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_314870164;
-        // ---------- Original Method ----------
-        //try {
-            //PermissionGroupInfo pgi = mPM.getPermissionGroupInfo(name, flags);
-            //if (pgi != null) {
-                //return pgi;
-            //}
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
-        //throw new NameNotFoundException(name);
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.492 -0400", hash_original_method = "DD7F1EBA9089D82A0EEA68FDD3DACC66", hash_generated_method = "A5542289AE4DD70598FC0CC45441E5DE")
     @Override
     public List<PermissionGroupInfo> getAllPermissionGroups(int flags) {
-        List<PermissionGroupInfo> varB4EAC82CA7396A68D541C85D26508E83_453168436 = null; //Variable for return #1
+        List<PermissionGroupInfo> varB4EAC82CA7396A68D541C85D26508E83_453168436 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_453168436 = mPM.getAllPermissionGroups(flags);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_453168436.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_453168436.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_453168436;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.getAllPermissionGroups(flags);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.496 -0400", hash_original_method = "8999420BFE5728B346477621EA154ABF", hash_generated_method = "B96904CEE0F02B72DDBDBE65114E6DA9")
     @Override
     public ApplicationInfo getApplicationInfo(String packageName, int flags) throws NameNotFoundException {
-        ApplicationInfo varB4EAC82CA7396A68D541C85D26508E83_1829910651 = null; //Variable for return #1
+        ApplicationInfo varB4EAC82CA7396A68D541C85D26508E83_1829910651 = null; 
         try 
         {
             ApplicationInfo ai = mPM.getApplicationInfo(packageName, flags);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1829910651 = ai;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException(packageName);
         addTaint(packageName.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1829910651.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1829910651.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1829910651;
-        // ---------- Original Method ----------
-        //try {
-            //ApplicationInfo ai = mPM.getApplicationInfo(packageName, flags);
-            //if (ai != null) {
-                //return ai;
-            //}
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
-        //throw new NameNotFoundException(packageName);
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.497 -0400", hash_original_method = "9B4FC7EA40C0BB7AEEEEEF1D86D28DE8", hash_generated_method = "E6716D56ABC5220C7896BC239CA98FB4")
     @Override
     public ActivityInfo getActivityInfo(ComponentName className, int flags) throws NameNotFoundException {
-        ActivityInfo varB4EAC82CA7396A68D541C85D26508E83_1728102435 = null; //Variable for return #1
+        ActivityInfo varB4EAC82CA7396A68D541C85D26508E83_1728102435 = null; 
         try 
         {
             ActivityInfo ai = mPM.getActivityInfo(className, flags);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1728102435 = ai;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException(className.toString());
         addTaint(className.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1728102435.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1728102435.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1728102435;
-        // ---------- Original Method ----------
-        //try {
-            //ActivityInfo ai = mPM.getActivityInfo(className, flags);
-            //if (ai != null) {
-                //return ai;
-            //}
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
-        //throw new NameNotFoundException(className.toString());
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.499 -0400", hash_original_method = "399255B19735D8EC733B05B14D3B4711", hash_generated_method = "3A458FE94036CAAAED09BB09D9CFFDD6")
     @Override
     public ActivityInfo getReceiverInfo(ComponentName className, int flags) throws NameNotFoundException {
-        ActivityInfo varB4EAC82CA7396A68D541C85D26508E83_631158054 = null; //Variable for return #1
+        ActivityInfo varB4EAC82CA7396A68D541C85D26508E83_631158054 = null; 
         try 
         {
             ActivityInfo ai = mPM.getReceiverInfo(className, flags);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_631158054 = ai;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException(className.toString());
         addTaint(className.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_631158054.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_631158054.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_631158054;
-        // ---------- Original Method ----------
-        //try {
-            //ActivityInfo ai = mPM.getReceiverInfo(className, flags);
-            //if (ai != null) {
-                //return ai;
-            //}
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
-        //throw new NameNotFoundException(className.toString());
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.500 -0400", hash_original_method = "50C1BC4F3995D229FF03E27E05E5BE36", hash_generated_method = "619095B4B9CBAF62C64225C9D41628C0")
     @Override
     public ServiceInfo getServiceInfo(ComponentName className, int flags) throws NameNotFoundException {
-        ServiceInfo varB4EAC82CA7396A68D541C85D26508E83_1619663829 = null; //Variable for return #1
+        ServiceInfo varB4EAC82CA7396A68D541C85D26508E83_1619663829 = null; 
         try 
         {
             ServiceInfo si = mPM.getServiceInfo(className, flags);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1619663829 = si;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException(className.toString());
         addTaint(className.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1619663829.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1619663829.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1619663829;
-        // ---------- Original Method ----------
-        //try {
-            //ServiceInfo si = mPM.getServiceInfo(className, flags);
-            //if (si != null) {
-                //return si;
-            //}
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
-        //throw new NameNotFoundException(className.toString());
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.502 -0400", hash_original_method = "895E4F29ECA72E6836B6F503A466760A", hash_generated_method = "CCDCD5D6D070272E61CAD49D092A8518")
     @Override
     public ProviderInfo getProviderInfo(ComponentName className, int flags) throws NameNotFoundException {
-        ProviderInfo varB4EAC82CA7396A68D541C85D26508E83_1822385958 = null; //Variable for return #1
+        ProviderInfo varB4EAC82CA7396A68D541C85D26508E83_1822385958 = null; 
         try 
         {
             ProviderInfo pi = mPM.getProviderInfo(className, flags);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1822385958 = pi;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException(className.toString());
         addTaint(className.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1822385958.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1822385958.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1822385958;
-        // ---------- Original Method ----------
-        //try {
-            //ProviderInfo pi = mPM.getProviderInfo(className, flags);
-            //if (pi != null) {
-                //return pi;
-            //}
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
-        //throw new NameNotFoundException(className.toString());
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.503 -0400", hash_original_method = "E90BE84736723B0914BD9D43484D5AAD", hash_generated_method = "373DFBB3B49B7A1C435125E3A5C4BC35")
     @Override
     public String[] getSystemSharedLibraryNames() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_772431914 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_772431914 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_772431914 = mPM.getSystemSharedLibraryNames();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_772431914.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_772431914.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_772431914;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.getSystemSharedLibraryNames();
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.506 -0400", hash_original_method = "887B55B734ED0895C5FA7D7CF721CE58", hash_generated_method = "D27A966E36D9119B121BC2A8980ADDAD")
     @Override
     public FeatureInfo[] getSystemAvailableFeatures() {
-        FeatureInfo[] varB4EAC82CA7396A68D541C85D26508E83_1972747763 = null; //Variable for return #1
+        FeatureInfo[] varB4EAC82CA7396A68D541C85D26508E83_1972747763 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1972747763 = mPM.getSystemAvailableFeatures();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1972747763.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1972747763.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1972747763;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.getSystemAvailableFeatures();
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -565,20 +565,20 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             boolean varD59F1F4384BD648C5D21225C24B9C301_1615943330 = (mPM.hasSystemFeature(name));
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(name.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1971683139 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1971683139;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.hasSystemFeature(name);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -588,21 +588,21 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             int varC24F180D5E6F6659DC5818809EF3416E_1257529801 = (mPM.checkPermission(permName, pkgName));
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(permName.getTaint());
         addTaint(pkgName.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1177120986 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1177120986;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.checkPermission(permName, pkgName);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -612,20 +612,20 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             boolean var16B313AE31B83011C28287E1893A6A9C_1096959663 = (mPM.addPermission(info));
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(info.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1938455976 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1938455976;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.addPermission(info);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -635,20 +635,20 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             boolean var3B1BC13408FAB0EED9E6C97798235DF8_1473352193 = (mPM.addPermissionAsync(info));
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(info.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_599422688 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_599422688;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.addPermissionAsync(info);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -658,18 +658,18 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             mPM.removePermission(name);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mPM.removePermission(name);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -679,21 +679,21 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             int var48FD7299CCE20AFA5ACAC7362163506B_1944691293 = (mPM.checkSignatures(pkg1, pkg2));
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(pkg1.getTaint());
         addTaint(pkg2.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2088610296 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2088610296;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.checkSignatures(pkg1, pkg2);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -703,69 +703,69 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             int varCB0D2D55990C866D4BAF222264E4D604_598741481 = (mPM.checkUidSignatures(uid1, uid2));
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(uid1);
         addTaint(uid2);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_523405153 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_523405153;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.checkUidSignatures(uid1, uid2);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.512 -0400", hash_original_method = "A565AD9EB181443BBE8F338808A2E4B9", hash_generated_method = "96B30B1FAE0E95E9D8809E1097D79CF6")
     @Override
     public String[] getPackagesForUid(int uid) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1048626436 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1048626436 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1048626436 = mPM.getPackagesForUid(uid);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(uid);
-        varB4EAC82CA7396A68D541C85D26508E83_1048626436.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1048626436.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1048626436;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.getPackagesForUid(uid);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.513 -0400", hash_original_method = "107797D329CAA491AA1A678294A11B0E", hash_generated_method = "F0D664D9ED5CBFDDBEC4AC9FDA07B480")
     @Override
     public String getNameForUid(int uid) {
-        String varB4EAC82CA7396A68D541C85D26508E83_462459070 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_462459070 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_462459070 = mPM.getNameForUid(uid);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(uid);
-        varB4EAC82CA7396A68D541C85D26508E83_462459070.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_462459070.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_462459070;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.getNameForUid(uid);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -775,25 +775,25 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             int uid = mPM.getUidForSharedUser(sharedUserName);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException("No shared userid for user:"+sharedUserName);
         addTaint(sharedUserName.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1549285120 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1549285120;
-        // ---------- Original Method ----------
-        //try {
-            //int uid = mPM.getUidForSharedUser(sharedUserName);
-            //if(uid != -1) {
-                //return uid;
-            //}
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
-        //throw new NameNotFoundException("No shared userid for user:"+sharedUserName);
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -801,7 +801,7 @@ final class ApplicationPackageManager extends PackageManager {
     @SuppressWarnings("unchecked")
     @Override
     public List<PackageInfo> getInstalledPackages(int flags) {
-        List<PackageInfo> varB4EAC82CA7396A68D541C85D26508E83_1606712304 = null; //Variable for return #1
+        List<PackageInfo> varB4EAC82CA7396A68D541C85D26508E83_1606712304 = null; 
         try 
         {
             final List<PackageInfo> packageInfos = new ArrayList<PackageInfo>();
@@ -813,33 +813,33 @@ final class ApplicationPackageManager extends PackageManager {
                 lastKey = null;
                 slice = mPM.getInstalledPackages(flags, lastKey);
                 lastItem = slice.populateList(packageInfos, PackageInfo.CREATOR);
-            } //End block
+            } 
             {
                 boolean varAF04EF32C9AC89657E6048F98D47E5E7_1293623463 = (!slice.isLastSlice());
-            } //End collapsed parenthetic
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1606712304 = packageInfos;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1606712304.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1606712304.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1606712304;
-        // ---------- Original Method ----------
-        //try {
-            //final List<PackageInfo> packageInfos = new ArrayList<PackageInfo>();
-            //PackageInfo lastItem = null;
-            //ParceledListSlice<PackageInfo> slice;
-            //do {
-                //final String lastKey = lastItem != null ? lastItem.packageName : null;
-                //slice = mPM.getInstalledPackages(flags, lastKey);
-                //lastItem = slice.populateList(packageInfos, PackageInfo.CREATOR);
-            //} while (!slice.isLastSlice());
-            //return packageInfos;
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+            
+            
+            
+                
+                
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -847,7 +847,7 @@ final class ApplicationPackageManager extends PackageManager {
     @SuppressWarnings("unchecked")
     @Override
     public List<ApplicationInfo> getInstalledApplications(int flags) {
-        List<ApplicationInfo> varB4EAC82CA7396A68D541C85D26508E83_1862302677 = null; //Variable for return #1
+        List<ApplicationInfo> varB4EAC82CA7396A68D541C85D26508E83_1862302677 = null; 
         try 
         {
             final List<ApplicationInfo> applicationInfos = new ArrayList<ApplicationInfo>();
@@ -859,64 +859,64 @@ final class ApplicationPackageManager extends PackageManager {
                 lastKey = null;
                 slice = mPM.getInstalledApplications(flags, lastKey);
                 lastItem = slice.populateList(applicationInfos, ApplicationInfo.CREATOR);
-            } //End block
+            } 
             {
                 boolean varAF04EF32C9AC89657E6048F98D47E5E7_1031433605 = (!slice.isLastSlice());
-            } //End collapsed parenthetic
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1862302677 = applicationInfos;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1862302677.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1862302677.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1862302677;
-        // ---------- Original Method ----------
-        //try {
-            //final List<ApplicationInfo> applicationInfos = new ArrayList<ApplicationInfo>();
-            //ApplicationInfo lastItem = null;
-            //ParceledListSlice<ApplicationInfo> slice;
-            //do {
-                //final String lastKey = lastItem != null ? lastItem.packageName : null;
-                //slice = mPM.getInstalledApplications(flags, lastKey);
-                //lastItem = slice.populateList(applicationInfos, ApplicationInfo.CREATOR);
-            //} while (!slice.isLastSlice());
-            //return applicationInfos;
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+            
+            
+            
+                
+                
+                
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.519 -0400", hash_original_method = "0CD7CD39AE65A355BC33F2BA54C4DC37", hash_generated_method = "518BE1589F5FF8D06B10E4B46FF03294")
     @Override
     public ResolveInfo resolveActivity(Intent intent, int flags) {
-        ResolveInfo varB4EAC82CA7396A68D541C85D26508E83_1634200756 = null; //Variable for return #1
+        ResolveInfo varB4EAC82CA7396A68D541C85D26508E83_1634200756 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1634200756 = mPM.resolveIntent(
                 intent,
                 intent.resolveTypeIfNeeded(mContext.getContentResolver()),
                 flags);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(intent.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1634200756.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1634200756.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1634200756;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.resolveIntent(
-                //intent,
-                //intent.resolveTypeIfNeeded(mContext.getContentResolver()),
-                //flags);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+                
+                
+                
+        
+            
+        
     }
 
     
@@ -924,31 +924,31 @@ final class ApplicationPackageManager extends PackageManager {
     @Override
     public List<ResolveInfo> queryIntentActivities(Intent intent,
                                                    int flags) {
-        List<ResolveInfo> varB4EAC82CA7396A68D541C85D26508E83_48379432 = null; //Variable for return #1
+        List<ResolveInfo> varB4EAC82CA7396A68D541C85D26508E83_48379432 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_48379432 = mPM.queryIntentActivities(
                 intent,
                 intent.resolveTypeIfNeeded(mContext.getContentResolver()),
                 flags);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(intent.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_48379432.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_48379432.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_48379432;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.queryIntentActivities(
-                //intent,
-                //intent.resolveTypeIfNeeded(mContext.getContentResolver()),
-                //flags);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+                
+                
+                
+        
+            
+        
     }
 
     
@@ -957,7 +957,7 @@ final class ApplicationPackageManager extends PackageManager {
     public List<ResolveInfo> queryIntentActivityOptions(
         ComponentName caller, Intent[] specifics, Intent intent,
         int flags) {
-        List<ResolveInfo> varB4EAC82CA7396A68D541C85D26508E83_456855351 = null; //Variable for return #1
+        List<ResolveInfo> varB4EAC82CA7396A68D541C85D26508E83_456855351 = null; 
         final ContentResolver resolver = mContext.getContentResolver();
         String[] specificTypes = null;
         {
@@ -971,124 +971,124 @@ final class ApplicationPackageManager extends PackageManager {
                         {
                             {
                                 specificTypes = new String[N];
-                            } //End block
+                            } 
                             specificTypes[i] = t;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_456855351 = mPM.queryIntentActivityOptions(caller, specifics,
                                                   specificTypes, intent, intent.resolveTypeIfNeeded(resolver),
                                                   flags);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(caller.getTaint());
         addTaint(specifics[0].getTaint());
         addTaint(intent.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_456855351.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_456855351.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_456855351;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.525 -0400", hash_original_method = "2B65A8BDA3BE53DC3296D1F5CA76CDFC", hash_generated_method = "53ED056B02EF10BB85FC89A2D1E96E91")
     @Override
     public List<ResolveInfo> queryBroadcastReceivers(Intent intent, int flags) {
-        List<ResolveInfo> varB4EAC82CA7396A68D541C85D26508E83_1695720533 = null; //Variable for return #1
+        List<ResolveInfo> varB4EAC82CA7396A68D541C85D26508E83_1695720533 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1695720533 = mPM.queryIntentReceivers(
                 intent,
                 intent.resolveTypeIfNeeded(mContext.getContentResolver()),
                 flags);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(intent.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1695720533.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1695720533.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1695720533;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.queryIntentReceivers(
-                //intent,
-                //intent.resolveTypeIfNeeded(mContext.getContentResolver()),
-                //flags);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+                
+                
+                
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.527 -0400", hash_original_method = "D7D4C733DB611C9D18D346868F9BD0BD", hash_generated_method = "50D29F214768B6AB6CE955E5CCCFA709")
     @Override
     public ResolveInfo resolveService(Intent intent, int flags) {
-        ResolveInfo varB4EAC82CA7396A68D541C85D26508E83_927416080 = null; //Variable for return #1
+        ResolveInfo varB4EAC82CA7396A68D541C85D26508E83_927416080 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_927416080 = mPM.resolveService(
                 intent,
                 intent.resolveTypeIfNeeded(mContext.getContentResolver()),
                 flags);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(intent.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_927416080.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_927416080.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_927416080;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.resolveService(
-                //intent,
-                //intent.resolveTypeIfNeeded(mContext.getContentResolver()),
-                //flags);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+                
+                
+                
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.528 -0400", hash_original_method = "EEB4EB852740846BAD76CCDE5FC0C613", hash_generated_method = "42463ADAA8B7EEE80F02983DA97381A7")
     @Override
     public List<ResolveInfo> queryIntentServices(Intent intent, int flags) {
-        List<ResolveInfo> varB4EAC82CA7396A68D541C85D26508E83_1571975821 = null; //Variable for return #1
+        List<ResolveInfo> varB4EAC82CA7396A68D541C85D26508E83_1571975821 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1571975821 = mPM.queryIntentServices(
                 intent,
                 intent.resolveTypeIfNeeded(mContext.getContentResolver()),
                 flags);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(intent.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1571975821.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1571975821.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1571975821;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.queryIntentServices(
-                //intent,
-                //intent.resolveTypeIfNeeded(mContext.getContentResolver()),
-                //flags);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+                
+                
+                
+        
+            
+        
     }
 
     
@@ -1096,25 +1096,25 @@ final class ApplicationPackageManager extends PackageManager {
     @Override
     public ProviderInfo resolveContentProvider(String name,
                                                int flags) {
-        ProviderInfo varB4EAC82CA7396A68D541C85D26508E83_1964754316 = null; //Variable for return #1
+        ProviderInfo varB4EAC82CA7396A68D541C85D26508E83_1964754316 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1964754316 = mPM.resolveContentProvider(name, flags);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(name.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1964754316.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1964754316.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1964754316;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.resolveContentProvider(name, flags);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1122,26 +1122,26 @@ final class ApplicationPackageManager extends PackageManager {
     @Override
     public List<ProviderInfo> queryContentProviders(String processName,
                                                     int uid, int flags) {
-        List<ProviderInfo> varB4EAC82CA7396A68D541C85D26508E83_341088414 = null; //Variable for return #1
+        List<ProviderInfo> varB4EAC82CA7396A68D541C85D26508E83_341088414 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_341088414 = mPM.queryContentProviders(processName, uid, flags);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(processName.getTaint());
         addTaint(uid);
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_341088414.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_341088414.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_341088414;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.queryContentProviders(processName, uid, flags);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1149,35 +1149,35 @@ final class ApplicationPackageManager extends PackageManager {
     @Override
     public InstrumentationInfo getInstrumentationInfo(
         ComponentName className, int flags) throws NameNotFoundException {
-        InstrumentationInfo varB4EAC82CA7396A68D541C85D26508E83_36052392 = null; //Variable for return #1
+        InstrumentationInfo varB4EAC82CA7396A68D541C85D26508E83_36052392 = null; 
         try 
         {
             InstrumentationInfo ii = mPM.getInstrumentationInfo(
                 className, flags);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_36052392 = ii;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException(className.toString());
         addTaint(className.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_36052392.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_36052392.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_36052392;
-        // ---------- Original Method ----------
-        //try {
-            //InstrumentationInfo ii = mPM.getInstrumentationInfo(
-                //className, flags);
-            //if (ii != null) {
-                //return ii;
-            //}
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
-        //throw new NameNotFoundException(className.toString());
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -1185,51 +1185,52 @@ final class ApplicationPackageManager extends PackageManager {
     @Override
     public List<InstrumentationInfo> queryInstrumentation(
         String targetPackage, int flags) {
-        List<InstrumentationInfo> varB4EAC82CA7396A68D541C85D26508E83_581288621 = null; //Variable for return #1
+        List<InstrumentationInfo> varB4EAC82CA7396A68D541C85D26508E83_581288621 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_581288621 = mPM.queryInstrumentation(targetPackage, flags);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         addTaint(targetPackage.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_581288621.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_581288621.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_581288621;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.queryInstrumentation(targetPackage, flags);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.538 -0400", hash_original_method = "350CC4BDDD2E42419F88F44C033409F6", hash_generated_method = "A0887470A7B07B011A1A7466FFC9F255")
     @Override
     public Drawable getDrawable(String packageName, int resid,
                                           ApplicationInfo appInfo) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1454121475 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1164148280 = null; //Variable for return #2
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_549845257 = null; //Variable for return #3
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_2119676941 = null; //Variable for return #4
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1454121475 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1164148280 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_549845257 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_2119676941 = null; 
         ResourceName name = new ResourceName(packageName, resid);
         Drawable dr = getCachedIcon(name);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1454121475 = dr;
-        } //End block
+        } 
         {
             try 
             {
                 appInfo = getApplicationInfo(packageName, 0);
-            } //End block
+            } 
             catch (NameNotFoundException e)
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1164148280 = null;
-            } //End block
-        } //End block
+            } 
+        } 
         try 
         {
             Resources r = getResourcesForApplication(appInfo);
@@ -1237,10 +1238,10 @@ final class ApplicationPackageManager extends PackageManager {
             {
                 RuntimeException e = new RuntimeException("here");
                 e.fillInStackTrace();
-            } //End block
+            } 
             putCachedIcon(name, dr);
             varB4EAC82CA7396A68D541C85D26508E83_549845257 = dr;
-        } //End block
+        } 
         catch (NameNotFoundException e)
         { }
         catch (Resources.NotFoundException e)
@@ -1251,201 +1252,201 @@ final class ApplicationPackageManager extends PackageManager {
         addTaint(packageName.getTaint());
         addTaint(resid);
         addTaint(appInfo.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_1361794203; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_1361794203; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1361794203 = varB4EAC82CA7396A68D541C85D26508E83_1454121475;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1361794203 = varB4EAC82CA7396A68D541C85D26508E83_1164148280;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1361794203 = varB4EAC82CA7396A68D541C85D26508E83_549845257;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1361794203 = varB4EAC82CA7396A68D541C85D26508E83_2119676941;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1361794203.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1361794203.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1361794203;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.539 -0400", hash_original_method = "E8823DE045849946097DF943F50B58DB", hash_generated_method = "463821C3BB77481E0A400CF240B6CF96")
     @Override
     public Drawable getActivityIcon(ComponentName activityName) throws NameNotFoundException {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1437117519 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1437117519 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1437117519 = getActivityInfo(activityName, 0).loadIcon(this);
         addTaint(activityName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1437117519.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1437117519.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1437117519;
-        // ---------- Original Method ----------
-        //return getActivityInfo(activityName, 0).loadIcon(this);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.540 -0400", hash_original_method = "EF5F409F30F5D50F1964B6AB6B7F75B7", hash_generated_method = "F325DF407B9A32913C308B537318FDE5")
     @Override
     public Drawable getActivityIcon(Intent intent) throws NameNotFoundException {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1808145405 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1954386934 = null; //Variable for return #2
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1808145405 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1954386934 = null; 
         {
             boolean var2CB4FD776F3AF8424EA4E2E544217AF5_750388327 = (intent.getComponent() != null);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1808145405 = getActivityIcon(intent.getComponent());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         ResolveInfo info = resolveActivity(
             intent, PackageManager.MATCH_DEFAULT_ONLY);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1954386934 = info.activityInfo.loadIcon(this);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException(intent.toUri(0));
         addTaint(intent.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_1145223394; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_1145223394; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1145223394 = varB4EAC82CA7396A68D541C85D26508E83_1808145405;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1145223394 = varB4EAC82CA7396A68D541C85D26508E83_1954386934;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1145223394.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1145223394.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1145223394;
-        // ---------- Original Method ----------
-        //if (intent.getComponent() != null) {
-            //return getActivityIcon(intent.getComponent());
-        //}
-        //ResolveInfo info = resolveActivity(
-            //intent, PackageManager.MATCH_DEFAULT_ONLY);
-        //if (info != null) {
-            //return info.activityInfo.loadIcon(this);
-        //}
-        //throw new NameNotFoundException(intent.toUri(0));
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.541 -0400", hash_original_method = "27F8B828FEA8943560AD77E4760B6964", hash_generated_method = "578639F384885FB98F99040CD4A04EA1")
     @Override
     public Drawable getDefaultActivityIcon() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_642489561 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_642489561 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_642489561 = Resources.getSystem().getDrawable(
             com.android.internal.R.drawable.sym_def_app_icon);
-        varB4EAC82CA7396A68D541C85D26508E83_642489561.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_642489561.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_642489561;
-        // ---------- Original Method ----------
-        //return Resources.getSystem().getDrawable(
-            //com.android.internal.R.drawable.sym_def_app_icon);
+        
+        
+            
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.543 -0400", hash_original_method = "C2186A062EDEC18E9DD8F87E8E6291D1", hash_generated_method = "7C8437D706AD59CC4C9343BA8328BEC7")
     @Override
     public Drawable getApplicationIcon(ApplicationInfo info) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1002916214 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1002916214 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1002916214 = info.loadIcon(this);
         addTaint(info.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1002916214.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1002916214.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1002916214;
-        // ---------- Original Method ----------
-        //return info.loadIcon(this);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.545 -0400", hash_original_method = "49256B647BD52234F52BC973E3B03E0B", hash_generated_method = "9E7B6BDFA2B7D775DDA5A7C8FC2F382D")
     @Override
     public Drawable getApplicationIcon(String packageName) throws NameNotFoundException {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1734522175 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1734522175 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1734522175 = getApplicationIcon(getApplicationInfo(packageName, 0));
         addTaint(packageName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1734522175.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1734522175.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1734522175;
-        // ---------- Original Method ----------
-        //return getApplicationIcon(getApplicationInfo(packageName, 0));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.547 -0400", hash_original_method = "12128D2FB1F753A28280A7EF3E62F4B2", hash_generated_method = "0E57064C0E6699810F45C96ACC9D731E")
     @Override
     public Drawable getActivityLogo(ComponentName activityName) throws NameNotFoundException {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_2101092277 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_2101092277 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2101092277 = getActivityInfo(activityName, 0).loadLogo(this);
         addTaint(activityName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2101092277.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2101092277.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2101092277;
-        // ---------- Original Method ----------
-        //return getActivityInfo(activityName, 0).loadLogo(this);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.548 -0400", hash_original_method = "3B1A86BB5E25FB8EFA7A1AD1A88B3B01", hash_generated_method = "B733A1F5AA2B5FCCAD223EF54F855C92")
     @Override
     public Drawable getActivityLogo(Intent intent) throws NameNotFoundException {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_2011036617 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_674970592 = null; //Variable for return #2
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_2011036617 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_674970592 = null; 
         {
             boolean var2CB4FD776F3AF8424EA4E2E544217AF5_1995930233 = (intent.getComponent() != null);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2011036617 = getActivityLogo(intent.getComponent());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         ResolveInfo info = resolveActivity(
             intent, PackageManager.MATCH_DEFAULT_ONLY);
         {
             varB4EAC82CA7396A68D541C85D26508E83_674970592 = info.activityInfo.loadLogo(this);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException(intent.toUri(0));
         addTaint(intent.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_437401801; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_437401801; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_437401801 = varB4EAC82CA7396A68D541C85D26508E83_2011036617;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_437401801 = varB4EAC82CA7396A68D541C85D26508E83_674970592;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_437401801.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_437401801.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_437401801;
-        // ---------- Original Method ----------
-        //if (intent.getComponent() != null) {
-            //return getActivityLogo(intent.getComponent());
-        //}
-        //ResolveInfo info = resolveActivity(
-            //intent, PackageManager.MATCH_DEFAULT_ONLY);
-        //if (info != null) {
-            //return info.activityInfo.loadLogo(this);
-        //}
-        //throw new NameNotFoundException(intent.toUri(0));
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.549 -0400", hash_original_method = "586E62978169D56092172114763F9AD3", hash_generated_method = "22D87DAB36BE53E0EEAA1BBEA86D1755")
     @Override
     public Drawable getApplicationLogo(ApplicationInfo info) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1712292975 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1712292975 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1712292975 = info.loadLogo(this);
         addTaint(info.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1712292975.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1712292975.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1712292975;
-        // ---------- Original Method ----------
-        //return info.loadLogo(this);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.550 -0400", hash_original_method = "6BC85FEDD3936A7851329E2331D0279D", hash_generated_method = "E67AA2C6B712FB9BA43281130EFF1A4F")
     @Override
     public Drawable getApplicationLogo(String packageName) throws NameNotFoundException {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_496861490 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_496861490 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_496861490 = getApplicationLogo(getApplicationInfo(packageName, 0));
         addTaint(packageName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_496861490.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_496861490.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_496861490;
-        // ---------- Original Method ----------
-        //return getApplicationLogo(getApplicationInfo(packageName, 0));
+        
+        
     }
 
     
@@ -1453,15 +1454,15 @@ final class ApplicationPackageManager extends PackageManager {
     @Override
     public Resources getResourcesForActivity(
         ComponentName activityName) throws NameNotFoundException {
-        Resources varB4EAC82CA7396A68D541C85D26508E83_398011658 = null; //Variable for return #1
+        Resources varB4EAC82CA7396A68D541C85D26508E83_398011658 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_398011658 = getResourcesForApplication(
             getActivityInfo(activityName, 0).applicationInfo);
         addTaint(activityName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_398011658.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_398011658.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_398011658;
-        // ---------- Original Method ----------
-        //return getResourcesForApplication(
-            //getActivityInfo(activityName, 0).applicationInfo);
+        
+        
+            
     }
 
     
@@ -1469,44 +1470,44 @@ final class ApplicationPackageManager extends PackageManager {
     @Override
     public Resources getResourcesForApplication(
         ApplicationInfo app) throws NameNotFoundException {
-        Resources varB4EAC82CA7396A68D541C85D26508E83_1922303088 = null; //Variable for return #1
-        Resources varB4EAC82CA7396A68D541C85D26508E83_571849192 = null; //Variable for return #2
+        Resources varB4EAC82CA7396A68D541C85D26508E83_1922303088 = null; 
+        Resources varB4EAC82CA7396A68D541C85D26508E83_571849192 = null; 
         {
             boolean varF67FB556D575A0DB52E0C311AE1F282F_379408709 = (app.packageName.equals("system"));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1922303088 = mContext.mMainThread.getSystemContext().getResources();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Resources r = mContext.mMainThread.getTopLevelResources(
             app.uid == Process.myUid() ? app.sourceDir
-            : app.publicSourceDir, mContext.mPackageInfo);//DSFIXME:  CODE0008: Nested ternary operator in expression
+            : app.publicSourceDir, mContext.mPackageInfo);
         {
             varB4EAC82CA7396A68D541C85D26508E83_571849192 = r;
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NameNotFoundException("Unable to open " + app.publicSourceDir);
         addTaint(app.getTaint());
-        Resources varA7E53CE21691AB073D9660D615818899_1826920357; //Final return value
+        Resources varA7E53CE21691AB073D9660D615818899_1826920357; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1826920357 = varB4EAC82CA7396A68D541C85D26508E83_1922303088;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1826920357 = varB4EAC82CA7396A68D541C85D26508E83_571849192;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1826920357.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1826920357.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1826920357;
-        // ---------- Original Method ----------
-        //if (app.packageName.equals("system")) {
-            //return mContext.mMainThread.getSystemContext().getResources();
-        //}
-        //Resources r = mContext.mMainThread.getTopLevelResources(
-            //app.uid == Process.myUid() ? app.sourceDir
-            //: app.publicSourceDir, mContext.mPackageInfo);
-        //if (r != null) {
-            //return r;
-        //}
-        //throw new NameNotFoundException("Unable to open " + app.publicSourceDir);
+        
+        
+            
+        
+        
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -1514,15 +1515,15 @@ final class ApplicationPackageManager extends PackageManager {
     @Override
     public Resources getResourcesForApplication(
         String appPackageName) throws NameNotFoundException {
-        Resources varB4EAC82CA7396A68D541C85D26508E83_1258125328 = null; //Variable for return #1
+        Resources varB4EAC82CA7396A68D541C85D26508E83_1258125328 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1258125328 = getResourcesForApplication(
             getApplicationInfo(appPackageName, 0));
         addTaint(appPackageName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1258125328.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1258125328.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1258125328;
-        // ---------- Original Method ----------
-        //return getResourcesForApplication(
-            //getApplicationInfo(appPackageName, 0));
+        
+        
+            
     }
 
     
@@ -1533,23 +1534,23 @@ final class ApplicationPackageManager extends PackageManager {
         {
             {
                 mCachedSafeMode = mPM.isSafeMode() ? 1 : 0;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Package manager has died", e);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1724392656 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1724392656;
-        // ---------- Original Method ----------
-        //try {
-            //if (mCachedSafeMode < 0) {
-                //mCachedSafeMode = mPM.isSafeMode() ? 1 : 0;
-            //}
-            //return mCachedSafeMode != 0;
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("Package manager has died", e);
-        //}
+        
+        
+            
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -1561,35 +1562,36 @@ final class ApplicationPackageManager extends PackageManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.559 -0400", hash_original_method = "805BC435FDAE098AFC4F53B40E89D7C1", hash_generated_method = "1EF323F62B8C726355161AAF209FF88B")
     private Drawable getCachedIcon(ResourceName name) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1427417922 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_879611213 = null; //Variable for return #2
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1427417922 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_879611213 = null; 
         {
             WeakReference<Drawable.ConstantState> wr = sIconCache.get(name);
             {
                 Drawable.ConstantState state = wr.get();
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1427417922 = state.newDrawable();
-                } //End block
+                } 
                 sIconCache.remove(name);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_879611213 = null;
         addTaint(name.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_1391743782; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_1391743782; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1391743782 = varB4EAC82CA7396A68D541C85D26508E83_1427417922;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1391743782 = varB4EAC82CA7396A68D541C85D26508E83_879611213;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1391743782.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1391743782.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1391743782;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1597,17 +1599,18 @@ final class ApplicationPackageManager extends PackageManager {
     private void putCachedIcon(ResourceName name, Drawable dr) {
         {
             sIconCache.put(name, new WeakReference<Drawable.ConstantState>(dr.getConstantState()));
-        } //End block
+        } 
         addTaint(name.getTaint());
         addTaint(dr.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (sSync) {
-            //sIconCache.put(name, new WeakReference<Drawable.ConstantState>(dr.getConstantState()));
-            //if (DEBUG_ICONS) Log.v(TAG, "Added cached drawable state for " + name + ": " + dr);
-        //}
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void handlePackageBroadcast(int cmd, String[] pkgList, boolean hasPkgInfo) {
         boolean immediateGc = false;
         if (cmd == IApplicationThread.EXTERNAL_STORAGE_UNAVAILABLE) {
@@ -1650,45 +1653,46 @@ final class ApplicationPackageManager extends PackageManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.584 -0400", hash_original_method = "B66098C8E55783775B73FA7D73879D41", hash_generated_method = "067A53C68DABBFA85EE9EF9914302271")
     private CharSequence getCachedString(ResourceName name) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_792310776 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1225753205 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_792310776 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1225753205 = null; 
         {
             WeakReference<CharSequence> wr = sStringCache.get(name);
             {
                 CharSequence cs = wr.get();
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_792310776 = cs;
-                } //End block
+                } 
                 sStringCache.remove(name);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1225753205 = null;
         addTaint(name.getTaint());
-        CharSequence varA7E53CE21691AB073D9660D615818899_1761727787; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1761727787; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1761727787 = varB4EAC82CA7396A68D541C85D26508E83_792310776;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1761727787 = varB4EAC82CA7396A68D541C85D26508E83_1225753205;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1761727787.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1761727787.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1761727787;
-        // ---------- Original Method ----------
-        //synchronized (sSync) {
-            //WeakReference<CharSequence> wr = sStringCache.get(name);
-            //if (wr != null) {   
-                //CharSequence cs = wr.get();
-                //if (cs != null) {
-                    //return cs;
-                //}
-                //sStringCache.remove(name);
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
@@ -1696,46 +1700,47 @@ final class ApplicationPackageManager extends PackageManager {
     private void putCachedString(ResourceName name, CharSequence cs) {
         {
             sStringCache.put(name, new WeakReference<CharSequence>(cs));
-        } //End block
+        } 
         addTaint(name.getTaint());
         addTaint(cs.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (sSync) {
-            //sStringCache.put(name, new WeakReference<CharSequence>(cs));
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.587 -0400", hash_original_method = "771B010EDE230C24A313E1F6F3869FDB", hash_generated_method = "65CFC348D87F54A9252D6B3B3CB3A065")
     @Override
     public CharSequence getText(String packageName, int resid,
                                 ApplicationInfo appInfo) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_535904114 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_395237493 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_218663786 = null; //Variable for return #3
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1219051615 = null; //Variable for return #4
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_535904114 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_395237493 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_218663786 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1219051615 = null; 
         ResourceName name = new ResourceName(packageName, resid);
         CharSequence text = getCachedString(name);
         {
             varB4EAC82CA7396A68D541C85D26508E83_535904114 = text;
-        } //End block
+        } 
         {
             try 
             {
                 appInfo = getApplicationInfo(packageName, 0);
-            } //End block
+            } 
             catch (NameNotFoundException e)
             {
                 varB4EAC82CA7396A68D541C85D26508E83_395237493 = null;
-            } //End block
-        } //End block
+            } 
+        } 
         try 
         {
             Resources r = getResourcesForApplication(appInfo);
             text = r.getText(resid);
             putCachedString(name, text);
             varB4EAC82CA7396A68D541C85D26508E83_218663786 = text;
-        } //End block
+        } 
         catch (NameNotFoundException e)
         { }
         catch (RuntimeException e)
@@ -1744,50 +1749,51 @@ final class ApplicationPackageManager extends PackageManager {
         addTaint(packageName.getTaint());
         addTaint(resid);
         addTaint(appInfo.getTaint());
-        CharSequence varA7E53CE21691AB073D9660D615818899_1706276863; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1706276863; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1706276863 = varB4EAC82CA7396A68D541C85D26508E83_535904114;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1706276863 = varB4EAC82CA7396A68D541C85D26508E83_395237493;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1706276863 = varB4EAC82CA7396A68D541C85D26508E83_218663786;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1706276863 = varB4EAC82CA7396A68D541C85D26508E83_1219051615;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1706276863.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1706276863.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1706276863;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.588 -0400", hash_original_method = "F130C54905A9CE16326CF20EF6E93255", hash_generated_method = "5C01980BA29CFF0401923B0552274B8B")
     @Override
     public XmlResourceParser getXml(String packageName, int resid,
                                     ApplicationInfo appInfo) {
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_530623061 = null; //Variable for return #1
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_377528268 = null; //Variable for return #2
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_339773282 = null; //Variable for return #3
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_530623061 = null; 
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_377528268 = null; 
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_339773282 = null; 
         {
             try 
             {
                 appInfo = getApplicationInfo(packageName, 0);
-            } //End block
+            } 
             catch (NameNotFoundException e)
             {
                 varB4EAC82CA7396A68D541C85D26508E83_530623061 = null;
-            } //End block
-        } //End block
+            } 
+        } 
         try 
         {
             Resources r = getResourcesForApplication(appInfo);
             varB4EAC82CA7396A68D541C85D26508E83_377528268 = r.getXml(resid);
-        } //End block
+        } 
         catch (RuntimeException e)
         { }
         catch (NameNotFoundException e)
@@ -1796,53 +1802,53 @@ final class ApplicationPackageManager extends PackageManager {
         addTaint(packageName.getTaint());
         addTaint(resid);
         addTaint(appInfo.getTaint());
-        XmlResourceParser varA7E53CE21691AB073D9660D615818899_1334979618; //Final return value
+        XmlResourceParser varA7E53CE21691AB073D9660D615818899_1334979618; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1334979618 = varB4EAC82CA7396A68D541C85D26508E83_530623061;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1334979618 = varB4EAC82CA7396A68D541C85D26508E83_377528268;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1334979618 = varB4EAC82CA7396A68D541C85D26508E83_339773282;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1334979618.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1334979618.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1334979618;
-        // ---------- Original Method ----------
-        //if (appInfo == null) {
-            //try {
-                //appInfo = getApplicationInfo(packageName, 0);
-            //} catch (NameNotFoundException e) {
-                //return null;
-            //}
-        //}
-        //try {
-            //Resources r = getResourcesForApplication(appInfo);
-            //return r.getXml(resid);
-        //} catch (RuntimeException e) {
-            //Log.w("PackageManager", "Failure retrieving xml 0x"
-                  //+ Integer.toHexString(resid) + " in package "
-                  //+ packageName, e);
-        //} catch (NameNotFoundException e) {
-            //Log.w("PackageManager", "Failure retrieving resources for "
-                  //+ appInfo.packageName);
-        //}
-        //return null;
+        
+        
+            
+                
+            
+                
+            
+        
+        
+            
+            
+        
+            
+                  
+                  
+        
+            
+                  
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.590 -0400", hash_original_method = "4AFDE050276913F392973B277F54706D", hash_generated_method = "374280FF5245844AB86AB36541C80C6F")
     @Override
     public CharSequence getApplicationLabel(ApplicationInfo info) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_709572085 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_709572085 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_709572085 = info.loadLabel(this);
         addTaint(info.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_709572085.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_709572085.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_709572085;
-        // ---------- Original Method ----------
-        //return info.loadLabel(this);
+        
+        
     }
 
     
@@ -1853,18 +1859,18 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             mPM.installPackage(packageURI, observer, flags, installerPackageName);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(packageURI.getTaint());
         addTaint(observer.getTaint());
         addTaint(flags);
         addTaint(installerPackageName.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mPM.installPackage(packageURI, observer, flags, installerPackageName);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
@@ -1877,7 +1883,7 @@ final class ApplicationPackageManager extends PackageManager {
         {
             mPM.installPackageWithVerification(packageURI, observer, flags, installerPackageName,
                     verificationURI, manifestDigest);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(packageURI.getTaint());
@@ -1886,34 +1892,36 @@ final class ApplicationPackageManager extends PackageManager {
         addTaint(installerPackageName.getTaint());
         addTaint(verificationURI.getTaint());
         addTaint(manifestDigest.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mPM.installPackageWithVerification(packageURI, observer, flags, installerPackageName,
-                    //verificationURI, manifestDigest);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.592 -0400", hash_original_method = "E593338881B3E45506EA974F446D2A6B", hash_generated_method = "37756C8FAB2D16E48F6540B81C396231")
     @Override
     public void verifyPendingInstall(int id, int response) {
         try 
         {
             mPM.verifyPendingInstall(id, response);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(id);
         addTaint(response);
-        // ---------- Original Method ----------
-        //try {
-            //mPM.verifyPendingInstall(id, response);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.592 -0400", hash_original_method = "A168A8E169316429D31E261AD639AED4", hash_generated_method = "9C8C38D01201816D92FED5BF837CFF63")
     @Override
     public void setInstallerPackageName(String targetPackage,
@@ -1921,92 +1929,96 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             mPM.setInstallerPackageName(targetPackage, installerPackageName);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(targetPackage.getTaint());
         addTaint(installerPackageName.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mPM.setInstallerPackageName(targetPackage, installerPackageName);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.593 -0400", hash_original_method = "D8F1CA3B8F90BF876B114DD825F09703", hash_generated_method = "013104B1BDA6E03638BA31CEC045094F")
     @Override
     public void movePackage(String packageName, IPackageMoveObserver observer, int flags) {
         try 
         {
             mPM.movePackage(packageName, observer, flags);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(packageName.getTaint());
         addTaint(observer.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //try {
-            //mPM.movePackage(packageName, observer, flags);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.594 -0400", hash_original_method = "13C0F9FC5FF4142BD538C8A3AADB3621", hash_generated_method = "578F50F79ADA6DE65522A42D6BEC5E18")
     @Override
     public String getInstallerPackageName(String packageName) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1867274395 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1182395187 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1867274395 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1182395187 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1867274395 = mPM.getInstallerPackageName(packageName);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_1182395187 = null;
         addTaint(packageName.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_362925868; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_362925868; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_362925868 = varB4EAC82CA7396A68D541C85D26508E83_1867274395;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_362925868 = varB4EAC82CA7396A68D541C85D26508E83_1182395187;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_362925868.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_362925868.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_362925868;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.getInstallerPackageName(packageName);
-        //} catch (RemoteException e) {
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.595 -0400", hash_original_method = "6B4A8C0BA02325B97A4B696E509E27F1", hash_generated_method = "6A3ED9E8A60057D0DB3AC4995AF0B2E7")
     @Override
     public void deletePackage(String packageName, IPackageDeleteObserver observer, int flags) {
         try 
         {
             mPM.deletePackage(packageName, observer, flags);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(packageName.getTaint());
         addTaint(observer.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //try {
-            //mPM.deletePackage(packageName, observer, flags);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.595 -0400", hash_original_method = "41D4F7CDEA8F3FA97A215E5DB5AE3B7F", hash_generated_method = "A1F8ED7652B7387CD0E6421FC7565E8D")
     @Override
     public void clearApplicationUserData(String packageName,
@@ -2014,19 +2026,20 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             mPM.clearApplicationUserData(packageName, observer);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(packageName.getTaint());
         addTaint(observer.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mPM.clearApplicationUserData(packageName, observer);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.598 -0400", hash_original_method = "9E003FA712762A764BBDA3187B8255C1", hash_generated_method = "A69811C1495E99329928ECA86D124251")
     @Override
     public void deleteApplicationCacheFiles(String packageName,
@@ -2034,57 +2047,60 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             mPM.deleteApplicationCacheFiles(packageName, observer);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(packageName.getTaint());
         addTaint(observer.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mPM.deleteApplicationCacheFiles(packageName, observer);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.599 -0400", hash_original_method = "E7A7F0006F405C835ECAAE7B969343FA", hash_generated_method = "0B639835B9C7BD19E29CC9E9938962C4")
     @Override
     public void freeStorageAndNotify(long idealStorageSize, IPackageDataObserver observer) {
         try 
         {
             mPM.freeStorageAndNotify(idealStorageSize, observer);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(idealStorageSize);
         addTaint(observer.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mPM.freeStorageAndNotify(idealStorageSize, observer);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.599 -0400", hash_original_method = "8531AD2E443F843CDBBD03DDCC5F2882", hash_generated_method = "B0070DACE1C55EC19587AB40DB11BCAF")
     @Override
     public void freeStorage(long freeStorageSize, IntentSender pi) {
         try 
         {
             mPM.freeStorage(freeStorageSize, pi);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(freeStorageSize);
         addTaint(pi.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mPM.freeStorage(freeStorageSize, pi);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.600 -0400", hash_original_method = "00314015F36B785D35449EC7724DA4A0", hash_generated_method = "6ECEB12C252949AE71858382236E4A0D")
     @Override
     public void getPackageSizeInfo(String packageName,
@@ -2092,88 +2108,92 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             mPM.getPackageSizeInfo(packageName, observer);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(packageName.getTaint());
         addTaint(observer.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mPM.getPackageSizeInfo(packageName, observer);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.600 -0400", hash_original_method = "A9291C102B2FAAEF4C90A57E1B6DE098", hash_generated_method = "0D690A0FE1B62191F94C37814ED9C13E")
     @Override
     public void addPackageToPreferred(String packageName) {
         try 
         {
             mPM.addPackageToPreferred(packageName);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(packageName.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mPM.addPackageToPreferred(packageName);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.601 -0400", hash_original_method = "F1B5214867A85B15353BE55995A19BB6", hash_generated_method = "16AE382D6D44614F9CE0F2F1A0174EBF")
     @Override
     public void removePackageFromPreferred(String packageName) {
         try 
         {
             mPM.removePackageFromPreferred(packageName);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(packageName.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mPM.removePackageFromPreferred(packageName);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.602 -0400", hash_original_method = "4A08CFB9ACE88EAEABD2D18F083F329D", hash_generated_method = "5A4C2FE7DE94336F99AE0FD9E3010264")
     @Override
     public List<PackageInfo> getPreferredPackages(int flags) {
-        List<PackageInfo> varB4EAC82CA7396A68D541C85D26508E83_174769449 = null; //Variable for return #1
-        List<PackageInfo> varB4EAC82CA7396A68D541C85D26508E83_486820621 = null; //Variable for return #2
+        List<PackageInfo> varB4EAC82CA7396A68D541C85D26508E83_174769449 = null; 
+        List<PackageInfo> varB4EAC82CA7396A68D541C85D26508E83_486820621 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_174769449 = mPM.getPreferredPackages(flags);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_486820621 = new ArrayList<PackageInfo>();
         addTaint(flags);
-        List<PackageInfo> varA7E53CE21691AB073D9660D615818899_41727386; //Final return value
+        List<PackageInfo> varA7E53CE21691AB073D9660D615818899_41727386; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_41727386 = varB4EAC82CA7396A68D541C85D26508E83_174769449;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_41727386 = varB4EAC82CA7396A68D541C85D26508E83_486820621;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_41727386.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_41727386.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_41727386;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.getPreferredPackages(flags);
-        //} catch (RemoteException e) {
-        //}
-        //return new ArrayList<PackageInfo>();
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.603 -0400", hash_original_method = "E5D2F7A75D600839A582F36FB9BA5425", hash_generated_method = "E4890C1035F01F9D32FCB826AD598DD3")
     @Override
     public void addPreferredActivity(IntentFilter filter,
@@ -2181,21 +2201,22 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             mPM.addPreferredActivity(filter, match, set, activity);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(filter.getTaint());
         addTaint(match);
         addTaint(set[0].getTaint());
         addTaint(activity.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mPM.addPreferredActivity(filter, match, set, activity);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.603 -0400", hash_original_method = "2885B1E40721D55CC13EAA30EB1BAE52", hash_generated_method = "C5FF225D327460B3296A7AFA75368096")
     @Override
     public void replacePreferredActivity(IntentFilter filter,
@@ -2203,39 +2224,41 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             mPM.replacePreferredActivity(filter, match, set, activity);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(filter.getTaint());
         addTaint(match);
         addTaint(set[0].getTaint());
         addTaint(activity.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mPM.replacePreferredActivity(filter, match, set, activity);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.604 -0400", hash_original_method = "818084167B76F544DAE31D40EA850683", hash_generated_method = "C9C1FB3440196C8943FD1E9972510DCD")
     @Override
     public void clearPackagePreferredActivities(String packageName) {
         try 
         {
             mPM.clearPackagePreferredActivities(packageName);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(packageName.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mPM.clearPackagePreferredActivities(packageName);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.604 -0400", hash_original_method = "9A1408660FD10D92BECBE2BE18AA9510", hash_generated_method = "F86AC4DBF9B1F0D6CD2371BC2F3F6B47")
     @Override
     public int getPreferredActivities(List<IntentFilter> outFilters,
@@ -2243,7 +2266,7 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             int varAAA2984E5864A69FBA0F19FD84D394A5_2110103518 = (mPM.getPreferredActivities(outFilters, outActivities, packageName));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(outFilters.getTaint());
@@ -2251,15 +2274,16 @@ final class ApplicationPackageManager extends PackageManager {
         addTaint(packageName.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117318833 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117318833;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.getPreferredActivities(outFilters, outActivities, packageName);
-        //} catch (RemoteException e) {
-        //}
-        //return 0;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.605 -0400", hash_original_method = "324289EEBFA692363CEA9B4C548C82A7", hash_generated_method = "A0BA00110F6663F102A5964560E3C0E9")
     @Override
     public void setComponentEnabledSetting(ComponentName componentName,
@@ -2267,41 +2291,43 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             mPM.setComponentEnabledSetting(componentName, newState, flags);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(componentName.getTaint());
         addTaint(newState);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //try {
-            //mPM.setComponentEnabledSetting(componentName, newState, flags);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.606 -0400", hash_original_method = "214E6E4C94F679DC0FE6A4159B821EAF", hash_generated_method = "2083D15A964387B75CEF5D8363300FFF")
     @Override
     public int getComponentEnabledSetting(ComponentName componentName) {
         try 
         {
             int var1528F93F8B5599DBD2DEEBFDF40122F0_1383876752 = (mPM.getComponentEnabledSetting(componentName));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(componentName.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1289252026 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1289252026;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.getComponentEnabledSetting(componentName);
-        //} catch (RemoteException e) {
-        //}
-        //return PackageManager.COMPONENT_ENABLED_STATE_DEFAULT;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.607 -0400", hash_original_method = "893989AE0F295A10184FE7AD874B7991", hash_generated_method = "C30D96FC52BAA3663F8231ABB8ABA6D1")
     @Override
     public void setApplicationEnabledSetting(String packageName,
@@ -2309,113 +2335,117 @@ final class ApplicationPackageManager extends PackageManager {
         try 
         {
             mPM.setApplicationEnabledSetting(packageName, newState, flags);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(packageName.getTaint());
         addTaint(newState);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //try {
-            //mPM.setApplicationEnabledSetting(packageName, newState, flags);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.608 -0400", hash_original_method = "786754E395F784476E8D899ABD01121D", hash_generated_method = "47BF4B42FAEDD3F4B00D3A00D935318D")
     @Override
     public int getApplicationEnabledSetting(String packageName) {
         try 
         {
             int varF2CA84C656A1ECB5C0715BD15E6F333E_164495705 = (mPM.getApplicationEnabledSetting(packageName));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(packageName.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117713051 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117713051;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.getApplicationEnabledSetting(packageName);
-        //} catch (RemoteException e) {
-        //}
-        //return PackageManager.COMPONENT_ENABLED_STATE_DEFAULT;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.609 -0400", hash_original_method = "26D19368C79A5889D2D25A72A45789A8", hash_generated_method = "38AB007A2DCCAFAD7FB8E080841E8C8A")
     @Override
     public UserInfo createUser(String name, int flags) {
-        UserInfo varB4EAC82CA7396A68D541C85D26508E83_511143906 = null; //Variable for return #1
-        UserInfo varB4EAC82CA7396A68D541C85D26508E83_1044290623 = null; //Variable for return #2
+        UserInfo varB4EAC82CA7396A68D541C85D26508E83_511143906 = null; 
+        UserInfo varB4EAC82CA7396A68D541C85D26508E83_1044290623 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_511143906 = mPM.createUser(name, flags);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_1044290623 = null;
         addTaint(name.getTaint());
         addTaint(flags);
-        UserInfo varA7E53CE21691AB073D9660D615818899_1593574196; //Final return value
+        UserInfo varA7E53CE21691AB073D9660D615818899_1593574196; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1593574196 = varB4EAC82CA7396A68D541C85D26508E83_511143906;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1593574196 = varB4EAC82CA7396A68D541C85D26508E83_1044290623;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1593574196.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1593574196.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1593574196;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.createUser(name, flags);
-        //} catch (RemoteException e) {
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.611 -0400", hash_original_method = "D3989192690585F23E6C25734E0C3BDB", hash_generated_method = "71AAFC709D333E5BB5BE9BD81C0D7000")
     @Override
     public List<UserInfo> getUsers() {
-        List<UserInfo> varB4EAC82CA7396A68D541C85D26508E83_129818467 = null; //Variable for return #1
+        List<UserInfo> varB4EAC82CA7396A68D541C85D26508E83_129818467 = null; 
         ArrayList<UserInfo> users = new ArrayList<UserInfo>();
         UserInfo primary = new UserInfo(0, "Root!",
                 UserInfo.FLAG_ADMIN | UserInfo.FLAG_PRIMARY);
         users.add(primary);
         varB4EAC82CA7396A68D541C85D26508E83_129818467 = users;
-        varB4EAC82CA7396A68D541C85D26508E83_129818467.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_129818467.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_129818467;
-        // ---------- Original Method ----------
-        //ArrayList<UserInfo> users = new ArrayList<UserInfo>();
-        //UserInfo primary = new UserInfo(0, "Root!",
-                //UserInfo.FLAG_ADMIN | UserInfo.FLAG_PRIMARY);
-        //users.add(primary);
-        //return users;
+        
+        
+        
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.611 -0400", hash_original_method = "7D391C716B6EBFD3B4233647A1DCBC34", hash_generated_method = "D5404D09F669BE1AB85052F182846D51")
     @Override
     public boolean removeUser(int id) {
         try 
         {
             boolean varF0857FEEEFECDA71C81CF89A6CEBBA1A_724432030 = (mPM.removeUser(id));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(id);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1297761711 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1297761711;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.removeUser(id);
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -2424,7 +2454,7 @@ final class ApplicationPackageManager extends PackageManager {
     public void updateUserName(int id, String name) {
         addTaint(id);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -2433,39 +2463,40 @@ final class ApplicationPackageManager extends PackageManager {
     public void updateUserFlags(int id, int flags) {
         addTaint(id);
         addTaint(flags);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.613 -0400", hash_original_method = "05FAEEF75E7B74D35A0F0687A4ACD32C", hash_generated_method = "6446769FC2C5F8D8F986E1C2BFDC03AF")
     @Override
     public VerifierDeviceIdentity getVerifierDeviceIdentity() {
-        VerifierDeviceIdentity varB4EAC82CA7396A68D541C85D26508E83_1046695874 = null; //Variable for return #1
-        VerifierDeviceIdentity varB4EAC82CA7396A68D541C85D26508E83_770308895 = null; //Variable for return #2
+        VerifierDeviceIdentity varB4EAC82CA7396A68D541C85D26508E83_1046695874 = null; 
+        VerifierDeviceIdentity varB4EAC82CA7396A68D541C85D26508E83_770308895 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1046695874 = mPM.getVerifierDeviceIdentity();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_770308895 = null;
-        VerifierDeviceIdentity varA7E53CE21691AB073D9660D615818899_105088394; //Final return value
+        VerifierDeviceIdentity varA7E53CE21691AB073D9660D615818899_105088394; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_105088394 = varB4EAC82CA7396A68D541C85D26508E83_1046695874;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_105088394 = varB4EAC82CA7396A68D541C85D26508E83_770308895;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_105088394.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_105088394.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_105088394;
-        // ---------- Original Method ----------
-        //try {
-            //return mPM.getVerifierDeviceIdentity();
-        //} catch (RemoteException e) {
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -2481,9 +2512,9 @@ final class ApplicationPackageManager extends PackageManager {
           ResourceName(String _packageName, int _iconId) {
             packageName = _packageName;
             iconId = _iconId;
-            // ---------- Original Method ----------
-            //packageName = _packageName;
-            //iconId = _iconId;
+            
+            
+            
         }
 
         
@@ -2492,7 +2523,7 @@ final class ApplicationPackageManager extends PackageManager {
             this(aInfo.packageName, _iconId);
             addTaint(aInfo.getTaint());
             addTaint(_iconId);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2501,7 +2532,7 @@ final class ApplicationPackageManager extends PackageManager {
             this(cInfo.applicationInfo.packageName, _iconId);
             addTaint(cInfo.getTaint());
             addTaint(_iconId);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2510,7 +2541,7 @@ final class ApplicationPackageManager extends PackageManager {
             this(rInfo.activityInfo.applicationInfo.packageName, _iconId);
             addTaint(rInfo.getTaint());
             addTaint(_iconId);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2519,20 +2550,20 @@ final class ApplicationPackageManager extends PackageManager {
         public boolean equals(Object o) {
             {
                 boolean var1DE06DCDBE8CB2577D8B96631D951907_2041667656 = (o == null || getClass() != o.getClass());
-            } //End collapsed parenthetic
+            } 
             ResourceName that = (ResourceName) o;
             boolean var2CF4425DEC96D908C0E598EDFC75DDA1_1955749436 = (!(packageName != null ?
-                     !packageName.equals(that.packageName) : that.packageName != null)); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                     !packageName.equals(that.packageName) : that.packageName != null)); 
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_348631048 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_348631048;
-            // ---------- Original Method ----------
-            //if (this == o) return true;
-            //if (o == null || getClass() != o.getClass()) return false;
-            //ResourceName that = (ResourceName) o;
-            //if (iconId != that.iconId) return false;
-            //return !(packageName != null ?
-                     //!packageName.equals(that.packageName) : that.packageName != null);
+            
+            
+            
+            
+            
+            
+                     
         }
 
         
@@ -2544,23 +2575,23 @@ final class ApplicationPackageManager extends PackageManager {
             result = 31 * result + iconId;
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1173593553 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1173593553;
-            // ---------- Original Method ----------
-            //int result;
-            //result = packageName.hashCode();
-            //result = 31 * result + iconId;
-            //return result;
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.620 -0400", hash_original_method = "19C1C9668D8A7EEF540F3D9429936D14", hash_generated_method = "764C0317191FFFC0FFB3AA245E89BE90")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_817240407 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_817240407 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_817240407 = "{ResourceName " + packageName + " / " + iconId + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_817240407.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_817240407.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_817240407;
-            // ---------- Original Method ----------
-            //return "{ResourceName " + packageName + " / " + iconId + "}";
+            
+            
         }
 
         

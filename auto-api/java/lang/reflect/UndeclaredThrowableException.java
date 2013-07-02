@@ -1,11 +1,11 @@
 package java.lang.reflect;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class UndeclaredThrowableException extends RuntimeException {
@@ -17,9 +17,9 @@ public class UndeclaredThrowableException extends RuntimeException {
     public  UndeclaredThrowableException(Throwable exception) {
         this.undeclaredThrowable = exception;
         initCause(exception);
-        // ---------- Original Method ----------
-        //this.undeclaredThrowable = exception;
-        //initCause(exception);
+        
+        
+        
     }
 
     
@@ -30,32 +30,32 @@ public class UndeclaredThrowableException extends RuntimeException {
         this.undeclaredThrowable = exception;
         initCause(exception);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-        //this.undeclaredThrowable = exception;
-        //initCause(exception);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.957 -0400", hash_original_method = "01FF2A365C1FC09F8BDCAF7FAA2D9177", hash_generated_method = "E117D2F32C41F7DB1AA1D3FD3C4B0321")
     public Throwable getUndeclaredThrowable() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_170412318 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_170412318 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_170412318 = undeclaredThrowable;
-        varB4EAC82CA7396A68D541C85D26508E83_170412318.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_170412318.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_170412318;
-        // ---------- Original Method ----------
-        //return undeclaredThrowable;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.958 -0400", hash_original_method = "1E11CE865934C875382AA6A691DB2EF1", hash_generated_method = "8B83D48C28A89FECB8B12B87C40E7A49")
     @Override
     public Throwable getCause() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_1247306951 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_1247306951 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1247306951 = undeclaredThrowable;
-        varB4EAC82CA7396A68D541C85D26508E83_1247306951.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1247306951.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1247306951;
-        // ---------- Original Method ----------
-        //return undeclaredThrowable;
+        
+        
     }
 
     

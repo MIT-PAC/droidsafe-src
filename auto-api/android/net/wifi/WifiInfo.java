@@ -1,11 +1,11 @@
 package android.net.wifi;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcelable;
 import android.os.Parcel;
@@ -58,15 +58,15 @@ public class WifiInfo implements Parcelable {
         mLinkSpeed = -1;
         mHiddenSSID = false;
         mExplicitConnect = false;
-        // ---------- Original Method ----------
-        //mSSID = null;
-        //mBSSID = null;
-        //mNetworkId = -1;
-        //mSupplicantState = SupplicantState.UNINITIALIZED;
-        //mRssi = -9999;
-        //mLinkSpeed = -1;
-        //mHiddenSSID = false;
-        //mExplicitConnect = false;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -83,20 +83,20 @@ public class WifiInfo implements Parcelable {
             mIpAddress = source.mIpAddress;
             mMacAddress = source.mMacAddress;
             mExplicitConnect = source.mExplicitConnect;
-        } //End block
-        // ---------- Original Method ----------
-        //if (source != null) {
-            //mSupplicantState = source.mSupplicantState;
-            //mBSSID = source.mBSSID;
-            //mSSID = source.mSSID;
-            //mNetworkId = source.mNetworkId;
-            //mHiddenSSID = source.mHiddenSSID;
-            //mRssi = source.mRssi;
-            //mLinkSpeed = source.mLinkSpeed;
-            //mIpAddress = source.mIpAddress;
-            //mMacAddress = source.mMacAddress;
-            //mExplicitConnect = source.mExplicitConnect;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -104,39 +104,39 @@ public class WifiInfo implements Parcelable {
      void setSSID(String SSID) {
         mSSID = SSID;
         mHiddenSSID = false;
-        // ---------- Original Method ----------
-        //mSSID = SSID;
-        //mHiddenSSID = false;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.550 -0400", hash_original_method = "79B89773022C9616E7A28BB8F338ADFD", hash_generated_method = "2EB1296DA2D1D72D359E7698CEBAC887")
     public String getSSID() {
-        String varB4EAC82CA7396A68D541C85D26508E83_429088246 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_429088246 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_429088246 = mSSID;
-        varB4EAC82CA7396A68D541C85D26508E83_429088246.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_429088246.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_429088246;
-        // ---------- Original Method ----------
-        //return mSSID;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.550 -0400", hash_original_method = "66D619B3A9C00436F0EA6225848F76E2", hash_generated_method = "BD548F6E82AB5618699240A24DE36BEC")
      void setBSSID(String BSSID) {
         mBSSID = BSSID;
-        // ---------- Original Method ----------
-        //mBSSID = BSSID;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.551 -0400", hash_original_method = "4164893247FD5E84E98B26376E6216D7", hash_generated_method = "668B135CF69C46E1C243E9731194CF7E")
     public String getBSSID() {
-        String varB4EAC82CA7396A68D541C85D26508E83_68314963 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_68314963 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_68314963 = mBSSID;
-        varB4EAC82CA7396A68D541C85D26508E83_68314963.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_68314963.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_68314963;
-        // ---------- Original Method ----------
-        //return mBSSID;
+        
+        
     }
 
     
@@ -144,16 +144,16 @@ public class WifiInfo implements Parcelable {
     public int getRssi() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1984152014 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1984152014;
-        // ---------- Original Method ----------
-        //return mRssi;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.552 -0400", hash_original_method = "DC61695B2550927FEF6924BD6DCCD37F", hash_generated_method = "E19A60BAC9A9678F7738ECF74A703A1A")
      void setRssi(int rssi) {
         mRssi = rssi;
-        // ---------- Original Method ----------
-        //mRssi = rssi;
+        
+        
     }
 
     
@@ -161,43 +161,43 @@ public class WifiInfo implements Parcelable {
     public int getLinkSpeed() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_111307434 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_111307434;
-        // ---------- Original Method ----------
-        //return mLinkSpeed;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.553 -0400", hash_original_method = "BE3FF818F2C5FDEDBAE4E9D0AB590378", hash_generated_method = "3D5209C2A702486DC92F36B939583D1F")
      void setLinkSpeed(int linkSpeed) {
         this.mLinkSpeed = linkSpeed;
-        // ---------- Original Method ----------
-        //this.mLinkSpeed = linkSpeed;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.554 -0400", hash_original_method = "D01D60678F7B1D8F273F61CB3F3E57D7", hash_generated_method = "A3E9B719E887830890CD4DD14E0AD494")
      void setMacAddress(String macAddress) {
         this.mMacAddress = macAddress;
-        // ---------- Original Method ----------
-        //this.mMacAddress = macAddress;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.554 -0400", hash_original_method = "3C8E67358ACD99AD783D244CA0276ACD", hash_generated_method = "288A64ED75CB45EED885536873B8E4DC")
     public String getMacAddress() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1330646586 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1330646586 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1330646586 = mMacAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_1330646586.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1330646586.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1330646586;
-        // ---------- Original Method ----------
-        //return mMacAddress;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.555 -0400", hash_original_method = "9EA9BCBB38651D2FFE57E5088D2224E9", hash_generated_method = "F5B7D15D1F9FA86D48D303046B1BC4C0")
      void setNetworkId(int id) {
         mNetworkId = id;
-        // ---------- Original Method ----------
-        //mNetworkId = id;
+        
+        
     }
 
     
@@ -205,16 +205,16 @@ public class WifiInfo implements Parcelable {
     public boolean isExplicitConnect() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1568255997 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1568255997;
-        // ---------- Original Method ----------
-        //return mExplicitConnect;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.555 -0400", hash_original_method = "3A4A87F80F04538D566E1F3D87FB9121", hash_generated_method = "419BFD214B5C4008C8900EF6C9DFFFC6")
     public void setExplicitConnect(boolean explicitConnect) {
         this.mExplicitConnect = explicitConnect;
-        // ---------- Original Method ----------
-        //this.mExplicitConnect = explicitConnect;
+        
+        
     }
 
     
@@ -222,46 +222,47 @@ public class WifiInfo implements Parcelable {
     public int getNetworkId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1617455763 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1617455763;
-        // ---------- Original Method ----------
-        //return mNetworkId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.556 -0400", hash_original_method = "8E3F1F3B329B69F39A487C61B59EF2C9", hash_generated_method = "4C1CE48DF47F8137F4C4393F9BD9F0DF")
     public SupplicantState getSupplicantState() {
-        SupplicantState varB4EAC82CA7396A68D541C85D26508E83_1295043881 = null; //Variable for return #1
+        SupplicantState varB4EAC82CA7396A68D541C85D26508E83_1295043881 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1295043881 = mSupplicantState;
-        varB4EAC82CA7396A68D541C85D26508E83_1295043881.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1295043881.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1295043881;
-        // ---------- Original Method ----------
-        //return mSupplicantState;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.556 -0400", hash_original_method = "D88102438CF5144569D4601488BE4027", hash_generated_method = "6FA517D61A9E3825E9AD9449126434D5")
      void setSupplicantState(SupplicantState state) {
         mSupplicantState = state;
-        // ---------- Original Method ----------
-        //mSupplicantState = state;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.556 -0400", hash_original_method = "34F62DC8D94CF645975CE5993EA04307", hash_generated_method = "1DF1B64E8A2F4E71966A2BDAA44D73EC")
      void setInetAddress(InetAddress address) {
         mIpAddress = address;
-        // ---------- Original Method ----------
-        //mIpAddress = address;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.557 -0400", hash_original_method = "B90838B740ABA91EEFFDC5A9A5E25B34", hash_generated_method = "9FC69A254CDD9A2E540708BEC0824A25")
     public int getIpAddress() {
         int varBCEEF5AE8C416DD5DB7F7A6563440778_2089010741 = (NetworkUtils.inetAddressToInt(mIpAddress));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_441970714 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_441970714;
-        // ---------- Original Method ----------
-        //if (mIpAddress == null || mIpAddress instanceof Inet6Address) return 0;
-        //return NetworkUtils.inetAddressToInt(mIpAddress);
+        
+        
+        
     }
 
     
@@ -269,19 +270,20 @@ public class WifiInfo implements Parcelable {
     public boolean getHiddenSSID() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1467803716 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1467803716;
-        // ---------- Original Method ----------
-        //return mHiddenSSID;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.557 -0400", hash_original_method = "FC84BEFBD9B7D8BF135E20B2EE1BDB16", hash_generated_method = "86ED33E9FF91B448E715AC8EE3AB36F5")
     public void setHiddenSSID(boolean hiddenSSID) {
         mHiddenSSID = hiddenSSID;
-        // ---------- Original Method ----------
-        //mHiddenSSID = hiddenSSID;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DetailedState getDetailedStateOf(SupplicantState suppState) {
         return stateMap.get(suppState);
     }
@@ -290,11 +292,12 @@ public class WifiInfo implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.558 -0400", hash_original_method = "C2C24AA87816421D7C3613D024B55B7F", hash_generated_method = "AF85132A71CCF13F9BC9ACB2864B1AAF")
      void setSupplicantState(String stateName) {
         mSupplicantState = valueOf(stateName);
-        // ---------- Original Method ----------
-        //mSupplicantState = valueOf(stateName);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static SupplicantState valueOf(String stateName) {
         if ("4WAY_HANDSHAKE".equalsIgnoreCase(stateName))
             return SupplicantState.FOUR_WAY_HANDSHAKE;
@@ -308,10 +311,11 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.559 -0400", hash_original_method = "E7F8A705E19A9ABF8AEEB72FBC5B6139", hash_generated_method = "8FF366A863F817325937E4AC9DE9FB2C")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_755428085 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_755428085 = null; 
         StringBuffer sb = new StringBuffer();
         String none = "<none>";
         sb.append("SSID: ").append(mSSID == null ? none : mSSID).
@@ -324,21 +328,21 @@ public class WifiInfo implements Parcelable {
             append(", Net ID: ").append(mNetworkId).
             append(", Explicit connect: ").append(mExplicitConnect);
         varB4EAC82CA7396A68D541C85D26508E83_755428085 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_755428085.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_755428085.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_755428085;
-        // ---------- Original Method ----------
-        //StringBuffer sb = new StringBuffer();
-        //String none = "<none>";
-        //sb.append("SSID: ").append(mSSID == null ? none : mSSID).
-            //append(", BSSID: ").append(mBSSID == null ? none : mBSSID).
-            //append(", MAC: ").append(mMacAddress == null ? none : mMacAddress).
-            //append(", Supplicant state: ").
-            //append(mSupplicantState == null ? none : mSupplicantState).
-            //append(", RSSI: ").append(mRssi).
-            //append(", Link speed: ").append(mLinkSpeed).
-            //append(", Net ID: ").append(mNetworkId).
-            //append(", Explicit connect: ").append(mExplicitConnect);
-        //return sb.toString();
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -346,11 +350,12 @@ public class WifiInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1950386410 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1950386410;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.560 -0400", hash_original_method = "D24857F81D2FD5D48ED12D74EE96B85F", hash_generated_method = "642262E56072A4847F4A83174AD828F5")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mNetworkId);
@@ -359,10 +364,10 @@ public class WifiInfo implements Parcelable {
         {
             dest.writeByte((byte)1);
             dest.writeByteArray(mIpAddress.getAddress());
-        } //End block
+        } 
         {
             dest.writeByte((byte)0);
-        } //End block
+        } 
         dest.writeString(getSSID());
         dest.writeString(mBSSID);
         dest.writeString(mMacAddress);
@@ -370,21 +375,21 @@ public class WifiInfo implements Parcelable {
         mSupplicantState.writeToParcel(dest, flags);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mNetworkId);
-        //dest.writeInt(mRssi);
-        //dest.writeInt(mLinkSpeed);
-        //if (mIpAddress != null) {
-            //dest.writeByte((byte)1);
-            //dest.writeByteArray(mIpAddress.getAddress());
-        //} else {
-            //dest.writeByte((byte)0);
-        //}
-        //dest.writeString(getSSID());
-        //dest.writeString(mBSSID);
-        //dest.writeString(mMacAddress);
-        //dest.writeByte(mExplicitConnect ? (byte)1 : (byte)0);
-        //mSupplicantState.writeToParcel(dest, flags);
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -436,7 +441,7 @@ public class WifiInfo implements Parcelable {
                 return new WifiInfo[size];
             }
         };
-    // orphaned legacy method
+    
     public WifiInfo createFromParcel(Parcel in) {
                 WifiInfo info = new WifiInfo();
                 info.setNetworkId(in.readInt());
@@ -455,7 +460,7 @@ public class WifiInfo implements Parcelable {
                 return info;
             }
     
-    // orphaned legacy method
+    
     public WifiInfo[] newArray(int size) {
                 return new WifiInfo[size];
             }

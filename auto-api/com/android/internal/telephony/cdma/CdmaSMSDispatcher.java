@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cdma;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -60,8 +60,8 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
         addTaint(phone.getTaint());
         addTaint(storageMonitor.getTaint());
         addTaint(usageMonitor.getTaint());
-        // ---------- Original Method ----------
-        //mCm.setOnNewCdmaSms(this, EVENT_NEW_SMS, null);
+        
+        
     }
 
     
@@ -69,23 +69,24 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
     @Override
     public void dispose() {
         mCm.unSetOnNewCdmaSms(this);
-        // ---------- Original Method ----------
-        //mCm.unSetOnNewCdmaSms(this);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.111 -0400", hash_original_method = "77401C8F23584A16465C2C7060977D74", hash_generated_method = "16AF466DE7CC04B7C0A5EE90E8CD2E28")
     @Override
     protected String getFormat() {
-        String varB4EAC82CA7396A68D541C85D26508E83_947247899 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_947247899 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_947247899 = android.telephony.SmsMessage.FORMAT_3GPP2;
-        varB4EAC82CA7396A68D541C85D26508E83_947247899.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_947247899.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_947247899;
-        // ---------- Original Method ----------
-        //return android.telephony.SmsMessage.FORMAT_3GPP2;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.112 -0400", hash_original_method = "D8F9BF94E3CE828F06F15D06BD41575B", hash_generated_method = "EB4CA9D0ADAC47FB704B3A05242A7B5B")
     private void handleCdmaStatusReport(SmsMessage sms) {
         {
@@ -102,48 +103,49 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
                     try 
                     {
                         intent.send(mContext, Activity.RESULT_OK, fillIn);
-                    } //End block
+                    } 
                     catch (CanceledException ex)
                     { }
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(sms.getTaint());
-        // ---------- Original Method ----------
-        //for (int i = 0, count = deliveryPendingList.size(); i < count; i++) {
-            //SmsTracker tracker = deliveryPendingList.get(i);
-            //if (tracker.mMessageRef == sms.messageRef) {
-                //deliveryPendingList.remove(i);
-                //PendingIntent intent = tracker.mDeliveryIntent;
-                //Intent fillIn = new Intent();
-                //fillIn.putExtra("pdu", sms.getPdu());
-                //fillIn.putExtra("format", android.telephony.SmsMessage.FORMAT_3GPP2);
-                //try {
-                    //intent.send(mContext, Activity.RESULT_OK, fillIn);
-                //} catch (CanceledException ex) {}
-                //break;  
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+                
+                
+                
+                
+                    
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.113 -0400", hash_original_method = "AEF7CF36D035C3FD2F985EB9DE02C895", hash_generated_method = "BD606AEF81D3010F1C900CAF3EF7C7A7")
     @Override
     public int dispatchMessage(SmsMessageBase smsb) {
         String inEcm = SystemProperties.get(TelephonyProperties.PROPERTY_INECM_MODE, "false");
         {
             boolean varA0F6E951DAEE6AF07E9F4144653EDB3A_1103336626 = (inEcm.equals("true"));
-        } //End collapsed parenthetic
+        } 
         {
             Log.d(TAG, "Received short message on device which doesn't support "
                     + "receiving SMS. Ignored.");
-        } //End block
+        } 
         SmsMessage sms = (SmsMessage) smsb;
         mLastDispatchedSmsFingerprint = sms.getIncomingSmsFingerprint();
         {
             boolean varDF6EBE56566BC9DCD284E2602989ED53_1526222085 = (mLastAcknowledgedSmsFingerprint != null &&
                 Arrays.equals(mLastDispatchedSmsFingerprint, mLastAcknowledgedSmsFingerprint));
-        } //End collapsed parenthetic
+        } 
         sms.parseSms();
         int teleService = sms.getTeleService();
         boolean handled = false;
@@ -157,7 +159,7 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
             editor.apply();
             mPhone.setVoiceMessageWaiting(1, voicemailCount);
             handled = true;
-        } //End block
+        } 
         {
             boolean var6BFACB98B67502CFF9E96D2D882A1268_1896697803 = (((SmsEnvelope.TELESERVICE_WMT == teleService) ||
                 (SmsEnvelope.TELESERVICE_WEMT == teleService)) &&
@@ -165,39 +167,40 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
             {
                 handleCdmaStatusReport(sms);
                 handled = true;
-            } //End block
+            } 
             {
                 boolean varBE4A2285BBE5F32B453C107F5877041B_418564028 = ((sms.getUserData() == null));
                 {
                     {
                         Log.d(TAG, "Received SMS without user data");
-                    } //End block
+                    } 
                     handled = true;
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             boolean varA6EC97D1C251BAAEFB63A742DEBA1DB1_631514247 = (!mStorageMonitor.isStorageAvailable() &&
                 sms.getMessageClass() != MessageClass.CLASS_0);
-        } //End collapsed parenthetic
+        } 
         {
             int varD40C172EBE77C0D6F53AB9839B849E95_520724886 = (processCdmaWapPdu(sms.getUserData(), sms.messageRef,
                     sms.getOriginatingAddress()));
-        } //End block
+        } 
         {
             boolean var3D2190DCE0A796AA437486D706358C65_985499840 = ((SmsEnvelope.TELESERVICE_WMT != teleService) &&
                 (SmsEnvelope.TELESERVICE_WEMT != teleService) &&
                 (SmsEnvelope.MESSAGE_TYPE_BROADCAST != sms.getMessageType()));
-        } //End collapsed parenthetic
+        } 
         int var3F541A711EB85996C611FA5F634F0615_1653389549 = (dispatchNormalMessage(smsb));
         addTaint(smsb.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658569763 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658569763;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.114 -0400", hash_original_method = "7B6C844E67A0CC9BDD3E050A8ACE8852", hash_generated_method = "154DF23989F6BE3A528756CCF63C4449")
     protected int processCdmaWapPdu(byte[] pdu, int referenceNumber, String address) {
         int index = 0;
@@ -216,10 +219,10 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
                     boolean var2D609C19B2CBA7666BC03ED4CBB382E6_1201416112 = (checkDuplicatePortOmadmWappush(pdu,index));
                     {
                         index = index + 4;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         byte[] userData = new byte[pdu.length - index];
         System.arraycopy(pdu, index, userData, 0, pdu.length - index);
         int var2CF4D70DCF81F3DCA9EA65A5EFDC134E_1826341886 = (processMessagePart(userData, address, referenceNumber, segment, totalSegments,
@@ -229,11 +232,12 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
         addTaint(address.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1082361409 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1082361409;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.115 -0400", hash_original_method = "1C79B20542F5EA033BD01F30A8B0455D", hash_generated_method = "6B58C21148E618C62C69E17B12FBF1EE")
     @Override
     protected void sendData(String destAddr, String scAddr, int destPort,
@@ -247,13 +251,14 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
         addTaint(data[0]);
         addTaint(sentIntent.getTaint());
         addTaint(deliveryIntent.getTaint());
-        // ---------- Original Method ----------
-        //SmsMessage.SubmitPdu pdu = SmsMessage.getSubmitPdu(
-                //scAddr, destAddr, destPort, data, (deliveryIntent != null));
-        //sendSubmitPdu(pdu, sentIntent, deliveryIntent);
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.115 -0400", hash_original_method = "5D58764547BE2148EE8A5F6EEE636061", hash_generated_method = "9452BBC5E62EB8EB5D22A444C1191BB6")
     @Override
     protected void sendText(String destAddr, String scAddr, String text,
@@ -266,28 +271,30 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
         addTaint(text.getTaint());
         addTaint(sentIntent.getTaint());
         addTaint(deliveryIntent.getTaint());
-        // ---------- Original Method ----------
-        //SmsMessage.SubmitPdu pdu = SmsMessage.getSubmitPdu(
-                //scAddr, destAddr, text, (deliveryIntent != null), null);
-        //sendSubmitPdu(pdu, sentIntent, deliveryIntent);
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.116 -0400", hash_original_method = "9DEF445F0373354182FDA1EF238BF843", hash_generated_method = "C92434467C3C6D62F8C74C6B62A737A8")
     @Override
     protected TextEncodingDetails calculateLength(CharSequence messageBody,
             boolean use7bitOnly) {
-        TextEncodingDetails varB4EAC82CA7396A68D541C85D26508E83_609974667 = null; //Variable for return #1
+        TextEncodingDetails varB4EAC82CA7396A68D541C85D26508E83_609974667 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_609974667 = SmsMessage.calculateLength(messageBody, use7bitOnly);
         addTaint(messageBody.getTaint());
         addTaint(use7bitOnly);
-        varB4EAC82CA7396A68D541C85D26508E83_609974667.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_609974667.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_609974667;
-        // ---------- Original Method ----------
-        //return SmsMessage.calculateLength(messageBody, use7bitOnly);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.116 -0400", hash_original_method = "77E27619E0BAA0675283D74233CDEF70", hash_generated_method = "19524CB08CB8F8A945313822E4F39A6B")
     @Override
     protected void sendNewSubmitPdu(String destinationAddress, String scAddress,
@@ -298,10 +305,10 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
         uData.userDataHeader = smsHeader;
         {
             uData.msgEncoding = UserData.ENCODING_GSM_7BIT_ALPHABET;
-        } //End block
+        } 
         {
             uData.msgEncoding = UserData.ENCODING_UNICODE_16;
-        } //End block
+        } 
         uData.msgEncodingSet = true;
         SmsMessage.SubmitPdu submitPdu = SmsMessage.getSubmitPdu(destinationAddress,
                 uData, (deliveryIntent != null) && lastPart);
@@ -314,19 +321,19 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
         addTaint(sentIntent.getTaint());
         addTaint(deliveryIntent.getTaint());
         addTaint(lastPart);
-        // ---------- Original Method ----------
-        //UserData uData = new UserData();
-        //uData.payloadStr = message;
-        //uData.userDataHeader = smsHeader;
-        //if (encoding == android.telephony.SmsMessage.ENCODING_7BIT) {
-            //uData.msgEncoding = UserData.ENCODING_GSM_7BIT_ALPHABET;
-        //} else { 
-            //uData.msgEncoding = UserData.ENCODING_UNICODE_16;
-        //}
-        //uData.msgEncodingSet = true;
-        //SmsMessage.SubmitPdu submitPdu = SmsMessage.getSubmitPdu(destinationAddress,
-                //uData, (deliveryIntent != null) && lastPart);
-        //sendSubmitPdu(submitPdu, sentIntent, deliveryIntent);
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+                
+        
     }
 
     
@@ -340,35 +347,36 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
                     try 
                     {
                         sentIntent.send(SmsManager.RESULT_ERROR_NO_SERVICE);
-                    } //End block
+                    } 
                     catch (CanceledException ex)
                     { }
-                } //End block
+                } 
                 {
                     Log.d(TAG, "Block SMS in Emergency Callback mode");
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         sendRawPdu(pdu.encodedScAddress, pdu.encodedMessage, sentIntent, deliveryIntent);
         addTaint(pdu.getTaint());
         addTaint(sentIntent.getTaint());
         addTaint(deliveryIntent.getTaint());
-        // ---------- Original Method ----------
-        //if (SystemProperties.getBoolean(TelephonyProperties.PROPERTY_INECM_MODE, false)) {
-            //if (sentIntent != null) {
-                //try {
-                    //sentIntent.send(SmsManager.RESULT_ERROR_NO_SERVICE);
-                //} catch (CanceledException ex) {}
-            //}
-            //if (false) {
-                //Log.d(TAG, "Block SMS in Emergency Callback mode");
-            //}
-            //return;
-        //}
-        //sendRawPdu(pdu.encodedScAddress, pdu.encodedMessage, sentIntent, deliveryIntent);
+        
+        
+            
+                
+                    
+                
+            
+            
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.117 -0400", hash_original_method = "B01C05D91305560949593CF3FA30240C", hash_generated_method = "1B1A91891B4E9F6BF0D881836423711D")
     @Override
     protected void sendSms(SmsTracker tracker) {
@@ -377,41 +385,42 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
         Message reply = obtainMessage(EVENT_SEND_SMS_COMPLETE, tracker);
         mCm.sendCdmaSms(pdu, reply);
         addTaint(tracker.getTaint());
-        // ---------- Original Method ----------
-        //HashMap<String, Object> map = tracker.mData;
-        //byte pdu[] = (byte[]) map.get("pdu");
-        //Message reply = obtainMessage(EVENT_SEND_SMS_COMPLETE, tracker);
-        //mCm.sendCdmaSms(pdu, reply);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.117 -0400", hash_original_method = "8A630C8BC501F81DB51344181E02B8CE", hash_generated_method = "0FBB411C178B9285903278F0E402141F")
     @Override
     protected void acknowledgeLastIncomingSms(boolean success, int result, Message response) {
         String inEcm = SystemProperties.get(TelephonyProperties.PROPERTY_INECM_MODE, "false");
         {
             boolean varA0F6E951DAEE6AF07E9F4144653EDB3A_78956471 = (inEcm.equals("true"));
-        } //End collapsed parenthetic
+        } 
         int causeCode = resultToCause(result);
         mCm.acknowledgeLastIncomingCdmaSms(success, causeCode, response);
         {
             mLastAcknowledgedSmsFingerprint = mLastDispatchedSmsFingerprint;
-        } //End block
+        } 
         mLastDispatchedSmsFingerprint = null;
         addTaint(success);
         addTaint(result);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
-        //String inEcm=SystemProperties.get(TelephonyProperties.PROPERTY_INECM_MODE, "false");
-        //if (inEcm.equals("true")) {
-            //return;
-        //}
-        //int causeCode = resultToCause(result);
-        //mCm.acknowledgeLastIncomingCdmaSms(success, causeCode, response);
-        //if (causeCode == 0) {
-            //mLastAcknowledgedSmsFingerprint = mLastDispatchedSmsFingerprint;
-        //}
-        //mLastDispatchedSmsFingerprint = null;
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -431,6 +440,7 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean checkDuplicatePortOmadmWappush(byte[] origPdu, int index) {
         index += 4;
         byte[] omaPdu = new byte[origPdu.length - index];

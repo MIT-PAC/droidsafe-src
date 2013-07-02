@@ -1,11 +1,11 @@
 package org.bouncycastle.openssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.Writer;
@@ -24,7 +24,7 @@ public class PEMWriter extends PemWriter {
     public  PEMWriter(Writer out) {
         this(out, "BC");
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -35,55 +35,58 @@ public class PEMWriter extends PemWriter {
         super(out);
         this.provider = provider;
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //this.provider = provider;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.132 -0400", hash_original_method = "996091F5D25AD49D59450216DEC51F49", hash_generated_method = "4D35C7F3F0958E3844408697129C9BE1")
     public void writeObject(
         Object  obj) throws IOException {
         try 
         {
             super.writeObject(new MiscPEMGenerator(obj));
-        } //End block
+        } 
         catch (PemGenerationException e)
         {
             {
                 boolean var67625E0ED8D01D5826DCC347A874C9DD_1611990630 = (e.getCause() instanceof IOException);
                 {
                     if (DroidSafeAndroidRuntime.control) throw (IOException)e.getCause();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
+        } 
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //try
-        //{
-            //super.writeObject(new MiscPEMGenerator(obj));
-        //}
-        //catch (PemGenerationException e)
-        //{
-            //if (e.getCause() instanceof IOException)
-            //{
-                //throw (IOException)e.getCause();
-            //}
-            //throw e;
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.132 -0400", hash_original_method = "E0AF395E658580FE02EB9102C3B67CCE", hash_generated_method = "3CF20F1A50257069DADE483912B3E916")
     public void writeObject(
         PemObjectGenerator obj) throws IOException {
         super.writeObject(obj);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //super.writeObject(obj);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.133 -0400", hash_original_method = "FE40F27E2DA82EBBE9E1DFDF41871C25", hash_generated_method = "E84B40AF16F75CA7D91749ACDF549FF3")
     public void writeObject(
         Object       obj,
@@ -93,24 +96,24 @@ public class PEMWriter extends PemWriter {
         try 
         {
             super.writeObject(new MiscPEMGenerator(obj, algorithm, password, random, provider));
-        } //End block
+        } 
         catch (NoSuchProviderException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new EncryptionException(e.getMessage(), e);
-        } //End block
+        } 
         addTaint(obj.getTaint());
         addTaint(algorithm.getTaint());
         addTaint(password[0]);
         addTaint(random.getTaint());
-        // ---------- Original Method ----------
-        //try
-        //{
-            //super.writeObject(new MiscPEMGenerator(obj, algorithm, password, random, provider));
-        //}
-        //catch (NoSuchProviderException e)
-        //{
-            //throw new EncryptionException(e.getMessage(), e);
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     

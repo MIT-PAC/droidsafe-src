@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -29,7 +29,7 @@ public final class Rect implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.214 -0400", hash_original_method = "2824AA033EB3CD5BF749E2296CB51BE8", hash_generated_method = "88CB725E6D9F946318418A9C095367E7")
     public  Rect() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -39,11 +39,11 @@ public final class Rect implements Parcelable {
         this.top = top;
         this.right = right;
         this.bottom = bottom;
-        // ---------- Original Method ----------
-        //this.left = left;
-        //this.top = top;
-        //this.right = right;
-        //this.bottom = bottom;
+        
+        
+        
+        
+        
     }
 
     
@@ -53,11 +53,11 @@ public final class Rect implements Parcelable {
         top = r.top;
         right = r.right;
         bottom = r.bottom;
-        // ---------- Original Method ----------
-        //left = r.left;
-        //top = r.top;
-        //right = r.right;
-        //bottom = r.bottom;
+        
+        
+        
+        
+        
     }
 
     
@@ -68,20 +68,21 @@ public final class Rect implements Parcelable {
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_973804634 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_973804634;
-        // ---------- Original Method ----------
-        //Rect r = (Rect) obj;
-        //if (r != null) {
-            //return left == r.left && top == r.top && right == r.right
-                    //&& bottom == r.bottom;
-        //}
-        //return false;
+        
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.217 -0400", hash_original_method = "377E4026C49F3CEBA3B751597A4FD5E1", hash_generated_method = "DAA1E35FA334FFDD7B269BE3C84D16D8")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1831245587 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1831245587 = null; 
         StringBuilder sb = new StringBuilder(32);
         sb.append("Rect(");
         sb.append(left);
@@ -93,37 +94,39 @@ public final class Rect implements Parcelable {
         sb.append(bottom);
         sb.append(")");
         varB4EAC82CA7396A68D541C85D26508E83_1831245587 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1831245587.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1831245587.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1831245587;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(32);
-        //sb.append("Rect(");
-        //sb.append(left);
-        //sb.append(", ");
-        //sb.append(top);
-        //sb.append(" - ");
-        //sb.append(right);
-        //sb.append(", ");
-        //sb.append(bottom);
-        //sb.append(")");
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.218 -0400", hash_original_method = "1840D8CED4FEDA16C265C984A5256101", hash_generated_method = "A5639F0FC9271A6C2A9A75AD53104D45")
     public String toShortString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1834568635 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1834568635 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1834568635 = toShortString(new StringBuilder(32));
-        varB4EAC82CA7396A68D541C85D26508E83_1834568635.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1834568635.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1834568635;
-        // ---------- Original Method ----------
-        //return toShortString(new StringBuilder(32));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.220 -0400", hash_original_method = "2BF61B85E091A9DA2C18EB7FC26222B9", hash_generated_method = "8178C000BB4EBD196B1F933026D7121D")
     public String toShortString(StringBuilder sb) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1507649746 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1507649746 = null; 
         sb.setLength(0);
         sb.append('[');
         sb.append(left);
@@ -136,26 +139,27 @@ public final class Rect implements Parcelable {
         sb.append(']');
         varB4EAC82CA7396A68D541C85D26508E83_1507649746 = sb.toString();
         addTaint(sb.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1507649746.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1507649746.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1507649746;
-        // ---------- Original Method ----------
-        //sb.setLength(0);
-        //sb.append('[');
-        //sb.append(left);
-        //sb.append(',');
-        //sb.append(top);
-        //sb.append("][");
-        //sb.append(right);
-        //sb.append(',');
-        //sb.append(bottom);
-        //sb.append(']');
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.221 -0400", hash_original_method = "EE149DE53983156EB3F726A589D5EF54", hash_generated_method = "8F3D4C02C1D1CEE61C81D7E6AFD09242")
     public String flattenToString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_800540125 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_800540125 = null; 
         StringBuilder sb = new StringBuilder(32);
         sb.append(left);
         sb.append(' ');
@@ -165,21 +169,22 @@ public final class Rect implements Parcelable {
         sb.append(' ');
         sb.append(bottom);
         varB4EAC82CA7396A68D541C85D26508E83_800540125 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_800540125.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_800540125.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_800540125;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(32);
-        //sb.append(left);
-        //sb.append(' ');
-        //sb.append(top);
-        //sb.append(' ');
-        //sb.append(right);
-        //sb.append(' ');
-        //sb.append(bottom);
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Rect unflattenFromString(String str) {
         Matcher matcher = FLATTENED_PATTERN.matcher(str);
         if (!matcher.matches()) {
@@ -192,6 +197,7 @@ public final class Rect implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.222 -0400", hash_original_method = "78960F3D6EA700D282D0F0C0E94AA84C", hash_generated_method = "7CC9973023E2CD924438EDC646D73B58")
     public void printShortString(PrintWriter pw) {
         pw.print('[');
@@ -204,16 +210,16 @@ public final class Rect implements Parcelable {
         pw.print(bottom);
         pw.print(']');
         addTaint(pw.getTaint());
-        // ---------- Original Method ----------
-        //pw.print('[');
-        //pw.print(left);
-        //pw.print(',');
-        //pw.print(top);
-        //pw.print("][");
-        //pw.print(right);
-        //pw.print(',');
-        //pw.print(bottom);
-        //pw.print(']');
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -221,8 +227,8 @@ public final class Rect implements Parcelable {
     public final boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_861181097 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_861181097;
-        // ---------- Original Method ----------
-        //return left >= right || top >= bottom;
+        
+        
     }
 
     
@@ -230,8 +236,8 @@ public final class Rect implements Parcelable {
     public final int width() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1449285283 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1449285283;
-        // ---------- Original Method ----------
-        //return right - left;
+        
+        
     }
 
     
@@ -239,8 +245,8 @@ public final class Rect implements Parcelable {
     public final int height() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1594172634 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1594172634;
-        // ---------- Original Method ----------
-        //return bottom - top;
+        
+        
     }
 
     
@@ -248,8 +254,8 @@ public final class Rect implements Parcelable {
     public final int centerX() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1670970705 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1670970705;
-        // ---------- Original Method ----------
-        //return (left + right) >> 1;
+        
+        
     }
 
     
@@ -257,8 +263,8 @@ public final class Rect implements Parcelable {
     public final int centerY() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1603856803 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1603856803;
-        // ---------- Original Method ----------
-        //return (top + bottom) >> 1;
+        
+        
     }
 
     
@@ -266,8 +272,8 @@ public final class Rect implements Parcelable {
     public final float exactCenterX() {
         float var546ADE640B6EDFBC8A086EF31347E768_389978203 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_389978203;
-        // ---------- Original Method ----------
-        //return (left + right) * 0.5f;
+        
+        
     }
 
     
@@ -275,16 +281,16 @@ public final class Rect implements Parcelable {
     public final float exactCenterY() {
         float var546ADE640B6EDFBC8A086EF31347E768_1969199690 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1969199690;
-        // ---------- Original Method ----------
-        //return (top + bottom) * 0.5f;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.225 -0400", hash_original_method = "86DA251BA391C7524C2010551ABD907E", hash_generated_method = "A534843FC0914524CAF333DFA3D47813")
     public void setEmpty() {
         left = right = top = bottom = 0;
-        // ---------- Original Method ----------
-        //left = right = top = bottom = 0;
+        
+        
     }
 
     
@@ -294,11 +300,11 @@ public final class Rect implements Parcelable {
         this.top = top;
         this.right = right;
         this.bottom = bottom;
-        // ---------- Original Method ----------
-        //this.left = left;
-        //this.top = top;
-        //this.right = right;
-        //this.bottom = bottom;
+        
+        
+        
+        
+        
     }
 
     
@@ -308,11 +314,11 @@ public final class Rect implements Parcelable {
         this.top = src.top;
         this.right = src.right;
         this.bottom = src.bottom;
-        // ---------- Original Method ----------
-        //this.left = src.left;
-        //this.top = src.top;
-        //this.right = src.right;
-        //this.bottom = src.bottom;
+        
+        
+        
+        
+        
     }
 
     
@@ -322,11 +328,11 @@ public final class Rect implements Parcelable {
         top += dy;
         right += dx;
         bottom += dy;
-        // ---------- Original Method ----------
-        //left += dx;
-        //top += dy;
-        //right += dx;
-        //bottom += dy;
+        
+        
+        
+        
+        
     }
 
     
@@ -336,11 +342,11 @@ public final class Rect implements Parcelable {
         bottom += newTop - top;
         left = newLeft;
         top = newTop;
-        // ---------- Original Method ----------
-        //right += newLeft - left;
-        //bottom += newTop - top;
-        //left = newLeft;
-        //top = newTop;
+        
+        
+        
+        
+        
     }
 
     
@@ -350,11 +356,11 @@ public final class Rect implements Parcelable {
         top += dy;
         right -= dx;
         bottom -= dy;
-        // ---------- Original Method ----------
-        //left += dx;
-        //top += dy;
-        //right -= dx;
-        //bottom -= dy;
+        
+        
+        
+        
+        
     }
 
     
@@ -364,9 +370,9 @@ public final class Rect implements Parcelable {
         addTaint(y);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1671418528 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1671418528;
-        // ---------- Original Method ----------
-        //return left < right && top < bottom  
-               //&& x >= left && x < right && y >= top && y < bottom;
+        
+        
+               
     }
 
     
@@ -378,10 +384,10 @@ public final class Rect implements Parcelable {
         addTaint(bottom);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_193418260 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_193418260;
-        // ---------- Original Method ----------
-        //return this.left < this.right && this.top < this.bottom
-                //&& this.left <= left && this.top <= top
-                //&& this.right >= right && this.bottom >= bottom;
+        
+        
+                
+                
     }
 
     
@@ -390,10 +396,10 @@ public final class Rect implements Parcelable {
         addTaint(r.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_285620795 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_285620795;
-        // ---------- Original Method ----------
-        //return this.left < this.right && this.top < this.bottom
-               //&& left <= r.left && top <= r.top
-               //&& right >= r.right && bottom >= r.bottom;
+        
+        
+               
+               
     }
 
     
@@ -402,51 +408,53 @@ public final class Rect implements Parcelable {
         {
             {
                 this.left = left;
-            } //End block
+            } 
             {
                 this.top = top;
-            } //End block
+            } 
             {
                 this.right = right;
-            } //End block
+            } 
             {
                 this.bottom = bottom;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1983467842 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1983467842;
-        // ---------- Original Method ----------
-        //if (this.left < right && left < this.right
-                //&& this.top < bottom && top < this.bottom) {
-            //if (this.left < left) {
-                //this.left = left;
-            //}
-            //if (this.top < top) {
-                //this.top = top;
-            //}
-            //if (this.right > right) {
-                //this.right = right;
-            //}
-            //if (this.bottom > bottom) {
-                //this.bottom = bottom;
-            //}
-            //return true;
-        //}
-        //return false;
+        
+        
+                
+            
+                
+            
+            
+                
+            
+            
+                
+            
+            
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.233 -0400", hash_original_method = "4A2C98A9983AAAE4538683164E4E11F1", hash_generated_method = "2B516DFDB035C5ECEB01B65711B35437")
     public boolean intersect(Rect r) {
         boolean var774B7820222CF99C9D397FA2889989AA_1965459201 = (intersect(r.left, r.top, r.right, r.bottom));
         addTaint(r.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1680477639 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1680477639;
-        // ---------- Original Method ----------
-        //return intersect(r.left, r.top, r.right, r.bottom);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.233 -0400", hash_original_method = "6CBE4827BB85E1688F906F31CBC110B1", hash_generated_method = "A6476C9198C00E8D19C81C77CF6EDC0E")
     public boolean setIntersect(Rect a, Rect b) {
         {
@@ -454,19 +462,19 @@ public final class Rect implements Parcelable {
             top = Math.max(a.top, b.top);
             right = Math.min(a.right, b.right);
             bottom = Math.min(a.bottom, b.bottom);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2034775749 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2034775749;
-        // ---------- Original Method ----------
-        //if (a.left < b.right && b.left < a.right
-                //&& a.top < b.bottom && b.top < a.bottom) {
-            //left = Math.max(a.left, b.left);
-            //top = Math.max(a.top, b.top);
-            //right = Math.min(a.right, b.right);
-            //bottom = Math.min(a.bottom, b.bottom);
-            //return true;
-        //}
-        //return false;
+        
+        
+                
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -478,9 +486,9 @@ public final class Rect implements Parcelable {
         addTaint(bottom);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_932478908 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_932478908;
-        // ---------- Original Method ----------
-        //return this.left < right && left < this.right
-               //&& this.top < bottom && top < this.bottom;
+        
+        
+               
     }
 
     
@@ -498,41 +506,42 @@ public final class Rect implements Parcelable {
                 this.top = top;
                 this.right = right;
                 this.bottom = bottom;
-            } //End block
+            } 
             {
                 this.left = left;
                 this.top = top;
                 this.right = right;
                 this.bottom = bottom;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if ((left < right) && (top < bottom)) {
-            //if ((this.left < this.right) && (this.top < this.bottom)) {
-                //if (this.left > left)
-                    //this.left = left;
-                //if (this.top > top)
-                    //this.top = top;
-                //if (this.right < right)
-                    //this.right = right;
-                //if (this.bottom < bottom)
-                    //this.bottom = bottom;
-            //} else {
-                //this.left = left;
-                //this.top = top;
-                //this.right = right;
-                //this.bottom = bottom;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+            
+                
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.236 -0400", hash_original_method = "02BA37E056209ADFED6D0D921E351CDC", hash_generated_method = "ECB7B858A50A86AEF3334B3288AED8D3")
     public void union(Rect r) {
         union(r.left, r.top, r.right, r.bottom);
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //union(r.left, r.top, r.right, r.bottom);
+        
+        
     }
 
     
@@ -540,27 +549,27 @@ public final class Rect implements Parcelable {
     public void union(int x, int y) {
         {
             left = x;
-        } //End block
+        } 
         {
             right = x;
-        } //End block
+        } 
         {
             top = y;
-        } //End block
+        } 
         {
             bottom = y;
-        } //End block
-        // ---------- Original Method ----------
-        //if (x < left) {
-            //left = x;
-        //} else if (x > right) {
-            //right = x;
-        //}
-        //if (y < top) {
-            //top = y;
-        //} else if (y > bottom) {
-            //bottom = y;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -570,23 +579,23 @@ public final class Rect implements Parcelable {
             int temp = left;
             left = right;
             right = temp;
-        } //End block
+        } 
         {
             int temp = top;
             top = bottom;
             bottom = temp;
-        } //End block
-        // ---------- Original Method ----------
-        //if (left > right) {
-            //int temp = left;
-            //left = right;
-            //right = temp;
-        //}
-        //if (top > bottom) {
-            //int temp = top;
-            //top = bottom;
-            //bottom = temp;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -594,11 +603,12 @@ public final class Rect implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962081949 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962081949;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.239 -0400", hash_original_method = "548726568B563CCA3AC6BF577DA5CC4D", hash_generated_method = "82240D1638C8FC56ED67E24C00ABD8FF")
     public void writeToParcel(Parcel out, int flags) {
         out.writeInt(left);
@@ -607,25 +617,26 @@ public final class Rect implements Parcelable {
         out.writeInt(bottom);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeInt(left);
-        //out.writeInt(top);
-        //out.writeInt(right);
-        //out.writeInt(bottom);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.240 -0400", hash_original_method = "979823E39D5729D9D6A2DACBA85F6F6A", hash_generated_method = "42E1DA753B84F90CC42FB2F09788EE27")
     public void readFromParcel(Parcel in) {
         left = in.readInt();
         top = in.readInt();
         right = in.readInt();
         bottom = in.readInt();
-        // ---------- Original Method ----------
-        //left = in.readInt();
-        //top = in.readInt();
-        //right = in.readInt();
-        //bottom = in.readInt();
+        
+        
+        
+        
+        
     }
 
     
@@ -636,14 +647,14 @@ public final class Rect implements Parcelable {
             top = (int) (top * scale + 0.5f);
             right = (int) (right * scale + 0.5f);
             bottom = (int) (bottom * scale + 0.5f);
-        } //End block
-        // ---------- Original Method ----------
-        //if (scale != 1.0f) {
-            //left = (int) (left * scale + 0.5f);
-            //top = (int) (top * scale + 0.5f);
-            //right = (int) (right * scale + 0.5f);
-            //bottom = (int) (bottom * scale + 0.5f);
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -666,14 +677,14 @@ public final class Rect implements Parcelable {
             return new Rect[size];
         }
     };
-    // orphaned legacy method
+    
     public Rect createFromParcel(Parcel in) {
             Rect r = new Rect();
             r.readFromParcel(in);
             return r;
         }
     
-    // orphaned legacy method
+    
     public Rect[] newArray(int size) {
             return new Rect[size];
         }

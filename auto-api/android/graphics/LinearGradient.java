@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class LinearGradient extends Shader {
@@ -15,10 +15,10 @@ public class LinearGradient extends Shader {
                           int colors[], float positions[], TileMode tile) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("needs >= 2 number of colors");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("color and position arrays must be of equal length");
-        } //End block
+        } 
         native_instance = nativeCreate1(x0, y0, x1, y1, colors, positions, tile.nativeInt);
         native_shader = nativePostCreate1(native_instance, x0, y0, x1, y1, colors, positions,
                 tile.nativeInt);
@@ -29,16 +29,16 @@ public class LinearGradient extends Shader {
         addTaint(colors[0]);
         addTaint(positions[0]);
         addTaint(tile.getTaint());
-        // ---------- Original Method ----------
-        //if (colors.length < 2) {
-            //throw new IllegalArgumentException("needs >= 2 number of colors");
-        //}
-        //if (positions != null && colors.length != positions.length) {
-            //throw new IllegalArgumentException("color and position arrays must be of equal length");
-        //}
-        //native_instance = nativeCreate1(x0, y0, x1, y1, colors, positions, tile.nativeInt);
-        //native_shader = nativePostCreate1(native_instance, x0, y0, x1, y1, colors, positions,
-                //tile.nativeInt);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+                
     }
 
     
@@ -55,13 +55,14 @@ public class LinearGradient extends Shader {
         addTaint(color0);
         addTaint(color1);
         addTaint(tile.getTaint());
-        // ---------- Original Method ----------
-        //native_instance = nativeCreate2(x0, y0, x1, y1, color0, color1, tile.nativeInt);
-        //native_shader = nativePostCreate2(native_instance, x0, y0, x1, y1, color0, color1,
-                //tile.nativeInt);
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.560 -0400", hash_original_method = "B94A77D14C5B8671FB729EA28F4EAAD5", hash_generated_method = "98F77BF9C79C643BD25380930A1E4BEC")
     private int nativeCreate1(float x0, float y0, float x1, float y1,
             int colors[], float positions[], int tileMode) {
@@ -78,6 +79,7 @@ public class LinearGradient extends Shader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.562 -0400", hash_original_method = "3D4FC89E238038D87C8D1AA41C910405", hash_generated_method = "8E9D231151A330C1F98EFD521109C075")
     private int nativePostCreate1(int native_shader, float x0, float y0, float x1, float y1,
             int colors[], float positions[], int tileMode) {

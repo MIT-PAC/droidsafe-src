@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -71,10 +71,11 @@ class TextLine {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.838 -0400", hash_original_method = "2FAB193CBF90842ECB23B93C34526440", hash_generated_method = "2FAB193CBF90842ECB23B93C34526440")
     public TextLine ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     static TextLine obtain() {
         TextLine tl;
         synchronized (sCached) {
@@ -94,6 +95,7 @@ class TextLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static TextLine recycle(TextLine tl) {
         tl.mText = null;
         tl.mPaint = null;
@@ -124,7 +126,7 @@ class TextLine {
         mDirections = directions;
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Directions cannot be null");
-        } //End block
+        } 
         mHasTabs = hasTabs;
         mSpanned = null;
         boolean hasReplacement = false;
@@ -132,12 +134,12 @@ class TextLine {
             mSpanned = (Spanned) text;
             mReplacementSpanSpanSet.init(mSpanned, start, limit);
             hasReplacement = mReplacementSpanSpanSet.numberOfSpans > 0;
-        } //End block
+        } 
         mCharsValid = hasReplacement || hasTabs || directions != Layout.DIRS_ALL_LEFT_TO_RIGHT;
         {
             {
                 mChars = new char[ArrayUtils.idealCharArraySize(mLen)];
-            } //End block
+            } 
             TextUtils.getChars(text, start, limit, mChars, 0);
             {
                 char[] chars = mChars;
@@ -156,17 +158,17 @@ class TextLine {
                                     int e = inext - start;
                                     {
                                         chars[j] = '\ufeff';
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         mTabs = tabStops;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -175,11 +177,11 @@ class TextLine {
         {
             {
                 drawRun(c, 0, mLen, false, x, top, y, bottom, false);
-            } //End block
+            } 
             {
                 drawRun(c, 0, mLen, true, x, top, y, bottom, false);
-            } //End block
-        } //End block
+            } 
+        } 
         float h = 0;
         int[] runs = mDirections.mDirections;
         RectF emojiRect = null;
@@ -192,7 +194,7 @@ class TextLine {
                 int runLimit = runStart + (runs[i+1] & Layout.RUN_LENGTH_MASK);
                 {
                     runLimit = mLen;
-                } //End block
+                } 
                 boolean runIsRtl = (runs[i+1] & Layout.RUN_RTL_FLAG) != 0;
                 int segstart = runStart;
                 {
@@ -208,15 +210,15 @@ class TextLine {
                                 codept = Character.codePointAt(mChars, j);
                                 {
                                     bm = Layout.EMOJI_FACTORY.getBitmapFromAndroidPua(codept);
-                                } //End block
-                            } //End block
-                        } //End block
+                                } 
+                            } 
+                        } 
                         {
                             h += drawRun(c, segstart, j, runIsRtl, x+h, top, y, bottom,
                             i != lastRunIndex || j != mLen);
                             {
                                 h = mDir * nextTab(h * mDir);
-                            } //End block
+                            } 
                             {
                                 float bmAscent = ascent(j);
                                 float bitmapHeight = bm.getHeight();
@@ -224,25 +226,25 @@ class TextLine {
                                 float width = bm.getWidth() * scale;
                                 {
                                     emojiRect = new RectF();
-                                } //End block
+                                } 
                                 emojiRect.set(x + h, y + bmAscent,
                                 x + h + width, y);
                                 c.drawBitmap(bm, null, emojiRect, mPaint);
                                 h += width;
-                            } //End block
+                            } 
                             segstart = j + 1;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(c.getTaint());
         addTaint(x);
         addTaint(top);
         addTaint(y);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -252,8 +254,8 @@ class TextLine {
         addTaint(fmi.getTaint());
         float var546ADE640B6EDFBC8A086EF31347E768_796509249 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_796509249;
-        // ---------- Original Method ----------
-        //return measure(mLen, false, fmi);
+        
+        
     }
 
     
@@ -266,11 +268,11 @@ class TextLine {
         {
             {
                 float var6DBB5A12B291F41A1B8183C9E3967A7F_553726752 = (measureRun(0, offset, mLen, false, fmi));
-            } //End block
+            } 
             {
                 float varAF7F0B660DD98ED2707F73909AA41E03_1282841561 = (measureRun(0, offset, mLen, true, fmi));
-            } //End block
-        } //End block
+            } 
+        } 
         char[] chars = mChars;
         int[] runs = mDirections.mDirections;
         {
@@ -281,7 +283,7 @@ class TextLine {
                 int runLimit = runStart + (runs[i+1] & Layout.RUN_LENGTH_MASK);
                 {
                     runLimit = mLen;
-                } //End block
+                } 
                 boolean runIsRtl = (runs[i+1] & Layout.RUN_RTL_FLAG) != 0;
                 int segstart = runStart;
                 {
@@ -297,44 +299,45 @@ class TextLine {
                                 codept = Character.codePointAt(chars, j);
                                 {
                                     bm = Layout.EMOJI_FACTORY.getBitmapFromAndroidPua(codept);
-                                } //End block
-                            } //End block
-                        } //End block
+                                } 
+                            } 
+                        } 
                         {
                             boolean inSegment = target >= segstart && target < j;
                             boolean advance = (mDir == Layout.DIR_RIGHT_TO_LEFT) == runIsRtl;
                             {
                                 float varEAD76BB4ECB5BC510C30780AC9415C1A_513588930 = (h += measureRun(segstart, offset, j, runIsRtl, fmi));
-                            } //End block
+                            } 
                             float w = measureRun(segstart, j, j, runIsRtl, fmi);
                             h += advance ? w : -w;
                             {
                                 float var156DB9BDC3E26545D8938CCB69603D57_2087140472 = (h += measureRun(segstart, offset, j, runIsRtl, null));
-                            } //End block
+                            } 
                             {
                                 h = mDir * nextTab(h * mDir);
-                            } //End block
+                            } 
                             {
                                 float bmAscent = ascent(j);
                                 float wid = bm.getWidth() * -bmAscent / bm.getHeight();
                                 h += mDir * wid;
-                            } //End block
+                            } 
                             segstart = j + 1;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(offset);
         addTaint(trailing);
         addTaint(fmi.getTaint());
         float var546ADE640B6EDFBC8A086EF31347E768_1331495443 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1331495443;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.843 -0400", hash_original_method = "1E01EF0F20C48DC869D8591ACBCB40DD", hash_generated_method = "5EEDA106360F9CE26FC19B514F004563")
     private float drawRun(Canvas c, int start,
             int limit, boolean runIsRtl, float x, int top, int y, int bottom,
@@ -343,7 +346,7 @@ class TextLine {
             float w = -measureRun(start, limit, limit, runIsRtl, null);
             handleRun(start, limit, limit, runIsRtl, c, x + w, top,
                     y, bottom, null, false);
-        } //End block
+        } 
         float var2B269E7D5B38EDA34EF7FCBB54724505_1253915791 = (handleRun(start, limit, limit, runIsRtl, c, x, top,
                 y, bottom, null, needWidth));
         addTaint(c.getTaint());
@@ -357,18 +360,19 @@ class TextLine {
         addTaint(needWidth);
         float var546ADE640B6EDFBC8A086EF31347E768_1644952164 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1644952164;
-        // ---------- Original Method ----------
-        //if ((mDir == Layout.DIR_LEFT_TO_RIGHT) == runIsRtl) {
-            //float w = -measureRun(start, limit, limit, runIsRtl, null);
-            //handleRun(start, limit, limit, runIsRtl, c, x + w, top,
-                    //y, bottom, null, false);
-            //return w;
-        //}
-        //return handleRun(start, limit, limit, runIsRtl, c, x, top,
-                //y, bottom, null, needWidth);
+        
+        
+            
+            
+                    
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.844 -0400", hash_original_method = "92FB3641FED625E21CE916EA375B8557", hash_generated_method = "C72095950C936E694F61253B501B0B86")
     private float measureRun(int start, int offset, int limit, boolean runIsRtl,
             FontMetricsInt fmi) {
@@ -380,8 +384,8 @@ class TextLine {
         addTaint(fmi.getTaint());
         float var546ADE640B6EDFBC8A086EF31347E768_752276839 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_752276839;
-        // ---------- Original Method ----------
-        //return handleRun(start, offset, limit, runIsRtl, null, 0, 0, 0, 0, fmi, true);
+        
+        
     }
 
     
@@ -399,10 +403,10 @@ class TextLine {
         boolean trailing = false;
         {
             runIndex = -2;
-        } //End block
+        } 
         {
             runIndex = runs.length;
-        } //End block
+        } 
         {
             {
                 runIndex = 0;
@@ -413,7 +417,7 @@ class TextLine {
                         runLimit = runStart + (runs[runIndex+1] & Layout.RUN_LENGTH_MASK);
                         {
                             runLimit = lineEnd;
-                        } //End block
+                        } 
                         {
                             runLevel = (runs[runIndex+1] >>> Layout.RUN_LEVEL_SHIFT) &
                     Layout.RUN_LEVEL_MASK;
@@ -433,7 +437,7 @@ class TextLine {
                           (runs[prevRunIndex+1] & Layout.RUN_LENGTH_MASK);
                                             {
                                                 prevRunLimit = lineEnd;
-                                            } //End block
+                                            } 
                                             {
                                                 prevRunLevel = (runs[prevRunIndex+1] >>> Layout.RUN_LEVEL_SHIFT)
                             & Layout.RUN_LEVEL_MASK;
@@ -443,35 +447,35 @@ class TextLine {
                                                     runStart = prevRunStart;
                                                     runLimit = prevRunLimit;
                                                     trailing = true;
-                                                } //End block
-                                            } //End block
-                                        } //End block
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 boolean runIsRtl = (runLevel & 0x1) != 0;
                 boolean advance = toLeft == runIsRtl;
                 {
                     newCaret = getOffsetBeforeAfter(runIndex, runStart, runLimit,
                           runIsRtl, cursor, advance);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean advance = toLeft == paraIsRtl;
-            int otherRunIndex = runIndex + (advance ? 2 : -2);//DSFIXME:  CODE0008: Nested ternary operator in expression
+            int otherRunIndex = runIndex + (advance ? 2 : -2);
             {
                 int otherRunStart = lineStart + runs[otherRunIndex];
                 int otherRunLimit = otherRunStart +
             (runs[otherRunIndex+1] & Layout.RUN_LENGTH_MASK);
                 {
                     otherRunLimit = lineEnd;
-                } //End block
+                } 
                 int otherRunLevel = (runs[otherRunIndex+1] >>> Layout.RUN_LEVEL_SHIFT) &
                 Layout.RUN_LEVEL_MASK;
                 boolean otherRunIsRtl = (otherRunLevel & 1) != 0;
@@ -483,44 +487,45 @@ class TextLine {
                     {
                         runIndex = otherRunIndex;
                         runLevel = otherRunLevel;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     newCaret = advance ? otherRunStart : otherRunLimit;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 newCaret = advance ? mLen + 1 : -1;
-            } //End block
+            } 
             {
                 newCaret = advance ? lineEnd : lineStart;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(cursor);
         addTaint(toLeft);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1820317468 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1820317468;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.846 -0400", hash_original_method = "31252F4808C2C77A1E467D2963FB3AD5", hash_generated_method = "68B5E2A7045019A0FFC687644E0350EB")
     private int getOffsetBeforeAfter(int runIndex, int runStart, int runLimit,
             boolean runIsRtl, int offset, boolean after) {
         {
             {
                 int var23A42F19460B2B1B4F7650C079142539_2055799127 = (TextUtils.getOffsetAfter(mText, offset + mStart) - mStart);
-            } //End block
+            } 
             int var878CE411BC90821D83BAFC7D86E8759C_1203419865 = (TextUtils.getOffsetBefore(mText, offset + mStart) - mStart);
-        } //End block
+        } 
         TextPaint wp = mWorkPaint;
         wp.set(mPaint);
         int spanStart = runStart;
         int spanLimit;
         {
             spanLimit = runLimit;
-        } //End block
+        } 
         {
             int target;
             target = offset + 1;
@@ -530,7 +535,7 @@ class TextLine {
                 spanLimit = mSpanned.nextSpanTransition(mStart + spanStart, limit,
                         MetricAffectingSpan.class) - mStart;
                 spanStart = spanLimit;
-            } //End block
+            } 
             MetricAffectingSpan[] spans = mSpanned.getSpans(mStart + spanStart,
                     mStart + spanLimit, MetricAffectingSpan.class);
             spans = TextUtils.removeEmptySpans(spans, mSpanned, MetricAffectingSpan.class);
@@ -542,14 +547,14 @@ class TextLine {
                         MetricAffectingSpan span = spans[j];
                         {
                             replacement = (ReplacementSpan)span;
-                        } //End block
+                        } 
                         {
                             span.updateMeasureState(wp);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         int flags;
         flags = Paint.DIRECTION_RTL;
         flags = Paint.DIRECTION_LTR;
@@ -559,11 +564,11 @@ class TextLine {
         {
             int var8A46B054A3BF4BE20F28D574CADE0515_1175661212 = (wp.getTextRunCursor(mChars, spanStart, spanLimit - spanStart,
                     flags, offset, cursorOpt));
-        } //End block
+        } 
         {
             int var2C1A4A7C8DBA63FC4B3CC76C9F155C03_469998583 = (wp.getTextRunCursor(mText, mStart + spanStart,
                     mStart + spanLimit, flags, mStart + offset, cursorOpt) - mStart);
-        } //End block
+        } 
         addTaint(runIndex);
         addTaint(runStart);
         addTaint(runLimit);
@@ -572,11 +577,12 @@ class TextLine {
         addTaint(after);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067591930 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067591930;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void expandMetricsFromPaint(FontMetricsInt fmi, TextPaint wp) {
         final int previousTop     = fmi.top;
         final int previousAscent  = fmi.ascent;
@@ -589,6 +595,7 @@ class TextLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void updateMetrics(FontMetricsInt fmi, int previousTop, int previousAscent,
             int previousDescent, int previousBottom, int previousLeading) {
         fmi.top     = Math.min(fmi.top,     previousTop);
@@ -599,6 +606,7 @@ class TextLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.848 -0400", hash_original_method = "F8AC228F4E44CF9CD673B1404700AC77", hash_generated_method = "EC1C6F61A1409ADD7A398E965FE85DFD")
     private float handleText(TextPaint wp, int start, int end,
             int contextStart, int contextEnd, boolean runIsRtl,
@@ -606,7 +614,7 @@ class TextLine {
             FontMetricsInt fmi, boolean needWidth) {
         {
             expandMetricsFromPaint(fmi, wp);
-        } //End block
+        } 
         int runLen = end - start;
         float ret = 0;
         int contextLen = contextEnd - contextStart;
@@ -617,18 +625,18 @@ class TextLine {
             {
                 ret = wp.getTextRunAdvances(mChars, start, runLen,
                         contextStart, contextLen, flags, null, 0);
-            } //End block
+            } 
             {
                 int delta = mStart;
                 ret = wp.getTextRunAdvances(mText, delta + start,
                         delta + end, delta + contextStart, delta + contextEnd,
                         flags, null, 0);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 x -= ret;
-            } //End block
+            } 
             {
                 int previousColor = wp.getColor();
                 Paint.Style previousStyle = wp.getStyle();
@@ -637,7 +645,7 @@ class TextLine {
                 c.drawRect(x, top, x + ret, bottom, wp);
                 wp.setStyle(previousStyle);
                 wp.setColor(previousColor);
-            } //End block
+            } 
             {
                 float underlineTop = y + wp.baselineShift + (1.0f / 9.0f) * wp.getTextSize();
                 int previousColor = wp.getColor();
@@ -650,10 +658,10 @@ class TextLine {
                 wp.setStyle(previousStyle);
                 wp.setColor(previousColor);
                 wp.setAntiAlias(previousAntiAlias);
-            } //End block
+            } 
             drawTextRun(c, wp, start, end, contextStart, contextEnd, runIsRtl,
                     x, y + wp.baselineShift);
-        } //End block
+        } 
         addTaint(wp.getTaint());
         addTaint(start);
         addTaint(end);
@@ -669,11 +677,12 @@ class TextLine {
         addTaint(needWidth);
         float var546ADE640B6EDFBC8A086EF31347E768_839310869 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_839310869;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.848 -0400", hash_original_method = "5BB6CBCB4177EDC48B270A42A6989FB0", hash_generated_method = "5C3552CA2EE06D58611DD67C4566525E")
     private float handleReplacement(ReplacementSpan replacement, TextPaint wp,
             int start, int limit, boolean runIsRtl, Canvas c,
@@ -695,20 +704,20 @@ class TextLine {
                 previousDescent = fmi.descent;
                 previousBottom  = fmi.bottom;
                 previousLeading = fmi.leading;
-            } //End block
+            } 
             ret = replacement.getSize(wp, mText, textStart, textLimit, fmi);
             {
                 updateMetrics(fmi, previousTop, previousAscent, previousDescent, previousBottom,
                         previousLeading);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 x -= ret;
-            } //End block
+            } 
             replacement.draw(c, mText, textStart, textLimit,
                     x, top, y, bottom, wp);
-        } //End block
+        } 
         addTaint(replacement.getTaint());
         addTaint(wp.getTaint());
         addTaint(start);
@@ -723,11 +732,12 @@ class TextLine {
         addTaint(needWidth);
         float var546ADE640B6EDFBC8A086EF31347E768_2082939344 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2082939344;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.850 -0400", hash_original_method = "5FABB9B94E4E730AC35956B01320E35B", hash_generated_method = "15C0F45D120E3083B64B4FBD894A6414")
     private float handleRun(int start, int measureLimit,
             int limit, boolean runIsRtl, Canvas c, float x, int top, int y,
@@ -737,15 +747,15 @@ class TextLine {
             wp.set(mPaint);
             {
                 expandMetricsFromPaint(fmi, wp);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             TextPaint wp = mWorkPaint;
             wp.set(mPaint);
             final int mlimit = measureLimit;
             float var34AF167EDF1314E69A7451FFECC8AC0B_935884669 = (handleText(wp, start, mlimit, start, limit, runIsRtl, c, x, top,
                     y, bottom, fmi, needWidth || mlimit < measureLimit));
-        } //End block
+        } 
         mMetricAffectingSpanSpanSet.init(mSpanned, mStart + start, mStart + limit);
         mCharacterStyleSpanSet.init(mSpanned, mStart + start, mStart + limit);
         final float originalX = x;
@@ -766,20 +776,20 @@ class TextLine {
                         MetricAffectingSpan span = mMetricAffectingSpanSpanSet.spans[j];
                         {
                             replacement = (ReplacementSpan)span;
-                        } //End block
+                        } 
                         {
                             span.updateDrawState(wp);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 {
                     x += handleReplacement(replacement, wp, i, mlimit, runIsRtl, c, x, top, y,
                         bottom, fmi, needWidth || mlimit < measureLimit);
-                } //End block
+                } 
                 {
                     x += handleText(wp, i, mlimit, i, inext, runIsRtl, c, x, top,
                         y, bottom, fmi, needWidth || mlimit < measureLimit);
-                } //End block
+                } 
                 {
                     {
                         int j = i;
@@ -794,15 +804,15 @@ class TextLine {
                                 {
                                     CharacterStyle span = mCharacterStyleSpanSet.spans[k];
                                     span.updateDrawState(wp);
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             x += handleText(wp, j, jnext, i, inext, runIsRtl, c, x,
                             top, y, bottom, fmi, needWidth || jnext < measureLimit);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(start);
         addTaint(measureLimit);
         addTaint(limit);
@@ -816,11 +826,12 @@ class TextLine {
         addTaint(needWidth);
         float var546ADE640B6EDFBC8A086EF31347E768_1214693108 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1214693108;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.851 -0400", hash_original_method = "C8ABF2DC6B89611B840AEC4DBAADD344", hash_generated_method = "440DC7A004E12A421BAFD2D223A141EB")
     private void drawTextRun(Canvas c, TextPaint wp, int start, int end,
             int contextStart, int contextEnd, boolean runIsRtl, float x, int y) {
@@ -832,12 +843,12 @@ class TextLine {
             int contextCount = contextEnd - contextStart;
             c.drawTextRun(mChars, start, count, contextStart, contextCount,
                     x, y, flags, wp);
-        } //End block
+        } 
         {
             int delta = mStart;
             c.drawTextRun(mText, delta + start, delta + end,
                     delta + contextStart, delta + contextEnd, x, y, flags, wp);
-        } //End block
+        } 
         addTaint(c.getTaint());
         addTaint(wp.getTaint());
         addTaint(start);
@@ -847,18 +858,18 @@ class TextLine {
         addTaint(runIsRtl);
         addTaint(x);
         addTaint(y);
-        // ---------- Original Method ----------
-        //int flags = runIsRtl ? Canvas.DIRECTION_RTL : Canvas.DIRECTION_LTR;
-        //if (mCharsValid) {
-            //int count = end - start;
-            //int contextCount = contextEnd - contextStart;
-            //c.drawTextRun(mChars, start, count, contextStart, contextCount,
-                    //x, y, flags, wp);
-        //} else {
-            //int delta = mStart;
-            //c.drawTextRun(mText, delta + start, delta + end,
-                    //delta + contextStart, delta + contextEnd, x, y, flags, wp);
-        //}
+        
+        
+        
+            
+            
+            
+                    
+        
+            
+            
+                    
+        
     }
 
     
@@ -866,39 +877,39 @@ class TextLine {
      float ascent(int pos) {
         {
             float var3BDF3A2D03302BACAD807FFE6B0D6A91_1596073944 = (mPaint.ascent());
-        } //End block
+        } 
         pos += mStart;
         MetricAffectingSpan[] spans = mSpanned.getSpans(pos, pos + 1, MetricAffectingSpan.class);
         {
             float var3BDF3A2D03302BACAD807FFE6B0D6A91_177650643 = (mPaint.ascent());
-        } //End block
+        } 
         TextPaint wp = mWorkPaint;
         wp.set(mPaint);
         {
             MetricAffectingSpan span = spans[0];
             {
                 span.updateMeasureState(wp);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         float var5DC50654BD2E08B78A3F0BF6159A6A3E_282611776 = (wp.ascent());
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_118442814 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_118442814;
-        // ---------- Original Method ----------
-        //if (mSpanned == null) {
-            //return mPaint.ascent();
-        //}
-        //pos += mStart;
-        //MetricAffectingSpan[] spans = mSpanned.getSpans(pos, pos + 1, MetricAffectingSpan.class);
-        //if (spans.length == 0) {
-            //return mPaint.ascent();
-        //}
-        //TextPaint wp = mWorkPaint;
-        //wp.set(mPaint);
-        //for (MetricAffectingSpan span : spans) {
-            //span.updateMeasureState(wp);
-        //}
-        //return wp.ascent();
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -906,16 +917,16 @@ class TextLine {
      float nextTab(float h) {
         {
             float varBC64F150694F74B7C25309A0AEC4E154_1319830552 = (mTabs.nextTab(h));
-        } //End block
+        } 
         float varC96F42CCA3E3E5F25C19ACBABD69AED1_1662796382 = (TabStops.nextDefaultStop(h, TAB_INCREMENT));
         addTaint(h);
         float var546ADE640B6EDFBC8A086EF31347E768_819531144 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_819531144;
-        // ---------- Original Method ----------
-        //if (mTabs != null) {
-            //return mTabs.nextTab(h);
-        //}
-        //return TabStops.nextDefaultStop(h, TAB_INCREMENT);
+        
+        
+            
+        
+        
     }
 
     
@@ -943,9 +954,9 @@ class TextLine {
           SpanSet(Class<? extends E> type) {
             classType = type;
             numberOfSpans = 0;
-            // ---------- Original Method ----------
-            //classType = type;
-            //numberOfSpans = 0;
+            
+            
+            
         }
 
         
@@ -959,7 +970,7 @@ class TextLine {
                 spanStarts = new int[length];
                 spanEnds = new int[length];
                 spanFlags = new int[length];
-            } //End block
+            } 
             numberOfSpans = 0;
             {
                 int i = 0;
@@ -972,13 +983,13 @@ class TextLine {
                     spanStarts[numberOfSpans] = spanStart;
                     spanEnds[numberOfSpans] = spanEnd;
                     spanFlags[numberOfSpans] = spanFlag;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(spanned.getTaint());
             addTaint(start);
             addTaint(limit);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -986,17 +997,17 @@ class TextLine {
         public boolean hasSpansIntersecting(int start, int end) {
             {
                 int i = 0;
-            } //End collapsed parenthetic
+            } 
             addTaint(start);
             addTaint(end);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_559614488 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_559614488;
-            // ---------- Original Method ----------
-            //for (int i = 0; i < numberOfSpans; i++) {
-                //if (spanStarts[i] >= end || spanEnds[i] <= start) continue;
-                //return true;
-            //}
-            //return false;
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -1009,20 +1020,20 @@ class TextLine {
                     final int spanEnd = spanEnds[i];
                     limit = spanStart;
                     limit = spanEnd;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(start);
             addTaint(limit);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_762782443 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_762782443;
-            // ---------- Original Method ----------
-            //for (int i = 0; i < numberOfSpans; i++) {
-                //final int spanStart = spanStarts[i];
-                //final int spanEnd = spanEnds[i];
-                //if (spanStart > start && spanStart < limit) limit = spanStart;
-                //if (spanEnd > start && spanEnd < limit) limit = spanEnd;
-            //}
-            //return limit;
+            
+            
+                
+                
+                
+                
+            
+            
         }
 
         
@@ -1032,12 +1043,12 @@ class TextLine {
                 int i = 0;
                 {
                     spans[i] = null;
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //for (int i = 0; i < numberOfSpans; i++) {
-                //spans[i] = null; 
-            //}
+                } 
+            } 
+            
+            
+                
+            
         }
 
         

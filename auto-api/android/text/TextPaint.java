@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Paint;
 
@@ -35,7 +35,7 @@ public class TextPaint extends Paint {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.889 -0400", hash_original_method = "618AB1B9CBAFB419831828FB2E1722C9", hash_generated_method = "184089B139E22F497C16BD8D371A9B08")
     public  TextPaint() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,7 +43,7 @@ public class TextPaint extends Paint {
     public  TextPaint(int flags) {
         super(flags);
         addTaint(flags);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -51,10 +51,11 @@ public class TextPaint extends Paint {
     public  TextPaint(Paint p) {
         super(p);
         addTaint(p.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.890 -0400", hash_original_method = "1430CF075B6F082AE7C06C83102C116C", hash_generated_method = "37AB51D9D211DE70358C29A3C6CE36E8")
     public void set(TextPaint tp) {
         super.set(tp);
@@ -65,15 +66,15 @@ public class TextPaint extends Paint {
         density = tp.density;
         underlineColor = tp.underlineColor;
         underlineThickness = tp.underlineThickness;
-        // ---------- Original Method ----------
-        //super.set(tp);
-        //bgColor = tp.bgColor;
-        //baselineShift = tp.baselineShift;
-        //linkColor = tp.linkColor;
-        //drawableState = tp.drawableState;
-        //density = tp.density;
-        //underlineColor = tp.underlineColor;
-        //underlineThickness = tp.underlineThickness;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -81,9 +82,9 @@ public class TextPaint extends Paint {
     public void setUnderlineText(int color, float thickness) {
         underlineColor = color;
         underlineThickness = thickness;
-        // ---------- Original Method ----------
-        //underlineColor = color;
-        //underlineThickness = thickness;
+        
+        
+        
     }
 
     

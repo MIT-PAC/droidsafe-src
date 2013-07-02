@@ -1,11 +1,11 @@
 package org.apache.harmony.dalvik.ddmc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Collection;
 import java.util.HashMap;
@@ -15,12 +15,13 @@ public class DdmServer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.050 -0400", hash_original_method = "9245089A3DC1CB81EAEF9FD5F462A315", hash_generated_method = "285A1E98A8D6D11E80518C3C162413CF")
     private  DdmServer() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void registerHandler(int type, ChunkHandler handler) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         if (handler == null)
             throw new NullPointerException();
         synchronized (mHandlerMap) {
@@ -32,6 +33,7 @@ public class DdmServer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ChunkHandler unregisterHandler(int type) {
         synchronized (mHandlerMap) {
             return mHandlerMap.remove(type);
@@ -39,6 +41,7 @@ public class DdmServer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void registrationComplete() {
         synchronized (mHandlerMap) {
             mRegistrationComplete = true;
@@ -47,6 +50,7 @@ public class DdmServer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void sendChunk(Chunk chunk) {
         nativeSendChunk(chunk.type, chunk.data, chunk.offset, chunk.length);
     }
@@ -57,6 +61,7 @@ public class DdmServer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void broadcast(int event) {
         synchronized (mHandlerMap) {
             Collection values = mHandlerMap.values();
@@ -78,6 +83,7 @@ public class DdmServer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Chunk dispatch(int type, byte[] data, int offset, int length) {
         ChunkHandler handler;
         synchronized (mHandlerMap) {

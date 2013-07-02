@@ -1,11 +1,11 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.Bundle;
@@ -54,7 +54,7 @@ public class SslCertificate {
         addTaint(issuedBy.getTaint());
         addTaint(validNotBefore.getTaint());
         addTaint(validNotAfter.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -67,7 +67,7 @@ public class SslCertificate {
         addTaint(issuedBy.getTaint());
         addTaint(validNotBefore.getTaint());
         addTaint(validNotAfter.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -79,7 +79,7 @@ public class SslCertificate {
              certificate.getNotAfter(),
              certificate);
         addTaint(certificate.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -93,15 +93,16 @@ public class SslCertificate {
         mValidNotBefore = cloneDate(validNotBefore);
         mValidNotAfter  = cloneDate(validNotAfter);
         mX509Certificate = x509Certificate;
-        // ---------- Original Method ----------
-        //mIssuedTo = new DName(issuedTo);
-        //mIssuedBy = new DName(issuedBy);
-        //mValidNotBefore = cloneDate(validNotBefore);
-        //mValidNotAfter  = cloneDate(validNotAfter);
-        //mX509Certificate = x509Certificate;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bundle saveState(SslCertificate certificate) {
         if (certificate == null) {
             return null;
@@ -122,6 +123,7 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SslCertificate restoreState(Bundle bundle) {
         if (bundle == null) {
             return null;
@@ -147,74 +149,79 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.414 -0400", hash_original_method = "86D829D0BCD4BD19D84EADD31DD5FCE1", hash_generated_method = "498D52C2813701284A82DB76E6763ACF")
     public Date getValidNotBeforeDate() {
-        Date varB4EAC82CA7396A68D541C85D26508E83_756791272 = null; //Variable for return #1
+        Date varB4EAC82CA7396A68D541C85D26508E83_756791272 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_756791272 = cloneDate(mValidNotBefore);
-        varB4EAC82CA7396A68D541C85D26508E83_756791272.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_756791272.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_756791272;
-        // ---------- Original Method ----------
-        //return cloneDate(mValidNotBefore);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.415 -0400", hash_original_method = "E74141FEB26284E4BA15E02DC99CE923", hash_generated_method = "DF5286CB85B7D92CF2DBE43959063A84")
     @Deprecated
     public String getValidNotBefore() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1396441766 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1396441766 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1396441766 = formatDate(mValidNotBefore);
-        varB4EAC82CA7396A68D541C85D26508E83_1396441766.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1396441766.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1396441766;
-        // ---------- Original Method ----------
-        //return formatDate(mValidNotBefore);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.416 -0400", hash_original_method = "5976F2F67CC4D55E479FF99F5BD66B52", hash_generated_method = "0C5508ED88CC1C0BADE41D0474FF1CFC")
     public Date getValidNotAfterDate() {
-        Date varB4EAC82CA7396A68D541C85D26508E83_1159057114 = null; //Variable for return #1
+        Date varB4EAC82CA7396A68D541C85D26508E83_1159057114 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1159057114 = cloneDate(mValidNotAfter);
-        varB4EAC82CA7396A68D541C85D26508E83_1159057114.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1159057114.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1159057114;
-        // ---------- Original Method ----------
-        //return cloneDate(mValidNotAfter);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.416 -0400", hash_original_method = "8855AE273E27E2CAD00A7550F7D75B05", hash_generated_method = "5338CD93C4423E1D23A4FED9F6FA49F1")
     @Deprecated
     public String getValidNotAfter() {
-        String varB4EAC82CA7396A68D541C85D26508E83_218430427 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_218430427 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_218430427 = formatDate(mValidNotAfter);
-        varB4EAC82CA7396A68D541C85D26508E83_218430427.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_218430427.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_218430427;
-        // ---------- Original Method ----------
-        //return formatDate(mValidNotAfter);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.417 -0400", hash_original_method = "2E4F61534C62139557AB31E5631377F2", hash_generated_method = "521FF4812263795D210FE618EA7F124A")
     public DName getIssuedTo() {
-        DName varB4EAC82CA7396A68D541C85D26508E83_176587257 = null; //Variable for return #1
+        DName varB4EAC82CA7396A68D541C85D26508E83_176587257 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_176587257 = mIssuedTo;
-        varB4EAC82CA7396A68D541C85D26508E83_176587257.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_176587257.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_176587257;
-        // ---------- Original Method ----------
-        //return mIssuedTo;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.417 -0400", hash_original_method = "82F93F0D2EB1DC97DAB6C30DC54F99BE", hash_generated_method = "A95298429E4DCEF0952D4D0AE40EE8FA")
     public DName getIssuedBy() {
-        DName varB4EAC82CA7396A68D541C85D26508E83_4246429 = null; //Variable for return #1
+        DName varB4EAC82CA7396A68D541C85D26508E83_4246429 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_4246429 = mIssuedBy;
-        varB4EAC82CA7396A68D541C85D26508E83_4246429.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_4246429.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_4246429;
-        // ---------- Original Method ----------
-        //return mIssuedBy;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getSerialNumber(X509Certificate x509Certificate) {
         if (x509Certificate == null) {
             return "";
@@ -227,6 +234,7 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getDigest(X509Certificate x509Certificate, String algorithm) {
         if (x509Certificate == null) {
             return "";
@@ -260,19 +268,21 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.418 -0400", hash_original_method = "F16D936F6355F1722DE333F4EC7C4E06", hash_generated_method = "8EF0F158A611E78D8B8CCE0B89417F13")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_648830090 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_648830090 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_648830090 = ("Issued to: " + mIssuedTo.getDName() + ";\n"
                 + "Issued by: " + mIssuedBy.getDName() + ";\n");
-        varB4EAC82CA7396A68D541C85D26508E83_648830090.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_648830090.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_648830090;
-        // ---------- Original Method ----------
-        //return ("Issued to: " + mIssuedTo.getDName() + ";\n"
-                //+ "Issued by: " + mIssuedBy.getDName() + ";\n");
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Date parseDate(String string) {
         try {
             return new SimpleDateFormat(ISO_8601_DATE_FORMAT).parse(string);
@@ -282,6 +292,7 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String formatDate(Date date) {
         if (date == null) {
             return "";
@@ -290,6 +301,7 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Date cloneDate(Date date) {
         if (date == null) {
             return null;
@@ -298,9 +310,10 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.420 -0400", hash_original_method = "D583B5DA5B2EDF3475293874A3D5A1D5", hash_generated_method = "2970FC4A868AB9F05ED45B6957AB5077")
     public View inflateCertificateView(Context context) {
-        View varB4EAC82CA7396A68D541C85D26508E83_774943155 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_774943155 = null; 
         LayoutInflater factory = LayoutInflater.from(context);
         View certificateView = factory.inflate(
             com.android.internal.R.layout.ssl_certificate, null);
@@ -312,7 +325,7 @@ public class SslCertificate {
                     .setText(issuedTo.getOName());
             ((TextView) certificateView.findViewById(com.android.internal.R.id.to_org_unit))
                     .setText(issuedTo.getUName());
-        } //End block
+        } 
         ((TextView) certificateView.findViewById(com.android.internal.R.id.serial_number))
                 .setText(getSerialNumber(mX509Certificate));
         SslCertificate.DName issuedBy = getIssuedBy();
@@ -323,7 +336,7 @@ public class SslCertificate {
                     .setText(issuedBy.getOName());
             ((TextView) certificateView.findViewById(com.android.internal.R.id.by_org_unit))
                     .setText(issuedBy.getUName());
-        } //End block
+        } 
         String issuedOn = formatCertificateDate(context, getValidNotBeforeDate());
         ((TextView) certificateView.findViewById(com.android.internal.R.id.issued_on))
                 .setText(issuedOn);
@@ -336,39 +349,40 @@ public class SslCertificate {
                 .setText(getDigest(mX509Certificate, "SHA1"));
         varB4EAC82CA7396A68D541C85D26508E83_774943155 = certificateView;
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_774943155.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_774943155.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_774943155;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.421 -0400", hash_original_method = "AFB9B131464BD8BEA4E9664B02B81FAF", hash_generated_method = "2AF3107898B4F1F0707A4ECA3B967E0B")
     private String formatCertificateDate(Context context, Date certificateDate) {
-        String varB4EAC82CA7396A68D541C85D26508E83_448338011 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_465446626 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_448338011 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_465446626 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_448338011 = "";
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_465446626 = DateFormat.getDateFormat(context).format(certificateDate);
         addTaint(context.getTaint());
         addTaint(certificateDate.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_733710310; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_733710310; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_733710310 = varB4EAC82CA7396A68D541C85D26508E83_448338011;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_733710310 = varB4EAC82CA7396A68D541C85D26508E83_465446626;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_733710310.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_733710310.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_733710310;
-        // ---------- Original Method ----------
-        //if (certificateDate == null) {
-            //return "";
-        //}
-        //return DateFormat.getDateFormat(context).format(certificateDate);
+        
+        
+            
+        
+        
     }
 
     
@@ -403,72 +417,72 @@ public class SslCertificate {
                                 boolean var0C6F0BE758D98D60EBB9B16537698F57_1457127590 = (oid.elementAt(i).equals(X509Name.CN));
                                 {
                                     mCName = (String) val.elementAt(i);
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             {
                                 boolean var06E8299BDF4B0086B47388185FF81940_1556547922 = (oid.elementAt(i).equals(X509Name.O));
                                 {
                                     mOName = (String) val.elementAt(i);
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             {
                                 boolean var66A9551431E1DEC1988477609E15738C_1586636495 = (oid.elementAt(i).equals(X509Name.OU));
                                 {
                                     mUName = (String) val.elementAt(i);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 catch (IllegalArgumentException ex)
                 { }
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.422 -0400", hash_original_method = "CA7B7457EAE364E31ECFC3E240698ADB", hash_generated_method = "891825842C5A52AAAC2D465A36D629FF")
         public String getDName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1162343451 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1162343451 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1162343451 = mDName != null ? mDName : "";
-            varB4EAC82CA7396A68D541C85D26508E83_1162343451.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1162343451.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1162343451;
-            // ---------- Original Method ----------
-            //return mDName != null ? mDName : "";
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.423 -0400", hash_original_method = "9443834DD976C880848529D9F73675CC", hash_generated_method = "273163AE2D68E8D80ED52C1207D60D62")
         public String getCName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1851359821 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1851359821 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1851359821 = mCName != null ? mCName : "";
-            varB4EAC82CA7396A68D541C85D26508E83_1851359821.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1851359821.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1851359821;
-            // ---------- Original Method ----------
-            //return mCName != null ? mCName : "";
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.423 -0400", hash_original_method = "7251BF6AE7EA38B61D97CF2E138787A6", hash_generated_method = "1DD20B050217D65344127830E5475809")
         public String getOName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_820655610 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_820655610 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_820655610 = mOName != null ? mOName : "";
-            varB4EAC82CA7396A68D541C85D26508E83_820655610.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_820655610.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_820655610;
-            // ---------- Original Method ----------
-            //return mOName != null ? mOName : "";
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.424 -0400", hash_original_method = "372D1A5E33F38EEDF5C6B63F53532F1F", hash_generated_method = "1F6ECD3E413E47E73A8AC6C2C0BBC4E1")
         public String getUName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1953605206 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1953605206 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1953605206 = mUName != null ? mUName : "";
-            varB4EAC82CA7396A68D541C85D26508E83_1953605206.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1953605206.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1953605206;
-            // ---------- Original Method ----------
-            //return mUName != null ? mUName : "";
+            
+            
         }
 
         

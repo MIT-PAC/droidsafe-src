@@ -1,11 +1,11 @@
 package android.support.v4.view.accessibility;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.view.accessibility.AccessibilityManager;
@@ -17,7 +17,7 @@ class AccessibilityManagerCompatIcs {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:06:52.452 -0400", hash_original_method = "72B16DB5C6E2AFBDDF09192B7BE11FB7", hash_generated_method = "72B16DB5C6E2AFBDDF09192B7BE11FB7")
     public AccessibilityManagerCompatIcs ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -67,13 +67,6 @@ class AccessibilityManagerCompatIcs {
         public void onAccessibilityStateChanged(boolean enabled);
     }
     
-    /*
-    // orphaned legacy method
-    @Override
-            public void onAccessibilityStateChanged(boolean enabled) {
-                bridge.onAccessibilityStateChanged(enabled);
-            }
     
-    */
 }
 

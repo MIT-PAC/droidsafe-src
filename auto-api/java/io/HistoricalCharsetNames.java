@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.charset.Charset;
 import java.util.HashMap;
@@ -15,10 +15,11 @@ class HistoricalCharsetNames {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.038 -0400", hash_original_method = "CF7EE4F2AE73DFA7F7185F7E1C545121", hash_generated_method = "CF7EE4F2AE73DFA7F7185F7E1C545121")
     public HistoricalCharsetNames ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String get(Charset charset) {
         String modernName = charset.name();
         String result = historicalNames.get(modernName);

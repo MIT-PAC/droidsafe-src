@@ -1,11 +1,11 @@
 package android.inputmethodservice;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.Service;
 import android.content.Intent;
@@ -28,18 +28,18 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.495 -0400", hash_original_method = "BC18251CD7580FCA2AE30C6FE0852CCA", hash_generated_method = "BC18251CD7580FCA2AE30C6FE0852CCA")
     public AbstractInputMethodService ()
     {
-        //Synthesized constructor
+        
     }
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.497 -0400", hash_original_method = "506AD561617E231B7466C0A7229483CE", hash_generated_method = "C1F04AF8CD2705A782E70C75ED2D2BBF")
     public KeyEvent.DispatcherState getKeyDispatcherState() {
-        KeyEvent.DispatcherState varB4EAC82CA7396A68D541C85D26508E83_23775478 = null; //Variable for return #1
+        KeyEvent.DispatcherState varB4EAC82CA7396A68D541C85D26508E83_23775478 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_23775478 = mDispatcherState;
-        varB4EAC82CA7396A68D541C85D26508E83_23775478.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_23775478.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_23775478;
-        // ---------- Original Method ----------
-        //return mDispatcherState;
+        
+        
     }
 
     
@@ -55,38 +55,38 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         addTaint(fd.getTaint());
         addTaint(fout.getTaint());
         addTaint(args[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.499 -0400", hash_original_method = "A37FBA98B4D1A366D99013E441DCBD11", hash_generated_method = "71916C78CD76F2AB9DEF98411DFB0DF4")
     @Override
     final public IBinder onBind(Intent intent) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        IBinder varB4EAC82CA7396A68D541C85D26508E83_1865583087 = null; //Variable for return #1
+        
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_1865583087 = null; 
         {
             mInputMethod = onCreateInputMethodInterface();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1865583087 = new IInputMethodWrapper(this, mInputMethod);
         addTaint(intent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1865583087.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1865583087.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1865583087;
-        // ---------- Original Method ----------
-        //if (mInputMethod == null) {
-            //mInputMethod = onCreateInputMethodInterface();
-        //}
-        //return new IInputMethodWrapper(this, mInputMethod);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.500 -0400", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "B32F1567D3AE8FB6B44A93C2115F9EA9")
     public boolean onTrackballEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_424713021 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_424713021;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -95,7 +95,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.500 -0400", hash_original_method = "1FC06C592D7CEB663723BCE3B795B4B6", hash_generated_method = "1FC06C592D7CEB663723BCE3B795B4B6")
         public AbstractInputMethodImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -103,8 +103,8 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         public void createSession(SessionCallback callback) {
             callback.sessionCreated(onCreateInputMethodSessionInterface());
             addTaint(callback.getTaint());
-            // ---------- Original Method ----------
-            //callback.sessionCreated(onCreateInputMethodSessionInterface());
+            
+            
         }
 
         
@@ -113,8 +113,8 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
             ((AbstractInputMethodSessionImpl)session).setEnabled(enabled);
             addTaint(session.getTaint());
             addTaint(enabled);
-            // ---------- Original Method ----------
-            //((AbstractInputMethodSessionImpl)session).setEnabled(enabled);
+            
+            
         }
 
         
@@ -122,8 +122,8 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         public void revokeSession(InputMethodSession session) {
             ((AbstractInputMethodSessionImpl)session).revokeSelf();
             addTaint(session.getTaint());
-            // ---------- Original Method ----------
-            //((AbstractInputMethodSessionImpl)session).revokeSelf();
+            
+            
         }
 
         
@@ -142,7 +142,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.501 -0400", hash_original_method = "732EE9B327CCA9D778A0A67756B490DA", hash_generated_method = "732EE9B327CCA9D778A0A67756B490DA")
         public AbstractInputMethodSessionImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -150,8 +150,8 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         public boolean isEnabled() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_239403827 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_239403827;
-            // ---------- Original Method ----------
-            //return mEnabled;
+            
+            
         }
 
         
@@ -159,8 +159,8 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         public boolean isRevoked() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_410204180 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_410204180;
-            // ---------- Original Method ----------
-            //return mRevoked;
+            
+            
         }
 
         
@@ -168,11 +168,11 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         public void setEnabled(boolean enabled) {
             {
                 mEnabled = enabled;
-            } //End block
-            // ---------- Original Method ----------
-            //if (!mRevoked) {
-                //mEnabled = enabled;
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -180,9 +180,9 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         public void revokeSelf() {
             mRevoked = true;
             mEnabled = false;
-            // ---------- Original Method ----------
-            //mRevoked = true;
-            //mEnabled = false;
+            
+            
+            
         }
 
         
@@ -192,16 +192,16 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
                     mDispatcherState, this);
             {
                 callback.finishedEvent(seq, handled);
-            } //End block
+            } 
             addTaint(seq);
             addTaint(event.getTaint());
             addTaint(callback.getTaint());
-            // ---------- Original Method ----------
-            //boolean handled = event.dispatch(AbstractInputMethodService.this,
-                    //mDispatcherState, this);
-            //if (callback != null) {
-                //callback.finishedEvent(seq, handled);
-            //}
+            
+            
+                    
+            
+                
+            
         }
 
         
@@ -210,15 +210,15 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
             boolean handled = onTrackballEvent(event);
             {
                 callback.finishedEvent(seq, handled);
-            } //End block
+            } 
             addTaint(seq);
             addTaint(event.getTaint());
             addTaint(callback.getTaint());
-            // ---------- Original Method ----------
-            //boolean handled = onTrackballEvent(event);
-            //if (callback != null) {
-                //callback.finishedEvent(seq, handled);
-            //}
+            
+            
+            
+                
+            
         }
 
         

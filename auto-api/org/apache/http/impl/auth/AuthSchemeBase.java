@@ -1,11 +1,11 @@
 package org.apache.http.impl.auth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.FormattedHeader;
 import org.apache.http.Header;
@@ -23,7 +23,7 @@ public abstract class AuthSchemeBase implements AuthScheme {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.770 -0400", hash_original_method = "7082ED5A83D0EFFA08BB77E1EC0EBD1E", hash_generated_method = "0AE5056767E4146DFC6F431C6B92E16B")
     public  AuthSchemeBase() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,57 +31,57 @@ public abstract class AuthSchemeBase implements AuthScheme {
     public void processChallenge(final Header header) throws MalformedChallengeException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Header may not be null");
-        } //End block
+        } 
         String authheader = header.getName();
         {
             boolean var8DC398C4CAF9AC0E511D2C3D0DF740FC_734281397 = (authheader.equalsIgnoreCase(AUTH.WWW_AUTH));
             {
                 this.proxy = false;
-            } //End block
+            } 
             {
                 boolean varBFE84D9EF92FF162D0DB5E549DFF104B_438660981 = (authheader.equalsIgnoreCase(AUTH.PROXY_AUTH));
                 {
                     this.proxy = true;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new MalformedChallengeException("Unexpected header name: " + authheader);
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         CharArrayBuffer buffer;
         int pos;
         {
             buffer = ((FormattedHeader) header).getBuffer();
             pos = ((FormattedHeader) header).getValuePos();
-        } //End block
+        } 
         {
             String s = header.getValue();
             {
                 if (DroidSafeAndroidRuntime.control) throw new MalformedChallengeException("Header value is null");
-            } //End block
+            } 
             buffer = new CharArrayBuffer(s.length());
             buffer.append(s);
             pos = 0;
-        } //End block
+        } 
         {
             boolean var3EDF5BAA6101A06E7CDE5C0535EFFC3A_2012418186 = (pos < buffer.length() && HTTP.isWhitespace(buffer.charAt(pos)));
-        } //End collapsed parenthetic
+        } 
         int beginIndex = pos;
         {
             boolean var9771168623308666B24A198A57036589_243545606 = (pos < buffer.length() && !HTTP.isWhitespace(buffer.charAt(pos)));
-        } //End collapsed parenthetic
+        } 
         int endIndex = pos;
         String s = buffer.substring(beginIndex, endIndex);
         {
             boolean varAAFA4FBFDBD33BB5860DD895AF0E9A5B_1096801203 = (!s.equalsIgnoreCase(getSchemeName()));
             {
                 if (DroidSafeAndroidRuntime.control) throw new MalformedChallengeException("Invalid scheme identifier: " + s);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         parseChallenge(buffer, pos, buffer.length());
         addTaint(header.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -93,8 +93,8 @@ public abstract class AuthSchemeBase implements AuthScheme {
     public boolean isProxy() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_149349725 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_149349725;
-        // ---------- Original Method ----------
-        //return this.proxy;
+        
+        
     }
 
     

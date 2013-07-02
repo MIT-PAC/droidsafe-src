@@ -1,11 +1,11 @@
 package android.nfc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -18,19 +18,19 @@ public class TechListParcel implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.267 -0400", hash_original_method = "6AB5FDB623A6EE108E2E4847F2947558", hash_generated_method = "29ED8984ECDC1B919999AD1AE8CACA72")
     public  TechListParcel(String[]... strings) {
         mTechLists = strings;
-        // ---------- Original Method ----------
-        //mTechLists = strings;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.267 -0400", hash_original_method = "6EF67533858F398D5EC0425F1D475F89", hash_generated_method = "AE4EDA506435CF0047C3E77FF008A59D")
     public String[][] getTechLists() {
-        String[][] varB4EAC82CA7396A68D541C85D26508E83_1997914361 = null; //Variable for return #1
+        String[][] varB4EAC82CA7396A68D541C85D26508E83_1997914361 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1997914361 = mTechLists;
-        varB4EAC82CA7396A68D541C85D26508E83_1997914361.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1997914361.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1997914361;
-        // ---------- Original Method ----------
-        //return mTechLists;
+        
+        
     }
 
     
@@ -39,11 +39,12 @@ public class TechListParcel implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_88733940 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_88733940;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.268 -0400", hash_original_method = "B19E49B45A2ACFBF18675BF33A9FB41F", hash_generated_method = "5131CA29C431B28CD575758AE389F757")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -54,17 +55,17 @@ public class TechListParcel implements Parcelable {
             {
                 String[] techList = mTechLists[i];
                 dest.writeStringArray(techList);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //int count = mTechLists.length;
-        //dest.writeInt(count);
-        //for (int i = 0; i < count; i++) {
-            //String[] techList = mTechLists[i];
-            //dest.writeStringArray(techList);
-        //}
+        
+        
+        
+        
+            
+            
+        
     }
 
     

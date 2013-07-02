@@ -1,11 +1,11 @@
 package org.apache.commons.io.output;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -28,7 +28,7 @@ public class FileWriterWithEncoding extends Writer {
         this(new File(filename), encoding, false);
         addTaint(filename.getTaint());
         addTaint(encoding.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,7 +38,7 @@ public class FileWriterWithEncoding extends Writer {
         addTaint(filename.getTaint());
         addTaint(encoding.getTaint());
         addTaint(append);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -47,7 +47,7 @@ public class FileWriterWithEncoding extends Writer {
         this(new File(filename), encoding, false);
         addTaint(filename.getTaint());
         addTaint(encoding.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -57,7 +57,7 @@ public class FileWriterWithEncoding extends Writer {
         addTaint(filename.getTaint());
         addTaint(encoding.getTaint());
         addTaint(append);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -66,7 +66,7 @@ public class FileWriterWithEncoding extends Writer {
         this(new File(filename), encoding, false);
         addTaint(filename.getTaint());
         addTaint(encoding.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -76,7 +76,7 @@ public class FileWriterWithEncoding extends Writer {
         addTaint(filename.getTaint());
         addTaint(encoding.getTaint());
         addTaint(append);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -85,7 +85,7 @@ public class FileWriterWithEncoding extends Writer {
         this(file, encoding, false);
         addTaint(file.getTaint());
         addTaint(encoding.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -93,8 +93,8 @@ public class FileWriterWithEncoding extends Writer {
     public  FileWriterWithEncoding(File file, String encoding, boolean append) throws IOException {
         super();
         this.out = initWriter(file, encoding, append);
-        // ---------- Original Method ----------
-        //this.out = initWriter(file, encoding, append);
+        
+        
     }
 
     
@@ -103,7 +103,7 @@ public class FileWriterWithEncoding extends Writer {
         this(file, encoding, false);
         addTaint(file.getTaint());
         addTaint(encoding.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -111,8 +111,8 @@ public class FileWriterWithEncoding extends Writer {
     public  FileWriterWithEncoding(File file, Charset encoding, boolean append) throws IOException {
         super();
         this.out = initWriter(file, encoding, append);
-        // ---------- Original Method ----------
-        //this.out = initWriter(file, encoding, append);
+        
+        
     }
 
     
@@ -121,7 +121,7 @@ public class FileWriterWithEncoding extends Writer {
         this(file, encoding, false);
         addTaint(file.getTaint());
         addTaint(encoding.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -129,11 +129,12 @@ public class FileWriterWithEncoding extends Writer {
     public  FileWriterWithEncoding(File file, CharsetEncoder encoding, boolean append) throws IOException {
         super();
         this.out = initWriter(file, encoding, append);
-        // ---------- Original Method ----------
-        //this.out = initWriter(file, encoding, append);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Writer initWriter(File file, Object encoding, boolean append) throws IOException {
         if (file == null) {
             throw new NullPointerException("File is missing");
@@ -172,26 +173,29 @@ public class FileWriterWithEncoding extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.690 -0400", hash_original_method = "EE30809419C042C9133DA321A16F7DFD", hash_generated_method = "9D3E64422199D911A8FED9F04D0CD032")
     @Override
     public void write(int idx) throws IOException {
         out.write(idx);
         addTaint(idx);
-        // ---------- Original Method ----------
-        //out.write(idx);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.690 -0400", hash_original_method = "46EC5EF747261262EAD8ED1BD4879967", hash_generated_method = "575758C142209E068CE55D69C08DC03C")
     @Override
     public void write(char[] chr) throws IOException {
         out.write(chr);
         addTaint(chr[0]);
-        // ---------- Original Method ----------
-        //out.write(chr);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.691 -0400", hash_original_method = "4007BD37B56F652F2DD863D7816336D0", hash_generated_method = "574C18C42E6F03671E82D29AA383A523")
     @Override
     public void write(char[] chr, int st, int end) throws IOException {
@@ -199,21 +203,23 @@ public class FileWriterWithEncoding extends Writer {
         addTaint(chr[0]);
         addTaint(st);
         addTaint(end);
-        // ---------- Original Method ----------
-        //out.write(chr, st, end);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.691 -0400", hash_original_method = "570C1378326063600110CB3D156C7691", hash_generated_method = "01483C2A984EC8B0C3967FC4CB8B0DB7")
     @Override
     public void write(String str) throws IOException {
         out.write(str);
         addTaint(str.getTaint());
-        // ---------- Original Method ----------
-        //out.write(str);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.691 -0400", hash_original_method = "694B238FF5AB1AB4441171CB6DC98A7A", hash_generated_method = "93542F5D13EEB77A09805F9165E14C09")
     @Override
     public void write(String str, int st, int end) throws IOException {
@@ -221,26 +227,28 @@ public class FileWriterWithEncoding extends Writer {
         addTaint(str.getTaint());
         addTaint(st);
         addTaint(end);
-        // ---------- Original Method ----------
-        //out.write(str, st, end);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.691 -0400", hash_original_method = "C99FBA65B0D308569620507D6E099042", hash_generated_method = "A2EF74EEF7203CB573D4B22064D57305")
     @Override
     public void flush() throws IOException {
         out.flush();
-        // ---------- Original Method ----------
-        //out.flush();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.691 -0400", hash_original_method = "607673C7F0C479BD29B5457E75015964", hash_generated_method = "7B0A1A13788BB485E8432EED04606E81")
     @Override
     public void close() throws IOException {
         out.close();
-        // ---------- Original Method ----------
-        //out.close();
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.app.backup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
@@ -21,20 +21,22 @@ public class BackupHelperDispatcher {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.471 -0400", hash_original_method = "85B87DA3FD92CDAA8B7FFA5F20C0A756", hash_generated_method = "AF1A5159B4C616692A2600B7B383730D")
     public  BackupHelperDispatcher() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.472 -0400", hash_original_method = "A8E840254EBF3392B798809BE9F9086F", hash_generated_method = "7B83DF092E62F8C626E9B0E2446ED0B9")
     public void addHelper(String keyPrefix, BackupHelper helper) {
         mHelpers.put(keyPrefix, helper);
         addTaint(keyPrefix.getTaint());
         addTaint(helper.getTaint());
-        // ---------- Original Method ----------
-        //mHelpers.put(keyPrefix, helper);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.488 -0400", hash_original_method = "B596D5B1B749A849E47ABD34415972F7", hash_generated_method = "CAAE0B8A78ADBA92F795438664C3BFBE")
     public void performBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
              ParcelFileDescriptor newState) throws IOException {
@@ -54,14 +56,14 @@ public class BackupHelperDispatcher {
                         {
                             doOneBackup(oldState, data, newState, header, helper);
                             helpers.remove(header.keyPrefix);
-                        } //End block
+                        } 
                         {
                             skipChunk_native(oldStateFD, header.chunkSize);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             Iterator<Map.Entry<String,BackupHelper>> var0B59813E1691BC5DECEA622019E15EDD_1976637648 = (helpers.entrySet()).iterator();
             var0B59813E1691BC5DECEA622019E15EDD_1976637648.hasNext();
@@ -71,16 +73,17 @@ public class BackupHelperDispatcher {
                 Log.d(TAG, "handling new helper '" + header.keyPrefix + "'");
                 BackupHelper helper = entry.getValue();
                 doOneBackup(oldState, data, newState, header, helper);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(oldState.getTaint());
         addTaint(data.getTaint());
         addTaint(newState.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.489 -0400", hash_original_method = "B20B211F99695DC29EC53BF566272BED", hash_generated_method = "746A4BCCB5810BF638B028FE6F73562B")
     private void doOneBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
             ParcelFileDescriptor newState, Header header, BackupHelper helper) throws IOException {
@@ -89,34 +92,35 @@ public class BackupHelperDispatcher {
         int pos = allocateHeader_native(header, newStateFD);
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("allocateHeader_native failed (error " + pos + ")");
-        } //End block
+        } 
         data.setKeyPrefix(header.keyPrefix);
         helper.performBackup(oldState, data, newState);
         err = writeHeader_native(header, newStateFD, pos);
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("writeHeader_native failed (error " + err + ")");
-        } //End block
+        } 
         addTaint(oldState.getTaint());
         addTaint(data.getTaint());
         addTaint(newState.getTaint());
         addTaint(header.getTaint());
         addTaint(helper.getTaint());
-        // ---------- Original Method ----------
-        //int err;
-        //FileDescriptor newStateFD = newState.getFileDescriptor();
-        //int pos = allocateHeader_native(header, newStateFD);
-        //if (pos < 0) {
-            //throw new IOException("allocateHeader_native failed (error " + pos + ")");
-        //}
-        //data.setKeyPrefix(header.keyPrefix);
-        //helper.performBackup(oldState, data, newState);
-        //err = writeHeader_native(header, newStateFD, pos);
-        //if (err != 0) {
-            //throw new IOException("writeHeader_native failed (error " + err + ")");
-        //}
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.505 -0400", hash_original_method = "5D2E23956580E2A3306D4050F8218E29", hash_generated_method = "946416893C9048889F9A6CD0D65F3529")
     public void performRestore(BackupDataInput input, int appVersionCode,
             ParcelFileDescriptor newState) throws IOException {
@@ -134,34 +138,34 @@ public class BackupHelperDispatcher {
                         stream.dataSize = input.getDataSize();
                         stream.key = rawKey.substring(pos+1);
                         helper.restoreEntity(stream);
-                    } //End block
+                    } 
                     {
                         {
                             alreadyComplained = true;
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     {
                         alreadyComplained = true;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 input.skipEntityData();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             Iterator<BackupHelper> varD91491A680A3BCA4793E5DC911971BC9_1959071758 = (mHelpers.values()).iterator();
             varD91491A680A3BCA4793E5DC911971BC9_1959071758.hasNext();
             BackupHelper helper = varD91491A680A3BCA4793E5DC911971BC9_1959071758.next();
             {
                 helper.writeNewStateDescription(newState);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(input.getTaint());
         addTaint(appVersionCode);
         addTaint(newState.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -196,7 +200,7 @@ public class BackupHelperDispatcher {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.507 -0400", hash_original_method = "7DC9F4B0B6F0B6B866C998FD2825EB34", hash_generated_method = "7DC9F4B0B6F0B6B866C998FD2825EB34")
         public Header ()
         {
-            //Synthesized constructor
+            
         }
 
 

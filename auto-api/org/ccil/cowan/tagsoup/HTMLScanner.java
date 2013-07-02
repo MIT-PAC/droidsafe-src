@@ -1,11 +1,11 @@
 package org.ccil.cowan.tagsoup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.*;
 import org.xml.sax.SAXException;
@@ -53,17 +53,18 @@ public class HTMLScanner implements Scanner, Locator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.777 -0400", hash_original_method = "A8030374AECACF3BB4D2A2FA58C4A7D8", hash_generated_method = "A8030374AECACF3BB4D2A2FA58C4A7D8")
     public HTMLScanner ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.777 -0400", hash_original_method = "7BF7C7D5830ADAF76FEF60D8F3F10567", hash_generated_method = "5DB8B086407B6829FE6D7DCF3ED184BE")
     private void unread(PushbackReader r, int c) throws IOException {
         r.unread(c);
         addTaint(r.getTaint());
         addTaint(c);
-        // ---------- Original Method ----------
-        //if (c != -1) r.unread(c);
+        
+        
     }
 
     
@@ -71,8 +72,8 @@ public class HTMLScanner implements Scanner, Locator {
     public int getLineNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_988922368 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_988922368;
-        // ---------- Original Method ----------
-        //return theLastLine;
+        
+        
     }
 
     
@@ -80,30 +81,30 @@ public class HTMLScanner implements Scanner, Locator {
     public int getColumnNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1629996163 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1629996163;
-        // ---------- Original Method ----------
-        //return theLastColumn;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.778 -0400", hash_original_method = "EE9557AC8121925813378C18555B01E0", hash_generated_method = "2C4D1109CF9C672530A7148738564BAA")
     public String getPublicId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2089742219 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2089742219 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2089742219 = thePublicid;
-        varB4EAC82CA7396A68D541C85D26508E83_2089742219.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2089742219.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2089742219;
-        // ---------- Original Method ----------
-        //return thePublicid;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.778 -0400", hash_original_method = "B52DC32D5FB92F39EE1C6D62A566FA39", hash_generated_method = "1D27018169F1948DBA23C5511325B2C3")
     public String getSystemId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1404191506 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1404191506 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1404191506 = theSystemid;
-        varB4EAC82CA7396A68D541C85D26508E83_1404191506.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1404191506.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1404191506;
-        // ---------- Original Method ----------
-        //return theSystemid;
+        
+        
     }
 
     
@@ -112,26 +113,27 @@ public class HTMLScanner implements Scanner, Locator {
         thePublicid = publicid;
         theSystemid = systemid;
         theLastLine = theLastColumn = theCurrentLine = theCurrentColumn = 0;
-        // ---------- Original Method ----------
-        //thePublicid = publicid;
-        //theSystemid = systemid;
-        //theLastLine = theLastColumn = theCurrentLine = theCurrentColumn = 0;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.783 -0400", hash_original_method = "D85CBFA2F1A37C13B743BA6B1C12F2CC", hash_generated_method = "8B3C7C868165E38C5BC70F9C2F12081B")
     public void scan(Reader r0, ScanHandler h) throws IOException, SAXException {
         theState = S_PCDATA;
         PushbackReader r;
         {
             r = (PushbackReader)r0;
-        } //End block
+        } 
         {
             r = new PushbackReader(r0);
-        } //End block
+        } 
         {
             r = new PushbackReader(new BufferedReader(r0, 200));
-        } //End block
+        } 
         int firstChar = r.read();
         unread(r, firstChar);
         {
@@ -142,11 +144,11 @@ public class HTMLScanner implements Scanner, Locator {
                 {
                     unread(r, ch);
                     ch = '\n';
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 theCurrentColumn = 0;
-            } //End block
+            } 
             int action = 0;
             {
                 int i = 0;
@@ -155,327 +157,327 @@ public class HTMLScanner implements Scanner, Locator {
                     {
                         action = statetable[i+2];
                         theNextState = statetable[i+3];
-                    } //End block
+                    } 
                     {
                         action = statetable[i+2];
                         theNextState = statetable[i+3];
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            //Begin case 0 
+                    } 
+                } 
+            } 
+            
             if (DroidSafeAndroidRuntime.control) throw new Error(
 "HTMLScanner can't cope with " + Integer.toString(ch) + " in state " +
 Integer.toString(theState));
-            //End case 0 
-            //Begin case A_ADUP 
+            
+            
             h.adup(theOutputBuffer, 0, theSize);
-            //End case A_ADUP 
-            //Begin case A_ADUP 
+            
+            
             theSize = 0;
-            //End case A_ADUP 
-            //Begin case A_ADUP_SAVE 
+            
+            
             h.adup(theOutputBuffer, 0, theSize);
-            //End case A_ADUP_SAVE 
-            //Begin case A_ADUP_SAVE 
+            
+            
             theSize = 0;
-            //End case A_ADUP_SAVE 
-            //Begin case A_ADUP_SAVE 
+            
+            
             save(ch, h);
-            //End case A_ADUP_SAVE 
-            //Begin case A_ADUP_STAGC 
+            
+            
             h.adup(theOutputBuffer, 0, theSize);
-            //End case A_ADUP_STAGC 
-            //Begin case A_ADUP_STAGC 
+            
+            
             theSize = 0;
-            //End case A_ADUP_STAGC 
-            //Begin case A_ADUP_STAGC 
+            
+            
             h.stagc(theOutputBuffer, 0, theSize);
-            //End case A_ADUP_STAGC 
-            //Begin case A_ANAME 
+            
+            
             h.aname(theOutputBuffer, 0, theSize);
-            //End case A_ANAME 
-            //Begin case A_ANAME 
+            
+            
             theSize = 0;
-            //End case A_ANAME 
-            //Begin case A_ANAME_ADUP 
+            
+            
             h.aname(theOutputBuffer, 0, theSize);
-            //End case A_ANAME_ADUP 
-            //Begin case A_ANAME_ADUP 
+            
+            
             theSize = 0;
-            //End case A_ANAME_ADUP 
-            //Begin case A_ANAME_ADUP 
+            
+            
             h.adup(theOutputBuffer, 0, theSize);
-            //End case A_ANAME_ADUP 
-            //Begin case A_ANAME_ADUP_STAGC 
+            
+            
             h.aname(theOutputBuffer, 0, theSize);
-            //End case A_ANAME_ADUP_STAGC 
-            //Begin case A_ANAME_ADUP_STAGC 
+            
+            
             theSize = 0;
-            //End case A_ANAME_ADUP_STAGC 
-            //Begin case A_ANAME_ADUP_STAGC 
+            
+            
             h.adup(theOutputBuffer, 0, theSize);
-            //End case A_ANAME_ADUP_STAGC 
-            //Begin case A_ANAME_ADUP_STAGC 
+            
+            
             h.stagc(theOutputBuffer, 0, theSize);
-            //End case A_ANAME_ADUP_STAGC 
-            //Begin case A_AVAL 
+            
+            
             h.aval(theOutputBuffer, 0, theSize);
-            //End case A_AVAL 
-            //Begin case A_AVAL 
+            
+            
             theSize = 0;
-            //End case A_AVAL 
-            //Begin case A_AVAL_STAGC 
+            
+            
             h.aval(theOutputBuffer, 0, theSize);
-            //End case A_AVAL_STAGC 
-            //Begin case A_AVAL_STAGC 
+            
+            
             theSize = 0;
-            //End case A_AVAL_STAGC 
-            //Begin case A_AVAL_STAGC 
+            
+            
             h.stagc(theOutputBuffer, 0, theSize);
-            //End case A_AVAL_STAGC 
-            //Begin case A_CDATA 
+            
+            
             mark();
-            //End case A_CDATA 
-            //Begin case A_CDATA 
+            
+            
             theSize -= 2;
-            //End case A_CDATA 
-            //Begin case A_CDATA 
+            
+            
             h.pcdata(theOutputBuffer, 0, theSize);
-            //End case A_CDATA 
-            //Begin case A_CDATA 
+            
+            
             theSize = 0;
-            //End case A_CDATA 
-            //Begin case A_ENTITY_START 
+            
+            
             h.pcdata(theOutputBuffer, 0, theSize);
-            //End case A_ENTITY_START 
-            //Begin case A_ENTITY_START 
+            
+            
             theSize = 0;
-            //End case A_ENTITY_START 
-            //Begin case A_ENTITY_START 
+            
+            
             save(ch, h);
-            //End case A_ENTITY_START 
-            //Begin case A_ENTITY 
+            
+            
             mark();
-            //End case A_ENTITY 
-            //Begin case A_ENTITY 
+            
+            
             char ch1 = (char)ch;
-            //End case A_ENTITY 
-            //Begin case A_ENTITY 
+            
+            
             {
                 theNextState = S_NCR;
                 save(ch, h);
-            } //End block
+            } 
             {
                 theNextState = S_XNCR;
                 save(ch, h);
-            } //End block
+            } 
             {
                 boolean var399AB106AA77FAAABC7591A7F8A9BC78_1400609215 = (theState == S_ENT && Character.isLetterOrDigit(ch1));
                 {
                     save(ch, h);
-                } //End block
+                } 
                 {
                     boolean var5DB9D4C814C915FDFA1C54A8F00A4A7F_402570053 = (theState == S_NCR && Character.isDigit(ch1));
                     {
                         save(ch, h);
-                    } //End block
+                    } 
                     {
                         boolean var6D97DB103201670807C571750651BB95_1596505346 = (theState == S_XNCR && (Character.isDigit(ch1) || "abcdefABCDEF".indexOf(ch1) != -1));
                         {
                             save(ch, h);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-            //End case A_ENTITY 
-            //Begin case A_ENTITY 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
             h.entity(theOutputBuffer, 1, theSize - 1);
-            //End case A_ENTITY 
-            //Begin case A_ENTITY 
+            
+            
             int ent = h.getEntity();
-            //End case A_ENTITY 
-            //Begin case A_ENTITY 
+            
+            
             {
                 theSize = 0;
                 {
                     ent = theWinMap[ent-0x80];
-                } //End block
+                } 
                 {
                     ent = 0x20;
-                } //End block
+                } 
                 {
                     ent = 0;
-                } //End block
+                } 
                 {
                     save(ent, h);
-                } //End block
+                } 
                 {
                     ent -= 0x10000;
                     save((ent>>10) + 0xD800, h);
                     save((ent&0x3FF) + 0xDC00, h);
-                } //End block
+                } 
                 {
                     unread(r, ch);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 unread(r, ch);
-            } //End block
-            //End case A_ENTITY 
-            //Begin case A_ENTITY 
+            } 
+            
+            
             theNextState = S_PCDATA;
-            //End case A_ENTITY 
-            //Begin case A_ETAG 
+            
+            
             h.etag(theOutputBuffer, 0, theSize);
-            //End case A_ETAG 
-            //Begin case A_ETAG 
+            
+            
             theSize = 0;
-            //End case A_ETAG 
-            //Begin case A_DECL 
+            
+            
             h.decl(theOutputBuffer, 0, theSize);
-            //End case A_DECL 
-            //Begin case A_DECL 
+            
+            
             theSize = 0;
-            //End case A_DECL 
-            //Begin case A_GI 
+            
+            
             h.gi(theOutputBuffer, 0, theSize);
-            //End case A_GI 
-            //Begin case A_GI 
+            
+            
             theSize = 0;
-            //End case A_GI 
-            //Begin case A_GI_STAGC 
+            
+            
             h.gi(theOutputBuffer, 0, theSize);
-            //End case A_GI_STAGC 
-            //Begin case A_GI_STAGC 
+            
+            
             theSize = 0;
-            //End case A_GI_STAGC 
-            //Begin case A_GI_STAGC 
+            
+            
             h.stagc(theOutputBuffer, 0, theSize);
-            //End case A_GI_STAGC 
-            //Begin case A_LT 
+            
+            
             mark();
-            //End case A_LT 
-            //Begin case A_LT 
+            
+            
             save('<', h);
-            //End case A_LT 
-            //Begin case A_LT 
+            
+            
             save(ch, h);
-            //End case A_LT 
-            //Begin case A_LT_PCDATA 
+            
+            
             mark();
-            //End case A_LT_PCDATA 
-            //Begin case A_LT_PCDATA 
+            
+            
             save('<', h);
-            //End case A_LT_PCDATA 
-            //Begin case A_LT_PCDATA 
+            
+            
             h.pcdata(theOutputBuffer, 0, theSize);
-            //End case A_LT_PCDATA 
-            //Begin case A_LT_PCDATA 
+            
+            
             theSize = 0;
-            //End case A_LT_PCDATA 
-            //Begin case A_PCDATA 
+            
+            
             mark();
-            //End case A_PCDATA 
-            //Begin case A_PCDATA 
+            
+            
             h.pcdata(theOutputBuffer, 0, theSize);
-            //End case A_PCDATA 
-            //Begin case A_PCDATA 
+            
+            
             theSize = 0;
-            //End case A_PCDATA 
-            //Begin case A_CMNT 
+            
+            
             mark();
-            //End case A_CMNT 
-            //Begin case A_CMNT 
+            
+            
             h.cmnt(theOutputBuffer, 0, theSize);
-            //End case A_CMNT 
-            //Begin case A_CMNT 
+            
+            
             theSize = 0;
-            //End case A_CMNT 
-            //Begin case A_MINUS3 
+            
+            
             save('-', h);
-            //End case A_MINUS3 
-            //Begin case A_MINUS3 
+            
+            
             save(' ', h);
-            //End case A_MINUS3 
-            //Begin case A_MINUS2 
+            
+            
             save('-', h);
-            //End case A_MINUS2 
-            //Begin case A_MINUS2 
+            
+            
             save(' ', h);
-            //End case A_MINUS2 
-            //Begin case A_MINUS 
+            
+            
             save('-', h);
-            //End case A_MINUS 
-            //Begin case A_MINUS 
+            
+            
             save(ch, h);
-            //End case A_MINUS 
-            //Begin case A_PI 
+            
+            
             mark();
-            //End case A_PI 
-            //Begin case A_PI 
+            
+            
             h.pi(theOutputBuffer, 0, theSize);
-            //End case A_PI 
-            //Begin case A_PI 
+            
+            
             theSize = 0;
-            //End case A_PI 
-            //Begin case A_PITARGET 
+            
+            
             h.pitarget(theOutputBuffer, 0, theSize);
-            //End case A_PITARGET 
-            //Begin case A_PITARGET 
+            
+            
             theSize = 0;
-            //End case A_PITARGET 
-            //Begin case A_PITARGET_PI 
+            
+            
             h.pitarget(theOutputBuffer, 0, theSize);
-            //End case A_PITARGET_PI 
-            //Begin case A_PITARGET_PI 
+            
+            
             theSize = 0;
-            //End case A_PITARGET_PI 
-            //Begin case A_PITARGET_PI 
+            
+            
             h.pi(theOutputBuffer, 0, theSize);
-            //End case A_PITARGET_PI 
-            //Begin case A_SAVE 
+            
+            
             save(ch, h);
-            //End case A_SAVE 
-            //Begin case A_SP 
+            
+            
             save(' ', h);
-            //End case A_SP 
-            //Begin case A_STAGC 
+            
+            
             h.stagc(theOutputBuffer, 0, theSize);
-            //End case A_STAGC 
-            //Begin case A_STAGC 
+            
+            
             theSize = 0;
-            //End case A_STAGC 
-            //Begin case A_EMPTYTAG 
+            
+            
             mark();
-            //End case A_EMPTYTAG 
-            //Begin case A_EMPTYTAG 
+            
+            
             h.gi(theOutputBuffer, 0, theSize);
-            //End case A_EMPTYTAG 
-            //Begin case A_EMPTYTAG 
+            
+            
             theSize = 0;
-            //End case A_EMPTYTAG 
-            //Begin case A_EMPTYTAG 
+            
+            
             h.stage(theOutputBuffer, 0, theSize);
-            //End case A_EMPTYTAG 
-            //Begin case A_UNGET 
+            
+            
             unread(r, ch);
-            //End case A_UNGET 
-            //Begin case A_UNSAVE_PCDATA 
+            
+            
             h.pcdata(theOutputBuffer, 0, theSize);
-            //End case A_UNSAVE_PCDATA 
-            //Begin case A_UNSAVE_PCDATA 
+            
+            
             theSize = 0;
-            //End case A_UNSAVE_PCDATA 
-            //Begin case default 
+            
+            
             if (DroidSafeAndroidRuntime.control) throw new Error("Can't process state " + action);
-            //End case default 
+            
             theState = theNextState;
-        } //End block
+        } 
         h.eof(theOutputBuffer, 0, 0);
         addTaint(r0.getTaint());
         addTaint(h.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -483,51 +485,53 @@ Integer.toString(theState));
     private void mark() {
         theLastColumn = theCurrentColumn;
         theLastLine = theCurrentLine;
-        // ---------- Original Method ----------
-        //theLastColumn = theCurrentColumn;
-        //theLastLine = theCurrentLine;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.785 -0400", hash_original_method = "ADD8A6D3E398AE84BB2395E77CB3DD25", hash_generated_method = "1EF97924DE4200F8FC7B47D12F17ED38")
     public void startCDATA() {
         theNextState = S_CDATA;
-        // ---------- Original Method ----------
-        //theNextState = S_CDATA;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.785 -0400", hash_original_method = "84101FD8AB96FAF4340E309879AEA5A7", hash_generated_method = "A0972913A97F2EA59B288D6E53C3EA2A")
     private void save(int ch, ScanHandler h) throws IOException, SAXException {
         {
             {
                 h.pcdata(theOutputBuffer, 0, theSize);
                 theSize = 0;
-            } //End block
+            } 
             {
                 char[] newOutputBuffer = new char[theOutputBuffer.length * 2];
                 System.arraycopy(theOutputBuffer, 0, newOutputBuffer, 0, theSize+1);
                 theOutputBuffer = newOutputBuffer;
-            } //End block
-        } //End block
+            } 
+        } 
         theOutputBuffer[theSize++] = (char)ch;
         addTaint(h.getTaint());
-        // ---------- Original Method ----------
-        //if (theSize >= theOutputBuffer.length - 20) {
-			//if (theState == S_PCDATA || theState == S_CDATA) {
-				//h.pcdata(theOutputBuffer, 0, theSize);
-				//theSize = 0;
-				//}
-			//else {
-				//char[] newOutputBuffer = new char[theOutputBuffer.length * 2];
-                                //System.arraycopy(theOutputBuffer, 0, newOutputBuffer, 0, theSize+1);
-				//theOutputBuffer = newOutputBuffer;
-				//}
-			//}
-        //theOutputBuffer[theSize++] = (char)ch;
+        
+        
+			
+				
+				
+				
+			
+				
+                                
+				
+				
+			
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void main(String[] argv) throws IOException, SAXException {
         Scanner s = new HTMLScanner();
         Reader r = new InputStreamReader(System.in, "UTF-8");
@@ -538,6 +542,7 @@ Integer.toString(theState));
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String nicechar(int in) {
         if (in == '\n') return "\\n";
         if (in < 32) return "0x"+Integer.toHexString(in);

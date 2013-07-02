@@ -1,11 +1,11 @@
 package org.apache.harmony.xml.dom;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.w3c.dom.EntityReference;
 import org.w3c.dom.Node;
@@ -20,20 +20,20 @@ public class EntityReferenceImpl extends LeafNodeImpl implements EntityReference
         super(document);
         this.name = name;
         addTaint(document.getTaint());
-        // ---------- Original Method ----------
-        //this.name = name;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.106 -0400", hash_original_method = "5A3E3202FC8B21204CAC945442E54540", hash_generated_method = "D7A67D87E1413E20EF1E00F31097C341")
     @Override
     public String getNodeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1333555939 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1333555939 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1333555939 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_1333555939.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1333555939.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1333555939;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
@@ -42,8 +42,8 @@ public class EntityReferenceImpl extends LeafNodeImpl implements EntityReference
     public short getNodeType() {
         short var4F09DAA9D95BCB166A302407A0E0BABE_1554099572 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1554099572;
-        // ---------- Original Method ----------
-        //return Node.ENTITY_REFERENCE_NODE;
+        
+        
     }
 
     

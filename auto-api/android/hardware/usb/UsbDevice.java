@@ -1,11 +1,11 @@
 package android.hardware.usb;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -46,35 +46,36 @@ public class UsbDevice implements Parcelable {
         mSubclass = subClass;
         mProtocol = protocol;
         mInterfaces = interfaces;
-        // ---------- Original Method ----------
-        //mName = name;
-        //mVendorId = vendorId;
-        //mProductId = productId;
-        //mClass = Class;
-        //mSubclass = subClass;
-        //mProtocol = protocol;
-        //mInterfaces = interfaces;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.301 -0400", hash_original_method = "271D12AC1725A6D768ED59A731E22C7D", hash_generated_method = "AA54C5CBB579D0B4923B509FC91875CA")
     public String getDeviceName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_70879612 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_70879612 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_70879612 = mName;
-        varB4EAC82CA7396A68D541C85D26508E83_70879612.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_70879612.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_70879612;
-        // ---------- Original Method ----------
-        //return mName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.302 -0400", hash_original_method = "0EB91F28C0A2FB6299B3C615FC2DAB8F", hash_generated_method = "F16C99D8674EC30E8BFECFB4D8EFAE2E")
     public int getDeviceId() {
         int varA8857A9530942E71AD2D2E23277CEDCC_584792309 = (getDeviceId(mName));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1110451729 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1110451729;
-        // ---------- Original Method ----------
-        //return getDeviceId(mName);
+        
+        
     }
 
     
@@ -82,8 +83,8 @@ public class UsbDevice implements Parcelable {
     public int getVendorId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_65908523 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_65908523;
-        // ---------- Original Method ----------
-        //return mVendorId;
+        
+        
     }
 
     
@@ -91,8 +92,8 @@ public class UsbDevice implements Parcelable {
     public int getProductId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_542604130 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_542604130;
-        // ---------- Original Method ----------
-        //return mProductId;
+        
+        
     }
 
     
@@ -100,8 +101,8 @@ public class UsbDevice implements Parcelable {
     public int getDeviceClass() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1696742178 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1696742178;
-        // ---------- Original Method ----------
-        //return mClass;
+        
+        
     }
 
     
@@ -109,8 +110,8 @@ public class UsbDevice implements Parcelable {
     public int getDeviceSubclass() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1303085836 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1303085836;
-        // ---------- Original Method ----------
-        //return mSubclass;
+        
+        
     }
 
     
@@ -118,8 +119,8 @@ public class UsbDevice implements Parcelable {
     public int getDeviceProtocol() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1168074742 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1168074742;
-        // ---------- Original Method ----------
-        //return mProtocol;
+        
+        
     }
 
     
@@ -127,72 +128,75 @@ public class UsbDevice implements Parcelable {
     public int getInterfaceCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_659155172 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_659155172;
-        // ---------- Original Method ----------
-        //return mInterfaces.length;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.308 -0400", hash_original_method = "CB4E75DEC838C411BA866F14CD6483BC", hash_generated_method = "53B1C9F6329E2263ADE47F9EB3510BA2")
     public UsbInterface getInterface(int index) {
-        UsbInterface varB4EAC82CA7396A68D541C85D26508E83_301246933 = null; //Variable for return #1
+        UsbInterface varB4EAC82CA7396A68D541C85D26508E83_301246933 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_301246933 = (UsbInterface)mInterfaces[index];
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_301246933.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_301246933.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_301246933;
-        // ---------- Original Method ----------
-        //return (UsbInterface)mInterfaces[index];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.310 -0400", hash_original_method = "053D020F017F8544B1264C0EDF41C58B", hash_generated_method = "7C2B7BDE12B2D0CDA7B0AEE11D4C214B")
     @Override
     public boolean equals(Object o) {
         {
             boolean var7C479EDFFD7D76B266CB439F397AE616_1841451247 = (((UsbDevice)o).mName.equals(mName));
-        } //End block
+        } 
         {
             boolean varB1E37602933A99C8A8EBDC86026FEF60_1332406073 = (((String)o).equals(mName));
-        } //End block
+        } 
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1355888578 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1355888578;
-        // ---------- Original Method ----------
-        //if (o instanceof UsbDevice) {
-            //return ((UsbDevice)o).mName.equals(mName);
-        //} else if (o instanceof String) {
-            //return ((String)o).equals(mName);
-        //} else {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.311 -0400", hash_original_method = "17C09B2A154A4C6FF6181DC76A163C25", hash_generated_method = "8AFFE9029C0217A65E083C0DE074B043")
     @Override
     public int hashCode() {
         int varE33CD2BFD88356AD54767C2AF19C8D3F_1909662709 = (mName.hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_551447285 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_551447285;
-        // ---------- Original Method ----------
-        //return mName.hashCode();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.314 -0400", hash_original_method = "E3858C7D4009824DA04CA335F7246ABC", hash_generated_method = "104E75B48507CF6C7F51A1FE1A9C7ED0")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_947486827 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_947486827 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_947486827 = "UsbDevice[mName=" + mName + ",mVendorId=" + mVendorId +
                 ",mProductId=" + mProductId + ",mClass=" + mClass +
                 ",mSubclass=" + mSubclass + ",mProtocol=" + mProtocol +
                 ",mInterfaces=" + mInterfaces + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_947486827.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_947486827.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_947486827;
-        // ---------- Original Method ----------
-        //return "UsbDevice[mName=" + mName + ",mVendorId=" + mVendorId +
-                //",mProductId=" + mProductId + ",mClass=" + mClass +
-                //",mSubclass=" + mSubclass + ",mProtocol=" + mProtocol +
-                //",mInterfaces=" + mInterfaces + "]";
+        
+        
+                
+                
+                
     }
 
     
@@ -200,11 +204,12 @@ public class UsbDevice implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_823831425 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_823831425;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.316 -0400", hash_original_method = "A5AD5FD8C4031CD6304CBA4A2E71482A", hash_generated_method = "E35452365AF7F9FDC78FE95B13D10804")
     public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeString(mName);
@@ -216,22 +221,24 @@ public class UsbDevice implements Parcelable {
         parcel.writeParcelableArray(mInterfaces, 0);
         addTaint(parcel.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //parcel.writeString(mName);
-        //parcel.writeInt(mVendorId);
-        //parcel.writeInt(mProductId);
-        //parcel.writeInt(mClass);
-        //parcel.writeInt(mSubclass);
-        //parcel.writeInt(mProtocol);
-        //parcel.writeParcelableArray(mInterfaces, 0);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getDeviceId(String name) {
         return native_get_device_id(name);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getDeviceName(int id) {
         return native_get_device_name(id);
     }
@@ -269,7 +276,7 @@ public class UsbDevice implements Parcelable {
             return new UsbDevice[size];
         }
     };
-    // orphaned legacy method
+    
     public UsbDevice createFromParcel(Parcel in) {
             String name = in.readString();
             int vendorId = in.readInt();
@@ -281,7 +288,7 @@ public class UsbDevice implements Parcelable {
             return new UsbDevice(name, vendorId, productId, clasz, subClass, protocol, interfaces);
         }
     
-    // orphaned legacy method
+    
     public UsbDevice[] newArray(int size) {
             return new UsbDevice[size];
         }

@@ -1,11 +1,11 @@
 package java.util.concurrent;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.concurrent.locks.*;
 import java.util.*;
@@ -36,7 +36,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.668 -0400", hash_original_method = "7097644646C71112C54FBC7AFE99B502", hash_generated_method = "EB3E09F342C2EF21559210AC909696C8")
     public  PriorityBlockingQueue() {
         this(DEFAULT_INITIAL_CAPACITY, null);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -44,7 +44,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
     public  PriorityBlockingQueue(int initialCapacity) {
         this(initialCapacity, null);
         addTaint(initialCapacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -56,13 +56,13 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
         this.notEmpty = lock.newCondition();
         this.comparator = comparator;
         this.queue = new Object[initialCapacity];
-        // ---------- Original Method ----------
-        //if (initialCapacity < 1)
-            //throw new IllegalArgumentException();
-        //this.lock = new ReentrantLock();
-        //this.notEmpty = lock.newCondition();
-        //this.comparator = comparator;
-        //this.queue = new Object[initialCapacity];
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -76,7 +76,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             SortedSet<? extends E> ss = (SortedSet<? extends E>) c;
             this.comparator = (Comparator<? super E>) ss.comparator();
             heapify = false;
-        } //End block
+        } 
         {
             PriorityBlockingQueue<? extends E> pq = (PriorityBlockingQueue<? extends E>) c;
             this.comparator = (Comparator<? super E>) pq.comparator();
@@ -84,29 +84,30 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             {
                 boolean var942B84B8F6DD12D131B1B426D916BED5_502929550 = (pq.getClass() == PriorityBlockingQueue.class);
                 heapify = false;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         Object[] a = c.toArray();
         int n = a.length;
         {
             boolean var16F77EF61B9474A82FE398A385F0E9B1_350390425 = (a.getClass() != Object[].class);
             a = Arrays.copyOf(a, n, Object[].class);
-        } //End collapsed parenthetic
+        } 
         {
             {
                 int i = 0;
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         this.queue = a;
         this.size = n;
         heapify();
         addTaint(c.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.673 -0400", hash_original_method = "4FD20927C2E38EB86416DF04242C2C20", hash_generated_method = "873FBB557D561036D5D40B3ED9F9F298")
     private void tryGrow(Object[] array, int oldCap) {
         lock.unlock();
@@ -120,36 +121,37 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
                 {
                     int newCap = oldCap + ((oldCap < 64) ?
                                        (oldCap + 2) : 
-                                       (oldCap >> 1));//DSFIXME:  CODE0008: Nested ternary operator in expression
+                                       (oldCap >> 1));
                     {
                         int minCap = oldCap + 1;
                         if (DroidSafeAndroidRuntime.control) throw new OutOfMemoryError();
                         newCap = MAX_ARRAY_SIZE;
-                    } //End block
+                    } 
                     newArray = new Object[newCap];
-                } //End block
+                } 
                 finally 
                 {
                     allocationSpinLock = 0;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         Thread.yield();
         lock.lock();
         {
             queue = newArray;
             System.arraycopy(array, 0, newArray, 0, oldCap);
-        } //End block
+        } 
         addTaint(array[0].getTaint());
         addTaint(oldCap);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.675 -0400", hash_original_method = "B92133B4F8095968C1CAA0CBFEDBAB19", hash_generated_method = "23CC9BD393DC7F3001F0811344657CE3")
     private E extract() {
-        E varB4EAC82CA7396A68D541C85D26508E83_333961961 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_333961961 = null; 
         E result;
         int n = size - 1;
         result = null;
@@ -162,31 +164,32 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             siftDownComparable(0, x, array, n);
             siftDownUsingComparator(0, x, array, n, cmp);
             size = n;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_333961961 = result;
-        varB4EAC82CA7396A68D541C85D26508E83_333961961.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_333961961.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_333961961;
-        // ---------- Original Method ----------
-        //E result;
-        //int n = size - 1;
-        //if (n < 0)
-            //result = null;
-        //else {
-            //Object[] array = queue;
-            //result = (E) array[0];
-            //E x = (E) array[n];
-            //array[n] = null;
-            //Comparator<? super E> cmp = comparator;
-            //if (cmp == null)
-                //siftDownComparable(0, x, array, n);
-            //else
-                //siftDownUsingComparator(0, x, array, n, cmp);
-            //size = n;
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static <T> void siftUpComparable(int k, T x, Object[] array) {
         Comparable<? super T> key = (Comparable<? super T>) x;
         while (k > 0) {
@@ -201,6 +204,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static <T> void siftUpUsingComparator(int k, T x, Object[] array,
                                        Comparator<? super T> cmp) {
         while (k > 0) {
@@ -215,6 +219,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static <T> void siftDownComparable(int k, T x, Object[] array,
                                                int n) {
         Comparable<? super T> key = (Comparable<? super T>)x;
@@ -235,6 +240,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static <T> void siftDownUsingComparator(int k, T x, Object[] array,
                                                     int n,
                                                     Comparator<? super T> cmp) {
@@ -254,6 +260,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.677 -0400", hash_original_method = "EE7D24D9E196708648F7B6757F98A148", hash_generated_method = "178459D13DA73782E3C6396E8C5E538F")
     private void heapify() {
         Object[] array = queue;
@@ -264,41 +271,43 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             {
                 int i = half;
                 siftDownComparable(i, (E) array[i], array, n);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             {
                 int i = half;
                 siftDownUsingComparator(i, (E) array[i], array, n, cmp);
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //Object[] array = queue;
-        //int n = size;
-        //int half = (n >>> 1) - 1;
-        //Comparator<? super E> cmp = comparator;
-        //if (cmp == null) {
-            //for (int i = half; i >= 0; i--)
-                //siftDownComparable(i, (E) array[i], array, n);
-        //}
-        //else {
-            //for (int i = half; i >= 0; i--)
-                //siftDownUsingComparator(i, (E) array[i], array, n, cmp);
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+            
+                
+        
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.677 -0400", hash_original_method = "F77A4F330ECF7476CC7AF200B57EFA7F", hash_generated_method = "4BD4C6CC417F1FE872755C0FE68D176B")
     public boolean add(E e) {
         boolean var42B2AD017FC8EAA920A05640330B5300_1837080757 = (offer(e));
         addTaint(e.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_44373559 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_44373559;
-        // ---------- Original Method ----------
-        //return offer(e);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.678 -0400", hash_original_method = "775A55093A20D9C3EB5D5F7F7F70C525", hash_generated_method = "23C93FDC6B64E1339D658C82B7E64EF2")
     public boolean offer(E e) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -310,7 +319,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
         {
             boolean var4531DD35A6B47ED89177DB8A0F1B2960_561984226 = ((n = size) >= (cap = (array = queue).length));
             tryGrow(array, cap);
-        } //End collapsed parenthetic
+        } 
         try 
         {
             Comparator<? super E> cmp = comparator;
@@ -318,47 +327,49 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             siftUpUsingComparator(n, e, array, cmp);
             size = n + 1;
             notEmpty.signal();
-        } //End block
+        } 
         finally 
         {
             lock.unlock();
-        } //End block
+        } 
         addTaint(e.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_544294309 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_544294309;
-        // ---------- Original Method ----------
-        //if (e == null)
-            //throw new NullPointerException();
-        //final ReentrantLock lock = this.lock;
-        //lock.lock();
-        //int n, cap;
-        //Object[] array;
-        //while ((n = size) >= (cap = (array = queue).length))
-            //tryGrow(array, cap);
-        //try {
-            //Comparator<? super E> cmp = comparator;
-            //if (cmp == null)
-                //siftUpComparable(n, e, array);
-            //else
-                //siftUpUsingComparator(n, e, array, cmp);
-            //size = n + 1;
-            //notEmpty.signal();
-        //} finally {
-            //lock.unlock();
-        //}
-        //return true;
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+            
+            
+                
+            
+                
+            
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.678 -0400", hash_original_method = "C9D180903A7CC0CD8F17729AA0E80F49", hash_generated_method = "518037778B4178C6B51A84243CFC11C5")
     public void put(E e) {
         offer(e);
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
-        //offer(e);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.678 -0400", hash_original_method = "BFDD71499687D637F57FF5151EA7665D", hash_generated_method = "713A7CBAEFAD567EFBC63F39023BE9DA")
     public boolean offer(E e, long timeout, TimeUnit unit) {
         boolean var42B2AD017FC8EAA920A05640330B5300_1653712358 = (offer(e));
@@ -367,44 +378,46 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
         addTaint(unit.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1238693078 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1238693078;
-        // ---------- Original Method ----------
-        //return offer(e);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.679 -0400", hash_original_method = "A22423A10175E57DE557DAE1EC700763", hash_generated_method = "DD2A62039469358E976348DAD877D380")
     public E poll() {
-        E varB4EAC82CA7396A68D541C85D26508E83_1954398660 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_1954398660 = null; 
         final ReentrantLock lock = this.lock;
         lock.lock();
         E result;
         try 
         {
             result = extract();
-        } //End block
+        } 
         finally 
         {
             lock.unlock();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1954398660 = result;
-        varB4EAC82CA7396A68D541C85D26508E83_1954398660.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1954398660.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1954398660;
-        // ---------- Original Method ----------
-        //final ReentrantLock lock = this.lock;
-        //lock.lock();
-        //E result;
-        //try {
-            //result = extract();
-        //} finally {
-            //lock.unlock();
-        //}
-        //return result;
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.679 -0400", hash_original_method = "7702BF7782A7372B6632BD3C70F3CD0F", hash_generated_method = "82E239FBCCB1AABAD770CD002E873EA1")
     public E take() throws InterruptedException {
-        E varB4EAC82CA7396A68D541C85D26508E83_1920329186 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_1920329186 = null; 
         final ReentrantLock lock = this.lock;
         lock.lockInterruptibly();
         E result;
@@ -413,32 +426,33 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             {
                 boolean varC9C5225C062A6E8E6EB29A2DE54BC6B7_127032504 = ((result = extract()) == null);
                 notEmpty.await();
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         finally 
         {
             lock.unlock();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1920329186 = result;
-        varB4EAC82CA7396A68D541C85D26508E83_1920329186.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1920329186.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1920329186;
-        // ---------- Original Method ----------
-        //final ReentrantLock lock = this.lock;
-        //lock.lockInterruptibly();
-        //E result;
-        //try {
-            //while ( (result = extract()) == null)
-                //notEmpty.await();
-        //} finally {
-            //lock.unlock();
-        //}
-        //return result;
+        
+        
+        
+        
+        
+            
+                
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.680 -0400", hash_original_method = "E1FF0BE92CA560531F5134C8D376F3E9", hash_generated_method = "7075D4C84DDD097FBBD43921BF8E0C29")
     public E poll(long timeout, TimeUnit unit) throws InterruptedException {
-        E varB4EAC82CA7396A68D541C85D26508E83_1821421486 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_1821421486 = null; 
         long nanos = unit.toNanos(timeout);
         final ReentrantLock lock = this.lock;
         lock.lockInterruptibly();
@@ -448,87 +462,89 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             {
                 boolean var8F587AA462BBB3430969A2F03A01845E_128479600 = ((result = extract()) == null && nanos > 0);
                 nanos = notEmpty.awaitNanos(nanos);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         finally 
         {
             lock.unlock();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1821421486 = result;
         addTaint(timeout);
         addTaint(unit.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1821421486.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1821421486.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1821421486;
-        // ---------- Original Method ----------
-        //long nanos = unit.toNanos(timeout);
-        //final ReentrantLock lock = this.lock;
-        //lock.lockInterruptibly();
-        //E result;
-        //try {
-            //while ( (result = extract()) == null && nanos > 0)
-                //nanos = notEmpty.awaitNanos(nanos);
-        //} finally {
-            //lock.unlock();
-        //}
-        //return result;
+        
+        
+        
+        
+        
+        
+            
+                
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.682 -0400", hash_original_method = "6160A1DDBF053B72DB86495140716C8D", hash_generated_method = "2EC0064A45CB7B34B660CDA898AA969C")
     public E peek() {
-        E varB4EAC82CA7396A68D541C85D26508E83_692195751 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_692195751 = null; 
         final ReentrantLock lock = this.lock;
         lock.lock();
         E result;
         try 
         {
             result = size > 0 ? (E) queue[0] : null;
-        } //End block
+        } 
         finally 
         {
             lock.unlock();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_692195751 = result;
-        varB4EAC82CA7396A68D541C85D26508E83_692195751.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_692195751.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_692195751;
-        // ---------- Original Method ----------
-        //final ReentrantLock lock = this.lock;
-        //lock.lock();
-        //E result;
-        //try {
-            //result = size > 0 ? (E) queue[0] : null;
-        //} finally {
-            //lock.unlock();
-        //}
-        //return result;
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.683 -0400", hash_original_method = "83ACC201A16F2FDDF97B6B07FFFB2168", hash_generated_method = "E01C5860A28665AB4E02ADAA6CD89536")
     public Comparator<? super E> comparator() {
-        Comparator<? super E> varB4EAC82CA7396A68D541C85D26508E83_1721486949 = null; //Variable for return #1
+        Comparator<? super E> varB4EAC82CA7396A68D541C85D26508E83_1721486949 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1721486949 = comparator;
-        varB4EAC82CA7396A68D541C85D26508E83_1721486949.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1721486949.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1721486949;
-        // ---------- Original Method ----------
-        //return comparator;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.683 -0400", hash_original_method = "FB53A461CD3B1BACC3DB27D415F5CC64", hash_generated_method = "665DFA2D6B86BDC17DCA720140FB0C21")
     public int size() {
         final ReentrantLock lock = this.lock;
         lock.lock();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_323706847 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_323706847;
-        // ---------- Original Method ----------
-        //final ReentrantLock lock = this.lock;
-        //lock.lock();
-        //try {
-            //return size;
-        //} finally {
-            //lock.unlock();
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -536,11 +552,12 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
     public int remainingCapacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1154554417 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1154554417;
-        // ---------- Original Method ----------
-        //return Integer.MAX_VALUE;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.685 -0400", hash_original_method = "EC3B7D586FF4D36081EA6F7D19ADE62F", hash_generated_method = "FB253647E4531C9F1C2BD5E89F2805E4")
     private int indexOf(Object o) {
         {
@@ -550,24 +567,25 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
                 int i = 0;
                 {
                     boolean varD361998FE043BDE60F5D0B136966DE37_1143106835 = (o.equals(array[i]));
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(o.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_155980010 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_155980010;
-        // ---------- Original Method ----------
-        //if (o != null) {
-            //Object[] array = queue;
-            //int n = size;
-            //for (int i = 0; i < n; i++)
-                //if (o.equals(array[i]))
-                    //return i;
-        //}
-        //return -1;
+        
+        
+            
+            
+            
+                
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.685 -0400", hash_original_method = "9D73270D970CE651CDDED76CEC412EF8", hash_generated_method = "8677CE0BC2333FAE940A4F737EBEAED6")
     private void removeAt(int i) {
         Object[] array = queue;
@@ -582,34 +600,35 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             {
                 siftUpComparable(i, moved, array);
                 siftUpUsingComparator(i, moved, array, cmp);
-            } //End block
-        } //End block
+            } 
+        } 
         size = n;
         addTaint(i);
-        // ---------- Original Method ----------
-        //Object[] array = queue;
-        //int n = size - 1;
-        //if (n == i) 
-            //array[i] = null;
-        //else {
-            //E moved = (E) array[n];
-            //array[n] = null;
-            //Comparator<? super E> cmp = comparator;
-            //if (cmp == null)
-                //siftDownComparable(i, moved, array, n);
-            //else
-                //siftDownUsingComparator(i, moved, array, n, cmp);
-            //if (array[i] == moved) {
-                //if (cmp == null)
-                    //siftUpComparable(i, moved, array);
-                //else
-                    //siftUpUsingComparator(i, moved, array, cmp);
-            //}
-        //}
-        //size = n;
+        
+        
+        
+        
+            
+        
+            
+            
+            
+            
+                
+            
+                
+            
+                
+                    
+                
+                    
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.686 -0400", hash_original_method = "9C7EDF9574A228DB080DCC7A28F18F6B", hash_generated_method = "A59A23B0AC819A23E18D5D71B71DE301")
     public boolean remove(Object o) {
         boolean removed = false;
@@ -621,32 +640,33 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             {
                 removeAt(i);
                 removed = true;
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             lock.unlock();
-        } //End block
+        } 
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1030372657 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1030372657;
-        // ---------- Original Method ----------
-        //boolean removed = false;
-        //final ReentrantLock lock = this.lock;
-        //lock.lock();
-        //try {
-            //int i = indexOf(o);
-            //if (i != -1) {
-                //removeAt(i);
-                //removed = true;
-            //}
-        //} finally {
-            //lock.unlock();
-        //}
-        //return removed;
+        
+        
+        
+        
+        
+            
+            
+                
+                
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.686 -0400", hash_original_method = "32C7969330E75D54F62841F3B8B9051A", hash_generated_method = "FEE2C5DE3689DB37A6372D0D6F27FA8C")
     private void removeEQ(Object o) {
         final ReentrantLock lock = this.lock;
@@ -660,33 +680,34 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
                 {
                     {
                         removeAt(i);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
             lock.unlock();
-        } //End block
+        } 
         addTaint(o.getTaint());
-        // ---------- Original Method ----------
-        //final ReentrantLock lock = this.lock;
-        //lock.lock();
-        //try {
-            //Object[] array = queue;
-            //int n = size;
-            //for (int i = 0; i < n; i++) {
-                //if (o == array[i]) {
-                    //removeAt(i);
-                    //break;
-                //}
-            //}
-        //} finally {
-            //lock.unlock();
-        //}
+        
+        
+        
+        
+            
+            
+            
+                
+                    
+                    
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.687 -0400", hash_original_method = "C9C3AD49D429D8919794902BE1E1A9F2", hash_generated_method = "3ACAE517B9E287F296141E95ABE5885F")
     public boolean contains(Object o) {
         int index;
@@ -695,57 +716,59 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
         try 
         {
             index = indexOf(o);
-        } //End block
+        } 
         finally 
         {
             lock.unlock();
-        } //End block
+        } 
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1227051161 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1227051161;
-        // ---------- Original Method ----------
-        //int index;
-        //final ReentrantLock lock = this.lock;
-        //lock.lock();
-        //try {
-            //index = indexOf(o);
-        //} finally {
-            //lock.unlock();
-        //}
-        //return index != -1;
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.688 -0400", hash_original_method = "8A09FBF09ED2852585642BCE8CE60ACB", hash_generated_method = "41AD7C607D9FED3A7B511293931021DD")
     public Object[] toArray() {
-        Object[] varB4EAC82CA7396A68D541C85D26508E83_699067606 = null; //Variable for return #1
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_699067606 = null; 
         final ReentrantLock lock = this.lock;
         lock.lock();
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_699067606 = Arrays.copyOf(queue, size);
-        } //End block
+        } 
         finally 
         {
             lock.unlock();
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_699067606.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_699067606.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_699067606;
-        // ---------- Original Method ----------
-        //final ReentrantLock lock = this.lock;
-        //lock.lock();
-        //try {
-            //return Arrays.copyOf(queue, size);
-        //} finally {
-            //lock.unlock();
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.688 -0400", hash_original_method = "394B446E36D7177A8AA9580B0613E718", hash_generated_method = "F347B3395F9066C2055FDEF29119A7BD")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1209169662 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1966234354 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1209169662 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1966234354 = null; 
         final ReentrantLock lock = this.lock;
         lock.lock();
         try 
@@ -760,54 +783,55 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
                     E e = (E)queue[i];
                     sb.append(e == this ? "(this Collection)" : e);
                     sb.append(',').append(' ');
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1966234354 = sb.append(']').toString();
-        } //End block
+        } 
         finally 
         {
             lock.unlock();
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_1942276145; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1942276145; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1942276145 = varB4EAC82CA7396A68D541C85D26508E83_1209169662;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1942276145 = varB4EAC82CA7396A68D541C85D26508E83_1966234354;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1942276145.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1942276145.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1942276145;
-        // ---------- Original Method ----------
-        //final ReentrantLock lock = this.lock;
-        //lock.lock();
-        //try {
-            //int n = size;
-            //if (n == 0)
-                //return "[]";
-            //StringBuilder sb = new StringBuilder();
-            //sb.append('[');
-            //for (int i = 0; i < n; ++i) {
-                //E e = (E)queue[i];
-                //sb.append(e == this ? "(this Collection)" : e);
-                //if (i != n - 1)
-                    //sb.append(',').append(' ');
-            //}
-            //return sb.append(']').toString();
-        //} finally {
-            //lock.unlock();
-        //}
+        
+        
+        
+        
+            
+            
+                
+            
+            
+            
+                
+                
+                
+                    
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.689 -0400", hash_original_method = "805242EB6CDCF550F39FC4583E9E3F8E", hash_generated_method = "F844D38DB5EC92FE3D0A912ABECD12A1")
     public int drainTo(Collection<? super E> c) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         {
             boolean var9AEE7ACC5B0D4AF26CA46D5AFC07CCF3_1230977500 = (c == this);
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End collapsed parenthetic
+        } 
         final ReentrantLock lock = this.lock;
         lock.lock();
         try 
@@ -818,44 +842,45 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
                 boolean var848661D55AF18EF6F0879531DA6060ED_1794720534 = ((e = extract()) != null);
                 {
                     c.add(e);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             lock.unlock();
-        } //End block
+        } 
         addTaint(c.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145519792 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145519792;
-        // ---------- Original Method ----------
-        //if (c == null)
-            //throw new NullPointerException();
-        //if (c == this)
-            //throw new IllegalArgumentException();
-        //final ReentrantLock lock = this.lock;
-        //lock.lock();
-        //try {
-            //int n = 0;
-            //E e;
-            //while ( (e = extract()) != null) {
-                //c.add(e);
-                //++n;
-            //}
-            //return n;
-        //} finally {
-            //lock.unlock();
-        //}
+        
+        
+            
+        
+            
+        
+        
+        
+            
+            
+            
+                
+                
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.689 -0400", hash_original_method = "B5B895AF26F1F939F2943E595D444903", hash_generated_method = "6ADFC08B38A248215B39C8AE872F60F5")
     public int drainTo(Collection<? super E> c, int maxElements) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         {
             boolean var9AEE7ACC5B0D4AF26CA46D5AFC07CCF3_395181869 = (c == this);
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End collapsed parenthetic
+        } 
         final ReentrantLock lock = this.lock;
         lock.lock();
         try 
@@ -866,40 +891,41 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             	if (n < maxElements && (e = extract()) != null)
                 {
                     c.add(e);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             lock.unlock();
-        } //End block
+        } 
         addTaint(c.getTaint());
         addTaint(maxElements);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1988093807 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1988093807;
-        // ---------- Original Method ----------
-        //if (c == null)
-            //throw new NullPointerException();
-        //if (c == this)
-            //throw new IllegalArgumentException();
-        //if (maxElements <= 0)
-            //return 0;
-        //final ReentrantLock lock = this.lock;
-        //lock.lock();
-        //try {
-            //int n = 0;
-            //E e;
-            //while (n < maxElements && (e = extract()) != null) {
-                //c.add(e);
-                //++n;
-            //}
-            //return n;
-        //} finally {
-            //lock.unlock();
-        //}
+        
+        
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+            
+                
+                
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.690 -0400", hash_original_method = "D7ED8780EA10829FC69FCC0BE368EAAC", hash_generated_method = "51E38DB9B40F25273D7A95C752413E7E")
     public void clear() {
         final ReentrantLock lock = this.lock;
@@ -912,31 +938,32 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             {
                 int i = 0;
                 array[i] = null;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         finally 
         {
             lock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //final ReentrantLock lock = this.lock;
-        //lock.lock();
-        //try {
-            //Object[] array = queue;
-            //int n = size;
-            //size = 0;
-            //for (int i = 0; i < n; i++)
-                //array[i] = null;
-        //} finally {
-            //lock.unlock();
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+            
+            
+                
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.691 -0400", hash_original_method = "6C84403244E1C1A4059442AFEB39A418", hash_generated_method = "0DAF34084D6A806B801BD3F067C91285")
     public <T> T[] toArray(T[] a) {
-        T[] varB4EAC82CA7396A68D541C85D26508E83_1508437472 = null; //Variable for return #1
-        T[] varB4EAC82CA7396A68D541C85D26508E83_1449018870 = null; //Variable for return #2
+        T[] varB4EAC82CA7396A68D541C85D26508E83_1508437472 = null; 
+        T[] varB4EAC82CA7396A68D541C85D26508E83_1449018870 = null; 
         final ReentrantLock lock = this.lock;
         lock.lock();
         try 
@@ -946,48 +973,49 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             System.arraycopy(queue, 0, a, 0, n);
             a[n] = null;
             varB4EAC82CA7396A68D541C85D26508E83_1449018870 = a;
-        } //End block
+        } 
         finally 
         {
             lock.unlock();
-        } //End block
+        } 
         addTaint(a[0].getTaint());
-        T[] varA7E53CE21691AB073D9660D615818899_587847984; //Final return value
+        T[] varA7E53CE21691AB073D9660D615818899_587847984; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_587847984 = varB4EAC82CA7396A68D541C85D26508E83_1508437472;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_587847984 = varB4EAC82CA7396A68D541C85D26508E83_1449018870;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_587847984.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_587847984.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_587847984;
-        // ---------- Original Method ----------
-        //final ReentrantLock lock = this.lock;
-        //lock.lock();
-        //try {
-            //int n = size;
-            //if (a.length < n)
-                //return (T[]) Arrays.copyOf(queue, size, a.getClass());
-            //System.arraycopy(queue, 0, a, 0, n);
-            //if (a.length > n)
-                //a[n] = null;
-            //return a;
-        //} finally {
-            //lock.unlock();
-        //}
+        
+        
+        
+        
+            
+            
+                
+            
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.692 -0400", hash_original_method = "42CB3EDA719DA2D528DF0D9481F5BC1E", hash_generated_method = "F2D204BE8C9C105D8244E39910976167")
     public Iterator<E> iterator() {
-        Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1929358567 = null; //Variable for return #1
+        Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1929358567 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1929358567 = new Itr(toArray());
-        varB4EAC82CA7396A68D541C85D26508E83_1929358567.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1929358567.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1929358567;
-        // ---------- Original Method ----------
-        //return new Itr(toArray());
+        
+        
     }
 
     
@@ -1000,24 +1028,24 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             q = new PriorityQueue<E>(n == 0 ? 1 : n, comparator);
             q.addAll(this);
             s.defaultWriteObject();
-        } //End block
+        } 
         finally 
         {
             q = null;
             lock.unlock();
-        } //End block
+        } 
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //lock.lock();
-        //try {
-            //int n = size; 
-            //q = new PriorityQueue<E>(n == 0 ? 1 : n, comparator);
-            //q.addAll(this);
-            //s.defaultWriteObject();
-        //} finally {
-            //q = null;
-            //lock.unlock();
-        //}
+        
+        
+        
+            
+            
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -1029,21 +1057,21 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             this.queue = new Object[q.size()];
             comparator = q.comparator();
             addAll(q);
-        } //End block
+        } 
         finally 
         {
             q = null;
-        } //End block
+        } 
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //s.defaultReadObject();
-            //this.queue = new Object[q.size()];
-            //comparator = q.comparator();
-            //addAll(q);
-        //} finally {
-            //q = null;
-        //}
+        
+        
+            
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -1074,9 +1102,9 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
           Itr(Object[] array) {
             lastRet = -1;
             this.array = array;
-            // ---------- Original Method ----------
-            //lastRet = -1;
-            //this.array = array;
+            
+            
+            
         }
 
         
@@ -1084,24 +1112,24 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1618545209 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1618545209;
-            // ---------- Original Method ----------
-            //return cursor < array.length;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.696 -0400", hash_original_method = "F81A0847679B1E16464240B404F27074", hash_generated_method = "83B1EED75CFF2A6F6033B5DADD40D68F")
         public E next() {
-            E varB4EAC82CA7396A68D541C85D26508E83_1348047634 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1348047634 = null; 
             if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             lastRet = cursor;
             varB4EAC82CA7396A68D541C85D26508E83_1348047634 = (E)array[cursor++];
-            varB4EAC82CA7396A68D541C85D26508E83_1348047634.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1348047634.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1348047634;
-            // ---------- Original Method ----------
-            //if (cursor >= array.length)
-                //throw new NoSuchElementException();
-            //lastRet = cursor;
-            //return (E)array[cursor++];
+            
+            
+                
+            
+            
         }
 
         
@@ -1110,11 +1138,11 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
             removeEQ(array[lastRet]);
             lastRet = -1;
-            // ---------- Original Method ----------
-            //if (lastRet < 0)
-                //throw new IllegalStateException();
-            //removeEQ(array[lastRet]);
-            //lastRet = -1;
+            
+            
+                
+            
+            
         }
 
         

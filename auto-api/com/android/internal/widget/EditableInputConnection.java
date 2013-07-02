@@ -1,11 +1,11 @@
 package com.android.internal.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.text.Editable;
@@ -29,38 +29,38 @@ public class EditableInputConnection extends BaseInputConnection {
     public  EditableInputConnection(TextView textview) {
         super(textview, true);
         mTextView = textview;
-        // ---------- Original Method ----------
-        //mTextView = textview;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.144 -0400", hash_original_method = "79431EAAD385E82AA03E24E6CD9A3769", hash_generated_method = "5FD9867556A5C46078E85FCFEB90A743")
     @Override
     public Editable getEditable() {
-        Editable varB4EAC82CA7396A68D541C85D26508E83_1584764166 = null; //Variable for return #1
-        Editable varB4EAC82CA7396A68D541C85D26508E83_1742346980 = null; //Variable for return #2
+        Editable varB4EAC82CA7396A68D541C85D26508E83_1584764166 = null; 
+        Editable varB4EAC82CA7396A68D541C85D26508E83_1742346980 = null; 
         TextView tv = mTextView;
         {
             varB4EAC82CA7396A68D541C85D26508E83_1584764166 = tv.getEditableText();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1742346980 = null;
-        Editable varA7E53CE21691AB073D9660D615818899_1852037560; //Final return value
+        Editable varA7E53CE21691AB073D9660D615818899_1852037560; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1852037560 = varB4EAC82CA7396A68D541C85D26508E83_1584764166;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1852037560 = varB4EAC82CA7396A68D541C85D26508E83_1742346980;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1852037560.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1852037560.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1852037560;
-        // ---------- Original Method ----------
-        //TextView tv = mTextView;
-        //if (tv != null) {
-            //return tv.getEditableText();
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -70,9 +70,9 @@ public class EditableInputConnection extends BaseInputConnection {
         mTextView.beginBatchEdit();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_976780101 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_976780101;
-        // ---------- Original Method ----------
-        //mTextView.beginBatchEdit();
-        //return true;
+        
+        
+        
     }
 
     
@@ -82,12 +82,13 @@ public class EditableInputConnection extends BaseInputConnection {
         mTextView.endBatchEdit();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1751374122 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1751374122;
-        // ---------- Original Method ----------
-        //mTextView.endBatchEdit();
-        //return true;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.145 -0400", hash_original_method = "963E6A0CA86932C8F9D879DC40F2C809", hash_generated_method = "BF210FBF12D271857DCA647F4E85F3C5")
     @Override
     public boolean clearMetaKeyStates(int states) {
@@ -97,24 +98,24 @@ public class EditableInputConnection extends BaseInputConnection {
             try 
             {
                 kl.clearMetaKeyState(mTextView, content, states);
-            } //End block
+            } 
             catch (AbstractMethodError e)
             { }
-        } //End block
+        } 
         addTaint(states);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1247189502 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1247189502;
-        // ---------- Original Method ----------
-        //final Editable content = getEditable();
-        //if (content == null) return false;
-        //KeyListener kl = mTextView.getKeyListener();
-        //if (kl != null) {
-            //try {
-                //kl.clearMetaKeyState(mTextView, content, states);
-            //} catch (AbstractMethodError e) {
-            //}
-        //}
-        //return true;
+        
+        
+        
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -127,15 +128,16 @@ public class EditableInputConnection extends BaseInputConnection {
         addTaint(text.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1328367977 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1328367977;
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "commitCompletion " + text);
-        //mTextView.beginBatchEdit();
-        //mTextView.onCommitCompletion(text);
-        //mTextView.endBatchEdit();
-        //return true;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.146 -0400", hash_original_method = "DB06BCD96079AC12D626255A3932F1C1", hash_generated_method = "1B52F3746F105CA2003D2692DA5DCFDE")
     @Override
     public boolean commitCorrection(CorrectionInfo correctionInfo) {
@@ -145,15 +147,16 @@ public class EditableInputConnection extends BaseInputConnection {
         addTaint(correctionInfo.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1683003229 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1683003229;
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "commitCorrection" + correctionInfo);
-        //mTextView.beginBatchEdit();
-        //mTextView.onCommitCorrection(correctionInfo);
-        //mTextView.endBatchEdit();
-        //return true;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.146 -0400", hash_original_method = "E62B789941F8A63BCC6EB7B832B68D0F", hash_generated_method = "6892681DC1F05400CDBC5FA35A0E1DA9")
     @Override
     public boolean performEditorAction(int actionCode) {
@@ -161,13 +164,14 @@ public class EditableInputConnection extends BaseInputConnection {
         addTaint(actionCode);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1867148941 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1867148941;
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "performEditorAction " + actionCode);
-        //mTextView.onEditorAction(actionCode);
-        //return true;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.146 -0400", hash_original_method = "7AF0006D10C2DF24946CEF4909222B3C", hash_generated_method = "7993588C0E4AF533872A62B1A8A11543")
     @Override
     public boolean performContextMenuAction(int id) {
@@ -177,20 +181,21 @@ public class EditableInputConnection extends BaseInputConnection {
         addTaint(id);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_611273523 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_611273523;
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "performContextMenuAction " + id);
-        //mTextView.beginBatchEdit();
-        //mTextView.onTextContextMenuItem(id);
-        //mTextView.endBatchEdit();
-        //return true;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.147 -0400", hash_original_method = "1D36BC67F0D3E0E821622DAE101B8DA4", hash_generated_method = "F3B15EFCE079C4B3951DF442F4CD8F5C")
     @Override
     public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
-        ExtractedText varB4EAC82CA7396A68D541C85D26508E83_947744611 = null; //Variable for return #1
-        ExtractedText varB4EAC82CA7396A68D541C85D26508E83_922705639 = null; //Variable for return #2
+        ExtractedText varB4EAC82CA7396A68D541C85D26508E83_947744611 = null; 
+        ExtractedText varB4EAC82CA7396A68D541C85D26508E83_922705639 = null; 
         {
             ExtractedText et = new ExtractedText();
             {
@@ -198,39 +203,40 @@ public class EditableInputConnection extends BaseInputConnection {
                 {
                     {
                         mTextView.setExtracting(request);
-                    } //End block
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_947744611 = et;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_922705639 = null;
         addTaint(request.getTaint());
         addTaint(flags);
-        ExtractedText varA7E53CE21691AB073D9660D615818899_1704875486; //Final return value
+        ExtractedText varA7E53CE21691AB073D9660D615818899_1704875486; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1704875486 = varB4EAC82CA7396A68D541C85D26508E83_947744611;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1704875486 = varB4EAC82CA7396A68D541C85D26508E83_922705639;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1704875486.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1704875486.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1704875486;
-        // ---------- Original Method ----------
-        //if (mTextView != null) {
-            //ExtractedText et = new ExtractedText();
-            //if (mTextView.extractText(request, et)) {
-                //if ((flags&GET_EXTRACTED_TEXT_MONITOR) != 0) {
-                    //mTextView.setExtracting(request);
-                //}
-                //return et;
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.148 -0400", hash_original_method = "66E210A03F4A51E56AF5DC1352B2E636", hash_generated_method = "C6C6DCB401FE330A210B24B341410DDA")
     @Override
     public boolean performPrivateCommand(String action, Bundle data) {
@@ -239,23 +245,24 @@ public class EditableInputConnection extends BaseInputConnection {
         addTaint(data.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1435197095 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1435197095;
-        // ---------- Original Method ----------
-        //mTextView.onPrivateIMECommand(action, data);
-        //return true;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.148 -0400", hash_original_method = "ED478A4EB972D41E370E9603327B3839", hash_generated_method = "000C954C0B13AF7E00A8C63337A368EA")
     @Override
     public boolean commitText(CharSequence text, int newCursorPosition) {
         {
             boolean var3232D6DBF4B95A9709C08EED7122DED2_1617255631 = (super.commitText(text, newCursorPosition));
-        } //End block
+        } 
         {
             Spanned spanned = ((Spanned) text);
             SuggestionSpan[] spans = spanned.getSpans(0, text.length(), SuggestionSpan.class);
             mIMM.registerSuggestionSpansForNotification(spans);
-        } //End block
+        } 
         mTextView.resetErrorChangedFlag();
         boolean success = super.commitText(text, newCursorPosition);
         mTextView.hideErrorIfUnchanged();
@@ -263,19 +270,19 @@ public class EditableInputConnection extends BaseInputConnection {
         addTaint(newCursorPosition);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1915530703 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1915530703;
-        // ---------- Original Method ----------
-        //if (mTextView == null) {
-            //return super.commitText(text, newCursorPosition);
-        //}
-        //if (text instanceof Spanned) {
-            //Spanned spanned = ((Spanned) text);
-            //SuggestionSpan[] spans = spanned.getSpans(0, text.length(), SuggestionSpan.class);
-            //mIMM.registerSuggestionSpansForNotification(spans);
-        //}
-        //mTextView.resetErrorChangedFlag();
-        //boolean success = super.commitText(text, newCursorPosition);
-        //mTextView.hideErrorIfUnchanged();
-        //return success;
+        
+        
+            
+        
+        
+            
+            
+            
+        
+        
+        
+        
+        
     }
 
     

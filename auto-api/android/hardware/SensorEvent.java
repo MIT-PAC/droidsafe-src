@@ -1,11 +1,11 @@
 package android.hardware;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class SensorEvent {
@@ -26,8 +26,8 @@ public class SensorEvent {
 	public
       SensorEvent(int size) {
         values = new float[size];
-        // ---------- Original Method ----------
-        //values = new float[size];
+        
+        
     }
 
     

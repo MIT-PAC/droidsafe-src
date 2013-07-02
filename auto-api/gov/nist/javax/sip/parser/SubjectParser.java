@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import java.text.ParseException;
@@ -16,7 +16,7 @@ public class SubjectParser extends HeaderParser {
     public  SubjectParser(String subject) {
         super(subject);
         addTaint(subject.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,13 +24,14 @@ public class SubjectParser extends HeaderParser {
     protected  SubjectParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.665 -0400", hash_original_method = "F2D8E65DBCC7717EF7411B874638ABFB", hash_generated_method = "C1354700B3CD613E3DAEF07707D38AF9")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1215269339 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1215269339 = null; 
         Subject subject = new Subject();
         dbg_enter("SubjectParser.parse");
         try 
@@ -39,28 +40,28 @@ public class SubjectParser extends HeaderParser {
             this.lexer.SPorHT();
             String s = this.lexer.getRest();
             subject.setSubject(s.trim());
-        } //End block
+        } 
         finally 
         {
             dbg_leave("SubjectParser.parse");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1215269339 = subject;
-        varB4EAC82CA7396A68D541C85D26508E83_1215269339.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1215269339.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1215269339;
-        // ---------- Original Method ----------
-        //Subject subject = new Subject();
-        //if (debug)
-            //dbg_enter("SubjectParser.parse");
-        //try {
-            //headerName(TokenTypes.SUBJECT);
-            //this.lexer.SPorHT();
-            //String s = this.lexer.getRest();
-            //subject.setSubject(s.trim());
-        //} finally {
-            //if (debug)
-                //dbg_leave("SubjectParser.parse");
-        //}
-        //return subject;
+        
+        
+        
+            
+        
+            
+            
+            
+            
+        
+            
+                
+        
+        
     }
 
     

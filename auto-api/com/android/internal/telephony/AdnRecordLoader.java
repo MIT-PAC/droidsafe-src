@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import android.os.AsyncResult;
@@ -47,12 +47,13 @@ public class AdnRecordLoader extends Handler {
         super(phone.getHandler().getLooper());
         this.phone = phone;
         LOG_TAG = phone.getPhoneName();
-        // ---------- Original Method ----------
-        //this.phone = phone;
-        //LOG_TAG = phone.getPhoneName();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.262 -0400", hash_original_method = "E52409147EA4C18E8F78BAF12B808BF8", hash_generated_method = "6EB46D6941E8B29BDE235893777C0E24")
     public void loadFromEF(int ef, int extensionEF, int recordNumber,
                 Message response) {
@@ -63,17 +64,18 @@ public class AdnRecordLoader extends Handler {
         phone.mIccFileHandler.loadEFLinearFixed(
                     ef, recordNumber,
                     obtainMessage(EVENT_ADN_LOAD_DONE));
-        // ---------- Original Method ----------
-        //this.ef = ef;
-        //this.extensionEF = extensionEF;
-        //this.recordNumber = recordNumber;
-        //this.userResponse = response;
-        //phone.mIccFileHandler.loadEFLinearFixed(
-                    //ef, recordNumber,
-                    //obtainMessage(EVENT_ADN_LOAD_DONE));
+        
+        
+        
+        
+        
+        
+                    
+                    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.262 -0400", hash_original_method = "3B75C101082AA8B5F76E21C5AC0D856A", hash_generated_method = "DF4256CB7896A805A14912C7FC61BE58")
     public void loadAllFromEF(int ef, int extensionEF,
                 Message response) {
@@ -83,16 +85,17 @@ public class AdnRecordLoader extends Handler {
         phone.mIccFileHandler.loadEFLinearFixedAll(
                     ef,
                     obtainMessage(EVENT_ADN_LOAD_ALL_DONE));
-        // ---------- Original Method ----------
-        //this.ef = ef;
-        //this.extensionEF = extensionEF;
-        //this.userResponse = response;
-        //phone.mIccFileHandler.loadEFLinearFixedAll(
-                    //ef,
-                    //obtainMessage(EVENT_ADN_LOAD_ALL_DONE));
+        
+        
+        
+        
+        
+                    
+                    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.263 -0400", hash_original_method = "A04989E1C9551E085CB246E835FB8373", hash_generated_method = "CCA2DE92CF4A8017E08361AB1870D84A")
     public void updateEF(AdnRecord adn, int ef, int extensionEF, int recordNumber,
             String pin2, Message response) {
@@ -104,17 +107,18 @@ public class AdnRecordLoader extends Handler {
         phone.mIccFileHandler.getEFLinearRecordSize( ef,
             obtainMessage(EVENT_EF_LINEAR_RECORD_SIZE_DONE, adn));
         addTaint(adn.getTaint());
-        // ---------- Original Method ----------
-        //this.ef = ef;
-        //this.extensionEF = extensionEF;
-        //this.recordNumber = recordNumber;
-        //this.userResponse = response;
-        //this.pin2 = pin2;
-        //phone.mIccFileHandler.getEFLinearRecordSize( ef,
-            //obtainMessage(EVENT_EF_LINEAR_RECORD_SIZE_DONE, adn));
+        
+        
+        
+        
+        
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.265 -0400", hash_original_method = "051E5CCA6123D268EF8D870B0A4015BF", hash_generated_method = "5E3D8CEB812BA984497836ED420620B9")
     public void handleMessage(Message msg) {
         AsyncResult ar;
@@ -122,84 +126,84 @@ public class AdnRecordLoader extends Handler {
         AdnRecord adn;
         try 
         {
-            //Begin case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
+            
             ar = (AsyncResult)(msg.obj);
-            //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             adn = (AdnRecord)(ar.userObj);
-            //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("get EF record size failed",
                                 ar.exception);
-            } //End block
-            //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
+            } 
+            
+            
             int[] recordSize = (int[])ar.result;
-            //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("get wrong EF record size format",
                                 ar.exception);
-            } //End block
-            //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
+            } 
+            
+            
             data = adn.buildAdnString(recordSize[0]);
-            //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("wrong ADN format",
                                 ar.exception);
-            } //End block
-            //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
+            } 
+            
+            
             phone.mIccFileHandler.updateEFLinearFixed(ef, recordNumber,
                             data, pin2, obtainMessage(EVENT_UPDATE_RECORD_DONE));
-            //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             pendingExtLoads = 1;
-            //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_UPDATE_RECORD_DONE 
+            
+            
             ar = (AsyncResult)(msg.obj);
-            //End case EVENT_UPDATE_RECORD_DONE 
-            //Begin case EVENT_UPDATE_RECORD_DONE 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("update EF adn record failed",
                                 ar.exception);
-            } //End block
-            //End case EVENT_UPDATE_RECORD_DONE 
-            //Begin case EVENT_UPDATE_RECORD_DONE 
+            } 
+            
+            
             pendingExtLoads = 0;
-            //End case EVENT_UPDATE_RECORD_DONE 
-            //Begin case EVENT_UPDATE_RECORD_DONE 
+            
+            
             result = null;
-            //End case EVENT_UPDATE_RECORD_DONE 
-            //Begin case EVENT_ADN_LOAD_DONE 
+            
+            
             ar = (AsyncResult)(msg.obj);
-            //End case EVENT_ADN_LOAD_DONE 
-            //Begin case EVENT_ADN_LOAD_DONE 
+            
+            
             data = (byte[])(ar.result);
-            //End case EVENT_ADN_LOAD_DONE 
-            //Begin case EVENT_ADN_LOAD_DONE 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("load failed", ar.exception);
-            } //End block
-            //End case EVENT_ADN_LOAD_DONE 
-            //Begin case EVENT_ADN_LOAD_DONE 
+            } 
+            
+            
             {
                 Log.d(LOG_TAG,"ADN EF: 0x"
                             + Integer.toHexString(ef)
                             + ":" + recordNumber
                             + "\n" + IccUtils.bytesToHexString(data));
-            } //End block
-            //End case EVENT_ADN_LOAD_DONE 
-            //Begin case EVENT_ADN_LOAD_DONE 
+            } 
+            
+            
             adn = new AdnRecord(ef, recordNumber, data);
-            //End case EVENT_ADN_LOAD_DONE 
-            //Begin case EVENT_ADN_LOAD_DONE 
+            
+            
             result = adn;
-            //End case EVENT_ADN_LOAD_DONE 
-            //Begin case EVENT_ADN_LOAD_DONE 
+            
+            
             {
                 boolean varFE2DCF0A5347115B122FEC19A7AE9B4D_532934352 = (adn.hasExtendedRecord());
                 {
@@ -207,53 +211,53 @@ public class AdnRecordLoader extends Handler {
                     phone.mIccFileHandler.loadEFLinearFixed(
                             extensionEF, adn.extRecord,
                             obtainMessage(EVENT_EXT_RECORD_LOAD_DONE, adn));
-                } //End block
-            } //End collapsed parenthetic
-            //End case EVENT_ADN_LOAD_DONE 
-            //Begin case EVENT_EXT_RECORD_LOAD_DONE 
+                } 
+            } 
+            
+            
             ar = (AsyncResult)(msg.obj);
-            //End case EVENT_EXT_RECORD_LOAD_DONE 
-            //Begin case EVENT_EXT_RECORD_LOAD_DONE 
+            
+            
             data = (byte[])(ar.result);
-            //End case EVENT_EXT_RECORD_LOAD_DONE 
-            //Begin case EVENT_EXT_RECORD_LOAD_DONE 
+            
+            
             adn = (AdnRecord)(ar.userObj);
-            //End case EVENT_EXT_RECORD_LOAD_DONE 
-            //Begin case EVENT_EXT_RECORD_LOAD_DONE 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("load failed", ar.exception);
-            } //End block
-            //End case EVENT_EXT_RECORD_LOAD_DONE 
-            //Begin case EVENT_EXT_RECORD_LOAD_DONE 
+            } 
+            
+            
             Log.d(LOG_TAG,"ADN extension EF: 0x"
                         + Integer.toHexString(extensionEF)
                         + ":" + adn.extRecord
                         + "\n" + IccUtils.bytesToHexString(data));
-            //End case EVENT_EXT_RECORD_LOAD_DONE 
-            //Begin case EVENT_EXT_RECORD_LOAD_DONE 
+            
+            
             adn.appendExtRecord(data);
-            //End case EVENT_EXT_RECORD_LOAD_DONE 
-            //Begin case EVENT_ADN_LOAD_ALL_DONE 
+            
+            
             ar = (AsyncResult)(msg.obj);
-            //End case EVENT_ADN_LOAD_ALL_DONE 
-            //Begin case EVENT_ADN_LOAD_ALL_DONE 
+            
+            
             ArrayList<byte[]> datas = (ArrayList<byte[]>)(ar.result);
-            //End case EVENT_ADN_LOAD_ALL_DONE 
-            //Begin case EVENT_ADN_LOAD_ALL_DONE 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("load failed", ar.exception);
-            } //End block
-            //End case EVENT_ADN_LOAD_ALL_DONE 
-            //Begin case EVENT_ADN_LOAD_ALL_DONE 
+            } 
+            
+            
             adns = new ArrayList<AdnRecord>(datas.size());
-            //End case EVENT_ADN_LOAD_ALL_DONE 
-            //Begin case EVENT_ADN_LOAD_ALL_DONE 
+            
+            
             result = adns;
-            //End case EVENT_ADN_LOAD_ALL_DONE 
-            //Begin case EVENT_ADN_LOAD_ALL_DONE 
+            
+            
             pendingExtLoads = 0;
-            //End case EVENT_ADN_LOAD_ALL_DONE 
-            //Begin case EVENT_ADN_LOAD_ALL_DONE 
+            
+            
             {
                 int i = 0;
                 int s = datas.size();
@@ -266,12 +270,12 @@ public class AdnRecordLoader extends Handler {
                             phone.mIccFileHandler.loadEFLinearFixed(
                                 extensionEF, adn.extRecord,
                                 obtainMessage(EVENT_EXT_RECORD_LOAD_DONE, adn));
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-            //End case EVENT_ADN_LOAD_ALL_DONE 
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+            
+        } 
         catch (RuntimeException exc)
         {
             {
@@ -279,17 +283,17 @@ public class AdnRecordLoader extends Handler {
                                 .exception = exc;
                 userResponse.sendToTarget();
                 userResponse = null;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             AsyncResult.forMessage(userResponse).result
                 = result;
             userResponse.sendToTarget();
             userResponse = null;
-        } //End block
+        } 
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

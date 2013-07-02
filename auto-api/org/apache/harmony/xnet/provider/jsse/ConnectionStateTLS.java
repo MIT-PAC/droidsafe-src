@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.GeneralSecurityException;
 import java.util.Arrays;
@@ -51,7 +51,7 @@ public class ConnectionStateTLS extends ConnectionState {
                 logger.println("  block size: " + block_size);
                 logger.println("  IV size:" + iv_size);
                 logger.println("  key size: " + key_size);
-            } //End block
+            } 
             byte[] clientRandom = session.clientRandom;
             byte[] serverRandom = session.serverRandom;
             byte[] key_block = new byte[2*hash_size + 2*key_size + 2*iv_size];
@@ -92,14 +92,14 @@ public class ConnectionStateTLS extends ConnectionState {
                     PRF.computePRF(iv_block, null, IV_BLOCK_LABEL, seed);
                     clientIV = new IvParameterSpec(iv_block, 0, iv_size);
                     serverIV = new IvParameterSpec(iv_block, iv_size, iv_size);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 clientIV = new IvParameterSpec(key_block,
                         2*(hash_size+key_size), iv_size);
                 serverIV = new IvParameterSpec(key_block,
                         2*(hash_size+key_size)+iv_size, iv_size);
-            } //End block
+            } 
             {
                 logger.println("is exportable: "+is_exportabe);
                 logger.println("master_secret");
@@ -118,18 +118,18 @@ public class ConnectionStateTLS extends ConnectionState {
                 logger.print(server_key);
                 {
                     logger.println("no IV.");
-                } //End block
+                } 
                 {
                     logger.println("client_iv");
                     logger.print(clientIV.getIV());
                     logger.println("server_iv");
                     logger.print(serverIV.getIV());
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 encCipher = new NullCipher();
                 decCipher = new NullCipher();
-            } //End block
+            } 
             {
                 encCipher = Cipher.getInstance(algName);
                 decCipher = Cipher.getInstance(algName);
@@ -138,38 +138,39 @@ public class ConnectionStateTLS extends ConnectionState {
                                    new SecretKeySpec(client_key, algName), clientIV);
                     decCipher.init(Cipher.DECRYPT_MODE,
                                    new SecretKeySpec(server_key, algName), serverIV);
-                } //End block
+                } 
                 {
                     encCipher.init(Cipher.ENCRYPT_MODE,
                                    new SecretKeySpec(server_key, algName), serverIV);
                     decCipher.init(Cipher.DECRYPT_MODE,
                                    new SecretKeySpec(client_key, algName), clientIV);
-                } //End block
-            } //End block
+                } 
+            } 
             encMac = Mac.getInstance(macName);
             decMac = Mac.getInstance(macName);
             {
                 encMac.init(new SecretKeySpec(client_mac_secret, macName));
                 decMac.init(new SecretKeySpec(server_mac_secret, macName));
-            } //End block
+            } 
             {
                 encMac.init(new SecretKeySpec(server_mac_secret, macName));
                 decMac.init(new SecretKeySpec(client_mac_secret, macName));
-            } //End block
-        } //End block
+            } 
+        } 
         catch (Exception e)
         {
             e.printStackTrace();
             if (DroidSafeAndroidRuntime.control) throw new AlertException(AlertProtocol.INTERNAL_ERROR,
                     new SSLProtocolException(
                         "Error during computation of security parameters"));
-        } //End block
+        } 
         addTaint(session.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.993 -0400", hash_original_method = "B9B8901A6530A5AA902AF1AE1DCFF588", hash_generated_method = "54E278170C51FEC938023B50D9C25F0B")
     @Override
     protected byte[] encrypt(byte type, byte[] fragment, int offset, int len) {
@@ -191,33 +192,34 @@ public class ConnectionStateTLS extends ConnectionState {
             {
                 Arrays.fill(res, content_mac_length-1,
                         res.length, (byte) (padding_length));
-            } //End block
+            } 
             {
                 logger.println("SSLRecordProtocol.do_encryption: Generic"
                         + (block_size != 0
                             ? "BlockCipher with padding["+padding_length+"]:"
                             : "StreamCipher:"));
                 logger.print(res);
-            } //End block
+            } 
             byte[] rez = new byte[encCipher.getOutputSize(res.length)];
             encCipher.update(res, 0, res.length, rez);
             incSequenceNumber(write_seq_num);
-        } //End block
+        } 
         catch (GeneralSecurityException e)
         {
             e.printStackTrace();
             if (DroidSafeAndroidRuntime.control) throw new AlertException(AlertProtocol.INTERNAL_ERROR,
                     new SSLProtocolException("Error during the encryption"));
-        } //End block
+        } 
         addTaint(fragment[0]);
         addTaint(offset);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_115294027 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_115294027;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.994 -0400", hash_original_method = "A0319C4335A825139157822F68CBECCE", hash_generated_method = "1A26C7A68E9889A9EC3B1DFEDDB17ED4")
     @Override
     protected byte[] decrypt(byte type, byte[] fragment,
@@ -234,14 +236,14 @@ public class ConnectionStateTLS extends ConnectionState {
                             AlertProtocol.DECRYPTION_FAILED,
                             new SSLProtocolException(
                                 "Received message has bad padding"));
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             content = new byte[data.length - hash_size - padding_length - 1];
-        } //End block
+        } 
         {
             content = new byte[data.length - hash_size];
-        } //End block
+        } 
         mac_material_header[0] = type;
         mac_material_header[3] = (byte) ((0x00FF00 & content.length) >> 8);
         mac_material_header[4] = (byte) (0x0000FF & content.length);
@@ -254,16 +256,16 @@ public class ConnectionStateTLS extends ConnectionState {
             logger.print(data);
             logger.println("Expected mac value:");
             logger.print(mac_value);
-        } //End block
+        } 
         {
             int i = 0;
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new AlertException(AlertProtocol.BAD_RECORD_MAC,
                         new SSLProtocolException("Bad record MAC"));
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         System.arraycopy(data, 0, content, 0, content.length);
         incSequenceNumber(read_seq_num);
         addTaint(fragment[0]);
@@ -271,8 +273,8 @@ public class ConnectionStateTLS extends ConnectionState {
         addTaint(len);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_237694892 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_237694892;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

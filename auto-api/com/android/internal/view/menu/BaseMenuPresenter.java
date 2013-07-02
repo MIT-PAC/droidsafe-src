@@ -1,11 +1,11 @@
 package com.android.internal.view.menu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -51,49 +51,52 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
         mSystemInflater = LayoutInflater.from(context);
         mMenuLayoutRes = menuLayoutRes;
         mItemLayoutRes = itemLayoutRes;
-        // ---------- Original Method ----------
-        //mSystemContext = context;
-        //mSystemInflater = LayoutInflater.from(context);
-        //mMenuLayoutRes = menuLayoutRes;
-        //mItemLayoutRes = itemLayoutRes;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.072 -0400", hash_original_method = "132A0398F4F3F28C73E120DA24E1764B", hash_generated_method = "E01E7C26740154C462790FD515E64B6D")
     @Override
     public void initForMenu(Context context, MenuBuilder menu) {
         mContext = context;
         mInflater = LayoutInflater.from(mContext);
         mMenu = menu;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mInflater = LayoutInflater.from(mContext);
-        //mMenu = menu;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.073 -0400", hash_original_method = "5077062D5DDD15E91EAE389A4058EA7D", hash_generated_method = "86C7B8C09CF900E5F171BF9A235CD0C3")
     @Override
     public MenuView getMenuView(ViewGroup root) {
-        MenuView varB4EAC82CA7396A68D541C85D26508E83_118144926 = null; //Variable for return #1
+        MenuView varB4EAC82CA7396A68D541C85D26508E83_118144926 = null; 
         {
             mMenuView = (MenuView) mSystemInflater.inflate(mMenuLayoutRes, root, false);
             mMenuView.initialize(mMenu);
             updateMenuView(true);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_118144926 = mMenuView;
-        varB4EAC82CA7396A68D541C85D26508E83_118144926.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_118144926.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_118144926;
-        // ---------- Original Method ----------
-        //if (mMenuView == null) {
-            //mMenuView = (MenuView) mSystemInflater.inflate(mMenuLayoutRes, root, false);
-            //mMenuView.initialize(mMenu);
-            //updateMenuView(true);
-        //}
-        //return mMenuView;
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.074 -0400", hash_original_method = "F8C2A52598BC4F88A553A5E9C0F208E1", hash_generated_method = "0D29A8D862760A1A1FE938FA98EEB844")
     public void updateMenuView(boolean cleared) {
         final ViewGroup parent = (ViewGroup) mMenuView;
@@ -117,47 +120,49 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
                             {
                                 itemView.setPressed(false);
                                 itemView.jumpDrawablesToCurrentState();
-                            } //End block
+                            } 
                             {
                                 addItemView(itemView, childIndex);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             boolean varE47128A75854566F278F8B3A88B9440E_2007305514 = (childIndex < parent.getChildCount());
             {
                 {
                     boolean var415BB4664FBEE66A045289027C617A74_1873619516 = (!filterLeftoverView(parent, childIndex));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(cleared);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.075 -0400", hash_original_method = "131BFAEC8D945AEDE48A08C61CFE6B46", hash_generated_method = "2AC8959F176CDE927AFB68EB17681BE5")
     protected void addItemView(View itemView, int childIndex) {
         final ViewGroup currentParent = (ViewGroup) itemView.getParent();
         {
             currentParent.removeView(itemView);
-        } //End block
+        } 
         ((ViewGroup) mMenuView).addView(itemView, childIndex);
         addTaint(itemView.getTaint());
         addTaint(childIndex);
-        // ---------- Original Method ----------
-        //final ViewGroup currentParent = (ViewGroup) itemView.getParent();
-        //if (currentParent != null) {
-            //currentParent.removeView(itemView);
-        //}
-        //((ViewGroup) mMenuView).addView(itemView, childIndex);
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.076 -0400", hash_original_method = "2A7E19722F4165D83150E5278582AE5B", hash_generated_method = "A5370C34EA4AAE0CA6162C556D33AD67")
     protected boolean filterLeftoverView(ViewGroup parent, int childIndex) {
         parent.removeViewAt(childIndex);
@@ -165,58 +170,59 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
         addTaint(childIndex);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_914900293 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_914900293;
-        // ---------- Original Method ----------
-        //parent.removeViewAt(childIndex);
-        //return true;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.077 -0400", hash_original_method = "80E7AE02A73BB486D54AC38F406B92BB", hash_generated_method = "00DC0446DE1FD15986660B6447845996")
     public void setCallback(Callback cb) {
         mCallback = cb;
-        // ---------- Original Method ----------
-        //mCallback = cb;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.079 -0400", hash_original_method = "D134EE9C84D0511ABB405D2C10EDC1CD", hash_generated_method = "E6ACAA4C2983A59DE488EE5C00FAF9F0")
     public MenuView.ItemView createItemView(ViewGroup parent) {
-        MenuView.ItemView varB4EAC82CA7396A68D541C85D26508E83_743236119 = null; //Variable for return #1
+        MenuView.ItemView varB4EAC82CA7396A68D541C85D26508E83_743236119 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_743236119 = (MenuView.ItemView) mSystemInflater.inflate(mItemLayoutRes, parent, false);
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_743236119.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_743236119.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_743236119;
-        // ---------- Original Method ----------
-        //return (MenuView.ItemView) mSystemInflater.inflate(mItemLayoutRes, parent, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.081 -0400", hash_original_method = "4524E542CCB3CEBB00AD430A4F472D75", hash_generated_method = "0B609BFC46BB194685A15EEDB764D8DE")
     public View getItemView(MenuItemImpl item, View convertView, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_907902712 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_907902712 = null; 
         MenuView.ItemView itemView;
         {
             itemView = (MenuView.ItemView) convertView;
-        } //End block
+        } 
         {
             itemView = createItemView(parent);
-        } //End block
+        } 
         bindItemView(item, itemView);
         varB4EAC82CA7396A68D541C85D26508E83_907902712 = (View) itemView;
         addTaint(item.getTaint());
         addTaint(convertView.getTaint());
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_907902712.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_907902712.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_907902712;
-        // ---------- Original Method ----------
-        //MenuView.ItemView itemView;
-        //if (convertView instanceof MenuView.ItemView) {
-            //itemView = (MenuView.ItemView) convertView;
-        //} else {
-            //itemView = createItemView(parent);
-        //}
-        //bindItemView(item, itemView);
-        //return (View) itemView;
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -229,40 +235,42 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
         addTaint(item.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_708938475 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_708938475;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.082 -0400", hash_original_method = "722067599CD4502E441718E90CBC0EB7", hash_generated_method = "33930FD46871BDD0EFC9769E3AB32D65")
     public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mCallback.onCloseMenu(menu, allMenusAreClosing);
-        } //End block
+        } 
         addTaint(menu.getTaint());
         addTaint(allMenusAreClosing);
-        // ---------- Original Method ----------
-        //if (mCallback != null) {
-            //mCallback.onCloseMenu(menu, allMenusAreClosing);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.082 -0400", hash_original_method = "A5E8641CBC0C1B6BF90AAD3ACE718984", hash_generated_method = "0BEFBCCF3CD456E3A7E6B9F5BC7A797B")
     public boolean onSubMenuSelected(SubMenuBuilder menu) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var034DCB93A413DF52AE77850DCBE2A226_1804579889 = (mCallback.onOpenSubMenu(menu));
-        } //End block
+        } 
         addTaint(menu.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1879219247 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1879219247;
-        // ---------- Original Method ----------
-        //if (mCallback != null) {
-            //return mCallback.onOpenSubMenu(menu);
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
@@ -270,8 +278,8 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     public boolean flagActionItems() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_491231394 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_491231394;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -281,8 +289,8 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
         addTaint(item.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1110999315 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1110999315;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -292,8 +300,8 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
         addTaint(item.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1706944614 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1706944614;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -301,16 +309,16 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     public int getId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2068433272 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2068433272;
-        // ---------- Original Method ----------
-        //return mId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.083 -0400", hash_original_method = "97D2A517E68B7CE37726268CF0899D78", hash_generated_method = "0D5694E56798677AE48CDBAFFCA223E5")
     public void setId(int id) {
         mId = id;
-        // ---------- Original Method ----------
-        //mId = id;
+        
+        
     }
 
     

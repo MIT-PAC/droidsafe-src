@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class Integer extends Number implements Comparable<Integer> {
@@ -16,8 +16,8 @@ public final class Integer extends Number implements Comparable<Integer> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.178 -0400", hash_original_method = "22146E0D9B2FD3EEBD460016C940A35F", hash_generated_method = "F4A1CCEE47CB188DE4B924DA0BBDC75E")
     public  Integer(int value) {
         this.value = value;
-        // ---------- Original Method ----------
-        //this.value = value;
+        
+        
     }
 
     
@@ -25,7 +25,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     public  Integer(String string) throws NumberFormatException {
         this(parseInt(string));
         addTaint(string.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,19 +34,20 @@ public final class Integer extends Number implements Comparable<Integer> {
     public byte byteValue() {
         byte var40EA57D3EE3C07BF1C102B466E1C3091_748349924 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_748349924;
-        // ---------- Original Method ----------
-        //return (byte) value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.179 -0400", hash_original_method = "735EC7AEC4F3C97B9E273B68A8C134FA", hash_generated_method = "9DC652B50872E024B360563E66F8A169")
     public int compareTo(Integer object) {
         int varEB17148B4676BC6C35C2467C947D57DF_1551795286 = (compare(value, object.value));
         addTaint(object.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1008443242 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1008443242;
-        // ---------- Original Method ----------
-        //return compare(value, object.value);
+        
+        
     }
 
     
@@ -55,11 +56,13 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static NumberFormatException invalidInt(String s) {
         throw new NumberFormatException("Invalid int: \"" + s + "\"");
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Integer decode(String string) throws NumberFormatException {
         int length = string.length(), i = 0;
         if (length == 0) {
@@ -102,8 +105,8 @@ public final class Integer extends Number implements Comparable<Integer> {
     public double doubleValue() {
         double varE8CD7DA078A86726031AD64F35F5A6C0_410013126 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_410013126;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
@@ -113,8 +116,8 @@ public final class Integer extends Number implements Comparable<Integer> {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1051625583 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1051625583;
-        // ---------- Original Method ----------
-        //return (o instanceof Integer) && (((Integer) o).value == value);
+        
+        
     }
 
     
@@ -123,11 +126,12 @@ public final class Integer extends Number implements Comparable<Integer> {
     public float floatValue() {
         float var546ADE640B6EDFBC8A086EF31347E768_1643251802 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1643251802;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Integer getInteger(String string) {
         if (string == null || string.length() == 0) {
             return null;
@@ -144,6 +148,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Integer getInteger(String string, int defaultValue) {
         if (string == null || string.length() == 0) {
             return valueOf(defaultValue);
@@ -160,6 +165,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Integer getInteger(String string, Integer defaultValue) {
         if (string == null || string.length() == 0) {
             return defaultValue;
@@ -181,8 +187,8 @@ public final class Integer extends Number implements Comparable<Integer> {
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1081647909 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1081647909;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
@@ -191,8 +197,8 @@ public final class Integer extends Number implements Comparable<Integer> {
     public int intValue() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1195481980 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1195481980;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
@@ -201,16 +207,18 @@ public final class Integer extends Number implements Comparable<Integer> {
     public long longValue() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_730621936 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_730621936;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int parseInt(String string) throws NumberFormatException {
         return parseInt(string, 10);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int parseInt(String string, int radix) throws NumberFormatException {
         if (radix < Character.MIN_RADIX || radix > Character.MAX_RADIX) {
             throw new NumberFormatException("Invalid radix: " + radix);
@@ -230,6 +238,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int parse(String string, int offset, int radix, boolean negative) throws NumberFormatException {
         int max = Integer.MIN_VALUE / radix;
         int result = 0, length = string.length();
@@ -262,53 +271,61 @@ public final class Integer extends Number implements Comparable<Integer> {
     public short shortValue() {
         short var4F09DAA9D95BCB166A302407A0E0BABE_8595800 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_8595800;
-        // ---------- Original Method ----------
-        //return (short) value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toBinaryString(int i) {
         return IntegralToString.intToBinaryString(i);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toHexString(int i) {
         return IntegralToString.intToHexString(i, false, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toOctalString(int i) {
         return IntegralToString.intToOctalString(i);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.184 -0400", hash_original_method = "6B315C20A4D45816791A47779D79F014", hash_generated_method = "8F55E7B0AA2C13DE1A4D2669EE02578C")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1844058882 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1844058882 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1844058882 = Integer.toString(value);
-        varB4EAC82CA7396A68D541C85D26508E83_1844058882.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1844058882.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1844058882;
-        // ---------- Original Method ----------
-        //return Integer.toString(value);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(int i) {
         return IntegralToString.intToString(i);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(int i, int radix) {
         return IntegralToString.intToString(i, radix);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Integer valueOf(String string) throws NumberFormatException {
         return valueOf(parseInt(string));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Integer valueOf(String string, int radix) throws NumberFormatException {
         return valueOf(parseInt(string, radix));
     }
@@ -399,6 +416,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Integer valueOf(int i) {
         return  i >= 128 || i < -128 ? new Integer(i) : SMALL_VALUES[i + 128];
     }

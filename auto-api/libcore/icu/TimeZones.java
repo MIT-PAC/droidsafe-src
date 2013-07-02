@@ -1,11 +1,11 @@
 package libcore.icu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -18,10 +18,11 @@ public final class TimeZones {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.755 -0400", hash_original_method = "A05C4975F009B050E4723CBEC63CF03D", hash_generated_method = "A3706FB06655BF7A8E96F021B21E6A98")
     private  TimeZones() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getDisplayName(String[][] zoneStrings, String id, boolean daylight, int style) {
         String[] needle = new String[] { id };
         int index = Arrays.binarySearch(zoneStrings, needle, ZONE_STRINGS_COMPARATOR);
@@ -37,6 +38,7 @@ public final class TimeZones {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[][] getZoneStrings(Locale locale) {
         if (locale == null) {
             locale = Locale.getDefault();
@@ -45,6 +47,7 @@ public final class TimeZones {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] forLocale(Locale locale) {
         return forCountryCode(locale.getCountry());
     }
@@ -70,14 +73,14 @@ public final class TimeZones {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.758 -0400", hash_original_method = "8CBB117BE999E006B1D5CB712A559541", hash_generated_method = "5B341770CB1D4B88A6CBDF9D4F397CBB")
         public  ZoneStringsCache() {
             super(availableTimeZones.length);
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.760 -0400", hash_original_method = "6F2D0ECC0E2349A3B7CCB8E5434A3F26", hash_generated_method = "82CA57E706F32A0C16A1FE1D298BCDF8")
         @Override
         protected String[][] create(Locale locale) {
-            String[][] varB4EAC82CA7396A68D541C85D26508E83_1019654944 = null; //Variable for return #1
+            String[][] varB4EAC82CA7396A68D541C85D26508E83_1019654944 = null; 
             long start;
             long nativeStart;
             start = nativeStart = System.currentTimeMillis();
@@ -91,20 +94,20 @@ public final class TimeZones {
                     " (" + nativeDuration + "ms in ICU)");
             varB4EAC82CA7396A68D541C85D26508E83_1019654944 = result;
             addTaint(locale.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1019654944.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1019654944.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1019654944;
-            // ---------- Original Method ----------
-            //long start, nativeStart;
-            //start = nativeStart = System.currentTimeMillis();
-            //String[][] result = getZoneStringsImpl(locale.toString(), availableTimeZones);
-            //long nativeEnd = System.currentTimeMillis();
-            //internStrings(result);
-            //long end = System.currentTimeMillis();
-            //long duration = end - start;
-            //long nativeDuration = nativeEnd - nativeStart;
-            //System.logI("Loaded time zone names for " + locale + " in " + duration + "ms" +
-                    //" (" + nativeDuration + "ms in ICU)");
-            //return result;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                    
+            
         }
 
         
@@ -120,27 +123,27 @@ public final class TimeZones {
                             String nonDuplicate = internTable.get(original);
                             {
                                 internTable.put(original, original);
-                            } //End block
+                            } 
                             {
                                 result[i][j] = nonDuplicate;
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             addTaint(result[0][0].getTaint());
-            // ---------- Original Method ----------
-            //for (int i = 0; i < result.length; ++i) {
-                //for (int j = 1; j < NAME_COUNT; ++j) {
-                    //String original = result[i][j];
-                    //String nonDuplicate = internTable.get(original);
-                    //if (nonDuplicate == null) {
-                        //internTable.put(original, original);
-                    //} else {
-                        //result[i][j] = nonDuplicate;
-                    //}
-                //}
-            //}
+            
+            
+                
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                
+            
         }
 
         
@@ -188,8 +191,8 @@ public final class TimeZones {
             addTaint(rhs[0].getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_36081911 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_36081911;
-            // ---------- Original Method ----------
-            //return lhs[OLSON_NAME].compareTo(rhs[OLSON_NAME]);
+            
+            
         }
 
         

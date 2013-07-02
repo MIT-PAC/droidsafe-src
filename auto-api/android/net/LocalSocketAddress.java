@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class LocalSocketAddress {
@@ -20,9 +20,9 @@ public class LocalSocketAddress {
     public  LocalSocketAddress(String name, Namespace namespace) {
         this.name = name;
         this.namespace = namespace;
-        // ---------- Original Method ----------
-        //this.name = name;
-        //this.namespace = namespace;
+        
+        
+        
     }
 
     
@@ -30,29 +30,29 @@ public class LocalSocketAddress {
     public  LocalSocketAddress(String name) {
         this(name,Namespace.ABSTRACT);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.228 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "B4BBB0BA1485251A231704EAFEA2A6AC")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_56186881 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_56186881 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_56186881 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_56186881.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_56186881.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_56186881;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.229 -0400", hash_original_method = "F383712D804FA1C6C6A9CA72960DBCA2", hash_generated_method = "7835E71A860EE3AE47DC3DA7F073A2E2")
     public Namespace getNamespace() {
-        Namespace varB4EAC82CA7396A68D541C85D26508E83_1758167743 = null; //Variable for return #1
+        Namespace varB4EAC82CA7396A68D541C85D26508E83_1758167743 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1758167743 = namespace;
-        varB4EAC82CA7396A68D541C85D26508E83_1758167743.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1758167743.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1758167743;
-        // ---------- Original Method ----------
-        //return namespace;
+        
+        
     }
 
     

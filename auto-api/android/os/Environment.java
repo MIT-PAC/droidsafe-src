@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.Resources;
 import android.os.storage.IMountService;
@@ -18,10 +18,11 @@ public class Environment {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.180 -0400", hash_original_method = "241E3402842314122858FA6ADB8EF111", hash_generated_method = "241E3402842314122858FA6ADB8EF111")
     public Environment ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     private static StorageVolume getPrimaryVolume() {
         if (mPrimaryVolume == null) {
             synchronized (mLock) {
@@ -46,6 +47,7 @@ public class Environment {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static File getSystemSecureDirectory() {
         if (isEncryptedFilesystemEnabled()) {
             return new File(SECURE_DATA_DIRECTORY, "system");
@@ -55,6 +57,7 @@ public class Environment {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static File getSecureDataDirectory() {
         if (isEncryptedFilesystemEnabled()) {
             return SECURE_DATA_DIRECTORY;
@@ -64,6 +67,7 @@ public class Environment {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isEncryptedFilesystemEnabled() {
         return SystemProperties.getBoolean(SYSTEM_PROPERTY_EFS_ENABLED, false);
     }
@@ -79,6 +83,7 @@ public class Environment {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static File getExternalStoragePublicDirectory(String type) {
         return new File(getExternalStorageDirectory(), type);
     }
@@ -89,27 +94,32 @@ public class Environment {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static File getExternalStorageAppDataDirectory(String packageName) {
         return new File(EXTERNAL_STORAGE_ANDROID_DATA_DIRECTORY, packageName);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static File getExternalStorageAppMediaDirectory(String packageName) {
         return new File(EXTERNAL_STORAGE_ANDROID_MEDIA_DIRECTORY, packageName);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static File getExternalStorageAppObbDirectory(String packageName) {
         return new File(EXTERNAL_STORAGE_ANDROID_OBB_DIRECTORY, packageName);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static File getExternalStorageAppFilesDirectory(String packageName) {
         return new File(new File(EXTERNAL_STORAGE_ANDROID_DATA_DIRECTORY,
                 packageName), "files");
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static File getExternalStorageAppCacheDirectory(String packageName) {
         return new File(new File(EXTERNAL_STORAGE_ANDROID_DATA_DIRECTORY,
                 packageName), "cache");
@@ -121,6 +131,7 @@ public class Environment {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getExternalStorageState() {
         try {
             IMountService mountService = IMountService.Stub.asInterface(ServiceManager
@@ -133,18 +144,21 @@ public class Environment {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isExternalStorageRemovable() {
         StorageVolume volume = getPrimaryVolume();
         return (volume != null && volume.isRemovable());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isExternalStorageEmulated() {
         StorageVolume volume = getPrimaryVolume();
         return (volume != null && volume.isEmulated());
     }
 
     
+    @DSModeled(DSC.SAFE)
     static File getDirectory(String variableName, String defaultPath) {
         String path = System.getenv(variableName);
         return path == null ? new File(defaultPath) : new File(path);

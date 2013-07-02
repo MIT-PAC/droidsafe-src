@@ -1,11 +1,11 @@
 package org.apache.commons.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 class ThreadMonitor implements Runnable {
@@ -20,17 +20,19 @@ class ThreadMonitor implements Runnable {
     private  ThreadMonitor(Thread thread, long timeout) {
         this.thread = thread;
         this.timeout = timeout;
-        // ---------- Original Method ----------
-        //this.thread = thread;
-        //this.timeout = timeout;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Thread start(long timeout) {
         return start(Thread.currentThread(), timeout);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Thread start(Thread thread, long timeout) {
         Thread monitor = null;
         if (timeout > 0) {
@@ -43,6 +45,7 @@ class ThreadMonitor implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void stop(Thread thread) {
         if (thread != null) {
             thread.interrupt();
@@ -50,21 +53,22 @@ class ThreadMonitor implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.459 -0400", hash_original_method = "D59462ADF236F9BB2B2797E094BBD843", hash_generated_method = "1E4993D1F2279D7FB29288AE002D34FB")
     public void run() {
         try 
         {
             Thread.sleep(timeout);
             thread.interrupt();
-        } //End block
+        } 
         catch (InterruptedException e)
         { }
-        // ---------- Original Method ----------
-        //try {
-            //Thread.sleep(timeout);
-            //thread.interrupt();
-        //} catch (InterruptedException e) {
-        //}
+        
+        
+            
+            
+        
+        
     }
 
     

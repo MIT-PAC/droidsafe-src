@@ -1,11 +1,11 @@
 package org.ccil.cowan.tagsoup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class HTMLSchema extends Schema implements HTMLModels {
@@ -2869,8 +2869,8 @@ public class HTMLSchema extends Schema implements HTMLModels {
         entity("Zscr", 0x1D4B5);
         entity("zwj", 0x200D);
         entity("zwnj", 0x200C);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

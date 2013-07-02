@@ -1,11 +1,11 @@
 package java.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class CollationKey implements Comparable<CollationKey> {
@@ -16,8 +16,8 @@ public abstract class CollationKey implements Comparable<CollationKey> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.594 -0400", hash_original_method = "FA2BB1F012B53BF817CC40F1D26354AF", hash_generated_method = "8A83B74FC7ACECB2BEE0C5F65526CEEC")
     protected  CollationKey(String source) {
         this.source = source;
-        // ---------- Original Method ----------
-        //this.source = source;
+        
+        
     }
 
     
@@ -26,12 +26,12 @@ public abstract class CollationKey implements Comparable<CollationKey> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.597 -0400", hash_original_method = "CAA51A8D77816B9C71E897924204286F", hash_generated_method = "7E0EAD1ACFB75F826694F4E62720ACF5")
     public String getSourceString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_64749024 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_64749024 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_64749024 = source;
-        varB4EAC82CA7396A68D541C85D26508E83_64749024.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_64749024.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_64749024;
-        // ---------- Original Method ----------
-        //return source;
+        
+        
     }
 
     

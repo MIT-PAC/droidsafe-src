@@ -1,18 +1,18 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class ArrayIndexOutOfBoundsException extends IndexOutOfBoundsException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.303 -0400", hash_original_method = "2927C5AB3FFF56BF1DCC2EADE5C9261A", hash_generated_method = "0A09B158E5799C73FE56AC7696514B31")
     public  ArrayIndexOutOfBoundsException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class ArrayIndexOutOfBoundsException extends IndexOutOfBoundsException {
     public  ArrayIndexOutOfBoundsException(int index) {
         super("index=" + index);
         addTaint(index);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,7 +28,7 @@ public class ArrayIndexOutOfBoundsException extends IndexOutOfBoundsException {
     public  ArrayIndexOutOfBoundsException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,7 +37,7 @@ public class ArrayIndexOutOfBoundsException extends IndexOutOfBoundsException {
         super("length=" + sourceLength + "; index=" + index);
         addTaint(sourceLength);
         addTaint(index);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,7 +49,7 @@ public class ArrayIndexOutOfBoundsException extends IndexOutOfBoundsException {
         addTaint(sourceLength);
         addTaint(offset);
         addTaint(count);
-        // ---------- Original Method ----------
+        
     }
 
     

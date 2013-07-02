@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class Camera {
@@ -16,8 +16,8 @@ public class Camera {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.327 -0400", hash_original_method = "6DBF72AF7766D4EB810EDB03D8391F19", hash_generated_method = "9D80413F5EE3D7B08611B8D24691ACD0")
     public  Camera() {
         nativeConstructor();
-        // ---------- Original Method ----------
-        //nativeConstructor();
+        
+        
     }
 
     
@@ -61,21 +61,23 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.331 -0400", hash_original_method = "EEC65A3D99E4715BBC5254EBE009F300", hash_generated_method = "613CB390D6301108E1BFFC6312DC4FB0")
     public void getMatrix(Matrix matrix) {
         nativeGetMatrix(matrix.native_instance);
         addTaint(matrix.getTaint());
-        // ---------- Original Method ----------
-        //nativeGetMatrix(matrix.native_instance);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.331 -0400", hash_original_method = "E58BA8CAEF8D98DCBC5CC423229EB1CE", hash_generated_method = "7C677829D3057E4D28499B91456FBFAD")
     public void applyToCanvas(Canvas canvas) {
         nativeApplyToCanvas(canvas.mNativeCanvas);
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        //nativeApplyToCanvas(canvas.mNativeCanvas);
+        
+        
     }
 
     
@@ -86,22 +88,23 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.332 -0400", hash_original_method = "C90BA6E6D8C2FEFD061454BA6E7AF7E1", hash_generated_method = "15552963748D752DA9A1B1A94AAA61C5")
     protected void finalize() throws Throwable {
         try 
         {
             nativeDestructor();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //nativeDestructor();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     

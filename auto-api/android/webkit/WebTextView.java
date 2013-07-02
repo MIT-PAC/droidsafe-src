@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -164,16 +164,16 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.207 -0400", hash_original_method = "9CA3B5083DA9628F4399959A49D35A0D", hash_generated_method = "2DE82FA3FCBAE95C8EB28789ABC6EA02")
             @Override
             public void handleMessage(Message msg) {
-                //Begin case AUTOFILL_FORM 
+                
                 mWebView.autoFillForm(mQueryId);
-                //End case AUTOFILL_FORM 
+                
                 addTaint(msg.getTaint());
-                // ---------- Original Method ----------
-                //switch (msg.what) {
-                //case AUTOFILL_FORM:
-                    //mWebView.autoFillForm(mQueryId);
-                    //break;
-                //}
+                
+                
+                
+                    
+                    
+                
             }
 };
         mReceiver = new MyResultReceiver(mHandler);
@@ -184,23 +184,25 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
                 getPaddingBottom());
         addTaint(context.getTaint());
         addTaint(autoFillQueryId);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.207 -0400", hash_original_method = "AE45889DF7F2FB1AD82AA8B5F1FED7F7", hash_generated_method = "777A71D3EFDBD434D2FC45D0739EED0C")
     public void setAutoFillable(int queryId) {
         mAutoFillable = mWebView.getSettings().getAutoFillEnabled()
                 && (queryId != FORM_NOT_AUTOFILLABLE);
         mQueryId = queryId;
-        // ---------- Original Method ----------
-        //mAutoFillable = mWebView.getSettings().getAutoFillEnabled()
-                //&& (queryId != FORM_NOT_AUTOFILLABLE);
-        //mQueryId = queryId;
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.208 -0400", hash_original_method = "2A0FFA3F53D08ACDC8DCA45FA27A8D22", hash_generated_method = "861FFC6380FF6795E54BB76F4063D536")
     @Override
     public void setPadding(int left, int top, int right, int bottom) {
@@ -210,12 +212,13 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        //super.setPadding(left + mRingInset, top + mRingInset,
-                //right + mRingInset, bottom + mRingInset);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.210 -0400", hash_original_method = "6961E56AC59C570DF49F429D8D391CD8", hash_generated_method = "27EDD99C9B95743AD4A9BC9810745B67")
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
@@ -223,80 +226,80 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
             boolean var54D21F6CA47C3F13B3018213ED17168D_474190834 = (event.isSystem());
             {
                 boolean varCEE2CC9A2E312DCEF21BEB8A1D3D2A74_1199622915 = (super.dispatchKeyEvent(event));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean down = event.getAction() != KeyEvent.ACTION_UP;
         int keyCode = event.getKeyCode();
         boolean isArrowKey = false;
-        //Begin case KeyEvent.KEYCODE_DPAD_LEFT KeyEvent.KEYCODE_DPAD_RIGHT KeyEvent.KEYCODE_DPAD_UP KeyEvent.KEYCODE_DPAD_DOWN 
+        
         isArrowKey = true;
-        //End case KeyEvent.KEYCODE_DPAD_LEFT KeyEvent.KEYCODE_DPAD_RIGHT KeyEvent.KEYCODE_DPAD_UP KeyEvent.KEYCODE_DPAD_DOWN 
+        
         {
             {
                 onEditorAction(EditorInfo.IME_ACTION_NEXT);
-            } //End block
-        } //End block
+            } 
+        } 
         Spannable text = (Spannable) getText();
         int oldStart = Selection.getSelectionStart(text);
         int oldEnd = Selection.getSelectionEnd(text);
         {
             {
                 sendDomEvent(event);
-            } //End block
+            } 
             {
                 mGotDelete = true;
                 mDelSelStart = oldStart;
                 mDelSelEnd = oldEnd;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 boolean var72F8103664F7AA5B2750DCAC9FD4B6CA_251701336 = (isPopupShowing());
                 {
                     boolean var97BD0C91372FF8CDE07B475E38FE656A_369353992 = (super.dispatchKeyEvent(event));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 InputMethodManager.getInstance(mContext)
                         .hideSoftInputFromWindow(getWindowToken(), 0);
                 sendDomEvent(new KeyEvent(KeyEvent.ACTION_DOWN, keyCode));
                 sendDomEvent(event);
-            } //End block
+            } 
             boolean varD6051F78D5E57D3CCCE2FBA8ECC49974_1311747786 = (super.dispatchKeyEvent(event));
-        } //End block
+        } 
         {
             {
                 boolean var72F8103664F7AA5B2750DCAC9FD4B6CA_1855826187 = (isPopupShowing());
                 {
                     boolean var97BD0C91372FF8CDE07B475E38FE656A_1345163677 = (super.dispatchKeyEvent(event));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 mWebView.centerKeyPressOnTextField();
-            } //End block
+            } 
             boolean varD6051F78D5E57D3CCCE2FBA8ECC49974_1239497173 = (super.dispatchKeyEvent(event));
-        } //End block
+        } 
         {
             boolean var778B744EBE60DF815BEE98852B413FC5_1671932374 = (getLayout() == null);
             {
                 measure(mWidthSpec, mHeightSpec);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int oldLength = text.length();
         boolean maxedOut = mMaxLength != -1 && oldLength == mMaxLength;
         String oldText;
         {
             oldText = text.toString();
-        } //End block
+        } 
         {
             oldText = "";
-        } //End block
+        } 
         {
             boolean varD6051F78D5E57D3CCCE2FBA8ECC49974_1811303373 = (super.dispatchKeyEvent(event));
             {
                 {
                     mGotEnterDown = true;
-                } //End block
+                } 
                 {
                     {
                         boolean var3BF1F25582652AF3CD5797A1157BFB20_479869116 = (!oldText.equals(getText().toString()));
@@ -306,24 +309,24 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
                             int newEnd = Selection.getSelectionEnd(span);
                             mWebView.replaceTextfieldText(0, oldLength, span.toString(),
                             newStart, newEnd);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             mWebView.resetTrackballTime();
             {
                 Object var908199CAFC193F17BD0A3FE9AC9B6CAE_1936032050 = (mWebView.onKeyDown(keyCode, event));
                 Object var38857E8F00A1A40A83F7362F0A95A91E_1458685848 = (mWebView
                     .onKeyUp(keyCode, event));
-            } //End flattened ternary
-        } //End block
+            } 
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1629502212 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1629502212;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -337,29 +340,29 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
                 {
                     layout(params.x, params.y, params.x + params.width,
                         params.y + params.height);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (getLayout() == null) {
-            //measure(mWidthSpec, mHeightSpec);
-            //LayoutParams params = (LayoutParams) getLayoutParams();
-            //if (params != null) {
-                //layout(params.x, params.y, params.x + params.width,
-                        //params.y + params.height);
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+            
+                
+                        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.211 -0400", hash_original_method = "7D5E495C9B289687F8273FA9EA57C0F7", hash_generated_method = "58EC071B095B9519514357680DE7B90F")
      ResultReceiver getResultReceiver() {
-        ResultReceiver varB4EAC82CA7396A68D541C85D26508E83_1934751651 = null; //Variable for return #1
+        ResultReceiver varB4EAC82CA7396A68D541C85D26508E83_1934751651 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1934751651 = mReceiver;
-        varB4EAC82CA7396A68D541C85D26508E83_1934751651.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1934751651.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1934751651;
-        // ---------- Original Method ----------
-        //return mReceiver;
+        
+        
     }
 
     
@@ -368,11 +371,12 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         addTaint(ptr);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2059661852 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2059661852;
-        // ---------- Original Method ----------
-        //return ptr == mNodePointer;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.212 -0400", hash_original_method = "480AEB5EE1C7676DB93788B189E32B71", hash_generated_method = "FB30501489A4CB96F12B0854BC7C97C9")
     private void lineUpScroll() {
         Layout layout = getLayout();
@@ -381,29 +385,30 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
                 float maxScrollX = layout.getLineRight(0) - getWidth();
                 mWebView.scrollFocusedTextInputX(maxScrollX > 0 ?
                         mScrollX / maxScrollX : 0);
-            } //End block
+            } 
             {
                 mWebView.scrollFocusedTextInputY(mScrollY);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //Layout layout = getLayout();
-        //if (mWebView != null && layout != null) {
-            //if (mSingle) {
-                //float maxScrollX = layout.getLineRight(0) - getWidth();
-                //if (DebugFlags.WEB_TEXT_VIEW) {
-                    //Log.v(LOGTAG, "onTouchEvent x=" + mScrollX + " y="
-                            //+ mScrollY + " maxX=" + maxScrollX);
-                //}
-                //mWebView.scrollFocusedTextInputX(maxScrollX > 0 ?
-                        //mScrollX / maxScrollX : 0);
-            //} else {
-                //mWebView.scrollFocusedTextInputY(mScrollY);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+                
+                    
+                            
+                
+                
+                        
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.212 -0400", hash_original_method = "76914D313CC2AB81853EDD1E3C727FFE", hash_generated_method = "5821F9E64F6F0CE7BE049A6983D569A3")
     @Override
     protected void makeNewLayout(int w, int hintWidth, Metrics boring,
@@ -417,185 +422,192 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         addTaint(hintBoring.getTaint());
         addTaint(ellipsisWidth);
         addTaint(bringIntoView);
-        // ---------- Original Method ----------
-        //super.makeNewLayout(w, hintWidth, boring, hintBoring, ellipsisWidth,
-                //bringIntoView);
-        //lineUpScroll();
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.213 -0400", hash_original_method = "B64466D7D13E6636B7758E5E911C1FF7", hash_generated_method = "65F29F8999F12D075F8988164458AF9D")
     @Override
     public InputConnection onCreateInputConnection(
             EditorInfo outAttrs) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        InputConnection varB4EAC82CA7396A68D541C85D26508E83_1179781574 = null; //Variable for return #1
+        
+        InputConnection varB4EAC82CA7396A68D541C85D26508E83_1179781574 = null; 
         InputConnection connection = super.onCreateInputConnection(outAttrs);
         {
             outAttrs.fieldName = mWebView.nativeFocusCandidateName() + "\\"
                     + mWebView.getUrl();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1179781574 = connection;
         addTaint(outAttrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1179781574.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1179781574.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1179781574;
-        // ---------- Original Method ----------
-        //InputConnection connection = super.onCreateInputConnection(outAttrs);
-        //if (mWebView != null) {
-            //outAttrs.fieldName = mWebView.nativeFocusCandidateName() + "\\"
-                    //+ mWebView.getUrl();
-        //}
-        //return connection;
+        
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.213 -0400", hash_original_method = "804428A0FF8505961E29DE067C3E7206", hash_generated_method = "B74E71F77507FCFCEF2487B53617DDEC")
     @Override
     public void onEditorAction(int actionCode) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        //Begin case EditorInfo.IME_ACTION_NEXT 
+        
+        
         {
             boolean var61E9772AE146CF8460E5E9E7C7CB61AE_1404253700 = (mWebView.nativeMoveCursorToNextTextInput());
             {
                 mWebView.rebuildWebTextView();
                 setDefaultSelection();
                 mWebView.invalidate();
-            } //End block
-        } //End collapsed parenthetic
-        //End case EditorInfo.IME_ACTION_NEXT 
-        //Begin case EditorInfo.IME_ACTION_DONE 
+            } 
+        } 
+        
+        
         super.onEditorAction(actionCode);
-        //End case EditorInfo.IME_ACTION_DONE 
-        //Begin case EditorInfo.IME_ACTION_GO EditorInfo.IME_ACTION_SEARCH 
+        
+        
         InputMethodManager.getInstance(mContext)
                     .hideSoftInputFromWindow(getWindowToken(), 0);
-        //End case EditorInfo.IME_ACTION_GO EditorInfo.IME_ACTION_SEARCH 
-        //Begin case EditorInfo.IME_ACTION_GO EditorInfo.IME_ACTION_SEARCH 
+        
+        
         sendDomEvent(new KeyEvent(KeyEvent.ACTION_DOWN,
                     KeyEvent.KEYCODE_ENTER));
-        //End case EditorInfo.IME_ACTION_GO EditorInfo.IME_ACTION_SEARCH 
-        //Begin case EditorInfo.IME_ACTION_GO EditorInfo.IME_ACTION_SEARCH 
+        
+        
         sendDomEvent(new KeyEvent(KeyEvent.ACTION_UP,
                     KeyEvent.KEYCODE_ENTER));
-        //End case EditorInfo.IME_ACTION_GO EditorInfo.IME_ACTION_SEARCH 
+        
         addTaint(actionCode);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.214 -0400", hash_original_method = "199CA847E2A702BC0971D902FFD82329", hash_generated_method = "7CE2FCAB2D00F05F42E15869ECBD15B0")
     @Override
     protected void onFocusChanged(boolean focused, int direction,
             Rect previouslyFocusedRect) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mFromFocusChange = true;
         super.onFocusChanged(focused, direction, previouslyFocusedRect);
         {
             mWebView.setActive(true);
-        } //End block
+        } 
         {
             mWebView.setActive(false);
-        } //End block
+        } 
         mFromFocusChange = false;
         addTaint(focused);
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
-        // ---------- Original Method ----------
-        //mFromFocusChange = true;
-        //super.onFocusChanged(focused, direction, previouslyFocusedRect);
-        //if (focused) {
-            //mWebView.setActive(true);
-        //} else if (!mInsideRemove) {
-            //mWebView.setActive(false);
-        //}
-        //mFromFocusChange = false;
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.215 -0400", hash_original_method = "A29BC68952EA75E2FA60BFA3E7E77A14", hash_generated_method = "26C891DBDEC5E1879093117A504568A0")
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             replaceText("");
             WebSettings settings = mWebView.getSettings();
             {
                 mWebView.autoFillForm(mQueryId);
-            } //End block
+            } 
             {
                 mWebView.getWebChromeClient().setupAutoFill(
                         mHandler.obtainMessage(AUTOFILL_FORM));
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(parent.getTaint());
         addTaint(view.getTaint());
         addTaint(position);
         addTaint(id);
-        // ---------- Original Method ----------
-        //if (id == 0 && position == 0) {
-            //replaceText("");
-            //WebSettings settings = mWebView.getSettings();
-            //if (mAutoFillProfileIsSet) {
-                //mWebView.autoFillForm(mQueryId);
-            //} else {
-                //mWebView.getWebChromeClient().setupAutoFill(
-                        //mHandler.obtainMessage(AUTOFILL_FORM));
-            //}
-        //}
+        
+        
+            
+            
+            
+                
+            
+                
+                        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.215 -0400", hash_original_method = "D3CDB855BC1EDCE86869BE708EA015CC", hash_generated_method = "24F0587FCCA742AE4B60DC2FCB2DD653")
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onScrollChanged(l, t, oldl, oldt);
         lineUpScroll();
         addTaint(l);
         addTaint(t);
         addTaint(oldl);
         addTaint(oldt);
-        // ---------- Original Method ----------
-        //super.onScrollChanged(l, t, oldl, oldt);
-        //lineUpScroll();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.215 -0400", hash_original_method = "8C1441039C2AFE6E28B135997E9DB205", hash_generated_method = "CDB3F6F8F58BD83D2E2273E21C6F4FF3")
     @Override
     protected void onSelectionChanged(int selStart, int selEnd) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mWebView.setSelection(selStart, selEnd);
             lineUpScroll();
-        } //End block
+        } 
         addTaint(selStart);
         addTaint(selEnd);
-        // ---------- Original Method ----------
-        //if (!mFromWebKit && !mFromFocusChange && !mFromSetInputType
-                //&& mWebView != null && !mInSetTextAndKeepSelection) {
-            //if (DebugFlags.WEB_TEXT_VIEW) {
-                //Log.v(LOGTAG, "onSelectionChanged selStart=" + selStart
-                        //+ " selEnd=" + selEnd);
-            //}
-            //mWebView.setSelection(selStart, selEnd);
-            //lineUpScroll();
-        //}
+        
+        
+                
+            
+                
+                        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.216 -0400", hash_original_method = "86E27647BFDE15D66BF8F4D142CAE4A5", hash_generated_method = "210E3B7DAA434A4D389D370C2D22DC9A")
     @Override
     protected void onTextChanged(CharSequence s,int start,int before,int count) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onTextChanged(s, start, before, count);
         String postChange = s.toString();
         {
             boolean var69B0C10C334112C2C00F8FB5966E302E_2002951177 = (mPreChange == null || mPreChange.equals(postChange) ||
                 (mMaxLength > -1 && mPreChange.length() > mMaxLength &&
                 mPreChange.substring(0, mMaxLength).equals(postChange)));
-        } //End collapsed parenthetic
+        } 
         {
             {
                 updateCachedTextfield();
@@ -607,12 +619,12 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
                                 KeyEvent.KEYCODE_DEL));
                         sendDomEvent(new KeyEvent(KeyEvent.ACTION_UP,
                                 KeyEvent.KEYCODE_DEL));
-                    } //End block
-                } //End block
+                    } 
+                } 
                 mWebView.deleteSelection(start, start + before);
-            } //End block
+            } 
             mGotDelete = false;
-        } //End block
+        } 
         mGotDelete = false;
         {
             String replaceButOne = mPreChange.subSequence(start,
@@ -625,21 +637,21 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
                     start += before;
                     before = 0;
                     count = 1;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mPreChange = postChange;
         KeyEvent[] events = null;
         {
             TextUtils.getChars(s, start + count - 1, start + count, mCharacter, 0);
             KeyCharacterMap kmap = KeyCharacterMap.load(KeyCharacterMap.VIRTUAL_KEYBOARD);
             events = kmap.getEvents(mCharacter);
-        } //End block
+        } 
         boolean useKeyEvents = (events != null);
         {
             {
                 mWebView.setSelection(start, start + before);
-            } //End block
+            } 
             int length = events.length;
             {
                 int i = 0;
@@ -648,184 +660,187 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
                         boolean varFC8D0E9132A6E0775D7E4533EF2FB773_991735340 = (!KeyEvent.isModifierKey(events[i].getKeyCode()));
                         {
                             sendDomEvent(events[i]);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             String replace = s.subSequence(start,
                     start + count).toString();
             mWebView.replaceTextfieldText(start, start + before, replace,
                     start + count,
                     start + count);
-        } //End block
+        } 
         updateCachedTextfield();
         addTaint(s.getTaint());
         addTaint(start);
         addTaint(before);
         addTaint(count);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.217 -0400", hash_original_method = "C8E8CDF4C81BBE6A97ACE8DDCE593DE3", hash_generated_method = "F3D228206E8FDABD1362785078C5BD04")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             Object var9E1FBD251DF7E53AB77C3A31F15B2B38_329365723 = (event.getAction());
-            //Begin case MotionEvent.ACTION_DOWN 
+            
             super.onTouchEvent(event);
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             mDragStartX = event.getX();
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             mDragStartY = event.getY();
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             mDragStartTime = event.getEventTime();
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             mDragSent = false;
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             mScrolled = false;
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             mGotTouchDown = true;
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             mHasPerformedLongClick = false;
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_MOVE 
+            
+            
             {
                 mGotTouchDown = false;
-            } //End block
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_MOVE 
+            } 
+            
+            
             int slop = ViewConfiguration.get(mContext).getScaledTouchSlop();
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_MOVE 
+            
+            
             Spannable buffer = getText();
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_MOVE 
+            
+            
             int initialScrollX = Touch.getInitialScrollX(this, buffer);
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_MOVE 
+            
+            
             int initialScrollY = Touch.getInitialScrollY(this, buffer);
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_MOVE 
+            
+            
             super.onTouchEvent(event);
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_MOVE 
+            
+            
             int dx = Math.abs(mScrollX - initialScrollX);
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_MOVE 
+            
+            
             int dy = Math.abs(mScrollY - initialScrollY);
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_MOVE 
+            
+            
             int smallerSlop = slop/2;
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_MOVE 
+            
+            
             {
                 mScrolled = true;
                 cancelLongPress();
-            } //End block
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_MOVE 
+            } 
+            
+            
             {
                 boolean var9093599EE2DF5C5F4C4285B452695469_712107835 = (Math.abs((int) event.getX() - mDragStartX) < slop
                     && Math.abs((int) event.getY() - mDragStartY) < slop);
-            } //End collapsed parenthetic
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_MOVE 
+            } 
+            
+            
             {
                 {
                     mWebView.initiateTextFieldDrag(mDragStartX, mDragStartY,
                             mDragStartTime);
                     mDragSent = true;
-                } //End block
+                } 
                 boolean scrolled = mWebView.textFieldDrag(event);
                 {
                     mScrolled = true;
                     cancelLongPress();
-                } //End block
-            } //End block
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
+                } 
+            } 
+            
+            
             super.onTouchEvent(event);
-            //End case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
-            //Begin case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
+            
+            
             {
                 mGotTouchDown = false;
-            } //End block
-            //End case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
-            //Begin case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
+            } 
+            
+            
             {
                 cancelLongPress();
                 {
                     mWebView.touchUpOnTextField(event);
-                } //End block
-            } //End block
-            //End case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
-            //Begin case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
+                } 
+            } 
+            
+            
             {
                 mWebView.onTouchEvent(event);
-            } //End block
-            //End case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
-            //Begin case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
+            } 
+            
+            
             mGotTouchDown = false;
-            //End case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
-        } //End collapsed parenthetic
+            
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1338714750 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1338714750;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.218 -0400", hash_original_method = "39A98F4B040DD226E88FA29A15911D83", hash_generated_method = "8FD8017501EBA24216E19848B72DA4A8")
     @Override
     public boolean onTrackballEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varBF0DD052E7F558A1BAF9DA85140649CD_2013490347 = (isPopupShowing());
             {
                 boolean varA6E78A78BE965F341F5864424E55B8B1_1113447553 = (super.onTrackballEvent(event));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var4AC14C2DF0ECC4D7F899974BD11F2605_815238848 = (event.getAction() != MotionEvent.ACTION_MOVE);
-        } //End collapsed parenthetic
+        } 
         Spannable text = getText();
         MovementMethod move = getMovementMethod();
         {
             boolean var0040A18D22912D1038EED02F5F656E69_270940825 = (move != null && getLayout() != null &&
             move.onTrackballEvent(this, text, event));
-        } //End collapsed parenthetic
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1646169318 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1646169318;
-        // ---------- Original Method ----------
-        //if (isPopupShowing()) {
-            //return super.onTrackballEvent(event);
-        //}
-        //if (event.getAction() != MotionEvent.ACTION_MOVE) {
-            //return false;
-        //}
-        //Spannable text = getText();
-        //MovementMethod move = getMovementMethod();
-        //if (move != null && getLayout() != null &&
-            //move.onTrackballEvent(this, text, event)) {
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.218 -0400", hash_original_method = "3EEE407D8FB8A76E11AC99079A17DC34", hash_generated_method = "4AF069FBCA0166E205BCE0A8C6143774")
     @Override
     public boolean performLongClick() {
@@ -833,9 +848,9 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         boolean var98B6A4E762A67C23892FBA15AF127489_1759509414 = (super.performLongClick());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_610360383 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_610360383;
-        // ---------- Original Method ----------
-        //mHasPerformedLongClick = true;
-        //return super.performLongClick();
+        
+        
+        
     }
 
     
@@ -846,29 +861,29 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
             boolean var4D18B3E55AF70DF7121DEC3A80BC5F4E_987686980 = (imm.isActive(this));
             {
                 imm.hideSoftInputFromWindow(getWindowToken(), 0);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mInsideRemove = true;
         boolean isFocused = hasFocus();
         mWebView.removeView(this);
         {
             mWebView.requestFocus();
-        } //End block
+        } 
         mInsideRemove = false;
         mHandler.removeCallbacksAndMessages(null);
-        // ---------- Original Method ----------
-        //InputMethodManager imm = InputMethodManager.getInstance(mContext);
-        //if (imm.isActive(this)) {
-            //imm.hideSoftInputFromWindow(getWindowToken(), 0);
-        //}
-        //mInsideRemove = true;
-        //boolean isFocused = hasFocus();
-        //mWebView.removeView(this);
-        //if (isFocused) {
-            //mWebView.requestFocus();
-        //}
-        //mInsideRemove = false;
-        //mHandler.removeCallbacksAndMessages(null);
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -879,20 +894,22 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         addTaint(immediate);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_372279776 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_372279776;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.219 -0400", hash_original_method = "950AB6742CC7236DE25064405668EBFC", hash_generated_method = "396D2A9A5FE83ACAC0DC89C9320D6361")
     private void sendDomEvent(KeyEvent event) {
         mWebView.passToJavaScript(getText().toString(), event);
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //mWebView.passToJavaScript(getText().toString(), event);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.220 -0400", hash_original_method = "95851FC5190E2011BB56B8769701FDF9", hash_generated_method = "E8219A698D2FBA36049F4B23E2CC0214")
     public void setAdapterCustom(AutoCompleteAdapter adapter) {
         {
@@ -901,32 +918,32 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
             adapter.setTextView(this);
             {
                 setOnItemClickListener(this);
-            } //End block
+            } 
             {
                 setOnItemClickListener(null);
-            } //End block
+            } 
             showDropDown();
-        } //End block
+        } 
         {
             dismissDropDown();
-        } //End block
+        } 
         super.setAdapter(adapter);
         addTaint(adapter.getTaint());
-        // ---------- Original Method ----------
-        //if (adapter != null) {
-            //setInputType(getInputType()
-                    //| InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE);
-            //adapter.setTextView(this);
-            //if (mAutoFillable) {
-                //setOnItemClickListener(this);
-            //} else {
-                //setOnItemClickListener(null);
-            //}
-            //showDropDown();
-        //} else {
-            //dismissDropDown();
-        //}
-        //super.setAdapter(adapter);
+        
+        
+            
+                    
+            
+            
+                
+            
+                
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -942,28 +959,29 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
             {
                 {
                     mWebView.setSelection(selection, selection);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 Selection.setSelection(text, selection, selection);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mWebView.incrementTextGeneration();
-        // ---------- Original Method ----------
-        //Spannable text = (Spannable) getText();
-        //int selection = mSingle ? text.length() : 0;
-        //if (Selection.getSelectionStart(text) == selection
-                //&& Selection.getSelectionEnd(text) == selection) {
-            //if (mWebView != null) {
-                //mWebView.setSelection(selection, selection);
-            //}
-        //} else {
-            //Selection.setSelection(text, selection, selection);
-        //}
-        //if (mWebView != null) mWebView.incrementTextGeneration();
+        
+        
+        
+        
+                
+            
+                
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.221 -0400", hash_original_method = "5F3F3B089AD7E0D8B5861A9F4DCE5D55", hash_generated_method = "53B0753D53166C12354A2B62A3B07A9E")
     @Override
     public void setInputType(int type) {
@@ -971,31 +989,32 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         super.setInputType(type);
         mFromSetInputType = false;
         addTaint(type);
-        // ---------- Original Method ----------
-        //mFromSetInputType = true;
-        //super.setInputType(type);
-        //mFromSetInputType = false;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.222 -0400", hash_original_method = "6C4324E77F1CB780AA79022DD606C31E", hash_generated_method = "65A7D4B6B0972AC9343C484B2DC39669")
     private void setMaxLength(int maxLength) {
         mMaxLength = maxLength;
         {
             setFilters(NO_FILTERS);
-        } //End block
+        } 
         {
             setFilters(new InputFilter[] {
                 new InputFilter.LengthFilter(maxLength) });
-        } //End block
-        // ---------- Original Method ----------
-        //mMaxLength = maxLength;
-        //if (-1 == maxLength) {
-            //setFilters(NO_FILTERS);
-        //} else {
-            //setFilters(new InputFilter[] {
-                //new InputFilter.LengthFilter(maxLength) });
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+                
+        
     }
 
     
@@ -1004,12 +1023,12 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         {
             mNodePointer = ptr;
             setAdapterCustom(null);
-        } //End block
-        // ---------- Original Method ----------
-        //if (ptr != mNodePointer) {
-            //mNodePointer = ptr;
-            //setAdapterCustom(null);
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -1023,7 +1042,7 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         boolean needsUpdate = false;
         {
             lp = new LayoutParams(width, height, x, y);
-        } //End block
+        } 
         {
             {
                 needsUpdate = true;
@@ -1031,23 +1050,23 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
                 lp.y = y;
                 lp.width = width;
                 lp.height = height;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean var88AD79EA276C28AD3B3469360BCE1788_1320576602 = (getParent() == null);
             {
                 mWebView.addView(this, 0, lp);
-            } //End block
+            } 
             {
                 setLayoutParams(lp);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mWidthSpec = MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY);
         mHeightSpec = MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY);
         addTaint(x);
         addTaint(y);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1060,14 +1079,14 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         mFromWebKit = false;
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //if (start < 0 || end < 0) return;
-        //Spannable text = (Spannable) getText();
-        //int length = text.length();
-        //if (start > length || end > length) return;
-        //mFromWebKit = true;
-        //Selection.setSelection(text, start, end);
-        //mFromWebKit = false;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1078,12 +1097,12 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         float size = mWebView.nativeFocusCandidateTextSize()
                 * mWebView.getScale();
         setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
-        // ---------- Original Method ----------
-        //Assert.assertNotNull("updateTextSize should only be called from "
-                //+ "mWebView, so mWebView should never be null!", mWebView);
-        //float size = mWebView.nativeFocusCandidateTextSize()
-                //* mWebView.getScale();
-        //setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
+        
+        
+                
+        
+                
+        
     }
 
     
@@ -1093,7 +1112,7 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         mPreChange = text;
         {
             boolean var5432E2777F3E47E5271ACDBBC7473721_1516264440 = (edit.toString().equals(text));
-        } //End collapsed parenthetic
+        } 
         int selStart = Selection.getSelectionStart(edit);
         int selEnd = Selection.getSelectionEnd(edit);
         mInSetTextAndKeepSelection = true;
@@ -1108,29 +1127,29 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
             boolean varA8F5F3E7D2555623A6FFCFE24BB87152_1812349341 = (imm != null && imm.isActive(this));
             {
                 imm.restartInput(this);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         updateCachedTextfield();
-        // ---------- Original Method ----------
-        //Editable edit = getText();
-        //mPreChange = text;
-        //if (edit.toString().equals(text)) {
-            //return;
-        //}
-        //int selStart = Selection.getSelectionStart(edit);
-        //int selEnd = Selection.getSelectionEnd(edit);
-        //mInSetTextAndKeepSelection = true;
-        //edit.replace(0, edit.length(), text);
-        //int newLength = edit.length();
-        //if (selStart > newLength) selStart = newLength;
-        //if (selEnd > newLength) selEnd = newLength;
-        //Selection.setSelection(edit, selStart, selEnd);
-        //mInSetTextAndKeepSelection = false;
-        //InputMethodManager imm = InputMethodManager.peekInstance();
-        //if (imm != null && imm.isActive(this)) {
-            //imm.restartInput(this);
-        //}
-        //updateCachedTextfield();
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1146,64 +1165,64 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
             boolean var3E3815771BE6F168CB2B354EC011EE17_2122612920 = (!mWebView.nativeFocusCandidateIsSpellcheck());
             {
                 inputType |= InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var44F922C57DB3172B2082134B01A29DB9_21947257 = (TEXT_AREA != type
                 && mWebView.nativeFocusCandidateHasNextTextfield());
             {
                 imeOptions |= EditorInfo.IME_FLAG_NAVIGATE_NEXT;
-            } //End block
-        } //End collapsed parenthetic
-        //Begin case NORMAL_TEXT_FIELD 
+            } 
+        } 
+        
         imeOptions |= EditorInfo.IME_ACTION_GO;
-        //End case NORMAL_TEXT_FIELD 
-        //Begin case TEXT_AREA 
+        
+        
         single = false;
-        //End case TEXT_AREA 
-        //Begin case TEXT_AREA 
+        
+        
         inputType |= InputType.TYPE_TEXT_FLAG_MULTI_LINE
                         | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
                         | InputType.TYPE_TEXT_FLAG_AUTO_CORRECT;
-        //End case TEXT_AREA 
-        //Begin case TEXT_AREA 
+        
+        
         imeOptions |= EditorInfo.IME_ACTION_NONE;
-        //End case TEXT_AREA 
-        //Begin case PASSWORD 
+        
+        
         inputType |= EditorInfo.TYPE_TEXT_VARIATION_WEB_PASSWORD;
-        //End case PASSWORD 
-        //Begin case PASSWORD 
+        
+        
         imeOptions |= EditorInfo.IME_ACTION_GO;
-        //End case PASSWORD 
-        //Begin case SEARCH 
+        
+        
         imeOptions |= EditorInfo.IME_ACTION_SEARCH;
-        //End case SEARCH 
-        //Begin case EMAIL 
+        
+        
         inputType = InputType.TYPE_CLASS_TEXT
                         | InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS;
-        //End case EMAIL 
-        //Begin case EMAIL 
+        
+        
         imeOptions |= EditorInfo.IME_ACTION_GO;
-        //End case EMAIL 
-        //Begin case NUMBER 
+        
+        
         inputType = InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL
                         | InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL;
-        //End case NUMBER 
-        //Begin case NUMBER 
+        
+        
         imeOptions |= EditorInfo.IME_ACTION_NEXT;
-        //End case NUMBER 
-        //Begin case TELEPHONE 
+        
+        
         inputType = InputType.TYPE_CLASS_PHONE;
-        //End case TELEPHONE 
-        //Begin case TELEPHONE 
+        
+        
         imeOptions |= EditorInfo.IME_ACTION_NEXT;
-        //End case TELEPHONE 
-        //Begin case URL 
+        
+        
         imeOptions |= EditorInfo.IME_ACTION_GO;
-        //End case URL 
-        //Begin case default 
+        
+        
         imeOptions |= EditorInfo.IME_ACTION_GO;
-        //End case default 
+        
         setHint(null);
         setThreshold(1);
         boolean autoComplete = false;
@@ -1219,10 +1238,10 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
                     {
                         mWebView.requestFormData(name, mNodePointer, mAutoFillable,
                             autoComplete);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         mSingle = single;
         setMaxLength(maxLength);
         setHorizontallyScrolling(single);
@@ -1232,30 +1251,31 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         setVisibility(VISIBLE);
         {
             setAdapterCustom(null);
-        } //End block
+        } 
         addTaint(type);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.226 -0400", hash_original_method = "DC0208EAD79A0BCADD603C831599A0E0", hash_generated_method = "353A0AED74824F2EAB6775FEEFC50847")
      void updateCachedTextfield() {
         mWebView.updateCachedTextfield(getText().toString());
-        // ---------- Original Method ----------
-        //mWebView.updateCachedTextfield(getText().toString());
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.227 -0400", hash_original_method = "E906B54723AD6F9ED79F8F4825A6BCDE", hash_generated_method = "00DFCCEAEBCA5AF7E29ED7EACECB08F0")
      void setAutoFillProfileIsSet(boolean autoFillProfileIsSet) {
         mAutoFillProfileIsSet = autoFillProfileIsSet;
-        // ---------- Original Method ----------
-        //mAutoFillProfileIsSet = autoFillProfileIsSet;
+        
+        
     }
 
     
-        static String urlForAutoCompleteData(String urlString) {
+        @DSModeled(DSC.SAFE)
+    static String urlForAutoCompleteData(String urlString) {
         URL url = null;
         try {
             url = new URL(urlString);
@@ -1266,6 +1286,7 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.227 -0400", hash_original_method = "4A2837BA61927EB8FB72E630E60D5F6F", hash_generated_method = "F69E1B7B32D599014467719A0F2018E4")
     public void setGravityForRtl(boolean rtl) {
         int gravity;
@@ -1274,10 +1295,10 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         gravity |= mSingle ? Gravity.CENTER_VERTICAL : Gravity.TOP;
         setGravity(gravity);
         addTaint(rtl);
-        // ---------- Original Method ----------
-        //int gravity = rtl ? Gravity.RIGHT : Gravity.LEFT;
-        //gravity |= mSingle ? Gravity.CENTER_VERTICAL : Gravity.TOP;
-        //setGravity(gravity);
+        
+        
+        
+        
     }
 
     
@@ -1287,24 +1308,24 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         public  MyResultReceiver(Handler handler) {
             super(handler);
             addTaint(handler.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.228 -0400", hash_original_method = "8968B16CB33DBBA966B5E497FFEF8D80", hash_generated_method = "EFC129D13CAE4BD8DF24A8EBEF95758D")
         @Override
         protected void onReceiveResult(int resultCode, Bundle resultData) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 mWebView.revealSelection();
-            } //End block
+            } 
             addTaint(resultCode);
             addTaint(resultData.getTaint());
-            // ---------- Original Method ----------
-            //if (resultCode == InputMethodManager.RESULT_SHOWN
-                    //&& mWebView != null) {
-                //mWebView.revealSelection();
-            //}
+            
+            
+                    
+                
+            
         }
 
         
@@ -1328,10 +1349,10 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
             mPaint = new Paint();
             mPaint.setStrokeWidth(width);
             mBorderWidth = width;
-            // ---------- Original Method ----------
-            //mPaint = new Paint();
-            //mPaint.setStrokeWidth(width);
-            //mBorderWidth = width;
+            
+            
+            
+            
         }
 
         
@@ -1347,15 +1368,15 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
             mPaint.setColor(Color.WHITE);
             canvas.drawRect(mInsetRect, mPaint);
             addTaint(canvas.getTaint());
-            // ---------- Original Method ----------
-            //mPaint.setColor(0x6633b5e5);
-            //canvas.drawRect(getBounds(), mPaint);
-            //mInsetRect.left = getBounds().left + mBorderWidth;
-            //mInsetRect.top = getBounds().top + mBorderWidth;
-            //mInsetRect.right = getBounds().right - mBorderWidth;
-            //mInsetRect.bottom = getBounds().bottom - mBorderWidth;
-            //mPaint.setColor(Color.WHITE);
-            //canvas.drawRect(mInsetRect, mPaint);
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1363,7 +1384,7 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         @Override
         public void setAlpha(int alpha) {
             addTaint(alpha);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1371,7 +1392,7 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         @Override
         public void setColorFilter(ColorFilter cf) {
             addTaint(cf.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1380,8 +1401,8 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
         public int getOpacity() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1961315095 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1961315095;
-            // ---------- Original Method ----------
-            //return PixelFormat.TRANSLUCENT;
+            
+            
         }
 
         
@@ -1411,11 +1432,11 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
             {
                 mLineHeight = paintLineHeight;
                 mDifference = 0f;
-            } //End block
+            } 
             {
                 mLineHeight = lineHeight;
                 mDifference = (lineHeight - paintLineHeight) / 2;
-            } //End block
+            } 
             addTaint(base.getTaint());
             addTaint(display.getTaint());
             addTaint(paint.getTaint());
@@ -1426,15 +1447,15 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
             addTaint(includepad);
             addTaint(ellipsize.getTaint());
             addTaint(ellipsizedWidth);
-            // ---------- Original Method ----------
-            //float paintLineHeight = paint.descent() - paint.ascent();
-            //if (lineHeight == -1f) {
-                //mLineHeight = paintLineHeight;
-                //mDifference = 0f;
-            //} else {
-                //mLineHeight = lineHeight;
-                //mDifference = (lineHeight - paintLineHeight) / 2;
-            //}
+            
+            
+            
+                
+                
+            
+                
+                
+            
         }
 
         
@@ -1445,8 +1466,8 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
             addTaint(line);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1195637778 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1195637778;
-            // ---------- Original Method ----------
-            //return Math.round(mLineHeight * line - mDifference);
+            
+            
         }
 
         
@@ -1465,39 +1486,39 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
                     .web_text_view_dropdown, entries);
             addTaint(context.getTaint());
             addTaint(entries.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.233 -0400", hash_original_method = "C6FC0517987C8200BB760FE857B81ECC", hash_generated_method = "B889999E03F2AFA3A45A3C41D832FB4E")
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            View varB4EAC82CA7396A68D541C85D26508E83_1664771621 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_1664771621 = null; 
             TextView tv = (TextView) super.getView(position, convertView, parent);
             {
                 tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextView.getTextSize());
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1664771621 = tv;
             addTaint(position);
             addTaint(convertView.getTaint());
             addTaint(parent.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1664771621.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1664771621.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1664771621;
-            // ---------- Original Method ----------
-            //TextView tv =
-                    //(TextView) super.getView(position, convertView, parent);
-            //if (tv != null && mTextView != null) {
-                //tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextView.getTextSize());
-            //}
-            //return tv;
+            
+            
+                    
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.233 -0400", hash_original_method = "C453A8A8AADC44244B92E3146B6F4B07", hash_generated_method = "E29443429247A5B5E60DF42163779843")
         private void setTextView(TextView tv) {
             mTextView = tv;
-            // ---------- Original Method ----------
-            //mTextView = tv;
+            
+            
         }
 
         

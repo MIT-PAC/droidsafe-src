@@ -1,11 +1,11 @@
 package org.apache.http.conn.ssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.conn.scheme.HostNameResolver;
 import org.apache.http.conn.scheme.LayeredSocketFactory;
@@ -55,15 +55,15 @@ public class SSLSocketFactory implements LayeredSocketFactory {
         super();
         {
             algorithm = TLS;
-        } //End block
+        } 
         KeyManager[] keymanagers = null;
         {
             keymanagers = createKeyManagers(keystore, keystorePassword);
-        } //End block
+        } 
         TrustManager[] trustmanagers = null;
         {
             trustmanagers = createTrustManagers(truststore);
-        } //End block
+        } 
         this.sslcontext = SSLContext.getInstance(algorithm);
         this.sslcontext.init(keymanagers, trustmanagers, random);
         this.socketfactory = this.sslcontext.getSocketFactory();
@@ -72,22 +72,22 @@ public class SSLSocketFactory implements LayeredSocketFactory {
         addTaint(keystorePassword.getTaint());
         addTaint(truststore.getTaint());
         addTaint(random.getTaint());
-        // ---------- Original Method ----------
-        //if (algorithm == null) {
-            //algorithm = TLS;
-        //}
-        //KeyManager[] keymanagers = null;
-        //if (keystore != null) {
-            //keymanagers = createKeyManagers(keystore, keystorePassword);
-        //}
-        //TrustManager[] trustmanagers = null;
-        //if (truststore != null) {
-            //trustmanagers = createTrustManagers(truststore);
-        //}
-        //this.sslcontext = SSLContext.getInstance(algorithm);
-        //this.sslcontext.init(keymanagers, trustmanagers, random);
-        //this.socketfactory = this.sslcontext.getSocketFactory();
-        //this.nameResolver = nameResolver;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -100,7 +100,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
         addTaint(keystore.getTaint());
         addTaint(keystorePassword.getTaint());
         addTaint(truststore.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -109,7 +109,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
         this(TLS, keystore, keystorePassword, null, null, null);
         addTaint(keystore.getTaint());
         addTaint(keystorePassword.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -117,7 +117,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     public  SSLSocketFactory(final KeyStore truststore) throws NoSuchAlgorithmException, KeyManagementException, KeyStoreException, UnrecoverableKeyException {
         this(TLS, null, null, truststore, null, null);
         addTaint(truststore.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -127,10 +127,10 @@ public class SSLSocketFactory implements LayeredSocketFactory {
         this.sslcontext = null;
         this.socketfactory = socketfactory;
         this.nameResolver = null;
-        // ---------- Original Method ----------
-        //this.sslcontext = null;
-        //this.socketfactory = socketfactory;
-        //this.nameResolver = null;
+        
+        
+        
+        
     }
 
     
@@ -140,10 +140,10 @@ public class SSLSocketFactory implements LayeredSocketFactory {
         this.sslcontext = null;
         this.socketfactory = HttpsURLConnection.getDefaultSSLSocketFactory();
         this.nameResolver = null;
-        // ---------- Original Method ----------
-        //this.sslcontext = null;
-        //this.socketfactory = HttpsURLConnection.getDefaultSSLSocketFactory();
-        //this.nameResolver = null;
+        
+        
+        
+        
     }
 
     
@@ -176,12 +176,12 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.458 -0400", hash_original_method = "63050927494CC5AD1D14809EA278FFBF", hash_generated_method = "B9AF274FBCAA990DD3DA8B302C011282")
     public Socket createSocket() throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_845596091 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_845596091 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_845596091 = (SSLSocket) this.socketfactory.createSocket();
-        varB4EAC82CA7396A68D541C85D26508E83_845596091.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_845596091.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_845596091;
-        // ---------- Original Method ----------
-        //return (SSLSocket) this.socketfactory.createSocket();
+        
+        
     }
 
     
@@ -194,45 +194,45 @@ public class SSLSocketFactory implements LayeredSocketFactory {
         int localPort,
         final HttpParams params
     ) throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_328808530 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_328808530 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Target host may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Parameters may not be null.");
-        } //End block
+        } 
         SSLSocket sslsock = (SSLSocket)
-            ((sock != null) ? sock : createSocket());//DSFIXME:  CODE0008: Nested ternary operator in expression
+            ((sock != null) ? sock : createSocket());
         {
             localPort = 0;
             InetSocketAddress isa = new InetSocketAddress(localAddress, localPort);
             sslsock.bind(isa);
-        } //End block
+        } 
         int connTimeout = HttpConnectionParams.getConnectionTimeout(params);
         int soTimeout = HttpConnectionParams.getSoTimeout(params);
         InetSocketAddress remoteAddress;
         {
             remoteAddress = new InetSocketAddress(this.nameResolver.resolve(host), port);
-        } //End block
+        } 
         {
             remoteAddress = new InetSocketAddress(host, port);
-        } //End block
+        } 
         sslsock.connect(remoteAddress, connTimeout);
         sslsock.setSoTimeout(soTimeout);
         try 
         {
             hostnameVerifier.verify(host, sslsock);
-        } //End block
+        } 
         catch (IOException iox)
         {
             try 
             {
                 sslsock.close();
-            } //End block
+            } 
             catch (Exception x)
             { }
             if (DroidSafeAndroidRuntime.control) throw iox;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_328808530 = sslsock;
         addTaint(sock.getTaint());
         addTaint(host.getTaint());
@@ -240,10 +240,10 @@ public class SSLSocketFactory implements LayeredSocketFactory {
         addTaint(localAddress.getTaint());
         addTaint(localPort);
         addTaint(params.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_328808530.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_328808530.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_328808530;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -251,32 +251,32 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     public boolean isSecure(Socket sock) throws IllegalArgumentException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Socket may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Socket not created by this factory.");
-        } //End block
+        } 
         {
             boolean varEFCDCF8D21AE7A43F6220E08DD901C1F_1199795897 = (sock.isClosed());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Socket is closed.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(sock.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1004953038 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1004953038;
-        // ---------- Original Method ----------
-        //if (sock == null) {
-            //throw new IllegalArgumentException("Socket may not be null.");
-        //}
-        //if (!(sock instanceof SSLSocket)) {
-            //throw new IllegalArgumentException
-                //("Socket not created by this factory.");
-        //}
-        //if (sock.isClosed()) {
-            //throw new IllegalArgumentException("Socket is closed.");
-        //}
-        //return true;
+        
+        
+            
+        
+        
+            
+                
+        
+        
+            
+        
+        
     }
 
     
@@ -287,7 +287,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
         final int port,
         final boolean autoClose
     ) throws IOException, UnknownHostException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1159184700 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1159184700 = null; 
         SSLSocket sslSocket = (SSLSocket) this.socketfactory.createSocket(
               socket,
               host,
@@ -300,42 +300,43 @@ public class SSLSocketFactory implements LayeredSocketFactory {
         addTaint(host.getTaint());
         addTaint(port);
         addTaint(autoClose);
-        varB4EAC82CA7396A68D541C85D26508E83_1159184700.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1159184700.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1159184700;
-        // ---------- Original Method ----------
-        //SSLSocket sslSocket = (SSLSocket) this.socketfactory.createSocket(
-              //socket,
-              //host,
-              //port,
-              //autoClose
-        //);
-        //hostnameVerifier.verify(host, sslSocket);
-        //return sslSocket;
+        
+        
+              
+              
+              
+              
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.461 -0400", hash_original_method = "CE9A92F10A15AE99F29896C9A2E4D993", hash_generated_method = "F7A04765D809E3C1C76E14DCD7B9E80C")
     public void setHostnameVerifier(X509HostnameVerifier hostnameVerifier) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Hostname verifier may not be null");
-        } //End block
+        } 
         this.hostnameVerifier = hostnameVerifier;
-        // ---------- Original Method ----------
-        //if ( hostnameVerifier == null ) {
-            //throw new IllegalArgumentException("Hostname verifier may not be null");
-        //}
-        //this.hostnameVerifier = hostnameVerifier;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.462 -0400", hash_original_method = "E4B056341E706F6A6ED43C64885CAEDA", hash_generated_method = "2724D5A3BF02BE0511658D8A5511035E")
     public X509HostnameVerifier getHostnameVerifier() {
-        X509HostnameVerifier varB4EAC82CA7396A68D541C85D26508E83_2094135125 = null; //Variable for return #1
+        X509HostnameVerifier varB4EAC82CA7396A68D541C85D26508E83_2094135125 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2094135125 = hostnameVerifier;
-        varB4EAC82CA7396A68D541C85D26508E83_2094135125.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2094135125.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2094135125;
-        // ---------- Original Method ----------
-        //return hostnameVerifier;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package gov.nist.javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.EventObject;
 import javax.sip.Dialog;
@@ -24,31 +24,31 @@ public class DialogTimeoutEvent extends EventObject {
         m_dialog = dialog;
         m_reason = reason;
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
-        //m_dialog = dialog;
-        //m_reason = reason;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:37.531 -0400", hash_original_method = "7F25FD43FBEFC286B46F28F64DA890F2", hash_generated_method = "1176ADDDF575C4CEDED8B4E0B444C345")
     public Dialog getDialog() {
-        Dialog varB4EAC82CA7396A68D541C85D26508E83_1822073959 = null; //Variable for return #1
+        Dialog varB4EAC82CA7396A68D541C85D26508E83_1822073959 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1822073959 = m_dialog;
-        varB4EAC82CA7396A68D541C85D26508E83_1822073959.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1822073959.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1822073959;
-        // ---------- Original Method ----------
-        //return m_dialog;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:37.531 -0400", hash_original_method = "212BB72EC2D919554993B4E6C5F238C1", hash_generated_method = "E89BBE85BC40D1B249031D7B491B834B")
     public Reason getReason() {
-        Reason varB4EAC82CA7396A68D541C85D26508E83_1080539421 = null; //Variable for return #1
+        Reason varB4EAC82CA7396A68D541C85D26508E83_1080539421 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1080539421 = m_reason;
-        varB4EAC82CA7396A68D541C85D26508E83_1080539421.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1080539421.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1080539421;
-        // ---------- Original Method ----------
-        //return m_reason;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
@@ -39,10 +39,10 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         value = EmptyArray.CHAR;
         offset = 0;
         count = 0;
-        // ---------- Original Method ----------
-        //value = EmptyArray.CHAR;
-        //offset = 0;
-        //count = 0;
+        
+        
+        
+        
     }
 
     
@@ -54,12 +54,12 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         count = s.count + 1;
         System.arraycopy(s.value, s.offset, value, 0, s.count);
         value[s.count] = c;
-        // ---------- Original Method ----------
-        //offset = 0;
-        //value = new char[s.count + 1];
-        //count = s.count + 1;
-        //System.arraycopy(s.value, s.offset, value, 0, s.count);
-        //value[s.count] = c;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -68,7 +68,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     public  String(byte[] data) {
         this(data, 0, data.length);
         addTaint(data[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -78,7 +78,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         this(data, high, 0, data.length);
         addTaint(data[0]);
         addTaint(high);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -86,30 +86,30 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     public  String(byte[] data, int offset, int byteCount) {
         {
             if (DroidSafeAndroidRuntime.control) throw failedBoundsCheck(data.length, offset, byteCount);
-        } //End block
+        } 
         CharBuffer cb = Charset.defaultCharset().decode(ByteBuffer.wrap(data, offset, byteCount));
         this.count = cb.length();
         this.offset = 0;
         {
             value = cb.array();
-        } //End block
+        } 
         {
             value = EmptyArray.CHAR;
-        } //End block
+        } 
         addTaint(data[0]);
         addTaint(byteCount);
-        // ---------- Original Method ----------
-        //if ((offset | byteCount) < 0 || byteCount > data.length - offset) {
-            //throw failedBoundsCheck(data.length, offset, byteCount);
-        //}
-        //CharBuffer cb = Charset.defaultCharset().decode(ByteBuffer.wrap(data, offset, byteCount));
-        //this.count = cb.length();
-        //this.offset = 0;
-        //if (count > 0) {
-            //value = cb.array();
-        //} else {
-            //value = EmptyArray.CHAR;
-        //}
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -118,7 +118,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     public  String(byte[] data, int high, int offset, int byteCount) {
         {
             if (DroidSafeAndroidRuntime.control) throw failedBoundsCheck(data.length, offset, byteCount);
-        } //End block
+        } 
         this.offset = 0;
         this.value = new char[byteCount];
         this.count = byteCount;
@@ -127,19 +127,19 @@ public final class String implements Serializable, Comparable<String>, CharSeque
             int i = 0;
             {
                 value[i] = (char) (high + (data[offset++] & 0xff));
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if ((offset | byteCount) < 0 || byteCount > data.length - offset) {
-            //throw failedBoundsCheck(data.length, offset, byteCount);
-        //}
-        //this.offset = 0;
-        //this.value = new char[byteCount];
-        //this.count = byteCount;
-        //high <<= 8;
-        //for (int i = 0; i < count; i++) {
-            //value[i] = (char) (high + (data[offset++] & 0xff));
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -150,7 +150,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         addTaint(offset);
         addTaint(byteCount);
         addTaint(charsetName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -159,7 +159,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         this(data, 0, data.length, Charset.forNameUEE(charsetName));
         addTaint(data[0]);
         addTaint(charsetName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -167,7 +167,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     public  String(byte[] data, int offset, int byteCount, Charset charset) {
         {
             if (DroidSafeAndroidRuntime.control) throw failedBoundsCheck(data.length, offset, byteCount);
-        } //End block
+        } 
         String canonicalCharsetName = charset.name();
         {
             boolean var0E259348489811E6C7821E4884476552_1465278296 = (canonicalCharsetName.equals("UTF-8"));
@@ -182,7 +182,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                     {
                         int val = b0 & 0xff;
                         v[s++] = (char) val;
-                    } //End block
+                    } 
                     {
                         int utfCount = 1;
                         utfCount = 2;
@@ -191,7 +191,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                         utfCount = 5;
                         {
                             v[s++] = REPLACEMENT_CHAR;
-                        } //End block
+                        } 
                         int val = b0 & (0x1f >> (utfCount - 1));
                         {
                             int i = 0;
@@ -199,20 +199,20 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                                 byte b = d[idx++];
                                 {
                                     v[s++] = REPLACEMENT_CHAR;
-                                } //End block
+                                } 
                                 val <<= 6;
                                 val |= b & 0x3f;
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             v[s++] = REPLACEMENT_CHAR;
-                        } //End block
+                        } 
                         {
                             v[s++] = REPLACEMENT_CHAR;
-                        } //End block
+                        } 
                         {
                             v[s++] = (char) val;
-                        } //End block
+                        } 
                         {
                             int x = val & 0xffff;
                             int u = (val >> 16) & 0x1f;
@@ -221,24 +221,24 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                             int lo = 0xdc00 | (x & 0x3ff);
                             v[s++] = (char) hi;
                             v[s++] = (char) lo;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         v[s++] = REPLACEMENT_CHAR;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     this.offset = 0;
                     this.value = v;
                     this.count = s;
-                } //End block
+                } 
                 {
                     this.offset = 0;
                     this.value = new char[s];
                     this.count = s;
                     System.arraycopy(v, 0, value, 0, s);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 boolean var2031B49659F344E6C3E3DB6AFAE490EC_1767574675 = (canonicalCharsetName.equals("ISO-8859-1"));
                 {
@@ -246,7 +246,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                     this.value = new char[byteCount];
                     this.count = byteCount;
                     Charsets.isoLatin1BytesToChars(data, offset, byteCount, value);
-                } //End block
+                } 
                 {
                     boolean var0569C8B22675C76A7219D23CD23689EC_498976251 = (canonicalCharsetName.equals("US-ASCII"));
                     {
@@ -254,7 +254,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                         this.value = new char[byteCount];
                         this.count = byteCount;
                         Charsets.asciiBytesToChars(data, offset, byteCount, value);
-                    } //End block
+                    } 
                     {
                         CharBuffer cb = charset.decode(ByteBuffer.wrap(data, offset, byteCount));
                         this.offset = 0;
@@ -262,18 +262,18 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                         {
                             this.value = new char[count];
                             System.arraycopy(cb.array(), 0, value, 0, count);
-                        } //End block
+                        } 
                         {
                             this.value = EmptyArray.CHAR;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(data[0]);
         addTaint(charset.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -282,7 +282,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         this(data, 0, data.length, charset);
         addTaint(data[0]);
         addTaint(charset.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -290,7 +290,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     public  String(char[] data) {
         this(data, 0, data.length);
         addTaint(data[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -298,20 +298,20 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     public  String(char[] data, int offset, int charCount) {
         {
             if (DroidSafeAndroidRuntime.control) throw failedBoundsCheck(data.length, offset, charCount);
-        } //End block
+        } 
         this.offset = 0;
         this.value = new char[charCount];
         this.count = charCount;
         System.arraycopy(data, offset, value, 0, count);
         addTaint(data[0]);
-        // ---------- Original Method ----------
-        //if ((offset | charCount) < 0 || charCount > data.length - offset) {
-            //throw failedBoundsCheck(data.length, offset, charCount);
-        //}
-        //this.offset = 0;
-        //this.value = new char[charCount];
-        //this.count = charCount;
-        //System.arraycopy(data, offset, value, 0, count);
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -320,10 +320,10 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         this.value = chars;
         this.offset = offset;
         this.count = charCount;
-        // ---------- Original Method ----------
-        //this.value = chars;
-        //this.offset = offset;
-        //this.count = charCount;
+        
+        
+        
+        
     }
 
     
@@ -334,12 +334,12 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                 : Arrays.copyOfRange(toCopy.value, toCopy.offset, toCopy.offset + toCopy.length());
         offset = 0;
         count = value.length;
-        // ---------- Original Method ----------
-        //value = (toCopy.value.length == toCopy.count)
-                //? toCopy.value
-                //: Arrays.copyOfRange(toCopy.value, toCopy.offset, toCopy.offset + toCopy.length());
-        //offset = 0;
-        //count = value.length;
+        
+        
+                
+                
+        
+        
     }
 
     
@@ -348,27 +348,27 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     private  String(String s1, String s2) {
         {
             s1 = "null";
-        } //End block
+        } 
         {
             s2 = "null";
-        } //End block
+        } 
         count = s1.count + s2.count;
         value = new char[count];
         offset = 0;
         System.arraycopy(s1.value, s1.offset, value, 0, s1.count);
         System.arraycopy(s2.value, s2.offset, value, s1.count, s2.count);
-        // ---------- Original Method ----------
-        //if (s1 == null) {
-            //s1 = "null";
-        //}
-        //if (s2 == null) {
-            //s2 = "null";
-        //}
-        //count = s1.count + s2.count;
-        //value = new char[count];
-        //offset = 0;
-        //System.arraycopy(s1.value, s1.offset, value, 0, s1.count);
-        //System.arraycopy(s2.value, s2.offset, value, s1.count, s2.count);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -377,35 +377,35 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     private  String(String s1, String s2, String s3) {
         {
             s1 = "null";
-        } //End block
+        } 
         {
             s2 = "null";
-        } //End block
+        } 
         {
             s3 = "null";
-        } //End block
+        } 
         count = s1.count + s2.count + s3.count;
         value = new char[count];
         offset = 0;
         System.arraycopy(s1.value, s1.offset, value, 0, s1.count);
         System.arraycopy(s2.value, s2.offset, value, s1.count, s2.count);
         System.arraycopy(s3.value, s3.offset, value, s1.count + s2.count, s3.count);
-        // ---------- Original Method ----------
-        //if (s1 == null) {
-            //s1 = "null";
-        //}
-        //if (s2 == null) {
-            //s2 = "null";
-        //}
-        //if (s3 == null) {
-            //s3 = "null";
-        //}
-        //count = s1.count + s2.count + s3.count;
-        //value = new char[count];
-        //offset = 0;
-        //System.arraycopy(s1.value, s1.offset, value, 0, s1.count);
-        //System.arraycopy(s2.value, s2.offset, value, s1.count, s2.count);
-        //System.arraycopy(s3.value, s3.offset, value, s1.count + s2.count, s3.count);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -415,13 +415,13 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         {
             value = stringBuffer.shareValue();
             count = stringBuffer.length();
-        } //End block
-        // ---------- Original Method ----------
-        //offset = 0;
-        //synchronized (stringBuffer) {
-            //value = stringBuffer.shareValue();
-            //count = stringBuffer.length();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -429,10 +429,10 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     public  String(int[] codePoints, int offset, int count) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw failedBoundsCheck(codePoints.length, offset, count);
-        } //End block
+        } 
         this.offset = 0;
         this.value = new char[count * 2];
         int end = offset + count;
@@ -441,25 +441,25 @@ public final class String implements Serializable, Comparable<String>, CharSeque
             int i = offset;
             {
                 c += Character.toChars(codePoints[i], this.value, c);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.count = c;
         addTaint(codePoints[0]);
-        // ---------- Original Method ----------
-        //if (codePoints == null) {
-            //throw new NullPointerException();
-        //}
-        //if ((offset | count) < 0 || count > codePoints.length - offset) {
-            //throw failedBoundsCheck(codePoints.length, offset, count);
-        //}
-        //this.offset = 0;
-        //this.value = new char[count * 2];
-        //int end = offset + count;
-        //int c = 0;
-        //for (int i = offset; i < end; i++) {
-            //c += Character.toChars(codePoints[i], this.value, c);
-        //}
-        //this.count = c;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -467,19 +467,19 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     public  String(StringBuilder stringBuilder) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("stringBuilder == null");
-        } //End block
+        } 
         this.offset = 0;
         this.count = stringBuilder.length();
         this.value = new char[this.count];
         stringBuilder.getChars(0, this.count, this.value, 0);
-        // ---------- Original Method ----------
-        //if (stringBuilder == null) {
-            //throw new NullPointerException("stringBuilder == null");
-        //}
-        //this.offset = 0;
-        //this.count = stringBuilder.length();
-        //this.value = new char[this.count];
-        //stringBuilder.getChars(0, this.count, this.value, 0);
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -488,7 +488,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     private  String(String s1, int v1) {
         {
             s1 = "null";
-        } //End block
+        } 
         String s2 = String.valueOf(v1);
         int len = s1.count + s2.count;
         value = new char[len];
@@ -498,17 +498,17 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         count = len;
         addTaint(s1.getTaint());
         addTaint(v1);
-        // ---------- Original Method ----------
-        //if (s1 == null) {
-            //s1 = "null";
-        //}
-        //String s2 = String.valueOf(v1);
-        //int len = s1.count + s2.count;
-        //value = new char[len];
-        //offset = 0;
-        //System.arraycopy(s1.value, s1.offset, value, 0, s1.count);
-        //System.arraycopy(s2.value, s2.offset, value, s1.count, s2.count);
-        //count = len;
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -519,27 +519,30 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.850 -0400", hash_original_method = "00E4125D0AA58BE2E1232BB5FC2C4846", hash_generated_method = "7AB291E3C15F71928CD72C5D3C710C9E")
     private StringIndexOutOfBoundsException indexAndLength(int index) {
         
         addTaint(index);
         throw new StringIndexOutOfBoundsException(this, index);
-        // ---------- Original Method ----------
-        //throw new StringIndexOutOfBoundsException(this, index);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.851 -0400", hash_original_method = "C5BE1ED07127E02665146DD0ACED99A5", hash_generated_method = "06ACD7700CBBB17F93B3C1C6892432FD")
     private StringIndexOutOfBoundsException startEndAndLength(int start, int end) {
 
         addTaint(start);
         addTaint(end);
         throw new StringIndexOutOfBoundsException(this, start, end - start);
-        // ---------- Original Method ----------
-        //throw new StringIndexOutOfBoundsException(this, start, end - start);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.851 -0400", hash_original_method = "FABF855F22C4847A4FF9FC56E0D56C67", hash_generated_method = "E5EBE079CC06EC87E395099037376628")
     private StringIndexOutOfBoundsException failedBoundsCheck(int arrayLength, int offset, int count) {
         
@@ -547,25 +550,26 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         addTaint(offset);
         addTaint(count);
         throw new StringIndexOutOfBoundsException(arrayLength, offset, count);
-        // ---------- Original Method ----------
-        //throw new StringIndexOutOfBoundsException(arrayLength, offset, count);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.852 -0400", hash_original_method = "1D42C2C4BD065BE4935C25058CB25A0E", hash_generated_method = "B9D1809FF65639BB123204C2EC8253E4")
     private char foldCase(char ch) {
         char var9B0B758EFD0A99F7034CDAE5D13E5009_641715743 = (Character.toLowerCase(Character.toUpperCase(ch)));
         addTaint(ch);
         char varA87DEB01C5F539E6BDA34829C8EF2368_2057584643 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_2057584643;
-        // ---------- Original Method ----------
-        //if (ch < 128) {
-            //if ('A' <= ch && ch <= 'Z') {
-                //return (char) (ch + ('a' - 'A'));
-            //}
-            //return ch;
-        //}
-        //return Character.toLowerCase(Character.toUpperCase(ch));
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -576,99 +580,104 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.853 -0400", hash_original_method = "1A9A71EFE325E55C19A2B451F1A9B9E2", hash_generated_method = "BE4AA4C57100A1097FD3FC7E9C38BA1E")
     public int compareToIgnoreCase(String string) {
         int o1 = offset;
         int o2 = string.offset;
         int result;
-        int end = offset + (count < string.count ? count : string.count);//DSFIXME:  CODE0008: Nested ternary operator in expression
+        int end = offset + (count < string.count ? count : string.count);
         char c1;
         char c2;
         char[] target = string.value;
         {
             {
                 boolean var2E9E8AD3BCB62DCA1A9EF12A54A2335D_936285828 = ((c1 = value[o1++]) == (c2 = target[o2++]));
-            } //End collapsed parenthetic
+            } 
             c1 = foldCase(c1);
             c2 = foldCase(c2);
             {
                 boolean var14CE4A2902BB903E7AFCF8659D231EE2_951191646 = ((result = c1 - c2) != 0);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(string.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1155184639 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1155184639;
-        // ---------- Original Method ----------
-        //int o1 = offset, o2 = string.offset, result;
-        //int end = offset + (count < string.count ? count : string.count);
-        //char c1, c2;
-        //char[] target = string.value;
-        //while (o1 < end) {
-            //if ((c1 = value[o1++]) == (c2 = target[o2++])) {
-                //continue;
-            //}
-            //c1 = foldCase(c1);
-            //c2 = foldCase(c2);
-            //if ((result = c1 - c2) != 0) {
-                //return result;
-            //}
-        //}
-        //return count - string.count;
+        
+        
+        
+        
+        
+        
+            
+                
+            
+            
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.855 -0400", hash_original_method = "F488471D994E6AC017026A4A172508CF", hash_generated_method = "C5B8C428DEACA19BD6EF3DE1E087931F")
     public String concat(String string) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1943160604 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_16907835 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1943160604 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_16907835 = null; 
         {
             char[] buffer = new char[count + string.count];
             System.arraycopy(value, offset, buffer, 0, count);
             System.arraycopy(string.value, string.offset, buffer, count, string.count);
             varB4EAC82CA7396A68D541C85D26508E83_1943160604 = new String(0, buffer.length, buffer);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_16907835 = count == 0 ? string : this;
         addTaint(string.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1274519369; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1274519369; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1274519369 = varB4EAC82CA7396A68D541C85D26508E83_1943160604;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1274519369 = varB4EAC82CA7396A68D541C85D26508E83_16907835;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1274519369.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1274519369.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1274519369;
-        // ---------- Original Method ----------
-        //if (string.count > 0 && count > 0) {
-            //char[] buffer = new char[count + string.count];
-            //System.arraycopy(value, offset, buffer, 0, count);
-            //System.arraycopy(string.value, string.offset, buffer, count, string.count);
-            //return new String(0, buffer.length, buffer);
-        //}
-        //return count == 0 ? string : this;
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String copyValueOf(char[] data) {
         return new String(data, 0, data.length);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String copyValueOf(char[] data, int start, int length) {
         return new String(data, start, length);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.859 -0400", hash_original_method = "3B37EFF40C149A7A244BFEF0002B2C93", hash_generated_method = "0E727C60EFBD113672BBDB741FA5750E")
     public boolean endsWith(String suffix) {
         boolean var76E82A4292B5A1451345CC76AEDF9E15_1950482850 = (regionMatches(count - suffix.count, suffix, 0, suffix.count));
         addTaint(suffix.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2050282208 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2050282208;
-        // ---------- Original Method ----------
-        //return regionMatches(count - suffix.count, suffix, 0, suffix.count);
+        
+        
     }
 
     
@@ -680,12 +689,13 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.861 -0400", hash_original_method = "2D6A09B1457D58571ED784483A3E54F2", hash_generated_method = "628AA917EB8F6B4BB4E5F299B7A81C5B")
     @FindBugsSuppressWarnings("ES_COMPARING_PARAMETER_STRING_WITH_EQ")
     public boolean equalsIgnoreCase(String string) {
         {
             boolean var1A493DD12B2DD12B14C7BFE23A6D6C8D_857497647 = (string == this);
-        } //End collapsed parenthetic
+        } 
         int o1 = offset;
         int o2 = string.offset;
         int end = offset + count;
@@ -695,32 +705,33 @@ public final class String implements Serializable, Comparable<String>, CharSeque
             char c2 = target[o2++];
             {
                 boolean var43349C3464A5FA3039AFB5B028B91212_1023135946 = (c1 != c2 && foldCase(c1) != foldCase(c2));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(string.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_191385308 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_191385308;
-        // ---------- Original Method ----------
-        //if (string == this) {
-            //return true;
-        //}
-        //if (string == null || count != string.count) {
-            //return false;
-        //}
-        //int o1 = offset, o2 = string.offset;
-        //int end = offset + count;
-        //char[] target = string.value;
-        //while (o1 < end) {
-            //char c1 = value[o1++];
-            //char c2 = target[o2++];
-            //if (c1 != c2 && foldCase(c1) != foldCase(c2)) {
-                //return false;
-            //}
-        //}
-        //return true;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.862 -0400", hash_original_method = "628C355D58441C62D711BC1C2A898A67", hash_generated_method = "89362501DE4487A1E7E76AFE0493AA3F")
     @Deprecated
     public void getBytes(int start, int end, byte[] data, int index) {
@@ -732,58 +743,61 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                     int i = offset + start;
                     {
                         data[index++] = (byte) value[i];
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             catch (ArrayIndexOutOfBoundsException ignored)
             {
                 if (DroidSafeAndroidRuntime.control) throw failedBoundsCheck(data.length, index, end - start);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw startEndAndLength(start, end);
-        } //End block
+        } 
         addTaint(start);
         addTaint(end);
         addTaint(data[0]);
         addTaint(index);
-        // ---------- Original Method ----------
-        //if (start >= 0 && start <= end && end <= count) {
-            //end += offset;
-            //try {
-                //for (int i = offset + start; i < end; i++) {
-                    //data[index++] = (byte) value[i];
-                //}
-            //} catch (ArrayIndexOutOfBoundsException ignored) {
-                //throw failedBoundsCheck(data.length, index, end - start);
-            //}
-        //} else {
-            //throw startEndAndLength(start, end);
-        //}
+        
+        
+            
+            
+                
+                    
+                
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.863 -0400", hash_original_method = "2E4CA200D3933E45C3FC02936B120C89", hash_generated_method = "32EC442B197298925AB32DC59E943A84")
     public byte[] getBytes() {
         byte[] var7AC26898B1876959AE0198114C4F4FA9_456292969 = (getBytes(Charset.defaultCharset()));
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1104036608 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1104036608;
-        // ---------- Original Method ----------
-        //return getBytes(Charset.defaultCharset());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.863 -0400", hash_original_method = "D1476A765D84241818C22751CEBD7DE3", hash_generated_method = "C345CC1E174089228D155B37EB65D154")
     public byte[] getBytes(String charsetName) throws UnsupportedEncodingException {
         byte[] var41B1FB585A68731BDFB62182D33FDD75_384844143 = (getBytes(Charset.forNameUEE(charsetName)));
         addTaint(charsetName.getTaint());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_457432496 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_457432496;
-        // ---------- Original Method ----------
-        //return getBytes(Charset.forNameUEE(charsetName));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.864 -0400", hash_original_method = "56FDAE3B6641018546E6C6674268142D", hash_generated_method = "A382AF454386AD75F95913B15B1FD87E")
     public byte[] getBytes(Charset charset) {
         String canonicalCharsetName = charset.name();
@@ -791,58 +805,59 @@ public final class String implements Serializable, Comparable<String>, CharSeque
             boolean var0E259348489811E6C7821E4884476552_539405975 = (canonicalCharsetName.equals("UTF-8"));
             {
                 byte[] var9984FE416A6160547A4291CF12EF5977_936898221 = (Charsets.toUtf8Bytes(value, offset, count));
-            } //End block
+            } 
             {
                 boolean var2031B49659F344E6C3E3DB6AFAE490EC_2064037822 = (canonicalCharsetName.equals("ISO-8859-1"));
                 {
                     byte[] var06F12C18AB207C990E645C1634999BCA_187984135 = (Charsets.toIsoLatin1Bytes(value, offset, count));
-                } //End block
+                } 
                 {
                     boolean var0569C8B22675C76A7219D23CD23689EC_1093772856 = (canonicalCharsetName.equals("US-ASCII"));
                     {
                         byte[] var5EE1291BC0FFD1569DC7607C427C86B6_1584351913 = (Charsets.toAsciiBytes(value, offset, count));
-                    } //End block
+                    } 
                     {
                         boolean var0EE7227B231600ECBF464F0787D46244_1971507315 = (canonicalCharsetName.equals("UTF-16BE"));
                         {
                             byte[] varE1DCEC963687DDFBF9CF1214AE9B988C_2131137931 = (Charsets.toBigEndianUtf16Bytes(value, offset, count));
-                        } //End block
+                        } 
                         {
                             CharBuffer chars = CharBuffer.wrap(this.value, this.offset, this.count);
                             ByteBuffer buffer = charset.encode(chars.asReadOnlyBuffer());
                             byte[] bytes = new byte[buffer.limit()];
                             buffer.get(bytes);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(charset.getTaint());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2043118985 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2043118985;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.864 -0400", hash_original_method = "D443F19C798F5645F696FD1973BB47C6", hash_generated_method = "2F954EDE4E6FF8CC0CF77F27DB17902F")
     public void getChars(int start, int end, char[] buffer, int index) {
         {
             System.arraycopy(value, start + offset, buffer, index, end - start);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw startEndAndLength(start, end);
-        } //End block
+        } 
         addTaint(start);
         addTaint(end);
         addTaint(buffer[0]);
         addTaint(index);
-        // ---------- Original Method ----------
-        //if (start >= 0 && start <= end && end <= count) {
-            //System.arraycopy(value, start + offset, buffer, index, end - start);
-        //} else {
-            //throw startEndAndLength(start, end);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -853,8 +868,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         addTaint(end);
         addTaint(buffer[0]);
         addTaint(index);
-        // ---------- Original Method ----------
-        //System.arraycopy(value, start + offset, buffer, index, end - start);
+        
+        
     }
 
     
@@ -869,61 +884,63 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                 int i = offset;
                 {
                     hash = 31*hash + chars[i];
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             hashCode = hash;
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2027518543 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2027518543;
-        // ---------- Original Method ----------
-        //int hash = hashCode;
-        //if (hash == 0) {
-            //if (count == 0) {
-                //return 0;
-            //}
-            //final int end = count + offset;
-            //final char[] chars = value;
-            //for (int i = offset; i < end; ++i) {
-                //hash = 31*hash + chars[i];
-            //}
-            //hashCode = hash;
-        //}
-        //return hash;
+        
+        
+        
+            
+                
+            
+            
+            
+            
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.866 -0400", hash_original_method = "C183CC13D668537DB52873A8A3264758", hash_generated_method = "29DC655485D0619CFAC847A9D4B4616D")
     public int indexOf(int c) {
         {
             int var5F851632D6BAA470138E8E6B8CF03AB6_1174689102 = (indexOfSupplementary(c, 0));
-        } //End block
+        } 
         int varBDF102D3B3DB28ED5C430C6E4DC71DED_1594321894 = (fastIndexOf(c, 0));
         addTaint(c);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_994434734 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_994434734;
-        // ---------- Original Method ----------
-        //if (c > 0xffff) {
-            //return indexOfSupplementary(c, 0);
-        //}
-        //return fastIndexOf(c, 0);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.867 -0400", hash_original_method = "A9B16E70D2A4A056B33DA4268AACFBA9", hash_generated_method = "DAB15CD9ABACB8BDAF23679F56BE6BC7")
     public int indexOf(int c, int start) {
         {
             int var5B650999CF272FFC32489F6C46D5030B_1546777620 = (indexOfSupplementary(c, start));
-        } //End block
+        } 
         int varF6149B4A88E68FEA46885B131E2A52C3_1499564387 = (fastIndexOf(c, start));
         addTaint(c);
         addTaint(start);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_702485863 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_702485863;
-        // ---------- Original Method ----------
-        //if (c > 0xffff) {
-            //return indexOfSupplementary(c, start);
-        //}
-        //return fastIndexOf(c, start);
+        
+        
+            
+        
+        
     }
 
     
@@ -934,11 +951,12 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.868 -0400", hash_original_method = "9DA1418F8A10F302F688A26755CAB088", hash_generated_method = "9B00A283E698AA00F6891CF84E490BAC")
     private int indexOfSupplementary(int c, int start) {
         {
             boolean var1055287EA357B1E539F33F3672FA88F7_726779549 = (!Character.isSupplementaryCodePoint(c));
-        } //End collapsed parenthetic
+        } 
         char[] chars = Character.toChars(c);
         String needle = new String(0, chars.length, chars);
         int var6E5631C6B9EDE9258144E71393C64491_720048384 = (indexOf(needle, start));
@@ -946,16 +964,17 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         addTaint(start);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1653316664 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1653316664;
-        // ---------- Original Method ----------
-        //if (!Character.isSupplementaryCodePoint(c)) {
-            //return -1;
-        //}
-        //char[] chars = Character.toChars(c);
-        //String needle = new String(0, chars.length, chars);
-        //return indexOf(needle, start);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.869 -0400", hash_original_method = "AC187DA6A9C2600FBA62EFD5097D8F4D", hash_generated_method = "A942DE956185707833B2437EB99C55EA")
     public int indexOf(String string) {
         int start = 0;
@@ -972,21 +991,22 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                 int o2 = subOffset;
                 char[] _value = value;
                 start = i + 1;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(string.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_713307514 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_713307514;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.870 -0400", hash_original_method = "30C77F2F1070D21229A0301D2E3C23FC", hash_generated_method = "EF4CE5C2E917913C466B9A63A2492BEE")
     public int indexOf(String subString, int start) {
         {
             start = 0;
-        } //End block
+        } 
         int subCount = subString.count;
         int _count = count;
         {
@@ -1000,20 +1020,20 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                 int o2 = subOffset;
                 char[] _value = value;
                 start = i + 1;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(subString.getTaint());
         addTaint(start);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1583011137 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1583011137;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.870 -0400", hash_original_method = "8D834ED1699A050AD62397187973DE2A", hash_generated_method = "D27768EE08A87AC5AC201AAF7BA53F8D")
     public String intern() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+        
     	return new String();
     }
 
@@ -1025,82 +1045,85 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.870 -0400", hash_original_method = "B7458CFA700437DC398BF47C5A311056", hash_generated_method = "E3DA4C35C0EAB1CDDB3329A0C573C348")
     public int lastIndexOf(int c) {
         {
             int varBD342ABA258412F8C448797D2A456C93_698792374 = (lastIndexOfSupplementary(c, Integer.MAX_VALUE));
-        } //End block
+        } 
         int _count = count;
         int _offset = offset;
         char[] _value = value;
         {
             int i = _offset + _count - 1;
-        } //End collapsed parenthetic
+        } 
         addTaint(c);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2129513017 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2129513017;
-        // ---------- Original Method ----------
-        //if (c > 0xffff) {
-            //return lastIndexOfSupplementary(c, Integer.MAX_VALUE);
-        //}
-        //int _count = count;
-        //int _offset = offset;
-        //char[] _value = value;
-        //for (int i = _offset + _count - 1; i >= _offset; --i) {
-            //if (_value[i] == c) {
-                //return i - _offset;
-            //}
-        //}
-        //return -1;
+        
+        
+            
+        
+        
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.871 -0400", hash_original_method = "438C7E0E01B0881067FA33086AF4D678", hash_generated_method = "0732056C1F1C2FDDFC148508596225BD")
     public int lastIndexOf(int c, int start) {
         {
             int var6EE07AE0B8AD5BD57E677DC6C0B33723_826319541 = (lastIndexOfSupplementary(c, start));
-        } //End block
+        } 
         int _count = count;
         int _offset = offset;
         char[] _value = value;
         {
             {
                 start = _count - 1;
-            } //End block
+            } 
             {
                 int i = _offset + start;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(c);
         addTaint(start);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1679542268 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1679542268;
-        // ---------- Original Method ----------
-        //if (c > 0xffff) {
-            //return lastIndexOfSupplementary(c, start);
-        //}
-        //int _count = count;
-        //int _offset = offset;
-        //char[] _value = value;
-        //if (start >= 0) {
-            //if (start >= _count) {
-                //start = _count - 1;
-            //}
-            //for (int i = _offset + start; i >= _offset; --i) {
-                //if (_value[i] == c) {
-                    //return i - _offset;
-                //}
-            //}
-        //}
-        //return -1;
+        
+        
+            
+        
+        
+        
+        
+        
+            
+                
+            
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.871 -0400", hash_original_method = "ECC6B0EDCC4F01358439BB31BFF21134", hash_generated_method = "A1FBE98D28EEB1D579628ADF9EA1FD1A")
     private int lastIndexOfSupplementary(int c, int start) {
         {
             boolean var1055287EA357B1E539F33F3672FA88F7_809956215 = (!Character.isSupplementaryCodePoint(c));
-        } //End collapsed parenthetic
+        } 
         char[] chars = Character.toChars(c);
         String needle = new String(0, chars.length, chars);
         int varB6048C8F2399670687E5E6BB049C087D_237961285 = (lastIndexOf(needle, start));
@@ -1108,27 +1131,29 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         addTaint(start);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_7909202 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_7909202;
-        // ---------- Original Method ----------
-        //if (!Character.isSupplementaryCodePoint(c)) {
-            //return -1;
-        //}
-        //char[] chars = Character.toChars(c);
-        //String needle = new String(0, chars.length, chars);
-        //return lastIndexOf(needle, start);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.872 -0400", hash_original_method = "692347B4AF93950259A2DA740A39B258", hash_generated_method = "D4AB1805E0D008AFCE75A64FAA9A44FD")
     public int lastIndexOf(String string) {
         int var629483EEC7DE422E0B8E730771A3942E_1585383532 = (lastIndexOf(string, count));
         addTaint(string.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128488939 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128488939;
-        // ---------- Original Method ----------
-        //return lastIndexOf(string, count);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.872 -0400", hash_original_method = "08D5FBAA11FAAE0244D1BD87258C05E0", hash_generated_method = "21CD7E79D3963798976B31973DD052F8")
     public int lastIndexOf(String subString, int start) {
         int subCount = subString.count;
@@ -1136,7 +1161,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
             {
                 {
                     start = count - subCount;
-                } //End block
+                } 
                 char[] target = subString.value;
                 int subOffset = subString.offset;
                 char firstChar = target[subOffset];
@@ -1146,15 +1171,15 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                     int o1 = offset + i;
                     int o2 = subOffset;
                     start = i - 1;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(subString.getTaint());
         addTaint(start);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1443051295 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1443051295;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1165,57 +1190,59 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.873 -0400", hash_original_method = "8EA3BFAB97A4D4877FC2554FB493C6C0", hash_generated_method = "14CA066F04C961A97450DF839F8B2A9D")
     public boolean regionMatches(int thisStart, String string, int start, int length) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         int o1 = offset + thisStart;
         int o2 = string.offset + start;
         char[] value1 = value;
         char[] value2 = string.value;
         {
             int i = 0;
-        } //End collapsed parenthetic
+        } 
         addTaint(thisStart);
         addTaint(string.getTaint());
         addTaint(start);
         addTaint(length);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_591564704 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_591564704;
-        // ---------- Original Method ----------
-        //if (string == null) {
-            //throw new NullPointerException();
-        //}
-        //if (start < 0 || string.count - start < length) {
-            //return false;
-        //}
-        //if (thisStart < 0 || count - thisStart < length) {
-            //return false;
-        //}
-        //if (length <= 0) {
-            //return true;
-        //}
-        //int o1 = offset + thisStart, o2 = string.offset + start;
-        //char[] value1 = value;
-        //char[] value2 = string.value;
-        //for (int i = 0; i < length; ++i) {
-            //if (value1[o1 + i] != value2[o2 + i]) {
-                //return false;
-            //}
-        //}
-        //return true;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.874 -0400", hash_original_method = "5098FC46543D7D1A735E08AA962F8003", hash_generated_method = "B66BC5D2CD32C969E91C741EB82386A1")
     public boolean regionMatches(boolean ignoreCase, int thisStart, String string, int start, int length) {
         {
             boolean var6F73B44E0EF89A3667DD4B1125A02E25_36481219 = (regionMatches(thisStart, string, start, length));
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("string == null");
-        } //End block
+        } 
         thisStart += offset;
         start += string.offset;
         int end = thisStart + length;
@@ -1225,8 +1252,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
             char c2 = target[start++];
             {
                 boolean var43349C3464A5FA3039AFB5B028B91212_1805611302 = (c1 != c2 && foldCase(c1) != foldCase(c2));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(ignoreCase);
         addTaint(thisStart);
         addTaint(string.getTaint());
@@ -1234,37 +1261,38 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         addTaint(length);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_351456032 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_351456032;
-        // ---------- Original Method ----------
-        //if (!ignoreCase) {
-            //return regionMatches(thisStart, string, start, length);
-        //}
-        //if (string == null) {
-            //throw new NullPointerException("string == null");
-        //}
-        //if (thisStart < 0 || length > count - thisStart) {
-            //return false;
-        //}
-        //if (start < 0 || length > string.count - start) {
-            //return false;
-        //}
-        //thisStart += offset;
-        //start += string.offset;
-        //int end = thisStart + length;
-        //char[] target = string.value;
-        //while (thisStart < end) {
-            //char c1 = value[thisStart++];
-            //char c2 = target[start++];
-            //if (c1 != c2 && foldCase(c1) != foldCase(c2)) {
-                //return false;
-            //}
-        //}
-        //return true;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.875 -0400", hash_original_method = "52751D07523F52C15F0E15149B768BF7", hash_generated_method = "596BD108175778DC9EDF09FDF7C1EBB8")
     public String replace(char oldChar, char newChar) {
-        String varB4EAC82CA7396A68D541C85D26508E83_134087156 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_134087156 = null; 
         char[] buffer = value;
         int _offset = offset;
         int _count = count;
@@ -1280,56 +1308,57 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                     idx -= _offset;
                     last -= _offset;
                     copied = true;
-                } //End block
+                } 
                 buffer[idx] = newChar;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_134087156 = copied ? new String(0, count, buffer) : this;
         addTaint(oldChar);
         addTaint(newChar);
-        varB4EAC82CA7396A68D541C85D26508E83_134087156.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_134087156.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_134087156;
-        // ---------- Original Method ----------
-        //char[] buffer = value;
-        //int _offset = offset;
-        //int _count = count;
-        //int idx = _offset;
-        //int last = _offset + _count;
-        //boolean copied = false;
-        //while (idx < last) {
-            //if (buffer[idx] == oldChar) {
-                //if (!copied) {
-                    //char[] newBuffer = new char[_count];
-                    //System.arraycopy(buffer, _offset, newBuffer, 0, _count);
-                    //buffer = newBuffer;
-                    //idx -= _offset;
-                    //last -= _offset;
-                    //copied = true;
-                //}
-                //buffer[idx] = newChar;
-            //}
-            //idx++;
-        //}
-        //return copied ? new String(0, count, buffer) : this;
+        
+        
+        
+        
+        
+        
+        
+        
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.876 -0400", hash_original_method = "226EAAC156D556D42E48670E64FEC4E8", hash_generated_method = "E1A655089D8F647C4E8832A97F1ED39D")
     public String replace(CharSequence target, CharSequence replacement) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1755472808 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_293623047 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_632289377 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1755472808 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_293623047 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_632289377 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("target == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("replacement == null");
-        } //End block
+        } 
         String targetString = target.toString();
         int matchStart = indexOf(targetString, 0);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1755472808 = this;
-        } //End block
+        } 
         String replacementString = replacement.toString();
         int targetLength = targetString.length();
         {
@@ -1341,54 +1370,56 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                 {
                     result.append(value[i]);
                     result.append(replacementString);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_293623047 = result.toString();
-        } //End block
+        } 
         StringBuilder result = new StringBuilder(count);
         int searchStart = 0;
         {
             result.append(value, offset + searchStart, matchStart - searchStart);
             result.append(replacementString);
             searchStart = matchStart + targetLength;
-        } //End block
+        } 
         {
             boolean varDF5B9E27CB5E1F6FE60A3DAF131B74C7_1807087288 = ((matchStart = indexOf(targetString, searchStart)) != -1);
-        } //End collapsed parenthetic
+        } 
         result.append(value, offset + searchStart, count - searchStart);
         varB4EAC82CA7396A68D541C85D26508E83_632289377 = result.toString();
         addTaint(target.getTaint());
         addTaint(replacement.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1891449349; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1891449349; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1891449349 = varB4EAC82CA7396A68D541C85D26508E83_1755472808;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1891449349 = varB4EAC82CA7396A68D541C85D26508E83_293623047;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1891449349 = varB4EAC82CA7396A68D541C85D26508E83_632289377;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1891449349.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1891449349.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1891449349;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.877 -0400", hash_original_method = "8508513C5D9E5D7A42B020CFB91803A3", hash_generated_method = "357C8DEE576D593E7FC5C04A0C759AA1")
     public boolean startsWith(String prefix) {
         boolean varE400B78CFCF899225EE690557CD93052_2131786850 = (startsWith(prefix, 0));
         addTaint(prefix.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1400882774 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1400882774;
-        // ---------- Original Method ----------
-        //return startsWith(prefix, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.877 -0400", hash_original_method = "DCA59D254EE64B3144EDF9B3ACB43A45", hash_generated_method = "F6A9890CFF20D6E43FEE0A8BCFBE8B49")
     public boolean startsWith(String prefix, int start) {
         boolean varA8E1CDADA007E83510DD5CFA9EE42F80_1102759802 = (regionMatches(start, prefix, 0, prefix.count));
@@ -1396,199 +1427,210 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         addTaint(start);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_232168166 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_232168166;
-        // ---------- Original Method ----------
-        //return regionMatches(start, prefix, 0, prefix.count);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.879 -0400", hash_original_method = "CB27750752A8934950488E0046CA5119", hash_generated_method = "5E3AD61EDDAFD465B4145DF29C287B74")
     public String substring(int start) {
-        String varB4EAC82CA7396A68D541C85D26508E83_437422253 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_267471632 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_437422253 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_267471632 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_437422253 = this;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_267471632 = new String(offset + start, count - start, value);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw indexAndLength(start);
         addTaint(start);
-        String varA7E53CE21691AB073D9660D615818899_928520119; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_928520119; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_928520119 = varB4EAC82CA7396A68D541C85D26508E83_437422253;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_928520119 = varB4EAC82CA7396A68D541C85D26508E83_267471632;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_928520119.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_928520119.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_928520119;
-        // ---------- Original Method ----------
-        //if (start == 0) {
-            //return this;
-        //}
-        //if (start >= 0 && start <= count) {
-            //return new String(offset + start, count - start, value);
-        //}
-        //throw indexAndLength(start);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.880 -0400", hash_original_method = "FA273138383309E9BFDA8AAE2A7C6025", hash_generated_method = "E2E4290E6CEC8F61C516FCC33E89CF7E")
     public String substring(int start, int end) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1849347231 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1214438824 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1849347231 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1214438824 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1849347231 = this;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1214438824 = new String(offset + start, end - start, value);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw startEndAndLength(start, end);
         addTaint(start);
         addTaint(end);
-        String varA7E53CE21691AB073D9660D615818899_1614298595; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1614298595; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1614298595 = varB4EAC82CA7396A68D541C85D26508E83_1849347231;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1614298595 = varB4EAC82CA7396A68D541C85D26508E83_1214438824;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1614298595.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1614298595.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1614298595;
-        // ---------- Original Method ----------
-        //if (start == 0 && end == count) {
-            //return this;
-        //}
-        //if (start >= 0 && start <= end && end <= count) {
-            //return new String(offset + start, end - start, value);
-        //}
-        //throw startEndAndLength(start, end);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.882 -0400", hash_original_method = "66BAEF040BB5FDC80731F9B16CD33C32", hash_generated_method = "C8AF57E684BDF73BFDEE75C719DA7E68")
     public char[] toCharArray() {
         char[] buffer = new char[count];
         System.arraycopy(value, offset, buffer, 0, count);
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1557427277 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1557427277;
-        // ---------- Original Method ----------
-        //char[] buffer = new char[count];
-        //System.arraycopy(value, offset, buffer, 0, count);
-        //return buffer;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.884 -0400", hash_original_method = "1FBB4BF6938E55C9E24FEC1EE0A95252", hash_generated_method = "F459BE82A0EA6CABF0C183918BDECB8F")
     public String toLowerCase() {
-        String varB4EAC82CA7396A68D541C85D26508E83_999860379 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_999860379 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_999860379 = CaseMapper.toLowerCase(Locale.getDefault(), this, value, offset, count);
-        varB4EAC82CA7396A68D541C85D26508E83_999860379.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_999860379.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_999860379;
-        // ---------- Original Method ----------
-        //return CaseMapper.toLowerCase(Locale.getDefault(), this, value, offset, count);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.886 -0400", hash_original_method = "3BCA227A64DF8F05552679E5E357BCF1", hash_generated_method = "5E22A88311EEA9BD1B0D0A571240A6FC")
     public String toLowerCase(Locale locale) {
-        String varB4EAC82CA7396A68D541C85D26508E83_112543282 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_112543282 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_112543282 = CaseMapper.toLowerCase(locale, this, value, offset, count);
         addTaint(locale.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_112543282.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_112543282.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_112543282;
-        // ---------- Original Method ----------
-        //return CaseMapper.toLowerCase(locale, this, value, offset, count);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.887 -0400", hash_original_method = "068E2EE4236B85776135405F1B66AD49", hash_generated_method = "8A75BB9BFE89E7BE3D0F0B8F4362174F")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1100079241 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1100079241 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1100079241 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1100079241.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1100079241.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1100079241;
-        // ---------- Original Method ----------
-        //return this;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.888 -0400", hash_original_method = "8DEC33A26AFC2829CCCCE108ECEB9551", hash_generated_method = "F10DE1CC4596950903A20F338DE4CAC0")
     public String toUpperCase() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1751176457 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1751176457 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1751176457 = CaseMapper.toUpperCase(Locale.getDefault(), this, value, offset, count);
-        varB4EAC82CA7396A68D541C85D26508E83_1751176457.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1751176457.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1751176457;
-        // ---------- Original Method ----------
-        //return CaseMapper.toUpperCase(Locale.getDefault(), this, value, offset, count);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.889 -0400", hash_original_method = "11C711663B7D81E6BD865533BF51B442", hash_generated_method = "4F6695CE1A4A762FCA1C8D5C7CCCD276")
     public String toUpperCase(Locale locale) {
-        String varB4EAC82CA7396A68D541C85D26508E83_614969320 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_614969320 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_614969320 = CaseMapper.toUpperCase(locale, this, value, offset, count);
         addTaint(locale.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_614969320.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_614969320.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_614969320;
-        // ---------- Original Method ----------
-        //return CaseMapper.toUpperCase(locale, this, value, offset, count);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.891 -0400", hash_original_method = "5AB01C88F799E5B54FF71EE82B91E811", hash_generated_method = "2DB50FCA40B5B0CFE7AD88931FF2CFBC")
     public String trim() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1334475510 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_888700719 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1334475510 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_888700719 = null; 
         int start = offset;
         int last = offset + count - 1;
         int end = last;
         {
             varB4EAC82CA7396A68D541C85D26508E83_1334475510 = this;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_888700719 = new String(start, end - start + 1, value);
-        String varA7E53CE21691AB073D9660D615818899_1846738867; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1846738867; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1846738867 = varB4EAC82CA7396A68D541C85D26508E83_1334475510;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1846738867 = varB4EAC82CA7396A68D541C85D26508E83_888700719;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1846738867.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1846738867.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1846738867;
-        // ---------- Original Method ----------
-        //int start = offset, last = offset + count - 1;
-        //int end = last;
-        //while ((start <= end) && (value[start] <= ' ')) {
-            //start++;
-        //}
-        //while ((end >= start) && (value[end] <= ' ')) {
-            //end--;
-        //}
-        //if (start == offset && end == last) {
-            //return this;
-        //}
-        //return new String(start, end - start + 1, value);
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String valueOf(char[] data) {
         return new String(data, 0, data.length);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String valueOf(char[] data, int start, int length) {
         return new String(data, start, length);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String valueOf(char value) {
         String s;
         if (value < 128) {
@@ -1601,26 +1643,31 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String valueOf(double value) {
         return Double.toString(value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String valueOf(float value) {
         return Float.toString(value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String valueOf(int value) {
         return Integer.toString(value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String valueOf(long value) {
         return Long.toString(value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String valueOf(Object value) {
         return value != null ? value.toString() : "null";
     }
@@ -1631,199 +1678,212 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.893 -0400", hash_original_method = "233CB676C051D9EE76740A9343D1B467", hash_generated_method = "C68F07A8D40638239A7F18826AB30516")
     public boolean contentEquals(StringBuffer strbuf) {
         {
             int size = strbuf.length();
             boolean var8AD291071900A808E3CDC7318D3290C1_2032246980 = (regionMatches(0, new String(0, size, strbuf.getValue()), 0,
                     size));
-        } //End block
+        } 
         addTaint(strbuf.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_930552217 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_930552217;
-        // ---------- Original Method ----------
-        //synchronized (strbuf) {
-            //int size = strbuf.length();
-            //if (count != size) {
-                //return false;
-            //}
-            //return regionMatches(0, new String(0, size, strbuf.getValue()), 0,
-                    //size);
-        //}
+        
+        
+            
+            
+                
+            
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.894 -0400", hash_original_method = "733340B51AD84F3351AE4177729AE631", hash_generated_method = "DAA3533168E8D6DDD8C7CAD3524B1AF7")
     public boolean contentEquals(CharSequence cs) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         int len = cs.length();
         boolean var4A8EFCED17558E2F34148C8126361B5F_1363371379 = (regionMatches(0, cs.toString(), 0, len));
         addTaint(cs.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1582024095 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1582024095;
-        // ---------- Original Method ----------
-        //if (cs == null) {
-            //throw new NullPointerException();
-        //}
-        //int len = cs.length();
-        //if (len != count) {
-            //return false;
-        //}
-        //if (len == 0 && count == 0) {
-            //return true; 
-        //}
-        //return regionMatches(0, cs.toString(), 0, len);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.894 -0400", hash_original_method = "54546B1154273B2EF815CC4641C4AF95", hash_generated_method = "95E7C9BC518FE12A36DFB4A6C53E23D1")
     public boolean matches(String regularExpression) {
         boolean var1D596A9C37FF533C6DBD6EF8C6FD418B_1137628992 = (Pattern.matches(regularExpression, this));
         addTaint(regularExpression.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1944323937 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1944323937;
-        // ---------- Original Method ----------
-        //return Pattern.matches(regularExpression, this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.894 -0400", hash_original_method = "85FB9291CC087326BB42DD27D5FF2770", hash_generated_method = "D38D184A2914BA5DD9DCF487BF728BCF")
     public String replaceAll(String regularExpression, String replacement) {
-        String varB4EAC82CA7396A68D541C85D26508E83_574742730 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_574742730 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_574742730 = Pattern.compile(regularExpression).matcher(this).replaceAll(replacement);
         addTaint(regularExpression.getTaint());
         addTaint(replacement.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_574742730.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_574742730.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_574742730;
-        // ---------- Original Method ----------
-        //return Pattern.compile(regularExpression).matcher(this).replaceAll(replacement);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.895 -0400", hash_original_method = "B1F6469D7EA429A7B60DE2A4BC9D1B18", hash_generated_method = "367D8FA4B028BFC8D251F368EEB93866")
     public String replaceFirst(String regularExpression, String replacement) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1165650582 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1165650582 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1165650582 = Pattern.compile(regularExpression).matcher(this).replaceFirst(replacement);
         addTaint(regularExpression.getTaint());
         addTaint(replacement.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1165650582.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1165650582.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1165650582;
-        // ---------- Original Method ----------
-        //return Pattern.compile(regularExpression).matcher(this).replaceFirst(replacement);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.896 -0400", hash_original_method = "0ADD043F2AA11242F9B6645F9D3630BF", hash_generated_method = "2EF88D3AC14D579D56BCF0F07B0CD544")
     public String[] split(String regularExpression) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_683774957 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_683774957 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_683774957 = split(regularExpression, 0);
         addTaint(regularExpression.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_683774957.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_683774957.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_683774957;
-        // ---------- Original Method ----------
-        //return split(regularExpression, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.896 -0400", hash_original_method = "4FB3AE192250E9EE292BE09F829C7FA4", hash_generated_method = "3FB78FD88F182B91749F75FE6D11E1B5")
     public String[] split(String regularExpression, int limit) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_475578549 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_475578549 = null; 
         String[] result = java.util.regex.Splitter.fastSplit(regularExpression, this, limit);
         varB4EAC82CA7396A68D541C85D26508E83_475578549 = result != null ? result : Pattern.compile(regularExpression).split(this, limit);
         addTaint(regularExpression.getTaint());
         addTaint(limit);
-        varB4EAC82CA7396A68D541C85D26508E83_475578549.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_475578549.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_475578549;
-        // ---------- Original Method ----------
-        //String[] result = java.util.regex.Splitter.fastSplit(regularExpression, this, limit);
-        //return result != null ? result : Pattern.compile(regularExpression).split(this, limit);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.897 -0400", hash_original_method = "30B2B5AAE6BF00B7B5DE2415CD1C93C0", hash_generated_method = "5FB33D0D5A0F253D92143968D9712CA5")
     public CharSequence subSequence(int start, int end) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1338950096 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1338950096 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1338950096 = substring(start, end);
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_1338950096.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1338950096.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1338950096;
-        // ---------- Original Method ----------
-        //return substring(start, end);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.897 -0400", hash_original_method = "C7D49B0E887DD351A54FAD0BD917A973", hash_generated_method = "67252A2B0A8246F36CD794C525844068")
     public int codePointAt(int index) {
         {
             if (DroidSafeAndroidRuntime.control) throw indexAndLength(index);
-        } //End block
+        } 
         int var91459A9F7713DB06A5C91858CFACEC5A_1098858130 = (Character.codePointAt(value, offset + index, offset + count));
         addTaint(index);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_861474619 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_861474619;
-        // ---------- Original Method ----------
-        //if (index < 0 || index >= count) {
-            //throw indexAndLength(index);
-        //}
-        //return Character.codePointAt(value, offset + index, offset + count);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.898 -0400", hash_original_method = "45488902F6B74F4C7EAF8C828C18FB65", hash_generated_method = "6B4C7075686A3DB9512E5813D6D3F4B0")
     public int codePointBefore(int index) {
         {
             if (DroidSafeAndroidRuntime.control) throw indexAndLength(index);
-        } //End block
+        } 
         int varF97594D4D0200951C1EDA2EC22454DCA_2029804577 = (Character.codePointBefore(value, offset + index, offset));
         addTaint(index);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_914340551 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_914340551;
-        // ---------- Original Method ----------
-        //if (index < 1 || index > count) {
-            //throw indexAndLength(index);
-        //}
-        //return Character.codePointBefore(value, offset + index, offset);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.898 -0400", hash_original_method = "B50CCA2DE0C54B693E25540AFEB12014", hash_generated_method = "737A4A6A2FDCBB8D7A796ABDE1D0231E")
     public int codePointCount(int start, int end) {
         {
             if (DroidSafeAndroidRuntime.control) throw startEndAndLength(start, end);
-        } //End block
+        } 
         int varCDB29150FACB3F645BFF42DCED3004F1_2106465022 = (Character.codePointCount(value, offset + start, end - start));
         addTaint(start);
         addTaint(end);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1512696657 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1512696657;
-        // ---------- Original Method ----------
-        //if (start < 0 || end > count || start > end) {
-            //throw startEndAndLength(start, end);
-        //}
-        //return Character.codePointCount(value, offset + start, end - start);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.899 -0400", hash_original_method = "994533EB4329C14FF0C3B68A297AD053", hash_generated_method = "E87380183E11C293FBD89FE9DB9494F0")
     public boolean contains(CharSequence cs) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         boolean varBD86DE7AF63F37539131A6619268C3BC_907162476 = (indexOf(cs.toString()) >= 0);
         addTaint(cs.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1131363939 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1131363939;
-        // ---------- Original Method ----------
-        //if (cs == null) {
-            //throw new NullPointerException();
-        //}
-        //return indexOf(cs.toString()) >= 0;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.899 -0400", hash_original_method = "3AF353F7691F77FE6437135BD27DAE4A", hash_generated_method = "A270CDBF2E60E165E00086974B50E455")
     public int offsetByCodePoints(int index, int codePointOffset) {
         int s = index + offset;
@@ -1832,10 +1892,10 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         addTaint(codePointOffset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_808354320 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_808354320;
-        // ---------- Original Method ----------
-        //int s = index + offset;
-        //int r = Character.offsetByCodePoints(value, offset, count, s, codePointOffset);
-        //return r - offset;
+        
+        
+        
+        
     }
 
     
@@ -1854,6 +1914,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @FindBugsSuppressWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     @SuppressWarnings("unused")
     private static int indexOf(String haystackString, String needleString,
@@ -1895,7 +1956,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.901 -0400", hash_original_method = "4085F5B81BF948B4B3F485D1409A9E33", hash_generated_method = "4085F5B81BF948B4B3F485D1409A9E33")
         public CaseInsensitiveComparator ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1906,8 +1967,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
             addTaint(o2.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372420794 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372420794;
-            // ---------- Original Method ----------
-            //return o1.compareToIgnoreCase(o2);
+            
+            
         }
 
         

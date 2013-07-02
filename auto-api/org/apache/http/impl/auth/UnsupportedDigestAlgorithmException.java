@@ -1,11 +1,11 @@
 package org.apache.http.impl.auth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class UnsupportedDigestAlgorithmException extends RuntimeException {
@@ -13,7 +13,7 @@ public class UnsupportedDigestAlgorithmException extends RuntimeException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.882 -0400", hash_original_method = "4D7AFBD3BCBFF7BF63D8A1B788355A01", hash_generated_method = "99C8C4898B8E414037049A3393B2F06C")
     public  UnsupportedDigestAlgorithmException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class UnsupportedDigestAlgorithmException extends RuntimeException {
     public  UnsupportedDigestAlgorithmException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,7 +30,7 @@ public class UnsupportedDigestAlgorithmException extends RuntimeException {
         super(message, cause);
         addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

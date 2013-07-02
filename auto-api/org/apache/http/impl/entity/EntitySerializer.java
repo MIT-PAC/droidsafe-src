@@ -1,11 +1,11 @@
 package org.apache.http.impl.entity;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -28,13 +28,13 @@ public class EntitySerializer {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Content length strategy may not be null");
-        } //End block
+        } 
         this.lenStrategy = lenStrategy;
-        // ---------- Original Method ----------
-        //if (lenStrategy == null) {
-            //throw new IllegalArgumentException("Content length strategy may not be null");
-        //}
-        //this.lenStrategy = lenStrategy;
+        
+        
+            
+        
+        
     }
 
     
@@ -42,44 +42,44 @@ public class EntitySerializer {
     protected OutputStream doSerialize(
             final SessionOutputBuffer outbuffer,
             final HttpMessage message) throws HttpException, IOException {
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_2072989526 = null; //Variable for return #1
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_2144717227 = null; //Variable for return #2
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_1004591378 = null; //Variable for return #3
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_2072989526 = null; 
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_2144717227 = null; 
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_1004591378 = null; 
         long len = this.lenStrategy.determineLength(message);
         {
             varB4EAC82CA7396A68D541C85D26508E83_2072989526 = new ChunkedOutputStream(outbuffer);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2144717227 = new IdentityOutputStream(outbuffer);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1004591378 = new ContentLengthOutputStream(outbuffer, len);
-        } //End block
+        } 
         addTaint(outbuffer.getTaint());
         addTaint(message.getTaint());
-        OutputStream varA7E53CE21691AB073D9660D615818899_1047856680; //Final return value
+        OutputStream varA7E53CE21691AB073D9660D615818899_1047856680; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1047856680 = varB4EAC82CA7396A68D541C85D26508E83_2072989526;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1047856680 = varB4EAC82CA7396A68D541C85D26508E83_2144717227;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1047856680 = varB4EAC82CA7396A68D541C85D26508E83_1004591378;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1047856680.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1047856680.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1047856680;
-        // ---------- Original Method ----------
-        //long len = this.lenStrategy.determineLength(message);
-        //if (len == ContentLengthStrategy.CHUNKED) {
-            //return new ChunkedOutputStream(outbuffer);
-        //} else if (len == ContentLengthStrategy.IDENTITY) {
-            //return new IdentityOutputStream(outbuffer);
-        //} else {
-            //return new ContentLengthOutputStream(outbuffer, len);
-        //}
+        
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -90,32 +90,32 @@ public class EntitySerializer {
             final HttpEntity entity) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Session output buffer may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP message may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP entity may not be null");
-        } //End block
+        } 
         OutputStream outstream = doSerialize(outbuffer, message);
         entity.writeTo(outstream);
         outstream.close();
         addTaint(outbuffer.getTaint());
         addTaint(message.getTaint());
         addTaint(entity.getTaint());
-        // ---------- Original Method ----------
-        //if (outbuffer == null) {
-            //throw new IllegalArgumentException("Session output buffer may not be null");
-        //}
-        //if (message == null) {
-            //throw new IllegalArgumentException("HTTP message may not be null");
-        //}
-        //if (entity == null) {
-            //throw new IllegalArgumentException("HTTP entity may not be null");
-        //}
-        //OutputStream outstream = doSerialize(outbuffer, message);
-        //entity.writeTo(outstream);
-        //outstream.close();
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     

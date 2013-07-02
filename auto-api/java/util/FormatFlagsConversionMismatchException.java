@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 
@@ -21,26 +21,26 @@ public class FormatFlagsConversionMismatchException extends IllegalFormatExcepti
     public  FormatFlagsConversionMismatchException(String f, char c) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         this.f = f;
         this.c = c;
-        // ---------- Original Method ----------
-        //if (f == null) {
-            //throw new NullPointerException();
-        //}
-        //this.f = f;
-        //this.c = c;
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.275 -0400", hash_original_method = "3582970EABB5B296536802E98213C512", hash_generated_method = "30346867C0A11F8129C4F73E6C57D18E")
     public String getFlags() {
-        String varB4EAC82CA7396A68D541C85D26508E83_58595478 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_58595478 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_58595478 = f;
-        varB4EAC82CA7396A68D541C85D26508E83_58595478.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_58595478.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_58595478;
-        // ---------- Original Method ----------
-        //return f;
+        
+        
     }
 
     
@@ -48,20 +48,21 @@ public class FormatFlagsConversionMismatchException extends IllegalFormatExcepti
     public char getConversion() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_371597137 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_371597137;
-        // ---------- Original Method ----------
-        //return c;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.276 -0400", hash_original_method = "767287C022ACF72AAFFBED8242F4CC5C", hash_generated_method = "79CA78D3A9A630613A2F871456F97847")
     @Override
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_267606623 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_267606623 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_267606623 = "%" + c + " does not support '" + f + "'";
-        varB4EAC82CA7396A68D541C85D26508E83_267606623.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_267606623.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_267606623;
-        // ---------- Original Method ----------
-        //return "%" + c + " does not support '" + f + "'";
+        
+        
     }
 
     

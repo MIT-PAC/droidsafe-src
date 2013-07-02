@@ -1,11 +1,11 @@
 package android.database;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.commons.codec.binary.Hex;
 import android.content.ContentValues;
@@ -35,7 +35,7 @@ public class DatabaseUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.934 -0400", hash_original_method = "333D4DF31C6A57BA4790D091F2223BA8", hash_generated_method = "333D4DF31C6A57BA4790D091F2223BA8")
     public DatabaseUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -84,6 +84,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void readExceptionWithFileNotFoundExceptionFromParcel(
             Parcel reply) throws FileNotFoundException {
         int code = reply.readExceptionCode();
@@ -97,6 +98,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void readExceptionWithOperationApplicationExceptionFromParcel(
             Parcel reply) throws OperationApplicationException {
         int code = reply.readExceptionCode();
@@ -134,6 +136,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void bindObjectToProgram(SQLiteProgram prog, int index,
             Object value) {
         if (value == null) {
@@ -233,6 +236,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void appendEscapedSQLString(StringBuilder sb, String sqlString) {
         sb.append('\'');
         if (sqlString.indexOf('\'') != -1) {
@@ -250,6 +254,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String sqlEscapeString(String value) {
         StringBuilder escaper = new StringBuilder();
         DatabaseUtils.appendEscapedSQLString(escaper, value);
@@ -273,6 +278,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String concatenateWhere(String a, String b) {
         if (TextUtils.isEmpty(a)) {
             return b;
@@ -284,6 +290,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getCollationKey(String name) {
         byte [] arr = getCollationKeyInBytes(name);
         try {
@@ -294,6 +301,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getHexCollationKey(String name) {
         byte [] arr = getCollationKeyInBytes(name);
         char[] keys = Hex.encodeHex(arr);
@@ -310,6 +318,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static byte[] getCollationKeyInBytes(String name) {
         if (mColl == null) {
             mColl = Collator.getInstance();
@@ -319,11 +328,13 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpCursor(Cursor cursor) {
         dumpCursor(cursor, System.out);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpCursor(Cursor cursor, PrintStream stream) {
         stream.println(">>>>> Dumping cursor " + cursor);
         if (cursor != null) {
@@ -338,6 +349,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpCursor(Cursor cursor, StringBuilder sb) {
         sb.append(">>>>> Dumping cursor " + cursor + "\n");
         if (cursor != null) {
@@ -352,6 +364,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String dumpCursorToString(Cursor cursor) {
         StringBuilder sb = new StringBuilder();
         dumpCursor(cursor, sb);
@@ -359,11 +372,13 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpCurrentRow(Cursor cursor) {
         dumpCurrentRow(cursor, System.out);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpCurrentRow(Cursor cursor, PrintStream stream) {
         String[] cols = cursor.getColumnNames();
         stream.println("" + cursor.getPosition() + " {");
@@ -381,6 +396,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpCurrentRow(Cursor cursor, StringBuilder sb) {
         String[] cols = cursor.getColumnNames();
         sb.append("" + cursor.getPosition() + " {\n");
@@ -398,6 +414,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String dumpCurrentRowToString(Cursor cursor) {
         StringBuilder sb = new StringBuilder();
         dumpCurrentRow(cursor, sb);
@@ -405,29 +422,34 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorStringToContentValues(Cursor cursor, String field,
             ContentValues values) {
         cursorStringToContentValues(cursor, field, values, field);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorStringToInsertHelper(Cursor cursor, String field,
             InsertHelper inserter, int index) {
         inserter.bind(index, cursor.getString(cursor.getColumnIndexOrThrow(field)));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorStringToContentValues(Cursor cursor, String field,
             ContentValues values, String key) {
         values.put(key, cursor.getString(cursor.getColumnIndexOrThrow(field)));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorIntToContentValues(Cursor cursor, String field, ContentValues values) {
         cursorIntToContentValues(cursor, field, values, field);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorIntToContentValues(Cursor cursor, String field, ContentValues values,
             String key) {
         int colIndex = cursor.getColumnIndex(field);
@@ -439,11 +461,13 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorLongToContentValues(Cursor cursor, String field, ContentValues values) {
         cursorLongToContentValues(cursor, field, values, field);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorLongToContentValues(Cursor cursor, String field, ContentValues values,
             String key) {
         int colIndex = cursor.getColumnIndex(field);
@@ -456,11 +480,13 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorDoubleToCursorValues(Cursor cursor, String field, ContentValues values) {
         cursorDoubleToContentValues(cursor, field, values, field);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorDoubleToContentValues(Cursor cursor, String field,
             ContentValues values, String key) {
         int colIndex = cursor.getColumnIndex(field);
@@ -472,6 +498,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorRowToContentValues(Cursor cursor, ContentValues values) {
         AbstractWindowedCursor awc =
                 (cursor instanceof AbstractWindowedCursor) ? (AbstractWindowedCursor) cursor : null;
@@ -487,16 +514,19 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long queryNumEntries(SQLiteDatabase db, String table) {
         return queryNumEntries(db, table, null, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long queryNumEntries(SQLiteDatabase db, String table, String selection) {
         return queryNumEntries(db, table, selection, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long queryNumEntries(SQLiteDatabase db, String table, String selection,
             String[] selectionArgs) {
         String s = (!TextUtils.isEmpty(selection)) ? " where " + selection : "";
@@ -505,6 +535,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long longForQuery(SQLiteDatabase db, String query, String[] selectionArgs) {
         SQLiteStatement prog = db.compileStatement(query);
         try {
@@ -515,12 +546,14 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long longForQuery(SQLiteStatement prog, String[] selectionArgs) {
         prog.bindAllArgsAsStrings(selectionArgs);
         return prog.simpleQueryForLong();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String stringForQuery(SQLiteDatabase db, String query, String[] selectionArgs) {
         SQLiteStatement prog = db.compileStatement(query);
         try {
@@ -531,12 +564,14 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String stringForQuery(SQLiteStatement prog, String[] selectionArgs) {
         prog.bindAllArgsAsStrings(selectionArgs);
         return prog.simpleQueryForString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ParcelFileDescriptor blobFileDescriptorForQuery(SQLiteDatabase db,
             String query, String[] selectionArgs) {
         SQLiteStatement prog = db.compileStatement(query);
@@ -548,6 +583,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ParcelFileDescriptor blobFileDescriptorForQuery(SQLiteStatement prog,
             String[] selectionArgs) {
         prog.bindAllArgsAsStrings(selectionArgs);
@@ -555,6 +591,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorStringToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);
@@ -564,6 +601,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorLongToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);
@@ -573,6 +611,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorShortToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);
@@ -582,6 +621,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorIntToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);
@@ -591,6 +631,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorFloatToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);
@@ -600,6 +641,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorDoubleToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);
@@ -609,6 +651,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public void createDbFromSqlStatements(
             Context context, String dbName, int dbVersion, String sqlStatements) {
         SQLiteDatabase db = context.openOrCreateDatabase(dbName, 0, null);
@@ -622,6 +665,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getSqlStatementType(String sql) {
         sql = sql.trim();
         if (sql.length() < 3) {
@@ -657,6 +701,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] appendSelectionArgs(String[] originalValues, String[] newValues) {
         if (originalValues == null || originalValues.length == 0) {
             return newValues;
@@ -695,9 +740,9 @@ public class DatabaseUtils {
         public  InsertHelper(SQLiteDatabase db, String tableName) {
             mDb = db;
             mTableName = tableName;
-            // ---------- Original Method ----------
-            //mDb = db;
-            //mTableName = tableName;
+            
+            
+            
         }
 
         
@@ -726,74 +771,74 @@ public class DatabaseUtils {
                         sb.append("'");
                         {
                             sbv.append("?");
-                        } //End block
+                        } 
                         {
                             sbv.append("COALESCE(?, ");
                             sbv.append(defaultValue);
                             sbv.append(")");
-                        } //End block
+                        } 
                         sb.append(i == cur.getCount() ? ") " : ", ");
                         sbv.append(i == cur.getCount() ? ");" : ", ");
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             finally 
             {
                 cur.close();
-            } //End block
+            } 
             sb.append(sbv);
             mInsertSQL = sb.toString();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.947 -0400", hash_original_method = "102F3921944A0F32C4E4BE81F61A753B", hash_generated_method = "F53D969A7D2A462F1D6EBD09E6501986")
         private SQLiteStatement getStatement(boolean allowReplace) throws SQLException {
-            SQLiteStatement varB4EAC82CA7396A68D541C85D26508E83_58116859 = null; //Variable for return #1
-            SQLiteStatement varB4EAC82CA7396A68D541C85D26508E83_618222417 = null; //Variable for return #2
+            SQLiteStatement varB4EAC82CA7396A68D541C85D26508E83_58116859 = null; 
+            SQLiteStatement varB4EAC82CA7396A68D541C85D26508E83_618222417 = null; 
             {
                 {
                     buildSQL();
                     String replaceSQL = "INSERT OR REPLACE" + mInsertSQL.substring(6);
                     mReplaceStatement = mDb.compileStatement(replaceSQL);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_58116859 = mReplaceStatement;
-            } //End block
+            } 
             {
                 {
                     buildSQL();
                     mInsertStatement = mDb.compileStatement(mInsertSQL);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_618222417 = mInsertStatement;
-            } //End block
+            } 
             addTaint(allowReplace);
-            SQLiteStatement varA7E53CE21691AB073D9660D615818899_522560902; //Final return value
+            SQLiteStatement varA7E53CE21691AB073D9660D615818899_522560902; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_522560902 = varB4EAC82CA7396A68D541C85D26508E83_58116859;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_522560902 = varB4EAC82CA7396A68D541C85D26508E83_618222417;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_522560902.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_522560902.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_522560902;
-            // ---------- Original Method ----------
-            //if (allowReplace) {
-                //if (mReplaceStatement == null) {
-                    //if (mInsertSQL == null) buildSQL();
-                    //String replaceSQL = "INSERT OR REPLACE" + mInsertSQL.substring(6);
-                    //mReplaceStatement = mDb.compileStatement(replaceSQL);
-                //}
-                //return mReplaceStatement;
-            //} else {
-                //if (mInsertStatement == null) {
-                    //if (mInsertSQL == null) buildSQL();
-                    //mInsertStatement = mDb.compileStatement(mInsertSQL);
-                //}
-                //return mInsertStatement;
-            //}
+            
+            
+                
+                    
+                    
+                    
+                
+                
+            
+                
+                    
+                    
+                
+                
+            
         }
 
         
@@ -811,18 +856,18 @@ public class DatabaseUtils {
                         final String key = e.getKey();
                         int i = getColumnIndex(key);
                         DatabaseUtils.bindObjectToProgram(stmt, i, e.getValue());
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 long var023E52F16507A143FBACD2DB06F1711B_1000461549 = (stmt.executeInsert());
-            } //End block
+            } 
             catch (SQLException e)
             { }
             addTaint(values.getTaint());
             addTaint(allowReplace);
             long var0F5264038205EDFB1AC05FBB0E8C5E94_732616044 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_732616044;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -832,17 +877,17 @@ public class DatabaseUtils {
             final Integer index = mColumns.get(key);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("column '" + key + "' is invalid");
-            } //End block
+            } 
             addTaint(key.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_764757688 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_764757688;
-            // ---------- Original Method ----------
-            //getStatement(false);
-            //final Integer index = mColumns.get(key);
-            //if (index == null) {
-                //throw new IllegalArgumentException("column '" + key + "' is invalid");
-            //}
-            //return index;
+            
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -851,8 +896,8 @@ public class DatabaseUtils {
             mPreparedStatement.bindDouble(index, value);
             addTaint(index);
             addTaint(value);
-            // ---------- Original Method ----------
-            //mPreparedStatement.bindDouble(index, value);
+            
+            
         }
 
         
@@ -861,8 +906,8 @@ public class DatabaseUtils {
             mPreparedStatement.bindDouble(index, value);
             addTaint(index);
             addTaint(value);
-            // ---------- Original Method ----------
-            //mPreparedStatement.bindDouble(index, value);
+            
+            
         }
 
         
@@ -871,8 +916,8 @@ public class DatabaseUtils {
             mPreparedStatement.bindLong(index, value);
             addTaint(index);
             addTaint(value);
-            // ---------- Original Method ----------
-            //mPreparedStatement.bindLong(index, value);
+            
+            
         }
 
         
@@ -881,8 +926,8 @@ public class DatabaseUtils {
             mPreparedStatement.bindLong(index, value);
             addTaint(index);
             addTaint(value);
-            // ---------- Original Method ----------
-            //mPreparedStatement.bindLong(index, value);
+            
+            
         }
 
         
@@ -891,8 +936,8 @@ public class DatabaseUtils {
             mPreparedStatement.bindLong(index, value ? 1 : 0);
             addTaint(index);
             addTaint(value);
-            // ---------- Original Method ----------
-            //mPreparedStatement.bindLong(index, value ? 1 : 0);
+            
+            
         }
 
         
@@ -900,8 +945,8 @@ public class DatabaseUtils {
         public void bindNull(int index) {
             mPreparedStatement.bindNull(index);
             addTaint(index);
-            // ---------- Original Method ----------
-            //mPreparedStatement.bindNull(index);
+            
+            
         }
 
         
@@ -909,18 +954,18 @@ public class DatabaseUtils {
         public void bind(int index, byte[] value) {
             {
                 mPreparedStatement.bindNull(index);
-            } //End block
+            } 
             {
                 mPreparedStatement.bindBlob(index, value);
-            } //End block
+            } 
             addTaint(index);
             addTaint(value[0]);
-            // ---------- Original Method ----------
-            //if (value == null) {
-                //mPreparedStatement.bindNull(index);
-            //} else {
-                //mPreparedStatement.bindBlob(index, value);
-            //}
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -928,18 +973,18 @@ public class DatabaseUtils {
         public void bind(int index, String value) {
             {
                 mPreparedStatement.bindNull(index);
-            } //End block
+            } 
             {
                 mPreparedStatement.bindString(index, value);
-            } //End block
+            } 
             addTaint(index);
             addTaint(value.getTaint());
-            // ---------- Original Method ----------
-            //if (value == null) {
-                //mPreparedStatement.bindNull(index);
-            //} else {
-                //mPreparedStatement.bindString(index, value);
-            //}
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -949,8 +994,8 @@ public class DatabaseUtils {
             addTaint(values.getTaint());
             long var0F5264038205EDFB1AC05FBB0E8C5E94_1378514475 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1378514475;
-            // ---------- Original Method ----------
-            //return insertInternal(values, false);
+            
+            
         }
 
         
@@ -959,33 +1004,33 @@ public class DatabaseUtils {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("you must prepare this inserter before calling "
                         + "execute");
-            } //End block
+            } 
             try 
             {
                 long varB1E8ED66178D6CA6EC479BE8B17F02EA_1240611419 = (mPreparedStatement.executeInsert());
-            } //End block
+            } 
             catch (SQLException e)
             { }
             finally 
             {
                 mPreparedStatement = null;
-            } //End block
+            } 
             long var0F5264038205EDFB1AC05FBB0E8C5E94_171566190 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_171566190;
-            // ---------- Original Method ----------
-            //if (mPreparedStatement == null) {
-                //throw new IllegalStateException("you must prepare this inserter before calling "
-                        //+ "execute");
-            //}
-            //try {
-                //if (LOCAL_LOGV) Log.v(TAG, "--- doing insert or replace in table " + mTableName);
-                //return mPreparedStatement.executeInsert();
-            //} catch (SQLException e) {
-                //Log.e(TAG, "Error executing InsertHelper with table " + mTableName, e);
-                //return -1;
-            //} finally {
-                //mPreparedStatement = null;
-            //}
+            
+            
+                
+                        
+            
+            
+                
+                
+            
+                
+                
+            
+                
+            
         }
 
         
@@ -993,9 +1038,9 @@ public class DatabaseUtils {
         public void prepareForInsert() {
             mPreparedStatement = getStatement(false);
             mPreparedStatement.clearBindings();
-            // ---------- Original Method ----------
-            //mPreparedStatement = getStatement(false);
-            //mPreparedStatement.clearBindings();
+            
+            
+            
         }
 
         
@@ -1003,9 +1048,9 @@ public class DatabaseUtils {
         public void prepareForReplace() {
             mPreparedStatement = getStatement(true);
             mPreparedStatement.clearBindings();
-            // ---------- Original Method ----------
-            //mPreparedStatement = getStatement(true);
-            //mPreparedStatement.clearBindings();
+            
+            
+            
         }
 
         
@@ -1015,8 +1060,8 @@ public class DatabaseUtils {
             addTaint(values.getTaint());
             long var0F5264038205EDFB1AC05FBB0E8C5E94_1328629169 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1328629169;
-            // ---------- Original Method ----------
-            //return insertInternal(values, true);
+            
+            
         }
 
         
@@ -1025,24 +1070,24 @@ public class DatabaseUtils {
             {
                 mInsertStatement.close();
                 mInsertStatement = null;
-            } //End block
+            } 
             {
                 mReplaceStatement.close();
                 mReplaceStatement = null;
-            } //End block
+            } 
             mInsertSQL = null;
             mColumns = null;
-            // ---------- Original Method ----------
-            //if (mInsertStatement != null) {
-                //mInsertStatement.close();
-                //mInsertStatement = null;
-            //}
-            //if (mReplaceStatement != null) {
-                //mReplaceStatement.close();
-                //mReplaceStatement = null;
-            //}
-            //mInsertSQL = null;
-            //mColumns = null;
+            
+            
+                
+                
+            
+            
+                
+                
+            
+            
+            
         }
 
         

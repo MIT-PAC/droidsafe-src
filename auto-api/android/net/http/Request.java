@@ -1,11 +1,11 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.EOFException;
 import java.io.InputStream;
@@ -88,71 +88,72 @@ class Request {
             boolean var8FEF9B847500F12DA238FAC239D37F37_1209531258 = (bodyProvider == null && !"POST".equalsIgnoreCase(method));
             {
                 mHttpRequest = new BasicHttpRequest(method, getUri());
-            } //End block
+            } 
             {
                 mHttpRequest = new BasicHttpEntityEnclosingRequest(
                     method, getUri());
                 {
                     setBodyProvider(bodyProvider, bodyLength);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addHeader(HOST_HEADER, getHostPort());
         addHeader(ACCEPT_ENCODING_HEADER, "gzip");
         addHeaders(headers);
         addTaint(headers.getTaint());
-        // ---------- Original Method ----------
-        //mEventHandler = eventHandler;
-        //mHost = host;
-        //mProxyHost = proxyHost;
-        //mPath = path;
-        //mBodyProvider = bodyProvider;
-        //mBodyLength = bodyLength;
-        //if (bodyProvider == null && !"POST".equalsIgnoreCase(method)) {
-            //mHttpRequest = new BasicHttpRequest(method, getUri());
-        //} else {
-            //mHttpRequest = new BasicHttpEntityEnclosingRequest(
-                    //method, getUri());
-            //if (bodyProvider != null) {
-                //setBodyProvider(bodyProvider, bodyLength);
-            //}
-        //}
-        //addHeader(HOST_HEADER, getHostPort());
-        //addHeader(ACCEPT_ENCODING_HEADER, "gzip");
-        //addHeaders(headers);
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+            
+                    
+            
+                
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.114 -0400", hash_original_method = "E8032EBF304EE392C16172EA55A4B7FA", hash_generated_method = "28ECA01D6890B41AC46CFE47D170D534")
     synchronized void setLoadingPaused(boolean pause) {
         mLoadingPaused = pause;
         {
             notify();
-        } //End block
-        // ---------- Original Method ----------
-        //mLoadingPaused = pause;
-        //if (!mLoadingPaused) {
-            //notify();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.114 -0400", hash_original_method = "A8C7471D7BEF79EC71A4F8B9C611F231", hash_generated_method = "D70D1983B2F9D3329EE3C868A7734833")
      void setConnection(Connection connection) {
         mConnection = connection;
-        // ---------- Original Method ----------
-        //mConnection = connection;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.115 -0400", hash_original_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0", hash_generated_method = "C3655118FE20F715AC5D7D3B41B2255E")
      EventHandler getEventHandler() {
-        EventHandler varB4EAC82CA7396A68D541C85D26508E83_1456895119 = null; //Variable for return #1
+        EventHandler varB4EAC82CA7396A68D541C85D26508E83_1456895119 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1456895119 = mEventHandler;
-        varB4EAC82CA7396A68D541C85D26508E83_1456895119.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1456895119.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1456895119;
-        // ---------- Original Method ----------
-        //return mEventHandler;
+        
+        
     }
 
     
@@ -162,30 +163,30 @@ class Request {
             String damage = "Null http header name";
             HttpLog.e(damage);
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException(damage);
-        } //End block
+        } 
         {
             boolean var1C990C48A6BCBB3DBB9FE63782A7F952_1393682092 = (value == null || value.length() == 0);
             {
                 String damage = "Null or empty value for header \"" + name + "\"";
                 HttpLog.e(damage);
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(damage);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mHttpRequest.addHeader(name, value);
         addTaint(name.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //String damage = "Null http header name";
-            //HttpLog.e(damage);
-            //throw new NullPointerException(damage);
-        //}
-        //if (value == null || value.length() == 0) {
-            //String damage = "Null or empty value for header \"" + name + "\"";
-            //HttpLog.e(damage);
-            //throw new RuntimeException(damage);
-        //}
-        //mHttpRequest.addHeader(name, value);
+        
+        
+            
+            
+            
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -198,19 +199,19 @@ class Request {
             {
                 entry = i.next();
                 addHeader(entry.getKey(), entry.getValue());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(headers.getTaint());
-        // ---------- Original Method ----------
-        //if (headers == null) {
-            //return;
-        //}
-        //Entry<String, String> entry;
-        //Iterator<Entry<String, String>> i = headers.entrySet().iterator();
-        //while (i.hasNext()) {
-            //entry = i.next();
-            //addHeader(entry.getKey(), entry.getValue());
-        //}
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -225,23 +226,23 @@ class Request {
                     {
                         Header header = (Header)i.next();
                         HttpLog.v(header.getName() + ": " + header.getValue());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         requestContentProcessor.process(mHttpRequest,
                                         mConnection.getHttpContext());
         httpClientConnection.sendRequestHeader(mHttpRequest);
         {
             httpClientConnection.sendRequestEntity(
                     (HttpEntityEnclosingRequest) mHttpRequest);
-        } //End block
+        } 
         {
             HttpLog.v("Request.requestSent() " + mHost.getSchemeName() + "://" + getHostPort() + mPath);
-        } //End block
+        } 
         addTaint(httpClientConnection.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -255,7 +256,7 @@ class Request {
         {
             statusLine = httpClientConnection.parseResponseHeader(header);
             statusCode = statusLine.getStatusCode();
-        } //End block
+        } 
         HttpLog.v(
                 "Request.readResponseStatus() " +
                 statusLine.toString().length() + " " + statusLine);
@@ -281,11 +282,11 @@ class Request {
                     contentEncoding.getValue().equals("gzip"));
                     {
                         nis = new GZIPInputStream(is);
-                    } //End block
+                    } 
                     {
                         nis = is;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 buf = mConnection.getBuf();
                 int len = 0;
                 int lowWater = buf.length / 2;
@@ -295,50 +296,50 @@ class Request {
                             try 
                             {
                                 wait();
-                            } //End block
+                            } 
                             catch (InterruptedException e)
                             {
                                 HttpLog.e("Interrupted exception whilst "
                                     + "network thread paused at WebCore's request."
                                     + " " + e.getMessage());
-                            } //End block
-                        } //End block
-                    } //End block
+                            } 
+                        } 
+                    } 
                     len = nis.read(buf, count, buf.length - count);
                     {
                         count += len;
                         mReceivedBytes += len;
-                    } //End block
+                    } 
                     {
                         HttpLog.v("Request.readResponse() " + count);
                         mEventHandler.data(buf, count);
                         count = 0;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             catch (EOFException e)
             {
                 {
                     mEventHandler.data(buf, count);
-                } //End block
+                } 
                 HttpLog.v( "readResponse() handling " + e);
-            } //End block
+            } 
             catch (IOException e)
             {
                 {
                     {
                         mEventHandler.data(buf, count);
-                    } //End block
+                    } 
                     if (DroidSafeAndroidRuntime.control) throw e;
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 {
                     nis.close();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         mConnection.setCanPersist(entity, statusLine.getProtocolVersion(),
                 header.getConnectionType());
         mEventHandler.endData();
@@ -346,39 +347,40 @@ class Request {
         HttpLog.v("Request.readResponse(): done " +
                                     mHost.getSchemeName() + "://" + getHostPort() + mPath);
         addTaint(httpClientConnection.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.119 -0400", hash_original_method = "0703BC7E6FB4CF479DE68CDEB6E6E012", hash_generated_method = "FB6F6716432825E5A1B83371B2531B57")
     synchronized void cancel() {
         {
             HttpLog.v("Request.cancel(): " + getUri());
-        } //End block
+        } 
         mLoadingPaused = false;
         notify();
         mCancelled = true;
         {
             mConnection.cancel();
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("Request.cancel(): " + getUri());
-        //}
-        //mLoadingPaused = false;
-        //notify();
-        //mCancelled = true;
-        //if (mConnection != null) {
-            //mConnection.cancel();
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.120 -0400", hash_original_method = "512B3E32AEE990D1477AF1DD14A214E5", hash_generated_method = "C0B5BE73DC76B27674CAB1474A2E4E66")
      String getHostPort() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1532807207 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1933518326 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1532807207 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1933518326 = null; 
         String myScheme = mHost.getSchemeName();
         int myPort = mHost.getPort();
         {
@@ -386,74 +388,74 @@ class Request {
             myPort != 443 && myScheme.equals("https"));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1532807207 = mHost.toHostString();
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1933518326 = mHost.getHostName();
-            } //End block
-        } //End collapsed parenthetic
-        String varA7E53CE21691AB073D9660D615818899_1544998969; //Final return value
+            } 
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1544998969; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1544998969 = varB4EAC82CA7396A68D541C85D26508E83_1532807207;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1544998969 = varB4EAC82CA7396A68D541C85D26508E83_1933518326;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1544998969.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1544998969.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1544998969;
-        // ---------- Original Method ----------
-        //String myScheme = mHost.getSchemeName();
-        //int myPort = mHost.getPort();
-        //if (myPort != 80 && myScheme.equals("http") ||
-            //myPort != 443 && myScheme.equals("https")) {
-            //return mHost.toHostString();
-        //} else {
-            //return mHost.getHostName();
-        //}
+        
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.121 -0400", hash_original_method = "2DF65EB3016FC9C1BCED4852586E67B2", hash_generated_method = "7FDB36E480ABCDA13495FE1203452DFD")
      String getUri() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1021371154 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1384010889 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1021371154 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1384010889 = null; 
         {
             boolean varC80F30B1906E6F9A7B5768A93265E704_1203762419 = (mProxyHost == null ||
             mHost.getSchemeName().equals("https"));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1021371154 = mPath;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1384010889 = mHost.getSchemeName() + "://" + getHostPort() + mPath;
-        String varA7E53CE21691AB073D9660D615818899_1857809083; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1857809083; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1857809083 = varB4EAC82CA7396A68D541C85D26508E83_1021371154;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1857809083 = varB4EAC82CA7396A68D541C85D26508E83_1384010889;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1857809083.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1857809083.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1857809083;
-        // ---------- Original Method ----------
-        //if (mProxyHost == null ||
-            //mHost.getSchemeName().equals("https")) {
-            //return mPath;
-        //}
-        //return mHost.getSchemeName() + "://" + getHostPort() + mPath;
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.121 -0400", hash_original_method = "260B42F8E7BEBB3ADC717EDEB2B728A2", hash_generated_method = "DFF3C8ACE1EDBF3CDD5BD9337A623CF6")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_162065004 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_162065004 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_162065004 = mPath;
-        varB4EAC82CA7396A68D541C85D26508E83_162065004.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_162065004.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_162065004;
-        // ---------- Original Method ----------
-        //return mPath;
+        
+        
     }
 
     
@@ -464,37 +466,37 @@ class Request {
             try 
             {
                 mBodyProvider.reset();
-            } //End block
+            } 
             catch (IOException ex)
             {
                 HttpLog.v(
                         "failed to reset body provider " +
                         getUri());
-            } //End block
+            } 
             setBodyProvider(mBodyProvider, mBodyLength);
-        } //End block
+        } 
         {
             mFailCount = 0;
             HttpLog.v("*** Request.reset() to range:" + mReceivedBytes);
             mHttpRequest.setHeader("Range", "bytes=" + mReceivedBytes + "-");
-        } //End block
-        // ---------- Original Method ----------
-        //mHttpRequest.removeHeaders(CONTENT_LENGTH_HEADER);
-        //if (mBodyProvider != null) {
-            //try {
-                //mBodyProvider.reset();
-            //} catch (IOException ex) {
-                //if (HttpLog.LOGV) HttpLog.v(
-                        //"failed to reset body provider " +
-                        //getUri());
-            //}
-            //setBodyProvider(mBodyProvider, mBodyLength);
-        //}
-        //if (mReceivedBytes > 0) {
-            //mFailCount = 0;
-            //HttpLog.v("*** Request.reset() to range:" + mReceivedBytes);
-            //mHttpRequest.setHeader("Range", "bytes=" + mReceivedBytes + "-");
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+                
+                        
+                        
+            
+            
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -506,19 +508,19 @@ class Request {
                 HttpLog.v("Request.waitUntilComplete()");
                 mClientResource.wait();
                 HttpLog.v("Request.waitUntilComplete() done waiting");
-            } //End block
+            } 
             catch (InterruptedException e)
             { }
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mClientResource) {
-            //try {
-                //if (HttpLog.LOGV) HttpLog.v("Request.waitUntilComplete()");
-                //mClientResource.wait();
-                //if (HttpLog.LOGV) HttpLog.v("Request.waitUntilComplete() done waiting");
-            //} catch (InterruptedException e) {
-            //}
-        //}
+        } 
+        
+        
+            
+                
+                
+                
+            
+            
+        
     }
 
     
@@ -526,11 +528,11 @@ class Request {
      void complete() {
         {
             mClientResource.notifyAll();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mClientResource) {
-            //mClientResource.notifyAll();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -545,6 +547,7 @@ class Request {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.123 -0400", hash_original_method = "270D8BA233306D6526BC7DEE9032A6D1", hash_generated_method = "00192E1B927AA38ADE38D51ED73DC0CF")
     private void setBodyProvider(InputStream bodyProvider, int bodyLength) {
         {
@@ -552,36 +555,37 @@ class Request {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "bodyProvider must support mark()");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         bodyProvider.mark(Integer.MAX_VALUE);
         ((BasicHttpEntityEnclosingRequest)mHttpRequest).setEntity(
                 new InputStreamEntity(bodyProvider, bodyLength));
         addTaint(bodyProvider.getTaint());
         addTaint(bodyLength);
-        // ---------- Original Method ----------
-        //if (!bodyProvider.markSupported()) {
-            //throw new IllegalArgumentException(
-                    //"bodyProvider must support mark()");
-        //}
-        //bodyProvider.mark(Integer.MAX_VALUE);
-        //((BasicHttpEntityEnclosingRequest)mHttpRequest).setEntity(
-                //new InputStreamEntity(bodyProvider, bodyLength));
+        
+        
+            
+                    
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.123 -0400", hash_original_method = "9C3B106C5F2D1AB923C52530BB6B2461", hash_generated_method = "9AA67C5B91347731ECC39C0441812624")
     public void handleSslErrorResponse(boolean proceed) {
         HttpsConnection connection = (HttpsConnection)(mConnection);
         {
             connection.restartConnection(proceed);
-        } //End block
+        } 
         addTaint(proceed);
-        // ---------- Original Method ----------
-        //HttpsConnection connection = (HttpsConnection)(mConnection);
-        //if (connection != null) {
-            //connection.restartConnection(proceed);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -593,11 +597,11 @@ class Request {
                         resourceId).toString());
         addTaint(errorId);
         addTaint(resourceId);
-        // ---------- Original Method ----------
-        //mEventHandler.error(
-                //errorId,
-                //mConnection.mContext.getText(
-                        //resourceId).toString());
+        
+        
+                
+                
+                        
     }
 
     

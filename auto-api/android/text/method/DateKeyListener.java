@@ -1,11 +1,11 @@
 package android.text.method;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.view.KeyEvent;
 import android.text.InputType;
@@ -15,7 +15,7 @@ public class DateKeyListener extends NumberKeyListener {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.092 -0400", hash_original_method = "09F9B6EA4C38704CC9648D105D359284", hash_generated_method = "09F9B6EA4C38704CC9648D105D359284")
     public DateKeyListener ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -23,9 +23,9 @@ public class DateKeyListener extends NumberKeyListener {
     public int getInputType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1354577404 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1354577404;
-        // ---------- Original Method ----------
-        //return InputType.TYPE_CLASS_DATETIME
-                //| InputType.TYPE_DATETIME_VARIATION_DATE;
+        
+        
+                
     }
 
     
@@ -34,11 +34,12 @@ public class DateKeyListener extends NumberKeyListener {
     protected char[] getAcceptedChars() {
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1558995081 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1558995081;
-        // ---------- Original Method ----------
-        //return CHARACTERS;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DateKeyListener getInstance() {
         if (sInstance != null)
             return sInstance;

@@ -1,11 +1,11 @@
 package android.net.wifi;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcelable;
 import android.os.Parcel;
@@ -34,19 +34,20 @@ public class ScanResult implements Parcelable {
         this.capabilities = caps;
         this.level = level;
         this.frequency = frequency;
-        // ---------- Original Method ----------
-        //this.SSID = SSID;
-        //this.BSSID = BSSID;
-        //this.capabilities = caps;
-        //this.level = level;
-        //this.frequency = frequency;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.370 -0400", hash_original_method = "3BF3B5ECD6A260296AD88686E08D9EA2", hash_generated_method = "C0623DD8C3B2E06C5DD97045448FB727")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_167772127 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_167772127 = null; 
         StringBuffer sb = new StringBuffer();
         String none = "<none>";
         sb.append("SSID: ").
@@ -60,22 +61,22 @@ public class ScanResult implements Parcelable {
             append(", frequency: ").
             append(frequency);
         varB4EAC82CA7396A68D541C85D26508E83_167772127 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_167772127.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_167772127.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_167772127;
-        // ---------- Original Method ----------
-        //StringBuffer sb = new StringBuffer();
-        //String none = "<none>";
-        //sb.append("SSID: ").
-            //append(SSID == null ? none : SSID).
-            //append(", BSSID: ").
-            //append(BSSID == null ? none : BSSID).
-            //append(", capabilities: ").
-            //append(capabilities == null ? none : capabilities).
-            //append(", level: ").
-            //append(level).
-            //append(", frequency: ").
-            //append(frequency);
-        //return sb.toString();
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -83,11 +84,12 @@ public class ScanResult implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785918864 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785918864;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.371 -0400", hash_original_method = "8ED27770F672F68987FCE9C19DB9995F", hash_generated_method = "C48ECCE5DA0EAA54A80C854CFBAA5AAC")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(SSID);
@@ -97,12 +99,12 @@ public class ScanResult implements Parcelable {
         dest.writeInt(frequency);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(SSID);
-        //dest.writeString(BSSID);
-        //dest.writeString(capabilities);
-        //dest.writeInt(level);
-        //dest.writeInt(frequency);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -124,7 +126,7 @@ public class ScanResult implements Parcelable {
                 return new ScanResult[size];
             }
         };
-    // orphaned legacy method
+    
     public ScanResult createFromParcel(Parcel in) {
                 return new ScanResult(
                     in.readString(),
@@ -135,7 +137,7 @@ public class ScanResult implements Parcelable {
                 );
             }
     
-    // orphaned legacy method
+    
     public ScanResult[] newArray(int size) {
                 return new ScanResult[size];
             }

@@ -1,11 +1,11 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.AsyncResult;
 import android.os.Handler;
@@ -65,15 +65,16 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
         mPbrFile = null;
         mIsPbrPresent = true;
         mAdnCache = cache;
-        // ---------- Original Method ----------
-        //mPhone = phone;
-        //mPhoneBookRecords = new ArrayList<AdnRecord>();
-        //mPbrFile = null;
-        //mIsPbrPresent = true;
-        //mAdnCache = cache;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.933 -0400", hash_original_method = "E0D906663A0994551C89240DFDC0BDC8", hash_generated_method = "ABA5A37BF0D9B72AE08F6D010D45EC01")
     public void reset() {
         mPhoneBookRecords.clear();
@@ -82,22 +83,23 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
         mPbrFile = null;
         mIsPbrPresent = true;
         mRefreshCache = false;
-        // ---------- Original Method ----------
-        //mPhoneBookRecords.clear();
-        //mIapFileRecord = null;
-        //mEmailFileRecord = null;
-        //mPbrFile = null;
-        //mIsPbrPresent = true;
-        //mRefreshCache = false;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.933 -0400", hash_original_method = "B81A15F32DE42ED7FA5FD76607998109", hash_generated_method = "14ACF87A7CC030DF0CB6E89CC0A13D45")
     public ArrayList<AdnRecord> loadEfFilesFromUsim() {
-        ArrayList<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_395596292 = null; //Variable for return #1
-        ArrayList<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_591592248 = null; //Variable for return #2
-        ArrayList<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_534237708 = null; //Variable for return #3
-        ArrayList<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_1732707261 = null; //Variable for return #4
+        ArrayList<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_395596292 = null; 
+        ArrayList<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_591592248 = null; 
+        ArrayList<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_534237708 = null; 
+        ArrayList<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_1732707261 = null; 
         {
             {
                 boolean var9D433910E1D3843659FCB90F123565EA_590784426 = (!mPhoneBookRecords.isEmpty());
@@ -105,14 +107,14 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                     {
                         mRefreshCache = false;
                         refreshCache();
-                    } //End block
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_395596292 = mPhoneBookRecords;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_591592248 = null;
             {
                 readPbrFileAndWait();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_534237708 = null;
             int numRecs = mPbrFile.mFileIds.size();
             {
@@ -120,51 +122,52 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                 {
                     readAdnFileAndWait(i);
                     readEmailFileAndWait(i);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1732707261 = mPhoneBookRecords;
-        ArrayList<AdnRecord> varA7E53CE21691AB073D9660D615818899_572093848; //Final return value
+        ArrayList<AdnRecord> varA7E53CE21691AB073D9660D615818899_572093848; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_572093848 = varB4EAC82CA7396A68D541C85D26508E83_395596292;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_572093848 = varB4EAC82CA7396A68D541C85D26508E83_591592248;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_572093848 = varB4EAC82CA7396A68D541C85D26508E83_534237708;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_572093848 = varB4EAC82CA7396A68D541C85D26508E83_1732707261;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_572093848.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_572093848.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_572093848;
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (!mPhoneBookRecords.isEmpty()) {
-                //if (mRefreshCache) {
-                    //mRefreshCache = false;
-                    //refreshCache();
-                //}
-                //return mPhoneBookRecords;
-            //}
-            //if (!mIsPbrPresent) return null;
-            //if (mPbrFile == null) {
-                //readPbrFileAndWait();
-            //}
-            //if (mPbrFile == null) return null;
-            //int numRecs = mPbrFile.mFileIds.size();
-            //for (int i = 0; i < numRecs; i++) {
-                //readAdnFileAndWait(i);
-                //readEmailFileAndWait(i);
-            //}
-        //}
-        //return mPhoneBookRecords;
+        
+        
+            
+                
+                    
+                    
+                
+                
+            
+            
+            
+                
+            
+            
+            
+            
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.934 -0400", hash_original_method = "B532D4E2E21067521A95047E8C8D19E8", hash_generated_method = "6BFDD9BF75AE305E7DF75C55EC437DEF")
     private void refreshCache() {
         mPhoneBookRecords.clear();
@@ -173,45 +176,47 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
             int i = 0;
             {
                 readAdnFileAndWait(i);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mPbrFile == null) return;
-        //mPhoneBookRecords.clear();
-        //int numRecs = mPbrFile.mFileIds.size();
-        //for (int i = 0; i < numRecs; i++) {
-            //readAdnFileAndWait(i);
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.934 -0400", hash_original_method = "4227D3403F7221594B4C4984D58136B1", hash_generated_method = "94D421C1BCB4B33EF173797F9066F6AC")
     public void invalidateCache() {
         mRefreshCache = true;
-        // ---------- Original Method ----------
-        //mRefreshCache = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.934 -0400", hash_original_method = "78E381AC3959E12E81678D4DFFBA5C8B", hash_generated_method = "3F8F554B0DFE76C73E3BA3F105EA8D1B")
     private void readPbrFileAndWait() {
         mPhone.getIccFileHandler().loadEFLinearFixedAll(EF_PBR, obtainMessage(EVENT_PBR_LOAD_DONE));
         try 
         {
             mLock.wait();
-        } //End block
+        } 
         catch (InterruptedException e)
         { }
-        // ---------- Original Method ----------
-        //mPhone.getIccFileHandler().loadEFLinearFixedAll(EF_PBR, obtainMessage(EVENT_PBR_LOAD_DONE));
-        //try {
-            //mLock.wait();
-        //} catch (InterruptedException e) {
-            //Log.e(LOG_TAG, "Interrupted Exception in readAdnFileAndWait");
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.935 -0400", hash_original_method = "48BBB6A0A30AD38B5848D3F55664B632", hash_generated_method = "15ED6BFC660DD6E201314A0B83ECD441")
     private void readEmailFileAndWait(int recNum) {
         Map <Integer,Integer> fileIds;
@@ -222,44 +227,46 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                 int efid = fileIds.get(USIM_EFEMAIL_TAG);
                 {
                     readIapFileAndWait(fileIds.get(USIM_EFIAP_TAG));
-                } //End block
+                } 
                 mPhone.getIccFileHandler().loadEFLinearFixedAll(fileIds.get(USIM_EFEMAIL_TAG),
                     obtainMessage(EVENT_EMAIL_LOAD_DONE));
                 try 
                 {
                     mLock.wait();
-                } //End block
+                } 
                 catch (InterruptedException e)
                 { }
                 updatePhoneAdnRecord();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(recNum);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.936 -0400", hash_original_method = "9E809A1ED86DEC7D2454BACD182423F6", hash_generated_method = "8FC4D7ACC9751F1DB92E2C440B276842")
     private void readIapFileAndWait(int efid) {
         mPhone.getIccFileHandler().loadEFLinearFixedAll(efid, obtainMessage(EVENT_IAP_LOAD_DONE));
         try 
         {
             mLock.wait();
-        } //End block
+        } 
         catch (InterruptedException e)
         { }
         addTaint(efid);
-        // ---------- Original Method ----------
-        //mPhone.getIccFileHandler().loadEFLinearFixedAll(efid, obtainMessage(EVENT_IAP_LOAD_DONE));
-        //try {
-            //mLock.wait();
-        //} catch (InterruptedException e) {
-            //Log.e(LOG_TAG, "Interrupted Exception in readIapFileAndWait");
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.937 -0400", hash_original_method = "DBF9EE6E650F45B09979783B6AE92B3D", hash_generated_method = "DBC93D38A546306B826496F159CD1E37")
     private void updatePhoneAdnRecord() {
         int numAdnRecs = mPhoneBookRecords.size();
@@ -271,7 +278,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                     try 
                     {
                         record = mIapFileRecord.get(i);
-                    } //End block
+                    } 
                     catch (IndexOutOfBoundsException e)
                     { }
                     int recNum = record[mEmailTagNumberInIap];
@@ -281,19 +288,19 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                         AdnRecord rec = mPhoneBookRecords.get(i);
                         {
                             rec.setEmails(emails);
-                        } //End block
+                        } 
                         {
                             rec = new AdnRecord("", "", emails);
-                        } //End block
+                        } 
                         mPhoneBookRecords.set(i, rec);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         int len = mPhoneBookRecords.size();
         {
             parseType1EmailFile(len);
-        } //End block
+        } 
         {
             int i = 0;
             {
@@ -301,7 +308,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                 try 
                 {
                     emailList = mEmailsForAdnRec.get(i);
-                } //End block
+                } 
                 catch (IndexOutOfBoundsException e)
                 { }
                 AdnRecord rec = mPhoneBookRecords.get(i);
@@ -309,10 +316,10 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                 System.arraycopy(emailList.toArray(), 0, emails, 0, emailList.size());
                 rec.setEmails(emails);
                 mPhoneBookRecords.set(i, rec);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -326,202 +333,207 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                 try 
                 {
                     emailRec = mEmailFileRecord.get(i);
-                } //End block
+                } 
                 catch (IndexOutOfBoundsException e)
                 { }
                 int adnRecNum = emailRec[emailRec.length - 1];
                 String email = readEmailRecord(i);
                 {
                     boolean var7580166154D64CB834904276F6B67CAD_4888178 = (email == null || email.equals(""));
-                } //End collapsed parenthetic
+                } 
                 ArrayList<String> val = mEmailsForAdnRec.get(adnRecNum - 1);
                 {
                     val = new ArrayList<String>();
-                } //End block
+                } 
                 val.add(email);
                 mEmailsForAdnRec.put(adnRecNum - 1, val);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(numRecs);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.939 -0400", hash_original_method = "9DD87F6722942AC55924DBE05DD72D60", hash_generated_method = "C63EE887C4C9D06EC3A9CC758C48310B")
     private String readEmailRecord(int recNum) {
-        String varB4EAC82CA7396A68D541C85D26508E83_781735340 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1187423964 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_781735340 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1187423964 = null; 
         byte[] emailRec = null;
         try 
         {
             emailRec = mEmailFileRecord.get(recNum);
-        } //End block
+        } 
         catch (IndexOutOfBoundsException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_781735340 = null;
-        } //End block
+        } 
         String email = IccUtils.adnStringFieldToString(emailRec, 0, emailRec.length - 2);
         varB4EAC82CA7396A68D541C85D26508E83_1187423964 = email;
         addTaint(recNum);
-        String varA7E53CE21691AB073D9660D615818899_1435699755; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1435699755; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1435699755 = varB4EAC82CA7396A68D541C85D26508E83_781735340;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1435699755 = varB4EAC82CA7396A68D541C85D26508E83_1187423964;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1435699755.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1435699755.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1435699755;
-        // ---------- Original Method ----------
-        //byte[] emailRec = null;
-        //try {
-            //emailRec = mEmailFileRecord.get(recNum);
-        //} catch (IndexOutOfBoundsException e) {
-            //return null;
-        //}
-        //String email = IccUtils.adnStringFieldToString(emailRec, 0, emailRec.length - 2);
-        //return email;
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.939 -0400", hash_original_method = "4035A9584818EC181E07E84AC976F741", hash_generated_method = "A2B1DC40ADDEB4BA66AF79BCA96946F8")
     private void readAdnFileAndWait(int recNum) {
         Map <Integer,Integer> fileIds;
         fileIds = mPbrFile.mFileIds.get(recNum);
         {
             boolean varA67B124270236CD7C1FC832187360DEE_2039439155 = (fileIds == null || fileIds.isEmpty());
-        } //End collapsed parenthetic
+        } 
         int extEf = 0;
         {
             boolean var826F82931AF9A1D83BE91383C0B6480A_508029999 = (fileIds.containsKey(USIM_EFEXT1_TAG));
             {
                 extEf = fileIds.get(USIM_EFEXT1_TAG);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mAdnCache.requestLoadAllAdnLike(fileIds.get(USIM_EFADN_TAG),
             extEf, obtainMessage(EVENT_USIM_ADN_LOAD_DONE));
         try 
         {
             mLock.wait();
-        } //End block
+        } 
         catch (InterruptedException e)
         { }
         addTaint(recNum);
-        // ---------- Original Method ----------
-        //Map <Integer,Integer> fileIds;
-        //fileIds = mPbrFile.mFileIds.get(recNum);
-        //if (fileIds == null || fileIds.isEmpty()) return;
-        //int extEf = 0;
-        //if (fileIds.containsKey(USIM_EFEXT1_TAG)) {
-            //extEf = fileIds.get(USIM_EFEXT1_TAG);
-        //}
-        //mAdnCache.requestLoadAllAdnLike(fileIds.get(USIM_EFADN_TAG),
-            //extEf, obtainMessage(EVENT_USIM_ADN_LOAD_DONE));
-        //try {
-            //mLock.wait();
-        //} catch (InterruptedException e) {
-            //Log.e(LOG_TAG, "Interrupted Exception in readAdnFileAndWait");
-        //}
+        
+        
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.939 -0400", hash_original_method = "EC7FC3EA469B316149A3EE38C863088E", hash_generated_method = "E61880AEFD24F4AF7CF359A587F7808A")
     private void createPbrFile(ArrayList<byte[]> records) {
         {
             mPbrFile = null;
             mIsPbrPresent = false;
-        } //End block
+        } 
         mPbrFile = new PbrFile(records);
-        // ---------- Original Method ----------
-        //if (records == null) {
-            //mPbrFile = null;
-            //mIsPbrPresent = false;
-            //return;
-        //}
-        //mPbrFile = new PbrFile(records);
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.940 -0400", hash_original_method = "DBCDBDCB51A5EB5E1A763E38D42C7855", hash_generated_method = "43BF6D20E8D0C31A3AD3617BDE49890A")
     @Override
     public void handleMessage(Message msg) {
         AsyncResult ar;
-        //Begin case EVENT_PBR_LOAD_DONE 
+        
         ar = (AsyncResult) msg.obj;
-        //End case EVENT_PBR_LOAD_DONE 
-        //Begin case EVENT_PBR_LOAD_DONE 
+        
+        
         {
             createPbrFile((ArrayList<byte[]>)ar.result);
-        } //End block
-        //End case EVENT_PBR_LOAD_DONE 
-        //Begin case EVENT_PBR_LOAD_DONE 
+        } 
+        
+        
         {
             mLock.notify();
-        } //End block
-        //End case EVENT_PBR_LOAD_DONE 
-        //Begin case EVENT_USIM_ADN_LOAD_DONE 
+        } 
+        
+        
         log("Loading USIM ADN records done");
-        //End case EVENT_USIM_ADN_LOAD_DONE 
-        //Begin case EVENT_USIM_ADN_LOAD_DONE 
+        
+        
         ar = (AsyncResult) msg.obj;
-        //End case EVENT_USIM_ADN_LOAD_DONE 
-        //Begin case EVENT_USIM_ADN_LOAD_DONE 
+        
+        
         {
             mPhoneBookRecords.addAll((ArrayList<AdnRecord>)ar.result);
-        } //End block
-        //End case EVENT_USIM_ADN_LOAD_DONE 
-        //Begin case EVENT_USIM_ADN_LOAD_DONE 
+        } 
+        
+        
         {
             mLock.notify();
-        } //End block
-        //End case EVENT_USIM_ADN_LOAD_DONE 
-        //Begin case EVENT_IAP_LOAD_DONE 
+        } 
+        
+        
         log("Loading USIM IAP records done");
-        //End case EVENT_IAP_LOAD_DONE 
-        //Begin case EVENT_IAP_LOAD_DONE 
+        
+        
         ar = (AsyncResult) msg.obj;
-        //End case EVENT_IAP_LOAD_DONE 
-        //Begin case EVENT_IAP_LOAD_DONE 
+        
+        
         {
             mIapFileRecord = ((ArrayList<byte[]>)ar.result);
-        } //End block
-        //End case EVENT_IAP_LOAD_DONE 
-        //Begin case EVENT_IAP_LOAD_DONE 
+        } 
+        
+        
         {
             mLock.notify();
-        } //End block
-        //End case EVENT_IAP_LOAD_DONE 
-        //Begin case EVENT_EMAIL_LOAD_DONE 
+        } 
+        
+        
         log("Loading USIM Email records done");
-        //End case EVENT_EMAIL_LOAD_DONE 
-        //Begin case EVENT_EMAIL_LOAD_DONE 
+        
+        
         ar = (AsyncResult) msg.obj;
-        //End case EVENT_EMAIL_LOAD_DONE 
-        //Begin case EVENT_EMAIL_LOAD_DONE 
+        
+        
         {
             mEmailFileRecord = ((ArrayList<byte[]>)ar.result);
-        } //End block
-        //End case EVENT_EMAIL_LOAD_DONE 
-        //Begin case EVENT_EMAIL_LOAD_DONE 
+        } 
+        
+        
         {
             mLock.notify();
-        } //End block
-        //End case EVENT_EMAIL_LOAD_DONE 
+        } 
+        
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.940 -0400", hash_original_method = "B26CBB1291A6152D9C092C7AC934B437", hash_generated_method = "43525AB9820103BD8833B755D5CF5385")
     private void log(String msg) {
         Log.d(LOG_TAG, msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //if(DBG) Log.d(LOG_TAG, msg);
+        
+        
     }
 
     
@@ -542,18 +554,18 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                 {
                     recTlv = new SimTlv(record, 0, record.length);
                     parseTag(recTlv, recNum);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(records.getTaint());
-            // ---------- Original Method ----------
-            //mFileIds = new HashMap<Integer, Map<Integer, Integer>>();
-            //SimTlv recTlv;
-            //int recNum = 0;
-            //for (byte[] record: records) {
-                //recTlv = new SimTlv(record, 0, record.length);
-                //parseTag(recTlv, recNum);
-                //recNum ++;
-            //}
+            
+            
+            
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -565,40 +577,40 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
             Map<Integer, Integer> val = new HashMap<Integer, Integer>();
             {
                 tag = tlv.getTag();
-                //Begin case USIM_TYPE1_TAG USIM_TYPE3_TAG USIM_TYPE2_TAG 
+                
                 data = tlv.getData();
-                //End case USIM_TYPE1_TAG USIM_TYPE3_TAG USIM_TYPE2_TAG 
-                //Begin case USIM_TYPE1_TAG USIM_TYPE3_TAG USIM_TYPE2_TAG 
+                
+                
                 tlvEf = new SimTlv(data, 0, data.length);
-                //End case USIM_TYPE1_TAG USIM_TYPE3_TAG USIM_TYPE2_TAG 
-                //Begin case USIM_TYPE1_TAG USIM_TYPE3_TAG USIM_TYPE2_TAG 
+                
+                
                 parseEf(tlvEf, val, tag);
-                //End case USIM_TYPE1_TAG USIM_TYPE3_TAG USIM_TYPE2_TAG 
-            } //End block
+                
+            } 
             {
                 boolean var2BD20FFFB0EEC59B00776BE63CF9A28E_144809750 = (tlv.nextObject());
-            } //End collapsed parenthetic
+            } 
             mFileIds.put(recNum, val);
             addTaint(tlv.getTaint());
             addTaint(recNum);
-            // ---------- Original Method ----------
-            //SimTlv tlvEf;
-            //int tag;
-            //byte[] data;
-            //Map<Integer, Integer> val = new HashMap<Integer, Integer>();
-            //do {
-                //tag = tlv.getTag();
-                //switch(tag) {
-                //case USIM_TYPE1_TAG: 
-                //case USIM_TYPE3_TAG: 
-                //case USIM_TYPE2_TAG: 
-                    //data = tlv.getData();
-                    //tlvEf = new SimTlv(data, 0, data.length);
-                    //parseEf(tlvEf, val, tag);
-                    //break;
-                //}
-            //} while (tlv.nextObject());
-            //mFileIds.put(recNum, val);
+            
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+            
+            
         }
 
         
@@ -612,25 +624,25 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                 {
                     mEmailPresentInIap = true;
                     mEmailTagNumberInIap = tagNumberWithinParentTag;
-                } //End block
-                //Begin case USIM_EFEMAIL_TAG USIM_EFADN_TAG USIM_EFEXT1_TAG USIM_EFANR_TAG USIM_EFPBC_TAG USIM_EFGRP_TAG USIM_EFAAS_TAG USIM_EFGSD_TAG USIM_EFUID_TAG USIM_EFCCP1_TAG USIM_EFIAP_TAG USIM_EFSNE_TAG 
+                } 
+                
                 data = tlv.getData();
-                //End case USIM_EFEMAIL_TAG USIM_EFADN_TAG USIM_EFEXT1_TAG USIM_EFANR_TAG USIM_EFPBC_TAG USIM_EFGRP_TAG USIM_EFAAS_TAG USIM_EFGSD_TAG USIM_EFUID_TAG USIM_EFCCP1_TAG USIM_EFIAP_TAG USIM_EFSNE_TAG 
-                //Begin case USIM_EFEMAIL_TAG USIM_EFADN_TAG USIM_EFEXT1_TAG USIM_EFANR_TAG USIM_EFPBC_TAG USIM_EFGRP_TAG USIM_EFAAS_TAG USIM_EFGSD_TAG USIM_EFUID_TAG USIM_EFCCP1_TAG USIM_EFIAP_TAG USIM_EFSNE_TAG 
+                
+                
                 int efid = ((data[0] & 0xFF) << 8) | (data[1] & 0xFF);
-                //End case USIM_EFEMAIL_TAG USIM_EFADN_TAG USIM_EFEXT1_TAG USIM_EFANR_TAG USIM_EFPBC_TAG USIM_EFGRP_TAG USIM_EFAAS_TAG USIM_EFGSD_TAG USIM_EFUID_TAG USIM_EFCCP1_TAG USIM_EFIAP_TAG USIM_EFSNE_TAG 
-                //Begin case USIM_EFEMAIL_TAG USIM_EFADN_TAG USIM_EFEXT1_TAG USIM_EFANR_TAG USIM_EFPBC_TAG USIM_EFGRP_TAG USIM_EFAAS_TAG USIM_EFGSD_TAG USIM_EFUID_TAG USIM_EFCCP1_TAG USIM_EFIAP_TAG USIM_EFSNE_TAG 
+                
+                
                 val.put(tag, efid);
-                //End case USIM_EFEMAIL_TAG USIM_EFADN_TAG USIM_EFEXT1_TAG USIM_EFANR_TAG USIM_EFPBC_TAG USIM_EFGRP_TAG USIM_EFAAS_TAG USIM_EFGSD_TAG USIM_EFUID_TAG USIM_EFCCP1_TAG USIM_EFIAP_TAG USIM_EFSNE_TAG 
-            } //End block
+                
+            } 
             {
                 boolean var2BD20FFFB0EEC59B00776BE63CF9A28E_342271435 = (tlv.nextObject());
-            } //End collapsed parenthetic
+            } 
             addTaint(tlv.getTaint());
             addTaint(val.getTaint());
             addTaint(parentTag);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

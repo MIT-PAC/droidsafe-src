@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -81,24 +81,24 @@ public class PackageParser {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.585 -0400", hash_original_method = "DDBED2CCEF7CE747A37B4CF69A21D51E", hash_generated_method = "E69DDF97EF9C8A4CD053936837CFE800")
     public  PackageParser(String archiveSourcePath) {
         mArchiveSourcePath = archiveSourcePath;
-        // ---------- Original Method ----------
-        //mArchiveSourcePath = archiveSourcePath;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.586 -0400", hash_original_method = "65A62D9388B66A4D9595CDAEE2873A09", hash_generated_method = "103DD5B4DFB0483919E33AB133A239C0")
     public void setSeparateProcesses(String[] procs) {
         mSeparateProcesses = procs;
-        // ---------- Original Method ----------
-        //mSeparateProcesses = procs;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.586 -0400", hash_original_method = "14C9699FDDD05F8B9AF1818DB0942037", hash_generated_method = "109C581621376AE52DD74733E1366244")
     public void setOnlyCoreApps(boolean onlyCoreApps) {
         mOnlyCoreApps = onlyCoreApps;
-        // ---------- Original Method ----------
-        //mOnlyCoreApps = onlyCoreApps;
+        
+        
     }
 
     
@@ -255,20 +255,21 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.588 -0400", hash_original_method = "83F32E741E7740326FB3ACF1CABD2263", hash_generated_method = "A3EA70C352B7734F84FB854AEB2DDAF5")
     private Certificate[] loadCertificates(JarFile jarFile, JarEntry je,
             byte[] readBuffer) {
-        Certificate[] varB4EAC82CA7396A68D541C85D26508E83_322862424 = null; //Variable for return #1
-        Certificate[] varB4EAC82CA7396A68D541C85D26508E83_1218503765 = null; //Variable for return #2
+        Certificate[] varB4EAC82CA7396A68D541C85D26508E83_322862424 = null; 
+        Certificate[] varB4EAC82CA7396A68D541C85D26508E83_1218503765 = null; 
         try 
         {
             InputStream is = new BufferedInputStream(jarFile.getInputStream(je));
             {
                 boolean var7C3826F57E2B97B3B91292A259636CBB_829691671 = (is.read(readBuffer, 0, readBuffer.length) != -1);
-            } //End collapsed parenthetic
+            } 
             is.close();
             varB4EAC82CA7396A68D541C85D26508E83_322862424 = je != null ? je.getCertificates() : null;
-        } //End block
+        } 
         catch (IOException e)
         { }
         catch (RuntimeException e)
@@ -277,32 +278,32 @@ public class PackageParser {
         addTaint(jarFile.getTaint());
         addTaint(je.getTaint());
         addTaint(readBuffer[0]);
-        Certificate[] varA7E53CE21691AB073D9660D615818899_1951030517; //Final return value
+        Certificate[] varA7E53CE21691AB073D9660D615818899_1951030517; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1951030517 = varB4EAC82CA7396A68D541C85D26508E83_322862424;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1951030517 = varB4EAC82CA7396A68D541C85D26508E83_1218503765;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1951030517.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1951030517.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1951030517;
-        // ---------- Original Method ----------
-        //try {
-            //InputStream is = new BufferedInputStream(jarFile.getInputStream(je));
-            //while (is.read(readBuffer, 0, readBuffer.length) != -1) {
-            //}
-            //is.close();
-            //return je != null ? je.getCertificates() : null;
-        //} catch (IOException e) {
-            //Slog.w(TAG, "Exception reading " + je.getName() + " in "
-                    //+ jarFile.getName(), e);
-        //} catch (RuntimeException e) {
-            //Slog.w(TAG, "Exception reading " + je.getName() + " in "
-                    //+ jarFile.getName(), e);
-        //}
-        //return null;
+        
+        
+            
+            
+            
+            
+            
+        
+            
+                    
+        
+            
+                    
+        
+        
     }
 
     
@@ -310,19 +311,20 @@ public class PackageParser {
     public int getParseError() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_329076799 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_329076799;
-        // ---------- Original Method ----------
-        //return mParseError;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.591 -0400", hash_original_method = "F8C0CFF9FE003FD5724E792D5942913B", hash_generated_method = "8ABA2352800FE2450658EAAF0FC33F38")
     public Package parsePackage(File sourceFile, String destCodePath,
             DisplayMetrics metrics, int flags) {
-        Package varB4EAC82CA7396A68D541C85D26508E83_483259712 = null; //Variable for return #1
-        Package varB4EAC82CA7396A68D541C85D26508E83_1008106760 = null; //Variable for return #2
-        Package varB4EAC82CA7396A68D541C85D26508E83_1790882936 = null; //Variable for return #3
-        Package varB4EAC82CA7396A68D541C85D26508E83_1432280635 = null; //Variable for return #4
-        Package varB4EAC82CA7396A68D541C85D26508E83_2003540726 = null; //Variable for return #5
+        Package varB4EAC82CA7396A68D541C85D26508E83_483259712 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_1008106760 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_1790882936 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_1432280635 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_2003540726 = null; 
         mParseError = PackageManager.INSTALL_SUCCEEDED;
         mArchiveSourcePath = sourceFile.getPath();
         {
@@ -330,16 +332,16 @@ public class PackageParser {
             {
                 mParseError = PackageManager.INSTALL_PARSE_FAILED_NOT_APK;
                 varB4EAC82CA7396A68D541C85D26508E83_483259712 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varE987AF766FA74B3AD459FB1E585029DA_1053717290 = (!isPackageFilename(sourceFile.getName())
                 && (flags&PARSE_MUST_BE_APK) != 0);
             {
                 mParseError = PackageManager.INSTALL_PARSE_FAILED_NOT_APK;
                 varB4EAC82CA7396A68D541C85D26508E83_1008106760 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Slog.d(TAG, "Scanning package: " + mArchiveSourcePath);
         XmlResourceParser parser = null;
         AssetManager assmgr = null;
@@ -355,37 +357,37 @@ public class PackageParser {
                         Build.VERSION.RESOURCES_SDK_INT);
                 parser = assmgr.openXmlResourceParser(cookie, ANDROID_MANIFEST_FILENAME);
                 assetError = false;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (Exception e)
         { }
         {
             assmgr.close();
             mParseError = PackageManager.INSTALL_PARSE_FAILED_BAD_MANIFEST;
             varB4EAC82CA7396A68D541C85D26508E83_1790882936 = null;
-        } //End block
+        } 
         String[] errorText = new String[1];
         Package pkg = null;
         Exception errorException = null;
         try 
         {
             pkg = parsePackage(res, parser, flags, errorText);
-        } //End block
+        } 
         catch (Exception e)
         {
             errorException = e;
             mParseError = PackageManager.INSTALL_PARSE_FAILED_UNEXPECTED_EXCEPTION;
-        } //End block
+        } 
         {
             {
                 {
                     mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
-                } //End block
-            } //End block
+                } 
+            } 
             parser.close();
             assmgr.close();
             varB4EAC82CA7396A68D541C85D26508E83_1432280635 = null;
-        } //End block
+        } 
         parser.close();
         assmgr.close();
         pkg.mPath = destCodePath;
@@ -395,31 +397,32 @@ public class PackageParser {
         addTaint(destCodePath.getTaint());
         addTaint(metrics.getTaint());
         addTaint(flags);
-        Package varA7E53CE21691AB073D9660D615818899_1152704805; //Final return value
+        Package varA7E53CE21691AB073D9660D615818899_1152704805; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1152704805 = varB4EAC82CA7396A68D541C85D26508E83_483259712;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1152704805 = varB4EAC82CA7396A68D541C85D26508E83_1008106760;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1152704805 = varB4EAC82CA7396A68D541C85D26508E83_1790882936;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1152704805 = varB4EAC82CA7396A68D541C85D26508E83_1432280635;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1152704805 = varB4EAC82CA7396A68D541C85D26508E83_2003540726;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1152704805.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1152704805.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1152704805;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.593 -0400", hash_original_method = "19D0E628AA10FC207BA0D548739FDEDB", hash_generated_method = "B81BC3B2A426491908DD3975A3B7B2E3")
     public boolean collectCertificates(Package pkg, int flags) {
         pkg.mSignatures = null;
@@ -430,12 +433,12 @@ public class PackageParser {
             {
                 mReadBuffer = null;
                 readBuffer = readBufferRef.get();
-            } //End block
+            } 
             {
                 readBuffer = new byte[8192];
                 readBufferRef = new WeakReference<byte[]>(readBuffer);
-            } //End block
-        } //End block
+            } 
+        } 
         try 
         {
             JarFile jarFile = new JarFile(mArchiveSourcePath);
@@ -446,16 +449,16 @@ public class PackageParser {
                 {
                     jarFile.close();
                     mParseError = PackageManager.INSTALL_PARSE_FAILED_NO_CERTIFICATES;
-                } //End block
+                } 
                 {
                     {
                         final int N = certs.length;
                         {
                             int i = 0;
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 Enumeration<JarEntry> entries = jarFile.entries();
                 final Manifest manifest = jarFile.getManifest();
@@ -465,26 +468,26 @@ public class PackageParser {
                         final JarEntry je = entries.nextElement();
                         {
                             boolean var65B8E195C8AA7059C67BF79286782095_724491152 = (je.isDirectory());
-                        } //End collapsed parenthetic
+                        } 
                         final String name = je.getName();
                         {
                             boolean var12A901F777A40C9D283732267E266735_1673100634 = (name.startsWith("META-INF/"));
-                        } //End collapsed parenthetic
+                        } 
                         {
                             boolean varD99F64D135246231C00791AFEBF1DD6F_891321585 = (ANDROID_MANIFEST_FILENAME.equals(name));
                             {
                                 final Attributes attributes = manifest.getAttributes(name);
                                 pkg.manifestDigest = ManifestDigest.fromAttributes(attributes);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         final Certificate[] localCerts = loadCertificates(jarFile, je, readBuffer);
                         {
                             jarFile.close();
                             mParseError = PackageManager.INSTALL_PARSE_FAILED_NO_CERTIFICATES;
-                        } //End block
+                        } 
                         {
                             certs = localCerts;
-                        } //End block
+                        } 
                         {
                             {
                                 int i = 0;
@@ -498,24 +501,24 @@ public class PackageParser {
                                         certs[i].equals(localCerts[j]));
                                                 {
                                                     found = true;
-                                                } //End block
-                                            } //End collapsed parenthetic
-                                        } //End block
-                                    } //End collapsed parenthetic
+                                                } 
+                                            } 
+                                        } 
+                                    } 
                                     {
                                         jarFile.close();
                                         mParseError = PackageManager.INSTALL_PARSE_FAILED_INCONSISTENT_CERTIFICATES;
-                                    } //End block
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             jarFile.close();
             {
                 mReadBuffer = readBufferRef;
-            } //End block
+            } 
             {
                 final int N = certs.length;
                 pkg.mSignatures = new Signature[certs.length];
@@ -524,34 +527,35 @@ public class PackageParser {
                     {
                         pkg.mSignatures[i] = new Signature(
                             certs[i].getEncoded());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 mParseError = PackageManager.INSTALL_PARSE_FAILED_NO_CERTIFICATES;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (CertificateEncodingException e)
         {
             mParseError = PackageManager.INSTALL_PARSE_FAILED_CERTIFICATE_ENCODING;
-        } //End block
+        } 
         catch (IOException e)
         {
             mParseError = PackageManager.INSTALL_PARSE_FAILED_CERTIFICATE_ENCODING;
-        } //End block
+        } 
         catch (RuntimeException e)
         {
             mParseError = PackageManager.INSTALL_PARSE_FAILED_UNEXPECTED_EXCEPTION;
-        } //End block
+        } 
         addTaint(pkg.getTaint());
         addTaint(flags);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1483361127 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1483361127;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static PackageLite parsePackageLite(String packageFilePath, int flags) {
         AssetManager assmgr = null;
         final XmlResourceParser parser;
@@ -595,6 +599,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String validateName(String name, boolean requiresSeparator) {
         final int N = name.length();
         boolean hasSep = false;
@@ -622,6 +627,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String parsePackageName(XmlPullParser parser,
             AttributeSet attrs, int flags, String[] outError) throws IOException, XmlPullParserException {
         int type;
@@ -654,6 +660,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static PackageLite parsePackageLite(Resources res, XmlPullParser parser,
             AttributeSet attrs, int flags, String[] outError) throws IOException,
             XmlPullParserException {
@@ -710,6 +717,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public Signature stringToSignature(String str) {
         final int N = str.length();
         byte[] sig = new byte[N];
@@ -720,23 +728,24 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.631 -0400", hash_original_method = "91CC6CEE84025557458760F97B90CD2F", hash_generated_method = "09CF76506411225AACBF85CC7B199E2E")
     private Package parsePackage(
         Resources res, XmlResourceParser parser, int flags, String[] outError) throws XmlPullParserException, IOException {
-        Package varB4EAC82CA7396A68D541C85D26508E83_72520709 = null; //Variable for return #1
-        Package varB4EAC82CA7396A68D541C85D26508E83_1498187625 = null; //Variable for return #2
-        Package varB4EAC82CA7396A68D541C85D26508E83_1602793614 = null; //Variable for return #3
-        Package varB4EAC82CA7396A68D541C85D26508E83_576092520 = null; //Variable for return #4
-        Package varB4EAC82CA7396A68D541C85D26508E83_673872633 = null; //Variable for return #5
-        Package varB4EAC82CA7396A68D541C85D26508E83_2003736509 = null; //Variable for return #6
-        Package varB4EAC82CA7396A68D541C85D26508E83_833509793 = null; //Variable for return #7
-        Package varB4EAC82CA7396A68D541C85D26508E83_1114590802 = null; //Variable for return #8
-        Package varB4EAC82CA7396A68D541C85D26508E83_188159886 = null; //Variable for return #9
-        Package varB4EAC82CA7396A68D541C85D26508E83_32498798 = null; //Variable for return #10
-        Package varB4EAC82CA7396A68D541C85D26508E83_615666947 = null; //Variable for return #11
-        Package varB4EAC82CA7396A68D541C85D26508E83_2114577085 = null; //Variable for return #12
-        Package varB4EAC82CA7396A68D541C85D26508E83_876633629 = null; //Variable for return #13
-        Package varB4EAC82CA7396A68D541C85D26508E83_68145843 = null; //Variable for return #14
+        Package varB4EAC82CA7396A68D541C85D26508E83_72520709 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_1498187625 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_1602793614 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_576092520 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_673872633 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_2003736509 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_833509793 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_1114590802 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_188159886 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_32498798 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_615666947 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_2114577085 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_876633629 = null; 
+        Package varB4EAC82CA7396A68D541C85D26508E83_68145843 = null; 
         AttributeSet attrs = parser;
         mParseInstrumentationArgs = null;
         mParseActivityArgs = null;
@@ -746,15 +755,15 @@ public class PackageParser {
         {
             mParseError = PackageManager.INSTALL_PARSE_FAILED_BAD_PACKAGE_NAME;
             varB4EAC82CA7396A68D541C85D26508E83_72520709 = null;
-        } //End block
+        } 
         int type;
         {
             boolean core = attrs.getAttributeBooleanValue(null, "coreApp", false);
             {
                 mParseError = PackageManager.INSTALL_SUCCEEDED;
                 varB4EAC82CA7396A68D541C85D26508E83_1498187625 = null;
-            } //End block
-        } //End block
+            } 
+        } 
         final Package pkg = new Package(pkgName);
         boolean foundApp = false;
         TypedArray sa = res.obtainAttributes(attrs,
@@ -765,7 +774,7 @@ public class PackageParser {
                 com.android.internal.R.styleable.AndroidManifest_versionName, 0);
         {
             pkg.mVersionName = pkg.mVersionName.intern();
-        } //End block
+        } 
         String str = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifest_sharedUserId, 0);
         {
@@ -779,13 +788,13 @@ public class PackageParser {
                     + str + "\": " + nameError;
                         mParseError = PackageManager.INSTALL_PARSE_FAILED_BAD_SHARED_USER_ID;
                         varB4EAC82CA7396A68D541C85D26508E83_1602793614 = null;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 pkg.mSharedUserId = str.intern();
                 pkg.mSharedUserLabel = sa.getResourceId(
                     com.android.internal.R.styleable.AndroidManifest_sharedUserLabel, 0);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         sa.recycle();
         pkg.installLocation = sa.getInteger(
                 com.android.internal.R.styleable.AndroidManifest_installLocation,
@@ -811,19 +820,19 @@ public class PackageParser {
                                 outError[0] = "<manifest> has more than one <application>";
                                 mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
                                 varB4EAC82CA7396A68D541C85D26508E83_576092520 = null;
-                            } //End block
+                            } 
                             {
                                 XmlUtils.skipCurrentTag(parser);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         foundApp = true;
                         {
                             boolean var3F08D3B967070ABA06096CA5595722C6_784931611 = (!parseApplication(pkg, res, parser, attrs, flags, outError));
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_673872633 = null;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         boolean var88F37FCC2212880098EC750FD7FA678E_374356889 = (tagName.equals("permission-group"));
                         {
@@ -831,9 +840,9 @@ public class PackageParser {
                                 boolean varA3A061F96EC4ABDE7DF00644D4DC4F07_624686394 = (parsePermissionGroup(pkg, res, parser, attrs, outError) == null);
                                 {
                                     varB4EAC82CA7396A68D541C85D26508E83_2003736509 = null;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         {
                             boolean varA9E2A3737C0FBDF0991489F6DD343AFF_435531662 = (tagName.equals("permission"));
                             {
@@ -841,9 +850,9 @@ public class PackageParser {
                                     boolean var031D0486BD05B9C0D2042849F5F3141A_1564476736 = (parsePermission(pkg, res, parser, attrs, outError) == null);
                                     {
                                         varB4EAC82CA7396A68D541C85D26508E83_833509793 = null;
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             {
                                 boolean var836521A07EF0241F200539CA3EAEBB53_1901004690 = (tagName.equals("permission-tree"));
                                 {
@@ -851,9 +860,9 @@ public class PackageParser {
                                         boolean var80E4FF566B617B00A711B29F5C1E1757_938566128 = (parsePermissionTree(pkg, res, parser, attrs, outError) == null);
                                         {
                                             varB4EAC82CA7396A68D541C85D26508E83_1114590802 = null;
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
+                                        } 
+                                    } 
+                                } 
                                 {
                                     boolean varA169552B3D4E050C516F6D3C5EF2DCCF_625539177 = (tagName.equals("uses-permission"));
                                     {
@@ -866,10 +875,10 @@ public class PackageParser {
                                             boolean var082B823035F8549A56F9D48448C4F285_1232638919 = (name != null && !pkg.requestedPermissions.contains(name));
                                             {
                                                 pkg.requestedPermissions.add(name.intern());
-                                            } //End block
-                                        } //End collapsed parenthetic
+                                            } 
+                                        } 
                                         XmlUtils.skipCurrentTag(parser);
-                                    } //End block
+                                    } 
                                     {
                                         boolean varA84278BF88B46415D3BE370CFBFD451C_370977038 = (tagName.equals("uses-configuration"));
                                         {
@@ -888,8 +897,8 @@ public class PackageParser {
                         false));
                                                 {
                                                     cPref.reqInputFeatures |= ConfigurationInfo.INPUT_FEATURE_HARD_KEYBOARD;
-                                                } //End block
-                                            } //End collapsed parenthetic
+                                                } 
+                                            } 
                                             cPref.reqNavigation = sa.getInt(
                         com.android.internal.R.styleable.AndroidManifestUsesConfiguration_reqNavigation,
                         Configuration.NAVIGATION_UNDEFINED);
@@ -899,12 +908,12 @@ public class PackageParser {
                         false));
                                                 {
                                                     cPref.reqInputFeatures |= ConfigurationInfo.INPUT_FEATURE_FIVE_WAY_NAV;
-                                                } //End block
-                                            } //End collapsed parenthetic
+                                                } 
+                                            } 
                                             sa.recycle();
                                             pkg.configPreferences.add(cPref);
                                             XmlUtils.skipCurrentTag(parser);
-                                        } //End block
+                                        } 
                                         {
                                             boolean varF2200A6E80C65CE9764A5AB44448B694_640047211 = (tagName.equals("uses-feature"));
                                             {
@@ -917,27 +926,27 @@ public class PackageParser {
                                                     fi.reqGlEsVersion = sa.getInt(
                             com.android.internal.R.styleable.AndroidManifestUsesFeature_glEsVersion,
                             FeatureInfo.GL_ES_VERSION_UNDEFINED);
-                                                } //End block
+                                                } 
                                                 {
                                                     boolean varD9C467CCB2BCF1D250FD1CF0D09CC347_723856847 = (sa.getBoolean(
                         com.android.internal.R.styleable.AndroidManifestUsesFeature_required,
                         true));
                                                     {
                                                         fi.flags |= FeatureInfo.FLAG_REQUIRED;
-                                                    } //End block
-                                                } //End collapsed parenthetic
+                                                    } 
+                                                } 
                                                 sa.recycle();
                                                 {
                                                     pkg.reqFeatures = new ArrayList<FeatureInfo>();
-                                                } //End block
+                                                } 
                                                 pkg.reqFeatures.add(fi);
                                                 {
                                                     ConfigurationInfo cPref = new ConfigurationInfo();
                                                     cPref.reqGlEsVersion = fi.reqGlEsVersion;
                                                     pkg.configPreferences.add(cPref);
-                                                } //End block
+                                                } 
                                                 XmlUtils.skipCurrentTag(parser);
-                                            } //End block
+                                            } 
                                             {
                                                 boolean varFD3F13DA5EFB9E6C614B2570E348634E_651442604 = (tagName.equals("uses-sdk"));
                                                 {
@@ -953,21 +962,21 @@ public class PackageParser {
                                                         {
                                                             {
                                                                 targetCode = minCode = val.string.toString();
-                                                            } //End block
+                                                            } 
                                                             {
                                                                 targetVers = minVers = val.data;
-                                                            } //End block
-                                                        } //End block
+                                                            } 
+                                                        } 
                                                         val = sa.peekValue(
                             com.android.internal.R.styleable.AndroidManifestUsesSdk_targetSdkVersion);
                                                         {
                                                             {
                                                                 targetCode = minCode = val.string.toString();
-                                                            } //End block
+                                                            } 
                                                             {
                                                                 targetVers = val.data;
-                                                            } //End block
-                                                        } //End block
+                                                            } 
+                                                        } 
                                                         sa.recycle();
                                                         {
                                                             {
@@ -976,22 +985,22 @@ public class PackageParser {
                                                                     {
                                                                         outError[0] = "Requires development platform " + minCode
                                         + " (current platform is " + SDK_CODENAME + ")";
-                                                                    } //End block
+                                                                    } 
                                                                     {
                                                                         outError[0] = "Requires development platform " + minCode
                                         + " but this is a release platform.";
-                                                                    } //End block
+                                                                    } 
                                                                     mParseError = PackageManager.INSTALL_FAILED_OLDER_SDK;
                                                                     varB4EAC82CA7396A68D541C85D26508E83_188159886 = null;
-                                                                } //End block
-                                                            } //End collapsed parenthetic
-                                                        } //End block
+                                                                } 
+                                                            } 
+                                                        } 
                                                         {
                                                             outError[0] = "Requires newer sdk version #" + minVers
                                 + " (current version is #" + SDK_VERSION + ")";
                                                             mParseError = PackageManager.INSTALL_FAILED_OLDER_SDK;
                                                             varB4EAC82CA7396A68D541C85D26508E83_32498798 = null;
-                                                        } //End block
+                                                        } 
                                                         {
                                                             {
                                                                 boolean varEB85D163C2686178E9072A154F2B1017_1802949904 = (!targetCode.equals(SDK_CODENAME));
@@ -999,24 +1008,24 @@ public class PackageParser {
                                                                     {
                                                                         outError[0] = "Requires development platform " + targetCode
                                         + " (current platform is " + SDK_CODENAME + ")";
-                                                                    } //End block
+                                                                    } 
                                                                     {
                                                                         outError[0] = "Requires development platform " + targetCode
                                         + " but this is a release platform.";
-                                                                    } //End block
+                                                                    } 
                                                                     mParseError = PackageManager.INSTALL_FAILED_OLDER_SDK;
                                                                     varB4EAC82CA7396A68D541C85D26508E83_615666947 = null;
-                                                                } //End block
-                                                            } //End collapsed parenthetic
+                                                                } 
+                                                            } 
                                                             pkg.applicationInfo.targetSdkVersion
                                 = android.os.Build.VERSION_CODES.CUR_DEVELOPMENT;
-                                                        } //End block
+                                                        } 
                                                         {
                                                             pkg.applicationInfo.targetSdkVersion = targetVers;
-                                                        } //End block
-                                                    } //End block
+                                                        } 
+                                                    } 
                                                     XmlUtils.skipCurrentTag(parser);
-                                                } //End block
+                                                } 
                                                 {
                                                     boolean var2AD21980A6F7F6AA6C25A37BEDBD96B9_483699975 = (tagName.equals("supports-screens"));
                                                     {
@@ -1051,7 +1060,7 @@ public class PackageParser {
                         anyDensity);
                                                         sa.recycle();
                                                         XmlUtils.skipCurrentTag(parser);
-                                                    } //End block
+                                                    } 
                                                     {
                                                         boolean varF9A9EABB9F0DF8DD018A4B0AD7880A8B_627614484 = (tagName.equals("protected-broadcast"));
                                                         {
@@ -1063,16 +1072,16 @@ public class PackageParser {
                                                             {
                                                                 {
                                                                     pkg.protectedBroadcasts = new ArrayList<String>();
-                                                                } //End block
+                                                                } 
                                                                 {
                                                                     boolean varB4E798A338C4A451F12E37DD5381CB93_1956936531 = (!pkg.protectedBroadcasts.contains(name));
                                                                     {
                                                                         pkg.protectedBroadcasts.add(name.intern());
-                                                                    } //End block
-                                                                } //End collapsed parenthetic
-                                                            } //End block
+                                                                    } 
+                                                                } 
+                                                            } 
                                                             XmlUtils.skipCurrentTag(parser);
-                                                        } //End block
+                                                        } 
                                                         {
                                                             boolean var5291B256BFE37755CFF9CE20B217D3AC_2126735839 = (tagName.equals("instrumentation"));
                                                             {
@@ -1080,9 +1089,9 @@ public class PackageParser {
                                                                     boolean var3222D9132D95E509061C76EA54FCD97A_645240281 = (parseInstrumentation(pkg, res, parser, attrs, outError) == null);
                                                                     {
                                                                         varB4EAC82CA7396A68D541C85D26508E83_2114577085 = null;
-                                                                    } //End block
-                                                                } //End collapsed parenthetic
-                                                            } //End block
+                                                                    } 
+                                                                } 
+                                                            } 
                                                             {
                                                                 boolean varDB43EE5FBAE0090DBC136B39A4F7A029_15500544 = (tagName.equals("original-package"));
                                                                 {
@@ -1096,13 +1105,13 @@ public class PackageParser {
                                                                             {
                                                                                 pkg.mOriginalPackages = new ArrayList<String>();
                                                                                 pkg.mRealPackage = pkg.packageName;
-                                                                            } //End block
+                                                                            } 
                                                                             pkg.mOriginalPackages.add(orig);
-                                                                        } //End block
-                                                                    } //End collapsed parenthetic
+                                                                        } 
+                                                                    } 
                                                                     sa.recycle();
                                                                     XmlUtils.skipCurrentTag(parser);
-                                                                } //End block
+                                                                } 
                                                                 {
                                                                     boolean var6865D9016C481EF68D6684F63BF7A11C_501877502 = (tagName.equals("adopt-permissions"));
                                                                     {
@@ -1114,60 +1123,60 @@ public class PackageParser {
                                                                         {
                                                                             {
                                                                                 pkg.mAdoptPermissions = new ArrayList<String>();
-                                                                            } //End block
+                                                                            } 
                                                                             pkg.mAdoptPermissions.add(name);
-                                                                        } //End block
+                                                                        } 
                                                                         XmlUtils.skipCurrentTag(parser);
-                                                                    } //End block
+                                                                    } 
                                                                     {
                                                                         boolean var46DB0BC9C1C1FE67FF2F47E40DD7773E_724056296 = (tagName.equals("uses-gl-texture"));
                                                                         {
                                                                             XmlUtils.skipCurrentTag(parser);
-                                                                        } //End block
+                                                                        } 
                                                                         {
                                                                             boolean var66D0A46FD130C7E340121E79ACF5C0AA_1889703998 = (tagName.equals("compatible-screens"));
                                                                             {
                                                                                 XmlUtils.skipCurrentTag(parser);
-                                                                            } //End block
+                                                                            } 
                                                                             {
                                                                                 boolean varF501100954D0EBDDED0D103F0C602535_45145022 = (tagName.equals("eat-comment"));
                                                                                 {
                                                                                     XmlUtils.skipCurrentTag(parser);
-                                                                                } //End block
+                                                                                } 
                                                                                 {
                                                                                     outError[0] = "Bad element under <manifest>: "
                     + parser.getName();
                                                                                     mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
                                                                                     varB4EAC82CA7396A68D541C85D26508E83_876633629 = null;
-                                                                                } //End block
+                                                                                } 
                                                                                 {
                                                                                     XmlUtils.skipCurrentTag(parser);
-                                                                                } //End block
-                                                                            } //End collapsed parenthetic
-                                                                        } //End collapsed parenthetic
-                                                                    } //End collapsed parenthetic
-                                                                } //End collapsed parenthetic
-                                                            } //End collapsed parenthetic
-                                                        } //End collapsed parenthetic
-                                                    } //End collapsed parenthetic
-                                                } //End collapsed parenthetic
-                                            } //End collapsed parenthetic
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                                                                                } 
+                                                                            } 
+                                                                        } 
+                                                                    } 
+                                                                } 
+                                                            } 
+                                                        } 
+                                                    } 
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var656CE6E53C04C7019D91D9C819F1B4B5_796674159 = (!foundApp && pkg.instrumentation.size() == 0);
             {
                 outError[0] = "<manifest> does not contain an <application> or <instrumentation>";
                 mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_EMPTY;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final int NP = PackageParser.NEW_PERMISSIONS.length;
         StringBuilder implicitPerms = null;
         {
@@ -1181,91 +1190,92 @@ public class PackageParser {
                             implicitPerms = new StringBuilder(128);
                             implicitPerms.append(pkg.packageName);
                             implicitPerms.append(": compat added ");
-                        } //End block
+                        } 
                         {
                             implicitPerms.append(' ');
-                        } //End block
+                        } 
                         implicitPerms.append(npi.name);
                         pkg.requestedPermissions.add(npi.name);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             pkg.applicationInfo.flags |= ApplicationInfo.FLAG_SUPPORTS_SMALL_SCREENS;
-        } //End block
+        } 
         {
             pkg.applicationInfo.flags |= ApplicationInfo.FLAG_SUPPORTS_NORMAL_SCREENS;
-        } //End block
+        } 
         {
             pkg.applicationInfo.flags |= ApplicationInfo.FLAG_SUPPORTS_LARGE_SCREENS;
-        } //End block
+        } 
         {
             pkg.applicationInfo.flags |= ApplicationInfo.FLAG_SUPPORTS_XLARGE_SCREENS;
-        } //End block
+        } 
         {
             pkg.applicationInfo.flags |= ApplicationInfo.FLAG_RESIZEABLE_FOR_SCREENS;
-        } //End block
+        } 
         {
             pkg.applicationInfo.flags |= ApplicationInfo.FLAG_SUPPORTS_SCREEN_DENSITIES;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_68145843 = pkg;
         addTaint(res.getTaint());
         addTaint(parser.getTaint());
         addTaint(flags);
         addTaint(outError[0].getTaint());
-        Package varA7E53CE21691AB073D9660D615818899_495253060; //Final return value
+        Package varA7E53CE21691AB073D9660D615818899_495253060; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_495253060 = varB4EAC82CA7396A68D541C85D26508E83_72520709;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_495253060 = varB4EAC82CA7396A68D541C85D26508E83_1498187625;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_495253060 = varB4EAC82CA7396A68D541C85D26508E83_1602793614;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_495253060 = varB4EAC82CA7396A68D541C85D26508E83_576092520;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_495253060 = varB4EAC82CA7396A68D541C85D26508E83_673872633;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_495253060 = varB4EAC82CA7396A68D541C85D26508E83_2003736509;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_495253060 = varB4EAC82CA7396A68D541C85D26508E83_833509793;
                 break;
-            case 8: //Assign result for return ordinal #8
+            case 8: 
                 varA7E53CE21691AB073D9660D615818899_495253060 = varB4EAC82CA7396A68D541C85D26508E83_1114590802;
                 break;
-            case 9: //Assign result for return ordinal #9
+            case 9: 
                 varA7E53CE21691AB073D9660D615818899_495253060 = varB4EAC82CA7396A68D541C85D26508E83_188159886;
                 break;
-            case 10: //Assign result for return ordinal #10
+            case 10: 
                 varA7E53CE21691AB073D9660D615818899_495253060 = varB4EAC82CA7396A68D541C85D26508E83_32498798;
                 break;
-            case 11: //Assign result for return ordinal #11
+            case 11: 
                 varA7E53CE21691AB073D9660D615818899_495253060 = varB4EAC82CA7396A68D541C85D26508E83_615666947;
                 break;
-            case 12: //Assign result for return ordinal #12
+            case 12: 
                 varA7E53CE21691AB073D9660D615818899_495253060 = varB4EAC82CA7396A68D541C85D26508E83_2114577085;
                 break;
-            case 13: //Assign result for return ordinal #13
+            case 13: 
                 varA7E53CE21691AB073D9660D615818899_495253060 = varB4EAC82CA7396A68D541C85D26508E83_876633629;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_495253060 = varB4EAC82CA7396A68D541C85D26508E83_68145843;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_495253060.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_495253060.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_495253060;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String buildClassName(String pkg, CharSequence clsSeq,
             String[] outError) {
         if (clsSeq == null || clsSeq.length() <= 0) {
@@ -1291,6 +1301,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String buildCompoundName(String pkg,
             CharSequence procSeq, String type, String[] outError) {
         String proc = procSeq.toString();
@@ -1320,6 +1331,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String buildProcessName(String pkg, String defProc,
             CharSequence procSeq, int flags, String[] separateProcesses,
             String[] outError) {
@@ -1341,6 +1353,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String buildTaskAffinityName(String pkg, String defProc,
             CharSequence procSeq, String[] outError) {
         if (procSeq == null) {
@@ -1353,12 +1366,13 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.635 -0400", hash_original_method = "E3395575DA3BE4CF83D20AFB0193668F", hash_generated_method = "49D374B6CF65343AFB822EFEA3C26D4A")
     private PermissionGroup parsePermissionGroup(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, String[] outError) throws XmlPullParserException, IOException {
-        PermissionGroup varB4EAC82CA7396A68D541C85D26508E83_419855993 = null; //Variable for return #1
-        PermissionGroup varB4EAC82CA7396A68D541C85D26508E83_1120137299 = null; //Variable for return #2
-        PermissionGroup varB4EAC82CA7396A68D541C85D26508E83_568165869 = null; //Variable for return #3
+        PermissionGroup varB4EAC82CA7396A68D541C85D26508E83_419855993 = null; 
+        PermissionGroup varB4EAC82CA7396A68D541C85D26508E83_1120137299 = null; 
+        PermissionGroup varB4EAC82CA7396A68D541C85D26508E83_568165869 = null; 
         PermissionGroup perm = new PermissionGroup(owner);
         TypedArray sa = res.obtainAttributes(attrs,
                 com.android.internal.R.styleable.AndroidManifestPermissionGroup);
@@ -1373,8 +1387,8 @@ public class PackageParser {
                 sa.recycle();
                 mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
                 varB4EAC82CA7396A68D541C85D26508E83_419855993 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         perm.info.descriptionRes = sa.getResourceId(
                 com.android.internal.R.styleable.AndroidManifestPermissionGroup_description,
                 0);
@@ -1385,8 +1399,8 @@ public class PackageParser {
             {
                 mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
                 varB4EAC82CA7396A68D541C85D26508E83_1120137299 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         owner.permissionGroups.add(perm);
         varB4EAC82CA7396A68D541C85D26508E83_568165869 = perm;
         addTaint(owner.getTaint());
@@ -1394,32 +1408,33 @@ public class PackageParser {
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
         addTaint(outError[0].getTaint());
-        PermissionGroup varA7E53CE21691AB073D9660D615818899_1612903731; //Final return value
+        PermissionGroup varA7E53CE21691AB073D9660D615818899_1612903731; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1612903731 = varB4EAC82CA7396A68D541C85D26508E83_419855993;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1612903731 = varB4EAC82CA7396A68D541C85D26508E83_1120137299;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1612903731 = varB4EAC82CA7396A68D541C85D26508E83_568165869;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1612903731.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1612903731.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1612903731;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.637 -0400", hash_original_method = "1D11570A32C6A271E593822206F9BD54", hash_generated_method = "6B937E04515EB5B1B0FC6494AE742C83")
     private Permission parsePermission(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, String[] outError) throws XmlPullParserException, IOException {
-        Permission varB4EAC82CA7396A68D541C85D26508E83_204744644 = null; //Variable for return #1
-        Permission varB4EAC82CA7396A68D541C85D26508E83_2052445292 = null; //Variable for return #2
-        Permission varB4EAC82CA7396A68D541C85D26508E83_1574015988 = null; //Variable for return #3
-        Permission varB4EAC82CA7396A68D541C85D26508E83_171774769 = null; //Variable for return #4
+        Permission varB4EAC82CA7396A68D541C85D26508E83_204744644 = null; 
+        Permission varB4EAC82CA7396A68D541C85D26508E83_2052445292 = null; 
+        Permission varB4EAC82CA7396A68D541C85D26508E83_1574015988 = null; 
+        Permission varB4EAC82CA7396A68D541C85D26508E83_171774769 = null; 
         Permission perm = new Permission(owner);
         TypedArray sa = res.obtainAttributes(attrs,
                 com.android.internal.R.styleable.AndroidManifestPermission);
@@ -1434,13 +1449,13 @@ public class PackageParser {
                 sa.recycle();
                 mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
                 varB4EAC82CA7396A68D541C85D26508E83_204744644 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         perm.info.group = sa.getNonResourceString(
                 com.android.internal.R.styleable.AndroidManifestPermission_permissionGroup);
         {
             perm.info.group = perm.info.group.intern();
-        } //End block
+        } 
         perm.info.descriptionRes = sa.getResourceId(
                 com.android.internal.R.styleable.AndroidManifestPermission_description,
                 0);
@@ -1452,15 +1467,15 @@ public class PackageParser {
             outError[0] = "<permission> does not specify protectionLevel";
             mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
             varB4EAC82CA7396A68D541C85D26508E83_2052445292 = null;
-        } //End block
+        } 
         {
             boolean var2A0B3F43EBF50AFBE5CFD9DAED89DDE6_928401362 = (!parseAllMetaData(res, parser, attrs, "<permission>", perm,
                 outError));
             {
                 mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
                 varB4EAC82CA7396A68D541C85D26508E83_1574015988 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         owner.permissions.add(perm);
         varB4EAC82CA7396A68D541C85D26508E83_171774769 = perm;
         addTaint(owner.getTaint());
@@ -1468,35 +1483,36 @@ public class PackageParser {
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
         addTaint(outError[0].getTaint());
-        Permission varA7E53CE21691AB073D9660D615818899_875440275; //Final return value
+        Permission varA7E53CE21691AB073D9660D615818899_875440275; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_875440275 = varB4EAC82CA7396A68D541C85D26508E83_204744644;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_875440275 = varB4EAC82CA7396A68D541C85D26508E83_2052445292;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_875440275 = varB4EAC82CA7396A68D541C85D26508E83_1574015988;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_875440275 = varB4EAC82CA7396A68D541C85D26508E83_171774769;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_875440275.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_875440275.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_875440275;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.639 -0400", hash_original_method = "BAA3C6F5A9B5CEE097497C276EDD624D", hash_generated_method = "0FC004A3BF3AFEBE5220A3611530D58C")
     private Permission parsePermissionTree(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, String[] outError) throws XmlPullParserException, IOException {
-        Permission varB4EAC82CA7396A68D541C85D26508E83_1914603441 = null; //Variable for return #1
-        Permission varB4EAC82CA7396A68D541C85D26508E83_831030038 = null; //Variable for return #2
-        Permission varB4EAC82CA7396A68D541C85D26508E83_2033826656 = null; //Variable for return #3
-        Permission varB4EAC82CA7396A68D541C85D26508E83_772096156 = null; //Variable for return #4
+        Permission varB4EAC82CA7396A68D541C85D26508E83_1914603441 = null; 
+        Permission varB4EAC82CA7396A68D541C85D26508E83_831030038 = null; 
+        Permission varB4EAC82CA7396A68D541C85D26508E83_2033826656 = null; 
+        Permission varB4EAC82CA7396A68D541C85D26508E83_772096156 = null; 
         Permission perm = new Permission(owner);
         TypedArray sa = res.obtainAttributes(attrs,
                 com.android.internal.R.styleable.AndroidManifestPermissionTree);
@@ -1511,19 +1527,19 @@ public class PackageParser {
                 sa.recycle();
                 mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
                 varB4EAC82CA7396A68D541C85D26508E83_1914603441 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         sa.recycle();
         int index = perm.info.name.indexOf('.');
         {
             index = perm.info.name.indexOf('.', index+1);
-        } //End block
+        } 
         {
             outError[0] = "<permission-tree> name has less than three segments: "
                 + perm.info.name;
             mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
             varB4EAC82CA7396A68D541C85D26508E83_831030038 = null;
-        } //End block
+        } 
         perm.info.descriptionRes = 0;
         perm.info.protectionLevel = PermissionInfo.PROTECTION_NORMAL;
         perm.tree = true;
@@ -1533,8 +1549,8 @@ public class PackageParser {
             {
                 mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
                 varB4EAC82CA7396A68D541C85D26508E83_2033826656 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         owner.permissions.add(perm);
         varB4EAC82CA7396A68D541C85D26508E83_772096156 = perm;
         addTaint(owner.getTaint());
@@ -1542,35 +1558,36 @@ public class PackageParser {
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
         addTaint(outError[0].getTaint());
-        Permission varA7E53CE21691AB073D9660D615818899_2027216284; //Final return value
+        Permission varA7E53CE21691AB073D9660D615818899_2027216284; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2027216284 = varB4EAC82CA7396A68D541C85D26508E83_1914603441;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2027216284 = varB4EAC82CA7396A68D541C85D26508E83_831030038;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_2027216284 = varB4EAC82CA7396A68D541C85D26508E83_2033826656;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2027216284 = varB4EAC82CA7396A68D541C85D26508E83_772096156;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2027216284.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2027216284.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2027216284;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.641 -0400", hash_original_method = "77B98478A5AAF7EC4E5B725BE9FDC9E7", hash_generated_method = "69D51B3E409B98ADA448E56A5CB0E5B9")
     private Instrumentation parseInstrumentation(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, String[] outError) throws XmlPullParserException, IOException {
-        Instrumentation varB4EAC82CA7396A68D541C85D26508E83_900804001 = null; //Variable for return #1
-        Instrumentation varB4EAC82CA7396A68D541C85D26508E83_1907093684 = null; //Variable for return #2
-        Instrumentation varB4EAC82CA7396A68D541C85D26508E83_1397449457 = null; //Variable for return #3
-        Instrumentation varB4EAC82CA7396A68D541C85D26508E83_2029555164 = null; //Variable for return #4
+        Instrumentation varB4EAC82CA7396A68D541C85D26508E83_900804001 = null; 
+        Instrumentation varB4EAC82CA7396A68D541C85D26508E83_1907093684 = null; 
+        Instrumentation varB4EAC82CA7396A68D541C85D26508E83_1397449457 = null; 
+        Instrumentation varB4EAC82CA7396A68D541C85D26508E83_2029555164 = null; 
         TypedArray sa = res.obtainAttributes(attrs,
                 com.android.internal.R.styleable.AndroidManifestInstrumentation);
         {
@@ -1580,7 +1597,7 @@ public class PackageParser {
                     com.android.internal.R.styleable.AndroidManifestInstrumentation_icon,
                     com.android.internal.R.styleable.AndroidManifestInstrumentation_logo);
             mParseInstrumentationArgs.tag = "<instrumentation>";
-        } //End block
+        } 
         mParseInstrumentationArgs.sa = sa;
         Instrumentation a = new Instrumentation(mParseInstrumentationArgs,
                 new InstrumentationInfo());
@@ -1588,7 +1605,7 @@ public class PackageParser {
             sa.recycle();
             mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
             varB4EAC82CA7396A68D541C85D26508E83_900804001 = null;
-        } //End block
+        } 
         String str;
         str = sa.getNonResourceString(
                 com.android.internal.R.styleable.AndroidManifestInstrumentation_targetPackage);
@@ -1604,42 +1621,43 @@ public class PackageParser {
             outError[0] = "<instrumentation> does not specify targetPackage";
             mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
             varB4EAC82CA7396A68D541C85D26508E83_1907093684 = null;
-        } //End block
+        } 
         {
             boolean var8EF4E0F1A82EA6AFCA94A4D8598E7664_141248338 = (!parseAllMetaData(res, parser, attrs, "<instrumentation>", a,
                 outError));
             {
                 mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
                 varB4EAC82CA7396A68D541C85D26508E83_1397449457 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         owner.instrumentation.add(a);
         varB4EAC82CA7396A68D541C85D26508E83_2029555164 = a;
         addTaint(res.getTaint());
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
-        Instrumentation varA7E53CE21691AB073D9660D615818899_438549728; //Final return value
+        Instrumentation varA7E53CE21691AB073D9660D615818899_438549728; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_438549728 = varB4EAC82CA7396A68D541C85D26508E83_900804001;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_438549728 = varB4EAC82CA7396A68D541C85D26508E83_1907093684;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_438549728 = varB4EAC82CA7396A68D541C85D26508E83_1397449457;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_438549728 = varB4EAC82CA7396A68D541C85D26508E83_2029555164;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_438549728.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_438549728.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_438549728;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.646 -0400", hash_original_method = "3784AF975EC3AF37D03EE1A91A900A73", hash_generated_method = "ADFC4600C01CC89BB673BC6B7C67F1BA")
     private boolean parseApplication(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError) throws XmlPullParserException, IOException {
@@ -1654,14 +1672,14 @@ public class PackageParser {
             {
                 sa.recycle();
                 mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
-            } //End block
-        } //End block
+            } 
+        } 
         String manageSpaceActivity = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifestApplication_manageSpaceActivity, 0);
         {
             ai.manageSpaceActivityName = buildClassName(pkgName, manageSpaceActivity,
                     outError);
-        } //End block
+        } 
         boolean allowBackup = sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_allowBackup, true);
         {
@@ -1676,26 +1694,26 @@ public class PackageParser {
                         true));
                     {
                         ai.flags |= ApplicationInfo.FLAG_KILL_AFTER_RESTORE;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varEEF38F5B7F8DA558BCCE1D69A87ED5BD_761878719 = (sa.getBoolean(
                         com.android.internal.R.styleable.AndroidManifestApplication_restoreAnyVersion,
                         false));
                     {
                         ai.flags |= ApplicationInfo.FLAG_RESTORE_ANY_VERSION;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         TypedValue v = sa.peekValue(
                 com.android.internal.R.styleable.AndroidManifestApplication_label);
         {
             boolean var9092B245FCF833ED50175702D269F387_1267407377 = (v != null && (ai.labelRes=v.resourceId) == 0);
             {
                 ai.nonLocalizedLabel = v.coerceToString();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         ai.icon = sa.getResourceId(
                 com.android.internal.R.styleable.AndroidManifestApplication_icon, 0);
         ai.logo = sa.getResourceId(
@@ -1711,31 +1729,31 @@ public class PackageParser {
                     false));
                 {
                     ai.flags |= ApplicationInfo.FLAG_PERSISTENT;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             ai.flags |= ApplicationInfo.FLAG_FORWARD_LOCK;
-        } //End block
+        } 
         {
             ai.flags |= ApplicationInfo.FLAG_EXTERNAL_STORAGE;
-        } //End block
+        } 
         {
             boolean varA8E17EE0B66711E9FDEA3E8ACA2BFBEA_1158000889 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_debuggable,
                 false));
             {
                 ai.flags |= ApplicationInfo.FLAG_DEBUGGABLE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varCD872D55821622672581E8A3AE831EB4_1018783831 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_vmSafeMode,
                 false));
             {
                 ai.flags |= ApplicationInfo.FLAG_VM_SAFE_MODE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean hardwareAccelerated = sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_hardwareAccelerated,
                 owner.applicationInfo.targetSdkVersion >= Build.VERSION_CODES.ICE_CREAM_SANDWICH);
@@ -1745,40 +1763,40 @@ public class PackageParser {
                 true));
             {
                 ai.flags |= ApplicationInfo.FLAG_HAS_CODE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varD15BA2820092392C9A70DEA1022BD860_1381002144 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_allowTaskReparenting,
                 false));
             {
                 ai.flags |= ApplicationInfo.FLAG_ALLOW_TASK_REPARENTING;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var64DB4E16C417947EC00DA3B28C61802C_420648651 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_allowClearUserData,
                 true));
             {
                 ai.flags |= ApplicationInfo.FLAG_ALLOW_CLEAR_USER_DATA;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var1583D122D9A058ED6BE19A3237333EA0_521103188 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_testOnly,
                 false));
             {
                 ai.flags |= ApplicationInfo.FLAG_TEST_ONLY;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var4AFC6550135025488E8A90F0D243D683_1981018215 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_largeHeap,
                 false));
             {
                 ai.flags |= ApplicationInfo.FLAG_LARGE_HEAP;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String str;
         str = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifestApplication_permission, 0);
@@ -1786,11 +1804,11 @@ public class PackageParser {
         {
             str = sa.getNonConfigurationString(
                     com.android.internal.R.styleable.AndroidManifestApplication_taskAffinity, 0);
-        } //End block
+        } 
         {
             str = sa.getNonResourceString(
                     com.android.internal.R.styleable.AndroidManifestApplication_taskAffinity);
-        } //End block
+        } 
         ai.taskAffinity = buildTaskAffinityName(ai.packageName, ai.packageName,
                 str, outError);
         {
@@ -1798,11 +1816,11 @@ public class PackageParser {
             {
                 pname = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestApplication_process, 0);
-            } //End block
+            } 
             {
                 pname = sa.getNonResourceString(
                         com.android.internal.R.styleable.AndroidManifestApplication_process);
-            } //End block
+            } 
             ai.processName = buildProcessName(ai.packageName, null, pname,
                     flags, mSeparateProcesses, outError);
             ai.enabled = sa.getBoolean(
@@ -1816,17 +1834,17 @@ public class PackageParser {
                         ai.flags |= ApplicationInfo.FLAG_CANT_SAVE_STATE;
                         {
                             outError[0] = "cantSaveState applications can not use custom processes";
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         ai.uiOptions = sa.getInt(
                 com.android.internal.R.styleable.AndroidManifestApplication_uiOptions, 0);
         sa.recycle();
         {
             mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
-        } //End block
+        } 
         final int innerDepth = parser.getDepth();
         int type;
         {
@@ -1841,45 +1859,45 @@ public class PackageParser {
                         hardwareAccelerated);
                         {
                             mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
-                        } //End block
+                        } 
                         owner.activities.add(a);
-                    } //End block
+                    } 
                     {
                         boolean varBFC5A7632401121A805E0B8C8BD62B81_660083209 = (tagName.equals("receiver"));
                         {
                             Activity a = parseActivity(owner, res, parser, attrs, flags, outError, true, false);
                             {
                                 mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
-                            } //End block
+                            } 
                             owner.receivers.add(a);
-                        } //End block
+                        } 
                         {
                             boolean var21E9802D4101B46F2076E1671DBB2E7E_135356313 = (tagName.equals("service"));
                             {
                                 Service s = parseService(owner, res, parser, attrs, flags, outError);
                                 {
                                     mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
-                                } //End block
+                                } 
                                 owner.services.add(s);
-                            } //End block
+                            } 
                             {
                                 boolean varEFE1204453EBD024E72F8F8FEA9421C6_925901018 = (tagName.equals("provider"));
                                 {
                                     Provider p = parseProvider(owner, res, parser, attrs, flags, outError);
                                     {
                                         mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
-                                    } //End block
+                                    } 
                                     owner.providers.add(p);
-                                } //End block
+                                } 
                                 {
                                     boolean var5A497C595CAF1DB300BAE058439CF8DB_194949899 = (tagName.equals("activity-alias"));
                                     {
                                         Activity a = parseActivityAlias(owner, res, parser, attrs, flags, outError);
                                         {
                                             mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
-                                        } //End block
+                                        } 
                                         owner.activities.add(a);
-                                    } //End block
+                                    } 
                                     {
                                         boolean var91AADB0FFDCA4B3CD7737D6304F15B05_804731580 = (parser.getName().equals("meta-data"));
                                         {
@@ -1888,9 +1906,9 @@ public class PackageParser {
                         outError)) == null);
                                                 {
                                                     mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
-                                                } //End block
-                                            } //End collapsed parenthetic
-                                        } //End block
+                                                } 
+                                            } 
+                                        } 
                                         {
                                             boolean var31400F483E6E601672F212C83EBEF810_480380049 = (tagName.equals("uses-library"));
                                             {
@@ -1906,52 +1924,52 @@ public class PackageParser {
                                                     {
                                                         {
                                                             owner.usesLibraries = new ArrayList<String>();
-                                                        } //End block
+                                                        } 
                                                         {
                                                             boolean var6A1106BAA5BD5B3974BACBAD9BF1AAFE_902211176 = (!owner.usesLibraries.contains(lname));
                                                             {
                                                                 owner.usesLibraries.add(lname.intern());
-                                                            } //End block
-                                                        } //End collapsed parenthetic
-                                                    } //End block
+                                                            } 
+                                                        } 
+                                                    } 
                                                     {
                                                         {
                                                             owner.usesOptionalLibraries = new ArrayList<String>();
-                                                        } //End block
+                                                        } 
                                                         {
                                                             boolean var2EF7D28E9E6284E9A73DE8FDBB80D772_1958073347 = (!owner.usesOptionalLibraries.contains(lname));
                                                             {
                                                                 owner.usesOptionalLibraries.add(lname.intern());
-                                                            } //End block
-                                                        } //End collapsed parenthetic
-                                                    } //End block
-                                                } //End block
+                                                            } 
+                                                        } 
+                                                    } 
+                                                } 
                                                 XmlUtils.skipCurrentTag(parser);
-                                            } //End block
+                                            } 
                                             {
                                                 boolean varCD7EAA3A97E9E0F8C954B188A8E0E51A_725950680 = (tagName.equals("uses-package"));
                                                 {
                                                     XmlUtils.skipCurrentTag(parser);
-                                                } //End block
+                                                } 
                                                 {
                                                     {
                                                         XmlUtils.skipCurrentTag(parser);
-                                                    } //End block
+                                                    } 
                                                     {
                                                         outError[0] = "Bad element under <application>: " + tagName;
                                                         mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
-                                                    } //End block
-                                                } //End block
-                                            } //End collapsed parenthetic
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                                                    } 
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(owner.getTaint());
         addTaint(res.getTaint());
         addTaint(parser.getTaint());
@@ -1960,11 +1978,12 @@ public class PackageParser {
         addTaint(outError[0].getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1827510009 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1827510009;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.648 -0400", hash_original_method = "63CFF58BE3C03EE3AAF09BEB17B3529D", hash_generated_method = "FE1A5A3CE5A3D66D9C2BA049E6E8468C")
     private boolean parsePackageItemInfo(Package owner, PackageItemInfo outInfo,
             String[] outError, String tag, TypedArray sa,
@@ -1972,25 +1991,25 @@ public class PackageParser {
         String name = sa.getNonConfigurationString(nameRes, 0);
         {
             outError[0] = tag + " does not specify android:name";
-        } //End block
+        } 
         outInfo.name
             = buildClassName(owner.applicationInfo.packageName, name, outError);
         int iconVal = sa.getResourceId(iconRes, 0);
         {
             outInfo.icon = iconVal;
             outInfo.nonLocalizedLabel = null;
-        } //End block
+        } 
         int logoVal = sa.getResourceId(logoRes, 0);
         {
             outInfo.logo = logoVal;
-        } //End block
+        } 
         TypedValue v = sa.peekValue(labelRes);
         {
             boolean var91D75606D26FF6CB57581960C4C28D7F_1318826647 = (v != null && (outInfo.labelRes=v.resourceId) == 0);
             {
                 outInfo.nonLocalizedLabel = v.coerceToString();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         outInfo.packageName = owner.packageName;
         addTaint(owner.getTaint());
         addTaint(outInfo.getTaint());
@@ -2003,21 +2022,22 @@ public class PackageParser {
         addTaint(logoRes);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1086852245 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1086852245;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.652 -0400", hash_original_method = "5541C23C630FF3AC70030479982C4C1F", hash_generated_method = "70E05EA9BDD73E4FA5324D955E5926C6")
     private Activity parseActivity(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError,
             boolean receiver, boolean hardwareAccelerated) throws XmlPullParserException, IOException {
-        Activity varB4EAC82CA7396A68D541C85D26508E83_948942631 = null; //Variable for return #1
-        Activity varB4EAC82CA7396A68D541C85D26508E83_1518570596 = null; //Variable for return #2
-        Activity varB4EAC82CA7396A68D541C85D26508E83_469015951 = null; //Variable for return #3
-        Activity varB4EAC82CA7396A68D541C85D26508E83_253360809 = null; //Variable for return #4
-        Activity varB4EAC82CA7396A68D541C85D26508E83_1130449825 = null; //Variable for return #5
-        Activity varB4EAC82CA7396A68D541C85D26508E83_1149072819 = null; //Variable for return #6
+        Activity varB4EAC82CA7396A68D541C85D26508E83_948942631 = null; 
+        Activity varB4EAC82CA7396A68D541C85D26508E83_1518570596 = null; 
+        Activity varB4EAC82CA7396A68D541C85D26508E83_469015951 = null; 
+        Activity varB4EAC82CA7396A68D541C85D26508E83_253360809 = null; 
+        Activity varB4EAC82CA7396A68D541C85D26508E83_1130449825 = null; 
+        Activity varB4EAC82CA7396A68D541C85D26508E83_1149072819 = null; 
         TypedArray sa = res.obtainAttributes(attrs,
                 com.android.internal.R.styleable.AndroidManifestActivity);
         {
@@ -2030,7 +2050,7 @@ public class PackageParser {
                     com.android.internal.R.styleable.AndroidManifestActivity_process,
                     com.android.internal.R.styleable.AndroidManifestActivity_description,
                     com.android.internal.R.styleable.AndroidManifestActivity_enabled);
-        } //End block
+        } 
         mParseActivityArgs.tag = receiver ? "<receiver>" : "<activity>";
         mParseActivityArgs.sa = sa;
         mParseActivityArgs.flags = flags;
@@ -2038,13 +2058,13 @@ public class PackageParser {
         {
             sa.recycle();
             varB4EAC82CA7396A68D541C85D26508E83_948942631 = null;
-        } //End block
+        } 
         final boolean setExported = sa.hasValue(
                 com.android.internal.R.styleable.AndroidManifestActivity_exported);
         {
             a.info.exported = sa.getBoolean(
                     com.android.internal.R.styleable.AndroidManifestActivity_exported, false);
-        } //End block
+        } 
         a.info.theme = sa.getResourceId(
                 com.android.internal.R.styleable.AndroidManifestActivity_theme, 0);
         a.info.uiOptions = sa.getInt(
@@ -2055,10 +2075,10 @@ public class PackageParser {
                 com.android.internal.R.styleable.AndroidManifestActivity_permission, 0);
         {
             a.info.permission = owner.applicationInfo.permission;
-        } //End block
+        } 
         {
             a.info.permission = str.length() > 0 ? str.toString().intern() : null;
-        } //End block
+        } 
         str = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifestActivity_taskAffinity, 0);
         a.info.taskAffinity = buildTaskAffinityName(owner.applicationInfo.packageName,
@@ -2070,80 +2090,80 @@ public class PackageParser {
                 false));
             {
                 a.info.flags |= ActivityInfo.FLAG_MULTIPROCESS;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varBB9A814CD2F977B8CFFDF8586685D888_2007022403 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_finishOnTaskLaunch,
                 false));
             {
                 a.info.flags |= ActivityInfo.FLAG_FINISH_ON_TASK_LAUNCH;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var7214B1B3D1A30323865BB90BD536D99D_185405937 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_clearTaskOnLaunch,
                 false));
             {
                 a.info.flags |= ActivityInfo.FLAG_CLEAR_TASK_ON_LAUNCH;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var525C5644769ECBECA90106BBD7CCA891_2051734054 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_noHistory,
                 false));
             {
                 a.info.flags |= ActivityInfo.FLAG_NO_HISTORY;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var535A315BC7455B82982DBDF6ABB43639_28646062 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_alwaysRetainTaskState,
                 false));
             {
                 a.info.flags |= ActivityInfo.FLAG_ALWAYS_RETAIN_TASK_STATE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var310848EB8D34ABFD2902FA9D1E21F30A_1262004478 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_stateNotNeeded,
                 false));
             {
                 a.info.flags |= ActivityInfo.FLAG_STATE_NOT_NEEDED;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varCB2D249AFE74887A225B4B48E465BA00_1845324346 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_excludeFromRecents,
                 false));
             {
                 a.info.flags |= ActivityInfo.FLAG_EXCLUDE_FROM_RECENTS;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var3E6FBC876B6E16D44BA233F203FA6701_484184309 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_allowTaskReparenting,
                 (owner.applicationInfo.flags&ApplicationInfo.FLAG_ALLOW_TASK_REPARENTING) != 0));
             {
                 a.info.flags |= ActivityInfo.FLAG_ALLOW_TASK_REPARENTING;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varACE1D7FED9CA8DF00B89E18D2CE99755_1160767877 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_finishOnCloseSystemDialogs,
                 false));
             {
                 a.info.flags |= ActivityInfo.FLAG_FINISH_ON_CLOSE_SYSTEM_DIALOGS;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varBF9E0FF7BB8F35A6FAA707C99AAECC66_288245514 = (sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_immersive,
                 false));
             {
                 a.info.flags |= ActivityInfo.FLAG_IMMERSIVE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 boolean var27FB7917CF2CF95A3EBC55BEC12A3B99_1702726869 = (sa.getBoolean(
@@ -2151,8 +2171,8 @@ public class PackageParser {
                     hardwareAccelerated));
                 {
                     a.info.flags |= ActivityInfo.FLAG_HARDWARE_ACCELERATED;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             a.info.launchMode = sa.getInt(
                     com.android.internal.R.styleable.AndroidManifestActivity_launchMode,
                     ActivityInfo.LAUNCH_MULTIPLE);
@@ -2165,20 +2185,20 @@ public class PackageParser {
             a.info.softInputMode = sa.getInt(
                     com.android.internal.R.styleable.AndroidManifestActivity_windowSoftInputMode,
                     0);
-        } //End block
+        } 
         {
             a.info.launchMode = ActivityInfo.LAUNCH_MULTIPLE;
             a.info.configChanges = 0;
-        } //End block
+        } 
         sa.recycle();
         {
             {
                 outError[0] = "Heavy-weight applications can not have receivers in main process";
-            } //End block
-        } //End block
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1518570596 = null;
-        } //End block
+        } 
         int outerDepth = parser.getDepth();
         int type;
         {
@@ -2194,15 +2214,15 @@ public class PackageParser {
                             boolean varFEEAE359197455E997D8AE11C5F84F28_2130754544 = (!parseIntent(res, parser, attrs, flags, intent, outError, !receiver));
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_469015951 = null;
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             boolean var33C0360B5D0DAC6FE381109188142C53_525088863 = (intent.countActions() == 0);
                             {
                                 a.intents.add(intent);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         boolean var19E08DB77AFC65B1C7EB49759BAD99AF_1365176456 = (parser.getName().equals("meta-data"));
                         {
@@ -2211,75 +2231,76 @@ public class PackageParser {
                         outError)) == null);
                                 {
                                     varB4EAC82CA7396A68D541C85D26508E83_253360809 = null;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         {
                             {
                                 XmlUtils.skipCurrentTag(parser);
-                            } //End block
+                            } 
                             {
                                 {
                                     outError[0] = "Bad element under <receiver>: " + parser.getName();
-                                } //End block
+                                } 
                                 {
                                     outError[0] = "Bad element under <activity>: " + parser.getName();
-                                } //End block
+                                } 
                                 varB4EAC82CA7396A68D541C85D26508E83_1130449825 = null;
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             a.info.exported = a.intents.size() > 0;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1149072819 = a;
         addTaint(res.getTaint());
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
         addTaint(hardwareAccelerated);
-        Activity varA7E53CE21691AB073D9660D615818899_867026889; //Final return value
+        Activity varA7E53CE21691AB073D9660D615818899_867026889; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_867026889 = varB4EAC82CA7396A68D541C85D26508E83_948942631;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_867026889 = varB4EAC82CA7396A68D541C85D26508E83_1518570596;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_867026889 = varB4EAC82CA7396A68D541C85D26508E83_469015951;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_867026889 = varB4EAC82CA7396A68D541C85D26508E83_253360809;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_867026889 = varB4EAC82CA7396A68D541C85D26508E83_1130449825;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_867026889 = varB4EAC82CA7396A68D541C85D26508E83_1149072819;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_867026889.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_867026889.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_867026889;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.659 -0400", hash_original_method = "2C553740AE22C20570EEFC51EEC11A38", hash_generated_method = "BA4C17B6BD8F3B525258F6B8D7C445F3")
     private Activity parseActivityAlias(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError) throws XmlPullParserException, IOException {
-        Activity varB4EAC82CA7396A68D541C85D26508E83_501766917 = null; //Variable for return #1
-        Activity varB4EAC82CA7396A68D541C85D26508E83_1129800851 = null; //Variable for return #2
-        Activity varB4EAC82CA7396A68D541C85D26508E83_1446163597 = null; //Variable for return #3
-        Activity varB4EAC82CA7396A68D541C85D26508E83_361274329 = null; //Variable for return #4
-        Activity varB4EAC82CA7396A68D541C85D26508E83_2077632819 = null; //Variable for return #5
-        Activity varB4EAC82CA7396A68D541C85D26508E83_148295419 = null; //Variable for return #6
-        Activity varB4EAC82CA7396A68D541C85D26508E83_798163972 = null; //Variable for return #7
-        Activity varB4EAC82CA7396A68D541C85D26508E83_678135401 = null; //Variable for return #8
-        Activity varB4EAC82CA7396A68D541C85D26508E83_1800107769 = null; //Variable for return #9
+        Activity varB4EAC82CA7396A68D541C85D26508E83_501766917 = null; 
+        Activity varB4EAC82CA7396A68D541C85D26508E83_1129800851 = null; 
+        Activity varB4EAC82CA7396A68D541C85D26508E83_1446163597 = null; 
+        Activity varB4EAC82CA7396A68D541C85D26508E83_361274329 = null; 
+        Activity varB4EAC82CA7396A68D541C85D26508E83_2077632819 = null; 
+        Activity varB4EAC82CA7396A68D541C85D26508E83_148295419 = null; 
+        Activity varB4EAC82CA7396A68D541C85D26508E83_798163972 = null; 
+        Activity varB4EAC82CA7396A68D541C85D26508E83_678135401 = null; 
+        Activity varB4EAC82CA7396A68D541C85D26508E83_1800107769 = null; 
         TypedArray sa = res.obtainAttributes(attrs,
                 com.android.internal.R.styleable.AndroidManifestActivityAlias);
         String targetActivity = sa.getNonConfigurationString(
@@ -2288,13 +2309,13 @@ public class PackageParser {
             outError[0] = "<activity-alias> does not specify android:targetActivity";
             sa.recycle();
             varB4EAC82CA7396A68D541C85D26508E83_501766917 = null;
-        } //End block
+        } 
         targetActivity = buildClassName(owner.applicationInfo.packageName,
                 targetActivity, outError);
         {
             sa.recycle();
             varB4EAC82CA7396A68D541C85D26508E83_1129800851 = null;
-        } //End block
+        } 
         {
             mParseActivityAliasArgs = new ParseComponentArgs(owner, outError,
                     com.android.internal.R.styleable.AndroidManifestActivityAlias_name,
@@ -2306,7 +2327,7 @@ public class PackageParser {
                     com.android.internal.R.styleable.AndroidManifestActivityAlias_description,
                     com.android.internal.R.styleable.AndroidManifestActivityAlias_enabled);
             mParseActivityAliasArgs.tag = "<activity-alias>";
-        } //End block
+        } 
         mParseActivityAliasArgs.sa = sa;
         mParseActivityAliasArgs.flags = flags;
         Activity target = null;
@@ -2319,16 +2340,16 @@ public class PackageParser {
                     boolean varCA2334A46342BD5024FA8928036F4FB7_1491475752 = (targetActivity.equals(t.info.name));
                     {
                         target = t;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             outError[0] = "<activity-alias> target activity " + targetActivity
                     + " not found in manifest";
             sa.recycle();
             varB4EAC82CA7396A68D541C85D26508E83_1446163597 = null;
-        } //End block
+        } 
         ActivityInfo info = new ActivityInfo();
         info.targetActivity = targetActivity;
         info.configChanges = target.info.configChanges;
@@ -2341,7 +2362,7 @@ public class PackageParser {
         info.processName = target.info.processName;
         {
             info.descriptionRes = target.info.descriptionRes;
-        } //End block
+        } 
         info.screenOrientation = target.info.screenOrientation;
         info.taskAffinity = target.info.taskAffinity;
         info.theme = target.info.theme;
@@ -2351,23 +2372,23 @@ public class PackageParser {
         {
             sa.recycle();
             varB4EAC82CA7396A68D541C85D26508E83_361274329 = null;
-        } //End block
+        } 
         final boolean setExported = sa.hasValue(
                 com.android.internal.R.styleable.AndroidManifestActivityAlias_exported);
         {
             a.info.exported = sa.getBoolean(
                     com.android.internal.R.styleable.AndroidManifestActivityAlias_exported, false);
-        } //End block
+        } 
         String str;
         str = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifestActivityAlias_permission, 0);
         {
             a.info.permission = str.length() > 0 ? str.toString().intern() : null;
-        } //End block
+        } 
         sa.recycle();
         {
             varB4EAC82CA7396A68D541C85D26508E83_2077632819 = null;
-        } //End block
+        } 
         int outerDepth = parser.getDepth();
         int type;
         {
@@ -2383,15 +2404,15 @@ public class PackageParser {
                             boolean varBDA471758B32D3069E5A9AA8CF08294F_378736966 = (!parseIntent(res, parser, attrs, flags, intent, outError, true));
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_148295419 = null;
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             boolean var33C0360B5D0DAC6FE381109188142C53_1848679422 = (intent.countActions() == 0);
                             {
                                 a.intents.add(intent);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         boolean var19E08DB77AFC65B1C7EB49759BAD99AF_2005196963 = (parser.getName().equals("meta-data"));
                         {
@@ -2400,74 +2421,75 @@ public class PackageParser {
                         outError)) == null);
                                 {
                                     varB4EAC82CA7396A68D541C85D26508E83_798163972 = null;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         {
                             {
                                 XmlUtils.skipCurrentTag(parser);
-                            } //End block
+                            } 
                             {
                                 outError[0] = "Bad element under <activity-alias>: " + parser.getName();
                                 varB4EAC82CA7396A68D541C85D26508E83_678135401 = null;
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             a.info.exported = a.intents.size() > 0;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1800107769 = a;
         addTaint(res.getTaint());
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
-        Activity varA7E53CE21691AB073D9660D615818899_1393280749; //Final return value
+        Activity varA7E53CE21691AB073D9660D615818899_1393280749; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1393280749 = varB4EAC82CA7396A68D541C85D26508E83_501766917;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1393280749 = varB4EAC82CA7396A68D541C85D26508E83_1129800851;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1393280749 = varB4EAC82CA7396A68D541C85D26508E83_1446163597;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1393280749 = varB4EAC82CA7396A68D541C85D26508E83_361274329;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_1393280749 = varB4EAC82CA7396A68D541C85D26508E83_2077632819;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_1393280749 = varB4EAC82CA7396A68D541C85D26508E83_148295419;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_1393280749 = varB4EAC82CA7396A68D541C85D26508E83_798163972;
                 break;
-            case 8: //Assign result for return ordinal #8
+            case 8: 
                 varA7E53CE21691AB073D9660D615818899_1393280749 = varB4EAC82CA7396A68D541C85D26508E83_678135401;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1393280749 = varB4EAC82CA7396A68D541C85D26508E83_1800107769;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1393280749.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1393280749.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1393280749;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.663 -0400", hash_original_method = "CC761DF5515ACB2817B0A6BEDC12031E", hash_generated_method = "0993D4974763F76C4A9D2BCE05507157")
     private Provider parseProvider(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError) throws XmlPullParserException, IOException {
-        Provider varB4EAC82CA7396A68D541C85D26508E83_2105751204 = null; //Variable for return #1
-        Provider varB4EAC82CA7396A68D541C85D26508E83_742106540 = null; //Variable for return #2
-        Provider varB4EAC82CA7396A68D541C85D26508E83_2089363944 = null; //Variable for return #3
-        Provider varB4EAC82CA7396A68D541C85D26508E83_334021976 = null; //Variable for return #4
-        Provider varB4EAC82CA7396A68D541C85D26508E83_745579643 = null; //Variable for return #5
+        Provider varB4EAC82CA7396A68D541C85D26508E83_2105751204 = null; 
+        Provider varB4EAC82CA7396A68D541C85D26508E83_742106540 = null; 
+        Provider varB4EAC82CA7396A68D541C85D26508E83_2089363944 = null; 
+        Provider varB4EAC82CA7396A68D541C85D26508E83_334021976 = null; 
+        Provider varB4EAC82CA7396A68D541C85D26508E83_745579643 = null; 
         TypedArray sa = res.obtainAttributes(attrs,
                 com.android.internal.R.styleable.AndroidManifestProvider);
         {
@@ -2481,14 +2503,14 @@ public class PackageParser {
                     com.android.internal.R.styleable.AndroidManifestProvider_description,
                     com.android.internal.R.styleable.AndroidManifestProvider_enabled);
             mParseProviderArgs.tag = "<provider>";
-        } //End block
+        } 
         mParseProviderArgs.sa = sa;
         mParseProviderArgs.flags = flags;
         Provider p = new Provider(mParseProviderArgs, new ProviderInfo());
         {
             sa.recycle();
             varB4EAC82CA7396A68D541C85D26508E83_2105751204 = null;
-        } //End block
+        } 
         p.info.exported = sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestProvider_exported, true);
         String cpname = sa.getNonConfigurationString(
@@ -2502,26 +2524,26 @@ public class PackageParser {
                 com.android.internal.R.styleable.AndroidManifestProvider_readPermission, 0);
         {
             str = permission;
-        } //End block
+        } 
         {
             p.info.readPermission = owner.applicationInfo.permission;
-        } //End block
+        } 
         {
             p.info.readPermission =
                 str.length() > 0 ? str.toString().intern() : null;
-        } //End block
+        } 
         str = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifestProvider_writePermission, 0);
         {
             str = permission;
-        } //End block
+        } 
         {
             p.info.writePermission = owner.applicationInfo.permission;
-        } //End block
+        } 
         {
             p.info.writePermission =
                 str.length() > 0 ? str.toString().intern() : null;
-        } //End block
+        } 
         p.info.grantUriPermissions = sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestProvider_grantUriPermissions,
                 false);
@@ -2536,48 +2558,49 @@ public class PackageParser {
             {
                 outError[0] = "Heavy-weight applications can not have providers in main process";
                 varB4EAC82CA7396A68D541C85D26508E83_742106540 = null;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             outError[0] = "<provider> does not incude authorities attribute";
             varB4EAC82CA7396A68D541C85D26508E83_2089363944 = null;
-        } //End block
+        } 
         p.info.authority = cpname.intern();
         {
             boolean var4FDB5E1EC3E9C441BD9FB9F3A9CEE2E9_1189376100 = (!parseProviderTags(res, parser, attrs, p, outError));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_334021976 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_745579643 = p;
         addTaint(res.getTaint());
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
-        Provider varA7E53CE21691AB073D9660D615818899_1472139322; //Final return value
+        Provider varA7E53CE21691AB073D9660D615818899_1472139322; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1472139322 = varB4EAC82CA7396A68D541C85D26508E83_2105751204;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1472139322 = varB4EAC82CA7396A68D541C85D26508E83_742106540;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1472139322 = varB4EAC82CA7396A68D541C85D26508E83_2089363944;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1472139322 = varB4EAC82CA7396A68D541C85D26508E83_334021976;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1472139322 = varB4EAC82CA7396A68D541C85D26508E83_745579643;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1472139322.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1472139322.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1472139322;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.667 -0400", hash_original_method = "05A16AA66DEB0B6B5120CEC23FE33532", hash_generated_method = "808E54DA030032BFB4D0C165D2ABEDBD")
     private boolean parseProviderTags(Resources res,
             XmlPullParser parser, AttributeSet attrs,
@@ -2595,8 +2618,8 @@ public class PackageParser {
                         {
                             boolean var989A6F06E5BD6363C928806CC7D69345_1445645583 = ((outInfo.metaData=parseMetaData(res, parser, attrs,
                         outInfo.metaData, outError)) == null);
-                        } //End collapsed parenthetic
-                    } //End block
+                        } 
+                    } 
                     {
                         boolean varF06E7B1138273C400578FF82FA2DB071_2086713279 = (parser.getName().equals("grant-uri-permission"));
                         {
@@ -2607,42 +2630,42 @@ public class PackageParser {
                         com.android.internal.R.styleable.AndroidManifestGrantUriPermission_path, 0);
                             {
                                 pa = new PatternMatcher(str, PatternMatcher.PATTERN_LITERAL);
-                            } //End block
+                            } 
                             str = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestGrantUriPermission_pathPrefix, 0);
                             {
                                 pa = new PatternMatcher(str, PatternMatcher.PATTERN_PREFIX);
-                            } //End block
+                            } 
                             str = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestGrantUriPermission_pathPattern, 0);
                             {
                                 pa = new PatternMatcher(str, PatternMatcher.PATTERN_SIMPLE_GLOB);
-                            } //End block
+                            } 
                             sa.recycle();
                             {
                                 {
                                     outInfo.info.uriPermissionPatterns = new PatternMatcher[1];
                                     outInfo.info.uriPermissionPatterns[0] = pa;
-                                } //End block
+                                } 
                                 {
                                     final int N = outInfo.info.uriPermissionPatterns.length;
                                     PatternMatcher[] newp = new PatternMatcher[N+1];
                                     System.arraycopy(outInfo.info.uriPermissionPatterns, 0, newp, 0, N);
                                     newp[N] = pa;
                                     outInfo.info.uriPermissionPatterns = newp;
-                                } //End block
+                                } 
                                 outInfo.info.grantUriPermissions = true;
-                            } //End block
+                            } 
                             {
                                 {
                                     XmlUtils.skipCurrentTag(parser);
-                                } //End block
+                                } 
                                 {
                                     outError[0] = "No path, pathPrefix, or pathPattern for <path-permission>";
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             XmlUtils.skipCurrentTag(parser);
-                        } //End block
+                        } 
                         {
                             boolean var6F38308E8F6BF3E7F05F9A7A5771E51E_877543256 = (parser.getName().equals("path-permission"));
                             {
@@ -2655,82 +2678,82 @@ public class PackageParser {
                         com.android.internal.R.styleable.AndroidManifestPathPermission_readPermission, 0);
                                 {
                                     readPermission = permission;
-                                } //End block
+                                } 
                                 String writePermission = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestPathPermission_writePermission, 0);
                                 {
                                     writePermission = permission;
-                                } //End block
+                                } 
                                 boolean havePerm = false;
                                 {
                                     readPermission = readPermission.intern();
                                     havePerm = true;
-                                } //End block
+                                } 
                                 {
                                     writePermission = writePermission.intern();
                                     havePerm = true;
-                                } //End block
+                                } 
                                 {
                                     {
                                         XmlUtils.skipCurrentTag(parser);
-                                    } //End block
+                                    } 
                                     {
                                         outError[0] = "No readPermission or writePermssion for <path-permission>";
-                                    } //End block
-                                } //End block
+                                    } 
+                                } 
                                 String path = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestPathPermission_path, 0);
                                 {
                                     pa = new PathPermission(path,
                             PatternMatcher.PATTERN_LITERAL, readPermission, writePermission);
-                                } //End block
+                                } 
                                 path = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestPathPermission_pathPrefix, 0);
                                 {
                                     pa = new PathPermission(path,
                             PatternMatcher.PATTERN_PREFIX, readPermission, writePermission);
-                                } //End block
+                                } 
                                 path = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestPathPermission_pathPattern, 0);
                                 {
                                     pa = new PathPermission(path,
                             PatternMatcher.PATTERN_SIMPLE_GLOB, readPermission, writePermission);
-                                } //End block
+                                } 
                                 sa.recycle();
                                 {
                                     {
                                         outInfo.info.pathPermissions = new PathPermission[1];
                                         outInfo.info.pathPermissions[0] = pa;
-                                    } //End block
+                                    } 
                                     {
                                         final int N = outInfo.info.pathPermissions.length;
                                         PathPermission[] newp = new PathPermission[N+1];
                                         System.arraycopy(outInfo.info.pathPermissions, 0, newp, 0, N);
                                         newp[N] = pa;
                                         outInfo.info.pathPermissions = newp;
-                                    } //End block
-                                } //End block
+                                    } 
+                                } 
                                 {
                                     {
                                         XmlUtils.skipCurrentTag(parser);
-                                    } //End block
+                                    } 
                                     outError[0] = "No path, pathPrefix, or pathPattern for <path-permission>";
-                                } //End block
+                                } 
                                 XmlUtils.skipCurrentTag(parser);
-                            } //End block
+                            } 
                             {
                                 {
                                     XmlUtils.skipCurrentTag(parser);
-                                } //End block
+                                } 
                                 {
                                     outError[0] = "Bad element under <provider>: " + parser.getName();
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(res.getTaint());
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
@@ -2738,20 +2761,21 @@ public class PackageParser {
         addTaint(outError[0].getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1314107707 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1314107707;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.670 -0400", hash_original_method = "1B6E257916FE773842F0B213D728DC29", hash_generated_method = "73F7AA2B9C983FAD318E9AC72D8BC407")
     private Service parseService(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError) throws XmlPullParserException, IOException {
-        Service varB4EAC82CA7396A68D541C85D26508E83_767666527 = null; //Variable for return #1
-        Service varB4EAC82CA7396A68D541C85D26508E83_1057832822 = null; //Variable for return #2
-        Service varB4EAC82CA7396A68D541C85D26508E83_300056175 = null; //Variable for return #3
-        Service varB4EAC82CA7396A68D541C85D26508E83_1841794087 = null; //Variable for return #4
-        Service varB4EAC82CA7396A68D541C85D26508E83_44640406 = null; //Variable for return #5
-        Service varB4EAC82CA7396A68D541C85D26508E83_892475394 = null; //Variable for return #6
+        Service varB4EAC82CA7396A68D541C85D26508E83_767666527 = null; 
+        Service varB4EAC82CA7396A68D541C85D26508E83_1057832822 = null; 
+        Service varB4EAC82CA7396A68D541C85D26508E83_300056175 = null; 
+        Service varB4EAC82CA7396A68D541C85D26508E83_1841794087 = null; 
+        Service varB4EAC82CA7396A68D541C85D26508E83_44640406 = null; 
+        Service varB4EAC82CA7396A68D541C85D26508E83_892475394 = null; 
         TypedArray sa = res.obtainAttributes(attrs,
                 com.android.internal.R.styleable.AndroidManifestService);
         {
@@ -2765,28 +2789,28 @@ public class PackageParser {
                     com.android.internal.R.styleable.AndroidManifestService_description,
                     com.android.internal.R.styleable.AndroidManifestService_enabled);
             mParseServiceArgs.tag = "<service>";
-        } //End block
+        } 
         mParseServiceArgs.sa = sa;
         mParseServiceArgs.flags = flags;
         Service s = new Service(mParseServiceArgs, new ServiceInfo());
         {
             sa.recycle();
             varB4EAC82CA7396A68D541C85D26508E83_767666527 = null;
-        } //End block
+        } 
         final boolean setExported = sa.hasValue(
                 com.android.internal.R.styleable.AndroidManifestService_exported);
         {
             s.info.exported = sa.getBoolean(
                     com.android.internal.R.styleable.AndroidManifestService_exported, false);
-        } //End block
+        } 
         String str = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifestService_permission, 0);
         {
             s.info.permission = owner.applicationInfo.permission;
-        } //End block
+        } 
         {
             s.info.permission = str.length() > 0 ? str.toString().intern() : null;
-        } //End block
+        } 
         s.info.flags = 0;
         {
             boolean var48D9F4C063A4D64D9CBE4D757774C4E4_433706083 = (sa.getBoolean(
@@ -2794,15 +2818,15 @@ public class PackageParser {
                 false));
             {
                 s.info.flags |= ServiceInfo.FLAG_STOP_WITH_TASK;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         sa.recycle();
         {
             {
                 outError[0] = "Heavy-weight applications can not have services in main process";
                 varB4EAC82CA7396A68D541C85D26508E83_1057832822 = null;
-            } //End block
-        } //End block
+            } 
+        } 
         int outerDepth = parser.getDepth();
         int type;
         {
@@ -2818,10 +2842,10 @@ public class PackageParser {
                             boolean var8E3CB1B64FDFADDC5A768494AEBFAFDC_1302943216 = (!parseIntent(res, parser, attrs, flags, intent, outError, false));
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_300056175 = null;
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         s.intents.add(intent);
-                    } //End block
+                    } 
                     {
                         boolean var19E08DB77AFC65B1C7EB49759BAD99AF_1246135284 = (parser.getName().equals("meta-data"));
                         {
@@ -2830,57 +2854,58 @@ public class PackageParser {
                         outError)) == null);
                                 {
                                     varB4EAC82CA7396A68D541C85D26508E83_1841794087 = null;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         {
                             {
                                 XmlUtils.skipCurrentTag(parser);
-                            } //End block
+                            } 
                             {
                                 outError[0] = "Bad element under <service>: " + parser.getName();
                                 varB4EAC82CA7396A68D541C85D26508E83_44640406 = null;
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             s.info.exported = s.intents.size() > 0;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_892475394 = s;
         addTaint(res.getTaint());
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
-        Service varA7E53CE21691AB073D9660D615818899_544952424; //Final return value
+        Service varA7E53CE21691AB073D9660D615818899_544952424; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_544952424 = varB4EAC82CA7396A68D541C85D26508E83_767666527;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_544952424 = varB4EAC82CA7396A68D541C85D26508E83_1057832822;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_544952424 = varB4EAC82CA7396A68D541C85D26508E83_300056175;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_544952424 = varB4EAC82CA7396A68D541C85D26508E83_1841794087;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_544952424 = varB4EAC82CA7396A68D541C85D26508E83_44640406;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_544952424 = varB4EAC82CA7396A68D541C85D26508E83_892475394;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_544952424.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_544952424.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_544952424;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.671 -0400", hash_original_method = "99FE3F7E654A8DB168806DBE6C913C62", hash_generated_method = "99AC6B621B5E4B77435779E876539247")
     private boolean parseAllMetaData(Resources res,
             XmlPullParser parser, AttributeSet attrs, String tag,
@@ -2898,19 +2923,19 @@ public class PackageParser {
                         {
                             boolean var989A6F06E5BD6363C928806CC7D69345_447165966 = ((outInfo.metaData=parseMetaData(res, parser, attrs,
                         outInfo.metaData, outError)) == null);
-                        } //End collapsed parenthetic
-                    } //End block
+                        } 
+                    } 
                     {
                         {
                             XmlUtils.skipCurrentTag(parser);
-                        } //End block
+                        } 
                         {
                             outError[0] = "Bad element under " + tag + ": " + parser.getName();
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(res.getTaint());
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
@@ -2919,35 +2944,36 @@ public class PackageParser {
         addTaint(outError[0].getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_543648390 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_543648390;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.674 -0400", hash_original_method = "714C7ED1FC52C32A41D3A8C089BB2BEC", hash_generated_method = "B421BA610A58F286B0C98EA0A516847C")
     private Bundle parseMetaData(Resources res,
             XmlPullParser parser, AttributeSet attrs,
             Bundle data, String[] outError) throws XmlPullParserException, IOException {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_903464794 = null; //Variable for return #1
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_1371897061 = null; //Variable for return #2
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_903464794 = null; 
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_1371897061 = null; 
         TypedArray sa = res.obtainAttributes(attrs,
                 com.android.internal.R.styleable.AndroidManifestMetaData);
         {
             data = new Bundle();
-        } //End block
+        } 
         String name = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifestMetaData_name, 0);
         {
             outError[0] = "<meta-data> requires an android:name attribute";
             sa.recycle();
             varB4EAC82CA7396A68D541C85D26508E83_903464794 = null;
-        } //End block
+        } 
         name = name.intern();
         TypedValue v = sa.peekValue(
                 com.android.internal.R.styleable.AndroidManifestMetaData_resource);
         {
             data.putInt(name, v.resourceId);
-        } //End block
+        } 
         {
             v = sa.peekValue(
                     com.android.internal.R.styleable.AndroidManifestMetaData_value);
@@ -2955,28 +2981,28 @@ public class PackageParser {
                 {
                     CharSequence cs = v.coerceToString();
                     data.putString(name, cs != null ? cs.toString().intern() : null);
-                } //End block
+                } 
                 {
                     data.putBoolean(name, v.data != 0);
-                } //End block
+                } 
                 {
                     data.putInt(name, v.data);
-                } //End block
+                } 
                 {
                     data.putFloat(name, v.getFloat());
-                } //End block
+                } 
                 {
                     {
                         outError[0] = "<meta-data> only supports string, integer, float, color, boolean, and resource reference types";
                         data = null;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             {
                 outError[0] = "<meta-data> requires an android:value or android:resource attribute";
                 data = null;
-            } //End block
-        } //End block
+            } 
+        } 
         sa.recycle();
         XmlUtils.skipCurrentTag(parser);
         varB4EAC82CA7396A68D541C85D26508E83_1371897061 = data;
@@ -2985,22 +3011,23 @@ public class PackageParser {
         addTaint(attrs.getTaint());
         addTaint(data.getTaint());
         addTaint(outError[0].getTaint());
-        Bundle varA7E53CE21691AB073D9660D615818899_949969731; //Final return value
+        Bundle varA7E53CE21691AB073D9660D615818899_949969731; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_949969731 = varB4EAC82CA7396A68D541C85D26508E83_903464794;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_949969731 = varB4EAC82CA7396A68D541C85D26508E83_1371897061;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_949969731.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_949969731.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_949969731;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static VerifierInfo parseVerifier(Resources res, XmlPullParser parser,
             AttributeSet attrs, int flags, String[] outError) throws XmlPullParserException,
             IOException {
@@ -3047,6 +3074,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.678 -0400", hash_original_method = "B28F171FD6C00B48F648DC5DCFE3EFC1", hash_generated_method = "FEFF6299FEC6529A67540C2A71CF6742")
     private boolean parseIntent(Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags,
@@ -3062,8 +3090,8 @@ public class PackageParser {
             boolean var91D75606D26FF6CB57581960C4C28D7F_1255440931 = (v != null && (outInfo.labelRes=v.resourceId) == 0);
             {
                 outInfo.nonLocalizedLabel = v.coerceToString();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         outInfo.icon = sa.getResourceId(
                 com.android.internal.R.styleable.AndroidManifestIntentFilter_icon, 0);
         outInfo.logo = sa.getResourceId(
@@ -3083,10 +3111,10 @@ public class PackageParser {
                         ANDROID_RESOURCES, "name");
                         {
                             outError[0] = "No value supplied for <android:name>";
-                        } //End block
+                        } 
                         XmlUtils.skipCurrentTag(parser);
                         outInfo.addAction(value);
-                    } //End block
+                    } 
                     {
                         boolean var355168E41EBBD793F28449F985564D32_458099438 = (nodeName.equals("category"));
                         {
@@ -3094,10 +3122,10 @@ public class PackageParser {
                         ANDROID_RESOURCES, "name");
                             {
                                 outError[0] = "No value supplied for <android:name>";
-                            } //End block
+                            } 
                             XmlUtils.skipCurrentTag(parser);
                             outInfo.addCategory(value);
-                        } //End block
+                        } 
                         {
                             boolean var623CB09FAE2071E98D47E3836399E32F_270008943 = (nodeName.equals("data"));
                             {
@@ -3109,54 +3137,54 @@ public class PackageParser {
                                     try 
                                     {
                                         outInfo.addDataType(str);
-                                    } //End block
+                                    } 
                                     catch (IntentFilter.MalformedMimeTypeException e)
                                     {
                                         outError[0] = e.toString();
                                         sa.recycle();
-                                    } //End block
-                                } //End block
+                                    } 
+                                } 
                                 str = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestData_scheme, 0);
                                 {
                                     outInfo.addDataScheme(str);
-                                } //End block
+                                } 
                                 String host = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestData_host, 0);
                                 String port = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestData_port, 0);
                                 {
                                     outInfo.addDataAuthority(host, port);
-                                } //End block
+                                } 
                                 str = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestData_path, 0);
                                 {
                                     outInfo.addDataPath(str, PatternMatcher.PATTERN_LITERAL);
-                                } //End block
+                                } 
                                 str = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestData_pathPrefix, 0);
                                 {
                                     outInfo.addDataPath(str, PatternMatcher.PATTERN_PREFIX);
-                                } //End block
+                                } 
                                 str = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestData_pathPattern, 0);
                                 {
                                     outInfo.addDataPath(str, PatternMatcher.PATTERN_SIMPLE_GLOB);
-                                } //End block
+                                } 
                                 sa.recycle();
                                 XmlUtils.skipCurrentTag(parser);
-                            } //End block
+                            } 
                             {
                                 XmlUtils.skipCurrentTag(parser);
-                            } //End block
+                            } 
                             {
                                 outError[0] = "Bad element under <intent-filter>: " + parser.getName();
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         outInfo.hasDefault = outInfo.hasCategory(Intent.CATEGORY_DEFAULT);
         {
             final StringBuilder cats = new StringBuilder("Intent d=");
@@ -3169,11 +3197,11 @@ public class PackageParser {
                     {
                         cats.append(' ');
                         cats.append(it.next());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             Slog.d(TAG, cats.toString());
-        } //End block
+        } 
         addTaint(res.getTaint());
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
@@ -3183,8 +3211,8 @@ public class PackageParser {
         addTaint(isActivity);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_310219956 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_310219956;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3207,6 +3235,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ApplicationInfo generateApplicationInfo(Package p, int flags) {
         if (p == null) return null;
         if (!copyNeeded(flags, p, null)) {
@@ -3346,10 +3375,10 @@ public class PackageParser {
             this.name = name;
             this.sdkVersion = sdkVersion;
             this.fileVersion = fileVersion;
-            // ---------- Original Method ----------
-            //this.name = name;
-            //this.sdkVersion = sdkVersion;
-            //this.fileVersion = fileVersion;
+            
+            
+            
+            
         }
 
         
@@ -3392,13 +3421,13 @@ public class PackageParser {
             labelRes = _labelRes;
             iconRes = _iconRes;
             logoRes = _logoRes;
-            // ---------- Original Method ----------
-            //owner = _owner;
-            //outError = _outError;
-            //nameRes = _nameRes;
-            //labelRes = _labelRes;
-            //iconRes = _iconRes;
-            //logoRes = _logoRes;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -3439,11 +3468,11 @@ public class PackageParser {
             addTaint(_labelRes);
             addTaint(_iconRes);
             addTaint(_logoRes);
-            // ---------- Original Method ----------
-            //sepProcesses = _sepProcesses;
-            //processRes = _processRes;
-            //descriptionRes = _descriptionRes;
-            //enabledRes = _enabledRes;
+            
+            
+            
+            
+            
         }
 
         
@@ -3467,10 +3496,10 @@ public class PackageParser {
             this.packageName = packageName;
             this.installLocation = installLocation;
             this.verifiers = verifiers.toArray(new VerifierInfo[verifiers.size()]);
-            // ---------- Original Method ----------
-            //this.packageName = packageName;
-            //this.installLocation = installLocation;
-            //this.verifiers = verifiers.toArray(new VerifierInfo[verifiers.size()]);
+            
+            
+            
+            
         }
 
         
@@ -3590,10 +3619,10 @@ public class PackageParser {
             packageName = _name;
             applicationInfo.packageName = _name;
             applicationInfo.uid = -1;
-            // ---------- Original Method ----------
-            //packageName = _name;
-            //applicationInfo.packageName = _name;
-            //applicationInfo.uid = -1;
+            
+            
+            
+            
         }
 
         
@@ -3605,61 +3634,61 @@ public class PackageParser {
                 int i = permissions.size()-1;
                 {
                     permissions.get(i).setPackageName(newName);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 int i = permissionGroups.size()-1;
                 {
                     permissionGroups.get(i).setPackageName(newName);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 int i = activities.size()-1;
                 {
                     activities.get(i).setPackageName(newName);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 int i = receivers.size()-1;
                 {
                     receivers.get(i).setPackageName(newName);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 int i = providers.size()-1;
                 {
                     providers.get(i).setPackageName(newName);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 int i = services.size()-1;
                 {
                     services.get(i).setPackageName(newName);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 int i = instrumentation.size()-1;
                 {
                     instrumentation.get(i).setPackageName(newName);
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.693 -0400", hash_original_method = "7DFEBE5DF638D8804915FD110C0E2540", hash_generated_method = "F101E61366DA0E6B1E569AE1C604FB91")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_128018033 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_128018033 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_128018033 = "Package{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + packageName + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_128018033.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_128018033.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_128018033;
-            // ---------- Original Method ----------
-            //return "Package{"
-                //+ Integer.toHexString(System.identityHashCode(this))
-                //+ " " + packageName + "}";
+            
+            
+                
+                
         }
 
         
@@ -3692,10 +3721,10 @@ public class PackageParser {
             owner = _owner;
             intents = null;
             className = null;
-            // ---------- Original Method ----------
-            //owner = _owner;
-            //intents = null;
-            //className = null;
+            
+            
+            
+            
         }
 
         
@@ -3707,33 +3736,33 @@ public class PackageParser {
             {
                 className = null;
                 args.outError[0] = args.tag + " does not specify android:name";
-            } //End block
+            } 
             outInfo.name
                 = buildClassName(owner.applicationInfo.packageName, name, args.outError);
             {
                 className = null;
                 args.outError[0] = args.tag + " does not have valid android:name";
-            } //End block
+            } 
             className = outInfo.name;
             int iconVal = args.sa.getResourceId(args.iconRes, 0);
             {
                 outInfo.icon = iconVal;
                 outInfo.nonLocalizedLabel = null;
-            } //End block
+            } 
             int logoVal = args.sa.getResourceId(args.logoRes, 0);
             {
                 outInfo.logo = logoVal;
-            } //End block
+            } 
             TypedValue v = args.sa.peekValue(args.labelRes);
             {
                 boolean varB057AD3DC46BBD8375817931442BCC5C_1756522029 = (v != null && (outInfo.labelRes=v.resourceId) == 0);
                 {
                     outInfo.nonLocalizedLabel = v.coerceToString();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             outInfo.packageName = owner.packageName;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -3744,22 +3773,22 @@ public class PackageParser {
                 CharSequence pname;
                 {
                     pname = args.sa.getNonConfigurationString(args.processRes, 0);
-                } //End block
+                } 
                 {
                     pname = args.sa.getNonResourceString(args.processRes);
-                } //End block
+                } 
                 outInfo.processName = buildProcessName(owner.applicationInfo.packageName,
                         owner.applicationInfo.processName, pname,
                         args.flags, args.sepProcesses, args.outError);
-            } //End block
+            } 
             {
                 outInfo.descriptionRes = args.sa.getResourceId(args.descriptionRes, 0);
-            } //End block
+            } 
             outInfo.enabled = args.sa.getBoolean(args.enabledRes, true);
             addTaint(args.getTaint());
             addTaint(outInfo.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -3770,82 +3799,82 @@ public class PackageParser {
             className = clone.className;
             componentName = clone.componentName;
             componentShortName = clone.componentShortName;
-            // ---------- Original Method ----------
-            //owner = clone.owner;
-            //intents = clone.intents;
-            //className = clone.className;
-            //componentName = clone.componentName;
-            //componentShortName = clone.componentShortName;
+            
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.699 -0400", hash_original_method = "BF1ED0A6C0ACE1EE7610EB0D74F5C800", hash_generated_method = "122A0290D5510AF8330E35C8C6BFF83C")
         public ComponentName getComponentName() {
-            ComponentName varB4EAC82CA7396A68D541C85D26508E83_590211186 = null; //Variable for return #1
-            ComponentName varB4EAC82CA7396A68D541C85D26508E83_1355987131 = null; //Variable for return #2
+            ComponentName varB4EAC82CA7396A68D541C85D26508E83_590211186 = null; 
+            ComponentName varB4EAC82CA7396A68D541C85D26508E83_1355987131 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_590211186 = componentName;
-            } //End block
+            } 
             {
                 componentName = new ComponentName(owner.applicationInfo.packageName,
                         className);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1355987131 = componentName;
-            ComponentName varA7E53CE21691AB073D9660D615818899_1756070634; //Final return value
+            ComponentName varA7E53CE21691AB073D9660D615818899_1756070634; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1756070634 = varB4EAC82CA7396A68D541C85D26508E83_590211186;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1756070634 = varB4EAC82CA7396A68D541C85D26508E83_1355987131;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1756070634.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1756070634.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1756070634;
-            // ---------- Original Method ----------
-            //if (componentName != null) {
-                //return componentName;
-            //}
-            //if (className != null) {
-                //componentName = new ComponentName(owner.applicationInfo.packageName,
-                        //className);
-            //}
-            //return componentName;
+            
+            
+                
+            
+            
+                
+                        
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.700 -0400", hash_original_method = "3A4D7499A9518F3ABB20BEBAE6816B9D", hash_generated_method = "A74483E16D4A8F4B2A4CA01F537115F4")
         public String getComponentShortName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1854805261 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_872780784 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_1854805261 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_872780784 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1854805261 = componentShortName;
-            } //End block
+            } 
             ComponentName component = getComponentName();
             {
                 componentShortName = component.flattenToShortString();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_872780784 = componentShortName;
-            String varA7E53CE21691AB073D9660D615818899_641867763; //Final return value
+            String varA7E53CE21691AB073D9660D615818899_641867763; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_641867763 = varB4EAC82CA7396A68D541C85D26508E83_1854805261;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_641867763 = varB4EAC82CA7396A68D541C85D26508E83_872780784;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_641867763.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_641867763.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_641867763;
-            // ---------- Original Method ----------
-            //if (componentShortName != null) {
-                //return componentShortName;
-            //}
-            //ComponentName component = getComponentName();
-            //if (component != null) {
-                //componentShortName = component.flattenToShortString();
-            //}
-            //return componentShortName;
+            
+            
+                
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -3854,9 +3883,9 @@ public class PackageParser {
             componentName = null;
             componentShortName = null;
             addTaint(packageName.getTaint());
-            // ---------- Original Method ----------
-            //componentName = null;
-            //componentShortName = null;
+            
+            
+            
         }
 
         
@@ -3880,8 +3909,8 @@ public class PackageParser {
             super(_owner);
             info = new PermissionInfo();
             addTaint(_owner.getTaint());
-            // ---------- Original Method ----------
-            //info = new PermissionInfo();
+            
+            
         }
 
         
@@ -3890,8 +3919,8 @@ public class PackageParser {
             super(_owner);
             info = _info;
             addTaint(_owner.getTaint());
-            // ---------- Original Method ----------
-            //info = _info;
+            
+            
         }
 
         
@@ -3899,24 +3928,24 @@ public class PackageParser {
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
-            // ---------- Original Method ----------
-            //super.setPackageName(packageName);
-            //info.packageName = packageName;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.705 -0400", hash_original_method = "D70298090C91BEA7F3B1C7F9C9416449", hash_generated_method = "C4D5F761083C29371868F32C62DC4B43")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_256010907 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_256010907 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_256010907 = "Permission{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + info.name + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_256010907.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_256010907.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_256010907;
-            // ---------- Original Method ----------
-            //return "Permission{"
-                //+ Integer.toHexString(System.identityHashCode(this))
-                //+ " " + info.name + "}";
+            
+            
+                
+                
         }
 
         
@@ -3934,8 +3963,8 @@ public class PackageParser {
             super(_owner);
             info = new PermissionGroupInfo();
             addTaint(_owner.getTaint());
-            // ---------- Original Method ----------
-            //info = new PermissionGroupInfo();
+            
+            
         }
 
         
@@ -3944,8 +3973,8 @@ public class PackageParser {
             super(_owner);
             info = _info;
             addTaint(_owner.getTaint());
-            // ---------- Original Method ----------
-            //info = _info;
+            
+            
         }
 
         
@@ -3953,24 +3982,24 @@ public class PackageParser {
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
-            // ---------- Original Method ----------
-            //super.setPackageName(packageName);
-            //info.packageName = packageName;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.708 -0400", hash_original_method = "5B6E9035FB2F0E9673597108CCAFFCEF", hash_generated_method = "8077ADBD8F957D1FC1AE2EF1294699F8")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_512499724 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_512499724 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_512499724 = "PermissionGroup{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + info.name + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_512499724.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_512499724.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_512499724;
-            // ---------- Original Method ----------
-            //return "PermissionGroup{"
-                //+ Integer.toHexString(System.identityHashCode(this))
-                //+ " " + info.name + "}";
+            
+            
+                
+                
         }
 
         
@@ -3988,9 +4017,9 @@ public class PackageParser {
             super(args, _info);
             info = _info;
             info.applicationInfo = args.owner.applicationInfo;
-            // ---------- Original Method ----------
-            //info = _info;
-            //info.applicationInfo = args.owner.applicationInfo;
+            
+            
+            
         }
 
         
@@ -3998,24 +4027,24 @@ public class PackageParser {
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
-            // ---------- Original Method ----------
-            //super.setPackageName(packageName);
-            //info.packageName = packageName;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.710 -0400", hash_original_method = "3ED5BAD5E29B5F8C3FFE202D917D91C6", hash_generated_method = "81413F86D14CE1B6072A5A603B5E36CE")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1943467401 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1943467401 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1943467401 = "Activity{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + getComponentShortName() + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_1943467401.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1943467401.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1943467401;
-            // ---------- Original Method ----------
-            //return "Activity{"
-                //+ Integer.toHexString(System.identityHashCode(this))
-                //+ " " + getComponentShortName() + "}";
+            
+            
+                
+                
         }
 
         
@@ -4033,9 +4062,9 @@ public class PackageParser {
             super(args, _info);
             info = _info;
             info.applicationInfo = args.owner.applicationInfo;
-            // ---------- Original Method ----------
-            //info = _info;
-            //info.applicationInfo = args.owner.applicationInfo;
+            
+            
+            
         }
 
         
@@ -4043,24 +4072,24 @@ public class PackageParser {
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
-            // ---------- Original Method ----------
-            //super.setPackageName(packageName);
-            //info.packageName = packageName;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.712 -0400", hash_original_method = "983F0C4312E41963E910123205C22323", hash_generated_method = "46B17893E7A75CC6105F5A4BCDD123DE")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_552578258 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_552578258 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_552578258 = "Service{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + getComponentShortName() + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_552578258.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_552578258.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_552578258;
-            // ---------- Original Method ----------
-            //return "Service{"
-                //+ Integer.toHexString(System.identityHashCode(this))
-                //+ " " + getComponentShortName() + "}";
+            
+            
+                
+                
         }
 
         
@@ -4082,10 +4111,10 @@ public class PackageParser {
             info = _info;
             info.applicationInfo = args.owner.applicationInfo;
             syncable = false;
-            // ---------- Original Method ----------
-            //info = _info;
-            //info.applicationInfo = args.owner.applicationInfo;
-            //syncable = false;
+            
+            
+            
+            
         }
 
         
@@ -4094,9 +4123,9 @@ public class PackageParser {
             super(existingProvider);
             this.info = existingProvider.info;
             this.syncable = existingProvider.syncable;
-            // ---------- Original Method ----------
-            //this.info = existingProvider.info;
-            //this.syncable = existingProvider.syncable;
+            
+            
+            
         }
 
         
@@ -4104,24 +4133,24 @@ public class PackageParser {
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
-            // ---------- Original Method ----------
-            //super.setPackageName(packageName);
-            //info.packageName = packageName;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.715 -0400", hash_original_method = "68549008F1EBCA6BA1DE59DAB2FE7E3C", hash_generated_method = "2DE0578182AF1F5FD855AF50BCEF59AE")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_915293002 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_915293002 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_915293002 = "Provider{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + info.name + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_915293002.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_915293002.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_915293002;
-            // ---------- Original Method ----------
-            //return "Provider{"
-                //+ Integer.toHexString(System.identityHashCode(this))
-                //+ " " + info.name + "}";
+            
+            
+                
+                
         }
 
         
@@ -4139,8 +4168,8 @@ public class PackageParser {
             super(args, _info);
             info = _info;
             addTaint(args.getTaint());
-            // ---------- Original Method ----------
-            //info = _info;
+            
+            
         }
 
         
@@ -4148,24 +4177,24 @@ public class PackageParser {
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
-            // ---------- Original Method ----------
-            //super.setPackageName(packageName);
-            //info.packageName = packageName;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.718 -0400", hash_original_method = "CB405027A6A70334D830F0B5C698645E", hash_generated_method = "5141AA11375880AE0A9C86E6CA38BF26")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1240850459 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1240850459 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1240850459 = "Instrumentation{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + getComponentShortName() + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_1240850459.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1240850459.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1240850459;
-            // ---------- Original Method ----------
-            //return "Instrumentation{"
-                //+ Integer.toHexString(System.identityHashCode(this))
-                //+ " " + getComponentShortName() + "}";
+            
+            
+                
+                
         }
 
         
@@ -4193,7 +4222,7 @@ public class PackageParser {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.719 -0400", hash_original_method = "351B7321F95DEA4A1F6C5D218D4A2DB8", hash_generated_method = "351B7321F95DEA4A1F6C5D218D4A2DB8")
         public IntentInfo ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -4209,23 +4238,23 @@ public class PackageParser {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.720 -0400", hash_original_method = "4F41670063BD951D72DDB0235971893F", hash_generated_method = "0462B156AB73AD83F3A7439B178E9A79")
         public  ActivityIntentInfo(Activity _activity) {
             activity = _activity;
-            // ---------- Original Method ----------
-            //activity = _activity;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.722 -0400", hash_original_method = "7C91146E1C4D7077E2D0C55B0D43BF57", hash_generated_method = "7EE97AAB86F967DF1A6146DB3AE4A622")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_786278247 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_786278247 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_786278247 = "ActivityIntentInfo{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + activity.info.name + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_786278247.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_786278247.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_786278247;
-            // ---------- Original Method ----------
-            //return "ActivityIntentInfo{"
-                //+ Integer.toHexString(System.identityHashCode(this))
-                //+ " " + activity.info.name + "}";
+            
+            
+                
+                
         }
 
         
@@ -4241,23 +4270,23 @@ public class PackageParser {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.723 -0400", hash_original_method = "2C256432D4530E0F15F4AED85D9A44A0", hash_generated_method = "61FE60C3F8E05F8F2F3135BC3B31D794")
         public  ServiceIntentInfo(Service _service) {
             service = _service;
-            // ---------- Original Method ----------
-            //service = _service;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.724 -0400", hash_original_method = "32EA4E8A8FC07DAD01188F341ACB2C51", hash_generated_method = "02A38377EA0AAF5E2CD6A87DDEDD0750")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_413911129 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_413911129 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_413911129 = "ServiceIntentInfo{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + service.info.name + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_413911129.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_413911129.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_413911129;
-            // ---------- Original Method ----------
-            //return "ServiceIntentInfo{"
-                //+ Integer.toHexString(System.identityHashCode(this))
-                //+ " " + service.info.name + "}";
+            
+            
+                
+                
         }
 
         

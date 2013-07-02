@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,28 +22,30 @@ public class ClientSessionContext extends AbstractSessionContext {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.916 -0400", hash_original_method = "6120BD96B39A4004425E377055807D67", hash_generated_method = "F659DA8BD462D7F6605B182211013349")
     public  ClientSessionContext() {
         super(10, 0);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.917 -0400", hash_original_method = "6D75428DC9ADEDF784907D2671C869EF", hash_generated_method = "54D0FC0BDE58867DFB4F081AD0E5D65A")
     public int size() {
         int varB5AFB539594923F68E6D16A74F830496_386863283 = (sessionsByHostAndPort.size());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_938965673 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_938965673;
-        // ---------- Original Method ----------
-        //return sessionsByHostAndPort.size();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.917 -0400", hash_original_method = "FA4F1A172590244BE031F2E8797E17F3", hash_generated_method = "A79C5685284AC076EFF257C20CDA7F14")
     public void setPersistentCache(SSLClientSessionCache persistentCache) {
         this.persistentCache = persistentCache;
-        // ---------- Original Method ----------
-        //this.persistentCache = persistentCache;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.918 -0400", hash_original_method = "A3E2A8D686FD14337461D9600D56C1BC", hash_generated_method = "E39F4C90C207E33B44EB1EC4CE51B264")
     protected void sessionRemoved(SSLSession session) {
         String host = session.getPeerHost();
@@ -51,41 +53,42 @@ public class ClientSessionContext extends AbstractSessionContext {
         HostAndPort hostAndPortKey = new HostAndPort(host, port);
         {
             sessionsByHostAndPort.remove(hostAndPortKey);
-        } //End block
+        } 
         addTaint(session.getTaint());
-        // ---------- Original Method ----------
-        //String host = session.getPeerHost();
-        //int port = session.getPeerPort();
-        //if (host == null) {
-            //return;
-        //}
-        //HostAndPort hostAndPortKey = new HostAndPort(host, port);
-        //synchronized (sessionsByHostAndPort) {
-            //sessionsByHostAndPort.remove(hostAndPortKey);
-        //}
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.919 -0400", hash_original_method = "B5A73604CB734A09BF7E857D2D91FD28", hash_generated_method = "4E8F68D1DBC8CE35CC1255F2918CE6FB")
     public SSLSession getSession(String host, int port) {
-        SSLSession varB4EAC82CA7396A68D541C85D26508E83_190038835 = null; //Variable for return #1
-        SSLSession varB4EAC82CA7396A68D541C85D26508E83_44130288 = null; //Variable for return #2
-        SSLSession varB4EAC82CA7396A68D541C85D26508E83_330765520 = null; //Variable for return #3
-        SSLSession varB4EAC82CA7396A68D541C85D26508E83_1434688365 = null; //Variable for return #4
+        SSLSession varB4EAC82CA7396A68D541C85D26508E83_190038835 = null; 
+        SSLSession varB4EAC82CA7396A68D541C85D26508E83_44130288 = null; 
+        SSLSession varB4EAC82CA7396A68D541C85D26508E83_330765520 = null; 
+        SSLSession varB4EAC82CA7396A68D541C85D26508E83_1434688365 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_190038835 = null;
-        } //End block
+        } 
         SSLSession session;
         HostAndPort hostAndPortKey = new HostAndPort(host, port);
         {
             session = sessionsByHostAndPort.get(hostAndPortKey);
-        } //End block
+        } 
         {
             boolean var784A1CDA62AB9B2C753832FCE828B745_988335410 = (session != null && session.isValid());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_44130288 = session;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             byte[] data = persistentCache.getSessionData(host, port);
             {
@@ -96,37 +99,38 @@ public class ClientSessionContext extends AbstractSessionContext {
                         super.putSession(session);
                         {
                             sessionsByHostAndPort.put(hostAndPortKey, session);
-                        } //End block
+                        } 
                         varB4EAC82CA7396A68D541C85D26508E83_330765520 = session;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1434688365 = null;
         addTaint(host.getTaint());
         addTaint(port);
-        SSLSession varA7E53CE21691AB073D9660D615818899_871992998; //Final return value
+        SSLSession varA7E53CE21691AB073D9660D615818899_871992998; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_871992998 = varB4EAC82CA7396A68D541C85D26508E83_190038835;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_871992998 = varB4EAC82CA7396A68D541C85D26508E83_44130288;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_871992998 = varB4EAC82CA7396A68D541C85D26508E83_330765520;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_871992998 = varB4EAC82CA7396A68D541C85D26508E83_1434688365;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_871992998.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_871992998.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_871992998;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.920 -0400", hash_original_method = "BD633AD4CEEF6AC5498C26DA8E919EC2", hash_generated_method = "034DEEDCD4B614B52C7FCDC3C0770E81")
     @Override
     public void putSession(SSLSession session) {
@@ -136,31 +140,31 @@ public class ClientSessionContext extends AbstractSessionContext {
         HostAndPort hostAndPortKey = new HostAndPort(host, port);
         {
             sessionsByHostAndPort.put(hostAndPortKey, session);
-        } //End block
+        } 
         {
             byte[] data = toBytes(session);
             {
                 persistentCache.putSessionData(session, data);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(session.getTaint());
-        // ---------- Original Method ----------
-        //super.putSession(session);
-        //String host = session.getPeerHost();
-        //int port = session.getPeerPort();
-        //if (host == null) {
-            //return;
-        //}
-        //HostAndPort hostAndPortKey = new HostAndPort(host, port);
-        //synchronized (sessionsByHostAndPort) {
-            //sessionsByHostAndPort.put(hostAndPortKey, session);
-        //}
-        //if (persistentCache != null) {
-            //byte[] data = toBytes(session);
-            //if (data != null) {
-                //persistentCache.putSessionData(session, data);
-            //}
-        //}
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -176,9 +180,9 @@ public class ClientSessionContext extends AbstractSessionContext {
           HostAndPort(String host, int port) {
             this.host = host;
             this.port = port;
-            // ---------- Original Method ----------
-            //this.host = host;
-            //this.port = port;
+            
+            
+            
         }
 
         
@@ -188,8 +192,8 @@ public class ClientSessionContext extends AbstractSessionContext {
             int var7486CBF8614CDB9AEBCF903E96EF526C_1639447443 = (host.hashCode() * 31 + port);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_61446825 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_61446825;
-            // ---------- Original Method ----------
-            //return host.hashCode() * 31 + port;
+            
+            
         }
 
         
@@ -201,12 +205,12 @@ public class ClientSessionContext extends AbstractSessionContext {
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_202432056 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_202432056;
-            // ---------- Original Method ----------
-            //if (!(o instanceof HostAndPort)) {
-                //return false;
-            //}
-            //HostAndPort lhs = (HostAndPort) o;
-            //return host.equals(lhs.host) && port == lhs.port;
+            
+            
+                
+            
+            
+            
         }
 
         

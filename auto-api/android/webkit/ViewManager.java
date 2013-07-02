@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.view.SurfaceView;
 import android.view.View;
@@ -39,25 +39,26 @@ class ViewManager {
         int pixelArea = w.getResources().getDisplayMetrics().widthPixels *
                         w.getResources().getDisplayMetrics().heightPixels;
         MAX_SURFACE_AREA = (int)(pixelArea * 2.75);
-        // ---------- Original Method ----------
-        //mWebView = w;
-        //int pixelArea = w.getResources().getDisplayMetrics().widthPixels *
-                        //w.getResources().getDisplayMetrics().heightPixels;
-        //MAX_SURFACE_AREA = (int)(pixelArea * 2.75);
+        
+        
+        
+                        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.688 -0400", hash_original_method = "FA4B0F6C2AA9564529C02D0C8EC5ABBE", hash_generated_method = "C8595D54321DCA8FA0E150A59828074E")
      ChildView createView() {
-        ChildView varB4EAC82CA7396A68D541C85D26508E83_656171385 = null; //Variable for return #1
+        ChildView varB4EAC82CA7396A68D541C85D26508E83_656171385 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_656171385 = new ChildView();
-        varB4EAC82CA7396A68D541C85D26508E83_656171385.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_656171385.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_656171385;
-        // ---------- Original Method ----------
-        //return new ChildView();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.690 -0400", hash_original_method = "2B29D777BD882375E9FE491E62B8E4F4", hash_generated_method = "D13479BA0A3A27B5759B6D7BDFBD96FB")
     private void requestLayout(ChildView v) {
         int width = mWebView.contentToViewDimension(v.width);
@@ -72,48 +73,48 @@ class ViewManager {
             lp.height = height;
             lp.x = x;
             lp.y = y;
-        } //End block
+        } 
         {
             lp = new AbsoluteLayout.LayoutParams(width, height, x, y);
-        } //End block
+        } 
         v.mView.setLayoutParams(lp);
         {
             final SurfaceView sView = (SurfaceView) v.mView;
             {
                 boolean var3E1D1B0939337281E331FBD6D29EDABE_169429178 = (sView.isFixedSize() && mZoomInProgress);
-            } //End collapsed parenthetic
+            } 
             int fixedW = width;
             int fixedH = height;
             {
                 {
                     fixedW = MAX_SURFACE_DIMENSION;
                     fixedH = v.height * MAX_SURFACE_DIMENSION / v.width;
-                } //End block
+                } 
                 {
                     fixedH = MAX_SURFACE_DIMENSION;
                     fixedW = v.width * MAX_SURFACE_DIMENSION / v.height;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 float area = MAX_SURFACE_AREA;
                 {
                     fixedW = (int)Math.sqrt(area * v.width / v.height);
                     fixedH = v.height * fixedW / v.width;
-                } //End block
+                } 
                 {
                     fixedH = (int)Math.sqrt(area * v.height / v.width);
                     fixedW = v.width * fixedH / v.height;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 sView.getHolder().setFixedSize(fixedW, fixedH);
-            } //End block
+            } 
             {
                 boolean var659EC033A3AE435F1C433F73F1F80446_563594134 = (!sView.isFixedSize() && mZoomInProgress);
                 {
                     sView.getHolder().setFixedSize(sView.getWidth(),
                                                sView.getHeight());
-                } //End block
+                } 
                 {
                     boolean var21CE6BEEBB1C7C80D8C131F48E4BA5F0_1888494465 = (sView.isFixedSize() && !mZoomInProgress);
                     {
@@ -126,22 +127,22 @@ class ViewManager {
                                     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.689 -0400", hash_original_method = "FC4D9F6633FDA07933C38D9105D81F42", hash_generated_method = "CD4E9DF20EB12C15EED4A8BEC8E97002")
                                     public void run() {
                                         sView.setVisibility(View.VISIBLE);
-                                        // ---------- Original Method ----------
-                                        //sView.setVisibility(View.VISIBLE);
+                                        
+                                        
                                     }
 });
-                            } //End block
+                            } 
                             {
                                 sView.getHolder().setSizeFromLayout();
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(v.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -154,13 +155,13 @@ class ViewManager {
             ChildView v = var1EA0A404291742DF49F29AA36388DCC6_909612691.next();
             {
                 requestLayout(v);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //mZoomInProgress = true;
-        //for (ChildView v : mChildren) {
-            //requestLayout(v);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -173,13 +174,13 @@ class ViewManager {
             ChildView v = var1EA0A404291742DF49F29AA36388DCC6_2062304031.next();
             {
                 requestLayout(v);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //mZoomInProgress = false;
-        //for (ChildView v : mChildren) {
-            //requestLayout(v);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -191,12 +192,12 @@ class ViewManager {
             ChildView v = var1EA0A404291742DF49F29AA36388DCC6_432479965.next();
             {
                 requestLayout(v);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //for (ChildView v : mChildren) {
-            //requestLayout(v);
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
@@ -208,17 +209,17 @@ class ViewManager {
             ChildView v = var1EA0A404291742DF49F29AA36388DCC6_764634654.next();
             {
                 v.mView.setVisibility(View.GONE);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mHidden = true;
-        // ---------- Original Method ----------
-        //if (mHidden) {
-            //return;
-        //}
-        //for (ChildView v : mChildren) {
-            //v.mView.setVisibility(View.GONE);
-        //}
-        //mHidden = true;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -230,17 +231,17 @@ class ViewManager {
             ChildView v = var1EA0A404291742DF49F29AA36388DCC6_121934149.next();
             {
                 v.mView.setVisibility(View.VISIBLE);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mHidden = false;
-        // ---------- Original Method ----------
-        //if (!mHidden) {
-            //return;
-        //}
-        //for (ChildView v : mChildren) {
-            //v.mView.setVisibility(View.VISIBLE);
-        //}
-        //mHidden = false;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -250,16 +251,16 @@ class ViewManager {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.706 -0400", hash_original_method = "F322BBB18B8C9804A44774BD272CE6E8", hash_generated_method = "37882F67833C95B3928A4473246B16DD")
             public void run() {
                 mReadyToDraw = false;
-                // ---------- Original Method ----------
-                //mReadyToDraw = false;
+                
+                
             }
 });
-        // ---------- Original Method ----------
-        //mWebView.mPrivateHandler.post(new Runnable() {
-            //public void run() {
-                //mReadyToDraw = false;
-            //}
-        //});
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -275,35 +276,35 @@ class ViewManager {
                     ChildView v = var1EA0A404291742DF49F29AA36388DCC6_273676885.next();
                     {
                         v.mView.setVisibility(View.VISIBLE);
-                    } //End block
-                } //End collapsed parenthetic
-                // ---------- Original Method ----------
-                //mReadyToDraw = true;
-                //for (ChildView v : mChildren) {
-                    //v.mView.setVisibility(View.VISIBLE);
-                //}
+                    } 
+                } 
+                
+                
+                
+                    
+                
             }
 });
-        // ---------- Original Method ----------
-        //mWebView.mPrivateHandler.post(new Runnable() {
-            //public void run() {
-                //mReadyToDraw = true;
-                //for (ChildView v : mChildren) {
-                    //v.mView.setVisibility(View.VISIBLE);
-                //}
-            //}
-        //});
+        
+        
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.714 -0400", hash_original_method = "69EC682FAEAFF2A8235362C63F30F73F", hash_generated_method = "80F670A406FEC0E7D41E38C21E861288")
      ChildView hitTest(int contentX, int contentY) {
-        ChildView varB4EAC82CA7396A68D541C85D26508E83_2063666340 = null; //Variable for return #1
-        ChildView varB4EAC82CA7396A68D541C85D26508E83_1998523228 = null; //Variable for return #2
-        ChildView varB4EAC82CA7396A68D541C85D26508E83_958912113 = null; //Variable for return #3
+        ChildView varB4EAC82CA7396A68D541C85D26508E83_2063666340 = null; 
+        ChildView varB4EAC82CA7396A68D541C85D26508E83_1998523228 = null; 
+        ChildView varB4EAC82CA7396A68D541C85D26508E83_958912113 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2063666340 = null;
-        } //End block
+        } 
         {
             Iterator<ChildView> var1EA0A404291742DF49F29AA36388DCC6_990513996 = (mChildren).iterator();
             var1EA0A404291742DF49F29AA36388DCC6_990513996.hasNext();
@@ -314,41 +315,41 @@ class ViewManager {
                     {
                         {
                             varB4EAC82CA7396A68D541C85D26508E83_1998523228 = v;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_958912113 = null;
         addTaint(contentX);
         addTaint(contentY);
-        ChildView varA7E53CE21691AB073D9660D615818899_1198798045; //Final return value
+        ChildView varA7E53CE21691AB073D9660D615818899_1198798045; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1198798045 = varB4EAC82CA7396A68D541C85D26508E83_2063666340;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1198798045 = varB4EAC82CA7396A68D541C85D26508E83_1998523228;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1198798045 = varB4EAC82CA7396A68D541C85D26508E83_958912113;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1198798045.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1198798045.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1198798045;
-        // ---------- Original Method ----------
-        //if (mHidden) {
-            //return null;
-        //}
-        //for (ChildView v : mChildren) {
-            //if (v.mView.getVisibility() == View.VISIBLE) {
-                //if (contentX >= v.x && contentX < (v.x + v.width)
-                        //&& contentY >= v.y && contentY < (v.y + v.height)) {
-                    //return v;
-                //}
-            //}
-        //}
-        //return null;
+        
+        
+            
+        
+        
+            
+                
+                        
+                    
+                
+            
+        
+        
     }
 
     
@@ -371,7 +372,7 @@ class ViewManager {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.715 -0400", hash_original_method = "444F58071031B7B88B9F4BACE4B52E97", hash_generated_method = "410801DAAF0618526A8A1435EE4A6E2B")
           ChildView() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -381,11 +382,11 @@ class ViewManager {
             this.y = y;
             this.width = width;
             this.height = height;
-            // ---------- Original Method ----------
-            //this.x = x;
-            //this.y = y;
-            //this.width = width;
-            //this.height = height;
+            
+            
+            
+            
+            
         }
 
         
@@ -400,32 +401,32 @@ class ViewManager {
                         boolean var018D659FCBF5505D67261F7D6D0D44D8_1343565793 = (mView.getParent() == null);
                         {
                             attachViewOnUIThread();
-                        } //End block
-                    } //End collapsed parenthetic
-                    // ---------- Original Method ----------
-                    //requestLayout(ChildView.this);
-                    //if (mView.getParent() == null) {
-                        //attachViewOnUIThread();
-                    //}
+                        } 
+                    } 
+                    
+                    
+                    
+                        
+                    
                 }
 });
             addTaint(x);
             addTaint(y);
             addTaint(width);
             addTaint(height);
-            // ---------- Original Method ----------
-            //if (mView == null) {
-                //return;
-            //}
-            //setBounds(x, y, width, height);
-            //mWebView.mPrivateHandler.post(new Runnable() {
-                //public void run() {
-                    //requestLayout(ChildView.this);
-                    //if (mView.getParent() == null) {
-                        //attachViewOnUIThread();
-                    //}
-                //}
-            //});
+            
+            
+                
+            
+            
+            
+                
+                    
+                    
+                        
+                    
+                
+            
         }
 
         
@@ -435,13 +436,13 @@ class ViewManager {
             mChildren.add(this);
             {
                 mView.setVisibility(View.GONE);
-            } //End block
-            // ---------- Original Method ----------
-            //mWebView.addView(mView);
-            //mChildren.add(this);
-            //if (!mReadyToDraw) {
-                //mView.setVisibility(View.GONE);
-            //}
+            } 
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -451,19 +452,19 @@ class ViewManager {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.717 -0400", hash_original_method = "FB4DFE3FA699C3363858A9F5BC93D3A8", hash_generated_method = "539B0E7B57B1BE3E5EDA6BDC15BC6A3C")
                 public void run() {
                     removeViewOnUIThread();
-                    // ---------- Original Method ----------
-                    //removeViewOnUIThread();
+                    
+                    
                 }
 });
-            // ---------- Original Method ----------
-            //if (mView == null) {
-                //return;
-            //}
-            //mWebView.mPrivateHandler.post(new Runnable() {
-                //public void run() {
-                    //removeViewOnUIThread();
-                //}
-            //});
+            
+            
+                
+            
+            
+                
+                    
+                
+            
         }
 
         
@@ -471,9 +472,9 @@ class ViewManager {
         private void removeViewOnUIThread() {
             mWebView.removeView(mView);
             mChildren.remove(this);
-            // ---------- Original Method ----------
-            //mWebView.removeView(mView);
-            //mChildren.remove(this);
+            
+            
+            
         }
 
         

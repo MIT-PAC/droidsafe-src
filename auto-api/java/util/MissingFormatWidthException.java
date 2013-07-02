@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class MissingFormatWidthException extends IllegalFormatException {
@@ -17,36 +17,36 @@ public class MissingFormatWidthException extends IllegalFormatException {
     public  MissingFormatWidthException(String s) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         this.s = s;
-        // ---------- Original Method ----------
-        //if (s == null) {
-            //throw new NullPointerException();
-        //}
-        //this.s = s;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.307 -0400", hash_original_method = "4D96301902AD0649417B90D095E1EDFD", hash_generated_method = "155FFDE7D58CE115755D28F5B305A738")
     public String getFormatSpecifier() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1429950432 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1429950432 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1429950432 = s;
-        varB4EAC82CA7396A68D541C85D26508E83_1429950432.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1429950432.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1429950432;
-        // ---------- Original Method ----------
-        //return s;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.308 -0400", hash_original_method = "0A4C8E3EAB801D8800E3A2D920D74C80", hash_generated_method = "5561D18DB695BA591E1D045B01774B3C")
     @Override
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_371294930 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_371294930 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_371294930 = s;
-        varB4EAC82CA7396A68D541C85D26508E83_371294930.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_371294930.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_371294930;
-        // ---------- Original Method ----------
-        //return s;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package com.android.org.bouncycastle.crypto.digests;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.org.bouncycastle.crypto.ExtendedDigest;
 
@@ -24,9 +24,9 @@ public abstract class GeneralDigest implements ExtendedDigest {
     protected  GeneralDigest() {
         xBuf = new byte[4];
         xBufOff = 0;
-        // ---------- Original Method ----------
-        //xBuf = new byte[4];
-        //xBufOff = 0;
+        
+        
+        
     }
 
     
@@ -36,14 +36,15 @@ public abstract class GeneralDigest implements ExtendedDigest {
         System.arraycopy(t.xBuf, 0, xBuf, 0, t.xBuf.length);
         xBufOff = t.xBufOff;
         byteCount = t.byteCount;
-        // ---------- Original Method ----------
-        //xBuf = new byte[t.xBuf.length];
-        //System.arraycopy(t.xBuf, 0, xBuf, 0, t.xBuf.length);
-        //xBufOff = t.xBufOff;
-        //byteCount = t.byteCount;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:48:13.290 -0400", hash_original_method = "40E7CDF1E9D122AF3862D5C54DFC78EC", hash_generated_method = "8C9314156960D780D1EEBDD820EEF1B5")
     public void update(
         byte in) {
@@ -51,18 +52,19 @@ public abstract class GeneralDigest implements ExtendedDigest {
         {
             processWord(xBuf, 0);
             xBufOff = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //xBuf[xBufOff++] = in;
-        //if (xBufOff == xBuf.length)
-        //{
-            //processWord(xBuf, 0);
-            //xBufOff = 0;
-        //}
-        //byteCount++;
+        } 
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:48:13.294 -0400", hash_original_method = "F796363C15CB3EC49C76DC6C83402CDE", hash_generated_method = "1258AF33D2E03E299D9CB09E21B0974A")
     public void update(
         byte[]  in,
@@ -70,60 +72,61 @@ public abstract class GeneralDigest implements ExtendedDigest {
         int     len) {
         {
             update(in[inOff]);
-        } //End block
+        } 
         {
             processWord(in, inOff);
             inOff += xBuf.length;
             len -= xBuf.length;
             byteCount += xBuf.length;
-        } //End block
+        } 
         {
             update(in[inOff]);
-        } //End block
+        } 
         addTaint(in[0]);
         addTaint(inOff);
         addTaint(len);
-        // ---------- Original Method ----------
-        //while ((xBufOff != 0) && (len > 0))
-        //{
-            //update(in[inOff]);
-            //inOff++;
-            //len--;
-        //}
-        //while (len > xBuf.length)
-        //{
-            //processWord(in, inOff);
-            //inOff += xBuf.length;
-            //len -= xBuf.length;
-            //byteCount += xBuf.length;
-        //}
-        //while (len > 0)
-        //{
-            //update(in[inOff]);
-            //inOff++;
-            //len--;
-        //}
+        
+        
+        
+            
+            
+            
+        
+        
+        
+            
+            
+            
+            
+        
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:48:13.296 -0400", hash_original_method = "E3BD506664D5291ACBDD4523D9F73924", hash_generated_method = "0C760DF271A1398F7224908F8AA55AEC")
     public void finish() {
         long bitLength = (byteCount << 3);
         update((byte)128);
         {
             update((byte)0);
-        } //End block
+        } 
         processLength(bitLength);
         processBlock();
-        // ---------- Original Method ----------
-        //long    bitLength = (byteCount << 3);
-        //update((byte)128);
-        //while (xBufOff != 0)
-        //{
-            //update((byte)0);
-        //}
-        //processLength(bitLength);
-        //processBlock();
+        
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -135,15 +138,15 @@ public abstract class GeneralDigest implements ExtendedDigest {
             int i = 0;
             {
                 xBuf[i] = 0;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //byteCount = 0;
-        //xBufOff = 0;
-        //for (int i = 0; i < xBuf.length; i++)
-        //{
-            //xBuf[i] = 0;
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -151,8 +154,8 @@ public abstract class GeneralDigest implements ExtendedDigest {
     public int getByteLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1352576694 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1352576694;
-        // ---------- Original Method ----------
-        //return BYTE_LENGTH;
+        
+        
     }
 
     

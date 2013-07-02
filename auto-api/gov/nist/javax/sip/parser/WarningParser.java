@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
@@ -18,7 +18,7 @@ public class WarningParser extends HeaderParser {
     public  WarningParser(String warning) {
         super(warning);
         addTaint(warning.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,13 +26,14 @@ public class WarningParser extends HeaderParser {
     protected  WarningParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.985 -0400", hash_original_method = "5665BE3F4ECC43E3239D3F1D8B9B76A3", hash_generated_method = "3ACDCDEFC9E26692DAA3D2EBE2FAF172")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_543093425 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_543093425 = null; 
         WarningList warningList = new WarningList();
         dbg_enter("WarningParser.parse");
         try 
@@ -49,15 +50,15 @@ public class WarningParser extends HeaderParser {
                     {
                         int code = Integer.parseInt(token.getTokenValue());
                         warning.setCode(code);
-                    } //End block
+                    } 
                     catch (NumberFormatException ex)
                     {
                         if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                    } //End block
+                    } 
                     catch (InvalidArgumentException ex)
                     {
                         if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                    } //End block
+                    } 
                     this.lexer.SPorHT();
                     this.lexer.match(TokenTypes.ID);
                     token = lexer.getNextToken();
@@ -69,11 +70,11 @@ public class WarningParser extends HeaderParser {
                             Token token2 = lexer.getNextToken();
                             warning.setAgent(token.getTokenValue() + ":"
                             + token2.getTokenValue());
-                        } //End block
+                        } 
                         {
                             warning.setAgent(token.getTokenValue());
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     this.lexer.SPorHT();
                     String text = this.lexer.quotedString();
                     warning.setText(text);
@@ -91,15 +92,15 @@ public class WarningParser extends HeaderParser {
                             {
                                 int code = Integer.parseInt(tok.getTokenValue());
                                 warning.setCode(code);
-                            } //End block
+                            } 
                             catch (NumberFormatException ex)
                             {
                                 if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                            } //End block
+                            } 
                             catch (InvalidArgumentException ex)
                             {
                                 if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                            } //End block
+                            } 
                             this.lexer.SPorHT();
                             this.lexer.match(TokenTypes.ID);
                             tok = lexer.getNextToken();
@@ -111,30 +112,30 @@ public class WarningParser extends HeaderParser {
                                     Token token2 = lexer.getNextToken();
                                     warning.setAgent(tok.getTokenValue() + ":"
                                 + token2.getTokenValue());
-                                } //End block
+                                } 
                                 {
                                     warning.setAgent(tok.getTokenValue());
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             this.lexer.SPorHT();
                             text = this.lexer.quotedString();
                             warning.setText(text);
                             this.lexer.SPorHT();
                             warningList.add(warning);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
             dbg_leave("WarningParser.parse");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_543093425 = warningList;
-        varB4EAC82CA7396A68D541C85D26508E83_543093425.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_543093425.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_543093425;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

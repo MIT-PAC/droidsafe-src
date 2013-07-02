@@ -1,11 +1,11 @@
 package android.content.res;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.ParcelFileDescriptor;
@@ -32,18 +32,18 @@ public class AssetFileDescriptor implements Parcelable {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "startOffset must be 0 when using UNKNOWN_LENGTH");
-        } //End block
+        } 
         mFd = fd;
         mStartOffset = startOffset;
         mLength = length;
-        // ---------- Original Method ----------
-        //if (length < 0 && startOffset != 0) {
-            //throw new IllegalArgumentException(
-                    //"startOffset must be 0 when using UNKNOWN_LENGTH");
-        //}
-        //mFd = fd;
-        //mStartOffset = startOffset;
-        //mLength = length;
+        
+        
+            
+                    
+        
+        
+        
+        
     }
 
     
@@ -52,32 +52,33 @@ public class AssetFileDescriptor implements Parcelable {
         mFd = ParcelFileDescriptor.CREATOR.createFromParcel(src);
         mStartOffset = src.readLong();
         mLength = src.readLong();
-        // ---------- Original Method ----------
-        //mFd = ParcelFileDescriptor.CREATOR.createFromParcel(src);
-        //mStartOffset = src.readLong();
-        //mLength = src.readLong();
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.323 -0400", hash_original_method = "9E61752120AEDC1582A5E495568F317A", hash_generated_method = "58B38944FCD2F5BFB993EFD5EE173084")
     public ParcelFileDescriptor getParcelFileDescriptor() {
-        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_840708633 = null; //Variable for return #1
+        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_840708633 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_840708633 = mFd;
-        varB4EAC82CA7396A68D541C85D26508E83_840708633.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_840708633.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_840708633;
-        // ---------- Original Method ----------
-        //return mFd;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.324 -0400", hash_original_method = "44C1CE26DE6098783D46BD5B3EB1BDD6", hash_generated_method = "588DECFAAA14077952F588395647F720")
     public FileDescriptor getFileDescriptor() {
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_856045234 = null; //Variable for return #1
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_856045234 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_856045234 = mFd.getFileDescriptor();
-        varB4EAC82CA7396A68D541C85D26508E83_856045234.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_856045234.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_856045234;
-        // ---------- Original Method ----------
-        //return mFd.getFileDescriptor();
+        
+        
     }
 
     
@@ -85,22 +86,23 @@ public class AssetFileDescriptor implements Parcelable {
     public long getStartOffset() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_932125304 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_932125304;
-        // ---------- Original Method ----------
-        //return mStartOffset;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.326 -0400", hash_original_method = "CF0C8205090CB57B9B1EACE80CFEFFE6", hash_generated_method = "68558D4552A2F17C5DEC71734D6F24DE")
     public long getLength() {
         long len = mFd.getStatSize();
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2008809929 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2008809929;
-        // ---------- Original Method ----------
-        //if (mLength >= 0) {
-            //return mLength;
-        //}
-        //long len = mFd.getStatSize();
-        //return len >= 0 ? len : UNKNOWN_LENGTH;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -108,97 +110,103 @@ public class AssetFileDescriptor implements Parcelable {
     public long getDeclaredLength() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_753561319 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_753561319;
-        // ---------- Original Method ----------
-        //return mLength;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.327 -0400", hash_original_method = "491F69AA4FD12992599C16C8B0915773", hash_generated_method = "7B9DF8EE0EA99115EB3CD369EE1E6439")
     public void close() throws IOException {
         mFd.close();
-        // ---------- Original Method ----------
-        //mFd.close();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.328 -0400", hash_original_method = "6638264422E2A7F83EB5780796593D58", hash_generated_method = "AFDD115054AD9D5B614CA92DE1DD96BB")
     public FileInputStream createInputStream() throws IOException {
-        FileInputStream varB4EAC82CA7396A68D541C85D26508E83_1949860243 = null; //Variable for return #1
-        FileInputStream varB4EAC82CA7396A68D541C85D26508E83_310819507 = null; //Variable for return #2
+        FileInputStream varB4EAC82CA7396A68D541C85D26508E83_1949860243 = null; 
+        FileInputStream varB4EAC82CA7396A68D541C85D26508E83_310819507 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1949860243 = new ParcelFileDescriptor.AutoCloseInputStream(mFd);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_310819507 = new AutoCloseInputStream(this);
-        FileInputStream varA7E53CE21691AB073D9660D615818899_1607959434; //Final return value
+        FileInputStream varA7E53CE21691AB073D9660D615818899_1607959434; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1607959434 = varB4EAC82CA7396A68D541C85D26508E83_1949860243;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1607959434 = varB4EAC82CA7396A68D541C85D26508E83_310819507;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1607959434.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1607959434.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1607959434;
-        // ---------- Original Method ----------
-        //if (mLength < 0) {
-            //return new ParcelFileDescriptor.AutoCloseInputStream(mFd);
-        //}
-        //return new AutoCloseInputStream(this);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.329 -0400", hash_original_method = "221DC8DE3671455AA557297DC19DE0C7", hash_generated_method = "2C68C5F73FBC37932542D850E1CF6862")
     public FileOutputStream createOutputStream() throws IOException {
-        FileOutputStream varB4EAC82CA7396A68D541C85D26508E83_1067243846 = null; //Variable for return #1
-        FileOutputStream varB4EAC82CA7396A68D541C85D26508E83_997703671 = null; //Variable for return #2
+        FileOutputStream varB4EAC82CA7396A68D541C85D26508E83_1067243846 = null; 
+        FileOutputStream varB4EAC82CA7396A68D541C85D26508E83_997703671 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1067243846 = new ParcelFileDescriptor.AutoCloseOutputStream(mFd);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_997703671 = new AutoCloseOutputStream(this);
-        FileOutputStream varA7E53CE21691AB073D9660D615818899_161850728; //Final return value
+        FileOutputStream varA7E53CE21691AB073D9660D615818899_161850728; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_161850728 = varB4EAC82CA7396A68D541C85D26508E83_1067243846;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_161850728 = varB4EAC82CA7396A68D541C85D26508E83_997703671;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_161850728.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_161850728.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_161850728;
-        // ---------- Original Method ----------
-        //if (mLength < 0) {
-            //return new ParcelFileDescriptor.AutoCloseOutputStream(mFd);
-        //}
-        //return new AutoCloseOutputStream(this);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.330 -0400", hash_original_method = "7D4F991E1E50267AE78D06F4481657CB", hash_generated_method = "CF454A540A4351FB6C6DF0DD96E8E1C4")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1233260827 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1233260827 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1233260827 = "{AssetFileDescriptor: " + mFd
                 + " start=" + mStartOffset + " len=" + mLength + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_1233260827.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1233260827.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1233260827;
-        // ---------- Original Method ----------
-        //return "{AssetFileDescriptor: " + mFd
-                //+ " start=" + mStartOffset + " len=" + mLength + "}";
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.331 -0400", hash_original_method = "0879BA3E6020CB54A0A428F518BD5C8A", hash_generated_method = "8B0A6960206B3BD3A360508E89607C2E")
     public int describeContents() {
         int var6E89DB6436784982CFB76FA78673DA45_126174612 = (mFd.describeContents());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_452302387 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_452302387;
-        // ---------- Original Method ----------
-        //return mFd.describeContents();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.331 -0400", hash_original_method = "FCAECA18F17390C63AF97C29D61A7F69", hash_generated_method = "A6A568DC5A09BD6E0812CB32B2AA2393")
     public void writeToParcel(Parcel out, int flags) {
         mFd.writeToParcel(out, flags);
@@ -206,10 +214,10 @@ public class AssetFileDescriptor implements Parcelable {
         out.writeLong(mLength);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //mFd.writeToParcel(out, flags);
-        //out.writeLong(mStartOffset);
-        //out.writeLong(mLength);
+        
+        
+        
+        
     }
 
     
@@ -223,9 +231,9 @@ public class AssetFileDescriptor implements Parcelable {
             super(fd.getParcelFileDescriptor());
             super.skip(fd.getStartOffset());
             mRemaining = (int)fd.getLength();
-            // ---------- Original Method ----------
-            //super.skip(fd.getStartOffset());
-            //mRemaining = (int)fd.getLength();
+            
+            
+            
         }
 
         
@@ -234,14 +242,14 @@ public class AssetFileDescriptor implements Parcelable {
         public int available() throws IOException {
             {
                 Object var6698ECBC27A3D6C11D735685C1254F7A_586847076 = (super.available());
-            } //End flattened ternary
-            //DSFIXME:  CODE0008: Nested ternary operator in expression
+            } 
+            
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1660849446 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1660849446;
-            // ---------- Original Method ----------
-            //return mRemaining >= 0
-                    //? (mRemaining < 0x7fffffff ? (int)mRemaining : 0x7fffffff)
-                    //: super.available();
+            
+            
+                    
+                    
         }
 
         
@@ -252,10 +260,10 @@ public class AssetFileDescriptor implements Parcelable {
             int result = read(buffer, 0, 1);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067444088 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067444088;
-            // ---------- Original Method ----------
-            //byte[] buffer = new byte[1];
-            //int result = read(buffer, 0, 1);
-            //return result == -1 ? -1 : buffer[0] & 0xff;
+            
+            
+            
+            
         }
 
         
@@ -266,22 +274,22 @@ public class AssetFileDescriptor implements Parcelable {
                 count = (int)mRemaining;
                 int res = super.read(buffer, offset, count);
                 mRemaining -= res;
-            } //End block
+            } 
             int var38013EA3FB183FB46AAC4E06CE6EB79F_1918402829 = (super.read(buffer, offset, count));
             addTaint(buffer[0]);
             addTaint(offset);
             addTaint(count);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1970035060 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1970035060;
-            // ---------- Original Method ----------
-            //if (mRemaining >= 0) {
-                //if (mRemaining == 0) return -1;
-                //if (count > mRemaining) count = (int)mRemaining;
-                //int res = super.read(buffer, offset, count);
-                //if (res >= 0) mRemaining -= res;
-                //return res;
-            //}
-            //return super.read(buffer, offset, count);
+            
+            
+                
+                
+                
+                
+                
+            
+            
         }
 
         
@@ -292,8 +300,8 @@ public class AssetFileDescriptor implements Parcelable {
             addTaint(buffer[0]);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_773659665 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_773659665;
-            // ---------- Original Method ----------
-            //return read(buffer, 0, buffer.length);
+            
+            
         }
 
         
@@ -304,20 +312,20 @@ public class AssetFileDescriptor implements Parcelable {
                 count = mRemaining;
                 long res = super.skip(count);
                 mRemaining -= res;
-            } //End block
+            } 
             long var5AED96CD04AD869E0322F3DF1B163422_1735709517 = (super.skip(count));
             addTaint(count);
             long var0F5264038205EDFB1AC05FBB0E8C5E94_257908439 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_257908439;
-            // ---------- Original Method ----------
-            //if (mRemaining >= 0) {
-                //if (mRemaining == 0) return -1;
-                //if (count > mRemaining) count = mRemaining;
-                //long res = super.skip(count);
-                //if (res >= 0) mRemaining -= res;
-                //return res;
-            //}
-            //return super.skip(count);
+            
+            
+                
+                
+                
+                
+                
+            
+            
         }
 
         
@@ -326,11 +334,11 @@ public class AssetFileDescriptor implements Parcelable {
         public void mark(int readlimit) {
             super.mark(readlimit);
             addTaint(readlimit);
-            // ---------- Original Method ----------
-            //if (mRemaining >= 0) {
-                //return;
-            //}
-            //super.mark(readlimit);
+            
+            
+                
+            
+            
         }
 
         
@@ -340,11 +348,11 @@ public class AssetFileDescriptor implements Parcelable {
             boolean varAE14FF4A7F97D4826F48B41B2489304A_1875956493 = (super.markSupported());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_426413824 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_426413824;
-            // ---------- Original Method ----------
-            //if (mRemaining >= 0) {
-                //return false;
-            //}
-            //return super.markSupported();
+            
+            
+                
+            
+            
         }
 
         
@@ -352,11 +360,11 @@ public class AssetFileDescriptor implements Parcelable {
         @Override
         public synchronized void reset() throws IOException {
             super.reset();
-            // ---------- Original Method ----------
-            //if (mRemaining >= 0) {
-                //return;
-            //}
-            //super.reset();
+            
+            
+                
+            
+            
         }
 
         
@@ -376,14 +384,14 @@ public class AssetFileDescriptor implements Parcelable {
                 boolean varFC3E12886C3AF3F36795BDDCB288EB5D_213172242 = (fd.getParcelFileDescriptor().seekTo(fd.getStartOffset()) < 0);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("Unable to seek");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mRemaining = (int)fd.getLength();
-            // ---------- Original Method ----------
-            //if (fd.getParcelFileDescriptor().seekTo(fd.getStartOffset()) < 0) {
-                //throw new IOException("Unable to seek");
-            //}
-            //mRemaining = (int)fd.getLength();
+            
+            
+                
+            
+            
         }
 
         
@@ -394,19 +402,19 @@ public class AssetFileDescriptor implements Parcelable {
                 count = (int)mRemaining;
                 super.write(buffer, offset, count);
                 mRemaining -= count;
-            } //End block
+            } 
             super.write(buffer, offset, count);
             addTaint(buffer[0]);
             addTaint(offset);
-            // ---------- Original Method ----------
-            //if (mRemaining >= 0) {
-                //if (mRemaining == 0) return;
-                //if (count > mRemaining) count = (int)mRemaining;
-                //super.write(buffer, offset, count);
-                //mRemaining -= count;
-                //return;
-            //}
-            //super.write(buffer, offset, count);
+            
+            
+                
+                
+                
+                
+                
+            
+            
         }
 
         
@@ -418,19 +426,19 @@ public class AssetFileDescriptor implements Parcelable {
                 count = (int)mRemaining;
                 super.write(buffer);
                 mRemaining -= count;
-            } //End block
+            } 
             super.write(buffer);
             addTaint(buffer[0]);
-            // ---------- Original Method ----------
-            //if (mRemaining >= 0) {
-                //if (mRemaining == 0) return;
-                //int count = buffer.length;
-                //if (count > mRemaining) count = (int)mRemaining;
-                //super.write(buffer);
-                //mRemaining -= count;
-                //return;
-            //}
-            //super.write(buffer);
+            
+            
+                
+                
+                
+                
+                
+                
+            
+            
         }
 
         
@@ -439,17 +447,17 @@ public class AssetFileDescriptor implements Parcelable {
         public void write(int oneByte) throws IOException {
             {
                 super.write(oneByte);
-            } //End block
+            } 
             super.write(oneByte);
             addTaint(oneByte);
-            // ---------- Original Method ----------
-            //if (mRemaining >= 0) {
-                //if (mRemaining == 0) return;
-                //super.write(oneByte);
-                //mRemaining--;
-                //return;
-            //}
-            //super.write(oneByte);
+            
+            
+                
+                
+                
+                
+            
+            
         }
 
         
@@ -471,12 +479,12 @@ public class AssetFileDescriptor implements Parcelable {
             return new AssetFileDescriptor[size];
         }
     };
-    // orphaned legacy method
+    
     public AssetFileDescriptor createFromParcel(Parcel in) {
             return new AssetFileDescriptor(in);
         }
     
-    // orphaned legacy method
+    
     public AssetFileDescriptor[] newArray(int size) {
             return new AssetFileDescriptor[size];
         }

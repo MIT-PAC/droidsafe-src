@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
@@ -17,7 +17,7 @@ public class ReasonParser extends ParametersParser {
     public  ReasonParser(String reason) {
         super(reason);
         addTaint(reason.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class ReasonParser extends ParametersParser {
     protected  ReasonParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.462 -0400", hash_original_method = "C924C06E3DD994AE91BBC5A8A54B9FE3", hash_generated_method = "8B9053FD32F2629367B0E22DB67C3D1A")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1265284498 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1265284498 = null; 
         ReasonList reasonList = new ReasonList();
         dbg_enter("ReasonParser.parse");
         try 
@@ -53,21 +54,21 @@ public class ReasonParser extends ParametersParser {
                         {
                             this.lexer.match(',');
                             this.lexer.SPorHT();
-                        } //End block
+                        } 
                         this.lexer.SPorHT();
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
             dbg_leave("ReasonParser.parse");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1265284498 = reasonList;
-        varB4EAC82CA7396A68D541C85D26508E83_1265284498.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1265284498.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1265284498;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

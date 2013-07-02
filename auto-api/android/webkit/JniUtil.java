@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.ActivityManager;
 import android.content.Context;
@@ -19,7 +19,7 @@ class JniUtil {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.978 -0400", hash_original_method = "7797423382E6C41F3BC6877796CBF278", hash_generated_method = "7AE97D3B4E9D45C2A019FC4E29ED6E30")
     private  JniUtil() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,6 +43,7 @@ class JniUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static synchronized String getDatabaseDirectory() {
         checkInitialized();
         if (sDatabaseDirectory == null) {
@@ -52,6 +53,7 @@ class JniUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static synchronized String getCacheDirectory() {
         checkInitialized();
         if (sCacheDirectory == null) {
@@ -66,6 +68,7 @@ class JniUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static synchronized long contentUrlSize(String url) {
         if (url.startsWith(ANDROID_CONTENT)) {
             try {
@@ -96,6 +99,7 @@ class JniUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static synchronized InputStream contentUrlStream(String url) {
         if (url.startsWith(ANDROID_CONTENT)) {
             try {
@@ -115,6 +119,7 @@ class JniUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean useChromiumHttpStack() {
         if (sUseChromiumHttpStack == null) {
             sUseChromiumHttpStack = nativeUseChromiumHttpStack();
@@ -123,6 +128,7 @@ class JniUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static synchronized String getAutofillQueryUrl() {
         checkInitialized();
         return Settings.Secure.getString(sContext.getContentResolver(),
@@ -130,6 +136,7 @@ class JniUtil {
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static boolean canSatisfyMemoryAllocation(long bytesRequested) {
         checkInitialized();
         ActivityManager manager = (ActivityManager) sContext.getSystemService(

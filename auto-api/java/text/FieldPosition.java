@@ -1,11 +1,11 @@
 package java.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class FieldPosition {
@@ -25,8 +25,8 @@ public class FieldPosition {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.604 -0400", hash_original_method = "E695F5151E58D69BC230540B458252AA", hash_generated_method = "3294FD3CC73A07FA36D86DFE9E3E23F0")
     public  FieldPosition(int field) {
         myField = field;
-        // ---------- Original Method ----------
-        //myField = field;
+        
+        
     }
 
     
@@ -34,9 +34,9 @@ public class FieldPosition {
     public  FieldPosition(Format.Field attribute) {
         myAttribute = attribute;
         myField = -1;
-        // ---------- Original Method ----------
-        //myAttribute = attribute;
-        //myField = -1;
+        
+        
+        
     }
 
     
@@ -44,17 +44,17 @@ public class FieldPosition {
     public  FieldPosition(Format.Field attribute, int field) {
         myAttribute = attribute;
         myField = field;
-        // ---------- Original Method ----------
-        //myAttribute = attribute;
-        //myField = field;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.605 -0400", hash_original_method = "0917A34BEC387437E422442FF9D128A9", hash_generated_method = "7B55DCEF19A54303A6AEE5DCD2981156")
      void clear() {
         beginIndex = endIndex = 0;
-        // ---------- Original Method ----------
-        //beginIndex = endIndex = 0;
+        
+        
     }
 
     
@@ -65,13 +65,13 @@ public class FieldPosition {
         addTaint(object.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_93874030 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_93874030;
-        // ---------- Original Method ----------
-        //if (!(object instanceof FieldPosition)) {
-            //return false;
-        //}
-        //FieldPosition pos = (FieldPosition) object;
-        //return myField == pos.myField && myAttribute == pos.myAttribute
-                //&& beginIndex == pos.beginIndex && endIndex == pos.endIndex;
+        
+        
+            
+        
+        
+        
+                
     }
 
     
@@ -79,8 +79,8 @@ public class FieldPosition {
     public int getBeginIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_576725718 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_576725718;
-        // ---------- Original Method ----------
-        //return beginIndex;
+        
+        
     }
 
     
@@ -88,8 +88,8 @@ public class FieldPosition {
     public int getEndIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1992407506 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1992407506;
-        // ---------- Original Method ----------
-        //return endIndex;
+        
+        
     }
 
     
@@ -97,22 +97,23 @@ public class FieldPosition {
     public int getField() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1665010208 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1665010208;
-        // ---------- Original Method ----------
-        //return myField;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.606 -0400", hash_original_method = "7CAF144562B490BE3E2EB59461F9FF9F", hash_generated_method = "62E15F604A97EE5E599A6E8CEE93B4C3")
     public Format.Field getFieldAttribute() {
-        Format.Field varB4EAC82CA7396A68D541C85D26508E83_1190980436 = null; //Variable for return #1
+        Format.Field varB4EAC82CA7396A68D541C85D26508E83_1190980436 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1190980436 = myAttribute;
-        varB4EAC82CA7396A68D541C85D26508E83_1190980436.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1190980436.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1190980436;
-        // ---------- Original Method ----------
-        //return myAttribute;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.606 -0400", hash_original_method = "C545ABA0B6D3CBB4D119673C6F3DBEAC", hash_generated_method = "E27BB4FB92CEE4600D0EF49B3D6BFA41")
     @Override
     public int hashCode() {
@@ -121,41 +122,42 @@ public class FieldPosition {
         attributeHash = myAttribute.hashCode();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1971607328 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1971607328;
-        // ---------- Original Method ----------
-        //int attributeHash = (myAttribute == null) ? 0 : myAttribute.hashCode();
-        //return attributeHash + myField * 10 + beginIndex * 100 + endIndex;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.606 -0400", hash_original_method = "B6704CE8D3A3B86DBE7C4466AFBF63DE", hash_generated_method = "52375A7B9E133C46ADD8958312B215FD")
     public void setBeginIndex(int index) {
         beginIndex = index;
-        // ---------- Original Method ----------
-        //beginIndex = index;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.607 -0400", hash_original_method = "D0945845F8EA8830C89E5D5682FA6C51", hash_generated_method = "D80F847F9AB2F854C130F487969DD63C")
     public void setEndIndex(int index) {
         endIndex = index;
-        // ---------- Original Method ----------
-        //endIndex = index;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.608 -0400", hash_original_method = "C87731FA15F0C601F30AE5E2B46DBDCA", hash_generated_method = "3FB4C64443DEBCAF3792B96B975CDBB4")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1438949294 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1438949294 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1438949294 = getClass().getName() + "[attribute=" + myAttribute + ", field="
                 + myField + ", beginIndex=" + beginIndex + ", endIndex="
                 + endIndex + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_1438949294.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1438949294.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1438949294;
-        // ---------- Original Method ----------
-        //return getClass().getName() + "[attribute=" + myAttribute + ", field="
-                //+ myField + ", beginIndex=" + beginIndex + ", endIndex="
-                //+ endIndex + "]";
+        
+        
+                
+                
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.harmony.luni.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.AbstractCollection;
 import java.util.AbstractMap;
@@ -47,7 +47,7 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.334 -0400", hash_original_method = "294B6DEE36941009B0B201B0BEC2DD67", hash_generated_method = "E45D157C82C9A0D27E45C7E8FDC413D5")
     public  TwoKeyHashMap() {
         this(DEFAULT_INITIAL_SIZE, DEFAULT_LOAD_FACTOR);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -55,7 +55,7 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
     public  TwoKeyHashMap(int initialCapacity) {
         this(initialCapacity, DEFAULT_LOAD_FACTOR);
         addTaint(initialCapacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -64,111 +64,115 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
     public  TwoKeyHashMap(int initialCapacity, float initialLoadFactor) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("initialCapacity should be >= 0");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "initialLoadFactor should be > 0");
-        } //End block
+        } 
         loadFactor = initialLoadFactor;
         arrSize = initialCapacity > 0 ? initialCapacity : 1;
         threshold = (int) (arrSize * loadFactor);
         arr = new Entry[arrSize + 1];
-        // ---------- Original Method ----------
-        //if (initialCapacity < 0) {
-            //throw new IllegalArgumentException("initialCapacity should be >= 0");
-        //}
-        //if (initialLoadFactor <= 0) {
-            //throw new IllegalArgumentException(
-                    //"initialLoadFactor should be > 0");
-        //}
-        //loadFactor = initialLoadFactor;
-        //if (initialCapacity == Integer.MAX_VALUE) {
-            //initialCapacity--;
-        //}
-        //arrSize = initialCapacity > 0 ? initialCapacity : 1;
-        //threshold = (int) (arrSize * loadFactor);
-        //arr = new Entry[arrSize + 1];
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.335 -0400", hash_original_method = "66B88A01F8296942609EF87ACA0E012C", hash_generated_method = "DE8CA740FD98781676D54BB5506F1D88")
     public Collection<V> values() {
-        Collection<V> varB4EAC82CA7396A68D541C85D26508E83_1011040831 = null; //Variable for return #1
+        Collection<V> varB4EAC82CA7396A68D541C85D26508E83_1011040831 = null; 
         {
             values = new ValuesCollectionImpl();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1011040831 = values;
-        varB4EAC82CA7396A68D541C85D26508E83_1011040831.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1011040831.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1011040831;
-        // ---------- Original Method ----------
-        //if (values == null) {
-            //values = new ValuesCollectionImpl();
-        //}
-        //return values;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.336 -0400", hash_original_method = "56D76EA36DEC4CA5689518DF65F0FB11", hash_generated_method = "3A1435CDEDC0FB3188CADC20600184B2")
     public Set<Map.Entry<String, V>> entrySet() {
-        Set<Map.Entry<String, V>> varB4EAC82CA7396A68D541C85D26508E83_1559231863 = null; //Variable for return #1
+        Set<Map.Entry<String, V>> varB4EAC82CA7396A68D541C85D26508E83_1559231863 = null; 
         {
             entrySet = new EntrySetImpl();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1559231863 = entrySet;
-        varB4EAC82CA7396A68D541C85D26508E83_1559231863.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1559231863.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1559231863;
-        // ---------- Original Method ----------
-        //if (entrySet == null) {
-            //entrySet = new EntrySetImpl();
-        //}
-        //return entrySet;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.336 -0400", hash_original_method = "818EB47C54D790B2A626C59717AA13C9", hash_generated_method = "24DDA753AE3FC4B7DC0DE284B1597AB7")
     public void clear() {
         size = 0;
         Arrays.fill(arr, 0, arr.length, null);
-        // ---------- Original Method ----------
-        //modCount++;
-        //size = 0;
-        //Arrays.fill(arr, 0, arr.length, null);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.337 -0400", hash_original_method = "FFF3CF52B9B0B5141C3665D271E08CFC", hash_generated_method = "43C62FBA2F960F892470AF9AB60361B6")
     public V remove(Object key1, Object key2) {
-        V varB4EAC82CA7396A68D541C85D26508E83_1811122933 = null; //Variable for return #1
+        V varB4EAC82CA7396A68D541C85D26508E83_1811122933 = null; 
         Entry<E, K, V> e = removeEntry(key1, key2);
         varB4EAC82CA7396A68D541C85D26508E83_1811122933 = (e != null) ? e.value : null;
         addTaint(key1.getTaint());
         addTaint(key2.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1811122933.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1811122933.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1811122933;
-        // ---------- Original Method ----------
-        //Entry<E, K, V> e = removeEntry(key1, key2);
-        //return (e != null) ? e.value : null;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.339 -0400", hash_original_method = "8D27DE23631F09453D73093F15998EF0", hash_generated_method = "48220CCA72C391FC7DE1C94359DDBCA0")
     public V put(E key1, K key2, V value) {
-        V varB4EAC82CA7396A68D541C85D26508E83_1815237601 = null; //Variable for return #1
-        V varB4EAC82CA7396A68D541C85D26508E83_683321708 = null; //Variable for return #2
-        V varB4EAC82CA7396A68D541C85D26508E83_971638372 = null; //Variable for return #3
-        V varB4EAC82CA7396A68D541C85D26508E83_381301791 = null; //Variable for return #4
+        V varB4EAC82CA7396A68D541C85D26508E83_1815237601 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_683321708 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_971638372 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_381301791 = null; 
         {
             int index = arrSize;
             {
                 arr[index] = createEntry(0, null, null, value, null);
                 varB4EAC82CA7396A68D541C85D26508E83_1815237601 = null;
-            } //End block
+            } 
             {
                 V oldValue = arr[index].value;
                 arr[index].value = value;
                 varB4EAC82CA7396A68D541C85D26508E83_683321708 = oldValue;
-            } //End block
-        } //End block
+            } 
+        } 
         int hash = key1.hashCode() + key2.hashCode();
         int index = (hash & 0x7fffffff) % arrSize;
         Entry<E, K, V> e = arr[index];
@@ -180,34 +184,34 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
                     V oldValue = e.value;
                     e.value = value;
                     varB4EAC82CA7396A68D541C85D26508E83_971638372 = oldValue;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             e = e.next;
-        } //End block
+        } 
         arr[index] = createEntry(hash, key1, key2, value, arr[index]);
         {
             rehash();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_381301791 = null;
-        V varA7E53CE21691AB073D9660D615818899_1501070405; //Final return value
+        V varA7E53CE21691AB073D9660D615818899_1501070405; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1501070405 = varB4EAC82CA7396A68D541C85D26508E83_1815237601;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1501070405 = varB4EAC82CA7396A68D541C85D26508E83_683321708;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1501070405 = varB4EAC82CA7396A68D541C85D26508E83_971638372;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1501070405 = varB4EAC82CA7396A68D541C85D26508E83_381301791;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1501070405.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1501070405.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1501070405;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -217,7 +221,7 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         int newArrSize = (arrSize + 1) * 2 + 1;
         {
             newArrSize = Integer.MAX_VALUE - 1;
-        } //End block
+        } 
         Entry<E, K, V>[] newArr = new Entry[newArrSize + 1];
         {
             int i = 0;
@@ -229,42 +233,43 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
                     entry.next = newArr[newIndex];
                     newArr[newIndex] = entry;
                     entry = next;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         newArr[newArrSize] = arr[arrSize];
         arrSize = newArrSize;
         {
             loadFactor *= 10;
-        } //End block
+        } 
         threshold = (int) (arrSize * loadFactor);
         arr = newArr;
-        // ---------- Original Method ----------
-        //int newArrSize = (arrSize + 1) * 2 + 1;
-        //if (newArrSize < 0) {
-            //newArrSize = Integer.MAX_VALUE - 1;
-        //}
-        //Entry<E, K, V>[] newArr = new Entry[newArrSize + 1];
-        //for (int i = 0; i < arr.length - 1; i++) {
-            //Entry<E, K, V> entry = arr[i];
-            //while (entry != null) {
-                //Entry<E, K, V> next = entry.next;
-                //int newIndex = (entry.hash & 0x7fffffff) % newArrSize;
-                //entry.next = newArr[newIndex];
-                //newArr[newIndex] = entry;
-                //entry = next;
-            //}
-        //}
-        //newArr[newArrSize] = arr[arrSize];
-        //arrSize = newArrSize;
-        //if (arrSize == Integer.MAX_VALUE) {
-            //loadFactor *= 10;
-        //}
-        //threshold = (int) (arrSize * loadFactor);
-        //arr = newArr;
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+                
+                
+                
+                
+            
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.340 -0400", hash_original_method = "31FF250303275620FA0192DC25A0041E", hash_generated_method = "6A7400E8AF0D1BD19501AFFBBCF25EE7")
     public boolean containsKey(Object key1, Object key2) {
         boolean varE6D9CD9BC0FD3434DD2196F79DFDAC11_1361679897 = (findEntry(key1, key2) != null);
@@ -272,39 +277,40 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         addTaint(key2.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_369859317 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_369859317;
-        // ---------- Original Method ----------
-        //return findEntry(key1, key2) != null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.341 -0400", hash_original_method = "E13BBD09CFB92FF506FEC56FABF87B9F", hash_generated_method = "A4E978B83F5E0B7A20EB1CDF04A373C6")
     public V get(Object key1, Object key2) {
-        V varB4EAC82CA7396A68D541C85D26508E83_439749262 = null; //Variable for return #1
-        V varB4EAC82CA7396A68D541C85D26508E83_384665695 = null; //Variable for return #2
+        V varB4EAC82CA7396A68D541C85D26508E83_439749262 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_384665695 = null; 
         Entry<E, K, V> e = findEntry(key1, key2);
         {
             varB4EAC82CA7396A68D541C85D26508E83_439749262 = e.value;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_384665695 = null;
         addTaint(key1.getTaint());
         addTaint(key2.getTaint());
-        V varA7E53CE21691AB073D9660D615818899_866130809; //Final return value
+        V varA7E53CE21691AB073D9660D615818899_866130809; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_866130809 = varB4EAC82CA7396A68D541C85D26508E83_439749262;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_866130809 = varB4EAC82CA7396A68D541C85D26508E83_384665695;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_866130809.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_866130809.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_866130809;
-        // ---------- Original Method ----------
-        //Entry<E, K, V> e = findEntry(key1, key2);
-        //if (e != null) {
-            //return e.value;
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -312,8 +318,8 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1513078562 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1513078562;
-        // ---------- Original Method ----------
-        //return size == 0;
+        
+        
     }
 
     
@@ -321,58 +327,58 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_205903504 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_205903504;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.341 -0400", hash_original_method = "B126004260D8EBAD1640E464F002A4A4", hash_generated_method = "90DF623A7B94BC72100AE911E88A5A40")
      Entry<E, K, V> createEntry(int hashCode, E key1, K key2, V value,
             Entry<E, K, V> next) {
-        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_1846796605 = null; //Variable for return #1
+        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_1846796605 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1846796605 = new Entry<E, K, V>(hashCode, key1, key2, value, next);
         addTaint(hashCode);
         addTaint(key1.getTaint());
         addTaint(key2.getTaint());
         addTaint(value.getTaint());
         addTaint(next.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1846796605.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1846796605.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1846796605;
-        // ---------- Original Method ----------
-        //return new Entry<E, K, V>(hashCode, key1, key2, value, next);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.342 -0400", hash_original_method = "F4E18AFB5A6BD2866D211174F2C65244", hash_generated_method = "DA6CAB6B909523820DB255A5DC76D8F6")
      Iterator<Map.Entry<String, V>> createEntrySetIterator() {
-        Iterator<Map.Entry<String, V>> varB4EAC82CA7396A68D541C85D26508E83_624164429 = null; //Variable for return #1
+        Iterator<Map.Entry<String, V>> varB4EAC82CA7396A68D541C85D26508E83_624164429 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_624164429 = new EntryIteratorImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_624164429.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_624164429.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_624164429;
-        // ---------- Original Method ----------
-        //return new EntryIteratorImpl();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.342 -0400", hash_original_method = "6209E5C519243BC33CB9A47AFA9E017F", hash_generated_method = "EF389F8103399BE01BF79EC0EC1B7657")
      Iterator<V> createValueCollectionIterator() {
-        Iterator<V> varB4EAC82CA7396A68D541C85D26508E83_283090280 = null; //Variable for return #1
+        Iterator<V> varB4EAC82CA7396A68D541C85D26508E83_283090280 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_283090280 = new ValueIteratorImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_283090280.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_283090280.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_283090280;
-        // ---------- Original Method ----------
-        //return new ValueIteratorImpl();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.343 -0400", hash_original_method = "C152D61E326241B091FB8EBCBC5C9180", hash_generated_method = "AB6BCCD77159894203CEF82F61FC64D5")
     private final Entry<E, K, V> findEntry(Object key1, Object key2) {
-        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_1291447247 = null; //Variable for return #1
-        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_1896711363 = null; //Variable for return #2
-        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_1620246618 = null; //Variable for return #3
+        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_1291447247 = null; 
+        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_1896711363 = null; 
+        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_1620246618 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1291447247 = arr[arrSize];
-        } //End block
+        } 
         int hash = key1.hashCode() + key2.hashCode();
         int index = (hash & 0x7fffffff) % arrSize;
         Entry<E, K, V> e = arr[index];
@@ -382,60 +388,60 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
                     && key2.equals(e.getKey2()));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1896711363 = e;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             e = e.next;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1620246618 = null;
         addTaint(key1.getTaint());
         addTaint(key2.getTaint());
-        Entry<E, K, V> varA7E53CE21691AB073D9660D615818899_1029810715; //Final return value
+        Entry<E, K, V> varA7E53CE21691AB073D9660D615818899_1029810715; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1029810715 = varB4EAC82CA7396A68D541C85D26508E83_1291447247;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1029810715 = varB4EAC82CA7396A68D541C85D26508E83_1896711363;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1029810715 = varB4EAC82CA7396A68D541C85D26508E83_1620246618;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1029810715.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1029810715.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1029810715;
-        // ---------- Original Method ----------
-        //if (key1 == null && key2 == null) {
-            //return arr[arrSize];
-        //}
-        //int hash = key1.hashCode() + key2.hashCode();
-        //int index = (hash & 0x7fffffff) % arrSize;
-        //Entry<E, K, V> e = arr[index];
-        //while (e != null) {
-            //if (hash == e.hash && key1.equals(e.getKey1())
-                    //&& key2.equals(e.getKey2())) {
-                //return e;
-            //}
-            //e = e.next;
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+        
+        
+            
+                    
+                
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.344 -0400", hash_original_method = "C98DB123D4E5CC84B2492FBCF56B145D", hash_generated_method = "BB3E8E6A789385EE579AE4A291911F59")
     private final Entry<E, K, V> removeEntry(Object key1, Object key2) {
-        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_679154912 = null; //Variable for return #1
-        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_387282314 = null; //Variable for return #2
-        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_1009753413 = null; //Variable for return #3
-        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_421464680 = null; //Variable for return #4
+        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_679154912 = null; 
+        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_387282314 = null; 
+        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_1009753413 = null; 
+        Entry<E, K, V> varB4EAC82CA7396A68D541C85D26508E83_421464680 = null; 
         {
             int index = arrSize;
             {
                 Entry<E, K, V> ret = arr[index];
                 arr[index] = null;
                 varB4EAC82CA7396A68D541C85D26508E83_679154912 = ret;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_387282314 = null;
-        } //End block
+        } 
         int hash = key1.hashCode() + key2.hashCode();
         int index = (hash & 0x7fffffff) % arrSize;
         Entry<E, K, V> e = arr[index];
@@ -447,38 +453,38 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
                 {
                     {
                         arr[index] = e.next;
-                    } //End block
+                    } 
                     {
                         prev.next = e.next;
-                    } //End block
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_1009753413 = e;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             prev = e;
             e = e.next;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_421464680 = null;
         addTaint(key1.getTaint());
         addTaint(key2.getTaint());
-        Entry<E, K, V> varA7E53CE21691AB073D9660D615818899_1385025422; //Final return value
+        Entry<E, K, V> varA7E53CE21691AB073D9660D615818899_1385025422; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1385025422 = varB4EAC82CA7396A68D541C85D26508E83_679154912;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1385025422 = varB4EAC82CA7396A68D541C85D26508E83_387282314;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1385025422 = varB4EAC82CA7396A68D541C85D26508E83_1009753413;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1385025422 = varB4EAC82CA7396A68D541C85D26508E83_421464680;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1385025422.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1385025422.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1385025422;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -506,71 +512,71 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
             this.key2 = key2;
             this.value = value;
             this.next = next;
-            // ---------- Original Method ----------
-            //this.hash = hash;
-            //this.key1 = key1;
-            //this.key2 = key2;
-            //this.value = value;
-            //this.next = next;
+            
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.345 -0400", hash_original_method = "43A91F8C54B90BC0F4C951BCB1425B25", hash_generated_method = "73BB33AF65D4B0F72CD845D2252F2645")
         public String getKey() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1021209385 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1021209385 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1021209385 = key1.toString() + key2.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1021209385.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1021209385.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1021209385;
-            // ---------- Original Method ----------
-            //return key1.toString() + key2.toString();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.346 -0400", hash_original_method = "8E21854AE9ADC89A1868BC4522219FB2", hash_generated_method = "EE70B0C292688AECC80FDEF0804BDC2A")
         public E getKey1() {
-            E varB4EAC82CA7396A68D541C85D26508E83_1350495714 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1350495714 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1350495714 = key1;
-            varB4EAC82CA7396A68D541C85D26508E83_1350495714.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1350495714.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1350495714;
-            // ---------- Original Method ----------
-            //return key1;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.346 -0400", hash_original_method = "7F02D1AD568FC6C2F60475D661F743CB", hash_generated_method = "91F6D5FDBA9E7E2DFF11DC8694E63D84")
         public K getKey2() {
-            K varB4EAC82CA7396A68D541C85D26508E83_373560357 = null; //Variable for return #1
+            K varB4EAC82CA7396A68D541C85D26508E83_373560357 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_373560357 = key2;
-            varB4EAC82CA7396A68D541C85D26508E83_373560357.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_373560357.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_373560357;
-            // ---------- Original Method ----------
-            //return key2;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.347 -0400", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "EFBCA20D5E15283558D951EF7CA7C070")
         public V getValue() {
-            V varB4EAC82CA7396A68D541C85D26508E83_689085102 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_689085102 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_689085102 = value;
-            varB4EAC82CA7396A68D541C85D26508E83_689085102.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_689085102.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_689085102;
-            // ---------- Original Method ----------
-            //return value;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.347 -0400", hash_original_method = "B73895AEE255DB24C138E57D2456050E", hash_generated_method = "0971FB152A9B5B0324CB647A15F6A467")
         public V setValue(V value) {
-            V varB4EAC82CA7396A68D541C85D26508E83_2011993644 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_2011993644 = null; 
             V oldValue = this.value;
             this.value = value;
             varB4EAC82CA7396A68D541C85D26508E83_2011993644 = oldValue;
-            varB4EAC82CA7396A68D541C85D26508E83_2011993644.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2011993644.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2011993644;
-            // ---------- Original Method ----------
-            //V oldValue = this.value;
-            //this.value = value;
-            //return oldValue;
+            
+            
+            
+            
         }
 
         
@@ -586,40 +592,40 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
                     || (value == null && getValue != null)
                     || !key1.equals(e.getKey1()) || !key2.equals(e.getKey2())
                     || !value.equals(getValue));
-            } //End collapsed parenthetic
+            } 
             addTaint(obj.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1923753661 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1923753661;
-            // ---------- Original Method ----------
-            //if (!(obj instanceof Entry)) {
-                //return false;
-            //}
-            //Entry<?, ?, ?> e = (Entry<?, ?, ?>) obj;
-            //Object getKey1 = e.getKey1();
-            //Object getKey2 = e.getKey2();
-            //Object getValue = e.getValue();
-            //if ((key1 == null && getKey1 != null)
-                    //|| (key2 == null && getKey2 != null)
-                    //|| (value == null && getValue != null)
-                    //|| !key1.equals(e.getKey1()) || !key2.equals(e.getKey2())
-                    //|| !value.equals(getValue)) {
-                //return false;
-            //}
-            //return true;
+            
+            
+                
+            
+            
+            
+            
+            
+            
+                    
+                    
+                    
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.350 -0400", hash_original_method = "57C89921FB9688640B9C568340F7B69C", hash_generated_method = "C8FCBAAA9BC2C7637025BF8395DE79D6")
         public int hashCode() {
-            int hash1 = (key1 == null ? 0 : key1.hashCode());//DSFIXME:  CODE0008: Nested ternary operator in expression
-            int hash2 = (key2 == null ? 0 : key2.hashCode());//DSFIXME:  CODE0008: Nested ternary operator in expression
-            int varA174CA9A4343C7CD5810592D3B17DB9F_1171854965 = ((hash1 + hash2) ^ (value == null ? 0 : value.hashCode())); //DSFIXME:  CODE0008: Nested ternary operator in expression
+            int hash1 = (key1 == null ? 0 : key1.hashCode());
+            int hash2 = (key2 == null ? 0 : key2.hashCode());
+            int varA174CA9A4343C7CD5810592D3B17DB9F_1171854965 = ((hash1 + hash2) ^ (value == null ? 0 : value.hashCode())); 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2046595243 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2046595243;
-            // ---------- Original Method ----------
-            //int hash1 = (key1 == null ? 0 : key1.hashCode());
-            //int hash2 = (key2 == null ? 0 : key2.hashCode());
-            //return (hash1 + hash2) ^ (value == null ? 0 : value.hashCode());
+            
+            
+            
+            
         }
 
         
@@ -632,7 +638,7 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.350 -0400", hash_original_method = "403B9BE439CBD0FBC0501C0EDC2D9426", hash_generated_method = "403B9BE439CBD0FBC0501C0EDC2D9426")
         public EntrySetImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -640,16 +646,16 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         public int size() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1150142844 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1150142844;
-            // ---------- Original Method ----------
-            //return size;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.351 -0400", hash_original_method = "AE463F3857FBE52FC47F5CD4A94D1EE6", hash_generated_method = "CB1BBFA30FC78A80159E3DCADA51A3C9")
         public void clear() {
             TwoKeyHashMap.this.clear();
-            // ---------- Original Method ----------
-            //TwoKeyHashMap.this.clear();
+            
+            
         }
 
         
@@ -657,8 +663,8 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         public boolean isEmpty() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1750286225 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1750286225;
-            // ---------- Original Method ----------
-            //return size == 0;
+            
+            
         }
 
         
@@ -670,22 +676,22 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
             Object value2 = entry2.getValue();
             {
                 Object var8FE214ACB260EF10FD8536B4BD04FDDC_1265460392 = (value.equals(value2));
-            } //End flattened ternary
+            } 
             addTaint(obj.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_609200067 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_609200067;
-            // ---------- Original Method ----------
-            //if (!(obj instanceof Entry)) {
-                //return false;
-            //}
-            //Entry<?, ?, ?> entry = (Entry<?, ?, ?>) obj;
-            //Entry<E, K, V> entry2 = findEntry(entry.getKey1(), entry.getKey2());
-            //if (entry2 == null) {
-                //return false;
-            //}
-            //Object value = entry.getValue();
-            //Object value2 = entry2.getValue();
-            //return value == null ? value2 == null : value.equals(value2);
+            
+            
+                
+            
+            
+            
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -695,22 +701,22 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
             addTaint(obj.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1790554231 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1790554231;
-            // ---------- Original Method ----------
-            //if (!(obj instanceof Entry)) {
-                //return false;
-            //}
-            //return removeEntry(((Entry) obj).getKey1(), ((Entry) obj).getKey2()) != null;
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.354 -0400", hash_original_method = "820C2D57E851A82BD3B2742370FA728A", hash_generated_method = "BA40565B6D73E0B2F8465F4D2650409A")
         public Iterator<Map.Entry<String, V>> iterator() {
-            Iterator<Map.Entry<String, V>> varB4EAC82CA7396A68D541C85D26508E83_1974559095 = null; //Variable for return #1
+            Iterator<Map.Entry<String, V>> varB4EAC82CA7396A68D541C85D26508E83_1974559095 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1974559095 = createEntrySetIterator();
-            varB4EAC82CA7396A68D541C85D26508E83_1974559095.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1974559095.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1974559095;
-            // ---------- Original Method ----------
-            //return createEntrySetIterator();
+            
+            
         }
 
         
@@ -741,8 +747,8 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.355 -0400", hash_original_method = "E708A38A6B1072C269DF2FC2A57F4EEE", hash_generated_method = "795363C7EF8F0A7D3A2E876BD06BA763")
           EntryIteratorImpl() {
             startModCount = modCount;
-            // ---------- Original Method ----------
-            //startModCount = modCount;
+            
+            
         }
 
         
@@ -750,62 +756,62 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         public boolean hasNext() {
             {
                 curr_entry = curr_entry.next;
-            } //End block
+            } 
             {
                 {
                     curr_entry = arr[curr];
-                } //End block
-            } //End block
+                } 
+            } 
             boolean varADD6E08E9486A747E6272FE6A1AEAF8B_223063534 = (found = (curr_entry != null));
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_862877047 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_862877047;
-            // ---------- Original Method ----------
-            //if (found) {
-                //return true;
-            //}
-            //if (curr_entry != null) {
-                //curr_entry = curr_entry.next;
-            //}
-            //if (curr_entry == null) {
-                //for (curr++; curr < arr.length && arr[curr] == null; curr++) {
-                //}
-                //if (curr < arr.length) {
-                    //curr_entry = arr[curr];
-                //}
-            //}
-            //return found = (curr_entry != null);
+            
+            
+                
+            
+            
+                
+            
+            
+                
+                
+                
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.357 -0400", hash_original_method = "4A9B66986403EF804F6712808B1107B5", hash_generated_method = "14D519B71310F75756A2EFC4F83DDBF3")
         public Map.Entry<String, V> next() {
-            Map.Entry<String, V> varB4EAC82CA7396A68D541C85D26508E83_1191507847 = null; //Variable for return #1
+            Map.Entry<String, V> varB4EAC82CA7396A68D541C85D26508E83_1191507847 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
-            } //End block
+            } 
             {
                 boolean var61E0EA93C8F2038A69462393E2D5DF33_1595193495 = (!hasNext());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             found = false;
             returned_index = curr;
             returned_entry = curr_entry;
             varB4EAC82CA7396A68D541C85D26508E83_1191507847 = (Map.Entry<String, V>) curr_entry;
-            varB4EAC82CA7396A68D541C85D26508E83_1191507847.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1191507847.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1191507847;
-            // ---------- Original Method ----------
-            //if (modCount != startModCount) {
-                //throw new ConcurrentModificationException();
-            //}
-            //if (!hasNext()) {
-                //throw new NoSuchElementException();
-            //}
-            //found = false;
-            //returned_index = curr;
-            //returned_entry = curr_entry;
-            //return (Map.Entry<String, V>) curr_entry;
+            
+            
+                
+            
+            
+                
+            
+            
+            
+            
+            
         }
 
         
@@ -813,45 +819,45 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         public void remove() {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
-            } //End block
+            } 
             Entry<E, K, V> p = null;
             Entry<E, K, V> e = arr[returned_index];
             {
                 p = e;
                 e = e.next;
-            } //End block
+            } 
             {
                 p.next = returned_entry.next;
-            } //End block
+            } 
             {
                 arr[returned_index] = returned_entry.next;
-            } //End block
+            } 
             returned_index = -1;
-            // ---------- Original Method ----------
-            //if (returned_index == -1) {
-                //throw new IllegalStateException();
-            //}
-            //if (modCount != startModCount) {
-                //throw new ConcurrentModificationException();
-            //}
-            //Entry<E, K, V> p = null;
-            //Entry<E, K, V> e = arr[returned_index];
-            //while (e != returned_entry) {
-                //p = e;
-                //e = e.next;
-            //}
-            //if (p != null) {
-                //p.next = returned_entry.next;
-            //} else {
-                //arr[returned_index] = returned_entry.next;
-            //}
-            //size--;
-            //modCount++;
-            //startModCount++;
-            //returned_index = -1;
+            
+            
+                
+            
+            
+                
+            
+            
+            
+            
+                
+                
+            
+            
+                
+            
+                
+            
+            
+            
+            
+            
         }
 
         
@@ -864,7 +870,7 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.358 -0400", hash_original_method = "3C90742D57762549FF961ACAAF6110EC", hash_generated_method = "3C90742D57762549FF961ACAAF6110EC")
         public ValuesCollectionImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -872,16 +878,16 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         public int size() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_974352705 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_974352705;
-            // ---------- Original Method ----------
-            //return size;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.359 -0400", hash_original_method = "AE463F3857FBE52FC47F5CD4A94D1EE6", hash_generated_method = "CB1BBFA30FC78A80159E3DCADA51A3C9")
         public void clear() {
             TwoKeyHashMap.this.clear();
-            // ---------- Original Method ----------
-            //TwoKeyHashMap.this.clear();
+            
+            
         }
 
         
@@ -889,19 +895,19 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         public boolean isEmpty() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_786885657 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_786885657;
-            // ---------- Original Method ----------
-            //return size == 0;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.363 -0400", hash_original_method = "680FD22D8DB10527F3174FA8865D96E7", hash_generated_method = "F9E38EA662437B023645429AE23EFD3C")
         public Iterator<V> iterator() {
-            Iterator<V> varB4EAC82CA7396A68D541C85D26508E83_1093995957 = null; //Variable for return #1
+            Iterator<V> varB4EAC82CA7396A68D541C85D26508E83_1093995957 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1093995957 = createValueCollectionIterator();
-            varB4EAC82CA7396A68D541C85D26508E83_1093995957.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1093995957.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1093995957;
-            // ---------- Original Method ----------
-            //return createValueCollectionIterator();
+            
+            
         }
 
         
@@ -911,8 +917,8 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
             addTaint(obj.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1159276409 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1159276409;
-            // ---------- Original Method ----------
-            //return containsValue(obj);
+            
+            
         }
 
         
@@ -928,27 +934,27 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.365 -0400", hash_original_method = "5B2B0240442A661D6F35A8FA67A7469B", hash_generated_method = "FAA2EFD99674487E058F0C99576A9B8D")
           ValueIteratorImpl() {
             this.itr = new EntryIteratorImpl();
-            // ---------- Original Method ----------
-            //this.itr = new EntryIteratorImpl();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.367 -0400", hash_original_method = "351E0C8E290AF7E9E6FFA36B6DF7C9FA", hash_generated_method = "5DD7194CDF2287CB8FFD03C3E29D78F6")
         public V next() {
-            V varB4EAC82CA7396A68D541C85D26508E83_1591539315 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_1591539315 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1591539315 = itr.next().getValue();
-            varB4EAC82CA7396A68D541C85D26508E83_1591539315.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1591539315.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1591539315;
-            // ---------- Original Method ----------
-            //return itr.next().getValue();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.367 -0400", hash_original_method = "C9ED4E1E548B82ACF6AA423D5E0C3E8C", hash_generated_method = "F1B26A301CD95E7A3CF3E96C8421A61D")
         public void remove() {
             itr.remove();
-            // ---------- Original Method ----------
-            //itr.remove();
+            
+            
         }
 
         
@@ -957,8 +963,8 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
             boolean varF664500D47A97D2A15781D0CF424E05F_47956968 = (itr.hasNext());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1001613034 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1001613034;
-            // ---------- Original Method ----------
-            //return itr.hasNext();
+            
+            
         }
 
         

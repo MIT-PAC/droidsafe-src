@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -42,8 +42,8 @@ public class PackageStats implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.751 -0400", hash_original_method = "737D88E00D7006B4B823AA249FAC1157", hash_generated_method = "5E53E1C258E36EC9592C568752FD2612")
     public  PackageStats(String pkgName) {
         packageName = pkgName;
-        // ---------- Original Method ----------
-        //packageName = pkgName;
+        
+        
     }
 
     
@@ -58,16 +58,16 @@ public class PackageStats implements Parcelable {
         externalCacheSize = source.readLong();
         externalMediaSize = source.readLong();
         externalObbSize = source.readLong();
-        // ---------- Original Method ----------
-        //packageName = source.readString();
-        //codeSize = source.readLong();
-        //dataSize = source.readLong();
-        //cacheSize = source.readLong();
-        //externalCodeSize = source.readLong();
-        //externalDataSize = source.readLong();
-        //externalCacheSize = source.readLong();
-        //externalMediaSize = source.readLong();
-        //externalObbSize = source.readLong();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -82,22 +82,23 @@ public class PackageStats implements Parcelable {
         externalCacheSize = pStats.externalCacheSize;
         externalMediaSize = pStats.externalMediaSize;
         externalObbSize = pStats.externalObbSize;
-        // ---------- Original Method ----------
-        //packageName = pStats.packageName;
-        //codeSize = pStats.codeSize;
-        //dataSize = pStats.dataSize;
-        //cacheSize = pStats.cacheSize;
-        //externalCodeSize = pStats.externalCodeSize;
-        //externalDataSize = pStats.externalDataSize;
-        //externalCacheSize = pStats.externalCacheSize;
-        //externalMediaSize = pStats.externalMediaSize;
-        //externalObbSize = pStats.externalObbSize;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.754 -0400", hash_original_method = "3FE5C26F51751E2E83526086B9D94747", hash_generated_method = "98FAD9BEC91292DEF74C4DDE0472F8A5")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_651445284 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_651445284 = null; 
         final StringBuilder sb = new StringBuilder("PackageStats{");
         sb.append(Integer.toHexString(System.identityHashCode(this)));
         sb.append(" packageName=");
@@ -119,30 +120,30 @@ public class PackageStats implements Parcelable {
         sb.append(",externalObbSize=");
         sb.append(externalObbSize);
         varB4EAC82CA7396A68D541C85D26508E83_651445284 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_651445284.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_651445284.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_651445284;
-        // ---------- Original Method ----------
-        //final StringBuilder sb = new StringBuilder("PackageStats{");
-        //sb.append(Integer.toHexString(System.identityHashCode(this)));
-        //sb.append(" packageName=");
-        //sb.append(packageName);
-        //sb.append(",codeSize=");
-        //sb.append(codeSize);
-        //sb.append(",dataSize=");
-        //sb.append(dataSize);
-        //sb.append(",cacheSize=");
-        //sb.append(cacheSize);
-        //sb.append(",externalCodeSize=");
-        //sb.append(externalCodeSize);
-        //sb.append(",externalDataSize=");
-        //sb.append(externalDataSize);
-        //sb.append(",externalCacheSize=");
-        //sb.append(externalCacheSize);
-        //sb.append(",externalMediaSize=");
-        //sb.append(externalMediaSize);
-        //sb.append(",externalObbSize=");
-        //sb.append(externalObbSize);
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -150,11 +151,12 @@ public class PackageStats implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1226267390 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1226267390;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.755 -0400", hash_original_method = "458D37590174ACFE991A170204705742", hash_generated_method = "1293D525D489E831069FA484E3A82732")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         dest.writeString(packageName);
@@ -168,16 +170,16 @@ public class PackageStats implements Parcelable {
         dest.writeLong(externalObbSize);
         addTaint(dest.getTaint());
         addTaint(parcelableFlags);
-        // ---------- Original Method ----------
-        //dest.writeString(packageName);
-        //dest.writeLong(codeSize);
-        //dest.writeLong(dataSize);
-        //dest.writeLong(cacheSize);
-        //dest.writeLong(externalCodeSize);
-        //dest.writeLong(externalDataSize);
-        //dest.writeLong(externalCacheSize);
-        //dest.writeLong(externalMediaSize);
-        //dest.writeLong(externalObbSize);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -193,12 +195,12 @@ public class PackageStats implements Parcelable {
             return new PackageStats[size];
         }
     };
-    // orphaned legacy method
+    
     public PackageStats createFromParcel(Parcel in) {
             return new PackageStats(in);
         }
     
-    // orphaned legacy method
+    
     public PackageStats[] newArray(int size) {
             return new PackageStats[size];
         }

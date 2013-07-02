@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.MathUtils;
 import java.util.HashMap;
@@ -16,7 +16,7 @@ public class Color {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.481 -0400", hash_original_method = "34DAB7DC9B66BC3931AEC17E77DE7DFA", hash_generated_method = "34DAB7DC9B66BC3931AEC17E77DE7DFA")
     public Color ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -50,6 +50,7 @@ public class Color {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float hue(int color) {
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
@@ -80,6 +81,7 @@ public class Color {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float saturation(int color) {
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
@@ -96,6 +98,7 @@ public class Color {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float brightness(int color) {
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
@@ -105,6 +108,7 @@ public class Color {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int parseColor(String colorString) {
         if (colorString.charAt(0) == '#') {
             long color = Long.parseLong(colorString.substring(1), 16);
@@ -124,11 +128,13 @@ public class Color {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int HSBtoColor(float[] hsb) {
         return HSBtoColor(hsb[0], hsb[1], hsb[2]);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int HSBtoColor(float h, float s, float b) {
         h = MathUtils.constrain(h, 0.0f, 1.0f);
         s = MathUtils.constrain(s, 0.0f, 1.0f);
@@ -179,6 +185,7 @@ public class Color {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void RGBToHSV(int red, int green, int blue, float hsv[]) {
         if (hsv.length < 3) {
             throw new RuntimeException("3 components required for hsv");
@@ -187,16 +194,19 @@ public class Color {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void colorToHSV(int color, float hsv[]) {
         RGBToHSV((color >> 16) & 0xFF, (color >> 8) & 0xFF, color & 0xFF, hsv);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int HSVToColor(float hsv[]) {
         return HSVToColor(0xFF, hsv);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int HSVToColor(int alpha, float hsv[]) {
         if (hsv.length < 3) {
             throw new RuntimeException("3 components required for hsv");
@@ -205,10 +215,12 @@ public class Color {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeRGBToHSV(int red, int greed, int blue, float hsv[]) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeHSVToColor(int alpha, float hsv[]) {
         return DSUtils.UNKNOWN_INT;
     }

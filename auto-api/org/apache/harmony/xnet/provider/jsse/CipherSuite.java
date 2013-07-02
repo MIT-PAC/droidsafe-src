@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.GeneralSecurityException;
 import java.util.Hashtable;
@@ -72,7 +72,7 @@ public class CipherSuite {
             effectiveKeyBytes = 0;
             ivSize = 0;
             blockSize = 0;
-        } //End block
+        } 
         {
             boolean var83FE4A621033DBF86A035303348C9069_1400472324 = ("RC4_40".equals(cipherName));
             {
@@ -82,7 +82,7 @@ public class CipherSuite {
                 effectiveKeyBytes = 5;
                 ivSize = 0;
                 blockSize = 0;
-            } //End block
+            } 
             {
                 boolean varBFA52D54AB4E451C86478190B088F490_317864420 = ("RC4_128".equals(cipherName));
                 {
@@ -92,7 +92,7 @@ public class CipherSuite {
                     effectiveKeyBytes = 16;
                     ivSize = 0;
                     blockSize = 0;
-                } //End block
+                } 
                 {
                     boolean var169A581047F02ED212E0D86EC911CFF3_1417415679 = ("DES40_CBC".equals(cipherName));
                     {
@@ -102,7 +102,7 @@ public class CipherSuite {
                         effectiveKeyBytes = 5;
                         ivSize = 8;
                         blockSize = 8;
-                    } //End block
+                    } 
                     {
                         boolean varBA299225572A2EEF4B69DFBC7FAB0C2C_667374514 = ("DES_CBC".equals(cipherName));
                         {
@@ -112,7 +112,7 @@ public class CipherSuite {
                             effectiveKeyBytes = 7;
                             ivSize = 8;
                             blockSize = 8;
-                        } //End block
+                        } 
                         {
                             boolean var2AFD38E7932DB50B2E8247936CF045C0_1336555769 = ("3DES_EDE_CBC".equals(cipherName));
                             {
@@ -122,7 +122,7 @@ public class CipherSuite {
                                 effectiveKeyBytes = 24;
                                 ivSize = 8;
                                 blockSize = 8;
-                            } //End block
+                            } 
                             {
                                 boolean var40782AB2EBC9AF3EEA4D4BE96870414B_421934193 = ("AES_128_CBC".equals(cipherName));
                                 {
@@ -132,7 +132,7 @@ public class CipherSuite {
                                     effectiveKeyBytes = 16;
                                     ivSize = 16;
                                     blockSize = 16;
-                                } //End block
+                                } 
                                 {
                                     boolean var031F9B85D3909EA1CA5883928E3FDDA1_501824189 = ("AES_256_CBC".equals(cipherName));
                                     {
@@ -142,7 +142,7 @@ public class CipherSuite {
                                         effectiveKeyBytes = 32;
                                         ivSize = 16;
                                         blockSize = 16;
-                                    } //End block
+                                    } 
                                     {
                                         this.cipherName = cipherName;
                                         keyMaterial = 0;
@@ -150,58 +150,59 @@ public class CipherSuite {
                                         effectiveKeyBytes = 0;
                                         ivSize = 0;
                                         blockSize = 0;
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             boolean varFE5CFE390B831904898301B5035F64A1_1547068187 = ("MD5".equals(hash));
             {
                 this.hmacName = "HmacMD5";
                 this.hashName = "MD5";
                 hashSize = 16;
-            } //End block
+            } 
             {
                 boolean var1247556C4F383A0C34B50551B10A24FE_2015805642 = ("SHA".equals(hash));
                 {
                     this.hmacName = "HmacSHA1";
                     this.hashName = "SHA-1";
                     hashSize = 20;
-                } //End block
+                } 
                 {
                     this.hmacName = null;
                     this.hashName = null;
                     hashSize = 0;
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         cipherSuiteCode = code;
         {
             try 
             {
                 Cipher.getInstance(this.cipherName);
-            } //End block
+            } 
             catch (GeneralSecurityException e)
             {
                 supported = false;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean var8F5354B22BBD8A425CE718DC6EB34B8F_1754948105 = (this.name.startsWith("TLS_EC"));
             {
                 supported = false;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(hash.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int registerCipherSuitesByCode(CipherSuite[] cipherSuites) {
         int count = 0;
         for (int i = 0; i < cipherSuites.length; i++) {
@@ -220,6 +221,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void registerSupportedCipherSuites(int offset, CipherSuite[] cipherSuites) {
         int count = offset;
         for (int i = 0; i < cipherSuites.length; i++) {
@@ -238,11 +240,13 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CipherSuite getByName(String name) {
         return SUITES_BY_NAME.get(name);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CipherSuite getByCode(byte b1, byte b2) {
         int i1 = b1 & 0xff;
         int i2 = b2 & 0xff;
@@ -255,6 +259,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CipherSuite getByCode(byte b1, byte b2, byte b3) {
         int i1 = b1 & 0xff;
         int i2 = b2 & 0xff;
@@ -288,13 +293,13 @@ public class CipherSuite {
     public boolean isAnonymous() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1470914953 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1470914953;
-        // ---------- Original Method ----------
-        //if (keyExchange == KEY_EXCHANGE_DH_anon
-                //|| keyExchange == KEY_EXCHANGE_DH_anon_EXPORT
-                //|| keyExchange == KEY_EXCHANGE_ECDH_anon) {
-            //return true;
-        //}
-        //return false;
+        
+        
+                
+                
+            
+        
+        
     }
 
     
@@ -303,6 +308,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] getSupportedCipherSuiteNames() {
         return SUPPORTED_CIPHER_SUITE_NAMES.clone();
     }
@@ -310,12 +316,12 @@ public class CipherSuite {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.755 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "42D2B7A65F9670D0062FB5C42367CA02")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1197030239 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1197030239 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1197030239 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_1197030239.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1197030239.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1197030239;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
@@ -323,31 +329,32 @@ public class CipherSuite {
     public byte[] toBytes() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_202849441 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_202849441;
-        // ---------- Original Method ----------
-        //return cipherSuiteCode;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.756 -0400", hash_original_method = "D4E6F2D9338FE775902AE34CF280ED17", hash_generated_method = "A05F9CF64E82A6C255543AE1C17E121B")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1276719578 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1276719578 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1276719578 = name + ": " + cipherSuiteCode[0] + " " + cipherSuiteCode[1];
-        varB4EAC82CA7396A68D541C85D26508E83_1276719578.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1276719578.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1276719578;
-        // ---------- Original Method ----------
-        //return name + ": " + cipherSuiteCode[0] + " " + cipherSuiteCode[1];
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.756 -0400", hash_original_method = "7D208669D7EDDA60D0FD344147D9AAD6", hash_generated_method = "B52BAB92A1A1AA8E6890599D267F8294")
     public String getBulkEncryptionAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_991485250 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_991485250 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_991485250 = cipherName;
-        varB4EAC82CA7396A68D541C85D26508E83_991485250.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_991485250.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_991485250;
-        // ---------- Original Method ----------
-        //return cipherName;
+        
+        
     }
 
     
@@ -355,30 +362,30 @@ public class CipherSuite {
     public int getBlockSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1760284684 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1760284684;
-        // ---------- Original Method ----------
-        //return blockSize;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.757 -0400", hash_original_method = "58CBEDAB9C64FBF2F046D83798145AD9", hash_generated_method = "C3B2EBB9F656E27D2650C36257123436")
     public String getHmacName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_303817713 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_303817713 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_303817713 = hmacName;
-        varB4EAC82CA7396A68D541C85D26508E83_303817713.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_303817713.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_303817713;
-        // ---------- Original Method ----------
-        //return hmacName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.757 -0400", hash_original_method = "D391A3C678BDD6A89326831F4F051E38", hash_generated_method = "4413062CF177536E9B28E81758C16007")
     public String getHashName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2020559691 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2020559691 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2020559691 = hashName;
-        varB4EAC82CA7396A68D541C85D26508E83_2020559691.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2020559691.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2020559691;
-        // ---------- Original Method ----------
-        //return hashName;
+        
+        
     }
 
     
@@ -386,8 +393,8 @@ public class CipherSuite {
     public int getMACLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_697612875 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_697612875;
-        // ---------- Original Method ----------
-        //return hashSize;
+        
+        
     }
 
     
@@ -395,58 +402,59 @@ public class CipherSuite {
     public boolean isExportable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1639167809 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1639167809;
-        // ---------- Original Method ----------
-        //return isExportable;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.758 -0400", hash_original_method = "936867E36B0EB6E36D3CC4941D208DF5", hash_generated_method = "5F74B0C28F3AD00F72F86B87FB4BD0FC")
     public String getServerKeyType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1523489261 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1687333340 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_449013259 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_547057987 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_743648457 = null; //Variable for return #5
-        //Begin case KEY_EXCHANGE_DHE_RSA KEY_EXCHANGE_DHE_RSA_EXPORT KEY_EXCHANGE_ECDHE_RSA KEY_EXCHANGE_RSA KEY_EXCHANGE_RSA_EXPORT 
+        String varB4EAC82CA7396A68D541C85D26508E83_1523489261 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1687333340 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_449013259 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_547057987 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_743648457 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1523489261 = KEY_TYPE_RSA;
-        //End case KEY_EXCHANGE_DHE_RSA KEY_EXCHANGE_DHE_RSA_EXPORT KEY_EXCHANGE_ECDHE_RSA KEY_EXCHANGE_RSA KEY_EXCHANGE_RSA_EXPORT 
-        //Begin case KEY_EXCHANGE_DHE_DSS KEY_EXCHANGE_DHE_DSS_EXPORT 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1687333340 = KEY_TYPE_DSA;
-        //End case KEY_EXCHANGE_DHE_DSS KEY_EXCHANGE_DHE_DSS_EXPORT 
-        //Begin case KEY_EXCHANGE_ECDH_ECDSA KEY_EXCHANGE_ECDHE_ECDSA 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_449013259 = KEY_TYPE_EC_EC;
-        //End case KEY_EXCHANGE_ECDH_ECDSA KEY_EXCHANGE_ECDHE_ECDSA 
-        //Begin case KEY_EXCHANGE_ECDH_RSA 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_547057987 = KEY_TYPE_EC_RSA;
-        //End case KEY_EXCHANGE_ECDH_RSA 
-        //Begin case KEY_EXCHANGE_DH_anon KEY_EXCHANGE_DH_anon_EXPORT KEY_EXCHANGE_ECDH_anon 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_743648457 = null;
-        //End case KEY_EXCHANGE_DH_anon KEY_EXCHANGE_DH_anon_EXPORT KEY_EXCHANGE_ECDH_anon 
-        //Begin case default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Unknown key type for key exchange " + keyExchange);
-        //End case default 
-        String varA7E53CE21691AB073D9660D615818899_327206718; //Final return value
+        
+        String varA7E53CE21691AB073D9660D615818899_327206718; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_327206718 = varB4EAC82CA7396A68D541C85D26508E83_1523489261;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_327206718 = varB4EAC82CA7396A68D541C85D26508E83_1687333340;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_327206718 = varB4EAC82CA7396A68D541C85D26508E83_449013259;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_327206718 = varB4EAC82CA7396A68D541C85D26508E83_547057987;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_327206718 = varB4EAC82CA7396A68D541C85D26508E83_743648457;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_327206718.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_327206718.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_327206718;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -472,82 +480,83 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.759 -0400", hash_original_method = "0C964AFB9ED36BE0A1810A2A5E5F4637", hash_generated_method = "4A2179F053146BAF9CDAB0AE1F94E4EC")
     public String getAuthType(boolean emphemeral) {
-        String varB4EAC82CA7396A68D541C85D26508E83_836410025 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1895484221 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_52378062 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_2105992719 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_2130438437 = null; //Variable for return #5
-        String varB4EAC82CA7396A68D541C85D26508E83_1504104008 = null; //Variable for return #6
-        String varB4EAC82CA7396A68D541C85D26508E83_1125486053 = null; //Variable for return #7
-        String varB4EAC82CA7396A68D541C85D26508E83_1158092242 = null; //Variable for return #8
-        String varB4EAC82CA7396A68D541C85D26508E83_293804369 = null; //Variable for return #9
-        //Begin case KEY_EXCHANGE_RSA 
+        String varB4EAC82CA7396A68D541C85D26508E83_836410025 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1895484221 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_52378062 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2105992719 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2130438437 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1504104008 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1125486053 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1158092242 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_293804369 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_836410025 = AUTH_TYPE_RSA;
-        //End case KEY_EXCHANGE_RSA 
-        //Begin case KEY_EXCHANGE_RSA_EXPORT 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1895484221 = emphemeral ? AUTH_TYPE_RSA_EXPORT : AUTH_TYPE_RSA;
-        //End case KEY_EXCHANGE_RSA_EXPORT 
-        //Begin case KEY_EXCHANGE_DHE_DSS KEY_EXCHANGE_DHE_DSS_EXPORT 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_52378062 = AUTH_TYPE_DHE_DSS;
-        //End case KEY_EXCHANGE_DHE_DSS KEY_EXCHANGE_DHE_DSS_EXPORT 
-        //Begin case KEY_EXCHANGE_DHE_RSA KEY_EXCHANGE_DHE_RSA_EXPORT 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_2105992719 = AUTH_TYPE_DHE_RSA;
-        //End case KEY_EXCHANGE_DHE_RSA KEY_EXCHANGE_DHE_RSA_EXPORT 
-        //Begin case KEY_EXCHANGE_ECDH_ECDSA 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_2130438437 = AUTH_TYPE_ECDH_ECDSA;
-        //End case KEY_EXCHANGE_ECDH_ECDSA 
-        //Begin case KEY_EXCHANGE_ECDHE_ECDSA 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1504104008 = AUTH_TYPE_ECDHE_ECDSA;
-        //End case KEY_EXCHANGE_ECDHE_ECDSA 
-        //Begin case KEY_EXCHANGE_ECDH_RSA 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1125486053 = AUTH_TYPE_ECDH_RSA;
-        //End case KEY_EXCHANGE_ECDH_RSA 
-        //Begin case KEY_EXCHANGE_ECDHE_RSA 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1158092242 = AUTH_TYPE_ECDHE_RSA;
-        //End case KEY_EXCHANGE_ECDHE_RSA 
-        //Begin case KEY_EXCHANGE_DH_anon KEY_EXCHANGE_DH_anon_EXPORT KEY_EXCHANGE_ECDH_anon 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_293804369 = null;
-        //End case KEY_EXCHANGE_DH_anon KEY_EXCHANGE_DH_anon_EXPORT KEY_EXCHANGE_ECDH_anon 
-        //Begin case default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Unknown auth type for key exchange " + keyExchange);
-        //End case default 
+        
         addTaint(emphemeral);
-        String varA7E53CE21691AB073D9660D615818899_230609192; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_230609192; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_230609192 = varB4EAC82CA7396A68D541C85D26508E83_836410025;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_230609192 = varB4EAC82CA7396A68D541C85D26508E83_1895484221;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_230609192 = varB4EAC82CA7396A68D541C85D26508E83_52378062;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_230609192 = varB4EAC82CA7396A68D541C85D26508E83_2105992719;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_230609192 = varB4EAC82CA7396A68D541C85D26508E83_2130438437;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_230609192 = varB4EAC82CA7396A68D541C85D26508E83_1504104008;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_230609192 = varB4EAC82CA7396A68D541C85D26508E83_1125486053;
                 break;
-            case 8: //Assign result for return ordinal #8
+            case 8: 
                 varA7E53CE21691AB073D9660D615818899_230609192 = varB4EAC82CA7396A68D541C85D26508E83_1158092242;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_230609192 = varB4EAC82CA7396A68D541C85D26508E83_293804369;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_230609192.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_230609192.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_230609192;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

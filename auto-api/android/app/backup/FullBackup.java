@@ -1,11 +1,11 @@
 package android.app.backup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -24,7 +24,7 @@ public class FullBackup {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.569 -0400", hash_original_method = "E56D2C5902E2E32DC49936A701F181C3", hash_generated_method = "E56D2C5902E2E32DC49936A701F181C3")
     public FullBackup ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -34,6 +34,7 @@ public class FullBackup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public void restoreFile(ParcelFileDescriptor data,
             long size, int type, long mode, long mtime, File outFile) throws IOException {
         if (type == BackupAgent.TYPE_DIRECTORY) {

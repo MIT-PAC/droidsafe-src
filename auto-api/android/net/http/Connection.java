@@ -1,11 +1,11 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.SystemClock;
@@ -62,26 +62,27 @@ abstract class Connection {
         mRequestFeeder = requestFeeder;
         mCanPersist = false;
         mHttpContext = new BasicHttpContext(null);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mHost = host;
-        //mRequestFeeder = requestFeeder;
-        //mCanPersist = false;
-        //mHttpContext = new BasicHttpContext(null);
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.738 -0400", hash_original_method = "9B5E41A5FF20333698838F3F6DF6BCD6", hash_generated_method = "89D3868FA6362532F4470FABC20B30C2")
      HttpHost getHost() {
-        HttpHost varB4EAC82CA7396A68D541C85D26508E83_641425320 = null; //Variable for return #1
+        HttpHost varB4EAC82CA7396A68D541C85D26508E83_641425320 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_641425320 = mHost;
-        varB4EAC82CA7396A68D541C85D26508E83_641425320.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_641425320.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_641425320;
-        // ---------- Original Method ----------
-        //return mHost;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Connection getConnection(
             Context context, HttpHost host, HttpHost proxy,
             RequestFeeder requestFeeder) {
@@ -94,12 +95,12 @@ abstract class Connection {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.739 -0400", hash_original_method = "7F448377575EC929DDEDD2BF1EB435C4", hash_generated_method = "FFD8F74B71756455FA9B9A1BCF38AADD")
      SslCertificate getCertificate() {
-        SslCertificate varB4EAC82CA7396A68D541C85D26508E83_83625497 = null; //Variable for return #1
+        SslCertificate varB4EAC82CA7396A68D541C85D26508E83_83625497 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_83625497 = mCertificate;
-        varB4EAC82CA7396A68D541C85D26508E83_83625497.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_83625497.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_83625497;
-        // ---------- Original Method ----------
-        //return mCertificate;
+        
+        
     }
 
     
@@ -109,11 +110,11 @@ abstract class Connection {
         closeConnection();
         HttpLog.v(
             "Connection.cancel(): connection closed " + mHost);
-        // ---------- Original Method ----------
-        //mActive = STATE_CANCEL_REQUESTED;
-        //closeConnection();
-        //if (HttpLog.LOGV) HttpLog.v(
-            //"Connection.cancel(): connection closed " + mHost);
+        
+        
+        
+        
+            
     }
 
     
@@ -134,36 +135,36 @@ abstract class Connection {
                 try 
                 {
                     Thread.sleep(100);
-                } //End block
+                } 
                 catch (InterruptedException x)
                 { }
                 mActive = STATE_NORMAL;
-            } //End block
-            //Begin case SEND 
+            } 
+            
             {
                 {
                     boolean varF6446B26928F500236FEA2DA96BA2177_300691850 = (pipe.size() == maxPipe);
                     {
                         state = READ;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     req = mRequestFeeder.getRequest(mHost);
-                } //End block
+                } 
                 {
                     req = firstRequest;
                     firstRequest = null;
-                } //End block
+                } 
                 {
                     state = DRAIN;
-                } //End block
+                } 
                 req.setConnection(this);
                 {
                     HttpLog.v(
                                 "processRequests(): skipping cancelled request "
                                 + req);
                     req.complete();
-                } //End block
+                } 
                 {
                     boolean var363D9D2F0E89C11F47781F945C0D91C8_713616688 = (mHttpClientConnection == null ||
                         !mHttpClientConnection.isOpen());
@@ -172,78 +173,78 @@ abstract class Connection {
                             boolean var3B9848892C343394B2F8D5F96B18C3C5_1668950765 = (!openHttpConnection(req));
                             {
                                 state = DONE;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 req.mEventHandler.certificate(mCertificate);
                 try 
                 {
                     req.sendRequest(mHttpClientConnection);
-                } //End block
+                } 
                 catch (HttpException e)
                 {
                     exception = e;
                     error = EventHandler.ERROR;
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     exception = e;
                     error = EventHandler.ERROR_IO;
-                } //End block
+                } 
                 catch (IllegalStateException e)
                 {
                     exception = e;
                     error = EventHandler.ERROR_IO;
-                } //End block
+                } 
                 {
                     {
                         boolean var3550BE76A96DD86D49D0E4DF58B240F3_1033649060 = (httpFailure(req, error, exception) &&
                             !req.mCancelled);
                         {
                             pipe.addLast(req);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     exception = null;
                     state = clearPipe(pipe) ? DONE : SEND;
                     minPipe = maxPipe = 1;
-                } //End block
+                } 
                 pipe.addLast(req);
                 state = READ;
-            } //End block
-            //End case SEND 
-            //Begin case DRAIN READ 
+            } 
+            
+            
             {
                 empty = !mRequestFeeder.haveRequest(mHost);
                 int pipeSize = pipe.size();
                 {
                     state = SEND;
-                } //End block
+                } 
                 {
                     state = empty ? DONE : SEND;
-                } //End block
+                } 
                 req = (Request)pipe.removeFirst();
                 HttpLog.v(
                             "processRequests() reading " + req);
                 try 
                 {
                     req.readResponse(mHttpClientConnection);
-                } //End block
+                } 
                 catch (ParseException e)
                 {
                     exception = e;
                     error = EventHandler.ERROR_IO;
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     exception = e;
                     error = EventHandler.ERROR_IO;
-                } //End block
+                } 
                 catch (IllegalStateException e)
                 {
                     exception = e;
                     error = EventHandler.ERROR_IO;
-                } //End block
+                } 
                 {
                     {
                         boolean var3550BE76A96DD86D49D0E4DF58B240F3_1663299740 = (httpFailure(req, error, exception) &&
@@ -251,11 +252,11 @@ abstract class Connection {
                         {
                             req.reset();
                             pipe.addFirst(req);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     exception = null;
                     mCanPersist = false;
-                } //End block
+                } 
                 {
                     HttpLog.v(
                                 "processRequests(): no persist, closing " +
@@ -265,16 +266,17 @@ abstract class Connection {
                     clearPipe(pipe);
                     minPipe = maxPipe = 1;
                     state = SEND;
-                } //End block
-            } //End block
-            //End case DRAIN READ 
-        } //End block
+                } 
+            } 
+            
+        } 
         addTaint(firstRequest.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.742 -0400", hash_original_method = "3DB5627BDFAF8C06A0CDDAD2458FF1F0", hash_generated_method = "723D4325BE86673098C889DB598546CA")
     private boolean clearPipe(LinkedList<Request> pipe) {
         boolean empty = true;
@@ -290,32 +292,33 @@ abstract class Connection {
                         "clearPipe() adding back " + mHost + " " + tReq);
                     mRequestFeeder.requeueRequest(tReq);
                     empty = false;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             empty = !mRequestFeeder.haveRequest(mHost);
-        } //End block
+        } 
         addTaint(pipe.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_574185422 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_574185422;
-        // ---------- Original Method ----------
-        //boolean empty = true;
-        //if (HttpLog.LOGV) HttpLog.v(
-                //"Connection.clearPipe(): clearing pipe " + pipe.size());
-        //synchronized (mRequestFeeder) {
-            //Request tReq;
-            //while (!pipe.isEmpty()) {
-                //tReq = (Request)pipe.removeLast();
-                //if (HttpLog.LOGV) HttpLog.v(
-                        //"clearPipe() adding back " + mHost + " " + tReq);
-                //mRequestFeeder.requeueRequest(tReq);
-                //empty = false;
-            //}
-            //if (empty) empty = !mRequestFeeder.haveRequest(mHost);
-        //}
-        //return empty;
+        
+        
+        
+                
+        
+            
+            
+                
+                
+                        
+                
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.743 -0400", hash_original_method = "65B4C91B53E686F7A0B5A125142FC3C0", hash_generated_method = "FFA1F6B83C4E1CF4EFED0F8E874797E9")
     private boolean openHttpConnection(Request req) {
         long now = SystemClock.uptimeMillis();
@@ -329,28 +332,28 @@ abstract class Connection {
                 mHttpClientConnection.setSocketTimeout(SOCKET_TIMEOUT);
                 mHttpContext.setAttribute(HTTP_CONNECTION,
                                           mHttpClientConnection);
-            } //End block
+            } 
             {
                 req.mFailCount = RETRY_REQUEST_LIMIT;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (UnknownHostException e)
         {
             HttpLog.v("Failed to open connection");
             error = EventHandler.ERROR_LOOKUP;
             exception = e;
-        } //End block
+        } 
         catch (IllegalArgumentException e)
         {
             HttpLog.v("Illegal argument exception");
             error = EventHandler.ERROR_CONNECT;
             req.mFailCount = RETRY_REQUEST_LIMIT;
             exception = e;
-        } //End block
+        } 
         catch (SSLConnectionClosedByUserException e)
         {
             req.mFailCount = RETRY_REQUEST_LIMIT;
-        } //End block
+        } 
         catch (SSLHandshakeException e)
         {
             req.mFailCount = RETRY_REQUEST_LIMIT;
@@ -358,32 +361,33 @@ abstract class Connection {
                     "SSL exception performing handshake");
             error = EventHandler.ERROR_FAILED_SSL_HANDSHAKE;
             exception = e;
-        } //End block
+        } 
         catch (IOException e)
         {
             error = EventHandler.ERROR_CONNECT;
             exception = e;
-        } //End block
+        } 
         {
             long now2 = SystemClock.uptimeMillis();
             HttpLog.v("Connection.openHttpConnection() " +
                       (now2 - now) + " " + mHost);
-        } //End block
+        } 
         {
             {
                 mRequestFeeder.requeueRequest(req);
-            } //End block
+            } 
             {
                 httpFailure(req, error, exception);
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1482889439 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1482889439;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.743 -0400", hash_original_method = "6EC91A36E40ABAF43D521C6CD9682246", hash_generated_method = "59728BB8078BB6D886602CF732308467")
     private boolean httpFailure(Request req, int errorId, Exception e) {
         boolean ret = true;
@@ -395,14 +399,14 @@ abstract class Connection {
             String error;
             {
                 error = ErrorStrings.getString(errorId, mContext);
-            } //End block
+            } 
             {
                 Throwable cause = e.getCause();
                 error = cause != null ? cause.toString() : e.getMessage();
-            } //End block
+            } 
             req.mEventHandler.error(errorId, error);
             req.complete();
-        } //End block
+        } 
         closeConnection();
         mHttpContext.removeAttribute(HTTP_CONNECTION);
         addTaint(req.getTaint());
@@ -410,37 +414,37 @@ abstract class Connection {
         addTaint(e.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1418759221 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1418759221;
-        // ---------- Original Method ----------
-        //boolean ret = true;
-        //if (HttpLog.LOGV) HttpLog.v(
-                //"httpFailure() ******* " + e + " count " + req.mFailCount +
-                //" " + mHost + " " + req.getUri());
-        //if (++req.mFailCount >= RETRY_REQUEST_LIMIT) {
-            //ret = false;
-            //String error;
-            //if (errorId < 0) {
-                //error = ErrorStrings.getString(errorId, mContext);
-            //} else {
-                //Throwable cause = e.getCause();
-                //error = cause != null ? cause.toString() : e.getMessage();
-            //}
-            //req.mEventHandler.error(errorId, error);
-            //req.complete();
-        //}
-        //closeConnection();
-        //mHttpContext.removeAttribute(HTTP_CONNECTION);
-        //return ret;
+        
+        
+        
+                
+                
+        
+            
+            
+            
+                
+            
+                
+                
+            
+            
+            
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.744 -0400", hash_original_method = "510B2315D285A4B8D2701F50BEED692F", hash_generated_method = "6D38A5BAF759D5C74E4EE325143BEC49")
      HttpContext getHttpContext() {
-        HttpContext varB4EAC82CA7396A68D541C85D26508E83_2137880008 = null; //Variable for return #1
+        HttpContext varB4EAC82CA7396A68D541C85D26508E83_2137880008 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2137880008 = mHttpContext;
-        varB4EAC82CA7396A68D541C85D26508E83_2137880008.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2137880008.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2137880008;
-        // ---------- Original Method ----------
-        //return mHttpContext;
+        
+        
     }
 
     
@@ -451,17 +455,17 @@ abstract class Connection {
             context.getAttribute(ExecutionContext.HTTP_CONNECTION);
         {
             boolean var3F09B4DA4021A00B0E0E85A7A98C2EF2_1121983867 = (conn != null && !conn.isOpen());
-        } //End collapsed parenthetic
+        } 
         {
             {
                 boolean varD4D0AAD58097CCD39F1ACA1D9158C81F_1819597689 = (entity.getContentLength() < 0);
                 {
                     {
                         boolean varC22E6EAF1973D4EF188692D613BFFF4F_1518402378 = (!entity.isChunked() || ver.lessEquals(HttpVersion.HTTP_1_0));
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         boolean varE7C0AF165CB1162AB0C6BED102DEE29E_265577350 = (!ver.lessEquals(HttpVersion.HTTP_1_0));
         addTaint(entity.getTaint());
         addTaint(ver.getTaint());
@@ -469,40 +473,40 @@ abstract class Connection {
         addTaint(context.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_977421057 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_977421057;
-        // ---------- Original Method ----------
-        //org.apache.http.HttpConnection conn = (org.apache.http.HttpConnection)
-            //context.getAttribute(ExecutionContext.HTTP_CONNECTION);
-        //if (conn != null && !conn.isOpen())
-            //return false;
-        //if (entity != null) {
-            //if (entity.getContentLength() < 0) {
-                //if (!entity.isChunked() || ver.lessEquals(HttpVersion.HTTP_1_0)) {
-                    //return false;
-                //}
-            //}
-        //}
-        //if (connType == Headers.CONN_CLOSE) {
-            //return false;
-        //} else if (connType == Headers.CONN_KEEP_ALIVE) {
-            //return true;
-        //}
-        //return !ver.lessEquals(HttpVersion.HTTP_1_0);
+        
+        
+            
+        
+            
+        
+            
+                
+                    
+                
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.745 -0400", hash_original_method = "30E271C8B4BA77F90D768E6DAD0368A8", hash_generated_method = "4D4E5718D6623C41E8E53EA293E55F7E")
      void setCanPersist(HttpEntity entity, ProtocolVersion ver, int connType) {
         mCanPersist = keepAlive(entity, ver, connType, mHttpContext);
-        // ---------- Original Method ----------
-        //mCanPersist = keepAlive(entity, ver, connType, mHttpContext);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.745 -0400", hash_original_method = "948404D3184D15107ABD2526F5DFBFE0", hash_generated_method = "C987B1689B3761BB7765A463FADF77BA")
      void setCanPersist(boolean canPersist) {
         mCanPersist = canPersist;
-        // ---------- Original Method ----------
-        //mCanPersist = canPersist;
+        
+        
     }
 
     
@@ -510,8 +514,8 @@ abstract class Connection {
      boolean getCanPersist() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2008601195 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2008601195;
-        // ---------- Original Method ----------
-        //return mCanPersist;
+        
+        
     }
 
     
@@ -524,14 +528,15 @@ abstract class Connection {
     abstract AndroidHttpClientConnection openConnection(Request req) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.747 -0400", hash_original_method = "AD69CA65EB98EE93EFEEFD66CD2BA041", hash_generated_method = "79E3055D5F583CAE1C62962CBAAB568F")
     public synchronized String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_362946216 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_362946216 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_362946216 = mHost.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_362946216.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_362946216.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_362946216;
-        // ---------- Original Method ----------
-        //return mHost.toString();
+        
+        
     }
 
     
@@ -540,9 +545,9 @@ abstract class Connection {
         mBuf = new byte[8192];
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1624127781 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1624127781;
-        // ---------- Original Method ----------
-        //if (mBuf == null) mBuf = new byte[8192];
-        //return mBuf;
+        
+        
+        
     }
 
     

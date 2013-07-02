@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -19,16 +19,16 @@ public class CertificateVerify extends Message {
         {
             fatalAlert(AlertProtocol.INTERNAL_ERROR,
                     "INTERNAL ERROR: incorrect certificate verify hash");
-        } //End block
+        } 
         this.signedHash = hash;
         length = hash.length + 2;
-        // ---------- Original Method ----------
-        //if (hash == null || hash.length == 0) {
-            //fatalAlert(AlertProtocol.INTERNAL_ERROR,
-                    //"INTERNAL ERROR: incorrect certificate verify hash");
-        //}
-        //this.signedHash = hash;
-        //length = hash.length + 2;
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
@@ -37,46 +37,47 @@ public class CertificateVerify extends Message {
         {
             fatalAlert(AlertProtocol.DECODE_ERROR,
                     "DECODE ERROR: incorrect CertificateVerify");
-        } //End block
+        } 
         {
             {
                 boolean varE515780712A2A8C4B350FB23E27F935E_1826976075 = (in.readUint16() != length - 2);
                 {
                     fatalAlert(AlertProtocol.DECODE_ERROR,
                         "DECODE ERROR: incorrect CertificateVerify");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             signedHash = in.read(length -2);
-        } //End block
+        } 
         this.length = length;
-        // ---------- Original Method ----------
-        //if (length == 0) {
-            //fatalAlert(AlertProtocol.DECODE_ERROR,
-                    //"DECODE ERROR: incorrect CertificateVerify");
-        //} else {
-            //if (in.readUint16() != length - 2) {
-                //fatalAlert(AlertProtocol.DECODE_ERROR,
-                        //"DECODE ERROR: incorrect CertificateVerify");
-            //}
-            //signedHash = in.read(length -2);
-        //}
-        //this.length = length;
+        
+        
+            
+                    
+        
+            
+                
+                        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.696 -0400", hash_original_method = "8645B529D351D3837595463E8D8CA061", hash_generated_method = "F70AA12CE7564D027A14B98C1CEF61DA")
     @Override
     public void send(HandshakeIODataStream out) {
         {
             out.writeUint16(signedHash.length);
             out.write(signedHash);
-        } //End block
+        } 
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //if (signedHash.length != 0) {
-            //out.writeUint16(signedHash.length);
-            //out.write(signedHash);
-        //}
+        
+        
+            
+            
+        
     }
 
     
@@ -85,8 +86,8 @@ public class CertificateVerify extends Message {
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1462321142 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1462321142;
-        // ---------- Original Method ----------
-        //return Handshake.CERTIFICATE_VERIFY;
+        
+        
     }
 
     

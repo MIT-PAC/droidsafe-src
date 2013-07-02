@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header.extensions;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.javax.sip.header.*;
@@ -22,7 +22,7 @@ public class Join extends ParametersHeader implements ExtensionHeader, JoinHeade
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.003 -0400", hash_original_method = "87F4B3791A773FA2D819A20B11BB86DF", hash_generated_method = "23B37B63F5C24397936779F145AE090F")
     public  Join() {
         super(NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,15 +30,16 @@ public class Join extends ParametersHeader implements ExtensionHeader, JoinHeade
     public  Join(String callId) throws IllegalArgumentException {
         super(NAME);
         this.callIdentifier = new CallIdentifier(callId);
-        // ---------- Original Method ----------
-        //this.callIdentifier = new CallIdentifier(callId);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.004 -0400", hash_original_method = "62D967C94A5AE3381329492B03B8E183", hash_generated_method = "E7B1E3CFF2EB6BF7FFE1FA8937533E53")
     public String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1707755602 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1942246730 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1707755602 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1942246730 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1707755602 = null;
         {
             String retVal = callId;
@@ -46,198 +47,207 @@ public class Join extends ParametersHeader implements ExtensionHeader, JoinHeade
                 boolean var68D5E9BF75957AD09F9F4AEE7444A527_911522222 = (!parameters.isEmpty());
                 {
                     retVal += SEMICOLON + parameters.encode();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1942246730 = retVal;
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_2019561638; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_2019561638; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2019561638 = varB4EAC82CA7396A68D541C85D26508E83_1707755602;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2019561638 = varB4EAC82CA7396A68D541C85D26508E83_1942246730;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2019561638.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2019561638.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2019561638;
-        // ---------- Original Method ----------
-        //if (callId == null)
-            //return null;
-        //else {
-            //String retVal = callId;
-            //if (!parameters.isEmpty()) {
-                //retVal += SEMICOLON + parameters.encode();
-            //}
-            //return retVal;
-        //}
+        
+        
+            
+        
+            
+            
+                
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.005 -0400", hash_original_method = "EEE15C2182CFD7EA9CBDBFC60D7CEB59", hash_generated_method = "5C5092CE414EAA1B23E74DA362D5EB48")
     public String getCallId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_447799118 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_447799118 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_447799118 = callId;
-        varB4EAC82CA7396A68D541C85D26508E83_447799118.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_447799118.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_447799118;
-        // ---------- Original Method ----------
-        //return callId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.005 -0400", hash_original_method = "B5581A57A5C5C2AEBCF8449C03245AE9", hash_generated_method = "368DBD28BA71FA13152B5B68AFFECD14")
     public CallIdentifier getCallIdentifer() {
-        CallIdentifier varB4EAC82CA7396A68D541C85D26508E83_56064719 = null; //Variable for return #1
+        CallIdentifier varB4EAC82CA7396A68D541C85D26508E83_56064719 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_56064719 = callIdentifier;
-        varB4EAC82CA7396A68D541C85D26508E83_56064719.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_56064719.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_56064719;
-        // ---------- Original Method ----------
-        //return callIdentifier;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.006 -0400", hash_original_method = "18B0F6F776471BD79AF2D65BB23B3FDC", hash_generated_method = "6992A879D69ED0B331E4999AE9EC11CE")
     public void setCallId(String cid) {
         callId = cid;
-        // ---------- Original Method ----------
-        //callId = cid;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.006 -0400", hash_original_method = "76D6B9E3FB2D7381056714796D175A19", hash_generated_method = "BC500CAB746BFEA9CABDC759AB4FDB6D")
     public void setCallIdentifier(CallIdentifier cid) {
         callIdentifier = cid;
-        // ---------- Original Method ----------
-        //callIdentifier = cid;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.007 -0400", hash_original_method = "B211B6A9EDFBB72196EA1C1405552E2E", hash_generated_method = "74CDBD7E4A67C909668942E5DF1F8D95")
     public String getToTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_588929834 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_854669294 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_588929834 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_854669294 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_588929834 = null;
         varB4EAC82CA7396A68D541C85D26508E83_854669294 = getParameter(ParameterNames.TO_TAG);
-        String varA7E53CE21691AB073D9660D615818899_1744319495; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1744319495; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1744319495 = varB4EAC82CA7396A68D541C85D26508E83_588929834;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1744319495 = varB4EAC82CA7396A68D541C85D26508E83_854669294;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1744319495.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1744319495.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1744319495;
-        // ---------- Original Method ----------
-        //if (parameters == null)
-            //return null;
-        //return getParameter(ParameterNames.TO_TAG);
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.008 -0400", hash_original_method = "11B74AD04734B3C61566E9250AEBA382", hash_generated_method = "76D98031AA87EA3B7086F96BB810A95B")
     public void setToTag(String t) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null tag ");
         {
             boolean var545A2558F1CD00AC700C1719D675DFB3_1415433901 = (t.trim().equals(""));
             if (DroidSafeAndroidRuntime.control) throw new ParseException("bad tag", 0);
-        } //End collapsed parenthetic
+        } 
         this.setParameter(ParameterNames.TO_TAG, t);
         addTaint(t.getTaint());
-        // ---------- Original Method ----------
-        //if (t == null)
-            //throw new NullPointerException("null tag ");
-        //else if (t.trim().equals(""))
-            //throw new ParseException("bad tag", 0);
-        //this.setParameter(ParameterNames.TO_TAG, t);
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.010 -0400", hash_original_method = "8119C72F0478CFCCBAF29A53C28985A0", hash_generated_method = "BEB54C2B3F4DD077E8CAC0EC7C529079")
     public boolean hasToTag() {
         boolean var98F1538999349B56334E8D4578BD3F6B_1123746819 = (hasParameter(ParameterNames.TO_TAG));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_378057576 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_378057576;
-        // ---------- Original Method ----------
-        //return hasParameter(ParameterNames.TO_TAG);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.011 -0400", hash_original_method = "C0C59EBD9F5AF1603D81C107186D4E66", hash_generated_method = "8F5C24D1B4E10E96F090DB388EB7CB97")
     public void removeToTag() {
         parameters.delete(ParameterNames.TO_TAG);
-        // ---------- Original Method ----------
-        //parameters.delete(ParameterNames.TO_TAG);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.012 -0400", hash_original_method = "31D6F2518E32939467AAA449E3B07BF0", hash_generated_method = "55E17DDCBB100BB80D53BFF61519425A")
     public String getFromTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1205089111 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_849091438 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1205089111 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_849091438 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1205089111 = null;
         varB4EAC82CA7396A68D541C85D26508E83_849091438 = getParameter(ParameterNames.FROM_TAG);
-        String varA7E53CE21691AB073D9660D615818899_219113166; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_219113166; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_219113166 = varB4EAC82CA7396A68D541C85D26508E83_1205089111;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_219113166 = varB4EAC82CA7396A68D541C85D26508E83_849091438;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_219113166.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_219113166.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_219113166;
-        // ---------- Original Method ----------
-        //if (parameters == null)
-            //return null;
-        //return getParameter(ParameterNames.FROM_TAG);
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.013 -0400", hash_original_method = "06D289B84B93DB0101D64879F61C1049", hash_generated_method = "D4CD0C1A9CE16F48B7092EDECCA0BD33")
     public void setFromTag(String t) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null tag ");
         {
             boolean var545A2558F1CD00AC700C1719D675DFB3_935551639 = (t.trim().equals(""));
             if (DroidSafeAndroidRuntime.control) throw new ParseException("bad tag", 0);
-        } //End collapsed parenthetic
+        } 
         this.setParameter(ParameterNames.FROM_TAG, t);
         addTaint(t.getTaint());
-        // ---------- Original Method ----------
-        //if (t == null)
-            //throw new NullPointerException("null tag ");
-        //else if (t.trim().equals(""))
-            //throw new ParseException("bad tag", 0);
-        //this.setParameter(ParameterNames.FROM_TAG, t);
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.014 -0400", hash_original_method = "0268276F0AF2F185A8A983DF4EA54EFF", hash_generated_method = "8BB8CF37AECA46953A59ED8969809941")
     public boolean hasFromTag() {
         boolean var3E2433518F90E4E3614AF7C9562C82F0_1728801315 = (hasParameter(ParameterNames.FROM_TAG));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_880846444 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_880846444;
-        // ---------- Original Method ----------
-        //return hasParameter(ParameterNames.FROM_TAG);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.014 -0400", hash_original_method = "77DF4F38C27826586F02F5EEDFEC8C8D", hash_generated_method = "B61172F24259436FBA34D6DD3E3FE321")
     public void removeFromTag() {
         parameters.delete(ParameterNames.FROM_TAG);
-        // ---------- Original Method ----------
-        //parameters.delete(ParameterNames.FROM_TAG);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.014 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
     public void setValue(String value) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new ParseException(value,0);
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //throw new ParseException(value,0);
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -201,7 +201,7 @@ public class NumberPicker extends LinearLayout {
     public  NumberPicker(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -210,7 +210,7 @@ public class NumberPicker extends LinearLayout {
         this(context, attrs, R.attr.numberPickerStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -233,14 +233,14 @@ public class NumberPicker extends LinearLayout {
                 SIZE_UNSPECIFIED);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("minHeight > maxHeight");
-        } //End block
+        } 
         mMinWidth = attributesArray.getDimensionPixelSize(R.styleable.NumberPicker_minWidth,
                 SIZE_UNSPECIFIED);
         mMaxWidth = attributesArray.getDimensionPixelSize(R.styleable.NumberPicker_maxWidth,
                 SIZE_UNSPECIFIED);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("minWidth > maxWidth");
-        } //End block
+        } 
         mComputeMaxWidth = (mMaxWidth == Integer.MAX_VALUE);
         attributesArray.recycle();
         mShowInputControlsAnimimationDuration = getResources().getInteger(
@@ -285,31 +285,31 @@ public class NumberPicker extends LinearLayout {
         mInputText.setOnFocusChangeListener(new OnFocusChangeListener() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.115 -0400", hash_original_method = "78C9C9D108DFA9B840217E0D621D6794", hash_generated_method = "A4775DB8611C30621C0FB00D2AF7569B")
             public void onFocusChange(View v, boolean hasFocus) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 {
                     mInputText.selectAll();
                     InputMethodManager inputMethodManager = InputMethodManager.peekInstance();
                     {
                         inputMethodManager.showSoftInput(mInputText, 0);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     mInputText.setSelection(0, 0);
                     validateInputTextView(v);
-                } //End block
+                } 
                 addTaint(v.getTaint());
                 addTaint(hasFocus);
-                // ---------- Original Method ----------
-                //if (hasFocus) {
-                    //mInputText.selectAll();
-                    //InputMethodManager inputMethodManager = InputMethodManager.peekInstance();
-                    //if (inputMethodManager != null) {
-                        //inputMethodManager.showSoftInput(mInputText, 0);
-                    //}
-                //} else {
-                    //mInputText.setSelection(0, 0);
-                    //validateInputTextView(v);
-                //}
+                
+                
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                
             }
 });
         mInputText.setFilters(new InputFilter[] {
@@ -346,33 +346,33 @@ public class NumberPicker extends LinearLayout {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.117 -0400", hash_original_method = "189FC240B4143654008EFD2A47B5C1DA", hash_generated_method = "91FFA6ED549336EB5DC072FFF70C5A1C")
             @Override
             public void onAnimationEnd(Animator animation) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 {
                     setSelectorWheelState(SELECTOR_WHEEL_STATE_SMALL);
-                } //End block
+                } 
                 mCanceled = false;
                 addTaint(animation.getTaint());
-                // ---------- Original Method ----------
-                //if (!mCanceled) {
-                    //setSelectorWheelState(SELECTOR_WHEEL_STATE_SMALL);
-                //}
-                //mCanceled = false;
+                
+                
+                    
+                
+                
             }
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.117 -0400", hash_original_method = "9FA63CB44D9C62117F441F772E67C603", hash_generated_method = "34723F9DE7F4863520B64B8C194A47B4")
             @Override
             public void onAnimationCancel(Animator animation) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 {
                     boolean varB4912AC743221C357A119ADD97B4A7D5_1381944291 = (mShowInputControlsAnimator.isRunning());
                     {
                         mCanceled = true;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 addTaint(animation.getTaint());
-                // ---------- Original Method ----------
-                //if (mShowInputControlsAnimator.isRunning()) {
-                    //mCanceled = true;
-                //}
+                
+                
+                    
+                
             }
 });
         mFlingScroller = new Scroller(getContext(), null, true);
@@ -384,25 +384,25 @@ public class NumberPicker extends LinearLayout {
                 boolean varCFB3F7C345E12DBBCA9FF727129DE8BD_1450781996 = (isInEditMode());
                 {
                     setSelectorWheelState(SELECTOR_WHEEL_STATE_SMALL);
-                } //End block
+                } 
                 {
                     setSelectorWheelState(SELECTOR_WHEEL_STATE_LARGE);
                     hideInputControls();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.118 -0400", hash_original_method = "E727E2B4CEB86D0A1B38AD8650A5C905", hash_generated_method = "87D5E122DF3A3C8420344BA0C9020009")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int msrdWdth = getMeasuredWidth();
         final int msrdHght = getMeasuredHeight();
         final int inctBtnMsrdWdth = mIncrementButton.getMeasuredWidth();
@@ -428,21 +428,21 @@ public class NumberPicker extends LinearLayout {
             mScrollWheelAndFadingEdgesInitialized = true;
             initializeSelectorWheel();
             initializeFadingEdges();
-        } //End block
+        } 
         addTaint(changed);
         addTaint(left);
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.118 -0400", hash_original_method = "048719DA53F07F7F498A46C4561541BF", hash_generated_method = "A0903492C8DCB8CA5DA0EE25C775D27E")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int newWidthMeasureSpec = makeMeasureSpec(widthMeasureSpec, mMaxWidth);
         final int newHeightMeasureSpec = makeMeasureSpec(heightMeasureSpec, mMaxHeight);
         super.onMeasure(newWidthMeasureSpec, newHeightMeasureSpec);
@@ -453,46 +453,46 @@ public class NumberPicker extends LinearLayout {
         setMeasuredDimension(widthSize, heightSize);
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        //final int newWidthMeasureSpec = makeMeasureSpec(widthMeasureSpec, mMaxWidth);
-        //final int newHeightMeasureSpec = makeMeasureSpec(heightMeasureSpec, mMaxHeight);
-        //super.onMeasure(newWidthMeasureSpec, newHeightMeasureSpec);
-        //final int widthSize = resolveSizeAndStateRespectingMinSize(mMinWidth, getMeasuredWidth(),
-                //widthMeasureSpec);
-        //final int heightSize = resolveSizeAndStateRespectingMinSize(mMinHeight, getMeasuredHeight(),
-                //heightMeasureSpec);
-        //setMeasuredDimension(widthSize, heightSize);
+        
+        
+        
+        
+        
+                
+        
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.119 -0400", hash_original_method = "10C35B0DAD7657DB14B7F950A0414363", hash_generated_method = "2F89BBEF17040AFBEC1ECDEE314FCDF4")
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var79EF553F2736040AD024A5084BB63B1D_1451819123 = (!isEnabled() || !mFlingable);
-        } //End collapsed parenthetic
+        } 
         {
             Object var109A69337F68C2E78388A88D677709DA_2136336112 = (event.getActionMasked());
-            //Begin case MotionEvent.ACTION_DOWN 
+            
             mLastMotionEventY = mLastDownEventY = event.getY();
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             removeAllCallbacks();
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             mShowInputControlsAnimator.cancel();
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             mDimSelectorWheelAnimator.cancel();
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             mBeginEditOnUpEvent = false;
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             mAdjustScrollerOnUpEvent = true;
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             {
                 mSelectorWheelPaint.setAlpha(SELECTOR_WHEEL_BRIGHT_ALPHA);
                 boolean scrollersFinished = mFlingScroller.isFinished()
@@ -501,134 +501,134 @@ public class NumberPicker extends LinearLayout {
                     mFlingScroller.forceFinished(true);
                     mAdjustScroller.forceFinished(true);
                     onScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
-                } //End block
+                } 
                 mBeginEditOnUpEvent = scrollersFinished;
                 mAdjustScrollerOnUpEvent = true;
                 hideInputControls();
-            } //End block
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            } 
+            
+            
             {
                 boolean varF0BD0521FE1EE49E79BFF9F8B8B6846D_1583747833 = (isEventInVisibleViewHitRect(event, mIncrementButton)
                         || isEventInVisibleViewHitRect(event, mDecrementButton));
-            } //End collapsed parenthetic
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            } 
+            
+            
             mAdjustScrollerOnUpEvent = false;
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             setSelectorWheelState(SELECTOR_WHEEL_STATE_LARGE);
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             hideInputControls();
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_MOVE 
+            
+            
             float currentMoveY = event.getY();
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_MOVE 
+            
+            
             int deltaDownY = (int) Math.abs(currentMoveY - mLastDownEventY);
-            //End case MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_MOVE 
+            
+            
             {
                 mBeginEditOnUpEvent = false;
                 onScrollStateChange(OnScrollListener.SCROLL_STATE_TOUCH_SCROLL);
                 setSelectorWheelState(SELECTOR_WHEEL_STATE_LARGE);
                 hideInputControls();
-            } //End block
-            //End case MotionEvent.ACTION_MOVE 
-        } //End collapsed parenthetic
+            } 
+            
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1244620551 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1244620551;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.120 -0400", hash_original_method = "235D8E8A92689E68622E8E516F140226", hash_generated_method = "C4D7BCBBF05969B7CFA22012D1166DC6")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varC378F7D9F83769944CF2ACC662A4EAE3_1900646062 = (!isEnabled());
-        } //End collapsed parenthetic
+        } 
         {
             mVelocityTracker = VelocityTracker.obtain();
-        } //End block
+        } 
         mVelocityTracker.addMovement(ev);
         int action = ev.getActionMasked();
-        //Begin case MotionEvent.ACTION_MOVE 
+        
         float currentMoveY = ev.getY();
-        //End case MotionEvent.ACTION_MOVE 
-        //Begin case MotionEvent.ACTION_MOVE 
+        
+        
         {
             int deltaDownY = (int) Math.abs(currentMoveY - mLastDownEventY);
             {
                 mBeginEditOnUpEvent = false;
                 onScrollStateChange(OnScrollListener.SCROLL_STATE_TOUCH_SCROLL);
-            } //End block
-        } //End block
-        //End case MotionEvent.ACTION_MOVE 
-        //Begin case MotionEvent.ACTION_MOVE 
+            } 
+        } 
+        
+        
         int deltaMoveY = (int) (currentMoveY - mLastMotionEventY);
-        //End case MotionEvent.ACTION_MOVE 
-        //Begin case MotionEvent.ACTION_MOVE 
+        
+        
         scrollBy(0, deltaMoveY);
-        //End case MotionEvent.ACTION_MOVE 
-        //Begin case MotionEvent.ACTION_MOVE 
+        
+        
         invalidate();
-        //End case MotionEvent.ACTION_MOVE 
-        //Begin case MotionEvent.ACTION_MOVE 
+        
+        
         mLastMotionEventY = currentMoveY;
-        //End case MotionEvent.ACTION_MOVE 
-        //Begin case MotionEvent.ACTION_UP 
+        
+        
         {
             setSelectorWheelState(SELECTOR_WHEEL_STATE_SMALL);
             showInputControls(mShowInputControlsAnimimationDuration);
             mInputText.requestFocus();
-        } //End block
-        //End case MotionEvent.ACTION_UP 
-        //Begin case MotionEvent.ACTION_UP 
+        } 
+        
+        
         VelocityTracker velocityTracker = mVelocityTracker;
-        //End case MotionEvent.ACTION_UP 
-        //Begin case MotionEvent.ACTION_UP 
+        
+        
         velocityTracker.computeCurrentVelocity(1000, mMaximumFlingVelocity);
-        //End case MotionEvent.ACTION_UP 
-        //Begin case MotionEvent.ACTION_UP 
+        
+        
         int initialVelocity = (int) velocityTracker.getYVelocity();
-        //End case MotionEvent.ACTION_UP 
-        //Begin case MotionEvent.ACTION_UP 
+        
+        
         {
             boolean varC622ADAD4ADF3A4DF65ACA244434F6E6_903813476 = (Math.abs(initialVelocity) > mMinimumFlingVelocity);
             {
                 fling(initialVelocity);
                 onScrollStateChange(OnScrollListener.SCROLL_STATE_FLING);
-            } //End block
+            } 
             {
                 {
                     {
                         boolean var8A0A19577571338E4B9827E2FA748B92_1075463258 = (mFlingScroller.isFinished() && mAdjustScroller.isFinished());
                         {
                             postAdjustScrollerCommand(0);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     postAdjustScrollerCommand(SHOW_INPUT_CONTROLS_DELAY_MILLIS);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        //End case MotionEvent.ACTION_UP 
-        //Begin case MotionEvent.ACTION_UP 
+                } 
+            } 
+        } 
+        
+        
         mVelocityTracker.recycle();
-        //End case MotionEvent.ACTION_UP 
-        //Begin case MotionEvent.ACTION_UP 
+        
+        
         mVelocityTracker = null;
-        //End case MotionEvent.ACTION_UP 
+        
         addTaint(ev.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_435732250 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_435732250;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -636,34 +636,34 @@ public class NumberPicker extends LinearLayout {
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         final int action = event.getActionMasked();
-        //Begin case MotionEvent.ACTION_MOVE 
+        
         {
             removeAllCallbacks();
             forceCompleteChangeCurrentByOneViaScroll();
-        } //End block
-        //End case MotionEvent.ACTION_MOVE 
-        //Begin case MotionEvent.ACTION_CANCEL MotionEvent.ACTION_UP 
+        } 
+        
+        
         removeAllCallbacks();
-        //End case MotionEvent.ACTION_CANCEL MotionEvent.ACTION_UP 
+        
         boolean var5595FF16C420D2682133A571FCECA386_578276183 = (super.dispatchTouchEvent(event));
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_536671069 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_536671069;
-        // ---------- Original Method ----------
-        //final int action = event.getActionMasked();
-        //switch (action) {
-            //case MotionEvent.ACTION_MOVE:
-                //if (mSelectorWheelState == SELECTOR_WHEEL_STATE_LARGE) {
-                    //removeAllCallbacks();
-                    //forceCompleteChangeCurrentByOneViaScroll();
-                //}
-                //break;
-            //case MotionEvent.ACTION_CANCEL:
-            //case MotionEvent.ACTION_UP:
-                //removeAllCallbacks();
-                //break;
-        //}
-        //return super.dispatchTouchEvent(event);
+        
+        
+        
+            
+                
+                    
+                    
+                
+                
+            
+            
+                
+                
+        
+        
     }
 
     
@@ -673,17 +673,17 @@ public class NumberPicker extends LinearLayout {
         int keyCode = event.getKeyCode();
         {
             removeAllCallbacks();
-        } //End block
+        } 
         boolean varD8A05597F0CCFB3ED5A50CCF86C0200D_277468463 = (super.dispatchKeyEvent(event));
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_126103924 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_126103924;
-        // ---------- Original Method ----------
-        //int keyCode = event.getKeyCode();
-        //if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_ENTER) {
-            //removeAllCallbacks();
-        //}
-        //return super.dispatchKeyEvent(event);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -693,17 +693,17 @@ public class NumberPicker extends LinearLayout {
         int action = event.getActionMasked();
         {
             removeAllCallbacks();
-        } //End block
+        } 
         boolean varCFB95AF931BBE8F5458525AB8E26F369_797743727 = (super.dispatchTrackballEvent(event));
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_251330146 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_251330146;
-        // ---------- Original Method ----------
-        //int action = event.getActionMasked();
-        //if (action == MotionEvent.ACTION_CANCEL || action == MotionEvent.ACTION_UP) {
-            //removeAllCallbacks();
-        //}
-        //return super.dispatchTrackballEvent(event);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -717,48 +717,48 @@ public class NumberPicker extends LinearLayout {
                 scroller = mAdjustScroller;
                 {
                     boolean var0D4876BAA5DB829A52158B403A2A8D88_1513276605 = (scroller.isFinished());
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         scroller.computeScrollOffset();
         int currentScrollerY = scroller.getCurrY();
         {
             mPreviousScrollerY = scroller.getStartY();
-        } //End block
+        } 
         scrollBy(0, currentScrollerY - mPreviousScrollerY);
         mPreviousScrollerY = currentScrollerY;
         {
             boolean var260EE57A09B49E3ED75F979B0D60530F_291725751 = (scroller.isFinished());
             {
                 onScrollerFinished(scroller);
-            } //End block
+            } 
             {
                 invalidate();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mSelectorWheelState == SELECTOR_WHEEL_STATE_NONE) {
-            //return;
-        //}
-        //Scroller scroller = mFlingScroller;
-        //if (scroller.isFinished()) {
-            //scroller = mAdjustScroller;
-            //if (scroller.isFinished()) {
-                //return;
-            //}
-        //}
-        //scroller.computeScrollOffset();
-        //int currentScrollerY = scroller.getCurrY();
-        //if (mPreviousScrollerY == 0) {
-            //mPreviousScrollerY = scroller.getStartY();
-        //}
-        //scrollBy(0, currentScrollerY - mPreviousScrollerY);
-        //mPreviousScrollerY = currentScrollerY;
-        //if (scroller.isFinished()) {
-            //onScrollerFinished(scroller);
-        //} else {
-            //invalidate();
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -770,11 +770,11 @@ public class NumberPicker extends LinearLayout {
         mDecrementButton.setEnabled(enabled);
         mInputText.setEnabled(enabled);
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //super.setEnabled(enabled);
-        //mIncrementButton.setEnabled(enabled);
-        //mDecrementButton.setEnabled(enabled);
-        //mInputText.setEnabled(enabled);
+        
+        
+        
+        
+        
     }
 
     
@@ -784,10 +784,10 @@ public class NumberPicker extends LinearLayout {
         int[] selectorIndices = mSelectorIndices;
         {
             mCurrentScrollOffset = mInitialScrollOffset;
-        } //End block
+        } 
         {
             mCurrentScrollOffset = mInitialScrollOffset;
-        } //End block
+        } 
         mCurrentScrollOffset += y;
         {
             mCurrentScrollOffset -= mSelectorElementHeight;
@@ -795,19 +795,19 @@ public class NumberPicker extends LinearLayout {
             changeCurrent(selectorIndices[SELECTOR_MIDDLE_ITEM_INDEX]);
             {
                 mCurrentScrollOffset = mInitialScrollOffset;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mCurrentScrollOffset += mSelectorElementHeight;
             incrementSelectorIndices(selectorIndices);
             changeCurrent(selectorIndices[SELECTOR_MIDDLE_ITEM_INDEX]);
             {
                 mCurrentScrollOffset = mInitialScrollOffset;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(x);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -816,24 +816,24 @@ public class NumberPicker extends LinearLayout {
     public int getSolidColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_406114372 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_406114372;
-        // ---------- Original Method ----------
-        //return mSolidColor;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.123 -0400", hash_original_method = "B8FD740B950D37D2ACEC32CDC9BBCB3E", hash_generated_method = "D55BA1C0A2CC4BCD0E3EE7C50853AF06")
     public void setOnValueChangedListener(OnValueChangeListener onValueChangedListener) {
         mOnValueChangeListener = onValueChangedListener;
-        // ---------- Original Method ----------
-        //mOnValueChangeListener = onValueChangedListener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.123 -0400", hash_original_method = "E07C1A1F4DD9D0D02072D75B16D4DB8B", hash_generated_method = "8D444529148A09F38F528175C920BB2D")
     public void setOnScrollListener(OnScrollListener onScrollListener) {
         mOnScrollListener = onScrollListener;
-        // ---------- Original Method ----------
-        //mOnScrollListener = onScrollListener;
+        
+        
     }
 
     
@@ -842,13 +842,13 @@ public class NumberPicker extends LinearLayout {
         mFormatter = formatter;
         initializeSelectorWheelIndices();
         updateInputTextView();
-        // ---------- Original Method ----------
-        //if (formatter == mFormatter) {
-            //return;
-        //}
-        //mFormatter = formatter;
-        //initializeSelectorWheelIndices();
-        //updateInputTextView();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -856,30 +856,30 @@ public class NumberPicker extends LinearLayout {
     public void setValue(int value) {
         {
             value = mWrapSelectorWheel ? mMaxValue : mMinValue;
-        } //End block
+        } 
         {
             value = mWrapSelectorWheel ? mMinValue : mMaxValue;
-        } //End block
+        } 
         mValue = value;
         initializeSelectorWheelIndices();
         updateInputTextView();
         updateIncrementAndDecrementButtonsVisibilityState();
         invalidate();
-        // ---------- Original Method ----------
-        //if (mValue == value) {
-            //return;
-        //}
-        //if (value < mMinValue) {
-            //value = mWrapSelectorWheel ? mMaxValue : mMinValue;
-        //}
-        //if (value > mMaxValue) {
-            //value = mWrapSelectorWheel ? mMinValue : mMaxValue;
-        //}
-        //mValue = value;
-        //initializeSelectorWheelIndices();
-        //updateInputTextView();
-        //updateIncrementAndDecrementButtonsVisibilityState();
-        //invalidate();
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -894,16 +894,16 @@ public class NumberPicker extends LinearLayout {
                     final float digitWidth = mSelectorWheelPaint.measureText(String.valueOf(i));
                     {
                         maxDigitWidth = digitWidth;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             int numberOfDigits = 0;
             int current = mMaxValue;
             {
                 current = current / 10;
-            } //End block
+            } 
             maxTextWidth = (int) (numberOfDigits * maxDigitWidth);
-        } //End block
+        } 
         {
             final int valueCount = mDisplayedValues.length;
             {
@@ -912,22 +912,22 @@ public class NumberPicker extends LinearLayout {
                     final float textWidth = mSelectorWheelPaint.measureText(mDisplayedValues[i]);
                     {
                         maxTextWidth = (int) textWidth;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         maxTextWidth += mInputText.getPaddingLeft() + mInputText.getPaddingRight();
         {
             {
                 mMaxWidth = maxTextWidth;
-            } //End block
+            } 
             {
                 mMaxWidth = mMinWidth;
-            } //End block
+            } 
             invalidate();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -935,8 +935,8 @@ public class NumberPicker extends LinearLayout {
     public boolean getWrapSelectorWheel() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_186941862 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_186941862;
-        // ---------- Original Method ----------
-        //return mWrapSelectorWheel;
+        
+        
     }
 
     
@@ -944,27 +944,27 @@ public class NumberPicker extends LinearLayout {
     public void setWrapSelectorWheel(boolean wrapSelectorWheel) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Range less than selector items count.");
-        } //End block
+        } 
         {
             mWrapSelectorWheel = wrapSelectorWheel;
             updateIncrementAndDecrementButtonsVisibilityState();
-        } //End block
-        // ---------- Original Method ----------
-        //if (wrapSelectorWheel && (mMaxValue - mMinValue) < mSelectorIndices.length) {
-            //throw new IllegalStateException("Range less than selector items count.");
-        //}
-        //if (wrapSelectorWheel != mWrapSelectorWheel) {
-            //mWrapSelectorWheel = wrapSelectorWheel;
-            //updateIncrementAndDecrementButtonsVisibilityState();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.126 -0400", hash_original_method = "8C354EDC01FB7FE8E35D5D03601EF310", hash_generated_method = "A112829F0E2370B87C41F6E6B0002254")
     public void setOnLongPressUpdateInterval(long intervalMillis) {
         mLongPressUpdateInterval = intervalMillis;
-        // ---------- Original Method ----------
-        //mLongPressUpdateInterval = intervalMillis;
+        
+        
     }
 
     
@@ -972,8 +972,8 @@ public class NumberPicker extends LinearLayout {
     public int getValue() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_923464426 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_923464426;
-        // ---------- Original Method ----------
-        //return mValue;
+        
+        
     }
 
     
@@ -981,8 +981,8 @@ public class NumberPicker extends LinearLayout {
     public int getMinValue() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819007585 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819007585;
-        // ---------- Original Method ----------
-        //return mMinValue;
+        
+        
     }
 
     
@@ -990,32 +990,32 @@ public class NumberPicker extends LinearLayout {
     public void setMinValue(int minValue) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("minValue must be >= 0");
-        } //End block
+        } 
         mMinValue = minValue;
         {
             mValue = mMinValue;
-        } //End block
+        } 
         boolean wrapSelectorWheel = mMaxValue - mMinValue > mSelectorIndices.length;
         setWrapSelectorWheel(wrapSelectorWheel);
         initializeSelectorWheelIndices();
         updateInputTextView();
         tryComputeMaxWidth();
-        // ---------- Original Method ----------
-        //if (mMinValue == minValue) {
-            //return;
-        //}
-        //if (minValue < 0) {
-            //throw new IllegalArgumentException("minValue must be >= 0");
-        //}
-        //mMinValue = minValue;
-        //if (mMinValue > mValue) {
-            //mValue = mMinValue;
-        //}
-        //boolean wrapSelectorWheel = mMaxValue - mMinValue > mSelectorIndices.length;
-        //setWrapSelectorWheel(wrapSelectorWheel);
-        //initializeSelectorWheelIndices();
-        //updateInputTextView();
-        //tryComputeMaxWidth();
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1023,8 +1023,8 @@ public class NumberPicker extends LinearLayout {
     public int getMaxValue() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_940875307 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_940875307;
-        // ---------- Original Method ----------
-        //return mMaxValue;
+        
+        
     }
 
     
@@ -1032,43 +1032,43 @@ public class NumberPicker extends LinearLayout {
     public void setMaxValue(int maxValue) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("maxValue must be >= 0");
-        } //End block
+        } 
         mMaxValue = maxValue;
         {
             mValue = mMaxValue;
-        } //End block
+        } 
         boolean wrapSelectorWheel = mMaxValue - mMinValue > mSelectorIndices.length;
         setWrapSelectorWheel(wrapSelectorWheel);
         initializeSelectorWheelIndices();
         updateInputTextView();
         tryComputeMaxWidth();
-        // ---------- Original Method ----------
-        //if (mMaxValue == maxValue) {
-            //return;
-        //}
-        //if (maxValue < 0) {
-            //throw new IllegalArgumentException("maxValue must be >= 0");
-        //}
-        //mMaxValue = maxValue;
-        //if (mMaxValue < mValue) {
-            //mValue = mMaxValue;
-        //}
-        //boolean wrapSelectorWheel = mMaxValue - mMinValue > mSelectorIndices.length;
-        //setWrapSelectorWheel(wrapSelectorWheel);
-        //initializeSelectorWheelIndices();
-        //updateInputTextView();
-        //tryComputeMaxWidth();
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.129 -0400", hash_original_method = "7D8D8A804F018648196BF68A974CA568", hash_generated_method = "9FEF4992136699016317723E3AD49FF5")
     public String[] getDisplayedValues() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1231773705 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1231773705 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1231773705 = mDisplayedValues;
-        varB4EAC82CA7396A68D541C85D26508E83_1231773705.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1231773705.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1231773705;
-        // ---------- Original Method ----------
-        //return mDisplayedValues;
+        
+        
     }
 
     
@@ -1078,27 +1078,27 @@ public class NumberPicker extends LinearLayout {
         {
             mInputText.setRawInputType(InputType.TYPE_CLASS_TEXT
                     | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
-        } //End block
+        } 
         {
             mInputText.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-        } //End block
+        } 
         updateInputTextView();
         initializeSelectorWheelIndices();
         tryComputeMaxWidth();
-        // ---------- Original Method ----------
-        //if (mDisplayedValues == displayedValues) {
-            //return;
-        //}
-        //mDisplayedValues = displayedValues;
-        //if (mDisplayedValues != null) {
-            //mInputText.setRawInputType(InputType.TYPE_CLASS_TEXT
-                    //| InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
-        //} else {
-            //mInputText.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-        //}
-        //updateInputTextView();
-        //initializeSelectorWheelIndices();
-        //tryComputeMaxWidth();
+        
+        
+            
+        
+        
+        
+            
+                    
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -1107,8 +1107,8 @@ public class NumberPicker extends LinearLayout {
     protected float getTopFadingEdgeStrength() {
         float var546ADE640B6EDFBC8A086EF31347E768_1440778148 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1440778148;
-        // ---------- Original Method ----------
-        //return TOP_AND_BOTTOM_FADING_EDGE_STRENGTH;
+        
+        
     }
 
     
@@ -1117,37 +1117,37 @@ public class NumberPicker extends LinearLayout {
     protected float getBottomFadingEdgeStrength() {
         float var546ADE640B6EDFBC8A086EF31347E768_990830023 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_990830023;
-        // ---------- Original Method ----------
-        //return TOP_AND_BOTTOM_FADING_EDGE_STRENGTH;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.131 -0400", hash_original_method = "D8635D04A384ABA875A77249BA87A3E4", hash_generated_method = "260D8FBFE5E728AC2344CA50CE0828AF")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
         {
             boolean var536C2D4C39407777E35D36D0A0039169_525996735 = (mFlingable && !isInEditMode());
             {
                 showInputControls(mShowInputControlsAnimimationDuration * 2);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //if (mFlingable && !isInEditMode()) {
-            //showInputControls(mShowInputControlsAnimimationDuration * 2);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.131 -0400", hash_original_method = "1AF381BAEFDBA706A0AAFFFCBFBE7386", hash_generated_method = "B6B24701F125BC28DDEDFD787141F4D6")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         removeAllCallbacks();
-        // ---------- Original Method ----------
-        //removeAllCallbacks();
+        
+        
     }
 
     
@@ -1155,7 +1155,7 @@ public class NumberPicker extends LinearLayout {
     @Override
     protected void dispatchDraw(Canvas canvas) {
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -1175,33 +1175,33 @@ public class NumberPicker extends LinearLayout {
                         View child = getChildAt(i);
                         {
                             boolean var2BE0D12052E9691CD7CCFEBC9EEBC99F_309192758 = (!child.isShown());
-                        } //End collapsed parenthetic
+                        } 
                         drawChild(canvas, getChildAt(i), drawTime);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        //super.draw(canvas);
-        //if (mShowInputControlsAnimator.isRunning()
-                //|| mSelectorWheelState != SELECTOR_WHEEL_STATE_LARGE) {
-            //long drawTime = getDrawingTime();
-            //for (int i = 0, count = getChildCount(); i < count; i++) {
-                //View child = getChildAt(i);
-                //if (!child.isShown()) {
-                    //continue;
-                //}
-                //drawChild(canvas, getChildAt(i), drawTime);
-            //}
-        //}
+        
+        
+        
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.132 -0400", hash_original_method = "73B10A324A4034D5CD70F03023B591F2", hash_generated_method = "704B9EE62E6E587B2FD1E38CA89759FD")
     @Override
     protected void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         float x = (mRight - mLeft) / 2;
         float y = mCurrentScrollOffset;
         final int restoreCount = canvas.save();
@@ -1209,7 +1209,7 @@ public class NumberPicker extends LinearLayout {
             Rect clipBounds = canvas.getClipBounds();
             clipBounds.inset(0, mSelectorElementHeight);
             canvas.clipRect(clipBounds);
-        } //End block
+        } 
         int[] selectorIndices = mSelectorIndices;
         {
             int i = 0;
@@ -1220,11 +1220,11 @@ public class NumberPicker extends LinearLayout {
                     boolean varCA4EBD1F5AA1D0D604D7B5EFC4A15DD6_630367721 = (i != SELECTOR_MIDDLE_ITEM_INDEX || mInputText.getVisibility() != VISIBLE);
                     {
                         canvas.drawText(scrollSelectorValue, x, y, mSelectorWheelPaint);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 y += mSelectorElementHeight;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int topOfTopDivider = (getHeight() - mSelectorElementHeight - mSelectionDividerHeight) / 2;
             int bottomOfTopDivider = topOfTopDivider + mSelectionDividerHeight;
@@ -1234,11 +1234,11 @@ public class NumberPicker extends LinearLayout {
             int bottomOfBottomDivider = bottomOfTopDivider + mSelectorElementHeight;
             mSelectionDivider.setBounds(0, topOfBottomDivider, mRight, bottomOfBottomDivider);
             mSelectionDivider.draw(canvas);
-        } //End block
+        } 
         canvas.restoreToCount(restoreCount);
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1246,7 +1246,7 @@ public class NumberPicker extends LinearLayout {
     @Override
     public void sendAccessibilityEvent(int eventType) {
         addTaint(eventType);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -1254,35 +1254,35 @@ public class NumberPicker extends LinearLayout {
     private int makeMeasureSpec(int measureSpec, int maxSize) {
         final int size = MeasureSpec.getSize(measureSpec);
         final int mode = MeasureSpec.getMode(measureSpec);
-        //Begin case MeasureSpec.AT_MOST 
+        
         int var95ED3B42CD87B207C96C3D67CCC2EFD1_1575305156 = (MeasureSpec.makeMeasureSpec(Math.min(size, maxSize), MeasureSpec.EXACTLY));
-        //End case MeasureSpec.AT_MOST 
-        //Begin case MeasureSpec.UNSPECIFIED 
+        
+        
         int var71A9899F63F8963C4B37A295F44B660F_1038670879 = (MeasureSpec.makeMeasureSpec(maxSize, MeasureSpec.EXACTLY));
-        //End case MeasureSpec.UNSPECIFIED 
-        //Begin case default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown measure mode: " + mode);
-        //End case default 
+        
         addTaint(measureSpec);
         addTaint(maxSize);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012794644 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012794644;
-        // ---------- Original Method ----------
-        //if (maxSize == SIZE_UNSPECIFIED) {
-            //return measureSpec;
-        //}
-        //final int size = MeasureSpec.getSize(measureSpec);
-        //final int mode = MeasureSpec.getMode(measureSpec);
-        //switch (mode) {
-            //case MeasureSpec.EXACTLY:
-                //return measureSpec;
-            //case MeasureSpec.AT_MOST:
-                //return MeasureSpec.makeMeasureSpec(Math.min(size, maxSize), MeasureSpec.EXACTLY);
-            //case MeasureSpec.UNSPECIFIED:
-                //return MeasureSpec.makeMeasureSpec(maxSize, MeasureSpec.EXACTLY);
-            //default:
-                //throw new IllegalArgumentException("Unknown measure mode: " + mode);
-        //}
+        
+        
+            
+        
+        
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+        
     }
 
     
@@ -1292,19 +1292,19 @@ public class NumberPicker extends LinearLayout {
         {
             final int desiredWidth = Math.max(minSize, measuredSize);
             int var1F64A1B71774E82218E2B73400CFDDB8_301972774 = (resolveSizeAndState(desiredWidth, measureSpec, 0));
-        } //End block
+        } 
         addTaint(minSize);
         addTaint(measuredSize);
         addTaint(measureSpec);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200331157 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200331157;
-        // ---------- Original Method ----------
-        //if (minSize != SIZE_UNSPECIFIED) {
-            //final int desiredWidth = Math.max(minSize, measuredSize);
-            //return resolveSizeAndState(desiredWidth, measureSpec, 0);
-        //} else {
-            //return measuredSize;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -1319,23 +1319,23 @@ public class NumberPicker extends LinearLayout {
                 int selectorIndex = current + (i - SELECTOR_MIDDLE_ITEM_INDEX);
                 {
                     selectorIndex = getWrappedSelectorIndex(selectorIndex);
-                } //End block
+                } 
                 mSelectorIndices[i] = selectorIndex;
                 ensureCachedScrollSelectorValue(mSelectorIndices[i]);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //mSelectorIndexToStringCache.clear();
-        //int[] selectorIdices = mSelectorIndices;
-        //int current = getValue();
-        //for (int i = 0; i < mSelectorIndices.length; i++) {
-            //int selectorIndex = current + (i - SELECTOR_MIDDLE_ITEM_INDEX);
-            //if (mWrapSelectorWheel) {
-                //selectorIndex = getWrappedSelectorIndex(selectorIndex);
-            //}
-            //mSelectorIndices[i] = selectorIndex;
-            //ensureCachedScrollSelectorValue(mSelectorIndices[i]);
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -1343,21 +1343,21 @@ public class NumberPicker extends LinearLayout {
     private void changeCurrent(int current) {
         {
             current = getWrappedSelectorIndex(current);
-        } //End block
+        } 
         int previous = mValue;
         setValue(current);
         notifyChange(previous, current);
         addTaint(current);
-        // ---------- Original Method ----------
-        //if (mValue == current) {
-            //return;
-        //}
-        //if (mWrapSelectorWheel) {
-            //current = getWrappedSelectorIndex(current);
-        //}
-        //int previous = mValue;
-        //setValue(current);
-        //notifyChange(previous, current);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -1372,24 +1372,24 @@ public class NumberPicker extends LinearLayout {
             {
                 mFlingScroller.startScroll(0, 0, 0, -mSelectorElementHeight,
                         CHANGE_CURRENT_BY_ONE_SCROLL_DURATION);
-            } //End block
+            } 
             {
                 mFlingScroller.startScroll(0, 0, 0, mSelectorElementHeight,
                         CHANGE_CURRENT_BY_ONE_SCROLL_DURATION);
-            } //End block
+            } 
             invalidate();
-        } //End block
+        } 
         {
             {
                 changeCurrent(mValue + 1);
-            } //End block
+            } 
             {
                 changeCurrent(mValue - 1);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(increment);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1403,16 +1403,16 @@ public class NumberPicker extends LinearLayout {
                 scroller.abortAnimation();
                 final int yDelta = scroller.getCurrY() - yBeforeAbort;
                 scrollBy(0, yDelta);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //Scroller scroller = mFlingScroller;
-        //if (!scroller.isFinished()) {
-            //final int yBeforeAbort = scroller.getCurrY();
-            //scroller.abortAnimation();
-            //final int yDelta = scroller.getCurrY() - yBeforeAbort;
-            //scrollBy(0, yDelta);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -1422,9 +1422,9 @@ public class NumberPicker extends LinearLayout {
         mSelectorWheelPaint.setAlpha(alpha);
         invalidate();
         addTaint(alpha);
-        // ---------- Original Method ----------
-        //mSelectorWheelPaint.setAlpha(alpha);
-        //invalidate();
+        
+        
+        
     }
 
     
@@ -1435,18 +1435,18 @@ public class NumberPicker extends LinearLayout {
             {
                 view.getHitRect(mTempRect);
                 boolean var76CCAF4B062EA4DD2689484DA5C510AF_530866994 = (mTempRect.contains((int) event.getX(), (int) event.getY()));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(event.getTaint());
         addTaint(view.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1909604736 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1909604736;
-        // ---------- Original Method ----------
-        //if (view.getVisibility() == VISIBLE) {
-            //view.getHitRect(mTempRect);
-            //return mTempRect.contains((int) event.getX(), (int) event.getY());
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -1455,7 +1455,7 @@ public class NumberPicker extends LinearLayout {
         mSelectorWheelState = selectorWheelState;
         {
             mSelectorWheelPaint.setAlpha(SELECTOR_WHEEL_BRIGHT_ALPHA);
-        } //End block
+        } 
         {
             boolean var9885E03B24F176BACE9F994872275A69_1210788070 = (mFlingable && selectorWheelState == SELECTOR_WHEEL_STATE_LARGE
                 && AccessibilityManager.getInstance(mContext).isEnabled());
@@ -1465,21 +1465,21 @@ public class NumberPicker extends LinearLayout {
                 mInputText.setContentDescription(text);
                 mInputText.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
                 mInputText.setContentDescription(null);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //mSelectorWheelState = selectorWheelState;
-        //if (selectorWheelState == SELECTOR_WHEEL_STATE_LARGE) {
-            //mSelectorWheelPaint.setAlpha(SELECTOR_WHEEL_BRIGHT_ALPHA);
-        //}
-        //if (mFlingable && selectorWheelState == SELECTOR_WHEEL_STATE_LARGE
-                //&& AccessibilityManager.getInstance(mContext).isEnabled()) {
-            //AccessibilityManager.getInstance(mContext).interrupt();
-            //String text = mContext.getString(R.string.number_picker_increment_scroll_action);
-            //mInputText.setContentDescription(text);
-            //mInputText.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
-            //mInputText.setContentDescription(null);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
+        
+                
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -1497,19 +1497,19 @@ public class NumberPicker extends LinearLayout {
                 (mSelectorElementHeight * SELECTOR_MIDDLE_ITEM_INDEX);
         mCurrentScrollOffset = mInitialScrollOffset;
         updateInputTextView();
-        // ---------- Original Method ----------
-        //initializeSelectorWheelIndices();
-        //int[] selectorIndices = mSelectorIndices;
-        //int totalTextHeight = selectorIndices.length * mTextSize;
-        //float totalTextGapHeight = (mBottom - mTop) - totalTextHeight;
-        //float textGapCount = selectorIndices.length - 1;
-        //mSelectorTextGapHeight = (int) (totalTextGapHeight / textGapCount + 0.5f);
-        //mSelectorElementHeight = mTextSize + mSelectorTextGapHeight;
-        //int editTextTextPosition = mInputText.getBaseline() + mInputText.getTop();
-        //mInitialScrollOffset = editTextTextPosition -
-                //(mSelectorElementHeight * SELECTOR_MIDDLE_ITEM_INDEX);
-        //mCurrentScrollOffset = mInitialScrollOffset;
-        //updateInputTextView();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                
+        
+        
     }
 
     
@@ -1517,9 +1517,9 @@ public class NumberPicker extends LinearLayout {
     private void initializeFadingEdges() {
         setVerticalFadingEdgeEnabled(true);
         setFadingEdgeLength((mBottom - mTop - mTextSize) / 2);
-        // ---------- Original Method ----------
-        //setVerticalFadingEdgeEnabled(true);
-        //setFadingEdgeLength((mBottom - mTop - mTextSize) / 2);
+        
+        
+        
     }
 
     
@@ -1529,30 +1529,30 @@ public class NumberPicker extends LinearLayout {
             {
                 postAdjustScrollerCommand(0);
                 onScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
-            } //End block
+            } 
             {
                 updateInputTextView();
                 fadeSelectorWheel(mShowInputControlsAnimimationDuration);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             updateInputTextView();
             showInputControls(mShowInputControlsAnimimationDuration);
-        } //End block
+        } 
         addTaint(scroller.getTaint());
-        // ---------- Original Method ----------
-        //if (scroller == mFlingScroller) {
-            //if (mSelectorWheelState == SELECTOR_WHEEL_STATE_LARGE) {
-                //postAdjustScrollerCommand(0);
-                //onScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
-            //} else {
-                //updateInputTextView();
-                //fadeSelectorWheel(mShowInputControlsAnimimationDuration);
-            //}
-        //} else {
-            //updateInputTextView();
-            //showInputControls(mShowInputControlsAnimimationDuration);
-        //}
+        
+        
+            
+                
+                
+            
+                
+                
+            
+        
+            
+            
+        
     }
 
     
@@ -1561,15 +1561,15 @@ public class NumberPicker extends LinearLayout {
         mScrollState = scrollState;
         {
             mOnScrollListener.onScrollStateChange(this, scrollState);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mScrollState == scrollState) {
-            //return;
-        //}
-        //mScrollState = scrollState;
-        //if (mOnScrollListener != null) {
-            //mOnScrollListener.onScrollStateChange(this, scrollState);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -1578,20 +1578,20 @@ public class NumberPicker extends LinearLayout {
         mPreviousScrollerY = 0;
         {
             mFlingScroller.fling(0, 0, 0, velocityY, 0, 0, 0, Integer.MAX_VALUE);
-        } //End block
+        } 
         {
             mFlingScroller.fling(0, Integer.MAX_VALUE, 0, velocityY, 0, 0, 0, Integer.MAX_VALUE);
-        } //End block
+        } 
         invalidate();
         addTaint(velocityY);
-        // ---------- Original Method ----------
-        //mPreviousScrollerY = 0;
-        //if (velocityY > 0) {
-            //mFlingScroller.fling(0, 0, 0, velocityY, 0, 0, 0, Integer.MAX_VALUE);
-        //} else {
-            //mFlingScroller.fling(0, Integer.MAX_VALUE, 0, velocityY, 0, 0, 0, Integer.MAX_VALUE);
-        //}
-        //invalidate();
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -1601,11 +1601,11 @@ public class NumberPicker extends LinearLayout {
         mIncrementButton.setVisibility(INVISIBLE);
         mDecrementButton.setVisibility(INVISIBLE);
         mInputText.setVisibility(INVISIBLE);
-        // ---------- Original Method ----------
-        //mShowInputControlsAnimator.cancel();
-        //mIncrementButton.setVisibility(INVISIBLE);
-        //mDecrementButton.setVisibility(INVISIBLE);
-        //mInputText.setVisibility(INVISIBLE);
+        
+        
+        
+        
+        
     }
 
     
@@ -1616,11 +1616,11 @@ public class NumberPicker extends LinearLayout {
         mShowInputControlsAnimator.setDuration(animationDuration);
         mShowInputControlsAnimator.start();
         addTaint(animationDuration);
-        // ---------- Original Method ----------
-        //updateIncrementAndDecrementButtonsVisibilityState();
-        //mInputText.setVisibility(VISIBLE);
-        //mShowInputControlsAnimator.setDuration(animationDuration);
-        //mShowInputControlsAnimator.start();
+        
+        
+        
+        
+        
     }
 
     
@@ -1630,10 +1630,10 @@ public class NumberPicker extends LinearLayout {
         mDimSelectorWheelAnimator.setDuration(animationDuration);
         mDimSelectorWheelAnimator.start();
         addTaint(animationDuration);
-        // ---------- Original Method ----------
-        //mInputText.setVisibility(VISIBLE);
-        //mDimSelectorWheelAnimator.setDuration(animationDuration);
-        //mDimSelectorWheelAnimator.start();
+        
+        
+        
+        
     }
 
     
@@ -1641,27 +1641,27 @@ public class NumberPicker extends LinearLayout {
     private void updateIncrementAndDecrementButtonsVisibilityState() {
         {
             mIncrementButton.setVisibility(VISIBLE);
-        } //End block
+        } 
         {
             mIncrementButton.setVisibility(INVISIBLE);
-        } //End block
+        } 
         {
             mDecrementButton.setVisibility(VISIBLE);
-        } //End block
+        } 
         {
             mDecrementButton.setVisibility(INVISIBLE);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mWrapSelectorWheel || mValue < mMaxValue) {
-            //mIncrementButton.setVisibility(VISIBLE);
-        //} else {
-            //mIncrementButton.setVisibility(INVISIBLE);
-        //}
-        //if (mWrapSelectorWheel || mValue > mMinValue) {
-            //mDecrementButton.setVisibility(VISIBLE);
-        //} else {
-            //mDecrementButton.setVisibility(INVISIBLE);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1670,13 +1670,13 @@ public class NumberPicker extends LinearLayout {
         addTaint(selectorIndex);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2110731379 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2110731379;
-        // ---------- Original Method ----------
-        //if (selectorIndex > mMaxValue) {
-            //return mMinValue + (selectorIndex - mMaxValue) % (mMaxValue - mMinValue) - 1;
-        //} else if (selectorIndex < mMinValue) {
-            //return mMaxValue - (mMinValue - selectorIndex) % (mMaxValue - mMinValue) + 1;
-        //}
-        //return selectorIndex;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -1686,25 +1686,25 @@ public class NumberPicker extends LinearLayout {
             int i = 0;
             {
                 selectorIndices[i] = selectorIndices[i + 1];
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int nextScrollSelectorIndex = selectorIndices[selectorIndices.length - 2] + 1;
         {
             nextScrollSelectorIndex = mMinValue;
-        } //End block
+        } 
         selectorIndices[selectorIndices.length - 1] = nextScrollSelectorIndex;
         ensureCachedScrollSelectorValue(nextScrollSelectorIndex);
         addTaint(selectorIndices[0]);
-        // ---------- Original Method ----------
-        //for (int i = 0; i < selectorIndices.length - 1; i++) {
-            //selectorIndices[i] = selectorIndices[i + 1];
-        //}
-        //int nextScrollSelectorIndex = selectorIndices[selectorIndices.length - 2] + 1;
-        //if (mWrapSelectorWheel && nextScrollSelectorIndex > mMaxValue) {
-            //nextScrollSelectorIndex = mMinValue;
-        //}
-        //selectorIndices[selectorIndices.length - 1] = nextScrollSelectorIndex;
-        //ensureCachedScrollSelectorValue(nextScrollSelectorIndex);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -1714,25 +1714,25 @@ public class NumberPicker extends LinearLayout {
             int i = selectorIndices.length - 1;
             {
                 selectorIndices[i] = selectorIndices[i - 1];
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int nextScrollSelectorIndex = selectorIndices[1] - 1;
         {
             nextScrollSelectorIndex = mMaxValue;
-        } //End block
+        } 
         selectorIndices[0] = nextScrollSelectorIndex;
         ensureCachedScrollSelectorValue(nextScrollSelectorIndex);
         addTaint(selectorIndices[0]);
-        // ---------- Original Method ----------
-        //for (int i = selectorIndices.length - 1; i > 0; i--) {
-            //selectorIndices[i] = selectorIndices[i - 1];
-        //}
-        //int nextScrollSelectorIndex = selectorIndices[1] - 1;
-        //if (mWrapSelectorWheel && nextScrollSelectorIndex < mMinValue) {
-            //nextScrollSelectorIndex = mMaxValue;
-        //}
-        //selectorIndices[0] = nextScrollSelectorIndex;
-        //ensureCachedScrollSelectorValue(nextScrollSelectorIndex);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -1742,47 +1742,47 @@ public class NumberPicker extends LinearLayout {
         String scrollSelectorValue = cache.get(selectorIndex);
         {
             scrollSelectorValue = "";
-        } //End block
+        } 
         {
             {
                 int displayedValueIndex = selectorIndex - mMinValue;
                 scrollSelectorValue = mDisplayedValues[displayedValueIndex];
-            } //End block
+            } 
             {
                 scrollSelectorValue = formatNumber(selectorIndex);
-            } //End block
-        } //End block
+            } 
+        } 
         cache.put(selectorIndex, scrollSelectorValue);
         addTaint(selectorIndex);
-        // ---------- Original Method ----------
-        //SparseArray<String> cache = mSelectorIndexToStringCache;
-        //String scrollSelectorValue = cache.get(selectorIndex);
-        //if (scrollSelectorValue != null) {
-            //return;
-        //}
-        //if (selectorIndex < mMinValue || selectorIndex > mMaxValue) {
-            //scrollSelectorValue = "";
-        //} else {
-            //if (mDisplayedValues != null) {
-                //int displayedValueIndex = selectorIndex - mMinValue;
-                //scrollSelectorValue = mDisplayedValues[displayedValueIndex];
-            //} else {
-                //scrollSelectorValue = formatNumber(selectorIndex);
-            //}
-        //}
-        //cache.put(selectorIndex, scrollSelectorValue);
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+                
+                
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.143 -0400", hash_original_method = "CED5CD69155B2474785611FEBB1C2BE4", hash_generated_method = "BC2EAE4CA640BBCA9D009A0AE9F2FF70")
     private String formatNumber(int value) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1574585122 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1574585122 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1574585122 = (mFormatter != null) ? mFormatter.format(value) : String.valueOf(value);
         addTaint(value);
-        varB4EAC82CA7396A68D541C85D26508E83_1574585122.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1574585122.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1574585122;
-        // ---------- Original Method ----------
-        //return (mFormatter != null) ? mFormatter.format(value) : String.valueOf(value);
+        
+        
     }
 
     
@@ -1793,21 +1793,21 @@ public class NumberPicker extends LinearLayout {
             boolean var80F2FE8CCED42585D57F5737FEC1F237_473811785 = (TextUtils.isEmpty(str));
             {
                 updateInputTextView();
-            } //End block
+            } 
             {
                 int current = getSelectedPos(str.toString());
                 changeCurrent(current);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(v.getTaint());
-        // ---------- Original Method ----------
-        //String str = String.valueOf(((TextView) v).getText());
-        //if (TextUtils.isEmpty(str)) {
-            //updateInputTextView();
-        //} else {
-            //int current = getSelectedPos(str.toString());
-            //changeCurrent(current);
-        //}
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1815,10 +1815,10 @@ public class NumberPicker extends LinearLayout {
     private void updateInputTextView() {
         {
             mInputText.setText(formatNumber(mValue));
-        } //End block
+        } 
         {
             mInputText.setText(mDisplayedValues[mValue - mMinValue]);
-        } //End block
+        } 
         mInputText.setSelection(mInputText.getText().length());
         {
             boolean var43F3BC8EA342F30A35D21A53A53AAA0F_1091376689 = (mFlingable && AccessibilityManager.getInstance(mContext).isEnabled());
@@ -1826,20 +1826,20 @@ public class NumberPicker extends LinearLayout {
                 String text = mContext.getString(R.string.number_picker_increment_scroll_mode,
                     mInputText.getText());
                 mInputText.setContentDescription(text);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mDisplayedValues == null) {
-            //mInputText.setText(formatNumber(mValue));
-        //} else {
-            //mInputText.setText(mDisplayedValues[mValue - mMinValue]);
-        //}
-        //mInputText.setSelection(mInputText.getText().length());
-        //if (mFlingable && AccessibilityManager.getInstance(mContext).isEnabled()) {
-            //String text = mContext.getString(R.string.number_picker_increment_scroll_mode,
-                    //mInputText.getText());
-            //mInputText.setContentDescription(text);
-        //}
+            } 
+        } 
+        
+        
+            
+        
+            
+        
+        
+        
+            
+                    
+            
+        
     }
 
     
@@ -1847,13 +1847,13 @@ public class NumberPicker extends LinearLayout {
     private void notifyChange(int previous, int current) {
         {
             mOnValueChangeListener.onValueChange(this, previous, mValue);
-        } //End block
+        } 
         addTaint(previous);
         addTaint(current);
-        // ---------- Original Method ----------
-        //if (mOnValueChangeListener != null) {
-            //mOnValueChangeListener.onValueChange(this, previous, mValue);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -1863,18 +1863,18 @@ public class NumberPicker extends LinearLayout {
         removeAllCallbacks();
         {
             mChangeCurrentByOneFromLongPressCommand = new ChangeCurrentByOneFromLongPressCommand();
-        } //End block
+        } 
         mChangeCurrentByOneFromLongPressCommand.setIncrement(increment);
         post(mChangeCurrentByOneFromLongPressCommand);
         addTaint(increment);
-        // ---------- Original Method ----------
-        //mInputText.clearFocus();
-        //removeAllCallbacks();
-        //if (mChangeCurrentByOneFromLongPressCommand == null) {
-            //mChangeCurrentByOneFromLongPressCommand = new ChangeCurrentByOneFromLongPressCommand();
-        //}
-        //mChangeCurrentByOneFromLongPressCommand.setIncrement(increment);
-        //post(mChangeCurrentByOneFromLongPressCommand);
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -1882,23 +1882,23 @@ public class NumberPicker extends LinearLayout {
     private void removeAllCallbacks() {
         {
             removeCallbacks(mChangeCurrentByOneFromLongPressCommand);
-        } //End block
+        } 
         {
             removeCallbacks(mAdjustScrollerCommand);
-        } //End block
+        } 
         {
             removeCallbacks(mSetSelectionCommand);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mChangeCurrentByOneFromLongPressCommand != null) {
-            //removeCallbacks(mChangeCurrentByOneFromLongPressCommand);
-        //}
-        //if (mAdjustScrollerCommand != null) {
-            //removeCallbacks(mAdjustScrollerCommand);
-        //}
-        //if (mSetSelectionCommand != null) {
-            //removeCallbacks(mSetSelectionCommand);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -1908,10 +1908,10 @@ public class NumberPicker extends LinearLayout {
             try 
             {
                 int varED3B125EC058774A40CC8032FA8A61DA_1917935591 = (Integer.parseInt(value));
-            } //End block
+            } 
             catch (NumberFormatException e)
             { }
-        } //End block
+        } 
         {
             {
                 int i = 0;
@@ -1919,38 +1919,38 @@ public class NumberPicker extends LinearLayout {
                     value = value.toLowerCase();
                     {
                         boolean var3597831DC70C370CF274A604DC8D1FB5_1660000681 = (mDisplayedValues[i].toLowerCase().startsWith(value));
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             try 
             {
                 int varED3B125EC058774A40CC8032FA8A61DA_1276889477 = (Integer.parseInt(value));
-            } //End block
+            } 
             catch (NumberFormatException e)
             { }
-        } //End block
+        } 
         addTaint(value.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_875628837 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_875628837;
-        // ---------- Original Method ----------
-        //if (mDisplayedValues == null) {
-            //try {
-                //return Integer.parseInt(value);
-            //} catch (NumberFormatException e) {
-            //}
-        //} else {
-            //for (int i = 0; i < mDisplayedValues.length; i++) {
-                //value = value.toLowerCase();
-                //if (mDisplayedValues[i].toLowerCase().startsWith(value)) {
-                    //return mMinValue + i;
-                //}
-            //}
-            //try {
-                //return Integer.parseInt(value);
-            //} catch (NumberFormatException e) {
-            //}
-        //}
-        //return mMinValue;
+        
+        
+            
+                
+            
+            
+        
+            
+                
+                
+                    
+                
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -1958,22 +1958,22 @@ public class NumberPicker extends LinearLayout {
     private void postSetSelectionCommand(int selectionStart, int selectionEnd) {
         {
             mSetSelectionCommand = new SetSelectionCommand();
-        } //End block
+        } 
         {
             removeCallbacks(mSetSelectionCommand);
-        } //End block
+        } 
         mSetSelectionCommand.mSelectionStart = selectionStart;
         mSetSelectionCommand.mSelectionEnd = selectionEnd;
         post(mSetSelectionCommand);
-        // ---------- Original Method ----------
-        //if (mSetSelectionCommand == null) {
-            //mSetSelectionCommand = new SetSelectionCommand();
-        //} else {
-            //removeCallbacks(mSetSelectionCommand);
-        //}
-        //mSetSelectionCommand.mSelectionStart = selectionStart;
-        //mSetSelectionCommand.mSelectionEnd = selectionEnd;
-        //post(mSetSelectionCommand);
+        
+        
+            
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -1981,19 +1981,19 @@ public class NumberPicker extends LinearLayout {
     private void postAdjustScrollerCommand(int delayMillis) {
         {
             mAdjustScrollerCommand = new AdjustScrollerCommand();
-        } //End block
+        } 
         {
             removeCallbacks(mAdjustScrollerCommand);
-        } //End block
+        } 
         postDelayed(mAdjustScrollerCommand, delayMillis);
         addTaint(delayMillis);
-        // ---------- Original Method ----------
-        //if (mAdjustScrollerCommand == null) {
-            //mAdjustScrollerCommand = new AdjustScrollerCommand();
-        //} else {
-            //removeCallbacks(mAdjustScrollerCommand);
-        //}
-        //postDelayed(mAdjustScrollerCommand, delayMillis);
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -2002,7 +2002,7 @@ public class NumberPicker extends LinearLayout {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.147 -0400", hash_original_method = "10D9049FFA6F11A4560862F2A7A49039", hash_generated_method = "10D9049FFA6F11A4560862F2A7A49039")
         public InputTextFilter ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2010,8 +2010,8 @@ public class NumberPicker extends LinearLayout {
         public int getInputType() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_73647372 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_73647372;
-            // ---------- Original Method ----------
-            //return InputType.TYPE_CLASS_TEXT;
+            
+            
         }
 
         
@@ -2020,8 +2020,8 @@ public class NumberPicker extends LinearLayout {
         protected char[] getAcceptedChars() {
             char[] var50607924ABD4C17119BAF3A1CE41C0EC_825826866 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_825826866;
-            // ---------- Original Method ----------
-            //return DIGIT_CHARACTERS;
+            
+            
         }
 
         
@@ -2029,41 +2029,41 @@ public class NumberPicker extends LinearLayout {
         @Override
         public CharSequence filter(CharSequence source, int start, int end, Spanned dest,
                 int dstart, int dend) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_560812560 = null; //Variable for return #1
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1741851720 = null; //Variable for return #2
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_663213954 = null; //Variable for return #3
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_2118098386 = null; //Variable for return #4
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_980694047 = null; //Variable for return #5
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_661530660 = null; //Variable for return #6
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_560812560 = null; 
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1741851720 = null; 
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_663213954 = null; 
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_2118098386 = null; 
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_980694047 = null; 
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_661530660 = null; 
             {
                 CharSequence filtered = super.filter(source, start, end, dest, dstart, dend);
                 {
                     filtered = source.subSequence(start, end);
-                } //End block
+                } 
                 String result = String.valueOf(dest.subSequence(0, dstart)) + filtered
                         + dest.subSequence(dend, dest.length());
                 {
                     boolean varD7CE5EE75488B655CC1D56612F69FDCB_754711711 = ("".equals(result));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_560812560 = result;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 int val = getSelectedPos(result);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1741851720 = "";
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_663213954 = filtered;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 CharSequence filtered = String.valueOf(source.subSequence(start, end));
                 {
                     boolean var7969EAAC11BC0DD892602470F9CC777E_1654157860 = (TextUtils.isEmpty(filtered));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_2118098386 = "";
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 String result = String.valueOf(dest.subSequence(0, dstart)) + filtered
                         + dest.subSequence(dend, dest.length());
                 String str = String.valueOf(result).toLowerCase();
@@ -2076,43 +2076,43 @@ public class NumberPicker extends LinearLayout {
                             {
                                 postSetSelectionCommand(result.length(), val.length());
                                 varB4EAC82CA7396A68D541C85D26508E83_980694047 = val.subSequence(dstart, val.length());
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_661530660 = "";
-            } //End block
+            } 
             addTaint(source.getTaint());
             addTaint(start);
             addTaint(end);
             addTaint(dest.getTaint());
             addTaint(dstart);
             addTaint(dend);
-            CharSequence varA7E53CE21691AB073D9660D615818899_379727174; //Final return value
+            CharSequence varA7E53CE21691AB073D9660D615818899_379727174; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_379727174 = varB4EAC82CA7396A68D541C85D26508E83_560812560;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_379727174 = varB4EAC82CA7396A68D541C85D26508E83_1741851720;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_379727174 = varB4EAC82CA7396A68D541C85D26508E83_663213954;
                     break;
-                case 4: //Assign result for return ordinal #4
+                case 4: 
                     varA7E53CE21691AB073D9660D615818899_379727174 = varB4EAC82CA7396A68D541C85D26508E83_2118098386;
                     break;
-                case 5: //Assign result for return ordinal #5
+                case 5: 
                     varA7E53CE21691AB073D9660D615818899_379727174 = varB4EAC82CA7396A68D541C85D26508E83_980694047;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_379727174 = varB4EAC82CA7396A68D541C85D26508E83_661530660;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_379727174.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_379727174.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_379727174;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2131,15 +2131,15 @@ public class NumberPicker extends LinearLayout {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.151 -0400", hash_original_method = "8A1B763782C13D7A531CCCB7905DBC5E", hash_generated_method = "8A1B763782C13D7A531CCCB7905DBC5E")
         public SetSelectionCommand ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.151 -0400", hash_original_method = "5A9CF76A42C671BAE659DDDD324A19D9", hash_generated_method = "D5DE829BC4A9BD93C1BA19F296BB6266")
         public void run() {
             mInputText.setSelection(mSelectionStart, mSelectionEnd);
-            // ---------- Original Method ----------
-            //mInputText.setSelection(mSelectionStart, mSelectionEnd);
+            
+            
         }
 
         
@@ -2152,7 +2152,7 @@ public class NumberPicker extends LinearLayout {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.151 -0400", hash_original_method = "04A50735AF7565EFEB09DB8389B3EF59", hash_generated_method = "04A50735AF7565EFEB09DB8389B3EF59")
         public AdjustScrollerCommand ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2162,29 +2162,29 @@ public class NumberPicker extends LinearLayout {
             {
                 updateInputTextView();
                 showInputControls(mShowInputControlsAnimimationDuration);
-            } //End block
+            } 
             int deltaY = mInitialScrollOffset - mCurrentScrollOffset;
             {
                 boolean var6323F228A85B2A4B104B3FC1C233D7DC_1634611439 = (Math.abs(deltaY) > mSelectorElementHeight / 2);
                 {
                     deltaY += (deltaY > 0) ? -mSelectorElementHeight : mSelectorElementHeight;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mAdjustScroller.startScroll(0, 0, 0, deltaY, SELECTOR_ADJUSTMENT_DURATION_MILLIS);
             invalidate();
-            // ---------- Original Method ----------
-            //mPreviousScrollerY = 0;
-            //if (mInitialScrollOffset == mCurrentScrollOffset) {
-                //updateInputTextView();
-                //showInputControls(mShowInputControlsAnimimationDuration);
-                //return;
-            //}
-            //int deltaY = mInitialScrollOffset - mCurrentScrollOffset;
-            //if (Math.abs(deltaY) > mSelectorElementHeight / 2) {
-                //deltaY += (deltaY > 0) ? -mSelectorElementHeight : mSelectorElementHeight;
-            //}
-            //mAdjustScroller.startScroll(0, 0, 0, deltaY, SELECTOR_ADJUSTMENT_DURATION_MILLIS);
-            //invalidate();
+            
+            
+            
+                
+                
+                
+            
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -2200,15 +2200,15 @@ public class NumberPicker extends LinearLayout {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.152 -0400", hash_original_method = "A263DA149B2C322986CF6F1865703F44", hash_generated_method = "A263DA149B2C322986CF6F1865703F44")
         public ChangeCurrentByOneFromLongPressCommand ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.152 -0400", hash_original_method = "ED1739B7A0ACAE655C07ED8C0ABABF1C", hash_generated_method = "3E122DEB3F2DDEA67EBDA1CC64C07EBB")
         private void setIncrement(boolean increment) {
             mIncrement = increment;
-            // ---------- Original Method ----------
-            //mIncrement = increment;
+            
+            
         }
 
         
@@ -2216,9 +2216,9 @@ public class NumberPicker extends LinearLayout {
         public void run() {
             changeCurrentByOne(mIncrement);
             postDelayed(this, mLongPressUpdateInterval);
-            // ---------- Original Method ----------
-            //changeCurrentByOne(mIncrement);
-            //postDelayed(this, mLongPressUpdateInterval);
+            
+            
+            
         }
 
         

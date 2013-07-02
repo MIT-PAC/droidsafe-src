@@ -1,11 +1,11 @@
 package org.apache.http.impl.conn;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -53,13 +53,13 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
         markedReusable = false;
         aborted = false;
         duration = Long.MAX_VALUE;
-        // ---------- Original Method ----------
-        //executionThread = Thread.currentThread();
-        //connManager = mgr;
-        //wrappedConnection = conn;
-        //markedReusable = false;
-        //aborted = false;
-        //duration = Long.MAX_VALUE;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -68,32 +68,32 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
         wrappedConnection = null;
         connManager = null;
         duration = Long.MAX_VALUE;
-        // ---------- Original Method ----------
-        //wrappedConnection = null;
-        //connManager = null;
-        //duration = Long.MAX_VALUE;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.341 -0400", hash_original_method = "6A8409740777F9B554371FD5CA23B84B", hash_generated_method = "3C636157F253BACD9E3DE246430C756E")
     protected OperatedClientConnection getWrappedConnection() {
-        OperatedClientConnection varB4EAC82CA7396A68D541C85D26508E83_1328905209 = null; //Variable for return #1
+        OperatedClientConnection varB4EAC82CA7396A68D541C85D26508E83_1328905209 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1328905209 = wrappedConnection;
-        varB4EAC82CA7396A68D541C85D26508E83_1328905209.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1328905209.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1328905209;
-        // ---------- Original Method ----------
-        //return wrappedConnection;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.341 -0400", hash_original_method = "D124AA8CBEEBBCAB0459F467E40DD04B", hash_generated_method = "989CA3D84711A76B7CB2DB7866317754")
     protected ClientConnectionManager getManager() {
-        ClientConnectionManager varB4EAC82CA7396A68D541C85D26508E83_249162246 = null; //Variable for return #1
+        ClientConnectionManager varB4EAC82CA7396A68D541C85D26508E83_249162246 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_249162246 = connManager;
-        varB4EAC82CA7396A68D541C85D26508E83_249162246.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_249162246.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_249162246;
-        // ---------- Original Method ----------
-        //return connManager;
+        
+        
     }
 
     
@@ -101,11 +101,11 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
     protected final void assertNotAborted() throws InterruptedIOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new InterruptedIOException("Connection has been shut down.");
-        } //End block
-        // ---------- Original Method ----------
-        //if (aborted) {
-            //throw new InterruptedIOException("Connection has been shut down.");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -114,58 +114,62 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
             final OperatedClientConnection wrappedConn) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No wrapped connection.");
-        } //End block
+        } 
         addTaint(wrappedConn.getTaint());
-        // ---------- Original Method ----------
-        //if (wrappedConn == null) {
-            //throw new IllegalStateException("No wrapped connection.");
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.343 -0400", hash_original_method = "2FF9625B0864983A43D78C23BFFFC0A5", hash_generated_method = "3D5613855DA4FB1F7EADE5C9DEB539EE")
     public boolean isOpen() {
         OperatedClientConnection conn = getWrappedConnection();
         boolean varE7A4B471159AD2DE9ECB4691541B383D_1498234198 = (conn.isOpen());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1760904788 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1760904788;
-        // ---------- Original Method ----------
-        //OperatedClientConnection conn = getWrappedConnection();
-        //if (conn == null)
-            //return false;
-        //return conn.isOpen();
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.343 -0400", hash_original_method = "90FAABB6F73024DC33344558EFAA1B46", hash_generated_method = "41071F4F05AA78E2A0A34286A3A3195B")
     public boolean isStale() {
         OperatedClientConnection conn = getWrappedConnection();
         boolean varAD3FA2F7989BFDCF358C357A4888CB7F_217346944 = (conn.isStale());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1758161772 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1758161772;
-        // ---------- Original Method ----------
-        //if (aborted)
-            //return true;
-        //OperatedClientConnection conn = getWrappedConnection();
-        //if (conn == null)
-            //return true;
-        //return conn.isStale();
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.343 -0400", hash_original_method = "B78291A4996D117FD5B4CC742670B408", hash_generated_method = "9EF31553F91E55ACCB2068ACF2229F6D")
     public void setSocketTimeout(int timeout) {
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
         conn.setSocketTimeout(timeout);
         addTaint(timeout);
-        // ---------- Original Method ----------
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //conn.setSocketTimeout(timeout);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.344 -0400", hash_original_method = "BE23B10B196A5676F79C60CBBEA5CE71", hash_generated_method = "036DB50A096E6C343B857AB176B807EB")
     public int getSocketTimeout() {
         OperatedClientConnection conn = getWrappedConnection();
@@ -173,42 +177,45 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
         int varA22656DB6D884636BB9D2B60C273BEAD_85202671 = (conn.getSocketTimeout());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207086399 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207086399;
-        // ---------- Original Method ----------
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //return conn.getSocketTimeout();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.346 -0400", hash_original_method = "E00A8936DFAA9158B267C15F614D75D2", hash_generated_method = "18D3BBB031EA682CB4335DFBD78170AB")
     public HttpConnectionMetrics getMetrics() {
-        HttpConnectionMetrics varB4EAC82CA7396A68D541C85D26508E83_1966323678 = null; //Variable for return #1
+        HttpConnectionMetrics varB4EAC82CA7396A68D541C85D26508E83_1966323678 = null; 
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
         varB4EAC82CA7396A68D541C85D26508E83_1966323678 = conn.getMetrics();
-        varB4EAC82CA7396A68D541C85D26508E83_1966323678.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1966323678.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1966323678;
-        // ---------- Original Method ----------
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //return conn.getMetrics();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.349 -0400", hash_original_method = "4AF00870D9F2520B9D9724B955A54108", hash_generated_method = "6A0F716E66F5A1D2A895FECF6E36BA7E")
     public void flush() throws IOException {
         assertNotAborted();
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
         conn.flush();
-        // ---------- Original Method ----------
-        //assertNotAborted();
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //conn.flush();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.350 -0400", hash_original_method = "25E2D0AFEEAE4A9FF0C3D2AE265B1F31", hash_generated_method = "A3B9F06CE6374B9705F00B17CD768B95")
     public boolean isResponseAvailable(int timeout) throws IOException {
         assertNotAborted();
@@ -218,14 +225,15 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
         addTaint(timeout);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1928371862 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1928371862;
-        // ---------- Original Method ----------
-        //assertNotAborted();
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //return conn.isResponseAvailable(timeout);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.350 -0400", hash_original_method = "329A88989F2294EA414AFD573C61A83C", hash_generated_method = "9C5BC2199D062389D290BC18B1E77D71")
     public void receiveResponseEntity(HttpResponse response) throws HttpException, IOException {
         assertNotAborted();
@@ -234,34 +242,36 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
         unmarkReusable();
         conn.receiveResponseEntity(response);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
-        //assertNotAborted();
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //unmarkReusable();
-        //conn.receiveResponseEntity(response);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.351 -0400", hash_original_method = "DE944D48C7CF4AE77CB8336F5E9ECC2B", hash_generated_method = "1461A22571EC6549131FD82658C57521")
     public HttpResponse receiveResponseHeader() throws HttpException, IOException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_2038685945 = null; //Variable for return #1
+        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_2038685945 = null; 
         assertNotAborted();
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
         unmarkReusable();
         varB4EAC82CA7396A68D541C85D26508E83_2038685945 = conn.receiveResponseHeader();
-        varB4EAC82CA7396A68D541C85D26508E83_2038685945.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2038685945.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2038685945;
-        // ---------- Original Method ----------
-        //assertNotAborted();
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //unmarkReusable();
-        //return conn.receiveResponseHeader();
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.352 -0400", hash_original_method = "BB213D1ED83C696B5F4C4C57285E4F37", hash_generated_method = "2BB10C4E785E7A7EA0EFC5206F4E4145")
     public void sendRequestEntity(HttpEntityEnclosingRequest request) throws HttpException, IOException {
         assertNotAborted();
@@ -270,15 +280,16 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
         unmarkReusable();
         conn.sendRequestEntity(request);
         addTaint(request.getTaint());
-        // ---------- Original Method ----------
-        //assertNotAborted();
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //unmarkReusable();
-        //conn.sendRequestEntity(request);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.352 -0400", hash_original_method = "54941B5E0F36540E3C9EF8677D0A50F2", hash_generated_method = "E1C14039909FC67BDE0041FA84879634")
     public void sendRequestHeader(HttpRequest request) throws HttpException, IOException {
         assertNotAborted();
@@ -287,30 +298,32 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
         unmarkReusable();
         conn.sendRequestHeader(request);
         addTaint(request.getTaint());
-        // ---------- Original Method ----------
-        //assertNotAborted();
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //unmarkReusable();
-        //conn.sendRequestHeader(request);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.352 -0400", hash_original_method = "24C66DF3AC644AC2F2EBA8DCA3FC4629", hash_generated_method = "27CDD5C23AD9781B2289A6E493584131")
     public InetAddress getLocalAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_2131615680 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_2131615680 = null; 
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
         varB4EAC82CA7396A68D541C85D26508E83_2131615680 = conn.getLocalAddress();
-        varB4EAC82CA7396A68D541C85D26508E83_2131615680.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2131615680.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2131615680;
-        // ---------- Original Method ----------
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //return conn.getLocalAddress();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.353 -0400", hash_original_method = "CFFC28C49AC23EFEB6812E81E4BB886D", hash_generated_method = "9ED07C4A7896F81B1D26321D2876731F")
     public int getLocalPort() {
         OperatedClientConnection conn = getWrappedConnection();
@@ -318,28 +331,30 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
         int varBBA56698F4CB877BCC7D186705E509B7_1770482157 = (conn.getLocalPort());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_684592711 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_684592711;
-        // ---------- Original Method ----------
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //return conn.getLocalPort();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.354 -0400", hash_original_method = "600F3FFEA838B52DB2FC8A00D0FD1454", hash_generated_method = "0BD4648EE6ECCE0591C2A0CAE0806C29")
     public InetAddress getRemoteAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_295562364 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_295562364 = null; 
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
         varB4EAC82CA7396A68D541C85D26508E83_295562364 = conn.getRemoteAddress();
-        varB4EAC82CA7396A68D541C85D26508E83_295562364.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_295562364.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_295562364;
-        // ---------- Original Method ----------
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //return conn.getRemoteAddress();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.354 -0400", hash_original_method = "8BDC367E1BB67504AED838B12612BDA6", hash_generated_method = "873E9AE725482F465358F0794DCD27DB")
     public int getRemotePort() {
         OperatedClientConnection conn = getWrappedConnection();
@@ -347,13 +362,14 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
         int var3A0A898A1C062332D769D435D569D031_2000909367 = (conn.getRemotePort());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_661022289 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_661022289;
-        // ---------- Original Method ----------
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //return conn.getRemotePort();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.355 -0400", hash_original_method = "4D12F5B41CA786A718C0CE38C40DC2DA", hash_generated_method = "4E4562CC9CA034985D8A194B71C2BB9A")
     public boolean isSecure() {
         OperatedClientConnection conn = getWrappedConnection();
@@ -361,67 +377,68 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
         boolean var5F624B4FE00336318932D5C2A52C876F_967111347 = (conn.isSecure());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1324372953 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1324372953;
-        // ---------- Original Method ----------
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //return conn.isSecure();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.356 -0400", hash_original_method = "08E9B3DBCD970FB9C319F7E659C9D167", hash_generated_method = "7E60D7D6CA98C7DF1CDBE72135E7FF55")
     public SSLSession getSSLSession() {
-        SSLSession varB4EAC82CA7396A68D541C85D26508E83_1170984036 = null; //Variable for return #1
-        SSLSession varB4EAC82CA7396A68D541C85D26508E83_1062688867 = null; //Variable for return #2
+        SSLSession varB4EAC82CA7396A68D541C85D26508E83_1170984036 = null; 
+        SSLSession varB4EAC82CA7396A68D541C85D26508E83_1062688867 = null; 
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
         {
             boolean var3A7D61B68AE823F6A30349D498C59A5C_1007759031 = (!isOpen());
             varB4EAC82CA7396A68D541C85D26508E83_1170984036 = null;
-        } //End collapsed parenthetic
+        } 
         SSLSession result = null;
         Socket sock = conn.getSocket();
         {
             result = ((SSLSocket)sock).getSession();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1062688867 = result;
-        SSLSession varA7E53CE21691AB073D9660D615818899_864047799; //Final return value
+        SSLSession varA7E53CE21691AB073D9660D615818899_864047799; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_864047799 = varB4EAC82CA7396A68D541C85D26508E83_1170984036;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_864047799 = varB4EAC82CA7396A68D541C85D26508E83_1062688867;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_864047799.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_864047799.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_864047799;
-        // ---------- Original Method ----------
-        //OperatedClientConnection conn = getWrappedConnection();
-        //assertValid(conn);
-        //if (!isOpen())
-            //return null;
-        //SSLSession result = null;
-        //Socket    sock    = conn.getSocket();
-        //if (sock instanceof SSLSocket) {
-            //result = ((SSLSocket)sock).getSession();
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.357 -0400", hash_original_method = "839709285FE118C452FA26DE879FFB1D", hash_generated_method = "7BE665094380AED20128BA3103013769")
     public void markReusable() {
         markedReusable = true;
-        // ---------- Original Method ----------
-        //markedReusable = true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.358 -0400", hash_original_method = "7923E01503297FB76AA22E34EEF6FDF5", hash_generated_method = "F127E589DEE28AC35FB277B0F37C1F36")
     public void unmarkReusable() {
         markedReusable = false;
-        // ---------- Original Method ----------
-        //markedReusable = false;
+        
+        
     }
 
     
@@ -429,40 +446,43 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
     public boolean isMarkedReusable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1148018016 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1148018016;
-        // ---------- Original Method ----------
-        //return markedReusable;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.359 -0400", hash_original_method = "37F53EE2ADE585D06847009D28379E6D", hash_generated_method = "30C061D35B00A90AE432C2578011B0B0")
     public void setIdleDuration(long duration, TimeUnit unit) {
         {
             this.duration = unit.toMillis(duration);
-        } //End block
+        } 
         {
             this.duration = -1;
-        } //End block
-        // ---------- Original Method ----------
-        //if(duration > 0) {
-            //this.duration = unit.toMillis(duration);
-        //} else {
-            //this.duration = -1;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.359 -0400", hash_original_method = "6E364751B79392C296E473C8CD17B57B", hash_generated_method = "229274605D4E105923FDB3118C266F14")
     public void releaseConnection() {
         {
             connManager.releaseConnection(this, duration, TimeUnit.MILLISECONDS);
-        } //End block
-        // ---------- Original Method ----------
-        //if (connManager != null) {
-            //connManager.releaseConnection(this, duration, TimeUnit.MILLISECONDS);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.359 -0400", hash_original_method = "8C46EA9A337087A0A63A85A9D3E05177", hash_generated_method = "7D2C9182059520F074E51DE600B47FC3")
     public void abortConnection() {
         aborted = true;
@@ -470,28 +490,28 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
         try 
         {
             shutdown();
-        } //End block
+        } 
         catch (IOException ignore)
         { }
         {
             boolean var4A29A9E0F951B1C4442C15321E502EC6_216579615 = (executionThread.equals(Thread.currentThread()));
             {
                 releaseConnection();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (aborted) {
-            //return;
-        //}
-        //aborted = true;
-        //unmarkReusable();
-        //try {
-            //shutdown();
-        //} catch (IOException ignore) {
-        //}
-        //if (executionThread.equals(Thread.currentThread())) {
-            //releaseConnection();
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     

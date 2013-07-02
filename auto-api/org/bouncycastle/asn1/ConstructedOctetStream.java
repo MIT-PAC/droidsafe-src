@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.InputStream;
 import java.io.IOException;
@@ -25,8 +25,8 @@ class ConstructedOctetStream extends InputStream {
       ConstructedOctetStream(
         ASN1StreamParser parser) {
         _parser = parser;
-        // ---------- Original Method ----------
-        //_parser = parser;
+        
+        
     }
 
     
@@ -36,28 +36,28 @@ class ConstructedOctetStream extends InputStream {
             ASN1OctetStringParser s = (ASN1OctetStringParser)_parser.readObject();
             _first = false;
             _currentStream = s.getOctetStream();
-        } //End block
+        } 
         int totalRead = 0;
         {
             int numRead = _currentStream.read(b, off + totalRead, len - totalRead);
             {
                 totalRead += numRead;
-            } //End block
+            } 
             {
                 ASN1OctetStringParser aos = (ASN1OctetStringParser)_parser.readObject();
                 {
                     _currentStream = null;
-                } //End block
+                } 
                 _currentStream = aos.getOctetStream();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(b[0]);
         addTaint(off);
         addTaint(len);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1777096041 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1777096041;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -67,47 +67,47 @@ class ConstructedOctetStream extends InputStream {
             ASN1OctetStringParser s = (ASN1OctetStringParser)_parser.readObject();
             _first = false;
             _currentStream = s.getOctetStream();
-        } //End block
+        } 
         {
             int b = _currentStream.read();
             ASN1OctetStringParser s = (ASN1OctetStringParser)_parser.readObject();
             {
                 _currentStream = null;
-            } //End block
+            } 
             _currentStream = s.getOctetStream();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_84516233 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_84516233;
-        // ---------- Original Method ----------
-        //if (_currentStream == null)
-        //{
-            //if (!_first)
-            //{
-                //return -1;
-            //}
-            //ASN1OctetStringParser s = (ASN1OctetStringParser)_parser.readObject();
-            //if (s == null)
-            //{
-                //return -1;
-            //}
-            //_first = false;
-            //_currentStream = s.getOctetStream();
-        //}
-        //for (;;)
-        //{
-            //int b = _currentStream.read();
-            //if (b >= 0)
-            //{
-                //return b;
-            //}
-            //ASN1OctetStringParser s = (ASN1OctetStringParser)_parser.readObject();
-            //if (s == null)
-            //{
-                //_currentStream = null;
-                //return -1;
-            //}
-            //_currentStream = s.getOctetStream();
-        //}
+        
+        
+        
+            
+            
+                
+            
+            
+            
+            
+                
+            
+            
+            
+        
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            
+                
+                
+            
+            
+        
     }
 
     

@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ public class SocketException extends IOException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.865 -0400", hash_original_method = "6370438F3E8FDAC390DBF5D95BB547E6", hash_generated_method = "16218E158583D4A8A5981F4E73EFCDEB")
     public  SocketException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class SocketException extends IOException {
     public  SocketException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ public class SocketException extends IOException {
     public  SocketException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,7 +38,7 @@ public class SocketException extends IOException {
         super(detailMessage, cause);
         addTaint(detailMessage.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

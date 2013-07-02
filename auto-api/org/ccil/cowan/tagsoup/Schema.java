@@ -1,11 +1,11 @@
 package org.ccil.cowan.tagsoup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.HashMap;
 
@@ -29,10 +29,11 @@ public abstract class Schema {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.113 -0400", hash_original_method = "D0D844E899EF8830D95ED807F7DF602A", hash_generated_method = "D0D844E899EF8830D95ED807F7DF602A")
     public Schema ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.113 -0400", hash_original_method = "9699024F392D458CCB5B62F4AD905856", hash_generated_method = "040E267CAC329A985481A7B0F56E77FA")
     public void elementType(String name, int model, int memberOf, int flags) {
         ElementType e = new ElementType(name, model, memberOf, flags, this);
@@ -42,24 +43,25 @@ public abstract class Schema {
         addTaint(model);
         addTaint(memberOf);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //ElementType e = new ElementType(name, model, memberOf, flags, this);
-        //theElementTypes.put(name.toLowerCase(), e);
-        //if (memberOf == M_ROOT) theRoot = e;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.114 -0400", hash_original_method = "7A084406CC3B18F733E08ECB30CF0A86", hash_generated_method = "FFF5D132E9AED5BC24C21CB48F5EC7ED")
     public ElementType rootElementType() {
-        ElementType varB4EAC82CA7396A68D541C85D26508E83_266662191 = null; //Variable for return #1
+        ElementType varB4EAC82CA7396A68D541C85D26508E83_266662191 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_266662191 = theRoot;
-        varB4EAC82CA7396A68D541C85D26508E83_266662191.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_266662191.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_266662191;
-        // ---------- Original Method ----------
-        //return theRoot;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.114 -0400", hash_original_method = "1826BAE4A7A25490C40F3DF9456EC509", hash_generated_method = "963C043A44EA98B3570195542BE6D984")
     public void attribute(String elemName, String attrName,
 				String type, String value) {
@@ -68,71 +70,75 @@ public abstract class Schema {
             if (DroidSafeAndroidRuntime.control) throw new Error("Attribute " + attrName +
 				" specified for unknown element type " +
 				elemName);
-        } //End block
+        } 
         e.setAttribute(attrName, type, value);
         addTaint(elemName.getTaint());
         addTaint(attrName.getTaint());
         addTaint(type.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //ElementType e = getElementType(elemName);
-        //if (e == null) {
-			//throw new Error("Attribute " + attrName +
-				//" specified for unknown element type " +
-				//elemName);
-			//}
-        //e.setAttribute(attrName, type, value);
+        
+        
+        
+			
+				
+				
+			
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.115 -0400", hash_original_method = "C7818769967A7B7D6BCF0765E44CE567", hash_generated_method = "91A81D1D9DA292E76A66F4C968E111AD")
     public void parent(String name, String parentName) {
         ElementType child = getElementType(name);
         ElementType parent = getElementType(parentName);
         {
             if (DroidSafeAndroidRuntime.control) throw new Error("No child " + name + " for parent " + parentName);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new Error("No parent " + parentName + " for child " + name);
-        } //End block
+        } 
         child.setParent(parent);
         addTaint(name.getTaint());
         addTaint(parentName.getTaint());
-        // ---------- Original Method ----------
-        //ElementType child = getElementType(name);
-        //ElementType parent = getElementType(parentName);
-        //if (child == null) {
-			//throw new Error("No child " + name + " for parent " + parentName);
-			//}
-        //if (parent == null) {
-			//throw new Error("No parent " + parentName + " for child " + name);
-			//}
-        //child.setParent(parent);
+        
+        
+        
+        
+			
+			
+        
+			
+			
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.115 -0400", hash_original_method = "9D058B55598451C1F46B788161F3861A", hash_generated_method = "302CF0689780DBA01F8F38EAEF4D90C3")
     public void entity(String name, int value) {
         theEntities.put(name, new Integer(value));
         addTaint(name.getTaint());
         addTaint(value);
-        // ---------- Original Method ----------
-        //theEntities.put(name, new Integer(value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.116 -0400", hash_original_method = "15E50FC94B256079445190BC5C208F0A", hash_generated_method = "0B583C22A4E491563A72E4ADE0D4E1C7")
     public ElementType getElementType(String name) {
-        ElementType varB4EAC82CA7396A68D541C85D26508E83_678844354 = null; //Variable for return #1
+        ElementType varB4EAC82CA7396A68D541C85D26508E83_678844354 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_678844354 = (ElementType)(theElementTypes.get(name.toLowerCase()));
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_678844354.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_678844354.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_678844354;
-        // ---------- Original Method ----------
-        //return (ElementType)(theElementTypes.get(name.toLowerCase()));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.116 -0400", hash_original_method = "5590AE9B6B63818372EC6D8DB973BC8E", hash_generated_method = "C1134A83E303BFB9969FE430C2B1059E")
     public int getEntity(String name) {
         Integer ch = (Integer)theEntities.get(name);
@@ -140,48 +146,48 @@ public abstract class Schema {
         addTaint(name.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_968940631 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_968940631;
-        // ---------- Original Method ----------
-        //Integer ch = (Integer)theEntities.get(name);
-        //if (ch == null) return 0;
-        //return ch.intValue();
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.117 -0400", hash_original_method = "1798242D281A34B11A86AFDBABA0D18C", hash_generated_method = "245533B97BB8EBCE34AEFD56A53190C2")
     public String getURI() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1166021776 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1166021776 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1166021776 = theURI;
-        varB4EAC82CA7396A68D541C85D26508E83_1166021776.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1166021776.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1166021776;
-        // ---------- Original Method ----------
-        //return theURI;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.118 -0400", hash_original_method = "ED82F113C378B68FF5FAC6A19F5F47F3", hash_generated_method = "743FCFF3EE9FB918348ACD80F06E274D")
     public String getPrefix() {
-        String varB4EAC82CA7396A68D541C85D26508E83_788175290 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_788175290 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_788175290 = thePrefix;
-        varB4EAC82CA7396A68D541C85D26508E83_788175290.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_788175290.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_788175290;
-        // ---------- Original Method ----------
-        //return thePrefix;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.118 -0400", hash_original_method = "234E680F6FA8586452A8BF7CCF48759A", hash_generated_method = "69EEF406ACDC114BD475EB03C2469E2B")
     public void setURI(String uri) {
         theURI = uri;
-        // ---------- Original Method ----------
-        //theURI = uri;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.118 -0400", hash_original_method = "4CEDB742D62DCBE17383ACF000150A0B", hash_generated_method = "A94536348B3AA801BFBCDF0F0F6703FC")
     public void setPrefix(String prefix) {
         thePrefix = prefix;
-        // ---------- Original Method ----------
-        //thePrefix = prefix;
+        
+        
     }
 
     

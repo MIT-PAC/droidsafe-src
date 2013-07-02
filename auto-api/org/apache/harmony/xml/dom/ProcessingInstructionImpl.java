@@ -1,11 +1,11 @@
 package org.apache.harmony.xml.dom;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Node;
@@ -25,32 +25,32 @@ public final class ProcessingInstructionImpl extends LeafNodeImpl implements Pro
         this.target = target;
         this.data = data;
         addTaint(document.getTaint());
-        // ---------- Original Method ----------
-        //this.target = target;
-        //this.data = data;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.393 -0400", hash_original_method = "CA0E91FD462850CF9A2412442DB68D19", hash_generated_method = "7D75EC400001E9A9CCA94483130429CD")
     public String getData() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2145186498 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2145186498 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2145186498 = data;
-        varB4EAC82CA7396A68D541C85D26508E83_2145186498.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2145186498.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2145186498;
-        // ---------- Original Method ----------
-        //return data;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.393 -0400", hash_original_method = "44DCC451FA6F3CA18022A718FA0AE60D", hash_generated_method = "2163DBB8EC77C7A93E04143F89630CB2")
     @Override
     public String getNodeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_39425506 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_39425506 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_39425506 = target;
-        varB4EAC82CA7396A68D541C85D26508E83_39425506.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_39425506.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_39425506;
-        // ---------- Original Method ----------
-        //return target;
+        
+        
     }
 
     
@@ -59,39 +59,39 @@ public final class ProcessingInstructionImpl extends LeafNodeImpl implements Pro
     public short getNodeType() {
         short var4F09DAA9D95BCB166A302407A0E0BABE_172698925 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_172698925;
-        // ---------- Original Method ----------
-        //return Node.PROCESSING_INSTRUCTION_NODE;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.394 -0400", hash_original_method = "26741C8FC3CFA5C9E2871448A384408A", hash_generated_method = "B57330AC1C6BEC955B1BD8146E03CF5A")
     @Override
     public String getNodeValue() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1860424524 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1860424524 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1860424524 = data;
-        varB4EAC82CA7396A68D541C85D26508E83_1860424524.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1860424524.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1860424524;
-        // ---------- Original Method ----------
-        //return data;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.395 -0400", hash_original_method = "067DF5651A33C6E6A710DDDF2900842F", hash_generated_method = "B2B53FB9EE8B89D522C3AEFE5DA31857")
     public String getTarget() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1152832683 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1152832683 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1152832683 = target;
-        varB4EAC82CA7396A68D541C85D26508E83_1152832683.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1152832683.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1152832683;
-        // ---------- Original Method ----------
-        //return target;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.395 -0400", hash_original_method = "985529340F1B642B4E22D59984257994", hash_generated_method = "764D2C61447051DD6595F6AB31D89D3E")
     public void setData(String data) throws DOMException {
         this.data = data;
-        // ---------- Original Method ----------
-        //this.data = data;
+        
+        
     }
 
     

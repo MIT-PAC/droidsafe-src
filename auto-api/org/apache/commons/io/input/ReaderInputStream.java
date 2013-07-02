@@ -1,11 +1,11 @@
 package org.apache.commons.io.input;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -42,7 +42,7 @@ public class ReaderInputStream extends InputStream {
         this(reader, encoder, DEFAULT_BUFFER_SIZE);
         addTaint(reader.getTaint());
         addTaint(encoder.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -54,13 +54,13 @@ public class ReaderInputStream extends InputStream {
         this.encoderIn.flip();
         this.encoderOut = ByteBuffer.allocate(128);
         this.encoderOut.flip();
-        // ---------- Original Method ----------
-        //this.reader = reader;
-        //this.encoder = encoder;
-        //this.encoderIn = CharBuffer.allocate(bufferSize);
-        //this.encoderIn.flip();
-        //this.encoderOut = ByteBuffer.allocate(128);
-        //this.encoderOut.flip();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -74,7 +74,7 @@ public class ReaderInputStream extends InputStream {
         addTaint(reader.getTaint());
         addTaint(charset.getTaint());
         addTaint(bufferSize);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -83,7 +83,7 @@ public class ReaderInputStream extends InputStream {
         this(reader, charset, DEFAULT_BUFFER_SIZE);
         addTaint(reader.getTaint());
         addTaint(charset.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -93,7 +93,7 @@ public class ReaderInputStream extends InputStream {
         addTaint(reader.getTaint());
         addTaint(charsetName.getTaint());
         addTaint(bufferSize);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -102,7 +102,7 @@ public class ReaderInputStream extends InputStream {
         this(reader, charsetName, DEFAULT_BUFFER_SIZE);
         addTaint(reader.getTaint());
         addTaint(charsetName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -110,10 +110,11 @@ public class ReaderInputStream extends InputStream {
     public  ReaderInputStream(Reader reader) {
         this(reader, Charset.defaultCharset());
         addTaint(reader.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.239 -0400", hash_original_method = "A6D59C67E1B0FB9D0521062EBAAF3984", hash_generated_method = "A1E3947AF515FB0ED6B5D99F783C9B06")
     private void fillBuffer() throws IOException {
         {
@@ -124,44 +125,45 @@ public class ReaderInputStream extends InputStream {
                 int c = reader.read(encoderIn.array(), position, encoderIn.remaining());
                 {
                     endOfInput = true;
-                } //End block
+                } 
                 {
                     encoderIn.position(position+c);
-                } //End block
+                } 
                 encoderIn.flip();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         encoderOut.compact();
         lastCoderResult = encoder.encode(encoderIn, encoderOut, endOfInput);
         encoderOut.flip();
-        // ---------- Original Method ----------
-        //if (!endOfInput && (lastCoderResult == null || lastCoderResult.isUnderflow())) {
-            //encoderIn.compact();
-            //int position = encoderIn.position();
-            //int c = reader.read(encoderIn.array(), position, encoderIn.remaining());
-            //if (c == -1) {
-                //endOfInput = true;
-            //} else {
-                //encoderIn.position(position+c);
-            //}
-            //encoderIn.flip();
-        //}
-        //encoderOut.compact();
-        //lastCoderResult = encoder.encode(encoderIn, encoderOut, endOfInput);
-        //encoderOut.flip();
+        
+        
+            
+            
+            
+            
+                
+            
+                
+            
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.239 -0400", hash_original_method = "9AA2BEF9DA8AFF8D251BF2FC6F763561", hash_generated_method = "0E187E54A7062EDB99FEFCDF694E11A9")
     @Override
     public int read(byte[] b, int off, int len) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Byte array must not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("Array Size=" + b.length +
                     ", offset=" + off + ", length=" + len);
-        } //End block
+        } 
         int read = 0;
         {
             {
@@ -172,25 +174,26 @@ public class ReaderInputStream extends InputStream {
                     off += c;
                     len -= c;
                     read += c;
-                } //End block
+                } 
                 {
                     fillBuffer();
                     {
                         boolean var1BFADDC84FDAF431B3F5CA44D8F63FE6_1050885695 = (endOfInput && !encoderOut.hasRemaining());
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(b[0]);
         addTaint(off);
         addTaint(len);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1383196110 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1383196110;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.240 -0400", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "C9A1D1E4992C3ABBE3F7D76DE63DE73C")
     @Override
     public int read(byte[] b) throws IOException {
@@ -198,11 +201,12 @@ public class ReaderInputStream extends InputStream {
         addTaint(b[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1679653192 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1679653192;
-        // ---------- Original Method ----------
-        //return read(b, 0, b.length);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.240 -0400", hash_original_method = "DE40F403B4AA3B3194A9FBF22582153E", hash_generated_method = "99E3362F640BA912656765F60F0ACB67")
     @Override
     public int read() throws IOException {
@@ -211,37 +215,38 @@ public class ReaderInputStream extends InputStream {
                 boolean varCA0CDCAECD073FD5C50E68016B46BB06_1212198408 = (encoderOut.hasRemaining());
                 {
                     int var73530728B2A273A024F37B0944098BB0_877995483 = (encoderOut.get() & 0xFF);
-                } //End block
+                } 
                 {
                     fillBuffer();
                     {
                         boolean var1BFADDC84FDAF431B3F5CA44D8F63FE6_1794527679 = (endOfInput && !encoderOut.hasRemaining());
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1009953350 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1009953350;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //if (encoderOut.hasRemaining()) {
-                //return encoderOut.get() & 0xFF;
-            //} else {
-                //fillBuffer();
-                //if (endOfInput && !encoderOut.hasRemaining()) {
-                    //return -1;
-                //}
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.241 -0400", hash_original_method = "A1FFC9B80BA56A6C1B0EFB45497D16D1", hash_generated_method = "B3E1029E376B5E0CFBFF8FD738B892BD")
     @Override
     public void close() throws IOException {
         reader.close();
-        // ---------- Original Method ----------
-        //reader.close();
+        
+        
     }
 
     

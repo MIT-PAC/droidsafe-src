@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class DatagramPacket {
@@ -33,7 +33,7 @@ public final class DatagramPacket {
         this(data, 0, length);
         addTaint(data[0]);
         addTaint(length);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,8 +43,8 @@ public final class DatagramPacket {
         addTaint(data[0]);
         addTaint(offset);
         addTaint(length);
-        // ---------- Original Method ----------
-        //setData(data, offset, length);
+        
+        
     }
 
     
@@ -58,9 +58,9 @@ public final class DatagramPacket {
         addTaint(offset);
         addTaint(length);
         addTaint(aPort);
-        // ---------- Original Method ----------
-        //setPort(aPort);
-        //address = host;
+        
+        
+        
     }
 
     
@@ -71,7 +71,7 @@ public final class DatagramPacket {
         addTaint(length);
         addTaint(host.getTaint());
         addTaint(port);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -82,8 +82,8 @@ public final class DatagramPacket {
         addTaint(data[0]);
         addTaint(length);
         addTaint(sockAddr.getTaint());
-        // ---------- Original Method ----------
-        //setSocketAddress(sockAddr);
+        
+        
     }
 
     
@@ -96,19 +96,19 @@ public final class DatagramPacket {
         addTaint(offset);
         addTaint(length);
         addTaint(sockAddr.getTaint());
-        // ---------- Original Method ----------
-        //setSocketAddress(sockAddr);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.065 -0400", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "9B1055BD2C32B22A0FBB1E74D6723790")
     public synchronized InetAddress getAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_479657345 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_479657345 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_479657345 = address;
-        varB4EAC82CA7396A68D541C85D26508E83_479657345.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_479657345.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_479657345;
-        // ---------- Original Method ----------
-        //return address;
+        
+        
     }
 
     
@@ -116,8 +116,8 @@ public final class DatagramPacket {
     public synchronized byte[] getData() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2106106450 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2106106450;
-        // ---------- Original Method ----------
-        //return data;
+        
+        
     }
 
     
@@ -125,8 +125,8 @@ public final class DatagramPacket {
     public synchronized int getLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1246254601 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1246254601;
-        // ---------- Original Method ----------
-        //return length;
+        
+        
     }
 
     
@@ -134,8 +134,8 @@ public final class DatagramPacket {
     public synchronized int getOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1947219239 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1947219239;
-        // ---------- Original Method ----------
-        //return offset;
+        
+        
     }
 
     
@@ -143,36 +143,37 @@ public final class DatagramPacket {
     public synchronized int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1765328963 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1765328963;
-        // ---------- Original Method ----------
-        //return port;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.069 -0400", hash_original_method = "C8080B968BD32815251343303FD7866E", hash_generated_method = "D8DF36BE09A5C0C183F7A65469BFBDCD")
     public synchronized void setAddress(InetAddress addr) {
         address = addr;
-        // ---------- Original Method ----------
-        //address = addr;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.070 -0400", hash_original_method = "5E0274686A01B4FB96908A6A9486BA81", hash_generated_method = "3DFFA060655BF0A4DF0AE324511A5CC2")
     public synchronized void setData(byte[] data, int offset, int byteCount) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         this.data = data;
         this.offset = offset;
         this.length = byteCount;
         this.capacity = byteCount;
-        // ---------- Original Method ----------
-        //if ((offset | byteCount) < 0 || offset > data.length || byteCount > data.length - offset) {
-            //throw new IllegalArgumentException();
-        //}
-        //this.data = data;
-        //this.offset = offset;
-        //this.length = byteCount;
-        //this.capacity = byteCount;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -182,11 +183,11 @@ public final class DatagramPacket {
         capacity = buf.length;
         data = buf;
         offset = 0;
-        // ---------- Original Method ----------
-        //length = buf.length;
-        //capacity = buf.length;
-        //data = buf;
-        //offset = 0;
+        
+        
+        
+        
+        
     }
 
     
@@ -194,89 +195,94 @@ public final class DatagramPacket {
     synchronized int getCapacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1679010460 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1679010460;
-        // ---------- Original Method ----------
-        //return capacity;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.072 -0400", hash_original_method = "A9C966E60C597F426105F63D3A989F4F", hash_generated_method = "14769D57C2658A640AE49D4D8AEDD5C8")
     public synchronized void setLength(int length) {
         setLengthOnly(length);
         this.capacity = length;
-        // ---------- Original Method ----------
-        //setLengthOnly(length);
-        //this.capacity = length;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.072 -0400", hash_original_method = "78A3DBC65D2912D5EFEBEB58F048F8DC", hash_generated_method = "82FB4E00862D0049700F5F62DBF823B8")
     synchronized void setLengthOnly(int length) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("length=" + length + ", offset=" + offset +
                     ", buffer size=" + data.length);
-        } //End block
+        } 
         this.length = length;
-        // ---------- Original Method ----------
-        //if (length < 0 || offset + length > data.length) {
-            //throw new IndexOutOfBoundsException("length=" + length + ", offset=" + offset +
-                    //", buffer size=" + data.length);
-        //}
-        //this.length = length;
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.073 -0400", hash_original_method = "CC3AA0BB5DF3EE4831739014FCB197DF", hash_generated_method = "B3D8D9FEC4E07B4DEE6E67158EC79946")
     public synchronized void setPort(int aPort) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Port out of range: " + aPort);
-        } //End block
+        } 
         port = aPort;
-        // ---------- Original Method ----------
-        //if (aPort < 0 || aPort > 65535) {
-            //throw new IllegalArgumentException("Port out of range: " + aPort);
-        //}
-        //port = aPort;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.074 -0400", hash_original_method = "FA4C710C49AB0B200E625D4A04A47D21", hash_generated_method = "276FAE6C64E2E08F79DA68FEF0FEF89A")
     public synchronized SocketAddress getSocketAddress() {
-        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_957110569 = null; //Variable for return #1
+        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_957110569 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_957110569 = new InetSocketAddress(getAddress(), getPort());
-        varB4EAC82CA7396A68D541C85D26508E83_957110569.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_957110569.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_957110569;
-        // ---------- Original Method ----------
-        //return new InetSocketAddress(getAddress(), getPort());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.074 -0400", hash_original_method = "3EDF0F039E2E002F80626A052A7B5C38", hash_generated_method = "0D6BBEA9C543A244061D88E8BDB26CC5")
     public synchronized void setSocketAddress(SocketAddress sockAddr) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Socket address not an InetSocketAddress: " +
                     (sockAddr == null ? null : sockAddr.getClass()));
-        } //End block
+        } 
         InetSocketAddress inetAddr = (InetSocketAddress) sockAddr;
         {
             boolean varA3B9EEB1EB48BA97910D459B57127264_654249866 = (inetAddr.isUnresolved());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Socket address unresolved: " + sockAddr);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         port = inetAddr.getPort();
         address = inetAddr.getAddress();
         addTaint(sockAddr.getTaint());
-        // ---------- Original Method ----------
-        //if (!(sockAddr instanceof InetSocketAddress)) {
-            //throw new IllegalArgumentException("Socket address not an InetSocketAddress: " +
-                    //(sockAddr == null ? null : sockAddr.getClass()));
-        //}
-        //InetSocketAddress inetAddr = (InetSocketAddress) sockAddr;
-        //if (inetAddr.isUnresolved()) {
-            //throw new IllegalArgumentException("Socket address unresolved: " + sockAddr);
-        //}
-        //port = inetAddr.getPort();
-        //address = inetAddr.getAddress();
+        
+        
+            
+                    
+        
+        
+        
+            
+        
+        
+        
     }
 
     

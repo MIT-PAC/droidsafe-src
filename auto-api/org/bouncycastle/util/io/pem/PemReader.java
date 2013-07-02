@@ -1,11 +1,11 @@
 package org.bouncycastle.util.io.pem;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,14 +20,14 @@ public class PemReader extends BufferedReader {
     public  PemReader(Reader reader) {
         super(reader);
         addTaint(reader.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.384 -0400", hash_original_method = "D58B040BED022541C97B3ACE6DF7F511", hash_generated_method = "D4EA3C54B7BF3BDE85B6EA769B4D9EEF")
     public PemObject readPemObject() throws IOException {
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_353841840 = null; //Variable for return #1
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_2046261861 = null; //Variable for return #2
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_353841840 = null; 
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_2046261861 = null; 
         String line = readLine();
         {
             boolean var6003EFBA66BA1B979DFF34F710C1C1A9_1189416974 = (line != null && line.startsWith(BEGIN));
@@ -37,40 +37,40 @@ public class PemReader extends BufferedReader {
                 String type = line.substring(0, index);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_353841840 = loadObject(type);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2046261861 = null;
-        PemObject varA7E53CE21691AB073D9660D615818899_193294681; //Final return value
+        PemObject varA7E53CE21691AB073D9660D615818899_193294681; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_193294681 = varB4EAC82CA7396A68D541C85D26508E83_353841840;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_193294681 = varB4EAC82CA7396A68D541C85D26508E83_2046261861;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_193294681.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_193294681.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_193294681;
-        // ---------- Original Method ----------
-        //String line = readLine();
-        //if (line != null && line.startsWith(BEGIN))
-        //{
-            //line = line.substring(BEGIN.length());
-            //int index = line.indexOf('-');
-            //String type = line.substring(0, index);
-            //if (index > 0)
-            //{
-                //return loadObject(type);
-            //}
-        //}
-        //return null;
+        
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.386 -0400", hash_original_method = "B4339AB43686CE97B8B754B51FC0C571", hash_generated_method = "CD7E5AA6E89953A38815FF1F6B040A87")
     private PemObject loadObject(String type) throws IOException {
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_50587800 = null; //Variable for return #1
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_50587800 = null; 
         String line;
         String endMarker = END + type;
         StringBuffer buf = new StringBuffer();
@@ -85,23 +85,23 @@ public class PemReader extends BufferedReader {
                         String hdr = line.substring(0, index);
                         String value = line.substring(index + 1).trim();
                         headers.add(new PemHeader(hdr, value));
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var013E33F2E4E7F1B5281ED067A196F717_1143719711 = (line.indexOf(endMarker) != -1);
-                } //End collapsed parenthetic
+                } 
                 buf.append(line.trim());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException(endMarker + " not found");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_50587800 = new PemObject(type, headers, Base64.decode(buf.toString()));
         addTaint(type.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_50587800.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_50587800.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_50587800;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

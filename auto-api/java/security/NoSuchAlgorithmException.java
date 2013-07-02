@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class NoSuchAlgorithmException extends GeneralSecurityException {
@@ -14,13 +14,13 @@ public class NoSuchAlgorithmException extends GeneralSecurityException {
     public  NoSuchAlgorithmException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.398 -0400", hash_original_method = "BDAEA1DD03CDDD29A73CAE9E450C10A2", hash_generated_method = "6779E68168EEB1D0C958B92A65CCA975")
     public  NoSuchAlgorithmException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ public class NoSuchAlgorithmException extends GeneralSecurityException {
         super(message, cause);
         addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,7 +37,7 @@ public class NoSuchAlgorithmException extends GeneralSecurityException {
     public  NoSuchAlgorithmException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

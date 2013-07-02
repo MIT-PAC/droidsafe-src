@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.HashMap;
 
@@ -26,21 +26,23 @@ public class RemoteCallbackList<E extends IInterface> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.079 -0400", hash_original_method = "7510693ACC17AC22B2C7AA646F89D542", hash_generated_method = "7510693ACC17AC22B2C7AA646F89D542")
     public RemoteCallbackList ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.079 -0400", hash_original_method = "46F1FD6FBAE5A826BE086BA154A601C8", hash_generated_method = "FB6A6C61AB715556F0FC22D0901AA01A")
     public boolean register(E callback) {
         boolean varBDBB33B5D7C0AC8FAE2D3B9C46063DFE_2137529582 = (register(callback, null));
         addTaint(callback.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1577654435 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1577654435;
-        // ---------- Original Method ----------
-        //return register(callback, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.080 -0400", hash_original_method = "228836B43DD98CF5855A1427021AF94C", hash_generated_method = "452FD37936545B6CCA150122BEB50A96")
     public boolean register(E callback, Object cookie) {
         {
@@ -50,55 +52,57 @@ public class RemoteCallbackList<E extends IInterface> {
                 Callback cb = new Callback(callback, cookie);
                 binder.linkToDeath(cb, 0);
                 mCallbacks.put(binder, cb);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
+        } 
         addTaint(callback.getTaint());
         addTaint(cookie.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_732474794 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_732474794;
-        // ---------- Original Method ----------
-        //synchronized (mCallbacks) {
-            //if (mKilled) {
-                //return false;
-            //}
-            //IBinder binder = callback.asBinder();
-            //try {
-                //Callback cb = new Callback(callback, cookie);
-                //binder.linkToDeath(cb, 0);
-                //mCallbacks.put(binder, cb);
-                //return true;
-            //} catch (RemoteException e) {
-                //return false;
-            //}
-        //}
+        
+        
+            
+                
+            
+            
+            
+                
+                
+                
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.080 -0400", hash_original_method = "E94D872448628F2BAA0FD192A750EA6D", hash_generated_method = "F08FCEE5E9591FE2076C359F0D85386B")
     public boolean unregister(E callback) {
         {
             Callback cb = mCallbacks.remove(callback.asBinder());
             {
                 cb.mCallback.asBinder().unlinkToDeath(cb, 0);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(callback.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_375892726 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_375892726;
-        // ---------- Original Method ----------
-        //synchronized (mCallbacks) {
-            //Callback cb = mCallbacks.remove(callback.asBinder());
-            //if (cb != null) {
-                //cb.mCallback.asBinder().unlinkToDeath(cb, 0);
-                //return true;
-            //}
-            //return false;
-        //}
+        
+        
+            
+            
+                
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.087 -0400", hash_original_method = "143F9A34B740B6676238190B04E5358A", hash_generated_method = "54C305ACF6DCF1584ADF9161EF49F47C")
     public void kill() {
         {
@@ -108,53 +112,56 @@ public class RemoteCallbackList<E extends IInterface> {
                 Callback cb = var5D52E140987DCF0A2A1B652E3C6CD766_676103245.next();
                 {
                     cb.mCallback.asBinder().unlinkToDeath(cb, 0);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mCallbacks.clear();
             mKilled = true;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mCallbacks) {
-            //for (Callback cb : mCallbacks.values()) {
-                //cb.mCallback.asBinder().unlinkToDeath(cb, 0);
-            //}
-            //mCallbacks.clear();
-            //mKilled = true;
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.088 -0400", hash_original_method = "B434989CEB936B9194BF8BFB60F8F696", hash_generated_method = "C207C2EEEC5BA9BE9962A64534BC332F")
     public void onCallbackDied(E callback) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.088 -0400", hash_original_method = "0963A4798BF8140F1109AA736DE1F9A0", hash_generated_method = "936F3E5CD0F87C7CA919066C1A9D66EA")
     public void onCallbackDied(E callback, Object cookie) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         onCallbackDied(callback);
         addTaint(callback.getTaint());
         addTaint(cookie.getTaint());
-        // ---------- Original Method ----------
-        //onCallbackDied(callback);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.098 -0400", hash_original_method = "1FD0E6F07E109275C9353B8621589475", hash_generated_method = "A555E797AAF0630E99D71B4508CC40C0")
     public int beginBroadcast() {
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                         "beginBroadcast() called while already in a broadcast");
-            } //End block
+            } 
             final int N = mBroadcastCount = mCallbacks.size();
             Object[] active = mActiveBroadcast;
             {
                 mActiveBroadcast = active = new Object[N];
-            } //End block
+            } 
             int i = 0;
             {
                 Iterator<Callback> var5D52E140987DCF0A2A1B652E3C6CD766_1722160685 = (mCallbacks.values()).iterator();
@@ -162,64 +169,66 @@ public class RemoteCallbackList<E extends IInterface> {
                 Callback cb = var5D52E140987DCF0A2A1B652E3C6CD766_1722160685.next();
                 {
                     active[i++] = cb;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_913858612 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_913858612;
-        // ---------- Original Method ----------
-        //synchronized (mCallbacks) {
-            //if (mBroadcastCount > 0) {
-                //throw new IllegalStateException(
-                        //"beginBroadcast() called while already in a broadcast");
-            //}
-            //final int N = mBroadcastCount = mCallbacks.size();
-            //if (N <= 0) {
-                //return 0;
-            //}
-            //Object[] active = mActiveBroadcast;
-            //if (active == null || active.length < N) {
-                //mActiveBroadcast = active = new Object[N];
-            //}
-            //int i=0;
-            //for (Callback cb : mCallbacks.values()) {
-                //active[i++] = cb;
-            //}
-            //return i;
-        //}
+        
+        
+            
+                
+                        
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.099 -0400", hash_original_method = "C48AB0BBF7A76319F21B51268A720A67", hash_generated_method = "F15BD7F2A8FE49EED82932D385AB4372")
     public E getBroadcastItem(int index) {
-        E varB4EAC82CA7396A68D541C85D26508E83_258900270 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_258900270 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_258900270 = ((Callback)mActiveBroadcast[index]).mCallback;
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_258900270.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_258900270.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_258900270;
-        // ---------- Original Method ----------
-        //return ((Callback)mActiveBroadcast[index]).mCallback;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.099 -0400", hash_original_method = "25A2DBE745AB094B33E63C6F1B03FB52", hash_generated_method = "B061D4B541699FFBF691675D48857237")
     public Object getBroadcastCookie(int index) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1525616545 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1525616545 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1525616545 = ((Callback)mActiveBroadcast[index]).mCookie;
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_1525616545.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1525616545.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1525616545;
-        // ---------- Original Method ----------
-        //return ((Callback)mActiveBroadcast[index]).mCookie;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.100 -0400", hash_original_method = "2675E2000594C860776B6FA43AA81FEA", hash_generated_method = "AF00370E98D5FCA8495F54FFDB0F5847")
     public void finishBroadcast() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "finishBroadcast() called outside of a broadcast");
-        } //End block
+        } 
         Object[] active = mActiveBroadcast;
         {
             final int N = mBroadcastCount;
@@ -227,23 +236,23 @@ public class RemoteCallbackList<E extends IInterface> {
                 int i = 0;
                 {
                     active[i] = null;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mBroadcastCount = -1;
-        // ---------- Original Method ----------
-        //if (mBroadcastCount < 0) {
-            //throw new IllegalStateException(
-                    //"finishBroadcast() called outside of a broadcast");
-        //}
-        //Object[] active = mActiveBroadcast;
-        //if (active != null) {
-            //final int N = mBroadcastCount;
-            //for (int i=0; i<N; i++) {
-                //active[i] = null;
-            //}
-        //}
-        //mBroadcastCount = -1;
+        
+        
+            
+                    
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -259,9 +268,9 @@ public class RemoteCallbackList<E extends IInterface> {
           Callback(E callback, Object cookie) {
             mCallback = callback;
             mCookie = cookie;
-            // ---------- Original Method ----------
-            //mCallback = callback;
-            //mCookie = cookie;
+            
+            
+            
         }
 
         
@@ -269,13 +278,13 @@ public class RemoteCallbackList<E extends IInterface> {
         public void binderDied() {
             {
                 mCallbacks.remove(mCallback.asBinder());
-            } //End block
+            } 
             onCallbackDied(mCallback, mCookie);
-            // ---------- Original Method ----------
-            //synchronized (mCallbacks) {
-                //mCallbacks.remove(mCallback.asBinder());
-            //}
-            //onCallbackDied(mCallback, mCookie);
+            
+            
+                
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package com.android.internal.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.PendingIntent;
 import android.os.Parcel;
@@ -25,7 +25,7 @@ public class LegacyVpnInfo implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.372 -0400", hash_original_method = "1DAFF6D63CD8989C4DEAE95F675849A5", hash_generated_method = "1DAFF6D63CD8989C4DEAE95F675849A5")
     public LegacyVpnInfo ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -34,11 +34,12 @@ public class LegacyVpnInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1783636368 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1783636368;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.372 -0400", hash_original_method = "25107BEE45DBA0B67087A892F5280105", hash_generated_method = "06F92F96FBFDFC988983F0CBC9239A5F")
     @Override
     public void writeToParcel(Parcel out, int flags) {
@@ -47,10 +48,10 @@ public class LegacyVpnInfo implements Parcelable {
         out.writeParcelable(intent, flags);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeString(key);
-        //out.writeInt(state);
-        //out.writeParcelable(intent, flags);
+        
+        
+        
+        
     }
 
     

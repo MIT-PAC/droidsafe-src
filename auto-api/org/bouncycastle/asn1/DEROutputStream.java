@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FilterOutputStream;
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
         OutputStream    os) {
         super(os);
         addTaint(os.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,39 +30,39 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
             int val = length;
             {
                 boolean var0FAB5FFCAEA021B44A1B0650ADAE3E30_1940588175 = ((val >>>= 8) != 0);
-            } //End collapsed parenthetic
+            } 
             write((byte)(size | 0x80));
             {
                 int i = (size - 1) * 8;
                 i -= 8;
                 {
                     write((byte)(length >> i));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             write((byte)length);
-        } //End block
+        } 
         addTaint(length);
-        // ---------- Original Method ----------
-        //if (length > 127)
-        //{
-            //int size = 1;
-            //int val = length;
-            //while ((val >>>= 8) != 0)
-            //{
-                //size++;
-            //}
-            //write((byte)(size | 0x80));
-            //for (int i = (size - 1) * 8; i >= 0; i -= 8)
-            //{
-                //write((byte)(length >> i));
-            //}
-        //}
-        //else
-        //{
-            //write((byte)length);
-        //}
+        
+        
+        
+            
+            
+            
+            
+                
+            
+            
+            
+            
+                
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -75,10 +75,10 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
         write(bytes);
         addTaint(tag);
         addTaint(bytes[0]);
-        // ---------- Original Method ----------
-        //write(tag);
-        //writeLength(bytes.length);
-        //write(bytes);
+        
+        
+        
+        
     }
 
     
@@ -86,12 +86,12 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
      void writeTag(int flags, int tagNo) throws IOException {
         {
             write(flags | tagNo);
-        } //End block
+        } 
         {
             write(flags | 0x1f);
             {
                 write(tagNo);
-            } //End block
+            } 
             {
                 byte[] stack = new byte[5];
                 int pos = stack.length;
@@ -99,38 +99,38 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
                 {
                     tagNo >>= 7;
                     stack[--pos] = (byte)(tagNo & 0x7F | 0x80);
-                } //End block
+                } 
                 write(stack, pos, stack.length - pos);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(flags);
         addTaint(tagNo);
-        // ---------- Original Method ----------
-        //if (tagNo < 31)
-        //{
-            //write(flags | tagNo);
-        //}
-        //else
-        //{
-            //write(flags | 0x1f);
-            //if (tagNo < 128)
-            //{
-                //write(tagNo);
-            //}
-            //else
-            //{
-                //byte[] stack = new byte[5];
-                //int pos = stack.length;
-                //stack[--pos] = (byte)(tagNo & 0x7F);
-                //do
-                //{
-                    //tagNo >>= 7;
-                    //stack[--pos] = (byte)(tagNo & 0x7F | 0x80);
-                //}
-                //while (tagNo > 127);
-                //write(stack, pos, stack.length - pos);
-            //}
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+            
+            
+                
+            
+            
+            
+                
+                
+                
+                
+                
+                    
+                    
+                
+                
+                
+            
+        
     }
 
     
@@ -142,10 +142,10 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
         addTaint(flags);
         addTaint(tagNo);
         addTaint(bytes[0]);
-        // ---------- Original Method ----------
-        //writeTag(flags, tagNo);
-        //writeLength(bytes.length);
-        //write(bytes);
+        
+        
+        
+        
     }
 
     
@@ -153,9 +153,9 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
     protected void writeNull() throws IOException {
         write(NULL);
         write(0x00);
-        // ---------- Original Method ----------
-        //write(NULL);
-        //write(0x00);
+        
+        
+        
     }
 
     
@@ -163,8 +163,8 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
     public void write(byte[] buf) throws IOException {
         out.write(buf, 0, buf.length);
         addTaint(buf[0]);
-        // ---------- Original Method ----------
-        //out.write(buf, 0, buf.length);
+        
+        
     }
 
     
@@ -174,8 +174,8 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
         addTaint(buf[0]);
         addTaint(offSet);
         addTaint(len);
-        // ---------- Original Method ----------
-        //out.write(buf, offSet, len);
+        
+        
     }
 
     
@@ -184,34 +184,34 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
         Object    obj) throws IOException {
         {
             writeNull();
-        } //End block
+        } 
         {
             ((DERObject)obj).encode(this);
-        } //End block
+        } 
         {
             ((DEREncodable)obj).getDERObject().encode(this);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("object not DEREncodable");
-        } //End block
+        } 
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //if (obj == null)
-        //{
-            //writeNull();
-        //}
-        //else if (obj instanceof DERObject)
-        //{
-            //((DERObject)obj).encode(this);
-        //}
-        //else if (obj instanceof DEREncodable)
-        //{
-            //((DEREncodable)obj).getDERObject().encode(this);
-        //}
-        //else 
-        //{
-            //throw new IOException("object not DEREncodable");
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     

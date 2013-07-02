@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class PrefixPrinter implements Printer {
@@ -20,12 +20,13 @@ public class PrefixPrinter implements Printer {
     private  PrefixPrinter(Printer printer, String prefix) {
         mPrinter = printer;
         mPrefix = prefix;
-        // ---------- Original Method ----------
-        //mPrinter = printer;
-        //mPrefix = prefix;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Printer create(Printer printer, String prefix) {
         if (prefix == null || prefix.equals("")) {
             return printer;
@@ -34,12 +35,13 @@ public class PrefixPrinter implements Printer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.512 -0400", hash_original_method = "278C97F139303CC78C423B9DD8BE836F", hash_generated_method = "0A498B33EE1928C8C383EDCE8E73B35A")
     public void println(String str) {
         mPrinter.println(mPrefix + str);
         addTaint(str.getTaint());
-        // ---------- Original Method ----------
-        //mPrinter.println(mPrefix + str);
+        
+        
     }
 
     

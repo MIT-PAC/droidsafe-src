@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 import javax.security.auth.x500.X500Principal;
@@ -71,17 +71,17 @@ public final class TBSCertificate {
         this.issuerUniqueID = issuerUniqueID;
         this.subjectUniqueID = subjectUniqueID;
         this.extensions = extensions;
-        // ---------- Original Method ----------
-        //this.version = version;
-        //this.serialNumber = serialNumber;
-        //this.signature = signature;
-        //this.issuer = issuer;
-        //this.validity = validity;
-        //this.subject = subject;
-        //this.subjectPublicKeyInfo = subjectPublicKeyInfo;
-        //this.issuerUniqueID = issuerUniqueID;
-        //this.subjectUniqueID = subjectUniqueID;
-        //this.extensions = extensions;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -105,8 +105,8 @@ public final class TBSCertificate {
         addTaint(issuerUniqueID[0]);
         addTaint(subjectUniqueID[0]);
         addTaint(extensions.getTaint());
-        // ---------- Original Method ----------
-        //this.encoding = encoding;
+        
+        
     }
 
     
@@ -114,74 +114,74 @@ public final class TBSCertificate {
     public int getVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126271127 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126271127;
-        // ---------- Original Method ----------
-        //return version;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.549 -0400", hash_original_method = "9420C2CEA2A6F47D515C0AB0605412CD", hash_generated_method = "F352E1A0F3F6D27DC67CDF612720D8CC")
     public BigInteger getSerialNumber() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1871201677 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1871201677 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1871201677 = serialNumber;
-        varB4EAC82CA7396A68D541C85D26508E83_1871201677.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1871201677.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1871201677;
-        // ---------- Original Method ----------
-        //return serialNumber;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.550 -0400", hash_original_method = "DD6542667BFDE70B879F723105C92A71", hash_generated_method = "53D0981A2AF6290E42E5111AA47715CC")
     public AlgorithmIdentifier getSignature() {
-        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_688498877 = null; //Variable for return #1
+        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_688498877 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_688498877 = signature;
-        varB4EAC82CA7396A68D541C85D26508E83_688498877.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_688498877.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_688498877;
-        // ---------- Original Method ----------
-        //return signature;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.551 -0400", hash_original_method = "EBC299B5141657B108909E991892F54F", hash_generated_method = "15A17A85E48B59E05719A28E3C51882E")
     public Name getIssuer() {
-        Name varB4EAC82CA7396A68D541C85D26508E83_330421202 = null; //Variable for return #1
+        Name varB4EAC82CA7396A68D541C85D26508E83_330421202 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_330421202 = issuer;
-        varB4EAC82CA7396A68D541C85D26508E83_330421202.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_330421202.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_330421202;
-        // ---------- Original Method ----------
-        //return issuer;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.552 -0400", hash_original_method = "DAA501F00A793FDF912D8039C0483525", hash_generated_method = "80754DFC6F2564228B6309CDCACF88B1")
     public Validity getValidity() {
-        Validity varB4EAC82CA7396A68D541C85D26508E83_691183402 = null; //Variable for return #1
+        Validity varB4EAC82CA7396A68D541C85D26508E83_691183402 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_691183402 = validity;
-        varB4EAC82CA7396A68D541C85D26508E83_691183402.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_691183402.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_691183402;
-        // ---------- Original Method ----------
-        //return validity;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.552 -0400", hash_original_method = "01CA74A643B409E53785F17175CB2AB2", hash_generated_method = "0F31C2C35A9CE67536D97A403CA381A0")
     public Name getSubject() {
-        Name varB4EAC82CA7396A68D541C85D26508E83_1767703442 = null; //Variable for return #1
+        Name varB4EAC82CA7396A68D541C85D26508E83_1767703442 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1767703442 = subject;
-        varB4EAC82CA7396A68D541C85D26508E83_1767703442.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1767703442.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1767703442;
-        // ---------- Original Method ----------
-        //return subject;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.553 -0400", hash_original_method = "EE5B5FDD20BC2C4F67CD8D0C39F17B3D", hash_generated_method = "CCC66E2A9E7AD920F5C3EDE6ADA91317")
     public SubjectPublicKeyInfo getSubjectPublicKeyInfo() {
-        SubjectPublicKeyInfo varB4EAC82CA7396A68D541C85D26508E83_256756649 = null; //Variable for return #1
+        SubjectPublicKeyInfo varB4EAC82CA7396A68D541C85D26508E83_256756649 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_256756649 = subjectPublicKeyInfo;
-        varB4EAC82CA7396A68D541C85D26508E83_256756649.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_256756649.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_256756649;
-        // ---------- Original Method ----------
-        //return subjectPublicKeyInfo;
+        
+        
     }
 
     
@@ -189,8 +189,8 @@ public final class TBSCertificate {
     public boolean[] getIssuerUniqueID() {
         boolean[] var503EB2F420079C4024483971CE5EDEA8_1742637107 = {getTaintBoolean()};
         return var503EB2F420079C4024483971CE5EDEA8_1742637107;
-        // ---------- Original Method ----------
-        //return issuerUniqueID;
+        
+        
     }
 
     
@@ -198,37 +198,39 @@ public final class TBSCertificate {
     public boolean[] getSubjectUniqueID() {
         boolean[] var503EB2F420079C4024483971CE5EDEA8_1700465048 = {getTaintBoolean()};
         return var503EB2F420079C4024483971CE5EDEA8_1700465048;
-        // ---------- Original Method ----------
-        //return subjectUniqueID;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.554 -0400", hash_original_method = "160E3DAB15A775FB370B26EA87125324", hash_generated_method = "4C45BB789C50283640B35BEDBF781D33")
     public Extensions getExtensions() {
-        Extensions varB4EAC82CA7396A68D541C85D26508E83_966046618 = null; //Variable for return #1
+        Extensions varB4EAC82CA7396A68D541C85D26508E83_966046618 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_966046618 = extensions;
-        varB4EAC82CA7396A68D541C85D26508E83_966046618.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_966046618.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_966046618;
-        // ---------- Original Method ----------
-        //return extensions;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.554 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "E23B46CA51C5438C0E82FE13D3566362")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1811800693 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1811800693;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.562 -0400", hash_original_method = "20BC4358EC88862A49105AF5BBCC5ECB", hash_generated_method = "73067555237F19E3FE40A6E0FA9D6DC1")
     public void dumpValue(StringBuilder sb) {
         sb.append('[');
@@ -247,28 +249,28 @@ public final class TBSCertificate {
                 boolean b = issuerUniqueID[0];
                 {
                     sb.append(b ? '1' : '0');
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             sb.append("\n  Subject Id: ");
             {
                 boolean b = subjectUniqueID[0];
                 {
                     sb.append(b ? '1' : '0');
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             sb.append("\n\n  Extensions: ");
             sb.append("[\n");
             extensions.dumpValue(sb, "    ");
             sb.append("  ]");
-        } //End block
+        } 
         sb.append("\n]");
         addTaint(sb.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -328,49 +330,6 @@ public final class TBSCertificate {
             values[9] = tbs.extensions;
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            TBSCertificate tbs = (TBSCertificate) object;
-            values[0] = ASN1Integer.fromIntValue(tbs.version);
-            values[1] = tbs.serialNumber.toByteArray();
-            values[2] = tbs.signature;
-            values[3] = tbs.issuer;
-            values[4] = tbs.validity;
-            values[5] = tbs.subject;
-            values[6] = tbs.subjectPublicKeyInfo;
-            if (tbs.issuerUniqueID != null) {
-                values[7] = new BitString(tbs.issuerUniqueID);
-            }
-            if (tbs.subjectUniqueID != null) {
-                values[8] = new BitString(tbs.subjectUniqueID);
-            }
-            values[9] = tbs.extensions;
-        }
     
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) {
-            Object[] values = (Object[]) in.content;
-
-            boolean[] issuerUniqueID = (values[7] == null)
-                ? null : ((BitString) values[7]).toBooleanArray();
-            boolean[] subjectUniqueID = (values[8] == null)
-                ? null : ((BitString) values[8]).toBooleanArray();
-            return new TBSCertificate(
-                        ASN1Integer.toIntValue(values[0]),
-                        new BigInteger((byte[]) values[1]),
-                        (AlgorithmIdentifier) values[2],
-                        (Name) values[3],
-                        (Validity) values[4],
-                        (Name) values[5],
-                        (SubjectPublicKeyInfo) values[6],
-                        issuerUniqueID,
-                        subjectUniqueID,
-                        (Extensions) values[9],
-                        in.getEncoded()
-                    );
-        }
-    
-    */
 }
 

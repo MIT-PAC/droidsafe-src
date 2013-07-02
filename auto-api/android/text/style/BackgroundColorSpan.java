@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
@@ -20,16 +20,16 @@ public class BackgroundColorSpan extends CharacterStyle implements UpdateAppeara
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.694 -0400", hash_original_method = "1BABE23E25570DA2EF62C4506697834B", hash_generated_method = "35000CFE38870CD7CB814F81DF321DBD")
     public  BackgroundColorSpan(int color) {
         mColor = color;
-        // ---------- Original Method ----------
-        //mColor = color;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.694 -0400", hash_original_method = "71157ECE822D307A1BD642C08548B0D3", hash_generated_method = "70CE0565CAAE91A6A441B8AAAAA665D4")
     public  BackgroundColorSpan(Parcel src) {
         mColor = src.readInt();
-        // ---------- Original Method ----------
-        //mColor = src.readInt();
+        
+        
     }
 
     
@@ -37,8 +37,8 @@ public class BackgroundColorSpan extends CharacterStyle implements UpdateAppeara
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_974712376 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_974712376;
-        // ---------- Original Method ----------
-        //return TextUtils.BACKGROUND_COLOR_SPAN;
+        
+        
     }
 
     
@@ -46,8 +46,8 @@ public class BackgroundColorSpan extends CharacterStyle implements UpdateAppeara
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_359148305 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_359148305;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -56,8 +56,8 @@ public class BackgroundColorSpan extends CharacterStyle implements UpdateAppeara
         dest.writeInt(mColor);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mColor);
+        
+        
     }
 
     
@@ -65,8 +65,8 @@ public class BackgroundColorSpan extends CharacterStyle implements UpdateAppeara
     public int getBackgroundColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2083152408 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2083152408;
-        // ---------- Original Method ----------
-        //return mColor;
+        
+        
     }
 
     
@@ -75,8 +75,8 @@ public class BackgroundColorSpan extends CharacterStyle implements UpdateAppeara
     public void updateDrawState(TextPaint ds) {
         ds.bgColor = mColor;
         addTaint(ds.getTaint());
-        // ---------- Original Method ----------
-        //ds.bgColor = mColor;
+        
+        
     }
 
     

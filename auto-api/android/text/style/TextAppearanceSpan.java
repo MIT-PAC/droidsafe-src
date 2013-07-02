@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -38,7 +38,7 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
         this(context, appearance, -1);
         addTaint(context.getTaint());
         addTaint(appearance);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -55,31 +55,31 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
                                         TextAppearance_textSize, -1);
         mStyle = a.getInt(com.android.internal.R.styleable.TextAppearance_textStyle, 0);
         int tf = a.getInt(com.android.internal.R.styleable.TextAppearance_typeface, 0);
-        //Begin case 1 
+        
         mTypeface = "sans";
-        //End case 1 
-        //Begin case 2 
+        
+        
         mTypeface = "serif";
-        //End case 2 
-        //Begin case 3 
+        
+        
         mTypeface = "monospace";
-        //End case 3 
-        //Begin case default 
+        
+        
         mTypeface = null;
-        //End case default 
+        
         a.recycle();
         {
             a = context.obtainStyledAttributes(com.android.internal.R.style.Theme,
                                             com.android.internal.R.styleable.Theme);
             textColor = a.getColorStateList(colorList);
             a.recycle();
-        } //End block
+        } 
         mTextColor = textColor;
         addTaint(context.getTaint());
         addTaint(appearance);
         addTaint(colorList);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -91,12 +91,12 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
         mTextSize = size;
         mTextColor = color;
         mTextColorLink = linkColor;
-        // ---------- Original Method ----------
-        //mTypeface = family;
-        //mStyle = style;
-        //mTextSize = size;
-        //mTextColor = color;
-        //mTextColorLink = linkColor;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -109,34 +109,34 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
             boolean varFD1B2B02E9DB19B4AD5578330E4A9BB4_1186644409 = (src.readInt() != 0);
             {
                 mTextColor = ColorStateList.CREATOR.createFromParcel(src);
-            } //End block
+            } 
             {
                 mTextColor = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varFD1B2B02E9DB19B4AD5578330E4A9BB4_1259831027 = (src.readInt() != 0);
             {
                 mTextColorLink = ColorStateList.CREATOR.createFromParcel(src);
-            } //End block
+            } 
             {
                 mTextColorLink = null;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //mTypeface = src.readString();
-        //mStyle = src.readInt();
-        //mTextSize = src.readInt();
-        //if (src.readInt() != 0) {
-            //mTextColor = ColorStateList.CREATOR.createFromParcel(src);
-        //} else {
-            //mTextColor = null;
-        //}
-        //if (src.readInt() != 0) {
-            //mTextColorLink = ColorStateList.CREATOR.createFromParcel(src);
-        //} else {
-            //mTextColorLink = null;
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -144,8 +144,8 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1899362422 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1899362422;
-        // ---------- Original Method ----------
-        //return TextUtils.TEXT_APPEARANCE_SPAN;
+        
+        
     }
 
     
@@ -153,11 +153,12 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_676189865 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_676189865;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.007 -0400", hash_original_method = "5C4A27F4DE181F367842F0367978AD5D", hash_generated_method = "9850408920266E56E6F9FAC2825715C6")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mTypeface);
@@ -166,68 +167,68 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
         {
             dest.writeInt(1);
             mTextColor.writeToParcel(dest, flags);
-        } //End block
+        } 
         {
             dest.writeInt(0);
-        } //End block
+        } 
         {
             dest.writeInt(1);
             mTextColorLink.writeToParcel(dest, flags);
-        } //End block
+        } 
         {
             dest.writeInt(0);
-        } //End block
+        } 
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(mTypeface);
-        //dest.writeInt(mStyle);
-        //dest.writeInt(mTextSize);
-        //if (mTextColor != null) {
-            //dest.writeInt(1);
-            //mTextColor.writeToParcel(dest, flags);
-        //} else {
-            //dest.writeInt(0);
-        //}
-        //if (mTextColorLink != null) {
-            //dest.writeInt(1);
-            //mTextColorLink.writeToParcel(dest, flags);
-        //} else {
-            //dest.writeInt(0);
-        //}
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
+        
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.007 -0400", hash_original_method = "15042A588BD36B3AABC957E25B6ABB68", hash_generated_method = "77306610B3FABBC47F4083E858ECD295")
     public String getFamily() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1672642297 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1672642297 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1672642297 = mTypeface;
-        varB4EAC82CA7396A68D541C85D26508E83_1672642297.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1672642297.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1672642297;
-        // ---------- Original Method ----------
-        //return mTypeface;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.008 -0400", hash_original_method = "BEF77474BA0C11C6EB44F1454E52790F", hash_generated_method = "55847672DD5D6DE79CE5A481517ED7AA")
     public ColorStateList getTextColor() {
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_1614513163 = null; //Variable for return #1
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_1614513163 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1614513163 = mTextColor;
-        varB4EAC82CA7396A68D541C85D26508E83_1614513163.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1614513163.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1614513163;
-        // ---------- Original Method ----------
-        //return mTextColor;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.008 -0400", hash_original_method = "9E3E27CD0F13B768F4263E5569C857AD", hash_generated_method = "023D41609D9B502BCD87B214519F4353")
     public ColorStateList getLinkTextColor() {
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_932639708 = null; //Variable for return #1
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_932639708 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_932639708 = mTextColorLink;
-        varB4EAC82CA7396A68D541C85D26508E83_932639708.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_932639708.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_932639708;
-        // ---------- Original Method ----------
-        //return mTextColorLink;
+        
+        
     }
 
     
@@ -235,8 +236,8 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
     public int getTextSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2022199432 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2022199432;
-        // ---------- Original Method ----------
-        //return mTextSize;
+        
+        
     }
 
     
@@ -244,33 +245,35 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
     public int getTextStyle() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_829543102 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_829543102;
-        // ---------- Original Method ----------
-        //return mStyle;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.009 -0400", hash_original_method = "91F606F0F4AED8EEECD78BF397028020", hash_generated_method = "FA2E6C7851B07621F022E81F53DF4C96")
     @Override
     public void updateDrawState(TextPaint ds) {
         updateMeasureState(ds);
         {
             ds.setColor(mTextColor.getColorForState(ds.drawableState, 0));
-        } //End block
+        } 
         {
             ds.linkColor = mTextColorLink.getColorForState(ds.drawableState, 0);
-        } //End block
+        } 
         addTaint(ds.getTaint());
-        // ---------- Original Method ----------
-        //updateMeasureState(ds);
-        //if (mTextColor != null) {
-            //ds.setColor(mTextColor.getColorForState(ds.drawableState, 0));
-        //}
-        //if (mTextColorLink != null) {
-            //ds.linkColor = mTextColorLink.getColorForState(ds.drawableState, 0);
-        //}
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.010 -0400", hash_original_method = "F4F67354DC20CE392F9DCE12B9A9C5F1", hash_generated_method = "0350E2457DB2333EC00A4DBA3C54F134")
     @Override
     public void updateMeasureState(TextPaint ds) {
@@ -279,32 +282,32 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
             int style = 0;
             {
                 style = tf.getStyle();
-            } //End block
+            } 
             style |= mStyle;
             {
                 tf = Typeface.create(mTypeface, style);
-            } //End block
+            } 
             {
                 tf = Typeface.defaultFromStyle(style);
-            } //End block
+            } 
             {
                 tf = Typeface.create(tf, style);
-            } //End block
+            } 
             int fake = style & ~tf.getStyle();
             {
                 ds.setFakeBoldText(true);
-            } //End block
+            } 
             {
                 ds.setTextSkewX(-0.25f);
-            } //End block
+            } 
             ds.setTypeface(tf);
-        } //End block
+        } 
         {
             ds.setTextSize(mTextSize);
-        } //End block
+        } 
         addTaint(ds.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

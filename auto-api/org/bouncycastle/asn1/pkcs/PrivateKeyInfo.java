@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.pkcs;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -42,7 +42,7 @@ public class PrivateKeyInfo extends ASN1Encodable {
         this(algId, privateKey, null);
         addTaint(algId.getTaint());
         addTaint(privateKey.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -54,10 +54,10 @@ public class PrivateKeyInfo extends ASN1Encodable {
         this.privKey = privateKey;
         this.algId = algId;
         this.attributes = attributes;
-        // ---------- Original Method ----------
-        //this.privKey = privateKey;
-        //this.algId = algId;
-        //this.attributes = attributes;
+        
+        
+        
+        
     }
 
     
@@ -70,46 +70,46 @@ public class PrivateKeyInfo extends ASN1Encodable {
             boolean varC76388C06CB0E8FC309CF4CE20E6D9F0_594052123 = (version.intValue() != 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("wrong version for private key info");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         algId = new AlgorithmIdentifier((ASN1Sequence)e.nextElement());
         try 
         {
             ASN1InputStream aIn = new ASN1InputStream(((ASN1OctetString)e.nextElement()).getOctets());
             privKey = aIn.readObject();
-        } //End block
+        } 
         catch (IOException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Error recoverying private key from sequence");
-        } //End block
+        } 
         {
             boolean var3EB0A96682EDBE15308427BAC1EC4A4E_2146031618 = (e.hasMoreElements());
             {
                 attributes = ASN1Set.getInstance((ASN1TaggedObject)e.nextElement(), false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(seq.getTaint());
-        // ---------- Original Method ----------
-        //Enumeration e = seq.getObjects();
-        //BigInteger  version = ((DERInteger)e.nextElement()).getValue();
-        //if (version.intValue() != 0)
-        //{
-            //throw new IllegalArgumentException("wrong version for private key info");
-        //}
-        //algId = new AlgorithmIdentifier((ASN1Sequence)e.nextElement());
-        //try
-        //{
-            //ASN1InputStream         aIn = new ASN1InputStream(((ASN1OctetString)e.nextElement()).getOctets());
-            //privKey = aIn.readObject();
-        //}
-        //catch (IOException ex)
-        //{
-            //throw new IllegalArgumentException("Error recoverying private key from sequence");
-        //}
-        //if (e.hasMoreElements())
-        //{
-           //attributes = ASN1Set.getInstance((ASN1TaggedObject)e.nextElement(), false);
-        //}
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+        
+        
+           
+        
     }
 
     
@@ -136,60 +136,61 @@ public class PrivateKeyInfo extends ASN1Encodable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.130 -0400", hash_original_method = "47532F5520D2937711F415E7F39EF8B8", hash_generated_method = "BC851B90FB10226C66BCD24640986004")
     public AlgorithmIdentifier getAlgorithmId() {
-        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1658375251 = null; //Variable for return #1
+        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1658375251 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1658375251 = algId;
-        varB4EAC82CA7396A68D541C85D26508E83_1658375251.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1658375251.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1658375251;
-        // ---------- Original Method ----------
-        //return algId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.131 -0400", hash_original_method = "3451C7D0A2D2ACAC16D97B5B3003A0C1", hash_generated_method = "828AF04CCDF50AE5BB2471CA0EC1E6FC")
     public DERObject getPrivateKey() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_875844780 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_875844780 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_875844780 = privKey;
-        varB4EAC82CA7396A68D541C85D26508E83_875844780.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_875844780.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_875844780;
-        // ---------- Original Method ----------
-        //return privKey;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.131 -0400", hash_original_method = "2B5879FE48F35BA3284D87B378AFE5E1", hash_generated_method = "5557510495B5483B1C6FC2D0AC1F457D")
     public ASN1Set getAttributes() {
-        ASN1Set varB4EAC82CA7396A68D541C85D26508E83_68727965 = null; //Variable for return #1
+        ASN1Set varB4EAC82CA7396A68D541C85D26508E83_68727965 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_68727965 = attributes;
-        varB4EAC82CA7396A68D541C85D26508E83_68727965.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_68727965.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_68727965;
-        // ---------- Original Method ----------
-        //return attributes;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.134 -0400", hash_original_method = "7CF8276E9977E7549D144BD3BA353868", hash_generated_method = "A457F94A1389D6160570B2A6E61682BD")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1485218032 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1485218032 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(new DERInteger(0));
         v.add(algId);
         v.add(new DEROctetString(privKey));
         {
             v.add(new DERTaggedObject(false, 0, attributes));
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1485218032 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_1485218032.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1485218032.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1485218032;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector v = new ASN1EncodableVector();
-        //v.add(new DERInteger(0));
-        //v.add(algId);
-        //v.add(new DEROctetString(privKey));
-        //if (attributes != null)
-        //{
-            //v.add(new DERTaggedObject(false, 0, attributes));
-        //}
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     

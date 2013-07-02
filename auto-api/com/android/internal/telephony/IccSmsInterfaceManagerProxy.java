@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.PendingIntent;
 import android.os.ServiceManager;
@@ -24,21 +24,21 @@ public class IccSmsInterfaceManagerProxy extends ISms.Stub {
             boolean var57CA35B873E1E62AB02C8E6DC3FE6622_960686537 = (ServiceManager.getService("isms") == null);
             {
                 ServiceManager.addService("isms", this);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //this.mIccSmsInterfaceManager = iccSmsInterfaceManager;
-        //if(ServiceManager.getService("isms") == null) {
-            //ServiceManager.addService("isms", this);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.128 -0400", hash_original_method = "671E1905A4ABBFEC9E8C5B4CD14B64F9", hash_generated_method = "084F97C58E7BDCADFF8AD86DFAC8FD32")
     public void setmIccSmsInterfaceManager(IccSmsInterfaceManager iccSmsInterfaceManager) {
         this.mIccSmsInterfaceManager = iccSmsInterfaceManager;
-        // ---------- Original Method ----------
-        //this.mIccSmsInterfaceManager = iccSmsInterfaceManager;
+        
+        
     }
 
     
@@ -50,8 +50,8 @@ public class IccSmsInterfaceManagerProxy extends ISms.Stub {
         addTaint(pdu[0]);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_811435054 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_811435054;
-        // ---------- Original Method ----------
-        //return mIccSmsInterfaceManager.updateMessageOnIccEf(index, status, pdu);
+        
+        
     }
 
     
@@ -64,19 +64,19 @@ public class IccSmsInterfaceManagerProxy extends ISms.Stub {
         addTaint(smsc[0]);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2119910755 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2119910755;
-        // ---------- Original Method ----------
-        //return mIccSmsInterfaceManager.copyMessageToIccEf(status, pdu, smsc);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.129 -0400", hash_original_method = "6F960BE075575D7400653ACEFE5617FE", hash_generated_method = "67F1E139B4EE25AE77A0A716F54160E5")
     public List<SmsRawData> getAllMessagesFromIccEf() throws android.os.RemoteException {
-        List<SmsRawData> varB4EAC82CA7396A68D541C85D26508E83_1857876544 = null; //Variable for return #1
+        List<SmsRawData> varB4EAC82CA7396A68D541C85D26508E83_1857876544 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1857876544 = mIccSmsInterfaceManager.getAllMessagesFromIccEf();
-        varB4EAC82CA7396A68D541C85D26508E83_1857876544.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1857876544.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1857876544;
-        // ---------- Original Method ----------
-        //return mIccSmsInterfaceManager.getAllMessagesFromIccEf();
+        
+        
     }
 
     
@@ -91,9 +91,9 @@ public class IccSmsInterfaceManagerProxy extends ISms.Stub {
         addTaint(data[0]);
         addTaint(sentIntent.getTaint());
         addTaint(deliveryIntent.getTaint());
-        // ---------- Original Method ----------
-        //mIccSmsInterfaceManager.sendData(destAddr, scAddr, destPort, data,
-                //sentIntent, deliveryIntent);
+        
+        
+                
     }
 
     
@@ -106,8 +106,8 @@ public class IccSmsInterfaceManagerProxy extends ISms.Stub {
         addTaint(text.getTaint());
         addTaint(sentIntent.getTaint());
         addTaint(deliveryIntent.getTaint());
-        // ---------- Original Method ----------
-        //mIccSmsInterfaceManager.sendText(destAddr, scAddr, text, sentIntent, deliveryIntent);
+        
+        
     }
 
     
@@ -122,9 +122,9 @@ public class IccSmsInterfaceManagerProxy extends ISms.Stub {
         addTaint(parts.getTaint());
         addTaint(sentIntents.getTaint());
         addTaint(deliveryIntents.getTaint());
-        // ---------- Original Method ----------
-        //mIccSmsInterfaceManager.sendMultipartText(destAddr, scAddr,
-                //parts, sentIntents, deliveryIntents);
+        
+        
+                
     }
 
     
@@ -134,8 +134,8 @@ public class IccSmsInterfaceManagerProxy extends ISms.Stub {
         addTaint(messageIdentifier);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_586749473 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_586749473;
-        // ---------- Original Method ----------
-        //return mIccSmsInterfaceManager.enableCellBroadcast(messageIdentifier);
+        
+        
     }
 
     
@@ -145,8 +145,8 @@ public class IccSmsInterfaceManagerProxy extends ISms.Stub {
         addTaint(messageIdentifier);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1189980186 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1189980186;
-        // ---------- Original Method ----------
-        //return mIccSmsInterfaceManager.disableCellBroadcast(messageIdentifier);
+        
+        
     }
 
     
@@ -157,8 +157,8 @@ public class IccSmsInterfaceManagerProxy extends ISms.Stub {
         addTaint(endMessageId);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1662080571 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1662080571;
-        // ---------- Original Method ----------
-        //return mIccSmsInterfaceManager.enableCellBroadcastRange(startMessageId, endMessageId);
+        
+        
     }
 
     
@@ -169,8 +169,8 @@ public class IccSmsInterfaceManagerProxy extends ISms.Stub {
         addTaint(endMessageId);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_342902605 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_342902605;
-        // ---------- Original Method ----------
-        //return mIccSmsInterfaceManager.disableCellBroadcastRange(startMessageId, endMessageId);
+        
+        
     }
 
     

@@ -1,21 +1,22 @@
 package java.math;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 class Multiplication {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.955 -0400", hash_original_method = "CE81298360999BF52006386DE7E36DBD", hash_generated_method = "C1903448A4FC57F0699C8C4004F3EB1D")
     private  Multiplication() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger multiplyByPositiveInt(BigInteger val, int factor) {
         BigInt bi = val.getBigInt().copy();
         bi.multiplyByPositiveInt(factor);
@@ -23,6 +24,7 @@ class Multiplication {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger multiplyByTenPow(BigInteger val, long exp) {
         return ((exp < tenPows.length)
         ? multiplyByPositiveInt(val, tenPows[(int)exp])
@@ -30,6 +32,7 @@ class Multiplication {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger powerOf10(long exp) {
         int intExp = (int)exp;
         if (exp < bigTenPows.length) {
@@ -66,6 +69,7 @@ class Multiplication {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger multiplyByFivePow(BigInteger val, int exp) {
         if (exp < fivePows.length) {
             return multiplyByPositiveInt(val, fivePows[exp]);

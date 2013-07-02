@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.net.Uri;
 import android.os.Parcelable;
@@ -24,10 +24,10 @@ public class ContentProviderResult implements Parcelable {
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("uri must not be null");
         this.uri = uri;
         this.count = null;
-        // ---------- Original Method ----------
-        //if (uri == null) throw new IllegalArgumentException("uri must not be null");
-        //this.uri = uri;
-        //this.count = null;
+        
+        
+        
+        
     }
 
     
@@ -35,9 +35,9 @@ public class ContentProviderResult implements Parcelable {
     public  ContentProviderResult(int count) {
         this.count = count;
         this.uri = null;
-        // ---------- Original Method ----------
-        //this.count = count;
-        //this.uri = null;
+        
+        
+        
     }
 
     
@@ -47,43 +47,44 @@ public class ContentProviderResult implements Parcelable {
         {
             count = source.readInt();
             uri = null;
-        } //End block
+        } 
         {
             count = null;
             uri = Uri.CREATOR.createFromParcel(source);
-        } //End block
-        // ---------- Original Method ----------
-        //int type = source.readInt();
-        //if (type == 1) {
-            //count = source.readInt();
-            //uri = null;
-        //} else {
-            //count = null;
-            //uri = Uri.CREATOR.createFromParcel(source);
-        //}
+        } 
+        
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.704 -0400", hash_original_method = "9CD6B2E6D05DCE725086FF1495B545F8", hash_generated_method = "04C621D876EF5C5E14440926A4621C34")
     public void writeToParcel(Parcel dest, int flags) {
         {
             dest.writeInt(1);
             dest.writeInt(count);
-        } //End block
+        } 
         {
             dest.writeInt(2);
             uri.writeToParcel(dest, 0);
-        } //End block
+        } 
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (uri == null) {
-            //dest.writeInt(1);
-            //dest.writeInt(count);
-        //} else {
-            //dest.writeInt(2);
-            //uri.writeToParcel(dest, 0);
-        //}
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -91,35 +92,36 @@ public class ContentProviderResult implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1897477622 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1897477622;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.707 -0400", hash_original_method = "892D2D0BDFABE856512808AB86E3168D", hash_generated_method = "3F2759EF1B63708F8E6786AE68CB8749")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_322414200 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_381080270 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_322414200 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_381080270 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_322414200 = "ContentProviderResult(uri=" + uri.toString() + ")";
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_381080270 = "ContentProviderResult(count=" + count + ")";
-        String varA7E53CE21691AB073D9660D615818899_1129228138; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1129228138; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1129228138 = varB4EAC82CA7396A68D541C85D26508E83_322414200;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1129228138 = varB4EAC82CA7396A68D541C85D26508E83_381080270;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1129228138.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1129228138.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1129228138;
-        // ---------- Original Method ----------
-        //if (uri != null) {
-            //return "ContentProviderResult(uri=" + uri.toString() + ")";
-        //}
-        //return "ContentProviderResult(count=" + count + ")";
+        
+        
+            
+        
+        
     }
 
     
@@ -135,12 +137,12 @@ public class ContentProviderResult implements Parcelable {
             return new ContentProviderResult[size];
         }
     };
-    // orphaned legacy method
+    
     public ContentProviderResult createFromParcel(Parcel source) {
             return new ContentProviderResult(source);
         }
     
-    // orphaned legacy method
+    
     public ContentProviderResult[] newArray(int size) {
             return new ContentProviderResult[size];
         }

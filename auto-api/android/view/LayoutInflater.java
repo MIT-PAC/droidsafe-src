@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Canvas;
 import android.os.Handler;
@@ -54,8 +54,8 @@ public abstract class LayoutInflater {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.405 -0400", hash_original_method = "E7207BFA97B4D4DD74A98816C77C472E", hash_generated_method = "E7012C3F049DB497107558CB08563437")
     protected  LayoutInflater(Context context) {
         mContext = context;
-        // ---------- Original Method ----------
-        //mContext = context;
+        
+        
     }
 
     
@@ -66,12 +66,12 @@ public abstract class LayoutInflater {
         mFactory2 = original.mFactory2;
         mPrivateFactory = original.mPrivateFactory;
         mFilter = original.mFilter;
-        // ---------- Original Method ----------
-        //mContext = newContext;
-        //mFactory = original.mFactory;
-        //mFactory2 = original.mFactory2;
-        //mPrivateFactory = original.mPrivateFactory;
-        //mFilter = original.mFilter;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -90,34 +90,34 @@ public abstract class LayoutInflater {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.406 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "1B57671A732C6B2A1D90902B16C08485")
     public Context getContext() {
-        Context varB4EAC82CA7396A68D541C85D26508E83_170921122 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_170921122 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_170921122 = mContext;
-        varB4EAC82CA7396A68D541C85D26508E83_170921122.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_170921122.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_170921122;
-        // ---------- Original Method ----------
-        //return mContext;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.406 -0400", hash_original_method = "7FDD2E2114CEC4DBC75B459E7197DB00", hash_generated_method = "D19E1EB8B1E302F9E232EE9C5667A469")
     public final Factory getFactory() {
-        Factory varB4EAC82CA7396A68D541C85D26508E83_1613385705 = null; //Variable for return #1
+        Factory varB4EAC82CA7396A68D541C85D26508E83_1613385705 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1613385705 = mFactory;
-        varB4EAC82CA7396A68D541C85D26508E83_1613385705.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1613385705.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1613385705;
-        // ---------- Original Method ----------
-        //return mFactory;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.407 -0400", hash_original_method = "1401AE51BF0559687CED2D99A883164D", hash_generated_method = "A60F2722D06183C93060A10C8EDB17EB")
     public final Factory2 getFactory2() {
-        Factory2 varB4EAC82CA7396A68D541C85D26508E83_1970744722 = null; //Variable for return #1
+        Factory2 varB4EAC82CA7396A68D541C85D26508E83_1970744722 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1970744722 = mFactory2;
-        varB4EAC82CA7396A68D541C85D26508E83_1970744722.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1970744722.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1970744722;
-        // ---------- Original Method ----------
-        //return mFactory2;
+        
+        
     }
 
     
@@ -125,30 +125,30 @@ public abstract class LayoutInflater {
     public void setFactory(Factory factory) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("A factory has already been set on this LayoutInflater");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Given factory can not be null");
-        } //End block
+        } 
         mFactorySet = true;
         {
             mFactory = factory;
-        } //End block
+        } 
         {
             mFactory = new FactoryMerger(factory, null, mFactory, mFactory2);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mFactorySet) {
-            //throw new IllegalStateException("A factory has already been set on this LayoutInflater");
-        //}
-        //if (factory == null) {
-            //throw new NullPointerException("Given factory can not be null");
-        //}
-        //mFactorySet = true;
-        //if (mFactory == null) {
-            //mFactory = factory;
-        //} else {
-            //mFactory = new FactoryMerger(factory, null, mFactory, mFactory2);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -156,49 +156,49 @@ public abstract class LayoutInflater {
     public void setFactory2(Factory2 factory) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("A factory has already been set on this LayoutInflater");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Given factory can not be null");
-        } //End block
+        } 
         mFactorySet = true;
         {
             mFactory = mFactory2 = factory;
-        } //End block
+        } 
         {
             mFactory = new FactoryMerger(factory, factory, mFactory, mFactory2);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mFactorySet) {
-            //throw new IllegalStateException("A factory has already been set on this LayoutInflater");
-        //}
-        //if (factory == null) {
-            //throw new NullPointerException("Given factory can not be null");
-        //}
-        //mFactorySet = true;
-        //if (mFactory == null) {
-            //mFactory = mFactory2 = factory;
-        //} else {
-            //mFactory = new FactoryMerger(factory, factory, mFactory, mFactory2);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.408 -0400", hash_original_method = "140FDA0509CDD22FFA77677DC0A919DF", hash_generated_method = "7B48C17DCCFC347FF964BDAD9D35BB77")
     public void setPrivateFactory(Factory2 factory) {
         mPrivateFactory = factory;
-        // ---------- Original Method ----------
-        //mPrivateFactory = factory;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.409 -0400", hash_original_method = "A182F1708C145D57F0135D6BE7F61F0B", hash_generated_method = "82B6C42FE2352825E172F11C9B2EDF88")
     public Filter getFilter() {
-        Filter varB4EAC82CA7396A68D541C85D26508E83_1217110622 = null; //Variable for return #1
+        Filter varB4EAC82CA7396A68D541C85D26508E83_1217110622 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1217110622 = mFilter;
-        varB4EAC82CA7396A68D541C85D26508E83_1217110622.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1217110622.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1217110622;
-        // ---------- Original Method ----------
-        //return mFilter;
+        
+        
     }
 
     
@@ -207,73 +207,73 @@ public abstract class LayoutInflater {
         mFilter = filter;
         {
             mFilterMap = new HashMap<String, Boolean>();
-        } //End block
-        // ---------- Original Method ----------
-        //mFilter = filter;
-        //if (filter != null) {
-            //mFilterMap = new HashMap<String, Boolean>();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.410 -0400", hash_original_method = "33D0E6277D03283945C33D82FE1E07F8", hash_generated_method = "F0135948FE58A90976AED8FEA5CD0D9A")
     public View inflate(int resource, ViewGroup root) {
-        View varB4EAC82CA7396A68D541C85D26508E83_842156107 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_842156107 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_842156107 = inflate(resource, root, root != null);
         addTaint(resource);
         addTaint(root.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_842156107.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_842156107.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_842156107;
-        // ---------- Original Method ----------
-        //return inflate(resource, root, root != null);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.410 -0400", hash_original_method = "2C6130928BF5FC4257D730B98F9E332E", hash_generated_method = "2A2A719D34466C4CEFEFF97AC1D029DB")
     public View inflate(XmlPullParser parser, ViewGroup root) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1310625221 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1310625221 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1310625221 = inflate(parser, root, root != null);
         addTaint(parser.getTaint());
         addTaint(root.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1310625221.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1310625221.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1310625221;
-        // ---------- Original Method ----------
-        //return inflate(parser, root, root != null);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.411 -0400", hash_original_method = "73105F6C94DACD9E83BB5CE96738BE14", hash_generated_method = "B34127E1566144A7E5BAC384DF94DAAB")
     public View inflate(int resource, ViewGroup root, boolean attachToRoot) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1390104899 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1390104899 = null; 
         System.out.println("INFLATING from resource: " + resource);
         XmlResourceParser parser = getContext().getResources().getLayout(resource);
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1390104899 = inflate(parser, root, attachToRoot);
-        } //End block
+        } 
         finally 
         {
             parser.close();
-        } //End block
+        } 
         addTaint(resource);
         addTaint(root.getTaint());
         addTaint(attachToRoot);
-        varB4EAC82CA7396A68D541C85D26508E83_1390104899.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1390104899.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1390104899;
-        // ---------- Original Method ----------
-        //if (DEBUG) System.out.println("INFLATING from resource: " + resource);
-        //XmlResourceParser parser = getContext().getResources().getLayout(resource);
-        //try {
-            //return inflate(parser, root, attachToRoot);
-        //} finally {
-            //parser.close();
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.412 -0400", hash_original_method = "9DFC9AE5F080C22C20FBC66EE3D8715B", hash_generated_method = "8AA6AA053634540F86A7EE8F3A75D991")
     public View inflate(XmlPullParser parser, ViewGroup root, boolean attachToRoot) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1364834005 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1364834005 = null; 
         {
             final AttributeSet attrs = Xml.asAttributeSet(parser);
             Context lastContext = (Context)mConstructorArgs[0];
@@ -285,71 +285,71 @@ public abstract class LayoutInflater {
                 {
                     boolean varE58D9BEEA9A8E881BB4855D510C76E16_484829693 = ((type = parser.next()) != XmlPullParser.START_TAG &&
                         type != XmlPullParser.END_DOCUMENT);
-                } //End collapsed parenthetic
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new InflateException(parser.getPositionDescription()
                             + ": No start tag found!");
-                } //End block
+                } 
                 final String name = parser.getName();
                 {
                     System.out.println("**************************");
                     System.out.println("Creating root view: "
                             + name);
                     System.out.println("**************************");
-                } //End block
+                } 
                 {
                     boolean varFDE52F8163E69EE326159C2642CAEC68_1759825982 = (TAG_MERGE.equals(name));
                     {
                         {
                             if (DroidSafeAndroidRuntime.control) throw new InflateException("<merge /> can be used only with a valid "
                                 + "ViewGroup root and attachToRoot=true");
-                        } //End block
+                        } 
                         rInflate(parser, root, attrs, false);
-                    } //End block
+                    } 
                     {
                         View temp;
                         {
                             boolean varCE5DAB92F3FE827A985DB892C11A30CF_1195415402 = (TAG_1995.equals(name));
                             {
                                 temp = new BlinkLayout(mContext, attrs);
-                            } //End block
+                            } 
                             {
                                 temp = createViewFromTag(root, name, attrs);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         ViewGroup.LayoutParams params = null;
                         {
                             {
                                 System.out.println("Creating params from root: " +
                                     root);
-                            } //End block
+                            } 
                             params = root.generateLayoutParams(attrs);
                             {
                                 temp.setLayoutParams(params);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             System.out.println("-----> start inflating children");
-                        } //End block
+                        } 
                         rInflate(parser, temp, attrs, true);
                         {
                             System.out.println("-----> done inflating children");
-                        } //End block
+                        } 
                         {
                             root.addView(temp, params);
-                        } //End block
+                        } 
                         {
                             result = temp;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             catch (XmlPullParserException e)
             {
                 InflateException ex = new InflateException(e.getMessage());
                 ex.initCause(e);
                 if (DroidSafeAndroidRuntime.control) throw ex;
-            } //End block
+            } 
             catch (IOException e)
             {
                 InflateException ex = new InflateException(
@@ -357,27 +357,27 @@ public abstract class LayoutInflater {
                         + ": " + e.getMessage());
                 ex.initCause(e);
                 if (DroidSafeAndroidRuntime.control) throw ex;
-            } //End block
+            } 
             finally 
             {
                 mConstructorArgs[0] = lastContext;
                 mConstructorArgs[1] = null;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1364834005 = result;
-        } //End block
+        } 
         addTaint(parser.getTaint());
         addTaint(root.getTaint());
         addTaint(attachToRoot);
-        varB4EAC82CA7396A68D541C85D26508E83_1364834005.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1364834005.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1364834005;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.414 -0400", hash_original_method = "9249249C6DEB7757C8882D406CD78B4B", hash_generated_method = "307CC1D335DBF11EA80B9846AD1EF9DD")
     public final View createView(String name, String prefix, AttributeSet attrs) throws ClassNotFoundException, InflateException {
-        View varB4EAC82CA7396A68D541C85D26508E83_470281609 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_470281609 = null; 
         Constructor<? extends View> constructor = sConstructorMap.get(name);
         Class<? extends View> clazz = null;
         try 
@@ -389,11 +389,11 @@ public abstract class LayoutInflater {
                     boolean allowed = mFilter.onLoadClass(clazz);
                     {
                         failNotAllowed(name, prefix, attrs);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 constructor = clazz.getConstructor(mConstructorSignature);
                 sConstructorMap.put(name, constructor);
-            } //End block
+            } 
             {
                 {
                     Boolean allowedState = mFilterMap.get(name);
@@ -404,55 +404,55 @@ public abstract class LayoutInflater {
                         mFilterMap.put(name, allowed);
                         {
                             failNotAllowed(name, prefix, attrs);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         boolean var5283AA69DC1B5B630A4798CB7C4AEC9B_614007008 = (allowedState.equals(Boolean.FALSE));
                         {
                             failNotAllowed(name, prefix, attrs);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             Object[] args = mConstructorArgs;
             args[1] = attrs;
             varB4EAC82CA7396A68D541C85D26508E83_470281609 = constructor.newInstance(args);
-        } //End block
+        } 
         catch (NoSuchMethodException e)
         {
             InflateException ie = new InflateException(attrs.getPositionDescription()
                     + ": Error inflating class "
-                    + (prefix != null ? (prefix + name) : name));//DSFIXME:  CODE0008: Nested ternary operator in expression
+                    + (prefix != null ? (prefix + name) : name));
             ie.initCause(e);
             if (DroidSafeAndroidRuntime.control) throw ie;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             InflateException ie = new InflateException(attrs.getPositionDescription()
                     + ": Class is not a View "
-                    + (prefix != null ? (prefix + name) : name));//DSFIXME:  CODE0008: Nested ternary operator in expression
+                    + (prefix != null ? (prefix + name) : name));
             ie.initCause(e);
             if (DroidSafeAndroidRuntime.control) throw ie;
-        } //End block
+        } 
         catch (ClassNotFoundException e)
         {
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
+        } 
         catch (Exception e)
         {
             InflateException ie = new InflateException(attrs.getPositionDescription()
                     + ": Error inflating class "
-                    + (clazz == null ? "<unknown>" : clazz.getName()));//DSFIXME:  CODE0008: Nested ternary operator in expression
+                    + (clazz == null ? "<unknown>" : clazz.getName()));
             ie.initCause(e);
             if (DroidSafeAndroidRuntime.control) throw ie;
-        } //End block
+        } 
         addTaint(name.getTaint());
         addTaint(prefix.getTaint());
         addTaint(attrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_470281609.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_470281609.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_470281609;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -464,51 +464,51 @@ public abstract class LayoutInflater {
         addTaint(name.getTaint());
         addTaint(prefix.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //throw new InflateException(attrs.getPositionDescription()
-                //+ ": Class not allowed to be inflated "
-                //+ (prefix != null ? (prefix + name) : name));
+        
+        
+                
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.415 -0400", hash_original_method = "9A9783E7AF685525083052EAFC6937D8", hash_generated_method = "1E207BB40C5C716F41AA58EEB373A9D2")
     protected View onCreateView(String name, AttributeSet attrs) throws ClassNotFoundException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        View varB4EAC82CA7396A68D541C85D26508E83_1262618433 = null; //Variable for return #1
+        
+        View varB4EAC82CA7396A68D541C85D26508E83_1262618433 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1262618433 = createView(name, "android.view.", attrs);
         addTaint(name.getTaint());
         addTaint(attrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1262618433.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1262618433.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1262618433;
-        // ---------- Original Method ----------
-        //return createView(name, "android.view.", attrs);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.416 -0400", hash_original_method = "EEF2BD4B979EFD4F0FBDCDB52C08D7B2", hash_generated_method = "6ADC2F89920DA0D233464389C1CD9360")
     protected View onCreateView(View parent, String name, AttributeSet attrs) throws ClassNotFoundException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        View varB4EAC82CA7396A68D541C85D26508E83_1968368285 = null; //Variable for return #1
+        
+        View varB4EAC82CA7396A68D541C85D26508E83_1968368285 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1968368285 = onCreateView(name, attrs);
         addTaint(parent.getTaint());
         addTaint(name.getTaint());
         addTaint(attrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1968368285.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1968368285.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1968368285;
-        // ---------- Original Method ----------
-        //return onCreateView(name, attrs);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.417 -0400", hash_original_method = "42E00CE52BE01D0BF7040FF60139A865", hash_generated_method = "EEE2937B8CA47B5A8769498B9D2C7717")
      View createViewFromTag(View parent, String name, AttributeSet attrs) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1397332095 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1397332095 = null; 
         {
             boolean var8FFDB426A97735EAEA80E33D0B5E59B2_64134003 = (name.equals("view"));
             {
                 name = attrs.getAttributeValue(null, "class");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         System.out.println("******** Creating view: " + name);
         try 
         {
@@ -518,46 +518,46 @@ public abstract class LayoutInflater {
             view = null;
             {
                 view = mPrivateFactory.onCreateView(parent, name, mContext, attrs);
-            } //End block
+            } 
             {
                 {
                     boolean var8670E3C6635B63F51E108DA3DA62F822_1045414216 = (-1 == name.indexOf('.'));
                     {
                         view = onCreateView(parent, name, attrs);
-                    } //End block
+                    } 
                     {
                         view = createView(name, null, attrs);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             System.out.println("Created view is: " + view);
             varB4EAC82CA7396A68D541C85D26508E83_1397332095 = view;
-        } //End block
+        } 
         catch (InflateException e)
         {
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
+        } 
         catch (ClassNotFoundException e)
         {
             InflateException ie = new InflateException(attrs.getPositionDescription()
                     + ": Error inflating class " + name);
             ie.initCause(e);
             if (DroidSafeAndroidRuntime.control) throw ie;
-        } //End block
+        } 
         catch (Exception e)
         {
             InflateException ie = new InflateException(attrs.getPositionDescription()
                     + ": Error inflating class " + name);
             ie.initCause(e);
             if (DroidSafeAndroidRuntime.control) throw ie;
-        } //End block
+        } 
         addTaint(parent.getTaint());
         addTaint(name.getTaint());
         addTaint(attrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1397332095.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1397332095.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1397332095;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -575,7 +575,7 @@ public abstract class LayoutInflater {
                     boolean var9E864073812E74645886E00F3C1FA42E_1878109500 = (TAG_REQUEST_FOCUS.equals(name));
                     {
                         parseRequestFocus(parser, parent);
-                    } //End block
+                    } 
                     {
                         boolean var3A72FDB7DEFA1B4376ED852227EE7220_2021008674 = (TAG_INCLUDE.equals(name));
                         {
@@ -583,15 +583,15 @@ public abstract class LayoutInflater {
                                 boolean varF9E7792F5EE78FD8E2EF7727515E4EC9_1679852382 = (parser.getDepth() == 0);
                                 {
                                     if (DroidSafeAndroidRuntime.control) throw new InflateException("<include /> cannot be the root element");
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             parseInclude(parser, parent, attrs);
-                        } //End block
+                        } 
                         {
                             boolean var6E0AFF7B2B3D2BD63E19797766EAC38B_1269499589 = (TAG_MERGE.equals(name));
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new InflateException("<merge /> must be the root element");
-                            } //End block
+                            } 
                             {
                                 boolean varA10A7F5947ED2B40D379831A43F34249_1942789961 = (TAG_1995.equals(name));
                                 {
@@ -600,27 +600,27 @@ public abstract class LayoutInflater {
                                     final ViewGroup.LayoutParams params = viewGroup.generateLayoutParams(attrs);
                                     rInflate(parser, view, attrs, true);
                                     viewGroup.addView(view, params);
-                                } //End block
+                                } 
                                 {
                                     final View view = createViewFromTag(parent, name, attrs);
                                     final ViewGroup viewGroup = (ViewGroup) parent;
                                     final ViewGroup.LayoutParams params = viewGroup.generateLayoutParams(attrs);
                                     rInflate(parser, view, attrs, true);
                                     viewGroup.addView(view, params);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         parent.onFinishInflate();
         addTaint(parser.getTaint());
         addTaint(parent.getTaint());
         addTaint(attrs.getTaint());
         addTaint(finishInflate);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -632,16 +632,16 @@ public abstract class LayoutInflater {
         {
             boolean var0A9D2815252DF1D1527DC7B6C5EBCE25_743442109 = (((type = parser.next()) != XmlPullParser.END_TAG ||
                 parser.getDepth() > currentDepth) && type != XmlPullParser.END_DOCUMENT);
-        } //End collapsed parenthetic
+        } 
         addTaint(parser.getTaint());
         addTaint(parent.getTaint());
-        // ---------- Original Method ----------
-        //int type;
-        //parent.requestFocus();
-        //final int currentDepth = parser.getDepth();
-        //while (((type = parser.next()) != XmlPullParser.END_TAG ||
-                //parser.getDepth() > currentDepth) && type != XmlPullParser.END_DOCUMENT) {
-        //}
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -655,12 +655,12 @@ public abstract class LayoutInflater {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new InflateException("You must specifiy a layout in the"
                             + " include tag: <include layout=\"@layout/layoutID\" />");
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new InflateException("You must specifiy a valid layout "
                             + "reference. The layout ID " + value + " is not valid.");
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 final XmlResourceParser childParser = getContext().getResources().getLayout(layout);
                 try 
@@ -669,17 +669,17 @@ public abstract class LayoutInflater {
                     {
                         boolean var85BD6F6EF64876B51C9884A0DAC7FEDE_651627869 = ((type = childParser.next()) != XmlPullParser.START_TAG &&
                             type != XmlPullParser.END_DOCUMENT);
-                    } //End collapsed parenthetic
+                    } 
                     {
                         if (DroidSafeAndroidRuntime.control) throw new InflateException(childParser.getPositionDescription() +
                                 ": No start tag found!");
-                    } //End block
+                    } 
                     final String childName = childParser.getName();
                     {
                         boolean var5E823F928FF3B68CA0565BBB723D4C0E_951236305 = (TAG_MERGE.equals(childName));
                         {
                             rInflate(childParser, parent, childAttrs, false);
-                        } //End block
+                        } 
                         {
                             final View view = createViewFromTag(parent, childName, childAttrs);
                             final ViewGroup group = (ViewGroup) parent;
@@ -687,17 +687,17 @@ public abstract class LayoutInflater {
                             try 
                             {
                                 params = group.generateLayoutParams(attrs);
-                            } //End block
+                            } 
                             catch (RuntimeException e)
                             {
                                 params = group.generateLayoutParams(childAttrs);
-                            } //End block
+                            } 
                             finally 
                             {
                                 {
                                     view.setLayoutParams(params);
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             rInflate(childParser, view, childAttrs, true);
                             TypedArray a = mContext.obtainStyledAttributes(attrs,
                             com.android.internal.R.styleable.View, 0, 0);
@@ -706,39 +706,39 @@ public abstract class LayoutInflater {
                             a.recycle();
                             {
                                 view.setId(id);
-                            } //End block
-                            //Begin case 0 
+                            } 
+                            
                             view.setVisibility(View.VISIBLE);
-                            //End case 0 
-                            //Begin case 1 
+                            
+                            
                             view.setVisibility(View.INVISIBLE);
-                            //End case 1 
-                            //Begin case 2 
+                            
+                            
                             view.setVisibility(View.GONE);
-                            //End case 2 
+                            
                             group.addView(view);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 finally 
                 {
                     childParser.close();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new InflateException("<include /> can only be used inside of a ViewGroup");
-        } //End block
+        } 
         final int currentDepth = parser.getDepth();
         {
             boolean var0A9D2815252DF1D1527DC7B6C5EBCE25_394839609 = (((type = parser.next()) != XmlPullParser.END_TAG ||
                 parser.getDepth() > currentDepth) && type != XmlPullParser.END_DOCUMENT);
-        } //End collapsed parenthetic
+        } 
         addTaint(parser.getTaint());
         addTaint(parent.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -762,48 +762,48 @@ public abstract class LayoutInflater {
             mF2 = f2;
             mF12 = f12;
             mF22 = f22;
-            // ---------- Original Method ----------
-            //mF1 = f1;
-            //mF2 = f2;
-            //mF12 = f12;
-            //mF22 = f22;
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.422 -0400", hash_original_method = "912C6EE593A6921C8E87D5E0641D7CDD", hash_generated_method = "2806E78D0A1445F57B41E3956E5DAF0A")
         public View onCreateView(String name, Context context, AttributeSet attrs) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            View varB4EAC82CA7396A68D541C85D26508E83_1830028905 = null; //Variable for return #1
-            View varB4EAC82CA7396A68D541C85D26508E83_1410350257 = null; //Variable for return #2
+            
+            View varB4EAC82CA7396A68D541C85D26508E83_1830028905 = null; 
+            View varB4EAC82CA7396A68D541C85D26508E83_1410350257 = null; 
             View v = mF1.onCreateView(name, context, attrs);
             varB4EAC82CA7396A68D541C85D26508E83_1830028905 = v;
             varB4EAC82CA7396A68D541C85D26508E83_1410350257 = mF2.onCreateView(name, context, attrs);
             addTaint(name.getTaint());
             addTaint(context.getTaint());
             addTaint(attrs.getTaint());
-            View varA7E53CE21691AB073D9660D615818899_2090794426; //Final return value
+            View varA7E53CE21691AB073D9660D615818899_2090794426; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_2090794426 = varB4EAC82CA7396A68D541C85D26508E83_1830028905;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_2090794426 = varB4EAC82CA7396A68D541C85D26508E83_1410350257;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_2090794426.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_2090794426.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_2090794426;
-            // ---------- Original Method ----------
-            //View v = mF1.onCreateView(name, context, attrs);
-            //if (v != null) return v;
-            //return mF2.onCreateView(name, context, attrs);
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.423 -0400", hash_original_method = "F1957EAE5145EA0F0129265F270794D6", hash_generated_method = "8962627D3CF87031350393A76FEAEE7E")
         public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            View varB4EAC82CA7396A68D541C85D26508E83_1604362624 = null; //Variable for return #1
-            View varB4EAC82CA7396A68D541C85D26508E83_459321774 = null; //Variable for return #2
+            
+            View varB4EAC82CA7396A68D541C85D26508E83_1604362624 = null; 
+            View varB4EAC82CA7396A68D541C85D26508E83_459321774 = null; 
             View v;
             v = mF12.onCreateView(parent, name, context, attrs);
             v = mF1.onCreateView(name, context, attrs);
@@ -814,23 +814,23 @@ public abstract class LayoutInflater {
             addTaint(name.getTaint());
             addTaint(context.getTaint());
             addTaint(attrs.getTaint());
-            View varA7E53CE21691AB073D9660D615818899_1477024124; //Final return value
+            View varA7E53CE21691AB073D9660D615818899_1477024124; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1477024124 = varB4EAC82CA7396A68D541C85D26508E83_1604362624;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1477024124 = varB4EAC82CA7396A68D541C85D26508E83_459321774;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1477024124.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1477024124.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1477024124;
-            // ---------- Original Method ----------
-            //View v = mF12 != null ? mF12.onCreateView(parent, name, context, attrs)
-                    //: mF1.onCreateView(name, context, attrs);
-            //if (v != null) return v;
-            //return mF22 != null ? mF22.onCreateView(parent, name, context, attrs)
-                    //: mF2.onCreateView(name, context, attrs);
+            
+            
+                    
+            
+            
+                    
         }
 
         
@@ -860,41 +860,41 @@ public abstract class LayoutInflater {
                         {
                             mBlinkState = !mBlinkState;
                             makeBlink();
-                        } //End block
+                        } 
                         invalidate();
-                    } //End block
+                    } 
                     addTaint(msg.getTaint());
                     boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_56379214 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_56379214;
-                    // ---------- Original Method ----------
-                    //if (msg.what == MESSAGE_BLINK) {
-                        //if (mBlink) {
-                            //mBlinkState = !mBlinkState;
-                            //makeBlink();
-                        //}
-                        //invalidate();
-                        //return true;
-                    //}
-                    //return false;
+                    
+                    
+                        
+                            
+                            
+                        
+                        
+                        
+                    
+                    
                 }
 });
             addTaint(context.getTaint());
             addTaint(attrs.getTaint());
-            // ---------- Original Method ----------
-            //mHandler = new Handler(new Handler.Callback() {
-                //@Override
-                //public boolean handleMessage(Message msg) {
-                    //if (msg.what == MESSAGE_BLINK) {
-                        //if (mBlink) {
-                            //mBlinkState = !mBlinkState;
-                            //makeBlink();
-                        //}
-                        //invalidate();
-                        //return true;
-                    //}
-                    //return false;
-                //}
-            //});
+            
+            
+                
+                
+                    
+                        
+                            
+                            
+                        
+                        
+                        
+                    
+                    
+                
+            
         }
 
         
@@ -902,41 +902,41 @@ public abstract class LayoutInflater {
         private void makeBlink() {
             Message message = mHandler.obtainMessage(MESSAGE_BLINK);
             mHandler.sendMessageDelayed(message, BLINK_DELAY);
-            // ---------- Original Method ----------
-            //Message message = mHandler.obtainMessage(MESSAGE_BLINK);
-            //mHandler.sendMessageDelayed(message, BLINK_DELAY);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.426 -0400", hash_original_method = "F84801EA6DE017B4DF3D928CA8059755", hash_generated_method = "5442A9264ED4F4E31C0BA66C5931886A")
         @Override
         protected void onAttachedToWindow() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             super.onAttachedToWindow();
             mBlink = true;
             mBlinkState = true;
             makeBlink();
-            // ---------- Original Method ----------
-            //super.onAttachedToWindow();
-            //mBlink = true;
-            //mBlinkState = true;
-            //makeBlink();
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.426 -0400", hash_original_method = "68779D94DBD6ED32D8C444331B18EB29", hash_generated_method = "A65982EADCE2056B98837C8AE9E7BCE2")
         @Override
         protected void onDetachedFromWindow() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             super.onDetachedFromWindow();
             mBlink = false;
             mBlinkState = true;
             mHandler.removeMessages(MESSAGE_BLINK);
-            // ---------- Original Method ----------
-            //super.onDetachedFromWindow();
-            //mBlink = false;
-            //mBlinkState = true;
-            //mHandler.removeMessages(MESSAGE_BLINK);
+            
+            
+            
+            
+            
         }
 
         
@@ -945,12 +945,12 @@ public abstract class LayoutInflater {
         protected void dispatchDraw(Canvas canvas) {
             {
                 super.dispatchDraw(canvas);
-            } //End block
+            } 
             addTaint(canvas.getTaint());
-            // ---------- Original Method ----------
-            //if (mBlinkState) {
-                //super.dispatchDraw(canvas);
-            //}
+            
+            
+                
+            
         }
 
         

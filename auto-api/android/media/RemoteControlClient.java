@@ -1,11 +1,11 @@
 package android.media;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.PendingIntent;
 import android.content.ComponentName;
@@ -73,7 +73,7 @@ public class RemoteControlClient {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.460 -0400", hash_original_method = "F932B544DD1B5B88DDD0055B7C1D8F98", hash_generated_method = "8642A93D514E756D20B21B6324049341")
         public void onInformationRequested(int clientGeneration, int infoFlags,
                 int artWidth, int artHeight) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 mEventHandler.removeMessages(MSG_NEW_INTERNAL_CLIENT_GEN);
                 mEventHandler.dispatchMessage(
@@ -91,13 +91,13 @@ public class RemoteControlClient {
                         mEventHandler.obtainMessage(MSG_REQUEST_TRANSPORTCONTROL));
                 mEventHandler.dispatchMessage(mEventHandler.obtainMessage(MSG_REQUEST_METADATA));
                 mEventHandler.dispatchMessage(mEventHandler.obtainMessage(MSG_REQUEST_ARTWORK));
-            } //End block
+            } 
             addTaint(clientGeneration);
             addTaint(infoFlags);
             addTaint(artWidth);
             addTaint(artHeight);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -107,14 +107,14 @@ public class RemoteControlClient {
                 mEventHandler.removeMessages(MSG_NEW_CURRENT_CLIENT_GEN);
                 mEventHandler.dispatchMessage(mEventHandler.obtainMessage(
                         MSG_NEW_CURRENT_CLIENT_GEN, clientGeneration, 0));
-            } //End block
+            } 
             addTaint(clientGeneration);
-            // ---------- Original Method ----------
-            //if (mEventHandler != null) {
-                //mEventHandler.removeMessages(MSG_NEW_CURRENT_CLIENT_GEN);
-                //mEventHandler.dispatchMessage(mEventHandler.obtainMessage(
-                        //MSG_NEW_CURRENT_CLIENT_GEN, clientGeneration, 0));
-            //}
+            
+            
+                
+                
+                        
+            
         }
 
         
@@ -123,13 +123,13 @@ public class RemoteControlClient {
             {
                 mEventHandler.dispatchMessage(mEventHandler.obtainMessage(
                         MSG_PLUG_DISPLAY, rcd));
-            } //End block
+            } 
             addTaint(rcd.getTaint());
-            // ---------- Original Method ----------
-            //if (mEventHandler != null) {
-                //mEventHandler.dispatchMessage(mEventHandler.obtainMessage(
-                        //MSG_PLUG_DISPLAY, rcd));
-            //}
+            
+            
+                
+                        
+            
         }
 
         
@@ -138,13 +138,13 @@ public class RemoteControlClient {
             {
                 mEventHandler.dispatchMessage(mEventHandler.obtainMessage(
                         MSG_UNPLUG_DISPLAY, rcd));
-            } //End block
+            } 
             addTaint(rcd.getTaint());
-            // ---------- Original Method ----------
-            //if (mEventHandler != null) {
-                //mEventHandler.dispatchMessage(mEventHandler.obtainMessage(
-                        //MSG_UNPLUG_DISPLAY, rcd));
-            //}
+            
+            
+                
+                        
+            
         }
 
         
@@ -161,28 +161,28 @@ public class RemoteControlClient {
             boolean var59AC82EBCD14E4AA50598F2AE3563759_569295870 = ((looper = Looper.myLooper()) != null);
             {
                 mEventHandler = new EventHandler(this, looper);
-            } //End block
+            } 
             {
                 boolean var9D854D75870272BF06142F5CE681F893_1947258944 = ((looper = Looper.getMainLooper()) != null);
                 {
                     mEventHandler = new EventHandler(this, looper);
-                } //End block
+                } 
                 {
                     mEventHandler = null;
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //mRcMediaIntent = mediaButtonIntent;
-        //Looper looper;
-        //if ((looper = Looper.myLooper()) != null) {
-            //mEventHandler = new EventHandler(this, looper);
-        //} else if ((looper = Looper.getMainLooper()) != null) {
-            //mEventHandler = new EventHandler(this, looper);
-        //} else {
-            //mEventHandler = null;
-            //Log.e(TAG, "RemoteControlClient() couldn't find main application thread");
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+        
+            
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -190,49 +190,51 @@ public class RemoteControlClient {
     public  RemoteControlClient(PendingIntent mediaButtonIntent, Looper looper) {
         mRcMediaIntent = mediaButtonIntent;
         mEventHandler = new EventHandler(this, looper);
-        // ---------- Original Method ----------
-        //mRcMediaIntent = mediaButtonIntent;
-        //mEventHandler = new EventHandler(this, looper);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.464 -0400", hash_original_method = "848F28E79710FB7B251A1B961691D3AF", hash_generated_method = "4F730E775C1C892C35BFB77DD0F0FD15")
     public MetadataEditor editMetadata(boolean startEmpty) {
-        MetadataEditor varB4EAC82CA7396A68D541C85D26508E83_918039972 = null; //Variable for return #1
+        MetadataEditor varB4EAC82CA7396A68D541C85D26508E83_918039972 = null; 
         MetadataEditor editor = new MetadataEditor();
         {
             editor.mEditorMetadata = new Bundle();
             editor.mEditorArtwork = null;
             editor.mMetadataChanged = true;
             editor.mArtworkChanged = true;
-        } //End block
+        } 
         {
             editor.mEditorMetadata = new Bundle(mMetadata);
             editor.mEditorArtwork = mArtwork;
             editor.mMetadataChanged = false;
             editor.mArtworkChanged = false;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_918039972 = editor;
         addTaint(startEmpty);
-        varB4EAC82CA7396A68D541C85D26508E83_918039972.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_918039972.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_918039972;
-        // ---------- Original Method ----------
-        //MetadataEditor editor = new MetadataEditor();
-        //if (startEmpty) {
-            //editor.mEditorMetadata = new Bundle();
-            //editor.mEditorArtwork = null;
-            //editor.mMetadataChanged = true;
-            //editor.mArtworkChanged = true;
-        //} else {
-            //editor.mEditorMetadata = new Bundle(mMetadata);
-            //editor.mEditorArtwork = mArtwork;
-            //editor.mMetadataChanged = false;
-            //editor.mArtworkChanged = false;
-        //}
-        //return editor;
+        
+        
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.464 -0400", hash_original_method = "1B4A5A7A2B9348E61A1F8DBEDB05B350", hash_generated_method = "E1EC7135AE27622B6C8A1C7CF3F40AA2")
     public void setPlaybackState(int state) {
         {
@@ -240,52 +242,53 @@ public class RemoteControlClient {
                 mPlaybackState = state;
                 mPlaybackStateChangeTimeMs = SystemClock.elapsedRealtime();
                 sendPlaybackState_syncCacheLock();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized(mCacheLock) {
-            //if (mPlaybackState != state) {
-                //mPlaybackState = state;
-                //mPlaybackStateChangeTimeMs = SystemClock.elapsedRealtime();
-                //sendPlaybackState_syncCacheLock();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.465 -0400", hash_original_method = "940D4AD017270A6AD7F6D36A1ADC2473", hash_generated_method = "709A50EF4B917CA26B81C379F53EB763")
     public void setTransportControlFlags(int transportControlFlags) {
         {
             mTransportControlFlags = transportControlFlags;
             sendTransportControlFlags_syncCacheLock();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized(mCacheLock) {
-            //mTransportControlFlags = transportControlFlags;
-            //sendTransportControlFlags_syncCacheLock();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.465 -0400", hash_original_method = "2C35ADA55DC65E9D8CCC19BDAA7D2B4B", hash_generated_method = "5510513D386522AEEAAE7BC19A86BE85")
     public PendingIntent getRcMediaIntent() {
-        PendingIntent varB4EAC82CA7396A68D541C85D26508E83_1175651604 = null; //Variable for return #1
+        PendingIntent varB4EAC82CA7396A68D541C85D26508E83_1175651604 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1175651604 = mRcMediaIntent;
-        varB4EAC82CA7396A68D541C85D26508E83_1175651604.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1175651604.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1175651604;
-        // ---------- Original Method ----------
-        //return mRcMediaIntent;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.466 -0400", hash_original_method = "6031DEC176ACCB06C28473E7885E0907", hash_generated_method = "795863280FA82414477FF866309C79C9")
     public IRemoteControlClient getIRemoteControlClient() {
-        IRemoteControlClient varB4EAC82CA7396A68D541C85D26508E83_818209586 = null; //Variable for return #1
+        IRemoteControlClient varB4EAC82CA7396A68D541C85D26508E83_818209586 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_818209586 = mIRCC;
-        varB4EAC82CA7396A68D541C85D26508E83_818209586.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_818209586.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_818209586;
-        // ---------- Original Method ----------
-        //return mIRCC;
+        
+        
     }
 
     
@@ -294,13 +297,14 @@ public class RemoteControlClient {
         mRcDisplay = null;
         mArtworkExpectedWidth = ARTWORK_INVALID_SIZE;
         mArtworkExpectedHeight = ARTWORK_INVALID_SIZE;
-        // ---------- Original Method ----------
-        //mRcDisplay = null;
-        //mArtworkExpectedWidth = ARTWORK_INVALID_SIZE;
-        //mArtworkExpectedHeight = ARTWORK_INVALID_SIZE;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.467 -0400", hash_original_method = "DCEF21D9331BDE9855981A4FAF951191", hash_generated_method = "3C882332ED9B318A0E7C937A9851B766")
     private void sendPlaybackState_syncCacheLock() {
         {
@@ -308,49 +312,51 @@ public class RemoteControlClient {
             {
                 mRcDisplay.setPlaybackState(mInternalClientGenId, mPlaybackState,
                         mPlaybackStateChangeTimeMs);
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 detachFromDisplay_syncCacheLock();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if ((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null)) {
-            //try {
-                //mRcDisplay.setPlaybackState(mInternalClientGenId, mPlaybackState,
-                        //mPlaybackStateChangeTimeMs);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "Error in setPlaybackState(), dead display "+e);
-                //detachFromDisplay_syncCacheLock();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                        
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.467 -0400", hash_original_method = "414E902B5C775D55BC88776E02F34242", hash_generated_method = "340B912F26F8C95214621876511F0079")
     private void sendMetadata_syncCacheLock() {
         {
             try 
             {
                 mRcDisplay.setMetadata(mInternalClientGenId, mMetadata);
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 detachFromDisplay_syncCacheLock();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if ((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null)) {
-            //try {
-                //mRcDisplay.setMetadata(mInternalClientGenId, mMetadata);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "Error in sendPlaybackState(), dead display "+e);
-                //detachFromDisplay_syncCacheLock();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.467 -0400", hash_original_method = "AE3ACB485EA21BE41AFE152A08682540", hash_generated_method = "CDACD6606375D72EF147FF50CA16AB3F")
     private void sendTransportControlFlags_syncCacheLock() {
         {
@@ -358,25 +364,26 @@ public class RemoteControlClient {
             {
                 mRcDisplay.setTransportControlFlags(mInternalClientGenId,
                         mTransportControlFlags);
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 detachFromDisplay_syncCacheLock();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if ((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null)) {
-            //try {
-                //mRcDisplay.setTransportControlFlags(mInternalClientGenId,
-                        //mTransportControlFlags);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "Error in sendTransportControlFlags(), dead display "+e);
-                //detachFromDisplay_syncCacheLock();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                        
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.468 -0400", hash_original_method = "1072470EEE2F2109E34F0B1C5EF1161C", hash_generated_method = "61E68A3A77098E438137E295F48B15CD")
     private void sendArtwork_syncCacheLock() {
         {
@@ -384,25 +391,26 @@ public class RemoteControlClient {
             try 
             {
                 mRcDisplay.setArtwork(mInternalClientGenId, mArtwork);
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 detachFromDisplay_syncCacheLock();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if ((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null)) {
-            //mArtwork = scaleBitmapIfTooBig(mArtwork, mArtworkExpectedWidth, mArtworkExpectedHeight);
-            //try {
-                //mRcDisplay.setArtwork(mInternalClientGenId, mArtwork);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "Error in sendArtwork(), dead display "+e);
-                //detachFromDisplay_syncCacheLock();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.468 -0400", hash_original_method = "9C956ABC194A8C18AFD74A607E4260C4", hash_generated_method = "0D1125B3E60375515D0905499CC13DBC")
     private void sendMetadataWithArtwork_syncCacheLock() {
         {
@@ -410,25 +418,26 @@ public class RemoteControlClient {
             try 
             {
                 mRcDisplay.setAllMetadata(mInternalClientGenId, mMetadata, mArtwork);
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 detachFromDisplay_syncCacheLock();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if ((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null)) {
-            //mArtwork = scaleBitmapIfTooBig(mArtwork, mArtworkExpectedWidth, mArtworkExpectedHeight);
-            //try {
-                //mRcDisplay.setAllMetadata(mInternalClientGenId, mMetadata, mArtwork);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "Error in setAllMetadata(), dead display "+e);
-                //detachFromDisplay_syncCacheLock();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.469 -0400", hash_original_method = "0BE7AE1519A8E1F03CB0A5A1A7C2DA4C", hash_generated_method = "378619F96F30079F7820E7B0E296BF55")
     private void onNewInternalClientGen(Integer clientGeneration, int artWidth, int artHeight) {
         {
@@ -436,16 +445,16 @@ public class RemoteControlClient {
             {
                 mArtworkExpectedWidth = artWidth;
                 mArtworkExpectedHeight = artHeight;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mCacheLock) {
-            //mInternalClientGenId = clientGeneration.intValue();
-            //if (artWidth > 0) {
-                //mArtworkExpectedWidth = artWidth;
-                //mArtworkExpectedHeight = artHeight;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+            
+        
     }
 
     
@@ -453,11 +462,11 @@ public class RemoteControlClient {
     private void onNewCurrentClientGen(int clientGeneration) {
         {
             mCurrentClientGenId = clientGeneration;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mCacheLock) {
-            //mCurrentClientGenId = clientGeneration;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -465,14 +474,15 @@ public class RemoteControlClient {
     private void onPlugDisplay(IRemoteControlDisplay rcd) {
         {
             mRcDisplay = rcd;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized(mCacheLock) {
-            //mRcDisplay = rcd;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.470 -0400", hash_original_method = "C16B385AF67DD61790B8C9E68A3BEA11", hash_generated_method = "7D61DE9C48286BB29D186177863DD2F1")
     private void onUnplugDisplay(IRemoteControlDisplay rcd) {
         {
@@ -482,24 +492,25 @@ public class RemoteControlClient {
                     mRcDisplay = null;
                     mArtworkExpectedWidth = ARTWORK_DEFAULT_SIZE;
                     mArtworkExpectedHeight = ARTWORK_DEFAULT_SIZE;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(rcd.getTaint());
-        // ---------- Original Method ----------
-        //synchronized(mCacheLock) {
-            //if ((mRcDisplay != null) && (mRcDisplay.asBinder().equals(rcd.asBinder()))) {
-                //mRcDisplay = null;
-                //mArtworkExpectedWidth = ARTWORK_DEFAULT_SIZE;
-                //mArtworkExpectedHeight = ARTWORK_DEFAULT_SIZE;
-            //}
-        //}
+        
+        
+            
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.471 -0400", hash_original_method = "1F39DBEB11686CD36B20A5C71DB4136D", hash_generated_method = "FEDCB31395A7CFAC285F39E5C7BA6BF1")
     private Bitmap scaleBitmapIfTooBig(Bitmap bitmap, int maxWidth, int maxHeight) {
-        Bitmap varB4EAC82CA7396A68D541C85D26508E83_1051126309 = null; //Variable for return #1
+        Bitmap varB4EAC82CA7396A68D541C85D26508E83_1051126309 = null; 
         {
             final int width = bitmap.getWidth();
             final int height = bitmap.getHeight();
@@ -515,16 +526,16 @@ public class RemoteControlClient {
                 canvas.drawBitmap(bitmap, null,
                         new RectF(0, 0, outBitmap.getWidth(), outBitmap.getHeight()), paint);
                 bitmap = outBitmap;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1051126309 = bitmap;
         addTaint(bitmap.getTaint());
         addTaint(maxWidth);
         addTaint(maxHeight);
-        varB4EAC82CA7396A68D541C85D26508E83_1051126309.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1051126309.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1051126309;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -560,151 +571,151 @@ public class RemoteControlClient {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.471 -0400", hash_original_method = "35489133548A4653F80D8552B0E58378", hash_generated_method = "8F0077210051A860529F5C8FE4CA59F4")
         private  MetadataEditor() {
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.472 -0400", hash_original_method = "3FF219DE1407B1650498BA4CB70E771E", hash_generated_method = "8733CE8F5E836126EF8C3D827D0AABA1")
         public Object clone() throws CloneNotSupportedException {
             throw new CloneNotSupportedException();
-            // ---------- Original Method ----------
-            //throw new CloneNotSupportedException();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.473 -0400", hash_original_method = "DC698BF42DF290A93E2069AFDF9D8834", hash_generated_method = "8E391AA17C5C0BA5620E040E71E8C6AB")
         public synchronized MetadataEditor putString(int key, String value) throws IllegalArgumentException {
-            MetadataEditor varB4EAC82CA7396A68D541C85D26508E83_1480586121 = null; //Variable for return #1
-            MetadataEditor varB4EAC82CA7396A68D541C85D26508E83_664648212 = null; //Variable for return #2
+            MetadataEditor varB4EAC82CA7396A68D541C85D26508E83_1480586121 = null; 
+            MetadataEditor varB4EAC82CA7396A68D541C85D26508E83_664648212 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1480586121 = this;
-            } //End block
+            } 
             {
                 boolean var64500EB793605B810FA43CE9C224FC07_1547236436 = (!validTypeForKey(key, METADATA_KEYS_TYPE_STRING));
                 {
                     if (DroidSafeAndroidRuntime.control) throw(new IllegalArgumentException("Invalid type 'String' for key "+ key));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mEditorMetadata.putString(String.valueOf(key), value);
             mMetadataChanged = true;
             varB4EAC82CA7396A68D541C85D26508E83_664648212 = this;
             addTaint(key);
             addTaint(value.getTaint());
-            MetadataEditor varA7E53CE21691AB073D9660D615818899_337347598; //Final return value
+            MetadataEditor varA7E53CE21691AB073D9660D615818899_337347598; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_337347598 = varB4EAC82CA7396A68D541C85D26508E83_1480586121;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_337347598 = varB4EAC82CA7396A68D541C85D26508E83_664648212;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_337347598.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_337347598.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_337347598;
-            // ---------- Original Method ----------
-            //if (mApplied) {
-                //Log.e(TAG, "Can't edit a previously applied MetadataEditor");
-                //return this;
-            //}
-            //if (!validTypeForKey(key, METADATA_KEYS_TYPE_STRING)) {
-                //throw(new IllegalArgumentException("Invalid type 'String' for key "+ key));
-            //}
-            //mEditorMetadata.putString(String.valueOf(key), value);
-            //mMetadataChanged = true;
-            //return this;
+            
+            
+                
+                
+            
+            
+                
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.475 -0400", hash_original_method = "59EE363FF7F9B37AD6A675925DC53A2A", hash_generated_method = "C70E6AFDD60861123BCDB0E9472B5D46")
         public synchronized MetadataEditor putLong(int key, long value) throws IllegalArgumentException {
-            MetadataEditor varB4EAC82CA7396A68D541C85D26508E83_1729238429 = null; //Variable for return #1
-            MetadataEditor varB4EAC82CA7396A68D541C85D26508E83_243880146 = null; //Variable for return #2
+            MetadataEditor varB4EAC82CA7396A68D541C85D26508E83_1729238429 = null; 
+            MetadataEditor varB4EAC82CA7396A68D541C85D26508E83_243880146 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1729238429 = this;
-            } //End block
+            } 
             {
                 boolean var562764A371AF1324C2F3645CE22F9C0E_267015382 = (!validTypeForKey(key, METADATA_KEYS_TYPE_LONG));
                 {
                     if (DroidSafeAndroidRuntime.control) throw(new IllegalArgumentException("Invalid type 'long' for key "+ key));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mEditorMetadata.putLong(String.valueOf(key), value);
             mMetadataChanged = true;
             varB4EAC82CA7396A68D541C85D26508E83_243880146 = this;
             addTaint(key);
             addTaint(value);
-            MetadataEditor varA7E53CE21691AB073D9660D615818899_592650340; //Final return value
+            MetadataEditor varA7E53CE21691AB073D9660D615818899_592650340; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_592650340 = varB4EAC82CA7396A68D541C85D26508E83_1729238429;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_592650340 = varB4EAC82CA7396A68D541C85D26508E83_243880146;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_592650340.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_592650340.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_592650340;
-            // ---------- Original Method ----------
-            //if (mApplied) {
-                //Log.e(TAG, "Can't edit a previously applied MetadataEditor");
-                //return this;
-            //}
-            //if (!validTypeForKey(key, METADATA_KEYS_TYPE_LONG)) {
-                //throw(new IllegalArgumentException("Invalid type 'long' for key "+ key));
-            //}
-            //mEditorMetadata.putLong(String.valueOf(key), value);
-            //mMetadataChanged = true;
-            //return this;
+            
+            
+                
+                
+            
+            
+                
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.476 -0400", hash_original_method = "392D9C0804150D161643AF9A81D31BAB", hash_generated_method = "6D0A110AE4AAAE01996393BB747F65B5")
         public synchronized MetadataEditor putBitmap(int key, Bitmap bitmap) throws IllegalArgumentException {
-            MetadataEditor varB4EAC82CA7396A68D541C85D26508E83_870756131 = null; //Variable for return #1
-            MetadataEditor varB4EAC82CA7396A68D541C85D26508E83_1912371455 = null; //Variable for return #2
+            MetadataEditor varB4EAC82CA7396A68D541C85D26508E83_870756131 = null; 
+            MetadataEditor varB4EAC82CA7396A68D541C85D26508E83_1912371455 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_870756131 = this;
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw(new IllegalArgumentException("Invalid type 'Bitmap' for key "+ key));
-            } //End block
+            } 
             {
                 mEditorArtwork = scaleBitmapIfTooBig(bitmap,
                         mArtworkExpectedWidth, mArtworkExpectedHeight);
-            } //End block
+            } 
             {
                 mEditorArtwork = bitmap;
-            } //End block
+            } 
             mArtworkChanged = true;
             varB4EAC82CA7396A68D541C85D26508E83_1912371455 = this;
             addTaint(key);
-            MetadataEditor varA7E53CE21691AB073D9660D615818899_866983560; //Final return value
+            MetadataEditor varA7E53CE21691AB073D9660D615818899_866983560; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_866983560 = varB4EAC82CA7396A68D541C85D26508E83_870756131;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_866983560 = varB4EAC82CA7396A68D541C85D26508E83_1912371455;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_866983560.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_866983560.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_866983560;
-            // ---------- Original Method ----------
-            //if (mApplied) {
-                //Log.e(TAG, "Can't edit a previously applied MetadataEditor");
-                //return this;
-            //}
-            //if (key != BITMAP_KEY_ARTWORK) {
-                //throw(new IllegalArgumentException("Invalid type 'Bitmap' for key "+ key));
-            //}
-            //if ((mArtworkExpectedWidth > 0) && (mArtworkExpectedHeight > 0)) {
-                //mEditorArtwork = scaleBitmapIfTooBig(bitmap,
-                        //mArtworkExpectedWidth, mArtworkExpectedHeight);
-            //} else {
-                //mEditorArtwork = bitmap;
-            //}
-            //mArtworkChanged = true;
-            //return this;
+            
+            
+                
+                
+            
+            
+                
+            
+            
+                
+                        
+            
+                
+            
+            
+            
         }
 
         
@@ -712,13 +723,13 @@ public class RemoteControlClient {
         public synchronized void clear() {
             mEditorMetadata.clear();
             mEditorArtwork = null;
-            // ---------- Original Method ----------
-            //if (mApplied) {
-                //Log.e(TAG, "Can't clear a previously applied MetadataEditor");
-                //return;
-            //}
-            //mEditorMetadata.clear();
-            //mEditorArtwork = null;
+            
+            
+                
+                
+            
+            
+            
         }
 
         
@@ -730,23 +741,23 @@ public class RemoteControlClient {
                     boolean var6413C1F0A31650058FD58DD0250B281A_1039695166 = ((mArtwork != null) && (!mArtwork.equals(mEditorArtwork)));
                     {
                         mArtwork.recycle();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mArtwork = mEditorArtwork;
                 mEditorArtwork = null;
                 {
                     sendMetadataWithArtwork_syncCacheLock();
-                } //End block
+                } 
                 {
                     sendMetadata_syncCacheLock();
-                } //End block
+                } 
                 {
                     sendArtwork_syncCacheLock();
-                } //End block
+                } 
                 mApplied = true;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -767,48 +778,48 @@ public class RemoteControlClient {
             super(looper);
             addTaint(rcc.getTaint());
             addTaint(looper.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.479 -0400", hash_original_method = "7971FD8B56BD97CBBF08B4EAB35A2033", hash_generated_method = "078E7843CBFF8C22ECFC6B22CA7A4CE9")
         @Override
         public void handleMessage(Message msg) {
-            //Begin case MSG_REQUEST_PLAYBACK_STATE 
+            
             {
                 sendPlaybackState_syncCacheLock();
-            } //End block
-            //End case MSG_REQUEST_PLAYBACK_STATE 
-            //Begin case MSG_REQUEST_METADATA 
+            } 
+            
+            
             {
                 sendMetadata_syncCacheLock();
-            } //End block
-            //End case MSG_REQUEST_METADATA 
-            //Begin case MSG_REQUEST_TRANSPORTCONTROL 
+            } 
+            
+            
             {
                 sendTransportControlFlags_syncCacheLock();
-            } //End block
-            //End case MSG_REQUEST_TRANSPORTCONTROL 
-            //Begin case MSG_REQUEST_ARTWORK 
+            } 
+            
+            
             {
                 sendArtwork_syncCacheLock();
-            } //End block
-            //End case MSG_REQUEST_ARTWORK 
-            //Begin case MSG_NEW_INTERNAL_CLIENT_GEN 
+            } 
+            
+            
             onNewInternalClientGen((Integer)msg.obj, msg.arg1, msg.arg2);
-            //End case MSG_NEW_INTERNAL_CLIENT_GEN 
-            //Begin case MSG_NEW_CURRENT_CLIENT_GEN 
+            
+            
             onNewCurrentClientGen(msg.arg1);
-            //End case MSG_NEW_CURRENT_CLIENT_GEN 
-            //Begin case MSG_PLUG_DISPLAY 
+            
+            
             onPlugDisplay((IRemoteControlDisplay)msg.obj);
-            //End case MSG_PLUG_DISPLAY 
-            //Begin case MSG_UNPLUG_DISPLAY 
+            
+            
             onUnplugDisplay((IRemoteControlDisplay)msg.obj);
-            //End case MSG_UNPLUG_DISPLAY 
+            
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

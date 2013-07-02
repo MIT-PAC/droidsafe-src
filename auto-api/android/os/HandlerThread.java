@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class HandlerThread extends Thread {
@@ -24,8 +24,8 @@ public class HandlerThread extends Thread {
         super(name);
         mPriority = Process.THREAD_PRIORITY_DEFAULT;
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
-        //mPriority = Process.THREAD_PRIORITY_DEFAULT;
+        
+        
     }
 
     
@@ -34,18 +34,19 @@ public class HandlerThread extends Thread {
         super(name);
         mPriority = priority;
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
-        //mPriority = priority;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.281 -0400", hash_original_method = "7869505C1EE96F329E4F7F0EA5AF9C5D", hash_generated_method = "FB28300AB029F1A68D6A159EC4AF6459")
     protected void onLooperPrepared() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.282 -0400", hash_original_method = "9E0B8BC0299FD7F24B369B7431C1A009", hash_generated_method = "9CAA9544D70D477C070654A917E8FC9D")
     public void run() {
         mTid = Process.myTid();
@@ -53,35 +54,36 @@ public class HandlerThread extends Thread {
         {
             mLooper = Looper.myLooper();
             notifyAll();
-        } //End block
+        } 
         Process.setThreadPriority(mPriority);
         onLooperPrepared();
         Looper.loop();
         mTid = -1;
-        // ---------- Original Method ----------
-        //mTid = Process.myTid();
-        //Looper.prepare();
-        //synchronized (this) {
-            //mLooper = Looper.myLooper();
-            //notifyAll();
-        //}
-        //Process.setThreadPriority(mPriority);
-        //onLooperPrepared();
-        //Looper.loop();
-        //mTid = -1;
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.282 -0400", hash_original_method = "0FC13809696BA2D6DC441C842770D0F1", hash_generated_method = "5B7F48ACBC745DBBB9A583F2EF4A7557")
     public Looper getLooper() {
-        Looper varB4EAC82CA7396A68D541C85D26508E83_414840343 = null; //Variable for return #1
-        Looper varB4EAC82CA7396A68D541C85D26508E83_1908213182 = null; //Variable for return #2
+        Looper varB4EAC82CA7396A68D541C85D26508E83_414840343 = null; 
+        Looper varB4EAC82CA7396A68D541C85D26508E83_1908213182 = null; 
         {
             boolean var26246F6B91339E19161496C5E67A3C4C_549907268 = (!isAlive());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_414840343 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 boolean var69F7AF4175FC4B4AA6DEE35627DC602F_340874599 = (isAlive() && mLooper == null);
@@ -89,55 +91,56 @@ public class HandlerThread extends Thread {
                     try 
                     {
                         wait();
-                    } //End block
+                    } 
                     catch (InterruptedException e)
                     { }
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1908213182 = mLooper;
-        Looper varA7E53CE21691AB073D9660D615818899_1036296740; //Final return value
+        Looper varA7E53CE21691AB073D9660D615818899_1036296740; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1036296740 = varB4EAC82CA7396A68D541C85D26508E83_414840343;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1036296740 = varB4EAC82CA7396A68D541C85D26508E83_1908213182;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1036296740.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1036296740.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1036296740;
-        // ---------- Original Method ----------
-        //if (!isAlive()) {
-            //return null;
-        //}
-        //synchronized (this) {
-            //while (isAlive() && mLooper == null) {
-                //try {
-                    //wait();
-                //} catch (InterruptedException e) {
-                //}
-            //}
-        //}
-        //return mLooper;
+        
+        
+            
+        
+        
+            
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.283 -0400", hash_original_method = "45988F35C3EAC3EE4988825F5EC29D45", hash_generated_method = "784C0C6429D4C57746291A001C00E6E8")
     public boolean quit() {
         Looper looper = getLooper();
         {
             looper.quit();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1109483134 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1109483134;
-        // ---------- Original Method ----------
-        //Looper looper = getLooper();
-        //if (looper != null) {
-            //looper.quit();
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -145,8 +148,8 @@ public class HandlerThread extends Thread {
     public int getThreadId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1721233129 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1721233129;
-        // ---------- Original Method ----------
-        //return mTid;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -38,7 +38,7 @@ public class ImageSpan extends DynamicDrawableSpan {
     public  ImageSpan(Bitmap b) {
         this(null, b, ALIGN_BOTTOM);
         addTaint(b.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -48,7 +48,7 @@ public class ImageSpan extends DynamicDrawableSpan {
         this(null, b, verticalAlignment);
         addTaint(b.getTaint());
         addTaint(verticalAlignment);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -57,7 +57,7 @@ public class ImageSpan extends DynamicDrawableSpan {
         this(context, b, ALIGN_BOTTOM);
         addTaint(context.getTaint());
         addTaint(b.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -72,14 +72,14 @@ public class ImageSpan extends DynamicDrawableSpan {
         int height = mDrawable.getIntrinsicHeight();
         mDrawable.setBounds(0, 0, width > 0 ? width : 0, height > 0 ? height : 0);
         addTaint(verticalAlignment);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mDrawable = context != null
-                //? new BitmapDrawable(context.getResources(), b)
-                //: new BitmapDrawable(b);
-        //int width = mDrawable.getIntrinsicWidth();
-        //int height = mDrawable.getIntrinsicHeight();
-        //mDrawable.setBounds(0, 0, width > 0 ? width : 0, height > 0 ? height : 0);
+        
+        
+        
+                
+                
+        
+        
+        
     }
 
     
@@ -87,7 +87,7 @@ public class ImageSpan extends DynamicDrawableSpan {
     public  ImageSpan(Drawable d) {
         this(d, ALIGN_BOTTOM);
         addTaint(d.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -96,8 +96,8 @@ public class ImageSpan extends DynamicDrawableSpan {
         super(verticalAlignment);
         mDrawable = d;
         addTaint(verticalAlignment);
-        // ---------- Original Method ----------
-        //mDrawable = d;
+        
+        
     }
 
     
@@ -106,7 +106,7 @@ public class ImageSpan extends DynamicDrawableSpan {
         this(d, source, ALIGN_BOTTOM);
         addTaint(d.getTaint());
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -116,9 +116,9 @@ public class ImageSpan extends DynamicDrawableSpan {
         mDrawable = d;
         mSource = source;
         addTaint(verticalAlignment);
-        // ---------- Original Method ----------
-        //mDrawable = d;
-        //mSource = source;
+        
+        
+        
     }
 
     
@@ -127,7 +127,7 @@ public class ImageSpan extends DynamicDrawableSpan {
         this(context, uri, ALIGN_BOTTOM);
         addTaint(context.getTaint());
         addTaint(uri.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -138,10 +138,10 @@ public class ImageSpan extends DynamicDrawableSpan {
         mContentUri = uri;
         mSource = uri.toString();
         addTaint(verticalAlignment);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mContentUri = uri;
-        //mSource = uri.toString();
+        
+        
+        
+        
     }
 
     
@@ -150,7 +150,7 @@ public class ImageSpan extends DynamicDrawableSpan {
         this(context, resourceId, ALIGN_BOTTOM);
         addTaint(context.getTaint());
         addTaint(resourceId);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -160,20 +160,21 @@ public class ImageSpan extends DynamicDrawableSpan {
         mContext = context;
         mResourceId = resourceId;
         addTaint(verticalAlignment);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mResourceId = resourceId;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.777 -0400", hash_original_method = "16DECD9D0B2DB9DD9C51FE274851DFB5", hash_generated_method = "9A8BBC59A1019B0BC2ED389CAC21B247")
     @Override
     public Drawable getDrawable() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_60210859 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_60210859 = null; 
         Drawable drawable = null;
         {
             drawable = mDrawable;
-        } //End block
+        } 
         {
             Bitmap bitmap = null;
             try 
@@ -185,36 +186,36 @@ public class ImageSpan extends DynamicDrawableSpan {
                 drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),
                         drawable.getIntrinsicHeight());
                 is.close();
-            } //End block
+            } 
             catch (Exception e)
             { }
-        } //End block
+        } 
         {
             try 
             {
                 drawable = mContext.getResources().getDrawable(mResourceId);
                 drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),
                         drawable.getIntrinsicHeight());
-            } //End block
+            } 
             catch (Exception e)
             { }
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_60210859 = drawable;
-        varB4EAC82CA7396A68D541C85D26508E83_60210859.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_60210859.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_60210859;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.778 -0400", hash_original_method = "6D9DB226EA21C548410845AA7A7E2DD4", hash_generated_method = "219FE45404F151A7EA42AD7052E1DF68")
     public String getSource() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1434075746 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1434075746 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1434075746 = mSource;
-        varB4EAC82CA7396A68D541C85D26508E83_1434075746.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1434075746.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1434075746;
-        // ---------- Original Method ----------
-        //return mSource;
+        
+        
     }
 
     

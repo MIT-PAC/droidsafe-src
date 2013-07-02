@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.sip.*;
 import gov.nist.javax.sip.header.*;
@@ -17,7 +17,7 @@ public class ContentLengthParser extends HeaderParser {
     public  ContentLengthParser(String contentLength) {
         super(contentLength);
         addTaint(contentLength.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class ContentLengthParser extends HeaderParser {
     protected  ContentLengthParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.876 -0400", hash_original_method = "E65999CBE5EA336AB02A5D9A8E9D84DC", hash_generated_method = "3C20272C70FA0C562130DF4DDA34A0C1")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_346286854 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_346286854 = null; 
         dbg_enter("ContentLengthParser.enter");
         try 
         {
@@ -42,40 +43,40 @@ public class ContentLengthParser extends HeaderParser {
             this.lexer.SPorHT();
             this.lexer.match('\n');
             varB4EAC82CA7396A68D541C85D26508E83_346286854 = contentLength;
-        } //End block
+        } 
         catch (InvalidArgumentException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-        } //End block
+        } 
         catch (NumberFormatException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-        } //End block
+        } 
         finally 
         {
             dbg_leave("ContentLengthParser.leave");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_346286854.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_346286854.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_346286854;
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("ContentLengthParser.enter");
-        //try {
-            //ContentLength contentLength = new ContentLength();
-            //headerName(TokenTypes.CONTENT_LENGTH);
-            //String number = this.lexer.number();
-            //contentLength.setContentLength(Integer.parseInt(number));
-            //this.lexer.SPorHT();
-            //this.lexer.match('\n');
-            //return contentLength;
-        //} catch (InvalidArgumentException ex) {
-            //throw createParseException(ex.getMessage());
-        //} catch (NumberFormatException ex) {
-            //throw createParseException(ex.getMessage());
-        //} finally {
-            //if (debug)
-                //dbg_leave("ContentLengthParser.leave");
-        //}
+        
+        
+            
+        
+            
+            
+            
+            
+            
+            
+            
+        
+            
+        
+            
+        
+            
+                
+        
     }
 
     

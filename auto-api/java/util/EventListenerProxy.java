@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class EventListenerProxy implements EventListener {
@@ -16,19 +16,19 @@ public abstract class EventListenerProxy implements EventListener {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.256 -0400", hash_original_method = "0B02F9CA1E264165C6D771C4F9CE717F", hash_generated_method = "ACE6F3593A5CA063F5D8E2853B083D46")
     public  EventListenerProxy(EventListener listener) {
         this.listener = listener;
-        // ---------- Original Method ----------
-        //this.listener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.257 -0400", hash_original_method = "544CEBD256D91351395433E8E1959E7F", hash_generated_method = "B60EBCE8EFC5813D670E09177C76AE0F")
     public EventListener getListener() {
-        EventListener varB4EAC82CA7396A68D541C85D26508E83_1127403205 = null; //Variable for return #1
+        EventListener varB4EAC82CA7396A68D541C85D26508E83_1127403205 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1127403205 = listener;
-        varB4EAC82CA7396A68D541C85D26508E83_1127403205.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1127403205.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1127403205;
-        // ---------- Original Method ----------
-        //return listener;
+        
+        
     }
 
     

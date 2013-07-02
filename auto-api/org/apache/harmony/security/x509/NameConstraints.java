@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.security.cert.X509Certificate;
@@ -43,35 +43,35 @@ public final class NameConstraints extends ExtensionValue {
                 boolean var3E1DBA726FF28934E229E135AA842EA6_1774313819 = (ps == null || ps.isEmpty());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("permittedSubtrees are empty");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             List<GeneralSubtree> es = excludedSubtrees.getSubtrees();
             {
                 boolean var856995C505D9587EAB6B1B961EA39A07_986487143 = (es == null || es.isEmpty());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("excludedSubtrees are empty");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         this.permittedSubtrees = permittedSubtrees;
         this.excludedSubtrees = excludedSubtrees;
-        // ---------- Original Method ----------
-        //if (permittedSubtrees != null) {
-            //List<GeneralSubtree> ps = permittedSubtrees.getSubtrees();
-            //if (ps == null || ps.isEmpty()) {
-                //throw new IllegalArgumentException("permittedSubtrees are empty");
-            //}
-        //}
-        //if (excludedSubtrees != null) {
-            //List<GeneralSubtree> es = excludedSubtrees.getSubtrees();
-            //if (es == null || es.isEmpty()) {
-                //throw new IllegalArgumentException("excludedSubtrees are empty");
-            //}
-        //}
-        //this.permittedSubtrees = permittedSubtrees;
-        //this.excludedSubtrees = excludedSubtrees;
+        
+        
+            
+            
+                
+            
+        
+        
+            
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -82,32 +82,35 @@ public final class NameConstraints extends ExtensionValue {
         this.encoding = encoding;
         addTaint(permittedSubtrees.getTaint());
         addTaint(excludedSubtrees.getTaint());
-        // ---------- Original Method ----------
-        //this.encoding = encoding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NameConstraints decode(byte[] encoding) throws IOException {
         return (NameConstraints) ASN1.decode(encoding);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.235 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "A6A29F10A7CA6BD7645089F0D84EBFBE")
     @Override
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_416998107 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_416998107;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.241 -0400", hash_original_method = "D5B90ECD7CBCC97B9564754E474A01DA", hash_generated_method = "D338ACD921A60E1D208C9A24A97615C0")
     private void prepareNames() {
         permitted_names = new ArrayList[9];
@@ -121,11 +124,11 @@ public final class NameConstraints extends ExtensionValue {
                     int tag = name.getTag();
                     {
                         permitted_names[tag] = new ArrayList<GeneralName>();
-                    } //End block
+                    } 
                     permitted_names[tag].add(name);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         excluded_names = new ArrayList[9];
         {
             {
@@ -137,47 +140,49 @@ public final class NameConstraints extends ExtensionValue {
                     int tag = name.getTag();
                     {
                         excluded_names[tag] = new ArrayList<GeneralName>();
-                    } //End block
+                    } 
                     excluded_names[tag].add(name);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.242 -0400", hash_original_method = "7F050A55683D0AA0C8EC41E810522931", hash_generated_method = "CECEEFA8BAE4573D4D5930D03A39B26E")
     private byte[] getExtensionValue(X509Certificate cert, String OID) {
         try 
         {
             byte[] bytes = cert.getExtensionValue(OID);
             byte[] varFE5AE10D423C1009FB60B58A35A1A76C_214847348 = ((byte[]) ASN1OctetString.getInstance().decode(bytes));
-        } //End block
+        } 
         catch (IOException e)
         { }
         addTaint(cert.getTaint());
         addTaint(OID.getTaint());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1052879452 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1052879452;
-        // ---------- Original Method ----------
-        //try {
-            //byte[] bytes = cert.getExtensionValue(OID);
-            //if (bytes == null) {
-                //return null;
-            //}
-            //return (byte[]) ASN1OctetString.getInstance().decode(bytes);
-        //} catch (IOException e) {
-            //return null;
-        //}
+        
+        
+            
+            
+                
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.242 -0400", hash_original_method = "29F552B10A233C166AD77E1C4D545B27", hash_generated_method = "6DA2DAA39B2C602213C1AB0F2145C512")
     public boolean isAcceptable(X509Certificate cert) {
         {
             prepareNames();
-        } //End block
+        } 
         byte[] bytes = getExtensionValue(cert, "2.5.29.17");
         List<GeneralName> names = null;
         try 
@@ -185,54 +190,55 @@ public final class NameConstraints extends ExtensionValue {
             names = (bytes == null)
                 ? new ArrayList<GeneralName>(1) 
                 : ((GeneralNames) GeneralNames.ASN1.decode(bytes)).getNames();
-        } //End block
+        } 
         catch (IOException e)
         {
             e.printStackTrace();
-        } //End block
+        } 
         {
             try 
             {
                 names.add(new GeneralName(4,
                         cert.getSubjectX500Principal().getName()));
-            } //End block
+            } 
             catch (IOException e)
             { }
-        } //End block
+        } 
         boolean varC913719CB293685FA8CC7A51429EA1C0_388623678 = (isAcceptable(names));
         addTaint(cert.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_963199771 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_963199771;
-        // ---------- Original Method ----------
-        //if (permitted_names == null) {
-            //prepareNames();
-        //}
-        //byte[] bytes = getExtensionValue(cert, "2.5.29.17");
-        //List<GeneralName> names;
-        //try {
-            //names = (bytes == null)
-                //? new ArrayList<GeneralName>(1) 
-                //: ((GeneralNames) GeneralNames.ASN1.decode(bytes)).getNames();
-        //} catch (IOException e) {
-            //e.printStackTrace();
-            //return false;
-        //}
-        //if ((excluded_names[4] != null) || (permitted_names[4] != null)) {
-            //try {
-                //names.add(new GeneralName(4,
-                        //cert.getSubjectX500Principal().getName()));
-            //} catch (IOException e) {
-            //}
-        //}
-        //return isAcceptable(names);
+        
+        
+            
+        
+        
+        
+        
+            
+                
+                
+        
+            
+            
+        
+        
+            
+                
+                        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.249 -0400", hash_original_method = "D894692E4046265C2E05884CCE780235", hash_generated_method = "F65B66DC7322C33E79E2B38E98ED7FE7")
     public boolean isAcceptable(List<GeneralName> names) {
         {
             prepareNames();
-        } //End block
+        } 
         boolean[] types_presented = new boolean[9];
         boolean[] permitted_found = new boolean[9];
         {
@@ -248,10 +254,10 @@ public final class NameConstraints extends ExtensionValue {
                         {
                             {
                                 boolean var9208CD8ADC84893F0258C5ECF2EF8A7B_1420557350 = (excluded_names[type].get(i).isAcceptable(name));
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     types_presented[type] = true;
                     {
@@ -262,24 +268,25 @@ public final class NameConstraints extends ExtensionValue {
                                 boolean varB45842109D0B75BE944A10B508747846_450680078 = (permitted_names[type].get(i).isAcceptable(name));
                                 {
                                     permitted_found[type] = true;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             int type = 0;
-        } //End collapsed parenthetic
+        } 
         addTaint(names.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1728650413 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1728650413;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.255 -0400", hash_original_method = "54185F2659E074B2203C13418D4687EB", hash_generated_method = "D9877C5BFF1F4B08CBB5EF0192243FF6")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
@@ -292,10 +299,10 @@ public final class NameConstraints extends ExtensionValue {
                 GeneralSubtree generalSubtree = var4A89C5007B7E4421B64642BE0339554A_1150129442.next();
                 {
                     generalSubtree.dumpValue(sb, prefix + "    ");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             sb.append(prefix).append("  ]\n");
-        } //End block
+        } 
         {
             sb.append(prefix).append("  Excluded: [\n");
             {
@@ -304,30 +311,30 @@ public final class NameConstraints extends ExtensionValue {
                 GeneralSubtree generalSubtree = var3D4F5E5636E3D0D1639AF9F96505A272_1476811334.next();
                 {
                     generalSubtree.dumpValue(sb, prefix + "    ");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             sb.append(prefix).append("  ]\n");
-        } //End block
+        } 
         sb.append('\n').append(prefix).append("]\n");
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //sb.append(prefix).append("Name Constraints: [\n");
-        //if (permittedSubtrees != null) {
-            //sb.append(prefix).append("  Permitted: [\n");
-            //for (GeneralSubtree generalSubtree : permittedSubtrees.getSubtrees()) {
-                //generalSubtree.dumpValue(sb, prefix + "    ");
-            //}
-            //sb.append(prefix).append("  ]\n");
-        //}
-        //if (excludedSubtrees != null) {
-            //sb.append(prefix).append("  Excluded: [\n");
-            //for (GeneralSubtree generalSubtree : excludedSubtrees.getSubtrees()) {
-                //generalSubtree.dumpValue(sb, prefix + "    ");
-            //}
-            //sb.append(prefix).append("  ]\n");
-        //}
-        //sb.append('\n').append(prefix).append("]\n");
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -355,23 +362,6 @@ public final class NameConstraints extends ExtensionValue {
             values[1] = nc.excludedSubtrees;
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            NameConstraints nc = (NameConstraints) object;
-            values[0] = nc.permittedSubtrees;
-            values[1] = nc.excludedSubtrees;
-        }
     
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) {
-            Object[] values = (Object[]) in.content;
-            return new NameConstraints(
-                    (GeneralSubtrees) values[0],
-                    (GeneralSubtrees) values[1],
-                    in.getEncoded());
-        }
-    
-    */
 }
 

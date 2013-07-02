@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -18,10 +18,11 @@ public class Collections {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.212 -0400", hash_original_method = "0C1BC548FC19EEB6A684F12763720939", hash_generated_method = "F5EC8594995493427AAF50F2EB8C349F")
     private  Collections() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T> int binarySearch(List<? extends Comparable<? super T>> list, T object) {
         if (list == null) {
@@ -58,6 +59,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T> int binarySearch(List<? extends T> list, T object,
             Comparator<? super T> comparator) {
@@ -93,6 +95,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> void copy(List<? super T> destination, List<? extends T> source) {
         if (destination.size() < source.size()) {
             throw new IndexOutOfBoundsException("destination.size() < source.size(): " +
@@ -112,6 +115,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> Enumeration<T> enumeration(Collection<T> collection) {
         final Collection<T> c = collection;
         return new Enumeration<T>() {
@@ -126,6 +130,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> void fill(List<? super T> list, T object) {
         ListIterator<? super T> it = list.listIterator();
         while (it.hasNext()) {
@@ -135,6 +140,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T extends Object & Comparable<? super T>> T max(
             Collection<? extends T> collection) {
         Iterator<? extends T> it = collection.iterator();
@@ -149,6 +155,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> T max(Collection<? extends T> collection,
             Comparator<? super T> comparator) {
         if (comparator == null) {
@@ -168,6 +175,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T extends Object & Comparable<? super T>> T min(
             Collection<? extends T> collection) {
         Iterator<? extends T> it = collection.iterator();
@@ -182,6 +190,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> T min(Collection<? extends T> collection,
             Comparator<? super T> comparator) {
         if (comparator == null) {
@@ -206,6 +215,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static void reverse(List<?> list) {
         int size = list.size();
@@ -221,12 +231,14 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T> Comparator<T> reverseOrder() {
         return (Comparator) ReverseComparator.INSTANCE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> Comparator<T> reverseOrder(Comparator<T> c) {
         if (c == null) {
             return reverseOrder();
@@ -238,11 +250,13 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void shuffle(List<?> list) {
         shuffle(list, new Random());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void shuffle(List<?> list, Random random) {
         @SuppressWarnings("unchecked") 
         final List<Object> objectList = (List<Object>) list;
@@ -269,11 +283,13 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> Set<E> singleton(E object) {
         return new SingletonSet<E>(object);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> List<E> singletonList(E object) {
         return new SingletonList<E>(object);
     }
@@ -284,6 +300,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T extends Comparable<? super T>> void sort(List<T> list) {
         Object[] array = list.toArray();
@@ -297,6 +314,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T> void sort(List<T> list, Comparator<? super T> comparator) {
         T[] array = list.toArray((T[]) new Object[list.size()]);
@@ -310,6 +328,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static void swap(List<?> list, int index1, int index2) {
         if (list == null) {
@@ -327,6 +346,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> boolean replaceAll(List<T> list, T obj, T obj2) {
         int index;
         boolean found = false;
@@ -338,6 +358,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static void rotate(List<?> lst, int dist) {
         List<Object> list = (List<Object>) lst;
@@ -376,6 +397,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int indexOfSubList(List<?> list, List<?> sublist) {
         int size = list.size();
         int sublistSize = sublist.size();
@@ -417,6 +439,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         int sublistSize = sublist.size();
         int size = list.size();
@@ -456,6 +479,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> ArrayList<T> list(Enumeration<T> enumeration) {
         ArrayList<T> list = new ArrayList<T>();
         while (enumeration.hasMoreElements()) {
@@ -465,6 +489,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> Collection<T> synchronizedCollection(
             Collection<T> collection) {
         if (collection == null) {
@@ -474,6 +499,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> List<T> synchronizedList(List<T> list) {
         if (list == null) {
             throw new NullPointerException();
@@ -493,6 +519,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> Set<E> synchronizedSet(Set<E> set) {
         if (set == null) {
             throw new NullPointerException();
@@ -510,6 +537,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> SortedSet<E> synchronizedSortedSet(SortedSet<E> set) {
         if (set == null) {
             throw new NullPointerException();
@@ -518,6 +546,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <E> Collection<E> unmodifiableCollection(
             Collection<? extends E> collection) {
@@ -528,6 +557,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <E> List<E> unmodifiableList(List<? extends E> list) {
         if (list == null) {
@@ -550,6 +580,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <E> Set<E> unmodifiableSet(Set<? extends E> set) {
         if (set == null) {
@@ -569,6 +600,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> SortedSet<E> unmodifiableSortedSet(SortedSet<E> set) {
         if (set == null) {
             throw new NullPointerException();
@@ -577,6 +609,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int frequency(Collection<?> c, Object o) {
         if (c == null) {
             throw new NullPointerException();
@@ -614,23 +647,27 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T> Enumeration<T> emptyEnumeration() {
         return (Enumeration<T>) EMPTY_ENUMERATION;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T> Iterator<T> emptyIterator() {
         return (Iterator<T>) EMPTY_ITERATOR;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> ListIterator<T> emptyListIterator() {
         return Collections.<T>emptyList().listIterator();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> Collection<E> checkedCollection(Collection<E> c,
             Class<E> type) {
         return new CheckedCollection<E>(c, type);
@@ -643,6 +680,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> List<E> checkedList(List<E> list, Class<E> type) {
         if (list instanceof RandomAccess) {
             return new CheckedRandomAccessList<E>(list, type);
@@ -651,6 +689,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> Set<E> checkedSet(Set<E> s, Class<E> type) {
         return new CheckedSet<E>(s, type);
     }
@@ -662,6 +701,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> SortedSet<E> checkedSortedSet(SortedSet<E> s,
             Class<E> type) {
         return new CheckedSortedSet<E>(s, type);
@@ -677,6 +717,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean disjoint(Collection<?> c1, Collection<?> c2) {
         if ((c1 instanceof Set) && !(c2 instanceof Set)
                 || (c2.size()) > c1.size()) {
@@ -694,6 +735,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static <E> E checkType(E obj, Class<? extends E> type) {
         if (obj != null && !type.isInstance(obj)) {
             throw new ClassCastException("Attempt to insert element of type " + obj.getClass() +
@@ -703,6 +745,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> Set<E> newSetFromMap(Map<E, Boolean> map) {
         if (map.isEmpty()) {
             return new SetFromMap<E>(map);
@@ -711,6 +754,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> Queue<T> asLifoQueue(Deque<T> deque) {
         return new AsLIFOQueue<T>(deque);
     }
@@ -728,15 +772,15 @@ public class Collections {
           CopiesList(int length, E object) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } //End block
+            } 
             n = length;
             element = object;
-            // ---------- Original Method ----------
-            //if (length < 0) {
-                //throw new IllegalArgumentException();
-            //}
-            //n = length;
-            //element = object;
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -745,12 +789,12 @@ public class Collections {
         public boolean contains(Object object) {
             {
                 Object var918C716CCB523821E4DE921B4E432F42_763913383 = (element.equals(object));
-            } //End flattened ternary
+            } 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1888716542 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1888716542;
-            // ---------- Original Method ----------
-            //return element == null ? object == null : element.equals(object);
+            
+            
         }
 
         
@@ -759,27 +803,27 @@ public class Collections {
         public int size() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1089975390 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1089975390;
-            // ---------- Original Method ----------
-            //return n;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.223 -0400", hash_original_method = "857A70B35DA7146CF7ADC484EC4AABC8", hash_generated_method = "C64922054FC03D2AFAFD597424726D7D")
         @Override
         public E get(int location) {
-            E varB4EAC82CA7396A68D541C85D26508E83_682337817 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_682337817 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_682337817 = element;
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
             addTaint(location);
-            varB4EAC82CA7396A68D541C85D26508E83_682337817.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_682337817.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_682337817;
-            // ---------- Original Method ----------
-            //if (location >= 0 && location < n) {
-                //return element;
-            //}
-            //throw new IndexOutOfBoundsException();
+            
+            
+                
+            
+            
         }
 
         
@@ -795,7 +839,7 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.224 -0400", hash_original_method = "BF3F11B0BCAE2AE80C7C74CBEB88EB5B", hash_generated_method = "BF3F11B0BCAE2AE80C7C74CBEB88EB5B")
         public EmptyList ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -805,8 +849,8 @@ public class Collections {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_857551416 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_857551416;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -815,8 +859,8 @@ public class Collections {
         public int size() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_240976322 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_240976322;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
@@ -824,19 +868,19 @@ public class Collections {
         @Override
         public Object get(int location) {
         	throw new IndexOutOfBoundsException();
-            // ---------- Original Method ----------
-            //throw new IndexOutOfBoundsException();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.225 -0400", hash_original_method = "3CB4CAF1EADC3F12C565BD7D2B5F5514", hash_generated_method = "751513493FE4E3A88CFAF2F2DC13C9F1")
         private Object readResolve() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_2127736632 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_2127736632 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2127736632 = Collections.EMPTY_LIST;
-            varB4EAC82CA7396A68D541C85D26508E83_2127736632.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2127736632.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2127736632;
-            // ---------- Original Method ----------
-            //return Collections.EMPTY_LIST;
+            
+            
         }
 
         
@@ -852,7 +896,7 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.225 -0400", hash_original_method = "3A37381B9598D46CF46D5D53F85DF5B1", hash_generated_method = "3A37381B9598D46CF46D5D53F85DF5B1")
         public EmptySet ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -862,8 +906,8 @@ public class Collections {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1887178189 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1887178189;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -872,31 +916,31 @@ public class Collections {
         public int size() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1858120857 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1858120857;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.226 -0400", hash_original_method = "FC88A4B2F50E498E162F3F7EEDE885B1", hash_generated_method = "F894A934D4AE6747FE677BE8A6363747")
         @Override
         public Iterator iterator() {
-            Iterator varB4EAC82CA7396A68D541C85D26508E83_1165684304 = null; //Variable for return #1
+            Iterator varB4EAC82CA7396A68D541C85D26508E83_1165684304 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1165684304 = EMPTY_ITERATOR;
-            varB4EAC82CA7396A68D541C85D26508E83_1165684304.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1165684304.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1165684304;
-            // ---------- Original Method ----------
-            //return EMPTY_ITERATOR;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.227 -0400", hash_original_method = "2ED0845ADEAE5655731C197578B08F82", hash_generated_method = "617F194638134549A2927AB6F7175155")
         private Object readResolve() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1033186504 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1033186504 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1033186504 = Collections.EMPTY_SET;
-            varB4EAC82CA7396A68D541C85D26508E83_1033186504.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1033186504.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1033186504;
-            // ---------- Original Method ----------
-            //return Collections.EMPTY_SET;
+            
+            
         }
 
         
@@ -912,7 +956,7 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.227 -0400", hash_original_method = "0E8F36F90F9C751DA5A12903A16705DF", hash_generated_method = "0E8F36F90F9C751DA5A12903A16705DF")
         public EmptyMap ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -922,8 +966,8 @@ public class Collections {
             addTaint(key.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1305913657 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1305913657;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -933,68 +977,68 @@ public class Collections {
             addTaint(value.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2011260687 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2011260687;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.229 -0400", hash_original_method = "709DD403C63D2F4104FF93FEEB6E3457", hash_generated_method = "5E62B0070417F90BF8E2A56B0A7DA536")
         @Override
         public Set entrySet() {
-            Set varB4EAC82CA7396A68D541C85D26508E83_798627384 = null; //Variable for return #1
+            Set varB4EAC82CA7396A68D541C85D26508E83_798627384 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_798627384 = EMPTY_SET;
-            varB4EAC82CA7396A68D541C85D26508E83_798627384.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_798627384.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_798627384;
-            // ---------- Original Method ----------
-            //return EMPTY_SET;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.231 -0400", hash_original_method = "59A1188DDD48CFFB749850DC2DA09C1D", hash_generated_method = "F65AEDD4C45E984711E7967D6113F94A")
         @Override
         public Object get(Object key) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1243399973 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1243399973 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1243399973 = null;
             addTaint(key.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1243399973.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1243399973.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1243399973;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.232 -0400", hash_original_method = "266B164C16644761E32491964C192EB7", hash_generated_method = "D3610CF179AEDA55D7B69ABC580548C2")
         @Override
         public Set keySet() {
-            Set varB4EAC82CA7396A68D541C85D26508E83_1251952986 = null; //Variable for return #1
+            Set varB4EAC82CA7396A68D541C85D26508E83_1251952986 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1251952986 = EMPTY_SET;
-            varB4EAC82CA7396A68D541C85D26508E83_1251952986.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1251952986.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1251952986;
-            // ---------- Original Method ----------
-            //return EMPTY_SET;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.233 -0400", hash_original_method = "745E6E226DD5F7D4E763DA74DFF70792", hash_generated_method = "EB2264F5920DE3DFA689D26DFC3B3F95")
         @Override
         public Collection values() {
-            Collection varB4EAC82CA7396A68D541C85D26508E83_1039527135 = null; //Variable for return #1
+            Collection varB4EAC82CA7396A68D541C85D26508E83_1039527135 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1039527135 = EMPTY_LIST;
-            varB4EAC82CA7396A68D541C85D26508E83_1039527135.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1039527135.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1039527135;
-            // ---------- Original Method ----------
-            //return EMPTY_LIST;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.234 -0400", hash_original_method = "59A22E9415A338EB85D7A7DD214359CC", hash_generated_method = "FC851C04F0255359A8AC717E7FF0AFFC")
         private Object readResolve() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1779672610 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1779672610 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1779672610 = Collections.EMPTY_MAP;
-            varB4EAC82CA7396A68D541C85D26508E83_1779672610.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1779672610.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1779672610;
-            // ---------- Original Method ----------
-            //return Collections.EMPTY_MAP;
+            
+            
         }
 
         
@@ -1010,7 +1054,7 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.235 -0400", hash_original_method = "FFB2FB11DBE006893CA9746ECCE68517", hash_generated_method = "FFB2FB11DBE006893CA9746ECCE68517")
         public ReverseComparator ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1024,20 +1068,20 @@ public class Collections {
             addTaint(o2.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_56858056 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_56858056;
-            // ---------- Original Method ----------
-            //Comparable<T> c2 = (Comparable<T>) o2;
-            //return c2.compareTo(o1);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.237 -0400", hash_original_method = "DD371F0FDF8300FDCFBD1E5C395D42BC", hash_generated_method = "A40BC7B3EE28898F1BF174528393D155")
         private Object readResolve() throws ObjectStreamException {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1327663248 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1327663248 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1327663248 = INSTANCE;
-            varB4EAC82CA7396A68D541C85D26508E83_1327663248.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1327663248.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1327663248;
-            // ---------- Original Method ----------
-            //return INSTANCE;
+            
+            
         }
 
         
@@ -1059,8 +1103,8 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.238 -0400", hash_original_method = "1ABA0972F29BDB004C28A1246ABEF788", hash_generated_method = "B92E5576724AB283C109FF5B16A47456")
           ReverseComparator2(Comparator<T> comparator) {
             this.cmp = comparator;
-            // ---------- Original Method ----------
-            //this.cmp = comparator;
+            
+            
         }
 
         
@@ -1072,8 +1116,8 @@ public class Collections {
             addTaint(o2.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2063427403 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2063427403;
-            // ---------- Original Method ----------
-            //return cmp.compare(o2, o1);
+            
+            
         }
 
         
@@ -1085,9 +1129,9 @@ public class Collections {
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_417993651 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_417993651;
-            // ---------- Original Method ----------
-            //return o instanceof ReverseComparator2
-                    //&& ((ReverseComparator2) o).cmp.equals(cmp);
+            
+            
+                    
         }
 
         
@@ -1097,8 +1141,8 @@ public class Collections {
             int varFAD4BDCF5F08AFF151A94355744A94BB_477359803 = (~cmp.hashCode());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2124816777 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2124816777;
-            // ---------- Original Method ----------
-            //return ~cmp.hashCode();
+            
+            
         }
 
         
@@ -1117,8 +1161,8 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.239 -0400", hash_original_method = "044BE6981927B9234E2AE8686E07A72F", hash_generated_method = "08623BAB02DDA909B203E3610F71957D")
           SingletonSet(E object) {
             element = object;
-            // ---------- Original Method ----------
-            //element = object;
+            
+            
         }
 
         
@@ -1127,12 +1171,12 @@ public class Collections {
         public boolean contains(Object object) {
             {
                 Object var918C716CCB523821E4DE921B4E432F42_297697879 = (element.equals(object));
-            } //End flattened ternary
+            } 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_340427870 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_340427870;
-            // ---------- Original Method ----------
-            //return element == null ? object == null : element.equals(object);
+            
+            
         }
 
         
@@ -1141,15 +1185,15 @@ public class Collections {
         public int size() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_452637818 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_452637818;
-            // ---------- Original Method ----------
-            //return 1;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.242 -0400", hash_original_method = "135AC18A6A8AD4548E2E750F2D4C7699", hash_generated_method = "F328EA9D984BC2F67E55C7BB97E6BEE2")
         @Override
         public Iterator<E> iterator() {
-            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1818202863 = null; //Variable for return #1
+            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1818202863 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1818202863 = new Iterator<E>() {
                 boolean hasNext = true;
                 @Override public boolean hasNext() {
@@ -1166,25 +1210,25 @@ public class Collections {
                     throw new UnsupportedOperationException();
                 }
             };
-            varB4EAC82CA7396A68D541C85D26508E83_1818202863.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1818202863.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1818202863;
-            // ---------- Original Method ----------
-            //return new Iterator<E>() {
-                //boolean hasNext = true;
-                //@Override public boolean hasNext() {
-                    //return hasNext;
-                //}
-                //@Override public E next() {
-                    //if (hasNext) {
-                        //hasNext = false;
-                        //return element;
-                    //}
-                    //throw new NoSuchElementException();
-                //}
-                //@Override public void remove() {
-                    //throw new UnsupportedOperationException();
-                //}
-            //};
+            
+            
+                
+                
+                    
+                
+                
+                    
+                        
+                        
+                    
+                    
+                
+                
+                    
+                
+            
         }
 
         
@@ -1203,8 +1247,8 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.242 -0400", hash_original_method = "F3174A5FA7BA5962D109EAC3245F2C1D", hash_generated_method = "6BE55179558843F3290CC42091204DF4")
           SingletonList(E object) {
             element = object;
-            // ---------- Original Method ----------
-            //element = object;
+            
+            
         }
 
         
@@ -1213,31 +1257,31 @@ public class Collections {
         public boolean contains(Object object) {
             {
                 Object var918C716CCB523821E4DE921B4E432F42_1478764029 = (element.equals(object));
-            } //End flattened ternary
+            } 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_40951602 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_40951602;
-            // ---------- Original Method ----------
-            //return element == null ? object == null : element.equals(object);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.244 -0400", hash_original_method = "1C6E7D1EB082158D5E00EA29E883A612", hash_generated_method = "BC6D621D3C79C727D4E501C60598F2BA")
         @Override
         public E get(int location) {
-            E varB4EAC82CA7396A68D541C85D26508E83_1157078005 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1157078005 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1157078005 = element;
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
             addTaint(location);
-            varB4EAC82CA7396A68D541C85D26508E83_1157078005.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1157078005.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1157078005;
-            // ---------- Original Method ----------
-            //if (location == 0) {
-                //return element;
-            //}
-            //throw new IndexOutOfBoundsException();
+            
+            
+                
+            
+            
         }
 
         
@@ -1246,8 +1290,8 @@ public class Collections {
         public int size() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1990273998 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1990273998;
-            // ---------- Original Method ----------
-            //return 1;
+            
+            
         }
 
         
@@ -1270,9 +1314,9 @@ public class Collections {
           SingletonMap(K key, V value) {
             k = key;
             v = value;
-            // ---------- Original Method ----------
-            //k = key;
-            //v = value;
+            
+            
+            
         }
 
         
@@ -1281,12 +1325,12 @@ public class Collections {
         public boolean containsKey(Object key) {
             {
                 Object var0EB569FD4AF21D116A21E287F6027A39_741696919 = (k.equals(key));
-            } //End flattened ternary
+            } 
             addTaint(key.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1152248690 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1152248690;
-            // ---------- Original Method ----------
-            //return k == null ? key == null : k.equals(key);
+            
+            
         }
 
         
@@ -1295,44 +1339,44 @@ public class Collections {
         public boolean containsValue(Object value) {
             {
                 Object var1F74AE50105434A557EE1F3FD50522E7_1497306745 = (v.equals(value));
-            } //End flattened ternary
+            } 
             addTaint(value.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_505769651 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_505769651;
-            // ---------- Original Method ----------
-            //return v == null ? value == null : v.equals(value);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.246 -0400", hash_original_method = "8C587096F5E6029DBB187C58CF22D158", hash_generated_method = "A1458F330B00ED9F49E0069EFB2BF26D")
         @Override
         public V get(Object key) {
-            V varB4EAC82CA7396A68D541C85D26508E83_1661397214 = null; //Variable for return #1
-            V varB4EAC82CA7396A68D541C85D26508E83_1038354051 = null; //Variable for return #2
+            V varB4EAC82CA7396A68D541C85D26508E83_1661397214 = null; 
+            V varB4EAC82CA7396A68D541C85D26508E83_1038354051 = null; 
             {
                 boolean varD8EB9E9C73E773501877E01187F3B5DA_271925784 = (containsKey(key));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1661397214 = v;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1038354051 = null;
             addTaint(key.getTaint());
-            V varA7E53CE21691AB073D9660D615818899_1374282809; //Final return value
+            V varA7E53CE21691AB073D9660D615818899_1374282809; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1374282809 = varB4EAC82CA7396A68D541C85D26508E83_1661397214;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1374282809 = varB4EAC82CA7396A68D541C85D26508E83_1038354051;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1374282809.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1374282809.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1374282809;
-            // ---------- Original Method ----------
-            //if (containsKey(key)) {
-                //return v;
-            //}
-            //return null;
+            
+            
+                
+            
+            
         }
 
         
@@ -1344,7 +1388,7 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.248 -0400", hash_original_method = "AB4A6E093F1AE40B73184C21F1D08E5E", hash_generated_method = "63684733F8F79C1376CCE45B9E45BD14")
         @Override
         public Set<Map.Entry<K, V>> entrySet() {
-            Set<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_1025930388 = null; //Variable for return #1
+            Set<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_1025930388 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1025930388 = new AbstractSet<Map.Entry<K, V>>() {
                 @Override public boolean contains(Object object) {
                     if (object instanceof Map.Entry) {
@@ -1380,10 +1424,10 @@ public class Collections {
                     };
                 }
             };
-            varB4EAC82CA7396A68D541C85D26508E83_1025930388.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1025930388.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1025930388;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1406,9 +1450,9 @@ public class Collections {
           SynchronizedCollection(Collection<E> collection) {
             c = collection;
             mutex = this;
-            // ---------- Original Method ----------
-            //c = collection;
-            //mutex = this;
+            
+            
+            
         }
 
         
@@ -1416,9 +1460,9 @@ public class Collections {
           SynchronizedCollection(Collection<E> collection, Object mutex) {
             c = collection;
             this.mutex = mutex;
-            // ---------- Original Method ----------
-            //c = collection;
-            //this.mutex = mutex;
+            
+            
+            
         }
 
         
@@ -1427,14 +1471,14 @@ public class Collections {
         public boolean add(E object) {
             {
                 boolean var2BB0FD33FED1B2B72867ACF06FBFC56B_2031429164 = (c.add(object));
-            } //End block
+            } 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_815336432 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_815336432;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.add(object);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1443,14 +1487,14 @@ public class Collections {
         public boolean addAll(Collection<? extends E> collection) {
             {
                 boolean varAB7EBFBCA4F45D51E737154B11C4108B_172425195 = (c.addAll(collection));
-            } //End block
+            } 
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_769780422 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_769780422;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.addAll(collection);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1459,11 +1503,11 @@ public class Collections {
         public void clear() {
             {
                 c.clear();
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //c.clear();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -1472,14 +1516,14 @@ public class Collections {
         public boolean contains(Object object) {
             {
                 boolean var34971DB84F983FD59B337EBDA19618A7_1056452312 = (c.contains(object));
-            } //End block
+            } 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_875404232 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_875404232;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.contains(object);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1488,14 +1532,14 @@ public class Collections {
         public boolean containsAll(Collection<?> collection) {
             {
                 boolean varDACCFBFB1E0F996A35B7BB8B776BF827_1180863474 = (c.containsAll(collection));
-            } //End block
+            } 
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1668171568 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1668171568;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.containsAll(collection);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1504,29 +1548,29 @@ public class Collections {
         public boolean isEmpty() {
             {
                 boolean var13DC031C5380F0C4DA515946E668AE17_1826423739 = (c.isEmpty());
-            } //End block
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_584202288 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_584202288;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.isEmpty();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.252 -0400", hash_original_method = "7F1B5E60A4E4F9F3AFA65965967FBBF0", hash_generated_method = "69AA8F8318EA4857F5E02B8F22DA6EDD")
         @Override
         public Iterator<E> iterator() {
-            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1180197213 = null; //Variable for return #1
+            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1180197213 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1180197213 = c.iterator();
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1180197213.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_1180197213.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1180197213;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.iterator();
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1535,14 +1579,14 @@ public class Collections {
         public boolean remove(Object object) {
             {
                 boolean var8E355775017A5ED204FCCA7510D23187_677895094 = (c.remove(object));
-            } //End block
+            } 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_698079618 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_698079618;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.remove(object);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1551,14 +1595,14 @@ public class Collections {
         public boolean removeAll(Collection<?> collection) {
             {
                 boolean var1464AF4DDAD9564C54B239B0335D2517_2143159450 = (c.removeAll(collection));
-            } //End block
+            } 
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_373794800 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_373794800;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.removeAll(collection);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1567,14 +1611,14 @@ public class Collections {
         public boolean retainAll(Collection<?> collection) {
             {
                 boolean varF2E46B90912EE4E31AEA6D3F646498E8_464147265 = (c.retainAll(collection));
-            } //End block
+            } 
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_198723478 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_198723478;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.retainAll(collection);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1583,62 +1627,62 @@ public class Collections {
         public int size() {
             {
                 int var0E51EFE72011B352AF314992F697E7C3_1676388184 = (c.size());
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_943761537 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_943761537;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.size();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.253 -0400", hash_original_method = "214BCEC14D5449B585926B657D8D51C2", hash_generated_method = "9B33E24F1DCE74FCA77B16C492B208B7")
         @Override
         public java.lang.Object[] toArray() {
-            java.lang.Object[] varB4EAC82CA7396A68D541C85D26508E83_1200326726 = null; //Variable for return #1
+            java.lang.Object[] varB4EAC82CA7396A68D541C85D26508E83_1200326726 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1200326726 = c.toArray();
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1200326726.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_1200326726.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1200326726;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.toArray();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.254 -0400", hash_original_method = "D637F0F4C3C8C312A0597F30C1C6DB59", hash_generated_method = "E890F86CB034185CA784EB550870A504")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_2046001366 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_2046001366 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2046001366 = c.toString();
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_2046001366.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_2046001366.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2046001366;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.toString();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.254 -0400", hash_original_method = "567EED27866E99DFC1B7F8B43B648D82", hash_generated_method = "4496CDE641DF58899520F967841D63E4")
         @Override
         public <T> T[] toArray(T[] array) {
-            T[] varB4EAC82CA7396A68D541C85D26508E83_1284908884 = null; //Variable for return #1
+            T[] varB4EAC82CA7396A68D541C85D26508E83_1284908884 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1284908884 = c.toArray(array);
-            } //End block
+            } 
             addTaint(array[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1284908884.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1284908884.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1284908884;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.toArray(array);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1646,12 +1690,12 @@ public class Collections {
         private void writeObject(ObjectOutputStream stream) throws IOException {
             {
                 stream.defaultWriteObject();
-            } //End block
+            } 
             addTaint(stream.getTaint());
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //stream.defaultWriteObject();
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1668,7 +1712,7 @@ public class Collections {
           SynchronizedRandomAccessList(List<E> l) {
             super(l);
             addTaint(l.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1677,36 +1721,36 @@ public class Collections {
             super(l, mutex);
             addTaint(l.getTaint());
             addTaint(mutex.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.256 -0400", hash_original_method = "52EB3707ADD11A2326D60B7B815140D9", hash_generated_method = "28624EA4DF15A4AE812C02822C361B05")
         @Override
         public List<E> subList(int start, int end) {
-            List<E> varB4EAC82CA7396A68D541C85D26508E83_821772014 = null; //Variable for return #1
+            List<E> varB4EAC82CA7396A68D541C85D26508E83_821772014 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_821772014 = new SynchronizedRandomAccessList<E>(list.subList(start, end), mutex);
-            } //End block
+            } 
             addTaint(start);
             addTaint(end);
-            varB4EAC82CA7396A68D541C85D26508E83_821772014.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_821772014.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_821772014;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return new SynchronizedRandomAccessList<E>(list.subList(start, end), mutex);
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.257 -0400", hash_original_method = "3A06B4F1BF7736CF10F2183ECBC34EF4", hash_generated_method = "9DB82AE7CC16A3987964FC2C1419F2EE")
         private Object writeReplace() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_718676805 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_718676805 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_718676805 = new SynchronizedList<E>(list);
-            varB4EAC82CA7396A68D541C85D26508E83_718676805.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_718676805.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_718676805;
-            // ---------- Original Method ----------
-            //return new SynchronizedList<E>(list);
+            
+            
         }
 
         
@@ -1726,8 +1770,8 @@ public class Collections {
           SynchronizedList(List<E> l) {
             super(l);
             list = l;
-            // ---------- Original Method ----------
-            //list = l;
+            
+            
         }
 
         
@@ -1736,8 +1780,8 @@ public class Collections {
             super(l, mutex);
             list = l;
             addTaint(mutex.getTaint());
-            // ---------- Original Method ----------
-            //list = l;
+            
+            
         }
 
         
@@ -1746,13 +1790,13 @@ public class Collections {
         public void add(int location, E object) {
             {
                 list.add(location, object);
-            } //End block
+            } 
             addTaint(location);
             addTaint(object.getTaint());
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //list.add(location, object);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1761,15 +1805,15 @@ public class Collections {
         public boolean addAll(int location, Collection<? extends E> collection) {
             {
                 boolean var158D83A08C48A45A82B28798671769C1_1187342084 = (list.addAll(location, collection));
-            } //End block
+            } 
             addTaint(location);
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_809277087 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_809277087;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return list.addAll(location, collection);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1778,31 +1822,31 @@ public class Collections {
         public boolean equals(Object object) {
             {
                 boolean varB8EFBCA5568090BA0F116E782A49968B_272038366 = (list.equals(object));
-            } //End block
+            } 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1518424925 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1518424925;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return list.equals(object);
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.265 -0400", hash_original_method = "5B64BB89A58DED71DBA9907C06BC2CBB", hash_generated_method = "16E1F06352D55F6480EC0B3965BAF643")
         @Override
         public E get(int location) {
-            E varB4EAC82CA7396A68D541C85D26508E83_2046744564 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_2046744564 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2046744564 = list.get(location);
-            } //End block
+            } 
             addTaint(location);
-            varB4EAC82CA7396A68D541C85D26508E83_2046744564.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2046744564.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2046744564;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return list.get(location);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1811,13 +1855,13 @@ public class Collections {
         public int hashCode() {
             {
                 int varE89315CE67DD6395C812E01B5B28CC79_1576373540 = (list.hashCode());
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_275850559 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_275850559;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return list.hashCode();
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1830,47 +1874,47 @@ public class Collections {
                 size = list.size();
                 array = new Object[size];
                 list.toArray(array);
-            } //End block
+            } 
             {
                 {
                     int i = 0;
                     {
                         {
                             boolean varE4EB18CE7254896A48F2456CD1C5820F_31047352 = (object.equals(array[i]));
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 {
                     int i = 0;
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             addTaint(object.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2058253974 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2058253974;
-            // ---------- Original Method ----------
-            //final int size;
-            //final Object[] array;
-            //synchronized (mutex) {
-                //size = list.size();
-                //array = new Object[size];
-                //list.toArray(array);
-            //}
-            //if (object != null) {
-                //for (int i = 0; i < size; i++) {
-                    //if (object.equals(array[i])) {
-                        //return i;
-                    //}
-                //}
-            //} else {
-                //for (int i = 0; i < size; i++) {
-                    //if (array[i] == null) {
-                        //return i;
-                    //}
-                //}
-            //}
-            //return -1;
+            
+            
+            
+            
+                
+                
+                
+            
+            
+                
+                    
+                        
+                    
+                
+            
+                
+                    
+                        
+                    
+                
+            
+            
         }
 
         
@@ -1883,133 +1927,133 @@ public class Collections {
                 size = list.size();
                 array = new Object[size];
                 list.toArray(array);
-            } //End block
+            } 
             {
                 {
                     int i = size - 1;
                     {
                         {
                             boolean varE4EB18CE7254896A48F2456CD1C5820F_189061153 = (object.equals(array[i]));
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 {
                     int i = size - 1;
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             addTaint(object.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_251831072 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_251831072;
-            // ---------- Original Method ----------
-            //final int size;
-            //final Object[] array;
-            //synchronized (mutex) {
-                //size = list.size();
-                //array = new Object[size];
-                //list.toArray(array);
-            //}
-            //if (object != null) {
-                //for (int i = size - 1; i >= 0; i--) {
-                    //if (object.equals(array[i])) {
-                        //return i;
-                    //}
-                //}
-            //} else {
-                //for (int i = size - 1; i >= 0; i--) {
-                    //if (array[i] == null) {
-                        //return i;
-                    //}
-                //}
-            //}
-            //return -1;
+            
+            
+            
+            
+                
+                
+                
+            
+            
+                
+                    
+                        
+                    
+                
+            
+                
+                    
+                        
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.269 -0400", hash_original_method = "9E49E91DE129681261C3C7642C2D1127", hash_generated_method = "85424A195084F988240CDC4A04A169CD")
         @Override
         public ListIterator<E> listIterator() {
-            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1076124494 = null; //Variable for return #1
+            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1076124494 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1076124494 = list.listIterator();
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1076124494.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_1076124494.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1076124494;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return list.listIterator();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.270 -0400", hash_original_method = "70349F3896FC81F4D21A3D35B0C8A4F6", hash_generated_method = "E7E2099225EEA7838B08AAF96186B92B")
         @Override
         public ListIterator<E> listIterator(int location) {
-            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1365484656 = null; //Variable for return #1
+            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1365484656 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1365484656 = list.listIterator(location);
-            } //End block
+            } 
             addTaint(location);
-            varB4EAC82CA7396A68D541C85D26508E83_1365484656.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1365484656.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1365484656;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return list.listIterator(location);
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.270 -0400", hash_original_method = "D935E09B492D323BEF59297A7648FE48", hash_generated_method = "A8574EC96BD58830B38ED0F7D5D9A6B5")
         @Override
         public E remove(int location) {
-            E varB4EAC82CA7396A68D541C85D26508E83_1453287280 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1453287280 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1453287280 = list.remove(location);
-            } //End block
+            } 
             addTaint(location);
-            varB4EAC82CA7396A68D541C85D26508E83_1453287280.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1453287280.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1453287280;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return list.remove(location);
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.271 -0400", hash_original_method = "D9730991663FB8C206D80781B7E02750", hash_generated_method = "2909C5795E1C0C9237709EA4035F3AE8")
         @Override
         public E set(int location, E object) {
-            E varB4EAC82CA7396A68D541C85D26508E83_255827313 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_255827313 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_255827313 = list.set(location, object);
-            } //End block
+            } 
             addTaint(location);
             addTaint(object.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_255827313.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_255827313.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_255827313;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return list.set(location, object);
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.272 -0400", hash_original_method = "C38F2D62AA6D1EBD255ADC5369CBEC01", hash_generated_method = "18719031D4E9D5AC82B36B9B1475E1E1")
         @Override
         public List<E> subList(int start, int end) {
-            List<E> varB4EAC82CA7396A68D541C85D26508E83_1322922609 = null; //Variable for return #1
+            List<E> varB4EAC82CA7396A68D541C85D26508E83_1322922609 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1322922609 = new SynchronizedList<E>(list.subList(start, end), mutex);
-            } //End block
+            } 
             addTaint(start);
             addTaint(end);
-            varB4EAC82CA7396A68D541C85D26508E83_1322922609.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1322922609.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1322922609;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return new SynchronizedList<E>(list.subList(start, end), mutex);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2017,39 +2061,39 @@ public class Collections {
         private void writeObject(ObjectOutputStream stream) throws IOException {
             {
                 stream.defaultWriteObject();
-            } //End block
+            } 
             addTaint(stream.getTaint());
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //stream.defaultWriteObject();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.274 -0400", hash_original_method = "172F08E6F2352F1764A4A70C48C6E243", hash_generated_method = "4EF2D37538C79AEA3D4B22ADA2D28160")
         private Object readResolve() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_742999978 = null; //Variable for return #1
-            Object varB4EAC82CA7396A68D541C85D26508E83_91303403 = null; //Variable for return #2
+            Object varB4EAC82CA7396A68D541C85D26508E83_742999978 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_91303403 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_742999978 = new SynchronizedRandomAccessList<E>(list, mutex);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_91303403 = this;
-            Object varA7E53CE21691AB073D9660D615818899_2003228754; //Final return value
+            Object varA7E53CE21691AB073D9660D615818899_2003228754; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_2003228754 = varB4EAC82CA7396A68D541C85D26508E83_742999978;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_2003228754 = varB4EAC82CA7396A68D541C85D26508E83_91303403;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_2003228754.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_2003228754.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_2003228754;
-            // ---------- Original Method ----------
-            //if (list instanceof RandomAccess) {
-                //return new SynchronizedRandomAccessList<E>(list, mutex);
-            //}
-            //return this;
+            
+            
+                
+            
+            
         }
 
         
@@ -2072,9 +2116,9 @@ public class Collections {
           SynchronizedMap(Map<K, V> map) {
             m = map;
             mutex = this;
-            // ---------- Original Method ----------
-            //m = map;
-            //mutex = this;
+            
+            
+            
         }
 
         
@@ -2082,9 +2126,9 @@ public class Collections {
           SynchronizedMap(Map<K, V> map, Object mutex) {
             m = map;
             this.mutex = mutex;
-            // ---------- Original Method ----------
-            //m = map;
-            //this.mutex = mutex;
+            
+            
+            
         }
 
         
@@ -2093,11 +2137,11 @@ public class Collections {
         public void clear() {
             {
                 m.clear();
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //m.clear();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -2106,14 +2150,14 @@ public class Collections {
         public boolean containsKey(Object key) {
             {
                 boolean var5B3943E8DB1DEBF4053A7AC85BD5CB7F_1362900928 = (m.containsKey(key));
-            } //End block
+            } 
             addTaint(key.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1264254424 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1264254424;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return m.containsKey(key);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2122,30 +2166,30 @@ public class Collections {
         public boolean containsValue(Object value) {
             {
                 boolean var9B502A789B5AAD38CD0ED829F2887AEF_672314065 = (m.containsValue(value));
-            } //End block
+            } 
             addTaint(value.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1211941837 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1211941837;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return m.containsValue(value);
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.276 -0400", hash_original_method = "E5EA9A3F9567269DAA52E0C08140D3D5", hash_generated_method = "AC7A3AB211DAEBF4F4DAC1AFCA305731")
         @Override
         public Set<Map.Entry<K, V>> entrySet() {
-            Set<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_345986113 = null; //Variable for return #1
+            Set<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_345986113 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_345986113 = new SynchronizedSet<Map.Entry<K, V>>(m.entrySet(), mutex);
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_345986113.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_345986113.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_345986113;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return new SynchronizedSet<Map.Entry<K, V>>(m.entrySet(), mutex);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2154,31 +2198,31 @@ public class Collections {
         public boolean equals(Object object) {
             {
                 boolean var3653CC7A1B6721F556FDF4EA3FD61A52_1523730968 = (m.equals(object));
-            } //End block
+            } 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_995123684 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_995123684;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return m.equals(object);
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.277 -0400", hash_original_method = "80DF7D6FED6980DF61457325CD64503D", hash_generated_method = "26E1D4159E9C7954166ED32A91D5B3F3")
         @Override
         public V get(Object key) {
-            V varB4EAC82CA7396A68D541C85D26508E83_565882964 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_565882964 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_565882964 = m.get(key);
-            } //End block
+            } 
             addTaint(key.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_565882964.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_565882964.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_565882964;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return m.get(key);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2187,13 +2231,13 @@ public class Collections {
         public int hashCode() {
             {
                 int var58938B03D27AEF577E5F8B43D45478A1_563695685 = (m.hashCode());
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1977929196 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1977929196;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return m.hashCode();
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2202,47 +2246,47 @@ public class Collections {
         public boolean isEmpty() {
             {
                 boolean var20AA7E3C23DC3AFB5FE1B5D3BD0CE158_1568919902 = (m.isEmpty());
-            } //End block
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1106281430 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1106281430;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return m.isEmpty();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.278 -0400", hash_original_method = "2FBB6190D51F2A6210F8CF71191E69DD", hash_generated_method = "A426E1C1C28E0F567497952FAF8E5630")
         @Override
         public Set<K> keySet() {
-            Set<K> varB4EAC82CA7396A68D541C85D26508E83_777153717 = null; //Variable for return #1
+            Set<K> varB4EAC82CA7396A68D541C85D26508E83_777153717 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_777153717 = new SynchronizedSet<K>(m.keySet(), mutex);
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_777153717.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_777153717.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_777153717;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return new SynchronizedSet<K>(m.keySet(), mutex);
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.278 -0400", hash_original_method = "4BBBC2EF3E646AB7C0C1BFCAE8571FAF", hash_generated_method = "CA67EBB25C6378F23C498FF5A311302A")
         @Override
         public V put(K key, V value) {
-            V varB4EAC82CA7396A68D541C85D26508E83_1518852921 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_1518852921 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1518852921 = m.put(key, value);
-            } //End block
+            } 
             addTaint(key.getTaint());
             addTaint(value.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1518852921.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1518852921.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1518852921;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return m.put(key, value);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2251,29 +2295,29 @@ public class Collections {
         public void putAll(Map<? extends K, ? extends V> map) {
             {
                 m.putAll(map);
-            } //End block
+            } 
             addTaint(map.getTaint());
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //m.putAll(map);
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.279 -0400", hash_original_method = "98B37460DCD5FD18048F5172283C3141", hash_generated_method = "174DB1AEB90F99C00596757390ABCF2D")
         @Override
         public V remove(Object key) {
-            V varB4EAC82CA7396A68D541C85D26508E83_270109203 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_270109203 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_270109203 = m.remove(key);
-            } //End block
+            } 
             addTaint(key.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_270109203.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_270109203.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_270109203;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return m.remove(key);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2282,45 +2326,45 @@ public class Collections {
         public int size() {
             {
                 int var0BF7698F6735353014CC57B558785727_22451694 = (m.size());
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_373620423 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_373620423;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return m.size();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.280 -0400", hash_original_method = "BB797020E54DC33FB15BC9404E89E5CD", hash_generated_method = "5EB98E9197401CF467AFD93682596A33")
         @Override
         public Collection<V> values() {
-            Collection<V> varB4EAC82CA7396A68D541C85D26508E83_463610465 = null; //Variable for return #1
+            Collection<V> varB4EAC82CA7396A68D541C85D26508E83_463610465 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_463610465 = new SynchronizedCollection<V>(m.values(), mutex);
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_463610465.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_463610465.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_463610465;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return new SynchronizedCollection<V>(m.values(), mutex);
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.280 -0400", hash_original_method = "CB61B465EF18C12F472B81636CD4AC79", hash_generated_method = "5D2DABFCBBEE657CFC16016D671B6D54")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_518125019 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_518125019 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_518125019 = m.toString();
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_518125019.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_518125019.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_518125019;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return m.toString();
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2328,12 +2372,12 @@ public class Collections {
         private void writeObject(ObjectOutputStream stream) throws IOException {
             {
                 stream.defaultWriteObject();
-            } //End block
+            } 
             addTaint(stream.getTaint());
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //stream.defaultWriteObject();
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2350,7 +2394,7 @@ public class Collections {
           SynchronizedSet(Set<E> set) {
             super(set);
             addTaint(set.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2359,7 +2403,7 @@ public class Collections {
             super(set, mutex);
             addTaint(set.getTaint());
             addTaint(mutex.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2368,14 +2412,14 @@ public class Collections {
         public boolean equals(Object object) {
             {
                 boolean varEA83122D095DC61C01436A4AA2CBB70C_1920094583 = (c.equals(object));
-            } //End block
+            } 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1593979171 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1593979171;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.equals(object);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2384,13 +2428,13 @@ public class Collections {
         public int hashCode() {
             {
                 int varDBC342B671922A4943718E25F26D87D0_651285241 = (c.hashCode());
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_809106422 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_809106422;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return c.hashCode();
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2398,12 +2442,12 @@ public class Collections {
         private void writeObject(ObjectOutputStream stream) throws IOException {
             {
                 stream.defaultWriteObject();
-            } //End block
+            } 
             addTaint(stream.getTaint());
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //stream.defaultWriteObject();
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2423,8 +2467,8 @@ public class Collections {
           SynchronizedSortedMap(SortedMap<K, V> map) {
             super(map);
             sm = map;
-            // ---------- Original Method ----------
-            //sm = map;
+            
+            
         }
 
         
@@ -2433,114 +2477,114 @@ public class Collections {
             super(map, mutex);
             sm = map;
             addTaint(mutex.getTaint());
-            // ---------- Original Method ----------
-            //sm = map;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.284 -0400", hash_original_method = "78218A5A359D1FCDF6B98779037FCB94", hash_generated_method = "A78893D2BC872529B6271CCD19A96CF2")
         @Override
         public Comparator<? super K> comparator() {
-            Comparator<? super K> varB4EAC82CA7396A68D541C85D26508E83_556114795 = null; //Variable for return #1
+            Comparator<? super K> varB4EAC82CA7396A68D541C85D26508E83_556114795 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_556114795 = sm.comparator();
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_556114795.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_556114795.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_556114795;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return sm.comparator();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.286 -0400", hash_original_method = "4A44F83861E496A35113DD67FECD390A", hash_generated_method = "985CEF4CA2104E53160426E175B50702")
         @Override
         public K firstKey() {
-            K varB4EAC82CA7396A68D541C85D26508E83_1964477174 = null; //Variable for return #1
+            K varB4EAC82CA7396A68D541C85D26508E83_1964477174 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1964477174 = sm.firstKey();
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1964477174.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_1964477174.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1964477174;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return sm.firstKey();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.289 -0400", hash_original_method = "758EF70CDC2061BD7D7B124D17EF3F64", hash_generated_method = "B25A020E85CDC539BCE26303172D5636")
         @Override
         public SortedMap<K, V> headMap(K endKey) {
-            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_2007471039 = null; //Variable for return #1
+            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_2007471039 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2007471039 = new SynchronizedSortedMap<K, V>(sm.headMap(endKey),
                         mutex);
-            } //End block
+            } 
             addTaint(endKey.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2007471039.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2007471039.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2007471039;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return new SynchronizedSortedMap<K, V>(sm.headMap(endKey),
-                        //mutex);
-            //}
+            
+            
+                
+                        
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.290 -0400", hash_original_method = "ECB924A52CC9F341D1EEB7E5D7BCCDC8", hash_generated_method = "6B184A0B8D1FC9543B0A0B4D917B9EF2")
         @Override
         public K lastKey() {
-            K varB4EAC82CA7396A68D541C85D26508E83_1144990063 = null; //Variable for return #1
+            K varB4EAC82CA7396A68D541C85D26508E83_1144990063 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1144990063 = sm.lastKey();
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1144990063.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_1144990063.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1144990063;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return sm.lastKey();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.292 -0400", hash_original_method = "E82E6227AA62F00EB1D33B47A72F41C4", hash_generated_method = "FD5407A42865A01AA805A1297A39D918")
         @Override
         public SortedMap<K, V> subMap(K startKey, K endKey) {
-            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_1935784347 = null; //Variable for return #1
+            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_1935784347 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1935784347 = new SynchronizedSortedMap<K, V>(sm.subMap(startKey,
                         endKey), mutex);
-            } //End block
+            } 
             addTaint(startKey.getTaint());
             addTaint(endKey.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1935784347.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1935784347.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1935784347;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return new SynchronizedSortedMap<K, V>(sm.subMap(startKey,
-                        //endKey), mutex);
-            //}
+            
+            
+                
+                        
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.293 -0400", hash_original_method = "F7B84D714F16D295C7D43C8AA5E52D6A", hash_generated_method = "FDB2D9314DD3211844FBAE183616F291")
         @Override
         public SortedMap<K, V> tailMap(K startKey) {
-            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_443277539 = null; //Variable for return #1
+            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_443277539 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_443277539 = new SynchronizedSortedMap<K, V>(sm.tailMap(startKey),
                         mutex);
-            } //End block
+            } 
             addTaint(startKey.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_443277539.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_443277539.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_443277539;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return new SynchronizedSortedMap<K, V>(sm.tailMap(startKey),
-                        //mutex);
-            //}
+            
+            
+                
+                        
+            
         }
 
         
@@ -2548,12 +2592,12 @@ public class Collections {
         private void writeObject(ObjectOutputStream stream) throws IOException {
             {
                 stream.defaultWriteObject();
-            } //End block
+            } 
             addTaint(stream.getTaint());
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //stream.defaultWriteObject();
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2573,8 +2617,8 @@ public class Collections {
           SynchronizedSortedSet(SortedSet<E> set) {
             super(set);
             ss = set;
-            // ---------- Original Method ----------
-            //ss = set;
+            
+            
         }
 
         
@@ -2583,110 +2627,110 @@ public class Collections {
             super(set, mutex);
             ss = set;
             addTaint(mutex.getTaint());
-            // ---------- Original Method ----------
-            //ss = set;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.297 -0400", hash_original_method = "D71F7DA0E84FA7A091B4017D559410C5", hash_generated_method = "88C667D095A948BEEBB03BF032CABC76")
         @Override
         public Comparator<? super E> comparator() {
-            Comparator<? super E> varB4EAC82CA7396A68D541C85D26508E83_360413749 = null; //Variable for return #1
+            Comparator<? super E> varB4EAC82CA7396A68D541C85D26508E83_360413749 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_360413749 = ss.comparator();
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_360413749.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_360413749.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_360413749;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return ss.comparator();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.297 -0400", hash_original_method = "C2C55C7E331CFDE8E84B8FC74FDABE02", hash_generated_method = "7B28BEB37E657BA01A35BC0C02A0CBF7")
         @Override
         public E first() {
-            E varB4EAC82CA7396A68D541C85D26508E83_620216231 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_620216231 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_620216231 = ss.first();
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_620216231.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_620216231.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_620216231;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return ss.first();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.298 -0400", hash_original_method = "86DA75392AF50D6AE53AEE4A4052EBA8", hash_generated_method = "827DE4DD61BBF3EAAA6ECE6B58B2F970")
         @Override
         public SortedSet<E> headSet(E end) {
-            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_1593379314 = null; //Variable for return #1
+            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_1593379314 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1593379314 = new SynchronizedSortedSet<E>(ss.headSet(end), mutex);
-            } //End block
+            } 
             addTaint(end.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1593379314.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1593379314.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1593379314;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return new SynchronizedSortedSet<E>(ss.headSet(end), mutex);
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.298 -0400", hash_original_method = "3C10DA3BCCE6BED4EBD1F6A2C6BC8438", hash_generated_method = "E1F80BB8E4A66E664695298E1E727091")
         @Override
         public E last() {
-            E varB4EAC82CA7396A68D541C85D26508E83_1155885723 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1155885723 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1155885723 = ss.last();
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1155885723.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_1155885723.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1155885723;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return ss.last();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.299 -0400", hash_original_method = "662A59FFAA1C1722D75A374EC93FB0DF", hash_generated_method = "1B187571F8B2B032B9397FD8064904F0")
         @Override
         public SortedSet<E> subSet(E start, E end) {
-            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_646396157 = null; //Variable for return #1
+            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_646396157 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_646396157 = new SynchronizedSortedSet<E>(ss.subSet(start, end),
                         mutex);
-            } //End block
+            } 
             addTaint(start.getTaint());
             addTaint(end.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_646396157.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_646396157.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_646396157;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return new SynchronizedSortedSet<E>(ss.subSet(start, end),
-                        //mutex);
-            //}
+            
+            
+                
+                        
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.299 -0400", hash_original_method = "4C04840896A126B8B17AD8E0926A5B00", hash_generated_method = "CCB1B68A4495B9BB299CA0D7D7615249")
         @Override
         public SortedSet<E> tailSet(E start) {
-            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_204282227 = null; //Variable for return #1
+            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_204282227 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_204282227 = new SynchronizedSortedSet<E>(ss.tailSet(start), mutex);
-            } //End block
+            } 
             addTaint(start.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_204282227.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_204282227.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_204282227;
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //return new SynchronizedSortedSet<E>(ss.tailSet(start), mutex);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2694,12 +2738,12 @@ public class Collections {
         private void writeObject(ObjectOutputStream stream) throws IOException {
             {
                 stream.defaultWriteObject();
-            } //End block
+            } 
             addTaint(stream.getTaint());
-            // ---------- Original Method ----------
-            //synchronized (mutex) {
-                //stream.defaultWriteObject();
-            //}
+            
+            
+                
+            
         }
 
         
@@ -2718,8 +2762,8 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.300 -0400", hash_original_method = "0B21B3311CB87F81844FA591591A704A", hash_generated_method = "F8A220D652916612975A1BF5C32AE7B2")
           UnmodifiableCollection(Collection<E> collection) {
             c = collection;
-            // ---------- Original Method ----------
-            //c = collection;
+            
+            
         }
 
         
@@ -2730,8 +2774,8 @@ public class Collections {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1338497219 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1338497219;
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -2742,8 +2786,8 @@ public class Collections {
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_95554649 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_95554649;
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -2751,8 +2795,8 @@ public class Collections {
         @Override
         public void clear() {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -2763,8 +2807,8 @@ public class Collections {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_120825650 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_120825650;
-            // ---------- Original Method ----------
-            //return c.contains(object);
+            
+            
         }
 
         
@@ -2775,8 +2819,8 @@ public class Collections {
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1456443721 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1456443721;
-            // ---------- Original Method ----------
-            //return c.containsAll(collection);
+            
+            
         }
 
         
@@ -2786,15 +2830,15 @@ public class Collections {
             boolean var528EAD02A70F822F393BB0C54FBB923C_74057758 = (c.isEmpty());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1551153484 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1551153484;
-            // ---------- Original Method ----------
-            //return c.isEmpty();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.304 -0400", hash_original_method = "57C2B30126E9906DFFF70EEB2D2CD18D", hash_generated_method = "66D4B42C5ED3621AA04A160A1EE8D228")
         @Override
         public Iterator<E> iterator() {
-            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1465353056 = null; //Variable for return #1
+            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1465353056 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1465353056 = new Iterator<E>() {
                 Iterator<E> iterator = c.iterator();
                 @Override public boolean hasNext() {
@@ -2807,21 +2851,21 @@ public class Collections {
                     throw new UnsupportedOperationException();
                 }
             };
-            varB4EAC82CA7396A68D541C85D26508E83_1465353056.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1465353056.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1465353056;
-            // ---------- Original Method ----------
-            //return new Iterator<E>() {
-                //Iterator<E> iterator = c.iterator();
-                //@Override public boolean hasNext() {
-                    //return iterator.hasNext();
-                //}
-                //@Override public E next() {
-                    //return iterator.next();
-                //}
-                //@Override public void remove() {
-                    //throw new UnsupportedOperationException();
-                //}
-            //};
+            
+            
+                
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                
+            
         }
 
         
@@ -2832,8 +2876,8 @@ public class Collections {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1089246481 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1089246481;
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -2844,8 +2888,8 @@ public class Collections {
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1007644817 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1007644817;
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -2856,8 +2900,8 @@ public class Collections {
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_757176086 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_757176086;
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -2867,45 +2911,45 @@ public class Collections {
             int varC247C84593AA6020ED979B19566D13FE_868717181 = (c.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_955259302 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_955259302;
-            // ---------- Original Method ----------
-            //return c.size();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.307 -0400", hash_original_method = "89D7D02A9D2BDF31E775C08108CBDE5B", hash_generated_method = "7C0B6015D852ACB578977B1C5F51DE12")
         @Override
         public Object[] toArray() {
-            Object[] varB4EAC82CA7396A68D541C85D26508E83_290802573 = null; //Variable for return #1
+            Object[] varB4EAC82CA7396A68D541C85D26508E83_290802573 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_290802573 = c.toArray();
-            varB4EAC82CA7396A68D541C85D26508E83_290802573.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_290802573.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_290802573;
-            // ---------- Original Method ----------
-            //return c.toArray();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.307 -0400", hash_original_method = "D5913A45F2385B9A173BEEED47EA354F", hash_generated_method = "AE808DDD5815CE1D90E965A5C5616E1F")
         @Override
         public <T> T[] toArray(T[] array) {
-            T[] varB4EAC82CA7396A68D541C85D26508E83_788460922 = null; //Variable for return #1
+            T[] varB4EAC82CA7396A68D541C85D26508E83_788460922 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_788460922 = c.toArray(array);
             addTaint(array[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_788460922.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_788460922.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_788460922;
-            // ---------- Original Method ----------
-            //return c.toArray(array);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.308 -0400", hash_original_method = "424D4966F358AE6553349A6493C21674", hash_generated_method = "B8BEDAAB294B60679855CFCE4F4C5233")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_34540172 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_34540172 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_34540172 = c.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_34540172.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_34540172.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_34540172;
-            // ---------- Original Method ----------
-            //return c.toString();
+            
+            
         }
 
         
@@ -2922,32 +2966,32 @@ public class Collections {
           UnmodifiableRandomAccessList(List<E> l) {
             super(l);
             addTaint(l.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.309 -0400", hash_original_method = "BFD692E8EF2A50E82DD6BA0EC7051578", hash_generated_method = "A4BA8D8BC7A77205B4988B319BCA1007")
         @Override
         public List<E> subList(int start, int end) {
-            List<E> varB4EAC82CA7396A68D541C85D26508E83_827594694 = null; //Variable for return #1
+            List<E> varB4EAC82CA7396A68D541C85D26508E83_827594694 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_827594694 = new UnmodifiableRandomAccessList<E>(list.subList(start, end));
             addTaint(start);
             addTaint(end);
-            varB4EAC82CA7396A68D541C85D26508E83_827594694.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_827594694.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_827594694;
-            // ---------- Original Method ----------
-            //return new UnmodifiableRandomAccessList<E>(list.subList(start, end));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.310 -0400", hash_original_method = "C39E6F512687738DD8D987CDE63A2838", hash_generated_method = "216811606A9D2957B9BE6161E26AD595")
         private Object writeReplace() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_2103064661 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_2103064661 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2103064661 = new UnmodifiableList<E>(list);
-            varB4EAC82CA7396A68D541C85D26508E83_2103064661.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2103064661.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2103064661;
-            // ---------- Original Method ----------
-            //return new UnmodifiableList<E>(list);
+            
+            
         }
 
         
@@ -2967,8 +3011,8 @@ public class Collections {
           UnmodifiableList(List<E> l) {
             super(l);
             list = l;
-            // ---------- Original Method ----------
-            //list = l;
+            
+            
         }
 
         
@@ -2978,8 +3022,8 @@ public class Collections {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
             addTaint(location);
             addTaint(object.getTaint());
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -2991,8 +3035,8 @@ public class Collections {
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1371332220 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1371332220;
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -3003,21 +3047,21 @@ public class Collections {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1208305546 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1208305546;
-            // ---------- Original Method ----------
-            //return list.equals(object);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.315 -0400", hash_original_method = "DFB24286AA0C5C6BF58031CA4ED7CDCB", hash_generated_method = "D08E2072873DEB3D40DE43181E4C3319")
         @Override
         public E get(int location) {
-            E varB4EAC82CA7396A68D541C85D26508E83_1102940835 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1102940835 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1102940835 = list.get(location);
             addTaint(location);
-            varB4EAC82CA7396A68D541C85D26508E83_1102940835.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1102940835.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1102940835;
-            // ---------- Original Method ----------
-            //return list.get(location);
+            
+            
         }
 
         
@@ -3027,8 +3071,8 @@ public class Collections {
             int var9A1610964D862FF54E00A16E6D7BD291_1039520419 = (list.hashCode());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1742514264 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1742514264;
-            // ---------- Original Method ----------
-            //return list.hashCode();
+            
+            
         }
 
         
@@ -3039,8 +3083,8 @@ public class Collections {
             addTaint(object.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_964195019 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_964195019;
-            // ---------- Original Method ----------
-            //return list.indexOf(object);
+            
+            
         }
 
         
@@ -3051,27 +3095,27 @@ public class Collections {
             addTaint(object.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627466471 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627466471;
-            // ---------- Original Method ----------
-            //return list.lastIndexOf(object);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.319 -0400", hash_original_method = "DF7BE0B13ABC5A9B1C74313BD06FB64C", hash_generated_method = "AD61A4F8587B0A9415C34E59249DF81B")
         @Override
         public ListIterator<E> listIterator() {
-            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_263198352 = null; //Variable for return #1
+            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_263198352 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_263198352 = listIterator(0);
-            varB4EAC82CA7396A68D541C85D26508E83_263198352.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_263198352.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_263198352;
-            // ---------- Original Method ----------
-            //return listIterator(0);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.320 -0400", hash_original_method = "1D0E6831E50FA8995D23240A6E091C82", hash_generated_method = "CB01E119A117CB7B5E8CEFB479FDB48E")
         @Override
         public ListIterator<E> listIterator(final int location) {
-            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1584706905 = null; //Variable for return #1
+            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1584706905 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1584706905 = new ListIterator<E>() {
                 ListIterator<E> iterator = list.listIterator(location);
                 @Override public void add(E object) {
@@ -3103,10 +3147,10 @@ public class Collections {
                 }
             };
             addTaint(location);
-            varB4EAC82CA7396A68D541C85D26508E83_1584706905.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1584706905.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1584706905;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -3114,8 +3158,8 @@ public class Collections {
         @Override
         public E remove(int location) {
         	throw new UnsupportedOperationException();
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -3123,49 +3167,49 @@ public class Collections {
         @Override
         public E set(int location, E object) {
         	throw new UnsupportedOperationException();
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.322 -0400", hash_original_method = "82D78FB8922B9A0888EF8A304898D60D", hash_generated_method = "CD3D359FEA2B2B221325A10E7A336FB1")
         @Override
         public List<E> subList(int start, int end) {
-            List<E> varB4EAC82CA7396A68D541C85D26508E83_1479815228 = null; //Variable for return #1
+            List<E> varB4EAC82CA7396A68D541C85D26508E83_1479815228 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1479815228 = new UnmodifiableList<E>(list.subList(start, end));
             addTaint(start);
             addTaint(end);
-            varB4EAC82CA7396A68D541C85D26508E83_1479815228.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1479815228.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1479815228;
-            // ---------- Original Method ----------
-            //return new UnmodifiableList<E>(list.subList(start, end));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.322 -0400", hash_original_method = "5F3DDA40E6BDC67502A2E43BA75DBB15", hash_generated_method = "7EB32E8908DD48008930CCFE6A990734")
         private Object readResolve() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_589019661 = null; //Variable for return #1
-            Object varB4EAC82CA7396A68D541C85D26508E83_856754616 = null; //Variable for return #2
+            Object varB4EAC82CA7396A68D541C85D26508E83_589019661 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_856754616 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_589019661 = new UnmodifiableRandomAccessList<E>(list);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_856754616 = this;
-            Object varA7E53CE21691AB073D9660D615818899_1473969349; //Final return value
+            Object varA7E53CE21691AB073D9660D615818899_1473969349; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1473969349 = varB4EAC82CA7396A68D541C85D26508E83_589019661;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1473969349 = varB4EAC82CA7396A68D541C85D26508E83_856754616;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1473969349.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1473969349.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1473969349;
-            // ---------- Original Method ----------
-            //if (list instanceof RandomAccess) {
-                //return new UnmodifiableRandomAccessList<E>(list);
-            //}
-            //return this;
+            
+            
+                
+            
+            
         }
 
         
@@ -3185,8 +3229,8 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.323 -0400", hash_original_method = "74C4A0289A3E9196E4EF75F76384A7D2", hash_generated_method = "DA7567E66A4C382E1EF89234BCC9D997")
           UnmodifiableMap(Map<K, V> map) {
             m = map;
-            // ---------- Original Method ----------
-            //m = map;
+            
+            
         }
 
         
@@ -3194,8 +3238,8 @@ public class Collections {
         @Override
         public void clear() {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -3206,8 +3250,8 @@ public class Collections {
             addTaint(key.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1976060224 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1976060224;
-            // ---------- Original Method ----------
-            //return m.containsKey(key);
+            
+            
         }
 
         
@@ -3218,20 +3262,20 @@ public class Collections {
             addTaint(value.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2014157550 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2014157550;
-            // ---------- Original Method ----------
-            //return m.containsValue(value);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.324 -0400", hash_original_method = "FB0DE15DA25D3994421C9FBDD1812EDD", hash_generated_method = "61AD3CBE804DD44D41C6F1799B786BD0")
         @Override
         public Set<Map.Entry<K, V>> entrySet() {
-            Set<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_421220316 = null; //Variable for return #1
+            Set<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_421220316 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_421220316 = new UnmodifiableEntrySet<K, V>(m.entrySet());
-            varB4EAC82CA7396A68D541C85D26508E83_421220316.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_421220316.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_421220316;
-            // ---------- Original Method ----------
-            //return new UnmodifiableEntrySet<K, V>(m.entrySet());
+            
+            
         }
 
         
@@ -3242,21 +3286,21 @@ public class Collections {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_19689940 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_19689940;
-            // ---------- Original Method ----------
-            //return m.equals(object);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.325 -0400", hash_original_method = "B8FE254B61C57EC3A6DCE539976DA268", hash_generated_method = "C2ED668DF7ED8793629B678256171AE8")
         @Override
         public V get(Object key) {
-            V varB4EAC82CA7396A68D541C85D26508E83_346070468 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_346070468 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_346070468 = m.get(key);
             addTaint(key.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_346070468.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_346070468.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_346070468;
-            // ---------- Original Method ----------
-            //return m.get(key);
+            
+            
         }
 
         
@@ -3266,8 +3310,8 @@ public class Collections {
             int varAA1293165230C9829C1AEACFFF576DFC_441385939 = (m.hashCode());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_909100090 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_909100090;
-            // ---------- Original Method ----------
-            //return m.hashCode();
+            
+            
         }
 
         
@@ -3277,20 +3321,20 @@ public class Collections {
             boolean var028CF644E61B84328EAB66D556672A81_64776259 = (m.isEmpty());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_821440302 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_821440302;
-            // ---------- Original Method ----------
-            //return m.isEmpty();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.326 -0400", hash_original_method = "2CC049F262DAAA6660AF161E9C8606F6", hash_generated_method = "4D213936329DC135C1A21488DADD1EDF")
         @Override
         public Set<K> keySet() {
-            Set<K> varB4EAC82CA7396A68D541C85D26508E83_371820132 = null; //Variable for return #1
+            Set<K> varB4EAC82CA7396A68D541C85D26508E83_371820132 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_371820132 = new UnmodifiableSet<K>(m.keySet());
-            varB4EAC82CA7396A68D541C85D26508E83_371820132.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_371820132.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_371820132;
-            // ---------- Original Method ----------
-            //return new UnmodifiableSet<K>(m.keySet());
+            
+            
         }
 
         
@@ -3298,8 +3342,8 @@ public class Collections {
         @Override
         public V put(K key, V value) {
         	throw new UnsupportedOperationException();
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -3308,8 +3352,8 @@ public class Collections {
         public void putAll(Map<? extends K, ? extends V> map) {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
             addTaint(map.getTaint());
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -3317,8 +3361,8 @@ public class Collections {
         @Override
         public V remove(Object key) {
         	throw new UnsupportedOperationException();
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -3328,32 +3372,32 @@ public class Collections {
             int varDBD6E28F15F3D13B8127CF62DD69ACD5_797188144 = (m.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1346942455 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1346942455;
-            // ---------- Original Method ----------
-            //return m.size();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.330 -0400", hash_original_method = "19DD84E0D2EBBBC2FCDA12D023824450", hash_generated_method = "F047E6651DD8BDCF61380427CF74DF73")
         @Override
         public Collection<V> values() {
-            Collection<V> varB4EAC82CA7396A68D541C85D26508E83_1215245479 = null; //Variable for return #1
+            Collection<V> varB4EAC82CA7396A68D541C85D26508E83_1215245479 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1215245479 = new UnmodifiableCollection<V>(m.values());
-            varB4EAC82CA7396A68D541C85D26508E83_1215245479.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1215245479.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1215245479;
-            // ---------- Original Method ----------
-            //return new UnmodifiableCollection<V>(m.values());
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.330 -0400", hash_original_method = "5DD44B3CD2826BF39F974F66579CF74F", hash_generated_method = "752F45BB0F16EB255C781FC38E11D8E8")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_176331067 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_176331067 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_176331067 = m.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_176331067.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_176331067.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_176331067;
-            // ---------- Original Method ----------
-            //return m.toString();
+            
+            
         }
 
         
@@ -3363,14 +3407,14 @@ public class Collections {
               UnmodifiableEntrySet(Set<Map.Entry<K, V>> set) {
                 super(set);
                 addTaint(set.getTaint());
-                // ---------- Original Method ----------
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.331 -0400", hash_original_method = "53A7F61EDA7A64FBCB28AE61A8906002", hash_generated_method = "76E6836DBB4CE5DE0380E731687BF527")
             @Override
             public Iterator<Map.Entry<K, V>> iterator() {
-                Iterator<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_682678557 = null; //Variable for return #1
+                Iterator<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_682678557 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_682678557 = new Iterator<Map.Entry<K, V>>() {
                     Iterator<Map.Entry<K, V>> iterator = c.iterator();
                     @Override public boolean hasNext() {
@@ -3383,28 +3427,28 @@ public class Collections {
                         throw new UnsupportedOperationException();
                     }
                 };
-                varB4EAC82CA7396A68D541C85D26508E83_682678557.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_682678557.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_682678557;
-                // ---------- Original Method ----------
-                //return new Iterator<Map.Entry<K, V>>() {
-                    //Iterator<Map.Entry<K, V>> iterator = c.iterator();
-                    //@Override public boolean hasNext() {
-                        //return iterator.hasNext();
-                    //}
-                    //@Override public Map.Entry<K, V> next() {
-                        //return new UnmodifiableMapEntry<K, V>(iterator.next());
-                    //}
-                    //@Override public void remove() {
-                        //throw new UnsupportedOperationException();
-                    //}
-                //};
+                
+                
+                    
+                    
+                        
+                    
+                    
+                        
+                    
+                    
+                        
+                    
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.332 -0400", hash_original_method = "C353E5DD4879B90DAE1A37DDC4A8ED8C", hash_generated_method = "9CCADE93F54E11A80697E2ED3BCC86FB")
             @Override
             public Object[] toArray() {
-                Object[] varB4EAC82CA7396A68D541C85D26508E83_991240570 = null; //Variable for return #1
+                Object[] varB4EAC82CA7396A68D541C85D26508E83_991240570 = null; 
                 int length = c.size();
                 Object[] result = new Object[length];
                 Iterator<?> it = iterator();
@@ -3412,19 +3456,19 @@ public class Collections {
                     int i = length;
                     {
                         result[i] = it.next();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_991240570 = result;
-                varB4EAC82CA7396A68D541C85D26508E83_991240570.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_991240570.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_991240570;
-                // ---------- Original Method ----------
-                //int length = c.size();
-                //Object[] result = new Object[length];
-                //Iterator<?> it = iterator();
-                //for (int i = length; --i >= 0;) {
-                    //result[i] = it.next();
-                //}
-                //return result;
+                
+                
+                
+                
+                
+                    
+                
+                
             }
 
             
@@ -3432,38 +3476,38 @@ public class Collections {
             @SuppressWarnings("unchecked")
             @Override
             public <T> T[] toArray(T[] contents) {
-                T[] varB4EAC82CA7396A68D541C85D26508E83_1355485167 = null; //Variable for return #1
+                T[] varB4EAC82CA7396A68D541C85D26508E83_1355485167 = null; 
                 int size = c.size();
                 int index = 0;
                 Iterator<Map.Entry<K, V>> it = iterator();
                 {
                     Class<?> ct = contents.getClass().getComponentType();
                     contents = (T[]) Array.newInstance(ct, size);
-                } //End block
+                } 
                 {
                     contents[index++] = (T) it.next();
-                } //End block
+                } 
                 {
                     contents[index] = null;
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1355485167 = contents;
                 addTaint(contents[0].getTaint());
-                varB4EAC82CA7396A68D541C85D26508E83_1355485167.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1355485167.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1355485167;
-                // ---------- Original Method ----------
-                //int size = c.size(), index = 0;
-                //Iterator<Map.Entry<K, V>> it = iterator();
-                //if (size > contents.length) {
-                    //Class<?> ct = contents.getClass().getComponentType();
-                    //contents = (T[]) Array.newInstance(ct, size);
-                //}
-                //while (index < size) {
-                    //contents[index++] = (T) it.next();
-                //}
-                //if (index < contents.length) {
-                    //contents[index] = null;
-                //}
-                //return contents;
+                
+                
+                
+                
+                    
+                    
+                
+                
+                    
+                
+                
+                    
+                
+                
             }
 
             
@@ -3475,8 +3519,8 @@ public class Collections {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.333 -0400", hash_original_method = "E37A4627FD27E632126EED134E00D831", hash_generated_method = "A97AFE882B9E93ECA34E23B05853DCFA")
                   UnmodifiableMapEntry(Map.Entry<K, V> entry) {
                     mapEntry = entry;
-                    // ---------- Original Method ----------
-                    //mapEntry = entry;
+                    
+                    
                 }
 
                 
@@ -3487,32 +3531,32 @@ public class Collections {
                     addTaint(object.getTaint());
                     boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_420365713 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_420365713;
-                    // ---------- Original Method ----------
-                    //return mapEntry.equals(object);
+                    
+                    
                 }
 
                 
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.334 -0400", hash_original_method = "4DDB57034C15C2636BC5A8AFB2B3C75A", hash_generated_method = "80FA05268DFDFEB893D678662972E779")
                 @Override
                 public K getKey() {
-                    K varB4EAC82CA7396A68D541C85D26508E83_376989862 = null; //Variable for return #1
+                    K varB4EAC82CA7396A68D541C85D26508E83_376989862 = null; 
                     varB4EAC82CA7396A68D541C85D26508E83_376989862 = mapEntry.getKey();
-                    varB4EAC82CA7396A68D541C85D26508E83_376989862.addTaint(getTaint()); //Add taint from parent
+                    varB4EAC82CA7396A68D541C85D26508E83_376989862.addTaint(getTaint()); 
                     return varB4EAC82CA7396A68D541C85D26508E83_376989862;
-                    // ---------- Original Method ----------
-                    //return mapEntry.getKey();
+                    
+                    
                 }
 
                 
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.335 -0400", hash_original_method = "EA1063FCD9D2F699A9610E0A7FDC81FD", hash_generated_method = "EFB58DA4A88F985521E0762E4C4A08B5")
                 @Override
                 public V getValue() {
-                    V varB4EAC82CA7396A68D541C85D26508E83_883474815 = null; //Variable for return #1
+                    V varB4EAC82CA7396A68D541C85D26508E83_883474815 = null; 
                     varB4EAC82CA7396A68D541C85D26508E83_883474815 = mapEntry.getValue();
-                    varB4EAC82CA7396A68D541C85D26508E83_883474815.addTaint(getTaint()); //Add taint from parent
+                    varB4EAC82CA7396A68D541C85D26508E83_883474815.addTaint(getTaint()); 
                     return varB4EAC82CA7396A68D541C85D26508E83_883474815;
-                    // ---------- Original Method ----------
-                    //return mapEntry.getValue();
+                    
+                    
                 }
 
                 
@@ -3522,8 +3566,8 @@ public class Collections {
                     int varB4446261767782D97888D65AE62449D4_1497995809 = (mapEntry.hashCode());
                     int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_859732129 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_859732129;
-                    // ---------- Original Method ----------
-                    //return mapEntry.hashCode();
+                    
+                    
                 }
 
                 
@@ -3531,20 +3575,20 @@ public class Collections {
                 @Override
                 public V setValue(V object) {
                 	throw new UnsupportedOperationException();
-                    // ---------- Original Method ----------
-                    //throw new UnsupportedOperationException();
+                    
+                    
                 }
 
                 
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.340 -0400", hash_original_method = "514C7E8B8C54DBFDFB3E185BADD6AD0A", hash_generated_method = "9215E10822452E643DA96CC0BBB5F7C3")
                 @Override
                 public String toString() {
-                    String varB4EAC82CA7396A68D541C85D26508E83_309354008 = null; //Variable for return #1
+                    String varB4EAC82CA7396A68D541C85D26508E83_309354008 = null; 
                     varB4EAC82CA7396A68D541C85D26508E83_309354008 = mapEntry.toString();
-                    varB4EAC82CA7396A68D541C85D26508E83_309354008.addTaint(getTaint()); //Add taint from parent
+                    varB4EAC82CA7396A68D541C85D26508E83_309354008.addTaint(getTaint()); 
                     return varB4EAC82CA7396A68D541C85D26508E83_309354008;
-                    // ---------- Original Method ----------
-                    //return mapEntry.toString();
+                    
+                    
                 }
 
                 
@@ -3572,7 +3616,7 @@ public class Collections {
           UnmodifiableSet(Set<E> set) {
             super(set);
             addTaint(set.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -3583,8 +3627,8 @@ public class Collections {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_417656259 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_417656259;
-            // ---------- Original Method ----------
-            //return c.equals(object);
+            
+            
         }
 
         
@@ -3594,8 +3638,8 @@ public class Collections {
             int var19B3D08FE3840D0D3E365DF71EF3E20C_570296639 = (c.hashCode());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_426187068 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_426187068;
-            // ---------- Original Method ----------
-            //return c.hashCode();
+            
+            
         }
 
         
@@ -3615,84 +3659,84 @@ public class Collections {
           UnmodifiableSortedMap(SortedMap<K, V> map) {
             super(map);
             sm = map;
-            // ---------- Original Method ----------
-            //sm = map;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.345 -0400", hash_original_method = "E5FDBCC6560BE7E99B2D2F850BD84149", hash_generated_method = "0F74FBB26B2EECDBA80ABE9A674B3DF0")
         @Override
         public Comparator<? super K> comparator() {
-            Comparator<? super K> varB4EAC82CA7396A68D541C85D26508E83_1073162260 = null; //Variable for return #1
+            Comparator<? super K> varB4EAC82CA7396A68D541C85D26508E83_1073162260 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1073162260 = sm.comparator();
-            varB4EAC82CA7396A68D541C85D26508E83_1073162260.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1073162260.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1073162260;
-            // ---------- Original Method ----------
-            //return sm.comparator();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.345 -0400", hash_original_method = "B25E8C7440C76FBF812FF7AC9CA9D776", hash_generated_method = "B0E7838A423483DAD87C79C51C932374")
         @Override
         public K firstKey() {
-            K varB4EAC82CA7396A68D541C85D26508E83_1329706546 = null; //Variable for return #1
+            K varB4EAC82CA7396A68D541C85D26508E83_1329706546 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1329706546 = sm.firstKey();
-            varB4EAC82CA7396A68D541C85D26508E83_1329706546.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1329706546.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1329706546;
-            // ---------- Original Method ----------
-            //return sm.firstKey();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.346 -0400", hash_original_method = "EC6243B190269A05D31802D1260652E4", hash_generated_method = "D35DFB9B91D411B5027575CB584B3618")
         @Override
         public SortedMap<K, V> headMap(K before) {
-            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_445911082 = null; //Variable for return #1
+            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_445911082 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_445911082 = new UnmodifiableSortedMap<K, V>(sm.headMap(before));
             addTaint(before.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_445911082.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_445911082.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_445911082;
-            // ---------- Original Method ----------
-            //return new UnmodifiableSortedMap<K, V>(sm.headMap(before));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.347 -0400", hash_original_method = "00E9126A84DE8B71214859A17DA6BD2E", hash_generated_method = "FC4A7E13B4E85C7C77FDF05BCEB7277D")
         @Override
         public K lastKey() {
-            K varB4EAC82CA7396A68D541C85D26508E83_1262440315 = null; //Variable for return #1
+            K varB4EAC82CA7396A68D541C85D26508E83_1262440315 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1262440315 = sm.lastKey();
-            varB4EAC82CA7396A68D541C85D26508E83_1262440315.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1262440315.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1262440315;
-            // ---------- Original Method ----------
-            //return sm.lastKey();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.348 -0400", hash_original_method = "B6411009D9179ABF4D7755605B648FDC", hash_generated_method = "D1A862A8D3321D3410D36BD522B8ADEC")
         @Override
         public SortedMap<K, V> subMap(K start, K end) {
-            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_2025779599 = null; //Variable for return #1
+            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_2025779599 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2025779599 = new UnmodifiableSortedMap<K, V>(sm.subMap(start, end));
             addTaint(start.getTaint());
             addTaint(end.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2025779599.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2025779599.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2025779599;
-            // ---------- Original Method ----------
-            //return new UnmodifiableSortedMap<K, V>(sm.subMap(start, end));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.349 -0400", hash_original_method = "59BADF6C5EE68C4E1DB5A6A22818328A", hash_generated_method = "98A92AA04C7049B7F82F7F95665EEF83")
         @Override
         public SortedMap<K, V> tailMap(K after) {
-            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_1919313570 = null; //Variable for return #1
+            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_1919313570 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1919313570 = new UnmodifiableSortedMap<K, V>(sm.tailMap(after));
             addTaint(after.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1919313570.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1919313570.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1919313570;
-            // ---------- Original Method ----------
-            //return new UnmodifiableSortedMap<K, V>(sm.tailMap(after));
+            
+            
         }
 
         
@@ -3712,84 +3756,84 @@ public class Collections {
           UnmodifiableSortedSet(SortedSet<E> set) {
             super(set);
             ss = set;
-            // ---------- Original Method ----------
-            //ss = set;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.350 -0400", hash_original_method = "8514D9255D678B041F55D03BA11DCA3B", hash_generated_method = "9BBEE2E2D855DA8E566DF2D7A1DD3A5B")
         @Override
         public Comparator<? super E> comparator() {
-            Comparator<? super E> varB4EAC82CA7396A68D541C85D26508E83_292344268 = null; //Variable for return #1
+            Comparator<? super E> varB4EAC82CA7396A68D541C85D26508E83_292344268 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_292344268 = ss.comparator();
-            varB4EAC82CA7396A68D541C85D26508E83_292344268.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_292344268.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_292344268;
-            // ---------- Original Method ----------
-            //return ss.comparator();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.351 -0400", hash_original_method = "6BB6C51843B41CC0DCB5509A79DBA008", hash_generated_method = "7C1BBA70CCC21CAFE99B1CFB1D1C489C")
         @Override
         public E first() {
-            E varB4EAC82CA7396A68D541C85D26508E83_1860058459 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1860058459 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1860058459 = ss.first();
-            varB4EAC82CA7396A68D541C85D26508E83_1860058459.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1860058459.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1860058459;
-            // ---------- Original Method ----------
-            //return ss.first();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.352 -0400", hash_original_method = "74C4BE29898589F7D7948BADA3350612", hash_generated_method = "AD2D164CC2EDD23F7BD6CE9A788EB237")
         @Override
         public SortedSet<E> headSet(E before) {
-            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_320658847 = null; //Variable for return #1
+            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_320658847 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_320658847 = new UnmodifiableSortedSet<E>(ss.headSet(before));
             addTaint(before.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_320658847.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_320658847.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_320658847;
-            // ---------- Original Method ----------
-            //return new UnmodifiableSortedSet<E>(ss.headSet(before));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.352 -0400", hash_original_method = "AAC5DDE787ACA85752B94AAB77F6B0F8", hash_generated_method = "AC9E0A6D1981CF66265E3DA51738DF41")
         @Override
         public E last() {
-            E varB4EAC82CA7396A68D541C85D26508E83_1464323869 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1464323869 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1464323869 = ss.last();
-            varB4EAC82CA7396A68D541C85D26508E83_1464323869.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1464323869.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1464323869;
-            // ---------- Original Method ----------
-            //return ss.last();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.353 -0400", hash_original_method = "54602835FD774439E48CB96CB67F9D83", hash_generated_method = "48C5D193E218A66FEC9CE13D784C3FF8")
         @Override
         public SortedSet<E> subSet(E start, E end) {
-            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_1702315914 = null; //Variable for return #1
+            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_1702315914 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1702315914 = new UnmodifiableSortedSet<E>(ss.subSet(start, end));
             addTaint(start.getTaint());
             addTaint(end.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1702315914.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1702315914.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1702315914;
-            // ---------- Original Method ----------
-            //return new UnmodifiableSortedSet<E>(ss.subSet(start, end));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.353 -0400", hash_original_method = "37640609DAC9C9170FD6CBE14C8AD6B6", hash_generated_method = "30B85D8E57266CF554F2C7494AF6EB1A")
         @Override
         public SortedSet<E> tailSet(E after) {
-            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_280792345 = null; //Variable for return #1
+            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_280792345 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_280792345 = new UnmodifiableSortedSet<E>(ss.tailSet(after));
             addTaint(after.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_280792345.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_280792345.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_280792345;
-            // ---------- Original Method ----------
-            //return new UnmodifiableSortedSet<E>(ss.tailSet(after));
+            
+            
         }
 
         
@@ -3812,9 +3856,9 @@ public class Collections {
           SetFromMap(final Map<E, Boolean> map) {
             m = map;
             backingSet = map.keySet();
-            // ---------- Original Method ----------
-            //m = map;
-            //backingSet = map.keySet();
+            
+            
+            
         }
 
         
@@ -3825,8 +3869,8 @@ public class Collections {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_527863190 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_527863190;
-            // ---------- Original Method ----------
-            //return backingSet.equals(object);
+            
+            
         }
 
         
@@ -3836,8 +3880,8 @@ public class Collections {
             int var061E95C5D32F56D095B7A80E91EC8A56_1648268707 = (backingSet.hashCode());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_173748097 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_173748097;
-            // ---------- Original Method ----------
-            //return backingSet.hashCode();
+            
+            
         }
 
         
@@ -3848,8 +3892,8 @@ public class Collections {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_964969905 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_964969905;
-            // ---------- Original Method ----------
-            //return m.put(object, Boolean.TRUE) == null;
+            
+            
         }
 
         
@@ -3857,20 +3901,20 @@ public class Collections {
         @Override
         public void clear() {
             m.clear();
-            // ---------- Original Method ----------
-            //m.clear();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.355 -0400", hash_original_method = "C7069F73CC2FBE59B42FACF6A3731192", hash_generated_method = "A9F02A93A343E409C7D64AA9D7997F66")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1644817759 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1644817759 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1644817759 = backingSet.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1644817759.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1644817759.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1644817759;
-            // ---------- Original Method ----------
-            //return backingSet.toString();
+            
+            
         }
 
         
@@ -3881,8 +3925,8 @@ public class Collections {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_394270843 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_394270843;
-            // ---------- Original Method ----------
-            //return backingSet.contains(object);
+            
+            
         }
 
         
@@ -3893,8 +3937,8 @@ public class Collections {
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_583499475 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_583499475;
-            // ---------- Original Method ----------
-            //return backingSet.containsAll(collection);
+            
+            
         }
 
         
@@ -3904,8 +3948,8 @@ public class Collections {
             boolean var028CF644E61B84328EAB66D556672A81_1610106608 = (m.isEmpty());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_411047921 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_411047921;
-            // ---------- Original Method ----------
-            //return m.isEmpty();
+            
+            
         }
 
         
@@ -3916,8 +3960,8 @@ public class Collections {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1577510307 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1577510307;
-            // ---------- Original Method ----------
-            //return m.remove(object) != null;
+            
+            
         }
 
         
@@ -3928,45 +3972,45 @@ public class Collections {
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_686888967 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_686888967;
-            // ---------- Original Method ----------
-            //return backingSet.retainAll(collection);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.357 -0400", hash_original_method = "706FD57EC242D189F78C8F40D764E8D0", hash_generated_method = "77115D149ADA12B993D12EEBFC1D2992")
         @Override
         public Object[] toArray() {
-            Object[] varB4EAC82CA7396A68D541C85D26508E83_331957931 = null; //Variable for return #1
+            Object[] varB4EAC82CA7396A68D541C85D26508E83_331957931 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_331957931 = backingSet.toArray();
-            varB4EAC82CA7396A68D541C85D26508E83_331957931.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_331957931.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_331957931;
-            // ---------- Original Method ----------
-            //return backingSet.toArray();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.358 -0400", hash_original_method = "5B684176C593DE73F99AF08724DF65D4", hash_generated_method = "DF625A303B058888E3F081AB381A83A9")
         @Override
         public <T> T[] toArray(T[] contents) {
-            T[] varB4EAC82CA7396A68D541C85D26508E83_1452176904 = null; //Variable for return #1
+            T[] varB4EAC82CA7396A68D541C85D26508E83_1452176904 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1452176904 = backingSet.toArray(contents);
             addTaint(contents[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1452176904.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1452176904.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1452176904;
-            // ---------- Original Method ----------
-            //return backingSet.toArray(contents);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.358 -0400", hash_original_method = "2EC39271104239DED882FB25EFF4BC23", hash_generated_method = "0BCEC44B86492773781098B089FBE7BD")
         @Override
         public Iterator<E> iterator() {
-            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_208644346 = null; //Variable for return #1
+            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_208644346 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_208644346 = backingSet.iterator();
-            varB4EAC82CA7396A68D541C85D26508E83_208644346.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_208644346.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_208644346;
-            // ---------- Original Method ----------
-            //return backingSet.iterator();
+            
+            
         }
 
         
@@ -3976,8 +4020,8 @@ public class Collections {
             int varDBD6E28F15F3D13B8127CF62DD69ACD5_1382302486 = (m.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_274854924 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_274854924;
-            // ---------- Original Method ----------
-            //return m.size();
+            
+            
         }
 
         
@@ -3987,9 +4031,9 @@ public class Collections {
             stream.defaultReadObject();
             backingSet = m.keySet();
             addTaint(stream.getTaint());
-            // ---------- Original Method ----------
-            //stream.defaultReadObject();
-            //backingSet = m.keySet();
+            
+            
+            
         }
 
         
@@ -4008,20 +4052,20 @@ public class Collections {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.361 -0400", hash_original_method = "C9A3AEFCC3A9FEA0CFED796FADB14DA4", hash_generated_method = "8C725C5253844AF6C1706232C12CC260")
           AsLIFOQueue(final Deque<E> deque) {
             this.q = deque;
-            // ---------- Original Method ----------
-            //this.q = deque;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.364 -0400", hash_original_method = "D6ABAC5AC9E31C28EFD449012F8C668D", hash_generated_method = "D699AEA72D35FB4A6A252F5CAE20DCE0")
         @Override
         public Iterator<E> iterator() {
-            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1819339670 = null; //Variable for return #1
+            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1819339670 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1819339670 = q.iterator();
-            varB4EAC82CA7396A68D541C85D26508E83_1819339670.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1819339670.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1819339670;
-            // ---------- Original Method ----------
-            //return q.iterator();
+            
+            
         }
 
         
@@ -4031,8 +4075,8 @@ public class Collections {
             int var8E6A4AAEA94D20962C54C20127D7D8DC_1740382406 = (q.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1249321442 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1249321442;
-            // ---------- Original Method ----------
-            //return q.size();
+            
+            
         }
 
         
@@ -4043,32 +4087,32 @@ public class Collections {
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_156993328 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_156993328;
-            // ---------- Original Method ----------
-            //return q.offerFirst(o);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.367 -0400", hash_original_method = "286FFABBC697C1CEE6C49194F85DD481", hash_generated_method = "97C5C2715F788522E9634F486043899A")
         @Override
         public E peek() {
-            E varB4EAC82CA7396A68D541C85D26508E83_347115376 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_347115376 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_347115376 = q.peekFirst();
-            varB4EAC82CA7396A68D541C85D26508E83_347115376.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_347115376.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_347115376;
-            // ---------- Original Method ----------
-            //return q.peekFirst();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.368 -0400", hash_original_method = "93EF986205EA0EFDB6E2F2BDD9DDBDB0", hash_generated_method = "A96B4A0D7B8093989D113F049AFB6179")
         @Override
         public E poll() {
-            E varB4EAC82CA7396A68D541C85D26508E83_1848873618 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1848873618 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1848873618 = q.pollFirst();
-            varB4EAC82CA7396A68D541C85D26508E83_1848873618.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1848873618.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1848873618;
-            // ---------- Original Method ----------
-            //return q.pollFirst();
+            
+            
         }
 
         
@@ -4079,9 +4123,9 @@ public class Collections {
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1518213141 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1518213141;
-            // ---------- Original Method ----------
-            //q.push(o);
-            //return true;
+            
+            
+            
         }
 
         
@@ -4089,32 +4133,32 @@ public class Collections {
         @Override
         public void clear() {
             q.clear();
-            // ---------- Original Method ----------
-            //q.clear();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.370 -0400", hash_original_method = "41C0874A8589B77FE1309E3303509F6A", hash_generated_method = "84FA4F4551BF55EDC196AF7C022D80C3")
         @Override
         public E element() {
-            E varB4EAC82CA7396A68D541C85D26508E83_286559447 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_286559447 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_286559447 = q.getFirst();
-            varB4EAC82CA7396A68D541C85D26508E83_286559447.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_286559447.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_286559447;
-            // ---------- Original Method ----------
-            //return q.getFirst();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.371 -0400", hash_original_method = "DBCAD9866D0C084DC455BF7C95ABCE77", hash_generated_method = "53F53379431146966FD4BFDEBBB937B0")
         @Override
         public E remove() {
-            E varB4EAC82CA7396A68D541C85D26508E83_158369240 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_158369240 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_158369240 = q.pop();
-            varB4EAC82CA7396A68D541C85D26508E83_158369240.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_158369240.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_158369240;
-            // ---------- Original Method ----------
-            //return q.pop();
+            
+            
         }
 
         
@@ -4125,8 +4169,8 @@ public class Collections {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1761881323 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1761881323;
-            // ---------- Original Method ----------
-            //return q.contains(object);
+            
+            
         }
 
         
@@ -4137,8 +4181,8 @@ public class Collections {
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1709756377 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1709756377;
-            // ---------- Original Method ----------
-            //return q.containsAll(collection);
+            
+            
         }
 
         
@@ -4148,8 +4192,8 @@ public class Collections {
             boolean varFE3524B5D20384639CE6FC4B24FAEE92_1293164517 = (q.isEmpty());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1003459647 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1003459647;
-            // ---------- Original Method ----------
-            //return q.isEmpty();
+            
+            
         }
 
         
@@ -4160,8 +4204,8 @@ public class Collections {
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_233919691 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_233919691;
-            // ---------- Original Method ----------
-            //return q.remove(object);
+            
+            
         }
 
         
@@ -4172,8 +4216,8 @@ public class Collections {
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_96261939 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_96261939;
-            // ---------- Original Method ----------
-            //return q.removeAll(collection);
+            
+            
         }
 
         
@@ -4184,45 +4228,45 @@ public class Collections {
             addTaint(collection.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1436777078 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1436777078;
-            // ---------- Original Method ----------
-            //return q.retainAll(collection);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.375 -0400", hash_original_method = "81809EBBF1D8298961C4E9B761FEF748", hash_generated_method = "A93EF497443E051660C1740DD9424AD3")
         @Override
         public Object[] toArray() {
-            Object[] varB4EAC82CA7396A68D541C85D26508E83_1457950883 = null; //Variable for return #1
+            Object[] varB4EAC82CA7396A68D541C85D26508E83_1457950883 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1457950883 = q.toArray();
-            varB4EAC82CA7396A68D541C85D26508E83_1457950883.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1457950883.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1457950883;
-            // ---------- Original Method ----------
-            //return q.toArray();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.375 -0400", hash_original_method = "3C7918E789D95B2A97E0F45A2E8277E0", hash_generated_method = "FDFAC4207A23F4DAFD6C39A22C806963")
         @Override
         public <T> T[] toArray(T[] contents) {
-            T[] varB4EAC82CA7396A68D541C85D26508E83_2029235655 = null; //Variable for return #1
+            T[] varB4EAC82CA7396A68D541C85D26508E83_2029235655 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2029235655 = q.toArray(contents);
             addTaint(contents[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2029235655.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2029235655.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2029235655;
-            // ---------- Original Method ----------
-            //return q.toArray(contents);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.376 -0400", hash_original_method = "827F98847BB1D6CEA3B0A324A45F92ED", hash_generated_method = "EA08217F0EE7EA8EB8BE442E671B67DF")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_361903019 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_361903019 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_361903019 = q.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_361903019.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_361903019.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_361903019;
-            // ---------- Original Method ----------
-            //return q.toString();
+            
+            
         }
 
         
@@ -4245,15 +4289,15 @@ public class Collections {
         public  CheckedCollection(Collection<E> c, Class<E> type) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             this.c = c;
             this.type = type;
-            // ---------- Original Method ----------
-            //if (c == null || type == null) {
-                //throw new NullPointerException();
-            //}
-            //this.c = c;
-            //this.type = type;
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -4263,8 +4307,8 @@ public class Collections {
             int varC247C84593AA6020ED979B19566D13FE_641154083 = (c.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_255666441 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_255666441;
-            // ---------- Original Method ----------
-            //return c.size();
+            
+            
         }
 
         
@@ -4274,8 +4318,8 @@ public class Collections {
             boolean var528EAD02A70F822F393BB0C54FBB923C_724056453 = (c.isEmpty());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_625681718 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_625681718;
-            // ---------- Original Method ----------
-            //return c.isEmpty();
+            
+            
         }
 
         
@@ -4286,53 +4330,53 @@ public class Collections {
             addTaint(obj.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_876446317 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_876446317;
-            // ---------- Original Method ----------
-            //return c.contains(obj);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.378 -0400", hash_original_method = "A49A579D720F57F247BFFB420B912FC7", hash_generated_method = "6E1E882F2D46D8FA6ECD44734D4F14EA")
         @Override
         public Iterator<E> iterator() {
-            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1478493336 = null; //Variable for return #1
+            Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1478493336 = null; 
             Iterator<E> i = c.iterator();
             {
                 i = new CheckedListIterator<E>((ListIterator<E>) i, type);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1478493336 = i;
-            varB4EAC82CA7396A68D541C85D26508E83_1478493336.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1478493336.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1478493336;
-            // ---------- Original Method ----------
-            //Iterator<E> i = c.iterator();
-            //if (i instanceof ListIterator) {
-                //i = new CheckedListIterator<E>((ListIterator<E>) i, type);
-            //}
-            //return i;
+            
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.379 -0400", hash_original_method = "89D7D02A9D2BDF31E775C08108CBDE5B", hash_generated_method = "F6652AC0272BCE64542D912B939D0377")
         @Override
         public Object[] toArray() {
-            Object[] varB4EAC82CA7396A68D541C85D26508E83_1501268076 = null; //Variable for return #1
+            Object[] varB4EAC82CA7396A68D541C85D26508E83_1501268076 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1501268076 = c.toArray();
-            varB4EAC82CA7396A68D541C85D26508E83_1501268076.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1501268076.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1501268076;
-            // ---------- Original Method ----------
-            //return c.toArray();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.379 -0400", hash_original_method = "9B8166862C116AE305DE64E80811892F", hash_generated_method = "B7BE6491FE4FB112B16D1136BD8306DE")
         @Override
         public <T> T[] toArray(T[] arr) {
-            T[] varB4EAC82CA7396A68D541C85D26508E83_585829662 = null; //Variable for return #1
+            T[] varB4EAC82CA7396A68D541C85D26508E83_585829662 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_585829662 = c.toArray(arr);
             addTaint(arr[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_585829662.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_585829662.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_585829662;
-            // ---------- Original Method ----------
-            //return c.toArray(arr);
+            
+            
         }
 
         
@@ -4343,8 +4387,8 @@ public class Collections {
             addTaint(obj.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1168764013 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1168764013;
-            // ---------- Original Method ----------
-            //return c.add(checkType(obj, type));
+            
+            
         }
 
         
@@ -4355,8 +4399,8 @@ public class Collections {
             addTaint(obj.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_861830182 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_861830182;
-            // ---------- Original Method ----------
-            //return c.remove(obj);
+            
+            
         }
 
         
@@ -4367,8 +4411,8 @@ public class Collections {
             addTaint(c1.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1548871371 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1548871371;
-            // ---------- Original Method ----------
-            //return c.containsAll(c1);
+            
+            
         }
 
         
@@ -4381,18 +4425,18 @@ public class Collections {
                 Object o = array[0];
                 {
                     checkType(o, type);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             boolean var4F43D86A78906FAA31F77A4D0C40B6E3_1530505080 = (c.addAll((List<E>) Arrays.asList(array)));
             addTaint(c1.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_688737952 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_688737952;
-            // ---------- Original Method ----------
-            //Object[] array = c1.toArray();
-            //for (Object o : array) {
-                //checkType(o, type);
-            //}
-            //return c.addAll((List<E>) Arrays.asList(array));
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -4403,8 +4447,8 @@ public class Collections {
             addTaint(c1.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_372169235 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_372169235;
-            // ---------- Original Method ----------
-            //return c.removeAll(c1);
+            
+            
         }
 
         
@@ -4415,8 +4459,8 @@ public class Collections {
             addTaint(c1.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1720361397 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1720361397;
-            // ---------- Original Method ----------
-            //return c.retainAll(c1);
+            
+            
         }
 
         
@@ -4424,20 +4468,20 @@ public class Collections {
         @Override
         public void clear() {
             c.clear();
-            // ---------- Original Method ----------
-            //c.clear();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.389 -0400", hash_original_method = "424D4966F358AE6553349A6493C21674", hash_generated_method = "421D71E5C087CBD26F54B6E8145E27DA")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_484229916 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_484229916 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_484229916 = c.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_484229916.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_484229916.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_484229916;
-            // ---------- Original Method ----------
-            //return c.toString();
+            
+            
         }
 
         
@@ -4460,9 +4504,9 @@ public class Collections {
         public  CheckedListIterator(ListIterator<E> i, Class<E> type) {
             this.i = i;
             this.type = type;
-            // ---------- Original Method ----------
-            //this.i = i;
-            //this.type = type;
+            
+            
+            
         }
 
         
@@ -4472,20 +4516,20 @@ public class Collections {
             boolean var1611849CD1EE22EA22E4E7E3327E2E35_1659796377 = (i.hasNext());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_586393896 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_586393896;
-            // ---------- Original Method ----------
-            //return i.hasNext();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.392 -0400", hash_original_method = "A2FD0994E634C5BCE4D27AD9176E9A5A", hash_generated_method = "1BB0EDC8173AE60CD957C1D93412805B")
         @Override
         public E next() {
-            E varB4EAC82CA7396A68D541C85D26508E83_1278282939 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1278282939 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1278282939 = i.next();
-            varB4EAC82CA7396A68D541C85D26508E83_1278282939.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1278282939.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1278282939;
-            // ---------- Original Method ----------
-            //return i.next();
+            
+            
         }
 
         
@@ -4493,8 +4537,8 @@ public class Collections {
         @Override
         public void remove() {
             i.remove();
-            // ---------- Original Method ----------
-            //i.remove();
+            
+            
         }
 
         
@@ -4504,20 +4548,20 @@ public class Collections {
             boolean var1FCC7ECF60E98FFA6572F3122E374C7E_612081480 = (i.hasPrevious());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1016288699 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1016288699;
-            // ---------- Original Method ----------
-            //return i.hasPrevious();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.395 -0400", hash_original_method = "BC73D9B40C1A828CB3DD11A00CF4E28D", hash_generated_method = "708E7F0968C38D60F56A8D74F910AEF7")
         @Override
         public E previous() {
-            E varB4EAC82CA7396A68D541C85D26508E83_1267660590 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1267660590 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1267660590 = i.previous();
-            varB4EAC82CA7396A68D541C85D26508E83_1267660590.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1267660590.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1267660590;
-            // ---------- Original Method ----------
-            //return i.previous();
+            
+            
         }
 
         
@@ -4527,8 +4571,8 @@ public class Collections {
             int var97CCB58C3C2141B73F996BC540E6EAF5_1226453066 = (i.nextIndex());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1080924515 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1080924515;
-            // ---------- Original Method ----------
-            //return i.nextIndex();
+            
+            
         }
 
         
@@ -4538,8 +4582,8 @@ public class Collections {
             int var9F734927211780D2EA84E984ED22702D_1901884575 = (i.previousIndex());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1333011681 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1333011681;
-            // ---------- Original Method ----------
-            //return i.previousIndex();
+            
+            
         }
 
         
@@ -4548,8 +4592,8 @@ public class Collections {
         public void set(E obj) {
             i.set(checkType(obj, type));
             addTaint(obj.getTaint());
-            // ---------- Original Method ----------
-            //i.set(checkType(obj, type));
+            
+            
         }
 
         
@@ -4558,8 +4602,8 @@ public class Collections {
         public void add(E obj) {
             i.add(checkType(obj, type));
             addTaint(obj.getTaint());
-            // ---------- Original Method ----------
-            //i.add(checkType(obj, type));
+            
+            
         }
 
         
@@ -4577,8 +4621,8 @@ public class Collections {
             super(l, type);
             this.l = l;
             addTaint(type.getTaint());
-            // ---------- Original Method ----------
-            //this.l = l;
+            
+            
         }
 
         
@@ -4591,46 +4635,46 @@ public class Collections {
                 Object o = array[0];
                 {
                     checkType(o, type);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             boolean var720AF4600E5540369BE417DBAEE92DFA_678626549 = (l.addAll(index, (List<E>) Arrays.asList(array)));
             addTaint(index);
             addTaint(c1.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_8049906 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_8049906;
-            // ---------- Original Method ----------
-            //Object[] array = c1.toArray();
-            //for (Object o : array) {
-                //checkType(o, type);
-            //}
-            //return l.addAll(index, (List<E>) Arrays.asList(array));
+            
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.402 -0400", hash_original_method = "12BB9FAB0B921E0E98205977740A217D", hash_generated_method = "25B4C7310CBF7DFA7CD498EE271A4BC7")
         @Override
         public E get(int index) {
-            E varB4EAC82CA7396A68D541C85D26508E83_1558487876 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1558487876 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1558487876 = l.get(index);
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_1558487876.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1558487876.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1558487876;
-            // ---------- Original Method ----------
-            //return l.get(index);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.404 -0400", hash_original_method = "B15A1B3ABEAB19644273A7FDAFDFF4C3", hash_generated_method = "7B40E315851EDD96FC352CE1748FD354")
         @Override
         public E set(int index, E obj) {
-            E varB4EAC82CA7396A68D541C85D26508E83_1651524530 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1651524530 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1651524530 = l.set(index, checkType(obj, type));
             addTaint(index);
             addTaint(obj.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1651524530.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1651524530.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1651524530;
-            // ---------- Original Method ----------
-            //return l.set(index, checkType(obj, type));
+            
+            
         }
 
         
@@ -4640,21 +4684,21 @@ public class Collections {
             l.add(index, checkType(obj, type));
             addTaint(index);
             addTaint(obj.getTaint());
-            // ---------- Original Method ----------
-            //l.add(index, checkType(obj, type));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.405 -0400", hash_original_method = "B7A754E9641B79EF3AC643C6FA162631", hash_generated_method = "3FCB12EC2949CF5C20739D0C31BFBCF7")
         @Override
         public E remove(int index) {
-            E varB4EAC82CA7396A68D541C85D26508E83_304576585 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_304576585 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_304576585 = l.remove(index);
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_304576585.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_304576585.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_304576585;
-            // ---------- Original Method ----------
-            //return l.remove(index);
+            
+            
         }
 
         
@@ -4665,8 +4709,8 @@ public class Collections {
             addTaint(obj.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295712219 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295712219;
-            // ---------- Original Method ----------
-            //return l.indexOf(obj);
+            
+            
         }
 
         
@@ -4677,47 +4721,47 @@ public class Collections {
             addTaint(obj.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1394504595 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1394504595;
-            // ---------- Original Method ----------
-            //return l.lastIndexOf(obj);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.406 -0400", hash_original_method = "9293980ECFF31B033CDADFB0ED26EA69", hash_generated_method = "74705421132CBA6B5380B7669A3AFDB8")
         @Override
         public ListIterator<E> listIterator() {
-            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1294975390 = null; //Variable for return #1
+            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1294975390 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1294975390 = new CheckedListIterator<E>(l.listIterator(), type);
-            varB4EAC82CA7396A68D541C85D26508E83_1294975390.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1294975390.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1294975390;
-            // ---------- Original Method ----------
-            //return new CheckedListIterator<E>(l.listIterator(), type);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.406 -0400", hash_original_method = "31D39D7FEEE82D7A15D00B805CB5EAA4", hash_generated_method = "98C2976B4752DA2DF3F78697A670E219")
         @Override
         public ListIterator<E> listIterator(int index) {
-            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1250169173 = null; //Variable for return #1
+            ListIterator<E> varB4EAC82CA7396A68D541C85D26508E83_1250169173 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1250169173 = new CheckedListIterator<E>(l.listIterator(index), type);
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_1250169173.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1250169173.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1250169173;
-            // ---------- Original Method ----------
-            //return new CheckedListIterator<E>(l.listIterator(index), type);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.407 -0400", hash_original_method = "A5E1EFD4B2650099AC132BF86B97D88F", hash_generated_method = "9E2B532046DCECCF21A6E034C8C3B6D0")
         @Override
         public List<E> subList(int fromIndex, int toIndex) {
-            List<E> varB4EAC82CA7396A68D541C85D26508E83_957598719 = null; //Variable for return #1
+            List<E> varB4EAC82CA7396A68D541C85D26508E83_957598719 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_957598719 = checkedList(l.subList(fromIndex, toIndex), type);
             addTaint(fromIndex);
             addTaint(toIndex);
-            varB4EAC82CA7396A68D541C85D26508E83_957598719.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_957598719.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_957598719;
-            // ---------- Original Method ----------
-            //return checkedList(l.subList(fromIndex, toIndex), type);
+            
+            
         }
 
         
@@ -4728,8 +4772,8 @@ public class Collections {
             addTaint(obj.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1362191497 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1362191497;
-            // ---------- Original Method ----------
-            //return l.equals(obj);
+            
+            
         }
 
         
@@ -4739,8 +4783,8 @@ public class Collections {
             int var283F03AD18DE255D000FAC9E62BDE6F0_1336538636 = (l.hashCode());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_927843078 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_927843078;
-            // ---------- Original Method ----------
-            //return l.hashCode();
+            
+            
         }
 
         
@@ -4758,7 +4802,7 @@ public class Collections {
             super(l, type);
             addTaint(l.getTaint());
             addTaint(type.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -4776,7 +4820,7 @@ public class Collections {
             super(s, type);
             addTaint(s.getTaint());
             addTaint(type.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -4787,8 +4831,8 @@ public class Collections {
             addTaint(obj.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1145259409 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1145259409;
-            // ---------- Original Method ----------
-            //return c.equals(obj);
+            
+            
         }
 
         
@@ -4798,8 +4842,8 @@ public class Collections {
             int var19B3D08FE3840D0D3E365DF71EF3E20C_2108732295 = (c.hashCode());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1578304211 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1578304211;
-            // ---------- Original Method ----------
-            //return c.hashCode();
+            
+            
         }
 
         
@@ -4825,17 +4869,17 @@ public class Collections {
         private  CheckedMap(Map<K, V> m, Class<K> keyType, Class<V> valueType) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             this.m = m;
             this.keyType = keyType;
             this.valueType = valueType;
-            // ---------- Original Method ----------
-            //if (m == null || keyType == null || valueType == null) {
-                //throw new NullPointerException();
-            //}
-            //this.m = m;
-            //this.keyType = keyType;
-            //this.valueType = valueType;
+            
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -4845,8 +4889,8 @@ public class Collections {
             int varDBD6E28F15F3D13B8127CF62DD69ACD5_1233652238 = (m.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1456724329 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1456724329;
-            // ---------- Original Method ----------
-            //return m.size();
+            
+            
         }
 
         
@@ -4856,8 +4900,8 @@ public class Collections {
             boolean var028CF644E61B84328EAB66D556672A81_898933794 = (m.isEmpty());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_939195073 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_939195073;
-            // ---------- Original Method ----------
-            //return m.isEmpty();
+            
+            
         }
 
         
@@ -4868,8 +4912,8 @@ public class Collections {
             addTaint(key.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1780804328 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1780804328;
-            // ---------- Original Method ----------
-            //return m.containsKey(key);
+            
+            
         }
 
         
@@ -4880,48 +4924,48 @@ public class Collections {
             addTaint(value.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1591904924 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1591904924;
-            // ---------- Original Method ----------
-            //return m.containsValue(value);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.417 -0400", hash_original_method = "B8FE254B61C57EC3A6DCE539976DA268", hash_generated_method = "6B8461C107627A0127FD06A454FAF723")
         @Override
         public V get(Object key) {
-            V varB4EAC82CA7396A68D541C85D26508E83_1125750666 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_1125750666 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1125750666 = m.get(key);
             addTaint(key.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1125750666.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1125750666.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1125750666;
-            // ---------- Original Method ----------
-            //return m.get(key);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.419 -0400", hash_original_method = "98010DFF1DD51631676FCAC604C1B694", hash_generated_method = "B11C13E84AE13B1FD761165707822F56")
         @Override
         public V put(K key, V value) {
-            V varB4EAC82CA7396A68D541C85D26508E83_1233644426 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_1233644426 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1233644426 = m.put(checkType(key, keyType), checkType(value, valueType));
             addTaint(key.getTaint());
             addTaint(value.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1233644426.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1233644426.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1233644426;
-            // ---------- Original Method ----------
-            //return m.put(checkType(key, keyType), checkType(value, valueType));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.420 -0400", hash_original_method = "7E1C4ABAB7F4D30C9FA02B8AC4206202", hash_generated_method = "CDB87819B7C79B2308DB1C883B7C779C")
         @Override
         public V remove(Object key) {
-            V varB4EAC82CA7396A68D541C85D26508E83_1264180341 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_1264180341 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1264180341 = m.remove(key);
             addTaint(key.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1264180341.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1264180341.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1264180341;
-            // ---------- Original Method ----------
-            //return m.remove(key);
+            
+            
         }
 
         
@@ -4940,32 +4984,32 @@ public class Collections {
                     checkType(e.getKey(), keyType);
                     checkType(e.getValue(), valueType);
                     entries[i] = e;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 int i = 0;
                 {
                     m.put(entries[i].getKey(), entries[i].getValue());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(map.getTaint());
-            // ---------- Original Method ----------
-            //int size = map.size();
-            //if (size == 0) {
-                //return;
-            //}
-            //Map.Entry<? extends K, ? extends V>[] entries = new Map.Entry[size];
-            //Iterator<? extends Map.Entry<? extends K, ? extends V>> it = map
-                    //.entrySet().iterator();
-            //for (int i = 0; i < size; i++) {
-                //Map.Entry<? extends K, ? extends V> e = it.next();
-                //checkType(e.getKey(), keyType);
-                //checkType(e.getValue(), valueType);
-                //entries[i] = e;
-            //}
-            //for (int i = 0; i < size; i++) {
-                //m.put(entries[i].getKey(), entries[i].getValue());
-            //}
+            
+            
+            
+                
+            
+            
+            
+                    
+            
+                
+                
+                
+                
+            
+            
+                
+            
         }
 
         
@@ -4973,44 +5017,44 @@ public class Collections {
         @Override
         public void clear() {
             m.clear();
-            // ---------- Original Method ----------
-            //m.clear();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.422 -0400", hash_original_method = "BC85ABF91A39D98F3F2ED0838950D9FC", hash_generated_method = "ED0B55A59459C1E6D3FF163EA0E07A79")
         @Override
         public Set<K> keySet() {
-            Set<K> varB4EAC82CA7396A68D541C85D26508E83_146347113 = null; //Variable for return #1
+            Set<K> varB4EAC82CA7396A68D541C85D26508E83_146347113 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_146347113 = m.keySet();
-            varB4EAC82CA7396A68D541C85D26508E83_146347113.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_146347113.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_146347113;
-            // ---------- Original Method ----------
-            //return m.keySet();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.423 -0400", hash_original_method = "F6584059741E2818D171714370ED56BF", hash_generated_method = "BB02B060AFAD248EC6A96CC0FFFD744B")
         @Override
         public Collection<V> values() {
-            Collection<V> varB4EAC82CA7396A68D541C85D26508E83_1449176390 = null; //Variable for return #1
+            Collection<V> varB4EAC82CA7396A68D541C85D26508E83_1449176390 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1449176390 = m.values();
-            varB4EAC82CA7396A68D541C85D26508E83_1449176390.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1449176390.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1449176390;
-            // ---------- Original Method ----------
-            //return m.values();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.425 -0400", hash_original_method = "17C87BFAA3247941C0F3FE3FCE6C8B6B", hash_generated_method = "B122B7684766BB2F28B09F3E70494FD2")
         @Override
         public Set<Map.Entry<K, V>> entrySet() {
-            Set<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_1232670491 = null; //Variable for return #1
+            Set<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_1232670491 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1232670491 = new CheckedEntrySet<K, V>(m.entrySet(), valueType);
-            varB4EAC82CA7396A68D541C85D26508E83_1232670491.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1232670491.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1232670491;
-            // ---------- Original Method ----------
-            //return new CheckedEntrySet<K, V>(m.entrySet(), valueType);
+            
+            
         }
 
         
@@ -5021,8 +5065,8 @@ public class Collections {
             addTaint(obj.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1452970595 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1452970595;
-            // ---------- Original Method ----------
-            //return m.equals(obj);
+            
+            
         }
 
         
@@ -5032,20 +5076,20 @@ public class Collections {
             int varAA1293165230C9829C1AEACFFF576DFC_291710615 = (m.hashCode());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_60506140 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_60506140;
-            // ---------- Original Method ----------
-            //return m.hashCode();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.426 -0400", hash_original_method = "5DD44B3CD2826BF39F974F66579CF74F", hash_generated_method = "30BBF66F8BA89B1BB4EA6B4E92B5E3ED")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_723714724 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_723714724 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_723714724 = m.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_723714724.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_723714724.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_723714724;
-            // ---------- Original Method ----------
-            //return m.toString();
+            
+            
         }
 
         
@@ -5061,52 +5105,52 @@ public class Collections {
             public  CheckedEntry(Map.Entry<K, V> e, Class<V> valueType) {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-                } //End block
+                } 
                 this.e = e;
                 this.valueType = valueType;
-                // ---------- Original Method ----------
-                //if (e == null) {
-                    //throw new NullPointerException();
-                //}
-                //this.e = e;
-                //this.valueType = valueType;
+                
+                
+                    
+                
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.428 -0400", hash_original_method = "10D87C621F2656D3DA7DCE234A4C3FAC", hash_generated_method = "597B14C1C6C47DDC7837E3C6B2E0CC87")
             @Override
             public K getKey() {
-                K varB4EAC82CA7396A68D541C85D26508E83_124508168 = null; //Variable for return #1
+                K varB4EAC82CA7396A68D541C85D26508E83_124508168 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_124508168 = e.getKey();
-                varB4EAC82CA7396A68D541C85D26508E83_124508168.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_124508168.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_124508168;
-                // ---------- Original Method ----------
-                //return e.getKey();
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.428 -0400", hash_original_method = "8EF21B2292AA31AAE181B3282F3F0262", hash_generated_method = "12C1267CC104C83310899332492DEEF7")
             @Override
             public V getValue() {
-                V varB4EAC82CA7396A68D541C85D26508E83_366433393 = null; //Variable for return #1
+                V varB4EAC82CA7396A68D541C85D26508E83_366433393 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_366433393 = e.getValue();
-                varB4EAC82CA7396A68D541C85D26508E83_366433393.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_366433393.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_366433393;
-                // ---------- Original Method ----------
-                //return e.getValue();
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.429 -0400", hash_original_method = "22C63BC622BE9DF4D2BED624BDB5B6B5", hash_generated_method = "77FB9318F82DEBE7F0956CD37B9A0271")
             @Override
             public V setValue(V obj) {
-                V varB4EAC82CA7396A68D541C85D26508E83_1625010887 = null; //Variable for return #1
+                V varB4EAC82CA7396A68D541C85D26508E83_1625010887 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_1625010887 = e.setValue(checkType(obj, valueType));
                 addTaint(obj.getTaint());
-                varB4EAC82CA7396A68D541C85D26508E83_1625010887.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1625010887.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1625010887;
-                // ---------- Original Method ----------
-                //return e.setValue(checkType(obj, valueType));
+                
+                
             }
 
             
@@ -5117,8 +5161,8 @@ public class Collections {
                 addTaint(obj.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1727639558 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1727639558;
-                // ---------- Original Method ----------
-                //return e.equals(obj);
+                
+                
             }
 
             
@@ -5128,8 +5172,8 @@ public class Collections {
                 int varB0D5769FD2A442E362DC4438ABD8230C_1154569933 = (e.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1074257212 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1074257212;
-                // ---------- Original Method ----------
-                //return e.hashCode();
+                
+                
             }
 
             
@@ -5149,28 +5193,28 @@ public class Collections {
             public  CheckedEntrySet(Set<Map.Entry<K, V>> s, Class<V> valueType) {
                 this.s = s;
                 this.valueType = valueType;
-                // ---------- Original Method ----------
-                //this.s = s;
-                //this.valueType = valueType;
+                
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.431 -0400", hash_original_method = "448F3F9279BA75C161BF1A7F97E105A4", hash_generated_method = "236663B6E2B73C7EA0FDE0E515FCC3E7")
             @Override
             public Iterator<Map.Entry<K, V>> iterator() {
-                Iterator<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_1937390880 = null; //Variable for return #1
+                Iterator<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_1937390880 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_1937390880 = new CheckedEntryIterator<K, V>(s.iterator(), valueType);
-                varB4EAC82CA7396A68D541C85D26508E83_1937390880.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1937390880.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1937390880;
-                // ---------- Original Method ----------
-                //return new CheckedEntryIterator<K, V>(s.iterator(), valueType);
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.432 -0400", hash_original_method = "0FB4B292E50A952F877CB518E0A96CF9", hash_generated_method = "9ED6DA99839E4954287A0D0181ECC780")
             @Override
             public Object[] toArray() {
-                Object[] varB4EAC82CA7396A68D541C85D26508E83_30918473 = null; //Variable for return #1
+                Object[] varB4EAC82CA7396A68D541C85D26508E83_30918473 = null; 
                 int thisSize = size();
                 Object[] array = new Object[thisSize];
                 Iterator<?> it = iterator();
@@ -5178,19 +5222,19 @@ public class Collections {
                     int i = 0;
                     {
                         array[i] = it.next();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_30918473 = array;
-                varB4EAC82CA7396A68D541C85D26508E83_30918473.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_30918473.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_30918473;
-                // ---------- Original Method ----------
-                //int thisSize = size();
-                //Object[] array = new Object[thisSize];
-                //Iterator<?> it = iterator();
-                //for (int i = 0; i < thisSize; i++) {
-                    //array[i] = it.next();
-                //}
-                //return array;
+                
+                
+                
+                
+                
+                    
+                
+                
             }
 
             
@@ -5198,40 +5242,40 @@ public class Collections {
             @SuppressWarnings("unchecked")
             @Override
             public <T> T[] toArray(T[] array) {
-                T[] varB4EAC82CA7396A68D541C85D26508E83_1246664879 = null; //Variable for return #1
+                T[] varB4EAC82CA7396A68D541C85D26508E83_1246664879 = null; 
                 int thisSize = size();
                 {
                     Class<?> ct = array.getClass().getComponentType();
                     array = (T[]) Array.newInstance(ct, thisSize);
-                } //End block
+                } 
                 Iterator<?> it = iterator();
                 {
                     int i = 0;
                     {
                         array[i] = (T) it.next();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     array[thisSize] = null;
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1246664879 = array;
                 addTaint(array[0].getTaint());
-                varB4EAC82CA7396A68D541C85D26508E83_1246664879.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1246664879.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1246664879;
-                // ---------- Original Method ----------
-                //int thisSize = size();
-                //if (array.length < thisSize) {
-                    //Class<?> ct = array.getClass().getComponentType();
-                    //array = (T[]) Array.newInstance(ct, thisSize);
-                //}
-                //Iterator<?> it = iterator();
-                //for (int i = 0; i < thisSize; i++) {
-                    //array[i] = (T) it.next();
-                //}
-                //if (thisSize < array.length) {
-                    //array[thisSize] = null;
-                //}
-                //return array;
+                
+                
+                
+                    
+                    
+                
+                
+                
+                    
+                
+                
+                    
+                
+                
             }
 
             
@@ -5242,8 +5286,8 @@ public class Collections {
                 addTaint(c.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1026788418 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1026788418;
-                // ---------- Original Method ----------
-                //return s.retainAll(c);
+                
+                
             }
 
             
@@ -5254,8 +5298,8 @@ public class Collections {
                 addTaint(c.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_725090727 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_725090727;
-                // ---------- Original Method ----------
-                //return s.removeAll(c);
+                
+                
             }
 
             
@@ -5266,8 +5310,8 @@ public class Collections {
                 addTaint(c.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_191242905 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_191242905;
-                // ---------- Original Method ----------
-                //return s.containsAll(c);
+                
+                
             }
 
             
@@ -5278,8 +5322,8 @@ public class Collections {
                 addTaint(c.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1005308872 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1005308872;
-                // ---------- Original Method ----------
-                //throw new UnsupportedOperationException();
+                
+                
             }
 
             
@@ -5290,8 +5334,8 @@ public class Collections {
                 addTaint(o.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_640403942 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_640403942;
-                // ---------- Original Method ----------
-                //return s.remove(o);
+                
+                
             }
 
             
@@ -5302,8 +5346,8 @@ public class Collections {
                 addTaint(o.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_412948894 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_412948894;
-                // ---------- Original Method ----------
-                //return s.contains(o);
+                
+                
             }
 
             
@@ -5314,8 +5358,8 @@ public class Collections {
                 addTaint(o.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1495853696 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1495853696;
-                // ---------- Original Method ----------
-                //throw new UnsupportedOperationException();
+                
+                
             }
 
             
@@ -5325,8 +5369,8 @@ public class Collections {
                 boolean var33F6A8EED6267D5B4CCD3EAC631C616A_426067973 = (s.isEmpty());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_378256051 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_378256051;
-                // ---------- Original Method ----------
-                //return s.isEmpty();
+                
+                
             }
 
             
@@ -5334,8 +5378,8 @@ public class Collections {
             @Override
             public void clear() {
                 s.clear();
-                // ---------- Original Method ----------
-                //s.clear();
+                
+                
             }
 
             
@@ -5345,8 +5389,8 @@ public class Collections {
                 int var8151828880546AEA1C19BE7C52EE5E09_1580806500 = (s.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1432156876 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1432156876;
-                // ---------- Original Method ----------
-                //return s.size();
+                
+                
             }
 
             
@@ -5356,8 +5400,8 @@ public class Collections {
                 int varE2FC7D6C989F81F3F30CE1BE213D1E3F_2114234662 = (s.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1746960721 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1746960721;
-                // ---------- Original Method ----------
-                //return s.hashCode();
+                
+                
             }
 
             
@@ -5368,8 +5412,8 @@ public class Collections {
                 addTaint(object.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1309344284 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1309344284;
-                // ---------- Original Method ----------
-                //return s.equals(object);
+                
+                
             }
 
             
@@ -5386,9 +5430,9 @@ public class Collections {
                         Class<V> valueType) {
                     this.i = i;
                     this.valueType = valueType;
-                    // ---------- Original Method ----------
-                    //this.i = i;
-                    //this.valueType = valueType;
+                    
+                    
+                    
                 }
 
                 
@@ -5398,8 +5442,8 @@ public class Collections {
                     boolean var048C390D087BEDAABDA4F669A9DA628E_1070484121 = (i.hasNext());
                     boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2072687645 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_2072687645;
-                    // ---------- Original Method ----------
-                    //return i.hasNext();
+                    
+                    
                 }
 
                 
@@ -5407,20 +5451,20 @@ public class Collections {
                 @Override
                 public void remove() {
                     i.remove();
-                    // ---------- Original Method ----------
-                    //i.remove();
+                    
+                    
                 }
 
                 
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.447 -0400", hash_original_method = "4D16E0BB01C90351B8312D1A4B7DB5F2", hash_generated_method = "AF8908010A8E1F576827CEE86FEDD456")
                 @Override
                 public Map.Entry<K, V> next() {
-                    Map.Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1261423997 = null; //Variable for return #1
+                    Map.Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1261423997 = null; 
                     varB4EAC82CA7396A68D541C85D26508E83_1261423997 = new CheckedEntry<K, V>(i.next(), valueType);
-                    varB4EAC82CA7396A68D541C85D26508E83_1261423997.addTaint(getTaint()); //Add taint from parent
+                    varB4EAC82CA7396A68D541C85D26508E83_1261423997.addTaint(getTaint()); 
                     return varB4EAC82CA7396A68D541C85D26508E83_1261423997;
-                    // ---------- Original Method ----------
-                    //return new CheckedEntry<K, V>(i.next(), valueType);
+                    
+                    
                 }
 
                 
@@ -5449,86 +5493,86 @@ public class Collections {
             super(s, type);
             this.ss = s;
             addTaint(type.getTaint());
-            // ---------- Original Method ----------
-            //this.ss = s;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.448 -0400", hash_original_method = "8514D9255D678B041F55D03BA11DCA3B", hash_generated_method = "B6C4771AD5771370073DD301B020F186")
         @Override
         public Comparator<? super E> comparator() {
-            Comparator<? super E> varB4EAC82CA7396A68D541C85D26508E83_1838047120 = null; //Variable for return #1
+            Comparator<? super E> varB4EAC82CA7396A68D541C85D26508E83_1838047120 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1838047120 = ss.comparator();
-            varB4EAC82CA7396A68D541C85D26508E83_1838047120.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1838047120.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1838047120;
-            // ---------- Original Method ----------
-            //return ss.comparator();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.449 -0400", hash_original_method = "82539AB1166DFBB28D0E3DC3D0A43121", hash_generated_method = "367C51E43BDB78E5E2C35C046DF9BE8D")
         @Override
         public SortedSet<E> subSet(E fromElement, E toElement) {
-            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_1359462010 = null; //Variable for return #1
+            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_1359462010 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1359462010 = new CheckedSortedSet<E>(ss.subSet(fromElement, toElement),
                     type);
             addTaint(fromElement.getTaint());
             addTaint(toElement.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1359462010.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1359462010.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1359462010;
-            // ---------- Original Method ----------
-            //return new CheckedSortedSet<E>(ss.subSet(fromElement, toElement),
-                    //type);
+            
+            
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.449 -0400", hash_original_method = "68D546866615C37E07B8E968E3813E84", hash_generated_method = "F43BC5C40E829095910FD1032DE4AD48")
         @Override
         public SortedSet<E> headSet(E toElement) {
-            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_1022082257 = null; //Variable for return #1
+            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_1022082257 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1022082257 = new CheckedSortedSet<E>(ss.headSet(toElement), type);
             addTaint(toElement.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1022082257.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1022082257.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1022082257;
-            // ---------- Original Method ----------
-            //return new CheckedSortedSet<E>(ss.headSet(toElement), type);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.450 -0400", hash_original_method = "B0B4B667BF95B9D9A3CD3F7FE8BEFA1B", hash_generated_method = "78CE3FF0946EE47A19E5F52A6089468E")
         @Override
         public SortedSet<E> tailSet(E fromElement) {
-            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_1862286996 = null; //Variable for return #1
+            SortedSet<E> varB4EAC82CA7396A68D541C85D26508E83_1862286996 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1862286996 = new CheckedSortedSet<E>(ss.tailSet(fromElement), type);
             addTaint(fromElement.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1862286996.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1862286996.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1862286996;
-            // ---------- Original Method ----------
-            //return new CheckedSortedSet<E>(ss.tailSet(fromElement), type);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.450 -0400", hash_original_method = "6BB6C51843B41CC0DCB5509A79DBA008", hash_generated_method = "567232A4718D41FF7A8E4A8DFF6D0432")
         @Override
         public E first() {
-            E varB4EAC82CA7396A68D541C85D26508E83_1657011994 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1657011994 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1657011994 = ss.first();
-            varB4EAC82CA7396A68D541C85D26508E83_1657011994.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1657011994.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1657011994;
-            // ---------- Original Method ----------
-            //return ss.first();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.451 -0400", hash_original_method = "AAC5DDE787ACA85752B94AAB77F6B0F8", hash_generated_method = "96A97BBEB60A18459F4A64F2D4B0E5F5")
         @Override
         public E last() {
-            E varB4EAC82CA7396A68D541C85D26508E83_1648212256 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1648212256 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1648212256 = ss.last();
-            varB4EAC82CA7396A68D541C85D26508E83_1648212256.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1648212256.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1648212256;
-            // ---------- Original Method ----------
-            //return ss.last();
+            
+            
         }
 
         
@@ -5550,84 +5594,84 @@ public class Collections {
             this.sm = m;
             addTaint(keyType.getTaint());
             addTaint(valueType.getTaint());
-            // ---------- Original Method ----------
-            //this.sm = m;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.452 -0400", hash_original_method = "E5FDBCC6560BE7E99B2D2F850BD84149", hash_generated_method = "59D43CFD4544AF1689567AFB2487EEF5")
         @Override
         public Comparator<? super K> comparator() {
-            Comparator<? super K> varB4EAC82CA7396A68D541C85D26508E83_1892675153 = null; //Variable for return #1
+            Comparator<? super K> varB4EAC82CA7396A68D541C85D26508E83_1892675153 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1892675153 = sm.comparator();
-            varB4EAC82CA7396A68D541C85D26508E83_1892675153.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1892675153.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1892675153;
-            // ---------- Original Method ----------
-            //return sm.comparator();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.452 -0400", hash_original_method = "65DE11E398BB209CD2689071C041161A", hash_generated_method = "779BE6F1A001A6DFE1982F5E793F3D5A")
         @Override
         public SortedMap<K, V> subMap(K fromKey, K toKey) {
-            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_642349574 = null; //Variable for return #1
+            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_642349574 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_642349574 = new CheckedSortedMap<K, V>(sm.subMap(fromKey, toKey), keyType, valueType);
             addTaint(fromKey.getTaint());
             addTaint(toKey.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_642349574.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_642349574.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_642349574;
-            // ---------- Original Method ----------
-            //return new CheckedSortedMap<K, V>(sm.subMap(fromKey, toKey), keyType, valueType);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.453 -0400", hash_original_method = "2C5724B582D2FAB5716323DB894A671D", hash_generated_method = "C92EC3423236AF2C96A11C27FDE423C5")
         @Override
         public SortedMap<K, V> headMap(K toKey) {
-            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_253814347 = null; //Variable for return #1
+            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_253814347 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_253814347 = new CheckedSortedMap<K, V>(sm.headMap(toKey), keyType, valueType);
             addTaint(toKey.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_253814347.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_253814347.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_253814347;
-            // ---------- Original Method ----------
-            //return new CheckedSortedMap<K, V>(sm.headMap(toKey), keyType, valueType);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.454 -0400", hash_original_method = "2879524DD09B17D2FCB7AD1626D24618", hash_generated_method = "B7A344660D4FB4812683B54D22450817")
         @Override
         public SortedMap<K, V> tailMap(K fromKey) {
-            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_955416550 = null; //Variable for return #1
+            SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_955416550 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_955416550 = new CheckedSortedMap<K, V>(sm.tailMap(fromKey), keyType, valueType);
             addTaint(fromKey.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_955416550.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_955416550.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_955416550;
-            // ---------- Original Method ----------
-            //return new CheckedSortedMap<K, V>(sm.tailMap(fromKey), keyType, valueType);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.455 -0400", hash_original_method = "B25E8C7440C76FBF812FF7AC9CA9D776", hash_generated_method = "E853C99846F0D22575FDC6771312438C")
         @Override
         public K firstKey() {
-            K varB4EAC82CA7396A68D541C85D26508E83_835416369 = null; //Variable for return #1
+            K varB4EAC82CA7396A68D541C85D26508E83_835416369 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_835416369 = sm.firstKey();
-            varB4EAC82CA7396A68D541C85D26508E83_835416369.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_835416369.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_835416369;
-            // ---------- Original Method ----------
-            //return sm.firstKey();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.456 -0400", hash_original_method = "00E9126A84DE8B71214859A17DA6BD2E", hash_generated_method = "B75F3CC208F0E19692E5B24E10B29431")
         @Override
         public K lastKey() {
-            K varB4EAC82CA7396A68D541C85D26508E83_1106364668 = null; //Variable for return #1
+            K varB4EAC82CA7396A68D541C85D26508E83_1106364668 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1106364668 = sm.lastKey();
-            varB4EAC82CA7396A68D541C85D26508E83_1106364668.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1106364668.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1106364668;
-            // ---------- Original Method ----------
-            //return sm.lastKey();
+            
+            
         }
 
         
@@ -5646,8 +5690,8 @@ public class Collections {
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_799695461 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_799695461;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -5655,8 +5699,8 @@ public class Collections {
         @Override
         public Object next() {
         	throw new NoSuchElementException();
-            // ---------- Original Method ----------
-            //throw new NoSuchElementException();
+            
+            
         }
 
         
@@ -5664,8 +5708,8 @@ public class Collections {
         @Override
         public void remove() {
         	throw new IllegalStateException();
-            // ---------- Original Method ----------
-            //throw new IllegalStateException();
+            
+            
         }
 
         
@@ -5678,8 +5722,8 @@ public class Collections {
         public boolean hasMoreElements() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_923760985 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_923760985;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -5687,8 +5731,8 @@ public class Collections {
         @Override
         public Object nextElement() {
         	throw new NoSuchElementException();
-            // ---------- Original Method ----------
-            //throw new NoSuchElementException();
+            
+            
         }
 
         

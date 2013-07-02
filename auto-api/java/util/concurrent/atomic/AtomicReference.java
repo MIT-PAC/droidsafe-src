@@ -1,11 +1,11 @@
 package java.util.concurrent.atomic;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import sun.misc.Unsafe;
 
@@ -17,33 +17,33 @@ public class AtomicReference<V> implements java.io.Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.547 -0400", hash_original_method = "BDBA762FEAF5C103321D9E7FB6720E1A", hash_generated_method = "7EDDAFC99DF1D5B5D132C5D542902760")
     public  AtomicReference(V initialValue) {
         value = initialValue;
-        // ---------- Original Method ----------
-        //value = initialValue;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.547 -0400", hash_original_method = "F97CF4B9707D277EAF947474019CC6FE", hash_generated_method = "92D86C2B7F31D409EA2507200825BA47")
     public  AtomicReference() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.549 -0400", hash_original_method = "479D74F52EAA9F8F31AB11658696490B", hash_generated_method = "00AC5170AB1350607519DFED9AEFDC1B")
     public final V get() {
-        V varB4EAC82CA7396A68D541C85D26508E83_1208979903 = null; //Variable for return #1
+        V varB4EAC82CA7396A68D541C85D26508E83_1208979903 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1208979903 = value;
-        varB4EAC82CA7396A68D541C85D26508E83_1208979903.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1208979903.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1208979903;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.550 -0400", hash_original_method = "1165CC32E796F42C2841421B342AA16F", hash_generated_method = "9C8571AF8F60E12C4A3246C4368A02A4")
     public final void set(V newValue) {
         value = newValue;
-        // ---------- Original Method ----------
-        //value = newValue;
+        
+        
     }
 
     
@@ -51,8 +51,8 @@ public class AtomicReference<V> implements java.io.Serializable {
     public final void lazySet(V newValue) {
         unsafe.putOrderedObject(this, valueOffset, newValue);
         addTaint(newValue.getTaint());
-        // ---------- Original Method ----------
-        //unsafe.putOrderedObject(this, valueOffset, newValue);
+        
+        
     }
 
     
@@ -63,8 +63,8 @@ public class AtomicReference<V> implements java.io.Serializable {
         addTaint(update.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_76627074 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_76627074;
-        // ---------- Original Method ----------
-        //return unsafe.compareAndSwapObject(this, valueOffset, expect, update);
+        
+        
     }
 
     
@@ -75,41 +75,42 @@ public class AtomicReference<V> implements java.io.Serializable {
         addTaint(update.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1524662308 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1524662308;
-        // ---------- Original Method ----------
-        //return unsafe.compareAndSwapObject(this, valueOffset, expect, update);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.556 -0400", hash_original_method = "FD7BCDEFF552AB71FCB964A4983AD19B", hash_generated_method = "185327A375865F2876D521018AB4450C")
     public final V getAndSet(V newValue) {
-        V varB4EAC82CA7396A68D541C85D26508E83_1023511392 = null; //Variable for return #1
+        V varB4EAC82CA7396A68D541C85D26508E83_1023511392 = null; 
         {
             V x = get();
             {
                 boolean varE8F6CAB6887A1A34DFF41A32382DB312_476547590 = (compareAndSet(x, newValue));
                 varB4EAC82CA7396A68D541C85D26508E83_1023511392 = x;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(newValue.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1023511392.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1023511392.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1023511392;
-        // ---------- Original Method ----------
-        //while (true) {
-            //V x = get();
-            //if (compareAndSet(x, newValue))
-                //return x;
-        //}
+        
+        
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.557 -0400", hash_original_method = "2EE45E1B1B1F9797465CA7143D35DB76", hash_generated_method = "2C0F8B98D7312E01C4EAC576EB723BB3")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1446084627 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1446084627 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1446084627 = String.valueOf(get());
-        varB4EAC82CA7396A68D541C85D26508E83_1446084627.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1446084627.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1446084627;
-        // ---------- Original Method ----------
-        //return String.valueOf(get());
+        
+        
     }
 
     

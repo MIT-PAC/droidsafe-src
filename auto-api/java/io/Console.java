@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Formatter;
 import libcore.io.ErrnoException;
@@ -24,9 +24,9 @@ public final class Console implements Flushable {
     private  Console(InputStream in, OutputStream out) throws IOException {
         this.reader = new ConsoleReader(in);
         this.writer = new ConsoleWriter(out);
-        // ---------- Original Method ----------
-        //this.reader = new ConsoleReader(in);
-        //this.writer = new ConsoleWriter(out);
+        
+        
+        
     }
 
     
@@ -35,6 +35,7 @@ public final class Console implements Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Console makeConsole() {
         if (!Libcore.os.isatty(FileDescriptor.in) || !Libcore.os.isatty(FileDescriptor.out)) {
             return null;
@@ -47,98 +48,101 @@ public final class Console implements Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.599 -0400", hash_original_method = "F7724246D188F0DD4BA6BF2BF289AD37", hash_generated_method = "4D7B28978F39C8925B3234F446DAAC01")
     public void flush() {
         writer.flush();
-        // ---------- Original Method ----------
-        //writer.flush();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.600 -0400", hash_original_method = "92692099E41FF98F0151DCCF5CDE9533", hash_generated_method = "5D1BC07F296CBB14886E4AC9CFF6B538")
     public Console format(String format, Object... args) {
-        Console varB4EAC82CA7396A68D541C85D26508E83_631302059 = null; //Variable for return #1
+        Console varB4EAC82CA7396A68D541C85D26508E83_631302059 = null; 
         Formatter f = new Formatter(writer);
         f.format(format, args);
         f.flush();
         varB4EAC82CA7396A68D541C85D26508E83_631302059 = this;
         addTaint(format.getTaint());
         addTaint(args[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_631302059.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_631302059.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_631302059;
-        // ---------- Original Method ----------
-        //Formatter f = new Formatter(writer);
-        //f.format(format, args);
-        //f.flush();
-        //return this;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.600 -0400", hash_original_method = "DF820A490F330AE30ADE40F19C61D720", hash_generated_method = "D8A084F7E5FD624EF4CA5B6E1D0B7BFC")
     public Console printf(String format, Object... args) {
-        Console varB4EAC82CA7396A68D541C85D26508E83_1759731471 = null; //Variable for return #1
+        Console varB4EAC82CA7396A68D541C85D26508E83_1759731471 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1759731471 = format(format, args);
         addTaint(format.getTaint());
         addTaint(args[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1759731471.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1759731471.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1759731471;
-        // ---------- Original Method ----------
-        //return format(format, args);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.601 -0400", hash_original_method = "6872D36E6DE03121BD2812355740CF6B", hash_generated_method = "3A15D4969348E43CBFAC414C48B49CFE")
     public Reader reader() {
-        Reader varB4EAC82CA7396A68D541C85D26508E83_1862069813 = null; //Variable for return #1
+        Reader varB4EAC82CA7396A68D541C85D26508E83_1862069813 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1862069813 = reader;
-        varB4EAC82CA7396A68D541C85D26508E83_1862069813.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1862069813.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1862069813;
-        // ---------- Original Method ----------
-        //return reader;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.602 -0400", hash_original_method = "1B0888B6F2590EE27349101E4345456E", hash_generated_method = "CB8DF427DA0D39B3790BF2AFCF9E9FB5")
     public String readLine() {
-        String varB4EAC82CA7396A68D541C85D26508E83_933132953 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_933132953 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_933132953 = reader.readLine();
-        } //End block
+        } 
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new IOError(e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_933132953.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_933132953.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_933132953;
-        // ---------- Original Method ----------
-        //try {
-            //return reader.readLine();
-        //} catch (IOException e) {
-            //throw new IOError(e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.602 -0400", hash_original_method = "C57E41A9A92416727FE090794383909A", hash_generated_method = "E7F08A844C57BFA746FB05E9264C9399")
     public String readLine(String format, Object... args) {
-        String varB4EAC82CA7396A68D541C85D26508E83_202137959 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_202137959 = null; 
         {
             format(format, args);
             varB4EAC82CA7396A68D541C85D26508E83_202137959 = readLine();
-        } //End block
+        } 
         addTaint(format.getTaint());
         addTaint(args[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_202137959.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_202137959.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_202137959;
-        // ---------- Original Method ----------
-        //synchronized (CONSOLE_LOCK) {
-            //format(format, args);
-            //return readLine();
-        //}
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.603 -0400", hash_original_method = "762DE6C819CD7377980A2753C88FB126", hash_generated_method = "2E15C2BD04DC27DD530DF41DF4623967")
     public char[] readPassword() {
         {
@@ -149,29 +153,30 @@ public final class Console implements Flushable {
                 writer.println();
                 {
                     Object var9AA63BC8A85E36AA198831074E784F9B_421089592 = (password.toCharArray());
-                } //End flattened ternary
-            } //End block
+                } 
+            } 
             finally 
             {
                 setEcho(true, previousState);
-            } //End block
-        } //End block
+            } 
+        } 
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_2017493631 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_2017493631;
-        // ---------- Original Method ----------
-        //synchronized (CONSOLE_LOCK) {
-            //int previousState = setEcho(false, 0);
-            //try {
-                //String password = readLine();
-                //writer.println(); 
-                //return (password == null) ? null : password.toCharArray();
-            //} finally {
-                //setEcho(true, previousState);
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int setEcho(boolean on, int previousState) {
         try {
             return setEchoImpl(on, previousState);
@@ -191,27 +196,27 @@ public final class Console implements Flushable {
         {
             format(format, args);
             char[] varFE64C0D15C2E24F41623FEB6BE40A9A5_2134479170 = (readPassword());
-        } //End block
+        } 
         addTaint(format.getTaint());
         addTaint(args[0].getTaint());
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_875617723 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_875617723;
-        // ---------- Original Method ----------
-        //synchronized (CONSOLE_LOCK) {
-            //format(format, args);
-            //return readPassword();
-        //}
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.604 -0400", hash_original_method = "EF4D37EF542F65995124A506A5A02FEA", hash_generated_method = "71ECE298A66C2DE04274070D5EC064B1")
     public PrintWriter writer() {
-        PrintWriter varB4EAC82CA7396A68D541C85D26508E83_1516536533 = null; //Variable for return #1
+        PrintWriter varB4EAC82CA7396A68D541C85D26508E83_1516536533 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1516536533 = writer;
-        varB4EAC82CA7396A68D541C85D26508E83_1516536533.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1516536533.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1516536533;
-        // ---------- Original Method ----------
-        //return writer;
+        
+        
     }
 
     
@@ -222,15 +227,15 @@ public final class Console implements Flushable {
             super(new InputStreamReader(in, System.getProperty("file.encoding")), 256);
             lock = CONSOLE_LOCK;
             addTaint(in.getTaint());
-            // ---------- Original Method ----------
-            //lock = CONSOLE_LOCK;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.605 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
         @Override
         public void close() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -245,8 +250,8 @@ public final class Console implements Flushable {
             super(out, true);
             lock = CONSOLE_LOCK;
             addTaint(out.getTaint());
-            // ---------- Original Method ----------
-            //lock = CONSOLE_LOCK;
+            
+            
         }
 
         
@@ -254,8 +259,8 @@ public final class Console implements Flushable {
         @Override
         public void close() {
             flush();
-            // ---------- Original Method ----------
-            //flush();
+            
+            
         }
 
         

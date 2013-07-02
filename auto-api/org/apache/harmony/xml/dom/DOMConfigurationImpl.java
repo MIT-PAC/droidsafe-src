@@ -1,11 +1,11 @@
 package org.apache.harmony.xml.dom;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
@@ -55,7 +55,7 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.830 -0400", hash_original_method = "4D153F5051BE9FB53ACB86332ED9FE59", hash_generated_method = "4D153F5051BE9FB53ACB86332ED9FE59")
     public DOMConfigurationImpl ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -67,9 +67,9 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
         addTaint(value.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1366675750 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1366675750;
-        // ---------- Original Method ----------
-        //Parameter parameter = PARAMETERS.get(name);
-        //return parameter != null && parameter.canSet(this, value);
+        
+        
+        
     }
 
     
@@ -78,63 +78,63 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
         Parameter parameter = PARAMETERS.get(name);
         {
             if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.NOT_FOUND_ERR, "No such parameter: " + name);
-        } //End block
+        } 
         try 
         {
             parameter.set(this, value);
-        } //End block
+        } 
         catch (NullPointerException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.TYPE_MISMATCH_ERR,
                     "Null not allowed for " + name);
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.TYPE_MISMATCH_ERR,
                     "Invalid type for " + name + ": " + value.getClass());
-        } //End block
+        } 
         addTaint(name.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //Parameter parameter = PARAMETERS.get(name);
-        //if (parameter == null) {
-            //throw new DOMException(DOMException.NOT_FOUND_ERR, "No such parameter: " + name);
-        //}
-        //try {
-            //parameter.set(this, value);
-        //} catch (NullPointerException e) {
-            //throw new DOMException(DOMException.TYPE_MISMATCH_ERR,
-                    //"Null not allowed for " + name);
-        //} catch (ClassCastException e) {
-            //throw new DOMException(DOMException.TYPE_MISMATCH_ERR,
-                    //"Invalid type for " + name + ": " + value.getClass());
-        //}
+        
+        
+        
+            
+        
+        
+            
+        
+            
+                    
+        
+            
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.832 -0400", hash_original_method = "4C81A8ACD622F0BCFE1551B59FC6CCCF", hash_generated_method = "C66CA9F918D3DDBC83F0C6758652214D")
     public Object getParameter(String name) throws DOMException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_745393980 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_745393980 = null; 
         Parameter parameter = PARAMETERS.get(name);
         {
             if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.NOT_FOUND_ERR, "No such parameter: " + name);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_745393980 = parameter.get(this);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_745393980.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_745393980.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_745393980;
-        // ---------- Original Method ----------
-        //Parameter parameter = PARAMETERS.get(name);
-        //if (parameter == null) {
-            //throw new DOMException(DOMException.NOT_FOUND_ERR, "No such parameter: " + name);
-        //}
-        //return parameter.get(this);
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.833 -0400", hash_original_method = "95541708528899B2117FFEEED54CDAAC", hash_generated_method = "3C5EDF49C18858C079A173FD602A9729")
     public DOMStringList getParameterNames() {
-        DOMStringList varB4EAC82CA7396A68D541C85D26508E83_94436603 = null; //Variable for return #1
+        DOMStringList varB4EAC82CA7396A68D541C85D26508E83_94436603 = null; 
         final String[] result = PARAMETERS.keySet().toArray(new String[PARAMETERS.size()]);
         varB4EAC82CA7396A68D541C85D26508E83_94436603 = new DOMStringList() {
             public String item(int index) {
@@ -147,21 +147,21 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
                 return PARAMETERS.containsKey(str); 
             }
         };
-        varB4EAC82CA7396A68D541C85D26508E83_94436603.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_94436603.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_94436603;
-        // ---------- Original Method ----------
-        //final String[] result = PARAMETERS.keySet().toArray(new String[PARAMETERS.size()]);
-        //return new DOMStringList() {
-            //public String item(int index) {
-                //return index < result.length ? result[index] : null;
-            //}
-            //public int getLength() {
-                //return result.length;
-            //}
-            //public boolean contains(String str) {
-                //return PARAMETERS.containsKey(str); 
-            //}
-        //};
+        
+        
+        
+            
+                
+            
+            
+                
+            
+            
+                
+            
+        
     }
 
     
@@ -169,10 +169,10 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
     public void normalize(Node node) {
         {
             Object var09E3B15CD8604B5CA0883ABFA37862BC_1704244164 = (node.getNodeType());
-            //Begin case Node.CDATA_SECTION_NODE 
+            
             CDATASectionImpl cdata = (CDATASectionImpl) node;
-            //End case Node.CDATA_SECTION_NODE 
-            //Begin case Node.CDATA_SECTION_NODE 
+            
+            
             {
                 {
                     boolean varF53537D16E4DE2BC176C0CE1403CCB89_1744678036 = (cdata.needsSplitting());
@@ -180,90 +180,90 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
                         {
                             cdata.split();
                             report(DOMError.SEVERITY_WARNING, "cdata-sections-splitted");
-                        } //End block
+                        } 
                         {
                             report(DOMError.SEVERITY_ERROR, "wf-invalid-character");
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 checkTextValidity(cdata.buffer);
-            } //End block
-            //End case Node.CDATA_SECTION_NODE 
-            //Begin case Node.CDATA_SECTION_NODE 
+            } 
+            
+            
             node = cdata.replaceWithText();
-            //End case Node.CDATA_SECTION_NODE 
-            //Begin case Node.TEXT_NODE 
+            
+            
             TextImpl text = (TextImpl) node;
-            //End case Node.TEXT_NODE 
-            //Begin case Node.TEXT_NODE 
+            
+            
             text = text.minimize();
-            //End case Node.TEXT_NODE 
-            //Begin case Node.TEXT_NODE 
+            
+            
             {
                 checkTextValidity(text.buffer);
-            } //End block
-            //End case Node.TEXT_NODE 
-            //Begin case Node.COMMENT_NODE 
+            } 
+            
+            
             CommentImpl comment = (CommentImpl) node;
-            //End case Node.COMMENT_NODE 
-            //Begin case Node.COMMENT_NODE 
+            
+            
             {
                 comment.getParentNode().removeChild(comment);
-            } //End block
-            //End case Node.COMMENT_NODE 
-            //Begin case Node.COMMENT_NODE 
+            } 
+            
+            
             {
                 boolean varBA396D41C31642F943B18CB50D39518A_1511497304 = (comment.containsDashDash());
                 {
                     report(DOMError.SEVERITY_ERROR, "wf-invalid-character");
-                } //End block
-            } //End collapsed parenthetic
-            //End case Node.COMMENT_NODE 
-            //Begin case Node.COMMENT_NODE 
+                } 
+            } 
+            
+            
             checkTextValidity(comment.buffer);
-            //End case Node.COMMENT_NODE 
-            //Begin case Node.PROCESSING_INSTRUCTION_NODE 
+            
+            
             checkTextValidity(((ProcessingInstructionImpl) node).getData());
-            //End case Node.PROCESSING_INSTRUCTION_NODE 
-            //Begin case Node.ATTRIBUTE_NODE 
+            
+            
             checkTextValidity(((AttrImpl) node).getValue());
-            //End case Node.ATTRIBUTE_NODE 
-            //Begin case Node.ELEMENT_NODE 
+            
+            
             ElementImpl element = (ElementImpl) node;
-            //End case Node.ELEMENT_NODE 
-            //Begin case Node.ELEMENT_NODE 
+            
+            
             NamedNodeMap attributes = element.getAttributes();
-            //End case Node.ELEMENT_NODE 
-            //Begin case Node.ELEMENT_NODE 
+            
+            
             {
                 int i = 0;
                 boolean varB52A5F5C76706054FE03857094E040A4_611730192 = (i < attributes.getLength());
                 {
                     normalize(attributes.item(i));
-                } //End block
-            } //End collapsed parenthetic
-            //End case Node.ELEMENT_NODE 
-            //Begin case Node.DOCUMENT_NODE Node.DOCUMENT_FRAGMENT_NODE 
+                } 
+            } 
+            
+            
             Node next = null;
-            //End case Node.DOCUMENT_NODE Node.DOCUMENT_FRAGMENT_NODE 
-            //Begin case Node.DOCUMENT_NODE Node.DOCUMENT_FRAGMENT_NODE 
+            
+            
             {
                 Node child = node.getFirstChild();
                 child = next;
                 {
                     next = child.getNextSibling();
                     normalize(child);
-                } //End block
-            } //End collapsed parenthetic
-            //End case Node.DOCUMENT_NODE Node.DOCUMENT_FRAGMENT_NODE 
-            //Begin case default 
+                } 
+            } 
+            
+            
             if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.NOT_SUPPORTED_ERR,
                         "Unsupported node type " + node.getNodeType());
-            //End case default 
-        } //End collapsed parenthetic
+            
+        } 
         addTaint(node.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -273,13 +273,13 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
             boolean varDE0C170823F5DE2F72932472C20834E2_196618990 = (wellFormed && !isValid(s));
             {
                 report(DOMError.SEVERITY_ERROR, "wf-invalid-character");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //if (wellFormed && !isValid(s)) {
-            //report(DOMError.SEVERITY_ERROR, "wf-invalid-character");
-        //}
+        
+        
+            
+        
     }
 
     
@@ -293,22 +293,22 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
                 boolean valid = c == 0x9 || c == 0xA || c == 0xD
                     || (c >= 0x20 && c <= 0xd7ff)
                     || (c >= 0xe000 && c <= 0xfffd);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(text.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1283470308 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1283470308;
-        // ---------- Original Method ----------
-        //for (int i = 0; i < text.length(); i++) {
-            //char c = text.charAt(i);
-            //boolean valid = c == 0x9 || c == 0xA || c == 0xD
-                    //|| (c >= 0x20 && c <= 0xd7ff)
-                    //|| (c >= 0xe000 && c <= 0xfffd);
-            //if (!valid) {
-                //return false;
-            //}
-        //}
-        //return true;
+        
+        
+            
+            
+                    
+                    
+            
+                
+            
+        
+        
     }
 
     
@@ -316,13 +316,13 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
     private void report(short severity, String type) {
         {
             errorHandler.handleError(new DOMErrorImpl(severity, type));
-        } //End block
+        } 
         addTaint(severity);
         addTaint(type.getTaint());
-        // ---------- Original Method ----------
-        //if (errorHandler != null) {
-            //errorHandler.handleError(new DOMErrorImpl(severity, type));
-        //}
+        
+        
+            
+        
     }
 
     
@@ -334,20 +334,20 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.837 -0400", hash_original_method = "4AEE734B1EFD8A5D4A3557C383752F00", hash_generated_method = "A506FC59BBF6CC43F79B603F40D6503D")
           FixedParameter(Object onlyValue) {
             this.onlyValue = onlyValue;
-            // ---------- Original Method ----------
-            //this.onlyValue = onlyValue;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.837 -0400", hash_original_method = "580583282F0D57EA1D5F8BCC7DFB7226", hash_generated_method = "F36B3062AED1BBB8F9642BF4CF58D6B5")
         public Object get(DOMConfigurationImpl config) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_254641582 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_254641582 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_254641582 = onlyValue;
             addTaint(config.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_254641582.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_254641582.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_254641582;
-            // ---------- Original Method ----------
-            //return onlyValue;
+            
+            
         }
 
         
@@ -358,15 +358,15 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new DOMException(DOMException.NOT_SUPPORTED_ERR,
                         "Unsupported value: " + value);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(config.getTaint());
             addTaint(value.getTaint());
-            // ---------- Original Method ----------
-            //if (!onlyValue.equals(value)) {
-                //throw new DOMException(DOMException.NOT_SUPPORTED_ERR,
-                        //"Unsupported value: " + value);
-            //}
+            
+            
+                
+                        
+            
         }
 
         
@@ -377,8 +377,8 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
             addTaint(value.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1263396924 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1263396924;
-            // ---------- Original Method ----------
-            //return onlyValue.equals(value);
+            
+            
         }
 
         
@@ -391,7 +391,7 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.838 -0400", hash_original_method = "51C6AD17F5451D33F04DE00B4C815245", hash_generated_method = "51C6AD17F5451D33F04DE00B4C815245")
         public BooleanParameter ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -401,8 +401,8 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
             addTaint(value.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1446419682 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1446419682;
-            // ---------- Original Method ----------
-            //return value instanceof Boolean;
+            
+            
         }
 
         
@@ -550,35 +550,25 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
         });
     }
     
-    // orphaned legacy method
+    
     public void set(DOMConfigurationImpl config, Object value) {
                 config.wellFormed = (Boolean) value;
             }
     
-    /*
-    // orphaned legacy method
-    public String item(int index) {
-                return index < result.length ? result[index] : null;
-            }
-    */
     
-    // orphaned legacy method
+    
+    
     public Object get(DOMConfigurationImpl config) {
                 return config.wellFormed;
             }
     
-    // orphaned legacy method
+    
     public boolean contains(String str) {
                 return PARAMETERS.containsKey(str); 
             }
     
-    /*
-    // orphaned legacy method
-    public int getLength() {
-                return result.length;
-            }
-    */
-    // orphaned legacy method
+    
+    
     public boolean canSet(DOMConfigurationImpl config, Object value) {
                 return value == null || value instanceof String;
             }

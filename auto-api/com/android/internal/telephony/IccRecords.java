@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.AsyncResult;
 import android.os.Handler;
@@ -71,8 +71,8 @@ public abstract class IccRecords extends Handler implements IccConstants {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.013 -0400", hash_original_method = "5D0BAB896645CD4136C27B68F12971AB", hash_generated_method = "4E782A19F0AA85E8CF9B90DE560EC0CB")
     public  IccRecords(PhoneBase p) {
         this.phone = p;
-        // ---------- Original Method ----------
-        //this.phone = p;
+        
+        
     }
 
     
@@ -84,32 +84,32 @@ public abstract class IccRecords extends Handler implements IccConstants {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.014 -0400", hash_original_method = "6A785FD128F813B36570564C326DA1E7", hash_generated_method = "C75767526D5B62D6DA36A94919C5A916")
     public AdnRecordCache getAdnCache() {
-        AdnRecordCache varB4EAC82CA7396A68D541C85D26508E83_1014692916 = null; //Variable for return #1
+        AdnRecordCache varB4EAC82CA7396A68D541C85D26508E83_1014692916 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1014692916 = adnCache;
-        varB4EAC82CA7396A68D541C85D26508E83_1014692916.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1014692916.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1014692916;
-        // ---------- Original Method ----------
-        //return adnCache;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.014 -0400", hash_original_method = "AA2893BF07782D58CCB881014444CA75", hash_generated_method = "B4BA3289934EE166A4C91924968F639F")
     public void registerForRecordsLoaded(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         Registrant r = new Registrant(h, what, obj);
         recordsLoadedRegistrants.add(r);
         {
             r.notifyRegistrant(new AsyncResult(null, null, null));
-        } //End block
+        } 
         addTaint(h.getTaint());
         addTaint(what);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //Registrant r = new Registrant(h, what, obj);
-        //recordsLoadedRegistrants.add(r);
-        //if (recordsToLoad == 0 && recordsRequested == true) {
-            //r.notifyRegistrant(new AsyncResult(null, null, null));
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -117,30 +117,30 @@ public abstract class IccRecords extends Handler implements IccConstants {
     public void unregisterForRecordsLoaded(Handler h) {
         recordsLoadedRegistrants.remove(h);
         addTaint(h.getTaint());
-        // ---------- Original Method ----------
-        //recordsLoadedRegistrants.remove(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.016 -0400", hash_original_method = "2D99B4210681FA66696D3EA5B94D1A66", hash_generated_method = "5303C9AE31661E18E8D1A819A612DF80")
     public String getIMSI() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1708815147 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1708815147 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1708815147 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1708815147.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1708815147.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1708815147;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.018 -0400", hash_original_method = "9D42E73ED1AA846035EF94EBFAAEA8F6", hash_generated_method = "B09E007EA4AB472156512860918C7B2D")
     public String getMsisdnNumber() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1703792677 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1703792677 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1703792677 = msisdn;
-        varB4EAC82CA7396A68D541C85D26508E83_1703792677.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1703792677.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1703792677;
-        // ---------- Original Method ----------
-        //return msisdn;
+        
+        
     }
 
     
@@ -154,46 +154,46 @@ public abstract class IccRecords extends Handler implements IccConstants {
         new AdnRecordLoader(phone).updateEF(adn, EF_MSISDN, EF_EXT1, 1, null,
                 obtainMessage(EVENT_SET_MSISDN_DONE, onComplete));
         addTaint(onComplete.getTaint());
-        // ---------- Original Method ----------
-        //msisdn = number;
-        //msisdnTag = alphaTag;
-        //if(DBG) log("Set MSISDN: " + msisdnTag +" " + msisdn);
-        //AdnRecord adn = new AdnRecord(msisdnTag, msisdn);
-        //new AdnRecordLoader(phone).updateEF(adn, EF_MSISDN, EF_EXT1, 1, null,
-                //obtainMessage(EVENT_SET_MSISDN_DONE, onComplete));
+        
+        
+        
+        
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.020 -0400", hash_original_method = "E32EFED28CC433860D178485CFB4EEE4", hash_generated_method = "F7BC802FD93ED4D1D6867065B2327EB9")
     public String getMsisdnAlphaTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1537003045 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1537003045 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1537003045 = msisdnTag;
-        varB4EAC82CA7396A68D541C85D26508E83_1537003045.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1537003045.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1537003045;
-        // ---------- Original Method ----------
-        //return msisdnTag;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.021 -0400", hash_original_method = "77FFC0D98CD3CB2629C7F6A7D27E6FFF", hash_generated_method = "83517A40012007395A969B1F7CCD3373")
     public String getVoiceMailNumber() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1250678383 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1250678383 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1250678383 = voiceMailNum;
-        varB4EAC82CA7396A68D541C85D26508E83_1250678383.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1250678383.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1250678383;
-        // ---------- Original Method ----------
-        //return voiceMailNum;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.021 -0400", hash_original_method = "C90FEC698C502FA0146C0D3760005061", hash_generated_method = "5AAF6128C6366F63FC6EC9C7DB35EF71")
     public String getServiceProviderName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_193405797 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_193405797 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_193405797 = spn;
-        varB4EAC82CA7396A68D541C85D26508E83_193405797.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_193405797.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_193405797;
-        // ---------- Original Method ----------
-        //return spn;
+        
+        
     }
 
     
@@ -203,12 +203,12 @@ public abstract class IccRecords extends Handler implements IccConstants {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.022 -0400", hash_original_method = "5A91F4662DCD8CEE6B5E6A046B7A4ABC", hash_generated_method = "E206B652792E48C9D67843BACE140608")
     public String getVoiceMailAlphaTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1724570736 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1724570736 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1724570736 = voiceMailTag;
-        varB4EAC82CA7396A68D541C85D26508E83_1724570736.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1724570736.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1724570736;
-        // ---------- Original Method ----------
-        //return voiceMailTag;
+        
+        
     }
 
     
@@ -219,8 +219,8 @@ public abstract class IccRecords extends Handler implements IccConstants {
     public boolean getVoiceMessageWaiting() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_983163077 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_983163077;
-        // ---------- Original Method ----------
-        //return countVoiceMessages != 0;
+        
+        
     }
 
     
@@ -228,8 +228,8 @@ public abstract class IccRecords extends Handler implements IccConstants {
     public int getVoiceMessageCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1427883275 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1427883275;
-        // ---------- Original Method ----------
-        //return countVoiceMessages;
+        
+        
     }
 
     
@@ -240,19 +240,19 @@ public abstract class IccRecords extends Handler implements IccConstants {
     public boolean getRecordsLoaded() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2077224127 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2077224127;
-        // ---------- Original Method ----------
-        //if (recordsToLoad == 0 && recordsRequested == true) {
-            //return true;
-        //} else {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.024 -0400", hash_original_method = "49E7794891C738A256F21E277C3A3E98", hash_generated_method = "80AEC7A00202470781BD26782A2788A0")
     @Override
     public void handleMessage(Message msg) {
-        //Begin case EVENT_GET_ICC_RECORD_DONE 
+        
         try 
         {
             AsyncResult ar = (AsyncResult) msg.obj;
@@ -260,26 +260,26 @@ public abstract class IccRecords extends Handler implements IccConstants {
             log(recordLoaded.getEfName() + " LOADED");
             {
                 loge("Record Load Exception: " + ar.exception);
-            } //End block
+            } 
             {
                 recordLoaded.onRecordLoaded(ar);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RuntimeException exc)
         {
             loge("Exception parsing SIM record: " + exc);
-        } //End block
+        } 
         finally 
         {
             onRecordLoaded();
-        } //End block
-        //End case EVENT_GET_ICC_RECORD_DONE 
-        //Begin case default 
+        } 
+        
+        
         super.handleMessage(msg);
-        //End case default 
+        
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -296,19 +296,19 @@ public abstract class IccRecords extends Handler implements IccConstants {
     public boolean isCspPlmnEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_504286168 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_504286168;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.025 -0400", hash_original_method = "9AAC604385E70B59FD0C2282B5610980", hash_generated_method = "0DB6B4E98E60BA9F9278BC52B1A42C1D")
     public String getOperatorNumeric() {
-        String varB4EAC82CA7396A68D541C85D26508E83_895920628 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_895920628 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_895920628 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_895920628.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_895920628.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_895920628;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -316,8 +316,8 @@ public abstract class IccRecords extends Handler implements IccConstants {
     public boolean getVoiceCallForwardingFlag() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1172094130 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1172094130;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -325,7 +325,7 @@ public abstract class IccRecords extends Handler implements IccConstants {
     public void setVoiceCallForwardingFlag(int line, boolean enable) {
         addTaint(line);
         addTaint(enable);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -333,8 +333,8 @@ public abstract class IccRecords extends Handler implements IccConstants {
     public boolean isProvisioned() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1919312869 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1919312869;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -346,23 +346,23 @@ public abstract class IccRecords extends Handler implements IccConstants {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.026 -0400", hash_original_method = "F728AE330C688766112F3603C63CB40C", hash_generated_method = "7B4B6EF60A9DCD99A3C0FEA176531F21")
     public IsimRecords getIsimRecords() {
-        IsimRecords varB4EAC82CA7396A68D541C85D26508E83_1376652477 = null; //Variable for return #1
+        IsimRecords varB4EAC82CA7396A68D541C85D26508E83_1376652477 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1376652477 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1376652477.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1376652477.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1376652477;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.027 -0400", hash_original_method = "EA614E93014D97DC1971866BFCB21C89", hash_generated_method = "0CE26B7437845B5049D88778D9E53153")
     public UsimServiceTable getUsimServiceTable() {
-        UsimServiceTable varB4EAC82CA7396A68D541C85D26508E83_1961308541 = null; //Variable for return #1
+        UsimServiceTable varB4EAC82CA7396A68D541C85D26508E83_1961308541 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1961308541 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1961308541.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1961308541.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1961308541;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     

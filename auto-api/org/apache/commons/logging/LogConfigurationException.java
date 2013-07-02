@@ -1,11 +1,11 @@
 package org.apache.commons.logging;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class LogConfigurationException extends RuntimeException {
@@ -16,7 +16,7 @@ public class LogConfigurationException extends RuntimeException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.863 -0400", hash_original_method = "5BD29D5C4388EC618AF76FB6968F33B3", hash_generated_method = "7063A356E6027EED37F9AC630853EE07")
     public  LogConfigurationException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,7 +24,7 @@ public class LogConfigurationException extends RuntimeException {
     public  LogConfigurationException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,7 +32,7 @@ public class LogConfigurationException extends RuntimeException {
     public  LogConfigurationException(Throwable cause) {
         this((cause == null) ? null : cause.toString(), cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -41,19 +41,19 @@ public class LogConfigurationException extends RuntimeException {
         super(message + " (Caused by " + cause + ")");
         this.cause = cause;
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //this.cause = cause;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.865 -0400", hash_original_method = "9EB82C3F9FB6AE0D2962237AF0B1061E", hash_generated_method = "03B169FAE44B9547F4A928B0CE185798")
     public Throwable getCause() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_2100928172 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_2100928172 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2100928172 = (this.cause);
-        varB4EAC82CA7396A68D541C85D26508E83_2100928172.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2100928172.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2100928172;
-        // ---------- Original Method ----------
-        //return (this.cause);
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.commons.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -47,7 +47,7 @@ public class FileUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.138 -0400", hash_original_method = "0A55185A25FF095B6278724D9B8AC890", hash_generated_method = "5A201C4BEE4FA7D1A070653DE7AF18C7")
     public  FileUtils() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -82,26 +82,31 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getTempDirectoryPath() {
         return System.getProperty("java.io.tmpdir");
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static File getTempDirectory() {
         return new File(getTempDirectoryPath());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getUserDirectoryPath() {
         return System.getProperty("user.home");
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static File getUserDirectory() {
         return new File(getUserDirectoryPath());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static FileInputStream openInputStream(File file) throws IOException {
         if (file.exists()) {
             if (file.isDirectory()) {
@@ -117,11 +122,13 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static FileOutputStream openOutputStream(File file) throws IOException {
         return openOutputStream(file, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static FileOutputStream openOutputStream(File file, boolean append) throws IOException {
         if (file.exists()) {
             if (file.isDirectory()) {
@@ -142,6 +149,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String byteCountToDisplaySize(BigInteger size) {
         String displaySize;
         if (size.divide(ONE_EB_BI).compareTo(BigInteger.ZERO) > 0) {
@@ -163,11 +171,13 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String byteCountToDisplaySize(long size) {
         return byteCountToDisplaySize(BigInteger.valueOf(size));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void touch(File file) throws IOException {
         if (!file.exists()) {
             OutputStream out = openOutputStream(file);
@@ -180,11 +190,13 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static File[] convertFileCollectionToFileArray(Collection<File> files) {
         return files.toArray(new File[files.size()]);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void innerListFiles(Collection<File> files, File directory,
             IOFileFilter filter, boolean includeSubDirectories) {
         File[] found = directory.listFiles((FileFilter) filter);
@@ -203,6 +215,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Collection<File> listFiles(
             File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
         validateListFilesParameters(directory, fileFilter);
@@ -215,6 +228,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void validateListFilesParameters(File directory, IOFileFilter fileFilter) {
         if (!directory.isDirectory()) {
             throw new IllegalArgumentException("Parameter 'directory' is not a directory");
@@ -225,17 +239,20 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static IOFileFilter setUpEffectiveFileFilter(IOFileFilter fileFilter) {
         return FileFilterUtils.and(fileFilter, FileFilterUtils.notFileFilter(DirectoryFileFilter.INSTANCE));
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static IOFileFilter setUpEffectiveDirFilter(IOFileFilter dirFilter) {
         return dirFilter == null ? FalseFileFilter.INSTANCE : FileFilterUtils.and(dirFilter,
                 DirectoryFileFilter.INSTANCE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Collection<File> listFilesAndDirs(
             File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
         validateListFilesParameters(directory, fileFilter);
@@ -251,17 +268,20 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Iterator<File> iterateFiles(
             File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
         return listFiles(directory, fileFilter, dirFilter).iterator();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Iterator<File> iterateFilesAndDirs(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
         return listFilesAndDirs(directory, fileFilter, dirFilter).iterator();
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] toSuffixes(String[] extensions) {
         String[] suffixes = new String[extensions.length];
         for (int i = 0; i < extensions.length; i++) {
@@ -271,6 +291,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Collection<File> listFiles(
             File directory, String[] extensions, boolean recursive) {
         IOFileFilter filter;
@@ -285,12 +306,14 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Iterator<File> iterateFiles(
             File directory, String[] extensions, boolean recursive) {
         return listFiles(directory, extensions, recursive).iterator();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean contentEquals(File file1, File file2) throws IOException {
         boolean file1Exists = file1.exists();
         if (file1Exists != file2.exists()) {
@@ -321,6 +344,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean contentEqualsIgnoreEOL(File file1, File file2, String charsetName) throws IOException {
         boolean file1Exists = file1.exists();
         if (file1Exists != file2.exists()) {
@@ -364,6 +388,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String decodeUrl(String url) {
         String decoded = url;
         if (url != null && url.indexOf('%') >= 0) {
@@ -396,6 +421,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static File[] toFiles(URL[] urls) {
         if (urls == null || urls.length == 0) {
             return EMPTY_FILE_ARRAY;
@@ -415,6 +441,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static URL[] toURLs(File[] files) throws IOException {
         URL[] urls = new URL[files.length];
         for (int i = 0; i < urls.length; i++) {
@@ -424,11 +451,13 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copyFileToDirectory(File srcFile, File destDir) throws IOException {
         copyFileToDirectory(srcFile, destDir, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copyFileToDirectory(File srcFile, File destDir, boolean preserveFileDate) throws IOException {
         if (destDir == null) {
             throw new NullPointerException("Destination must not be null");
@@ -441,11 +470,13 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copyFile(File srcFile, File destFile) throws IOException {
         copyFile(srcFile, destFile, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copyFile(File srcFile, File destFile,
             boolean preserveFileDate) throws IOException {
         if (srcFile == null) {
@@ -476,6 +507,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long copyFile(File input, OutputStream output) throws IOException {
         final FileInputStream fis = new FileInputStream(input);
         try {
@@ -486,6 +518,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void doCopyFile(File srcFile, File destFile, boolean preserveFileDate) throws IOException {
         if (destFile.exists() && destFile.isDirectory()) {
             throw new IOException("Destination '" + destFile + "' exists but is a directory");
@@ -522,6 +555,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copyDirectoryToDirectory(File srcDir, File destDir) throws IOException {
         if (srcDir == null) {
             throw new NullPointerException("Source must not be null");
@@ -539,23 +573,27 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copyDirectory(File srcDir, File destDir) throws IOException {
         copyDirectory(srcDir, destDir, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copyDirectory(File srcDir, File destDir,
             boolean preserveFileDate) throws IOException {
         copyDirectory(srcDir, destDir, null, preserveFileDate);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copyDirectory(File srcDir, File destDir,
             FileFilter filter) throws IOException {
         copyDirectory(srcDir, destDir, filter, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copyDirectory(File srcDir, File destDir,
             FileFilter filter, boolean preserveFileDate) throws IOException {
         if (srcDir == null) {
@@ -588,6 +626,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void doCopyDirectory(File srcDir, File destDir, FileFilter filter,
             boolean preserveFileDate, List<String> exclusionList) throws IOException {
         File[] srcFiles = filter == null ? srcDir.listFiles() : srcDir.listFiles(filter);
@@ -628,6 +667,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copyURLToFile(URL source, File destination,
             int connectionTimeout, int readTimeout) throws IOException {
         URLConnection connection = source.openConnection();
@@ -638,6 +678,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copyInputStreamToFile(InputStream source, File destination) throws IOException {
         try {
             FileOutputStream output = openOutputStream(destination);
@@ -653,6 +694,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void deleteDirectory(File directory) throws IOException {
         if (!directory.exists()) {
             return;
@@ -668,6 +710,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean deleteQuietly(File file) {
         if (file == null) {
             return false;
@@ -705,6 +748,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cleanDirectory(File directory) throws IOException {
         if (!directory.exists()) {
             String message = directory + " does not exist";
@@ -732,6 +776,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean waitFor(File file, int seconds) {
         int timeout = 0;
         int tick = 0;
@@ -753,6 +798,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String readFileToString(File file, Charset encoding) throws IOException {
         InputStream in = null;
         try {
@@ -764,16 +810,19 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String readFileToString(File file, String encoding) throws IOException {
         return readFileToString(file, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String readFileToString(File file) throws IOException {
         return readFileToString(file, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] readFileToByteArray(File file) throws IOException {
         InputStream in = null;
         try {
@@ -785,6 +834,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static List<String> readLines(File file, Charset encoding) throws IOException {
         InputStream in = null;
         try {
@@ -796,16 +846,19 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static List<String> readLines(File file, String encoding) throws IOException {
         return readLines(file, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static List<String> readLines(File file) throws IOException {
         return readLines(file, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static LineIterator lineIterator(File file, String encoding) throws IOException {
         InputStream in = null;
         try {
@@ -821,21 +874,25 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static LineIterator lineIterator(File file) throws IOException {
         return lineIterator(file, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeStringToFile(File file, String data, Charset encoding) throws IOException {
         writeStringToFile(file, data, encoding, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeStringToFile(File file, String data, String encoding) throws IOException {
         writeStringToFile(file, data, encoding, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeStringToFile(File file, String data, Charset encoding, boolean append) throws IOException {
         OutputStream out = null;
         try {
@@ -848,57 +905,68 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeStringToFile(File file, String data, String encoding, boolean append) throws IOException {
         writeStringToFile(file, data, Charsets.toCharset(encoding), append);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeStringToFile(File file, String data) throws IOException {
         writeStringToFile(file, data, Charset.defaultCharset(), false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeStringToFile(File file, String data, boolean append) throws IOException {
         writeStringToFile(file, data, Charset.defaultCharset(), append);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(File file, CharSequence data) throws IOException {
         write(file, data, Charset.defaultCharset(), false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(File file, CharSequence data, boolean append) throws IOException {
         write(file, data, Charset.defaultCharset(), append);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(File file, CharSequence data, Charset encoding) throws IOException {
         write(file, data, encoding, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(File file, CharSequence data, String encoding) throws IOException {
         write(file, data, encoding, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(File file, CharSequence data, Charset encoding, boolean append) throws IOException {
         String str = data == null ? null : data.toString();
         writeStringToFile(file, str, encoding, append);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(File file, CharSequence data, String encoding, boolean append) throws IOException {
         write(file, data, Charsets.toCharset(encoding), append);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeByteArrayToFile(File file, byte[] data) throws IOException {
         writeByteArrayToFile(file, data, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeByteArrayToFile(File file, byte[] data, boolean append) throws IOException {
         OutputStream out = null;
         try {
@@ -911,31 +979,37 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeLines(File file, String encoding, Collection<?> lines) throws IOException {
         writeLines(file, encoding, lines, null, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeLines(File file, String encoding, Collection<?> lines, boolean append) throws IOException {
         writeLines(file, encoding, lines, null, append);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeLines(File file, Collection<?> lines) throws IOException {
         writeLines(file, null, lines, null, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeLines(File file, Collection<?> lines, boolean append) throws IOException {
         writeLines(file, null, lines, null, append);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding) throws IOException {
         writeLines(file, encoding, lines, lineEnding, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding, boolean append) throws IOException {
         FileOutputStream out = null;
         try {
@@ -950,16 +1024,19 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeLines(File file, Collection<?> lines, String lineEnding) throws IOException {
         writeLines(file, null, lines, lineEnding, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeLines(File file, Collection<?> lines, String lineEnding, boolean append) throws IOException {
         writeLines(file, null, lines, lineEnding, append);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void forceDelete(File file) throws IOException {
         if (file.isDirectory()) {
             deleteDirectory(file);
@@ -977,6 +1054,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void forceDeleteOnExit(File file) throws IOException {
         if (file.isDirectory()) {
             deleteDirectoryOnExit(file);
@@ -986,6 +1064,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void deleteDirectoryOnExit(File directory) throws IOException {
         if (!directory.exists()) {
             return;
@@ -997,6 +1076,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void cleanDirectoryOnExit(File directory) throws IOException {
         if (!directory.exists()) {
             String message = directory + " does not exist";
@@ -1024,6 +1104,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void forceMkdir(File directory) throws IOException {
         if (directory.exists()) {
             if (!directory.isDirectory()) {
@@ -1047,6 +1128,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long sizeOf(File file) {
         if (!file.exists()) {
             String message = file + " does not exist";
@@ -1060,6 +1142,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static BigInteger sizeOfAsBigInteger(File file) {
         if (!file.exists()) {
             String message = file + " does not exist";
@@ -1073,6 +1156,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long sizeOfDirectory(File directory) {
         checkDirectory(directory);
         final File[] files = directory.listFiles();
@@ -1095,6 +1179,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static BigInteger sizeOfDirectoryAsBigInteger(File directory) {
         checkDirectory(directory);
         final File[] files = directory.listFiles();
@@ -1114,6 +1199,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void checkDirectory(File directory) {
         if (!directory.exists()) {
             throw new IllegalArgumentException(directory + " does not exist");
@@ -1124,6 +1210,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isFileNewer(File file, File reference) {
         if (reference == null) {
             throw new IllegalArgumentException("No specified reference file");
@@ -1136,6 +1223,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isFileNewer(File file, Date date) {
         if (date == null) {
             throw new IllegalArgumentException("No specified date");
@@ -1144,6 +1232,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isFileNewer(File file, long timeMillis) {
         if (file == null) {
             throw new IllegalArgumentException("No specified file");
@@ -1155,6 +1244,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isFileOlder(File file, File reference) {
         if (reference == null) {
             throw new IllegalArgumentException("No specified reference file");
@@ -1167,6 +1257,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isFileOlder(File file, Date date) {
         if (date == null) {
             throw new IllegalArgumentException("No specified date");
@@ -1175,6 +1266,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isFileOlder(File file, long timeMillis) {
         if (file == null) {
             throw new IllegalArgumentException("No specified file");
@@ -1186,6 +1278,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long checksumCRC32(File file) throws IOException {
         CRC32 crc = new CRC32();
         checksum(file, crc);
@@ -1193,6 +1286,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Checksum checksum(File file, Checksum checksum) throws IOException {
         if (file.isDirectory()) {
             throw new IllegalArgumentException("Checksums can't be computed on directories");
@@ -1208,6 +1302,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void moveDirectory(File srcDir, File destDir) throws IOException {
         if (srcDir == null) {
             throw new NullPointerException("Source must not be null");
@@ -1239,6 +1334,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void moveDirectoryToDirectory(File src, File destDir, boolean createDestDir) throws IOException {
         if (src == null) {
             throw new NullPointerException("Source must not be null");
@@ -1260,6 +1356,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void moveFile(File srcFile, File destFile) throws IOException {
         if (srcFile == null) {
             throw new NullPointerException("Source must not be null");
@@ -1291,6 +1388,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void moveFileToDirectory(File srcFile, File destDir, boolean createDestDir) throws IOException {
         if (srcFile == null) {
             throw new NullPointerException("Source must not be null");
@@ -1312,6 +1410,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void moveToDirectory(File src, File destDir, boolean createDestDir) throws IOException {
         if (src == null) {
             throw new NullPointerException("Source must not be null");
@@ -1330,6 +1429,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isSymlink(File file) throws IOException {
         if (file == null) {
             throw new NullPointerException("File must not be null");

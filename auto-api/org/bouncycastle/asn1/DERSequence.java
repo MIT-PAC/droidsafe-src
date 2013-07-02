@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class DERSequence extends ASN1Sequence {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.673 -0400", hash_original_method = "B1D7F8D200E7560B8E505C8DEB6A735D", hash_generated_method = "DE383D98243C35C2EE2100E102854830")
     public  DERSequence() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,8 +24,8 @@ public class DERSequence extends ASN1Sequence {
         DEREncodable    obj) {
         this.addObject(obj);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //this.addObject(obj);
+        
+        
     }
 
     
@@ -37,14 +37,14 @@ public class DERSequence extends ASN1Sequence {
             boolean varC646FCC9A1C4B2837DAC7D6B1995FA10_1218786749 = (i != v.size());
             {
                 this.addObject(v.get(i));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(v.getTaint());
-        // ---------- Original Method ----------
-        //for (int i = 0; i != v.size(); i++)
-        //{
-            //this.addObject(v.get(i));
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -55,14 +55,14 @@ public class DERSequence extends ASN1Sequence {
             int i = 0;
             {
                 this.addObject(a[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(a[0].getTaint());
-        // ---------- Original Method ----------
-        //for (int i = 0; i != a.length; i++)
-        //{
-            //this.addObject(a[i]);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -77,24 +77,24 @@ public class DERSequence extends ASN1Sequence {
             {
                 Object obj = e.nextElement();
                 dOut.writeObject(obj);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         dOut.close();
         byte[] bytes = bOut.toByteArray();
         out.writeEncoded(SEQUENCE | CONSTRUCTED, bytes);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //ByteArrayOutputStream   bOut = new ByteArrayOutputStream();
-        //DEROutputStream         dOut = new DEROutputStream(bOut);
-        //Enumeration             e = this.getObjects();
-        //while (e.hasMoreElements())
-        //{
-            //Object    obj = e.nextElement();
-            //dOut.writeObject(obj);
-        //}
-        //dOut.close();
-        //byte[]  bytes = bOut.toByteArray();
-        //out.writeEncoded(SEQUENCE | CONSTRUCTED, bytes);
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     

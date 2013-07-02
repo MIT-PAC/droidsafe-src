@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.Log;
 import java.lang.Comparable;
@@ -54,10 +54,11 @@ public class DriverCall implements Comparable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.145 -0400", hash_original_method = "DF91F81E80FDB939BBEABFE9635EC975", hash_generated_method = "A0F6DD97DA81B4F7A55DEAA088C14728")
     public  DriverCall() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static DriverCall fromCLCCLine(String line) {
         DriverCall ret = new DriverCall();
         ATResponseParser p = new ATResponseParser(line);
@@ -85,9 +86,10 @@ public class DriverCall implements Comparable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.146 -0400", hash_original_method = "7AA84AC8F947102F8EF05D3C97C1753D", hash_generated_method = "377AEAF02CA78A3085E8E53C3F5CF0C2")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1628777465 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1628777465 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1628777465 = "id=" + index + ","
                 + state + ","
                 + "toa=" + TOA + ","
@@ -98,22 +100,23 @@ public class DriverCall implements Comparable {
                 + (isVoicePrivacy ? "evp" : "noevp") + ","
                  + ",cli=" + numberPresentation + ","
                  + "," + namePresentation;
-        varB4EAC82CA7396A68D541C85D26508E83_1628777465.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1628777465.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1628777465;
-        // ---------- Original Method ----------
-        //return "id=" + index + ","
-                //+ state + ","
-                //+ "toa=" + TOA + ","
-                //+ (isMpty ? "conf" : "norm") + ","
-                //+ (isMT ? "mt" : "mo") + ","
-                //+ als + ","
-                //+ (isVoice ? "voc" : "nonvoc") + ","
-                //+ (isVoicePrivacy ? "evp" : "noevp") + ","
-                 //+ ",cli=" + numberPresentation + ","
-                 //+ "," + namePresentation;
+        
+        
+                
+                
+                
+                
+                
+                
+                
+                 
+                 
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static State stateFromCLCC(int state) throws ATParseEx {
         switch(state) {
             case 0: return State.ACTIVE;
@@ -128,6 +131,7 @@ public class DriverCall implements Comparable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static int presentationFromCLIP(int cli) throws ATParseEx {
         switch(cli) {
             case 0: return Connection.PRESENTATION_ALLOWED;
@@ -147,16 +151,16 @@ public class DriverCall implements Comparable {
         addTaint(o.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_495924186 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_495924186;
-        // ---------- Original Method ----------
-        //DriverCall dc;
-        //dc = (DriverCall)o;
-        //if (index < dc.index) {
-            //return -1;
-        //} else if (index == dc.index) {
-            //return 0;
-        //} else { 
-            //return 1;
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     

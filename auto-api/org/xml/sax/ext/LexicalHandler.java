@@ -1,11 +1,11 @@
 package org.xml.sax.ext;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.xml.sax.SAXException;
 

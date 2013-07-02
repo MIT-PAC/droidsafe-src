@@ -1,11 +1,11 @@
 package android.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -38,7 +38,7 @@ public final class KeyChain {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.103 -0400", hash_original_method = "72F463E9A92E033797A9FA0AB2D9F5CF", hash_generated_method = "72F463E9A92E033797A9FA0AB2D9F5CF")
     public KeyChain ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -50,6 +50,7 @@ public final class KeyChain {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void choosePrivateKeyAlias(Activity activity, KeyChainAliasCallback response,
                                              String[] keyTypes, Principal[] issuers,
                                              String host, int port,
@@ -70,6 +71,7 @@ public final class KeyChain {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static PrivateKey getPrivateKey(Context context, String alias) throws KeyChainException, InterruptedException {
         if (alias == null) {
             throw new NullPointerException("alias == null");
@@ -89,6 +91,7 @@ public final class KeyChain {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X509Certificate[] getCertificateChain(Context context, String alias) throws KeyChainException, InterruptedException {
         if (alias == null) {
             throw new NullPointerException("alias == null");
@@ -122,6 +125,7 @@ public final class KeyChain {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static PrivateKey toPrivateKey(byte[] bytes) {
         if (bytes == null) {
             throw new IllegalArgumentException("bytes == null");
@@ -135,6 +139,7 @@ public final class KeyChain {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static X509Certificate toCertificate(byte[] bytes) {
         if (bytes == null) {
             throw new IllegalArgumentException("bytes == null");
@@ -149,6 +154,7 @@ public final class KeyChain {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyChainConnection bind(Context context) throws InterruptedException {
         if (context == null) {
             throw new NullPointerException("context == null");
@@ -178,6 +184,7 @@ public final class KeyChain {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void ensureNotOnMainThread(Context context) {
         Looper looper = Looper.myLooper();
         if (looper != null && looper == context.getMainLooper()) {
@@ -195,8 +202,8 @@ public final class KeyChain {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.104 -0400", hash_original_method = "C9AAF5E97D9880605AC7CEDD0F5EF602", hash_generated_method = "734EA7C6CEA33BDAA3DD6D725B46AD40")
         private  AliasResponse(KeyChainAliasCallback keyChainAliasResponse) {
             this.keyChainAliasResponse = keyChainAliasResponse;
-            // ---------- Original Method ----------
-            //this.keyChainAliasResponse = keyChainAliasResponse;
+            
+            
         }
 
         
@@ -205,8 +212,8 @@ public final class KeyChain {
         public void alias(String alias) {
             keyChainAliasResponse.alias(alias);
             addTaint(alias.getTaint());
-            // ---------- Original Method ----------
-            //keyChainAliasResponse.alias(alias);
+            
+            
         }
 
         
@@ -232,10 +239,10 @@ public final class KeyChain {
             this.context = context;
             this.serviceConnection = serviceConnection;
             this.service = service;
-            // ---------- Original Method ----------
-            //this.context = context;
-            //this.serviceConnection = serviceConnection;
-            //this.service = service;
+            
+            
+            
+            
         }
 
         
@@ -243,19 +250,19 @@ public final class KeyChain {
         @Override
         public void close() {
             context.unbindService(serviceConnection);
-            // ---------- Original Method ----------
-            //context.unbindService(serviceConnection);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.107 -0400", hash_original_method = "954EE7241574324971051CDC9EEAAD50", hash_generated_method = "19F589D85C11ECC52A97690BD716451C")
         public IKeyChainService getService() {
-            IKeyChainService varB4EAC82CA7396A68D541C85D26508E83_1438892754 = null; //Variable for return #1
+            IKeyChainService varB4EAC82CA7396A68D541C85D26508E83_1438892754 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1438892754 = service;
-            varB4EAC82CA7396A68D541C85D26508E83_1438892754.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1438892754.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1438892754;
-            // ---------- Original Method ----------
-            //return service;
+            
+            
         }
 
         

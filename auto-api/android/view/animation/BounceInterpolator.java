@@ -1,11 +1,11 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -15,7 +15,7 @@ public class BounceInterpolator implements Interpolator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.451 -0400", hash_original_method = "D77038D4E75CFBDE4153E26F51FE597B", hash_generated_method = "BCAE75B7B1877E5388B55FDFCF96BAFF")
     public  BounceInterpolator() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,7 +24,7 @@ public class BounceInterpolator implements Interpolator {
     public  BounceInterpolator(Context context, AttributeSet attrs) {
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,6 +33,7 @@ public class BounceInterpolator implements Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.451 -0400", hash_original_method = "41D2E1F4122985CE507D75E33078C1B7", hash_generated_method = "7E349E91C926AB9B820A255EE9603DB2")
     public float getInterpolation(float t) {
         t *= 1.1226f;
@@ -43,12 +44,12 @@ public class BounceInterpolator implements Interpolator {
         addTaint(t);
         float var546ADE640B6EDFBC8A086EF31347E768_275961904 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_275961904;
-        // ---------- Original Method ----------
-        //t *= 1.1226f;
-        //if (t < 0.3535f) return bounce(t);
-        //else if (t < 0.7408f) return bounce(t - 0.54719f) + 0.7f;
-        //else if (t < 0.9644f) return bounce(t - 0.8526f) + 0.9f;
-        //else return bounce(t - 1.0435f) + 0.95f;
+        
+        
+        
+        
+        
+        
     }
 
     

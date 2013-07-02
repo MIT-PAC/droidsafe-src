@@ -1,11 +1,11 @@
 package org.apache.http.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -23,8 +23,8 @@ public final class CookieSpecRegistry {
     public  CookieSpecRegistry() {
         super();
         this.registeredSpecs = new LinkedHashMap<String,CookieSpecFactory>();
-        // ---------- Original Method ----------
-        //this.registeredSpecs = new LinkedHashMap<String,CookieSpecFactory>();
+        
+        
     }
 
     
@@ -32,21 +32,21 @@ public final class CookieSpecRegistry {
     public synchronized void register(final String name, final CookieSpecFactory factory) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Name may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie spec factory may not be null");
-        } //End block
+        } 
         registeredSpecs.put(name.toLowerCase(Locale.ENGLISH), factory);
         addTaint(name.getTaint());
         addTaint(factory.getTaint());
-        // ---------- Original Method ----------
-        //if (name == null) {
-             //throw new IllegalArgumentException("Name may not be null");
-         //}
-        //if (factory == null) {
-            //throw new IllegalArgumentException("Cookie spec factory may not be null");
-        //}
-        //registeredSpecs.put(name.toLowerCase(Locale.ENGLISH), factory);
+        
+        
+             
+         
+        
+            
+        
+        
     }
 
     
@@ -54,67 +54,68 @@ public final class CookieSpecRegistry {
     public synchronized void unregister(final String id) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Id may not be null");
-        } //End block
+        } 
         registeredSpecs.remove(id.toLowerCase(Locale.ENGLISH));
         addTaint(id.getTaint());
-        // ---------- Original Method ----------
-        //if (id == null) {
-             //throw new IllegalArgumentException("Id may not be null");
-         //}
-        //registeredSpecs.remove(id.toLowerCase(Locale.ENGLISH));
+        
+        
+             
+         
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.539 -0400", hash_original_method = "8996807FE7E231444D0F4F50C2BE4E33", hash_generated_method = "A24D919596751898C853D02F1E39C102")
     public synchronized CookieSpec getCookieSpec(final String name, final HttpParams params) throws IllegalStateException {
-        CookieSpec varB4EAC82CA7396A68D541C85D26508E83_7452590 = null; //Variable for return #1
+        CookieSpec varB4EAC82CA7396A68D541C85D26508E83_7452590 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Name may not be null");
-        } //End block
+        } 
         CookieSpecFactory factory = registeredSpecs.get(name.toLowerCase(Locale.ENGLISH));
         {
             varB4EAC82CA7396A68D541C85D26508E83_7452590 = factory.newInstance(params);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Unsupported cookie spec: " + name);
-        } //End block
+        } 
         addTaint(name.getTaint());
         addTaint(params.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_7452590.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_7452590.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_7452590;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException("Name may not be null");
-        //}
-        //CookieSpecFactory factory = registeredSpecs.get(name.toLowerCase(Locale.ENGLISH));
-        //if (factory != null) {
-            //return factory.newInstance(params);
-        //} else {
-            //throw new IllegalStateException("Unsupported cookie spec: " + name);
-        //}
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.541 -0400", hash_original_method = "44CB7B6D7C3249DF9FE20C6D12DA10E7", hash_generated_method = "64972B827F7401EAB6EA9AE71E49FC85")
     public synchronized CookieSpec getCookieSpec(final String name) throws IllegalStateException {
-        CookieSpec varB4EAC82CA7396A68D541C85D26508E83_854065586 = null; //Variable for return #1
+        CookieSpec varB4EAC82CA7396A68D541C85D26508E83_854065586 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_854065586 = getCookieSpec(name, null);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_854065586.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_854065586.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_854065586;
-        // ---------- Original Method ----------
-        //return getCookieSpec(name, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.542 -0400", hash_original_method = "4CC259988AD0BC6F5659CB623EFD31B9", hash_generated_method = "6630E69B45C395BDE216C32090C2CD05")
     public synchronized List<String> getSpecNames() {
-        List<String> varB4EAC82CA7396A68D541C85D26508E83_726259454 = null; //Variable for return #1
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_726259454 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_726259454 = new ArrayList<String>(registeredSpecs.keySet());
-        varB4EAC82CA7396A68D541C85D26508E83_726259454.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_726259454.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_726259454;
-        // ---------- Original Method ----------
-        //return new ArrayList<String>(registeredSpecs.keySet());
+        
+        
     }
 
     
@@ -123,12 +124,12 @@ public final class CookieSpecRegistry {
         registeredSpecs.clear();
         registeredSpecs.putAll(map);
         addTaint(map.getTaint());
-        // ---------- Original Method ----------
-        //if (map == null) {
-            //return;
-        //}
-        //registeredSpecs.clear();
-        //registeredSpecs.putAll(map);
+        
+        
+            
+        
+        
+        
     }
 
     

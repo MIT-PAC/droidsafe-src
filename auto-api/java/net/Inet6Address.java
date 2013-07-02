@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -36,12 +36,13 @@ public final class Inet6Address extends InetAddress {
         this.scope_id_set = (scope_id != 0);
         addTaint(ipaddress[0]);
         addTaint(hostName.getTaint());
-        // ---------- Original Method ----------
-        //this.scope_id = scope_id;
-        //this.scope_id_set = (scope_id != 0);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Inet6Address getByAddress(String host, byte[] addr, int scope_id) throws UnknownHostException {
         if (addr == null || addr.length != 16) {
             throw new UnknownHostException("Not an IPv6 address: " + Arrays.toString(addr));
@@ -53,6 +54,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Inet6Address getByAddress(String host, byte[] addr,
             NetworkInterface nif) throws UnknownHostException {
         Inet6Address address = Inet6Address.getByAddress(host, addr, 0);
@@ -81,42 +83,44 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.257 -0400", hash_original_method = "5C85837CE4C7853B5C8DB05F5798B94D", hash_generated_method = "88D61968705F3EC6AF23348B106B6CA6")
     private boolean compareLocalType(Inet6Address ia) {
         {
             boolean var55ABA625F481830BD34F8B5466690BF7_1920452990 = (ia.isSiteLocalAddress() && isSiteLocalAddress());
-        } //End collapsed parenthetic
+        } 
         {
             boolean var71EB32049A5AB07C1504847D1DCB7BE5_1117158926 = (ia.isLinkLocalAddress() && isLinkLocalAddress());
-        } //End collapsed parenthetic
+        } 
         {
             boolean var438C605FD4250DE117DD86CFD9F1B343_922477100 = (!ia.isSiteLocalAddress() && !ia.isLinkLocalAddress());
-        } //End collapsed parenthetic
+        } 
         addTaint(ia.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_735679511 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_735679511;
-        // ---------- Original Method ----------
-        //if (ia.isSiteLocalAddress() && isSiteLocalAddress()) {
-            //return true;
-        //}
-        //if (ia.isLinkLocalAddress() && isLinkLocalAddress()) {
-            //return true;
-        //}
-        //if (!ia.isSiteLocalAddress() && !ia.isLinkLocalAddress()) {
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.257 -0400", hash_original_method = "CB6B527FFA2A204FDEA9D4C37A9B03D5", hash_generated_method = "3281130905614C959125FCEADDCE810A")
     @Override
     public boolean isAnyLocalAddress() {
         boolean varB01692C366B404EF7C26158B42FD3EB5_2086155179 = (Arrays.equals(ipaddress, Inet6Address.ANY.ipaddress));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_843878042 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_843878042;
-        // ---------- Original Method ----------
-        //return Arrays.equals(ipaddress, Inet6Address.ANY.ipaddress);
+        
+        
     }
 
     
@@ -124,16 +128,16 @@ public final class Inet6Address extends InetAddress {
     public boolean isIPv4CompatibleAddress() {
         {
             int i = 0;
-        } //End collapsed parenthetic
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1709303220 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1709303220;
-        // ---------- Original Method ----------
-        //for (int i = 0; i < 12; i++) {
-            //if (ipaddress[i] != 0) {
-                //return false;
-            //}
-        //}
-        //return true;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -142,19 +146,20 @@ public final class Inet6Address extends InetAddress {
     public boolean isLinkLocalAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_598629243 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_598629243;
-        // ---------- Original Method ----------
-        //return ((ipaddress[0] & 0xff) == 0xfe) && ((ipaddress[1] & 0xc0) == 0x80);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.258 -0400", hash_original_method = "29BC59263985E8B6D4DC540BD2555DBE", hash_generated_method = "8485373921581AAB51C5267ACAF77ECF")
     @Override
     public boolean isLoopbackAddress() {
         boolean var1253ED8B41F2F9545D66C1E325A06412_1054997886 = (Arrays.equals(ipaddress, Inet6Address.LOOPBACK.ipaddress));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1437797783 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1437797783;
-        // ---------- Original Method ----------
-        //return Arrays.equals(ipaddress, Inet6Address.LOOPBACK.ipaddress);
+        
+        
     }
 
     
@@ -163,8 +168,8 @@ public final class Inet6Address extends InetAddress {
     public boolean isMCGlobal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1586063883 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1586063883;
-        // ---------- Original Method ----------
-        //return ((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x0e);
+        
+        
     }
 
     
@@ -173,8 +178,8 @@ public final class Inet6Address extends InetAddress {
     public boolean isMCLinkLocal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1345470552 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1345470552;
-        // ---------- Original Method ----------
-        //return ((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x02);
+        
+        
     }
 
     
@@ -183,8 +188,8 @@ public final class Inet6Address extends InetAddress {
     public boolean isMCNodeLocal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2011587907 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2011587907;
-        // ---------- Original Method ----------
-        //return ((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x01);
+        
+        
     }
 
     
@@ -193,8 +198,8 @@ public final class Inet6Address extends InetAddress {
     public boolean isMCOrgLocal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1136260292 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1136260292;
-        // ---------- Original Method ----------
-        //return ((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x08);
+        
+        
     }
 
     
@@ -203,8 +208,8 @@ public final class Inet6Address extends InetAddress {
     public boolean isMCSiteLocal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1685418843 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1685418843;
-        // ---------- Original Method ----------
-        //return ((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x05);
+        
+        
     }
 
     
@@ -213,8 +218,8 @@ public final class Inet6Address extends InetAddress {
     public boolean isMulticastAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_346290406 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_346290406;
-        // ---------- Original Method ----------
-        //return ((ipaddress[0] & 0xff) == 0xff);
+        
+        
     }
 
     
@@ -223,8 +228,8 @@ public final class Inet6Address extends InetAddress {
     public boolean isSiteLocalAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_182697274 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_182697274;
-        // ---------- Original Method ----------
-        //return ((ipaddress[0] & 0xff) == 0xfe) && ((ipaddress[1] & 0xc0) == 0xc0);
+        
+        
     }
 
     
@@ -232,73 +237,76 @@ public final class Inet6Address extends InetAddress {
     public int getScopeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_580578192 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_580578192;
-        // ---------- Original Method ----------
-        //return scope_id_set ? scope_id : 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.261 -0400", hash_original_method = "F4AA364893CE5E0A3EC053A0FC0AB68A", hash_generated_method = "41A59ABD6DF11CBC0510F569E8E3C4D5")
     public NetworkInterface getScopedInterface() {
-        NetworkInterface varB4EAC82CA7396A68D541C85D26508E83_920676134 = null; //Variable for return #1
-        NetworkInterface varB4EAC82CA7396A68D541C85D26508E83_187857313 = null; //Variable for return #2
+        NetworkInterface varB4EAC82CA7396A68D541C85D26508E83_920676134 = null; 
+        NetworkInterface varB4EAC82CA7396A68D541C85D26508E83_187857313 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_920676134 = (scope_ifname_set && ifname != null) ? NetworkInterface.getByName(ifname) : null;
-        } //End block
+        } 
         catch (SocketException ex)
         {
             varB4EAC82CA7396A68D541C85D26508E83_187857313 = null;
-        } //End block
-        NetworkInterface varA7E53CE21691AB073D9660D615818899_1988631228; //Final return value
+        } 
+        NetworkInterface varA7E53CE21691AB073D9660D615818899_1988631228; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1988631228 = varB4EAC82CA7396A68D541C85D26508E83_920676134;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1988631228 = varB4EAC82CA7396A68D541C85D26508E83_187857313;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1988631228.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1988631228.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1988631228;
-        // ---------- Original Method ----------
-        //try {
-            //return (scope_ifname_set && ifname != null) ? NetworkInterface.getByName(ifname) : null;
-        //} catch (SocketException ex) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.261 -0400", hash_original_method = "080327AC5673C5B50BEA99966675EA0A", hash_generated_method = "9AF02CBC8F1F4889CCB85C8A8758FE98")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         ObjectOutputStream.PutField fields = stream.putFields();
         {
             fields.put("ipaddress", null);
-        } //End block
+        } 
         {
             fields.put("ipaddress", ipaddress);
-        } //End block
+        } 
         fields.put("scope_id", scope_id);
         fields.put("scope_id_set", scope_id_set);
         fields.put("scope_ifname_set", scope_ifname_set);
         fields.put("ifname", ifname);
         stream.writeFields();
         addTaint(stream.getTaint());
-        // ---------- Original Method ----------
-        //ObjectOutputStream.PutField fields = stream.putFields();
-        //if (ipaddress == null) {
-            //fields.put("ipaddress", null);
-        //} else {
-            //fields.put("ipaddress", ipaddress);
-        //}
-        //fields.put("scope_id", scope_id);
-        //fields.put("scope_id_set", scope_id_set);
-        //fields.put("scope_ifname_set", scope_ifname_set);
-        //fields.put("ifname", ifname);
-        //stream.writeFields();
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.262 -0400", hash_original_method = "6B9730D7168B0E96ABCC55BBF7E32967", hash_generated_method = "1793AE38F60011BCB54CEED7995E6400")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         ObjectInputStream.GetField fields = stream.readFields();
@@ -308,51 +316,52 @@ public final class Inet6Address extends InetAddress {
         ifname = (String) fields.get("ifname", null);
         scope_ifname_set = fields.get("scope_ifname_set", false);
         addTaint(stream.getTaint());
-        // ---------- Original Method ----------
-        //ObjectInputStream.GetField fields = stream.readFields();
-        //ipaddress = (byte[]) fields.get("ipaddress", null);
-        //scope_id = fields.get("scope_id", 0);
-        //scope_id_set = fields.get("scope_id_set", false);
-        //ifname = (String) fields.get("ifname", null);
-        //scope_ifname_set = fields.get("scope_ifname_set", false);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.263 -0400", hash_original_method = "3CCDE4F93DD898D7C7483D8BBE2EDADA", hash_generated_method = "69638FB661CC7C27B85B0693DE6558B2")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_757414352 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_950162641 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_986757059 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_757414352 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_950162641 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_986757059 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_757414352 = super.toString() + "%" + ifname;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_950162641 = super.toString() + "%" + scope_id;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_986757059 = super.toString();
-        String varA7E53CE21691AB073D9660D615818899_16183840; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_16183840; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_16183840 = varB4EAC82CA7396A68D541C85D26508E83_757414352;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_16183840 = varB4EAC82CA7396A68D541C85D26508E83_950162641;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_16183840 = varB4EAC82CA7396A68D541C85D26508E83_986757059;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_16183840.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_16183840.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_16183840;
-        // ---------- Original Method ----------
-        //if (ifname != null) {
-            //return super.toString() + "%" + ifname;
-        //}
-        //if (scope_id != 0) {
-            //return super.toString() + "%" + scope_id;
-        //}
-        //return super.toString();
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     

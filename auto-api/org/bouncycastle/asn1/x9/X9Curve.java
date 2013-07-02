@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x9;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 import org.bouncycastle.asn1.ASN1Encodable;
@@ -36,10 +36,10 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
         this.curve = curve;
         this.seed = null;
         setFieldIdentifier();
-        // ---------- Original Method ----------
-        //this.curve = curve;
-        //this.seed = null;
-        //setFieldIdentifier();
+        
+        
+        
+        
     }
 
     
@@ -50,10 +50,10 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
         this.curve = curve;
         this.seed = seed;
         setFieldIdentifier();
-        // ---------- Original Method ----------
-        //this.curve = curve;
-        //this.seed = seed;
-        //setFieldIdentifier();
+        
+        
+        
+        
     }
 
     
@@ -69,7 +69,7 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
                 X9FieldElement x9A = new X9FieldElement(p, (ASN1OctetString)seq.getObjectAt(0));
                 X9FieldElement x9B = new X9FieldElement(p, (ASN1OctetString)seq.getObjectAt(1));
                 curve = new ECCurve.Fp(p, x9A.getValue().toBigInteger(), x9B.getValue().toBigInteger());
-            } //End block
+            } 
             {
                 {
                     boolean var3BC873BB046F3404FE6D600BABFCF028_151066926 = (fieldIdentifier.equals(characteristic_two_field));
@@ -86,7 +86,7 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
                             {
                                 k1 = ((DERInteger)parameters.getObjectAt(2)).getValue().
                         intValue();
-                            } //End block
+                            } 
                             {
                                 DERSequence pentanomial = (DERSequence)parameters.getObjectAt(2);
                                 k1 = ((DERInteger)pentanomial.getObjectAt(0)).getValue().
@@ -95,63 +95,64 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
                         intValue();
                                 k3 = ((DERInteger)pentanomial.getObjectAt(2)).getValue().
                         intValue();
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         X9FieldElement x9A = new X9FieldElement(m, k1, k2, k3, (ASN1OctetString)seq.getObjectAt(0));
                         X9FieldElement x9B = new X9FieldElement(m, k1, k2, k3, (ASN1OctetString)seq.getObjectAt(1));
                         curve = new ECCurve.F2m(m, k1, k2, k3, x9A.getValue().toBigInteger(), x9B.getValue().toBigInteger());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             boolean varB84C8522B025613859E5A51D2B72F1B8_1970476007 = (seq.size() == 3);
             {
                 seed = ((DERBitString)seq.getObjectAt(2)).getBytes();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.396 -0400", hash_original_method = "D736F484B6800931FE72576618335766", hash_generated_method = "6EE048868B38FC35F72632EFD9ACE669")
     private void setFieldIdentifier() {
         {
             fieldIdentifier = prime_field;
-        } //End block
+        } 
         {
             fieldIdentifier = characteristic_two_field;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("This type of ECCurve is not "
                     + "implemented");
-        } //End block
-        // ---------- Original Method ----------
-        //if (curve instanceof ECCurve.Fp)
-        //{
-            //fieldIdentifier = prime_field;
-        //}
-        //else if (curve instanceof ECCurve.F2m)
-        //{
-            //fieldIdentifier = characteristic_two_field;
-        //}
-        //else
-        //{
-            //throw new IllegalArgumentException("This type of ECCurve is not "
-                    //+ "implemented");
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.398 -0400", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "1B6CB12C072BC7422FC5B1B35FDECBBD")
     public ECCurve getCurve() {
-        ECCurve varB4EAC82CA7396A68D541C85D26508E83_1055447969 = null; //Variable for return #1
+        ECCurve varB4EAC82CA7396A68D541C85D26508E83_1055447969 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1055447969 = curve;
-        varB4EAC82CA7396A68D541C85D26508E83_1055447969.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1055447969.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1055447969;
-        // ---------- Original Method ----------
-        //return curve;
+        
+        
     }
 
     
@@ -159,52 +160,53 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
     public byte[] getSeed() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1315508704 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1315508704;
-        // ---------- Original Method ----------
-        //return seed;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.399 -0400", hash_original_method = "FE4C71C21A5F26496E8390DAB2BE9299", hash_generated_method = "5CC22218843E0344C7ED2E9CF8D883F0")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1908963286 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1908963286 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         {
             boolean var62E590AD15ACE0239EBD85B6ECDFA12A_1893411784 = (fieldIdentifier.equals(prime_field));
             {
                 v.add(new X9FieldElement(curve.getA()).getDERObject());
                 v.add(new X9FieldElement(curve.getB()).getDERObject());
-            } //End block
+            } 
             {
                 boolean varF49669515C9B242B5C36D1E3CE22C8C1_1424488522 = (fieldIdentifier.equals(characteristic_two_field));
                 {
                     v.add(new X9FieldElement(curve.getA()).getDERObject());
                     v.add(new X9FieldElement(curve.getB()).getDERObject());
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             v.add(new DERBitString(seed));
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1908963286 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_1908963286.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1908963286.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1908963286;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector v = new ASN1EncodableVector();
-        //if (fieldIdentifier.equals(prime_field)) 
-        //{ 
-            //v.add(new X9FieldElement(curve.getA()).getDERObject());
-            //v.add(new X9FieldElement(curve.getB()).getDERObject());
-        //} 
-        //else if (fieldIdentifier.equals(characteristic_two_field)) 
-        //{
-            //v.add(new X9FieldElement(curve.getA()).getDERObject());
-            //v.add(new X9FieldElement(curve.getB()).getDERObject());
-        //}
-        //if (seed != null)
-        //{
-            //v.add(new DERBitString(seed));
-        //}
-        //return new DERSequence(v);
+        
+        
+        
+        
+            
+            
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+        
     }
 
     

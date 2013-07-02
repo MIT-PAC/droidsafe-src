@@ -1,11 +1,11 @@
 package org.apache.http.impl.auth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.MessageDigest;
 import java.util.ArrayList;
@@ -39,8 +39,8 @@ public class DigestScheme extends RFC2617Scheme {
     public  DigestScheme() {
         super();
         this.complete = false;
-        // ---------- Original Method ----------
-        //this.complete = false;
+        
+        
     }
 
     
@@ -53,14 +53,14 @@ public class DigestScheme extends RFC2617Scheme {
             boolean varB518C50C24DA45919BC97DD2331266CA_974209835 = (getParameter("realm") == null);
             {
                 if (DroidSafeAndroidRuntime.control) throw new MalformedChallengeException("missing realm in challange");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var00FABE96FECB9100DDCB41444DF53139_1723768668 = (getParameter("nonce") == null);
             {
                 if (DroidSafeAndroidRuntime.control) throw new MalformedChallengeException("missing nonce in challange");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean unsupportedQop = false;
         String qop = getParameter("qop");
         {
@@ -73,57 +73,58 @@ public class DigestScheme extends RFC2617Scheme {
                         boolean var1C7F26E4E08EA2C75E4C8C422886B96D_850387460 = (variant.equals("auth"));
                         {
                             qopVariant = QOP_AUTH;
-                        } //End block
+                        } 
                         {
                             boolean varC2465AE7835FF3137D782DCD667573FC_1802759805 = (variant.equals("auth-int"));
                             {
                                 qopVariant = QOP_AUTH_INT;
-                            } //End block
+                            } 
                             {
                                 unsupportedQop = true;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new MalformedChallengeException("None of the qop methods is supported");
-        } //End block
+        } 
         this.cnonce = null;
         this.complete = true;
         addTaint(header.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.845 -0400", hash_original_method = "F17D438485F30D6AF41BADA0EDB398DD", hash_generated_method = "982DF1A8BB6F7A25BDF36A89186A1DEE")
     public boolean isComplete() {
         String s = getParameter("stale");
         {
             boolean varB983BC005A6E66731B2A7EAFC25F1B76_1055639637 = ("true".equalsIgnoreCase(s));
-        } //End collapsed parenthetic
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1320182000 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1320182000;
-        // ---------- Original Method ----------
-        //String s = getParameter("stale");
-        //if ("true".equalsIgnoreCase(s)) {
-            //return false;
-        //} else {
-            //return this.complete;
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.845 -0400", hash_original_method = "590EDC4C396D176AA70267B4181524CE", hash_generated_method = "05ABDC6D72DA10CA44F7A1FA82963D10")
     public String getSchemeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2029993028 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2029993028 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2029993028 = "digest";
-        varB4EAC82CA7396A68D541C85D26508E83_2029993028.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2029993028.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2029993028;
-        // ---------- Original Method ----------
-        //return "digest";
+        
+        
     }
 
     
@@ -131,8 +132,8 @@ public class DigestScheme extends RFC2617Scheme {
     public boolean isConnectionBased() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_666641786 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_666641786;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -141,25 +142,26 @@ public class DigestScheme extends RFC2617Scheme {
         getParameters().put(name, value);
         addTaint(name.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //getParameters().put(name, value);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.846 -0400", hash_original_method = "9DF20B77158B98071C5FA39937248DA7", hash_generated_method = "1AA5FD23F57FF49C04FDE693FD4A558B")
     private String getCnonce() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1289577724 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1289577724 = null; 
         {
             this.cnonce = createCnonce();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1289577724 = this.cnonce;
-        varB4EAC82CA7396A68D541C85D26508E83_1289577724.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1289577724.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1289577724;
-        // ---------- Original Method ----------
-        //if (this.cnonce == null) {
-            //this.cnonce = createCnonce();
-        //}
-        //return this.cnonce;
+        
+        
+            
+        
+        
     }
 
     
@@ -167,42 +169,42 @@ public class DigestScheme extends RFC2617Scheme {
     public Header authenticate(
             final Credentials credentials, 
             final HttpRequest request) throws AuthenticationException {
-        Header varB4EAC82CA7396A68D541C85D26508E83_1487050148 = null; //Variable for return #1
+        Header varB4EAC82CA7396A68D541C85D26508E83_1487050148 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Credentials may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } //End block
+        } 
         getParameters().put("methodname", request.getRequestLine().getMethod());
         getParameters().put("uri", request.getRequestLine().getUri());
         String charset = getParameter("charset");
         {
             charset = AuthParams.getCredentialCharset(request.getParams());
             getParameters().put("charset", charset);
-        } //End block
+        } 
         String digest = createDigest(credentials);
         varB4EAC82CA7396A68D541C85D26508E83_1487050148 = createDigestHeader(credentials, digest);
         addTaint(credentials.getTaint());
         addTaint(request.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1487050148.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1487050148.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1487050148;
-        // ---------- Original Method ----------
-        //if (credentials == null) {
-            //throw new IllegalArgumentException("Credentials may not be null");
-        //}
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //getParameters().put("methodname", request.getRequestLine().getMethod());
-        //getParameters().put("uri", request.getRequestLine().getUri());
-        //String charset = getParameter("charset");
-        //if (charset == null) {
-            //charset = AuthParams.getCredentialCharset(request.getParams());
-            //getParameters().put("charset", charset);
-        //}
-        //String digest = createDigest(credentials);
-        //return createDigestHeader(credentials, digest);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -220,7 +222,7 @@ public class DigestScheme extends RFC2617Scheme {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.850 -0400", hash_original_method = "EC5C003DA4A6F1C86FB6170174AAC10C", hash_generated_method = "F5639DD6AAC3A47E8562FACECED64346")
     private String createDigest(final Credentials credentials) throws AuthenticationException {
-        String varB4EAC82CA7396A68D541C85D26508E83_269862990 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_269862990 = null; 
         String uri = getParameter("uri");
         String realm = getParameter("realm");
         String nonce = getParameter("nonce");
@@ -228,24 +230,24 @@ public class DigestScheme extends RFC2617Scheme {
         String algorithm = getParameter("algorithm");
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("URI may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Realm may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Nonce may not be null");
-        } //End block
+        } 
         {
             algorithm = "MD5";
-        } //End block
+        } 
         String charset = getParameter("charset");
         {
             charset = "ISO-8859-1";
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new AuthenticationException(
                 "Unsupported qop in HTTP Digest authentication");
-        } //End block
+        } 
         MessageDigest md5Helper = createMessageDigest("MD5");
         String uname = credentials.getUserPrincipal().getName();
         String pwd = credentials.getPassword();
@@ -268,19 +270,19 @@ public class DigestScheme extends RFC2617Scheme {
                 tmp3.append(':');
                 tmp3.append(cnonce);
                 a1 = tmp3.toString();
-            } //End block
+            } 
             {
                 boolean var93593B6D05D8F0C556A656FE5696494F_1133249200 = (!algorithm.equalsIgnoreCase("MD5"));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new AuthenticationException("Unhandled algorithm " + algorithm + " requested");
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         String md5a1 = encode(md5Helper.digest(EncodingUtils.getBytes(a1, charset)));
         String a2 = null;
         {
             a2 = method + ':' + uri;
-        } //End block
+        } 
         String md5a2 = encode(md5Helper.digest(EncodingUtils.getAsciiBytes(a2)));
         String serverDigestValue;
         {
@@ -291,7 +293,7 @@ public class DigestScheme extends RFC2617Scheme {
             tmp2.append(':');
             tmp2.append(md5a2);
             serverDigestValue = tmp2.toString();
-        } //End block
+        } 
         {
             String qopOption = getQopVariantString();
             String cnonce = getCnonce();
@@ -309,14 +311,14 @@ public class DigestScheme extends RFC2617Scheme {
             tmp2.append(':');
             tmp2.append(md5a2);
             serverDigestValue = tmp2.toString();
-        } //End block
+        } 
         String serverDigest = encode(md5Helper.digest(EncodingUtils.getAsciiBytes(serverDigestValue)));
         varB4EAC82CA7396A68D541C85D26508E83_269862990 = serverDigest;
         addTaint(credentials.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_269862990.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_269862990.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_269862990;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -324,17 +326,17 @@ public class DigestScheme extends RFC2617Scheme {
     private Header createDigestHeader(
             final Credentials credentials, 
             final String digest) throws AuthenticationException {
-        Header varB4EAC82CA7396A68D541C85D26508E83_1009412518 = null; //Variable for return #1
+        Header varB4EAC82CA7396A68D541C85D26508E83_1009412518 = null; 
         CharArrayBuffer buffer = new CharArrayBuffer(128);
         {
             boolean var0D47185A0D32DD28D63E82CE34A14458_81126808 = (isProxy());
             {
                 buffer.append(AUTH.PROXY_AUTH_RESP);
-            } //End block
+            } 
             {
                 buffer.append(AUTH.WWW_AUTH_RESP);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         buffer.append(": Digest ");
         String uri = getParameter("uri");
         String realm = getParameter("realm");
@@ -353,13 +355,13 @@ public class DigestScheme extends RFC2617Scheme {
             params.add(new BasicNameValuePair("qop", getQopVariantString()));
             params.add(new BasicNameValuePair("nc", NC));
             params.add(new BasicNameValuePair("cnonce", getCnonce()));
-        } //End block
+        } 
         {
             params.add(new BasicNameValuePair("algorithm", algorithm));
-        } //End block
+        } 
         {
             params.add(new BasicNameValuePair("opaque", opaque));
-        } //End block
+        } 
         {
             int i = 0;
             boolean var41B38B8299B0C96B0545ADBE0A9274EC_34907981 = (i < params.size());
@@ -367,47 +369,48 @@ public class DigestScheme extends RFC2617Scheme {
                 BasicNameValuePair param = params.get(i);
                 {
                     buffer.append(", ");
-                } //End block
+                } 
                 boolean noQuotes = "nc".equals(param.getName()) ||
                                "qop".equals(param.getName());
                 BasicHeaderValueFormatter.DEFAULT
                 .formatNameValuePair(buffer, param, !noQuotes);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1009412518 = new BufferedHeader(buffer);
         addTaint(credentials.getTaint());
         addTaint(digest.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1009412518.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1009412518.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1009412518;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.852 -0400", hash_original_method = "4B7F5D1CEF78CAAD9B937EECFEA67886", hash_generated_method = "B22083EB19BD9E36C2B42541BF140E0A")
     private String getQopVariantString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1166643595 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1166643595 = null; 
         String qopOption;
         {
             qopOption = "auth-int";
-        } //End block
+        } 
         {
             qopOption = "auth";
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1166643595 = qopOption;
-        varB4EAC82CA7396A68D541C85D26508E83_1166643595.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1166643595.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1166643595;
-        // ---------- Original Method ----------
-        //String qopOption;
-        //if (qopVariant == QOP_AUTH_INT) {
-            //qopOption = "auth-int";   
-        //} else {
-            //qopOption = "auth";
-        //}
-        //return qopOption;
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String encode(byte[] binaryData) {
         if (binaryData.length != 16) {
             return null;
@@ -423,6 +426,7 @@ public class DigestScheme extends RFC2617Scheme {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String createCnonce() {
         String cnonce;
         MessageDigest md5Helper = createMessageDigest("MD5");

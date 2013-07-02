@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -28,15 +28,15 @@ public class PhoneSubInfo extends IPhoneSubInfo.Stub {
     public  PhoneSubInfo(Phone phone) {
         mPhone = phone;
         mContext = phone.getContext();
-        // ---------- Original Method ----------
-        //mPhone = phone;
-        //mContext = phone.getContext();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.756 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -45,268 +45,282 @@ public class PhoneSubInfo extends IPhoneSubInfo.Stub {
         try 
         {
             super.finalize();
-        } //End block
+        } 
         catch (Throwable throwable)
         { }
         Log.d(LOG_TAG, "PhoneSubInfo finalized");
-        // ---------- Original Method ----------
-        //try {
-            //super.finalize();
-        //} catch (Throwable throwable) {
-            //Log.e(LOG_TAG, "Error while finalizing:", throwable);
-        //}
-        //Log.d(LOG_TAG, "PhoneSubInfo finalized");
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.757 -0400", hash_original_method = "7FB2911E415BAC248B6F7C00F0AD8580", hash_generated_method = "DB54664E6C2999350E56D9C069D500B3")
     public String getDeviceId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_936645564 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_936645564 = null; 
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
         varB4EAC82CA7396A68D541C85D26508E83_936645564 = mPhone.getDeviceId();
-        varB4EAC82CA7396A68D541C85D26508E83_936645564.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_936645564.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_936645564;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return mPhone.getDeviceId();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.758 -0400", hash_original_method = "47A65D652880A955D13092E25ED0BFA3", hash_generated_method = "D82721229AC48C114E93CEB55566FB55")
     public String getDeviceSvn() {
-        String varB4EAC82CA7396A68D541C85D26508E83_725530068 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_725530068 = null; 
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
         varB4EAC82CA7396A68D541C85D26508E83_725530068 = mPhone.getDeviceSvn();
-        varB4EAC82CA7396A68D541C85D26508E83_725530068.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_725530068.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_725530068;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return mPhone.getDeviceSvn();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.759 -0400", hash_original_method = "31029AA63C15ED3BEB918EA2DF9C53C8", hash_generated_method = "AA546827D064D70D91BE011BA50A60C1")
     public String getSubscriberId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_998646230 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_998646230 = null; 
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
         varB4EAC82CA7396A68D541C85D26508E83_998646230 = mPhone.getSubscriberId();
-        varB4EAC82CA7396A68D541C85D26508E83_998646230.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_998646230.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_998646230;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return mPhone.getSubscriberId();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.760 -0400", hash_original_method = "F715A558C290BD14ABDE5817D87243CF", hash_generated_method = "DBB01CC40FDEDD21E1D79906C625DD5F")
     public String getIccSerialNumber() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1304197465 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1304197465 = null; 
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
         varB4EAC82CA7396A68D541C85D26508E83_1304197465 = mPhone.getIccSerialNumber();
-        varB4EAC82CA7396A68D541C85D26508E83_1304197465.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1304197465.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1304197465;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return mPhone.getIccSerialNumber();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.760 -0400", hash_original_method = "128FE2451356AD093E7C4FB6D31CED7B", hash_generated_method = "42A4AAB9AD652A9BBF1D02DFDEB5AAB2")
     public String getLine1Number() {
-        String varB4EAC82CA7396A68D541C85D26508E83_17794450 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_17794450 = null; 
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
         varB4EAC82CA7396A68D541C85D26508E83_17794450 = mPhone.getLine1Number();
-        varB4EAC82CA7396A68D541C85D26508E83_17794450.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_17794450.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_17794450;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return mPhone.getLine1Number();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.761 -0400", hash_original_method = "3100EE5C09A183E0C52EA30DD2C38FCE", hash_generated_method = "1CCAF950A77FEB3073BE05A79975DA2E")
     public String getLine1AlphaTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2072610502 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2072610502 = null; 
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
         varB4EAC82CA7396A68D541C85D26508E83_2072610502 = (String) mPhone.getLine1AlphaTag();
-        varB4EAC82CA7396A68D541C85D26508E83_2072610502.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2072610502.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2072610502;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return (String) mPhone.getLine1AlphaTag();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.762 -0400", hash_original_method = "486D3990E5DF065E80D4F34954E57792", hash_generated_method = "C8D6DBFCFF31094A725BC72599603755")
     public String getMsisdn() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1185067644 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1185067644 = null; 
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
         varB4EAC82CA7396A68D541C85D26508E83_1185067644 = mPhone.getMsisdn();
-        varB4EAC82CA7396A68D541C85D26508E83_1185067644.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1185067644.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1185067644;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return mPhone.getMsisdn();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.763 -0400", hash_original_method = "D6964CF0DD97089F5666548710C28DF3", hash_generated_method = "E62F604C371208C300094E061F4CF55C")
     public String getVoiceMailNumber() {
-        String varB4EAC82CA7396A68D541C85D26508E83_953047803 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_953047803 = null; 
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
         String number = PhoneNumberUtils.extractNetworkPortion(mPhone.getVoiceMailNumber());
         Log.d(LOG_TAG, "VM: PhoneSubInfo.getVoiceMailNUmber: ");
         varB4EAC82CA7396A68D541C85D26508E83_953047803 = number;
-        varB4EAC82CA7396A68D541C85D26508E83_953047803.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_953047803.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_953047803;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //String number = PhoneNumberUtils.extractNetworkPortion(mPhone.getVoiceMailNumber());
-        //Log.d(LOG_TAG, "VM: PhoneSubInfo.getVoiceMailNUmber: ");
-        //return number;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.765 -0400", hash_original_method = "E9A6A2984EA72CED9E5DEFCEFCC9AE08", hash_generated_method = "14191FD25AC399CDBC3C45FDB972CA25")
     public String getCompleteVoiceMailNumber() {
-        String varB4EAC82CA7396A68D541C85D26508E83_635049289 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_635049289 = null; 
         mContext.enforceCallingOrSelfPermission(CALL_PRIVILEGED,
                 "Requires CALL_PRIVILEGED");
         String number = mPhone.getVoiceMailNumber();
         Log.d(LOG_TAG, "VM: PhoneSubInfo.getCompleteVoiceMailNUmber: ");
         varB4EAC82CA7396A68D541C85D26508E83_635049289 = number;
-        varB4EAC82CA7396A68D541C85D26508E83_635049289.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_635049289.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_635049289;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(CALL_PRIVILEGED,
-                //"Requires CALL_PRIVILEGED");
-        //String number = mPhone.getVoiceMailNumber();
-        //Log.d(LOG_TAG, "VM: PhoneSubInfo.getCompleteVoiceMailNUmber: ");
-        //return number;
+        
+        
+                
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.766 -0400", hash_original_method = "D600B0CF58C0E649216D70FCBA15089F", hash_generated_method = "112FB565357A3C7EACA39DAB82CA3BAE")
     public String getVoiceMailAlphaTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_284129498 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_284129498 = null; 
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
         varB4EAC82CA7396A68D541C85D26508E83_284129498 = (String) mPhone.getVoiceMailAlphaTag();
-        varB4EAC82CA7396A68D541C85D26508E83_284129498.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_284129498.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_284129498;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return (String) mPhone.getVoiceMailAlphaTag();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.767 -0400", hash_original_method = "9F475DD57EA6DFA50165E234C6E8C4F9", hash_generated_method = "F3CD5F49C92CDDFAFDEAC2EB7BD37538")
     public String getIsimImpi() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2019398242 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_842773775 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_2019398242 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_842773775 = null; 
         mContext.enforceCallingOrSelfPermission(READ_PRIVILEGED_PHONE_STATE,
                 "Requires READ_PRIVILEGED_PHONE_STATE");
         IsimRecords isim = mPhone.getIsimRecords();
         {
             varB4EAC82CA7396A68D541C85D26508E83_2019398242 = isim.getIsimImpi();
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_842773775 = null;
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_1932367315; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1932367315; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1932367315 = varB4EAC82CA7396A68D541C85D26508E83_2019398242;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1932367315 = varB4EAC82CA7396A68D541C85D26508E83_842773775;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1932367315.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1932367315.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1932367315;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PRIVILEGED_PHONE_STATE,
-                //"Requires READ_PRIVILEGED_PHONE_STATE");
-        //IsimRecords isim = mPhone.getIsimRecords();
-        //if (isim != null) {
-            //return isim.getIsimImpi();
-        //} else {
-            //return null;
-        //}
+        
+        
+                
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.769 -0400", hash_original_method = "F4E0E1121A78A263259E537EC507AC3C", hash_generated_method = "BCCCC422301EBA75BFB4BD859DF9D42F")
     public String getIsimDomain() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1483713315 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_126925689 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1483713315 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_126925689 = null; 
         mContext.enforceCallingOrSelfPermission(READ_PRIVILEGED_PHONE_STATE,
                 "Requires READ_PRIVILEGED_PHONE_STATE");
         IsimRecords isim = mPhone.getIsimRecords();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1483713315 = isim.getIsimDomain();
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_126925689 = null;
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_1676484434; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1676484434; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1676484434 = varB4EAC82CA7396A68D541C85D26508E83_1483713315;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1676484434 = varB4EAC82CA7396A68D541C85D26508E83_126925689;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1676484434.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1676484434.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1676484434;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PRIVILEGED_PHONE_STATE,
-                //"Requires READ_PRIVILEGED_PHONE_STATE");
-        //IsimRecords isim = mPhone.getIsimRecords();
-        //if (isim != null) {
-            //return isim.getIsimDomain();
-        //} else {
-            //return null;
-        //}
+        
+        
+                
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.770 -0400", hash_original_method = "88204E3B8EE4ABDC3556103F74BFEFC3", hash_generated_method = "7BC47FFF7E37C1FA68814E972CBCD1A5")
     public String[] getIsimImpu() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1722496660 = null; //Variable for return #1
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1381009537 = null; //Variable for return #2
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1722496660 = null; 
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1381009537 = null; 
         mContext.enforceCallingOrSelfPermission(READ_PRIVILEGED_PHONE_STATE,
                 "Requires READ_PRIVILEGED_PHONE_STATE");
         IsimRecords isim = mPhone.getIsimRecords();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1722496660 = isim.getIsimImpu();
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1381009537 = null;
-        } //End block
-        String[] varA7E53CE21691AB073D9660D615818899_228768468; //Final return value
+        } 
+        String[] varA7E53CE21691AB073D9660D615818899_228768468; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_228768468 = varB4EAC82CA7396A68D541C85D26508E83_1722496660;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_228768468 = varB4EAC82CA7396A68D541C85D26508E83_1381009537;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_228768468.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_228768468.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_228768468;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PRIVILEGED_PHONE_STATE,
-                //"Requires READ_PRIVILEGED_PHONE_STATE");
-        //IsimRecords isim = mPhone.getIsimRecords();
-        //if (isim != null) {
-            //return isim.getIsimImpu();
-        //} else {
-            //return null;
-        //}
+        
+        
+                
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.772 -0400", hash_original_method = "4DB3773BD9844F1658383FB3EDE03C78", hash_generated_method = "6EC73D89F51FD0892ED435339AABA199")
     protected void dump(FileDescriptor fd, PrintWriter pw, String[] args) {
         {
@@ -316,25 +330,25 @@ public class PhoneSubInfo extends IPhoneSubInfo.Stub {
                 pw.println("Permission Denial: can't dump PhoneSubInfo from from pid="
                     + Binder.getCallingPid()
                     + ", uid=" + Binder.getCallingUid());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         pw.println("Phone Subscriber Info:");
         pw.println("  Phone Type = " + mPhone.getPhoneName());
         pw.println("  Device ID = " + mPhone.getDeviceId());
         addTaint(fd.getTaint());
         addTaint(pw.getTaint());
         addTaint(args[0].getTaint());
-        // ---------- Original Method ----------
-        //if (mContext.checkCallingOrSelfPermission(android.Manifest.permission.DUMP)
-                //!= PackageManager.PERMISSION_GRANTED) {
-            //pw.println("Permission Denial: can't dump PhoneSubInfo from from pid="
-                    //+ Binder.getCallingPid()
-                    //+ ", uid=" + Binder.getCallingUid());
-            //return;
-        //}
-        //pw.println("Phone Subscriber Info:");
-        //pw.println("  Phone Type = " + mPhone.getPhoneName());
-        //pw.println("  Device ID = " + mPhone.getDeviceId());
+        
+        
+                
+            
+                    
+                    
+            
+        
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.accounts.Account;
 import android.os.Bundle;
@@ -71,15 +71,15 @@ public class SyncOperation implements Comparable {
         {
             this.expedited = true;
             this.earliestRunTime = now;
-        } //End block
+        } 
         {
             this.expedited = false;
             this.earliestRunTime = now + delayInMs;
-        } //End block
+        } 
         updateEffectiveRunTime();
         this.key = toKey();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -96,51 +96,54 @@ public class SyncOperation implements Comparable {
         this.allowParallelSyncs = other.allowParallelSyncs;
         this.updateEffectiveRunTime();
         this.key = toKey();
-        // ---------- Original Method ----------
-        //this.account = other.account;
-        //this.syncSource = other.syncSource;
-        //this.authority = other.authority;
-        //this.extras = new Bundle(other.extras);
-        //this.expedited = other.expedited;
-        //this.earliestRunTime = SystemClock.elapsedRealtime();
-        //this.backoff = other.backoff;
-        //this.delayUntil = other.delayUntil;
-        //this.allowParallelSyncs = other.allowParallelSyncs;
-        //this.updateEffectiveRunTime();
-        //this.key = toKey();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.179 -0400", hash_original_method = "432EE1A094EFB9968E7A50DA8ACAC133", hash_generated_method = "0768A711E4EAEFB2C8222666F3ED311B")
     private void removeFalseExtra(String extraName) {
         {
             boolean varA63D76AF566EBA015E3C2D765EABECE6_1498031799 = (!extras.getBoolean(extraName, false));
             {
                 extras.remove(extraName);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(extraName.getTaint());
-        // ---------- Original Method ----------
-        //if (!extras.getBoolean(extraName, false)) {
-            //extras.remove(extraName);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.181 -0400", hash_original_method = "DD55706005FD16094E01DF90CF28D99E", hash_generated_method = "B36B585DB197331967AE453EC718A43B")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_834039017 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_834039017 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_834039017 = dump(true);
-        varB4EAC82CA7396A68D541C85D26508E83_834039017.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_834039017.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_834039017;
-        // ---------- Original Method ----------
-        //return dump(true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.182 -0400", hash_original_method = "47737E917226B122B7AA0C5B23AFE223", hash_generated_method = "959910AEF6E7B2855B51214264078361")
     public String dump(boolean useOneLine) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1751659187 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1751659187 = null; 
         StringBuilder sb = new StringBuilder();
         sb.append(account.name);
         sb.append(" (" + account.type + ")");
@@ -150,78 +153,82 @@ public class SyncOperation implements Comparable {
         sb.append(", earliestRunTime " + earliestRunTime);
         {
             sb.append(", EXPEDITED");
-        } //End block
+        } 
         {
             boolean var40EB6F6CF4ABE63E4CA23EACF2DEA578_253015977 = (!useOneLine && !extras.keySet().isEmpty());
             {
                 sb.append("\n    ");
                 extrasToStringBuilder(extras, sb);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1751659187 = sb.toString();
         addTaint(useOneLine);
-        varB4EAC82CA7396A68D541C85D26508E83_1751659187.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1751659187.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1751659187;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder();
-        //sb.append(account.name);
-        //sb.append(" (" + account.type + ")");
-        //sb.append(", " + authority);
-        //sb.append(", ");
-        //sb.append(SyncStorageEngine.SOURCES[syncSource]);
-        //sb.append(", earliestRunTime " + earliestRunTime);
-        //if (expedited) {
-            //sb.append(", EXPEDITED");
-        //}
-        //if (!useOneLine && !extras.keySet().isEmpty()) {
-            //sb.append("\n    ");
-            //extrasToStringBuilder(extras, sb);
-        //}
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.183 -0400", hash_original_method = "0CBE4B28609593623A1CB97001F0DBD2", hash_generated_method = "ABE34CF23007676C8A9742C92E7BE2B7")
     public boolean isInitialization() {
         boolean var15675A814E24816554E062EC589D1FA0_2104404529 = (extras.getBoolean(ContentResolver.SYNC_EXTRAS_INITIALIZE, false));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1093966519 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1093966519;
-        // ---------- Original Method ----------
-        //return extras.getBoolean(ContentResolver.SYNC_EXTRAS_INITIALIZE, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.183 -0400", hash_original_method = "A202EE0B500962365FD241C616148E63", hash_generated_method = "817EA989F2DE07F1FD318F53F112A2C8")
     public boolean ignoreBackoff() {
         boolean var11F18930ED342CB5DB82C8732826050E_544320061 = (extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF, false));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1112218985 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1112218985;
-        // ---------- Original Method ----------
-        //return extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.184 -0400", hash_original_method = "557BF419234DEC0AF5F90553488D23D9", hash_generated_method = "621EFE28A224BA470791A711E9E54897")
     private String toKey() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1207688815 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1207688815 = null; 
         StringBuilder sb = new StringBuilder();
         sb.append("authority: ").append(authority);
         sb.append(" account {name=" + account.name + ", type=" + account.type + "}");
         sb.append(" extras: ");
         extrasToStringBuilder(extras, sb);
         varB4EAC82CA7396A68D541C85D26508E83_1207688815 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1207688815.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1207688815.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1207688815;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder();
-        //sb.append("authority: ").append(authority);
-        //sb.append(" account {name=" + account.name + ", type=" + account.type + "}");
-        //sb.append(" extras: ");
-        //extrasToStringBuilder(extras, sb);
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void extrasToStringBuilder(Bundle bundle, StringBuilder sb) {
         sb.append("[");
         for (String key : bundle.keySet()) {
@@ -231,6 +238,7 @@ public class SyncOperation implements Comparable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.185 -0400", hash_original_method = "0B30B519DCD273F2706D3A8819933F53", hash_generated_method = "3470C2C3EB73D929C84713285D0EFEAE")
     public void updateEffectiveRunTime() {
         effectiveRunTime = ignoreBackoff()
@@ -238,12 +246,12 @@ public class SyncOperation implements Comparable {
                 : Math.max(
                     Math.max(earliestRunTime, delayUntil),
                     backoff);
-        // ---------- Original Method ----------
-        //effectiveRunTime = ignoreBackoff()
-                //? earliestRunTime
-                //: Math.max(
-                    //Math.max(earliestRunTime, delayUntil),
-                    //backoff);
+        
+        
+                
+                
+                    
+                    
     }
 
     
@@ -253,15 +261,15 @@ public class SyncOperation implements Comparable {
         addTaint(o.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1586089013 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1586089013;
-        // ---------- Original Method ----------
-        //SyncOperation other = (SyncOperation)o;
-        //if (expedited != other.expedited) {
-            //return expedited ? -1 : 1;
-        //}
-        //if (effectiveRunTime == other.effectiveRunTime) {
-            //return 0;
-        //}
-        //return effectiveRunTime < other.effectiveRunTime ? -1 : 1;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.HeaderElement;
 import org.apache.http.NameValuePair;
@@ -31,26 +31,26 @@ public class BasicHeaderElement implements HeaderElement, Cloneable {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Name may not be null");
-        } //End block
+        } 
         this.name = name;
         this.value = value;
         {
             this.parameters = parameters;
-        } //End block
+        } 
         {
             this.parameters = new NameValuePair[] {};
-        } //End block
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException("Name may not be null");
-        //}
-        //this.name = name;
-        //this.value = value;
-        //if (parameters != null) {
-            //this.parameters = parameters;
-        //} else {
-            //this.parameters = new NameValuePair[] {};
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -59,40 +59,41 @@ public class BasicHeaderElement implements HeaderElement, Cloneable {
         this(name, value, null);
         addTaint(name.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.943 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "651B8C4A3F37554088C6C95D227A84E9")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1921052501 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1921052501 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1921052501 = this.name;
-        varB4EAC82CA7396A68D541C85D26508E83_1921052501.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1921052501.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1921052501;
-        // ---------- Original Method ----------
-        //return this.name;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.943 -0400", hash_original_method = "ADE49245CA79B6D6B3F4663E953C8CD9", hash_generated_method = "931E9545B5F83752869EBF97E919C6D8")
     public String getValue() {
-        String varB4EAC82CA7396A68D541C85D26508E83_544966416 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_544966416 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_544966416 = this.value;
-        varB4EAC82CA7396A68D541C85D26508E83_544966416.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_544966416.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_544966416;
-        // ---------- Original Method ----------
-        //return this.value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.944 -0400", hash_original_method = "3731305FA78433D69AC55713BB946E12", hash_generated_method = "B3FFD5015E811878E4C15155AD3AFB07")
     public NameValuePair[] getParameters() {
-        NameValuePair[] varB4EAC82CA7396A68D541C85D26508E83_94120930 = null; //Variable for return #1
+        NameValuePair[] varB4EAC82CA7396A68D541C85D26508E83_94120930 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_94120930 = (NameValuePair[])this.parameters.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_94120930.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_94120930.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_94120930;
-        // ---------- Original Method ----------
-        //return (NameValuePair[])this.parameters.clone();
+        
+        
     }
 
     
@@ -100,29 +101,29 @@ public class BasicHeaderElement implements HeaderElement, Cloneable {
     public int getParameterCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1353264288 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1353264288;
-        // ---------- Original Method ----------
-        //return this.parameters.length;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.944 -0400", hash_original_method = "7A51C396EF547B19A00C38AEE513A356", hash_generated_method = "0CBB9BE44E4DB78B14E1959C0293162B")
     public NameValuePair getParameter(int index) {
-        NameValuePair varB4EAC82CA7396A68D541C85D26508E83_1199928553 = null; //Variable for return #1
+        NameValuePair varB4EAC82CA7396A68D541C85D26508E83_1199928553 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1199928553 = this.parameters[index];
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_1199928553.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1199928553.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1199928553;
-        // ---------- Original Method ----------
-        //return this.parameters[index];
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.946 -0400", hash_original_method = "EB48045459F47CF0118B0835F7086CA0", hash_generated_method = "80EA06D9CD65043A79EABD2BB958ECD9")
     public NameValuePair getParameterByName(final String name) {
-        NameValuePair varB4EAC82CA7396A68D541C85D26508E83_456319706 = null; //Variable for return #1
+        NameValuePair varB4EAC82CA7396A68D541C85D26508E83_456319706 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Name may not be null");
-        } //End block
+        } 
         NameValuePair found = null;
         {
             int i = 0;
@@ -132,27 +133,27 @@ public class BasicHeaderElement implements HeaderElement, Cloneable {
                     boolean varD8B60F651B18EF4ED8FDAFAC5C2644BE_1203838741 = (current.getName().equalsIgnoreCase(name));
                     {
                         found = current;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_456319706 = found;
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_456319706.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_456319706.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_456319706;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException("Name may not be null");
-        //}
-        //NameValuePair found = null;
-        //for (int i = 0; i < this.parameters.length; i++) {
-            //NameValuePair current = this.parameters[ i ];
-            //if (current.getName().equalsIgnoreCase(name)) {
-                //found = current;
-                //break;
-            //}
-        //}
-        //return found;
+        
+        
+            
+        
+        
+        
+            
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -163,24 +164,25 @@ public class BasicHeaderElement implements HeaderElement, Cloneable {
             boolean varFDF7DC2D2925ED8761C1D16434692326_454564499 = (this.name.equals(that.name)
                 && LangUtils.equals(this.value, that.value)
                 && LangUtils.equals(this.parameters, that.parameters));
-        } //End block
+        } 
         addTaint(object.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_988476415 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_988476415;
-        // ---------- Original Method ----------
-        //if (object == null) return false;
-        //if (this == object) return true;
-        //if (object instanceof HeaderElement) {
-            //BasicHeaderElement that = (BasicHeaderElement) object;
-            //return this.name.equals(that.name)
-                //&& LangUtils.equals(this.value, that.value)
-                //&& LangUtils.equals(this.parameters, that.parameters);
-        //} else {
-            //return false;
-        //}
+        
+        
+        
+        
+            
+            
+                
+                
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.947 -0400", hash_original_method = "4C03DB3D3629EDBB8E252CDFFA259653", hash_generated_method = "CBA48605645EB3BF3D48B9CE5767AEBF")
     public int hashCode() {
         int hash = LangUtils.HASH_SEED;
@@ -190,63 +192,65 @@ public class BasicHeaderElement implements HeaderElement, Cloneable {
             int i = 0;
             {
                 hash = LangUtils.hashCode(hash, this.parameters[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1428101475 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1428101475;
-        // ---------- Original Method ----------
-        //int hash = LangUtils.HASH_SEED;
-        //hash = LangUtils.hashCode(hash, this.name);
-        //hash = LangUtils.hashCode(hash, this.value);
-        //for (int i = 0; i < this.parameters.length; i++) {
-            //hash = LangUtils.hashCode(hash, this.parameters[i]);
-        //}
-        //return hash;
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.948 -0400", hash_original_method = "D1269B43C4D02DE243B0BC051FD8549B", hash_generated_method = "126325E7F739AE21A1BAA2FB659CC269")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_206846374 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_206846374 = null; 
         CharArrayBuffer buffer = new CharArrayBuffer(64);
         buffer.append(this.name);
         {
             buffer.append("=");
             buffer.append(this.value);
-        } //End block
+        } 
         {
             int i = 0;
             {
                 buffer.append("; ");
                 buffer.append(this.parameters[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_206846374 = buffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_206846374.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_206846374.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_206846374;
-        // ---------- Original Method ----------
-        //CharArrayBuffer buffer = new CharArrayBuffer(64);
-        //buffer.append(this.name);
-        //if (this.value != null) {
-            //buffer.append("=");
-            //buffer.append(this.value);
-        //}
-        //for (int i = 0; i < this.parameters.length; i++) {
-            //buffer.append("; ");
-            //buffer.append(this.parameters[i]);
-        //}
-        //return buffer.toString();
+        
+        
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.948 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "A25B486E56BE4BB54252F06B828B57E9")
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1783177289 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1783177289 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1783177289 = super.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_1783177289.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1783177289.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1783177289;
-        // ---------- Original Method ----------
-        //return super.clone();
+        
+        
     }
 
     

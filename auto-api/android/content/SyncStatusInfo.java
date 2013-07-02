@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -68,8 +68,8 @@ public class SyncStatusInfo implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.357 -0400", hash_original_method = "A601236BC9972CD1DA6DEFC9BDCCDDF9", hash_generated_method = "BB787ACFE6D55BF74960948674FE5AEC")
       SyncStatusInfo(int authorityId) {
         this.authorityId = authorityId;
-        // ---------- Original Method ----------
-        //this.authorityId = authorityId;
+        
+        
     }
 
     
@@ -93,51 +93,52 @@ public class SyncStatusInfo implements Parcelable {
         initialize = parcel.readInt() != 0;
         {
             periodicSyncTimes = null;
-        } //End block
+        } 
         {
             int N = parcel.readInt();
             {
                 periodicSyncTimes = null;
-            } //End block
+            } 
             {
                 periodicSyncTimes = new ArrayList<Long>();
                 {
                     int i = 0;
                     {
                         periodicSyncTimes.add(parcel.readLong());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.359 -0400", hash_original_method = "7E33E8226B73A02621B31754517607B3", hash_generated_method = "0B26B2817DE5FCD97B2F7F17148AD58D")
     public int getLastFailureMesgAsInt(int def) {
         try 
         {
             {
                 int var561DC7C18702C0DB19E8BC0A90987BBD_318533114 = (Integer.parseInt(lastFailureMesg));
-            } //End block
-        } //End block
+            } 
+        } 
         catch (NumberFormatException e)
         {
             Log.d(TAG, "error parsing lastFailureMesg of " + lastFailureMesg, e);
-        } //End block
+        } 
         addTaint(def);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_274536398 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_274536398;
-        // ---------- Original Method ----------
-        //try {
-            //if (lastFailureMesg != null) {
-                //return Integer.parseInt(lastFailureMesg);
-            //}
-        //} catch (NumberFormatException e) {
-            //Log.d(TAG, "error parsing lastFailureMesg of " + lastFailureMesg, e);
-        //}
-        //return def;
+        
+        
+            
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -145,11 +146,12 @@ public class SyncStatusInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1962513902 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1962513902;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.368 -0400", hash_original_method = "9461760C81A4DFF607A36CA2D6370E1C", hash_generated_method = "2616D5051F4191B95A247703500531E0")
     public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeInt(VERSION);
@@ -176,36 +178,38 @@ public class SyncStatusInfo implements Parcelable {
                 long periodicSyncTime = var137A3BFEF4662131991E3E9E8AB91E39_2066040649.next();
                 {
                     parcel.writeLong(periodicSyncTime);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             parcel.writeInt(-1);
-        } //End block
+        } 
         addTaint(parcel.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.368 -0400", hash_original_method = "BB3C22BCE01837AA4BAC40A0B35F8BC2", hash_generated_method = "008AFFFAE8F7DF09372AA39021AFA4EA")
     public void setPeriodicSyncTime(int index, long when) {
         ensurePeriodicSyncTimeSize(index);
         periodicSyncTimes.set(index, when);
         addTaint(index);
         addTaint(when);
-        // ---------- Original Method ----------
-        //ensurePeriodicSyncTimeSize(index);
-        //periodicSyncTimes.set(index, when);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.369 -0400", hash_original_method = "CB3B6F2BD6B69A04BBE5B4B8321ED55E", hash_generated_method = "778373E314AAE70599C0EA71E8F780BE")
     private void ensurePeriodicSyncTimeSize(int index) {
         {
             periodicSyncTimes = new ArrayList<Long>(0);
-        } //End block
+        } 
         final int requiredSize = index + 1;
         {
             boolean varDA8A1799F2E947514B7F61D918481AF0_1493933449 = (periodicSyncTimes.size() < requiredSize);
@@ -214,49 +218,51 @@ public class SyncStatusInfo implements Parcelable {
                     int i = periodicSyncTimes.size();
                     {
                         periodicSyncTimes.add((long) 0);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(index);
-        // ---------- Original Method ----------
-        //if (periodicSyncTimes == null) {
-            //periodicSyncTimes = new ArrayList<Long>(0);
-        //}
-        //final int requiredSize = index + 1;
-        //if (periodicSyncTimes.size() < requiredSize) {
-            //for (int i = periodicSyncTimes.size(); i < requiredSize; i++) {
-                //periodicSyncTimes.add((long) 0);
-            //}
-        //}
+        
+        
+            
+        
+        
+        
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.370 -0400", hash_original_method = "E0266DD4F289B692F6E7B79E10E75B20", hash_generated_method = "E415B5C275BE024F6D8EAC21D902192A")
     public long getPeriodicSyncTime(int index) {
         {
             boolean varB9564E21A396D957116506C1AEF43D3C_1349841579 = (periodicSyncTimes == null || periodicSyncTimes.size() < (index + 1));
-        } //End collapsed parenthetic
+        } 
         long varE430967A1E3A0EE477B628D1A0973895_398512008 = (periodicSyncTimes.get(index));
         addTaint(index);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1141222350 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1141222350;
-        // ---------- Original Method ----------
-        //if (periodicSyncTimes == null || periodicSyncTimes.size() < (index + 1)) {
-            //return 0;
-        //}
-        //return periodicSyncTimes.get(index);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.371 -0400", hash_original_method = "5D5F49D9C483CE201F8BB2B6D37F0FB1", hash_generated_method = "EA5040F06ECF2809A7E9957C6A1356F9")
     public void removePeriodicSyncTime(int index) {
         ensurePeriodicSyncTimeSize(index);
         periodicSyncTimes.remove(index);
         addTaint(index);
-        // ---------- Original Method ----------
-        //ensurePeriodicSyncTimeSize(index);
-        //periodicSyncTimes.remove(index);
+        
+        
+        
     }
 
     
@@ -277,12 +283,12 @@ public class SyncStatusInfo implements Parcelable {
             return new SyncStatusInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public SyncStatusInfo createFromParcel(Parcel in) {
             return new SyncStatusInfo(in);
         }
     
-    // orphaned legacy method
+    
     public SyncStatusInfo[] newArray(int size) {
             return new SyncStatusInfo[size];
         }

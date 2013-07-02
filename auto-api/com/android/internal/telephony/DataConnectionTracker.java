@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -157,7 +157,7 @@ public abstract class DataConnectionTracker extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.972 -0400", hash_original_method = "1961A46761D2A74B4BBC61E9BCC43068", hash_generated_method = "0252BFECBC373E4A0BFABE33F7D5DC8C")
         @Override
         public void onReceive(Context context, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             String action = intent.getAction();
             log("onReceive: action=" + action);
             {
@@ -166,32 +166,32 @@ public abstract class DataConnectionTracker extends Handler {
                     mIsScreenOn = true;
                     stopNetStatPoll();
                     startNetStatPoll();
-                } //End block
+                } 
                 {
                     boolean var767BEBC8FC1BF29BC19AA771B91C30DC_893184092 = (action.equals(Intent.ACTION_SCREEN_OFF));
                     {
                         mIsScreenOn = false;
                         stopNetStatPoll();
                         startNetStatPoll();
-                    } //End block
+                    } 
                     {
                         boolean var657B0255569FEE532E29E31650D4768F_414353654 = (action.startsWith(getActionIntentReconnectAlarm()));
                         {
                             log("Reconnect alarm. Previous state was " + mState);
                             onActionIntentReconnectAlarm(intent);
-                        } //End block
+                        } 
                         {
                             boolean var36F8FFF0AF59FF54D7904599A20B6C27_201922250 = (action.equals(getActionIntentDataStallAlarm()));
                             {
                                 onActionIntentDataStallAlarm(intent);
-                            } //End block
+                            } 
                             {
                                 boolean varAEED26211C259A659D32D3D5886FD918_605196215 = (action.equals(WifiManager.NETWORK_STATE_CHANGED_ACTION));
                                 {
                                     final android.net.NetworkInfo networkInfo = (NetworkInfo)
                         intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
                                     mIsWifiConnected = (networkInfo != null && networkInfo.isConnected());
-                                } //End block
+                                } 
                                 {
                                     boolean var63C3653546FDFD746F5A5E4F5D93A7DF_1402023471 = (action.equals(WifiManager.WIFI_STATE_CHANGED_ACTION));
                                     {
@@ -199,8 +199,8 @@ public abstract class DataConnectionTracker extends Handler {
                         WifiManager.WIFI_STATE_UNKNOWN) == WifiManager.WIFI_STATE_ENABLED;
                                         {
                                             mIsWifiConnected = false;
-                                        } //End block
-                                    } //End block
+                                        } 
+                                    } 
                                     {
                                         boolean varC1CD06FA6A7988C248E9A4EC09E1418D_1720769185 = (action.equals(INTENT_SET_FAIL_DATA_SETUP_COUNTER));
                                         {
@@ -210,18 +210,18 @@ public abstract class DataConnectionTracker extends Handler {
                                                     FailCause.ERROR_UNSPECIFIED.getErrorCode()));
                                             log("set mFailDataSetupCounter=" + mFailDataSetupCounter +
                         " mFailDataSetupFailCause=" + mFailDataSetupFailCause);
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -250,52 +250,53 @@ public abstract class DataConnectionTracker extends Handler {
         mAutoAttachOnCreation = sp.getBoolean(PhoneBase.DATA_DISABLED_ON_BOOT_KEY, false);
         mDataRoamingSettingObserver = new DataRoamingSettingObserver(mPhone);
         mDataRoamingSettingObserver.register(mPhone.getContext());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.973 -0400", hash_original_method = "C16C211E95AFFD72D353E5EF5692A650", hash_generated_method = "C3C11BF579342A81FEDEFEB0E20FCADE")
     protected boolean isDataSetupCompleteOk(AsyncResult ar) {
         {
             log("isDataSetupCompleteOk return false, ar.result=" + ar.result);
-        } //End block
+        } 
         {
             log("isDataSetupCompleteOk return true");
-        } //End block
+        } 
         ar.result = mFailDataSetupFailCause;
         {
             log("isDataSetupCompleteOk return false" +
                     " mFailDataSetupCounter=" + mFailDataSetupCounter +
                     " mFailDataSetupFailCause=" + mFailDataSetupFailCause);
-        } //End block
+        } 
         mFailDataSetupCounter -= 1;
         addTaint(ar.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1949927799 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1949927799;
-        // ---------- Original Method ----------
-        //if (ar.exception != null) {
-            //if (DBG) log("isDataSetupCompleteOk return false, ar.result=" + ar.result);
-            //return false;
-        //}
-        //if (mFailDataSetupCounter <= 0) {
-            //if (DBG) log("isDataSetupCompleteOk return true");
-            //return true;
-        //}
-        //ar.result = mFailDataSetupFailCause;
-        //if (DBG) {
-            //log("isDataSetupCompleteOk return false" +
-                    //" mFailDataSetupCounter=" + mFailDataSetupCounter +
-                    //" mFailDataSetupFailCause=" + mFailDataSetupFailCause);
-        //}
-        //mFailDataSetupCounter -= 1;
-        //return false;
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+        
+            
+                    
+                    
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.974 -0400", hash_original_method = "838D9E0EFB087A153045FCBAD3FD613D", hash_generated_method = "420C74BA32C8BCCF992E6DC739618A6F")
     protected void onActionIntentReconnectAlarm(Intent intent) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         String reason = intent.getStringExtra(INTENT_RECONNECT_ALARM_EXTRA_REASON);
         {
             Message msg = obtainMessage(EVENT_CLEAN_UP_CONNECTION);
@@ -303,38 +304,39 @@ public abstract class DataConnectionTracker extends Handler {
             msg.arg2 = 0;
             msg.obj = reason;
             sendMessage(msg);
-        } //End block
+        } 
         sendMessage(obtainMessage(EVENT_TRY_SETUP_DATA));
         addTaint(intent.getTaint());
-        // ---------- Original Method ----------
-        //String reason = intent.getStringExtra(INTENT_RECONNECT_ALARM_EXTRA_REASON);
-        //if (mState == State.FAILED) {
-            //Message msg = obtainMessage(EVENT_CLEAN_UP_CONNECTION);
-            //msg.arg1 = 0; 
-            //msg.arg2 = 0;
-            //msg.obj = reason;
-            //sendMessage(msg);
-        //}
-        //sendMessage(obtainMessage(EVENT_TRY_SETUP_DATA));
+        
+        
+        
+            
+            
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.975 -0400", hash_original_method = "A1F89C02319CA5D605879D459A1AC731", hash_generated_method = "3FEAEA4575AE79EF12AD9D0E66CF0B9A")
     protected void onActionIntentDataStallAlarm(Intent intent) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         log("onActionIntentDataStallAlarm: action=" + intent.getAction());
         Message msg = obtainMessage(EVENT_DATA_STALL_ALARM, intent.getAction());
         msg.arg1 = intent.getIntExtra(DATA_STALL_ALARM_TAG_EXTRA, 0);
         sendMessage(msg);
         addTaint(intent.getTaint());
-        // ---------- Original Method ----------
-        //if (VDBG) log("onActionIntentDataStallAlarm: action=" + intent.getAction());
-        //Message msg = obtainMessage(EVENT_DATA_STALL_ALARM, intent.getAction());
-        //msg.arg1 = intent.getIntExtra(DATA_STALL_ALARM_TAG_EXTRA, 0);
-        //sendMessage(msg);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.979 -0400", hash_original_method = "D3ED6AC13F3F749DE4F1E160957198B8", hash_generated_method = "5E7A78A9D7A3453BCAB22560EC73BC63")
     public void dispose() {
         {
@@ -343,46 +345,48 @@ public abstract class DataConnectionTracker extends Handler {
             DataConnectionAc dcac = varEB8626173DB084FB4853115B28BD3F62_170445328.next();
             {
                 dcac.disconnect();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mDataConnectionAsyncChannels.clear();
         mIsDisposed = true;
         mPhone.getContext().unregisterReceiver(this.mIntentReceiver);
         mDataRoamingSettingObserver.unregister(mPhone.getContext());
-        // ---------- Original Method ----------
-        //for (DataConnectionAc dcac : mDataConnectionAsyncChannels.values()) {
-            //dcac.disconnect();
-        //}
-        //mDataConnectionAsyncChannels.clear();
-        //mIsDisposed = true;
-        //mPhone.getContext().unregisterReceiver(this.mIntentReceiver);
-        //mDataRoamingSettingObserver.unregister(mPhone.getContext());
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.979 -0400", hash_original_method = "DDDDA1A5545DB0A17ACC18101B011287", hash_generated_method = "682F88DBA371196ED3D270082EBC7DA8")
     protected void broadcastMessenger() {
         Intent intent = new Intent(ACTION_DATA_CONNECTION_TRACKER_MESSENGER);
         intent.putExtra(EXTRA_MESSENGER, new Messenger(this));
         mPhone.getContext().sendBroadcast(intent);
-        // ---------- Original Method ----------
-        //Intent intent = new Intent(ACTION_DATA_CONNECTION_TRACKER_MESSENGER);
-        //intent.putExtra(EXTRA_MESSENGER, new Messenger(this));
-        //mPhone.getContext().sendBroadcast(intent);
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.980 -0400", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "1F3DDD83CBF5CBBC35A161C22AB7F759")
     public Activity getActivity() {
-        Activity varB4EAC82CA7396A68D541C85D26508E83_2042793680 = null; //Variable for return #1
+        Activity varB4EAC82CA7396A68D541C85D26508E83_2042793680 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2042793680 = mActivity;
-        varB4EAC82CA7396A68D541C85D26508E83_2042793680.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2042793680.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2042793680;
-        // ---------- Original Method ----------
-        //return mActivity;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.980 -0400", hash_original_method = "125099B58F8163C25EB6B1F0707923F4", hash_generated_method = "41428024BFF7A8B44F95CC7A862B5AA4")
     public boolean isApnTypeActive(String type) {
         {
@@ -391,28 +395,29 @@ public abstract class DataConnectionTracker extends Handler {
                 ApnSetting dunApn = fetchDunApn();
                 {
                     boolean var4EA0CE97F3A12CE0F2A51BCC7C48DA8F_1698435186 = (((mActiveApn != null) && (dunApn.toString().equals(mActiveApn.toString()))));
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         boolean var169544BDB9440CDE71D63DA907E8F9A7_152531625 = (mActiveApn != null && mActiveApn.canHandleType(type));
         addTaint(type.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1133745131 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1133745131;
-        // ---------- Original Method ----------
-        //if (Phone.APN_TYPE_DUN.equals(type)) {
-            //ApnSetting dunApn = fetchDunApn();
-            //if (dunApn != null) {
-                //return ((mActiveApn != null) && (dunApn.toString().equals(mActiveApn.toString())));
-            //}
-        //}
-        //return mActiveApn != null && mActiveApn.canHandleType(type);
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.981 -0400", hash_original_method = "616B5B126FC289B3EB6BE1030B710468", hash_generated_method = "0699769341D0E9FB9BD64C063CD52631")
     protected ApnSetting fetchDunApn() {
-        ApnSetting varB4EAC82CA7396A68D541C85D26508E83_149566150 = null; //Variable for return #1
-        ApnSetting varB4EAC82CA7396A68D541C85D26508E83_646116769 = null; //Variable for return #2
+        ApnSetting varB4EAC82CA7396A68D541C85D26508E83_149566150 = null; 
+        ApnSetting varB4EAC82CA7396A68D541C85D26508E83_646116769 = null; 
         Context c = mPhone.getContext();
         String apnData = Settings.Secure.getString(c.getContentResolver(),
                 Settings.Secure.TETHER_DUN_APN);
@@ -420,74 +425,75 @@ public abstract class DataConnectionTracker extends Handler {
         varB4EAC82CA7396A68D541C85D26508E83_149566150 = dunSetting;
         apnData = c.getResources().getString(R.string.config_tether_apndata);
         varB4EAC82CA7396A68D541C85D26508E83_646116769 = ApnSetting.fromString(apnData);
-        ApnSetting varA7E53CE21691AB073D9660D615818899_2095941996; //Final return value
+        ApnSetting varA7E53CE21691AB073D9660D615818899_2095941996; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2095941996 = varB4EAC82CA7396A68D541C85D26508E83_149566150;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2095941996 = varB4EAC82CA7396A68D541C85D26508E83_646116769;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2095941996.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2095941996.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2095941996;
-        // ---------- Original Method ----------
-        //Context c = mPhone.getContext();
-        //String apnData = Settings.Secure.getString(c.getContentResolver(),
-                //Settings.Secure.TETHER_DUN_APN);
-        //ApnSetting dunSetting = ApnSetting.fromString(apnData);
-        //if (dunSetting != null) return dunSetting;
-        //apnData = c.getResources().getString(R.string.config_tether_apndata);
-        //return ApnSetting.fromString(apnData);
+        
+        
+        
+                
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.982 -0400", hash_original_method = "F0E40F922DBB5D19CCBEC497FB284EC5", hash_generated_method = "97C457D1AA99D998A83D8C843739C4E5")
     public String[] getActiveApnTypes() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1387878627 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1387878627 = null; 
         String[] result;
         {
             result = mActiveApn.types;
-        } //End block
+        } 
         {
             result = new String[1];
             result[0] = Phone.APN_TYPE_DEFAULT;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1387878627 = result;
-        varB4EAC82CA7396A68D541C85D26508E83_1387878627.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1387878627.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1387878627;
-        // ---------- Original Method ----------
-        //String[] result;
-        //if (mActiveApn != null) {
-            //result = mActiveApn.types;
-        //} else {
-            //result = new String[1];
-            //result[0] = Phone.APN_TYPE_DEFAULT;
-        //}
-        //return result;
+        
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.982 -0400", hash_original_method = "8A278F7563F3F2CC899D3E200DD135CD", hash_generated_method = "158B12FADC11F2E727F9EBC562EA31CB")
     public String getActiveApnString(String apnType) {
-        String varB4EAC82CA7396A68D541C85D26508E83_692480548 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_692480548 = null; 
         String result = null;
         {
             result = mActiveApn.apn;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_692480548 = result;
         addTaint(apnType.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_692480548.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_692480548.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_692480548;
-        // ---------- Original Method ----------
-        //String result = null;
-        //if (mActiveApn != null) {
-            //result = mActiveApn.apn;
-        //}
-        //return result;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.983 -0400", hash_original_method = "B18C74BBD4D71B87D6CD20822DAEB60C", hash_generated_method = "A9E97BDAF095D8A04EBA954179F944E0")
     public void setDataOnRoamingEnabled(boolean enabled) {
         {
@@ -495,38 +501,40 @@ public abstract class DataConnectionTracker extends Handler {
             {
                 final ContentResolver resolver = mPhone.getContext().getContentResolver();
                 Settings.Secure.putInt(resolver, Settings.Secure.DATA_ROAMING, enabled ? 1 : 0);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //if (getDataOnRoamingEnabled() != enabled) {
-            //final ContentResolver resolver = mPhone.getContext().getContentResolver();
-            //Settings.Secure.putInt(resolver, Settings.Secure.DATA_ROAMING, enabled ? 1 : 0);
-        //}
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.984 -0400", hash_original_method = "CA847DB1E96260749F912EC65B12A685", hash_generated_method = "C2A5293B81E4F65176DD188D5FF64E9F")
     public boolean getDataOnRoamingEnabled() {
         try 
         {
             final ContentResolver resolver = mPhone.getContext().getContentResolver();
             boolean varE702C72B406FC62334614256CE642190_1810738244 = (Settings.Secure.getInt(resolver, Settings.Secure.DATA_ROAMING) != 0);
-        } //End block
+        } 
         catch (SettingNotFoundException snfe)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1261983388 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1261983388;
-        // ---------- Original Method ----------
-        //try {
-            //final ContentResolver resolver = mPhone.getContext().getContentResolver();
-            //return Settings.Secure.getInt(resolver, Settings.Secure.DATA_ROAMING) != 0;
-        //} catch (SettingNotFoundException snfe) {
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.985 -0400", hash_original_method = "D53421F789432FAA1BE4F347AFB92C88", hash_generated_method = "8C34C411145C9C5DE6D1C50EB54BE2C9")
     private void handleDataOnRoamingChange() {
         {
@@ -536,18 +544,18 @@ public abstract class DataConnectionTracker extends Handler {
                     boolean var83E97FA6F6D360AB5803CC641FB0388C_228157794 = (getDataOnRoamingEnabled());
                     {
                         resetAllRetryCounts();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 sendMessage(obtainMessage(EVENT_ROAMING_ON));
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mPhone.getServiceState().getRoaming()) {
-            //if (getDataOnRoamingEnabled()) {
-                //resetAllRetryCounts();
-            //}
-            //sendMessage(obtainMessage(EVENT_ROAMING_ON));
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -623,119 +631,121 @@ public abstract class DataConnectionTracker extends Handler {
     protected abstract boolean isDataPossible(String apnType);
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.993 -0400", hash_original_method = "664FE2A04A36F386D94369A328F3D0AD", hash_generated_method = "368AA79B71AFC1B597C36A9C40401089")
     protected void onDataStallAlarm(int tag) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         loge("onDataStallAlarm: not impleted tag=" + tag);
         addTaint(tag);
-        // ---------- Original Method ----------
-        //loge("onDataStallAlarm: not impleted tag=" + tag);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.995 -0400", hash_original_method = "F3EE7F03AAF60471D3A97F562455D5DC", hash_generated_method = "105940566D5B3263CE9526EC1D4D3956")
     @Override
     public void handleMessage(Message msg) {
-        //Begin case AsyncChannel.CMD_CHANNEL_DISCONNECTED 
+        
         {
             log("DISCONNECTED_CONNECTED: msg=" + msg);
             DataConnectionAc dcac = (DataConnectionAc) msg.obj;
             mDataConnectionAsyncChannels.remove(dcac.dataConnection.getDataConnectionId());
             dcac.disconnected();
-        } //End block
-        //End case AsyncChannel.CMD_CHANNEL_DISCONNECTED 
-        //Begin case EVENT_ENABLE_NEW_APN 
+        } 
+        
+        
         onEnableApn(msg.arg1, msg.arg2);
-        //End case EVENT_ENABLE_NEW_APN 
-        //Begin case EVENT_TRY_SETUP_DATA 
+        
+        
         String reason = null;
-        //End case EVENT_TRY_SETUP_DATA 
-        //Begin case EVENT_TRY_SETUP_DATA 
+        
+        
         {
             reason = (String) msg.obj;
-        } //End block
-        //End case EVENT_TRY_SETUP_DATA 
-        //Begin case EVENT_TRY_SETUP_DATA 
+        } 
+        
+        
         onTrySetupData(reason);
-        //End case EVENT_TRY_SETUP_DATA 
-        //Begin case EVENT_DATA_STALL_ALARM 
+        
+        
         onDataStallAlarm(msg.arg1);
-        //End case EVENT_DATA_STALL_ALARM 
-        //Begin case EVENT_ROAMING_OFF 
+        
+        
         {
             boolean var6A4EDF3FAFEE8B58E0E885094E7C645E_693172006 = (getDataOnRoamingEnabled() == false);
             {
                 resetAllRetryCounts();
-            } //End block
-        } //End collapsed parenthetic
-        //End case EVENT_ROAMING_OFF 
-        //Begin case EVENT_ROAMING_OFF 
+            } 
+        } 
+        
+        
         onRoamingOff();
-        //End case EVENT_ROAMING_OFF 
-        //Begin case EVENT_ROAMING_ON 
+        
+        
         onRoamingOn();
-        //End case EVENT_ROAMING_ON 
-        //Begin case EVENT_RADIO_AVAILABLE 
+        
+        
         onRadioAvailable();
-        //End case EVENT_RADIO_AVAILABLE 
-        //Begin case EVENT_RADIO_OFF_OR_NOT_AVAILABLE 
+        
+        
         onRadioOffOrNotAvailable();
-        //End case EVENT_RADIO_OFF_OR_NOT_AVAILABLE 
-        //Begin case EVENT_DATA_SETUP_COMPLETE 
+        
+        
         mCidActive = msg.arg1;
-        //End case EVENT_DATA_SETUP_COMPLETE 
-        //Begin case EVENT_DATA_SETUP_COMPLETE 
+        
+        
         onDataSetupComplete((AsyncResult) msg.obj);
-        //End case EVENT_DATA_SETUP_COMPLETE 
-        //Begin case EVENT_DISCONNECT_DONE 
+        
+        
         log("DataConnectoinTracker.handleMessage: EVENT_DISCONNECT_DONE msg=" + msg);
-        //End case EVENT_DISCONNECT_DONE 
-        //Begin case EVENT_DISCONNECT_DONE 
+        
+        
         onDisconnectDone(msg.arg1, (AsyncResult) msg.obj);
-        //End case EVENT_DISCONNECT_DONE 
-        //Begin case EVENT_VOICE_CALL_STARTED 
+        
+        
         onVoiceCallStarted();
-        //End case EVENT_VOICE_CALL_STARTED 
-        //Begin case EVENT_VOICE_CALL_ENDED 
+        
+        
         onVoiceCallEnded();
-        //End case EVENT_VOICE_CALL_ENDED 
-        //Begin case EVENT_CLEAN_UP_ALL_CONNECTIONS 
+        
+        
         {
             onCleanUpAllConnections((String) msg.obj);
-        } //End block
-        //End case EVENT_CLEAN_UP_ALL_CONNECTIONS 
-        //Begin case EVENT_CLEAN_UP_CONNECTION 
+        } 
+        
+        
         {
             boolean tearDown;
             tearDown = false;
             tearDown = true;
             onCleanUpConnection(tearDown, msg.arg2, (String) msg.obj);
-        } //End block
-        //End case EVENT_CLEAN_UP_CONNECTION 
-        //Begin case EVENT_SET_INTERNAL_DATA_ENABLE 
+        } 
+        
+        
         {
             boolean enabled;
             enabled = true;
             enabled = false;
             onSetInternalDataEnabled(enabled);
-        } //End block
-        //End case EVENT_SET_INTERNAL_DATA_ENABLE 
-        //Begin case EVENT_RESET_DONE 
+        } 
+        
+        
         {
             log("EVENT_RESET_DONE");
             onResetDone((AsyncResult) msg.obj);
-        } //End block
-        //End case EVENT_RESET_DONE 
-        //Begin case CMD_SET_USER_DATA_ENABLE 
+        } 
+        
+        
         {
             boolean enabled;
             enabled = true;
             enabled = false;
             log("CMD_SET_USER_DATA_ENABLE enabled=" + enabled);
             onSetUserDataEnabled(enabled);
-        } //End block
-        //End case CMD_SET_USER_DATA_ENABLE 
-        //Begin case CMD_SET_DEPENDENCY_MET 
+        } 
+        
+        
         {
             boolean met;
             met = true;
@@ -746,63 +756,66 @@ public abstract class DataConnectionTracker extends Handler {
                 String apnType = (String)bundle.get(APN_TYPE_KEY);
                 {
                     onSetDependencyMet(apnType, met);
-                } //End block
-            } //End block
-        } //End block
-        //End case CMD_SET_DEPENDENCY_MET 
-        //Begin case CMD_SET_POLICY_DATA_ENABLE 
+                } 
+            } 
+        } 
+        
+        
         {
             boolean enabled;
             enabled = true;
             enabled = false;
             onSetPolicyDataEnabled(enabled);
-        } //End block
-        //End case CMD_SET_POLICY_DATA_ENABLE 
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.995 -0400", hash_original_method = "8F4FE806494E709DA803471FC4054850", hash_generated_method = "6B126A9F5C906F30F12CF9263FE1B2B6")
     public boolean getAnyDataEnabled() {
         boolean result;
         {
             result = (mInternalDataEnabled && mUserDataEnabled && sPolicyDataEnabled
                     && (enabledCount != 0));
-        } //End block
+        } 
         log("getAnyDataEnabled " + result);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_734262741 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_734262741;
-        // ---------- Original Method ----------
-        //final boolean result;
-        //synchronized (mDataEnabledLock) {
-            //result = (mInternalDataEnabled && mUserDataEnabled && sPolicyDataEnabled
-                    //&& (enabledCount != 0));
-        //}
-        //if (!result && DBG) log("getAnyDataEnabled " + result);
-        //return result;
+        
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.996 -0400", hash_original_method = "01BBE084CAD104CD5BF824EF92BD879D", hash_generated_method = "4353BCFE0C36A879E20EE82324D1E437")
     protected boolean isEmergency() {
         boolean result;
         {
             result = mPhone.isInEcm() || mPhone.isInEmergencyCall();
-        } //End block
+        } 
         log("isEmergency: result=" + result);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1091612131 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1091612131;
-        // ---------- Original Method ----------
-        //final boolean result;
-        //synchronized (mDataEnabledLock) {
-            //result = mPhone.isInEcm() || mPhone.isInEmergencyCall();
-        //}
-        //log("isEmergency: result=" + result);
-        //return result;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.997 -0400", hash_original_method = "5D23D8F3C80DDDEC0087C53C5035314E", hash_generated_method = "D0CD23D45F038B17A54BA814778CC807")
     protected int apnTypeToId(String type) {
         {
@@ -821,197 +834,201 @@ public abstract class DataConnectionTracker extends Handler {
                                     boolean var87D249D8144B57A4B6191CE038D7E433_689963545 = (TextUtils.equals(type, Phone.APN_TYPE_FOTA));
                                     {
                                         boolean var14F7602C7EF2A0501FF08693C56BFA7B_826208266 = (TextUtils.equals(type, Phone.APN_TYPE_CBS));
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(type.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_500302157 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_500302157;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.999 -0400", hash_original_method = "C8FDA5A0B2174A5D621C26D6E6AEF75F", hash_generated_method = "3F51B3ED60B09E5423AC5DBF509CDB1A")
     protected String apnIdToType(int id) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1864584692 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_197640226 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1002938663 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_1422029926 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_753303261 = null; //Variable for return #5
-        String varB4EAC82CA7396A68D541C85D26508E83_148568532 = null; //Variable for return #6
-        String varB4EAC82CA7396A68D541C85D26508E83_567467929 = null; //Variable for return #7
-        String varB4EAC82CA7396A68D541C85D26508E83_78616215 = null; //Variable for return #8
-        String varB4EAC82CA7396A68D541C85D26508E83_350242924 = null; //Variable for return #9
-        //Begin case APN_DEFAULT_ID 
+        String varB4EAC82CA7396A68D541C85D26508E83_1864584692 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_197640226 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1002938663 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1422029926 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_753303261 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_148568532 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_567467929 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_78616215 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_350242924 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1864584692 = Phone.APN_TYPE_DEFAULT;
-        //End case APN_DEFAULT_ID 
-        //Begin case APN_MMS_ID 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_197640226 = Phone.APN_TYPE_MMS;
-        //End case APN_MMS_ID 
-        //Begin case APN_SUPL_ID 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1002938663 = Phone.APN_TYPE_SUPL;
-        //End case APN_SUPL_ID 
-        //Begin case APN_DUN_ID 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1422029926 = Phone.APN_TYPE_DUN;
-        //End case APN_DUN_ID 
-        //Begin case APN_HIPRI_ID 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_753303261 = Phone.APN_TYPE_HIPRI;
-        //End case APN_HIPRI_ID 
-        //Begin case APN_IMS_ID 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_148568532 = Phone.APN_TYPE_IMS;
-        //End case APN_IMS_ID 
-        //Begin case APN_FOTA_ID 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_567467929 = Phone.APN_TYPE_FOTA;
-        //End case APN_FOTA_ID 
-        //Begin case APN_CBS_ID 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_78616215 = Phone.APN_TYPE_CBS;
-        //End case APN_CBS_ID 
-        //Begin case default 
+        
+        
         log("Unknown id (" + id + ") in apnIdToType");
-        //End case default 
-        //Begin case default 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_350242924 = Phone.APN_TYPE_DEFAULT;
-        //End case default 
+        
         addTaint(id);
-        String varA7E53CE21691AB073D9660D615818899_1505738767; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1505738767; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1505738767 = varB4EAC82CA7396A68D541C85D26508E83_1864584692;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1505738767 = varB4EAC82CA7396A68D541C85D26508E83_197640226;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1505738767 = varB4EAC82CA7396A68D541C85D26508E83_1002938663;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1505738767 = varB4EAC82CA7396A68D541C85D26508E83_1422029926;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_1505738767 = varB4EAC82CA7396A68D541C85D26508E83_753303261;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_1505738767 = varB4EAC82CA7396A68D541C85D26508E83_148568532;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_1505738767 = varB4EAC82CA7396A68D541C85D26508E83_567467929;
                 break;
-            case 8: //Assign result for return ordinal #8
+            case 8: 
                 varA7E53CE21691AB073D9660D615818899_1505738767 = varB4EAC82CA7396A68D541C85D26508E83_78616215;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1505738767 = varB4EAC82CA7396A68D541C85D26508E83_350242924;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1505738767.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1505738767.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1505738767;
-        // ---------- Original Method ----------
-        //switch (id) {
-        //case APN_DEFAULT_ID:
-            //return Phone.APN_TYPE_DEFAULT;
-        //case APN_MMS_ID:
-            //return Phone.APN_TYPE_MMS;
-        //case APN_SUPL_ID:
-            //return Phone.APN_TYPE_SUPL;
-        //case APN_DUN_ID:
-            //return Phone.APN_TYPE_DUN;
-        //case APN_HIPRI_ID:
-            //return Phone.APN_TYPE_HIPRI;
-        //case APN_IMS_ID:
-            //return Phone.APN_TYPE_IMS;
-        //case APN_FOTA_ID:
-            //return Phone.APN_TYPE_FOTA;
-        //case APN_CBS_ID:
-            //return Phone.APN_TYPE_CBS;
-        //default:
-            //log("Unknown id (" + id + ") in apnIdToType");
-            //return Phone.APN_TYPE_DEFAULT;
-        //}
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.000 -0400", hash_original_method = "C93C3112872052D96A1B607494195947", hash_generated_method = "AE933507E357C595FE8E473C5D8B3A18")
     protected LinkProperties getLinkProperties(String apnType) {
-        LinkProperties varB4EAC82CA7396A68D541C85D26508E83_362287944 = null; //Variable for return #1
-        LinkProperties varB4EAC82CA7396A68D541C85D26508E83_710238176 = null; //Variable for return #2
+        LinkProperties varB4EAC82CA7396A68D541C85D26508E83_362287944 = null; 
+        LinkProperties varB4EAC82CA7396A68D541C85D26508E83_710238176 = null; 
         int id = apnTypeToId(apnType);
         {
             boolean var3B28DF70088D079134A00EB30AD60CE7_543763775 = (isApnIdEnabled(id));
             {
                 DataConnectionAc dcac = mDataConnectionAsyncChannels.get(0);
                 varB4EAC82CA7396A68D541C85D26508E83_362287944 = dcac.getLinkPropertiesSync();
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_710238176 = new LinkProperties();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(apnType.getTaint());
-        LinkProperties varA7E53CE21691AB073D9660D615818899_1715274911; //Final return value
+        LinkProperties varA7E53CE21691AB073D9660D615818899_1715274911; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1715274911 = varB4EAC82CA7396A68D541C85D26508E83_362287944;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1715274911 = varB4EAC82CA7396A68D541C85D26508E83_710238176;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1715274911.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1715274911.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1715274911;
-        // ---------- Original Method ----------
-        //int id = apnTypeToId(apnType);
-        //if (isApnIdEnabled(id)) {
-            //DataConnectionAc dcac = mDataConnectionAsyncChannels.get(0);
-            //return dcac.getLinkPropertiesSync();
-        //} else {
-            //return new LinkProperties();
-        //}
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.001 -0400", hash_original_method = "8B34AF8E1FD52F7524E0692F560388F1", hash_generated_method = "A05EDC8F42FD35676A26F384360E90F8")
     protected LinkCapabilities getLinkCapabilities(String apnType) {
-        LinkCapabilities varB4EAC82CA7396A68D541C85D26508E83_1485268645 = null; //Variable for return #1
-        LinkCapabilities varB4EAC82CA7396A68D541C85D26508E83_850178714 = null; //Variable for return #2
+        LinkCapabilities varB4EAC82CA7396A68D541C85D26508E83_1485268645 = null; 
+        LinkCapabilities varB4EAC82CA7396A68D541C85D26508E83_850178714 = null; 
         int id = apnTypeToId(apnType);
         {
             boolean var3B28DF70088D079134A00EB30AD60CE7_291479541 = (isApnIdEnabled(id));
             {
                 DataConnectionAc dcac = mDataConnectionAsyncChannels.get(0);
                 varB4EAC82CA7396A68D541C85D26508E83_1485268645 = dcac.getLinkCapabilitiesSync();
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_850178714 = new LinkCapabilities();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(apnType.getTaint());
-        LinkCapabilities varA7E53CE21691AB073D9660D615818899_88247434; //Final return value
+        LinkCapabilities varA7E53CE21691AB073D9660D615818899_88247434; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_88247434 = varB4EAC82CA7396A68D541C85D26508E83_1485268645;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_88247434 = varB4EAC82CA7396A68D541C85D26508E83_850178714;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_88247434.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_88247434.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_88247434;
-        // ---------- Original Method ----------
-        //int id = apnTypeToId(apnType);
-        //if (isApnIdEnabled(id)) {
-            //DataConnectionAc dcac = mDataConnectionAsyncChannels.get(0);
-            //return dcac.getLinkCapabilitiesSync();
-        //} else {
-            //return new LinkCapabilities();
-        //}
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.001 -0400", hash_original_method = "EA8A5478D5AABF3FA098569BF99381B3", hash_generated_method = "0A524913CA5351D41FBEE7F51B70FF5C")
     protected void notifyDataConnection(String reason) {
         {
@@ -1019,62 +1036,65 @@ public abstract class DataConnectionTracker extends Handler {
             {
                 {
                     mPhone.notifyDataConnection(reason, apnIdToType(id));
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         notifyOffApnsOfAvailability(reason);
         addTaint(reason.getTaint());
-        // ---------- Original Method ----------
-        //for (int id = 0; id < APN_NUM_TYPES; id++) {
-            //if (dataEnabled[id]) {
-                //mPhone.notifyDataConnection(reason, apnIdToType(id));
-            //}
-        //}
-        //notifyOffApnsOfAvailability(reason);
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.001 -0400", hash_original_method = "0EE2FD1B724C501D31FB7072BBECFF7B", hash_generated_method = "E30A6CAE292CB4DEA031278662F3D64B")
     private void notifyApnIdUpToCurrent(String reason, int apnId) {
-        //Begin case CONNECTING SCANNING 
+        
         mPhone.notifyDataConnection(reason, apnIdToType(apnId), Phone.DataState.CONNECTING);
-        //End case CONNECTING SCANNING 
-        //Begin case CONNECTED DISCONNECTING 
+        
+        
         mPhone.notifyDataConnection(reason, apnIdToType(apnId), Phone.DataState.CONNECTING);
-        //End case CONNECTED DISCONNECTING 
-        //Begin case CONNECTED DISCONNECTING 
+        
+        
         mPhone.notifyDataConnection(reason, apnIdToType(apnId), Phone.DataState.CONNECTED);
-        //End case CONNECTED DISCONNECTING 
+        
         addTaint(reason.getTaint());
         addTaint(apnId);
-        // ---------- Original Method ----------
-        //switch (mState) {
-            //case IDLE:
-            //case INITING:
-                //break;
-            //case CONNECTING:
-            //case SCANNING:
-                //mPhone.notifyDataConnection(reason, apnIdToType(apnId), Phone.DataState.CONNECTING);
-                //break;
-            //case CONNECTED:
-            //case DISCONNECTING:
-                //mPhone.notifyDataConnection(reason, apnIdToType(apnId), Phone.DataState.CONNECTING);
-                //mPhone.notifyDataConnection(reason, apnIdToType(apnId), Phone.DataState.CONNECTED);
-                //break;
-        //}
+        
+        
+            
+            
+                
+            
+            
+                
+                
+            
+            
+                
+                
+                
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.002 -0400", hash_original_method = "D45BD11E51C479A3FCCFFBAFE72F463B", hash_generated_method = "79FB756811C49BCC65CD01118A350E00")
     private void notifyApnIdDisconnected(String reason, int apnId) {
         mPhone.notifyDataConnection(reason, apnIdToType(apnId), Phone.DataState.DISCONNECTED);
         addTaint(reason.getTaint());
         addTaint(apnId);
-        // ---------- Original Method ----------
-        //mPhone.notifyDataConnection(reason, apnIdToType(apnId), Phone.DataState.DISCONNECTED);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.002 -0400", hash_original_method = "AD67DC7D8E779758CC2EF151B8EB9A25", hash_generated_method = "7B2BCE991D024D5665E642131BEA47C7")
     protected void notifyOffApnsOfAvailability(String reason) {
         log("notifyOffApnsOfAvailability - reason= " + reason);
@@ -1085,35 +1105,36 @@ public abstract class DataConnectionTracker extends Handler {
                     boolean var4E5CD2F83AC285F39052DC55CB4A94E1_961137192 = (!isApnIdEnabled(id));
                     {
                         notifyApnIdDisconnected(reason, id);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(reason.getTaint());
-        // ---------- Original Method ----------
-        //if (DBG) log("notifyOffApnsOfAvailability - reason= " + reason);
-        //for (int id = 0; id < APN_NUM_TYPES; id++) {
-            //if (!isApnIdEnabled(id)) {
-                //notifyApnIdDisconnected(reason, id);
-            //}
-        //}
+        
+        
+        
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.002 -0400", hash_original_method = "8B5C5B568EA76224959243C3FA291570", hash_generated_method = "6176432C5BBB4BCB5DF2D3A91E1E986E")
     public boolean isApnTypeEnabled(String apnType) {
         {
             boolean varCF600E2D886E7589A9F5438BC08F9D5E_2040234349 = (isApnIdEnabled(apnTypeToId(apnType)));
-        } //End block
+        } 
         addTaint(apnType.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1304567088 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1304567088;
-        // ---------- Original Method ----------
-        //if (apnType == null) {
-            //return false;
-        //} else {
-            //return isApnIdEnabled(apnTypeToId(apnType));
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1122,58 +1143,60 @@ public abstract class DataConnectionTracker extends Handler {
         addTaint(id);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_901601743 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_901601743;
-        // ---------- Original Method ----------
-        //if (id != APN_INVALID_ID) {
-            //return dataEnabled[id];
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.003 -0400", hash_original_method = "B518CE0EFC616BFFCBE5135F2BCA33B7", hash_generated_method = "5E7A058717BA73097310716C4BA4A637")
     public synchronized int enableApnType(String type) {
         int id = apnTypeToId(type);
         {
             log("enableApnType(" + type + "), isApnTypeActive = " + isApnTypeActive(type)
                     + ", isApnIdEnabled =" + isApnIdEnabled(id) + " and state = " + mState);
-        } //End block
+        } 
         {
             boolean varA853C8852E4D73E41EF53078A12AEAC4_254885431 = (!isApnTypeAvailable(type));
             {
                 log("type not available");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var3B28DF70088D079134A00EB30AD60CE7_2120402526 = (isApnIdEnabled(id));
             {
                 setEnabled(id, true);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(type.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_926165175 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_926165175;
-        // ---------- Original Method ----------
-        //int id = apnTypeToId(type);
-        //if (id == APN_INVALID_ID) {
-            //return Phone.APN_REQUEST_FAILED;
-        //}
-        //if (DBG) {
-            //log("enableApnType(" + type + "), isApnTypeActive = " + isApnTypeActive(type)
-                    //+ ", isApnIdEnabled =" + isApnIdEnabled(id) + " and state = " + mState);
-        //}
-        //if (!isApnTypeAvailable(type)) {
-            //if (DBG) log("type not available");
-            //return Phone.APN_TYPE_NOT_AVAILABLE;
-        //}
-        //if (isApnIdEnabled(id)) {
-            //return Phone.APN_ALREADY_ACTIVE;
-        //} else {
-            //setEnabled(id, true);
-        //}
-        //return Phone.APN_REQUEST_STARTED;
+        
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+            
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.004 -0400", hash_original_method = "A5E4EE0A9C6812357B5B6B8F3C042D82", hash_generated_method = "93FBDB787C5B94DB71361D8FB3F47605")
     public synchronized int disableApnType(String type) {
         log("disableApnType(" + type + ")");
@@ -1184,94 +1207,96 @@ public abstract class DataConnectionTracker extends Handler {
                 setEnabled(id, false);
                 {
                     boolean var4038903CF6895B879BB8F22E571F633C_1055482891 = (isApnTypeActive(Phone.APN_TYPE_DEFAULT));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(type.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_707271716 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_707271716;
-        // ---------- Original Method ----------
-        //if (DBG) log("disableApnType(" + type + ")");
-        //int id = apnTypeToId(type);
-        //if (id == APN_INVALID_ID) {
-            //return Phone.APN_REQUEST_FAILED;
-        //}
-        //if (isApnIdEnabled(id)) {
-            //setEnabled(id, false);
-            //if (isApnTypeActive(Phone.APN_TYPE_DEFAULT)) {
-                //if (dataEnabled[APN_DEFAULT_ID]) {
-                    //return Phone.APN_ALREADY_ACTIVE;
-                //} else {
-                    //return Phone.APN_REQUEST_STARTED;
-                //}
-            //} else {
-                //return Phone.APN_REQUEST_STARTED;
-            //}
-        //} else {
-            //return Phone.APN_REQUEST_FAILED;
-        //}
+        
+        
+        
+        
+            
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.005 -0400", hash_original_method = "25F13BA52E496C8972985CBEE5B69F23", hash_generated_method = "8752C7388B1098A472D3030AF9614F27")
     protected void setEnabled(int id, boolean enable) {
         {
             log("setEnabled(" + id + ", " + enable + ") with old state = " + dataEnabled[id]
                     + " and enabledCount = " + enabledCount);
-        } //End block
+        } 
         Message msg = obtainMessage(EVENT_ENABLE_NEW_APN);
         msg.arg1 = id;
         msg.arg2 = (enable ? ENABLED : DISABLED);
         sendMessage(msg);
         addTaint(id);
         addTaint(enable);
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //log("setEnabled(" + id + ", " + enable + ") with old state = " + dataEnabled[id]
-                    //+ " and enabledCount = " + enabledCount);
-        //}
-        //Message msg = obtainMessage(EVENT_ENABLE_NEW_APN);
-        //msg.arg1 = id;
-        //msg.arg2 = (enable ? ENABLED : DISABLED);
-        //sendMessage(msg);
+        
+        
+            
+                    
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.006 -0400", hash_original_method = "6346C217AE811F98B5143DCE05848411", hash_generated_method = "BE5BFAAC1AF40DF793E063021C1ED4B1")
     protected void onEnableApn(int apnId, int enabled) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             log("EVENT_APN_ENABLE_REQUEST apnId=" + apnId + ", apnType=" + apnIdToType(apnId) +
                     ", enabled=" + enabled + ", dataEnabled = " + dataEnabled[apnId] +
                     ", enabledCount = " + enabledCount + ", isApnTypeActive = " +
                     isApnTypeActive(apnIdToType(apnId)));
-        } //End block
+        } 
         {
             {
                 {
                     dataEnabled[apnId] = true;
-                } //End block
-            } //End block
+                } 
+            } 
             String type = apnIdToType(apnId);
             {
                 boolean varF392DA59AED5AF7339423DB9E4235404_406414254 = (!isApnTypeActive(type));
                 {
                     mRequestedApnType = type;
                     onEnableNewApn();
-                } //End block
+                } 
                 {
                     notifyApnIdUpToCurrent(Phone.REASON_APN_SWITCHED, apnId);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean didDisable = false;
             {
                 {
                     dataEnabled[apnId] = false;
                     didDisable = true;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 onCleanUpConnection(true, apnId, Phone.REASON_DATA_DISABLED);
                 notifyApnIdDisconnected(Phone.REASON_DATA_DISABLED, apnId);
@@ -1281,43 +1306,45 @@ public abstract class DataConnectionTracker extends Handler {
                     {
                         mRequestedApnType = Phone.APN_TYPE_DEFAULT;
                         onEnableNewApn();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(enabled);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.006 -0400", hash_original_method = "FBAA4A80E4538BA497646C5AED60D911", hash_generated_method = "32D68D2D8870859115DE7BFCF2679FE7")
     protected void onEnableNewApn() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.007 -0400", hash_original_method = "58B3A2A4D2FF1B49B3A412CB94198F76", hash_generated_method = "90D166404488124DA3551A8CE530598F")
     protected void onResetDone(AsyncResult ar) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         log("EVENT_RESET_DONE");
         String reason = null;
         {
             reason = (String) ar.userObj;
-        } //End block
+        } 
         gotoIdleAndNotifyDataConnection(reason);
         addTaint(ar.getTaint());
-        // ---------- Original Method ----------
-        //if (DBG) log("EVENT_RESET_DONE");
-        //String reason = null;
-        //if (ar.userObj instanceof String) {
-            //reason = (String) ar.userObj;
-        //}
-        //gotoIdleAndNotifyDataConnection(reason);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.007 -0400", hash_original_method = "DE9C8D1FA305A86440711210D5CC0DFB", hash_generated_method = "B569ED50450B635005D8FC1EA2186A89")
     public boolean setInternalDataEnabled(boolean enable) {
         log("setInternalDataEnabled(" + enable + ")");
@@ -1327,65 +1354,68 @@ public abstract class DataConnectionTracker extends Handler {
         addTaint(enable);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1476257866 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1476257866;
-        // ---------- Original Method ----------
-        //if (DBG)
-            //log("setInternalDataEnabled(" + enable + ")");
-        //Message msg = obtainMessage(EVENT_SET_INTERNAL_DATA_ENABLE);
-        //msg.arg1 = (enable ? ENABLED : DISABLED);
-        //sendMessage(msg);
-        //return true;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.008 -0400", hash_original_method = "2FFC27FC9820E2F3BAEE3098A222A5B3", hash_generated_method = "17E0658898110411B3A57C927D045245")
     protected void onSetInternalDataEnabled(boolean enabled) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mInternalDataEnabled = enabled;
             {
                 log("onSetInternalDataEnabled: changed to enabled, try to setup data call");
                 resetAllRetryCounts();
                 onTrySetupData(Phone.REASON_DATA_ENABLED);
-            } //End block
+            } 
             {
                 log("onSetInternalDataEnabled: changed to disabled, cleanUpAllConnections");
                 cleanUpAllConnections(null);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mDataEnabledLock) {
-            //mInternalDataEnabled = enabled;
-            //if (enabled) {
-                //log("onSetInternalDataEnabled: changed to enabled, try to setup data call");
-                //resetAllRetryCounts();
-                //onTrySetupData(Phone.REASON_DATA_ENABLED);
-            //} else {
-                //log("onSetInternalDataEnabled: changed to disabled, cleanUpAllConnections");
-                //cleanUpAllConnections(null);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.008 -0400", hash_original_method = "68E67092B4266000A5BC48E8C37B6ED2", hash_generated_method = "074DBC07DCDA0EBA9722A87AEACC7F57")
     public void cleanUpAllConnections(String cause) {
         Message msg = obtainMessage(EVENT_CLEAN_UP_ALL_CONNECTIONS);
         msg.obj = cause;
         sendMessage(msg);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-        //Message msg = obtainMessage(EVENT_CLEAN_UP_ALL_CONNECTIONS);
-        //msg.obj = cause;
-        //sendMessage(msg);
+        
+        
+        
+        
     }
 
     
     public abstract boolean isDisconnected();
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.009 -0400", hash_original_method = "49C3C07E31C3EAA572D4F39FF0B691FA", hash_generated_method = "5052DFE7C201EB98DA42964D852DE5EF")
     protected void onSetUserDataEnabled(boolean enabled) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             final boolean prevEnabled = getAnyDataEnabled();
             {
@@ -1398,46 +1428,47 @@ public abstract class DataConnectionTracker extends Handler {
                         {
                             resetAllRetryCounts();
                             onTrySetupData(Phone.REASON_DATA_ENABLED);
-                        } //End block
+                        } 
                         {
                             onCleanUpAllConnections(Phone.REASON_DATA_DISABLED);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mDataEnabledLock) {
-            //final boolean prevEnabled = getAnyDataEnabled();
-            //if (mUserDataEnabled != enabled) {
-                //mUserDataEnabled = enabled;
-                //Settings.Secure.putInt(mPhone.getContext().getContentResolver(),
-                        //Settings.Secure.MOBILE_DATA, enabled ? 1 : 0);
-                //if (prevEnabled != getAnyDataEnabled()) {
-                    //if (!prevEnabled) {
-                        //resetAllRetryCounts();
-                        //onTrySetupData(Phone.REASON_DATA_ENABLED);
-                    //} else {
-                        //onCleanUpAllConnections(Phone.REASON_DATA_DISABLED);
-                    //}
-                //}
-            //}
-        //}
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                        
+                
+                    
+                        
+                        
+                    
+                        
+                    
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.010 -0400", hash_original_method = "CE2949FE6361D634BBA79ED70CC5EAE2", hash_generated_method = "2FE2F2DA1817B656777C8A5B772A6D15")
     protected void onSetDependencyMet(String apnType, boolean met) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(apnType.getTaint());
         addTaint(met);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.012 -0400", hash_original_method = "5C2A966CAC36731C633B25393BAF4799", hash_generated_method = "0BB564DE3CB5AEE973F65F44E48842AA")
     protected void onSetPolicyDataEnabled(boolean enabled) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             final boolean prevEnabled = getAnyDataEnabled();
             {
@@ -1448,70 +1479,72 @@ public abstract class DataConnectionTracker extends Handler {
                         {
                             resetAllRetryCounts();
                             onTrySetupData(Phone.REASON_DATA_ENABLED);
-                        } //End block
+                        } 
                         {
                             onCleanUpAllConnections(Phone.REASON_DATA_DISABLED);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //synchronized (mDataEnabledLock) {
-            //final boolean prevEnabled = getAnyDataEnabled();
-            //if (sPolicyDataEnabled != enabled) {
-                //sPolicyDataEnabled = enabled;
-                //if (prevEnabled != getAnyDataEnabled()) {
-                    //if (!prevEnabled) {
-                        //resetAllRetryCounts();
-                        //onTrySetupData(Phone.REASON_DATA_ENABLED);
-                    //} else {
-                        //onCleanUpAllConnections(Phone.REASON_DATA_DISABLED);
-                    //}
-                //}
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+                    
+                        
+                        
+                    
+                        
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.015 -0400", hash_original_method = "E5EFA23236CE13ACC69B88C6F16F1B0C", hash_generated_method = "77F3DB4334032C03B134DFACFA1E16A6")
     protected String getReryConfig(boolean forDefault) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1422978930 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1214264322 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_458131367 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1422978930 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1214264322 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_458131367 = null; 
         int rt = mPhone.getServiceState().getRadioTechnology();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1422978930 = SystemProperties.get("ro.cdma.data_retry_config");
-        } //End block
+        } 
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1214264322 = SystemProperties.get("ro.gsm.data_retry_config");
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_458131367 = SystemProperties.get("ro.gsm.2nd_data_retry_config");
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(forDefault);
-        String varA7E53CE21691AB073D9660D615818899_959938134; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_959938134; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_959938134 = varB4EAC82CA7396A68D541C85D26508E83_1422978930;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_959938134 = varB4EAC82CA7396A68D541C85D26508E83_1214264322;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_959938134 = varB4EAC82CA7396A68D541C85D26508E83_458131367;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_959938134.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_959938134.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_959938134;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.024 -0400", hash_original_method = "0FD4DA1D85F6AEE253925BB7FDB228BD", hash_generated_method = "DF4A140089C413DB6E3D22E5D38B12FF")
     protected void resetAllRetryCounts() {
         {
@@ -1520,12 +1553,12 @@ public abstract class DataConnectionTracker extends Handler {
             DataConnection dc = var8D54139306CE59DA2A79305B93065ACC_565010419.next();
             {
                 dc.resetRetryCount();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //for (DataConnection dc : mDataConnections.values()) {
-            //dc.resetRetryCount();
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
@@ -1555,7 +1588,7 @@ public abstract class DataConnectionTracker extends Handler {
         public  DataRoamingSettingObserver(Handler handler) {
             super(handler);
             addTaint(handler.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1565,10 +1598,10 @@ public abstract class DataConnectionTracker extends Handler {
             resolver.registerContentObserver(
                     Settings.Secure.getUriFor(Settings.Secure.DATA_ROAMING), false, this);
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
-            //final ContentResolver resolver = context.getContentResolver();
-            //resolver.registerContentObserver(
-                    //Settings.Secure.getUriFor(Settings.Secure.DATA_ROAMING), false, this);
+            
+            
+            
+                    
         }
 
         
@@ -1577,20 +1610,20 @@ public abstract class DataConnectionTracker extends Handler {
             final ContentResolver resolver = context.getContentResolver();
             resolver.unregisterContentObserver(this);
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
-            //final ContentResolver resolver = context.getContentResolver();
-            //resolver.unregisterContentObserver(this);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.025 -0400", hash_original_method = "169C7D81EE3F2154C9E94D652CC4F700", hash_generated_method = "7078379D68C8CF85B358A0DE1DB16F06")
         @Override
         public void onChange(boolean selfChange) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             handleDataOnRoamingChange();
             addTaint(selfChange);
-            // ---------- Original Method ----------
-            //handleDataOnRoamingChange();
+            
+            
         }
 
         
@@ -1609,8 +1642,8 @@ public abstract class DataConnectionTracker extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.025 -0400", hash_original_method = "A9FFC39802399C2580CE69B9ED52FB70", hash_generated_method = "3480E04706A82CC0FC15FF716763F24D")
         public  TxRxSum() {
             reset();
-            // ---------- Original Method ----------
-            //reset();
+            
+            
         }
 
         
@@ -1618,9 +1651,9 @@ public abstract class DataConnectionTracker extends Handler {
         public  TxRxSum(long txPkts, long rxPkts) {
             this.txPkts = txPkts;
             this.rxPkts = rxPkts;
-            // ---------- Original Method ----------
-            //this.txPkts = txPkts;
-            //this.rxPkts = rxPkts;
+            
+            
+            
         }
 
         
@@ -1628,9 +1661,9 @@ public abstract class DataConnectionTracker extends Handler {
         public  TxRxSum(TxRxSum sum) {
             txPkts = sum.txPkts;
             rxPkts = sum.rxPkts;
-            // ---------- Original Method ----------
-            //txPkts = sum.txPkts;
-            //rxPkts = sum.rxPkts;
+            
+            
+            
         }
 
         
@@ -1638,20 +1671,20 @@ public abstract class DataConnectionTracker extends Handler {
         public void reset() {
             txPkts = -1;
             rxPkts = -1;
-            // ---------- Original Method ----------
-            //txPkts = -1;
-            //rxPkts = -1;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.026 -0400", hash_original_method = "1CA3D86B2E80A8520E2DD65A646FFF96", hash_generated_method = "74BF04E27598E37E421AC33FF2EC5365")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1938404520 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1938404520 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1938404520 = "{txSum=" + txPkts + " rxSum=" + rxPkts + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_1938404520.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1938404520.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1938404520;
-            // ---------- Original Method ----------
-            //return "{txSum=" + txPkts + " rxSum=" + rxPkts + "}";
+            
+            
         }
 
         
@@ -1677,21 +1710,21 @@ public abstract class DataConnectionTracker extends Handler {
                                 {
                                     txUpdated = true;
                                     txSum += stats;
-                                } //End block
+                                } 
                                 stats = TrafficStats.getRxPackets(iface);
                                 {
                                     rxUpdated = true;
                                     rxSum += stats;
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             this.txPkts = txSum;
             this.rxPkts = rxSum;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

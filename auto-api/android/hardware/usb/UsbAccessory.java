@@ -1,11 +1,11 @@
 package android.hardware.usb;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -41,13 +41,13 @@ public class UsbAccessory implements Parcelable {
         mVersion = version;
         mUri = uri;
         mSerial = serial;
-        // ---------- Original Method ----------
-        //mManufacturer = manufacturer;
-        //mModel = model;
-        //mDescription = description;
-        //mVersion = version;
-        //mUri = uri;
-        //mSerial = serial;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -59,88 +59,90 @@ public class UsbAccessory implements Parcelable {
         mVersion = strings[3];
         mUri = strings[4];
         mSerial = strings[5];
-        // ---------- Original Method ----------
-        //mManufacturer = strings[0];
-        //mModel = strings[1];
-        //mDescription = strings[2];
-        //mVersion = strings[3];
-        //mUri = strings[4];
-        //mSerial = strings[5];
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.255 -0400", hash_original_method = "EECC97019E28DA07B84EC558152DCFEE", hash_generated_method = "27EEC2DD3F9931D7B89FB04AA5C19BA7")
     public String getManufacturer() {
-        String varB4EAC82CA7396A68D541C85D26508E83_703406240 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_703406240 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_703406240 = mManufacturer;
-        varB4EAC82CA7396A68D541C85D26508E83_703406240.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_703406240.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_703406240;
-        // ---------- Original Method ----------
-        //return mManufacturer;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.255 -0400", hash_original_method = "375C14568C2F8D8E7E614D0D011D7B99", hash_generated_method = "1D71F2F4093B3891EA13706E6E4AA43E")
     public String getModel() {
-        String varB4EAC82CA7396A68D541C85D26508E83_502716840 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_502716840 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_502716840 = mModel;
-        varB4EAC82CA7396A68D541C85D26508E83_502716840.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_502716840.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_502716840;
-        // ---------- Original Method ----------
-        //return mModel;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.256 -0400", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "A67B34F9AFAC0DB30E3AD3263518DDFB")
     public String getDescription() {
-        String varB4EAC82CA7396A68D541C85D26508E83_129383620 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_129383620 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_129383620 = mDescription;
-        varB4EAC82CA7396A68D541C85D26508E83_129383620.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_129383620.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_129383620;
-        // ---------- Original Method ----------
-        //return mDescription;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.257 -0400", hash_original_method = "F243A33CF0A3D0D255225863927F4698", hash_generated_method = "D94B213A03EC7D485B3D492A115C8578")
     public String getVersion() {
-        String varB4EAC82CA7396A68D541C85D26508E83_161849664 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_161849664 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_161849664 = mVersion;
-        varB4EAC82CA7396A68D541C85D26508E83_161849664.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_161849664.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_161849664;
-        // ---------- Original Method ----------
-        //return mVersion;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.258 -0400", hash_original_method = "8CFE2355A63AF986F8238800728B9A56", hash_generated_method = "F4E80D0E14424F3BBD622DF54D1C89E9")
     public String getUri() {
-        String varB4EAC82CA7396A68D541C85D26508E83_461496234 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_461496234 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_461496234 = mUri;
-        varB4EAC82CA7396A68D541C85D26508E83_461496234.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_461496234.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_461496234;
-        // ---------- Original Method ----------
-        //return mUri;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.258 -0400", hash_original_method = "E1067F8A99D04B6FDB11E19036F1F2CD", hash_generated_method = "6E371ACE3495C63B5198CF3556E6976E")
     public String getSerial() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1462273917 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1462273917 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1462273917 = mSerial;
-        varB4EAC82CA7396A68D541C85D26508E83_1462273917.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1462273917.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1462273917;
-        // ---------- Original Method ----------
-        //return mSerial;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean compare(String s1, String s2) {
         if (s1 == null) return (s2 == null);
         return s1.equals(s2);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.259 -0400", hash_original_method = "865A8510E9F7675674A503A19BC93814", hash_generated_method = "0D24CE6BA85BA1CFE7CA6290378A589E")
     @Override
     public boolean equals(Object obj) {
@@ -152,24 +154,25 @@ public class UsbAccessory implements Parcelable {
                     compare(mVersion, accessory.getVersion()) &&
                     compare(mUri, accessory.getUri()) &&
                     compare(mSerial, accessory.getSerial())));
-        } //End block
+        } 
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_273906659 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_273906659;
-        // ---------- Original Method ----------
-        //if (obj instanceof UsbAccessory) {
-            //UsbAccessory accessory = (UsbAccessory)obj;
-            //return (compare(mManufacturer, accessory.getManufacturer()) &&
-                    //compare(mModel, accessory.getModel()) &&
-                    //compare(mDescription, accessory.getDescription()) &&
-                    //compare(mVersion, accessory.getVersion()) &&
-                    //compare(mUri, accessory.getUri()) &&
-                    //compare(mSerial, accessory.getSerial()));
-        //}
-        //return false;
+        
+        
+            
+            
+                    
+                    
+                    
+                    
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.259 -0400", hash_original_method = "1CBDEBF34085121F316849C19724C53C", hash_generated_method = "CA1FE89BAB534F48F8A1282D0D31E893")
     @Override
     public int hashCode() {
@@ -178,38 +181,39 @@ public class UsbAccessory implements Parcelable {
                 (mDescription == null ? 0 : mDescription.hashCode()) ^
                 (mVersion == null ? 0 : mVersion.hashCode()) ^
                 (mUri == null ? 0 : mUri.hashCode()) ^
-                (mSerial == null ? 0 : mSerial.hashCode()))); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                (mSerial == null ? 0 : mSerial.hashCode()))); 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_434616194 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_434616194;
-        // ---------- Original Method ----------
-        //return ((mManufacturer == null ? 0 : mManufacturer.hashCode()) ^
-                //(mModel == null ? 0 : mModel.hashCode()) ^
-                //(mDescription == null ? 0 : mDescription.hashCode()) ^
-                //(mVersion == null ? 0 : mVersion.hashCode()) ^
-                //(mUri == null ? 0 : mUri.hashCode()) ^
-                //(mSerial == null ? 0 : mSerial.hashCode()));
+        
+        
+                
+                
+                
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.260 -0400", hash_original_method = "95290F8A4A72A3956B1D8FB9C7186754", hash_generated_method = "E2002C7E75703EC7D30933AEC2F54C22")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1080878913 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1080878913 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1080878913 = "UsbAccessory[mManufacturer=" + mManufacturer +
                             ", mModel=" + mModel +
                             ", mDescription=" + mDescription +
                             ", mVersion=" + mVersion +
                             ", mUri=" + mUri +
                             ", mSerial=" + mSerial + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_1080878913.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1080878913.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1080878913;
-        // ---------- Original Method ----------
-        //return "UsbAccessory[mManufacturer=" + mManufacturer +
-                            //", mModel=" + mModel +
-                            //", mDescription=" + mDescription +
-                            //", mVersion=" + mVersion +
-                            //", mUri=" + mUri +
-                            //", mSerial=" + mSerial + "]";
+        
+        
+                            
+                            
+                            
+                            
+                            
     }
 
     
@@ -217,11 +221,12 @@ public class UsbAccessory implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1516959001 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1516959001;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.261 -0400", hash_original_method = "5A34BF0EEFA04466D13EE884FC2C2BC9", hash_generated_method = "C3A9FCA09014C62D67343683D3BF908C")
     public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeString(mManufacturer);
@@ -232,13 +237,13 @@ public class UsbAccessory implements Parcelable {
         parcel.writeString(mSerial);
         addTaint(parcel.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //parcel.writeString(mManufacturer);
-        //parcel.writeString(mModel);
-        //parcel.writeString(mDescription);
-        //parcel.writeString(mVersion);
-        //parcel.writeString(mUri);
-        //parcel.writeString(mSerial);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -263,7 +268,7 @@ public class UsbAccessory implements Parcelable {
             return new UsbAccessory[size];
         }
     };
-    // orphaned legacy method
+    
     public UsbAccessory createFromParcel(Parcel in) {
             String manufacturer = in.readString();
             String model = in.readString();
@@ -274,7 +279,7 @@ public class UsbAccessory implements Parcelable {
             return new UsbAccessory(manufacturer, model, description, version, uri, serial);
         }
     
-    // orphaned legacy method
+    
     public UsbAccessory[] newArray(int size) {
             return new UsbAccessory[size];
         }

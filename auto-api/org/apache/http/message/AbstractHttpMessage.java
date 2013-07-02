@@ -1,11 +1,11 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Iterator;
 import org.apache.http.Header;
@@ -27,74 +27,76 @@ public abstract class AbstractHttpMessage implements HttpMessage {
         super();
         this.headergroup = new HeaderGroup();
         this.params = params;
-        // ---------- Original Method ----------
-        //this.headergroup = new HeaderGroup();
-        //this.params = params;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.901 -0400", hash_original_method = "2222B1AD198C1052436204E49A67A13C", hash_generated_method = "20CE23CB860DE8F239A1882E6A61E5B3")
     protected  AbstractHttpMessage() {
         this(null);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.901 -0400", hash_original_method = "9EF327933AC8CF093A78CA62674DD20F", hash_generated_method = "2338400421CC9C54EA4ED42CBFDF8F43")
     public boolean containsHeader(String name) {
         boolean var6CFDAFB175557FEDC806A3C6134097EB_257230423 = (this.headergroup.containsHeader(name));
         addTaint(name.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_860553569 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_860553569;
-        // ---------- Original Method ----------
-        //return this.headergroup.containsHeader(name);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.901 -0400", hash_original_method = "FE431DBB9584369B7EDB43E7189B0AE3", hash_generated_method = "FF1B047906F53995E7A3D48A9AC7D57D")
     public Header[] getHeaders(final String name) {
-        Header[] varB4EAC82CA7396A68D541C85D26508E83_1023500871 = null; //Variable for return #1
+        Header[] varB4EAC82CA7396A68D541C85D26508E83_1023500871 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1023500871 = this.headergroup.getHeaders(name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1023500871.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1023500871.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1023500871;
-        // ---------- Original Method ----------
-        //return this.headergroup.getHeaders(name);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.902 -0400", hash_original_method = "4F426424B706B56A99E07E40B5C52BFA", hash_generated_method = "81200586991D8BF819DF0D68DFB3C6F6")
     public Header getFirstHeader(final String name) {
-        Header varB4EAC82CA7396A68D541C85D26508E83_1134975652 = null; //Variable for return #1
+        Header varB4EAC82CA7396A68D541C85D26508E83_1134975652 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1134975652 = this.headergroup.getFirstHeader(name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1134975652.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1134975652.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1134975652;
-        // ---------- Original Method ----------
-        //return this.headergroup.getFirstHeader(name);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.902 -0400", hash_original_method = "2D4239F1E5F9F68D789A00645007924A", hash_generated_method = "B8F37366A039FCA4E7C686D3C117125E")
     public Header getLastHeader(final String name) {
-        Header varB4EAC82CA7396A68D541C85D26508E83_1346696452 = null; //Variable for return #1
+        Header varB4EAC82CA7396A68D541C85D26508E83_1346696452 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1346696452 = this.headergroup.getLastHeader(name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1346696452.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1346696452.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1346696452;
-        // ---------- Original Method ----------
-        //return this.headergroup.getLastHeader(name);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.902 -0400", hash_original_method = "89AD2C028927AB3E8715A79204D69C99", hash_generated_method = "27CB026F3E8D90CEF05930785DA28F7B")
     public Header[] getAllHeaders() {
-        Header[] varB4EAC82CA7396A68D541C85D26508E83_694049546 = null; //Variable for return #1
+        Header[] varB4EAC82CA7396A68D541C85D26508E83_694049546 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_694049546 = this.headergroup.getAllHeaders();
-        varB4EAC82CA7396A68D541C85D26508E83_694049546.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_694049546.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_694049546;
-        // ---------- Original Method ----------
-        //return this.headergroup.getAllHeaders();
+        
+        
     }
 
     
@@ -102,8 +104,8 @@ public abstract class AbstractHttpMessage implements HttpMessage {
     public void addHeader(final Header header) {
         this.headergroup.addHeader(header);
         addTaint(header.getTaint());
-        // ---------- Original Method ----------
-        //this.headergroup.addHeader(header);
+        
+        
     }
 
     
@@ -111,15 +113,15 @@ public abstract class AbstractHttpMessage implements HttpMessage {
     public void addHeader(final String name, final String value) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Header name may not be null");
-        } //End block
+        } 
         this.headergroup.addHeader(new BasicHeader(name, value));
         addTaint(name.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException("Header name may not be null");
-        //}
-        //this.headergroup.addHeader(new BasicHeader(name, value));
+        
+        
+            
+        
+        
     }
 
     
@@ -127,8 +129,8 @@ public abstract class AbstractHttpMessage implements HttpMessage {
     public void setHeader(final Header header) {
         this.headergroup.updateHeader(header);
         addTaint(header.getTaint());
-        // ---------- Original Method ----------
-        //this.headergroup.updateHeader(header);
+        
+        
     }
 
     
@@ -136,15 +138,15 @@ public abstract class AbstractHttpMessage implements HttpMessage {
     public void setHeader(final String name, final String value) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Header name may not be null");
-        } //End block
+        } 
         this.headergroup.updateHeader(new BasicHeader(name, value));
         addTaint(name.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException("Header name may not be null");
-        //}
-        //this.headergroup.updateHeader(new BasicHeader(name, value));
+        
+        
+            
+        
+        
     }
 
     
@@ -152,8 +154,8 @@ public abstract class AbstractHttpMessage implements HttpMessage {
     public void setHeaders(final Header[] headers) {
         this.headergroup.setHeaders(headers);
         addTaint(headers[0].getTaint());
-        // ---------- Original Method ----------
-        //this.headergroup.setHeaders(headers);
+        
+        
     }
 
     
@@ -161,8 +163,8 @@ public abstract class AbstractHttpMessage implements HttpMessage {
     public void removeHeader(final Header header) {
         this.headergroup.removeHeader(header);
         addTaint(header.getTaint());
-        // ---------- Original Method ----------
-        //this.headergroup.removeHeader(header);
+        
+        
     }
 
     
@@ -177,61 +179,64 @@ public abstract class AbstractHttpMessage implements HttpMessage {
                     boolean var3104EEF4216C20140CD69A5852A34995_34024589 = (name.equalsIgnoreCase(header.getName()));
                     {
                         i.remove();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //return;
-        //}
-        //for (Iterator i = this.headergroup.iterator(); i.hasNext(); ) {
-            //Header header = (Header) i.next();
-            //if (name.equalsIgnoreCase(header.getName())) {
-                //i.remove();
-            //}
-        //}
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.906 -0400", hash_original_method = "7F921B9752F1205280862FD328D06FCE", hash_generated_method = "C604B75EB856221185B2124B1A96F244")
     public HeaderIterator headerIterator() {
-        HeaderIterator varB4EAC82CA7396A68D541C85D26508E83_931578617 = null; //Variable for return #1
+        HeaderIterator varB4EAC82CA7396A68D541C85D26508E83_931578617 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_931578617 = this.headergroup.iterator();
-        varB4EAC82CA7396A68D541C85D26508E83_931578617.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_931578617.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_931578617;
-        // ---------- Original Method ----------
-        //return this.headergroup.iterator();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.907 -0400", hash_original_method = "68644A261C0F1E0602A67E0AF6E4CB07", hash_generated_method = "D2AEE495A302E8F2DAE6A30FFBC59ADC")
     public HeaderIterator headerIterator(String name) {
-        HeaderIterator varB4EAC82CA7396A68D541C85D26508E83_227497445 = null; //Variable for return #1
+        HeaderIterator varB4EAC82CA7396A68D541C85D26508E83_227497445 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_227497445 = this.headergroup.iterator(name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_227497445.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_227497445.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_227497445;
-        // ---------- Original Method ----------
-        //return this.headergroup.iterator(name);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.907 -0400", hash_original_method = "D8EA4E4823DF4752A606F523C6CA7ECB", hash_generated_method = "4720434DB8BA50EBB2DCD217D239BA03")
     public HttpParams getParams() {
-        HttpParams varB4EAC82CA7396A68D541C85D26508E83_1462957802 = null; //Variable for return #1
+        HttpParams varB4EAC82CA7396A68D541C85D26508E83_1462957802 = null; 
         {
             this.params = new BasicHttpParams();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1462957802 = this.params;
-        varB4EAC82CA7396A68D541C85D26508E83_1462957802.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1462957802.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1462957802;
-        // ---------- Original Method ----------
-        //if (this.params == null) {
-            //this.params = new BasicHttpParams();
-        //}
-        //return this.params;
+        
+        
+            
+        
+        
     }
 
     
@@ -239,13 +244,13 @@ public abstract class AbstractHttpMessage implements HttpMessage {
     public void setParams(final HttpParams params) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP parameters may not be null");
-        } //End block
+        } 
         this.params = params;
-        // ---------- Original Method ----------
-        //if (params == null) {
-            //throw new IllegalArgumentException("HTTP parameters may not be null");
-        //}
-        //this.params = params;
+        
+        
+            
+        
+        
     }
 
     

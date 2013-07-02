@@ -1,11 +1,11 @@
 package android.provider;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
@@ -43,10 +43,11 @@ public final class Settings {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.872 -0400", hash_original_method = "D105991E634C8DCAFDA0F30054C63045", hash_generated_method = "D105991E634C8DCAFDA0F30054C63045")
     public Settings ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String getGTalkDeviceId(long androidId) {
         return "android-" + Long.toHexString(androidId);
     }
@@ -58,7 +59,7 @@ public final class Settings {
         public  SettingNotFoundException(String msg) {
             super(msg);
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -71,7 +72,7 @@ public final class Settings {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.873 -0400", hash_original_method = "FA7615754860C9050FE125371ADC3B8B", hash_generated_method = "FA7615754860C9050FE125371ADC3B8B")
         public NameValueTable ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -130,40 +131,40 @@ public final class Settings {
             mVersionSystemProperty = versionSystemProperty;
             mUri = uri;
             mCallCommand = callCommand;
-            // ---------- Original Method ----------
-            //mVersionSystemProperty = versionSystemProperty;
-            //mUri = uri;
-            //mCallCommand = callCommand;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.876 -0400", hash_original_method = "30813ECB8D9A0346E7379ADA0BD790C8", hash_generated_method = "4585D64DE0DA40B29821B2C35EA48105")
         public String getString(ContentResolver cr, String name) {
-            String varB4EAC82CA7396A68D541C85D26508E83_245345736 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_1116029216 = null; //Variable for return #2
-            String varB4EAC82CA7396A68D541C85D26508E83_57345925 = null; //Variable for return #3
-            String varB4EAC82CA7396A68D541C85D26508E83_1471777177 = null; //Variable for return #4
-            String varB4EAC82CA7396A68D541C85D26508E83_1750821581 = null; //Variable for return #5
+            String varB4EAC82CA7396A68D541C85D26508E83_245345736 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1116029216 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_57345925 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1471777177 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1750821581 = null; 
             long newValuesVersion = SystemProperties.getLong(mVersionSystemProperty, 0);
             {
                 {
                     mValues.clear();
                     mValuesVersion = newValuesVersion;
-                } //End block
+                } 
                 {
                     boolean varF248B3A69A82BD386B70A575B06BB5F0_991634071 = (mValues.containsKey(name));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_245345736 = mValues.get(name);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             IContentProvider cp = null;
             {
                 cp = mContentProvider;
                 {
                     cp = mContentProvider = cr.acquireProvider(mUri.getAuthority());
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 try 
                 {
@@ -172,13 +173,13 @@ public final class Settings {
                         String value = b.getPairValue();
                         {
                             mValues.put(name, value);
-                        } //End block
+                        } 
                         varB4EAC82CA7396A68D541C85D26508E83_1116029216 = value;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (RemoteException e)
                 { }
-            } //End block
+            } 
             Cursor c = null;
             try 
             {
@@ -186,48 +187,48 @@ public final class Settings {
                              new String[]{name}, null);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_57345925 = null;
-                } //End block
+                } 
                 String value;
                 boolean var4D86B3BFFD03EEDEB3FCD4358BA0EB15_755935811 = (c.moveToNext());
                 value = c.getString(0);
                 value = null;
                 {
                     mValues.put(name, value);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1471777177 = value;
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1750821581 = null;
-            } //End block
+            } 
             finally 
             {
                 c.close();
-            } //End block
+            } 
             addTaint(cr.getTaint());
             addTaint(name.getTaint());
-            String varA7E53CE21691AB073D9660D615818899_1249088412; //Final return value
+            String varA7E53CE21691AB073D9660D615818899_1249088412; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1249088412 = varB4EAC82CA7396A68D541C85D26508E83_245345736;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1249088412 = varB4EAC82CA7396A68D541C85D26508E83_1116029216;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_1249088412 = varB4EAC82CA7396A68D541C85D26508E83_57345925;
                     break;
-                case 4: //Assign result for return ordinal #4
+                case 4: 
                     varA7E53CE21691AB073D9660D615818899_1249088412 = varB4EAC82CA7396A68D541C85D26508E83_1471777177;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1249088412 = varB4EAC82CA7396A68D541C85D26508E83_1750821581;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1249088412.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1249088412.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1249088412;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -246,7 +247,7 @@ public final class Settings {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.876 -0400", hash_original_method = "FCC05FCD4F95F74464895D80CA2398E6", hash_generated_method = "FCC05FCD4F95F74464895D80CA2398E6")
         public System ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1006,7 +1007,7 @@ public final class Settings {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.883 -0400", hash_original_method = "73610FEA11960E691F3222B2F82B6F9C", hash_generated_method = "73610FEA11960E691F3222B2F82B6F9C")
         public Secure ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1966,7 +1967,7 @@ public final class Settings {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.892 -0400", hash_original_method = "BB83E969FD06D277BEC07ACFEA741415", hash_generated_method = "BB83E969FD06D277BEC07ACFEA741415")
         public Bookmarks ()
         {
-            //Synthesized constructor
+            
         }
 
 

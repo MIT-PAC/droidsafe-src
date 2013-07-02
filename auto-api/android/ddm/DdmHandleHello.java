@@ -1,11 +1,11 @@
 package android.ddm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.harmony.dalvik.ddmc.Chunk;
 import org.apache.harmony.dalvik.ddmc.ChunkHandler;
@@ -18,10 +18,11 @@ public class DdmHandleHello extends ChunkHandler {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.989 -0400", hash_original_method = "7D5B1A101327E53BA05D666FE17BE587", hash_generated_method = "2E100489FD6DDE0FDD214C08AF626324")
     private  DdmHandleHello() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void register() {
         DdmServer.registerHandler(CHUNK_HELO, mInstance);
         DdmServer.registerHandler(CHUNK_FEAT, mInstance);
@@ -34,73 +35,75 @@ public class DdmHandleHello extends ChunkHandler {
             byte[] data = new byte[] { 0, 1, 2, 3, 4, -4, -3, -2, -1, 127 };
             Chunk testChunk = new Chunk(ChunkHandler.type("TEST"), data, 1, data.length-2);
             DdmServer.sendChunk(testChunk);
-        } //End block
-        // ---------- Original Method ----------
-        //if (false)
-            //Log.v("ddm-hello", "Connected!");
-        //if (false) {
-            //byte[] data = new byte[] { 0, 1, 2, 3, 4, -4, -3, -2, -1, 127 };
-            //Chunk testChunk =
-                //new Chunk(ChunkHandler.type("TEST"), data, 1, data.length-2);
-            //DdmServer.sendChunk(testChunk);
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.991 -0400", hash_original_method = "AD032216A82F0FAAB91D671673032B40", hash_generated_method = "8D5A1BE7E46D89F62382E2475FB8C198")
     public void disconnected() {
-        // ---------- Original Method ----------
-        //if (false)
-            //Log.v("ddm-hello", "Disconnected!");
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.992 -0400", hash_original_method = "D81BC51C8CC9A87BC96AD49CBC27557B", hash_generated_method = "17F2BB3A912179B1FD1B60F68B59CE9E")
     public Chunk handleChunk(Chunk request) {
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_1562998762 = null; //Variable for return #1
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_801993394 = null; //Variable for return #2
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1562998762 = null; 
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_801993394 = null; 
         int type = request.type;
         {
             varB4EAC82CA7396A68D541C85D26508E83_1562998762 = handleHELO(request);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_801993394 = handleFEAT(request);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Unknown packet "
                 + ChunkHandler.name(type));
-        } //End block
+        } 
         addTaint(request.getTaint());
-        Chunk varA7E53CE21691AB073D9660D615818899_1774895983; //Final return value
+        Chunk varA7E53CE21691AB073D9660D615818899_1774895983; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1774895983 = varB4EAC82CA7396A68D541C85D26508E83_1562998762;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1774895983 = varB4EAC82CA7396A68D541C85D26508E83_801993394;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1774895983.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1774895983.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1774895983;
-        // ---------- Original Method ----------
-        //if (false)
-            //Log.v("ddm-heap", "Handling " + name(request.type) + " chunk");
-        //int type = request.type;
-        //if (type == CHUNK_HELO) {
-            //return handleHELO(request);
-        //} else if (type == CHUNK_FEAT) {
-            //return handleFEAT(request);
-        //} else {
-            //throw new RuntimeException("Unknown packet "
-                //+ ChunkHandler.name(type));
-        //}
+        
+        
+            
+        
+        
+            
+        
+            
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.993 -0400", hash_original_method = "DA2CEBE94E81B4AF53080A8A1470F538", hash_generated_method = "662CF6526864CB3BDEDCC3E03CF5C0F2")
     private Chunk handleHELO(Chunk request) {
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_325357718 = null; //Variable for return #1
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_1363758461 = null; //Variable for return #2
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_325357718 = null; 
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1363758461 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_325357718 = createFailChunk(123, "This is a test");
         ByteBuffer in = wrapChunk(request);
         int serverProtoVers = in.getInt();
@@ -121,34 +124,35 @@ public class DdmHandleHello extends ChunkHandler {
         {
             boolean var75D5FC25CCF0C92CFFFDE18629718BBF_1087519106 = (Debug.waitingForDebugger());
             sendWAIT(0);
-        } //End collapsed parenthetic
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1363758461 = reply;
         addTaint(request.getTaint());
-        Chunk varA7E53CE21691AB073D9660D615818899_1541835222; //Final return value
+        Chunk varA7E53CE21691AB073D9660D615818899_1541835222; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1541835222 = varB4EAC82CA7396A68D541C85D26508E83_325357718;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1541835222 = varB4EAC82CA7396A68D541C85D26508E83_1363758461;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1541835222.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1541835222.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1541835222;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.994 -0400", hash_original_method = "4DE14E90C721327585D89816C2D399A5", hash_generated_method = "89064A2B2BF2DB9E51902CA06A83AEC7")
     private Chunk handleFEAT(Chunk request) {
-        Chunk varB4EAC82CA7396A68D541C85D26508E83_438713761 = null; //Variable for return #1
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_438713761 = null; 
         final String[] features = Debug.getVmFeatureList();
         int size = 4 + 4 * features.length;
         {
             int i = features.length-1;
             size += features[i].length() * 2;
-        } //End collapsed parenthetic
+        } 
         ByteBuffer out = ByteBuffer.allocate(size);
         out.order(ChunkHandler.CHUNK_ORDER);
         out.putInt(features.length);
@@ -157,30 +161,31 @@ public class DdmHandleHello extends ChunkHandler {
             {
                 out.putInt(features[i].length());
                 putString(out, features[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_438713761 = new Chunk(CHUNK_FEAT, out);
         addTaint(request.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_438713761.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_438713761.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_438713761;
-        // ---------- Original Method ----------
-        //final String[] features = Debug.getVmFeatureList();
-        //if (false)
-            //Log.v("ddm-heap", "Got feature list request");
-        //int size = 4 + 4 * features.length;
-        //for (int i = features.length-1; i >= 0; i--)
-            //size += features[i].length() * 2;
-        //ByteBuffer out = ByteBuffer.allocate(size);
-        //out.order(ChunkHandler.CHUNK_ORDER);
-        //out.putInt(features.length);
-        //for (int i = features.length-1; i >= 0; i--) {
-            //out.putInt(features[i].length());
-            //putString(out, features[i]);
-        //}
-        //return new Chunk(CHUNK_FEAT, out);
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void sendWAIT(int reason) {
         byte[] data = new byte[] { (byte) reason };
         Chunk waitChunk = new Chunk(CHUNK_WAIT, data, 0, 1);

@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -32,7 +32,7 @@ public final class NativeCrypto {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.242 -0400", hash_original_method = "DDEFB157515C7447D58E1F6901777126", hash_generated_method = "DDEFB157515C7447D58E1F6901777126")
     public NativeCrypto ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -129,16 +129,19 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int X509_NAME_hash(X500Principal principal) {
         return X509_NAME_hash(principal, "SHA1");
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int X509_NAME_hash_old(X500Principal principal) {
         return X509_NAME_hash(principal, "MD5");
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int X509_NAME_hash(X500Principal principal, String algorithm) {
         try {
             byte[] digest = MessageDigest.getInstance(algorithm).digest(principal.getEncoded());
@@ -149,6 +152,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void add(String standard, String openssl) {
         OPENSSL_TO_STANDARD_CIPHER_SUITES.put(openssl, standard);
         STANDARD_TO_OPENSSL_CIPHER_SUITES.put(standard, openssl);
@@ -202,6 +206,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] getSupportedCipherSuites() {
         return SUPPORTED_CIPHER_SUITES.clone();
     }
@@ -217,6 +222,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[][] encodeCertificates(Certificate[] certificates) throws CertificateEncodingException {
         byte[][] certificateBytes = new byte[certificates.length][];
         for (int i = 0; i < certificates.length; i++) {
@@ -238,6 +244,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[][] encodeIssuerX509Principals(X509Certificate[] certificates) throws CertificateEncodingException {
         byte[][] principalBytes = new byte[certificates.length][];
         for (int i = 0; i < certificates.length; i++) {
@@ -292,6 +299,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setEnabledProtocols(int ssl, String[] protocols) {
         checkEnabledProtocols(protocols);
         long optionsToSet = (SSL_OP_NO_SSLv3 | SSL_OP_NO_TLSv1);
@@ -313,6 +321,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] checkEnabledProtocols(String[] protocols) {
         if (protocols == null) {
             throw new IllegalArgumentException("protocols == null");
@@ -336,6 +345,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setEnabledCipherSuites(int ssl, String[] cipherSuites) {
         checkEnabledCipherSuites(cipherSuites);
         List<String> opensslSuites = new ArrayList<String>();
@@ -352,6 +362,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] checkEnabledCipherSuites(String[] cipherSuites) {
         if (cipherSuites == null) {
             throw new IllegalArgumentException("cipherSuites == null");
@@ -376,6 +387,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] getSupportedCompressionMethods() {
         return SUPPORTED_COMPRESSION_METHODS.clone();
     }
@@ -386,6 +398,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] checkEnabledCompressionMethods(String[] methods) {
         if (methods == null) {
             throw new IllegalArgumentException("methods == null");
@@ -409,6 +422,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setEnabledCompressionMethods(int ssl, String[] methods) {
         checkEnabledCompressionMethods(methods);
         long optionsToSet = (SSL_OP_NO_COMPRESSION);
@@ -446,7 +460,7 @@ public final class NativeCrypto {
 
     
     public static String SSL_get_servername(int sslNativePointer) {
-                //DSFIXME:  This shouldn't happen!
+                
     	String ret = new String();
     	ret.taint.addTaint(sslNativePointer);
     	return ret;
@@ -522,7 +536,7 @@ public final class NativeCrypto {
 
     
     public static String SSL_SESSION_get_version(int sslSessionNativePointer) {
-                //DSFIXME:  This shouldn't happen!
+                
     	String ret = new String();
     	ret.taint.addTaint(sslSessionNativePointer);
     	return ret;
@@ -531,7 +545,7 @@ public final class NativeCrypto {
 
     
     public static String SSL_SESSION_cipher(int sslSessionNativePointer) {
-                //DSFIXME:  This shouldn't happen!
+                
     	String ret = new String();
     	ret.taint.addTaint(sslSessionNativePointer);
     	return ret;
@@ -540,7 +554,7 @@ public final class NativeCrypto {
     
     public static String SSL_SESSION_compress_meth(int sslCtxNativePointer,
                                                           int sslSessionNativePointer) {
-                //DSFIXME:  This shouldn't happen!
+                
     	String ret = new String();
     	ret.taint.addTaint(sslCtxNativePointer);
     	ret.taint.addTaint(sslSessionNativePointer);

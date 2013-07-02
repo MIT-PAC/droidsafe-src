@@ -1,11 +1,11 @@
 package java.lang.ref;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class FinalizerReference<T> extends Reference<T> {
@@ -24,19 +24,20 @@ public final class FinalizerReference<T> extends Reference<T> {
         super(r, q);
         addTaint(r.getTaint());
         addTaint(q.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.574 -0400", hash_original_method = "832B7710CFA0BEA3E25E81BFE41C7B96", hash_generated_method = "AA355DB5BFF67F76C9E12CEE954D8F8F")
     @Override
     public T get() {
-        T varB4EAC82CA7396A68D541C85D26508E83_251988690 = null; //Variable for return #1
+        T varB4EAC82CA7396A68D541C85D26508E83_251988690 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_251988690 = zombie;
-        varB4EAC82CA7396A68D541C85D26508E83_251988690.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_251988690.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_251988690;
-        // ---------- Original Method ----------
-        //return zombie;
+        
+        
     }
 
     
@@ -44,11 +45,12 @@ public final class FinalizerReference<T> extends Reference<T> {
     @Override
     public void clear() {
         zombie = null;
-        // ---------- Original Method ----------
-        //zombie = null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     static void add(Object referent) {
         FinalizerReference<?> reference = new FinalizerReference<Object>(referent, queue);
         synchronized (FinalizerReference.class) {
@@ -80,6 +82,7 @@ public final class FinalizerReference<T> extends Reference<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void finalizeAllEnqueued() throws InterruptedException {
         Sentinel sentinel = new Sentinel();
         FinalizerReference<Object> reference = new FinalizerReference<Object>(null, queue);
@@ -97,7 +100,7 @@ public final class FinalizerReference<T> extends Reference<T> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.575 -0400", hash_original_method = "E2AD40226AFB74C4AE2C6FB439A5AA79", hash_generated_method = "E2AD40226AFB74C4AE2C6FB439A5AA79")
         public Sentinel ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -106,9 +109,9 @@ public final class FinalizerReference<T> extends Reference<T> {
         protected synchronized void finalize() throws Throwable {
             finalized = true;
             notifyAll();
-            // ---------- Original Method ----------
-            //finalized = true;
-            //notifyAll();
+            
+            
+            
         }
 
         
@@ -116,11 +119,11 @@ public final class FinalizerReference<T> extends Reference<T> {
         synchronized void awaitFinalization() throws InterruptedException {
             {
                 wait();
-            } //End block
-            // ---------- Original Method ----------
-            //while (!finalized) {
-                //wait();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         

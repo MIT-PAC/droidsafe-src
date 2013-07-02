@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -18,7 +18,7 @@ public class Region implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.389 -0400", hash_original_method = "0D8BB79D644235D834A5B870E7DE5E55", hash_generated_method = "E39C818312FCB6AA783B7BFB03E94023")
     public  Region() {
         this(nativeConstructor());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,8 +27,8 @@ public class Region implements Parcelable {
         this(nativeConstructor());
         nativeSetRegion(mNativeRegion, region.mNativeRegion);
         addTaint(region.getTaint());
-        // ---------- Original Method ----------
-        //nativeSetRegion(mNativeRegion, region.mNativeRegion);
+        
+        
     }
 
     
@@ -37,9 +37,9 @@ public class Region implements Parcelable {
         mNativeRegion = nativeConstructor();
         nativeSetRect(mNativeRegion, r.left, r.top, r.right, r.bottom);
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //mNativeRegion = nativeConstructor();
-        //nativeSetRect(mNativeRegion, r.left, r.top, r.right, r.bottom);
+        
+        
+        
     }
 
     
@@ -51,9 +51,9 @@ public class Region implements Parcelable {
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        //mNativeRegion = nativeConstructor();
-        //nativeSetRect(mNativeRegion, left, top, right, bottom);
+        
+        
+        
     }
 
     
@@ -61,13 +61,13 @@ public class Region implements Parcelable {
       Region(int ni) {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException();
-        } //End block
+        } 
         mNativeRegion = ni;
-        // ---------- Original Method ----------
-        //if (ni == 0) {
-            //throw new RuntimeException();
-        //}
-        //mNativeRegion = ni;
+        
+        
+            
+        
+        
     }
 
     
@@ -76,40 +76,44 @@ public class Region implements Parcelable {
         this(ni);
         addTaint(ni);
         addTaint(dummy);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.392 -0400", hash_original_method = "200ADD9307CCB536C203EAC015A5A024", hash_generated_method = "A1D8D2D68CAD63FF400E3E9B34FAD970")
     public void setEmpty() {
         nativeSetRect(mNativeRegion, 0, 0, 0, 0);
-        // ---------- Original Method ----------
-        //nativeSetRect(mNativeRegion, 0, 0, 0, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.393 -0400", hash_original_method = "4FCDB3DC16FC27229A4383057FFC976C", hash_generated_method = "E754B5A2EAFFC9C197F1AC9974CD0654")
     public boolean set(Region region) {
         boolean varFD6438F9B0E81607A15A2B33F843B9FB_860933043 = (nativeSetRegion(mNativeRegion, region.mNativeRegion));
         addTaint(region.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_109048113 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_109048113;
-        // ---------- Original Method ----------
-        //return nativeSetRegion(mNativeRegion, region.mNativeRegion);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.393 -0400", hash_original_method = "C2513170875A2D5A2EB27E891206577A", hash_generated_method = "CF3996EBBCBD43E2C1F68E2FA35DE471")
     public boolean set(Rect r) {
         boolean var25DF7F0C1A123F4C32CF83DCE205F87D_119988085 = (nativeSetRect(mNativeRegion, r.left, r.top, r.right, r.bottom));
         addTaint(r.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1790267845 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1790267845;
-        // ---------- Original Method ----------
-        //return nativeSetRect(mNativeRegion, r.left, r.top, r.right, r.bottom);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.394 -0400", hash_original_method = "D06421CD512172DCB28D2F3E0620053E", hash_generated_method = "CA2F4D41BDDC1CAC828EBCB14BCA2D69")
     public boolean set(int left, int top, int right, int bottom) {
         boolean varAA92C668356049C143CCD434BB32A02D_2093118291 = (nativeSetRect(mNativeRegion, left, top, right, bottom));
@@ -119,11 +123,12 @@ public class Region implements Parcelable {
         addTaint(bottom);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1697642857 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1697642857;
-        // ---------- Original Method ----------
-        //return nativeSetRect(mNativeRegion, left, top, right, bottom);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.394 -0400", hash_original_method = "E058C8FF714DCD6DC5C3B199CE291ABB", hash_generated_method = "18CCD2FF2A3DEBA3703CA5C4B7C53A6C")
     public boolean setPath(Path path, Region clip) {
         boolean var031F6EBD4CDCFA81D22115484A3E2F03_468315750 = (nativeSetPath(mNativeRegion, path.ni(), clip.mNativeRegion));
@@ -131,8 +136,8 @@ public class Region implements Parcelable {
         addTaint(clip.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1442315663 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1442315663;
-        // ---------- Original Method ----------
-        //return nativeSetPath(mNativeRegion, path.ni(), clip.mNativeRegion);
+        
+        
     }
 
     
@@ -157,61 +162,65 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.396 -0400", hash_original_method = "EBA477C7AF945181ADA3A9B8177742BE", hash_generated_method = "D31BF811D58BE32FACADA755296C2CA2")
     public Rect getBounds() {
-        Rect varB4EAC82CA7396A68D541C85D26508E83_861795964 = null; //Variable for return #1
+        Rect varB4EAC82CA7396A68D541C85D26508E83_861795964 = null; 
         Rect r = new Rect();
         nativeGetBounds(mNativeRegion, r);
         varB4EAC82CA7396A68D541C85D26508E83_861795964 = r;
-        varB4EAC82CA7396A68D541C85D26508E83_861795964.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_861795964.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_861795964;
-        // ---------- Original Method ----------
-        //Rect r = new Rect();
-        //nativeGetBounds(mNativeRegion, r);
-        //return r;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.396 -0400", hash_original_method = "A46555E1E49458678846473DF9E9883B", hash_generated_method = "4C401D2140682252E5ACC0B5E2CBCD25")
     public boolean getBounds(Rect r) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         boolean var612724CC1222E7287B756B46F505C1EB_325126881 = (nativeGetBounds(mNativeRegion, r));
         addTaint(r.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_199502102 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_199502102;
-        // ---------- Original Method ----------
-        //if (r == null) {
-            //throw new NullPointerException();
-        //}
-        //return nativeGetBounds(mNativeRegion, r);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.397 -0400", hash_original_method = "378316FE7952FD732F90591AB3699DE2", hash_generated_method = "C4D35FF6C702AB7B68CF39E4B822C543")
     public Path getBoundaryPath() {
-        Path varB4EAC82CA7396A68D541C85D26508E83_1466174278 = null; //Variable for return #1
+        Path varB4EAC82CA7396A68D541C85D26508E83_1466174278 = null; 
         Path path = new Path();
         nativeGetBoundaryPath(mNativeRegion, path.ni());
         varB4EAC82CA7396A68D541C85D26508E83_1466174278 = path;
-        varB4EAC82CA7396A68D541C85D26508E83_1466174278.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1466174278.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1466174278;
-        // ---------- Original Method ----------
-        //Path path = new Path();
-        //nativeGetBoundaryPath(mNativeRegion, path.ni());
-        //return path;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.397 -0400", hash_original_method = "4EAA9FC9D13D7E90DDD0EEB1CB6196B1", hash_generated_method = "FAA59FCA9AB75C97383A8AF5D8071E20")
     public boolean getBoundaryPath(Path path) {
         boolean var7A07334C6D667AC5F4DCF43B96AAF16A_2065108428 = (nativeGetBoundaryPath(mNativeRegion, path.ni()));
         addTaint(path.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_737049622 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_737049622;
-        // ---------- Original Method ----------
-        //return nativeGetBoundaryPath(mNativeRegion, path.ni());
+        
+        
     }
 
     
@@ -222,14 +231,15 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.398 -0400", hash_original_method = "963E643D37666FF20B3A3B029F181389", hash_generated_method = "E19D2527CC218CA739AF6F435B8490BF")
     public boolean quickContains(Rect r) {
         boolean var017062C31AD44FF41B703185E7097A3E_1148136164 = (quickContains(r.left, r.top, r.right, r.bottom));
         addTaint(r.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1732679252 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1732679252;
-        // ---------- Original Method ----------
-        //return quickContains(r.left, r.top, r.right, r.bottom);
+        
+        
     }
 
     
@@ -241,14 +251,15 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.399 -0400", hash_original_method = "99713AAB8FDC91BA4FFF953154B93F70", hash_generated_method = "09AFCE326680885BDE70128544EBE08E")
     public boolean quickReject(Rect r) {
         boolean varB72F58AD7D20DCFFA79D3669C170785C_691314076 = (quickReject(r.left, r.top, r.right, r.bottom));
         addTaint(r.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_387937259 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_387937259;
-        // ---------- Original Method ----------
-        //return quickReject(r.left, r.top, r.right, r.bottom);
+        
+        
     }
 
     
@@ -266,13 +277,14 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.400 -0400", hash_original_method = "1E0220698FB1311F0D8B9F18E7495908", hash_generated_method = "E24B5EF6D47ED52A756A2EA13DEC0030")
     public void translate(int dx, int dy) {
         translate(dx, dy, null);
         addTaint(dx);
         addTaint(dy);
-        // ---------- Original Method ----------
-        //translate(dx, dy, null);
+        
+        
     }
 
     
@@ -281,12 +293,13 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.400 -0400", hash_original_method = "39111F1C858A6D228BD34A5A0563D24D", hash_generated_method = "A4ED0A074CB69C62A947FAC105ECCFB4")
     public void scale(float scale) {
         scale(scale, null);
         addTaint(scale);
-        // ---------- Original Method ----------
-        //scale(scale, null);
+        
+        
     }
 
     
@@ -301,11 +314,12 @@ public class Region implements Parcelable {
         addTaint(r.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1742849328 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1742849328;
-        // ---------- Original Method ----------
-        //return op(r, Op.UNION);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.402 -0400", hash_original_method = "0254EC2D8CB0B709656A3942F767CF9E", hash_generated_method = "59B92AB16C117D353F6D04F50E7B193D")
     public boolean op(Rect r, Op op) {
         boolean var90EAA618B3BAC1E5B315E4AB50A3912D_1716962582 = (nativeOp(mNativeRegion, r.left, r.top, r.right, r.bottom,
@@ -314,12 +328,13 @@ public class Region implements Parcelable {
         addTaint(op.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1966513614 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1966513614;
-        // ---------- Original Method ----------
-        //return nativeOp(mNativeRegion, r.left, r.top, r.right, r.bottom,
-                        //op.nativeInt);
+        
+        
+                        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.402 -0400", hash_original_method = "F7B19A9596841ACD8A98EA48656877B1", hash_generated_method = "E2A811242398A4FF0C0325858AFE9E26")
     public boolean op(int left, int top, int right, int bottom, Op op) {
         boolean varABC9D9B2705AE309B237F72644A5AB34_1812177000 = (nativeOp(mNativeRegion, left, top, right, bottom,
@@ -331,12 +346,13 @@ public class Region implements Parcelable {
         addTaint(op.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_600968459 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_600968459;
-        // ---------- Original Method ----------
-        //return nativeOp(mNativeRegion, left, top, right, bottom,
-                        //op.nativeInt);
+        
+        
+                        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.403 -0400", hash_original_method = "7B6B61AB972DEFAAC29D5DA42EF8C210", hash_generated_method = "3B27538E707B9DBC1E743764F486C638")
     public boolean op(Region region, Op op) {
         boolean var0AD004458B8F75085CC4F6F5BFEA2284_1410868384 = (op(this, region, op));
@@ -344,11 +360,12 @@ public class Region implements Parcelable {
         addTaint(op.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_472517145 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_472517145;
-        // ---------- Original Method ----------
-        //return op(this, region, op);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.404 -0400", hash_original_method = "029ED340525EAD4C240C408219CCC448", hash_generated_method = "62BEEE20D595AB3A6FBA5A6523C6746A")
     public boolean op(Rect rect, Region region, Op op) {
         boolean varB0742BC4953C9AFE0E99DE4F785439D4_85318054 = (nativeOp(mNativeRegion, rect, region.mNativeRegion,
@@ -358,12 +375,13 @@ public class Region implements Parcelable {
         addTaint(op.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1219152386 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1219152386;
-        // ---------- Original Method ----------
-        //return nativeOp(mNativeRegion, rect, region.mNativeRegion,
-                        //op.nativeInt);
+        
+        
+                        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.404 -0400", hash_original_method = "7FDA52C90EA81767BFA435745FBF29BC", hash_generated_method = "55567FFAFC4B50FB0445B4D5311FCCD0")
     public boolean op(Region region1, Region region2, Op op) {
         boolean var0855EC438B898D69658174303EBCB740_1547308905 = (nativeOp(mNativeRegion, region1.mNativeRegion,
@@ -373,20 +391,21 @@ public class Region implements Parcelable {
         addTaint(op.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2001409837 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2001409837;
-        // ---------- Original Method ----------
-        //return nativeOp(mNativeRegion, region1.mNativeRegion,
-                        //region2.mNativeRegion, op.nativeInt);
+        
+        
+                        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:14.286 -0400", hash_original_method = "9B6C5B9AE4B0C715D06D485A7F8D4046", hash_generated_method = "C927D002CCE9A303051CBAFFD42F732B")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_696163758 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_696163758 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_696163758 = new String();
-        varB4EAC82CA7396A68D541C85D26508E83_696163758.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_696163758.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_696163758;
-        // ---------- Original Method ----------
-        //return nativeToString(mNativeRegion);
+        
+        
     }
 
     
@@ -394,28 +413,30 @@ public class Region implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_284711407 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_284711407;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.406 -0400", hash_original_method = "D2434A1CAFA87CC30850BFCF09357749", hash_generated_method = "311B69B371B46F7494E5EC8A0FAC8890")
     public void writeToParcel(Parcel p, int flags) {
         {
             boolean varD704EA22356746E9A56ADBBB4C97F8A4_1663372985 = (!nativeWriteToParcel(mNativeRegion, p));
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(p.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (!nativeWriteToParcel(mNativeRegion, p)) {
-            //throw new RuntimeException();
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.406 -0400", hash_original_method = "1060AF13EAB0782D5AA6FD12A9EA9F72", hash_generated_method = "471947E1793CDE89BF4A089F7C8CF0E6")
     @Override
     public boolean equals(Object obj) {
@@ -424,31 +445,32 @@ public class Region implements Parcelable {
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1316119175 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1316119175;
-        // ---------- Original Method ----------
-        //if (obj == null || !(obj instanceof Region)) {
-            //return false;
-        //}
-        //Region peer = (Region) obj;
-        //return nativeEquals(mNativeRegion, peer.mNativeRegion);
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.407 -0400", hash_original_method = "7B9D4EAB814BE6F839A0AFACF43162A1", hash_generated_method = "88533E051B74F60620695CD5B6D42F0C")
     protected void finalize() throws Throwable {
         try 
         {
             nativeDestructor(mNativeRegion);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //nativeDestructor(mNativeRegion);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -456,8 +478,8 @@ public class Region implements Parcelable {
     final int ni() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1717994427 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1717994427;
-        // ---------- Original Method ----------
-        //return mNativeRegion;
+        
+        
     }
 
     
@@ -534,7 +556,7 @@ public class Region implements Parcelable {
 
     
     private static String nativeToString(int native_region) {
-        	return ""; //
+        	return ""; 
         }
 
     

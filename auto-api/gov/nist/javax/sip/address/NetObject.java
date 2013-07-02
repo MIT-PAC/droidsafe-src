@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.address;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.core.*;
 import java.lang.reflect.*;
@@ -15,15 +15,16 @@ public abstract class NetObject extends GenericObject {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.299 -0400", hash_original_method = "C4442EA667C9A2BEB67B2F1E6DC6F09B", hash_generated_method = "DA7CD8F57514C7E6D13831C88B45DC81")
     public  NetObject() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.301 -0400", hash_original_method = "26A4AB68F41643C912C51D77CC375C44", hash_generated_method = "677E0E6F0F97A3C782B688F9989ADB6C")
     public boolean equals(Object that) {
         {
             boolean var07F02797FD62DC585D5DCA22B5D2ED2C_1096674594 = (!this.getClass().equals(that.getClass()));
-        } //End collapsed parenthetic
+        } 
         Class<?> myclass = this.getClass();
         Class<?> hisclass = that.getClass();
         {
@@ -39,10 +40,10 @@ public abstract class NetObject extends GenericObject {
                     String fieldName = f.getName();
                     {
                         boolean var7406A77B5C83EDCF5377C17BF1AF8946_784693422 = (fieldName.compareTo("stringRepresentation") == 0);
-                    } //End collapsed parenthetic
+                    } 
                     {
                         boolean var4BC3FF330F550C7BBF44DF279771A596_1554890990 = (fieldName.compareTo("indentation") == 0);
-                    } //End collapsed parenthetic
+                    } 
                     try 
                     {
                         {
@@ -54,58 +55,58 @@ public abstract class NetObject extends GenericObject {
                                     {
                                         {
                                             boolean var9FFD589FB326B48E92092BBEC4F82DC8_78441619 = (f.getInt(this) != g.getInt(that));
-                                        } //End collapsed parenthetic
-                                    } //End block
+                                        } 
+                                    } 
                                     {
                                         boolean var460EE96C7907B5AECEF23E2913477551_1799931434 = (fname.compareTo("short") == 0);
                                         {
                                             {
                                                 boolean var61EE094D43808A12BFCF634C6C575280_774215336 = (f.getShort(this) != g.getShort(that));
-                                            } //End collapsed parenthetic
-                                        } //End block
+                                            } 
+                                        } 
                                         {
                                             boolean var4E4904AB74B6D2B83A1124020050C226_194982166 = (fname.compareTo("char") == 0);
                                             {
                                                 {
                                                     boolean varED9C2E334F82F90F5E41AE8950CDF3E4_1147202069 = (f.getChar(this) != g.getChar(that));
-                                                } //End collapsed parenthetic
-                                            } //End block
+                                                } 
+                                            } 
                                             {
                                                 boolean var28DA6C4AF68B340247A24B14D9A5EFA6_1310585238 = (fname.compareTo("long") == 0);
                                                 {
                                                     {
                                                         boolean varC71C62B8B7ED1D13CF4DAF6B4E8ECDB5_1671474609 = (f.getLong(this) != g.getLong(that));
-                                                    } //End collapsed parenthetic
-                                                } //End block
+                                                    } 
+                                                } 
                                                 {
                                                     boolean var544FBCB3A6888ED08F519AE301AB6CE2_484953939 = (fname.compareTo("boolean") == 0);
                                                     {
                                                         {
                                                             boolean var8F07C617E4B46B2300AA4EE12C709278_521693637 = (f.getBoolean(this) != g.getBoolean(that));
-                                                        } //End collapsed parenthetic
-                                                    } //End block
+                                                        } 
+                                                    } 
                                                     {
                                                         boolean var8761AD76B1E1D1FE507E180A511DE8F6_367023253 = (fname.compareTo("double") == 0);
                                                         {
                                                             {
                                                                 boolean var22302C3D3326D92671FE4F1EA186F2CA_528823725 = (f.getDouble(this) != g.getDouble(that));
-                                                            } //End collapsed parenthetic
-                                                        } //End block
+                                                            } 
+                                                        } 
                                                         {
                                                             boolean var790B66226FF0DEFD9E067842BFE0C9AF_1542969001 = (fname.compareTo("float") == 0);
                                                             {
                                                                 {
                                                                     boolean var1BD555D51FC2DE23003F271AFA8F6DBD_2093227946 = (f.getFloat(this) != g.getFloat(that));
-                                                                } //End collapsed parenthetic
-                                                            } //End block
-                                                        } //End collapsed parenthetic
-                                                    } //End collapsed parenthetic
-                                                } //End collapsed parenthetic
-                                            } //End collapsed parenthetic
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End block
+                                                                } 
+                                                            } 
+                                                        } 
+                                                    } 
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
                             {
                                 boolean varAA8F4E7F9752016DF7A866D138AF57F2_994343303 = (g.get(that) == f.get(this));
                                 {
@@ -114,39 +115,40 @@ public abstract class NetObject extends GenericObject {
                                         boolean var0C64ED638CF950569CE844619B5AA026_1632192375 = (g.get(that) == null && f.get(that) != null);
                                         {
                                             boolean var40760574C0FFA80349F6AC8002CC0D1A_58961972 = (!f.get(this).equals(g.get(that)));
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End block
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
                     catch (IllegalAccessException ex1)
                     {
                         InternalErrorHandler.handleException(ex1);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 boolean var5E4EA8E50ECDEEF507D9A4D6EDC4CB5B_908238987 = (myclass.equals(NetObject.class));
                 {
                     myclass = myclass.getSuperclass();
                     hisclass = hisclass.getSuperclass();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(that.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1457770164 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1457770164;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.303 -0400", hash_original_method = "8D936CCD11169852B60D86BE02120DB8", hash_generated_method = "431C7258D1EF6CDFC0FA87F71A8AD09F")
     public boolean match(Object other) {
         {
             boolean varE5000AFAE6691EEE0058A00BC83324BD_1579251290 = (!this.getClass().equals(other.getClass()));
-        } //End collapsed parenthetic
+        } 
         GenericObject that = (GenericObject) other;
         Class<?> hisclass = other.getClass();
         Class<?> myclass = this.getClass();
@@ -163,10 +165,10 @@ public abstract class NetObject extends GenericObject {
                     String fieldName = f.getName();
                     {
                         boolean var7406A77B5C83EDCF5377C17BF1AF8946_177504397 = (fieldName.compareTo("stringRepresentation") == 0);
-                    } //End collapsed parenthetic
+                    } 
                     {
                         boolean var4BC3FF330F550C7BBF44DF279771A596_204273661 = (fieldName.compareTo("indentation") == 0);
-                    } //End collapsed parenthetic
+                    } 
                     try 
                     {
                         {
@@ -178,71 +180,71 @@ public abstract class NetObject extends GenericObject {
                                     {
                                         {
                                             boolean var9FFD589FB326B48E92092BBEC4F82DC8_1058440596 = (f.getInt(this) != g.getInt(that));
-                                        } //End collapsed parenthetic
-                                    } //End block
+                                        } 
+                                    } 
                                     {
                                         boolean var460EE96C7907B5AECEF23E2913477551_247903031 = (fname.compareTo("short") == 0);
                                         {
                                             {
                                                 boolean var61EE094D43808A12BFCF634C6C575280_1581535619 = (f.getShort(this) != g.getShort(that));
-                                            } //End collapsed parenthetic
-                                        } //End block
+                                            } 
+                                        } 
                                         {
                                             boolean var4E4904AB74B6D2B83A1124020050C226_1354565160 = (fname.compareTo("char") == 0);
                                             {
                                                 {
                                                     boolean varED9C2E334F82F90F5E41AE8950CDF3E4_63918456 = (f.getChar(this) != g.getChar(that));
-                                                } //End collapsed parenthetic
-                                            } //End block
+                                                } 
+                                            } 
                                             {
                                                 boolean var28DA6C4AF68B340247A24B14D9A5EFA6_667910487 = (fname.compareTo("long") == 0);
                                                 {
                                                     {
                                                         boolean varC71C62B8B7ED1D13CF4DAF6B4E8ECDB5_299346165 = (f.getLong(this) != g.getLong(that));
-                                                    } //End collapsed parenthetic
-                                                } //End block
+                                                    } 
+                                                } 
                                                 {
                                                     boolean var544FBCB3A6888ED08F519AE301AB6CE2_895517887 = (fname.compareTo("boolean") == 0);
                                                     {
                                                         {
                                                             boolean var8F07C617E4B46B2300AA4EE12C709278_1696471297 = (f.getBoolean(this) != g.getBoolean(that));
-                                                        } //End collapsed parenthetic
-                                                    } //End block
+                                                        } 
+                                                    } 
                                                     {
                                                         boolean var8761AD76B1E1D1FE507E180A511DE8F6_23224778 = (fname.compareTo("double") == 0);
                                                         {
                                                             {
                                                                 boolean var22302C3D3326D92671FE4F1EA186F2CA_1110739890 = (f.getDouble(this) != g.getDouble(that));
-                                                            } //End collapsed parenthetic
-                                                        } //End block
+                                                            } 
+                                                        } 
                                                         {
                                                             boolean var790B66226FF0DEFD9E067842BFE0C9AF_1103157138 = (fname.compareTo("float") == 0);
                                                             {
                                                                 {
                                                                     boolean var1BD555D51FC2DE23003F271AFA8F6DBD_1320148429 = (f.getFloat(this) != g.getFloat(that));
-                                                                } //End collapsed parenthetic
-                                                            } //End block
-                                                        } //End collapsed parenthetic
-                                                    } //End collapsed parenthetic
-                                                } //End collapsed parenthetic
-                                            } //End collapsed parenthetic
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End block
+                                                                } 
+                                                            } 
+                                                        } 
+                                                    } 
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
                             {
                                 Object myObj = f.get(this);
                                 Object hisObj = g.get(that);
                                 {
                                     {
                                         boolean varAB8B8601C682E475B385ACEEFDCEE72C_441294607 = (((String) hisObj).equals(""));
-                                    } //End collapsed parenthetic
+                                    } 
                                     {
                                         boolean varDE40D545EC09CF05DB34B16AE2D8BFAD_1036156215 = (((String) myObj)
                                 .compareToIgnoreCase((String) hisObj)
                                 != 0);
-                                    } //End collapsed parenthetic
-                                } //End block
+                                    } 
+                                } 
                                 {
                                     boolean varD4734C60F14F54F732C7FBA072E5A071_556156671 = (GenericObject.isMySubclass(myObj.getClass())
                                 && GenericObject.isMySubclass(hisObj.getClass())
@@ -253,44 +255,45 @@ public abstract class NetObject extends GenericObject {
                                         String myObjEncoded = ((GenericObject) myObj).encode();
                                         boolean retval = ((GenericObject) hisObj).getMatcher().match(
                                     myObjEncoded);
-                                    } //End block
+                                    } 
                                     {
                                         boolean var23E104026FF8191A6303BED8A98BF008_1553756000 = (GenericObject.isMySubclass(myObj.getClass())
                                 && !((GenericObject) myObj).match(hisObj));
                                         {
                                             boolean var2386E6059110DC674FEC38F1CD1B8812_1949423295 = (GenericObjectList.isMySubclass(myObj.getClass())
                                 && !((GenericObjectList) myObj).match(hisObj));
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
                     catch (IllegalAccessException ex1)
                     {
                         InternalErrorHandler.handleException(ex1);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 boolean var5E4EA8E50ECDEEF507D9A4D6EDC4CB5B_85572655 = (myclass.equals(NetObject.class));
                 {
                     myclass = myclass.getSuperclass();
                     hisclass = hisclass.getSuperclass();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(other.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1535500328 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1535500328;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.305 -0400", hash_original_method = "8F6462E23806D652AB2FB8FE10D0061F", hash_generated_method = "245BCEC65031341436350A6797CDCBAA")
     public String debugDump() {
-        String varB4EAC82CA7396A68D541C85D26508E83_379023986 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_379023986 = null; 
         stringRepresentation = "";
         Class<?> myclass = getClass();
         sprint(myclass.getName());
@@ -305,10 +308,10 @@ public abstract class NetObject extends GenericObject {
                 String fieldName = f.getName();
                 {
                     boolean var9553731A42361BF7DC5CCD8CE3EA7CE0_1815825486 = (fieldName.compareTo("stringRepresentation") == 0);
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean varAEA832B4D7325A04DB2E217DE472721D_618452049 = (fieldName.compareTo("indentation") == 0);
-                } //End collapsed parenthetic
+                } 
                 sprint(fieldName + ":");
                 try 
                 {
@@ -322,51 +325,51 @@ public abstract class NetObject extends GenericObject {
                                 {
                                     int intfield = f.getInt(this);
                                     sprint(intfield);
-                                } //End block
+                                } 
                                 {
                                     boolean varECBE882B00F953257800779B015A044A_1398639910 = (fname.compareTo("short") == 0);
                                     {
                                         short shortField = f.getShort(this);
                                         sprint(shortField);
-                                    } //End block
+                                    } 
                                     {
                                         boolean varFF6F4832473A71F8EC5346F9584CA1A4_747304215 = (fname.compareTo("char") == 0);
                                         {
                                             char charField = f.getChar(this);
                                             sprint(charField);
-                                        } //End block
+                                        } 
                                         {
                                             boolean varC3D60E7CA564385C1E6CA965551B84B9_381879692 = (fname.compareTo("long") == 0);
                                             {
                                                 long longField = f.getLong(this);
                                                 sprint(longField);
-                                            } //End block
+                                            } 
                                             {
                                                 boolean varDEFD334EAB943FE4F6ADC4A9D68CC2D0_907771001 = (fname.compareTo("boolean") == 0);
                                                 {
                                                     boolean booleanField = f.getBoolean(this);
                                                     sprint(booleanField);
-                                                } //End block
+                                                } 
                                                 {
                                                     boolean var7199B82B3E59A867EA681451AF585474_413250403 = (fname.compareTo("double") == 0);
                                                     {
                                                         double doubleField = f.getDouble(this);
                                                         sprint(doubleField);
-                                                    } //End block
+                                                    } 
                                                     {
                                                         boolean varA4C55C1B6673FD16D2CEFF9326676E6A_1800077402 = (fname.compareTo("float") == 0);
                                                         {
                                                             float floatField = f.getFloat(this);
                                                             sprint(floatField);
-                                                        } //End block
-                                                    } //End collapsed parenthetic
-                                                } //End collapsed parenthetic
-                                            } //End collapsed parenthetic
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End block
+                                                        } 
+                                                    } 
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
                         {
                             boolean varD5A8092938B037D2C43A6EAD0E6B9173_1403336997 = (GenericObject.class.isAssignableFrom(fieldType));
                             {
@@ -376,12 +379,12 @@ public abstract class NetObject extends GenericObject {
                                         sprint(
                             ((GenericObject) f.get(this)).debugDump(
                                 indentation + 1));
-                                    } //End block
+                                    } 
                                     {
                                         sprint("<null>");
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             {
                                 boolean var3D135DF8A6804404B214F5224E4565F6_1820036005 = (GenericObjectList.class.isAssignableFrom(fieldType));
                                 {
@@ -391,79 +394,81 @@ public abstract class NetObject extends GenericObject {
                                             sprint(
                             ((GenericObjectList) f.get(this)).debugDump(
                                 indentation + 1));
-                                        } //End block
+                                        } 
                                         {
                                             sprint("<null>");
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
+                                        } 
+                                    } 
+                                } 
                                 {
                                     {
                                         boolean var32C4A31DCBD23D1B28FA59D1C0318853_896507054 = (f.get(this) != null);
                                         {
                                             sprint(f.get(this).getClass().getName() + ":");
-                                        } //End block
+                                        } 
                                         {
                                             sprint(fieldType.getName() + ":");
-                                        } //End block
-                                    } //End collapsed parenthetic
+                                        } 
+                                    } 
                                     sprint("{");
                                     {
                                         boolean var32C4A31DCBD23D1B28FA59D1C0318853_1147120339 = (f.get(this) != null);
                                         {
                                             sprint(f.get(this).toString());
-                                        } //End block
+                                        } 
                                         {
                                             sprint("<null>");
-                                        } //End block
-                                    } //End collapsed parenthetic
+                                        } 
+                                    } 
                                     sprint("}");
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 catch (IllegalAccessException ex1)
                 { }
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         sprint("}");
         varB4EAC82CA7396A68D541C85D26508E83_379023986 = stringRepresentation;
-        varB4EAC82CA7396A68D541C85D26508E83_379023986.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_379023986.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_379023986;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.306 -0400", hash_original_method = "85620320EA37710A8866ECA4B349D636", hash_generated_method = "0D3FEC628DF1B4BD65FAAB4874164A48")
     public String debugDump(int indent) {
-        String varB4EAC82CA7396A68D541C85D26508E83_803180993 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_803180993 = null; 
         int save = indentation;
         indentation = indent;
         String retval = this.debugDump();
         indentation = save;
         varB4EAC82CA7396A68D541C85D26508E83_803180993 = retval;
         addTaint(indent);
-        varB4EAC82CA7396A68D541C85D26508E83_803180993.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_803180993.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_803180993;
-        // ---------- Original Method ----------
-        //int save = indentation;
-        //indentation = indent;
-        //String retval = this.debugDump();
-        //indentation = save;
-        //return retval;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.306 -0400", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "DE09122F94C7E4D24B9DF9D2D06EA494")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_754948511 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_754948511 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_754948511 = this.encode();
-        varB4EAC82CA7396A68D541C85D26508E83_754948511.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_754948511.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_754948511;
-        // ---------- Original Method ----------
-        //return this.encode();
+        
+        
     }
 
     

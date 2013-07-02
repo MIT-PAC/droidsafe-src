@@ -1,11 +1,11 @@
 package org.bouncycastle.crypto.macs;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Hashtable;
 import org.bouncycastle.crypto.CipherParameters;
@@ -36,7 +36,7 @@ public class HMac implements Mac {
         Digest digest) {
         this(digest, getByteLength(digest));
         addTaint(digest.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,15 +49,16 @@ public class HMac implements Mac {
         this.blockLength = byteLength;
         inputPad = new byte[blockLength];
         outputPad = new byte[blockLength];
-        // ---------- Original Method ----------
-        //this.digest = digest;
-        //digestSize = digest.getDigestSize();
-        //this.blockLength = byteLength;
-        //inputPad = new byte[blockLength];
-        //outputPad = new byte[blockLength];
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getByteLength(
         Digest digest) {
         if (digest instanceof ExtendedDigest)
@@ -73,28 +74,30 @@ public class HMac implements Mac {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.069 -0400", hash_original_method = "6A332A653F94B07A686BBEFB849C6DAB", hash_generated_method = "D37406097009D196D46517C9077547AE")
     public String getAlgorithmName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_479248535 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_479248535 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_479248535 = digest.getAlgorithmName() + "/HMAC";
-        varB4EAC82CA7396A68D541C85D26508E83_479248535.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_479248535.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_479248535;
-        // ---------- Original Method ----------
-        //return digest.getAlgorithmName() + "/HMAC";
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.069 -0400", hash_original_method = "DF57895E7914F211606EA32A352DF2A7", hash_generated_method = "8D5BD6E3141E6FE36B8B03DC6508F387")
     public Digest getUnderlyingDigest() {
-        Digest varB4EAC82CA7396A68D541C85D26508E83_787982866 = null; //Variable for return #1
+        Digest varB4EAC82CA7396A68D541C85D26508E83_787982866 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_787982866 = digest;
-        varB4EAC82CA7396A68D541C85D26508E83_787982866.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_787982866.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_787982866;
-        // ---------- Original Method ----------
-        //return digest;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.070 -0400", hash_original_method = "3101A36249D850D878FF580C09B22824", hash_generated_method = "ED9AC5A473714F91804729FFB52F6303")
     public void init(
         CipherParameters params) {
@@ -107,36 +110,36 @@ public class HMac implements Mac {
                 int i = digestSize;
                 {
                     inputPad[i] = 0;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             System.arraycopy(key, 0, inputPad, 0, key.length);
             {
                 int i = key.length;
                 {
                     inputPad[i] = 0;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         outputPad = new byte[inputPad.length];
         System.arraycopy(inputPad, 0, outputPad, 0, inputPad.length);
         {
             int i = 0;
             {
                 inputPad[i] ^= IPAD;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int i = 0;
             {
                 outputPad[i] ^= OPAD;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         digest.update(inputPad, 0, inputPad.length);
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -144,21 +147,23 @@ public class HMac implements Mac {
     public int getMacSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_801007043 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_801007043;
-        // ---------- Original Method ----------
-        //return digestSize;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.071 -0400", hash_original_method = "C3086ADC6CE1A5F257F3E90CDD54BB5C", hash_generated_method = "0BCD34B96EADD4905C9691CC99546487")
     public void update(
         byte in) {
         digest.update(in);
         addTaint(in);
-        // ---------- Original Method ----------
-        //digest.update(in);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.072 -0400", hash_original_method = "AD060FC4829937C54A58DD468A8ECBD5", hash_generated_method = "46DE5869A6141EEAED720A9EEF8DD477")
     public void update(
         byte[] in,
@@ -168,11 +173,12 @@ public class HMac implements Mac {
         addTaint(in[0]);
         addTaint(inOff);
         addTaint(len);
-        // ---------- Original Method ----------
-        //digest.update(in, inOff, len);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.073 -0400", hash_original_method = "E110C7DBF05C7A4DE1DAAF3289785A06", hash_generated_method = "153569908AED954A11179EDC0BB9AA6F")
     public int doFinal(
         byte[] out,
@@ -187,24 +193,25 @@ public class HMac implements Mac {
         addTaint(outOff);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1265852931 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1265852931;
-        // ---------- Original Method ----------
-        //byte[] tmp = new byte[digestSize];
-        //digest.doFinal(tmp, 0);
-        //digest.update(outputPad, 0, outputPad.length);
-        //digest.update(tmp, 0, tmp.length);
-        //int     len = digest.doFinal(out, outOff);
-        //reset();
-        //return len;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.076 -0400", hash_original_method = "3989731AACDA6B2FAA3C843D8746ADA9", hash_generated_method = "22472C0C76108A5E431142EFA5C05491")
     public void reset() {
         digest.reset();
         digest.update(inputPad, 0, inputPad.length);
-        // ---------- Original Method ----------
-        //digest.reset();
-        //digest.update(inputPad, 0, inputPad.length);
+        
+        
+        
     }
 
     

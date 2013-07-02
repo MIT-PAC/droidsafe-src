@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 
@@ -14,7 +14,7 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.751 -0400", hash_original_method = "FA64C9B63CE04BA03B3070651E56EFED", hash_generated_method = "B99E3A755713053C1BCF05A2186909D1")
     public  LinkedHashSet() {
         super(new LinkedHashMap<E, HashSet<E>>());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
     public  LinkedHashSet(int capacity) {
         super(new LinkedHashMap<E, HashSet<E>>(capacity));
         addTaint(capacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,7 +31,7 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
         super(new LinkedHashMap<E, HashSet<E>>(capacity, loadFactor));
         addTaint(capacity);
         addTaint(loadFactor);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -45,27 +45,27 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
             E e = var6348CF19B474F5ACF72F267EFA7F4363_1174631741.next();
             {
                 add(e);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(collection.getTaint());
-        // ---------- Original Method ----------
-        //for (E e : collection) {
-            //add(e);
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.754 -0400", hash_original_method = "C32DAC3A2A4103476079105397490F9A", hash_generated_method = "0C74D7137C0DEB8CB42A3931B8B98075")
     @Override
      HashMap<E, HashSet<E>> createBackingMap(int capacity, float loadFactor) {
-        HashMap<E, HashSet<E>> varB4EAC82CA7396A68D541C85D26508E83_606465993 = null; //Variable for return #1
+        HashMap<E, HashSet<E>> varB4EAC82CA7396A68D541C85D26508E83_606465993 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_606465993 = new LinkedHashMap<E, HashSet<E>>(capacity, loadFactor);
         addTaint(capacity);
         addTaint(loadFactor);
-        varB4EAC82CA7396A68D541C85D26508E83_606465993.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_606465993.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_606465993;
-        // ---------- Original Method ----------
-        //return new LinkedHashMap<E, HashSet<E>>(capacity, loadFactor);
+        
+        
     }
 
     

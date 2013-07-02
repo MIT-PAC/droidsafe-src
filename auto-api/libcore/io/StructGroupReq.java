@@ -1,11 +1,11 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.net.InetAddress;
 
@@ -21,21 +21,22 @@ public final class StructGroupReq {
     public  StructGroupReq(int gr_interface, InetAddress gr_group) {
         this.gr_interface = gr_interface;
         this.gr_group = gr_group;
-        // ---------- Original Method ----------
-        //this.gr_interface = gr_interface;
-        //this.gr_group = gr_group;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.480 -0400", hash_original_method = "7C7A6CFDA39E9F15601C4EC14F339026", hash_generated_method = "E9A555BE55F9E6867ADBD20697A10F60")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1272373254 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1272373254 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1272373254 = "StructGroupReq[gr_interface=" + gr_interface + ",gr_group=" + gr_group + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_1272373254.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1272373254.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1272373254;
-        // ---------- Original Method ----------
-        //return "StructGroupReq[gr_interface=" + gr_interface + ",gr_group=" + gr_group + "]";
+        
+        
     }
 
     

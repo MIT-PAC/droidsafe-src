@@ -1,11 +1,11 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.cookie.ClientCookie;
 import org.apache.http.cookie.Cookie;
@@ -20,7 +20,7 @@ public class RFC2965VersionAttributeHandler implements CookieAttributeHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.516 -0400", hash_original_method = "02086819EBBDDEB16B7B0CCCD949EDD6", hash_generated_method = "F4CC2D5F1D77F371477AAE4AAEB51D1F")
     public  RFC2965VersionAttributeHandler() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,44 +28,44 @@ public class RFC2965VersionAttributeHandler implements CookieAttributeHandler {
     public void parse(final SetCookie cookie, final String value) throws MalformedCookieException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException(
                     "Missing value for version attribute");
-        } //End block
+        } 
         int version = -1;
         try 
         {
             version = Integer.parseInt(value);
-        } //End block
+        } 
         catch (NumberFormatException e)
         {
             version = -1;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Invalid cookie version.");
-        } //End block
+        } 
         cookie.setVersion(version);
         addTaint(cookie.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //if (value == null) {
-            //throw new MalformedCookieException(
-                    //"Missing value for version attribute");
-        //}
-        //int version = -1;
-        //try {
-            //version = Integer.parseInt(value);
-        //} catch (NumberFormatException e) {
-            //version = -1;
-        //}
-        //if (version < 0) {
-            //throw new MalformedCookieException("Invalid cookie version.");
-        //}
-        //cookie.setVersion(version);
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -73,7 +73,7 @@ public class RFC2965VersionAttributeHandler implements CookieAttributeHandler {
     public void validate(final Cookie cookie, final CookieOrigin origin) throws MalformedCookieException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } //End block
+        } 
         {
             {
                 boolean var7781200FBFE0FCA6DB7BCAE7195F162A_2059922089 = (cookie instanceof ClientCookie 
@@ -81,22 +81,22 @@ public class RFC2965VersionAttributeHandler implements CookieAttributeHandler {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException(
                         "Violates RFC 2965. Version attribute is required.");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(cookie.getTaint());
         addTaint(origin.getTaint());
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //if (cookie instanceof SetCookie2) {
-            //if (cookie instanceof ClientCookie 
-                    //&& !((ClientCookie) cookie).containsAttribute(ClientCookie.VERSION_ATTR)) {
-                //throw new MalformedCookieException(
-                        //"Violates RFC 2965. Version attribute is required.");
-            //}
-        //}
+        
+        
+            
+        
+        
+            
+                    
+                
+                        
+            
+        
     }
 
     
@@ -106,8 +106,8 @@ public class RFC2965VersionAttributeHandler implements CookieAttributeHandler {
         addTaint(origin.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1879899061 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1879899061;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     

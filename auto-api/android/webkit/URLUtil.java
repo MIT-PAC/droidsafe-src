@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.UnsupportedEncodingException;
 import java.util.regex.Matcher;
@@ -20,10 +20,11 @@ public final class URLUtil {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.646 -0400", hash_original_method = "581EF9FF4A1E1085E3970232802A3705", hash_generated_method = "581EF9FF4A1E1085E3970232802A3705")
     public URLUtil ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String guessUrl(String inUrl) {
         String retVal = inUrl;
         WebAddress webAddress;
@@ -51,6 +52,7 @@ public final class URLUtil {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static String composeSearchUrl(String inQuery, String template,
                                           String queryPlaceHolder) {
         int placeHolderIndex = template.indexOf(queryPlaceHolder);
@@ -72,6 +74,7 @@ public final class URLUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decode(byte[] url) throws IllegalArgumentException {
         if (url.length == 0) {
             return new byte[0];
@@ -97,6 +100,7 @@ public final class URLUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean verifyURLEncoding(String url) {
         int count = url.length();
         if (count == 0) {
@@ -120,6 +124,7 @@ public final class URLUtil {
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static int parseHex(byte b) {
         if (b >= '0' && b <= '9') return (b - '0');
         if (b >= 'A' && b <= 'F') return (b - 'A' + 10);
@@ -128,22 +133,26 @@ public final class URLUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isAssetUrl(String url) {
         return (null != url) && url.startsWith(ASSET_BASE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isResourceUrl(String url) {
         return (null != url) && url.startsWith(RESOURCE_BASE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static boolean isCookielessProxyUrl(String url) {
         return (null != url) && url.startsWith(PROXY_BASE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isFileUrl(String url) {
         return (null != url) && (url.startsWith(FILE_BASE) &&
                                  !url.startsWith(ASSET_BASE) &&
@@ -151,21 +160,25 @@ public final class URLUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isAboutUrl(String url) {
         return (null != url) && url.startsWith("about:");
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isDataUrl(String url) {
         return (null != url) && url.startsWith("data:");
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isJavaScriptUrl(String url) {
         return (null != url) && url.startsWith("javascript:");
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isHttpUrl(String url) {
         return (null != url) &&
                (url.length() > 6) &&
@@ -173,6 +186,7 @@ public final class URLUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isHttpsUrl(String url) {
         return (null != url) &&
                (url.length() > 7) &&
@@ -180,6 +194,7 @@ public final class URLUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isNetworkUrl(String url) {
         if (url == null || url.length() == 0) {
             return false;
@@ -188,11 +203,13 @@ public final class URLUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isContentUrl(String url) {
         return (null != url) && url.startsWith("content:");
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isValidUrl(String url) {
         if (url == null || url.length() == 0) {
             return false;
@@ -208,6 +225,7 @@ public final class URLUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String stripAnchor(String url) {
         int anchorIndex = url.indexOf('#');
         if (anchorIndex != -1) {
@@ -290,6 +308,7 @@ public final class URLUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String parseContentDisposition(String contentDisposition) {
         try {
             Matcher m = CONTENT_DISPOSITION_PATTERN.matcher(contentDisposition);

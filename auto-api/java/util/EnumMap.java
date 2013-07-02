@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -40,8 +40,8 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
     public  EnumMap(Class<K> keyType) {
         initialization(keyType);
         addTaint(keyType.getTaint());
-        // ---------- Original Method ----------
-        //initialization(keyType);
+        
+        
     }
 
     
@@ -49,8 +49,8 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
     public  EnumMap(EnumMap<K, ? extends V> map) {
         initialization(map);
         addTaint(map.getTaint());
-        // ---------- Original Method ----------
-        //initialization(map);
+        
+        
     }
 
     
@@ -59,14 +59,14 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
     public  EnumMap(Map<K, ? extends V> map) {
         {
             initialization((EnumMap<K, V>) map);
-        } //End block
+        } 
         {
             {
                 boolean var25E2C4EEA885A5E03E8C4F2DC9C5AD7F_2062592675 = (map.size() == 0);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             Iterator<K> iter = map.keySet().iterator();
             K enumKey = iter.next();
             Class clazz = enumKey.getClass();
@@ -74,44 +74,45 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
                 boolean var65B366502464B6D98F6AF940C135B000_1255475173 = (clazz.isEnum());
                 {
                     initialization(clazz);
-                } //End block
+                } 
                 {
                     initialization(clazz.getSuperclass());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             putAllImpl(map);
-        } //End block
+        } 
         addTaint(map.getTaint());
-        // ---------- Original Method ----------
-        //if (map instanceof EnumMap) {
-            //initialization((EnumMap<K, V>) map);
-        //} else {
-            //if (map.size() == 0) {
-                //throw new IllegalArgumentException();
-            //}
-            //Iterator<K> iter = map.keySet().iterator();
-            //K enumKey = iter.next();
-            //Class clazz = enumKey.getClass();
-            //if (clazz.isEnum()) {
-                //initialization(clazz);
-            //} else {
-                //initialization(clazz.getSuperclass());
-            //}
-            //putAllImpl(map);
-        //}
+        
+        
+            
+        
+            
+                
+            
+            
+            
+            
+            
+                
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.968 -0400", hash_original_method = "2976CFC6D7176D4F9EDBE7E00A9203F9", hash_generated_method = "B80AABDFA9194B1768A3A2F9D08F6AA8")
     @Override
     public void clear() {
         Arrays.fill(values, null);
         Arrays.fill(hasMapping, false);
         mappingsCount = 0;
-        // ---------- Original Method ----------
-        //Arrays.fill(values, null);
-        //Arrays.fill(hasMapping, false);
-        //mappingsCount = 0;
+        
+        
+        
+        
     }
 
     
@@ -119,30 +120,31 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
     @SuppressWarnings("unchecked")
     @Override
     public EnumMap<K, V> clone() {
-        EnumMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_1814392561 = null; //Variable for return #1
+        EnumMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_1814392561 = null; 
         try 
         {
             EnumMap<K, V> enumMap = (EnumMap<K, V>) super.clone();
             enumMap.initialization(this);
             varB4EAC82CA7396A68D541C85D26508E83_1814392561 = enumMap;
-        } //End block
+        } 
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1814392561.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1814392561.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1814392561;
-        // ---------- Original Method ----------
-        //try {
-            //EnumMap<K, V> enumMap = (EnumMap<K, V>) super.clone();
-            //enumMap.initialization(this);
-            //return enumMap;
-        //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError(e);
-        //}
+        
+        
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.969 -0400", hash_original_method = "0E01365989D6BCC217AC6A8119B6F173", hash_generated_method = "F2BA2D87522CDC48019AB721BFA42164")
     @Override
     public boolean containsKey(Object key) {
@@ -150,174 +152,179 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             boolean var2881195E5753FB7F055ED20418F3E365_1298201213 = (isValidKeyType(key));
             {
                 int keyOrdinal = ((Enum) key).ordinal();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(key.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1863048920 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1863048920;
-        // ---------- Original Method ----------
-        //if (isValidKeyType(key)) {
-            //int keyOrdinal = ((Enum) key).ordinal();
-            //return hasMapping[keyOrdinal];
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.969 -0400", hash_original_method = "FD4C7D9777FB1B3FC7F27A22C70B4A60", hash_generated_method = "6C9CF3C9D62F3409626DC7780D26BB65")
     @Override
     public boolean containsValue(Object value) {
         {
             {
                 int i = 0;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             {
                 int i = 0;
                 {
                     {
                         boolean var9645DA12622E821663F15BC1CC8202C0_840714871 = (hasMapping[i] && value.equals(values[i]));
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(value.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_166135722 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_166135722;
-        // ---------- Original Method ----------
-        //if (value == null) {
-            //for (int i = 0; i < enumSize; i++) {
-                //if (hasMapping[i] && values[i] == null) {
-                    //return true;
-                //}
-            //}
-        //} else {
-            //for (int i = 0; i < enumSize; i++) {
-                //if (hasMapping[i] && value.equals(values[i])) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+                    
+                
+            
+        
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.970 -0400", hash_original_method = "1D25B0764045DBFAD19E9C060947BE81", hash_generated_method = "50D30300BB21D2A69C9C724BCF598D86")
     @Override
     public Set<Map.Entry<K, V>> entrySet() {
-        Set<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_361123520 = null; //Variable for return #1
+        Set<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_361123520 = null; 
         {
             entrySet = new EnumMapEntrySet<K, V>(this);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_361123520 = entrySet;
-        varB4EAC82CA7396A68D541C85D26508E83_361123520.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_361123520.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_361123520;
-        // ---------- Original Method ----------
-        //if (entrySet == null) {
-            //entrySet = new EnumMapEntrySet<K, V>(this);
-        //}
-        //return entrySet;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.971 -0400", hash_original_method = "AC8EB1BDF42FFE99FA259DC7FD35D677", hash_generated_method = "EB3C4F3A8D8A18AAB290A2FF20D7903C")
     @SuppressWarnings("unchecked")
     @Override
     public boolean equals(Object object) {
         {
             boolean varA3157AA9BC21D9DE63321077403F3F07_507275352 = (super.equals(object));
-        } //End block
+        } 
         EnumMap<K, V> enumMap = (EnumMap<K, V>) object;
         {
             boolean varD0EFCA813FC7B10D8353B658CADEDA24_1875011292 = (keyType != enumMap.keyType || size() != enumMap.size());
-        } //End collapsed parenthetic
+        } 
         boolean var86C56C7BA36A8C7548B1E6C40C5BF1BD_86309609 = (Arrays.equals(hasMapping, enumMap.hasMapping)
                 && Arrays.equals(values, enumMap.values));
         addTaint(object.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_47395415 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_47395415;
-        // ---------- Original Method ----------
-        //if (this == object) {
-            //return true;
-        //}
-        //if (!(object instanceof EnumMap)) {
-            //return super.equals(object);
-        //}
-        //EnumMap<K, V> enumMap = (EnumMap<K, V>) object;
-        //if (keyType != enumMap.keyType || size() != enumMap.size()) {
-            //return false;
-        //}
-        //return Arrays.equals(hasMapping, enumMap.hasMapping)
-                //&& Arrays.equals(values, enumMap.values);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.972 -0400", hash_original_method = "D1D1E4650582CB36D48A88314ACBD849", hash_generated_method = "36D44B58CC105B2736A6F948DC90E31E")
     @Override
     @SuppressWarnings("unchecked")
     public V get(Object key) {
-        V varB4EAC82CA7396A68D541C85D26508E83_2123558232 = null; //Variable for return #1
-        V varB4EAC82CA7396A68D541C85D26508E83_676492887 = null; //Variable for return #2
+        V varB4EAC82CA7396A68D541C85D26508E83_2123558232 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_676492887 = null; 
         {
             boolean varE7267BA1C950E6E221E46F63E7F428DF_359928641 = (!isValidKeyType(key));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2123558232 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int keyOrdinal = ((Enum) key).ordinal();
         varB4EAC82CA7396A68D541C85D26508E83_676492887 = (V) values[keyOrdinal];
         addTaint(key.getTaint());
-        V varA7E53CE21691AB073D9660D615818899_1035664735; //Final return value
+        V varA7E53CE21691AB073D9660D615818899_1035664735; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1035664735 = varB4EAC82CA7396A68D541C85D26508E83_2123558232;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1035664735 = varB4EAC82CA7396A68D541C85D26508E83_676492887;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1035664735.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1035664735.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1035664735;
-        // ---------- Original Method ----------
-        //if (!isValidKeyType(key)) {
-            //return null;
-        //}
-        //int keyOrdinal = ((Enum) key).ordinal();
-        //return (V) values[keyOrdinal];
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.973 -0400", hash_original_method = "ADC2E4F8D882C3AAF1D0303EAF8C1F23", hash_generated_method = "C81906F52A94DF0DEC03164A39FD21D6")
     @Override
     public Set<K> keySet() {
-        Set<K> varB4EAC82CA7396A68D541C85D26508E83_1095724636 = null; //Variable for return #1
+        Set<K> varB4EAC82CA7396A68D541C85D26508E83_1095724636 = null; 
         {
             keySet = new EnumMapKeySet<K, V>(this);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1095724636 = keySet;
-        varB4EAC82CA7396A68D541C85D26508E83_1095724636.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1095724636.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1095724636;
-        // ---------- Original Method ----------
-        //if (keySet == null) {
-            //keySet = new EnumMapKeySet<K, V>(this);
-        //}
-        //return keySet;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.973 -0400", hash_original_method = "0FAB728DBD67C753D3CD4965FE16DA6D", hash_generated_method = "290059360ABACC36E726A5D0FE157CD0")
     @Override
     @SuppressWarnings("unchecked")
     public V put(K key, V value) {
-        V varB4EAC82CA7396A68D541C85D26508E83_530273755 = null; //Variable for return #1
+        V varB4EAC82CA7396A68D541C85D26508E83_530273755 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_530273755 = putImpl(key, value);
         addTaint(key.getTaint());
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_530273755.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_530273755.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_530273755;
-        // ---------- Original Method ----------
-        //return putImpl(key, value);
+        
+        
     }
 
     
@@ -327,54 +334,55 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
     public void putAll(Map<? extends K, ? extends V> map) {
         putAllImpl(map);
         addTaint(map.getTaint());
-        // ---------- Original Method ----------
-        //putAllImpl(map);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.974 -0400", hash_original_method = "2531311459BDF6AE48398CDBD33066ED", hash_generated_method = "E162D9314F3929D71358E508E8DFB263")
     @Override
     @SuppressWarnings("unchecked")
     public V remove(Object key) {
-        V varB4EAC82CA7396A68D541C85D26508E83_1472157059 = null; //Variable for return #1
-        V varB4EAC82CA7396A68D541C85D26508E83_721886846 = null; //Variable for return #2
+        V varB4EAC82CA7396A68D541C85D26508E83_1472157059 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_721886846 = null; 
         {
             boolean varE7267BA1C950E6E221E46F63E7F428DF_357116843 = (!isValidKeyType(key));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1472157059 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int keyOrdinal = ((Enum) key).ordinal();
         {
             hasMapping[keyOrdinal] = false;
-        } //End block
+        } 
         V oldValue = (V) values[keyOrdinal];
         values[keyOrdinal] = null;
         varB4EAC82CA7396A68D541C85D26508E83_721886846 = oldValue;
         addTaint(key.getTaint());
-        V varA7E53CE21691AB073D9660D615818899_138144751; //Final return value
+        V varA7E53CE21691AB073D9660D615818899_138144751; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_138144751 = varB4EAC82CA7396A68D541C85D26508E83_1472157059;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_138144751 = varB4EAC82CA7396A68D541C85D26508E83_721886846;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_138144751.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_138144751.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_138144751;
-        // ---------- Original Method ----------
-        //if (!isValidKeyType(key)) {
-            //return null;
-        //}
-        //int keyOrdinal = ((Enum) key).ordinal();
-        //if (hasMapping[keyOrdinal]) {
-            //hasMapping[keyOrdinal] = false;
-            //mappingsCount--;
-        //}
-        //V oldValue = (V) values[keyOrdinal];
-        //values[keyOrdinal] = null;
-        //return oldValue;
+        
+        
+            
+        
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -383,29 +391,31 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1774676627 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1774676627;
-        // ---------- Original Method ----------
-        //return mappingsCount;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.975 -0400", hash_original_method = "3209B6B28BA147378CF80090EC868BEA", hash_generated_method = "053F46B7F1CC826394D31720B6A8E7A8")
     @Override
     public Collection<V> values() {
-        Collection<V> varB4EAC82CA7396A68D541C85D26508E83_520494627 = null; //Variable for return #1
+        Collection<V> varB4EAC82CA7396A68D541C85D26508E83_520494627 = null; 
         {
             valuesCollection = new EnumMapValueCollection<K, V>(this);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_520494627 = valuesCollection;
-        varB4EAC82CA7396A68D541C85D26508E83_520494627.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_520494627.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_520494627;
-        // ---------- Original Method ----------
-        //if (valuesCollection == null) {
-            //valuesCollection = new EnumMapValueCollection<K, V>(this);
-        //}
-        //return valuesCollection;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.975 -0400", hash_original_method = "DC4D5C48E92024F936CD723136F7EC43", hash_generated_method = "2FED10115B943296B46DD67B186EEA2F")
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream stream) throws IOException,
@@ -421,23 +431,24 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
                 enumKey = (Enum<K>) stream.readObject();
                 value = stream.readObject();
                 putImpl((K) enumKey, (V) value);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(stream.getTaint());
-        // ---------- Original Method ----------
-        //stream.defaultReadObject();
-        //initialization(keyType);
-        //int elementCount = stream.readInt();
-        //Enum<K> enumKey;
-        //Object value;
-        //for (int i = elementCount; i > 0; i--) {
-            //enumKey = (Enum<K>) stream.readObject();
-            //value = stream.readObject();
-            //putImpl((K) enumKey, (V) value);
-        //}
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.976 -0400", hash_original_method = "7E98F968D6A8FBC0CE4D31A606E7DB44", hash_generated_method = "2730A81CCB3E56CF5BD47E04BC5A8DA4")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.defaultWriteObject();
@@ -449,37 +460,39 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
                 Map.Entry<K, V> entry = iterator.next();
                 stream.writeObject(entry.getKey());
                 stream.writeObject(entry.getValue());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(stream.getTaint());
-        // ---------- Original Method ----------
-        //stream.defaultWriteObject();
-        //stream.writeInt(mappingsCount);
-        //Iterator<Map.Entry<K, V>> iterator = entrySet().iterator();
-        //while (iterator.hasNext()) {
-            //Map.Entry<K, V> entry = iterator.next();
-            //stream.writeObject(entry.getKey());
-            //stream.writeObject(entry.getValue());
-        //}
+        
+        
+        
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.976 -0400", hash_original_method = "AB7EF2A62AD1394405351664F3033DEE", hash_generated_method = "8982F54CF8E6A48907C3505C83FC4A5A")
     private boolean isValidKeyType(Object key) {
         {
             boolean var747CFA0C5BD42E365CF87FEF40B6940C_798091666 = (key != null && keyType.isInstance(key));
-        } //End collapsed parenthetic
+        } 
         addTaint(key.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1983794871 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1983794871;
-        // ---------- Original Method ----------
-        //if (key != null && keyType.isInstance(key)) {
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.976 -0400", hash_original_method = "E2B9C0EDB3E88C666CBFA70F3A732433", hash_generated_method = "D730116B98D134A16FDA01B3A791E739")
     @SuppressWarnings("unchecked")
     private void initialization(EnumMap enumMap) {
@@ -489,16 +502,17 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         values = enumMap.values.clone();
         hasMapping = enumMap.hasMapping.clone();
         mappingsCount = enumMap.mappingsCount;
-        // ---------- Original Method ----------
-        //keyType = enumMap.keyType;
-        //keys = enumMap.keys;
-        //enumSize = enumMap.enumSize;
-        //values = enumMap.values.clone();
-        //hasMapping = enumMap.hasMapping.clone();
-        //mappingsCount = enumMap.mappingsCount;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.977 -0400", hash_original_method = "74B7FF14F292272934F29B542A6B3535", hash_generated_method = "9FC8FBB551CD14785E1041E3AB443C0B")
     private void initialization(Class<K> type) {
         keyType = type;
@@ -506,15 +520,16 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         enumSize = keys.length;
         values = new Object[enumSize];
         hasMapping = new boolean[enumSize];
-        // ---------- Original Method ----------
-        //keyType = type;
-        //keys = Enum.getSharedConstants(keyType);
-        //enumSize = keys.length;
-        //values = new Object[enumSize];
-        //hasMapping = new boolean[enumSize];
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.977 -0400", hash_original_method = "394364EB9AA119D86D9EB30D7D288B77", hash_generated_method = "A8BA247628B03AF1E94274FE2E139023")
     @SuppressWarnings("unchecked")
     private void putAllImpl(Map map) {
@@ -524,49 +539,50 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             {
                 Map.Entry entry = (Map.Entry) iter.next();
                 putImpl((K) entry.getKey(), (V) entry.getValue());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(map.getTaint());
-        // ---------- Original Method ----------
-        //Iterator iter = map.entrySet().iterator();
-        //while (iter.hasNext()) {
-            //Map.Entry entry = (Map.Entry) iter.next();
-            //putImpl((K) entry.getKey(), (V) entry.getValue());
-        //}
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.978 -0400", hash_original_method = "1C83BB92B4CC56A2EE4CEBB2A5F2E79E", hash_generated_method = "9E7A50D66A3EB74620F6C8459610D15A")
     @SuppressWarnings("unchecked")
     private V putImpl(K key, V value) {
-        V varB4EAC82CA7396A68D541C85D26508E83_1761586452 = null; //Variable for return #1
+        V varB4EAC82CA7396A68D541C85D26508E83_1761586452 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         keyType.cast(key);
         int keyOrdinal = key.ordinal();
         {
             hasMapping[keyOrdinal] = true;
-        } //End block
+        } 
         V oldValue = (V) values[keyOrdinal];
         values[keyOrdinal] = value;
         varB4EAC82CA7396A68D541C85D26508E83_1761586452 = oldValue;
         addTaint(key.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1761586452.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1761586452.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1761586452;
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //throw new NullPointerException();
-        //}
-        //keyType.cast(key);
-        //int keyOrdinal = key.ordinal();
-        //if (!hasMapping[keyOrdinal]) {
-            //hasMapping[keyOrdinal] = true;
-            //mappingsCount++;
-        //}
-        //V oldValue = (V) values[keyOrdinal];
-        //values[keyOrdinal] = value;
-        //return oldValue;
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -584,9 +600,9 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             enumMap = em;
             ordinal = ((Enum) theKey).ordinal();
             addTaint(theValue.getTaint());
-            // ---------- Original Method ----------
-            //enumMap = em;
-            //ordinal = ((Enum) theKey).ordinal();
+            
+            
+            
         }
 
         
@@ -604,34 +620,34 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
                         Object theValue = entry.getValue();
                         {
                             isEqual = (theValue == null);
-                        } //End block
+                        } 
                         {
                             isEqual = enumMap.values[ordinal].equals(theValue);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1499792036 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1499792036;
-            // ---------- Original Method ----------
-            //if (!enumMap.hasMapping[ordinal]) {
-                //return false;
-            //}
-            //boolean isEqual = false;
-            //if (object instanceof Map.Entry) {
-                //Map.Entry<KT, VT> entry = (Map.Entry<KT, VT>) object;
-                //Object enumKey = entry.getKey();
-                //if (key.equals(enumKey)) {
-                    //Object theValue = entry.getValue();
-                    //if (enumMap.values[ordinal] == null) {
-                        //isEqual = (theValue == null);
-                    //} else {
-                        //isEqual = enumMap.values[ordinal].equals(theValue);
-                    //}
-                //}
-            //}
-            //return isEqual;
+            
+            
+                
+            
+            
+            
+                
+                
+                
+                    
+                    
+                        
+                    
+                        
+                    
+                
+            
+            
         }
 
         
@@ -641,14 +657,14 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             int var335CA3F4B5A3CBFD417F696F0F465E58_278601544 = ((enumMap.keys[ordinal] == null ? 0 : enumMap.keys[ordinal]
                     .hashCode())
                     ^ (enumMap.values[ordinal] == null ? 0
-                            : enumMap.values[ordinal].hashCode())); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                            : enumMap.values[ordinal].hashCode())); 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1575570049 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1575570049;
-            // ---------- Original Method ----------
-            //return (enumMap.keys[ordinal] == null ? 0 : enumMap.keys[ordinal]
-                    //.hashCode())
-                    //^ (enumMap.values[ordinal] == null ? 0
-                            //: enumMap.values[ordinal].hashCode());
+            
+            
+                    
+                    
+                            
         }
 
         
@@ -656,14 +672,14 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         @SuppressWarnings("unchecked")
         @Override
         public KT getKey() {
-            KT varB4EAC82CA7396A68D541C85D26508E83_254013776 = null; //Variable for return #1
+            KT varB4EAC82CA7396A68D541C85D26508E83_254013776 = null; 
             checkEntryStatus();
             varB4EAC82CA7396A68D541C85D26508E83_254013776 = (KT) enumMap.keys[ordinal];
-            varB4EAC82CA7396A68D541C85D26508E83_254013776.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_254013776.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_254013776;
-            // ---------- Original Method ----------
-            //checkEntryStatus();
-            //return (KT) enumMap.keys[ordinal];
+            
+            
+            
         }
 
         
@@ -671,14 +687,14 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         @SuppressWarnings("unchecked")
         @Override
         public VT getValue() {
-            VT varB4EAC82CA7396A68D541C85D26508E83_1935652373 = null; //Variable for return #1
+            VT varB4EAC82CA7396A68D541C85D26508E83_1935652373 = null; 
             checkEntryStatus();
             varB4EAC82CA7396A68D541C85D26508E83_1935652373 = (VT) enumMap.values[ordinal];
-            varB4EAC82CA7396A68D541C85D26508E83_1935652373.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1935652373.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1935652373;
-            // ---------- Original Method ----------
-            //checkEntryStatus();
-            //return (VT) enumMap.values[ordinal];
+            
+            
+            
         }
 
         
@@ -686,37 +702,37 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         @SuppressWarnings("unchecked")
         @Override
         public VT setValue(VT value) {
-            VT varB4EAC82CA7396A68D541C85D26508E83_1530336985 = null; //Variable for return #1
+            VT varB4EAC82CA7396A68D541C85D26508E83_1530336985 = null; 
             checkEntryStatus();
             varB4EAC82CA7396A68D541C85D26508E83_1530336985 = enumMap.put((KT) enumMap.keys[ordinal], value);
             addTaint(value.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1530336985.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1530336985.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1530336985;
-            // ---------- Original Method ----------
-            //checkEntryStatus();
-            //return enumMap.put((KT) enumMap.keys[ordinal], value);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.985 -0400", hash_original_method = "7B70A2A5E5AF6D0A4A4180BECB8A721B", hash_generated_method = "667A278C2885D0E7D804C897ADFB6F49")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1405278419 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1405278419 = null; 
             StringBuilder result = new StringBuilder(enumMap.keys[ordinal]
                     .toString());
             result.append("=");
             result.append(enumMap.values[ordinal] == null
                     ? "null" : enumMap.values[ordinal].toString());
             varB4EAC82CA7396A68D541C85D26508E83_1405278419 = result.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1405278419.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1405278419.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1405278419;
-            // ---------- Original Method ----------
-            //StringBuilder result = new StringBuilder(enumMap.keys[ordinal]
-                    //.toString());
-            //result.append("=");
-            //result.append(enumMap.values[ordinal] == null
-                    //? "null" : enumMap.values[ordinal].toString());
-            //return result.toString();
+            
+            
+                    
+            
+            
+                    
+            
         }
 
         
@@ -724,11 +740,11 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         private void checkEntryStatus() {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-            } //End block
-            // ---------- Original Method ----------
-            //if (!enumMap.hasMapping[ordinal]) {
-                //throw new IllegalStateException();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -754,9 +770,9 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
           EnumMapIterator(MapEntry.Type<E, KT, VT> value, EnumMap<KT, VT> em) {
             enumMap = em;
             type = value;
-            // ---------- Original Method ----------
-            //enumMap = em;
-            //type = value;
+            
+            
+            
         }
 
         
@@ -765,39 +781,39 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             int length = enumMap.enumSize;
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1764211182 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1764211182;
-            // ---------- Original Method ----------
-            //int length = enumMap.enumSize;
-            //for (; position < length; position++) {
-                //if (enumMap.hasMapping[position]) {
-                    //break;
-                //}
-            //}
-            //return position != length;
+            
+            
+            
+                
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.988 -0400", hash_original_method = "8136BC21B836EBF6A2416BD2D7F3270E", hash_generated_method = "5E113124DD1B0AEB5BF31AD38B9B6364")
         @SuppressWarnings("unchecked")
         public E next() {
-            E varB4EAC82CA7396A68D541C85D26508E83_1601423971 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1601423971 = null; 
             {
                 boolean var61E0EA93C8F2038A69462393E2D5DF33_851731696 = (!hasNext());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             prePosition = position++;
             varB4EAC82CA7396A68D541C85D26508E83_1601423971 = type.get(new MapEntry(enumMap.keys[prePosition],
                     enumMap.values[prePosition]));
-            varB4EAC82CA7396A68D541C85D26508E83_1601423971.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1601423971.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1601423971;
-            // ---------- Original Method ----------
-            //if (!hasNext()) {
-                //throw new NoSuchElementException();
-            //}
-            //prePosition = position++;
-            //return type.get(new MapEntry(enumMap.keys[prePosition],
-                    //enumMap.values[prePosition]));
+            
+            
+                
+            
+            
+            
+                    
         }
 
         
@@ -806,14 +822,14 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             checkStatus();
             {
                 enumMap.remove(enumMap.keys[prePosition]);
-            } //End block
+            } 
             prePosition = -1;
-            // ---------- Original Method ----------
-            //checkStatus();
-            //if (enumMap.hasMapping[prePosition]) {
-                //enumMap.remove(enumMap.keys[prePosition]);
-            //}
-            //prePosition = -1;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -821,32 +837,32 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         @Override
         @SuppressWarnings("unchecked")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1458447395 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_1296043671 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_1458447395 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1296043671 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1458447395 = super.toString();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1296043671 = type.get(
                     new MapEntry(enumMap.keys[prePosition],
                             enumMap.values[prePosition])).toString();
-            String varA7E53CE21691AB073D9660D615818899_83070038; //Final return value
+            String varA7E53CE21691AB073D9660D615818899_83070038; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_83070038 = varB4EAC82CA7396A68D541C85D26508E83_1458447395;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_83070038 = varB4EAC82CA7396A68D541C85D26508E83_1296043671;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_83070038.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_83070038.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_83070038;
-            // ---------- Original Method ----------
-            //if (-1 == prePosition) {
-                //return super.toString();
-            //}
-            //return type.get(
-                    //new MapEntry(enumMap.keys[prePosition],
-                            //enumMap.values[prePosition])).toString();
+            
+            
+                
+            
+            
+                    
+                            
         }
 
         
@@ -854,11 +870,11 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         private void checkStatus() {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-            } //End block
-            // ---------- Original Method ----------
-            //if (-1 == prePosition) {
-                //throw new IllegalStateException();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -874,8 +890,8 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.993 -0400", hash_original_method = "2A1696B691A1F64388AB3AC9907332E4", hash_generated_method = "F2ECC98C583C95B1C2F72BFAEFD592CC")
           EnumMapKeySet(EnumMap<KT, VT> em) {
             enumMap = em;
-            // ---------- Original Method ----------
-            //enumMap = em;
+            
+            
         }
 
         
@@ -883,8 +899,8 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         @Override
         public void clear() {
             enumMap.clear();
-            // ---------- Original Method ----------
-            //enumMap.clear();
+            
+            
         }
 
         
@@ -895,8 +911,8 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_766140915 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_766140915;
-            // ---------- Original Method ----------
-            //return enumMap.containsKey(object);
+            
+            
         }
 
         
@@ -904,22 +920,22 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         @Override
         @SuppressWarnings("unchecked")
         public Iterator iterator() {
-            Iterator varB4EAC82CA7396A68D541C85D26508E83_156082786 = null; //Variable for return #1
+            Iterator varB4EAC82CA7396A68D541C85D26508E83_156082786 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_156082786 = new EnumMapIterator<KT, KT, VT>(
                     new MapEntry.Type<KT, KT, VT>() {
                         public KT get(MapEntry<KT, VT> entry) {
                             return entry.key;
                         }
                     }, enumMap);
-            varB4EAC82CA7396A68D541C85D26508E83_156082786.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_156082786.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_156082786;
-            // ---------- Original Method ----------
-            //return new EnumMapIterator<KT, KT, VT>(
-                    //new MapEntry.Type<KT, KT, VT>() {
-                        //public KT get(MapEntry<KT, VT> entry) {
-                            //return entry.key;
-                        //}
-                    //}, enumMap);
+            
+            
+                    
+                        
+                            
+                        
+                    
         }
 
         
@@ -931,17 +947,17 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
                 boolean var4F9267015FE86EBB3F33114954B93ED1_544373801 = (contains(object));
                 {
                     enumMap.remove(object);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1693746880 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1693746880;
-            // ---------- Original Method ----------
-            //if (contains(object)) {
-                //enumMap.remove(object);
-                //return true;
-            //}
-            //return false;
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -951,12 +967,12 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             int varF8250C8AC739D0318AEF09F1AC34F78B_740846273 = (enumMap.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1863621956 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1863621956;
-            // ---------- Original Method ----------
-            //return enumMap.size();
+            
+            
         }
 
         
-        // orphaned legacy method
+        
         public KT get(MapEntry<KT, VT> entry) {
                             return entry.key;
                         }
@@ -973,8 +989,8 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.999 -0400", hash_original_method = "1A0661F4095C8F41E606FE019F34B01E", hash_generated_method = "E5ABA9176789D0F83D15C4076A2F1270")
           EnumMapValueCollection(EnumMap<KT, VT> em) {
             enumMap = em;
-            // ---------- Original Method ----------
-            //enumMap = em;
+            
+            
         }
 
         
@@ -982,8 +998,8 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         @Override
         public void clear() {
             enumMap.clear();
-            // ---------- Original Method ----------
-            //enumMap.clear();
+            
+            
         }
 
         
@@ -994,8 +1010,8 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_166855417 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_166855417;
-            // ---------- Original Method ----------
-            //return enumMap.containsValue(object);
+            
+            
         }
 
         
@@ -1003,22 +1019,22 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         @SuppressWarnings("unchecked")
         @Override
         public Iterator iterator() {
-            Iterator varB4EAC82CA7396A68D541C85D26508E83_1108241589 = null; //Variable for return #1
+            Iterator varB4EAC82CA7396A68D541C85D26508E83_1108241589 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1108241589 = new EnumMapIterator<VT, KT, VT>(
                     new MapEntry.Type<VT, KT, VT>() {
                         public VT get(MapEntry<KT, VT> entry) {
                             return entry.value;
                         }
                     }, enumMap);
-            varB4EAC82CA7396A68D541C85D26508E83_1108241589.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1108241589.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1108241589;
-            // ---------- Original Method ----------
-            //return new EnumMapIterator<VT, KT, VT>(
-                    //new MapEntry.Type<VT, KT, VT>() {
-                        //public VT get(MapEntry<KT, VT> entry) {
-                            //return entry.value;
-                        //}
-                    //}, enumMap);
+            
+            
+                    
+                        
+                            
+                        
+                    
         }
 
         
@@ -1031,10 +1047,10 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
                     {
                         {
                             enumMap.remove(enumMap.keys[i]);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 {
                     int i = 0;
@@ -1044,32 +1060,32 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
                             && object.equals(enumMap.values[i]));
                             {
                                 enumMap.remove(enumMap.keys[i]);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1759174851 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1759174851;
-            // ---------- Original Method ----------
-            //if (object == null) {
-                //for (int i = 0; i < enumMap.enumSize; i++) {
-                    //if (enumMap.hasMapping[i] && enumMap.values[i] == null) {
-                        //enumMap.remove(enumMap.keys[i]);
-                        //return true;
-                    //}
-                //}
-            //} else {
-                //for (int i = 0; i < enumMap.enumSize; i++) {
-                    //if (enumMap.hasMapping[i]
-                            //&& object.equals(enumMap.values[i])) {
-                        //enumMap.remove(enumMap.keys[i]);
-                        //return true;
-                    //}
-                //}
-            //}
-            //return false;
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+            
+                
+                    
+                            
+                        
+                        
+                    
+                
+            
+            
         }
 
         
@@ -1079,12 +1095,12 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             int varF8250C8AC739D0318AEF09F1AC34F78B_1470435105 = (enumMap.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_470934072 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_470934072;
-            // ---------- Original Method ----------
-            //return enumMap.size();
+            
+            
         }
 
         
-        // orphaned legacy method
+        
         public VT get(MapEntry<KT, VT> entry) {
                             return entry.value;
                         }
@@ -1100,7 +1116,7 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             super(value, em);
             addTaint(value.getTaint());
             addTaint(em.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1108,25 +1124,25 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         @SuppressWarnings("unchecked")
         @Override
         public E next() {
-            E varB4EAC82CA7396A68D541C85D26508E83_471024862 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_471024862 = null; 
             {
                 boolean var61E0EA93C8F2038A69462393E2D5DF33_174324891 = (!hasNext());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             prePosition = position++;
             varB4EAC82CA7396A68D541C85D26508E83_471024862 = type.get(new Entry<KT, VT>((KT) enumMap.keys[prePosition],
                     (VT) enumMap.values[prePosition], enumMap));
-            varB4EAC82CA7396A68D541C85D26508E83_471024862.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_471024862.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_471024862;
-            // ---------- Original Method ----------
-            //if (!hasNext()) {
-                //throw new NoSuchElementException();
-            //}
-            //prePosition = position++;
-            //return type.get(new Entry<KT, VT>((KT) enumMap.keys[prePosition],
-                    //(VT) enumMap.values[prePosition], enumMap));
+            
+            
+                
+            
+            
+            
+                    
         }
 
         
@@ -1142,8 +1158,8 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.003 -0400", hash_original_method = "616E4B9747EFF9433BD58C5F15DEC121", hash_generated_method = "D78FC31B5B25F7A257282F3524D220D6")
           EnumMapEntrySet(EnumMap<KT, VT> em) {
             enumMap = em;
-            // ---------- Original Method ----------
-            //enumMap = em;
+            
+            
         }
 
         
@@ -1151,8 +1167,8 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         @Override
         public void clear() {
             enumMap.clear();
-            // ---------- Original Method ----------
-            //enumMap.clear();
+            
+            
         }
 
         
@@ -1169,53 +1185,53 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
                         VT value = enumMap.get(enumKey);
                         {
                             isEqual = enumValue == null;
-                        } //End block
+                        } 
                         {
                             isEqual = value.equals(enumValue);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1313729376 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1313729376;
-            // ---------- Original Method ----------
-            //boolean isEqual = false;
-            //if (object instanceof Map.Entry) {
-                //Object enumKey = ((Map.Entry) object).getKey();
-                //Object enumValue = ((Map.Entry) object).getValue();
-                //if (enumMap.containsKey(enumKey)) {
-                    //VT value = enumMap.get(enumKey);
-                    //if (value == null) {
-                        //isEqual = enumValue == null;
-                    //} else {
-                        //isEqual = value.equals(enumValue);
-                    //}
-                //}
-            //}
-            //return isEqual;
+            
+            
+            
+                
+                
+                
+                    
+                    
+                        
+                    
+                        
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.006 -0400", hash_original_method = "95EB2B60E0E6891B83EBE6118D53811C", hash_generated_method = "3F1680DE0ED200C62624AF62F3C0DD9A")
         @Override
         public Iterator<Map.Entry<KT, VT>> iterator() {
-            Iterator<Map.Entry<KT, VT>> varB4EAC82CA7396A68D541C85D26508E83_126789828 = null; //Variable for return #1
+            Iterator<Map.Entry<KT, VT>> varB4EAC82CA7396A68D541C85D26508E83_126789828 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_126789828 = new EnumMapEntryIterator<Map.Entry<KT, VT>, KT, VT>(
                     new MapEntry.Type<Map.Entry<KT, VT>, KT, VT>() {
                         public Map.Entry<KT, VT> get(MapEntry<KT, VT> entry) {
                             return entry;
                         }
                     }, enumMap);
-            varB4EAC82CA7396A68D541C85D26508E83_126789828.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_126789828.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_126789828;
-            // ---------- Original Method ----------
-            //return new EnumMapEntryIterator<Map.Entry<KT, VT>, KT, VT>(
-                    //new MapEntry.Type<Map.Entry<KT, VT>, KT, VT>() {
-                        //public Map.Entry<KT, VT> get(MapEntry<KT, VT> entry) {
-                            //return entry;
-                        //}
-                    //}, enumMap);
+            
+            
+                    
+                        
+                            
+                        
+                    
         }
 
         
@@ -1226,17 +1242,17 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
                 boolean var4F9267015FE86EBB3F33114954B93ED1_1709098671 = (contains(object));
                 {
                     enumMap.remove(((Map.Entry) object).getKey());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(object.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_567575807 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_567575807;
-            // ---------- Original Method ----------
-            //if (contains(object)) {
-                //enumMap.remove(((Map.Entry) object).getKey());
-                //return true;
-            //}
-            //return false;
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -1246,22 +1262,22 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             int varF8250C8AC739D0318AEF09F1AC34F78B_961790683 = (enumMap.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_758391713 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_758391713;
-            // ---------- Original Method ----------
-            //return enumMap.size();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.007 -0400", hash_original_method = "36EAFDE13B72544D308E66F5613D1161", hash_generated_method = "5FCDBA3F00789FC3A448A2CD3C63EDFE")
         @Override
         public Object[] toArray() {
-            Object[] varB4EAC82CA7396A68D541C85D26508E83_1829482505 = null; //Variable for return #1
+            Object[] varB4EAC82CA7396A68D541C85D26508E83_1829482505 = null; 
             Object[] entryArray = new Object[enumMap.size()];
             varB4EAC82CA7396A68D541C85D26508E83_1829482505 = toArray(entryArray);
-            varB4EAC82CA7396A68D541C85D26508E83_1829482505.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1829482505.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1829482505;
-            // ---------- Original Method ----------
-            //Object[] entryArray = new Object[enumMap.size()];
-            //return toArray(entryArray);
+            
+            
+            
         }
 
         
@@ -1269,49 +1285,49 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         @SuppressWarnings("unchecked")
         @Override
         public Object[] toArray(Object[] array) {
-            Object[] varB4EAC82CA7396A68D541C85D26508E83_592910873 = null; //Variable for return #1
+            Object[] varB4EAC82CA7396A68D541C85D26508E83_592910873 = null; 
             int size = enumMap.size();
             int index = 0;
             Object[] entryArray = array;
             {
                 Class<?> clazz = array.getClass().getComponentType();
                 entryArray = (Object[]) Array.newInstance(clazz, size);
-            } //End block
+            } 
             Iterator<Map.Entry<KT, VT>> iter = iterator();
             {
                 Map.Entry<KT, VT> entry = iter.next();
                 entryArray[index] = new MapEntry<KT, VT>(entry.getKey(), entry
                         .getValue());
-            } //End block
+            } 
             {
                 entryArray[index] = null;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_592910873 = entryArray;
             addTaint(array[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_592910873.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_592910873.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_592910873;
-            // ---------- Original Method ----------
-            //int size = enumMap.size();
-            //int index = 0;
-            //Object[] entryArray = array;
-            //if (size > array.length) {
-                //Class<?> clazz = array.getClass().getComponentType();
-                //entryArray = (Object[]) Array.newInstance(clazz, size);
-            //}
-            //Iterator<Map.Entry<KT, VT>> iter = iterator();
-            //for (; index < size; index++) {
-                //Map.Entry<KT, VT> entry = iter.next();
-                //entryArray[index] = new MapEntry<KT, VT>(entry.getKey(), entry
-                        //.getValue());
-            //}
-            //if (index < array.length) {
-                //entryArray[index] = null;
-            //}
-            //return entryArray;
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+                
+                
+                        
+            
+            
+                
+            
+            
         }
 
         
-        // orphaned legacy method
+        
         public Map.Entry<KT, VT> get(MapEntry<KT, VT> entry) {
                             return entry;
                         }

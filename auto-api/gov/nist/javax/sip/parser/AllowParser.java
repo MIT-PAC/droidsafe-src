@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
@@ -17,7 +17,7 @@ public class AllowParser extends HeaderParser {
     public  AllowParser(String allow) {
         super(allow);
         addTaint(allow.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class AllowParser extends HeaderParser {
     protected  AllowParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.749 -0400", hash_original_method = "EEEC9A9B7336175FA90CC43255548EC9", hash_generated_method = "7E423F98143FDBF70163C798C9496DD3")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1475597954 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1475597954 = null; 
         dbg_enter("AllowParser.parse");
         AllowList list = new AllowList();
         try 
@@ -56,20 +57,20 @@ public class AllowParser extends HeaderParser {
                     allow.setMethod(token.getTokenValue());
                     list.add(allow);
                     this.lexer.SPorHT();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             this.lexer.SPorHT();
             this.lexer.match('\n');
             varB4EAC82CA7396A68D541C85D26508E83_1475597954 = list;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("AllowParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1475597954.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1475597954.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1475597954;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

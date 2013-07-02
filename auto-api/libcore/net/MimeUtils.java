@@ -1,11 +1,11 @@
 package libcore.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,10 +19,11 @@ public final class MimeUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.543 -0400", hash_original_method = "4573469ED61E6670894E512E558CEEE0", hash_generated_method = "A4660306B18E6B2B3A8E8D9DE7F28302")
     private  MimeUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void add(String mimeType, String extension) {
         if (!mimeTypeToExtensionMap.containsKey(mimeType)) {
             mimeTypeToExtensionMap.put(mimeType, extension);
@@ -31,6 +32,7 @@ public final class MimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static InputStream getContentTypesPropertiesStream() {
         String userTable = System.getProperty("content.types.user.table");
         if (userTable != null) {
@@ -53,6 +55,7 @@ public final class MimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void applyOverrides() {
         InputStream stream = getContentTypesPropertiesStream();
         if (stream == null) {
@@ -75,6 +78,7 @@ public final class MimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean hasMimeType(String mimeType) {
         if (mimeType == null || mimeType.isEmpty()) {
             return false;
@@ -83,6 +87,7 @@ public final class MimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String guessMimeTypeFromExtension(String extension) {
         if (extension == null || extension.isEmpty()) {
             return null;
@@ -91,6 +96,7 @@ public final class MimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean hasExtension(String extension) {
         if (extension == null || extension.isEmpty()) {
             return false;
@@ -99,6 +105,7 @@ public final class MimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String guessExtensionFromMimeType(String mimeType) {
         if (mimeType == null || mimeType.isEmpty()) {
             return null;

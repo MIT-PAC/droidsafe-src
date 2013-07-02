@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Paint;
 import android.graphics.Typeface;
@@ -22,16 +22,16 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.892 -0400", hash_original_method = "CB9EF90D73212D1B02A5528CB9665E4D", hash_generated_method = "20E261DB45592C7A8E2B0565C32D51B3")
     public  StyleSpan(int style) {
         mStyle = style;
-        // ---------- Original Method ----------
-        //mStyle = style;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.893 -0400", hash_original_method = "02AE991FD30EFB3911FE5E70F7128BC4", hash_generated_method = "DA3F115CA81C47BA19C70316FB6DD3C3")
     public  StyleSpan(Parcel src) {
         mStyle = src.readInt();
-        // ---------- Original Method ----------
-        //mStyle = src.readInt();
+        
+        
     }
 
     
@@ -39,8 +39,8 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_491945936 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_491945936;
-        // ---------- Original Method ----------
-        //return TextUtils.STYLE_SPAN;
+        
+        
     }
 
     
@@ -48,18 +48,19 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_925921224 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_925921224;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.894 -0400", hash_original_method = "9FF3B3C6BD83D888752F465547E6E91F", hash_generated_method = "AEFE324C6D2DD56DF1A0D9A77D7D3A9F")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mStyle);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mStyle);
+        
+        
     }
 
     
@@ -67,31 +68,34 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     public int getStyle() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2093443683 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2093443683;
-        // ---------- Original Method ----------
-        //return mStyle;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.894 -0400", hash_original_method = "71A0215A3FEBF509106C7457A8525E21", hash_generated_method = "E364188F21EA713099CD2402C631CAF2")
     @Override
     public void updateDrawState(TextPaint ds) {
         apply(ds, mStyle);
         addTaint(ds.getTaint());
-        // ---------- Original Method ----------
-        //apply(ds, mStyle);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.895 -0400", hash_original_method = "78F275D913B08D5544D3EE3C8B4C4B82", hash_generated_method = "CE2E525CD4AB250DB76C4A2C66201128")
     @Override
     public void updateMeasureState(TextPaint paint) {
         apply(paint, mStyle);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //apply(paint, mStyle);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void apply(Paint paint, int style) {
         int oldStyle;
         Typeface old = paint.getTypeface();

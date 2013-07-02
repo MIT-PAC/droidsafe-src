@@ -1,18 +1,18 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class IllegalArgumentException extends RuntimeException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.088 -0400", hash_original_method = "BA7A8F41F569FABF17AACC9F2A0F75BC", hash_generated_method = "34523DED6BE79748F7A3DCC271CA5F6C")
     public  IllegalArgumentException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class IllegalArgumentException extends RuntimeException {
     public  IllegalArgumentException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ public class IllegalArgumentException extends RuntimeException {
         super(message, cause);
         addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,7 +37,7 @@ public class IllegalArgumentException extends RuntimeException {
     public  IllegalArgumentException(Throwable cause) {
         super((cause == null ? null : cause.toString()), cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

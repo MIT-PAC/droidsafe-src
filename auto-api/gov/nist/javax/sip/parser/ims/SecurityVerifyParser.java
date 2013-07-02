@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.parser.Lexer;
@@ -20,7 +20,7 @@ public class SecurityVerifyParser extends SecurityAgreeParser {
     public  SecurityVerifyParser(String security) {
         super(security);
         addTaint(security.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,13 +28,14 @@ public class SecurityVerifyParser extends SecurityAgreeParser {
     protected  SecurityVerifyParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.230 -0400", hash_original_method = "AF5E151367487D790A8CFB3D3D9DB14C", hash_generated_method = "43C0E4E3D30B26852A5318E5E00643F9")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1442906326 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1442906326 = null; 
         dbg_enter("SecuriryVerify parse");
         try 
         {
@@ -42,24 +43,24 @@ public class SecurityVerifyParser extends SecurityAgreeParser {
             SecurityVerify secVerify = new SecurityVerify();
             SecurityVerifyList secVerifyList = (SecurityVerifyList) super.parse(secVerify);
             varB4EAC82CA7396A68D541C85D26508E83_1442906326 = secVerifyList;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("SecuriryVerify parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1442906326.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1442906326.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1442906326;
-        // ---------- Original Method ----------
-        //dbg_enter("SecuriryVerify parse");
-        //try {
-            //headerName(TokenTypes.SECURITY_VERIFY);
-            //SecurityVerify secVerify = new SecurityVerify();
-            //SecurityVerifyList secVerifyList =
-                //(SecurityVerifyList) super.parse(secVerify);
-            //return secVerifyList;
-        //} finally {
-            //dbg_leave("SecuriryVerify parse");
-        //}
+        
+        
+        
+            
+            
+            
+                
+            
+        
+            
+        
     }
 
     

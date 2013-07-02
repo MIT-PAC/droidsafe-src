@@ -1,11 +1,11 @@
 package org.apache.http.conn.routing;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.net.InetAddress;
 import org.apache.http.HttpHost;
@@ -38,11 +38,11 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Target host may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Proxy required if tunnelled.");
-        } //End block
+        } 
         tunnelled = TunnelType.PLAIN;
         layered = LayerType.PLAIN;
         this.targetHost   = target;
@@ -51,25 +51,25 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         this.secure       = secure;
         this.tunnelled    = tunnelled;
         this.layered      = layered;
-        // ---------- Original Method ----------
-        //if (target == null) {
-            //throw new IllegalArgumentException
-                //("Target host may not be null.");
-        //}
-        //if ((tunnelled == TunnelType.TUNNELLED) && (proxies == null)) {
-            //throw new IllegalArgumentException
-                //("Proxy required if tunnelled.");
-        //}
-        //if (tunnelled == null)
-            //tunnelled = TunnelType.PLAIN;
-        //if (layered == null)
-            //layered = LayerType.PLAIN;
-        //this.targetHost   = target;
-        //this.localAddress = local;
-        //this.proxyChain   = proxies;
-        //this.secure       = secure;
-        //this.tunnelled    = tunnelled;
-        //this.layered      = layered;
+        
+        
+            
+                
+        
+        
+            
+                
+        
+        
+            
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -83,7 +83,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         addTaint(secure);
         addTaint(tunnelled.getTaint());
         addTaint(layered.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -97,7 +97,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         addTaint(secure);
         addTaint(tunnelled.getTaint());
         addTaint(layered.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -107,7 +107,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         addTaint(target.getTaint());
         addTaint(local.getTaint());
         addTaint(secure);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -115,7 +115,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     public  HttpRoute(HttpHost target) {
         this(null, target, null, false, TunnelType.PLAIN, LayerType.PLAIN);
         addTaint(target.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -128,16 +128,16 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Proxy host may not be null.");
-        } //End block
+        } 
         addTaint(target.getTaint());
         addTaint(local.getTaint());
         addTaint(proxy.getTaint());
         addTaint(secure);
-        // ---------- Original Method ----------
-        //if (proxy == null) {
-            //throw new IllegalArgumentException
-                //("Proxy host may not be null.");
-        //}
+        
+        
+            
+                
+        
     }
 
     
@@ -148,6 +148,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static HttpHost[] toChain(HttpHost[] proxies) {
         if ((proxies == null) || (proxies.length < 1))
             return null;
@@ -164,23 +165,23 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.170 -0400", hash_original_method = "00F8E4422BF57DE6758D681F4A99BDB6", hash_generated_method = "E36DFA4F81E41958FD81A37C40584DEE")
     public final HttpHost getTargetHost() {
-        HttpHost varB4EAC82CA7396A68D541C85D26508E83_822861989 = null; //Variable for return #1
+        HttpHost varB4EAC82CA7396A68D541C85D26508E83_822861989 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_822861989 = this.targetHost;
-        varB4EAC82CA7396A68D541C85D26508E83_822861989.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_822861989.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_822861989;
-        // ---------- Original Method ----------
-        //return this.targetHost;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.170 -0400", hash_original_method = "28495B9032685860E947A62701D0E919", hash_generated_method = "AFD5CBBDD244DC1E735447D7353C869A")
     public final InetAddress getLocalAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1385547006 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1385547006 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1385547006 = this.localAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_1385547006.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1385547006.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1385547006;
-        // ---------- Original Method ----------
-        //return this.localAddress;
+        
+        
     }
 
     
@@ -188,14 +189,14 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     public final int getHopCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_108647576 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_108647576;
-        // ---------- Original Method ----------
-        //return (proxyChain == null) ? 1 : (proxyChain.length+1);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.172 -0400", hash_original_method = "6FAF652E1C9EAABAB417C8ED32D41F4A", hash_generated_method = "A53E7704A0F4C454C1ED993F10333DAD")
     public final HttpHost getHopTarget(int hop) {
-        HttpHost varB4EAC82CA7396A68D541C85D26508E83_1167054541 = null; //Variable for return #1
+        HttpHost varB4EAC82CA7396A68D541C85D26508E83_1167054541 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Hop index must not be negative: " + hop);
         final int hopcount = getHopCount();
@@ -207,45 +208,45 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         result = this.targetHost;
         varB4EAC82CA7396A68D541C85D26508E83_1167054541 = result;
         addTaint(hop);
-        varB4EAC82CA7396A68D541C85D26508E83_1167054541.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1167054541.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1167054541;
-        // ---------- Original Method ----------
-        //if (hop < 0)
-            //throw new IllegalArgumentException
-                //("Hop index must not be negative: " + hop);
-        //final int hopcount = getHopCount();
-        //if (hop >= hopcount)
-            //throw new IllegalArgumentException
-                //("Hop index " + hop +
-                 //" exceeds route length " + hopcount);
-        //HttpHost result = null;
-        //if (hop < hopcount-1)
-            //result = this.proxyChain[hop];
-        //else
-            //result = this.targetHost;
-        //return result;
+        
+        
+            
+                
+        
+        
+            
+                
+                 
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.172 -0400", hash_original_method = "E9E1E8AC6D9C2477F7E0F63BF0C4ED60", hash_generated_method = "E09EEC81F03C3CEBCB7C3B1F545EE5C7")
     public final HttpHost getProxyHost() {
-        HttpHost varB4EAC82CA7396A68D541C85D26508E83_1667405001 = null; //Variable for return #1
+        HttpHost varB4EAC82CA7396A68D541C85D26508E83_1667405001 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1667405001 = (this.proxyChain == null) ? null : this.proxyChain[0];
-        varB4EAC82CA7396A68D541C85D26508E83_1667405001.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1667405001.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1667405001;
-        // ---------- Original Method ----------
-        //return (this.proxyChain == null) ? null : this.proxyChain[0];
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.173 -0400", hash_original_method = "350E5C2EB4A104FE6F444729C8CD5444", hash_generated_method = "6E9A752AEB24BEFB5EAEA7970B0907C6")
     public final TunnelType getTunnelType() {
-        TunnelType varB4EAC82CA7396A68D541C85D26508E83_59678627 = null; //Variable for return #1
+        TunnelType varB4EAC82CA7396A68D541C85D26508E83_59678627 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_59678627 = this.tunnelled;
-        varB4EAC82CA7396A68D541C85D26508E83_59678627.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_59678627.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_59678627;
-        // ---------- Original Method ----------
-        //return this.tunnelled;
+        
+        
     }
 
     
@@ -253,19 +254,19 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     public final boolean isTunnelled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_773856010 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_773856010;
-        // ---------- Original Method ----------
-        //return (this.tunnelled == TunnelType.TUNNELLED);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.174 -0400", hash_original_method = "24DDB6A6987422E004B186B027F8E19E", hash_generated_method = "40E8C0A19E49539E4EA9FC71AD449516")
     public final LayerType getLayerType() {
-        LayerType varB4EAC82CA7396A68D541C85D26508E83_1790375845 = null; //Variable for return #1
+        LayerType varB4EAC82CA7396A68D541C85D26508E83_1790375845 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1790375845 = this.layered;
-        varB4EAC82CA7396A68D541C85D26508E83_1790375845.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1790375845.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1790375845;
-        // ---------- Original Method ----------
-        //return this.layered;
+        
+        
     }
 
     
@@ -273,8 +274,8 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     public final boolean isLayered() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1136695638 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1136695638;
-        // ---------- Original Method ----------
-        //return (this.layered == LayerType.LAYERED);
+        
+        
     }
 
     
@@ -282,8 +283,8 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     public final boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_599007789 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_599007789;
-        // ---------- Original Method ----------
-        //return this.secure;
+        
+        
     }
 
     
@@ -292,7 +293,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     public final boolean equals(Object o) {
         {
             boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_855451581 = (o == this);
-        } //End collapsed parenthetic
+        } 
         HttpRoute that = (HttpRoute) o;
         boolean equal = this.targetHost.equals(that.targetHost);
         equal &=
@@ -312,13 +313,13 @@ public final class HttpRoute implements RouteInfo, Cloneable {
             {
                 int i = 0;
                 equal = this.proxyChain[i].equals(that.proxyChain[i]);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1707753945 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1707753945;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -332,39 +333,39 @@ public final class HttpRoute implements RouteInfo, Cloneable {
             {
                 HttpHost aProxyChain = proxyChain[0];
                 hc ^= aProxyChain.hashCode();
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         hc ^= 0x11111111;
         hc ^= this.tunnelled.hashCode();
         hc ^= this.layered.hashCode();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_366144950 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_366144950;
-        // ---------- Original Method ----------
-        //int hc = this.targetHost.hashCode();
-        //if (this.localAddress != null)
-            //hc ^= localAddress.hashCode();
-        //if (this.proxyChain != null) {
-            //hc ^= proxyChain.length;
-            //for (HttpHost aProxyChain : proxyChain) hc ^= aProxyChain.hashCode();
-        //}
-        //if (this.secure)
-            //hc ^= 0x11111111;
-        //hc ^= this.tunnelled.hashCode();
-        //hc ^= this.layered.hashCode();
-        //return hc;
+        
+        
+        
+            
+        
+            
+            
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.203 -0400", hash_original_method = "ED2086285AC52BF0F96F27196507174B", hash_generated_method = "641B94A95590E6D757CF712325C7C4BC")
     @Override
     public final String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_369635768 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_369635768 = null; 
         StringBuilder cab = new StringBuilder(50 + getHopCount()*30);
         cab.append("HttpRoute[");
         {
             cab.append(this.localAddress);
             cab.append("->");
-        } //End block
+        } 
         cab.append('{');
         cab.append('t');
         cab.append('l');
@@ -376,50 +377,51 @@ public final class HttpRoute implements RouteInfo, Cloneable {
                 {
                     cab.append(aProxyChain);
                     cab.append("->");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         cab.append(this.targetHost);
         cab.append(']');
         varB4EAC82CA7396A68D541C85D26508E83_369635768 = cab.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_369635768.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_369635768.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_369635768;
-        // ---------- Original Method ----------
-        //StringBuilder cab = new StringBuilder(50 + getHopCount()*30);
-        //cab.append("HttpRoute[");
-        //if (this.localAddress != null) {
-            //cab.append(this.localAddress);
-            //cab.append("->");
-        //}
-        //cab.append('{');
-        //if (this.tunnelled == TunnelType.TUNNELLED)
-            //cab.append('t');
-        //if (this.layered == LayerType.LAYERED)
-            //cab.append('l');
-        //if (this.secure)
-            //cab.append('s');
-        //cab.append("}->");
-        //if (this.proxyChain != null) {
-            //for (HttpHost aProxyChain : this.proxyChain) {
-                //cab.append(aProxyChain);
-                //cab.append("->");
-            //}
-        //}
-        //cab.append(this.targetHost);
-        //cab.append(']');
-        //return cab.toString();
+        
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+                
+                
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.204 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "695F54B93A09696A71994342CECCD8F2")
     @Override
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_2039702296 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_2039702296 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2039702296 = super.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_2039702296.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2039702296.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2039702296;
-        // ---------- Original Method ----------
-        //return super.clone();
+        
+        
     }
 
     

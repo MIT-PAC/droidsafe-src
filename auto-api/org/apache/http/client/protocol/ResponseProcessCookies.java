@@ -1,11 +1,11 @@
 package org.apache.http.client.protocol;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.List;
@@ -32,7 +32,7 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.950 -0400", hash_original_method = "4D600FAEAE45D81498CB22DB2E88FC55", hash_generated_method = "24DEF7D8C332AA18A2A34FD1AC38543A")
     public  ResponseProcessCookies() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -40,25 +40,25 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
     public void process(final HttpResponse response, final HttpContext context) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } //End block
+        } 
         CookieStore cookieStore = (CookieStore) context.getAttribute(
                 ClientContext.COOKIE_STORE);
         {
             this.log.info("Cookie store not available in HTTP context");
-        } //End block
+        } 
         CookieSpec cookieSpec = (CookieSpec) context.getAttribute(
                 ClientContext.COOKIE_SPEC);
         {
             this.log.info("CookieSpec not available in HTTP context");
-        } //End block
+        } 
         CookieOrigin cookieOrigin = (CookieOrigin) context.getAttribute(
                 ClientContext.COOKIE_ORIGIN);
         {
             this.log.info("CookieOrigin not available in HTTP context");
-        } //End block
+        } 
         HeaderIterator it = response.headerIterator(SM.SET_COOKIE);
         processCookies(it, cookieSpec, cookieOrigin, cookieStore);
         {
@@ -66,12 +66,12 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
             {
                 it = response.headerIterator(SM.SET_COOKIE2);
                 processCookies(it, cookieSpec, cookieOrigin, cookieStore);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(response.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -102,9 +102,9 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
                                     {
                                         this.log.debug("Cookie accepted: \""
                                     + cookieToString(cookie) + "\". ");
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             catch (MalformedCookieException ex)
                             {
                                 {
@@ -112,12 +112,12 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
                                     {
                                         this.log.warn("Cookie rejected: \""
                                     + cookieToString(cookie) + "\". " + ex.getMessage());
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 catch (MalformedCookieException ex)
                 {
                     {
@@ -125,23 +125,24 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
                         {
                             this.log.warn("Invalid cookie header: \""
                             + header + "\". " + ex.getMessage());
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(iterator.getTaint());
         addTaint(cookieSpec.getTaint());
         addTaint(cookieOrigin.getTaint());
         addTaint(cookieStore.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.961 -0400", hash_original_method = "7F26B81C9250A7120577E4D4C011F353", hash_generated_method = "8C3FB63A0C9317BC76307D342E454818")
     private String cookieToString(Cookie cookie) {
-        String varB4EAC82CA7396A68D541C85D26508E83_568111336 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_568111336 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_568111336 = cookie.getClass().getSimpleName()
                 + "[version=" + cookie.getVersion()
                 + ",name=" + cookie.getName()
@@ -150,16 +151,16 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
                 + ",expiry=" + cookie.getExpiryDate()
                 + "]";
         addTaint(cookie.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_568111336.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_568111336.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_568111336;
-        // ---------- Original Method ----------
-        //return cookie.getClass().getSimpleName()
-                //+ "[version=" + cookie.getVersion()
-                //+ ",name=" + cookie.getName()
-                //+ ",domain=" + cookie.getDomain()
-                //+ ",path=" + cookie.getPath()
-                //+ ",expiry=" + cookie.getExpiryDate()
-                //+ "]";
+        
+        
+                
+                
+                
+                
+                
+                
     }
 
     

@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class InvalidKeyException extends KeyException {
@@ -14,13 +14,13 @@ public class InvalidKeyException extends KeyException {
     public  InvalidKeyException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.166 -0400", hash_original_method = "4C9DBAC0C74B6F235E7CED5E494EF3EA", hash_generated_method = "92C65BC824CFB76E11B7AB2CF746507A")
     public  InvalidKeyException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ public class InvalidKeyException extends KeyException {
         super(message, cause);
         addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,7 +37,7 @@ public class InvalidKeyException extends KeyException {
     public  InvalidKeyException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

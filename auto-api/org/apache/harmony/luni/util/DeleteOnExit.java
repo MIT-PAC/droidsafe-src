@@ -1,11 +1,11 @@
 package org.apache.harmony.luni.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.util.ArrayList;
@@ -19,10 +19,11 @@ public class DeleteOnExit extends Thread {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.248 -0400", hash_original_method = "80FBB7FC28966FEC5371F3D04A9D4E08", hash_generated_method = "80FBB7FC28966FEC5371F3D04A9D4E08")
     public DeleteOnExit ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static synchronized DeleteOnExit getInstance() {
         if (instance == null) {
             instance = new DeleteOnExit();
@@ -32,6 +33,7 @@ public class DeleteOnExit extends Thread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.249 -0400", hash_original_method = "9511A18425627270E054955D67656A71", hash_generated_method = "B76F616B0E99FE92920E903A9D9A87E7")
     public void addFile(String filename) {
         {
@@ -39,19 +41,20 @@ public class DeleteOnExit extends Thread {
                 boolean var0374181210025ADD06309071C5B32496_563753047 = (!files.contains(filename));
                 {
                     files.add(filename);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(filename.getTaint());
-        // ---------- Original Method ----------
-        //synchronized(files) {
-            //if (!files.contains(filename)) {
-                //files.add(filename);
-            //}
-        //}
+        
+        
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.249 -0400", hash_original_method = "557595D78AF878757FA1B104BCD5B60F", hash_generated_method = "05C4BCFA7422DA613AED579FB5A8BBD6")
     @Override
     public void run() {
@@ -60,13 +63,13 @@ public class DeleteOnExit extends Thread {
             int i = files.size() - 1;
             {
                 new File(files.get(i)).delete();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //Collections.sort(files);
-        //for (int i = files.size() - 1; i >= 0; i--) {
-            //new File(files.get(i)).delete();
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     

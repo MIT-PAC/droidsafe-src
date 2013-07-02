@@ -1,11 +1,11 @@
 package dalvik.system;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
@@ -19,7 +19,7 @@ public final class BlockGuard {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.589 -0400", hash_original_method = "0E6BC3DAACB3346655A889CA6E7D1AFA", hash_generated_method = "69110DD784D65387D879431CB3C0A133")
     private  BlockGuard() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -52,7 +52,7 @@ public final class BlockGuard {
             this(policyState, policyViolated, null);
             addTaint(policyState);
             addTaint(policyViolated);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -62,11 +62,11 @@ public final class BlockGuard {
             mPolicyViolated = policyViolated;
             mMessage = message;
             fillInStackTrace();
-            // ---------- Original Method ----------
-            //mPolicyState = policyState;
-            //mPolicyViolated = policyViolated;
-            //mMessage = message;
-            //fillInStackTrace();
+            
+            
+            
+            
+            
         }
 
         
@@ -74,8 +74,8 @@ public final class BlockGuard {
         public int getPolicy() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2037016033 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2037016033;
-            // ---------- Original Method ----------
-            //return mPolicyState;
+            
+            
         }
 
         
@@ -83,21 +83,21 @@ public final class BlockGuard {
         public int getPolicyViolation() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1509996075 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1509996075;
-            // ---------- Original Method ----------
-            //return mPolicyViolated;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.591 -0400", hash_original_method = "AA2ABAF31AA2D7A8C7A88450DEB5E574", hash_generated_method = "38A6830ACEA931CD6EDCE24916965607")
         public String getMessage() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1288596970 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1288596970 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1288596970 = "policy=" + mPolicyState + " violation=" + mPolicyViolated +
                     (mMessage == null ? "" : (" msg=" + mMessage));
-            varB4EAC82CA7396A68D541C85D26508E83_1288596970.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1288596970.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1288596970;
-            // ---------- Original Method ----------
-            //return "policy=" + mPolicyState + " violation=" + mPolicyViolated +
-                    //(mMessage == null ? "" : (" msg=" + mMessage));
+            
+            
+                    
         }
 
         
@@ -156,12 +156,12 @@ public final class BlockGuard {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.592 -0400", hash_original_method = "DA8783B28EC2A21BB8B273AEAF0100E1", hash_generated_method = "FECE05391A71714F72ACFF49F2BE0BBC")
         @Override
         protected Policy initialValue() {
-            Policy varB4EAC82CA7396A68D541C85D26508E83_1583563944 = null; //Variable for return #1
+            Policy varB4EAC82CA7396A68D541C85D26508E83_1583563944 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1583563944 = LAX_POLICY;
-            varB4EAC82CA7396A68D541C85D26508E83_1583563944.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1583563944.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1583563944;
-            // ---------- Original Method ----------
-            //return LAX_POLICY;
+            
+            
         }
 
         

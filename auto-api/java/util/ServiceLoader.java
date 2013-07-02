@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -28,41 +28,44 @@ public final class ServiceLoader<S> implements Iterable<S> {
     private  ServiceLoader(Class<S> service, ClassLoader classLoader) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         this.service = service;
         this.classLoader = classLoader;
         this.services = new HashSet<URL>();
         reload();
-        // ---------- Original Method ----------
-        //if (service == null) {
-            //throw new NullPointerException();
-        //}
-        //this.service = service;
-        //this.classLoader = classLoader;
-        //this.services = new HashSet<URL>();
-        //reload();
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.977 -0400", hash_original_method = "5DE3F3B80408315525994C211C4640EC", hash_generated_method = "B60E62D5BFE2284818EAB4DA920ACD3A")
     public void reload() {
         internalLoad();
-        // ---------- Original Method ----------
-        //internalLoad();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.978 -0400", hash_original_method = "347C14FB6BD1E7714C96867577CC330D", hash_generated_method = "6898CAB5BC5765A20B0D3962C9BC7CA2")
     public Iterator<S> iterator() {
-        Iterator<S> varB4EAC82CA7396A68D541C85D26508E83_1537578614 = null; //Variable for return #1
+        Iterator<S> varB4EAC82CA7396A68D541C85D26508E83_1537578614 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1537578614 = new ServiceIterator(this);
-        varB4EAC82CA7396A68D541C85D26508E83_1537578614.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1537578614.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1537578614;
-        // ---------- Original Method ----------
-        //return new ServiceIterator(this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <S> ServiceLoader<S> load(Class<S> service, ClassLoader classLoader) {
         if (classLoader == null) {
             classLoader = ClassLoader.getSystemClassLoader();
@@ -71,6 +74,7 @@ public final class ServiceLoader<S> implements Iterable<S> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.978 -0400", hash_original_method = "7DCE51783862B815D2BC789E6049F748", hash_generated_method = "254BCA6D033A2B9A30A38DA0FA5C01A2")
     private void internalLoad() {
         services.clear();
@@ -78,25 +82,27 @@ public final class ServiceLoader<S> implements Iterable<S> {
         {
             String name = "META-INF/services/" + service.getName();
             services.addAll(Collections.list(classLoader.getResources(name)));
-        } //End block
+        } 
         catch (IOException e)
         { }
-        // ---------- Original Method ----------
-        //services.clear();
-        //try {
-            //String name = "META-INF/services/" + service.getName();
-            //services.addAll(Collections.list(classLoader.getResources(name)));
-        //} catch (IOException e) {
-            //return;
-        //}
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <S> ServiceLoader<S> load(Class<S> service) {
         return ServiceLoader.load(service, Thread.currentThread().getContextClassLoader());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <S> ServiceLoader<S> loadInstalled(Class<S> service) {
         ClassLoader cl = ClassLoader.getSystemClassLoader();
         if (cl != null) {
@@ -122,15 +128,16 @@ public final class ServiceLoader<S> implements Iterable<S> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.979 -0400", hash_original_method = "F8BFF902940FB319A126BEB71F562AF6", hash_generated_method = "4BADD6BFBA429879CDF36EC82E1CA908")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1649830218 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1649830218 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1649830218 = "ServiceLoader for " + service.getName();
-        varB4EAC82CA7396A68D541C85D26508E83_1649830218.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1649830218.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1649830218;
-        // ---------- Original Method ----------
-        //return "ServiceLoader for " + service.getName();
+        
+        
     }
 
     
@@ -156,10 +163,10 @@ public final class ServiceLoader<S> implements Iterable<S> {
             this.classLoader = sl.classLoader;
             this.service = sl.service;
             this.services = sl.services;
-            // ---------- Original Method ----------
-            //this.classLoader = sl.classLoader;
-            //this.service = sl.service;
-            //this.services = sl.services;
+            
+            
+            
+            
         }
 
         
@@ -167,49 +174,49 @@ public final class ServiceLoader<S> implements Iterable<S> {
         public boolean hasNext() {
             {
                 readClass();
-            } //End block
+            } 
             boolean var8604F4A92D2CF732611B4938165DE574_1785266288 = ((queue != null && !queue.isEmpty()));
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_469326688 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_469326688;
-            // ---------- Original Method ----------
-            //if (!isRead) {
-                //readClass();
-            //}
-            //return (queue != null && !queue.isEmpty());
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.982 -0400", hash_original_method = "B99394086046EF47562A5B63911931C2", hash_generated_method = "3B1125D04412B877E6EAB6B188DB22FC")
         @SuppressWarnings("unchecked")
         public S next() {
-            S varB4EAC82CA7396A68D541C85D26508E83_560666098 = null; //Variable for return #1
+            S varB4EAC82CA7396A68D541C85D26508E83_560666098 = null; 
             {
                 boolean var61E0EA93C8F2038A69462393E2D5DF33_1907494620 = (!hasNext());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             String className = queue.remove();
             try 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_560666098 = service.cast(classLoader.loadClass(className).newInstance());
-            } //End block
+            } 
             catch (Exception e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new ServiceConfigurationError("Couldn't instantiate class " + className, e);
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_560666098.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_560666098.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_560666098;
-            // ---------- Original Method ----------
-            //if (!hasNext()) {
-                //throw new NoSuchElementException();
-            //}
-            //String className = queue.remove();
-            //try {
-                //return service.cast(classLoader.loadClass(className).newInstance());
-            //} catch (Exception e) {
-                //throw new ServiceConfigurationError("Couldn't instantiate class " + className, e);
-            //}
+            
+            
+                
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -231,43 +238,43 @@ public final class ServiceLoader<S> implements Iterable<S> {
                                 int commentStart = line.indexOf('#');
                                 {
                                     line = line.substring(0, commentStart);
-                                } //End block
+                                } 
                                 line = line.trim();
                                 {
                                     boolean varAB9A6F97B550590C437DB0E5913732CB_884783784 = (line.isEmpty());
-                                } //End collapsed parenthetic
+                                } 
                                 String className = line;
                                 checkValidJavaClassName(className);
                                 {
                                     boolean var87E0BB4FC1758213C22B5A05C9759255_1606928124 = (!queue.contains(className));
                                     {
                                         queue.add(className);
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
+                                    } 
+                                } 
+                            } 
+                        } 
                         isRead = true;
-                    } //End block
+                    } 
                     catch (Exception e)
                     {
                         if (DroidSafeAndroidRuntime.control) throw new ServiceConfigurationError("Couldn't read " + url, e);
-                    } //End block
+                    } 
                     finally 
                     {
                         IoUtils.closeQuietly(reader);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.996 -0400", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "BD0416D7797F4CCA5C01710103DCE99D")
         public void remove() {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -282,18 +289,18 @@ public final class ServiceLoader<S> implements Iterable<S> {
                         boolean var7FFC7776D891F880B80D207CB313B868_1281063094 = (!Character.isJavaIdentifierPart(ch) && ch != '.');
                         {
                             if (DroidSafeAndroidRuntime.control) throw new ServiceConfigurationError("Bad character '" + ch + "' in class name");
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             addTaint(className.getTaint());
-            // ---------- Original Method ----------
-            //for (int i = 0; i < className.length(); ++i) {
-                //char ch = className.charAt(i);
-                //if (!Character.isJavaIdentifierPart(ch) && ch != '.') {
-                    //throw new ServiceConfigurationError("Bad character '" + ch + "' in class name");
-                //}
-            //}
+            
+            
+                
+                
+                    
+                
+            
         }
 
         

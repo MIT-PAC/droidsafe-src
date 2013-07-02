@@ -1,11 +1,11 @@
 package android.nfc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -22,14 +22,14 @@ public final class NdefMessage implements Parcelable {
             boolean varAA4C11B4345CE90310CEDDAB0AF4349A_84975223 = (parseNdefMessage(data) == -1);
             {
                 if (DroidSafeAndroidRuntime.control) throw new FormatException("Error while parsing NDEF message");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(data[0]);
-        // ---------- Original Method ----------
-        //mRecords = null;
-        //if (parseNdefMessage(data) == -1) {
-            //throw new FormatException("Error while parsing NDEF message");
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -37,23 +37,25 @@ public final class NdefMessage implements Parcelable {
     public  NdefMessage(NdefRecord[] records) {
         mRecords = new NdefRecord[records.length];
         System.arraycopy(records, 0, mRecords, 0, records.length);
-        // ---------- Original Method ----------
-        //mRecords = new NdefRecord[records.length];
-        //System.arraycopy(records, 0, mRecords, 0, records.length);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.036 -0400", hash_original_method = "482F2AD23FF4C5B364DE9FB97EDDBB64", hash_generated_method = "48C2FE502E60FF016C18399F717557CF")
     public NdefRecord[] getRecords() {
-        NdefRecord[] varB4EAC82CA7396A68D541C85D26508E83_2018972500 = null; //Variable for return #1
+        NdefRecord[] varB4EAC82CA7396A68D541C85D26508E83_2018972500 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2018972500 = mRecords.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_2018972500.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2018972500.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2018972500;
-        // ---------- Original Method ----------
-        //return mRecords.clone();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.036 -0400", hash_original_method = "8C1624491EC0DD58CFD007740FE405D8", hash_generated_method = "A70CE2B77B9F4DAEF728468C82D32BCF")
     public byte[] toByteArray() {
         byte[] varCD2B5CAF7811FECE279C6AA98F83010C_886285014 = (new byte[0]);
@@ -65,45 +67,45 @@ public final class NdefMessage implements Parcelable {
                 byte[] tmp = new byte[msg.length + record.length];
                 {
                     record[0] |= FLAG_MB;
-                } //End block
+                } 
                 {
                     record[0] &= ~FLAG_MB;
-                } //End block
+                } 
                 {
                     record[0] |= FLAG_ME;
-                } //End block
+                } 
                 {
                     record[0] &= ~FLAG_ME;
-                } //End block
+                } 
                 System.arraycopy(msg, 0, tmp, 0, msg.length);
                 System.arraycopy(record, 0, tmp, msg.length, record.length);
                 msg = tmp;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1345379151 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1345379151;
-        // ---------- Original Method ----------
-        //if ((mRecords == null) || (mRecords.length == 0))
-            //return new byte[0];
-        //byte[] msg = {};
-        //for (int i = 0; i < mRecords.length; i++) {
-            //byte[] record = mRecords[i].toByteArray();
-            //byte[] tmp = new byte[msg.length + record.length];
-            //if (i == 0) {
-                //record[0] |= FLAG_MB;
-            //} else {
-                //record[0] &= ~FLAG_MB;
-            //}
-            //if (i == (mRecords.length - 1)) {
-                //record[0] |= FLAG_ME;
-            //} else {
-                //record[0] &= ~FLAG_ME;
-            //}
-            //System.arraycopy(msg, 0, tmp, 0, msg.length);
-            //System.arraycopy(record, 0, tmp, msg.length, record.length);
-            //msg = tmp;
-        //}
-        //return msg;
+        
+        
+            
+        
+        
+            
+            
+            
+                
+            
+                
+            
+            
+                
+            
+                
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -112,11 +114,12 @@ public final class NdefMessage implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1510719683 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1510719683;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.038 -0400", hash_original_method = "C32A271878CC7CE5578073C85AE449D6", hash_generated_method = "A6DD5C9E8B4550688C96BB8C50ED51D5")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -124,9 +127,9 @@ public final class NdefMessage implements Parcelable {
         dest.writeTypedArray(mRecords, flags);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mRecords.length);
-        //dest.writeTypedArray(mRecords, flags);
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 import java.util.Arrays;
@@ -17,8 +17,8 @@ public final class Character implements Serializable, Comparable<Character> {
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.519 -0400", hash_original_method = "8DEFF913326DC7F74512EFD131579B65", hash_generated_method = "1645DDBBE78063D348F5E0EDDC7FC72B")
 	public Character(char value) {
 		this.value = value;
-		// ---------- Original Method ----------
-		// this.value = value;
+		
+		
 	}
 
 	private static int forNameImpl(String blockName) {
@@ -35,31 +35,34 @@ public final class Character implements Serializable, Comparable<Character> {
 	public char charValue() {
 		char varA87DEB01C5F539E6BDA34829C8EF2368_916274745 = getTaintChar();
 		return varA87DEB01C5F539E6BDA34829C8EF2368_916274745;
-		// ---------- Original Method ----------
-		// return value;
+		
+		
 	}
 
-	private static void checkValidCodePoint(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    private static void checkValidCodePoint(int codePoint) {
 		if (!isValidCodePoint(codePoint)) {
 			throw new IllegalArgumentException("Invalid code point: " + codePoint);
 		}
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.519 -0400", hash_original_method = "3BC38476D10A0BB1E7E9CABDBB184EDE", hash_generated_method = "76C1791708510FBCD09CEED4033B01A0")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.519 -0400", hash_original_method = "3BC38476D10A0BB1E7E9CABDBB184EDE", hash_generated_method = "76C1791708510FBCD09CEED4033B01A0")
 	public int compareTo(Character c) {
 		int var2D53C4D03B154FEA4531431C9E7F8DB6_1739961832 = (compare(value, c.value));
 		addTaint(c.getTaint());
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_864595770 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_864595770;
-		// ---------- Original Method ----------
-		// return compare(value, c.value);
+		
+		
 	}
 
 	public static int compare(char lhs, char rhs) {
 		return lhs - rhs;
 	}
 
-	public static Character valueOf(char c) {
+	@DSModeled(DSC.SAFE)
+    public static Character valueOf(char c) {
 		return c < 128 ? SMALL_VALUES[c] : new Character(c);
 	}
 
@@ -83,7 +86,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return ch >= MIN_SURROGATE && ch <= MAX_SURROGATE;
 	}
 
-	public static boolean isSurrogatePair(char high, char low) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isSurrogatePair(char high, char low) {
 		return (isHighSurrogate(high) && isLowSurrogate(low));
 	}
 
@@ -97,7 +101,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return (h | l) + 0x10000;
 	}
 
-	public static int codePointAt(CharSequence seq, int index) {
+	@DSModeled(DSC.SAFE)
+    public static int codePointAt(CharSequence seq, int index) {
 		if (seq == null) {
 			throw new NullPointerException();
 		}
@@ -116,7 +121,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return high;
 	}
 
-	public static int codePointAt(char[] seq, int index) {
+	@DSModeled(DSC.SAFE)
+    public static int codePointAt(char[] seq, int index) {
 		if (seq == null) {
 			throw new NullPointerException();
 		}
@@ -135,7 +141,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return high;
 	}
 
-	public static int codePointAt(char[] seq, int index, int limit) {
+	@DSModeled(DSC.SAFE)
+    public static int codePointAt(char[] seq, int index, int limit) {
 		if (index < 0 || index >= limit || limit < 0 || limit > seq.length) {
 			throw new IndexOutOfBoundsException();
 		}
@@ -150,7 +157,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return high;
 	}
 
-	public static int codePointBefore(CharSequence seq, int index) {
+	@DSModeled(DSC.SAFE)
+    public static int codePointBefore(CharSequence seq, int index) {
 		if (seq == null) {
 			throw new NullPointerException();
 		}
@@ -169,7 +177,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return low;
 	}
 
-	public static int codePointBefore(char[] seq, int index) {
+	@DSModeled(DSC.SAFE)
+    public static int codePointBefore(char[] seq, int index) {
 		if (seq == null) {
 			throw new NullPointerException();
 		}
@@ -188,7 +197,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return low;
 	}
 
-	public static int codePointBefore(char[] seq, int index, int start) {
+	@DSModeled(DSC.SAFE)
+    public static int codePointBefore(char[] seq, int index, int start) {
 		if (seq == null) {
 			throw new NullPointerException();
 		}
@@ -207,7 +217,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return low;
 	}
 
-	public static int toChars(int codePoint, char[] dst, int dstIndex) {
+	@DSModeled(DSC.SAFE)
+    public static int toChars(int codePoint, char[] dst, int dstIndex) {
 		checkValidCodePoint(codePoint);
 		if (dst == null) {
 			throw new NullPointerException();
@@ -230,7 +241,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return 1;
 	}
 
-	public static char[] toChars(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static char[] toChars(int codePoint) {
 		checkValidCodePoint(codePoint);
 		if (isSupplementaryCodePoint(codePoint)) {
 			int cpPrime = codePoint - 0x10000;
@@ -241,7 +253,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return new char[] { (char) codePoint };
 	}
 
-	public static int codePointCount(CharSequence seq, int beginIndex, int endIndex) {
+	@DSModeled(DSC.SAFE)
+    public static int codePointCount(CharSequence seq, int beginIndex, int endIndex) {
 		if (seq == null) {
 			throw new NullPointerException();
 		}
@@ -265,7 +278,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return result;
 	}
 
-	public static int codePointCount(char[] seq, int offset, int count) {
+	@DSModeled(DSC.SAFE)
+    public static int codePointCount(char[] seq, int offset, int count) {
 		Arrays.checkOffsetAndCount(seq.length, offset, count);
 		int endIndex = offset + count;
 		int result = 0;
@@ -284,7 +298,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return result;
 	}
 
-	public static int offsetByCodePoints(CharSequence seq, int index, int codePointOffset) {
+	@DSModeled(DSC.SAFE)
+    public static int offsetByCodePoints(CharSequence seq, int index, int codePointOffset) {
 		if (seq == null) {
 			throw new NullPointerException();
 		}
@@ -331,7 +346,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return i;
 	}
 
-	public static int offsetByCodePoints(char[] seq, int start, int count, int index, int codePointOffset) {
+	@DSModeled(DSC.SAFE)
+    public static int offsetByCodePoints(char[] seq, int start, int count, int index, int codePointOffset) {
 		Arrays.checkOffsetAndCount(seq.length, start, count);
 		int end = start + count;
 		if (index < start || index > end) {
@@ -376,11 +392,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return i;
 	}
 
-	public static int digit(char c, int radix) {
+	@DSModeled(DSC.SAFE)
+    public static int digit(char c, int radix) {
 		return digit((int) c, radix);
 	}
 
-	public static int digit(int codePoint, int radix) {
+	@DSModeled(DSC.SAFE)
+    public static int digit(int codePoint, int radix) {
 		if (radix < MIN_RADIX || radix > MAX_RADIX) {
 			return -1;
 		}
@@ -409,9 +427,9 @@ public final class Character implements Serializable, Comparable<Character> {
 		addTaint(object.getTaint());
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_391658298 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_391658298;
-		// ---------- Original Method ----------
-		// return (object instanceof Character) && (((Character) object).value
-		// == value);
+		
+		
+		
 	}
 
 	public static char forDigit(int digit, int radix) {
@@ -423,7 +441,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return 0;
 	}
 
-	public static String getName(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static String getName(int codePoint) {
 		checkValidCodePoint(codePoint);
 		if (getType(codePoint) == Character.UNASSIGNED) {
 			return null;
@@ -440,11 +459,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return new String();
 	}
 
-	public static int getNumericValue(char c) {
+	@DSModeled(DSC.SAFE)
+    public static int getNumericValue(char c) {
 		return getNumericValue((int) c);
 	}
 
-	public static int getNumericValue(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static int getNumericValue(int codePoint) {
 		if (codePoint < 128) {
 			if (codePoint >= '0' && codePoint <= '9') {
 				return codePoint - '0';
@@ -471,11 +492,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_154176117;
 	}
 
-	public static int getType(char c) {
+	@DSModeled(DSC.SAFE)
+    public static int getType(char c) {
 		return getType((int) c);
 	}
 
-	public static int getType(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static int getType(int codePoint) {
 		int type = getTypeImpl(codePoint);
 		if (type <= Character.FORMAT) {
 			return type;
@@ -488,11 +511,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_750496757;
 	}
 
-	public static byte getDirectionality(char c) {
+	@DSModeled(DSC.SAFE)
+    public static byte getDirectionality(char c) {
 		return getDirectionality((int) c);
 	}
 
-	public static byte getDirectionality(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static byte getDirectionality(int codePoint) {
 		if (getType(codePoint) == Character.UNASSIGNED) {
 			return Character.DIRECTIONALITY_UNDEFINED;
 		}
@@ -508,11 +533,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return var40EA57D3EE3C07BF1C102B466E1C3091_330183665;
 	}
 
-	public static boolean isMirrored(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isMirrored(char c) {
 		return isMirrored((int) c);
 	}
 
-	public static boolean isMirrored(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isMirrored(int codePoint) {
 		return isMirroredImpl(codePoint);
 	}
 
@@ -526,8 +553,8 @@ public final class Character implements Serializable, Comparable<Character> {
 	public int hashCode() {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1221939823 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1221939823;
-		// ---------- Original Method ----------
-		// return value;
+		
+		
 	}
 
 	public static char highSurrogate(int codePoint) {
@@ -542,11 +569,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return codePoint >= 0 && codePoint <= 0xffff;
 	}
 
-	public static boolean isDefined(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isDefined(char c) {
 		return isDefinedImpl(c);
 	}
 
-	public static boolean isDefined(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isDefined(int codePoint) {
 		return isDefinedImpl(codePoint);
 	}
 
@@ -555,11 +584,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1918835177;
 	}
 
-	public static boolean isDigit(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isDigit(char c) {
 		return isDigit((int) c);
 	}
 
-	public static boolean isDigit(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isDigit(int codePoint) {
 		if ('0' <= codePoint && codePoint <= '9') {
 			return true;
 		}
@@ -574,11 +605,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_79933192;
 	}
 
-	public static boolean isIdentifierIgnorable(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isIdentifierIgnorable(char c) {
 		return isIdentifierIgnorable((int) c);
 	}
 
-	public static boolean isIdentifierIgnorable(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isIdentifierIgnorable(int codePoint) {
 		if (codePoint < 0x600) {
 			return (codePoint >= 0 && codePoint <= 8) || (codePoint >= 0xe && codePoint <= 0x1b) || (codePoint >= 0x7f && codePoint <= 0x9f) || (codePoint == 0xad);
 		}
@@ -590,7 +623,8 @@ public final class Character implements Serializable, Comparable<Character> {
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_370417676;
 	}
 
-	public static boolean isISOControl(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isISOControl(char c) {
 		return isISOControl((int) c);
 	}
 
@@ -598,11 +632,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return (c >= 0 && c <= 0x1f) || (c >= 0x7f && c <= 0x9f);
 	}
 
-	public static boolean isJavaIdentifierPart(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isJavaIdentifierPart(char c) {
 		return isJavaIdentifierPart((int) c);
 	}
 
-	public static boolean isJavaIdentifierPart(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isJavaIdentifierPart(int codePoint) {
 		if (codePoint < 64) {
 			return (0x3ff00100fffc1ffL & (1L << codePoint)) != 0;
 		} else if (codePoint < 128) {
@@ -614,11 +650,13 @@ public final class Character implements Serializable, Comparable<Character> {
 				|| (codePoint >= 0xe && codePoint <= 0x1b) || (codePoint >= 0x7f && codePoint <= 0x9f) || type == FORMAT;
 	}
 
-	public static boolean isJavaIdentifierStart(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isJavaIdentifierStart(char c) {
 		return isJavaIdentifierStart((int) c);
 	}
 
-	public static boolean isJavaIdentifierStart(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isJavaIdentifierStart(int codePoint) {
 		if (codePoint < 64) {
 			return (codePoint == '$');
 		} else if (codePoint < 128) {
@@ -628,21 +666,25 @@ public final class Character implements Serializable, Comparable<Character> {
 		return (type >= UPPERCASE_LETTER && type <= OTHER_LETTER) || type == CURRENCY_SYMBOL || type == CONNECTOR_PUNCTUATION || type == LETTER_NUMBER;
 	}
 
-	@Deprecated
+	@DSModeled(DSC.SAFE)
+    @Deprecated
 	public static boolean isJavaLetter(char c) {
 		return isJavaIdentifierStart(c);
 	}
 
-	@Deprecated
+	@DSModeled(DSC.SAFE)
+    @Deprecated
 	public static boolean isJavaLetterOrDigit(char c) {
 		return isJavaIdentifierPart(c);
 	}
 
-	public static boolean isLetter(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isLetter(char c) {
 		return isLetter((int) c);
 	}
 
-	public static boolean isLetter(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isLetter(int codePoint) {
 		if (('A' <= codePoint && codePoint <= 'Z') || ('a' <= codePoint && codePoint <= 'z')) {
 			return true;
 		}
@@ -657,11 +699,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1317859906;
 	}
 
-	public static boolean isLetterOrDigit(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isLetterOrDigit(char c) {
 		return isLetterOrDigit((int) c);
 	}
 
-	public static boolean isLetterOrDigit(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isLetterOrDigit(int codePoint) {
 		if (('A' <= codePoint && codePoint <= 'Z') || ('a' <= codePoint && codePoint <= 'z')) {
 			return true;
 		}
@@ -679,11 +723,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_331892654;
 	}
 
-	public static boolean isLowerCase(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isLowerCase(char c) {
 		return isLowerCase((int) c);
 	}
 
-	public static boolean isLowerCase(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isLowerCase(int codePoint) {
 		if ('a' <= codePoint && codePoint <= 'z') {
 			return true;
 		}
@@ -703,11 +749,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return c == '\n' || c == '\t' || c == '\f' || c == '\r' || c == ' ';
 	}
 
-	public static boolean isSpaceChar(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isSpaceChar(char c) {
 		return isSpaceChar((int) c);
 	}
 
-	public static boolean isSpaceChar(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isSpaceChar(int codePoint) {
 		if (codePoint == 0x20 || codePoint == 0xa0 || codePoint == 0x1680) {
 			return true;
 		}
@@ -725,11 +773,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_684024122;
 	}
 
-	public static boolean isTitleCase(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isTitleCase(char c) {
 		return isTitleCaseImpl(c);
 	}
 
-	public static boolean isTitleCase(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isTitleCase(int codePoint) {
 		return isTitleCaseImpl(codePoint);
 	}
 
@@ -738,11 +788,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1687158249;
 	}
 
-	public static boolean isUnicodeIdentifierPart(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isUnicodeIdentifierPart(char c) {
 		return isUnicodeIdentifierPartImpl(c);
 	}
 
-	public static boolean isUnicodeIdentifierPart(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isUnicodeIdentifierPart(int codePoint) {
 		return isUnicodeIdentifierPartImpl(codePoint);
 	}
 
@@ -751,11 +803,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1167587608;
 	}
 
-	public static boolean isUnicodeIdentifierStart(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isUnicodeIdentifierStart(char c) {
 		return isUnicodeIdentifierStartImpl(c);
 	}
 
-	public static boolean isUnicodeIdentifierStart(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isUnicodeIdentifierStart(int codePoint) {
 		return isUnicodeIdentifierStartImpl(codePoint);
 	}
 
@@ -764,11 +818,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_389180321;
 	}
 
-	public static boolean isUpperCase(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isUpperCase(char c) {
 		return isUpperCase((int) c);
 	}
 
-	public static boolean isUpperCase(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isUpperCase(int codePoint) {
 		if ('A' <= codePoint && codePoint <= 'Z') {
 			return true;
 		}
@@ -783,11 +839,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1247968420;
 	}
 
-	public static boolean isWhitespace(char c) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isWhitespace(char c) {
 		return isWhitespace((int) c);
 	}
 
-	public static boolean isWhitespace(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static boolean isWhitespace(int codePoint) {
 		if ((codePoint >= 0x1c && codePoint <= 0x20) || (codePoint >= 0x9 && codePoint <= 0xd)) {
 			return true;
 		}
@@ -812,11 +870,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return (char) ((c << 8) | (c >> 8));
 	}
 
-	public static char toLowerCase(char c) {
+	@DSModeled(DSC.SAFE)
+    public static char toLowerCase(char c) {
 		return (char) toLowerCase((int) c);
 	}
 
-	public static int toLowerCase(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static int toLowerCase(int codePoint) {
 		if ('A' <= codePoint && codePoint <= 'Z') {
 			return (char) (codePoint + ('a' - 'A'));
 		}
@@ -831,32 +891,36 @@ public final class Character implements Serializable, Comparable<Character> {
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_257147218;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.534 -0400", hash_original_method = "27F3E47E60B1213ECE72A0C1452319D1", hash_generated_method = "BF23665CAC00D3ED1584ECFA3DFF08E0")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.534 -0400", hash_original_method = "27F3E47E60B1213ECE72A0C1452319D1", hash_generated_method = "BF23665CAC00D3ED1584ECFA3DFF08E0")
 	@Override
 	public String toString() {
-		String varB4EAC82CA7396A68D541C85D26508E83_1473184366 = null; // Variable
-																		// for
-																		// return
-																		// #1
+		String varB4EAC82CA7396A68D541C85D26508E83_1473184366 = null; 
+																		
+																		
+																		
 		varB4EAC82CA7396A68D541C85D26508E83_1473184366 = String.valueOf(value);
-		varB4EAC82CA7396A68D541C85D26508E83_1473184366.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1473184366.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1473184366;
-		// ---------- Original Method ----------
-		// return String.valueOf(value);
+		
+		
 	}
 
-	public static String toString(char value) {
+	@DSModeled(DSC.SAFE)
+    public static String toString(char value) {
 		return String.valueOf(value);
 	}
 
-	public static char toTitleCase(char c) {
+	@DSModeled(DSC.SAFE)
+    public static char toTitleCase(char c) {
 		return (char) toTitleCaseImpl(c);
 	}
 
-	public static int toTitleCase(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static int toTitleCase(int codePoint) {
 		return toTitleCaseImpl(codePoint);
 	}
 
@@ -865,11 +929,13 @@ public final class Character implements Serializable, Comparable<Character> {
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1465695862;
 	}
 
-	public static char toUpperCase(char c) {
+	@DSModeled(DSC.SAFE)
+    public static char toUpperCase(char c) {
 		return (char) toUpperCase((int) c);
 	}
 
-	public static int toUpperCase(int codePoint) {
+	@DSModeled(DSC.SAFE)
+    public static int toUpperCase(int codePoint) {
 		if ('a' <= codePoint && codePoint <= 'z') {
 			return (char) (codePoint - ('a' - 'A'));
 		}
@@ -893,13 +959,13 @@ public final class Character implements Serializable, Comparable<Character> {
 			{
 				if (DroidSafeAndroidRuntime.control)
 					throw new NullPointerException();
-			} // End block
+			} 
 			name = string;
-			// ---------- Original Method ----------
-			// if (string == null) {
-			// throw new NullPointerException();
-			// }
-			// name = string;
+			
+			
+			
+			
+			
 		}
 
 		@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.536 -0400", hash_original_method = "4C72D63DD7600BBEA68526CF4A3E7570", hash_generated_method = "6A0E675E0B4F2F9A5F0B85556E158BA0")
@@ -909,8 +975,8 @@ public final class Character implements Serializable, Comparable<Character> {
 			addTaint(object.getTaint());
 			boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1497274341 = getTaintBoolean();
 			return var84E2C64F38F78BA3EA5C905AB5A2DA27_1497274341;
-			// ---------- Original Method ----------
-			// return super.equals(object);
+			
+			
 		}
 
 		@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.536 -0400", hash_original_method = "BBCDAD7BF06FB621822DBBAD11355700", hash_generated_method = "C8E81340C003DCEB53598B29BB35141B")
@@ -919,25 +985,25 @@ public final class Character implements Serializable, Comparable<Character> {
 			int var7065CA1B738CD514456434D45E0A5A67_512228105 = (super.hashCode());
 			int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_46995669 = getTaintInt();
 			return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_46995669;
-			// ---------- Original Method ----------
-			// return super.hashCode();
+			
+			
 		}
 
 		@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.536 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "368765C6E8B83CE83102175F03FC52A2")
 		@Override
 		public final String toString() {
-			String varB4EAC82CA7396A68D541C85D26508E83_1288789419 = null; // Variable
-																			// for
-																			// return
-																			// #1
+			String varB4EAC82CA7396A68D541C85D26508E83_1288789419 = null; 
+																			
+																			
+																			
 			varB4EAC82CA7396A68D541C85D26508E83_1288789419 = name;
-			varB4EAC82CA7396A68D541C85D26508E83_1288789419.addTaint(getTaint()); // Add
-																					// taint
-																					// from
-																					// parent
+			varB4EAC82CA7396A68D541C85D26508E83_1288789419.addTaint(getTaint()); 
+																					
+																					
+																					
 			return varB4EAC82CA7396A68D541C85D26508E83_1288789419;
-			// ---------- Original Method ----------
-			// return name;
+			
+			
 		}
 
 	}
@@ -950,7 +1016,7 @@ public final class Character implements Serializable, Comparable<Character> {
 			addTaint(blockName.getTaint());
 			addTaint(start);
 			addTaint(end);
-			// ---------- Original Method ----------
+			
 		}
 
 		public static UnicodeBlock forName(String blockName) {

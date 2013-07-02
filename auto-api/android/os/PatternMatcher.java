@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class PatternMatcher implements Parcelable {
@@ -20,9 +20,9 @@ public class PatternMatcher implements Parcelable {
     public  PatternMatcher(String pattern, int type) {
         mPattern = pattern;
         mType = type;
-        // ---------- Original Method ----------
-        //mPattern = pattern;
-        //mType = type;
+        
+        
+        
     }
 
     
@@ -30,20 +30,20 @@ public class PatternMatcher implements Parcelable {
     public  PatternMatcher(Parcel src) {
         mPattern = src.readString();
         mType = src.readInt();
-        // ---------- Original Method ----------
-        //mPattern = src.readString();
-        //mType = src.readInt();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.907 -0400", hash_original_method = "05EB8C992FD149B44BBE0FC11E651762", hash_generated_method = "B344CA6E016689D87658A9DD4ACE1EBB")
     public final String getPath() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1111704812 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1111704812 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1111704812 = mPattern;
-        varB4EAC82CA7396A68D541C85D26508E83_1111704812.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1111704812.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1111704812;
-        // ---------- Original Method ----------
-        //return mPattern;
+        
+        
     }
 
     
@@ -51,52 +51,54 @@ public class PatternMatcher implements Parcelable {
     public final int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_262995401 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_262995401;
-        // ---------- Original Method ----------
-        //return mType;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.908 -0400", hash_original_method = "62F8B077957CE70BF92EA7EF3ACCE61D", hash_generated_method = "62B27294D671DD298255AEA2D553A32D")
     public boolean match(String str) {
         boolean var2306B6FCBFA5915874A27ADE8981E3F6_1779834670 = (matchPattern(mPattern, str, mType));
         addTaint(str.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_580250703 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_580250703;
-        // ---------- Original Method ----------
-        //return matchPattern(mPattern, str, mType);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.909 -0400", hash_original_method = "4D68435646F5279408D2A4F2A408DED4", hash_generated_method = "AAA4AFEFEA481BDCEBF6208C2F846B70")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_241984622 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_241984622 = null; 
         String type = "? ";
-        //Begin case PATTERN_LITERAL 
+        
         type = "LITERAL: ";
-        //End case PATTERN_LITERAL 
-        //Begin case PATTERN_PREFIX 
+        
+        
         type = "PREFIX: ";
-        //End case PATTERN_PREFIX 
-        //Begin case PATTERN_SIMPLE_GLOB 
+        
+        
         type = "GLOB: ";
-        //End case PATTERN_SIMPLE_GLOB 
+        
         varB4EAC82CA7396A68D541C85D26508E83_241984622 = "PatternMatcher{" + type + mPattern + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_241984622.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_241984622.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_241984622;
-        // ---------- Original Method ----------
-        //String type = "? ";
-        //switch (mType) {
-            //case PATTERN_LITERAL:
-                //type = "LITERAL: ";
-                //break;
-            //case PATTERN_PREFIX:
-                //type = "PREFIX: ";
-                //break;
-            //case PATTERN_SIMPLE_GLOB:
-                //type = "GLOB: ";
-                //break;
-        //}
-        //return "PatternMatcher{" + type + mPattern + "}";
+        
+        
+        
+            
+                
+                
+            
+                
+                
+            
+                
+                
+        
+        
     }
 
     
@@ -104,23 +106,25 @@ public class PatternMatcher implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2074339528 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2074339528;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.910 -0400", hash_original_method = "ECBD3AB9E3B58368B577D8D9D90A2091", hash_generated_method = "D9046BADE35B9199CDF4595CDCC16D03")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mPattern);
         dest.writeInt(mType);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(mPattern);
-        //dest.writeInt(mType);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean matchPattern(String pattern, String match, int type) {
         if (match == null) return false;
         if (type == PATTERN_LITERAL) {
@@ -218,12 +222,12 @@ public class PatternMatcher implements Parcelable {
             return new PatternMatcher[size];
         }
     };
-    // orphaned legacy method
+    
     public PatternMatcher createFromParcel(Parcel source) {
             return new PatternMatcher(source);
         }
     
-    // orphaned legacy method
+    
     public PatternMatcher[] newArray(int size) {
             return new PatternMatcher[size];
         }

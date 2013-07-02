@@ -1,11 +1,11 @@
 package java.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -70,7 +70,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.555 -0400", hash_original_method = "91524EB1B511A6593A9E4C16AA4F2798", hash_generated_method = "56C5B7DBED39CFE7A5BF60DA4A9A951E")
     public  DecimalFormatSymbols() {
         this(Locale.getDefault());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -95,23 +95,25 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
             currency = Currency.getInstance(locale);
             currencySymbol = currency.getSymbol(locale);
             intlCurrencySymbol = currency.getCurrencyCode();
-        } //End block
+        } 
         catch (IllegalArgumentException e)
         {
             currency = Currency.getInstance("XXX");
             currencySymbol = localeData.currencySymbol;
             intlCurrencySymbol = localeData.internationalCurrencySymbol;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DecimalFormatSymbols getInstance() {
         return getInstance(Locale.getDefault());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DecimalFormatSymbols getInstance(Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
@@ -120,34 +122,37 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Locale[] getAvailableLocales() {
         return ICU.getAvailableDecimalFormatSymbolsLocales();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.557 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "BBBC5A4EDB7517CA199D4E34E0FC0FE9")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_547149815 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_547149815 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_547149815 = super.clone();
-        } //End block
+        } 
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_547149815.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_547149815.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_547149815;
-        // ---------- Original Method ----------
-        //try {
-            //return super.clone();
-        //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError(e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.558 -0400", hash_original_method = "B3296A7E858EAC27CB28889E1F7A56D1", hash_generated_method = "60B4826759E9D22C815D5FBD5744504E")
     @Override
     public boolean equals(Object object) {
@@ -170,15 +175,16 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         addTaint(object.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2013454449 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2013454449;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.560 -0400", hash_original_method = "A8625956386363E3EFDBA37B24F1F247", hash_generated_method = "1EF620B9CF261BC1A19C3089F0BC6A06")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2102650073 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2102650073 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2102650073 = getClass().getName() +
                 "[currency=" + currency +
                 ",currencySymbol=" + currencySymbol +
@@ -196,59 +202,59 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
                 ",percent=" + percent +
                 ",zeroDigit=" + zeroDigit +
                 "]";
-        varB4EAC82CA7396A68D541C85D26508E83_2102650073.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2102650073.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2102650073;
-        // ---------- Original Method ----------
-        //return getClass().getName() +
-                //"[currency=" + currency +
-                //",currencySymbol=" + currencySymbol +
-                //",decimalSeparator=" + decimalSeparator +
-                //",digit=" + digit +
-                //",exponentSeparator=" + exponentSeparator +
-                //",groupingSeparator=" + groupingSeparator +
-                //",infinity=" + infinity +
-                //",intlCurrencySymbol=" + intlCurrencySymbol +
-                //",minusSign=" + minusSign +
-                //",monetarySeparator=" + monetarySeparator +
-                //",NaN=" + NaN +
-                //",patternSeparator=" + patternSeparator +
-                //",perMill=" + perMill +
-                //",percent=" + percent +
-                //",zeroDigit=" + zeroDigit +
-                //"]";
+        
+        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.561 -0400", hash_original_method = "595F433D4A540AB9FD57454DFC2D00CA", hash_generated_method = "161B4DAC8B04D836A398F00E21D31B83")
     public Currency getCurrency() {
-        Currency varB4EAC82CA7396A68D541C85D26508E83_158424018 = null; //Variable for return #1
+        Currency varB4EAC82CA7396A68D541C85D26508E83_158424018 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_158424018 = currency;
-        varB4EAC82CA7396A68D541C85D26508E83_158424018.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_158424018.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_158424018;
-        // ---------- Original Method ----------
-        //return currency;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.561 -0400", hash_original_method = "9A7223B2A10801087A5753E160EB5AD9", hash_generated_method = "98ABC964F2C41B499AF19BA3A3A2976E")
     public String getInternationalCurrencySymbol() {
-        String varB4EAC82CA7396A68D541C85D26508E83_662662496 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_662662496 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_662662496 = intlCurrencySymbol;
-        varB4EAC82CA7396A68D541C85D26508E83_662662496.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_662662496.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_662662496;
-        // ---------- Original Method ----------
-        //return intlCurrencySymbol;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.562 -0400", hash_original_method = "44BA6DF186734A9129EE433C5393A649", hash_generated_method = "BAB452F36968053E0E26BE7E31CAE74E")
     public String getCurrencySymbol() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1047879653 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1047879653 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1047879653 = currencySymbol;
-        varB4EAC82CA7396A68D541C85D26508E83_1047879653.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1047879653.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1047879653;
-        // ---------- Original Method ----------
-        //return currencySymbol;
+        
+        
     }
 
     
@@ -256,8 +262,8 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     public char getDecimalSeparator() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_22708522 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_22708522;
-        // ---------- Original Method ----------
-        //return decimalSeparator;
+        
+        
     }
 
     
@@ -265,8 +271,8 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     public char getDigit() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_1385966201 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1385966201;
-        // ---------- Original Method ----------
-        //return digit;
+        
+        
     }
 
     
@@ -274,19 +280,19 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     public char getGroupingSeparator() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_1076797795 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1076797795;
-        // ---------- Original Method ----------
-        //return groupingSeparator;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.563 -0400", hash_original_method = "195513F858098AF1B8C98F122DD853CE", hash_generated_method = "7430C95471777321F3CCEA8668367A13")
     public String getInfinity() {
-        String varB4EAC82CA7396A68D541C85D26508E83_788412296 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_788412296 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_788412296 = infinity;
-        varB4EAC82CA7396A68D541C85D26508E83_788412296.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_788412296.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_788412296;
-        // ---------- Original Method ----------
-        //return infinity;
+        
+        
     }
 
     
@@ -294,8 +300,8 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     public char getMinusSign() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_211133014 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_211133014;
-        // ---------- Original Method ----------
-        //return minusSign;
+        
+        
     }
 
     
@@ -303,19 +309,19 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     public char getMonetaryDecimalSeparator() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_1269208985 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1269208985;
-        // ---------- Original Method ----------
-        //return monetarySeparator;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.563 -0400", hash_original_method = "A7A5B5565C9E586C08E861055D3F830D", hash_generated_method = "893CBCE79885A1B18E074A86722AB949")
     public String getNaN() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1895637939 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1895637939 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1895637939 = NaN;
-        varB4EAC82CA7396A68D541C85D26508E83_1895637939.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1895637939.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1895637939;
-        // ---------- Original Method ----------
-        //return NaN;
+        
+        
     }
 
     
@@ -323,8 +329,8 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     public char getPatternSeparator() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_1353945212 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1353945212;
-        // ---------- Original Method ----------
-        //return patternSeparator;
+        
+        
     }
 
     
@@ -332,8 +338,8 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     public char getPercent() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_427130503 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_427130503;
-        // ---------- Original Method ----------
-        //return percent;
+        
+        
     }
 
     
@@ -341,8 +347,8 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     public char getPerMill() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_809002115 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_809002115;
-        // ---------- Original Method ----------
-        //return perMill;
+        
+        
     }
 
     
@@ -350,22 +356,23 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     public char getZeroDigit() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_1272175217 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1272175217;
-        // ---------- Original Method ----------
-        //return zeroDigit;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.564 -0400", hash_original_method = "819A49232B9C4BF84239DF8CB1CAA3C1", hash_generated_method = "95C8202A9DD804391F5F0C560557286C")
     public String getExponentSeparator() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1732979443 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1732979443 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1732979443 = exponentSeparator;
-        varB4EAC82CA7396A68D541C85D26508E83_1732979443.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1732979443.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1732979443;
-        // ---------- Original Method ----------
-        //return exponentSeparator;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.565 -0400", hash_original_method = "730AF15AAE06AD4A292A18D5EB73C960", hash_generated_method = "4E6BEE8386A510B6B1681AAA1CDF005F")
     @Override
     public int hashCode() {
@@ -386,195 +393,199 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         result = 31*result + intlCurrencySymbol.hashCode();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1610841959 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1610841959;
-        // ---------- Original Method ----------
-        //int result = 17;
-        //result = 31*result + zeroDigit;
-        //result = 31*result + digit;
-        //result = 31*result + decimalSeparator;
-        //result = 31*result + groupingSeparator;
-        //result = 31*result + patternSeparator;
-        //result = 31*result + percent;
-        //result = 31*result + perMill;
-        //result = 31*result + monetarySeparator;
-        //result = 31*result + minusSign;
-        //result = 31*result + exponentSeparator.hashCode();
-        //result = 31*result + infinity.hashCode();
-        //result = 31*result + NaN.hashCode();
-        //result = 31*result + currencySymbol.hashCode();
-        //result = 31*result + intlCurrencySymbol.hashCode();
-        //return result;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.566 -0400", hash_original_method = "92D5537D8B3843A17694170BBEA5586B", hash_generated_method = "6B8EEED2B17092FFB0A922029CAD848C")
     public void setCurrency(Currency currency) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         this.currency = currency;
         intlCurrencySymbol = currency.getCurrencyCode();
         currencySymbol = currency.getSymbol(locale);
-        // ---------- Original Method ----------
-        //if (currency == null) {
-            //throw new NullPointerException();
-        //}
-        //if (currency == this.currency) {
-            //return;
-        //}
-        //this.currency = currency;
-        //intlCurrencySymbol = currency.getCurrencyCode();
-        //currencySymbol = currency.getSymbol(locale);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.567 -0400", hash_original_method = "207176AE532CCEDF88793D675BD5BB7E", hash_generated_method = "E1500A58CD679C22875C7429A84FB03E")
     public void setInternationalCurrencySymbol(String value) {
         {
             currency = null;
             intlCurrencySymbol = null;
-        } //End block
+        } 
         {
             boolean var8EB9949666341D3A42DA12AD2DEE9D4F_1001525815 = (value.equals(intlCurrencySymbol));
-        } //End collapsed parenthetic
+        } 
         try 
         {
             currency = Currency.getInstance(value);
             currencySymbol = currency.getSymbol(locale);
-        } //End block
+        } 
         catch (IllegalArgumentException e)
         {
             currency = null;
-        } //End block
+        } 
         intlCurrencySymbol = value;
-        // ---------- Original Method ----------
-        //if (value == null) {
-            //currency = null;
-            //intlCurrencySymbol = null;
-            //return;
-        //}
-        //if (value.equals(intlCurrencySymbol)) {
-            //return;
-        //}
-        //try {
-            //currency = Currency.getInstance(value);
-            //currencySymbol = currency.getSymbol(locale);
-        //} catch (IllegalArgumentException e) {
-            //currency = null;
-        //}
-        //intlCurrencySymbol = value;
+        
+        
+            
+            
+            
+        
+        
+            
+        
+        
+            
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.567 -0400", hash_original_method = "29E8104D01D46C7E9FE837881A4B811D", hash_generated_method = "A1B254E664FC163A6D6D66EE9051B9E5")
     public void setCurrencySymbol(String value) {
         this.currencySymbol = value;
-        // ---------- Original Method ----------
-        //this.currencySymbol = value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.568 -0400", hash_original_method = "9AC8CCC4F998C35713D40EA8501A574C", hash_generated_method = "4539C6F9693002CBFA4139FAA5A10266")
     public void setDecimalSeparator(char value) {
         this.decimalSeparator = value;
-        // ---------- Original Method ----------
-        //this.decimalSeparator = value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.568 -0400", hash_original_method = "D6FAF1D38DB7E623F52AE4E3C83BC924", hash_generated_method = "7711FAE92BC9F01A058CFEF49755A394")
     public void setDigit(char value) {
         this.digit = value;
-        // ---------- Original Method ----------
-        //this.digit = value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.569 -0400", hash_original_method = "9D270588D20ED0589BF78FE9A748D06B", hash_generated_method = "C292B529EBE5F04DB57AE205EC3B991A")
     public void setGroupingSeparator(char value) {
         this.groupingSeparator = value;
-        // ---------- Original Method ----------
-        //this.groupingSeparator = value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.569 -0400", hash_original_method = "253C85BF9C056E30DB4FF21631672E45", hash_generated_method = "ABF5584BEC1CA4A91D70149ED70C9A27")
     public void setInfinity(String value) {
         this.infinity = value;
-        // ---------- Original Method ----------
-        //this.infinity = value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.570 -0400", hash_original_method = "D3F4D7B2767531D5CB8D7EDFAA19A0F0", hash_generated_method = "97F2E98A9053428A52AC61901D7A6FEA")
     public void setMinusSign(char value) {
         this.minusSign = value;
-        // ---------- Original Method ----------
-        //this.minusSign = value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.570 -0400", hash_original_method = "5DC5988EDD7C3CC1FE974B80FD913370", hash_generated_method = "37C329CB534FCBA848ADC17C5247D834")
     public void setMonetaryDecimalSeparator(char value) {
         this.monetarySeparator = value;
-        // ---------- Original Method ----------
-        //this.monetarySeparator = value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.570 -0400", hash_original_method = "6A48D24176C36753AA1CCB849BDA297D", hash_generated_method = "AA33C8D18B728D340C95D0AD4D935FA8")
     public void setNaN(String value) {
         this.NaN = value;
-        // ---------- Original Method ----------
-        //this.NaN = value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.571 -0400", hash_original_method = "F9CB88FF85D83DD076D59F9C65C2F022", hash_generated_method = "3017D9D53BF3860D543CEE81C7ED5A22")
     public void setPatternSeparator(char value) {
         this.patternSeparator = value;
-        // ---------- Original Method ----------
-        //this.patternSeparator = value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.571 -0400", hash_original_method = "82CC4266781153E2E37AE97635E76BF7", hash_generated_method = "4EDEC5C156FF56FDE2BCE58452EA9BAA")
     public void setPercent(char value) {
         this.percent = value;
-        // ---------- Original Method ----------
-        //this.percent = value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.572 -0400", hash_original_method = "A113C8FE00852B00BE817507D877FFEC", hash_generated_method = "2304401BB8B19A673A86CB5806CCD958")
     public void setPerMill(char value) {
         this.perMill = value;
-        // ---------- Original Method ----------
-        //this.perMill = value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.573 -0400", hash_original_method = "1F31C9A94279CEAA9BC58336D0C15AE7", hash_generated_method = "0DC2F198C5C3860518C6B4FFDAA37AED")
     public void setZeroDigit(char value) {
         this.zeroDigit = value;
-        // ---------- Original Method ----------
-        //this.zeroDigit = value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.575 -0400", hash_original_method = "9B9F6C7BB1C5EA5DED0636F1E4439683", hash_generated_method = "C2D672E8013B5AEA26D251C812D6DB9D")
     public void setExponentSeparator(String value) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         this.exponentSeparator = value;
-        // ---------- Original Method ----------
-        //if (value == null) {
-            //throw new NullPointerException();
-        //}
-        //this.exponentSeparator = value;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.577 -0400", hash_original_method = "AC413B5955CC7818D3CB585AD477DBD8", hash_generated_method = "4FABF4ED87C78CFFC4D7210B9B6457AE")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         ObjectOutputStream.PutField fields = stream.putFields();
@@ -597,11 +608,12 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         fields.put("locale", locale);
         stream.writeFields();
         addTaint(stream.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.579 -0400", hash_original_method = "6B45962B37C777732BB6D07E7138D37B", hash_generated_method = "6C79A344A47431EB15C0FCA14E68C478")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         ObjectInputStream.GetField fields = stream.readFields();
@@ -621,30 +633,30 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         locale = (Locale) fields.get("locale", null);
         {
             setMonetaryDecimalSeparator(getDecimalSeparator());
-        } //End block
+        } 
         {
             setMonetaryDecimalSeparator(fields.get("monetarySeparator", '.'));
-        } //End block
+        } 
         {
             exponentSeparator = "E";
-        } //End block
+        } 
         {
             setExponentSeparator(String.valueOf(fields.get("exponential", 'E')));
-        } //End block
+        } 
         {
             setExponentSeparator((String) fields.get("exponentialSeparator", "E"));
-        } //End block
+        } 
         try 
         {
             currency = Currency.getInstance(intlCurrencySymbol);
-        } //End block
+        } 
         catch (IllegalArgumentException e)
         {
             currency = null;
-        } //End block
+        } 
         addTaint(stream.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

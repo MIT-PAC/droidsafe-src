@@ -1,11 +1,11 @@
 package org.apache.http.impl.conn.tsccm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.ref.WeakReference;
 import java.lang.ref.ReferenceQueue;
@@ -23,26 +23,26 @@ public class BasicPoolEntryRef extends WeakReference<BasicPoolEntry> {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Pool entry must not be null.");
-        } //End block
+        } 
         route = entry.getPlannedRoute();
         addTaint(queue.getTaint());
-        // ---------- Original Method ----------
-        //if (entry == null) {
-            //throw new IllegalArgumentException
-                //("Pool entry must not be null.");
-        //}
-        //route = entry.getPlannedRoute();
+        
+        
+            
+                
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.663 -0400", hash_original_method = "70D653A6C3CCC37B9D27B2DACB554C85", hash_generated_method = "D807CC39FC9692A3D6896EE3E91B1497")
     public final HttpRoute getRoute() {
-        HttpRoute varB4EAC82CA7396A68D541C85D26508E83_964072911 = null; //Variable for return #1
+        HttpRoute varB4EAC82CA7396A68D541C85D26508E83_964072911 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_964072911 = this.route;
-        varB4EAC82CA7396A68D541C85D26508E83_964072911.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_964072911.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_964072911;
-        // ---------- Original Method ----------
-        //return this.route;
+        
+        
     }
 
     

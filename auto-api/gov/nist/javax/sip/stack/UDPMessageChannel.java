@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.stack;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.core.ServerLogger;
@@ -86,15 +86,15 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         mythread.setName("UDPMessageChannelThread");
         mythread.setDaemon(true);
         mythread.start();
-        // ---------- Original Method ----------
-        //super.messageProcessor = messageProcessor;
-        //this.sipStack = stack;
-        //Thread mythread = new Thread(this);
-        //this.myAddress = messageProcessor.getIpAddress().getHostAddress();
-        //this.myPort = messageProcessor.getPort();
-        //mythread.setName("UDPMessageChannelThread");
-        //mythread.setDaemon(true);
-        //mythread.start();
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -110,16 +110,16 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         mythread.setDaemon(true);
         mythread.setName("UDPMessageChannelThread");
         mythread.start();
-        // ---------- Original Method ----------
-        //this.incomingPacket = packet;
-        //super.messageProcessor = messageProcessor;
-        //this.sipStack = stack;
-        //this.myAddress = messageProcessor.getIpAddress().getHostAddress();
-        //this.myPort = messageProcessor.getPort();
-        //Thread mythread = new Thread(this);
-        //mythread.setDaemon(true);
-        //mythread.setName("UDPMessageChannelThread");
-        //mythread.start();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -138,23 +138,24 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
             {
                 this.sipStack.getStackLogger().logDebug("Creating message channel "
                     + targetAddr.getHostAddress() + "/" + port);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //peerAddress = targetAddr;
-        //peerPort = port;
-        //peerProtocol = "UDP";
-        //super.messageProcessor = messageProcessor;
-        //this.myAddress = messageProcessor.getIpAddress().getHostAddress();
-        //this.myPort = messageProcessor.getPort();
-        //this.sipStack = sipStack;
-        //if (sipStack.isLoggingEnabled()) {
-            //this.sipStack.getStackLogger().logDebug("Creating message channel "
-                    //+ targetAddr.getHostAddress() + "/" + port);
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.175 -0400", hash_original_method = "E6EA1046257028C8ED28AF4C13B7A731", hash_generated_method = "F13DB9AABFCA2EFA83118F1A0452C04C")
     public void run() {
         ThreadAuditor.ThreadHandle threadHandle = null;
@@ -162,7 +163,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
             {
                 myParser = new StringMsgParser();
                 myParser.setParseExceptionListener(this);
-            } //End block
+            } 
             DatagramPacket packet;
             {
                 {
@@ -175,39 +176,40 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                                 {
                                     threadHandle = sipStack.getThreadAuditor()
                                         .addCurrentThread();
-                                } //End block
+                                } 
                                 threadHandle.ping();
                                 ((UDPMessageProcessor) messageProcessor).messageQueue
                                     .wait(threadHandle
                                             .getPingIntervalInMillisecs());
-                            } //End block
+                            } 
                             catch (InterruptedException ex)
                             { }
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     packet = (DatagramPacket) ((UDPMessageProcessor) messageProcessor).messageQueue
                             .removeFirst();
-                } //End block
+                } 
                 this.incomingPacket = packet;
-            } //End block
+            } 
             {
                 packet = this.incomingPacket;
-            } //End block
+            } 
             try 
             {
                 processIncomingDataPacket(packet);
-            } //End block
+            } 
             catch (Exception e)
             {
                 sipStack.getStackLogger().logError(
                         "Error while processing incoming UDP packet", e);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.178 -0400", hash_original_method = "2D23A147968127857F47AE9C2F0B0301", hash_generated_method = "E7E556F01D5F5EA30F26433A564178DA")
     private void processIncomingDataPacket(DatagramPacket packet) throws Exception {
         this.peerAddress = packet.getAddress();
@@ -222,15 +224,15 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     .logDebug("UDPMessageChannel: processIncomingDataPacket : peerAddress = "
                             + peerAddress.getHostAddress() + "/"
                             + packet.getPort() + " Length = " + packetLength);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         SIPMessage sipMessage = null;
         try 
         {
             this.receptionTime = System.currentTimeMillis();
             sipMessage = myParser.parseSIPMessage(msgBytes);
             myParser = null;
-        } //End block
+        } 
         catch (ParseException ex)
         {
             myParser = null;
@@ -242,8 +244,8 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     this.sipStack.getStackLogger().logDebug("error message "
                         + ex.getMessage());
                     this.sipStack.getStackLogger().logException(ex);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             String msgString = new String(msgBytes, 0, packetLength);
             {
                 boolean var641C9D2BCF73834F157CB50DF975B192_1008477219 = (!msgString.startsWith("SIP/") && !msgString.startsWith("ACK "));
@@ -256,18 +258,18 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                                 sipStack.getStackLogger().logDebug(
                                 "Sending automatic 400 Bad Request:");
                                 sipStack.getStackLogger().logDebug(badReqRes);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         try 
                         {
                             this.sendMessage(badReqRes.getBytes(), peerAddress,
                                 packet.getPort(), "UDP", false);
-                        } //End block
+                        } 
                         catch (IOException e)
                         {
                             this.sipStack.getStackLogger().logException(e);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         {
                             boolean var2AB968A8303910EE00F810B6DE3410F9_1254694848 = (sipStack.isLoggingEnabled());
@@ -276,19 +278,19 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                                 .getStackLogger()
                                 .logDebug(
                                         "Could not formulate automatic 400 Bad Request");
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_303723775 = (sipStack.isLoggingEnabled());
                 {
                     this.sipStack.getStackLogger().logDebug("Rejecting message !  + Null message parsed.");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var9004E0463DC06B1DD21A25050AF4C311_700972613 = (pingBackRecord.get(packet.getAddress().getHostAddress() + ":" + packet.getPort()) == null);
                 {
@@ -297,9 +299,9 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     ((UDPMessageProcessor)this.messageProcessor).sock.send(keepalive);
                     this.sipStack.getTimer().schedule(new PingBackTimerTask(packet.getAddress().getHostAddress(), 
                             packet.getPort()), 1000);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         ViaList viaList = sipMessage.getViaHeaders();
         {
             boolean var59CC7428458ADFC3199C90345ABEB8AF_800760582 = (sipMessage.getFrom() == null || sipMessage.getTo() == null
@@ -318,10 +320,10 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                         + sipMessage.getCallId() + "CSeq = "
                         + sipMessage.getCSeq() + "Via = "
                         + sipMessage.getViaHeaders());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             Via v = (Via) viaList.getFirst();
             Hop hop = sipStack.addressResolver.resolveAddress(v.getHop());
@@ -340,31 +342,32 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     {
                         v.setParameter(Via.RECEIVED, this.peerAddress
                             .getHostAddress());
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     v.setParameter(Via.RPORT, Integer
                             .toString(this.peerPacketSourcePort));
-                } //End block
-            } //End block
+                } 
+            } 
             catch (java.text.ParseException ex1)
             {
                 InternalErrorHandler.handleException(ex1);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             this.peerPacketSourceAddress = packet.getAddress();
             this.peerPacketSourcePort = packet.getPort();
             this.peerAddress = packet.getAddress();
             this.peerPort = packet.getPort();
             this.peerProtocol = ((Via) viaList.getFirst()).getTransport();
-        } //End block
+        } 
         this.processMessage(sipMessage);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.179 -0400", hash_original_method = "DCEA2882E2241B5A52F15EAA80B8F270", hash_generated_method = "C9ED0166F0E7BC6D8D1230DE3D5B19B9")
     public void processMessage(SIPMessage sipMessage) {
         {
@@ -375,8 +378,8 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     this.sipStack.serverLogger.logMessage(sipMessage, this
                         .getPeerHostPort().toString(), this.getHost() + ":"
                         + this.myPort, false, receptionTime);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             ServerRequestInterface sipServerRequest = sipStack
                     .newSIPServerRequest(sipRequest, this);
             {
@@ -385,18 +388,18 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     {
                         this.sipStack.getStackLogger()
                             .logWarning("Null request interface returned -- dropping request");
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_742469413 = (sipStack.isLoggingEnabled());
                 this.sipStack.getStackLogger().logDebug("About to process "
                         + sipRequest.getFirstLine() + "/" + sipServerRequest);
-            } //End collapsed parenthetic
+            } 
             try 
             {
                 sipServerRequest.processRequest(sipRequest, this);
-            } //End block
+            } 
             finally 
             {
                 {
@@ -405,22 +408,22 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                         boolean varDFD8B605D678E12460F98516E8CB0D44_1030867335 = (!sipServerTx.passToListener());
                         {
                             ((SIPTransaction) sipServerRequest).releaseSem();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_1604197948 = (sipStack.isLoggingEnabled());
                 this.sipStack.getStackLogger().logDebug("Done processing "
                         + sipRequest.getFirstLine() + "/" + sipServerRequest);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             SIPResponse sipResponse = (SIPResponse) sipMessage;
             try 
             {
                 sipResponse.checkHeaders();
-            } //End block
+            } 
             catch (ParseException ex)
             {
                 {
@@ -428,8 +431,8 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     sipStack.getStackLogger()
                             .logError("Dropping Badly formatted response message >>> "
                                     + sipResponse);
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             ServerResponseInterface sipServerResponse = sipStack
                     .newSIPServerResponse(sipResponse, this);
             {
@@ -445,11 +448,11 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                                 sipStack.getStackLogger()
                                     .logError("Dropping response message with invalid tag >>> "
                                             + sipResponse);
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
                     sipServerResponse.processResponse(sipResponse, this);
-                } //End block
+                } 
                 finally 
                 {
                     {
@@ -457,31 +460,32 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                             && !((SIPTransaction) sipServerResponse)
                                     .passToListener());
                         ((SIPTransaction) sipServerResponse).releaseSem();
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             {
                 {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_187175021 = (sipStack.isLoggingEnabled());
                     {
                         this.sipStack.getStackLogger().logDebug("null sipServerResponse!");
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(sipMessage.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.180 -0400", hash_original_method = "148F3D833D327E61A5116C1FE99BCAC0", hash_generated_method = "FFA33AE0FF079A492F3763D0CC76895C")
     public void handleException(ParseException ex, SIPMessage sipMessage,
             Class hdrClass, String header, String message) throws ParseException {
         {
             boolean varADC6B4D22F314E4E23507BEFD4A59D21_1334529949 = (sipStack.isLoggingEnabled());
             this.sipStack.getStackLogger().logException(ex);
-        } //End collapsed parenthetic
+        } 
         {
             boolean varA507267BF4B92BB4BF284B01D1D5F764_1913149767 = ((hdrClass != null)
                 && (hdrClass.equals(From.class) || hdrClass.equals(To.class)
@@ -496,40 +500,41 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     {
                         sipStack.getStackLogger().logError("BAD MESSAGE!");
                         sipStack.getStackLogger().logError(message);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 if (DroidSafeAndroidRuntime.control) throw ex;
-            } //End block
+            } 
             {
                 sipMessage.addUnparsed(header);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(ex.getTaint());
         addTaint(sipMessage.getTaint());
         addTaint(hdrClass.getTaint());
         addTaint(header.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled())
-            //this.sipStack.getStackLogger().logException(ex);
-        //if ((hdrClass != null)
-                //&& (hdrClass.equals(From.class) || hdrClass.equals(To.class)
-                        //|| hdrClass.equals(CSeq.class)
-                        //|| hdrClass.equals(Via.class)
-                        //|| hdrClass.equals(CallID.class)
-                        //|| hdrClass.equals(RequestLine.class) || hdrClass
-                        //.equals(StatusLine.class))) {
-        	//if (sipStack.isLoggingEnabled()) {
-        		//sipStack.getStackLogger().logError("BAD MESSAGE!");
-            	//sipStack.getStackLogger().logError(message);
-        	//}
-            //throw ex;
-        //} else {
-            //sipMessage.addUnparsed(header);
-        //}
+        
+        
+            
+        
+                
+                        
+                        
+                        
+                        
+                        
+        	
+        		
+            	
+        	
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.202 -0400", hash_original_method = "5949601888B92CAB7F6BB9E6373E9083", hash_generated_method = "82CA494D920288D5F34C257C56DFF652")
     public void sendMessage(SIPMessage sipMessage) throws IOException {
         {
@@ -540,13 +545,13 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     ((SIPRequest)sipMessage).getRequestLine() != null);
                     {
                         this.sipStack.getStackLogger().logStackTrace(StackLogger.TRACE_INFO);
-                    } //End block
+                    } 
                     {
                         this.sipStack.getStackLogger().logStackTrace(StackLogger.TRACE_INFO);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         long time = System.currentTimeMillis();
         try 
         {
@@ -569,26 +574,26 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                                 {
                                     boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_1678129685 = (sipStack.isLoggingEnabled());
                                     sipStack.getStackLogger().logDebug("Self routing message");
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             byte[] msg = sipMessage.encodeAsBytes( this.getTransport() );
             sendMessage(msg, peerAddress, peerPort, peerProtocol,
                     sipMessage instanceof SIPRequest);
-        } //End block
+        } 
         catch (IOException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
+        } 
         catch (Exception ex)
         {
             sipStack.getStackLogger().logError("An exception occured while sending message",ex);
             if (DroidSafeAndroidRuntime.control) throw new IOException(
                     "An exception occured while sending message");
-        } //End block
+        } 
         finally 
         {
             {
@@ -597,15 +602,16 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                 {
                     boolean varA725024344C592B5004E395739F1C5C4_102210390 = (sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_DEBUG));
                     sipStack.getStackLogger().logDebug("Sent EMPTY Message");
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(sipMessage.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.203 -0400", hash_original_method = "E29573D85212414C15B5600ED44221C0", hash_generated_method = "671FB46BC7AFAA1F44E44EEEBCD3B960")
     protected void sendMessage(byte[] msg, InetAddress peerAddress,
             int peerPort, boolean reConnect) throws IOException {
@@ -613,18 +619,18 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
             boolean var3BF3C2EA8CA9182E664AB6FE30991BAF_81727636 = (sipStack.isLoggingEnabled() && this.sipStack.isLogStackTraceOnMessageSend());
             {
                 this.sipStack.getStackLogger().logStackTrace(StackLogger.TRACE_INFO);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_188996134 = (sipStack.isLoggingEnabled());
                 {
                     this.sipStack.getStackLogger().logDebug(getClass().getName()
                         + ":sendMessage: Dropping reply!");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             if (DroidSafeAndroidRuntime.control) throw new IOException("Receiver port not set ");
-        } //End block
+        } 
         {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_646488671 = (sipStack.isLoggingEnabled());
@@ -632,9 +638,9 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     this.sipStack.getStackLogger().logDebug("sendMessage " + peerAddress.getHostAddress() + "/"
                         + peerPort + "\n" + "messageSize =  "  + msg.length + " message = " + new String(msg));
                     this.sipStack.getStackLogger().logDebug("*******************\n");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         DatagramPacket reply = new DatagramPacket(msg, msg.length, peerAddress,
                 peerPort);
         try 
@@ -643,31 +649,32 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
             boolean created = false;
             {
                 sock = ((UDPMessageProcessor) messageProcessor).sock;
-            } //End block
+            } 
             {
                 sock = new DatagramSocket();
                 created = true;
-            } //End block
+            } 
             sock.send(reply);
             sock.close();
-        } //End block
+        } 
         catch (IOException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
+        } 
         catch (Exception ex)
         {
             InternalErrorHandler.handleException(ex);
-        } //End block
+        } 
         addTaint(msg[0]);
         addTaint(peerAddress.getTaint());
         addTaint(peerPort);
         addTaint(reConnect);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.204 -0400", hash_original_method = "38908DF8BAD797C5C3B9904DFAB1ABDF", hash_generated_method = "7127A2896922C4D722AC71E630D457B1")
     protected void sendMessage(byte[] msg, InetAddress peerAddress,
             int peerPort, String peerProtocol, boolean retry) throws IOException {
@@ -677,19 +684,19 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                 {
                     this.sipStack.getStackLogger().logDebug(getClass().getName()
                         + ":sendMessage: Dropping reply!");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             if (DroidSafeAndroidRuntime.control) throw new IOException("Receiver port not set ");
-        } //End block
+        } 
         {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_186950395 = (sipStack.isLoggingEnabled());
                 {
                     this.sipStack.getStackLogger().logDebug( ":sendMessage " + peerAddress.getHostAddress() + "/"
                         + peerPort + "\n" + " messageSize = " + msg.length);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean varD90E5EEAD7F10D5D3C85319211A35E0C_930473372 = (peerProtocol.compareToIgnoreCase("UDP") == 0);
             {
@@ -700,30 +707,30 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     DatagramSocket sock;
                     {
                         sock = ((UDPMessageProcessor) messageProcessor).sock;
-                    } //End block
+                    } 
                     {
                         sock = sipStack.getNetworkLayer().createDatagramSocket();
-                    } //End block
+                    } 
                     {
                         boolean varDA2675C4DA71C7DD141330FDB85BC848_1488118435 = (sipStack.isLoggingEnabled());
                         {
                             this.sipStack.getStackLogger().logDebug("sendMessage "
                             + peerAddress.getHostAddress() + "/" + peerPort
                             + "\n" + new String(msg));
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     sock.send(reply);
                     sock.close();
-                } //End block
+                } 
                 catch (IOException ex)
                 {
                     if (DroidSafeAndroidRuntime.control) throw ex;
-                } //End block
+                } 
                 catch (Exception ex)
                 {
                     InternalErrorHandler.handleException(ex);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 Socket outputSocket = sipStack.ioHandler.sendBytes(
                     this.messageProcessor.getIpAddress(), peerAddress,
@@ -731,94 +738,99 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                 OutputStream myOutputStream = outputSocket.getOutputStream();
                 myOutputStream.write(msg, 0, msg.length);
                 myOutputStream.flush();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(msg[0]);
         addTaint(peerAddress.getTaint());
         addTaint(peerPort);
         addTaint(peerProtocol.getTaint());
         addTaint(retry);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.204 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "D15A757F2439A67057432D9923B0CA36")
     public SIPTransactionStack getSIPStack() {
-        SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_1346939470 = null; //Variable for return #1
+        SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_1346939470 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1346939470 = sipStack;
-        varB4EAC82CA7396A68D541C85D26508E83_1346939470.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1346939470.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1346939470;
-        // ---------- Original Method ----------
-        //return sipStack;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.205 -0400", hash_original_method = "B7A5D479C43293000A9EAFE6F93DF6D0", hash_generated_method = "BBE1B1FEDB80D2EBD8ADBE466D21C3E8")
     public String getTransport() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1595420409 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1595420409 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1595420409 = SIPConstants.UDP;
-        varB4EAC82CA7396A68D541C85D26508E83_1595420409.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1595420409.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1595420409;
-        // ---------- Original Method ----------
-        //return SIPConstants.UDP;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.205 -0400", hash_original_method = "EA072AA1AE1B409D48E6BC6990EBDEC5", hash_generated_method = "04A96D73F9A1BFF20BE766A150D62C55")
     public String getHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2069087659 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2069087659 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2069087659 = messageProcessor.getIpAddress().getHostAddress();
-        varB4EAC82CA7396A68D541C85D26508E83_2069087659.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2069087659.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2069087659;
-        // ---------- Original Method ----------
-        //return messageProcessor.getIpAddress().getHostAddress();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.206 -0400", hash_original_method = "891FD85C4A46ECEDCCE8E5933BDC3ADD", hash_generated_method = "B0A5EA7DA76612802DA7364DA1D50F5D")
     public int getPort() {
         int var08018CA200139FEC794EAAFB8EB517CE_598916528 = (((UDPMessageProcessor) messageProcessor).getPort());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_181554240 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_181554240;
-        // ---------- Original Method ----------
-        //return ((UDPMessageProcessor) messageProcessor).getPort();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.206 -0400", hash_original_method = "86CAA293F63DFC3CC87A4ACD6BC27DDA", hash_generated_method = "A680197A96DC95BFE6375CAA2F5DB0A9")
     public String getPeerName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1746449449 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1746449449 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1746449449 = peerAddress.getHostName();
-        varB4EAC82CA7396A68D541C85D26508E83_1746449449.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1746449449.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1746449449;
-        // ---------- Original Method ----------
-        //return peerAddress.getHostName();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.206 -0400", hash_original_method = "A07C7EAAB254DF7A2A64ECDA7F650470", hash_generated_method = "0F2E5D6F8F4109C6278307465D7268DD")
     public String getPeerAddress() {
-        String varB4EAC82CA7396A68D541C85D26508E83_184008532 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_184008532 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_184008532 = peerAddress.getHostAddress();
-        varB4EAC82CA7396A68D541C85D26508E83_184008532.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_184008532.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_184008532;
-        // ---------- Original Method ----------
-        //return peerAddress.getHostAddress();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.207 -0400", hash_original_method = "1F29EC3BC94C3E0863F530FCD37A61F3", hash_generated_method = "646FE009F96DC048404C87E93C7C5F06")
     protected InetAddress getPeerInetAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1065294393 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1065294393 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1065294393 = peerAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_1065294393.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1065294393.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1065294393;
-        // ---------- Original Method ----------
-        //return peerAddress;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.207 -0400", hash_original_method = "3F01B3F60F79E6CB5C3DF3B66FDD88DE", hash_generated_method = "96F3C9970020FA5711A805927D60290B")
     public boolean equals(Object other) {
         boolean retval;
@@ -826,37 +838,38 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
             boolean varE5000AFAE6691EEE0058A00BC83324BD_864942298 = (!this.getClass().equals(other.getClass()));
             {
                 retval = false;
-            } //End block
+            } 
             {
                 UDPMessageChannel that = (UDPMessageChannel) other;
                 retval = this.getKey().equals(that.getKey());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(other.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_35990522 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_35990522;
-        // ---------- Original Method ----------
-        //if (other == null)
-            //return false;
-        //boolean retval;
-        //if (!this.getClass().equals(other.getClass())) {
-            //retval = false;
-        //} else {
-            //UDPMessageChannel that = (UDPMessageChannel) other;
-            //retval = this.getKey().equals(that.getKey());
-        //}
-        //return retval;
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.208 -0400", hash_original_method = "8A0A97143B2090B701AABAA2A97E73FB", hash_generated_method = "94BF2ABF88F9139CFE4CC955CFF99137")
     public String getKey() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1406644245 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1406644245 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1406644245 = getKey(peerAddress, peerPort, "UDP");
-        varB4EAC82CA7396A68D541C85D26508E83_1406644245.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1406644245.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1406644245;
-        // ---------- Original Method ----------
-        //return getKey(peerAddress, peerPort, "UDP");
+        
+        
     }
 
     
@@ -864,30 +877,30 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     public int getPeerPacketSourcePort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_529275511 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_529275511;
-        // ---------- Original Method ----------
-        //return peerPacketSourcePort;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.208 -0400", hash_original_method = "DC065FB3DE06142DBC04F100FD01BCF3", hash_generated_method = "27B8326DF1C71F9E80B08EB3E7EF9D84")
     public InetAddress getPeerPacketSourceAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1210079930 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1210079930 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1210079930 = peerPacketSourceAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_1210079930.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1210079930.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1210079930;
-        // ---------- Original Method ----------
-        //return peerPacketSourceAddress;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.209 -0400", hash_original_method = "B7C8CBECE48532207EA3107C3752BABB", hash_generated_method = "B281B307C37ECAF7EDFF2442E8AC2A00")
     public String getViaHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1549251639 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1549251639 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1549251639 = this.myAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_1549251639.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1549251639.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1549251639;
-        // ---------- Original Method ----------
-        //return this.myAddress;
+        
+        
     }
 
     
@@ -895,8 +908,8 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     public int getViaPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1803576829 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1803576829;
-        // ---------- Original Method ----------
-        //return this.myPort;
+        
+        
     }
 
     
@@ -904,8 +917,8 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     public boolean isReliable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1359349484 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1359349484;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -913,8 +926,8 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     public boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1980457439 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1980457439;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -922,25 +935,25 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     public int getPeerPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1740695797 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1740695797;
-        // ---------- Original Method ----------
-        //return peerPort;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.210 -0400", hash_original_method = "DB79607DA3ACB5FA2D24428DF2713F98", hash_generated_method = "FAB39294323B309808FA1E9AE4F7F768")
     public String getPeerProtocol() {
-        String varB4EAC82CA7396A68D541C85D26508E83_10869145 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_10869145 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_10869145 = this.peerProtocol;
-        varB4EAC82CA7396A68D541C85D26508E83_10869145.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_10869145.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_10869145;
-        // ---------- Original Method ----------
-        //return this.peerProtocol;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.210 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1CF5A5DB4E3FE1187B00A561217E4793")
     public void close() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -957,10 +970,10 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
             this.ipAddress = ipAddress;
             this.port = port;
             pingBackRecord.put(ipAddress + ":" + port, this);
-            // ---------- Original Method ----------
-            //this.ipAddress = ipAddress;
-            //this.port = port;
-            //pingBackRecord.put(ipAddress + ":" + port, this);
+            
+            
+            
+            
         }
 
         
@@ -968,8 +981,8 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         @Override
         public void run() {
             pingBackRecord.remove(ipAddress + ":" + port);
-            // ---------- Original Method ----------
-            //pingBackRecord.remove(ipAddress + ":" + port);
+            
+            
         }
 
         
@@ -979,8 +992,8 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
             int varFAFA3497566668EE5F9BFBDEC9425D0B_1066613968 = ((ipAddress + ":" + port).hashCode());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_311452653 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_311452653;
-            // ---------- Original Method ----------
-            //return (ipAddress + ":" + port).hashCode();
+            
+            
         }
 
         

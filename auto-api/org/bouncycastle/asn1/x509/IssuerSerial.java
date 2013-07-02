@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1EncodableVector;
@@ -34,27 +34,27 @@ public class IssuerSerial extends ASN1Encodable {
             boolean varE66FC7BCB62D6129C3B052068045942B_2042088738 = (seq.size() != 2 && seq.size() != 3);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad sequence size: " + seq.size());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         issuer = GeneralNames.getInstance(seq.getObjectAt(0));
         serial = DERInteger.getInstance(seq.getObjectAt(1));
         {
             boolean varB84C8522B025613859E5A51D2B72F1B8_1363474941 = (seq.size() == 3);
             {
                 issuerUID = DERBitString.getInstance(seq.getObjectAt(2));
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (seq.size() != 2 && seq.size() != 3)
-        //{
-            //throw new IllegalArgumentException("Bad sequence size: " + seq.size());
-        //}
-        //issuer = GeneralNames.getInstance(seq.getObjectAt(0));
-        //serial = DERInteger.getInstance(seq.getObjectAt(1));
-        //if (seq.size() == 3)
-        //{
-            //issuerUID = DERBitString.getInstance(seq.getObjectAt(2));
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -64,9 +64,9 @@ public class IssuerSerial extends ASN1Encodable {
         DERInteger      serial) {
         this.issuer = issuer;
         this.serial = serial;
-        // ---------- Original Method ----------
-        //this.issuer = issuer;
-        //this.serial = serial;
+        
+        
+        
     }
 
     
@@ -93,58 +93,59 @@ public class IssuerSerial extends ASN1Encodable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.870 -0400", hash_original_method = "C6A01CC056B505ECB1961F3D46D5E125", hash_generated_method = "843117B9D90A3F8B4944F4ECDFC45C50")
     public GeneralNames getIssuer() {
-        GeneralNames varB4EAC82CA7396A68D541C85D26508E83_1157029777 = null; //Variable for return #1
+        GeneralNames varB4EAC82CA7396A68D541C85D26508E83_1157029777 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1157029777 = issuer;
-        varB4EAC82CA7396A68D541C85D26508E83_1157029777.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1157029777.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1157029777;
-        // ---------- Original Method ----------
-        //return issuer;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.870 -0400", hash_original_method = "4A26172B3E4E9D1CBD95C0010541030C", hash_generated_method = "27C3E8BE3FF8795E31C2B79B144F4E16")
     public DERInteger getSerial() {
-        DERInteger varB4EAC82CA7396A68D541C85D26508E83_1509612519 = null; //Variable for return #1
+        DERInteger varB4EAC82CA7396A68D541C85D26508E83_1509612519 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1509612519 = serial;
-        varB4EAC82CA7396A68D541C85D26508E83_1509612519.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1509612519.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1509612519;
-        // ---------- Original Method ----------
-        //return serial;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.871 -0400", hash_original_method = "6FC86B4935E8EDEA9326972109BFF43A", hash_generated_method = "F423B0B0034560C73EF76058E6C6F4E5")
     public DERBitString getIssuerUID() {
-        DERBitString varB4EAC82CA7396A68D541C85D26508E83_1793235621 = null; //Variable for return #1
+        DERBitString varB4EAC82CA7396A68D541C85D26508E83_1793235621 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1793235621 = issuerUID;
-        varB4EAC82CA7396A68D541C85D26508E83_1793235621.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1793235621.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1793235621;
-        // ---------- Original Method ----------
-        //return issuerUID;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.871 -0400", hash_original_method = "91432FD7FC59DB0CA5EF9903A7843F73", hash_generated_method = "0FEB7DBB242110CEB4F15123E89BE97D")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_70449689 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_70449689 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(issuer);
         v.add(serial);
         {
             v.add(issuerUID);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_70449689 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_70449689.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_70449689.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_70449689;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(issuer);
-        //v.add(serial);
-        //if (issuerUID != null)
-        //{
-            //v.add(issuerUID);
-        //}
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     

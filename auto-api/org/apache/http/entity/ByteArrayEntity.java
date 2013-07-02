@@ -1,11 +1,11 @@
 package org.apache.http.entity;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -22,13 +22,13 @@ public class ByteArrayEntity extends AbstractHttpEntity implements Cloneable {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Source byte array may not be null");
-        } //End block
+        } 
         this.content = b;
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //throw new IllegalArgumentException("Source byte array may not be null");
-        //}
-        //this.content = b;
+        
+        
+            
+        
+        
     }
 
     
@@ -36,8 +36,8 @@ public class ByteArrayEntity extends AbstractHttpEntity implements Cloneable {
     public boolean isRepeatable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1621118175 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1621118175;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -45,19 +45,20 @@ public class ByteArrayEntity extends AbstractHttpEntity implements Cloneable {
     public long getContentLength() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1013384732 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1013384732;
-        // ---------- Original Method ----------
-        //return this.content.length;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.605 -0400", hash_original_method = "004C3F78EC3F500E7D7F762D94BAEB0E", hash_generated_method = "9D4EBF4B513DAE978AE9DA7DDB28F6F5")
     public InputStream getContent() {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_770313849 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_770313849 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_770313849 = new ByteArrayInputStream(this.content);
-        varB4EAC82CA7396A68D541C85D26508E83_770313849.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_770313849.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_770313849;
-        // ---------- Original Method ----------
-        //return new ByteArrayInputStream(this.content);
+        
+        
     }
 
     
@@ -65,16 +66,16 @@ public class ByteArrayEntity extends AbstractHttpEntity implements Cloneable {
     public void writeTo(final OutputStream outstream) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Output stream may not be null");
-        } //End block
+        } 
         outstream.write(this.content);
         outstream.flush();
         addTaint(outstream.getTaint());
-        // ---------- Original Method ----------
-        //if (outstream == null) {
-            //throw new IllegalArgumentException("Output stream may not be null");
-        //}
-        //outstream.write(this.content);
-        //outstream.flush();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -82,19 +83,20 @@ public class ByteArrayEntity extends AbstractHttpEntity implements Cloneable {
     public boolean isStreaming() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_976707059 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_976707059;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.606 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "698BA0A7E4408D42C8FBEC9C3CDFA2F6")
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_940967635 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_940967635 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_940967635 = super.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_940967635.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_940967635.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_940967635;
-        // ---------- Original Method ----------
-        //return super.clone();
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package com.android.internal.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.ActivityManagerNative;
 import android.app.ApplicationErrorReport;
@@ -30,7 +30,7 @@ public class RuntimeInit {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.687 -0400", hash_original_method = "82505B17DF4892252BD2E987919E8FA9", hash_generated_method = "82505B17DF4892252BD2E987919E8FA9")
     public RuntimeInit ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -63,6 +63,7 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getDefaultUserAgent() {
         StringBuilder result = new StringBuilder(64);
         result.append("Dalvik/");
@@ -87,6 +88,7 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void invokeStaticMain(String className, String[] argv) throws ZygoteInit.MethodAndArgsCaller {
         Class<?> cl;
         try {
@@ -141,12 +143,14 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void wrapperInit(int targetSdkVersion, String[] argv) throws ZygoteInit.MethodAndArgsCaller {
         if (DEBUG) Slog.d(TAG, "RuntimeInit: Starting application from wrapper");
         applicationInit(targetSdkVersion, argv);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void applicationInit(int targetSdkVersion, String[] argv) throws ZygoteInit.MethodAndArgsCaller {
         VMRuntime.getRuntime().setTargetHeapUtilization(0.75f);
         VMRuntime.getRuntime().setTargetSdkVersion(targetSdkVersion);
@@ -161,6 +165,7 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void redirectLogStreams() {
         System.out.close();
         System.setOut(new AndroidPrintStream(Log.INFO, "System.out"));
@@ -187,6 +192,7 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void wtf(String tag, Throwable t) {
         try {
             if (ActivityManagerNative.getDefault().handleApplicationWtf(
@@ -215,7 +221,7 @@ public class RuntimeInit {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.690 -0400", hash_original_method = "DEBC568C3CCF1424A96EDBFCCD0328BF", hash_generated_method = "DEBC568C3CCF1424A96EDBFCCD0328BF")
         public UncaughtHandler ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -226,18 +232,18 @@ public class RuntimeInit {
                 mCrashing = true;
                 ActivityManagerNative.getDefault().handleApplicationCrash(
                         mApplicationObject, new ApplicationErrorReport.CrashInfo(e));
-            } //End block
+            } 
             catch (Throwable t2)
             { }
             finally 
             {
                 Process.killProcess(Process.myPid());
                 System.exit(10);
-            } //End block
+            } 
             addTaint(t.getTaint());
             addTaint(e.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -257,8 +263,8 @@ public class RuntimeInit {
           Arguments(String args[]) throws IllegalArgumentException {
             parseArgs(args);
             addTaint(args[0].getTaint());
-            // ---------- Original Method ----------
-            //parseArgs(args);
+            
+            
         }
 
         
@@ -271,32 +277,32 @@ public class RuntimeInit {
                     boolean var566DD555814D764ED9A29C42F8874316_500793130 = (arg.equals("--"));
                     {
                         boolean var8DF5AAC12FA4329A4CC6BF5AA3E9BEE4_998900230 = (!arg.startsWith("--"));
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Missing classname argument to RuntimeInit!");
-            } //End block
+            } 
             startClass = args[curArg++];
             startArgs = new String[args.length - curArg];
             System.arraycopy(args, curArg, startArgs, 0, startArgs.length);
-            // ---------- Original Method ----------
-            //int curArg = 0;
-            //for (; curArg < args.length; curArg++) {
-                //String arg = args[curArg];
-                //if (arg.equals("--")) {
-                    //curArg++;
-                    //break;
-                //} else if (!arg.startsWith("--")) {
-                    //break;
-                //}
-            //}
-            //if (curArg == args.length) {
-                //throw new IllegalArgumentException("Missing classname argument to RuntimeInit!");
-            //}
-            //startClass = args[curArg++];
-            //startArgs = new String[args.length - curArg];
-            //System.arraycopy(args, curArg, startArgs, 0, startArgs.length);
+            
+            
+            
+                
+                
+                    
+                    
+                
+                    
+                
+            
+            
+                
+            
+            
+            
+            
         }
 
         

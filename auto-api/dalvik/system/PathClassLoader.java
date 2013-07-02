@@ -1,11 +1,11 @@
 package dalvik.system;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class PathClassLoader extends BaseDexClassLoader {
@@ -15,7 +15,7 @@ public class PathClassLoader extends BaseDexClassLoader {
         super(dexPath, null, null, parent);
         addTaint(dexPath.getTaint());
         addTaint(parent.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class PathClassLoader extends BaseDexClassLoader {
         addTaint(dexPath.getTaint());
         addTaint(libraryPath.getTaint());
         addTaint(parent.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcelable;
 import android.os.Parcel;
@@ -25,33 +25,34 @@ public final class Entity {
     public void Entity(ContentValues values) {
         mValues = values;
         mSubValues = new ArrayList<NamedContentValues>();
-        // ---------- Original Method ----------
-        //mValues = values;
-        //mSubValues = new ArrayList<NamedContentValues>();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 15:37:52.294 -0400", hash_original_method = "9F7798ADCC4D95B2412D7A9959C9D6A8", hash_generated_method = "31206EA52D71C2AAE119741FB69AFC90")
     public ContentValues getEntityValues() {
-        ContentValues var0B3F26AA9B0B1F6439612E31660CBF58_1397921823; //For return ordinal 1
+        ContentValues var0B3F26AA9B0B1F6439612E31660CBF58_1397921823; 
         var0B3F26AA9B0B1F6439612E31660CBF58_1397921823 = mValues;
         ContentValues var1E6151782509B2C92750CFF962B742CD_575924772 = var0B3F26AA9B0B1F6439612E31660CBF58_1397921823;
-        var1E6151782509B2C92750CFF962B742CD_575924772.addTaint(getTaint()); //Add taint from parent
+        var1E6151782509B2C92750CFF962B742CD_575924772.addTaint(getTaint()); 
         return var1E6151782509B2C92750CFF962B742CD_575924772;
-        // ---------- Original Method ----------
-        //return mValues;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 15:37:52.300 -0400", hash_original_method = "8F0C435720446C70ACF6C91C6A520904", hash_generated_method = "75C0ED9AD29900EC19C99F879F46FC61")
     public ArrayList<NamedContentValues> getSubValues() {
-        ArrayList<NamedContentValues> var3D9959157E96E1475F221AA7D27AA229_1398072199; //For return ordinal 1
+        ArrayList<NamedContentValues> var3D9959157E96E1475F221AA7D27AA229_1398072199; 
         var3D9959157E96E1475F221AA7D27AA229_1398072199 = mSubValues;
         ArrayList<NamedContentValues> var1E6151782509B2C92750CFF962B742CD_1353465674 = var3D9959157E96E1475F221AA7D27AA229_1398072199;
-        var1E6151782509B2C92750CFF962B742CD_1353465674.addTaint(getTaint()); //Add taint from parent
+        var1E6151782509B2C92750CFF962B742CD_1353465674.addTaint(getTaint()); 
         return var1E6151782509B2C92750CFF962B742CD_1353465674;
-        // ---------- Original Method ----------
-        //return mSubValues;
+        
+        
     }
 
     
@@ -60,14 +61,15 @@ public final class Entity {
         mSubValues.add(new Entity.NamedContentValues(uri, values));
         addTaint(uri.getTaint());
         addTaint(values.getTaint());
-        // ---------- Original Method ----------
-        //mSubValues.add(new Entity.NamedContentValues(uri, values));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 15:38:12.280 -0400", hash_original_method = "2AB28DA05FBE72723F9BBB19B5801CC4", hash_generated_method = "1B8C3E560866DD82693309C96956A944")
     public String toString() {
-        String var514A0BA3FE098DCA8E0FB2C35A4AB3F6_1995672588; //For return ordinal 1
+        String var514A0BA3FE098DCA8E0FB2C35A4AB3F6_1995672588; 
         StringBuilder sb;
         sb = new StringBuilder();
         sb.append("Entity: ").append(getEntityValues());
@@ -78,20 +80,20 @@ public final class Entity {
             {
                 sb.append("\n  ").append(namedValue.uri);
                 sb.append("\n  -> ").append(namedValue.values);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         var514A0BA3FE098DCA8E0FB2C35A4AB3F6_1995672588 = sb.toString();
         String var1E6151782509B2C92750CFF962B742CD_959849163 = var514A0BA3FE098DCA8E0FB2C35A4AB3F6_1995672588;
-        var1E6151782509B2C92750CFF962B742CD_959849163.addTaint(getTaint()); //Add taint from parent
+        var1E6151782509B2C92750CFF962B742CD_959849163.addTaint(getTaint()); 
         return var1E6151782509B2C92750CFF962B742CD_959849163;
-        // ---------- Original Method ----------
-        //final StringBuilder sb = new StringBuilder();
-        //sb.append("Entity: ").append(getEntityValues());
-        //for (Entity.NamedContentValues namedValue : getSubValues()) {
-            //sb.append("\n  ").append(namedValue.uri);
-            //sb.append("\n  -> ").append(namedValue.values);
-        //}
-        //return sb.toString();
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -104,16 +106,16 @@ public final class Entity {
         public ContentValues values;
         
         public NamedContentValues(Uri uri2, ContentValues values2) {
-			// TODO Auto-generated constructor stub
+			
 		}
 
 		@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 15:38:12.285 -0400", hash_original_method = "533825480D51754A83735318617774D9", hash_generated_method = "C8064FBF3B8433C85D625F13DADD73EB")
         public void NamedContentValues(Uri uri, ContentValues values) {
             this.uri = uri;
             this.values = values;
-            // ---------- Original Method ----------
-            //this.uri = uri;
-            //this.values = values;
+            
+            
+            
         }
 
         

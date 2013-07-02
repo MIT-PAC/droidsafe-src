@@ -1,11 +1,11 @@
 package android.nfc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.net.Uri;
 import android.os.Parcel;
@@ -39,7 +39,7 @@ public final class NdefRecord implements Parcelable {
         addTaint(type[0]);
         addTaint(id[0]);
         addTaint(payload[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -47,39 +47,39 @@ public final class NdefRecord implements Parcelable {
       NdefRecord(short tnf, byte[] type, byte[] id, byte[] payload, byte flags) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Illegal null argument");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("TNF out of range " + tnf);
-        } //End block
+        } 
         {
             flags |= FLAG_SR;
-        } //End block
+        } 
         {
             flags |= FLAG_IL;
-        } //End block
+        } 
         mFlags = flags;
         mTnf = tnf;
         mType = type.clone();
         mId = id.clone();
         mPayload = payload.clone();
-        // ---------- Original Method ----------
-        //if ((type == null) || (id == null) || (payload == null)) {
-            //throw new IllegalArgumentException("Illegal null argument");
-        //}
-        //if (tnf < 0 || tnf > 0x07) {
-            //throw new IllegalArgumentException("TNF out of range " + tnf);
-        //}
-        //if(payload.length < 0xFF) {
-            //flags |= FLAG_SR;
-        //}
-        //if(id.length != 0) {
-            //flags |= FLAG_IL;
-        //}
-        //mFlags = flags;
-        //mTnf = tnf;
-        //mType = type.clone();
-        //mId = id.clone();
-        //mPayload = payload.clone();
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -94,18 +94,18 @@ public final class NdefRecord implements Parcelable {
             boolean varC61EB16E3E79362D8FE2544C99C31894_1936712933 = (parseNdefRecord(data) == -1);
             {
                 if (DroidSafeAndroidRuntime.control) throw new FormatException("Error while parsing NDEF record");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(data[0]);
-        // ---------- Original Method ----------
-        //mFlags = 0;
-        //mTnf = 0;
-        //mType = null;
-        //mId = null;
-        //mPayload = null;
-        //if (parseNdefRecord(data) == -1) {
-            //throw new FormatException("Error while parsing NDEF record");
-        //}
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -113,38 +113,41 @@ public final class NdefRecord implements Parcelable {
     public short getTnf() {
         short var4F09DAA9D95BCB166A302407A0E0BABE_1606068127 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1606068127;
-        // ---------- Original Method ----------
-        //return mTnf;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.068 -0400", hash_original_method = "4BBEB3385EB023476A7C83C1132C6B8B", hash_generated_method = "F0E934FF926B6E714D214CABE0CC9E96")
     public byte[] getType() {
         byte[] var027F80CF393221629AE54D8CAC4C1A97_1229673999 = (mType.clone());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_863274231 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_863274231;
-        // ---------- Original Method ----------
-        //return mType.clone();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.069 -0400", hash_original_method = "9D6A9E4635BF3A5F066D2AADCC504C7A", hash_generated_method = "3C2A29888E462E8D482AA1F85A981357")
     public byte[] getId() {
         byte[] varF397DE17F60BD4CB210D433F2D9ECA6F_184302454 = (mId.clone());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1303351642 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1303351642;
-        // ---------- Original Method ----------
-        //return mId.clone();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.070 -0400", hash_original_method = "1327F8BA6EFB58D178B7F3819A329700", hash_generated_method = "432E71D39CE836286570D207325E83EA")
     public byte[] getPayload() {
         byte[] var0CB1441DE431A65CB70BC3946EBA2304_704466185 = (mPayload.clone());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1837162689 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1837162689;
-        // ---------- Original Method ----------
-        //return mPayload.clone();
+        
+        
     }
 
     
@@ -164,6 +167,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NdefRecord createApplicationRecord(String packageName) {
         return new NdefRecord(TNF_EXTERNAL_TYPE, RTD_ANDROID_APP, new byte[] {},
                 packageName.getBytes(Charsets.US_ASCII));
@@ -175,6 +179,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NdefRecord createUri(String uriString) {
         byte prefix = 0x0;
         for (int i = 1; i < URI_PREFIX_MAP.length; i++) {
@@ -207,13 +212,14 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.071 -0400", hash_original_method = "7310D9773CC55767E043FA59CD9561A6", hash_generated_method = "556FBEA395D069F609E8B7F81D2C224F")
     public byte[] toByteArray() {
         byte[] var37126315458F290BFAFAAC4419CBB989_1362300144 = (generate(mFlags, mTnf, mType, mId, mPayload));
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1476411497 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1476411497;
-        // ---------- Original Method ----------
-        //return generate(mFlags, mTnf, mType, mId, mPayload);
+        
+        
     }
 
     
@@ -221,11 +227,12 @@ public final class NdefRecord implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1368668954 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1368668954;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.072 -0400", hash_original_method = "747D030979ABC5D8CF3744986AE0C078", hash_generated_method = "8BEF9FD272C5AB98102F5A1E4FC3DFEC")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mFlags);
@@ -238,15 +245,15 @@ public final class NdefRecord implements Parcelable {
         dest.writeByteArray(mPayload);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mFlags);
-        //dest.writeInt(mTnf);
-        //dest.writeInt(mType.length);
-        //dest.writeByteArray(mType);
-        //dest.writeInt(mId.length);
-        //dest.writeByteArray(mId);
-        //dest.writeInt(mPayload.length);
-        //dest.writeByteArray(mPayload);
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -389,7 +396,7 @@ public final class NdefRecord implements Parcelable {
             return new NdefRecord[size];
         }
     };
-    // orphaned legacy method
+    
     public NdefRecord createFromParcel(Parcel in) {
             byte flags = (byte)in.readInt();
             short tnf = (short)in.readInt();
@@ -406,7 +413,7 @@ public final class NdefRecord implements Parcelable {
             return new NdefRecord(tnf, type, id, payload, flags);
         }
     
-    // orphaned legacy method
+    
     public NdefRecord[] newArray(int size) {
             return new NdefRecord[size];
         }

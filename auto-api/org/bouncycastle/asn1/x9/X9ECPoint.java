@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x9;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1OctetString;
@@ -23,8 +23,8 @@ public class X9ECPoint extends ASN1Encodable {
     public  X9ECPoint(
         ECPoint p) {
         this.p = p;
-        // ---------- Original Method ----------
-        //this.p = p;
+        
+        
     }
 
     
@@ -33,30 +33,31 @@ public class X9ECPoint extends ASN1Encodable {
         ECCurve          c,
         ASN1OctetString  s) {
         this.p = c.decodePoint(s.getOctets());
-        // ---------- Original Method ----------
-        //this.p = c.decodePoint(s.getOctets());
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.451 -0400", hash_original_method = "D52AE13C55E681838944F7D6A70D7ED5", hash_generated_method = "16BA955F3670ADCC1B4F53F345049465")
     public ECPoint getPoint() {
-        ECPoint varB4EAC82CA7396A68D541C85D26508E83_2088691219 = null; //Variable for return #1
+        ECPoint varB4EAC82CA7396A68D541C85D26508E83_2088691219 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2088691219 = p;
-        varB4EAC82CA7396A68D541C85D26508E83_2088691219.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2088691219.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2088691219;
-        // ---------- Original Method ----------
-        //return p;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.451 -0400", hash_original_method = "C505CC97F230C74832134C935460DD57", hash_generated_method = "5F755713839C3B7623E67FF2EA70507C")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1447420540 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1447420540 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1447420540 = new DEROctetString(p.getEncoded());
-        varB4EAC82CA7396A68D541C85D26508E83_1447420540.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1447420540.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1447420540;
-        // ---------- Original Method ----------
-        //return new DEROctetString(p.getEncoded());
+        
+        
     }
 
     

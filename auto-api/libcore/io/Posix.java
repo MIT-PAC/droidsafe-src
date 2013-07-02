@@ -1,11 +1,11 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileDescriptor;
 import java.net.InetAddress;
@@ -22,7 +22,7 @@ public final class Posix implements Os {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.381 -0400", hash_original_method = "4046CDE00BB837810E8AFBFF17A6CE8F", hash_generated_method = "05221F2C631AA96E1462A4F7CC11A1BC")
       Posix() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -257,7 +257,7 @@ public final class Posix implements Os {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.388 -0400", hash_original_method = "FEC6121EA2A897FBB99121F96B439FBB", hash_generated_method = "F60821EF1BF0B8831D7AAFEE843DD949")
     public StructLinger getsockoptLinger(FileDescriptor fd, int level, int option) throws ErrnoException {
     	StructLinger sl = new StructLinger(DSUtils.UNKNOWN_INT,DSUtils.UNKNOWN_INT);
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+        
     	return sl;
     }
 
@@ -406,25 +406,26 @@ public final class Posix implements Os {
             boolean var21D6A43A19BB11FD75F2555CEDDC72D3_398392348 = (buffer.isDirect());
             {
                 int var8E7907A41BEF94A8EBD28CB040D098F0_1868617077 = (preadBytes(fd, buffer, buffer.position(), buffer.remaining(), offset));
-            } //End block
+            } 
             {
                 int var1F069D630372EF5D70684AA69ABBB191_700275951 = (preadBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), offset));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(fd.getTaint());
         addTaint(buffer.getTaint());
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923143411 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923143411;
-        // ---------- Original Method ----------
-        //if (buffer.isDirect()) {
-            //return preadBytes(fd, buffer, buffer.position(), buffer.remaining(), offset);
-        //} else {
-            //return preadBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), offset);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.394 -0400", hash_original_method = "4B8706AF5748B9EE5E9BCCA6FC3C73C0", hash_generated_method = "69B3393150AD94F336A2FAC6A59898B0")
     public int pread(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, long offset) throws ErrnoException {
         int varCF530DD83FC2922F479A426BEFE4CB6B_1540379869 = (preadBytes(fd, bytes, byteOffset, byteCount, offset));
@@ -435,8 +436,8 @@ public final class Posix implements Os {
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_256533973 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_256533973;
-        // ---------- Original Method ----------
-        //return preadBytes(fd, bytes, byteOffset, byteCount, offset);
+        
+        
     }
 
     
@@ -453,25 +454,26 @@ public final class Posix implements Os {
             boolean var21D6A43A19BB11FD75F2555CEDDC72D3_1081178199 = (buffer.isDirect());
             {
                 int var87D5C3FD697C182EDD756D3EFF6529D7_1345757148 = (pwriteBytes(fd, buffer, buffer.position(), buffer.remaining(), offset));
-            } //End block
+            } 
             {
                 int var6DAE9A5C537D89AF40EB6C242AD74611_1295027363 = (pwriteBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), offset));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(fd.getTaint());
         addTaint(buffer.getTaint());
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200246707 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200246707;
-        // ---------- Original Method ----------
-        //if (buffer.isDirect()) {
-            //return pwriteBytes(fd, buffer, buffer.position(), buffer.remaining(), offset);
-        //} else {
-            //return pwriteBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), offset);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.396 -0400", hash_original_method = "364FA462AFF3FCDD2B79B5A0A9405455", hash_generated_method = "32DC50E5C31173461DC0EF0B82AB9E4E")
     public int pwrite(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, long offset) throws ErrnoException {
         int varFC5C8D1266385A06B48EE648ACD7657C_1519203927 = (pwriteBytes(fd, bytes, byteOffset, byteCount, offset));
@@ -482,8 +484,8 @@ public final class Posix implements Os {
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1944877467 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1944877467;
-        // ---------- Original Method ----------
-        //return pwriteBytes(fd, bytes, byteOffset, byteCount, offset);
+        
+        
     }
 
     
@@ -500,24 +502,25 @@ public final class Posix implements Os {
             boolean var21D6A43A19BB11FD75F2555CEDDC72D3_226485712 = (buffer.isDirect());
             {
                 int varD5A85510F41F9F59964F2A7FD9630E4C_1422519489 = (readBytes(fd, buffer, buffer.position(), buffer.remaining()));
-            } //End block
+            } 
             {
                 int varC2696D40F0D039BC87FD96259E5276FD_1437190408 = (readBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining()));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(fd.getTaint());
         addTaint(buffer.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2079404069 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2079404069;
-        // ---------- Original Method ----------
-        //if (buffer.isDirect()) {
-            //return readBytes(fd, buffer, buffer.position(), buffer.remaining());
-        //} else {
-            //return readBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining());
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.398 -0400", hash_original_method = "6168115C79D46336D7C888D619663F88", hash_generated_method = "1FADFD8013CF2A702ACC8D7544EFFF17")
     public int read(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws ErrnoException {
         int varAF7FBEB1A05EE593C49B78D715290282_355486435 = (readBytes(fd, bytes, byteOffset, byteCount));
@@ -527,8 +530,8 @@ public final class Posix implements Os {
         addTaint(byteCount);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1169279883 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1169279883;
-        // ---------- Original Method ----------
-        //return readBytes(fd, bytes, byteOffset, byteCount);
+        
+        
     }
 
     
@@ -552,26 +555,27 @@ public final class Posix implements Os {
             boolean var21D6A43A19BB11FD75F2555CEDDC72D3_1618119416 = (buffer.isDirect());
             {
                 int varF31574244E582FAAC1D4E5A3117CCAD5_288958616 = (recvfromBytes(fd, buffer, buffer.position(), buffer.remaining(), flags, srcAddress));
-            } //End block
+            } 
             {
                 int var754A91E49CCFCF0B12E0E37D924384F6_675940397 = (recvfromBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), flags, srcAddress));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(fd.getTaint());
         addTaint(buffer.getTaint());
         addTaint(flags);
         addTaint(srcAddress.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1231366199 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1231366199;
-        // ---------- Original Method ----------
-        //if (buffer.isDirect()) {
-            //return recvfromBytes(fd, buffer, buffer.position(), buffer.remaining(), flags, srcAddress);
-        //} else {
-            //return recvfromBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), flags, srcAddress);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.399 -0400", hash_original_method = "D6B3FC14ED62FEA7873773B8EF3E6A7B", hash_generated_method = "1A3707B7B05410578EFBF01EA5ACF825")
     public int recvfrom(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetSocketAddress srcAddress) throws ErrnoException {
         int var5C3B514BF02C0C51E1C7926B1634D11C_1549932867 = (recvfromBytes(fd, bytes, byteOffset, byteCount, flags, srcAddress));
@@ -583,8 +587,8 @@ public final class Posix implements Os {
         addTaint(srcAddress.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2023162953 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2023162953;
-        // ---------- Original Method ----------
-        //return recvfromBytes(fd, bytes, byteOffset, byteCount, flags, srcAddress);
+        
+        
     }
 
     
@@ -618,11 +622,11 @@ public final class Posix implements Os {
             boolean var21D6A43A19BB11FD75F2555CEDDC72D3_1978962709 = (buffer.isDirect());
             {
                 int var5E9D1647C6154DCE995D5EEEB1605F7B_1629203414 = (sendtoBytes(fd, buffer, buffer.position(), buffer.remaining(), flags, inetAddress, port));
-            } //End block
+            } 
             {
                 int var454BEDFAD70DADFAA662DB20DF483B42_1425151439 = (sendtoBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), flags, inetAddress, port));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(fd.getTaint());
         addTaint(buffer.getTaint());
         addTaint(flags);
@@ -630,15 +634,16 @@ public final class Posix implements Os {
         addTaint(port);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_847031305 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_847031305;
-        // ---------- Original Method ----------
-        //if (buffer.isDirect()) {
-            //return sendtoBytes(fd, buffer, buffer.position(), buffer.remaining(), flags, inetAddress, port);
-        //} else {
-            //return sendtoBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), flags, inetAddress, port);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.401 -0400", hash_original_method = "23CCF7407B7F91C60BE72C6923799443", hash_generated_method = "AE02F7D0FA6DBE462B43B3E03CDE8CB4")
     public int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws ErrnoException {
         int varE214C015B4D6A01301684BB848AD3BF2_1587178489 = (sendtoBytes(fd, bytes, byteOffset, byteCount, flags, inetAddress, port));
@@ -651,8 +656,8 @@ public final class Posix implements Os {
         addTaint(port);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_301800609 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_301800609;
-        // ---------- Original Method ----------
-        //return sendtoBytes(fd, bytes, byteOffset, byteCount, flags, inetAddress, port);
+        
+        
     }
 
     
@@ -793,24 +798,25 @@ public final class Posix implements Os {
             boolean var21D6A43A19BB11FD75F2555CEDDC72D3_2072866768 = (buffer.isDirect());
             {
                 int var018A5CC680E3A7E1C50076224C8C7605_1302665036 = (writeBytes(fd, buffer, buffer.position(), buffer.remaining()));
-            } //End block
+            } 
             {
                 int var30C5EA943FBFB1242D64083C74DD8D3D_1310905279 = (writeBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining()));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(fd.getTaint());
         addTaint(buffer.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2052004563 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2052004563;
-        // ---------- Original Method ----------
-        //if (buffer.isDirect()) {
-            //return writeBytes(fd, buffer, buffer.position(), buffer.remaining());
-        //} else {
-            //return writeBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining());
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.408 -0400", hash_original_method = "077A8F097DECE8A2C8BBB2583BE2D8BE", hash_generated_method = "9922623F4C095E4D03E0E215009F69D9")
     public int write(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws ErrnoException {
         int var68D561E1E5C78821FF2B2E24F418F392_1006445641 = (writeBytes(fd, bytes, byteOffset, byteCount));
@@ -820,8 +826,8 @@ public final class Posix implements Os {
         addTaint(byteCount);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_793448626 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_793448626;
-        // ---------- Original Method ----------
-        //return writeBytes(fd, bytes, byteOffset, byteCount);
+        
+        
     }
 
     

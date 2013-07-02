@@ -1,11 +1,11 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.charset.Charsets;
 import libcore.util.EmptyArray;
@@ -14,15 +14,17 @@ public final class Base64 {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.807 -0400", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "96F9E0BDD170E9FC5C3951236F2EB54E")
     private  Base64() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decode(byte[] in) {
         return decode(in, in.length);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decode(byte[] in, int len) {
         int length = len / 4 * 3;
         if (length == 0) {
@@ -87,6 +89,7 @@ public final class Base64 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String encode(byte[] in) {
         int length = (in.length + 2) * 4 / 3;
         byte[] out = new byte[length];

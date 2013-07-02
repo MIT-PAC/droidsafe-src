@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcelable;
 import android.os.Parcel;
@@ -37,7 +37,7 @@ public class DhcpInfo implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.622 -0400", hash_original_method = "C1DF7E5F229CB04932AB2C91464EDDF1", hash_generated_method = "529F08EF9721051414135D71EEC80E9A")
     public  DhcpInfo() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -51,23 +51,24 @@ public class DhcpInfo implements Parcelable {
             dns2 = source.dns2;
             serverAddress = source.serverAddress;
             leaseDuration = source.leaseDuration;
-        } //End block
-        // ---------- Original Method ----------
-        //if (source != null) {
-            //ipAddress = source.ipAddress;
-            //gateway = source.gateway;
-            //netmask = source.netmask;
-            //dns1 = source.dns1;
-            //dns2 = source.dns2;
-            //serverAddress = source.serverAddress;
-            //leaseDuration = source.leaseDuration;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.623 -0400", hash_original_method = "8D7B8EC19D16628B2975B72E53B9E8C8", hash_generated_method = "ED4D018BAA1018B4121651C04FD77795")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_680250368 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_680250368 = null; 
         StringBuffer str = new StringBuffer();
         str.append("ipaddr ");
         putAddress(str, ipAddress);
@@ -83,27 +84,28 @@ public class DhcpInfo implements Parcelable {
         putAddress(str, serverAddress);
         str.append(" lease ").append(leaseDuration).append(" seconds");
         varB4EAC82CA7396A68D541C85D26508E83_680250368 = str.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_680250368.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_680250368.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_680250368;
-        // ---------- Original Method ----------
-        //StringBuffer str = new StringBuffer();
-        //str.append("ipaddr ");
-        //putAddress(str, ipAddress);
-        //str.append(" gateway ");
-        //putAddress(str, gateway);
-        //str.append(" netmask ");
-        //putAddress(str, netmask);
-        //str.append(" dns1 ");
-        //putAddress(str, dns1);
-        //str.append(" dns2 ");
-        //putAddress(str, dns2);
-        //str.append(" DHCP server ");
-        //putAddress(str, serverAddress);
-        //str.append(" lease ").append(leaseDuration).append(" seconds");
-        //return str.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void putAddress(StringBuffer buf, int addr) {
         buf.append(NetworkUtils.intToInetAddress(addr).getHostAddress());
     }
@@ -113,11 +115,12 @@ public class DhcpInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1474406725 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1474406725;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.625 -0400", hash_original_method = "EAB5EBBB3C53B9EB39B520A9586CC73F", hash_generated_method = "FE668C08237B83BF82D22B429B0583CA")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(ipAddress);
@@ -129,14 +132,14 @@ public class DhcpInfo implements Parcelable {
         dest.writeInt(leaseDuration);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(ipAddress);
-        //dest.writeInt(gateway);
-        //dest.writeInt(netmask);
-        //dest.writeInt(dns1);
-        //dest.writeInt(dns2);
-        //dest.writeInt(serverAddress);
-        //dest.writeInt(leaseDuration);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -160,7 +163,7 @@ public class DhcpInfo implements Parcelable {
                 return new DhcpInfo[size];
             }
         };
-    // orphaned legacy method
+    
     public DhcpInfo createFromParcel(Parcel in) {
                 DhcpInfo info = new DhcpInfo();
                 info.ipAddress = in.readInt();
@@ -173,7 +176,7 @@ public class DhcpInfo implements Parcelable {
                 return info;
             }
     
-    // orphaned legacy method
+    
     public DhcpInfo[] newArray(int size) {
                 return new DhcpInfo[size];
             }

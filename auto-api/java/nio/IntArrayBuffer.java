@@ -1,11 +1,11 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 abstract class IntArrayBuffer extends IntBuffer {
@@ -20,7 +20,7 @@ abstract class IntArrayBuffer extends IntBuffer {
       IntArrayBuffer(int[] array) {
         this(array.length, array, 0);
         addTaint(array[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,7 +28,7 @@ abstract class IntArrayBuffer extends IntBuffer {
       IntArrayBuffer(int capacity) {
         this(capacity, new int[capacity], 0);
         addTaint(capacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,9 +38,9 @@ abstract class IntArrayBuffer extends IntBuffer {
         this.backingArray = backingArray;
         this.offset = offset;
         addTaint(capacity);
-        // ---------- Original Method ----------
-        //this.backingArray = backingArray;
-        //this.offset = offset;
+        
+        
+        
     }
 
     
@@ -49,14 +49,14 @@ abstract class IntArrayBuffer extends IntBuffer {
     public final int get() {
         {
             if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_499795277 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_499795277;
-        // ---------- Original Method ----------
-        //if (position == limit) {
-            //throw new BufferUnderflowException();
-        //}
-        //return backingArray[offset + position++];
+        
+        
+            
+        
+        
     }
 
     
@@ -67,37 +67,37 @@ abstract class IntArrayBuffer extends IntBuffer {
         addTaint(index);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_895368068 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_895368068;
-        // ---------- Original Method ----------
-        //checkIndex(index);
-        //return backingArray[offset + index];
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.474 -0400", hash_original_method = "CF9BFE676211E932B27B1BA0A79794E4", hash_generated_method = "6455F637C3FE2207BB47B5D23E1CFFAE")
     @Override
     public final IntBuffer get(int[] dst, int dstOffset, int intCount) {
-        IntBuffer varB4EAC82CA7396A68D541C85D26508E83_1391593268 = null; //Variable for return #1
+        IntBuffer varB4EAC82CA7396A68D541C85D26508E83_1391593268 = null; 
         {
             boolean var88D58DBFE8E26BEBC18FDE3265CF76EF_1775194203 = (intCount > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         System.arraycopy(backingArray, offset + position, dst, dstOffset, intCount);
         position += intCount;
         varB4EAC82CA7396A68D541C85D26508E83_1391593268 = this;
         addTaint(dst[0]);
         addTaint(dstOffset);
         addTaint(intCount);
-        varB4EAC82CA7396A68D541C85D26508E83_1391593268.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1391593268.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1391593268;
-        // ---------- Original Method ----------
-        //if (intCount > remaining()) {
-            //throw new BufferUnderflowException();
-        //}
-        //System.arraycopy(backingArray, offset + position, dst, dstOffset, intCount);
-        //position += intCount;
-        //return this;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -106,20 +106,20 @@ abstract class IntArrayBuffer extends IntBuffer {
     public final boolean isDirect() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_201242537 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_201242537;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.475 -0400", hash_original_method = "A08DEC6C777D2C1D29E23F2F39FEA4AD", hash_generated_method = "40484277E926459A63881B5B3CD4A528")
     @Override
     public final ByteOrder order() {
-        ByteOrder varB4EAC82CA7396A68D541C85D26508E83_240733672 = null; //Variable for return #1
+        ByteOrder varB4EAC82CA7396A68D541C85D26508E83_240733672 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_240733672 = ByteOrder.nativeOrder();
-        varB4EAC82CA7396A68D541C85D26508E83_240733672.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_240733672.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_240733672;
-        // ---------- Original Method ----------
-        //return ByteOrder.nativeOrder();
+        
+        
     }
 
     

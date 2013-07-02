@@ -1,11 +1,11 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -27,30 +27,30 @@ public abstract class FileLock {
     protected  FileLock(FileChannel channel, long position, long size, boolean shared) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         this.channel = channel;
         this.position = position;
         this.size = size;
         this.shared = shared;
-        // ---------- Original Method ----------
-        //if (position < 0 || size < 0 || position + size < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //this.channel = channel;
-        //this.position = position;
-        //this.size = size;
-        //this.shared = shared;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.639 -0400", hash_original_method = "51CC76EF226D8C9ED837839CEF3A7EEC", hash_generated_method = "8A03CC959047613AFB2348FC512E2111")
     public final FileChannel channel() {
-        FileChannel varB4EAC82CA7396A68D541C85D26508E83_1618250745 = null; //Variable for return #1
+        FileChannel varB4EAC82CA7396A68D541C85D26508E83_1618250745 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1618250745 = channel;
-        varB4EAC82CA7396A68D541C85D26508E83_1618250745.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1618250745.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1618250745;
-        // ---------- Original Method ----------
-        //return channel;
+        
+        
     }
 
     
@@ -58,8 +58,8 @@ public abstract class FileLock {
     public final long position() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1145208767 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1145208767;
-        // ---------- Original Method ----------
-        //return position;
+        
+        
     }
 
     
@@ -67,8 +67,8 @@ public abstract class FileLock {
     public final long size() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1216956136 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1216956136;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
@@ -76,8 +76,8 @@ public abstract class FileLock {
     public final boolean isShared() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_528917161 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_528917161;
-        // ---------- Original Method ----------
-        //return shared;
+        
+        
     }
 
     
@@ -89,13 +89,13 @@ public abstract class FileLock {
         addTaint(length);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1087565272 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1087565272;
-        // ---------- Original Method ----------
-        //final long end = position + size - 1;
-        //final long newEnd = start + length - 1;
-        //if (end < start || position > newEnd) {
-            //return false;
-        //}
-        //return true;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -108,12 +108,12 @@ public abstract class FileLock {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.640 -0400", hash_original_method = "1F1F0B30DE920C1569E46FCBBEE46A56", hash_generated_method = "D70FD532C896798BCCD65D81C7794A5F")
     @Override
     public final String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_923136628 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_923136628 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_923136628 = "FileLock[position=" + position + ", size=" + size + ", shared=" + shared + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_923136628.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_923136628.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_923136628;
-        // ---------- Original Method ----------
-        //return "FileLock[position=" + position + ", size=" + size + ", shared=" + shared + "]";
+        
+        
     }
 
     

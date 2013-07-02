@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x9;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1EncodableVector;
@@ -46,8 +46,8 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
            || !((DERInteger)seq.getObjectAt(0)).getValue().equals(ONE));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("bad version in X9ECParameters");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         X9Curve x9c = new X9Curve(
                         new X9FieldID((ASN1Sequence)seq.getObjectAt(1)),
                         (ASN1Sequence)seq.getObjectAt(2));
@@ -59,25 +59,25 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
             boolean var137928E29A9DE0EA9CAE203D397A260C_1302497395 = (seq.size() == 6);
             {
                 this.h = ((DERInteger)seq.getObjectAt(5)).getValue();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (!(seq.getObjectAt(0) instanceof DERInteger)
-           //|| !((DERInteger)seq.getObjectAt(0)).getValue().equals(ONE))
-        //{
-            //throw new IllegalArgumentException("bad version in X9ECParameters");
-        //}
-        //X9Curve     x9c = new X9Curve(
-                        //new X9FieldID((ASN1Sequence)seq.getObjectAt(1)),
-                        //(ASN1Sequence)seq.getObjectAt(2));
-        //this.curve = x9c.getCurve();
-        //this.g = new X9ECPoint(curve, (ASN1OctetString)seq.getObjectAt(3)).getPoint();
-        //this.n = ((DERInteger)seq.getObjectAt(4)).getValue();
-        //this.seed = x9c.getSeed();
-        //if (seq.size() == 6)
-        //{
-            //this.h = ((DERInteger)seq.getObjectAt(5)).getValue();
-        //}
+            } 
+        } 
+        
+        
+           
+        
+            
+        
+        
+                        
+                        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -90,7 +90,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
         addTaint(curve.getTaint());
         addTaint(g.getTaint());
         addTaint(n.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -105,7 +105,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
         addTaint(g.getTaint());
         addTaint(n.getTaint());
         addTaint(h.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -123,94 +123,94 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
         this.seed = seed;
         {
             this.fieldID = new X9FieldID(((ECCurve.Fp)curve).getQ());
-        } //End block
+        } 
         {
             {
                 ECCurve.F2m curveF2m = (ECCurve.F2m)curve;
                 this.fieldID = new X9FieldID(curveF2m.getM(), curveF2m.getK1(),
                     curveF2m.getK2(), curveF2m.getK3());
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //this.curve = curve;
-        //this.g = g;
-        //this.n = n;
-        //this.h = h;
-        //this.seed = seed;
-        //if (curve instanceof ECCurve.Fp)
-        //{
-            //this.fieldID = new X9FieldID(((ECCurve.Fp)curve).getQ());
-        //}
-        //else
-        //{
-            //if (curve instanceof ECCurve.F2m)
-            //{
-                //ECCurve.F2m curveF2m = (ECCurve.F2m)curve;
-                //this.fieldID = new X9FieldID(curveF2m.getM(), curveF2m.getK1(),
-                    //curveF2m.getK2(), curveF2m.getK3());
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+                
+                    
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.435 -0400", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "37E1216193B105FD71664655DD8DCB65")
     public ECCurve getCurve() {
-        ECCurve varB4EAC82CA7396A68D541C85D26508E83_1634885025 = null; //Variable for return #1
+        ECCurve varB4EAC82CA7396A68D541C85D26508E83_1634885025 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1634885025 = curve;
-        varB4EAC82CA7396A68D541C85D26508E83_1634885025.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1634885025.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1634885025;
-        // ---------- Original Method ----------
-        //return curve;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.435 -0400", hash_original_method = "F49644298FFD38F2CFD5B0D378F29102", hash_generated_method = "50335F5D02028625DC0E2CD5953882F2")
     public ECPoint getG() {
-        ECPoint varB4EAC82CA7396A68D541C85D26508E83_698382514 = null; //Variable for return #1
+        ECPoint varB4EAC82CA7396A68D541C85D26508E83_698382514 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_698382514 = g;
-        varB4EAC82CA7396A68D541C85D26508E83_698382514.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_698382514.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_698382514;
-        // ---------- Original Method ----------
-        //return g;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.435 -0400", hash_original_method = "30674A850FAA3528D3976F32A0E4EE43", hash_generated_method = "07ED9D64183108635E070AA5AA9BB3AD")
     public BigInteger getN() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1664045136 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1664045136 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1664045136 = n;
-        varB4EAC82CA7396A68D541C85D26508E83_1664045136.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1664045136.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1664045136;
-        // ---------- Original Method ----------
-        //return n;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.436 -0400", hash_original_method = "9DE3987FDD4335D5C0BE76F667E07DA1", hash_generated_method = "93FA0D40577CAFBBD6049C243F20592A")
     public BigInteger getH() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_329065643 = null; //Variable for return #1
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1984779527 = null; //Variable for return #2
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_329065643 = null; 
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1984779527 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_329065643 = ONE;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1984779527 = h;
-        BigInteger varA7E53CE21691AB073D9660D615818899_1782200563; //Final return value
+        BigInteger varA7E53CE21691AB073D9660D615818899_1782200563; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1782200563 = varB4EAC82CA7396A68D541C85D26508E83_329065643;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1782200563 = varB4EAC82CA7396A68D541C85D26508E83_1984779527;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1782200563.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1782200563.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1782200563;
-        // ---------- Original Method ----------
-        //if (h == null)
-        //{
-            //return ONE;        
-        //}
-        //return h;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -218,14 +218,15 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
     public byte[] getSeed() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1478852809 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1478852809;
-        // ---------- Original Method ----------
-        //return seed;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.437 -0400", hash_original_method = "8FEF0683FB02574D7DCECBAD72741893", hash_generated_method = "122D2A57BD48752E6B9E7FE7612F135A")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_2064533938 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_2064533938 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(new DERInteger(1));
         v.add(fieldID);
@@ -234,22 +235,22 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
         v.add(new DERInteger(n));
         {
             v.add(new DERInteger(h));
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2064533938 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_2064533938.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2064533938.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2064533938;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector v = new ASN1EncodableVector();
-        //v.add(new DERInteger(1));
-        //v.add(fieldID);
-        //v.add(new X9Curve(curve, seed));
-        //v.add(new X9ECPoint(g));
-        //v.add(new DERInteger(n));
-        //if (h != null)
-        //{
-            //v.add(new DERInteger(h));
-        //}
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     

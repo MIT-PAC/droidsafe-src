@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.address.GenericURI;
 import gov.nist.javax.sip.header.AlertInfo;
@@ -20,7 +20,7 @@ public class AlertInfoParser extends ParametersParser {
     public  AlertInfoParser(String alertInfo) {
         super(alertInfo);
         addTaint(alertInfo.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,13 +28,14 @@ public class AlertInfoParser extends ParametersParser {
     protected  AlertInfoParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.711 -0400", hash_original_method = "01178CDB4B591AEEFEAB9C463FFB7ADD", hash_generated_method = "16D56FF2C10ED5954363F97E92BDFF9C")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_940357106 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_940357106 = null; 
         dbg_enter("AlertInfoParser.parse");
         AlertInfoList list = new AlertInfoList();
         try 
@@ -57,12 +58,12 @@ public class AlertInfoParser extends ParametersParser {
                                 uri = urlParser.uriReference( true );
                                 alertInfo.setAlertInfo(uri);
                                 this.lexer.match('>');
-                            } //End block
+                            } 
                             {
                                 String alertInfoStr = this.lexer.byteStringNoSemicolon();
                                 alertInfo.setAlertInfo(alertInfoStr);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         this.lexer.SPorHT();
                         super.parse(alertInfo);
                         list.add(alertInfo);
@@ -70,21 +71,21 @@ public class AlertInfoParser extends ParametersParser {
                             boolean var9AE54EB6EBAEA27AE99856C2C81EF714_1026434295 = (lexer.lookAhead(0) == ',');
                             {
                                 this.lexer.match(',');
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_940357106 = list;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("AlertInfoParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_940357106.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_940357106.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_940357106;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

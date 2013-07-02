@@ -1,11 +1,11 @@
 package android.support.v4.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -71,7 +71,7 @@ public class PagerTabStrip extends PagerTitleStrip {
     public  PagerTabStrip(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -96,11 +96,11 @@ public class PagerTabStrip extends PagerTitleStrip {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.682 -0400", hash_original_method = "91A02AD3B25B1F5EE15DA116FF083943", hash_generated_method = "21DA5E987155EF2714C07D5188B5FA0A")
             @Override
             public void onClick(View v) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 mPager.setCurrentItem(mPager.getCurrentItem() - 1);
                 addTaint(v.getTaint());
-                // ---------- Original Method ----------
-                //mPager.setCurrentItem(mPager.getCurrentItem() - 1);
+                
+                
             }
 });
         mNextText.setFocusable(true);
@@ -108,153 +108,163 @@ public class PagerTabStrip extends PagerTitleStrip {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.684 -0400", hash_original_method = "1076F28AA463C7302B98279A7C9CC4FD", hash_generated_method = "2DFCA2237CB9015C7B4996917F3FE24E")
             @Override
             public void onClick(View v) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 mPager.setCurrentItem(mPager.getCurrentItem() + 1);
                 addTaint(v.getTaint());
-                // ---------- Original Method ----------
-                //mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+                
+                
             }
 });
         {
             boolean varF9737FBB3FA84CB9364E87D929DD087B_820159749 = (getBackground() == null);
             {
                 mDrawFullUnderline = true;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.688 -0400", hash_original_method = "416E053D9953A7DFD58ABDC9A59B40AE", hash_generated_method = "E762FAB0C214B35E9EF7049B9ABC2789")
     public void setTabIndicatorColor(int color) {
         mIndicatorColor = color;
         mTabPaint.setColor(mIndicatorColor);
         invalidate();
-        // ---------- Original Method ----------
-        //mIndicatorColor = color;
-        //mTabPaint.setColor(mIndicatorColor);
-        //invalidate();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.689 -0400", hash_original_method = "E9D022FF51B83B7CA06819055EF3F1EA", hash_generated_method = "4D2753591BD3793889C754B35B6A3736")
     public void setTabIndicatorColorResource(int resId) {
         setTabIndicatorColor(getContext().getResources().getColor(resId));
         addTaint(resId);
-        // ---------- Original Method ----------
-        //setTabIndicatorColor(getContext().getResources().getColor(resId));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.690 -0400", hash_original_method = "5395C6CBC695BBA3012BD836AEACC5FF", hash_generated_method = "1D07377A9A206193360F8D87C2005759")
     public int getTabIndicatorColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1711409337 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1711409337;
-        // ---------- Original Method ----------
-        //return mIndicatorColor;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.692 -0400", hash_original_method = "476E6AAD455240BE6ECAEEC8CCE45F2E", hash_generated_method = "0D14C2105DE6D834E989AC0CBF8C861F")
     @Override
     public void setPadding(int left, int top, int right, int bottom) {
         {
             bottom = mMinPaddingBottom;
-        } //End block
+        } 
         super.setPadding(left, top, right, bottom);
         addTaint(left);
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        //if (bottom < mMinPaddingBottom) {
-            //bottom = mMinPaddingBottom;
-        //}
-        //super.setPadding(left, top, right, bottom);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.694 -0400", hash_original_method = "9E708A5002235F54A6E83D6CAB6E0AE5", hash_generated_method = "1823AA243F914A450D8DCF0DF97C0351")
     @Override
     public void setTextSpacing(int textSpacing) {
         {
             textSpacing = mMinTextSpacing;
-        } //End block
+        } 
         super.setTextSpacing(textSpacing);
         addTaint(textSpacing);
-        // ---------- Original Method ----------
-        //if (textSpacing < mMinTextSpacing) {
-            //textSpacing = mMinTextSpacing;
-        //}
-        //super.setTextSpacing(textSpacing);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.696 -0400", hash_original_method = "3092862974FBD462F013027A320B043F", hash_generated_method = "53060C41391D639DD360E53208C3CDED")
     @Override
     public void setBackgroundDrawable(Drawable d) {
         super.setBackgroundDrawable(d);
         {
             mDrawFullUnderline = d == null;
-        } //End block
-        // ---------- Original Method ----------
-        //super.setBackgroundDrawable(d);
-        //if (!mDrawFullUnderlineSet) {
-            //mDrawFullUnderline = d == null;
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.697 -0400", hash_original_method = "4DB107C989DD8831950A5E6FC781B7EA", hash_generated_method = "065F1461B769028B58B7F40FFAEA723B")
     @Override
     public void setBackgroundColor(int color) {
         super.setBackgroundColor(color);
         {
             mDrawFullUnderline = (color & 0xFF000000) == 0;
-        } //End block
-        // ---------- Original Method ----------
-        //super.setBackgroundColor(color);
-        //if (!mDrawFullUnderlineSet) {
-            //mDrawFullUnderline = (color & 0xFF000000) == 0;
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.699 -0400", hash_original_method = "3C72ECA005B1B81D90186B2BF9D062C7", hash_generated_method = "992DB01B3ABEAB5A2DADEF80D67760C2")
     @Override
     public void setBackgroundResource(int resId) {
         super.setBackgroundResource(resId);
         {
             mDrawFullUnderline = resId == 0;
-        } //End block
-        // ---------- Original Method ----------
-        //super.setBackgroundResource(resId);
-        //if (!mDrawFullUnderlineSet) {
-            //mDrawFullUnderline = resId == 0;
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.701 -0400", hash_original_method = "45921BB4543CC1DCECCEDCA990B66B64", hash_generated_method = "C8EB7D703FB9B947ED540B473AA41C9B")
     public void setDrawFullUnderline(boolean drawFull) {
         mDrawFullUnderline = drawFull;
         mDrawFullUnderlineSet = true;
         invalidate();
-        // ---------- Original Method ----------
-        //mDrawFullUnderline = drawFull;
-        //mDrawFullUnderlineSet = true;
-        //invalidate();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.702 -0400", hash_original_method = "6FF569EBD79F00CD08226507D1584B29", hash_generated_method = "40AF53F9575BAC58798343213DC55BA6")
     public boolean getDrawFullUnderline() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1707815715 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1707815715;
-        // ---------- Original Method ----------
-        //return mDrawFullUnderline;
+        
+        
     }
 
     
@@ -264,62 +274,64 @@ public class PagerTabStrip extends PagerTitleStrip {
         int var1E21010155EF11871092BB741E668620_1880563353 = (Math.max(super.getMinHeight(), mMinStripHeight));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1086483661 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1086483661;
-        // ---------- Original Method ----------
-        //return Math.max(super.getMinHeight(), mMinStripHeight);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.709 -0400", hash_original_method = "111ACB958C21102733D4E9303B8F60D8", hash_generated_method = "07CF5E8032AC4E45F5AABF38B4BEDD76")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int action = ev.getAction();
         final float x = ev.getX();
         final float y = ev.getY();
-        //Begin case MotionEvent.ACTION_DOWN 
+        
         mInitialMotionX = x;
-        //End case MotionEvent.ACTION_DOWN 
-        //Begin case MotionEvent.ACTION_DOWN 
+        
+        
         mInitialMotionY = y;
-        //End case MotionEvent.ACTION_DOWN 
-        //Begin case MotionEvent.ACTION_DOWN 
+        
+        
         mIgnoreTap = false;
-        //End case MotionEvent.ACTION_DOWN 
-        //Begin case MotionEvent.ACTION_MOVE 
+        
+        
         {
             boolean varF8F51B50BD241264D83941AEC98C7C41_348660545 = (Math.abs(x - mInitialMotionX) > mTouchSlop ||
                         Math.abs(y - mInitialMotionY) > mTouchSlop);
             {
                 mIgnoreTap = true;
-            } //End block
-        } //End collapsed parenthetic
-        //End case MotionEvent.ACTION_MOVE 
-        //Begin case MotionEvent.ACTION_UP 
+            } 
+        } 
+        
+        
         {
             boolean var51EFC17C97713A2111A1674913EE739D_1932792815 = (x < mCurrText.getLeft() - mTabPadding);
             {
                 mPager.setCurrentItem(mPager.getCurrentItem() - 1);
-            } //End block
+            } 
             {
                 boolean var1F7DE6C1D8C4498ADD06C5F59FDC7BC0_1087699328 = (x > mCurrText.getRight() + mTabPadding);
                 {
                     mPager.setCurrentItem(mPager.getCurrentItem() + 1);
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
-        //End case MotionEvent.ACTION_UP 
+                } 
+            } 
+        } 
+        
         addTaint(ev.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1629629422 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1629629422;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.713 -0400", hash_original_method = "1ECCB5A2A13672387CA93C5777A80514", hash_generated_method = "7E91066B7444FD50C253D4C89381E7D6")
     @Override
     protected void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDraw(canvas);
         final int height = getHeight();
         final int bottom = height;
@@ -332,22 +344,22 @@ public class PagerTabStrip extends PagerTitleStrip {
             mTabPaint.setColor(0xFF << 24 | (mIndicatorColor & 0xFFFFFF));
             canvas.drawRect(getPaddingLeft(), height - mFullUnderlineHeight,
                     getWidth() - getPaddingRight(), height, mTabPaint);
-        } //End block
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        //super.onDraw(canvas);
-        //final int height = getHeight();
-        //final int bottom = height;
-        //final int left = mCurrText.getLeft() - mTabPadding;
-        //final int right = mCurrText.getRight() + mTabPadding;
-        //final int top = bottom - mIndicatorHeight;
-        //mTabPaint.setColor(mTabAlpha << 24 | (mIndicatorColor & 0xFFFFFF));
-        //canvas.drawRect(left, top, right, bottom, mTabPaint);
-        //if (mDrawFullUnderline) {
-            //mTabPaint.setColor(0xFF << 24 | (mIndicatorColor & 0xFFFFFF));
-            //canvas.drawRect(getPaddingLeft(), height - mFullUnderlineHeight,
-                    //getWidth() - getPaddingRight(), height, mTabPaint);
-        //}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+                    
+        
     }
 
     
@@ -368,19 +380,19 @@ public class PagerTabStrip extends PagerTitleStrip {
         invalidate(r);
         addTaint(position);
         addTaint(force);
-        // ---------- Original Method ----------
-        //final Rect r = mTempRect;
-        //int bottom = getHeight();
-        //int left = mCurrText.getLeft() - mTabPadding;
-        //int right = mCurrText.getRight() + mTabPadding;
-        //int top = bottom - mIndicatorHeight;
-        //r.set(left, top, right, bottom);
-        //super.updateTextPositions(position, positionOffset, force);
-        //mTabAlpha = (int) (Math.abs(positionOffset - 0.5f) * 2 * 0xFF);
-        //left = mCurrText.getLeft() - mTabPadding;
-        //right = mCurrText.getRight() + mTabPadding;
-        //r.union(left, top, right, bottom);
-        //invalidate(r);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

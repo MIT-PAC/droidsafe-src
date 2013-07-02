@@ -1,18 +1,18 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class SystemProperties {
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.397 -0400", hash_original_method = "2ADA160F039E0597E5E49685589340CB", hash_generated_method = "2ADA160F039E0597E5E49685589340CB")
 	public SystemProperties() {
-		// Synthesized constructor
+		
 	}
 
 	private static String native_get(String key) {
@@ -41,42 +41,48 @@ public class SystemProperties {
 	private static void native_set(String key, String def) {
 	}
 
-	public static String get(String key) {
+	@DSModeled(DSC.SAFE)
+    public static String get(String key) {
 		if (key.length() > PROP_NAME_MAX) {
 			throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);
 		}
 		return native_get(key);
 	}
 
-	public static String get(String key, String def) {
+	@DSModeled(DSC.SAFE)
+    public static String get(String key, String def) {
 		if (key.length() > PROP_NAME_MAX) {
 			throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);
 		}
 		return native_get(key, def);
 	}
 
-	public static int getInt(String key, int def) {
+	@DSModeled(DSC.SAFE)
+    public static int getInt(String key, int def) {
 		if (key.length() > PROP_NAME_MAX) {
 			throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);
 		}
 		return native_get_int(key, def);
 	}
 
-	public static long getLong(String key, long def) {
+	@DSModeled(DSC.SAFE)
+    public static long getLong(String key, long def) {
 		if (key.length() > PROP_NAME_MAX) {
 			throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);
 		}
 		return native_get_long(key, def);
 	}
 
-	public static boolean getBoolean(String key, boolean def) {
+	@DSModeled(DSC.SAFE)
+    public static boolean getBoolean(String key, boolean def) {
 		if (key.length() > PROP_NAME_MAX) {
 			throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);
 		}
 		return native_get_boolean(key, def);
 	}
 
-	public static void set(String key, String val) {
+	@DSModeled(DSC.SAFE)
+    public static void set(String key, String val) {
 		if (key.length() > PROP_NAME_MAX) {
 			throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);
 		}

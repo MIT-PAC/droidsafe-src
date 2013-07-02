@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import android.content.ComponentCallbacks;
@@ -29,72 +29,72 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.222 -0400", hash_original_method = "C931B33981954029459F423E4A87FAC0", hash_generated_method = "7C12002EA4BAD91EC04D0ADCB77C2679")
     public  Application() {
         super(null);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.222 -0400", hash_original_method = "A550D0299CAB894F5185E5356A7BB697", hash_generated_method = "7564C9BAB223A8E7FAC043FBCC648B76")
     public void onCreate() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.223 -0400", hash_original_method = "9A007B9204A4409A01090B4582DB84FC", hash_generated_method = "85299B4BE1512429EABA91F15A3B99D5")
     public void onTerminate() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.223 -0400", hash_original_method = "2D485B4C1AE5E3664AA314F747191250", hash_generated_method = "A04301D4CEA13B4DFB9B3296541BF579")
     public void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         Object[] callbacks = collectComponentCallbacks();
         {
             {
                 int i = 0;
                 {
                     ((ComponentCallbacks)callbacks[i]).onConfigurationChanged(newConfig);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(newConfig.getTaint());
-        // ---------- Original Method ----------
-        //Object[] callbacks = collectComponentCallbacks();
-        //if (callbacks != null) {
-            //for (int i=0; i<callbacks.length; i++) {
-                //((ComponentCallbacks)callbacks[i]).onConfigurationChanged(newConfig);
-            //}
-        //}
+        
+        
+        
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.224 -0400", hash_original_method = "32ED3A67A5037221704DD520024E5B9C", hash_generated_method = "AC14AAE4665DD5890C7F13B38F64CDDC")
     public void onLowMemory() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         Object[] callbacks = collectComponentCallbacks();
         {
             {
                 int i = 0;
                 {
                     ((ComponentCallbacks)callbacks[i]).onLowMemory();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //Object[] callbacks = collectComponentCallbacks();
-        //if (callbacks != null) {
-            //for (int i=0; i<callbacks.length; i++) {
-                //((ComponentCallbacks)callbacks[i]).onLowMemory();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.225 -0400", hash_original_method = "5BCB587BF7423BC0B6C7061FE2EAADB1", hash_generated_method = "BA36F050D2DAE621CB932451F0150C8D")
     public void onTrimMemory(int level) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         Object[] callbacks = collectComponentCallbacks();
         {
             {
@@ -103,35 +103,35 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
                     Object c = callbacks[i];
                     {
                         ((ComponentCallbacks2)c).onTrimMemory(level);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(level);
-        // ---------- Original Method ----------
-        //Object[] callbacks = collectComponentCallbacks();
-        //if (callbacks != null) {
-            //for (int i=0; i<callbacks.length; i++) {
-                //Object c = callbacks[i];
-                //if (c instanceof ComponentCallbacks2) {
-                    //((ComponentCallbacks2)c).onTrimMemory(level);
-                //}
-            //}
-        //}
+        
+        
+        
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.226 -0400", hash_original_method = "999C2BA374DE68751A0CA6FB69F492E4", hash_generated_method = "EF724B2C838FF361F99C440ACD2555F9")
     public void registerComponentCallbacks(ComponentCallbacks callback) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         {
             mComponentCallbacks.add(callback);
-        } //End block
+        } 
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mComponentCallbacks) {
-            //mComponentCallbacks.add(callback);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -139,26 +139,26 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
     public void unregisterComponentCallbacks(ComponentCallbacks callback) {
         {
             mComponentCallbacks.remove(callback);
-        } //End block
+        } 
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mComponentCallbacks) {
-            //mComponentCallbacks.remove(callback);
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.227 -0400", hash_original_method = "E08A3F54F3A8B985B7290C2DDF6D4A2E", hash_generated_method = "BE74DED7613000EE89B4ED21A57CA5D1")
     public void registerActivityLifecycleCallbacks(ActivityLifecycleCallbacks callback) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         {
             mActivityLifecycleCallbacks.add(callback);
-        } //End block
+        } 
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mActivityLifecycleCallbacks) {
-            //mActivityLifecycleCallbacks.add(callback);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -166,12 +166,12 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
     public void unregisterActivityLifecycleCallbacks(ActivityLifecycleCallbacks callback) {
         {
             mActivityLifecycleCallbacks.remove(callback);
-        } //End block
+        } 
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mActivityLifecycleCallbacks) {
-            //mActivityLifecycleCallbacks.remove(callback);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -179,9 +179,9 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
     final void attach(Context context) {
         attachBaseContext(context);
         mLoadedApk = ContextImpl.getImpl(context).mPackageInfo;
-        // ---------- Original Method ----------
-        //attachBaseContext(context);
-        //mLoadedApk = ContextImpl.getImpl(context).mPackageInfo;
+        
+        
+        
     }
 
     
@@ -194,19 +194,19 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
                 {
                     ((ActivityLifecycleCallbacks)callbacks[i]).onActivityCreated(activity,
                         savedInstanceState);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(activity.getTaint());
         addTaint(savedInstanceState.getTaint());
-        // ---------- Original Method ----------
-        //Object[] callbacks = collectActivityLifecycleCallbacks();
-        //if (callbacks != null) {
-            //for (int i=0; i<callbacks.length; i++) {
-                //((ActivityLifecycleCallbacks)callbacks[i]).onActivityCreated(activity,
-                        //savedInstanceState);
-            //}
-        //}
+        
+        
+        
+            
+                
+                        
+            
+        
     }
 
     
@@ -218,17 +218,17 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
                 int i = 0;
                 {
                     ((ActivityLifecycleCallbacks)callbacks[i]).onActivityStarted(activity);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(activity.getTaint());
-        // ---------- Original Method ----------
-        //Object[] callbacks = collectActivityLifecycleCallbacks();
-        //if (callbacks != null) {
-            //for (int i=0; i<callbacks.length; i++) {
-                //((ActivityLifecycleCallbacks)callbacks[i]).onActivityStarted(activity);
-            //}
-        //}
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -240,17 +240,17 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
                 int i = 0;
                 {
                     ((ActivityLifecycleCallbacks)callbacks[i]).onActivityResumed(activity);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(activity.getTaint());
-        // ---------- Original Method ----------
-        //Object[] callbacks = collectActivityLifecycleCallbacks();
-        //if (callbacks != null) {
-            //for (int i=0; i<callbacks.length; i++) {
-                //((ActivityLifecycleCallbacks)callbacks[i]).onActivityResumed(activity);
-            //}
-        //}
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -262,17 +262,17 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
                 int i = 0;
                 {
                     ((ActivityLifecycleCallbacks)callbacks[i]).onActivityPaused(activity);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(activity.getTaint());
-        // ---------- Original Method ----------
-        //Object[] callbacks = collectActivityLifecycleCallbacks();
-        //if (callbacks != null) {
-            //for (int i=0; i<callbacks.length; i++) {
-                //((ActivityLifecycleCallbacks)callbacks[i]).onActivityPaused(activity);
-            //}
-        //}
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -284,17 +284,17 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
                 int i = 0;
                 {
                     ((ActivityLifecycleCallbacks)callbacks[i]).onActivityStopped(activity);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(activity.getTaint());
-        // ---------- Original Method ----------
-        //Object[] callbacks = collectActivityLifecycleCallbacks();
-        //if (callbacks != null) {
-            //for (int i=0; i<callbacks.length; i++) {
-                //((ActivityLifecycleCallbacks)callbacks[i]).onActivityStopped(activity);
-            //}
-        //}
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -307,19 +307,19 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
                 {
                     ((ActivityLifecycleCallbacks)callbacks[i]).onActivitySaveInstanceState(activity,
                         outState);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(activity.getTaint());
         addTaint(outState.getTaint());
-        // ---------- Original Method ----------
-        //Object[] callbacks = collectActivityLifecycleCallbacks();
-        //if (callbacks != null) {
-            //for (int i=0; i<callbacks.length; i++) {
-                //((ActivityLifecycleCallbacks)callbacks[i]).onActivitySaveInstanceState(activity,
-                        //outState);
-            //}
-        //}
+        
+        
+        
+            
+                
+                        
+            
+        
     }
 
     
@@ -331,69 +331,69 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
                 int i = 0;
                 {
                     ((ActivityLifecycleCallbacks)callbacks[i]).onActivityDestroyed(activity);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(activity.getTaint());
-        // ---------- Original Method ----------
-        //Object[] callbacks = collectActivityLifecycleCallbacks();
-        //if (callbacks != null) {
-            //for (int i=0; i<callbacks.length; i++) {
-                //((ActivityLifecycleCallbacks)callbacks[i]).onActivityDestroyed(activity);
-            //}
-        //}
+        
+        
+        
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.236 -0400", hash_original_method = "324DD85B066E69EB73C73FA0F3E95B35", hash_generated_method = "17F6ED6D17B4C31FFB59BB7713025F87")
     private Object[] collectComponentCallbacks() {
-        Object[] varB4EAC82CA7396A68D541C85D26508E83_1048000470 = null; //Variable for return #1
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_1048000470 = null; 
         Object[] callbacks = null;
         {
             {
                 boolean var38B7DE3DF372203432B684A53F5381FC_925431375 = (mComponentCallbacks.size() > 0);
                 {
                     callbacks = mComponentCallbacks.toArray();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1048000470 = callbacks;
-        varB4EAC82CA7396A68D541C85D26508E83_1048000470.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1048000470.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1048000470;
-        // ---------- Original Method ----------
-        //Object[] callbacks = null;
-        //synchronized (mComponentCallbacks) {
-            //if (mComponentCallbacks.size() > 0) {
-                //callbacks = mComponentCallbacks.toArray();
-            //}
-        //}
-        //return callbacks;
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.237 -0400", hash_original_method = "8B856F104DA3FA2F4A1E951FC948DC43", hash_generated_method = "7C44074417F30F7055DEBED778FD43FE")
     private Object[] collectActivityLifecycleCallbacks() {
-        Object[] varB4EAC82CA7396A68D541C85D26508E83_1768097856 = null; //Variable for return #1
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_1768097856 = null; 
         Object[] callbacks = null;
         {
             {
                 boolean var288CD92E0C2C3B5BCA99A537DCE8A614_603123728 = (mActivityLifecycleCallbacks.size() > 0);
                 {
                     callbacks = mActivityLifecycleCallbacks.toArray();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1768097856 = callbacks;
-        varB4EAC82CA7396A68D541C85D26508E83_1768097856.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1768097856.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1768097856;
-        // ---------- Original Method ----------
-        //Object[] callbacks = null;
-        //synchronized (mActivityLifecycleCallbacks) {
-            //if (mActivityLifecycleCallbacks.size() > 0) {
-                //callbacks = mActivityLifecycleCallbacks.toArray();
-            //}
-        //}
-        //return callbacks;
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     

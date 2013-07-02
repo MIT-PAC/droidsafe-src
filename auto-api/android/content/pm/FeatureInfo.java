@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -24,7 +24,7 @@ public class FeatureInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.152 -0400", hash_original_method = "41B0CF3D831DF05554CAE06DC339C2C3", hash_generated_method = "28CCD5FE48E24B28094FDFB6399BB826")
     public  FeatureInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,10 +33,10 @@ public class FeatureInfo implements Parcelable {
         name = orig.name;
         reqGlEsVersion = orig.reqGlEsVersion;
         flags = orig.flags;
-        // ---------- Original Method ----------
-        //name = orig.name;
-        //reqGlEsVersion = orig.reqGlEsVersion;
-        //flags = orig.flags;
+        
+        
+        
+        
     }
 
     
@@ -45,50 +45,51 @@ public class FeatureInfo implements Parcelable {
         name = source.readString();
         reqGlEsVersion = source.readInt();
         flags = source.readInt();
-        // ---------- Original Method ----------
-        //name = source.readString();
-        //reqGlEsVersion = source.readInt();
-        //flags = source.readInt();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.154 -0400", hash_original_method = "CEFF2831199A05D6B9B0449BE07C0CC4", hash_generated_method = "4A19D8013168A5EB51A09643D4A25527")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1266155043 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1068028034 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1266155043 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1068028034 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1266155043 = "FeatureInfo{"
                     + Integer.toHexString(System.identityHashCode(this))
                     + " " + name + " fl=0x" + Integer.toHexString(flags) + "}";
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1068028034 = "FeatureInfo{"
                     + Integer.toHexString(System.identityHashCode(this))
                     + " glEsVers=" + getGlEsVersion()
                     + " fl=0x" + Integer.toHexString(flags) + "}";
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_1275503265; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1275503265; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1275503265 = varB4EAC82CA7396A68D541C85D26508E83_1266155043;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1275503265 = varB4EAC82CA7396A68D541C85D26508E83_1068028034;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1275503265.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1275503265.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1275503265;
-        // ---------- Original Method ----------
-        //if (name != null) {
-            //return "FeatureInfo{"
-                    //+ Integer.toHexString(System.identityHashCode(this))
-                    //+ " " + name + " fl=0x" + Integer.toHexString(flags) + "}";
-        //} else {
-            //return "FeatureInfo{"
-                    //+ Integer.toHexString(System.identityHashCode(this))
-                    //+ " glEsVers=" + getGlEsVersion()
-                    //+ " fl=0x" + Integer.toHexString(flags) + "}";
-        //}
+        
+        
+            
+                    
+                    
+        
+            
+                    
+                    
+                    
+        
     }
 
     
@@ -96,11 +97,12 @@ public class FeatureInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_644787620 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_644787620;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.155 -0400", hash_original_method = "2C0CF9F313C5756E6D4A273445A14FD5", hash_generated_method = "CAA4B46B6AD3BF78590A5EED174B10E6")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         dest.writeString(name);
@@ -108,25 +110,26 @@ public class FeatureInfo implements Parcelable {
         dest.writeInt(flags);
         addTaint(dest.getTaint());
         addTaint(parcelableFlags);
-        // ---------- Original Method ----------
-        //dest.writeString(name);
-        //dest.writeInt(reqGlEsVersion);
-        //dest.writeInt(flags);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.156 -0400", hash_original_method = "6B16AB9E297007D3C91B331171401C71", hash_generated_method = "14D8653171445ACBEF2B54C283F65120")
     public String getGlEsVersion() {
-        String varB4EAC82CA7396A68D541C85D26508E83_291817220 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_291817220 = null; 
         int major = ((reqGlEsVersion & 0xffff0000) >> 16);
         int minor = reqGlEsVersion & 0x0000ffff;
         varB4EAC82CA7396A68D541C85D26508E83_291817220 = String.valueOf(major)+"."+String.valueOf(minor);
-        varB4EAC82CA7396A68D541C85D26508E83_291817220.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_291817220.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_291817220;
-        // ---------- Original Method ----------
-        //int major = ((reqGlEsVersion & 0xffff0000) >> 16);
-        //int minor = reqGlEsVersion & 0x0000ffff;
-        //return String.valueOf(major)+"."+String.valueOf(minor);
+        
+        
+        
+        
     }
 
     
@@ -147,12 +150,12 @@ public class FeatureInfo implements Parcelable {
             return new FeatureInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public FeatureInfo createFromParcel(Parcel source) {
             return new FeatureInfo(source);
         }
     
-    // orphaned legacy method
+    
     public FeatureInfo[] newArray(int size) {
             return new FeatureInfo[size];
         }

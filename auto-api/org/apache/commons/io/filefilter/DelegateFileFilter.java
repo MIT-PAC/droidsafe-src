@@ -1,11 +1,11 @@
 package org.apache.commons.io.filefilter;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.FileFilter;
@@ -24,15 +24,15 @@ public class DelegateFileFilter extends AbstractFileFilter implements Serializab
     public  DelegateFileFilter(FilenameFilter filter) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The FilenameFilter must not be null");
-        } //End block
+        } 
         this.filenameFilter = filter;
         this.fileFilter = null;
-        // ---------- Original Method ----------
-        //if (filter == null) {
-            //throw new IllegalArgumentException("The FilenameFilter must not be null");
-        //}
-        //this.filenameFilter = filter;
-        //this.fileFilter = null;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -40,74 +40,77 @@ public class DelegateFileFilter extends AbstractFileFilter implements Serializab
     public  DelegateFileFilter(FileFilter filter) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The FileFilter must not be null");
-        } //End block
+        } 
         this.fileFilter = filter;
         this.filenameFilter = null;
-        // ---------- Original Method ----------
-        //if (filter == null) {
-            //throw new IllegalArgumentException("The FileFilter must not be null");
-        //}
-        //this.fileFilter = filter;
-        //this.filenameFilter = null;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.703 -0400", hash_original_method = "66B0B66E42A219E5BE68409D81797981", hash_generated_method = "A8A14AEA005364767C23D3E87B122A67")
     @Override
     public boolean accept(File file) {
         {
             boolean var2B418F20FFEE7D76673E383CB25ACBD3_1020066169 = (fileFilter.accept(file));
-        } //End block
+        } 
         {
             boolean varCDFF85CE41A2DAC29FF41B261822C377_1849738807 = (super.accept(file));
-        } //End block
+        } 
         addTaint(file.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1306503891 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1306503891;
-        // ---------- Original Method ----------
-        //if (fileFilter != null) {
-            //return fileFilter.accept(file);
-        //} else {
-            //return super.accept(file);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.704 -0400", hash_original_method = "49013355B881E412B579D906E9AC6664", hash_generated_method = "A2B4703B3170DFAB4787ABCBF99C3D78")
     @Override
     public boolean accept(File dir, String name) {
         {
             boolean var845564FB8B8D666082E9C4D6C1DC5970_1534066412 = (filenameFilter.accept(dir, name));
-        } //End block
+        } 
         {
             boolean var5E8120C1715727F7D44E792F61CF882A_664345810 = (super.accept(dir, name));
-        } //End block
+        } 
         addTaint(dir.getTaint());
         addTaint(name.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1984137861 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1984137861;
-        // ---------- Original Method ----------
-        //if (filenameFilter != null) {
-            //return filenameFilter.accept(dir, name);
-        //} else {
-            //return super.accept(dir, name);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.707 -0400", hash_original_method = "91D8A9301108FBA1FFC97CB499D3FAE9", hash_generated_method = "26AEB266DD198ACF58D2ECE7851E162F")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1565906693 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1565906693 = null; 
         String delegate;
         delegate = fileFilter.toString();
         delegate = filenameFilter.toString();
         varB4EAC82CA7396A68D541C85D26508E83_1565906693 = super.toString() + "(" + delegate + ")";
-        varB4EAC82CA7396A68D541C85D26508E83_1565906693.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1565906693.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1565906693;
-        // ---------- Original Method ----------
-        //String delegate = fileFilter != null ? fileFilter.toString() : filenameFilter.toString();
-        //return super.toString() + "(" + delegate + ")";
+        
+        
+        
     }
 
     

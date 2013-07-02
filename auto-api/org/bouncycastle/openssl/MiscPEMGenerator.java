@@ -1,11 +1,11 @@
 package org.bouncycastle.openssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -66,8 +66,8 @@ public class MiscPEMGenerator implements PemObjectGenerator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.995 -0400", hash_original_method = "C02D6ACBF889CF35766B7871B784307D", hash_generated_method = "2850ED16A7B9528D560ED52741366F34")
     public  MiscPEMGenerator(Object o) {
         this.obj = o;
-        // ---------- Original Method ----------
-        //this.obj = o;
+        
+        
     }
 
     
@@ -83,12 +83,12 @@ public class MiscPEMGenerator implements PemObjectGenerator {
         this.password = password;
         this.random = random;
         this.provider = provider;
-        // ---------- Original Method ----------
-        //this.obj = obj;
-        //this.algorithm = algorithm;
-        //this.password = password;
-        //this.random = random;
-        //this.provider = provider;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -107,70 +107,71 @@ public class MiscPEMGenerator implements PemObjectGenerator {
             this.provider = Security.getProvider(provider);
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchProviderException("cannot find provider: " + provider);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //this.obj = obj;
-        //this.algorithm = algorithm;
-        //this.password = password;
-        //this.random = random;
-        //if (provider != null)
-        //{
-            //this.provider = Security.getProvider(provider);
-            //if (this.provider == null)
-            //{
-                //throw new NoSuchProviderException("cannot find provider: " + provider);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.998 -0400", hash_original_method = "BB771E0C3864CDE92E08322A05A8C925", hash_generated_method = "F10B018644319F7C1AFCE43E53FDDC93")
     private PemObject createPemObject(Object o) throws IOException {
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_453449152 = null; //Variable for return #1
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_619031605 = null; //Variable for return #2
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_1187530678 = null; //Variable for return #3
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_165482801 = null; //Variable for return #4
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_453449152 = null; 
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_619031605 = null; 
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_1187530678 = null; 
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_165482801 = null; 
         String type;
         byte[] encoding;
         {
             varB4EAC82CA7396A68D541C85D26508E83_453449152 = (PemObject)o;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_619031605 = ((PemObjectGenerator)o).generate();
-        } //End block
+        } 
         {
             type = "CERTIFICATE";
             try 
             {
                 encoding = ((X509Certificate)o).getEncoded();
-            } //End block
+            } 
             catch (CertificateEncodingException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new PemGenerationException("Cannot encode object: " + e.toString());
-            } //End block
-        } //End block
+            } 
+        } 
         {
             type = "X509 CRL";
             try 
             {
                 encoding = ((X509CRL)o).getEncoded();
-            } //End block
+            } 
             catch (CRLException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new PemGenerationException("Cannot encode object: " + e.toString());
-            } //End block
-        } //End block
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1187530678 = createPemObject(((KeyPair)o).getPrivate());
-        } //End block
+        } 
         {
             PrivateKeyInfo info = new PrivateKeyInfo(
                 (ASN1Sequence) ASN1Object.fromByteArray(((Key)o).getEncoded()));
             {
                 type = "RSA PRIVATE KEY";
                 encoding = info.getPrivateKey().getEncoded();
-            } //End block
+            } 
             {
                 type = "DSA PRIVATE KEY";
                 DSAParameter p = DSAParameter.getInstance(info.getAlgorithmId().getParameters());
@@ -184,98 +185,100 @@ public class MiscPEMGenerator implements PemObjectGenerator {
                 v.add(new DERInteger(y));
                 v.add(new DERInteger(x));
                 encoding = new DERSequence(v).getEncoded();
-            } //End block
+            } 
             {
                 boolean var32F95F35AF334BEC5DE8195500E1E92A_1072664020 = (((PrivateKey)o).getAlgorithm().equals("ECDSA"));
                 {
                     type = "EC PRIVATE KEY";
                     encoding = info.getPrivateKey().getEncoded();
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("Cannot identify private key");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             type = "PUBLIC KEY";
             encoding = ((PublicKey)o).getEncoded();
-        } //End block
+        } 
         {
             type = "ATTRIBUTE CERTIFICATE";
             encoding = ((X509V2AttributeCertificate)o).getEncoded();
-        } //End block
+        } 
         {
             type = "CERTIFICATE REQUEST";
             encoding = ((PKCS10CertificationRequest)o).getEncoded();
-        } //End block
+        } 
         {
             type = "PKCS7";
             encoding = ((ContentInfo)o).getEncoded();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new PemGenerationException("unknown object passed - can't encode.");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_165482801 = new PemObject(type, encoding);
         addTaint(o.getTaint());
-        PemObject varA7E53CE21691AB073D9660D615818899_538579244; //Final return value
+        PemObject varA7E53CE21691AB073D9660D615818899_538579244; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_538579244 = varB4EAC82CA7396A68D541C85D26508E83_453449152;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_538579244 = varB4EAC82CA7396A68D541C85D26508E83_619031605;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_538579244 = varB4EAC82CA7396A68D541C85D26508E83_1187530678;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_538579244 = varB4EAC82CA7396A68D541C85D26508E83_165482801;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_538579244.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_538579244.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_538579244;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.000 -0400", hash_original_method = "DE836D95AE95CC4B16EC27C37C4EBA2F", hash_generated_method = "D4983773D80B6B21ECB2AD53A3DA322F")
     private String getHexEncoded(byte[] bytes) throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1957309397 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1957309397 = null; 
         bytes = Hex.encode(bytes);
         char[] chars = new char[bytes.length];
         {
             int i = 0;
             {
                 chars[i] = (char)bytes[i];
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1957309397 = new String(chars);
         addTaint(bytes[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_1957309397.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1957309397.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1957309397;
-        // ---------- Original Method ----------
-        //bytes = Hex.encode(bytes);
-        //char[] chars = new char[bytes.length];
-        //for (int i = 0; i != bytes.length; i++)
-        //{
-            //chars[i] = (char)bytes[i];
-        //}
-        //return new String(chars);
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.002 -0400", hash_original_method = "C0940F4479949D8BE443C2F5943EB650", hash_generated_method = "5CA384A1D824333875D16E267BE33C7D")
     private PemObject createPemObject(
         Object       obj,
         String       algorithm,
         char[]       password,
         SecureRandom random) throws IOException {
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_18399006 = null; //Variable for return #1
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_242265949 = null; //Variable for return #2
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_18399006 = null; 
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_242265949 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_18399006 = createPemObject(((KeyPair)obj).getPrivate(), algorithm, password, random);
-        } //End block
+        } 
         String type = null;
         byte[] keyData = null;
         {
@@ -291,7 +294,7 @@ public class MiscPEMGenerator implements PemObjectGenerator {
                 k.getPrimeExponentQ(),
                 k.getCrtCoefficient());
             keyData = keyStruct.getEncoded();
-        } //End block
+        } 
         {
             type = "DSA PRIVATE KEY";
             DSAPrivateKey k = (DSAPrivateKey)obj;
@@ -306,25 +309,25 @@ public class MiscPEMGenerator implements PemObjectGenerator {
             v.add(new DERInteger(y));
             v.add(new DERInteger(x));
             keyData = new DERSequence(v).getEncoded();
-        } //End block
+        } 
         {
             boolean var621AD920A4A1C3B37CFC4E1CFAD8A164_1089152390 = (obj instanceof PrivateKey && "ECDSA".equals(((PrivateKey)obj).getAlgorithm()));
             {
                 type = "EC PRIVATE KEY";
                 PrivateKeyInfo privInfo = PrivateKeyInfo.getInstance(ASN1Object.fromByteArray(((PrivateKey)obj).getEncoded()));
                 keyData = privInfo.getPrivateKey().getEncoded();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Object type not supported: " + obj.getClass().getName());
-        } //End block
+        } 
         String dekAlgName = Strings.toUpperCase(algorithm);
         {
             boolean var8D78E20A60FC206B65EF4CDCEB738EC3_184737617 = (dekAlgName.equals("DESEDE"));
             {
                 dekAlgName = "DES-EDE3-CBC";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int ivLength;
         boolean var1D30E47A11D832D47735AD6C7AF21620_1039871409 = (dekAlgName.startsWith("AES-"));
         ivLength = 16;
@@ -340,61 +343,62 @@ public class MiscPEMGenerator implements PemObjectGenerator {
         addTaint(algorithm.getTaint());
         addTaint(password[0]);
         addTaint(random.getTaint());
-        PemObject varA7E53CE21691AB073D9660D615818899_2145949823; //Final return value
+        PemObject varA7E53CE21691AB073D9660D615818899_2145949823; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2145949823 = varB4EAC82CA7396A68D541C85D26508E83_18399006;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2145949823 = varB4EAC82CA7396A68D541C85D26508E83_242265949;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2145949823.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2145949823.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2145949823;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.003 -0400", hash_original_method = "E9B86B455C150CA2FE6340A6ABEAFEB2", hash_generated_method = "8F53E9D12F0260319613CE17789DBC8A")
     public PemObject generate() throws PemGenerationException {
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_654788706 = null; //Variable for return #1
-        PemObject varB4EAC82CA7396A68D541C85D26508E83_987707347 = null; //Variable for return #2
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_654788706 = null; 
+        PemObject varB4EAC82CA7396A68D541C85D26508E83_987707347 = null; 
         try 
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_654788706 = createPemObject(obj, algorithm, password, random);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_987707347 = createPemObject(obj);
-        } //End block
+        } 
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new PemGenerationException("encoding exception: " + e.getMessage(), e);
-        } //End block
-        PemObject varA7E53CE21691AB073D9660D615818899_548164310; //Final return value
+        } 
+        PemObject varA7E53CE21691AB073D9660D615818899_548164310; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_548164310 = varB4EAC82CA7396A68D541C85D26508E83_654788706;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_548164310 = varB4EAC82CA7396A68D541C85D26508E83_987707347;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_548164310.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_548164310.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_548164310;
-        // ---------- Original Method ----------
-        //try
-        //{
-            //if (algorithm != null)
-            //{
-                //return createPemObject(obj, algorithm, password, random);
-            //}
-            //return createPemObject(obj);
-        //}
-        //catch (IOException e)
-        //{
-            //throw new PemGenerationException("encoding exception: " + e.getMessage(), e);
-        //}
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
+        
+            
+        
     }
 
     

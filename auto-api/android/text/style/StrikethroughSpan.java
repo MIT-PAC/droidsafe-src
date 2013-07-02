@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
@@ -16,14 +16,14 @@ public class StrikethroughSpan extends CharacterStyle implements UpdateAppearanc
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.881 -0400", hash_original_method = "70702F8DA78154CC84DD659B0C371894", hash_generated_method = "DE2AFB86A0D61FBD8C253D51FF49314A")
     public  StrikethroughSpan() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.882 -0400", hash_original_method = "D18CB35A7B1E8FEC4B878F7114956CE8", hash_generated_method = "A661FA7F8A41B3C8F80242BB82FF70AB")
     public  StrikethroughSpan(Parcel src) {
         addTaint(src.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,8 +31,8 @@ public class StrikethroughSpan extends CharacterStyle implements UpdateAppearanc
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1754766256 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1754766256;
-        // ---------- Original Method ----------
-        //return TextUtils.STRIKETHROUGH_SPAN;
+        
+        
     }
 
     
@@ -40,8 +40,8 @@ public class StrikethroughSpan extends CharacterStyle implements UpdateAppearanc
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_445039190 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_445039190;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -49,7 +49,7 @@ public class StrikethroughSpan extends CharacterStyle implements UpdateAppearanc
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -58,8 +58,8 @@ public class StrikethroughSpan extends CharacterStyle implements UpdateAppearanc
     public void updateDrawState(TextPaint ds) {
         ds.setStrikeThruText(true);
         addTaint(ds.getTaint());
-        // ---------- Original Method ----------
-        //ds.setStrikeThruText(true);
+        
+        
     }
 
     

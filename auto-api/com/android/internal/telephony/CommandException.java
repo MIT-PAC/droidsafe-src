@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.telephony.RILConstants;
 import android.util.Log;
@@ -19,11 +19,12 @@ public class CommandException extends RuntimeException {
     public  CommandException(Error e) {
         super(e.toString());
         this.e = e;
-        // ---------- Original Method ----------
-        //this.e = e;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static CommandException fromRilErrno(int ril_errno) {
         switch(ril_errno) {
             case RILConstants.SUCCESS:                       return null;
@@ -66,12 +67,12 @@ public class CommandException extends RuntimeException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.541 -0400", hash_original_method = "279F774637579DF8D6F317F53F6621B2", hash_generated_method = "E08AEC23E676E3217F63D62272FAA7B6")
     public Error getCommandError() {
-        Error varB4EAC82CA7396A68D541C85D26508E83_1756006709 = null; //Variable for return #1
+        Error varB4EAC82CA7396A68D541C85D26508E83_1756006709 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1756006709 = e;
-        varB4EAC82CA7396A68D541C85D26508E83_1756006709.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1756006709.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1756006709;
-        // ---------- Original Method ----------
-        //return e;
+        
+        
     }
 
     

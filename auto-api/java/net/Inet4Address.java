@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ObjectStreamException;
 import java.nio.ByteOrder;
@@ -19,7 +19,7 @@ public final class Inet4Address extends InetAddress {
         super(AF_INET, ipaddress, hostName);
         addTaint(ipaddress[0]);
         addTaint(hostName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,8 +28,8 @@ public final class Inet4Address extends InetAddress {
     public boolean isAnyLocalAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_763442545 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_763442545;
-        // ---------- Original Method ----------
-        //return ipaddress[0] == 0 && ipaddress[1] == 0 && ipaddress[2] == 0 && ipaddress[3] == 0;
+        
+        
     }
 
     
@@ -38,8 +38,8 @@ public final class Inet4Address extends InetAddress {
     public boolean isLinkLocalAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_532796783 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_532796783;
-        // ---------- Original Method ----------
-        //return ((ipaddress[0] & 0xff) == 169) && ((ipaddress[1] & 0xff) == 254);
+        
+        
     }
 
     
@@ -48,32 +48,33 @@ public final class Inet4Address extends InetAddress {
     public boolean isLoopbackAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_485472153 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_485472153;
-        // ---------- Original Method ----------
-        //return ((ipaddress[0] & 0xff) == 127);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.227 -0400", hash_original_method = "7EC53D5BF716DEFD994FB15A461002F1", hash_generated_method = "2BA8CCB641879874F3DF033C87BA6F44")
     @Override
     public boolean isMCGlobal() {
         {
             boolean var0588D32C09A60BA0A448759EA893261D_884358422 = (!isMulticastAddress());
-        } //End collapsed parenthetic
+        } 
         int address = Memory.peekInt(ipaddress, 0, ByteOrder.BIG_ENDIAN);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_140811442 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_140811442;
-        // ---------- Original Method ----------
-        //if (!isMulticastAddress()) {
-            //return false;
-        //}
-        //int address = Memory.peekInt(ipaddress, 0, ByteOrder.BIG_ENDIAN);
-        //if (address >>> 8 < 0xE00001) {
-            //return false;
-        //}
-        //if (address >>> 24 > 0xEE) {
-            //return false;
-        //}
-        //return true;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -82,8 +83,8 @@ public final class Inet4Address extends InetAddress {
     public boolean isMCLinkLocal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1375734686 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1375734686;
-        // ---------- Original Method ----------
-        //return ((ipaddress[0] & 0xff) == 224) && (ipaddress[1] == 0) && (ipaddress[2] == 0);
+        
+        
     }
 
     
@@ -92,8 +93,8 @@ public final class Inet4Address extends InetAddress {
     public boolean isMCNodeLocal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1879614270 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1879614270;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -102,8 +103,8 @@ public final class Inet4Address extends InetAddress {
     public boolean isMCOrgLocal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1520764947 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1520764947;
-        // ---------- Original Method ----------
-        //return ((ipaddress[0] & 0xff) == 239) && ((ipaddress[1] & 0xfc) == 192);
+        
+        
     }
 
     
@@ -112,8 +113,8 @@ public final class Inet4Address extends InetAddress {
     public boolean isMCSiteLocal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_123330954 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_123330954;
-        // ---------- Original Method ----------
-        //return ((ipaddress[0] & 0xff) == 239) && ((ipaddress[1] & 0xff) == 255);
+        
+        
     }
 
     
@@ -122,8 +123,8 @@ public final class Inet4Address extends InetAddress {
     public boolean isMulticastAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1247988104 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1247988104;
-        // ---------- Original Method ----------
-        //return (ipaddress[0] & 0xf0) == 224;
+        
+        
     }
 
     
@@ -132,26 +133,27 @@ public final class Inet4Address extends InetAddress {
     public boolean isSiteLocalAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_711086834 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_711086834;
-        // ---------- Original Method ----------
-        //if ((ipaddress[0] & 0xff) == 10) { 
-            //return true;
-        //} else if (((ipaddress[0] & 0xff) == 172) && ((ipaddress[1] & 0xf0) == 16)) { 
-            //return true;
-        //} else if (((ipaddress[0] & 0xff) == 192) && ((ipaddress[1] & 0xff) == 168)) { 
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.230 -0400", hash_original_method = "ED281EE0C7A186E413EE6AFE3B25FC7C", hash_generated_method = "4D9F39FFF23041144527ADA32E086B63")
     private Object writeReplace() throws ObjectStreamException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1905151339 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1905151339 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1905151339 = new Inet4Address(ipaddress, hostName);
-        varB4EAC82CA7396A68D541C85D26508E83_1905151339.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1905151339.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1905151339;
-        // ---------- Original Method ----------
-        //return new Inet4Address(ipaddress, hostName);
+        
+        
     }
 
     

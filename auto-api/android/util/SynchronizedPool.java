@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 class SynchronizedPool<T extends Poolable<T>> implements Pool<T> {
@@ -20,9 +20,9 @@ class SynchronizedPool<T extends Poolable<T>> implements Pool<T> {
     public  SynchronizedPool(Pool<T> pool) {
         mPool = pool;
         mLock = this;
-        // ---------- Original Method ----------
-        //mPool = pool;
-        //mLock = this;
+        
+        
+        
     }
 
     
@@ -30,37 +30,39 @@ class SynchronizedPool<T extends Poolable<T>> implements Pool<T> {
     public  SynchronizedPool(Pool<T> pool, Object lock) {
         mPool = pool;
         mLock = lock;
-        // ---------- Original Method ----------
-        //mPool = pool;
-        //mLock = lock;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.712 -0400", hash_original_method = "33DD110D68F95CA8E21FED144538609A", hash_generated_method = "77559B7D17BDF9F6C027DB9607A6CF96")
     public T acquire() {
-        T varB4EAC82CA7396A68D541C85D26508E83_481166152 = null; //Variable for return #1
+        T varB4EAC82CA7396A68D541C85D26508E83_481166152 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_481166152 = mPool.acquire();
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_481166152.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_481166152.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_481166152;
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //return mPool.acquire();
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.712 -0400", hash_original_method = "D3A44672BBA01F45A0EA27E869DCFDD8", hash_generated_method = "5408D5B32FDCDD52E393A634523F5FA1")
     public void release(T element) {
         {
             mPool.release(element);
-        } //End block
+        } 
         addTaint(element.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //mPool.release(element);
-        //}
+        
+        
+            
+        
     }
 
     

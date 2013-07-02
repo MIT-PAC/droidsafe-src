@@ -1,11 +1,11 @@
 package javax.security.auth.callback;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class UnsupportedCallbackException extends Exception {
@@ -16,8 +16,8 @@ public class UnsupportedCallbackException extends Exception {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.784 -0400", hash_original_method = "6F64A91CCA6DECE8990E118F6F2706F6", hash_generated_method = "D0D2AF18505AA576BB4AA2E2936C7D6B")
     public  UnsupportedCallbackException(Callback callback) {
         this.callback = callback;
-        // ---------- Original Method ----------
-        //this.callback = callback;
+        
+        
     }
 
     
@@ -26,19 +26,19 @@ public class UnsupportedCallbackException extends Exception {
         super(message);
         this.callback = callback;
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //this.callback = callback;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.784 -0400", hash_original_method = "C52CB6D8F1111BAF8BAA5D6F66319767", hash_generated_method = "29360BAD49C42B95952E5BB80D12112D")
     public Callback getCallback() {
-        Callback varB4EAC82CA7396A68D541C85D26508E83_493065021 = null; //Variable for return #1
+        Callback varB4EAC82CA7396A68D541C85D26508E83_493065021 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_493065021 = callback;
-        varB4EAC82CA7396A68D541C85D26508E83_493065021.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_493065021.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_493065021;
-        // ---------- Original Method ----------
-        //return callback;
+        
+        
     }
 
     

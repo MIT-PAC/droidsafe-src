@@ -1,18 +1,18 @@
 package android.opengl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class GLES20 {
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.537 -0400", hash_original_method = "36E20589EECCDD2982BE507DDB6EF4A3", hash_generated_method = "36E20589EECCDD2982BE507DDB6EF4A3")
 	public GLES20() {
-		// Synthesized constructor
+		
 	}
 
 	private static void _nativeClassInit() {

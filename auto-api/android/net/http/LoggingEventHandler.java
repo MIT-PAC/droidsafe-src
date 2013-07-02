@@ -1,11 +1,11 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.net.http.Headers;
 
@@ -14,15 +14,16 @@ public class LoggingEventHandler implements EventHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.033 -0400", hash_original_method = "2BC51DEB89C6AF0C6217972A72FE9112", hash_generated_method = "2BC51DEB89C6AF0C6217972A72FE9112")
     public LoggingEventHandler ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.034 -0400", hash_original_method = "9B877FF9BFB9C4944F8A279E52B62988", hash_generated_method = "10CA008D5591C89B89CC76B17D80A76F")
     public void requestSent() {
         HttpLog.v("LoggingEventHandler:requestSent()");
-        // ---------- Original Method ----------
-        //HttpLog.v("LoggingEventHandler:requestSent()");
+        
+        
     }
 
     
@@ -36,18 +37,18 @@ public class LoggingEventHandler implements EventHandler {
                   " minor: " + minor_version +
                   " code: " + code +
                   " reason: " + reason_phrase);
-        } //End block
+        } 
         addTaint(major_version);
         addTaint(minor_version);
         addTaint(code);
         addTaint(reason_phrase.getTaint());
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("LoggingEventHandler:status() major: " + major_version +
-                  //" minor: " + minor_version +
-                  //" code: " + code +
-                  //" reason: " + reason_phrase);
-        //}
+        
+        
+            
+                  
+                  
+                  
+        
     }
 
     
@@ -56,13 +57,13 @@ public class LoggingEventHandler implements EventHandler {
         {
             HttpLog.v("LoggingEventHandler:headers()");
             HttpLog.v(headers.toString());
-        } //End block
+        } 
         addTaint(headers.getTaint());
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("LoggingEventHandler:headers()");
-            //HttpLog.v(headers.toString());
-        //}
+        
+        
+            
+            
+        
     }
 
     
@@ -71,14 +72,14 @@ public class LoggingEventHandler implements EventHandler {
         {
             HttpLog.v("LoggingEventHandler: locationChanged() " + newLocation +
                       " permanent " + permanent);
-        } //End block
+        } 
         addTaint(newLocation.getTaint());
         addTaint(permanent);
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("LoggingEventHandler: locationChanged() " + newLocation +
-                      //" permanent " + permanent);
-        //}
+        
+        
+            
+                      
+        
     }
 
     
@@ -86,13 +87,13 @@ public class LoggingEventHandler implements EventHandler {
     public void data(byte[] data, int len) {
         {
             HttpLog.v("LoggingEventHandler: data() " + len + " bytes");
-        } //End block
+        } 
         addTaint(data[0]);
         addTaint(len);
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("LoggingEventHandler: data() " + len + " bytes");
-        //}
+        
+        
+            
+        
     }
 
     
@@ -100,11 +101,11 @@ public class LoggingEventHandler implements EventHandler {
     public void endData() {
         {
             HttpLog.v("LoggingEventHandler: endData() called");
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("LoggingEventHandler: endData() called");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -112,12 +113,12 @@ public class LoggingEventHandler implements EventHandler {
     public void certificate(SslCertificate certificate) {
         {
             HttpLog.v("LoggingEventHandler: certificate(): " + certificate);
-        } //End block
+        } 
         addTaint(certificate.getTaint());
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-             //HttpLog.v("LoggingEventHandler: certificate(): " + certificate);
-         //}
+        
+        
+             
+         
     }
 
     
@@ -126,14 +127,14 @@ public class LoggingEventHandler implements EventHandler {
         {
             HttpLog.v("LoggingEventHandler: error() called Id:" + id +
                       " description " + description);
-        } //End block
+        } 
         addTaint(id);
         addTaint(description.getTaint());
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("LoggingEventHandler: error() called Id:" + id +
-                      //" description " + description);
-        //}
+        
+        
+            
+                      
+        
     }
 
     
@@ -141,15 +142,15 @@ public class LoggingEventHandler implements EventHandler {
     public boolean handleSslErrorRequest(SslError error) {
         {
             HttpLog.v("LoggingEventHandler: handleSslErrorRequest():" + error);
-        } //End block
+        } 
         addTaint(error.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1792431135 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1792431135;
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("LoggingEventHandler: handleSslErrorRequest():" + error);
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     

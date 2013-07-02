@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.address;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class UserInfo extends NetObject {
@@ -22,78 +22,81 @@ public final class UserInfo extends NetObject {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.553 -0400", hash_original_method = "F45B016F8E384DB218E594119B9CAF8C", hash_generated_method = "B84D01599B6AD9928E5FE27573600BA5")
     public  UserInfo() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.554 -0400", hash_original_method = "A09C3D32ACE02300A3630780DF7DA73F", hash_generated_method = "839138BCFE82CC643686A0A681BEEC69")
     public boolean equals(Object obj) {
         {
             boolean var0BDD716692710C348B07111E17BD2B29_1360413684 = (getClass() != obj.getClass());
-        } //End collapsed parenthetic
+        } 
         UserInfo other = (UserInfo) obj;
         {
             boolean var1378E0A61ABA01F3E69F31B70A354F56_851514101 = (!this.user.equalsIgnoreCase(other.user));
-        } //End collapsed parenthetic
+        } 
         boolean varB39BC6BA949574B109F798F5CD930BF4_1706304732 = ((this.password.equals(other.password)));
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1788899824 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1788899824;
-        // ---------- Original Method ----------
-        //if (getClass() != obj.getClass()) {
-            //return false;
-        //}
-        //UserInfo other = (UserInfo) obj;
-        //if (this.userType != other.userType) {
-            //return false;
-        //}
-        //if (!this.user.equalsIgnoreCase(other.user)) {
-            //return false;
-        //}
-        //if (this.password != null && other.password == null)
-            //return false;
-        //if (other.password != null && this.password == null)
-            //return false;
-        //if (this.password == other.password)
-            //return true;
-        //return (this.password.equals(other.password));
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.555 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "EE9ADE4C2B6557706233DCE8F8DB529A")
     public String encode() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1172983776 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1172983776 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1172983776 = encode(new StringBuffer()).toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1172983776.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1172983776.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1172983776;
-        // ---------- Original Method ----------
-        //return encode(new StringBuffer()).toString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.556 -0400", hash_original_method = "7AE7B8A415769E92878FFEC035C52AE0", hash_generated_method = "CF02175F14D5A789DB4C489FE789107C")
     public StringBuffer encode(StringBuffer buffer) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1682198638 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1682198638 = null; 
         buffer.append(user).append(COLON).append(password);
         buffer.append(user);
         varB4EAC82CA7396A68D541C85D26508E83_1682198638 = buffer;
         addTaint(buffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1682198638.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1682198638.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1682198638;
-        // ---------- Original Method ----------
-        //if (password != null)
-            //buffer.append(user).append(COLON).append(password);
-        //else
-            //buffer.append(user);
-        //return buffer;
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.556 -0400", hash_original_method = "B45A9D19151CAED15569D78F83AD2095", hash_generated_method = "C8505DC09422B6CFF865611C6AB8A6C3")
     public void clearPassword() {
         this.password = null;
-        // ---------- Original Method ----------
-        //this.password = null;
+        
+        
     }
 
     
@@ -101,33 +104,34 @@ public final class UserInfo extends NetObject {
     public int getUserType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1569419071 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1569419071;
-        // ---------- Original Method ----------
-        //return userType;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.557 -0400", hash_original_method = "067A1216625EE4AD320B5B1536FC853E", hash_generated_method = "0F37C9EFD6E0C78D2D758F191A4411F8")
     public String getUser() {
-        String varB4EAC82CA7396A68D541C85D26508E83_287047733 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_287047733 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_287047733 = user;
-        varB4EAC82CA7396A68D541C85D26508E83_287047733.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_287047733.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_287047733;
-        // ---------- Original Method ----------
-        //return user;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.557 -0400", hash_original_method = "9DBD0BEF507048073F2256BD69D03A45", hash_generated_method = "86DC84DC088DCAD3E4FD64194B52D1E5")
     public String getPassword() {
-        String varB4EAC82CA7396A68D541C85D26508E83_622786066 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_622786066 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_622786066 = password;
-        varB4EAC82CA7396A68D541C85D26508E83_622786066.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_622786066.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_622786066;
-        // ---------- Original Method ----------
-        //return password;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.558 -0400", hash_original_method = "3D02333C0789FC569CF57CEE9E3D36D7", hash_generated_method = "67AF31F06DFD5D4390DF641BB7B067FA")
     public void setUser(String user) {
         this.user = user;
@@ -136,41 +140,42 @@ public final class UserInfo extends NetObject {
             && (user.indexOf(POUND) >= 0 || user.indexOf(SEMICOLON) >= 0));
             {
                 setUserType(TELEPHONE_SUBSCRIBER);
-            } //End block
+            } 
             {
                 setUserType(USER);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //this.user = user;
-        //if (user != null
-            //&& (user.indexOf(POUND) >= 0 || user.indexOf(SEMICOLON) >= 0)) {
-            //setUserType(TELEPHONE_SUBSCRIBER);
-        //} else {
-            //setUserType(USER);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.558 -0400", hash_original_method = "914969AC5F0FD02943850406A5ADB2DF", hash_generated_method = "F4C8503980BC4D291DEAF6570BD57166")
     public void setPassword(String p) {
         password = p;
-        // ---------- Original Method ----------
-        //password = p;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.558 -0400", hash_original_method = "D88C19BFECDFF9E40F4106FE0C0D9444", hash_generated_method = "579C0B365229D95BC47F02464176C763")
     public void setUserType(int type) throws IllegalArgumentException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Parameter not in range");
-        } //End block
+        } 
         userType = type;
-        // ---------- Original Method ----------
-        //if (type != TELEPHONE_SUBSCRIBER && type != USER) {
-            //throw new IllegalArgumentException("Parameter not in range");
-        //}
-        //userType = type;
+        
+        
+            
+        
+        
     }
 
     

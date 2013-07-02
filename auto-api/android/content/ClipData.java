@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
@@ -36,17 +36,17 @@ public class ClipData implements Parcelable {
         mClipDescription = new ClipDescription(label, mimeTypes);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("item is null");
-        } //End block
+        } 
         mIcon = null;
         mItems.add(item);
         addTaint(item.getTaint());
-        // ---------- Original Method ----------
-        //mClipDescription = new ClipDescription(label, mimeTypes);
-        //if (item == null) {
-            //throw new NullPointerException("item is null");
-        //}
-        //mIcon = null;
-        //mItems.add(item);
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -55,17 +55,17 @@ public class ClipData implements Parcelable {
         mClipDescription = description;
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("item is null");
-        } //End block
+        } 
         mIcon = null;
         mItems.add(item);
         addTaint(item.getTaint());
-        // ---------- Original Method ----------
-        //mClipDescription = description;
-        //if (item == null) {
-            //throw new NullPointerException("item is null");
-        //}
-        //mIcon = null;
-        //mItems.add(item);
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -76,11 +76,11 @@ public class ClipData implements Parcelable {
             boolean var25D67F28E4887DDC152DCB9726EAB4D3_713163787 = (in.readInt() != 0);
             {
                 mIcon = Bitmap.CREATOR.createFromParcel(in);
-            } //End block
+            } 
             {
                 mIcon = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final int N = in.readInt();
         {
             int i = 0;
@@ -95,25 +95,26 @@ public class ClipData implements Parcelable {
                 uri = Uri.CREATOR.createFromParcel(in);
                 uri = null;
                 mItems.add(new Item(text, intent, uri));
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //mClipDescription = new ClipDescription(in);
-        //if (in.readInt() != 0) {
-            //mIcon = Bitmap.CREATOR.createFromParcel(in);
-        //} else {
-            //mIcon = null;
-        //}
-        //final int N = in.readInt();
-        //for (int i=0; i<N; i++) {
-            //CharSequence text = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
-            //Intent intent = in.readInt() != 0 ? Intent.CREATOR.createFromParcel(in) : null;
-            //Uri uri = in.readInt() != 0 ? Uri.CREATOR.createFromParcel(in) : null;
-            //mItems.add(new Item(text, intent, uri));
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
+            
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public ClipData newPlainText(CharSequence label, CharSequence text) {
         Item item = new Item(text);
         return new ClipData(label, MIMETYPES_TEXT_PLAIN, item);
@@ -164,60 +165,63 @@ public class ClipData implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.063 -0400", hash_original_method = "8475A7793CA47249207DFD30E601781C", hash_generated_method = "D0C007B8F5089D5E007DDBE59D4544D4")
     public ClipDescription getDescription() {
-        ClipDescription varB4EAC82CA7396A68D541C85D26508E83_1171112870 = null; //Variable for return #1
+        ClipDescription varB4EAC82CA7396A68D541C85D26508E83_1171112870 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1171112870 = mClipDescription;
-        varB4EAC82CA7396A68D541C85D26508E83_1171112870.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1171112870.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1171112870;
-        // ---------- Original Method ----------
-        //return mClipDescription;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.064 -0400", hash_original_method = "150F076539D3E4866582D984173D26A6", hash_generated_method = "27A4D385BC017B47D41C4DECBB9E21CB")
     public void addItem(Item item) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("item is null");
-        } //End block
+        } 
         mItems.add(item);
         addTaint(item.getTaint());
-        // ---------- Original Method ----------
-        //if (item == null) {
-            //throw new NullPointerException("item is null");
-        //}
-        //mItems.add(item);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.065 -0400", hash_original_method = "229D9D1026C0301FD9A4AD50AC984F17", hash_generated_method = "5D41E17175FFCA32DABDA38642E0692F")
     public Bitmap getIcon() {
-        Bitmap varB4EAC82CA7396A68D541C85D26508E83_601315981 = null; //Variable for return #1
+        Bitmap varB4EAC82CA7396A68D541C85D26508E83_601315981 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_601315981 = mIcon;
-        varB4EAC82CA7396A68D541C85D26508E83_601315981.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_601315981.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_601315981;
-        // ---------- Original Method ----------
-        //return mIcon;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.065 -0400", hash_original_method = "2908203B9FEFAA3035EA88685E6DC23A", hash_generated_method = "079E01A02E152C3EB22222DB613B1890")
     public int getItemCount() {
         int var903E593E570CF8A7196E435EA30221CF_1528188171 = (mItems.size());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1061981804 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1061981804;
-        // ---------- Original Method ----------
-        //return mItems.size();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.066 -0400", hash_original_method = "79B4F12EE34F43C8036D233ADFF72DDF", hash_generated_method = "984BD221F62B8FA74192EEBD76CB38A3")
     public Item getItemAt(int index) {
-        Item varB4EAC82CA7396A68D541C85D26508E83_1375922811 = null; //Variable for return #1
+        Item varB4EAC82CA7396A68D541C85D26508E83_1375922811 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1375922811 = mItems.get(index);
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_1375922811.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1375922811.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1375922811;
-        // ---------- Original Method ----------
-        //return mItems.get(index);
+        
+        
     }
 
     
@@ -226,11 +230,12 @@ public class ClipData implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_809329480 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_809329480;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.067 -0400", hash_original_method = "0C9FB932279AD72A7EC79D2538384FC0", hash_generated_method = "8D29E227A06995FD63718B477BD1EEFA")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -238,10 +243,10 @@ public class ClipData implements Parcelable {
         {
             dest.writeInt(1);
             mIcon.writeToParcel(dest, flags);
-        } //End block
+        } 
         {
             dest.writeInt(0);
-        } //End block
+        } 
         final int N = mItems.size();
         dest.writeInt(N);
         {
@@ -252,47 +257,47 @@ public class ClipData implements Parcelable {
                 {
                     dest.writeInt(1);
                     item.mIntent.writeToParcel(dest, flags);
-                } //End block
+                } 
                 {
                     dest.writeInt(0);
-                } //End block
+                } 
                 {
                     dest.writeInt(1);
                     item.mUri.writeToParcel(dest, flags);
-                } //End block
+                } 
                 {
                     dest.writeInt(0);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //mClipDescription.writeToParcel(dest, flags);
-        //if (mIcon != null) {
-            //dest.writeInt(1);
-            //mIcon.writeToParcel(dest, flags);
-        //} else {
-            //dest.writeInt(0);
-        //}
-        //final int N = mItems.size();
-        //dest.writeInt(N);
-        //for (int i=0; i<N; i++) {
-            //Item item = mItems.get(i);
-            //TextUtils.writeToParcel(item.mText, dest, flags);
-            //if (item.mIntent != null) {
-                //dest.writeInt(1);
-                //item.mIntent.writeToParcel(dest, flags);
-            //} else {
-                //dest.writeInt(0);
-            //}
-            //if (item.mUri != null) {
-                //dest.writeInt(1);
-                //item.mUri.writeToParcel(dest, flags);
-            //} else {
-                //dest.writeInt(0);
-            //}
-        //}
+        
+        
+        
+            
+            
+        
+            
+        
+        
+        
+        
+            
+            
+            
+                
+                
+            
+                
+            
+            
+                
+                
+            
+                
+            
+        
     }
 
     
@@ -312,10 +317,10 @@ public class ClipData implements Parcelable {
             mText = text;
             mIntent = null;
             mUri = null;
-            // ---------- Original Method ----------
-            //mText = text;
-            //mIntent = null;
-            //mUri = null;
+            
+            
+            
+            
         }
 
         
@@ -324,10 +329,10 @@ public class ClipData implements Parcelable {
             mText = null;
             mIntent = intent;
             mUri = null;
-            // ---------- Original Method ----------
-            //mText = null;
-            //mIntent = intent;
-            //mUri = null;
+            
+            
+            
+            
         }
 
         
@@ -336,10 +341,10 @@ public class ClipData implements Parcelable {
             mText = null;
             mIntent = null;
             mUri = uri;
-            // ---------- Original Method ----------
-            //mText = null;
-            //mIntent = null;
-            //mUri = uri;
+            
+            
+            
+            
         }
 
         
@@ -348,57 +353,57 @@ public class ClipData implements Parcelable {
             mText = text;
             mIntent = intent;
             mUri = uri;
-            // ---------- Original Method ----------
-            //mText = text;
-            //mIntent = intent;
-            //mUri = uri;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.070 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "28BA78BE6472A9BFB2258DB0B7DD45B7")
         public CharSequence getText() {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_659347048 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_659347048 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_659347048 = mText;
-            varB4EAC82CA7396A68D541C85D26508E83_659347048.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_659347048.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_659347048;
-            // ---------- Original Method ----------
-            //return mText;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.071 -0400", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "5F6A4A245F9BDE38B1D69A659DFC581E")
         public Intent getIntent() {
-            Intent varB4EAC82CA7396A68D541C85D26508E83_1798323764 = null; //Variable for return #1
+            Intent varB4EAC82CA7396A68D541C85D26508E83_1798323764 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1798323764 = mIntent;
-            varB4EAC82CA7396A68D541C85D26508E83_1798323764.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1798323764.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1798323764;
-            // ---------- Original Method ----------
-            //return mIntent;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.072 -0400", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "E291D64E01A107DF13754F3F6383DA11")
         public Uri getUri() {
-            Uri varB4EAC82CA7396A68D541C85D26508E83_315816102 = null; //Variable for return #1
+            Uri varB4EAC82CA7396A68D541C85D26508E83_315816102 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_315816102 = mUri;
-            varB4EAC82CA7396A68D541C85D26508E83_315816102.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_315816102.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_315816102;
-            // ---------- Original Method ----------
-            //return mUri;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.075 -0400", hash_original_method = "2A1795F61A3E14A1308A3A7CD55951FC", hash_generated_method = "62A523887CE399ED21FD40F55F646113")
         public CharSequence coerceToText(Context context) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1271999250 = null; //Variable for return #1
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1684848433 = null; //Variable for return #2
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_895363620 = null; //Variable for return #3
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_484482319 = null; //Variable for return #4
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1991163404 = null; //Variable for return #5
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_2108769264 = null; //Variable for return #6
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1271999250 = null; 
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1684848433 = null; 
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_895363620 = null; 
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_484482319 = null; 
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1991163404 = null; 
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_2108769264 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1271999250 = mText;
-            } //End block
+            } 
             {
                 FileInputStream stream = null;
                 try 
@@ -414,59 +419,59 @@ public class ClipData implements Parcelable {
                         boolean var23C869020A3A67DDAE5E9A347BAC4416_577956951 = ((len=reader.read(buffer)) > 0);
                         {
                             builder.append(buffer, 0, len);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_1684848433 = builder.toString();
-                } //End block
+                } 
                 catch (FileNotFoundException e)
                 { }
                 catch (IOException e)
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_895363620 = e.toString();
-                } //End block
+                } 
                 finally 
                 {
                     {
                         try 
                         {
                             stream.close();
-                        } //End block
+                        } 
                         catch (IOException e)
                         { }
-                    } //End block
-                } //End block
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_484482319 = mUri.toString();
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1991163404 = mIntent.toUri(Intent.URI_INTENT_SCHEME);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_2108769264 = "";
             addTaint(context.getTaint());
-            CharSequence varA7E53CE21691AB073D9660D615818899_535417019; //Final return value
+            CharSequence varA7E53CE21691AB073D9660D615818899_535417019; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_535417019 = varB4EAC82CA7396A68D541C85D26508E83_1271999250;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_535417019 = varB4EAC82CA7396A68D541C85D26508E83_1684848433;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_535417019 = varB4EAC82CA7396A68D541C85D26508E83_895363620;
                     break;
-                case 4: //Assign result for return ordinal #4
+                case 4: 
                     varA7E53CE21691AB073D9660D615818899_535417019 = varB4EAC82CA7396A68D541C85D26508E83_484482319;
                     break;
-                case 5: //Assign result for return ordinal #5
+                case 5: 
                     varA7E53CE21691AB073D9660D615818899_535417019 = varB4EAC82CA7396A68D541C85D26508E83_1991163404;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_535417019 = varB4EAC82CA7396A68D541C85D26508E83_2108769264;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_535417019.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_535417019.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_535417019;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -499,12 +504,12 @@ public class ClipData implements Parcelable {
                 return new ClipData[size];
             }
         };
-    // orphaned legacy method
+    
     public ClipData createFromParcel(Parcel source) {
                 return new ClipData(source);
             }
     
-    // orphaned legacy method
+    
     public ClipData[] newArray(int size) {
                 return new ClipData[size];
             }

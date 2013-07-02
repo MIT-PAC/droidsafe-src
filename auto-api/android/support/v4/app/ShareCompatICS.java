@@ -1,11 +1,11 @@
 package android.support.v4.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.Activity;
 import android.content.Intent;
@@ -18,7 +18,7 @@ class ShareCompatICS {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.220 -0400", hash_original_method = "3660F8695EEB98A5E585F179E60ADEF2", hash_generated_method = "3660F8695EEB98A5E585F179E60ADEF2")
     public ShareCompatICS ()
     {
-        //Synthesized constructor
+        
     }
 
 

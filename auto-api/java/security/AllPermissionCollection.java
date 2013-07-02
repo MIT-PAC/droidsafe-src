@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Enumeration;
 
@@ -14,7 +14,7 @@ final class AllPermissionCollection extends PermissionCollection {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.104 -0400", hash_original_method = "0FDD5C4A8E9AC1DDB2FA5A64417EADFF", hash_generated_method = "0FDD5C4A8E9AC1DDB2FA5A64417EADFF")
     public AllPermissionCollection ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -22,19 +22,20 @@ final class AllPermissionCollection extends PermissionCollection {
     @Override
     public void add(Permission permission) {
         addTaint(permission.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.105 -0400", hash_original_method = "9354983A4C01BAC9D52E1AE4692A1F83", hash_generated_method = "6B9CFC06FF0E7040228A7A2AC94CE262")
     @Override
     public Enumeration<Permission> elements() {
-        Enumeration<Permission> varB4EAC82CA7396A68D541C85D26508E83_820475857 = null; //Variable for return #1
+        Enumeration<Permission> varB4EAC82CA7396A68D541C85D26508E83_820475857 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_820475857 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_820475857.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_820475857.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_820475857;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -44,8 +45,8 @@ final class AllPermissionCollection extends PermissionCollection {
         addTaint(permission.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_43786735 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_43786735;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     

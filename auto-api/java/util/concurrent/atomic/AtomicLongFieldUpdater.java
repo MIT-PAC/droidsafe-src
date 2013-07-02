@@ -1,11 +1,11 @@
 package java.util.concurrent.atomic;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import dalvik.system.VMStack;
 import sun.misc.Unsafe;
@@ -15,10 +15,11 @@ public abstract class AtomicLongFieldUpdater<T> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.522 -0400", hash_original_method = "BA7F0F8CC0F2CFF6E035F4AABDB58BFC", hash_generated_method = "62F6218EF261DD24445A14F0CE964A46")
     protected  AtomicLongFieldUpdater() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <U> AtomicLongFieldUpdater<U> newUpdater(Class<U> tclass, String fieldName) {
         if (AtomicLong.VM_SUPPORTS_LONG_CAS)
             return new CASUpdater<U>(tclass, fieldName);
@@ -42,27 +43,29 @@ public abstract class AtomicLongFieldUpdater<T> {
     public abstract long get(T obj);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.523 -0400", hash_original_method = "073A4CF50E22F9EE4C4340BA9014F29C", hash_generated_method = "06331A022A7F8A52C561671A8C6912C8")
     public long getAndSet(T obj, long newValue) {
         {
             long current = get(obj);
             {
                 boolean varEF6F11C12EB2BCFEFD370C9B71CA9D76_222320655 = (compareAndSet(obj, current, newValue));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(obj.getTaint());
         addTaint(newValue);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_516436927 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_516436927;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //long current = get(obj);
-            //if (compareAndSet(obj, current, newValue))
-                //return current;
-        //}
+        
+        
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.523 -0400", hash_original_method = "FFCFE702F404925FF472694110925E69", hash_generated_method = "690D16C5CDEACC4BDF53BBB535A84B2F")
     public long getAndIncrement(T obj) {
         {
@@ -70,21 +73,22 @@ public abstract class AtomicLongFieldUpdater<T> {
             long next = current + 1;
             {
                 boolean var39F790C2B1085E7CF87DB5C3D24D0ADD_397865788 = (compareAndSet(obj, current, next));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(obj.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1798054509 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1798054509;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //long current = get(obj);
-            //long next = current + 1;
-            //if (compareAndSet(obj, current, next))
-                //return current;
-        //}
+        
+        
+            
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.524 -0400", hash_original_method = "9CAF92F1F2494CDDDA53F7B31DDB70AC", hash_generated_method = "42532B2A697D37285BFEDA098FB731F8")
     public long getAndDecrement(T obj) {
         {
@@ -92,21 +96,22 @@ public abstract class AtomicLongFieldUpdater<T> {
             long next = current - 1;
             {
                 boolean var39F790C2B1085E7CF87DB5C3D24D0ADD_207833308 = (compareAndSet(obj, current, next));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(obj.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_796922369 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_796922369;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //long current = get(obj);
-            //long next = current - 1;
-            //if (compareAndSet(obj, current, next))
-                //return current;
-        //}
+        
+        
+            
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.524 -0400", hash_original_method = "3764C955A48CF6808C45F475DCFC56BA", hash_generated_method = "9BC40E2EA0458DED61AF538B045CA447")
     public long getAndAdd(T obj, long delta) {
         {
@@ -114,22 +119,23 @@ public abstract class AtomicLongFieldUpdater<T> {
             long next = current + delta;
             {
                 boolean var39F790C2B1085E7CF87DB5C3D24D0ADD_1953851498 = (compareAndSet(obj, current, next));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(obj.getTaint());
         addTaint(delta);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1825155034 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1825155034;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //long current = get(obj);
-            //long next = current + delta;
-            //if (compareAndSet(obj, current, next))
-                //return current;
-        //}
+        
+        
+            
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.524 -0400", hash_original_method = "1591AE6B0EAC64083036B0657AF8C8E8", hash_generated_method = "27C066C313E3DB3819A9EC13740C4427")
     public long incrementAndGet(T obj) {
         {
@@ -137,21 +143,22 @@ public abstract class AtomicLongFieldUpdater<T> {
             long next = current + 1;
             {
                 boolean var39F790C2B1085E7CF87DB5C3D24D0ADD_127178696 = (compareAndSet(obj, current, next));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(obj.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_310247351 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_310247351;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //long current = get(obj);
-            //long next = current + 1;
-            //if (compareAndSet(obj, current, next))
-                //return next;
-        //}
+        
+        
+            
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.525 -0400", hash_original_method = "F278D43CE5D7C7A4E3E54A0A47080CD8", hash_generated_method = "7775D3BEEEC9C28A4FDD68B464028073")
     public long decrementAndGet(T obj) {
         {
@@ -159,21 +166,22 @@ public abstract class AtomicLongFieldUpdater<T> {
             long next = current - 1;
             {
                 boolean var39F790C2B1085E7CF87DB5C3D24D0ADD_1453631731 = (compareAndSet(obj, current, next));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(obj.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1314431423 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1314431423;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //long current = get(obj);
-            //long next = current - 1;
-            //if (compareAndSet(obj, current, next))
-                //return next;
-        //}
+        
+        
+            
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.526 -0400", hash_original_method = "7BA11FC3A8E7EFFF8D5EBE339E5290E0", hash_generated_method = "4B60D7482F78BEE569802680FBDA5EC9")
     public long addAndGet(T obj, long delta) {
         {
@@ -181,19 +189,19 @@ public abstract class AtomicLongFieldUpdater<T> {
             long next = current + delta;
             {
                 boolean var39F790C2B1085E7CF87DB5C3D24D0ADD_175077495 = (compareAndSet(obj, current, next));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(obj.getTaint());
         addTaint(delta);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_124400311 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_124400311;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //long current = get(obj);
-            //long next = current + delta;
-            //if (compareAndSet(obj, current, next))
-                //return next;
-        //}
+        
+        
+            
+            
+            
+                
+        
     }
 
     
@@ -218,24 +226,24 @@ public abstract class AtomicLongFieldUpdater<T> {
                 field = tclass.getDeclaredField(fieldName);
                 caller = VMStack.getStackClass2();
                 modifiers = field.getModifiers();
-            } //End block
+            } 
             catch (Exception ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
-            } //End block
+            } 
             Class fieldt = field.getType();
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Must be long type");
             {
                 boolean var60B416625B50ACEF1DA4DA2F835A2BDA_1224491939 = (!Modifier.isVolatile(modifiers));
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Must be volatile type");
-            } //End collapsed parenthetic
+            } 
             this.cclass = (Modifier.isProtected(modifiers) &&
                            caller != tclass) ? caller : null;
             this.tclass = tclass;
             offset = unsafe.objectFieldOffset(field);
             addTaint(fieldName.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -244,14 +252,14 @@ public abstract class AtomicLongFieldUpdater<T> {
             {
                 boolean var08A757AC16599EE9FA86D0ACCDFB617F_220885925 = (!tclass.isInstance(obj));
                 if (DroidSafeAndroidRuntime.control) throw new ClassCastException();
-            } //End collapsed parenthetic
+            } 
             ensureProtectedAccess(obj);
             addTaint(obj.getTaint());
-            // ---------- Original Method ----------
-            //if (!tclass.isInstance(obj))
-                //throw new ClassCastException();
-            //if (cclass != null)
-                //ensureProtectedAccess(obj);
+            
+            
+                
+            
+                
         }
 
         
@@ -260,16 +268,16 @@ public abstract class AtomicLongFieldUpdater<T> {
             {
                 boolean varF632C662F50CD55BC2A79D282BA126B0_2030329528 = (obj == null || obj.getClass() != tclass || cclass != null);
                 fullCheck(obj);
-            } //End collapsed parenthetic
+            } 
             boolean var4D1224EBF8FF0DF75D7E6D4DE35B1DC6_440534765 = (unsafe.compareAndSwapLong(obj, offset, expect, update));
             addTaint(obj.getTaint());
             addTaint(expect);
             addTaint(update);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_99101762 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_99101762;
-            // ---------- Original Method ----------
-            //if (obj == null || obj.getClass() != tclass || cclass != null) fullCheck(obj);
-            //return unsafe.compareAndSwapLong(obj, offset, expect, update);
+            
+            
+            
         }
 
         
@@ -278,16 +286,16 @@ public abstract class AtomicLongFieldUpdater<T> {
             {
                 boolean varF632C662F50CD55BC2A79D282BA126B0_417408747 = (obj == null || obj.getClass() != tclass || cclass != null);
                 fullCheck(obj);
-            } //End collapsed parenthetic
+            } 
             boolean var4D1224EBF8FF0DF75D7E6D4DE35B1DC6_646632881 = (unsafe.compareAndSwapLong(obj, offset, expect, update));
             addTaint(obj.getTaint());
             addTaint(expect);
             addTaint(update);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1832157513 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1832157513;
-            // ---------- Original Method ----------
-            //if (obj == null || obj.getClass() != tclass || cclass != null) fullCheck(obj);
-            //return unsafe.compareAndSwapLong(obj, offset, expect, update);
+            
+            
+            
         }
 
         
@@ -296,13 +304,13 @@ public abstract class AtomicLongFieldUpdater<T> {
             {
                 boolean varF632C662F50CD55BC2A79D282BA126B0_226531468 = (obj == null || obj.getClass() != tclass || cclass != null);
                 fullCheck(obj);
-            } //End collapsed parenthetic
+            } 
             unsafe.putLongVolatile(obj, offset, newValue);
             addTaint(obj.getTaint());
             addTaint(newValue);
-            // ---------- Original Method ----------
-            //if (obj == null || obj.getClass() != tclass || cclass != null) fullCheck(obj);
-            //unsafe.putLongVolatile(obj, offset, newValue);
+            
+            
+            
         }
 
         
@@ -311,13 +319,13 @@ public abstract class AtomicLongFieldUpdater<T> {
             {
                 boolean varF632C662F50CD55BC2A79D282BA126B0_1338985412 = (obj == null || obj.getClass() != tclass || cclass != null);
                 fullCheck(obj);
-            } //End collapsed parenthetic
+            } 
             unsafe.putOrderedLong(obj, offset, newValue);
             addTaint(obj.getTaint());
             addTaint(newValue);
-            // ---------- Original Method ----------
-            //if (obj == null || obj.getClass() != tclass || cclass != null) fullCheck(obj);
-            //unsafe.putOrderedLong(obj, offset, newValue);
+            
+            
+            
         }
 
         
@@ -326,14 +334,14 @@ public abstract class AtomicLongFieldUpdater<T> {
             {
                 boolean varF632C662F50CD55BC2A79D282BA126B0_1041148899 = (obj == null || obj.getClass() != tclass || cclass != null);
                 fullCheck(obj);
-            } //End collapsed parenthetic
+            } 
             long var6976292DBE2A2878DD246D6DAC256FC7_149368487 = (unsafe.getLongVolatile(obj, offset));
             addTaint(obj.getTaint());
             long var0F5264038205EDFB1AC05FBB0E8C5E94_1340034201 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1340034201;
-            // ---------- Original Method ----------
-            //if (obj == null || obj.getClass() != tclass || cclass != null) fullCheck(obj);
-            //return unsafe.getLongVolatile(obj, offset);
+            
+            
+            
         }
 
         
@@ -341,7 +349,7 @@ public abstract class AtomicLongFieldUpdater<T> {
         private void ensureProtectedAccess(T obj) {
             {
                 boolean var76354D080B43280F16DDC78A61CBBC1D_1137877797 = (cclass.isInstance(obj));
-            } //End collapsed parenthetic
+            } 
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                 new IllegalAccessException("Class " +
                     cclass.getName() +
@@ -352,19 +360,19 @@ public abstract class AtomicLongFieldUpdater<T> {
                 )
             );
             addTaint(obj.getTaint());
-            // ---------- Original Method ----------
-            //if (cclass.isInstance(obj)) {
-                //return;
-            //}
-            //throw new RuntimeException(
-                //new IllegalAccessException("Class " +
-                    //cclass.getName() +
-                    //" can not access a protected member of class " +
-                    //tclass.getName() +
-                    //" using an instance of " +
-                    //obj.getClass().getName()
-                //)
-            //);
+            
+            
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                
+            
         }
 
         
@@ -396,24 +404,24 @@ public abstract class AtomicLongFieldUpdater<T> {
                 field = tclass.getDeclaredField(fieldName);
                 caller = VMStack.getStackClass2();
                 modifiers = field.getModifiers();
-            } //End block
+            } 
             catch (Exception ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
-            } //End block
+            } 
             Class fieldt = field.getType();
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Must be long type");
             {
                 boolean var60B416625B50ACEF1DA4DA2F835A2BDA_907636641 = (!Modifier.isVolatile(modifiers));
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Must be volatile type");
-            } //End collapsed parenthetic
+            } 
             this.cclass = (Modifier.isProtected(modifiers) &&
                            caller != tclass) ? caller : null;
             this.tclass = tclass;
             offset = unsafe.objectFieldOffset(field);
             addTaint(fieldName.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -422,14 +430,14 @@ public abstract class AtomicLongFieldUpdater<T> {
             {
                 boolean var08A757AC16599EE9FA86D0ACCDFB617F_1612352909 = (!tclass.isInstance(obj));
                 if (DroidSafeAndroidRuntime.control) throw new ClassCastException();
-            } //End collapsed parenthetic
+            } 
             ensureProtectedAccess(obj);
             addTaint(obj.getTaint());
-            // ---------- Original Method ----------
-            //if (!tclass.isInstance(obj))
-                //throw new ClassCastException();
-            //if (cclass != null)
-                //ensureProtectedAccess(obj);
+            
+            
+                
+            
+                
         }
 
         
@@ -438,25 +446,25 @@ public abstract class AtomicLongFieldUpdater<T> {
             {
                 boolean varF632C662F50CD55BC2A79D282BA126B0_226340912 = (obj == null || obj.getClass() != tclass || cclass != null);
                 fullCheck(obj);
-            } //End collapsed parenthetic
+            } 
             {
                 long v = unsafe.getLong(obj, offset);
                 unsafe.putLong(obj, offset, update);
-            } //End block
+            } 
             addTaint(obj.getTaint());
             addTaint(expect);
             addTaint(update);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1436840217 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1436840217;
-            // ---------- Original Method ----------
-            //if (obj == null || obj.getClass() != tclass || cclass != null) fullCheck(obj);
-            //synchronized (this) {
-                //long v = unsafe.getLong(obj, offset);
-                //if (v != expect)
-                    //return false;
-                //unsafe.putLong(obj, offset, update);
-                //return true;
-            //}
+            
+            
+            
+                
+                
+                    
+                
+                
+            
         }
 
         
@@ -468,8 +476,8 @@ public abstract class AtomicLongFieldUpdater<T> {
             addTaint(update);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2063431213 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2063431213;
-            // ---------- Original Method ----------
-            //return compareAndSet(obj, expect, update);
+            
+            
         }
 
         
@@ -478,17 +486,17 @@ public abstract class AtomicLongFieldUpdater<T> {
             {
                 boolean varF632C662F50CD55BC2A79D282BA126B0_1045778295 = (obj == null || obj.getClass() != tclass || cclass != null);
                 fullCheck(obj);
-            } //End collapsed parenthetic
+            } 
             {
                 unsafe.putLong(obj, offset, newValue);
-            } //End block
+            } 
             addTaint(obj.getTaint());
             addTaint(newValue);
-            // ---------- Original Method ----------
-            //if (obj == null || obj.getClass() != tclass || cclass != null) fullCheck(obj);
-            //synchronized (this) {
-                //unsafe.putLong(obj, offset, newValue);
-            //}
+            
+            
+            
+                
+            
         }
 
         
@@ -497,8 +505,8 @@ public abstract class AtomicLongFieldUpdater<T> {
             set(obj, newValue);
             addTaint(obj.getTaint());
             addTaint(newValue);
-            // ---------- Original Method ----------
-            //set(obj, newValue);
+            
+            
         }
 
         
@@ -507,18 +515,18 @@ public abstract class AtomicLongFieldUpdater<T> {
             {
                 boolean varF632C662F50CD55BC2A79D282BA126B0_774087822 = (obj == null || obj.getClass() != tclass || cclass != null);
                 fullCheck(obj);
-            } //End collapsed parenthetic
+            } 
             {
                 long var7FA8DBAEF21C12A0B494ECC88AF219DF_921625234 = (unsafe.getLong(obj, offset));
-            } //End block
+            } 
             addTaint(obj.getTaint());
             long var0F5264038205EDFB1AC05FBB0E8C5E94_1709568908 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1709568908;
-            // ---------- Original Method ----------
-            //if (obj == null || obj.getClass() != tclass || cclass != null) fullCheck(obj);
-            //synchronized (this) {
-                //return unsafe.getLong(obj, offset);
-            //}
+            
+            
+            
+                
+            
         }
 
         
@@ -526,7 +534,7 @@ public abstract class AtomicLongFieldUpdater<T> {
         private void ensureProtectedAccess(T obj) {
             {
                 boolean var76354D080B43280F16DDC78A61CBBC1D_10547639 = (cclass.isInstance(obj));
-            } //End collapsed parenthetic
+            } 
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                 new IllegalAccessException("Class " +
                     cclass.getName() +
@@ -537,19 +545,19 @@ public abstract class AtomicLongFieldUpdater<T> {
                 )
             );
             addTaint(obj.getTaint());
-            // ---------- Original Method ----------
-            //if (cclass.isInstance(obj)) {
-                //return;
-            //}
-            //throw new RuntimeException(
-                //new IllegalAccessException("Class " +
-                    //cclass.getName() +
-                    //" can not access a protected member of class " +
-                    //tclass.getName() +
-                    //" using an instance of " +
-                    //obj.getClass().getName()
-                //)
-            //);
+            
+            
+                
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                
+            
         }
 
         

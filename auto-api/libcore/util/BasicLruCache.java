@@ -1,11 +1,11 @@
 package libcore.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -22,87 +22,88 @@ public class BasicLruCache<K, V> {
     public  BasicLruCache(int maxSize) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("maxSize <= 0");
-        } //End block
+        } 
         this.maxSize = maxSize;
         this.map = new LinkedHashMap<K, V>(0, 0.75f, true);
-        // ---------- Original Method ----------
-        //if (maxSize <= 0) {
-            //throw new IllegalArgumentException("maxSize <= 0");
-        //}
-        //this.maxSize = maxSize;
-        //this.map = new LinkedHashMap<K, V>(0, 0.75f, true);
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.988 -0400", hash_original_method = "FDCF7F376F479E894B67671F9DF4B51A", hash_generated_method = "3AB18E703499017619D21F2E0441D9CA")
     public synchronized final V get(K key) {
-        V varB4EAC82CA7396A68D541C85D26508E83_1978429570 = null; //Variable for return #1
-        V varB4EAC82CA7396A68D541C85D26508E83_227206944 = null; //Variable for return #2
+        V varB4EAC82CA7396A68D541C85D26508E83_1978429570 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_227206944 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         V result = map.get(key);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1978429570 = result;
-        } //End block
+        } 
         result = create(key);
         {
             map.put(key, result);
             trimToSize(maxSize);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_227206944 = result;
         addTaint(key.getTaint());
-        V varA7E53CE21691AB073D9660D615818899_2146016631; //Final return value
+        V varA7E53CE21691AB073D9660D615818899_2146016631; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2146016631 = varB4EAC82CA7396A68D541C85D26508E83_1978429570;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2146016631 = varB4EAC82CA7396A68D541C85D26508E83_227206944;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2146016631.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2146016631.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2146016631;
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //throw new NullPointerException();
-        //}
-        //V result = map.get(key);
-        //if (result != null) {
-            //return result;
-        //}
-        //result = create(key);
-        //if (result != null) {
-            //map.put(key, result);
-            //trimToSize(maxSize);
-        //}
-        //return result;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.988 -0400", hash_original_method = "B215038407F38B18B2F223450263C0DA", hash_generated_method = "9AFC6077A9D78F8DF3C0E4CF263E211E")
     public synchronized final V put(K key, V value) {
-        V varB4EAC82CA7396A68D541C85D26508E83_773408463 = null; //Variable for return #1
+        V varB4EAC82CA7396A68D541C85D26508E83_773408463 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         V previous = map.put(key, value);
         trimToSize(maxSize);
         varB4EAC82CA7396A68D541C85D26508E83_773408463 = previous;
         addTaint(key.getTaint());
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_773408463.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_773408463.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_773408463;
-        // ---------- Original Method ----------
-        //if (key == null || value == null) {
-            //throw new NullPointerException();
-        //}
-        //V previous = map.put(key, value);
-        //trimToSize(maxSize);
-        //return previous;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.988 -0400", hash_original_method = "C2014D558C9CB4AC36D82EB01EFD84A6", hash_generated_method = "CD12C96EE79434C7BC4C755181CCF11F")
     private void trimToSize(int maxSize) {
         {
@@ -113,56 +114,58 @@ public class BasicLruCache<K, V> {
                 V value = toEvict.getValue();
                 map.remove(key);
                 entryEvicted(key, value);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(maxSize);
-        // ---------- Original Method ----------
-        //while (map.size() > maxSize) {
-            //Map.Entry<K, V> toEvict = map.eldest();
-            //K key = toEvict.getKey();
-            //V value = toEvict.getValue();
-            //map.remove(key);
-            //entryEvicted(key, value);
-        //}
+        
+        
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.989 -0400", hash_original_method = "4BE44702079F6982C8F2A1526F7D2A98", hash_generated_method = "38D7723A24AC4FEFAEF7BE8D804987AD")
     protected void entryEvicted(K key, V value) {
         addTaint(key.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.989 -0400", hash_original_method = "56F7B4D0824C7980B3CF91C05C1DA172", hash_generated_method = "E75A617281E4B92F50B83971360B4223")
     protected V create(K key) {
-        V varB4EAC82CA7396A68D541C85D26508E83_505819542 = null; //Variable for return #1
+        V varB4EAC82CA7396A68D541C85D26508E83_505819542 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_505819542 = null;
         addTaint(key.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_505819542.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_505819542.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_505819542;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.989 -0400", hash_original_method = "8A5EBF82F92FAE3DB13A729C4B6DDBA4", hash_generated_method = "48908C583F2AC95CF6C0B414D581F916")
     public synchronized final Map<K, V> snapshot() {
-        Map<K, V> varB4EAC82CA7396A68D541C85D26508E83_351977385 = null; //Variable for return #1
+        Map<K, V> varB4EAC82CA7396A68D541C85D26508E83_351977385 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_351977385 = new LinkedHashMap<K, V>(map);
-        varB4EAC82CA7396A68D541C85D26508E83_351977385.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_351977385.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_351977385;
-        // ---------- Original Method ----------
-        //return new LinkedHashMap<K, V>(map);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.990 -0400", hash_original_method = "4FACC3280D713DC7A18D1388CFCADEC7", hash_generated_method = "C3AF49710F011F61B8CC4C3328E6E65F")
     public synchronized final void evictAll() {
         trimToSize(0);
-        // ---------- Original Method ----------
-        //trimToSize(0);
+        
+        
     }
 
     

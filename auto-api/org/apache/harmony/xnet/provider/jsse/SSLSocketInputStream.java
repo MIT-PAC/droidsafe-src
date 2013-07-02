@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,16 +34,16 @@ public final class SSLSocketInputStream extends InputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.053 -0400", hash_original_method = "2B2DE235A31ECF6D427ED4CC1BA78F0B", hash_generated_method = "E318056FDC005244FC8100AFE22AA9B7")
     protected  SSLSocketInputStream(SSLSocketImpl owner) {
         this.owner = owner;
-        // ---------- Original Method ----------
-        //this.owner = owner;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.054 -0400", hash_original_method = "A09BD0FC7A641BF0B6392C48D9B80DDB", hash_generated_method = "D50BB51FAE52E72979CFB5B32761475B")
     protected void setEnd() {
         end_reached = true;
-        // ---------- Original Method ----------
-        //end_reached = true;
+        
+        
     }
 
     
@@ -52,8 +52,8 @@ public final class SSLSocketInputStream extends InputStream {
     public int available() throws IOException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_608619294 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_608619294;
-        // ---------- Original Method ----------
-        //return end - pos;
+        
+        
     }
 
     
@@ -61,36 +61,38 @@ public final class SSLSocketInputStream extends InputStream {
     @Override
     public void close() throws IOException {
         buffer = null;
-        // ---------- Original Method ----------
-        //buffer = null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.055 -0400", hash_original_method = "92F5EAFF00040EF543528D1059933772", hash_generated_method = "DA52D3A8DFE2225A71F350D173067A9C")
     @Override
     public int read() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Stream was closed.");
-        } //End block
+        } 
         {
             owner.needAppData();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1682845163 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1682845163;
-        // ---------- Original Method ----------
-        //if (buffer == null) {
-            //throw new IOException("Stream was closed.");
-        //}
-        //while (pos == end) {
-            //if (end_reached) {
-                //return -1;
-            //}
-            //owner.needAppData();
-        //}
-        //return buffer[pos++] & 0xFF;
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.055 -0400", hash_original_method = "50426CF7D6642F19D28119E1D947BED8", hash_generated_method = "A41AE4C2D332476FC387636DDE1C2210")
     @Override
     public int read(byte[] b, int off, int len) throws IOException {
@@ -99,28 +101,28 @@ public final class SSLSocketInputStream extends InputStream {
         {
             {
                 boolean var58A5278A655D93F97DA0180416078C33_1229448356 = ((read_b = read()) == -1);
-            } //End collapsed parenthetic
+            } 
             b[off+i] = (byte) read_b;
-        } //End block
+        } 
         {
             boolean var455A44C366F5A1443EF5626F0B5953C6_1590502709 = ((available() != 0) && (i<len));
-        } //End collapsed parenthetic
+        } 
         addTaint(b[0]);
         addTaint(off);
         addTaint(len);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_513323197 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_513323197;
-        // ---------- Original Method ----------
-        //int read_b;
-        //int i = 0;
-        //do {
-            //if ((read_b = read()) == -1) {
-                //return (i == 0) ? -1 : i;
-            //}
-            //b[off+i] = (byte) read_b;
-            //i++;
-        //} while ((available() != 0) && (i<len));
-        //return i;
+        
+        
+        
+        
+            
+                
+            
+            
+            
+        
+        
     }
 
     
@@ -129,7 +131,7 @@ public final class SSLSocketInputStream extends InputStream {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.055 -0400", hash_original_method = "740A355E7DE5D3F2D284C3985F05A62D", hash_generated_method = "740A355E7DE5D3F2D284C3985F05A62D")
         public Adapter ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -139,28 +141,28 @@ public final class SSLSocketInputStream extends InputStream {
             {
                 if (DroidSafeAndroidRuntime.control) throw new AlertException(AlertProtocol.INTERNAL_ERROR,
                         new SSLException("Could not accept income app data."));
-            } //End block
+            } 
             {
                 System.arraycopy(buffer, pos, buffer, 0, end-pos);
                 end -= pos;
                 pos = 0;
-            } //End block
+            } 
             System.arraycopy(src, 0, buffer, end, length);
             end = end + length;
             addTaint(src[0]);
-            // ---------- Original Method ----------
-            //int length = src.length;
-            //if (BUFFER_SIZE - (end - pos) < length) {
-                //throw new AlertException(AlertProtocol.INTERNAL_ERROR,
-                        //new SSLException("Could not accept income app data."));
-            //}
-            //if (end + length > BUFFER_SIZE) {
-                //System.arraycopy(buffer, pos, buffer, 0, end-pos);
-                //end -= pos;
-                //pos = 0;
-            //}
-            //System.arraycopy(src, 0, buffer, end, length);
-            //end = end + length;
+            
+            
+            
+                
+                        
+            
+            
+                
+                
+                
+            
+            
+            
         }
 
         

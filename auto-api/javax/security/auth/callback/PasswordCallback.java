@@ -1,11 +1,11 @@
 package javax.security.auth.callback;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 import java.util.Arrays;
@@ -26,37 +26,38 @@ public class PasswordCallback implements Callback, Serializable {
         setPrompt(prompt);
         this.echoOn = echoOn;
         addTaint(prompt.getTaint());
-        // ---------- Original Method ----------
-        //setPrompt(prompt);
-        //this.echoOn = echoOn;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.776 -0400", hash_original_method = "3C861E594BCF1170EC69D71F98E7DC21", hash_generated_method = "4781F04A51EC267F75238B3F07C401CA")
     private void setPrompt(String prompt) throws IllegalArgumentException {
         {
             boolean varACACCA92E3E1C5825288AD8E673DCE66_1968739072 = (prompt == null || prompt.length() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid prompt");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.prompt = prompt;
-        // ---------- Original Method ----------
-        //if (prompt == null || prompt.length() == 0) {
-            //throw new IllegalArgumentException("Invalid prompt");
-        //}
-        //this.prompt = prompt;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.777 -0400", hash_original_method = "9CD919A2E5CE4DE3A8693DD7DF368A07", hash_generated_method = "39781FD10F52EF196E6BCC756440A633")
     public String getPrompt() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1557250766 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1557250766 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1557250766 = prompt;
-        varB4EAC82CA7396A68D541C85D26508E83_1557250766.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1557250766.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1557250766;
-        // ---------- Original Method ----------
-        //return prompt;
+        
+        
     }
 
     
@@ -64,57 +65,60 @@ public class PasswordCallback implements Callback, Serializable {
     public boolean isEchoOn() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_714035029 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_714035029;
-        // ---------- Original Method ----------
-        //return echoOn;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.778 -0400", hash_original_method = "A602CEA65D3FCE1A9999A6860447F09F", hash_generated_method = "6CDDAFFDD76900A9EB906D4CEDA8866C")
     public void setPassword(char[] password) {
         {
             this.inputPassword = password;
-        } //End block
+        } 
         {
             inputPassword = new char[password.length];
             System.arraycopy(password, 0, inputPassword, 0, inputPassword.length);
-        } //End block
-        // ---------- Original Method ----------
-        //if (password == null) {
-            //this.inputPassword = password;
-        //} else {
-            //inputPassword = new char[password.length];
-            //System.arraycopy(password, 0, inputPassword, 0, inputPassword.length);
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.778 -0400", hash_original_method = "5EC08C3E76624CC9F22EE28EB19509D9", hash_generated_method = "A2FB830C77AD8F56D7365B73B3A06636")
     public char[] getPassword() {
         {
             char[] tmp = new char[inputPassword.length];
             System.arraycopy(inputPassword, 0, tmp, 0, tmp.length);
-        } //End block
+        } 
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_2085980224 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_2085980224;
-        // ---------- Original Method ----------
-        //if (inputPassword != null) {
-            //char[] tmp = new char[inputPassword.length];
-            //System.arraycopy(inputPassword, 0, tmp, 0, tmp.length);
-            //return tmp;
-        //}
-        //return null;
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.779 -0400", hash_original_method = "C115B79B56D59F71CAFFFA3A677E976D", hash_generated_method = "BF44141C0C533F6BFE56CEB0714DE3A4")
     public void clearPassword() {
         {
             Arrays.fill(inputPassword, '\u0000');
-        } //End block
-        // ---------- Original Method ----------
-        //if (inputPassword != null) {
-            //Arrays.fill(inputPassword, '\u0000');
-        //}
+        } 
+        
+        
+            
+        
     }
 
     

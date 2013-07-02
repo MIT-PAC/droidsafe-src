@@ -1,11 +1,11 @@
 package android.provider;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.DownloadManager;
 import android.net.NetworkPolicyManager;
@@ -15,7 +15,7 @@ public final class Downloads {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.787 -0400", hash_original_method = "9B4A677720B6322F28A15E895C99B092", hash_generated_method = "BCFC969F167E5171E2BDC38F7DDB8203")
     private  Downloads() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,7 +23,7 @@ public final class Downloads {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.787 -0400", hash_original_method = "BBF0D9B1CF16C5FC7549DABF49EBEFE0", hash_generated_method = "3F538DB11C86ADB27843AD5963111DF7")
         private  Impl() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -68,7 +68,7 @@ public final class Downloads {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.789 -0400", hash_original_method = "B06C81148D4BC4223C2D3A656DC9543B", hash_generated_method = "B06C81148D4BC4223C2D3A656DC9543B")
             public RequestHeaders ()
             {
-                //Synthesized constructor
+                
             }
 
 

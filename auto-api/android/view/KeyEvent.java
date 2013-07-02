@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -60,7 +60,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.277 -0400", hash_original_method = "E1777BC70B96D5008D693732650D9927", hash_generated_method = "560F8A7FDE8C5C12025FD3A840761BDA")
     private  KeyEvent() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -70,11 +70,11 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mKeyCode = code;
         mRepeatCount = 0;
         mDeviceId = KeyCharacterMap.VIRTUAL_KEYBOARD;
-        // ---------- Original Method ----------
-        //mAction = action;
-        //mKeyCode = code;
-        //mRepeatCount = 0;
-        //mDeviceId = KeyCharacterMap.VIRTUAL_KEYBOARD;
+        
+        
+        
+        
+        
     }
 
     
@@ -87,13 +87,13 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mKeyCode = code;
         mRepeatCount = repeat;
         mDeviceId = KeyCharacterMap.VIRTUAL_KEYBOARD;
-        // ---------- Original Method ----------
-        //mDownTime = downTime;
-        //mEventTime = eventTime;
-        //mAction = action;
-        //mKeyCode = code;
-        //mRepeatCount = repeat;
-        //mDeviceId = KeyCharacterMap.VIRTUAL_KEYBOARD;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -107,14 +107,14 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mRepeatCount = repeat;
         mMetaState = metaState;
         mDeviceId = KeyCharacterMap.VIRTUAL_KEYBOARD;
-        // ---------- Original Method ----------
-        //mDownTime = downTime;
-        //mEventTime = eventTime;
-        //mAction = action;
-        //mKeyCode = code;
-        //mRepeatCount = repeat;
-        //mMetaState = metaState;
-        //mDeviceId = KeyCharacterMap.VIRTUAL_KEYBOARD;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -130,15 +130,15 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mMetaState = metaState;
         mDeviceId = deviceId;
         mScanCode = scancode;
-        // ---------- Original Method ----------
-        //mDownTime = downTime;
-        //mEventTime = eventTime;
-        //mAction = action;
-        //mKeyCode = code;
-        //mRepeatCount = repeat;
-        //mMetaState = metaState;
-        //mDeviceId = deviceId;
-        //mScanCode = scancode;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -155,16 +155,16 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mDeviceId = deviceId;
         mScanCode = scancode;
         mFlags = flags;
-        // ---------- Original Method ----------
-        //mDownTime = downTime;
-        //mEventTime = eventTime;
-        //mAction = action;
-        //mKeyCode = code;
-        //mRepeatCount = repeat;
-        //mMetaState = metaState;
-        //mDeviceId = deviceId;
-        //mScanCode = scancode;
-        //mFlags = flags;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -182,17 +182,17 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mScanCode = scancode;
         mFlags = flags;
         mSource = source;
-        // ---------- Original Method ----------
-        //mDownTime = downTime;
-        //mEventTime = eventTime;
-        //mAction = action;
-        //mKeyCode = code;
-        //mRepeatCount = repeat;
-        //mMetaState = metaState;
-        //mDeviceId = deviceId;
-        //mScanCode = scancode;
-        //mFlags = flags;
-        //mSource = source;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -207,16 +207,16 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mDeviceId = deviceId;
         mFlags = flags;
         mSource = InputDevice.SOURCE_KEYBOARD;
-        // ---------- Original Method ----------
-        //mDownTime = time;
-        //mEventTime = time;
-        //mCharacters = characters;
-        //mAction = ACTION_MULTIPLE;
-        //mKeyCode = KEYCODE_UNKNOWN;
-        //mRepeatCount = 0;
-        //mDeviceId = deviceId;
-        //mFlags = flags;
-        //mSource = InputDevice.SOURCE_KEYBOARD;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -233,18 +233,18 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mScanCode = origEvent.mScanCode;
         mFlags = origEvent.mFlags;
         mCharacters = origEvent.mCharacters;
-        // ---------- Original Method ----------
-        //mDownTime = origEvent.mDownTime;
-        //mEventTime = origEvent.mEventTime;
-        //mAction = origEvent.mAction;
-        //mKeyCode = origEvent.mKeyCode;
-        //mRepeatCount = origEvent.mRepeatCount;
-        //mMetaState = origEvent.mMetaState;
-        //mDeviceId = origEvent.mDeviceId;
-        //mSource = origEvent.mSource;
-        //mScanCode = origEvent.mScanCode;
-        //mFlags = origEvent.mFlags;
-        //mCharacters = origEvent.mCharacters;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -262,18 +262,18 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mScanCode = origEvent.mScanCode;
         mFlags = origEvent.mFlags;
         mCharacters = origEvent.mCharacters;
-        // ---------- Original Method ----------
-        //mDownTime = origEvent.mDownTime;
-        //mEventTime = eventTime;
-        //mAction = origEvent.mAction;
-        //mKeyCode = origEvent.mKeyCode;
-        //mRepeatCount = newRepeat;
-        //mMetaState = origEvent.mMetaState;
-        //mDeviceId = origEvent.mDeviceId;
-        //mSource = origEvent.mSource;
-        //mScanCode = origEvent.mScanCode;
-        //mFlags = origEvent.mFlags;
-        //mCharacters = origEvent.mCharacters;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -289,17 +289,17 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mSource = origEvent.mSource;
         mScanCode = origEvent.mScanCode;
         mFlags = origEvent.mFlags;
-        // ---------- Original Method ----------
-        //mDownTime = origEvent.mDownTime;
-        //mEventTime = origEvent.mEventTime;
-        //mAction = action;
-        //mKeyCode = origEvent.mKeyCode;
-        //mRepeatCount = origEvent.mRepeatCount;
-        //mMetaState = origEvent.mMetaState;
-        //mDeviceId = origEvent.mDeviceId;
-        //mSource = origEvent.mSource;
-        //mScanCode = origEvent.mScanCode;
-        //mFlags = origEvent.mFlags;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -315,20 +315,21 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mFlags = in.readInt();
         mDownTime = in.readLong();
         mEventTime = in.readLong();
-        // ---------- Original Method ----------
-        //mDeviceId = in.readInt();
-        //mSource = in.readInt();
-        //mAction = in.readInt();
-        //mKeyCode = in.readInt();
-        //mRepeatCount = in.readInt();
-        //mMetaState = in.readInt();
-        //mScanCode = in.readInt();
-        //mFlags = in.readInt();
-        //mDownTime = in.readLong();
-        //mEventTime = in.readLong();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void populateKeycodeSymbolicNames() {
         SparseArray<String> names = KEYCODE_SYMBOLIC_NAMES;
         names.append(KEYCODE_UNKNOWN, "KEYCODE_UNKNOWN");
@@ -550,6 +551,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getDeadChar(int accent, int c) {
         return KeyCharacterMap.getDeadChar(accent, c);
     }
@@ -610,12 +612,12 @@ public class KeyEvent extends InputEvent implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.285 -0400", hash_original_method = "71F28D5E8589FEEEB25F09C6B26D40EA", hash_generated_method = "7B1BF18B2BBA2A57AD556B25BFFB4421")
     @Override
     public KeyEvent copy() {
-        KeyEvent varB4EAC82CA7396A68D541C85D26508E83_1075608350 = null; //Variable for return #1
+        KeyEvent varB4EAC82CA7396A68D541C85D26508E83_1075608350 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1075608350 = obtain(this);
-        varB4EAC82CA7396A68D541C85D26508E83_1075608350.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1075608350.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1075608350;
-        // ---------- Original Method ----------
-        //return obtain(this);
+        
+        
     }
 
     
@@ -623,28 +625,28 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final void recycle() {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(toString() + " recycled twice!");
-        } //End block
+        } 
         mRecycled = true;
         mCharacters = null;
         {
             {
                 mNext = gRecyclerTop;
                 gRecyclerTop = this;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mRecycled) {
-            //throw new RuntimeException(toString() + " recycled twice!");
-        //}
-        //mRecycled = true;
-        //mCharacters = null;
-        //synchronized (gRecyclerLock) {
-            //if (gRecyclerUsed < MAX_RECYCLED) {
-                //gRecyclerUsed++;
-                //mNext = gRecyclerTop;
-                //gRecyclerTop = this;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+        
+            
+                
+                
+                
+            
+        
     }
 
     
@@ -681,8 +683,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final boolean isTainted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_970291276 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_970291276;
-        // ---------- Original Method ----------
-        //return (mFlags & FLAG_TAINTED) != 0;
+        
+        
     }
 
     
@@ -690,8 +692,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     @Override
     public final void setTainted(boolean tainted) {
         mFlags = tainted ? mFlags | FLAG_TAINTED : mFlags & ~FLAG_TAINTED;
-        // ---------- Original Method ----------
-        //mFlags = tainted ? mFlags | FLAG_TAINTED : mFlags & ~FLAG_TAINTED;
+        
+        
     }
 
     
@@ -700,8 +702,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final boolean isDown() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1825924572 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1825924572;
-        // ---------- Original Method ----------
-        //return mAction == ACTION_DOWN;
+        
+        
     }
 
     
@@ -710,8 +712,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
         boolean varE6AE4855DF83EA7EFECC7D1592082189_266640903 = (native_isSystemKey(mKeyCode));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_690335826 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_690335826;
-        // ---------- Original Method ----------
-        //return native_isSystemKey(mKeyCode);
+        
+        
     }
 
     
@@ -720,8 +722,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
         boolean var3700A8CA622BABEEE0834C3658EDA3E8_1937823559 = (native_hasDefaultAction(mKeyCode));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1054770890 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1054770890;
-        // ---------- Original Method ----------
-        //return native_hasDefaultAction(mKeyCode);
+        
+        
     }
 
     
@@ -770,8 +772,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final int getDeviceId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1161624152 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1161624152;
-        // ---------- Original Method ----------
-        //return mDeviceId;
+        
+        
     }
 
     
@@ -780,8 +782,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final int getSource() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1965910795 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1965910795;
-        // ---------- Original Method ----------
-        //return mSource;
+        
+        
     }
 
     
@@ -789,8 +791,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     @Override
     public final void setSource(int source) {
         mSource = source;
-        // ---------- Original Method ----------
-        //mSource = source;
+        
+        
     }
 
     
@@ -798,8 +800,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final int getMetaState() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_783275886 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_783275886;
-        // ---------- Original Method ----------
-        //return mMetaState;
+        
+        
     }
 
     
@@ -808,8 +810,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
         int varBE1D060D57A6403B56DE9C919712B4F7_786510031 = (normalizeMetaState(mMetaState) & META_MODIFIER_MASK);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1180583744 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1180583744;
-        // ---------- Original Method ----------
-        //return normalizeMetaState(mMetaState) & META_MODIFIER_MASK;
+        
+        
     }
 
     
@@ -817,8 +819,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final int getFlags() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1481316581 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1481316581;
-        // ---------- Original Method ----------
-        //return mFlags;
+        
+        
     }
 
     
@@ -923,8 +925,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
         boolean var2EA5825E3B6BAF4D435678EE4FA290B6_1445543195 = (metaStateHasNoModifiers(mMetaState));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_829280543 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_829280543;
-        // ---------- Original Method ----------
-        //return metaStateHasNoModifiers(mMetaState);
+        
+        
     }
 
     
@@ -934,8 +936,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
         addTaint(modifiers);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_200127845 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_200127845;
-        // ---------- Original Method ----------
-        //return metaStateHasModifiers(mMetaState, modifiers);
+        
+        
     }
 
     
@@ -943,8 +945,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final boolean isAltPressed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1992590180 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1992590180;
-        // ---------- Original Method ----------
-        //return (mMetaState & META_ALT_ON) != 0;
+        
+        
     }
 
     
@@ -952,8 +954,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final boolean isShiftPressed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_10837753 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_10837753;
-        // ---------- Original Method ----------
-        //return (mMetaState & META_SHIFT_ON) != 0;
+        
+        
     }
 
     
@@ -961,8 +963,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final boolean isSymPressed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2122312292 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2122312292;
-        // ---------- Original Method ----------
-        //return (mMetaState & META_SYM_ON) != 0;
+        
+        
     }
 
     
@@ -970,8 +972,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final boolean isCtrlPressed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_891953019 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_891953019;
-        // ---------- Original Method ----------
-        //return (mMetaState & META_CTRL_ON) != 0;
+        
+        
     }
 
     
@@ -979,8 +981,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final boolean isMetaPressed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1693343768 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1693343768;
-        // ---------- Original Method ----------
-        //return (mMetaState & META_META_ON) != 0;
+        
+        
     }
 
     
@@ -988,8 +990,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final boolean isFunctionPressed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_911367398 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_911367398;
-        // ---------- Original Method ----------
-        //return (mMetaState & META_FUNCTION_ON) != 0;
+        
+        
     }
 
     
@@ -997,8 +999,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final boolean isCapsLockOn() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1712331204 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1712331204;
-        // ---------- Original Method ----------
-        //return (mMetaState & META_CAPS_LOCK_ON) != 0;
+        
+        
     }
 
     
@@ -1006,8 +1008,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final boolean isNumLockOn() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2143621779 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2143621779;
-        // ---------- Original Method ----------
-        //return (mMetaState & META_NUM_LOCK_ON) != 0;
+        
+        
     }
 
     
@@ -1015,8 +1017,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final boolean isScrollLockOn() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_455950645 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_455950645;
-        // ---------- Original Method ----------
-        //return (mMetaState & META_SCROLL_LOCK_ON) != 0;
+        
+        
     }
 
     
@@ -1024,8 +1026,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final int getAction() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_528944525 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_528944525;
-        // ---------- Original Method ----------
-        //return mAction;
+        
+        
     }
 
     
@@ -1033,16 +1035,16 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final boolean isCanceled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_532840142 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_532840142;
-        // ---------- Original Method ----------
-        //return (mFlags&FLAG_CANCELED) != 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.297 -0400", hash_original_method = "27796C2FEC9179970B535474C3BFAAB9", hash_generated_method = "2EE0466AB5C2F2727C33F7700B8007CE")
     public final void startTracking() {
         mFlags |= FLAG_START_TRACKING;
-        // ---------- Original Method ----------
-        //mFlags |= FLAG_START_TRACKING;
+        
+        
     }
 
     
@@ -1050,8 +1052,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final boolean isTracking() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_893359701 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_893359701;
-        // ---------- Original Method ----------
-        //return (mFlags&FLAG_TRACKING) != 0;
+        
+        
     }
 
     
@@ -1059,8 +1061,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final boolean isLongPress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_394738430 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_394738430;
-        // ---------- Original Method ----------
-        //return (mFlags&FLAG_LONG_PRESS) != 0;
+        
+        
     }
 
     
@@ -1068,19 +1070,19 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final int getKeyCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1343077093 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1343077093;
-        // ---------- Original Method ----------
-        //return mKeyCode;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.299 -0400", hash_original_method = "E7E0F27294714D41CE9B0DB8FACE7352", hash_generated_method = "083654B10EC1BF7E24A5C53CFB473760")
     public final String getCharacters() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2047547633 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2047547633 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2047547633 = mCharacters;
-        varB4EAC82CA7396A68D541C85D26508E83_2047547633.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2047547633.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2047547633;
-        // ---------- Original Method ----------
-        //return mCharacters;
+        
+        
     }
 
     
@@ -1088,8 +1090,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final int getScanCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_603504420 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_603504420;
-        // ---------- Original Method ----------
-        //return mScanCode;
+        
+        
     }
 
     
@@ -1097,8 +1099,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final int getRepeatCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1518905661 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1518905661;
-        // ---------- Original Method ----------
-        //return mRepeatCount;
+        
+        
     }
 
     
@@ -1106,8 +1108,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final long getDownTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_630505197 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_630505197;
-        // ---------- Original Method ----------
-        //return mDownTime;
+        
+        
     }
 
     
@@ -1115,8 +1117,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final long getEventTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1000017748 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1000017748;
-        // ---------- Original Method ----------
-        //return mEventTime;
+        
+        
     }
 
     
@@ -1125,8 +1127,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final long getEventTimeNano() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_686005346 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_686005346;
-        // ---------- Original Method ----------
-        //return mEventTime * 1000000L;
+        
+        
     }
 
     
@@ -1135,19 +1137,19 @@ public class KeyEvent extends InputEvent implements Parcelable {
     public final int getKeyboardDevice() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_106661776 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_106661776;
-        // ---------- Original Method ----------
-        //return mDeviceId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.302 -0400", hash_original_method = "E25038BBE92ACBB5F3F6678AD9978C07", hash_generated_method = "ADD582161BB898BBAA3C774308F2F872")
     public final KeyCharacterMap getKeyCharacterMap() {
-        KeyCharacterMap varB4EAC82CA7396A68D541C85D26508E83_1113567448 = null; //Variable for return #1
+        KeyCharacterMap varB4EAC82CA7396A68D541C85D26508E83_1113567448 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1113567448 = KeyCharacterMap.load(mDeviceId);
-        varB4EAC82CA7396A68D541C85D26508E83_1113567448.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1113567448.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1113567448;
-        // ---------- Original Method ----------
-        //return KeyCharacterMap.load(mDeviceId);
+        
+        
     }
 
     
@@ -1156,8 +1158,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
         char var402815CACAA9DDFAEFEDC0C125FB2994_509335763 = (getKeyCharacterMap().getDisplayLabel(mKeyCode));
         char varA87DEB01C5F539E6BDA34829C8EF2368_481962223 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_481962223;
-        // ---------- Original Method ----------
-        //return getKeyCharacterMap().getDisplayLabel(mKeyCode);
+        
+        
     }
 
     
@@ -1166,8 +1168,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
         int var1A789D027C8A5A0C16264D8FE1C23A29_351924082 = (getUnicodeChar(mMetaState));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1700674300 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1700674300;
-        // ---------- Original Method ----------
-        //return getUnicodeChar(mMetaState);
+        
+        
     }
 
     
@@ -1177,8 +1179,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
         addTaint(metaState);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_972714590 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_972714590;
-        // ---------- Original Method ----------
-        //return getKeyCharacterMap().get(mKeyCode, metaState);
+        
+        
     }
 
     
@@ -1189,8 +1191,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
         addTaint(results.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_30444358 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_30444358;
-        // ---------- Original Method ----------
-        //return getKeyCharacterMap().getKeyData(mKeyCode, results);
+        
+        
     }
 
     
@@ -1200,8 +1202,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
         addTaint(chars[0]);
         char varA87DEB01C5F539E6BDA34829C8EF2368_20797248 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_20797248;
-        // ---------- Original Method ----------
-        //return getMatch(chars, 0);
+        
+        
     }
 
     
@@ -1212,8 +1214,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
         addTaint(metaState);
         char varA87DEB01C5F539E6BDA34829C8EF2368_224610939 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_224610939;
-        // ---------- Original Method ----------
-        //return getKeyCharacterMap().getMatch(mKeyCode, chars, metaState);
+        
+        
     }
 
     
@@ -1222,8 +1224,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
         char varB4F648281DAF3DD70FE46CEDEBEDC863_1315852662 = (getKeyCharacterMap().getNumber(mKeyCode));
         char varA87DEB01C5F539E6BDA34829C8EF2368_89268916 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_89268916;
-        // ---------- Original Method ----------
-        //return getKeyCharacterMap().getNumber(mKeyCode);
+        
+        
     }
 
     
@@ -1232,8 +1234,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
         boolean varF8D3C8E19AA06F294286F3275CCB7518_30472071 = (getKeyCharacterMap().isPrintingKey(mKeyCode));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2006350103 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2006350103;
-        // ---------- Original Method ----------
-        //return getKeyCharacterMap().isPrintingKey(mKeyCode);
+        
+        
     }
 
     
@@ -1244,22 +1246,22 @@ public class KeyEvent extends InputEvent implements Parcelable {
         addTaint(receiver.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_477180155 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_477180155;
-        // ---------- Original Method ----------
-        //return dispatch(receiver, null, null);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.306 -0400", hash_original_method = "486AD389F69CA9E805DF428CF28467C4", hash_generated_method = "DB590B227EE65910D45B8093ABB9253B")
     public final boolean dispatch(Callback receiver, DispatcherState state,
             Object target) {
-        //Begin case ACTION_DOWN 
+        
         {
             mFlags &= ~FLAG_START_TRACKING;
             boolean res = receiver.onKeyDown(mKeyCode, this);
             {
                 {
                     state.startTracking(this, target);
-                } //End block
+                } 
                 {
                     boolean var15107DBA9F13C4EA3AFAF1BF65D7423F_271262109 = (isLongPress() && state.isTracking(this));
                     {
@@ -1270,36 +1272,36 @@ public class KeyEvent extends InputEvent implements Parcelable {
                                 {
                                     state.performedLongPress(this);
                                     res = true;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         catch (AbstractMethodError e)
                         { }
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
-        //End case ACTION_DOWN 
-        //Begin case ACTION_UP 
+                    } 
+                } 
+            } 
+        } 
+        
+        
         {
             state.handleUpEvent(this);
-        } //End block
-        //End case ACTION_UP 
-        //Begin case ACTION_UP 
+        } 
+        
+        
         boolean var6AE796001B04D3F5946E38C8232FB430_1109448381 = (receiver.onKeyUp(mKeyCode, this));
-        //End case ACTION_UP 
-        //Begin case ACTION_MULTIPLE 
+        
+        
         final int count = mRepeatCount;
-        //End case ACTION_MULTIPLE 
-        //Begin case ACTION_MULTIPLE 
+        
+        
         final int code = mKeyCode;
-        //End case ACTION_MULTIPLE 
-        //Begin case ACTION_MULTIPLE 
+        
+        
         {
             boolean varCD86412E58971559452CF2B6E9A652F6_1756752054 = (receiver.onKeyMultiple(code, count, this));
-        } //End collapsed parenthetic
-        //End case ACTION_MULTIPLE 
-        //Begin case ACTION_MULTIPLE 
+        } 
+        
+        
         {
             mAction = ACTION_DOWN;
             mRepeatCount = 0;
@@ -1307,32 +1309,32 @@ public class KeyEvent extends InputEvent implements Parcelable {
             {
                 mAction = ACTION_UP;
                 receiver.onKeyUp(code, this);
-            } //End block
+            } 
             mAction = ACTION_MULTIPLE;
             mRepeatCount = count;
-        } //End block
-        //End case ACTION_MULTIPLE 
+        } 
+        
         addTaint(receiver.getTaint());
         addTaint(state.getTaint());
         addTaint(target.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_706838439 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_706838439;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.307 -0400", hash_original_method = "EC719782A5F2654811BE56A8456234B4", hash_generated_method = "240C232B9ECB1C48BAA49302D6706F62")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1125121547 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1125121547 = null; 
         StringBuilder msg = new StringBuilder();
         msg.append("KeyEvent { action=").append(actionToString(mAction));
         msg.append(", keyCode=").append(keyCodeToString(mKeyCode));
         msg.append(", scanCode=").append(mScanCode);
         {
             msg.append(", characters=\"").append(mCharacters).append("\"");
-        } //End block
+        } 
         msg.append(", metaState=").append(metaStateToString(mMetaState));
         msg.append(", flags=0x").append(Integer.toHexString(mFlags));
         msg.append(", repeatCount=").append(mRepeatCount);
@@ -1342,10 +1344,10 @@ public class KeyEvent extends InputEvent implements Parcelable {
         msg.append(", source=0x").append(Integer.toHexString(mSource));
         msg.append(" }");
         varB4EAC82CA7396A68D541C85D26508E83_1125121547 = msg.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1125121547.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1125121547.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1125121547;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1434,18 +1436,18 @@ public class KeyEvent extends InputEvent implements Parcelable {
         out.writeLong(mEventTime);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeInt(PARCEL_TOKEN_KEY_EVENT);
-        //out.writeInt(mDeviceId);
-        //out.writeInt(mSource);
-        //out.writeInt(mAction);
-        //out.writeInt(mKeyCode);
-        //out.writeInt(mRepeatCount);
-        //out.writeInt(mMetaState);
-        //out.writeInt(mScanCode);
-        //out.writeInt(mFlags);
-        //out.writeLong(mDownTime);
-        //out.writeLong(mEventTime);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1477,7 +1479,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.309 -0400", hash_original_method = "6A42904977F799CF06B04A57C142AD90", hash_generated_method = "6A42904977F799CF06B04A57C142AD90")
         public DispatcherState ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1486,11 +1488,11 @@ public class KeyEvent extends InputEvent implements Parcelable {
             mDownKeyCode = 0;
             mDownTarget = null;
             mActiveLongPresses.clear();
-            // ---------- Original Method ----------
-            //if (DEBUG) Log.v(TAG, "Reset: " + this);
-            //mDownKeyCode = 0;
-            //mDownTarget = null;
-            //mActiveLongPresses.clear();
+            
+            
+            
+            
+            
         }
 
         
@@ -1499,14 +1501,14 @@ public class KeyEvent extends InputEvent implements Parcelable {
             {
                 mDownKeyCode = 0;
                 mDownTarget = null;
-            } //End block
+            } 
             addTaint(target.getTaint());
-            // ---------- Original Method ----------
-            //if (mDownTarget == target) {
-                //if (DEBUG) Log.v(TAG, "Reset in " + target + ": " + this);
-                //mDownKeyCode = 0;
-                //mDownTarget = null;
-            //}
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -1517,18 +1519,18 @@ public class KeyEvent extends InputEvent implements Parcelable {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                         "Can only start tracking on a down event");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mDownKeyCode = event.getKeyCode();
             mDownTarget = target;
-            // ---------- Original Method ----------
-            //if (event.getAction() != ACTION_DOWN) {
-                //throw new IllegalArgumentException(
-                        //"Can only start tracking on a down event");
-            //}
-            //if (DEBUG) Log.v(TAG, "Start trackingt in " + target + ": " + this);
-            //mDownKeyCode = event.getKeyCode();
-            //mDownTarget = target;
+            
+            
+                
+                        
+            
+            
+            
+            
         }
 
         
@@ -1538,8 +1540,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1476891524 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1476891524;
-            // ---------- Original Method ----------
-            //return mDownKeyCode == event.getKeyCode();
+            
+            
         }
 
         
@@ -1547,8 +1549,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
         public void performedLongPress(KeyEvent event) {
             mActiveLongPresses.put(event.getKeyCode(), 1);
             addTaint(event.getTaint());
-            // ---------- Original Method ----------
-            //mActiveLongPresses.put(event.getKeyCode(), 1);
+            
+            
         }
 
         
@@ -1559,28 +1561,28 @@ public class KeyEvent extends InputEvent implements Parcelable {
             {
                 event.mFlags |= FLAG_CANCELED | FLAG_CANCELED_LONG_PRESS;
                 mActiveLongPresses.removeAt(index);
-            } //End block
+            } 
             {
                 event.mFlags |= FLAG_TRACKING;
                 mDownKeyCode = 0;
                 mDownTarget = null;
-            } //End block
+            } 
             addTaint(event.getTaint());
-            // ---------- Original Method ----------
-            //final int keyCode = event.getKeyCode();
-            //if (DEBUG) Log.v(TAG, "Handle key up " + event + ": " + this);
-            //int index = mActiveLongPresses.indexOfKey(keyCode);
-            //if (index >= 0) {
-                //if (DEBUG) Log.v(TAG, "  Index: " + index);
-                //event.mFlags |= FLAG_CANCELED | FLAG_CANCELED_LONG_PRESS;
-                //mActiveLongPresses.removeAt(index);
-            //}
-            //if (mDownKeyCode == keyCode) {
-                //if (DEBUG) Log.v(TAG, "  Tracking!");
-                //event.mFlags |= FLAG_TRACKING;
-                //mDownKeyCode = 0;
-                //mDownTarget = null;
-            //}
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+                
+                
+                
+                
+            
         }
 
         
@@ -2462,12 +2464,12 @@ public class KeyEvent extends InputEvent implements Parcelable {
             return new KeyEvent[size];
         }
     };
-    // orphaned legacy method
+    
     public KeyEvent[] newArray(int size) {
             return new KeyEvent[size];
         }
     
-    // orphaned legacy method
+    
     public KeyEvent createFromParcel(Parcel in) {
             in.readInt(); 
             return KeyEvent.createFromParcelBody(in);

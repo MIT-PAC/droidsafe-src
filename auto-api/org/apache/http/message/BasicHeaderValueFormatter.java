@@ -1,11 +1,11 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.HeaderElement;
 import org.apache.http.NameValuePair;
@@ -16,7 +16,7 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.993 -0400", hash_original_method = "88ED703AD5842214D5052F930ED18AF6", hash_generated_method = "88ED703AD5842214D5052F930ED18AF6")
     public BasicHeaderValueFormatter ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -33,51 +33,51 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
     public CharArrayBuffer formatElements(CharArrayBuffer buffer,
                                           final HeaderElement[] elems,
                                           final boolean quote) {
-        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_1651236223 = null; //Variable for return #1
+        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_1651236223 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Header element array must not be null.");
-        } //End block
+        } 
         int len = estimateElementsLen(elems);
         {
             buffer = new CharArrayBuffer(len);
-        } //End block
+        } 
         {
             buffer.ensureCapacity(len);
-        } //End block
+        } 
         {
             int i = 0;
             {
                 {
                     buffer.append(", ");
-                } //End block
+                } 
                 formatHeaderElement(buffer, elems[i], quote);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1651236223 = buffer;
         addTaint(buffer.getTaint());
         addTaint(elems[0].getTaint());
         addTaint(quote);
-        varB4EAC82CA7396A68D541C85D26508E83_1651236223.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1651236223.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1651236223;
-        // ---------- Original Method ----------
-        //if (elems == null) {
-            //throw new IllegalArgumentException
-                //("Header element array must not be null.");
-        //}
-        //int len = estimateElementsLen(elems);
-        //if (buffer == null) {
-            //buffer = new CharArrayBuffer(len);
-        //} else {
-            //buffer.ensureCapacity(len);
-        //}
-        //for (int i=0; i<elems.length; i++) {
-            //if (i > 0) {
-                //buffer.append(", ");
-            //}
-            //formatHeaderElement(buffer, elems[i], quote);
-        //}
-        //return buffer;
+        
+        
+            
+                
+        
+        
+        
+            
+        
+            
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -88,19 +88,19 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
             int i = 0;
             {
                 result += estimateHeaderElementLen(elems[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(elems[0].getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_896817924 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_896817924;
-        // ---------- Original Method ----------
-        //if ((elems == null) || (elems.length < 1))
-            //return 0;
-        //int result = (elems.length-1) * 2;
-        //for (int i=0; i<elems.length; i++) {
-            //result += estimateHeaderElementLen(elems[i]);
-        //}
-        //return result;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -117,24 +117,24 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
     public CharArrayBuffer formatHeaderElement(CharArrayBuffer buffer,
                                                final HeaderElement elem,
                                                final boolean quote) {
-        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_1546762363 = null; //Variable for return #1
+        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_1546762363 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Header element must not be null.");
-        } //End block
+        } 
         int len = estimateHeaderElementLen(elem);
         {
             buffer = new CharArrayBuffer(len);
-        } //End block
+        } 
         {
             buffer.ensureCapacity(len);
-        } //End block
+        } 
         buffer.append(elem.getName());
         final String value = elem.getValue();
         {
             buffer.append('=');
             doFormatValue(buffer, value, quote);
-        } //End block
+        } 
         final int parcnt = elem.getParameterCount();
         {
             {
@@ -142,40 +142,40 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
                 {
                     buffer.append("; ");
                     formatNameValuePair(buffer, elem.getParameter(i), quote);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1546762363 = buffer;
         addTaint(buffer.getTaint());
         addTaint(elem.getTaint());
         addTaint(quote);
-        varB4EAC82CA7396A68D541C85D26508E83_1546762363.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1546762363.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1546762363;
-        // ---------- Original Method ----------
-        //if (elem == null) {
-            //throw new IllegalArgumentException
-                //("Header element must not be null.");
-        //}
-        //int len = estimateHeaderElementLen(elem);
-        //if (buffer == null) {
-            //buffer = new CharArrayBuffer(len);
-        //} else {
-            //buffer.ensureCapacity(len);
-        //}
-        //buffer.append(elem.getName());
-        //final String value = elem.getValue();
-        //if (value != null) {
-            //buffer.append('=');
-            //doFormatValue(buffer, value, quote);
-        //}
-        //final int parcnt = elem.getParameterCount();
-        //if (parcnt > 0) {
-            //for (int i=0; i<parcnt; i++) {
-                //buffer.append("; ");
-                //formatNameValuePair(buffer, elem.getParameter(i), quote);
-            //}
-        //}
-        //return buffer;
+        
+        
+            
+                
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
+        
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -185,7 +185,7 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
         final String value = elem.getValue();
         {
             result += 3 + value.length();
-        } //End block
+        } 
         final int parcnt = elem.getParameterCount();
         {
             {
@@ -193,28 +193,28 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
                 {
                     result += 2 +                   
                     estimateNameValuePairLen(elem.getParameter(i));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(elem.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1888317226 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1888317226;
-        // ---------- Original Method ----------
-        //if (elem == null)
-            //return 0;
-        //int result = elem.getName().length();
-        //final String value = elem.getValue();
-        //if (value != null) {
-            //result += 3 + value.length(); 
-        //}
-        //final int parcnt = elem.getParameterCount();
-        //if (parcnt > 0) {
-            //for (int i=0; i<parcnt; i++) {
-                //result += 2 +                   
-                    //estimateNameValuePairLen(elem.getParameter(i));
-            //}
-        //}
-        //return result;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+                
+                    
+            
+        
+        
     }
 
     
@@ -227,55 +227,56 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.998 -0400", hash_original_method = "7ECB2224BD638F620F916826D26E8E08", hash_generated_method = "E16E8AC7F47ECBA1C089A202E9AC44F4")
     public CharArrayBuffer formatParameters(CharArrayBuffer buffer,
                                             NameValuePair[] nvps,
                                             boolean quote) {
-        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_776652721 = null; //Variable for return #1
+        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_776652721 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Parameters must not be null.");
-        } //End block
+        } 
         int len = estimateParametersLen(nvps);
         {
             buffer = new CharArrayBuffer(len);
-        } //End block
+        } 
         {
             buffer.ensureCapacity(len);
-        } //End block
+        } 
         {
             int i = 0;
             {
                 {
                     buffer.append("; ");
-                } //End block
+                } 
                 formatNameValuePair(buffer, nvps[i], quote);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_776652721 = buffer;
         addTaint(buffer.getTaint());
         addTaint(nvps[0].getTaint());
         addTaint(quote);
-        varB4EAC82CA7396A68D541C85D26508E83_776652721.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_776652721.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_776652721;
-        // ---------- Original Method ----------
-        //if (nvps == null) {
-            //throw new IllegalArgumentException
-                //("Parameters must not be null.");
-        //}
-        //int len = estimateParametersLen(nvps);
-        //if (buffer == null) {
-            //buffer = new CharArrayBuffer(len);
-        //} else {
-            //buffer.ensureCapacity(len);
-        //}
-        //for (int i = 0; i < nvps.length; i++) {
-            //if (i > 0) {
-                //buffer.append("; ");
-            //}
-            //formatNameValuePair(buffer, nvps[i], quote);
-        //}
-        //return buffer;
+        
+        
+            
+                
+        
+        
+        
+            
+        
+            
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -286,19 +287,19 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
             int i = 0;
             {
                 result += estimateNameValuePairLen(nvps[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(nvps[0].getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1725787215 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1725787215;
-        // ---------- Original Method ----------
-        //if ((nvps == null) || (nvps.length < 1))
-            //return 0;
-        //int result = (nvps.length-1) * 2;
-        //for (int i=0; i<nvps.length; i++) {
-            //result += estimateNameValuePairLen(nvps[i]);
-        //}
-        //return result;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -315,48 +316,48 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
     public CharArrayBuffer formatNameValuePair(CharArrayBuffer buffer,
                                                final NameValuePair nvp,
                                                final boolean quote) {
-        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_1021279765 = null; //Variable for return #1
+        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_1021279765 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("NameValuePair must not be null.");
-        } //End block
+        } 
         int len = estimateNameValuePairLen(nvp);
         {
             buffer = new CharArrayBuffer(len);
-        } //End block
+        } 
         {
             buffer.ensureCapacity(len);
-        } //End block
+        } 
         buffer.append(nvp.getName());
         final String value = nvp.getValue();
         {
             buffer.append('=');
             doFormatValue(buffer, value, quote);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1021279765 = buffer;
         addTaint(buffer.getTaint());
         addTaint(nvp.getTaint());
         addTaint(quote);
-        varB4EAC82CA7396A68D541C85D26508E83_1021279765.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1021279765.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1021279765;
-        // ---------- Original Method ----------
-        //if (nvp == null) {
-            //throw new IllegalArgumentException
-                //("NameValuePair must not be null.");
-        //}
-        //int len = estimateNameValuePairLen(nvp);
-        //if (buffer == null) {
-            //buffer = new CharArrayBuffer(len);
-        //} else {
-            //buffer.ensureCapacity(len);
-        //}
-        //buffer.append(nvp.getName());
-        //final String value = nvp.getValue();
-        //if (value != null) {
-            //buffer.append('=');
-            //doFormatValue(buffer, value, quote);
-        //}
-        //return buffer;
+        
+        
+            
+                
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -366,19 +367,19 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
         final String value = nvp.getValue();
         {
             result += 3 + value.length();
-        } //End block
+        } 
         addTaint(nvp.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_686695464 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_686695464;
-        // ---------- Original Method ----------
-        //if (nvp == null)
-            //return 0;
-        //int result = nvp.getName().length();
-        //final String value = nvp.getValue();
-        //if (value != null) {
-            //result += 3 + value.length(); 
-        //}
-        //return result;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -392,12 +393,12 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
                 boolean var95C0F713441F37F507EB36E95EAAF313_1396352007 = ((i < value.length()) && !quote);
                 {
                     quote = isSeparator(value.charAt(i));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             buffer.append('"');
-        } //End block
+        } 
         {
             int i = 0;
             boolean var014095120D63C9423806FA705979655B_727040565 = (i < value.length());
@@ -407,58 +408,60 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
                     boolean varA6D7992DA1101680A672784A0E8A3647_872035257 = (isUnsafe(ch));
                     {
                         buffer.append('\\');
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 buffer.append(ch);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             buffer.append('"');
-        } //End block
+        } 
         addTaint(buffer.getTaint());
         addTaint(value.getTaint());
         addTaint(quote);
-        // ---------- Original Method ----------
-        //if (!quote) {
-            //for (int i = 0; (i < value.length()) && !quote; i++) {
-                //quote = isSeparator(value.charAt(i));
-            //}
-        //}
-        //if (quote) {
-            //buffer.append('"');
-        //}
-        //for (int i = 0; i < value.length(); i++) {
-            //char ch = value.charAt(i);
-            //if (isUnsafe(ch)) {
-                //buffer.append('\\');
-            //}
-            //buffer.append(ch);
-        //}
-        //if (quote) {
-            //buffer.append('"');
-        //}
+        
+        
+            
+                
+            
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.003 -0400", hash_original_method = "541354ACFD70CC9FA3913AE1E29B9D2A", hash_generated_method = "BC12F5150F9B39BB27285E73B4D14763")
     protected boolean isSeparator(char ch) {
         boolean varC2161B73695B1EE124B60E5BB00919B4_936628067 = (SEPARATORS.indexOf(ch) >= 0);
         addTaint(ch);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_519521198 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_519521198;
-        // ---------- Original Method ----------
-        //return SEPARATORS.indexOf(ch) >= 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.004 -0400", hash_original_method = "8B650CEFA0EAACAAB9B471FC321305C5", hash_generated_method = "6E7DC122B2E1EB33899DDD30A17DE37B")
     protected boolean isUnsafe(char ch) {
         boolean var559BC362A4DCF9DFFFDC98816E3F27ED_28080458 = (UNSAFE_CHARS.indexOf(ch) >= 0);
         addTaint(ch);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_767337991 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_767337991;
-        // ---------- Original Method ----------
-        //return UNSAFE_CHARS.indexOf(ch) >= 0;
+        
+        
     }
 
     

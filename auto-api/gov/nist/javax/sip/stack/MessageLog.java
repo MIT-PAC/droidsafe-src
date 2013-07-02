@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.stack;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.LogRecord;
 
@@ -52,7 +52,7 @@ class MessageLog implements LogRecord {
         {
             boolean var87EE51FB0574C275E93ACB88F58D7718_711415467 = (message == null || message.equals(""));
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("null msg");
-        } //End collapsed parenthetic
+        } 
         this.message = message;
         this.source = source;
         this.destination = destination;
@@ -61,37 +61,37 @@ class MessageLog implements LogRecord {
             long ts = Long.parseLong(timeStamp);
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad time stamp ");
             this.timeStamp = ts;
-        } //End block
+        } 
         catch (NumberFormatException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                 "Bad number format " + timeStamp);
-        } //End block
+        } 
         this.isSender = isSender;
         this.firstLine = firstLine;
         this.tid = tid;
         this.callId = callId;
         this.timeStampHeaderValue = timeStampHeaderValue;
-        // ---------- Original Method ----------
-        //if (message == null || message.equals(""))
-            //throw new IllegalArgumentException("null msg");
-        //this.message = message;
-        //this.source = source;
-        //this.destination = destination;
-        //try {
-            //long ts = Long.parseLong(timeStamp);
-            //if (ts < 0)
-                //throw new IllegalArgumentException("Bad time stamp ");
-            //this.timeStamp = ts;
-        //} catch (NumberFormatException ex) {
-            //throw new IllegalArgumentException(
-                //"Bad number format " + timeStamp);
-        //}
-        //this.isSender = isSender;
-        //this.firstLine = firstLine;
-        //this.tid = tid;
-        //this.callId = callId;
-        //this.timeStampHeaderValue = timeStampHeaderValue;
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+            
+        
+            
+                
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -109,7 +109,7 @@ class MessageLog implements LogRecord {
         {
             boolean var87EE51FB0574C275E93ACB88F58D7718_1394939125 = (message == null || message.equals(""));
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("null msg");
-        } //End collapsed parenthetic
+        } 
         this.message = message;
         this.source = source;
         this.destination = destination;
@@ -120,47 +120,49 @@ class MessageLog implements LogRecord {
         this.tid = tid;
         this.callId = callId;
         this.timeStampHeaderValue = timestampVal;
-        // ---------- Original Method ----------
-        //if (message == null || message.equals(""))
-            //throw new IllegalArgumentException("null msg");
-        //this.message = message;
-        //this.source = source;
-        //this.destination = destination;
-        //if (timeStamp < 0)
-            //throw new IllegalArgumentException("negative ts");
-        //this.timeStamp = timeStamp;
-        //this.isSender = isSender;
-        //this.firstLine = firstLine;
-        //this.tid = tid;
-        //this.callId = callId;
-        //this.timeStampHeaderValue = timestampVal;
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.555 -0400", hash_original_method = "818407DE55CFD10CF1C5E889367D1C2C", hash_generated_method = "74611BB085CF93A7D08F05FC74290846")
     public boolean equals(Object other) {
         {
             MessageLog otherLog = (MessageLog) other;
             boolean var5BA4675877B9A55A06DCDAB0A337D10C_116754885 = (otherLog.message.equals(message)
                 && otherLog.timeStamp == timeStamp);
-        } //End block
+        } 
         addTaint(other.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_357904620 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_357904620;
-        // ---------- Original Method ----------
-        //if (!(other instanceof MessageLog)) {
-            //return false;
-        //} else {
-            //MessageLog otherLog = (MessageLog) other;
-            //return otherLog.message.equals(message)
-                //&& otherLog.timeStamp == timeStamp;
-        //}
+        
+        
+            
+        
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.556 -0400", hash_original_method = "41C5D33A303365643BC91460F622FA81", hash_generated_method = "127B5EB1E2B454A6515554976942F321")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1240598321 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1240598321 = null; 
         String log;
         log =
                 "<message\nfrom=\""
@@ -185,10 +187,10 @@ class MessageLog implements LogRecord {
         log += "]]>\n";
         log += "</message>\n";
         varB4EAC82CA7396A68D541C85D26508E83_1240598321 = log;
-        varB4EAC82CA7396A68D541C85D26508E83_1240598321.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1240598321.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1240598321;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

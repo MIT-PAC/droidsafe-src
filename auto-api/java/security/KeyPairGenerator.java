@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.spec.AlgorithmParameterSpec;
 import org.apache.harmony.security.fortress.Engine;
@@ -21,22 +21,23 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.217 -0400", hash_original_method = "5546FFAC9B42B6F49AEA710C665EF80A", hash_generated_method = "934C359343DE9AB631BA86A99151E869")
     protected  KeyPairGenerator(String algorithm) {
         this.algorithm = algorithm;
-        // ---------- Original Method ----------
-        //this.algorithm = algorithm;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.217 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "D72B66E90A33BC80E5466E6F33957F6E")
     public String getAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1111127461 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1111127461 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1111127461 = algorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_1111127461.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1111127461.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1111127461;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyPairGenerator getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -54,6 +55,7 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyPairGenerator getInstance(String algorithm, String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
             throw new IllegalArgumentException();
@@ -66,6 +68,7 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyPairGenerator getInstance(String algorithm,
             Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
@@ -87,53 +90,55 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.219 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "AFE496AB290DD35D6BBEF8E71043681C")
     public final Provider getProvider() {
-        Provider varB4EAC82CA7396A68D541C85D26508E83_1292545995 = null; //Variable for return #1
+        Provider varB4EAC82CA7396A68D541C85D26508E83_1292545995 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1292545995 = provider;
-        varB4EAC82CA7396A68D541C85D26508E83_1292545995.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1292545995.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1292545995;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.219 -0400", hash_original_method = "63D58B7A783E5CA62351478BDCD64960", hash_generated_method = "F027C49C85B9842127627030CFC71A4B")
     public void initialize(int keysize) {
         initialize(keysize, RANDOM);
         addTaint(keysize);
-        // ---------- Original Method ----------
-        //initialize(keysize, RANDOM);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.219 -0400", hash_original_method = "505B12303F8A8E9420867471775AD0AC", hash_generated_method = "000E4A2CAF76FE3864E61EFEF79A069C")
     public void initialize(AlgorithmParameterSpec param) throws InvalidAlgorithmParameterException {
         initialize(param, RANDOM);
         addTaint(param.getTaint());
-        // ---------- Original Method ----------
-        //initialize(param, RANDOM);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.219 -0400", hash_original_method = "0A0D3545CE028F03545250CE4A841A43", hash_generated_method = "3016DFDA4967E58EBC0AC8EB55EBA2E2")
     public final KeyPair genKeyPair() {
-        KeyPair varB4EAC82CA7396A68D541C85D26508E83_403503229 = null; //Variable for return #1
+        KeyPair varB4EAC82CA7396A68D541C85D26508E83_403503229 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_403503229 = generateKeyPair();
-        varB4EAC82CA7396A68D541C85D26508E83_403503229.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_403503229.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_403503229;
-        // ---------- Original Method ----------
-        //return generateKeyPair();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.220 -0400", hash_original_method = "7972015D8BC3BAE6F8655706849D6EC4", hash_generated_method = "DB534B2E4FF83A37E2935C759F7995E5")
     @Override
     public KeyPair generateKeyPair() {
-        KeyPair varB4EAC82CA7396A68D541C85D26508E83_950779163 = null; //Variable for return #1
+        KeyPair varB4EAC82CA7396A68D541C85D26508E83_950779163 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_950779163 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_950779163.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_950779163.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_950779163;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -142,7 +147,7 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
     public void initialize(int keysize, SecureRandom random) {
         addTaint(keysize);
         addTaint(random.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -151,7 +156,7 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
     public void initialize(AlgorithmParameterSpec param, SecureRandom random) throws InvalidAlgorithmParameterException {
         addTaint(param.getTaint());
         addTaint(random.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -168,9 +173,9 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
             spiImpl = keyPairGeneratorSpi;
             addTaint(provider.getTaint());
             addTaint(algorithm.getTaint());
-            // ---------- Original Method ----------
-            //super.provider = provider;
-            //spiImpl = keyPairGeneratorSpi;
+            
+            
+            
         }
 
         
@@ -180,20 +185,20 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
             spiImpl.initialize(keysize, random);
             addTaint(keysize);
             addTaint(random.getTaint());
-            // ---------- Original Method ----------
-            //spiImpl.initialize(keysize, random);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.222 -0400", hash_original_method = "44E6103A9DEB6D889A2EDBD2D91F5661", hash_generated_method = "954C5E043F56D40F32DE28191B6EB7E7")
         @Override
         public KeyPair generateKeyPair() {
-            KeyPair varB4EAC82CA7396A68D541C85D26508E83_814197150 = null; //Variable for return #1
+            KeyPair varB4EAC82CA7396A68D541C85D26508E83_814197150 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_814197150 = spiImpl.generateKeyPair();
-            varB4EAC82CA7396A68D541C85D26508E83_814197150.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_814197150.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_814197150;
-            // ---------- Original Method ----------
-            //return spiImpl.generateKeyPair();
+            
+            
         }
 
         
@@ -203,8 +208,8 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
             spiImpl.initialize(param, random);
             addTaint(param.getTaint());
             addTaint(random.getTaint());
-            // ---------- Original Method ----------
-            //spiImpl.initialize(param, random);
+            
+            
         }
 
         

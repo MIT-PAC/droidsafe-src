@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.apache.harmony.security.asn1.ASN1BitString;
@@ -20,11 +20,12 @@ public final class ReasonFlags {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.325 -0400", hash_original_method = "0723455182874DC076BEC16F53F1DAFE", hash_generated_method = "ACE7EB18781E115780B1426F26EFDD8E")
     public  ReasonFlags(boolean[] flags) {
         this.flags = flags;
-        // ---------- Original Method ----------
-        //this.flags = flags;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.325 -0400", hash_original_method = "4426D7C44C68FE2DDBEE0B08652B6069", hash_generated_method = "45DDEEAB54C34CAB5F0CC5585DAA2666")
     public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix);
@@ -34,23 +35,23 @@ public final class ReasonFlags {
             {
                 {
                     sb.append(prefix).append("  ").append(REASONS[i]).append('\n');
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         sb.append(prefix);
         sb.append("]\n");
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //sb.append(prefix);
-        //sb.append("ReasonFlags [\n");
-        //for (int i=0; i<flags.length; i++) {
-            //if (flags[i]) {
-                //sb.append(prefix).append("  ").append(REASONS[i]).append('\n');
-            //}
-        //}
-        //sb.append(prefix);
-        //sb.append("]\n");
+        
+        
+        
+        
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -80,18 +81,6 @@ public final class ReasonFlags {
             super.setEncodingContent(out);
         }
     };
-    /*
-    // orphaned legacy method
-    public void setEncodingContent(BerOutputStream out) {
-            out.content = ((ReasonFlags) out.content).flags;
-            super.setEncodingContent(out);
-        }
     
-    // orphaned legacy method
-    public Object getDecodedObject(BerInputStream in) throws IOException {
-            return new ReasonFlags((boolean[]) super.getDecodedObject(in));
-        }
-    
-    */
 }
 

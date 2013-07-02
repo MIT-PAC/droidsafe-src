@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -47,40 +47,40 @@ public final class GeneralName {
     public  GeneralName(int tag, String name) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("name == null");
-        } //End block
+        } 
         this.tag = tag;
-        //Begin case OTHER_NAME X400_ADDR EDIP_NAME 
+        
         if (DroidSafeAndroidRuntime.control) throw new IOException("Unknown string representation for type [" + tag + "]");
-        //End case OTHER_NAME X400_ADDR EDIP_NAME 
-        //Begin case DNS_NAME 
+        
+        
         checkDNS(name);
-        //End case DNS_NAME 
-        //Begin case DNS_NAME 
+        
+        
         this.name = name;
-        //End case DNS_NAME 
-        //Begin case UR_ID 
+        
+        
         checkURI(name);
-        //End case UR_ID 
-        //Begin case UR_ID 
+        
+        
         this.name = name;
-        //End case UR_ID 
-        //Begin case RFC822_NAME 
+        
+        
         this.name = name;
-        //End case RFC822_NAME 
-        //Begin case REG_ID 
+        
+        
         this.name = oidStrToInts(name);
-        //End case REG_ID 
-        //Begin case DIR_NAME 
+        
+        
         this.name = new Name(name);
-        //End case DIR_NAME 
-        //Begin case IP_ADDR 
+        
+        
         this.name = ipStrToBytes(name);
-        //End case IP_ADDR 
-        //Begin case default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new IOException("Unknown type: [" + tag + "]");
-        //End case default 
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
+        
     }
 
     
@@ -88,9 +88,9 @@ public final class GeneralName {
     public  GeneralName(OtherName name) {
         this.tag = OTHER_NAME;
         this.name = name;
-        // ---------- Original Method ----------
-        //this.tag = OTHER_NAME;
-        //this.name = name;
+        
+        
+        
     }
 
     
@@ -98,9 +98,9 @@ public final class GeneralName {
     public  GeneralName(ORAddress name) {
         this.tag = X400_ADDR;
         this.name = name;
-        // ---------- Original Method ----------
-        //this.tag = X400_ADDR;
-        //this.name = name;
+        
+        
+        
     }
 
     
@@ -108,9 +108,9 @@ public final class GeneralName {
     public  GeneralName(Name name) {
         this.tag = DIR_NAME;
         this.name = name;
-        // ---------- Original Method ----------
-        //this.tag = DIR_NAME;
-        //this.name = name;
+        
+        
+        
     }
 
     
@@ -118,9 +118,9 @@ public final class GeneralName {
     public  GeneralName(EDIPartyName name) {
         this.tag = EDIP_NAME;
         this.name = name;
-        // ---------- Original Method ----------
-        //this.tag = EDIP_NAME;
-        //this.name = name;
+        
+        
+        
     }
 
     
@@ -129,18 +129,18 @@ public final class GeneralName {
         int length = name.length;
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("name.length invalid");
-        } //End block
+        } 
         this.tag = IP_ADDR;
         this.name = new byte[name.length];
         System.arraycopy(name, 0, this.name, 0, name.length);
-        // ---------- Original Method ----------
-        //int length = name.length;
-        //if (length != 4 && length != 8 && length != 16 && length != 32) {
-            //throw new IllegalArgumentException("name.length invalid");
-        //}
-        //this.tag = IP_ADDR;
-        //this.name = new byte[name.length];
-        //System.arraycopy(name, 0, this.name, 0, name.length);
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -148,25 +148,25 @@ public final class GeneralName {
     public  GeneralName(int tag, byte[] name) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("name == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("GeneralName: unknown tag: " + tag);
-        } //End block
+        } 
         this.tag = tag;
         this.name_encoding = new byte[name.length];
         System.arraycopy(name, 0, this.name_encoding, 0, name.length);
         this.name = nameASN1[tag].decode(this.name_encoding);
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException("name == null");
-        //}
-        //if ((tag < 0) || (tag > 8)) {
-            //throw new IOException("GeneralName: unknown tag: " + tag);
-        //}
-        //this.tag = tag;
-        //this.name_encoding = new byte[name.length];
-        //System.arraycopy(name, 0, this.name_encoding, 0, name.length);
-        //this.name = nameASN1[tag].decode(this.name_encoding);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -174,156 +174,159 @@ public final class GeneralName {
     public int getTag() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1928648389 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1928648389;
-        // ---------- Original Method ----------
-        //return tag;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.039 -0400", hash_original_method = "20B60556BB46EC823C9319E49D0425A2", hash_generated_method = "C39E8A78E2BAA604AA1537ED3885295A")
     public Object getName() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1733504197 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1733504197 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1733504197 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_1733504197.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1733504197.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1733504197;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.040 -0400", hash_original_method = "47F6A98481038A57781CC8365511AC09", hash_generated_method = "BE3C0B8F71D3F9FC5FF39349CF5D8F1B")
     public boolean equals(Object other) {
         GeneralName gname = (GeneralName) other;
-        //Begin case RFC822_NAME DNS_NAME UR_ID 
+        
         boolean var194F9158761720EAB09623E0A647A17A_1045475101 = (((String) name).equalsIgnoreCase(
                         (String) gname.getName()));
-        //End case RFC822_NAME DNS_NAME UR_ID 
-        //Begin case REG_ID 
+        
+        
         boolean var5D87C1952D9E0CFEDEE04A72280F0FCB_1327989186 = (Arrays.equals((int[]) name, (int[]) gname.name));
-        //End case REG_ID 
-        //Begin case IP_ADDR 
+        
+        
         boolean varB2D76B6F04C44BFEB89B4B19A9DB979A_597286983 = (Arrays.equals((byte[]) name, (byte[]) gname.name));
-        //End case IP_ADDR 
-        //Begin case DIR_NAME X400_ADDR OTHER_NAME EDIP_NAME 
+        
+        
         boolean varB869665F568B838050B4A7A147786AE3_639722041 = (Arrays.equals(getEncoded(), gname.getEncoded()));
-        //End case DIR_NAME X400_ADDR OTHER_NAME EDIP_NAME 
+        
         addTaint(other.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1592615978 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1592615978;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.040 -0400", hash_original_method = "A1EE40CF64275F91ADFBB9AA6974DBAD", hash_generated_method = "E49DD5232F2A5BE83155A32AF52ADD49")
     public int hashCode() {
-        //Begin case RFC822_NAME DNS_NAME UR_ID REG_ID IP_ADDR 
+        
         int var8EF65A1839C36EED6A25646011513717_1495087835 = (name.hashCode());
-        //End case RFC822_NAME DNS_NAME UR_ID REG_ID IP_ADDR 
-        //Begin case DIR_NAME X400_ADDR OTHER_NAME EDIP_NAME 
+        
+        
         int varB4B145FD73615F1FD889E3E60CE45553_1305269406 = (Arrays.hashCode(getEncoded()));
-        //End case DIR_NAME X400_ADDR OTHER_NAME EDIP_NAME 
-        //Begin case default 
+        
+        
         int varC489EB7FF487A920847CC016ED55AE09_700886769 = (super.hashCode());
-        //End case default 
+        
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_732126885 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_732126885;
-        // ---------- Original Method ----------
-        //switch (tag) {
-        //case RFC822_NAME:
-        //case DNS_NAME:
-        //case UR_ID:
-        //case REG_ID:
-        //case IP_ADDR:
-            //return name.hashCode();
-        //case DIR_NAME:
-        //case X400_ADDR:
-        //case OTHER_NAME:
-        //case EDIP_NAME:
-            //return Arrays.hashCode(getEncoded());
-        //default:
-            //return super.hashCode();
-        //}
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.041 -0400", hash_original_method = "3054283C8DAE746EB9FE98BB22A2F7C2", hash_generated_method = "392E5BE84B49FDAB7F451679F2A27121")
     public boolean isAcceptable(GeneralName gname) {
         {
             boolean var428ABB11BAACC71DA3DCB0C819080230_903568021 = (this.tag != gname.getTag());
-        } //End collapsed parenthetic
-        //Begin case RFC822_NAME 
+        } 
+        
         boolean var01DD779FCB1229ED503C607614C4C16C_142432445 = (((String) gname.getName()).toLowerCase(Locale.US)
                     .endsWith(((String) name).toLowerCase(Locale.US)));
-        //End case RFC822_NAME 
-        //Begin case DNS_NAME 
+        
+        
         String dns = (String) name;
-        //End case DNS_NAME 
-        //Begin case DNS_NAME 
+        
+        
         String _dns = (String) gname.getName();
-        //End case DNS_NAME 
-        //Begin case DNS_NAME 
+        
+        
         {
             boolean varA59764FE2071F37C7AC521D227BA7BD7_1572988773 = (dns.equalsIgnoreCase(_dns));
             {
                 boolean var8B53CA92B86CF0C5D9D8ECCC7A7180EC_1695071832 = (_dns.toLowerCase(Locale.US).endsWith("." + dns.toLowerCase(Locale.US)));
-            } //End block
-        } //End collapsed parenthetic
-        //End case DNS_NAME 
-        //Begin case UR_ID 
+            } 
+        } 
+        
+        
         String uri = (String) name;
-        //End case UR_ID 
-        //Begin case UR_ID 
+        
+        
         int begin = uri.indexOf("://")+3;
-        //End case UR_ID 
-        //Begin case UR_ID 
+        
+        
         int end = uri.indexOf('/', begin);
-        //End case UR_ID 
-        //Begin case UR_ID 
+        
+        
         String host;
         host = uri.substring(begin);
         host = uri.substring(begin, end);
-        //End case UR_ID 
-        //Begin case UR_ID 
+        
+        
         uri = (String) gname.getName();
-        //End case UR_ID 
-        //Begin case UR_ID 
+        
+        
         begin = uri.indexOf("://")+3;
-        //End case UR_ID 
-        //Begin case UR_ID 
+        
+        
         end = uri.indexOf('/', begin);
-        //End case UR_ID 
-        //Begin case UR_ID 
+        
+        
         String _host;
         _host = uri.substring(begin);
         _host = uri.substring(begin, end);
-        //End case UR_ID 
-        //Begin case UR_ID 
+        
+        
         {
             boolean var0F2DB347CCE89100480373408932E856_1370627968 = (host.startsWith("."));
             {
                 boolean var1DC9494B9FEB04BA346108B29537F28D_1942579288 = (_host.toLowerCase(Locale.US).endsWith(host.toLowerCase(Locale.US)));
-            } //End block
+            } 
             {
                 boolean var99919774EE769A44AEAE98D1FE83F48F_1828042954 = (host.equalsIgnoreCase(_host));
-            } //End block
-        } //End collapsed parenthetic
-        //End case UR_ID 
-        //Begin case IP_ADDR 
+            } 
+        } 
+        
+        
         byte[] address = (byte[]) name;
-        //End case IP_ADDR 
-        //Begin case IP_ADDR 
+        
+        
         byte[] _address = (byte[]) gname.getName();
-        //End case IP_ADDR 
-        //Begin case IP_ADDR 
+        
+        
         int length = address.length;
-        //End case IP_ADDR 
-        //Begin case IP_ADDR 
+        
+        
         int _length = _address.length;
-        //End case IP_ADDR 
-        //Begin case IP_ADDR 
+        
+        
         {
             boolean var8F234405025629C935D9C9D2E589F009_710150417 = (Arrays.equals(address, _address));
-        } //End block
+        } 
         {
             {
                 int i = 0;
@@ -331,128 +334,133 @@ public final class GeneralName {
                     int octet = _address[i] & 0xff;
                     int min = address[i] & 0xff;
                     int max = address[i + _length] & 0xff;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        //End case IP_ADDR 
-        //Begin case DIR_NAME X400_ADDR OTHER_NAME EDIP_NAME REG_ID 
+                } 
+            } 
+        } 
+        
+        
         boolean varB869665F568B838050B4A7A147786AE3_1492109810 = (Arrays.equals(getEncoded(), gname.getEncoded()));
-        //End case DIR_NAME X400_ADDR OTHER_NAME EDIP_NAME REG_ID 
+        
         addTaint(gname.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1519374931 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1519374931;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.042 -0400", hash_original_method = "8BC63B983D4898BF725054A3D5D39730", hash_generated_method = "905346FEFD1FE4963ACA9EF687A11704")
     public List<Object> getAsList() {
-        List<Object> varB4EAC82CA7396A68D541C85D26508E83_707381738 = null; //Variable for return #1
+        List<Object> varB4EAC82CA7396A68D541C85D26508E83_707381738 = null; 
         ArrayList<Object> result = new ArrayList<Object>();
         result.add(tag);
-        //Begin case OTHER_NAME 
+        
         result.add(((OtherName) name).getEncoded());
-        //End case OTHER_NAME 
-        //Begin case RFC822_NAME DNS_NAME UR_ID 
+        
+        
         result.add(name);
-        //End case RFC822_NAME DNS_NAME UR_ID 
-        //Begin case REG_ID 
+        
+        
         result.add(ObjectIdentifier.toString((int[]) name));
-        //End case REG_ID 
-        //Begin case X400_ADDR 
+        
+        
         result.add(((ORAddress) name).getEncoded());
-        //End case X400_ADDR 
-        //Begin case DIR_NAME 
+        
+        
         result.add(((Name) name).getName(X500Principal.RFC2253));
-        //End case DIR_NAME 
-        //Begin case EDIP_NAME 
+        
+        
         result.add(((EDIPartyName) name).getEncoded());
-        //End case EDIP_NAME 
-        //Begin case IP_ADDR 
+        
+        
         result.add(ipBytesToStr((byte[]) name));
-        //End case IP_ADDR 
+        
         varB4EAC82CA7396A68D541C85D26508E83_707381738 = Collections.unmodifiableList(result);
-        varB4EAC82CA7396A68D541C85D26508E83_707381738.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_707381738.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_707381738;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.043 -0400", hash_original_method = "4137EA74AADFAF54538362634CBBCA7A", hash_generated_method = "49232BF7FAA4425777EB2119E27CEA73")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_398114530 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_398114530 = null; 
         String result = "";
-        //Begin case OTHER_NAME 
+        
         result = "otherName[0]: "
                          + Array.getBytesAsString(getEncoded());
-        //End case OTHER_NAME 
-        //Begin case RFC822_NAME 
+        
+        
         result = "rfc822Name[1]: " + name;
-        //End case RFC822_NAME 
-        //Begin case DNS_NAME 
+        
+        
         result = "dNSName[2]: " + name;
-        //End case DNS_NAME 
-        //Begin case UR_ID 
+        
+        
         result = "uniformResourceIdentifier[6]: " + name;
-        //End case UR_ID 
-        //Begin case REG_ID 
+        
+        
         result = "registeredID[8]: " + ObjectIdentifier.toString((int[]) name);
-        //End case REG_ID 
-        //Begin case X400_ADDR 
+        
+        
         result = "x400Address[3]: "
                          + Array.getBytesAsString(getEncoded());
-        //End case X400_ADDR 
-        //Begin case DIR_NAME 
+        
+        
         result = "directoryName[4]: "
                          + ((Name) name).getName(X500Principal.RFC2253);
-        //End case DIR_NAME 
-        //Begin case EDIP_NAME 
+        
+        
         result = "ediPartyName[5]: "
                          + Array.getBytesAsString(getEncoded());
-        //End case EDIP_NAME 
-        //Begin case IP_ADDR 
+        
+        
         result = "iPAddress[7]: " + ipBytesToStr((byte[]) name);
-        //End case IP_ADDR 
+        
         varB4EAC82CA7396A68D541C85D26508E83_398114530 = result;
-        varB4EAC82CA7396A68D541C85D26508E83_398114530.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_398114530.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_398114530;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.043 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "4071185BF83D712650211EE29F0DB4CE")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1135044359 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1135044359;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.044 -0400", hash_original_method = "37C9CC72170749FE2E2B5C9DA460C3BB", hash_generated_method = "385D49911DF9C1C09BA3401691735198")
     public byte[] getEncodedName() {
         {
             name_encoding = nameASN1[tag].encode(name);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1682442583 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1682442583;
-        // ---------- Original Method ----------
-        //if (name_encoding == null) {
-            //name_encoding = nameASN1[tag].encode(name);
-        //}
-        //return name_encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void checkDNS(String dns) throws IOException {
         String string = dns.toLowerCase(Locale.US);
         int length = string.length();
@@ -484,6 +492,7 @@ public final class GeneralName {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void checkURI(String uri) throws IOException {
         try {
             URI ur = new URI(uri);
@@ -499,6 +508,7 @@ public final class GeneralName {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int[] oidStrToInts(String oid) throws IOException {
         int length = oid.length();
         if (oid.charAt(length-1) == '.') {
@@ -535,6 +545,7 @@ public final class GeneralName {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] ipStrToBytes(String ip) throws IOException {
         if (!InetAddress.isNumeric(ip)) {
             throw new IOException("Not an IP address: " + ip);
@@ -543,6 +554,7 @@ public final class GeneralName {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String ipBytesToStr(byte[] ip) {
         try {
             return InetAddress.getByAddress(null, ip).getHostAddress();
@@ -655,55 +667,13 @@ public final class GeneralName {
             return result;
         }
     };
-    /*
-    // orphaned legacy method
-    @Override public Object getDecodedObject(BerInputStream in) throws IOException {
-            GeneralName result;
-            switch (in.choiceIndex) {
-                case OTHER_NAME: 
-                    result = new GeneralName((OtherName) in.content);
-                    break;
-                case RFC822_NAME: 
-                case DNS_NAME: 
-                    result = new GeneralName(in.choiceIndex, (String) in.content);
-                    break;
-                case X400_ADDR:
-                    result = new GeneralName((ORAddress) in.content);
-                    break;
-                case DIR_NAME: 
-                    result = new GeneralName((Name) in.content);
-                    break;
-                case EDIP_NAME: 
-                    result = new GeneralName((EDIPartyName) in.content);
-                    break;
-                case UR_ID: 
-                    String uri = (String) in.content;
-                    if (uri.indexOf(":") == -1) {
-                        throw new IOException("GeneralName: scheme is missing in URI: " + uri);
-                    }
-                    result = new GeneralName(in.choiceIndex, uri);
-                    break;
-                case IP_ADDR: 
-                    result = new GeneralName((byte[]) in.content);
-                    break;
-                case REG_ID: 
-                    result = new GeneralName(in.choiceIndex,
-                            ObjectIdentifier.toString((int[]) in.content));
-                    break;
-                default:
-                    throw new IOException("GeneralName: unknown tag: " + in.choiceIndex);
-            }
-            result.encoding = in.getEncoded();
-            return result;
-        }
     
-    */
-    // orphaned legacy method
+    
     public int getIndex(java.lang.Object object) {
             return  ((GeneralName) object).tag;
         }
     
-    // orphaned legacy method
+    
     public Object getObjectToEncode(Object value) {
             return ((GeneralName) value).name;
         }

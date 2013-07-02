@@ -1,11 +1,11 @@
 package android.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,111 +23,111 @@ public class PhoneStateListener {
     IPhoneStateListener callback = new IPhoneStateListener.Stub() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.687 -0400", hash_original_method = "54E0979B60176178E05220CE78D63618", hash_generated_method = "896ABB9DB951EA538F465FE17351BE4A")
         public void onServiceStateChanged(ServiceState serviceState) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Message.obtain(mHandler, LISTEN_SERVICE_STATE, 0, 0, serviceState).sendToTarget();
             addTaint(serviceState.getTaint());
-            // ---------- Original Method ----------
-            //Message.obtain(mHandler, LISTEN_SERVICE_STATE, 0, 0, serviceState).sendToTarget();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.688 -0400", hash_original_method = "807A7BFCEA1B0191C8F013A742695986", hash_generated_method = "29834ADFED34C96085CF9647637FC6F8")
         public void onSignalStrengthChanged(int asu) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Message.obtain(mHandler, LISTEN_SIGNAL_STRENGTH, asu, 0, null).sendToTarget();
             addTaint(asu);
-            // ---------- Original Method ----------
-            //Message.obtain(mHandler, LISTEN_SIGNAL_STRENGTH, asu, 0, null).sendToTarget();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.688 -0400", hash_original_method = "40C12FC55DD6857044A738B96618D76E", hash_generated_method = "2D0FB5DC734B2BC99447979336864A85")
         public void onMessageWaitingIndicatorChanged(boolean mwi) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Message.obtain(mHandler, LISTEN_MESSAGE_WAITING_INDICATOR, mwi ? 1 : 0, 0, null)
                     .sendToTarget();
             addTaint(mwi);
-            // ---------- Original Method ----------
-            //Message.obtain(mHandler, LISTEN_MESSAGE_WAITING_INDICATOR, mwi ? 1 : 0, 0, null)
-                    //.sendToTarget();
+            
+            
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.689 -0400", hash_original_method = "1303F4851FC7C46811AB3FA9BCFA27AC", hash_generated_method = "B417E7A99383BB44A23E06E52F8B01FA")
         public void onCallForwardingIndicatorChanged(boolean cfi) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Message.obtain(mHandler, LISTEN_CALL_FORWARDING_INDICATOR, cfi ? 1 : 0, 0, null)
                     .sendToTarget();
             addTaint(cfi);
-            // ---------- Original Method ----------
-            //Message.obtain(mHandler, LISTEN_CALL_FORWARDING_INDICATOR, cfi ? 1 : 0, 0, null)
-                    //.sendToTarget();
+            
+            
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.689 -0400", hash_original_method = "BD352F057E242D69FEFF4C00A841F3C5", hash_generated_method = "2DB70183ECA77F0A5D7F76F2BC8256E0")
         public void onCellLocationChanged(Bundle bundle) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             CellLocation location = CellLocation.newFromBundle(bundle);
             Message.obtain(mHandler, LISTEN_CELL_LOCATION, 0, 0, location).sendToTarget();
             addTaint(bundle.getTaint());
-            // ---------- Original Method ----------
-            //CellLocation location = CellLocation.newFromBundle(bundle);
-            //Message.obtain(mHandler, LISTEN_CELL_LOCATION, 0, 0, location).sendToTarget();
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.689 -0400", hash_original_method = "90D240AD7654D8CDBBE9240E4026EEC0", hash_generated_method = "25AEEEC8B7BE7C28EA289FC604A8FEBC")
         public void onCallStateChanged(int state, String incomingNumber) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Message.obtain(mHandler, LISTEN_CALL_STATE, state, 0, incomingNumber).sendToTarget();
             addTaint(state);
             addTaint(incomingNumber.getTaint());
-            // ---------- Original Method ----------
-            //Message.obtain(mHandler, LISTEN_CALL_STATE, state, 0, incomingNumber).sendToTarget();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.690 -0400", hash_original_method = "8A3A12A8CE80BED5FCCDE994C492901B", hash_generated_method = "7450F5546A11573F436C66EC50152E2E")
         public void onDataConnectionStateChanged(int state, int networkType) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Message.obtain(mHandler, LISTEN_DATA_CONNECTION_STATE, state, networkType).
                     sendToTarget();
             addTaint(state);
             addTaint(networkType);
-            // ---------- Original Method ----------
-            //Message.obtain(mHandler, LISTEN_DATA_CONNECTION_STATE, state, networkType).
-                    //sendToTarget();
+            
+            
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.691 -0400", hash_original_method = "72B647041610C54487B6FB3ED574136B", hash_generated_method = "BB99BAE6935407A4C54BCB9677E95F39")
         public void onDataActivity(int direction) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Message.obtain(mHandler, LISTEN_DATA_ACTIVITY, direction, 0, null).sendToTarget();
             addTaint(direction);
-            // ---------- Original Method ----------
-            //Message.obtain(mHandler, LISTEN_DATA_ACTIVITY, direction, 0, null).sendToTarget();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.691 -0400", hash_original_method = "58C30AB3401BEDE34047CE21CBA2332D", hash_generated_method = "92D058096ABB283F84DD7FE07FFD567B")
         public void onSignalStrengthsChanged(SignalStrength signalStrength) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Message.obtain(mHandler, LISTEN_SIGNAL_STRENGTHS, 0, 0, signalStrength).sendToTarget();
             addTaint(signalStrength.getTaint());
-            // ---------- Original Method ----------
-            //Message.obtain(mHandler, LISTEN_SIGNAL_STRENGTHS, 0, 0, signalStrength).sendToTarget();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.692 -0400", hash_original_method = "5CE4B3BDFCEEE2F8239B6E7FA479E13E", hash_generated_method = "6DBBD590ED3BF273738C91D64A6C9B53")
         public void onOtaspChanged(int otaspMode) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Message.obtain(mHandler, LISTEN_OTASP_CHANGED, otaspMode, 0).sendToTarget();
             addTaint(otaspMode);
-            // ---------- Original Method ----------
-            //Message.obtain(mHandler, LISTEN_OTASP_CHANGED, otaspMode, 0).sendToTarget();
+            
+            
         }
 
         
@@ -137,42 +137,42 @@ public class PhoneStateListener {
     Handler mHandler = new Handler() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.693 -0400", hash_original_method = "6E54091CCEB0E4C4829EFF16721C7D7A", hash_generated_method = "22BEE3C02190EB16B2F2B97BE882EF49")
         public void handleMessage(Message msg) {
-            //Begin case LISTEN_SERVICE_STATE 
+            
             PhoneStateListener.this.onServiceStateChanged((ServiceState)msg.obj);
-            //End case LISTEN_SERVICE_STATE 
-            //Begin case LISTEN_SIGNAL_STRENGTH 
+            
+            
             PhoneStateListener.this.onSignalStrengthChanged(msg.arg1);
-            //End case LISTEN_SIGNAL_STRENGTH 
-            //Begin case LISTEN_MESSAGE_WAITING_INDICATOR 
+            
+            
             PhoneStateListener.this.onMessageWaitingIndicatorChanged(msg.arg1 != 0);
-            //End case LISTEN_MESSAGE_WAITING_INDICATOR 
-            //Begin case LISTEN_CALL_FORWARDING_INDICATOR 
+            
+            
             PhoneStateListener.this.onCallForwardingIndicatorChanged(msg.arg1 != 0);
-            //End case LISTEN_CALL_FORWARDING_INDICATOR 
-            //Begin case LISTEN_CELL_LOCATION 
+            
+            
             PhoneStateListener.this.onCellLocationChanged((CellLocation)msg.obj);
-            //End case LISTEN_CELL_LOCATION 
-            //Begin case LISTEN_CALL_STATE 
+            
+            
             PhoneStateListener.this.onCallStateChanged(msg.arg1, (String)msg.obj);
-            //End case LISTEN_CALL_STATE 
-            //Begin case LISTEN_DATA_CONNECTION_STATE 
+            
+            
             PhoneStateListener.this.onDataConnectionStateChanged(msg.arg1, msg.arg2);
-            //End case LISTEN_DATA_CONNECTION_STATE 
-            //Begin case LISTEN_DATA_CONNECTION_STATE 
+            
+            
             PhoneStateListener.this.onDataConnectionStateChanged(msg.arg1);
-            //End case LISTEN_DATA_CONNECTION_STATE 
-            //Begin case LISTEN_DATA_ACTIVITY 
+            
+            
             PhoneStateListener.this.onDataActivity(msg.arg1);
-            //End case LISTEN_DATA_ACTIVITY 
-            //Begin case LISTEN_SIGNAL_STRENGTHS 
+            
+            
             PhoneStateListener.this.onSignalStrengthsChanged((SignalStrength)msg.obj);
-            //End case LISTEN_SIGNAL_STRENGTHS 
-            //Begin case LISTEN_OTASP_CHANGED 
+            
+            
             PhoneStateListener.this.onOtaspChanged(msg.arg1);
-            //End case LISTEN_OTASP_CHANGED 
+            
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -180,98 +180,98 @@ public class PhoneStateListener {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.693 -0400", hash_original_method = "20EF8DCC516BA3C0FC2B58EA0CC3EA6E", hash_generated_method = "D7C1BF839242BC9415BC61355D4D609D")
     public  PhoneStateListener() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.693 -0400", hash_original_method = "71FF02CB37AAD9FA42E430343744C95D", hash_generated_method = "2EDE1453352DA2CC85CC298DFB3AD551")
     public void onServiceStateChanged(ServiceState serviceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(serviceState.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.694 -0400", hash_original_method = "BC041D78EED5B299AE554E075ADF39D8", hash_generated_method = "CAA24713F8D0C0D31C4734D103475E49")
     @Deprecated
     public void onSignalStrengthChanged(int asu) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(asu);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.694 -0400", hash_original_method = "75359DDCF2D0B158439199FBAF05E06A", hash_generated_method = "A0E000790569C0C318FE63F6F64EBC1C")
     public void onMessageWaitingIndicatorChanged(boolean mwi) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(mwi);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.694 -0400", hash_original_method = "D5A60C39C845CE2458AA9D81FF0C97F9", hash_generated_method = "EF33A9F2D8350F2C64273438D422888A")
     public void onCallForwardingIndicatorChanged(boolean cfi) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(cfi);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.694 -0400", hash_original_method = "DC558EBD989E1315B12793B36376A79E", hash_generated_method = "DD90CABC50B85CB7BBFA627CF56F9C7F")
     public void onCellLocationChanged(CellLocation location) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(location.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.695 -0400", hash_original_method = "B1A721EFB2ABF6430D11EDB26008EF34", hash_generated_method = "E8DBD21BF35CAFB6074237A1FEEE5F3C")
     public void onCallStateChanged(int state, String incomingNumber) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(state);
         addTaint(incomingNumber.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.695 -0400", hash_original_method = "1C4CEBBE82C84ACE1203815C2B422383", hash_generated_method = "9619C47A3336B5F864DDE0F2FC04754E")
     public void onDataConnectionStateChanged(int state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(state);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.695 -0400", hash_original_method = "BFD2027492A8CA27CCE6A852F5D0D4BF", hash_generated_method = "08F011EDCE0DB47E376A5CBC0456BD24")
     public void onDataConnectionStateChanged(int state, int networkType) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(state);
         addTaint(networkType);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.695 -0400", hash_original_method = "F374B48EE0586B0F56A0A6BEC28E9201", hash_generated_method = "D3FF69ABDB90917CDA7D7150D27A23CC")
     public void onDataActivity(int direction) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(direction);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.695 -0400", hash_original_method = "A22E0BB42B0E543666A17B7B6AC4EDC6", hash_generated_method = "4E58CB508883B0A99DFC47209005250D")
     public void onSignalStrengthsChanged(SignalStrength signalStrength) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(signalStrength.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.696 -0400", hash_original_method = "AF1EBC6D8A2DA1E39265DEC2CD9D5FBB", hash_generated_method = "D71E5EE2F05952023B3DADF0BC31A241")
     public void onOtaspChanged(int otaspMode) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(otaspMode);
-        // ---------- Original Method ----------
+        
     }
 
     

@@ -1,11 +1,11 @@
 package javax.crypto.spec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 import java.security.spec.KeySpec;
@@ -24,29 +24,29 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
     public  SecretKeySpec(byte[] key, String algorithm) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("key == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("key.length == 0");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("algorithm == null");
-        } //End block
+        } 
         this.algorithm = algorithm;
         this.key = new byte[key.length];
         System.arraycopy(key, 0, this.key, 0, key.length);
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //throw new IllegalArgumentException("key == null");
-        //}
-        //if (key.length == 0) {
-            //throw new IllegalArgumentException("key.length == 0");
-        //}
-        //if (algorithm == null) {
-            //throw new IllegalArgumentException("algorithm == null");
-        //}
-        //this.algorithm = algorithm;
-        //this.key = new byte[key.length];
-        //System.arraycopy(key, 0, this.key, 0, key.length);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -54,80 +54,82 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
     public  SecretKeySpec(byte[] key, int offset, int len, String algorithm) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("key == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("key.length == 0");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException("len < 0 || offset < 0");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("key too short");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("algorithm == null");
-        } //End block
+        } 
         this.algorithm = algorithm;
         this.key = new byte[len];
         System.arraycopy(key, offset, this.key, 0, len);
         addTaint(offset);
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //throw new IllegalArgumentException("key == null");
-        //}
-        //if (key.length == 0) {
-            //throw new IllegalArgumentException("key.length == 0");
-        //}
-        //if (len < 0 || offset < 0) {
-            //throw new ArrayIndexOutOfBoundsException("len < 0 || offset < 0");
-        //}
-        //if (key.length - offset < len) {
-            //throw new IllegalArgumentException("key too short");
-        //}
-        //if (algorithm == null) {
-            //throw new IllegalArgumentException("algorithm == null");
-        //}
-        //this.algorithm = algorithm;
-        //this.key = new byte[len];
-        //System.arraycopy(key, offset, this.key, 0, len);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.320 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "BA6C21A1760FCE9DDA768991A1008C98")
     public String getAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_427445669 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_427445669 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_427445669 = algorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_427445669.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_427445669.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_427445669;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.320 -0400", hash_original_method = "DA06499CB28B740B0D3C21B02311BB46", hash_generated_method = "4EE1371AB6EB5A76EE7778C9DBDCC2E8")
     public String getFormat() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1198671846 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1198671846 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1198671846 = "RAW";
-        varB4EAC82CA7396A68D541C85D26508E83_1198671846.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1198671846.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1198671846;
-        // ---------- Original Method ----------
-        //return "RAW";
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.321 -0400", hash_original_method = "3F6C1397C7B2518265F6653D66E9AC87", hash_generated_method = "D27252928D617473C4CF55BE9EDDE6F4")
     public byte[] getEncoded() {
         byte[] result = new byte[key.length];
         System.arraycopy(key, 0, result, 0, key.length);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1300724708 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1300724708;
-        // ---------- Original Method ----------
-        //byte[] result = new byte[key.length];
-        //System.arraycopy(key, 0, result, 0, key.length);
-        //return result;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.323 -0400", hash_original_method = "561BEB6A8D834A34E4D5A2503144263D", hash_generated_method = "29373CAC2CD504892064C22912C7574D")
     @Override
     public int hashCode() {
@@ -136,41 +138,42 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
             byte element = key[0];
             {
                 result += element;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1961377964 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1961377964;
-        // ---------- Original Method ----------
-        //int result = algorithm.length();
-        //for (byte element : key) {
-            //result += element;
-        //}
-        //return result;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.324 -0400", hash_original_method = "7E1551F3E39A01E70E4CFF4FAB6C7AC5", hash_generated_method = "9231DE4A5A5A1ADF8CAB7728DC36E4CF")
     @Override
     public boolean equals(Object obj) {
         {
             boolean var8D1D3E5F4C020ED4FA594AED365B4BD8_1771518207 = (obj == this);
-        } //End collapsed parenthetic
+        } 
         SecretKeySpec ks = (SecretKeySpec) obj;
         boolean varF2E5A45CF56A7633348AC78DE027833D_1538301162 = ((algorithm.equalsIgnoreCase(ks.algorithm))
             && (Arrays.equals(key, ks.key)));
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1780344336 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1780344336;
-        // ---------- Original Method ----------
-        //if (obj == this) {
-            //return true;
-        //}
-        //if (!(obj instanceof SecretKeySpec)) {
-            //return false;
-        //}
-        //SecretKeySpec ks = (SecretKeySpec) obj;
-        //return (algorithm.equalsIgnoreCase(ks.algorithm))
-            //&& (Arrays.equals(key, ks.key));
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
     }
 
     

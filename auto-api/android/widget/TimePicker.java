@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.annotation.Widget;
 import android.content.Context;
@@ -77,7 +77,7 @@ public class TimePicker extends FrameLayout {
     public  TimePicker(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -86,7 +86,7 @@ public class TimePicker extends FrameLayout {
         this(context, attrs, R.attr.timePickerStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -106,7 +106,7 @@ public class TimePicker extends FrameLayout {
         mHourSpinner.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.151 -0400", hash_original_method = "61CC50AE993360994364CE07AEAADDC8", hash_generated_method = "90C7B96171AC65CAAF2FDF058AAE2C17")
             public void onValueChange(NumberPicker spinner, int oldVal, int newVal) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 updateInputState();
                 {
                     boolean var8A32C210C8A473980EFFE441CCA946A8_2039963552 = (!is24HourView());
@@ -114,23 +114,23 @@ public class TimePicker extends FrameLayout {
                         {
                             mIsAm = !mIsAm;
                             updateAmPmControl();
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 onTimeChanged();
                 addTaint(spinner.getTaint());
                 addTaint(oldVal);
                 addTaint(newVal);
-                // ---------- Original Method ----------
-                //updateInputState();
-                //if (!is24HourView()) {
-                    //if ((oldVal == HOURS_IN_HALF_DAY - 1 && newVal == HOURS_IN_HALF_DAY)
-                            //|| (oldVal == HOURS_IN_HALF_DAY && newVal == HOURS_IN_HALF_DAY - 1)) {
-                        //mIsAm = !mIsAm;
-                        //updateAmPmControl();
-                    //}
-                //}
-                //onTimeChanged();
+                
+                
+                
+                    
+                            
+                        
+                        
+                    
+                
+                
             }
 });
         mHourSpinnerInput = (EditText) mHourSpinner.findViewById(R.id.numberpicker_input);
@@ -138,7 +138,7 @@ public class TimePicker extends FrameLayout {
         mDivider = (TextView) findViewById(R.id.divider);
         {
             mDivider.setText(R.string.time_picker_separator);
-        } //End block
+        } 
         mMinuteSpinner = (NumberPicker) findViewById(R.id.minute);
         mMinuteSpinner.setMinValue(0);
         mMinuteSpinner.setMaxValue(59);
@@ -147,7 +147,7 @@ public class TimePicker extends FrameLayout {
         mMinuteSpinner.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.152 -0400", hash_original_method = "E7D4D1EDA413A979BF45D3C545C3EF66", hash_generated_method = "3C62BCDA07328E93EC25BDDE5010488D")
             public void onValueChange(NumberPicker spinner, int oldVal, int newVal) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 updateInputState();
                 int minValue = mMinuteSpinner.getMinValue();
                 int maxValue = mMinuteSpinner.getMaxValue();
@@ -158,10 +158,10 @@ public class TimePicker extends FrameLayout {
                         {
                             mIsAm = !mIsAm;
                             updateAmPmControl();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     mHourSpinner.setValue(newHour);
-                } //End block
+                } 
                 {
                     int newHour = mHourSpinner.getValue() - 1;
                     {
@@ -169,16 +169,16 @@ public class TimePicker extends FrameLayout {
                         {
                             mIsAm = !mIsAm;
                             updateAmPmControl();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     mHourSpinner.setValue(newHour);
-                } //End block
+                } 
                 onTimeChanged();
                 addTaint(spinner.getTaint());
                 addTaint(oldVal);
                 addTaint(newVal);
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 });
         mMinuteSpinnerInput = (EditText) mMinuteSpinner.findViewById(R.id.numberpicker_input);
@@ -192,18 +192,18 @@ public class TimePicker extends FrameLayout {
             mAmPmButton.setOnClickListener(new OnClickListener() {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.153 -0400", hash_original_method = "4F5D6F91E7DB94922D5610C609DBC6AC", hash_generated_method = "62A414B3345481D7A699DD4E23941BEE")
                 public void onClick(View button) {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     button.requestFocus();
                     mIsAm = !mIsAm;
                     updateAmPmControl();
                     addTaint(button.getTaint());
-                    // ---------- Original Method ----------
-                    //button.requestFocus();
-                    //mIsAm = !mIsAm;
-                    //updateAmPmControl();
+                    
+                    
+                    
+                    
                 }
 });
-        } //End block
+        } 
         {
             mAmPmButton = null;
             mAmPmSpinner = (NumberPicker) amPmView;
@@ -213,7 +213,7 @@ public class TimePicker extends FrameLayout {
             mAmPmSpinner.setOnValueChangedListener(new OnValueChangeListener() {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.153 -0400", hash_original_method = "C8C0A93031AC50530CF196FDB67DBB38", hash_generated_method = "295283F6481F75840DE041CD929C4536")
                 public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     updateInputState();
                     picker.requestFocus();
                     mIsAm = !mIsAm;
@@ -221,16 +221,16 @@ public class TimePicker extends FrameLayout {
                     addTaint(picker.getTaint());
                     addTaint(oldVal);
                     addTaint(newVal);
-                    // ---------- Original Method ----------
-                    //updateInputState();
-                    //picker.requestFocus();
-                    //mIsAm = !mIsAm;
-                    //updateAmPmControl();
+                    
+                    
+                    
+                    
+                    
                 }
 });
             mAmPmSpinnerInput = (EditText) mAmPmSpinner.findViewById(R.id.numberpicker_input);
             mAmPmSpinnerInput.setImeOptions(EditorInfo.IME_ACTION_DONE);
-        } //End block
+        } 
         updateHourControl();
         updateAmPmControl();
         setOnTimeChangedListener(NO_OP_CHANGE_LISTENER);
@@ -240,14 +240,14 @@ public class TimePicker extends FrameLayout {
             boolean varC378F7D9F83769944CF2ACC662A4EAE3_1365947066 = (!isEnabled());
             {
                 setEnabled(false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         setContentDescriptions();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -258,31 +258,31 @@ public class TimePicker extends FrameLayout {
         mMinuteSpinner.setEnabled(enabled);
         {
             mDivider.setEnabled(enabled);
-        } //End block
+        } 
         mHourSpinner.setEnabled(enabled);
         {
             mAmPmSpinner.setEnabled(enabled);
-        } //End block
+        } 
         {
             mAmPmButton.setEnabled(enabled);
-        } //End block
+        } 
         mIsEnabled = enabled;
-        // ---------- Original Method ----------
-        //if (mIsEnabled == enabled) {
-            //return;
-        //}
-        //super.setEnabled(enabled);
-        //mMinuteSpinner.setEnabled(enabled);
-        //if (mDivider != null) {
-            //mDivider.setEnabled(enabled);
-        //}
-        //mHourSpinner.setEnabled(enabled);
-        //if (mAmPmSpinner != null) {
-            //mAmPmSpinner.setEnabled(enabled);
-        //} else {
-            //mAmPmButton.setEnabled(enabled);
-        //}
-        //mIsEnabled = enabled;
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -291,21 +291,21 @@ public class TimePicker extends FrameLayout {
     public boolean isEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1442303839 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1442303839;
-        // ---------- Original Method ----------
-        //return mIsEnabled;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.155 -0400", hash_original_method = "C452430AEDBDDD78DF8F4D12B9175E89", hash_generated_method = "FB0A11FC0C47EF7B377125BF2E9C2DD7")
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onConfigurationChanged(newConfig);
         setCurrentLocale(newConfig.locale);
         addTaint(newConfig.getTaint());
-        // ---------- Original Method ----------
-        //super.onConfigurationChanged(newConfig);
-        //setCurrentLocale(newConfig.locale);
+        
+        
+        
     }
 
     
@@ -313,99 +313,99 @@ public class TimePicker extends FrameLayout {
     private void setCurrentLocale(Locale locale) {
         {
             boolean varD1CF46D36E6B1C6187CE68AE2BC3F432_794903373 = (locale.equals(mCurrentLocale));
-        } //End collapsed parenthetic
+        } 
         mCurrentLocale = locale;
         mTempCalendar = Calendar.getInstance(locale);
-        // ---------- Original Method ----------
-        //if (locale.equals(mCurrentLocale)) {
-            //return;
-        //}
-        //mCurrentLocale = locale;
-        //mTempCalendar = Calendar.getInstance(locale);
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.156 -0400", hash_original_method = "72123348A3F05C8EE46260DED41E8111", hash_generated_method = "4A27676AA6A750323A2AC33370142C3B")
     @Override
     protected Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1872438509 = null; //Variable for return #1
+        
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1872438509 = null; 
         Parcelable superState = super.onSaveInstanceState();
         varB4EAC82CA7396A68D541C85D26508E83_1872438509 = new SavedState(superState, getCurrentHour(), getCurrentMinute());
-        varB4EAC82CA7396A68D541C85D26508E83_1872438509.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1872438509.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1872438509;
-        // ---------- Original Method ----------
-        //Parcelable superState = super.onSaveInstanceState();
-        //return new SavedState(superState, getCurrentHour(), getCurrentMinute());
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.156 -0400", hash_original_method = "B2A487C66396B9A569DF07FC1780728C", hash_generated_method = "D0CC5545E32C978C55D8230E25CC0299")
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         SavedState ss = (SavedState) state;
         super.onRestoreInstanceState(ss.getSuperState());
         setCurrentHour(ss.getHour());
         setCurrentMinute(ss.getMinute());
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //SavedState ss = (SavedState) state;
-        //super.onRestoreInstanceState(ss.getSuperState());
-        //setCurrentHour(ss.getHour());
-        //setCurrentMinute(ss.getMinute());
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.156 -0400", hash_original_method = "6B3D4A5E94F1256617D4C5854135F89F", hash_generated_method = "06C44235EEE3C2E117DCBAA9E871B4B2")
     public void setOnTimeChangedListener(OnTimeChangedListener onTimeChangedListener) {
         mOnTimeChangedListener = onTimeChangedListener;
-        // ---------- Original Method ----------
-        //mOnTimeChangedListener = onTimeChangedListener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.157 -0400", hash_original_method = "AE73BE8706F17DAEE1FF393F333C1E75", hash_generated_method = "7937FCAF2C0B8E7935C788C347FCE07D")
     public Integer getCurrentHour() {
-        Integer varB4EAC82CA7396A68D541C85D26508E83_1814043942 = null; //Variable for return #1
-        Integer varB4EAC82CA7396A68D541C85D26508E83_1673275080 = null; //Variable for return #2
-        Integer varB4EAC82CA7396A68D541C85D26508E83_87423770 = null; //Variable for return #3
+        Integer varB4EAC82CA7396A68D541C85D26508E83_1814043942 = null; 
+        Integer varB4EAC82CA7396A68D541C85D26508E83_1673275080 = null; 
+        Integer varB4EAC82CA7396A68D541C85D26508E83_87423770 = null; 
         int currentHour = mHourSpinner.getValue();
         {
             boolean varFAB15A4F58C6E1453A4D6F7A530C8BA5_1026195460 = (is24HourView());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1814043942 = currentHour;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1673275080 = currentHour % HOURS_IN_HALF_DAY;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_87423770 = (currentHour % HOURS_IN_HALF_DAY) + HOURS_IN_HALF_DAY;
-            } //End block
-        } //End collapsed parenthetic
-        Integer varA7E53CE21691AB073D9660D615818899_697620623; //Final return value
+            } 
+        } 
+        Integer varA7E53CE21691AB073D9660D615818899_697620623; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_697620623 = varB4EAC82CA7396A68D541C85D26508E83_1814043942;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_697620623 = varB4EAC82CA7396A68D541C85D26508E83_1673275080;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_697620623 = varB4EAC82CA7396A68D541C85D26508E83_87423770;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_697620623.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_697620623.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_697620623;
-        // ---------- Original Method ----------
-        //int currentHour = mHourSpinner.getValue();
-        //if (is24HourView()) {
-            //return currentHour;
-        //} else if (mIsAm) {
-            //return currentHour % HOURS_IN_HALF_DAY;
-        //} else {
-            //return (currentHour % HOURS_IN_HALF_DAY) + HOURS_IN_HALF_DAY;
-        //}
+        
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -413,7 +413,7 @@ public class TimePicker extends FrameLayout {
     public void setCurrentHour(Integer currentHour) {
         {
             boolean varEBC734B5A295F39B75E246AB2FD25248_1704597398 = (currentHour == null || currentHour == getCurrentHour());
-        } //End collapsed parenthetic
+        } 
         {
             boolean var19272B72BDCEABDB9528250CA63FAD1F_1094017729 = (!is24HourView());
             {
@@ -421,40 +421,40 @@ public class TimePicker extends FrameLayout {
                     mIsAm = false;
                     {
                         currentHour = currentHour - HOURS_IN_HALF_DAY;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     mIsAm = true;
                     {
                         currentHour = HOURS_IN_HALF_DAY;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 updateAmPmControl();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mHourSpinner.setValue(currentHour);
         onTimeChanged();
         addTaint(currentHour.getTaint());
-        // ---------- Original Method ----------
-        //if (currentHour == null || currentHour == getCurrentHour()) {
-            //return;
-        //}
-        //if (!is24HourView()) {
-            //if (currentHour >= HOURS_IN_HALF_DAY) {
-                //mIsAm = false;
-                //if (currentHour > HOURS_IN_HALF_DAY) {
-                    //currentHour = currentHour - HOURS_IN_HALF_DAY;
-                //}
-            //} else {
-                //mIsAm = true;
-                //if (currentHour == 0) {
-                    //currentHour = HOURS_IN_HALF_DAY;
-                //}
-            //}
-            //updateAmPmControl();
-        //}
-        //mHourSpinner.setValue(currentHour);
-        //onTimeChanged();
+        
+        
+            
+        
+        
+            
+                
+                
+                    
+                
+            
+                
+                
+                    
+                
+            
+            
+        
+        
+        
     }
 
     
@@ -465,15 +465,15 @@ public class TimePicker extends FrameLayout {
         updateHourControl();
         setCurrentHour(currentHour);
         updateAmPmControl();
-        // ---------- Original Method ----------
-        //if (mIs24HourView == is24HourView) {
-            //return;
-        //}
-        //mIs24HourView = is24HourView;
-        //int currentHour = getCurrentHour();
-        //updateHourControl();
-        //setCurrentHour(currentHour);
-        //updateAmPmControl();
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -481,19 +481,19 @@ public class TimePicker extends FrameLayout {
     public boolean is24HourView() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1416345219 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1416345219;
-        // ---------- Original Method ----------
-        //return mIs24HourView;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.158 -0400", hash_original_method = "A85A8F7AA6E48BE779272D70D71211B4", hash_generated_method = "BECD916044EC5C34A7B2AF4E75317EA9")
     public Integer getCurrentMinute() {
-        Integer varB4EAC82CA7396A68D541C85D26508E83_365435033 = null; //Variable for return #1
+        Integer varB4EAC82CA7396A68D541C85D26508E83_365435033 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_365435033 = mMinuteSpinner.getValue();
-        varB4EAC82CA7396A68D541C85D26508E83_365435033.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_365435033.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_365435033;
-        // ---------- Original Method ----------
-        //return mMinuteSpinner.getValue();
+        
+        
     }
 
     
@@ -501,16 +501,16 @@ public class TimePicker extends FrameLayout {
     public void setCurrentMinute(Integer currentMinute) {
         {
             boolean varDBDB0EB4C2EE8ED59504861D9D7B85AB_597729220 = (currentMinute == getCurrentMinute());
-        } //End collapsed parenthetic
+        } 
         mMinuteSpinner.setValue(currentMinute);
         onTimeChanged();
         addTaint(currentMinute.getTaint());
-        // ---------- Original Method ----------
-        //if (currentMinute == getCurrentMinute()) {
-            //return;
-        //}
-        //mMinuteSpinner.setValue(currentMinute);
-        //onTimeChanged();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -520,8 +520,8 @@ public class TimePicker extends FrameLayout {
         int varFB188FCA7F7E3E5600610236D50C9EFF_157818174 = (mHourSpinner.getBaseline());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117469659 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117469659;
-        // ---------- Original Method ----------
-        //return mHourSpinner.getBaseline();
+        
+        
     }
 
     
@@ -532,43 +532,43 @@ public class TimePicker extends FrameLayout {
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1720698011 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1720698011;
-        // ---------- Original Method ----------
-        //onPopulateAccessibilityEvent(event);
-        //return true;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.160 -0400", hash_original_method = "F102F8EE122BA2E1A10F758465ADC0EB", hash_generated_method = "6069B1C0EF5729A30D8131F1D7DDFCC1")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onPopulateAccessibilityEvent(event);
         int flags = DateUtils.FORMAT_SHOW_TIME;
         {
             flags |= DateUtils.FORMAT_24HOUR;
-        } //End block
+        } 
         {
             flags |= DateUtils.FORMAT_12HOUR;
-        } //End block
+        } 
         mTempCalendar.set(Calendar.HOUR_OF_DAY, getCurrentHour());
         mTempCalendar.set(Calendar.MINUTE, getCurrentMinute());
         String selectedDateUtterance = DateUtils.formatDateTime(mContext,
                 mTempCalendar.getTimeInMillis(), flags);
         event.getText().add(selectedDateUtterance);
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //super.onPopulateAccessibilityEvent(event);
-        //int flags = DateUtils.FORMAT_SHOW_TIME;
-        //if (mIs24HourView) {
-            //flags |= DateUtils.FORMAT_24HOUR;
-        //} else {
-            //flags |= DateUtils.FORMAT_12HOUR;
-        //}
-        //mTempCalendar.set(Calendar.HOUR_OF_DAY, getCurrentHour());
-        //mTempCalendar.set(Calendar.MINUTE, getCurrentMinute());
-        //String selectedDateUtterance = DateUtils.formatDateTime(mContext,
-                //mTempCalendar.getTimeInMillis(), flags);
-        //event.getText().add(selectedDateUtterance);
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -580,23 +580,23 @@ public class TimePicker extends FrameLayout {
                 mHourSpinner.setMinValue(0);
                 mHourSpinner.setMaxValue(23);
                 mHourSpinner.setFormatter(NumberPicker.TWO_DIGIT_FORMATTER);
-            } //End block
+            } 
             {
                 mHourSpinner.setMinValue(1);
                 mHourSpinner.setMaxValue(12);
                 mHourSpinner.setFormatter(null);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (is24HourView()) {
-            //mHourSpinner.setMinValue(0);
-            //mHourSpinner.setMaxValue(23);
-            //mHourSpinner.setFormatter(NumberPicker.TWO_DIGIT_FORMATTER);
-        //} else {
-            //mHourSpinner.setMinValue(1);
-            //mHourSpinner.setMaxValue(12);
-            //mHourSpinner.setFormatter(null);
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+        
+            
+            
+            
+        
     }
 
     
@@ -607,11 +607,11 @@ public class TimePicker extends FrameLayout {
             {
                 {
                     mAmPmSpinner.setVisibility(View.GONE);
-                } //End block
+                } 
                 {
                     mAmPmButton.setVisibility(View.GONE);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 int index;
                 index = Calendar.AM;
@@ -619,32 +619,32 @@ public class TimePicker extends FrameLayout {
                 {
                     mAmPmSpinner.setValue(index);
                     mAmPmSpinner.setVisibility(View.VISIBLE);
-                } //End block
+                } 
                 {
                     mAmPmButton.setText(mAmPmStrings[index]);
                     mAmPmButton.setVisibility(View.VISIBLE);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
-        // ---------- Original Method ----------
-        //if (is24HourView()) {
-            //if (mAmPmSpinner != null) {
-                //mAmPmSpinner.setVisibility(View.GONE);
-            //} else {
-                //mAmPmButton.setVisibility(View.GONE);
-            //}
-        //} else {
-            //int index = mIsAm ? Calendar.AM : Calendar.PM;
-            //if (mAmPmSpinner != null) {
-                //mAmPmSpinner.setValue(index);
-                //mAmPmSpinner.setVisibility(View.VISIBLE);
-            //} else {
-                //mAmPmButton.setText(mAmPmStrings[index]);
-                //mAmPmButton.setVisibility(View.VISIBLE);
-            //}
-        //}
-        //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
+        
+        
+            
+                
+            
+                
+            
+        
+            
+            
+                
+                
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -653,12 +653,12 @@ public class TimePicker extends FrameLayout {
         sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
         {
             mOnTimeChangedListener.onTimeChanged(this, getCurrentHour(), getCurrentMinute());
-        } //End block
-        // ---------- Original Method ----------
-        //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
-        //if (mOnTimeChangedListener != null) {
-            //mOnTimeChangedListener.onTimeChanged(this, getCurrentHour(), getCurrentMinute());
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -677,9 +677,9 @@ public class TimePicker extends FrameLayout {
             mAmPmSpinner.findViewById(R.id.increment).setContentDescription(text);
             text = mContext.getString(R.string.time_picker_decrement_set_am_button);
             mAmPmSpinner.findViewById(R.id.decrement).setContentDescription(text);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -692,37 +692,37 @@ public class TimePicker extends FrameLayout {
                 {
                     mHourSpinnerInput.clearFocus();
                     inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-                } //End block
+                } 
                 {
                     boolean var8E6415DD3D919E519BF844CF4369EAC9_1061077405 = (inputMethodManager.isActive(mMinuteSpinnerInput));
                     {
                         mMinuteSpinnerInput.clearFocus();
                         inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-                    } //End block
+                    } 
                     {
                         boolean varDAB46DD19150B7BCB89C5605BC3BC354_2115114148 = (inputMethodManager.isActive(mAmPmSpinnerInput));
                         {
                             mAmPmSpinnerInput.clearFocus();
                             inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //InputMethodManager inputMethodManager = InputMethodManager.peekInstance();
-        //if (inputMethodManager != null) {
-            //if (inputMethodManager.isActive(mHourSpinnerInput)) {
-                //mHourSpinnerInput.clearFocus();
-                //inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            //} else if (inputMethodManager.isActive(mMinuteSpinnerInput)) {
-                //mMinuteSpinnerInput.clearFocus();
-                //inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            //} else if (inputMethodManager.isActive(mAmPmSpinnerInput)) {
-                //mAmPmSpinnerInput.clearFocus();
-                //inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            //}
-        //}
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+        
     }
 
     
@@ -740,9 +740,9 @@ public class TimePicker extends FrameLayout {
             mHour = hour;
             mMinute = minute;
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
-            //mHour = hour;
-            //mMinute = minute;
+            
+            
+            
         }
 
         
@@ -751,9 +751,9 @@ public class TimePicker extends FrameLayout {
             super(in);
             mHour = in.readInt();
             mMinute = in.readInt();
-            // ---------- Original Method ----------
-            //mHour = in.readInt();
-            //mMinute = in.readInt();
+            
+            
+            
         }
 
         
@@ -761,8 +761,8 @@ public class TimePicker extends FrameLayout {
         public int getHour() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_945282188 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_945282188;
-            // ---------- Original Method ----------
-            //return mHour;
+            
+            
         }
 
         
@@ -770,8 +770,8 @@ public class TimePicker extends FrameLayout {
         public int getMinute() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1781680770 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1781680770;
-            // ---------- Original Method ----------
-            //return mMinute;
+            
+            
         }
 
         
@@ -783,10 +783,10 @@ public class TimePicker extends FrameLayout {
             dest.writeInt(mMinute);
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //super.writeToParcel(dest, flags);
-            //dest.writeInt(mHour);
-            //dest.writeInt(mMinute);
+            
+            
+            
+            
         }
 
         
@@ -823,11 +823,11 @@ public class TimePicker extends FrameLayout {
     private static final OnTimeChangedListener NO_OP_CHANGE_LISTENER = new OnTimeChangedListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.166 -0400", hash_original_method = "B77065AD2AD822CAFFDDD570BBD12E98", hash_generated_method = "DB3F503D27EF949DABDC7544AC6AFEC7")
         public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(view.getTaint());
             addTaint(hourOfDay);
             addTaint(minute);
-            // ---------- Original Method ----------
+            
         }
 
         

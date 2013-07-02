@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Date;
 
@@ -15,7 +15,7 @@ public class ASN1UTCTime extends DERUTCTime {
       ASN1UTCTime(byte[] bytes) {
         super(bytes);
         addTaint(bytes[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,7 +23,7 @@ public class ASN1UTCTime extends DERUTCTime {
     public  ASN1UTCTime(Date time) {
         super(time);
         addTaint(time.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,7 +31,7 @@ public class ASN1UTCTime extends DERUTCTime {
     public  ASN1UTCTime(String time) {
         super(time);
         addTaint(time.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

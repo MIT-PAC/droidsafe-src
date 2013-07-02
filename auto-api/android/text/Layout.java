@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.emoji.EmojiFactory;
 import android.graphics.Canvas;
@@ -64,7 +64,7 @@ public abstract class Layout {
         addTaint(align.getTaint());
         addTaint(spacingMult);
         addTaint(spacingAdd);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -76,7 +76,7 @@ public abstract class Layout {
         {
             paint.bgColor = 0;
             paint.baselineShift = 0;
-        } //End block
+        } 
         mText = text;
         mPaint = paint;
         mWorkPaint = new TextPaint();
@@ -86,31 +86,33 @@ public abstract class Layout {
         mSpacingAdd = spacingAdd;
         mSpannedText = text instanceof Spanned;
         mTextDir = textDir;
-        // ---------- Original Method ----------
-        //if (width < 0)
-            //throw new IllegalArgumentException("Layout: " + width + " < 0");
-        //if (paint != null) {
-            //paint.bgColor = 0;
-            //paint.baselineShift = 0;
-        //}
-        //mText = text;
-        //mPaint = paint;
-        //mWorkPaint = new TextPaint();
-        //mWidth = width;
-        //mAlignment = align;
-        //mSpacingMult = spacingMult;
-        //mSpacingAdd = spacingAdd;
-        //mSpannedText = text instanceof Spanned;
-        //mTextDir = textDir;
+        
+        
+            
+        
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float getDesiredWidth(CharSequence source,
                                         TextPaint paint) {
         return getDesiredWidth(source, 0, source.length(), paint);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float getDesiredWidth(CharSequence source,
                                         int start, int end,
                                         TextPaint paint) {
@@ -136,7 +138,7 @@ public abstract class Layout {
                               float spacingmult, float spacingadd) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Layout: " + width + " < 0");
-        } //End block
+        } 
         mText = text;
         mPaint = paint;
         mWidth = width;
@@ -144,29 +146,31 @@ public abstract class Layout {
         mSpacingMult = spacingmult;
         mSpacingAdd = spacingadd;
         mSpannedText = text instanceof Spanned;
-        // ---------- Original Method ----------
-        //if (width < 0) {
-            //throw new IllegalArgumentException("Layout: " + width + " < 0");
-        //}
-        //mText = text;
-        //mPaint = paint;
-        //mWidth = width;
-        //mAlignment = align;
-        //mSpacingMult = spacingmult;
-        //mSpacingAdd = spacingadd;
-        //mSpannedText = text instanceof Spanned;
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.946 -0400", hash_original_method = "21986991A7FC788A39082240DAE8B9C3", hash_generated_method = "A7DBF3BE15A320D6F69E02741972F077")
     public void draw(Canvas c) {
         draw(c, null, null, 0);
         addTaint(c.getTaint());
-        // ---------- Original Method ----------
-        //draw(c, null, null, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.948 -0400", hash_original_method = "C63D8686FF6D60F338825542CA174C93", hash_generated_method = "B3F3D4326419E35B21A718ACB0B0DAA5")
     public void draw(Canvas c, Path highlight, Paint highlightPaint,
                      int cursorOffsetVertical) {
@@ -175,18 +179,18 @@ public abstract class Layout {
         {
             {
                 boolean varC42A531B776DA8F33EFB072E74A6FC1E_790243001 = (!c.getClipBounds(sTempRect));
-            } //End collapsed parenthetic
+            } 
             dtop = sTempRect.top;
             dbottom = sTempRect.bottom;
-        } //End block
+        } 
         int top = 0;
         int bottom = getLineTop(getLineCount());
         {
             top = dtop;
-        } //End block
+        } 
         {
             bottom = dbottom;
-        } //End block
+        } 
         int first = getLineForVertical(top);
         int last = getLineForVertical(bottom);
         int previousLineBottom = getLineTop(first);
@@ -215,7 +219,7 @@ public abstract class Layout {
                         spanEnd = sp.nextSpanTransition(start, textLength,
                             LineBackgroundSpan.class);
                         spans = getParagraphSpans(sp, start, end, LineBackgroundSpan.class);
-                    } //End block
+                    } 
                     {
                         int n = 0;
                         {
@@ -224,24 +228,24 @@ public abstract class Layout {
                                        ltop, lbaseline, lbottom,
                                        buf, start, end,
                                        i);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             spanEnd = 0;
             previousLineBottom = getLineTop(first);
             previousLineEnd = getLineStart(first);
             spans = NO_PARA_SPANS;
-        } //End block
+        } 
         {
             {
                 c.translate(0, cursorOffsetVertical);
-            } //End block
+            } 
             c.drawPath(highlight, highlightPaint);
             {
                 c.translate(0, -cursorOffsetVertical);
-            } //End block
-        } //End block
+            } 
+        } 
         Alignment paraAlign = mAlignment;
         TabStops tabStops = null;
         boolean tabStopsIsInitialized = false;
@@ -273,11 +277,11 @@ public abstract class Layout {
                             {
                                 {
                                     paraAlign = ((AlignmentSpan) spans[n]).getAlignment();
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
                         tabStopsIsInitialized = false;
-                    } //End block
+                    } 
                     final int length = spans.length;
                     {
                         int n = 0;
@@ -289,86 +293,87 @@ public abstract class Layout {
                                     int count = ((LeadingMarginSpan2) margin).getLeadingMarginLineCount();
                                     int startLine = getLineForOffset(sp.getSpanStart(margin));
                                     useFirstLineMargin = i < startLine + count;
-                                } //End block
+                                } 
                                 {
                                     margin.drawLeadingMargin(c, paint, right, dir, ltop,
                                                      lbaseline, lbottom, buf,
                                                      start, end, isFirstParaLine, this);
                                     right -= margin.getLeadingMargin(useFirstLineMargin);
-                                } //End block
+                                } 
                                 {
                                     margin.drawLeadingMargin(c, paint, left, dir, ltop,
                                                      lbaseline, lbottom, buf,
                                                      start, end, isFirstParaLine, this);
                                     left += margin.getLeadingMargin(useFirstLineMargin);
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 boolean hasTabOrEmoji = getLineContainsTab(i);
                 {
                     {
                         tabStops = new TabStops(TAB_INCREMENT, spans);
-                    } //End block
+                    } 
                     {
                         tabStops.reset(TAB_INCREMENT, spans);
-                    } //End block
+                    } 
                     tabStopsIsInitialized = true;
-                } //End block
+                } 
                 Alignment align = paraAlign;
                 {
                     align = (dir == DIR_LEFT_TO_RIGHT) ?
                     Alignment.ALIGN_NORMAL : Alignment.ALIGN_OPPOSITE;
-                } //End block
+                } 
                 {
                     align = (dir == DIR_LEFT_TO_RIGHT) ?
                     Alignment.ALIGN_OPPOSITE : Alignment.ALIGN_NORMAL;
-                } //End block
+                } 
                 int x;
                 {
                     {
                         x = left;
-                    } //End block
+                    } 
                     {
                         x = right;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     int max = (int)getLineExtent(i, tabStops, false);
                     {
                         {
                             x = right - max;
-                        } //End block
+                        } 
                         {
                             x = left - max;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         max = max & ~1;
                         x = (right + left - max) >> 1;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 Directions directions = getLineDirections(i);
                 {
                     c.drawText(buf, start, end, x, lbaseline, paint);
-                } //End block
+                } 
                 {
                     tl.set(paint, buf, start, end, dir, directions, hasTabOrEmoji, tabStops);
                     tl.draw(c, x, ltop, lbaseline, lbottom);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         TextLine.recycle(tl);
         addTaint(c.getTaint());
         addTaint(highlight.getTaint());
         addTaint(highlightPaint.getTaint());
         addTaint(cursorOffsetVertical);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.948 -0400", hash_original_method = "94C8B0A33C8A9972488E17891E7B8BAC", hash_generated_method = "581EAD93136AF0ABFD92CEB118F52503")
     private int getLineStartPos(int line, int left, int right) {
         Alignment align = getParagraphAlignment(line);
@@ -376,15 +381,15 @@ public abstract class Layout {
         int x;
         {
             x = left;
-        } //End block
+        } 
         {
             {
                 x = left;
-            } //End block
+            } 
             {
                 x = right;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             TabStops tabStops = null;
             {
@@ -397,55 +402,55 @@ public abstract class Layout {
                     TabStopSpan[] tabSpans = getParagraphSpans(spanned, start, spanEnd, TabStopSpan.class);
                     {
                         tabStops = new TabStops(TAB_INCREMENT, tabSpans);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             int max = (int)getLineExtent(line, tabStops, false);
             {
                 x = right - max;
-            } //End block
+            } 
             {
                 {
                     x = right - max;
-                } //End block
+                } 
                 {
                     x = left - max;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 max = max & ~1;
                 x = (left + right - max) >> 1;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(line);
         addTaint(left);
         addTaint(right);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1292166613 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1292166613;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.949 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "2E85A9E0AB5935BFE66D56DF43045435")
     public final CharSequence getText() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1454853862 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1454853862 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1454853862 = mText;
-        varB4EAC82CA7396A68D541C85D26508E83_1454853862.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1454853862.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1454853862;
-        // ---------- Original Method ----------
-        //return mText;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.950 -0400", hash_original_method = "7064C5093467A23605D5C425E4D25B83", hash_generated_method = "5F654E77FB419D64150B93349CCBD130")
     public final TextPaint getPaint() {
-        TextPaint varB4EAC82CA7396A68D541C85D26508E83_650910241 = null; //Variable for return #1
+        TextPaint varB4EAC82CA7396A68D541C85D26508E83_650910241 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_650910241 = mPaint;
-        varB4EAC82CA7396A68D541C85D26508E83_650910241.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_650910241.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_650910241;
-        // ---------- Original Method ----------
-        //return mPaint;
+        
+        
     }
 
     
@@ -453,8 +458,8 @@ public abstract class Layout {
     public final int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_256263696 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_256263696;
-        // ---------- Original Method ----------
-        //return mWidth;
+        
+        
     }
 
     
@@ -462,8 +467,8 @@ public abstract class Layout {
     public int getEllipsizedWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_462555178 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_462555178;
-        // ---------- Original Method ----------
-        //return mWidth;
+        
+        
     }
 
     
@@ -471,34 +476,35 @@ public abstract class Layout {
     public final void increaseWidthTo(int wid) {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("attempted to reduce Layout width");
-        } //End block
+        } 
         mWidth = wid;
-        // ---------- Original Method ----------
-        //if (wid < mWidth) {
-            //throw new RuntimeException("attempted to reduce Layout width");
-        //}
-        //mWidth = wid;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.951 -0400", hash_original_method = "5212B162F472F11B6A60B5BD891C860A", hash_generated_method = "F75E9467A7297A00A4323B11BBA4A765")
     public int getHeight() {
         int var7ED7F6E2EB0B1BC7A56013BEE63A9A35_1422186985 = (getLineTop(getLineCount()));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_33818243 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_33818243;
-        // ---------- Original Method ----------
-        //return getLineTop(getLineCount());
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.951 -0400", hash_original_method = "FB2D4D43E3EFDD971010AB3AFA49B442", hash_generated_method = "096A7FF0ECFA74F90C92AAE3353C88CD")
     public final Alignment getAlignment() {
-        Alignment varB4EAC82CA7396A68D541C85D26508E83_1634605809 = null; //Variable for return #1
+        Alignment varB4EAC82CA7396A68D541C85D26508E83_1634605809 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1634605809 = mAlignment;
-        varB4EAC82CA7396A68D541C85D26508E83_1634605809.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1634605809.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1634605809;
-        // ---------- Original Method ----------
-        //return mAlignment;
+        
+        
     }
 
     
@@ -506,8 +512,8 @@ public abstract class Layout {
     public final float getSpacingMultiplier() {
         float var546ADE640B6EDFBC8A086EF31347E768_214512433 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_214512433;
-        // ---------- Original Method ----------
-        //return mSpacingMult;
+        
+        
     }
 
     
@@ -515,25 +521,26 @@ public abstract class Layout {
     public final float getSpacingAdd() {
         float var546ADE640B6EDFBC8A086EF31347E768_2105679272 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2105679272;
-        // ---------- Original Method ----------
-        //return mSpacingAdd;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.952 -0400", hash_original_method = "CEF29A1F61D81E3972548E19A0D7158C", hash_generated_method = "7F38C5D54F4F5F04174237C0C8B42B79")
     public final TextDirectionHeuristic getTextDirectionHeuristic() {
-        TextDirectionHeuristic varB4EAC82CA7396A68D541C85D26508E83_1983998928 = null; //Variable for return #1
+        TextDirectionHeuristic varB4EAC82CA7396A68D541C85D26508E83_1983998928 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1983998928 = mTextDir;
-        varB4EAC82CA7396A68D541C85D26508E83_1983998928.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1983998928.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1983998928;
-        // ---------- Original Method ----------
-        //return mTextDir;
+        
+        
     }
 
     
     public abstract int getLineCount();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.953 -0400", hash_original_method = "6295516BE4612811C14BD1DCED80BAB8", hash_generated_method = "39F20FDBA3139B836560F7258074BCA6")
     public int getLineBounds(int line, Rect bounds) {
         {
@@ -541,20 +548,20 @@ public abstract class Layout {
             bounds.top = getLineTop(line);
             bounds.right = mWidth;
             bounds.bottom = getLineTop(line + 1);
-        } //End block
+        } 
         int var29FD769CAB68A42F60CF514C827201BE_812406830 = (getLineBaseline(line));
         addTaint(line);
         addTaint(bounds.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_498446045 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_498446045;
-        // ---------- Original Method ----------
-        //if (bounds != null) {
-            //bounds.left = 0;     
-            //bounds.top = getLineTop(line);
-            //bounds.right = mWidth;   
-            //bounds.bottom = getLineTop(line + 1);
-        //}
-        //return getLineBaseline(line);
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -582,6 +589,7 @@ public abstract class Layout {
     public abstract int getBottomPadding();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.956 -0400", hash_original_method = "2C3949CE81E6BE871356E85B216A576F", hash_generated_method = "736ACD6118886C1D294F0C89DF385F26")
     public boolean isLevelBoundary(int offset) {
         int line = getLineForOffset(offset);
@@ -597,39 +605,40 @@ public abstract class Layout {
             int runIndex;
             runIndex = 0;
             runIndex = runs.length - 2;
-        } //End block
+        } 
         offset -= lineStart;
         {
             int i = 0;
             i += 2;
-        } //End collapsed parenthetic
+        } 
         addTaint(offset);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_789347183 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_789347183;
-        // ---------- Original Method ----------
-        //int line = getLineForOffset(offset);
-        //Directions dirs = getLineDirections(line);
-        //if (dirs == DIRS_ALL_LEFT_TO_RIGHT || dirs == DIRS_ALL_RIGHT_TO_LEFT) {
-            //return false;
-        //}
-        //int[] runs = dirs.mDirections;
-        //int lineStart = getLineStart(line);
-        //int lineEnd = getLineEnd(line);
-        //if (offset == lineStart || offset == lineEnd) {
-            //int paraLevel = getParagraphDirection(line) == 1 ? 0 : 1;
-            //int runIndex = offset == lineStart ? 0 : runs.length - 2;
-            //return ((runs[runIndex + 1] >>> RUN_LEVEL_SHIFT) & RUN_LEVEL_MASK) != paraLevel;
-        //}
-        //offset -= lineStart;
-        //for (int i = 0; i < runs.length; i += 2) {
-            //if (offset == runs[i]) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.957 -0400", hash_original_method = "AF5CCAD1718916CFF1EB4C8EF2E12FAE", hash_generated_method = "258F72FADF732A65D62A0470C45F420F")
     public boolean isRtlCharAt(int offset) {
         int line = getLineForOffset(offset);
@@ -643,34 +652,35 @@ public abstract class Layout {
                 int start = lineStart + (runs[i] & RUN_LENGTH_MASK);
                 {
                     int level = (runs[i+1] >>> RUN_LEVEL_SHIFT) & RUN_LEVEL_MASK;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(offset);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_554090503 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_554090503;
-        // ---------- Original Method ----------
-        //int line = getLineForOffset(offset);
-        //Directions dirs = getLineDirections(line);
-        //if (dirs == DIRS_ALL_LEFT_TO_RIGHT) {
-            //return false;
-        //}
-        //if (dirs == DIRS_ALL_RIGHT_TO_LEFT) {
-            //return  true;
-        //}
-        //int[] runs = dirs.mDirections;
-        //int lineStart = getLineStart(line);
-        //for (int i = 0; i < runs.length; i += 2) {
-            //int start = lineStart + (runs[i] & RUN_LENGTH_MASK);
-            //if (offset >= start) {
-                //int level = (runs[i+1] >>> RUN_LEVEL_SHIFT) & RUN_LEVEL_MASK;
-                //return ((level & 1) != 0);
-            //}
-        //}
-        //return false;
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.958 -0400", hash_original_method = "2802B19F8A9E2D0D463FD305FA66136A", hash_generated_method = "4BE1174CB7C226ED00E2365A75B3AEE3")
     private boolean primaryIsTrailingPrevious(int offset) {
         int line = getLineForOffset(offset);
@@ -686,19 +696,19 @@ public abstract class Layout {
                 int limit = start + (runs[i+1] & RUN_LENGTH_MASK);
                 {
                     limit = lineEnd;
-                } //End block
+                } 
                 {
                     levelAt = (runs[i+1] >>> RUN_LEVEL_SHIFT) & RUN_LEVEL_MASK;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             levelAt = getParagraphDirection(line) == 1 ? 0 : 1;
-        } //End block
+        } 
         int levelBefore = -1;
         {
             levelBefore = getParagraphDirection(line) == 1 ? 0 : 1;
-        } //End block
+        } 
         {
             offset -= 1;
             {
@@ -709,21 +719,22 @@ public abstract class Layout {
                     int limit = start + (runs[i+1] & RUN_LENGTH_MASK);
                     {
                         limit = lineEnd;
-                    } //End block
+                    } 
                     {
                         levelBefore = (runs[i+1] >>> RUN_LEVEL_SHIFT) & RUN_LEVEL_MASK;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(offset);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1156533450 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1156533450;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.958 -0400", hash_original_method = "80ABC300097314837E01431F08FED39C", hash_generated_method = "8E388975B0B5DC033FED53653E1E82F0")
     public float getPrimaryHorizontal(int offset) {
         boolean trailing = primaryIsTrailingPrevious(offset);
@@ -731,12 +742,13 @@ public abstract class Layout {
         addTaint(offset);
         float var546ADE640B6EDFBC8A086EF31347E768_417230061 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_417230061;
-        // ---------- Original Method ----------
-        //boolean trailing = primaryIsTrailingPrevious(offset);
-        //return getHorizontal(offset, trailing);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.959 -0400", hash_original_method = "5EA78F3566FFC0563802F8455C66332C", hash_generated_method = "188E87A0C8B170FD36F307AFBCD499AB")
     public float getSecondaryHorizontal(int offset) {
         boolean trailing = primaryIsTrailingPrevious(offset);
@@ -744,12 +756,13 @@ public abstract class Layout {
         addTaint(offset);
         float var546ADE640B6EDFBC8A086EF31347E768_1357724643 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1357724643;
-        // ---------- Original Method ----------
-        //boolean trailing = primaryIsTrailingPrevious(offset);
-        //return getHorizontal(offset, !trailing);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.959 -0400", hash_original_method = "A6F47D9472D86FF595A17085495F07A6", hash_generated_method = "D754D04C1174681098FBB858F60FB116")
     private float getHorizontal(int offset, boolean trailing) {
         int line = getLineForOffset(offset);
@@ -758,12 +771,13 @@ public abstract class Layout {
         addTaint(trailing);
         float var546ADE640B6EDFBC8A086EF31347E768_505983689 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_505983689;
-        // ---------- Original Method ----------
-        //int line = getLineForOffset(offset);
-        //return getHorizontal(offset, trailing, line);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.960 -0400", hash_original_method = "B47A0ABADD57DE266AAF87A7E699E873", hash_generated_method = "110BA78F5644AD4568B4CB272208B433")
     private float getHorizontal(int offset, boolean trailing, int line) {
         int start = getLineStart(line);
@@ -776,8 +790,8 @@ public abstract class Layout {
             TabStopSpan[] tabs = getParagraphSpans((Spanned) mText, start, end, TabStopSpan.class);
             {
                 tabStops = new TabStops(TAB_INCREMENT, tabs);
-            } //End block
-        } //End block
+            } 
+        } 
         TextLine tl = TextLine.obtain();
         tl.set(mPaint, mText, start, end, dir, directions, hasTabOrEmoji, tabStops);
         float wid = tl.measure(offset - start, trailing, null);
@@ -790,63 +804,66 @@ public abstract class Layout {
         addTaint(line);
         float var546ADE640B6EDFBC8A086EF31347E768_1685300933 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1685300933;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.960 -0400", hash_original_method = "185391EA60FA7533A9126C3E791BF275", hash_generated_method = "CF7E8AF2053D426B66084447B273FF09")
     public float getLineLeft(int line) {
         int dir = getParagraphDirection(line);
         Alignment align = getParagraphAlignment(line);
         {
             float var98F794A324A0919CA2BAAE75E672BC61_1066681349 = (getParagraphRight(line) - getLineMax(line));
-        } //End block
+        } 
         {
             float varB6842D18BAF51681C1C350FBC007B514_598263152 = (mWidth - getLineMax(line));
-        } //End block
+        } 
         {
             float varB6842D18BAF51681C1C350FBC007B514_890745296 = (mWidth - getLineMax(line));
-        } //End block
+        } 
         {
             int left = getParagraphLeft(line);
             int right = getParagraphRight(line);
             int max = ((int) getLineMax(line)) & ~1;
-        } //End block
+        } 
         addTaint(line);
         float var546ADE640B6EDFBC8A086EF31347E768_86656803 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_86656803;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.961 -0400", hash_original_method = "D344E3703EA76C4344B547792AB00F8E", hash_generated_method = "1A2F15D066FCA1CB83CAA3D60580177A")
     public float getLineRight(int line) {
         int dir = getParagraphDirection(line);
         Alignment align = getParagraphAlignment(line);
         {
             float varC6136DD4ADABC05AB18240388355DC3F_1614603568 = (getParagraphLeft(line) + getLineMax(line));
-        } //End block
+        } 
         {
             float varC6136DD4ADABC05AB18240388355DC3F_992268429 = (getParagraphLeft(line) + getLineMax(line));
-        } //End block
+        } 
         {
             float varDA3557094C6D55255BC5DF32F9EC5DA6_1488119858 = (getLineMax(line));
-        } //End block
+        } 
         {
             int left = getParagraphLeft(line);
             int right = getParagraphRight(line);
             int max = ((int) getLineMax(line)) & ~1;
-        } //End block
+        } 
         addTaint(line);
         float var546ADE640B6EDFBC8A086EF31347E768_1830748679 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1830748679;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.961 -0400", hash_original_method = "F9A5FD2221E6CC8B07379CD2792C3C3D", hash_generated_method = "5B6DC36D8DDCE4B0D8139512EBB415E7")
     public float getLineMax(int line) {
         float margin = getParagraphLeadingMargin(line);
@@ -854,13 +871,14 @@ public abstract class Layout {
         addTaint(line);
         float var546ADE640B6EDFBC8A086EF31347E768_1760650428 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1760650428;
-        // ---------- Original Method ----------
-        //float margin = getParagraphLeadingMargin(line);
-        //float signedExtent = getLineExtent(line, false);
-        //return margin + signedExtent >= 0 ? signedExtent : -signedExtent;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.961 -0400", hash_original_method = "71AEB5E1BA96E910342AC0DBF85E1ED1", hash_generated_method = "1F0A195B57E47A6BA1F80D83B5CB9D2C")
     public float getLineWidth(int line) {
         float margin = getParagraphLeadingMargin(line);
@@ -868,13 +886,14 @@ public abstract class Layout {
         addTaint(line);
         float var546ADE640B6EDFBC8A086EF31347E768_1223470768 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1223470768;
-        // ---------- Original Method ----------
-        //float margin = getParagraphLeadingMargin(line);
-        //float signedExtent = getLineExtent(line, true);
-        //return margin + signedExtent >= 0 ? signedExtent : -signedExtent;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.962 -0400", hash_original_method = "22E5E0C81FE58627900045F7BF4DB10C", hash_generated_method = "E4F688D695617E9955A585161BE5A25B")
     private float getLineExtent(int line, boolean full) {
         int start = getLineStart(line);
@@ -887,8 +906,8 @@ public abstract class Layout {
             TabStopSpan[] tabs = getParagraphSpans((Spanned) mText, start, end, TabStopSpan.class);
             {
                 tabStops = new TabStops(TAB_INCREMENT, tabs);
-            } //End block
-        } //End block
+            } 
+        } 
         Directions directions = getLineDirections(line);
         int dir = getParagraphDirection(line);
         TextLine tl = TextLine.obtain();
@@ -899,11 +918,12 @@ public abstract class Layout {
         addTaint(full);
         float var546ADE640B6EDFBC8A086EF31347E768_1351468937 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1351468937;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.962 -0400", hash_original_method = "8D693BD7DA670D75D51405BA4AD1D35A", hash_generated_method = "FCAA4A086F287B221588BE5112DF3384")
     private float getLineExtent(int line, TabStops tabStops, boolean full) {
         int start = getLineStart(line);
@@ -922,20 +942,21 @@ public abstract class Layout {
         addTaint(full);
         float var546ADE640B6EDFBC8A086EF31347E768_933343127 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_933343127;
-        // ---------- Original Method ----------
-        //int start = getLineStart(line);
-        //int end = full ? getLineEnd(line) : getLineVisibleEnd(line);
-        //boolean hasTabsOrEmoji = getLineContainsTab(line);
-        //Directions directions = getLineDirections(line);
-        //int dir = getParagraphDirection(line);
-        //TextLine tl = TextLine.obtain();
-        //tl.set(mPaint, mText, start, end, dir, directions, hasTabsOrEmoji, tabStops);
-        //float width = tl.metrics(null);
-        //TextLine.recycle(tl);
-        //return width;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.963 -0400", hash_original_method = "10EB5BCC671C8F4E5C56CFC3872691D1", hash_generated_method = "746705ACEA9280382D61D2B906A729B2")
     public int getLineForVertical(int vertical) {
         int high = getLineCount();
@@ -947,27 +968,28 @@ public abstract class Layout {
                 boolean var61BBF3CF1E0BB57196057707E3B4D6BF_1799429361 = (getLineTop(guess) > vertical);
                 high = guess;
                 low = guess;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(vertical);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1053937083 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1053937083;
-        // ---------- Original Method ----------
-        //int high = getLineCount(), low = -1, guess;
-        //while (high - low > 1) {
-            //guess = (high + low) / 2;
-            //if (getLineTop(guess) > vertical)
-                //high = guess;
-            //else
-                //low = guess;
-        //}
-        //if (low < 0)
-            //return 0;
-        //else
-            //return low;
+        
+        
+        
+            
+            
+                
+            
+                
+        
+        
+            
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.963 -0400", hash_original_method = "42BF795D8C0B31EF6FC35C1F4CBE0EBA", hash_generated_method = "8DAD43988B44B81B583A70216693E79D")
     public int getLineForOffset(int offset) {
         int high = getLineCount();
@@ -979,27 +1001,28 @@ public abstract class Layout {
                 boolean var3154698616D95C0A37FAB8F8A883C99B_1661307547 = (getLineStart(guess) > offset);
                 high = guess;
                 low = guess;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1106270017 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1106270017;
-        // ---------- Original Method ----------
-        //int high = getLineCount(), low = -1, guess;
-        //while (high - low > 1) {
-            //guess = (high + low) / 2;
-            //if (getLineStart(guess) > offset)
-                //high = guess;
-            //else
-                //low = guess;
-        //}
-        //if (low < 0)
-            //return 0;
-        //else
-            //return low;
+        
+        
+        
+            
+            
+                
+            
+                
+        
+        
+            
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.964 -0400", hash_original_method = "C7C29A2E2D90FB22FF824A86EA8883C4", hash_generated_method = "9397E0ED5C18C34CE9815ADCF0DF6F8D")
     public int getOffsetForHorizontal(int line, float horiz) {
         int max = getLineEnd(line) - 1;
@@ -1007,7 +1030,7 @@ public abstract class Layout {
         Directions dirs = getLineDirections(line);
         {
             boolean varE1129FD6E3F799951EC526B3F962E39B_1086714343 = (line == getLineCount() - 1);
-        } //End collapsed parenthetic
+        } 
         int best = min;
         float bestdist = Math.abs(getPrimaryHorizontal(best) - horiz);
         {
@@ -1030,8 +1053,8 @@ public abstract class Layout {
                         boolean var598D8798A97CE595A660B245ECEF3FB1_2074297054 = (getPrimaryHorizontal(adguess) * swap >= horiz * swap);
                         high = guess;
                         low = guess;
-                    } //End collapsed parenthetic
-                } //End block
+                    } 
+                } 
                 low = here + 1;
                 {
                     low = getOffsetAtStartOf(low);
@@ -1042,31 +1065,31 @@ public abstract class Layout {
                         {
                             dist = other;
                             low = aft;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         bestdist = dist;
                         best = low;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 float dist = Math.abs(getPrimaryHorizontal(here) - horiz);
                 {
                     bestdist = dist;
                     best = here;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         float dist = Math.abs(getPrimaryHorizontal(max) - horiz);
         {
             bestdist = dist;
             best = max;
-        } //End block
+        } 
         addTaint(line);
         addTaint(horiz);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1634494089 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1634494089;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1076,53 +1099,55 @@ public abstract class Layout {
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_908825269 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_908825269;
-        // ---------- Original Method ----------
-        //return getLineStart(line + 1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.966 -0400", hash_original_method = "A5D943CCC73667A904F00DFE82793835", hash_generated_method = "45077447CC3F16E294743D8FD2BE14A4")
     public int getLineVisibleEnd(int line) {
         int var62428E356DD4C198AB8841D5C8B61434_1458123216 = (getLineVisibleEnd(line, getLineStart(line), getLineStart(line+1)));
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145842102 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145842102;
-        // ---------- Original Method ----------
-        //return getLineVisibleEnd(line, getLineStart(line), getLineStart(line+1));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.967 -0400", hash_original_method = "2B63DEF38DAE998AFE5301FAAC214E4B", hash_generated_method = "FBCE4AF0791E3A557CAEF4F34C147CE1")
     private int getLineVisibleEnd(int line, int start, int end) {
         CharSequence text = mText;
         char ch;
         {
             boolean varE1129FD6E3F799951EC526B3F962E39B_1035615374 = (line == getLineCount() - 1);
-        } //End collapsed parenthetic
+        } 
         {
             ch = text.charAt(end - 1);
-        } //End block
+        } 
         addTaint(line);
         addTaint(start);
         addTaint(end);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_369175019 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_369175019;
-        // ---------- Original Method ----------
-        //CharSequence text = mText;
-        //char ch;
-        //if (line == getLineCount() - 1) {
-            //return end;
-        //}
-        //for (; end > start; end--) {
-            //ch = text.charAt(end - 1);
-            //if (ch == '\n') {
-                //return end - 1;
-            //}
-            //if (ch != ' ' && ch != '\t') {
-                //break;
-            //}
-        //}
-        //return end;
+        
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -1132,8 +1157,8 @@ public abstract class Layout {
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1242066727 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1242066727;
-        // ---------- Original Method ----------
-        //return getLineTop(line + 1);
+        
+        
     }
 
     
@@ -1143,8 +1168,8 @@ public abstract class Layout {
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_669522956 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_669522956;
-        // ---------- Original Method ----------
-        //return getLineTop(line+1) - getLineDescent(line);
+        
+        
     }
 
     
@@ -1154,33 +1179,36 @@ public abstract class Layout {
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050394867 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050394867;
-        // ---------- Original Method ----------
-        //return getLineTop(line) - (getLineTop(line+1) - getLineDescent(line));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.969 -0400", hash_original_method = "AA9B5ECC044BD491182BF4F86B4B2DB2", hash_generated_method = "78C486A18E664A98D883BA1FB122F227")
     public int getOffsetToLeftOf(int offset) {
         int var277357E3410E8D01615B66CFEDE5D6BD_2139067146 = (getOffsetToLeftRightOf(offset, true));
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1869673828 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1869673828;
-        // ---------- Original Method ----------
-        //return getOffsetToLeftRightOf(offset, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.969 -0400", hash_original_method = "684E6D0185E1F1B7C4ABCAB8ADBE45B0", hash_generated_method = "CB0683D076F813B8D7B2E744E909A411")
     public int getOffsetToRightOf(int offset) {
         int var8F86D7AF4916F278DC98BA8E19B1D241_1704601115 = (getOffsetToLeftRightOf(offset, false));
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_103339212 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_103339212;
-        // ---------- Original Method ----------
-        //return getOffsetToLeftRightOf(offset, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.970 -0400", hash_original_method = "0024CF60F9AAE9E8C390E55EB92D8B7D", hash_generated_method = "65C0A5294FA274421D9177739570116E")
     private int getOffsetToLeftRightOf(int caret, boolean toLeft) {
         int line = getLineForOffset(caret);
@@ -1195,17 +1223,17 @@ public abstract class Layout {
                     boolean var355D79A48691714F7AD418B6FB65073C_1346218908 = (line < getLineCount() - 1);
                     {
                         lineChanged = true;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 {
                     lineChanged = true;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             lineStart = getLineStart(line);
             lineEnd = getLineEnd(line);
@@ -1213,8 +1241,8 @@ public abstract class Layout {
             {
                 toLeft = !toLeft;
                 lineDir = newDir;
-            } //End block
-        } //End block
+            } 
+        } 
         Directions directions = getLineDirections(line);
         TextLine tl = TextLine.obtain();
         tl.set(mPaint, mText, lineStart, lineEnd, lineDir, directions, false, null);
@@ -1224,11 +1252,12 @@ public abstract class Layout {
         addTaint(toLeft);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1837815184 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1837815184;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.970 -0400", hash_original_method = "F9D5E8173F5C3CA491A1C8A8AE760B93", hash_generated_method = "50DEBC1C3E2B2C8A5B8A75E6503A3CBE")
     private int getOffsetAtStartOf(int offset) {
         CharSequence text = mText;
@@ -1236,7 +1265,7 @@ public abstract class Layout {
         {
             char c1 = text.charAt(offset - 1);
             offset -= 1;
-        } //End block
+        } 
         {
             ReplacementSpan[] spans = ((Spanned) text).getSpans(offset, offset,
                                                        ReplacementSpan.class);
@@ -1246,36 +1275,37 @@ public abstract class Layout {
                     int start = ((Spanned) text).getSpanStart(spans[i]);
                     int end = ((Spanned) text).getSpanEnd(spans[i]);
                     offset = start;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_794254810 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_794254810;
-        // ---------- Original Method ----------
-        //if (offset == 0)
-            //return 0;
-        //CharSequence text = mText;
-        //char c = text.charAt(offset);
-        //if (c >= '\uDC00' && c <= '\uDFFF') {
-            //char c1 = text.charAt(offset - 1);
-            //if (c1 >= '\uD800' && c1 <= '\uDBFF')
-                //offset -= 1;
-        //}
-        //if (mSpannedText) {
-            //ReplacementSpan[] spans = ((Spanned) text).getSpans(offset, offset,
-                                                       //ReplacementSpan.class);
-            //for (int i = 0; i < spans.length; i++) {
-                //int start = ((Spanned) text).getSpanStart(spans[i]);
-                //int end = ((Spanned) text).getSpanEnd(spans[i]);
-                //if (start < offset && end > offset)
-                    //offset = start;
-            //}
-        //}
-        //return offset;
+        
+        
+            
+        
+        
+        
+            
+            
+                
+        
+        
+            
+                                                       
+            
+                
+                
+                
+                    
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.971 -0400", hash_original_method = "B9C7ED4514D9377B34881167E2C24E2C", hash_generated_method = "A17630C3C618645960779AFA863AF82F")
     public void getCursorPath(int point, Path dest,
                               CharSequence editingBuffer) {
@@ -1296,7 +1326,7 @@ public abstract class Layout {
             dist = (bottom - top) >> 2;
             top += dist;
             bottom -= dist;
-        } //End block
+        } 
         h1 = 0.5f;
         h2 = 0.5f;
         {
@@ -1304,20 +1334,20 @@ public abstract class Layout {
             {
                 dest.moveTo(h1, top);
                 dest.lineTo(h1, bottom);
-            } //End block
+            } 
             {
                 dest.moveTo(h1, top);
                 dest.lineTo(h1, (top + bottom) >> 1);
                 dest.moveTo(h2, (top + bottom) >> 1);
                 dest.lineTo(h2, bottom);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             dest.moveTo(h2, bottom);
             dest.lineTo(h2 - dist, bottom + dist);
             dest.lineTo(h2, bottom);
             dest.lineTo(h2 + dist, bottom + dist);
-        } //End block
+        } 
         {
             dest.moveTo(h2, bottom);
             dest.lineTo(h2 - dist, bottom + dist);
@@ -1325,13 +1355,13 @@ public abstract class Layout {
             dest.lineTo(h2 + dist, bottom + dist - 0.5f);
             dest.moveTo(h2 + dist, bottom + dist);
             dest.lineTo(h2, bottom);
-        } //End block
+        } 
         {
             dest.moveTo(h1, top);
             dest.lineTo(h1 - dist, top - dist);
             dest.lineTo(h1, top);
             dest.lineTo(h1 + dist, top - dist);
-        } //End block
+        } 
         {
             dest.moveTo(h1, top);
             dest.lineTo(h1 - dist, top - dist);
@@ -1339,15 +1369,16 @@ public abstract class Layout {
             dest.lineTo(h1 + dist, top - dist + 0.5f);
             dest.moveTo(h1 + dist, top - dist);
             dest.lineTo(h1, top);
-        } //End block
+        } 
         addTaint(point);
         addTaint(dest.getTaint());
         addTaint(editingBuffer.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.972 -0400", hash_original_method = "12119B0793FEC64A3F791B69831CA1AC", hash_generated_method = "A96285DB3427FCE61C9D67C32D9FD269")
     private void addSelection(int line, int start, int end,
                               int top, int bottom, Path dest) {
@@ -1356,7 +1387,7 @@ public abstract class Layout {
         Directions dirs = getLineDirections(line);
         {
             boolean varB43E309FBAB2B8F1A4B7179F5EBC83BF_953252256 = (lineend > linestart && mText.charAt(lineend - 1) == '\n');
-        } //End collapsed parenthetic
+        } 
         {
             int i = 0;
             i += 2;
@@ -1373,21 +1404,22 @@ public abstract class Layout {
                         float left = Math.min(h1, h2);
                         float right = Math.max(h1, h2);
                         dest.addRect(left, top, right, bottom, Path.Direction.CW);
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(line);
         addTaint(start);
         addTaint(end);
         addTaint(top);
         addTaint(bottom);
         addTaint(dest.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.973 -0400", hash_original_method = "E504AED84523F80835FFB88244A923D5", hash_generated_method = "B5C05579F93011886032548E0F099F12")
     public void getSelectionPath(int start, int end, Path dest) {
         dest.reset();
@@ -1395,14 +1427,14 @@ public abstract class Layout {
             int temp = end;
             end = start;
             start = temp;
-        } //End block
+        } 
         int startline = getLineForOffset(start);
         int endline = getLineForOffset(end);
         int top = getLineTop(startline);
         int bottom = getLineBottom(endline);
         {
             addSelection(startline, start, end, top, bottom, dest);
-        } //End block
+        } 
         {
             final float width = mWidth;
             addSelection(startline, start, getLineEnd(startline),
@@ -1413,15 +1445,15 @@ public abstract class Layout {
                               0, getLineBottom(startline), Path.Direction.CW);
                 dest.addRect(getLineRight(startline), top,
                               width, getLineBottom(startline), Path.Direction.CW);
-            } //End collapsed parenthetic
+            } 
             {
                 int i = startline + 1;
                 {
                     top = getLineTop(i);
                     bottom = getLineBottom(i);
                     dest.addRect(0, top, width, bottom, Path.Direction.CW);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             top = getLineTop(endline);
             bottom = getLineBottom(endline);
             addSelection(endline, getLineStart(endline), end,
@@ -1430,19 +1462,19 @@ public abstract class Layout {
                 boolean var2D05D65F6C53E0529A94B0C267529750_40096483 = (getParagraphDirection(endline) == DIR_RIGHT_TO_LEFT);
                 dest.addRect(width, top, getLineRight(endline), bottom, Path.Direction.CW);
                 dest.addRect(0, top, getLineLeft(endline), bottom, Path.Direction.CW);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(start);
         addTaint(end);
         addTaint(dest.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.973 -0400", hash_original_method = "8E26BC9825AB85694FDEA00F755B3420", hash_generated_method = "24093663ED09D6C8732944772F3E7543")
     public final Alignment getParagraphAlignment(int line) {
-        Alignment varB4EAC82CA7396A68D541C85D26508E83_904585073 = null; //Variable for return #1
+        Alignment varB4EAC82CA7396A68D541C85D26508E83_904585073 = null; 
         Alignment align = mAlignment;
         {
             Spanned sp = (Spanned) mText;
@@ -1452,25 +1484,25 @@ public abstract class Layout {
             int spanLength = spans.length;
             {
                 align = spans[spanLength-1].getAlignment();
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_904585073 = align;
         addTaint(line);
-        varB4EAC82CA7396A68D541C85D26508E83_904585073.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_904585073.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_904585073;
-        // ---------- Original Method ----------
-        //Alignment align = mAlignment;
-        //if (mSpannedText) {
-            //Spanned sp = (Spanned) mText;
-            //AlignmentSpan[] spans = getParagraphSpans(sp, getLineStart(line),
-                                                //getLineEnd(line),
-                                                //AlignmentSpan.class);
-            //int spanLength = spans.length;
-            //if (spanLength > 0) {
-                //align = spans[spanLength-1].getAlignment();
-            //}
-        //}
-        //return align;
+        
+        
+        
+            
+            
+                                                
+                                                
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -1482,13 +1514,13 @@ public abstract class Layout {
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1132883362 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1132883362;
-        // ---------- Original Method ----------
-        //int left = 0;
-        //int dir = getParagraphDirection(line);
-        //if (dir == DIR_RIGHT_TO_LEFT || !mSpannedText) {
-            //return left; 
-        //}
-        //return getParagraphLeadingMargin(line);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1500,16 +1532,17 @@ public abstract class Layout {
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1882312581 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1882312581;
-        // ---------- Original Method ----------
-        //int right = mWidth;
-        //int dir = getParagraphDirection(line);
-        //if (dir == DIR_LEFT_TO_RIGHT || !mSpannedText) {
-            //return right; 
-        //}
-        //return right - getParagraphLeadingMargin(line);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.975 -0400", hash_original_method = "E5BF73D13B43F74BA21E795D809567BE", hash_generated_method = "A3EF7C5EB0F713F12B1C7E39A3951A4F")
     private int getParagraphLeadingMargin(int line) {
         Spanned spanned = (Spanned) mText;
@@ -1532,18 +1565,19 @@ public abstract class Layout {
                     int spanLine = getLineForOffset(spStart);
                     int count = ((LeadingMarginSpan2)span).getLeadingMarginLineCount();
                     useFirstLineMargin = line < spanLine + count;
-                } //End block
+                } 
                 margin += span.getLeadingMargin(useFirstLineMargin);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_364086494 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_364086494;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static float measurePara(TextPaint paint, TextPaint workPaint,
             CharSequence text, int start, int end) {
         MeasuredText mt = MeasuredText.obtain();
@@ -1589,6 +1623,7 @@ public abstract class Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static float nextTab(CharSequence text, int start, int end,
                                        float h, Object[] tabs) {
         float nh = Float.MAX_VALUE;
@@ -1618,11 +1653,12 @@ public abstract class Layout {
     protected final boolean isSpanned() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_44618011 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_44618011;
-        // ---------- Original Method ----------
-        //return mSpannedText;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static <T> T[] getParagraphSpans(Spanned text, int start, int end, Class<T> type) {
         if (start == end && start > 0) {
             return (T[]) ArrayUtils.emptyArray(type);
@@ -1631,6 +1667,7 @@ public abstract class Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.978 -0400", hash_original_method = "0902B773EC3014719EA37A51347EC9C6", hash_generated_method = "5C3765CF852A71771876615F64BDB6FB")
     private void ellipsize(int start, int end, int line,
                            char[] dest, int destoff) {
@@ -1643,40 +1680,40 @@ public abstract class Layout {
                 char c;
                 {
                     c = '\u2026';
-                } //End block
+                } 
                 {
                     c = '\uFEFF';
-                } //End block
+                } 
                 int a = i + linestart;
                 {
                     dest[destoff + a - start] = c;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(start);
         addTaint(end);
         addTaint(line);
         addTaint(dest[0]);
         addTaint(destoff);
-        // ---------- Original Method ----------
-        //int ellipsisCount = getEllipsisCount(line);
-        //if (ellipsisCount == 0) {
-            //return;
-        //}
-        //int ellipsisStart = getEllipsisStart(line);
-        //int linestart = getLineStart(line);
-        //for (int i = ellipsisStart; i < ellipsisStart + ellipsisCount; i++) {
-            //char c;
-            //if (i == ellipsisStart) {
-                //c = '\u2026'; 
-            //} else {
-                //c = '\uFEFF'; 
-            //}
-            //int a = i + linestart;
-            //if (a >= start && a < end) {
-                //dest[destoff + a - start] = c;
-            //}
-        //}
+        
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -1702,8 +1739,8 @@ public abstract class Layout {
             reset(increment, spans);
             addTaint(increment);
             addTaint(spans[0].getTaint());
-            // ---------- Original Method ----------
-            //reset(increment, spans);
+            
+            
         }
 
         
@@ -1719,32 +1756,32 @@ public abstract class Layout {
                         {
                             {
                                 stops = new int[10];
-                            } //End block
+                            } 
                             {
                                 int[] nstops = new int[ns * 2];
                                 {
                                     int i = 0;
                                     {
                                         nstops[i] = stops[i];
-                                    } //End block
-                                } //End collapsed parenthetic
+                                    } 
+                                } 
                                 stops = nstops;
-                            } //End block
+                            } 
                             stops[ns++] = ((TabStopSpan) o).getTabStop();
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 {
                     Arrays.sort(stops, 0, ns);
-                } //End block
+                } 
                 {
                     this.mStops = stops;
-                } //End block
-            } //End block
+                } 
+            } 
             this.mNumStops = ns;
             addTaint(spans[0].getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1757,25 +1794,25 @@ public abstract class Layout {
                     int i = 0;
                     {
                         int stop = stops[i];
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             float varA772933572361B833B090C93A4B38B40_912119628 = (nextDefaultStop(h, mIncrement));
             addTaint(h);
             float var546ADE640B6EDFBC8A086EF31347E768_2288718 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_2288718;
-            // ---------- Original Method ----------
-            //int ns = this.mNumStops;
-            //if (ns > 0) {
-                //int[] stops = this.mStops;
-                //for (int i = 0; i < ns; ++i) {
-                    //int stop = stops[i];
-                    //if (stop > h) {
-                        //return stop;
-                    //}
-                //}
-            //}
-            //return nextDefaultStop(h, mIncrement);
+            
+            
+            
+                
+                
+                    
+                    
+                        
+                    
+                
+            
+            
         }
 
         
@@ -1796,8 +1833,8 @@ public abstract class Layout {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.987 -0400", hash_original_method = "DA94802578AA1A107A88665DAAC4811A", hash_generated_method = "C362AB05F4F382AB8B2A847D6ACC1E92")
           Directions(int[] dirs) {
             mDirections = dirs;
-            // ---------- Original Method ----------
-            //mDirections = dirs;
+            
+            
         }
 
         
@@ -1822,8 +1859,8 @@ public abstract class Layout {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.987 -0400", hash_original_method = "991CD3860414493D5159CDEA8946E94D", hash_generated_method = "D2DA4A1117D0439320B581750375AE47")
         public  Ellipsizer(CharSequence s) {
             mText = s;
-            // ---------- Original Method ----------
-            //mText = s;
+            
+            
         }
 
         
@@ -1836,12 +1873,12 @@ public abstract class Layout {
             addTaint(off);
             char varA87DEB01C5F539E6BDA34829C8EF2368_397874167 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_397874167;
-            // ---------- Original Method ----------
-            //char[] buf = TextUtils.obtain(1);
-            //getChars(off, off + 1, buf, 0);
-            //char ret = buf[0];
-            //TextUtils.recycle(buf);
-            //return ret;
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1854,19 +1891,19 @@ public abstract class Layout {
                 int i = line1;
                 {
                     mLayout.ellipsize(start, end, i, dest, destoff);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(start);
             addTaint(end);
             addTaint(dest[0]);
             addTaint(destoff);
-            // ---------- Original Method ----------
-            //int line1 = mLayout.getLineForOffset(start);
-            //int line2 = mLayout.getLineForOffset(end);
-            //TextUtils.getChars(mText, start, end, dest, destoff);
-            //for (int i = line1; i <= line2; i++) {
-                //mLayout.ellipsize(start, end, i, dest, destoff);
-            //}
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -1875,41 +1912,41 @@ public abstract class Layout {
             int varE8711A0ED7EDCE918346EA0F2DE620ED_482655808 = (mText.length());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1967139177 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1967139177;
-            // ---------- Original Method ----------
-            //return mText.length();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.990 -0400", hash_original_method = "019151395F1B77A008AA178A5A5CA402", hash_generated_method = "F360C679630C039F5B16856ABE8825BB")
         public CharSequence subSequence(int start, int end) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1563415398 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1563415398 = null; 
             char[] s = new char[end - start];
             getChars(start, end, s, 0);
             varB4EAC82CA7396A68D541C85D26508E83_1563415398 = new String(s);
             addTaint(start);
             addTaint(end);
-            varB4EAC82CA7396A68D541C85D26508E83_1563415398.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1563415398.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1563415398;
-            // ---------- Original Method ----------
-            //char[] s = new char[end - start];
-            //getChars(start, end, s, 0);
-            //return new String(s);
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.991 -0400", hash_original_method = "8ED281151745D3FC40324C23FDF16D10", hash_generated_method = "8AB1E96C804862B8000039C8CD652909")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_2056425503 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_2056425503 = null; 
             char[] s = new char[length()];
             getChars(0, length(), s, 0);
             varB4EAC82CA7396A68D541C85D26508E83_2056425503 = new String(s);
-            varB4EAC82CA7396A68D541C85D26508E83_2056425503.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2056425503.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2056425503;
-            // ---------- Original Method ----------
-            //char[] s = new char[length()];
-            //getChars(0, length(), s, 0);
-            //return new String(s);
+            
+            
+            
+            
         }
 
         
@@ -1926,22 +1963,22 @@ public abstract class Layout {
         public  SpannedEllipsizer(CharSequence display) {
             super(display);
             mSpanned = (Spanned) display;
-            // ---------- Original Method ----------
-            //mSpanned = (Spanned) display;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.992 -0400", hash_original_method = "E8AB479016A2E00AFF48AA43F345FA2A", hash_generated_method = "33E44CA204CE90B94C13F13C24892617")
         public <T> T[] getSpans(int start, int end, Class<T> type) {
-            T[] varB4EAC82CA7396A68D541C85D26508E83_818201155 = null; //Variable for return #1
+            T[] varB4EAC82CA7396A68D541C85D26508E83_818201155 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_818201155 = mSpanned.getSpans(start, end, type);
             addTaint(start);
             addTaint(end);
             addTaint(type.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_818201155.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_818201155.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_818201155;
-            // ---------- Original Method ----------
-            //return mSpanned.getSpans(start, end, type);
+            
+            
         }
 
         
@@ -1951,8 +1988,8 @@ public abstract class Layout {
             addTaint(tag.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2117242750 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2117242750;
-            // ---------- Original Method ----------
-            //return mSpanned.getSpanStart(tag);
+            
+            
         }
 
         
@@ -1962,8 +1999,8 @@ public abstract class Layout {
             addTaint(tag.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_668220729 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_668220729;
-            // ---------- Original Method ----------
-            //return mSpanned.getSpanEnd(tag);
+            
+            
         }
 
         
@@ -1973,8 +2010,8 @@ public abstract class Layout {
             addTaint(tag.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1603462340 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1603462340;
-            // ---------- Original Method ----------
-            //return mSpanned.getSpanFlags(tag);
+            
+            
         }
 
         
@@ -1986,15 +2023,15 @@ public abstract class Layout {
             addTaint(type.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730120379 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730120379;
-            // ---------- Original Method ----------
-            //return mSpanned.nextSpanTransition(start, limit, type);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.994 -0400", hash_original_method = "16B37527DFF576A9EB476E4EC2A69F5D", hash_generated_method = "68D50B58A70979B1EF0D39D849B3086C")
         @Override
         public CharSequence subSequence(int start, int end) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1653348581 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1653348581 = null; 
             char[] s = new char[end - start];
             getChars(start, end, s, 0);
             SpannableString ss = new SpannableString(new String(s));
@@ -2002,14 +2039,14 @@ public abstract class Layout {
             varB4EAC82CA7396A68D541C85D26508E83_1653348581 = ss;
             addTaint(start);
             addTaint(end);
-            varB4EAC82CA7396A68D541C85D26508E83_1653348581.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1653348581.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1653348581;
-            // ---------- Original Method ----------
-            //char[] s = new char[end - start];
-            //getChars(start, end, s, 0);
-            //SpannableString ss = new SpannableString(new String(s));
-            //TextUtils.copySpansFrom(mSpanned, start, end, Object.class, ss, 0);
-            //return ss;
+            
+            
+            
+            
+            
+            
         }
 
         

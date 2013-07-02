@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 
@@ -15,7 +15,7 @@ public abstract class BasicPermission extends Permission implements Serializable
     public  BasicPermission(String name) {
         super("");
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,19 +24,19 @@ public abstract class BasicPermission extends Permission implements Serializable
         super("");
         addTaint(name.getTaint());
         addTaint(action.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.115 -0400", hash_original_method = "1D3A92DE09AD9A3275C68C126C1F0E4E", hash_generated_method = "1A36F98901685622475B27784A722A69")
     @Override
     public String getActions() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1043416305 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1043416305 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1043416305 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1043416305.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1043416305.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1043416305;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -46,8 +46,8 @@ public abstract class BasicPermission extends Permission implements Serializable
         addTaint(permission.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_912392885 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_912392885;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     

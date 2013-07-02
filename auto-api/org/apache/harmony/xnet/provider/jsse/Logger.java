@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.PrintStream;
 import java.util.Locale;
@@ -18,10 +18,11 @@ public class Logger {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.207 -0400", hash_original_method = "E12CB5567684A77D5AAB00FDDBE756D7", hash_generated_method = "E12CB5567684A77D5AAB00FDDBE756D7")
     public Logger ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static Stream getStream(String name) {
         for (int i=0; i<names.length; i++) {
             if (names[i].equals(name)) {
@@ -41,8 +42,8 @@ public class Logger {
         public  Stream(String name) {
             super(System.err);
             prefix = name + "["+Thread.currentThread().getName()+"] ";
-            // ---------- Original Method ----------
-            //prefix = name + "["+Thread.currentThread().getName()+"] ";
+            
+            
         }
 
         
@@ -53,29 +54,29 @@ public class Logger {
                 int i = 0;
                 {
                     super.print("  ");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             super.print(msg);
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //for (int i=0; i<indent; i++) {
-                //super.print("  ");
-            //}
-            //super.print(msg);
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.210 -0400", hash_original_method = "330ED05F95D8039149C4EE202C44E32C", hash_generated_method = "13E6B0A7ED2046F68EA1958C76857BC1")
         public void newIndent() {
-            // ---------- Original Method ----------
-            //indent ++;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.210 -0400", hash_original_method = "85AD8C1F1AFBCA83430C30D8B2614DB0", hash_generated_method = "949118FCC724942B9B24B51D90111D34")
         public void endIndent() {
-            // ---------- Original Method ----------
-            //indent --;
+            
+            
         }
 
         
@@ -85,9 +86,9 @@ public class Logger {
             print(prefix);
             super.println(msg);
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //print(prefix);
-            //super.println(msg);
+            
+            
+            
         }
 
         
@@ -95,8 +96,8 @@ public class Logger {
         public void print(byte[] data) {
             printAsHex(16, " ", "", data, 0, data.length);
             addTaint(data[0]);
-            // ---------- Original Method ----------
-            //printAsHex(16, " ", "", data, 0, data.length);
+            
+            
         }
 
         
@@ -106,8 +107,8 @@ public class Logger {
             addTaint(data[0]);
             addTaint(offset);
             addTaint(len);
-            // ---------- Original Method ----------
-            //printAsHex(16, " ", "", data, offset, len);
+            
+            
         }
 
         
@@ -118,8 +119,8 @@ public class Logger {
             addTaint(prefix.getTaint());
             addTaint(delimiter.getTaint());
             addTaint(data[0]);
-            // ---------- Original Method ----------
-            //printAsHex(perLine, prefix, delimiter, data, 0, data.length);
+            
+            
         }
 
         
@@ -136,9 +137,9 @@ public class Logger {
                     {
                         super.println(line.toString());
                         line = new StringBuilder();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             super.println(line.toString());
             addTaint(perLine);
             addTaint(prefix.getTaint());
@@ -146,18 +147,18 @@ public class Logger {
             addTaint(data[0]);
             addTaint(offset);
             addTaint(len);
-            // ---------- Original Method ----------
-            //StringBuilder line = new StringBuilder();
-            //for (int i = 0; i < len; i++) {
-                //line.append(prefix);
-                //line.append(Byte.toHexString(data[i+offset], false));
-                //line.append(delimiter);
-                //if (((i+1)%perLine) == 0) {
-                    //super.println(line.toString());
-                    //line = new StringBuilder();
-                //}
-            //}
-            //super.println(line.toString());
+            
+            
+            
+                
+                
+                
+                
+                    
+                    
+                
+            
+            
         }
 
         

@@ -1,31 +1,34 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class AccessController {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.071 -0400", hash_original_method = "933F644DAAB02DBBD976309C952EDFF1", hash_generated_method = "413E2414F33FF227172B34BB7BB4830A")
     private  AccessController() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> T doPrivileged(PrivilegedAction<T> action) {
         return action.run();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> T doPrivileged(PrivilegedAction<T> action, AccessControlContext context) {
         return action.run();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> T doPrivileged(PrivilegedExceptionAction<T> action) throws PrivilegedActionException {
         try {
             return action.run();
@@ -37,16 +40,19 @@ public final class AccessController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> T doPrivileged(PrivilegedExceptionAction<T> action, AccessControlContext context) throws PrivilegedActionException {
         return doPrivileged(action);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> T doPrivilegedWithCombiner(PrivilegedAction<T> action) {
         return action.run();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> T doPrivilegedWithCombiner(PrivilegedExceptionAction<T> action) throws PrivilegedActionException {
         return doPrivileged(action);
     }
@@ -56,6 +62,7 @@ public final class AccessController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AccessControlContext getContext() {
         return new AccessControlContext(null);
     }

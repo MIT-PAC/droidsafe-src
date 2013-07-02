@@ -1,11 +1,11 @@
 package org.apache.http.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,83 +36,84 @@ public class VersionInfo {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Package identifier must not be null.");
-        } //End block
+        } 
         infoPackage     = pckg;
         infoModule      = (module  != null) ? module  : UNAVAILABLE;
         infoRelease     = (release != null) ? release : UNAVAILABLE;
         infoTimestamp   = (time    != null) ? time    : UNAVAILABLE;
         infoClassloader = (clsldr  != null) ? clsldr  : UNAVAILABLE;
-        // ---------- Original Method ----------
-        //if (pckg == null) {
-            //throw new IllegalArgumentException
-                //("Package identifier must not be null.");
-        //}
-        //infoPackage     = pckg;
-        //infoModule      = (module  != null) ? module  : UNAVAILABLE;
-        //infoRelease     = (release != null) ? release : UNAVAILABLE;
-        //infoTimestamp   = (time    != null) ? time    : UNAVAILABLE;
-        //infoClassloader = (clsldr  != null) ? clsldr  : UNAVAILABLE;
+        
+        
+            
+                
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.790 -0400", hash_original_method = "252EB5EFBA4DF288F0FE3B9299593BCD", hash_generated_method = "A64496EEB1626545AE02691D3A07900D")
     public final String getPackage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_736806357 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_736806357 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_736806357 = infoPackage;
-        varB4EAC82CA7396A68D541C85D26508E83_736806357.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_736806357.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_736806357;
-        // ---------- Original Method ----------
-        //return infoPackage;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.791 -0400", hash_original_method = "817D4ED1C3BFE1B9928E002CE96AD55A", hash_generated_method = "9BA67B0D3F93976117349A6C896EAEBB")
     public final String getModule() {
-        String varB4EAC82CA7396A68D541C85D26508E83_874793104 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_874793104 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_874793104 = infoModule;
-        varB4EAC82CA7396A68D541C85D26508E83_874793104.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_874793104.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_874793104;
-        // ---------- Original Method ----------
-        //return infoModule;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.791 -0400", hash_original_method = "DAD9A741167B359FF642D16AB5684AA5", hash_generated_method = "62A5A2094BD4D4F2D98007B97A8BA8F6")
     public final String getRelease() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2125389183 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2125389183 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2125389183 = infoRelease;
-        varB4EAC82CA7396A68D541C85D26508E83_2125389183.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2125389183.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2125389183;
-        // ---------- Original Method ----------
-        //return infoRelease;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.791 -0400", hash_original_method = "02D289A8C155EDCB8F2FF743050BA3A2", hash_generated_method = "1170F04E2ED8DBD017B61DCF10A108E8")
     public final String getTimestamp() {
-        String varB4EAC82CA7396A68D541C85D26508E83_742841020 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_742841020 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_742841020 = infoTimestamp;
-        varB4EAC82CA7396A68D541C85D26508E83_742841020.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_742841020.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_742841020;
-        // ---------- Original Method ----------
-        //return infoTimestamp;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.792 -0400", hash_original_method = "8670EE78560EBB156BF6A930F22A1F67", hash_generated_method = "F0515296707603033271A52CE877B088")
     public final String getClassloader() {
-        String varB4EAC82CA7396A68D541C85D26508E83_942297186 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_942297186 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_942297186 = infoClassloader;
-        varB4EAC82CA7396A68D541C85D26508E83_942297186.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_942297186.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_942297186;
-        // ---------- Original Method ----------
-        //return infoClassloader;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.793 -0400", hash_original_method = "8C041823EF127A6F9DCC25E0329C5A09", hash_generated_method = "3D0DFF0C0320FC23633DED6121E2EF18")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_228203214 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_228203214 = null; 
         StringBuffer sb = new StringBuffer
             (20 + infoPackage.length() + infoModule.length() +
              infoRelease.length() + infoTimestamp.length() +
@@ -122,34 +123,34 @@ public class VersionInfo {
         {
             boolean var514BD655C0FA6241BB918401B549E56E_489734919 = (!UNAVAILABLE.equals(infoRelease));
             sb.append(':').append(infoRelease);
-        } //End collapsed parenthetic
+        } 
         {
             boolean var7C023AE448755372426520078BF7A721_542612435 = (!UNAVAILABLE.equals(infoTimestamp));
             sb.append(':').append(infoTimestamp);
-        } //End collapsed parenthetic
+        } 
         sb.append(')');
         {
             boolean var80E19259195E1F3295F3716B59BD8F92_51180256 = (!UNAVAILABLE.equals(infoClassloader));
             sb.append('@').append(infoClassloader);
-        } //End collapsed parenthetic
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_228203214 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_228203214.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_228203214.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_228203214;
-        // ---------- Original Method ----------
-        //StringBuffer sb = new StringBuffer
-            //(20 + infoPackage.length() + infoModule.length() +
-             //infoRelease.length() + infoTimestamp.length() +
-             //infoClassloader.length());
-        //sb.append("VersionInfo(")
-            //.append(infoPackage).append(':').append(infoModule);
-        //if (!UNAVAILABLE.equals(infoRelease))
-            //sb.append(':').append(infoRelease);
-        //if (!UNAVAILABLE.equals(infoTimestamp))
-            //sb.append(':').append(infoTimestamp);
-        //sb.append(')');
-        //if (!UNAVAILABLE.equals(infoClassloader))
-            //sb.append('@').append(infoClassloader);
-        //return sb.toString();
+        
+        
+            
+             
+             
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
     }
 
     

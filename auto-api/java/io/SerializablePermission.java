@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.BasicPermission;
 import java.security.Permission;
@@ -16,7 +16,7 @@ public final class SerializablePermission extends BasicPermission {
     public  SerializablePermission(String permissionName) {
         super("");
         addTaint(permissionName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,19 +25,19 @@ public final class SerializablePermission extends BasicPermission {
         super("", "");
         addTaint(name.getTaint());
         addTaint(actions.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.030 -0400", hash_original_method = "1D3A92DE09AD9A3275C68C126C1F0E4E", hash_generated_method = "C89855D7E49168C3373CF796D92D26CF")
     @Override
     public String getActions() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1939221823 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1939221823 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1939221823 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1939221823.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1939221823.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1939221823;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -47,8 +47,8 @@ public final class SerializablePermission extends BasicPermission {
         addTaint(permission.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1049223436 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1049223436;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     

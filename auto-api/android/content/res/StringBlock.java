@@ -1,11 +1,11 @@
 package android.content.res;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.text.*;
 import android.text.style.*;
@@ -41,12 +41,12 @@ final class StringBlock {
         mNative = nativeCreate(data, 0, data.length);
         mUseSparse = useSparse;
         mOwnsNative = true;
-        // ---------- Original Method ----------
-        //mNative = nativeCreate(data, 0, data.length);
-        //mUseSparse = useSparse;
-        //mOwnsNative = true;
-        //if (localLOGV) Log.v(TAG, "Created string block " + this
-                //+ ": " + nativeGetSize(mNative));
+        
+        
+        
+        
+        
+                
     }
 
     
@@ -55,12 +55,12 @@ final class StringBlock {
         mNative = nativeCreate(data, offset, size);
         mUseSparse = useSparse;
         mOwnsNative = true;
-        // ---------- Original Method ----------
-        //mNative = nativeCreate(data, offset, size);
-        //mUseSparse = useSparse;
-        //mOwnsNative = true;
-        //if (localLOGV) Log.v(TAG, "Created string block " + this
-                //+ ": " + nativeGetSize(mNative));
+        
+        
+        
+        
+        
+                
     }
 
     
@@ -69,49 +69,50 @@ final class StringBlock {
         mNative = obj;
         mUseSparse = useSparse;
         mOwnsNative = false;
-        // ---------- Original Method ----------
-        //mNative = obj;
-        //mUseSparse = useSparse;
-        //mOwnsNative = false;
-        //if (localLOGV) Log.v(TAG, "Created string block " + this
-                //+ ": " + nativeGetSize(mNative));
+        
+        
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.247 -0400", hash_original_method = "CA0D40E41A55E0E3360E62E713B76B88", hash_generated_method = "0E222C11ABCB4E8BB8D2F5BD60A0D881")
     public CharSequence get(int idx) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_131917601 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1343160944 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_550830151 = null; //Variable for return #3
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_131917601 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1343160944 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_550830151 = null; 
         {
             {
                 CharSequence res = mStrings[idx];
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_131917601 = res;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 CharSequence res = mSparseStrings.get(idx);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1343160944 = res;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 final int num = nativeGetSize(mNative);
                 {
                     mSparseStrings = new SparseArray<CharSequence>();
-                } //End block
+                } 
                 {
                     mStrings = new CharSequence[num];
-                } //End block
-            } //End block
+                } 
+            } 
             String str = nativeGetString(mNative, idx);
             CharSequence res = str;
             int[] style = nativeGetStyle(mNative, idx);
             {
                 {
                     mStyleIDs = new StyleIDs();
-                } //End block
+                } 
                 {
                     int styleIndex = 0;
                     styleIndex += 3;
@@ -122,111 +123,113 @@ final class StringBlock {
                             boolean varC887F6D4B30EC541E65DBFBDBCDD62AA_478382820 = (styleTag.equals("b"));
                             {
                                 mStyleIDs.boldId = styleId;
-                            } //End block
+                            } 
                             {
                                 boolean varAAA8D27A262C4AA33AA77708C8723E3C_144656937 = (styleTag.equals("i"));
                                 {
                                     mStyleIDs.italicId = styleId;
-                                } //End block
+                                } 
                                 {
                                     boolean var0F276DEC02D5224F8D1A94CEA8B56222_1615678314 = (styleTag.equals("u"));
                                     {
                                         mStyleIDs.underlineId = styleId;
-                                    } //End block
+                                    } 
                                     {
                                         boolean var65A7CE7F99CEFD7C5E702A02D7375627_160888998 = (styleTag.equals("tt"));
                                         {
                                             mStyleIDs.ttId = styleId;
-                                        } //End block
+                                        } 
                                         {
                                             boolean var8E9D24A56B951FD8B4556AC9687B862D_326497607 = (styleTag.equals("big"));
                                             {
                                                 mStyleIDs.bigId = styleId;
-                                            } //End block
+                                            } 
                                             {
                                                 boolean var50968B7296438CFFE7941F4277358F12_895988699 = (styleTag.equals("small"));
                                                 {
                                                     mStyleIDs.smallId = styleId;
-                                                } //End block
+                                                } 
                                                 {
                                                     boolean var12A2A849B5F8D70ACBACAC923F8AFE6E_410791596 = (styleTag.equals("sup"));
                                                     {
                                                         mStyleIDs.supId = styleId;
-                                                    } //End block
+                                                    } 
                                                     {
                                                         boolean var3F8A168B86441E49333296C71DC57C4E_967802340 = (styleTag.equals("sub"));
                                                         {
                                                             mStyleIDs.subId = styleId;
-                                                        } //End block
+                                                        } 
                                                         {
                                                             boolean var18AE5CBDC95E4D4C7134523455ADC26F_1181283849 = (styleTag.equals("strike"));
                                                             {
                                                                 mStyleIDs.strikeId = styleId;
-                                                            } //End block
+                                                            } 
                                                             {
                                                                 boolean var7EBEE9E50CFF4D1C5480F34A4BF58B42_1535532486 = (styleTag.equals("li"));
                                                                 {
                                                                     mStyleIDs.listItemId = styleId;
-                                                                } //End block
+                                                                } 
                                                                 {
                                                                     boolean var46A9EEE2572CA803DC0C183361FDF85A_1901445616 = (styleTag.equals("marquee"));
                                                                     {
                                                                         mStyleIDs.marqueeId = styleId;
-                                                                    } //End block
-                                                                } //End collapsed parenthetic
-                                                            } //End collapsed parenthetic
-                                                        } //End collapsed parenthetic
-                                                    } //End collapsed parenthetic
-                                                } //End collapsed parenthetic
-                                            } //End collapsed parenthetic
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                                                                    } 
+                                                                } 
+                                                            } 
+                                                        } 
+                                                    } 
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 res = applyStyles(str, style, mStyleIDs);
-            } //End block
+            } 
             mStrings[idx] = res;
             mSparseStrings.put(idx, res);
             varB4EAC82CA7396A68D541C85D26508E83_550830151 = res;
-        } //End block
-        CharSequence varA7E53CE21691AB073D9660D615818899_2039351503; //Final return value
+        } 
+        CharSequence varA7E53CE21691AB073D9660D615818899_2039351503; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2039351503 = varB4EAC82CA7396A68D541C85D26508E83_131917601;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2039351503 = varB4EAC82CA7396A68D541C85D26508E83_1343160944;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2039351503 = varB4EAC82CA7396A68D541C85D26508E83_550830151;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2039351503.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2039351503.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2039351503;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.247 -0400", hash_original_method = "0AE42B829C6407A7351435B91C0A8F63", hash_generated_method = "065278051329C532BB29C2C6B986F5B5")
     protected void finalize() throws Throwable {
         {
             nativeDestroy(mNative);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mOwnsNative) {
-            //nativeDestroy(mNative);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:09.926 -0400", hash_original_method = "7157B2241FD2EE4083D0D740C065977B", hash_generated_method = "47E278B8CBB46F5565934E771D2EC7D9")
     private CharSequence applyStyles(String str, int[] style, StyleIDs ids) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1426710465 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_106695220 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1426710465 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_106695220 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1426710465 = str;
         SpannableString buffer;
         buffer = new SpannableString(str);
@@ -239,56 +242,56 @@ final class StringBlock {
                 buffer.setSpan(new StyleSpan(Typeface.BOLD),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } //End block
+            } 
             {
                 buffer.setSpan(new StyleSpan(Typeface.ITALIC),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } //End block
+            } 
             {
                 buffer.setSpan(new UnderlineSpan(),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } //End block
+            } 
             {
                 buffer.setSpan(new TypefaceSpan("monospace"),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } //End block
+            } 
             {
                 buffer.setSpan(new RelativeSizeSpan(1.25f),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } //End block
+            } 
             {
                 buffer.setSpan(new RelativeSizeSpan(0.8f),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } //End block
+            } 
             {
                 buffer.setSpan(new SubscriptSpan(),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } //End block
+            } 
             {
                 buffer.setSpan(new SuperscriptSpan(),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } //End block
+            } 
             {
                 buffer.setSpan(new StrikethroughSpan(),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } //End block
+            } 
             {
                 addParagraphSpan(buffer, new BulletSpan(10),
                                 style[i+1], style[i+2]+1);
-            } //End block
+            } 
             {
                 buffer.setSpan(TextUtils.TruncateAt.MARQUEE,
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-            } //End block
+            } 
             {
                 String tag;
                 tag = nativeGetString(mNative, type);
@@ -302,7 +305,7 @@ final class StringBlock {
                             size = Integer.parseInt(sub);
                             addParagraphSpan(buffer, new Height(size),
                                        style[i+1], style[i+2]+1);
-                        } //End block
+                        } 
                         sub = subtag(tag, ";size=");
                         {
                             int size;
@@ -310,7 +313,7 @@ final class StringBlock {
                             buffer.setSpan(new AbsoluteSizeSpan(size, true),
                                        style[i+1], style[i+2]+1,
                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                        } //End block
+                        } 
                         sub = subtag(tag, ";fgcolor=");
                         {
                             int color;
@@ -318,7 +321,7 @@ final class StringBlock {
                             buffer.setSpan(new ForegroundColorSpan(color),
                                        style[i+1], style[i+2]+1,
                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                        } //End block
+                        } 
                         sub = subtag(tag, ";bgcolor=");
                         {
                             int color;
@@ -326,8 +329,8 @@ final class StringBlock {
                             buffer.setSpan(new BackgroundColorSpan(color),
                                        style[i+1], style[i+2]+1,
                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         boolean var72BAF1DD6E2FA7F7405258DE30A10892_1272296155 = (tag.startsWith("a;"));
                         {
@@ -337,8 +340,8 @@ final class StringBlock {
                                 buffer.setSpan(new URLSpan(sub),
                                        style[i+1], style[i+2]+1,
                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             boolean var0CBB4E0FE848A98207331F42BFE74A96_989381253 = (tag.startsWith("annotation;"));
                             {
@@ -355,7 +358,7 @@ final class StringBlock {
                                         next = tag.indexOf(';', eq);
                                         {
                                             next = len;
-                                        } //End block
+                                        } 
                                         String key;
                                         key = tag.substring(t + 1, eq);
                                         String value;
@@ -363,35 +366,36 @@ final class StringBlock {
                                         buffer.setSpan(new Annotation(key, value),
                                        style[i+1], style[i+2]+1,
                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             i += 3;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_106695220 = new SpannedString(buffer);
         addTaint(str.getTaint());
         addTaint(style[0]);
         addTaint(ids.getTaint());
-        CharSequence varA7E53CE21691AB073D9660D615818899_402074517; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_402074517; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_402074517 = varB4EAC82CA7396A68D541C85D26508E83_1426710465;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_402074517 = varB4EAC82CA7396A68D541C85D26508E83_106695220;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_402074517.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_402074517.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_402074517;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void addParagraphSpan(Spannable buffer, Object what,
                                          int start, int end) {
         int len = buffer.length();
@@ -413,6 +417,7 @@ final class StringBlock {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String subtag(String full, String attribute) {
         int start = full.indexOf(attribute);
         if (start < 0) {
@@ -496,7 +501,7 @@ final class StringBlock {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.250 -0400", hash_original_method = "4D3750C386AF43C67E7BA6A1E0512626", hash_generated_method = "4D3750C386AF43C67E7BA6A1E0512626")
         public StyleIDs ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -512,8 +517,8 @@ final class StringBlock {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.251 -0400", hash_original_method = "822F731BB1BA127213FF49F8E178606F", hash_generated_method = "8B0CB46E6A2F126B20C4298DCDA8FF8F")
         public  Height(int size) {
             mSize = size;
-            // ---------- Original Method ----------
-            //mSize = size;
+            
+            
         }
 
         
@@ -528,8 +533,8 @@ final class StringBlock {
             addTaint(spanstartv);
             addTaint(v);
             addTaint(fm.getTaint());
-            // ---------- Original Method ----------
-            //chooseHeight(text, start, end, spanstartv, v, fm, null);
+            
+            
         }
 
         
@@ -540,11 +545,11 @@ final class StringBlock {
             int size = mSize;
             {
                 size *= paint.density;
-            } //End block
+            } 
             {
                 fm.top = fm.bottom - size;
                 fm.ascent = fm.ascent - size;
-            } //End block
+            } 
             {
                 {
                     Paint p = new Paint();
@@ -552,21 +557,21 @@ final class StringBlock {
                     Rect r = new Rect();
                     p.getTextBounds("ABCDEFG", 0, 7, r);
                     sProportion = (r.top) / p.ascent();
-                } //End block
+                } 
                 int need = (int) Math.ceil(-fm.top * sProportion);
                 {
                     fm.top = fm.bottom - size;
                     fm.ascent = fm.descent - size;
-                } //End block
+                } 
                 {
                     fm.top = fm.ascent = -need;
                     fm.bottom = fm.descent = fm.top + size;
-                } //End block
+                } 
                 {
                     fm.top = fm.ascent = -size;
                     fm.bottom = fm.descent = 0;
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(text.getTaint());
             addTaint(start);
             addTaint(end);
@@ -574,8 +579,8 @@ final class StringBlock {
             addTaint(v);
             addTaint(fm.getTaint());
             addTaint(paint.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

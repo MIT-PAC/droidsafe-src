@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Handler;
 import android.os.Message;
@@ -30,7 +30,7 @@ public final class GeolocationPermissions {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.732 -0400", hash_original_method = "BCFC7E69B898D596BF2DB066E056C985", hash_generated_method = "BCFC7E69B898D596BF2DB066E056C985")
     public GeolocationPermissions ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -49,30 +49,30 @@ public final class GeolocationPermissions {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.734 -0400", hash_original_method = "CE3359AAEF0337F3F574667CF4484B96", hash_generated_method = "1AE7541B0A1D6B2F6EAD13D62267E604")
                 @Override
                 public void handleMessage(Message msg) {
-                    //Begin case RETURN_ORIGINS 
+                    
                     {
                         Map values = (Map) msg.obj;
                         Set<String> origins = (Set<String>) values.get(ORIGINS);
                         ValueCallback<Set<String> > callback = (ValueCallback<Set<String> >) values.get(CALLBACK);
                         callback.onReceiveValue(origins);
-                    } //End block
-                    //End case RETURN_ORIGINS 
-                    //Begin case RETURN_ALLOWED 
+                    } 
+                    
+                    
                     {
                         Map values = (Map) msg.obj;
                         Boolean allowed = (Boolean) values.get(ALLOWED);
                         ValueCallback<Boolean> callback = (ValueCallback<Boolean>) values.get(CALLBACK);
                         callback.onReceiveValue(allowed);
-                    } //End block
-                    //End case RETURN_ALLOWED 
+                    } 
+                    
                     addTaint(msg.getTaint());
-                    // ---------- Original Method ----------
-                    // Original Method Too Long, Refer to Original Implementation
+                    
+                    
                 }
 };
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -83,7 +83,7 @@ public final class GeolocationPermissions {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.736 -0400", hash_original_method = "CFB8B92EB19D5AA1C7B8DDFE54350D8D", hash_generated_method = "7171592CFC6E88D75213E7A5E9B9C217")
                 @Override
                 public void handleMessage(Message msg) {
-                    //Begin case GET_ORIGINS 
+                    
                     {
                         Set origins = nativeGetOrigins();
                         ValueCallback callback = (ValueCallback) msg.obj;
@@ -91,9 +91,9 @@ public final class GeolocationPermissions {
                         values.put(CALLBACK, callback);
                         values.put(ORIGINS, origins);
                         postUIMessage(Message.obtain(null, RETURN_ORIGINS, values));
-                    } //End block
-                    //End case GET_ORIGINS 
-                    //Begin case GET_ALLOWED 
+                    } 
+                    
+                    
                     {
                         Map values = (Map) msg.obj;
                         String origin = (String) values.get(ORIGIN);
@@ -103,20 +103,20 @@ public final class GeolocationPermissions {
                         retValues.put(CALLBACK, callback);
                         retValues.put(ALLOWED, Boolean.valueOf(allowed));
                         postUIMessage(Message.obtain(null, RETURN_ALLOWED, retValues));
-                    } //End block
-                    //End case GET_ALLOWED 
-                    //Begin case CLEAR 
+                    } 
+                    
+                    
                     nativeClear((String) msg.obj);
-                    //End case CLEAR 
-                    //Begin case ALLOW 
+                    
+                    
                     nativeAllow((String) msg.obj);
-                    //End case ALLOW 
-                    //Begin case CLEAR_ALL 
+                    
+                    
                     nativeClearAll();
-                    //End case CLEAR_ALL 
+                    
                     addTaint(msg.getTaint());
-                    // ---------- Original Method ----------
-                    // Original Method Too Long, Refer to Original Implementation
+                    
+                    
                 }
 };
             {
@@ -124,13 +124,13 @@ public final class GeolocationPermissions {
                     boolean var4A9F73C1E93BA1F55C74A9DD5BCAFC7D_64002356 = (!mQueuedMessages.isEmpty());
                     {
                         mHandler.sendMessage(mQueuedMessages.remove(0));
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mQueuedMessages = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -139,22 +139,22 @@ public final class GeolocationPermissions {
         {
             {
                 mQueuedMessages = new Vector<Message>();
-            } //End block
+            } 
             mQueuedMessages.add(msg);
-        } //End block
+        } 
         {
             mHandler.sendMessage(msg);
-        } //End block
+        } 
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //if (mHandler == null) {
-            //if (mQueuedMessages == null) {
-                //mQueuedMessages = new Vector<Message>();
-            //}
-            //mQueuedMessages.add(msg);
-        //} else {
-            //mHandler.sendMessage(msg);
-        //}
+        
+        
+            
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -162,12 +162,12 @@ public final class GeolocationPermissions {
     private void postUIMessage(Message msg) {
         {
             mUIHandler.sendMessage(msg);
-        } //End block
+        } 
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //if (mUIHandler != null) {
-            //mUIHandler.sendMessage(msg);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -179,22 +179,22 @@ public final class GeolocationPermissions {
                 {
                     Set origins = nativeGetOrigins();
                     callback.onReceiveValue(origins);
-                } //End block
+                } 
                 {
                     postMessage(Message.obtain(null, GET_ORIGINS, callback));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //if (callback != null) {
-            //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
-                //Set origins = nativeGetOrigins();
-                //callback.onReceiveValue(origins);
-            //} else {
-                //postMessage(Message.obtain(null, GET_ORIGINS, callback));
-            //}
-        //}
+        
+        
+            
+                
+                
+            
+                
+            
+        
     }
 
     
@@ -202,39 +202,39 @@ public final class GeolocationPermissions {
     public void getAllowed(String origin, ValueCallback<Boolean> callback) {
         {
             callback.onReceiveValue(null);
-        } //End block
+        } 
         {
             boolean var1F2F1B674DC9185D7C933584E9557068_424556274 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
             {
                 boolean allowed = nativeGetAllowed(origin);
                 callback.onReceiveValue(new Boolean(allowed));
-            } //End block
+            } 
             {
                 Map values = new HashMap<String, Object>();
                 values.put(ORIGIN, origin);
                 values.put(CALLBACK, callback);
                 postMessage(Message.obtain(null, GET_ALLOWED, values));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(origin.getTaint());
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //if (callback == null) {
-            //return;
-        //}
-        //if (origin == null) {
-            //callback.onReceiveValue(null);
-            //return;
-        //}
-        //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
-            //boolean allowed = nativeGetAllowed(origin);
-            //callback.onReceiveValue(new Boolean(allowed));
-        //} else {
-            //Map values = new HashMap<String, Object>();
-            //values.put(ORIGIN, origin);
-            //values.put(CALLBACK, callback);
-            //postMessage(Message.obtain(null, GET_ALLOWED, values));
-        //}
+        
+        
+            
+        
+        
+            
+            
+        
+        
+            
+            
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -242,8 +242,8 @@ public final class GeolocationPermissions {
     public void clear(String origin) {
         postMessage(Message.obtain(null, CLEAR, origin));
         addTaint(origin.getTaint());
-        // ---------- Original Method ----------
-        //postMessage(Message.obtain(null, CLEAR, origin));
+        
+        
     }
 
     
@@ -251,16 +251,16 @@ public final class GeolocationPermissions {
     public void allow(String origin) {
         postMessage(Message.obtain(null, ALLOW, origin));
         addTaint(origin.getTaint());
-        // ---------- Original Method ----------
-        //postMessage(Message.obtain(null, ALLOW, origin));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.738 -0400", hash_original_method = "0FC7F7395F602EA6BDC8C8831D80FE6E", hash_generated_method = "9AE310F1A84B8D911C336132598C553B")
     public void clearAll() {
         postMessage(Message.obtain(null, CLEAR_ALL));
-        // ---------- Original Method ----------
-        //postMessage(Message.obtain(null, CLEAR_ALL));
+        
+        
     }
 
     

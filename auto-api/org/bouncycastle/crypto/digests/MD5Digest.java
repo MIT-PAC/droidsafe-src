@@ -1,11 +1,11 @@
 package org.bouncycastle.crypto.digests;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class MD5Digest extends GeneralDigest {
@@ -31,8 +31,8 @@ public class MD5Digest extends GeneralDigest {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.839 -0400", hash_original_method = "CA98629A68DF074D716C2EED7E360A30", hash_generated_method = "31A92487FDF635D7C47FB6419F68D10C")
     public  MD5Digest() {
         reset();
-        // ---------- Original Method ----------
-        //reset();
+        
+        
     }
 
     
@@ -45,24 +45,24 @@ public class MD5Digest extends GeneralDigest {
         H4 = t.H4;
         System.arraycopy(t.X, 0, X, 0, t.X.length);
         xOff = t.xOff;
-        // ---------- Original Method ----------
-        //H1 = t.H1;
-        //H2 = t.H2;
-        //H3 = t.H3;
-        //H4 = t.H4;
-        //System.arraycopy(t.X, 0, X, 0, t.X.length);
-        //xOff = t.xOff;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.839 -0400", hash_original_method = "D54FFA3F0B368E98533F0D87F68E98DA", hash_generated_method = "5772DAF8C032D1EC28CC12DCD7796371")
     public String getAlgorithmName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_234962593 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_234962593 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_234962593 = "MD5";
-        varB4EAC82CA7396A68D541C85D26508E83_234962593.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_234962593.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_234962593;
-        // ---------- Original Method ----------
-        //return "MD5";
+        
+        
     }
 
     
@@ -70,11 +70,12 @@ public class MD5Digest extends GeneralDigest {
     public int getDigestSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_198121104 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_198121104;
-        // ---------- Original Method ----------
-        //return DIGEST_LENGTH;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.840 -0400", hash_original_method = "F91F442FD561833E473644F7E1FD670A", hash_generated_method = "4A72C0CD8E91E128E6759B716F487C9C")
     protected void processWord(
         byte[]  in,
@@ -83,32 +84,33 @@ public class MD5Digest extends GeneralDigest {
             | ((in[inOff + 2] & 0xff) << 16) | ((in[inOff + 3] & 0xff) << 24);
         {
             processBlock();
-        } //End block
-        // ---------- Original Method ----------
-        //X[xOff++] = (in[inOff] & 0xff) | ((in[inOff + 1] & 0xff) << 8)
-            //| ((in[inOff + 2] & 0xff) << 16) | ((in[inOff + 3] & 0xff) << 24);
-        //if (xOff == 16)
-        //{
-            //processBlock();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.841 -0400", hash_original_method = "F76655D079767580E949272246E442C2", hash_generated_method = "5C8E03639B26AF027E8A604BAD53C428")
     protected void processLength(
         long    bitLength) {
         {
             processBlock();
-        } //End block
+        } 
         X[14] = (int)(bitLength & 0xffffffff);
         X[15] = (int)(bitLength >>> 32);
-        // ---------- Original Method ----------
-        //if (xOff > 14)
-        //{
-            //processBlock();
-        //}
-        //X[14] = (int)(bitLength & 0xffffffff);
-        //X[15] = (int)(bitLength >>> 32);
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -124,14 +126,15 @@ public class MD5Digest extends GeneralDigest {
         addTaint(word);
         addTaint(out[0]);
         addTaint(outOff);
-        // ---------- Original Method ----------
-        //out[outOff]     = (byte)word;
-        //out[outOff + 1] = (byte)(word >>> 8);
-        //out[outOff + 2] = (byte)(word >>> 16);
-        //out[outOff + 3] = (byte)(word >>> 24);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.842 -0400", hash_original_method = "2C0425F44A983E26D17057A66E7774F6", hash_generated_method = "CEF2F08CA07FFB1E257234FDEDD2ADF1")
     public int doFinal(
         byte[]  out,
@@ -146,17 +149,18 @@ public class MD5Digest extends GeneralDigest {
         addTaint(outOff);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1526331353 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1526331353;
-        // ---------- Original Method ----------
-        //finish();
-        //unpackWord(H1, out, outOff);
-        //unpackWord(H2, out, outOff + 4);
-        //unpackWord(H3, out, outOff + 8);
-        //unpackWord(H4, out, outOff + 12);
-        //reset();
-        //return DIGEST_LENGTH;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.843 -0400", hash_original_method = "1D88AF12F47BE66D32BA577915055CD5", hash_generated_method = "4E4BD04FE7D8D966BB5BC02830639BD3")
     public void reset() {
         super.reset();
@@ -169,19 +173,19 @@ public class MD5Digest extends GeneralDigest {
             int i = 0;
             {
                 X[i] = 0;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //super.reset();
-        //H1 = 0x67452301;
-        //H2 = 0xefcdab89;
-        //H3 = 0x98badcfe;
-        //H4 = 0x10325476;
-        //xOff = 0;
-        //for (int i = 0; i != X.length; i++)
-        //{
-            //X[i] = 0;
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -193,8 +197,8 @@ public class MD5Digest extends GeneralDigest {
         addTaint(n);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128237440 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128237440;
-        // ---------- Original Method ----------
-        //return (x << n) | (x >>> (32 - n));
+        
+        
     }
 
     
@@ -208,8 +212,8 @@ public class MD5Digest extends GeneralDigest {
         addTaint(w);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1807652879 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1807652879;
-        // ---------- Original Method ----------
-        //return (u & v) | (~u & w);
+        
+        
     }
 
     
@@ -223,8 +227,8 @@ public class MD5Digest extends GeneralDigest {
         addTaint(w);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1015411965 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1015411965;
-        // ---------- Original Method ----------
-        //return (u & w) | (v & ~w);
+        
+        
     }
 
     
@@ -238,8 +242,8 @@ public class MD5Digest extends GeneralDigest {
         addTaint(w);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_730874497 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_730874497;
-        // ---------- Original Method ----------
-        //return u ^ v ^ w;
+        
+        
     }
 
     
@@ -253,11 +257,12 @@ public class MD5Digest extends GeneralDigest {
         addTaint(w);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_196390147 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_196390147;
-        // ---------- Original Method ----------
-        //return v ^ (u | ~w);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.850 -0400", hash_original_method = "D9E5895ECAF805883FA59A595552AAA6", hash_generated_method = "29F042C7AF73EA8DF176538AD17A952D")
     protected void processBlock() {
         int a = H1;
@@ -337,10 +342,10 @@ public class MD5Digest extends GeneralDigest {
             int i = 0;
             {
                 X[i] = 0;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     

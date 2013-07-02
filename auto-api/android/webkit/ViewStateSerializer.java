@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Point;
 import android.graphics.Region;
@@ -20,10 +20,11 @@ class ViewStateSerializer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.724 -0400", hash_original_method = "49BFAAEC63FD743661F2FA5579ECB6BF", hash_generated_method = "118ABB2718261FF45C39549C1EF9F141")
     private  ViewStateSerializer() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     static boolean serializeViewState(OutputStream stream, WebView web) throws IOException {
         int baseLayer = web.getBaseLayer();
         if (baseLayer == 0) {
@@ -38,6 +39,7 @@ class ViewStateSerializer {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static DrawData deserializeViewState(InputStream stream, WebView web) throws IOException {
         DataInputStream dis = new DataInputStream(stream);
         int version = dis.readInt();

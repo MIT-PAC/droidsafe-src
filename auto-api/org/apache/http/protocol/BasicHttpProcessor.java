@@ -1,11 +1,11 @@
 package org.apache.http.protocol;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.540 -0400", hash_original_method = "9C379E6850D70F22993610B85EB51FC7", hash_generated_method = "9C379E6850D70F22993610B85EB51FC7")
     public BasicHttpProcessor ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -36,17 +36,17 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     public void addRequestInterceptor(final HttpRequestInterceptor itcp) {
         {
             this.requestInterceptors = new ArrayList();
-        } //End block
+        } 
         this.requestInterceptors.add(itcp);
         addTaint(itcp.getTaint());
-        // ---------- Original Method ----------
-        //if (itcp == null) {
-            //return;
-        //}
-        //if (this.requestInterceptors == null) {
-            //this.requestInterceptors = new ArrayList();
-        //}
-        //this.requestInterceptors.add(itcp);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -55,62 +55,63 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
                                       int index) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(String.valueOf(index));
-        } //End block
+        } 
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(String.valueOf(index));
-            } //End block
+            } 
             this.requestInterceptors = new ArrayList();
-        } //End block
+        } 
         this.requestInterceptors.add(index, itcp);
         addTaint(itcp.getTaint());
         addTaint(index);
-        // ---------- Original Method ----------
-        //if (index < 0) {
-            //throw new IndexOutOfBoundsException(String.valueOf(index));
-        //}
-        //if (itcp == null) {
-            //return;
-        //}
-        //if (this.requestInterceptors == null) {
-            //if (index > 0) {
-                //throw new IndexOutOfBoundsException(String.valueOf(index));
-            //}
-            //this.requestInterceptors = new ArrayList();
-        //}
-        //this.requestInterceptors.add(index, itcp);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.541 -0400", hash_original_method = "306BD5279F186A7F697194E65EEC0E22", hash_generated_method = "1BA05A81A6110334248F8EA2730485A4")
     public void addResponseInterceptor(HttpResponseInterceptor itcp,
                                        int index) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(String.valueOf(index));
-        } //End block
+        } 
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(String.valueOf(index));
-            } //End block
+            } 
             this.responseInterceptors = new ArrayList();
-        } //End block
+        } 
         this.responseInterceptors.add(index, itcp);
         addTaint(itcp.getTaint());
         addTaint(index);
-        // ---------- Original Method ----------
-        //if (index < 0) {
-            //throw new IndexOutOfBoundsException(String.valueOf(index));
-        //}
-        //if (itcp == null) {
-            //return;
-        //}
-        //if (this.responseInterceptors == null) {
-            //if (index > 0) {
-                //throw new IndexOutOfBoundsException(String.valueOf(index));
-            //}
-            //this.responseInterceptors = new ArrayList();
-        //}
-        //this.responseInterceptors.add(index, itcp);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -125,22 +126,22 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
                     boolean var82F0FBD1AF8CFC9AE184931728FE3420_1608542486 = (request.getClass().equals(clazz));
                     {
                         it.remove();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(clazz.getTaint());
-        // ---------- Original Method ----------
-        //if (this.requestInterceptors == null) {
-            //return;
-        //}
-        //for (Iterator it = this.requestInterceptors.iterator();
-             //it.hasNext(); ) {
-            //Object request = it.next();
-            //if (request.getClass().equals(clazz)) {
-                //it.remove();
-            //}
-        //}
+        
+        
+            
+        
+        
+             
+            
+            
+                
+            
+        
     }
 
     
@@ -155,22 +156,22 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
                     boolean var82F0FBD1AF8CFC9AE184931728FE3420_1042980407 = (request.getClass().equals(clazz));
                     {
                         it.remove();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(clazz.getTaint());
-        // ---------- Original Method ----------
-        //if (this.responseInterceptors == null) {
-            //return;
-        //}
-        //for (Iterator it = this.responseInterceptors.iterator();
-             //it.hasNext(); ) {
-            //Object request = it.next();
-            //if (request.getClass().equals(clazz)) {
-                //it.remove();
-            //}
-        //}
+        
+        
+            
+        
+        
+             
+            
+            
+                
+            
+        
     }
 
     
@@ -178,8 +179,8 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     public final void addInterceptor(final HttpRequestInterceptor interceptor) {
         addRequestInterceptor(interceptor);
         addTaint(interceptor.getTaint());
-        // ---------- Original Method ----------
-        //addRequestInterceptor(interceptor);
+        
+        
     }
 
     
@@ -189,59 +190,61 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
         addRequestInterceptor(interceptor, index);
         addTaint(interceptor.getTaint());
         addTaint(index);
-        // ---------- Original Method ----------
-        //addRequestInterceptor(interceptor, index);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.543 -0400", hash_original_method = "88BEDAF27A7611A7A46622E627DC9A63", hash_generated_method = "D93543DFC189CFB4B9497B7C451E417D")
     public int getRequestInterceptorCount() {
         {
             Object varC9BB4A0E139B0FEBD36C2866B025E728_1977764589 = (this.requestInterceptors.size());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1713238555 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1713238555;
-        // ---------- Original Method ----------
-        //return (this.requestInterceptors == null) ?
-            //0 : this.requestInterceptors.size();
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.544 -0400", hash_original_method = "977729FD94F3060F22AEFDD0D34CFD7C", hash_generated_method = "2C5287435CF24A63810403C6701C7573")
     public HttpRequestInterceptor getRequestInterceptor(int index) {
-        HttpRequestInterceptor varB4EAC82CA7396A68D541C85D26508E83_1395786658 = null; //Variable for return #1
-        HttpRequestInterceptor varB4EAC82CA7396A68D541C85D26508E83_1469220031 = null; //Variable for return #2
+        HttpRequestInterceptor varB4EAC82CA7396A68D541C85D26508E83_1395786658 = null; 
+        HttpRequestInterceptor varB4EAC82CA7396A68D541C85D26508E83_1469220031 = null; 
         {
             boolean var787E3002D53A5FD2C8D54EB0004069BE_241561383 = ((this.requestInterceptors == null) ||
                 (index < 0) || (index >= this.requestInterceptors.size()));
             varB4EAC82CA7396A68D541C85D26508E83_1395786658 = null;
-        } //End collapsed parenthetic
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1469220031 = (HttpRequestInterceptor) this.requestInterceptors.get(index);
         addTaint(index);
-        HttpRequestInterceptor varA7E53CE21691AB073D9660D615818899_1677395548; //Final return value
+        HttpRequestInterceptor varA7E53CE21691AB073D9660D615818899_1677395548; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1677395548 = varB4EAC82CA7396A68D541C85D26508E83_1395786658;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1677395548 = varB4EAC82CA7396A68D541C85D26508E83_1469220031;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1677395548.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1677395548.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1677395548;
-        // ---------- Original Method ----------
-        //if ((this.requestInterceptors == null) ||
-                //(index < 0) || (index >= this.requestInterceptors.size()))
-            //return null;
-        //return (HttpRequestInterceptor) this.requestInterceptors.get(index);
+        
+        
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.544 -0400", hash_original_method = "145E2FEDCA1A32FEC7370D21776649A2", hash_generated_method = "2DD9E24066548ACA81CF15355B844800")
     public void clearRequestInterceptors() {
         this.requestInterceptors = null;
-        // ---------- Original Method ----------
-        //this.requestInterceptors = null;
+        
+        
     }
 
     
@@ -249,17 +252,17 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     public void addResponseInterceptor(final HttpResponseInterceptor itcp) {
         {
             this.responseInterceptors = new ArrayList();
-        } //End block
+        } 
         this.responseInterceptors.add(itcp);
         addTaint(itcp.getTaint());
-        // ---------- Original Method ----------
-        //if (itcp == null) {
-            //return;
-        //}
-        //if (this.responseInterceptors == null) {
-            //this.responseInterceptors = new ArrayList();
-        //}
-        //this.responseInterceptors.add(itcp);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -267,8 +270,8 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     public final void addInterceptor(final HttpResponseInterceptor interceptor) {
         addResponseInterceptor(interceptor);
         addTaint(interceptor.getTaint());
-        // ---------- Original Method ----------
-        //addResponseInterceptor(interceptor);
+        
+        
     }
 
     
@@ -278,59 +281,61 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
         addResponseInterceptor(interceptor, index);
         addTaint(interceptor.getTaint());
         addTaint(index);
-        // ---------- Original Method ----------
-        //addResponseInterceptor(interceptor, index);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.546 -0400", hash_original_method = "076BC0B3D789CD5AF4622C7C18D19D27", hash_generated_method = "91E57815979B26907423029D814F161D")
     public int getResponseInterceptorCount() {
         {
             Object varDD2145D64EE81BF609D946E42BC0115C_1145026235 = (this.responseInterceptors.size());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_348289934 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_348289934;
-        // ---------- Original Method ----------
-        //return (this.responseInterceptors == null) ?
-            //0 : this.responseInterceptors.size();
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.547 -0400", hash_original_method = "745ED53DD037C2DD0D029886B0DA9F3E", hash_generated_method = "47FE016B33509EB3DB887216BA1F0AA3")
     public HttpResponseInterceptor getResponseInterceptor(int index) {
-        HttpResponseInterceptor varB4EAC82CA7396A68D541C85D26508E83_740745119 = null; //Variable for return #1
-        HttpResponseInterceptor varB4EAC82CA7396A68D541C85D26508E83_526996249 = null; //Variable for return #2
+        HttpResponseInterceptor varB4EAC82CA7396A68D541C85D26508E83_740745119 = null; 
+        HttpResponseInterceptor varB4EAC82CA7396A68D541C85D26508E83_526996249 = null; 
         {
             boolean var4F430D8B1FD18D0B08C9061C883BF7A0_1930701298 = ((this.responseInterceptors == null) ||
                 (index < 0) || (index >= this.responseInterceptors.size()));
             varB4EAC82CA7396A68D541C85D26508E83_740745119 = null;
-        } //End collapsed parenthetic
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_526996249 = (HttpResponseInterceptor) this.responseInterceptors.get(index);
         addTaint(index);
-        HttpResponseInterceptor varA7E53CE21691AB073D9660D615818899_423973238; //Final return value
+        HttpResponseInterceptor varA7E53CE21691AB073D9660D615818899_423973238; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_423973238 = varB4EAC82CA7396A68D541C85D26508E83_740745119;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_423973238 = varB4EAC82CA7396A68D541C85D26508E83_526996249;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_423973238.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_423973238.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_423973238;
-        // ---------- Original Method ----------
-        //if ((this.responseInterceptors == null) ||
-                //(index < 0) || (index >= this.responseInterceptors.size()))
-            //return null;
-        //return (HttpResponseInterceptor) this.responseInterceptors.get(index);
+        
+        
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.547 -0400", hash_original_method = "312DB737544A7054D89F25FB9ECC2521", hash_generated_method = "9D3E135536DF2EF44F610851B9BC1333")
     public void clearResponseInterceptors() {
         this.responseInterceptors = null;
-        // ---------- Original Method ----------
-        //this.responseInterceptors = null;
+        
+        
     }
 
     
@@ -338,13 +343,13 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     public void setInterceptors(final List list) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("List must not be null.");
-        } //End block
+        } 
         {
             this.requestInterceptors.clear();
-        } //End block
+        } 
         {
             this.responseInterceptors.clear();
-        } //End block
+        } 
         {
             int i = 0;
             boolean var2B834AABD5D06D0BFBC1C152A3388528_1393796649 = (i < list.size());
@@ -352,42 +357,43 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
                 Object obj = list.get(i);
                 {
                     addInterceptor((HttpRequestInterceptor)obj);
-                } //End block
+                } 
                 {
                     addInterceptor((HttpResponseInterceptor)obj);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(list.getTaint());
-        // ---------- Original Method ----------
-        //if (list == null) {
-            //throw new IllegalArgumentException("List must not be null.");
-        //}
-        //if (this.requestInterceptors != null) {
-            //this.requestInterceptors.clear();
-        //}
-        //if (this.responseInterceptors != null) {
-            //this.responseInterceptors.clear();
-        //}
-        //for (int i = 0; i < list.size(); i++) {
-            //Object obj = list.get(i);
-            //if (obj instanceof HttpRequestInterceptor) {
-                //addInterceptor((HttpRequestInterceptor)obj);
-            //}
-            //if (obj instanceof HttpResponseInterceptor) {
-                //addInterceptor((HttpResponseInterceptor)obj);
-            //}
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.547 -0400", hash_original_method = "D115BE155D407C71B3079D92DD3ABF36", hash_generated_method = "BFCDBEB91DE292DDDFE071E86B5D1B74")
     public void clearInterceptors() {
         clearRequestInterceptors();
         clearResponseInterceptors();
-        // ---------- Original Method ----------
-        //clearRequestInterceptors();
-        //clearResponseInterceptors();
+        
+        
+        
     }
 
     
@@ -402,19 +408,19 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
                 {
                     HttpRequestInterceptor interceptor = (HttpRequestInterceptor) this.requestInterceptors.get(i);
                     interceptor.process(request, context);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(request.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //if (this.requestInterceptors != null) {
-            //for (int i = 0; i < this.requestInterceptors.size(); i++) {
-                //HttpRequestInterceptor interceptor =
-                    //(HttpRequestInterceptor) this.requestInterceptors.get(i);
-                //interceptor.process(request, context);
-            //}
-        //}
+        
+        
+            
+                
+                    
+                
+            
+        
     }
 
     
@@ -429,19 +435,19 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
                 {
                     HttpResponseInterceptor interceptor = (HttpResponseInterceptor) this.responseInterceptors.get(i);
                     interceptor.process(response, context);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(response.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //if (this.responseInterceptors != null) {
-            //for (int i = 0; i < this.responseInterceptors.size(); i++) {
-                //HttpResponseInterceptor interceptor =
-                    //(HttpResponseInterceptor) this.responseInterceptors.get(i);
-                //interceptor.process(response, context);
-            //}
-        //}
+        
+        
+            
+                
+                    
+                
+            
+        
     }
 
     
@@ -450,50 +456,52 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
         {
             target.requestInterceptors =
                 new ArrayList(this.requestInterceptors);
-        } //End block
+        } 
         {
             target.responseInterceptors =
                 new ArrayList(this.responseInterceptors);
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.requestInterceptors != null) {
-            //target.requestInterceptors =
-                //new ArrayList(this.requestInterceptors);
-        //}
-        //if (this.responseInterceptors != null) {
-            //target.responseInterceptors =
-                //new ArrayList(this.responseInterceptors);
-        //}
+        } 
+        
+        
+            
+                
+        
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.549 -0400", hash_original_method = "166F0C6BA2B53E84DB5B8B4516A0E908", hash_generated_method = "2544166FB05E7DD210C87228D0B08823")
     public BasicHttpProcessor copy() {
-        BasicHttpProcessor varB4EAC82CA7396A68D541C85D26508E83_882033609 = null; //Variable for return #1
+        BasicHttpProcessor varB4EAC82CA7396A68D541C85D26508E83_882033609 = null; 
         BasicHttpProcessor clone = new BasicHttpProcessor();
         copyInterceptors(clone);
         varB4EAC82CA7396A68D541C85D26508E83_882033609 = clone;
-        varB4EAC82CA7396A68D541C85D26508E83_882033609.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_882033609.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_882033609;
-        // ---------- Original Method ----------
-        //BasicHttpProcessor clone = new BasicHttpProcessor();
-        //copyInterceptors(clone);
-        //return clone;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.550 -0400", hash_original_method = "5AA72A12635065E25111537F7EBBA8DC", hash_generated_method = "57B9927BC4A27954799FA7936E7466B9")
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_149444383 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_149444383 = null; 
         BasicHttpProcessor clone = (BasicHttpProcessor) super.clone();
         copyInterceptors(clone);
         varB4EAC82CA7396A68D541C85D26508E83_149444383 = clone;
-        varB4EAC82CA7396A68D541C85D26508E83_149444383.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_149444383.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_149444383;
-        // ---------- Original Method ----------
-        //BasicHttpProcessor clone = (BasicHttpProcessor) super.clone();
-        //copyInterceptors(clone);
-        //return clone;
+        
+        
+        
+        
     }
 
     

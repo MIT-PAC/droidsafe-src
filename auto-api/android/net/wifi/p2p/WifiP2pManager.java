@@ -1,11 +1,11 @@
 package android.net.wifi.p2p;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
@@ -34,16 +34,16 @@ public class WifiP2pManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.851 -0400", hash_original_method = "E626A45256220AE3F4AF9F0577D669AE", hash_generated_method = "AE4DAB67531AE0D3DD7CB41C112DC312")
     public  WifiP2pManager(IWifiP2pManager service) {
         mService = service;
-        // ---------- Original Method ----------
-        //mService = service;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.852 -0400", hash_original_method = "38C14B58266EB34A7D20FC8977BB0D6B", hash_generated_method = "289DDF10422AF7488482C0CC23436E80")
     public Channel initialize(Context srcContext, Looper srcLooper, ChannelListener listener) {
-        Channel varB4EAC82CA7396A68D541C85D26508E83_1418376272 = null; //Variable for return #1
-        Channel varB4EAC82CA7396A68D541C85D26508E83_1571600680 = null; //Variable for return #2
-        Channel varB4EAC82CA7396A68D541C85D26508E83_538923130 = null; //Variable for return #3
+        Channel varB4EAC82CA7396A68D541C85D26508E83_1418376272 = null; 
+        Channel varB4EAC82CA7396A68D541C85D26508E83_1571600680 = null; 
+        Channel varB4EAC82CA7396A68D541C85D26508E83_538923130 = null; 
         Messenger messenger = getMessenger();
         varB4EAC82CA7396A68D541C85D26508E83_1418376272 = null;
         Channel c = new Channel(srcLooper, listener);
@@ -52,38 +52,38 @@ public class WifiP2pManager {
                 == AsyncChannel.STATUS_SUCCESSFUL);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1571600680 = c;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_538923130 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(srcContext.getTaint());
         addTaint(srcLooper.getTaint());
         addTaint(listener.getTaint());
-        Channel varA7E53CE21691AB073D9660D615818899_477666099; //Final return value
+        Channel varA7E53CE21691AB073D9660D615818899_477666099; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_477666099 = varB4EAC82CA7396A68D541C85D26508E83_1418376272;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_477666099 = varB4EAC82CA7396A68D541C85D26508E83_1571600680;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_477666099 = varB4EAC82CA7396A68D541C85D26508E83_538923130;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_477666099.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_477666099.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_477666099;
-        // ---------- Original Method ----------
-        //Messenger messenger = getMessenger();
-        //if (messenger == null) return null;
-        //Channel c = new Channel(srcLooper, listener);
-        //if (c.mAsyncChannel.connectSync(srcContext, c.mHandler, messenger)
-                //== AsyncChannel.STATUS_SUCCESSFUL) {
-            //return c;
-        //} else {
-            //return null;
-        //}
+        
+        
+        
+        
+        
+                
+            
+        
+            
+        
     }
 
     
@@ -91,9 +91,9 @@ public class WifiP2pManager {
     public void enableP2p(Channel c) {
         c.mAsyncChannel.sendMessage(ENABLE_P2P);
         addTaint(c.getTaint());
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(ENABLE_P2P);
+        
+        
+        
     }
 
     
@@ -101,9 +101,9 @@ public class WifiP2pManager {
     public void disableP2p(Channel c) {
         c.mAsyncChannel.sendMessage(DISABLE_P2P);
         addTaint(c.getTaint());
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(DISABLE_P2P);
+        
+        
+        
     }
 
     
@@ -112,9 +112,9 @@ public class WifiP2pManager {
         c.mAsyncChannel.sendMessage(DISCOVER_PEERS, 0, c.putListener(listener));
         addTaint(c.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(DISCOVER_PEERS, 0, c.putListener(listener));
+        
+        
+        
     }
 
     
@@ -124,9 +124,9 @@ public class WifiP2pManager {
         addTaint(c.getTaint());
         addTaint(config.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(CONNECT, 0, c.putListener(listener), config);
+        
+        
+        
     }
 
     
@@ -135,9 +135,9 @@ public class WifiP2pManager {
         c.mAsyncChannel.sendMessage(CANCEL_CONNECT, 0, c.putListener(listener));
         addTaint(c.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(CANCEL_CONNECT, 0, c.putListener(listener));
+        
+        
+        
     }
 
     
@@ -146,9 +146,9 @@ public class WifiP2pManager {
         c.mAsyncChannel.sendMessage(CREATE_GROUP, 0, c.putListener(listener));
         addTaint(c.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(CREATE_GROUP, 0, c.putListener(listener));
+        
+        
+        
     }
 
     
@@ -157,9 +157,9 @@ public class WifiP2pManager {
         c.mAsyncChannel.sendMessage(REMOVE_GROUP, 0, c.putListener(listener));
         addTaint(c.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(REMOVE_GROUP, 0, c.putListener(listener));
+        
+        
+        
     }
 
     
@@ -168,9 +168,9 @@ public class WifiP2pManager {
         c.mAsyncChannel.sendMessage(REQUEST_PEERS, 0, c.putListener(listener));
         addTaint(c.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(REQUEST_PEERS, 0, c.putListener(listener));
+        
+        
+        
     }
 
     
@@ -179,9 +179,9 @@ public class WifiP2pManager {
         c.mAsyncChannel.sendMessage(REQUEST_CONNECTION_INFO, 0, c.putListener(listener));
         addTaint(c.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(REQUEST_CONNECTION_INFO, 0, c.putListener(listener));
+        
+        
+        
     }
 
     
@@ -190,41 +190,41 @@ public class WifiP2pManager {
         c.mAsyncChannel.sendMessage(REQUEST_GROUP_INFO, 0, c.putListener(listener));
         addTaint(c.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(REQUEST_GROUP_INFO, 0, c.putListener(listener));
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.857 -0400", hash_original_method = "A358F8361C96DABE1A63B04B5804B3F5", hash_generated_method = "F6DA3AAEC7703BE657F284827CD3B813")
     public Messenger getMessenger() {
-        Messenger varB4EAC82CA7396A68D541C85D26508E83_408354147 = null; //Variable for return #1
-        Messenger varB4EAC82CA7396A68D541C85D26508E83_1827571931 = null; //Variable for return #2
+        Messenger varB4EAC82CA7396A68D541C85D26508E83_408354147 = null; 
+        Messenger varB4EAC82CA7396A68D541C85D26508E83_1827571931 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_408354147 = mService.getMessenger();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1827571931 = null;
-        } //End block
-        Messenger varA7E53CE21691AB073D9660D615818899_1438065179; //Final return value
+        } 
+        Messenger varA7E53CE21691AB073D9660D615818899_1438065179; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1438065179 = varB4EAC82CA7396A68D541C85D26508E83_408354147;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1438065179 = varB4EAC82CA7396A68D541C85D26508E83_1827571931;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1438065179.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1438065179.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1438065179;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getMessenger();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -253,10 +253,10 @@ public class WifiP2pManager {
             mAsyncChannel = new AsyncChannel();
             mHandler = new P2pHandler(looper);
             mChannelListener = l;
-            // ---------- Original Method ----------
-            //mAsyncChannel = new AsyncChannel();
-            //mHandler = new P2pHandler(looper);
-            //mChannelListener = l;
+            
+            
+            
+            
         }
 
         
@@ -266,34 +266,34 @@ public class WifiP2pManager {
             {
                 key = mListenerKey++;
                 mListenerMap.put(key, listener);
-            } //End block
+            } 
             addTaint(listener.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429363957 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429363957;
-            // ---------- Original Method ----------
-            //if (listener == null) return 0;
-            //int key;
-            //synchronized (mListenerMapLock) {
-                //key = mListenerKey++;
-                //mListenerMap.put(key, listener);
-            //}
-            //return key;
+            
+            
+            
+            
+                
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.859 -0400", hash_original_method = "464423DE95DD4D04CAAC6C3D80546690", hash_generated_method = "500EFD93DD3BFAF50A77FD43A54BCDF9")
          Object getListener(int key) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1172903775 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1172903775 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1172903775 = mListenerMap.remove(key);
-            } //End block
+            } 
             addTaint(key);
-            varB4EAC82CA7396A68D541C85D26508E83_1172903775.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1172903775.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1172903775;
-            // ---------- Original Method ----------
-            //synchronized (mListenerMapLock) {
-                //return mListenerMap.remove(key);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -303,7 +303,7 @@ public class WifiP2pManager {
               P2pHandler(Looper looper) {
                 super(looper);
                 addTaint(looper.getTaint());
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -311,52 +311,52 @@ public class WifiP2pManager {
             @Override
             public void handleMessage(Message message) {
                 Object listener = getListener(message.arg2);
-                //Begin case AsyncChannel.CMD_CHANNEL_DISCONNECTED 
+                
                 {
                     mChannelListener.onChannelDisconnected();
                     mChannelListener = null;
-                } //End block
-                //End case AsyncChannel.CMD_CHANNEL_DISCONNECTED 
-                //Begin case WifiP2pManager.DISCOVER_PEERS_FAILED WifiP2pManager.CONNECT_FAILED WifiP2pManager.CANCEL_CONNECT_FAILED WifiP2pManager.CREATE_GROUP_FAILED WifiP2pManager.REMOVE_GROUP_FAILED 
+                } 
+                
+                
                 {
                     ((ActionListener) listener).onFailure(message.arg1);
-                } //End block
-                //End case WifiP2pManager.DISCOVER_PEERS_FAILED WifiP2pManager.CONNECT_FAILED WifiP2pManager.CANCEL_CONNECT_FAILED WifiP2pManager.CREATE_GROUP_FAILED WifiP2pManager.REMOVE_GROUP_FAILED 
-                //Begin case WifiP2pManager.DISCOVER_PEERS_SUCCEEDED WifiP2pManager.CONNECT_SUCCEEDED WifiP2pManager.CANCEL_CONNECT_SUCCEEDED WifiP2pManager.CREATE_GROUP_SUCCEEDED WifiP2pManager.REMOVE_GROUP_SUCCEEDED 
+                } 
+                
+                
                 {
                     ((ActionListener) listener).onSuccess();
-                } //End block
-                //End case WifiP2pManager.DISCOVER_PEERS_SUCCEEDED WifiP2pManager.CONNECT_SUCCEEDED WifiP2pManager.CANCEL_CONNECT_SUCCEEDED WifiP2pManager.CREATE_GROUP_SUCCEEDED WifiP2pManager.REMOVE_GROUP_SUCCEEDED 
-                //Begin case WifiP2pManager.RESPONSE_PEERS 
+                } 
+                
+                
                 WifiP2pDeviceList peers = (WifiP2pDeviceList) message.obj;
-                //End case WifiP2pManager.RESPONSE_PEERS 
-                //Begin case WifiP2pManager.RESPONSE_PEERS 
+                
+                
                 {
                     ((PeerListListener) listener).onPeersAvailable(peers);
-                } //End block
-                //End case WifiP2pManager.RESPONSE_PEERS 
-                //Begin case WifiP2pManager.RESPONSE_CONNECTION_INFO 
+                } 
+                
+                
                 WifiP2pInfo wifiP2pInfo = (WifiP2pInfo) message.obj;
-                //End case WifiP2pManager.RESPONSE_CONNECTION_INFO 
-                //Begin case WifiP2pManager.RESPONSE_CONNECTION_INFO 
+                
+                
                 {
                     ((ConnectionInfoListener) listener).onConnectionInfoAvailable(wifiP2pInfo);
-                } //End block
-                //End case WifiP2pManager.RESPONSE_CONNECTION_INFO 
-                //Begin case WifiP2pManager.RESPONSE_GROUP_INFO 
+                } 
+                
+                
                 WifiP2pGroup group = (WifiP2pGroup) message.obj;
-                //End case WifiP2pManager.RESPONSE_GROUP_INFO 
-                //Begin case WifiP2pManager.RESPONSE_GROUP_INFO 
+                
+                
                 {
                     ((GroupInfoListener) listener).onGroupInfoAvailable(group);
-                } //End block
-                //End case WifiP2pManager.RESPONSE_GROUP_INFO 
-                //Begin case default 
+                } 
+                
+                
                 Log.d(TAG, "Ignored " + message);
-                //End case default 
+                
                 addTaint(message.getTaint());
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 
             

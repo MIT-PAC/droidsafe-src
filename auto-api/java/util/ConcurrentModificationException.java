@@ -1,18 +1,18 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class ConcurrentModificationException extends RuntimeException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.593 -0400", hash_original_method = "5F5AEF59023EF0CE03A16FBB12617DB7", hash_generated_method = "79688BEA5D6B303CB294241AA0949D8E")
     public  ConcurrentModificationException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class ConcurrentModificationException extends RuntimeException {
     public  ConcurrentModificationException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ public class ConcurrentModificationException extends RuntimeException {
         super(detailMessage, cause);
         addTaint(detailMessage.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,7 +37,7 @@ public class ConcurrentModificationException extends RuntimeException {
     public  ConcurrentModificationException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.http.impl.conn;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.apache.http.io.HttpTransportMetrics;
@@ -25,23 +25,25 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
         super();
         this.in = in;
         this.wire = wire;
-        // ---------- Original Method ----------
-        //this.in = in;
-        //this.wire = wire;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.511 -0400", hash_original_method = "73B755DCF940E19A92F1412B6DE37AD9", hash_generated_method = "681A8F9DC483E613A2904B348D16512F")
     public boolean isDataAvailable(int timeout) throws IOException {
         boolean var716023B2867B596628D2E2DD17A315CC_228585809 = (this.in.isDataAvailable(timeout));
         addTaint(timeout);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_418225928 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_418225928;
-        // ---------- Original Method ----------
-        //return this.in.isDataAvailable(timeout);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.511 -0400", hash_original_method = "DA2B8DCC431BE484C4A0BB40C73A5E8B", hash_generated_method = "1CBCA4B5E071A7CAB5094039166D60E9")
     public int read(byte[] b, int off, int len) throws IOException {
         int l = this.in.read(b,  off,  len);
@@ -49,22 +51,23 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
             boolean varB0E4109DBA4526BCD8B129859F85C0BF_1529195388 = (this.wire.enabled() && l > 0);
             {
                 this.wire.input(b, off, l);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(b[0]);
         addTaint(off);
         addTaint(len);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1955661052 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1955661052;
-        // ---------- Original Method ----------
-        //int l = this.in.read(b,  off,  len);
-        //if (this.wire.enabled() && l > 0) {
-            //this.wire.input(b, off, l);
-        //}
-        //return l;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.511 -0400", hash_original_method = "33F84B16C0AA1EFA7634C96C8981DA03", hash_generated_method = "C58C24A74798871DA86358C0F386AB86")
     public int read() throws IOException {
         int l = this.in.read();
@@ -72,19 +75,20 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
             boolean varB0E4109DBA4526BCD8B129859F85C0BF_17965210 = (this.wire.enabled() && l > 0);
             {
                 this.wire.input(l);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_202113946 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_202113946;
-        // ---------- Original Method ----------
-        //int l = this.in.read();
-        //if (this.wire.enabled() && l > 0) { 
-            //this.wire.input(l);
-        //}
-        //return l;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.512 -0400", hash_original_method = "488208D8F1DE3F15889876EA1125BA0B", hash_generated_method = "CBB9C892CC005170D0F355617569DEF9")
     public int read(byte[] b) throws IOException {
         int l = this.in.read(b);
@@ -92,39 +96,40 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
             boolean varB0E4109DBA4526BCD8B129859F85C0BF_1798826198 = (this.wire.enabled() && l > 0);
             {
                 this.wire.input(b, 0, l);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(b[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_324165042 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_324165042;
-        // ---------- Original Method ----------
-        //int l = this.in.read(b);
-        //if (this.wire.enabled() && l > 0) {
-            //this.wire.input(b, 0, l);
-        //}
-        //return l;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.512 -0400", hash_original_method = "805C419B2A6B4FC548E6FF12081C14DD", hash_generated_method = "5AC9D82ECBB4B4102FC05D682DF6094C")
     public String readLine() throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1008895380 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1008895380 = null; 
         String s = this.in.readLine();
         {
             boolean varD37EC8DBFA184E63955F72E7E2B36DF5_191942616 = (this.wire.enabled() && s != null);
             {
                 this.wire.input(s + "[EOL]");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1008895380 = s;
-        varB4EAC82CA7396A68D541C85D26508E83_1008895380.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1008895380.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1008895380;
-        // ---------- Original Method ----------
-        //String s = this.in.readLine();
-        //if (this.wire.enabled() && s != null) {
-            //this.wire.input(s + "[EOL]");
-        //}
-        //return s;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -137,30 +142,31 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
                 int pos = buffer.length() - l;
                 String s = new String(buffer.buffer(), pos, l);
                 this.wire.input(s + "[EOL]");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(buffer.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962261401 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962261401;
-        // ---------- Original Method ----------
-        //int l = this.in.readLine(buffer);
-        //if (this.wire.enabled() && l > 0) {
-            //int pos = buffer.length() - l;
-            //String s = new String(buffer.buffer(), pos, l);
-            //this.wire.input(s + "[EOL]");
-        //}
-        //return l;
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.513 -0400", hash_original_method = "CFF2A55480460235D568A691407E3D1A", hash_generated_method = "1955076DE55610793435EF19861A4E6D")
     public HttpTransportMetrics getMetrics() {
-        HttpTransportMetrics varB4EAC82CA7396A68D541C85D26508E83_1591426474 = null; //Variable for return #1
+        HttpTransportMetrics varB4EAC82CA7396A68D541C85D26508E83_1591426474 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1591426474 = this.in.getMetrics();
-        varB4EAC82CA7396A68D541C85D26508E83_1591426474.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1591426474.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1591426474;
-        // ---------- Original Method ----------
-        //return this.in.getMetrics();
+        
+        
     }
 
     

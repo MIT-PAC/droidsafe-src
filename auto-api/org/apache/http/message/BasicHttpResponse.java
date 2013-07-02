@@ -1,11 +1,11 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Locale;
 import org.apache.http.HttpEntity;
@@ -35,17 +35,17 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Status line may not be null.");
-        } //End block
+        } 
         this.statusline    = statusline;
         this.reasonCatalog = catalog;
         this.locale        = (locale != null) ? locale : Locale.getDefault();
-        // ---------- Original Method ----------
-        //if (statusline == null) {
-            //throw new IllegalArgumentException("Status line may not be null.");
-        //}
-        //this.statusline    = statusline;
-        //this.reasonCatalog = catalog;
-        //this.locale        = (locale != null) ? locale : Locale.getDefault();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -53,7 +53,7 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
     public  BasicHttpResponse(final StatusLine statusline) {
         this(statusline, null, null);
         addTaint(statusline.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -65,51 +65,52 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
         addTaint(ver.getTaint());
         addTaint(code);
         addTaint(reason.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.092 -0400", hash_original_method = "90208803F02F793AFF747002BC8D1B69", hash_generated_method = "8D4C238B1901D0DB19E98E03D73E881E")
     public ProtocolVersion getProtocolVersion() {
-        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_80934876 = null; //Variable for return #1
+        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_80934876 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_80934876 = this.statusline.getProtocolVersion();
-        varB4EAC82CA7396A68D541C85D26508E83_80934876.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_80934876.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_80934876;
-        // ---------- Original Method ----------
-        //return this.statusline.getProtocolVersion();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.092 -0400", hash_original_method = "17E71ED31D66483D3BDF78C743004CA2", hash_generated_method = "F149CEC5D9FB9C3CB594825963F732C0")
     public StatusLine getStatusLine() {
-        StatusLine varB4EAC82CA7396A68D541C85D26508E83_96192844 = null; //Variable for return #1
+        StatusLine varB4EAC82CA7396A68D541C85D26508E83_96192844 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_96192844 = this.statusline;
-        varB4EAC82CA7396A68D541C85D26508E83_96192844.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_96192844.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_96192844;
-        // ---------- Original Method ----------
-        //return this.statusline;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.093 -0400", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "A8F15AA14E62E270819A1337B31449ED")
     public HttpEntity getEntity() {
-        HttpEntity varB4EAC82CA7396A68D541C85D26508E83_1248759369 = null; //Variable for return #1
+        HttpEntity varB4EAC82CA7396A68D541C85D26508E83_1248759369 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1248759369 = this.entity;
-        varB4EAC82CA7396A68D541C85D26508E83_1248759369.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1248759369.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1248759369;
-        // ---------- Original Method ----------
-        //return this.entity;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.094 -0400", hash_original_method = "733D9DF7D9A8D6EAEA176BCCAA80EA96", hash_generated_method = "C7350DE13F7F24E3DBF057879E153BF3")
     public Locale getLocale() {
-        Locale varB4EAC82CA7396A68D541C85D26508E83_1100872172 = null; //Variable for return #1
+        Locale varB4EAC82CA7396A68D541C85D26508E83_1100872172 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1100872172 = this.locale;
-        varB4EAC82CA7396A68D541C85D26508E83_1100872172.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1100872172.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1100872172;
-        // ---------- Original Method ----------
-        //return this.locale;
+        
+        
     }
 
     
@@ -117,21 +118,21 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
     public void setStatusLine(final StatusLine statusline) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Status line may not be null");
-        } //End block
+        } 
         this.statusline = statusline;
-        // ---------- Original Method ----------
-        //if (statusline == null) {
-            //throw new IllegalArgumentException("Status line may not be null");
-        //}
-        //this.statusline = statusline;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.095 -0400", hash_original_method = "1BC8215859DBDD8C612AAF8D25EAF759", hash_generated_method = "536DAFF9BA693838F6F90920759EF12D")
     public void setStatusLine(final ProtocolVersion ver, final int code) {
         this.statusline = new BasicStatusLine(ver, code, getReason(code));
-        // ---------- Original Method ----------
-        //this.statusline = new BasicStatusLine(ver, code, getReason(code));
+        
+        
     }
 
     
@@ -139,21 +140,23 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
     public void setStatusLine(final ProtocolVersion ver, final int code,
                               final String reason) {
         this.statusline = new BasicStatusLine(ver, code, reason);
-        // ---------- Original Method ----------
-        //this.statusline = new BasicStatusLine(ver, code, reason);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.095 -0400", hash_original_method = "7D42455A6D5293330CE36AB0F03AF641", hash_generated_method = "00F9C756B89CB533C444745750A41BFC")
     public void setStatusCode(int code) {
         ProtocolVersion ver = this.statusline.getProtocolVersion();
         this.statusline = new BasicStatusLine(ver, code, getReason(code));
-        // ---------- Original Method ----------
-        //ProtocolVersion ver = this.statusline.getProtocolVersion();
-        //this.statusline = new BasicStatusLine(ver, code, getReason(code));
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.096 -0400", hash_original_method = "8A9577D3FB93048CF250DA10DB0B55E0", hash_generated_method = "867F589F01B8381E82519894918E819D")
     public void setReasonPhrase(String reason) {
         {
@@ -161,62 +164,64 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
                                  (reason.indexOf('\r') >= 0)));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Line break in reason phrase.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.statusline = new BasicStatusLine(this.statusline.getProtocolVersion(),
                                               this.statusline.getStatusCode(),
                                               reason);
-        // ---------- Original Method ----------
-        //if ((reason != null) && ((reason.indexOf('\n') >= 0) ||
-                                 //(reason.indexOf('\r') >= 0))
-            //) {
-            //throw new IllegalArgumentException("Line break in reason phrase.");
-        //}
-        //this.statusline = new BasicStatusLine(this.statusline.getProtocolVersion(),
-                                              //this.statusline.getStatusCode(),
-                                              //reason);
+        
+        
+                                 
+            
+            
+        
+        
+                                              
+                                              
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.096 -0400", hash_original_method = "ACC3C31B4104E926438E24B159B6E3A2", hash_generated_method = "FB3E9570D6065D0B91C8CE936F48D4CA")
     public void setEntity(final HttpEntity entity) {
         this.entity = entity;
-        // ---------- Original Method ----------
-        //this.entity = entity;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.097 -0400", hash_original_method = "0DB1ABBE31592BCC04F2F708A5F68A93", hash_generated_method = "39B18A6D5CEFFB1C1FB367D53EB7845B")
     public void setLocale(Locale loc) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Locale may not be null.");
-        } //End block
+        } 
         this.locale = loc;
         final int code = this.statusline.getStatusCode();
         this.statusline = new BasicStatusLine
             (this.statusline.getProtocolVersion(), code, getReason(code));
-        // ---------- Original Method ----------
-        //if (loc == null) {
-            //throw new IllegalArgumentException("Locale may not be null.");
-        //}
-        //this.locale = loc;
-        //final int code = this.statusline.getStatusCode();
-        //this.statusline = new BasicStatusLine
-            //(this.statusline.getProtocolVersion(), code, getReason(code));
+        
+        
+            
+        
+        
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.097 -0400", hash_original_method = "FEEB8D9BF9C5F48AC25C3CD2E5553BCA", hash_generated_method = "CE1F117E9DBC172445C075B5F931B0F7")
     protected String getReason(int code) {
-        String varB4EAC82CA7396A68D541C85D26508E83_578377970 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_578377970 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_578377970 = (this.reasonCatalog == null) ?
             null : this.reasonCatalog.getReason(code, this.locale);
         addTaint(code);
-        varB4EAC82CA7396A68D541C85D26508E83_578377970.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_578377970.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_578377970;
-        // ---------- Original Method ----------
-        //return (this.reasonCatalog == null) ?
-            //null : this.reasonCatalog.getReason(code, this.locale);
+        
+        
+            
     }
 
     

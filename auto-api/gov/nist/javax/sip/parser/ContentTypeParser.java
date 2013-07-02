@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.core.*;
 import gov.nist.javax.sip.header.*;
@@ -17,7 +17,7 @@ public class ContentTypeParser extends ParametersParser {
     public  ContentTypeParser(String contentType) {
         super(contentType);
         addTaint(contentType.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class ContentTypeParser extends ParametersParser {
     protected  ContentTypeParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.913 -0400", hash_original_method = "8AB392911FDE1F0164CFD7A5CB623621", hash_generated_method = "7CAC65BA79E5276114C59920A522C66C")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1326962734 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1326962734 = null; 
         ContentType contentType = new ContentType();
         dbg_enter("ContentTypeParser.parse");
         try 
@@ -48,16 +49,16 @@ public class ContentTypeParser extends ParametersParser {
             contentType.setContentSubType(subType.getTokenValue());
             super.parse(contentType);
             this.lexer.match('\n');
-        } //End block
+        } 
         finally 
         {
             dbg_leave("ContentTypeParser.parse");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1326962734 = contentType;
-        varB4EAC82CA7396A68D541C85D26508E83_1326962734.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1326962734.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1326962734;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

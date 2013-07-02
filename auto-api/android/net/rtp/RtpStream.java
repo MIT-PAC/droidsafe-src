@@ -1,11 +1,11 @@
 package android.net.rtp;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.net.InetAddress;
 import java.net.Inet4Address;
@@ -36,9 +36,9 @@ public class RtpStream {
       RtpStream(InetAddress address) throws SocketException {
         mLocalPort = create(address.getHostAddress());
         mLocalAddress = address;
-        // ---------- Original Method ----------
-        //mLocalPort = create(address.getHostAddress());
-        //mLocalAddress = address;
+        
+        
+        
     }
 
     
@@ -51,12 +51,12 @@ public class RtpStream {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.539 -0400", hash_original_method = "F28BFDFF195309DBD86E5144551EE7AD", hash_generated_method = "BD8C257E484D29AA6A55E3E75BB4F56B")
     public InetAddress getLocalAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_565946382 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_565946382 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_565946382 = mLocalAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_565946382.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_565946382.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_565946382;
-        // ---------- Original Method ----------
-        //return mLocalAddress;
+        
+        
     }
 
     
@@ -64,19 +64,19 @@ public class RtpStream {
     public int getLocalPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_325022697 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_325022697;
-        // ---------- Original Method ----------
-        //return mLocalPort;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.539 -0400", hash_original_method = "DA9171B440EA3ADB706340063F8102C7", hash_generated_method = "17A7034DC633F706CC18A37D3C2C7012")
     public InetAddress getRemoteAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_20712062 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_20712062 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_20712062 = mRemoteAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_20712062.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_20712062.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_20712062;
-        // ---------- Original Method ----------
-        //return mRemoteAddress;
+        
+        
     }
 
     
@@ -84,8 +84,8 @@ public class RtpStream {
     public int getRemotePort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_713448295 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_713448295;
-        // ---------- Original Method ----------
-        //return mRemotePort;
+        
+        
     }
 
     
@@ -93,8 +93,8 @@ public class RtpStream {
     public boolean isBusy() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_612941414 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_612941414;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -102,63 +102,65 @@ public class RtpStream {
     public int getMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1570861956 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1570861956;
-        // ---------- Original Method ----------
-        //return mMode;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.541 -0400", hash_original_method = "343CDE7B48421898D79FEBC0BB9BBA38", hash_generated_method = "867758B4974A4E5B254C55C43D9A38F7")
     public void setMode(int mode) {
         {
             boolean var6331CCDC5360782724F2E909851BBC53_930432275 = (isBusy());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Busy");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid mode");
-        } //End block
+        } 
         mMode = mode;
-        // ---------- Original Method ----------
-        //if (isBusy()) {
-            //throw new IllegalStateException("Busy");
-        //}
-        //if (mode < 0 || mode > MODE_LAST) {
-            //throw new IllegalArgumentException("Invalid mode");
-        //}
-        //mMode = mode;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.541 -0400", hash_original_method = "F6EBFCAAEA10AE181CE86DC5E6420909", hash_generated_method = "AC4025E98E7CAD67FAA2A571EACB3282")
     public void associate(InetAddress address, int port) {
         {
             boolean var6331CCDC5360782724F2E909851BBC53_622817715 = (isBusy());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Busy");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unsupported address");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid port");
-        } //End block
+        } 
         mRemoteAddress = address;
         mRemotePort = port;
-        // ---------- Original Method ----------
-        //if (isBusy()) {
-            //throw new IllegalStateException("Busy");
-        //}
-        //if (!(address instanceof Inet4Address && mLocalAddress instanceof Inet4Address) &&
-                //!(address instanceof Inet6Address && mLocalAddress instanceof Inet6Address)) {
-            //throw new IllegalArgumentException("Unsupported address");
-        //}
-        //if (port < 0 || port > 65535) {
-            //throw new IllegalArgumentException("Invalid port");
-        //}
-        //mRemoteAddress = address;
-        //mRemotePort = port;
+        
+        
+            
+        
+        
+                
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -169,20 +171,21 @@ public class RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.542 -0400", hash_original_method = "A307AB09C854328394617118B8488FB4", hash_generated_method = "B041E7F793F8F10F8B0193CAE81CD4F2")
     public void release() {
         {
             boolean var6331CCDC5360782724F2E909851BBC53_1626939862 = (isBusy());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Busy");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         close();
-        // ---------- Original Method ----------
-        //if (isBusy()) {
-            //throw new IllegalStateException("Busy");
-        //}
-        //close();
+        
+        
+            
+        
+        
     }
 
     
@@ -191,14 +194,15 @@ public class RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.542 -0400", hash_original_method = "2E21A04735F7B7DFBA8D51C21EAA3D5C", hash_generated_method = "1739E6BBD03654B983B913F30B6E5FDA")
     @Override
     protected void finalize() throws Throwable {
         close();
         super.finalize();
-        // ---------- Original Method ----------
-        //close();
-        //super.finalize();
+        
+        
+        
     }
 
     

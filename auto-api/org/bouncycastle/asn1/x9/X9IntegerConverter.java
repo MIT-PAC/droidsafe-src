@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x9;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.math.ec.ECCurve;
 import org.bouncycastle.math.ec.ECFieldElement;
@@ -16,7 +16,7 @@ public class X9IntegerConverter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.479 -0400", hash_original_method = "3E06FD5486BA6E5207C62F9D16D09EAF", hash_generated_method = "3E06FD5486BA6E5207C62F9D16D09EAF")
     public X9IntegerConverter ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -27,8 +27,8 @@ public class X9IntegerConverter {
         addTaint(c.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_313799923 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_313799923;
-        // ---------- Original Method ----------
-        //return (c.getFieldSize() + 7) / 8;
+        
+        
     }
 
     
@@ -39,8 +39,8 @@ public class X9IntegerConverter {
         addTaint(fe.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1192374023 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1192374023;
-        // ---------- Original Method ----------
-        //return (fe.getFieldSize() + 7) / 8;
+        
+        
     }
 
     
@@ -52,30 +52,30 @@ public class X9IntegerConverter {
         {
             byte[] tmp = new byte[qLength];
             System.arraycopy(bytes, bytes.length - tmp.length, tmp, 0, tmp.length);
-        } //End block
+        } 
         {
             byte[] tmp = new byte[qLength];
             System.arraycopy(bytes, 0, tmp, tmp.length - bytes.length, bytes.length);
-        } //End block
+        } 
         addTaint(s.getTaint());
         addTaint(qLength);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1464931232 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1464931232;
-        // ---------- Original Method ----------
-        //byte[] bytes = s.toByteArray();
-        //if (qLength < bytes.length)
-        //{
-            //byte[] tmp = new byte[qLength];
-            //System.arraycopy(bytes, bytes.length - tmp.length, tmp, 0, tmp.length);
-            //return tmp;
-        //}
-        //else if (qLength > bytes.length)
-        //{
-            //byte[] tmp = new byte[qLength];
-            //System.arraycopy(bytes, 0, tmp, tmp.length - bytes.length, bytes.length);
-            //return tmp; 
-        //}
-        //return bytes;
+        
+        
+        
+        
+            
+            
+            
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     

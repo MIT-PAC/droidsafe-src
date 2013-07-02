@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.Property;
 
@@ -15,7 +15,7 @@ public abstract class FloatProperty<T> extends Property<T, Float> {
     public  FloatProperty(String name) {
         super(Float.class, name);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,8 +28,8 @@ public abstract class FloatProperty<T> extends Property<T, Float> {
         setValue(object, value);
         addTaint(object.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //setValue(object, value);
+        
+        
     }
 
     

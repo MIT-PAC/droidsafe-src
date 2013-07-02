@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import dalvik.system.CloseGuard;
 import java.nio.NioUtils;
@@ -36,7 +36,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
     public  FileOutputStream(File file) throws FileNotFoundException {
         this(file, false);
         addTaint(file.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -44,19 +44,19 @@ public class FileOutputStream extends OutputStream implements Closeable {
     public  FileOutputStream(File file, boolean append) throws FileNotFoundException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("file == null");
-        } //End block
+        } 
         this.mode = O_WRONLY | O_CREAT | (append ? O_APPEND : O_TRUNC);
         this.fd = IoBridge.open(file.getAbsolutePath(), mode);
         this.shouldClose = true;
         this.guard.open("close");
-        // ---------- Original Method ----------
-        //if (file == null) {
-            //throw new NullPointerException("file == null");
-        //}
-        //this.mode = O_WRONLY | O_CREAT | (append ? O_APPEND : O_TRUNC);
-        //this.fd = IoBridge.open(file.getAbsolutePath(), mode);
-        //this.shouldClose = true;
-        //this.guard.open("close");
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -64,19 +64,19 @@ public class FileOutputStream extends OutputStream implements Closeable {
     public  FileOutputStream(FileDescriptor fd) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("fd == null");
-        } //End block
+        } 
         this.fd = fd;
         this.shouldClose = false;
         this.mode = O_WRONLY;
         this.channel = NioUtils.newFileChannel(this, fd, mode);
-        // ---------- Original Method ----------
-        //if (fd == null) {
-            //throw new NullPointerException("fd == null");
-        //}
-        //this.fd = fd;
-        //this.shouldClose = false;
-        //this.mode = O_WRONLY;
-        //this.channel = NioUtils.newFileChannel(this, fd, mode);
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -84,7 +84,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
     public  FileOutputStream(String path) throws FileNotFoundException {
         this(path, false);
         addTaint(path.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -93,10 +93,11 @@ public class FileOutputStream extends OutputStream implements Closeable {
         this(new File(path), append);
         addTaint(path.getTaint());
         addTaint(append);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.952 -0400", hash_original_method = "F8E8B4DFEA301034B0C9D2DA47B66D8A", hash_generated_method = "CA7B11D8D9D676C2D46C3747A0F9596F")
     @Override
     public void close() throws IOException {
@@ -104,29 +105,30 @@ public class FileOutputStream extends OutputStream implements Closeable {
         {
             {
                 channel.close();
-            } //End block
+            } 
             {
                 IoUtils.close(fd);
-            } //End block
+            } 
             {
                 fd = new FileDescriptor();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //guard.close();
-        //synchronized (this) {
-            //if (channel != null) {
-                //channel.close();
-            //}
-            //if (shouldClose) {
-                //IoUtils.close(fd);
-            //} else {
-                //fd = new FileDescriptor();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.952 -0400", hash_original_method = "5577B21C22C8702738A871739D038C15", hash_generated_method = "65066866CC4C814D801C4B4403AC35AE")
     @Override
     protected void finalize() throws IOException {
@@ -134,68 +136,70 @@ public class FileOutputStream extends OutputStream implements Closeable {
         {
             {
                 guard.warnIfOpen();
-            } //End block
+            } 
             close();
-        } //End block
+        } 
         finally 
         {
             try 
             {
                 super.finalize();
-            } //End block
+            } 
             catch (Throwable t)
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError(t);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (guard != null) {
-                //guard.warnIfOpen();
-            //}
-            //close();
-        //} finally {
-            //try {
-                //super.finalize();
-            //} catch (Throwable t) {
-                //throw new AssertionError(t);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+        
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.953 -0400", hash_original_method = "ED8CC62185555A958270FAF77C7A0E38", hash_generated_method = "9E19EDDE0157797FC4FB614ABC7A82B7")
     public FileChannel getChannel() {
-        FileChannel varB4EAC82CA7396A68D541C85D26508E83_1736759244 = null; //Variable for return #1
+        FileChannel varB4EAC82CA7396A68D541C85D26508E83_1736759244 = null; 
         {
             {
                 channel = NioUtils.newFileChannel(this, fd, mode);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1736759244 = channel;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1736759244.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1736759244.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1736759244;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (channel == null) {
-                //channel = NioUtils.newFileChannel(this, fd, mode);
-            //}
-            //return channel;
-        //}
+        
+        
+            
+                
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.954 -0400", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "34AEBA742175A96FE8283AC2BBA6B6A4")
     public final FileDescriptor getFD() throws IOException {
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1890783220 = null; //Variable for return #1
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1890783220 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1890783220 = fd;
-        varB4EAC82CA7396A68D541C85D26508E83_1890783220.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1890783220.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1890783220;
-        // ---------- Original Method ----------
-        //return fd;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.955 -0400", hash_original_method = "F915AF116DBABF662C85674FE9C75DD1", hash_generated_method = "DF77112F0FCF68E7EB1DE9508D1392A9")
     @Override
     public void write(byte[] buffer, int byteOffset, int byteCount) throws IOException {
@@ -203,18 +207,19 @@ public class FileOutputStream extends OutputStream implements Closeable {
         addTaint(buffer[0]);
         addTaint(byteOffset);
         addTaint(byteCount);
-        // ---------- Original Method ----------
-        //IoBridge.write(fd, buffer, byteOffset, byteCount);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.955 -0400", hash_original_method = "36E798E1E7EB95F42CDB9DAEDA0C8547", hash_generated_method = "836704451161594A41E76E7E68924F92")
     @Override
     public void write(int oneByte) throws IOException {
         write(new byte[] { (byte) oneByte }, 0, 1);
         addTaint(oneByte);
-        // ---------- Original Method ----------
-        //write(new byte[] { (byte) oneByte }, 0, 1);
+        
+        
     }
 
     

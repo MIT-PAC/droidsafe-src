@@ -1,11 +1,11 @@
 package javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.EventObject;
 
@@ -28,21 +28,21 @@ public class IOExceptionEvent extends EventObject {
         mPort = port;
         mTransport = transport;
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
-        //mHost = host;
-        //mPort = port;
-        //mTransport = transport;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.017 -0400", hash_original_method = "B21C2297C1E60D4D2D92DDE75D931874", hash_generated_method = "15B3A67E113B66578EF4AD697235DC98")
     public String getHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_277301549 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_277301549 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_277301549 = mHost;
-        varB4EAC82CA7396A68D541C85D26508E83_277301549.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_277301549.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_277301549;
-        // ---------- Original Method ----------
-        //return mHost;
+        
+        
     }
 
     
@@ -50,19 +50,19 @@ public class IOExceptionEvent extends EventObject {
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_758747965 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_758747965;
-        // ---------- Original Method ----------
-        //return mPort;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.019 -0400", hash_original_method = "CC293D4A58B4AE34EE1EAFE01D7A0F93", hash_generated_method = "C97096E326D425F2BDA4DBF8C474ADD8")
     public String getTransport() {
-        String varB4EAC82CA7396A68D541C85D26508E83_390391262 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_390391262 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_390391262 = mTransport;
-        varB4EAC82CA7396A68D541C85D26508E83_390391262.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_390391262.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_390391262;
-        // ---------- Original Method ----------
-        //return mTransport;
+        
+        
     }
 
     

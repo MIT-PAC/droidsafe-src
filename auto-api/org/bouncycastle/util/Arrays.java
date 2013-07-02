@@ -1,18 +1,18 @@
 package org.bouncycastle.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class Arrays {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.164 -0400", hash_original_method = "F55A33B7721183458366770FE1A5E43D", hash_generated_method = "49F223D555836B7BADC6EB97733A13D3")
     private  Arrays() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -190,6 +190,7 @@ public final class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] clone(byte[] data) {
         if (data == null)
         {
@@ -201,6 +202,7 @@ public final class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int[] clone(int[] data) {
         if (data == null)
         {

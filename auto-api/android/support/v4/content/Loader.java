@@ -1,11 +1,11 @@
 package android.support.v4.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.database.ContentObserver;
@@ -40,8 +40,8 @@ public class Loader<D> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.303 -0400", hash_original_method = "6088A27F132FBE0E650A99C21779299A", hash_generated_method = "E534B79FD11218DC330A0BC7A9E63568")
     public  Loader(Context context) {
         mContext = context.getApplicationContext();
-        // ---------- Original Method ----------
-        //mContext = context.getApplicationContext();
+        
+        
     }
 
     
@@ -49,23 +49,23 @@ public class Loader<D> {
     public void deliverResult(D data) {
         {
             mListener.onLoadComplete(this, data);
-        } //End block
+        } 
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        //if (mListener != null) {
-            //mListener.onLoadComplete(this, data);
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.304 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "8EE4BD0729DD5588BA1D515F434C01BF")
     public Context getContext() {
-        Context varB4EAC82CA7396A68D541C85D26508E83_257793967 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_257793967 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_257793967 = mContext;
-        varB4EAC82CA7396A68D541C85D26508E83_257793967.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_257793967.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_257793967;
-        // ---------- Original Method ----------
-        //return mContext;
+        
+        
     }
 
     
@@ -73,25 +73,25 @@ public class Loader<D> {
     public int getId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1497938 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1497938;
-        // ---------- Original Method ----------
-        //return mId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.305 -0400", hash_original_method = "F7FC6EAD1080F4315E95C53063FFE31D", hash_generated_method = "E15B0E0C0CC319E82FBDE6A7AFE41F19")
     public void registerListener(int id, OnLoadCompleteListener<D> listener) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("There is already a listener registered");
-        } //End block
+        } 
         mListener = listener;
         mId = id;
-        // ---------- Original Method ----------
-        //if (mListener != null) {
-            //throw new IllegalStateException("There is already a listener registered");
-        //}
-        //mListener = listener;
-        //mId = id;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -99,20 +99,20 @@ public class Loader<D> {
     public void unregisterListener(OnLoadCompleteListener<D> listener) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No listener register");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Attempting to unregister the wrong listener");
-        } //End block
+        } 
         mListener = null;
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (mListener == null) {
-            //throw new IllegalStateException("No listener register");
-        //}
-        //if (mListener != listener) {
-            //throw new IllegalArgumentException("Attempting to unregister the wrong listener");
-        //}
-        //mListener = null;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -120,8 +120,8 @@ public class Loader<D> {
     public boolean isStarted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_894356569 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_894356569;
-        // ---------- Original Method ----------
-        //return mStarted;
+        
+        
     }
 
     
@@ -129,8 +129,8 @@ public class Loader<D> {
     public boolean isAbandoned() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2072803627 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2072803627;
-        // ---------- Original Method ----------
-        //return mAbandoned;
+        
+        
     }
 
     
@@ -138,8 +138,8 @@ public class Loader<D> {
     public boolean isReset() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1203885858 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1203885858;
-        // ---------- Original Method ----------
-        //return mReset;
+        
+        
     }
 
     
@@ -149,33 +149,33 @@ public class Loader<D> {
         mReset = false;
         mAbandoned = false;
         onStartLoading();
-        // ---------- Original Method ----------
-        //mStarted = true;
-        //mReset = false;
-        //mAbandoned = false;
-        //onStartLoading();
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.307 -0400", hash_original_method = "DA06EE0B2F861EB56F065785FCE355AD", hash_generated_method = "0909BE96C0F99143CB2CE82AF27A625E")
     protected void onStartLoading() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.308 -0400", hash_original_method = "E102AD0C3BB2F8D5B106A9E25CAC340A", hash_generated_method = "4C3F61B2263048390C3B94C62E4D7FA4")
     public void forceLoad() {
         onForceLoad();
-        // ---------- Original Method ----------
-        //onForceLoad();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.308 -0400", hash_original_method = "FE3F333F9E40E18C50A63599879C8FC2", hash_generated_method = "488FAE86043081AFB0979733155F08FD")
     protected void onForceLoad() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
@@ -183,16 +183,16 @@ public class Loader<D> {
     public void stopLoading() {
         mStarted = false;
         onStopLoading();
-        // ---------- Original Method ----------
-        //mStarted = false;
-        //onStopLoading();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.309 -0400", hash_original_method = "61C04D3A0F64307AA142FA0229BCD9C9", hash_generated_method = "716B7303C3FA40378FDE0D93ABB3AD37")
     protected void onStopLoading() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
@@ -200,16 +200,16 @@ public class Loader<D> {
     public void abandon() {
         mAbandoned = true;
         onAbandon();
-        // ---------- Original Method ----------
-        //mAbandoned = true;
-        //onAbandon();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.310 -0400", hash_original_method = "A161936916B264DFAEE5DB9D8DEA7F5D", hash_generated_method = "2DF6972E38BFCEC8C4E59AA3458EA32B")
     protected void onAbandon() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
@@ -220,19 +220,19 @@ public class Loader<D> {
         mStarted = false;
         mAbandoned = false;
         mContentChanged = false;
-        // ---------- Original Method ----------
-        //onReset();
-        //mReset = true;
-        //mStarted = false;
-        //mAbandoned = false;
-        //mContentChanged = false;
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.311 -0400", hash_original_method = "16611E3F48156A317644CA113F750BCD", hash_generated_method = "506FAD418C46C1799155951AA1376B27")
     protected void onReset() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
@@ -242,68 +242,68 @@ public class Loader<D> {
         mContentChanged = false;
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1246589941 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1246589941;
-        // ---------- Original Method ----------
-        //boolean res = mContentChanged;
-        //mContentChanged = false;
-        //return res;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.312 -0400", hash_original_method = "9CACF0CE278273BE0AB1B5F570D8CB20", hash_generated_method = "122FA5CE2B671883A6961E2423E1FA55")
     public void onContentChanged() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             forceLoad();
-        } //End block
+        } 
         {
             mContentChanged = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mStarted) {
-            //forceLoad();
-        //} else {
-            //mContentChanged = true;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.313 -0400", hash_original_method = "F5B015CDDEBA6C005C6DD563385EE3D7", hash_generated_method = "4286DA5510E2FD53FF9BCF90A7AC624F")
     public String dataToString(D data) {
-        String varB4EAC82CA7396A68D541C85D26508E83_483969199 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_483969199 = null; 
         StringBuilder sb = new StringBuilder(64);
         DebugUtils.buildShortClassTag(data, sb);
         sb.append("}");
         varB4EAC82CA7396A68D541C85D26508E83_483969199 = sb.toString();
         addTaint(data.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_483969199.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_483969199.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_483969199;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(64);
-        //DebugUtils.buildShortClassTag(data, sb);
-        //sb.append("}");
-        //return sb.toString();
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.313 -0400", hash_original_method = "7AA2EFEA4BBA4CB5078AB2979053EAD3", hash_generated_method = "CDFD717BB204982BC99162D31038FF67")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1548529543 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1548529543 = null; 
         StringBuilder sb = new StringBuilder(64);
         DebugUtils.buildShortClassTag(this, sb);
         sb.append(" id=");
         sb.append(mId);
         sb.append("}");
         varB4EAC82CA7396A68D541C85D26508E83_1548529543 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1548529543.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1548529543.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1548529543;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(64);
-        //DebugUtils.buildShortClassTag(this, sb);
-        //sb.append(" id=");
-        //sb.append(mId);
-        //sb.append("}");
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -327,21 +327,21 @@ public class Loader<D> {
         addTaint(fd.getTaint());
         addTaint(writer.getTaint());
         addTaint(args[0].getTaint());
-        // ---------- Original Method ----------
-        //writer.print(prefix);
-        //writer.print("mId=");
-        //writer.print(mId);
-        //writer.print(" mListener=");
-        //writer.println(mListener);
-        //writer.print(prefix);
-        //writer.print("mStarted=");
-        //writer.print(mStarted);
-        //writer.print(" mContentChanged=");
-        //writer.print(mContentChanged);
-        //writer.print(" mAbandoned=");
-        //writer.print(mAbandoned);
-        //writer.print(" mReset=");
-        //writer.println(mReset);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -350,7 +350,7 @@ public class Loader<D> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.314 -0400", hash_original_method = "B9E73A5B4B60A8E0702AD317D1848844", hash_generated_method = "375A9A73C550620BE446824414E32EEE")
         public  ForceLoadContentObserver() {
             super(new Handler());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -359,19 +359,19 @@ public class Loader<D> {
         public boolean deliverSelfNotifications() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_753320501 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_753320501;
-            // ---------- Original Method ----------
-            //return true;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.315 -0400", hash_original_method = "E96460F373279AF9AB8806E159ABA424", hash_generated_method = "14BD20B741BA4562A3870DA491571B1B")
         @Override
         public void onChange(boolean selfChange) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             onContentChanged();
             addTaint(selfChange);
-            // ---------- Original Method ----------
-            //onContentChanged();
+            
+            
         }
 
         

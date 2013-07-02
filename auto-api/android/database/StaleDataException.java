@@ -1,11 +1,11 @@
 package android.database;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class StaleDataException extends java.lang.RuntimeException {
@@ -13,7 +13,7 @@ public class StaleDataException extends java.lang.RuntimeException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.056 -0400", hash_original_method = "0B77138B0532969AEB67E7DB9731EFEE", hash_generated_method = "CA11876DF9991FF914361FBFA8E0B2B4")
     public  StaleDataException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class StaleDataException extends java.lang.RuntimeException {
     public  StaleDataException(String description) {
         super(description);
         addTaint(description.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

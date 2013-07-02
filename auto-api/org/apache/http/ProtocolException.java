@@ -1,11 +1,11 @@
 package org.apache.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class ProtocolException extends HttpException {
@@ -13,7 +13,7 @@ public class ProtocolException extends HttpException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.500 -0400", hash_original_method = "CB5496AEB6C4A3E562F8F77722FABABF", hash_generated_method = "7F6827B044705C39557299953AEA8024")
     public  ProtocolException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class ProtocolException extends HttpException {
     public  ProtocolException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,7 +30,7 @@ public class ProtocolException extends HttpException {
         super(message, cause);
         addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public abstract class PermissionCollection implements Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.414 -0400", hash_original_method = "9068D0108294B13066862778786146D9", hash_generated_method = "9068D0108294B13066862778786146D9")
     public PermissionCollection ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -34,14 +34,14 @@ public abstract class PermissionCollection implements Serializable {
     public boolean isReadOnly() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_772585485 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_772585485;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.417 -0400", hash_original_method = "32FE512F278ECF7FA2513E0F8F8332CC", hash_generated_method = "A55E7890182104F16935D6993243BDE8")
     public void setReadOnly() {
-        // ---------- Original Method ----------
+        
     }
 
     

@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.extensions;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.javax.sip.header.extensions.*;
@@ -19,7 +19,7 @@ public class SessionExpiresParser extends ParametersParser {
     public  SessionExpiresParser(String text) {
         super(text);
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,13 +27,14 @@ public class SessionExpiresParser extends ParametersParser {
     protected  SessionExpiresParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.053 -0400", hash_original_method = "3CD97DF13D6C3B595D5C8777AA80A144", hash_generated_method = "568E69171809E4C172967FA7B079112E")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_580260293 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_580260293 = null; 
         SessionExpires se = new SessionExpires();
         dbg_enter("parse");
         try 
@@ -44,50 +45,51 @@ public class SessionExpiresParser extends ParametersParser {
             {
                 int delta = Integer.parseInt(nextId);
                 se.setExpires(delta);
-            } //End block
+            } 
             catch (NumberFormatException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw createParseException("bad integer format");
-            } //End block
+            } 
             catch (InvalidArgumentException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-            } //End block
+            } 
             this.lexer.SPorHT();
             super.parse(se);
             varB4EAC82CA7396A68D541C85D26508E83_580260293 = se;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_580260293.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_580260293.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_580260293;
-        // ---------- Original Method ----------
-        //SessionExpires se = new SessionExpires();
-        //if (debug)
-            //dbg_enter("parse");
-        //try {
-            //headerName(TokenTypes.SESSIONEXPIRES_TO);
-            //String nextId = lexer.getNextId();
-            //try {
-                //int delta = Integer.parseInt(nextId);
-                //se.setExpires(delta);
-            //} catch (NumberFormatException ex) {
-                //throw createParseException("bad integer format");
-            //} catch (InvalidArgumentException ex) {
-                //throw createParseException(ex.getMessage());
-            //}
-            //this.lexer.SPorHT();
-            //super.parse(se);
-            //return se;
-        //} finally {
-            //if (debug)
-                //dbg_leave("parse");
-        //}
+        
+        
+        
+            
+        
+            
+            
+            
+                
+                
+            
+                
+            
+                
+            
+            
+            
+            
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void main(String args[]) throws ParseException {
         String to[] =
             {   "Session-Expires: 30\n",

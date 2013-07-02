@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class BitmapShader extends Shader {
@@ -21,11 +21,11 @@ public class BitmapShader extends Shader {
         native_shader = nativePostCreate(native_instance, b, tileX.nativeInt, tileY.nativeInt);
         addTaint(tileX.getTaint());
         addTaint(tileY.getTaint());
-        // ---------- Original Method ----------
-        //mBitmap = bitmap;
-        //final int b = bitmap.ni();
-        //native_instance = nativeCreate(b, tileX.nativeInt, tileY.nativeInt);
-        //native_shader = nativePostCreate(native_instance, b, tileX.nativeInt, tileY.nativeInt);
+        
+        
+        
+        
+        
     }
 
     

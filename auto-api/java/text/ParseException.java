@@ -1,11 +1,11 @@
 package java.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class ParseException extends Exception {
@@ -18,8 +18,8 @@ public class ParseException extends Exception {
         super(detailMessage + (" (at offset " + location + ")"));
         errorOffset = location;
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-        //errorOffset = location;
+        
+        
     }
 
     
@@ -27,8 +27,8 @@ public class ParseException extends Exception {
     public int getErrorOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_988251327 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_988251327;
-        // ---------- Original Method ----------
-        //return errorOffset;
+        
+        
     }
 
     

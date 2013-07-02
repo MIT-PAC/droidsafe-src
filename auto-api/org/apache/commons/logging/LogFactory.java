@@ -1,11 +1,11 @@
 package org.apache.commons.logging;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
@@ -26,7 +26,7 @@ public abstract class LogFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.962 -0400", hash_original_method = "F774CEA84649DC0B4D4BCA84E3BCF878", hash_generated_method = "A8E7489E7B239B2C7DA374E4667D6148")
     protected  LogFactory() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -79,6 +79,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static LogFactory getFactory() throws LogConfigurationException {
         ClassLoader contextClassLoader = getContextClassLoader();
         if (contextClassLoader == null) {
@@ -247,11 +248,13 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Log getLog(Class clazz) throws LogConfigurationException {
         return getLog(clazz.getName());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Log getLog(String name) throws LogConfigurationException {
         return new org.apache.commons.logging.impl.Jdk14Logger(name);
     }
@@ -278,6 +281,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void releaseAll() {
         if (isDiagnosticsEnabled()) {
             logDiagnostic("Releasing factory for all classloaders.");
@@ -495,6 +499,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean implementsLogFactory(Class logFactoryClass) {
         boolean implementsLogFactory = false;
         if (logFactoryClass != null) {
@@ -675,6 +680,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void initDiagnostics() {
         String dest;
         try {
@@ -734,6 +740,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void logClassLoaderEnvironment(Class clazz) {
         if (!isDiagnosticsEnabled()) {
             return;
@@ -800,6 +807,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String objectId(Object o) {
         if (o == null) {
             return "null";
@@ -866,25 +874,8 @@ public abstract class LogFactory {
         }
     }
     
-    // orphaned legacy method
-    /*
-    public Object run() {
-                    try {
-                        InputStream stream = url.openStream();
-                        if (stream != null) {
-                            Properties props = new Properties();
-                            props.load(stream);
-                            stream.close();
-                            return props;
-                        }
-                    } catch(IOException e) {
-                        if (isDiagnosticsEnabled()) {
-                            logDiagnostic("Unable to read URL " + url);
-                        }
-                    }
-                    return null;
-                }
-    */
+    
+    
     
 }
 

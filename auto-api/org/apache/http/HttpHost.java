@@ -1,11 +1,11 @@
 package org.apache.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Locale;
 import org.apache.http.util.CharArrayBuffer;
@@ -30,28 +30,28 @@ public final class HttpHost implements Cloneable {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Host name may not be null");
-        } //End block
+        } 
         this.hostname   = hostname;
         this.lcHostname = hostname.toLowerCase(Locale.ENGLISH);
         {
             this.schemeName = scheme.toLowerCase(Locale.ENGLISH);
-        } //End block
+        } 
         {
             this.schemeName = DEFAULT_SCHEME_NAME;
-        } //End block
+        } 
         this.port = port;
-        // ---------- Original Method ----------
-        //if (hostname == null) {
-            //throw new IllegalArgumentException("Host name may not be null");
-        //}
-        //this.hostname   = hostname;
-        //this.lcHostname = hostname.toLowerCase(Locale.ENGLISH);
-        //if (scheme != null) {
-            //this.schemeName = scheme.toLowerCase(Locale.ENGLISH);
-        //} else {
-            //this.schemeName = DEFAULT_SCHEME_NAME;
-        //}
-        //this.port = port;
+        
+        
+            
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -60,7 +60,7 @@ public final class HttpHost implements Cloneable {
         this(hostname, port, null);
         addTaint(hostname.getTaint());
         addTaint(port);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -68,7 +68,7 @@ public final class HttpHost implements Cloneable {
     public  HttpHost(final String hostname) {
         this(hostname, -1, null);
         addTaint(hostname.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -76,18 +76,18 @@ public final class HttpHost implements Cloneable {
     public  HttpHost(final HttpHost httphost) {
         this(httphost.hostname, httphost.port, httphost.schemeName);
         addTaint(httphost.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.453 -0400", hash_original_method = "FF0006634ABBE2C97788D559B23C884A", hash_generated_method = "AC62A580BEE147C3678C1F2CF609B72B")
     public String getHostName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1013516313 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1013516313 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1013516313 = this.hostname;
-        varB4EAC82CA7396A68D541C85D26508E83_1013516313.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1013516313.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1013516313;
-        // ---------- Original Method ----------
-        //return this.hostname;
+        
+        
     }
 
     
@@ -95,25 +95,26 @@ public final class HttpHost implements Cloneable {
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_516529367 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_516529367;
-        // ---------- Original Method ----------
-        //return this.port;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.454 -0400", hash_original_method = "C6F0B2E3DB0F6FEAB7513E486FF6DA80", hash_generated_method = "06358C712030A88615A00D12E710CD22")
     public String getSchemeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2016116216 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2016116216 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2016116216 = this.schemeName;
-        varB4EAC82CA7396A68D541C85D26508E83_2016116216.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2016116216.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2016116216;
-        // ---------- Original Method ----------
-        //return this.schemeName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.454 -0400", hash_original_method = "FE8B35DF3D2B1A5F77A96BBF48284914", hash_generated_method = "B120BDCEBAE128131C9A15CC309C56E2")
     public String toURI() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1837041849 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1837041849 = null; 
         CharArrayBuffer buffer = new CharArrayBuffer(32);
         buffer.append(this.schemeName);
         buffer.append("://");
@@ -121,54 +122,56 @@ public final class HttpHost implements Cloneable {
         {
             buffer.append(':');
             buffer.append(Integer.toString(this.port));
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1837041849 = buffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1837041849.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1837041849.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1837041849;
-        // ---------- Original Method ----------
-        //CharArrayBuffer buffer = new CharArrayBuffer(32);
-        //buffer.append(this.schemeName);
-        //buffer.append("://");
-        //buffer.append(this.hostname);
-        //if (this.port != -1) {
-            //buffer.append(':');
-            //buffer.append(Integer.toString(this.port));
-        //}
-        //return buffer.toString();
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.455 -0400", hash_original_method = "6DDBCACEAF7453CD975901EB7FA152DA", hash_generated_method = "7AE043239C02A0333AECA6C181407F17")
     public String toHostString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_478349681 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_478349681 = null; 
         CharArrayBuffer buffer = new CharArrayBuffer(32);
         buffer.append(this.hostname);
         {
             buffer.append(':');
             buffer.append(Integer.toString(this.port));
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_478349681 = buffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_478349681.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_478349681.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_478349681;
-        // ---------- Original Method ----------
-        //CharArrayBuffer buffer = new CharArrayBuffer(32);
-        //buffer.append(this.hostname);
-        //if (this.port != -1) {
-            //buffer.append(':');
-            //buffer.append(Integer.toString(this.port));
-        //}
-        //return buffer.toString();
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.456 -0400", hash_original_method = "C17018EEDA4C922BB5D288F6A26A7D04", hash_generated_method = "D2F8CE454CC667D48E0FFD726CEAC5F0")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_707660728 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_707660728 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_707660728 = toURI();
-        varB4EAC82CA7396A68D541C85D26508E83_707660728.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_707660728.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_707660728;
-        // ---------- Original Method ----------
-        //return toURI();
+        
+        
     }
 
     
@@ -179,24 +182,25 @@ public final class HttpHost implements Cloneable {
             boolean varE7D414753A20D356FCE7EE06F85D327D_815185953 = (this.lcHostname.equals(that.lcHostname) 
                 && this.port == that.port
                 && this.schemeName.equals(that.schemeName));
-        } //End block
+        } 
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_46635962 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_46635962;
-        // ---------- Original Method ----------
-        //if (obj == null) return false;
-        //if (this == obj) return true;
-        //if (obj instanceof HttpHost) {
-            //HttpHost that = (HttpHost) obj;
-            //return this.lcHostname.equals(that.lcHostname) 
-                //&& this.port == that.port
-                //&& this.schemeName.equals(that.schemeName);
-        //} else {
-            //return false;
-        //}
+        
+        
+        
+        
+            
+            
+                
+                
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.457 -0400", hash_original_method = "148EB8E2858B696FB463985EE3E49929", hash_generated_method = "0D963E6C928CEFE1AE1680BD298F56F3")
     public int hashCode() {
         int hash = LangUtils.HASH_SEED;
@@ -205,23 +209,24 @@ public final class HttpHost implements Cloneable {
         hash = LangUtils.hashCode(hash, this.schemeName);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_852643017 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_852643017;
-        // ---------- Original Method ----------
-        //int hash = LangUtils.HASH_SEED;
-        //hash = LangUtils.hashCode(hash, this.lcHostname);
-        //hash = LangUtils.hashCode(hash, this.port);
-        //hash = LangUtils.hashCode(hash, this.schemeName);
-        //return hash;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.458 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "C3531E6AAE782B6B606114E2EA041CC9")
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_880185832 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_880185832 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_880185832 = super.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_880185832.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_880185832.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_880185832;
-        // ---------- Original Method ----------
-        //return super.clone();
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ComponentName;
 import android.content.Context;
@@ -87,21 +87,21 @@ public class ActivityChooserModel extends DataSetObservable {
                 && !historyFileName.endsWith(HISTORY_FILE_EXTENSION));
             {
                 mHistoryFileName = historyFileName + HISTORY_FILE_EXTENSION;
-            } //End block
+            } 
             {
                 mHistoryFileName = historyFileName;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mPackageMonitor.register(mContext, true);
-        // ---------- Original Method ----------
-        //mContext = context.getApplicationContext();
-        //if (!TextUtils.isEmpty(historyFileName)
-                //&& !historyFileName.endsWith(HISTORY_FILE_EXTENSION)) {
-            //mHistoryFileName = historyFileName + HISTORY_FILE_EXTENSION;
-        //} else {
-            //mHistoryFileName = historyFileName;
-        //}
-        //mPackageMonitor.register(mContext, true);
+        
+        
+        
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -123,30 +123,30 @@ public class ActivityChooserModel extends DataSetObservable {
         {
             mIntent = intent;
             loadActivitiesLocked();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (mIntent == intent) {
-                //return;
-            //}
-            //mIntent = intent;
-            //loadActivitiesLocked();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.457 -0400", hash_original_method = "27A17A1D87D77EAA50C2FB6DFA94EC7A", hash_generated_method = "61FEA511DDC01F31EACEAD012B094E27")
     public Intent getIntent() {
-        Intent varB4EAC82CA7396A68D541C85D26508E83_2032346325 = null; //Variable for return #1
+        Intent varB4EAC82CA7396A68D541C85D26508E83_2032346325 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2032346325 = mIntent;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2032346325.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_2032346325.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2032346325;
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //return mIntent;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -154,29 +154,29 @@ public class ActivityChooserModel extends DataSetObservable {
     public int getActivityCount() {
         {
             int var4413C4888B8E5E0960ECCEDD33A46240_333038491 = (mActivites.size());
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378583432 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378583432;
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //return mActivites.size();
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.457 -0400", hash_original_method = "032146065CC1BA2D79ECD4CB63DFEC7F", hash_generated_method = "533314AEAE2498F685DBAB0172DD31E8")
     public ResolveInfo getActivity(int index) {
-        ResolveInfo varB4EAC82CA7396A68D541C85D26508E83_2061226176 = null; //Variable for return #1
+        ResolveInfo varB4EAC82CA7396A68D541C85D26508E83_2061226176 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2061226176 = mActivites.get(index).resolveInfo;
-        } //End block
+        } 
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_2061226176.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2061226176.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2061226176;
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //return mActivites.get(index).resolveInfo;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -188,28 +188,28 @@ public class ActivityChooserModel extends DataSetObservable {
             int i = 0;
             {
                 ActivityResolveInfo currentActivity = activities.get(i);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(activity.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1866057773 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1866057773;
-        // ---------- Original Method ----------
-        //List<ActivityResolveInfo> activities = mActivites;
-        //final int activityCount = activities.size();
-        //for (int i = 0; i < activityCount; i++) {
-            //ActivityResolveInfo currentActivity = activities.get(i);
-            //if (currentActivity.resolveInfo == activity) {
-                //return i;
-            //}
-        //}
-        //return INVALID_INDEX;
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.459 -0400", hash_original_method = "2E1571A22B1C1279902BA9C2D35CCDAC", hash_generated_method = "458C27889FDAFBB63D99D1DBC0F7ACC9")
     public Intent chooseActivity(int index) {
-        Intent varB4EAC82CA7396A68D541C85D26508E83_143201409 = null; //Variable for return #1
-        Intent varB4EAC82CA7396A68D541C85D26508E83_1669940509 = null; //Variable for return #2
+        Intent varB4EAC82CA7396A68D541C85D26508E83_143201409 = null; 
+        Intent varB4EAC82CA7396A68D541C85D26508E83_1669940509 = null; 
         ActivityResolveInfo chosenActivity = mActivites.get(index);
         ComponentName chosenName = new ComponentName(
                 chosenActivity.resolveInfo.activityInfo.packageName,
@@ -222,68 +222,68 @@ public class ActivityChooserModel extends DataSetObservable {
                     choiceIntentCopy);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_143201409 = null;
-            } //End block
-        } //End block
+            } 
+        } 
         HistoricalRecord historicalRecord = new HistoricalRecord(chosenName,
                 System.currentTimeMillis(), DEFAULT_HISTORICAL_RECORD_WEIGHT);
         addHisoricalRecord(historicalRecord);
         varB4EAC82CA7396A68D541C85D26508E83_1669940509 = choiceIntent;
         addTaint(index);
-        Intent varA7E53CE21691AB073D9660D615818899_2110275514; //Final return value
+        Intent varA7E53CE21691AB073D9660D615818899_2110275514; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2110275514 = varB4EAC82CA7396A68D541C85D26508E83_143201409;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2110275514 = varB4EAC82CA7396A68D541C85D26508E83_1669940509;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2110275514.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2110275514.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2110275514;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.459 -0400", hash_original_method = "56E3863DC4DFDE24EBD2068470DB48E1", hash_generated_method = "502DB08B7514528D4C4579AC10A6BA23")
     public void setOnChooseActivityListener(OnChooseActivityListener listener) {
         mActivityChoserModelPolicy = listener;
-        // ---------- Original Method ----------
-        //mActivityChoserModelPolicy = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.460 -0400", hash_original_method = "8C412D794940DE98F4AAE841092A3BC7", hash_generated_method = "AC80E5005EC5B741D9722FD2A95A0317")
     public ResolveInfo getDefaultActivity() {
-        ResolveInfo varB4EAC82CA7396A68D541C85D26508E83_919433228 = null; //Variable for return #1
-        ResolveInfo varB4EAC82CA7396A68D541C85D26508E83_793105194 = null; //Variable for return #2
+        ResolveInfo varB4EAC82CA7396A68D541C85D26508E83_919433228 = null; 
+        ResolveInfo varB4EAC82CA7396A68D541C85D26508E83_793105194 = null; 
         {
             {
                 boolean varF4409FAE14740E362411403D55FB8813_1039533176 = (!mActivites.isEmpty());
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_919433228 = mActivites.get(0).resolveInfo;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_793105194 = null;
-        ResolveInfo varA7E53CE21691AB073D9660D615818899_589912012; //Final return value
+        ResolveInfo varA7E53CE21691AB073D9660D615818899_589912012; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_589912012 = varB4EAC82CA7396A68D541C85D26508E83_919433228;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_589912012 = varB4EAC82CA7396A68D541C85D26508E83_793105194;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_589912012.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_589912012.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_589912012;
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (!mActivites.isEmpty()) {
-                //return mActivites.get(0).resolveInfo;
-            //}
-        //}
-        //return null;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -295,10 +295,10 @@ public class ActivityChooserModel extends DataSetObservable {
         {
             weight = oldDefaultActivity.weight - newDefaultActivity.weight
                 + DEFAULT_ACTIVITY_INFLATION;
-        } //End block
+        } 
         {
             weight = DEFAULT_HISTORICAL_RECORD_WEIGHT;
-        } //End block
+        } 
         ComponentName defaultName = new ComponentName(
                 newDefaultActivity.resolveInfo.activityInfo.packageName,
                 newDefaultActivity.resolveInfo.activityInfo.name);
@@ -306,22 +306,22 @@ public class ActivityChooserModel extends DataSetObservable {
                 System.currentTimeMillis(), weight);
         addHisoricalRecord(historicalRecord);
         addTaint(index);
-        // ---------- Original Method ----------
-        //ActivityResolveInfo newDefaultActivity = mActivites.get(index);
-        //ActivityResolveInfo oldDefaultActivity = mActivites.get(0);
-        //final float weight;
-        //if (oldDefaultActivity != null) {
-            //weight = oldDefaultActivity.weight - newDefaultActivity.weight
-                //+ DEFAULT_ACTIVITY_INFLATION;
-        //} else {
-            //weight = DEFAULT_HISTORICAL_RECORD_WEIGHT;
-        //}
-        //ComponentName defaultName = new ComponentName(
-                //newDefaultActivity.resolveInfo.activityInfo.packageName,
-                //newDefaultActivity.resolveInfo.activityInfo.name);
-        //HistoricalRecord historicalRecord = new HistoricalRecord(defaultName,
-                //System.currentTimeMillis(), weight);
-        //addHisoricalRecord(historicalRecord);
+        
+        
+        
+        
+        
+            
+                
+        
+            
+        
+        
+                
+                
+        
+                
+        
     }
 
     
@@ -334,20 +334,20 @@ public class ActivityChooserModel extends DataSetObservable {
                 boolean var5804576A691D9F5270256606BAE1902D_1715690429 = (!TextUtils.isEmpty(mHistoryFileName));
                 {
                     AsyncTask.SERIAL_EXECUTOR.execute(new HistoryLoader());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (!mCanReadHistoricalData || !mHistoricalRecordsChanged) {
-                //return;
-            //}
-            //mCanReadHistoricalData = false;
-            //mReadShareHistoryCalled = true;
-            //if (!TextUtils.isEmpty(mHistoryFileName)) {
-                //AsyncTask.SERIAL_EXECUTOR.execute(new HistoryLoader());
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -356,30 +356,30 @@ public class ActivityChooserModel extends DataSetObservable {
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No preceding call to #readHistoricalData");
-            } //End block
+            } 
             mHistoricalRecordsChanged = false;
             mCanReadHistoricalData = true;
             {
                 boolean var5804576A691D9F5270256606BAE1902D_1187156299 = (!TextUtils.isEmpty(mHistoryFileName));
                 {
                     AsyncTask.SERIAL_EXECUTOR.execute(new HistoryPersister());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (!mReadShareHistoryCalled) {
-                //throw new IllegalStateException("No preceding call to #readHistoricalData");
-            //}
-            //if (!mHistoricalRecordsChanged) {
-                //return;
-            //}
-            //mHistoricalRecordsChanged = false;
-            //mCanReadHistoricalData = true;
-            //if (!TextUtils.isEmpty(mHistoryFileName)) {
-                //AsyncTask.SERIAL_EXECUTOR.execute(new HistoryPersister());
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+                
+            
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -388,15 +388,15 @@ public class ActivityChooserModel extends DataSetObservable {
         {
             mActivitySorter = activitySorter;
             sortActivities();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (mActivitySorter == activitySorter) {
-                //return;
-            //}
-            //mActivitySorter = activitySorter;
-            //sortActivities();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -409,17 +409,17 @@ public class ActivityChooserModel extends DataSetObservable {
                     mActivitySorter.sort(mIntent, mActivites,
                         Collections.unmodifiableList(mHistoricalRecords));
                     notifyChanged();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (mActivitySorter != null && !mActivites.isEmpty()) {
-                //mActivitySorter.sort(mIntent, mActivites,
-                        //Collections.unmodifiableList(mHistoricalRecords));
-                //notifyChanged();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+                
+                        
+                
+            
+        
     }
 
     
@@ -429,16 +429,16 @@ public class ActivityChooserModel extends DataSetObservable {
             mHistoryMaxSize = historyMaxSize;
             pruneExcessiveHistoricalRecordsLocked();
             sortActivities();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (mHistoryMaxSize == historyMaxSize) {
-                //return;
-            //}
-            //mHistoryMaxSize = historyMaxSize;
-            //pruneExcessiveHistoricalRecordsLocked();
-            //sortActivities();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+            
+        
     }
 
     
@@ -446,10 +446,10 @@ public class ActivityChooserModel extends DataSetObservable {
     public int getHistoryMaxSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450147795 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450147795;
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //return mHistoryMaxSize;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -457,13 +457,13 @@ public class ActivityChooserModel extends DataSetObservable {
     public int getHistorySize() {
         {
             int varE74BD067CCB63FDD155B3322AFBF873C_394531727 = (mHistoricalRecords.size());
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2055604038 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2055604038;
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //return mHistoricalRecords.size();
-        //}
+        
+        
+            
+        
     }
 
     
@@ -472,9 +472,9 @@ public class ActivityChooserModel extends DataSetObservable {
     protected void finalize() throws Throwable {
         super.finalize();
         mPackageMonitor.unregister();
-        // ---------- Original Method ----------
-        //super.finalize();
-        //mPackageMonitor.unregister();
+        
+        
+        
     }
 
     
@@ -487,22 +487,22 @@ public class ActivityChooserModel extends DataSetObservable {
                 pruneExcessiveHistoricalRecordsLocked();
                 persistHistoricalData();
                 sortActivities();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(historicalRecord.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1802402835 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1802402835;
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //final boolean added = mHistoricalRecords.add(historicalRecord);
-            //if (added) {
-                //mHistoricalRecordsChanged = true;
-                //pruneExcessiveHistoricalRecordsLocked();
-                //persistHistoricalData();
-                //sortActivities();
-            //}
-            //return added;
-        //}
+        
+        
+            
+            
+                
+                
+                
+                
+            
+            
+        
     }
 
     
@@ -515,21 +515,21 @@ public class ActivityChooserModel extends DataSetObservable {
             int i = 0;
             {
                 HistoricalRecord prunedRecord = choiceRecords.remove(0);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //List<HistoricalRecord> choiceRecords = mHistoricalRecords;
-        //final int pruneCount = choiceRecords.size() - mHistoryMaxSize;
-        //if (pruneCount <= 0) {
-            //return;
-        //}
-        //mHistoricalRecordsChanged = true;
-        //for (int i = 0; i < pruneCount; i++) {
-            //HistoricalRecord prunedRecord = choiceRecords.remove(0);
-            //if (DEBUG) {
-                //Log.i(LOG_TAG, "Pruned: " + prunedRecord);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -544,27 +544,27 @@ public class ActivityChooserModel extends DataSetObservable {
                 {
                     ResolveInfo resolveInfo = resolveInfos.get(i);
                     mActivites.add(new ActivityResolveInfo(resolveInfo));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             sortActivities();
-        } //End block
+        } 
         {
             notifyChanged();
-        } //End block
-        // ---------- Original Method ----------
-        //mActivites.clear();
-        //if (mIntent != null) {
-            //List<ResolveInfo> resolveInfos =
-                //mContext.getPackageManager().queryIntentActivities(mIntent, 0);
-            //final int resolveInfoCount = resolveInfos.size();
-            //for (int i = 0; i < resolveInfoCount; i++) {
-                //ResolveInfo resolveInfo = resolveInfos.get(i);
-                //mActivites.add(new ActivityResolveInfo(resolveInfo));
-            //}
-            //sortActivities();
-        //} else {
-            //notifyChanged();
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+            
+                
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -583,30 +583,30 @@ public class ActivityChooserModel extends DataSetObservable {
                     {
                         historicalRecords.remove(historicalRecord);
                         recordsRemoved = true;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             mHistoricalRecordsChanged = true;
             sortActivities();
-        } //End block
+        } 
         addTaint(packageName.getTaint());
-        // ---------- Original Method ----------
-        //boolean recordsRemoved = false;
-        //List<HistoricalRecord> historicalRecords = mHistoricalRecords;
-        //for (int i = 0; i < historicalRecords.size(); i++) {
-            //HistoricalRecord historicalRecord = historicalRecords.get(i);
-            //String recordPackageName = historicalRecord.activity.getPackageName();
-            //if (recordPackageName.equals(packageName)) {
-                //historicalRecords.remove(historicalRecord);
-                //recordsRemoved = true;
-            //}
-        //}
-        //if (recordsRemoved) {
-            //mHistoricalRecordsChanged = true;
-            //sortActivities();
-        //}
+        
+        
+        
+        
+            
+            
+            
+                
+                
+            
+        
+        
+            
+            
+        
     }
 
     
@@ -627,7 +627,7 @@ public class ActivityChooserModel extends DataSetObservable {
             addTaint(activityName.getTaint());
             addTaint(time);
             addTaint(weight);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -636,10 +636,10 @@ public class ActivityChooserModel extends DataSetObservable {
             this.activity = activityName;
             this.time = time;
             this.weight = weight;
-            // ---------- Original Method ----------
-            //this.activity = activityName;
-            //this.time = time;
-            //this.weight = weight;
+            
+            
+            
+            
         }
 
         
@@ -653,13 +653,13 @@ public class ActivityChooserModel extends DataSetObservable {
             result = prime * result + Float.floatToIntBits(weight);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_788408772 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_788408772;
-            // ---------- Original Method ----------
-            //final int prime = 31;
-            //int result = 1;
-            //result = prime * result + ((activity == null) ? 0 : activity.hashCode());
-            //result = prime * result + (int) (time ^ (time >>> 32));
-            //result = prime * result + Float.floatToIntBits(weight);
-            //return result;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -668,49 +668,49 @@ public class ActivityChooserModel extends DataSetObservable {
         public boolean equals(Object obj) {
             {
                 boolean varF071958F831141DD4937960A9F520909_41957313 = (getClass() != obj.getClass());
-            } //End collapsed parenthetic
+            } 
             HistoricalRecord other = (HistoricalRecord) obj;
             {
                 boolean var6E1AC62E0C5F0574834B43B3C6FB54B7_951800108 = (!activity.equals(other.activity));
-            } //End collapsed parenthetic
+            } 
             {
                 boolean var0EC1079F899BEB4CC63FE5981A8E170A_1421719577 = (Float.floatToIntBits(weight) != Float.floatToIntBits(other.weight));
-            } //End collapsed parenthetic
+            } 
             addTaint(obj.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1231063222 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1231063222;
-            // ---------- Original Method ----------
-            //if (this == obj) {
-                //return true;
-            //}
-            //if (obj == null) {
-                //return false;
-            //}
-            //if (getClass() != obj.getClass()) {
-                //return false;
-            //}
-            //HistoricalRecord other = (HistoricalRecord) obj;
-            //if (activity == null) {
-                //if (other.activity != null) {
-                    //return false;
-                //}
-            //} else if (!activity.equals(other.activity)) {
-                //return false;
-            //}
-            //if (time != other.time) {
-                //return false;
-            //}
-            //if (Float.floatToIntBits(weight) != Float.floatToIntBits(other.weight)) {
-                //return false;
-            //}
-            //return true;
+            
+            
+                
+            
+            
+                
+            
+            
+                
+            
+            
+            
+                
+                    
+                
+            
+                
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.467 -0400", hash_original_method = "DE8206875FA4E924E296C5ACB6D7F3F2", hash_generated_method = "FE6D0D1E5A7DADFBD0C07939E654340A")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1492338387 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1492338387 = null; 
             StringBuilder builder = new StringBuilder();
             builder.append("[");
             builder.append("; activity:").append(activity);
@@ -718,16 +718,16 @@ public class ActivityChooserModel extends DataSetObservable {
             builder.append("; weight:").append(new BigDecimal(weight));
             builder.append("]");
             varB4EAC82CA7396A68D541C85D26508E83_1492338387 = builder.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1492338387.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1492338387.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1492338387;
-            // ---------- Original Method ----------
-            //StringBuilder builder = new StringBuilder();
-            //builder.append("[");
-            //builder.append("; activity:").append(activity);
-            //builder.append("; time:").append(time);
-            //builder.append("; weight:").append(new BigDecimal(weight));
-            //builder.append("]");
-            //return builder.toString();
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -746,8 +746,8 @@ public class ActivityChooserModel extends DataSetObservable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.467 -0400", hash_original_method = "FE163077B7530186AE819FA48AA47F8E", hash_generated_method = "5FF0866FAB3426E950C36794AFE28F97")
         public  ActivityResolveInfo(ResolveInfo resolveInfo) {
             this.resolveInfo = resolveInfo;
-            // ---------- Original Method ----------
-            //this.resolveInfo = resolveInfo;
+            
+            
         }
 
         
@@ -757,8 +757,8 @@ public class ActivityChooserModel extends DataSetObservable {
             int varB15BFDB6118FAFD3CC127562D11D77C0_1976679480 = (31 + Float.floatToIntBits(weight));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2047171275 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2047171275;
-            // ---------- Original Method ----------
-            //return 31 + Float.floatToIntBits(weight);
+            
+            
         }
 
         
@@ -767,29 +767,29 @@ public class ActivityChooserModel extends DataSetObservable {
         public boolean equals(Object obj) {
             {
                 boolean varF071958F831141DD4937960A9F520909_1424937880 = (getClass() != obj.getClass());
-            } //End collapsed parenthetic
+            } 
             ActivityResolveInfo other = (ActivityResolveInfo) obj;
             {
                 boolean var0EC1079F899BEB4CC63FE5981A8E170A_1672656346 = (Float.floatToIntBits(weight) != Float.floatToIntBits(other.weight));
-            } //End collapsed parenthetic
+            } 
             addTaint(obj.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_937164956 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_937164956;
-            // ---------- Original Method ----------
-            //if (this == obj) {
-                //return true;
-            //}
-            //if (obj == null) {
-                //return false;
-            //}
-            //if (getClass() != obj.getClass()) {
-                //return false;
-            //}
-            //ActivityResolveInfo other = (ActivityResolveInfo) obj;
-            //if (Float.floatToIntBits(weight) != Float.floatToIntBits(other.weight)) {
-                //return false;
-            //}
-            //return true;
+            
+            
+                
+            
+            
+                
+            
+            
+                
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -799,30 +799,30 @@ public class ActivityChooserModel extends DataSetObservable {
             addTaint(another.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1052189190 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1052189190;
-            // ---------- Original Method ----------
-            //return  Float.floatToIntBits(another.weight) - Float.floatToIntBits(weight);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.469 -0400", hash_original_method = "6B7079774B733597AE380820B7605540", hash_generated_method = "C0C36A4289F2734270EF3F02AA4ECA84")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1330471682 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1330471682 = null; 
             StringBuilder builder = new StringBuilder();
             builder.append("[");
             builder.append("resolveInfo:").append(resolveInfo.toString());
             builder.append("; weight:").append(new BigDecimal(weight));
             builder.append("]");
             varB4EAC82CA7396A68D541C85D26508E83_1330471682 = builder.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1330471682.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1330471682.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1330471682;
-            // ---------- Original Method ----------
-            //StringBuilder builder = new StringBuilder();
-            //builder.append("[");
-            //builder.append("resolveInfo:").append(resolveInfo.toString());
-            //builder.append("; weight:").append(new BigDecimal(weight));
-            //builder.append("]");
-            //return builder.toString();
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -838,7 +838,7 @@ public class ActivityChooserModel extends DataSetObservable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.470 -0400", hash_original_method = "4BF496988E00827DD1484620E43167BF", hash_generated_method = "4BF496988E00827DD1484620E43167BF")
         public DefaultSorter ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -855,8 +855,8 @@ public class ActivityChooserModel extends DataSetObservable {
                     activity.weight = 0.0f;
                     String packageName = activity.resolveInfo.activityInfo.packageName;
                     packageNameToActivityMap.put(packageName, activity);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             final int lastShareIndex = historicalRecords.size() - 1;
             float nextRecordWeight = 1;
             {
@@ -868,20 +868,20 @@ public class ActivityChooserModel extends DataSetObservable {
                     {
                         activity.weight += historicalRecord.weight * nextRecordWeight;
                         nextRecordWeight = nextRecordWeight * WEIGHT_DECAY_COEFFICIENT;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             Collections.sort(activities);
             {
                 {
                     int i = 0;
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             addTaint(intent.getTaint());
             addTaint(activities.getTaint());
             addTaint(historicalRecords.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -897,7 +897,7 @@ public class ActivityChooserModel extends DataSetObservable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.472 -0400", hash_original_method = "0F6CF60457783C48329031B15DA96823", hash_generated_method = "0F6CF60457783C48329031B15DA96823")
         public HistoryLoader ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -907,7 +907,7 @@ public class ActivityChooserModel extends DataSetObservable {
             try 
             {
                 fis = mContext.openFileInput(mHistoryFileName);
-            } //End block
+            } 
             catch (FileNotFoundException fnfe)
             { }
             try 
@@ -917,14 +917,14 @@ public class ActivityChooserModel extends DataSetObservable {
                 int type = XmlPullParser.START_DOCUMENT;
                 {
                     type = parser.next();
-                } //End block
+                } 
                 {
                     boolean var1249786F987A59B50F6E7EA2A4AB531E_1330597937 = (!TAG_HISTORICAL_RECORDS.equals(parser.getName()));
                     {
                         if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("Share records file does not start with "
                             + TAG_HISTORICAL_RECORDS + " tag.");
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 List<HistoricalRecord> readRecords = new ArrayList<HistoricalRecord>();
                 {
                     type = parser.next();
@@ -933,15 +933,15 @@ public class ActivityChooserModel extends DataSetObservable {
                         boolean varE9687D88833662E84EEF04B8B0A9A85E_345381502 = (!TAG_HISTORICAL_RECORD.equals(nodeName));
                         {
                             if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("Share records file not well-formed.");
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     String activity = parser.getAttributeValue(null, ATTRIBUTE_ACTIVITY);
                     final long time = Long.parseLong(parser.getAttributeValue(null, ATTRIBUTE_TIME));
                     final float weight = Float.parseFloat(parser.getAttributeValue(null, ATTRIBUTE_WEIGHT));
                     HistoricalRecord readRecord = new HistoricalRecord(activity, time,
                             weight);
                     readRecords.add(readRecord);
-                } //End block
+                } 
                 {
                     Set<HistoricalRecord> uniqueShareRecords = new LinkedHashSet<HistoricalRecord>(readRecords);
                     List<HistoricalRecord> historicalRecords = mHistoricalRecords;
@@ -951,11 +951,11 @@ public class ActivityChooserModel extends DataSetObservable {
                         {
                             HistoricalRecord historicalRecord = historicalRecords.get(i);
                             uniqueShareRecords.add(historicalRecord);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         boolean varC2A990ED21E2616B83A41814FE1721C8_1740904389 = (historicalRecords.size() == uniqueShareRecords.size());
-                    } //End collapsed parenthetic
+                    } 
                     historicalRecords.clear();
                     historicalRecords.addAll(uniqueShareRecords);
                     mHistoricalRecordsChanged = true;
@@ -964,13 +964,13 @@ public class ActivityChooserModel extends DataSetObservable {
                         public void run() {
                             pruneExcessiveHistoricalRecordsLocked();
                             sortActivities();
-                            // ---------- Original Method ----------
-                            //pruneExcessiveHistoricalRecordsLocked();
-                            //sortActivities();
+                            
+                            
+                            
                         }
 });
-                } //End block
-            } //End block
+                } 
+            } 
             catch (XmlPullParserException xppe)
             { }
             catch (IOException ioe)
@@ -981,13 +981,13 @@ public class ActivityChooserModel extends DataSetObservable {
                     try 
                     {
                         fis.close();
-                    } //End block
+                    } 
                     catch (IOException ioe)
                     { }
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -1000,7 +1000,7 @@ public class ActivityChooserModel extends DataSetObservable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.474 -0400", hash_original_method = "F652F13A8701B98B9D8C3619B90FF892", hash_generated_method = "F652F13A8701B98B9D8C3619B90FF892")
         public HistoryPersister ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1010,11 +1010,11 @@ public class ActivityChooserModel extends DataSetObservable {
             List<HistoricalRecord> records = null;
             {
                 records = new ArrayList<HistoricalRecord>(mHistoricalRecords);
-            } //End block
+            } 
             try 
             {
                 fos = mContext.openFileOutput(mHistoryFileName, Context.MODE_PRIVATE);
-            } //End block
+            } 
             catch (FileNotFoundException fnfe)
             { }
             XmlSerializer serializer = Xml.newSerializer();
@@ -1033,11 +1033,11 @@ public class ActivityChooserModel extends DataSetObservable {
                         serializer.attribute(null, ATTRIBUTE_TIME, String.valueOf(record.time));
                         serializer.attribute(null, ATTRIBUTE_WEIGHT, String.valueOf(record.weight));
                         serializer.endTag(null, TAG_HISTORICAL_RECORD);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 serializer.endTag(null, TAG_HISTORICAL_RECORDS);
                 serializer.endDocument();
-            } //End block
+            } 
             catch (IllegalArgumentException iae)
             { }
             catch (IllegalStateException ise)
@@ -1050,13 +1050,13 @@ public class ActivityChooserModel extends DataSetObservable {
                     try 
                     {
                         fos.close();
-                    } //End block
+                    } 
                     catch (IOException e)
                     { }
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -1069,75 +1069,75 @@ public class ActivityChooserModel extends DataSetObservable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.475 -0400", hash_original_method = "7270678089AB03BAD6BBDC9C3DB17F70", hash_generated_method = "7270678089AB03BAD6BBDC9C3DB17F70")
         public DataModelPackageMonitor ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.475 -0400", hash_original_method = "C89F5C92B68E48D5DAFC93C690A3926A", hash_generated_method = "127949E8392499FAAB32F5B8715F8E57")
         @Override
         public void onPackageAdded(String packageName, int uid) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 loadActivitiesLocked();
-            } //End block
+            } 
             addTaint(packageName.getTaint());
             addTaint(uid);
-            // ---------- Original Method ----------
-            //synchronized (mInstanceLock) {
-                //loadActivitiesLocked();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.475 -0400", hash_original_method = "E08DC591D228402C0DBF164DF68C0AF4", hash_generated_method = "6A7F66E2249654D73D8F49B5D6C37D3D")
         @Override
         public void onPackageAppeared(String packageName, int reason) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 loadActivitiesLocked();
-            } //End block
+            } 
             addTaint(packageName.getTaint());
             addTaint(reason);
-            // ---------- Original Method ----------
-            //synchronized (mInstanceLock) {
-                //loadActivitiesLocked();
-            //}
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.475 -0400", hash_original_method = "A7BE115B10A66075A04B7082DDA7D411", hash_generated_method = "A273A0162799B58D7FFE22F810428893")
         @Override
         public void onPackageRemoved(String packageName, int uid) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 pruneHistoricalRecordsForPackageLocked(packageName);
                 loadActivitiesLocked();
-            } //End block
+            } 
             addTaint(packageName.getTaint());
             addTaint(uid);
-            // ---------- Original Method ----------
-            //synchronized (mInstanceLock) {
-                //pruneHistoricalRecordsForPackageLocked(packageName);
-                //loadActivitiesLocked();
-            //}
+            
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.476 -0400", hash_original_method = "31BBEB936625AC985495016944655B18", hash_generated_method = "87BF23817ACDAD063A7CCCC4CE2944EB")
         @Override
         public void onPackageDisappeared(String packageName, int reason) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 pruneHistoricalRecordsForPackageLocked(packageName);
                 loadActivitiesLocked();
-            } //End block
+            } 
             addTaint(packageName.getTaint());
             addTaint(reason);
-            // ---------- Original Method ----------
-            //synchronized (mInstanceLock) {
-                //pruneHistoricalRecordsForPackageLocked(packageName);
-                //loadActivitiesLocked();
-            //}
+            
+            
+                
+                
+            
         }
 
         

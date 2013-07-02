@@ -1,11 +1,11 @@
 package android.appwidget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -54,7 +54,7 @@ public class AppWidgetProviderInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.985 -0400", hash_original_method = "420920366E9BF4F133486E6ABF721531", hash_generated_method = "3BD10E1799DA4EF032CBAC6937E1F518")
     public  AppWidgetProviderInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -64,8 +64,8 @@ public class AppWidgetProviderInfo implements Parcelable {
             boolean var29DAD321C473403081C6A5A2E382533E_571677267 = (0 != in.readInt());
             {
                 this.provider = new ComponentName(in);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.minWidth = in.readInt();
         this.minHeight = in.readInt();
         this.minResizeWidth = in.readInt();
@@ -76,31 +76,31 @@ public class AppWidgetProviderInfo implements Parcelable {
             boolean var29DAD321C473403081C6A5A2E382533E_1549674044 = (0 != in.readInt());
             {
                 this.configure = new ComponentName(in);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.label = in.readString();
         this.icon = in.readInt();
         this.previewImage = in.readInt();
         this.autoAdvanceViewId = in.readInt();
         this.resizeMode = in.readInt();
-        // ---------- Original Method ----------
-        //if (0 != in.readInt()) {
-            //this.provider = new ComponentName(in);
-        //}
-        //this.minWidth = in.readInt();
-        //this.minHeight = in.readInt();
-        //this.minResizeWidth = in.readInt();
-        //this.minResizeHeight = in.readInt();
-        //this.updatePeriodMillis = in.readInt();
-        //this.initialLayout = in.readInt();
-        //if (0 != in.readInt()) {
-            //this.configure = new ComponentName(in);
-        //}
-        //this.label = in.readString();
-        //this.icon = in.readInt();
-        //this.previewImage = in.readInt();
-        //this.autoAdvanceViewId = in.readInt();
-        //this.resizeMode = in.readInt();
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -109,10 +109,10 @@ public class AppWidgetProviderInfo implements Parcelable {
         {
             out.writeInt(1);
             this.provider.writeToParcel(out, flags);
-        } //End block
+        } 
         {
             out.writeInt(0);
-        } //End block
+        } 
         out.writeInt(this.minWidth);
         out.writeInt(this.minHeight);
         out.writeInt(this.minResizeWidth);
@@ -122,10 +122,10 @@ public class AppWidgetProviderInfo implements Parcelable {
         {
             out.writeInt(1);
             this.configure.writeToParcel(out, flags);
-        } //End block
+        } 
         {
             out.writeInt(0);
-        } //End block
+        } 
         out.writeString(this.label);
         out.writeInt(this.icon);
         out.writeInt(this.previewImage);
@@ -133,30 +133,30 @@ public class AppWidgetProviderInfo implements Parcelable {
         out.writeInt(this.resizeMode);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (this.provider != null) {
-            //out.writeInt(1);
-            //this.provider.writeToParcel(out, flags);
-        //} else {
-            //out.writeInt(0);
-        //}
-        //out.writeInt(this.minWidth);
-        //out.writeInt(this.minHeight);
-        //out.writeInt(this.minResizeWidth);
-        //out.writeInt(this.minResizeHeight);
-        //out.writeInt(this.updatePeriodMillis);
-        //out.writeInt(this.initialLayout);
-        //if (this.configure != null) {
-            //out.writeInt(1);
-            //this.configure.writeToParcel(out, flags);
-        //} else {
-            //out.writeInt(0);
-        //}
-        //out.writeString(this.label);
-        //out.writeInt(this.icon);
-        //out.writeInt(this.previewImage);
-        //out.writeInt(this.autoAdvanceViewId);
-        //out.writeInt(this.resizeMode);
+        
+        
+            
+            
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -164,19 +164,20 @@ public class AppWidgetProviderInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_911327165 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_911327165;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.988 -0400", hash_original_method = "53CD7F02665BA9CCD92FD799E19E76A8", hash_generated_method = "2A974645D158D78441BCF58D65E78018")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1070037961 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1070037961 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1070037961 = "AppWidgetProviderInfo(provider=" + this.provider + ")";
-        varB4EAC82CA7396A68D541C85D26508E83_1070037961.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1070037961.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1070037961;
-        // ---------- Original Method ----------
-        //return "AppWidgetProviderInfo(provider=" + this.provider + ")";
+        
+        
     }
 
     
@@ -207,13 +208,13 @@ public class AppWidgetProviderInfo implements Parcelable {
             return new AppWidgetProviderInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public AppWidgetProviderInfo createFromParcel(Parcel parcel)
         {
             return new AppWidgetProviderInfo(parcel);
         }
     
-    // orphaned legacy method
+    
     public AppWidgetProviderInfo[] newArray(int size)
         {
             return new AppWidgetProviderInfo[size];

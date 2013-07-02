@@ -1,11 +1,11 @@
 package android.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -30,7 +30,7 @@ public class Credentials {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.043 -0400", hash_original_method = "1F7275C8DACF289F4D2AEA7102114D3A", hash_generated_method = "1F7275C8DACF289F4D2AEA7102114D3A")
     public Credentials ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -46,6 +46,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static List<Object> convertFromPem(byte[] bytes) throws IOException {
         ByteArrayInputStream bai = new ByteArrayInputStream(bytes);
         Reader reader = new InputStreamReader(bai, Charsets.US_ASCII);
@@ -60,6 +61,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Credentials getInstance() {
         if (singleton == null) {
             singleton = new Credentials();
@@ -68,46 +70,49 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.044 -0400", hash_original_method = "E5CB597E19A699BEE6BE3111711F0E73", hash_generated_method = "13CE26C29CA5594E9B23522FD88F3FD2")
     public void unlock(Context context) {
         try 
         {
             Intent intent = new Intent(UNLOCK_ACTION);
             context.startActivity(intent);
-        } //End block
+        } 
         catch (ActivityNotFoundException e)
         { }
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //Intent intent = new Intent(UNLOCK_ACTION);
-            //context.startActivity(intent);
-        //} catch (ActivityNotFoundException e) {
-            //Log.w(LOGTAG, e.toString());
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.045 -0400", hash_original_method = "495C1AA770D3E4C1428A37EE08C3D570", hash_generated_method = "9A1A85065AB2AEFB61B949F024FE4070")
     public void install(Context context) {
         try 
         {
             Intent intent = KeyChain.createInstallIntent();
             context.startActivity(intent);
-        } //End block
+        } 
         catch (ActivityNotFoundException e)
         { }
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //Intent intent = KeyChain.createInstallIntent();
-            //context.startActivity(intent);
-        //} catch (ActivityNotFoundException e) {
-            //Log.w(LOGTAG, e.toString());
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.045 -0400", hash_original_method = "37483F7105DB6C05B518E1F3D82A6DB5", hash_generated_method = "A85533CF4133203FF6C4DE022F2B73A8")
     public void install(Context context, KeyPair pair) {
         try 
@@ -116,23 +121,24 @@ public class Credentials {
             intent.putExtra(EXTRA_PRIVATE_KEY, pair.getPrivate().getEncoded());
             intent.putExtra(EXTRA_PUBLIC_KEY, pair.getPublic().getEncoded());
             context.startActivity(intent);
-        } //End block
+        } 
         catch (ActivityNotFoundException e)
         { }
         addTaint(context.getTaint());
         addTaint(pair.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //Intent intent = KeyChain.createInstallIntent();
-            //intent.putExtra(EXTRA_PRIVATE_KEY, pair.getPrivate().getEncoded());
-            //intent.putExtra(EXTRA_PUBLIC_KEY, pair.getPublic().getEncoded());
-            //context.startActivity(intent);
-        //} catch (ActivityNotFoundException e) {
-            //Log.w(LOGTAG, e.toString());
-        //}
+        
+        
+            
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.046 -0400", hash_original_method = "CC15ACCAB16387C45A58B01F639D7908", hash_generated_method = "B4D0CF1B83A9D7AA61DBF441C11549D5")
     public void install(Context context, String type, byte[] value) {
         try 
@@ -140,20 +146,20 @@ public class Credentials {
             Intent intent = KeyChain.createInstallIntent();
             intent.putExtra(type, value);
             context.startActivity(intent);
-        } //End block
+        } 
         catch (ActivityNotFoundException e)
         { }
         addTaint(context.getTaint());
         addTaint(type.getTaint());
         addTaint(value[0]);
-        // ---------- Original Method ----------
-        //try {
-            //Intent intent = KeyChain.createInstallIntent();
-            //intent.putExtra(type, value);
-            //context.startActivity(intent);
-        //} catch (ActivityNotFoundException e) {
-            //Log.w(LOGTAG, e.toString());
-        //}
+        
+        
+            
+            
+            
+        
+            
+        
     }
 
     

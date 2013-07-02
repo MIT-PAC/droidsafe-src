@@ -1,11 +1,11 @@
 package org.apache.http.impl.conn;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.apache.http.HttpException;
@@ -43,22 +43,22 @@ public class DefaultResponseParser extends AbstractMessageParser {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Response factory may not be null");
-        } //End block
+        } 
         this.responseFactory = responseFactory;
         this.lineBuf = new CharArrayBuffer(128);
         this.maxGarbageLines = params.getIntParameter(
             ConnConnectionPNames.MAX_STATUS_LINE_GARBAGE, Integer.MAX_VALUE);
         addTaint(buffer.getTaint());
         addTaint(parser.getTaint());
-        // ---------- Original Method ----------
-        //if (responseFactory == null) {
-            //throw new IllegalArgumentException
-                //("Response factory may not be null");
-        //}
-        //this.responseFactory = responseFactory;
-        //this.lineBuf = new CharArrayBuffer(128);
-        //this.maxGarbageLines = params.getIntParameter(
-            //ConnConnectionPNames.MAX_STATUS_LINE_GARBAGE, Integer.MAX_VALUE);
+        
+        
+            
+                
+        
+        
+        
+        
+            
     }
 
     
@@ -66,7 +66,7 @@ public class DefaultResponseParser extends AbstractMessageParser {
     @Override
     protected HttpMessage parseHead(
             final SessionInputBuffer sessionBuffer) throws IOException, HttpException {
-        HttpMessage varB4EAC82CA7396A68D541C85D26508E83_950813857 = null; //Variable for return #1
+        HttpMessage varB4EAC82CA7396A68D541C85D26508E83_950813857 = null; 
         this.lineBuf.clear();
         int count = 0;
         ParserCursor cursor = null;
@@ -74,23 +74,23 @@ public class DefaultResponseParser extends AbstractMessageParser {
             int i = sessionBuffer.readLine(this.lineBuf);
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoHttpResponseException("The target server failed to respond");
-            } //End block
+            } 
             cursor = new ParserCursor(0, this.lineBuf.length());
             {
                 boolean var5AC484C239E6FF2F638CBF0BDF14EAC2_855852778 = (lineParser.hasProtocolVersion(this.lineBuf, cursor));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ProtocolException("The server failed to respond with a " +
                         "valid HTTP response");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         StatusLine statusline = lineParser.parseStatusLine(this.lineBuf, cursor);
         varB4EAC82CA7396A68D541C85D26508E83_950813857 = this.responseFactory.newHttpResponse(statusline, null);
         addTaint(sessionBuffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_950813857.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_950813857.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_950813857;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

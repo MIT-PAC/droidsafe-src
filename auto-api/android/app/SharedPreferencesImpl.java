@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.SharedPreferences;
 import android.os.FileUtils.FileStatus;
@@ -72,13 +72,13 @@ final class SharedPreferencesImpl implements SharedPreferences {
         mLoaded = false;
         mMap = null;
         startLoadFromDisk();
-        // ---------- Original Method ----------
-        //mFile = file;
-        //mBackupFile = makeBackupFile(file);
-        //mMode = mode;
-        //mLoaded = false;
-        //mMap = null;
-        //startLoadFromDisk();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -86,7 +86,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
     private void startLoadFromDisk() {
         {
             mLoaded = false;
-        } //End block
+        } 
         new Thread("SharedPreferencesImpl-load") {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.484 -0400", hash_original_method = "6D08A306D4AFABC44535E176A1E8BC52", hash_generated_method = "C3556A9CDF1B966BA8163613C05E53EF")
             public void run() {
@@ -94,28 +94,29 @@ final class SharedPreferencesImpl implements SharedPreferences {
                     Object varEEB7B748507846A2C83D03D5993A3A41_1054063937 = (SharedPreferencesImpl.this);
                     {
                         loadFromDiskLocked();
-                    } //End block
-                } //End collapsed parenthetic
-                // ---------- Original Method ----------
-                //synchronized (SharedPreferencesImpl.this) {
-                    //loadFromDiskLocked();
-                //}
+                    } 
+                } 
+                
+                
+                    
+                
             }
 }.start();
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //mLoaded = false;
-        //}
-        //new Thread("SharedPreferencesImpl-load") {
-            //public void run() {
-                //synchronized (SharedPreferencesImpl.this) {
-                    //loadFromDiskLocked();
-                //}
-            //}
-        //}.start();
+        
+        
+            
+        
+        
+            
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.485 -0400", hash_original_method = "E285F048C64F263B62F1F06EEC72F6E0", hash_generated_method = "7F5BE1AF3C0D8B62552175FE687C9AA1")
     private void loadFromDiskLocked() {
         {
@@ -123,11 +124,11 @@ final class SharedPreferencesImpl implements SharedPreferences {
             {
                 mFile.delete();
                 mBackupFile.renameTo(mFile);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varD47DECAE2FF36587B1AAA379A993E7CF_2136162774 = (mFile.exists() && !mFile.canRead());
-        } //End collapsed parenthetic
+        } 
         Map map = null;
         FileStatus stat = new FileStatus();
         {
@@ -139,27 +140,27 @@ final class SharedPreferencesImpl implements SharedPreferences {
                         new FileInputStream(mFile), 16*1024);
                     map = XmlUtils.readMapXml(str);
                     str.close();
-                } //End block
+                } 
                 catch (XmlPullParserException e)
                 { }
                 catch (FileNotFoundException e)
                 { }
                 catch (IOException e)
                 { }
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mLoaded = true;
         {
             mMap = map;
             mStatTimestamp = stat.mtime;
             mStatSize = stat.size;
-        } //End block
+        } 
         {
             mMap = new HashMap<String, Object>();
-        } //End block
+        } 
         notifyAll();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -173,60 +174,61 @@ final class SharedPreferencesImpl implements SharedPreferences {
         {
             {
                 boolean varB6158C0E75648F64F85FE11BFA0EEA58_1256336291 = (!hasFileChangedUnexpectedly());
-            } //End collapsed parenthetic
+            } 
             startLoadFromDisk();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (!hasFileChangedUnexpectedly()) {
-                //return;
-            //}
-            //startLoadFromDisk();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.486 -0400", hash_original_method = "A66A0F368E0CD54CE4119FA6EA4CE2B9", hash_generated_method = "1465E7EFD9FCAB48BB6ADD50F063402C")
     private boolean hasFileChangedUnexpectedly() {
         {
             {
                 Log.d(TAG, "disk write in flight, not unexpected.");
-            } //End block
-        } //End block
+            } 
+        } 
         FileStatus stat = new FileStatus();
         {
             boolean varA005498AA56B05798F31373B591C38F2_620249599 = (!FileUtils.getFileStatus(mFile.getPath(), stat));
-        } //End collapsed parenthetic
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_660091489 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_660091489;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mDiskWritesInFlight > 0) {
-                //if (DEBUG) Log.d(TAG, "disk write in flight, not unexpected.");
-                //return false;
-            //}
-        //}
-        //FileStatus stat = new FileStatus();
-        //if (!FileUtils.getFileStatus(mFile.getPath(), stat)) {
-            //return true;
-        //}
-        //synchronized (this) {
-            //return mStatTimestamp != stat.mtime || mStatSize != stat.size;
-        //}
+        
+        
+            
+                
+                
+            
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.487 -0400", hash_original_method = "CD8081B759B90CE7833F86EB66B232F5", hash_generated_method = "CEC7D0ED2AE4F64E535B55F2C4201329")
     public void registerOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         {
             mListeners.put(listener, mContent);
-        } //End block
+        } 
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //synchronized(this) {
-            //mListeners.put(listener, mContent);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -234,97 +236,98 @@ final class SharedPreferencesImpl implements SharedPreferences {
     public void unregisterOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener) {
         {
             mListeners.remove(listener);
-        } //End block
+        } 
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //synchronized(this) {
-            //mListeners.remove(listener);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.488 -0400", hash_original_method = "4E41B5524ECBD1AD902DE6B06A01DA71", hash_generated_method = "7DE227DA1D900EAA31405CC92B33A633")
     private void awaitLoadedLocked() {
         {
             BlockGuard.getThreadPolicy().onReadFromDisk();
-        } //End block
+        } 
         {
             try 
             {
                 wait();
-            } //End block
+            } 
             catch (InterruptedException unused)
             { }
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mLoaded) {
-            //BlockGuard.getThreadPolicy().onReadFromDisk();
-        //}
-        //while (!mLoaded) {
-            //try {
-                //wait();
-            //} catch (InterruptedException unused) {
-            //}
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.491 -0400", hash_original_method = "BA8526BB1455076706AECC9BAC06F7D3", hash_generated_method = "5A0EFA124DCAE63CD325307267C926E5")
     public Map<String, ?> getAll() {
-        Map<String, ?> varB4EAC82CA7396A68D541C85D26508E83_1923204164 = null; //Variable for return #1
+        Map<String, ?> varB4EAC82CA7396A68D541C85D26508E83_1923204164 = null; 
         {
             awaitLoadedLocked();
             varB4EAC82CA7396A68D541C85D26508E83_1923204164 = new HashMap<String, Object>(mMap);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1923204164.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1923204164.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1923204164;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //awaitLoadedLocked();
-            //return new HashMap<String, Object>(mMap);
-        //}
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.492 -0400", hash_original_method = "4363C372EF13513A221D5D74A24EBA33", hash_generated_method = "4C87EB891E9837CD5A51ED72F45209B1")
     public String getString(String key, String defValue) {
-        String varB4EAC82CA7396A68D541C85D26508E83_585088121 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_585088121 = null; 
         {
             awaitLoadedLocked();
             String v = (String)mMap.get(key);
             varB4EAC82CA7396A68D541C85D26508E83_585088121 = v != null ? v : defValue;
-        } //End block
+        } 
         addTaint(key.getTaint());
         addTaint(defValue.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_585088121.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_585088121.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_585088121;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //awaitLoadedLocked();
-            //String v = (String)mMap.get(key);
-            //return v != null ? v : defValue;
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.494 -0400", hash_original_method = "66BFB743F0303E06F65F01D81F24C82B", hash_generated_method = "835BCB9307CC317BBC82E785F7344D8A")
     public Set<String> getStringSet(String key, Set<String> defValues) {
-        Set<String> varB4EAC82CA7396A68D541C85D26508E83_1007064122 = null; //Variable for return #1
+        Set<String> varB4EAC82CA7396A68D541C85D26508E83_1007064122 = null; 
         {
             awaitLoadedLocked();
             Set<String> v = (Set<String>) mMap.get(key);
             varB4EAC82CA7396A68D541C85D26508E83_1007064122 = v != null ? v : defValues;
-        } //End block
+        } 
         addTaint(key.getTaint());
         addTaint(defValues.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1007064122.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1007064122.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1007064122;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //awaitLoadedLocked();
-            //Set<String> v = (Set<String>) mMap.get(key);
-            //return v != null ? v : defValues;
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -333,17 +336,17 @@ final class SharedPreferencesImpl implements SharedPreferences {
         {
             awaitLoadedLocked();
             Integer v = (Integer)mMap.get(key);
-        } //End block
+        } 
         addTaint(key.getTaint());
         addTaint(defValue);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1371628121 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1371628121;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //awaitLoadedLocked();
-            //Integer v = (Integer)mMap.get(key);
-            //return v != null ? v : defValue;
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -352,17 +355,17 @@ final class SharedPreferencesImpl implements SharedPreferences {
         {
             awaitLoadedLocked();
             Long v = (Long)mMap.get(key);
-        } //End block
+        } 
         addTaint(key.getTaint());
         addTaint(defValue);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_977757087 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_977757087;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //awaitLoadedLocked();
-            //Long v = (Long)mMap.get(key);
-            //return v != null ? v : defValue;
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -371,17 +374,17 @@ final class SharedPreferencesImpl implements SharedPreferences {
         {
             awaitLoadedLocked();
             Float v = (Float)mMap.get(key);
-        } //End block
+        } 
         addTaint(key.getTaint());
         addTaint(defValue);
         float var546ADE640B6EDFBC8A086EF31347E768_247087762 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_247087762;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //awaitLoadedLocked();
-            //Float v = (Float)mMap.get(key);
-            //return v != null ? v : defValue;
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -390,17 +393,17 @@ final class SharedPreferencesImpl implements SharedPreferences {
         {
             awaitLoadedLocked();
             Boolean v = (Boolean)mMap.get(key);
-        } //End block
+        } 
         addTaint(key.getTaint());
         addTaint(defValue);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_323761290 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_323761290;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //awaitLoadedLocked();
-            //Boolean v = (Boolean)mMap.get(key);
-            //return v != null ? v : defValue;
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -409,32 +412,33 @@ final class SharedPreferencesImpl implements SharedPreferences {
         {
             awaitLoadedLocked();
             boolean varBC7DFBFAB8E0EAD217132FDF3CCDDF3E_225568808 = (mMap.containsKey(key));
-        } //End block
+        } 
         addTaint(key.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_806022749 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_806022749;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //awaitLoadedLocked();
-            //return mMap.containsKey(key);
-        //}
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.501 -0400", hash_original_method = "4D22F9B98CC44B257DB4ED7BF7E423CC", hash_generated_method = "875B0C724A7027AC96541D7A37F11C73")
     public Editor edit() {
-        Editor varB4EAC82CA7396A68D541C85D26508E83_1688770651 = null; //Variable for return #1
+        Editor varB4EAC82CA7396A68D541C85D26508E83_1688770651 = null; 
         {
             awaitLoadedLocked();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1688770651 = new EditorImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_1688770651.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1688770651.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1688770651;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //awaitLoadedLocked();
-        //}
-        //return new EditorImpl();
+        
+        
+            
+        
+        
     }
 
     
@@ -461,21 +465,22 @@ final class SharedPreferencesImpl implements SharedPreferences {
                 Object var232E05A46CB4C244745CD03ED44CEBDA_445930101 = (SharedPreferencesImpl.this);
                 {
                     wasEmpty = mDiskWritesInFlight == 1;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 writeToDiskRunnable.run();
-            } //End block
-        } //End block
+            } 
+        } 
         QueuedWork.singleThreadExecutor().execute(writeToDiskRunnable);
         addTaint(mcr.getTaint());
         addTaint(postWriteRunnable.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
-        private static FileOutputStream createFileOutputStream(File file) {
+        @DSModeled(DSC.SPEC)
+    private static FileOutputStream createFileOutputStream(File file) {
         FileOutputStream str = null;
         try {
             str = new FileOutputStream(file);
@@ -499,6 +504,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.504 -0400", hash_original_method = "2845FAF740EE3AE38D64734030124734", hash_generated_method = "D80E710C2F1AD201DC6E49644E1886C3")
     private void writeToFile(MemoryCommitResult mcr) {
         {
@@ -506,7 +512,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
             {
                 {
                     mcr.setDiskWriteResult(true);
-                } //End block
+                } 
                 {
                     boolean var8752700CBD0D95D9BA93EA4EAF6E4584_1079995390 = (!mBackupFile.exists());
                     {
@@ -514,21 +520,21 @@ final class SharedPreferencesImpl implements SharedPreferences {
                             boolean var97E99B42A4C3EF9AD06C1BE92A8A0125_2024436519 = (!mFile.renameTo(mBackupFile));
                             {
                                 mcr.setDiskWriteResult(false);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         mFile.delete();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         try 
         {
             FileOutputStream str = createFileOutputStream(mFile);
             {
                 mcr.setDiskWriteResult(false);
-            } //End block
+            } 
             XmlUtils.writeMapXml(mcr.mapToWriteToDisk, str);
             FileUtils.sync(str);
             str.close();
@@ -540,12 +546,12 @@ final class SharedPreferencesImpl implements SharedPreferences {
                     {
                         mStatTimestamp = stat.mtime;
                         mStatSize = stat.size;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             mBackupFile.delete();
             mcr.setDiskWriteResult(true);
-        } //End block
+        } 
         catch (XmlPullParserException e)
         { }
         catch (IOException e)
@@ -555,13 +561,13 @@ final class SharedPreferencesImpl implements SharedPreferences {
             {
                 {
                     boolean var8D9FAE26A4E65BB2FC5E55BBC862BDCF_1425802606 = (!mFile.delete());
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         mcr.setDiskWriteResult(false);
         addTaint(mcr.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -588,7 +594,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.505 -0400", hash_original_method = "1F3E23CA54BAEE886A8B49EA267FA6D4", hash_generated_method = "1F3E23CA54BAEE886A8B49EA267FA6D4")
         public MemoryCommitResult ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -596,9 +602,9 @@ final class SharedPreferencesImpl implements SharedPreferences {
         public void setDiskWriteResult(boolean result) {
             writeToDiskResult = result;
             writtenToDiskLatch.countDown();
-            // ---------- Original Method ----------
-            //writeToDiskResult = result;
-            //writtenToDiskLatch.countDown();
+            
+            
+            
         }
 
         
@@ -617,156 +623,156 @@ final class SharedPreferencesImpl implements SharedPreferences {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.507 -0400", hash_original_method = "068A863F3588C3FB3F228BFE7DE0FB01", hash_generated_method = "068A863F3588C3FB3F228BFE7DE0FB01")
         public EditorImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.508 -0400", hash_original_method = "EFFD7B235C5590A6C15EA464602A0862", hash_generated_method = "CA55D8B17E134530991968AA7E928234")
         public Editor putString(String key, String value) {
-            Editor varB4EAC82CA7396A68D541C85D26508E83_196410739 = null; //Variable for return #1
+            Editor varB4EAC82CA7396A68D541C85D26508E83_196410739 = null; 
             {
                 mModified.put(key, value);
                 varB4EAC82CA7396A68D541C85D26508E83_196410739 = this;
-            } //End block
+            } 
             addTaint(key.getTaint());
             addTaint(value.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_196410739.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_196410739.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_196410739;
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //mModified.put(key, value);
-                //return this;
-            //}
+            
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.510 -0400", hash_original_method = "799426C68EE59A97CAF3D6E033ED6AED", hash_generated_method = "E5F0DBB66ECBB2902F4E95EC76728BD0")
         public Editor putStringSet(String key, Set<String> values) {
-            Editor varB4EAC82CA7396A68D541C85D26508E83_233445183 = null; //Variable for return #1
+            Editor varB4EAC82CA7396A68D541C85D26508E83_233445183 = null; 
             {
                 mModified.put(key, values);
                 varB4EAC82CA7396A68D541C85D26508E83_233445183 = this;
-            } //End block
+            } 
             addTaint(key.getTaint());
             addTaint(values.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_233445183.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_233445183.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_233445183;
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //mModified.put(key, values);
-                //return this;
-            //}
+            
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.511 -0400", hash_original_method = "B5181352BC82403801755A11BC05DCE9", hash_generated_method = "A3FF1CF2A7750992051F89FDD4B8B961")
         public Editor putInt(String key, int value) {
-            Editor varB4EAC82CA7396A68D541C85D26508E83_1090673620 = null; //Variable for return #1
+            Editor varB4EAC82CA7396A68D541C85D26508E83_1090673620 = null; 
             {
                 mModified.put(key, value);
                 varB4EAC82CA7396A68D541C85D26508E83_1090673620 = this;
-            } //End block
+            } 
             addTaint(key.getTaint());
             addTaint(value);
-            varB4EAC82CA7396A68D541C85D26508E83_1090673620.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1090673620.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1090673620;
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //mModified.put(key, value);
-                //return this;
-            //}
+            
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.512 -0400", hash_original_method = "2390F394A779B486378B9C93DB0AC773", hash_generated_method = "965B961DB1EBDB778DA452354C3822C2")
         public Editor putLong(String key, long value) {
-            Editor varB4EAC82CA7396A68D541C85D26508E83_715082413 = null; //Variable for return #1
+            Editor varB4EAC82CA7396A68D541C85D26508E83_715082413 = null; 
             {
                 mModified.put(key, value);
                 varB4EAC82CA7396A68D541C85D26508E83_715082413 = this;
-            } //End block
+            } 
             addTaint(key.getTaint());
             addTaint(value);
-            varB4EAC82CA7396A68D541C85D26508E83_715082413.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_715082413.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_715082413;
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //mModified.put(key, value);
-                //return this;
-            //}
+            
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.513 -0400", hash_original_method = "913478FEA634AAED5778EE46C57EEF5E", hash_generated_method = "4A8E478ED422B1209ADE519967FED5B6")
         public Editor putFloat(String key, float value) {
-            Editor varB4EAC82CA7396A68D541C85D26508E83_674076844 = null; //Variable for return #1
+            Editor varB4EAC82CA7396A68D541C85D26508E83_674076844 = null; 
             {
                 mModified.put(key, value);
                 varB4EAC82CA7396A68D541C85D26508E83_674076844 = this;
-            } //End block
+            } 
             addTaint(key.getTaint());
             addTaint(value);
-            varB4EAC82CA7396A68D541C85D26508E83_674076844.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_674076844.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_674076844;
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //mModified.put(key, value);
-                //return this;
-            //}
+            
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.514 -0400", hash_original_method = "FBC14C4FFFA5A0EBC88C6D503172C819", hash_generated_method = "75B41F10815A7FA4562AC91E9A7D2ACF")
         public Editor putBoolean(String key, boolean value) {
-            Editor varB4EAC82CA7396A68D541C85D26508E83_766505592 = null; //Variable for return #1
+            Editor varB4EAC82CA7396A68D541C85D26508E83_766505592 = null; 
             {
                 mModified.put(key, value);
                 varB4EAC82CA7396A68D541C85D26508E83_766505592 = this;
-            } //End block
+            } 
             addTaint(key.getTaint());
             addTaint(value);
-            varB4EAC82CA7396A68D541C85D26508E83_766505592.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_766505592.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_766505592;
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //mModified.put(key, value);
-                //return this;
-            //}
+            
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.516 -0400", hash_original_method = "7C60C1DCB4FF55A3B2BA6A50F523FE33", hash_generated_method = "D71601405B5DDD45510CFC7EE25700A8")
         public Editor remove(String key) {
-            Editor varB4EAC82CA7396A68D541C85D26508E83_1442835064 = null; //Variable for return #1
+            Editor varB4EAC82CA7396A68D541C85D26508E83_1442835064 = null; 
             {
                 mModified.put(key, this);
                 varB4EAC82CA7396A68D541C85D26508E83_1442835064 = this;
-            } //End block
+            } 
             addTaint(key.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1442835064.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1442835064.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1442835064;
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //mModified.put(key, this);
-                //return this;
-            //}
+            
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.518 -0400", hash_original_method = "59F9BBF7AADFDAE77F62CA904307DAB9", hash_generated_method = "3539C733C5515581CB81DCA4AF612E7D")
         public Editor clear() {
-            Editor varB4EAC82CA7396A68D541C85D26508E83_1968146096 = null; //Variable for return #1
+            Editor varB4EAC82CA7396A68D541C85D26508E83_1968146096 = null; 
             {
                 mClear = true;
                 varB4EAC82CA7396A68D541C85D26508E83_1968146096 = this;
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1968146096.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_1968146096.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1968146096;
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //mClear = true;
-                //return this;
-            //}
+            
+            
+                
+                
+            
         }
 
         
@@ -793,45 +799,45 @@ final class SharedPreferencesImpl implements SharedPreferences {
                 };
             SharedPreferencesImpl.this.enqueueDiskWrite(mcr, postWriteRunnable);
             notifyListeners(mcr);
-            // ---------- Original Method ----------
-            //final MemoryCommitResult mcr = commitToMemory();
-            //final Runnable awaitCommit = new Runnable() {
-                    //public void run() {
-                        //try {
-                            //mcr.writtenToDiskLatch.await();
-                        //} catch (InterruptedException ignored) {
-                        //}
-                    //}
-                //};
-            //QueuedWork.add(awaitCommit);
-            //Runnable postWriteRunnable = new Runnable() {
-                    //public void run() {
-                        //awaitCommit.run();
-                        //QueuedWork.remove(awaitCommit);
-                    //}
-                //};
-            //SharedPreferencesImpl.this.enqueueDiskWrite(mcr, postWriteRunnable);
-            //notifyListeners(mcr);
+            
+            
+            
+                    
+                        
+                            
+                        
+                        
+                    
+                
+            
+            
+                    
+                        
+                        
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.523 -0400", hash_original_method = "686A9AF4CEF5EAEBEB20BB8BD072C7B7", hash_generated_method = "175B925E15942B4845A8684A6AA90C55")
         private MemoryCommitResult commitToMemory() {
-            MemoryCommitResult varB4EAC82CA7396A68D541C85D26508E83_46161598 = null; //Variable for return #1
+            MemoryCommitResult varB4EAC82CA7396A68D541C85D26508E83_46161598 = null; 
             MemoryCommitResult mcr = new MemoryCommitResult();
             {
                 Object var232E05A46CB4C244745CD03ED44CEBDA_195102297 = (SharedPreferencesImpl.this);
                 {
                     {
                         mMap = new HashMap<String, Object>(mMap);
-                    } //End block
+                    } 
                     mcr.mapToWriteToDisk = mMap;
                     boolean hasListeners = mListeners.size() > 0;
                     {
                         mcr.keysModified = new ArrayList<String>();
                         mcr.listeners =
                             new HashSet<OnSharedPreferenceChangeListener>(mListeners.keySet());
-                    } //End block
+                    } 
                     {
                         {
                             {
@@ -839,10 +845,10 @@ final class SharedPreferencesImpl implements SharedPreferences {
                                 {
                                     mcr.changesMade = true;
                                     mMap.clear();
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             mClear = false;
-                        } //End block
+                        } 
                         {
                             Iterator<Map.Entry<String, Object>> varF82C588A08B6DF5CE4ADFA834C909247_1910057467 = (mModified.entrySet()).iterator();
                             varF82C588A08B6DF5CE4ADFA834C909247_1910057467.hasNext();
@@ -855,9 +861,9 @@ final class SharedPreferencesImpl implements SharedPreferences {
                                     {
                                         {
                                             boolean varCB62A03BC7382484A4D8527AC1D5B67C_843951285 = (!mMap.containsKey(k));
-                                        } //End collapsed parenthetic
+                                        } 
                                         mMap.remove(k);
-                                    } //End block
+                                    } 
                                     {
                                         boolean isSame = false;
                                         {
@@ -866,27 +872,27 @@ final class SharedPreferencesImpl implements SharedPreferences {
                                                 Object existingValue = mMap.get(k);
                                                 {
                                                     boolean var3F40C0122B4BFCB85951F0CA9C389424_485153183 = (existingValue != null && existingValue.equals(v));
-                                                } //End collapsed parenthetic
-                                            } //End block
-                                        } //End collapsed parenthetic
+                                                } 
+                                            } 
+                                        } 
                                         mMap.put(k, v);
-                                    } //End block
-                                } //End collapsed parenthetic
+                                    } 
+                                } 
                                 mcr.changesMade = true;
                                 {
                                     mcr.keysModified.add(k);
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
                         mModified.clear();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_46161598 = mcr;
-            varB4EAC82CA7396A68D541C85D26508E83_46161598.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_46161598.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_46161598;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -898,23 +904,23 @@ final class SharedPreferencesImpl implements SharedPreferences {
             try 
             {
                 mcr.writtenToDiskLatch.await();
-            } //End block
+            } 
             catch (InterruptedException e)
             { }
             notifyListeners(mcr);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1535896765 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1535896765;
-            // ---------- Original Method ----------
-            //MemoryCommitResult mcr = commitToMemory();
-            //SharedPreferencesImpl.this.enqueueDiskWrite(
-                //mcr, null );
-            //try {
-                //mcr.writtenToDiskLatch.await();
-            //} catch (InterruptedException e) {
-                //return false;
-            //}
-            //notifyListeners(mcr);
-            //return mcr.writeToDiskResult;
+            
+            
+            
+                
+            
+                
+            
+                
+            
+            
+            
         }
 
         
@@ -923,7 +929,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
             {
                 boolean var98EE468E1F91A5EC4E053BA5E9799A53_113903210 = (mcr.listeners == null || mcr.keysModified == null ||
                 mcr.keysModified.size() == 0);
-            } //End collapsed parenthetic
+            } 
             {
                 boolean var748E4843A4DFD33AE33247B092F762F7_1658833822 = (Looper.myLooper() == Looper.getMainLooper());
                 {
@@ -938,26 +944,26 @@ final class SharedPreferencesImpl implements SharedPreferences {
                                 {
                                     {
                                         listener.onSharedPreferenceChanged(SharedPreferencesImpl.this, key);
-                                    } //End block
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     ActivityThread.sMainThreadHandler.post(new Runnable() {                        
                         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.529 -0400", hash_original_method = "ADA4A7900A87A83172528D6D189EF104", hash_generated_method = "0CB8C5BDC799C735934697841D29C178")
                         public void run() {
                             notifyListeners(mcr);
-                            // ---------- Original Method ----------
-                            //notifyListeners(mcr);
+                            
+                            
                         }
 });
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(mcr.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

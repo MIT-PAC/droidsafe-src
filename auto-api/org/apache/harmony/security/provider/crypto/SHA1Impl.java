@@ -1,11 +1,11 @@
 package org.apache.harmony.security.provider.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class SHA1Impl implements SHA1_Data {
@@ -13,7 +13,7 @@ public class SHA1Impl implements SHA1_Data {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.237 -0400", hash_original_method = "B6630204F62CDE245E871046BDD8B7F9", hash_generated_method = "B6630204F62CDE245E871046BDD8B7F9")
     public SHA1Impl ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -71,6 +71,7 @@ public class SHA1Impl implements SHA1_Data {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void updateHash(int[] intArray, byte[] byteInput, int fromByte, int toByte) {
         int index = intArray[BYTES_OFFSET];
         int i = fromByte;

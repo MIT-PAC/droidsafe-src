@@ -1,11 +1,11 @@
 package android.text.format;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.R;
 import android.content.Context;
@@ -23,10 +23,11 @@ public class DateUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.770 -0400", hash_original_method = "15B73761459E939452D7F92AFEA42834", hash_generated_method = "15B73761459E939452D7F92AFEA42834")
     public DateUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String getDayOfWeekString(int dayOfWeek, int abbrev) {
         int[] list;
         switch (abbrev) {
@@ -42,12 +43,14 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getAMPMString(int ampm) {
         Resources r = Resources.getSystem();
         return r.getString(sAmPm[ampm - Calendar.AM]);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getMonthString(int month, int abbrev) {
         int[] list;
         switch (abbrev) {
@@ -63,6 +66,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getStandaloneMonthString(int month, int abbrev) {
         int[] list;
         switch (abbrev) {
@@ -79,17 +83,20 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence getRelativeTimeSpanString(long startTime) {
         return getRelativeTimeSpanString(startTime, System.currentTimeMillis(), MINUTE_IN_MILLIS);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence getRelativeTimeSpanString(long time, long now, long minResolution) {
         int flags = FORMAT_SHOW_DATE | FORMAT_SHOW_YEAR | FORMAT_ABBREV_MONTH;
         return getRelativeTimeSpanString(time, now, minResolution, flags);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence getRelativeTimeSpanString(long time, long now, long minResolution,
             int flags) {
         Resources r = Resources.getSystem();
@@ -166,6 +173,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private synchronized static long getNumberOfDaysPassed(long date1, long date2) {
         if (sThenTime == null) {
             sThenTime = new Time();
@@ -178,6 +186,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence getRelativeDateTimeString(Context c, long time, long minResolution,
             long transitionResolution, int flags) {
         Resources r = Resources.getSystem();
@@ -230,6 +239,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void initFormatStrings() {
         synchronized (sLock) {
             initFormatStringsLocked();
@@ -237,6 +247,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void initFormatStringsLocked() {
         Resources r = Resources.getSystem();
         Configuration cfg = r.getConfiguration();
@@ -257,11 +268,13 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatElapsedTime(long elapsedSeconds) {
         return formatElapsedTime(null, elapsedSeconds);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatElapsedTime(StringBuilder recycle, long elapsedSeconds) {
         initFormatStrings();
         long hours = 0;
@@ -285,6 +298,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String formatElapsedTime(StringBuilder recycle, String format, long hours,
             long minutes, long seconds) {
         if (FAST_FORMAT_HMMSS.equals(format)) {
@@ -316,6 +330,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String formatElapsedTime(StringBuilder recycle, String format, long minutes,
             long seconds) {
         if (FAST_FORMAT_MMSS.equals(format)) {
@@ -369,6 +384,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Calendar newCalendar(boolean zulu) {
         if (zulu)
             return Calendar.getInstance(TimeZone.getTimeZone("GMT"));
@@ -376,6 +392,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isToday(long when) {
         Time time = new Time();
         time.set(when);
@@ -389,6 +406,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isUTC(String s) {
         if (s.length() == 16 && s.charAt(15) == 'Z') {
             return true;
@@ -400,6 +418,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String writeDateTime(Calendar cal) {
         TimeZone tz = TimeZone.getTimeZone("GMT");
         GregorianCalendar c = new GregorianCalendar(tz);
@@ -408,6 +427,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String writeDateTime(Calendar cal, boolean zulu) {
         StringBuilder sb = new StringBuilder();
         sb.ensureCapacity(16);
@@ -421,6 +441,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String writeDateTime(Calendar cal, StringBuilder sb) {
         int n;
         n = cal.get(Calendar.YEAR);
@@ -456,12 +477,14 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void assign(Calendar lval, Calendar rval) {
         lval.clear();
         lval.setTimeInMillis(rval.getTimeInMillis());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatDateRange(Context context, long startMillis,
             long endMillis, int flags) {
         Formatter f = new Formatter(new StringBuilder(50), Locale.getDefault());
@@ -469,12 +492,14 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Formatter formatDateRange(Context context, Formatter formatter, long startMillis,
             long endMillis, int flags) {
         return formatDateRange(context, formatter, startMillis, endMillis, flags, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Formatter formatDateRange(Context context, Formatter formatter, long startMillis,
             long endMillis, int flags, String timeZone) {
         Resources res = Resources.getSystem();
@@ -767,11 +792,13 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatDateTime(Context context, long millis, int flags) {
         return formatDateRange(context, millis, millis, flags);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence getRelativeTimeSpanString(Context c, long millis,
             boolean withPreposition) {
         String result;
@@ -809,6 +836,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence getRelativeTimeSpanString(Context c, long millis) {
         return getRelativeTimeSpanString(c, millis, false );
     }

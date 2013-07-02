@@ -1,11 +1,11 @@
 package java.util.zip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.EOFException;
 import java.io.IOException;
@@ -26,7 +26,7 @@ public class GZIPInputStream extends InflaterInputStream {
     public  GZIPInputStream(InputStream is) throws IOException {
         this(is, BUF_SIZE);
         addTaint(is.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,17 +38,17 @@ public class GZIPInputStream extends InflaterInputStream {
         short magic = Memory.peekShort(header, 0, ByteOrder.LITTLE_ENDIAN);
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException(String.format("unknown format (magic number %x)", magic));
-        } //End block
+        } 
         int flags = header[3];
         boolean hcrc = (flags & FHCRC) != 0;
         {
             crc.update(header, 0, header.length);
-        } //End block
+        } 
         {
             readFully(header, 0, 2);
             {
                 crc.update(header, 0, 2);
-            } //End block
+            } 
             int length = Memory.peekShort(header, 0, ByteOrder.LITTLE_ENDIAN) & 0xffff;
             {
                 int max;
@@ -57,19 +57,19 @@ public class GZIPInputStream extends InflaterInputStream {
                 int result = in.read(buf, 0, max);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new EOFException();
-                } //End block
+                } 
                 {
                     crc.update(buf, 0, result);
-                } //End block
+                } 
                 length -= result;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             readZeroTerminated(hcrc);
-        } //End block
+        } 
         {
             readZeroTerminated(hcrc);
-        } //End block
+        } 
         {
             readFully(header, 0, 2);
             short crc16 = Memory.peekShort(header, 0, ByteOrder.LITTLE_ENDIAN);
@@ -77,79 +77,82 @@ public class GZIPInputStream extends InflaterInputStream {
                 boolean varDF24CD4CC3CA4735CDB857FDC66AEAF5_1413582896 = ((short) crc.getValue() != crc16);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("CRC mismatch");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             crc.reset();
-        } //End block
+        } 
         addTaint(is.getTaint());
         addTaint(size);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.788 -0400", hash_original_method = "BB5EB4821217BB73F8D521350E3FEC7B", hash_generated_method = "3F2B46524DBDCE46E7A36A9F327E3A4C")
     @Override
     public void close() throws IOException {
         eos = true;
         super.close();
-        // ---------- Original Method ----------
-        //eos = true;
-        //super.close();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.789 -0400", hash_original_method = "FAE53FCD1CA8F33ECA2437ABBFBE85CF", hash_generated_method = "8273FFE51AE7D32B4635965DC2BB75C4")
     @Override
     public int read(byte[] buffer, int offset, int byteCount) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Stream is closed");
-        } //End block
+        } 
         Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
         int bytesRead;
         try 
         {
             bytesRead = super.read(buffer, offset, byteCount);
-        } //End block
+        } 
         finally 
         {
             eos = eof;
-        } //End block
+        } 
         {
             crc.update(buffer, offset, bytesRead);
-        } //End block
+        } 
         {
             verifyCrc();
-        } //End block
+        } 
         addTaint(buffer[0]);
         addTaint(offset);
         addTaint(byteCount);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_746280206 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_746280206;
-        // ---------- Original Method ----------
-        //if (closed) {
-            //throw new IOException("Stream is closed");
-        //}
-        //if (eos) {
-            //return -1;
-        //}
-        //Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
-        //int bytesRead;
-        //try {
-            //bytesRead = super.read(buffer, offset, byteCount);
-        //} finally {
-            //eos = eof; 
-        //}
-        //if (bytesRead != -1) {
-            //crc.update(buffer, offset, bytesRead);
-        //}
-        //if (eos) {
-            //verifyCrc();
-        //}
-        //return bytesRead;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.789 -0400", hash_original_method = "6D843C12482D0F9414C1006D7B90FFFD", hash_generated_method = "FF75768C88CCBD566EF6CADAC6B16710")
     private void verifyCrc() throws IOException {
         int size = inf.getRemaining();
@@ -164,30 +167,31 @@ public class GZIPInputStream extends InflaterInputStream {
             boolean var5DF625EDF3B3FF5C7A985A745F01E054_1480759608 = (Memory.peekInt(b, 0, ByteOrder.LITTLE_ENDIAN) != (int) crc.getValue());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("CRC mismatch");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varC3A7C64687DEFE6659EE053CD7A27F8C_198861377 = (Memory.peekInt(b, 4, ByteOrder.LITTLE_ENDIAN) != inf.getTotalOut());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("Size mismatch");
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //int size = inf.getRemaining();
-        //final int trailerSize = 8;
-        //byte[] b = new byte[trailerSize];
-        //int copySize = (size > trailerSize) ? trailerSize : size;
-        //System.arraycopy(buf, len - size, b, 0, copySize);
-        //readFully(b, copySize, trailerSize - copySize);
-        //if (Memory.peekInt(b, 0, ByteOrder.LITTLE_ENDIAN) != (int) crc.getValue()) {
-            //throw new IOException("CRC mismatch");
-        //}
-        //if (Memory.peekInt(b, 4, ByteOrder.LITTLE_ENDIAN) != inf.getTotalOut()) {
-            //throw new IOException("Size mismatch");
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.790 -0400", hash_original_method = "9B3EB008D719ED0FB3E689755FC76BB5", hash_generated_method = "39B263928B24E71186845DEA0A6C04A9")
     private void readFully(byte[] buffer, int offset, int length) throws IOException {
         int result;
@@ -195,26 +199,27 @@ public class GZIPInputStream extends InflaterInputStream {
             result = in.read(buffer, offset, length);
             {
                 if (DroidSafeAndroidRuntime.control) throw new EOFException();
-            } //End block
+            } 
             offset += result;
             length -= result;
-        } //End block
+        } 
         addTaint(buffer[0]);
         addTaint(offset);
         addTaint(length);
-        // ---------- Original Method ----------
-        //int result;
-        //while (length > 0) {
-            //result = in.read(buffer, offset, length);
-            //if (result == -1) {
-                //throw new EOFException();
-            //}
-            //offset += result;
-            //length -= result;
-        //}
+        
+        
+        
+            
+            
+                
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.791 -0400", hash_original_method = "7C6B7FFA42529CFE943A1AC064CF5BC3", hash_generated_method = "123A0767FCBF2653C39E759409CDB1E2")
     private void readZeroTerminated(boolean hcrc) throws IOException {
         int result;
@@ -223,29 +228,29 @@ public class GZIPInputStream extends InflaterInputStream {
             {
                 {
                     crc.update(result);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new EOFException();
-        } //End block
+        } 
         {
             crc.update(result);
-        } //End block
+        } 
         addTaint(hcrc);
-        // ---------- Original Method ----------
-        //int result;
-        //while ((result = in.read()) > 0) {
-            //if (hcrc) {
-                //crc.update(result);
-            //}
-        //}
-        //if (result == -1) {
-            //throw new EOFException();
-        //}
-        //if (hcrc) {
-            //crc.update(result);
-        //}
+        
+        
+        
+            
+                
+            
+        
+        
+            
+        
+        
+            
+        
     }
 
     

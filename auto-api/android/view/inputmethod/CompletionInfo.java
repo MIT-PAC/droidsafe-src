@@ -1,11 +1,11 @@
 package android.view.inputmethod;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -31,11 +31,11 @@ public final class CompletionInfo implements Parcelable {
         mPosition = index;
         mText = text;
         mLabel = null;
-        // ---------- Original Method ----------
-        //mId = id;
-        //mPosition = index;
-        //mText = text;
-        //mLabel = null;
+        
+        
+        
+        
+        
     }
 
     
@@ -45,11 +45,11 @@ public final class CompletionInfo implements Parcelable {
         mPosition = index;
         mText = text;
         mLabel = label;
-        // ---------- Original Method ----------
-        //mId = id;
-        //mPosition = index;
-        //mText = text;
-        //mLabel = label;
+        
+        
+        
+        
+        
     }
 
     
@@ -59,11 +59,11 @@ public final class CompletionInfo implements Parcelable {
         mPosition = source.readInt();
         mText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
         mLabel = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        // ---------- Original Method ----------
-        //mId = source.readLong();
-        //mPosition = source.readInt();
-        //mText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        //mLabel = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
+        
+        
+        
+        
+        
     }
 
     
@@ -71,8 +71,8 @@ public final class CompletionInfo implements Parcelable {
     public long getId() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1834914577 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1834914577;
-        // ---------- Original Method ----------
-        //return mId;
+        
+        
     }
 
     
@@ -80,47 +80,49 @@ public final class CompletionInfo implements Parcelable {
     public int getPosition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_786718752 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_786718752;
-        // ---------- Original Method ----------
-        //return mPosition;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.907 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "3969F22C53BB7233763312270F08C4FA")
     public CharSequence getText() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_162814130 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_162814130 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_162814130 = mText;
-        varB4EAC82CA7396A68D541C85D26508E83_162814130.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_162814130.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_162814130;
-        // ---------- Original Method ----------
-        //return mText;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.907 -0400", hash_original_method = "4A1E1E1996A16BAAC783C4D4608DA412", hash_generated_method = "C66B1301877B6CD9D59D9F99C103342C")
     public CharSequence getLabel() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_762962375 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_762962375 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_762962375 = mLabel;
-        varB4EAC82CA7396A68D541C85D26508E83_762962375.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_762962375.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_762962375;
-        // ---------- Original Method ----------
-        //return mLabel;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.908 -0400", hash_original_method = "3B6D1C61D70E52042FDD9DC9240A1E79", hash_generated_method = "C8DB950DFF2984DEB082B143C58B7934")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_933250654 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_933250654 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_933250654 = "CompletionInfo{#" + mPosition + " \"" + mText
                 + "\" id=" + mId + " label=" + mLabel + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_933250654.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_933250654.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_933250654;
-        // ---------- Original Method ----------
-        //return "CompletionInfo{#" + mPosition + " \"" + mText
-                //+ "\" id=" + mId + " label=" + mLabel + "}";
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.908 -0400", hash_original_method = "9E5F84EC05F73AE374617C14B6E91B86", hash_generated_method = "4AC83D29BE9EAA1CCEF4AB2AE1E93383")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(mId);
@@ -129,11 +131,11 @@ public final class CompletionInfo implements Parcelable {
         TextUtils.writeToParcel(mLabel, dest, flags);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeLong(mId);
-        //dest.writeInt(mPosition);
-        //TextUtils.writeToParcel(mText, dest, flags);
-        //TextUtils.writeToParcel(mLabel, dest, flags);
+        
+        
+        
+        
+        
     }
 
     
@@ -141,8 +143,8 @@ public final class CompletionInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1461801309 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1461801309;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -158,12 +160,12 @@ public final class CompletionInfo implements Parcelable {
             return new CompletionInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public CompletionInfo createFromParcel(Parcel source) {
             return new CompletionInfo(source);
         }
     
-    // orphaned legacy method
+    
     public CompletionInfo[] newArray(int size) {
             return new CompletionInfo[size];
         }

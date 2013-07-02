@@ -1,11 +1,11 @@
 package com.android.internal.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -32,11 +32,11 @@ public class PkgUsageStats implements Parcelable {
         launchCount = count;
         usageTime = time;
         componentResumeTimes = new HashMap<String, Long>(lastResumeTimes);
-        // ---------- Original Method ----------
-        //packageName = pkgName;
-        //launchCount = count;
-        //usageTime = time;
-        //componentResumeTimes = new HashMap<String, Long>(lastResumeTimes);
+        
+        
+        
+        
+        
     }
 
     
@@ -53,19 +53,19 @@ public class PkgUsageStats implements Parcelable {
                 String component = source.readString();
                 long lastResumeTime = source.readLong();
                 componentResumeTimes.put(component, lastResumeTime);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //packageName = source.readString();
-        //launchCount = source.readInt();
-        //usageTime = source.readLong();
-        //final int N = source.readInt();
-        //componentResumeTimes = new HashMap<String, Long>(N);
-        //for (int i = 0; i < N; i++) {
-            //String component = source.readString();
-            //long lastResumeTime = source.readLong();
-            //componentResumeTimes.put(component, lastResumeTime);
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -75,26 +75,27 @@ public class PkgUsageStats implements Parcelable {
         launchCount = pStats.launchCount;
         usageTime = pStats.usageTime;
         componentResumeTimes = new HashMap<String, Long>(pStats.componentResumeTimes);
-        // ---------- Original Method ----------
-        //packageName = pStats.packageName;
-        //launchCount = pStats.launchCount;
-        //usageTime = pStats.usageTime;
-        //componentResumeTimes = new HashMap<String, Long>(pStats.componentResumeTimes);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.665 -0400", hash_original_method = "5A8FDC802D15BADB218E7B9A38048A4B", hash_generated_method = "18C02651BAA35930F448BF0D1496797D")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2084350346 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2084350346 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2084350346 = "PkgUsageStats{"
         + Integer.toHexString(System.identityHashCode(this))
         + " " + packageName + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_2084350346.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2084350346.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2084350346;
-        // ---------- Original Method ----------
-        //return "PkgUsageStats{"
-        //+ Integer.toHexString(System.identityHashCode(this))
-        //+ " " + packageName + "}";
+        
+        
+        
+        
     }
 
     
@@ -102,11 +103,12 @@ public class PkgUsageStats implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1137903696 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1137903696;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.670 -0400", hash_original_method = "65B01222074C1BC4168423427126F9FB", hash_generated_method = "57D69C9162C7B4FB5F3858F86E2B9941")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         dest.writeString(packageName);
@@ -120,19 +122,19 @@ public class PkgUsageStats implements Parcelable {
             {
                 dest.writeString(ent.getKey());
                 dest.writeLong(ent.getValue());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(dest.getTaint());
         addTaint(parcelableFlags);
-        // ---------- Original Method ----------
-        //dest.writeString(packageName);
-        //dest.writeInt(launchCount);
-        //dest.writeLong(usageTime);
-        //dest.writeInt(componentResumeTimes.size());
-        //for (Map.Entry<String, Long> ent : componentResumeTimes.entrySet()) {
-            //dest.writeString(ent.getKey());
-            //dest.writeLong(ent.getValue());
-        //}
+        
+        
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -148,12 +150,12 @@ public class PkgUsageStats implements Parcelable {
             return new PkgUsageStats[size];
         }
     };
-    // orphaned legacy method
+    
     public PkgUsageStats createFromParcel(Parcel in) {
             return new PkgUsageStats(in);
         }
     
-    // orphaned legacy method
+    
     public PkgUsageStats[] newArray(int size) {
             return new PkgUsageStats[size];
         }

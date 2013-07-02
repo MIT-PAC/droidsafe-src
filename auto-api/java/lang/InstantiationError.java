@@ -1,18 +1,18 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class InstantiationError extends IncompatibleClassChangeError {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.122 -0400", hash_original_method = "0CADFA7EDCF977E1C3E40BA09A641E39", hash_generated_method = "FBD8BFBFF8541964AECF4F628B71A9C5")
     public  InstantiationError() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class InstantiationError extends IncompatibleClassChangeError {
     public  InstantiationError(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,7 +28,7 @@ public class InstantiationError extends IncompatibleClassChangeError {
       InstantiationError(Class<?> clazz) {
         super(clazz.getName());
         addTaint(clazz.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

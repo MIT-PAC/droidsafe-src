@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import static com.android.internal.util.Preconditions.checkNotNull;
 import android.os.Parcel;
@@ -37,12 +37,12 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
         this.warningBytes = warningBytes;
         this.limitBytes = limitBytes;
         this.lastSnooze = lastSnooze;
-        // ---------- Original Method ----------
-        //this.template = checkNotNull(template, "missing NetworkTemplate");
-        //this.cycleDay = cycleDay;
-        //this.warningBytes = warningBytes;
-        //this.limitBytes = limitBytes;
-        //this.lastSnooze = lastSnooze;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -53,15 +53,16 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
         warningBytes = in.readLong();
         limitBytes = in.readLong();
         lastSnooze = in.readLong();
-        // ---------- Original Method ----------
-        //template = in.readParcelable(null);
-        //cycleDay = in.readInt();
-        //warningBytes = in.readLong();
-        //limitBytes = in.readLong();
-        //lastSnooze = in.readLong();
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.393 -0400", hash_original_method = "A386F04ADA8A00FB5A1B1E46AA17FE85", hash_generated_method = "0EBD0485079B68D02F83E11B5C765458")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeParcelable(template, flags);
@@ -71,12 +72,12 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
         dest.writeLong(lastSnooze);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeParcelable(template, flags);
-        //dest.writeInt(cycleDay);
-        //dest.writeLong(warningBytes);
-        //dest.writeLong(limitBytes);
-        //dest.writeLong(lastSnooze);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -84,8 +85,8 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_735756004 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_735756004;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -95,9 +96,9 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
         addTaint(totalBytes);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_869986687 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_869986687;
-        // ---------- Original Method ----------
-        //totalBytes += 2 * DEFAULT_MTU;
-        //return limitBytes != LIMIT_DISABLED && totalBytes >= limitBytes;
+        
+        
+        
     }
 
     
@@ -106,28 +107,30 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
         addTaint(another.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_214031549 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_214031549;
-        // ---------- Original Method ----------
-        //if (another == null || another.limitBytes == LIMIT_DISABLED) {
-            //return -1;
-        //}
-        //if (limitBytes == LIMIT_DISABLED || another.limitBytes < limitBytes) {
-            //return 1;
-        //}
-        //return 0;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.395 -0400", hash_original_method = "65DB678FEF7477006B15C098764A0236", hash_generated_method = "FAD8C27C02B0AC942406F92199AD8726")
     @Override
     public int hashCode() {
         int varE2F91B8815F89DBABB5723C23F7AD388_1114054854 = (Objects.hashCode(template, cycleDay, warningBytes, limitBytes, lastSnooze));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1936337046 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1936337046;
-        // ---------- Original Method ----------
-        //return Objects.hashCode(template, cycleDay, warningBytes, limitBytes, lastSnooze);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.396 -0400", hash_original_method = "29E54ABFFB72D1CE12A9FC870E79CFC8", hash_generated_method = "718C5AF9CE0B9FD202E93DE285613770")
     @Override
     public boolean equals(Object obj) {
@@ -136,32 +139,33 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
             boolean var1E33E7A7A24747215D00952E86674F6F_927860349 = (Objects.equal(template, other.template) && cycleDay == other.cycleDay
                     && warningBytes == other.warningBytes && limitBytes == other.limitBytes
                     && lastSnooze == other.lastSnooze);
-        } //End block
+        } 
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1329382578 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1329382578;
-        // ---------- Original Method ----------
-        //if (obj instanceof NetworkPolicy) {
-            //final NetworkPolicy other = (NetworkPolicy) obj;
-            //return Objects.equal(template, other.template) && cycleDay == other.cycleDay
-                    //&& warningBytes == other.warningBytes && limitBytes == other.limitBytes
-                    //&& lastSnooze == other.lastSnooze;
-        //}
-        //return false;
+        
+        
+            
+            
+                    
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.397 -0400", hash_original_method = "CB6123FDA6EA84240F335B44F0260DCB", hash_generated_method = "BC9FE673BA20CE10C8A5149169296373")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1148025876 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1148025876 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1148025876 = "NetworkPolicy[" + template + "]: cycleDay=" + cycleDay + ", warningBytes="
                 + warningBytes + ", limitBytes=" + limitBytes + ", lastSnooze=" + lastSnooze;
-        varB4EAC82CA7396A68D541C85D26508E83_1148025876.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1148025876.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1148025876;
-        // ---------- Original Method ----------
-        //return "NetworkPolicy[" + template + "]: cycleDay=" + cycleDay + ", warningBytes="
-                //+ warningBytes + ", limitBytes=" + limitBytes + ", lastSnooze=" + lastSnooze;
+        
+        
+                
     }
 
     
@@ -188,12 +192,12 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
             return new NetworkPolicy[size];
         }
     };
-    // orphaned legacy method
+    
     public NetworkPolicy createFromParcel(Parcel in) {
             return new NetworkPolicy(in);
         }
     
-    // orphaned legacy method
+    
     public NetworkPolicy[] newArray(int size) {
             return new NetworkPolicy[size];
         }

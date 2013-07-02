@@ -1,11 +1,11 @@
 package java.lang.reflect;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class InvocationTargetException extends Exception {
@@ -16,7 +16,7 @@ public class InvocationTargetException extends Exception {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.793 -0400", hash_original_method = "5EBB00A3899F4B7F5118F6E64DAF6A94", hash_generated_method = "A58F4D7E6437E4A4D86A792387D5EDF3")
     protected  InvocationTargetException() {
         super((Throwable) null);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,8 +24,8 @@ public class InvocationTargetException extends Exception {
     public  InvocationTargetException(Throwable exception) {
         super(null, exception);
         target = exception;
-        // ---------- Original Method ----------
-        //target = exception;
+        
+        
     }
 
     
@@ -34,31 +34,31 @@ public class InvocationTargetException extends Exception {
         super(detailMessage, exception);
         target = exception;
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-        //target = exception;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.794 -0400", hash_original_method = "F1F2316177C546F546EA483459CFF30B", hash_generated_method = "CB0CAFA11986B952859FEB90A5269121")
     public Throwable getTargetException() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_211408762 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_211408762 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_211408762 = target;
-        varB4EAC82CA7396A68D541C85D26508E83_211408762.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_211408762.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_211408762;
-        // ---------- Original Method ----------
-        //return target;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.795 -0400", hash_original_method = "D8C22D14C73496EF517FF8FC6C6B2CD8", hash_generated_method = "9A1D832B00122B7A1A59A1B191076A85")
     @Override
     public Throwable getCause() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_1436951002 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_1436951002 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1436951002 = target;
-        varB4EAC82CA7396A68D541C85D26508E83_1436951002.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1436951002.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1436951002;
-        // ---------- Original Method ----------
-        //return target;
+        
+        
     }
 
     

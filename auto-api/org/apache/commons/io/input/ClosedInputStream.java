@@ -1,11 +1,11 @@
 package org.apache.commons.io.input;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.InputStream;
 
@@ -14,7 +14,7 @@ public class ClosedInputStream extends InputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.102 -0400", hash_original_method = "B0C9BD21CF08AD8B980B25A5B2E5F6EA", hash_generated_method = "B0C9BD21CF08AD8B980B25A5B2E5F6EA")
     public ClosedInputStream ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -23,8 +23,8 @@ public class ClosedInputStream extends InputStream {
     public int read() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_451550178 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_451550178;
-        // ---------- Original Method ----------
-        //return -1;
+        
+        
     }
 
     

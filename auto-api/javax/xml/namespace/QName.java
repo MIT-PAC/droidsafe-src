@@ -1,11 +1,11 @@
 package javax.xml.namespace;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -33,7 +33,7 @@ public class QName implements Serializable {
         this(namespaceURI, localPart, XMLConstants.DEFAULT_NS_PREFIX);
         addTaint(namespaceURI.getTaint());
         addTaint(localPart.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -41,32 +41,32 @@ public class QName implements Serializable {
     public  QName(String namespaceURI, String localPart, String prefix) {
         {
             this.namespaceURI = XMLConstants.NULL_NS_URI;
-        } //End block
+        } 
         {
             this.namespaceURI = namespaceURI;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("local part cannot be \"null\" when creating a QName");
-        } //End block
+        } 
         this.localPart = localPart;
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("prefix cannot be \"null\" when creating a QName");
-        } //End block
+        } 
         this.prefix = prefix;
-        // ---------- Original Method ----------
-        //if (namespaceURI == null) {
-            //this.namespaceURI = XMLConstants.NULL_NS_URI;
-        //} else {
-            //this.namespaceURI = namespaceURI;
-        //}
-        //if (localPart == null) {
-            //throw new IllegalArgumentException("local part cannot be \"null\" when creating a QName");
-        //}
-        //this.localPart = localPart;
-        //if (prefix == null) {
-            //throw new IllegalArgumentException("prefix cannot be \"null\" when creating a QName");
-        //}
-        //this.prefix = prefix;
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -77,40 +77,40 @@ public class QName implements Serializable {
             localPart,
             XMLConstants.DEFAULT_NS_PREFIX);
         addTaint(localPart.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.521 -0400", hash_original_method = "1455FE8FE34AF373D39E8278191439A8", hash_generated_method = "23CAEB1E2A2DD99A7EC7AB784C9E2815")
     public String getNamespaceURI() {
-        String varB4EAC82CA7396A68D541C85D26508E83_999716980 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_999716980 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_999716980 = namespaceURI;
-        varB4EAC82CA7396A68D541C85D26508E83_999716980.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_999716980.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_999716980;
-        // ---------- Original Method ----------
-        //return namespaceURI;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.521 -0400", hash_original_method = "859D888619C719D6166AE581FCA9B720", hash_generated_method = "3E57DE9F4513D5A29907BE8B998ED51E")
     public String getLocalPart() {
-        String varB4EAC82CA7396A68D541C85D26508E83_642960122 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_642960122 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_642960122 = localPart;
-        varB4EAC82CA7396A68D541C85D26508E83_642960122.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_642960122.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_642960122;
-        // ---------- Original Method ----------
-        //return localPart;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.522 -0400", hash_original_method = "FA5CE5A0FCC0C736D9446FFEBD0CAB9D", hash_generated_method = "1D2F9DA0EED4DA1E405CCF619237C8EA")
     public String getPrefix() {
-        String varB4EAC82CA7396A68D541C85D26508E83_498838324 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_498838324 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_498838324 = prefix;
-        varB4EAC82CA7396A68D541C85D26508E83_498838324.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_498838324.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_498838324;
-        // ---------- Original Method ----------
-        //return prefix;
+        
+        
     }
 
     
@@ -118,23 +118,23 @@ public class QName implements Serializable {
     public final boolean equals(Object objectToTest) {
         {
             boolean var1738C43110B80B68809A374A2DE0B400_1100554322 = (objectToTest == this);
-        } //End collapsed parenthetic
+        } 
         {
             QName qName = (QName) objectToTest;
             boolean var0F7F156F09F7E96CBB489EE5EBBF4A09_1586208474 = (localPart.equals(qName.localPart) && namespaceURI.equals(qName.namespaceURI));
-        } //End block
+        } 
         addTaint(objectToTest.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1066869793 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1066869793;
-        // ---------- Original Method ----------
-        //if (objectToTest == this) {
-            //return true;
-        //}
-        //if (objectToTest instanceof QName) {
-            //QName qName = (QName) objectToTest;
-            //return localPart.equals(qName.localPart) && namespaceURI.equals(qName.namespaceURI);
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -143,20 +143,21 @@ public class QName implements Serializable {
         int varAE3A2D4E13A297882A9F0F7DFEDC82B1_1152939081 = (namespaceURI.hashCode() ^ localPart.hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067913033 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067913033;
-        // ---------- Original Method ----------
-        //return namespaceURI.hashCode() ^ localPart.hashCode();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.523 -0400", hash_original_method = "140023602587BA12FA2AD0493531CEF5", hash_generated_method = "D6D1CE4FA69B6CD2916929E6E15EFF04")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_525400978 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_525400978 = null; 
         String _qNameAsString = qNameAsString;
         {
             final int nsLength = namespaceURI.length();
             {
                 _qNameAsString = localPart;
-            } //End block
+            } 
             {
                 StringBuilder buffer = new StringBuilder(nsLength + localPart.length() + 2);
                 buffer.append('{');
@@ -164,33 +165,34 @@ public class QName implements Serializable {
                 buffer.append('}');
                 buffer.append(localPart);
                 _qNameAsString = buffer.toString();
-            } //End block
+            } 
             qNameAsString = _qNameAsString;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_525400978 = _qNameAsString;
-        varB4EAC82CA7396A68D541C85D26508E83_525400978.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_525400978.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_525400978;
-        // ---------- Original Method ----------
-        //String _qNameAsString = qNameAsString;
-        //if (_qNameAsString == null) {
-            //final int nsLength = namespaceURI.length();
-            //if (nsLength == 0) {
-                //_qNameAsString = localPart;
-            //}
-            //else {
-                //StringBuilder buffer = new StringBuilder(nsLength + localPart.length() + 2);
-                //buffer.append('{');
-                //buffer.append(namespaceURI);
-                //buffer.append('}');
-                //buffer.append(localPart);
-                //_qNameAsString = buffer.toString();
-            //}
-            //qNameAsString = _qNameAsString;
-        //}
-        //return _qNameAsString;
+        
+        
+        
+            
+            
+                
+            
+            
+                
+                
+                
+                
+                
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static QName valueOf(String qNameAsString) {
         if (qNameAsString == null) {
             throw new IllegalArgumentException("cannot create QName from \"null\" or \"\" String");
@@ -229,18 +231,19 @@ public class QName implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.524 -0400", hash_original_method = "3A49E665D16E7BB62A75B8A236B62D06", hash_generated_method = "5165934C033A089A52E4D2327AA18185")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
         {
             prefix = XMLConstants.DEFAULT_NS_PREFIX;
-        } //End block
+        } 
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        //in.defaultReadObject();
-        //if (prefix == null) {
-            //prefix = XMLConstants.DEFAULT_NS_PREFIX;
-        //}
+        
+        
+        
+            
+        
     }
 
     

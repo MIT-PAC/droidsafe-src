@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -24,10 +24,11 @@ public class FileUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.198 -0400", hash_original_method = "68A158D183F246B86320864EE65BA192", hash_generated_method = "68A158D183F246B86320864EE65BA192")
     public FileUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static boolean getFileStatus(String path, FileStatus status) {
         StrictMode.noteDiskRead();
         return getFileStatusNative(path, status);
@@ -59,6 +60,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean sync(FileOutputStream stream) {
         try {
             if (stream != null) {
@@ -71,6 +73,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean copyFile(File srcFile, File destFile) {
         boolean result = false;
         try {
@@ -87,6 +90,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean copyToFile(InputStream inputStream, File destFile) {
         try {
             if (destFile.exists()) {
@@ -114,11 +118,13 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isFilenameSafe(File file) {
         return SAFE_FILENAME_PATTERN.matcher(file.getPath()).matches();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String readTextFile(File file, int max, String ellipsis) throws IOException {
         InputStream input = new FileInputStream(file);
         try {
@@ -166,6 +172,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void stringToFile(String filename, String string) throws IOException {
         FileWriter out = new FileWriter(filename);
         try {
@@ -176,6 +183,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long checksumCrc32(File file) throws FileNotFoundException, IOException {
         CRC32 checkSummer = new CRC32();
         CheckedInputStream cis = null;
@@ -240,7 +248,7 @@ public class FileUtils {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.201 -0400", hash_original_method = "CFD6FBC969A1D085C457A3FA7AFEA0D4", hash_generated_method = "CFD6FBC969A1D085C457A3FA7AFEA0D4")
         public FileStatus ()
         {
-            //Synthesized constructor
+            
         }
 
 

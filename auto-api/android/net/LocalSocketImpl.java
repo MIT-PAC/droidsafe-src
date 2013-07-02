@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -38,15 +38,15 @@ class LocalSocketImpl {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.246 -0400", hash_original_method = "EB46FEA2FE489ABD86FB64E17870F7D5", hash_generated_method = "CD8997B5BBD288454729017F9D0FB34B")
       LocalSocketImpl() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.246 -0400", hash_original_method = "D456C6C1E42DF15F5B9AFA3DF483BFD5", hash_generated_method = "B8BE2A9636FAA52F24039EE3D67E5778")
       LocalSocketImpl(FileDescriptor fd) throws IOException {
         this.fd = fd;
-        // ---------- Original Method ----------
-        //this.fd = fd;
+        
+        
     }
 
     
@@ -147,29 +147,32 @@ class LocalSocketImpl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.250 -0400", hash_original_method = "910906868F2A4F19B7D2844E1F779346", hash_generated_method = "6C8DB1E2B3F6194E056041013B0F24C4")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_907363891 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_907363891 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_907363891 = super.toString() + " fd:" + fd;
-        varB4EAC82CA7396A68D541C85D26508E83_907363891.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_907363891.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_907363891;
-        // ---------- Original Method ----------
-        //return super.toString() + " fd:" + fd;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.250 -0400", hash_original_method = "C69FBA5615AE4C555A8E605188FC5D70", hash_generated_method = "45032C995429A20F55746FBCC209456D")
     public void create(boolean stream) throws IOException {
         {
             fd = create_native(stream);
-        } //End block
-        // ---------- Original Method ----------
-        //if (fd == null) {
-            //fd = create_native(stream);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.250 -0400", hash_original_method = "ABF18B5E6666C8F5D8A2BB5F41F5792B", hash_generated_method = "701284D7C5FB4A15D5E291283469FB31")
     public void close() throws IOException {
         {
@@ -177,177 +180,186 @@ class LocalSocketImpl {
             {
                 close_native(fd);
                 fd = null;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //synchronized (LocalSocketImpl.this) {
-            //if (fd == null) return;
-            //close_native(fd);
-            //fd = null;
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.250 -0400", hash_original_method = "425C245C15643B6C00C58E49D6A6C651", hash_generated_method = "2D43E8C98874BFA1225A0EC406E38910")
     protected void connect(LocalSocketAddress address, int timeout) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("socket not created");
-        } //End block
+        } 
         connectLocal(fd, address.getName(), address.getNamespace().getId());
         addTaint(address.getTaint());
         addTaint(timeout);
-        // ---------- Original Method ----------
-        //if (fd == null) {
-            //throw new IOException("socket not created");
-        //}
-        //connectLocal(fd, address.getName(), address.getNamespace().getId());
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.251 -0400", hash_original_method = "D301FBD428349B466ACCB27339A08D2F", hash_generated_method = "3F88F8FA7EABCD5991EFE439A8AC62A7")
     public void bind(LocalSocketAddress endpoint) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("socket not created");
-        } //End block
+        } 
         bindLocal(fd, endpoint.getName(), endpoint.getNamespace().getId());
         addTaint(endpoint.getTaint());
-        // ---------- Original Method ----------
-        //if (fd == null) {
-            //throw new IOException("socket not created");
-        //}
-        //bindLocal(fd, endpoint.getName(), endpoint.getNamespace().getId());
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.251 -0400", hash_original_method = "A6DEE76A07DA4242CC30FE3245F17D51", hash_generated_method = "96A9FFDD3301826AA487EDA06DCD2AAA")
     protected void listen(int backlog) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("socket not created");
-        } //End block
+        } 
         listen_native(fd, backlog);
         addTaint(backlog);
-        // ---------- Original Method ----------
-        //if (fd == null) {
-            //throw new IOException("socket not created");
-        //}
-        //listen_native(fd, backlog);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.251 -0400", hash_original_method = "E2D863498299C9CF5B0AE6150A21C675", hash_generated_method = "61AD33514E33FCDDDECCD1F852E1AE2A")
     protected void accept(LocalSocketImpl s) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("socket not created");
-        } //End block
+        } 
         s.fd = accept(fd, s);
-        // ---------- Original Method ----------
-        //if (fd == null) {
-            //throw new IOException("socket not created");
-        //}
-        //s.fd = accept(fd, s);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.252 -0400", hash_original_method = "D37322C17A1B9B191A9C32D9BD81E000", hash_generated_method = "D86B20F67402AB81E32AD26C20333BBA")
     protected InputStream getInputStream() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1770058223 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1770058223 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("socket not created");
-        } //End block
+        } 
         {
             {
                 fis = new SocketInputStream();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1770058223 = fis;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1770058223.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1770058223.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1770058223;
-        // ---------- Original Method ----------
-        //if (fd == null) {
-            //throw new IOException("socket not created");
-        //}
-        //synchronized (this) {
-            //if (fis == null) {
-                //fis = new SocketInputStream();
-            //}
-            //return fis;
-        //}
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.253 -0400", hash_original_method = "2E8F2E95CF2F6CF40AEA3B38F9B68B34", hash_generated_method = "1D3FB051768280BFE9679783FF54DA9F")
     protected OutputStream getOutputStream() throws IOException {
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_1347717995 = null; //Variable for return #1
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_1347717995 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("socket not created");
-        } //End block
+        } 
         {
             {
                 fos = new SocketOutputStream();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1347717995 = fos;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1347717995.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1347717995.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1347717995;
-        // ---------- Original Method ----------
-        //if (fd == null) {
-            //throw new IOException("socket not created");
-        //}
-        //synchronized (this) {
-            //if (fos == null) {
-                //fos = new SocketOutputStream();
-            //}
-            //return fos;
-        //}
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.254 -0400", hash_original_method = "A7CC818E7F384DAEC54D76069E9C5019", hash_generated_method = "952C44BFFBE8563EF9D2303A90493066")
     protected int available() throws IOException {
         int var6B9EBF6BA37A6BD9983DF13805FEE2B0_823059475 = (getInputStream().available());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1663535399 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1663535399;
-        // ---------- Original Method ----------
-        //return getInputStream().available();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.255 -0400", hash_original_method = "CED8C1FFBDBF9F9E7A40EC2B2E6DD909", hash_generated_method = "B9E9E1065BD5DCF9B6CDD30A30C64630")
     protected void shutdownInput() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("socket not created");
-        } //End block
+        } 
         shutdown(fd, true);
-        // ---------- Original Method ----------
-        //if (fd == null) {
-            //throw new IOException("socket not created");
-        //}
-        //shutdown(fd, true);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.256 -0400", hash_original_method = "DE98B1F2C9FD8DEEFDCE620E4EB90078", hash_generated_method = "88FE1B1AA32A8F5AC8F548BD316D929E")
     protected void shutdownOutput() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("socket not created");
-        } //End block
+        } 
         shutdown(fd, false);
-        // ---------- Original Method ----------
-        //if (fd == null) {
-            //throw new IOException("socket not created");
-        //}
-        //shutdown(fd, false);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.256 -0400", hash_original_method = "C1B4172ED9A628993584DE4384B8AF55", hash_generated_method = "0E1F71E4BFDADB1D126612B2D650F0A1")
     protected FileDescriptor getFileDescriptor() {
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_60909670 = null; //Variable for return #1
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_60909670 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_60909670 = fd;
-        varB4EAC82CA7396A68D541C85D26508E83_60909670.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_60909670.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_60909670;
-        // ---------- Original Method ----------
-        //return fd;
+        
+        
     }
 
     
@@ -355,106 +367,109 @@ class LocalSocketImpl {
     protected boolean supportsUrgentData() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1661885370 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1661885370;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.257 -0400", hash_original_method = "EC21D6BA9A1DE1709D242100460B4B8C", hash_generated_method = "DEAE1695C18EDB78E6FEF40947B7A743")
     protected void sendUrgentData(int data) throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException ("not impled");
         addTaint(data);
-        // ---------- Original Method ----------
-        //throw new RuntimeException ("not impled");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.258 -0400", hash_original_method = "02CEF5E6368D2209C8707863BE147BD2", hash_generated_method = "B5C1DEFE9BAD65DC9F8FD1DDEAA0508D")
     public Object getOption(int optID) throws IOException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_825821881 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_1735152365 = null; //Variable for return #2
-        Object varB4EAC82CA7396A68D541C85D26508E83_1415723083 = null; //Variable for return #3
+        Object varB4EAC82CA7396A68D541C85D26508E83_825821881 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_1735152365 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_1415723083 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("socket not created");
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_825821881 = 0;
-        } //End block
+        } 
         int value = getOption_native(fd, optID);
-        //Begin case SocketOptions.SO_RCVBUF SocketOptions.SO_SNDBUF 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1735152365 = value;
-        //End case SocketOptions.SO_RCVBUF SocketOptions.SO_SNDBUF 
-        //Begin case SocketOptions.SO_REUSEADDR default 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1415723083 = value;
-        //End case SocketOptions.SO_REUSEADDR default 
+        
         addTaint(optID);
-        Object varA7E53CE21691AB073D9660D615818899_1081672273; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_1081672273; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1081672273 = varB4EAC82CA7396A68D541C85D26508E83_825821881;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1081672273 = varB4EAC82CA7396A68D541C85D26508E83_1735152365;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1081672273 = varB4EAC82CA7396A68D541C85D26508E83_1415723083;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1081672273.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1081672273.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1081672273;
-        // ---------- Original Method ----------
-        //if (fd == null) {
-            //throw new IOException("socket not created");
-        //}
-        //if (optID == SocketOptions.SO_TIMEOUT) {
-            //return 0;
-        //}
-        //int value = getOption_native(fd, optID);
-        //switch (optID)
-        //{
-            //case SocketOptions.SO_RCVBUF:
-            //case SocketOptions.SO_SNDBUF:
-                //return value;
-            //case SocketOptions.SO_REUSEADDR:
-            //default:
-                //return value;
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.259 -0400", hash_original_method = "A0313708A2FB484B7104FAC62F0E39B4", hash_generated_method = "745A53C1D489859C765C0630618D32A9")
     public void setOption(int optID, Object value) throws IOException {
         int boolValue = -1;
         int intValue = 0;
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("socket not created");
-        } //End block
+        } 
         {
             intValue = (Integer)value;
-        } //End block
+        } 
         {
             boolValue = ((Boolean) value)? 1 : 0;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("bad value: " + value);
-        } //End block
+        } 
         setOption_native(fd, optID, boolValue, intValue);
         addTaint(optID);
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //int boolValue = -1;
-        //int intValue = 0;
-        //if (fd == null) {
-            //throw new IOException("socket not created");
-        //}
-        //if (value instanceof Integer) {
-            //intValue = (Integer)value;
-        //} else if (value instanceof Boolean) {
-            //boolValue = ((Boolean) value)? 1 : 0;
-        //} else {
-            //throw new IOException("bad value: " + value);
-        //}
-        //setOption_native(fd, optID, boolValue, intValue);
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -462,61 +477,63 @@ class LocalSocketImpl {
     public void setFileDescriptorsForSend(FileDescriptor[] fds) {
         {
             outboundFileDescriptors = fds;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized(writeMonitor) {
-            //outboundFileDescriptors = fds;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.260 -0400", hash_original_method = "D444308F286D853D2E5F97ACF37B86DF", hash_generated_method = "84D0163DED5959B27F95C10B26F0D71B")
     public FileDescriptor[] getAncillaryFileDescriptors() throws IOException {
-        FileDescriptor[] varB4EAC82CA7396A68D541C85D26508E83_127782783 = null; //Variable for return #1
+        FileDescriptor[] varB4EAC82CA7396A68D541C85D26508E83_127782783 = null; 
         {
             FileDescriptor[] result = inboundFileDescriptors;
             inboundFileDescriptors = null;
             varB4EAC82CA7396A68D541C85D26508E83_127782783 = result;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_127782783.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_127782783.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_127782783;
-        // ---------- Original Method ----------
-        //synchronized(readMonitor) {
-            //FileDescriptor[] result = inboundFileDescriptors;
-            //inboundFileDescriptors = null;
-            //return result;
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.261 -0400", hash_original_method = "3E3240E544229F6BEFF619755963B808", hash_generated_method = "80D7156D0E98EDBA1B19F914FDD7DF8F")
     public Credentials getPeerCredentials() throws IOException {
-        Credentials varB4EAC82CA7396A68D541C85D26508E83_803162559 = null; //Variable for return #1
+        Credentials varB4EAC82CA7396A68D541C85D26508E83_803162559 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_803162559 = getPeerCredentials_native(fd);
-        varB4EAC82CA7396A68D541C85D26508E83_803162559.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_803162559.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_803162559;
-        // ---------- Original Method ----------
-        //return getPeerCredentials_native(fd);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.262 -0400", hash_original_method = "C6AD39B00524B9355CA4153DB07C4B13", hash_generated_method = "898F4B51747E656EAB3D973F60559D66")
     public LocalSocketAddress getSockAddress() throws IOException {
-        LocalSocketAddress varB4EAC82CA7396A68D541C85D26508E83_417911330 = null; //Variable for return #1
+        LocalSocketAddress varB4EAC82CA7396A68D541C85D26508E83_417911330 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_417911330 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_417911330.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_417911330.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_417911330;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.263 -0400", hash_original_method = "CA22E17CA63436350E75BC7DD678FC6C", hash_generated_method = "EE7B698A5C5971F84CA5AA51E8CB3380")
     @Override
     protected void finalize() throws IOException {
         close();
-        // ---------- Original Method ----------
-        //close();
+        
+        
     }
 
     
@@ -525,7 +542,7 @@ class LocalSocketImpl {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.263 -0400", hash_original_method = "AF927FBDB8352BCBCFDDC9969A694B0C", hash_generated_method = "AF927FBDB8352BCBCFDDC9969A694B0C")
         public SocketInputStream ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -535,8 +552,8 @@ class LocalSocketImpl {
             int varE70871DEC74DFE680005AAB58E0DA61C_263323136 = (available_native(fd));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771175285 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771175285;
-            // ---------- Original Method ----------
-            //return available_native(fd);
+            
+            
         }
 
         
@@ -544,8 +561,8 @@ class LocalSocketImpl {
         @Override
         public void close() throws IOException {
             LocalSocketImpl.this.close();
-            // ---------- Original Method ----------
-            //LocalSocketImpl.this.close();
+            
+            
         }
 
         
@@ -557,17 +574,17 @@ class LocalSocketImpl {
                 FileDescriptor myFd = fd;
                 if (DroidSafeAndroidRuntime.control) throw new IOException("socket closed");
                 ret = read_native(myFd);
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_859961583 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_859961583;
-            // ---------- Original Method ----------
-            //int ret;
-            //synchronized (readMonitor) {
-                //FileDescriptor myFd = fd;
-                //if (myFd == null) throw new IOException("socket closed");
-                //ret = read_native(myFd);
-                //return ret;
-            //}
+            
+            
+            
+                
+                
+                
+                
+            
         }
 
         
@@ -578,8 +595,8 @@ class LocalSocketImpl {
             addTaint(b[0]);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_538999145 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_538999145;
-            // ---------- Original Method ----------
-            //return read(b, 0, b.length);
+            
+            
         }
 
         
@@ -591,24 +608,24 @@ class LocalSocketImpl {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("socket closed");
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-                } //End block
+                } 
                 int ret = readba_native(b, off, len, myFd);
-            } //End block
+            } 
             addTaint(b[0]);
             addTaint(off);
             addTaint(len);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1718094675 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1718094675;
-            // ---------- Original Method ----------
-            //synchronized (readMonitor) {
-                //FileDescriptor myFd = fd;
-                //if (myFd == null) throw new IOException("socket closed");
-                //if (off < 0 || len < 0 || (off + len) > b.length ) {
-                    //throw new ArrayIndexOutOfBoundsException();
-                //}
-                //int ret = readba_native(b, off, len, myFd);
-                //return ret;
-            //}
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+            
         }
 
         
@@ -621,7 +638,7 @@ class LocalSocketImpl {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.266 -0400", hash_original_method = "9DAA385F4ED568E05EE1F0223FEA6D4A", hash_generated_method = "9DAA385F4ED568E05EE1F0223FEA6D4A")
         public SocketOutputStream ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -629,8 +646,8 @@ class LocalSocketImpl {
         @Override
         public void close() throws IOException {
             LocalSocketImpl.this.close();
-            // ---------- Original Method ----------
-            //LocalSocketImpl.this.close();
+            
+            
         }
 
         
@@ -639,8 +656,8 @@ class LocalSocketImpl {
         public void write(byte[] b) throws IOException {
             write(b, 0, b.length);
             addTaint(b[0]);
-            // ---------- Original Method ----------
-            //write(b, 0, b.length);
+            
+            
         }
 
         
@@ -652,21 +669,21 @@ class LocalSocketImpl {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("socket closed");
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-                } //End block
+                } 
                 writeba_native(b, off, len, myFd);
-            } //End block
+            } 
             addTaint(b[0]);
             addTaint(off);
             addTaint(len);
-            // ---------- Original Method ----------
-            //synchronized (writeMonitor) {
-                //FileDescriptor myFd = fd;
-                //if (myFd == null) throw new IOException("socket closed");
-                //if (off < 0 || len < 0 || (off + len) > b.length ) {
-                    //throw new ArrayIndexOutOfBoundsException();
-                //}
-                //writeba_native(b, off, len, myFd);
-            //}
+            
+            
+                
+                
+                
+                    
+                
+                
+            
         }
 
         
@@ -677,14 +694,14 @@ class LocalSocketImpl {
                 FileDescriptor myFd = fd;
                 if (DroidSafeAndroidRuntime.control) throw new IOException("socket closed");
                 write_native(b, myFd);
-            } //End block
+            } 
             addTaint(b);
-            // ---------- Original Method ----------
-            //synchronized (writeMonitor) {
-                //FileDescriptor myFd = fd;
-                //if (myFd == null) throw new IOException("socket closed");
-                //write_native(b, myFd);
-            //}
+            
+            
+                
+                
+                
+            
         }
 
         

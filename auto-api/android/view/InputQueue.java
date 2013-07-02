@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.MessageQueue;
 import android.util.Slog;
@@ -18,8 +18,8 @@ public final class InputQueue {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.118 -0400", hash_original_method = "578F9F8C0543A874EC0424533736E385", hash_generated_method = "CE3B3177795F0AF995D39C9B3A066820")
     public  InputQueue(InputChannel channel) {
         mChannel = channel;
-        // ---------- Original Method ----------
-        //mChannel = channel;
+        
+        
     }
 
     
@@ -38,18 +38,18 @@ public final class InputQueue {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.119 -0400", hash_original_method = "61914318E0BCFE3BB34C0890B61B6D95", hash_generated_method = "E15F369CA63A294254204E761B8F450E")
     public InputChannel getInputChannel() {
-        InputChannel varB4EAC82CA7396A68D541C85D26508E83_1305842057 = null; //Variable for return #1
+        InputChannel varB4EAC82CA7396A68D541C85D26508E83_1305842057 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1305842057 = mChannel;
-        varB4EAC82CA7396A68D541C85D26508E83_1305842057.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1305842057.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1305842057;
-        // ---------- Original Method ----------
-        //return mChannel;
+        
+        
     }
 
     
     public static void registerInputChannel(InputChannel inputChannel, InputHandler inputHandler,
             MessageQueue messageQueue) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         if (inputChannel == null) {
             throw new IllegalArgumentException("inputChannel must not be null");
         }
@@ -107,7 +107,7 @@ public final class InputQueue {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.121 -0400", hash_original_method = "85C1D812E7267DE4D8D0FC0F23F521F1", hash_generated_method = "FE7116F7FDD08D0BCD50ADD251496AB3")
         private  FinishedCallback() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -132,7 +132,7 @@ public final class InputQueue {
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Event finished callback already invoked.");
-                } //End block
+                } 
                 nativeFinished(mFinishedToken, handled);
                 mFinishedToken = -1;
                 {
@@ -141,26 +141,26 @@ public final class InputQueue {
                     sRecycleCount += 1;
                     {
                         Slog.d(TAG, "Recycled finished callbacks: " + sRecycleCount);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             addTaint(handled);
-            // ---------- Original Method ----------
-            //synchronized (sLock) {
-                //if (mFinishedToken == -1) {
-                    //throw new IllegalStateException("Event finished callback already invoked.");
-                //}
-                //nativeFinished(mFinishedToken, handled);
-                //mFinishedToken = -1;
-                //if (sRecycleCount < RECYCLE_MAX_COUNT) {
-                    //mRecycleNext = sRecycleHead;
-                    //sRecycleHead = this;
-                    //sRecycleCount += 1;
-                    //if (DEBUG_RECYCLING) {
-                        //Slog.d(TAG, "Recycled finished callbacks: " + sRecycleCount);
-                    //}
-                //}
-            //}
+            
+            
+                
+                    
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+            
         }
 
         

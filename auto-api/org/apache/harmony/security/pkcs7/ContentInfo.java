@@ -1,11 +1,11 @@
 package org.apache.harmony.security.pkcs7;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.Arrays;
@@ -33,51 +33,52 @@ public final class ContentInfo {
         this.oid = oid;
         this.content = content;
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.oid = oid;
-        //this.content = content;
-        //this.encoding = encoding;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.004 -0400", hash_original_method = "FEA779456A4B7718EE7D788C42FE9ED3", hash_generated_method = "F02B91CD87855DE2C1233A458FA29311")
     public SignedData getSignedData() {
-        SignedData varB4EAC82CA7396A68D541C85D26508E83_1639199186 = null; //Variable for return #1
-        SignedData varB4EAC82CA7396A68D541C85D26508E83_1325025734 = null; //Variable for return #2
+        SignedData varB4EAC82CA7396A68D541C85D26508E83_1639199186 = null; 
+        SignedData varB4EAC82CA7396A68D541C85D26508E83_1325025734 = null; 
         {
             boolean var39A0E72567E8CA5BEA10BAB9AB37B8BD_168584930 = (Arrays.equals(oid, SIGNED_DATA));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1639199186 = (SignedData)content;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1325025734 = null;
-        SignedData varA7E53CE21691AB073D9660D615818899_96937152; //Final return value
+        SignedData varA7E53CE21691AB073D9660D615818899_96937152; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_96937152 = varB4EAC82CA7396A68D541C85D26508E83_1639199186;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_96937152 = varB4EAC82CA7396A68D541C85D26508E83_1325025734;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_96937152.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_96937152.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_96937152;
-        // ---------- Original Method ----------
-        //if (Arrays.equals(oid, SIGNED_DATA)) {
-            //return (SignedData)content;
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.004 -0400", hash_original_method = "7EF6AE96CD0AADFF5C056ACE9B248CB2", hash_generated_method = "AAF59A4502F1C29327C2A83DA655190C")
     public Object getContent() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_246558695 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_246558695 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_246558695 = content;
-        varB4EAC82CA7396A68D541C85D26508E83_246558695.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_246558695.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_246558695;
-        // ---------- Original Method ----------
-        //return content;
+        
+        
     }
 
     
@@ -85,30 +86,32 @@ public final class ContentInfo {
     public int[] getContentType() {
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_128525407 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_128525407;
-        // ---------- Original Method ----------
-        //return oid;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.005 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "96DF9229AC5F8417C17ECC7DC3BBC285")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_841856256 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_841856256;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.010 -0400", hash_original_method = "E27EF60D80B9BCE694BEF49083131D32", hash_generated_method = "1621184D048F8043768DAFD096AAD7AD")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_972011803 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_972011803 = null; 
         StringBuilder res = new StringBuilder();
         res.append("==== ContentInfo:");
         res.append("\n== ContentType (OID): ");
@@ -117,34 +120,34 @@ public final class ContentInfo {
             {
                 res.append(i);
                 res.append(' ');
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         res.append("\n== Content: ");
         {
             res.append("\n");
             res.append(content.toString());
-        } //End block
+        } 
         res.append("\n== Content End");
         res.append("\n==== ContentInfo End\n");
         varB4EAC82CA7396A68D541C85D26508E83_972011803 = res.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_972011803.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_972011803.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_972011803;
-        // ---------- Original Method ----------
-        //StringBuilder res = new StringBuilder();
-        //res.append("==== ContentInfo:");
-        //res.append("\n== ContentType (OID): ");
-        //for (int i : oid) {
-            //res.append(i);
-            //res.append(' ');
-        //}
-        //res.append("\n== Content: ");
-        //if (content != null) {
-            //res.append("\n");
-            //res.append(content.toString());
-        //}
-        //res.append("\n== Content End");
-        //res.append("\n==== ContentInfo End\n");
-        //return res.toString();
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -215,47 +218,8 @@ public final class ContentInfo {
             return new ContentInfo((int[]) values[0], values[1], in.getEncoded());
         }
    };
-    // orphaned legacy method
-   /*
-    @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
-            Object[] values = (Object[]) in.content;
-            int[] oid = (int[]) values[0];
-            if (Arrays.equals(oid, DATA)) {
-                if (values[1] != null) {
-                    return new ContentInfo(oid,
-                            ASN1OctetString.getInstance().decode((byte[])values[1]),
-                            in.getEncoded());
-                }  else {
-                    return new ContentInfo((int[])values[0], null,
-                            in.getEncoded());
-                }
-            }
-            if (Arrays.equals(oid, SIGNED_DATA)) {
-                return new ContentInfo((int[])values[0],
-                        SignedData.ASN1.decode((byte[])values[1]),
-                        in.getEncoded());
-            }
-            return new ContentInfo((int[]) values[0], values[1], in.getEncoded());
-        }
     
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            ContentInfo ci = (ContentInfo) object;
-            values[0] = ci.oid;
-            if (ci.content != null) {
-                if (Arrays.equals(ci.oid, DATA)) {
-                    if (ci.content != null) {
-                        values[1] =
-                            ASN1OctetString.getInstance().encode(ci.content);
-                    }
-                } else if (ci.content instanceof SignedData) {
-                    values[1] = SignedData.ASN1.encode(ci.content);
-                } else {
-                    values[1] = ci.content;
-                }
-            }
-        }
-    */
+   
     
 }
 

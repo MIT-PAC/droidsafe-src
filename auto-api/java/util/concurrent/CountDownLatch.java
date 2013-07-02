@@ -1,11 +1,11 @@
 package java.util.concurrent;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.concurrent.locks.*;
 import java.util.concurrent.atomic.*;
@@ -19,20 +19,22 @@ public class CountDownLatch {
     public  CountDownLatch(int count) {
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("count < 0");
         this.sync = new Sync(count);
-        // ---------- Original Method ----------
-        //if (count < 0) throw new IllegalArgumentException("count < 0");
-        //this.sync = new Sync(count);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.733 -0400", hash_original_method = "A9727D614A84DE128F63540E6073A44B", hash_generated_method = "D070BA44558B523604A261CE2882A091")
     public void await() throws InterruptedException {
         sync.acquireSharedInterruptibly(1);
-        // ---------- Original Method ----------
-        //sync.acquireSharedInterruptibly(1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.733 -0400", hash_original_method = "0AAF9EA81FFD8AD9617435605CC7D253", hash_generated_method = "DA42A080D1DB8237A43BD785CF17F9E5")
     public boolean await(long timeout, TimeUnit unit) throws InterruptedException {
         boolean varD12778331A5B05E1E52D9468F6FF0E07_1324949960 = (sync.tryAcquireSharedNanos(1, unit.toNanos(timeout)));
@@ -40,37 +42,40 @@ public class CountDownLatch {
         addTaint(unit.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1958624356 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1958624356;
-        // ---------- Original Method ----------
-        //return sync.tryAcquireSharedNanos(1, unit.toNanos(timeout));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.733 -0400", hash_original_method = "ACB2575EE39865032078A7B67E3D5076", hash_generated_method = "5F72B9A21B37F73F93872F70DF24474A")
     public void countDown() {
         sync.releaseShared(1);
-        // ---------- Original Method ----------
-        //sync.releaseShared(1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.734 -0400", hash_original_method = "ABE42AE497B23B643FDF7DC2348A1AF5", hash_generated_method = "D87D4013127EF3F508CC65AB9219059D")
     public long getCount() {
         long var3E7EE26A585DAEF98B448A2C779F0B42_1986119879 = (sync.getCount());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1383595677 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1383595677;
-        // ---------- Original Method ----------
-        //return sync.getCount();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.734 -0400", hash_original_method = "45A2072B871660339FAF307330C7F60C", hash_generated_method = "0D4C4DD29E49EB6C90F9B2C82E66BA44")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_165540453 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_165540453 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_165540453 = super.toString() + "[Count = " + sync.getCount() + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_165540453.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_165540453.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_165540453;
-        // ---------- Original Method ----------
-        //return super.toString() + "[Count = " + sync.getCount() + "]";
+        
+        
     }
 
     
@@ -80,8 +85,8 @@ public class CountDownLatch {
           Sync(int count) {
             setState(count);
             addTaint(count);
-            // ---------- Original Method ----------
-            //setState(count);
+            
+            
         }
 
         
@@ -90,8 +95,8 @@ public class CountDownLatch {
             int var376B5C2087169E76FB6628D31DCC9663_1358799117 = (getState());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041175722 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041175722;
-            // ---------- Original Method ----------
-            //return getState();
+            
+            
         }
 
         
@@ -99,12 +104,12 @@ public class CountDownLatch {
         protected int tryAcquireShared(int acquires) {
             {
                 boolean varB9A8967EEEE626B2D88454F1CD4A1CB3_997306760 = ((getState() == 0));
-            } //End flattened ternary
+            } 
             addTaint(acquires);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1742991195 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1742991195;
-            // ---------- Original Method ----------
-            //return (getState() == 0) ? 1 : -1;
+            
+            
         }
 
         
@@ -115,20 +120,20 @@ public class CountDownLatch {
                 int nextc = c-1;
                 {
                     boolean var525F59EF5A984E7DE1A679CCEEFC8101_290086000 = (compareAndSetState(c, nextc));
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             addTaint(releases);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_548909869 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_548909869;
-            // ---------- Original Method ----------
-            //for (;;) {
-                //int c = getState();
-                //if (c == 0)
-                    //return false;
-                //int nextc = c-1;
-                //if (compareAndSetState(c, nextc))
-                    //return nextc == 0;
-            //}
+            
+            
+                
+                
+                    
+                
+                
+                    
+            
         }
 
         

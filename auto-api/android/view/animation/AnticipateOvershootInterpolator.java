@@ -1,11 +1,11 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -22,24 +22,24 @@ public class AnticipateOvershootInterpolator implements Interpolator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.445 -0400", hash_original_method = "ADFB7B1CA7D165BA838134D2684973F5", hash_generated_method = "9F5D05CDCB4B5CB1ADE17DC42E2BEF6C")
     public  AnticipateOvershootInterpolator() {
         mTension = 2.0f * 1.5f;
-        // ---------- Original Method ----------
-        //mTension = 2.0f * 1.5f;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.445 -0400", hash_original_method = "D15CF2E61548D6019F2AF4E90A4CFAB6", hash_generated_method = "D99C2C79B93882790F7B932B057E00D6")
     public  AnticipateOvershootInterpolator(float tension) {
         mTension = tension * 1.5f;
-        // ---------- Original Method ----------
-        //mTension = tension * 1.5f;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.445 -0400", hash_original_method = "3EEBC4A7EE7237033C6CB68A91DD57AF", hash_generated_method = "E9CCD84715D8B7DFD848411354DE56BA")
     public  AnticipateOvershootInterpolator(float tension, float extraTension) {
         mTension = tension * extraTension;
-        // ---------- Original Method ----------
-        //mTension = tension * extraTension;
+        
+        
     }
 
     
@@ -51,11 +51,11 @@ public class AnticipateOvershootInterpolator implements Interpolator {
         a.recycle();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs, AnticipateOvershootInterpolator);
-        //mTension = a.getFloat(AnticipateOvershootInterpolator_tension, 2.0f) *
-                //a.getFloat(AnticipateOvershootInterpolator_extraTension, 1.5f);
-        //a.recycle();
+        
+        
+        
+                
+        
     }
 
     
@@ -69,6 +69,7 @@ public class AnticipateOvershootInterpolator implements Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.446 -0400", hash_original_method = "2255DD32EB6AB62491E070729AD8FA55", hash_generated_method = "2AF9421D3383D09E5D9907FA826D6446")
     public float getInterpolation(float t) {
         float var4D22A2546DC500EBE319D50671525B44_386467666 = (0.5f * a(t * 2.0f, mTension));
@@ -76,9 +77,9 @@ public class AnticipateOvershootInterpolator implements Interpolator {
         addTaint(t);
         float var546ADE640B6EDFBC8A086EF31347E768_543562966 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_543562966;
-        // ---------- Original Method ----------
-        //if (t < 0.5f) return 0.5f * a(t * 2.0f, mTension);
-        //else return 0.5f * (o(t * 2.0f - 2.0f, mTension) + 2.0f);
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -50,9 +50,9 @@ public class Socket {
     public  Socket() {
         this.impl = factory != null ? factory.createSocketImpl() : new PlainSocketImpl();
         this.proxy = null;
-        // ---------- Original Method ----------
-        //this.impl = factory != null ? factory.createSocketImpl() : new PlainSocketImpl();
-        //this.proxy = null;
+        
+        
+        
     }
 
     
@@ -62,16 +62,16 @@ public class Socket {
             boolean varE5CF7C9644D24DC30510FF113B6FA9F4_1285697741 = (proxy == null || proxy.type() == Proxy.Type.HTTP);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid proxy: " + proxy);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.proxy = proxy;
         this.impl = factory != null ? factory.createSocketImpl() : new PlainSocketImpl(proxy);
-        // ---------- Original Method ----------
-        //if (proxy == null || proxy.type() == Proxy.Type.HTTP) {
-            //throw new IllegalArgumentException("Invalid proxy: " + proxy);
-        //}
-        //this.proxy = proxy;
-        //this.impl = factory != null ? factory.createSocketImpl() : new PlainSocketImpl(proxy);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -80,7 +80,7 @@ public class Socket {
         this(dstName, dstPort, null, 0);
         addTaint(dstName.getTaint());
         addTaint(dstPort);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -92,8 +92,8 @@ public class Socket {
         addTaint(dstPort);
         addTaint(localAddress.getTaint());
         addTaint(localPort);
-        // ---------- Original Method ----------
-        //tryAllAddresses(dstName, dstPort, localAddress, localPort, true);
+        
+        
     }
 
     
@@ -105,8 +105,8 @@ public class Socket {
         addTaint(hostName.getTaint());
         addTaint(port);
         addTaint(streaming);
-        // ---------- Original Method ----------
-        //tryAllAddresses(hostName, port, null, 0, streaming);
+        
+        
     }
 
     
@@ -117,9 +117,9 @@ public class Socket {
         startupSocket(dstAddress, dstPort, null, 0, true);
         addTaint(dstAddress.getTaint());
         addTaint(dstPort);
-        // ---------- Original Method ----------
-        //checkDestination(dstAddress, dstPort);
-        //startupSocket(dstAddress, dstPort, null, 0, true);
+        
+        
+        
     }
 
     
@@ -133,9 +133,9 @@ public class Socket {
         addTaint(dstPort);
         addTaint(localAddress.getTaint());
         addTaint(localPort);
-        // ---------- Original Method ----------
-        //checkDestination(dstAddress, dstPort);
-        //startupSocket(dstAddress, dstPort, localAddress, localPort, true);
+        
+        
+        
     }
 
     
@@ -148,9 +148,9 @@ public class Socket {
         addTaint(addr.getTaint());
         addTaint(port);
         addTaint(streaming);
-        // ---------- Original Method ----------
-        //checkDestination(addr, port);
-        //startupSocket(addr, port, null, 0, streaming);
+        
+        
+        
     }
 
     
@@ -158,12 +158,13 @@ public class Socket {
     protected  Socket(SocketImpl impl) throws SocketException {
         this.impl = impl;
         this.proxy = null;
-        // ---------- Original Method ----------
-        //this.impl = impl;
-        //this.proxy = null;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.822 -0400", hash_original_method = "FE893551BF445ECD0CF959494571F82D", hash_generated_method = "C189D441E2CE564A3820104FFFEC276B")
     private void tryAllAddresses(String dstName, int dstPort, InetAddress
             localAddress, int localPort, boolean streaming) throws IOException {
@@ -177,11 +178,11 @@ public class Socket {
                 {
                     checkDestination(dstAddress, dstPort);
                     startupSocket(dstAddress, dstPort, localAddress, localPort, streaming);
-                } //End block
+                } 
                 catch (IOException ex)
                 { }
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         dstAddress = dstAddresses[dstAddresses.length - 1];
         checkDestination(dstAddress, dstPort);
         startupSocket(dstAddress, dstPort, localAddress, localPort, streaming);
@@ -190,259 +191,274 @@ public class Socket {
         addTaint(localAddress.getTaint());
         addTaint(localPort);
         addTaint(streaming);
-        // ---------- Original Method ----------
-        //InetAddress[] dstAddresses = InetAddress.getAllByName(dstName);
-        //InetAddress dstAddress;
-        //for (int i = 0; i < dstAddresses.length - 1; i++) {
-            //dstAddress = dstAddresses[i];
-            //try {
-                //checkDestination(dstAddress, dstPort);
-                //startupSocket(dstAddress, dstPort, localAddress, localPort, streaming);
-                //return;
-            //} catch (IOException ex) {
-            //}
-        //}
-        //dstAddress = dstAddresses[dstAddresses.length - 1];
-        //checkDestination(dstAddress, dstPort);
-        //startupSocket(dstAddress, dstPort, localAddress, localPort, streaming);
+        
+        
+        
+        
+            
+            
+                
+                
+                
+            
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.822 -0400", hash_original_method = "B238EF3FEB62ADA205D3F3298560A137", hash_generated_method = "CCD1F3E72DDE675BBB40BE0FF11DA93A")
     private void checkDestination(InetAddress destAddr, int dstPort) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Port out of range: " + dstPort);
-        } //End block
+        } 
         addTaint(destAddr.getTaint());
         addTaint(dstPort);
-        // ---------- Original Method ----------
-        //if (dstPort < 0 || dstPort > 65535) {
-            //throw new IllegalArgumentException("Port out of range: " + dstPort);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.823 -0400", hash_original_method = "6609A304DB40C6FFC8F6AC783F01FDAC", hash_generated_method = "BEF433D9A28470F041DB000F7F9A5B35")
     public synchronized void close() throws IOException {
         isClosed = true;
         localAddress = Inet4Address.ANY;
         impl.close();
-        // ---------- Original Method ----------
-        //isClosed = true;
-        //localAddress = Inet4Address.ANY;
-        //impl.close();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.823 -0400", hash_original_method = "084821CC0A1E0331CE4D2BB5EC46E415", hash_generated_method = "819608A34BB9B87A4D561AD011AB3D4A")
     public InetAddress getInetAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_646358729 = null; //Variable for return #1
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_2013553780 = null; //Variable for return #2
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_646358729 = null; 
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_2013553780 = null; 
         {
             boolean var341AB6969DFD2927CA563855F9EEB77E_843928130 = (!isConnected());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_646358729 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2013553780 = impl.getInetAddress();
-        InetAddress varA7E53CE21691AB073D9660D615818899_1587223312; //Final return value
+        InetAddress varA7E53CE21691AB073D9660D615818899_1587223312; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1587223312 = varB4EAC82CA7396A68D541C85D26508E83_646358729;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1587223312 = varB4EAC82CA7396A68D541C85D26508E83_2013553780;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1587223312.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1587223312.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1587223312;
-        // ---------- Original Method ----------
-        //if (!isConnected()) {
-            //return null;
-        //}
-        //return impl.getInetAddress();
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.824 -0400", hash_original_method = "83F4AB21434B41B13879E1F39D268878", hash_generated_method = "56DA78669FFCD6B90095B77E4824BFAF")
     public InputStream getInputStream() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1660361124 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1660361124 = null; 
         checkOpenAndCreate(false);
         {
             boolean var899D12471AFC16D8818224BE7B57500A_1284409614 = (isInputShutdown());
             {
                 if (DroidSafeAndroidRuntime.control) throw new SocketException("Socket input is shutdown");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1660361124 = impl.getInputStream();
-        varB4EAC82CA7396A68D541C85D26508E83_1660361124.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1660361124.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1660361124;
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(false);
-        //if (isInputShutdown()) {
-            //throw new SocketException("Socket input is shutdown");
-        //}
-        //return impl.getInputStream();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.824 -0400", hash_original_method = "CB6F12AE5628FD4A044BF4AD41BFB963", hash_generated_method = "3DF476FE56A8AE2392804AFCB47B67AB")
     public boolean getKeepAlive() throws SocketException {
         checkOpenAndCreate(true);
         boolean var041E463ADEEF0C23B09546F75815EDF9_903176704 = ((Boolean) impl.getOption(SocketOptions.SO_KEEPALIVE));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2048765511 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2048765511;
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //return (Boolean) impl.getOption(SocketOptions.SO_KEEPALIVE);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.825 -0400", hash_original_method = "B81D9B2A12700622583B88DBCF07EC2E", hash_generated_method = "4385FADEDF2A73C862185219F1F422F0")
     public InetAddress getLocalAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1663642467 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1663642467 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1663642467 = localAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_1663642467.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1663642467.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1663642467;
-        // ---------- Original Method ----------
-        //return localAddress;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.825 -0400", hash_original_method = "F5BB694DF3469EBFBD82064FFB1FEAE0", hash_generated_method = "EFEED064787AA3B2AD20C2E7935F90AD")
     public int getLocalPort() {
         {
             boolean var13C5778A8A7AC802C9965161944F9D76_2113334742 = (!isBound());
-        } //End collapsed parenthetic
+        } 
         int var5201144B0B742B3A152781D672D1AA30_17466197 = (impl.getLocalPort());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1401502391 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1401502391;
-        // ---------- Original Method ----------
-        //if (!isBound()) {
-            //return -1;
-        //}
-        //return impl.getLocalPort();
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.826 -0400", hash_original_method = "0AB25EAA0774AA81766D4356986FC34F", hash_generated_method = "3609FC5343FB4BAED078BBDE34B81675")
     public OutputStream getOutputStream() throws IOException {
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_921421690 = null; //Variable for return #1
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_921421690 = null; 
         checkOpenAndCreate(false);
         {
             boolean var721D80F1B38A860A3B065E2E7DC6E012_895600788 = (isOutputShutdown());
             {
                 if (DroidSafeAndroidRuntime.control) throw new SocketException("Socket output is shutdown");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_921421690 = impl.getOutputStream();
-        varB4EAC82CA7396A68D541C85D26508E83_921421690.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_921421690.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_921421690;
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(false);
-        //if (isOutputShutdown()) {
-            //throw new SocketException("Socket output is shutdown");
-        //}
-        //return impl.getOutputStream();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.826 -0400", hash_original_method = "0A0FE55C893091E17125D546A7D59C8C", hash_generated_method = "DC40B1615330F888227899C06245C4A8")
     public int getPort() {
         {
             boolean var341AB6969DFD2927CA563855F9EEB77E_893431238 = (!isConnected());
-        } //End collapsed parenthetic
+        } 
         int var804FC545E664230B0744C92D9C1FC410_408311532 = (impl.getPort());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_890165756 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_890165756;
-        // ---------- Original Method ----------
-        //if (!isConnected()) {
-            //return 0;
-        //}
-        //return impl.getPort();
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.826 -0400", hash_original_method = "8044EC6E5CF2F698E1FE570A36824B05", hash_generated_method = "3BC5F16AB53D9EC79894C08651942723")
     public int getSoLinger() throws SocketException {
         checkOpenAndCreate(true);
         Object value = impl.getOption(SocketOptions.SO_LINGER);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1293621770 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1293621770;
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //Object value = impl.getOption(SocketOptions.SO_LINGER);
-        //if (value instanceof Integer) {
-            //return (Integer) value;
-        //} else {
-            //return -1;
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.826 -0400", hash_original_method = "49326126DE06A7EC2CFFBD7B3A14AE31", hash_generated_method = "A94A48D873CDE50D955DCCE6E062672D")
     public synchronized int getReceiveBufferSize() throws SocketException {
         checkOpenAndCreate(true);
         int var79D1B084DDFD041B24FC1B745ABBA44B_2110919480 = ((Integer) impl.getOption(SocketOptions.SO_RCVBUF));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2033129353 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2033129353;
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //return (Integer) impl.getOption(SocketOptions.SO_RCVBUF);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.827 -0400", hash_original_method = "9FF5297C2B145A55844611E68CB98459", hash_generated_method = "D442CEE6369FFAAC18E1516246112B47")
     public synchronized int getSendBufferSize() throws SocketException {
         checkOpenAndCreate(true);
         int varCFC5A7023F175F2036FA0F4CD488B13F_899748669 = ((Integer) impl.getOption(SocketOptions.SO_SNDBUF));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1400814005 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1400814005;
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //return (Integer) impl.getOption(SocketOptions.SO_SNDBUF);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.827 -0400", hash_original_method = "7DAE79431B5F9BEF40635CDD183C2B59", hash_generated_method = "08EF3BCD35321F78C5D0A7B3E3F27465")
     public synchronized int getSoTimeout() throws SocketException {
         checkOpenAndCreate(true);
         int varD23880532528160F55707BB89A021C2D_1003053433 = ((Integer) impl.getOption(SocketOptions.SO_TIMEOUT));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1623118016 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1623118016;
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //return (Integer) impl.getOption(SocketOptions.SO_TIMEOUT);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.827 -0400", hash_original_method = "3F059C4060D675A8035CAA8B5017EE1E", hash_generated_method = "D6B977E5973553769FD173C7E964200F")
     public boolean getTcpNoDelay() throws SocketException {
         checkOpenAndCreate(true);
         boolean var084D0845B8F25EFFBF84F2C2204185DB_936624568 = ((Boolean) impl.getOption(SocketOptions.TCP_NODELAY));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1790068474 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1790068474;
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //return (Boolean) impl.getOption(SocketOptions.TCP_NODELAY);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.827 -0400", hash_original_method = "B94B1A38E8CA82DAB010EC0768F89732", hash_generated_method = "2ECB8E5B368654CE5CB90AA57E928B6A")
     public void setKeepAlive(boolean keepAlive) throws SocketException {
         {
             checkOpenAndCreate(true);
             impl.setOption(SocketOptions.SO_KEEPALIVE, Boolean.valueOf(keepAlive));
-        } //End block
+        } 
         addTaint(keepAlive);
-        // ---------- Original Method ----------
-        //if (impl != null) {
-            //checkOpenAndCreate(true);
-            //impl.setOption(SocketOptions.SO_KEEPALIVE, Boolean.valueOf(keepAlive));
-        //}
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized void setSocketImplFactory(SocketImplFactory fac) throws IOException {
         if (factory != null) {
             throw new SocketException("Factory already set");
@@ -451,101 +467,107 @@ public class Socket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.828 -0400", hash_original_method = "AEB667B5DBC425D73D37135566ECC286", hash_generated_method = "3226E4F55935F478BB9C23241D5204C7")
     public synchronized void setSendBufferSize(int size) throws SocketException {
         checkOpenAndCreate(true);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("size < 1");
-        } //End block
+        } 
         impl.setOption(SocketOptions.SO_SNDBUF, Integer.valueOf(size));
         addTaint(size);
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //if (size < 1) {
-            //throw new IllegalArgumentException("size < 1");
-        //}
-        //impl.setOption(SocketOptions.SO_SNDBUF, Integer.valueOf(size));
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.828 -0400", hash_original_method = "1376DE896B8682F991877B7A17C5B3A4", hash_generated_method = "BD0796149356530A6893DDB730000696")
     public synchronized void setReceiveBufferSize(int size) throws SocketException {
         checkOpenAndCreate(true);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("size < 1");
-        } //End block
+        } 
         impl.setOption(SocketOptions.SO_RCVBUF, Integer.valueOf(size));
         addTaint(size);
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //if (size < 1) {
-            //throw new IllegalArgumentException("size < 1");
-        //}
-        //impl.setOption(SocketOptions.SO_RCVBUF, Integer.valueOf(size));
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.828 -0400", hash_original_method = "89C38D96E5FBD4D1BD6CE4BD573A4473", hash_generated_method = "BBE5721672DE1C18771AE847E3BE7BF1")
     public void setSoLinger(boolean on, int timeout) throws SocketException {
         checkOpenAndCreate(true);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("timeout < 0");
-        } //End block
+        } 
         {
             impl.setOption(SocketOptions.SO_LINGER, Integer.valueOf(timeout));
-        } //End block
+        } 
         {
             impl.setOption(SocketOptions.SO_LINGER, Boolean.FALSE);
-        } //End block
+        } 
         addTaint(on);
         addTaint(timeout);
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //if (on && timeout < 0) {
-            //throw new IllegalArgumentException("timeout < 0");
-        //}
-        //if (on) {
-            //impl.setOption(SocketOptions.SO_LINGER, Integer.valueOf(timeout));
-        //} else {
-            //impl.setOption(SocketOptions.SO_LINGER, Boolean.FALSE);
-        //}
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.829 -0400", hash_original_method = "EA919996CC1899AC4E781314DA47161A", hash_generated_method = "D718A6FF920C18A510F9A3EC3592B4C0")
     public synchronized void setSoTimeout(int timeout) throws SocketException {
         checkOpenAndCreate(true);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("timeout < 0");
-        } //End block
+        } 
         impl.setOption(SocketOptions.SO_TIMEOUT, Integer.valueOf(timeout));
         addTaint(timeout);
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //if (timeout < 0) {
-            //throw new IllegalArgumentException("timeout < 0");
-        //}
-        //impl.setOption(SocketOptions.SO_TIMEOUT, Integer.valueOf(timeout));
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.829 -0400", hash_original_method = "04E6A4AAAA03D3C2F3E4334A66D2F7A1", hash_generated_method = "89173C7096F663DF9419936480F4F53F")
     public void setTcpNoDelay(boolean on) throws SocketException {
         checkOpenAndCreate(true);
         impl.setOption(SocketOptions.TCP_NODELAY, Boolean.valueOf(on));
         addTaint(on);
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //impl.setOption(SocketOptions.TCP_NODELAY, Boolean.valueOf(on));
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.829 -0400", hash_original_method = "20DD1F1CA9EDC17BE2B90F2B7E5FF655", hash_generated_method = "D631D2BCD4D34A36E457C5D4A13F0C2A")
     private void startupSocket(InetAddress dstAddress, int dstPort,
             InetAddress localAddress, int localPort, boolean streaming) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Local port out of range: " + localPort);
-        } //End block
+        } 
         InetAddress addr;
         addr = Inet4Address.ANY;
         addr = localAddress;
@@ -558,249 +580,256 @@ public class Socket {
                     boolean var2212C8D76AB677AF4319CDF4B542D69A_1354926376 = (!streaming || !usingSocks());
                     {
                         impl.bind(addr, localPort);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 isBound = true;
                 impl.connect(dstAddress, dstPort);
                 isConnected = true;
                 cacheLocalAddress();
-            } //End block
+            } 
             catch (IOException e)
             {
                 impl.close();
                 if (DroidSafeAndroidRuntime.control) throw e;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(dstAddress.getTaint());
         addTaint(dstPort);
         addTaint(localAddress.getTaint());
         addTaint(localPort);
         addTaint(streaming);
-        // ---------- Original Method ----------
-        //if (localPort < 0 || localPort > 65535) {
-            //throw new IllegalArgumentException("Local port out of range: " + localPort);
-        //}
-        //InetAddress addr = localAddress == null ? Inet4Address.ANY : localAddress;
-        //synchronized (this) {
-            //impl.create(streaming);
-            //isCreated = true;
-            //try {
-                //if (!streaming || !usingSocks()) {
-                    //impl.bind(addr, localPort);
-                //}
-                //isBound = true;
-                //impl.connect(dstAddress, dstPort);
-                //isConnected = true;
-                //cacheLocalAddress();
-            //} catch (IOException e) {
-                //impl.close();
-                //throw e;
-            //}
-        //}
+        
+        
+            
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                
+                
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.830 -0400", hash_original_method = "933F73796CB698722A986AC13FC9BFF8", hash_generated_method = "DB593CF300B9692F4980358ECF6CDA62")
     private boolean usingSocks() {
         boolean var78F22D973B8E4232A59324CAA691F0AB_13399238 = (proxy != null && proxy.type() == Proxy.Type.SOCKS);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1663559219 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1663559219;
-        // ---------- Original Method ----------
-        //return proxy != null && proxy.type() == Proxy.Type.SOCKS;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.831 -0400", hash_original_method = "881D40A46B027F3EDC8B30A9F4F44097", hash_generated_method = "38170CE7C5702DE6868162EBED2CAA8E")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_269692942 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1715988507 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_269692942 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1715988507 = null; 
         {
             boolean var341AB6969DFD2927CA563855F9EEB77E_138607321 = (!isConnected());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_269692942 = "Socket[unconnected]";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1715988507 = impl.toString();
-        String varA7E53CE21691AB073D9660D615818899_135652896; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_135652896; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_135652896 = varB4EAC82CA7396A68D541C85D26508E83_269692942;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_135652896 = varB4EAC82CA7396A68D541C85D26508E83_1715988507;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_135652896.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_135652896.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_135652896;
-        // ---------- Original Method ----------
-        //if (!isConnected()) {
-            //return "Socket[unconnected]";
-        //}
-        //return impl.toString();
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.831 -0400", hash_original_method = "D21BBF88E7F4579ADC8933941E3433FA", hash_generated_method = "CD4CBDB6FEEE348B3D48395F65CA80D4")
     public void shutdownInput() throws IOException {
         {
             boolean var899D12471AFC16D8818224BE7B57500A_1025671914 = (isInputShutdown());
             {
                 if (DroidSafeAndroidRuntime.control) throw new SocketException("Socket input is shutdown");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         checkOpenAndCreate(false);
         impl.shutdownInput();
         isInputShutdown = true;
-        // ---------- Original Method ----------
-        //if (isInputShutdown()) {
-            //throw new SocketException("Socket input is shutdown");
-        //}
-        //checkOpenAndCreate(false);
-        //impl.shutdownInput();
-        //isInputShutdown = true;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.832 -0400", hash_original_method = "1AECC9ACE476BBC93D823FC75BDACBC6", hash_generated_method = "53F40A5AB046690C3BADFF369DE3E67F")
     public void shutdownOutput() throws IOException {
         {
             boolean var721D80F1B38A860A3B065E2E7DC6E012_548987765 = (isOutputShutdown());
             {
                 if (DroidSafeAndroidRuntime.control) throw new SocketException("Socket output is shutdown");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         checkOpenAndCreate(false);
         impl.shutdownOutput();
         isOutputShutdown = true;
-        // ---------- Original Method ----------
-        //if (isOutputShutdown()) {
-            //throw new SocketException("Socket output is shutdown");
-        //}
-        //checkOpenAndCreate(false);
-        //impl.shutdownOutput();
-        //isOutputShutdown = true;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.834 -0400", hash_original_method = "80C03A9E4F151BE4271ACE586291D7DE", hash_generated_method = "414FCAED7F183FB5A3FABAC8A89026ED")
     private void checkOpenAndCreate(boolean create) throws SocketException {
         {
             boolean varF463C9E3EC09CF3DDC0E11AE27E5A7FD_370088641 = (isClosed());
             {
                 if (DroidSafeAndroidRuntime.control) throw new SocketException("Socket is closed");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 boolean varD001DA76880A087CD0A30FA1D399A199_194216006 = (!isConnected());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new SocketException("Socket is not connected");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             try 
             {
                 impl.create(true);
-            } //End block
+            } 
             catch (SocketException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw e;
-            } //End block
+            } 
             catch (IOException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new SocketException(e.toString());
-            } //End block
+            } 
             isCreated = true;
-        } //End block
+        } 
         addTaint(create);
-        // ---------- Original Method ----------
-        //if (isClosed()) {
-            //throw new SocketException("Socket is closed");
-        //}
-        //if (!create) {
-            //if (!isConnected()) {
-                //throw new SocketException("Socket is not connected");
-            //}
-            //return;
-        //}
-        //if (isCreated) {
-            //return;
-        //}
-        //synchronized (this) {
-            //if (isCreated) {
-                //return;
-            //}
-            //try {
-                //impl.create(true);
-            //} catch (SocketException e) {
-                //throw e;
-            //} catch (IOException e) {
-                //throw new SocketException(e.toString());
-            //}
-            //isCreated = true;
-        //}
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
+        
+            
+        
+        
+            
+                
+            
+            
+                
+            
+                
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.835 -0400", hash_original_method = "AE126A441E32CF7358FEDD7A95BAD391", hash_generated_method = "A6067815E84715E440228663709B48BC")
     public SocketAddress getLocalSocketAddress() {
-        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_1370277106 = null; //Variable for return #1
-        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_1064082931 = null; //Variable for return #2
+        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_1370277106 = null; 
+        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_1064082931 = null; 
         {
             boolean var13C5778A8A7AC802C9965161944F9D76_298613185 = (!isBound());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1370277106 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1064082931 = new InetSocketAddress(getLocalAddress(), getLocalPort());
-        SocketAddress varA7E53CE21691AB073D9660D615818899_150071200; //Final return value
+        SocketAddress varA7E53CE21691AB073D9660D615818899_150071200; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_150071200 = varB4EAC82CA7396A68D541C85D26508E83_1370277106;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_150071200 = varB4EAC82CA7396A68D541C85D26508E83_1064082931;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_150071200.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_150071200.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_150071200;
-        // ---------- Original Method ----------
-        //if (!isBound()) {
-            //return null;
-        //}
-        //return new InetSocketAddress(getLocalAddress(), getLocalPort());
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.836 -0400", hash_original_method = "7C698472BF26D61A7917F4B5238C5FF7", hash_generated_method = "25BF78662D3638BA2E70E8DA3ED7B496")
     public SocketAddress getRemoteSocketAddress() {
-        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_1559530641 = null; //Variable for return #1
-        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_566865033 = null; //Variable for return #2
+        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_1559530641 = null; 
+        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_566865033 = null; 
         {
             boolean var341AB6969DFD2927CA563855F9EEB77E_515044356 = (!isConnected());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1559530641 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_566865033 = new InetSocketAddress(getInetAddress(), getPort());
-        SocketAddress varA7E53CE21691AB073D9660D615818899_1731712891; //Final return value
+        SocketAddress varA7E53CE21691AB073D9660D615818899_1731712891; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1731712891 = varB4EAC82CA7396A68D541C85D26508E83_1559530641;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1731712891 = varB4EAC82CA7396A68D541C85D26508E83_566865033;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1731712891.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1731712891.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1731712891;
-        // ---------- Original Method ----------
-        //if (!isConnected()) {
-            //return null;
-        //}
-        //return new InetSocketAddress(getInetAddress(), getPort());
+        
+        
+            
+        
+        
     }
 
     
@@ -808,8 +837,8 @@ public class Socket {
     public boolean isBound() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1123201927 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1123201927;
-        // ---------- Original Method ----------
-        //return isBound;
+        
+        
     }
 
     
@@ -817,8 +846,8 @@ public class Socket {
     public boolean isConnected() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1268042484 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1268042484;
-        // ---------- Original Method ----------
-        //return isConnected;
+        
+        
     }
 
     
@@ -826,11 +855,12 @@ public class Socket {
     public boolean isClosed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_343228305 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_343228305;
-        // ---------- Original Method ----------
-        //return isClosed;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.838 -0400", hash_original_method = "9E3C378994EF9A4091E39D0FA34770F8", hash_generated_method = "34F1DFB37B7C12CB3DBE762D96E5D2FF")
     public void bind(SocketAddress localAddr) throws IOException {
         checkOpenAndCreate(true);
@@ -838,79 +868,81 @@ public class Socket {
             boolean var508204320144CEB3F447DE9CCDB64480_540818440 = (isBound());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BindException("Socket is already bound");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int port = 0;
         InetAddress addr = Inet4Address.ANY;
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Local address not an InetSocketAddress: " +
                         localAddr.getClass());
-            } //End block
+            } 
             InetSocketAddress inetAddr = (InetSocketAddress) localAddr;
             {
                 boolean varC74AE0463916E813FB227E6D8242C56F_1058343500 = ((addr = inetAddr.getAddress()) == null);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new UnknownHostException("Host is unresolved: " + inetAddr.getHostName());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             port = inetAddr.getPort();
-        } //End block
+        } 
         {
             try 
             {
                 impl.bind(addr, port);
                 isBound = true;
                 cacheLocalAddress();
-            } //End block
+            } 
             catch (IOException e)
             {
                 impl.close();
                 if (DroidSafeAndroidRuntime.control) throw e;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(localAddr.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.839 -0400", hash_original_method = "B2F3815725658D73C0532A54E6C164BA", hash_generated_method = "BB337763E900750F306DD7ECDCF2158C")
     public void connect(SocketAddress remoteAddr) throws IOException {
         connect(remoteAddr, 0);
         addTaint(remoteAddr.getTaint());
-        // ---------- Original Method ----------
-        //connect(remoteAddr, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.839 -0400", hash_original_method = "45EED4DE787227F7BEC68E335C7AA6E7", hash_generated_method = "6C6B95F083A792D0828A1C90E3367CF4")
     public void connect(SocketAddress remoteAddr, int timeout) throws IOException {
         checkOpenAndCreate(true);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("timeout < 0");
-        } //End block
+        } 
         {
             boolean var5153987C55DB41759ADC1D7527E9459D_764718272 = (isConnected());
             {
                 if (DroidSafeAndroidRuntime.control) throw new SocketException("Already connected");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("remoteAddr == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Remote address not an InetSocketAddress: " +
                     remoteAddr.getClass());
-        } //End block
+        } 
         InetSocketAddress inetAddr = (InetSocketAddress) remoteAddr;
         InetAddress addr;
         {
             boolean var3A90A8ECED80469E6C4DBC0D965BCC76_870759533 = ((addr = inetAddr.getAddress()) == null);
             {
                 if (DroidSafeAndroidRuntime.control) throw new UnknownHostException("Host is unresolved: " + inetAddr.getHostName());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int port = inetAddr.getPort();
         checkDestination(addr, port);
         {
@@ -923,25 +955,25 @@ public class Socket {
                             boolean var24AE71A7EC560AD214D100F7850BDFF8_819155226 = (!usingSocks());
                             {
                                 impl.bind(Inet4Address.ANY, 0);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         isBound = true;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 impl.connect(remoteAddr, timeout);
                 isConnected = true;
                 cacheLocalAddress();
-            } //End block
+            } 
             catch (IOException e)
             {
                 impl.close();
                 if (DroidSafeAndroidRuntime.control) throw e;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(remoteAddr.getTaint());
         addTaint(timeout);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -949,8 +981,8 @@ public class Socket {
     public boolean isInputShutdown() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_419310006 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_419310006;
-        // ---------- Original Method ----------
-        //return isInputShutdown;
+        
+        
     }
 
     
@@ -958,92 +990,99 @@ public class Socket {
     public boolean isOutputShutdown() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_152055258 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_152055258;
-        // ---------- Original Method ----------
-        //return isOutputShutdown;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.841 -0400", hash_original_method = "6CEA4E5A53899EBE8D1FD08F2FE40675", hash_generated_method = "39B146F11D856CC9843D732D4E2061C0")
     public void setReuseAddress(boolean reuse) throws SocketException {
         checkOpenAndCreate(true);
         impl.setOption(SocketOptions.SO_REUSEADDR, Boolean.valueOf(reuse));
         addTaint(reuse);
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //impl.setOption(SocketOptions.SO_REUSEADDR, Boolean.valueOf(reuse));
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.842 -0400", hash_original_method = "8D0919FD23B9A2472FC046E6B1704481", hash_generated_method = "E9F52A0FA01934469B49C9056B8DEA1E")
     public boolean getReuseAddress() throws SocketException {
         checkOpenAndCreate(true);
         boolean varCE142DF7D7C52AD31EFC3E546F2DD316_779679500 = ((Boolean) impl.getOption(SocketOptions.SO_REUSEADDR));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_591508621 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_591508621;
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //return (Boolean) impl.getOption(SocketOptions.SO_REUSEADDR);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.842 -0400", hash_original_method = "8F9774180DF7F00524B2F69126E7F96E", hash_generated_method = "9D3EFD096926A8E155DEF836A7789736")
     public void setOOBInline(boolean oobinline) throws SocketException {
         checkOpenAndCreate(true);
         impl.setOption(SocketOptions.SO_OOBINLINE, Boolean.valueOf(oobinline));
         addTaint(oobinline);
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //impl.setOption(SocketOptions.SO_OOBINLINE, Boolean.valueOf(oobinline));
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.843 -0400", hash_original_method = "A307BAC96AD0AD9185D724CFFBC60918", hash_generated_method = "CC96D068F75DF75B6AB8C82CFC4F05EF")
     public boolean getOOBInline() throws SocketException {
         checkOpenAndCreate(true);
         boolean varCB6AA2E4A86BFAA8F54C6C5D29BB281D_1269119825 = ((Boolean) impl.getOption(SocketOptions.SO_OOBINLINE));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1939134560 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1939134560;
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //return (Boolean) impl.getOption(SocketOptions.SO_OOBINLINE);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.843 -0400", hash_original_method = "50A48D0E3EC8A723BC37542164C52A31", hash_generated_method = "C3B01BF49AE1D06CFCA39558D136DF48")
     public void setTrafficClass(int value) throws SocketException {
         checkOpenAndCreate(true);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         impl.setOption(SocketOptions.IP_TOS, Integer.valueOf(value));
         addTaint(value);
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //if (value < 0 || value > 255) {
-            //throw new IllegalArgumentException();
-        //}
-        //impl.setOption(SocketOptions.IP_TOS, Integer.valueOf(value));
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.844 -0400", hash_original_method = "D7C7CF134B3FE725817BA2C07D220760", hash_generated_method = "06105528B490B1CEBB8120FD5A2366A0")
     public int getTrafficClass() throws SocketException {
         checkOpenAndCreate(true);
         int var9C2568077066805EC4361C5C54BBCF61_937686641 = ((Integer) impl.getOption(SocketOptions.IP_TOS));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_324776894 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_324776894;
-        // ---------- Original Method ----------
-        //checkOpenAndCreate(true);
-        //return (Integer) impl.getOption(SocketOptions.IP_TOS);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.845 -0400", hash_original_method = "CBFC447F34929AC991DFFA20015F8279", hash_generated_method = "9439B775AB4C29CDB458DB7934DF9254")
     public void sendUrgentData(int value) throws IOException {
         impl.sendUrgentData(value);
         addTaint(value);
-        // ---------- Original Method ----------
-        //impl.sendUrgentData(value);
+        
+        
     }
 
     
@@ -1051,39 +1090,40 @@ public class Socket {
      void accepted() {
         isCreated = isBound = isConnected = true;
         cacheLocalAddress();
-        // ---------- Original Method ----------
-        //isCreated = isBound = isConnected = true;
-        //cacheLocalAddress();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.848 -0400", hash_original_method = "95A7BF302299AFCDED7970E2F7424717", hash_generated_method = "794BDF12835FAD96C22BC1E6B513ECB3")
     private void cacheLocalAddress() {
         this.localAddress = IoBridge.getSocketLocalAddress(impl.fd);
-        // ---------- Original Method ----------
-        //this.localAddress = IoBridge.getSocketLocalAddress(impl.fd);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.850 -0400", hash_original_method = "A7DB57A03C94477191BD1BBD8D530AC8", hash_generated_method = "7C488EF41A025CD045DBC27C72D6C1EB")
     public SocketChannel getChannel() {
-        SocketChannel varB4EAC82CA7396A68D541C85D26508E83_666126084 = null; //Variable for return #1
+        SocketChannel varB4EAC82CA7396A68D541C85D26508E83_666126084 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_666126084 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_666126084.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_666126084.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_666126084;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.851 -0400", hash_original_method = "90C19CEBA6BBC20B430C1F399D6443A6", hash_generated_method = "A0ECF1F035BA5BA122965E620432D62C")
     public FileDescriptor getFileDescriptor$() {
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1801778275 = null; //Variable for return #1
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1801778275 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1801778275 = impl.fd;
-        varB4EAC82CA7396A68D541C85D26508E83_1801778275.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1801778275.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1801778275;
-        // ---------- Original Method ----------
-        //return impl.fd;
+        
+        
     }
 
     
@@ -1092,7 +1132,7 @@ public class Socket {
         addTaint(connectionTime);
         addTaint(latency);
         addTaint(bandwidth);
-        // ---------- Original Method ----------
+        
     }
 
     

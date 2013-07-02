@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
@@ -16,16 +16,18 @@ public class URLEncoder {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.615 -0400", hash_original_method = "B41CBCC9C76AA809E0DC45FDBBA0D268", hash_generated_method = "A6F2D9E84EF75199314CB290B61AC175")
     private  URLEncoder() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static String encode(String s) {
         return ENCODER.encode(s, Charsets.UTF_8);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String encode(String s, String charsetName) throws UnsupportedEncodingException {
         return ENCODER.encode(s, Charset.forName(charsetName));
     }
@@ -41,8 +43,8 @@ public class URLEncoder {
             addTaint(c);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1527189368 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1527189368;
-            // ---------- Original Method ----------
-            //return " .-*_".indexOf(c) != -1;
+            
+            
         }
 
         

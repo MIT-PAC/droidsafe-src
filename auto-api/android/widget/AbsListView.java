@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.R;
 import android.content.Context;
@@ -343,12 +343,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         initializeScrollbars(a);
         a.recycle();
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //initAbsListView();
-        //setVerticalScrollBarEnabled(true);
-        //TypedArray a = context.obtainStyledAttributes(R.styleable.View);
-        //initializeScrollbars(a);
-        //a.recycle();
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -357,7 +357,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         this(context, attrs, com.android.internal.R.attr.absListViewStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -370,7 +370,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         Drawable d = a.getDrawable(com.android.internal.R.styleable.AbsListView_listSelector);
         {
             setSelector(d);
-        } //End block
+        } 
         mDrawSelectorOnTop = a.getBoolean(
                 com.android.internal.R.styleable.AbsListView_drawSelectorOnTop, false);
         boolean stackFromBottom = a.getBoolean(R.styleable.AbsListView_stackFromBottom, false);
@@ -395,8 +395,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -414,19 +414,19 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         mOverscrollDistance = configuration.getScaledOverscrollDistance();
         mOverflingDistance = configuration.getScaledOverflingDistance();
         mDensityScale = getContext().getResources().getDisplayMetrics().density;
-        // ---------- Original Method ----------
-        //setClickable(true);
-        //setFocusableInTouchMode(true);
-        //setWillNotDraw(false);
-        //setAlwaysDrawnWithCacheEnabled(false);
-        //setScrollingCacheEnabled(true);
-        //final ViewConfiguration configuration = ViewConfiguration.get(mContext);
-        //mTouchSlop = configuration.getScaledTouchSlop();
-        //mMinimumVelocity = configuration.getScaledMinimumFlingVelocity();
-        //mMaximumVelocity = configuration.getScaledMaximumFlingVelocity();
-        //mOverscrollDistance = configuration.getScaledOverscrollDistance();
-        //mOverflingDistance = configuration.getScaledOverflingDistance();
-        //mDensityScale = getContext().getResources().getDisplayMetrics().density;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -438,26 +438,26 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 Context context = getContext();
                 mEdgeGlowTop = new EdgeEffect(context);
                 mEdgeGlowBottom = new EdgeEffect(context);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mEdgeGlowTop = null;
             mEdgeGlowBottom = null;
-        } //End block
+        } 
         super.setOverScrollMode(mode);
         addTaint(mode);
-        // ---------- Original Method ----------
-        //if (mode != OVER_SCROLL_NEVER) {
-            //if (mEdgeGlowTop == null) {
-                //Context context = getContext();
-                //mEdgeGlowTop = new EdgeEffect(context);
-                //mEdgeGlowBottom = new EdgeEffect(context);
-            //}
-        //} else {
-            //mEdgeGlowTop = null;
-            //mEdgeGlowBottom = null;
-        //}
-        //super.setOverScrollMode(mode);
+        
+        
+            
+                
+                
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -470,29 +470,29 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     mCheckedIdStates == null);
                 {
                     mCheckedIdStates = new LongSparseArray<Integer>();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             mCheckStates.clear();
-        } //End block
+        } 
         {
             mCheckedIdStates.clear();
-        } //End block
+        } 
         addTaint(adapter.getTaint());
-        // ---------- Original Method ----------
-        //if (adapter != null) {
-            //if (mChoiceMode != CHOICE_MODE_NONE && mAdapter.hasStableIds() &&
-                    //mCheckedIdStates == null) {
-                //mCheckedIdStates = new LongSparseArray<Integer>();
-            //}
-        //}
-        //if (mCheckStates != null) {
-            //mCheckStates.clear();
-        //}
-        //if (mCheckedIdStates != null) {
-            //mCheckedIdStates.clear();
-        //}
+        
+        
+            
+                    
+                
+            
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -500,8 +500,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public int getCheckedItemCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2051337871 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2051337871;
-        // ---------- Original Method ----------
-        //return mCheckedItemCount;
+        
+        
     }
 
     
@@ -509,15 +509,15 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public boolean isItemChecked(int position) {
         {
             boolean var0D150F0C81FAF2A662314396EC0C31E7_1461058533 = (mCheckStates.get(position));
-        } //End block
+        } 
         addTaint(position);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_775864653 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_775864653;
-        // ---------- Original Method ----------
-        //if (mChoiceMode != CHOICE_MODE_NONE && mCheckStates != null) {
-            //return mCheckStates.get(position);
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
@@ -527,42 +527,42 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             boolean varA1B9DE9EDBC04ECFD56B33C2A5BF45B0_747599941 = (mChoiceMode == CHOICE_MODE_SINGLE && mCheckStates != null && mCheckStates.size() == 1);
             {
                 int varD7BABAE4F11D1568725A045F030C9B34_1788878421 = (mCheckStates.keyAt(0));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1142866115 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1142866115;
-        // ---------- Original Method ----------
-        //if (mChoiceMode == CHOICE_MODE_SINGLE && mCheckStates != null && mCheckStates.size() == 1) {
-            //return mCheckStates.keyAt(0);
-        //}
-        //return INVALID_POSITION;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.865 -0400", hash_original_method = "DD9B0503EDD82432AE0B7C0599D4B447", hash_generated_method = "2682EFD7D59A5C8BC46815D4DF93706D")
     public SparseBooleanArray getCheckedItemPositions() {
-        SparseBooleanArray varB4EAC82CA7396A68D541C85D26508E83_2105680336 = null; //Variable for return #1
-        SparseBooleanArray varB4EAC82CA7396A68D541C85D26508E83_1001761364 = null; //Variable for return #2
+        SparseBooleanArray varB4EAC82CA7396A68D541C85D26508E83_2105680336 = null; 
+        SparseBooleanArray varB4EAC82CA7396A68D541C85D26508E83_1001761364 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2105680336 = mCheckStates;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1001761364 = null;
-        SparseBooleanArray varA7E53CE21691AB073D9660D615818899_2100237420; //Final return value
+        SparseBooleanArray varA7E53CE21691AB073D9660D615818899_2100237420; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2100237420 = varB4EAC82CA7396A68D541C85D26508E83_2105680336;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2100237420 = varB4EAC82CA7396A68D541C85D26508E83_1001761364;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2100237420.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2100237420.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2100237420;
-        // ---------- Original Method ----------
-        //if (mChoiceMode != CHOICE_MODE_NONE) {
-            //return mCheckStates;
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
@@ -570,7 +570,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public long[] getCheckedItemIds() {
         {
             long[] var674FEB06102F8AD50D6DDBD530249D3A_638068076 = (new long[0]);
-        } //End block
+        } 
         final LongSparseArray<Integer> idStates = mCheckedIdStates;
         final int count = idStates.size();
         final long[] ids = new long[count];
@@ -578,21 +578,21 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             int i = 0;
             {
                 ids[i] = idStates.keyAt(i);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_1295601905 = {getTaintLong()};
         return var3908C7C3AF5171CEE1F112DAE77A5C4D_1295601905;
-        // ---------- Original Method ----------
-        //if (mChoiceMode == CHOICE_MODE_NONE || mCheckedIdStates == null || mAdapter == null) {
-            //return new long[0];
-        //}
-        //final LongSparseArray<Integer> idStates = mCheckedIdStates;
-        //final int count = idStates.size();
-        //final long[] ids = new long[count];
-        //for (int i = 0; i < count; i++) {
-            //ids[i] = idStates.keyAt(i);
-        //}
-        //return ids;
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -600,19 +600,19 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void clearChoices() {
         {
             mCheckStates.clear();
-        } //End block
+        } 
         {
             mCheckedIdStates.clear();
-        } //End block
+        } 
         mCheckedItemCount = 0;
-        // ---------- Original Method ----------
-        //if (mCheckStates != null) {
-            //mCheckStates.clear();
-        //}
-        //if (mCheckedIdStates != null) {
-            //mCheckedIdStates.clear();
-        //}
-        //mCheckedItemCount = 0;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -620,7 +620,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void setItemChecked(int position, boolean value) {
         {
             mChoiceActionMode = startActionMode(mMultiChoiceModeCallback);
-        } //End block
+        } 
         {
             boolean oldValue = mCheckStates.get(position);
             mCheckStates.put(position, value);
@@ -629,18 +629,18 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 {
                     {
                         mCheckedIdStates.put(mAdapter.getItemId(position), position);
-                    } //End block
+                    } 
                     {
                         mCheckedIdStates.delete(mAdapter.getItemId(position));
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 final long id = mAdapter.getItemId(position);
                 mMultiChoiceModeCallback.onItemCheckedStateChanged(mChoiceActionMode,
                         position, id, value);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean updateIds = mCheckedIdStates != null && mAdapter.hasStableIds();
             {
@@ -649,32 +649,32 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     mCheckStates.clear();
                     {
                         mCheckedIdStates.clear();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 mCheckStates.put(position, true);
                 {
                     mCheckedIdStates.put(mAdapter.getItemId(position), position);
-                } //End block
+                } 
                 mCheckedItemCount = 1;
-            } //End block
+            } 
             {
                 boolean var425458AA9F83015DB14C2404DEE4E159_1433496505 = (mCheckStates.size() == 0 || !mCheckStates.valueAt(0));
                 {
                     mCheckedItemCount = 0;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             mDataChanged = true;
             rememberSyncState();
             requestLayout();
-        } //End block
+        } 
         addTaint(position);
         addTaint(value);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -693,18 +693,18 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     {
                         {
                             mCheckedIdStates.put(mAdapter.getItemId(position), position);
-                        } //End block
+                        } 
                         {
                             mCheckedIdStates.delete(mAdapter.getItemId(position));
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 {
                     mMultiChoiceModeCallback.onItemCheckedStateChanged(mChoiceActionMode,
                             position, id, newValue);
                     dispatchItemClick = false;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 boolean newValue = !mCheckStates.get(position, false);
                 {
@@ -715,31 +715,31 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         {
                             mCheckedIdStates.clear();
                             mCheckedIdStates.put(mAdapter.getItemId(position), position);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     mCheckedItemCount = 1;
-                } //End block
+                } 
                 {
                     boolean var6ACBF7B7E15B02DF34CBCD44F94045DE_1678086123 = (mCheckStates.size() == 0 || !mCheckStates.valueAt(0));
                     {
                         mCheckedItemCount = 0;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             mDataChanged = true;
             rememberSyncState();
             requestLayout();
-        } //End block
+        } 
         {
             handled |= super.performItemClick(view, position, id);
-        } //End block
+        } 
         addTaint(view.getTaint());
         addTaint(position);
         addTaint(id);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2139621989 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2139621989;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -747,8 +747,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public int getChoiceMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1619918388 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1619918388;
-        // ---------- Original Method ----------
-        //return mChoiceMode;
+        
+        
     }
 
     
@@ -758,40 +758,40 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         {
             mChoiceActionMode.finish();
             mChoiceActionMode = null;
-        } //End block
+        } 
         {
             {
                 mCheckStates = new SparseBooleanArray();
-            } //End block
+            } 
             {
                 boolean var2BF65510232B6C8CFF89CFE72E6D8ACB_827621207 = (mCheckedIdStates == null && mAdapter != null && mAdapter.hasStableIds());
                 {
                     mCheckedIdStates = new LongSparseArray<Integer>();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 clearChoices();
                 setLongClickable(true);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //mChoiceMode = choiceMode;
-        //if (mChoiceActionMode != null) {
-            //mChoiceActionMode.finish();
-            //mChoiceActionMode = null;
-        //}
-        //if (mChoiceMode != CHOICE_MODE_NONE) {
-            //if (mCheckStates == null) {
-                //mCheckStates = new SparseBooleanArray();
-            //}
-            //if (mCheckedIdStates == null && mAdapter != null && mAdapter.hasStableIds()) {
-                //mCheckedIdStates = new LongSparseArray<Integer>();
-            //}
-            //if (mChoiceMode == CHOICE_MODE_MULTIPLE_MODAL) {
-                //clearChoices();
-                //setLongClickable(true);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+        
+        
+            
+                
+            
+            
+                
+            
+            
+                
+                
+            
+        
     }
 
     
@@ -799,14 +799,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void setMultiChoiceModeListener(MultiChoiceModeListener listener) {
         {
             mMultiChoiceModeCallback = new MultiChoiceModeWrapper();
-        } //End block
+        } 
         mMultiChoiceModeCallback.setWrapped(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (mMultiChoiceModeCallback == null) {
-            //mMultiChoiceModeCallback = new MultiChoiceModeWrapper();
-        //}
-        //mMultiChoiceModeCallback.setWrapped(listener);
+        
+        
+            
+        
+        
     }
 
     
@@ -817,12 +817,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 getChildAt(childCount - 1).getBottom() <= getHeight() - mListPadding.bottom);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1353754537 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1353754537;
-        // ---------- Original Method ----------
-        //final int childCount = getChildCount();
-        //if (childCount == 0) return true;
-        //if (childCount != mItemCount) return false;
-        //return getChildAt(0).getTop() >= mListPadding.top &&
-                //getChildAt(childCount - 1).getBottom() <= getHeight() - mListPadding.bottom;
+        
+        
+        
+        
+        
+                
     }
 
     
@@ -832,26 +832,26 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         {
             {
                 mFastScroller = new FastScroller(getContext(), this);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mFastScroller.stop();
                 mFastScroller = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //mFastScrollEnabled = enabled;
-        //if (enabled) {
-            //if (mFastScroller == null) {
-                //mFastScroller = new FastScroller(getContext(), this);
-            //}
-        //} else {
-            //if (mFastScroller != null) {
-                //mFastScroller.stop();
-                //mFastScroller = null;
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
+            
+                
+                
+            
+        
     }
 
     
@@ -859,22 +859,22 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void setFastScrollAlwaysVisible(boolean alwaysShow) {
         {
             setFastScrollEnabled(true);
-        } //End block
+        } 
         {
             mFastScroller.setAlwaysShow(alwaysShow);
-        } //End block
+        } 
         computeOpaqueFlags();
         recomputePadding();
         addTaint(alwaysShow);
-        // ---------- Original Method ----------
-        //if (alwaysShow && !mFastScrollEnabled) {
-            //setFastScrollEnabled(true);
-        //}
-        //if (mFastScroller != null) {
-            //mFastScroller.setAlwaysShow(alwaysShow);
-        //}
-        //computeOpaqueFlags();
-        //recomputePadding();
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -883,8 +883,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         boolean var26B2F46AB3144EF80214E1227EB2F480_1789023290 = (mFastScrollEnabled && mFastScroller.isAlwaysShowEnabled());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_65212503 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_65212503;
-        // ---------- Original Method ----------
-        //return mFastScrollEnabled && mFastScroller.isAlwaysShowEnabled();
+        
+        
     }
 
     
@@ -895,16 +895,16 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             boolean var26909BC69BA2F3E69FEBFE306B4E5DAD_1096632066 = (isFastScrollAlwaysVisible());
             {
                 int varFB51A5362339E3615BCF0229E08CB917_1760956479 = (Math.max(super.getVerticalScrollbarWidth(), mFastScroller.getWidth()));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int var08FF7A4CA397B890F67D51D77687712B_1564739270 = (super.getVerticalScrollbarWidth());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_793623520 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_793623520;
-        // ---------- Original Method ----------
-        //if (isFastScrollAlwaysVisible()) {
-            //return Math.max(super.getVerticalScrollbarWidth(), mFastScroller.getWidth());
-        //}
-        //return super.getVerticalScrollbarWidth();
+        
+        
+            
+        
+        
     }
 
     
@@ -913,8 +913,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public boolean isFastScrollEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1884158127 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1884158127;
-        // ---------- Original Method ----------
-        //return mFastScrollEnabled;
+        
+        
     }
 
     
@@ -924,13 +924,13 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         super.setVerticalScrollbarPosition(position);
         {
             mFastScroller.setScrollbarPosition(position);
-        } //End block
+        } 
         addTaint(position);
-        // ---------- Original Method ----------
-        //super.setVerticalScrollbarPosition(position);
-        //if (mFastScroller != null) {
-            //mFastScroller.setScrollbarPosition(position);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -940,16 +940,16 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         boolean varEE7670B7B7BC0CBAC7B3A19E6E35E88F_402445282 = (mFastScroller != null && mFastScroller.isVisible());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1800178983 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1800178983;
-        // ---------- Original Method ----------
-        //return mFastScroller != null && mFastScroller.isVisible();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.871 -0400", hash_original_method = "1698DB675ADDAA62665F2F04BB6F72CB", hash_generated_method = "D64E9DF10E031F8E4DDF09544BB4BA0A")
     public void setSmoothScrollbarEnabled(boolean enabled) {
         mSmoothScrollbarEnabled = enabled;
-        // ---------- Original Method ----------
-        //mSmoothScrollbarEnabled = enabled;
+        
+        
     }
 
     
@@ -958,8 +958,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public boolean isSmoothScrollbarEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1427052474 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1427052474;
-        // ---------- Original Method ----------
-        //return mSmoothScrollbarEnabled;
+        
+        
     }
 
     
@@ -967,9 +967,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void setOnScrollListener(OnScrollListener l) {
         mOnScrollListener = l;
         invokeOnItemScrollListener();
-        // ---------- Original Method ----------
-        //mOnScrollListener = l;
-        //invokeOnItemScrollListener();
+        
+        
+        
     }
 
     
@@ -977,19 +977,19 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
      void invokeOnItemScrollListener() {
         {
             mFastScroller.onScroll(this, mFirstPosition, getChildCount(), mItemCount);
-        } //End block
+        } 
         {
             mOnScrollListener.onScroll(this, mFirstPosition, getChildCount(), mItemCount);
-        } //End block
+        } 
         onScrollChanged(0, 0, 0, 0);
-        // ---------- Original Method ----------
-        //if (mFastScroller != null) {
-            //mFastScroller.onScroll(this, mFirstPosition, getChildCount(), mItemCount);
-        //}
-        //if (mOnScrollListener != null) {
-            //mOnScrollListener.onScroll(this, mFirstPosition, getChildCount(), mItemCount);
-        //}
-        //onScrollChanged(0, 0, 0, 0);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -1002,23 +1002,23 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             {
                 mLastAccessibilityScrollEventFromIndex = firstVisiblePosition;
                 mLastAccessibilityScrollEventToIndex = lastVisiblePosition;
-            } //End block
-        } //End block
+            } 
+        } 
         super.sendAccessibilityEvent(eventType);
         addTaint(eventType);
-        // ---------- Original Method ----------
-        //if (eventType == AccessibilityEvent.TYPE_VIEW_SCROLLED) {
-            //final int firstVisiblePosition = getFirstVisiblePosition();
-            //final int lastVisiblePosition = getLastVisiblePosition();
-            //if (mLastAccessibilityScrollEventFromIndex == firstVisiblePosition
-                    //&& mLastAccessibilityScrollEventToIndex == lastVisiblePosition) {
-                //return;   
-            //} else {
-                //mLastAccessibilityScrollEventFromIndex = firstVisiblePosition;
-                //mLastAccessibilityScrollEventToIndex = lastVisiblePosition;
-            //}
-        //}
-        //super.sendAccessibilityEvent(eventType);
+        
+        
+            
+            
+            
+                    
+                
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -1027,8 +1027,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public boolean isScrollingCacheEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_382149774 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_382149774;
-        // ---------- Original Method ----------
-        //return mScrollingCacheEnabled;
+        
+        
     }
 
     
@@ -1036,21 +1036,21 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void setScrollingCacheEnabled(boolean enabled) {
         {
             clearScrollingCache();
-        } //End block
+        } 
         mScrollingCacheEnabled = enabled;
-        // ---------- Original Method ----------
-        //if (mScrollingCacheEnabled && !enabled) {
-            //clearScrollingCache();
-        //}
-        //mScrollingCacheEnabled = enabled;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.874 -0400", hash_original_method = "8476047A74E8C2792EEAD35F27B63501", hash_generated_method = "264A2BADB5D79F4C262375A12D707EBE")
     public void setTextFilterEnabled(boolean textFilterEnabled) {
         mTextFilterEnabled = textFilterEnabled;
-        // ---------- Original Method ----------
-        //mTextFilterEnabled = textFilterEnabled;
+        
+        
     }
 
     
@@ -1059,8 +1059,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public boolean isTextFilterEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1651951603 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1651951603;
-        // ---------- Original Method ----------
-        //return mTextFilterEnabled;
+        
+        
     }
 
     
@@ -1073,20 +1073,20 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             {
                 view.getFocusedRect(r);
                 offsetDescendantRectToMyCoords(view, r);
-            } //End block
+            } 
             {
                 super.getFocusedRect(r);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //View view = getSelectedView();
-        //if (view != null && view.getParent() == this) {
-            //view.getFocusedRect(r);
-            //offsetDescendantRectToMyCoords(view, r);
-        //} else {
-            //super.getFocusedRect(r);
-        //}
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -1094,9 +1094,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     private void useDefaultSelector() {
         setSelector(getResources().getDrawable(
                 com.android.internal.R.drawable.list_selector_background));
-        // ---------- Original Method ----------
-        //setSelector(getResources().getDrawable(
-                //com.android.internal.R.drawable.list_selector_background));
+        
+        
+                
     }
 
     
@@ -1105,8 +1105,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public boolean isStackFromBottom() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1543525980 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1543525980;
-        // ---------- Original Method ----------
-        //return mStackFromBottom;
+        
+        
     }
 
     
@@ -1115,12 +1115,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         {
             mStackFromBottom = stackFromBottom;
             requestLayoutIfNecessary();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mStackFromBottom != stackFromBottom) {
-            //mStackFromBottom = stackFromBottom;
-            //requestLayoutIfNecessary();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -1132,22 +1132,22 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 resetList();
                 requestLayout();
                 invalidate();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (getChildCount() > 0) {
-            //resetList();
-            //requestLayout();
-            //invalidate();
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.879 -0400", hash_original_method = "550511192552500388A3039280244936", hash_generated_method = "892ECD987E18CC1E66370CAB6CDD17B9")
     @Override
     public Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1162104761 = null; //Variable for return #1
+        
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1162104761 = null; 
         dismissPopup();
         Parcelable superState = super.onSaveInstanceState();
         SavedState ss = new SavedState(superState);
@@ -1159,7 +1159,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             ss.viewTop = mSelectedTop;
             ss.position = getSelectedItemPosition();
             ss.firstId = INVALID_POSITION;
-        } //End block
+        } 
         {
             {
                 View v = getChildAt(0);
@@ -1167,16 +1167,16 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 int firstPos = mFirstPosition;
                 {
                     firstPos = mItemCount - 1;
-                } //End block
+                } 
                 ss.position = firstPos;
                 ss.firstId = mAdapter.getItemId(firstPos);
-            } //End block
+            } 
             {
                 ss.viewTop = 0;
                 ss.firstId = INVALID_POSITION;
                 ss.position = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         ss.filter = null;
         {
             final EditText textFilter = mTextFilter;
@@ -1184,13 +1184,13 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 Editable filterText = textFilter.getText();
                 {
                     ss.filter = filterText.toString();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         ss.inActionMode = mChoiceMode == CHOICE_MODE_MULTIPLE_MODAL && mChoiceActionMode != null;
         {
             ss.checkState = mCheckStates.clone();
-        } //End block
+        } 
         {
             final LongSparseArray<Integer> idState = new LongSparseArray<Integer>();
             final int count = mCheckedIdStates.size();
@@ -1198,23 +1198,23 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 int i = 0;
                 {
                     idState.put(mCheckedIdStates.keyAt(i), mCheckedIdStates.valueAt(i));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             ss.checkIdState = idState;
-        } //End block
+        } 
         ss.checkedItemCount = mCheckedItemCount;
         varB4EAC82CA7396A68D541C85D26508E83_1162104761 = ss;
-        varB4EAC82CA7396A68D541C85D26508E83_1162104761.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1162104761.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1162104761;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.880 -0400", hash_original_method = "43BE5C5AD27C719005EFC4A46B8486A7", hash_generated_method = "205CA2B520068DD4D73AEDCFCD3024C2")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         SavedState ss = (SavedState) state;
         super.onRestoreInstanceState(ss.getSuperState());
         mDataChanged = true;
@@ -1225,7 +1225,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             mSyncPosition = ss.position;
             mSpecificTop = ss.viewTop;
             mSyncMode = SYNC_SELECTED_POSITION;
-        } //End block
+        } 
         {
             setSelectedPositionInt(INVALID_POSITION);
             setNextSelectedPositionInt(INVALID_POSITION);
@@ -1235,22 +1235,22 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             mSyncPosition = ss.position;
             mSpecificTop = ss.viewTop;
             mSyncMode = SYNC_FIRST_POSITION;
-        } //End block
+        } 
         setFilterText(ss.filter);
         {
             mCheckStates = ss.checkState;
-        } //End block
+        } 
         {
             mCheckedIdStates = ss.checkIdState;
-        } //End block
+        } 
         mCheckedItemCount = ss.checkedItemCount;
         {
             mChoiceActionMode = startActionMode(mMultiChoiceModeCallback);
-        } //End block
+        } 
         requestLayout();
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1260,9 +1260,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 ((Filterable) getAdapter()).getFilter() != null);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_916627140 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_916627140;
-        // ---------- Original Method ----------
-        //return mTextFilterEnabled && getAdapter() instanceof Filterable &&
-                //((Filterable) getAdapter()).getFilter() != null;
+        
+        
+                
     }
 
     
@@ -1278,61 +1278,61 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     {
                         Filter f = ((Filterable) mAdapter).getFilter();
                         f.filter(filterText);
-                    } //End block
+                    } 
                     mFiltered = true;
                     mDataSetObserver.clearSavedState();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(filterText.getTaint());
-        // ---------- Original Method ----------
-        //if (mTextFilterEnabled && !TextUtils.isEmpty(filterText)) {
-            //createTextFilter(false);
-            //mTextFilter.setText(filterText);
-            //mTextFilter.setSelection(filterText.length());
-            //if (mAdapter instanceof Filterable) {
-                //if (mPopup == null) {
-                    //Filter f = ((Filterable) mAdapter).getFilter();
-                    //f.filter(filterText);
-                //}
-                //mFiltered = true;
-                //mDataSetObserver.clearSavedState();
-            //}
-        //}
+        
+        
+            
+            
+            
+            
+                
+                    
+                    
+                
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.882 -0400", hash_original_method = "1C9B36BFA6AA511A6999C19189070FD4", hash_generated_method = "19190E60315086985453B57E9ACFF6D9")
     public CharSequence getTextFilter() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1407345069 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1494766817 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1407345069 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1494766817 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1407345069 = mTextFilter.getText();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1494766817 = null;
-        CharSequence varA7E53CE21691AB073D9660D615818899_1607797177; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1607797177; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1607797177 = varB4EAC82CA7396A68D541C85D26508E83_1407345069;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1607797177 = varB4EAC82CA7396A68D541C85D26508E83_1494766817;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1607797177.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1607797177.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1607797177;
-        // ---------- Original Method ----------
-        //if (mTextFilterEnabled && mTextFilter != null) {
-            //return mTextFilter.getText();
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.882 -0400", hash_original_method = "0C025ACF6797C1095DC28C93A47B3E04", hash_generated_method = "B6B2BF38E1840BEB3761B8EF3A85F342")
     @Override
     protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onFocusChanged(gainFocus, direction, previouslyFocusedRect);
         {
             boolean var8EB9364CA747E30AAC5C9F3175F02645_201734905 = (gainFocus && mSelectedPosition < 0 && !isInTouchMode());
@@ -1341,23 +1341,23 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     mDataChanged = true;
                     mOldItemCount = mItemCount;
                     mItemCount = mAdapter.getCount();
-                } //End block
+                } 
                 resurrectSelection();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(gainFocus);
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
-        // ---------- Original Method ----------
-        //super.onFocusChanged(gainFocus, direction, previouslyFocusedRect);
-        //if (gainFocus && mSelectedPosition < 0 && !isInTouchMode()) {
-            //if (!mIsAttached && mAdapter != null) {
-                //mDataChanged = true;
-                //mOldItemCount = mItemCount;
-                //mItemCount = mAdapter.getCount();
-            //}
-            //resurrectSelection();
-        //}
+        
+        
+        
+            
+                
+                
+                
+            
+            
+        
     }
 
     
@@ -1366,11 +1366,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void requestLayout() {
         {
             super.requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mBlockLayoutRequests && !mInLayout) {
-            //super.requestLayout();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -1388,19 +1388,19 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         mSelectorPosition = INVALID_POSITION;
         mSelectorRect.setEmpty();
         invalidate();
-        // ---------- Original Method ----------
-        //removeAllViewsInLayout();
-        //mFirstPosition = 0;
-        //mDataChanged = false;
-        //mNeedSync = false;
-        //mOldSelectedPosition = INVALID_POSITION;
-        //mOldSelectedRowId = INVALID_ROW_ID;
-        //setSelectedPositionInt(INVALID_POSITION);
-        //setNextSelectedPositionInt(INVALID_POSITION);
-        //mSelectedTop = 0;
-        //mSelectorPosition = INVALID_POSITION;
-        //mSelectorRect.setEmpty();
-        //invalidate();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1416,40 +1416,40 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 int height = view.getHeight();
                 {
                     extent += (top * 100) / height;
-                } //End block
+                } 
                 view = getChildAt(count - 1);
                 final int bottom = view.getBottom();
                 height = view.getHeight();
                 {
                     extent -= ((bottom - getHeight()) * 100) / height;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1236632344 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1236632344;
-        // ---------- Original Method ----------
-        //final int count = getChildCount();
-        //if (count > 0) {
-            //if (mSmoothScrollbarEnabled) {
-                //int extent = count * 100;
-                //View view = getChildAt(0);
-                //final int top = view.getTop();
-                //int height = view.getHeight();
-                //if (height > 0) {
-                    //extent += (top * 100) / height;
-                //}
-                //view = getChildAt(count - 1);
-                //final int bottom = view.getBottom();
-                //height = view.getHeight();
-                //if (height > 0) {
-                    //extent -= ((bottom - getHeight()) * 100) / height;
-                //}
-                //return extent;
-            //} else {
-                //return 1;
-            //}
-        //}
-        //return 0;
+        
+        
+        
+            
+                
+                
+                
+                
+                
+                    
+                
+                
+                
+                
+                
+                    
+                
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -1466,26 +1466,26 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 {
                     int var813D884A4C0D547484060C54181A041A_663869377 = (Math.max(firstPosition * 100 - (top * 100) / height +
                             (int)((float)mScrollY / getHeight() * mItemCount * 100), 0));
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 int index;
                 final int count = mItemCount;
                 {
                     index = 0;
-                } //End block
+                } 
                 {
                     index = count;
-                } //End block
+                } 
                 {
                     index = firstPosition + childCount / 2;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_413496982 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_413496982;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1497,24 +1497,24 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             result = Math.max(mItemCount * 100, 0);
             {
                 result += Math.abs((int) ((float) mScrollY / getHeight() * mItemCount * 100));
-            } //End block
-        } //End block
+            } 
+        } 
         {
             result = mItemCount;
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_531153393 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_531153393;
-        // ---------- Original Method ----------
-        //int result;
-        //if (mSmoothScrollbarEnabled) {
-            //result = Math.max(mItemCount * 100, 0);
-            //if (mScrollY != 0) {
-                //result += Math.abs((int) ((float) mScrollY / getHeight() * mItemCount * 100));
-            //}
-        //} else {
-            //result = mItemCount;
-        //}
-        //return result;
+        
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -1526,22 +1526,22 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         {
             final int top = getChildAt(0).getTop();
             final float fadeLength = (float) getVerticalFadingEdgeLength();
-        } //End block
+        } 
         float var546ADE640B6EDFBC8A086EF31347E768_1332845182 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1332845182;
-        // ---------- Original Method ----------
-        //final int count = getChildCount();
-        //final float fadeEdge = super.getTopFadingEdgeStrength();
-        //if (count == 0) {
-            //return fadeEdge;
-        //} else {
-            //if (mFirstPosition > 0) {
-                //return 1.0f;
-            //}
-            //final int top = getChildAt(0).getTop();
-            //final float fadeLength = (float) getVerticalFadingEdgeLength();
-            //return top < mPaddingTop ? (float) -(top - mPaddingTop) / fadeLength : fadeEdge;
-        //}
+        
+        
+        
+        
+            
+        
+            
+                
+            
+            
+            
+            
+        
     }
 
     
@@ -1554,34 +1554,34 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             final int bottom = getChildAt(count - 1).getBottom();
             final int height = getHeight();
             final float fadeLength = (float) getVerticalFadingEdgeLength();
-        } //End block
+        } 
         float var546ADE640B6EDFBC8A086EF31347E768_1545897073 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1545897073;
-        // ---------- Original Method ----------
-        //final int count = getChildCount();
-        //final float fadeEdge = super.getBottomFadingEdgeStrength();
-        //if (count == 0) {
-            //return fadeEdge;
-        //} else {
-            //if (mFirstPosition + count - 1 < mItemCount - 1) {
-                //return 1.0f;
-            //}
-            //final int bottom = getChildAt(count - 1).getBottom();
-            //final int height = getHeight();
-            //final float fadeLength = (float) getVerticalFadingEdgeLength();
-            //return bottom > height - mPaddingBottom ?
-                    //(float) (bottom - height + mPaddingBottom) / fadeLength : fadeEdge;
-        //}
+        
+        
+        
+        
+            
+        
+            
+                
+            
+            
+            
+            
+            
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.887 -0400", hash_original_method = "7C6C2B65B4381736E49DE73CCD130327", hash_generated_method = "80F0C58D6BF6F7E1E5FC7A6FC2F6E102")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             useDefaultSelector();
-        } //End block
+        } 
         final Rect listPadding = mListPadding;
         listPadding.left = mSelectionLeftPadding + mPaddingLeft;
         listPadding.top = mSelectionTopPadding + mPaddingTop;
@@ -1596,18 +1596,18 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             lastBottom = listBottom;
             mForceTranscriptScroll = mFirstPosition + childCount >= mLastHandledItemCount &&
                     lastBottom <= listBottom;
-        } //End block
+        } 
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.888 -0400", hash_original_method = "46F44099FEFDB133D6B976408934CAC6", hash_generated_method = "6EF3425F765955127479689D10F4C294")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onLayout(changed, l, t, r, b);
         mInLayout = true;
         {
@@ -1616,35 +1616,35 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 int i = 0;
                 {
                     getChildAt(i).forceLayout();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mRecycler.markChildrenDirty();
-        } //End block
+        } 
         {
             mFastScroller.onItemCountChanged(mOldItemCount, mItemCount);
-        } //End block
+        } 
         layoutChildren();
         mInLayout = false;
         mOverscrollMax = (b - t) / OVERSCROLL_LIMIT_DIVISOR;
         addTaint(changed);
         addTaint(l);
         addTaint(r);
-        // ---------- Original Method ----------
-        //super.onLayout(changed, l, t, r, b);
-        //mInLayout = true;
-        //if (changed) {
-            //int childCount = getChildCount();
-            //for (int i = 0; i < childCount; i++) {
-                //getChildAt(i).forceLayout();
-            //}
-            //mRecycler.markChildrenDirty();
-        //}
-        //if (mFastScroller != null && mItemCount != mOldItemCount) {
-            //mFastScroller.onItemCountChanged(mOldItemCount, mItemCount);
-        //}
-        //layoutChildren();
-        //mInLayout = false;
-        //mOverscrollMax = (b - t) / OVERSCROLL_LIMIT_DIVISOR;
+        
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -1658,30 +1658,30 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 boolean varFBED1B944623C6BCA164EC2723F71804_1381861795 = (mFiltered && visible && mPopup != null && mPopup.isShowing());
                 {
                     positionPopup();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(left);
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1944244806 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1944244806;
-        // ---------- Original Method ----------
-        //final boolean changed = super.setFrame(left, top, right, bottom);
-        //if (changed) {
-            //final boolean visible = getWindowVisibility() == View.VISIBLE;
-            //if (mFiltered && visible && mPopup != null && mPopup.isShowing()) {
-                //positionPopup();
-            //}
-        //}
-        //return changed;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.889 -0400", hash_original_method = "402FE2CFEE98322FA56302826EFCFBC7", hash_generated_method = "7C7456ED8D2FB5B664E2AB60CCD22125")
     protected void layoutChildren() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -1696,11 +1696,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     {
                         View child = getChildAt(0);
                         canScrollUp = child.getTop() < mListPadding.top;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             mScrollUp.setVisibility(canScrollUp ? View.VISIBLE : View.INVISIBLE);
-        } //End block
+        } 
         {
             boolean canScrollDown;
             int count = getChildCount();
@@ -1708,11 +1708,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             {
                 View child = getChildAt(count - 1);
                 canScrollDown = child.getBottom() > mBottom - mListPadding.bottom;
-            } //End block
+            } 
             mScrollDown.setVisibility(canScrollDown ? View.VISIBLE : View.INVISIBLE);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1720,31 +1720,31 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     @Override
     @ViewDebug.ExportedProperty
     public View getSelectedView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_1270001448 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_69527101 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_1270001448 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_69527101 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1270001448 = getChildAt(mSelectedPosition - mFirstPosition);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_69527101 = null;
-        } //End block
-        View varA7E53CE21691AB073D9660D615818899_107445013; //Final return value
+        } 
+        View varA7E53CE21691AB073D9660D615818899_107445013; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_107445013 = varB4EAC82CA7396A68D541C85D26508E83_1270001448;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_107445013 = varB4EAC82CA7396A68D541C85D26508E83_69527101;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_107445013.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_107445013.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_107445013;
-        // ---------- Original Method ----------
-        //if (mItemCount > 0 && mSelectedPosition >= 0) {
-            //return getChildAt(mSelectedPosition - mFirstPosition);
-        //} else {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1752,8 +1752,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public int getListPaddingTop() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1964102039 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1964102039;
-        // ---------- Original Method ----------
-        //return mListPadding.top;
+        
+        
     }
 
     
@@ -1761,8 +1761,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public int getListPaddingBottom() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1046398980 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1046398980;
-        // ---------- Original Method ----------
-        //return mListPadding.bottom;
+        
+        
     }
 
     
@@ -1770,8 +1770,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public int getListPaddingLeft() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_419565941 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_419565941;
-        // ---------- Original Method ----------
-        //return mListPadding.left;
+        
+        
     }
 
     
@@ -1779,14 +1779,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public int getListPaddingRight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1496482954 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1496482954;
-        // ---------- Original Method ----------
-        //return mListPadding.right;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.892 -0400", hash_original_method = "F1A94AACBC76DA4834C170841A9D4C37", hash_generated_method = "CDDB36948904E1CAEE204CE15111D8E4")
      View obtainView(int position, boolean[] isScrap) {
-        View varB4EAC82CA7396A68D541C85D26508E83_269264765 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_269264765 = null; 
         isScrap[0] = false;
         View scrapView;
         scrapView = mRecycler.getScrapView(position);
@@ -1795,44 +1795,44 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             {
                 ViewDebug.trace(scrapView, ViewDebug.RecyclerTraceType.RECYCLE_FROM_SCRAP_HEAP,
                         position, -1);
-            } //End block
+            } 
             child = mAdapter.getView(position, scrapView, this);
             {
                 ViewDebug.trace(child, ViewDebug.RecyclerTraceType.BIND_VIEW,
                         position, getChildCount());
-            } //End block
+            } 
             {
                 mRecycler.addScrapView(scrapView, position);
                 {
                     child.setDrawingCacheBackgroundColor(mCacheColorHint);
-                } //End block
+                } 
                 {
                     ViewDebug.trace(scrapView, ViewDebug.RecyclerTraceType.MOVE_TO_SCRAP_HEAP,
                             position, -1);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 isScrap[0] = true;
                 child.dispatchFinishTemporaryDetach();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             child = mAdapter.getView(position, null, this);
             {
                 child.setDrawingCacheBackgroundColor(mCacheColorHint);
-            } //End block
+            } 
             {
                 ViewDebug.trace(child, ViewDebug.RecyclerTraceType.NEW_VIEW,
                         position, getChildCount());
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_269264765 = child;
         addTaint(position);
         addTaint(isScrap[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_269264765.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_269264765.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_269264765;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1840,12 +1840,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
      void positionSelector(int position, View sel) {
         {
             mSelectorPosition = position;
-        } //End block
+        } 
         final Rect selectorRect = mSelectorRect;
         selectorRect.set(sel.getLeft(), sel.getTop(), sel.getRight(), sel.getBottom());
         {
             ((SelectionBoundsAdjuster)sel).adjustListItemSelectionBounds(selectorRect);
-        } //End block
+        } 
         positionSelector(selectorRect.left, selectorRect.top, selectorRect.right,
                 selectorRect.bottom);
         final boolean isChildViewEnabled = mIsChildViewEnabled;
@@ -1857,29 +1857,29 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     boolean var9ACEB0A565E658741B99EDC3F95405AB_1493928574 = (getSelectedItemPosition() != INVALID_POSITION);
                     {
                         refreshDrawableState();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(sel.getTaint());
-        // ---------- Original Method ----------
-        //if (position != INVALID_POSITION) {
-            //mSelectorPosition = position;
-        //}
-        //final Rect selectorRect = mSelectorRect;
-        //selectorRect.set(sel.getLeft(), sel.getTop(), sel.getRight(), sel.getBottom());
-        //if (sel instanceof SelectionBoundsAdjuster) {
-            //((SelectionBoundsAdjuster)sel).adjustListItemSelectionBounds(selectorRect);
-        //}
-        //positionSelector(selectorRect.left, selectorRect.top, selectorRect.right,
-                //selectorRect.bottom);
-        //final boolean isChildViewEnabled = mIsChildViewEnabled;
-        //if (sel.isEnabled() != isChildViewEnabled) {
-            //mIsChildViewEnabled = !isChildViewEnabled;
-            //if (getSelectedItemPosition() != INVALID_POSITION) {
-                //refreshDrawableState();
-            //}
-        //}
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+                
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -1891,9 +1891,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        //mSelectorRect.set(l - mSelectionLeftPadding, t - mSelectionTopPadding, r
-                //+ mSelectionRightPadding, b + mSelectionBottomPadding);
+        
+        
+                
     }
 
     
@@ -1910,22 +1910,22 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     scrollX + mRight - mLeft - mPaddingRight,
                     scrollY + mBottom - mTop - mPaddingBottom);
             mGroupFlags &= ~CLIP_TO_PADDING_MASK;
-        } //End block
+        } 
         final boolean drawSelectorOnTop = mDrawSelectorOnTop;
         {
             drawSelector(canvas);
-        } //End block
+        } 
         super.dispatchDraw(canvas);
         {
             drawSelector(canvas);
-        } //End block
+        } 
         {
             canvas.restoreToCount(saveCount);
             mGroupFlags |= CLIP_TO_PADDING_MASK;
-        } //End block
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1934,8 +1934,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     protected boolean isPaddingOffsetRequired() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1129029101 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1129029101;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & CLIP_TO_PADDING_MASK) != CLIP_TO_PADDING_MASK;
+        
+        
     }
 
     
@@ -1944,8 +1944,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     protected int getLeftPaddingOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723333696 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723333696;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK ? 0 : -mPaddingLeft;
+        
+        
     }
 
     
@@ -1954,8 +1954,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     protected int getTopPaddingOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1971629086 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1971629086;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK ? 0 : -mPaddingTop;
+        
+        
     }
 
     
@@ -1964,8 +1964,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     protected int getRightPaddingOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1828553147 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1828553147;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK ? 0 : mPaddingRight;
+        
+        
     }
 
     
@@ -1974,37 +1974,37 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     protected int getBottomPaddingOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1399202376 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1399202376;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK ? 0 : mPaddingBottom;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.898 -0400", hash_original_method = "7222D25647FA66D7134D6564AB03A11A", hash_generated_method = "1A6CB64FF9A3B262C9959B6CFC3C726A")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varBF62E6C23FE36C17A3594E034FF46D2E_1734370584 = (getChildCount() > 0);
             {
                 mDataChanged = true;
                 rememberSyncState();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             mFastScroller.onSizeChanged(w, h, oldw, oldh);
-        } //End block
+        } 
         addTaint(w);
         addTaint(h);
         addTaint(oldw);
         addTaint(oldh);
-        // ---------- Original Method ----------
-        //if (getChildCount() > 0) {
-            //mDataChanged = true;
-            //rememberSyncState();
-        //}
-        //if (mFastScroller != null) {
-            //mFastScroller.onSizeChanged(w, h, oldw, oldh);
-        //}
+        
+        
+            
+            
+        
+        
+            
+        
     }
 
     
@@ -2012,14 +2012,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
      boolean touchModeDrawsInPressedState() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_499568531 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_499568531;
-        // ---------- Original Method ----------
-        //switch (mTouchMode) {
-        //case TOUCH_MODE_TAP:
-        //case TOUCH_MODE_DONE_WAITING:
-            //return true;
-        //default:
-            //return false;
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -2028,8 +2028,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         boolean var4246A524C7FBFC973820D2F78D9E8F98_769050730 = ((hasFocus() && !isInTouchMode()) || touchModeDrawsInPressedState());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_636948667 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_636948667;
-        // ---------- Original Method ----------
-        //return (hasFocus() && !isInTouchMode()) || touchModeDrawsInPressedState();
+        
+        
     }
 
     
@@ -2041,23 +2041,23 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 final Drawable selector = mSelector;
                 selector.setBounds(mSelectorRect);
                 selector.draw(canvas);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        //if (!mSelectorRect.isEmpty()) {
-            //final Drawable selector = mSelector;
-            //selector.setBounds(mSelectorRect);
-            //selector.draw(canvas);
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.899 -0400", hash_original_method = "E224CB1DBFEAEB35D4CBDCEA1ACB7063", hash_generated_method = "C23273762128D8B0257C96DB47B6A628")
     public void setDrawSelectorOnTop(boolean onTop) {
         mDrawSelectorOnTop = onTop;
-        // ---------- Original Method ----------
-        //mDrawSelectorOnTop = onTop;
+        
+        
     }
 
     
@@ -2065,8 +2065,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void setSelector(int resID) {
         setSelector(getResources().getDrawable(resID));
         addTaint(resID);
-        // ---------- Original Method ----------
-        //setSelector(getResources().getDrawable(resID));
+        
+        
     }
 
     
@@ -2075,7 +2075,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         {
             mSelector.setCallback(null);
             unscheduleDrawable(mSelector);
-        } //End block
+        } 
         mSelector = sel;
         Rect padding = new Rect();
         sel.getPadding(padding);
@@ -2085,31 +2085,31 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         mSelectionBottomPadding = padding.bottom;
         sel.setCallback(this);
         updateSelectorState();
-        // ---------- Original Method ----------
-        //if (mSelector != null) {
-            //mSelector.setCallback(null);
-            //unscheduleDrawable(mSelector);
-        //}
-        //mSelector = sel;
-        //Rect padding = new Rect();
-        //sel.getPadding(padding);
-        //mSelectionLeftPadding = padding.left;
-        //mSelectionTopPadding = padding.top;
-        //mSelectionRightPadding = padding.right;
-        //mSelectionBottomPadding = padding.bottom;
-        //sel.setCallback(this);
-        //updateSelectorState();
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.901 -0400", hash_original_method = "021D90A72F3883D0847A93B24BC54541", hash_generated_method = "D8F2052080E4C0C5FCB8633731C39CC9")
     public Drawable getSelector() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1369922638 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1369922638 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1369922638 = mSelector;
-        varB4EAC82CA7396A68D541C85D26508E83_1369922638.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1369922638.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1369922638;
-        // ---------- Original Method ----------
-        //return mSelector;
+        
+        
     }
 
     
@@ -2117,7 +2117,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
      void keyPressed() {
         {
             boolean varDBE5D4BF2CCFB471B80269545EAA1B3B_2006817954 = (!isEnabled() || !isClickable());
-        } //End collapsed parenthetic
+        } 
         Drawable selector = mSelector;
         Rect selectorRect = mSelectorRect;
         {
@@ -2128,9 +2128,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 {
                     {
                         boolean varF2E1D044768D3B14172E86DA91C28BD1_370096497 = (v.hasFocusable());
-                    } //End collapsed parenthetic
+                    } 
                     v.setPressed(true);
-                } //End block
+                } 
                 setPressed(true);
                 final boolean longClickable = isLongClickable();
                 Drawable d = selector.getCurrent();
@@ -2138,22 +2138,22 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     {
                         ((TransitionDrawable) d).startTransition(
                             ViewConfiguration.getLongPressTimeout());
-                    } //End block
+                    } 
                     {
                         ((TransitionDrawable) d).resetTransition();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     {
                         mPendingCheckForKeyLongPress = new CheckForKeyLongPress();
-                    } //End block
+                    } 
                     mPendingCheckForKeyLongPress.rememberWindowAttachCount();
                     postDelayed(mPendingCheckForKeyLongPress, ViewConfiguration.getLongPressTimeout());
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -2161,9 +2161,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void setScrollIndicators(View up, View down) {
         mScrollUp = up;
         mScrollDown = down;
-        // ---------- Original Method ----------
-        //mScrollUp = up;
-        //mScrollDown = down;
+        
+        
+        
     }
 
     
@@ -2174,20 +2174,20 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 boolean var1EC35265200A237347BA89EC9F7CAA85_1864028326 = (shouldShowSelector());
                 {
                     mSelector.setState(getDrawableState());
-                } //End block
+                } 
                 {
                     mSelector.setState(StateSet.NOTHING);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSelector != null) {
-            //if (shouldShowSelector()) {
-                //mSelector.setState(getDrawableState());
-            //} else {
-                //mSelector.setState(StateSet.NOTHING);
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -2196,19 +2196,19 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     protected void drawableStateChanged() {
         super.drawableStateChanged();
         updateSelectorState();
-        // ---------- Original Method ----------
-        //super.drawableStateChanged();
-        //updateSelectorState();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.903 -0400", hash_original_method = "1ED981B25374988410BBF6BB9A2499BB", hash_generated_method = "2BCAF3CBAAD2EF0C17FF41F1A9742560")
     @Override
     protected int[] onCreateDrawableState(int extraSpace) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             int[] varEB7CD746CBB534A0BF67F4323334429E_40473930 = (super.onCreateDrawableState(extraSpace));
-        } //End block
+        } 
         final int enabledState = ENABLED_STATE_SET[0];
         int[] state = super.onCreateDrawableState(extraSpace + 1);
         int enabledPos = -1;
@@ -2217,34 +2217,34 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             {
                 {
                     enabledPos = i;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             System.arraycopy(state, enabledPos + 1, state, enabledPos,
                     state.length - enabledPos - 1);
-        } //End block
+        } 
         addTaint(extraSpace);
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1858348220 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1858348220;
-        // ---------- Original Method ----------
-        //if (mIsChildViewEnabled) {
-            //return super.onCreateDrawableState(extraSpace);
-        //}
-        //final int enabledState = ENABLED_STATE_SET[0];
-        //int[] state = super.onCreateDrawableState(extraSpace + 1);
-        //int enabledPos = -1;
-        //for (int i = state.length - 1; i >= 0; i--) {
-            //if (state[i] == enabledState) {
-                //enabledPos = i;
-                //break;
-            //}
-        //}
-        //if (enabledPos >= 0) {
-            //System.arraycopy(state, enabledPos + 1, state, enabledPos,
-                    //state.length - enabledPos - 1);
-        //}
-        //return state;
+        
+        
+            
+        
+        
+        
+        
+        
+            
+                
+                
+            
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -2255,8 +2255,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         addTaint(dr.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_435677599 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_435677599;
-        // ---------- Original Method ----------
-        //return mSelector == dr || super.verifyDrawable(dr);
+        
+        
     }
 
     
@@ -2265,52 +2265,52 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
         mSelector.jumpToCurrentState();
-        // ---------- Original Method ----------
-        //super.jumpDrawablesToCurrentState();
-        //if (mSelector != null) mSelector.jumpToCurrentState();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.904 -0400", hash_original_method = "0EB97D149DFA0037A8214EEEE413FBAC", hash_generated_method = "77FCB5C2D10DBE09BAB8AC5DB9E6DEA7")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
         final ViewTreeObserver treeObserver = getViewTreeObserver();
         treeObserver.addOnTouchModeChangeListener(this);
         {
             treeObserver.addOnGlobalLayoutListener(this);
-        } //End block
+        } 
         {
             mDataSetObserver = new AdapterDataSetObserver();
             mAdapter.registerDataSetObserver(mDataSetObserver);
             mDataChanged = true;
             mOldItemCount = mItemCount;
             mItemCount = mAdapter.getCount();
-        } //End block
+        } 
         mIsAttached = true;
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //final ViewTreeObserver treeObserver = getViewTreeObserver();
-        //treeObserver.addOnTouchModeChangeListener(this);
-        //if (mTextFilterEnabled && mPopup != null && !mGlobalLayoutListenerAddedFilter) {
-            //treeObserver.addOnGlobalLayoutListener(this);
-        //}
-        //if (mAdapter != null && mDataSetObserver == null) {
-            //mDataSetObserver = new AdapterDataSetObserver();
-            //mAdapter.registerDataSetObserver(mDataSetObserver);
-            //mDataChanged = true;
-            //mOldItemCount = mItemCount;
-            //mItemCount = mAdapter.getCount();
-        //}
-        //mIsAttached = true;
+        
+        
+        
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.905 -0400", hash_original_method = "91FA19273AD6EF1E2E7A8FCA605608DC", hash_generated_method = "F8A51E1E2EEF62A1F919E3E4A349428A")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDetachedFromWindow();
         dismissPopup();
         mRecycler.clear();
@@ -2319,45 +2319,45 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         {
             treeObserver.removeGlobalOnLayoutListener(this);
             mGlobalLayoutListenerAddedFilter = false;
-        } //End block
+        } 
         {
             mAdapter.unregisterDataSetObserver(mDataSetObserver);
             mDataSetObserver = null;
-        } //End block
+        } 
         {
             mScrollStrictSpan.finish();
             mScrollStrictSpan = null;
-        } //End block
+        } 
         {
             mFlingStrictSpan.finish();
             mFlingStrictSpan = null;
-        } //End block
+        } 
         {
             removeCallbacks(mFlingRunnable);
-        } //End block
+        } 
         {
             mPositionScroller.stop();
-        } //End block
+        } 
         {
             removeCallbacks(mClearScrollingCache);
-        } //End block
+        } 
         {
             removeCallbacks(mPerformClick);
-        } //End block
+        } 
         {
             removeCallbacks(mTouchModeReset);
             mTouchModeReset = null;
-        } //End block
+        } 
         mIsAttached = false;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.906 -0400", hash_original_method = "F46E1D5E69E9A7961CEAA1CC31FCC74A", hash_generated_method = "7EFD72E2AAE804FAF702EF30B1AF27E1")
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onWindowFocusChanged(hasWindowFocus);
         int touchMode;
         boolean var49D8D6F90114322BA24D8547EE3F7B5B_1640164964 = (isInTouchMode());
@@ -2370,52 +2370,52 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 mFlingRunnable.endFling();
                 {
                     mPositionScroller.stop();
-                } //End block
+                } 
                 {
                     mScrollY = 0;
                     invalidateParentCaches();
                     finishGlows();
                     invalidate();
-                } //End block
-            } //End block
+                } 
+            } 
             dismissPopup();
             {
                 mResurrectToPosition = mSelectedPosition;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 showPopup();
-            } //End block
+            } 
             {
                 {
                     resurrectSelection();
-                } //End block
+                } 
                 {
                     hideSelector();
                     mLayoutMode = LAYOUT_NORMAL;
                     layoutChildren();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         mLastTouchMode = touchMode;
         addTaint(hasWindowFocus);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.908 -0400", hash_original_method = "5DA1B21EB8CB635B0040E7A9E537D496", hash_generated_method = "FA38A0A302524E4D4BE27136E2AFAF1E")
      ContextMenuInfo createContextMenuInfo(View view, int position, long id) {
-        ContextMenuInfo varB4EAC82CA7396A68D541C85D26508E83_2000543485 = null; //Variable for return #1
+        ContextMenuInfo varB4EAC82CA7396A68D541C85D26508E83_2000543485 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2000543485 = new AdapterContextMenuInfo(view, position, id);
         addTaint(view.getTaint());
         addTaint(position);
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_2000543485.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2000543485.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2000543485;
-        // ---------- Original Method ----------
-        //return new AdapterContextMenuInfo(view, position, id);
+        
+        
     }
 
     
@@ -2429,37 +2429,37 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 {
                     setItemChecked(longPressPosition, true);
                     performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         boolean handled = false;
         {
             handled = mOnItemLongClickListener.onItemLongClick(AbsListView.this, child,
                     longPressPosition, longPressId);
-        } //End block
+        } 
         {
             mContextMenuInfo = createContextMenuInfo(child, longPressPosition, longPressId);
             handled = super.showContextMenuForChild(AbsListView.this);
-        } //End block
+        } 
         {
             performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2102464122 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2102464122;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.909 -0400", hash_original_method = "9F181134B78CDA48AEB577EDC6EC32D7", hash_generated_method = "B423DB2F5B1B99570C15A3607CE4F411")
     @Override
     protected ContextMenuInfo getContextMenuInfo() {
-        ContextMenuInfo varB4EAC82CA7396A68D541C85D26508E83_551777437 = null; //Variable for return #1
+        ContextMenuInfo varB4EAC82CA7396A68D541C85D26508E83_551777437 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_551777437 = mContextMenuInfo;
-        varB4EAC82CA7396A68D541C85D26508E83_551777437.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_551777437.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_551777437;
-        // ---------- Original Method ----------
-        //return mContextMenuInfo;
+        
+        
     }
 
     
@@ -2473,25 +2473,25 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             {
                 mContextMenuInfo = createContextMenuInfo(child, position, id);
                 boolean var8897B192E808AB3EDB293923745D2D74_90272919 = (super.showContextMenuForChild(AbsListView.this));
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varE458CA81039B0A7729D96AA8ED00D0B8_1976033321 = (super.showContextMenu(x, y, metaState));
         addTaint(x);
         addTaint(y);
         addTaint(metaState);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_730131920 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_730131920;
-        // ---------- Original Method ----------
-        //final int position = pointToPosition((int)x, (int)y);
-        //if (position != INVALID_POSITION) {
-            //final long id = mAdapter.getItemId(position);
-            //View child = getChildAt(position - mFirstPosition);
-            //if (child != null) {
-                //mContextMenuInfo = createContextMenuInfo(child, position, id);
-                //return super.showContextMenuForChild(AbsListView.this);
-            //}
-        //}
-        //return super.showContextMenu(x, y, metaState);
+        
+        
+        
+            
+            
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -2505,61 +2505,61 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             {
                 handled = mOnItemLongClickListener.onItemLongClick(AbsListView.this, originalView,
                         longPressPosition, longPressId);
-            } //End block
+            } 
             {
                 mContextMenuInfo = createContextMenuInfo(
                         getChildAt(longPressPosition - mFirstPosition),
                         longPressPosition, longPressId);
                 handled = super.showContextMenuForChild(originalView);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(originalView.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_413243576 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_413243576;
-        // ---------- Original Method ----------
-        //final int longPressPosition = getPositionForView(originalView);
-        //if (longPressPosition >= 0) {
-            //final long longPressId = mAdapter.getItemId(longPressPosition);
-            //boolean handled = false;
-            //if (mOnItemLongClickListener != null) {
-                //handled = mOnItemLongClickListener.onItemLongClick(AbsListView.this, originalView,
-                        //longPressPosition, longPressId);
-            //}
-            //if (!handled) {
-                //mContextMenuInfo = createContextMenuInfo(
-                        //getChildAt(longPressPosition - mFirstPosition),
-                        //longPressPosition, longPressId);
-                //handled = super.showContextMenuForChild(originalView);
-            //}
-            //return handled;
-        //}
-        //return false;
+        
+        
+        
+            
+            
+            
+                
+                        
+            
+            
+                
+                        
+                        
+                
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.911 -0400", hash_original_method = "9B8E7EBB8FE64DE94387A936F5D592CB", hash_generated_method = "1E552177A1EF875F2281F499DBF9DE4D")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1135375060 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1135375060;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.911 -0400", hash_original_method = "DD8448F1B5F23CC0AD3E4D53FFC7D294", hash_generated_method = "83784B9261494DF1A562FD2CDE9EE236")
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        //Begin case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
+        
+        
         {
             boolean varC378F7D9F83769944CF2ACC662A4EAE3_806548587 = (!isEnabled());
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
-        //Begin case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
+        } 
+        
+        
         {
             boolean varD23167BEA6670E541F842804D07343DD_253517698 = (isClickable() && isPressed() &&
                     mSelectedPosition >= 0 && mAdapter != null &&
@@ -2569,37 +2569,37 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 {
                     performItemClick(view, mSelectedPosition, mSelectedRowId);
                     view.setPressed(false);
-                } //End block
+                } 
                 setPressed(false);
-            } //End block
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
+            } 
+        } 
+        
         boolean varEDD771EBF66425AD21882AB08CD0EE48_1716758569 = (super.onKeyUp(keyCode, event));
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1025376850 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1025376850;
-        // ---------- Original Method ----------
-        //switch (keyCode) {
-        //case KeyEvent.KEYCODE_DPAD_CENTER:
-        //case KeyEvent.KEYCODE_ENTER:
-            //if (!isEnabled()) {
-                //return true;
-            //}
-            //if (isClickable() && isPressed() &&
-                    //mSelectedPosition >= 0 && mAdapter != null &&
-                    //mSelectedPosition < mAdapter.getCount()) {
-                //final View view = getChildAt(mSelectedPosition - mFirstPosition);
-                //if (view != null) {
-                    //performItemClick(view, mSelectedPosition, mSelectedRowId);
-                    //view.setPressed(false);
-                //}
-                //setPressed(false);
-                //return true;
-            //}
-            //break;
-        //}
-        //return super.onKeyUp(keyCode, event);
+        
+        
+        
+        
+            
+                
+            
+            
+                    
+                    
+                
+                
+                    
+                    
+                
+                
+                
+            
+            
+        
+        
     }
 
     
@@ -2607,7 +2607,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     @Override
     protected void dispatchSetPressed(boolean pressed) {
         addTaint(pressed);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -2617,7 +2617,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         {
             mTouchFrame = new Rect();
             frame = mTouchFrame;
-        } //End block
+        } 
         final int count = getChildCount();
         {
             int i = count - 1;
@@ -2629,32 +2629,32 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         child.getHitRect(frame);
                         {
                             boolean var9F1DF48D8B435FACEEE6B40EFD85C398_1636256921 = (frame.contains(x, y));
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(x);
         addTaint(y);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1340156224 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1340156224;
-        // ---------- Original Method ----------
-        //Rect frame = mTouchFrame;
-        //if (frame == null) {
-            //mTouchFrame = new Rect();
-            //frame = mTouchFrame;
-        //}
-        //final int count = getChildCount();
-        //for (int i = count - 1; i >= 0; i--) {
-            //final View child = getChildAt(i);
-            //if (child.getVisibility() == View.VISIBLE) {
-                //child.getHitRect(frame);
-                //if (frame.contains(x, y)) {
-                    //return mFirstPosition + i;
-                //}
-            //}
-        //}
-        //return INVALID_POSITION;
+        
+        
+        
+            
+            
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -2663,17 +2663,17 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         int position = pointToPosition(x, y);
         {
             long varD18EE374A3F0927116BA59F2A9A03256_1491588171 = (mAdapter.getItemId(position));
-        } //End block
+        } 
         addTaint(x);
         addTaint(y);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_549057065 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_549057065;
-        // ---------- Original Method ----------
-        //int position = pointToPosition(x, y);
-        //if (position >= 0) {
-            //return mAdapter.getItemId(position);
-        //}
-        //return INVALID_ROW_ID;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -2687,32 +2687,32 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             {
                 mTouchMode = TOUCH_MODE_OVERSCROLL;
                 mMotionCorrection = 0;
-            } //End block
+            } 
             {
                 mTouchMode = TOUCH_MODE_SCROLL;
                 mMotionCorrection = deltaY > 0 ? mTouchSlop : -mTouchSlop;
-            } //End block
+            } 
             final Handler handler = getHandler();
             {
                 handler.removeCallbacks(mPendingCheckForLongPress);
-            } //End block
+            } 
             setPressed(false);
             View motionView = getChildAt(mMotionPosition - mFirstPosition);
             {
                 motionView.setPressed(false);
-            } //End block
+            } 
             reportScrollStateChange(OnScrollListener.SCROLL_STATE_TOUCH_SCROLL);
             final ViewParent parent = getParent();
             {
                 parent.requestDisallowInterceptTouchEvent(true);
-            } //End block
+            } 
             scrollIfNeeded(y);
-        } //End block
+        } 
         addTaint(y);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_725814608 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_725814608;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2728,11 +2728,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 {
                     Debug.startMethodTracing("AbsListViewScroll");
                     mScrollProfilingStarted = true;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 mScrollStrictSpan = StrictMode.enterCriticalSpan("AbsListView-scroll");
-            } //End block
+            } 
             {
                 {
                     boolean var3B6B3092E9AEF7EFB8F7DB7C1090C559_1197746430 = ((mGroupFlags & FLAG_DISALLOW_INTERCEPT) == 0 &&
@@ -2741,25 +2741,25 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         final ViewParent parent = getParent();
                         {
                             parent.requestDisallowInterceptTouchEvent(true);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 int motionIndex;
                 {
                     motionIndex = mMotionPosition - mFirstPosition;
-                } //End block
+                } 
                 {
                     motionIndex = getChildCount() / 2;
-                } //End block
+                } 
                 int motionViewPrevTop = 0;
                 View motionView = this.getChildAt(motionIndex);
                 {
                     motionViewPrevTop = motionView.getTop();
-                } //End block
+                } 
                 boolean atEdge = false;
                 {
                     atEdge = trackMotionScroll(deltaY, incrementalDeltaY);
-                } //End block
+                } 
                 motionView = this.getChildAt(motionIndex);
                 {
                     final int motionViewRealTop = motionView.getTop();
@@ -2773,9 +2773,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             {
                                 {
                                     mVelocityTracker.clear();
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
                         final int overscrollMode = getOverScrollMode();
                         {
                             boolean varAE1D066723B1EA15FA5C10A14D662F56_1971666967 = (overscrollMode == OVER_SCROLL_ALWAYS ||
@@ -2790,27 +2790,27 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                         boolean varA87047F469C00113B6AE83492D7AB59C_365538177 = (!mEdgeGlowBottom.isFinished());
                                         {
                                             mEdgeGlowBottom.onRelease();
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
+                                        } 
+                                    } 
+                                } 
                                 {
                                     mEdgeGlowBottom.onPull((float) overscroll / getHeight());
                                     {
                                         boolean varF30E150A7784B932CC0A99DAB3E3524A_1874063072 = (!mEdgeGlowTop.isFinished());
                                         {
                                             mEdgeGlowTop.onRelease();
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
                     mMotionY = y;
                     invalidate();
-                } //End block
+                } 
                 mLastY = y;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 final int oldScroll = mScrollY;
@@ -2820,15 +2820,15 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 newDirection = -1;
                 {
                     mDirection = newDirection;
-                } //End block
+                } 
                 int overScrollDistance = -incrementalDeltaY;
                 {
                     overScrollDistance = -oldScroll;
                     incrementalDeltaY += overScrollDistance;
-                } //End block
+                } 
                 {
                     incrementalDeltaY = 0;
-                } //End block
+                } 
                 {
                     overScrollBy(0, overScrollDistance, 0, mScrollY, 0, 0,
                             0, mOverscrollDistance, true);
@@ -2844,28 +2844,28 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                     boolean var352E8E7760F8F011E79FB28EFE62DA73_295445813 = (!mEdgeGlowBottom.isFinished());
                                     {
                                         mEdgeGlowBottom.onRelease();
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             {
                                 mEdgeGlowBottom.onPull((float) overScrollDistance / getHeight());
                                 {
                                     boolean var530787B3C000358ED8C3E02B71DC0120_267255957 = (!mEdgeGlowTop.isFinished());
                                     {
                                         mEdgeGlowTop.onRelease();
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             invalidate();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     mScrollY = 0;
                     invalidateParentIfNeeded();
                     {
                         trackMotionScroll(incrementalDeltaY, incrementalDeltaY);
-                    } //End block
+                    } 
                     mTouchMode = TOUCH_MODE_SCROLL;
                     final int motionPosition = findClosestMotionRow(y);
                     mMotionCorrection = 0;
@@ -2873,86 +2873,86 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     mMotionViewOriginalTop = motionView != null ? motionView.getTop() : 0;
                     mMotionY = y;
                     mMotionPosition = motionPosition;
-                } //End block
+                } 
                 mLastY = y;
                 mDirection = newDirection;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.916 -0400", hash_original_method = "6F0203AFDEF2DCB43412C3F5E7A63F8C", hash_generated_method = "2E2FAA07BD3C7C595ABE611F80FE7F8A")
     public void onTouchModeChanged(boolean isInTouchMode) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             hideSelector();
             {
                 boolean var18FDA06F2E4C20DCFBA70CFDB1F209F6_241636461 = (getHeight() > 0 && getChildCount() > 0);
                 {
                     layoutChildren();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             updateSelectorState();
-        } //End block
+        } 
         {
             int touchMode = mTouchMode;
             {
                 {
                     mFlingRunnable.endFling();
-                } //End block
+                } 
                 {
                     mPositionScroller.stop();
-                } //End block
+                } 
                 {
                     mScrollY = 0;
                     invalidateParentCaches();
                     finishGlows();
                     invalidate();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(isInTouchMode);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.920 -0400", hash_original_method = "EC498F7AA9A002C93696F04D5F90A9F2", hash_generated_method = "CC4708614D08460AA88F48DE25D01D28")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varC378F7D9F83769944CF2ACC662A4EAE3_1726350788 = (!isEnabled());
             {
                 boolean var78B3B137E9725C8407DD55321B456099_305455435 = (isClickable() || isLongClickable());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean intercepted = mFastScroller.onTouchEvent(ev);
-        } //End block
+        } 
         final int action = ev.getAction();
         View v;
         initVelocityTrackerIfNotExists();
         mVelocityTracker.addMovement(ev);
-        //Begin case MotionEvent.ACTION_DOWN 
+        
         {
-            //Begin case TOUCH_MODE_OVERFLING 
+            
             {
                 mFlingRunnable.endFling();
                 {
                     mPositionScroller.stop();
-                } //End block
+                } 
                 mTouchMode = TOUCH_MODE_OVERSCROLL;
                 mMotionX = (int) ev.getX();
                 mMotionY = mLastY = (int) ev.getY();
                 mMotionCorrection = 0;
                 mActivePointerId = ev.getPointerId(0);
                 mDirection = 0;
-            } //End block
-            //End case TOUCH_MODE_OVERFLING 
-            //Begin case default 
+            } 
+            
+            
             {
                 mActivePointerId = ev.getPointerId(0);
                 final int x = (int) ev.getX();
@@ -2966,9 +2966,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             mTouchMode = TOUCH_MODE_DOWN;
                             {
                                 mPendingCheckForTap = new CheckForTap();
-                            } //End block
+                            } 
                             postDelayed(mPendingCheckForTap, ViewConfiguration.getTapTimeout());
-                        } //End block
+                        } 
                         {
                             {
                                 createScrollingCache();
@@ -2976,70 +2976,70 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                 mMotionCorrection = 0;
                                 motionPosition = findMotionRow(y);
                                 mFlingRunnable.flywheelTouch();
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     v = getChildAt(motionPosition - mFirstPosition);
                     mMotionViewOriginalTop = v.getTop();
-                } //End block
+                } 
                 mMotionX = x;
                 mMotionY = y;
                 mMotionPosition = motionPosition;
                 mLastY = Integer.MIN_VALUE;
-            } //End block
-            //End case default 
+            } 
+            
             {
                 boolean var10762BA5807EC5420815666D17984CE3_1982119158 = (performButtonActionOnTouchDown(ev));
                 {
                     {
                         removeCallbacks(mPendingCheckForTap);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        //End case MotionEvent.ACTION_DOWN 
-        //Begin case MotionEvent.ACTION_MOVE 
+                    } 
+                } 
+            } 
+        } 
+        
+        
         {
             int pointerIndex = ev.findPointerIndex(mActivePointerId);
             {
                 pointerIndex = 0;
                 mActivePointerId = ev.getPointerId(pointerIndex);
-            } //End block
+            } 
             final int y = (int) ev.getY(pointerIndex);
-            //Begin case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
+            
             startScrollIfNeeded(y);
-            //End case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
-            //Begin case TOUCH_MODE_SCROLL TOUCH_MODE_OVERSCROLL 
+            
+            
             scrollIfNeeded(y);
-            //End case TOUCH_MODE_SCROLL TOUCH_MODE_OVERSCROLL 
-        } //End block
-        //End case MotionEvent.ACTION_MOVE 
-        //Begin case MotionEvent.ACTION_UP 
+            
+        } 
+        
+        
         {
-            //Begin case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
+            
             final int motionPosition = mMotionPosition;
-            //End case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
-            //Begin case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
+            
+            
             final View child = getChildAt(motionPosition - mFirstPosition);
-            //End case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
-            //Begin case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
+            
+            
             final float x = ev.getX();
-            //End case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
-            //Begin case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
+            
+            
             final boolean inList = x > mListPadding.left && x < getWidth() - mListPadding.right;
-            //End case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
-            //Begin case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
+            
+            
             {
                 boolean var645943845E190A2FFA4FE7562EA898F8_103185673 = (child != null && !child.hasFocusable() && inList);
                 {
                     {
                         child.setPressed(false);
-                    } //End block
+                    } 
                     {
                         mPerformClick = new PerformClick();
-                    } //End block
+                    } 
                     final AbsListView.PerformClick performClick = mPerformClick;
                     performClick.mClickMotionPosition = motionPosition;
                     performClick.rememberWindowAttachCount();
@@ -3049,7 +3049,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         {
                             handler.removeCallbacks(mTouchMode == TOUCH_MODE_DOWN ?
                                     mPendingCheckForTap : mPendingCheckForLongPress);
-                        } //End block
+                        } 
                         mLayoutMode = LAYOUT_NORMAL;
                         {
                             boolean varAD4E45D7D3DB8FFF6E14B37863D65B2D_890576304 = (!mDataChanged && mAdapter.isEnabled(motionPosition));
@@ -3064,11 +3064,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                     Drawable d = mSelector.getCurrent();
                                     {
                                         ((TransitionDrawable) d).resetTransition();
-                                    } //End block
-                                } //End block
+                                    } 
+                                } 
                                 {
                                     removeCallbacks(mTouchModeReset);
-                                } //End block
+                                } 
                                 mTouchModeReset = new Runnable() {                                    
                                     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.919 -0400", hash_original_method = "A6EC1D4E4E60E1E8895C51DF141E43B7", hash_generated_method = "9285F265A17C80263E536A0E27728322")
                                     @Override
@@ -3078,44 +3078,44 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                         setPressed(false);
                                         {
                                             performClick.run();
-                                        } //End block
-                                        // ---------- Original Method ----------
-                                        //mTouchMode = TOUCH_MODE_REST;
-                                        //child.setPressed(false);
-                                        //setPressed(false);
-                                        //if (!mDataChanged) {
-                                        //performClick.run();
-                                    //}
+                                        } 
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    
                                     }
 };
                                 postDelayed(mTouchModeReset,
                                     ViewConfiguration.getPressedStateDuration());
-                            } //End block
+                            } 
                             {
                                 mTouchMode = TOUCH_MODE_REST;
                                 updateSelectorState();
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         boolean var523699F24A476A31015FCD9CC5BA98D8_939613639 = (!mDataChanged && mAdapter.isEnabled(motionPosition));
                         {
                             performClick.run();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-            //End case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
-            //Begin case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
             mTouchMode = TOUCH_MODE_REST;
-            //End case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
-            //Begin case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
+            
+            
             updateSelectorState();
-            //End case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
-            //Begin case TOUCH_MODE_SCROLL 
+            
+            
             final int childCount = getChildCount();
-            //End case TOUCH_MODE_SCROLL 
-            //Begin case TOUCH_MODE_SCROLL 
+            
+            
             {
                 final int firstChildTop = getChildAt(0).getTop();
                 final int lastChildBottom = getChildAt(childCount - 1).getBottom();
@@ -3128,7 +3128,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     {
                         mTouchMode = TOUCH_MODE_REST;
                         reportScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
-                    } //End block
+                    } 
                     {
                         final VelocityTracker velocityTracker = mVelocityTracker;
                         velocityTracker.computeCurrentVelocity(1000, mMaximumVelocity);
@@ -3143,127 +3143,127 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             {
                                 {
                                     mFlingRunnable = new FlingRunnable();
-                                } //End block
+                                } 
                                 reportScrollStateChange(OnScrollListener.SCROLL_STATE_FLING);
                                 mFlingRunnable.start(-initialVelocity);
-                            } //End block
+                            } 
                             {
                                 mTouchMode = TOUCH_MODE_REST;
                                 reportScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
                                 {
                                     mFlingRunnable.endFling();
-                                } //End block
+                                } 
                                 {
                                     mPositionScroller.stop();
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 mTouchMode = TOUCH_MODE_REST;
                 reportScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
-            } //End block
-            //End case TOUCH_MODE_SCROLL 
-            //Begin case TOUCH_MODE_OVERSCROLL 
+            } 
+            
+            
             {
                 mFlingRunnable = new FlingRunnable();
-            } //End block
-            //End case TOUCH_MODE_OVERSCROLL 
-            //Begin case TOUCH_MODE_OVERSCROLL 
+            } 
+            
+            
             final VelocityTracker velocityTracker = mVelocityTracker;
-            //End case TOUCH_MODE_OVERSCROLL 
-            //Begin case TOUCH_MODE_OVERSCROLL 
+            
+            
             velocityTracker.computeCurrentVelocity(1000, mMaximumVelocity);
-            //End case TOUCH_MODE_OVERSCROLL 
-            //Begin case TOUCH_MODE_OVERSCROLL 
+            
+            
             final int initialVelocity = (int) velocityTracker.getYVelocity(mActivePointerId);
-            //End case TOUCH_MODE_OVERSCROLL 
-            //Begin case TOUCH_MODE_OVERSCROLL 
+            
+            
             reportScrollStateChange(OnScrollListener.SCROLL_STATE_FLING);
-            //End case TOUCH_MODE_OVERSCROLL 
-            //Begin case TOUCH_MODE_OVERSCROLL 
+            
+            
             {
                 boolean varA56DF990188ABEF5AF3A9E103B5F2778_861000080 = (Math.abs(initialVelocity) > mMinimumVelocity);
                 {
                     mFlingRunnable.startOverfling(-initialVelocity);
-                } //End block
+                } 
                 {
                     mFlingRunnable.startSpringback();
-                } //End block
-            } //End collapsed parenthetic
-            //End case TOUCH_MODE_OVERSCROLL 
+                } 
+            } 
+            
             setPressed(false);
             {
                 mEdgeGlowTop.onRelease();
                 mEdgeGlowBottom.onRelease();
-            } //End block
+            } 
             invalidate();
             final Handler handler = getHandler();
             {
                 handler.removeCallbacks(mPendingCheckForLongPress);
-            } //End block
+            } 
             recycleVelocityTracker();
             mActivePointerId = INVALID_POINTER;
             {
                 {
                     Debug.stopMethodTracing();
                     mScrollProfilingStarted = false;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 mScrollStrictSpan.finish();
                 mScrollStrictSpan = null;
-            } //End block
-        } //End block
-        //End case MotionEvent.ACTION_UP 
-        //Begin case MotionEvent.ACTION_CANCEL 
+            } 
+        } 
+        
+        
         {
-            //Begin case TOUCH_MODE_OVERSCROLL 
+            
             {
                 mFlingRunnable = new FlingRunnable();
-            } //End block
-            //End case TOUCH_MODE_OVERSCROLL 
-            //Begin case TOUCH_MODE_OVERSCROLL 
+            } 
+            
+            
             mFlingRunnable.startSpringback();
-            //End case TOUCH_MODE_OVERSCROLL 
-            //Begin case default 
+            
+            
             mTouchMode = TOUCH_MODE_REST;
-            //End case default 
-            //Begin case default 
+            
+            
             setPressed(false);
-            //End case default 
-            //Begin case default 
+            
+            
             View motionView = this.getChildAt(mMotionPosition - mFirstPosition);
-            //End case default 
-            //Begin case default 
+            
+            
             {
                 motionView.setPressed(false);
-            } //End block
-            //End case default 
-            //Begin case default 
+            } 
+            
+            
             clearScrollingCache();
-            //End case default 
-            //Begin case default 
+            
+            
             final Handler handler = getHandler();
-            //End case default 
-            //Begin case default 
+            
+            
             {
                 handler.removeCallbacks(mPendingCheckForLongPress);
-            } //End block
-            //End case default 
-            //Begin case default 
+            } 
+            
+            
             recycleVelocityTracker();
-            //End case default 
+            
             {
                 mEdgeGlowTop.onRelease();
                 mEdgeGlowBottom.onRelease();
-            } //End block
+            } 
             mActivePointerId = INVALID_POINTER;
-        } //End block
-        //End case MotionEvent.ACTION_CANCEL 
-        //Begin case MotionEvent.ACTION_POINTER_UP 
+        } 
+        
+        
         {
             onSecondaryPointerUp(ev);
             final int x = mMotionX;
@@ -3273,11 +3273,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 v = getChildAt(motionPosition - mFirstPosition);
                 mMotionViewOriginalTop = v.getTop();
                 mMotionPosition = motionPosition;
-            } //End block
+            } 
             mLastY = y;
-        } //End block
-        //End case MotionEvent.ACTION_POINTER_UP 
-        //Begin case MotionEvent.ACTION_POINTER_DOWN 
+        } 
+        
+        
         {
             final int index = ev.getActionIndex();
             final int id = ev.getPointerId(index);
@@ -3292,51 +3292,51 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 v = getChildAt(motionPosition - mFirstPosition);
                 mMotionViewOriginalTop = v.getTop();
                 mMotionPosition = motionPosition;
-            } //End block
+            } 
             mLastY = y;
-        } //End block
-        //End case MotionEvent.ACTION_POINTER_DOWN 
+        } 
+        
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_85396894 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_85396894;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.921 -0400", hash_original_method = "3A1744A3CB770F6FD9FFEB222E666622", hash_generated_method = "A65F9FBE4B732045E9C138C85F43B1D4")
     @Override
     protected void onOverScrolled(int scrollX, int scrollY, boolean clampedX, boolean clampedY) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             onScrollChanged(mScrollX, scrollY, mScrollX, mScrollY);
             mScrollY = scrollY;
             invalidateParentIfNeeded();
             awakenScrollBars();
-        } //End block
+        } 
         addTaint(scrollX);
         addTaint(scrollY);
         addTaint(clampedX);
         addTaint(clampedY);
-        // ---------- Original Method ----------
-        //if (mScrollY != scrollY) {
-            //onScrollChanged(mScrollX, scrollY, mScrollX, mScrollY);
-            //mScrollY = scrollY;
-            //invalidateParentIfNeeded();
-            //awakenScrollBars();
-        //}
+        
+        
+            
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.921 -0400", hash_original_method = "09132BF5E477A2B233231E384E8A2F27", hash_generated_method = "C0BA2BAFE941665C3FFCDB243ACB6574")
     @Override
     public boolean onGenericMotionEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varB5CEEFE1A0B0FE6CF2A2378211A03C4D_1802082851 = ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0);
             {
                 {
                     Object varC2BF00F96F1D1B1ABEF4B0E3FC4FE9EC_1997103468 = (event.getAction());
-                    //Begin case MotionEvent.ACTION_SCROLL 
+                    
                     {
                         {
                             final float vscroll = event.getAxisValue(MotionEvent.AXIS_VSCROLL);
@@ -3344,35 +3344,35 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                 final int delta = (int) (vscroll * getVerticalScrollFactor());
                                 {
                                     boolean var5104A1C3A4166DC9AEBE0F45BFBBFDA2_1022468557 = (!trackMotionScroll(delta, delta));
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End block
-                    } //End block
-                    //End case MotionEvent.ACTION_SCROLL 
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                    
+                } 
+            } 
+        } 
         boolean var32C1E3DF40BCC120C79428C7AEB27DD1_66220038 = (super.onGenericMotionEvent(event));
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_996789865 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_996789865;
-        // ---------- Original Method ----------
-        //if ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0) {
-            //switch (event.getAction()) {
-                //case MotionEvent.ACTION_SCROLL: {
-                    //if (mTouchMode == TOUCH_MODE_REST) {
-                        //final float vscroll = event.getAxisValue(MotionEvent.AXIS_VSCROLL);
-                        //if (vscroll != 0) {
-                            //final int delta = (int) (vscroll * getVerticalScrollFactor());
-                            //if (!trackMotionScroll(delta, delta)) {
-                                //return true;
-                            //}
-                        //}
-                    //}
-                //}
-            //}
-        //}
-        //return super.onGenericMotionEvent(event);
+        
+        
+            
+                
+                    
+                        
+                        
+                            
+                            
+                                
+                            
+                        
+                    
+                
+            
+        
+        
     }
 
     
@@ -3396,11 +3396,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         boolean varAE9426D05B3D52BFC4B9E7AA44588485_1659105354 = (mEdgeGlowTop.draw(canvas));
                         {
                             invalidate();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     canvas.restoreToCount(restoreCount);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var71AB611E918A4C599E2F06D4154D257E_360457407 = (!mEdgeGlowBottom.isFinished());
                 {
@@ -3417,12 +3417,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         boolean var61CCF9557D478E1494862B3636E22888_393804524 = (mEdgeGlowBottom.draw(canvas));
                         {
                             invalidate();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     canvas.restoreToCount(restoreCount);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             final int scrollY = mScrollY;
             {
@@ -3430,14 +3430,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 canvas.translate(0, (float) scrollY);
                 mFastScroller.draw(canvas);
                 canvas.restoreToCount(restoreCount);
-            } //End block
+            } 
             {
                 mFastScroller.draw(canvas);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3445,9 +3445,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void setOverScrollEffectPadding(int leftPadding, int rightPadding) {
         mGlowPaddingLeft = leftPadding;
         mGlowPaddingRight = rightPadding;
-        // ---------- Original Method ----------
-        //mGlowPaddingLeft = leftPadding;
-        //mGlowPaddingRight = rightPadding;
+        
+        
+        
     }
 
     
@@ -3455,16 +3455,16 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     private void initOrResetVelocityTracker() {
         {
             mVelocityTracker = VelocityTracker.obtain();
-        } //End block
+        } 
         {
             mVelocityTracker.clear();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mVelocityTracker == null) {
-            //mVelocityTracker = VelocityTracker.obtain();
-        //} else {
-            //mVelocityTracker.clear();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -3472,11 +3472,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     private void initVelocityTrackerIfNotExists() {
         {
             mVelocityTracker = VelocityTracker.obtain();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mVelocityTracker == null) {
-            //mVelocityTracker = VelocityTracker.obtain();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -3485,12 +3485,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         {
             mVelocityTracker.recycle();
             mVelocityTracker = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mVelocityTracker != null) {
-            //mVelocityTracker.recycle();
-            //mVelocityTracker = null;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -3499,32 +3499,32 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
         {
             recycleVelocityTracker();
-        } //End block
+        } 
         super.requestDisallowInterceptTouchEvent(disallowIntercept);
         addTaint(disallowIntercept);
-        // ---------- Original Method ----------
-        //if (disallowIntercept) {
-            //recycleVelocityTracker();
-        //}
-        //super.requestDisallowInterceptTouchEvent(disallowIntercept);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.925 -0400", hash_original_method = "BEACBA96FA37C833811279893053B3A1", hash_generated_method = "57ED5853AF20C038C9D19B1CCE67E040")
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int action = ev.getAction();
         View v;
         {
             boolean intercepted = mFastScroller.onInterceptTouchEvent(ev);
-        } //End block
-        //Begin case MotionEvent.ACTION_DOWN 
+        } 
+        
         {
             int touchMode = mTouchMode;
             {
                 mMotionCorrection = 0;
-            } //End block
+            } 
             final int x = (int) ev.getX();
             final int y = (int) ev.getY();
             mActivePointerId = ev.getPointerId(0);
@@ -3537,56 +3537,56 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 mMotionPosition = motionPosition;
                 mTouchMode = TOUCH_MODE_DOWN;
                 clearScrollingCache();
-            } //End block
+            } 
             mLastY = Integer.MIN_VALUE;
             initOrResetVelocityTracker();
             mVelocityTracker.addMovement(ev);
-        } //End block
-        //End case MotionEvent.ACTION_DOWN 
-        //Begin case MotionEvent.ACTION_MOVE 
+        } 
+        
+        
         {
-            //Begin case TOUCH_MODE_DOWN 
+            
             int pointerIndex = ev.findPointerIndex(mActivePointerId);
-            //End case TOUCH_MODE_DOWN 
-            //Begin case TOUCH_MODE_DOWN 
+            
+            
             {
                 pointerIndex = 0;
                 mActivePointerId = ev.getPointerId(pointerIndex);
-            } //End block
-            //End case TOUCH_MODE_DOWN 
-            //Begin case TOUCH_MODE_DOWN 
+            } 
+            
+            
             final int y = (int) ev.getY(pointerIndex);
-            //End case TOUCH_MODE_DOWN 
-            //Begin case TOUCH_MODE_DOWN 
+            
+            
             initVelocityTrackerIfNotExists();
-            //End case TOUCH_MODE_DOWN 
-            //Begin case TOUCH_MODE_DOWN 
+            
+            
             mVelocityTracker.addMovement(ev);
-            //End case TOUCH_MODE_DOWN 
-            //Begin case TOUCH_MODE_DOWN 
+            
+            
             {
                 boolean varBEAADC7EDD4EC70730C4344D280FA313_585325482 = (startScrollIfNeeded(y));
-            } //End collapsed parenthetic
-            //End case TOUCH_MODE_DOWN 
-        } //End block
-        //End case MotionEvent.ACTION_MOVE 
-        //Begin case MotionEvent.ACTION_CANCEL MotionEvent.ACTION_UP 
+            } 
+            
+        } 
+        
+        
         {
             mTouchMode = TOUCH_MODE_REST;
             mActivePointerId = INVALID_POINTER;
             recycleVelocityTracker();
             reportScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
-        } //End block
-        //End case MotionEvent.ACTION_CANCEL MotionEvent.ACTION_UP 
-        //Begin case MotionEvent.ACTION_POINTER_UP 
+        } 
+        
+        
         {
             onSecondaryPointerUp(ev);
-        } //End block
-        //End case MotionEvent.ACTION_POINTER_UP 
+        } 
+        
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2045391598 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2045391598;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3603,18 +3603,18 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             mMotionY = (int) ev.getY(newPointerIndex);
             mMotionCorrection = 0;
             mActivePointerId = ev.getPointerId(newPointerIndex);
-        } //End block
-        // ---------- Original Method ----------
-        //final int pointerIndex = (ev.getAction() & MotionEvent.ACTION_POINTER_INDEX_MASK) >>
-                //MotionEvent.ACTION_POINTER_INDEX_SHIFT;
-        //final int pointerId = ev.getPointerId(pointerIndex);
-        //if (pointerId == mActivePointerId) {
-            //final int newPointerIndex = pointerIndex == 0 ? 1 : 0;
-            //mMotionX = (int) ev.getX(newPointerIndex);
-            //mMotionY = (int) ev.getY(newPointerIndex);
-            //mMotionCorrection = 0;
-            //mActivePointerId = ev.getPointerId(newPointerIndex);
-        //}
+        } 
+        
+        
+                
+        
+        
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -3632,26 +3632,26 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     boolean var2E8FCA4FD70E922109B068B9683F621A_47399916 = (adapter.isEnabled(firstPosition + i));
                     {
                         views.add(child);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 child.addTouchables(views);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(views.getTaint());
-        // ---------- Original Method ----------
-        //final int count = getChildCount();
-        //final int firstPosition = mFirstPosition;
-        //final ListAdapter adapter = mAdapter;
-        //if (adapter == null) {
-            //return;
-        //}
-        //for (int i = 0; i < count; i++) {
-            //final View child = getChildAt(i);
-            //if (adapter.isEnabled(firstPosition + i)) {
-                //views.add(child);
-            //}
-            //child.addTouchables(views);
-        //}
+        
+        
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -3661,15 +3661,15 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             {
                 mLastScrollState = newState;
                 mOnScrollListener.onScrollStateChanged(this, newState);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (newState != mLastScrollState) {
-            //if (mOnScrollListener != null) {
-                //mLastScrollState = newState;
-                //mOnScrollListener.onScrollStateChanged(this, newState);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+            
+        
     }
 
     
@@ -3677,22 +3677,22 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void setFriction(float friction) {
         {
             mFlingRunnable = new FlingRunnable();
-        } //End block
+        } 
         mFlingRunnable.mScroller.setFriction(friction);
         addTaint(friction);
-        // ---------- Original Method ----------
-        //if (mFlingRunnable == null) {
-            //mFlingRunnable = new FlingRunnable();
-        //}
-        //mFlingRunnable.mScroller.setFriction(friction);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.928 -0400", hash_original_method = "0A97F6C2B71DEE1A9A851FDFBE6F2171", hash_generated_method = "22912162971CDA2675BA2D8F41874A24")
     public void setVelocityScale(float scale) {
         mVelocityScale = scale;
-        // ---------- Original Method ----------
-        //mVelocityScale = scale;
+        
+        
     }
 
     
@@ -3700,14 +3700,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void smoothScrollToPosition(int position) {
         {
             mPositionScroller = new PositionScroller();
-        } //End block
+        } 
         mPositionScroller.start(position);
         addTaint(position);
-        // ---------- Original Method ----------
-        //if (mPositionScroller == null) {
-            //mPositionScroller = new PositionScroller();
-        //}
-        //mPositionScroller.start(position);
+        
+        
+            
+        
+        
     }
 
     
@@ -3715,16 +3715,16 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void smoothScrollToPositionFromTop(int position, int offset, int duration) {
         {
             mPositionScroller = new PositionScroller();
-        } //End block
+        } 
         mPositionScroller.startWithOffset(position, offset, duration);
         addTaint(position);
         addTaint(offset);
         addTaint(duration);
-        // ---------- Original Method ----------
-        //if (mPositionScroller == null) {
-            //mPositionScroller = new PositionScroller();
-        //}
-        //mPositionScroller.startWithOffset(position, offset, duration);
+        
+        
+            
+        
+        
     }
 
     
@@ -3732,15 +3732,15 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void smoothScrollToPositionFromTop(int position, int offset) {
         {
             mPositionScroller = new PositionScroller();
-        } //End block
+        } 
         mPositionScroller.startWithOffset(position, offset);
         addTaint(position);
         addTaint(offset);
-        // ---------- Original Method ----------
-        //if (mPositionScroller == null) {
-            //mPositionScroller = new PositionScroller();
-        //}
-        //mPositionScroller.startWithOffset(position, offset);
+        
+        
+            
+        
+        
     }
 
     
@@ -3748,15 +3748,15 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void smoothScrollToPosition(int position, int boundPosition) {
         {
             mPositionScroller = new PositionScroller();
-        } //End block
+        } 
         mPositionScroller.start(position, boundPosition);
         addTaint(position);
         addTaint(boundPosition);
-        // ---------- Original Method ----------
-        //if (mPositionScroller == null) {
-            //mPositionScroller = new PositionScroller();
-        //}
-        //mPositionScroller.start(position, boundPosition);
+        
+        
+            
+        
+        
     }
 
     
@@ -3764,7 +3764,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public void smoothScrollBy(int distance, int duration) {
         {
             mFlingRunnable = new FlingRunnable();
-        } //End block
+        } 
         final int firstPos = mFirstPosition;
         final int childCount = getChildCount();
         final int lastPos = firstPos + childCount;
@@ -3779,17 +3779,17 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 mFlingRunnable.endFling();
                 {
                     mPositionScroller.stop();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 reportScrollStateChange(OnScrollListener.SCROLL_STATE_FLING);
                 mFlingRunnable.startScroll(distance, duration);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(distance);
         addTaint(duration);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3798,10 +3798,10 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         int index = -1;
         {
             index = getFirstVisiblePosition();
-        } //End block
+        } 
         {
             index = getLastVisiblePosition();
-        } //End block
+        } 
         {
             View child = getChildAt(index - getFirstVisiblePosition());
             {
@@ -3813,14 +3813,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         int visibleRectArea = visibleRect.width() * visibleRect.height();
                         float visibleArea = (visibleRectArea / (float) childRectArea);
                         final float visibleThreshold = 0.75f;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 smoothScrollToPosition(Math.max(0, Math.min(getCount(), index + position)));
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(position);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3830,13 +3830,13 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             setChildrenDrawnWithCacheEnabled(true);
             setChildrenDrawingCacheEnabled(true);
             mCachingStarted = mCachingActive = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mScrollingCacheEnabled && !mCachingStarted) {
-            //setChildrenDrawnWithCacheEnabled(true);
-            //setChildrenDrawingCacheEnabled(true);
-            //mCachingStarted = mCachingActive = true;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -3851,47 +3851,47 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         setChildrenDrawnWithCacheEnabled(false);
                         {
                             setChildrenDrawingCacheEnabled(false);
-                        } //End block
+                        } 
                         {
                             boolean var600D0F7D7BFFDAD0124DB110898B3A19_526201372 = (!isAlwaysDrawnWithCacheEnabled());
                             {
                                 invalidate();
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                    // ---------- Original Method ----------
-                    //if (mCachingStarted) {
-                        //mCachingStarted = mCachingActive = false;
-                        //setChildrenDrawnWithCacheEnabled(false);
-                        //if ((mPersistentDrawingCache & PERSISTENT_SCROLLING_CACHE) == 0) {
-                            //setChildrenDrawingCacheEnabled(false);
-                        //}
-                        //if (!isAlwaysDrawnWithCacheEnabled()) {
-                            //invalidate();
-                        //}
-                    //}
+                            } 
+                        } 
+                    } 
+                    
+                    
+                        
+                        
+                        
+                            
+                        
+                        
+                            
+                        
+                    
                 }
 };
-        } //End block
+        } 
         post(mClearScrollingCache);
-        // ---------- Original Method ----------
-        //if (mClearScrollingCache == null) {
-            //mClearScrollingCache = new Runnable() {
-                //public void run() {
-                    //if (mCachingStarted) {
-                        //mCachingStarted = mCachingActive = false;
-                        //setChildrenDrawnWithCacheEnabled(false);
-                        //if ((mPersistentDrawingCache & PERSISTENT_SCROLLING_CACHE) == 0) {
-                            //setChildrenDrawingCacheEnabled(false);
-                        //}
-                        //if (!isAlwaysDrawnWithCacheEnabled()) {
-                            //invalidate();
-                        //}
-                    //}
-                //}
-            //};
-        //}
-        //post(mClearScrollingCache);
+        
+        
+            
+                
+                    
+                        
+                        
+                        
+                            
+                        
+                        
+                            
+                        
+                    
+                
+            
+        
+        
     }
 
     
@@ -3906,36 +3906,36 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         {
             effectivePaddingTop = listPadding.top;
             effectivePaddingBottom = listPadding.bottom;
-        } //End block
+        } 
         final int spaceAbove = effectivePaddingTop - firstTop;
         final int end = getHeight() - effectivePaddingBottom;
         final int spaceBelow = lastBottom - end;
         final int height = getHeight() - mPaddingBottom - mPaddingTop;
         {
             deltaY = Math.max(-(height - 1), deltaY);
-        } //End block
+        } 
         {
             deltaY = Math.min(height - 1, deltaY);
-        } //End block
+        } 
         {
             incrementalDeltaY = Math.max(-(height - 1), incrementalDeltaY);
-        } //End block
+        } 
         {
             incrementalDeltaY = Math.min(height - 1, incrementalDeltaY);
-        } //End block
+        } 
         final int firstPosition = mFirstPosition;
         {
             mFirstPositionDistanceGuess = firstTop - listPadding.top;
-        } //End block
+        } 
         {
             mFirstPositionDistanceGuess += incrementalDeltaY;
-        } //End block
+        } 
         {
             mLastPositionDistanceGuess = lastBottom + listPadding.bottom;
-        } //End block
+        } 
         {
             mLastPositionDistanceGuess += incrementalDeltaY;
-        } //End block
+        } 
         final boolean cannotScrollDown = (firstPosition == 0 &&
                 firstTop >= listPadding.top && incrementalDeltaY >= 0);
         final boolean cannotScrollUp = (firstPosition + childCount == mItemCount &&
@@ -3944,7 +3944,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         final boolean inTouchMode = isInTouchMode();
         {
             hideSelector();
-        } //End block
+        } 
         final int headerViewsCount = getHeaderViewsCount();
         final int footerViewsStart = mItemCount - getFooterViewsCount();
         int start = 0;
@@ -3953,7 +3953,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             int top = -incrementalDeltaY;
             {
                 top += listPadding.top;
-            } //End block
+            } 
             {
                 int i = 0;
                 {
@@ -3968,18 +3968,18 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                     ViewDebug.trace(child,
                                     ViewDebug.RecyclerTraceType.MOVE_TO_SCRAP_HEAP,
                                     firstPosition + i, -1);
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             int bottom = getHeight() - incrementalDeltaY;
             {
                 bottom -= listPadding.bottom;
-            } //End block
+            } 
             {
                 int i = childCount - 1;
                 {
@@ -3995,55 +3995,55 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                     ViewDebug.trace(child,
                                     ViewDebug.RecyclerTraceType.MOVE_TO_SCRAP_HEAP,
                                     firstPosition + i, -1);
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         mMotionViewNewTop = mMotionViewOriginalTop + deltaY;
         mBlockLayoutRequests = true;
         {
             detachViewsFromParent(start, count);
-        } //End block
+        } 
         offsetChildrenTopAndBottom(incrementalDeltaY);
         {
             mFirstPosition += count;
-        } //End block
+        } 
         invalidate();
         final int absIncrementalDeltaY = Math.abs(incrementalDeltaY);
         {
             fillGap(down);
-        } //End block
+        } 
         {
             final int childIndex = mSelectedPosition - mFirstPosition;
             {
                 boolean varE4C29A15947D7CEF0EFEE58A70FEE3AA_542514002 = (childIndex >= 0 && childIndex < getChildCount());
                 {
                     positionSelector(mSelectedPosition, getChildAt(childIndex));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             final int childIndex = mSelectorPosition - mFirstPosition;
             {
                 boolean varE4C29A15947D7CEF0EFEE58A70FEE3AA_1768466641 = (childIndex >= 0 && childIndex < getChildCount());
                 {
                     positionSelector(INVALID_POSITION, getChildAt(childIndex));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             mSelectorRect.setEmpty();
-        } //End block
+        } 
         mBlockLayoutRequests = false;
         invokeOnItemScrollListener();
         awakenScrollBars();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1931463415 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1931463415;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4051,8 +4051,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
      int getHeaderViewsCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_298792419 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_298792419;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -4060,8 +4060,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
      int getFooterViewsCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_352040655 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_352040655;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -4073,26 +4073,26 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         {
             {
                 mResurrectToPosition = mSelectedPosition;
-            } //End block
+            } 
             {
                 mResurrectToPosition = mNextSelectedPosition;
-            } //End block
+            } 
             setSelectedPositionInt(INVALID_POSITION);
             setNextSelectedPositionInt(INVALID_POSITION);
             mSelectedTop = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSelectedPosition != INVALID_POSITION) {
-            //if (mLayoutMode != LAYOUT_SPECIFIC) {
-                //mResurrectToPosition = mSelectedPosition;
-            //}
-            //if (mNextSelectedPosition >= 0 && mNextSelectedPosition != mSelectedPosition) {
-                //mResurrectToPosition = mNextSelectedPosition;
-            //}
-            //setSelectedPositionInt(INVALID_POSITION);
-            //setNextSelectedPositionInt(INVALID_POSITION);
-            //mSelectedTop = 0;
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+                
+            
+            
+            
+            
+        
     }
 
     
@@ -4101,19 +4101,19 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         int position = mSelectedPosition;
         {
             position = mResurrectToPosition;
-        } //End block
+        } 
         position = Math.max(0, position);
         position = Math.min(position, mItemCount - 1);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658239239 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658239239;
-        // ---------- Original Method ----------
-        //int position = mSelectedPosition;
-        //if (position < 0) {
-            //position = mResurrectToPosition;
-        //}
-        //position = Math.max(0, position);
-        //position = Math.min(position, mItemCount - 1);
-        //return position;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -4127,13 +4127,13 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         addTaint(y);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_546295798 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_546295798;
-        // ---------- Original Method ----------
-        //final int childCount = getChildCount();
-        //if (childCount == 0) {
-            //return INVALID_POSITION;
-        //}
-        //final int motionRow = findMotionRow(y);
-        //return motionRow != INVALID_POSITION ? motionRow : mFirstPosition + childCount - 1;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -4143,11 +4143,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         rememberSyncState();
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mDataChanged = true;
-        //rememberSyncState();
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
@@ -4157,16 +4157,16 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             boolean varA94BDD63AC24FE4C16F032614F7038B6_2043268534 = (mSelectedPosition < 0 && resurrectSelection());
             {
                 updateSelectorState();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_109150134 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_109150134;
-        // ---------- Original Method ----------
-        //if (mSelectedPosition < 0 && resurrectSelection()) {
-            //updateSelectorState();
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -4190,12 +4190,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             int selectedBottom = selected.getBottom();
             {
                 selectedTop = childrenTop + getVerticalFadingEdgeLength();
-            } //End block
+            } 
             {
                 selectedTop = childrenBottom - selected.getMeasuredHeight()
                         - getVerticalFadingEdgeLength();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 selectedPos = firstPosition;
@@ -4208,15 +4208,15 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             selectedTop = top;
                             {
                                 childrenTop += getVerticalFadingEdgeLength();
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             selectedPos = firstPosition + i;
                             selectedTop = top;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 final int itemCount = mItemCount;
                 down = false;
@@ -4231,21 +4231,21 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             selectedTop = top;
                             {
                                 childrenBottom -= getVerticalFadingEdgeLength();
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             selectedPos = firstPosition + i;
                             selectedTop = top;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         mResurrectToPosition = INVALID_POSITION;
         removeCallbacks(mFlingRunnable);
         {
             mPositionScroller.stop();
-        } //End block
+        } 
         mTouchMode = TOUCH_MODE_REST;
         clearScrollingCache();
         mSpecificTop = selectedTop;
@@ -4257,16 +4257,16 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 updateSelectorState();
                 setSelectionInt(selectedPos);
                 invokeOnItemScrollListener();
-            } //End block
+            } 
             {
                 selectedPos = INVALID_POSITION;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         reportScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1348285609 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1348285609;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4293,28 +4293,28 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                 found = true;
                                 mCheckStates.put(searchPos, true);
                                 mCheckedIdStates.setValueAt(checkedIndex, searchPos);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
                     {
                         mCheckedIdStates.delete(id);
                         checkedCountChanged = true;
                         {
                             mMultiChoiceModeCallback.onItemCheckedStateChanged(mChoiceActionMode,
                                 lastPos, id, false);
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     mCheckStates.put(lastPos, true);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             mChoiceActionMode.invalidate();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -4328,8 +4328,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             boolean var1BF5A9488574E2FA74D8264040FC0893_1367983463 = (mChoiceMode != CHOICE_MODE_NONE && mAdapter != null && mAdapter.hasStableIds());
             {
                 confirmCheckedPositionsById();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int newPos;
             int selectablePos;
@@ -4337,12 +4337,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 mNeedSync = false;
                 {
                     mLayoutMode = LAYOUT_FORCE_BOTTOM;
-                } //End block
+                } 
                 {
                     {
                         mForceTranscriptScroll = false;
                         mLayoutMode = LAYOUT_FORCE_BOTTOM;
-                    } //End block
+                    } 
                     final int childCount = getChildCount();
                     final int listBottom = getHeight() - getPaddingBottom();
                     final View lastChild = getChildAt(childCount - 1);
@@ -4351,16 +4351,16 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     lastBottom = listBottom;
                     {
                         mLayoutMode = LAYOUT_FORCE_BOTTOM;
-                    } //End block
+                    } 
                     awakenScrollBars();
-                } //End block
-                //Begin case SYNC_SELECTED_POSITION 
+                } 
+                
                 {
                     boolean varAFC77293C02F773029137FDE42129C14_2040706335 = (isInTouchMode());
                     {
                         mLayoutMode = LAYOUT_SYNC;
                         mSyncPosition = Math.min(Math.max(0, mSyncPosition), count - 1);
-                    } //End block
+                    } 
                     {
                         newPos = findSyncPosition();
                         {
@@ -4371,47 +4371,47 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                     boolean varE6F64662C76820CEAED04C173D145196_2059607628 = (mSyncHeight == getHeight());
                                     {
                                         mLayoutMode = LAYOUT_SYNC;
-                                    } //End block
+                                    } 
                                     {
                                         mLayoutMode = LAYOUT_SET_SELECTION;
-                                    } //End block
-                                } //End collapsed parenthetic
+                                    } 
+                                } 
                                 setNextSelectedPositionInt(newPos);
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-                //End case SYNC_SELECTED_POSITION 
-                //Begin case SYNC_FIRST_POSITION 
+                            } 
+                        } 
+                    } 
+                } 
+                
+                
                 mLayoutMode = LAYOUT_SYNC;
-                //End case SYNC_FIRST_POSITION 
-                //Begin case SYNC_FIRST_POSITION 
+                
+                
                 mSyncPosition = Math.min(Math.max(0, mSyncPosition), count - 1);
-                //End case SYNC_FIRST_POSITION 
-            } //End block
+                
+            } 
             {
                 boolean var12100596BD466B0E4730696B6E3F9C25_1207924019 = (!isInTouchMode());
                 {
                     newPos = getSelectedItemPosition();
                     {
                         newPos = count - 1;
-                    } //End block
+                    } 
                     {
                         newPos = 0;
-                    } //End block
+                    } 
                     selectablePos = lookForSelectablePosition(newPos, true);
                     {
                         setNextSelectedPositionInt(selectablePos);
-                    } //End block
+                    } 
                     {
                         selectablePos = lookForSelectablePosition(newPos, false);
                         {
                             setNextSelectedPositionInt(selectablePos);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         mLayoutMode = mStackFromBottom ? LAYOUT_FORCE_BOTTOM : LAYOUT_FORCE_TOP;
         mSelectedPosition = INVALID_POSITION;
         mSelectedRowId = INVALID_ROW_ID;
@@ -4420,48 +4420,48 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         mNeedSync = false;
         mSelectorPosition = INVALID_POSITION;
         checkSelectionChanged();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.943 -0400", hash_original_method = "C562B15A4430BC762CC4B771E60D70AF", hash_generated_method = "5F0FD14F7995E07F5E127B204C89E5E0")
     @Override
     protected void onDisplayHint(int hint) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDisplayHint(hint);
-        //Begin case INVISIBLE 
+        
         {
             boolean varD929D8531D595F5EA0B4A8A252DF969D_1727306786 = (mPopup != null && mPopup.isShowing());
             {
                 dismissPopup();
-            } //End block
-        } //End collapsed parenthetic
-        //End case INVISIBLE 
-        //Begin case VISIBLE 
+            } 
+        } 
+        
+        
         {
             boolean var003C494DA1AA746A5D5A0908F950DF91_835756382 = (mFiltered && mPopup != null && !mPopup.isShowing());
             {
                 showPopup();
-            } //End block
-        } //End collapsed parenthetic
-        //End case VISIBLE 
+            } 
+        } 
+        
         mPopupHidden = hint == INVISIBLE;
-        // ---------- Original Method ----------
-        //super.onDisplayHint(hint);
-        //switch (hint) {
-            //case INVISIBLE:
-                //if (mPopup != null && mPopup.isShowing()) {
-                    //dismissPopup();
-                //}
-                //break;
-            //case VISIBLE:
-                //if (mFiltered && mPopup != null && !mPopup.isShowing()) {
-                    //showPopup();
-                //}
-                //break;
-        //}
-        //mPopupHidden = hint == INVISIBLE;
+        
+        
+        
+            
+                
+                    
+                
+                
+            
+                
+                    
+                
+                
+        
+        
     }
 
     
@@ -4469,11 +4469,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     private void dismissPopup() {
         {
             mPopup.dismiss();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPopup != null) {
-            //mPopup.dismiss();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -4485,14 +4485,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 createTextFilter(true);
                 positionPopup();
                 checkFocus();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (getWindowVisibility() == View.VISIBLE) {
-            //createTextFilter(true);
-            //positionPopup();
-            //checkFocus();
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -4507,22 +4507,22 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             {
                 mPopup.showAtLocation(this, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL,
                     xy[0], bottomGap);
-            } //End block
+            } 
             {
                 mPopup.update(xy[0], bottomGap, -1, -1);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //int screenHeight = getResources().getDisplayMetrics().heightPixels;
-        //final int[] xy = new int[2];
-        //getLocationOnScreen(xy);
-        //final int bottomGap = screenHeight - xy[1] - getHeight() + (int) (mDensityScale * 20);
-        //if (!mPopup.isShowing()) {
-            //mPopup.showAtLocation(this, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL,
-                    //xy[0], bottomGap);
-        //} else {
-            //mPopup.update(xy[0], bottomGap, -1, -1);
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+            
+                    
+        
+            
+        
     }
 
     
@@ -4577,8 +4577,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     protected boolean isInFilterMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_89264430 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_89264430;
-        // ---------- Original Method ----------
-        //return mFiltered;
+        
+        
     }
 
     
@@ -4586,13 +4586,13 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
      boolean sendToTextFilter(int keyCode, int count, KeyEvent event) {
         {
             boolean var8E508D5098333C3DF9E9AC1534499251_2108740591 = (!acceptFilter());
-        } //End collapsed parenthetic
+        } 
         boolean handled = false;
         boolean okToSend = true;
-        //Begin case KeyEvent.KEYCODE_DPAD_UP KeyEvent.KEYCODE_DPAD_DOWN KeyEvent.KEYCODE_DPAD_LEFT KeyEvent.KEYCODE_DPAD_RIGHT KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
+        
         okToSend = false;
-        //End case KeyEvent.KEYCODE_DPAD_UP KeyEvent.KEYCODE_DPAD_DOWN KeyEvent.KEYCODE_DPAD_LEFT KeyEvent.KEYCODE_DPAD_RIGHT KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
-        //Begin case KeyEvent.KEYCODE_BACK 
+        
+        
         {
             boolean var39DB415F3D8E94BAF1BCAFDEBBF4C6EF_162800594 = (mFiltered && mPopup != null && mPopup.isShowing());
             {
@@ -4603,27 +4603,27 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         KeyEvent.DispatcherState state = getKeyDispatcherState();
                         {
                             state.startTracking(event, this);
-                        } //End block
+                        } 
                         handled = true;
-                    } //End block
+                    } 
                     {
                         boolean varF38DB653E52CB4D0E4EDFCBA5E49A3DF_796153341 = (event.getAction() == KeyEvent.ACTION_UP
                         && event.isTracking() && !event.isCanceled());
                         {
                             handled = true;
                             mTextFilter.setText("");
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_BACK 
-        //Begin case KeyEvent.KEYCODE_BACK 
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
         okToSend = false;
-        //End case KeyEvent.KEYCODE_BACK 
-        //Begin case KeyEvent.KEYCODE_SPACE 
+        
+        
         okToSend = mFiltered;
-        //End case KeyEvent.KEYCODE_SPACE 
+        
         {
             createTextFilter(true);
             KeyEvent forwardEvent = event;
@@ -4631,35 +4631,35 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 boolean var6A7BE4CA28243E587EACA0203B08BD67_25061034 = (forwardEvent.getRepeatCount() > 0);
                 {
                     forwardEvent = KeyEvent.changeTimeRepeat(event, event.getEventTime(), 0);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             int action = event.getAction();
-            //Begin case KeyEvent.ACTION_DOWN 
+            
             handled = mTextFilter.onKeyDown(keyCode, forwardEvent);
-            //End case KeyEvent.ACTION_DOWN 
-            //Begin case KeyEvent.ACTION_UP 
+            
+            
             handled = mTextFilter.onKeyUp(keyCode, forwardEvent);
-            //End case KeyEvent.ACTION_UP 
-            //Begin case KeyEvent.ACTION_MULTIPLE 
+            
+            
             handled = mTextFilter.onKeyMultiple(keyCode, count, event);
-            //End case KeyEvent.ACTION_MULTIPLE 
-        } //End block
+            
+        } 
         addTaint(keyCode);
         addTaint(count);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1982126424 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1982126424;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.951 -0400", hash_original_method = "D11D50B93967E008BF298EC93C5B84EB", hash_generated_method = "2C9C8B1C8F880477778EAC927F3FB34F")
     @Override
     public InputConnection onCreateInputConnection(EditorInfo outAttrs) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        InputConnection varB4EAC82CA7396A68D541C85D26508E83_24591920 = null; //Variable for return #1
-        InputConnection varB4EAC82CA7396A68D541C85D26508E83_67914795 = null; //Variable for return #2
+        
+        InputConnection varB4EAC82CA7396A68D541C85D26508E83_24591920 = null; 
+        InputConnection varB4EAC82CA7396A68D541C85D26508E83_67914795 = null; 
         {
             boolean var402F49E4B8F4D68C8A96D34BD4EE8DD9_2012755048 = (isTextFilterEnabled());
             {
@@ -4675,8 +4675,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             addTaint(enabled);
                             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1696195494 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1696195494;
-                            // ---------- Original Method ----------
-                            //return mDefInputConnection.reportFullscreenMode(enabled);
+                            
+                            
                         }
                         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.950 -0400", hash_original_method = "D9C91C9E69679EA1CEEF772A4C39F6DE", hash_generated_method = "0414409B4B3EA515CC4D6E3D66E096D1")
                         @Override
@@ -4687,22 +4687,22 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                             Context.INPUT_METHOD_SERVICE);
                                 {
                                     imm.hideSoftInputFromWindow(getWindowToken(), 0);
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             addTaint(editorAction);
                             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1329340652 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1329340652;
-                            // ---------- Original Method ----------
-                            //if (editorAction == EditorInfo.IME_ACTION_DONE) {
-                            //InputMethodManager imm = (InputMethodManager)
-                                    //getContext().getSystemService(
-                                            //Context.INPUT_METHOD_SERVICE);
-                            //if (imm != null) {
-                                //imm.hideSoftInputFromWindow(getWindowToken(), 0);
-                            //}
-                            //return true;
-                        //}
-                            //return false;
+                            
+                            
+                            
+                                    
+                                            
+                            
+                                
+                            
+                            
+                        
+                            
                         }
                         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.950 -0400", hash_original_method = "4DB1D1C6C2201E74EC410884B47F862A", hash_generated_method = "C4A80FCD65DB18A3D0D4EF3DD74348CE")
                         @Override
@@ -4711,31 +4711,31 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             addTaint(event.getTaint());
                             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_990013236 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_990013236;
-                            // ---------- Original Method ----------
-                            //return mDefInputConnection.sendKeyEvent(event);
+                            
+                            
                         }
 };
-                } //End block
+                } 
                 outAttrs.inputType = EditorInfo.TYPE_CLASS_TEXT
                     | EditorInfo.TYPE_TEXT_VARIATION_FILTER;
                 outAttrs.imeOptions = EditorInfo.IME_ACTION_DONE;
                 varB4EAC82CA7396A68D541C85D26508E83_24591920 = mPublicInputConnection;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_67914795 = null;
-        InputConnection varA7E53CE21691AB073D9660D615818899_529547871; //Final return value
+        InputConnection varA7E53CE21691AB073D9660D615818899_529547871; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_529547871 = varB4EAC82CA7396A68D541C85D26508E83_24591920;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_529547871 = varB4EAC82CA7396A68D541C85D26508E83_67914795;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_529547871.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_529547871.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_529547871;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4745,8 +4745,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         addTaint(view.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_703070596 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_703070596;
-        // ---------- Original Method ----------
-        //return view == mTextFilter;
+        
+        
     }
 
     
@@ -4773,16 +4773,16 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             mPopup = p;
             getViewTreeObserver().addOnGlobalLayoutListener(this);
             mGlobalLayoutListenerAddedFilter = true;
-        } //End block
+        } 
         {
             mPopup.setAnimationStyle(com.android.internal.R.style.Animation_TypingFilter);
-        } //End block
+        } 
         {
             mPopup.setAnimationStyle(com.android.internal.R.style.Animation_TypingFilterRestore);
-        } //End block
+        } 
         addTaint(animateEntrance);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4795,17 +4795,17 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 boolean var8B43E06806BC96AC7F4A8D7A0BE622AC_1383489186 = (mPopup != null && mPopup.isShowing());
                 {
                     dismissPopup();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //if (mFiltered) {
-            //mTextFilter.setText("");
-            //mFiltered = false;
-            //if (mPopup != null && mPopup.isShowing()) {
-                //dismissPopup();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -4813,14 +4813,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public boolean hasTextFilter() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1213258062 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1213258062;
-        // ---------- Original Method ----------
-        //return mFiltered;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.953 -0400", hash_original_method = "11A5FC28E28C3DFE2639108D4141B162", hash_generated_method = "DDAA310FC1BF4F19674CE9425D72485F")
     public void onGlobalLayout() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var3CDBC35A1363DD4CC94823B3022E2382_156624230 = (isShown());
             {
@@ -4828,28 +4828,28 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     boolean varDA5B3CFD94DC14795F693BACD8E64777_813028646 = (mFiltered && mPopup != null && !mPopup.isShowing() && !mPopupHidden);
                     {
                         showPopup();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 {
                     boolean varF98F363210E79C98D906F19BE26A0AAC_639100226 = (mPopup != null && mPopup.isShowing());
                     {
                         dismissPopup();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (isShown()) {
-            //if (mFiltered && mPopup != null && !mPopup.isShowing() && !mPopupHidden) {
-                //showPopup();
-            //}
-        //} else {
-            //if (mPopup != null && mPopup.isShowing()) {
-                //dismissPopup();
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+                
+            
+        
+            
+                
+            
+        
     }
 
     
@@ -4859,13 +4859,13 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         addTaint(start);
         addTaint(count);
         addTaint(after);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.954 -0400", hash_original_method = "971B961D673D514356DF6D21C3AC22CE", hash_generated_method = "980DF5D4779A265D50CAFD0F3DC51070")
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varCB324F139DAF9E78619086072BD20A85_794416822 = (mPopup != null && isTextFilterEnabled());
             {
@@ -4874,78 +4874,78 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 {
                     showPopup();
                     mFiltered = true;
-                } //End block
+                } 
                 {
                     dismissPopup();
                     mFiltered = false;
-                } //End block
+                } 
                 {
                     Filter f = ((Filterable) mAdapter).getFilter();
                     {
                         f.filter(s, this);
-                    } //End block
+                    } 
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("You cannot call onTextChanged with a non "
                             + "filterable adapter");
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(s.getTaint());
         addTaint(start);
         addTaint(before);
         addTaint(count);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.955 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "B1E73F6E6A3A9E89AEF9681CB19F89E5")
     public void afterTextChanged(Editable s) {
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.956 -0400", hash_original_method = "5FB3F90813AE5A23A23BDBAA76A97056", hash_generated_method = "0F0B22EF0C1B46EE125EA505154531EA")
     public void onFilterComplete(int count) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mResurrectToPosition = INVALID_POSITION;
             resurrectSelection();
-        } //End block
+        } 
         addTaint(count);
-        // ---------- Original Method ----------
-        //if (mSelectedPosition < 0 && count > 0) {
-            //mResurrectToPosition = INVALID_POSITION;
-            //resurrectSelection();
-        //}
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.956 -0400", hash_original_method = "B595E0482905B38051CD63239BB5F8BA", hash_generated_method = "C5A4B0E9A55DBA91F468E403882EE931")
     @Override
     protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
-        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1272281969 = null; //Variable for return #1
+        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1272281969 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1272281969 = new LayoutParams(p);
         addTaint(p.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1272281969.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1272281969.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1272281969;
-        // ---------- Original Method ----------
-        //return new LayoutParams(p);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.958 -0400", hash_original_method = "D7DCCEE0C1D1153E18E019649E6F2D80", hash_generated_method = "18252BF09E63744DD9DAD7F17A2836FD")
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_300537759 = null; //Variable for return #1
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_300537759 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_300537759 = new AbsListView.LayoutParams(getContext(), attrs);
         addTaint(attrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_300537759.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_300537759.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_300537759;
-        // ---------- Original Method ----------
-        //return new AbsListView.LayoutParams(getContext(), attrs);
+        
+        
     }
 
     
@@ -4955,16 +4955,16 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         addTaint(p.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2079219702 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2079219702;
-        // ---------- Original Method ----------
-        //return p instanceof AbsListView.LayoutParams;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.958 -0400", hash_original_method = "1385B81082A7F6F42283DE7C72A352C9", hash_generated_method = "EDB13FA3924957A0F3CE2B87C521F371")
     public void setTranscriptMode(int mode) {
         mTranscriptMode = mode;
-        // ---------- Original Method ----------
-        //mTranscriptMode = mode;
+        
+        
     }
 
     
@@ -4972,8 +4972,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public int getTranscriptMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1242184388 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1242184388;
-        // ---------- Original Method ----------
-        //return mTranscriptMode;
+        
+        
     }
 
     
@@ -4982,8 +4982,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public int getSolidColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032672270 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032672270;
-        // ---------- Original Method ----------
-        //return mCacheColorHint;
+        
+        
     }
 
     
@@ -4996,19 +4996,19 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 int i = 0;
                 {
                     getChildAt(i).setDrawingCacheBackgroundColor(color);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mRecycler.setCacheColorHint(color);
-        } //End block
-        // ---------- Original Method ----------
-        //if (color != mCacheColorHint) {
-            //mCacheColorHint = color;
-            //int count = getChildCount();
-            //for (int i = 0; i < count; i++) {
-                //getChildAt(i).setDrawingCacheBackgroundColor(color);
-            //}
-            //mRecycler.setCacheColorHint(color);
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -5017,8 +5017,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public int getCacheColorHint() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1877728218 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1877728218;
-        // ---------- Original Method ----------
-        //return mCacheColorHint;
+        
+        
     }
 
     
@@ -5037,36 +5037,36 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         views.add(child);
                         {
                             listener.onMovedToScrapHeap(child);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         mRecycler.reclaimScrapViews(views);
         removeAllViewsInLayout();
         addTaint(views.getTaint());
-        // ---------- Original Method ----------
-        //int childCount = getChildCount();
-        //RecyclerListener listener = mRecycler.mRecyclerListener;
-        //for (int i = 0; i < childCount; i++) {
-            //View child = getChildAt(i);
-            //AbsListView.LayoutParams lp = (AbsListView.LayoutParams) child.getLayoutParams();
-            //if (lp != null && mRecycler.shouldRecycleViewType(lp.viewType)) {
-                //views.add(child);
-                //if (listener != null) {
-                    //listener.onMovedToScrapHeap(child);
-                //}
-            //}
-        //}
-        //mRecycler.reclaimScrapViews(views);
-        //removeAllViewsInLayout();
+        
+        
+        
+        
+            
+            
+            
+                
+                
+                    
+                
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.961 -0400", hash_original_method = "63F1E187EEAD4E39E30E7C6F8BC8B8CA", hash_generated_method = "518A4E72749878997482715418B18D45")
     @Override
     protected boolean onConsistencyCheck(int consistency) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean result = super.onConsistencyCheck(consistency);
         final boolean checkLayout = (consistency & ViewDebug.CONSISTENCY_LAYOUT) != 0;
         {
@@ -5080,14 +5080,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         Log.d(ViewDebug.CONSISTENCY_LOG_TAG,
                             "AbsListView " + this + " has a view in its active recycler: " +
                                     activeViews[i]);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             final ArrayList<View> scrap = mRecycler.mCurrentScrap;
             {
                 boolean var1B9DDC99DC36041733636881A6D6F2A7_1142725812 = (!checkScrap(scrap));
                 result = false;
-            } //End collapsed parenthetic
+            } 
             final ArrayList<View>[] scraps = mRecycler.mScrapViews;
             count = scraps.length;
             {
@@ -5096,15 +5096,15 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     {
                         boolean var152726F7FF3AB1D0325523449C0C26DB_667032719 = (!checkScrap(scraps[i]));
                         result = false;
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(consistency);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2004060731 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2004060731;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5122,39 +5122,39 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         result = false;
                         Log.d(ViewDebug.CONSISTENCY_LOG_TAG, "AbsListView " + this +
                         " has a view in its scrap heap still attached to a parent: " + view);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var6F0CAFE49F301E66083476B8CB251F7E_335757448 = (indexOfChild(view) >= 0);
                     {
                         result = false;
                         Log.d(ViewDebug.CONSISTENCY_LOG_TAG, "AbsListView " + this +
                         " has a view in its scrap heap that is also a direct child: " + view);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(scrap.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_633444966 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_633444966;
-        // ---------- Original Method ----------
-        //if (scrap == null) return true;
-        //boolean result = true;
-        //final int count = scrap.size();
-        //for (int i = 0; i < count; i++) {
-            //final View view = scrap.get(i);
-            //if (view.getParent() != null) {
-                //result = false;
-                //Log.d(ViewDebug.CONSISTENCY_LOG_TAG, "AbsListView " + this +
-                        //" has a view in its scrap heap still attached to a parent: " + view);
-            //}
-            //if (indexOfChild(view) >= 0) {
-                //result = false;
-                //Log.d(ViewDebug.CONSISTENCY_LOG_TAG, "AbsListView " + this +
-                        //" has a view in its scrap heap that is also a direct child: " + view);
-            //}
-        //}
-        //return result;
+        
+        
+        
+        
+        
+            
+            
+                
+                
+                        
+            
+            
+                
+                
+                        
+            
+        
+        
     }
 
     
@@ -5163,12 +5163,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         {
             mEdgeGlowTop.finish();
             mEdgeGlowBottom.finish();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mEdgeGlowTop != null) {
-            //mEdgeGlowTop.finish();
-            //mEdgeGlowBottom.finish();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -5180,75 +5180,75 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     mRemoteAdapter.getRemoteViewsServiceIntent());
             {
                 boolean var45C20E8BCA952BA88AD2862513B06923_606525803 = (fcNew.equals(fcOld));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         mDeferNotifyDataSetChanged = false;
         mRemoteAdapter = new RemoteViewsAdapter(getContext(), intent, this);
-        // ---------- Original Method ----------
-        //if (mRemoteAdapter != null) {
-            //Intent.FilterComparison fcNew = new Intent.FilterComparison(intent);
-            //Intent.FilterComparison fcOld = new Intent.FilterComparison(
-                    //mRemoteAdapter.getRemoteViewsServiceIntent());
-            //if (fcNew.equals(fcOld)) {
-                //return;
-            //}
-        //}
-        //mDeferNotifyDataSetChanged = false;
-        //mRemoteAdapter = new RemoteViewsAdapter(getContext(), intent, this);
+        
+        
+            
+            
+                    
+            
+                
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.962 -0400", hash_original_method = "0410210FC7BC336B3896BEA7510AAE3D", hash_generated_method = "9D38AC80197E9738EE138974F1EA14DE")
     public void deferNotifyDataSetChanged() {
         mDeferNotifyDataSetChanged = true;
-        // ---------- Original Method ----------
-        //mDeferNotifyDataSetChanged = true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.963 -0400", hash_original_method = "28DEF371BA940ACF691CB065E03F3A69", hash_generated_method = "E344F6340416416A1956D992ECEE40FF")
     public boolean onRemoteAdapterConnected() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             setAdapter(mRemoteAdapter);
             {
                 mRemoteAdapter.notifyDataSetChanged();
                 mDeferNotifyDataSetChanged = false;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mRemoteAdapter.superNotifyDataSetChanged();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_140582394 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_140582394;
-        // ---------- Original Method ----------
-        //if (mRemoteAdapter != mAdapter) {
-            //setAdapter(mRemoteAdapter);
-            //if (mDeferNotifyDataSetChanged) {
-                //mRemoteAdapter.notifyDataSetChanged();
-                //mDeferNotifyDataSetChanged = false;
-            //}
-            //return false;
-        //} else if (mRemoteAdapter != null) {
-            //mRemoteAdapter.superNotifyDataSetChanged();
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+                
+                
+            
+            
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.963 -0400", hash_original_method = "062C10606C6763A75AEC213E65863835", hash_generated_method = "64085B2EAF9EA39B9EA364A5E4CA7F63")
     public void onRemoteAdapterDisconnected() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.963 -0400", hash_original_method = "A10CF4C818C12AB96D88DAC8638A238F", hash_generated_method = "404EE273DAE2437904EE1226A8B166EC")
     public void setRecyclerListener(RecyclerListener listener) {
         mRecycler.mRecyclerListener = listener;
-        // ---------- Original Method ----------
-        //mRecycler.mRecyclerListener = listener;
+        
+        
     }
 
     
@@ -5306,7 +5306,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
           SavedState(Parcelable superState) {
             super(superState);
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -5331,28 +5331,28 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         final long key = in.readLong();
                         final int value = in.readInt();
                         checkIdState.put(key, value);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            // ---------- Original Method ----------
-            //selectedId = in.readLong();
-            //firstId = in.readLong();
-            //viewTop = in.readInt();
-            //position = in.readInt();
-            //height = in.readInt();
-            //filter = in.readString();
-            //inActionMode = in.readByte() != 0;
-            //checkedItemCount = in.readInt();
-            //checkState = in.readSparseBooleanArray();
-            //final int N = in.readInt();
-            //if (N > 0) {
-                //checkIdState = new LongSparseArray<Integer>();
-                //for (int i=0; i<N; i++) {
-                    //final long key = in.readLong();
-                    //final int value = in.readInt();
-                    //checkIdState.put(key, value);
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                    
+                    
+                    
+                
+            
         }
 
         
@@ -5378,34 +5378,34 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 {
                     out.writeLong(checkIdState.keyAt(i));
                     out.writeInt(checkIdState.valueAt(i));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(out.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //super.writeToParcel(out, flags);
-            //out.writeLong(selectedId);
-            //out.writeLong(firstId);
-            //out.writeInt(viewTop);
-            //out.writeInt(position);
-            //out.writeInt(height);
-            //out.writeString(filter);
-            //out.writeByte((byte) (inActionMode ? 1 : 0));
-            //out.writeInt(checkedItemCount);
-            //out.writeSparseBooleanArray(checkState);
-            //final int N = checkIdState != null ? checkIdState.size() : 0;
-            //out.writeInt(N);
-            //for (int i=0; i<N; i++) {
-                //out.writeLong(checkIdState.keyAt(i));
-                //out.writeInt(checkIdState.valueAt(i));
-            //}
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.979 -0400", hash_original_method = "28CD4AAEE48E548227BD32788E936C86", hash_generated_method = "4B302BE736465B81DFA4C8A8259D3711")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1901241364 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1901241364 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1901241364 = "AbsListView.SavedState{"
                     + Integer.toHexString(System.identityHashCode(this))
                     + " selectedId=" + selectedId
@@ -5415,18 +5415,18 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     + " height=" + height
                     + " filter=" + filter
                     + " checkState=" + checkState + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_1901241364.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1901241364.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1901241364;
-            // ---------- Original Method ----------
-            //return "AbsListView.SavedState{"
-                    //+ Integer.toHexString(System.identityHashCode(this))
-                    //+ " selectedId=" + selectedId
-                    //+ " firstId=" + firstId
-                    //+ " viewTop=" + viewTop
-                    //+ " position=" + position
-                    //+ " height=" + height
-                    //+ " filter=" + filter
-                    //+ " checkState=" + checkState + "}";
+            
+            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
         }
 
         
@@ -5454,15 +5454,15 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.980 -0400", hash_original_method = "A658DB72BEF305C977658A79961C7172", hash_generated_method = "A658DB72BEF305C977658A79961C7172")
         public WindowRunnnable ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.980 -0400", hash_original_method = "CFEEFBABEEA41C591AAAAD229F2BB0E7", hash_generated_method = "3CF34E449DE44A2D47EB624B8E366E7B")
         public void rememberWindowAttachCount() {
             mOriginalAttachCount = getWindowAttachCount();
-            // ---------- Original Method ----------
-            //mOriginalAttachCount = getWindowAttachCount();
+            
+            
         }
 
         
@@ -5471,8 +5471,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             boolean var8C6821449255A008A670CF7CA64A93AB_354145922 = (hasWindowFocus() && getWindowAttachCount() == mOriginalAttachCount);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_211342593 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_211342593;
-            // ---------- Original Method ----------
-            //return hasWindowFocus() && getWindowAttachCount() == mOriginalAttachCount;
+            
+            
         }
 
         
@@ -5488,7 +5488,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.980 -0400", hash_original_method = "88B4BB962521E66182F1BC580E9EB222", hash_generated_method = "88B4BB962521E66182F1BC580E9EB222")
         public PerformClick ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -5504,21 +5504,21 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     final View view = getChildAt(motionPosition - mFirstPosition);
                     {
                         performItemClick(view, motionPosition, adapter.getItemId(motionPosition));
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (mDataChanged) return;
-            //final ListAdapter adapter = mAdapter;
-            //final int motionPosition = mClickMotionPosition;
-            //if (adapter != null && mItemCount > 0 &&
-                    //motionPosition != INVALID_POSITION &&
-                    //motionPosition < adapter.getCount() && sameWindow()) {
-                //final View view = getChildAt(motionPosition - mFirstPosition);
-                //if (view != null) {
-                    //performItemClick(view, motionPosition, adapter.getItemId(motionPosition));
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+            
+            
+            
+                    
+                    
+                
+                
+                    
+                
+            
         }
 
         
@@ -5531,7 +5531,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.981 -0400", hash_original_method = "C4F936F21A8F70C0274337932B924B19", hash_generated_method = "C4F936F21A8F70C0274337932B924B19")
         public CheckForLongPress ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -5547,35 +5547,35 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     boolean var67E4CE6BEABC0BB93EA224EBEDE2210E_1807871412 = (sameWindow() && !mDataChanged);
                     {
                         handled = performLongPress(child, longPressPosition, longPressId);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     mTouchMode = TOUCH_MODE_REST;
                     setPressed(false);
                     child.setPressed(false);
-                } //End block
+                } 
                 {
                     mTouchMode = TOUCH_MODE_DONE_WAITING;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //final int motionPosition = mMotionPosition;
-            //final View child = getChildAt(motionPosition - mFirstPosition);
-            //if (child != null) {
-                //final int longPressPosition = mMotionPosition;
-                //final long longPressId = mAdapter.getItemId(mMotionPosition);
-                //boolean handled = false;
-                //if (sameWindow() && !mDataChanged) {
-                    //handled = performLongPress(child, longPressPosition, longPressId);
-                //}
-                //if (handled) {
-                    //mTouchMode = TOUCH_MODE_REST;
-                    //setPressed(false);
-                    //child.setPressed(false);
-                //} else {
-                    //mTouchMode = TOUCH_MODE_DONE_WAITING;
-                //}
-            //}
+                } 
+            } 
+            
+            
+            
+            
+                
+                
+                
+                
+                    
+                
+                
+                    
+                    
+                    
+                
+                    
+                
+            
         }
 
         
@@ -5588,7 +5588,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.981 -0400", hash_original_method = "D4E5218C094B479D486A451FD5B82AD6", hash_generated_method = "D4E5218C094B479D486A451FD5B82AD6")
         public CheckForKeyLongPress ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -5605,37 +5605,37 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             boolean var15017B83B2D3E709399CA037CED2AFF9_377380847 = (sameWindow());
                             {
                                 handled = performLongPress(v, mSelectedPosition, mSelectedRowId);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             setPressed(false);
                             v.setPressed(false);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         setPressed(false);
                         v.setPressed(false);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (isPressed() && mSelectedPosition >= 0) {
-                //int index = mSelectedPosition - mFirstPosition;
-                //View v = getChildAt(index);
-                //if (!mDataChanged) {
-                    //boolean handled = false;
-                    //if (sameWindow()) {
-                        //handled = performLongPress(v, mSelectedPosition, mSelectedRowId);
-                    //}
-                    //if (handled) {
-                        //setPressed(false);
-                        //v.setPressed(false);
-                    //}
-                //} else {
-                    //setPressed(false);
-                    //if (v != null) v.setPressed(false);
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+                
+                
+                
+                    
+                    
+                        
+                    
+                    
+                        
+                        
+                    
+                
+                    
+                    
+                
+            
         }
 
         
@@ -5648,7 +5648,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.982 -0400", hash_original_method = "AB5DEBF7CC7D6BE3A48A21837827B410", hash_generated_method = "AB5DEBF7CC7D6BE3A48A21837827B410")
         public CheckForTap ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -5674,31 +5674,31 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                 {
                                     {
                                         ((TransitionDrawable) d).startTransition(longPressTimeout);
-                                    } //End block
+                                    } 
                                     {
                                         ((TransitionDrawable) d).resetTransition();
-                                    } //End block
-                                } //End block
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             {
                                 {
                                     mPendingCheckForLongPress = new CheckForLongPress();
-                                } //End block
+                                } 
                                 mPendingCheckForLongPress.rememberWindowAttachCount();
                                 postDelayed(mPendingCheckForLongPress, longPressTimeout);
-                            } //End block
+                            } 
                             {
                                 mTouchMode = TOUCH_MODE_DONE_WAITING;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             mTouchMode = TOUCH_MODE_DONE_WAITING;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                        } 
+                    } 
+                } 
+            } 
+            
+            
         }
 
         
@@ -5728,15 +5728,15 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         && scroller.isScrollingInDirection(0, yvel));
                     {
                         postDelayed(this, FLYWHEEL_TIMEOUT);
-                    } //End block
+                    } 
                     {
                         endFling();
                         mTouchMode = TOUCH_MODE_SCROLL;
                         reportScrollStateChange(OnScrollListener.SCROLL_STATE_TOUCH_SCROLL);
-                    } //End block
-                } //End collapsed parenthetic
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+                
+                
             }
 
             
@@ -5745,8 +5745,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.983 -0400", hash_original_method = "361AA84D9C3BD42F341546EA08BE10C6", hash_generated_method = "85D92534340BCEFCD6A4F33FFFEF2C53")
           FlingRunnable() {
             mScroller = new OverScroller(getContext());
-            // ---------- Original Method ----------
-            //mScroller = new OverScroller(getContext());
+            
+            
         }
 
         
@@ -5764,28 +5764,28 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 {
                     Debug.startMethodTracing("AbsListViewFling");
                     mFlingProfilingStarted = true;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 mFlingStrictSpan = StrictMode.enterCriticalSpan("AbsListView-fling");
-            } //End block
+            } 
             addTaint(initialVelocity);
-            // ---------- Original Method ----------
-            //int initialY = initialVelocity < 0 ? Integer.MAX_VALUE : 0;
-            //mLastFlingY = initialY;
-            //mScroller.fling(0, initialY, 0, initialVelocity,
-                    //0, Integer.MAX_VALUE, 0, Integer.MAX_VALUE);
-            //mTouchMode = TOUCH_MODE_FLING;
-            //post(this);
-            //if (PROFILE_FLINGING) {
-                //if (!mFlingProfilingStarted) {
-                    //Debug.startMethodTracing("AbsListViewFling");
-                    //mFlingProfilingStarted = true;
-                //}
-            //}
-            //if (mFlingStrictSpan == null) {
-                //mFlingStrictSpan = StrictMode.enterCriticalSpan("AbsListView-fling");
-            //}
+            
+            
+            
+            
+                    
+            
+            
+            
+                
+                    
+                    
+                
+            
+            
+                
+            
         }
 
         
@@ -5797,21 +5797,21 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     mTouchMode = TOUCH_MODE_OVERFLING;
                     invalidate();
                     post(this);
-                } //End block
+                } 
                 {
                     mTouchMode = TOUCH_MODE_REST;
                     reportScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (mScroller.springBack(0, mScrollY, 0, 0, 0, 0)) {
-                //mTouchMode = TOUCH_MODE_OVERFLING;
-                //invalidate();
-                //post(this);
-            //} else {
-                //mTouchMode = TOUCH_MODE_REST;
-                //reportScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
-            //}
+                } 
+            } 
+            
+            
+                
+                
+                
+            
+                
+                
+            
         }
 
         
@@ -5823,12 +5823,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             invalidate();
             post(this);
             addTaint(initialVelocity);
-            // ---------- Original Method ----------
-            //mScroller.fling(0, mScrollY, 0, initialVelocity, 0, 0,
-                    //Integer.MIN_VALUE, Integer.MAX_VALUE, 0, getHeight());
-            //mTouchMode = TOUCH_MODE_OVERFLING;
-            //invalidate();
-            //post(this);
+            
+            
+                    
+            
+            
+            
         }
 
         
@@ -5844,23 +5844,23 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     final int vel = (int) mScroller.getCurrVelocity();
                     {
                         mEdgeGlowTop.onAbsorb(vel);
-                    } //End block
+                    } 
                     {
                         mEdgeGlowBottom.onAbsorb(vel);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     mTouchMode = TOUCH_MODE_REST;
                     {
                         mPositionScroller.stop();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             invalidate();
             post(this);
             addTaint(delta);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -5875,12 +5875,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             post(this);
             addTaint(distance);
             addTaint(duration);
-            // ---------- Original Method ----------
-            //int initialY = distance < 0 ? Integer.MAX_VALUE : 0;
-            //mLastFlingY = initialY;
-            //mScroller.startScroll(0, initialY, 0, distance, duration);
-            //mTouchMode = TOUCH_MODE_FLING;
-            //post(this);
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -5895,50 +5895,50 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             {
                 mFlingStrictSpan.finish();
                 mFlingStrictSpan = null;
-            } //End block
-            // ---------- Original Method ----------
-            //mTouchMode = TOUCH_MODE_REST;
-            //removeCallbacks(this);
-            //removeCallbacks(mCheckFlywheel);
-            //reportScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
-            //clearScrollingCache();
-            //mScroller.abortAnimation();
-            //if (mFlingStrictSpan != null) {
-                //mFlingStrictSpan.finish();
-                //mFlingStrictSpan = null;
-            //}
+            } 
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.984 -0400", hash_original_method = "5D655CDBCE73395DC3C27E060B822A32", hash_generated_method = "AF0A59A6E58D426EFA985AB4A1AD55DE")
          void flywheelTouch() {
             postDelayed(mCheckFlywheel, FLYWHEEL_TIMEOUT);
-            // ---------- Original Method ----------
-            //postDelayed(mCheckFlywheel, FLYWHEEL_TIMEOUT);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.985 -0400", hash_original_method = "4DD83535EAA65B570F4DB1073D459909", hash_generated_method = "9DB1679AD566A07BC1E015962825681A")
         public void run() {
-            //Begin case default 
+            
             endFling();
-            //End case default 
-            //Begin case TOUCH_MODE_SCROLL 
+            
+            
             {
                 boolean var8C879AC9111FA456E4D5E672C40ED1D8_2046580520 = (mScroller.isFinished());
-            } //End collapsed parenthetic
-            //End case TOUCH_MODE_SCROLL 
-            //Begin case TOUCH_MODE_FLING 
+            } 
+            
+            
             {
                 {
                     layoutChildren();
-                } //End block
+                } 
                 {
                     boolean varF1747C254517DB9417BE3B51D681F089_1509414287 = (mItemCount == 0 || getChildCount() == 0);
                     {
                         endFling();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 final OverScroller scroller = mScroller;
                 boolean more = scroller.computeScrollOffset();
                 final int y = scroller.getCurrY();
@@ -5948,51 +5948,51 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     final View firstView = getChildAt(0);
                     mMotionViewOriginalTop = firstView.getTop();
                     delta = Math.min(getHeight() - mPaddingBottom - mPaddingTop - 1, delta);
-                } //End block
+                } 
                 {
                     int offsetToLast = getChildCount() - 1;
                     mMotionPosition = mFirstPosition + offsetToLast;
                     final View lastView = getChildAt(offsetToLast);
                     mMotionViewOriginalTop = lastView.getTop();
                     delta = Math.max(-(getHeight() - mPaddingBottom - mPaddingTop - 1), delta);
-                } //End block
+                } 
                 View motionView = getChildAt(mMotionPosition - mFirstPosition);
                 int oldTop = 0;
                 {
                     oldTop = motionView.getTop();
-                } //End block
+                } 
                 final boolean atEnd = trackMotionScroll(delta, delta) && (delta != 0);
                 {
                     {
                         int overshoot = -(delta - (motionView.getTop() - oldTop));
                         overScrollBy(0, overshoot, 0, mScrollY, 0, 0,
                                 0, mOverflingDistance, false);
-                    } //End block
+                    } 
                     {
                         edgeReached(delta);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     invalidate();
                     mLastFlingY = y;
                     post(this);
-                } //End block
+                } 
                 {
                     endFling();
                     {
                         {
                             Debug.stopMethodTracing();
                             mFlingProfilingStarted = false;
-                        } //End block
+                        } 
                         {
                             mFlingStrictSpan.finish();
                             mFlingStrictSpan = null;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-            //End case TOUCH_MODE_FLING 
-            //Begin case TOUCH_MODE_OVERFLING 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
             {
                 final OverScroller scroller = mScroller;
                 {
@@ -6012,25 +6012,25 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                     velocity = -velocity;
                                     scroller.abortAnimation();
                                     start(velocity);
-                                } //End block
+                                } 
                                 {
                                     startSpringback();
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             {
                                 invalidate();
                                 post(this);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         endFling();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            //End case TOUCH_MODE_OVERFLING 
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+            
+            
+            
         }
 
         
@@ -6067,8 +6067,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.986 -0400", hash_original_method = "7F3588C5B47E2E7FF0D768230775AB8B", hash_generated_method = "39D3C7BDBFB04AD5ABE46AB28461C81D")
           PositionScroller() {
             mExtraScroll = ViewConfiguration.get(mContext).getScaledFadingEdgeLength();
-            // ---------- Original Method ----------
-            //mExtraScroll = ViewConfiguration.get(mContext).getScaledFadingEdgeLength();
+            
+            
         }
 
         
@@ -6081,23 +6081,23 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             {
                 viewTravelCount = firstPos - position + 1;
                 mMode = MOVE_UP_POS;
-            } //End block
+            } 
             {
                 viewTravelCount = position - lastPos + 1;
                 mMode = MOVE_DOWN_POS;
-            } //End block
+            } 
             {
                 mScrollDuration = SCROLL_DURATION / viewTravelCount;
-            } //End block
+            } 
             {
                 mScrollDuration = SCROLL_DURATION;
-            } //End block
+            } 
             mTargetPos = position;
             mBoundPos = INVALID_POSITION;
             mLastSeenPos = INVALID_POSITION;
             post(this);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -6106,7 +6106,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             stop();
             {
                 start(position);
-            } //End block
+            } 
             final int firstPos = mFirstPosition;
             final int lastPos = firstPos + getChildCount() - 1;
             int viewTravelCount;
@@ -6117,12 +6117,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 {
                     viewTravelCount = boundTravel;
                     mMode = MOVE_UP_BOUND;
-                } //End block
+                } 
                 {
                     viewTravelCount = posTravel;
                     mMode = MOVE_UP_POS;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 final int boundPosFromFirst = boundPosition - firstPos;
                 final int posTravel = position - lastPos + 1;
@@ -6130,24 +6130,24 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 {
                     viewTravelCount = boundTravel;
                     mMode = MOVE_DOWN_BOUND;
-                } //End block
+                } 
                 {
                     viewTravelCount = posTravel;
                     mMode = MOVE_DOWN_POS;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 mScrollDuration = SCROLL_DURATION / viewTravelCount;
-            } //End block
+            } 
             {
                 mScrollDuration = SCROLL_DURATION;
-            } //End block
+            } 
             mTargetPos = position;
             mBoundPos = boundPosition;
             mLastSeenPos = INVALID_POSITION;
             post(this);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -6156,8 +6156,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             startWithOffset(position, offset, SCROLL_DURATION);
             addTaint(position);
             addTaint(offset);
-            // ---------- Original Method ----------
-            //startWithOffset(position, offset, SCROLL_DURATION);
+            
+            
         }
 
         
@@ -6175,29 +6175,29 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             int viewTravelCount;
             {
                 viewTravelCount = firstPos - position;
-            } //End block
+            } 
             {
                 viewTravelCount = position - lastPos;
-            } //End block
+            } 
             {
                 final int targetTop = getChildAt(position - firstPos).getTop();
                 smoothScrollBy(targetTop - offset, duration);
-            } //End block
+            } 
             final float screenTravelCount = (float) viewTravelCount / childCount;
             mScrollDuration = screenTravelCount < 1 ? (int) (screenTravelCount * duration) :
                     (int) (duration / screenTravelCount);
             mLastSeenPos = INVALID_POSITION;
             post(this);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.990 -0400", hash_original_method = "EE84C7B9935E89C7F265FE60CF403C46", hash_generated_method = "8545B8FD33B72FF1E0D42710AB6A286F")
          void stop() {
             removeCallbacks(this);
-            // ---------- Original Method ----------
-            //removeCallbacks(this);
+            
+            
         }
 
         
@@ -6205,13 +6205,13 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         public void run() {
             final int listHeight = getHeight();
             final int firstPos = mFirstPosition;
-            //Begin case MOVE_DOWN_POS 
+            
             {
                 final int lastViewIndex = getChildCount() - 1;
                 final int lastPos = firstPos + lastViewIndex;
                 {
                     post(this);
-                } //End block
+                } 
                 final View lastView = getChildAt(lastViewIndex);
                 final int lastViewHeight = lastView.getHeight();
                 final int lastViewTop = lastView.getTop();
@@ -6224,17 +6224,17 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 mLastSeenPos = lastPos;
                 {
                     post(this);
-                } //End block
-            } //End block
-            //End case MOVE_DOWN_POS 
-            //Begin case MOVE_DOWN_BOUND 
+                } 
+            } 
+            
+            
             {
                 final int nextViewIndex = 1;
                 final int childCount = getChildCount();
                 final int nextPos = firstPos + nextViewIndex;
                 {
                     post(this);
-                } //End block
+                } 
                 final View nextView = getChildAt(nextViewIndex);
                 final int nextViewHeight = nextView.getHeight();
                 final int nextViewTop = nextView.getTop();
@@ -6244,19 +6244,19 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             mScrollDuration);
                     mLastSeenPos = nextPos;
                     post(this);
-                } //End block
+                } 
                 {
                     {
                         smoothScrollBy(nextViewTop - extraScroll, mScrollDuration);
-                    } //End block
-                } //End block
-            } //End block
-            //End case MOVE_DOWN_BOUND 
-            //Begin case MOVE_UP_POS 
+                    } 
+                } 
+            } 
+            
+            
             {
                 {
                     post(this);
-                } //End block
+                } 
                 final View firstView = getChildAt(0);
                 final int firstViewTop = firstView.getTop();
                 int extraScroll;
@@ -6266,16 +6266,16 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 mLastSeenPos = firstPos;
                 {
                     post(this);
-                } //End block
-            } //End block
-            //End case MOVE_UP_POS 
-            //Begin case MOVE_UP_BOUND 
+                } 
+            } 
+            
+            
             {
                 final int lastViewIndex = getChildCount() - 2;
                 final int lastPos = firstPos + lastViewIndex;
                 {
                     post(this);
-                } //End block
+                } 
                 final View lastView = getChildAt(lastViewIndex);
                 final int lastViewHeight = lastView.getHeight();
                 final int lastViewTop = lastView.getTop();
@@ -6284,21 +6284,21 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 {
                     smoothScrollBy(-(lastViewPixelsShowing - mExtraScroll), mScrollDuration);
                     post(this);
-                } //End block
+                } 
                 {
                     final int bottom = listHeight - mExtraScroll;
                     final int lastViewBottom = lastViewTop + lastViewHeight;
                     {
                         smoothScrollBy(-(bottom - lastViewBottom), mScrollDuration);
-                    } //End block
-                } //End block
-            } //End block
-            //End case MOVE_UP_BOUND 
-            //Begin case MOVE_OFFSET 
+                    } 
+                } 
+            } 
+            
+            
             {
                 {
                     post(this);
-                } //End block
+                } 
                 mLastSeenPos = firstPos;
                 final int childCount = getChildCount();
                 final int position = mTargetPos;
@@ -6306,30 +6306,30 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 int viewTravelCount = 0;
                 {
                     viewTravelCount = firstPos - position + 1;
-                } //End block
+                } 
                 {
                     viewTravelCount = position - lastPos;
-                } //End block
+                } 
                 final float screenTravelCount = (float) viewTravelCount / childCount;
                 final float modifier = Math.min(Math.abs(screenTravelCount), 1.f);
                 {
                     smoothScrollBy((int) (-getHeight() * modifier), mScrollDuration);
                     post(this);
-                } //End block
+                } 
                 {
                     smoothScrollBy((int) (getHeight() * modifier), mScrollDuration);
                     post(this);
-                } //End block
+                } 
                 {
                     final int targetTop = getChildAt(position - firstPos).getTop();
                     final int distance = targetTop - mOffsetFromTop;
                     smoothScrollBy(distance,
                             (int) (mScrollDuration * ((float) distance / getHeight())));
-                } //End block
-            } //End block
-            //End case MOVE_OFFSET 
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
+            
         }
 
         
@@ -6360,39 +6360,39 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.992 -0400", hash_original_method = "7D160EE0593E52FB18E5F3C663310860", hash_generated_method = "7D160EE0593E52FB18E5F3C663310860")
         public AdapterDataSetObserver ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.992 -0400", hash_original_method = "70826FE759108269AA8BACD409E1C863", hash_generated_method = "DE01F6EC3ED43C4CD1396D4089463EFC")
         @Override
         public void onChanged() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             super.onChanged();
             {
                 mFastScroller.onSectionsChanged();
-            } //End block
-            // ---------- Original Method ----------
-            //super.onChanged();
-            //if (mFastScroller != null) {
-                //mFastScroller.onSectionsChanged();
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.992 -0400", hash_original_method = "4570C5F375E9950A79093241C88AF34D", hash_generated_method = "122CC95F86F15B9927F1E8118900CD7B")
         @Override
         public void onInvalidated() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             super.onInvalidated();
             {
                 mFastScroller.onSectionsChanged();
-            } //End block
-            // ---------- Original Method ----------
-            //super.onInvalidated();
-            //if (mFastScroller != null) {
-                //mFastScroller.onSectionsChanged();
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
@@ -6408,69 +6408,69 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.992 -0400", hash_original_method = "55A4C0C73524FA4BF08CABB1B8DF874B", hash_generated_method = "55A4C0C73524FA4BF08CABB1B8DF874B")
         public MultiChoiceModeWrapper ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.993 -0400", hash_original_method = "57C233A5EDE21FDF3E40ACFA65FCBA6D", hash_generated_method = "3BE0D93844CB69FC6467C6B3B65058ED")
         public void setWrapped(MultiChoiceModeListener wrapped) {
             mWrapped = wrapped;
-            // ---------- Original Method ----------
-            //mWrapped = wrapped;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.993 -0400", hash_original_method = "92496BA2B215F9BD39661C34B9C10361", hash_generated_method = "6268BD557C0DD7C4074F17A97AF23537")
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean varD6C93448152EF2C372CDE7A0E8CB7504_658253393 = (mWrapped.onCreateActionMode(mode, menu));
                 {
                     setLongClickable(false);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(mode.getTaint());
             addTaint(menu.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1703818118 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1703818118;
-            // ---------- Original Method ----------
-            //if (mWrapped.onCreateActionMode(mode, menu)) {
-                //setLongClickable(false);
-                //return true;
-            //}
-            //return false;
+            
+            
+                
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.993 -0400", hash_original_method = "605F5D923BF72CFC73E9AAB7E02967CC", hash_generated_method = "E2E9DDA8AD5D50EDD204439158827D79")
         public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             boolean var889963BD11CE1DC6E3538FA5CA769B04_935522319 = (mWrapped.onPrepareActionMode(mode, menu));
             addTaint(mode.getTaint());
             addTaint(menu.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_161919943 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_161919943;
-            // ---------- Original Method ----------
-            //return mWrapped.onPrepareActionMode(mode, menu);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.993 -0400", hash_original_method = "033C72B6C9A09D3E8E7805BD6C059806", hash_generated_method = "B61754DE5F3ECC75898597C3A1B565AB")
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             boolean varFD1FD09DE497AC204C6AFB08C6591DDB_192492583 = (mWrapped.onActionItemClicked(mode, item));
             addTaint(mode.getTaint());
             addTaint(item.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2289171 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2289171;
-            // ---------- Original Method ----------
-            //return mWrapped.onActionItemClicked(mode, item);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.994 -0400", hash_original_method = "38D50D306A79D91BC9BAC512614B14E4", hash_generated_method = "D5DA3B7D6035D5BD361BAB2BD4A299C9")
         public void onDestroyActionMode(ActionMode mode) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mWrapped.onDestroyActionMode(mode);
             mChoiceActionMode = null;
             clearChoices();
@@ -6479,37 +6479,37 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             requestLayout();
             setLongClickable(true);
             addTaint(mode.getTaint());
-            // ---------- Original Method ----------
-            //mWrapped.onDestroyActionMode(mode);
-            //mChoiceActionMode = null;
-            //clearChoices();
-            //mDataChanged = true;
-            //rememberSyncState();
-            //requestLayout();
-            //setLongClickable(true);
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.994 -0400", hash_original_method = "54A7C456AE4C179767C141D1533A24F9", hash_generated_method = "3333BE1F16FEA041D1EFB5A708DEFAD5")
         public void onItemCheckedStateChanged(ActionMode mode,
                 int position, long id, boolean checked) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mWrapped.onItemCheckedStateChanged(mode, position, id, checked);
             {
                 boolean var9E354D1EAEB52E913322B0C21F0A7D1D_1549745326 = (getCheckedItemCount() == 0);
                 {
                     mode.finish();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(mode.getTaint());
             addTaint(position);
             addTaint(id);
             addTaint(checked);
-            // ---------- Original Method ----------
-            //mWrapped.onItemCheckedStateChanged(mode, position, id, checked);
-            //if (getCheckedItemCount() == 0) {
-                //mode.finish();
-            //}
+            
+            
+            
+                
+            
         }
 
         
@@ -6539,7 +6539,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             super(c, attrs);
             addTaint(c.getTaint());
             addTaint(attrs.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -6548,7 +6548,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             super(w, h);
             addTaint(w);
             addTaint(h);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -6558,8 +6558,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             this.viewType = viewType;
             addTaint(w);
             addTaint(h);
-            // ---------- Original Method ----------
-            //this.viewType = viewType;
+            
+            
         }
 
         
@@ -6567,7 +6567,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         public  LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -6598,7 +6598,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.995 -0400", hash_original_method = "8B96BADF61C6544CC3B73116E3B60C53", hash_generated_method = "8B96BADF61C6544CC3B73116E3B60C53")
         public RecycleBin ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -6606,28 +6606,28 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         public void setViewTypeCount(int viewTypeCount) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Can't have a viewTypeCount < 1");
-            } //End block
+            } 
             ArrayList<View>[] scrapViews = new ArrayList[viewTypeCount];
             {
                 int i = 0;
                 {
                     scrapViews[i] = new ArrayList<View>();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mViewTypeCount = viewTypeCount;
             mCurrentScrap = scrapViews[0];
             mScrapViews = scrapViews;
-            // ---------- Original Method ----------
-            //if (viewTypeCount < 1) {
-                //throw new IllegalArgumentException("Can't have a viewTypeCount < 1");
-            //}
-            //ArrayList<View>[] scrapViews = new ArrayList[viewTypeCount];
-            //for (int i = 0; i < viewTypeCount; i++) {
-                //scrapViews[i] = new ArrayList<View>();
-            //}
-            //mViewTypeCount = viewTypeCount;
-            //mCurrentScrap = scrapViews[0];
-            //mScrapViews = scrapViews;
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -6640,9 +6640,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     int i = 0;
                     {
                         scrap.get(i).forceLayout();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 final int typeCount = mViewTypeCount;
                 {
@@ -6654,28 +6654,28 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             int j = 0;
                             {
                                 scrap.get(j).forceLayout();
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            // ---------- Original Method ----------
-            //if (mViewTypeCount == 1) {
-                //final ArrayList<View> scrap = mCurrentScrap;
-                //final int scrapCount = scrap.size();
-                //for (int i = 0; i < scrapCount; i++) {
-                    //scrap.get(i).forceLayout();
-                //}
-            //} else {
-                //final int typeCount = mViewTypeCount;
-                //for (int i = 0; i < typeCount; i++) {
-                    //final ArrayList<View> scrap = mScrapViews[i];
-                    //final int scrapCount = scrap.size();
-                    //for (int j = 0; j < scrapCount; j++) {
-                        //scrap.get(j).forceLayout();
-                    //}
-                //}
-            //}
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
+                
+                
+                
+                    
+                
+            
+                
+                
+                    
+                    
+                    
+                        
+                    
+                
+            
         }
 
         
@@ -6684,8 +6684,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             addTaint(viewType);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_98249808 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_98249808;
-            // ---------- Original Method ----------
-            //return viewType >= 0;
+            
+            
         }
 
         
@@ -6698,9 +6698,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     int i = 0;
                     {
                         removeDetachedView(scrap.remove(scrapCount - 1 - i), false);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 final int typeCount = mViewTypeCount;
                 {
@@ -6712,28 +6712,28 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             int j = 0;
                             {
                                 removeDetachedView(scrap.remove(scrapCount - 1 - j), false);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            // ---------- Original Method ----------
-            //if (mViewTypeCount == 1) {
-                //final ArrayList<View> scrap = mCurrentScrap;
-                //final int scrapCount = scrap.size();
-                //for (int i = 0; i < scrapCount; i++) {
-                    //removeDetachedView(scrap.remove(scrapCount - 1 - i), false);
-                //}
-            //} else {
-                //final int typeCount = mViewTypeCount;
-                //for (int i = 0; i < typeCount; i++) {
-                    //final ArrayList<View> scrap = mScrapViews[i];
-                    //final int scrapCount = scrap.size();
-                    //for (int j = 0; j < scrapCount; j++) {
-                        //removeDetachedView(scrap.remove(scrapCount - 1 - j), false);
-                    //}
-                //}
-            //}
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
+                
+                
+                
+                    
+                
+            
+                
+                
+                    
+                    
+                    
+                        
+                    
+                
+            
         }
 
         
@@ -6741,7 +6741,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
          void fillActiveViews(int childCount, int firstActivePosition) {
             {
                 mActiveViews = new View[childCount];
-            } //End block
+            } 
             mFirstActivePosition = firstActivePosition;
             final View[] activeViews = mActiveViews;
             {
@@ -6751,101 +6751,101 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     AbsListView.LayoutParams lp = (AbsListView.LayoutParams) child.getLayoutParams();
                     {
                         activeViews[i] = child;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (mActiveViews.length < childCount) {
-                //mActiveViews = new View[childCount];
-            //}
-            //mFirstActivePosition = firstActivePosition;
-            //final View[] activeViews = mActiveViews;
-            //for (int i = 0; i < childCount; i++) {
-                //View child = getChildAt(i);
-                //AbsListView.LayoutParams lp = (AbsListView.LayoutParams) child.getLayoutParams();
-                //if (lp != null && lp.viewType != ITEM_VIEW_TYPE_HEADER_OR_FOOTER) {
-                    //activeViews[i] = child;
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+                
+            
+            
+            
+            
+                
+                
+                
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.000 -0400", hash_original_method = "6DDE0EAFBBDE35C2F4BC64D693E74936", hash_generated_method = "06E07503C3DDDFB58268EED896EB89A7")
          View getActiveView(int position) {
-            View varB4EAC82CA7396A68D541C85D26508E83_154285438 = null; //Variable for return #1
-            View varB4EAC82CA7396A68D541C85D26508E83_71180813 = null; //Variable for return #2
+            View varB4EAC82CA7396A68D541C85D26508E83_154285438 = null; 
+            View varB4EAC82CA7396A68D541C85D26508E83_71180813 = null; 
             int index = position - mFirstActivePosition;
             final View[] activeViews = mActiveViews;
             {
                 final View match = activeViews[index];
                 activeViews[index] = null;
                 varB4EAC82CA7396A68D541C85D26508E83_154285438 = match;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_71180813 = null;
             addTaint(position);
-            View varA7E53CE21691AB073D9660D615818899_523972070; //Final return value
+            View varA7E53CE21691AB073D9660D615818899_523972070; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_523972070 = varB4EAC82CA7396A68D541C85D26508E83_154285438;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_523972070 = varB4EAC82CA7396A68D541C85D26508E83_71180813;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_523972070.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_523972070.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_523972070;
-            // ---------- Original Method ----------
-            //int index = position - mFirstActivePosition;
-            //final View[] activeViews = mActiveViews;
-            //if (index >=0 && index < activeViews.length) {
-                //final View match = activeViews[index];
-                //activeViews[index] = null;
-                //return match;
-            //}
-            //return null;
+            
+            
+            
+            
+                
+                
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.001 -0400", hash_original_method = "7C1BB02F0CFB7D7F7BDB0DC42C0788DA", hash_generated_method = "FE896D8F2EE87B8A0417557D05D89FA5")
          View getScrapView(int position) {
-            View varB4EAC82CA7396A68D541C85D26508E83_575981748 = null; //Variable for return #1
-            View varB4EAC82CA7396A68D541C85D26508E83_385089540 = null; //Variable for return #2
-            View varB4EAC82CA7396A68D541C85D26508E83_999956170 = null; //Variable for return #3
+            View varB4EAC82CA7396A68D541C85D26508E83_575981748 = null; 
+            View varB4EAC82CA7396A68D541C85D26508E83_385089540 = null; 
+            View varB4EAC82CA7396A68D541C85D26508E83_999956170 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_575981748 = retrieveFromScrap(mCurrentScrap, position);
-            } //End block
+            } 
             {
                 int whichScrap = mAdapter.getItemViewType(position);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_385089540 = retrieveFromScrap(mScrapViews[whichScrap], position);
-                } //End block
-            } //End block
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_999956170 = null;
             addTaint(position);
-            View varA7E53CE21691AB073D9660D615818899_1456489333; //Final return value
+            View varA7E53CE21691AB073D9660D615818899_1456489333; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1456489333 = varB4EAC82CA7396A68D541C85D26508E83_575981748;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1456489333 = varB4EAC82CA7396A68D541C85D26508E83_385089540;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1456489333 = varB4EAC82CA7396A68D541C85D26508E83_999956170;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1456489333.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1456489333.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1456489333;
-            // ---------- Original Method ----------
-            //if (mViewTypeCount == 1) {
-                //return retrieveFromScrap(mCurrentScrap, position);
-            //} else {
-                //int whichScrap = mAdapter.getItemViewType(position);
-                //if (whichScrap >= 0 && whichScrap < mScrapViews.length) {
-                    //return retrieveFromScrap(mScrapViews[whichScrap], position);
-                //}
-            //}
-            //return null;
+            
+            
+                
+            
+                
+                
+                    
+                
+            
+            
         }
 
         
@@ -6858,25 +6858,25 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 {
                     {
                         removeDetachedView(scrap, false);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             lp.scrappedFromPosition = position;
             {
                 scrap.dispatchStartTemporaryDetach();
                 mCurrentScrap.add(scrap);
-            } //End block
+            } 
             {
                 scrap.dispatchStartTemporaryDetach();
                 mScrapViews[viewType].add(scrap);
-            } //End block
+            } 
             {
                 mRecyclerListener.onMovedToScrapHeap(scrap);
-            } //End block
+            } 
             addTaint(scrap.getTaint());
             addTaint(position);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -6900,29 +6900,29 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             {
                                 {
                                     removeDetachedView(victim, false);
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
                         {
                             scrapViews = mScrapViews[whichScrap];
-                        } //End block
+                        } 
                         victim.dispatchStartTemporaryDetach();
                         lp.scrappedFromPosition = mFirstActivePosition + i;
                         scrapViews.add(victim);
                         {
                             mRecyclerListener.onMovedToScrapHeap(victim);
-                        } //End block
+                        } 
                         {
                             ViewDebug.trace(victim,
                                 ViewDebug.RecyclerTraceType.MOVE_FROM_ACTIVE_TO_SCRAP_HEAP,
                                 mFirstActivePosition + i, -1);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             pruneScrapViews();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -6941,23 +6941,23 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         int j = 0;
                         {
                             removeDetachedView(scrapPile.remove(size--), false);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //final int maxViews = mActiveViews.length;
-            //final int viewTypeCount = mViewTypeCount;
-            //final ArrayList<View>[] scrapViews = mScrapViews;
-            //for (int i = 0; i < viewTypeCount; ++i) {
-                //final ArrayList<View> scrapPile = scrapViews[i];
-                //int size = scrapPile.size();
-                //final int extras = size - maxViews;
-                //size--;
-                //for (int j = 0; j < extras; j++) {
-                    //removeDetachedView(scrapPile.remove(size--), false);
-                //}
-            //}
+                        } 
+                    } 
+                } 
+            } 
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                
+                    
+                
+            
         }
 
         
@@ -6965,7 +6965,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
          void reclaimScrapViews(List<View> views) {
             {
                 views.addAll(mCurrentScrap);
-            } //End block
+            } 
             {
                 final int viewTypeCount = mViewTypeCount;
                 final ArrayList<View>[] scrapViews = mScrapViews;
@@ -6974,21 +6974,21 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     {
                         final ArrayList<View> scrapPile = scrapViews[i];
                         views.addAll(scrapPile);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             addTaint(views.getTaint());
-            // ---------- Original Method ----------
-            //if (mViewTypeCount == 1) {
-                //views.addAll(mCurrentScrap);
-            //} else {
-                //final int viewTypeCount = mViewTypeCount;
-                //final ArrayList<View>[] scrapViews = mScrapViews;
-                //for (int i = 0; i < viewTypeCount; ++i) {
-                    //final ArrayList<View> scrapPile = scrapViews[i];
-                    //views.addAll(scrapPile);
-                //}
-            //}
+            
+            
+                
+            
+                
+                
+                
+                    
+                    
+                
+            
         }
 
         
@@ -7001,9 +7001,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     int i = 0;
                     {
                         scrap.get(i).setDrawingCacheBackgroundColor(color);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 final int typeCount = mViewTypeCount;
                 {
@@ -7015,11 +7015,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             int j = 0;
                             {
                                 scrap.get(j).setDrawingCacheBackgroundColor(color);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             final View[] activeViews = mActiveViews;
             final int count = activeViews.length;
             {
@@ -7028,12 +7028,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     final View victim = activeViews[i];
                     {
                         victim.setDrawingCacheBackgroundColor(color);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             addTaint(color);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

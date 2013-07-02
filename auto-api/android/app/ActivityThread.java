@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.backup.BackupAgent;
 import android.content.BroadcastReceiver;
@@ -93,7 +93,7 @@ final class SuperNotCalledException extends AndroidRuntimeException {
     public  SuperNotCalledException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -105,7 +105,7 @@ final class RemoteServiceException extends AndroidRuntimeException {
     public  RemoteServiceException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -235,7 +235,7 @@ public final class ActivityThread {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.776 -0400", hash_original_method = "C5DB87E83A0D8D66EF8ECA86A91864C7", hash_generated_method = "DE4A90A4BD0EECDAD4C2F33FDAD8D9FA")
       ActivityThread() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -244,11 +244,13 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ActivityThread currentActivityThread() {
         return sThreadLocal.get();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String currentPackageName() {
         ActivityThread am = currentActivityThread();
         return (am != null && am.mBoundApplication != null)
@@ -256,12 +258,14 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Application currentApplication() {
         ActivityThread am = currentActivityThread();
         return am != null ? am.mInitialApplication : null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static IPackageManager getPackageManager() {
         if (sPackageManager != null) {
             return sPackageManager;
@@ -274,47 +278,48 @@ public final class ActivityThread {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.779 -0400", hash_original_method = "E45CB384263D7EF5FBA0A98360B08B32", hash_generated_method = "3E10813C3AE5EFDFB07A49198FB06F77")
      DisplayMetrics getDisplayMetricsLocked(CompatibilityInfo ci, boolean forceUpdate) {
-        DisplayMetrics varB4EAC82CA7396A68D541C85D26508E83_2029408444 = null; //Variable for return #1
-        DisplayMetrics varB4EAC82CA7396A68D541C85D26508E83_1325332273 = null; //Variable for return #2
+        DisplayMetrics varB4EAC82CA7396A68D541C85D26508E83_2029408444 = null; 
+        DisplayMetrics varB4EAC82CA7396A68D541C85D26508E83_1325332273 = null; 
         DisplayMetrics dm = mDisplayMetrics.get(ci);
         {
             varB4EAC82CA7396A68D541C85D26508E83_2029408444 = dm;
-        } //End block
+        } 
         {
             dm = new DisplayMetrics();
             mDisplayMetrics.put(ci, dm);
-        } //End block
+        } 
         Display d = WindowManagerImpl.getDefault(ci).getDefaultDisplay();
         d.getMetrics(dm);
         varB4EAC82CA7396A68D541C85D26508E83_1325332273 = dm;
         addTaint(ci.getTaint());
         addTaint(forceUpdate);
-        DisplayMetrics varA7E53CE21691AB073D9660D615818899_414238981; //Final return value
+        DisplayMetrics varA7E53CE21691AB073D9660D615818899_414238981; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_414238981 = varB4EAC82CA7396A68D541C85D26508E83_2029408444;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_414238981 = varB4EAC82CA7396A68D541C85D26508E83_1325332273;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_414238981.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_414238981.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_414238981;
-        // ---------- Original Method ----------
-        //DisplayMetrics dm = mDisplayMetrics.get(ci);
-        //if (dm != null && !forceUpdate) {
-            //return dm;
-        //}
-        //if (dm == null) {
-            //dm = new DisplayMetrics();
-            //mDisplayMetrics.put(ci, dm);
-        //}
-        //Display d = WindowManagerImpl.getDefault(ci).getDefaultDisplay();
-        //d.getMetrics(dm);
-        //return dm;
+        
+        
+        
+            
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Configuration applyConfigCompat(Configuration config, CompatibilityInfo compat) {
         if (config == null) {
             return null;
@@ -329,52 +334,52 @@ public final class ActivityThread {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.781 -0400", hash_original_method = "DD63F0FD46EA5914D44A0437CF6968C9", hash_generated_method = "05E3A80500146282F05C3733203BDC64")
      Configuration applyConfigCompatMainThread(Configuration config, CompatibilityInfo compat) {
-        Configuration varB4EAC82CA7396A68D541C85D26508E83_1142659777 = null; //Variable for return #1
-        Configuration varB4EAC82CA7396A68D541C85D26508E83_244206564 = null; //Variable for return #2
+        Configuration varB4EAC82CA7396A68D541C85D26508E83_1142659777 = null; 
+        Configuration varB4EAC82CA7396A68D541C85D26508E83_244206564 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1142659777 = null;
-        } //End block
+        } 
         {
             boolean varCD86D3736FF36F045F26DFAD036F3B54_140343579 = (compat != null && !compat.supportsScreen());
             {
                 mMainThreadConfig.setTo(config);
                 config = mMainThreadConfig;
                 compat.applyToConfiguration(config);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_244206564 = config;
         addTaint(config.getTaint());
         addTaint(compat.getTaint());
-        Configuration varA7E53CE21691AB073D9660D615818899_1921411546; //Final return value
+        Configuration varA7E53CE21691AB073D9660D615818899_1921411546; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1921411546 = varB4EAC82CA7396A68D541C85D26508E83_1142659777;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1921411546 = varB4EAC82CA7396A68D541C85D26508E83_244206564;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1921411546.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1921411546.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1921411546;
-        // ---------- Original Method ----------
-        //if (config == null) {
-            //return null;
-        //}
-        //if (compat != null && !compat.supportsScreen()) {
-            //mMainThreadConfig.setTo(config);
-            //config = mMainThreadConfig;
-            //compat.applyToConfiguration(config);
-        //}
-        //return config;
+        
+        
+            
+        
+        
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.786 -0400", hash_original_method = "371F1E66BBE63CA5CE35B0BEAA492ADA", hash_generated_method = "FCD63A1BEEECD2550C078A2ED36D6813")
      Resources getTopLevelResources(String resDir, CompatibilityInfo compInfo) {
-        Resources varB4EAC82CA7396A68D541C85D26508E83_1595508413 = null; //Variable for return #1
-        Resources varB4EAC82CA7396A68D541C85D26508E83_2016427880 = null; //Variable for return #2
-        Resources varB4EAC82CA7396A68D541C85D26508E83_358679570 = null; //Variable for return #3
-        Resources varB4EAC82CA7396A68D541C85D26508E83_1073063700 = null; //Variable for return #4
+        Resources varB4EAC82CA7396A68D541C85D26508E83_1595508413 = null; 
+        Resources varB4EAC82CA7396A68D541C85D26508E83_2016427880 = null; 
+        Resources varB4EAC82CA7396A68D541C85D26508E83_358679570 = null; 
+        Resources varB4EAC82CA7396A68D541C85D26508E83_1073063700 = null; 
         ResourcesKey key = new ResourcesKey(resDir, compInfo.applicationScale);
         Resources r;
         {
@@ -384,16 +389,16 @@ public final class ActivityThread {
                 boolean var48C26B00950FB02DC27CD0CFBAC99128_1406800421 = (r != null && r.getAssets().isUpToDate());
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1595508413 = r;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         AssetManager assets = new AssetManager();
         {
             boolean varA8CA5D176688F55202435C4C301C623B_93833578 = (assets.addAssetPath(resDir) == 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2016427880 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         DisplayMetrics metrics = getDisplayMetricsLocked(null, false);
         r = new Resources(assets, metrics, getConfiguration(), compInfo);
         {
@@ -406,73 +411,73 @@ public final class ActivityThread {
                 {
                     r.getAssets().close();
                     varB4EAC82CA7396A68D541C85D26508E83_358679570 = existing;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mActiveResources.put(key, new WeakReference<Resources>(r));
             varB4EAC82CA7396A68D541C85D26508E83_1073063700 = r;
-        } //End block
+        } 
         addTaint(resDir.getTaint());
         addTaint(compInfo.getTaint());
-        Resources varA7E53CE21691AB073D9660D615818899_1161532677; //Final return value
+        Resources varA7E53CE21691AB073D9660D615818899_1161532677; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1161532677 = varB4EAC82CA7396A68D541C85D26508E83_1595508413;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1161532677 = varB4EAC82CA7396A68D541C85D26508E83_2016427880;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1161532677 = varB4EAC82CA7396A68D541C85D26508E83_358679570;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1161532677 = varB4EAC82CA7396A68D541C85D26508E83_1073063700;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1161532677.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1161532677.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1161532677;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.787 -0400", hash_original_method = "9D648CED90369A8409E4C88D7CE96759", hash_generated_method = "7CCD15DCBA5DD06122A38552A86F3787")
      Resources getTopLevelResources(String resDir, LoadedApk pkgInfo) {
-        Resources varB4EAC82CA7396A68D541C85D26508E83_188553471 = null; //Variable for return #1
+        Resources varB4EAC82CA7396A68D541C85D26508E83_188553471 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_188553471 = getTopLevelResources(resDir, pkgInfo.mCompatibilityInfo.get());
         addTaint(resDir.getTaint());
         addTaint(pkgInfo.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_188553471.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_188553471.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_188553471;
-        // ---------- Original Method ----------
-        //return getTopLevelResources(resDir, pkgInfo.mCompatibilityInfo.get());
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.788 -0400", hash_original_method = "F7A72EDCDC7800374FD6BBEAFCDB636B", hash_generated_method = "48E9B9992D36F65A8228695D99882AC9")
     final Handler getHandler() {
-        Handler varB4EAC82CA7396A68D541C85D26508E83_156546932 = null; //Variable for return #1
+        Handler varB4EAC82CA7396A68D541C85D26508E83_156546932 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_156546932 = mH;
-        varB4EAC82CA7396A68D541C85D26508E83_156546932.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_156546932.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_156546932;
-        // ---------- Original Method ----------
-        //return mH;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.790 -0400", hash_original_method = "FD6B2C09494E94CB4CF03F9000F967F2", hash_generated_method = "F08105BED18F74BDE381F044F23F2F92")
     public final LoadedApk getPackageInfo(String packageName, CompatibilityInfo compatInfo,
             int flags) {
-        LoadedApk varB4EAC82CA7396A68D541C85D26508E83_1465706812 = null; //Variable for return #1
-        LoadedApk varB4EAC82CA7396A68D541C85D26508E83_1909467311 = null; //Variable for return #2
-        LoadedApk varB4EAC82CA7396A68D541C85D26508E83_1749229908 = null; //Variable for return #3
+        LoadedApk varB4EAC82CA7396A68D541C85D26508E83_1465706812 = null; 
+        LoadedApk varB4EAC82CA7396A68D541C85D26508E83_1909467311 = null; 
+        LoadedApk varB4EAC82CA7396A68D541C85D26508E83_1749229908 = null; 
         {
             WeakReference<LoadedApk> ref;
             {
                 ref = mPackages.get(packageName);
-            } //End block
+            } 
             {
                 ref = mResourcePackages.get(packageName);
-            } //End block
+            } 
             LoadedApk packageInfo;
             packageInfo = ref.get();
             packageInfo = null;
@@ -489,54 +494,54 @@ public final class ActivityThread {
                             + " to be run in process "
                             + mBoundApplication.processName
                             + "/" + mBoundApplication.appInfo.uid);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_1465706812 = packageInfo;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         ApplicationInfo ai = null;
         try 
         {
             ai = getPackageManager().getApplicationInfo(packageName,
                     PackageManager.GET_SHARED_LIBRARY_FILES);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         {
             varB4EAC82CA7396A68D541C85D26508E83_1909467311 = getPackageInfo(ai, compatInfo, flags);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1749229908 = null;
         addTaint(packageName.getTaint());
         addTaint(compatInfo.getTaint());
         addTaint(flags);
-        LoadedApk varA7E53CE21691AB073D9660D615818899_2088737175; //Final return value
+        LoadedApk varA7E53CE21691AB073D9660D615818899_2088737175; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2088737175 = varB4EAC82CA7396A68D541C85D26508E83_1465706812;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2088737175 = varB4EAC82CA7396A68D541C85D26508E83_1909467311;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2088737175 = varB4EAC82CA7396A68D541C85D26508E83_1749229908;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2088737175.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2088737175.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2088737175;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.793 -0400", hash_original_method = "45FB4CD004B111E95D4C640E8F52184B", hash_generated_method = "3CBA709CA0335DA622AD5BB4116F2D5B")
     public final LoadedApk getPackageInfo(ApplicationInfo ai, CompatibilityInfo compatInfo,
             int flags) {
-        LoadedApk varB4EAC82CA7396A68D541C85D26508E83_1115502231 = null; //Variable for return #1
+        LoadedApk varB4EAC82CA7396A68D541C85D26508E83_1115502231 = null; 
         boolean includeCode = (flags&Context.CONTEXT_INCLUDE_CODE) != 0;
         boolean securityViolation = includeCode && ai.uid != 0
                 && ai.uid != Process.SYSTEM_UID && (mBoundApplication != null
-                        ? ai.uid != mBoundApplication.appInfo.uid : true);//DSFIXME:  CODE0008: Nested ternary operator in expression
+                        ? ai.uid != mBoundApplication.appInfo.uid : true);
         {
             {
                 String msg = "Requesting code from " + ai.packageName
@@ -545,77 +550,77 @@ public final class ActivityThread {
                     msg = msg + " to be run in process "
                         + mBoundApplication.processName + " (with uid "
                         + mBoundApplication.appInfo.uid + ")";
-                } //End block
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new SecurityException(msg);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1115502231 = getPackageInfo(ai, compatInfo, null, securityViolation, includeCode);
         addTaint(ai.getTaint());
         addTaint(compatInfo.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1115502231.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1115502231.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1115502231;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.795 -0400", hash_original_method = "60B71579104EFF006D8A717508119428", hash_generated_method = "8C34909B1E70A507511EC5B35B91A2B3")
     public final LoadedApk getPackageInfoNoCheck(ApplicationInfo ai,
             CompatibilityInfo compatInfo) {
-        LoadedApk varB4EAC82CA7396A68D541C85D26508E83_1407003486 = null; //Variable for return #1
+        LoadedApk varB4EAC82CA7396A68D541C85D26508E83_1407003486 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1407003486 = getPackageInfo(ai, compatInfo, null, false, true);
         addTaint(ai.getTaint());
         addTaint(compatInfo.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1407003486.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1407003486.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1407003486;
-        // ---------- Original Method ----------
-        //return getPackageInfo(ai, compatInfo, null, false, true);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.796 -0400", hash_original_method = "5838753A6BAADDD41C531129622D5299", hash_generated_method = "09D842C97BA47A9C34B27FC2E45F63BC")
     public final LoadedApk peekPackageInfo(String packageName, boolean includeCode) {
-        LoadedApk varB4EAC82CA7396A68D541C85D26508E83_113785306 = null; //Variable for return #1
+        LoadedApk varB4EAC82CA7396A68D541C85D26508E83_113785306 = null; 
         {
             WeakReference<LoadedApk> ref;
             {
                 ref = mPackages.get(packageName);
-            } //End block
+            } 
             {
                 ref = mResourcePackages.get(packageName);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_113785306 = ref != null ? ref.get() : null;
-        } //End block
+        } 
         addTaint(packageName.getTaint());
         addTaint(includeCode);
-        varB4EAC82CA7396A68D541C85D26508E83_113785306.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_113785306.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_113785306;
-        // ---------- Original Method ----------
-        //synchronized (mPackages) {
-            //WeakReference<LoadedApk> ref;
-            //if (includeCode) {
-                //ref = mPackages.get(packageName);
-            //} else {
-                //ref = mResourcePackages.get(packageName);
-            //}
-            //return ref != null ? ref.get() : null;
-        //}
+        
+        
+            
+            
+                
+            
+                
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.798 -0400", hash_original_method = "F2A25E301DE436DC300B56B48A365596", hash_generated_method = "F25035221DAB39944B2B666075A80FE5")
     private LoadedApk getPackageInfo(ApplicationInfo aInfo, CompatibilityInfo compatInfo,
             ClassLoader baseLoader, boolean securityViolation, boolean includeCode) {
-        LoadedApk varB4EAC82CA7396A68D541C85D26508E83_514937822 = null; //Variable for return #1
+        LoadedApk varB4EAC82CA7396A68D541C85D26508E83_514937822 = null; 
         {
             WeakReference<LoadedApk> ref;
             {
                 ref = mPackages.get(aInfo.packageName);
-            } //End block
+            } 
             {
                 ref = mResourcePackages.get(aInfo.packageName);
-            } //End block
+            } 
             LoadedApk packageInfo;
             packageInfo = ref.get();
             packageInfo = null;
@@ -630,57 +635,57 @@ public final class ActivityThread {
                     {
                         mPackages.put(aInfo.packageName,
                             new WeakReference<LoadedApk>(packageInfo));
-                    } //End block
+                    } 
                     {
                         mResourcePackages.put(aInfo.packageName,
                             new WeakReference<LoadedApk>(packageInfo));
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_514937822 = packageInfo;
-        } //End block
+        } 
         addTaint(aInfo.getTaint());
         addTaint(compatInfo.getTaint());
         addTaint(baseLoader.getTaint());
         addTaint(securityViolation);
         addTaint(includeCode);
-        varB4EAC82CA7396A68D541C85D26508E83_514937822.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_514937822.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_514937822;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.799 -0400", hash_original_method = "F0BED1934E92681B3C0E496CA2259BFD", hash_generated_method = "B00ACA88AB4FE899E6C24B66D2A67128")
     public ApplicationThread getApplicationThread() {
-        ApplicationThread varB4EAC82CA7396A68D541C85D26508E83_1207824696 = null; //Variable for return #1
+        ApplicationThread varB4EAC82CA7396A68D541C85D26508E83_1207824696 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1207824696 = mAppThread;
-        varB4EAC82CA7396A68D541C85D26508E83_1207824696.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1207824696.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1207824696;
-        // ---------- Original Method ----------
-        //return mAppThread;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.800 -0400", hash_original_method = "84F87CEBEDE5D31C88CD24E066F68A95", hash_generated_method = "582BF1A0E0DCAA201B854F3B0DB112F1")
     public Instrumentation getInstrumentation() {
-        Instrumentation varB4EAC82CA7396A68D541C85D26508E83_1280331690 = null; //Variable for return #1
+        Instrumentation varB4EAC82CA7396A68D541C85D26508E83_1280331690 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1280331690 = mInstrumentation;
-        varB4EAC82CA7396A68D541C85D26508E83_1280331690.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1280331690.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1280331690;
-        // ---------- Original Method ----------
-        //return mInstrumentation;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.802 -0400", hash_original_method = "9032A5E826B7A6BB9A1848729A4BF06F", hash_generated_method = "BB4C654E4D1BD497CB43E8F2B01313EA")
     public Configuration getConfiguration() {
-        Configuration varB4EAC82CA7396A68D541C85D26508E83_1493239654 = null; //Variable for return #1
+        Configuration varB4EAC82CA7396A68D541C85D26508E83_1493239654 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1493239654 = mResConfiguration;
-        varB4EAC82CA7396A68D541C85D26508E83_1493239654.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1493239654.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1493239654;
-        // ---------- Original Method ----------
-        //return mResConfiguration;
+        
+        
     }
 
     
@@ -688,59 +693,60 @@ public final class ActivityThread {
     public boolean isProfiling() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1955620312 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1955620312;
-        // ---------- Original Method ----------
-        //return mProfiler != null && mProfiler.profileFile != null
-                //&& mProfiler.profileFd == null;
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.805 -0400", hash_original_method = "DE9E88BCF6C439479F5E5429ED790EB6", hash_generated_method = "2605915698528AA453E9E0F2BCA5CF3B")
     public String getProfileFilePath() {
-        String varB4EAC82CA7396A68D541C85D26508E83_820669047 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_820669047 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_820669047 = mProfiler.profileFile;
-        varB4EAC82CA7396A68D541C85D26508E83_820669047.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_820669047.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_820669047;
-        // ---------- Original Method ----------
-        //return mProfiler.profileFile;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.806 -0400", hash_original_method = "6CA5860A95ACD9BB8C844ECC1E567192", hash_generated_method = "F5FEB144ABC31A4213F476A394C00E05")
     public Looper getLooper() {
-        Looper varB4EAC82CA7396A68D541C85D26508E83_1805840381 = null; //Variable for return #1
+        Looper varB4EAC82CA7396A68D541C85D26508E83_1805840381 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1805840381 = mLooper;
-        varB4EAC82CA7396A68D541C85D26508E83_1805840381.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1805840381.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1805840381;
-        // ---------- Original Method ----------
-        //return mLooper;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.807 -0400", hash_original_method = "BED0801CDE1100B1F268B3031343DFA4", hash_generated_method = "CC2E687B79D2BD0FC198A3EBA50A4A46")
     public Application getApplication() {
-        Application varB4EAC82CA7396A68D541C85D26508E83_1296548014 = null; //Variable for return #1
+        Application varB4EAC82CA7396A68D541C85D26508E83_1296548014 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1296548014 = mInitialApplication;
-        varB4EAC82CA7396A68D541C85D26508E83_1296548014.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1296548014.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1296548014;
-        // ---------- Original Method ----------
-        //return mInitialApplication;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.808 -0400", hash_original_method = "5878D065A1BC5C9B3897192B88F09BB5", hash_generated_method = "EC4032152C99C6577518E4148A2A7C59")
     public String getProcessName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1162913230 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1162913230 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1162913230 = mBoundApplication.processName;
-        varB4EAC82CA7396A68D541C85D26508E83_1162913230.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1162913230.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1162913230;
-        // ---------- Original Method ----------
-        //return mBoundApplication.processName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.810 -0400", hash_original_method = "67B7F6B98B8791421AA33911A41FCF20", hash_generated_method = "A9DF01C4215293A6909F770416C1D2D8")
     public ContextImpl getSystemContext() {
-        ContextImpl varB4EAC82CA7396A68D541C85D26508E83_1187563197 = null; //Variable for return #1
+        ContextImpl varB4EAC82CA7396A68D541C85D26508E83_1187563197 = null; 
         {
             {
                 ContextImpl context = ContextImpl.createSystemContext(this);
@@ -751,29 +757,30 @@ public final class ActivityThread {
                         getConfiguration(), getDisplayMetricsLocked(
                                 CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO, false));
                 mSystemContext = context;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1187563197 = mSystemContext;
-        varB4EAC82CA7396A68D541C85D26508E83_1187563197.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1187563197.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1187563197;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mSystemContext == null) {
-                //ContextImpl context =
-                    //ContextImpl.createSystemContext(this);
-                //LoadedApk info = new LoadedApk(this, "android", context, null,
-                        //CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO);
-                //context.init(info, null, this);
-                //context.getResources().updateConfiguration(
-                        //getConfiguration(), getDisplayMetricsLocked(
-                                //CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO, false));
-                //mSystemContext = context;
-            //}
-        //}
-        //return mSystemContext;
+        
+        
+            
+                
+                    
+                
+                        
+                
+                
+                        
+                                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.811 -0400", hash_original_method = "AC12C154682E9BD06E6B4A91255348E3", hash_generated_method = "60B6CD2EB599B5ABB18D3BAD3F8328FC")
     public void installSystemApplicationInfo(ApplicationInfo info) {
         {
@@ -781,15 +788,15 @@ public final class ActivityThread {
             context.init(new LoadedApk(this, "android", context, info,
                     CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO), null, this);
             mProfiler = new Profiler();
-        } //End block
+        } 
         addTaint(info.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //ContextImpl context = getSystemContext();
-            //context.init(new LoadedApk(this, "android", context, info,
-                    //CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO), null, this);
-            //mProfiler = new Profiler();
-        //}
+        
+        
+            
+            
+                    
+            
+        
     }
 
     
@@ -798,12 +805,12 @@ public final class ActivityThread {
         {
             mJitEnabled = true;
             dalvik.system.VMRuntime.getRuntime().startJitCompilation();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mJitEnabled) {
-            //mJitEnabled = true;
-            //dalvik.system.VMRuntime.getRuntime().startJitCompilation();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -812,14 +819,14 @@ public final class ActivityThread {
         {
             mGcIdlerScheduled = true;
             Looper.myQueue().addIdleHandler(mGcIdler);
-        } //End block
+        } 
         mH.removeMessages(H.GC_WHEN_IDLE);
-        // ---------- Original Method ----------
-        //if (!mGcIdlerScheduled) {
-            //mGcIdlerScheduled = true;
-            //Looper.myQueue().addIdleHandler(mGcIdler);
-        //}
-        //mH.removeMessages(H.GC_WHEN_IDLE);
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -828,14 +835,14 @@ public final class ActivityThread {
         {
             mGcIdlerScheduled = false;
             Looper.myQueue().removeIdleHandler(mGcIdler);
-        } //End block
+        } 
         mH.removeMessages(H.GC_WHEN_IDLE);
-        // ---------- Original Method ----------
-        //if (mGcIdlerScheduled) {
-            //mGcIdlerScheduled = false;
-            //Looper.myQueue().removeIdleHandler(mGcIdler);
-        //}
-        //mH.removeMessages(H.GC_WHEN_IDLE);
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -847,43 +854,45 @@ public final class ActivityThread {
             boolean varE184117867CF0C26F2EFEE16CB7C3505_1447112326 = ((BinderInternal.getLastGcTime()+MIN_TIME_BETWEEN_GCS) < now);
             {
                 BinderInternal.forceGc("bg");
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //mGcIdlerScheduled = false;
-        //final long now = SystemClock.uptimeMillis();
-        //if ((BinderInternal.getLastGcTime()+MIN_TIME_BETWEEN_GCS) < now) {
-            //BinderInternal.forceGc("bg");
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.816 -0400", hash_original_method = "BC7C90866968540D7B885FF1F76E8E09", hash_generated_method = "27A360AEF250E709B11106BA288E46C1")
     public void registerOnActivityPausedListener(Activity activity,
             OnActivityPausedListener listener) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         {
             ArrayList<OnActivityPausedListener> list = mOnPauseListeners.get(activity);
             {
                 list = new ArrayList<OnActivityPausedListener>();
                 mOnPauseListeners.put(activity, list);
-            } //End block
+            } 
             list.add(listener);
-        } //End block
+        } 
         addTaint(activity.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mOnPauseListeners) {
-            //ArrayList<OnActivityPausedListener> list = mOnPauseListeners.get(activity);
-            //if (list == null) {
-                //list = new ArrayList<OnActivityPausedListener>();
-                //mOnPauseListeners.put(activity, list);
-            //}
-            //list.add(listener);
-        //}
+        
+        
+            
+            
+                
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.817 -0400", hash_original_method = "A666FB211AE0A9537AAE3A42A197A4A4", hash_generated_method = "9647425E4A09772DF7738AB94AA15EEE")
     public void unregisterOnActivityPausedListener(Activity activity,
             OnActivityPausedListener listener) {
@@ -891,41 +900,41 @@ public final class ActivityThread {
             ArrayList<OnActivityPausedListener> list = mOnPauseListeners.get(activity);
             {
                 list.remove(listener);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(activity.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mOnPauseListeners) {
-            //ArrayList<OnActivityPausedListener> list = mOnPauseListeners.get(activity);
-            //if (list != null) {
-                //list.remove(listener);
-            //}
-        //}
+        
+        
+            
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.818 -0400", hash_original_method = "FA6ACBD6D6B2F04759E1E44999782C17", hash_generated_method = "17C5456FA2FB5475E502403717B702E3")
     public final ActivityInfo resolveActivityInfo(Intent intent) {
-        ActivityInfo varB4EAC82CA7396A68D541C85D26508E83_1945507355 = null; //Variable for return #1
+        ActivityInfo varB4EAC82CA7396A68D541C85D26508E83_1945507355 = null; 
         ActivityInfo aInfo = intent.resolveActivityInfo(
                 mInitialApplication.getPackageManager(), PackageManager.GET_SHARED_LIBRARY_FILES);
         {
             Instrumentation.checkStartActivityResult(
                     IActivityManager.START_CLASS_NOT_FOUND, intent);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1945507355 = aInfo;
         addTaint(intent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1945507355.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1945507355.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1945507355;
-        // ---------- Original Method ----------
-        //ActivityInfo aInfo = intent.resolveActivityInfo(
-                //mInitialApplication.getPackageManager(), PackageManager.GET_SHARED_LIBRARY_FILES);
-        //if (aInfo == null) {
-            //Instrumentation.checkStartActivityResult(
-                    //IActivityManager.START_CLASS_NOT_FOUND, intent);
-        //}
-        //return aInfo;
+        
+        
+                
+        
+            
+                    
+        
+        
     }
 
     
@@ -933,7 +942,7 @@ public final class ActivityThread {
     public final Activity startActivityNow(Activity parent, String id,
         Intent intent, ActivityInfo activityInfo, IBinder token, Bundle state,
         Activity.NonConfigurationInstances lastNonConfigurationInstances) {
-        Activity varB4EAC82CA7396A68D541C85D26508E83_1334339523 = null; //Variable for return #1
+        Activity varB4EAC82CA7396A68D541C85D26508E83_1334339523 = null; 
         ActivityClientRecord r = new ActivityClientRecord();
         r.token = token;
         r.ident = 0;
@@ -948,11 +957,11 @@ public final class ActivityThread {
             String name;
             {
                 name = compname.toShortString();
-            } //End block
+            } 
             {
                 name = "(Intent " + intent + ").getComponent() returned null";
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1334339523 = performLaunchActivity(r, null);
         addTaint(parent.getTaint());
         addTaint(id.getTaint());
@@ -961,22 +970,22 @@ public final class ActivityThread {
         addTaint(token.getTaint());
         addTaint(state.getTaint());
         addTaint(lastNonConfigurationInstances.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1334339523.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1334339523.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1334339523;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.821 -0400", hash_original_method = "E4DB0C38EE0152F49C4586AFA6AD83D1", hash_generated_method = "3D3D33F7F5D7FE626346CD0FB14D40A7")
     public final Activity getActivity(IBinder token) {
-        Activity varB4EAC82CA7396A68D541C85D26508E83_384469365 = null; //Variable for return #1
+        Activity varB4EAC82CA7396A68D541C85D26508E83_384469365 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_384469365 = mActivities.get(token).activity;
         addTaint(token.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_384469365.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_384469365.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_384469365;
-        // ---------- Original Method ----------
-        //return mActivities.get(token).activity;
+        
+        
     }
 
     
@@ -992,36 +1001,39 @@ public final class ActivityThread {
         addTaint(requestCode);
         addTaint(resultCode);
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        //if (DEBUG_RESULTS) Slog.v(TAG, "sendActivityResult: id=" + id
-                //+ " req=" + requestCode + " res=" + resultCode + " data=" + data);
-        //ArrayList<ResultInfo> list = new ArrayList<ResultInfo>();
-        //list.add(new ResultInfo(id, requestCode, resultCode, data));
-        //mAppThread.scheduleSendResult(token, list);
+        
+        
+                
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.824 -0400", hash_original_method = "04C4A68B1E80544C50165B2C1F09966C", hash_generated_method = "321706A67BED54A5A8D03B480A5D0B66")
     private void queueOrSendMessage(int what, Object obj) {
         queueOrSendMessage(what, obj, 0, 0);
         addTaint(what);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //queueOrSendMessage(what, obj, 0, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.824 -0400", hash_original_method = "3163B4D830BC02309EB9FA4093F38166", hash_generated_method = "65054CEA9CE759579BC78585AFB485B4")
     private void queueOrSendMessage(int what, Object obj, int arg1) {
         queueOrSendMessage(what, obj, arg1, 0);
         addTaint(what);
         addTaint(obj.getTaint());
         addTaint(arg1);
-        // ---------- Original Method ----------
-        //queueOrSendMessage(what, obj, arg1, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.825 -0400", hash_original_method = "BA532BAA145C03E1DD34B30EBC725387", hash_generated_method = "4383914684AEE9250D81A4829B5C4B16")
     private void queueOrSendMessage(int what, Object obj, int arg1, int arg2) {
         {
@@ -1031,23 +1043,23 @@ public final class ActivityThread {
             msg.arg1 = arg1;
             msg.arg2 = arg2;
             mH.sendMessage(msg);
-        } //End block
+        } 
         addTaint(what);
         addTaint(obj.getTaint());
         addTaint(arg1);
         addTaint(arg2);
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (DEBUG_MESSAGES) Slog.v(
-                //TAG, "SCHEDULE " + what + " " + mH.codeToString(what)
-                //+ ": " + arg1 + " / " + obj);
-            //Message msg = Message.obtain();
-            //msg.what = what;
-            //msg.obj = obj;
-            //msg.arg1 = arg1;
-            //msg.arg2 = arg2;
-            //mH.sendMessage(msg);
-        //}
+        
+        
+            
+                
+                
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -1062,33 +1074,33 @@ public final class ActivityThread {
         addTaint(context.getTaint());
         addTaint(who.getTaint());
         addTaint(what.getTaint());
-        // ---------- Original Method ----------
-        //ContextCleanupInfo cci = new ContextCleanupInfo();
-        //cci.context = context;
-        //cci.who = who;
-        //cci.what = what;
-        //queueOrSendMessage(H.CLEAN_UP_CONTEXT, cci);
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.829 -0400", hash_original_method = "C9C4D84CF5E4E5BEF4E002420AA42B4A", hash_generated_method = "8EDEE8F6A6EB08C83136727C80F440A5")
     private Activity performLaunchActivity(ActivityClientRecord r, Intent customIntent) {
-        Activity varB4EAC82CA7396A68D541C85D26508E83_1852405061 = null; //Variable for return #1
+        Activity varB4EAC82CA7396A68D541C85D26508E83_1852405061 = null; 
         ActivityInfo aInfo = r.activityInfo;
         {
             r.packageInfo = getPackageInfo(aInfo.applicationInfo, r.compatInfo,
                     Context.CONTEXT_INCLUDE_CODE);
-        } //End block
+        } 
         ComponentName component = r.intent.getComponent();
         {
             component = r.intent.resolveActivity(
                 mInitialApplication.getPackageManager());
             r.intent.setComponent(component);
-        } //End block
+        } 
         {
             component = new ComponentName(r.activityInfo.packageName,
                     r.activityInfo.targetActivity);
-        } //End block
+        } 
         Activity activity = null;
         try 
         {
@@ -1099,8 +1111,8 @@ public final class ActivityThread {
             r.intent.setExtrasClassLoader(cl);
             {
                 r.state.setClassLoader(cl);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (Exception e)
         {
             {
@@ -1109,9 +1121,9 @@ public final class ActivityThread {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Unable to instantiate activity " + component
                     + ": " + e.toString(), e);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         try 
         {
             Application app = r.packageInfo.makeApplication(false, mInstrumentation);
@@ -1126,31 +1138,31 @@ public final class ActivityThread {
                         r.embeddedID, r.lastNonConfigurationInstances, config);
                 {
                     activity.mIntent = customIntent;
-                } //End block
+                } 
                 r.lastNonConfigurationInstances = null;
                 activity.mStartedActivity = false;
                 int theme = r.activityInfo.getThemeResource();
                 {
                     activity.setTheme(theme);
-                } //End block
+                } 
                 activity.mCalled = false;
                 mInstrumentation.callActivityOnCreate(activity, r.state);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new SuperNotCalledException(
                         "Activity " + r.intent.getComponent().toShortString() +
                         " did not call through to super.onCreate()");
-                } //End block
+                } 
                 r.activity = activity;
                 r.stopped = true;
                 {
                     activity.performStart();
                     r.stopped = false;
-                } //End block
+                } 
                 {
                     {
                         mInstrumentation.callActivityOnRestoreInstanceState(activity, r.state);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     activity.mCalled = false;
                     mInstrumentation.callActivityOnPostCreate(activity, r.state);
@@ -1158,16 +1170,16 @@ public final class ActivityThread {
                         if (DroidSafeAndroidRuntime.control) throw new SuperNotCalledException(
                             "Activity " + r.intent.getComponent().toShortString() +
                             " did not call through to super.onPostCreate()");
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             r.paused = true;
             mActivities.put(r.token, r);
-        } //End block
+        } 
         catch (SuperNotCalledException e)
         {
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
+        } 
         catch (Exception e)
         {
             {
@@ -1176,16 +1188,16 @@ public final class ActivityThread {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Unable to start activity " + component
                     + ": " + e.toString(), e);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1852405061 = activity;
         addTaint(r.getTaint());
         addTaint(customIntent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1852405061.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1852405061.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1852405061;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1196,7 +1208,7 @@ public final class ActivityThread {
             mProfiler.setProfiler(r.profileFile, r.profileFd);
             mProfiler.startProfiling();
             mProfiler.autoStopProfiler = r.autoStopProfiler;
-        } //End block
+        } 
         handleConfigurationChanged(null, null);
         Activity a = performLaunchActivity(r, customIntent);
         {
@@ -1213,12 +1225,12 @@ public final class ActivityThread {
                         if (DroidSafeAndroidRuntime.control) throw new SuperNotCalledException(
                             "Activity " + r.intent.getComponent().toShortString() +
                             " did not call through to super.onPause()");
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (SuperNotCalledException e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw e;
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     {
@@ -1228,27 +1240,28 @@ public final class ActivityThread {
                                 "Unable to pause activity "
                                 + r.intent.getComponent().toShortString()
                                 + ": " + e.toString(), e);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 r.paused = true;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             try 
             {
                 ActivityManagerNative.getDefault()
                     .finishActivity(r.token, Activity.RESULT_CANCELED, null);
-            } //End block
+            } 
             catch (RemoteException ex)
             { }
-        } //End block
+        } 
         addTaint(customIntent.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.832 -0400", hash_original_method = "089DA2DACAED1790C29E22F2D6A7A046", hash_generated_method = "FF90597869B972932CA7372F9393FFD3")
     private void deliverNewIntents(ActivityClientRecord r,
             List<Intent> intents) {
@@ -1260,18 +1273,18 @@ public final class ActivityThread {
                 intent.setExtrasClassLoader(r.activity.getClassLoader());
                 r.activity.mFragments.noteStateNotSaved();
                 mInstrumentation.callActivityOnNewIntent(r.activity, intent);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(r.getTaint());
         addTaint(intents.getTaint());
-        // ---------- Original Method ----------
-        //final int N = intents.size();
-        //for (int i=0; i<N; i++) {
-            //Intent intent = intents.get(i);
-            //intent.setExtrasClassLoader(r.activity.getClassLoader());
-            //r.activity.mFragments.noteStateNotSaved();
-            //mInstrumentation.callActivityOnNewIntent(r.activity, intent);
-        //}
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -1284,38 +1297,39 @@ public final class ActivityThread {
             {
                 r.activity.mTemporaryPause = true;
                 mInstrumentation.callActivityOnPause(r.activity);
-            } //End block
+            } 
             deliverNewIntents(r, intents);
             {
                 r.activity.performResume();
                 r.activity.mTemporaryPause = false;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(token.getTaint());
         addTaint(intents.getTaint());
-        // ---------- Original Method ----------
-        //ActivityClientRecord r = mActivities.get(token);
-        //if (r != null) {
-            //final boolean resumed = !r.paused;
-            //if (resumed) {
-                //r.activity.mTemporaryPause = true;
-                //mInstrumentation.callActivityOnPause(r.activity);
-            //}
-            //deliverNewIntents(r, intents);
-            //if (resumed) {
-                //r.activity.performResume();
-                //r.activity.mTemporaryPause = false;
-            //}
-        //}
+        
+        
+        
+            
+            
+                
+                
+            
+            
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.835 -0400", hash_original_method = "3340D70EC7FD056C28E3BD0AF1C7CC94", hash_generated_method = "F53E80B90447BEAED725633B8B7CEF50")
     private void handleNewIntent(NewIntentData data) {
         performNewIntents(data.token, data.intents);
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        //performNewIntents(data.token, data.intents);
+        
+        
     }
 
     
@@ -1324,6 +1338,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:49.143 -0400", hash_original_method = "3D8204A3B4D4C5B7C8FEA568D86F5418", hash_generated_method = "0A3AAED73836F4537504B0980124B7A1")
     private void handleReceiver(ReceiverData data) {
         unscheduleGcIdler();
@@ -1342,14 +1357,14 @@ public final class ActivityThread {
             data.intent.setExtrasClassLoader(cl);
             data.setExtrasClassLoader(cl);
             receiver = (BroadcastReceiver)cl.loadClass(component).newInstance();
-        } //End block
+        } 
         catch (Exception e)
         {
             data.sendFinished(mgr);
             throw new RuntimeException(
                 "Unable to instantiate receiver " + component
                 + ": " + e.toString(), e);
-        } //End block
+        } 
         try 
         {
             Application app;
@@ -1360,7 +1375,7 @@ public final class ActivityThread {
             receiver.setPendingResult(data);
             receiver.onReceive(context.getReceiverRestrictedContext(),
                     data.intent);
-        } //End block
+        } 
         catch (Exception e)
         {
             data.sendFinished(mgr);
@@ -1370,25 +1385,26 @@ public final class ActivityThread {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Unable to start receiver " + component
                     + ": " + e.toString(), e);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             sCurrentBroadcastIntent.set(null);
-        } //End block
+        } 
         {
             boolean var198BEFC4677783C257791C95882C8BD8_969809034 = (receiver.getPendingResult() != null);
             {
                 data.finish();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.837 -0400", hash_original_method = "F9FD1947DE4D383F90C08BC5B81CEB33", hash_generated_method = "6E45882BE2C43FB4FB76066C1D6C1834")
     private void handleCreateBackupAgent(CreateBackupAgentData data) {
         unscheduleGcIdler();
@@ -1399,13 +1415,13 @@ public final class ActivityThread {
             {
                 Slog.d(TAG, "BackupAgent " + "  for " + packageName
                     + " already exists");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         BackupAgent agent = null;
         String classname = data.appInfo.backupAgentName;
         {
             classname = "android.app.backup.FullBackupAgent";
-        } //End block
+        } 
         try 
         {
             IBinder binder = null;
@@ -1420,31 +1436,32 @@ public final class ActivityThread {
                 agent.onCreate();
                 binder = agent.onBind();
                 mBackupAgents.put(packageName, agent);
-            } //End block
+            } 
             catch (Exception e)
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw e;
-                } //End block
-            } //End block
+                } 
+            } 
             try 
             {
                 ActivityManagerNative.getDefault().backupAgentCreated(packageName, binder);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
+        } 
         catch (Exception e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Unable to create BackupAgent "
                     + classname + ": " + e.toString(), e);
-        } //End block
+        } 
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.838 -0400", hash_original_method = "F45834CE0FCB2021DEF63803688239C3", hash_generated_method = "0496618E2143D18C55200C3958C8E1CD")
     private void handleDestroyBackupAgent(CreateBackupAgentData data) {
         LoadedApk packageInfo = getPackageInfoNoCheck(data.appInfo, data.compatInfo);
@@ -1454,33 +1471,34 @@ public final class ActivityThread {
             try 
             {
                 agent.onDestroy();
-            } //End block
+            } 
             catch (Exception e)
             {
                 e.printStackTrace();
-            } //End block
+            } 
             mBackupAgents.remove(packageName);
-        } //End block
+        } 
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        //if (DEBUG_BACKUP) Slog.v(TAG, "handleDestroyBackupAgent: " + data);
-        //LoadedApk packageInfo = getPackageInfoNoCheck(data.appInfo, data.compatInfo);
-        //String packageName = packageInfo.mPackageName;
-        //BackupAgent agent = mBackupAgents.get(packageName);
-        //if (agent != null) {
-            //try {
-                //agent.onDestroy();
-            //} catch (Exception e) {
-                //Slog.w(TAG, "Exception thrown in onDestroy by backup agent of " + data.appInfo);
-                //e.printStackTrace();
-            //}
-            //mBackupAgents.remove(packageName);
-        //} else {
-            //Slog.w(TAG, "Attempt to destroy unknown backup agent " + data);
-        //}
+        
+        
+        
+        
+        
+        
+            
+                
+            
+                
+                
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.839 -0400", hash_original_method = "77CEB6B4E506F7F39264B1FEFD4EC387", hash_generated_method = "A1D93E84BEB9A0294B10C191D6DEAB59")
     private void handleCreateService(CreateServiceData data) {
         unscheduleGcIdler();
@@ -1491,7 +1509,7 @@ public final class ActivityThread {
         {
             java.lang.ClassLoader cl = packageInfo.getClassLoader();
             service = (Service) cl.loadClass(data.info.name).newInstance();
-        } //End block
+        } 
         catch (Exception e)
         {
             {
@@ -1500,9 +1518,9 @@ public final class ActivityThread {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Unable to instantiate service " + data.info.name
                     + ": " + e.toString(), e);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         try 
         {
             ContextImpl context = new ContextImpl();
@@ -1517,10 +1535,10 @@ public final class ActivityThread {
             {
                 ActivityManagerNative.getDefault().serviceDoneExecuting(
                         data.token, 0, 0, 0);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
+        } 
         catch (Exception e)
         {
             {
@@ -1529,15 +1547,16 @@ public final class ActivityThread {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Unable to create service " + data.info.name
                     + ": " + e.toString(), e);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.840 -0400", hash_original_method = "881D5FBA45CBA067F129D10745838607", hash_generated_method = "0870E9C90FDD050695B603696879AD25")
     private void handleBindService(BindServiceData data) {
         Service s = mServices.get(data.token);
@@ -1551,17 +1570,17 @@ public final class ActivityThread {
                         IBinder binder = s.onBind(data.intent);
                         ActivityManagerNative.getDefault().publishService(
                                 data.token, data.intent, binder);
-                    } //End block
+                    } 
                     {
                         s.onRebind(data.intent);
                         ActivityManagerNative.getDefault().serviceDoneExecuting(
                                 data.token, 0, 0, 0);
-                    } //End block
+                    } 
                     ensureJitEnabled();
-                } //End block
+                } 
                 catch (RemoteException ex)
                 { }
-            } //End block
+            } 
             catch (Exception e)
             {
                 {
@@ -1570,16 +1589,17 @@ public final class ActivityThread {
                         if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "Unable to bind to service " + s
                             + " with " + data.intent + ": " + e.toString(), e);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.841 -0400", hash_original_method = "2796BE6EE721B85B28BB6DBD3B4C5C51", hash_generated_method = "4AD6DFCCE642AC2B562455A1B071D6C8")
     private void handleUnbindService(BindServiceData data) {
         Service s = mServices.get(data.token);
@@ -1593,15 +1613,15 @@ public final class ActivityThread {
                     {
                         ActivityManagerNative.getDefault().unbindFinished(
                                 data.token, data.intent, doRebind);
-                    } //End block
+                    } 
                     {
                         ActivityManagerNative.getDefault().serviceDoneExecuting(
                                 data.token, 0, 0, 0);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (RemoteException ex)
                 { }
-            } //End block
+            } 
             catch (Exception e)
             {
                 {
@@ -1610,16 +1630,17 @@ public final class ActivityThread {
                         if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "Unable to unbind to service " + s
                             + " with " + data.intent + ": " + e.toString(), e);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.842 -0400", hash_original_method = "1C18D37F75673CCCBD9C372D3BFFD82C", hash_generated_method = "ACF9C875D783745AADDBA54F43C971DC")
     private void handleDumpService(DumpComponentInfo info) {
         Service s = mServices.get(info.token);
@@ -1630,25 +1651,26 @@ public final class ActivityThread {
             try 
             {
                 info.fd.close();
-            } //End block
+            } 
             catch (IOException e)
             { }
-        } //End block
+        } 
         addTaint(info.getTaint());
-        // ---------- Original Method ----------
-        //Service s = mServices.get(info.token);
-        //if (s != null) {
-            //PrintWriter pw = new PrintWriter(new FileOutputStream(info.fd.getFileDescriptor()));
-            //s.dump(info.fd.getFileDescriptor(), pw, info.args);
-            //pw.flush();
-            //try {
-                //info.fd.close();
-            //} catch (IOException e) {
-            //}
-        //}
+        
+        
+        
+            
+            
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.844 -0400", hash_original_method = "126292FF06E700D8C53E21C56EE062B7", hash_generated_method = "0C201D9441E71B450C1422EFD6103EB3")
     private void handleDumpActivity(DumpComponentInfo info) {
         ActivityClientRecord r = mActivities.get(info.token);
@@ -1659,25 +1681,26 @@ public final class ActivityThread {
             try 
             {
                 info.fd.close();
-            } //End block
+            } 
             catch (IOException e)
             { }
-        } //End block
+        } 
         addTaint(info.getTaint());
-        // ---------- Original Method ----------
-        //ActivityClientRecord r = mActivities.get(info.token);
-        //if (r != null && r.activity != null) {
-            //PrintWriter pw = new PrintWriter(new FileOutputStream(info.fd.getFileDescriptor()));
-            //r.activity.dump(info.prefix, info.fd.getFileDescriptor(), pw, info.args);
-            //pw.flush();
-            //try {
-                //info.fd.close();
-            //} catch (IOException e) {
-            //}
-        //}
+        
+        
+        
+            
+            
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.845 -0400", hash_original_method = "7729FDAE3B00ADA3C236E33577FF6666", hash_generated_method = "ECECF136AA577D13AB4BFF442F446876")
     private void handleServiceArgs(ServiceArgsData data) {
         Service s = mServices.get(data.token);
@@ -1686,25 +1709,25 @@ public final class ActivityThread {
             {
                 {
                     data.args.setExtrasClassLoader(s.getClassLoader());
-                } //End block
+                } 
                 int res;
                 {
                     res = s.onStartCommand(data.args, data.flags, data.startId);
-                } //End block
+                } 
                 {
                     s.onTaskRemoved(data.args);
                     res = Service.START_TASK_REMOVED_COMPLETE;
-                } //End block
+                } 
                 QueuedWork.waitToFinish();
                 try 
                 {
                     ActivityManagerNative.getDefault().serviceDoneExecuting(
                             data.token, 1, data.startId, res);
-                } //End block
+                } 
                 catch (RemoteException e)
                 { }
                 ensureJitEnabled();
-            } //End block
+            } 
             catch (Exception e)
             {
                 {
@@ -1713,16 +1736,17 @@ public final class ActivityThread {
                         if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "Unable to start service " + s
                             + " with " + data.args + ": " + e.toString(), e);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.846 -0400", hash_original_method = "E9A561F96B3BEE10BDD2A8F223813D32", hash_generated_method = "118D91B28A4F9A03F020FBAB9519DDCE")
     private void handleStopService(IBinder token) {
         Service s = mServices.remove(token);
@@ -1734,16 +1758,16 @@ public final class ActivityThread {
                 {
                     final String who = s.getClassName();
                     ((ContextImpl) context).scheduleFinalCleanup(who, "Service");
-                } //End block
+                } 
                 QueuedWork.waitToFinish();
                 try 
                 {
                     ActivityManagerNative.getDefault().serviceDoneExecuting(
                             token, 0, 0, 0);
-                } //End block
+                } 
                 catch (RemoteException e)
                 { }
-            } //End block
+            } 
             catch (Exception e)
             {
                 {
@@ -1752,43 +1776,43 @@ public final class ActivityThread {
                         if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "Unable to stop service " + s
                             + ": " + e.toString(), e);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(token.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.848 -0400", hash_original_method = "821CC6EDFD77BBF57472742A46BD9804", hash_generated_method = "E9782116723BF21C5DFC63E82DE005B4")
     public final ActivityClientRecord performResumeActivity(IBinder token,
             boolean clearHide) {
-        ActivityClientRecord varB4EAC82CA7396A68D541C85D26508E83_379987322 = null; //Variable for return #1
+        ActivityClientRecord varB4EAC82CA7396A68D541C85D26508E83_379987322 = null; 
         ActivityClientRecord r = mActivities.get(token);
         {
             {
                 r.hideForNow = false;
                 r.activity.mStartedActivity = false;
-            } //End block
+            } 
             try 
             {
                 {
                     deliverNewIntents(r, r.pendingIntents);
                     r.pendingIntents = null;
-                } //End block
+                } 
                 {
                     deliverResults(r, r.pendingResults);
                     r.pendingResults = null;
-                } //End block
+                } 
                 r.activity.performResume();
                 EventLog.writeEvent(LOG_ON_RESUME_CALLED,
                         r.activity.getComponentName().getClassName());
                 r.paused = false;
                 r.stopped = false;
                 r.state = null;
-            } //End block
+            } 
             catch (Exception e)
             {
                 {
@@ -1798,17 +1822,17 @@ public final class ActivityThread {
                         "Unable to resume activity "
                         + r.intent.getComponent().toShortString()
                         + ": " + e.toString(), e);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_379987322 = r;
         addTaint(token.getTaint());
         addTaint(clearHide);
-        varB4EAC82CA7396A68D541C85D26508E83_379987322.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_379987322.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_379987322;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1820,22 +1844,22 @@ public final class ActivityThread {
             {
                 WindowManagerImpl.getDefault().closeAll(wtoken,
                         r.activity.getClass().getName(), "Activity");
-            } //End block
-        } //End block
+            } 
+        } 
         r.mPendingRemoveWindow = null;
         r.mPendingRemoveWindowManager = null;
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //if (r.mPendingRemoveWindow != null) {
-            //r.mPendingRemoveWindowManager.removeViewImmediate(r.mPendingRemoveWindow);
-            //IBinder wtoken = r.mPendingRemoveWindow.getWindowToken();
-            //if (wtoken != null) {
-                //WindowManagerImpl.getDefault().closeAll(wtoken,
-                        //r.activity.getClass().getName(), "Activity");
-            //}
-        //}
-        //r.mPendingRemoveWindow = null;
-        //r.mPendingRemoveWindowManager = null;
+        
+        
+            
+            
+            
+                
+                        
+            
+        
+        
+        
     }
 
     
@@ -1854,10 +1878,10 @@ public final class ActivityThread {
                 {
                     willBeVisible = ActivityManagerNative.getDefault().willActivityBeVisible(
                             a.getActivityToken());
-                } //End block
+                } 
                 catch (RemoteException e)
                 { }
-            } //End block
+            } 
             {
                 r.window = r.activity.getWindow();
                 View decor = r.window.getDecorView();
@@ -1870,17 +1894,17 @@ public final class ActivityThread {
                 {
                     a.mWindowAdded = true;
                     wm.addView(decor, l);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 r.hideForNow = true;
-            } //End block
+            } 
             cleanUpPendingRemoveWindows(r);
             {
                 {
                     performConfigurationChanged(r.activity, r.newConfig);
                     r.newConfig = null;
-                } //End block
+                } 
                 WindowManager.LayoutParams l = r.window.getAttributes();
                 {
                     l.softInputMode = (l.softInputMode
@@ -1890,40 +1914,41 @@ public final class ActivityThread {
                         ViewManager wm = a.getWindowManager();
                         View decor = r.window.getDecorView();
                         wm.updateViewLayout(decor, l);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 r.activity.mVisibleFromServer = true;
                 {
                     r.activity.makeVisible();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 r.nextIdle = mNewActivities;
                 mNewActivities = r;
                 Looper.myQueue().addIdleHandler(new Idler());
-            } //End block
+            } 
             r.onlyLocalRequest = false;
-        } //End block
+        } 
         {
             try 
             {
                 ActivityManagerNative.getDefault()
                     .finishActivity(token, Activity.RESULT_CANCELED, null);
-            } //End block
+            } 
             catch (RemoteException ex)
             { }
-        } //End block
+        } 
         addTaint(token.getTaint());
         addTaint(clearHide);
         addTaint(isForward);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.855 -0400", hash_original_method = "DA54714D7ABECA1149DF2EBB4CB12B75", hash_generated_method = "A7A6AD746FF4E30FDC086ACEF0C28DD2")
     private Bitmap createThumbnailBitmap(ActivityClientRecord r) {
-        Bitmap varB4EAC82CA7396A68D541C85D26508E83_1234503977 = null; //Variable for return #1
+        Bitmap varB4EAC82CA7396A68D541C85D26508E83_1234503977 = null; 
         Bitmap thumbnail = mAvailThumbnailBitmap;
         try 
         {
@@ -1936,31 +1961,31 @@ public final class ActivityThread {
                         res.getDimensionPixelSize(com.android.internal.R.dimen.thumbnail_height);
                     mThumbnailWidth = w =
                         res.getDimensionPixelSize(com.android.internal.R.dimen.thumbnail_width);
-                } //End block
+                } 
                 {
                     h = mThumbnailHeight;
-                } //End block
+                } 
                 {
                     thumbnail = Bitmap.createBitmap(w, h, THUMBNAIL_FORMAT);
                     thumbnail.eraseColor(0);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 Canvas cv = mThumbnailCanvas;
                 {
                     mThumbnailCanvas = cv = new Canvas();
-                } //End block
+                } 
                 cv.setBitmap(thumbnail);
                 {
                     boolean varCCF6BFA25B9B33C500993008D9DBEDE9_1438623494 = (!r.activity.onCreateThumbnail(thumbnail, cv));
                     {
                         mAvailThumbnailBitmap = thumbnail;
                         thumbnail = null;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 cv.setBitmap(null);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (Exception e)
         {
             {
@@ -1970,19 +1995,20 @@ public final class ActivityThread {
                         "Unable to create thumbnail of "
                         + r.intent.getComponent().toShortString()
                         + ": " + e.toString(), e);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             thumbnail = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1234503977 = thumbnail;
         addTaint(r.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1234503977.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1234503977.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1234503977;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.856 -0400", hash_original_method = "E5BE16D2C462200A7B0F213AB5290C46", hash_generated_method = "91A81802760B58EE5DD9F776FDCBEC52")
     private void handlePauseActivity(IBinder token, boolean finished,
             boolean userLeaving, int configChanges) {
@@ -1990,42 +2016,42 @@ public final class ActivityThread {
         {
             {
                 performUserLeavingActivity(r);
-            } //End block
+            } 
             r.activity.mConfigChangeFlags |= configChanges;
             performPauseActivity(token, finished, r.isPreHoneycomb());
             {
                 boolean varC0947985E80A11FEDC8508BAA28B8037_159269267 = (r.isPreHoneycomb());
                 {
                     QueuedWork.waitToFinish();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             try 
             {
                 ActivityManagerNative.getDefault().activityPaused(token);
-            } //End block
+            } 
             catch (RemoteException ex)
             { }
-        } //End block
+        } 
         addTaint(token.getTaint());
         addTaint(finished);
         addTaint(userLeaving);
         addTaint(configChanges);
-        // ---------- Original Method ----------
-        //ActivityClientRecord r = mActivities.get(token);
-        //if (r != null) {
-            //if (userLeaving) {
-                //performUserLeavingActivity(r);
-            //}
-            //r.activity.mConfigChangeFlags |= configChanges;
-            //performPauseActivity(token, finished, r.isPreHoneycomb());
-            //if (r.isPreHoneycomb()) {
-                //QueuedWork.waitToFinish();
-            //}
-            //try {
-                //ActivityManagerNative.getDefault().activityPaused(token);
-            //} catch (RemoteException ex) {
-            //}
-        //}
+        
+        
+        
+            
+                
+            
+            
+            
+            
+                
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -2033,45 +2059,45 @@ public final class ActivityThread {
     final void performUserLeavingActivity(ActivityClientRecord r) {
         mInstrumentation.callActivityOnUserLeaving(r.activity);
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //mInstrumentation.callActivityOnUserLeaving(r.activity);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.859 -0400", hash_original_method = "2E97B5DEF88E402FCA1661B4F9DB23CB", hash_generated_method = "81D80E82B5F68D871799306CF3FDAE0C")
     final Bundle performPauseActivity(IBinder token, boolean finished,
             boolean saveState) {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_1130102590 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_1130102590 = null; 
         ActivityClientRecord r = mActivities.get(token);
         varB4EAC82CA7396A68D541C85D26508E83_1130102590 = r != null ? performPauseActivity(r, finished, saveState) : null;
         addTaint(token.getTaint());
         addTaint(finished);
         addTaint(saveState);
-        varB4EAC82CA7396A68D541C85D26508E83_1130102590.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1130102590.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1130102590;
-        // ---------- Original Method ----------
-        //ActivityClientRecord r = mActivities.get(token);
-        //return r != null ? performPauseActivity(r, finished, saveState) : null;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.861 -0400", hash_original_method = "48F314FABF09550D34AFCF3A61EA40AB", hash_generated_method = "7E3C90D2F98F81AC1C075AD85C47CBF8")
     final Bundle performPauseActivity(ActivityClientRecord r, boolean finished,
             boolean saveState) {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_1717482095 = null; //Variable for return #1
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_1916431359 = null; //Variable for return #2
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_1717482095 = null; 
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_1916431359 = null; 
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1717482095 = null;
-            } //End block
+            } 
             RuntimeException e = new RuntimeException(
                     "Performing pause of activity that is not resumed: "
                     + r.intent.getComponent().toShortString());
-        } //End block
+        } 
         Bundle state = null;
         {
             r.activity.mFinished = true;
-        } //End block
+        } 
         try 
         {
             {
@@ -2079,7 +2105,7 @@ public final class ActivityThread {
                 state.setAllowFds(false);
                 mInstrumentation.callActivityOnSaveInstanceState(r.activity, state);
                 r.state = state;
-            } //End block
+            } 
             r.activity.mCalled = false;
             mInstrumentation.callActivityOnPause(r.activity);
             EventLog.writeEvent(LOG_ON_PAUSE_CALLED, r.activity.getComponentName().getClassName());
@@ -2087,12 +2113,12 @@ public final class ActivityThread {
                 if (DroidSafeAndroidRuntime.control) throw new SuperNotCalledException(
                     "Activity " + r.intent.getComponent().toShortString() +
                     " did not call through to super.onPause()");
-            } //End block
-        } //End block
+            } 
+        } 
         catch (SuperNotCalledException e)
         {
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
+        } 
         catch (Exception e)
         {
             {
@@ -2102,38 +2128,38 @@ public final class ActivityThread {
                         "Unable to pause activity "
                         + r.intent.getComponent().toShortString()
                         + ": " + e.toString(), e);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         r.paused = true;
         ArrayList<OnActivityPausedListener> listeners;
         {
             listeners = mOnPauseListeners.remove(r.activity);
-        } //End block
-        int size = (listeners != null ? listeners.size() : 0);//DSFIXME:  CODE0008: Nested ternary operator in expression
+        } 
+        int size = (listeners != null ? listeners.size() : 0);
         {
             int i = 0;
             {
                 listeners.get(i).onPaused(r.activity);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1916431359 = state;
         addTaint(r.getTaint());
         addTaint(finished);
         addTaint(saveState);
-        Bundle varA7E53CE21691AB073D9660D615818899_2034265763; //Final return value
+        Bundle varA7E53CE21691AB073D9660D615818899_2034265763; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2034265763 = varB4EAC82CA7396A68D541C85D26508E83_1717482095;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2034265763 = varB4EAC82CA7396A68D541C85D26508E83_1916431359;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2034265763.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2034265763.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2034265763;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2143,12 +2169,13 @@ public final class ActivityThread {
         performStopActivityInner(r, null, false, saveState);
         addTaint(token.getTaint());
         addTaint(saveState);
-        // ---------- Original Method ----------
-        //ActivityClientRecord r = mActivities.get(token);
-        //performStopActivityInner(r, null, false, saveState);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.865 -0400", hash_original_method = "9D7845EB7E019C62C91AEEFF3F12D0E4", hash_generated_method = "4DE611FB6E0C44B6377EFF198B6476C8")
     private void performStopActivityInner(ActivityClientRecord r,
             StopInfo info, boolean keepShown, boolean saveState) {
@@ -2158,13 +2185,13 @@ public final class ActivityThread {
                 RuntimeException e = new RuntimeException(
                         "Performing stop of activity that is not resumed: "
                         + r.intent.getComponent().toShortString());
-            } //End block
+            } 
             {
                 try 
                 {
                     info.thumbnail = null;
                     info.description = r.activity.onCreateDescription();
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     {
@@ -2174,26 +2201,26 @@ public final class ActivityThread {
                                 "Unable to save state of activity "
                                 + r.intent.getComponent().toShortString()
                                 + ": " + e.toString(), e);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 {
                     state = new Bundle();
                     state.setAllowFds(false);
                     mInstrumentation.callActivityOnSaveInstanceState(r.activity, state);
                     r.state = state;
-                } //End block
+                } 
                 {
                     state = r.state;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 try 
                 {
                     r.activity.performStop();
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     {
@@ -2203,22 +2230,23 @@ public final class ActivityThread {
                                 "Unable to stop activity "
                                 + r.intent.getComponent().toShortString()
                                 + ": " + e.toString(), e);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 r.stopped = true;
-            } //End block
+            } 
             r.paused = true;
-        } //End block
+        } 
         addTaint(r.getTaint());
         addTaint(info.getTaint());
         addTaint(keepShown);
         addTaint(saveState);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.867 -0400", hash_original_method = "A6B6099E264273A69E686CA5F8880A0F", hash_generated_method = "7E593485314D79481D99D3479C956E63")
     private void updateVisibility(ActivityClientRecord r, boolean show) {
         View v = r.activity.mDecor;
@@ -2228,27 +2256,28 @@ public final class ActivityThread {
                     r.activity.mVisibleFromServer = true;
                     {
                         r.activity.makeVisible();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     performConfigurationChanged(r.activity, r.newConfig);
                     r.newConfig = null;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 {
                     r.activity.mVisibleFromServer = false;
                     v.setVisibility(View.INVISIBLE);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(r.getTaint());
         addTaint(show);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.868 -0400", hash_original_method = "5B5FF681D8D2131B5D84BD48CB5679C6", hash_generated_method = "C97443914D7666DCF3BD452B6893D2DA")
     private void handleStopActivity(IBinder token, boolean show, int configChanges) {
         ActivityClientRecord r = mActivities.get(token);
@@ -2260,35 +2289,35 @@ public final class ActivityThread {
             boolean varF98050B23FC967ED8AC6A2F93F8DF261_1286881057 = (!r.isPreHoneycomb());
             {
                 QueuedWork.waitToFinish();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             ActivityManagerNative.getDefault().activityStopped(
                 r.token, r.state, info.thumbnail, info.description);
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         addTaint(token.getTaint());
         addTaint(show);
         addTaint(configChanges);
-        // ---------- Original Method ----------
-        //ActivityClientRecord r = mActivities.get(token);
-        //r.activity.mConfigChangeFlags |= configChanges;
-        //StopInfo info = new StopInfo();
-        //performStopActivityInner(r, info, show, true);
-        //if (localLOGV) Slog.v(
-            //TAG, "Finishing stop of " + r + ": show=" + show
-            //+ " win=" + r.window);
-        //updateVisibility(r, show);
-        //if (!r.isPreHoneycomb()) {
-            //QueuedWork.waitToFinish();
-        //}
-        //try {
-            //ActivityManagerNative.getDefault().activityStopped(
-                //r.token, r.state, info.thumbnail, info.description);
-        //} catch (RemoteException ex) {
-        //}
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
+            
+        
+        
+            
+                
+        
+        
     }
 
     
@@ -2298,54 +2327,56 @@ public final class ActivityThread {
         {
             r.activity.performRestart();
             r.stopped = false;
-        } //End block
+        } 
         addTaint(token.getTaint());
-        // ---------- Original Method ----------
-        //ActivityClientRecord r = mActivities.get(token);
-        //if (r.stopped) {
-            //r.activity.performRestart();
-            //r.stopped = false;
-        //}
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.870 -0400", hash_original_method = "6AC1F9C414377243EFD072AEBA5D0138", hash_generated_method = "954F11ACB6771689F169E8010F96644F")
     private void handleWindowVisibility(IBinder token, boolean show) {
         ActivityClientRecord r = mActivities.get(token);
         {
             performStopActivityInner(r, null, show, false);
-        } //End block
+        } 
         {
             unscheduleGcIdler();
             r.activity.performRestart();
             r.stopped = false;
-        } //End block
+        } 
         {
             updateVisibility(r, show);
-        } //End block
+        } 
         addTaint(token.getTaint());
         addTaint(show);
-        // ---------- Original Method ----------
-        //ActivityClientRecord r = mActivities.get(token);
-        //if (r == null) {
-            //Log.w(TAG, "handleWindowVisibility: no activity for token " + token);
-            //return;
-        //}
-        //if (!show && !r.stopped) {
-            //performStopActivityInner(r, null, show, false);
-        //} else if (show && r.stopped) {
-            //unscheduleGcIdler();
-            //r.activity.performRestart();
-            //r.stopped = false;
-        //}
-        //if (r.activity.mDecor != null) {
-            //if (false) Slog.v(
-                //TAG, "Handle window " + r + " visibility: " + show);
-            //updateVisibility(r, show);
-        //}
+        
+        
+        
+            
+            
+        
+        
+            
+        
+            
+            
+            
+        
+        
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.871 -0400", hash_original_method = "EAD4881422CEC6751FCD8576FDC7454E", hash_generated_method = "BB485DDB74EE5C2D587B2941A32635BB")
     private void handleSleeping(IBinder token, boolean sleeping) {
         ActivityClientRecord r = mActivities.get(token);
@@ -2356,7 +2387,7 @@ public final class ActivityThread {
                     try 
                     {
                         r.activity.performStop();
-                    } //End block
+                    } 
                     catch (Exception e)
                     {
                         {
@@ -2366,35 +2397,35 @@ public final class ActivityThread {
                                 "Unable to stop activity "
                                 + r.intent.getComponent().toShortString()
                                 + ": " + e.toString(), e);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     r.stopped = true;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varC7408144C59FFB3C551D3072EB04F87F_1975221998 = (!r.isPreHoneycomb());
                 {
                     QueuedWork.waitToFinish();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             try 
             {
                 ActivityManagerNative.getDefault().activitySlept(r.token);
-            } //End block
+            } 
             catch (RemoteException ex)
             { }
-        } //End block
+        } 
         {
             {
                 r.activity.performRestart();
                 r.stopped = false;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(token.getTaint());
         addTaint(sleeping);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2402,41 +2433,43 @@ public final class ActivityThread {
     private void handleSetCoreSettings(Bundle coreSettings) {
         {
             mCoreSettings = coreSettings;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mPackages) {
-            //mCoreSettings = coreSettings;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.873 -0400", hash_original_method = "CFE517344EE2BFA081F85835A58153DF", hash_generated_method = "05A1A4F18F78CEA7E3AB34C2E6E25939")
     private void handleUpdatePackageCompatibilityInfo(UpdateCompatibilityData data) {
         LoadedApk apk = peekPackageInfo(data.pkg, false);
         {
             apk.mCompatibilityInfo.set(data.info);
-        } //End block
+        } 
         apk = peekPackageInfo(data.pkg, true);
         {
             apk.mCompatibilityInfo.set(data.info);
-        } //End block
+        } 
         handleConfigurationChanged(mConfiguration, data.info);
         WindowManagerImpl.getDefault().reportNewConfiguration(mConfiguration);
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        //LoadedApk apk = peekPackageInfo(data.pkg, false);
-        //if (apk != null) {
-            //apk.mCompatibilityInfo.set(data.info);
-        //}
-        //apk = peekPackageInfo(data.pkg, true);
-        //if (apk != null) {
-            //apk.mCompatibilityInfo.set(data.info);
-        //}
-        //handleConfigurationChanged(mConfiguration, data.info);
-        //WindowManagerImpl.getDefault().reportNewConfiguration(mConfiguration);
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.874 -0400", hash_original_method = "02C0B6EC41B1BF345DD1D4B6B6C7E1EA", hash_generated_method = "262B536959A65C66F1B22E467C474FEF")
     private void deliverResults(ActivityClientRecord r, List<ResultInfo> results) {
         final int N = results.size();
@@ -2448,10 +2481,10 @@ public final class ActivityThread {
                 {
                     {
                         ri.mData.setExtrasClassLoader(r.activity.getClassLoader());
-                    } //End block
+                    } 
                     r.activity.dispatchActivityResult(ri.mResultWho,
                         ri.mRequestCode, ri.mResultCode, ri.mData);
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     {
@@ -2461,18 +2494,19 @@ public final class ActivityThread {
                             "Failure delivering result " + ri + " to activity "
                             + r.intent.getComponent().toShortString()
                             + ": " + e.toString(), e);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(r.getTaint());
         addTaint(results.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.877 -0400", hash_original_method = "132B22472693443B534F2F702D692F04", hash_generated_method = "0F6CE6D9F2573EE178B6F27F539E88AB")
     private void handleSendResult(ResultData res) {
         ActivityClientRecord r = mActivities.get(res.token);
@@ -2480,7 +2514,7 @@ public final class ActivityThread {
             final boolean resumed = !r.paused;
             {
                 updateVisibility(r, true);
-            } //End block
+            } 
             {
                 try 
                 {
@@ -2491,12 +2525,12 @@ public final class ActivityThread {
                         if (DroidSafeAndroidRuntime.control) throw new SuperNotCalledException(
                             "Activity " + r.intent.getComponent().toShortString()
                             + " did not call through to super.onPause()");
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (SuperNotCalledException e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw e;
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     {
@@ -2506,39 +2540,40 @@ public final class ActivityThread {
                                 "Unable to pause activity "
                                 + r.intent.getComponent().toShortString()
                                 + ": " + e.toString(), e);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             deliverResults(r, res.results);
             {
                 r.activity.performResume();
                 r.activity.mTemporaryPause = false;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(res.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.878 -0400", hash_original_method = "44788E1192B2AF3D6F2EAE0CA2032491", hash_generated_method = "13516436A062DF888A50692A16065C90")
     public final ActivityClientRecord performDestroyActivity(IBinder token, boolean finishing) {
-        ActivityClientRecord varB4EAC82CA7396A68D541C85D26508E83_1970847228 = null; //Variable for return #1
+        ActivityClientRecord varB4EAC82CA7396A68D541C85D26508E83_1970847228 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1970847228 = performDestroyActivity(token, finishing, 0, false);
         addTaint(token.getTaint());
         addTaint(finishing);
-        varB4EAC82CA7396A68D541C85D26508E83_1970847228.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1970847228.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1970847228;
-        // ---------- Original Method ----------
-        //return performDestroyActivity(token, finishing, 0, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.881 -0400", hash_original_method = "C0523473C414844F9752EDA7A2CAF03B", hash_generated_method = "0F84D1015CDA959BF966A640EE774E96")
     private ActivityClientRecord performDestroyActivity(IBinder token, boolean finishing,
             int configChanges, boolean getNonConfigInstance) {
-        ActivityClientRecord varB4EAC82CA7396A68D541C85D26508E83_1206979381 = null; //Variable for return #1
+        ActivityClientRecord varB4EAC82CA7396A68D541C85D26508E83_1206979381 = null; 
         ActivityClientRecord r = mActivities.get(token);
         Class activityClass = null;
         {
@@ -2546,7 +2581,7 @@ public final class ActivityThread {
             r.activity.mConfigChangeFlags |= configChanges;
             {
                 r.activity.mFinished = true;
-            } //End block
+            } 
             {
                 try 
                 {
@@ -2558,12 +2593,12 @@ public final class ActivityThread {
                         if (DroidSafeAndroidRuntime.control) throw new SuperNotCalledException(
                             "Activity " + safeToComponentShortString(r.intent)
                             + " did not call through to super.onPause()");
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (SuperNotCalledException e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw e;
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     {
@@ -2573,20 +2608,20 @@ public final class ActivityThread {
                                 "Unable to pause activity "
                                 + safeToComponentShortString(r.intent)
                                 + ": " + e.toString(), e);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 r.paused = true;
-            } //End block
+            } 
             {
                 try 
                 {
                     r.activity.performStop();
-                } //End block
+                } 
                 catch (SuperNotCalledException e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw e;
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     {
@@ -2596,17 +2631,17 @@ public final class ActivityThread {
                                 "Unable to stop activity "
                                 + safeToComponentShortString(r.intent)
                                 + ": " + e.toString(), e);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 r.stopped = true;
-            } //End block
+            } 
             {
                 try 
                 {
                     r.lastNonConfigurationInstances
                             = r.activity.retainNonConfigurationInstances();
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     {
@@ -2616,10 +2651,10 @@ public final class ActivityThread {
                                 "Unable to retain activity "
                                 + r.intent.getComponent().toShortString()
                                 + ": " + e.toString(), e);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             try 
             {
                 r.activity.mCalled = false;
@@ -2628,15 +2663,15 @@ public final class ActivityThread {
                     if (DroidSafeAndroidRuntime.control) throw new SuperNotCalledException(
                         "Activity " + safeToComponentShortString(r.intent) +
                         " did not call through to super.onDestroy()");
-                } //End block
+                } 
                 {
                     r.window.closeAllPanels();
-                } //End block
-            } //End block
+                } 
+            } 
             catch (SuperNotCalledException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw e;
-            } //End block
+            } 
             catch (Exception e)
             {
                 {
@@ -2645,10 +2680,10 @@ public final class ActivityThread {
                         if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "Unable to destroy activity " + safeToComponentShortString(r.intent)
                             + ": " + e.toString(), e);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         mActivities.remove(token);
         StrictMode.decrementExpectedActivityCount(activityClass);
         varB4EAC82CA7396A68D541C85D26508E83_1206979381 = r;
@@ -2656,10 +2691,10 @@ public final class ActivityThread {
         addTaint(finishing);
         addTaint(configChanges);
         addTaint(getNonConfigInstance);
-        varB4EAC82CA7396A68D541C85D26508E83_1206979381.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1206979381.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1206979381;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2669,6 +2704,7 @@ public final class ActivityThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.883 -0400", hash_original_method = "FF5883360F029BC934513AEE9A22C396", hash_generated_method = "F10691A19EBB36061E626623079F2EF3")
     private void handleDestroyActivity(IBinder token, boolean finishing,
             int configChanges, boolean getNonConfigInstance) {
@@ -2684,41 +2720,41 @@ public final class ActivityThread {
                     {
                         r.mPendingRemoveWindow = v;
                         r.mPendingRemoveWindowManager = wm;
-                    } //End block
+                    } 
                     {
                         wm.removeViewImmediate(v);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     WindowManagerImpl.getDefault().closeAll(wtoken,
                             r.activity.getClass().getName(), "Activity");
-                } //End block
+                } 
                 r.activity.mDecor = null;
-            } //End block
+            } 
             {
                 WindowManagerImpl.getDefault().closeAll(token,
                         r.activity.getClass().getName(), "Activity");
-            } //End block
+            } 
             Context c = r.activity.getBaseContext();
             {
                 ((ContextImpl) c).scheduleFinalCleanup(
                         r.activity.getClass().getName(), "Activity");
-            } //End block
-        } //End block
+            } 
+        } 
         {
             try 
             {
                 ActivityManagerNative.getDefault().activityDestroyed(token);
-            } //End block
+            } 
             catch (RemoteException ex)
             { }
-        } //End block
+        } 
         addTaint(token.getTaint());
         addTaint(finishing);
         addTaint(configChanges);
         addTaint(getNonConfigInstance);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2739,22 +2775,22 @@ public final class ActivityThread {
                         {
                             {
                                 r.pendingResults.addAll(pendingResults);
-                            } //End block
+                            } 
                             {
                                 r.pendingResults = pendingResults;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             {
                                 r.pendingIntents.addAll(pendingNewIntents);
-                            } //End block
+                            } 
                             {
                                 r.pendingIntents = pendingNewIntents;
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 target = new ActivityClientRecord();
                 target.token = token;
@@ -2764,21 +2800,21 @@ public final class ActivityThread {
                     ActivityClientRecord existing = mActivities.get(token);
                     {
                         target.startsNotResumed = existing.paused;
-                    } //End block
+                    } 
                     target.onlyLocalRequest = true;
-                } //End block
+                } 
                 mRelaunchingActivities.add(target);
                 queueOrSendMessage(H.RELAUNCH_ACTIVITY, target);
-            } //End block
+            } 
             {
                 target.startsNotResumed = notResumed;
                 target.onlyLocalRequest = false;
-            } //End block
+            } 
             {
                 target.createdConfig = config;
-            } //End block
+            } 
             target.pendingConfigChanges |= configChanges;
-        } //End block
+        } 
         addTaint(token.getTaint());
         addTaint(pendingResults.getTaint());
         addTaint(pendingNewIntents.getTaint());
@@ -2786,11 +2822,12 @@ public final class ActivityThread {
         addTaint(notResumed);
         addTaint(config.getTaint());
         addTaint(fromServer);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.889 -0400", hash_original_method = "BE5C8E93A13CCFB0B92460FEFD999D51", hash_generated_method = "B4E12C47EC8CAF2F555A4E62C6D496E2")
     private void handleRelaunchActivity(ActivityClientRecord tmp) {
         unscheduleGcIdler();
@@ -2808,14 +2845,14 @@ public final class ActivityThread {
                         tmp = r;
                         configChanges |= tmp.pendingConfigChanges;
                         mRelaunchingActivities.remove(i);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 changedConfig = mPendingConfiguration;
                 mPendingConfiguration = null;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 boolean var0FC6F86F9662A446DFA38F41BE5B339F_279442550 = (mConfiguration == null
@@ -2827,14 +2864,14 @@ public final class ActivityThread {
                         || tmp.createdConfig.isOtherSeqNewer(changedConfig));
                         {
                             changedConfig = tmp.createdConfig;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             handleConfigurationChanged(changedConfig, null);
-        } //End block
+        } 
         ActivityClientRecord r = mActivities.get(tmp.token);
         r.activity.mConfigChangeFlags |= configChanges;
         r.onlyLocalRequest = tmp.onlyLocalRequest;
@@ -2842,15 +2879,15 @@ public final class ActivityThread {
         r.activity.mChangingConfigurations = true;
         {
             performPauseActivity(r.token, false, r.isPreHoneycomb());
-        } //End block
+        } 
         {
             boolean var180BDEFD354F97351DFD30CDB936034A_2061408477 = (r.state == null && !r.stopped && !r.isPreHoneycomb());
             {
                 r.state = new Bundle();
                 r.state.setAllowFds(false);
                 mInstrumentation.callActivityOnSaveInstanceState(r.activity, r.state);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         handleDestroyActivity(r.token, false, configChanges, true);
         r.activity = null;
         r.window = null;
@@ -2859,27 +2896,28 @@ public final class ActivityThread {
         {
             {
                 r.pendingResults = tmp.pendingResults;
-            } //End block
+            } 
             {
                 r.pendingResults.addAll(tmp.pendingResults);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 r.pendingIntents = tmp.pendingIntents;
-            } //End block
+            } 
             {
                 r.pendingIntents.addAll(tmp.pendingIntents);
-            } //End block
-        } //End block
+            } 
+        } 
         r.startsNotResumed = tmp.startsNotResumed;
         handleLaunchActivity(r, currentIntent);
         addTaint(tmp.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.890 -0400", hash_original_method = "D80F947211B8AA9FA3600ABD6DD9A5E5", hash_generated_method = "74098E51D5C72526A9F8B80D835A14FA")
     private void handleRequestThumbnail(IBinder token) {
         ActivityClientRecord r = mActivities.get(token);
@@ -2888,7 +2926,7 @@ public final class ActivityThread {
         try 
         {
             description = r.activity.onCreateDescription();
-        } //End block
+        } 
         catch (Exception e)
         {
             {
@@ -2898,43 +2936,43 @@ public final class ActivityThread {
                         "Unable to create description of activity "
                         + r.intent.getComponent().toShortString()
                         + ": " + e.toString(), e);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         try 
         {
             ActivityManagerNative.getDefault().reportThumbnail(
                 token, thumbnail, description);
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         addTaint(token.getTaint());
-        // ---------- Original Method ----------
-        //ActivityClientRecord r = mActivities.get(token);
-        //Bitmap thumbnail = createThumbnailBitmap(r);
-        //CharSequence description = null;
-        //try {
-            //description = r.activity.onCreateDescription();
-        //} catch (Exception e) {
-            //if (!mInstrumentation.onException(r.activity, e)) {
-                //throw new RuntimeException(
-                        //"Unable to create description of activity "
-                        //+ r.intent.getComponent().toShortString()
-                        //+ ": " + e.toString(), e);
-            //}
-        //}
-        //try {
-            //ActivityManagerNative.getDefault().reportThumbnail(
-                //token, thumbnail, description);
-        //} catch (RemoteException ex) {
-        //}
+        
+        
+        
+        
+        
+            
+        
+            
+                
+                        
+                        
+                        
+            
+        
+        
+            
+                
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.892 -0400", hash_original_method = "FB356249739137DBEEC4A6A95AF7FF01", hash_generated_method = "1CA6C805A63BE5427316825675ED35FD")
      ArrayList<ComponentCallbacks2> collectComponentCallbacksLocked(
             boolean allActivities, Configuration newConfig) {
-        ArrayList<ComponentCallbacks2> varB4EAC82CA7396A68D541C85D26508E83_651411773 = null; //Variable for return #1
+        ArrayList<ComponentCallbacks2> varB4EAC82CA7396A68D541C85D26508E83_651411773 = null; 
         ArrayList<ComponentCallbacks2> callbacks = new ArrayList<ComponentCallbacks2>();
         {
             boolean var861DB40CD6AE57E4F0E83CF55916E1AF_1708891313 = (mActivities.size() > 0);
@@ -2950,15 +2988,15 @@ public final class ActivityThread {
                             ar.packageInfo.mCompatibilityInfo.getIfNeeded());
                             {
                                 callbacks.add(a);
-                            } //End block
+                            } 
                             {
                                 ar.newConfig = thisConfig;
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var5A1C82E33C6D4B3400958A37BAFF4F9C_1349400804 = (mServices.size() > 0);
             {
@@ -2967,10 +3005,10 @@ public final class ActivityThread {
                     boolean var3DEC40B862508A9A2151C7EC9CE55CF3_565969676 = (it.hasNext());
                     {
                         callbacks.add(it.next());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 boolean var164809B4E437753E4C2094F777B6EF33_1964364154 = (mLocalProviders.size() > 0);
@@ -2980,25 +3018,25 @@ public final class ActivityThread {
                         boolean var4CA2EDBF7D27138D75E73CCD01CCB025_54332357 = (it.hasNext());
                         {
                             callbacks.add(it.next().mLocalProvider);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         final int N = mAllApplications.size();
         {
             int i = 0;
             {
                 callbacks.add(mAllApplications.get(i));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_651411773 = callbacks;
         addTaint(allActivities);
         addTaint(newConfig.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_651411773.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_651411773.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_651411773;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3010,11 +3048,11 @@ public final class ActivityThread {
         activity = null;
         {
             activity.mCalled = false;
-        } //End block
+        } 
         boolean shouldChangeConfig = false;
         {
             shouldChangeConfig = true;
-        } //End block
+        } 
         {
             int diff = activity.mCurrentConfig.diff(config);
             {
@@ -3022,10 +3060,10 @@ public final class ActivityThread {
                     boolean varF0E6ABDF26E6C0B0FD2D021EE0A6E062_717839980 = ((~activity.mActivityInfo.getRealConfigChanged() & diff) == 0);
                     {
                         shouldChangeConfig = true;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             cb.onConfigurationChanged(config);
             {
@@ -3033,15 +3071,15 @@ public final class ActivityThread {
                     if (DroidSafeAndroidRuntime.control) throw new SuperNotCalledException(
                             "Activity " + activity.getLocalClassName() +
                         " did not call through to super.onConfigurationChanged()");
-                } //End block
+                } 
                 activity.mConfigChangeFlags = 0;
                 activity.mCurrentConfig = new Configuration(config);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(cb.getTaint());
         addTaint(config.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3049,12 +3087,12 @@ public final class ActivityThread {
     public final void applyConfigurationToResources(Configuration config) {
         {
             applyConfigurationToResourcesLocked(config, null);
-        } //End block
+        } 
         addTaint(config.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mPackages) {
-            //applyConfigurationToResourcesLocked(config, null);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -3063,10 +3101,10 @@ public final class ActivityThread {
             CompatibilityInfo compat) {
         {
             mResConfiguration = new Configuration();
-        } //End block
+        } 
         {
             boolean varDD88D6DA3508C081DB3FE4EFF9E62042_249565361 = (!mResConfiguration.isOtherSeqNewer(config) && compat == null);
-        } //End collapsed parenthetic
+        } 
         int changes = mResConfiguration.updateFrom(config);
         DisplayMetrics dm = getDisplayMetricsLocked(null, true);
         {
@@ -3077,11 +3115,11 @@ public final class ActivityThread {
                 changes |= ActivityInfo.CONFIG_SCREEN_LAYOUT
                     | ActivityInfo.CONFIG_SCREEN_SIZE
                     | ActivityInfo.CONFIG_SMALLEST_SCREEN_SIZE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             Locale.setDefault(config.locale);
-        } //End block
+        } 
         Resources.updateSystemConfiguration(config, dm, compat);
         ApplicationPackageManager.configurationChanged();
         Iterator<WeakReference<Resources>> it = mActiveResources.values().iterator();
@@ -3092,49 +3130,49 @@ public final class ActivityThread {
                 Resources r = v.get();
                 {
                     r.updateConfiguration(config, dm, compat);
-                } //End block
+                } 
                 {
                     it.remove();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(config.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1419881529 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1419881529;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.899 -0400", hash_original_method = "725924C293B055D0DF33B7EFFEB77D1D", hash_generated_method = "4CDAA47547EE1FA3C9C2971D4888F746")
     final Configuration applyCompatConfiguration() {
-        Configuration varB4EAC82CA7396A68D541C85D26508E83_1154566447 = null; //Variable for return #1
+        Configuration varB4EAC82CA7396A68D541C85D26508E83_1154566447 = null; 
         Configuration config = mConfiguration;
         {
             mCompatConfiguration = new Configuration();
-        } //End block
+        } 
         mCompatConfiguration.setTo(mConfiguration);
         {
             boolean varC23E243EBF9A9F6453914CEF4EFB48AF_1128806680 = (mResCompatibilityInfo != null && !mResCompatibilityInfo.supportsScreen());
             {
                 mResCompatibilityInfo.applyToConfiguration(mCompatConfiguration);
                 config = mCompatConfiguration;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1154566447 = config;
-        varB4EAC82CA7396A68D541C85D26508E83_1154566447.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1154566447.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1154566447;
-        // ---------- Original Method ----------
-        //Configuration config = mConfiguration;
-        //if (mCompatConfiguration == null) {
-            //mCompatConfiguration = new Configuration();
-        //}
-        //mCompatConfiguration.setTo(mConfiguration);
-        //if (mResCompatibilityInfo != null && !mResCompatibilityInfo.supportsScreen()) {
-            //mResCompatibilityInfo.applyToConfiguration(mCompatConfiguration);
-            //config = mCompatConfiguration;
-        //}
-        //return config;
+        
+        
+        
+            
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -3147,21 +3185,21 @@ public final class ActivityThread {
                     boolean var7FB57B73DAED6E7419FC890952146106_1661224077 = (!mPendingConfiguration.isOtherSeqNewer(config));
                     {
                         config = mPendingConfiguration;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mPendingConfiguration = null;
-            } //End block
+            } 
             applyConfigurationToResourcesLocked(config, compat);
             {
                 mConfiguration = new Configuration();
-            } //End block
+            } 
             {
                 boolean var76764A772B13C26291B0BB9B4382DB3B_1015539201 = (!mConfiguration.isOtherSeqNewer(config) && compat == null);
-            } //End collapsed parenthetic
+            } 
             mConfiguration.updateFrom(config);
             config = applyCompatConfiguration();
             callbacks = collectComponentCallbacksLocked(false, config);
-        } //End block
+        } 
         WindowManagerImpl.getDefault().trimLocalMemory();
         {
             final int N = callbacks.size();
@@ -3169,13 +3207,13 @@ public final class ActivityThread {
                 int i = 0;
                 {
                     performConfigurationChanged(callbacks.get(i), config);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(config.getTaint());
         addTaint(compat.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3184,14 +3222,14 @@ public final class ActivityThread {
         ActivityClientRecord r = mActivities.get(token);
         performConfigurationChanged(r.activity, mCompatConfiguration);
         addTaint(token.getTaint());
-        // ---------- Original Method ----------
-        //ActivityClientRecord r = mActivities.get(token);
-        //if (r == null || r.activity == null) {
-            //return;
-        //}
-        //if (DEBUG_CONFIGURATION) Slog.v(TAG, "Handle activity config changed: "
-                //+ r.activityInfo.name);
-        //performConfigurationChanged(r.activity, mCompatConfiguration);
+        
+        
+        
+            
+        
+        
+                
+        
     }
 
     
@@ -3200,19 +3238,19 @@ public final class ActivityThread {
         {
             try 
             {
-                //Begin case 1 
+                
                 ViewDebug.startLooperProfiling(pcd.path, pcd.fd.getFileDescriptor());
-                //End case 1 
-                //Begin case default 
+                
+                
                 mProfiler.setProfiler(pcd.path, pcd.fd);
-                //End case default 
-                //Begin case default 
+                
+                
                 mProfiler.autoStopProfiler = false;
-                //End case default 
-                //Begin case default 
+                
+                
                 mProfiler.startProfiling();
-                //End case default 
-            } //End block
+                
+            } 
             catch (RuntimeException e)
             { }
             finally 
@@ -3220,24 +3258,24 @@ public final class ActivityThread {
                 try 
                 {
                     pcd.fd.close();
-                } //End block
+                } 
                 catch (IOException e)
                 { }
-            } //End block
-        } //End block
+            } 
+        } 
         {
-            //Begin case 1 
+            
             ViewDebug.stopLooperProfiling();
-            //End case 1 
-            //Begin case default 
+            
+            
             mProfiler.stopProfiling();
-            //End case default 
-        } //End block
+            
+        } 
         addTaint(start);
         addTaint(pcd.getTaint());
         addTaint(profileType);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3247,7 +3285,7 @@ public final class ActivityThread {
             try 
             {
                 Debug.dumpHprofData(dhd.path, dhd.fd.getFileDescriptor());
-            } //End block
+            } 
             catch (IOException e)
             { }
             finally 
@@ -3255,33 +3293,33 @@ public final class ActivityThread {
                 try 
                 {
                     dhd.fd.close();
-                } //End block
+                } 
                 catch (IOException e)
                 { }
-            } //End block
-        } //End block
+            } 
+        } 
         {
             Debug.dumpNativeHeap(dhd.fd.getFileDescriptor());
-        } //End block
+        } 
         addTaint(managed);
         addTaint(dhd.getTaint());
-        // ---------- Original Method ----------
-        //if (managed) {
-            //try {
-                //Debug.dumpHprofData(dhd.path, dhd.fd.getFileDescriptor());
-            //} catch (IOException e) {
-                //Slog.w(TAG, "Managed heap dump failed on path " + dhd.path
-                        //+ " -- can the process access this path?");
-            //} finally {
-                //try {
-                    //dhd.fd.close();
-                //} catch (IOException e) {
-                    //Slog.w(TAG, "Failure closing profile fd", e);
-                //}
-            //}
-        //} else {
-            //Debug.dumpNativeHeap(dhd.fd.getFileDescriptor());
-        //}
+        
+        
+            
+                
+            
+                
+                        
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+        
     }
 
     
@@ -3299,29 +3337,29 @@ public final class ActivityThread {
                             boolean var452303427881308C0907EF2BFCBFBC97_767918908 = (ref != null && ref.get() != null);
                             {
                                 hasPkgInfo = true;
-                            } //End block
+                            } 
                             {
                                 ref = mResourcePackages.get(packages[i]);
                                 {
                                     boolean var35FA527C419A116D546FBD420F0F02FA_1798142117 = (ref != null && ref.get() != null);
                                     {
                                         hasPkgInfo = true;
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
                     mPackages.remove(packages[i]);
                     mResourcePackages.remove(packages[i]);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         ApplicationPackageManager.handlePackageBroadcast(cmd, packages,
                 hasPkgInfo);
         addTaint(cmd);
         addTaint(packages[0].getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3330,38 +3368,38 @@ public final class ActivityThread {
         ArrayList<ComponentCallbacks2> callbacks;
         {
             callbacks = collectComponentCallbacksLocked(true, null);
-        } //End block
+        } 
         final int N = callbacks.size();
         {
             int i = 0;
             {
                 callbacks.get(i).onLowMemory();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var83DFAB275ACAE9E6E683928CEC618B77_284742266 = (Process.myUid() != Process.SYSTEM_UID);
             {
                 int sqliteReleased = SQLiteDatabase.releaseMemory();
                 EventLog.writeEvent(SQLITE_MEM_RELEASED_EVENT_LOG_TAG, sqliteReleased);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Canvas.freeCaches();
         BinderInternal.forceGc("mem");
-        // ---------- Original Method ----------
-        //ArrayList<ComponentCallbacks2> callbacks;
-        //synchronized (mPackages) {
-            //callbacks = collectComponentCallbacksLocked(true, null);
-        //}
-        //final int N = callbacks.size();
-        //for (int i=0; i<N; i++) {
-            //callbacks.get(i).onLowMemory();
-        //}
-        //if (Process.myUid() != Process.SYSTEM_UID) {
-            //int sqliteReleased = SQLiteDatabase.releaseMemory();
-            //EventLog.writeEvent(SQLITE_MEM_RELEASED_EVENT_LOG_TAG, sqliteReleased);
-        //}
-        //Canvas.freeCaches();
-        //BinderInternal.forceGc("mem");
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -3371,28 +3409,29 @@ public final class ActivityThread {
         ArrayList<ComponentCallbacks2> callbacks;
         {
             callbacks = collectComponentCallbacksLocked(true, null);
-        } //End block
+        } 
         final int N = callbacks.size();
         {
             int i = 0;
             {
                 callbacks.get(i).onTrimMemory(level);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(level);
-        // ---------- Original Method ----------
-        //WindowManagerImpl.getDefault().trimMemory(level);
-        //ArrayList<ComponentCallbacks2> callbacks;
-        //synchronized (mPackages) {
-            //callbacks = collectComponentCallbacksLocked(true, null);
-        //}
-        //final int N = callbacks.size();
-        //for (int i=0; i<N; i++) {
-            //callbacks.get(i).onTrimMemory(level);
-        //}
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.909 -0400", hash_original_method = "E6BF73423380262DF6FF59682ACDE1E2", hash_generated_method = "958C1AB73A772EC55469611673298A31")
     private void setupGraphicsSupport(LoadedApk info) {
         try 
@@ -3403,25 +3442,26 @@ public final class ActivityThread {
                 ContextImpl appContext = new ContextImpl();
                 appContext.init(info, null, this);
                 HardwareRenderer.setupDiskCache(appContext.getCacheDir());
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         { }
         addTaint(info.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //int uid = Process.myUid();
-            //String[] packages = getPackageManager().getPackagesForUid(uid);
-            //if (packages.length == 1) {
-                //ContextImpl appContext = new ContextImpl();
-                //appContext.init(info, null, this);
-                //HardwareRenderer.setupDiskCache(appContext.getCacheDir());
-            //}
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+            
+            
+                
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.911 -0400", hash_original_method = "7EBE3C125D399FC9ADE021947462EA9C", hash_generated_method = "4A6D5CCFF6AEEEC38AFC1A9EB35EEEB7")
     private void handleBindApplication(AppBindData data) {
         mBoundApplication = data;
@@ -3439,15 +3479,15 @@ public final class ActivityThread {
                 boolean varF43CCBE6F4C0623498FA3D729EBA95BA_1744334626 = (!ActivityManager.isHighEndGfx(display));
                 {
                     HardwareRenderer.disable(false);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             mProfiler.startProfiling();
-        } //End block
+        } 
         {
             AsyncTask.setDefaultExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-        } //End block
+        } 
         TimeZone.setDefault(null);
         Locale.setDefault(data.config.locale);
         applyConfigurationToResourcesLocked(data.config, data.compatInfo);
@@ -3456,13 +3496,13 @@ public final class ActivityThread {
         setupGraphicsSupport(data.info);
         {
             StrictMode.conditionallyEnableDebugLogging();
-        } //End block
+        } 
         {
             StrictMode.enableDeathOnNetwork();
-        } //End block
+        } 
         {
             Bitmap.setDefaultDensity(DisplayMetrics.DENSITY_DEFAULT);
-        } //End block
+        } 
         {
             Debug.changeDebugPort(8100);
             {
@@ -3470,18 +3510,18 @@ public final class ActivityThread {
                 try 
                 {
                     mgr.showWaitingForDebugger(mAppThread, true);
-                } //End block
+                } 
                 catch (RemoteException ex)
                 { }
                 Debug.waitForDebugger();
                 try 
                 {
                     mgr.showWaitingForDebugger(mAppThread, false);
-                } //End block
+                } 
                 catch (RemoteException ex)
                 { }
-            } //End block
-        } //End block
+            } 
+        } 
         IBinder b = ServiceManager.getService(Context.CONNECTIVITY_SERVICE);
         {
             IConnectivityManager service = IConnectivityManager.Stub.asInterface(b);
@@ -3489,10 +3529,10 @@ public final class ActivityThread {
             {
                 ProxyProperties proxyProperties = service.getProxy();
                 Proxy.setHttpProxySystemProperty(proxyProperties);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
+        } 
         {
             ContextImpl appContext = new ContextImpl();
             appContext.init(data.info, null, this);
@@ -3501,14 +3541,14 @@ public final class ActivityThread {
             {
                 ii = appContext.getPackageManager().
                     getInstrumentationInfo(data.instrumentationName, 0);
-            } //End block
+            } 
             catch (PackageManager.NameNotFoundException e)
             { }
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Unable to find instrumentation info for: "
                     + data.instrumentationName);
-            } //End block
+            } 
             mInstrumentationAppDir = ii.sourceDir;
             mInstrumentationAppPackage = ii.packageName;
             mInstrumentedAppDir = data.info.getAppDir();
@@ -3527,13 +3567,13 @@ public final class ActivityThread {
                 java.lang.ClassLoader cl = instrContext.getClassLoader();
                 mInstrumentation = (Instrumentation)
                     cl.loadClass(data.instrumentationName.getClassName()).newInstance();
-            } //End block
+            } 
             catch (Exception e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Unable to instantiate instrumentation "
                     + data.instrumentationName + ": " + e.toString(), e);
-            } //End block
+            } 
             mInstrumentation.init(this, instrContext, appContext,
                     new ComponentName(ii.packageName, ii.name), data.instrumentationWatcher);
             {
@@ -3541,24 +3581,24 @@ public final class ActivityThread {
                 File file = new File(mProfiler.profileFile);
                 file.getParentFile().mkdirs();
                 Debug.startMethodTracing(file.toString(), 8 * 1024 * 1024);
-            } //End block
+            } 
             try 
             {
                 mInstrumentation.onCreate(data.instrumentationArgs);
-            } //End block
+            } 
             catch (Exception e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Exception thrown in onCreate() of "
                     + data.instrumentationName + ": " + e.toString(), e);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mInstrumentation = new Instrumentation();
-        } //End block
+        } 
         {
             dalvik.system.VMRuntime.getRuntime().clearGrowthLimit();
-        } //End block
+        } 
         Application app = data.info.makeApplication(data.restrictedBackupMode, null);
         mInitialApplication = app;
         {
@@ -3566,12 +3606,12 @@ public final class ActivityThread {
             {
                 installContentProviders(app, providers);
                 mH.sendEmptyMessageDelayed(H.ENABLE_JIT, 10*1000);
-            } //End block
-        } //End block
+            } 
+        } 
         try 
         {
             mInstrumentation.callApplicationOnCreate(app);
-        } //End block
+        } 
         catch (Exception e)
         {
             {
@@ -3580,11 +3620,11 @@ public final class ActivityThread {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Unable to create application " + app.getClass().getName()
                     + ": " + e.toString(), e);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -3593,28 +3633,29 @@ public final class ActivityThread {
         IActivityManager am = ActivityManagerNative.getDefault();
         {
             Debug.stopMethodTracing();
-        } //End block
+        } 
         try 
         {
             am.finishInstrumentation(mAppThread, resultCode, results);
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         addTaint(resultCode);
         addTaint(results.getTaint());
-        // ---------- Original Method ----------
-        //IActivityManager am = ActivityManagerNative.getDefault();
-        //if (mProfiler.profileFile != null && mProfiler.handlingProfiling
-                //&& mProfiler.profileFd == null) {
-            //Debug.stopMethodTracing();
-        //}
-        //try {
-            //am.finishInstrumentation(mAppThread, resultCode, results);
-        //} catch (RemoteException ex) {
-        //}
+        
+        
+        
+                
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.914 -0400", hash_original_method = "E6307225A7BED03273D5285E74D77996", hash_generated_method = "498B6631EE5C8A2C8390AA54401BA45B")
     private void installContentProviders(
             Context context, List<ProviderInfo> providers) {
@@ -3636,43 +3677,43 @@ public final class ActivityThread {
                     cph.provider = cp;
                     cph.noReleaseNeeded = true;
                     results.add(cph);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         try 
         {
             ActivityManagerNative.getDefault().publishContentProviders(
                 getApplicationThread(), results);
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         addTaint(context.getTaint());
         addTaint(providers.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.917 -0400", hash_original_method = "F88C15CE4CC55ECD0AF9CC176F41EB20", hash_generated_method = "8D54889017F26BCC1DCEE5F095ACD8F8")
     public final IContentProvider acquireProvider(Context c, String name) {
-        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_875481475 = null; //Variable for return #1
-        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_2090697879 = null; //Variable for return #2
-        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_808091416 = null; //Variable for return #3
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_875481475 = null; 
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_2090697879 = null; 
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_808091416 = null; 
         IContentProvider provider = acquireExistingProvider(c, name);
         {
             varB4EAC82CA7396A68D541C85D26508E83_875481475 = provider;
-        } //End block
+        } 
         IActivityManager.ContentProviderHolder holder = null;
         try 
         {
             holder = ActivityManagerNative.getDefault().getContentProvider(
                     getApplicationThread(), name);
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         {
             varB4EAC82CA7396A68D541C85D26508E83_2090697879 = null;
-        } //End block
+        } 
         provider = installProvider(c, holder.provider, holder.info,
                 true , holder.noReleaseNeeded);
         {
@@ -3680,41 +3721,41 @@ public final class ActivityThread {
             {
                 ActivityManagerNative.getDefault().removeContentProvider(
                         getApplicationThread(), name);
-            } //End block
+            } 
             catch (RemoteException ex)
             { }
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_808091416 = provider;
         addTaint(c.getTaint());
         addTaint(name.getTaint());
-        IContentProvider varA7E53CE21691AB073D9660D615818899_124006302; //Final return value
+        IContentProvider varA7E53CE21691AB073D9660D615818899_124006302; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_124006302 = varB4EAC82CA7396A68D541C85D26508E83_875481475;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_124006302 = varB4EAC82CA7396A68D541C85D26508E83_2090697879;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_124006302 = varB4EAC82CA7396A68D541C85D26508E83_808091416;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_124006302.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_124006302.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_124006302;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.919 -0400", hash_original_method = "D0EC607B4605DB37ABCB0EC4802499DE", hash_generated_method = "5F224528AD54ECC27AA426282C99B066")
     public final IContentProvider acquireExistingProvider(Context c, String name) {
-        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_729488451 = null; //Variable for return #1
-        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_176802964 = null; //Variable for return #2
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_729488451 = null; 
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_176802964 = null; 
         {
             ProviderClientRecord pr = mProviderMap.get(name);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_729488451 = null;
-            } //End block
+            } 
             IContentProvider provider = pr.mProvider;
             IBinder jBinder = provider.asBinder();
             ProviderRefCount prc = mProviderRefCountMap.get(jBinder);
@@ -3722,25 +3763,25 @@ public final class ActivityThread {
                 prc.count += 1;
                 {
                     mH.removeMessages(H.REMOVE_PROVIDER, provider);
-                } //End block
-            } //End block
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_176802964 = provider;
-        } //End block
+        } 
         addTaint(c.getTaint());
         addTaint(name.getTaint());
-        IContentProvider varA7E53CE21691AB073D9660D615818899_358842786; //Final return value
+        IContentProvider varA7E53CE21691AB073D9660D615818899_358842786; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_358842786 = varB4EAC82CA7396A68D541C85D26508E83_729488451;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_358842786 = varB4EAC82CA7396A68D541C85D26508E83_176802964;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_358842786.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_358842786.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_358842786;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3753,32 +3794,32 @@ public final class ActivityThread {
             {
                 Message msg = mH.obtainMessage(H.REMOVE_PROVIDER, provider);
                 mH.sendMessage(msg);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(provider.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_878186825 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_878186825;
-        // ---------- Original Method ----------
-        //if(provider == null) {
-            //return false;
-        //}
-        //IBinder jBinder = provider.asBinder();
-        //synchronized (mProviderMap) {
-            //ProviderRefCount prc = mProviderRefCountMap.get(jBinder);
-            //if (prc == null) {
-                //return false;
-            //}
-            //if (prc.count == 0) {
-                //if (localLOGV) Slog.v(TAG, "releaseProvider: ref count already 0, how?");
-                //return false;
-            //}
-            //prc.count -= 1;
-            //if (prc.count == 0) {
-                //Message msg = mH.obtainMessage(H.REMOVE_PROVIDER, provider);
-                //mH.sendMessage(msg);
-            //}
-            //return true;
-        //}
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+            
+                
+                
+            
+            
+            
+                
+                
+            
+            
+        
     }
 
     
@@ -3801,24 +3842,24 @@ public final class ActivityThread {
                             myBinder.unlinkToDeath(pr, 0);
                             {
                                 remoteProviderName = pr.mName;
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             try 
             {
                 ActivityManagerNative.getDefault().removeContentProvider(
                         getApplicationThread(), remoteProviderName);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
+        } 
         addTaint(provider.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3832,68 +3873,69 @@ public final class ActivityThread {
                     ProviderClientRecord removed = mProviderMap.remove(name);
                     {
                         removed.mProvider.asBinder().unlinkToDeath(removed, 0);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(name.getTaint());
         addTaint(provider.getTaint());
-        // ---------- Original Method ----------
-        //synchronized(mProviderMap) {
-            //ProviderClientRecord pr = mProviderMap.get(name);
-            //if (pr != null && pr.mProvider.asBinder() == provider.asBinder()) {
-                //Slog.i(TAG, "Removing dead content provider: " + name);
-                //ProviderClientRecord removed = mProviderMap.remove(name);
-                //if (removed != null) {
-                    //removed.mProvider.asBinder().unlinkToDeath(removed, 0);
-                //}
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.929 -0400", hash_original_method = "54C9C23E13579DED3FD2406679DE4E02", hash_generated_method = "7324C8347CBB36CB570C9AB090C618D3")
     private IContentProvider installProvider(Context context,
             IContentProvider provider, ProviderInfo info,
             boolean noisy, boolean noReleaseNeeded) {
-        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_73719834 = null; //Variable for return #1
-        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_921433628 = null; //Variable for return #2
-        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_687724995 = null; //Variable for return #3
-        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_1051146569 = null; //Variable for return #4
-        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_576426400 = null; //Variable for return #5
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_73719834 = null; 
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_921433628 = null; 
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_687724995 = null; 
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_1051146569 = null; 
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_576426400 = null; 
         ContentProvider localProvider = null;
         {
             {
                 Slog.d(TAG, "Loading provider " + info.authority + ": "
                         + info.name);
-            } //End block
+            } 
             Context c = null;
             ApplicationInfo ai = info.applicationInfo;
             {
                 boolean var91DE5B59D8254FD2545D30D7F711FB97_1010110305 = (context.getPackageName().equals(ai.packageName));
                 {
                     c = context;
-                } //End block
+                } 
                 {
                     boolean varBB822C07A468461CB214A3B461BD724D_2080733700 = (mInitialApplication != null &&
                     mInitialApplication.getPackageName().equals(ai.packageName));
                     {
                         c = mInitialApplication;
-                    } //End block
+                    } 
                     {
                         try 
                         {
                             c = context.createPackageContext(ai.packageName,
                             Context.CONTEXT_INCLUDE_CODE);
-                        } //End block
+                        } 
                         catch (PackageManager.NameNotFoundException e)
                         { }
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_73719834 = null;
-            } //End block
+            } 
             try 
             {
                 final java.lang.ClassLoader cl = c.getClassLoader();
@@ -3902,9 +3944,9 @@ public final class ActivityThread {
                 provider = localProvider.getIContentProvider();
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_921433628 = null;
-                } //End block
+                } 
                 localProvider.attachInfo(c, info);
-            } //End block
+            } 
             catch (java.lang.Exception e)
             {
                 {
@@ -3913,11 +3955,11 @@ public final class ActivityThread {
                         if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "Unable to get provider " + info.name
                             + ": " + e.toString(), e);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_687724995 = null;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             IBinder jBinder = provider.asBinder();
             String names[] = PATTERN_SEMICOLON.split(info.authority);
@@ -3927,77 +3969,78 @@ public final class ActivityThread {
                     ProviderClientRecord pr = mProviderMap.get(names[i]);
                     {
                         provider = pr.mProvider;
-                    } //End block
+                    } 
                     {
                         pr = new ProviderClientRecord(names[i], provider, localProvider);
                         {
                             try 
                             {
                                 jBinder.linkToDeath(pr, 0);
-                            } //End block
+                            } 
                             catch (RemoteException e)
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_1051146569 = null;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         mProviderMap.put(names[i], pr);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 ProviderClientRecord pr = mLocalProviders.get(jBinder);
                 {
                     provider = pr.mProvider;
-                } //End block
+                } 
                 {
                     pr = new ProviderClientRecord(null, provider, localProvider);
                     mLocalProviders.put(jBinder, pr);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 ProviderRefCount prc = mProviderRefCountMap.get(jBinder);
                 {
                     prc.count += 1;
                     {
                         mH.removeMessages(H.REMOVE_PROVIDER, provider);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     mProviderRefCountMap.put(jBinder, new ProviderRefCount(1));
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_576426400 = provider;
         addTaint(context.getTaint());
         addTaint(provider.getTaint());
         addTaint(info.getTaint());
         addTaint(noisy);
         addTaint(noReleaseNeeded);
-        IContentProvider varA7E53CE21691AB073D9660D615818899_803060606; //Final return value
+        IContentProvider varA7E53CE21691AB073D9660D615818899_803060606; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_803060606 = varB4EAC82CA7396A68D541C85D26508E83_73719834;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_803060606 = varB4EAC82CA7396A68D541C85D26508E83_921433628;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_803060606 = varB4EAC82CA7396A68D541C85D26508E83_687724995;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_803060606 = varB4EAC82CA7396A68D541C85D26508E83_1051146569;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_803060606 = varB4EAC82CA7396A68D541C85D26508E83_576426400;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_803060606.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_803060606.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_803060606;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.934 -0400", hash_original_method = "C124A05EAD0D975305C2EDD26DCF96DC", hash_generated_method = "546B7882FBFA3A3F24EAA322BCE7CA34")
     private void attach(boolean system) {
         sThreadLocal.set(this);
@@ -4007,8 +4050,8 @@ public final class ActivityThread {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.931 -0400", hash_original_method = "47807A5814B5D681B360E1F6CDD604E7", hash_generated_method = "CE4C0CC733C0731411E130B03C44D6CB")
                 public void run() {
                     ensureJitEnabled();
-                    // ---------- Original Method ----------
-                    //ensureJitEnabled();
+                    
+                    
                 }
 });
             android.ddm.DdmHandleAppName.setAppName("<pre-initialized>");
@@ -4017,10 +4060,10 @@ public final class ActivityThread {
             try 
             {
                 mgr.attachApplication(mAppThread);
-            } //End block
+            } 
             catch (RemoteException ex)
             { }
-        } //End block
+        } 
         {
             android.ddm.DdmHandleAppName.setAppName("system_process");
             try 
@@ -4032,17 +4075,17 @@ public final class ActivityThread {
                 mAllApplications.add(app);
                 mInitialApplication = app;
                 app.onCreate();
-            } //End block
+            } 
             catch (Exception e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                         "Unable to instantiate Application():" + e.toString(), e);
-            } //End block
-        } //End block
+            } 
+        } 
         ViewRootImpl.addConfigCallback(new ComponentCallbacks2() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.932 -0400", hash_original_method = "26C6C7423624E1B7694397A08E8C6CD1", hash_generated_method = "2C70D570B2EEF64D7ECBB4A9F11DCC09")
             public void onConfigurationChanged(Configuration newConfig) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 {
                     {
                         boolean var7902634F304B837BD47B2192DBEFCA89_1956701953 = (applyConfigurationToResourcesLocked(newConfig, null));
@@ -4053,37 +4096,37 @@ public final class ActivityThread {
                                 {
                                     mPendingConfiguration = newConfig;
                                     queueOrSendMessage(H.CONFIGURATION_CHANGED, newConfig);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 addTaint(newConfig.getTaint());
-                // ---------- Original Method ----------
-                //synchronized (mPackages) {
-                    //if (applyConfigurationToResourcesLocked(newConfig, null)) {
-                        //if (mPendingConfiguration == null ||
-                                //mPendingConfiguration.isOtherSeqNewer(newConfig)) {
-                            //mPendingConfiguration = newConfig;
-                            //queueOrSendMessage(H.CONFIGURATION_CHANGED, newConfig);
-                        //}
-                    //}
-                //}
+                
+                
+                    
+                        
+                                
+                            
+                            
+                        
+                    
+                
             }
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.933 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "39AEB8790734ECC8DC70BBAAEE0BAB0B")
             public void onLowMemory() {
-                //DSFIXME:  CODE0009: Possible callback target function detected
-                // ---------- Original Method ----------
+                
+                
             }
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.933 -0400", hash_original_method = "3AE0D4ACEA3D5F3B779A378D5AB27A6A", hash_generated_method = "C1AFC91F30E138BA03233A690A40C0CC")
             public void onTrimMemory(int level) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 addTaint(level);
-                // ---------- Original Method ----------
+                
             }
 });
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4099,38 +4142,40 @@ public final class ActivityThread {
     public final void installSystemProviders(List<ProviderInfo> providers) {
         {
             installContentProviders(mInitialApplication, providers);
-        } //End block
+        } 
         addTaint(providers.getTaint());
-        // ---------- Original Method ----------
-        //if (providers != null) {
-            //installContentProviders(mInitialApplication, providers);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.936 -0400", hash_original_method = "A46DE63D351DE0CEA05BC700781E1C79", hash_generated_method = "97C2752408FC6A2B7FA7D7C28F1091B3")
     public int getIntCoreSetting(String key, int defaultValue) {
         {
             {
                 int varFDEB65FAB02737F165A27EF58C1FFD56_32993104 = (mCoreSettings.getInt(key, defaultValue));
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(key.getTaint());
         addTaint(defaultValue);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_175673829 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_175673829;
-        // ---------- Original Method ----------
-        //synchronized (mPackages) {
-            //if (mCoreSettings != null) {
-                //return mCoreSettings.getInt(key, defaultValue);
-            //} else {
-                //return defaultValue;
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
-        public static void main(String[] args) {
+        @DSModeled(DSC.SAFE)
+    public static void main(String[] args) {
         SamplingProfilerIntegration.start();
         CloseGuard.setEnabled(false);
         Process.setArgV0("<pre-initialized>");
@@ -4246,13 +4291,13 @@ public final class ActivityThread {
             stopped = false;
             hideForNow = false;
             nextIdle = null;
-            // ---------- Original Method ----------
-            //parent = null;
-            //embeddedID = null;
-            //paused = false;
-            //stopped = false;
-            //hideForNow = false;
-            //nextIdle = null;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -4261,36 +4306,36 @@ public final class ActivityThread {
             {
                 boolean var708B39EC3F85FBC7A5D34973A60AE645_1983609428 = (activity.getApplicationInfo().targetSdkVersion
                         < android.os.Build.VERSION_CODES.HONEYCOMB);
-            } //End block
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_876145284 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_876145284;
-            // ---------- Original Method ----------
-            //if (activity != null) {
-                //return activity.getApplicationInfo().targetSdkVersion
-                        //< android.os.Build.VERSION_CODES.HONEYCOMB;
-            //}
-            //return false;
+            
+            
+                
+                        
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.945 -0400", hash_original_method = "C4594DCD1E896B9BDB54D56E10F2B8EE", hash_generated_method = "98A47ABC7B423A9783CE43F43E3606C8")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1815324570 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1815324570 = null; 
             ComponentName componentName = intent.getComponent();
             varB4EAC82CA7396A68D541C85D26508E83_1815324570 = "ActivityRecord{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " token=" + token + " " + (componentName == null
                         ? "no component name" : componentName.toShortString())
                 + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_1815324570.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1815324570.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1815324570;
-            // ---------- Original Method ----------
-            //ComponentName componentName = intent.getComponent();
-            //return "ActivityRecord{"
-                //+ Integer.toHexString(System.identityHashCode(this))
-                //+ " token=" + token + " " + (componentName == null
-                        //? "no component name" : componentName.toShortString())
-                //+ "}";
+            
+            
+            
+                
+                
+                        
+                
         }
 
         
@@ -4315,18 +4360,18 @@ public final class ActivityThread {
             mName = name;
             mProvider = provider;
             mLocalProvider = localProvider;
-            // ---------- Original Method ----------
-            //mName = name;
-            //mProvider = provider;
-            //mLocalProvider = localProvider;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.947 -0400", hash_original_method = "3801456C44CFB93A5BA86A8AB8C43B3F", hash_generated_method = "B050BAB508FED40C5C7DDCB23C41347E")
         public void binderDied() {
             removeDeadProvider(mName, mProvider);
-            // ---------- Original Method ----------
-            //removeDeadProvider(mName, mProvider);
+            
+            
         }
 
         
@@ -4345,18 +4390,18 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.948 -0400", hash_original_method = "9A9162E54721E56B9804FAED427417E2", hash_generated_method = "9A9162E54721E56B9804FAED427417E2")
         public NewIntentData ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.949 -0400", hash_original_method = "E9F4DBEB4C72AFF7F672A47023D2DCCE", hash_generated_method = "B3311B6FC1BBD283E6D119CA70CDA5A2")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1533668056 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1533668056 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1533668056 = "NewIntentData{intents=" + intents + " token=" + token + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_1533668056.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1533668056.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1533668056;
-            // ---------- Original Method ----------
-            //return "NewIntentData{intents=" + intents + " token=" + token + "}";
+            
+            
         }
 
         
@@ -4386,25 +4431,25 @@ public final class ActivityThread {
             addTaint(ordered);
             addTaint(sticky);
             addTaint(token.getTaint());
-            // ---------- Original Method ----------
-            //this.intent = intent;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.951 -0400", hash_original_method = "062A80C4BE8CE608AA3884983AB20A02", hash_generated_method = "3CCD38B5B8A4D2A862FF756BA67891BE")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_815059947 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_815059947 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_815059947 = "ReceiverData{intent=" + intent + " packageName=" +
                     info.packageName + " resultCode=" + getResultCode()
                     + " resultData=" + getResultData() + " resultExtras="
                     + getResultExtras(false) + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_815059947.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_815059947.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_815059947;
-            // ---------- Original Method ----------
-            //return "ReceiverData{intent=" + intent + " packageName=" +
-                    //info.packageName + " resultCode=" + getResultCode()
-                    //+ " resultData=" + getResultData() + " resultExtras="
-                    //+ getResultExtras(false) + "}";
+            
+            
+                    
+                    
+                    
         }
 
         
@@ -4426,22 +4471,22 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.952 -0400", hash_original_method = "7F9A4ECF6FE623DBC230D640707CDFD0", hash_generated_method = "7F9A4ECF6FE623DBC230D640707CDFD0")
         public CreateBackupAgentData ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.952 -0400", hash_original_method = "87705B4B5A78FEE0786C01D6E7384189", hash_generated_method = "2726AD409B6DB76B58DF1F795377CA39")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1763229326 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1763229326 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1763229326 = "CreateBackupAgentData{appInfo=" + appInfo
                     + " backupAgent=" + appInfo.backupAgentName
                     + " mode=" + backupMode + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_1763229326.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1763229326.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1763229326;
-            // ---------- Original Method ----------
-            //return "CreateBackupAgentData{appInfo=" + appInfo
-                    //+ " backupAgent=" + appInfo.backupAgentName
-                    //+ " mode=" + backupMode + "}";
+            
+            
+                    
+                    
         }
 
         
@@ -4466,22 +4511,22 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.953 -0400", hash_original_method = "881257217964B643C1B29F21F8324D73", hash_generated_method = "881257217964B643C1B29F21F8324D73")
         public CreateServiceData ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.954 -0400", hash_original_method = "DE656B2587EA58A3FB80D8944832AD3A", hash_generated_method = "0C46945FD576F5D6FE30A934F1921D32")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1721417979 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1721417979 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1721417979 = "CreateServiceData{token=" + token + " className="
             + info.name + " packageName=" + info.packageName
             + " intent=" + intent + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_1721417979.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1721417979.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1721417979;
-            // ---------- Original Method ----------
-            //return "CreateServiceData{token=" + token + " className="
-            //+ info.name + " packageName=" + info.packageName
-            //+ " intent=" + intent + "}";
+            
+            
+            
+            
         }
 
         
@@ -4503,18 +4548,18 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.955 -0400", hash_original_method = "2B59A1695FBC674B2F74F0571D5E38A2", hash_generated_method = "2B59A1695FBC674B2F74F0571D5E38A2")
         public BindServiceData ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.956 -0400", hash_original_method = "788B7BFDCE261467774852FF99962FB6", hash_generated_method = "09E2C2EAD456A0BA878AE513B017DF82")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_159425289 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_159425289 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_159425289 = "BindServiceData{token=" + token + " intent=" + intent + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_159425289.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_159425289.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_159425289;
-            // ---------- Original Method ----------
-            //return "BindServiceData{token=" + token + " intent=" + intent + "}";
+            
+            
         }
 
         
@@ -4542,20 +4587,20 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.958 -0400", hash_original_method = "103D015CCE841E84C3050E807488FBE9", hash_generated_method = "103D015CCE841E84C3050E807488FBE9")
         public ServiceArgsData ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.959 -0400", hash_original_method = "9123370A477925A90205ABBEEFE44004", hash_generated_method = "5D70F7EA5F05D00A7A267B94CA544FC0")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_356753385 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_356753385 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_356753385 = "ServiceArgsData{token=" + token + " startId=" + startId
             + " args=" + args + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_356753385.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_356753385.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_356753385;
-            // ---------- Original Method ----------
-            //return "ServiceArgsData{token=" + token + " startId=" + startId
-            //+ " args=" + args + "}";
+            
+            
+            
         }
 
         
@@ -4613,18 +4658,18 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.962 -0400", hash_original_method = "EDE65A505FE77989B4B34B8F22E2D58F", hash_generated_method = "EDE65A505FE77989B4B34B8F22E2D58F")
         public AppBindData ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.963 -0400", hash_original_method = "2BA8F6DB78683607CF1A79B96A9E1945", hash_generated_method = "06DEA590E63D4D4F2C747FF17D84FDC6")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_445554044 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_445554044 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_445554044 = "AppBindData{appInfo=" + appInfo + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_445554044.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_445554044.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_445554044;
-            // ---------- Original Method ----------
-            //return "AppBindData{appInfo=" + appInfo + "}";
+            
+            
         }
 
         
@@ -4652,7 +4697,7 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.964 -0400", hash_original_method = "7B9BEA1F6EC95E751CD548D4F51680C9", hash_generated_method = "7B9BEA1F6EC95E751CD548D4F51680C9")
         public Profiler ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -4663,39 +4708,39 @@ public final class ActivityThread {
                     try 
                     {
                         fd.close();
-                    } //End block
+                    } 
                     catch (IOException e)
                     { }
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 try 
                 {
                     profileFd.close();
-                } //End block
+                } 
                 catch (IOException e)
                 { }
-            } //End block
+            } 
             profileFile = file;
             profileFd = fd;
-            // ---------- Original Method ----------
-            //if (profiling) {
-                //if (fd != null) {
-                    //try {
-                        //fd.close();
-                    //} catch (IOException e) {
-                    //}
-                //}
-                //return;
-            //}
-            //if (profileFd != null) {
-                //try {
-                    //profileFd.close();
-                //} catch (IOException e) {
-                //}
-            //}
-            //profileFile = file;
-            //profileFd = fd;
+            
+            
+                
+                    
+                        
+                    
+                    
+                
+                
+            
+            
+                
+                    
+                
+                
+            
+            
+            
         }
 
         
@@ -4706,34 +4751,34 @@ public final class ActivityThread {
                 Debug.startMethodTracing(profileFile, profileFd.getFileDescriptor(),
                         8 * 1024 * 1024, 0);
                 profiling = true;
-            } //End block
+            } 
             catch (RuntimeException e)
             {
                 try 
                 {
                     profileFd.close();
                     profileFd = null;
-                } //End block
+                } 
                 catch (IOException e2)
                 { }
-            } //End block
-            // ---------- Original Method ----------
-            //if (profileFd == null || profiling) {
-                //return;
-            //}
-            //try {
-                //Debug.startMethodTracing(profileFile, profileFd.getFileDescriptor(),
-                        //8 * 1024 * 1024, 0);
-                //profiling = true;
-            //} catch (RuntimeException e) {
-                //Slog.w(TAG, "Profiling failed on path " + profileFile);
-                //try {
-                    //profileFd.close();
-                    //profileFd = null;
-                //} catch (IOException e2) {
-                    //Slog.w(TAG, "Failure closing profile fd", e2);
-                //}
-            //}
+            } 
+            
+            
+                
+            
+            
+                
+                        
+                
+            
+                
+                
+                    
+                    
+                
+                    
+                
+            
         }
 
         
@@ -4746,26 +4791,26 @@ public final class ActivityThread {
                     try 
                     {
                         profileFd.close();
-                    } //End block
+                    } 
                     catch (IOException e)
                     { }
-                } //End block
+                } 
                 profileFd = null;
                 profileFile = null;
-            } //End block
-            // ---------- Original Method ----------
-            //if (profiling) {
-                //profiling = false;
-                //Debug.stopMethodTracing();
-                //if (profileFd != null) {
-                    //try {
-                        //profileFd.close();
-                    //} catch (IOException e) {
-                    //}
-                //}
-                //profileFd = null;
-                //profileFile = null;
-            //}
+            } 
+            
+            
+                
+                
+                
+                    
+                        
+                    
+                    
+                
+                
+                
+            
         }
 
         
@@ -4790,7 +4835,7 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.968 -0400", hash_original_method = "705FE87B3B944DB1E7088D167B1442FA", hash_generated_method = "705FE87B3B944DB1E7088D167B1442FA")
         public DumpComponentInfo ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -4809,18 +4854,18 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.968 -0400", hash_original_method = "3466C6D5CF0FEDF7456B3B9BA6367B40", hash_generated_method = "3466C6D5CF0FEDF7456B3B9BA6367B40")
         public ResultData ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.969 -0400", hash_original_method = "BA3AA15664E126972C9E79255FFB7B3E", hash_generated_method = "1B858084F9F5623CE67B8822A734FA8A")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_181218047 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_181218047 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_181218047 = "ResultData{token=" + token + " results" + results + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_181218047.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_181218047.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_181218047;
-            // ---------- Original Method ----------
-            //return "ResultData{token=" + token + " results" + results + "}";
+            
+            
         }
 
         
@@ -4842,7 +4887,7 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.970 -0400", hash_original_method = "1364E4E916202312196441F2CD1A38A7", hash_generated_method = "1364E4E916202312196441F2CD1A38A7")
         public ContextCleanupInfo ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -4861,7 +4906,7 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.970 -0400", hash_original_method = "D11C2D1935BF651482EE891D2A926235", hash_generated_method = "D11C2D1935BF651482EE891D2A926235")
         public ProfilerControlData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -4880,7 +4925,7 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.971 -0400", hash_original_method = "5B27D5ED8CFA7C0680EB0EE8314BCB6F", hash_generated_method = "5B27D5ED8CFA7C0680EB0EE8314BCB6F")
         public DumpHeapData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -4899,7 +4944,7 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.971 -0400", hash_original_method = "20ABF4B3D5332D1381C869593F335293", hash_generated_method = "20ABF4B3D5332D1381C869593F335293")
         public UpdateCompatibilityData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -4912,7 +4957,7 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.972 -0400", hash_original_method = "1FF8F0D2A8FB58C213C16741C12E71C3", hash_generated_method = "1FF8F0D2A8FB58C213C16741C12E71C3")
         public ApplicationThread ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -4924,17 +4969,17 @@ public final class ActivityThread {
                         mPendingConfiguration.isOtherSeqNewer(config));
                     {
                         mPendingConfiguration = config;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             addTaint(config.getTaint());
-            // ---------- Original Method ----------
-            //synchronized (mPackages) {
-                //if (mPendingConfiguration == null ||
-                        //mPendingConfiguration.isOtherSeqNewer(config)) {
-                    //mPendingConfiguration = config;
-                //}
-            //}
+            
+            
+                
+                        
+                    
+                
+            
         }
 
         
@@ -4950,12 +4995,12 @@ public final class ActivityThread {
             addTaint(finished);
             addTaint(userLeaving);
             addTaint(configChanges);
-            // ---------- Original Method ----------
-            //queueOrSendMessage(
-                    //finished ? H.PAUSE_ACTIVITY_FINISHING : H.PAUSE_ACTIVITY,
-                    //token,
-                    //(userLeaving ? 1 : 0),
-                    //configChanges);
+            
+            
+                    
+                    
+                    
+                    
         }
 
         
@@ -4968,10 +5013,10 @@ public final class ActivityThread {
             addTaint(token.getTaint());
             addTaint(showWindow);
             addTaint(configChanges);
-            // ---------- Original Method ----------
-            //queueOrSendMessage(
-                //showWindow ? H.STOP_ACTIVITY_SHOW : H.STOP_ACTIVITY_HIDE,
-                //token, 0, configChanges);
+            
+            
+                
+                
         }
 
         
@@ -4982,10 +5027,10 @@ public final class ActivityThread {
                 token);
             addTaint(token.getTaint());
             addTaint(showWindow);
-            // ---------- Original Method ----------
-            //queueOrSendMessage(
-                //showWindow ? H.SHOW_WINDOW : H.HIDE_WINDOW,
-                //token);
+            
+            
+                
+                
         }
 
         
@@ -4994,8 +5039,8 @@ public final class ActivityThread {
             queueOrSendMessage(H.SLEEPING, token, sleeping ? 1 : 0);
             addTaint(token.getTaint());
             addTaint(sleeping);
-            // ---------- Original Method ----------
-            //queueOrSendMessage(H.SLEEPING, token, sleeping ? 1 : 0);
+            
+            
         }
 
         
@@ -5004,8 +5049,8 @@ public final class ActivityThread {
             queueOrSendMessage(H.RESUME_ACTIVITY, token, isForward ? 1 : 0);
             addTaint(token.getTaint());
             addTaint(isForward);
-            // ---------- Original Method ----------
-            //queueOrSendMessage(H.RESUME_ACTIVITY, token, isForward ? 1 : 0);
+            
+            
         }
 
         
@@ -5017,11 +5062,11 @@ public final class ActivityThread {
             queueOrSendMessage(H.SEND_RESULT, res);
             addTaint(token.getTaint());
             addTaint(results.getTaint());
-            // ---------- Original Method ----------
-            //ResultData res = new ResultData();
-            //res.token = token;
-            //res.results = results;
-            //queueOrSendMessage(H.SEND_RESULT, res);
+            
+            
+            
+            
+            
         }
 
         
@@ -5061,23 +5106,23 @@ public final class ActivityThread {
             addTaint(profileName.getTaint());
             addTaint(profileFd.getTaint());
             addTaint(autoStopProfiler);
-            // ---------- Original Method ----------
-            //ActivityClientRecord r = new ActivityClientRecord();
-            //r.token = token;
-            //r.ident = ident;
-            //r.intent = intent;
-            //r.activityInfo = info;
-            //r.compatInfo = compatInfo;
-            //r.state = state;
-            //r.pendingResults = pendingResults;
-            //r.pendingIntents = pendingNewIntents;
-            //r.startsNotResumed = notResumed;
-            //r.isForward = isForward;
-            //r.profileFile = profileName;
-            //r.profileFd = profileFd;
-            //r.autoStopProfiler = autoStopProfiler;
-            //updatePendingConfiguration(curConfig);
-            //queueOrSendMessage(H.LAUNCH_ACTIVITY, r);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -5093,9 +5138,9 @@ public final class ActivityThread {
             addTaint(configChanges);
             addTaint(notResumed);
             addTaint(config.getTaint());
-            // ---------- Original Method ----------
-            //requestRelaunchActivity(token, pendingResults, pendingNewIntents,
-                    //configChanges, notResumed, config, true);
+            
+            
+                    
         }
 
         
@@ -5107,11 +5152,11 @@ public final class ActivityThread {
             queueOrSendMessage(H.NEW_INTENT, data);
             addTaint(intents.getTaint());
             addTaint(token.getTaint());
-            // ---------- Original Method ----------
-            //NewIntentData data = new NewIntentData();
-            //data.intents = intents;
-            //data.token = token;
-            //queueOrSendMessage(H.NEW_INTENT, data);
+            
+            
+            
+            
+            
         }
 
         
@@ -5123,9 +5168,9 @@ public final class ActivityThread {
             addTaint(token.getTaint());
             addTaint(finishing);
             addTaint(configChanges);
-            // ---------- Original Method ----------
-            //queueOrSendMessage(H.DESTROY_ACTIVITY, token, finishing ? 1 : 0,
-                    //configChanges);
+            
+            
+                    
         }
 
         
@@ -5145,12 +5190,12 @@ public final class ActivityThread {
             addTaint(data.getTaint());
             addTaint(extras.getTaint());
             addTaint(sync);
-            // ---------- Original Method ----------
-            //ReceiverData r = new ReceiverData(intent, resultCode, data, extras,
-                    //sync, false, mAppThread.asBinder());
-            //r.info = info;
-            //r.compatInfo = compatInfo;
-            //queueOrSendMessage(H.RECEIVER, r);
+            
+            
+                    
+            
+            
+            
         }
 
         
@@ -5165,12 +5210,12 @@ public final class ActivityThread {
             addTaint(app.getTaint());
             addTaint(compatInfo.getTaint());
             addTaint(backupMode);
-            // ---------- Original Method ----------
-            //CreateBackupAgentData d = new CreateBackupAgentData();
-            //d.appInfo = app;
-            //d.compatInfo = compatInfo;
-            //d.backupMode = backupMode;
-            //queueOrSendMessage(H.CREATE_BACKUP_AGENT, d);
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -5183,11 +5228,11 @@ public final class ActivityThread {
             queueOrSendMessage(H.DESTROY_BACKUP_AGENT, d);
             addTaint(app.getTaint());
             addTaint(compatInfo.getTaint());
-            // ---------- Original Method ----------
-            //CreateBackupAgentData d = new CreateBackupAgentData();
-            //d.appInfo = app;
-            //d.compatInfo = compatInfo;
-            //queueOrSendMessage(H.DESTROY_BACKUP_AGENT, d);
+            
+            
+            
+            
+            
         }
 
         
@@ -5202,12 +5247,12 @@ public final class ActivityThread {
             addTaint(token.getTaint());
             addTaint(info.getTaint());
             addTaint(compatInfo.getTaint());
-            // ---------- Original Method ----------
-            //CreateServiceData s = new CreateServiceData();
-            //s.token = token;
-            //s.info = info;
-            //s.compatInfo = compatInfo;
-            //queueOrSendMessage(H.CREATE_SERVICE, s);
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -5222,12 +5267,12 @@ public final class ActivityThread {
             addTaint(token.getTaint());
             addTaint(intent.getTaint());
             addTaint(rebind);
-            // ---------- Original Method ----------
-            //BindServiceData s = new BindServiceData();
-            //s.token = token;
-            //s.intent = intent;
-            //s.rebind = rebind;
-            //queueOrSendMessage(H.BIND_SERVICE, s);
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -5239,11 +5284,11 @@ public final class ActivityThread {
             queueOrSendMessage(H.UNBIND_SERVICE, s);
             addTaint(token.getTaint());
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            //BindServiceData s = new BindServiceData();
-            //s.token = token;
-            //s.intent = intent;
-            //queueOrSendMessage(H.UNBIND_SERVICE, s);
+            
+            
+            
+            
+            
         }
 
         
@@ -5262,14 +5307,14 @@ public final class ActivityThread {
             addTaint(startId);
             addTaint(flags);
             addTaint(args.getTaint());
-            // ---------- Original Method ----------
-            //ServiceArgsData s = new ServiceArgsData();
-            //s.token = token;
-            //s.taskRemoved = taskRemoved;
-            //s.startId = startId;
-            //s.flags = flags;
-            //s.args = args;
-            //queueOrSendMessage(H.SERVICE_ARGS, s);
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -5277,8 +5322,8 @@ public final class ActivityThread {
         public final void scheduleStopService(IBinder token) {
             queueOrSendMessage(H.STOP_SERVICE, token);
             addTaint(token.getTaint());
-            // ---------- Original Method ----------
-            //queueOrSendMessage(H.STOP_SERVICE, token);
+            
+            
         }
 
         
@@ -5293,7 +5338,7 @@ public final class ActivityThread {
                 Map<String, IBinder> services, Bundle coreSettings) {
             {
                 ServiceManager.initServiceCache(services);
-            } //End block
+            } 
             setCoreSettings(coreSettings);
             AppBindData data = new AppBindData();
             data.processName = processName;
@@ -5327,24 +5372,24 @@ public final class ActivityThread {
             addTaint(compatInfo.getTaint());
             addTaint(services.getTaint());
             addTaint(coreSettings.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.988 -0400", hash_original_method = "8F2CF4412C4F9594CB0F284CDA41289F", hash_generated_method = "FD95F1744B2DADE0E6256342E369D342")
         public final void scheduleExit() {
             queueOrSendMessage(H.EXIT_APPLICATION, null);
-            // ---------- Original Method ----------
-            //queueOrSendMessage(H.EXIT_APPLICATION, null);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.989 -0400", hash_original_method = "B20E9F159FCFB18DA16F9E3A94AEF27F", hash_generated_method = "FCFDDF7AD8124B805F52430959A87E50")
         public final void scheduleSuicide() {
             queueOrSendMessage(H.SUICIDE, null);
-            // ---------- Original Method ----------
-            //queueOrSendMessage(H.SUICIDE, null);
+            
+            
         }
 
         
@@ -5352,8 +5397,8 @@ public final class ActivityThread {
         public void requestThumbnail(IBinder token) {
             queueOrSendMessage(H.REQUEST_THUMBNAIL, token);
             addTaint(token.getTaint());
-            // ---------- Original Method ----------
-            //queueOrSendMessage(H.REQUEST_THUMBNAIL, token);
+            
+            
         }
 
         
@@ -5362,25 +5407,25 @@ public final class ActivityThread {
             updatePendingConfiguration(config);
             queueOrSendMessage(H.CONFIGURATION_CHANGED, config);
             addTaint(config.getTaint());
-            // ---------- Original Method ----------
-            //updatePendingConfiguration(config);
-            //queueOrSendMessage(H.CONFIGURATION_CHANGED, config);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.991 -0400", hash_original_method = "691E3B4CEF6237A9A1AE3434E3DEDEFF", hash_generated_method = "B8C95D80E84F89DC0BEDC85471A2F2D3")
         public void updateTimeZone() {
             TimeZone.setDefault(null);
-            // ---------- Original Method ----------
-            //TimeZone.setDefault(null);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.992 -0400", hash_original_method = "38B626EB423003E8CAF0F1407CD9E9A9", hash_generated_method = "4A28A43D9782A661EAF6F85250AF0D6F")
         public void clearDnsCache() {
             InetAddress.clearDnsCache();
-            // ---------- Original Method ----------
-            //InetAddress.clearDnsCache();
+            
+            
         }
 
         
@@ -5390,8 +5435,8 @@ public final class ActivityThread {
             addTaint(host.getTaint());
             addTaint(port.getTaint());
             addTaint(exclList.getTaint());
-            // ---------- Original Method ----------
-            //Proxy.setHttpProxySystemProperty(host, port, exclList);
+            
+            
         }
 
         
@@ -5399,9 +5444,9 @@ public final class ActivityThread {
         public void processInBackground() {
             mH.removeMessages(H.GC_WHEN_IDLE);
             mH.sendMessage(mH.obtainMessage(H.GC_WHEN_IDLE));
-            // ---------- Original Method ----------
-            //mH.removeMessages(H.GC_WHEN_IDLE);
-            //mH.sendMessage(mH.obtainMessage(H.GC_WHEN_IDLE));
+            
+            
+            
         }
 
         
@@ -5414,22 +5459,22 @@ public final class ActivityThread {
                 data.token = servicetoken;
                 data.args = args;
                 queueOrSendMessage(H.DUMP_SERVICE, data);
-            } //End block
+            } 
             catch (IOException e)
             { }
             addTaint(fd.getTaint());
             addTaint(servicetoken.getTaint());
             addTaint(args[0].getTaint());
-            // ---------- Original Method ----------
-            //DumpComponentInfo data = new DumpComponentInfo();
-            //try {
-                //data.fd = ParcelFileDescriptor.dup(fd);
-                //data.token = servicetoken;
-                //data.args = args;
-                //queueOrSendMessage(H.DUMP_SERVICE, data);
-            //} catch (IOException e) {
-                //Slog.w(TAG, "dumpService failed", e);
-            //}
+            
+            
+            
+                
+                
+                
+                
+            
+                
+            
         }
 
         
@@ -5445,16 +5490,16 @@ public final class ActivityThread {
             addTaint(extras.getTaint());
             addTaint(ordered);
             addTaint(sticky);
-            // ---------- Original Method ----------
-            //receiver.performReceive(intent, resultCode, dataStr, extras, ordered, sticky);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:15.995 -0400", hash_original_method = "1CA11DE4169634D3536C3A5288820C11", hash_generated_method = "C0AEC8819655C2E24AF50FB99520B4E3")
         public void scheduleLowMemory() {
             queueOrSendMessage(H.LOW_MEMORY, null);
-            // ---------- Original Method ----------
-            //queueOrSendMessage(H.LOW_MEMORY, null);
+            
+            
         }
 
         
@@ -5462,8 +5507,8 @@ public final class ActivityThread {
         public void scheduleActivityConfigurationChanged(IBinder token) {
             queueOrSendMessage(H.ACTIVITY_CONFIGURATION_CHANGED, token);
             addTaint(token.getTaint());
-            // ---------- Original Method ----------
-            //queueOrSendMessage(H.ACTIVITY_CONFIGURATION_CHANGED, token);
+            
+            
         }
 
         
@@ -5478,11 +5523,11 @@ public final class ActivityThread {
             addTaint(path.getTaint());
             addTaint(fd.getTaint());
             addTaint(profileType);
-            // ---------- Original Method ----------
-            //ProfilerControlData pcd = new ProfilerControlData();
-            //pcd.path = path;
-            //pcd.fd = fd;
-            //queueOrSendMessage(H.PROFILER_CONTROL, pcd, start ? 1 : 0, profileType);
+            
+            
+            
+            
+            
         }
 
         
@@ -5495,11 +5540,11 @@ public final class ActivityThread {
             addTaint(managed);
             addTaint(path.getTaint());
             addTaint(fd.getTaint());
-            // ---------- Original Method ----------
-            //DumpHeapData dhd = new DumpHeapData();
-            //dhd.path = path;
-            //dhd.fd = fd;
-            //queueOrSendMessage(H.DUMP_HEAP, dhd, managed ? 1 : 0);
+            
+            
+            
+            
+            
         }
 
         
@@ -5508,16 +5553,16 @@ public final class ActivityThread {
             try 
             {
                 Process.setProcessGroup(Process.myPid(), group);
-            } //End block
+            } 
             catch (Exception e)
             { }
             addTaint(group);
-            // ---------- Original Method ----------
-            //try {
-                //Process.setProcessGroup(Process.myPid(), group);
-            //} catch (Exception e) {
-                //Slog.w(TAG, "Failed setting process group to " + group, e);
-            //}
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -5525,8 +5570,8 @@ public final class ActivityThread {
         public void getMemoryInfo(Debug.MemoryInfo outInfo) {
             Debug.getMemoryInfo(outInfo);
             addTaint(outInfo.getTaint());
-            // ---------- Original Method ----------
-            //Debug.getMemoryInfo(outInfo);
+            
+            
         }
 
         
@@ -5535,8 +5580,8 @@ public final class ActivityThread {
             queueOrSendMessage(H.DISPATCH_PACKAGE_BROADCAST, packages, cmd);
             addTaint(cmd);
             addTaint(packages[0].getTaint());
-            // ---------- Original Method ----------
-            //queueOrSendMessage(H.DISPATCH_PACKAGE_BROADCAST, packages, cmd);
+            
+            
         }
 
         
@@ -5544,8 +5589,8 @@ public final class ActivityThread {
         public void scheduleCrash(String msg) {
             queueOrSendMessage(H.SCHEDULE_CRASH, msg);
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //queueOrSendMessage(H.SCHEDULE_CRASH, msg);
+            
+            
         }
 
         
@@ -5560,24 +5605,24 @@ public final class ActivityThread {
                 data.prefix = prefix;
                 data.args = args;
                 queueOrSendMessage(H.DUMP_ACTIVITY, data);
-            } //End block
+            } 
             catch (IOException e)
             { }
             addTaint(fd.getTaint());
             addTaint(activitytoken.getTaint());
             addTaint(prefix.getTaint());
             addTaint(args[0].getTaint());
-            // ---------- Original Method ----------
-            //DumpComponentInfo data = new DumpComponentInfo();
-            //try {
-                //data.fd = ParcelFileDescriptor.dup(fd);
-                //data.token = activitytoken;
-                //data.prefix = prefix;
-                //data.args = args;
-                //queueOrSendMessage(H.DUMP_ACTIVITY, data);
-            //} catch (IOException e) {
-                //Slog.w(TAG, "dumpActivity failed", e);
-            //}
+            
+            
+            
+                
+                
+                
+                
+                
+            
+                
+            
         }
 
         
@@ -5585,40 +5630,40 @@ public final class ActivityThread {
         @Override
         public Debug.MemoryInfo dumpMemInfo(FileDescriptor fd, boolean checkin,
                 boolean all, String[] args) {
-            Debug.MemoryInfo varB4EAC82CA7396A68D541C85D26508E83_1882913340 = null; //Variable for return #1
+            Debug.MemoryInfo varB4EAC82CA7396A68D541C85D26508E83_1882913340 = null; 
             FileOutputStream fout = new FileOutputStream(fd);
             PrintWriter pw = new PrintWriter(fout);
             try 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1882913340 = dumpMemInfo(pw, checkin, all, args);
-            } //End block
+            } 
             finally 
             {
                 pw.flush();
-            } //End block
+            } 
             addTaint(fd.getTaint());
             addTaint(checkin);
             addTaint(all);
             addTaint(args[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1882913340.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1882913340.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1882913340;
-            // ---------- Original Method ----------
-            //FileOutputStream fout = new FileOutputStream(fd);
-            //PrintWriter pw = new PrintWriter(fout);
-            //try {
-                //return dumpMemInfo(pw, checkin, all, args);
-            //} finally {
-                //pw.flush();
-            //}
+            
+            
+            
+            
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.007 -0400", hash_original_method = "468180529DE63D6D9E6979D7BD66773F", hash_generated_method = "3CC9C4761490A62C5CFB3AD6CCA67341")
         private Debug.MemoryInfo dumpMemInfo(PrintWriter pw, boolean checkin, boolean all,
                 String[] args) {
-            Debug.MemoryInfo varB4EAC82CA7396A68D541C85D26508E83_1671464966 = null; //Variable for return #1
-            Debug.MemoryInfo varB4EAC82CA7396A68D541C85D26508E83_1440882782 = null; //Variable for return #2
-            Debug.MemoryInfo varB4EAC82CA7396A68D541C85D26508E83_1611898189 = null; //Variable for return #3
+            Debug.MemoryInfo varB4EAC82CA7396A68D541C85D26508E83_1671464966 = null; 
+            Debug.MemoryInfo varB4EAC82CA7396A68D541C85D26508E83_1440882782 = null; 
+            Debug.MemoryInfo varB4EAC82CA7396A68D541C85D26508E83_1611898189 = null; 
             long nativeMax = Debug.getNativeHeapSize() / 1024;
             long nativeAllocated = Debug.getNativeHeapAllocatedSize() / 1024;
             long nativeFree = Debug.getNativeHeapFreeSize() / 1024;
@@ -5626,7 +5671,7 @@ public final class ActivityThread {
             Debug.getMemoryInfo(memInfo);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1671464966 = memInfo;
-            } //End block
+            } 
             Runtime runtime = Runtime.getRuntime();
             long dalvikMax = runtime.totalMemory() / 1024;
             long dalvikFree = runtime.freeMemory() / 1024;
@@ -5744,11 +5789,11 @@ public final class ActivityThread {
                         pw.print(dbStats.cache);
                         pw.print(',');
                         pw.print(dbStats.cache);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 pw.println();
                 varB4EAC82CA7396A68D541C85D26508E83_1440882782 = memInfo;
-            } //End block
+            } 
             printRow(pw, HEAP_COLUMN, "", "", "Shared", "Private", "Heap", "Heap", "Heap");
             printRow(pw, HEAP_COLUMN, "", "Pss", "Dirty", "Dirty", "Size", "Alloc", "Free");
             printRow(pw, HEAP_COLUMN, "", "------", "------", "------", "------", "------",
@@ -5769,8 +5814,8 @@ public final class ActivityThread {
                     otherPss -= memInfo.getOtherPss(i);
                     otherSharedDirty -= memInfo.getOtherSharedDirty(i);
                     otherPrivateDirty -= memInfo.getOtherPrivateDirty(i);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             printRow(pw, HEAP_COLUMN, "Unknown", otherPss, otherSharedDirty,
                     otherPrivateDirty, "", "", "");
             printRow(pw, HEAP_COLUMN, "TOTAL", memInfo.getTotalPss(),
@@ -5810,36 +5855,36 @@ public final class ActivityThread {
                             (dbStats.dbSize > 0) ? String.valueOf(dbStats.dbSize) : " ",
                             (dbStats.lookaside > 0) ? String.valueOf(dbStats.lookaside) : " ",
                             dbStats.cache, dbStats.dbName);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             String assetAlloc = AssetManager.getAssetAllocations();
             {
                 pw.println(" ");
                 pw.println(" Asset Allocations");
                 pw.print(assetAlloc);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1611898189 = memInfo;
             addTaint(pw.getTaint());
             addTaint(checkin);
             addTaint(all);
             addTaint(args[0].getTaint());
-            Debug.MemoryInfo varA7E53CE21691AB073D9660D615818899_1774943298; //Final return value
+            Debug.MemoryInfo varA7E53CE21691AB073D9660D615818899_1774943298; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1774943298 = varB4EAC82CA7396A68D541C85D26508E83_1671464966;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1774943298 = varB4EAC82CA7396A68D541C85D26508E83_1440882782;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1774943298 = varB4EAC82CA7396A68D541C85D26508E83_1611898189;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1774943298.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1774943298.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1774943298;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -5850,9 +5895,9 @@ public final class ActivityThread {
             WindowManagerImpl.getDefault().dumpGfxInfo(fd);
             addTaint(fd.getTaint());
             addTaint(args[0].getTaint());
-            // ---------- Original Method ----------
-            //dumpGraphicsInfo(fd);
-            //WindowManagerImpl.getDefault().dumpGfxInfo(fd);
+            
+            
+            
         }
 
         
@@ -5862,8 +5907,8 @@ public final class ActivityThread {
             addTaint(pw.getTaint());
             addTaint(format.getTaint());
             addTaint(objs[0].getTaint());
-            // ---------- Original Method ----------
-            //pw.println(String.format(format, objs));
+            
+            
         }
 
         
@@ -5871,8 +5916,8 @@ public final class ActivityThread {
         public void setCoreSettings(Bundle coreSettings) {
             queueOrSendMessage(H.SET_CORE_SETTINGS, coreSettings);
             addTaint(coreSettings.getTaint());
-            // ---------- Original Method ----------
-            //queueOrSendMessage(H.SET_CORE_SETTINGS, coreSettings);
+            
+            
         }
 
         
@@ -5884,11 +5929,11 @@ public final class ActivityThread {
             queueOrSendMessage(H.UPDATE_PACKAGE_COMPATIBILITY_INFO, ucd);
             addTaint(pkg.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
-            //UpdateCompatibilityData ucd = new UpdateCompatibilityData();
-            //ucd.pkg = pkg;
-            //ucd.info = info;
-            //queueOrSendMessage(H.UPDATE_PACKAGE_COMPATIBILITY_INFO, ucd);
+            
+            
+            
+            
+            
         }
 
         
@@ -5896,8 +5941,8 @@ public final class ActivityThread {
         public void scheduleTrimMemory(int level) {
             queueOrSendMessage(H.TRIM_MEMORY, null, level);
             addTaint(level);
-            // ---------- Original Method ----------
-            //queueOrSendMessage(H.TRIM_MEMORY, null, level);
+            
+            
         }
 
         
@@ -5928,475 +5973,475 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.013 -0400", hash_original_method = "31EC72C0AC7AFF27B721CAEF4AAA57B5", hash_generated_method = "31EC72C0AC7AFF27B721CAEF4AAA57B5")
         public H ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.019 -0400", hash_original_method = "D4EECE8CA6B12CA48ED79AE861C2FF1C", hash_generated_method = "3C8DF3CEE44D92428EC67D447AF44984")
          String codeToString(int code) {
-            String varB4EAC82CA7396A68D541C85D26508E83_1398565327 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_458996058 = null; //Variable for return #2
-            String varB4EAC82CA7396A68D541C85D26508E83_2084638897 = null; //Variable for return #3
-            String varB4EAC82CA7396A68D541C85D26508E83_98945728 = null; //Variable for return #4
-            String varB4EAC82CA7396A68D541C85D26508E83_1765716512 = null; //Variable for return #5
-            String varB4EAC82CA7396A68D541C85D26508E83_721311701 = null; //Variable for return #6
-            String varB4EAC82CA7396A68D541C85D26508E83_418411736 = null; //Variable for return #7
-            String varB4EAC82CA7396A68D541C85D26508E83_949841536 = null; //Variable for return #8
-            String varB4EAC82CA7396A68D541C85D26508E83_1368621001 = null; //Variable for return #9
-            String varB4EAC82CA7396A68D541C85D26508E83_795825906 = null; //Variable for return #10
-            String varB4EAC82CA7396A68D541C85D26508E83_384195501 = null; //Variable for return #11
-            String varB4EAC82CA7396A68D541C85D26508E83_1461055576 = null; //Variable for return #12
-            String varB4EAC82CA7396A68D541C85D26508E83_193991372 = null; //Variable for return #13
-            String varB4EAC82CA7396A68D541C85D26508E83_1003177583 = null; //Variable for return #14
-            String varB4EAC82CA7396A68D541C85D26508E83_2019906579 = null; //Variable for return #15
-            String varB4EAC82CA7396A68D541C85D26508E83_1346998060 = null; //Variable for return #16
-            String varB4EAC82CA7396A68D541C85D26508E83_1549955559 = null; //Variable for return #17
-            String varB4EAC82CA7396A68D541C85D26508E83_1438108485 = null; //Variable for return #18
-            String varB4EAC82CA7396A68D541C85D26508E83_1775910327 = null; //Variable for return #19
-            String varB4EAC82CA7396A68D541C85D26508E83_2052650214 = null; //Variable for return #20
-            String varB4EAC82CA7396A68D541C85D26508E83_155294750 = null; //Variable for return #21
-            String varB4EAC82CA7396A68D541C85D26508E83_835125871 = null; //Variable for return #22
-            String varB4EAC82CA7396A68D541C85D26508E83_1056924531 = null; //Variable for return #23
-            String varB4EAC82CA7396A68D541C85D26508E83_2054312266 = null; //Variable for return #24
-            String varB4EAC82CA7396A68D541C85D26508E83_1623012468 = null; //Variable for return #25
-            String varB4EAC82CA7396A68D541C85D26508E83_379209317 = null; //Variable for return #26
-            String varB4EAC82CA7396A68D541C85D26508E83_1311528951 = null; //Variable for return #27
-            String varB4EAC82CA7396A68D541C85D26508E83_1051058362 = null; //Variable for return #28
-            String varB4EAC82CA7396A68D541C85D26508E83_1336766832 = null; //Variable for return #29
-            String varB4EAC82CA7396A68D541C85D26508E83_509083873 = null; //Variable for return #30
-            String varB4EAC82CA7396A68D541C85D26508E83_1270118566 = null; //Variable for return #31
-            String varB4EAC82CA7396A68D541C85D26508E83_306253609 = null; //Variable for return #32
-            String varB4EAC82CA7396A68D541C85D26508E83_1121202251 = null; //Variable for return #33
-            String varB4EAC82CA7396A68D541C85D26508E83_842677545 = null; //Variable for return #34
-            String varB4EAC82CA7396A68D541C85D26508E83_386909507 = null; //Variable for return #35
-            String varB4EAC82CA7396A68D541C85D26508E83_549678638 = null; //Variable for return #36
-            String varB4EAC82CA7396A68D541C85D26508E83_62018345 = null; //Variable for return #37
-            String varB4EAC82CA7396A68D541C85D26508E83_848538566 = null; //Variable for return #38
-            String varB4EAC82CA7396A68D541C85D26508E83_710170950 = null; //Variable for return #39
-            String varB4EAC82CA7396A68D541C85D26508E83_1144730846 = null; //Variable for return #40
-            String varB4EAC82CA7396A68D541C85D26508E83_1530581689 = null; //Variable for return #41
-            String varB4EAC82CA7396A68D541C85D26508E83_1079023403 = null; //Variable for return #42
+            String varB4EAC82CA7396A68D541C85D26508E83_1398565327 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_458996058 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_2084638897 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_98945728 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1765716512 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_721311701 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_418411736 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_949841536 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1368621001 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_795825906 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_384195501 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1461055576 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_193991372 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1003177583 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_2019906579 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1346998060 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1549955559 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1438108485 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1775910327 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_2052650214 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_155294750 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_835125871 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1056924531 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_2054312266 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1623012468 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_379209317 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1311528951 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1051058362 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1336766832 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_509083873 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1270118566 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_306253609 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1121202251 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_842677545 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_386909507 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_549678638 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_62018345 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_848538566 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_710170950 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1144730846 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1530581689 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1079023403 = null; 
             {
-                //Begin case LAUNCH_ACTIVITY 
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1398565327 = "LAUNCH_ACTIVITY";
-                //End case LAUNCH_ACTIVITY 
-                //Begin case PAUSE_ACTIVITY 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_458996058 = "PAUSE_ACTIVITY";
-                //End case PAUSE_ACTIVITY 
-                //Begin case PAUSE_ACTIVITY_FINISHING 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_2084638897 = "PAUSE_ACTIVITY_FINISHING";
-                //End case PAUSE_ACTIVITY_FINISHING 
-                //Begin case STOP_ACTIVITY_SHOW 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_98945728 = "STOP_ACTIVITY_SHOW";
-                //End case STOP_ACTIVITY_SHOW 
-                //Begin case STOP_ACTIVITY_HIDE 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1765716512 = "STOP_ACTIVITY_HIDE";
-                //End case STOP_ACTIVITY_HIDE 
-                //Begin case SHOW_WINDOW 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_721311701 = "SHOW_WINDOW";
-                //End case SHOW_WINDOW 
-                //Begin case HIDE_WINDOW 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_418411736 = "HIDE_WINDOW";
-                //End case HIDE_WINDOW 
-                //Begin case RESUME_ACTIVITY 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_949841536 = "RESUME_ACTIVITY";
-                //End case RESUME_ACTIVITY 
-                //Begin case SEND_RESULT 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1368621001 = "SEND_RESULT";
-                //End case SEND_RESULT 
-                //Begin case DESTROY_ACTIVITY 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_795825906 = "DESTROY_ACTIVITY";
-                //End case DESTROY_ACTIVITY 
-                //Begin case BIND_APPLICATION 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_384195501 = "BIND_APPLICATION";
-                //End case BIND_APPLICATION 
-                //Begin case EXIT_APPLICATION 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1461055576 = "EXIT_APPLICATION";
-                //End case EXIT_APPLICATION 
-                //Begin case NEW_INTENT 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_193991372 = "NEW_INTENT";
-                //End case NEW_INTENT 
-                //Begin case RECEIVER 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1003177583 = "RECEIVER";
-                //End case RECEIVER 
-                //Begin case CREATE_SERVICE 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_2019906579 = "CREATE_SERVICE";
-                //End case CREATE_SERVICE 
-                //Begin case SERVICE_ARGS 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1346998060 = "SERVICE_ARGS";
-                //End case SERVICE_ARGS 
-                //Begin case STOP_SERVICE 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1549955559 = "STOP_SERVICE";
-                //End case STOP_SERVICE 
-                //Begin case REQUEST_THUMBNAIL 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1438108485 = "REQUEST_THUMBNAIL";
-                //End case REQUEST_THUMBNAIL 
-                //Begin case CONFIGURATION_CHANGED 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1775910327 = "CONFIGURATION_CHANGED";
-                //End case CONFIGURATION_CHANGED 
-                //Begin case CLEAN_UP_CONTEXT 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_2052650214 = "CLEAN_UP_CONTEXT";
-                //End case CLEAN_UP_CONTEXT 
-                //Begin case GC_WHEN_IDLE 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_155294750 = "GC_WHEN_IDLE";
-                //End case GC_WHEN_IDLE 
-                //Begin case BIND_SERVICE 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_835125871 = "BIND_SERVICE";
-                //End case BIND_SERVICE 
-                //Begin case UNBIND_SERVICE 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1056924531 = "UNBIND_SERVICE";
-                //End case UNBIND_SERVICE 
-                //Begin case DUMP_SERVICE 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_2054312266 = "DUMP_SERVICE";
-                //End case DUMP_SERVICE 
-                //Begin case LOW_MEMORY 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1623012468 = "LOW_MEMORY";
-                //End case LOW_MEMORY 
-                //Begin case ACTIVITY_CONFIGURATION_CHANGED 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_379209317 = "ACTIVITY_CONFIGURATION_CHANGED";
-                //End case ACTIVITY_CONFIGURATION_CHANGED 
-                //Begin case RELAUNCH_ACTIVITY 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1311528951 = "RELAUNCH_ACTIVITY";
-                //End case RELAUNCH_ACTIVITY 
-                //Begin case PROFILER_CONTROL 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1051058362 = "PROFILER_CONTROL";
-                //End case PROFILER_CONTROL 
-                //Begin case CREATE_BACKUP_AGENT 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1336766832 = "CREATE_BACKUP_AGENT";
-                //End case CREATE_BACKUP_AGENT 
-                //Begin case DESTROY_BACKUP_AGENT 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_509083873 = "DESTROY_BACKUP_AGENT";
-                //End case DESTROY_BACKUP_AGENT 
-                //Begin case SUICIDE 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1270118566 = "SUICIDE";
-                //End case SUICIDE 
-                //Begin case REMOVE_PROVIDER 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_306253609 = "REMOVE_PROVIDER";
-                //End case REMOVE_PROVIDER 
-                //Begin case ENABLE_JIT 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1121202251 = "ENABLE_JIT";
-                //End case ENABLE_JIT 
-                //Begin case DISPATCH_PACKAGE_BROADCAST 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_842677545 = "DISPATCH_PACKAGE_BROADCAST";
-                //End case DISPATCH_PACKAGE_BROADCAST 
-                //Begin case SCHEDULE_CRASH 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_386909507 = "SCHEDULE_CRASH";
-                //End case SCHEDULE_CRASH 
-                //Begin case DUMP_HEAP 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_549678638 = "DUMP_HEAP";
-                //End case DUMP_HEAP 
-                //Begin case DUMP_ACTIVITY 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_62018345 = "DUMP_ACTIVITY";
-                //End case DUMP_ACTIVITY 
-                //Begin case SLEEPING 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_848538566 = "SLEEPING";
-                //End case SLEEPING 
-                //Begin case SET_CORE_SETTINGS 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_710170950 = "SET_CORE_SETTINGS";
-                //End case SET_CORE_SETTINGS 
-                //Begin case UPDATE_PACKAGE_COMPATIBILITY_INFO 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1144730846 = "UPDATE_PACKAGE_COMPATIBILITY_INFO";
-                //End case UPDATE_PACKAGE_COMPATIBILITY_INFO 
-                //Begin case TRIM_MEMORY 
+                
+                
                 varB4EAC82CA7396A68D541C85D26508E83_1530581689 = "TRIM_MEMORY";
-                //End case TRIM_MEMORY 
-            } //End block
+                
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1079023403 = "(unknown)";
             addTaint(code);
-            String varA7E53CE21691AB073D9660D615818899_1988712965; //Final return value
+            String varA7E53CE21691AB073D9660D615818899_1988712965; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1398565327;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_458996058;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_2084638897;
                     break;
-                case 4: //Assign result for return ordinal #4
+                case 4: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_98945728;
                     break;
-                case 5: //Assign result for return ordinal #5
+                case 5: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1765716512;
                     break;
-                case 6: //Assign result for return ordinal #6
+                case 6: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_721311701;
                     break;
-                case 7: //Assign result for return ordinal #7
+                case 7: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_418411736;
                     break;
-                case 8: //Assign result for return ordinal #8
+                case 8: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_949841536;
                     break;
-                case 9: //Assign result for return ordinal #9
+                case 9: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1368621001;
                     break;
-                case 10: //Assign result for return ordinal #10
+                case 10: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_795825906;
                     break;
-                case 11: //Assign result for return ordinal #11
+                case 11: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_384195501;
                     break;
-                case 12: //Assign result for return ordinal #12
+                case 12: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1461055576;
                     break;
-                case 13: //Assign result for return ordinal #13
+                case 13: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_193991372;
                     break;
-                case 14: //Assign result for return ordinal #14
+                case 14: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1003177583;
                     break;
-                case 15: //Assign result for return ordinal #15
+                case 15: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_2019906579;
                     break;
-                case 16: //Assign result for return ordinal #16
+                case 16: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1346998060;
                     break;
-                case 17: //Assign result for return ordinal #17
+                case 17: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1549955559;
                     break;
-                case 18: //Assign result for return ordinal #18
+                case 18: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1438108485;
                     break;
-                case 19: //Assign result for return ordinal #19
+                case 19: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1775910327;
                     break;
-                case 20: //Assign result for return ordinal #20
+                case 20: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_2052650214;
                     break;
-                case 21: //Assign result for return ordinal #21
+                case 21: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_155294750;
                     break;
-                case 22: //Assign result for return ordinal #22
+                case 22: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_835125871;
                     break;
-                case 23: //Assign result for return ordinal #23
+                case 23: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1056924531;
                     break;
-                case 24: //Assign result for return ordinal #24
+                case 24: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_2054312266;
                     break;
-                case 25: //Assign result for return ordinal #25
+                case 25: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1623012468;
                     break;
-                case 26: //Assign result for return ordinal #26
+                case 26: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_379209317;
                     break;
-                case 27: //Assign result for return ordinal #27
+                case 27: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1311528951;
                     break;
-                case 28: //Assign result for return ordinal #28
+                case 28: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1051058362;
                     break;
-                case 29: //Assign result for return ordinal #29
+                case 29: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1336766832;
                     break;
-                case 30: //Assign result for return ordinal #30
+                case 30: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_509083873;
                     break;
-                case 31: //Assign result for return ordinal #31
+                case 31: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1270118566;
                     break;
-                case 32: //Assign result for return ordinal #32
+                case 32: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_306253609;
                     break;
-                case 33: //Assign result for return ordinal #33
+                case 33: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1121202251;
                     break;
-                case 34: //Assign result for return ordinal #34
+                case 34: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_842677545;
                     break;
-                case 35: //Assign result for return ordinal #35
+                case 35: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_386909507;
                     break;
-                case 36: //Assign result for return ordinal #36
+                case 36: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_549678638;
                     break;
-                case 37: //Assign result for return ordinal #37
+                case 37: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_62018345;
                     break;
-                case 38: //Assign result for return ordinal #38
+                case 38: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_848538566;
                     break;
-                case 39: //Assign result for return ordinal #39
+                case 39: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_710170950;
                     break;
-                case 40: //Assign result for return ordinal #40
+                case 40: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1144730846;
                     break;
-                case 41: //Assign result for return ordinal #41
+                case 41: 
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1530581689;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1988712965 = varB4EAC82CA7396A68D541C85D26508E83_1079023403;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1988712965.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1988712965.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1988712965;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.021 -0400", hash_original_method = "DC9C3E5B703CFDFA18C27F800AA1CA40", hash_generated_method = "51274CBDB76FBCF6ACFA6154FC583191")
         public void handleMessage(Message msg) {
-            //Begin case LAUNCH_ACTIVITY 
+            
             {
                 ActivityClientRecord r = (ActivityClientRecord)msg.obj;
                 r.packageInfo = getPackageInfoNoCheck(
                             r.activityInfo.applicationInfo, r.compatInfo);
                 handleLaunchActivity(r, null);
-            } //End block
-            //End case LAUNCH_ACTIVITY 
-            //Begin case RELAUNCH_ACTIVITY 
+            } 
+            
+            
             {
                 ActivityClientRecord r = (ActivityClientRecord)msg.obj;
                 handleRelaunchActivity(r);
-            } //End block
-            //End case RELAUNCH_ACTIVITY 
-            //Begin case PAUSE_ACTIVITY 
+            } 
+            
+            
             handlePauseActivity((IBinder)msg.obj, false, msg.arg1 != 0, msg.arg2);
-            //End case PAUSE_ACTIVITY 
-            //Begin case PAUSE_ACTIVITY 
+            
+            
             maybeSnapshot();
-            //End case PAUSE_ACTIVITY 
-            //Begin case PAUSE_ACTIVITY_FINISHING 
+            
+            
             handlePauseActivity((IBinder)msg.obj, true, msg.arg1 != 0, msg.arg2);
-            //End case PAUSE_ACTIVITY_FINISHING 
-            //Begin case STOP_ACTIVITY_SHOW 
+            
+            
             handleStopActivity((IBinder)msg.obj, true, msg.arg2);
-            //End case STOP_ACTIVITY_SHOW 
-            //Begin case STOP_ACTIVITY_HIDE 
+            
+            
             handleStopActivity((IBinder)msg.obj, false, msg.arg2);
-            //End case STOP_ACTIVITY_HIDE 
-            //Begin case SHOW_WINDOW 
+            
+            
             handleWindowVisibility((IBinder)msg.obj, true);
-            //End case SHOW_WINDOW 
-            //Begin case HIDE_WINDOW 
+            
+            
             handleWindowVisibility((IBinder)msg.obj, false);
-            //End case HIDE_WINDOW 
-            //Begin case RESUME_ACTIVITY 
+            
+            
             handleResumeActivity((IBinder)msg.obj, true,
                             msg.arg1 != 0);
-            //End case RESUME_ACTIVITY 
-            //Begin case SEND_RESULT 
+            
+            
             handleSendResult((ResultData)msg.obj);
-            //End case SEND_RESULT 
-            //Begin case DESTROY_ACTIVITY 
+            
+            
             handleDestroyActivity((IBinder)msg.obj, msg.arg1 != 0,
                             msg.arg2, false);
-            //End case DESTROY_ACTIVITY 
-            //Begin case BIND_APPLICATION 
+            
+            
             AppBindData data = (AppBindData)msg.obj;
-            //End case BIND_APPLICATION 
-            //Begin case BIND_APPLICATION 
+            
+            
             handleBindApplication(data);
-            //End case BIND_APPLICATION 
-            //Begin case EXIT_APPLICATION 
+            
+            
             {
                 mInitialApplication.onTerminate();
-            } //End block
-            //End case EXIT_APPLICATION 
-            //Begin case EXIT_APPLICATION 
+            } 
+            
+            
             Looper.myLooper().quit();
-            //End case EXIT_APPLICATION 
-            //Begin case NEW_INTENT 
+            
+            
             handleNewIntent((NewIntentData)msg.obj);
-            //End case NEW_INTENT 
-            //Begin case RECEIVER 
+            
+            
             handleReceiver((ReceiverData)msg.obj);
-            //End case RECEIVER 
-            //Begin case RECEIVER 
+            
+            
             maybeSnapshot();
-            //End case RECEIVER 
-            //Begin case CREATE_SERVICE 
+            
+            
             handleCreateService((CreateServiceData)msg.obj);
-            //End case CREATE_SERVICE 
-            //Begin case BIND_SERVICE 
+            
+            
             handleBindService((BindServiceData)msg.obj);
-            //End case BIND_SERVICE 
-            //Begin case UNBIND_SERVICE 
+            
+            
             handleUnbindService((BindServiceData)msg.obj);
-            //End case UNBIND_SERVICE 
-            //Begin case SERVICE_ARGS 
+            
+            
             handleServiceArgs((ServiceArgsData)msg.obj);
-            //End case SERVICE_ARGS 
-            //Begin case STOP_SERVICE 
+            
+            
             handleStopService((IBinder)msg.obj);
-            //End case STOP_SERVICE 
-            //Begin case STOP_SERVICE 
+            
+            
             maybeSnapshot();
-            //End case STOP_SERVICE 
-            //Begin case REQUEST_THUMBNAIL 
+            
+            
             handleRequestThumbnail((IBinder)msg.obj);
-            //End case REQUEST_THUMBNAIL 
-            //Begin case CONFIGURATION_CHANGED 
+            
+            
             handleConfigurationChanged((Configuration)msg.obj, null);
-            //End case CONFIGURATION_CHANGED 
-            //Begin case CLEAN_UP_CONTEXT 
+            
+            
             ContextCleanupInfo cci = (ContextCleanupInfo)msg.obj;
-            //End case CLEAN_UP_CONTEXT 
-            //Begin case CLEAN_UP_CONTEXT 
+            
+            
             cci.context.performFinalCleanup(cci.who, cci.what);
-            //End case CLEAN_UP_CONTEXT 
-            //Begin case GC_WHEN_IDLE 
+            
+            
             scheduleGcIdler();
-            //End case GC_WHEN_IDLE 
-            //Begin case DUMP_SERVICE 
+            
+            
             handleDumpService((DumpComponentInfo)msg.obj);
-            //End case DUMP_SERVICE 
-            //Begin case LOW_MEMORY 
+            
+            
             handleLowMemory();
-            //End case LOW_MEMORY 
-            //Begin case ACTIVITY_CONFIGURATION_CHANGED 
+            
+            
             handleActivityConfigurationChanged((IBinder)msg.obj);
-            //End case ACTIVITY_CONFIGURATION_CHANGED 
-            //Begin case PROFILER_CONTROL 
+            
+            
             handleProfilerControl(msg.arg1 != 0, (ProfilerControlData)msg.obj, msg.arg2);
-            //End case PROFILER_CONTROL 
-            //Begin case CREATE_BACKUP_AGENT 
+            
+            
             handleCreateBackupAgent((CreateBackupAgentData)msg.obj);
-            //End case CREATE_BACKUP_AGENT 
-            //Begin case DESTROY_BACKUP_AGENT 
+            
+            
             handleDestroyBackupAgent((CreateBackupAgentData)msg.obj);
-            //End case DESTROY_BACKUP_AGENT 
-            //Begin case SUICIDE 
+            
+            
             Process.killProcess(Process.myPid());
-            //End case SUICIDE 
-            //Begin case REMOVE_PROVIDER 
+            
+            
             completeRemoveProvider((IContentProvider)msg.obj);
-            //End case REMOVE_PROVIDER 
-            //Begin case ENABLE_JIT 
+            
+            
             ensureJitEnabled();
-            //End case ENABLE_JIT 
-            //Begin case DISPATCH_PACKAGE_BROADCAST 
+            
+            
             handleDispatchPackageBroadcast(msg.arg1, (String[])msg.obj);
-            //End case DISPATCH_PACKAGE_BROADCAST 
-            //Begin case SCHEDULE_CRASH 
+            
+            
             if (DroidSafeAndroidRuntime.control) throw new RemoteServiceException((String)msg.obj);
-            //End case SCHEDULE_CRASH 
-            //Begin case DUMP_HEAP 
+            
+            
             handleDumpHeap(msg.arg1 != 0, (DumpHeapData)msg.obj);
-            //End case DUMP_HEAP 
-            //Begin case DUMP_ACTIVITY 
+            
+            
             handleDumpActivity((DumpComponentInfo)msg.obj);
-            //End case DUMP_ACTIVITY 
-            //Begin case SLEEPING 
+            
+            
             handleSleeping((IBinder)msg.obj, msg.arg1 != 0);
-            //End case SLEEPING 
-            //Begin case SET_CORE_SETTINGS 
+            
+            
             handleSetCoreSettings((Bundle) msg.obj);
-            //End case SET_CORE_SETTINGS 
-            //Begin case UPDATE_PACKAGE_COMPATIBILITY_INFO 
+            
+            
             handleUpdatePackageCompatibilityInfo((UpdateCompatibilityData)msg.obj);
-            //End case UPDATE_PACKAGE_COMPATIBILITY_INFO 
-            //Begin case TRIM_MEMORY 
+            
+            
             handleTrimMemory(msg.arg1);
-            //End case TRIM_MEMORY 
+            
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -6413,14 +6458,14 @@ public final class ActivityThread {
                         PackageManager pm = context.getPackageManager();
                         packageInfo = pm.getPackageInfo(
                             packageName, PackageManager.GET_ACTIVITIES);
-                    } //End block
+                    } 
                     catch (NameNotFoundException e)
                     { }
                     SamplingProfilerIntegration.writeSnapshot(mBoundApplication.processName, packageInfo);
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -6556,7 +6601,7 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.028 -0400", hash_original_method = "33AE74878CEBE3B527FC27BCFED9133E", hash_generated_method = "33AE74878CEBE3B527FC27BCFED9133E")
         public Idler ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -6566,7 +6611,7 @@ public final class ActivityThread {
             boolean stopProfiling = false;
             {
                 stopProfiling = true;
-            } //End block
+            } 
             {
                 mNewActivities = null;
                 IActivityManager am = ActivityManagerNative.getDefault();
@@ -6577,23 +6622,23 @@ public final class ActivityThread {
                         {
                             am.activityIdle(a.token, a.createdConfig, stopProfiling);
                             a.createdConfig = null;
-                        } //End block
+                        } 
                         catch (RemoteException ex)
                         { }
-                    } //End block
+                    } 
                     prev = a;
                     a = a.nextIdle;
                     prev.nextIdle = null;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 mProfiler.stopProfiling();
-            } //End block
+            } 
             ensureJitEnabled();
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_71878499 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_71878499;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -6606,7 +6651,7 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.029 -0400", hash_original_method = "ABBE7DCE196E12604C1E7133F511F6FC", hash_generated_method = "ABBE7DCE196E12604C1E7133F511F6FC")
         public GcIdler ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -6615,9 +6660,9 @@ public final class ActivityThread {
             doGcIfNeeded();
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_490100851 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_490100851;
-            // ---------- Original Method ----------
-            //doGcIfNeeded();
-            //return false;
+            
+            
+            
         }
 
         
@@ -6641,10 +6686,10 @@ public final class ActivityThread {
             mResDir = resDir;
             mScale = scale;
             mHash = mResDir.hashCode() << 2 + (int) (mScale * 2);
-            // ---------- Original Method ----------
-            //mResDir = resDir;
-            //mScale = scale;
-            //mHash = mResDir.hashCode() << 2 + (int) (mScale * 2);
+            
+            
+            
+            
         }
 
         
@@ -6653,8 +6698,8 @@ public final class ActivityThread {
         public int hashCode() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_49940132 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_49940132;
-            // ---------- Original Method ----------
-            //return mHash;
+            
+            
         }
 
         
@@ -6666,12 +6711,12 @@ public final class ActivityThread {
             addTaint(obj.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1365835040 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1365835040;
-            // ---------- Original Method ----------
-            //if (!(obj instanceof ResourcesKey)) {
-                //return false;
-            //}
-            //ResourcesKey peer = (ResourcesKey) obj;
-            //return mResDir.equals(peer.mResDir) && mScale == peer.mScale;
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -6690,7 +6735,7 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.034 -0400", hash_original_method = "59EF1C21B91F2644F32BF61E1E80BB9E", hash_generated_method = "59EF1C21B91F2644F32BF61E1E80BB9E")
         public StopInfo ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -6706,8 +6751,8 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.035 -0400", hash_original_method = "92B7A170BA9BC140C9702B48E38F46E8", hash_generated_method = "4A93BF52DF489431CBF421164E067011")
           ProviderRefCount(int pCount) {
             count = pCount;
-            // ---------- Original Method ----------
-            //count = pCount;
+            
+            
         }
 
         

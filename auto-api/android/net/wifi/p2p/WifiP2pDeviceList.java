@@ -1,11 +1,11 @@
 package android.net.wifi.p2p;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcelable;
 import android.os.Parcel;
@@ -23,8 +23,8 @@ public class WifiP2pDeviceList implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.738 -0400", hash_original_method = "711A9A33382FDEBAFBD29DC2083BF3E5", hash_generated_method = "AF6F1060F4608D0AAC43BEC895BFBC7B")
     public  WifiP2pDeviceList() {
         mDevices = new ArrayList<WifiP2pDevice>();
-        // ---------- Original Method ----------
-        //mDevices = new ArrayList<WifiP2pDevice>();
+        
+        
     }
 
     
@@ -32,11 +32,11 @@ public class WifiP2pDeviceList implements Parcelable {
     public  WifiP2pDeviceList(WifiP2pDeviceList source) {
         {
             mDevices = source.getDeviceList();
-        } //End block
-        // ---------- Original Method ----------
-        //if (source != null) {
-            //mDevices = source.getDeviceList();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -49,32 +49,34 @@ public class WifiP2pDeviceList implements Parcelable {
             WifiP2pDevice device = var71A11393AB5AEBB385983FA17616D9BC_207187334.next();
             {
                 mDevices.add(device);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(devices.getTaint());
-        // ---------- Original Method ----------
-        //mDevices = new ArrayList<WifiP2pDevice>();
-        //for (WifiP2pDevice device : devices) {
-            //mDevices.add(device);
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.741 -0400", hash_original_method = "70CE399D4AEC1ED49C7E7903137A1A02", hash_generated_method = "B0C6DED21CE56441EFC7103AA3640A4B")
     public boolean clear() {
         {
             boolean varAA2278BE0A4E7DF2EDAB65F1A740F279_33987939 = (mDevices.isEmpty());
-        } //End collapsed parenthetic
+        } 
         mDevices.clear();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1761375713 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1761375713;
-        // ---------- Original Method ----------
-        //if (mDevices.isEmpty()) return false;
-        //mDevices.clear();
-        //return true;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.745 -0400", hash_original_method = "FB31C2BA18EF767553E65099D683D802", hash_generated_method = "23A38E9E187801670D367100D5FC9B29")
     public void update(WifiP2pDevice device) {
         {
@@ -91,55 +93,58 @@ public class WifiP2pDeviceList implements Parcelable {
                         d.wpsConfigMethodsSupported = device.wpsConfigMethodsSupported;
                         d.deviceCapability = device.deviceCapability;
                         d.groupCapability = device.groupCapability;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         mDevices.add(device);
         addTaint(device.getTaint());
-        // ---------- Original Method ----------
-        //if (device == null) return;
-        //for (WifiP2pDevice d : mDevices) {
-            //if (d.equals(device)) {
-                //d.deviceName = device.deviceName;
-                //d.primaryDeviceType = device.primaryDeviceType;
-                //d.secondaryDeviceType = device.secondaryDeviceType;
-                //d.wpsConfigMethodsSupported = device.wpsConfigMethodsSupported;
-                //d.deviceCapability = device.deviceCapability;
-                //d.groupCapability = device.groupCapability;
-                //return;
-            //}
-        //}
-        //mDevices.add(device);
+        
+        
+        
+            
+                
+                
+                
+                
+                
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.745 -0400", hash_original_method = "020B85F823F552419F9C1AF8A2509846", hash_generated_method = "BECB323BCA5FE864DF5BB57CA3784893")
     public boolean remove(WifiP2pDevice device) {
         boolean var8B29D053D2683E89B3275232DD0D4693_1313325019 = (mDevices.remove(device));
         addTaint(device.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_309385866 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_309385866;
-        // ---------- Original Method ----------
-        //if (device == null) return false;
-        //return mDevices.remove(device);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.746 -0400", hash_original_method = "AF7D82D1BB8BCC5F50496B9C85783B3A", hash_generated_method = "A378A4ED3F7CAE93D5E1E64AC4F1B555")
     public Collection<WifiP2pDevice> getDeviceList() {
-        Collection<WifiP2pDevice> varB4EAC82CA7396A68D541C85D26508E83_451566479 = null; //Variable for return #1
+        Collection<WifiP2pDevice> varB4EAC82CA7396A68D541C85D26508E83_451566479 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_451566479 = Collections.unmodifiableCollection(mDevices);
-        varB4EAC82CA7396A68D541C85D26508E83_451566479.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_451566479.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_451566479;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableCollection(mDevices);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.749 -0400", hash_original_method = "5A8D6CF28770F332159DA6A027ABEE59", hash_generated_method = "8EC4053BF2AFA0EE0DD268F208914939")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_108589758 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_108589758 = null; 
         StringBuffer sbuf = new StringBuffer();
         {
             Iterator<WifiP2pDevice> var4354658A1BB6AAA014FD651E49BED88E_140234678 = (mDevices).iterator();
@@ -147,17 +152,17 @@ public class WifiP2pDeviceList implements Parcelable {
             WifiP2pDevice device = var4354658A1BB6AAA014FD651E49BED88E_140234678.next();
             {
                 sbuf.append("\n").append(device);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_108589758 = sbuf.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_108589758.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_108589758.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_108589758;
-        // ---------- Original Method ----------
-        //StringBuffer sbuf = new StringBuffer();
-        //for (WifiP2pDevice device : mDevices) {
-            //sbuf.append("\n").append(device);
-        //}
-        //return sbuf.toString();
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -165,11 +170,12 @@ public class WifiP2pDeviceList implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1970066716 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1970066716;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.754 -0400", hash_original_method = "55D2541614C0B12A14CA5FB457FCECCC", hash_generated_method = "786154C5DF01617703DFDC9CB343E818")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mDevices.size());
@@ -179,15 +185,15 @@ public class WifiP2pDeviceList implements Parcelable {
             WifiP2pDevice device = var4354658A1BB6AAA014FD651E49BED88E_1715288543.next();
             {
                 dest.writeParcelable(device, flags);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mDevices.size());
-        //for(WifiP2pDevice device : mDevices) {
-            //dest.writeParcelable(device, flags);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -209,7 +215,7 @@ public class WifiP2pDeviceList implements Parcelable {
                 return new WifiP2pDeviceList[size];
             }
         };
-    // orphaned legacy method
+    
     public WifiP2pDeviceList createFromParcel(Parcel in) {
                 WifiP2pDeviceList deviceList = new WifiP2pDeviceList();
 
@@ -220,7 +226,7 @@ public class WifiP2pDeviceList implements Parcelable {
                 return deviceList;
             }
     
-    // orphaned legacy method
+    
     public WifiP2pDeviceList[] newArray(int size) {
                 return new WifiP2pDeviceList[size];
             }

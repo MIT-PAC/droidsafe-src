@@ -1,11 +1,11 @@
 package org.apache.http.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.UnsupportedEncodingException;
 import org.apache.http.protocol.HTTP;
@@ -14,7 +14,7 @@ public final class EncodingUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.724 -0400", hash_original_method = "9056910A11B8F7E2130B8014667A5810", hash_generated_method = "82860B6827C330C84D8DCE75D0CA6840")
     private  EncodingUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     

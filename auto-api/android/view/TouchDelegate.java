@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Rect;
 import android.view.MotionEvent;
@@ -36,18 +36,19 @@ public class TouchDelegate {
         mSlopBounds = new Rect(bounds);
         mSlopBounds.inset(-mSlop, -mSlop);
         mDelegateView = delegateView;
-        // ---------- Original Method ----------
-        //mBounds = bounds;
-        //mSlop = ViewConfiguration.get(delegateView.getContext()).getScaledTouchSlop();
-        //mSlopBounds = new Rect(bounds);
-        //mSlopBounds.inset(-mSlop, -mSlop);
-        //mDelegateView = delegateView;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:55.194 -0400", hash_original_method = "2299D41C6782643B71D7B9FD20834200", hash_generated_method = "4D613FCDFE468B15FC4AC623858048C9")
     public boolean onTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int x = (int)event.getX();
         int y = (int)event.getY();
         boolean sendToDelegate = false;
@@ -55,55 +56,55 @@ public class TouchDelegate {
         boolean handled = false;
         {
             Object var9E1FBD251DF7E53AB77C3A31F15B2B38_1930283091 = (event.getAction());
-            //Begin case MotionEvent.ACTION_DOWN 
+            
             Rect bounds = mBounds;
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_DOWN 
+            
+            
             {
                 boolean varDC2352C669FC09CCD790BAAA9357FEC5_1015339133 = (bounds.contains(x, y));
                 {
                     mDelegateTargeted = true;
                     sendToDelegate = true;
-                } //End block
-            } //End collapsed parenthetic
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_UP MotionEvent.ACTION_MOVE 
+                } 
+            } 
+            
+            
             sendToDelegate = mDelegateTargeted;
-            //End case MotionEvent.ACTION_UP MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_UP MotionEvent.ACTION_MOVE 
+            
+            
             {
                 Rect slopBounds = mSlopBounds;
                 {
                     boolean var98DAB1B1DECC1E7F75066230092D6563_833857938 = (!slopBounds.contains(x, y));
                     {
                         hit = false;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            //End case MotionEvent.ACTION_UP MotionEvent.ACTION_MOVE 
-            //Begin case MotionEvent.ACTION_CANCEL 
+                    } 
+                } 
+            } 
+            
+            
             sendToDelegate = mDelegateTargeted;
-            //End case MotionEvent.ACTION_CANCEL 
-            //Begin case MotionEvent.ACTION_CANCEL 
+            
+            
             mDelegateTargeted = false;
-            //End case MotionEvent.ACTION_CANCEL 
-        } //End collapsed parenthetic
+            
+        } 
         {
             final View delegateView = mDelegateView;
             {
                 event.setLocation(delegateView.getWidth() / 2, delegateView.getHeight() / 2);
-            } //End block
+            } 
             {
                 int slop = mSlop;
                 event.setLocation(-(slop * 2), -(slop * 2));
-            } //End block
+            } 
             handled = delegateView.dispatchTouchEvent(event);
-        } //End block
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_334103261 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_334103261;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

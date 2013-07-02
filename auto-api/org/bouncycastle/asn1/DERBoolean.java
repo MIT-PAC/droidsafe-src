@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -18,11 +18,12 @@ public class DERBoolean extends ASN1Object {
     protected  DERBoolean(
         boolean     value) {
         this.value = (value) ? (byte)0xff : (byte)0;
-        // ---------- Original Method ----------
-        //this.value = (value) ? (byte)0xff : (byte)0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERBoolean getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERBoolean)
@@ -45,6 +46,7 @@ public class DERBoolean extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERBoolean getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -64,8 +66,8 @@ public class DERBoolean extends ASN1Object {
     public boolean isTrue() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1963294323 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1963294323;
-        // ---------- Original Method ----------
-        //return (value != 0);
+        
+        
     }
 
     
@@ -76,10 +78,10 @@ public class DERBoolean extends ASN1Object {
         bytes[0] = value;
         out.writeEncoded(BOOLEAN, bytes);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //byte[]  bytes = new byte[1];
-        //bytes[0] = value;
-        //out.writeEncoded(BOOLEAN, bytes);
+        
+        
+        
+        
     }
 
     
@@ -89,12 +91,12 @@ public class DERBoolean extends ASN1Object {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_848513084 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_848513084;
-        // ---------- Original Method ----------
-        //if ((o == null) || !(o instanceof DERBoolean))
-        //{
-            //return false;
-        //}
-        //return (value == ((DERBoolean)o).value);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -102,19 +104,19 @@ public class DERBoolean extends ASN1Object {
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2047967709 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2047967709;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.343 -0400", hash_original_method = "9F6A9420185E5E125B8A61B3882EDFBB", hash_generated_method = "81E91818732602637DF6953B8B7747FB")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_425272704 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_425272704 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_425272704 = (value != 0) ? "TRUE" : "FALSE";
-        varB4EAC82CA7396A68D541C85D26508E83_425272704.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_425272704.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_425272704;
-        // ---------- Original Method ----------
-        //return (value != 0) ? "TRUE" : "FALSE";
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedReader;
 import java.io.File;
@@ -56,7 +56,7 @@ public class URLClassLoader extends SecureClassLoader {
     public  URLClassLoader(URL[] urls) {
         this(urls, ClassLoader.getSystemClassLoader(), null);
         addTaint(urls[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -65,7 +65,7 @@ public class URLClassLoader extends SecureClassLoader {
         this(urls, parent, null);
         addTaint(urls[0].getTaint());
         addTaint(parent.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -84,26 +84,26 @@ public class URLClassLoader extends SecureClassLoader {
                 try 
                 {
                     searchList.add(createSearchURL(searchUrls[i]));
-                } //End block
+                } 
                 catch (MalformedURLException e)
                 { }
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(searchUrls[0].getTaint());
         addTaint(parent.getTaint());
-        // ---------- Original Method ----------
-        //this.factory = factory;
-        //int nbUrls = searchUrls.length;
-        //originalUrls = new ArrayList<URL>(nbUrls);
-        //handlerList = new ArrayList<URLHandler>(nbUrls);
-        //searchList = Collections.synchronizedList(new ArrayList<URL>(nbUrls));
-        //for (int i = 0; i < nbUrls; i++) {
-            //originalUrls.add(searchUrls[i]);
-            //try {
-                //searchList.add(createSearchURL(searchUrls[i]));
-            //} catch (MalformedURLException e) {
-            //}
-        //}
+        
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -113,67 +113,67 @@ public class URLClassLoader extends SecureClassLoader {
         {
             originalUrls.add(url);
             searchList.add(createSearchURL(url));
-        } //End block
+        } 
         catch (MalformedURLException e)
         { }
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //originalUrls.add(url);
-            //searchList.add(createSearchURL(url));
-        //} catch (MalformedURLException e) {
-        //}
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.454 -0400", hash_original_method = "E35E96FBBA5328024F5002F5E092C0FA", hash_generated_method = "C38627B5197DD9D2A602AADFA2872615")
     @Override
     public Enumeration<URL> findResources(final String name) throws IOException {
-        Enumeration<URL> varB4EAC82CA7396A68D541C85D26508E83_278765660 = null; //Variable for return #1
-        Enumeration<URL> varB4EAC82CA7396A68D541C85D26508E83_147994823 = null; //Variable for return #2
+        Enumeration<URL> varB4EAC82CA7396A68D541C85D26508E83_278765660 = null; 
+        Enumeration<URL> varB4EAC82CA7396A68D541C85D26508E83_147994823 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_278765660 = null;
-        } //End block
+        } 
         ArrayList<URL> result = new ArrayList<URL>();
         int n = 0;
         {
             URLHandler handler = getHandler(n++);
             handler.findResources(name, result);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_147994823 = Collections.enumeration(result);
         addTaint(name.getTaint());
-        Enumeration<URL> varA7E53CE21691AB073D9660D615818899_130929277; //Final return value
+        Enumeration<URL> varA7E53CE21691AB073D9660D615818899_130929277; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_130929277 = varB4EAC82CA7396A68D541C85D26508E83_278765660;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_130929277 = varB4EAC82CA7396A68D541C85D26508E83_147994823;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_130929277.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_130929277.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_130929277;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //return null;
-        //}
-        //ArrayList<URL> result = new ArrayList<URL>();
-        //int n = 0;
-        //while (true) {
-            //URLHandler handler = getHandler(n++);
-            //if (handler == null) {
-                //break;
-            //}
-            //handler.findResources(name, result);
-        //}
-        //return Collections.enumeration(result);
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.455 -0400", hash_original_method = "B4723E664A18325BA87109668B89BB4C", hash_generated_method = "4485DEEF59DB60851871FC8AFF68069A")
     @Override
     protected PermissionCollection getPermissions(final CodeSource codesource) {
-        PermissionCollection varB4EAC82CA7396A68D541C85D26508E83_1469771215 = null; //Variable for return #1
+        PermissionCollection varB4EAC82CA7396A68D541C85D26508E83_1469771215 = null; 
         PermissionCollection pc = super.getPermissions(codesource);
         URL u = codesource.getLocation();
         {
@@ -182,11 +182,11 @@ public class URLClassLoader extends SecureClassLoader {
                 try 
                 {
                     u = ((JarURLConnection) u.openConnection()).getJarFileURL();
-                } //End block
+                } 
                 catch (IOException e)
                 { }
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var4D320D496AF3A7A0362D9991BB7F9187_806814246 = (u.getProtocol().equals("file"));
             {
@@ -196,49 +196,50 @@ public class URLClassLoader extends SecureClassLoader {
                     boolean var2D544DB6C0FDD148F3E57369E992EC16_875059800 = (host != null && host.length() > 0);
                     {
                         path = "//" + host + path;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     path = path.replace('/', File.separatorChar);
-                } //End block
+                } 
                 {
                     boolean varC84208C3E0250C4294B433F1E7B244E4_538269821 = (isDirectory(u));
                     {
                         pc.add(new FilePermission(path + "-", "read"));
-                    } //End block
+                    } 
                     {
                         pc.add(new FilePermission(path, "read"));
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 String host = u.getHost();
                 {
                     boolean varC53ECC4BC21F90A0F577E60A03E6C413_1168121767 = (host.length() == 0);
                     {
                         host = "localhost";
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 pc.add(new SocketPermission(host, "connect, accept"));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1469771215 = pc;
         addTaint(codesource.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1469771215.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1469771215.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1469771215;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.457 -0400", hash_original_method = "E74D6D295FD8DF7C4B8AB85761E02982", hash_generated_method = "DA7CE01421491E4E04BEEE143C44409C")
     public URL[] getURLs() {
-        URL[] varB4EAC82CA7396A68D541C85D26508E83_68744225 = null; //Variable for return #1
+        URL[] varB4EAC82CA7396A68D541C85D26508E83_68744225 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_68744225 = originalUrls.toArray(new URL[originalUrls.size()]);
-        varB4EAC82CA7396A68D541C85D26508E83_68744225.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_68744225.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_68744225;
-        // ---------- Original Method ----------
-        //return originalUrls.toArray(new URL[originalUrls.size()]);
+        
+        
     }
 
     
@@ -261,7 +262,7 @@ public class URLClassLoader extends SecureClassLoader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.459 -0400", hash_original_method = "BAA63B0BE9A75DDAC07B90D04DE61F0B", hash_generated_method = "04BFD091AAD76FD51786219CDF7750CE")
     @Override
     protected Class<?> findClass(final String className) throws ClassNotFoundException {
-        Class<?> varB4EAC82CA7396A68D541C85D26508E83_1116515182 = null; //Variable for return #1
+        Class<?> varB4EAC82CA7396A68D541C85D26508E83_1116515182 = null; 
         String partialName = className.replace('.', '/');
         final String classFileName = new StringBuilder(partialName).append(".class").toString();
         String packageName = null;
@@ -270,200 +271,202 @@ public class URLClassLoader extends SecureClassLoader {
             boolean var3E1D041C4A1A150031AEB32E198BD1A9_970204060 = ((position = partialName.lastIndexOf('/')) != -1);
             {
                 packageName = partialName.substring(0, position);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int n = 0;
         {
             URLHandler handler = getHandler(n++);
             Class<?> res = handler.findClass(packageName, classFileName, className);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1116515182 = res;
-            } //End block
-        } //End block
+            } 
+        } 
         if (DroidSafeAndroidRuntime.control) throw new ClassNotFoundException(className);
         addTaint(className.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1116515182.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1116515182.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1116515182;
-        // ---------- Original Method ----------
-        //String partialName = className.replace('.', '/');
-        //final String classFileName = new StringBuilder(partialName).append(".class").toString();
-        //String packageName = null;
-        //int position = partialName.lastIndexOf('/');
-        //if ((position = partialName.lastIndexOf('/')) != -1) {
-            //packageName = partialName.substring(0, position);
-        //}
-        //int n = 0;
-        //while (true) {
-            //URLHandler handler = getHandler(n++);
-            //if (handler == null) {
-                //break;
-            //}
-            //Class<?> res = handler.findClass(packageName, classFileName, className);
-            //if (res != null) {
-                //return res;
-            //}
-        //}
-        //throw new ClassNotFoundException(className);
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.459 -0400", hash_original_method = "75025FE733C588323FB29CA64B72756D", hash_generated_method = "A4EFF457BB9BEA5BAF7463CE8A73F46D")
     private URL createSearchURL(URL url) throws MalformedURLException {
-        URL varB4EAC82CA7396A68D541C85D26508E83_1571246232 = null; //Variable for return #1
-        URL varB4EAC82CA7396A68D541C85D26508E83_250169586 = null; //Variable for return #2
-        URL varB4EAC82CA7396A68D541C85D26508E83_932032919 = null; //Variable for return #3
-        URL varB4EAC82CA7396A68D541C85D26508E83_783993553 = null; //Variable for return #4
+        URL varB4EAC82CA7396A68D541C85D26508E83_1571246232 = null; 
+        URL varB4EAC82CA7396A68D541C85D26508E83_250169586 = null; 
+        URL varB4EAC82CA7396A68D541C85D26508E83_932032919 = null; 
+        URL varB4EAC82CA7396A68D541C85D26508E83_783993553 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1571246232 = url;
-        } //End block
+        } 
         String protocol = url.getProtocol();
         {
             boolean var6B09AA880739B965279245545031D717_44106199 = (isDirectory(url) || protocol.equals("jar"));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_250169586 = url;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_932032919 = new URL("jar", "",
                     -1, url.toString() + "!/");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_783993553 = new URL("jar", "",
                 -1, url.toString() + "!/",
                 factory.createURLStreamHandler("jar"));
         addTaint(url.getTaint());
-        URL varA7E53CE21691AB073D9660D615818899_317291614; //Final return value
+        URL varA7E53CE21691AB073D9660D615818899_317291614; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_317291614 = varB4EAC82CA7396A68D541C85D26508E83_1571246232;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_317291614 = varB4EAC82CA7396A68D541C85D26508E83_250169586;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_317291614 = varB4EAC82CA7396A68D541C85D26508E83_932032919;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_317291614 = varB4EAC82CA7396A68D541C85D26508E83_783993553;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_317291614.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_317291614.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_317291614;
-        // ---------- Original Method ----------
-        //if (url == null) {
-            //return url;
-        //}
-        //String protocol = url.getProtocol();
-        //if (isDirectory(url) || protocol.equals("jar")) {
-            //return url;
-        //}
-        //if (factory == null) {
-            //return new URL("jar", "",
-                    //-1, url.toString() + "!/");
-        //}
-        //return new URL("jar", "",
-                //-1, url.toString() + "!/",
-                //factory.createURLStreamHandler("jar"));
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+                
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.460 -0400", hash_original_method = "36DCCA8214496CA792D9D415CCE3C1EC", hash_generated_method = "BF843FBEFA951F468555FAA99D635808")
     @Override
     public URL findResource(final String name) {
-        URL varB4EAC82CA7396A68D541C85D26508E83_1127491112 = null; //Variable for return #1
-        URL varB4EAC82CA7396A68D541C85D26508E83_1492311888 = null; //Variable for return #2
-        URL varB4EAC82CA7396A68D541C85D26508E83_548584730 = null; //Variable for return #3
+        URL varB4EAC82CA7396A68D541C85D26508E83_1127491112 = null; 
+        URL varB4EAC82CA7396A68D541C85D26508E83_1492311888 = null; 
+        URL varB4EAC82CA7396A68D541C85D26508E83_548584730 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1127491112 = null;
-        } //End block
+        } 
         int n = 0;
         {
             URLHandler handler = getHandler(n++);
             URL res = handler.findResource(name);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1492311888 = res;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_548584730 = null;
         addTaint(name.getTaint());
-        URL varA7E53CE21691AB073D9660D615818899_32316178; //Final return value
+        URL varA7E53CE21691AB073D9660D615818899_32316178; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_32316178 = varB4EAC82CA7396A68D541C85D26508E83_1127491112;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_32316178 = varB4EAC82CA7396A68D541C85D26508E83_1492311888;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_32316178 = varB4EAC82CA7396A68D541C85D26508E83_548584730;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_32316178.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_32316178.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_32316178;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //return null;
-        //}
-        //int n = 0;
-        //while (true) {
-            //URLHandler handler = getHandler(n++);
-            //if (handler == null) {
-                //break;
-            //}
-            //URL res = handler.findResource(name);
-            //if (res != null) {
-                //return res;
-            //}
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.461 -0400", hash_original_method = "CFA5B2A5119E9C6C6C6B8BDB54F0FFE4", hash_generated_method = "4B7C27B6897F3466C64F292FE3C31564")
     private URLHandler getHandler(int num) {
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_1298434714 = null; //Variable for return #1
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_1437116598 = null; //Variable for return #2
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_421352991 = null; //Variable for return #3
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_1298434714 = null; 
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_1437116598 = null; 
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_421352991 = null; 
         {
             boolean varC6CBE7D489CE95B916048C828E20629B_1937134681 = (num < handlerList.size());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1298434714 = handlerList.get(num);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         makeNewHandler();
         {
             boolean varC6CBE7D489CE95B916048C828E20629B_10344645 = (num < handlerList.size());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1437116598 = handlerList.get(num);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_421352991 = null;
         addTaint(num);
-        URLHandler varA7E53CE21691AB073D9660D615818899_587607160; //Final return value
+        URLHandler varA7E53CE21691AB073D9660D615818899_587607160; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_587607160 = varB4EAC82CA7396A68D541C85D26508E83_1298434714;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_587607160 = varB4EAC82CA7396A68D541C85D26508E83_1437116598;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_587607160 = varB4EAC82CA7396A68D541C85D26508E83_421352991;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_587607160.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_587607160.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_587607160;
-        // ---------- Original Method ----------
-        //if (num < handlerList.size()) {
-            //return handlerList.get(num);
-        //}
-        //makeNewHandler();
-        //if (num < handlerList.size()) {
-            //return handlerList.get(num);
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.461 -0400", hash_original_method = "A878B5121D5BF1232029A8CDBC76BE45", hash_generated_method = "E40D12F35DDEF84D2943294A4D741FEC")
     private synchronized void makeNewHandler() {
         {
@@ -472,7 +475,7 @@ public class URLClassLoader extends SecureClassLoader {
                 URL nextCandidate = searchList.remove(0);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NullPointerException("A URL is null");
-                } //End block
+                } 
                 {
                     boolean var087B3C4559B5C5125F9C3E5F757C0545_346743781 = (!handlerMap.containsKey(nextCandidate));
                     {
@@ -482,75 +485,75 @@ public class URLClassLoader extends SecureClassLoader {
                             boolean varB604F1DF8F50013B1F7F0E3AFFD2694D_1557056858 = (protocol.equals("jar"));
                             {
                                 result = createURLJarHandler(nextCandidate);
-                            } //End block
+                            } 
                             {
                                 boolean varC08545D58A986C9447AB113046FC989F_168421775 = (protocol.equals("file"));
                                 {
                                     result = createURLFileHandler(nextCandidate);
-                                } //End block
+                                } 
                                 {
                                     result = createURLHandler(nextCandidate);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
                         {
                             handlerMap.put(nextCandidate, result);
                             handlerList.add(result);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.462 -0400", hash_original_method = "15D2A778081BB97B4F5082C5EA9323F2", hash_generated_method = "0D973D9D805C148615CE3D9DFFE6C0F6")
     private URLHandler createURLHandler(URL url) {
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_797412355 = null; //Variable for return #1
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_797412355 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_797412355 = new URLHandler(url);
         addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_797412355.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_797412355.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_797412355;
-        // ---------- Original Method ----------
-        //return new URLHandler(url);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.462 -0400", hash_original_method = "959FE775BCBFF6223F7FD94A4010D369", hash_generated_method = "11EED8684F5324F87F55ADF62724460E")
     private URLHandler createURLFileHandler(URL url) {
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_667970577 = null; //Variable for return #1
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_667970577 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_667970577 = new URLFileHandler(url);
         addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_667970577.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_667970577.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_667970577;
-        // ---------- Original Method ----------
-        //return new URLFileHandler(url);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.463 -0400", hash_original_method = "93DBA576D247FBB46E5BCA4D9E3C8DFF", hash_generated_method = "B3F819F33E8FD81898F8BA74B764D597")
     private URLHandler createURLJarHandler(URL url) {
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_1713070424 = null; //Variable for return #1
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_630319617 = null; //Variable for return #2
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_1531694341 = null; //Variable for return #3
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_1713070424 = null; 
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_630319617 = null; 
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_1531694341 = null; 
         String prefixName;
         String file = url.getFile();
         {
             boolean var5A4D7A486C11D5F49AB1CA63C5A4886E_814055721 = (url.getFile().endsWith("!/"));
             {
                 prefixName = "";
-            } //End block
+            } 
             {
                 int sepIdx = file.lastIndexOf("!/");
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1713070424 = null;
-                } //End block
+                } 
                 sepIdx += 2;
                 prefixName = file.substring(sepIdx);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             URL jarURL = ((JarURLConnection) url
@@ -571,42 +574,42 @@ public class URLClassLoader extends SecureClassLoader {
                                 Attributes.Name.CLASS_PATH);
                             {
                                 searchList.addAll(0, getInternalURLs(url, classpath));
-                            } //End block
-                        } //End block
-                    } //End block
+                            } 
+                        } 
+                    } 
                     catch (IOException e)
                     { }
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_630319617 = jarH;
-        } //End block
+        } 
         catch (IOException e)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_1531694341 = null;
         addTaint(url.getTaint());
-        URLHandler varA7E53CE21691AB073D9660D615818899_721676681; //Final return value
+        URLHandler varA7E53CE21691AB073D9660D615818899_721676681; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_721676681 = varB4EAC82CA7396A68D541C85D26508E83_1713070424;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_721676681 = varB4EAC82CA7396A68D541C85D26508E83_630319617;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_721676681 = varB4EAC82CA7396A68D541C85D26508E83_1531694341;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_721676681.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_721676681.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_721676681;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.464 -0400", hash_original_method = "1F20C74E5FA90998EED1F262145E5A78", hash_generated_method = "C6BE60648CF3CB8C7281658263C760D8")
     protected Package definePackage(String packageName, Manifest manifest,
                                     URL url) throws IllegalArgumentException {
-        Package varB4EAC82CA7396A68D541C85D26508E83_900355427 = null; //Variable for return #1
+        Package varB4EAC82CA7396A68D541C85D26508E83_900355427 = null; 
         Attributes mainAttributes = manifest.getMainAttributes();
         String dirName = packageName.replace('.', '/') + "/";
         Attributes packageAttributes = manifest.getAttributes(dirName);
@@ -614,43 +617,43 @@ public class URLClassLoader extends SecureClassLoader {
         {
             noEntry = true;
             packageAttributes = mainAttributes;
-        } //End block
+        } 
         String specificationTitle = packageAttributes
                 .getValue(Attributes.Name.SPECIFICATION_TITLE);
         {
             specificationTitle = mainAttributes
                     .getValue(Attributes.Name.SPECIFICATION_TITLE);
-        } //End block
+        } 
         String specificationVersion = packageAttributes
                 .getValue(Attributes.Name.SPECIFICATION_VERSION);
         {
             specificationVersion = mainAttributes
                     .getValue(Attributes.Name.SPECIFICATION_VERSION);
-        } //End block
+        } 
         String specificationVendor = packageAttributes
                 .getValue(Attributes.Name.SPECIFICATION_VENDOR);
         {
             specificationVendor = mainAttributes
                     .getValue(Attributes.Name.SPECIFICATION_VENDOR);
-        } //End block
+        } 
         String implementationTitle = packageAttributes
                 .getValue(Attributes.Name.IMPLEMENTATION_TITLE);
         {
             implementationTitle = mainAttributes
                     .getValue(Attributes.Name.IMPLEMENTATION_TITLE);
-        } //End block
+        } 
         String implementationVersion = packageAttributes
                 .getValue(Attributes.Name.IMPLEMENTATION_VERSION);
         {
             implementationVersion = mainAttributes
                     .getValue(Attributes.Name.IMPLEMENTATION_VERSION);
-        } //End block
+        } 
         String implementationVendor = packageAttributes
                 .getValue(Attributes.Name.IMPLEMENTATION_VENDOR);
         {
             implementationVendor = mainAttributes
                     .getValue(Attributes.Name.IMPLEMENTATION_VENDOR);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_900355427 = definePackage(packageName, specificationTitle,
                 specificationVersion, specificationVendor, implementationTitle,
                 implementationVersion, implementationVendor, isSealed(manifest,
@@ -658,13 +661,14 @@ public class URLClassLoader extends SecureClassLoader {
         addTaint(packageName.getTaint());
         addTaint(manifest.getTaint());
         addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_900355427.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_900355427.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_900355427;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.465 -0400", hash_original_method = "F65716DA89135DC89A539D54ADB64D73", hash_generated_method = "35096B28DA86F673BA58D21A1125084E")
     private boolean isSealed(Manifest manifest, String dirName) {
         Attributes attributes = manifest.getAttributes(dirName);
@@ -672,8 +676,8 @@ public class URLClassLoader extends SecureClassLoader {
             String value = attributes.getValue(Attributes.Name.SEALED);
             {
                 boolean varF9F03D746A978112631EA8BA624DD149_197087263 = (value.equalsIgnoreCase("true"));
-            } //End block
-        } //End block
+            } 
+        } 
         Attributes mainAttributes = manifest.getMainAttributes();
         String value = mainAttributes.getValue(Attributes.Name.SEALED);
         boolean varE5C35E1E8162E6D042C52DDD4CF2D6AA_1862673952 = ((value != null && value.equalsIgnoreCase("true")));
@@ -681,23 +685,24 @@ public class URLClassLoader extends SecureClassLoader {
         addTaint(dirName.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_908874968 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_908874968;
-        // ---------- Original Method ----------
-        //Attributes attributes = manifest.getAttributes(dirName);
-        //if (attributes != null) {
-            //String value = attributes.getValue(Attributes.Name.SEALED);
-            //if (value != null) {
-                //return value.equalsIgnoreCase("true");
-            //}
-        //}
-        //Attributes mainAttributes = manifest.getMainAttributes();
-        //String value = mainAttributes.getValue(Attributes.Name.SEALED);
-        //return (value != null && value.equalsIgnoreCase("true"));
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.468 -0400", hash_original_method = "8DCFE07B381999C3DEF19ABA31EFB008", hash_generated_method = "93CC9DC68CD5B397855A7AC1BA05E3A7")
     private ArrayList<URL> getInternalURLs(URL root, String classpath) {
-        ArrayList<URL> varB4EAC82CA7396A68D541C85D26508E83_843476901 = null; //Variable for return #1
+        ArrayList<URL> varB4EAC82CA7396A68D541C85D26508E83_843476901 = null; 
         StringTokenizer tokenizer = new StringTokenizer(classpath);
         ArrayList<URL> addedURLs = new ArrayList<URL>();
         String file = root.getFile();
@@ -706,7 +711,7 @@ public class URLClassLoader extends SecureClassLoader {
         {
             index = file.lastIndexOf(
                     System.getProperty("file.separator"), jarIndex) + 1;
-        } //End block
+        } 
         file = file.substring(0, index);
         {
             boolean var2B5824909BF971CED0BAC391F81BF905_1208264869 = (tokenizer.hasMoreElements());
@@ -719,20 +724,20 @@ public class URLClassLoader extends SecureClassLoader {
                         {
                             URL url = new URL(new URL(file), element);
                             addedURLs.add(createSearchURL(url));
-                        } //End block
+                        } 
                         catch (MalformedURLException e)
                         { }
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_843476901 = addedURLs;
         addTaint(root.getTaint());
         addTaint(classpath.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_843476901.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_843476901.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_843476901;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -744,8 +749,8 @@ public class URLClassLoader extends SecureClassLoader {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.469 -0400", hash_original_method = "379F12D2048DD620EF06C57D0B8DE6F0", hash_generated_method = "59D8AC312A7688B15BB683D206A79DB0")
         public  IndexFile(HashMap<String, ArrayList<URL>> map) {
             this.map = map;
-            // ---------- Original Method ----------
-            //this.map = map;
+            
+            
         }
 
         
@@ -814,13 +819,13 @@ public class URLClassLoader extends SecureClassLoader {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.471 -0400", hash_original_method = "8FF86E61D1723FF11EF08355D8ACABBC", hash_generated_method = "D642AF1FE59331B61D6AD07609FB8E25")
          ArrayList<URL> get(String name) {
-            ArrayList<URL> varB4EAC82CA7396A68D541C85D26508E83_166823181 = null; //Variable for return #1
+            ArrayList<URL> varB4EAC82CA7396A68D541C85D26508E83_166823181 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_166823181 = map.get(name);
             addTaint(name.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_166823181.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_166823181.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_166823181;
-            // ---------- Original Method ----------
-            //return map.get(name);
+            
+            
         }
 
         
@@ -840,9 +845,9 @@ public class URLClassLoader extends SecureClassLoader {
         public  URLHandler(URL url) {
             this.url = url;
             this.codeSourceUrl = url;
-            // ---------- Original Method ----------
-            //this.url = url;
-            //this.codeSourceUrl = url;
+            
+            
+            
         }
 
         
@@ -853,123 +858,123 @@ public class URLClassLoader extends SecureClassLoader {
                 boolean varFC751D1AB3C4048454C180D236DA6858_1795767467 = (res != null && !resources.contains(res));
                 {
                     resources.add(res);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(name.getTaint());
             addTaint(resources.getTaint());
-            // ---------- Original Method ----------
-            //URL res = findResource(name);
-            //if (res != null && !resources.contains(res)) {
-                //resources.add(res);
-            //}
+            
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.473 -0400", hash_original_method = "DE45CDB737E4642285D570F5610849E6", hash_generated_method = "A46F815B48A14ED6EB5FE5D9B3BAF370")
          Class<?> findClass(String packageName, String name, String origName) {
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1436416062 = null; //Variable for return #1
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_2113765943 = null; //Variable for return #2
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1436416062 = null; 
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_2113765943 = null; 
             URL resURL = targetURL(url, name);
             {
                 try 
                 {
                     InputStream is = resURL.openStream();
                     varB4EAC82CA7396A68D541C85D26508E83_1436416062 = createClass(is, packageName, origName);
-                } //End block
+                } 
                 catch (IOException e)
                 { }
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_2113765943 = null;
             addTaint(packageName.getTaint());
             addTaint(name.getTaint());
             addTaint(origName.getTaint());
-            Class<?> varA7E53CE21691AB073D9660D615818899_365685353; //Final return value
+            Class<?> varA7E53CE21691AB073D9660D615818899_365685353; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_365685353 = varB4EAC82CA7396A68D541C85D26508E83_1436416062;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_365685353 = varB4EAC82CA7396A68D541C85D26508E83_2113765943;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_365685353.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_365685353.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_365685353;
-            // ---------- Original Method ----------
-            //URL resURL = targetURL(url, name);
-            //if (resURL != null) {
-                //try {
-                    //InputStream is = resURL.openStream();
-                    //return createClass(is, packageName, origName);
-                //} catch (IOException e) {
-                //}
-            //}
-            //return null;
+            
+            
+            
+                
+                    
+                    
+                
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.477 -0400", hash_original_method = "73460255618B48EEC6C92DAEEADA9765", hash_generated_method = "B9FC3791CA77CB6491230A2E1E9B4896")
          Class<?> createClass(InputStream is, String packageName, String origName) {
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1902810149 = null; //Variable for return #1
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1007646401 = null; //Variable for return #2
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1038208492 = null; //Variable for return #3
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1902810149 = null; 
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1007646401 = null; 
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1038208492 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1902810149 = null;
-            } //End block
+            } 
             byte[] clBuf = null;
             try 
             {
                 clBuf = Streams.readFully(is);
-            } //End block
+            } 
             catch (IOException e)
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1007646401 = null;
-            } //End block
+            } 
             {
                 String packageDotName = packageName.replace('/', '.');
                 Package packageObj = getPackage(packageDotName);
                 {
                     definePackage(packageDotName, null, null,
                             null, null, null, null, null);
-                } //End block
+                } 
                 {
                     {
                         boolean var46ECFB0AA0749BB31F7AC12ACED7FFF6_109845558 = (packageObj.isSealed());
                         {
                             if (DroidSafeAndroidRuntime.control) throw new SecurityException("Package is sealed");
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1038208492 = defineClass(origName, clBuf, 0, clBuf.length, new CodeSource(codeSourceUrl, (Certificate[]) null));
             addTaint(is.getTaint());
             addTaint(packageName.getTaint());
             addTaint(origName.getTaint());
-            Class<?> varA7E53CE21691AB073D9660D615818899_1689692753; //Final return value
+            Class<?> varA7E53CE21691AB073D9660D615818899_1689692753; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1689692753 = varB4EAC82CA7396A68D541C85D26508E83_1902810149;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1689692753 = varB4EAC82CA7396A68D541C85D26508E83_1007646401;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1689692753 = varB4EAC82CA7396A68D541C85D26508E83_1038208492;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1689692753.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1689692753.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1689692753;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.480 -0400", hash_original_method = "127A00E2878A258FF82AAAD1F4FC3101", hash_generated_method = "1C662FF3365BA14C29529480838B2802")
          URL findResource(String name) {
-            URL varB4EAC82CA7396A68D541C85D26508E83_3321543 = null; //Variable for return #1
-            URL varB4EAC82CA7396A68D541C85D26508E83_1507138148 = null; //Variable for return #2
-            URL varB4EAC82CA7396A68D541C85D26508E83_1107056213 = null; //Variable for return #3
-            URL varB4EAC82CA7396A68D541C85D26508E83_352248814 = null; //Variable for return #4
-            URL varB4EAC82CA7396A68D541C85D26508E83_1706221811 = null; //Variable for return #5
+            URL varB4EAC82CA7396A68D541C85D26508E83_3321543 = null; 
+            URL varB4EAC82CA7396A68D541C85D26508E83_1507138148 = null; 
+            URL varB4EAC82CA7396A68D541C85D26508E83_1107056213 = null; 
+            URL varB4EAC82CA7396A68D541C85D26508E83_352248814 = null; 
+            URL varB4EAC82CA7396A68D541C85D26508E83_1706221811 = null; 
             URL resURL = targetURL(url, name);
             {
                 try 
@@ -980,76 +985,76 @@ public class URLClassLoader extends SecureClassLoader {
                         boolean varE071FEB2BBC390EE5432466A982988A9_1901473710 = (!resURL.getProtocol().equals("http"));
                         {
                             varB4EAC82CA7396A68D541C85D26508E83_3321543 = resURL;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     int code;
                     {
                         boolean var691373D752CAE39EA2108E7727B5AEC9_997194875 = ((code = ((HttpURLConnection) uc).getResponseCode()) >= 200
                             && code < 300);
                         {
                             varB4EAC82CA7396A68D541C85D26508E83_1507138148 = resURL;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 catch (SecurityException e)
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1107056213 = null;
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_352248814 = null;
-                } //End block
-            } //End block
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1706221811 = null;
             addTaint(name.getTaint());
-            URL varA7E53CE21691AB073D9660D615818899_114629209; //Final return value
+            URL varA7E53CE21691AB073D9660D615818899_114629209; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_114629209 = varB4EAC82CA7396A68D541C85D26508E83_3321543;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_114629209 = varB4EAC82CA7396A68D541C85D26508E83_1507138148;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_114629209 = varB4EAC82CA7396A68D541C85D26508E83_1107056213;
                     break;
-                case 4: //Assign result for return ordinal #4
+                case 4: 
                     varA7E53CE21691AB073D9660D615818899_114629209 = varB4EAC82CA7396A68D541C85D26508E83_352248814;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_114629209 = varB4EAC82CA7396A68D541C85D26508E83_1706221811;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_114629209.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_114629209.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_114629209;
-            // ---------- Original Method ----------
-            //URL resURL = targetURL(url, name);
-            //if (resURL != null) {
-                //try {
-                    //URLConnection uc = resURL.openConnection();
-                    //uc.getInputStream().close();
-                    //if (!resURL.getProtocol().equals("http")) {
-                        //return resURL;
-                    //}
-                    //int code;
-                    //if ((code = ((HttpURLConnection) uc).getResponseCode()) >= 200
-                            //&& code < 300) {
-                        //return resURL;
-                    //}
-                //} catch (SecurityException e) {
-                    //return null;
-                //} catch (IOException e) {
-                    //return null;
-                //}
-            //}
-            //return null;
+            
+            
+            
+                
+                    
+                    
+                    
+                        
+                    
+                    
+                    
+                            
+                        
+                    
+                
+                    
+                
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.483 -0400", hash_original_method = "0524D4A234DDE6E7BD7D4DF76408464F", hash_generated_method = "5B6B1BFEF26A581CFD63094CECA11EA8")
          URL targetURL(URL base, String name) {
-            URL varB4EAC82CA7396A68D541C85D26508E83_875100832 = null; //Variable for return #1
-            URL varB4EAC82CA7396A68D541C85D26508E83_264134264 = null; //Variable for return #2
+            URL varB4EAC82CA7396A68D541C85D26508E83_875100832 = null; 
+            URL varB4EAC82CA7396A68D541C85D26508E83_264134264 = null; 
             try 
             {
                 StringBuilder fileBuilder = new StringBuilder();
@@ -1057,34 +1062,34 @@ public class URLClassLoader extends SecureClassLoader {
                 URI.PATH_ENCODER.appendEncoded(fileBuilder, name);
                 String file = fileBuilder.toString();
                 varB4EAC82CA7396A68D541C85D26508E83_875100832 = new URL(base.getProtocol(), base.getHost(), base.getPort(), file, null);
-            } //End block
+            } 
             catch (MalformedURLException e)
             {
                 varB4EAC82CA7396A68D541C85D26508E83_264134264 = null;
-            } //End block
+            } 
             addTaint(base.getTaint());
             addTaint(name.getTaint());
-            URL varA7E53CE21691AB073D9660D615818899_875500336; //Final return value
+            URL varA7E53CE21691AB073D9660D615818899_875500336; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_875500336 = varB4EAC82CA7396A68D541C85D26508E83_875100832;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_875500336 = varB4EAC82CA7396A68D541C85D26508E83_264134264;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_875500336.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_875500336.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_875500336;
-            // ---------- Original Method ----------
-            //try {
-                //StringBuilder fileBuilder = new StringBuilder();
-                //fileBuilder.append(base.getFile());
-                //URI.PATH_ENCODER.appendEncoded(fileBuilder, name);
-                //String file = fileBuilder.toString();
-                //return new URL(base.getProtocol(), base.getHost(), base.getPort(), file, null);
-            //} catch (MalformedURLException e) {
-                //return null;
-            //}
+            
+            
+                
+                
+                
+                
+                
+            
+                
+            
         }
 
         
@@ -1115,12 +1120,12 @@ public class URLClassLoader extends SecureClassLoader {
             final JarEntry je = jf.getJarEntry("META-INF/INDEX.LIST");
             this.index = (je == null ? null : IndexFile.readIndexFile(jf, je, url));
             addTaint(jarURL.getTaint());
-            // ---------- Original Method ----------
-            //this.jf = jf;
-            //this.prefixName = prefixName;
-            //this.codeSourceUrl = jarURL;
-            //final JarEntry je = jf.getJarEntry("META-INF/INDEX.LIST");
-            //this.index = (je == null ? null : IndexFile.readIndexFile(jf, je, url));
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1133,22 +1138,22 @@ public class URLClassLoader extends SecureClassLoader {
             this.codeSourceUrl = jarURL;
             addTaint(url.getTaint());
             addTaint(jarURL.getTaint());
-            // ---------- Original Method ----------
-            //this.jf = jf;
-            //this.prefixName = prefixName;
-            //this.index = index;
-            //this.codeSourceUrl = jarURL;
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.485 -0400", hash_original_method = "2D62A5E011065AD5CA1BC3D6BB78BB91", hash_generated_method = "1332E72F6FE485FF92045FBF511933F0")
          IndexFile getIndex() {
-            IndexFile varB4EAC82CA7396A68D541C85D26508E83_679436838 = null; //Variable for return #1
+            IndexFile varB4EAC82CA7396A68D541C85D26508E83_679436838 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_679436838 = index;
-            varB4EAC82CA7396A68D541C85D26508E83_679436838.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_679436838.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_679436838;
-            // ---------- Original Method ----------
-            //return index;
+            
+            
         }
 
         
@@ -1160,8 +1165,8 @@ public class URLClassLoader extends SecureClassLoader {
                 boolean varFC751D1AB3C4048454C180D236DA6858_935013562 = (res != null && !resources.contains(res));
                 {
                     resources.add(res);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 int pos = name.lastIndexOf("/");
                 String indexedName;
@@ -1178,41 +1183,41 @@ public class URLClassLoader extends SecureClassLoader {
                             URLHandler h = getSubHandler(url);
                             {
                                 h.findResources(name, resources);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             addTaint(name.getTaint());
             addTaint(resources.getTaint());
-            // ---------- Original Method ----------
-            //URL res = findResourceInOwn(name);
-            //if (res != null && !resources.contains(res)) {
-                //resources.add(res);
-            //}
-            //if (index != null) {
-                //int pos = name.lastIndexOf("/");
-                //String indexedName = (pos > 0) ? name.substring(0, pos) : name;
-                //ArrayList<URL> urls = index.get(indexedName);
-                //if (urls != null) {
-                    //urls.remove(url);
-                    //for (URL url : urls) {
-                        //URLHandler h = getSubHandler(url);
-                        //if (h != null) {
-                            //h.findResources(name, resources);
-                        //}
-                    //}
-                //}
-            //}
+            
+            
+            
+                
+            
+            
+                
+                
+                
+                
+                    
+                    
+                        
+                        
+                            
+                        
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.497 -0400", hash_original_method = "A33B0C1225B85366B8FACC1A747264F5", hash_generated_method = "1A965E60B470A81DDE20F437D4DC15F1")
         @Override
          Class<?> findClass(String packageName, String name, String origName) {
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_203220726 = null; //Variable for return #1
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_704217555 = null; //Variable for return #2
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1900647193 = null; //Variable for return #3
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_203220726 = null; 
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_704217555 = null; 
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1900647193 = null; 
             String entryName = prefixName + name;
             JarEntry entry = jf.getJarEntry(entryName);
             {
@@ -1220,18 +1225,18 @@ public class URLClassLoader extends SecureClassLoader {
                 {
                     Manifest manifest = jf.getManifest();
                     varB4EAC82CA7396A68D541C85D26508E83_203220726 = createClass(entry, manifest, packageName, origName);
-                } //End block
+                } 
                 catch (IOException e)
                 { }
-            } //End block
+            } 
             {
                 ArrayList<URL> urls;
                 {
                     urls = index.get(name);
-                } //End block
+                } 
                 {
                     urls = index.get(packageName);
-                } //End block
+                } 
                 {
                     urls.remove(url);
                     {
@@ -1244,49 +1249,49 @@ public class URLClassLoader extends SecureClassLoader {
                                 Class<?> res = h.findClass(packageName, name, origName);
                                 {
                                     varB4EAC82CA7396A68D541C85D26508E83_704217555 = res;
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1900647193 = null;
             addTaint(packageName.getTaint());
             addTaint(name.getTaint());
             addTaint(origName.getTaint());
-            Class<?> varA7E53CE21691AB073D9660D615818899_1486781752; //Final return value
+            Class<?> varA7E53CE21691AB073D9660D615818899_1486781752; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1486781752 = varB4EAC82CA7396A68D541C85D26508E83_203220726;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1486781752 = varB4EAC82CA7396A68D541C85D26508E83_704217555;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1486781752 = varB4EAC82CA7396A68D541C85D26508E83_1900647193;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1486781752.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1486781752.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1486781752;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.501 -0400", hash_original_method = "0997311DA5151313F3B17639635BC461", hash_generated_method = "F3126E4E686D1C6625640BB91E6B03F7")
         private Class<?> createClass(JarEntry entry, Manifest manifest, String packageName, String origName) {
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1630366679 = null; //Variable for return #1
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1117475615 = null; //Variable for return #2
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1630366679 = null; 
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1117475615 = null; 
             byte[] clBuf = null;
             try 
             {
                 InputStream is = jf.getInputStream(entry);
                 clBuf = Streams.readFully(is);
-            } //End block
+            } 
             catch (IOException e)
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1630366679 = null;
-            } //End block
+            } 
             {
                 String packageDotName = packageName.replace('/', '.');
                 Package packageObj = getPackage(packageDotName);
@@ -1294,12 +1299,12 @@ public class URLClassLoader extends SecureClassLoader {
                     {
                         definePackage(packageDotName, manifest,
                                 codeSourceUrl);
-                    } //End block
+                    } 
                     {
                         definePackage(packageDotName, null, null,
                                 null, null, null, null, null);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     boolean exception = packageObj.isSealed();
                     {
@@ -1308,80 +1313,80 @@ public class URLClassLoader extends SecureClassLoader {
                             {
                                 exception = !packageObj
                                     .isSealed(codeSourceUrl);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         if (DroidSafeAndroidRuntime.control) throw new SecurityException(String.format("Package %s is sealed",
                                 packageName));
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             CodeSource codeS = new CodeSource(codeSourceUrl, entry.getCertificates());
             varB4EAC82CA7396A68D541C85D26508E83_1117475615 = defineClass(origName, clBuf, 0, clBuf.length, codeS);
             addTaint(entry.getTaint());
             addTaint(manifest.getTaint());
             addTaint(packageName.getTaint());
             addTaint(origName.getTaint());
-            Class<?> varA7E53CE21691AB073D9660D615818899_685406638; //Final return value
+            Class<?> varA7E53CE21691AB073D9660D615818899_685406638; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_685406638 = varB4EAC82CA7396A68D541C85D26508E83_1630366679;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_685406638 = varB4EAC82CA7396A68D541C85D26508E83_1117475615;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_685406638.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_685406638.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_685406638;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.505 -0400", hash_original_method = "BEAE23CC7138835BB0FEF01D26145FD9", hash_generated_method = "439DBAC353949FCC43BF38C7B047FB49")
          URL findResourceInOwn(String name) {
-            URL varB4EAC82CA7396A68D541C85D26508E83_895804505 = null; //Variable for return #1
-            URL varB4EAC82CA7396A68D541C85D26508E83_134027674 = null; //Variable for return #2
+            URL varB4EAC82CA7396A68D541C85D26508E83_895804505 = null; 
+            URL varB4EAC82CA7396A68D541C85D26508E83_134027674 = null; 
             String entryName = prefixName + name;
             {
                 boolean var970A0F969D5FE2206AF80ED83FDD2671_566665123 = (jf.getEntry(entryName) != null);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_895804505 = targetURL(url, name);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_134027674 = null;
             addTaint(name.getTaint());
-            URL varA7E53CE21691AB073D9660D615818899_102276412; //Final return value
+            URL varA7E53CE21691AB073D9660D615818899_102276412; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_102276412 = varB4EAC82CA7396A68D541C85D26508E83_895804505;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_102276412 = varB4EAC82CA7396A68D541C85D26508E83_134027674;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_102276412.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_102276412.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_102276412;
-            // ---------- Original Method ----------
-            //String entryName = prefixName + name;
-            //if (jf.getEntry(entryName) != null) {
-                //return targetURL(url, name);
-            //}
-            //return null;
+            
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.512 -0400", hash_original_method = "7546D3992FBBAF86B12F0B740620B74B", hash_generated_method = "1BF7806D2EFF8F6B6AC734F96D1879B6")
         @Override
          URL findResource(String name) {
-            URL varB4EAC82CA7396A68D541C85D26508E83_2080631803 = null; //Variable for return #1
-            URL varB4EAC82CA7396A68D541C85D26508E83_384119243 = null; //Variable for return #2
-            URL varB4EAC82CA7396A68D541C85D26508E83_1429830723 = null; //Variable for return #3
+            URL varB4EAC82CA7396A68D541C85D26508E83_2080631803 = null; 
+            URL varB4EAC82CA7396A68D541C85D26508E83_384119243 = null; 
+            URL varB4EAC82CA7396A68D541C85D26508E83_1429830723 = null; 
             URL res = findResourceInOwn(name);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2080631803 = res;
-            } //End block
+            } 
             {
                 int pos = name.lastIndexOf("/");
                 String indexedName;
@@ -1400,114 +1405,114 @@ public class URLClassLoader extends SecureClassLoader {
                                 res = h.findResource(name);
                                 {
                                     varB4EAC82CA7396A68D541C85D26508E83_384119243 = res;
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1429830723 = null;
             addTaint(name.getTaint());
-            URL varA7E53CE21691AB073D9660D615818899_540337772; //Final return value
+            URL varA7E53CE21691AB073D9660D615818899_540337772; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_540337772 = varB4EAC82CA7396A68D541C85D26508E83_2080631803;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_540337772 = varB4EAC82CA7396A68D541C85D26508E83_384119243;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_540337772 = varB4EAC82CA7396A68D541C85D26508E83_1429830723;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_540337772.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_540337772.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_540337772;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.514 -0400", hash_original_method = "47CD540256D0F2B23AE4D5BB7E445858", hash_generated_method = "7FB6B82232022E45AB66F44C415367C2")
         private synchronized URLHandler getSubHandler(URL url) {
-            URLHandler varB4EAC82CA7396A68D541C85D26508E83_706953382 = null; //Variable for return #1
-            URLHandler varB4EAC82CA7396A68D541C85D26508E83_936059375 = null; //Variable for return #2
+            URLHandler varB4EAC82CA7396A68D541C85D26508E83_706953382 = null; 
+            URLHandler varB4EAC82CA7396A68D541C85D26508E83_936059375 = null; 
             URLHandler sub = subHandlers.get(url);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_706953382 = sub;
-            } //End block
+            } 
             String protocol = url.getProtocol();
             {
                 boolean varFE0A78E78A02221C3A8F7118E438EAB7_1326666827 = (protocol.equals("jar"));
                 {
                     sub = createURLJarHandler(url);
-                } //End block
+                } 
                 {
                     boolean var07199D08C001E96CE71D5573EC1F815A_90246403 = (protocol.equals("file"));
                     {
                         sub = createURLSubJarHandler(url);
-                    } //End block
+                    } 
                     {
                         sub = createURLHandler(url);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 subHandlers.put(url, sub);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_936059375 = sub;
             addTaint(url.getTaint());
-            URLHandler varA7E53CE21691AB073D9660D615818899_1012224796; //Final return value
+            URLHandler varA7E53CE21691AB073D9660D615818899_1012224796; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1012224796 = varB4EAC82CA7396A68D541C85D26508E83_706953382;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1012224796 = varB4EAC82CA7396A68D541C85D26508E83_936059375;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1012224796.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1012224796.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1012224796;
-            // ---------- Original Method ----------
-            //URLHandler sub = subHandlers.get(url);
-            //if (sub != null) {
-                //return sub;
-            //}
-            //String protocol = url.getProtocol();
-            //if (protocol.equals("jar")) {
-                //sub = createURLJarHandler(url);
-            //} else if (protocol.equals("file")) {
-                //sub = createURLSubJarHandler(url);
-            //} else {
-                //sub = createURLHandler(url);
-            //}
-            //if (sub != null) {
-                //subHandlers.put(url, sub);
-            //}
-            //return sub;
+            
+            
+            
+                
+            
+            
+            
+                
+            
+                
+            
+                
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.515 -0400", hash_original_method = "CC5C093E882DD207DA9222EBC985A361", hash_generated_method = "FFF9E56F38E1C1CEAF9AC16B71C227E2")
         private URLHandler createURLSubJarHandler(URL url) {
-            URLHandler varB4EAC82CA7396A68D541C85D26508E83_148828846 = null; //Variable for return #1
-            URLHandler varB4EAC82CA7396A68D541C85D26508E83_1220034582 = null; //Variable for return #2
-            URLHandler varB4EAC82CA7396A68D541C85D26508E83_1994603850 = null; //Variable for return #3
+            URLHandler varB4EAC82CA7396A68D541C85D26508E83_148828846 = null; 
+            URLHandler varB4EAC82CA7396A68D541C85D26508E83_1220034582 = null; 
+            URLHandler varB4EAC82CA7396A68D541C85D26508E83_1994603850 = null; 
             String prefixName;
             String file = url.getFile();
             {
                 boolean var7356D1B77839B718E750922987458DE7_358526114 = (url.getFile().endsWith("!/"));
                 {
                     prefixName = "";
-                } //End block
+                } 
                 {
                     int sepIdx = file.lastIndexOf("!/");
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_148828846 = null;
-                    } //End block
+                    } 
                     sepIdx += 2;
                     prefixName = file.substring(sepIdx);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             try 
             {
                 URL jarURL = ((JarURLConnection) url
@@ -1518,27 +1523,27 @@ public class URLClassLoader extends SecureClassLoader {
                 JarFile jf = juc.getJarFile();
                 URLJarHandler jarH = new URLJarHandler(url, jarURL, jf, prefixName, null);
                 varB4EAC82CA7396A68D541C85D26508E83_1220034582 = jarH;
-            } //End block
+            } 
             catch (IOException e)
             { }
             varB4EAC82CA7396A68D541C85D26508E83_1994603850 = null;
             addTaint(url.getTaint());
-            URLHandler varA7E53CE21691AB073D9660D615818899_55994053; //Final return value
+            URLHandler varA7E53CE21691AB073D9660D615818899_55994053; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_55994053 = varB4EAC82CA7396A68D541C85D26508E83_148828846;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_55994053 = varB4EAC82CA7396A68D541C85D26508E83_1220034582;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_55994053 = varB4EAC82CA7396A68D541C85D26508E83_1994603850;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_55994053.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_55994053.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_55994053;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1559,52 +1564,52 @@ public class URLClassLoader extends SecureClassLoader {
             int hostLength = 0;
             {
                 hostLength = host.length();
-            } //End block
+            } 
             StringBuilder buf = new StringBuilder(2 + hostLength
                     + baseFile.length());
             {
                 buf.append("//").append(host);
-            } //End block
+            } 
             buf.append(baseFile);
             prefix = buf.toString();
             addTaint(url.getTaint());
-            // ---------- Original Method ----------
-            //String baseFile = url.getFile();
-            //String host = url.getHost();
-            //int hostLength = 0;
-            //if (host != null) {
-                //hostLength = host.length();
-            //}
-            //StringBuilder buf = new StringBuilder(2 + hostLength
-                    //+ baseFile.length());
-            //if (hostLength > 0) {
-                //buf.append("//").append(host);
-            //}
-            //buf.append(baseFile);
-            //prefix = buf.toString();
+            
+            
+            
+            
+            
+                
+            
+            
+                    
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.518 -0400", hash_original_method = "459A43E8A29596EEF0DEE6D3A05FE74A", hash_generated_method = "658988EBE1035A5979A2CC1D606C6B7F")
         @Override
          Class<?> findClass(String packageName, String name, String origName) {
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1551255691 = null; //Variable for return #1
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1585845241 = null; //Variable for return #2
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1986686828 = null; //Variable for return #3
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1732662915 = null; //Variable for return #4
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1551255691 = null; 
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1585845241 = null; 
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1986686828 = null; 
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1732662915 = null; 
             String filename = prefix + name;
             try 
             {
                 filename = URLDecoder.decode(filename, "UTF-8");
-            } //End block
+            } 
             catch (IllegalArgumentException e)
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1551255691 = null;
-            } //End block
+            } 
             catch (UnsupportedEncodingException e)
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1585845241 = null;
-            } //End block
+            } 
             File file = new File(filename);
             {
                 boolean var59AA0F7651ECC78FBF1607A856F762E1_618016064 = (file.exists());
@@ -1613,68 +1618,68 @@ public class URLClassLoader extends SecureClassLoader {
                     {
                         InputStream is = new FileInputStream(file);
                         varB4EAC82CA7396A68D541C85D26508E83_1986686828 = createClass(is, packageName, origName);
-                    } //End block
+                    } 
                     catch (FileNotFoundException e)
                     { }
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1732662915 = null;
             addTaint(packageName.getTaint());
             addTaint(name.getTaint());
             addTaint(origName.getTaint());
-            Class<?> varA7E53CE21691AB073D9660D615818899_948596736; //Final return value
+            Class<?> varA7E53CE21691AB073D9660D615818899_948596736; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_948596736 = varB4EAC82CA7396A68D541C85D26508E83_1551255691;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_948596736 = varB4EAC82CA7396A68D541C85D26508E83_1585845241;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_948596736 = varB4EAC82CA7396A68D541C85D26508E83_1986686828;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_948596736 = varB4EAC82CA7396A68D541C85D26508E83_1732662915;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_948596736.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_948596736.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_948596736;
-            // ---------- Original Method ----------
-            //String filename = prefix + name;
-            //try {
-                //filename = URLDecoder.decode(filename, "UTF-8");
-            //} catch (IllegalArgumentException e) {
-                //return null;
-            //} catch (UnsupportedEncodingException e) {
-                //return null;
-            //}
-            //File file = new File(filename);
-            //if (file.exists()) {
-                //try {
-                    //InputStream is = new FileInputStream(file);
-                    //return createClass(is, packageName, origName);
-                //} catch (FileNotFoundException e) {
-                //}
-            //}
-            //return null;
+            
+            
+            
+                
+            
+                
+            
+                
+            
+            
+            
+                
+                    
+                    
+                
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.520 -0400", hash_original_method = "5954C39BABA19C5921C727F17BF4740B", hash_generated_method = "7BDBB2E33C32B752DEC687D4666778F4")
         @Override
          URL findResource(String name) {
-            URL varB4EAC82CA7396A68D541C85D26508E83_899011330 = null; //Variable for return #1
-            URL varB4EAC82CA7396A68D541C85D26508E83_1398380035 = null; //Variable for return #2
-            URL varB4EAC82CA7396A68D541C85D26508E83_1911553334 = null; //Variable for return #3
+            URL varB4EAC82CA7396A68D541C85D26508E83_899011330 = null; 
+            URL varB4EAC82CA7396A68D541C85D26508E83_1398380035 = null; 
+            URL varB4EAC82CA7396A68D541C85D26508E83_1911553334 = null; 
             int idx = 0;
             String filename;
             {
                 boolean var23EFF342BB8E7FE0217A53D321A1C78E_1740151218 = (idx < name.length() &&
                    ((name.charAt(idx) == '/') || (name.charAt(idx) == '\\')));
-            } //End collapsed parenthetic
+            } 
             {
                 name = name.substring(idx);
-            } //End block
+            } 
             try 
             {
                 filename = URLDecoder.decode(prefix, "UTF-8") + name;
@@ -1682,54 +1687,54 @@ public class URLClassLoader extends SecureClassLoader {
                     boolean varBF735348FCCFEB4D8EC418F0236B8831_34259067 = (new File(filename).exists());
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_899011330 = targetURL(url, name);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1398380035 = null;
-            } //End block
+            } 
             catch (IllegalArgumentException e)
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1911553334 = null;
-            } //End block
+            } 
             catch (UnsupportedEncodingException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
-            } //End block
+            } 
             addTaint(name.getTaint());
-            URL varA7E53CE21691AB073D9660D615818899_1313776356; //Final return value
+            URL varA7E53CE21691AB073D9660D615818899_1313776356; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1313776356 = varB4EAC82CA7396A68D541C85D26508E83_899011330;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1313776356 = varB4EAC82CA7396A68D541C85D26508E83_1398380035;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1313776356 = varB4EAC82CA7396A68D541C85D26508E83_1911553334;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1313776356.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1313776356.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1313776356;
-            // ---------- Original Method ----------
-            //int idx = 0;
-            //String filename;
-            //while (idx < name.length() &&
-                   //((name.charAt(idx) == '/') || (name.charAt(idx) == '\\'))) {
-                //idx++;
-            //}
-            //if (idx > 0) {
-                //name = name.substring(idx);
-            //}
-            //try {
-                //filename = URLDecoder.decode(prefix, "UTF-8") + name;
-                //if (new File(filename).exists()) {
-                    //return targetURL(url, name);
-                //}
-                //return null;
-            //} catch (IllegalArgumentException e) {
-                //return null;
-            //} catch (UnsupportedEncodingException e) {
-                //throw new AssertionError(e);
-            //}
+            
+            
+            
+            
+                   
+                
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+                
+            
+                
+            
         }
 
         

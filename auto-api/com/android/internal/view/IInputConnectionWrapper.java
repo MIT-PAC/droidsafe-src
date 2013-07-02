@@ -1,11 +1,11 @@
 package com.android.internal.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.os.Handler;
@@ -36,10 +36,10 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         mInputConnection = new WeakReference<InputConnection>(conn);
         mMainLooper = mainLooper;
         mH = new MyHandler(mMainLooper);
-        // ---------- Original Method ----------
-        //mInputConnection = new WeakReference<InputConnection>(conn);
-        //mMainLooper = mainLooper;
-        //mH = new MyHandler(mMainLooper);
+        
+        
+        
+        
     }
 
     
@@ -47,8 +47,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     public boolean isActive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1614527430 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1614527430;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -59,8 +59,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         addTaint(flags);
         addTaint(seq);
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageIISC(DO_GET_TEXT_AFTER_CURSOR, length, flags, seq, callback));
+        
+        
     }
 
     
@@ -71,8 +71,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         addTaint(flags);
         addTaint(seq);
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageIISC(DO_GET_TEXT_BEFORE_CURSOR, length, flags, seq, callback));
+        
+        
     }
 
     
@@ -82,8 +82,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         addTaint(flags);
         addTaint(seq);
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageISC(DO_GET_SELECTED_TEXT, flags, seq, callback));
+        
+        
     }
 
     
@@ -93,8 +93,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         addTaint(reqModes);
         addTaint(seq);
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageISC(DO_GET_CURSOR_CAPS_MODE, reqModes, seq, callback));
+        
+        
     }
 
     
@@ -107,9 +107,9 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         addTaint(flags);
         addTaint(seq);
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageIOSC(DO_GET_EXTRACTED_TEXT, flags,
-                //request, seq, callback));
+        
+        
+                
     }
 
     
@@ -118,8 +118,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         dispatchMessage(obtainMessageIO(DO_COMMIT_TEXT, newCursorPosition, text));
         addTaint(text.getTaint());
         addTaint(newCursorPosition);
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageIO(DO_COMMIT_TEXT, newCursorPosition, text));
+        
+        
     }
 
     
@@ -127,8 +127,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     public void commitCompletion(CompletionInfo text) {
         dispatchMessage(obtainMessageO(DO_COMMIT_COMPLETION, text));
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageO(DO_COMMIT_COMPLETION, text));
+        
+        
     }
 
     
@@ -136,8 +136,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     public void commitCorrection(CorrectionInfo info) {
         dispatchMessage(obtainMessageO(DO_COMMIT_CORRECTION, info));
         addTaint(info.getTaint());
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageO(DO_COMMIT_CORRECTION, info));
+        
+        
     }
 
     
@@ -146,8 +146,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         dispatchMessage(obtainMessageII(DO_SET_SELECTION, start, end));
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageII(DO_SET_SELECTION, start, end));
+        
+        
     }
 
     
@@ -155,8 +155,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     public void performEditorAction(int id) {
         dispatchMessage(obtainMessageII(DO_PERFORM_EDITOR_ACTION, id, 0));
         addTaint(id);
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageII(DO_PERFORM_EDITOR_ACTION, id, 0));
+        
+        
     }
 
     
@@ -164,8 +164,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     public void performContextMenuAction(int id) {
         dispatchMessage(obtainMessageII(DO_PERFORM_CONTEXT_MENU_ACTION, id, 0));
         addTaint(id);
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageII(DO_PERFORM_CONTEXT_MENU_ACTION, id, 0));
+        
+        
     }
 
     
@@ -174,8 +174,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         dispatchMessage(obtainMessageII(DO_SET_COMPOSING_REGION, start, end));
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageII(DO_SET_COMPOSING_REGION, start, end));
+        
+        
     }
 
     
@@ -184,16 +184,16 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         dispatchMessage(obtainMessageIO(DO_SET_COMPOSING_TEXT, newCursorPosition, text));
         addTaint(text.getTaint());
         addTaint(newCursorPosition);
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageIO(DO_SET_COMPOSING_TEXT, newCursorPosition, text));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.194 -0400", hash_original_method = "6F02D8053ECF48E238847A2FABA8F899", hash_generated_method = "0EA1C6FF08BDC7474C1F768E99AC789D")
     public void finishComposingText() {
         dispatchMessage(obtainMessage(DO_FINISH_COMPOSING_TEXT));
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessage(DO_FINISH_COMPOSING_TEXT));
+        
+        
     }
 
     
@@ -201,8 +201,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     public void sendKeyEvent(KeyEvent event) {
         dispatchMessage(obtainMessageO(DO_SEND_KEY_EVENT, event));
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageO(DO_SEND_KEY_EVENT, event));
+        
+        
     }
 
     
@@ -210,8 +210,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     public void clearMetaKeyStates(int states) {
         dispatchMessage(obtainMessageII(DO_CLEAR_META_KEY_STATES, states, 0));
         addTaint(states);
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageII(DO_CLEAR_META_KEY_STATES, states, 0));
+        
+        
     }
 
     
@@ -221,25 +221,25 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
             leftLength, rightLength));
         addTaint(leftLength);
         addTaint(rightLength);
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageII(DO_DELETE_SURROUNDING_TEXT,
-            //leftLength, rightLength));
+        
+        
+            
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.195 -0400", hash_original_method = "7A31F16907F3D96E10B72B79CABC1C1A", hash_generated_method = "ABE69A11FC08E9E6D9B71FEA871175F2")
     public void beginBatchEdit() {
         dispatchMessage(obtainMessage(DO_BEGIN_BATCH_EDIT));
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessage(DO_BEGIN_BATCH_EDIT));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.195 -0400", hash_original_method = "2DD80BF17B03574DE2AF6B49D0CD84C3", hash_generated_method = "A09066AF166CB53E5DD594379D99093E")
     public void endBatchEdit() {
         dispatchMessage(obtainMessage(DO_END_BATCH_EDIT));
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessage(DO_END_BATCH_EDIT));
+        
+        
     }
 
     
@@ -247,8 +247,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     public void reportFullscreenMode(boolean enabled) {
         dispatchMessage(obtainMessageII(DO_REPORT_FULLSCREEN_MODE, enabled ? 1 : 0, 0));
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageII(DO_REPORT_FULLSCREEN_MODE, enabled ? 1 : 0, 0));
+        
+        
     }
 
     
@@ -257,8 +257,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         dispatchMessage(obtainMessageOO(DO_PERFORM_PRIVATE_COMMAND, action, data));
         addTaint(action.getTaint());
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        //dispatchMessage(obtainMessageOO(DO_PERFORM_PRIVATE_COMMAND, action, data));
+        
+        
     }
 
     
@@ -269,23 +269,23 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
             {
                 executeMessage(msg);
                 msg.recycle();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mH.sendMessage(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //if (Looper.myLooper() == mMainLooper) {
-            //executeMessage(msg);
-            //msg.recycle();
-            //return;
-        //}
-        //mH.sendMessage(msg);
+        
+        
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.198 -0400", hash_original_method = "78BA9F6D5AE481CC7127DB3741BBDA1E", hash_generated_method = "E517AB4695960F5DB9EA41B097409BE5")
      void executeMessage(Message msg) {
-        //Begin case DO_GET_TEXT_AFTER_CURSOR 
+        
         {
             SomeArgs args = (SomeArgs)msg.obj;
             try 
@@ -295,16 +295,16 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
                     boolean varD6C5F2B148FB14412C339FCDB147699A_1113653395 = (ic == null || !isActive());
                     {
                         args.callback.setTextAfterCursor(null, args.seq);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 args.callback.setTextAfterCursor(ic.getTextAfterCursor(
                             msg.arg1, msg.arg2), args.seq);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
-        //End case DO_GET_TEXT_AFTER_CURSOR 
-        //Begin case DO_GET_TEXT_BEFORE_CURSOR 
+        } 
+        
+        
         {
             SomeArgs args = (SomeArgs)msg.obj;
             try 
@@ -314,16 +314,16 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
                     boolean varD6C5F2B148FB14412C339FCDB147699A_1012915403 = (ic == null || !isActive());
                     {
                         args.callback.setTextBeforeCursor(null, args.seq);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 args.callback.setTextBeforeCursor(ic.getTextBeforeCursor(
                             msg.arg1, msg.arg2), args.seq);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
-        //End case DO_GET_TEXT_BEFORE_CURSOR 
-        //Begin case DO_GET_SELECTED_TEXT 
+        } 
+        
+        
         {
             SomeArgs args = (SomeArgs)msg.obj;
             try 
@@ -333,16 +333,16 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
                     boolean varD6C5F2B148FB14412C339FCDB147699A_91077268 = (ic == null || !isActive());
                     {
                         args.callback.setSelectedText(null, args.seq);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 args.callback.setSelectedText(ic.getSelectedText(
                             msg.arg1), args.seq);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
-        //End case DO_GET_SELECTED_TEXT 
-        //Begin case DO_GET_CURSOR_CAPS_MODE 
+        } 
+        
+        
         {
             SomeArgs args = (SomeArgs)msg.obj;
             try 
@@ -352,16 +352,16 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
                     boolean varD6C5F2B148FB14412C339FCDB147699A_1779736828 = (ic == null || !isActive());
                     {
                         args.callback.setCursorCapsMode(0, args.seq);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 args.callback.setCursorCapsMode(ic.getCursorCapsMode(msg.arg1),
                             args.seq);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
-        //End case DO_GET_CURSOR_CAPS_MODE 
-        //Begin case DO_GET_EXTRACTED_TEXT 
+        } 
+        
+        
         {
             SomeArgs args = (SomeArgs)msg.obj;
             try 
@@ -371,206 +371,206 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
                     boolean varD6C5F2B148FB14412C339FCDB147699A_273401975 = (ic == null || !isActive());
                     {
                         args.callback.setExtractedText(null, args.seq);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 args.callback.setExtractedText(ic.getExtractedText(
                             (ExtractedTextRequest)args.arg1, msg.arg1), args.seq);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
-        //End case DO_GET_EXTRACTED_TEXT 
-        //Begin case DO_COMMIT_TEXT 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_217396702 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             ic.commitText((CharSequence)msg.obj, msg.arg1);
-        } //End block
-        //End case DO_COMMIT_TEXT 
-        //Begin case DO_SET_SELECTION 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_1716560764 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             ic.setSelection(msg.arg1, msg.arg2);
-        } //End block
-        //End case DO_SET_SELECTION 
-        //Begin case DO_PERFORM_EDITOR_ACTION 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_844709573 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             ic.performEditorAction(msg.arg1);
-        } //End block
-        //End case DO_PERFORM_EDITOR_ACTION 
-        //Begin case DO_PERFORM_CONTEXT_MENU_ACTION 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_1406589346 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             ic.performContextMenuAction(msg.arg1);
-        } //End block
-        //End case DO_PERFORM_CONTEXT_MENU_ACTION 
-        //Begin case DO_COMMIT_COMPLETION 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_347310807 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             ic.commitCompletion((CompletionInfo)msg.obj);
-        } //End block
-        //End case DO_COMMIT_COMPLETION 
-        //Begin case DO_COMMIT_CORRECTION 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_1987472186 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             ic.commitCorrection((CorrectionInfo)msg.obj);
-        } //End block
-        //End case DO_COMMIT_CORRECTION 
-        //Begin case DO_SET_COMPOSING_TEXT 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_867837820 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             ic.setComposingText((CharSequence)msg.obj, msg.arg1);
-        } //End block
-        //End case DO_SET_COMPOSING_TEXT 
-        //Begin case DO_SET_COMPOSING_REGION 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_1623126861 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             ic.setComposingRegion(msg.arg1, msg.arg2);
-        } //End block
-        //End case DO_SET_COMPOSING_REGION 
-        //Begin case DO_FINISH_COMPOSING_TEXT 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             ic.finishComposingText();
-        } //End block
-        //End case DO_FINISH_COMPOSING_TEXT 
-        //Begin case DO_SEND_KEY_EVENT 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_1184740507 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             ic.sendKeyEvent((KeyEvent)msg.obj);
-        } //End block
-        //End case DO_SEND_KEY_EVENT 
-        //Begin case DO_CLEAR_META_KEY_STATES 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_2093334894 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             ic.clearMetaKeyStates(msg.arg1);
-        } //End block
-        //End case DO_CLEAR_META_KEY_STATES 
-        //Begin case DO_DELETE_SURROUNDING_TEXT 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_394694281 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             ic.deleteSurroundingText(msg.arg1, msg.arg2);
-        } //End block
-        //End case DO_DELETE_SURROUNDING_TEXT 
-        //Begin case DO_BEGIN_BATCH_EDIT 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_2070567074 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             ic.beginBatchEdit();
-        } //End block
-        //End case DO_BEGIN_BATCH_EDIT 
-        //Begin case DO_END_BATCH_EDIT 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_1421713192 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             ic.endBatchEdit();
-        } //End block
-        //End case DO_END_BATCH_EDIT 
-        //Begin case DO_REPORT_FULLSCREEN_MODE 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_1316725292 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             ic.reportFullscreenMode(msg.arg1 == 1);
-        } //End block
-        //End case DO_REPORT_FULLSCREEN_MODE 
-        //Begin case DO_PERFORM_PRIVATE_COMMAND 
+        } 
+        
+        
         {
             InputConnection ic = mInputConnection.get();
             {
                 boolean varCC8C26D5E49C9558783A3A31D1BB0ED2_1491078953 = (ic == null || !isActive());
-            } //End collapsed parenthetic
+            } 
             SomeArgs args = (SomeArgs)msg.obj;
             ic.performPrivateCommand((String)args.arg1,
                         (Bundle)args.arg2);
-        } //End block
-        //End case DO_PERFORM_PRIVATE_COMMAND 
+        } 
+        
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.199 -0400", hash_original_method = "92301CED384526FAE2562FC8E2BD0E1D", hash_generated_method = "D137A08F99C3BC252BD6025959E109ED")
      Message obtainMessage(int what) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1926554190 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1926554190 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1926554190 = mH.obtainMessage(what);
         addTaint(what);
-        varB4EAC82CA7396A68D541C85D26508E83_1926554190.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1926554190.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1926554190;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.199 -0400", hash_original_method = "1D375F3B5B7A421102D544B0D8C99910", hash_generated_method = "A46EC5062E13FC4B353D197EEFAD41A0")
      Message obtainMessageII(int what, int arg1, int arg2) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1845182446 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1845182446 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1845182446 = mH.obtainMessage(what, arg1, arg2);
         addTaint(what);
         addTaint(arg1);
         addTaint(arg2);
-        varB4EAC82CA7396A68D541C85D26508E83_1845182446.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1845182446.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1845182446;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, arg1, arg2);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.199 -0400", hash_original_method = "E41B1E1C050A3613D52D3D6F2431F5B0", hash_generated_method = "15431C972ECC9CDA4032293D986D507D")
      Message obtainMessageO(int what, Object arg1) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_40102749 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_40102749 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_40102749 = mH.obtainMessage(what, 0, 0, arg1);
         addTaint(what);
         addTaint(arg1.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_40102749.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_40102749.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_40102749;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, 0, 0, arg1);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.200 -0400", hash_original_method = "C41806B53C46498944BCE998FEC907A1", hash_generated_method = "FA545DE68C8FCD47C75315126DC58F16")
      Message obtainMessageISC(int what, int arg1, int seq, IInputContextCallback callback) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_698513656 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_698513656 = null; 
         SomeArgs args = new SomeArgs();
         args.callback = callback;
         args.seq = seq;
@@ -579,19 +579,19 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         addTaint(arg1);
         addTaint(seq);
         addTaint(callback.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_698513656.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_698513656.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_698513656;
-        // ---------- Original Method ----------
-        //SomeArgs args = new SomeArgs();
-        //args.callback = callback;
-        //args.seq = seq;
-        //return mH.obtainMessage(what, arg1, 0, args);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.201 -0400", hash_original_method = "81C8385506FF3623370F9C4C1A9DC229", hash_generated_method = "9D79D611FDB0DF682A234CD8814CA798")
      Message obtainMessageIISC(int what, int arg1, int arg2, int seq, IInputContextCallback callback) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1037335076 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1037335076 = null; 
         SomeArgs args = new SomeArgs();
         args.callback = callback;
         args.seq = seq;
@@ -601,20 +601,20 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         addTaint(arg2);
         addTaint(seq);
         addTaint(callback.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1037335076.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1037335076.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1037335076;
-        // ---------- Original Method ----------
-        //SomeArgs args = new SomeArgs();
-        //args.callback = callback;
-        //args.seq = seq;
-        //return mH.obtainMessage(what, arg1, arg2, args);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.201 -0400", hash_original_method = "F0BFCDA04898886ED0BDB255B10E7641", hash_generated_method = "198B0C7BA6301C2C88DB19758A9C649E")
      Message obtainMessageIOSC(int what, int arg1, Object arg2, int seq,
             IInputContextCallback callback) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_938383322 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_938383322 = null; 
         SomeArgs args = new SomeArgs();
         args.arg1 = arg2;
         args.callback = callback;
@@ -625,34 +625,34 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         addTaint(arg2.getTaint());
         addTaint(seq);
         addTaint(callback.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_938383322.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_938383322.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_938383322;
-        // ---------- Original Method ----------
-        //SomeArgs args = new SomeArgs();
-        //args.arg1 = arg2;
-        //args.callback = callback;
-        //args.seq = seq;
-        //return mH.obtainMessage(what, arg1, 0, args);
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.202 -0400", hash_original_method = "BDB545C9895C4A044C116EE5375794DB", hash_generated_method = "ACB5F8466819DEF377140D20082CCFC1")
      Message obtainMessageIO(int what, int arg1, Object arg2) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1910644096 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1910644096 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1910644096 = mH.obtainMessage(what, arg1, 0, arg2);
         addTaint(what);
         addTaint(arg1);
         addTaint(arg2.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1910644096.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1910644096.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1910644096;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, arg1, 0, arg2);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.202 -0400", hash_original_method = "0CCDC84288D426642A6380F76E883191", hash_generated_method = "8DC40302B3C4438042DDDA3C639004C7")
      Message obtainMessageOO(int what, Object arg1, Object arg2) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_220126183 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_220126183 = null; 
         SomeArgs args = new SomeArgs();
         args.arg1 = arg1;
         args.arg2 = arg2;
@@ -660,13 +660,13 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         addTaint(what);
         addTaint(arg1.getTaint());
         addTaint(arg2.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_220126183.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_220126183.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_220126183;
-        // ---------- Original Method ----------
-        //SomeArgs args = new SomeArgs();
-        //args.arg1 = arg1;
-        //args.arg2 = arg2;
-        //return mH.obtainMessage(what, 0, 0, args);
+        
+        
+        
+        
+        
     }
 
     
@@ -687,7 +687,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.202 -0400", hash_original_method = "C08D0E88500332C6E0DD16EFE525CF46", hash_generated_method = "C08D0E88500332C6E0DD16EFE525CF46")
         public SomeArgs ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -701,7 +701,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
           MyHandler(Looper looper) {
             super(looper);
             addTaint(looper.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -710,8 +710,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
         public void handleMessage(Message msg) {
             executeMessage(msg);
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //executeMessage(msg);
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package com.android.internal.location;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.location.ILocationManager;
 import android.location.LocationProvider;
@@ -47,79 +47,79 @@ public class DummyLocationProvider extends LocationProvider {
         super(name, service);
         addTaint(name.getTaint());
         addTaint(service.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.183 -0400", hash_original_method = "1F8DE8B3742DB968D48AC8E46FA2231B", hash_generated_method = "B491D2865225D184CA94E5FDA8C8C83A")
     public void setRequiresNetwork(boolean requiresNetwork) {
         mRequiresNetwork = requiresNetwork;
-        // ---------- Original Method ----------
-        //mRequiresNetwork = requiresNetwork;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.183 -0400", hash_original_method = "29EAF7BAC1D59C67F0068E19069EC95C", hash_generated_method = "6417F8E937DEF182FD4384B8EC43DEFA")
     public void setRequiresSatellite(boolean requiresSatellite) {
         mRequiresSatellite = requiresSatellite;
-        // ---------- Original Method ----------
-        //mRequiresSatellite = requiresSatellite;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.184 -0400", hash_original_method = "800DBE9AB92460271BA9850123B2E01B", hash_generated_method = "59AA1D4331D17CE5FE6E163324E4AAF8")
     public void setRequiresCell(boolean requiresCell) {
         mRequiresCell = requiresCell;
-        // ---------- Original Method ----------
-        //mRequiresCell = requiresCell;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.184 -0400", hash_original_method = "3E58BDCD583420258AF42AE15C5A1B66", hash_generated_method = "7A8F281C030D2AB2F4123F69F3ED81E7")
     public void setHasMonetaryCost(boolean hasMonetaryCost) {
         mHasMonetaryCost = hasMonetaryCost;
-        // ---------- Original Method ----------
-        //mHasMonetaryCost = hasMonetaryCost;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.184 -0400", hash_original_method = "CCF8D193AEBD5AA7F01F4990E2AE806C", hash_generated_method = "038ABF6E048EB620C4682786FEA54672")
     public void setSupportsAltitude(boolean supportsAltitude) {
         mSupportsAltitude = supportsAltitude;
-        // ---------- Original Method ----------
-        //mSupportsAltitude = supportsAltitude;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.184 -0400", hash_original_method = "92E2AFB41DD112983B18606F5344DACF", hash_generated_method = "ADEA9A24C7E4EA76ACFC2A2BDA342523")
     public void setSupportsSpeed(boolean supportsSpeed) {
         mSupportsSpeed = supportsSpeed;
-        // ---------- Original Method ----------
-        //mSupportsSpeed = supportsSpeed;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.185 -0400", hash_original_method = "F9CE2AAA32ACB1BAFD2F9DDDA0BB7D16", hash_generated_method = "8412DD7B3724FC89A37067DC4C863938")
     public void setSupportsBearing(boolean supportsBearing) {
         mSupportsBearing = supportsBearing;
-        // ---------- Original Method ----------
-        //mSupportsBearing = supportsBearing;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.185 -0400", hash_original_method = "2C88F96CAFDD5DC38199E97F56E6E512", hash_generated_method = "AB54773A7A0BA7F8B4062B2F76D15C71")
     public void setPowerRequirement(int powerRequirement) {
         mPowerRequirement = powerRequirement;
-        // ---------- Original Method ----------
-        //mPowerRequirement = powerRequirement;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.185 -0400", hash_original_method = "50C70CC35BE1C99F5177BBD5E6545CA6", hash_generated_method = "D288525613995EDA7816DABBB501D13A")
     public void setAccuracy(int accuracy) {
         mAccuracy = accuracy;
-        // ---------- Original Method ----------
-        //mAccuracy = accuracy;
+        
+        
     }
 
     
@@ -127,8 +127,8 @@ public class DummyLocationProvider extends LocationProvider {
     public boolean requiresNetwork() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1858195503 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1858195503;
-        // ---------- Original Method ----------
-        //return mRequiresNetwork;
+        
+        
     }
 
     
@@ -136,8 +136,8 @@ public class DummyLocationProvider extends LocationProvider {
     public boolean requiresSatellite() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_128245372 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_128245372;
-        // ---------- Original Method ----------
-        //return mRequiresSatellite;
+        
+        
     }
 
     
@@ -145,8 +145,8 @@ public class DummyLocationProvider extends LocationProvider {
     public boolean requiresCell() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2078315843 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2078315843;
-        // ---------- Original Method ----------
-        //return mRequiresCell;
+        
+        
     }
 
     
@@ -154,8 +154,8 @@ public class DummyLocationProvider extends LocationProvider {
     public boolean hasMonetaryCost() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2022722905 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2022722905;
-        // ---------- Original Method ----------
-        //return mHasMonetaryCost;
+        
+        
     }
 
     
@@ -163,8 +163,8 @@ public class DummyLocationProvider extends LocationProvider {
     public boolean supportsAltitude() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1821001050 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1821001050;
-        // ---------- Original Method ----------
-        //return mSupportsAltitude;
+        
+        
     }
 
     
@@ -172,8 +172,8 @@ public class DummyLocationProvider extends LocationProvider {
     public boolean supportsSpeed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_372446893 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_372446893;
-        // ---------- Original Method ----------
-        //return mSupportsSpeed;
+        
+        
     }
 
     
@@ -181,8 +181,8 @@ public class DummyLocationProvider extends LocationProvider {
     public boolean supportsBearing() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_202906664 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_202906664;
-        // ---------- Original Method ----------
-        //return mSupportsBearing;
+        
+        
     }
 
     
@@ -190,8 +190,8 @@ public class DummyLocationProvider extends LocationProvider {
     public int getPowerRequirement() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1796301197 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1796301197;
-        // ---------- Original Method ----------
-        //return mPowerRequirement;
+        
+        
     }
 
     
@@ -199,8 +199,8 @@ public class DummyLocationProvider extends LocationProvider {
     public int getAccuracy() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_693989397 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_693989397;
-        // ---------- Original Method ----------
-        //return mAccuracy;
+        
+        
     }
 
     

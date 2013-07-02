@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.Enumeration;
@@ -14,7 +14,7 @@ public class BERSet extends DERSet {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.165 -0400", hash_original_method = "3B0CACFC7D97D5B3260958CA327C2CC2", hash_generated_method = "F2D7951BF96B2D911C0F933229D9518A")
     public  BERSet() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,7 +23,7 @@ public class BERSet extends DERSet {
         DEREncodable    obj) {
         super(obj);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,7 +32,7 @@ public class BERSet extends DERSet {
         ASN1EncodableVector   v) {
         super(v, false);
         addTaint(v.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,7 +43,7 @@ public class BERSet extends DERSet {
         super(v, needsSorting);
         addTaint(v.getTaint());
         addTaint(needsSorting);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -58,32 +58,32 @@ public class BERSet extends DERSet {
                 boolean varE6301E07393E7C92A45A62612E875EEF_1078815395 = (e.hasMoreElements());
                 {
                     out.writeObject(e.nextElement());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             out.write(0x00);
             out.write(0x00);
-        } //End block
+        } 
         {
             super.encode(out);
-        } //End block
+        } 
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //if (out instanceof ASN1OutputStream || out instanceof BEROutputStream)
-        //{
-            //out.write(SET | CONSTRUCTED);
-            //out.write(0x80);
-            //Enumeration e = getObjects();
-            //while (e.hasMoreElements())
-            //{
-                //out.writeObject(e.nextElement());
-            //}
-            //out.write(0x00);
-            //out.write(0x00);
-        //}
-        //else
-        //{
-            //super.encode(out);
-        //}
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+            
+            
+        
+        
+        
+            
+        
     }
 
     

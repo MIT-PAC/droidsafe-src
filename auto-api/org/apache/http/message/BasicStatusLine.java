@@ -1,11 +1,11 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.HttpStatus;
 import org.apache.http.ProtocolVersion;
@@ -29,26 +29,26 @@ public class BasicStatusLine implements StatusLine, Cloneable {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Protocol version may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Status code may not be negative.");
-        } //End block
+        } 
         this.protoVersion = version;
         this.statusCode   = statusCode;
         this.reasonPhrase = reasonPhrase;
-        // ---------- Original Method ----------
-        //if (version == null) {
-            //throw new IllegalArgumentException
-                //("Protocol version may not be null.");
-        //}
-        //if (statusCode < 0) {
-            //throw new IllegalArgumentException
-                //("Status code may not be negative.");
-        //}
-        //this.protoVersion = version;
-        //this.statusCode   = statusCode;
-        //this.reasonPhrase = reasonPhrase;
+        
+        
+            
+                
+        
+        
+            
+                
+        
+        
+        
+        
     }
 
     
@@ -56,54 +56,56 @@ public class BasicStatusLine implements StatusLine, Cloneable {
     public int getStatusCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1726539549 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1726539549;
-        // ---------- Original Method ----------
-        //return this.statusCode;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.244 -0400", hash_original_method = "428750DB8A2FD05AED2F69E1D46A4B0B", hash_generated_method = "A57116ED8EB999866B7F16A0EFC8590A")
     public ProtocolVersion getProtocolVersion() {
-        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_207199453 = null; //Variable for return #1
+        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_207199453 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_207199453 = this.protoVersion;
-        varB4EAC82CA7396A68D541C85D26508E83_207199453.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_207199453.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_207199453;
-        // ---------- Original Method ----------
-        //return this.protoVersion;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.245 -0400", hash_original_method = "F68F7EAA9CC529FF206693909CBAA2FE", hash_generated_method = "AF6B2DEE56B074D121F8A071A645A693")
     public String getReasonPhrase() {
-        String varB4EAC82CA7396A68D541C85D26508E83_673888634 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_673888634 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_673888634 = this.reasonPhrase;
-        varB4EAC82CA7396A68D541C85D26508E83_673888634.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_673888634.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_673888634;
-        // ---------- Original Method ----------
-        //return this.reasonPhrase;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.245 -0400", hash_original_method = "B124288BE18B40A8DA205B6ACD4ADD5F", hash_generated_method = "571B98380EA707B7854F7BC28E61C986")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_802650611 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_802650611 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_802650611 = BasicLineFormatter.DEFAULT
             .formatStatusLine(null, this).toString();
-        varB4EAC82CA7396A68D541C85D26508E83_802650611.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_802650611.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_802650611;
-        // ---------- Original Method ----------
-        //return BasicLineFormatter.DEFAULT
-            //.formatStatusLine(null, this).toString();
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.246 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "342AD04E913231C6D8EC50F424DFCAD1")
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1313524083 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1313524083 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1313524083 = super.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_1313524083.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1313524083.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1313524083;
-        // ---------- Original Method ----------
-        //return super.clone();
+        
+        
     }
 
     

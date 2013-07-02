@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class AccessControlException extends SecurityException {
@@ -17,7 +17,7 @@ public class AccessControlException extends SecurityException {
     public  AccessControlException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,19 +26,19 @@ public class AccessControlException extends SecurityException {
         super(message);
         this.perm = perm;
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //this.perm = perm;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.053 -0400", hash_original_method = "DFDCEBDA71EECDB1948D7EAD61470F05", hash_generated_method = "2305609CACA40DB007894F842F6C7F33")
     public Permission getPermission() {
-        Permission varB4EAC82CA7396A68D541C85D26508E83_1687426958 = null; //Variable for return #1
+        Permission varB4EAC82CA7396A68D541C85D26508E83_1687426958 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1687426958 = perm;
-        varB4EAC82CA7396A68D541C85D26508E83_1687426958.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1687426958.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1687426958;
-        // ---------- Original Method ----------
-        //return perm;
+        
+        
     }
 
     

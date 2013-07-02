@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import dalvik.system.BlockGuard;
 import dalvik.system.CloseGuard;
@@ -112,9 +112,9 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         this.socket = this;
         init(sslParameters);
         addTaint(sslParameters.getTaint());
-        // ---------- Original Method ----------
-        //this.socket = this;
-        //init(sslParameters);
+        
+        
+        
     }
 
     
@@ -129,9 +129,9 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         addTaint(enabledProtocols[0].getTaint());
         addTaint(enabledCipherSuites[0].getTaint());
         addTaint(enabledCompressionMethods[0].getTaint());
-        // ---------- Original Method ----------
-        //this.socket = this;
-        //init(sslParameters, enabledProtocols, enabledCipherSuites, enabledCompressionMethods);
+        
+        
+        
     }
 
     
@@ -143,9 +143,9 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         addTaint(host.getTaint());
         addTaint(port);
         addTaint(sslParameters.getTaint());
-        // ---------- Original Method ----------
-        //this.socket = this;
-        //init(sslParameters);
+        
+        
+        
     }
 
     
@@ -157,9 +157,9 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         addTaint(address.getTaint());
         addTaint(port);
         addTaint(sslParameters.getTaint());
-        // ---------- Original Method ----------
-        //this.socket = this;
-        //init(sslParameters);
+        
+        
+        
     }
 
     
@@ -175,9 +175,9 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         addTaint(clientAddress.getTaint());
         addTaint(clientPort);
         addTaint(sslParameters.getTaint());
-        // ---------- Original Method ----------
-        //this.socket = this;
-        //init(sslParameters);
+        
+        
+        
     }
 
     
@@ -193,9 +193,9 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         addTaint(clientAddress.getTaint());
         addTaint(clientPort);
         addTaint(sslParameters.getTaint());
-        // ---------- Original Method ----------
-        //this.socket = this;
-        //init(sslParameters);
+        
+        
+        
     }
 
     
@@ -208,15 +208,16 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         this.autoClose = autoClose;
         init(sslParameters);
         addTaint(sslParameters.getTaint());
-        // ---------- Original Method ----------
-        //this.socket = socket;
-        //this.wrappedHost = host;
-        //this.wrappedPort = port;
-        //this.autoClose = autoClose;
-        //init(sslParameters);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.494 -0400", hash_original_method = "33D1B746D20986D17267826F3151AB68", hash_generated_method = "A1286579E3F565D5CA6F2D976D38078D")
     private void init(SSLParametersImpl sslParameters) throws IOException {
         init(sslParameters,
@@ -224,11 +225,11 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
              NativeCrypto.getDefaultCipherSuites(),
              NativeCrypto.getDefaultCompressionMethods());
         addTaint(sslParameters.getTaint());
-        // ---------- Original Method ----------
-        //init(sslParameters,
-             //NativeCrypto.getSupportedProtocols(),
-             //NativeCrypto.getDefaultCipherSuites(),
-             //NativeCrypto.getDefaultCompressionMethods());
+        
+        
+             
+             
+             
     }
 
     
@@ -241,36 +242,37 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         this.enabledProtocols = enabledProtocols;
         this.enabledCipherSuites = enabledCipherSuites;
         this.enabledCompressionMethods = enabledCompressionMethods;
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
-        //this.enabledProtocols = enabledProtocols;
-        //this.enabledCipherSuites = enabledCipherSuites;
-        //this.enabledCompressionMethods = enabledCompressionMethods;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.503 -0400", hash_original_method = "DB9C757E33C47645F1FC9AEA51E10B24", hash_generated_method = "9D12CCAFD54C0EDCFE8DD0DCADF38960")
     private OpenSSLSessionImpl getCachedClientSession(ClientSessionContext sessionContext) {
-        OpenSSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_507712614 = null; //Variable for return #1
-        OpenSSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_452167819 = null; //Variable for return #2
-        OpenSSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_275920249 = null; //Variable for return #3
-        OpenSSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_1025284466 = null; //Variable for return #4
-        OpenSSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_675771299 = null; //Variable for return #5
-        OpenSSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_1437301402 = null; //Variable for return #6
+        OpenSSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_507712614 = null; 
+        OpenSSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_452167819 = null; 
+        OpenSSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_275920249 = null; 
+        OpenSSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_1025284466 = null; 
+        OpenSSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_675771299 = null; 
+        OpenSSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_1437301402 = null; 
         {
             boolean varDE450B6D8CDA8C5A5EBF790451254751_2071182767 = (super.getInetAddress() == null ||
                 super.getInetAddress().getHostAddress() == null ||
                 super.getInetAddress().getHostName() == null);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_507712614 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         OpenSSLSessionImpl session = (OpenSSLSessionImpl) sessionContext.getSession(
                 super.getInetAddress().getHostName(),
                 super.getPort());
         {
             varB4EAC82CA7396A68D541C85D26508E83_452167819 = null;
-        } //End block
+        } 
         String protocol = session.getProtocol();
         boolean protocolFound = false;
         {
@@ -280,13 +282,13 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                     boolean varB7CDD2851C57BCE06B93A6CED39A5E38_65100158 = (protocol.equals(enabledProtocol));
                     {
                         protocolFound = true;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_275920249 = null;
-        } //End block
+        } 
         String cipherSuite = session.getCipherSuite();
         boolean cipherSuiteFound = false;
         {
@@ -296,13 +298,13 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                     boolean var0A90D4178EA81E08B8356065F33DB016_586918693 = (cipherSuite.equals(enabledCipherSuite));
                     {
                         cipherSuiteFound = true;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1025284466 = null;
-        } //End block
+        } 
         String compressionMethod = session.getCompressionMethod();
         boolean compressionMethodFound = false;
         {
@@ -312,83 +314,86 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                     boolean varDF0B1461F4631C44245857F1697AFCF1_443159737 = (compressionMethod.equals(enabledCompressionMethod));
                     {
                         compressionMethodFound = true;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_675771299 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1437301402 = session;
         addTaint(sessionContext.getTaint());
-        OpenSSLSessionImpl varA7E53CE21691AB073D9660D615818899_612769829; //Final return value
+        OpenSSLSessionImpl varA7E53CE21691AB073D9660D615818899_612769829; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_612769829 = varB4EAC82CA7396A68D541C85D26508E83_507712614;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_612769829 = varB4EAC82CA7396A68D541C85D26508E83_452167819;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_612769829 = varB4EAC82CA7396A68D541C85D26508E83_275920249;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_612769829 = varB4EAC82CA7396A68D541C85D26508E83_1025284466;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_612769829 = varB4EAC82CA7396A68D541C85D26508E83_675771299;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_612769829 = varB4EAC82CA7396A68D541C85D26508E83_1437301402;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_612769829.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_612769829.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_612769829;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.504 -0400", hash_original_method = "6F34DF1209370488AD4C31DC9A9003CA", hash_generated_method = "875A1614B9E32119678388031424EBE3")
     @Override
     public void startHandshake() throws IOException {
         startHandshake(true);
-        // ---------- Original Method ----------
-        //startHandshake(true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.504 -0400", hash_original_method = "8DC54C39C6445BAF3181407C830C5887", hash_generated_method = "4CA29DAFFF261E862A7A1CA1552F23D3")
     private void checkOpen() throws SocketException {
         {
             boolean varF463C9E3EC09CF3DDC0E11AE27E5A7FD_2020331999 = (isClosed());
             {
                 if (DroidSafeAndroidRuntime.control) throw new SocketException("Socket is closed");
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (isClosed()) {
-            //throw new SocketException("Socket is closed");
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.579 -0400", hash_original_method = "7D68DA7254C24BFF3C6F787A75CF4E46", hash_generated_method = "1665D04618E5F491F69FC8974188D140")
     public synchronized void startHandshake(boolean full) throws IOException {
         {
             checkOpen();
             {
                 handshakeStarted = true;
-            } //End block
-        } //End block
+            } 
+        } 
         final int seedLengthInBytes = NativeCrypto.RAND_SEED_LENGTH_IN_BYTES;
         final SecureRandom secureRandom = sslParameters.getSecureRandomMember();
         {
             NativeCrypto.RAND_load_file("/dev/urandom", seedLengthInBytes);
-        } //End block
+        } 
         {
             NativeCrypto.RAND_seed(secureRandom.generateSeed(seedLengthInBytes));
-        } //End block
+        } 
         final boolean client = sslParameters.getUseClientMode();
         int sslCtxNativePointer;
         sslCtxNativePointer = sslParameters.getClientSessionContext().sslCtxNativePointer;
@@ -406,13 +411,13 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                     {
                         {
                             boolean varB970A4D1689EFCBF0C591729604E2F5C_503395742 = (enabledCipherSuite.equals(NativeCrypto.TLS_EMPTY_RENEGOTIATION_INFO_SCSV));
-                        } //End collapsed parenthetic
+                        } 
                         String keyType = CipherSuite.getByName(enabledCipherSuite).getServerKeyType();
                         {
                             keyTypes.add(keyType);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 {
                     Iterator<String> var594EC992A710F64B1906006B59DD5293_2140138835 = (keyTypes).iterator();
                     var594EC992A710F64B1906006B59DD5293_2140138835.hasNext();
@@ -423,31 +428,31 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                             setCertificate(sslParameters.getKeyManager().chooseServerAlias(keyType,
                                                                                        null,
                                                                                        this));
-                        } //End block
+                        } 
                         catch (CertificateEncodingException e)
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IOException(e);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             NativeCrypto.setEnabledProtocols(sslNativePointer, enabledProtocols);
             NativeCrypto.setEnabledCipherSuites(sslNativePointer, enabledCipherSuites);
             {
                 NativeCrypto.setEnabledCompressionMethods(sslNativePointer,
                                                           enabledCompressionMethods);
-            } //End block
+            } 
             {
                 NativeCrypto.SSL_clear_options(sslNativePointer, NativeCrypto.SSL_OP_NO_TICKET);
-            } //End block
+            } 
             {
                 NativeCrypto.SSL_set_tlsext_host_name(sslNativePointer, hostname);
-            } //End block
+            } 
             boolean enableSessionCreation = sslParameters.getEnableSessionCreation();
             {
                 NativeCrypto.SSL_set_session_creation_enabled(sslNativePointer,
                                                               enableSessionCreation);
-            } //End block
+            } 
             AbstractSessionContext sessionContext;
             {
                 ClientSessionContext clientSessionContext = sslParameters.getClientSessionContext();
@@ -456,11 +461,11 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                 {
                     NativeCrypto.SSL_set_session(sslNativePointer,
                                                  session.sslSessionNativePointer);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 sessionContext = sslParameters.getServerSessionContext();
-            } //End block
+            } 
             {
                 boolean certRequested;
                 {
@@ -470,19 +475,19 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                                                 NativeCrypto.SSL_VERIFY_PEER
                                                 | NativeCrypto.SSL_VERIFY_FAIL_IF_NO_PEER_CERT);
                         certRequested = true;
-                    } //End block
+                    } 
                     {
                         boolean varBA129A971A32EF54D8E824D21B4687C7_1100438192 = (sslParameters.getWantClientAuth());
                         {
                             NativeCrypto.SSL_set_verify(sslNativePointer,
                                                 NativeCrypto.SSL_VERIFY_PEER);
                             certRequested = true;
-                        } //End block
+                        } 
                         {
                             certRequested = false;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 {
                     X509TrustManager trustManager = sslParameters.getTrustManager();
                     X509Certificate[] issuers = trustManager.getAcceptedIssuers();
@@ -491,45 +496,45 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                         try 
                         {
                             issuersBytes = NativeCrypto.encodeIssuerX509Principals(issuers);
-                        } //End block
+                        } 
                         catch (CertificateEncodingException e)
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IOException("Problem encoding principals", e);
-                        } //End block
+                        } 
                         NativeCrypto.SSL_set_client_CA_list(sslNativePointer, issuersBytes);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             {
                 NativeCrypto.SSL_clear_mode(sslNativePointer,
                                             NativeCrypto.SSL_MODE_HANDSHAKE_CUTTHROUGH);
-            } //End block
+            } 
             int savedTimeoutMilliseconds = getSoTimeout();
             {
                 setSoTimeout(handshakeTimeoutMilliseconds);
-            } //End block
+            } 
             int sslSessionNativePointer = 0;
             try 
             {
                 sslSessionNativePointer = NativeCrypto.SSL_do_handshake(sslNativePointer,
                         socket.getFileDescriptor$(), this, getSoTimeout(), client);
-            } //End block
+            } 
             catch (CertificateException e)
             {
                 SSLHandshakeException wrapper = new SSLHandshakeException(e.getMessage());
                 wrapper.initCause(e);
                 if (DroidSafeAndroidRuntime.control) throw wrapper;
-            } //End block
+            } 
             byte[] sessionId = NativeCrypto.SSL_SESSION_session_id(sslSessionNativePointer);
             sslSession = (OpenSSLSessionImpl) sessionContext.getSession(sessionId);
             {
                 sslSession.lastAccessedTime = System.currentTimeMillis();
                 NativeCrypto.SSL_SESSION_free(sslSessionNativePointer);
-            } //End block
+            } 
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("SSL Session may not be created");
-                } //End block
+                } 
                 X509Certificate[] localCertificates = createCertChain(NativeCrypto.SSL_get_certificate(sslNativePointer));
                 X509Certificate[] peerCertificates = createCertChain(NativeCrypto.SSL_get_peer_cert_chain(sslNativePointer));
                 {
@@ -537,41 +542,42 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                                                         localCertificates, peerCertificates,
                                                         super.getInetAddress().getHostName(),
                                                         super.getPort(), sessionContext);
-                } //End block
+                } 
                 {
                     sslSession = new OpenSSLSessionImpl(sslSessionNativePointer,
                                                         localCertificates, peerCertificates,
                                                         wrappedHost, wrappedPort,
                                                         sessionContext);
-                } //End block
+                } 
                 {
                     sessionContext.putSession(sslSession);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 setSoTimeout(savedTimeoutMilliseconds);
-            } //End block
+            } 
             {
                 notifyHandshakeCompletedListeners();
-            } //End block
+            } 
             exception = false;
-        } //End block
+        } 
         catch (SSLProtocolException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new SSLHandshakeException(e);
-        } //End block
+        } 
         finally 
         {
             {
                 close();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(full);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static X509Certificate[] createCertChain(byte[][] certificatesBytes) {
         if (certificatesBytes == null) {
             return null;
@@ -588,6 +594,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.579 -0400", hash_original_method = "447042B984B2D213A231B86095B05FCC", hash_generated_method = "C6BF9F6970C52A93B793B09290134AA2")
     private void setCertificate(String alias) throws CertificateEncodingException, SSLException {
         PrivateKey privateKey = sslParameters.getKeyManager().getPrivateKey(alias);
@@ -598,26 +605,27 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         NativeCrypto.SSL_use_certificate(sslNativePointer, certificateBytes);
         NativeCrypto.SSL_check_private_key(sslNativePointer);
         addTaint(alias.getTaint());
-        // ---------- Original Method ----------
-        //if (alias == null) {
-            //return;
-        //}
-        //PrivateKey privateKey = sslParameters.getKeyManager().getPrivateKey(alias);
-        //if (privateKey == null) {
-            //return;
-        //}
-        //X509Certificate[] certificates = sslParameters.getKeyManager().getCertificateChain(alias);
-        //if (certificates == null) {
-            //return;
-        //}
-        //byte[] privateKeyBytes = privateKey.getEncoded();
-        //byte[][] certificateBytes = NativeCrypto.encodeCertificates(certificates);
-        //NativeCrypto.SSL_use_PrivateKey(sslNativePointer, privateKeyBytes);
-        //NativeCrypto.SSL_use_certificate(sslNativePointer, certificateBytes);
-        //NativeCrypto.SSL_check_private_key(sslNativePointer);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.580 -0400", hash_original_method = "4494930597AF8911ABFC977B28D550D9", hash_generated_method = "1FCD95BAEBD92A73FFC8CA807C45B4CA")
     @SuppressWarnings("unused")
     public void clientCertificateRequested(byte[] keyTypeBytes, byte[][] asn1DerEncodedPrincipals) throws CertificateEncodingException, SSLException {
@@ -626,42 +634,43 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
             int i = 0;
             {
                 keyTypes[i] = CipherSuite.getClientKeyType(keyTypeBytes[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         X500Principal[] issuers;
         {
             issuers = null;
-        } //End block
+        } 
         {
             issuers = new X500Principal[asn1DerEncodedPrincipals.length];
             {
                 int i = 0;
                 {
                     issuers[i] = new X500Principal(asn1DerEncodedPrincipals[i]);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         setCertificate(sslParameters.getKeyManager().chooseClientAlias(keyTypes, issuers, this));
         addTaint(keyTypeBytes[0]);
         addTaint(asn1DerEncodedPrincipals[0][0]);
-        // ---------- Original Method ----------
-        //String[] keyTypes = new String[keyTypeBytes.length];
-        //for (int i = 0; i < keyTypeBytes.length; i++) {
-            //keyTypes[i] = CipherSuite.getClientKeyType(keyTypeBytes[i]);
-        //}
-        //X500Principal[] issuers;
-        //if (asn1DerEncodedPrincipals == null) {
-            //issuers = null;
-        //} else {
-            //issuers = new X500Principal[asn1DerEncodedPrincipals.length];
-            //for (int i = 0; i < asn1DerEncodedPrincipals.length; i++) {
-                //issuers[i] = new X500Principal(asn1DerEncodedPrincipals[i]);
-            //}
-        //}
-        //setCertificate(sslParameters.getKeyManager().chooseClientAlias(keyTypes, issuers, this));
+        
+        
+        
+            
+        
+        
+        
+            
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.580 -0400", hash_original_method = "4135185E706706A43228536D20F5AD94", hash_generated_method = "DC5B0A3B26A732BB76C81AA84C76519A")
     @SuppressWarnings("unused")
     public void handshakeCompleted() {
@@ -673,21 +682,22 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         sessionContext = sslParameters.getServerSessionContext();
         sessionContext.putSession(sslSession);
         notifyHandshakeCompletedListeners();
-        // ---------- Original Method ----------
-        //handshakeCompleted = true;
-        //if (sslSession == null) {
-            //return;
-        //}
-        //sslSession.resetId();
-        //AbstractSessionContext sessionContext =
-            //(sslParameters.getUseClientMode())
-            //? sslParameters.getClientSessionContext()
-                //: sslParameters.getServerSessionContext();
-        //sessionContext.putSession(sslSession);
-        //notifyHandshakeCompletedListeners();
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.585 -0400", hash_original_method = "7C2534895E7335878B6E22FB6F2D87D0", hash_generated_method = "D5A75D7A41241AD1DBBD508FF0FBCAC7")
     private void notifyHandshakeCompletedListeners() {
         {
@@ -702,32 +712,33 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                         try 
                         {
                             listener.handshakeCompleted(event);
-                        } //End block
+                        } 
                         catch (RuntimeException e)
                         {
                             Thread thread = Thread.currentThread();
                             thread.getUncaughtExceptionHandler().uncaughtException(thread, e);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (listeners != null && !listeners.isEmpty()) {
-            //HandshakeCompletedEvent event =
-                //new HandshakeCompletedEvent(this, sslSession);
-            //for (HandshakeCompletedListener listener : listeners) {
-                //try {
-                    //listener.handshakeCompleted(event);
-                //} catch (RuntimeException e) {
-                    //Thread thread = Thread.currentThread();
-                    //thread.getUncaughtExceptionHandler().uncaughtException(thread, e);
-                //}
-            //}
-        //}
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+                
+            
+                
+                    
+                
+                    
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.586 -0400", hash_original_method = "ED84B1AF9EB80DCCE7D2C3DBC193F549", hash_generated_method = "31D980B77D2D1E1FE877B48BE2DC01A0")
     @SuppressWarnings("unused")
     @Override
@@ -736,420 +747,445 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new SSLException("Peer sent no certificate");
-            } //End block
+            } 
             X509Certificate[] peerCertificateChain = new X509Certificate[bytes.length];
             {
                 int i = 0;
                 {
                     peerCertificateChain[i] = new X509CertImpl(bytes[i]);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             boolean client = sslParameters.getUseClientMode();
             {
                 sslParameters.getTrustManager().checkServerTrusted(peerCertificateChain,
                                                                    authMethod);
-            } //End block
+            } 
             {
                 String authType = peerCertificateChain[0].getPublicKey().getAlgorithm();
                 sslParameters.getTrustManager().checkClientTrusted(peerCertificateChain,
                                                                    authType);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (CertificateException e)
         {
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
+        } 
         catch (RuntimeException e)
         {
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
+        } 
         catch (Exception e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         addTaint(bytes[0][0]);
         addTaint(authMethod.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.586 -0400", hash_original_method = "E61C85BF5C63F4E04D0D50BF3BBE2593", hash_generated_method = "47D6A03923CA3CCE55ABB6C5E66DD5AD")
     @Override
     public InputStream getInputStream() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1290218401 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1290218401 = null; 
         checkOpen();
         {
             {
                 is = new SSLInputStream();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1290218401 = is;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1290218401.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1290218401.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1290218401;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //synchronized (this) {
-            //if (is == null) {
-                //is = new SSLInputStream();
-            //}
-            //return is;
-        //}
+        
+        
+        
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.587 -0400", hash_original_method = "5EE71E3DCC35A33F08AD90BC3313950F", hash_generated_method = "B34D987656E3D32D036FF8F691357430")
     @Override
     public OutputStream getOutputStream() throws IOException {
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_333394152 = null; //Variable for return #1
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_333394152 = null; 
         checkOpen();
         {
             {
                 os = new SSLOutputStream();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_333394152 = os;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_333394152.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_333394152.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_333394152;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //synchronized (this) {
-            //if (os == null) {
-                //os = new SSLOutputStream();
-            //}
-            //return os;
-        //}
+        
+        
+        
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.588 -0400", hash_original_method = "E137442CFB021C112EB3F3EAC9C4FE47", hash_generated_method = "91902E3CFB36F8F8D9272F8034D4A64D")
     @Override
     public SSLSession getSession() {
-        SSLSession varB4EAC82CA7396A68D541C85D26508E83_45737948 = null; //Variable for return #1
-        SSLSession varB4EAC82CA7396A68D541C85D26508E83_1408018792 = null; //Variable for return #2
+        SSLSession varB4EAC82CA7396A68D541C85D26508E83_45737948 = null; 
+        SSLSession varB4EAC82CA7396A68D541C85D26508E83_1408018792 = null; 
         {
             try 
             {
                 startHandshake(true);
-            } //End block
+            } 
             catch (IOException e)
             {
                 varB4EAC82CA7396A68D541C85D26508E83_45737948 = SSLSessionImpl.NULL_SESSION;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1408018792 = sslSession;
-        SSLSession varA7E53CE21691AB073D9660D615818899_629269073; //Final return value
+        SSLSession varA7E53CE21691AB073D9660D615818899_629269073; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_629269073 = varB4EAC82CA7396A68D541C85D26508E83_45737948;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_629269073 = varB4EAC82CA7396A68D541C85D26508E83_1408018792;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_629269073.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_629269073.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_629269073;
-        // ---------- Original Method ----------
-        //if (sslSession == null) {
-            //try {
-                //startHandshake(true);
-            //} catch (IOException e) {
-                //return SSLSessionImpl.NULL_SESSION;
-            //}
-        //}
-        //return sslSession;
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.588 -0400", hash_original_method = "F46B9A73766B8D71CEE8B005CFE82615", hash_generated_method = "7287E9F6B751EA96DE97D34C6E28B2B8")
     @Override
     public void addHandshakeCompletedListener(
             HandshakeCompletedListener listener) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Provided listener is null");
-        } //End block
+        } 
         {
             listeners = new ArrayList<HandshakeCompletedListener>();
-        } //End block
+        } 
         listeners.add(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //throw new IllegalArgumentException("Provided listener is null");
-        //}
-        //if (listeners == null) {
-            //listeners = new ArrayList<HandshakeCompletedListener>();
-        //}
-        //listeners.add(listener);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.588 -0400", hash_original_method = "AD8204C7E0D7DFC602B3A996AAF9AC40", hash_generated_method = "7CCCCA5B0601D4CB4F487E45AFFBB305")
     @Override
     public void removeHandshakeCompletedListener(
             HandshakeCompletedListener listener) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Provided listener is null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "Provided listener is not registered");
-        } //End block
+        } 
         {
             boolean var170C22586EF26335003A8446D4D19EBD_1693312359 = (!listeners.remove(listener));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "Provided listener is not registered");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //throw new IllegalArgumentException("Provided listener is null");
-        //}
-        //if (listeners == null) {
-            //throw new IllegalArgumentException(
-                    //"Provided listener is not registered");
-        //}
-        //if (!listeners.remove(listener)) {
-            //throw new IllegalArgumentException(
-                    //"Provided listener is not registered");
-        //}
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.589 -0400", hash_original_method = "67C983FA387520F5F3AF315C719B29E4", hash_generated_method = "C1C2686685FE7B4715FD4DFF1BF9E241")
     @Override
     public boolean getEnableSessionCreation() {
         boolean varAFF7A8ADF82548D8DE353C67D9576F3E_712952308 = (sslParameters.getEnableSessionCreation());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_166769049 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_166769049;
-        // ---------- Original Method ----------
-        //return sslParameters.getEnableSessionCreation();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.589 -0400", hash_original_method = "CCC6382646A49B02E626A26467D69493", hash_generated_method = "781712039B284C5CB7B48D72B261E886")
     @Override
     public void setEnableSessionCreation(boolean flag) {
         sslParameters.setEnableSessionCreation(flag);
         addTaint(flag);
-        // ---------- Original Method ----------
-        //sslParameters.setEnableSessionCreation(flag);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.589 -0400", hash_original_method = "1B8AAFC0DA0BD632205C9BB94F36BE40", hash_generated_method = "4723394D7745DAE3D11F0BC10D624B43")
     @Override
     public String[] getSupportedCipherSuites() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_249378068 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_249378068 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_249378068 = NativeCrypto.getSupportedCipherSuites();
-        varB4EAC82CA7396A68D541C85D26508E83_249378068.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_249378068.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_249378068;
-        // ---------- Original Method ----------
-        //return NativeCrypto.getSupportedCipherSuites();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.590 -0400", hash_original_method = "5CCACD4A046B80B9464615B5EFBE522F", hash_generated_method = "C959849F69CBA5E33337459DC54C12AB")
     @Override
     public String[] getEnabledCipherSuites() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1788623902 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1788623902 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1788623902 = enabledCipherSuites.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_1788623902.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1788623902.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1788623902;
-        // ---------- Original Method ----------
-        //return enabledCipherSuites.clone();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.590 -0400", hash_original_method = "A8F29A0117C2056BB4F12EE1D48F5595", hash_generated_method = "3FB2F096A8758F371B7BAF38AC6E6A62")
     @Override
     public void setEnabledCipherSuites(String[] suites) {
         enabledCipherSuites = NativeCrypto.checkEnabledCipherSuites(suites);
-        // ---------- Original Method ----------
-        //enabledCipherSuites = NativeCrypto.checkEnabledCipherSuites(suites);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.590 -0400", hash_original_method = "B10F1AAC80A139AD997D0D8B0338DD89", hash_generated_method = "B81FFD929FC03D913C7A1A72C38D3A17")
     @Override
     public String[] getSupportedProtocols() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_812008280 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_812008280 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_812008280 = NativeCrypto.getSupportedProtocols();
-        varB4EAC82CA7396A68D541C85D26508E83_812008280.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_812008280.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_812008280;
-        // ---------- Original Method ----------
-        //return NativeCrypto.getSupportedProtocols();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.591 -0400", hash_original_method = "26510D7872AB5791B4C2075CD3368FCD", hash_generated_method = "F832DC3A2501C47FA7D856253A862874")
     @Override
     public String[] getEnabledProtocols() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_724387949 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_724387949 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_724387949 = enabledProtocols.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_724387949.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_724387949.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_724387949;
-        // ---------- Original Method ----------
-        //return enabledProtocols.clone();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.591 -0400", hash_original_method = "4F25266A0ABB18E1CEC5E2893BCF6C12", hash_generated_method = "3A7DB44E7B143D29605895C639B518A6")
     @Override
     public void setEnabledProtocols(String[] protocols) {
         enabledProtocols = NativeCrypto.checkEnabledProtocols(protocols);
-        // ---------- Original Method ----------
-        //enabledProtocols = NativeCrypto.checkEnabledProtocols(protocols);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.591 -0400", hash_original_method = "375DD2648264EE3CAE4788D31A756EC5", hash_generated_method = "26885AC8EECDBA0A2E6F57E0472FBAF2")
     public String[] getSupportedCompressionMethods() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_945914306 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_945914306 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_945914306 = NativeCrypto.getSupportedCompressionMethods();
-        varB4EAC82CA7396A68D541C85D26508E83_945914306.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_945914306.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_945914306;
-        // ---------- Original Method ----------
-        //return NativeCrypto.getSupportedCompressionMethods();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.592 -0400", hash_original_method = "1BCE54E87A889265E8FA0E0B8689F62E", hash_generated_method = "4EDB5543F32706C953A1BBFCF6BEEDA0")
     public String[] getEnabledCompressionMethods() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_864360073 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_864360073 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_864360073 = enabledCompressionMethods.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_864360073.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_864360073.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_864360073;
-        // ---------- Original Method ----------
-        //return enabledCompressionMethods.clone();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.592 -0400", hash_original_method = "8EA4CA69B5E5586515E70C8BB15F1DC8", hash_generated_method = "F6E8AD11719A044F802E33A113589650")
     public void setEnabledCompressionMethods(String[] methods) {
         enabledCompressionMethods = NativeCrypto.checkEnabledCompressionMethods(methods);
-        // ---------- Original Method ----------
-        //enabledCompressionMethods = NativeCrypto.checkEnabledCompressionMethods(methods);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.592 -0400", hash_original_method = "1BC96C488FBD7622E9D1B33430C794F4", hash_generated_method = "9069498A56026D20FD8A09727B7034AD")
     public void setUseSessionTickets(boolean useSessionTickets) {
         this.useSessionTickets = useSessionTickets;
-        // ---------- Original Method ----------
-        //this.useSessionTickets = useSessionTickets;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.593 -0400", hash_original_method = "A3C6DFBE0DD33FFBDB883F2D56D0E9E8", hash_generated_method = "7F6DB2623DC2C5039EF0AE7949EDDAF7")
     public void setHostname(String hostname) {
         this.hostname = hostname;
-        // ---------- Original Method ----------
-        //this.hostname = hostname;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.593 -0400", hash_original_method = "01F03276D647357C499C358366605A7A", hash_generated_method = "AB874C2855E5FAC6189389890EB944A4")
     @Override
     public boolean getUseClientMode() {
         boolean var5D6C317C7C34AA34FED4DDA3BFA46DAC_1834241605 = (sslParameters.getUseClientMode());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_443030659 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_443030659;
-        // ---------- Original Method ----------
-        //return sslParameters.getUseClientMode();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.593 -0400", hash_original_method = "796A366B3F70011E31FF500388066E2F", hash_generated_method = "7E7008FF9D8848F21E35A0053ED6BD48")
     @Override
     public void setUseClientMode(boolean mode) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "Could not change the mode after the initial handshake has begun.");
-        } //End block
+        } 
         sslParameters.setUseClientMode(mode);
         addTaint(mode);
-        // ---------- Original Method ----------
-        //if (handshakeStarted) {
-            //throw new IllegalArgumentException(
-                    //"Could not change the mode after the initial handshake has begun.");
-        //}
-        //sslParameters.setUseClientMode(mode);
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.594 -0400", hash_original_method = "BFCFACF4683D2DA63944456ACA1AFE4C", hash_generated_method = "C45EC5DFCBCEDA01C2D7CF592FB95B76")
     @Override
     public boolean getWantClientAuth() {
         boolean var1F88322EA2F28C29D3EC82222D21AA46_1322431242 = (sslParameters.getWantClientAuth());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1102432051 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1102432051;
-        // ---------- Original Method ----------
-        //return sslParameters.getWantClientAuth();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.594 -0400", hash_original_method = "01CDFCACAD6C113BE18D967A4C320F8F", hash_generated_method = "8B70FED4D29ABBB4D7BB5411771E2EB7")
     @Override
     public boolean getNeedClientAuth() {
         boolean var666666A183221FEF9E4AC429A4F2FC13_1492724233 = (sslParameters.getNeedClientAuth());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_373795648 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_373795648;
-        // ---------- Original Method ----------
-        //return sslParameters.getNeedClientAuth();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.594 -0400", hash_original_method = "87B99BB5E16802D75B8230FD21E2413F", hash_generated_method = "0546B005C61E39ED72A709422B43B69F")
     @Override
     public void setNeedClientAuth(boolean need) {
         sslParameters.setNeedClientAuth(need);
         addTaint(need);
-        // ---------- Original Method ----------
-        //sslParameters.setNeedClientAuth(need);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.595 -0400", hash_original_method = "C4BE9213AE4AE3AE8B3FD470CA7DBEA1", hash_generated_method = "36D0D50995337D2D75DCB0482721034F")
     @Override
     public void setWantClientAuth(boolean want) {
         sslParameters.setWantClientAuth(want);
         addTaint(want);
-        // ---------- Original Method ----------
-        //sslParameters.setWantClientAuth(want);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.595 -0400", hash_original_method = "76A321423E9827230577FC78A6A38E86", hash_generated_method = "352C1C0A002DF95EBF288C4FF5A377A5")
     @Override
     public void sendUrgentData(int data) throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new SocketException("Method sendUrgentData() is not supported.");
         addTaint(data);
-        // ---------- Original Method ----------
-        //throw new SocketException("Method sendUrgentData() is not supported.");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.595 -0400", hash_original_method = "274CE2EF30305C6385D88E550D3E79A6", hash_generated_method = "03B4E46C1F8C665C265246E76BB39911")
     @Override
     public void setOOBInline(boolean on) throws SocketException {
         if (DroidSafeAndroidRuntime.control) throw new SocketException("Methods sendUrgentData, setOOBInline are not supported.");
         addTaint(on);
-        // ---------- Original Method ----------
-        //throw new SocketException("Methods sendUrgentData, setOOBInline are not supported.");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.596 -0400", hash_original_method = "E02183BB387F9960402CB70797EE289E", hash_generated_method = "B02004F7A366D969474A8D629373A474")
     @Override
     public void setSoTimeout(int timeoutMilliseconds) throws SocketException {
         super.setSoTimeout(timeoutMilliseconds);
         this.timeoutMilliseconds = timeoutMilliseconds;
-        // ---------- Original Method ----------
-        //super.setSoTimeout(timeoutMilliseconds);
-        //this.timeoutMilliseconds = timeoutMilliseconds;
+        
+        
+        
     }
 
     
@@ -1158,19 +1194,20 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
     public int getSoTimeout() throws SocketException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123352786 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123352786;
-        // ---------- Original Method ----------
-        //return timeoutMilliseconds;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.596 -0400", hash_original_method = "CE465C7A533FEAB3164F103F1DBDF364", hash_generated_method = "6671F89B44C6C2B43F432B4E79ACC3F2")
     public void setHandshakeTimeout(int timeoutMilliseconds) throws SocketException {
         this.handshakeTimeoutMilliseconds = timeoutMilliseconds;
-        // ---------- Original Method ----------
-        //this.handshakeTimeoutMilliseconds = timeoutMilliseconds;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.597 -0400", hash_original_method = "B24ED3F34169856B1F2602ADA3894B40", hash_generated_method = "FDA62998B6BD8424C3E5296D33D8142E")
     @Override
     public void close() throws IOException {
@@ -1185,18 +1222,18 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                             {
                                 boolean var4DF33A3328473828362786F341A256EE_689675423 = (autoClose && !socket.isClosed());
                                 socket.close();
-                            } //End collapsed parenthetic
-                        } //End block
+                            } 
+                        } 
                         {
                             {
                                 boolean varFFACBC82D9AF35C8BB47D8A0637A6062_1075862497 = (!super.isClosed());
                                 super.close();
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         NativeCrypto.SSL_interrupt(sslNativePointer);
         {
             {
@@ -1207,8 +1244,8 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                             BlockGuard.getThreadPolicy().onNetwork();
                             NativeCrypto.SSL_shutdown(sslNativePointer, socket.getFileDescriptor$(),
                                     this);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     catch (IOException ignored)
                     { }
                     finally 
@@ -1221,42 +1258,44 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                                     boolean var3517699F99256E8181CD89A82659CE69_1065813989 = (autoClose && !socket.isClosed());
                                     {
                                         socket.close();
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             {
                                 {
                                     boolean varE75AF6E6ED9346F3AD29B561C824DE81_389511053 = (!super.isClosed());
                                     {
                                         super.close();
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.597 -0400", hash_original_method = "0B5EFC2C593350712C0760AFE47F069D", hash_generated_method = "ECFAC03105594EE600B9228F2432EC31")
     private void free() {
         NativeCrypto.SSL_free(sslNativePointer);
         sslNativePointer = 0;
         guard.close();
-        // ---------- Original Method ----------
-        //if (sslNativePointer == 0) {
-            //return;
-        //}
-        //NativeCrypto.SSL_free(sslNativePointer);
-        //sslNativePointer = 0;
-        //guard.close();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.598 -0400", hash_original_method = "48478F0D5C609BA19837DA284D888FF0", hash_generated_method = "882FADDE20E830A83BAA462AE46622BF")
     @Override
     protected void finalize() throws Throwable {
@@ -1264,56 +1303,57 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         {
             {
                 guard.warnIfOpen();
-            } //End block
+            } 
             free();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (guard != null) {
-                //guard.warnIfOpen();
-            //}
-            //free();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.598 -0400", hash_original_method = "E6BCE3543B6D551909C5B870C6A9DC54", hash_generated_method = "C606EA2E0A5DF7A748868768A354487D")
     @Override
     public FileDescriptor getFileDescriptor$() {
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_496398103 = null; //Variable for return #1
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1112356836 = null; //Variable for return #2
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_496398103 = null; 
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1112356836 = null; 
         {
             boolean varC17DE78B0F5B654D1C3BAA61447DB932_248002819 = (socket == this);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_496398103 = super.getFileDescriptor$();
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1112356836 = socket.getFileDescriptor$();
-            } //End block
-        } //End collapsed parenthetic
-        FileDescriptor varA7E53CE21691AB073D9660D615818899_727238672; //Final return value
+            } 
+        } 
+        FileDescriptor varA7E53CE21691AB073D9660D615818899_727238672; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_727238672 = varB4EAC82CA7396A68D541C85D26508E83_496398103;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_727238672 = varB4EAC82CA7396A68D541C85D26508E83_1112356836;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_727238672.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_727238672.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_727238672;
-        // ---------- Original Method ----------
-        //if (socket == this) {
-            //return super.getFileDescriptor$();
-        //} else {
-            //return socket.getFileDescriptor$();
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1322,8 +1362,8 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.599 -0400", hash_original_method = "B153503C58DDB9DC7588696F0617BD77", hash_generated_method = "542D2766BEEB467DA4F5A36EE222A67B")
           SSLInputStream() throws IOException {
             OpenSSLSocketImpl.this.startHandshake(false);
-            // ---------- Original Method ----------
-            //OpenSSLSocketImpl.this.startHandshake(false);
+            
+            
         }
 
         
@@ -1333,8 +1373,8 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
             int var27157AD7296922C5499EDCD13E8A2ED8_15086500 = (Streams.readSingleByte(this));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_551299769 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_551299769;
-            // ---------- Original Method ----------
-            //return Streams.readSingleByte(this);
+            
+            
         }
 
         
@@ -1347,23 +1387,23 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                 Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
                 int var42EB93D3EE42AF5A70572DC5EFC4EDBC_1601000461 = (NativeCrypto.SSL_read(sslNativePointer, socket.getFileDescriptor$(),
                         OpenSSLSocketImpl.this, buf, offset, byteCount, getSoTimeout()));
-            } //End block
+            } 
             addTaint(buf[0]);
             addTaint(offset);
             addTaint(byteCount);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1514759275 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1514759275;
-            // ---------- Original Method ----------
-            //BlockGuard.getThreadPolicy().onNetwork();
-            //synchronized (readLock) {
-                //checkOpen();
-                //Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
-                //if (byteCount == 0) {
-                    //return 0;
-                //}
-                //return NativeCrypto.SSL_read(sslNativePointer, socket.getFileDescriptor$(),
-                        //OpenSSLSocketImpl.this, buf, offset, byteCount, getSoTimeout());
-            //}
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                        
+            
         }
 
         
@@ -1376,8 +1416,8 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.600 -0400", hash_original_method = "1E1541DFFE880DA1B7719D7E370B4D89", hash_generated_method = "2CF7E8309B0292C00087EB8F19D9BB26")
           SSLOutputStream() throws IOException {
             OpenSSLSocketImpl.this.startHandshake(false);
-            // ---------- Original Method ----------
-            //OpenSSLSocketImpl.this.startHandshake(false);
+            
+            
         }
 
         
@@ -1386,8 +1426,8 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         public void write(int oneByte) throws IOException {
             Streams.writeSingleByte(this, oneByte);
             addTaint(oneByte);
-            // ---------- Original Method ----------
-            //Streams.writeSingleByte(this, oneByte);
+            
+            
         }
 
         
@@ -1400,21 +1440,21 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                 Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
                 NativeCrypto.SSL_write(sslNativePointer, socket.getFileDescriptor$(),
                         OpenSSLSocketImpl.this, buf, offset, byteCount);
-            } //End block
+            } 
             addTaint(buf[0]);
             addTaint(offset);
             addTaint(byteCount);
-            // ---------- Original Method ----------
-            //BlockGuard.getThreadPolicy().onNetwork();
-            //synchronized (writeLock) {
-                //checkOpen();
-                //Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
-                //if (byteCount == 0) {
-                    //return;
-                //}
-                //NativeCrypto.SSL_write(sslNativePointer, socket.getFileDescriptor$(),
-                        //OpenSSLSocketImpl.this, buf, offset, byteCount);
-            //}
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                        
+            
         }
 
         

@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import static android.widget.SuggestionsAdapter.getColumnString;
 import android.app.PendingIntent;
@@ -149,13 +149,13 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                     getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
             {
                 imm.showSoftInputUnchecked(0, null);
-            } //End block
-            // ---------- Original Method ----------
-            //InputMethodManager imm = (InputMethodManager)
-                    //getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-            //if (imm != null) {
-                //imm.showSoftInputUnchecked(0, null);
-            //}
+            } 
+            
+            
+                    
+            
+                
+            
         }
 
         
@@ -166,8 +166,8 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.772 -0400", hash_original_method = "E7E2D783E1837F9E8B1A28FF4E183514", hash_generated_method = "B3EAFD427E9292CB229208955575A412")
         public void run() {
             updateFocusedState();
-            // ---------- Original Method ----------
-            //updateFocusedState();
+            
+            
         }
 
         
@@ -179,11 +179,11 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         public void run() {
             {
                 mSuggestionsAdapter.changeCursor(null);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mSuggestionsAdapter != null && mSuggestionsAdapter instanceof SuggestionsAdapter) {
-                //mSuggestionsAdapter.changeCursor(null);
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -202,35 +202,35 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     private final OnClickListener mOnClickListener = new OnClickListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.773 -0400", hash_original_method = "7A1C93089C02ACFF37CDB0A860AADCE9", hash_generated_method = "857C3F42BD32BE6A104B549FBE8CE91E")
         public void onClick(View v) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 onSearchClicked();
-            } //End block
+            } 
             {
                 onCloseClicked();
-            } //End block
+            } 
             {
                 onSubmitQuery();
-            } //End block
+            } 
             {
                 onVoiceClicked();
-            } //End block
+            } 
             {
                 forceSuggestionQuery();
-            } //End block
+            } 
             addTaint(v.getTaint());
-            // ---------- Original Method ----------
-            //if (v == mSearchButton) {
-                //onSearchClicked();
-            //} else if (v == mCloseButton) {
-                //onCloseClicked();
-            //} else if (v == mSubmitButton) {
-                //onSubmitQuery();
-            //} else if (v == mVoiceButton) {
-                //onVoiceClicked();
-            //} else if (v == mQueryTextView) {
-                //forceSuggestionQuery();
-            //}
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
         }
 
         
@@ -240,18 +240,18 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     View.OnKeyListener mTextKeyListener = new View.OnKeyListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.774 -0400", hash_original_method = "6918EF31FF46DE3F47367E08809323A7", hash_generated_method = "9906D0F8658E4969EBB579595DF6BCD0")
         public boolean onKey(View v, int keyCode, KeyEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 Log.d(LOG_TAG, "mTextListener.onKey(" + keyCode + "," + event + "), selection: "
                         + mQueryTextView.getListSelection());
-            } //End block
+            } 
             {
                 boolean varE6EA52064C48DD8716C3E906CB173C57_800195026 = (mQueryTextView.isPopupShowing()
                     && mQueryTextView.getListSelection() != ListView.INVALID_POSITION);
                 {
                     boolean var61B897F82409A70C761917364CAB3F30_1089778966 = (onSuggestionsKey(v, keyCode, event));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varE59197EBDDDE38F1D5742B373FE3954C_759932118 = (!mQueryTextView.isEmpty() && event.hasNoModifiers());
                 {
@@ -262,9 +262,9 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                                 v.cancelLongPress();
                                 launchQuerySearch(KeyEvent.KEYCODE_UNKNOWN, null, mQueryTextView.getText()
                                 .toString());
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
                     {
                         boolean var53B1438B0BA4D5FAD39095EFE3E69325_1452623959 = (event.getAction() == KeyEvent.ACTION_DOWN);
                         {
@@ -274,19 +274,19 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                                 {
                                     launchQuerySearch(keyCode, actionKey.getQueryActionMsg(), mQueryTextView
                                 .getText().toString());
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             addTaint(v.getTaint());
             addTaint(keyCode);
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1360017271 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1360017271;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -296,16 +296,16 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     private final OnEditorActionListener mOnEditorActionListener = new OnEditorActionListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.775 -0400", hash_original_method = "D29597D64DD97652D3ABF8CFD2738E45", hash_generated_method = "0CA87F83078E34E26C442713766DDE60")
         public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             onSubmitQuery();
             addTaint(v.getTaint());
             addTaint(actionId);
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1436174645 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1436174645;
-            // ---------- Original Method ----------
-            //onSubmitQuery();
-            //return true;
+            
+            
+            
         }
 
         
@@ -315,16 +315,16 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     private final OnItemClickListener mOnItemClickListener = new OnItemClickListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.775 -0400", hash_original_method = "5E212E5821217E2BB1A383DD15E7F009", hash_generated_method = "B4B056AC6204886414378AA45400D874")
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Log.d(LOG_TAG, "onItemClick() position " + position);
             onItemClicked(position, KeyEvent.KEYCODE_UNKNOWN, null);
             addTaint(parent.getTaint());
             addTaint(view.getTaint());
             addTaint(position);
             addTaint(id);
-            // ---------- Original Method ----------
-            //if (DBG) Log.d(LOG_TAG, "onItemClick() position " + position);
-            //onItemClicked(position, KeyEvent.KEYCODE_UNKNOWN, null);
+            
+            
+            
         }
 
         
@@ -334,27 +334,27 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     private final OnItemSelectedListener mOnItemSelectedListener = new OnItemSelectedListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.776 -0400", hash_original_method = "86CEF1E2408F388AD82C104FE40AC329", hash_generated_method = "E1005CD7FCFF5871C5EF1DEFF67BDB1A")
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Log.d(LOG_TAG, "onItemSelected() position " + position);
             SearchView.this.onItemSelected(position);
             addTaint(parent.getTaint());
             addTaint(view.getTaint());
             addTaint(position);
             addTaint(id);
-            // ---------- Original Method ----------
-            //if (DBG) Log.d(LOG_TAG, "onItemSelected() position " + position);
-            //SearchView.this.onItemSelected(position);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.776 -0400", hash_original_method = "4FDA6539116BD7730EFFECAC0128D708", hash_generated_method = "2DDB29F13F7959438D3B545352D01AE8")
         public void onNothingSelected(AdapterView<?> parent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Log.d(LOG_TAG, "onNothingSelected()");
             addTaint(parent.getTaint());
-            // ---------- Original Method ----------
-            //if (DBG)
-                //Log.d(LOG_TAG, "onNothingSelected()");
+            
+            
+                
         }
 
         
@@ -368,28 +368,28 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             addTaint(start);
             addTaint(before);
             addTaint(after);
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.777 -0400", hash_original_method = "F1038C7BDD17D1F93B5C6C4513E79DEF", hash_generated_method = "E73A50E8246DFD8A4B60F7797FF258B8")
         public void onTextChanged(CharSequence s, int start,
                 int before, int after) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             SearchView.this.onTextChanged(s);
             addTaint(s.getTaint());
             addTaint(start);
             addTaint(before);
             addTaint(after);
-            // ---------- Original Method ----------
-            //SearchView.this.onTextChanged(s);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.777 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "B1E73F6E6A3A9E89AEF9681CB19F89E5")
         public void afterTextChanged(Editable s) {
             addTaint(s.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -399,7 +399,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public  SearchView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -432,16 +432,16 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         mQueryTextView.setOnFocusChangeListener(new OnFocusChangeListener() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.778 -0400", hash_original_method = "93DBFCC4F7C7F6082C428361FF73C717", hash_generated_method = "15BB0F029A2D9CBA0E147567850FF072")
             public void onFocusChange(View v, boolean hasFocus) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 {
                     mOnQueryTextFocusChangeListener.onFocusChange(SearchView.this, hasFocus);
-                } //End block
+                } 
                 addTaint(v.getTaint());
                 addTaint(hasFocus);
-                // ---------- Original Method ----------
-                //if (mOnQueryTextFocusChangeListener != null) {
-                    //mOnQueryTextFocusChangeListener.onFocusChange(SearchView.this, hasFocus);
-                //}
+                
+                
+                    
+                
             }
 });
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SearchView, 0, 0);
@@ -449,22 +449,22 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         int maxWidth = a.getDimensionPixelSize(R.styleable.SearchView_maxWidth, -1);
         {
             setMaxWidth(maxWidth);
-        } //End block
+        } 
         CharSequence queryHint = a.getText(R.styleable.SearchView_queryHint);
         {
             boolean varC80C3FDE5CDED7C0FBD0A83E98220CA5_279927070 = (!TextUtils.isEmpty(queryHint));
             {
                 setQueryHint(queryHint);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int imeOptions = a.getInt(R.styleable.SearchView_imeOptions, -1);
         {
             setImeOptions(imeOptions);
-        } //End block
+        } 
         int inputType = a.getInt(R.styleable.SearchView_inputType, -1);
         {
             setInputType(inputType);
-        } //End block
+        } 
         a.recycle();
         boolean focusable = true;
         a = context.obtainStyledAttributes(attrs, R.styleable.View, 0, 0);
@@ -484,7 +484,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                 @Override
                 public void onLayoutChange(View v, int left, int top, int right, int bottom,
                         int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     adjustDropDownSizeAndPosition();
                     addTaint(v.getTaint());
                     addTaint(left);
@@ -495,17 +495,17 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                     addTaint(oldTop);
                     addTaint(oldRight);
                     addTaint(oldBottom);
-                    // ---------- Original Method ----------
-                    //adjustDropDownSizeAndPosition();
+                    
+                    
                 }
 });
-        } //End block
+        } 
         updateViewsVisibility(mIconifiedByDefault);
         updateQueryHint();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -515,31 +515,31 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         {
             updateSearchAutoComplete();
             updateQueryHint();
-        } //End block
+        } 
         mVoiceButtonEnabled = hasVoiceSearch();
         {
             mQueryTextView.setPrivateImeOptions(IME_OPTION_NO_MICROPHONE);
-        } //End block
+        } 
         updateViewsVisibility(isIconified());
-        // ---------- Original Method ----------
-        //mSearchable = searchable;
-        //if (mSearchable != null) {
-            //updateSearchAutoComplete();
-            //updateQueryHint();
-        //}
-        //mVoiceButtonEnabled = hasVoiceSearch();
-        //if (mVoiceButtonEnabled) {
-            //mQueryTextView.setPrivateImeOptions(IME_OPTION_NO_MICROPHONE);
-        //}
-        //updateViewsVisibility(isIconified());
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.780 -0400", hash_original_method = "EBA44227BB74F0B08E6F1C70EA9AD0F7", hash_generated_method = "9F0ED82A7B1E8B7E54C4455D92283D55")
     public void setAppSearchData(Bundle appSearchData) {
         mAppSearchData = appSearchData;
-        // ---------- Original Method ----------
-        //mAppSearchData = appSearchData;
+        
+        
     }
 
     
@@ -547,8 +547,8 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public void setImeOptions(int imeOptions) {
         mQueryTextView.setImeOptions(imeOptions);
         addTaint(imeOptions);
-        // ---------- Original Method ----------
-        //mQueryTextView.setImeOptions(imeOptions);
+        
+        
     }
 
     
@@ -556,8 +556,8 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public void setInputType(int inputType) {
         mQueryTextView.setInputType(inputType);
         addTaint(inputType);
-        // ---------- Original Method ----------
-        //mQueryTextView.setInputType(inputType);
+        
+        
     }
 
     
@@ -566,35 +566,35 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public boolean requestFocus(int direction, Rect previouslyFocusedRect) {
         {
             boolean var8DB70F00D9A309F787FE648FEF017045_1574255986 = (!isFocusable());
-        } //End collapsed parenthetic
+        } 
         {
             boolean varCD5C141A0C77A05F6864C5164FA139BA_88520501 = (!isIconified());
             {
                 boolean result = mQueryTextView.requestFocus(direction, previouslyFocusedRect);
                 {
                     updateViewsVisibility(false);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 boolean var7EEFFE453EE8B06336FEADC34AE77D1B_2105008948 = (super.requestFocus(direction, previouslyFocusedRect));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1152363913 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1152363913;
-        // ---------- Original Method ----------
-        //if (mClearingFocus) return false;
-        //if (!isFocusable()) return false;
-        //if (!isIconified()) {
-            //boolean result = mQueryTextView.requestFocus(direction, previouslyFocusedRect);
-            //if (result) {
-                //updateViewsVisibility(false);
-            //}
-            //return result;
-        //} else {
-            //return super.requestFocus(direction, previouslyFocusedRect);
-        //}
+        
+        
+        
+        
+            
+            
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -606,63 +606,63 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         super.clearFocus();
         mQueryTextView.clearFocus();
         mClearingFocus = false;
-        // ---------- Original Method ----------
-        //mClearingFocus = true;
-        //setImeVisibility(false);
-        //super.clearFocus();
-        //mQueryTextView.clearFocus();
-        //mClearingFocus = false;
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.782 -0400", hash_original_method = "5F51E4234BD6E41AFB4ED2E85F8CC1A5", hash_generated_method = "9ED055F823619F93416123D3D749DA22")
     public void setOnQueryTextListener(OnQueryTextListener listener) {
         mOnQueryChangeListener = listener;
-        // ---------- Original Method ----------
-        //mOnQueryChangeListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.782 -0400", hash_original_method = "5C0B64E237CFC180C92A60294DA35470", hash_generated_method = "53357DC670AF8DA5EBA61C8EACD2EFB0")
     public void setOnCloseListener(OnCloseListener listener) {
         mOnCloseListener = listener;
-        // ---------- Original Method ----------
-        //mOnCloseListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.782 -0400", hash_original_method = "2E189EEDC80EC67610C89143836C4DBB", hash_generated_method = "0E136A746D1DACCB2ECA5B20AA0683B2")
     public void setOnQueryTextFocusChangeListener(OnFocusChangeListener listener) {
         mOnQueryTextFocusChangeListener = listener;
-        // ---------- Original Method ----------
-        //mOnQueryTextFocusChangeListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.782 -0400", hash_original_method = "5242CF20D6A154AA5BAD996C3A14A890", hash_generated_method = "B2386EAE9CE311FF03E5CAA313730E12")
     public void setOnSuggestionListener(OnSuggestionListener listener) {
         mOnSuggestionListener = listener;
-        // ---------- Original Method ----------
-        //mOnSuggestionListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.782 -0400", hash_original_method = "AFFD80E7D30CC6B8E84DA9D0AC11DA43", hash_generated_method = "8D05E5C8F36ECC1939C7C9EC7679070B")
     public void setOnSearchClickListener(OnClickListener listener) {
         mOnSearchClickListener = listener;
-        // ---------- Original Method ----------
-        //mOnSearchClickListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.783 -0400", hash_original_method = "BDCF19F1BD9841AC2C41BDBA087D55A0", hash_generated_method = "7376F10CFAFEA0D95FF9DAB5B0D7CC11")
     public CharSequence getQuery() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_131191704 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_131191704 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_131191704 = mQueryTextView.getText();
-        varB4EAC82CA7396A68D541C85D26508E83_131191704.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_131191704.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_131191704;
-        // ---------- Original Method ----------
-        //return mQueryTextView.getText();
+        
+        
     }
 
     
@@ -672,23 +672,23 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         {
             mQueryTextView.setSelection(query.length());
             mUserQuery = query;
-        } //End block
+        } 
         {
             boolean var9242B3EAE17A7A89184E70A84C88F6F2_1415508834 = (submit && !TextUtils.isEmpty(query));
             {
                 onSubmitQuery();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(submit);
-        // ---------- Original Method ----------
-        //mQueryTextView.setText(query);
-        //if (query != null) {
-            //mQueryTextView.setSelection(query.length());
-            //mUserQuery = query;
-        //}
-        //if (submit && !TextUtils.isEmpty(query)) {
-            //onSubmitQuery();
-        //}
+        
+        
+        
+            
+            
+        
+        
+            
+        
     }
 
     
@@ -696,9 +696,9 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public void setQueryHint(CharSequence hint) {
         mQueryHint = hint;
         updateQueryHint();
-        // ---------- Original Method ----------
-        //mQueryHint = hint;
-        //updateQueryHint();
+        
+        
+        
     }
 
     
@@ -707,11 +707,11 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         mIconifiedByDefault = iconified;
         updateViewsVisibility(iconified);
         updateQueryHint();
-        // ---------- Original Method ----------
-        //if (mIconifiedByDefault == iconified) return;
-        //mIconifiedByDefault = iconified;
-        //updateViewsVisibility(iconified);
-        //updateQueryHint();
+        
+        
+        
+        
+        
     }
 
     
@@ -719,8 +719,8 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public boolean isIconfiedByDefault() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_18044431 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_18044431;
-        // ---------- Original Method ----------
-        //return mIconifiedByDefault;
+        
+        
     }
 
     
@@ -728,17 +728,17 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public void setIconified(boolean iconify) {
         {
             onCloseClicked();
-        } //End block
+        } 
         {
             onSearchClicked();
-        } //End block
+        } 
         addTaint(iconify);
-        // ---------- Original Method ----------
-        //if (iconify) {
-            //onCloseClicked();
-        //} else {
-            //onSearchClicked();
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -746,8 +746,8 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public boolean isIconified() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1382637772 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1382637772;
-        // ---------- Original Method ----------
-        //return mIconified;
+        
+        
     }
 
     
@@ -755,9 +755,9 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public void setSubmitButtonEnabled(boolean enabled) {
         mSubmitButtonEnabled = enabled;
         updateViewsVisibility(isIconified());
-        // ---------- Original Method ----------
-        //mSubmitButtonEnabled = enabled;
-        //updateViewsVisibility(isIconified());
+        
+        
+        
     }
 
     
@@ -765,8 +765,8 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public boolean isSubmitButtonEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2032932805 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2032932805;
-        // ---------- Original Method ----------
-        //return mSubmitButtonEnabled;
+        
+        
     }
 
     
@@ -776,13 +776,13 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         {
             ((SuggestionsAdapter) mSuggestionsAdapter).setQueryRefinement(
                     enable ? SuggestionsAdapter.REFINE_ALL : SuggestionsAdapter.REFINE_BY_ENTRY);
-        } //End block
-        // ---------- Original Method ----------
-        //mQueryRefinement = enable;
-        //if (mSuggestionsAdapter instanceof SuggestionsAdapter) {
-            //((SuggestionsAdapter) mSuggestionsAdapter).setQueryRefinement(
-                    //enable ? SuggestionsAdapter.REFINE_ALL : SuggestionsAdapter.REFINE_BY_ENTRY);
-        //}
+        } 
+        
+        
+        
+            
+                    
+        
     }
 
     
@@ -790,8 +790,8 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public boolean isQueryRefinementEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2106182637 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2106182637;
-        // ---------- Original Method ----------
-        //return mQueryRefinement;
+        
+        
     }
 
     
@@ -799,20 +799,20 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public void setSuggestionsAdapter(CursorAdapter adapter) {
         mSuggestionsAdapter = adapter;
         mQueryTextView.setAdapter(mSuggestionsAdapter);
-        // ---------- Original Method ----------
-        //mSuggestionsAdapter = adapter;
-        //mQueryTextView.setAdapter(mSuggestionsAdapter);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.787 -0400", hash_original_method = "D43CFDAE734651DCDEBEEE22CB7FB2A7", hash_generated_method = "5B50214F520FE04D02E97E0ECCA0C220")
     public CursorAdapter getSuggestionsAdapter() {
-        CursorAdapter varB4EAC82CA7396A68D541C85D26508E83_774302654 = null; //Variable for return #1
+        CursorAdapter varB4EAC82CA7396A68D541C85D26508E83_774302654 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_774302654 = mSuggestionsAdapter;
-        varB4EAC82CA7396A68D541C85D26508E83_774302654.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_774302654.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_774302654;
-        // ---------- Original Method ----------
-        //return mSuggestionsAdapter;
+        
+        
     }
 
     
@@ -820,46 +820,46 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public void setMaxWidth(int maxpixels) {
         mMaxWidth = maxpixels;
         requestLayout();
-        // ---------- Original Method ----------
-        //mMaxWidth = maxpixels;
-        //requestLayout();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.787 -0400", hash_original_method = "455591DBA8980F8F128C9C99FA0F791A", hash_generated_method = "08DA95E5AF1EE4551EC0C48CDAEC10E5")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var9CB88D429CDA0C605332B4B8BAA0D08B_815523926 = (isIconified());
             {
                 super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int width = MeasureSpec.getSize(widthMeasureSpec);
-        //Begin case MeasureSpec.AT_MOST 
+        
         {
             width = Math.min(mMaxWidth, width);
-        } //End block
+        } 
         {
             width = Math.min(getPreferredWidth(), width);
-        } //End block
-        //End case MeasureSpec.AT_MOST 
-        //Begin case MeasureSpec.EXACTLY 
+        } 
+        
+        
         {
             width = Math.min(mMaxWidth, width);
-        } //End block
-        //End case MeasureSpec.EXACTLY 
-        //Begin case MeasureSpec.UNSPECIFIED 
+        } 
+        
+        
         width = mMaxWidth > 0 ? mMaxWidth : getPreferredWidth();
-        //End case MeasureSpec.UNSPECIFIED 
+        
         widthMode = MeasureSpec.EXACTLY;
         super.onMeasure(MeasureSpec.makeMeasureSpec(width, widthMode), heightMeasureSpec);
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -869,9 +869,9 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                 .getDimensionPixelSize(R.dimen.search_view_preferred_width));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1934767813 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1934767813;
-        // ---------- Original Method ----------
-        //return getContext().getResources()
-                //.getDimensionPixelSize(R.dimen.search_view_preferred_width);
+        
+        
+                
     }
 
     
@@ -889,17 +889,17 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         updateCloseButton();
         updateVoiceButton(!hasText);
         updateSubmitArea();
-        // ---------- Original Method ----------
-        //mIconified = collapsed;
-        //final int visCollapsed = collapsed ? VISIBLE : GONE;
-        //final boolean hasText = !TextUtils.isEmpty(mQueryTextView.getText());
-        //mSearchButton.setVisibility(visCollapsed);
-        //updateSubmitButton(hasText);
-        //mSearchEditFrame.setVisibility(collapsed ? GONE : VISIBLE);
-        //mSearchHintIcon.setVisibility(mIconifiedByDefault ? GONE : VISIBLE);
-        //updateCloseButton();
-        //updateVoiceButton(!hasText);
-        //updateSubmitArea();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -913,37 +913,37 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                     boolean varE115433D5D367A06EC1291A48F299B73_1741909227 = (mSearchable.getVoiceSearchLaunchWebSearch());
                     {
                         testIntent = mVoiceWebSearchIntent;
-                    } //End block
+                    } 
                     {
                         boolean varDE5F6591B1893B8D2949FC45E45FA986_19854137 = (mSearchable.getVoiceSearchLaunchRecognizer());
                         {
                             testIntent = mVoiceAppSearchIntent;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 {
                     ResolveInfo ri = getContext().getPackageManager().resolveActivity(testIntent,
                         PackageManager.MATCH_DEFAULT_ONLY);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_978631836 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_978631836;
-        // ---------- Original Method ----------
-        //if (mSearchable != null && mSearchable.getVoiceSearchEnabled()) {
-            //Intent testIntent = null;
-            //if (mSearchable.getVoiceSearchLaunchWebSearch()) {
-                //testIntent = mVoiceWebSearchIntent;
-            //} else if (mSearchable.getVoiceSearchLaunchRecognizer()) {
-                //testIntent = mVoiceAppSearchIntent;
-            //}
-            //if (testIntent != null) {
-                //ResolveInfo ri = getContext().getPackageManager().resolveActivity(testIntent,
-                        //PackageManager.MATCH_DEFAULT_ONLY);
-                //return ri != null;
-            //}
-        //}
-        //return false;
+        
+        
+            
+            
+                
+            
+                
+            
+            
+                
+                        
+                
+            
+        
+        
     }
 
     
@@ -952,8 +952,8 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         boolean var81656F16A1D45B5B6822129878881E75_1459089693 = ((mSubmitButtonEnabled || mVoiceButtonEnabled) && !isIconified());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1020105649 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1020105649;
-        // ---------- Original Method ----------
-        //return (mSubmitButtonEnabled || mVoiceButtonEnabled) && !isIconified();
+        
+        
     }
 
     
@@ -965,17 +965,17 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                 && (hasText || !mVoiceButtonEnabled));
             {
                 visibility = VISIBLE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mSubmitButton.setVisibility(visibility);
         addTaint(hasText);
-        // ---------- Original Method ----------
-        //int visibility = GONE;
-        //if (mSubmitButtonEnabled && isSubmitAreaEnabled() && hasFocus()
-                //&& (hasText || !mVoiceButtonEnabled)) {
-            //visibility = VISIBLE;
-        //}
-        //mSubmitButton.setVisibility(visibility);
+        
+        
+        
+                
+            
+        
+        
     }
 
     
@@ -988,17 +988,17 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                         || mVoiceButton.getVisibility() == VISIBLE));
             {
                 visibility = VISIBLE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mSubmitArea.setVisibility(visibility);
-        // ---------- Original Method ----------
-        //int visibility = GONE;
-        //if (isSubmitAreaEnabled()
-                //&& (mSubmitButton.getVisibility() == VISIBLE
-                        //|| mVoiceButton.getVisibility() == VISIBLE)) {
-            //visibility = VISIBLE;
-        //}
-        //mSubmitArea.setVisibility(visibility);
+        
+        
+        
+                
+                        
+            
+        
+        
     }
 
     
@@ -1008,19 +1008,19 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         final boolean showClose = hasText || (mIconifiedByDefault && !mExpandedInActionView);
         mCloseButton.setVisibility(showClose ? VISIBLE : GONE);
         mCloseButton.getDrawable().setState(hasText ? ENABLED_STATE_SET : EMPTY_STATE_SET);
-        // ---------- Original Method ----------
-        //final boolean hasText = !TextUtils.isEmpty(mQueryTextView.getText());
-        //final boolean showClose = hasText || (mIconifiedByDefault && !mExpandedInActionView);
-        //mCloseButton.setVisibility(showClose ? VISIBLE : GONE);
-        //mCloseButton.getDrawable().setState(hasText ? ENABLED_STATE_SET : EMPTY_STATE_SET);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.790 -0400", hash_original_method = "A19187F7BD510E54AC677DCF71153712", hash_generated_method = "E58D53BF8B2730472056F6D862C2F112")
     private void postUpdateFocusedState() {
         post(mUpdateDrawableStateRunnable);
-        // ---------- Original Method ----------
-        //post(mUpdateDrawableStateRunnable);
+        
+        
     }
 
     
@@ -1030,25 +1030,25 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         mSearchPlate.getBackground().setState(focused ? FOCUSED_STATE_SET : EMPTY_STATE_SET);
         mSubmitArea.getBackground().setState(focused ? FOCUSED_STATE_SET : EMPTY_STATE_SET);
         invalidate();
-        // ---------- Original Method ----------
-        //boolean focused = mQueryTextView.hasFocus();
-        //mSearchPlate.getBackground().setState(focused ? FOCUSED_STATE_SET : EMPTY_STATE_SET);
-        //mSubmitArea.getBackground().setState(focused ? FOCUSED_STATE_SET : EMPTY_STATE_SET);
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.791 -0400", hash_original_method = "466B44C18A399269336D5B13075B3DD5", hash_generated_method = "541E8F066DEA567D4C20FD5E338EC369")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         removeCallbacks(mUpdateDrawableStateRunnable);
         post(mReleaseCursorRunnable);
         super.onDetachedFromWindow();
-        // ---------- Original Method ----------
-        //removeCallbacks(mUpdateDrawableStateRunnable);
-        //post(mReleaseCursorRunnable);
-        //super.onDetachedFromWindow();
+        
+        
+        
+        
     }
 
     
@@ -1056,68 +1056,68 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     private void setImeVisibility(final boolean visible) {
         {
             post(mShowImeRunnable);
-        } //End block
+        } 
         {
             removeCallbacks(mShowImeRunnable);
             InputMethodManager imm = (InputMethodManager)
                     getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
             {
                 imm.hideSoftInputFromWindow(getWindowToken(), 0);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(visible);
-        // ---------- Original Method ----------
-        //if (visible) {
-            //post(mShowImeRunnable);
-        //} else {
-            //removeCallbacks(mShowImeRunnable);
-            //InputMethodManager imm = (InputMethodManager)
-                    //getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-            //if (imm != null) {
-                //imm.hideSoftInputFromWindow(getWindowToken(), 0);
-            //}
-        //}
+        
+        
+            
+        
+            
+            
+                    
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.791 -0400", hash_original_method = "364D10214479FA13BFF6BDB192F3E0CD", hash_generated_method = "B80A5CCB6DF46041BC92C31F3029BD50")
      void onQueryRefine(CharSequence queryText) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         setQuery(queryText);
         addTaint(queryText.getTaint());
-        // ---------- Original Method ----------
-        //setQuery(queryText);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.791 -0400", hash_original_method = "E2E8A56E8AA279DA8CFFA9FDDF535879", hash_generated_method = "99F2FAF6BD1B672E24FE810460F107BA")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         SearchableInfo.ActionKeyInfo actionKey = mSearchable.findActionKey(keyCode);
         {
             boolean var5CB2730BDD0F8A6AFECB97402B427F1B_321581262 = ((actionKey != null) && (actionKey.getQueryActionMsg() != null));
             {
                 launchQuerySearch(keyCode, actionKey.getQueryActionMsg(), mQueryTextView.getText()
                     .toString());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var8C6E6C19273FC56B5C56CC7DEF63ED7B_1315512566 = (super.onKeyDown(keyCode, event));
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1395582263 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1395582263;
-        // ---------- Original Method ----------
-        //if (mSearchable == null) {
-            //return false;
-        //}
-        //SearchableInfo.ActionKeyInfo actionKey = mSearchable.findActionKey(keyCode);
-        //if ((actionKey != null) && (actionKey.getQueryActionMsg() != null)) {
-            //launchQuerySearch(keyCode, actionKey.getQueryActionMsg(), mQueryTextView.getText()
-                    //.toString());
-            //return true;
-        //}
-        //return super.onKeyDown(keyCode, event);
+        
+        
+            
+        
+        
+        
+            
+                    
+            
+        
+        
     }
 
     
@@ -1129,7 +1129,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                 {
                     int position = mQueryTextView.getListSelection();
                     boolean var524CB2E03CDD56BA662F9285090A5D2A_100549306 = (onItemClicked(position, KeyEvent.KEYCODE_UNKNOWN, null));
-                } //End block
+                } 
                 {
                     int selPoint;
                     selPoint = 0;
@@ -1139,10 +1139,10 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                     mQueryTextView.setListSelection(0);
                     mQueryTextView.clearListSelection();
                     mQueryTextView.ensureImeVisible(true);
-                } //End block
+                } 
                 {
                     boolean var404CC5C85EC37EE7D9EAFA6391F0B425_663251822 = (keyCode == KeyEvent.KEYCODE_DPAD_UP && 0 == mQueryTextView.getListSelection());
-                } //End collapsed parenthetic
+                } 
                 SearchableInfo.ActionKeyInfo actionKey = mSearchable.findActionKey(keyCode);
                 {
                     boolean varD6A63EA6CB82F1938533850645AC63CC_1390118694 = ((actionKey != null)
@@ -1160,22 +1160,22 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                                         boolean varCBF97EF6005E0ABB0B009E065E0E7581_83947518 = (actionMsg != null && (actionMsg.length() > 0));
                                         {
                                             boolean varEA30C83275615DF0CD0CC1A4EF5FFEC1_352486422 = (onItemClicked(position, keyCode, actionMsg));
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(v.getTaint());
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_227796025 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_227796025;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1199,18 +1199,18 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                 outValue, true);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1717821 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1717821;
-        // ---------- Original Method ----------
-        //TypedValue outValue = new TypedValue();
-        //getContext().getTheme().resolveAttribute(com.android.internal.R.attr.searchViewSearchIcon,
-                //outValue, true);
-        //return outValue.resourceId;
+        
+        
+        
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.794 -0400", hash_original_method = "BEC25B8B383259674E4804BA5A8143D3", hash_generated_method = "334348FC5B02C53CF1586124788663D7")
     private CharSequence getDecoratedHint(CharSequence hintText) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1875380709 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_130752818 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1875380709 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_130752818 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1875380709 = hintText;
         SpannableStringBuilder ssb = new SpannableStringBuilder("   ");
         ssb.append(hintText);
@@ -1220,26 +1220,26 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         ssb.setSpan(new ImageSpan(searchIcon), 1, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         varB4EAC82CA7396A68D541C85D26508E83_130752818 = ssb;
         addTaint(hintText.getTaint());
-        CharSequence varA7E53CE21691AB073D9660D615818899_1864891489; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1864891489; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1864891489 = varB4EAC82CA7396A68D541C85D26508E83_1875380709;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1864891489 = varB4EAC82CA7396A68D541C85D26508E83_130752818;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1864891489.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1864891489.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1864891489;
-        // ---------- Original Method ----------
-        //if (!mIconifiedByDefault) return hintText;
-        //SpannableStringBuilder ssb = new SpannableStringBuilder("   ");
-        //ssb.append(hintText);
-        //Drawable searchIcon = getContext().getResources().getDrawable(getSearchIconId());
-        //int textSize = (int) (mQueryTextView.getTextSize() * 1.25);
-        //searchIcon.setBounds(0, 0, textSize, textSize);
-        //ssb.setSpan(new ImageSpan(searchIcon), 1, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //return ssb;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1247,35 +1247,35 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     private void updateQueryHint() {
         {
             mQueryTextView.setHint(getDecoratedHint(mQueryHint));
-        } //End block
+        } 
         {
             CharSequence hint = null;
             int hintId = mSearchable.getHintId();
             {
                 hint = getContext().getString(hintId);
-            } //End block
+            } 
             {
                 mQueryTextView.setHint(getDecoratedHint(hint));
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mQueryTextView.setHint(getDecoratedHint(""));
-        } //End block
-        // ---------- Original Method ----------
-        //if (mQueryHint != null) {
-            //mQueryTextView.setHint(getDecoratedHint(mQueryHint));
-        //} else if (mSearchable != null) {
-            //CharSequence hint = null;
-            //int hintId = mSearchable.getHintId();
-            //if (hintId != 0) {
-                //hint = getContext().getString(hintId);
-            //}
-            //if (hint != null) {
-                //mQueryTextView.setHint(getDecoratedHint(hint));
-            //}
-        //} else {
-            //mQueryTextView.setHint(getDecoratedHint(""));
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+            
+                
+            
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -1291,13 +1291,13 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                 boolean var35AC7A1761C1124F307704E7A9FB2780_2042037102 = (mSearchable.getSuggestAuthority() != null);
                 {
                     inputType |= InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mQueryTextView.setInputType(inputType);
         {
             mSuggestionsAdapter.changeCursor(null);
-        } //End block
+        } 
         {
             boolean var766631DCADAC65258B4B2AA4BC08BF1D_492573453 = (mSearchable.getSuggestAuthority() != null);
             {
@@ -1307,10 +1307,10 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                 ((SuggestionsAdapter) mSuggestionsAdapter).setQueryRefinement(
                     mQueryRefinement ? SuggestionsAdapter.REFINE_ALL
                     : SuggestionsAdapter.REFINE_BY_ENTRY);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -1322,17 +1322,17 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             {
                 visibility = VISIBLE;
                 mSubmitButton.setVisibility(GONE);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mVoiceButton.setVisibility(visibility);
         addTaint(empty);
-        // ---------- Original Method ----------
-        //int visibility = GONE;
-        //if (mVoiceButtonEnabled && !isIconified() && empty) {
-            //visibility = VISIBLE;
-            //mSubmitButton.setVisibility(GONE);
-        //}
-        //mVoiceButton.setVisibility(visibility);
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -1349,21 +1349,21 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             boolean var323E3AECC67129F3B90BD3247116BE94_1856032179 = (mOnQueryChangeListener != null && !TextUtils.equals(newText, mOldQueryText));
             {
                 mOnQueryChangeListener.onQueryTextChange(newText.toString());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mOldQueryText = newText.toString();
-        // ---------- Original Method ----------
-        //CharSequence text = mQueryTextView.getText();
-        //mUserQuery = text;
-        //boolean hasText = !TextUtils.isEmpty(text);
-        //updateSubmitButton(hasText);
-        //updateVoiceButton(!hasText);
-        //updateCloseButton();
-        //updateSubmitArea();
-        //if (mOnQueryChangeListener != null && !TextUtils.equals(newText, mOldQueryText)) {
-            //mOnQueryChangeListener.onQueryTextChange(newText.toString());
-        //}
-        //mOldQueryText = newText.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1380,32 +1380,32 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                         {
                             launchQuerySearch(KeyEvent.KEYCODE_UNKNOWN, null, query.toString());
                             setImeVisibility(false);
-                        } //End block
+                        } 
                         dismissSuggestions();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //CharSequence query = mQueryTextView.getText();
-        //if (query != null && TextUtils.getTrimmedLength(query) > 0) {
-            //if (mOnQueryChangeListener == null
-                    //|| !mOnQueryChangeListener.onQueryTextSubmit(query.toString())) {
-                //if (mSearchable != null) {
-                    //launchQuerySearch(KeyEvent.KEYCODE_UNKNOWN, null, query.toString());
-                    //setImeVisibility(false);
-                //}
-                //dismissSuggestions();
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+            
+                    
+                
+                    
+                    
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.798 -0400", hash_original_method = "8D9A2C9AF67AD5F3EB2818A3F7453E73", hash_generated_method = "D7D68B4D8980045DB76C85CF1D652798")
     private void dismissSuggestions() {
         mQueryTextView.dismissDropDown();
-        // ---------- Original Method ----------
-        //mQueryTextView.dismissDropDown();
+        
+        
     }
 
     
@@ -1421,30 +1421,30 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                         {
                             clearFocus();
                             updateViewsVisibility(true);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 mQueryTextView.setText("");
                 mQueryTextView.requestFocus();
                 setImeVisibility(true);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //CharSequence text = mQueryTextView.getText();
-        //if (TextUtils.isEmpty(text)) {
-            //if (mIconifiedByDefault) {
-                //if (mOnCloseListener == null || !mOnCloseListener.onClose()) {
-                    //clearFocus();
-                    //updateViewsVisibility(true);
-                //}
-            //}
-        //} else {
-            //mQueryTextView.setText("");
-            //mQueryTextView.requestFocus();
-            //setImeVisibility(true);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+                    
+                    
+                
+            
+        
+            
+            
+            
+        
     }
 
     
@@ -1455,14 +1455,14 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         setImeVisibility(true);
         {
             mOnSearchClickListener.onClick(this);
-        } //End block
-        // ---------- Original Method ----------
-        //updateViewsVisibility(false);
-        //mQueryTextView.requestFocus();
-        //setImeVisibility(true);
-        //if (mOnSearchClickListener != null) {
-            //mOnSearchClickListener.onClick(this);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -1477,105 +1477,105 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                     Intent webSearchIntent = createVoiceWebSearchIntent(mVoiceWebSearchIntent,
                         searchable);
                     getContext().startActivity(webSearchIntent);
-                } //End block
+                } 
                 {
                     boolean var645D8F4ECB1C0F7F11811AA98A572600_1359800723 = (searchable.getVoiceSearchLaunchRecognizer());
                     {
                         Intent appSearchIntent = createVoiceAppSearchIntent(mVoiceAppSearchIntent,
                         searchable);
                         getContext().startActivity(appSearchIntent);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         catch (ActivityNotFoundException e)
         { }
-        // ---------- Original Method ----------
-        //if (mSearchable == null) {
-            //return;
-        //}
-        //SearchableInfo searchable = mSearchable;
-        //try {
-            //if (searchable.getVoiceSearchLaunchWebSearch()) {
-                //Intent webSearchIntent = createVoiceWebSearchIntent(mVoiceWebSearchIntent,
-                        //searchable);
-                //getContext().startActivity(webSearchIntent);
-            //} else if (searchable.getVoiceSearchLaunchRecognizer()) {
-                //Intent appSearchIntent = createVoiceAppSearchIntent(mVoiceAppSearchIntent,
-                        //searchable);
-                //getContext().startActivity(appSearchIntent);
-            //}
-        //} catch (ActivityNotFoundException e) {
-            //Log.w(LOG_TAG, "Could not find voice search activity");
-        //}
+        
+        
+            
+        
+        
+        
+            
+                
+                        
+                
+            
+                
+                        
+                
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.800 -0400", hash_original_method = "4D3FC77D85FEC9D80C6560FAE74CDA60", hash_generated_method = "6E0E1D0043EBCD30A1C4BCDAE201C96D")
      void onTextFocusChanged() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         updateViewsVisibility(isIconified());
         postUpdateFocusedState();
         {
             boolean varD5B56093B4D5DB9CF48D5816CF04A069_201886899 = (mQueryTextView.hasFocus());
             {
                 forceSuggestionQuery();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //updateViewsVisibility(isIconified());
-        //postUpdateFocusedState();
-        //if (mQueryTextView.hasFocus()) {
-            //forceSuggestionQuery();
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.800 -0400", hash_original_method = "6BC34AF35099192BA7E60BCC11E3C756", hash_generated_method = "39C6DB5AE969101BFF00F0D7A0CBD14C")
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onWindowFocusChanged(hasWindowFocus);
         postUpdateFocusedState();
         addTaint(hasWindowFocus);
-        // ---------- Original Method ----------
-        //super.onWindowFocusChanged(hasWindowFocus);
-        //postUpdateFocusedState();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.800 -0400", hash_original_method = "5D7477A3D9C6D568A19E621F4FAE5DD7", hash_generated_method = "657A76175C5C027E0A83AC8F0E70E279")
     @Override
     public void onActionViewCollapsed() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         clearFocus();
         updateViewsVisibility(true);
         mQueryTextView.setImeOptions(mCollapsedImeOptions);
         mExpandedInActionView = false;
-        // ---------- Original Method ----------
-        //clearFocus();
-        //updateViewsVisibility(true);
-        //mQueryTextView.setImeOptions(mCollapsedImeOptions);
-        //mExpandedInActionView = false;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.800 -0400", hash_original_method = "F734C19BE6B7D5E142C7745125215DDF", hash_generated_method = "131F0E66390DDDCCE1C64EE3296721EB")
     @Override
     public void onActionViewExpanded() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mExpandedInActionView = true;
         mCollapsedImeOptions = mQueryTextView.getImeOptions();
         mQueryTextView.setImeOptions(mCollapsedImeOptions | EditorInfo.IME_FLAG_NO_FULLSCREEN);
         mQueryTextView.setText("");
         setIconified(false);
-        // ---------- Original Method ----------
-        //if (mExpandedInActionView) return;
-        //mExpandedInActionView = true;
-        //mCollapsedImeOptions = mQueryTextView.getImeOptions();
-        //mQueryTextView.setImeOptions(mCollapsedImeOptions | EditorInfo.IME_FLAG_NO_FULLSCREEN);
-        //mQueryTextView.setText("");
-        //setIconified(false);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1596,10 +1596,10 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                     + anchorPadding);
                 mQueryTextView.setDropDownWidth(mDropDownAnchor.getWidth() + dropDownPadding.left
                     + dropDownPadding.right + iconOffset - (anchorPadding));
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -1612,22 +1612,22 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                 launchSuggestion(position, KeyEvent.KEYCODE_UNKNOWN, null);
                 setImeVisibility(false);
                 dismissSuggestions();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(position);
         addTaint(actionKey);
         addTaint(actionMsg.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_173253773 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_173253773;
-        // ---------- Original Method ----------
-        //if (mOnSuggestionListener == null
-                //|| !mOnSuggestionListener.onSuggestionClick(position)) {
-            //launchSuggestion(position, KeyEvent.KEYCODE_UNKNOWN, null);
-            //setImeVisibility(false);
-            //dismissSuggestions();
-            //return true;
-        //}
-        //return false;
+        
+        
+                
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -1638,18 +1638,18 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                 || !mOnSuggestionListener.onSuggestionSelect(position));
             {
                 rewriteQueryFromSuggestion(position);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(position);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_418774347 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_418774347;
-        // ---------- Original Method ----------
-        //if (mOnSuggestionListener == null
-                //|| !mOnSuggestionListener.onSuggestionSelect(position)) {
-            //rewriteQueryFromSuggestion(position);
-            //return true;
-        //}
-        //return false;
+        
+        
+                
+            
+            
+        
+        
     }
 
     
@@ -1663,32 +1663,32 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                 CharSequence newQuery = mSuggestionsAdapter.convertToString(c);
                 {
                     setQuery(newQuery);
-                } //End block
+                } 
                 {
                     setQuery(oldQuery);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 setQuery(oldQuery);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(position);
-        // ---------- Original Method ----------
-        //CharSequence oldQuery = mQueryTextView.getText();
-        //Cursor c = mSuggestionsAdapter.getCursor();
-        //if (c == null) {
-            //return;
-        //}
-        //if (c.moveToPosition(position)) {
-            //CharSequence newQuery = mSuggestionsAdapter.convertToString(c);
-            //if (newQuery != null) {
-                //setQuery(newQuery);
-            //} else {
-                //setQuery(oldQuery);
-            //}
-        //} else {
-            //setQuery(oldQuery);
-        //}
+        
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -1700,21 +1700,21 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             {
                 Intent intent = createIntentFromSuggestion(c, actionKey, actionMsg);
                 launchIntent(intent);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(position);
         addTaint(actionKey);
         addTaint(actionMsg.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1787301218 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1787301218;
-        // ---------- Original Method ----------
-        //Cursor c = mSuggestionsAdapter.getCursor();
-        //if ((c != null) && c.moveToPosition(position)) {
-            //Intent intent = createIntentFromSuggestion(c, actionKey, actionMsg);
-            //launchIntent(intent);
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -1723,19 +1723,19 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         try 
         {
             getContext().startActivity(intent);
-        } //End block
+        } 
         catch (RuntimeException ex)
         { }
         addTaint(intent.getTaint());
-        // ---------- Original Method ----------
-        //if (intent == null) {
-            //return;
-        //}
-        //try {
-            //getContext().startActivity(intent);
-        //} catch (RuntimeException ex) {
-            //Log.e(LOG_TAG, "Failed launch activity: " + intent, ex);
-        //}
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1744,9 +1744,9 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         mQueryTextView.setText(query, true);
         mQueryTextView.setSelection(TextUtils.isEmpty(query) ? 0 : query.length());
         addTaint(query.getTaint());
-        // ---------- Original Method ----------
-        //mQueryTextView.setText(query, true);
-        //mQueryTextView.setSelection(TextUtils.isEmpty(query) ? 0 : query.length());
+        
+        
+        
     }
 
     
@@ -1758,36 +1758,36 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         addTaint(actionKey);
         addTaint(actionMsg.getTaint());
         addTaint(query.getTaint());
-        // ---------- Original Method ----------
-        //String action = Intent.ACTION_SEARCH;
-        //Intent intent = createIntent(action, null, null, query, actionKey, actionMsg);
-        //getContext().startActivity(intent);
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.804 -0400", hash_original_method = "7931502AE551A2F220A0C85C1181EB09", hash_generated_method = "572E3B613C97747194DEB928FF5EF839")
     private Intent createIntent(String action, Uri data, String extraData, String query,
             int actionKey, String actionMsg) {
-        Intent varB4EAC82CA7396A68D541C85D26508E83_395360684 = null; //Variable for return #1
+        Intent varB4EAC82CA7396A68D541C85D26508E83_395360684 = null; 
         Intent intent = new Intent(action);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         {
             intent.setData(data);
-        } //End block
+        } 
         intent.putExtra(SearchManager.USER_QUERY, mUserQuery);
         {
             intent.putExtra(SearchManager.QUERY, query);
-        } //End block
+        } 
         {
             intent.putExtra(SearchManager.EXTRA_DATA_KEY, extraData);
-        } //End block
+        } 
         {
             intent.putExtra(SearchManager.APP_DATA, mAppSearchData);
-        } //End block
+        } 
         {
             intent.putExtra(SearchManager.ACTION_KEY, actionKey);
             intent.putExtra(SearchManager.ACTION_MSG, actionMsg);
-        } //End block
+        } 
         intent.setComponent(mSearchable.getSearchActivity());
         varB4EAC82CA7396A68D541C85D26508E83_395360684 = intent;
         addTaint(action.getTaint());
@@ -1796,16 +1796,16 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         addTaint(query.getTaint());
         addTaint(actionKey);
         addTaint(actionMsg.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_395360684.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_395360684.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_395360684;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.805 -0400", hash_original_method = "88ED2A4CD1E55FCB278985A3652D43A1", hash_generated_method = "B7582AB19670D6CEDF205EA541BC5049")
     private Intent createVoiceWebSearchIntent(Intent baseIntent, SearchableInfo searchable) {
-        Intent varB4EAC82CA7396A68D541C85D26508E83_429903212 = null; //Variable for return #1
+        Intent varB4EAC82CA7396A68D541C85D26508E83_429903212 = null; 
         Intent voiceIntent = new Intent(baseIntent);
         ComponentName searchActivity = searchable.getSearchActivity();
         voiceIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, searchActivity == null ? null
@@ -1813,20 +1813,20 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         varB4EAC82CA7396A68D541C85D26508E83_429903212 = voiceIntent;
         addTaint(baseIntent.getTaint());
         addTaint(searchable.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_429903212.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_429903212.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_429903212;
-        // ---------- Original Method ----------
-        //Intent voiceIntent = new Intent(baseIntent);
-        //ComponentName searchActivity = searchable.getSearchActivity();
-        //voiceIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, searchActivity == null ? null
-                //: searchActivity.flattenToShortString());
-        //return voiceIntent;
+        
+        
+        
+        
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.807 -0400", hash_original_method = "7F7E8A56997E65BDFC7ADF14F1E923E9", hash_generated_method = "1D28493CABBABCAC3EB9904B3507B888")
     private Intent createVoiceAppSearchIntent(Intent baseIntent, SearchableInfo searchable) {
-        Intent varB4EAC82CA7396A68D541C85D26508E83_1551494034 = null; //Variable for return #1
+        Intent varB4EAC82CA7396A68D541C85D26508E83_1551494034 = null; 
         ComponentName searchActivity = searchable.getSearchActivity();
         Intent queryIntent = new Intent(Intent.ACTION_SEARCH);
         queryIntent.setComponent(searchActivity);
@@ -1843,26 +1843,26 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             boolean varBBE4CD039A6A00BFEFC751059FE85B4F_31879058 = (searchable.getVoiceLanguageModeId() != 0);
             {
                 languageModel = resources.getString(searchable.getVoiceLanguageModeId());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varAC8E073C8A191629EF47CD10960E1E5F_1943424505 = (searchable.getVoicePromptTextId() != 0);
             {
                 prompt = resources.getString(searchable.getVoicePromptTextId());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varC746CB3F134BCAA7F8EF0771FDB78FED_89503574 = (searchable.getVoiceLanguageId() != 0);
             {
                 language = resources.getString(searchable.getVoiceLanguageId());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var2E746E5A42346C8832AA6F44EE0CF45F_1126764859 = (searchable.getVoiceMaxResults() != 0);
             {
                 maxResults = searchable.getVoiceMaxResults();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         voiceIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, languageModel);
         voiceIntent.putExtra(RecognizerIntent.EXTRA_PROMPT, prompt);
         voiceIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, language);
@@ -1874,72 +1874,72 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         varB4EAC82CA7396A68D541C85D26508E83_1551494034 = voiceIntent;
         addTaint(baseIntent.getTaint());
         addTaint(searchable.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1551494034.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1551494034.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1551494034;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.809 -0400", hash_original_method = "830957C509294E2BDC3732D8A42E8F7A", hash_generated_method = "2AA639886FDA239FFC4BFCD124D3CE72")
     private Intent createIntentFromSuggestion(Cursor c, int actionKey, String actionMsg) {
-        Intent varB4EAC82CA7396A68D541C85D26508E83_1083324253 = null; //Variable for return #1
-        Intent varB4EAC82CA7396A68D541C85D26508E83_882235456 = null; //Variable for return #2
+        Intent varB4EAC82CA7396A68D541C85D26508E83_1083324253 = null; 
+        Intent varB4EAC82CA7396A68D541C85D26508E83_882235456 = null; 
         try 
         {
             String action = getColumnString(c, SearchManager.SUGGEST_COLUMN_INTENT_ACTION);
             {
                 action = mSearchable.getSuggestIntentAction();
-            } //End block
+            } 
             {
                 action = Intent.ACTION_SEARCH;
-            } //End block
+            } 
             String data = getColumnString(c, SearchManager.SUGGEST_COLUMN_INTENT_DATA);
             {
                 data = mSearchable.getSuggestIntentData();
-            } //End block
+            } 
             {
                 String id = getColumnString(c, SearchManager.SUGGEST_COLUMN_INTENT_DATA_ID);
                 {
                     data = data + "/" + Uri.encode(id);
-                } //End block
-            } //End block
+                } 
+            } 
             Uri dataUri;
             dataUri = null;
             dataUri = Uri.parse(data);
             String query = getColumnString(c, SearchManager.SUGGEST_COLUMN_QUERY);
             String extraData = getColumnString(c, SearchManager.SUGGEST_COLUMN_INTENT_EXTRA_DATA);
             varB4EAC82CA7396A68D541C85D26508E83_1083324253 = createIntent(action, dataUri, extraData, query, actionKey, actionMsg);
-        } //End block
+        } 
         catch (RuntimeException e)
         {
             int rowNum;
             try 
             {
                 rowNum = c.getPosition();
-            } //End block
+            } 
             catch (RuntimeException e2)
             {
                 rowNum = -1;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_882235456 = null;
-        } //End block
+        } 
         addTaint(c.getTaint());
         addTaint(actionKey);
         addTaint(actionMsg.getTaint());
-        Intent varA7E53CE21691AB073D9660D615818899_1994838430; //Final return value
+        Intent varA7E53CE21691AB073D9660D615818899_1994838430; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1994838430 = varB4EAC82CA7396A68D541C85D26508E83_1083324253;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1994838430 = varB4EAC82CA7396A68D541C85D26508E83_882235456;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1994838430.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1994838430.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1994838430;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1947,9 +1947,9 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     private void forceSuggestionQuery() {
         mQueryTextView.doBeforeTextChanged();
         mQueryTextView.doAfterTextChanged();
-        // ---------- Original Method ----------
-        //mQueryTextView.doBeforeTextChanged();
-        //mQueryTextView.doAfterTextChanged();
+        
+        
+        
     }
 
     
@@ -1972,8 +1972,8 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             super(context);
             mThreshold = getThreshold();
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
-            //mThreshold = getThreshold();
+            
+            
         }
 
         
@@ -1983,8 +1983,8 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             mThreshold = getThreshold();
             addTaint(context.getTaint());
             addTaint(attrs.getTaint());
-            // ---------- Original Method ----------
-            //mThreshold = getThreshold();
+            
+            
         }
 
         
@@ -1995,16 +1995,16 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             addTaint(context.getTaint());
             addTaint(attrs.getTaint());
             addTaint(defStyle);
-            // ---------- Original Method ----------
-            //mThreshold = getThreshold();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.811 -0400", hash_original_method = "BBDE2605DAB20A62DF5DDA8DAF1B33B9", hash_generated_method = "0D212706D2CE79F99D27416EE240A973")
          void setSearchView(SearchView searchView) {
             mSearchView = searchView;
-            // ---------- Original Method ----------
-            //mSearchView = searchView;
+            
+            
         }
 
         
@@ -2013,9 +2013,9 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         public void setThreshold(int threshold) {
             super.setThreshold(threshold);
             mThreshold = threshold;
-            // ---------- Original Method ----------
-            //super.setThreshold(threshold);
-            //mThreshold = threshold;
+            
+            
+            
         }
 
         
@@ -2024,8 +2024,8 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             boolean var3DC6FA609B5525FAC46D05EECEA6786A_471062982 = (TextUtils.getTrimmedLength(getText()) == 0);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_47858980 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_47858980;
-            // ---------- Original Method ----------
-            //return TextUtils.getTrimmedLength(getText()) == 0;
+            
+            
         }
 
         
@@ -2033,21 +2033,21 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         @Override
         protected void replaceText(CharSequence text) {
             addTaint(text.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.812 -0400", hash_original_method = "BBB8F048947DA4F8E171ED984E24E3AE", hash_generated_method = "65E30508731680C780234FF5491E8384")
         @Override
         public void performCompletion() {
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.812 -0400", hash_original_method = "3777C1088ADE560024EE2C32D034B492", hash_generated_method = "B382C80CAADD277920EC6236B4E70BEB")
         @Override
         public void onWindowFocusChanged(boolean hasWindowFocus) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             super.onWindowFocusChanged(hasWindowFocus);
             {
                 boolean var07827550B2C2F4C2AD19C2B83045B0B0_1248557287 = (hasWindowFocus && mSearchView.hasFocus() && getVisibility() == VISIBLE);
@@ -2059,36 +2059,36 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                         boolean var962BF569303E770457EF5B953E22B6C6_919133865 = (isLandscapeMode(getContext()));
                         {
                             ensureImeVisible(true);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             addTaint(hasWindowFocus);
-            // ---------- Original Method ----------
-            //super.onWindowFocusChanged(hasWindowFocus);
-            //if (hasWindowFocus && mSearchView.hasFocus() && getVisibility() == VISIBLE) {
-                //InputMethodManager inputManager = (InputMethodManager) getContext()
-                        //.getSystemService(Context.INPUT_METHOD_SERVICE);
-                //inputManager.showSoftInput(this, 0);
-                //if (isLandscapeMode(getContext())) {
-                    //ensureImeVisible(true);
-                //}
-            //}
+            
+            
+            
+                
+                        
+                
+                
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.812 -0400", hash_original_method = "5F63BE621D8AAF87B5CC12EFB3AE40CE", hash_generated_method = "975839A07A74F2A3A30305B0A98BCCF9")
         @Override
         protected void onFocusChanged(boolean focused, int direction, Rect previouslyFocusedRect) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             super.onFocusChanged(focused, direction, previouslyFocusedRect);
             mSearchView.onTextFocusChanged();
             addTaint(focused);
             addTaint(direction);
             addTaint(previouslyFocusedRect.getTaint());
-            // ---------- Original Method ----------
-            //super.onFocusChanged(focused, direction, previouslyFocusedRect);
-            //mSearchView.onTextFocusChanged();
+            
+            
+            
         }
 
         
@@ -2098,15 +2098,15 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             boolean varC2A9CA7695220720B0749D6800887CAB_1341910522 = (mThreshold <= 0 || super.enoughToFilter());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1423933017 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1423933017;
-            // ---------- Original Method ----------
-            //return mThreshold <= 0 || super.enoughToFilter();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.813 -0400", hash_original_method = "AB0021D21F9078098334FA1D38399275", hash_generated_method = "971CA6F22DCA443260E6E78E49131282")
         @Override
         public boolean onKeyPreIme(int keyCode, KeyEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 {
                     boolean var51947D54DEEA690F1B41A17DE6323711_1544179523 = (event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0);
@@ -2114,33 +2114,33 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
                         KeyEvent.DispatcherState state = getKeyDispatcherState();
                         {
                             state.startTracking(event, this);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         boolean varA6D964A9D1A4D1D485BD8D60F2BFCDEE_949400396 = (event.getAction() == KeyEvent.ACTION_UP);
                         {
                             KeyEvent.DispatcherState state = getKeyDispatcherState();
                             {
                                 state.handleUpEvent(event);
-                            } //End block
+                            } 
                             {
                                 boolean varBE09C907F92D135687297C67489D82A5_349922237 = (event.isTracking() && !event.isCanceled());
                                 {
                                     mSearchView.clearFocus();
                                     mSearchView.setImeVisibility(false);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             boolean var5970925D52CD103B5580C9C1CCD0A863_172276923 = (super.onKeyPreIme(keyCode, event));
             addTaint(keyCode);
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1258359289 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1258359289;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

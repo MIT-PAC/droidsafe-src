@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class X509NameTokenizer {
@@ -27,7 +27,7 @@ public class X509NameTokenizer {
         String  oid) {
         this(oid, ',');
         addTaint(oid.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,33 +38,35 @@ public class X509NameTokenizer {
         this.value = oid;
         this.index = -1;
         this.seperator = seperator;
-        // ---------- Original Method ----------
-        //this.value = oid;
-        //this.index = -1;
-        //this.seperator = seperator;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.298 -0400", hash_original_method = "A840AC1B987121BDC7999220A560F7B6", hash_generated_method = "95122C31F37E12A0FBAA910CE22D6291")
     public boolean hasMoreTokens() {
         boolean var7CD935BF8DE374BC92D8FD35111972EC_1073009248 = ((index != value.length()));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2111527504 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2111527504;
-        // ---------- Original Method ----------
-        //return (index != value.length());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.299 -0400", hash_original_method = "609C206EB69C69406C6D19A5ED0989AC", hash_generated_method = "FB6694120AF720698BBEAD0B63F98DA7")
     public String nextToken() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1291712470 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1510474899 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1291712470 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1510474899 = null; 
         {
             boolean varD1FB7B79F55DE8E4676B5276D1B14D19_914718301 = (index == value.length());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1291712470 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int end = index + 1;
         boolean quoted = false;
         boolean escaped = false;
@@ -76,59 +78,59 @@ public class X509NameTokenizer {
                 {
                     {
                         quoted = !quoted;
-                    } //End block
+                    } 
                     {
                         {
                             boolean var5E354E81BA73B0495049F0FBF6BAAB34_368648794 = (c == '#' && buf.charAt(buf.length() - 1) == '=');
                             {
                                 buf.append('\\');
-                            } //End block
+                            } 
                             {
                                 buf.append('\\');
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         buf.append(c);
-                    } //End block
+                    } 
                     escaped = false;
-                } //End block
+                } 
                 {
                     {
                         {
                             boolean var5E354E81BA73B0495049F0FBF6BAAB34_977514192 = (c == '#' && buf.charAt(buf.length() - 1) == '=');
                             {
                                 buf.append('\\');
-                            } //End block
+                            } 
                             {
                                 buf.append('\\');
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         buf.append(c);
                         escaped = false;
-                    } //End block
+                    } 
                     {
                         escaped = true;
-                    } //End block
+                    } 
                     {
                         buf.append(c);
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         index = end;
         varB4EAC82CA7396A68D541C85D26508E83_1510474899 = buf.toString().trim();
-        String varA7E53CE21691AB073D9660D615818899_244902327; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_244902327; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_244902327 = varB4EAC82CA7396A68D541C85D26508E83_1291712470;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_244902327 = varB4EAC82CA7396A68D541C85D26508E83_1510474899;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_244902327.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_244902327.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_244902327;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

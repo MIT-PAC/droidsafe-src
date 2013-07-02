@@ -1,11 +1,11 @@
 package org.bouncycastle.jce.spec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 import org.bouncycastle.math.ec.ECCurve;
@@ -27,8 +27,8 @@ public class ECNamedCurveParameterSpec extends ECParameterSpec {
         addTaint(curve.getTaint());
         addTaint(G.getTaint());
         addTaint(n.getTaint());
-        // ---------- Original Method ----------
-        //this.name = name;
+        
+        
     }
 
     
@@ -45,8 +45,8 @@ public class ECNamedCurveParameterSpec extends ECParameterSpec {
         addTaint(G.getTaint());
         addTaint(n.getTaint());
         addTaint(h.getTaint());
-        // ---------- Original Method ----------
-        //this.name = name;
+        
+        
     }
 
     
@@ -65,19 +65,19 @@ public class ECNamedCurveParameterSpec extends ECParameterSpec {
         addTaint(n.getTaint());
         addTaint(h.getTaint());
         addTaint(seed[0]);
-        // ---------- Original Method ----------
-        //this.name = name;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.272 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "994C1C87BCEB6FCBF7EEDEB802AE4640")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_756216905 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_756216905 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_756216905 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_756216905.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_756216905.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_756216905;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     

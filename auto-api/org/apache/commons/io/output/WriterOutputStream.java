@@ -1,11 +1,11 @@
 package org.apache.commons.io.output;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -39,7 +39,7 @@ public class WriterOutputStream extends OutputStream {
         this(writer, decoder, DEFAULT_BUFFER_SIZE, false);
         addTaint(writer.getTaint());
         addTaint(decoder.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,11 +49,11 @@ public class WriterOutputStream extends OutputStream {
         this.decoder = decoder;
         this.writeImmediately = writeImmediately;
         decoderOut = CharBuffer.allocate(bufferSize);
-        // ---------- Original Method ----------
-        //this.writer = writer;
-        //this.decoder = decoder;
-        //this.writeImmediately = writeImmediately;
-        //decoderOut = CharBuffer.allocate(bufferSize);
+        
+        
+        
+        
+        
     }
 
     
@@ -70,7 +70,7 @@ public class WriterOutputStream extends OutputStream {
         addTaint(charset.getTaint());
         addTaint(bufferSize);
         addTaint(writeImmediately);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -79,7 +79,7 @@ public class WriterOutputStream extends OutputStream {
         this(writer, charset, DEFAULT_BUFFER_SIZE, false);
         addTaint(writer.getTaint());
         addTaint(charset.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -90,7 +90,7 @@ public class WriterOutputStream extends OutputStream {
         addTaint(charsetName.getTaint());
         addTaint(bufferSize);
         addTaint(writeImmediately);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -99,7 +99,7 @@ public class WriterOutputStream extends OutputStream {
         this(writer, charsetName, DEFAULT_BUFFER_SIZE, false);
         addTaint(writer.getTaint());
         addTaint(charsetName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -107,10 +107,11 @@ public class WriterOutputStream extends OutputStream {
     public  WriterOutputStream(Writer writer) {
         this(writer, Charset.defaultCharset(), DEFAULT_BUFFER_SIZE, false);
         addTaint(writer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.818 -0400", hash_original_method = "C0D49EB08A267ED3491A74132BB97C44", hash_generated_method = "E5792FCCD91E38B890533BEE0CE23F39")
     @Override
     public void write(byte[] b, int off, int len) throws IOException {
@@ -120,71 +121,76 @@ public class WriterOutputStream extends OutputStream {
             processInput(false);
             len -= c;
             off += c;
-        } //End block
+        } 
         {
             flushOutput();
-        } //End block
+        } 
         addTaint(b[0]);
         addTaint(off);
         addTaint(len);
-        // ---------- Original Method ----------
-        //while (len > 0) {
-            //int c = Math.min(len, decoderIn.remaining());
-            //decoderIn.put(b, off, c);
-            //processInput(false);
-            //len -= c;
-            //off += c;
-        //}
-        //if (writeImmediately) {
-            //flushOutput();
-        //}
+        
+        
+            
+            
+            
+            
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.819 -0400", hash_original_method = "E1D4EA7BC5A1A039095C078064FA6BD5", hash_generated_method = "65527CB182AA774108E3787F67952FBA")
     @Override
     public void write(byte[] b) throws IOException {
         write(b, 0, b.length);
         addTaint(b[0]);
-        // ---------- Original Method ----------
-        //write(b, 0, b.length);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.819 -0400", hash_original_method = "72E9EA9CB4D496A22134A9DE55B8B91A", hash_generated_method = "6D7B678E08FBFEE586422C6433BDCAD5")
     @Override
     public void write(int b) throws IOException {
         write(new byte[] { (byte)b }, 0, 1);
         addTaint(b);
-        // ---------- Original Method ----------
-        //write(new byte[] { (byte)b }, 0, 1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.820 -0400", hash_original_method = "AC63B2DA15A83F7213D18D8342590F5B", hash_generated_method = "8B5A73988608AB8AFD2F020B6179FC74")
     @Override
     public void flush() throws IOException {
         flushOutput();
         writer.flush();
-        // ---------- Original Method ----------
-        //flushOutput();
-        //writer.flush();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.820 -0400", hash_original_method = "420EB211773CB08496419ABA1A7EC597", hash_generated_method = "28EF03026D790D6562F1CF27EA9F49E7")
     @Override
     public void close() throws IOException {
         processInput(true);
         flushOutput();
         writer.close();
-        // ---------- Original Method ----------
-        //processInput(true);
-        //flushOutput();
-        //writer.close();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.821 -0400", hash_original_method = "8DBE36D3CC23C0C9E5FAAD9804EB9F8E", hash_generated_method = "112F31C0502A54E03AD5B19F3D80503F")
     private void processInput(boolean endOfInput) throws IOException {
         decoderIn.flip();
@@ -195,34 +201,35 @@ public class WriterOutputStream extends OutputStream {
                 boolean var1F4BF95B8230AF5CFFBC6FA75DC274CF_826578903 = (coderResult.isOverflow());
                 {
                     flushOutput();
-                } //End block
+                } 
                 {
                     boolean var91E1BBCAB1B1D4939387A6515FBC5859_1472308323 = (coderResult.isUnderflow());
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IOException("Unexpected coder result");
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         decoderIn.compact();
         addTaint(endOfInput);
-        // ---------- Original Method ----------
-        //decoderIn.flip();
-        //CoderResult coderResult;
-        //while (true) {
-            //coderResult = decoder.decode(decoderIn, decoderOut, endOfInput);
-            //if (coderResult.isOverflow()) {
-                //flushOutput();
-            //} else if (coderResult.isUnderflow()) {
-                //break;
-            //} else {
-                //throw new IOException("Unexpected coder result");
-            //}
-        //}
-        //decoderIn.compact();
+        
+        
+        
+        
+            
+            
+                
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.822 -0400", hash_original_method = "CB0233CD34D87630D222478FE14929AD", hash_generated_method = "3274841E31AA1CE94038B1AE891580F3")
     private void flushOutput() throws IOException {
         {
@@ -230,13 +237,13 @@ public class WriterOutputStream extends OutputStream {
             {
                 writer.write(decoderOut.array(), 0, decoderOut.position());
                 decoderOut.rewind();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (decoderOut.position() > 0) {
-            //writer.write(decoderOut.array(), 0, decoderOut.position());
-            //decoderOut.rewind();
-        //}
+            } 
+        } 
+        
+        
+            
+            
+        
     }
 
     

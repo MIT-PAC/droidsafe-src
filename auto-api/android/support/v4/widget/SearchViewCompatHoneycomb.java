@@ -1,11 +1,11 @@
 package android.support.v4.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.SearchManager;
 import android.content.ComponentName;
@@ -20,7 +20,7 @@ class SearchViewCompatHoneycomb {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.357 -0400", hash_original_method = "A2C9697EF9D9271A85E01FB1EA533B3D", hash_generated_method = "A2C9697EF9D9271A85E01FB1EA533B3D")
     public SearchViewCompatHoneycomb ()
     {
-        //Synthesized constructor
+        
     }
 
 

@@ -1,11 +1,11 @@
 package org.apache.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class ParseException extends RuntimeException {
@@ -13,7 +13,7 @@ public class ParseException extends RuntimeException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.495 -0400", hash_original_method = "43A50A2814EFBF0D7758AAE9FD7C9320", hash_generated_method = "9A467B6CDF547A2C71AA208E65181C5B")
     public  ParseException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class ParseException extends RuntimeException {
     public  ParseException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

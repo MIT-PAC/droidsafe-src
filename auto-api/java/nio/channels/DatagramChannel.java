@@ -1,11 +1,11 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.net.DatagramSocket;
@@ -20,10 +20,11 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
     protected  DatagramChannel(SelectorProvider selectorProvider) {
         super(selectorProvider);
         addTaint(selectorProvider.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DatagramChannel open() throws IOException {
         return SelectorProvider.provider().openDatagramChannel();
     }
@@ -34,8 +35,8 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
     public final int validOps() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2104970407 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2104970407;
-        // ---------- Original Method ----------
-        //return (SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+        
+        
     }
 
     
@@ -71,8 +72,8 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
         addTaint(targets[0].getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1018913433 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1018913433;
-        // ---------- Original Method ----------
-        //return read(targets, 0, targets.length);
+        
+        
     }
 
     
@@ -89,8 +90,8 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
         addTaint(sources[0].getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1725071697 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1725071697;
-        // ---------- Original Method ----------
-        //return write(sources, 0, sources.length);
+        
+        
     }
 
     

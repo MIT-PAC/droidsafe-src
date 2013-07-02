@@ -1,11 +1,11 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -22,15 +22,17 @@ public class AnimationUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.420 -0400", hash_original_method = "356F4D62C52EA54268D4026A2BB604AB", hash_generated_method = "356F4D62C52EA54268D4026A2BB604AB")
     public AnimationUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static long currentAnimationTimeMillis() {
         return SystemClock.uptimeMillis();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Animation loadAnimation(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {
@@ -52,11 +54,13 @@ public class AnimationUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Animation createAnimationFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         return createAnimationFromXml(c, parser, null, Xml.asAttributeSet(parser));
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Animation createAnimationFromXml(Context c, XmlPullParser parser,
             AnimationSet parent, AttributeSet attrs) throws XmlPullParserException, IOException {
         Animation anim = null;
@@ -90,6 +94,7 @@ public class AnimationUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static LayoutAnimationController loadLayoutAnimation(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {
@@ -111,12 +116,14 @@ public class AnimationUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
             XmlPullParser parser) throws XmlPullParserException, IOException {
         return createLayoutAnimationFromXml(c, parser, Xml.asAttributeSet(parser));
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
             XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
         LayoutAnimationController controller = null;
@@ -140,6 +147,7 @@ public class AnimationUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Animation makeInAnimation(Context c, boolean fromLeft) {
         Animation a;
         if (fromLeft) {
@@ -153,6 +161,7 @@ public class AnimationUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Animation makeOutAnimation(Context c, boolean toRight) {
         Animation a;
         if (toRight) {
@@ -166,6 +175,7 @@ public class AnimationUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Animation makeInChildBottomAnimation(Context c) {
         Animation a;
         a = AnimationUtils.loadAnimation(c, com.android.internal.R.anim.slide_in_child_bottom);
@@ -175,6 +185,7 @@ public class AnimationUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Interpolator loadInterpolator(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {
@@ -196,6 +207,7 @@ public class AnimationUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         Interpolator interpolator = null;
         int type;

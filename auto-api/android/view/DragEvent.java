@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ClipData;
 import android.content.ClipDescription;
@@ -46,7 +46,7 @@ public class DragEvent implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.986 -0400", hash_original_method = "5492E1A6EF7C89CB56D8B22EE2854B8B", hash_generated_method = "C325B7A5D23661790703116059A6FDC6")
     private  DragEvent() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -60,22 +60,24 @@ public class DragEvent implements Parcelable {
         mClipData = data;
         mLocalState = localState;
         mDragResult = result;
-        // ---------- Original Method ----------
-        //mAction = action;
-        //mX = x;
-        //mY = y;
-        //mClipDescription = description;
-        //mClipData = data;
-        //mLocalState = localState;
-        //mDragResult = result;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static DragEvent obtain() {
         return DragEvent.obtain(0, 0f, 0f, null, null, null, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DragEvent obtain(int action, float x, float y, Object localState,
             ClipDescription description, ClipData data, boolean result) {
         final DragEvent ev;
@@ -97,6 +99,7 @@ public class DragEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DragEvent obtain(DragEvent source) {
         return obtain(source.mAction, source.mX, source.mY, source.mLocalState,
                 source.mClipDescription, source.mClipData, source.mDragResult);
@@ -107,8 +110,8 @@ public class DragEvent implements Parcelable {
     public int getAction() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1170797013 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1170797013;
-        // ---------- Original Method ----------
-        //return mAction;
+        
+        
     }
 
     
@@ -116,8 +119,8 @@ public class DragEvent implements Parcelable {
     public float getX() {
         float var546ADE640B6EDFBC8A086EF31347E768_1284509788 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1284509788;
-        // ---------- Original Method ----------
-        //return mX;
+        
+        
     }
 
     
@@ -125,41 +128,41 @@ public class DragEvent implements Parcelable {
     public float getY() {
         float var546ADE640B6EDFBC8A086EF31347E768_1620281625 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1620281625;
-        // ---------- Original Method ----------
-        //return mY;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.988 -0400", hash_original_method = "933F7F307168902744E3973968DC1B74", hash_generated_method = "2142EBA8AA4CE6D699004E19F7C51965")
     public ClipData getClipData() {
-        ClipData varB4EAC82CA7396A68D541C85D26508E83_1070439922 = null; //Variable for return #1
+        ClipData varB4EAC82CA7396A68D541C85D26508E83_1070439922 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1070439922 = mClipData;
-        varB4EAC82CA7396A68D541C85D26508E83_1070439922.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1070439922.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1070439922;
-        // ---------- Original Method ----------
-        //return mClipData;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.989 -0400", hash_original_method = "314798A5FB9D41875D673F25B7EDBA77", hash_generated_method = "A8D64E2D3507DA72C59F74F21D2A7D5E")
     public ClipDescription getClipDescription() {
-        ClipDescription varB4EAC82CA7396A68D541C85D26508E83_1052998544 = null; //Variable for return #1
+        ClipDescription varB4EAC82CA7396A68D541C85D26508E83_1052998544 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1052998544 = mClipDescription;
-        varB4EAC82CA7396A68D541C85D26508E83_1052998544.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1052998544.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1052998544;
-        // ---------- Original Method ----------
-        //return mClipDescription;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.990 -0400", hash_original_method = "37C7BCFB2F6F270ABDBD12EAE79514EC", hash_generated_method = "1FAFBECC1722F3EC675CF1CC27C3608F")
     public Object getLocalState() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_2077961447 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_2077961447 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2077961447 = mLocalState;
-        varB4EAC82CA7396A68D541C85D26508E83_2077961447.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2077961447.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2077961447;
-        // ---------- Original Method ----------
-        //return mLocalState;
+        
+        
     }
 
     
@@ -167,8 +170,8 @@ public class DragEvent implements Parcelable {
     public boolean getResult() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1858790265 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1858790265;
-        // ---------- Original Method ----------
-        //return mDragResult;
+        
+        
     }
 
     
@@ -177,15 +180,15 @@ public class DragEvent implements Parcelable {
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(toString() + " recycled twice!", mRecycledLocation);
-            } //End block
+            } 
             mRecycledLocation = new RuntimeException("Last recycled here");
-        } //End block
+        } 
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(toString() + " recycled twice!");
-            } //End block
+            } 
             mRecycled = true;
-        } //End block
+        } 
         mClipData = null;
         mClipDescription = null;
         mLocalState = null;
@@ -193,48 +196,49 @@ public class DragEvent implements Parcelable {
             {
                 mNext = gRecyclerTop;
                 gRecyclerTop = this;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (TRACK_RECYCLED_LOCATION) {
-            //if (mRecycledLocation != null) {
-                //throw new RuntimeException(toString() + " recycled twice!", mRecycledLocation);
-            //}
-            //mRecycledLocation = new RuntimeException("Last recycled here");
-        //} else {
-            //if (mRecycled) {
-                //throw new RuntimeException(toString() + " recycled twice!");
-            //}
-            //mRecycled = true;
-        //}
-        //mClipData = null;
-        //mClipDescription = null;
-        //mLocalState = null;
-        //synchronized (gRecyclerLock) {
-            //if (gRecyclerUsed < MAX_RECYCLED) {
-                //gRecyclerUsed++;
-                //mNext = gRecyclerTop;
-                //gRecyclerTop = this;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+        
+            
+                
+            
+            
+        
+        
+        
+        
+        
+            
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.991 -0400", hash_original_method = "B115D176D9854B47E8C200D036ACDD5B", hash_generated_method = "FE22804608457FC26092E444846F292B")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_506905067 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_506905067 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_506905067 = "DragEvent{" + Integer.toHexString(System.identityHashCode(this))
         + " action=" + mAction + " @ (" + mX + ", " + mY + ") desc=" + mClipDescription
         + " data=" + mClipData + " local=" + mLocalState + " result=" + mDragResult
         + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_506905067.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_506905067.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_506905067;
-        // ---------- Original Method ----------
-        //return "DragEvent{" + Integer.toHexString(System.identityHashCode(this))
-        //+ " action=" + mAction + " @ (" + mX + ", " + mY + ") desc=" + mClipDescription
-        //+ " data=" + mClipData + " local=" + mLocalState + " result=" + mDragResult
-        //+ "}";
+        
+        
+        
+        
+        
     }
 
     
@@ -242,11 +246,12 @@ public class DragEvent implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1176041438 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1176041438;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.992 -0400", hash_original_method = "76A8906A7EAF6555F7630460CE48F340", hash_generated_method = "47DA01E6D2C2FE601BBA94AAF0DEE712")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mAction);
@@ -255,37 +260,37 @@ public class DragEvent implements Parcelable {
         dest.writeInt(mDragResult ? 1 : 0);
         {
             dest.writeInt(0);
-        } //End block
+        } 
         {
             dest.writeInt(1);
             mClipData.writeToParcel(dest, flags);
-        } //End block
+        } 
         {
             dest.writeInt(0);
-        } //End block
+        } 
         {
             dest.writeInt(1);
             mClipDescription.writeToParcel(dest, flags);
-        } //End block
+        } 
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mAction);
-        //dest.writeFloat(mX);
-        //dest.writeFloat(mY);
-        //dest.writeInt(mDragResult ? 1 : 0);
-        //if (mClipData == null) {
-            //dest.writeInt(0);
-        //} else {
-            //dest.writeInt(1);
-            //mClipData.writeToParcel(dest, flags);
-        //}
-        //if (mClipDescription == null) {
-            //dest.writeInt(0);
-        //} else {
-            //dest.writeInt(1);
-            //mClipDescription.writeToParcel(dest, flags);
-        //}
+        
+        
+        
+        
+        
+        
+            
+        
+            
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -345,7 +350,7 @@ public class DragEvent implements Parcelable {
             return new DragEvent[size];
         }
     };
-    // orphaned legacy method
+    
     public DragEvent createFromParcel(Parcel in) {
             DragEvent event = DragEvent.obtain();
             event.mAction = in.readInt();
@@ -361,7 +366,7 @@ public class DragEvent implements Parcelable {
             return event;
         }
     
-    // orphaned legacy method
+    
     public DragEvent[] newArray(int size) {
             return new DragEvent[size];
         }

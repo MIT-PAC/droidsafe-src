@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.crypto.Cipher;
 
@@ -35,39 +35,42 @@ public abstract class ConnectionState {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.928 -0400", hash_original_method = "88641B04B82E21943FBE8D6E4F07DC57", hash_generated_method = "88641B04B82E21943FBE8D6E4F07DC57")
     public ConnectionState ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.930 -0400", hash_original_method = "A4712167FB5CF3F93D986A297FF936DF", hash_generated_method = "30BFB67CB863AA6E672262D9B25270D5")
     protected int getMinFragmentSize() {
         int var42E7BA7664A2DCCFE7BEE46BE6E36F80_685199972 = (encCipher.getOutputSize(1+hash_size));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1502814190 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1502814190;
-        // ---------- Original Method ----------
-        //return encCipher.getOutputSize(1+hash_size);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.931 -0400", hash_original_method = "DD3B7DF1039350512C674DDBBC384DAA", hash_generated_method = "79B157B5192254F70629ADE2B4E1AA89")
     protected int getFragmentSize(int content_size) {
         int var1B7F35805D7D31794B834252131E8654_1273756028 = (encCipher.getOutputSize(content_size+hash_size));
         addTaint(content_size);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2109731532 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2109731532;
-        // ---------- Original Method ----------
-        //return encCipher.getOutputSize(content_size+hash_size);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.931 -0400", hash_original_method = "1E3397EF0AF5BC858955A8504765F190", hash_generated_method = "0B729D5A6E5A0CD3959EC2C5D6AEB292")
     protected int getContentSize(int generic_cipher_size) {
         int var454DC8BF516F46D089C3CCFEA3307C93_1563570378 = (decCipher.getOutputSize(generic_cipher_size)-hash_size);
         addTaint(generic_cipher_size);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_906533138 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_906533138;
-        // ---------- Original Method ----------
-        //return decCipher.getOutputSize(generic_cipher_size)-hash_size;
+        
+        
     }
 
     
@@ -77,12 +80,13 @@ public abstract class ConnectionState {
         addTaint(content_size);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_402233058 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_402233058;
-        // ---------- Original Method ----------
-        //int mask = block_size - 1;
-        //return (block_size - (content_size & mask));
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.932 -0400", hash_original_method = "0AD5A21CD5938B7890C178E88EF1C886", hash_generated_method = "36EEA558E5046B64C3BF347CA3A3C4D0")
     protected byte[] encrypt(byte type, byte[] fragment) {
         byte[] var89F0A6FB93D4E8AA94D0DFAF52E4CE3A_1434257820 = (encrypt(type, fragment, 0, fragment.length));
@@ -90,8 +94,8 @@ public abstract class ConnectionState {
         addTaint(fragment[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1228630244 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1228630244;
-        // ---------- Original Method ----------
-        //return encrypt(type, fragment, 0, fragment.length);
+        
+        
     }
 
     
@@ -99,6 +103,7 @@ public abstract class ConnectionState {
         (byte type, byte[] fragment, int offset, int len);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.933 -0400", hash_original_method = "4CD2779F027BE7D5E16F48C0F5195279", hash_generated_method = "4FE18ACA509682BD7E20CA57DB383C21")
     protected byte[] decrypt(byte type, byte[] fragment) {
         byte[] var492AC30713F1AE92D5066440B1233849_266452871 = (decrypt(type, fragment, 0, fragment.length));
@@ -106,8 +111,8 @@ public abstract class ConnectionState {
         addTaint(fragment[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1167806644 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1167806644;
-        // ---------- Original Method ----------
-        //return decrypt(type, fragment, 0, fragment.length);
+        
+        
     }
 
     
@@ -137,15 +142,15 @@ public abstract class ConnectionState {
             {
                 write_seq_num[i] = 0;
                 read_seq_num[i] = 0;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //encCipher = null;
-        //decCipher = null;
-        //for (int i=0; i<write_seq_num.length; i++) {
-            //write_seq_num[i] = 0;
-            //read_seq_num[i] = 0;
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+        
     }
 
     

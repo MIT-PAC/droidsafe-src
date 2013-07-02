@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.harmony.security.asn1.ASN1Any;
 import org.apache.harmony.security.asn1.ASN1Explicit;
@@ -31,7 +31,7 @@ public final class OtherName {
         this(typeID, value, null);
         addTaint(typeID.getTaint());
         addTaint(value[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -40,10 +40,10 @@ public final class OtherName {
         this.typeID = typeID;
         this.value = value;
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.typeID = typeID;
-        //this.value = value;
-        //this.encoding = encoding;
+        
+        
+        
+        
     }
 
     
@@ -51,23 +51,24 @@ public final class OtherName {
     public byte[] getValue() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_574106168 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_574106168;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.274 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "FAFEEDA1EA55F5B26D539EF68C643DA0")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_140561570 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_140561570;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
@@ -89,21 +90,6 @@ public final class OtherName {
             values[1] = on.value;
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            OtherName on = (OtherName) object;
-            values[0] = ObjectIdentifier.toIntArray(on.typeID);
-            values[1] = on.value;
-        }
     
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) {
-            Object[] values = (Object[]) in.content;
-            return new OtherName(ObjectIdentifier.toString((int[]) values[0]),
-                    (byte[]) values[1], in.getEncoded());
-        }
-    
-    */
 }
 

@@ -1,11 +1,11 @@
 package org.apache.http.protocol;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class DefaultedHttpContext implements HttpContext {
@@ -21,60 +21,60 @@ public final class DefaultedHttpContext implements HttpContext {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } //End block
+        } 
         this.local = local;
         this.defaults = defaults;
-        // ---------- Original Method ----------
-        //if (local == null) {
-            //throw new IllegalArgumentException("HTTP context may not be null");
-        //}
-        //this.local = local;
-        //this.defaults = defaults;
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.562 -0400", hash_original_method = "E6F5162D8C28E0713279EA6EC6682784", hash_generated_method = "71B40EE98CFE5AFFE1B75B8D00A9256A")
     public Object getAttribute(final String id) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_815767170 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_1301471585 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_815767170 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_1301471585 = null; 
         Object obj = this.local.getAttribute(id);
         {
             varB4EAC82CA7396A68D541C85D26508E83_815767170 = this.defaults.getAttribute(id);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1301471585 = obj;
-        } //End block
+        } 
         addTaint(id.getTaint());
-        Object varA7E53CE21691AB073D9660D615818899_427052976; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_427052976; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_427052976 = varB4EAC82CA7396A68D541C85D26508E83_815767170;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_427052976 = varB4EAC82CA7396A68D541C85D26508E83_1301471585;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_427052976.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_427052976.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_427052976;
-        // ---------- Original Method ----------
-        //Object obj = this.local.getAttribute(id);
-        //if (obj == null) {
-            //return this.defaults.getAttribute(id);
-        //} else {
-            //return obj;
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.563 -0400", hash_original_method = "0AEE49A004EDC83FD5C79915CB13681F", hash_generated_method = "446F2FFB71EBEFFB21E038DD3C3B19AA")
     public Object removeAttribute(final String id) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_354927859 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_354927859 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_354927859 = this.local.removeAttribute(id);
         addTaint(id.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_354927859.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_354927859.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_354927859;
-        // ---------- Original Method ----------
-        //return this.local.removeAttribute(id);
+        
+        
     }
 
     
@@ -83,19 +83,19 @@ public final class DefaultedHttpContext implements HttpContext {
         this.local.setAttribute(id, obj);
         addTaint(id.getTaint());
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //this.local.setAttribute(id, obj);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.564 -0400", hash_original_method = "FA59965C12DF7B81C110308001A0693E", hash_generated_method = "101EAF0F9FFA7C9AE8FF3898FC88381F")
     public HttpContext getDefaults() {
-        HttpContext varB4EAC82CA7396A68D541C85D26508E83_2049784751 = null; //Variable for return #1
+        HttpContext varB4EAC82CA7396A68D541C85D26508E83_2049784751 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2049784751 = this.defaults;
-        varB4EAC82CA7396A68D541C85D26508E83_2049784751.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2049784751.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2049784751;
-        // ---------- Original Method ----------
-        //return this.defaults;
+        
+        
     }
 
     

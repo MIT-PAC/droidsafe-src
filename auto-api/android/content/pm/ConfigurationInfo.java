@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -29,7 +29,7 @@ public class ConfigurationInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.095 -0400", hash_original_method = "6A0CBEBA9367A4C86820E8B74F6CB393", hash_generated_method = "B5597B37ECC63222BC2CA4C8AB58CBCE")
     public  ConfigurationInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -40,12 +40,12 @@ public class ConfigurationInfo implements Parcelable {
         reqNavigation = orig.reqNavigation;
         reqInputFeatures = orig.reqInputFeatures;
         reqGlEsVersion = orig.reqGlEsVersion;
-        // ---------- Original Method ----------
-        //reqTouchScreen = orig.reqTouchScreen;
-        //reqKeyboardType = orig.reqKeyboardType;
-        //reqNavigation = orig.reqNavigation;
-        //reqInputFeatures = orig.reqInputFeatures;
-        //reqGlEsVersion = orig.reqGlEsVersion;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -56,18 +56,19 @@ public class ConfigurationInfo implements Parcelable {
         reqNavigation = source.readInt();
         reqInputFeatures = source.readInt();
         reqGlEsVersion = source.readInt();
-        // ---------- Original Method ----------
-        //reqTouchScreen = source.readInt();
-        //reqKeyboardType = source.readInt();
-        //reqNavigation = source.readInt();
-        //reqInputFeatures = source.readInt();
-        //reqGlEsVersion = source.readInt();
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.097 -0400", hash_original_method = "DF17C53C5839729CA11877C3DC3AE571", hash_generated_method = "BF87C3A34C3BAA671E1864529EBE5D28")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_20975168 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_20975168 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_20975168 = "ConfigurationInfo{"
             + Integer.toHexString(System.identityHashCode(this))
             + " touchscreen = " + reqTouchScreen
@@ -75,16 +76,16 @@ public class ConfigurationInfo implements Parcelable {
             + " navigation = " + reqNavigation
             + " reqInputFeatures = " + reqInputFeatures
             + " reqGlEsVersion = " + reqGlEsVersion + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_20975168.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_20975168.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_20975168;
-        // ---------- Original Method ----------
-        //return "ConfigurationInfo{"
-            //+ Integer.toHexString(System.identityHashCode(this))
-            //+ " touchscreen = " + reqTouchScreen
-            //+ " inputMethod = " + reqKeyboardType
-            //+ " navigation = " + reqNavigation
-            //+ " reqInputFeatures = " + reqInputFeatures
-            //+ " reqGlEsVersion = " + reqGlEsVersion + "}";
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     
@@ -92,11 +93,12 @@ public class ConfigurationInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_929833458 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_929833458;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.099 -0400", hash_original_method = "93E63A9EAD498422955671B9C038ABAF", hash_generated_method = "116625107A8D9CC87069917E451983DE")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         dest.writeInt(reqTouchScreen);
@@ -106,27 +108,28 @@ public class ConfigurationInfo implements Parcelable {
         dest.writeInt(reqGlEsVersion);
         addTaint(dest.getTaint());
         addTaint(parcelableFlags);
-        // ---------- Original Method ----------
-        //dest.writeInt(reqTouchScreen);
-        //dest.writeInt(reqKeyboardType);
-        //dest.writeInt(reqNavigation);
-        //dest.writeInt(reqInputFeatures);
-        //dest.writeInt(reqGlEsVersion);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.100 -0400", hash_original_method = "6B16AB9E297007D3C91B331171401C71", hash_generated_method = "238CFD577377FEE6875777DF201ADE97")
     public String getGlEsVersion() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1820165039 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1820165039 = null; 
         int major = ((reqGlEsVersion & 0xffff0000) >> 16);
         int minor = reqGlEsVersion & 0x0000ffff;
         varB4EAC82CA7396A68D541C85D26508E83_1820165039 = String.valueOf(major)+"."+String.valueOf(minor);
-        varB4EAC82CA7396A68D541C85D26508E83_1820165039.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1820165039.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1820165039;
-        // ---------- Original Method ----------
-        //int major = ((reqGlEsVersion & 0xffff0000) >> 16);
-        //int minor = reqGlEsVersion & 0x0000ffff;
-        //return String.valueOf(major)+"."+String.valueOf(minor);
+        
+        
+        
+        
     }
 
     
@@ -150,12 +153,12 @@ public class ConfigurationInfo implements Parcelable {
             return new ConfigurationInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public ConfigurationInfo createFromParcel(Parcel source) {
             return new ConfigurationInfo(source);
         }
     
-    // orphaned legacy method
+    
     public ConfigurationInfo[] newArray(int size) {
             return new ConfigurationInfo[size];
         }

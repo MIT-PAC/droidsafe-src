@@ -1,11 +1,11 @@
 package android.media;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.util.Log;
@@ -72,24 +72,25 @@ public class TimedText {
             {
                 mKeyObjectMap.clear();
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("parseParcel() fails");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(obj[0]);
-        // ---------- Original Method ----------
-        //mParcel.unmarshall(obj, 0, obj.length);
-        //if (!parseParcel()) {
-            //mKeyObjectMap.clear();
-            //throw new IllegalArgumentException("parseParcel() fails");
-        //}
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.525 -0400", hash_original_method = "791BBBBBE0FA40697270B44A4D66C782", hash_generated_method = "66B1ED356501BDC1304060CAE6C64183")
     private boolean parseParcel() {
         mParcel.setDataPosition(0);
         {
             boolean var3DA3E405D5AB1A7186A8C8316A9DA671_286676140 = (mParcel.dataAvail() == 0);
-        } //End collapsed parenthetic
+        } 
         int type = mParcel.readInt();
         {
             type = mParcel.readInt();
@@ -100,84 +101,84 @@ public class TimedText {
             mTextStruct.textLen = mParcel.readInt();
             mTextStruct.text = mParcel.createByteArray();
             mKeyObjectMap.put(type, mTextStruct);
-        } //End block
+        } 
         {
             boolean varBAF5D3EDA0A71A0A6CF689BD42BC19A0_222898813 = (mParcel.dataAvail() > 0);
             {
                 int key = mParcel.readInt();
                 {
                     boolean varFE2C56858DAAF48135B2C5860FE7BD76_1884606503 = (!isValidKey(key));
-                } //End collapsed parenthetic
+                } 
                 Object object = null;
-                //Begin case KEY_STRUCT_STYLE_LIST 
+                
                 {
                     readStyle();
                     object = mStyleList;
-                } //End block
-                //End case KEY_STRUCT_STYLE_LIST 
-                //Begin case KEY_STRUCT_FONT_LIST 
+                } 
+                
+                
                 {
                     readFont();
                     object = mFontList;
-                } //End block
-                //End case KEY_STRUCT_FONT_LIST 
-                //Begin case KEY_STRUCT_HIGHLIGHT_LIST 
+                } 
+                
+                
                 {
                     readHighlight();
                     object = mHighlightPosList;
-                } //End block
-                //End case KEY_STRUCT_HIGHLIGHT_LIST 
-                //Begin case KEY_STRUCT_KARAOKE_LIST 
+                } 
+                
+                
                 {
                     readKaraoke();
                     object = mKaraokeList;
-                } //End block
-                //End case KEY_STRUCT_KARAOKE_LIST 
-                //Begin case KEY_STRUCT_HYPER_TEXT_LIST 
+                } 
+                
+                
                 {
                     readHyperText();
                     object = mHyperTextList;
-                } //End block
-                //End case KEY_STRUCT_HYPER_TEXT_LIST 
-                //Begin case KEY_STRUCT_BLINKING_TEXT_LIST 
+                } 
+                
+                
                 {
                     readBlinkingText();
                     object = mBlinkingPosList;
-                } //End block
-                //End case KEY_STRUCT_BLINKING_TEXT_LIST 
-                //Begin case KEY_WRAP_TEXT 
+                } 
+                
+                
                 {
                     mWrapText = mParcel.readInt();
                     object = mWrapText;
-                } //End block
-                //End case KEY_WRAP_TEXT 
-                //Begin case KEY_HIGHLIGHT_COLOR_RGBA 
+                } 
+                
+                
                 {
                     mHighlightColorRGBA = mParcel.readInt();
                     object = mHighlightColorRGBA;
-                } //End block
-                //End case KEY_HIGHLIGHT_COLOR_RGBA 
-                //Begin case KEY_DISPLAY_FLAGS 
+                } 
+                
+                
                 {
                     mDisplayFlags = mParcel.readInt();
                     object = mDisplayFlags;
-                } //End block
-                //End case KEY_DISPLAY_FLAGS 
-                //Begin case KEY_STRUCT_JUSTIFICATION 
+                } 
+                
+                
                 {
                     mJustification = new Justification();
                     mJustification.horizontalJustification = mParcel.readInt();
                     mJustification.verticalJustification = mParcel.readInt();
                     object = mJustification;
-                } //End block
-                //End case KEY_STRUCT_JUSTIFICATION 
-                //Begin case KEY_BACKGROUND_COLOR_RGBA 
+                } 
+                
+                
                 {
                     mBackgroundColorRGBA = mParcel.readInt();
                     object = mBackgroundColorRGBA;
-                } //End block
-                //End case KEY_BACKGROUND_COLOR_RGBA 
-                //Begin case KEY_STRUCT_TEXT_POS 
+                } 
+                
+                
                 {
                     mTextPos = new TextPos();
                     mTextPos.top = mParcel.readInt();
@@ -185,33 +186,34 @@ public class TimedText {
                     mTextPos.bottom = mParcel.readInt();
                     mTextPos.right = mParcel.readInt();
                     object = mTextPos;
-                } //End block
-                //End case KEY_STRUCT_TEXT_POS 
-                //Begin case KEY_SCROLL_DELAY 
+                } 
+                
+                
                 {
                     mScrollDelay = mParcel.readInt();
                     object = mScrollDelay;
-                } //End block
-                //End case KEY_SCROLL_DELAY 
+                } 
+                
                 {
                     {
                         boolean var4B9B346590725B1F141DA1F903C95C1C_1011530884 = (mKeyObjectMap.containsKey(key));
                         {
                             mKeyObjectMap.remove(key);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     mKeyObjectMap.put(key, object);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         mParcel.recycle();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_254766426 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_254766426;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.526 -0400", hash_original_method = "0BA14F4ADFDDDB9356E71AC4A1ECA0E9", hash_generated_method = "8A32348D182DBA21951B7B5CE3969891")
     private void readStyle() {
         Style style = new Style();
@@ -220,56 +222,57 @@ public class TimedText {
             boolean varC93A85BC0C8D1601F387B6A79E35D212_1129117137 = (!endOfStyle && (mParcel.dataAvail() > 0));
             {
                 int key = mParcel.readInt();
-                //Begin case KEY_START_CHAR 
+                
                 {
                     style.startChar = mParcel.readInt();
-                } //End block
-                //End case KEY_START_CHAR 
-                //Begin case KEY_END_CHAR 
+                } 
+                
+                
                 {
                     style.endChar = mParcel.readInt();
-                } //End block
-                //End case KEY_END_CHAR 
-                //Begin case KEY_FONT_ID 
+                } 
+                
+                
                 {
                     style.fontID = mParcel.readInt();
-                } //End block
-                //End case KEY_FONT_ID 
-                //Begin case KEY_STYLE_FLAGS 
+                } 
+                
+                
                 {
                     int flags = mParcel.readInt();
                     style.isBold = ((flags % 2) == 1);
                     style.isItalic = ((flags % 4) >= 2);
                     style.isUnderlined = ((flags / 4) == 1);
-                } //End block
-                //End case KEY_STYLE_FLAGS 
-                //Begin case KEY_FONT_SIZE 
+                } 
+                
+                
                 {
                     style.fontSize = mParcel.readInt();
-                } //End block
-                //End case KEY_FONT_SIZE 
-                //Begin case KEY_TEXT_COLOR_RGBA 
+                } 
+                
+                
                 {
                     style.colorRGBA = mParcel.readInt();
-                } //End block
-                //End case KEY_TEXT_COLOR_RGBA 
-                //Begin case default 
+                } 
+                
+                
                 {
                     mParcel.setDataPosition(mParcel.dataPosition() - 4);
                     endOfStyle = true;
-                } //End block
-                //End case default 
-            } //End block
-        } //End collapsed parenthetic
+                } 
+                
+            } 
+        } 
         {
             mStyleList = new ArrayList<Style>();
-        } //End block
+        } 
         mStyleList.add(style);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.527 -0400", hash_original_method = "00AE5F5A406478801ABD16E12F474E1A", hash_generated_method = "E9DCDE3704155BBBEE8115D41BCF7857")
     private void readFont() {
         int entryCount = mParcel.readInt();
@@ -283,26 +286,27 @@ public class TimedText {
                 font.name = new String(text, 0, nameLen);
                 {
                     mFontList = new ArrayList<Font>();
-                } //End block
+                } 
                 mFontList.add(font);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //int entryCount = mParcel.readInt();
-        //for (int i = 0; i < entryCount; i++) {
-            //Font font = new Font();
-            //font.ID = mParcel.readInt();
-            //int nameLen = mParcel.readInt();
-            //byte[] text = mParcel.createByteArray();
-            //font.name = new String(text, 0, nameLen);
-            //if (mFontList == null) {
-                //mFontList = new ArrayList<Font>();
-            //}
-            //mFontList.add(font);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+            
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.527 -0400", hash_original_method = "89A8EBF8FEFD90B855BF480125FCEA6A", hash_generated_method = "2D57035355A96E816EC5A87B560C5482")
     private void readHighlight() {
         CharPos pos = new CharPos();
@@ -310,19 +314,20 @@ public class TimedText {
         pos.endChar = mParcel.readInt();
         {
             mHighlightPosList = new ArrayList<CharPos>();
-        } //End block
+        } 
         mHighlightPosList.add(pos);
-        // ---------- Original Method ----------
-        //CharPos pos = new CharPos();
-        //pos.startChar = mParcel.readInt();
-        //pos.endChar = mParcel.readInt();
-        //if (mHighlightPosList == null) {
-            //mHighlightPosList = new ArrayList<CharPos>();
-        //}
-        //mHighlightPosList.add(pos);
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.528 -0400", hash_original_method = "9FC931A03E07E67B33BB5A4FA8F46AC4", hash_generated_method = "F5BB32CA2E63EF987692BB09642A2775")
     private void readKaraoke() {
         int entryCount = mParcel.readInt();
@@ -336,26 +341,27 @@ public class TimedText {
                 kara.endChar = mParcel.readInt();
                 {
                     mKaraokeList = new ArrayList<Karaoke>();
-                } //End block
+                } 
                 mKaraokeList.add(kara);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //int entryCount = mParcel.readInt();
-        //for (int i = 0; i < entryCount; i++) {
-            //Karaoke kara = new Karaoke();
-            //kara.startTimeMs = mParcel.readInt();
-            //kara.endTimeMs = mParcel.readInt();
-            //kara.startChar = mParcel.readInt();
-            //kara.endChar = mParcel.readInt();
-            //if (mKaraokeList == null) {
-                //mKaraokeList = new ArrayList<Karaoke>();
-            //}
-            //mKaraokeList.add(kara);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+            
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.528 -0400", hash_original_method = "76399CA140680AA49BE7C693D75B5452", hash_generated_method = "B3538BBD3490658F505EAAFBE4F82E8E")
     private void readHyperText() {
         HyperText hyperText = new HyperText();
@@ -369,25 +375,26 @@ public class TimedText {
         hyperText.altString = new String(alt, 0, len);
         {
             mHyperTextList = new ArrayList<HyperText>();
-        } //End block
+        } 
         mHyperTextList.add(hyperText);
-        // ---------- Original Method ----------
-        //HyperText hyperText = new HyperText();
-        //hyperText.startChar = mParcel.readInt();
-        //hyperText.endChar = mParcel.readInt();
-        //int len = mParcel.readInt();
-        //byte[] url = mParcel.createByteArray();
-        //hyperText.URL = new String(url, 0, len);
-        //len = mParcel.readInt();
-        //byte[] alt = mParcel.createByteArray();
-        //hyperText.altString = new String(alt, 0, len);
-        //if (mHyperTextList == null) {
-            //mHyperTextList = new ArrayList<HyperText>();
-        //}
-        //mHyperTextList.add(hyperText);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.529 -0400", hash_original_method = "9C2885E2BFC08F88B4AF57AA760616C2", hash_generated_method = "C31EA6FB8767AC1440789783AEE94B55")
     private void readBlinkingText() {
         CharPos blinkingPos = new CharPos();
@@ -395,16 +402,16 @@ public class TimedText {
         blinkingPos.endChar = mParcel.readInt();
         {
             mBlinkingPosList = new ArrayList<CharPos>();
-        } //End block
+        } 
         mBlinkingPosList.add(blinkingPos);
-        // ---------- Original Method ----------
-        //CharPos blinkingPos = new CharPos();
-        //blinkingPos.startChar = mParcel.readInt();
-        //blinkingPos.endChar = mParcel.readInt();
-        //if (mBlinkingPosList == null) {
-            //mBlinkingPosList = new ArrayList<CharPos>();
-        //}
-        //mBlinkingPosList.add(blinkingPos);
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -413,12 +420,12 @@ public class TimedText {
         addTaint(key);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1630080620 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1630080620;
-        // ---------- Original Method ----------
-        //if (!((key >= FIRST_PUBLIC_KEY) && (key <= LAST_PUBLIC_KEY))
-                //&& !((key >= FIRST_PRIVATE_KEY) && (key <= LAST_PRIVATE_KEY))) {
-            //return false;
-        //}
-        //return true;
+        
+        
+                
+            
+        
+        
     }
 
     
@@ -426,50 +433,51 @@ public class TimedText {
     public boolean containsKey(final int key) {
         {
             boolean varC1468D584CEEEB9E99188FFDA1F84F95_139697526 = (isValidKey(key) && mKeyObjectMap.containsKey(key));
-        } //End collapsed parenthetic
+        } 
         addTaint(key);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1419476080 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1419476080;
-        // ---------- Original Method ----------
-        //if (isValidKey(key) && mKeyObjectMap.containsKey(key)) {
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.530 -0400", hash_original_method = "D714619D6E49B86D75D24C1705999B69", hash_generated_method = "CFFE74CFD8FCE38B237025BBE47C5D7C")
     public Set keySet() {
-        Set varB4EAC82CA7396A68D541C85D26508E83_502201673 = null; //Variable for return #1
+        Set varB4EAC82CA7396A68D541C85D26508E83_502201673 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_502201673 = mKeyObjectMap.keySet();
-        varB4EAC82CA7396A68D541C85D26508E83_502201673.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_502201673.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_502201673;
-        // ---------- Original Method ----------
-        //return mKeyObjectMap.keySet();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.531 -0400", hash_original_method = "E013B89BFA963BB8F029FE138EDADA51", hash_generated_method = "D0A6D1CE865729CCD4037915D3B8D9B8")
     public Object getObject(final int key) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1974682402 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1974682402 = null; 
         {
             boolean var3B6E1BB933E0B37C47D3FDDB37B7AB5D_1536042103 = (containsKey(key));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1974682402 = mKeyObjectMap.get(key);
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid key: " + key);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(key);
-        varB4EAC82CA7396A68D541C85D26508E83_1974682402.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1974682402.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1974682402;
-        // ---------- Original Method ----------
-        //if (containsKey(key)) {
-            //return mKeyObjectMap.get(key);
-        //} else {
-            //throw new IllegalArgumentException("Invalid key: " + key);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -483,7 +491,7 @@ public class TimedText {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.531 -0400", hash_original_method = "3E1AB979E39DEC5F091AD71588A6931C", hash_generated_method = "922FB99CB23AA4250B8765DF5A1FEC0F")
         public  Text() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -501,7 +509,7 @@ public class TimedText {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.532 -0400", hash_original_method = "B16942A4D6AA45C219307E42B3F01C5E", hash_generated_method = "F71D3E39F8F9FA0E1A28D452EF3FE562")
         public  CharPos() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -525,7 +533,7 @@ public class TimedText {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.532 -0400", hash_original_method = "533CD86BF5A1B326154330F052078462", hash_generated_method = "3152B4C699CD5F269C29FE4769308AF8")
         public  TextPos() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -543,7 +551,7 @@ public class TimedText {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.533 -0400", hash_original_method = "9DE1082C41237E4CAACC983D55330CCE", hash_generated_method = "26C09D2F4C5000E014367858AB5DB8E2")
         public  Justification() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -579,7 +587,7 @@ public class TimedText {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.533 -0400", hash_original_method = "A73FFEA889FA48444DBD29C5B6A4F060", hash_generated_method = "0FF6A793A759E36F2F6633297C092FE3")
         public  Style() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -597,7 +605,7 @@ public class TimedText {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.534 -0400", hash_original_method = "9DB8E4889CA776938A054F1FA406F93D", hash_generated_method = "42C8369941244D1B2850DE898FCFF61F")
         public  Font() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -621,7 +629,7 @@ public class TimedText {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.534 -0400", hash_original_method = "20387F8DBBE28B02B4D4A333BCD1DC01", hash_generated_method = "ECDF11726A4CDE2B715F6BEE4C8BE9B0")
         public  Karaoke() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -645,7 +653,7 @@ public class TimedText {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.535 -0400", hash_original_method = "B6B5545C3ABD1F1E6601A7A1C2669923", hash_generated_method = "E874923A6E6E7A9905BA6F463A66E5CE")
         public  HyperText() {
-            // ---------- Original Method ----------
+            
         }
 
         

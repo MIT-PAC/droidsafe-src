@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.text.method.MetaKeyKeyListener;
 import android.util.AndroidRuntimeException;
@@ -26,9 +26,9 @@ public class KeyCharacterMap {
     private  KeyCharacterMap(int deviceId, int ptr) {
         mDeviceId = deviceId;
         mPtr = ptr;
-        // ---------- Original Method ----------
-        //mDeviceId = deviceId;
-        //mPtr = ptr;
+        
+        
+        
     }
 
     
@@ -85,21 +85,23 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.152 -0400", hash_original_method = "C46984664DD9459250D6B9D7539380FB", hash_generated_method = "5308CBB561764EEE98811339213C570B")
     @Override
     protected void finalize() throws Throwable {
         {
             nativeDispose(mPtr);
             mPtr = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPtr != 0) {
-            //nativeDispose(mPtr);
-            //mPtr = 0;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyCharacterMap load(int deviceId) {
         synchronized (sInstances) {
             KeyCharacterMap map = sInstances.get(deviceId);
@@ -123,6 +125,7 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.153 -0400", hash_original_method = "9130955DF84228D9EE103102BFA3B17A", hash_generated_method = "0387BA409EEEBDE9502F9D9D208A7A2C")
     public int get(int keyCode, int metaState) {
         metaState = KeyEvent.normalizeMetaState(metaState);
@@ -132,24 +135,25 @@ public class KeyCharacterMap {
         addTaint(metaState);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_815532490 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_815532490;
-        // ---------- Original Method ----------
-        //metaState = KeyEvent.normalizeMetaState(metaState);
-        //char ch = nativeGetCharacter(mPtr, keyCode, metaState);
-        //int map = COMBINING.get(ch);
-        //if (map != 0) {
-            //return map;
-        //} else {
-            //return ch;
-        //}
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.153 -0400", hash_original_method = "5701A82EAD1DE3F7E3AD5DC604F1A78C", hash_generated_method = "058C5DA2FF61FC23EBF21E94BB58C460")
     public boolean getFallbackAction(int keyCode, int metaState,
             FallbackAction outFallbackAction) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("fallbackAction must not be null");
-        } //End block
+        } 
         metaState = KeyEvent.normalizeMetaState(metaState);
         boolean varCE3900304199253D1A24A3B82C990EE8_777340197 = (nativeGetFallbackAction(mPtr, keyCode, metaState, outFallbackAction));
         addTaint(keyCode);
@@ -157,26 +161,28 @@ public class KeyCharacterMap {
         addTaint(outFallbackAction.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_113235767 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_113235767;
-        // ---------- Original Method ----------
-        //if (outFallbackAction == null) {
-            //throw new IllegalArgumentException("fallbackAction must not be null");
-        //}
-        //metaState = KeyEvent.normalizeMetaState(metaState);
-        //return nativeGetFallbackAction(mPtr, keyCode, metaState, outFallbackAction);
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.154 -0400", hash_original_method = "6DABCB0117446A751E56C996ECEF0096", hash_generated_method = "73273AC94AB663D2FC83A99AFEE51444")
     public char getNumber(int keyCode) {
         char varDF198814D68AB4A952E3ABC833B9B8A4_1707208609 = (nativeGetNumber(mPtr, keyCode));
         addTaint(keyCode);
         char varA87DEB01C5F539E6BDA34829C8EF2368_1431434975 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1431434975;
-        // ---------- Original Method ----------
-        //return nativeGetNumber(mPtr, keyCode);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.154 -0400", hash_original_method = "BB5B7EBB644AED6B3730BD9151F78F69", hash_generated_method = "4E2A437B51A988F876FE4501BD3E7591")
     public char getMatch(int keyCode, char[] chars) {
         char var9F0B8F7534FA815F4917D99B8DF1A026_1882417642 = (getMatch(keyCode, chars, 0));
@@ -184,16 +190,17 @@ public class KeyCharacterMap {
         addTaint(chars[0]);
         char varA87DEB01C5F539E6BDA34829C8EF2368_1940441211 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1940441211;
-        // ---------- Original Method ----------
-        //return getMatch(keyCode, chars, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.154 -0400", hash_original_method = "41D073D91107291EA05310027D49190C", hash_generated_method = "C713EFF9D3B928EAA78809EA5F558777")
     public char getMatch(int keyCode, char[] chars, int metaState) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("chars must not be null.");
-        } //End block
+        } 
         metaState = KeyEvent.normalizeMetaState(metaState);
         char var1E3A75249CA35C8B1285237F1D55E97D_1498280995 = (nativeGetMatch(mPtr, keyCode, chars, metaState));
         addTaint(keyCode);
@@ -201,38 +208,41 @@ public class KeyCharacterMap {
         addTaint(metaState);
         char varA87DEB01C5F539E6BDA34829C8EF2368_1117350525 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1117350525;
-        // ---------- Original Method ----------
-        //if (chars == null) {
-            //throw new IllegalArgumentException("chars must not be null.");
-        //}
-        //metaState = KeyEvent.normalizeMetaState(metaState);
-        //return nativeGetMatch(mPtr, keyCode, chars, metaState);
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.155 -0400", hash_original_method = "6DD5621B8D7662BB0D5EEF29B875BDA1", hash_generated_method = "07785397462BF7373ADF329A4DB9AB41")
     public char getDisplayLabel(int keyCode) {
         char var90AE32CAD5C582E5138E2843AD421D47_421161448 = (nativeGetDisplayLabel(mPtr, keyCode));
         addTaint(keyCode);
         char varA87DEB01C5F539E6BDA34829C8EF2368_304300212 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_304300212;
-        // ---------- Original Method ----------
-        //return nativeGetDisplayLabel(mPtr, keyCode);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getDeadChar(int accent, int c) {
         return DEAD.get((accent << 16) | c);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.156 -0400", hash_original_method = "76D58BCFCDB16C229BEE46626C0804EB", hash_generated_method = "67CCE69C222D0D50212F57657E1E248F")
     @Deprecated
     public boolean getKeyData(int keyCode, KeyData results) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(
                     "results.meta.length must be >= " + KeyData.META_LENGTH);
-        } //End block
+        } 
         char displayLabel = nativeGetDisplayLabel(mPtr, keyCode);
         results.displayLabel = displayLabel;
         results.number = nativeGetNumber(mPtr, keyCode);
@@ -245,94 +255,99 @@ public class KeyCharacterMap {
         addTaint(results.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_702640484 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_702640484;
-        // ---------- Original Method ----------
-        //if (results.meta.length < KeyData.META_LENGTH) {
-            //throw new IndexOutOfBoundsException(
-                    //"results.meta.length must be >= " + KeyData.META_LENGTH);
-        //}
-        //char displayLabel = nativeGetDisplayLabel(mPtr, keyCode);
-        //if (displayLabel == 0) {
-            //return false;
-        //}
-        //results.displayLabel = displayLabel;
-        //results.number = nativeGetNumber(mPtr, keyCode);
-        //results.meta[0] = nativeGetCharacter(mPtr, keyCode, 0);
-        //results.meta[1] = nativeGetCharacter(mPtr, keyCode, KeyEvent.META_SHIFT_ON);
-        //results.meta[2] = nativeGetCharacter(mPtr, keyCode, KeyEvent.META_ALT_ON);
-        //results.meta[3] = nativeGetCharacter(mPtr, keyCode,
-                //KeyEvent.META_ALT_ON | KeyEvent.META_SHIFT_ON);
-        //return true;
+        
+        
+            
+                    
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.156 -0400", hash_original_method = "75C550EBD18DF5C6523832F5B0CC290D", hash_generated_method = "18159EB63A6F380B2580A620BE11773A")
     public KeyEvent[] getEvents(char[] chars) {
-        KeyEvent[] varB4EAC82CA7396A68D541C85D26508E83_573790956 = null; //Variable for return #1
+        KeyEvent[] varB4EAC82CA7396A68D541C85D26508E83_573790956 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("chars must not be null.");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_573790956 = nativeGetEvents(mPtr, mDeviceId, chars);
         addTaint(chars[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_573790956.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_573790956.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_573790956;
-        // ---------- Original Method ----------
-        //if (chars == null) {
-            //throw new IllegalArgumentException("chars must not be null.");
-        //}
-        //return nativeGetEvents(mPtr, mDeviceId, chars);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.157 -0400", hash_original_method = "3285F5CD7518CBF681F7E4DAED1719BF", hash_generated_method = "CC480EBE6D262EC20B3ED660874C0B62")
     public boolean isPrintingKey(int keyCode) {
         int type = Character.getType(nativeGetDisplayLabel(mPtr, keyCode));
         addTaint(keyCode);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_232141853 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_232141853;
-        // ---------- Original Method ----------
-        //int type = Character.getType(nativeGetDisplayLabel(mPtr, keyCode));
-        //switch (type)
-        //{
-            //case Character.SPACE_SEPARATOR:
-            //case Character.LINE_SEPARATOR:
-            //case Character.PARAGRAPH_SEPARATOR:
-            //case Character.CONTROL:
-            //case Character.FORMAT:
-                //return false;
-            //default:
-                //return true;
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.157 -0400", hash_original_method = "BA716E54E3F5777C121637287957F9E5", hash_generated_method = "63C780631E6355F1306089CA0F3F6ABC")
     public int getKeyboardType() {
         int var5804746570F479E54666D84988DB57C1_998409985 = (nativeGetKeyboardType(mPtr));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_544285343 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_544285343;
-        // ---------- Original Method ----------
-        //return nativeGetKeyboardType(mPtr);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.157 -0400", hash_original_method = "1B54B22E072CCA54689C03A0F5698E81", hash_generated_method = "C3E7308C65C801EB46BB2B4588633934")
     public int getModifierBehavior() {
         {
             Object var6F1F68E94BE9EBA81DD665AD4038DA31_883845720 = (getKeyboardType());
-        } //End collapsed parenthetic
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_709367386 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_709367386;
-        // ---------- Original Method ----------
-        //switch (getKeyboardType()) {
-            //case FULL:
-            //case SPECIAL_FUNCTION:
-                //return MODIFIER_BEHAVIOR_CHORDED;
-            //default:
-                //return MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED;
-        //}
+        
+        
+            
+            
+                
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean deviceHasKey(int keyCode) {
         int[] codeArray = new int[1];
         codeArray[0] = keyCode;
@@ -341,6 +356,7 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean[] deviceHasKeys(int[] keyCodes) {
         boolean[] ret = new boolean[keyCodes.length];
         IWindowManager wm = Display.getWindowManager();
@@ -366,7 +382,7 @@ public class KeyCharacterMap {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.158 -0400", hash_original_method = "AA20F851FEA58DFB4FCE42162FC7E15E", hash_generated_method = "AA20F851FEA58DFB4FCE42162FC7E15E")
         public KeyData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -383,7 +399,7 @@ public class KeyCharacterMap {
         public  UnavailableException(String msg) {
             super(msg);
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -402,7 +418,7 @@ public class KeyCharacterMap {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.158 -0400", hash_original_method = "789B682B3FBE45C1858DC98A8C26817D", hash_generated_method = "789B682B3FBE45C1858DC98A8C26817D")
         public FallbackAction ()
         {
-            //Synthesized constructor
+            
         }
 
 

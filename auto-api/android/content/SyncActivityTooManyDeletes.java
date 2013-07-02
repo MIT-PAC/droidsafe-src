@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.R;
 import android.accounts.Account;
@@ -37,19 +37,20 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.487 -0400", hash_original_method = "F88E45C8A992B3EE5445BCFA92AD005E", hash_generated_method = "F88E45C8A992B3EE5445BCFA92AD005E")
     public SyncActivityTooManyDeletes ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.488 -0400", hash_original_method = "4083F5BA5A170FDE3F4AF132A8D59C6A", hash_generated_method = "96A390185D07FEA4340CA3DD72E1B003")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onCreate(savedInstanceState);
         Bundle extras = getIntent().getExtras();
         {
             finish();
-        } //End block
+        } 
         mNumDeletes = extras.getLong("numDeletes");
         mAccount = (Account) extras.getParcelable("account");
         mAuthority = extras.getString("authority");
@@ -79,14 +80,15 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
         ll.addView(listView, lp);
         setContentView(ll);
         addTaint(savedInstanceState.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.489 -0400", hash_original_method = "87A49239DD26172CC00A29DE94A05FAE", hash_generated_method = "CA5E3F964E690D64B4127A3602E2FAC1")
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         startSyncReallyDelete();
         startSyncUndoDeletes();
         finish();
@@ -94,13 +96,14 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
         addTaint(view.getTaint());
         addTaint(position);
         addTaint(id);
-        // ---------- Original Method ----------
-        //if (position == 0) startSyncReallyDelete();
-        //else if (position == 1) startSyncUndoDeletes();
-        //finish();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.489 -0400", hash_original_method = "8359BAD844441D7FEC2F631DA63D9ED3", hash_generated_method = "BEB460FCC20AE15F75E9651C3BDE0BA8")
     private void startSyncReallyDelete() {
         Bundle extras = new Bundle();
@@ -109,16 +112,17 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true);
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true);
         ContentResolver.requestSync(mAccount, mAuthority, extras);
-        // ---------- Original Method ----------
-        //Bundle extras = new Bundle();
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_OVERRIDE_TOO_MANY_DELETIONS, true);
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true);
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true);
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true);
-        //ContentResolver.requestSync(mAccount, mAuthority, extras);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.490 -0400", hash_original_method = "CE7FC2B344B122C88B585FB58EADCEB6", hash_generated_method = "08C2B21588698550CD7D4D9DB4254D98")
     private void startSyncUndoDeletes() {
         Bundle extras = new Bundle();
@@ -127,13 +131,13 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true);
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true);
         ContentResolver.requestSync(mAccount, mAuthority, extras);
-        // ---------- Original Method ----------
-        //Bundle extras = new Bundle();
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_DISCARD_LOCAL_DELETIONS, true);
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true);
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true);
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true);
-        //ContentResolver.requestSync(mAccount, mAuthority, extras);
+        
+        
+        
+        
+        
+        
+        
     }
 
     

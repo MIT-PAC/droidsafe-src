@@ -1,11 +1,11 @@
 package org.bouncycastle.crypto.params;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.crypto.CipherParameters;
 
@@ -24,7 +24,7 @@ public class ParametersWithIV implements CipherParameters {
         this(parameters, iv, 0, iv.length);
         addTaint(parameters.getTaint());
         addTaint(iv[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,10 +38,10 @@ public class ParametersWithIV implements CipherParameters {
         this.parameters = parameters;
         System.arraycopy(iv, ivOff, this.iv, 0, ivLen);
         addTaint(ivOff);
-        // ---------- Original Method ----------
-        //this.iv = new byte[ivLen];
-        //this.parameters = parameters;
-        //System.arraycopy(iv, ivOff, this.iv, 0, ivLen);
+        
+        
+        
+        
     }
 
     
@@ -49,19 +49,19 @@ public class ParametersWithIV implements CipherParameters {
     public byte[] getIV() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_502560606 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_502560606;
-        // ---------- Original Method ----------
-        //return iv;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.121 -0400", hash_original_method = "4D76F2EFD1EF9C1CA864824F06254E67", hash_generated_method = "BCB80A170F07E107F09CD76E075B4246")
     public CipherParameters getParameters() {
-        CipherParameters varB4EAC82CA7396A68D541C85D26508E83_31278944 = null; //Variable for return #1
+        CipherParameters varB4EAC82CA7396A68D541C85D26508E83_31278944 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_31278944 = parameters;
-        varB4EAC82CA7396A68D541C85D26508E83_31278944.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_31278944.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_31278944;
-        // ---------- Original Method ----------
-        //return parameters;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.InputStream;
 
@@ -23,9 +23,9 @@ abstract class LimitedInputStream extends InputStream {
         int         limit) {
         this._in = in;
         this._limit = limit;
-        // ---------- Original Method ----------
-        //this._in = in;
-        //this._limit = limit;
+        
+        
+        
     }
 
     
@@ -33,8 +33,8 @@ abstract class LimitedInputStream extends InputStream {
      int getRemaining() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_959727913 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_959727913;
-        // ---------- Original Method ----------
-        //return _limit;
+        
+        
     }
 
     
@@ -42,13 +42,13 @@ abstract class LimitedInputStream extends InputStream {
     protected void setParentEofDetect(boolean on) {
         {
             ((IndefiniteLengthInputStream)_in).setEofOn00(on);
-        } //End block
+        } 
         addTaint(on);
-        // ---------- Original Method ----------
-        //if (_in instanceof IndefiniteLengthInputStream)
-        //{
-            //((IndefiniteLengthInputStream)_in).setEofOn00(on);
-        //}
+        
+        
+        
+            
+        
     }
 
     

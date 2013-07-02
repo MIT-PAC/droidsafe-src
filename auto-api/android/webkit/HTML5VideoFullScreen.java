@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.media.MediaPlayer;
@@ -62,22 +62,22 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
                     boolean var897EB098F08F185648904C85595F1D42_145119680 = (mMediaController.isShowing());
                     {
                         mMediaController.hide();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mMediaController.show();
-            } //End block
+            } 
             addTaint(holder.getTaint());
             addTaint(format);
             addTaint(w);
             addTaint(h);
-            // ---------- Original Method ----------
-            //if (mPlayer != null && mMediaController != null
-                    //&& mCurrentState == STATE_PREPARED) {
-                //if (mMediaController.isShowing()) {
-                    //mMediaController.hide();
-                //}
-                //mMediaController.show();
-            //}
+            
+            
+                    
+                
+                    
+                
+                
+            
         }
 
         
@@ -87,10 +87,10 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
             mFullScreenMode = FULLSCREEN_SURFACECREATED;
             prepareForFullScreen();
             addTaint(holder.getTaint());
-            // ---------- Original Method ----------
-            //mSurfaceHolder = holder;
-            //mFullScreenMode = FULLSCREEN_SURFACECREATED;
-            //prepareForFullScreen();
+            
+            
+            
+            
         }
 
         
@@ -101,15 +101,15 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
             mSurfaceHolder = null;
             {
                 mMediaController.hide();
-            } //End block
+            } 
             addTaint(holder.getTaint());
-            // ---------- Original Method ----------
-            //pauseAndDispatch(mProxy);
-            //mPlayer.release();
-            //mSurfaceHolder = null;
-            //if (mMediaController != null) {
-                //mMediaController.hide();
-            //}
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -119,30 +119,30 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     private final WebChromeClient.CustomViewCallback mCallback = new WebChromeClient.CustomViewCallback() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.786 -0400", hash_original_method = "5310CBE0D16478795A0BF544D70BB888", hash_generated_method = "3659616311AB6104A720F2EA1CD580E8")
         public void onCustomViewHidden() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mProxy.dispatchOnStopFullScreen();
             mLayout.removeView(getSurfaceView());
             {
                 mLayout.removeView(mProgressView);
                 mProgressView = null;
-            } //End block
+            } 
             mLayout = null;
             mProxy.getWebView().getViewManager().showAll();
             mProxy = null;
             mMediaController = null;
             mCurrentState = STATE_RELEASED;
-            // ---------- Original Method ----------
-            //mProxy.dispatchOnStopFullScreen();
-            //mLayout.removeView(getSurfaceView());
-            //if (mProgressView != null) {
-                    //mLayout.removeView(mProgressView);
-                    //mProgressView = null;
-                //}
-            //mLayout = null;
-            //mProxy.getWebView().getViewManager().showAll();
-            //mProxy = null;
-            //mMediaController = null;
-            //mCurrentState = STATE_RELEASED;
+            
+            
+            
+            
+                    
+                    
+                
+            
+            
+            
+            
+            
         }
 
         
@@ -152,12 +152,12 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     private MediaPlayer.OnBufferingUpdateListener mBufferingUpdateListener = new MediaPlayer.OnBufferingUpdateListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.786 -0400", hash_original_method = "16726F937605C6D0A73F251CECEE924B", hash_generated_method = "FD12763B931B9411DD8FAD196940204B")
         public void onBufferingUpdate(MediaPlayer mp, int percent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mCurrentBufferPercentage = percent;
             addTaint(mp.getTaint());
             addTaint(percent);
-            // ---------- Original Method ----------
-            //mCurrentBufferPercentage = percent;
+            
+            
         }
 
         
@@ -174,61 +174,65 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
         addTaint(videoLayerId);
         addTaint(position);
         addTaint(autoStart);
-        // ---------- Original Method ----------
-        //mVideoSurfaceView = new VideoSurfaceView(context);
-        //mFullScreenMode = FULLSCREEN_OFF;
-        //mVideoWidth = 0;
-        //mVideoHeight = 0;
-        //init(videoLayerId, position, autoStart);
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.788 -0400", hash_original_method = "AB3C62FD6F005880E77BC1927A87EEED", hash_generated_method = "ACD3383991C1CC3DA428CC1798C24418")
     private SurfaceView getSurfaceView() {
-        SurfaceView varB4EAC82CA7396A68D541C85D26508E83_2114379764 = null; //Variable for return #1
+        SurfaceView varB4EAC82CA7396A68D541C85D26508E83_2114379764 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2114379764 = mVideoSurfaceView;
-        varB4EAC82CA7396A68D541C85D26508E83_2114379764.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2114379764.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2114379764;
-        // ---------- Original Method ----------
-        //return mVideoSurfaceView;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.788 -0400", hash_original_method = "1F74C4E95F456B4EB4EE7ED74E748A1C", hash_generated_method = "801799CB0C592DFB6B2E64277EBF8B7F")
     private void setMediaController(MediaController m) {
         mMediaController  = m;
         attachMediaController();
-        // ---------- Original Method ----------
-        //mMediaController  = m;
-        //attachMediaController();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.788 -0400", hash_original_method = "BDA424FAC6D15253AC0E1C5DC76C6F7A", hash_generated_method = "6E6C0EBA280BC165B66AE2F3F4D04753")
     private void attachMediaController() {
         {
             mMediaController.setMediaPlayer(this);
             mMediaController.setAnchorView(mVideoSurfaceView);
             mMediaController.setEnabled(false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPlayer != null && mMediaController != null) {
-            //mMediaController.setMediaPlayer(this);
-            //mMediaController.setAnchorView(mVideoSurfaceView);
-            //mMediaController.setEnabled(false);
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.789 -0400", hash_original_method = "010B148200478BACA2EC38A18BA9574D", hash_generated_method = "88980725431A155BEDF1061FBBB25E49")
     @Override
     public void decideDisplayMode() {
         mPlayer.setDisplay(mSurfaceHolder);
-        // ---------- Original Method ----------
-        //mPlayer.setDisplay(mSurfaceHolder);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.789 -0400", hash_original_method = "55B4D124A95057AC3A279B37C798CFA8", hash_generated_method = "944F90C44367916A4DC4AB4D8CFB1BA7")
     private void prepareForFullScreen() {
         mPlayer.reset();
@@ -237,40 +241,42 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
         setMediaController(mc);
         mPlayer.setScreenOnWhilePlaying(true);
         prepareDataAndDisplayMode(mProxy);
-        // ---------- Original Method ----------
-        //mPlayer.reset();
-        //MediaController mc = new FullScreenMediaController(mProxy.getContext(), mLayout);
-        //mc.setSystemUiVisibility(mLayout.getSystemUiVisibility());
-        //setMediaController(mc);
-        //mPlayer.setScreenOnWhilePlaying(true);
-        //prepareDataAndDisplayMode(mProxy);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.789 -0400", hash_original_method = "E102D2D0B33B8C0648E23B09161A5D91", hash_generated_method = "0B2D4B3B6AC61FC4A695321BC2E07DC8")
     private void toggleMediaControlsVisiblity() {
         {
             boolean varD4E8898DF2C2C1A6D73B41D6963FEA27_1381864400 = (mMediaController.isShowing());
             {
                 mMediaController.hide();
-            } //End block
+            } 
             {
                 mMediaController.show();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mMediaController.isShowing()) {
-            //mMediaController.hide();
-        //} else {
-            //mMediaController.show();
-        //}
+            } 
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.790 -0400", hash_original_method = "8210B7805670B2428155D9962ECCD498", hash_generated_method = "5AB27F8F7764F4E7E2F0596FB2B460A1")
     @Override
     public void onPrepared(MediaPlayer mp) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onPrepared(mp);
         mVideoSurfaceView.setOnTouchListener(this);
         Metadata data = mp.getMetadata(MediaPlayer.METADATA_ALL,
@@ -282,26 +288,26 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
                     || data.getBoolean(Metadata.SEEK_BACKWARD_AVAILABLE);
             mCanSeekForward = !data.has(Metadata.SEEK_FORWARD_AVAILABLE)
                     || data.getBoolean(Metadata.SEEK_FORWARD_AVAILABLE);
-        } //End block
+        } 
         {
             mCanPause = mCanSeekBack = mCanSeekForward = true;
-        } //End block
+        } 
         {
             mMediaController.setEnabled(true);
             {
                 boolean var6CE32148AB2E3015385EB11B759776A2_464693273 = (getAutostart());
                 mMediaController.show();
                 mMediaController.show(0);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             mProgressView.setVisibility(View.GONE);
-        } //End block
+        } 
         mVideoWidth = mp.getVideoWidth();
         mVideoHeight = mp.getVideoHeight();
         mVideoSurfaceView.getHolder().setFixedSize(mVideoWidth, mVideoHeight);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -309,11 +315,12 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     public boolean fullScreenExited() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2147166453 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2147166453;
-        // ---------- Original Method ----------
-        //return (mLayout == null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.791 -0400", hash_original_method = "A8AE00CC29C9049B47899131597AFF8D", hash_generated_method = "16990C1D5B2AD7449CB29EBB4BB831CB")
     @Override
     public void enterFullScreenVideoState(int layerId,
@@ -340,18 +347,18 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
             {
                 boolean var347010D71F6116A7007D9AE2C20C3127_1282607902 = (webView.getViewManager() != null);
                 webView.getViewManager().hideAll();
-            } //End collapsed parenthetic
+            } 
             mProgressView = client.getVideoLoadingProgressView();
             {
                 mLayout.addView(mProgressView, layoutParams);
                 mProgressView.setVisibility(View.VISIBLE);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(layerId);
         addTaint(proxy.getTaint());
         addTaint(webView.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -359,8 +366,8 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     public boolean isFullScreenMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_369059238 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_369059238;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -369,8 +376,8 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     public boolean canPause() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1771604233 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1771604233;
-        // ---------- Original Method ----------
-        //return mCanPause;
+        
+        
     }
 
     
@@ -379,8 +386,8 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     public boolean canSeekBackward() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1982294865 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1982294865;
-        // ---------- Original Method ----------
-        //return mCanSeekBack;
+        
+        
     }
 
     
@@ -389,8 +396,8 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     public boolean canSeekForward() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1152033600 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1152033600;
-        // ---------- Original Method ----------
-        //return mCanSeekForward;
+        
+        
     }
 
     
@@ -399,55 +406,57 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     public int getBufferPercentage() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1969700410 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1969700410;
-        // ---------- Original Method ----------
-        //if (mPlayer != null) {
-            //return mCurrentBufferPercentage;
-        //}
-        //return 0;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.793 -0400", hash_original_method = "6CF96CE118939EE02746CF132717D00A", hash_generated_method = "B3F099270AB6D4EABC1D7211B53D0C7A")
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             toggleMediaControlsVisiblity();
-        } //End block
+        } 
         addTaint(v.getTaint());
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_863143328 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_863143328;
-        // ---------- Original Method ----------
-        //if (mFullScreenMode >= FULLSCREEN_SURFACECREATED
-                //&& mMediaController != null) {
-            //toggleMediaControlsVisiblity();
-        //}
-        //return false;
+        
+        
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.793 -0400", hash_original_method = "768EF74C7E083D9FE3529A6C9E69F9F8", hash_generated_method = "88B577C05942373895485FC8D1245DA9")
     @Override
     protected void switchProgressView(boolean playerBuffering) {
         {
             {
                 mProgressView.setVisibility(View.VISIBLE);
-            } //End block
+            } 
             {
                 mProgressView.setVisibility(View.GONE);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(playerBuffering);
-        // ---------- Original Method ----------
-        //if (mProgressView != null) {
-            //if (playerBuffering) {
-                //mProgressView.setVisibility(View.VISIBLE);
-            //} else {
-                //mProgressView.setVisibility(View.GONE);
-            //}
-        //}
-        //return;
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -457,38 +466,38 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
         public  VideoSurfaceView(Context context) {
             super(context);
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.793 -0400", hash_original_method = "9B50960AB78A53ECD97D5FCFD81C02C7", hash_generated_method = "CAB27126C902E18E79DC0B2E43AFAD6B")
         @Override
         protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             int width = getDefaultSize(mVideoWidth, widthMeasureSpec);
             int height = getDefaultSize(mVideoHeight, heightMeasureSpec);
             {
                 {
                     height = width * mVideoHeight / mVideoWidth;
-                } //End block
+                } 
                 {
                     width = height * mVideoWidth / mVideoHeight;
-                } //End block
-            } //End block
+                } 
+            } 
             setMeasuredDimension(width, height);
             addTaint(widthMeasureSpec);
             addTaint(heightMeasureSpec);
-            // ---------- Original Method ----------
-            //int width = getDefaultSize(mVideoWidth, widthMeasureSpec);
-            //int height = getDefaultSize(mVideoHeight, heightMeasureSpec);
-            //if (mVideoWidth > 0 && mVideoHeight > 0) {
-                //if ( mVideoWidth * height  > width * mVideoHeight ) {
-                    //height = width * mVideoHeight / mVideoWidth;
-                //} else if ( mVideoWidth * height  < width * mVideoHeight ) {
-                    //width = height * mVideoWidth / mVideoHeight;
-                //}
-            //}
-            //setMeasuredDimension(width, height);
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+            
         }
 
         
@@ -506,8 +515,8 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
             super(context);
             mVideoView = video;
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
-            //mVideoView = video;
+            
+            
         }
 
         
@@ -517,12 +526,12 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
             super.show();
             {
                 mVideoView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
-            } //End block
-            // ---------- Original Method ----------
-            //super.show();
-            //if (mVideoView != null) {
-                //mVideoView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
@@ -532,14 +541,14 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
             {
                 mVideoView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-            } //End block
+            } 
             super.hide();
-            // ---------- Original Method ----------
-            //if (mVideoView != null) {
-                //mVideoView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
-                        //| View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-            //}
-            //super.hide();
+            
+            
+                
+                        
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcelable;
 import android.os.Bundle;
@@ -32,11 +32,11 @@ public class PeriodicSync implements Parcelable {
         this.authority = authority;
         this.extras = new Bundle(extras);
         this.period = period;
-        // ---------- Original Method ----------
-        //this.account = account;
-        //this.authority = authority;
-        //this.extras = new Bundle(extras);
-        //this.period = period;
+        
+        
+        
+        
+        
     }
 
     
@@ -44,11 +44,12 @@ public class PeriodicSync implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1143667624 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1143667624;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.463 -0400", hash_original_method = "D77F1A5B85A714E7D78D3A9001CC9547", hash_generated_method = "7D3B0FFA9A2A517F6A70B22711F7385E")
     public void writeToParcel(Parcel dest, int flags) {
         account.writeToParcel(dest, flags);
@@ -57,19 +58,20 @@ public class PeriodicSync implements Parcelable {
         dest.writeLong(period);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //account.writeToParcel(dest, flags);
-        //dest.writeString(authority);
-        //dest.writeBundle(extras);
-        //dest.writeLong(period);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.464 -0400", hash_original_method = "05CC89CFE228C27B7E04895576ABC3FB", hash_generated_method = "235CB6FA236A20FB58BDFD6E5092583E")
     public boolean equals(Object o) {
         {
             boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_242516740 = (o == this);
-        } //End collapsed parenthetic
+        } 
         final PeriodicSync other = (PeriodicSync) o;
         boolean var0F46930ADB8E4361FDA12695D042DC05_512143919 = (account.equals(other.account)
                 && authority.equals(other.authority)
@@ -78,18 +80,18 @@ public class PeriodicSync implements Parcelable {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1715054448 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1715054448;
-        // ---------- Original Method ----------
-        //if (o == this) {
-            //return true;
-        //}
-        //if (!(o instanceof PeriodicSync)) {
-            //return false;
-        //}
-        //final PeriodicSync other = (PeriodicSync) o;
-        //return account.equals(other.account)
-                //&& authority.equals(other.authority)
-                //&& period == other.period
-                //&& SyncStorageEngine.equals(extras, other.extras);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+                
+                
+                
     }
 
     
@@ -105,13 +107,13 @@ public class PeriodicSync implements Parcelable {
             return new PeriodicSync[size];
         }
     };
-    // orphaned legacy method
+    
     public PeriodicSync createFromParcel(Parcel source) {
             return new PeriodicSync(Account.CREATOR.createFromParcel(source),
                     source.readString(), source.readBundle(), source.readLong());
         }
     
-    // orphaned legacy method
+    
     public PeriodicSync[] newArray(int size) {
             return new PeriodicSync[size];
         }

@@ -1,11 +1,11 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,20 +46,20 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
         a.recycle();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.GridLayoutAnimation);
-        //Animation.Description d = Animation.Description.parseValue(
-                //a.peekValue(com.android.internal.R.styleable.GridLayoutAnimation_columnDelay));
-        //mColumnDelay = d.value;
-        //d = Animation.Description.parseValue(
-                //a.peekValue(com.android.internal.R.styleable.GridLayoutAnimation_rowDelay));
-        //mRowDelay = d.value;
-        //mDirection = a.getInt(com.android.internal.R.styleable.GridLayoutAnimation_direction,
-                //DIRECTION_LEFT_TO_RIGHT | DIRECTION_TOP_TO_BOTTOM);
-        //mDirectionPriority = a.getInt(com.android.internal.R.styleable.GridLayoutAnimation_directionPriority,
-                //PRIORITY_NONE);
-        //a.recycle();
+        
+        
+                
+        
+                
+        
+        
+                
+        
+        
+                
+        
+                
+        
     }
 
     
@@ -67,7 +67,7 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     public  GridLayoutAnimationController(Animation animation) {
         this(animation, 0.5f, 0.5f);
         addTaint(animation.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -77,9 +77,9 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
         mColumnDelay = columnDelay;
         mRowDelay = rowDelay;
         addTaint(animation.getTaint());
-        // ---------- Original Method ----------
-        //mColumnDelay = columnDelay;
-        //mRowDelay = rowDelay;
+        
+        
+        
     }
 
     
@@ -87,16 +87,16 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     public float getColumnDelay() {
         float var546ADE640B6EDFBC8A086EF31347E768_854693131 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_854693131;
-        // ---------- Original Method ----------
-        //return mColumnDelay;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.520 -0400", hash_original_method = "9501A5CA0F153641CDBB87B4A0FF2D10", hash_generated_method = "C7AA2AD84759C6B2FECFC5080692540A")
     public void setColumnDelay(float columnDelay) {
         mColumnDelay = columnDelay;
-        // ---------- Original Method ----------
-        //mColumnDelay = columnDelay;
+        
+        
     }
 
     
@@ -104,16 +104,16 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     public float getRowDelay() {
         float var546ADE640B6EDFBC8A086EF31347E768_811518861 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_811518861;
-        // ---------- Original Method ----------
-        //return mRowDelay;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.520 -0400", hash_original_method = "64D555696CC7461EC1F71D4A3CF182E8", hash_generated_method = "44CD6692632F04CC8033AC326535A160")
     public void setRowDelay(float rowDelay) {
         mRowDelay = rowDelay;
-        // ---------- Original Method ----------
-        //mRowDelay = rowDelay;
+        
+        
     }
 
     
@@ -121,16 +121,16 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     public int getDirection() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_234883975 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_234883975;
-        // ---------- Original Method ----------
-        //return mDirection;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.520 -0400", hash_original_method = "1018F9EE846F5F3D270E1DDB698C3F6E", hash_generated_method = "308442DCD74853153DE9BB2BF46521FD")
     public void setDirection(int direction) {
         mDirection = direction;
-        // ---------- Original Method ----------
-        //mDirection = direction;
+        
+        
     }
 
     
@@ -138,16 +138,16 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     public int getDirectionPriority() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887957257 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887957257;
-        // ---------- Original Method ----------
-        //return mDirectionPriority;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.522 -0400", hash_original_method = "709631E231E1B8C214255AB5EF74A588", hash_generated_method = "ECC5BD2FC1392EAC72A0F198845CE262")
     public void setDirectionPriority(int directionPriority) {
         mDirectionPriority = directionPriority;
-        // ---------- Original Method ----------
-        //mDirectionPriority = directionPriority;
+        
+        
     }
 
     
@@ -156,11 +156,12 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     public boolean willOverlap() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_144106570 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_144106570;
-        // ---------- Original Method ----------
-        //return mColumnDelay < 1.0f || mRowDelay < 1.0f;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.523 -0400", hash_original_method = "13A2BFBB43D7D8280701088FA02E8C51", hash_generated_method = "38950DB0C35398E4C9779BAFAED377B1")
     @Override
     protected long getDelayForView(View view) {
@@ -177,136 +178,138 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
         long viewDelay;
         {
             mInterpolator = new LinearInterpolator();
-        } //End block
-        //Begin case PRIORITY_COLUMN 
+        } 
+        
         viewDelay = (long) (row * rowDelay + column * rowsCount * rowDelay);
-        //End case PRIORITY_COLUMN 
-        //Begin case PRIORITY_COLUMN 
+        
+        
         totalDelay = rowsCount * rowDelay + columnsCount * rowsCount * rowDelay;
-        //End case PRIORITY_COLUMN 
-        //Begin case PRIORITY_ROW 
+        
+        
         viewDelay = (long) (column * columnDelay + row * columnsCount * columnDelay);
-        //End case PRIORITY_ROW 
-        //Begin case PRIORITY_ROW 
+        
+        
         totalDelay = columnsCount * columnDelay + rowsCount * columnsCount * columnDelay;
-        //End case PRIORITY_ROW 
-        //Begin case PRIORITY_NONE default 
+        
+        
         viewDelay = (long) (column * columnDelay + row * rowDelay);
-        //End case PRIORITY_NONE default 
-        //Begin case PRIORITY_NONE default 
+        
+        
         totalDelay = columnsCount * columnDelay + rowsCount * rowDelay;
-        //End case PRIORITY_NONE default 
+        
         float normalizedDelay = viewDelay / totalDelay;
         normalizedDelay = mInterpolator.getInterpolation(normalizedDelay);
         addTaint(view.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_916516614 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_916516614;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.524 -0400", hash_original_method = "C50C7512E3339F2A41AD9697D8F57632", hash_generated_method = "E1F506F89DDA5B20636AD2A89CD2AD80")
     private int getTransformedColumnIndex(AnimationParameters params) {
         int index;
         {
             Object var998A9FCD617ED3F225652B49EC9B64C8_378731336 = (getOrder());
-            //Begin case ORDER_REVERSE 
+            
             index = params.columnsCount - 1 - params.column;
-            //End case ORDER_REVERSE 
-            //Begin case ORDER_RANDOM 
+            
+            
             {
                 mRandomizer = new Random();
-            } //End block
-            //End case ORDER_RANDOM 
-            //Begin case ORDER_RANDOM 
+            } 
+            
+            
             index = (int) (params.columnsCount * mRandomizer.nextFloat());
-            //End case ORDER_RANDOM 
-            //Begin case ORDER_NORMAL default 
+            
+            
             index = params.column;
-            //End case ORDER_NORMAL default 
-        } //End collapsed parenthetic
+            
+        } 
         int direction = mDirection & DIRECTION_HORIZONTAL_MASK;
         {
             index = params.columnsCount - 1 - index;
-        } //End block
+        } 
         addTaint(params.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_291534223 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_291534223;
-        // ---------- Original Method ----------
-        //int index;
-        //switch (getOrder()) {
-            //case ORDER_REVERSE:
-                //index = params.columnsCount - 1 - params.column;
-                //break;
-            //case ORDER_RANDOM:
-                //if (mRandomizer == null) {
-                    //mRandomizer = new Random();
-                //}
-                //index = (int) (params.columnsCount * mRandomizer.nextFloat());
-                //break;
-            //case ORDER_NORMAL:
-            //default:
-                //index = params.column;
-                //break;
-        //}
-        //int direction = mDirection & DIRECTION_HORIZONTAL_MASK;
-        //if (direction == DIRECTION_RIGHT_TO_LEFT) {
-            //index = params.columnsCount - 1 - index;
-        //}
-        //return index;
+        
+        
+        
+            
+                
+                
+            
+                
+                    
+                
+                
+                
+            
+            
+                
+                
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.524 -0400", hash_original_method = "B94231C9BBDDC40F852ECD0311BD9DAC", hash_generated_method = "EFA2CD9E0408921FB5C058DE6BE58657")
     private int getTransformedRowIndex(AnimationParameters params) {
         int index;
         {
             Object var998A9FCD617ED3F225652B49EC9B64C8_1280794548 = (getOrder());
-            //Begin case ORDER_REVERSE 
+            
             index = params.rowsCount - 1 - params.row;
-            //End case ORDER_REVERSE 
-            //Begin case ORDER_RANDOM 
+            
+            
             {
                 mRandomizer = new Random();
-            } //End block
-            //End case ORDER_RANDOM 
-            //Begin case ORDER_RANDOM 
+            } 
+            
+            
             index = (int) (params.rowsCount * mRandomizer.nextFloat());
-            //End case ORDER_RANDOM 
-            //Begin case ORDER_NORMAL default 
+            
+            
             index = params.row;
-            //End case ORDER_NORMAL default 
-        } //End collapsed parenthetic
+            
+        } 
         int direction = mDirection & DIRECTION_VERTICAL_MASK;
         {
             index = params.rowsCount - 1 - index;
-        } //End block
+        } 
         addTaint(params.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1101740989 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1101740989;
-        // ---------- Original Method ----------
-        //int index;
-        //switch (getOrder()) {
-            //case ORDER_REVERSE:
-                //index = params.rowsCount - 1 - params.row;
-                //break;
-            //case ORDER_RANDOM:
-                //if (mRandomizer == null) {
-                    //mRandomizer = new Random();
-                //}
-                //index = (int) (params.rowsCount * mRandomizer.nextFloat());
-                //break;
-            //case ORDER_NORMAL:
-            //default:
-                //index = params.row;
-                //break;
-        //}
-        //int direction = mDirection & DIRECTION_VERTICAL_MASK;
-        //if (direction == DIRECTION_BOTTOM_TO_TOP) {
-            //index = params.rowsCount - 1 - index;
-        //}
-        //return index;
+        
+        
+        
+            
+                
+                
+            
+                
+                    
+                
+                
+                
+            
+            
+                
+                
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -327,7 +330,7 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.525 -0400", hash_original_method = "838D907A76D7295751639A8A84C023C1", hash_generated_method = "838D907A76D7295751639A8A84C023C1")
         public AnimationParameters ()
         {
-            //Synthesized constructor
+            
         }
 
 

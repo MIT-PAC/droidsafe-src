@@ -1,11 +1,11 @@
 package android.support.v4.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import static android.net.ConnectivityManager.TYPE_MOBILE;
 import static android.net.ConnectivityManager.TYPE_MOBILE_DUN;
@@ -22,11 +22,12 @@ class ConnectivityManagerCompatGingerbread {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.365 -0400", hash_original_method = "9C14F5D95F9DFDEBDA3B27317317DD8D", hash_generated_method = "9C14F5D95F9DFDEBDA3B27317317DD8D")
     public ConnectivityManagerCompatGingerbread ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static boolean isActiveNetworkMetered(ConnectivityManager cm) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isActiveNetworkMetered(ConnectivityManager cm) {
         final NetworkInfo info = cm.getActiveNetworkInfo();
         if (info == null) {
             return true;

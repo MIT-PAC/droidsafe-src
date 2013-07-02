@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -43,7 +43,7 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     public  ThreadGroup(String name) {
         this(Thread.currentThread().getThreadGroup(), name);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -51,7 +51,7 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     public  ThreadGroup(ThreadGroup parent, String name) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("parent == null");
-        } //End block
+        } 
         this.name = name;
         this.parent = parent;
         {
@@ -61,22 +61,22 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                 boolean varFED4C748A11E2972650853AC0BAD4EA5_964939785 = (parent.isDaemon());
                 {
                     this.setDaemon(true);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //if (parent == null) {
-            //throw new NullPointerException("parent == null");
-        //}
-        //this.name = name;
-        //this.parent = parent;
-        //if (parent != null) {
-            //parent.add(this);
-            //this.setMaxPriority(parent.getMaxPriority());
-            //if (parent.isDaemon()) {
-                //this.setDaemon(true);
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -84,12 +84,13 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     private  ThreadGroup() {
         this.name = "system";
         this.parent = null;
-        // ---------- Original Method ----------
-        //this.name = "system";
-        //this.parent = null;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.220 -0400", hash_original_method = "F6402A744D3DEB7896E39C3D58ADE009", hash_generated_method = "92CF43978E06888513660390DBCBA1D4")
     public int activeCount() {
         int count = 0;
@@ -101,10 +102,10 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                 {
                     {
                         boolean var834F52F70C5641CAD7243A6F3EDD4895_135021893 = (thread.isAlive());
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 Iterator<ThreadGroup> var54EA1B7E21F6B1B7A595CF2D130BDF63_241473586 = (groups).iterator();
@@ -112,29 +113,30 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                 ThreadGroup group = var54EA1B7E21F6B1B7A595CF2D130BDF63_241473586.next();
                 {
                     count += group.activeCount();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89166524 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89166524;
-        // ---------- Original Method ----------
-        //int count = 0;
-        //synchronized (threadRefs) {
-            //for (Thread thread : threads) {
-                //if (thread.isAlive()) {
-                    //count++;
-                //}
-            //}
-        //}
-        //synchronized (groups) {
-            //for (ThreadGroup group : groups) {
-                //count += group.activeCount();
-            //}
-        //}
-        //return count;
+        
+        
+        
+            
+                
+                    
+                
+            
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.224 -0400", hash_original_method = "AF255D2A52D389FA67BDDD4C4590191B", hash_generated_method = "A6A63E074A4F08E46588AB69F3B729AA")
     public int activeGroupCount() {
         int count = 0;
@@ -145,38 +147,39 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                 ThreadGroup group = var54EA1B7E21F6B1B7A595CF2D130BDF63_635856663.next();
                 {
                     count += 1 + group.activeGroupCount();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1943527457 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1943527457;
-        // ---------- Original Method ----------
-        //int count = 0;
-        //synchronized (groups) {
-            //for (ThreadGroup group : groups) {
-                //count += 1 + group.activeGroupCount();
-            //}
-        //}
-        //return count;
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.225 -0400", hash_original_method = "0DD772AEDB7C823C2E91BB6377F03397", hash_generated_method = "9445FFA636847F148ABE97326359B6CB")
     private void add(ThreadGroup g) throws IllegalThreadStateException {
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalThreadStateException();
-            } //End block
+            } 
             groups.add(g);
-        } //End block
+        } 
         addTaint(g.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (groups) {
-            //if (isDestroyed) {
-                //throw new IllegalThreadStateException();
-            //}
-            //groups.add(g);
-        //}
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -186,14 +189,14 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
         addTaint(b);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_855821940 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_855821940;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.225 -0400", hash_original_method = "9AC5D8EF15BD7837ACD785C0772615A1", hash_generated_method = "58C0335FEF548999868CED53D4078AEE")
     public final void checkAccess() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -205,32 +208,33 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalThreadStateException(
                             "Thread group was already destroyed: "
                             + (this.name != null ? this.name : "n/a"));
-                } //End block
+                } 
                 {
                     boolean var4F3363F09CB0420EE52F5462232AF87C_518672401 = (threads.iterator().hasNext());
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalThreadStateException(
                             "Thread group still contains threads: "
                             + (this.name != null ? this.name : "n/a"));
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var8AFDB33FE984B1BEC548EC5D0AA95D11_484820218 = (!groups.isEmpty());
                     {
                         groups.get(0).destroy();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     parent.remove(this);
-                } //End block
+                } 
                 this.isDestroyed = true;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.226 -0400", hash_original_method = "CD7DBC672D59D1FAACCF6E53D785D515", hash_generated_method = "381FD2474A3DB1F94696D870A18D8BD3")
     private void destroyIfEmptyDaemon() {
         {
@@ -242,36 +246,38 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                             boolean var8F90CF27032DACBA87BBBEC3837FEC96_375003425 = (groups.isEmpty());
                             {
                                 destroy();
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (threadRefs) {
-            //if (isDaemon && !isDestroyed && !threads.iterator().hasNext()) {
-                //synchronized (groups) {
-                    //if (groups.isEmpty()) {
-                        //destroy();
-                    //}
-                //}
-            //}
-        //}
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+                
+                    
+                        
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.226 -0400", hash_original_method = "4F115C3CD94EE462D7FE29C66038CE8B", hash_generated_method = "1D1894373D5EEF85A4B0AD35D96032BE")
     public int enumerate(Thread[] threads) {
         int var5F6FD2F78326CE493B1F98DDADE5E7F1_13806467 = (enumerate(threads, true));
         addTaint(threads[0].getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_156395187 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_156395187;
-        // ---------- Original Method ----------
-        //return enumerate(threads, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.226 -0400", hash_original_method = "7C9447501CA37C2477868C242A118750", hash_generated_method = "E62F99AF0C8E557DB810C0F9B676B3F0")
     public int enumerate(Thread[] threads, boolean recurse) {
         int var8E78C5862A409D685DBDC97F9BEAC903_1871509074 = (enumerateGeneric(threads, recurse, 0, true));
@@ -279,22 +285,24 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
         addTaint(recurse);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_58721084 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_58721084;
-        // ---------- Original Method ----------
-        //return enumerateGeneric(threads, recurse, 0, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.226 -0400", hash_original_method = "CA294C4CBD805FDF86CE51E26A265568", hash_generated_method = "FD65D4B0C604E98ABE1A8960D1779E4A")
     public int enumerate(ThreadGroup[] groups) {
         int var7A6207DCB59F340F672156C8F350F74C_1450417726 = (enumerate(groups, true));
         addTaint(groups[0].getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1233087211 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1233087211;
-        // ---------- Original Method ----------
-        //return enumerate(groups, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.226 -0400", hash_original_method = "C3125975C33A76683DB83E92F1059496", hash_generated_method = "DAE7E036DB5B145058C70E1B13265C1B")
     public int enumerate(ThreadGroup[] groups, boolean recurse) {
         int var9BDBAFB14FA45713AA26AA5DDC79F957_1041454496 = (enumerateGeneric(groups, recurse, 0, false));
@@ -302,11 +310,12 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
         addTaint(recurse);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_581709285 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_581709285;
-        // ---------- Original Method ----------
-        //return enumerateGeneric(groups, recurse, 0, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.263 -0400", hash_original_method = "7CEEE4341262A9B70C3A153644CFBA1A", hash_generated_method = "DA6DB23AE5DA0836DE26F33660B10014")
     private int enumerateGeneric(Object[] enumeration, boolean recurse, int enumerationIndex,
             boolean enumeratingThreads) {
@@ -320,22 +329,22 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                             boolean var65C9C2AD7E143DAAAF5F0F54E1E31CC6_2118583725 = (thread != null && thread.isAlive());
                             {
                                 enumeration[enumerationIndex++] = thread;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 {
                     int i = groups.size() - 1;
                     {
                         enumeration[enumerationIndex++] = groups.get(i);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 {
@@ -345,18 +354,18 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                     {
                         enumerationIndex = group.enumerateGeneric(enumeration, recurse,
                             enumerationIndex, enumeratingThreads);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(enumeration[0].getTaint());
         addTaint(recurse);
         addTaint(enumerationIndex);
         addTaint(enumeratingThreads);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1256724549 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1256724549;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -364,30 +373,30 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     public final int getMaxPriority() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1896402883 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1896402883;
-        // ---------- Original Method ----------
-        //return maxPriority;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.267 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "7BBC0C351A2AD5FB2B73B60F408D8B4F")
     public final String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_705479222 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_705479222 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_705479222 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_705479222.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_705479222.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_705479222;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.270 -0400", hash_original_method = "8A85A1BC7F9CDC3D0187C50787EE4700", hash_generated_method = "F4C9A9E3476241892626D68B34FC3723")
     public final ThreadGroup getParent() {
-        ThreadGroup varB4EAC82CA7396A68D541C85D26508E83_997444637 = null; //Variable for return #1
+        ThreadGroup varB4EAC82CA7396A68D541C85D26508E83_997444637 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_997444637 = parent;
-        varB4EAC82CA7396A68D541C85D26508E83_997444637.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_997444637.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_997444637;
-        // ---------- Original Method ----------
-        //return parent;
+        
+        
     }
 
     
@@ -400,9 +409,9 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                 Thread thread = var64031C2010DBED70B36EC2AE78AC91AC_1997883302.next();
                 {
                     thread.interrupt();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 Iterator<ThreadGroup> var54EA1B7E21F6B1B7A595CF2D130BDF63_445522532 = (groups).iterator();
@@ -410,20 +419,20 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                 ThreadGroup group = var54EA1B7E21F6B1B7A595CF2D130BDF63_445522532.next();
                 {
                     group.interrupt();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (threadRefs) {
-            //for (Thread thread : threads) {
-                //thread.interrupt();
-            //}
-        //}
-        //synchronized (groups) {
-            //for (ThreadGroup group : groups) {
-                //group.interrupt();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+                
+            
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -431,8 +440,8 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     public final boolean isDaemon() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1125101121 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1125101121;
-        // ---------- Original Method ----------
-        //return isDaemon;
+        
+        
     }
 
     
@@ -440,21 +449,23 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     public synchronized boolean isDestroyed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1268531986 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1268531986;
-        // ---------- Original Method ----------
-        //return isDestroyed;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.284 -0400", hash_original_method = "8CFF2ECA4877D9633C2E3E2E2839A20E", hash_generated_method = "C6E05FAED89AA6A1B46B82F7A311D5CC")
     public void list() {
         System.out.println();
         list(0);
-        // ---------- Original Method ----------
-        //System.out.println();
-        //list(0);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.296 -0400", hash_original_method = "38F7DBD37EF32F68FFB89F20FFE0F443", hash_generated_method = "0833487812DC54115EE189949A2A7DCC")
     private void list(int levels) {
         indent(levels);
@@ -467,9 +478,9 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                 {
                     indent(levels);
                     System.out.println(thread);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 Iterator<ThreadGroup> var54EA1B7E21F6B1B7A595CF2D130BDF63_544045682 = (groups).iterator();
@@ -477,41 +488,42 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                 ThreadGroup group = var54EA1B7E21F6B1B7A595CF2D130BDF63_544045682.next();
                 {
                     group.list(levels);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(levels);
-        // ---------- Original Method ----------
-        //indent(levels);
-        //System.out.println(this.toString());
-        //++levels;
-        //synchronized (threadRefs) {
-            //for (Thread thread : threads) {
-                //indent(levels);
-                //System.out.println(thread);
-            //}
-        //}
-        //synchronized (groups) {
-            //for (ThreadGroup group : groups) {
-                //group.list(levels);
-            //}
-        //}
+        
+        
+        
+        
+        
+            
+                
+                
+            
+        
+        
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.297 -0400", hash_original_method = "074D68FF209CFCAF4851113378206A39", hash_generated_method = "4BF7564CE2961B2B13928D69B5D0B141")
     private void indent(int levels) {
         {
             int i = 0;
             {
                 System.out.print("    ");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(levels);
-        // ---------- Original Method ----------
-        //for (int i = 0; i < levels; i++) {
-            //System.out.print("    "); 
-        //}
+        
+        
+            
+        
     }
 
     
@@ -519,21 +531,22 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     public final boolean parentOf(ThreadGroup g) {
         {
             g = g.parent;
-        } //End block
+        } 
         addTaint(g.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1622610996 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1622610996;
-        // ---------- Original Method ----------
-        //while (g != null) {
-            //if (this == g) {
-                //return true;
-            //}
-            //g = g.parent;
-        //}
-        //return false;
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.300 -0400", hash_original_method = "7E8DD532FE0D28207249CA86D60AFD62", hash_generated_method = "35FD7A416BA1858D39650DDC91A25FFE")
     private void remove(ThreadGroup g) {
         {
@@ -546,24 +559,24 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                         boolean varA1BDBEBB1E64746EF11DB086EC5CF143_1101150573 = (threadGroup.equals(g));
                         {
                             i.remove();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         destroyIfEmptyDaemon();
         addTaint(g.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (groups) {
-            //for (Iterator<ThreadGroup> i = groups.iterator(); i.hasNext(); ) {
-                //ThreadGroup threadGroup = i.next();
-                //if (threadGroup.equals(g)) {
-                    //i.remove();
-                    //break;
-                //}
-            //}
-        //}
-        //destroyIfEmptyDaemon();
+        
+        
+            
+                
+                
+                    
+                    
+                
+            
+        
+        
     }
 
     
@@ -578,9 +591,9 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                 Thread thread = var64031C2010DBED70B36EC2AE78AC91AC_687146778.next();
                 {
                     thread.resume();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 Iterator<ThreadGroup> var54EA1B7E21F6B1B7A595CF2D130BDF63_207695147 = (groups).iterator();
@@ -588,28 +601,28 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                 ThreadGroup group = var54EA1B7E21F6B1B7A595CF2D130BDF63_207695147.next();
                 {
                     group.resume();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (threadRefs) {
-            //for (Thread thread : threads) {
-                //thread.resume();
-            //}
-        //}
-        //synchronized (groups) {
-            //for (ThreadGroup group : groups) {
-                //group.resume();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+                
+            
+        
+        
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.311 -0400", hash_original_method = "8335FAF0BC3ED6B3C58B58617340A520", hash_generated_method = "41930952754EA7B18095BC1B8F27AACA")
     public final void setDaemon(boolean isDaemon) {
         this.isDaemon = isDaemon;
-        // ---------- Original Method ----------
-        //this.isDaemon = isDaemon;
+        
+        
     }
 
     
@@ -618,7 +631,7 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
         {
             {
                 newMax = Thread.MIN_PRIORITY;
-            } //End block
+            } 
             int parentPriority;
             parentPriority = newMax;
             parentPriority = parent.getMaxPriority();
@@ -630,23 +643,23 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                     ThreadGroup group = var54EA1B7E21F6B1B7A595CF2D130BDF63_2013084527.next();
                     {
                         group.setMaxPriority(newMax);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (newMax <= this.maxPriority) {
-            //if (newMax < Thread.MIN_PRIORITY) {
-                //newMax = Thread.MIN_PRIORITY;
-            //}
-            //int parentPriority = parent == null ? newMax : parent.getMaxPriority();
-            //this.maxPriority = parentPriority <= newMax ? parentPriority : newMax;
-            //synchronized (groups) {
-                //for (ThreadGroup group : groups) {
-                    //group.setMaxPriority(newMax);
-                //}
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+            
+            
+                
+                    
+                
+            
+        
     }
 
     
@@ -658,15 +671,16 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
             boolean var5EC1541CA58351A27FD981B0159181A0_102887585 = (stopHelper());
             {
                 Thread.currentThread().stop();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (stopHelper()) {
-            //Thread.currentThread().stop();
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.327 -0400", hash_original_method = "F86867FC41FDF8B0075237470EA8A18F", hash_generated_method = "D32129CAFB8F8829E681C2C29B835F5F")
     @SuppressWarnings("deprecation")
     private boolean stopHelper() {
@@ -680,13 +694,13 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                 {
                     {
                         stopCurrent = true;
-                    } //End block
+                    } 
                     {
                         thread.stop();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 Iterator<ThreadGroup> var54EA1B7E21F6B1B7A595CF2D130BDF63_1133979742 = (groups).iterator();
@@ -694,29 +708,29 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                 ThreadGroup group = var54EA1B7E21F6B1B7A595CF2D130BDF63_1133979742.next();
                 {
                     stopCurrent |= group.stopHelper();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_372292277 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_372292277;
-        // ---------- Original Method ----------
-        //boolean stopCurrent = false;
-        //synchronized (threadRefs) {
-            //Thread current = Thread.currentThread();
-            //for (Thread thread : threads) {
-                //if (thread == current) {
-                    //stopCurrent = true;
-                //} else {
-                    //thread.stop();
-                //}
-            //}
-        //}
-        //synchronized (groups) {
-            //for (ThreadGroup group : groups) {
-                //stopCurrent |= group.stopHelper();
-            //}
-        //}
-        //return stopCurrent;
+        
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -728,15 +742,16 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
             boolean var447388F3E04DA462654DDAC740A6E72A_1224330226 = (suspendHelper());
             {
                 Thread.currentThread().suspend();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (suspendHelper()) {
-            //Thread.currentThread().suspend();
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.336 -0400", hash_original_method = "664C597F1857BDEBDBE75F13D3F147B7", hash_generated_method = "7CC6D63F66ADD9087FE9A26C252B885E")
     @SuppressWarnings("deprecation")
     private boolean suspendHelper() {
@@ -750,13 +765,13 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                 {
                     {
                         suspendCurrent = true;
-                    } //End block
+                    } 
                     {
                         thread.suspend();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 Iterator<ThreadGroup> var54EA1B7E21F6B1B7A595CF2D130BDF63_2021582117 = (groups).iterator();
@@ -764,70 +779,72 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                 ThreadGroup group = var54EA1B7E21F6B1B7A595CF2D130BDF63_2021582117.next();
                 {
                     suspendCurrent |= group.suspendHelper();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_196884079 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_196884079;
-        // ---------- Original Method ----------
-        //boolean suspendCurrent = false;
-        //synchronized (threadRefs) {
-            //Thread current = Thread.currentThread();
-            //for (Thread thread : threads) {
-                //if (thread == current) {
-                    //suspendCurrent = true;
-                //} else {
-                    //thread.suspend();
-                //}
-            //}
-        //}
-        //synchronized (groups) {
-            //for (ThreadGroup group : groups) {
-                //suspendCurrent |= group.suspendHelper();
-            //}
-        //}
-        //return suspendCurrent;
+        
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.336 -0400", hash_original_method = "54318ADB79169F8C74CBC002CF89020D", hash_generated_method = "E8B25AFF66E0D8F349D6CF3EE5054332")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1225537304 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1225537304 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1225537304 = getClass().getName() + "[name=" + getName()
                 + ",maxPriority=" + getMaxPriority() + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_1225537304.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1225537304.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1225537304;
-        // ---------- Original Method ----------
-        //return getClass().getName() + "[name=" + getName()
-                //+ ",maxPriority=" + getMaxPriority() + "]";
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.337 -0400", hash_original_method = "1AEEC9D33E82C49A9FE6D436A43A8349", hash_generated_method = "EB3614CB1BD49054671968BE8F10C919")
     public void uncaughtException(Thread t, Throwable e) {
         {
             parent.uncaughtException(t, e);
-        } //End block
+        } 
         {
             boolean var87252FF6409F65E0E51F15C36C8E7DAD_789704008 = (Thread.getDefaultUncaughtExceptionHandler() != null);
             {
                 Thread.getDefaultUncaughtExceptionHandler().uncaughtException(t, e);
-            } //End block
+            } 
             {
                 e.printStackTrace(System.err);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(t.getTaint());
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
-        //if (parent != null) {
-            //parent.uncaughtException(t, e);
-        //} else if (Thread.getDefaultUncaughtExceptionHandler() != null) {
-            //Thread.getDefaultUncaughtExceptionHandler().uncaughtException(t, e);
-        //} else if (!(e instanceof ThreadDeath)) {
-            //e.printStackTrace(System.err);
-        //}
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -836,17 +853,17 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalThreadStateException();
-            } //End block
+            } 
             threadRefs.add(new WeakReference<Thread>(thread));
-        } //End block
+        } 
         addTaint(thread.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (threadRefs) {
-            //if (isDestroyed) {
-                //throw new IllegalThreadStateException();
-            //}
-            //threadRefs.add(new WeakReference<Thread>(thread));
-        //}
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -861,23 +878,23 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
                         boolean var4E3494244B23B077D5079C96D43BDFE5_587687018 = (i.next().equals(thread));
                         {
                             i.remove();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         destroyIfEmptyDaemon();
         addTaint(thread.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (threadRefs) {
-            //for (Iterator<Thread> i = threads.iterator(); i.hasNext(); ) {
-                //if (i.next().equals(thread)) {
-                    //i.remove();
-                    //break;
-                //}
-            //}
-        //}
-        //destroyIfEmptyDaemon();
+        
+        
+            
+                
+                    
+                    
+                
+            
+        
+        
     }
 
     

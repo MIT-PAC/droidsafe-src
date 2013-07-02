@@ -1,11 +1,11 @@
 package org.apache.commons.codec.binary;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.commons.codec.BinaryDecoder;
 import org.apache.commons.codec.BinaryEncoder;
@@ -17,10 +17,11 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.183 -0400", hash_original_method = "2062DFA17AA591396821D3397343CC6D", hash_generated_method = "2062DFA17AA591396821D3397343CC6D")
     public Hex ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static byte[] decodeHex(char[] data) throws DecoderException {
         int len = data.length;
         if ((len & 0x01) != 0) {
@@ -38,6 +39,7 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static int toDigit(char ch, int index) throws DecoderException {
         int digit = Character.digit(ch, 16);
         if (digit == -1) {
@@ -58,79 +60,83 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.184 -0400", hash_original_method = "A17636F69FEFB6DDDFC5F873DED10994", hash_generated_method = "A0320BE74CA263D0F5D13659AEAD5773")
     public byte[] decode(byte[] array) throws DecoderException {
         byte[] varDFD55A814397BED5500E1AC87F4F0C1F_41890527 = (decodeHex(new String(array).toCharArray()));
         addTaint(array[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_240708025 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_240708025;
-        // ---------- Original Method ----------
-        //return decodeHex(new String(array).toCharArray());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.185 -0400", hash_original_method = "259B1B44CE3EA0D75FAE3A3A31435A4B", hash_generated_method = "5B432158559625862E8596BEA641BE4B")
     public Object decode(Object object) throws DecoderException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1913347548 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1913347548 = null; 
         try 
         {
             char[] charArray;
             charArray = ((String) object).toCharArray();
             charArray = (char[]) object;
             varB4EAC82CA7396A68D541C85D26508E83_1913347548 = decodeHex(charArray);
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new DecoderException(e.getMessage());
-        } //End block
+        } 
         addTaint(object.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1913347548.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1913347548.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1913347548;
-        // ---------- Original Method ----------
-        //try {
-            //char[] charArray = object instanceof String ? ((String) object).toCharArray() : (char[]) object;
-            //return decodeHex(charArray);
-        //} catch (ClassCastException e) {
-            //throw new DecoderException(e.getMessage());
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.185 -0400", hash_original_method = "50DBD5604B609ED94F02B18C89B60347", hash_generated_method = "B19774912DB82C055E4B8B800BB4FD26")
     public byte[] encode(byte[] array) {
         byte[] var8BB4A16095E8E693A45721E2D1957B05_1332694757 = (new String(encodeHex(array)).getBytes());
         addTaint(array[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1539644606 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1539644606;
-        // ---------- Original Method ----------
-        //return new String(encodeHex(array)).getBytes();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.185 -0400", hash_original_method = "65D07AA1ACA3F409200AC5EFDF123AC8", hash_generated_method = "FBEC4FF9200372A383152191834816A1")
     public Object encode(Object object) throws EncoderException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1533824741 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1533824741 = null; 
         try 
         {
             byte[] byteArray;
             byteArray = ((String) object).getBytes();
             byteArray = (byte[]) object;
             varB4EAC82CA7396A68D541C85D26508E83_1533824741 = encodeHex(byteArray);
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new EncoderException(e.getMessage());
-        } //End block
+        } 
         addTaint(object.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1533824741.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1533824741.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1533824741;
-        // ---------- Original Method ----------
-        //try {
-            //byte[] byteArray = object instanceof String ? ((String) object).getBytes() : (byte[]) object;
-            //return encodeHex(byteArray);
-        //} catch (ClassCastException e) {
-            //throw new EncoderException(e.getMessage());
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     

@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.sip.address.URI;
 import gov.nist.javax.sip.address.*;
@@ -24,8 +24,8 @@ public class RequestLine extends SIPObject implements SipRequestLine {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.073 -0400", hash_original_method = "E4B7F4B41910EC919E5F140217342F7C", hash_generated_method = "EAF4B8E6F66C463F263AD3BE32A3D88C")
     public  RequestLine() {
         sipVersion = "SIP/2.0";
-        // ---------- Original Method ----------
-        //sipVersion = "SIP/2.0";
+        
+        
     }
 
     
@@ -34,117 +34,120 @@ public class RequestLine extends SIPObject implements SipRequestLine {
         this.uri = requestURI;
         this.method = method;
         this.sipVersion = "SIP/2.0";
-        // ---------- Original Method ----------
-        //this.uri = requestURI;
-        //this.method = method;
-        //this.sipVersion = "SIP/2.0";
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.074 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "A1F8E27C772AFCAEABA4821AB533568C")
     public String encode() {
-        String varB4EAC82CA7396A68D541C85D26508E83_539585277 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_539585277 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_539585277 = encode(new StringBuffer()).toString();
-        varB4EAC82CA7396A68D541C85D26508E83_539585277.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_539585277.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_539585277;
-        // ---------- Original Method ----------
-        //return encode(new StringBuffer()).toString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.074 -0400", hash_original_method = "4F6DB28D47CD31A53DCF9FC226D5B630", hash_generated_method = "A1D05C2D5DF41A11F3FCBB13A87A4AF4")
     public StringBuffer encode(StringBuffer buffer) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1946005905 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1946005905 = null; 
         {
             buffer.append(method);
             buffer.append(SP);
-        } //End block
+        } 
         {
             uri.encode(buffer);
             buffer.append(SP);
-        } //End block
+        } 
         buffer.append(sipVersion);
         buffer.append(NEWLINE);
         varB4EAC82CA7396A68D541C85D26508E83_1946005905 = buffer;
         addTaint(buffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1946005905.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1946005905.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1946005905;
-        // ---------- Original Method ----------
-        //if (method != null) {
-            //buffer.append(method);
-            //buffer.append(SP);
-        //}
-        //if (uri != null) {
-            //uri.encode(buffer);
-            //buffer.append(SP);
-        //}
-        //buffer.append(sipVersion);
-        //buffer.append(NEWLINE);
-        //return buffer;
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.075 -0400", hash_original_method = "F87CE2D8FFE3E61DA8A4BD8B0BDA0697", hash_generated_method = "6C810A6E2E5090067DB9B0A6BF73B7BD")
     public GenericURI getUri() {
-        GenericURI varB4EAC82CA7396A68D541C85D26508E83_295105471 = null; //Variable for return #1
+        GenericURI varB4EAC82CA7396A68D541C85D26508E83_295105471 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_295105471 = uri;
-        varB4EAC82CA7396A68D541C85D26508E83_295105471.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_295105471.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_295105471;
-        // ---------- Original Method ----------
-        //return uri;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.075 -0400", hash_original_method = "A65B682B0B822D8527FBE88A2FCA60FC", hash_generated_method = "093DEBDCEAE0CA59538B4792E64E9063")
     public String getMethod() {
-        String varB4EAC82CA7396A68D541C85D26508E83_382853744 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_382853744 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_382853744 = method;
-        varB4EAC82CA7396A68D541C85D26508E83_382853744.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_382853744.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_382853744;
-        // ---------- Original Method ----------
-        //return method;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.075 -0400", hash_original_method = "756FD7B4E35B001597A1BAB462C97AFC", hash_generated_method = "B0FDF97E230BD31BFB1AEAE067D86930")
     public String getSipVersion() {
-        String varB4EAC82CA7396A68D541C85D26508E83_457657514 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_457657514 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_457657514 = sipVersion;
-        varB4EAC82CA7396A68D541C85D26508E83_457657514.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_457657514.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_457657514;
-        // ---------- Original Method ----------
-        //return sipVersion;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.076 -0400", hash_original_method = "E1410A4CC0BAAD1440D0D1F349F6B893", hash_generated_method = "9490E77B55167E8C08B818C0A6425D28")
     public void setUri(URI uri) {
         this.uri = (GenericURI)uri;
-        // ---------- Original Method ----------
-        //this.uri = (GenericURI)uri;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.076 -0400", hash_original_method = "190C52163DA3AE651D57D1F9409B666E", hash_generated_method = "0A32A302E12C16AB7BD122DBD89AC3B9")
     public void setMethod(String method) {
         this.method = method;
-        // ---------- Original Method ----------
-        //this.method = method;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.076 -0400", hash_original_method = "1D61DBA7A6626C97B8FBAF50D3DDD562", hash_generated_method = "5D5262EE7BD591D6E71A6ED43A58938F")
     public void setSipVersion(String version) {
         this.sipVersion = version;
-        // ---------- Original Method ----------
-        //this.sipVersion = version;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.077 -0400", hash_original_method = "4D5FB483F06B9DEED18B900A5129C79B", hash_generated_method = "3B45D6CE26A326D9D9C3F7E32FEF443D")
     public String getVersionMajor() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1951557337 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_148264258 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1951557337 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_148264258 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1951557337 = null;
         String major = null;
         boolean slash = false;
@@ -154,54 +157,55 @@ public class RequestLine extends SIPObject implements SipRequestLine {
             {
                 {
                     boolean varA8700FADE3EA4C6331A22B4D0D4435B3_1388546182 = (sipVersion.charAt(i) == '.');
-                } //End collapsed parenthetic
+                } 
                 {
                     major = "" + sipVersion.charAt(i);
                     major += sipVersion.charAt(i);
-                } //End block
+                } 
                 {
                     boolean var0DA5D2C2C152124EEAFDE0E0B2B4C8B3_800194436 = (sipVersion.charAt(i) == '/');
                     slash = true;
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_148264258 = major;
-        String varA7E53CE21691AB073D9660D615818899_1124832782; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1124832782; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1124832782 = varB4EAC82CA7396A68D541C85D26508E83_1951557337;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1124832782 = varB4EAC82CA7396A68D541C85D26508E83_148264258;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1124832782.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1124832782.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1124832782;
-        // ---------- Original Method ----------
-        //if (sipVersion == null)
-            //return null;
-        //String major = null;
-        //boolean slash = false;
-        //for (int i = 0; i < sipVersion.length(); i++) {
-            //if (sipVersion.charAt(i) == '.')
-                //break;
-            //if (slash) {
-                //if (major == null)
-                    //major = "" + sipVersion.charAt(i);
-                //else
-                    //major += sipVersion.charAt(i);
-            //}
-            //if (sipVersion.charAt(i) == '/')
-                //slash = true;
-        //}
-        //return major;
+        
+        
+            
+        
+        
+        
+            
+                
+            
+                
+                    
+                
+                    
+            
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.080 -0400", hash_original_method = "4EF04355E0E174C22FDE9BF5C4BD4B3D", hash_generated_method = "1C3F5412288B13DC7104658896F3EBCE")
     public String getVersionMinor() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2051749707 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1482989905 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_2051749707 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1482989905 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2051749707 = null;
         String minor = null;
         boolean dot = false;
@@ -212,50 +216,51 @@ public class RequestLine extends SIPObject implements SipRequestLine {
                 {
                     minor = "" + sipVersion.charAt(i);
                     minor += sipVersion.charAt(i);
-                } //End block
+                } 
                 {
                     boolean varA8700FADE3EA4C6331A22B4D0D4435B3_233126315 = (sipVersion.charAt(i) == '.');
                     dot = true;
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1482989905 = minor;
-        String varA7E53CE21691AB073D9660D615818899_1202146768; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1202146768; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1202146768 = varB4EAC82CA7396A68D541C85D26508E83_2051749707;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1202146768 = varB4EAC82CA7396A68D541C85D26508E83_1482989905;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1202146768.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1202146768.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1202146768;
-        // ---------- Original Method ----------
-        //if (sipVersion == null)
-            //return null;
-        //String minor = null;
-        //boolean dot = false;
-        //for (int i = 0; i < sipVersion.length(); i++) {
-            //if (dot) {
-                //if (minor == null)
-                    //minor = "" + sipVersion.charAt(i);
-                //else
-                    //minor += sipVersion.charAt(i);
-            //}
-            //if (sipVersion.charAt(i) == '.')
-                //dot = true;
-        //}
-        //return minor;
+        
+        
+            
+        
+        
+        
+            
+                
+                    
+                
+                    
+            
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.081 -0400", hash_original_method = "1239840CE17889EA14CF87055D293638", hash_generated_method = "C991A9DBF20EFD1E52F87F402B276A29")
     public boolean equals(Object other) {
         boolean retval;
         {
             boolean varAC16F771BB29A32F2C455E410359AF13_228409473 = (!other.getClass().equals(this.getClass()));
-        } //End collapsed parenthetic
+        } 
         RequestLine that = (RequestLine) other;
         try 
         {
@@ -263,45 +268,46 @@ public class RequestLine extends SIPObject implements SipRequestLine {
                 this.method.equals(that.method)
                     && this.uri.equals(that.uri)
                     && this.sipVersion.equals(that.sipVersion);
-        } //End block
+        } 
         catch (NullPointerException ex)
         {
             retval = false;
-        } //End block
+        } 
         addTaint(other.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_866576483 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_866576483;
-        // ---------- Original Method ----------
-        //boolean retval;
-        //if (!other.getClass().equals(this.getClass())) {
-            //return false;
-        //}
-        //RequestLine that = (RequestLine) other;
-        //try {
-            //retval =
-                //this.method.equals(that.method)
-                    //&& this.uri.equals(that.uri)
-                    //&& this.sipVersion.equals(that.sipVersion);
-        //} catch (NullPointerException ex) {
-            //retval = false;
-        //}
-        //return retval;
+        
+        
+        
+            
+        
+        
+        
+            
+                
+                    
+                    
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.082 -0400", hash_original_method = "6B13CE61BDAF8DDF9CB0869D09E1BD0F", hash_generated_method = "E0DBE4FDE41E7EC0F4159F274852F72D")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1417451814 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1417451814 = null; 
         RequestLine retval = (RequestLine) super.clone();
         retval.uri = (GenericURI) this.uri.clone();
         varB4EAC82CA7396A68D541C85D26508E83_1417451814 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_1417451814.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1417451814.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1417451814;
-        // ---------- Original Method ----------
-        //RequestLine retval = (RequestLine) super.clone();
-        //if (this.uri != null)
-            //retval.uri = (GenericURI) this.uri.clone();
-        //return retval;
+        
+        
+        
+            
+        
     }
 
     

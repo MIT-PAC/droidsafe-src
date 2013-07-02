@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.bouncycastle.asn1.ASN1Encodable;
@@ -28,9 +28,9 @@ public class X509Extension {
         ASN1OctetString         value) {
         this.critical = critical.isTrue();
         this.value = value;
-        // ---------- Original Method ----------
-        //this.critical = critical.isTrue();
-        //this.value = value;
+        
+        
+        
     }
 
     
@@ -40,9 +40,9 @@ public class X509Extension {
         ASN1OctetString         value) {
         this.critical = critical;
         this.value = value;
-        // ---------- Original Method ----------
-        //this.critical = critical;
-        //this.value = value;
+        
+        
+        
     }
 
     
@@ -50,53 +50,56 @@ public class X509Extension {
     public boolean isCritical() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1381057271 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1381057271;
-        // ---------- Original Method ----------
-        //return critical;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.103 -0400", hash_original_method = "EB9162E88B2ECD208428A8DA5B61CEE8", hash_generated_method = "B93DF8BE8EDACBE4AA5E46AD16FACD9F")
     public ASN1OctetString getValue() {
-        ASN1OctetString varB4EAC82CA7396A68D541C85D26508E83_320003661 = null; //Variable for return #1
+        ASN1OctetString varB4EAC82CA7396A68D541C85D26508E83_320003661 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_320003661 = value;
-        varB4EAC82CA7396A68D541C85D26508E83_320003661.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_320003661.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_320003661;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.104 -0400", hash_original_method = "1593618AA769EDEFE49746B8725FB3A3", hash_generated_method = "80209C21AEB5076744D532A7BA8D612F")
     public ASN1Encodable getParsedValue() {
-        ASN1Encodable varB4EAC82CA7396A68D541C85D26508E83_1816666850 = null; //Variable for return #1
+        ASN1Encodable varB4EAC82CA7396A68D541C85D26508E83_1816666850 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1816666850 = convertValueToObject(this);
-        varB4EAC82CA7396A68D541C85D26508E83_1816666850.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1816666850.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1816666850;
-        // ---------- Original Method ----------
-        //return convertValueToObject(this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.104 -0400", hash_original_method = "F51FC5FDE8514BA4D7895E2CA6F69CED", hash_generated_method = "9D4E3E8E2A008F9A1C02F44F4CB665F2")
     public int hashCode() {
         {
             boolean var6AE77A2063D5859194080BD59BDF9199_595082040 = (this.isCritical());
             {
                 int varE11CF5FC359D7CD25833B4D5D6E451F2_650156861 = (this.getValue().hashCode());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int var0B2BFDD10921CAA96F647C07149C5FD9_1133659650 = (~this.getValue().hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2123636123 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2123636123;
-        // ---------- Original Method ----------
-        //if (this.isCritical())
-        //{
-            //return this.getValue().hashCode();
-        //}
-        //return ~this.getValue().hashCode();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.105 -0400", hash_original_method = "63E75CEC65A75841B4924B9C6901B009", hash_generated_method = "C3A2E1F9B85EA14D4AE23A7ABD1F054B")
     public boolean equals(
         Object  o) {
@@ -106,17 +109,18 @@ public class X509Extension {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1857399266 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1857399266;
-        // ---------- Original Method ----------
-        //if (!(o instanceof X509Extension))
-        //{
-            //return false;
-        //}
-        //X509Extension   other = (X509Extension)o;
-        //return other.getValue().equals(this.getValue())
-            //&& (other.isCritical() == this.isCritical());
+        
+        
+        
+            
+        
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ASN1Object convertValueToObject(
         X509Extension ext) throws IllegalArgumentException {
         try

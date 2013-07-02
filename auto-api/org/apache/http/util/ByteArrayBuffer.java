@@ -1,11 +1,11 @@
 package org.apache.http.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class ByteArrayBuffer {
@@ -21,26 +21,27 @@ public final class ByteArrayBuffer {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Buffer capacity may not be negative");
-        } //End block
+        } 
         this.buffer = new byte[capacity];
-        // ---------- Original Method ----------
-        //if (capacity < 0) {
-            //throw new IllegalArgumentException("Buffer capacity may not be negative");
-        //}
-        //this.buffer = new byte[capacity];
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.670 -0400", hash_original_method = "00DB8B6A06284480D1470563C3051457", hash_generated_method = "D7D86314513812A4B5ABB0F664F3CA12")
     private void expand(int newlen) {
         byte newbuffer[] = new byte[Math.max(this.buffer.length << 1, newlen)];
         System.arraycopy(this.buffer, 0, newbuffer, 0, this.len);
         this.buffer = newbuffer;
         addTaint(newlen);
-        // ---------- Original Method ----------
-        //byte newbuffer[] = new byte[Math.max(this.buffer.length << 1, newlen)];
-        //System.arraycopy(this.buffer, 0, newbuffer, 0, this.len);
-        //this.buffer = newbuffer;
+        
+        
+        
+        
     }
 
     
@@ -48,50 +49,51 @@ public final class ByteArrayBuffer {
     public void append(final byte[] b, int off, int len) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         int newlen = this.len + len;
         {
             expand(newlen);
-        } //End block
+        } 
         System.arraycopy(b, off, this.buffer, this.len, len);
         this.len = newlen;
         addTaint(b[0]);
         addTaint(off);
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //return;
-        //}
-        //if ((off < 0) || (off > b.length) || (len < 0) ||
-                //((off + len) < 0) || ((off + len) > b.length)) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (len == 0) {
-            //return;
-        //}
-        //int newlen = this.len + len;
-        //if (newlen > this.buffer.length) {
-            //expand(newlen);
-        //}
-        //System.arraycopy(b, off, this.buffer, this.len, len);
-        //this.len = newlen;
+        
+        
+            
+        
+        
+                
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.670 -0400", hash_original_method = "2CBB81D0688F751ED507CC2CFBAC1CFC", hash_generated_method = "2944E31FA27B4784CB5143B46849C7A6")
     public void append(int b) {
         int newlen = this.len + 1;
         {
             expand(newlen);
-        } //End block
+        } 
         this.buffer[this.len] = (byte)b;
         this.len = newlen;
-        // ---------- Original Method ----------
-        //int newlen = this.len + 1;
-        //if (newlen > this.buffer.length) {
-            //expand(newlen);
-        //}
-        //this.buffer[this.len] = (byte)b;
-        //this.len = newlen;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -99,41 +101,41 @@ public final class ByteArrayBuffer {
     public void append(final char[] b, int off, int len) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         int oldlen = this.len;
         int newlen = oldlen + len;
         {
             expand(newlen);
-        } //End block
+        } 
         {
             int i1 = off;
             int i2 = oldlen;
             {
                 this.buffer[i2] = (byte) b[i1];
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.len = newlen;
         addTaint(off);
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //return;
-        //}
-        //if ((off < 0) || (off > b.length) || (len < 0) ||
-                //((off + len) < 0) || ((off + len) > b.length)) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (len == 0) {
-            //return;
-        //}
-        //int oldlen = this.len;
-        //int newlen = oldlen + len;
-        //if (newlen > this.buffer.length) {
-            //expand(newlen);
-        //}
-        //for (int i1 = off, i2 = oldlen; i2 < newlen; i1++, i2++) {
-            //this.buffer[i2] = (byte) b[i1];
-        //}
-        //this.len = newlen;
+        
+        
+            
+        
+        
+                
+            
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -143,36 +145,37 @@ public final class ByteArrayBuffer {
         addTaint(b.getTaint());
         addTaint(off);
         addTaint(len);
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //return;
-        //}
-        //append(b.buffer(), off, len);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.672 -0400", hash_original_method = "A450C39265F5D0A0BD0BDC87E4C74433", hash_generated_method = "337424E6F35DDD475218DC5AB9D00E92")
     public void clear() {
         this.len = 0;
-        // ---------- Original Method ----------
-        //this.len = 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.672 -0400", hash_original_method = "1D2E8B5D0002EFCBEC9528FA90BDCD1E", hash_generated_method = "CA7A500C1553D62A7290961DB7116703")
     public byte[] toByteArray() {
         byte[] b = new byte[this.len];
         {
             System.arraycopy(this.buffer, 0, b, 0, this.len);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1705004440 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1705004440;
-        // ---------- Original Method ----------
-        //byte[] b = new byte[this.len];
-        //if (this.len > 0) {
-            //System.arraycopy(this.buffer, 0, b, 0, this.len);
-        //}
-        //return b;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -181,8 +184,8 @@ public final class ByteArrayBuffer {
         addTaint(i);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_937055086 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_937055086;
-        // ---------- Original Method ----------
-        //return this.buffer[i];
+        
+        
     }
 
     
@@ -190,8 +193,8 @@ public final class ByteArrayBuffer {
     public int capacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404978005 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404978005;
-        // ---------- Original Method ----------
-        //return this.buffer.length;
+        
+        
     }
 
     
@@ -199,8 +202,8 @@ public final class ByteArrayBuffer {
     public int length() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_337759374 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_337759374;
-        // ---------- Original Method ----------
-        //return this.len;
+        
+        
     }
 
     
@@ -208,22 +211,23 @@ public final class ByteArrayBuffer {
     public byte[] buffer() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1671568540 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1671568540;
-        // ---------- Original Method ----------
-        //return this.buffer;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.674 -0400", hash_original_method = "91BC3CAF824730CA70DA03BDE47FFB38", hash_generated_method = "88308711C78C4406ECDB2D627E5D6C99")
     public void setLength(int len) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         this.len = len;
-        // ---------- Original Method ----------
-        //if (len < 0 || len > this.buffer.length) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //this.len = len;
+        
+        
+            
+        
+        
     }
 
     
@@ -231,8 +235,8 @@ public final class ByteArrayBuffer {
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1007748371 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1007748371;
-        // ---------- Original Method ----------
-        //return this.len == 0;
+        
+        
     }
 
     
@@ -240,8 +244,8 @@ public final class ByteArrayBuffer {
     public boolean isFull() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_969165245 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_969165245;
-        // ---------- Original Method ----------
-        //return this.len == this.buffer.length;
+        
+        
     }
 
     

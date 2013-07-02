@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ComponentName;
 import android.content.Context;
@@ -56,7 +56,7 @@ public class ApplicationErrorReport implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.316 -0400", hash_original_method = "6CC6117712C6457F9E284742535D4C3A", hash_generated_method = "A32824C33E3DAEF3E43183F720B0B2CF")
     public  ApplicationErrorReport() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -64,11 +64,12 @@ public class ApplicationErrorReport implements Parcelable {
       ApplicationErrorReport(Parcel in) {
         readFromParcel(in);
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        //readFromParcel(in);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ComponentName getErrorReportReceiver(Context context,
             String packageName, int appFlags) {
         int enabled = Settings.Secure.getInt(context.getContentResolver(),
@@ -94,6 +95,7 @@ public class ApplicationErrorReport implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ComponentName getErrorReportReceiver(PackageManager pm, String errorPackage,
             String receiverPackage) {
         if (receiverPackage == null || receiverPackage.length() == 0) {
@@ -112,6 +114,7 @@ public class ApplicationErrorReport implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.317 -0400", hash_original_method = "A097CEBB0222A4C65AC186DA78BE4FCB", hash_generated_method = "DE8F7739BE2E2E7079EE17481D4C28E3")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(type);
@@ -120,44 +123,45 @@ public class ApplicationErrorReport implements Parcelable {
         dest.writeString(processName);
         dest.writeLong(time);
         dest.writeInt(systemApp ? 1 : 0);
-        //Begin case TYPE_CRASH 
+        
         crashInfo.writeToParcel(dest, flags);
-        //End case TYPE_CRASH 
-        //Begin case TYPE_ANR 
+        
+        
         anrInfo.writeToParcel(dest, flags);
-        //End case TYPE_ANR 
-        //Begin case TYPE_BATTERY 
+        
+        
         batteryInfo.writeToParcel(dest, flags);
-        //End case TYPE_BATTERY 
-        //Begin case TYPE_RUNNING_SERVICE 
+        
+        
         runningServiceInfo.writeToParcel(dest, flags);
-        //End case TYPE_RUNNING_SERVICE 
+        
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(type);
-        //dest.writeString(packageName);
-        //dest.writeString(installerPackageName);
-        //dest.writeString(processName);
-        //dest.writeLong(time);
-        //dest.writeInt(systemApp ? 1 : 0);
-        //switch (type) {
-            //case TYPE_CRASH:
-                //crashInfo.writeToParcel(dest, flags);
-                //break;
-            //case TYPE_ANR:
-                //anrInfo.writeToParcel(dest, flags);
-                //break;
-            //case TYPE_BATTERY:
-                //batteryInfo.writeToParcel(dest, flags);
-                //break;
-            //case TYPE_RUNNING_SERVICE:
-                //runningServiceInfo.writeToParcel(dest, flags);
-                //break;
-        //}
+        
+        
+        
+        
+        
+        
+        
+        
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.319 -0400", hash_original_method = "D8BAAB71575DEB17ADCE92E48607D31D", hash_generated_method = "AE72B9EAE1C63095EC761270E2E241DC")
     public void readFromParcel(Parcel in) {
         type = in.readInt();
@@ -166,56 +170,56 @@ public class ApplicationErrorReport implements Parcelable {
         processName = in.readString();
         time = in.readLong();
         systemApp = in.readInt() == 1;
-        //Begin case TYPE_CRASH 
+        
         crashInfo = new CrashInfo(in);
-        //End case TYPE_CRASH 
-        //Begin case TYPE_CRASH 
+        
+        
         anrInfo = null;
-        //End case TYPE_CRASH 
-        //Begin case TYPE_CRASH 
+        
+        
         batteryInfo = null;
-        //End case TYPE_CRASH 
-        //Begin case TYPE_CRASH 
+        
+        
         runningServiceInfo = null;
-        //End case TYPE_CRASH 
-        //Begin case TYPE_ANR 
+        
+        
         anrInfo = new AnrInfo(in);
-        //End case TYPE_ANR 
-        //Begin case TYPE_ANR 
+        
+        
         crashInfo = null;
-        //End case TYPE_ANR 
-        //Begin case TYPE_ANR 
+        
+        
         batteryInfo = null;
-        //End case TYPE_ANR 
-        //Begin case TYPE_ANR 
+        
+        
         runningServiceInfo = null;
-        //End case TYPE_ANR 
-        //Begin case TYPE_BATTERY 
+        
+        
         batteryInfo = new BatteryInfo(in);
-        //End case TYPE_BATTERY 
-        //Begin case TYPE_BATTERY 
+        
+        
         anrInfo = null;
-        //End case TYPE_BATTERY 
-        //Begin case TYPE_BATTERY 
+        
+        
         crashInfo = null;
-        //End case TYPE_BATTERY 
-        //Begin case TYPE_BATTERY 
+        
+        
         runningServiceInfo = null;
-        //End case TYPE_BATTERY 
-        //Begin case TYPE_RUNNING_SERVICE 
+        
+        
         batteryInfo = null;
-        //End case TYPE_RUNNING_SERVICE 
-        //Begin case TYPE_RUNNING_SERVICE 
+        
+        
         anrInfo = null;
-        //End case TYPE_RUNNING_SERVICE 
-        //Begin case TYPE_RUNNING_SERVICE 
+        
+        
         crashInfo = null;
-        //End case TYPE_RUNNING_SERVICE 
-        //Begin case TYPE_RUNNING_SERVICE 
+        
+        
         runningServiceInfo = new RunningServiceInfo(in);
-        //End case TYPE_RUNNING_SERVICE 
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
+        
     }
 
     
@@ -223,11 +227,12 @@ public class ApplicationErrorReport implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_159791589 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_159791589;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.321 -0400", hash_original_method = "EB05E0A242CB818854C5BC92B57FA752", hash_generated_method = "633554671DE1F2401166AF04FDA08A76")
     public void dump(Printer pw, String prefix) {
         pw.println(prefix + "type: " + type);
@@ -236,41 +241,41 @@ public class ApplicationErrorReport implements Parcelable {
         pw.println(prefix + "processName: " + processName);
         pw.println(prefix + "time: " + time);
         pw.println(prefix + "systemApp: " + systemApp);
-        //Begin case TYPE_CRASH 
+        
         crashInfo.dump(pw, prefix);
-        //End case TYPE_CRASH 
-        //Begin case TYPE_ANR 
+        
+        
         anrInfo.dump(pw, prefix);
-        //End case TYPE_ANR 
-        //Begin case TYPE_BATTERY 
+        
+        
         batteryInfo.dump(pw, prefix);
-        //End case TYPE_BATTERY 
-        //Begin case TYPE_RUNNING_SERVICE 
+        
+        
         runningServiceInfo.dump(pw, prefix);
-        //End case TYPE_RUNNING_SERVICE 
+        
         addTaint(pw.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //pw.println(prefix + "type: " + type);
-        //pw.println(prefix + "packageName: " + packageName);
-        //pw.println(prefix + "installerPackageName: " + installerPackageName);
-        //pw.println(prefix + "processName: " + processName);
-        //pw.println(prefix + "time: " + time);
-        //pw.println(prefix + "systemApp: " + systemApp);
-        //switch (type) {
-            //case TYPE_CRASH:
-                //crashInfo.dump(pw, prefix);
-                //break;
-            //case TYPE_ANR:
-                //anrInfo.dump(pw, prefix);
-                //break;
-            //case TYPE_BATTERY:
-                //batteryInfo.dump(pw, prefix);
-                //break;
-            //case TYPE_RUNNING_SERVICE:
-                //runningServiceInfo.dump(pw, prefix);
-                //break;
-        //}
+        
+        
+        
+        
+        
+        
+        
+        
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+        
     }
 
     
@@ -299,7 +304,7 @@ public class ApplicationErrorReport implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.322 -0400", hash_original_method = "A5C69B6119C4811D45501C8F0E46959E", hash_generated_method = "8F2057BAD303C22C04121A18F120A112")
         public  CrashInfo() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -318,17 +323,17 @@ public class ApplicationErrorReport implements Parcelable {
                         boolean varFAC1DD4231C98510C5F83CEABF61BBE8_239207930 = (tr.getStackTrace() != null && tr.getStackTrace().length > 0);
                         {
                             rootTr = tr;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     String msg = tr.getMessage();
                     {
                         boolean var1F789A916FEA465A3D5B39DAAFBEE0CA_1421098226 = (msg != null && msg.length() > 0);
                         {
                             exceptionMessage = msg;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             exceptionClassName = rootTr.getClass().getName();
             {
                 boolean varB1864E601FD927D95B56A69CA736BC55_553207352 = (rootTr.getStackTrace().length > 0);
@@ -338,16 +343,16 @@ public class ApplicationErrorReport implements Parcelable {
                     throwClassName = trace.getClassName();
                     throwMethodName = trace.getMethodName();
                     throwLineNumber = trace.getLineNumber();
-                } //End block
+                } 
                 {
                     throwFileName = "unknown";
                     throwClassName = "unknown";
                     throwMethodName = "unknown";
                     throwLineNumber = 0;
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -360,14 +365,14 @@ public class ApplicationErrorReport implements Parcelable {
             throwMethodName = in.readString();
             throwLineNumber = in.readInt();
             stackTrace = in.readString();
-            // ---------- Original Method ----------
-            //exceptionClassName = in.readString();
-            //exceptionMessage = in.readString();
-            //throwFileName = in.readString();
-            //throwClassName = in.readString();
-            //throwMethodName = in.readString();
-            //throwLineNumber = in.readInt();
-            //stackTrace = in.readString();
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -382,14 +387,14 @@ public class ApplicationErrorReport implements Parcelable {
             dest.writeString(stackTrace);
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //dest.writeString(exceptionClassName);
-            //dest.writeString(exceptionMessage);
-            //dest.writeString(throwFileName);
-            //dest.writeString(throwClassName);
-            //dest.writeString(throwMethodName);
-            //dest.writeInt(throwLineNumber);
-            //dest.writeString(stackTrace);
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -404,14 +409,14 @@ public class ApplicationErrorReport implements Parcelable {
             pw.println(prefix + "stackTrace: " + stackTrace);
             addTaint(pw.getTaint());
             addTaint(prefix.getTaint());
-            // ---------- Original Method ----------
-            //pw.println(prefix + "exceptionClassName: " + exceptionClassName);
-            //pw.println(prefix + "exceptionMessage: " + exceptionMessage);
-            //pw.println(prefix + "throwFileName: " + throwFileName);
-            //pw.println(prefix + "throwClassName: " + throwClassName);
-            //pw.println(prefix + "throwMethodName: " + throwMethodName);
-            //pw.println(prefix + "throwLineNumber: " + throwLineNumber);
-            //pw.println(prefix + "stackTrace: " + stackTrace);
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -432,7 +437,7 @@ public class ApplicationErrorReport implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.326 -0400", hash_original_method = "76183B88EF41C33999366984D15A43B8", hash_generated_method = "97ECD60A9856E55398AB9A94F8B3E0EF")
         public  AnrInfo() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -441,10 +446,10 @@ public class ApplicationErrorReport implements Parcelable {
             activity = in.readString();
             cause = in.readString();
             info = in.readString();
-            // ---------- Original Method ----------
-            //activity = in.readString();
-            //cause = in.readString();
-            //info = in.readString();
+            
+            
+            
+            
         }
 
         
@@ -455,10 +460,10 @@ public class ApplicationErrorReport implements Parcelable {
             dest.writeString(info);
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //dest.writeString(activity);
-            //dest.writeString(cause);
-            //dest.writeString(info);
+            
+            
+            
+            
         }
 
         
@@ -469,10 +474,10 @@ public class ApplicationErrorReport implements Parcelable {
             pw.println(prefix + "info: " + info);
             addTaint(pw.getTaint());
             addTaint(prefix.getTaint());
-            // ---------- Original Method ----------
-            //pw.println(prefix + "activity: " + activity);
-            //pw.println(prefix + "cause: " + cause);
-            //pw.println(prefix + "info: " + info);
+            
+            
+            
+            
         }
 
         
@@ -496,7 +501,7 @@ public class ApplicationErrorReport implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.330 -0400", hash_original_method = "D2192429514F02BB97F8B55205CB5D4D", hash_generated_method = "50D456E6A7890D787C7F0F99F1A3C64A")
         public  BatteryInfo() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -506,11 +511,11 @@ public class ApplicationErrorReport implements Parcelable {
             durationMicros = in.readLong();
             usageDetails = in.readString();
             checkinDetails = in.readString();
-            // ---------- Original Method ----------
-            //usagePercent = in.readInt();
-            //durationMicros = in.readLong();
-            //usageDetails = in.readString();
-            //checkinDetails = in.readString();
+            
+            
+            
+            
+            
         }
 
         
@@ -522,11 +527,11 @@ public class ApplicationErrorReport implements Parcelable {
             dest.writeString(checkinDetails);
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //dest.writeInt(usagePercent);
-            //dest.writeLong(durationMicros);
-            //dest.writeString(usageDetails);
-            //dest.writeString(checkinDetails);
+            
+            
+            
+            
+            
         }
 
         
@@ -538,11 +543,11 @@ public class ApplicationErrorReport implements Parcelable {
             pw.println(prefix + "checkinDetails: " + checkinDetails);
             addTaint(pw.getTaint());
             addTaint(prefix.getTaint());
-            // ---------- Original Method ----------
-            //pw.println(prefix + "usagePercent: " + usagePercent);
-            //pw.println(prefix + "durationMicros: " + durationMicros);
-            //pw.println(prefix + "usageDetails: " + usageDetails);
-            //pw.println(prefix + "checkinDetails: " + checkinDetails);
+            
+            
+            
+            
+            
         }
 
         
@@ -560,7 +565,7 @@ public class ApplicationErrorReport implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:16.333 -0400", hash_original_method = "621426751430068D32289E518662756C", hash_generated_method = "822CEFC1BD8FA9077CAB00884D317765")
         public  RunningServiceInfo() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -568,9 +573,9 @@ public class ApplicationErrorReport implements Parcelable {
         public  RunningServiceInfo(Parcel in) {
             durationMillis = in.readLong();
             serviceDetails = in.readString();
-            // ---------- Original Method ----------
-            //durationMillis = in.readLong();
-            //serviceDetails = in.readString();
+            
+            
+            
         }
 
         
@@ -580,9 +585,9 @@ public class ApplicationErrorReport implements Parcelable {
             dest.writeString(serviceDetails);
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //dest.writeLong(durationMillis);
-            //dest.writeString(serviceDetails);
+            
+            
+            
         }
 
         
@@ -592,9 +597,9 @@ public class ApplicationErrorReport implements Parcelable {
             pw.println(prefix + "serviceDetails: " + serviceDetails);
             addTaint(pw.getTaint());
             addTaint(prefix.getTaint());
-            // ---------- Original Method ----------
-            //pw.println(prefix + "durationMillis: " + durationMillis);
-            //pw.println(prefix + "serviceDetails: " + serviceDetails);
+            
+            
+            
         }
 
         
@@ -635,12 +640,12 @@ public class ApplicationErrorReport implements Parcelable {
             return new ApplicationErrorReport[size];
         }
     };
-    // orphaned legacy method
+    
     public ApplicationErrorReport createFromParcel(Parcel source) {
             return new ApplicationErrorReport(source);
         }
     
-    // orphaned legacy method
+    
     public ApplicationErrorReport[] newArray(int size) {
             return new ApplicationErrorReport[size];
         }

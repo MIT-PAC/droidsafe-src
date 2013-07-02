@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Arrays;
 
@@ -28,10 +28,10 @@ public class ByteArrayInputStream extends InputStream {
         this.mark = 0;
         this.buf = buf;
         this.count = buf.length;
-        // ---------- Original Method ----------
-        //this.mark = 0;
-        //this.buf = buf;
-        //this.count = buf.length;
+        
+        
+        
+        
     }
 
     
@@ -41,11 +41,11 @@ public class ByteArrayInputStream extends InputStream {
         pos = offset;
         mark = offset;
         count = offset + length > buf.length ? buf.length : offset + length;
-        // ---------- Original Method ----------
-        //this.buf = buf;
-        //pos = offset;
-        //mark = offset;
-        //count = offset + length > buf.length ? buf.length : offset + length;
+        
+        
+        
+        
+        
     }
 
     
@@ -54,15 +54,15 @@ public class ByteArrayInputStream extends InputStream {
     public synchronized int available() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_963190446 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_963190446;
-        // ---------- Original Method ----------
-        //return count - pos;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.526 -0400", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "6B4749673D8A7A62B822BE7109DA1BE7")
     @Override
     public void close() throws IOException {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -71,8 +71,8 @@ public class ByteArrayInputStream extends InputStream {
     public synchronized void mark(int readlimit) {
         mark = pos;
         addTaint(readlimit);
-        // ---------- Original Method ----------
-        //mark = pos;
+        
+        
     }
 
     
@@ -81,8 +81,8 @@ public class ByteArrayInputStream extends InputStream {
     public boolean markSupported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1717152556 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1717152556;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -91,11 +91,12 @@ public class ByteArrayInputStream extends InputStream {
     public synchronized int read() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1580717517 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1580717517;
-        // ---------- Original Method ----------
-        //return pos < count ? buf[pos++] & 0xFF : -1;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.528 -0400", hash_original_method = "2397610A056026EF1112E9790F6EF360", hash_generated_method = "221C39A67328119F95E445959676033A")
     @Override
     public synchronized int read(byte[] buffer, int offset, int length) {
@@ -110,18 +111,18 @@ public class ByteArrayInputStream extends InputStream {
         addTaint(length);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1943042701 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1943042701;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(buffer.length, offset, length);
-        //if (this.pos >= this.count) {
-            //return -1;
-        //}
-        //if (length == 0) {
-            //return 0;
-        //}
-        //int copylen = this.count - pos < length ? this.count - pos : length;
-        //System.arraycopy(this.buf, pos, buffer, offset, copylen);
-        //pos += copylen;
-        //return copylen;
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -129,8 +130,8 @@ public class ByteArrayInputStream extends InputStream {
     @Override
     public synchronized void reset() {
         pos = mark;
-        // ---------- Original Method ----------
-        //pos = mark;
+        
+        
     }
 
     
@@ -141,13 +142,13 @@ public class ByteArrayInputStream extends InputStream {
         pos = this.count - pos < byteCount ? this.count : (int) (pos + byteCount);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2119195861 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2119195861;
-        // ---------- Original Method ----------
-        //if (byteCount <= 0) {
-            //return 0;
-        //}
-        //int temp = pos;
-        //pos = this.count - pos < byteCount ? this.count : (int) (pos + byteCount);
-        //return pos - temp;
+        
+        
+            
+        
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.media;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
@@ -61,9 +61,9 @@ public class AudioManager {
             mAudioFocusEventHandlerDelegate.getHandler().sendMessage(m);
             addTaint(focusChange);
             addTaint(id.getTaint());
-            // ---------- Original Method ----------
-            //Message m = mAudioFocusEventHandlerDelegate.getHandler().obtainMessage(focusChange, id);
-            //mAudioFocusEventHandlerDelegate.getHandler().sendMessage(m);
+            
+            
+            
         }
 
         
@@ -76,13 +76,14 @@ public class AudioManager {
     public  AudioManager(Context context) {
         mContext = context;
         mHandler = new Handler(context.getMainLooper());
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mHandler = new Handler(context.getMainLooper());
+        
+        
+        
     }
 
     
-        private static IAudioService getService() {
+        @DSModeled(DSC.SAFE)
+    private static IAudioService getService() {
         if (sService != null) {
             return sService;
         }
@@ -92,6 +93,7 @@ public class AudioManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.989 -0400", hash_original_method = "F1E14361B214327A2A0E751697355D64", hash_generated_method = "934F962B3AE6A69BE7F11B43384397F5")
     public void preDispatchKeyEvent(int keyCode, int stream) {
         {
@@ -102,191 +104,197 @@ public class AudioManager {
             {
                 adjustSuggestedStreamVolume(AudioManager.ADJUST_SAME,
                         stream, AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(keyCode);
         addTaint(stream);
-        // ---------- Original Method ----------
-        //if (keyCode != KeyEvent.KEYCODE_VOLUME_DOWN && keyCode != KeyEvent.KEYCODE_VOLUME_UP
-                //&& keyCode != KeyEvent.KEYCODE_VOLUME_MUTE
-                //&& mVolumeKeyUpTime + VolumePanel.PLAY_SOUND_DELAY
-                        //> SystemClock.uptimeMillis()) {
-            //adjustSuggestedStreamVolume(AudioManager.ADJUST_SAME,
-                        //stream, AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
-        //}
+        
+        
+                
+                
+                        
+            
+                        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.989 -0400", hash_original_method = "CE7E2CE8B01D9CBEAD319BD036F134E9", hash_generated_method = "2439AD6671F3E5F26D4065B90888FC3B")
     public void handleKeyDown(int keyCode, int stream) {
-        //Begin case KeyEvent.KEYCODE_VOLUME_UP KeyEvent.KEYCODE_VOLUME_DOWN 
+        
         int flags = FLAG_SHOW_UI | FLAG_VIBRATE;
-        //End case KeyEvent.KEYCODE_VOLUME_UP KeyEvent.KEYCODE_VOLUME_DOWN 
-        //Begin case KeyEvent.KEYCODE_VOLUME_UP KeyEvent.KEYCODE_VOLUME_DOWN 
+        
+        
         {
             stream = mVolumeControlStream;
             flags |= FLAG_FORCE_STREAM;
-        } //End block
-        //End case KeyEvent.KEYCODE_VOLUME_UP KeyEvent.KEYCODE_VOLUME_DOWN 
-        //Begin case KeyEvent.KEYCODE_VOLUME_UP KeyEvent.KEYCODE_VOLUME_DOWN 
+        } 
+        
+        
         adjustSuggestedStreamVolume(
                         keyCode == KeyEvent.KEYCODE_VOLUME_UP
                                 ? ADJUST_RAISE
                                 : ADJUST_LOWER,
                         stream,
                         flags);
-        //End case KeyEvent.KEYCODE_VOLUME_UP KeyEvent.KEYCODE_VOLUME_DOWN 
+        
         addTaint(keyCode);
         addTaint(stream);
-        // ---------- Original Method ----------
-        //switch (keyCode) {
-            //case KeyEvent.KEYCODE_VOLUME_UP:
-            //case KeyEvent.KEYCODE_VOLUME_DOWN:
-                //int flags = FLAG_SHOW_UI | FLAG_VIBRATE;
-                //if (mVolumeControlStream != -1) {
-                    //stream = mVolumeControlStream;
-                    //flags |= FLAG_FORCE_STREAM;
-                //}
-                //adjustSuggestedStreamVolume(
-                        //keyCode == KeyEvent.KEYCODE_VOLUME_UP
-                                //? ADJUST_RAISE
-                                //: ADJUST_LOWER,
-                        //stream,
-                        //flags);
-                //break;
-            //case KeyEvent.KEYCODE_VOLUME_MUTE:
-                //break;
-        //}
+        
+        
+            
+            
+                
+                
+                    
+                    
+                
+                
+                        
+                                
+                                
+                        
+                        
+                
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.990 -0400", hash_original_method = "4690E566A0F7A4762BD0C4814376C399", hash_generated_method = "375A6D156DBA5909F066F7FC4857C61F")
     public void handleKeyUp(int keyCode, int stream) {
-        //Begin case KeyEvent.KEYCODE_VOLUME_UP KeyEvent.KEYCODE_VOLUME_DOWN 
+        
         int flags = FLAG_PLAY_SOUND;
-        //End case KeyEvent.KEYCODE_VOLUME_UP KeyEvent.KEYCODE_VOLUME_DOWN 
-        //Begin case KeyEvent.KEYCODE_VOLUME_UP KeyEvent.KEYCODE_VOLUME_DOWN 
+        
+        
         {
             stream = mVolumeControlStream;
             flags |= FLAG_FORCE_STREAM;
-        } //End block
-        //End case KeyEvent.KEYCODE_VOLUME_UP KeyEvent.KEYCODE_VOLUME_DOWN 
-        //Begin case KeyEvent.KEYCODE_VOLUME_UP KeyEvent.KEYCODE_VOLUME_DOWN 
+        } 
+        
+        
         adjustSuggestedStreamVolume(
                         ADJUST_SAME,
                         stream,
                         flags);
-        //End case KeyEvent.KEYCODE_VOLUME_UP KeyEvent.KEYCODE_VOLUME_DOWN 
-        //Begin case KeyEvent.KEYCODE_VOLUME_UP KeyEvent.KEYCODE_VOLUME_DOWN 
+        
+        
         mVolumeKeyUpTime = SystemClock.uptimeMillis();
-        //End case KeyEvent.KEYCODE_VOLUME_UP KeyEvent.KEYCODE_VOLUME_DOWN 
+        
         addTaint(keyCode);
         addTaint(stream);
-        // ---------- Original Method ----------
-        //switch (keyCode) {
-            //case KeyEvent.KEYCODE_VOLUME_UP:
-            //case KeyEvent.KEYCODE_VOLUME_DOWN:
-                //int flags = FLAG_PLAY_SOUND;
-                //if (mVolumeControlStream != -1) {
-                    //stream = mVolumeControlStream;
-                    //flags |= FLAG_FORCE_STREAM;
-                //}
-                //adjustSuggestedStreamVolume(
-                        //ADJUST_SAME,
-                        //stream,
-                        //flags);
-                //mVolumeKeyUpTime = SystemClock.uptimeMillis();
-                //break;
-            //case KeyEvent.KEYCODE_VOLUME_MUTE:
-                //break;
-        //}
+        
+        
+            
+            
+                
+                
+                    
+                    
+                
+                
+                        
+                        
+                        
+                
+                
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.991 -0400", hash_original_method = "C38595EDF7BD63128B5AA309C4B33E8C", hash_generated_method = "465CDAEF9F43599ACDBEF48E90C581A4")
     public void adjustStreamVolume(int streamType, int direction, int flags) {
         IAudioService service = getService();
         try 
         {
             service.adjustStreamVolume(streamType, direction, flags);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(streamType);
         addTaint(direction);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.adjustStreamVolume(streamType, direction, flags);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in adjustStreamVolume", e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.991 -0400", hash_original_method = "C22839B58F1A4FE03A5B8DC3C5604E6D", hash_generated_method = "8B9758A45613053E74664B7209A037FC")
     public void adjustVolume(int direction, int flags) {
         IAudioService service = getService();
         try 
         {
             service.adjustVolume(direction, flags);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(direction);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.adjustVolume(direction, flags);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in adjustVolume", e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.992 -0400", hash_original_method = "A437B9342B9C9807FDB6D5AE81B79F65", hash_generated_method = "C571BD3FE8B2BD203D419DB90DC86F0B")
     public void adjustSuggestedStreamVolume(int direction, int suggestedStreamType, int flags) {
         IAudioService service = getService();
         try 
         {
             service.adjustSuggestedStreamVolume(direction, suggestedStreamType, flags);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(direction);
         addTaint(suggestedStreamType);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.adjustSuggestedStreamVolume(direction, suggestedStreamType, flags);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in adjustVolume", e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.992 -0400", hash_original_method = "A5416468537A862277C3CD80415076F6", hash_generated_method = "4482AFB41232813D488CCA52B35F24BB")
     public int getRingerMode() {
         IAudioService service = getService();
         try 
         {
             int var0265EE3720DE05FD1A1C293F7AF4883E_1256757541 = (service.getRingerMode());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1016433472 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1016433472;
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //return service.getRingerMode();
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in getRingerMode", e);
-            //return RINGER_MODE_NORMAL;
-        //}
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -298,394 +306,412 @@ public class AudioManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.993 -0400", hash_original_method = "87CF12BF10581D3FEA634AA8128A64C7", hash_generated_method = "74BDAEA6FCF1486DCC4EBBAC84A773A2")
     public int getStreamMaxVolume(int streamType) {
         IAudioService service = getService();
         try 
         {
             int varFCCDB31A2F17500880C400E4E2074C92_1397769956 = (service.getStreamMaxVolume(streamType));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(streamType);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_422884245 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_422884245;
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //return service.getStreamMaxVolume(streamType);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in getStreamMaxVolume", e);
-            //return 0;
-        //}
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.993 -0400", hash_original_method = "E78E6899167FF196E0675E8746CEB32F", hash_generated_method = "3054F1F1DCE88CAB608C3BFB5A196DDC")
     public int getStreamVolume(int streamType) {
         IAudioService service = getService();
         try 
         {
             int var4F88A0A8966E778EEDC728EA3FAB0491_1471986809 = (service.getStreamVolume(streamType));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(streamType);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1191378717 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1191378717;
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //return service.getStreamVolume(streamType);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in getStreamVolume", e);
-            //return 0;
-        //}
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.994 -0400", hash_original_method = "16B6103C3931EF2B68A7F288EB86CE17", hash_generated_method = "25767B1FB666A98DCA34B1A8948DB559")
     public int getLastAudibleStreamVolume(int streamType) {
         IAudioService service = getService();
         try 
         {
             int var27F02EDE47E03B5C632EFF5C758045A9_1190953321 = (service.getLastAudibleStreamVolume(streamType));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(streamType);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166217970 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166217970;
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //return service.getLastAudibleStreamVolume(streamType);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in getLastAudibleStreamVolume", e);
-            //return 0;
-        //}
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.994 -0400", hash_original_method = "3C2FC6CE4E6D1CA9BA044809D37E86F6", hash_generated_method = "52FB8E0DD1DD3B63BE00352D4FC08B18")
     public void setRingerMode(int ringerMode) {
         {
             boolean varCC03F4E2DB9431712F2901B2E0057122_1901201988 = (!isValidRingerMode(ringerMode));
-        } //End collapsed parenthetic
+        } 
         IAudioService service = getService();
         try 
         {
             service.setRingerMode(ringerMode);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(ringerMode);
-        // ---------- Original Method ----------
-        //if (!isValidRingerMode(ringerMode)) {
-            //return;
-        //}
-        //IAudioService service = getService();
-        //try {
-            //service.setRingerMode(ringerMode);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in setRingerMode", e);
-        //}
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.994 -0400", hash_original_method = "3749020B5128F4562E7A795FA2ED06F0", hash_generated_method = "2B8DEF4E35707B52DF99EA1CC4C54E33")
     public void setStreamVolume(int streamType, int index, int flags) {
         IAudioService service = getService();
         try 
         {
             service.setStreamVolume(streamType, index, flags);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(streamType);
         addTaint(index);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.setStreamVolume(streamType, index, flags);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in setStreamVolume", e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.995 -0400", hash_original_method = "68979401C5E5A9876842A31A718D3CC1", hash_generated_method = "FC18E0EC87C91B6550FBC69070A149B7")
     public void setStreamSolo(int streamType, boolean state) {
         IAudioService service = getService();
         try 
         {
             service.setStreamSolo(streamType, state, mICallBack);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(streamType);
         addTaint(state);
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.setStreamSolo(streamType, state, mICallBack);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in setStreamSolo", e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.995 -0400", hash_original_method = "D5FC01CA83C5AD93EBE0673BD699E427", hash_generated_method = "791AB6138E351546BC3787E73198A5F8")
     public void setStreamMute(int streamType, boolean state) {
         IAudioService service = getService();
         try 
         {
             service.setStreamMute(streamType, state, mICallBack);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(streamType);
         addTaint(state);
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.setStreamMute(streamType, state, mICallBack);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in setStreamMute", e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.996 -0400", hash_original_method = "740B30F7577C3CCB183F4420A2F982C5", hash_generated_method = "D6908152912CECE5DB56BDD82CB25F7E")
     public boolean isStreamMute(int streamType) {
         IAudioService service = getService();
         try 
         {
             boolean var64F9D8692C002372BA2AEB0C83405725_892485814 = (service.isStreamMute(streamType));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(streamType);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1905056092 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1905056092;
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //return service.isStreamMute(streamType);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in isStreamMute", e);
-            //return false;
-        //}
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.996 -0400", hash_original_method = "7B6A5349C22F082B0BD2BFA86A0EB11D", hash_generated_method = "F0344FF33A696923D229AEAEBE4CF048")
     public void forceVolumeControlStream(int streamType) {
         mVolumeControlStream = streamType;
-        // ---------- Original Method ----------
-        //mVolumeControlStream = streamType;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.996 -0400", hash_original_method = "F2CA732281E7EDA686D9C1A3A9E04423", hash_generated_method = "D7DA7B757D62466676E78DA41E560078")
     public boolean shouldVibrate(int vibrateType) {
         IAudioService service = getService();
         try 
         {
             boolean varF8973DA33ACFA219453A555E62E2AB3F_1498349111 = (service.shouldVibrate(vibrateType));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(vibrateType);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1746888652 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1746888652;
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //return service.shouldVibrate(vibrateType);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in shouldVibrate", e);
-            //return false;
-        //}
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.997 -0400", hash_original_method = "8D15AC5DC8AF10C8514FCDAE7CA188DE", hash_generated_method = "4E7B29DB5A5AAC8BECE5D8AFECFF400A")
     public int getVibrateSetting(int vibrateType) {
         IAudioService service = getService();
         try 
         {
             int varF37E1046BA5FAE28CC96262CCEACF0AF_322103086 = (service.getVibrateSetting(vibrateType));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(vibrateType);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200332676 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200332676;
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //return service.getVibrateSetting(vibrateType);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in getVibrateSetting", e);
-            //return VIBRATE_SETTING_OFF;
-        //}
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.997 -0400", hash_original_method = "1BAA841F73A90E0BDF1DD9E6546FAE92", hash_generated_method = "0CAAB4528413EB1BD3B3C49A9923D370")
     public void setVibrateSetting(int vibrateType, int vibrateSetting) {
         IAudioService service = getService();
         try 
         {
             service.setVibrateSetting(vibrateType, vibrateSetting);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(vibrateType);
         addTaint(vibrateSetting);
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.setVibrateSetting(vibrateType, vibrateSetting);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in setVibrateSetting", e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.997 -0400", hash_original_method = "4CC8C4119BF3E8CF0A2DBE18005271BE", hash_generated_method = "2B65013DFADCDA9F8E3D2DE3C16B1A7B")
     public void setSpeakerphoneOn(boolean on) {
         IAudioService service = getService();
         try 
         {
             service.setSpeakerphoneOn(on);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(on);
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.setSpeakerphoneOn(on);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in setSpeakerphoneOn", e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.998 -0400", hash_original_method = "87629A828DADB356D60EBD8A4600C927", hash_generated_method = "6E155BAB7712DFD94975236C7C627C7C")
     public boolean isSpeakerphoneOn() {
         IAudioService service = getService();
         try 
         {
             boolean var87598D078D83248449B547D4AD6978ED_326593385 = (service.isSpeakerphoneOn());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_267595457 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_267595457;
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //return service.isSpeakerphoneOn();
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in isSpeakerphoneOn", e);
-            //return false;
-        //}
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.998 -0400", hash_original_method = "AE17A85066353D3FDC3B454F62E84055", hash_generated_method = "85520EB370359EE7AFB1209DDB13370C")
     public boolean isBluetoothScoAvailableOffCall() {
         boolean var28BBC54E2E2172CDA0560999010643E5_365311815 = (mContext.getResources().getBoolean(
                com.android.internal.R.bool.config_bluetooth_sco_off_call));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_576322697 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_576322697;
-        // ---------- Original Method ----------
-        //return mContext.getResources().getBoolean(
-               //com.android.internal.R.bool.config_bluetooth_sco_off_call);
+        
+        
+               
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.998 -0400", hash_original_method = "7A79304FA4E978214D78F6217FAAF967", hash_generated_method = "65D909E349ED04C3363E4D36A5D0F87C")
     public void startBluetoothSco() {
         IAudioService service = getService();
         try 
         {
             service.startBluetoothSco(mICallBack);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.startBluetoothSco(mICallBack);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in startBluetoothSco", e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.999 -0400", hash_original_method = "CADB6B26FDAB5A2B15E67AB780A2BFA8", hash_generated_method = "B348D95B927B742938387F39752E8FF3")
     public void stopBluetoothSco() {
         IAudioService service = getService();
         try 
         {
             service.stopBluetoothSco(mICallBack);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.stopBluetoothSco(mICallBack);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in stopBluetoothSco", e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.999 -0400", hash_original_method = "606F2494E176D702B95CCB0A4567DEDE", hash_generated_method = "CB0436D1AC0ADE3CE6F8974EE5943198")
     public void setBluetoothScoOn(boolean on) {
         IAudioService service = getService();
         try 
         {
             service.setBluetoothScoOn(on);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(on);
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.setBluetoothScoOn(on);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in setBluetoothScoOn", e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.000 -0400", hash_original_method = "F2AF5947C2E51F8D76A34ACBB4A97B98", hash_generated_method = "4A022E188BFD02E77D3E4857DCE8C0A9")
     public boolean isBluetoothScoOn() {
         IAudioService service = getService();
         try 
         {
             boolean varD16DA93890CC6D6662396482754120D6_1114853770 = (service.isBluetoothScoOn());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_669317564 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_669317564;
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //return service.isBluetoothScoOn();
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in isBluetoothScoOn", e);
-            //return false;
-        //}
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -693,25 +719,26 @@ public class AudioManager {
     @Deprecated
     public void setBluetoothA2dpOn(boolean on) {
         addTaint(on);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.001 -0400", hash_original_method = "61CE342F240529F54025E3EC55BEFF02", hash_generated_method = "C6D2CEA7EDC34702FAFA9DA1898343BC")
     public boolean isBluetoothA2dpOn() {
         {
             boolean varEAC0D32A41CA6AC905ECBAD8C8AE1480_1462002883 = (AudioSystem.getDeviceConnectionState(DEVICE_OUT_BLUETOOTH_A2DP,"")
             == AudioSystem.DEVICE_STATE_UNAVAILABLE);
-        } //End collapsed parenthetic
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_361356105 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_361356105;
-        // ---------- Original Method ----------
-        //if (AudioSystem.getDeviceConnectionState(DEVICE_OUT_BLUETOOTH_A2DP,"")
-            //== AudioSystem.DEVICE_STATE_UNAVAILABLE) {
-            //return false;
-        //} else {
-            //return true;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -719,10 +746,11 @@ public class AudioManager {
     @Deprecated
     public void setWiredHeadsetOn(boolean on) {
         addTaint(on);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.002 -0400", hash_original_method = "602A1375ADE38071033B07AD6C9212C8", hash_generated_method = "A3839D6567139AE907AE286320B6916D")
     public boolean isWiredHeadsetOn() {
         {
@@ -730,79 +758,83 @@ public class AudioManager {
                 == AudioSystem.DEVICE_STATE_UNAVAILABLE &&
             AudioSystem.getDeviceConnectionState(DEVICE_OUT_WIRED_HEADPHONE,"")
                 == AudioSystem.DEVICE_STATE_UNAVAILABLE);
-        } //End collapsed parenthetic
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1901295497 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1901295497;
-        // ---------- Original Method ----------
-        //if (AudioSystem.getDeviceConnectionState(DEVICE_OUT_WIRED_HEADSET,"")
-                //== AudioSystem.DEVICE_STATE_UNAVAILABLE &&
-            //AudioSystem.getDeviceConnectionState(DEVICE_OUT_WIRED_HEADPHONE,"")
-                //== AudioSystem.DEVICE_STATE_UNAVAILABLE) {
-            //return false;
-        //} else {
-            //return true;
-        //}
+        
+        
+                
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.003 -0400", hash_original_method = "5FCC6D659A56B470BF76AF68D12DD9BE", hash_generated_method = "DF6E38A9DAEFF01CC0FF67CDB62A417A")
     public void setMicrophoneMute(boolean on) {
         AudioSystem.muteMicrophone(on);
         addTaint(on);
-        // ---------- Original Method ----------
-        //AudioSystem.muteMicrophone(on);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.003 -0400", hash_original_method = "82EFB94D4DB567BF9AF21B9F2B827F69", hash_generated_method = "31CD64DC00788ADA44E86BFAF34CAF27")
     public boolean isMicrophoneMute() {
         boolean var737D58D89436BE5BB1B80F4899D1D4C5_19481825 = (AudioSystem.isMicrophoneMuted());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2001133039 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2001133039;
-        // ---------- Original Method ----------
-        //return AudioSystem.isMicrophoneMuted();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.004 -0400", hash_original_method = "FB0F50379150B9BD346003DA9FF4B8A5", hash_generated_method = "5BC2BC5EA6B2535EEE5A191A4ACF4095")
     public void setMode(int mode) {
         IAudioService service = getService();
         try 
         {
             service.setMode(mode, mICallBack);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(mode);
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.setMode(mode, mICallBack);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in setMode", e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.004 -0400", hash_original_method = "F6FC0C8FF20094842E05491DBD00A26F", hash_generated_method = "1112719EA76B24A510EE645F36B8D452")
     public int getMode() {
         IAudioService service = getService();
         try 
         {
             int varF42853430CB015AAB3A7FD991D8D0A71_332901381 = (service.getMode());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2084571374 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2084571374;
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //return service.getMode();
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in getMode", e);
-            //return MODE_INVALID;
-        //}
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -812,7 +844,7 @@ public class AudioManager {
         addTaint(mode);
         addTaint(routes);
         addTaint(mask);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -822,214 +854,223 @@ public class AudioManager {
         addTaint(mode);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1276510328 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1276510328;
-        // ---------- Original Method ----------
-        //return -1;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.005 -0400", hash_original_method = "AF4716567EA0644FB4FB307583193A2C", hash_generated_method = "58B4BDBF56DB81FEAC31570B8EC86516")
     public boolean isMusicActive() {
         boolean var454E243CB980889645FE5E60C7CE53B3_696334808 = (AudioSystem.isStreamActive(STREAM_MUSIC, 0));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1514815228 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1514815228;
-        // ---------- Original Method ----------
-        //return AudioSystem.isStreamActive(STREAM_MUSIC, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.006 -0400", hash_original_method = "FB00D8D09EE0A42D5615E8AEAC323753", hash_generated_method = "5EBEF85316A32D0CAEA6EF64DC131743")
     @Deprecated
     public void setParameter(String key, String value) {
         setParameters(key+"="+value);
         addTaint(key.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //setParameters(key+"="+value);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.006 -0400", hash_original_method = "18224FDA7DBAF634E3113700EF6FFA3D", hash_generated_method = "44C066D14AFE5C4AD57C0B4D5B6CB1F3")
     public void setParameters(String keyValuePairs) {
         AudioSystem.setParameters(keyValuePairs);
         addTaint(keyValuePairs.getTaint());
-        // ---------- Original Method ----------
-        //AudioSystem.setParameters(keyValuePairs);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.006 -0400", hash_original_method = "9B4E69B0951CD7555E74053B3F2A7F5E", hash_generated_method = "AAA168A94D204906FD7FCF280F7AB295")
     public String getParameters(String keys) {
-        String varB4EAC82CA7396A68D541C85D26508E83_401607986 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_401607986 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_401607986 = AudioSystem.getParameters(keys);
         addTaint(keys.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_401607986.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_401607986.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_401607986;
-        // ---------- Original Method ----------
-        //return AudioSystem.getParameters(keys);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.007 -0400", hash_original_method = "68694F707C94BF6E0AD2DC63190ED9B5", hash_generated_method = "0D75A75D2F03359CF3691BD13C77F675")
     public void playSoundEffect(int effectType) {
         {
             boolean var4EBE86F0D61A6E6B6BD9C7B99A8C271C_950382801 = (!querySoundEffectsEnabled());
-        } //End collapsed parenthetic
+        } 
         IAudioService service = getService();
         try 
         {
             service.playSoundEffect(effectType);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(effectType);
-        // ---------- Original Method ----------
-        //if (effectType < 0 || effectType >= NUM_SOUND_EFFECTS) {
-            //return;
-        //}
-        //if (!querySoundEffectsEnabled()) {
-            //return;
-        //}
-        //IAudioService service = getService();
-        //try {
-            //service.playSoundEffect(effectType);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in playSoundEffect"+e);
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.007 -0400", hash_original_method = "F681C40806C862BA65FB1368E5E3540A", hash_generated_method = "F07AC74CF82AAEDC056F2DB540DDBFC0")
     public void playSoundEffect(int effectType, float volume) {
         IAudioService service = getService();
         try 
         {
             service.playSoundEffectVolume(effectType, volume);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(effectType);
         addTaint(volume);
-        // ---------- Original Method ----------
-        //if (effectType < 0 || effectType >= NUM_SOUND_EFFECTS) {
-            //return;
-        //}
-        //IAudioService service = getService();
-        //try {
-            //service.playSoundEffectVolume(effectType, volume);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in playSoundEffect"+e);
-        //}
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.008 -0400", hash_original_method = "91B9C921984750C333F4A3D84250AE14", hash_generated_method = "4CAB7042028B505191D0AD3482CDE04E")
     private boolean querySoundEffectsEnabled() {
         boolean varC6898D694DDE6B1CE555B5FF02F0D604_444976256 = (Settings.System.getInt(mContext.getContentResolver(), Settings.System.SOUND_EFFECTS_ENABLED, 0) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_57259964 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_57259964;
-        // ---------- Original Method ----------
-        //return Settings.System.getInt(mContext.getContentResolver(), Settings.System.SOUND_EFFECTS_ENABLED, 0) != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.008 -0400", hash_original_method = "A7E0D93492C6E9A5A55D1B76418A0B14", hash_generated_method = "351D311DA1A5561CA7AAE5CBCD17FE4E")
     public void loadSoundEffects() {
         IAudioService service = getService();
         try 
         {
             service.loadSoundEffects();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.loadSoundEffects();
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in loadSoundEffects"+e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.008 -0400", hash_original_method = "43A5029AD1D52804D92188712F1A67B5", hash_generated_method = "8484DBDCCEA3FDD7E53D85DD4197470F")
     public void unloadSoundEffects() {
         IAudioService service = getService();
         try 
         {
             service.unloadSoundEffects();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.unloadSoundEffects();
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in unloadSoundEffects"+e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.009 -0400", hash_original_method = "19FA7B2AF0BC01FED1DAA16E011C492D", hash_generated_method = "A836D1F03BEDBA5B4ACF6B49F14513CD")
     private OnAudioFocusChangeListener findFocusListener(String id) {
-        OnAudioFocusChangeListener varB4EAC82CA7396A68D541C85D26508E83_1540539653 = null; //Variable for return #1
+        OnAudioFocusChangeListener varB4EAC82CA7396A68D541C85D26508E83_1540539653 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1540539653 = mAudioFocusIdListenerMap.get(id);
         addTaint(id.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1540539653.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1540539653.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1540539653;
-        // ---------- Original Method ----------
-        //return mAudioFocusIdListenerMap.get(id);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.010 -0400", hash_original_method = "F0553D3D8E69373BA6CE7B065E0EBE95", hash_generated_method = "5DE219DD0CAEC4A836D4E1D743098AF8")
     private String getIdForAudioFocusListener(OnAudioFocusChangeListener l) {
-        String varB4EAC82CA7396A68D541C85D26508E83_136992278 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_916997769 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_136992278 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_916997769 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_136992278 = new String(this.toString());
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_916997769 = new String(this.toString() + l.toString());
-        } //End block
+        } 
         addTaint(l.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_241156330; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_241156330; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_241156330 = varB4EAC82CA7396A68D541C85D26508E83_136992278;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_241156330 = varB4EAC82CA7396A68D541C85D26508E83_916997769;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_241156330.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_241156330.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_241156330;
-        // ---------- Original Method ----------
-        //if (l == null) {
-            //return new String(this.toString());
-        //} else {
-            //return new String(this.toString() + l.toString());
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.010 -0400", hash_original_method = "C22DD0E9B28263E867F443548BB38A4B", hash_generated_method = "7BA7D01381AB43A0C27A6F977D5EE611")
     public void registerAudioFocusListener(OnAudioFocusChangeListener l) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         {
             {
                 boolean varED576F6536DA5AC2AA8A2B585F375863_240377958 = (mAudioFocusIdListenerMap.containsKey(getIdForAudioFocusListener(l)));
-            } //End collapsed parenthetic
+            } 
             mAudioFocusIdListenerMap.put(getIdForAudioFocusListener(l), l);
-        } //End block
+        } 
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //synchronized(mFocusListenerLock) {
-            //if (mAudioFocusIdListenerMap.containsKey(getIdForAudioFocusListener(l))) {
-                //return;
-            //}
-            //mAudioFocusIdListenerMap.put(getIdForAudioFocusListener(l), l);
-        //}
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -1037,12 +1078,12 @@ public class AudioManager {
     public void unregisterAudioFocusListener(OnAudioFocusChangeListener l) {
         {
             mAudioFocusIdListenerMap.remove(getIdForAudioFocusListener(l));
-        } //End block
+        } 
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //synchronized(mFocusListenerLock) {
-            //mAudioFocusIdListenerMap.remove(getIdForAudioFocusListener(l));
-        //}
+        
+        
+            
+        
     }
 
     
@@ -1056,7 +1097,7 @@ public class AudioManager {
             status = service.requestAudioFocus(streamType, durationHint, mICallBack,
                     mAudioFocusDispatcher, getIdForAudioFocusListener(l),
                     mContext.getPackageName() );
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(l.getTaint());
@@ -1064,23 +1105,23 @@ public class AudioManager {
         addTaint(durationHint);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1745282157 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1745282157;
-        // ---------- Original Method ----------
-        //int status = AUDIOFOCUS_REQUEST_FAILED;
-        //if ((durationHint < AUDIOFOCUS_GAIN) || (durationHint > AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK))
-        //{
-            //Log.e(TAG, "Invalid duration hint, audio focus request denied");
-            //return status;
-        //}
-        //registerAudioFocusListener(l);
-        //IAudioService service = getService();
-        //try {
-            //status = service.requestAudioFocus(streamType, durationHint, mICallBack,
-                    //mAudioFocusDispatcher, getIdForAudioFocusListener(l),
-                    //mContext.getPackageName() );
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Can't call requestAudioFocus() from AudioService due to "+e);
-        //}
-        //return status;
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
+            
+                    
+                    
+        
+            
+        
+        
     }
 
     
@@ -1093,78 +1134,78 @@ public class AudioManager {
         {
             status = service.abandonAudioFocus(mAudioFocusDispatcher,
                     getIdForAudioFocusListener(l));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(l.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_684014955 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_684014955;
-        // ---------- Original Method ----------
-        //int status = AUDIOFOCUS_REQUEST_FAILED;
-        //unregisterAudioFocusListener(l);
-        //IAudioService service = getService();
-        //try {
-            //status = service.abandonAudioFocus(mAudioFocusDispatcher,
-                    //getIdForAudioFocusListener(l));
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Can't call abandonAudioFocus() from AudioService due to "+e);
-        //}
-        //return status;
+        
+        
+        
+        
+        
+            
+                    
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.014 -0400", hash_original_method = "50EC2C592ADEFE7D217B837E9C2D3748", hash_generated_method = "E100C59CDCBD59046AAF0C7EEE41ECFC")
     public void registerMediaButtonEventReceiver(ComponentName eventReceiver) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         {
             boolean varC555D2093F680D7AB7ABB6EF095D9D3C_1479947543 = (!eventReceiver.getPackageName().equals(mContext.getPackageName()));
-        } //End collapsed parenthetic
+        } 
         Intent mediaButtonIntent = new Intent(Intent.ACTION_MEDIA_BUTTON);
         mediaButtonIntent.setComponent(eventReceiver);
         PendingIntent pi = PendingIntent.getBroadcast(mContext,
                 0, mediaButtonIntent, 0);
         registerMediaButtonIntent(pi, eventReceiver);
         addTaint(eventReceiver.getTaint());
-        // ---------- Original Method ----------
-        //if (eventReceiver == null) {
-            //return;
-        //}
-        //if (!eventReceiver.getPackageName().equals(mContext.getPackageName())) {
-            //Log.e(TAG, "registerMediaButtonEventReceiver() error: " +
-                    //"receiver and context package names don't match");
-            //return;
-        //}
-        //Intent mediaButtonIntent = new Intent(Intent.ACTION_MEDIA_BUTTON);
-        //mediaButtonIntent.setComponent(eventReceiver);
-        //PendingIntent pi = PendingIntent.getBroadcast(mContext,
-                //0, mediaButtonIntent, 0);
-        //registerMediaButtonIntent(pi, eventReceiver);
+        
+        
+            
+        
+        
+            
+                    
+            
+        
+        
+        
+        
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.014 -0400", hash_original_method = "F3457417B719B94CC07450473FCEA34B", hash_generated_method = "C9C7A30F2CE88B33AD1E1BAB13352FD0")
     public void registerMediaButtonIntent(PendingIntent pi, ComponentName eventReceiver) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         IAudioService service = getService();
         try 
         {
             service.registerMediaButtonIntent(pi, eventReceiver);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(pi.getTaint());
         addTaint(eventReceiver.getTaint());
-        // ---------- Original Method ----------
-        //if ((pi == null) || (eventReceiver == null)) {
-            //Log.e(TAG, "Cannot call registerMediaButtonIntent() with a null parameter");
-            //return;
-        //}
-        //IAudioService service = getService();
-        //try {
-            //service.registerMediaButtonIntent(pi, eventReceiver);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in registerMediaButtonIntent"+e);
-        //}
+        
+        
+            
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1176,15 +1217,15 @@ public class AudioManager {
                 0, mediaButtonIntent, 0);
         unregisterMediaButtonIntent(pi, eventReceiver);
         addTaint(eventReceiver.getTaint());
-        // ---------- Original Method ----------
-        //if (eventReceiver == null) {
-            //return;
-        //}
-        //Intent mediaButtonIntent = new Intent(Intent.ACTION_MEDIA_BUTTON);
-        //mediaButtonIntent.setComponent(eventReceiver);
-        //PendingIntent pi = PendingIntent.getBroadcast(mContext,
-                //0, mediaButtonIntent, 0);
-        //unregisterMediaButtonIntent(pi, eventReceiver);
+        
+        
+            
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1194,49 +1235,49 @@ public class AudioManager {
         try 
         {
             service.unregisterMediaButtonIntent(pi, eventReceiver);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(pi.getTaint());
         addTaint(eventReceiver.getTaint());
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.unregisterMediaButtonIntent(pi, eventReceiver);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in unregisterMediaButtonIntent"+e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.016 -0400", hash_original_method = "226F7C4DEEA463C35DD22DDAE8FCA983", hash_generated_method = "54FC05341EF13B00F1EBDDB8B6208F09")
     public void registerRemoteControlClient(RemoteControlClient rcClient) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         {
             boolean varB5E6ECFDFA3896796F661CCDFBFE1678_237008662 = ((rcClient == null) || (rcClient.getRcMediaIntent() == null));
-        } //End collapsed parenthetic
+        } 
         IAudioService service = getService();
         try 
         {
             service.registerRemoteControlClient(rcClient.getRcMediaIntent(),   
                     rcClient.getIRemoteControlClient(),                        
                     mContext.getPackageName());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(rcClient.getTaint());
-        // ---------- Original Method ----------
-        //if ((rcClient == null) || (rcClient.getRcMediaIntent() == null)) {
-            //return;
-        //}
-        //IAudioService service = getService();
-        //try {
-            //service.registerRemoteControlClient(rcClient.getRcMediaIntent(),   
-                    //rcClient.getIRemoteControlClient(),                        
-                    //mContext.getPackageName());                                
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in registerRemoteControlClient"+e);
-        //}
+        
+        
+            
+        
+        
+        
+            
+                    
+                    
+        
+            
+        
     }
 
     
@@ -1244,51 +1285,51 @@ public class AudioManager {
     public void unregisterRemoteControlClient(RemoteControlClient rcClient) {
         {
             boolean varB5E6ECFDFA3896796F661CCDFBFE1678_600912368 = ((rcClient == null) || (rcClient.getRcMediaIntent() == null));
-        } //End collapsed parenthetic
+        } 
         IAudioService service = getService();
         try 
         {
             service.unregisterRemoteControlClient(rcClient.getRcMediaIntent(), 
                     rcClient.getIRemoteControlClient());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(rcClient.getTaint());
-        // ---------- Original Method ----------
-        //if ((rcClient == null) || (rcClient.getRcMediaIntent() == null)) {
-            //return;
-        //}
-        //IAudioService service = getService();
-        //try {
-            //service.unregisterRemoteControlClient(rcClient.getRcMediaIntent(), 
-                    //rcClient.getIRemoteControlClient());                       
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in unregisterRemoteControlClient"+e);
-        //}
+        
+        
+            
+        
+        
+        
+            
+                    
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.016 -0400", hash_original_method = "F5BDE54913D135C31C9BD838A5D1535F", hash_generated_method = "7E5ADAB9D208ED216D191AB0E6119068")
     public void registerRemoteControlDisplay(IRemoteControlDisplay rcd) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         IAudioService service = getService();
         try 
         {
             service.registerRemoteControlDisplay(rcd);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(rcd.getTaint());
-        // ---------- Original Method ----------
-        //if (rcd == null) {
-            //return;
-        //}
-        //IAudioService service = getService();
-        //try {
-            //service.registerRemoteControlDisplay(rcd);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in registerRemoteControlDisplay " + e);
-        //}
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1298,20 +1339,20 @@ public class AudioManager {
         try 
         {
             service.unregisterRemoteControlDisplay(rcd);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(rcd.getTaint());
-        // ---------- Original Method ----------
-        //if (rcd == null) {
-            //return;
-        //}
-        //IAudioService service = getService();
-        //try {
-            //service.unregisterRemoteControlDisplay(rcd);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in unregisterRemoteControlDisplay " + e);
-        //}
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1321,22 +1362,22 @@ public class AudioManager {
         try 
         {
             service.remoteControlDisplayUsesBitmapSize(rcd, w, h);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(rcd.getTaint());
         addTaint(w);
         addTaint(h);
-        // ---------- Original Method ----------
-        //if (rcd == null) {
-            //return;
-        //}
-        //IAudioService service = getService();
-        //try {
-            //service.remoteControlDisplayUsesBitmapSize(rcd, w, h);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in remoteControlDisplayUsesBitmapSize " + e);
-        //}
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1346,16 +1387,16 @@ public class AudioManager {
         try 
         {
             service.reloadAudioSettings();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
-        // ---------- Original Method ----------
-        //IAudioService service = getService();
-        //try {
-            //service.reloadAudioSettings();
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Dead object in reloadAudioSettings"+e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1366,36 +1407,36 @@ public class AudioManager {
             (ringerMode == RINGER_MODE_VIBRATE);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_741332127 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_741332127;
-        // ---------- Original Method ----------
-        //int ringerMode = getRingerMode();
-        //boolean silentMode =
-            //(ringerMode == RINGER_MODE_SILENT) ||
-            //(ringerMode == RINGER_MODE_VIBRATE);
-        //return silentMode;
+        
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.018 -0400", hash_original_method = "039E984EE545D8462E074EC6768B62D9", hash_generated_method = "0CCE4BC813FF8D72FA08E91174D0A0C7")
     public int getDevicesForStream(int streamType) {
-        //Begin case STREAM_VOICE_CALL STREAM_SYSTEM STREAM_RING STREAM_MUSIC STREAM_ALARM STREAM_NOTIFICATION STREAM_DTMF 
+        
         int var62CA9E8E5CFD4E876A4269DEBC806814_47278644 = (AudioSystem.getDevicesForStream(streamType));
-        //End case STREAM_VOICE_CALL STREAM_SYSTEM STREAM_RING STREAM_MUSIC STREAM_ALARM STREAM_NOTIFICATION STREAM_DTMF 
+        
         addTaint(streamType);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1189174035 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1189174035;
-        // ---------- Original Method ----------
-        //switch (streamType) {
-        //case STREAM_VOICE_CALL:
-        //case STREAM_SYSTEM:
-        //case STREAM_RING:
-        //case STREAM_MUSIC:
-        //case STREAM_ALARM:
-        //case STREAM_NOTIFICATION:
-        //case STREAM_DTMF:
-            //return AudioSystem.getDevicesForStream(streamType);
-        //default:
-            //return 0;
-        //}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1411,8 +1452,8 @@ public class AudioManager {
                 boolean varE905F74B73C9447F656F9E57A8E7CAD4_923617638 = ((looper = Looper.myLooper()) == null);
                 {
                     looper = Looper.getMainLooper();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 mHandler = new Handler(looper) {                    
                     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.019 -0400", hash_original_method = "30B5FC3AB937951C0E4F92A6F6EC4647", hash_generated_method = "23EFE528F5DEBE90332324FA6CF39CFC")
@@ -1421,57 +1462,57 @@ public class AudioManager {
                         OnAudioFocusChangeListener listener = null;
                         {
                             listener = findFocusListener((String)msg.obj);
-                        } //End block
+                        } 
                         {
                             listener.onAudioFocusChange(msg.what);
-                        } //End block
+                        } 
                         addTaint(msg.getTaint());
-                        // ---------- Original Method ----------
-                        //OnAudioFocusChangeListener listener = null;
-                        //synchronized(mFocusListenerLock) {
-                            //listener = findFocusListener((String)msg.obj);
-                        //}
-                        //if (listener != null) {
-                            //listener.onAudioFocusChange(msg.what);
-                        //}
+                        
+                        
+                        
+                            
+                        
+                        
+                            
+                        
                     }
 };
-            } //End block
+            } 
             {
                 mHandler = null;
-            } //End block
-            // ---------- Original Method ----------
-            //Looper looper;
-            //if ((looper = Looper.myLooper()) == null) {
-                //looper = Looper.getMainLooper();
-            //}
-            //if (looper != null) {
-                //mHandler = new Handler(looper) {
-                    //@Override
-                    //public void handleMessage(Message msg) {
-                        //OnAudioFocusChangeListener listener = null;
-                        //synchronized(mFocusListenerLock) {
-                            //listener = findFocusListener((String)msg.obj);
-                        //}
-                        //if (listener != null) {
-                            //listener.onAudioFocusChange(msg.what);
-                        //}
-                    //}
-                //};
-            //} else {
-                //mHandler = null;
-            //}
+            } 
+            
+            
+            
+                
+            
+            
+                
+                    
+                    
+                        
+                        
+                            
+                        
+                        
+                            
+                        
+                    
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.020 -0400", hash_original_method = "10E7D4FA7AE5C5A4DFE91478AE111D01", hash_generated_method = "29536E3AF83BA457DDBAC562FF8B2D83")
          Handler getHandler() {
-            Handler varB4EAC82CA7396A68D541C85D26508E83_902991881 = null; //Variable for return #1
+            Handler varB4EAC82CA7396A68D541C85D26508E83_902991881 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_902991881 = mHandler;
-            varB4EAC82CA7396A68D541C85D26508E83_902991881.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_902991881.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_902991881;
-            // ---------- Original Method ----------
-            //return mHandler;
+            
+            
         }
 
         

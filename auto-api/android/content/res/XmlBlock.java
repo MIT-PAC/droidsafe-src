@@ -1,11 +1,11 @@
 package android.content.res;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.TypedValue;
 import com.android.internal.util.XmlUtils;
@@ -36,10 +36,10 @@ final class XmlBlock {
         mAssets = null;
         mNative = nativeCreate(data, 0, data.length);
         mStrings = new StringBlock(nativeGetStringBlock(mNative), false);
-        // ---------- Original Method ----------
-        //mAssets = null;
-        //mNative = nativeCreate(data, 0, data.length);
-        //mStrings = new StringBlock(nativeGetStringBlock(mNative), false);
+        
+        
+        
+        
     }
 
     
@@ -48,10 +48,10 @@ final class XmlBlock {
         mAssets = null;
         mNative = nativeCreate(data, offset, size);
         mStrings = new StringBlock(nativeGetStringBlock(mNative), false);
-        // ---------- Original Method ----------
-        //mAssets = null;
-        //mNative = nativeCreate(data, offset, size);
-        //mStrings = new StringBlock(nativeGetStringBlock(mNative), false);
+        
+        
+        
+        
     }
 
     
@@ -60,86 +60,90 @@ final class XmlBlock {
         mAssets = assets;
         mNative = xmlBlock;
         mStrings = new StringBlock(nativeGetStringBlock(xmlBlock), false);
-        // ---------- Original Method ----------
-        //mAssets = assets;
-        //mNative = xmlBlock;
-        //mStrings = new StringBlock(nativeGetStringBlock(xmlBlock), false);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.440 -0400", hash_original_method = "92B3E7DBAA5D8D51C162522636FE2570", hash_generated_method = "B4E7DA18AC06A705B61F6622C9433AEA")
     public void close() {
         {
             {
                 mOpen = false;
                 decOpenCountLocked();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mOpen) {
-                //mOpen = false;
-                //decOpenCountLocked();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.440 -0400", hash_original_method = "017FB1456432C4B45E3EDBB9E5F1A65C", hash_generated_method = "755E68CBCCC578A6BE297FE901E3483E")
     private void decOpenCountLocked() {
         {
             nativeDestroy(mNative);
             {
                 mAssets.xmlBlockGone(hashCode());
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //mOpenCount--;
-        //if (mOpenCount == 0) {
-            //nativeDestroy(mNative);
-            //if (mAssets != null) {
-                //mAssets.xmlBlockGone(hashCode());
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.441 -0400", hash_original_method = "36FE28CA3339B97C4303841D21F6E4EF", hash_generated_method = "7BB08A612D8474490D29D9EDC3CC06CD")
     public XmlResourceParser newParser() {
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_819679254 = null; //Variable for return #1
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_60992945 = null; //Variable for return #2
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_819679254 = null; 
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_60992945 = null; 
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_819679254 = new Parser(nativeCreateParseState(mNative), this);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_60992945 = null;
-        } //End block
-        XmlResourceParser varA7E53CE21691AB073D9660D615818899_254971635; //Final return value
+        } 
+        XmlResourceParser varA7E53CE21691AB073D9660D615818899_254971635; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_254971635 = varB4EAC82CA7396A68D541C85D26508E83_819679254;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_254971635 = varB4EAC82CA7396A68D541C85D26508E83_60992945;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_254971635.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_254971635.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_254971635;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mNative != 0) {
-                //return new Parser(nativeCreateParseState(mNative), this);
-            //}
-            //return null;
-        //}
+        
+        
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.442 -0400", hash_original_method = "4D47F0EAA663BB7736165BE426E6C1B2", hash_generated_method = "D49A6EC8D8327F8E6A58054E448C9AAB")
     protected void finalize() throws Throwable {
         close();
-        // ---------- Original Method ----------
-        //close();
+        
+        
     }
 
     
@@ -272,10 +276,10 @@ final class XmlBlock {
           Parser(int parseState, XmlBlock block) {
             mParseState = parseState;
             mBlock = block;
-            // ---------- Original Method ----------
-            //mParseState = parseState;
-            //mBlock = block;
-            //block.mOpenCount++;
+            
+            
+            
+            
         }
 
         
@@ -283,21 +287,21 @@ final class XmlBlock {
         public void setFeature(String name, boolean state) throws XmlPullParserException {
             {
                 boolean varB94CA82C41719F3E969BD618F7E5D9E4_2007074305 = (FEATURE_PROCESS_NAMESPACES.equals(name) && state);
-            } //End collapsed parenthetic
+            } 
             {
                 boolean var46B472FB98C8A84DE2826A8C4EA5EA01_865820245 = (FEATURE_REPORT_NAMESPACE_ATTRIBUTES.equals(name) && state);
-            } //End collapsed parenthetic
+            } 
             if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("Unsupported feature: " + name);
             addTaint(name.getTaint());
             addTaint(state);
-            // ---------- Original Method ----------
-            //if (FEATURE_PROCESS_NAMESPACES.equals(name) && state) {
-                //return;
-            //}
-            //if (FEATURE_REPORT_NAMESPACE_ATTRIBUTES.equals(name) && state) {
-                //return;
-            //}
-            //throw new XmlPullParserException("Unsupported feature: " + name);
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
@@ -305,21 +309,21 @@ final class XmlBlock {
         public boolean getFeature(String name) {
             {
                 boolean var30BD9FC73D8A5FB7FF062BA1F723D3AA_1230396259 = (FEATURE_PROCESS_NAMESPACES.equals(name));
-            } //End collapsed parenthetic
+            } 
             {
                 boolean var5829279DB6D53DE356D337B03CF1D24E_1890016443 = (FEATURE_REPORT_NAMESPACE_ATTRIBUTES.equals(name));
-            } //End collapsed parenthetic
+            } 
             addTaint(name.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1918554790 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1918554790;
-            // ---------- Original Method ----------
-            //if (FEATURE_PROCESS_NAMESPACES.equals(name)) {
-                //return true;
-            //}
-            //if (FEATURE_REPORT_NAMESPACE_ATTRIBUTES.equals(name)) {
-                //return true;
-            //}
-            //return false;
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
@@ -328,20 +332,20 @@ final class XmlBlock {
             if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("setProperty() not supported");
             addTaint(name.getTaint());
             addTaint(value.getTaint());
-            // ---------- Original Method ----------
-            //throw new XmlPullParserException("setProperty() not supported");
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.448 -0400", hash_original_method = "5175B2315D9AD451CFA017AE30114E6D", hash_generated_method = "75C081255E916AE87F46DAC54BD73C8B")
         public Object getProperty(String name) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1053981698 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1053981698 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1053981698 = null;
             addTaint(name.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1053981698.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1053981698.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1053981698;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
@@ -349,8 +353,8 @@ final class XmlBlock {
         public void setInput(Reader in) throws XmlPullParserException {
             if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("setInput() not supported");
             addTaint(in.getTaint());
-            // ---------- Original Method ----------
-            //throw new XmlPullParserException("setInput() not supported");
+            
+            
         }
 
         
@@ -359,8 +363,8 @@ final class XmlBlock {
             if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("setInput() not supported");
             addTaint(inputStream.getTaint());
             addTaint(inputEncoding.getTaint());
-            // ---------- Original Method ----------
-            //throw new XmlPullParserException("setInput() not supported");
+            
+            
         }
 
         
@@ -369,35 +373,35 @@ final class XmlBlock {
             if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("defineEntityReplacementText() not supported");
             addTaint(entityName.getTaint());
             addTaint(replacementText.getTaint());
-            // ---------- Original Method ----------
-            //throw new XmlPullParserException("defineEntityReplacementText() not supported");
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.470 -0400", hash_original_method = "A5499422039640FD4F9D5601F1C55CCA", hash_generated_method = "5A1820670FF9E1B1F58A76AE3B92A12B")
         public String getNamespacePrefix(int pos) throws XmlPullParserException {
         	throw new XmlPullParserException("getNamespacePrefix() not supported");
-            // ---------- Original Method ----------
-            //throw new XmlPullParserException("getNamespacePrefix() not supported");
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.451 -0400", hash_original_method = "5C999184AAA0F0E674F1363E90C0FD13", hash_generated_method = "EE0BE6C1B2AAA1C427F53F7BA87BA31E")
         public String getInputEncoding() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1176546983 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1176546983 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1176546983 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_1176546983.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1176546983.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1176546983;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.477 -0400", hash_original_method = "AE6D93E7ABBCC0A1FA148BC6AE95DD76", hash_generated_method = "BBE1E7E60FD88248A0A020D7D18AA3A3")
         public String getNamespace(String prefix) {
         	throw new RuntimeException("getNamespace() not supported");
-            // ---------- Original Method ----------
-            //throw new RuntimeException("getNamespace() not supported");
+            
+            
         }
 
         
@@ -407,27 +411,27 @@ final class XmlBlock {
             addTaint(depth);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1082469030 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1082469030;
-            // ---------- Original Method ----------
-            //throw new XmlPullParserException("getNamespaceCount() not supported");
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.453 -0400", hash_original_method = "D2403D5573FCC08ECC8A73989B7EFE93", hash_generated_method = "B8823855535B112C2656FCAB2753004E")
         public String getPositionDescription() {
-            String varB4EAC82CA7396A68D541C85D26508E83_968215239 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_968215239 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_968215239 = "Binary XML file line #" + getLineNumber();
-            varB4EAC82CA7396A68D541C85D26508E83_968215239.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_968215239.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_968215239;
-            // ---------- Original Method ----------
-            //return "Binary XML file line #" + getLineNumber();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.496 -0400", hash_original_method = "0BA86538E6BFE859243D39CD091AF1CC", hash_generated_method = "F214E776EEAB004F6028C7D166FAB46D")
         public String getNamespaceUri(int pos) throws XmlPullParserException {
         	throw new XmlPullParserException("getNamespaceUri() not supported");
-            // ---------- Original Method ----------
-            //throw new XmlPullParserException("getNamespaceUri() not supported");
+            
+            
         }
 
         
@@ -435,8 +439,8 @@ final class XmlBlock {
         public int getColumnNumber() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_814240229 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_814240229;
-            // ---------- Original Method ----------
-            //return -1;
+            
+            
         }
 
         
@@ -444,21 +448,21 @@ final class XmlBlock {
         public int getDepth() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1695827581 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1695827581;
-            // ---------- Original Method ----------
-            //return mDepth;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.455 -0400", hash_original_method = "9AA17B3C306C694E2A4C941D5BD64364", hash_generated_method = "BCA42763E5B0FF82535AC2A6B06FB109")
         public String getText() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1015183989 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1015183989 = null; 
             int id = nativeGetText(mParseState);
             varB4EAC82CA7396A68D541C85D26508E83_1015183989 = id >= 0 ? mStrings.get(id).toString() : null;
-            varB4EAC82CA7396A68D541C85D26508E83_1015183989.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1015183989.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1015183989;
-            // ---------- Original Method ----------
-            //int id = nativeGetText(mParseState);
-            //return id >= 0 ? mStrings.get(id).toString() : null;
+            
+            
+            
         }
 
         
@@ -467,8 +471,8 @@ final class XmlBlock {
             int varBAA831A065AF74337E20120097F7F4FD_670416976 = (nativeGetLineNumber(mParseState));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_183539750 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_183539750;
-            // ---------- Original Method ----------
-            //return nativeGetLineNumber(mParseState);
+            
+            
         }
 
         
@@ -476,8 +480,8 @@ final class XmlBlock {
         public int getEventType() throws XmlPullParserException {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_727696885 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_727696885;
-            // ---------- Original Method ----------
-            //return mEventType;
+            
+            
         }
 
         
@@ -485,16 +489,16 @@ final class XmlBlock {
         public boolean isWhitespace() throws XmlPullParserException {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1170594871 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1170594871;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.525 -0400", hash_original_method = "692B884A81B63C3B5FA2E5F7E1379D3F", hash_generated_method = "C3F8B39F24F360249FCD5FC6C50AABB3")
         public String getPrefix() {
         	throw new RuntimeException("getPrefix not supported");
-            // ---------- Original Method ----------
-            //throw new RuntimeException("getPrefix not supported");
+            
+            
         }
 
         
@@ -507,102 +511,102 @@ final class XmlBlock {
                 holderForStartAndLength[1] = txt.length();
                 chars = new char[txt.length()];
                 txt.getChars(0, txt.length(), chars, 0);
-            } //End block
+            } 
             addTaint(holderForStartAndLength[0]);
             char[] var50607924ABD4C17119BAF3A1CE41C0EC_1004960940 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_1004960940;
-            // ---------- Original Method ----------
-            //String txt = getText();
-            //char[] chars = null;
-            //if (txt != null) {
-                //holderForStartAndLength[0] = 0;
-                //holderForStartAndLength[1] = txt.length();
-                //chars = new char[txt.length()];
-                //txt.getChars(0, txt.length(), chars, 0);
-            //}
-            //return chars;
+            
+            
+            
+            
+                
+                
+                
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.458 -0400", hash_original_method = "53E841A7D41D7C8EC6230F47D159F5F8", hash_generated_method = "BBF93232B5108BD1D4647527C7B885B2")
         public String getNamespace() {
-            String varB4EAC82CA7396A68D541C85D26508E83_263407781 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_263407781 = null; 
             int id = nativeGetNamespace(mParseState);
             varB4EAC82CA7396A68D541C85D26508E83_263407781 = id >= 0 ? mStrings.get(id).toString() : "";
-            varB4EAC82CA7396A68D541C85D26508E83_263407781.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_263407781.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_263407781;
-            // ---------- Original Method ----------
-            //int id = nativeGetNamespace(mParseState);
-            //return id >= 0 ? mStrings.get(id).toString() : "";
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.458 -0400", hash_original_method = "5E952CADD7A547B8BBE8593EB2804E3F", hash_generated_method = "AEB4544FF0C445113146EAA66F4E64BA")
         public String getName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_745966751 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_745966751 = null; 
             int id = nativeGetName(mParseState);
             varB4EAC82CA7396A68D541C85D26508E83_745966751 = id >= 0 ? mStrings.get(id).toString() : null;
-            varB4EAC82CA7396A68D541C85D26508E83_745966751.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_745966751.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_745966751;
-            // ---------- Original Method ----------
-            //int id = nativeGetName(mParseState);
-            //return id >= 0 ? mStrings.get(id).toString() : null;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.459 -0400", hash_original_method = "C5B0A5333E9C04C4ABC345C16B794494", hash_generated_method = "83CE7E5F5CD3DB0BF9F2BF88411625FE")
         public String getAttributeNamespace(int index) {
-            String varB4EAC82CA7396A68D541C85D26508E83_1539924953 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_1046796730 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_1539924953 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1046796730 = null; 
             int id = nativeGetAttributeNamespace(mParseState, index);
             System.out.println("getAttributeNamespace of " + index + " = " + id);
             varB4EAC82CA7396A68D541C85D26508E83_1539924953 = mStrings.get(id).toString();
             varB4EAC82CA7396A68D541C85D26508E83_1046796730 = "";
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(String.valueOf(index));
             addTaint(index);
-            String varA7E53CE21691AB073D9660D615818899_607572311; //Final return value
+            String varA7E53CE21691AB073D9660D615818899_607572311; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_607572311 = varB4EAC82CA7396A68D541C85D26508E83_1539924953;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_607572311 = varB4EAC82CA7396A68D541C85D26508E83_1046796730;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_607572311.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_607572311.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_607572311;
-            // ---------- Original Method ----------
-            //int id = nativeGetAttributeNamespace(mParseState, index);
-            //if (DEBUG) System.out.println("getAttributeNamespace of " + index + " = " + id);
-            //if (id >= 0) return mStrings.get(id).toString();
-            //else if (id == -1) return "";
-            //throw new IndexOutOfBoundsException(String.valueOf(index));
+            
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.460 -0400", hash_original_method = "84AEB345F706FFE756390519A4CE900D", hash_generated_method = "121B61637D009D5956384D0D654C27A0")
         public String getAttributeName(int index) {
-            String varB4EAC82CA7396A68D541C85D26508E83_329224164 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_329224164 = null; 
             int id = nativeGetAttributeName(mParseState, index);
             System.out.println("getAttributeName of " + index + " = " + id);
             varB4EAC82CA7396A68D541C85D26508E83_329224164 = mStrings.get(id).toString();
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(String.valueOf(index));
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_329224164.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_329224164.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_329224164;
-            // ---------- Original Method ----------
-            //int id = nativeGetAttributeName(mParseState, index);
-            //if (DEBUG) System.out.println("getAttributeName of " + index + " = " + id);
-            //if (id >= 0) return mStrings.get(id).toString();
-            //throw new IndexOutOfBoundsException(String.valueOf(index));
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.580 -0400", hash_original_method = "50B51A25D0464B8FD90EECF499D60B48", hash_generated_method = "8981166C7E6540038A16C40BE0EDD139")
         public String getAttributePrefix(int index) {
         	throw new RuntimeException("getAttributePrefix not supported");
-            // ---------- Original Method ----------
-            //throw new RuntimeException("getAttributePrefix not supported");
+            
+            
         }
 
         
@@ -610,8 +614,8 @@ final class XmlBlock {
         public boolean isEmptyElementTag() throws XmlPullParserException {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394528661 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1394528661;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -619,61 +623,61 @@ final class XmlBlock {
         public int getAttributeCount() {
             {
                 Object var4E40D70343CD40DEDD7252A82F34EED9_325194152 = (nativeGetAttributeCount(mParseState));
-            } //End flattened ternary
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_733718325 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_733718325;
-            // ---------- Original Method ----------
-            //return mEventType == START_TAG ? nativeGetAttributeCount(mParseState) : -1;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.465 -0400", hash_original_method = "F4E9CDB9F128BA6177C44CACB76DA2CC", hash_generated_method = "FCE805BF5042CCA72062082D4A9A029B")
         public String getAttributeValue(int index) {
-            String varB4EAC82CA7396A68D541C85D26508E83_262455222 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_1811285572 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_262455222 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1811285572 = null; 
             int id = nativeGetAttributeStringValue(mParseState, index);
             System.out.println("getAttributeValue of " + index + " = " + id);
             varB4EAC82CA7396A68D541C85D26508E83_262455222 = mStrings.get(id).toString();
             int t = nativeGetAttributeDataType(mParseState, index);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(String.valueOf(index));
-            } //End block
+            } 
             int v = nativeGetAttributeData(mParseState, index);
             varB4EAC82CA7396A68D541C85D26508E83_1811285572 = TypedValue.coerceToString(t, v);
             addTaint(index);
-            String varA7E53CE21691AB073D9660D615818899_756887891; //Final return value
+            String varA7E53CE21691AB073D9660D615818899_756887891; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_756887891 = varB4EAC82CA7396A68D541C85D26508E83_262455222;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_756887891 = varB4EAC82CA7396A68D541C85D26508E83_1811285572;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_756887891.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_756887891.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_756887891;
-            // ---------- Original Method ----------
-            //int id = nativeGetAttributeStringValue(mParseState, index);
-            //if (DEBUG) System.out.println("getAttributeValue of " + index + " = " + id);
-            //if (id >= 0) return mStrings.get(id).toString();
-            //int t = nativeGetAttributeDataType(mParseState, index);
-            //if (t == TypedValue.TYPE_NULL) {
-                //throw new IndexOutOfBoundsException(String.valueOf(index));
-            //}
-            //int v = nativeGetAttributeData(mParseState, index);
-            //return TypedValue.coerceToString(t, v);
+            
+            
+            
+            
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.465 -0400", hash_original_method = "D075B222334138AA51A395211AD5E8BA", hash_generated_method = "D490450CBA143620A30E4B0E7730E251")
         public String getAttributeType(int index) {
-            String varB4EAC82CA7396A68D541C85D26508E83_1720223271 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1720223271 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1720223271 = "CDATA";
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_1720223271.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1720223271.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1720223271;
-            // ---------- Original Method ----------
-            //return "CDATA";
+            
+            
         }
 
         
@@ -682,8 +686,8 @@ final class XmlBlock {
             addTaint(index);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1615422965 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1615422965;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -692,15 +696,15 @@ final class XmlBlock {
             int var83133C39DBD81A6FC01ACC28F158E440_2118237368 = (next());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1522597296 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1522597296;
-            // ---------- Original Method ----------
-            //return next();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.467 -0400", hash_original_method = "8127D80C9F5EEB177072DC0AE91ACB4C", hash_generated_method = "2CDA71662EEA83249577215957C3E3BE")
         public String getAttributeValue(String namespace, String name) {
-            String varB4EAC82CA7396A68D541C85D26508E83_1455969418 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_759058680 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_1455969418 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_759058680 = null; 
             int idx = nativeGetAttributeIndex(mParseState, namespace, name);
             {
                 System.out.println("getAttributeName of "
@@ -710,33 +714,33 @@ final class XmlBlock {
                         + "Name=" + getAttributeName(idx)
                         + ", Value=" + getAttributeValue(idx));
                 varB4EAC82CA7396A68D541C85D26508E83_1455969418 = getAttributeValue(idx);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_759058680 = null;
             addTaint(namespace.getTaint());
             addTaint(name.getTaint());
-            String varA7E53CE21691AB073D9660D615818899_46204075; //Final return value
+            String varA7E53CE21691AB073D9660D615818899_46204075; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_46204075 = varB4EAC82CA7396A68D541C85D26508E83_1455969418;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_46204075 = varB4EAC82CA7396A68D541C85D26508E83_759058680;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_46204075.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_46204075.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_46204075;
-            // ---------- Original Method ----------
-            //int idx = nativeGetAttributeIndex(mParseState, namespace, name);
-            //if (idx >= 0) {
-                //if (DEBUG) System.out.println("getAttributeName of "
-                        //+ namespace + ":" + name + " index = " + idx);
-                //if (DEBUG) System.out.println(
-                        //"Namespace=" + getAttributeNamespace(idx)
-                        //+ "Name=" + getAttributeName(idx)
-                        //+ ", Value=" + getAttributeValue(idx));
-                //return getAttributeValue(idx);
-            //}
-            //return null;
+            
+            
+            
+                
+                        
+                
+                        
+                        
+                        
+                
+            
+            
         }
 
         
@@ -744,46 +748,46 @@ final class XmlBlock {
         public int next() throws XmlPullParserException,IOException {
             {
                 mStarted = true;
-            } //End block
+            } 
             int ev = nativeNext(mParseState);
             {
                 mDecNextDepth = false;
-            } //End block
-            //Begin case END_TAG 
+            } 
+            
             mDecNextDepth = true;
-            //End case END_TAG 
+            
             mEventType = ev;
             {
                 close();
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_121398372 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_121398372;
-            // ---------- Original Method ----------
-            //if (!mStarted) {
-                //mStarted = true;
-                //return START_DOCUMENT;
-            //}
-            //if (mParseState == 0) {
-                //return END_DOCUMENT;
-            //}
-            //int ev = nativeNext(mParseState);
-            //if (mDecNextDepth) {
-                //mDepth--;
-                //mDecNextDepth = false;
-            //}
-            //switch (ev) {
-            //case START_TAG:
-                //mDepth++;
-                //break;
-            //case END_TAG:
-                //mDecNextDepth = true;
-                //break;
-            //}
-            //mEventType = ev;
-            //if (ev == END_DOCUMENT) {
-                //close();
-            //}
-            //return ev;
+            
+            
+                
+                
+            
+            
+                
+            
+            
+            
+                
+                
+            
+            
+            
+                
+                
+            
+                
+                
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -794,30 +798,30 @@ final class XmlBlock {
                 || (namespace != null && !namespace.equals( getNamespace () ) )
                 || (name != null && !name.equals( getName() ) ));
                 if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException( "expected "+ TYPES[ type ]+getPositionDescription());
-            } //End collapsed parenthetic
+            } 
             addTaint(type);
             addTaint(namespace.getTaint());
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
-            //if (type != getEventType()
-                //|| (namespace != null && !namespace.equals( getNamespace () ) )
-                //|| (name != null && !name.equals( getName() ) ) )
-                //throw new XmlPullParserException( "expected "+ TYPES[ type ]+getPositionDescription());
+            
+            
+                
+                
+                
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.470 -0400", hash_original_method = "0387CD391BE287242825F05D1B5C07FC", hash_generated_method = "79AD3C07696D92DB5AB526C68B840EA0")
         public String nextText() throws XmlPullParserException,IOException {
-            String varB4EAC82CA7396A68D541C85D26508E83_103457986 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_311286152 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_103457986 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_311286152 = null; 
             {
                 boolean var9596CF2618BFAD282E250C866F3DF3C9_1441154359 = (getEventType() != START_TAG);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                  getPositionDescription()
                  + ": parser must be on START_TAG to read next text", this, null);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             int eventType = next();
             {
                 String result = getText();
@@ -826,30 +830,30 @@ final class XmlBlock {
                     if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                     getPositionDescription()
                     + ": event TEXT it must be immediately followed by END_TAG", this, null);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_103457986 = result;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_311286152 = "";
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                  getPositionDescription()
                  + ": parser must be on START_TAG or TEXT to read text", this, null);
-            } //End block
-            String varA7E53CE21691AB073D9660D615818899_1155866719; //Final return value
+            } 
+            String varA7E53CE21691AB073D9660D615818899_1155866719; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1155866719 = varB4EAC82CA7396A68D541C85D26508E83_103457986;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1155866719 = varB4EAC82CA7396A68D541C85D26508E83_311286152;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1155866719.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1155866719.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1155866719;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -860,26 +864,26 @@ final class XmlBlock {
                 boolean varC64C896D81E5DDFF005758762D652945_1360009512 = (eventType == TEXT && isWhitespace());
                 {
                     eventType = next();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                    getPositionDescription() 
                    + ": expected start or end tag", this, null);
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2053054807 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2053054807;
-            // ---------- Original Method ----------
-            //int eventType = next();
-            //if(eventType == TEXT && isWhitespace()) {   
-               //eventType = next();
-            //}
-            //if (eventType != START_TAG && eventType != END_TAG) {
-               //throw new XmlPullParserException(
-                   //getPositionDescription() 
-                   //+ ": expected start or end tag", this, null);
-            //}
-            //return eventType;
+            
+            
+            
+               
+            
+            
+               
+                   
+                   
+            
+            
         }
 
         
@@ -889,8 +893,8 @@ final class XmlBlock {
             addTaint(index);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1849775470 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1849775470;
-            // ---------- Original Method ----------
-            //return nativeGetAttributeResource(mParseState, index);
+            
+            
         }
 
         
@@ -900,19 +904,19 @@ final class XmlBlock {
             int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
             {
                 int var9746577ED7FA626EB250C6FA1993E568_1096991940 = (getAttributeListValue(idx, options, defaultValue));
-            } //End block
+            } 
             addTaint(namespace.getTaint());
             addTaint(attribute.getTaint());
             addTaint(options[0].getTaint());
             addTaint(defaultValue);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1356611727 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1356611727;
-            // ---------- Original Method ----------
-            //int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
-            //if (idx >= 0) {
-                //return getAttributeListValue(idx, options, defaultValue);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -922,18 +926,18 @@ final class XmlBlock {
             int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
             {
                 boolean var112C81F0CF2922B630967C489E44FCE2_538126647 = (getAttributeBooleanValue(idx, defaultValue));
-            } //End block
+            } 
             addTaint(namespace.getTaint());
             addTaint(attribute.getTaint());
             addTaint(defaultValue);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1732295956 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1732295956;
-            // ---------- Original Method ----------
-            //int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
-            //if (idx >= 0) {
-                //return getAttributeBooleanValue(idx, defaultValue);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -943,18 +947,18 @@ final class XmlBlock {
             int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
             {
                 int var4041CE7258634F39669102768A31E2B5_933804724 = (getAttributeResourceValue(idx, defaultValue));
-            } //End block
+            } 
             addTaint(namespace.getTaint());
             addTaint(attribute.getTaint());
             addTaint(defaultValue);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_851222276 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_851222276;
-            // ---------- Original Method ----------
-            //int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
-            //if (idx >= 0) {
-                //return getAttributeResourceValue(idx, defaultValue);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -964,18 +968,18 @@ final class XmlBlock {
             int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
             {
                 int var98A36DA81833C24E66998F976469DC76_1779804257 = (getAttributeIntValue(idx, defaultValue));
-            } //End block
+            } 
             addTaint(namespace.getTaint());
             addTaint(attribute.getTaint());
             addTaint(defaultValue);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_458467462 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_458467462;
-            // ---------- Original Method ----------
-            //int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
-            //if (idx >= 0) {
-                //return getAttributeIntValue(idx, defaultValue);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -985,18 +989,18 @@ final class XmlBlock {
             int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
             {
                 int var6B4AE1ACD2501944E06884239ECFC491_1297983257 = (getAttributeUnsignedIntValue(idx, defaultValue));
-            } //End block
+            } 
             addTaint(namespace.getTaint());
             addTaint(attribute.getTaint());
             addTaint(defaultValue);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_731028356 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_731028356;
-            // ---------- Original Method ----------
-            //int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
-            //if (idx >= 0) {
-                //return getAttributeUnsignedIntValue(idx, defaultValue);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1006,18 +1010,18 @@ final class XmlBlock {
             int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
             {
                 float var8ADD88168EAB5E1C9157AC1388ED29E4_1967638445 = (getAttributeFloatValue(idx, defaultValue));
-            } //End block
+            } 
             addTaint(namespace.getTaint());
             addTaint(attribute.getTaint());
             addTaint(defaultValue);
             float var546ADE640B6EDFBC8A086EF31347E768_363032674 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_363032674;
-            // ---------- Original Method ----------
-            //int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
-            //if (idx >= 0) {
-                //return getAttributeFloatValue(idx, defaultValue);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1029,20 +1033,20 @@ final class XmlBlock {
             {
                 int var87C4679D2BF706005778803B1AE8C887_893420180 = (XmlUtils.convertValueToList(
                     mStrings.get(v), options, defaultValue));
-            } //End block
+            } 
             addTaint(idx);
             addTaint(options[0].getTaint());
             addTaint(defaultValue);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1737795078 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1737795078;
-            // ---------- Original Method ----------
-            //int t = nativeGetAttributeDataType(mParseState, idx);
-            //int v = nativeGetAttributeData(mParseState, idx);
-            //if (t == TypedValue.TYPE_STRING) {
-                //return XmlUtils.convertValueToList(
-                    //mStrings.get(v), options, defaultValue);
-            //}
-            //return v;
+            
+            
+            
+            
+                
+                    
+            
+            
         }
 
         
@@ -1052,18 +1056,18 @@ final class XmlBlock {
             int t = nativeGetAttributeDataType(mParseState, idx);
             {
                 boolean var612CB30EBEACD27A167E09918F9B42F1_825826185 = (nativeGetAttributeData(mParseState, idx) != 0);
-            } //End block
+            } 
             addTaint(idx);
             addTaint(defaultValue);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1365270115 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1365270115;
-            // ---------- Original Method ----------
-            //int t = nativeGetAttributeDataType(mParseState, idx);
-            //if (t >= TypedValue.TYPE_FIRST_INT &&
-                //t <= TypedValue.TYPE_LAST_INT) {
-                //return nativeGetAttributeData(mParseState, idx) != 0;
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -1072,17 +1076,17 @@ final class XmlBlock {
             int t = nativeGetAttributeDataType(mParseState, idx);
             {
                 int var533971BCF6E370893815C9B2626DAA5E_276797172 = (nativeGetAttributeData(mParseState, idx));
-            } //End block
+            } 
             addTaint(idx);
             addTaint(defaultValue);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_403707940 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_403707940;
-            // ---------- Original Method ----------
-            //int t = nativeGetAttributeDataType(mParseState, idx);
-            //if (t == TypedValue.TYPE_REFERENCE) {
-                //return nativeGetAttributeData(mParseState, idx);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1091,18 +1095,18 @@ final class XmlBlock {
             int t = nativeGetAttributeDataType(mParseState, idx);
             {
                 int var533971BCF6E370893815C9B2626DAA5E_2084924214 = (nativeGetAttributeData(mParseState, idx));
-            } //End block
+            } 
             addTaint(idx);
             addTaint(defaultValue);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_819649650 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_819649650;
-            // ---------- Original Method ----------
-            //int t = nativeGetAttributeDataType(mParseState, idx);
-            //if (t >= TypedValue.TYPE_FIRST_INT &&
-                //t <= TypedValue.TYPE_LAST_INT) {
-                //return nativeGetAttributeData(mParseState, idx);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -1111,18 +1115,18 @@ final class XmlBlock {
             int t = nativeGetAttributeDataType(mParseState, idx);
             {
                 int var533971BCF6E370893815C9B2626DAA5E_1444409474 = (nativeGetAttributeData(mParseState, idx));
-            } //End block
+            } 
             addTaint(idx);
             addTaint(defaultValue);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_108373580 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_108373580;
-            // ---------- Original Method ----------
-            //int t = nativeGetAttributeDataType(mParseState, idx);
-            //if (t >= TypedValue.TYPE_FIRST_INT &&
-                //t <= TypedValue.TYPE_LAST_INT) {
-                //return nativeGetAttributeData(mParseState, idx);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -1132,45 +1136,45 @@ final class XmlBlock {
             {
                 float var7FE27D38E8241DD13E64DA80050555B4_550058026 = (Float.intBitsToFloat(
                     nativeGetAttributeData(mParseState, idx)));
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("not a float!");
             addTaint(idx);
             addTaint(defaultValue);
             float var546ADE640B6EDFBC8A086EF31347E768_1345233739 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1345233739;
-            // ---------- Original Method ----------
-            //int t = nativeGetAttributeDataType(mParseState, idx);
-            //if (t == TypedValue.TYPE_FLOAT) {
-                //return Float.intBitsToFloat(
-                    //nativeGetAttributeData(mParseState, idx));
-            //}
-            //throw new RuntimeException("not a float!");
+            
+            
+            
+                
+                    
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.479 -0400", hash_original_method = "459DE28869C0476D8004C0FC89A0FAA3", hash_generated_method = "FAFADCFA0423AFE9B266D827CAEAB2CD")
         public String getIdAttribute() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1255105400 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1255105400 = null; 
             int id = nativeGetIdAttribute(mParseState);
             varB4EAC82CA7396A68D541C85D26508E83_1255105400 = id >= 0 ? mStrings.get(id).toString() : null;
-            varB4EAC82CA7396A68D541C85D26508E83_1255105400.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1255105400.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1255105400;
-            // ---------- Original Method ----------
-            //int id = nativeGetIdAttribute(mParseState);
-            //return id >= 0 ? mStrings.get(id).toString() : null;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.479 -0400", hash_original_method = "6EA4969C84EC91743C886113DBDA4AC3", hash_generated_method = "781A09ACFC4C27E29D57A386CEE309E7")
         public String getClassAttribute() {
-            String varB4EAC82CA7396A68D541C85D26508E83_817101850 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_817101850 = null; 
             int id = nativeGetClassAttribute(mParseState);
             varB4EAC82CA7396A68D541C85D26508E83_817101850 = id >= 0 ? mStrings.get(id).toString() : null;
-            varB4EAC82CA7396A68D541C85D26508E83_817101850.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_817101850.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_817101850;
-            // ---------- Original Method ----------
-            //int id = nativeGetClassAttribute(mParseState);
-            //return id >= 0 ? mStrings.get(id).toString() : null;
+            
+            
+            
         }
 
         
@@ -1180,8 +1184,8 @@ final class XmlBlock {
             addTaint(defaultValue);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1789579836 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1789579836;
-            // ---------- Original Method ----------
-            //return getAttributeResourceValue(null, "id", defaultValue);
+            
+            
         }
 
         
@@ -1190,8 +1194,8 @@ final class XmlBlock {
             int var24F64E8584039948E1AFFBFA2A70D193_517120652 = (nativeGetStyleAttribute(mParseState));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1954260741 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1954260741;
-            // ---------- Original Method ----------
-            //return nativeGetStyleAttribute(mParseState);
+            
+            
         }
 
         
@@ -1202,36 +1206,36 @@ final class XmlBlock {
                     nativeDestroyParseState(mParseState);
                     mParseState = 0;
                     mBlock.decOpenCountLocked();
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mBlock) {
-                //if (mParseState != 0) {
-                    //nativeDestroyParseState(mParseState);
-                    //mParseState = 0;
-                    //mBlock.decOpenCountLocked();
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                    
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.481 -0400", hash_original_method = "4D47F0EAA663BB7736165BE426E6C1B2", hash_generated_method = "D49A6EC8D8327F8E6A58054E448C9AAB")
         protected void finalize() throws Throwable {
             close();
-            // ---------- Original Method ----------
-            //close();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.483 -0400", hash_original_method = "E55719651A1187D6CF490013E1512769", hash_generated_method = "4826C3AB45356C0EB209A951AC0F7DBF")
         final CharSequence getPooledString(int id) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_934122485 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_934122485 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_934122485 = mStrings.get(id);
             addTaint(id);
-            varB4EAC82CA7396A68D541C85D26508E83_934122485.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_934122485.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_934122485;
-            // ---------- Original Method ----------
-            //return mStrings.get(id);
+            
+            
         }
 
         

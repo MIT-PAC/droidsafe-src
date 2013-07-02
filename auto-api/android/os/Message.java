@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -49,10 +49,11 @@ public final class Message implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.508 -0400", hash_original_method = "07161C5E5BFC528DA3FC2F6017B16172", hash_generated_method = "95F5AD60FAEEEF50B67BC5FEEDEC5F61")
     public  Message() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain() {
         synchronized (sPoolSync) {
             if (sPool != null) {
@@ -67,6 +68,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(Message orig) {
         Message m = obtain();
         m.what = orig.what;
@@ -83,6 +85,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(Handler h) {
         Message m = obtain();
         m.target = h;
@@ -90,6 +93,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(Handler h, Runnable callback) {
         Message m = obtain();
         m.target = h;
@@ -98,6 +102,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(Handler h, int what) {
         Message m = obtain();
         m.target = h;
@@ -106,6 +111,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(Handler h, int what, Object obj) {
         Message m = obtain();
         m.target = h;
@@ -115,6 +121,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(Handler h, int what, int arg1, int arg2) {
         Message m = obtain();
         m.target = h;
@@ -125,6 +132,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(Handler h, int what, 
             int arg1, int arg2, Object obj) {
         Message m = obtain();
@@ -137,6 +145,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.510 -0400", hash_original_method = "0036C7E97F14F697C30BFE1437947C9D", hash_generated_method = "8AA523264671A583435FF7781AA08DE0")
     public void recycle() {
         clearForRecycle();
@@ -144,20 +153,21 @@ public final class Message implements Parcelable {
             {
                 next = sPool;
                 sPool = this;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //clearForRecycle();
-        //synchronized (sPoolSync) {
-            //if (sPoolSize < MAX_POOL_SIZE) {
-                //next = sPool;
-                //sPool = this;
-                //sPoolSize++;
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.511 -0400", hash_original_method = "964842F017E82BDA48950DE2BC18315A", hash_generated_method = "320A286D06B9973214AE9DD5A0E1FD71")
     public void copyFrom(Message o) {
         this.flags = o.flags & ~FLAGS_TO_CLEAR_ON_COPY_FROM;
@@ -168,22 +178,22 @@ public final class Message implements Parcelable {
         this.replyTo = o.replyTo;
         {
             this.data = (Bundle) o.data.clone();
-        } //End block
+        } 
         {
             this.data = null;
-        } //End block
-        // ---------- Original Method ----------
-        //this.flags = o.flags & ~FLAGS_TO_CLEAR_ON_COPY_FROM;
-        //this.what = o.what;
-        //this.arg1 = o.arg1;
-        //this.arg2 = o.arg2;
-        //this.obj = o.obj;
-        //this.replyTo = o.replyTo;
-        //if (o.data != null) {
-            //this.data = (Bundle) o.data.clone();
-        //} else {
-            //this.data = null;
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -191,82 +201,84 @@ public final class Message implements Parcelable {
     public long getWhen() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1257977225 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1257977225;
-        // ---------- Original Method ----------
-        //return when;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.512 -0400", hash_original_method = "4206C8A14E5D790EB7EB282A0235F495", hash_generated_method = "BFA69EC1EEA25086C4D9E40A15F143AE")
     public void setTarget(Handler target) {
         this.target = target;
-        // ---------- Original Method ----------
-        //this.target = target;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.512 -0400", hash_original_method = "71A342D68A16A50B25BC4BF2093BFF62", hash_generated_method = "7B5DA9A1B868F3F92A970B03D0F9B6A1")
     public Handler getTarget() {
-        Handler varB4EAC82CA7396A68D541C85D26508E83_1803010247 = null; //Variable for return #1
+        Handler varB4EAC82CA7396A68D541C85D26508E83_1803010247 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1803010247 = target;
-        varB4EAC82CA7396A68D541C85D26508E83_1803010247.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1803010247.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1803010247;
-        // ---------- Original Method ----------
-        //return target;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.513 -0400", hash_original_method = "BE120AA50B796443E57F262EC015813E", hash_generated_method = "172F97B99231B2C63783924F9C2330E7")
     public Runnable getCallback() {
-        Runnable varB4EAC82CA7396A68D541C85D26508E83_1376576412 = null; //Variable for return #1
+        Runnable varB4EAC82CA7396A68D541C85D26508E83_1376576412 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1376576412 = callback;
-        varB4EAC82CA7396A68D541C85D26508E83_1376576412.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1376576412.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1376576412;
-        // ---------- Original Method ----------
-        //return callback;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.514 -0400", hash_original_method = "1D2563192E30736CE7AB1C4867F66034", hash_generated_method = "4F7A22CCE5BCA54B8755B9C0C49227E8")
     public Bundle getData() {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_698040526 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_698040526 = null; 
         {
             data = new Bundle();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_698040526 = data;
-        varB4EAC82CA7396A68D541C85D26508E83_698040526.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_698040526.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_698040526;
-        // ---------- Original Method ----------
-        //if (data == null) {
-            //data = new Bundle();
-        //}
-        //return data;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.514 -0400", hash_original_method = "82F96E5D1D9A678E87ADC3DA47E10262", hash_generated_method = "25177481273ECF1B23495A4F7B3175CA")
     public Bundle peekData() {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_57126940 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_57126940 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_57126940 = data;
-        varB4EAC82CA7396A68D541C85D26508E83_57126940.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_57126940.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_57126940;
-        // ---------- Original Method ----------
-        //return data;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.515 -0400", hash_original_method = "2A3AF1BEE5D39047FC40D7968EE3828B", hash_generated_method = "EAE8CA4F21A678E5FDC9CFA85AC5AD0E")
     public void setData(Bundle data) {
         this.data = data;
-        // ---------- Original Method ----------
-        //this.data = data;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.515 -0400", hash_original_method = "2D3F3759D60A7A1CBA79B8F487061097", hash_generated_method = "3B7F287400275060A2AE0E3943AFE99E")
     public void sendToTarget() {
         target.sendMessage(this);
-        // ---------- Original Method ----------
-        //target.sendMessage(this);
+        
+        
     }
 
     
@@ -282,17 +294,17 @@ public final class Message implements Parcelable {
         target = null;
         callback = null;
         data = null;
-        // ---------- Original Method ----------
-        //flags = 0;
-        //what = 0;
-        //arg1 = 0;
-        //arg2 = 0;
-        //obj = null;
-        //replyTo = null;
-        //when = 0;
-        //target = null;
-        //callback = null;
-        //data = null;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -300,33 +312,34 @@ public final class Message implements Parcelable {
      boolean isInUse() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1835580528 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1835580528;
-        // ---------- Original Method ----------
-        //return ((flags & FLAG_IN_USE) == FLAG_IN_USE);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.517 -0400", hash_original_method = "05D8812E72ABC796A0F0FB73D8BB23FD", hash_generated_method = "2406C8342B30A3F95EC80EECA1F8197F")
      void markInUse() {
         flags |= FLAG_IN_USE;
-        // ---------- Original Method ----------
-        //flags |= FLAG_IN_USE;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.518 -0400", hash_original_method = "F5F2ADD77ACF5EFEB7E2DD825A11C06D", hash_generated_method = "7EEBC6763F6F696761DB8356EF2EA8B2")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_937512879 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_937512879 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_937512879 = toString(SystemClock.uptimeMillis());
-        varB4EAC82CA7396A68D541C85D26508E83_937512879.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_937512879.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_937512879;
-        // ---------- Original Method ----------
-        //return toString(SystemClock.uptimeMillis());
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.519 -0400", hash_original_method = "94FE68A35FA2D79CB6E07D112DBAE9F2", hash_generated_method = "003969D8A91CB92CCFAEC5DA521FB5A7")
      String toString(long now) {
-        String varB4EAC82CA7396A68D541C85D26508E83_162526914 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_162526914 = null; 
         StringBuilder b = new StringBuilder();
         b.append("{ what=");
         b.append(what);
@@ -335,40 +348,40 @@ public final class Message implements Parcelable {
         {
             b.append(" arg1=");
             b.append(arg1);
-        } //End block
+        } 
         {
             b.append(" arg2=");
             b.append(arg2);
-        } //End block
+        } 
         {
             b.append(" obj=");
             b.append(obj);
-        } //End block
+        } 
         b.append(" }");
         varB4EAC82CA7396A68D541C85D26508E83_162526914 = b.toString();
         addTaint(now);
-        varB4EAC82CA7396A68D541C85D26508E83_162526914.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_162526914.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_162526914;
-        // ---------- Original Method ----------
-        //StringBuilder   b = new StringBuilder();
-        //b.append("{ what=");
-        //b.append(what);
-        //b.append(" when=");
-        //TimeUtils.formatDuration(when-now, b);
-        //if (arg1 != 0) {
-            //b.append(" arg1=");
-            //b.append(arg1);
-        //}
-        //if (arg2 != 0) {
-            //b.append(" arg2=");
-            //b.append(arg2);
-        //}
-        //if (obj != null) {
-            //b.append(" obj=");
-            //b.append(obj);
-        //}
-        //b.append(" }");
-        //return b.toString();
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -376,17 +389,18 @@ public final class Message implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1688839518 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1688839518;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.520 -0400", hash_original_method = "FA929F9306B89098CA5E11E46F85B0F7", hash_generated_method = "EB20A471EB7AF55DBE2ABE2126681728")
     public void writeToParcel(Parcel dest, int flags) {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                 "Can't marshal callbacks across processes.");
-        } //End block
+        } 
         dest.writeInt(what);
         dest.writeInt(arg1);
         dest.writeInt(arg2);
@@ -396,44 +410,44 @@ public final class Message implements Parcelable {
                 Parcelable p = (Parcelable)obj;
                 dest.writeInt(1);
                 dest.writeParcelable(p, flags);
-            } //End block
+            } 
             catch (ClassCastException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Can't marshal non-Parcelable objects across processes.");
-            } //End block
-        } //End block
+            } 
+        } 
         {
             dest.writeInt(0);
-        } //End block
+        } 
         dest.writeLong(when);
         dest.writeBundle(data);
         Messenger.writeMessengerOrNullToParcel(replyTo, dest);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (callback != null) {
-            //throw new RuntimeException(
-                //"Can't marshal callbacks across processes.");
-        //}
-        //dest.writeInt(what);
-        //dest.writeInt(arg1);
-        //dest.writeInt(arg2);
-        //if (obj != null) {
-            //try {
-                //Parcelable p = (Parcelable)obj;
-                //dest.writeInt(1);
-                //dest.writeParcelable(p, flags);
-            //} catch (ClassCastException e) {
-                //throw new RuntimeException(
-                    //"Can't marshal non-Parcelable objects across processes.");
-            //}
-        //} else {
-            //dest.writeInt(0);
-        //}
-        //dest.writeLong(when);
-        //dest.writeBundle(data);
-        //Messenger.writeMessengerOrNullToParcel(replyTo, dest);
+        
+        
+            
+                
+        
+        
+        
+        
+        
+            
+                
+                
+                
+            
+                
+                    
+            
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -446,21 +460,21 @@ public final class Message implements Parcelable {
             boolean varFD16828A378FD83700BE97539951F787_977269624 = (source.readInt() != 0);
             {
                 obj = source.readParcelable(getClass().getClassLoader());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         when = source.readLong();
         data = source.readBundle();
         replyTo = Messenger.readMessengerOrNullFromParcel(source);
-        // ---------- Original Method ----------
-        //what = source.readInt();
-        //arg1 = source.readInt();
-        //arg2 = source.readInt();
-        //if (source.readInt() != 0) {
-            //obj = source.readParcelable(getClass().getClassLoader());
-        //}
-        //when = source.readLong();
-        //data = source.readBundle();
-        //replyTo = Messenger.readMessengerOrNullFromParcel(source);
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -499,14 +513,14 @@ public final class Message implements Parcelable {
             return new Message[size];
         }
     };
-    // orphaned legacy method
+    
     public Message createFromParcel(Parcel source) {
             Message msg = Message.obtain();
             msg.readFromParcel(source);
             return msg;
         }
     
-    // orphaned legacy method
+    
     public Message[] newArray(int size) {
             return new Message[size];
         }

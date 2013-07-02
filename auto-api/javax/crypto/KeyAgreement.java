@@ -1,11 +1,11 @@
 package javax.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
@@ -35,32 +35,32 @@ public class KeyAgreement {
         this.provider = provider;
         this.algorithm = algorithm;
         this.spiImpl = keyAgreeSpi;
-        // ---------- Original Method ----------
-        //this.provider = provider;
-        //this.algorithm = algorithm;
-        //this.spiImpl = keyAgreeSpi;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.079 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8FF8C1A065699CB3E203AA97D3047581")
     public final String getAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_504796002 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_504796002 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_504796002 = algorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_504796002.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_504796002.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_504796002;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.080 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "16ACFB74A5384B172686524D20E46B4E")
     public final Provider getProvider() {
-        Provider varB4EAC82CA7396A68D541C85D26508E83_777289513 = null; //Variable for return #1
+        Provider varB4EAC82CA7396A68D541C85D26508E83_777289513 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_777289513 = provider;
-        varB4EAC82CA7396A68D541C85D26508E83_777289513.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_777289513.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_777289513;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
@@ -104,8 +104,8 @@ public class KeyAgreement {
     public final void init(Key key) throws InvalidKeyException {
         spiImpl.engineInit(key, RANDOM);
         addTaint(key.getTaint());
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(key, RANDOM);
+        
+        
     }
 
     
@@ -114,8 +114,8 @@ public class KeyAgreement {
         spiImpl.engineInit(key, random);
         addTaint(key.getTaint());
         addTaint(random.getTaint());
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(key, random);
+        
+        
     }
 
     
@@ -124,8 +124,8 @@ public class KeyAgreement {
         spiImpl.engineInit(key, params, RANDOM);
         addTaint(key.getTaint());
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(key, params, RANDOM);
+        
+        
     }
 
     
@@ -137,21 +137,21 @@ public class KeyAgreement {
         addTaint(key.getTaint());
         addTaint(params.getTaint());
         addTaint(random.getTaint());
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(key, params, random);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.085 -0400", hash_original_method = "BB12C4D69D38F4161821D54CA8CAAD00", hash_generated_method = "F90060EB87FAED8FB4003816300913B5")
     public final Key doPhase(Key key, boolean lastPhase) throws InvalidKeyException, IllegalStateException {
-        Key varB4EAC82CA7396A68D541C85D26508E83_1931756607 = null; //Variable for return #1
+        Key varB4EAC82CA7396A68D541C85D26508E83_1931756607 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1931756607 = spiImpl.engineDoPhase(key, lastPhase);
         addTaint(key.getTaint());
         addTaint(lastPhase);
-        varB4EAC82CA7396A68D541C85D26508E83_1931756607.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1931756607.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1931756607;
-        // ---------- Original Method ----------
-        //return spiImpl.engineDoPhase(key, lastPhase);
+        
+        
     }
 
     
@@ -160,8 +160,8 @@ public class KeyAgreement {
         byte[] varA8BB6E6E942BEB9835A7817272D04164_1531619103 = (spiImpl.engineGenerateSecret());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1358453015 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1358453015;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateSecret();
+        
+        
     }
 
     
@@ -172,21 +172,21 @@ public class KeyAgreement {
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_329854210 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_329854210;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateSecret(sharedSecret, offset);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.087 -0400", hash_original_method = "0E820F09DB891E9F2C0C31F49AA44F05", hash_generated_method = "802746EBDFB85D065C92A2AF18ED4FD4")
     public final SecretKey generateSecret(String algorithm) throws IllegalStateException, NoSuchAlgorithmException,
             InvalidKeyException {
-        SecretKey varB4EAC82CA7396A68D541C85D26508E83_1940585500 = null; //Variable for return #1
+        SecretKey varB4EAC82CA7396A68D541C85D26508E83_1940585500 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1940585500 = spiImpl.engineGenerateSecret(algorithm);
         addTaint(algorithm.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1940585500.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1940585500.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1940585500;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateSecret(algorithm);
+        
+        
     }
 
     

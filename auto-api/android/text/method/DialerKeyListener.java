@@ -1,11 +1,11 @@
 package android.text.method;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.view.KeyEvent;
 import android.view.KeyCharacterMap.KeyData;
@@ -17,7 +17,7 @@ public class DialerKeyListener extends NumberKeyListener {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.105 -0400", hash_original_method = "DB0B81FF92CA7DAE82B6AED220522587", hash_generated_method = "DB0B81FF92CA7DAE82B6AED220522587")
     public DialerKeyListener ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -26,11 +26,12 @@ public class DialerKeyListener extends NumberKeyListener {
     protected char[] getAcceptedChars() {
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1561926149 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1561926149;
-        // ---------- Original Method ----------
-        //return CHARACTERS;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DialerKeyListener getInstance() {
         if (sInstance != null)
             return sInstance;
@@ -43,11 +44,12 @@ public class DialerKeyListener extends NumberKeyListener {
     public int getInputType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1461957858 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1461957858;
-        // ---------- Original Method ----------
-        //return InputType.TYPE_CLASS_PHONE;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.107 -0400", hash_original_method = "660AADB0BB44A0CB147F8CE16CBE33CA", hash_generated_method = "48CFF1A17ADF0FE4257161A8E31793BB")
     protected int lookup(KeyEvent event, Spannable content) {
         int meta = event.getMetaState() | getMetaState(content);
@@ -65,19 +67,19 @@ public class DialerKeyListener extends NumberKeyListener {
                             {
                                 {
                                     boolean var8F7F4A1842E5DA897EFF4C810945772F_1773170437 = (ok(accepted, kd.meta[i]));
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(event.getTaint());
         addTaint(content.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1982233378 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1982233378;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

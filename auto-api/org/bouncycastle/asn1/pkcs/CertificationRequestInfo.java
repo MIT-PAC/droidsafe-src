@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.pkcs;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1EncodableVector;
@@ -43,15 +43,15 @@ public class CertificationRequestInfo extends ASN1Encodable {
         this.attributes = attributes;
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Not all mandatory fields set in CertificationRequestInfo generator.");
-        } //End block
-        // ---------- Original Method ----------
-        //this.subject = X509Name.getInstance(subject.getDERObject());
-        //this.subjectPKInfo = pkInfo;
-        //this.attributes = attributes;
-        //if ((subject == null) || (version == null) || (subjectPKInfo == null))
-        //{
-            //throw new IllegalArgumentException("Not all mandatory fields set in CertificationRequestInfo generator.");
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -65,15 +65,15 @@ public class CertificationRequestInfo extends ASN1Encodable {
         this.attributes = attributes;
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Not all mandatory fields set in CertificationRequestInfo generator.");
-        } //End block
-        // ---------- Original Method ----------
-        //this.subject = subject;
-        //this.subjectPKInfo = pkInfo;
-        //this.attributes = attributes;
-        //if ((subject == null) || (version == null) || (subjectPKInfo == null))
-        //{
-            //throw new IllegalArgumentException("Not all mandatory fields set in CertificationRequestInfo generator.");
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -88,27 +88,28 @@ public class CertificationRequestInfo extends ASN1Encodable {
             {
                 DERTaggedObject tagobj = (DERTaggedObject)seq.getObjectAt(3);
                 attributes = ASN1Set.getInstance(tagobj, false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Not all mandatory fields set in CertificationRequestInfo generator.");
-        } //End block
-        // ---------- Original Method ----------
-        //version = (DERInteger)seq.getObjectAt(0);
-        //subject = X509Name.getInstance(seq.getObjectAt(1));
-        //subjectPKInfo = SubjectPublicKeyInfo.getInstance(seq.getObjectAt(2));
-        //if (seq.size() > 3)
-        //{
-            //DERTaggedObject tagobj = (DERTaggedObject)seq.getObjectAt(3);
-            //attributes = ASN1Set.getInstance(tagobj, false);
-        //}
-        //if ((subject == null) || (version == null) || (subjectPKInfo == null))
-        //{
-            //throw new IllegalArgumentException("Not all mandatory fields set in CertificationRequestInfo generator.");
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CertificationRequestInfo getInstance(
         Object  obj) {
         if (obj instanceof CertificationRequestInfo)
@@ -125,71 +126,72 @@ public class CertificationRequestInfo extends ASN1Encodable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.003 -0400", hash_original_method = "C14C6949EA2D9724014BC15AB24B85D9", hash_generated_method = "8AAEDD8E4EEF226EB5BE9FC8EDF75698")
     public DERInteger getVersion() {
-        DERInteger varB4EAC82CA7396A68D541C85D26508E83_1784349177 = null; //Variable for return #1
+        DERInteger varB4EAC82CA7396A68D541C85D26508E83_1784349177 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1784349177 = version;
-        varB4EAC82CA7396A68D541C85D26508E83_1784349177.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1784349177.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1784349177;
-        // ---------- Original Method ----------
-        //return version;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.003 -0400", hash_original_method = "CA422C660E8CA6347A77201218B988AE", hash_generated_method = "F971F7C72E3395799AEAAD34EB1000B3")
     public X509Name getSubject() {
-        X509Name varB4EAC82CA7396A68D541C85D26508E83_756176855 = null; //Variable for return #1
+        X509Name varB4EAC82CA7396A68D541C85D26508E83_756176855 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_756176855 = subject;
-        varB4EAC82CA7396A68D541C85D26508E83_756176855.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_756176855.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_756176855;
-        // ---------- Original Method ----------
-        //return subject;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.003 -0400", hash_original_method = "9158BC4B5A10C8DD7FADE51069C303FC", hash_generated_method = "7D154E00E30D32712F0221D2DDE6AA79")
     public SubjectPublicKeyInfo getSubjectPublicKeyInfo() {
-        SubjectPublicKeyInfo varB4EAC82CA7396A68D541C85D26508E83_1589153772 = null; //Variable for return #1
+        SubjectPublicKeyInfo varB4EAC82CA7396A68D541C85D26508E83_1589153772 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1589153772 = subjectPKInfo;
-        varB4EAC82CA7396A68D541C85D26508E83_1589153772.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1589153772.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1589153772;
-        // ---------- Original Method ----------
-        //return subjectPKInfo;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.004 -0400", hash_original_method = "2B5879FE48F35BA3284D87B378AFE5E1", hash_generated_method = "7898FA6FEFC8B240A2B5E9B70711D050")
     public ASN1Set getAttributes() {
-        ASN1Set varB4EAC82CA7396A68D541C85D26508E83_944583944 = null; //Variable for return #1
+        ASN1Set varB4EAC82CA7396A68D541C85D26508E83_944583944 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_944583944 = attributes;
-        varB4EAC82CA7396A68D541C85D26508E83_944583944.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_944583944.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_944583944;
-        // ---------- Original Method ----------
-        //return attributes;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.004 -0400", hash_original_method = "0D1C10082A06DC50A0BCC9BE2BA5F1A2", hash_generated_method = "5ECD85412E8E84F2AAADDD69D01DE15E")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1673595144 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1673595144 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(version);
         v.add(subject);
         v.add(subjectPKInfo);
         {
             v.add(new DERTaggedObject(false, 0, attributes));
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1673595144 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_1673595144.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1673595144.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1673595144;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(version);
-        //v.add(subject);
-        //v.add(subjectPKInfo);
-        //if (attributes != null)
-        //{
-            //v.add(new DERTaggedObject(false, 0, attributes));
-        //}
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     

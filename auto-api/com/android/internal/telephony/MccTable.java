@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.ActivityManagerNative;
 import android.app.AlarmManager;
@@ -26,10 +26,11 @@ public final class MccTable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.290 -0400", hash_original_method = "5AF4A6124D6CCA09BBC7BDEB9FD835ED", hash_generated_method = "5AF4A6124D6CCA09BBC7BDEB9FD835ED")
     public MccTable ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     private static MccEntry entryForMcc(int mcc) {
         int index;
         MccEntry m;
@@ -43,6 +44,7 @@ public final class MccTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String defaultTimeZoneForMcc(int mcc) {
         MccEntry entry;
         entry = entryForMcc(mcc);
@@ -62,6 +64,7 @@ public final class MccTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String countryCodeForMcc(int mcc) {
         MccEntry entry;
         entry = entryForMcc(mcc);
@@ -73,6 +76,7 @@ public final class MccTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String defaultLanguageForMcc(int mcc) {
         MccEntry entry;
         entry = entryForMcc(mcc);
@@ -84,6 +88,7 @@ public final class MccTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int smallestDigitsMccForMnc(int mcc) {
         MccEntry entry;
         entry = entryForMcc(mcc);
@@ -95,6 +100,7 @@ public final class MccTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void updateMccMncConfiguration(PhoneBase phone, String mccmnc) {
         if (!TextUtils.isEmpty(mccmnc)) {
             int mcc, mnc;
@@ -127,6 +133,7 @@ public final class MccTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setTimezoneFromMccIfNeeded(PhoneBase phone, int mcc) {
         String timezone = SystemProperties.get(ServiceStateTracker.TIMEZONE_PROPERTY);
         if (timezone == null || timezone.length() == 0) {
@@ -142,6 +149,7 @@ public final class MccTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setLocaleFromMccIfNeeded(PhoneBase phone, int mcc) {
         String language = MccTable.defaultLanguageForMcc(mcc);
         String country = MccTable.countryCodeForMcc(mcc);
@@ -150,6 +158,7 @@ public final class MccTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void setWifiCountryCodeFromMcc(PhoneBase phone, int mcc) {
         String country = MccTable.countryCodeForMcc(mcc);
         if (!country.isEmpty()) {
@@ -181,7 +190,7 @@ public final class MccTable {
             addTaint(mnc);
             addTaint(iso.getTaint());
             addTaint(smallestDigitsMCC);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -191,11 +200,11 @@ public final class MccTable {
             this.iso = iso;
             this.smallestDigitsMnc = smallestDigitsMCC;
             this.language = language;
-            // ---------- Original Method ----------
-            //this.mcc = mnc;
-            //this.iso = iso;
-            //this.smallestDigitsMnc = smallestDigitsMCC;
-            //this.language = language;
+            
+            
+            
+            
+            
         }
 
         
@@ -204,8 +213,8 @@ public final class MccTable {
             addTaint(o.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261663935 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261663935;
-            // ---------- Original Method ----------
-            //return mcc - o.mcc;
+            
+            
         }
 
         

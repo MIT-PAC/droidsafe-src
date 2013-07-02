@@ -1,11 +1,11 @@
 package javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class TimeoutEvent extends TransactionTerminatedEvent {
@@ -20,8 +20,8 @@ public class TimeoutEvent extends TransactionTerminatedEvent {
         mTimeout = timeout;
         addTaint(source.getTaint());
         addTaint(serverTransaction.getTaint());
-        // ---------- Original Method ----------
-        //mTimeout = timeout;
+        
+        
     }
 
     
@@ -32,19 +32,19 @@ public class TimeoutEvent extends TransactionTerminatedEvent {
         mTimeout = timeout;
         addTaint(source.getTaint());
         addTaint(clientTransaction.getTaint());
-        // ---------- Original Method ----------
-        //mTimeout = timeout;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.107 -0400", hash_original_method = "83172AE614FED36EC49043A629BB9E54", hash_generated_method = "F72288A70973576E6C5138E1E8CA15FD")
     public Timeout getTimeout() {
-        Timeout varB4EAC82CA7396A68D541C85D26508E83_2104950938 = null; //Variable for return #1
+        Timeout varB4EAC82CA7396A68D541C85D26508E83_2104950938 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2104950938 = mTimeout;
-        varB4EAC82CA7396A68D541C85D26508E83_2104950938.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2104950938.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2104950938;
-        // ---------- Original Method ----------
-        //return mTimeout;
+        
+        
     }
 
     

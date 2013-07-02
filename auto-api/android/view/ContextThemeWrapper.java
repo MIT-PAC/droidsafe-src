@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -29,7 +29,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.871 -0400", hash_original_method = "2CB22459058FC77C2233290E776C217F", hash_generated_method = "A52E6A8077E95A96382ABDDF2BE523D0")
     public  ContextThemeWrapper() {
         super(null);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,31 +38,33 @@ public class ContextThemeWrapper extends ContextWrapper {
         super(base);
         mBase = base;
         mThemeResource = themeres;
-        // ---------- Original Method ----------
-        //mBase = base;
-        //mThemeResource = themeres;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.872 -0400", hash_original_method = "78AA434171DBBE0A89D0F8DC1618D34C", hash_generated_method = "3DABDDC1F65B0CDB24F633535C22EB4F")
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
         mBase = newBase;
-        // ---------- Original Method ----------
-        //super.attachBaseContext(newBase);
-        //mBase = newBase;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.872 -0400", hash_original_method = "E97E7D3D0BCD16FFD8F18C9341C10283", hash_generated_method = "13B2E8C961E9362FDA33D1F57040A307")
     @Override
     public void setTheme(int resid) {
         mThemeResource = resid;
         initializeTheme();
-        // ---------- Original Method ----------
-        //mThemeResource = resid;
-        //initializeTheme();
+        
+        
+        
     }
 
     
@@ -71,95 +73,97 @@ public class ContextThemeWrapper extends ContextWrapper {
     public int getThemeResId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1057692376 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1057692376;
-        // ---------- Original Method ----------
-        //return mThemeResource;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.873 -0400", hash_original_method = "21593966DDD7C797D13E86548D9AA1B9", hash_generated_method = "63DF15B2850C1821A7F8C6FDFF6AF27D")
     @Override
     public Resources.Theme getTheme() {
-        Resources.Theme varB4EAC82CA7396A68D541C85D26508E83_1991870555 = null; //Variable for return #1
-        Resources.Theme varB4EAC82CA7396A68D541C85D26508E83_306630786 = null; //Variable for return #2
+        Resources.Theme varB4EAC82CA7396A68D541C85D26508E83_1991870555 = null; 
+        Resources.Theme varB4EAC82CA7396A68D541C85D26508E83_306630786 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1991870555 = mTheme;
-        } //End block
+        } 
         mThemeResource = Resources.selectDefaultTheme(mThemeResource,
                 getApplicationInfo().targetSdkVersion);
         initializeTheme();
         varB4EAC82CA7396A68D541C85D26508E83_306630786 = mTheme;
-        Resources.Theme varA7E53CE21691AB073D9660D615818899_1283671401; //Final return value
+        Resources.Theme varA7E53CE21691AB073D9660D615818899_1283671401; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1283671401 = varB4EAC82CA7396A68D541C85D26508E83_1991870555;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1283671401 = varB4EAC82CA7396A68D541C85D26508E83_306630786;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1283671401.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1283671401.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1283671401;
-        // ---------- Original Method ----------
-        //if (mTheme != null) {
-            //return mTheme;
-        //}
-        //mThemeResource = Resources.selectDefaultTheme(mThemeResource,
-                //getApplicationInfo().targetSdkVersion);
-        //initializeTheme();
-        //return mTheme;
+        
+        
+            
+        
+        
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.874 -0400", hash_original_method = "3DDCB0207132CDAFA0BFC718C36A2A86", hash_generated_method = "5B2CA5D0D42249B9DF7AB980F5439A17")
     @Override
     public Object getSystemService(String name) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_602963228 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_1584943584 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_602963228 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_1584943584 = null; 
         {
             boolean var28A5A9D11D394EF62378796E9CC200BC_1250996976 = (LAYOUT_INFLATER_SERVICE.equals(name));
             {
                 {
                     mInflater = LayoutInflater.from(mBase).cloneInContext(this);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_602963228 = mInflater;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1584943584 = mBase.getSystemService(name);
         addTaint(name.getTaint());
-        Object varA7E53CE21691AB073D9660D615818899_2067325039; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_2067325039; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2067325039 = varB4EAC82CA7396A68D541C85D26508E83_602963228;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2067325039 = varB4EAC82CA7396A68D541C85D26508E83_1584943584;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2067325039.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2067325039.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2067325039;
-        // ---------- Original Method ----------
-        //if (LAYOUT_INFLATER_SERVICE.equals(name)) {
-            //if (mInflater == null) {
-                //mInflater = LayoutInflater.from(mBase).cloneInContext(this);
-            //}
-            //return mInflater;
-        //}
-        //return mBase.getSystemService(name);
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.875 -0400", hash_original_method = "8FCBAFBE19793DC1F6F481E8EF635F38", hash_generated_method = "1142B6CBFFCC6F56BA7C98BDC447AE80")
     protected void onApplyThemeResource(Resources.Theme theme, int resid, boolean first) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         theme.applyStyle(resid, true);
         addTaint(theme.getTaint());
         addTaint(resid);
         addTaint(first);
-        // ---------- Original Method ----------
-        //theme.applyStyle(resid, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.876 -0400", hash_original_method = "274E46830CAE6261C7392F8B8EF11DA4", hash_generated_method = "641C6743CDDFCE1A85D0CEF08B9EB394")
     private void initializeTheme() {
         final boolean first = mTheme == null;
@@ -168,19 +172,19 @@ public class ContextThemeWrapper extends ContextWrapper {
             Resources.Theme theme = mBase.getTheme();
             {
                 mTheme.setTo(theme);
-            } //End block
-        } //End block
+            } 
+        } 
         onApplyThemeResource(mTheme, mThemeResource, first);
-        // ---------- Original Method ----------
-        //final boolean first = mTheme == null;
-        //if (first) {
-            //mTheme = getResources().newTheme();
-            //Resources.Theme theme = mBase.getTheme();
-            //if (theme != null) {
-                //mTheme.setTo(theme);
-            //}
-        //}
-        //onApplyThemeResource(mTheme, mThemeResource, first);
+        
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     

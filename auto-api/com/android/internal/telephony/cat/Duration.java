@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -22,9 +22,9 @@ public class Duration implements Parcelable {
     public  Duration(int timeInterval, TimeUnit timeUnit) {
         this.timeInterval = timeInterval;
         this.timeUnit = timeUnit;
-        // ---------- Original Method ----------
-        //this.timeInterval = timeInterval;
-        //this.timeUnit = timeUnit;
+        
+        
+        
     }
 
     
@@ -32,21 +32,22 @@ public class Duration implements Parcelable {
     private  Duration(Parcel in) {
         timeInterval = in.readInt();
         timeUnit = TimeUnit.values()[in.readInt()];
-        // ---------- Original Method ----------
-        //timeInterval = in.readInt();
-        //timeUnit = TimeUnit.values()[in.readInt()];
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.536 -0400", hash_original_method = "7A3E2E3AAE56FB706A1FF7E711848E72", hash_generated_method = "433D838BDDD8FD085D085F15C38080AD")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(timeInterval);
         dest.writeInt(timeUnit.ordinal());
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(timeInterval);
-        //dest.writeInt(timeUnit.ordinal());
+        
+        
+        
     }
 
     
@@ -54,8 +55,8 @@ public class Duration implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_747921587 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_747921587;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     

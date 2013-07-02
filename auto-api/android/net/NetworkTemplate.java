@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import static android.net.ConnectivityManager.TYPE_ETHERNET;
 import static android.net.ConnectivityManager.TYPE_WIFI;
@@ -34,9 +34,9 @@ public class NetworkTemplate implements Parcelable {
     public  NetworkTemplate(int matchRule, String subscriberId) {
         this.mMatchRule = matchRule;
         this.mSubscriberId = subscriberId;
-        // ---------- Original Method ----------
-        //this.mMatchRule = matchRule;
-        //this.mSubscriberId = subscriberId;
+        
+        
+        
     }
 
     
@@ -44,46 +44,52 @@ public class NetworkTemplate implements Parcelable {
     private  NetworkTemplate(Parcel in) {
         mMatchRule = in.readInt();
         mSubscriberId = in.readString();
-        // ---------- Original Method ----------
-        //mMatchRule = in.readInt();
-        //mSubscriberId = in.readString();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NetworkTemplate buildTemplateMobileAll(String subscriberId) {
         return new NetworkTemplate(MATCH_MOBILE_ALL, subscriberId);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NetworkTemplate buildTemplateMobile3gLower(String subscriberId) {
         return new NetworkTemplate(MATCH_MOBILE_3G_LOWER, subscriberId);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NetworkTemplate buildTemplateMobile4g(String subscriberId) {
         return new NetworkTemplate(MATCH_MOBILE_4G, subscriberId);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NetworkTemplate buildTemplateWifi() {
         return new NetworkTemplate(MATCH_WIFI, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NetworkTemplate buildTemplateEthernet() {
         return new NetworkTemplate(MATCH_ETHERNET, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.806 -0400", hash_original_method = "16E233F925554B3B88BD36CB1859F60A", hash_generated_method = "2DA687ACC4EBBEDE30E4D536F19C81E9")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mMatchRule);
         dest.writeString(mSubscriberId);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mMatchRule);
-        //dest.writeString(mSubscriberId);
+        
+        
+        
     }
 
     
@@ -91,38 +97,41 @@ public class NetworkTemplate implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_520579271 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_520579271;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.807 -0400", hash_original_method = "743C43E5DEE5FAC4123020B60468B1AB", hash_generated_method = "B69210FB3A891DE0A1B4A93A829E01D7")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1344555604 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1344555604 = null; 
         final String scrubSubscriberId = scrubSubscriberId(mSubscriberId);
         varB4EAC82CA7396A68D541C85D26508E83_1344555604 = "NetworkTemplate: matchRule=" + getMatchRuleName(mMatchRule) + ", subscriberId="
                 + scrubSubscriberId;
-        varB4EAC82CA7396A68D541C85D26508E83_1344555604.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1344555604.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1344555604;
-        // ---------- Original Method ----------
-        //final String scrubSubscriberId = scrubSubscriberId(mSubscriberId);
-        //return "NetworkTemplate: matchRule=" + getMatchRuleName(mMatchRule) + ", subscriberId="
-                //+ scrubSubscriberId;
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.807 -0400", hash_original_method = "61F711039243E011B66A7D31CCB469F2", hash_generated_method = "41BB84B445154C62E503F412B6436F78")
     @Override
     public int hashCode() {
         int var5903D3463C4117DDC92BFB75357FD987_1335095277 = (Objects.hashCode(mMatchRule, mSubscriberId));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_911061156 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_911061156;
-        // ---------- Original Method ----------
-        //return Objects.hashCode(mMatchRule, mSubscriberId);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.808 -0400", hash_original_method = "97109AC3BBA8BEF8ECFCD42700ABFADC", hash_generated_method = "DBCE72DB951FFFC2403FEA1FF21A4D7B")
     @Override
     public boolean equals(Object obj) {
@@ -130,17 +139,17 @@ public class NetworkTemplate implements Parcelable {
             final NetworkTemplate other = (NetworkTemplate) obj;
             boolean var67D3C77A149DB63592FE7663B20E776D_752450559 = (mMatchRule == other.mMatchRule
                     && Objects.equal(mSubscriberId, other.mSubscriberId));
-        } //End block
+        } 
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1971690633 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1971690633;
-        // ---------- Original Method ----------
-        //if (obj instanceof NetworkTemplate) {
-            //final NetworkTemplate other = (NetworkTemplate) obj;
-            //return mMatchRule == other.mMatchRule
-                    //&& Objects.equal(mSubscriberId, other.mSubscriberId);
-        //}
-        //return false;
+        
+        
+            
+            
+                    
+        
+        
     }
 
     
@@ -148,82 +157,85 @@ public class NetworkTemplate implements Parcelable {
     public int getMatchRule() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1934873627 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1934873627;
-        // ---------- Original Method ----------
-        //return mMatchRule;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.809 -0400", hash_original_method = "DC04D62E493D044F593223B75A4808C0", hash_generated_method = "60EAFB33A09F6A93E21E998B4F21C021")
     public String getSubscriberId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_220187194 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_220187194 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_220187194 = mSubscriberId;
-        varB4EAC82CA7396A68D541C85D26508E83_220187194.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_220187194.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_220187194;
-        // ---------- Original Method ----------
-        //return mSubscriberId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.809 -0400", hash_original_method = "9C317DAC08BBC55C4495C595EA5A7F8A", hash_generated_method = "BF633A4FCFB22F79D24CA982BE864329")
     public boolean matches(NetworkIdentity ident) {
-        //Begin case MATCH_MOBILE_ALL 
+        
         boolean var27F3C9C9886A4B3E59CA64C666369B54_1657513911 = (matchesMobile(ident));
-        //End case MATCH_MOBILE_ALL 
-        //Begin case MATCH_MOBILE_3G_LOWER 
+        
+        
         boolean var997543972248F97D7F290C9235B6C3B4_1538412120 = (matchesMobile3gLower(ident));
-        //End case MATCH_MOBILE_3G_LOWER 
-        //Begin case MATCH_MOBILE_4G 
+        
+        
         boolean var279FDC683639FF1E4965F9BB512C163D_1726121207 = (matchesMobile4g(ident));
-        //End case MATCH_MOBILE_4G 
-        //Begin case MATCH_WIFI 
+        
+        
         boolean varC14BD0EB62533D621E51A3121D089961_991639771 = (matchesWifi(ident));
-        //End case MATCH_WIFI 
-        //Begin case MATCH_ETHERNET 
+        
+        
         boolean varD3707DDFF0F39513E3FAE3291923C228_798150153 = (matchesEthernet(ident));
-        //End case MATCH_ETHERNET 
-        //Begin case default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("unknown network template");
-        //End case default 
+        
         addTaint(ident.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_643304692 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_643304692;
-        // ---------- Original Method ----------
-        //switch (mMatchRule) {
-            //case MATCH_MOBILE_ALL:
-                //return matchesMobile(ident);
-            //case MATCH_MOBILE_3G_LOWER:
-                //return matchesMobile3gLower(ident);
-            //case MATCH_MOBILE_4G:
-                //return matchesMobile4g(ident);
-            //case MATCH_WIFI:
-                //return matchesWifi(ident);
-            //case MATCH_ETHERNET:
-                //return matchesEthernet(ident);
-            //default:
-                //throw new IllegalArgumentException("unknown network template");
-        //}
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.810 -0400", hash_original_method = "BBF3C380B9774B27B4245C54F7894533", hash_generated_method = "88DF2053D62B03F31E06F0308F1B7299")
     private boolean matchesMobile(NetworkIdentity ident) {
         {
             boolean var3DC0FC46DFF2E897F05D8E47FB3E143C_1923331170 = ((contains(DATA_USAGE_NETWORK_TYPES, ident.mType)
                     && Objects.equal(mSubscriberId, ident.mSubscriberId)));
-        } //End block
+        } 
         addTaint(ident.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_845686087 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_845686087;
-        // ---------- Original Method ----------
-        //if (ident.mType == TYPE_WIMAX) {
-            //return true;
-        //} else {
-            //return (contains(DATA_USAGE_NETWORK_TYPES, ident.mType)
-                    //&& Objects.equal(mSubscriberId, ident.mSubscriberId));
-        //}
+        
+        
+            
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.810 -0400", hash_original_method = "0F24D42BACA619E1B4D2A14C838DE427", hash_generated_method = "3F10D4F258249B13E5E826DE57B980CA")
     private boolean matchesMobile3gLower(NetworkIdentity ident) {
         {
@@ -231,27 +243,28 @@ public class NetworkTemplate implements Parcelable {
             {
                 {
                     Object varDA555F932848EC9B6BF71EDF358E9CF0_180467440 = (getNetworkClass(ident.mSubType));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(ident.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1607679910 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1607679910;
-        // ---------- Original Method ----------
-        //if (ident.mType == TYPE_WIMAX) {
-            //return false;
-        //} else if (matchesMobile(ident)) {
-            //switch (getNetworkClass(ident.mSubType)) {
-                //case NETWORK_CLASS_UNKNOWN:
-                //case NETWORK_CLASS_2_G:
-                //case NETWORK_CLASS_3_G:
-                    //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+        
+            
+                
+                
+                
+                    
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.811 -0400", hash_original_method = "B7894A7F3E04E8F81CBF1F61E6B8AB40", hash_generated_method = "F6489CA9D7785C83891FB513A15E746E")
     private boolean matchesMobile4g(NetworkIdentity ident) {
         {
@@ -259,22 +272,22 @@ public class NetworkTemplate implements Parcelable {
             {
                 {
                     Object varDA555F932848EC9B6BF71EDF358E9CF0_1642947615 = (getNetworkClass(ident.mSubType));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(ident.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1240619118 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1240619118;
-        // ---------- Original Method ----------
-        //if (ident.mType == TYPE_WIMAX) {
-            //return true;
-        //} else if (matchesMobile(ident)) {
-            //switch (getNetworkClass(ident.mSubType)) {
-                //case NETWORK_CLASS_4_G:
-                    //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+        
+            
+                
+                    
+            
+        
+        
     }
 
     
@@ -283,11 +296,11 @@ public class NetworkTemplate implements Parcelable {
         addTaint(ident.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1870191497 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1870191497;
-        // ---------- Original Method ----------
-        //if (ident.mType == TYPE_WIFI) {
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
@@ -296,11 +309,11 @@ public class NetworkTemplate implements Parcelable {
         addTaint(ident.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1789548566 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1789548566;
-        // ---------- Original Method ----------
-        //if (ident.mType == TYPE_ETHERNET) {
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
@@ -356,12 +369,12 @@ public class NetworkTemplate implements Parcelable {
             return new NetworkTemplate[size];
         }
     };
-    // orphaned legacy method
+    
     public NetworkTemplate createFromParcel(Parcel in) {
             return new NetworkTemplate(in);
         }
     
-    // orphaned legacy method
+    
     public NetworkTemplate[] newArray(int size) {
             return new NetworkTemplate[size];
         }

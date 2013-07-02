@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class ConsoleMessage {
@@ -28,44 +28,44 @@ public class ConsoleMessage {
         mSourceId = sourceId;
         mLineNumber = lineNumber;
         mLevel = msgLevel;
-        // ---------- Original Method ----------
-        //mMessage = message;
-        //mSourceId = sourceId;
-        //mLineNumber = lineNumber;
-        //mLevel = msgLevel;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.143 -0400", hash_original_method = "25C4EE735F0CFD6521F32D3F800D92AC", hash_generated_method = "2632424AF9D613598B7BB5C0C37BC789")
     public MessageLevel messageLevel() {
-        MessageLevel varB4EAC82CA7396A68D541C85D26508E83_188621800 = null; //Variable for return #1
+        MessageLevel varB4EAC82CA7396A68D541C85D26508E83_188621800 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_188621800 = mLevel;
-        varB4EAC82CA7396A68D541C85D26508E83_188621800.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_188621800.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_188621800;
-        // ---------- Original Method ----------
-        //return mLevel;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.144 -0400", hash_original_method = "52DD879A1942417F2863E1B67C410E21", hash_generated_method = "35127B2F93D1103418D4DAADF9B170FC")
     public String message() {
-        String varB4EAC82CA7396A68D541C85D26508E83_866999319 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_866999319 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_866999319 = mMessage;
-        varB4EAC82CA7396A68D541C85D26508E83_866999319.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_866999319.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_866999319;
-        // ---------- Original Method ----------
-        //return mMessage;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.144 -0400", hash_original_method = "215864977BD1865913F9AFF2A58F69AA", hash_generated_method = "DAD077EA35EB841882004D3CB9310AB1")
     public String sourceId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_477453321 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_477453321 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_477453321 = mSourceId;
-        varB4EAC82CA7396A68D541C85D26508E83_477453321.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_477453321.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_477453321;
-        // ---------- Original Method ----------
-        //return mSourceId;
+        
+        
     }
 
     
@@ -73,8 +73,8 @@ public class ConsoleMessage {
     public int lineNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_143580671 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_143580671;
-        // ---------- Original Method ----------
-        //return mLineNumber;
+        
+        
     }
 
     

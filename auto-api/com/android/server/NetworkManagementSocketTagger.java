@@ -1,11 +1,11 @@
 package com.android.server;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.net.NetworkStats;
 import android.os.SystemProperties;
@@ -25,30 +25,35 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.300 -0400", hash_original_method = "00C0D10B5E2369FA378DABF797EE6BED", hash_generated_method = "00C0D10B5E2369FA378DABF797EE6BED")
     public NetworkManagementSocketTagger ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void install() {
         SocketTagger.set(new NetworkManagementSocketTagger());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setThreadSocketStatsTag(int tag) {
         threadSocketTags.get().statsTag = tag;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getThreadSocketStatsTag() {
         return threadSocketTags.get().statsTag;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setThreadSocketStatsUid(int uid) {
         threadSocketTags.get().statsUid = uid;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.301 -0400", hash_original_method = "754D4D42EA09C30B28CC17EDE05EFAAB", hash_generated_method = "2DD49FF42F056F78C495E9E600C6AE44")
     @Override
     public void tag(FileDescriptor fd) throws SocketException {
@@ -56,19 +61,20 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
         {
             Log.d(TAG, "tagSocket(" + fd.getInt$() + ") with statsTag=0x"
                     + Integer.toHexString(options.statsTag) + ", statsUid=" + options.statsUid);
-        } //End block
+        } 
         tagSocketFd(fd, options.statsTag, options.statsUid);
         addTaint(fd.getTaint());
-        // ---------- Original Method ----------
-        //final SocketTags options = threadSocketTags.get();
-        //if (LOGD) {
-            //Log.d(TAG, "tagSocket(" + fd.getInt$() + ") with statsTag=0x"
-                    //+ Integer.toHexString(options.statsTag) + ", statsUid=" + options.statsUid);
-        //}
-        //tagSocketFd(fd, options.statsTag, options.statsUid);
+        
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.301 -0400", hash_original_method = "C210639DA77D00249F794C3EBD98DE8A", hash_generated_method = "2493A7287DC3768C6CB6D3F8E3BF7BDA")
     private void tagSocketFd(FileDescriptor fd, int tag, int uid) {
         int errno;
@@ -76,48 +82,51 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
         addTaint(fd.getTaint());
         addTaint(tag);
         addTaint(uid);
-        // ---------- Original Method ----------
-        //int errno;
-        //if (tag == -1 && uid == -1) return;
-        //errno = native_tagSocketFd(fd, tag, uid);
-        //if (errno < 0) {
-            //Log.i(TAG, "tagSocketFd(" + fd.getInt$() + ", "
-                  //+ tag + ", " +
-                  //+ uid + ") failed with errno" + errno);
-        //}
+        
+        
+        
+        
+        
+            
+                  
+                  
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.302 -0400", hash_original_method = "4EBF01D3564F87055EEC05DD0727DB2B", hash_generated_method = "F6DD27AB3D8D558851532DA1FA12394E")
     @Override
     public void untag(FileDescriptor fd) throws SocketException {
         unTagSocketFd(fd);
         addTaint(fd.getTaint());
-        // ---------- Original Method ----------
-        //if (LOGD) {
-            //Log.i(TAG, "untagSocket(" + fd.getInt$() + ")");
-        //}
-        //unTagSocketFd(fd);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.302 -0400", hash_original_method = "5654F79E328B73E29CE69FDDA4191C15", hash_generated_method = "0A9B46BF3B38052B3CCCB9A28A5C1F96")
     private void unTagSocketFd(FileDescriptor fd) {
         final SocketTags options = threadSocketTags.get();
         int errno;
         errno = native_untagSocketFd(fd);
         addTaint(fd.getTaint());
-        // ---------- Original Method ----------
-        //final SocketTags options = threadSocketTags.get();
-        //int errno;
-        //if (options.statsTag == -1 && options.statsUid == -1) return;
-        //errno = native_untagSocketFd(fd);
-        //if (errno < 0) {
-            //Log.w(TAG, "untagSocket(" + fd.getInt$() + ") failed with errno " + errno);
-        //}
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setKernelCounterSet(int uid, int counterSet) {
         int errno = native_setCounterSet(counterSet, uid);
         if (errno < 0) {
@@ -126,6 +135,7 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetKernelUidStats(int uid) {
         int errno = native_deleteTagData(0, uid);
         if (errno < 0) {
@@ -134,6 +144,7 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int kernelToTag(String string) {
         return (int) (Long.decode(string) >> 32);
     }
@@ -170,7 +181,7 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.304 -0400", hash_original_method = "9733D1794190B487674895963987601C", hash_generated_method = "9733D1794190B487674895963987601C")
         public SocketTags ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -193,12 +204,12 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.307 -0400", hash_original_method = "917426AFC28735098682F2B9D9CB79DB", hash_generated_method = "4CB69161806046B457CE14C356A34E9E")
         @Override
         protected SocketTags initialValue() {
-            SocketTags varB4EAC82CA7396A68D541C85D26508E83_1634980402 = null; //Variable for return #1
+            SocketTags varB4EAC82CA7396A68D541C85D26508E83_1634980402 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1634980402 = new SocketTags();
-            varB4EAC82CA7396A68D541C85D26508E83_1634980402.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1634980402.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1634980402;
-            // ---------- Original Method ----------
-            //return new SocketTags();
+            
+            
         }
 
         

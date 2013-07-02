@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.Collection;
@@ -28,40 +28,43 @@ public final class CRLDistributionPoints extends ExtensionValue {
             boolean var4EEDCA0E173D416128A376D7BD123B90_724139566 = ((distributionPoints == null) || (distributionPoints.size() == 0));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("distributionPoints are empty");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.distributionPoints = distributionPoints;
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //if ((distributionPoints == null) || (distributionPoints.size() == 0)) {
-            //throw new IllegalArgumentException("distributionPoints are empty");
-        //}
-        //this.distributionPoints = distributionPoints;
-        //this.encoding = encoding;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.649 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5E6171C5BB7073F0EF5DE547E7A4D62F")
     @Override
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1647242937 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1647242937;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CRLDistributionPoints decode(byte[] encoding) throws IOException {
         return (CRLDistributionPoints) ASN1.decode(encoding);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.654 -0400", hash_original_method = "B23CB95A086DE744F33B5369D34A5985", hash_generated_method = "F2C3088DB91C7DF1F3029A15FB97BD64")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
@@ -74,19 +77,19 @@ public final class CRLDistributionPoints extends ExtensionValue {
             {
                 sb.append(prefix).append("  [").append(++number).append("]\n");
                 distributionPoint.dumpValue(sb, prefix + "  ");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         sb.append(prefix).append("]\n");
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //sb.append(prefix).append("CRL Distribution Points: [\n");
-        //int number = 0;
-        //for (DistributionPoint distributionPoint : distributionPoints) {
-            //sb.append(prefix).append("  [").append(++number).append("]\n");
-            //distributionPoint.dumpValue(sb, prefix + "  ");
-        //}
-        //sb.append(prefix).append("]\n");
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -102,18 +105,6 @@ public final class CRLDistributionPoints extends ExtensionValue {
             return dps.distributionPoints;
         }
     };
-    /*
-    // orphaned legacy method
-    @Override public Collection<?> getValues(Object object) {
-            CRLDistributionPoints dps = (CRLDistributionPoints) object;
-            return dps.distributionPoints;
-        }
     
-    // orphaned legacy method
-    @Override public Object getDecodedObject(BerInputStream in) {
-            return new CRLDistributionPoints((List<DistributionPoint>) in.content, in.getEncoded());
-        }
-    
-    */
 }
 

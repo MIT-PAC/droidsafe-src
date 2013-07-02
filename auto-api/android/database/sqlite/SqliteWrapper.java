@@ -1,11 +1,11 @@
 package android.database.sqlite;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -20,15 +20,17 @@ public final class SqliteWrapper {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.912 -0400", hash_original_method = "6012CC1B0BDCD376222B54176A59A0F5", hash_generated_method = "4029D590C043C28C47B92BA3BA0590EB")
     private  SqliteWrapper() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static boolean isLowMemory(SQLiteException e) {
         return e.getMessage().equals(SQLITE_EXCEPTION_DETAIL_MESSAGE);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void checkSQLiteException(Context context, SQLiteException e) {
         if (isLowMemory(e)) {
             Toast.makeText(context, com.android.internal.R.string.low_memory,
@@ -51,6 +53,7 @@ public final class SqliteWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static boolean requery(Context context, Cursor cursor) {
         try {
             return cursor.requery();

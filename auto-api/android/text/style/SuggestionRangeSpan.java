@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
@@ -20,16 +20,16 @@ public class SuggestionRangeSpan extends CharacterStyle implements ParcelableSpa
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.905 -0400", hash_original_method = "BE3451A654F6E9FD9B583E5F598309FD", hash_generated_method = "3DDFC0E11D5F7709FC0BC9167F9698B2")
     public  SuggestionRangeSpan() {
         mBackgroundColor = 0;
-        // ---------- Original Method ----------
-        //mBackgroundColor = 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.905 -0400", hash_original_method = "C19BD23169B457337D3E2C544633849E", hash_generated_method = "4C2C2E3ED2D787E1EE455D3C2928ACB7")
     public  SuggestionRangeSpan(Parcel src) {
         mBackgroundColor = src.readInt();
-        // ---------- Original Method ----------
-        //mBackgroundColor = src.readInt();
+        
+        
     }
 
     
@@ -38,19 +38,20 @@ public class SuggestionRangeSpan extends CharacterStyle implements ParcelableSpa
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_908569977 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_908569977;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.906 -0400", hash_original_method = "2D196358A51E993023DA9656E12C24CE", hash_generated_method = "EB35B27ED1ECFBFDC6A89B4A90E736F0")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mBackgroundColor);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mBackgroundColor);
+        
+        
     }
 
     
@@ -59,16 +60,16 @@ public class SuggestionRangeSpan extends CharacterStyle implements ParcelableSpa
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_233554335 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_233554335;
-        // ---------- Original Method ----------
-        //return TextUtils.SUGGESTION_RANGE_SPAN;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.907 -0400", hash_original_method = "E6A11EC9B3E2DA21777E259CEAE43825", hash_generated_method = "C1EDFD39139B52FAB44D8473BFF01E1A")
     public void setBackgroundColor(int backgroundColor) {
         mBackgroundColor = backgroundColor;
-        // ---------- Original Method ----------
-        //mBackgroundColor = backgroundColor;
+        
+        
     }
 
     
@@ -77,8 +78,8 @@ public class SuggestionRangeSpan extends CharacterStyle implements ParcelableSpa
     public void updateDrawState(TextPaint tp) {
         tp.bgColor = mBackgroundColor;
         addTaint(tp.getTaint());
-        // ---------- Original Method ----------
-        //tp.bgColor = mBackgroundColor;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.*;
@@ -17,7 +17,7 @@ public class UserAgentParser extends HeaderParser {
     public  UserAgentParser(String userAgent) {
         super(userAgent);
         addTaint(userAgent.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class UserAgentParser extends HeaderParser {
     protected  UserAgentParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.934 -0400", hash_original_method = "67E8EBD2906BCEC3B5F02757CFDC6836", hash_generated_method = "1C7D480532A75CB8F5F21661F521587B")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1731453958 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1731453958 = null; 
         dbg_enter("UserAgentParser.parse");
         UserAgent userAgent = new UserAgent();
         try 
@@ -40,7 +41,7 @@ public class UserAgentParser extends HeaderParser {
             {
                 boolean varE8319E96ED7B82FE86A0F5A02AAB8C1A_1278022999 = (this.lexer.lookAhead(0) == '\n');
                 if (DroidSafeAndroidRuntime.control) throw createParseException("empty header");
-            } //End collapsed parenthetic
+            } 
             {
                 boolean var8F462703D5AFB8059D6E8FF16FEB4CE3_984498933 = (this.lexer.lookAhead(0) != '\n'
                     && this.lexer.lookAhead(0) != '\0');
@@ -50,7 +51,7 @@ public class UserAgentParser extends HeaderParser {
                         {
                             String comment = this.lexer.comment();
                             userAgent.addProductToken('(' + comment + ')');
-                        } //End block
+                        } 
                         {
                             this.getLexer().SPorHT();
                             String product = this.lexer.byteStringNoSlash();
@@ -65,27 +66,28 @@ public class UserAgentParser extends HeaderParser {
                                     if (DroidSafeAndroidRuntime.control) throw createParseException("Expected product version");
                                     productSb.append("/");
                                     productSb.append(productVersion);
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             userAgent.addProductToken(productSb.toString());
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     this.lexer.SPorHT();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             dbg_leave("UserAgentParser.parse");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1731453958 = userAgent;
-        varB4EAC82CA7396A68D541C85D26508E83_1731453958.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1731453958.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1731453958;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void main(String args[]) throws ParseException {
         String
       userAgent[] = { "User-Agent: Softphone/Beta1.5 \n", "User-Agent:Nist/Beta1 (beta version) \n", "User-Agent: Nist UA (beta version)\n",

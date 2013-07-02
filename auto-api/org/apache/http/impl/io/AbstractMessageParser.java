@@ -1,11 +1,11 @@
 package org.apache.http.impl.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -44,29 +44,29 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Session input buffer may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP parameters may not be null");
-        } //End block
+        } 
         this.sessionBuffer = buffer;
         this.maxHeaderCount = params.getIntParameter(
                 CoreConnectionPNames.MAX_HEADER_COUNT, -1);
         this.maxLineLen = params.getIntParameter(
                 CoreConnectionPNames.MAX_LINE_LENGTH, -1);
         this.lineParser = (parser != null) ? parser : BasicLineParser.DEFAULT;
-        // ---------- Original Method ----------
-        //if (buffer == null) {
-            //throw new IllegalArgumentException("Session input buffer may not be null");
-        //}
-        //if (params == null) {
-            //throw new IllegalArgumentException("HTTP parameters may not be null");
-        //}
-        //this.sessionBuffer = buffer;
-        //this.maxHeaderCount = params.getIntParameter(
-                //CoreConnectionPNames.MAX_HEADER_COUNT, -1);
-        //this.maxLineLen = params.getIntParameter(
-                //CoreConnectionPNames.MAX_LINE_LENGTH, -1);
-        //this.lineParser = (parser != null) ? parser : BasicLineParser.DEFAULT;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+                
+        
+                
+        
     }
 
     
@@ -134,18 +134,19 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
         throws IOException, HttpException, ParseException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.604 -0400", hash_original_method = "56FD9FE99CC7B8784E50CC19E304C067", hash_generated_method = "666FF5980578B5E7CB05AE683BF7853A")
     public HttpMessage parse() throws IOException, HttpException {
-        HttpMessage varB4EAC82CA7396A68D541C85D26508E83_107823284 = null; //Variable for return #1
+        HttpMessage varB4EAC82CA7396A68D541C85D26508E83_107823284 = null; 
         HttpMessage message = null;
         try 
         {
             message = parseHead(this.sessionBuffer);
-        } //End block
+        } 
         catch (ParseException px)
         {
             if (DroidSafeAndroidRuntime.control) throw new ProtocolException(px.getMessage(), px);
-        } //End block
+        } 
         Header[] headers = AbstractMessageParser.parseHeaders(
                 this.sessionBuffer, 
                 this.maxHeaderCount,
@@ -153,22 +154,22 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
                 this.lineParser);
         message.setHeaders(headers);
         varB4EAC82CA7396A68D541C85D26508E83_107823284 = message;
-        varB4EAC82CA7396A68D541C85D26508E83_107823284.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_107823284.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_107823284;
-        // ---------- Original Method ----------
-        //HttpMessage message = null;
-        //try {
-            //message = parseHead(this.sessionBuffer);
-        //} catch (ParseException px) {
-            //throw new ProtocolException(px.getMessage(), px);
-        //}
-        //Header[] headers = AbstractMessageParser.parseHeaders(
-                //this.sessionBuffer, 
-                //this.maxHeaderCount,
-                //this.maxLineLen,
-                //this.lineParser);
-        //message.setHeaders(headers);
-        //return message;
+        
+        
+        
+            
+        
+            
+        
+        
+                
+                
+                
+                
+        
+        
     }
 
     

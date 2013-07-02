@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.util.TypedProperties;
 import android.util.Log;
@@ -34,10 +34,11 @@ public final class Debug {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.113 -0400", hash_original_method = "2057C70024BF253BE1820FDFE7216E44", hash_generated_method = "CEC0EF1C9C14E821D3D42B954D6BD596")
     private  Debug() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void waitForDebugger() {
         if (!VMDebug.isDebuggingEnabled()) {
             return;
@@ -78,11 +79,13 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isDebuggerConnected() {
         return VMDebug.isDebuggerConnected();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] getVmFeatureList() {
         return VMDebug.getVmFeatureList();
     }
@@ -93,6 +96,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startNativeTracing() {
         PrintWriter outStream = null;
         try {
@@ -108,6 +112,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void stopNativeTracing() {
         VMDebug.stopEmulatorTracing();
         PrintWriter outStream = null;
@@ -123,26 +128,31 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void enableEmulatorTraceOutput() {
         VMDebug.startEmulatorTracing();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startMethodTracing() {
         VMDebug.startMethodTracing(DEFAULT_TRACE_FILE_PATH, 0, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startMethodTracing(String traceName) {
         startMethodTracing(traceName, 0, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startMethodTracing(String traceName, int bufferSize) {
         startMethodTracing(traceName, bufferSize, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startMethodTracing(String traceName, int bufferSize,
         int flags) {
         String pathName = traceName;
@@ -154,67 +164,80 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startMethodTracing(String traceName, FileDescriptor fd,
         int bufferSize, int flags) {
         VMDebug.startMethodTracing(traceName, fd, bufferSize, flags);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startMethodTracingDdms(int bufferSize, int flags) {
         VMDebug.startMethodTracingDdms(bufferSize, flags);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isMethodTracingActive() {
         return VMDebug.isMethodTracingActive();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void stopMethodTracing() {
         VMDebug.stopMethodTracing();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long threadCpuTimeNanos() {
         return VMDebug.threadCpuTimeNanos();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startAllocCounting() {
         VMDebug.startAllocCounting();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void stopAllocCounting() {
         VMDebug.stopAllocCounting();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getGlobalAllocCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_ALLOCATED_OBJECTS);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getGlobalAllocSize() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_ALLOCATED_BYTES);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getGlobalFreedCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_FREED_OBJECTS);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getGlobalFreedSize() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_FREED_BYTES);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getGlobalClassInitCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_CLASS_INIT_COUNT);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getGlobalClassInitTime() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_CLASS_INIT_TIME);
     }
@@ -244,16 +267,19 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getGlobalGcInvocationCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_GC_INVOCATIONS);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getThreadAllocCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_THREAD_ALLOCATED_OBJECTS);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getThreadAllocSize() {
         return VMDebug.getAllocCount(VMDebug.KIND_THREAD_ALLOCATED_BYTES);
     }
@@ -271,36 +297,43 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getThreadGcInvocationCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_THREAD_GC_INVOCATIONS);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetGlobalAllocCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_ALLOCATED_OBJECTS);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetGlobalAllocSize() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_ALLOCATED_BYTES);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetGlobalFreedCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_FREED_OBJECTS);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetGlobalFreedSize() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_FREED_BYTES);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetGlobalClassInitCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_CLASS_INIT_COUNT);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetGlobalClassInitTime() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_CLASS_INIT_TIME);
     }
@@ -326,16 +359,19 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetGlobalGcInvocationCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_GC_INVOCATIONS);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetThreadAllocCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_THREAD_ALLOCATED_OBJECTS);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetThreadAllocSize() {
         VMDebug.resetAllocCount(VMDebug.KIND_THREAD_ALLOCATED_BYTES);
     }
@@ -351,11 +387,13 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetThreadGcInvocationCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_THREAD_GC_INVOCATIONS);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetAllCounts() {
         VMDebug.resetAllocCount(VMDebug.KIND_ALL_COUNTS);
     }
@@ -406,26 +444,31 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void printLoadedClasses(int flags) {
         VMDebug.printLoadedClasses(flags);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getLoadedClassCount() {
         return VMDebug.getLoadedClassCount();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpHprofData(String fileName) throws IOException {
         VMDebug.dumpHprofData(fileName);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpHprofData(String fileName, FileDescriptor fd) throws IOException {
         VMDebug.dumpHprofData(fileName, fd);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpHprofDataDdms() {
         VMDebug.dumpHprofDataDdms();
     }
@@ -435,6 +478,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long countInstancesOfClass(Class cls) {
         return VMDebug.countInstancesOfClass(cls, true);
     }
@@ -475,6 +519,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean fieldTypeMatches(Field field, Class<?> cl) {
         Class<?> fieldClass = field.getType();
         if (fieldClass == cl) {
@@ -538,11 +583,13 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setFieldsOn(Class<?> cl) {
         setFieldsOn(cl, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setFieldsOn(Class<?> cl, boolean partial) {
         if (false) {
             if (debugProperties != null) {
@@ -567,6 +614,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean dumpService(String name, FileDescriptor fd, String[] args) {
         IBinder service = ServiceManager.getService(name);
         if (service == null) {
@@ -617,7 +665,7 @@ public final class Debug {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.125 -0400", hash_original_method = "09AE2D253AD01F5533857164DB70587D", hash_generated_method = "FF74B0D10914F28AB3E573FB192E254D")
         public  MemoryInfo() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -625,8 +673,8 @@ public final class Debug {
         private  MemoryInfo(Parcel source) {
             readFromParcel(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
-            //readFromParcel(source);
+            
+            
         }
 
         
@@ -634,8 +682,8 @@ public final class Debug {
         public int getTotalPss() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973116109 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973116109;
-            // ---------- Original Method ----------
-            //return dalvikPss + nativePss + otherPss;
+            
+            
         }
 
         
@@ -643,8 +691,8 @@ public final class Debug {
         public int getTotalPrivateDirty() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216688076 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216688076;
-            // ---------- Original Method ----------
-            //return dalvikPrivateDirty + nativePrivateDirty + otherPrivateDirty;
+            
+            
         }
 
         
@@ -652,8 +700,8 @@ public final class Debug {
         public int getTotalSharedDirty() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_662059289 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_662059289;
-            // ---------- Original Method ----------
-            //return dalvikSharedDirty + nativeSharedDirty + otherSharedDirty;
+            
+            
         }
 
         
@@ -662,8 +710,8 @@ public final class Debug {
             addTaint(which);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_828136260 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_828136260;
-            // ---------- Original Method ----------
-            //return otherStats[which*3];
+            
+            
         }
 
         
@@ -672,8 +720,8 @@ public final class Debug {
             addTaint(which);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1005166789 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1005166789;
-            // ---------- Original Method ----------
-            //return otherStats[which*3 + 1];
+            
+            
         }
 
         
@@ -682,8 +730,8 @@ public final class Debug {
             addTaint(which);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_497052032 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_497052032;
-            // ---------- Original Method ----------
-            //return otherStats[which*3 + 2];
+            
+            
         }
 
         
@@ -707,8 +755,8 @@ public final class Debug {
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_685100035 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_685100035;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
@@ -726,17 +774,17 @@ public final class Debug {
             dest.writeIntArray(otherStats);
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //dest.writeInt(dalvikPss);
-            //dest.writeInt(dalvikPrivateDirty);
-            //dest.writeInt(dalvikSharedDirty);
-            //dest.writeInt(nativePss);
-            //dest.writeInt(nativePrivateDirty);
-            //dest.writeInt(nativeSharedDirty);
-            //dest.writeInt(otherPss);
-            //dest.writeInt(otherPrivateDirty);
-            //dest.writeInt(otherSharedDirty);
-            //dest.writeIntArray(otherStats);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -752,17 +800,17 @@ public final class Debug {
             otherPrivateDirty = source.readInt();
             otherSharedDirty = source.readInt();
             otherStats = source.createIntArray();
-            // ---------- Original Method ----------
-            //dalvikPss = source.readInt();
-            //dalvikPrivateDirty = source.readInt();
-            //dalvikSharedDirty = source.readInt();
-            //nativePss = source.readInt();
-            //nativePrivateDirty = source.readInt();
-            //nativeSharedDirty = source.readInt();
-            //otherPss = source.readInt();
-            //otherPrivateDirty = source.readInt();
-            //otherSharedDirty = source.readInt();
-            //otherStats = source.createIntArray();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -779,12 +827,12 @@ public final class Debug {
                 return new MemoryInfo[size];
             }
         };
-        // orphaned legacy method
+        
         public MemoryInfo createFromParcel(Parcel source) {
                 return new MemoryInfo(source);
             }
         
-        // orphaned legacy method
+        
         public MemoryInfo[] newArray(int size) {
                 return new MemoryInfo[size];
             }
@@ -801,8 +849,8 @@ public final class Debug {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.131 -0400", hash_original_method = "409452CAAA99AF062D1B45C0A8D86C97", hash_generated_method = "5D14DE560AC6781B6BEDE1D45CC48926")
         public  InstructionCount() {
             mCounts = new int[NUM_INSTR];
-            // ---------- Original Method ----------
-            //mCounts = new int[NUM_INSTR];
+            
+            
         }
 
         
@@ -812,19 +860,19 @@ public final class Debug {
             {
                 VMDebug.startInstructionCounting();
                 VMDebug.resetInstructionCount();
-            } //End block
+            } 
             catch (UnsupportedOperationException uoe)
             { }
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_528418029 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_528418029;
-            // ---------- Original Method ----------
-            //try {
-                //VMDebug.startInstructionCounting();
-                //VMDebug.resetInstructionCount();
-            //} catch (UnsupportedOperationException uoe) {
-                //return false;
-            //}
-            //return true;
+            
+            
+                
+                
+            
+                
+            
+            
         }
 
         
@@ -834,19 +882,19 @@ public final class Debug {
             {
                 VMDebug.stopInstructionCounting();
                 VMDebug.getInstructionCount(mCounts);
-            } //End block
+            } 
             catch (UnsupportedOperationException uoe)
             { }
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_787934188 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_787934188;
-            // ---------- Original Method ----------
-            //try {
-                //VMDebug.stopInstructionCounting();
-                //VMDebug.getInstructionCount(mCounts);
-            //} catch (UnsupportedOperationException uoe) {
-                //return false;
-            //}
-            //return true;
+            
+            
+                
+                
+            
+                
+            
+            
         }
 
         
@@ -857,16 +905,16 @@ public final class Debug {
                 int i = 0;
                 {
                     count += mCounts[i];
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1857030832 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1857030832;
-            // ---------- Original Method ----------
-            //int count = 0;
-            //for (int i = 0; i < NUM_INSTR; i++) {
-                //count += mCounts[i];
-            //}
-            //return count;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -880,20 +928,20 @@ public final class Debug {
                         boolean varFAC684486A37EF13CBC51E3B4F00C0A2_1181691854 = (OpcodeInfo.isInvoke(i));
                         {
                             count += mCounts[i];
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_742044153 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_742044153;
-            // ---------- Original Method ----------
-            //int count = 0;
-            //for (int i = 0; i < NUM_INSTR; i++) {
-                //if (OpcodeInfo.isInvoke(i)) {
-                    //count += mCounts[i];
-                //}
-            //}
-            //return count;
+            
+            
+            
+                
+                    
+                
+            
+            
         }
 
         

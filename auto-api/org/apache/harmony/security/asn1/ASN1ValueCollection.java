@@ -1,11 +1,11 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Collection;
 
@@ -19,20 +19,21 @@ public abstract class ASN1ValueCollection extends ASN1Constructed {
         super(tagNumber);
         this.type = type;
         addTaint(tagNumber);
-        // ---------- Original Method ----------
-        //this.type = type;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.705 -0400", hash_original_method = "738CC0DE26C0029C09ABE092A492DCB2", hash_generated_method = "A50572932670E6D9AA7D169C913544C9")
     public Collection<?> getValues(Object object) {
-        Collection<?> varB4EAC82CA7396A68D541C85D26508E83_1015187185 = null; //Variable for return #1
+        Collection<?> varB4EAC82CA7396A68D541C85D26508E83_1015187185 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1015187185 = (Collection<?>) object;
         addTaint(object.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1015187185.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1015187185.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1015187185;
-        // ---------- Original Method ----------
-        //return (Collection<?>) object;
+        
+        
     }
 
     

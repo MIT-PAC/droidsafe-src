@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -45,7 +45,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.968 -0400", hash_original_method = "AADA555071E489A7B136029649F29F63", hash_generated_method = "853ED7E1741821951AE7AFCCD338E611")
     public  ActivityInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -62,17 +62,17 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
         configChanges = orig.configChanges;
         softInputMode = orig.softInputMode;
         uiOptions = orig.uiOptions;
-        // ---------- Original Method ----------
-        //theme = orig.theme;
-        //launchMode = orig.launchMode;
-        //permission = orig.permission;
-        //taskAffinity = orig.taskAffinity;
-        //targetActivity = orig.targetActivity;
-        //flags = orig.flags;
-        //screenOrientation = orig.screenOrientation;
-        //configChanges = orig.configChanges;
-        //softInputMode = orig.softInputMode;
-        //uiOptions = orig.uiOptions;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -89,17 +89,17 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
         configChanges = source.readInt();
         softInputMode = source.readInt();
         uiOptions = source.readInt();
-        // ---------- Original Method ----------
-        //theme = source.readInt();
-        //launchMode = source.readInt();
-        //permission = source.readString();
-        //taskAffinity = source.readString();
-        //targetActivity = source.readString();
-        //flags = source.readInt();
-        //screenOrientation = source.readInt();
-        //configChanges = source.readInt();
-        //softInputMode = source.readInt();
-        //uiOptions = source.readInt();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -118,11 +118,11 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     public int getRealConfigChanged() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895520956 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895520956;
-        // ---------- Original Method ----------
-        //return applicationInfo.targetSdkVersion < android.os.Build.VERSION_CODES.HONEYCOMB_MR2
-                //? (configChanges | ActivityInfo.CONFIG_SCREEN_SIZE
-                        //| ActivityInfo.CONFIG_SMALLEST_SCREEN_SIZE)
-                //: configChanges;
+        
+        
+                
+                        
+                
     }
 
     
@@ -130,52 +130,54 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     public final int getThemeResource() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716116143 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716116143;
-        // ---------- Original Method ----------
-        //return theme != 0 ? theme : applicationInfo.theme;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.972 -0400", hash_original_method = "0EA21654C0B5D84D36E2F9B8C286493E", hash_generated_method = "7406477AE117D15E18E7F87B1B82B282")
     public void dump(Printer pw, String prefix) {
         super.dumpFront(pw, prefix);
         {
             pw.println(prefix + "permission=" + permission);
-        } //End block
+        } 
         pw.println(prefix + "taskAffinity=" + taskAffinity
                 + " targetActivity=" + targetActivity);
         {
             pw.println(prefix + "launchMode=" + launchMode
                     + " flags=0x" + Integer.toHexString(flags)
                     + " theme=0x" + Integer.toHexString(theme));
-        } //End block
+        } 
         {
             pw.println(prefix + "screenOrientation=" + screenOrientation
                     + " configChanges=0x" + Integer.toHexString(configChanges)
                     + " softInputMode=0x" + Integer.toHexString(softInputMode));
-        } //End block
+        } 
         {
             pw.println(prefix + " uiOptions=0x" + Integer.toHexString(uiOptions));
-        } //End block
+        } 
         super.dumpBack(pw, prefix);
         addTaint(pw.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.973 -0400", hash_original_method = "B913D35C681ED2748C3576E23600DB3E", hash_generated_method = "C2AD1C6B046DEB766B50D976DDD0D91A")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_553094162 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_553094162 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_553094162 = "ActivityInfo{"
             + Integer.toHexString(System.identityHashCode(this))
             + " " + name + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_553094162.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_553094162.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_553094162;
-        // ---------- Original Method ----------
-        //return "ActivityInfo{"
-            //+ Integer.toHexString(System.identityHashCode(this))
-            //+ " " + name + "}";
+        
+        
+            
+            
     }
 
     
@@ -183,11 +185,12 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_762481206 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_762481206;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.974 -0400", hash_original_method = "0DBABFC7118E214F01D60FEE309F0914", hash_generated_method = "764FA04ED7291035B5F3DEF65BC58142")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         super.writeToParcel(dest, parcelableFlags);
@@ -203,18 +206,18 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
         dest.writeInt(uiOptions);
         addTaint(dest.getTaint());
         addTaint(parcelableFlags);
-        // ---------- Original Method ----------
-        //super.writeToParcel(dest, parcelableFlags);
-        //dest.writeInt(theme);
-        //dest.writeInt(launchMode);
-        //dest.writeString(permission);
-        //dest.writeString(taskAffinity);
-        //dest.writeString(targetActivity);
-        //dest.writeInt(flags);
-        //dest.writeInt(screenOrientation);
-        //dest.writeInt(configChanges);
-        //dest.writeInt(softInputMode);
-        //dest.writeInt(uiOptions);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -368,12 +371,12 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
             return new ActivityInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public ActivityInfo createFromParcel(Parcel source) {
             return new ActivityInfo(source);
         }
     
-    // orphaned legacy method
+    
     public ActivityInfo[] newArray(int size) {
             return new ActivityInfo[size];
         }

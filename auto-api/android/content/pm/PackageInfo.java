@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -74,7 +74,7 @@ public class PackageInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.744 -0400", hash_original_method = "28FD03AD36E70CA65DC12DAEBF4BAB2B", hash_generated_method = "2F8FDFAA3E5302C1D2777402917BDB61")
     public  PackageInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -88,7 +88,7 @@ public class PackageInfo implements Parcelable {
         int hasApp = source.readInt();
         {
             applicationInfo = ApplicationInfo.CREATOR.createFromParcel(source);
-        } //End block
+        } 
         firstInstallTime = source.readLong();
         lastUpdateTime = source.readLong();
         gids = source.createIntArray();
@@ -103,23 +103,24 @@ public class PackageInfo implements Parcelable {
         configPreferences = source.createTypedArray(ConfigurationInfo.CREATOR);
         reqFeatures = source.createTypedArray(FeatureInfo.CREATOR);
         installLocation = source.readInt();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.747 -0400", hash_original_method = "F32D243E2D05219891E68C55116B54A4", hash_generated_method = "845A72A339A1A2AB5965F682DEA6CA99")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_682730662 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_682730662 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_682730662 = "PackageInfo{"
             + Integer.toHexString(System.identityHashCode(this))
             + " " + packageName + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_682730662.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_682730662.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_682730662;
-        // ---------- Original Method ----------
-        //return "PackageInfo{"
-            //+ Integer.toHexString(System.identityHashCode(this))
-            //+ " " + packageName + "}";
+        
+        
+            
+            
     }
 
     
@@ -127,11 +128,12 @@ public class PackageInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_851907544 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_851907544;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.748 -0400", hash_original_method = "F276E90711C385BB34A836DEED976429", hash_generated_method = "B4A210388DD78F9895083E3E75398888")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         dest.writeString(packageName);
@@ -142,10 +144,10 @@ public class PackageInfo implements Parcelable {
         {
             dest.writeInt(1);
             applicationInfo.writeToParcel(dest, parcelableFlags);
-        } //End block
+        } 
         {
             dest.writeInt(0);
-        } //End block
+        } 
         dest.writeLong(firstInstallTime);
         dest.writeLong(lastUpdateTime);
         dest.writeIntArray(gids);
@@ -162,8 +164,8 @@ public class PackageInfo implements Parcelable {
         dest.writeInt(installLocation);
         addTaint(dest.getTaint());
         addTaint(parcelableFlags);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -191,12 +193,12 @@ public class PackageInfo implements Parcelable {
             return new PackageInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public PackageInfo createFromParcel(Parcel source) {
             return new PackageInfo(source);
         }
     
-    // orphaned legacy method
+    
     public PackageInfo[] newArray(int size) {
             return new PackageInfo[size];
         }

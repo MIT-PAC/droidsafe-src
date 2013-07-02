@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.Manifest.permission;
 import android.content.pm.PackageManager;
@@ -30,12 +30,13 @@ public class HTML5VideoInline extends HTML5VideoView {
         addTaint(videoLayerId);
         addTaint(position);
         addTaint(autoStart);
-        // ---------- Original Method ----------
-        //init(videoLayerId, position, autoStart);
-        //mTextureNames = null;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.804 -0400", hash_original_method = "D7EA882E28D2C4D67824D79C998B9B60", hash_generated_method = "7889140CB42507C6DBE4C298A9B746BD")
     @Override
     public void start() {
@@ -43,15 +44,16 @@ public class HTML5VideoInline extends HTML5VideoView {
             boolean var9900794E96251044BA342A0A224BC05B_190485826 = (!getPauseDuringPreparing());
             {
                 super.start();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (!getPauseDuringPreparing()) {
-            //super.start();
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.804 -0400", hash_original_method = "21B0AE17630D7867C6531BD31731CD32", hash_generated_method = "D797356A7EE2E977A002216664ECC960")
     @Override
     public void decideDisplayMode() {
@@ -59,14 +61,15 @@ public class HTML5VideoInline extends HTML5VideoView {
         Surface surface = new Surface(surfaceTexture);
         mPlayer.setSurface(surface);
         surface.release();
-        // ---------- Original Method ----------
-        //SurfaceTexture surfaceTexture = getSurfaceTexture(getVideoLayerId());
-        //Surface surface = new Surface(surfaceTexture);
-        //mPlayer.setSurface(surface);
-        //surface.release();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.804 -0400", hash_original_method = "AC7A2076B2D6AB73AC076068AFFF2875", hash_generated_method = "085BA9C7378DFB958BA4741E6A954440")
     @Override
     public void prepareDataAndDisplayMode(HTML5VideoViewProxy proxy) {
@@ -77,59 +80,61 @@ public class HTML5VideoInline extends HTML5VideoView {
                 == PackageManager.PERMISSION_GRANTED);
             {
                 mPlayer.setWakeMode(proxy.getContext(), PowerManager.FULL_WAKE_LOCK);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(proxy.getTaint());
-        // ---------- Original Method ----------
-        //super.prepareDataAndDisplayMode(proxy);
-        //setFrameAvailableListener(proxy);
-        //if (mProxy.getContext().checkCallingOrSelfPermission(permission.WAKE_LOCK)
-                //== PackageManager.PERMISSION_GRANTED) {
-            //mPlayer.setWakeMode(proxy.getContext(), PowerManager.FULL_WAKE_LOCK);
-        //}
+        
+        
+        
+        
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.805 -0400", hash_original_method = "A225789E523D8A62A1731E2AAAAB0AC9", hash_generated_method = "08930D19CADE24E2C2B58F9A51C524A6")
     @Override
     public void pauseAndDispatch(HTML5VideoViewProxy proxy) {
         super.pauseAndDispatch(proxy);
         addTaint(proxy.getTaint());
-        // ---------- Original Method ----------
-        //super.pauseAndDispatch(proxy);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.805 -0400", hash_original_method = "DAEA7A8CB1E990B0D919DD9331E6C437", hash_generated_method = "7F555397E3D9FA573ED623467DD5EE63")
     @Override
     public SurfaceTexture getSurfaceTexture(int videoLayerId) {
-        SurfaceTexture varB4EAC82CA7396A68D541C85D26508E83_184504282 = null; //Variable for return #1
+        SurfaceTexture varB4EAC82CA7396A68D541C85D26508E83_184504282 = null; 
         {
             {
                 GLES20.glDeleteTextures(1, mTextureNames, 0);
-            } //End block
+            } 
             mTextureNames = new int[1];
             GLES20.glGenTextures(1, mTextureNames, 0);
             mSurfaceTexture = new SurfaceTexture(mTextureNames[0]);
-        } //End block
+        } 
         mVideoLayerUsingSurfaceTexture = videoLayerId;
         varB4EAC82CA7396A68D541C85D26508E83_184504282 = mSurfaceTexture;
         addTaint(videoLayerId);
-        varB4EAC82CA7396A68D541C85D26508E83_184504282.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_184504282.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_184504282;
-        // ---------- Original Method ----------
-        //if (videoLayerId != mVideoLayerUsingSurfaceTexture
-            //|| mSurfaceTexture == null
-            //|| mTextureNames == null) {
-            //if (mTextureNames != null) {
-                //GLES20.glDeleteTextures(1, mTextureNames, 0);
-            //}
-            //mTextureNames = new int[1];
-            //GLES20.glGenTextures(1, mTextureNames, 0);
-            //mSurfaceTexture = new SurfaceTexture(mTextureNames[0]);
-        //}
-        //mVideoLayerUsingSurfaceTexture = videoLayerId;
-        //return mSurfaceTexture;
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            
+        
+        
+        
     }
 
     
@@ -137,8 +142,8 @@ public class HTML5VideoInline extends HTML5VideoView {
     public boolean surfaceTextureDeleted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_334961802 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_334961802;
-        // ---------- Original Method ----------
-        //return (mSurfaceTexture == null);
+        
+        
     }
 
     
@@ -147,10 +152,10 @@ public class HTML5VideoInline extends HTML5VideoView {
     public void deleteSurfaceTexture() {
         mSurfaceTexture = null;
         mVideoLayerUsingSurfaceTexture = -1;
-        // ---------- Original Method ----------
-        //mSurfaceTexture = null;
-        //mVideoLayerUsingSurfaceTexture = -1;
-        //return;
+        
+        
+        
+        
     }
 
     
@@ -159,12 +164,12 @@ public class HTML5VideoInline extends HTML5VideoView {
     public int getTextureName() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_53870407 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_53870407;
-        // ---------- Original Method ----------
-        //if (mTextureNames != null) {
-            //return mTextureNames[0];
-        //} else {
-            //return 0;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -172,8 +177,8 @@ public class HTML5VideoInline extends HTML5VideoView {
     private void setFrameAvailableListener(SurfaceTexture.OnFrameAvailableListener l) {
         mSurfaceTexture.setOnFrameAvailableListener(l);
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //mSurfaceTexture.setOnFrameAvailableListener(l);
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.harmony.luni.lang.reflect;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.reflect.TypeVariable;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ class ListOfVariables {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.236 -0400", hash_original_method = "41422E53316C05168ACE5C5221EA93B8", hash_generated_method = "41422E53316C05168ACE5C5221EA93B8")
     public ListOfVariables ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -26,21 +26,21 @@ class ListOfVariables {
      void add(TypeVariable<?> elem) {
         array.add(elem);
         addTaint(elem.getTaint());
-        // ---------- Original Method ----------
-        //array.add(elem);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.238 -0400", hash_original_method = "89100BC351666DED1BC5DAB11AB3C4DD", hash_generated_method = "63804523CE65E8710B2C4B3A78D941C6")
      TypeVariable<?>[] getArray() {
-        TypeVariable<?>[] varB4EAC82CA7396A68D541C85D26508E83_964132333 = null; //Variable for return #1
+        TypeVariable<?>[] varB4EAC82CA7396A68D541C85D26508E83_964132333 = null; 
         TypeVariable<?>[] a = new TypeVariable[array.size()];
         varB4EAC82CA7396A68D541C85D26508E83_964132333 = array.toArray(a);
-        varB4EAC82CA7396A68D541C85D26508E83_964132333.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_964132333.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_964132333;
-        // ---------- Original Method ----------
-        //TypeVariable<?>[] a = new TypeVariable[array.size()];
-        //return array.toArray(a);
+        
+        
+        
     }
 
     

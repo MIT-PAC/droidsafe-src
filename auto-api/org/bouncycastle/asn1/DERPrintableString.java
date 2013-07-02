@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -22,16 +22,16 @@ public class DERPrintableString extends ASN1Object implements DERString {
             int i = 0;
             {
                 cs[i] = (char)(string[i] & 0xff);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.string = new String(cs).intern();
-        // ---------- Original Method ----------
-        //char[]  cs = new char[string.length];
-        //for (int i = 0; i != cs.length; i++)
-        //{
-            //cs[i] = (char)(string[i] & 0xff);
-        //}
-        //this.string = new String(cs).intern();
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -40,7 +40,7 @@ public class DERPrintableString extends ASN1Object implements DERString {
         String   string) {
         this(string, false);
         addTaint(string.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -52,19 +52,20 @@ public class DERPrintableString extends ASN1Object implements DERString {
             boolean varED015A089F9FC5B98B1596D943A29350_82602118 = (validate && !isPrintableString(string));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("string contains illegal characters");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.string = string.intern();
         addTaint(validate);
-        // ---------- Original Method ----------
-        //if (validate && !isPrintableString(string))
-        //{
-            //throw new IllegalArgumentException("string contains illegal characters");
-        //}
-        //this.string = string.intern();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERPrintableString getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERPrintableString)
@@ -75,6 +76,7 @@ public class DERPrintableString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERPrintableString getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -92,15 +94,16 @@ public class DERPrintableString extends ASN1Object implements DERString {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.663 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "F857F7950F098FDB398AEACF6D98AB2E")
     public String getString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1820370419 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1820370419 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1820370419 = string;
-        varB4EAC82CA7396A68D541C85D26508E83_1820370419.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1820370419.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1820370419;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.664 -0400", hash_original_method = "22CE003B24CA00E42241233D24EF8326", hash_generated_method = "7E8414EBD54F53C95489CB44E5CA84FD")
     public byte[] getOctets() {
         char[] cs = string.toCharArray();
@@ -109,18 +112,18 @@ public class DERPrintableString extends ASN1Object implements DERString {
             int i = 0;
             {
                 bs[i] = (byte)cs[i];
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1246803600 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1246803600;
-        // ---------- Original Method ----------
-        //char[]  cs = string.toCharArray();
-        //byte[]  bs = new byte[cs.length];
-        //for (int i = 0; i != cs.length; i++)
-        //{
-            //bs[i] = (byte)cs[i];
-        //}
-        //return bs;
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -129,18 +132,19 @@ public class DERPrintableString extends ASN1Object implements DERString {
         DEROutputStream  out) throws IOException {
         out.writeEncoded(PRINTABLE_STRING, this.getOctets());
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.writeEncoded(PRINTABLE_STRING, this.getOctets());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.665 -0400", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "88F44EB5513F4BDD3FDA71D1DE0B7212")
     public int hashCode() {
         int var21276083EDE53370F5E1E00F33D2C218_1269849276 = (this.getString().hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061234714 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061234714;
-        // ---------- Original Method ----------
-        //return this.getString().hashCode();
+        
+        
     }
 
     
@@ -152,27 +156,28 @@ public class DERPrintableString extends ASN1Object implements DERString {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1459630489 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1459630489;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERPrintableString))
-        //{
-            //return false;
-        //}
-        //DERPrintableString  s = (DERPrintableString)o;
-        //return this.getString().equals(s.getString());
+        
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.666 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "F88A03B6240AD8594CCCE7EAC06F9151")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_664832721 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_664832721 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_664832721 = string;
-        varB4EAC82CA7396A68D541C85D26508E83_664832721.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_664832721.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_664832721;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isPrintableString(
         String  str) {
         for (int i = str.length() - 1; i >= 0; i--)

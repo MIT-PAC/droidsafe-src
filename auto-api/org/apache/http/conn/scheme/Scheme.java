@@ -1,11 +1,11 @@
 package org.apache.http.conn.scheme;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Locale;
 import org.apache.http.util.LangUtils;
@@ -34,36 +34,36 @@ public final class Scheme {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Scheme name may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Socket factory may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Port is invalid: " + port);
-        } //End block
+        } 
         this.name = name.toLowerCase(Locale.ENGLISH);
         this.socketFactory = factory;
         this.defaultPort = port;
         this.layered = (factory instanceof LayeredSocketFactory);
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException
-                //("Scheme name may not be null");
-        //}
-        //if (factory == null) {
-            //throw new IllegalArgumentException
-                //("Socket factory may not be null");
-        //}
-        //if ((port <= 0) || (port > 0xffff)) {
-            //throw new IllegalArgumentException
-                //("Port is invalid: " + port);
-        //}
-        //this.name = name.toLowerCase(Locale.ENGLISH);
-        //this.socketFactory = factory;
-        //this.defaultPort = port;
-        //this.layered = (factory instanceof LayeredSocketFactory);
+        
+        
+            
+                
+        
+        
+            
+                
+        
+        
+            
+                
+        
+        
+        
+        
+        
     }
 
     
@@ -71,30 +71,30 @@ public final class Scheme {
     public final int getDefaultPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1813366783 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1813366783;
-        // ---------- Original Method ----------
-        //return defaultPort;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.318 -0400", hash_original_method = "8D53BDBBDB5B8DACC183C2C5A3A2FE13", hash_generated_method = "10984645D3A84E0779BD00BC273DDB1D")
     public final SocketFactory getSocketFactory() {
-        SocketFactory varB4EAC82CA7396A68D541C85D26508E83_892666446 = null; //Variable for return #1
+        SocketFactory varB4EAC82CA7396A68D541C85D26508E83_892666446 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_892666446 = socketFactory;
-        varB4EAC82CA7396A68D541C85D26508E83_892666446.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_892666446.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_892666446;
-        // ---------- Original Method ----------
-        //return socketFactory;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.318 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "DA3BF63A1FF47B7767743534848F032A")
     public final String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1458737567 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1458737567 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1458737567 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_1458737567.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1458737567.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1458737567;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
@@ -102,8 +102,8 @@ public final class Scheme {
     public final boolean isLayered() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2115009866 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2115009866;
-        // ---------- Original Method ----------
-        //return layered;
+        
+        
     }
 
     
@@ -112,34 +112,34 @@ public final class Scheme {
         addTaint(port);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1201658895 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1201658895;
-        // ---------- Original Method ----------
-        //return ((port <= 0) || (port > 0xffff)) ? defaultPort : port;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.319 -0400", hash_original_method = "DC9B71D58EF4666028CCB60CC7379DF5", hash_generated_method = "B6140BED9C5A1541C2394E7E7F6D0476")
     @Override
     public final String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1628961712 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1628961712 = null; 
         {
             StringBuilder buffer = new StringBuilder();
             buffer.append(this.name);
             buffer.append(':');
             buffer.append(Integer.toString(this.defaultPort));
             stringRep = buffer.toString();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1628961712 = stringRep;
-        varB4EAC82CA7396A68D541C85D26508E83_1628961712.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1628961712.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1628961712;
-        // ---------- Original Method ----------
-        //if (stringRep == null) {
-            //StringBuilder buffer = new StringBuilder();
-            //buffer.append(this.name);
-            //buffer.append(':');
-            //buffer.append(Integer.toString(this.defaultPort));
-            //stringRep = buffer.toString();
-        //}
-        //return stringRep;
+        
+        
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -155,19 +155,20 @@ public final class Scheme {
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_184313878 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_184313878;
-        // ---------- Original Method ----------
-        //if (obj == null) return false;
-        //if (this == obj) return true;
-        //if (!(obj instanceof Scheme)) return false;
-        //Scheme s = (Scheme) obj;
-        //return (name.equals(s.name) &&
-                //defaultPort == s.defaultPort &&
-                //layered == s.layered &&
-                //socketFactory.equals(s.socketFactory)
-                //);
+        
+        
+        
+        
+        
+        
+                
+                
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.322 -0400", hash_original_method = "D2A22011D07817D724D5F16905D145B4", hash_generated_method = "037703FFCC842F437C00BB241DB81BE3")
     @Override
     public int hashCode() {
@@ -178,13 +179,13 @@ public final class Scheme {
         hash = LangUtils.hashCode(hash, this.socketFactory);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2053355407 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2053355407;
-        // ---------- Original Method ----------
-        //int hash = LangUtils.HASH_SEED;
-        //hash = LangUtils.hashCode(hash, this.defaultPort);
-        //hash = LangUtils.hashCode(hash, this.name);
-        //hash = LangUtils.hashCode(hash, this.layered);
-        //hash = LangUtils.hashCode(hash, this.socketFactory);
-        //return hash;
+        
+        
+        
+        
+        
+        
+        
     }
 
     

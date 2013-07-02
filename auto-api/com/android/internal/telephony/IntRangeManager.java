@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,10 +17,11 @@ public abstract class IntRangeManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.233 -0400", hash_original_method = "362FA502CCB486C4D0A9F66987CBC492", hash_generated_method = "22D07BAE17359B60391CE9F4DA674915")
     protected  IntRangeManager() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.235 -0400", hash_original_method = "6ED59671D51F9C9BA7262BED5BB50C74", hash_generated_method = "03CFE4C350800B4D60A7A77153355261")
     public synchronized boolean enableRange(int startId, int endId, String client) {
         int len = mRanges.size();
@@ -29,9 +30,9 @@ public abstract class IntRangeManager {
                 boolean varCA8B39A0AD4712FA5C0E11AC9C9BFF31_307139750 = (tryAddSingleRange(startId, endId, true));
                 {
                     mRanges.add(new IntRange(startId, endId, client));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             int startIndex = 0;
             {
@@ -42,18 +43,18 @@ public abstract class IntRangeManager {
                             boolean var8E94678DA21F04C61925B48C83058E58_553348881 = (tryAddSingleRange(startId, endId, true));
                             {
                                 mRanges.add(startIndex, new IntRange(startId, endId, client));
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         {
                             boolean varBF2A1832BAA79F846F092983AA325B4A_1301855287 = (tryAddSingleRange(startId, range.startId - 1, true));
                             {
                                 range.startId = startId;
                                 range.clients.add(0, new ClientRange(startId, endId, client));
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         {
                             int endIndex = startIndex+1;
@@ -73,11 +74,11 @@ public abstract class IntRangeManager {
                                                     IntRange joinRange = mRanges.get(joinIndex);
                                                     range.clients.addAll(joinRange.clients);
                                                     mRanges.remove(joinRange);
-                                                } //End block
-                                            } //End collapsed parenthetic
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
                                 {
                                     {
                                         boolean var2703782EF85398FCA8EA7E54ABD0E6AB_619307299 = (tryAddSingleRange(startId, endRange.startId - 1, true));
@@ -92,13 +93,13 @@ public abstract class IntRangeManager {
                                                     IntRange joinRange = mRanges.get(joinIndex);
                                                     range.clients.addAll(joinRange.clients);
                                                     mRanges.remove(joinRange);
-                                                } //End block
-                                            } //End collapsed parenthetic
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
                         {
                             boolean var8E94678DA21F04C61925B48C83058E58_1362337823 = (tryAddSingleRange(startId, endId, true));
                             {
@@ -112,16 +113,16 @@ public abstract class IntRangeManager {
                                         IntRange joinRange = mRanges.get(joinIndex);
                                         range.clients.addAll(joinRange.clients);
                                         mRanges.remove(joinRange);
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     {
                         range.insert(new ClientRange(startId, endId, client));
-                    } //End block
+                    } 
                     {
                         int endIndex = startIndex;
                         {
@@ -130,18 +131,18 @@ public abstract class IntRangeManager {
                                 IntRange testRange = mRanges.get(testIndex);
                                 {
                                     endIndex = testIndex;
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
                         {
                             {
                                 boolean varE5B7E0DF24796C7A791AC0241097AB26_774113581 = (tryAddSingleRange(range.endId + 1, endId, true));
                                 {
                                     range.endId = endId;
                                     range.insert(new ClientRange(startId, endId, client));
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         IntRange endRange = mRanges.get(endIndex);
                         int newRangeEndId;
                         newRangeEndId = endRange.startId - 1;
@@ -158,30 +159,31 @@ public abstract class IntRangeManager {
                                         IntRange joinRange = mRanges.get(joinIndex);
                                         range.clients.addAll(joinRange.clients);
                                         mRanges.remove(joinRange);
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var6C371F433CAC84463755488381DCC195_444921819 = (tryAddSingleRange(startId, endId, true));
             {
                 mRanges.add(new IntRange(startId, endId, client));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(startId);
         addTaint(endId);
         addTaint(client.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1149666605 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1149666605;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.237 -0400", hash_original_method = "3E9B5A2BDD46323741EF7C361F65FFEC", hash_generated_method = "F4C3E507E9016CE64EA27FE1A6CA75F9")
     public synchronized boolean disableRange(int startId, int endId, String client) {
         int len = mRanges.size();
@@ -201,11 +203,11 @@ public abstract class IntRangeManager {
                                     boolean varDECC80005966A3FF127C459C40D08F5A_1738640158 = (tryAddSingleRange(startId, endId, false));
                                     {
                                         mRanges.remove(i);
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
                     int largestEndId = Integer.MIN_VALUE;
                     boolean updateStarted = false;
                     {
@@ -218,17 +220,17 @@ public abstract class IntRangeManager {
                                     {
                                         {
                                             clients.remove(crIndex);
-                                        } //End block
+                                        } 
                                         {
                                             {
                                                 boolean var80C77B773576938BF301F47C024A2EAE_977106712 = (tryAddSingleRange(largestEndId + 1, range.endId, false));
                                                 {
                                                     clients.remove(crIndex);
                                                     range.endId = largestEndId;
-                                                } //End block
-                                            } //End collapsed parenthetic
-                                        } //End block
-                                    } //End block
+                                                } 
+                                            } 
+                                        } 
+                                    } 
                                     IntRange rangeCopy = new IntRange(range, crIndex);
                                     {
                                         int nextStartId = clients.get(1).startId;
@@ -237,9 +239,9 @@ public abstract class IntRangeManager {
                                             updateStarted = true;
                                             addRange(range.startId, nextStartId - 1, false);
                                             rangeCopy.startId = nextStartId;
-                                        } //End block
+                                        } 
                                         largestEndId = clients.get(1).endId;
-                                    } //End block
+                                    } 
                                     ArrayList<IntRange> newRanges = new ArrayList<IntRange>();
                                     IntRange currentRange = rangeCopy;
                                     {
@@ -250,56 +252,57 @@ public abstract class IntRangeManager {
                                                 {
                                                     startUpdate();
                                                     updateStarted = true;
-                                                } //End block
+                                                } 
                                                 addRange(largestEndId + 1, nextCr.startId - 1, false);
                                                 currentRange.endId = largestEndId;
                                                 newRanges.add(currentRange);
                                                 currentRange = new IntRange(nextCr);
-                                            } //End block
+                                            } 
                                             {
                                                 currentRange.clients.add(nextCr);
-                                            } //End block
+                                            } 
                                             {
                                                 largestEndId = nextCr.endId;
-                                            } //End block
-                                        } //End block
-                                    } //End collapsed parenthetic
+                                            } 
+                                        } 
+                                    } 
                                     {
                                         {
                                             startUpdate();
                                             updateStarted = true;
-                                        } //End block
+                                        } 
                                         addRange(largestEndId + 1, endId, false);
                                         currentRange.endId = largestEndId;
-                                    } //End block
+                                    } 
                                     newRanges.add(currentRange);
                                     {
                                         boolean var66529555AC208E32BDDED3ADC3FD2C1B_292022846 = (updateStarted && !finishUpdate());
-                                    } //End collapsed parenthetic
+                                    } 
                                     mRanges.remove(i);
                                     mRanges.addAll(i, newRanges);
-                                } //End block
+                                } 
                                 {
                                     {
                                         largestEndId = cr.endId;
-                                    } //End block
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(startId);
         addTaint(endId);
         addTaint(client.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1258154084 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1258154084;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.238 -0400", hash_original_method = "6D2ABBA8943E817B6A7F4354584C0478", hash_generated_method = "5389BAA820D4F5AF7BD4BDCC128D4DEB")
     public boolean updateRanges() {
         startUpdate();
@@ -317,46 +320,47 @@ public abstract class IntRangeManager {
                         {
                             {
                                 end = nextNode.endId;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             addRange(start, end, true);
                             start = nextNode.startId;
                             end = nextNode.endId;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 addRange(start, end, true);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var5A9A2BBF0403922273ADE4623662297B_1962318096 = (finishUpdate());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1512392976 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1512392976;
-        // ---------- Original Method ----------
-        //startUpdate();
-        //Iterator<IntRange> iterator = mRanges.iterator();
-        //if (iterator.hasNext()) {
-            //IntRange range = iterator.next();
-            //int start = range.startId;
-            //int end = range.endId;
-            //while (iterator.hasNext()) {
-                //IntRange nextNode = iterator.next();
-                //if (nextNode.startId <= (end + 1)) {
-                    //if (nextNode.endId > end) {
-                        //end = nextNode.endId;
-                    //}
-                //} else {
-                    //addRange(start, end, true);
-                    //start = nextNode.startId;
-                    //end = nextNode.endId;
-                //}
-            //}
-            //addRange(start, end, true);
-        //}
-        //return finishUpdate();
+        
+        
+        
+        
+            
+            
+            
+            
+                
+                
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.238 -0400", hash_original_method = "66D9B78BD0A6572F2D23304F41F243DE", hash_generated_method = "A50C08BC6610223258C723BED84A2D9F")
     private boolean tryAddSingleRange(int startId, int endId, boolean selected) {
         startUpdate();
@@ -367,20 +371,21 @@ public abstract class IntRangeManager {
         addTaint(selected);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1762872571 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1762872571;
-        // ---------- Original Method ----------
-        //startUpdate();
-        //addRange(startId, endId, selected);
-        //return finishUpdate();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.239 -0400", hash_original_method = "3535E42AC2A5B7497897BAD158CB88AF", hash_generated_method = "C2A9F810D4E1291500CCEBEFE41FBAF5")
     public boolean isEmpty() {
         boolean varE51DE8210CC866E42ADD3FBAA8AE58BF_454397390 = (mRanges.isEmpty());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_887409108 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_887409108;
-        // ---------- Original Method ----------
-        //return mRanges.isEmpty();
+        
+        
     }
 
     
@@ -411,11 +416,11 @@ public abstract class IntRangeManager {
             clients = new ArrayList<ClientRange>(INITIAL_CLIENTS_ARRAY_SIZE);
             clients.add(new ClientRange(startId, endId, client));
             addTaint(client.getTaint());
-            // ---------- Original Method ----------
-            //this.startId = startId;
-            //this.endId = endId;
-            //clients = new ArrayList<ClientRange>(INITIAL_CLIENTS_ARRAY_SIZE);
-            //clients.add(new ClientRange(startId, endId, client));
+            
+            
+            
+            
+            
         }
 
         
@@ -425,11 +430,11 @@ public abstract class IntRangeManager {
             endId = clientRange.endId;
             clients = new ArrayList<ClientRange>(INITIAL_CLIENTS_ARRAY_SIZE);
             clients.add(clientRange);
-            // ---------- Original Method ----------
-            //startId = clientRange.startId;
-            //endId = clientRange.endId;
-            //clients = new ArrayList<ClientRange>(INITIAL_CLIENTS_ARRAY_SIZE);
-            //clients.add(clientRange);
+            
+            
+            
+            
+            
         }
 
         
@@ -442,16 +447,16 @@ public abstract class IntRangeManager {
                 int i = 0;
                 {
                     this.clients.add(intRange.clients.get(i));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(numElements);
-            // ---------- Original Method ----------
-            //this.startId = intRange.startId;
-            //this.endId = intRange.endId;
-            //this.clients = new ArrayList<ClientRange>(intRange.clients.size());
-            //for (int i=0; i < numElements; i++) {
-                //this.clients.add(intRange.clients.get(i));
-            //}
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -467,25 +472,25 @@ public abstract class IntRangeManager {
                             boolean var0589E74B889CA6CB22A18F03DFF9F170_504925222 = (!range.equals(nextRange));
                             {
                                 clients.add(i, range);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             clients.add(range);
             addTaint(range.getTaint());
-            // ---------- Original Method ----------
-            //int len = clients.size();
-            //for (int i=0; i < len; i++) {
-                //ClientRange nextRange = clients.get(i);
-                //if (range.startId <= nextRange.startId) {
-                    //if (!range.equals(nextRange)) {
-                        //clients.add(i, range);
-                    //}
-                    //return;
-                //}
-            //}
-            //clients.add(range);
+            
+            
+            
+                
+                
+                    
+                        
+                    
+                    
+                
+            
+            
         }
 
         
@@ -509,10 +514,10 @@ public abstract class IntRangeManager {
             this.startId = startId;
             this.endId = endId;
             this.client = client;
-            // ---------- Original Method ----------
-            //this.startId = startId;
-            //this.endId = endId;
-            //this.client = client;
+            
+            
+            
+            
         }
 
         
@@ -524,19 +529,19 @@ public abstract class IntRangeManager {
                 boolean varA5C47D347F5156B3305DA5846936CDAE_2094346106 = (startId == other.startId &&
                         endId == other.endId &&
                         client.equals(other.client));
-            } //End block
+            } 
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1446605482 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1446605482;
-            // ---------- Original Method ----------
-            //if (o != null && o instanceof ClientRange) {
-                //ClientRange other = (ClientRange) o;
-                //return startId == other.startId &&
-                        //endId == other.endId &&
-                        //client.equals(other.client);
-            //} else {
-                //return false;
-            //}
+            
+            
+                
+                
+                        
+                        
+            
+                
+            
         }
 
         
@@ -546,8 +551,8 @@ public abstract class IntRangeManager {
             int var4D306EDBD856C6F2424CEC8B3C043F9D_847669522 = ((startId * 31 + endId) * 31 + client.hashCode());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865978266 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865978266;
-            // ---------- Original Method ----------
-            //return (startId * 31 + endId) * 31 + client.hashCode();
+            
+            
         }
 
         

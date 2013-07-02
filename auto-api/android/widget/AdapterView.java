@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.database.DataSetObserver;
@@ -106,7 +106,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     public  AdapterView(Context context) {
         super(context);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -115,7 +115,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         super(context, attrs);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -125,26 +125,26 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.656 -0400", hash_original_method = "3AA164DD2030E1BF06F3CA1CD9427DA1", hash_generated_method = "A196844E345185ADD2A42B24D8C435A9")
     public void setOnItemClickListener(OnItemClickListener listener) {
         mOnItemClickListener = listener;
-        // ---------- Original Method ----------
-        //mOnItemClickListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.657 -0400", hash_original_method = "53FBB33228561FD1F46130BA576FD131", hash_generated_method = "AC353587F26123B5CD6F87D80F6DD45C")
     public final OnItemClickListener getOnItemClickListener() {
-        OnItemClickListener varB4EAC82CA7396A68D541C85D26508E83_443223381 = null; //Variable for return #1
+        OnItemClickListener varB4EAC82CA7396A68D541C85D26508E83_443223381 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_443223381 = mOnItemClickListener;
-        varB4EAC82CA7396A68D541C85D26508E83_443223381.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_443223381.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_443223381;
-        // ---------- Original Method ----------
-        //return mOnItemClickListener;
+        
+        
     }
 
     
@@ -154,24 +154,24 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
             playSoundEffect(SoundEffectConstants.CLICK);
             {
                 view.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_CLICKED);
-            } //End block
+            } 
             mOnItemClickListener.onItemClick(this, view, position, id);
-        } //End block
+        } 
         addTaint(view.getTaint());
         addTaint(position);
         addTaint(id);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2101864350 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2101864350;
-        // ---------- Original Method ----------
-        //if (mOnItemClickListener != null) {
-            //playSoundEffect(SoundEffectConstants.CLICK);
-            //if (view != null) {
-                //view.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_CLICKED);
-            //}
-            //mOnItemClickListener.onItemClick(this, view, position, id);
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+                
+            
+            
+            
+        
+        
     }
 
     
@@ -181,44 +181,44 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
             boolean var4E9822764F29F607F332912995A375BC_103617009 = (!isLongClickable());
             {
                 setLongClickable(true);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mOnItemLongClickListener = listener;
-        // ---------- Original Method ----------
-        //if (!isLongClickable()) {
-            //setLongClickable(true);
-        //}
-        //mOnItemLongClickListener = listener;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.658 -0400", hash_original_method = "450D7DEA9BB200CD772C171D001DF2F0", hash_generated_method = "238555DFA1DFFD4319D99A04B84D2E45")
     public final OnItemLongClickListener getOnItemLongClickListener() {
-        OnItemLongClickListener varB4EAC82CA7396A68D541C85D26508E83_1199985309 = null; //Variable for return #1
+        OnItemLongClickListener varB4EAC82CA7396A68D541C85D26508E83_1199985309 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1199985309 = mOnItemLongClickListener;
-        varB4EAC82CA7396A68D541C85D26508E83_1199985309.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1199985309.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1199985309;
-        // ---------- Original Method ----------
-        //return mOnItemLongClickListener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.659 -0400", hash_original_method = "9092AD2A5F83CE601E3913D803C386F2", hash_generated_method = "3770EE67FA344D6B0564B2ED3CB34217")
     public void setOnItemSelectedListener(OnItemSelectedListener listener) {
         mOnItemSelectedListener = listener;
-        // ---------- Original Method ----------
-        //mOnItemSelectedListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.660 -0400", hash_original_method = "C1B2E8F5BC8E80BA634AE326A645C328", hash_generated_method = "1C219A0E6A332FFE7CCAD72AE26F9EE1")
     public final OnItemSelectedListener getOnItemSelectedListener() {
-        OnItemSelectedListener varB4EAC82CA7396A68D541C85D26508E83_572233792 = null; //Variable for return #1
+        OnItemSelectedListener varB4EAC82CA7396A68D541C85D26508E83_572233792 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_572233792 = mOnItemSelectedListener;
-        varB4EAC82CA7396A68D541C85D26508E83_572233792.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_572233792.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_572233792;
-        // ---------- Original Method ----------
-        //return mOnItemSelectedListener;
+        
+        
     }
 
     
@@ -233,8 +233,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     public void addView(View child) {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("addView(View) is not supported in AdapterView");
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException("addView(View) is not supported in AdapterView");
+        
+        
     }
 
     
@@ -244,8 +244,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("addView(View, int) is not supported in AdapterView");
         addTaint(child.getTaint());
         addTaint(index);
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException("addView(View, int) is not supported in AdapterView");
+        
+        
     }
 
     
@@ -256,9 +256,9 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
                 + "is not supported in AdapterView");
         addTaint(child.getTaint());
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException("addView(View, LayoutParams) "
-                //+ "is not supported in AdapterView");
+        
+        
+                
     }
 
     
@@ -270,9 +270,9 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         addTaint(child.getTaint());
         addTaint(index);
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException("addView(View, int, LayoutParams) "
-                //+ "is not supported in AdapterView");
+        
+        
+                
     }
 
     
@@ -281,8 +281,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     public void removeView(View child) {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("removeView(View) is not supported in AdapterView");
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException("removeView(View) is not supported in AdapterView");
+        
+        
     }
 
     
@@ -291,8 +291,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     public void removeViewAt(int index) {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("removeViewAt(int) is not supported in AdapterView");
         addTaint(index);
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException("removeViewAt(int) is not supported in AdapterView");
+        
+        
     }
 
     
@@ -300,23 +300,23 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     @Override
     public void removeAllViews() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("removeAllViews() is not supported in AdapterView");
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException("removeAllViews() is not supported in AdapterView");
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.662 -0400", hash_original_method = "5EA85597DECD951B7F4C51D999F17C5D", hash_generated_method = "7B98BB087C42822E2587A6A5049ABD44")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mLayoutHeight = getHeight();
         addTaint(changed);
         addTaint(left);
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        //mLayoutHeight = getHeight();
+        
+        
     }
 
     
@@ -325,8 +325,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     public int getSelectedItemPosition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_733903633 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_733903633;
-        // ---------- Original Method ----------
-        //return mNextSelectedPosition;
+        
+        
     }
 
     
@@ -335,8 +335,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     public long getSelectedItemId() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2104032660 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2104032660;
-        // ---------- Original Method ----------
-        //return mNextSelectedRowId;
+        
+        
     }
 
     
@@ -345,38 +345,38 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.663 -0400", hash_original_method = "F45E40D646583F63F7A00B28C1D0B4AE", hash_generated_method = "2D25797152FA93EA554D85C08FA52FAD")
     public Object getSelectedItem() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_290831941 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_1933273891 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_290831941 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_1933273891 = null; 
         T adapter = getAdapter();
         int selection = getSelectedItemPosition();
         {
             boolean varC431EBC257F1DAB69F88175BCB5250FC_1899139464 = (adapter != null && adapter.getCount() > 0 && selection >= 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_290831941 = adapter.getItem(selection);
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1933273891 = null;
-            } //End block
-        } //End collapsed parenthetic
-        Object varA7E53CE21691AB073D9660D615818899_187677226; //Final return value
+            } 
+        } 
+        Object varA7E53CE21691AB073D9660D615818899_187677226; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_187677226 = varB4EAC82CA7396A68D541C85D26508E83_290831941;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_187677226 = varB4EAC82CA7396A68D541C85D26508E83_1933273891;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_187677226.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_187677226.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_187677226;
-        // ---------- Original Method ----------
-        //T adapter = getAdapter();
-        //int selection = getSelectedItemPosition();
-        //if (adapter != null && adapter.getCount() > 0 && selection >= 0) {
-            //return adapter.getItem(selection);
-        //} else {
-            //return null;
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -385,8 +385,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     public int getCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_566346818 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_566346818;
-        // ---------- Original Method ----------
-        //return mItemCount;
+        
+        
     }
 
     
@@ -400,9 +400,9 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
                 boolean varE341D27A264F3482D6A76BDFDFF68A64_1265717426 = (!(v = (View) listItem.getParent()).equals(this));
                 {
                     listItem = v;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (ClassCastException e)
         { }
         final int childCount = getChildCount();
@@ -411,29 +411,29 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
             {
                 {
                     boolean varAB7E8859D0826E12EC53AD21DB274535_2132787503 = (getChildAt(i).equals(listItem));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(view.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_800221358 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_800221358;
-        // ---------- Original Method ----------
-        //View listItem = view;
-        //try {
-            //View v;
-            //while (!(v = (View) listItem.getParent()).equals(this)) {
-                //listItem = v;
-            //}
-        //} catch (ClassCastException e) {
-            //return INVALID_POSITION;
-        //}
-        //final int childCount = getChildCount();
-        //for (int i = 0; i < childCount; i++) {
-            //if (getChildAt(i).equals(listItem)) {
-                //return mFirstPosition + i;
-            //}
-        //}
-        //return INVALID_POSITION;
+        
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -441,8 +441,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     public int getFirstVisiblePosition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_836518183 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_836518183;
-        // ---------- Original Method ----------
-        //return mFirstPosition;
+        
+        
     }
 
     
@@ -451,8 +451,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         int var502BAFD3638A317DEFA14DE990B7A10C_764515066 = (mFirstPosition + getChildCount() - 1);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_174504277 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_174504277;
-        // ---------- Original Method ----------
-        //return mFirstPosition + getChildCount() - 1;
+        
+        
     }
 
     
@@ -466,22 +466,22 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         final T adapter = getAdapter();
         final boolean empty = ((adapter == null) || adapter.isEmpty());
         updateEmptyStatus(empty);
-        // ---------- Original Method ----------
-        //mEmptyView = emptyView;
-        //final T adapter = getAdapter();
-        //final boolean empty = ((adapter == null) || adapter.isEmpty());
-        //updateEmptyStatus(empty);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.665 -0400", hash_original_method = "1914B98508B1C21B71F42F5D07F0BF47", hash_generated_method = "58200381F95EE06C721FBAEBA51CDA61")
     public View getEmptyView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_978037219 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_978037219 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_978037219 = mEmptyView;
-        varB4EAC82CA7396A68D541C85D26508E83_978037219.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_978037219.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_978037219;
-        // ---------- Original Method ----------
-        //return mEmptyView;
+        
+        
     }
 
     
@@ -489,8 +489,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
      boolean isInFilterMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_920754135 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_920754135;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -502,16 +502,16 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         mDesiredFocusableState = focusable;
         {
             mDesiredFocusableInTouchModeState = false;
-        } //End block
+        } 
         super.setFocusable(focusable && (!empty || isInFilterMode()));
-        // ---------- Original Method ----------
-        //final T adapter = getAdapter();
-        //final boolean empty = adapter == null || adapter.getCount() == 0;
-        //mDesiredFocusableState = focusable;
-        //if (!focusable) {
-            //mDesiredFocusableInTouchModeState = false;
-        //}
-        //super.setFocusable(focusable && (!empty || isInFilterMode()));
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -523,16 +523,16 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         mDesiredFocusableInTouchModeState = focusable;
         {
             mDesiredFocusableState = true;
-        } //End block
+        } 
         super.setFocusableInTouchMode(focusable && (!empty || isInFilterMode()));
-        // ---------- Original Method ----------
-        //final T adapter = getAdapter();
-        //final boolean empty = adapter == null || adapter.getCount() == 0;
-        //mDesiredFocusableInTouchModeState = focusable;
-        //if (focusable) {
-            //mDesiredFocusableState = true;
-        //}
-        //super.setFocusableInTouchMode(focusable && (!empty || isInFilterMode()));
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -545,16 +545,16 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         super.setFocusable(focusable && mDesiredFocusableState);
         {
             updateEmptyStatus((adapter == null) || adapter.isEmpty());
-        } //End block
-        // ---------- Original Method ----------
-        //final T adapter = getAdapter();
-        //final boolean empty = adapter == null || adapter.getCount() == 0;
-        //final boolean focusable = !empty || isInFilterMode();
-        //super.setFocusableInTouchMode(focusable && mDesiredFocusableInTouchModeState);
-        //super.setFocusable(focusable && mDesiredFocusableState);
-        //if (mEmptyView != null) {
-            //updateEmptyStatus((adapter == null) || adapter.isEmpty());
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -564,57 +564,57 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
             boolean varF35CB9186B7E386AC3090FFD7A78DB53_896461751 = (isInFilterMode());
             {
                 empty = false;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 mEmptyView.setVisibility(View.VISIBLE);
                 setVisibility(View.GONE);
-            } //End block
+            } 
             {
                 setVisibility(View.VISIBLE);
-            } //End block
+            } 
             {
                 this.onLayout(false, mLeft, mTop, mRight, mBottom);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mEmptyView.setVisibility(View.GONE);
             setVisibility(View.VISIBLE);
-        } //End block
+        } 
         addTaint(empty);
-        // ---------- Original Method ----------
-        //if (isInFilterMode()) {
-            //empty = false;
-        //}
-        //if (empty) {
-            //if (mEmptyView != null) {
-                //mEmptyView.setVisibility(View.VISIBLE);
-                //setVisibility(View.GONE);
-            //} else {
-                //setVisibility(View.VISIBLE);
-            //}
-            //if (mDataChanged) {           
-                //this.onLayout(false, mLeft, mTop, mRight, mBottom); 
-            //}
-        //} else {
-            //if (mEmptyView != null) mEmptyView.setVisibility(View.GONE);
-            //setVisibility(View.VISIBLE);
-        //}
+        
+        
+            
+        
+        
+            
+                
+                
+            
+                
+            
+            
+                
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.667 -0400", hash_original_method = "D3C6D351E34AE1C5D83960F098A550AE", hash_generated_method = "BB8C6B975AB1DD97192D0175CF18F97C")
     public Object getItemAtPosition(int position) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1643090665 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1643090665 = null; 
         T adapter = getAdapter();
         varB4EAC82CA7396A68D541C85D26508E83_1643090665 = (adapter == null || position < 0) ? null : adapter.getItem(position);
         addTaint(position);
-        varB4EAC82CA7396A68D541C85D26508E83_1643090665.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1643090665.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1643090665;
-        // ---------- Original Method ----------
-        //T adapter = getAdapter();
-        //return (adapter == null || position < 0) ? null : adapter.getItem(position);
+        
+        
+        
     }
 
     
@@ -623,13 +623,13 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         T adapter = getAdapter();
         {
             Object var97E149A12F4F82A568B3B77523943250_1965816234 = (adapter.getItemId(position));
-        } //End flattened ternary
+        } 
         addTaint(position);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2022687397 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2022687397;
-        // ---------- Original Method ----------
-        //T adapter = getAdapter();
-        //return (adapter == null || position < 0) ? INVALID_ROW_ID : adapter.getItemId(position);
+        
+        
+        
     }
 
     
@@ -639,9 +639,9 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Don't call setOnClickListener for an AdapterView. "
                 + "You probably want setOnItemClickListener instead");
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //throw new RuntimeException("Don't call setOnClickListener for an AdapterView. "
-                //+ "You probably want setOnItemClickListener instead");
+        
+        
+                
     }
 
     
@@ -650,8 +650,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     protected void dispatchSaveInstanceState(SparseArray<Parcelable> container) {
         dispatchFreezeSelfOnly(container);
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //dispatchFreezeSelfOnly(container);
+        
+        
     }
 
     
@@ -660,20 +660,20 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container) {
         dispatchThawSelfOnly(container);
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //dispatchThawSelfOnly(container);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.670 -0400", hash_original_method = "8130EF0B42BA515F653DEDC83DE0BC01", hash_generated_method = "8B173CA825B846127BB6829734ADDC00")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDetachedFromWindow();
         removeCallbacks(mSelectionNotifier);
-        // ---------- Original Method ----------
-        //super.onDetachedFromWindow();
-        //removeCallbacks(mSelectionNotifier);
+        
+        
+        
     }
 
     
@@ -683,33 +683,33 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
             {
                 {
                     mSelectionNotifier = new SelectionNotifier();
-                } //End block
+                } 
                 post(mSelectionNotifier);
-            } //End block
+            } 
             {
                 fireOnSelected();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean var5C1F0A052282BDFB4F8B56B7331CF594_1661730815 = (mSelectedPosition != ListView.INVALID_POSITION && isShown() && !isInTouchMode());
             {
                 sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mOnItemSelectedListener != null) {
-            //if (mInLayout || mBlockLayoutRequests) {
-                //if (mSelectionNotifier == null) {
-                    //mSelectionNotifier = new SelectionNotifier();
-                //}
-                //post(mSelectionNotifier);
-            //} else {
-                //fireOnSelected();
-            //}
-        //}
-        //if (mSelectedPosition != ListView.INVALID_POSITION && isShown() && !isInTouchMode()) {
-            //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                    
+                
+                
+            
+                
+            
+        
+        
+            
+        
     }
 
     
@@ -720,21 +720,21 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
             View v = getSelectedView();
             mOnItemSelectedListener.onItemSelected(this, v, selection,
                     getAdapter().getItemId(selection));
-        } //End block
+        } 
         {
             mOnItemSelectedListener.onNothingSelected(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mOnItemSelectedListener == null)
-            //return;
-        //int selection = this.getSelectedItemPosition();
-        //if (selection >= 0) {
-            //View v = getSelectedView();
-            //mOnItemSelectedListener.onItemSelected(this, v, selection,
-                    //getAdapter().getItemId(selection));
-        //} else {
-            //mOnItemSelectedListener.onNothingSelected(this);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+                    
+        
+            
+        
     }
 
     
@@ -745,24 +745,24 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         {
             boolean varAB0D18640FD723634A00876A9A643B2A_1978878627 = (selectedView != null && selectedView.getVisibility() == VISIBLE
                 && selectedView.dispatchPopulateAccessibilityEvent(event));
-        } //End collapsed parenthetic
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1725112724 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1725112724;
-        // ---------- Original Method ----------
-        //View selectedView = getSelectedView();
-        //if (selectedView != null && selectedView.getVisibility() == VISIBLE
-                //&& selectedView.dispatchPopulateAccessibilityEvent(event)) {
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.673 -0400", hash_original_method = "6C132B6F44CAB6ECEF4D7E674DFB11BC", hash_generated_method = "7849D826B08CDDB303CCE48F0CA86E83")
     @Override
     public boolean onRequestSendAccessibilityEvent(View child, AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varFFC657A579ED797FAC38E2B4B1796721_2054377995 = (super.onRequestSendAccessibilityEvent(child, event));
             {
@@ -770,71 +770,71 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
                 onInitializeAccessibilityEvent(record);
                 child.dispatchPopulateAccessibilityEvent(record);
                 event.appendRecord(record);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(child.getTaint());
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1561616376 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1561616376;
-        // ---------- Original Method ----------
-        //if (super.onRequestSendAccessibilityEvent(child, event)) {
-            //AccessibilityEvent record = AccessibilityEvent.obtain();
-            //onInitializeAccessibilityEvent(record);
-            //child.dispatchPopulateAccessibilityEvent(record);
-            //event.appendRecord(record);
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.674 -0400", hash_original_method = "A92D1861287ECAEDED59E2308FF3FC59", hash_generated_method = "8C931D9C56CF0750D8BE151B28042B57")
     @Override
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onInitializeAccessibilityNodeInfo(info);
         info.setScrollable(isScrollableForAccessibility());
         View selectedView = getSelectedView();
         {
             info.setEnabled(selectedView.isEnabled());
-        } //End block
+        } 
         addTaint(info.getTaint());
-        // ---------- Original Method ----------
-        //super.onInitializeAccessibilityNodeInfo(info);
-        //info.setScrollable(isScrollableForAccessibility());
-        //View selectedView = getSelectedView();
-        //if (selectedView != null) {
-            //info.setEnabled(selectedView.isEnabled());
-        //}
+        
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.674 -0400", hash_original_method = "73EE58FB2C3D5181C9EEF91D06B60047", hash_generated_method = "A63E2FA155253A45CF2A5BE4133C09C1")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onInitializeAccessibilityEvent(event);
         event.setScrollable(isScrollableForAccessibility());
         View selectedView = getSelectedView();
         {
             event.setEnabled(selectedView.isEnabled());
-        } //End block
+        } 
         event.setCurrentItemIndex(getSelectedItemPosition());
         event.setFromIndex(getFirstVisiblePosition());
         event.setToIndex(getLastVisiblePosition());
         event.setItemCount(getCount());
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //super.onInitializeAccessibilityEvent(event);
-        //event.setScrollable(isScrollableForAccessibility());
-        //View selectedView = getSelectedView();
-        //if (selectedView != null) {
-            //event.setEnabled(selectedView.isEnabled());
-        //}
-        //event.setCurrentItemIndex(getSelectedItemPosition());
-        //event.setFromIndex(getFirstVisiblePosition());
-        //event.setToIndex(getLastVisiblePosition());
-        //event.setItemCount(getCount());
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -845,17 +845,17 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
             final int itemCount = adapter.getCount();
             boolean var0CADBBA3C9973A4C32A29A1A7D305AA3_1109090806 = (itemCount > 0
                 && (getFirstVisiblePosition() > 0 || getLastVisiblePosition() < itemCount - 1));
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1323850662 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1323850662;
-        // ---------- Original Method ----------
-        //T adapter = getAdapter();
-        //if (adapter != null) {
-            //final int itemCount = adapter.getCount();
-            //return itemCount > 0
-                //&& (getFirstVisiblePosition() > 0 || getLastVisiblePosition() < itemCount - 1);
-        //}
-        //return false;
+        
+        
+        
+            
+            
+                
+        
+        
     }
 
     
@@ -865,8 +865,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         boolean varDA480D2F8FF037BACA5DB54A8FBF9642_867754124 = (super.canAnimate() && mItemCount > 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1010783647 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1010783647;
-        // ---------- Original Method ----------
-        //return super.canAnimate() && mItemCount > 0;
+        
+        
     }
 
     
@@ -884,28 +884,28 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
                     {
                         setNextSelectedPositionInt(newPos);
                         found = true;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             {
                 newPos = getSelectedItemPosition();
                 {
                     newPos = count - 1;
-                } //End block
+                } 
                 {
                     newPos = 0;
-                } //End block
+                } 
                 int selectablePos = lookForSelectablePosition(newPos, true);
                 {
                     selectablePos = lookForSelectablePosition(newPos, false);
-                } //End block
+                } 
                 {
                     setNextSelectedPositionInt(selectablePos);
                     checkSelectionChanged();
                     found = true;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             mSelectedPosition = INVALID_POSITION;
             mSelectedRowId = INVALID_ROW_ID;
@@ -913,9 +913,9 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
             mNextSelectedRowId = INVALID_ROW_ID;
             mNeedSync = false;
             checkSelectionChanged();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -925,13 +925,13 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
             selectionChanged();
             mOldSelectedPosition = mSelectedPosition;
             mOldSelectedRowId = mSelectedRowId;
-        } //End block
-        // ---------- Original Method ----------
-        //if ((mSelectedPosition != mOldSelectedPosition) || (mSelectedRowId != mOldSelectedRowId)) {
-            //selectionChanged();
-            //mOldSelectedPosition = mSelectedPosition;
-            //mOldSelectedRowId = mSelectedRowId;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -959,17 +959,17 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
                 {
                     seed = last;
                     next = false;
-                } //End block
+                } 
                 {
                     seed = first;
                     next = true;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144109001 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144109001;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -979,8 +979,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         addTaint(lookDown);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1733919945 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1733919945;
-        // ---------- Original Method ----------
-        //return position;
+        
+        
     }
 
     
@@ -988,9 +988,9 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
      void setSelectedPositionInt(int position) {
         mSelectedPosition = position;
         mSelectedRowId = getItemIdAtPosition(position);
-        // ---------- Original Method ----------
-        //mSelectedPosition = position;
-        //mSelectedRowId = getItemIdAtPosition(position);
+        
+        
+        
     }
 
     
@@ -1001,14 +1001,14 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         {
             mSyncPosition = position;
             mSyncRowId = mNextSelectedRowId;
-        } //End block
-        // ---------- Original Method ----------
-        //mNextSelectedPosition = position;
-        //mNextSelectedRowId = getItemIdAtPosition(position);
-        //if (mNeedSync && mSyncMode == SYNC_SELECTED_POSITION && position >= 0) {
-            //mSyncPosition = position;
-            //mSyncRowId = mNextSelectedRowId;
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -1025,9 +1025,9 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
                     mSyncPosition = mNextSelectedPosition;
                     {
                         mSpecificTop = v.getTop();
-                    } //End block
+                    } 
                     mSyncMode = SYNC_SELECTED_POSITION;
-                } //End block
+                } 
                 {
                     View v = getChildAt(0);
                     T adapter = getAdapter();
@@ -1035,21 +1035,21 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
                         boolean var4513742AC4398C98A59B8301E0BEEF78_471868160 = (mFirstPosition >= 0 && mFirstPosition < adapter.getCount());
                         {
                             mSyncRowId = adapter.getItemId(mFirstPosition);
-                        } //End block
+                        } 
                         {
                             mSyncRowId = NO_ID;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     mSyncPosition = mFirstPosition;
                     {
                         mSpecificTop = v.getTop();
-                    } //End block
+                    } 
                     mSyncMode = SYNC_FIRST_POSITION;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -1069,10 +1069,10 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
             this.targetView = targetView;
             this.position = position;
             this.id = id;
-            // ---------- Original Method ----------
-            //this.targetView = targetView;
-            //this.position = position;
-            //this.id = id;
+            
+            
+            
+            
         }
 
         
@@ -1088,14 +1088,14 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.679 -0400", hash_original_method = "7D160EE0593E52FB18E5F3C663310860", hash_generated_method = "7D160EE0593E52FB18E5F3C663310860")
         public AdapterDataSetObserver ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.679 -0400", hash_original_method = "26DD6C25DA2F390817D1ECC15F4F8536", hash_generated_method = "D29D763468B134E4C168523A2AF4F4DF")
         @Override
         public void onChanged() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mDataChanged = true;
             mOldItemCount = mItemCount;
             mItemCount = getAdapter().getCount();
@@ -1105,40 +1105,40 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
                 {
                     AdapterView.this.onRestoreInstanceState(mInstanceState);
                     mInstanceState = null;
-                } //End block
+                } 
                 {
                     rememberSyncState();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             checkFocus();
             requestLayout();
-            // ---------- Original Method ----------
-            //mDataChanged = true;
-            //mOldItemCount = mItemCount;
-            //mItemCount = getAdapter().getCount();
-            //if (AdapterView.this.getAdapter().hasStableIds() && mInstanceState != null
-                    //&& mOldItemCount == 0 && mItemCount > 0) {
-                //AdapterView.this.onRestoreInstanceState(mInstanceState);
-                //mInstanceState = null;
-            //} else {
-                //rememberSyncState();
-            //}
-            //checkFocus();
-            //requestLayout();
+            
+            
+            
+            
+            
+                    
+                
+                
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.680 -0400", hash_original_method = "384362603CD3BC78F8E9701AA98D7AA3", hash_generated_method = "FC4CEF7E31B7C06600CB5B29A899B6E6")
         @Override
         public void onInvalidated() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mDataChanged = true;
             {
                 boolean var7489B38452FA33CED2860E46905E6201_1855342886 = (AdapterView.this.getAdapter().hasStableIds());
                 {
                     mInstanceState = AdapterView.this.onSaveInstanceState();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mOldItemCount = mItemCount;
             mItemCount = 0;
             mSelectedPosition = INVALID_POSITION;
@@ -1148,28 +1148,28 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
             mNeedSync = false;
             checkFocus();
             requestLayout();
-            // ---------- Original Method ----------
-            //mDataChanged = true;
-            //if (AdapterView.this.getAdapter().hasStableIds()) {
-                //mInstanceState = AdapterView.this.onSaveInstanceState();
-            //}
-            //mOldItemCount = mItemCount;
-            //mItemCount = 0;
-            //mSelectedPosition = INVALID_POSITION;
-            //mSelectedRowId = INVALID_ROW_ID;
-            //mNextSelectedPosition = INVALID_POSITION;
-            //mNextSelectedRowId = INVALID_ROW_ID;
-            //mNeedSync = false;
-            //checkFocus();
-            //requestLayout();
+            
+            
+            
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.682 -0400", hash_original_method = "FEB1A2B1EE4CD2130FB08EC4E4CC489E", hash_generated_method = "45FAE979B6EF5255E98919F10948FE73")
         public void clearSavedState() {
             mInstanceState = null;
-            // ---------- Original Method ----------
-            //mInstanceState = null;
+            
+            
         }
 
         
@@ -1182,7 +1182,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.682 -0400", hash_original_method = "FB2FB370914C04BE018162856CF2098F", hash_generated_method = "FB2FB370914C04BE018162856CF2098F")
         public SelectionNotifier ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1193,20 +1193,20 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
                     boolean var6E1AA78244E28A1874D7E5FE58FB0DD3_806660851 = (getAdapter() != null);
                     {
                         post(this);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 fireOnSelected();
-            } //End block
-            // ---------- Original Method ----------
-            //if (mDataChanged) {
-                //if (getAdapter() != null) {
-                    //post(this);
-                //}
-            //} else {
-                //fireOnSelected();
-            //}
+            } 
+            
+            
+                
+                    
+                
+            
+                
+            
         }
 
         

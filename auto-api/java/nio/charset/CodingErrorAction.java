@@ -1,11 +1,11 @@
 package java.nio.charset;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class CodingErrorAction {
@@ -16,20 +16,21 @@ public class CodingErrorAction {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.005 -0400", hash_original_method = "97CD51F500ABFE41AE4BD609F91C5F74", hash_generated_method = "7A8E959B2CD8A428B2EF81F66E186CC8")
     private  CodingErrorAction(String action) {
         this.action = action;
-        // ---------- Original Method ----------
-        //this.action = action;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.005 -0400", hash_original_method = "A74604AE646C671FE46897A241086F47", hash_generated_method = "337A605A0DA6D1BC1343DC37A8059819")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1016714718 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1016714718 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1016714718 = "Action: " + this.action;
-        varB4EAC82CA7396A68D541C85D26508E83_1016714718.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1016714718.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1016714718;
-        // ---------- Original Method ----------
-        //return "Action: " + this.action;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package java.util.zip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Arrays;
 
@@ -17,7 +17,7 @@ public class Adler32 implements Checksum {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.700 -0400", hash_original_method = "44A37FF32832D6270D5CA824FAC1DB11", hash_generated_method = "44A37FF32832D6270D5CA824FAC1DB11")
     public Adler32 ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -25,43 +25,46 @@ public class Adler32 implements Checksum {
     public long getValue() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_306479454 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_306479454;
-        // ---------- Original Method ----------
-        //return adler;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.703 -0400", hash_original_method = "1433914DD19ED8527D865BA07D38D783", hash_generated_method = "A833C721B36C9DD33845C86043BAF555")
     public void reset() {
         adler = 1;
-        // ---------- Original Method ----------
-        //adler = 1;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.703 -0400", hash_original_method = "031B66345AD9B4CB1EA8EFF22DB8DC3B", hash_generated_method = "342DD84DCAF0223E8E3E5B65B71564AD")
     public void update(int i) {
         adler = updateByteImpl(i, adler);
-        // ---------- Original Method ----------
-        //adler = updateByteImpl(i, adler);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.703 -0400", hash_original_method = "CE6B29801A6FECCB312673EE525F73B5", hash_generated_method = "13C689D50A12C9C127D21D737DB67415")
     public void update(byte[] buf) {
         update(buf, 0, buf.length);
         addTaint(buf[0]);
-        // ---------- Original Method ----------
-        //update(buf, 0, buf.length);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.704 -0400", hash_original_method = "33C110C69CF248DAE45848AD232AAEEC", hash_generated_method = "AEDBCB2904C45ED2AEF4CC71D178612E")
     public void update(byte[] buf, int offset, int byteCount) {
         Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
         adler = updateImpl(buf, offset, byteCount, adler);
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
-        //adler = updateImpl(buf, offset, byteCount, adler);
+        
+        
+        
     }
 
     

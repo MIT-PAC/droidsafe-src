@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.Log;
 
@@ -19,7 +19,7 @@ public class PowerManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.985 -0400", hash_original_method = "CC3F52E82947675044A40593774B54F6", hash_generated_method = "FBF57EA37BF41DE0AFD68D9E02F27504")
     private  PowerManager() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,135 +27,142 @@ public class PowerManager {
     public  PowerManager(IPowerManager service, Handler handler) {
         mService = service;
         mHandler = handler;
-        // ---------- Original Method ----------
-        //mService = service;
-        //mHandler = handler;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.985 -0400", hash_original_method = "93AAF5370B6BA4BEAC029A2F72D16576", hash_generated_method = "5BACD890BA3F619BF488B3AFFC5CC31E")
     public WakeLock newWakeLock(int flags, String tag) {
-        WakeLock varB4EAC82CA7396A68D541C85D26508E83_1000487949 = null; //Variable for return #1
+        WakeLock varB4EAC82CA7396A68D541C85D26508E83_1000487949 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("tag is null in PowerManager.newWakeLock");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1000487949 = new WakeLock(flags, tag);
         addTaint(flags);
         addTaint(tag.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1000487949.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1000487949.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1000487949;
-        // ---------- Original Method ----------
-        //if (tag == null) {
-            //throw new NullPointerException("tag is null in PowerManager.newWakeLock");
-        //}
-        //return new WakeLock(flags, tag);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.986 -0400", hash_original_method = "C5F540EE3212366BBE1CC045B8933E13", hash_generated_method = "D7DF77ED9D1CC0A2173C5F43DB17A026")
     public void userActivity(long when, boolean noChangeLights) {
         try 
         {
             mService.userActivity(when, noChangeLights);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(when);
         addTaint(noChangeLights);
-        // ---------- Original Method ----------
-        //try {
-            //mService.userActivity(when, noChangeLights);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.986 -0400", hash_original_method = "CD7C7C85680B5F62F444A1BDA84407A2", hash_generated_method = "C1DF087EB11438DDE293186B66FC94C0")
     public void goToSleep(long time) {
         try 
         {
             mService.goToSleep(time);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(time);
-        // ---------- Original Method ----------
-        //try {
-            //mService.goToSleep(time);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.986 -0400", hash_original_method = "1657059AF219261DAAA3A6D217AB2CFE", hash_generated_method = "223F98C4C3869D4A9AFC32062E45911D")
     public void setBacklightBrightness(int brightness) {
         try 
         {
             mService.setBacklightBrightness(brightness);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(brightness);
-        // ---------- Original Method ----------
-        //try {
-            //mService.setBacklightBrightness(brightness);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.987 -0400", hash_original_method = "3FEFDF5F90A1934664CD9ABDDAD0F802", hash_generated_method = "C6F4CFD4D0371D7DFCC524B28CC22390")
     public int getSupportedWakeLockFlags() {
         try 
         {
             int var523D03F3D92596C5D29B4B3F266A1185_2065501065 = (mService.getSupportedWakeLockFlags());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1212238078 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1212238078;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getSupportedWakeLockFlags();
-        //} catch (RemoteException e) {
-            //return 0;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.987 -0400", hash_original_method = "50478742CDFBDF2C875183424E636D44", hash_generated_method = "1F88A06A19AC424641BA61F369D86FA3")
     public boolean isScreenOn() {
         try 
         {
             boolean var3405A35E39FE7BA8C0D22FE35D82BDAA_414734033 = (mService.isScreenOn());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_267978361 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_267978361;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.isScreenOn();
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.988 -0400", hash_original_method = "35D8C90A4186EC12B6AC746434DE3AC6", hash_generated_method = "70CB051F4D08FA477B139F6EA91DB16B")
     public void reboot(String reason) {
         try 
         {
             mService.reboot(reason);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(reason.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mService.reboot(reason);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
@@ -166,8 +173,8 @@ public class PowerManager {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.988 -0400", hash_original_method = "EE8EB6B44C1ECA6F34C46D68F05D7353", hash_generated_method = "4FB3659F1E09722C30041C679A6091C0")
             public void run() {
                 release();
-                // ---------- Original Method ----------
-                //release();
+                
+                
             }
 
             
@@ -196,34 +203,34 @@ public class PowerManager {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.989 -0400", hash_original_method = "F8EACFB6990EF5D4887B3D97C67B44DC", hash_generated_method = "D7928E79985E69EE89CB83FCA39BC9B6")
           WakeLock(int flags, String tag) {
-            //Begin case default 
+            
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            //End case default 
+            
             mFlags = flags;
             mTag = tag;
             mToken = new Binder();
-            // ---------- Original Method ----------
-            //switch (flags & LOCK_MASK) {
-            //case PARTIAL_WAKE_LOCK:
-            //case SCREEN_DIM_WAKE_LOCK:
-            //case SCREEN_BRIGHT_WAKE_LOCK:
-            //case FULL_WAKE_LOCK:
-            //case PROXIMITY_SCREEN_OFF_WAKE_LOCK:
-                //break;
-            //default:
-                //throw new IllegalArgumentException();
-            //}
-            //mFlags = flags;
-            //mTag = tag;
-            //mToken = new Binder();
+            
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.990 -0400", hash_original_method = "C9C09C089F97F5128A15BBE86111A3BF", hash_generated_method = "494115ABA2B3754EECDF64EBFE873031")
         public void setReferenceCounted(boolean value) {
             mRefCounted = value;
-            // ---------- Original Method ----------
-            //mRefCounted = value;
+            
+            
         }
 
         
@@ -231,11 +238,11 @@ public class PowerManager {
         public void acquire() {
             {
                 acquireLocked();
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mToken) {
-                //acquireLocked();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -244,13 +251,13 @@ public class PowerManager {
             {
                 acquireLocked();
                 mHandler.postDelayed(mReleaser, timeout);
-            } //End block
+            } 
             addTaint(timeout);
-            // ---------- Original Method ----------
-            //synchronized (mToken) {
-                //acquireLocked();
-                //mHandler.postDelayed(mReleaser, timeout);
-            //}
+            
+            
+                
+                
+            
         }
 
         
@@ -261,28 +268,28 @@ public class PowerManager {
                 try 
                 {
                     mService.acquireWakeLock(mFlags, mToken, mTag, mWorkSource);
-                } //End block
+                } 
                 catch (RemoteException e)
                 { }
                 mHeld = true;
-            } //End block
-            // ---------- Original Method ----------
-            //if (!mRefCounted || mCount++ == 0) {
-                //mHandler.removeCallbacks(mReleaser);
-                //try {
-                    //mService.acquireWakeLock(mFlags, mToken, mTag, mWorkSource);
-                //} catch (RemoteException e) {
-                //}
-                //mHeld = true;
-            //}
+            } 
+            
+            
+                
+                
+                    
+                
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.992 -0400", hash_original_method = "4304724C92023C406072B166ABF56DE4", hash_generated_method = "06536F16FDC471761CBE2359AB1C490E")
         public void release() {
             release(0);
-            // ---------- Original Method ----------
-            //release(0);
+            
+            
         }
 
         
@@ -294,30 +301,30 @@ public class PowerManager {
                     try 
                     {
                         mService.releaseWakeLock(mToken, flags);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     { }
                     mHeld = false;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException("WakeLock under-locked " + mTag);
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(flags);
-            // ---------- Original Method ----------
-            //synchronized (mToken) {
-                //if (!mRefCounted || --mCount == 0) {
-                    //mHandler.removeCallbacks(mReleaser);
-                    //try {
-                        //mService.releaseWakeLock(mToken, flags);
-                    //} catch (RemoteException e) {
-                    //}
-                    //mHeld = false;
-                //}
-                //if (mCount < 0) {
-                    //throw new RuntimeException("WakeLock under-locked " + mTag);
-                //}
-            //}
+            
+            
+                
+                    
+                    
+                        
+                    
+                    
+                    
+                
+                
+                    
+                
+            
         }
 
         
@@ -325,10 +332,10 @@ public class PowerManager {
         public boolean isHeld() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1212609960 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1212609960;
-            // ---------- Original Method ----------
-            //synchronized (mToken) {
-                //return mHeld;
-            //}
+            
+            
+                
+            
         }
 
         
@@ -339,52 +346,52 @@ public class PowerManager {
                     boolean varDCFAF0E9E34CB8562A3C2873888A5A3D_1244969423 = (ws != null && ws.size() == 0);
                     {
                         ws = null;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 boolean changed = true;
                 {
                     mWorkSource = null;
-                } //End block
+                } 
                 {
                     changed = mWorkSource != null;
                     mWorkSource = new WorkSource(ws);
-                } //End block
+                } 
                 {
                     changed = mWorkSource.diff(ws);
                     {
                         mWorkSource.set(ws);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     try 
                     {
                         mService.updateWakeLockWorkSource(mToken, mWorkSource);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     { }
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.994 -0400", hash_original_method = "8262D389F7698AE191F8346E629CED2D", hash_generated_method = "A75B629A58CBF027B876EE6BA6FE66C5")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1123515263 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1123515263 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1123515263 = "WakeLock{"
                     + Integer.toHexString(System.identityHashCode(this))
                     + " held=" + mHeld + ", refCount=" + mCount + "}";
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1123515263.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_1123515263.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1123515263;
-            // ---------- Original Method ----------
-            //synchronized (mToken) {
-                //return "WakeLock{"
-                    //+ Integer.toHexString(System.identityHashCode(this))
-                    //+ " held=" + mHeld + ", refCount=" + mCount + "}";
-            //}
+            
+            
+                
+                    
+                    
+            
         }
 
         
@@ -397,21 +404,21 @@ public class PowerManager {
                     try 
                     {
                         mService.releaseWakeLock(mToken, 0);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     { }
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mToken) {
-                //if (mHeld) {
-                    //Log.wtf(TAG, "WakeLock finalized while still held: " + mTag);
-                    //try {
-                        //mService.releaseWakeLock(mToken, 0);
-                    //} catch (RemoteException e) {
-                    //}
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                    
+                        
+                    
+                    
+                
+            
         }
 
         

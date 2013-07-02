@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -34,30 +34,30 @@ public class DERExternal extends ASN1Object {
         {
             directReference = (DERObjectIdentifier)enc;
             enc = getObjFromVector(vector, offset);
-        } //End block
+        } 
         {
             indirectReference = (DERInteger) enc;
             enc = getObjFromVector(vector, offset);
-        } //End block
+        } 
         {
             dataValueDescriptor = (ASN1Object) enc;
             enc = getObjFromVector(vector, offset);
-        } //End block
+        } 
         {
             boolean var6EA570A14539C56A79A93DEAE306A7BD_1636117525 = (vector.size() != offset + 1);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("input vector too large");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("No tagged object found in vector. Structure doesn't seem to be of type External");
-        } //End block
+        } 
         DERTaggedObject obj = (DERTaggedObject)enc;
         setEncoding(obj.getTagNo());
         externalContent = obj.getObject();
         addTaint(vector.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -68,7 +68,7 @@ public class DERExternal extends ASN1Object {
         addTaint(indirectReference.getTaint());
         addTaint(dataValueDescriptor.getTaint());
         addTaint(externalData.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -84,69 +84,71 @@ public class DERExternal extends ASN1Object {
         addTaint(dataValueDescriptor.getTaint());
         addTaint(encoding);
         addTaint(externalData.getTaint());
-        // ---------- Original Method ----------
-        //setDirectReference(directReference);
-        //setIndirectReference(indirectReference);
-        //setDataValueDescriptor(dataValueDescriptor);
-        //setEncoding(encoding);
-        //setExternalContent(externalData.getDERObject());
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.390 -0400", hash_original_method = "B967C566758213AD266FDB24FA14151A", hash_generated_method = "9D9726F4BF970C45B07AD487E06B7FD8")
     private DERObject getObjFromVector(ASN1EncodableVector v, int index) {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1666929313 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1666929313 = null; 
         {
             boolean varB4DD559B658EEAA09048D55546AD49A8_746894153 = (v.size() <= index);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("too few objects in input vector");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1666929313 = v.get(index).getDERObject();
         addTaint(v.getTaint());
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_1666929313.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1666929313.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1666929313;
-        // ---------- Original Method ----------
-        //if (v.size() <= index)
-        //{
-            //throw new IllegalArgumentException("too few objects in input vector");
-        //}
-        //return v.get(index).getDERObject();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.391 -0400", hash_original_method = "E789B91521559DD1093D7E9087176FAE", hash_generated_method = "0D6497EA5F931F587751F7C1388900F7")
     public int hashCode() {
         int ret = 0;
         {
             ret = directReference.hashCode();
-        } //End block
+        } 
         {
             ret ^= indirectReference.hashCode();
-        } //End block
+        } 
         {
             ret ^= dataValueDescriptor.hashCode();
-        } //End block
+        } 
         ret ^= externalContent.hashCode();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_633099198 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_633099198;
-        // ---------- Original Method ----------
-        //int ret = 0;
-        //if (directReference != null)
-        //{
-            //ret = directReference.hashCode();
-        //}
-        //if (indirectReference != null)
-        //{
-            //ret ^= indirectReference.hashCode();
-        //}
-        //if (dataValueDescriptor != null)
-        //{
-            //ret ^= dataValueDescriptor.hashCode();
-        //}
-        //ret ^= externalContent.hashCode();
-        //return ret;
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -155,34 +157,34 @@ public class DERExternal extends ASN1Object {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         {
             baos.write(directReference.getDEREncoded());
-        } //End block
+        } 
         {
             baos.write(indirectReference.getDEREncoded());
-        } //End block
+        } 
         {
             baos.write(dataValueDescriptor.getDEREncoded());
-        } //End block
+        } 
         DERTaggedObject obj = new DERTaggedObject(encoding, externalContent);
         baos.write(obj.getDEREncoded());
         out.writeEncoded(DERTags.CONSTRUCTED, DERTags.EXTERNAL, baos.toByteArray());
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        //if (directReference != null)
-        //{
-            //baos.write(directReference.getDEREncoded());
-        //}
-        //if (indirectReference != null)
-        //{
-            //baos.write(indirectReference.getDEREncoded());
-        //}
-        //if (dataValueDescriptor != null)
-        //{
-            //baos.write(dataValueDescriptor.getDEREncoded());
-        //}
-        //DERTaggedObject obj = new DERTaggedObject(encoding, externalContent);
-        //baos.write(obj.getDEREncoded());
-        //out.writeEncoded(DERTags.CONSTRUCTED, DERTags.EXTERNAL, baos.toByteArray());
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -192,46 +194,46 @@ public class DERExternal extends ASN1Object {
         {
             {
                 boolean varBCA992D41F0A8ABD2928F8753178D46A_764433812 = (other.directReference == null || !other.directReference.equals(directReference));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             {
                 boolean varD78E958F12DFBF6C5C476998EE281259_727663886 = (other.indirectReference == null || !other.indirectReference.equals(indirectReference));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             {
                 boolean var78A31C65277A5AE8A41B30C47A65F869_982089965 = (other.dataValueDescriptor == null || !other.dataValueDescriptor.equals(dataValueDescriptor));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         boolean var99C5035F414E5B2D03D7EFBDDE3288EE_1819591889 = (externalContent.equals(other.externalContent));
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_387355263 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_387355263;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.392 -0400", hash_original_method = "0B6DEA5056C96F68CB576A145B8163A4", hash_generated_method = "B231E932EADD437262323431B297E399")
     public ASN1Object getDataValueDescriptor() {
-        ASN1Object varB4EAC82CA7396A68D541C85D26508E83_1867621641 = null; //Variable for return #1
+        ASN1Object varB4EAC82CA7396A68D541C85D26508E83_1867621641 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1867621641 = dataValueDescriptor;
-        varB4EAC82CA7396A68D541C85D26508E83_1867621641.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1867621641.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1867621641;
-        // ---------- Original Method ----------
-        //return dataValueDescriptor;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.393 -0400", hash_original_method = "5D19E791BF0146D74AAC703832ECF7B9", hash_generated_method = "C8F8C3AC0E1A7F69CA513CD343BD0BC9")
     public DERObjectIdentifier getDirectReference() {
-        DERObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1635898131 = null; //Variable for return #1
+        DERObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1635898131 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1635898131 = directReference;
-        varB4EAC82CA7396A68D541C85D26508E83_1635898131.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1635898131.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1635898131;
-        // ---------- Original Method ----------
-        //return directReference;
+        
+        
     }
 
     
@@ -239,77 +241,78 @@ public class DERExternal extends ASN1Object {
     public int getEncoding() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_210532877 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_210532877;
-        // ---------- Original Method ----------
-        //return encoding;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.393 -0400", hash_original_method = "A31A01A5BEAE5C1C675F68CA7DEBC312", hash_generated_method = "AF6DD04876827872533D5EF14EF4DEC6")
     public DERObject getExternalContent() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_2115159930 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_2115159930 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2115159930 = externalContent;
-        varB4EAC82CA7396A68D541C85D26508E83_2115159930.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2115159930.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2115159930;
-        // ---------- Original Method ----------
-        //return externalContent;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.394 -0400", hash_original_method = "A48170CD86EA456F3F5BDA9638D90BB1", hash_generated_method = "7465C112A8445520ECBDA054BBEF2E2C")
     public DERInteger getIndirectReference() {
-        DERInteger varB4EAC82CA7396A68D541C85D26508E83_483949882 = null; //Variable for return #1
+        DERInteger varB4EAC82CA7396A68D541C85D26508E83_483949882 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_483949882 = indirectReference;
-        varB4EAC82CA7396A68D541C85D26508E83_483949882.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_483949882.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_483949882;
-        // ---------- Original Method ----------
-        //return indirectReference;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.394 -0400", hash_original_method = "0BD65C140FCC2077661040D20B226912", hash_generated_method = "EF6BD976ABD259EA66BA89BDDB768754")
     private void setDataValueDescriptor(ASN1Object dataValueDescriptor) {
         this.dataValueDescriptor = dataValueDescriptor;
-        // ---------- Original Method ----------
-        //this.dataValueDescriptor = dataValueDescriptor;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.394 -0400", hash_original_method = "A83523D5E22547A02A231238C93C9842", hash_generated_method = "D6AD4C337C3FD3A0AD5109A0D5A2ACE9")
     private void setDirectReference(DERObjectIdentifier directReferemce) {
         this.directReference = directReferemce;
-        // ---------- Original Method ----------
-        //this.directReference = directReferemce;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.394 -0400", hash_original_method = "D6EB4173694568A37E5CF8BEC224CE9C", hash_generated_method = "2B487965DAAA3E510EDB70A66A295BF9")
     private void setEncoding(int encoding) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("invalid encoding value: " + encoding);
-        } //End block
+        } 
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //if (encoding < 0 || encoding > 2)
-        //{
-            //throw new IllegalArgumentException("invalid encoding value: " + encoding);
-        //}
-        //this.encoding = encoding;
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.395 -0400", hash_original_method = "DE6F2795286824746E38E92F0B41BA33", hash_generated_method = "24CEF734212704228B883286898B188C")
     private void setExternalContent(DERObject externalContent) {
         this.externalContent = externalContent;
-        // ---------- Original Method ----------
-        //this.externalContent = externalContent;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.395 -0400", hash_original_method = "0014F60DB99B68C720B34F07B78773E4", hash_generated_method = "D2EB81AEFDE4F6F36CC34563A6AD7814")
     private void setIndirectReference(DERInteger indirectReference) {
         this.indirectReference = indirectReference;
-        // ---------- Original Method ----------
-        //this.indirectReference = indirectReference;
+        
+        
     }
 
     

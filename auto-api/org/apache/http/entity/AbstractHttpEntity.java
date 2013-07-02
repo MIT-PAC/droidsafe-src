@@ -1,11 +1,11 @@
 package org.apache.http.entity;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.apache.http.Header;
@@ -27,29 +27,29 @@ public abstract class AbstractHttpEntity implements HttpEntity {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.559 -0400", hash_original_method = "7092D401475F156326EB612012D50800", hash_generated_method = "8090890FE04071B33C38618871FDA9FD")
     protected  AbstractHttpEntity() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.559 -0400", hash_original_method = "DA5232C01B88DD776A78D6C1E0EF7DB4", hash_generated_method = "07112480FF2865763DB5810BC08C9A28")
     public Header getContentType() {
-        Header varB4EAC82CA7396A68D541C85D26508E83_1232197752 = null; //Variable for return #1
+        Header varB4EAC82CA7396A68D541C85D26508E83_1232197752 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1232197752 = this.contentType;
-        varB4EAC82CA7396A68D541C85D26508E83_1232197752.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1232197752.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1232197752;
-        // ---------- Original Method ----------
-        //return this.contentType;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.560 -0400", hash_original_method = "0300179EF34C28254565E1D29B0088D9", hash_generated_method = "B48AA0BE1396BC1973BA98B6FBB4A228")
     public Header getContentEncoding() {
-        Header varB4EAC82CA7396A68D541C85D26508E83_1926877715 = null; //Variable for return #1
+        Header varB4EAC82CA7396A68D541C85D26508E83_1926877715 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1926877715 = this.contentEncoding;
-        varB4EAC82CA7396A68D541C85D26508E83_1926877715.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1926877715.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1926877715;
-        // ---------- Original Method ----------
-        //return this.contentEncoding;
+        
+        
     }
 
     
@@ -57,16 +57,16 @@ public abstract class AbstractHttpEntity implements HttpEntity {
     public boolean isChunked() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1829288661 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1829288661;
-        // ---------- Original Method ----------
-        //return this.chunked;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.560 -0400", hash_original_method = "2A50843ADF5A0160EFC9E5758FE12891", hash_generated_method = "513E2D2C622089B4C38694763A24458C")
     public void setContentType(final Header contentType) {
         this.contentType = contentType;
-        // ---------- Original Method ----------
-        //this.contentType = contentType;
+        
+        
     }
 
     
@@ -75,23 +75,23 @@ public abstract class AbstractHttpEntity implements HttpEntity {
         Header h = null;
         {
             h = new BasicHeader(HTTP.CONTENT_TYPE, ctString);
-        } //End block
+        } 
         setContentType(h);
         addTaint(ctString.getTaint());
-        // ---------- Original Method ----------
-        //Header h = null;
-        //if (ctString != null) {
-            //h = new BasicHeader(HTTP.CONTENT_TYPE, ctString);
-        //}
-        //setContentType(h);
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.561 -0400", hash_original_method = "DEBEEA900825B0657525159073BC33A3", hash_generated_method = "1A414CB42618A24BED38C8E50DD477A0")
     public void setContentEncoding(final Header contentEncoding) {
         this.contentEncoding = contentEncoding;
-        // ---------- Original Method ----------
-        //this.contentEncoding = contentEncoding;
+        
+        
     }
 
     
@@ -100,26 +100,27 @@ public abstract class AbstractHttpEntity implements HttpEntity {
         Header h = null;
         {
             h = new BasicHeader(HTTP.CONTENT_ENCODING, ceString);
-        } //End block
+        } 
         setContentEncoding(h);
         addTaint(ceString.getTaint());
-        // ---------- Original Method ----------
-        //Header h = null;
-        //if (ceString != null) {
-            //h = new BasicHeader(HTTP.CONTENT_ENCODING, ceString);
-        //}
-        //setContentEncoding(h);
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.562 -0400", hash_original_method = "1B88FA65FDF60169F373F298E33E777E", hash_generated_method = "31F89D88E68A040DC2DABC5362BEB7BE")
     public void setChunked(boolean b) {
         this.chunked = b;
-        // ---------- Original Method ----------
-        //this.chunked = b;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.562 -0400", hash_original_method = "3048E7043703056EA818491E1D9863FC", hash_generated_method = "BD8F81ECEE3C8C289EA4E6C52F13D9DD")
     public void consumeContent() throws IOException, UnsupportedOperationException {
         {
@@ -127,13 +128,13 @@ public abstract class AbstractHttpEntity implements HttpEntity {
             {
                 if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException
                 ("streaming entity does not implement consumeContent()");
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (isStreaming()) {
-            //throw new UnsupportedOperationException
-                //("streaming entity does not implement consumeContent()");
-        //}
+            } 
+        } 
+        
+        
+            
+                
+        
     }
 
     

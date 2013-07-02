@@ -1,11 +1,11 @@
 package sun.misc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import dalvik.system.VMStack;
 import java.lang.reflect.Field;
@@ -15,10 +15,11 @@ public final class Unsafe {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.172 -0400", hash_original_method = "50D30E2F10A8434CB2B5A99A7DA391C8", hash_generated_method = "9AEC98E2560FBA06F6783E528E234F06")
     private  Unsafe() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Unsafe getUnsafe() {
         ClassLoader calling = VMStack.getCallingClassLoader();
         if ((calling != null) && (calling != Unsafe.class.getClassLoader())) {
@@ -28,6 +29,7 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.173 -0400", hash_original_method = "826DF3AF2C82C95E7B53BC94C24540AA", hash_generated_method = "97DA65C0D3657717F8AD5E55E7702F74")
     public long objectFieldOffset(Field field) {
         {
@@ -35,18 +37,18 @@ public final class Unsafe {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "valid for instance fields only");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         long varF618A6581E5B73EC310714FA10048689_82846313 = (objectFieldOffset0(field));
         addTaint(field.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1250012446 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1250012446;
-        // ---------- Original Method ----------
-        //if (Modifier.isStatic(field.getModifiers())) {
-            //throw new IllegalArgumentException(
-                    //"valid for instance fields only");
-        //}
-        //return objectFieldOffset0(field);
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -56,6 +58,7 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.173 -0400", hash_original_method = "10321221A26E92770863061AD8298BFF", hash_generated_method = "11E5E5919F90135D2870B8EE5A391D12")
     public int arrayBaseOffset(Class clazz) {
         {
@@ -63,18 +66,18 @@ public final class Unsafe {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "valid for array classes only");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int var51BA33DDEF15B63037397AC859BD0CAF_428173182 = (arrayBaseOffset0(clazz));
         addTaint(clazz.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1553727342 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1553727342;
-        // ---------- Original Method ----------
-        //if (! clazz.isArray()) {
-            //throw new IllegalArgumentException(
-                    //"valid for array classes only");
-        //}
-        //return arrayBaseOffset0(clazz);
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -84,6 +87,7 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.173 -0400", hash_original_method = "756FA93315C90771D6287C6D6A8351D6", hash_generated_method = "DD3EC2E0DC4A9599734C524B411CDC74")
     public int arrayIndexScale(Class clazz) {
         {
@@ -91,18 +95,18 @@ public final class Unsafe {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "valid for array classes only");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varEFFA4979ED3F7A2DCA88FBA7982BACDE_1229504276 = (arrayIndexScale0(clazz));
         addTaint(clazz.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1882072163 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1882072163;
-        // ---------- Original Method ----------
-        //if (! clazz.isArray()) {
-            //throw new IllegalArgumentException(
-                    //"valid for array classes only");
-        //}
-        //return arrayIndexScale0(clazz);
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -162,7 +166,7 @@ public final class Unsafe {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.175 -0400", hash_original_method = "7F65AB78F7829D174777BA98D685A0A2", hash_generated_method = "8389F48CA8228ADA469FDA17F26377FB")
     public Object getObjectVolatile(Object obj, long offset) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+        
     	Object ret = new Object();
     	ret.addTaint(obj.taint);
     	ret.addTaint(offset);
@@ -212,7 +216,7 @@ public final class Unsafe {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.178 -0400", hash_original_method = "F008619F8920F7BD7FA02EADD68A4977", hash_generated_method = "67D30353ADFDF0D1EFF7C8039039B89C")
     public Object getObject(Object obj, long offset) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+        
     	Object ret = new Object();
     	ret.addTaint(obj.taint);
     	ret.addTaint(offset);
@@ -232,40 +236,42 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.179 -0400", hash_original_method = "A0416E5885795BAB8716EF22A6E96095", hash_generated_method = "42CCC832139642815196D834F4D20DB0")
     public void park(boolean absolute, long time) {
         {
             Thread.currentThread().parkUntil(time);
-        } //End block
+        } 
         {
             Thread.currentThread().parkFor(time);
-        } //End block
+        } 
         addTaint(absolute);
         addTaint(time);
-        // ---------- Original Method ----------
-        //if (absolute) {
-            //Thread.currentThread().parkUntil(time);
-        //} else {
-            //Thread.currentThread().parkFor(time);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.179 -0400", hash_original_method = "D722FA56AE20F33E2A3A13A64FA43CE8", hash_generated_method = "0FF76099A02E726D0A4450BE6EFB56C8")
     public void unpark(Object obj) {
         {
             ((Thread) obj).unpark();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("valid for Threads only");
-        } //End block
+        } 
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //if (obj instanceof Thread) {
-            //((Thread) obj).unpark();
-        //} else {
-            //throw new IllegalArgumentException("valid for Threads only");
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     

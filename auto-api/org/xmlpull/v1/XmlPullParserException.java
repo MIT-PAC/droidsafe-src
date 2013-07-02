@@ -1,11 +1,11 @@
 package org.xmlpull.v1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class XmlPullParserException extends Exception {
@@ -23,7 +23,7 @@ public class XmlPullParserException extends Exception {
     public  XmlPullParserException(String s) {
         super(s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -35,26 +35,26 @@ public class XmlPullParserException extends Exception {
         {
             this.row = parser.getLineNumber();
             this.column = parser.getColumnNumber();
-        } //End block
+        } 
         this.detail = chain;
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //if (parser != null) {
-            //this.row = parser.getLineNumber();
-            //this.column = parser.getColumnNumber();
-        //}
-        //this.detail = chain;
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.118 -0400", hash_original_method = "94BA5080D380911C58CAC3733D4C69AF", hash_generated_method = "309F9176AC836BE21A9B19E0834C91A5")
     public Throwable getDetail() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_1212704699 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_1212704699 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1212704699 = detail;
-        varB4EAC82CA7396A68D541C85D26508E83_1212704699.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1212704699.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1212704699;
-        // ---------- Original Method ----------
-        //return detail;
+        
+        
     }
 
     
@@ -62,8 +62,8 @@ public class XmlPullParserException extends Exception {
     public int getLineNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_599705852 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_599705852;
-        // ---------- Original Method ----------
-        //return row;
+        
+        
     }
 
     
@@ -71,31 +71,32 @@ public class XmlPullParserException extends Exception {
     public int getColumnNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2147107571 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2147107571;
-        // ---------- Original Method ----------
-        //return column;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.119 -0400", hash_original_method = "5154476310B69FA819C717F88BC0BDF0", hash_generated_method = "BAFCA4B04999A280CFE0860DB3B9FE41")
     public void printStackTrace() {
         {
             super.printStackTrace();
-        } //End block
+        } 
         {
             {
                 System.err.println(super.getMessage() + "; nested exception is:");
                 detail.printStackTrace();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (detail == null) {
-            //super.printStackTrace();
-        //} else {
-            //synchronized(System.err) {
-                //System.err.println(super.getMessage() + "; nested exception is:");
-                //detail.printStackTrace();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+            
+                
+                
+            
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.nist;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.asn1.sec.SECNamedCurves;
@@ -20,16 +20,18 @@ public class NISTNamedCurves {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.968 -0400", hash_original_method = "63679769172F8C8B10620B74D01768FE", hash_generated_method = "63679769172F8C8B10620B74D01768FE")
     public NISTNamedCurves ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     static void defineCurve(String name, DERObjectIdentifier oid) {
         objIds.put(name, oid);
         names.put(oid, name);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X9ECParameters getByName(
         String  name) {
         DERObjectIdentifier oid = (DERObjectIdentifier)objIds.get(Strings.toUpperCase(name));
@@ -41,24 +43,28 @@ public class NISTNamedCurves {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X9ECParameters getByOID(
         DERObjectIdentifier  oid) {
         return SECNamedCurves.getByOID(oid);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERObjectIdentifier getOID(
         String  name) {
         return (DERObjectIdentifier)objIds.get(Strings.toUpperCase(name));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getName(
         DERObjectIdentifier  oid) {
         return (String)names.get(oid);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Enumeration getNames() {
         return objIds.keys();
     }

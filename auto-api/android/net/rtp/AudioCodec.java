@@ -1,11 +1,11 @@
 package android.net.rtp;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Arrays;
 
@@ -25,18 +25,20 @@ public class AudioCodec {
         this.type = type;
         this.rtpmap = rtpmap;
         this.fmtp = fmtp;
-        // ---------- Original Method ----------
-        //this.type = type;
-        //this.rtpmap = rtpmap;
-        //this.fmtp = fmtp;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AudioCodec[] getCodecs() {
         return Arrays.copyOf(sCodecs, sCodecs.length);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AudioCodec getCodec(int type, String rtpmap, String fmtp) {
         if (type < 0 || type > 127) {
             return null;

@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.IntentFilter;
 import android.graphics.drawable.Drawable;
@@ -59,7 +59,7 @@ public class ResolveInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.183 -0400", hash_original_method = "C76263445BA130B9E024AB7275119550", hash_generated_method = "9AD240A988A931517E58A7D3FB28D552")
     public  ResolveInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -67,31 +67,31 @@ public class ResolveInfo implements Parcelable {
     private  ResolveInfo(Parcel source) {
         {
             Object var533A8C7CD58A93D322295C6F0E68EC88_376576113 = (source.readInt());
-            //Begin case 1 
+            
             activityInfo = ActivityInfo.CREATOR.createFromParcel(source);
-            //End case 1 
-            //Begin case 1 
+            
+            
             serviceInfo = null;
-            //End case 1 
-            //Begin case 2 
+            
+            
             serviceInfo = ServiceInfo.CREATOR.createFromParcel(source);
-            //End case 2 
-            //Begin case 2 
+            
+            
             activityInfo = null;
-            //End case 2 
-            //Begin case default 
+            
+            
             activityInfo = null;
-            //End case default 
-            //Begin case default 
+            
+            
             serviceInfo = null;
-            //End case default 
-        } //End collapsed parenthetic
+            
+        } 
         {
             boolean varFD16828A378FD83700BE97539951F787_1313243043 = (source.readInt() != 0);
             {
                 filter = IntentFilter.CREATOR.createFromParcel(source);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         priority = source.readInt();
         preferredOrder = source.readInt();
         match = source.readInt();
@@ -102,27 +102,28 @@ public class ResolveInfo implements Parcelable {
         icon = source.readInt();
         resolvePackageName = source.readString();
         system = source.readInt() != 0;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.186 -0400", hash_original_method = "A33400D9D27D1859CAE2B97E545C2635", hash_generated_method = "2CFE79EC976E39511C98BB5C86A310C3")
     public CharSequence loadLabel(PackageManager pm) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_670588508 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1283803216 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1835139144 = null; //Variable for return #3
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1080514906 = null; //Variable for return #4
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_670588508 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1283803216 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1835139144 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1080514906 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_670588508 = nonLocalizedLabel;
-        } //End block
+        } 
         CharSequence label;
         {
             label = pm.getText(resolvePackageName, labelRes, null);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1283803216 = label.toString().trim();
-            } //End block
-        } //End block
+            } 
+        } 
         ComponentInfo ci;
         ci = activityInfo;
         ci = serviceInfo;
@@ -131,66 +132,67 @@ public class ResolveInfo implements Parcelable {
             label = pm.getText(ci.packageName, labelRes, ai);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1835139144 = label.toString().trim();
-            } //End block
-        } //End block
+            } 
+        } 
         CharSequence data = ci.loadLabel(pm);
         data = data.toString().trim();
         varB4EAC82CA7396A68D541C85D26508E83_1080514906 = data;
         addTaint(pm.getTaint());
-        CharSequence varA7E53CE21691AB073D9660D615818899_1769091087; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1769091087; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1769091087 = varB4EAC82CA7396A68D541C85D26508E83_670588508;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1769091087 = varB4EAC82CA7396A68D541C85D26508E83_1283803216;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1769091087 = varB4EAC82CA7396A68D541C85D26508E83_1835139144;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1769091087 = varB4EAC82CA7396A68D541C85D26508E83_1080514906;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1769091087.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1769091087.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1769091087;
-        // ---------- Original Method ----------
-        //if (nonLocalizedLabel != null) {
-            //return nonLocalizedLabel;
-        //}
-        //CharSequence label;
-        //if (resolvePackageName != null && labelRes != 0) {
-            //label = pm.getText(resolvePackageName, labelRes, null);
-            //if (label != null) {
-                //return label.toString().trim();
-            //}
-        //}
-        //ComponentInfo ci = activityInfo != null ? activityInfo : serviceInfo;
-        //ApplicationInfo ai = ci.applicationInfo;
-        //if (labelRes != 0) {
-            //label = pm.getText(ci.packageName, labelRes, ai);
-            //if (label != null) {
-                //return label.toString().trim();
-            //}
-        //}
-        //CharSequence data = ci.loadLabel(pm);
-        //if (data != null) data = data.toString().trim();
-        //return data;
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.188 -0400", hash_original_method = "D0D8D8B431D77A14F0DBD9F876D36006", hash_generated_method = "272B2DF1DF9D5A44DEEAF1EAE0B90339")
     public Drawable loadIcon(PackageManager pm) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1610416990 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_606954804 = null; //Variable for return #2
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1687103259 = null; //Variable for return #3
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1610416990 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_606954804 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1687103259 = null; 
         Drawable dr;
         {
             dr = pm.getDrawable(resolvePackageName, icon, null);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1610416990 = dr;
-            } //End block
-        } //End block
+            } 
+        } 
         ComponentInfo ci;
         ci = activityInfo;
         ci = serviceInfo;
@@ -199,41 +201,41 @@ public class ResolveInfo implements Parcelable {
             dr = pm.getDrawable(ci.packageName, icon, ai);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_606954804 = dr;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1687103259 = ci.loadIcon(pm);
         addTaint(pm.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_411400462; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_411400462; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_411400462 = varB4EAC82CA7396A68D541C85D26508E83_1610416990;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_411400462 = varB4EAC82CA7396A68D541C85D26508E83_606954804;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_411400462 = varB4EAC82CA7396A68D541C85D26508E83_1687103259;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_411400462.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_411400462.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_411400462;
-        // ---------- Original Method ----------
-        //Drawable dr;
-        //if (resolvePackageName != null && icon != 0) {
-            //dr = pm.getDrawable(resolvePackageName, icon, null);
-            //if (dr != null) {
-                //return dr;
-            //}
-        //}
-        //ComponentInfo ci = activityInfo != null ? activityInfo : serviceInfo;
-        //ApplicationInfo ai = ci.applicationInfo;
-        //if (icon != 0) {
-            //dr = pm.getDrawable(ci.packageName, icon, ai);
-            //if (dr != null) {
-                //return dr;
-            //}
-        //}
-        //return ci.loadIcon(pm);
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -243,20 +245,21 @@ public class ResolveInfo implements Parcelable {
         int varFF6CF132766102E71E463F8C1A0179F1_2099008080 = (serviceInfo.getIconResource());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1861293163 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1861293163;
-        // ---------- Original Method ----------
-        //if (icon != 0) return icon;
-        //if (activityInfo != null) return activityInfo.getIconResource();
-        //if (serviceInfo != null) return serviceInfo.getIconResource();
-        //return 0;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.189 -0400", hash_original_method = "64245509A5FC137877FB50AC88C4351E", hash_generated_method = "570C727D27D0B555E978349344B8654D")
     public void dump(Printer pw, String prefix) {
         {
             pw.println(prefix + "Filter:");
             filter.dump(pw, prefix + "  ");
-        } //End block
+        } 
         pw.println(prefix + "priority=" + priority
                 + " preferredOrder=" + preferredOrder
                 + " match=0x" + Integer.toHexString(match)
@@ -264,30 +267,31 @@ public class ResolveInfo implements Parcelable {
                 + " isDefault=" + isDefault);
         {
             pw.println(prefix + "resolvePackageName=" + resolvePackageName);
-        } //End block
+        } 
         {
             pw.println(prefix + "labelRes=0x" + Integer.toHexString(labelRes)
                     + " nonLocalizedLabel=" + nonLocalizedLabel
                     + " icon=0x" + Integer.toHexString(icon));
-        } //End block
+        } 
         {
             pw.println(prefix + "ActivityInfo:");
             activityInfo.dump(pw, prefix + "  ");
-        } //End block
+        } 
         {
             pw.println(prefix + "ServiceInfo:");
             serviceInfo.dump(pw, prefix + "  ");
-        } //End block
+        } 
         addTaint(pw.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.191 -0400", hash_original_method = "E9277D5F5F8618A42CE604147E3605E2", hash_generated_method = "F892A3E66AC5BFA465C854644DD003BB")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_444815765 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_444815765 = null; 
         ComponentInfo ci;
         ci = activityInfo;
         ci = serviceInfo;
@@ -295,14 +299,14 @@ public class ResolveInfo implements Parcelable {
             + Integer.toHexString(System.identityHashCode(this))
             + " " + ci.name + " p=" + priority + " o="
             + preferredOrder + " m=0x" + Integer.toHexString(match) + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_444815765.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_444815765.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_444815765;
-        // ---------- Original Method ----------
-        //ComponentInfo ci = activityInfo != null ? activityInfo : serviceInfo;
-        //return "ResolveInfo{"
-            //+ Integer.toHexString(System.identityHashCode(this))
-            //+ " " + ci.name + " p=" + priority + " o="
-            //+ preferredOrder + " m=0x" + Integer.toHexString(match) + "}";
+        
+        
+        
+            
+            
+            
     }
 
     
@@ -310,31 +314,32 @@ public class ResolveInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2079077577 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2079077577;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.192 -0400", hash_original_method = "C265C7C58C207232A576E6DBECFC3E71", hash_generated_method = "E00F068A39C25E4784CF2AE6C18244E3")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         {
             dest.writeInt(1);
             activityInfo.writeToParcel(dest, parcelableFlags);
-        } //End block
+        } 
         {
             dest.writeInt(2);
             serviceInfo.writeToParcel(dest, parcelableFlags);
-        } //End block
+        } 
         {
             dest.writeInt(0);
-        } //End block
+        } 
         {
             dest.writeInt(1);
             filter.writeToParcel(dest, parcelableFlags);
-        } //End block
+        } 
         {
             dest.writeInt(0);
-        } //End block
+        } 
         dest.writeInt(priority);
         dest.writeInt(preferredOrder);
         dest.writeInt(match);
@@ -346,8 +351,8 @@ public class ResolveInfo implements Parcelable {
         dest.writeInt(system ? 1 : 0);
         addTaint(dest.getTaint());
         addTaint(parcelableFlags);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -362,8 +367,8 @@ public class ResolveInfo implements Parcelable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.193 -0400", hash_original_method = "01BC6A405956ED34F2FEA27AD8C34186", hash_generated_method = "00B9637435B2DF20319BD9D174F2475F")
         public  DisplayNameComparator(PackageManager pm) {
             mPM = pm;
-            // ---------- Original Method ----------
-            //mPM = pm;
+            
+            
         }
 
         
@@ -378,12 +383,12 @@ public class ResolveInfo implements Parcelable {
             addTaint(b.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_498812256 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_498812256;
-            // ---------- Original Method ----------
-            //CharSequence  sa = a.loadLabel(mPM);
-            //if (sa == null) sa = a.activityInfo.name;
-            //CharSequence  sb = b.loadLabel(mPM);
-            //if (sb == null) sb = b.activityInfo.name;
-            //return sCollator.compare(sa.toString(), sb.toString());
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -402,12 +407,12 @@ public class ResolveInfo implements Parcelable {
             return new ResolveInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public ResolveInfo createFromParcel(Parcel source) {
             return new ResolveInfo(source);
         }
     
-    // orphaned legacy method
+    
     public ResolveInfo[] newArray(int size) {
             return new ResolveInfo[size];
         }

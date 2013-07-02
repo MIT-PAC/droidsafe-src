@@ -1,11 +1,11 @@
 package android.view.textservice;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -26,7 +26,7 @@ public final class TextInfo implements Parcelable {
     public  TextInfo(String text) {
         this(text, 0, 0);
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -36,18 +36,18 @@ public final class TextInfo implements Parcelable {
             boolean var6C86A511CD0D2845B6E0259573F6A612_1455326739 = (TextUtils.isEmpty(text));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(text);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mText = text;
         mCookie = cookie;
         mSequence = sequence;
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(text)) {
-            //throw new IllegalArgumentException(text);
-        //}
-        //mText = text;
-        //mCookie = cookie;
-        //mSequence = sequence;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -56,13 +56,14 @@ public final class TextInfo implements Parcelable {
         mText = source.readString();
         mCookie = source.readInt();
         mSequence = source.readInt();
-        // ---------- Original Method ----------
-        //mText = source.readString();
-        //mCookie = source.readInt();
-        //mSequence = source.readInt();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.472 -0400", hash_original_method = "573D2D5BE8E27F6CA8F77B871E9B67A7", hash_generated_method = "722B6A344F6ECA46D1D2200378DB1B0F")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -71,21 +72,21 @@ public final class TextInfo implements Parcelable {
         dest.writeInt(mSequence);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(mText);
-        //dest.writeInt(mCookie);
-        //dest.writeInt(mSequence);
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.473 -0400", hash_original_method = "2FFFCC59A442EF1196B854805331F3A7", hash_generated_method = "ADDAD6483D1914F86C58E6D8B6617FF1")
     public String getText() {
-        String varB4EAC82CA7396A68D541C85D26508E83_454889189 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_454889189 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_454889189 = mText;
-        varB4EAC82CA7396A68D541C85D26508E83_454889189.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_454889189.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_454889189;
-        // ---------- Original Method ----------
-        //return mText;
+        
+        
     }
 
     
@@ -93,8 +94,8 @@ public final class TextInfo implements Parcelable {
     public int getCookie() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_577957400 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_577957400;
-        // ---------- Original Method ----------
-        //return mCookie;
+        
+        
     }
 
     
@@ -102,8 +103,8 @@ public final class TextInfo implements Parcelable {
     public int getSequence() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_251029164 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_251029164;
-        // ---------- Original Method ----------
-        //return mSequence;
+        
+        
     }
 
     
@@ -112,8 +113,8 @@ public final class TextInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1547976733 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1547976733;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class PrivilegedActionException extends Exception {
@@ -14,18 +14,18 @@ public class PrivilegedActionException extends Exception {
     public  PrivilegedActionException(Exception ex) {
         super(ex);
         addTaint(ex.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.432 -0400", hash_original_method = "96C5131DB95D0ADB8B79CD396371D505", hash_generated_method = "234F8BF48A3E68F5400319B6C53979E2")
     public Exception getException() {
-        Exception varB4EAC82CA7396A68D541C85D26508E83_245783535 = null; //Variable for return #1
+        Exception varB4EAC82CA7396A68D541C85D26508E83_245783535 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_245783535 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_245783535.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_245783535.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_245783535;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     

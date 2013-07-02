@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 
@@ -18,15 +18,15 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     public  Boolean(String string) {
         this(parseBoolean(string));
         addTaint(string.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.341 -0400", hash_original_method = "AAA63288DF04453D39E07EAA91131D42", hash_generated_method = "61C13C2ADE094B1CD107EB04FB0A6541")
     public  Boolean(boolean value) {
         this.value = value;
-        // ---------- Original Method ----------
-        //this.value = value;
+        
+        
     }
 
     
@@ -34,8 +34,8 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     public boolean booleanValue() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1004204767 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1004204767;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
@@ -47,19 +47,20 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1335760013 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1335760013;
-        // ---------- Original Method ----------
-        //return (o == this) || ((o instanceof Boolean) && (((Boolean) o).value == value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.341 -0400", hash_original_method = "5D5C1978E7EFC6390B8F7A214888BA1C", hash_generated_method = "6870B325A75DB2A33C141DCE5FDB6736")
     public int compareTo(Boolean that) {
         int varE94CEDDB519CA0CC1B17C757EDB60AE2_627029289 = (compare(value, that.value));
         addTaint(that.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_894493193 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_894493193;
-        // ---------- Original Method ----------
-        //return compare(value, that.value);
+        
+        
     }
 
     
@@ -73,23 +74,25 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_268567729 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_268567729;
-        // ---------- Original Method ----------
-        //return value ? 1231 : 1237;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.342 -0400", hash_original_method = "27F3E47E60B1213ECE72A0C1452319D1", hash_generated_method = "00CBCB0D1A483F566CA061AB6720DCCB")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_201371227 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_201371227 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_201371227 = String.valueOf(value);
-        varB4EAC82CA7396A68D541C85D26508E83_201371227.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_201371227.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_201371227;
-        // ---------- Original Method ----------
-        //return String.valueOf(value);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean getBoolean(String string) {
         if (string == null || string.length() == 0) {
             return false;
@@ -98,16 +101,19 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean parseBoolean(String s) {
         return "true".equalsIgnoreCase(s);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(boolean value) {
         return String.valueOf(value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Boolean valueOf(String string) {
         return parseBoolean(string) ? Boolean.TRUE : Boolean.FALSE;
     }

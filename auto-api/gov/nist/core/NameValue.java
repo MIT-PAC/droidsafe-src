@@ -1,11 +1,11 @@
 package gov.nist.core;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Map.Entry;
 
@@ -36,12 +36,12 @@ public class NameValue extends GenericObject implements Entry<String,String> {
         separator = Separators.EQUALS;
         this.quotes = "";
         this.isFlagParameter = false;
-        // ---------- Original Method ----------
-        //name = null;
-        //value = "";
-        //separator = Separators.EQUALS;
-        //this.quotes = "";
-        //this.isFlagParameter = false;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -52,12 +52,12 @@ public class NameValue extends GenericObject implements Entry<String,String> {
         separator = Separators.EQUALS;
         quotes = "";
         this.isFlagParameter = isFlag;
-        // ---------- Original Method ----------
-        //name = n;
-        //value = v;
-        //separator = Separators.EQUALS;
-        //quotes = "";
-        //this.isFlagParameter = isFlag;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -66,15 +66,15 @@ public class NameValue extends GenericObject implements Entry<String,String> {
         this(n, v, false);
         addTaint(n.getTaint());
         addTaint(v.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.748 -0400", hash_original_method = "8B5A99905EE1811A879B3378EE7C88B1", hash_generated_method = "BE8D7A91CF35C3CE4342E681E66ABB40")
     public void setSeparator(String sep) {
         separator = sep;
-        // ---------- Original Method ----------
-        //separator = sep;
+        
+        
     }
 
     
@@ -82,9 +82,9 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     public void setQuotedValue() {
         isQuotedString = true;
         this.quotes = Separators.DOUBLE_QUOTE;
-        // ---------- Original Method ----------
-        //isQuotedString = true;
-        //this.quotes = Separators.DOUBLE_QUOTE;
+        
+        
+        
     }
 
     
@@ -92,72 +92,74 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     public boolean isValueQuoted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_89517211 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_89517211;
-        // ---------- Original Method ----------
-        //return isQuotedString;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.750 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "A1CE8F2FB60E9F84AE15F6A51142DD61")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1130876933 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1130876933 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1130876933 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_1130876933.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1130876933.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1130876933;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.751 -0400", hash_original_method = "1D746EB97F79FD095C35B4AB5FADFB51", hash_generated_method = "5D9F97B15F39FF77C0BBB15CBF582DFA")
     public Object getValueAsObject() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_407361101 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_407361101 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_407361101 = isFlagParameter ? "" : value;
-        varB4EAC82CA7396A68D541C85D26508E83_407361101.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_407361101.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_407361101;
-        // ---------- Original Method ----------
-        //return isFlagParameter ? "" : value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.752 -0400", hash_original_method = "48E6CC9DD98BCA4A1A1FF2D370B346E5", hash_generated_method = "EC3A808F65912EC4B397A06DEEEA4586")
     public void setName(String n) {
         name = n;
-        // ---------- Original Method ----------
-        //name = n;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.752 -0400", hash_original_method = "976564EFAA66565638B090B0BED90464", hash_generated_method = "C63631628A71855211E03B08E189AF38")
     public void setValueAsObject(Object v) {
         value = v;
-        // ---------- Original Method ----------
-        //value = v;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.752 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "BCFB05D3BDB85ADD47D48BFCA1E9205B")
     public String encode() {
-        String varB4EAC82CA7396A68D541C85D26508E83_505385076 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_505385076 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_505385076 = encode(new StringBuffer()).toString();
-        varB4EAC82CA7396A68D541C85D26508E83_505385076.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_505385076.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_505385076;
-        // ---------- Original Method ----------
-        //return encode(new StringBuffer()).toString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.754 -0400", hash_original_method = "8C352692671CA7B4091AFB32E24F1EAA", hash_generated_method = "2CCC98518B3CC91C1FB937F4F4769EFC")
     public StringBuffer encode(StringBuffer buffer) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_704205402 = null; //Variable for return #1
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1414548356 = null; //Variable for return #2
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1623410446 = null; //Variable for return #3
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1291164334 = null; //Variable for return #4
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_506939667 = null; //Variable for return #5
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_553669687 = null; //Variable for return #6
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_462917497 = null; //Variable for return #7
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_644888247 = null; //Variable for return #8
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_871063510 = null; //Variable for return #9
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1739666903 = null; //Variable for return #10
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_704205402 = null; 
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1414548356 = null; 
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1623410446 = null; 
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1291164334 = null; 
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_506939667 = null; 
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_553669687 = null; 
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_462917497 = null; 
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_644888247 = null; 
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_871063510 = null; 
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1739666903 = null; 
         {
             {
                 boolean varC2ABC197C0C7733C94AAD5E3C992B5CF_143312645 = (GenericObject.isMySubclass(value.getClass()));
@@ -167,34 +169,34 @@ public class NameValue extends GenericObject implements Entry<String,String> {
                     gv.encode(buffer);
                     buffer.append(quotes);
                     varB4EAC82CA7396A68D541C85D26508E83_704205402 = buffer;
-                } //End block
+                } 
                 {
                     boolean varCEFDF212BAC6C330014C218E51576BCC_1291497029 = (GenericObjectList.isMySubclass(value.getClass()));
                     {
                         GenericObjectList gvlist = (GenericObjectList) value;
                         buffer.append(name).append(separator).append(gvlist.encode());
                         varB4EAC82CA7396A68D541C85D26508E83_1414548356 = buffer;
-                    } //End block
+                    } 
                     {
                         boolean varC465A6F66CC83A3EC6A7E6E849292D8A_801458198 = (value.toString().length() == 0);
                         {
                             {
                                 buffer.append(name).append(separator).append(quotes).append(quotes);
                                 varB4EAC82CA7396A68D541C85D26508E83_1623410446 = buffer;
-                            } //End block
+                            } 
                             {
                                 buffer.append(name).append(separator);
                                 varB4EAC82CA7396A68D541C85D26508E83_1291164334 = buffer;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             buffer.append(name).append(separator).append(quotes).append(value.toString()).append(quotes);
                             varB4EAC82CA7396A68D541C85D26508E83_506939667 = buffer;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 boolean varC2ABC197C0C7733C94AAD5E3C992B5CF_1421170101 = (GenericObject.isMySubclass(value.getClass()));
@@ -202,157 +204,161 @@ public class NameValue extends GenericObject implements Entry<String,String> {
                     GenericObject gv = (GenericObject) value;
                     gv.encode(buffer);
                     varB4EAC82CA7396A68D541C85D26508E83_553669687 = buffer;
-                } //End block
+                } 
                 {
                     boolean varCEFDF212BAC6C330014C218E51576BCC_1473704997 = (GenericObjectList.isMySubclass(value.getClass()));
                     {
                         GenericObjectList gvlist = (GenericObjectList) value;
                         buffer.append(gvlist.encode());
                         varB4EAC82CA7396A68D541C85D26508E83_462917497 = buffer;
-                    } //End block
+                    } 
                     {
                         buffer.append(quotes).append(value.toString()).append(quotes);
                         varB4EAC82CA7396A68D541C85D26508E83_644888247 = buffer;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             buffer.append(name);
             varB4EAC82CA7396A68D541C85D26508E83_871063510 = buffer;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1739666903 = buffer;
-        } //End block
+        } 
         addTaint(buffer.getTaint());
-        StringBuffer varA7E53CE21691AB073D9660D615818899_463437589; //Final return value
+        StringBuffer varA7E53CE21691AB073D9660D615818899_463437589; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_463437589 = varB4EAC82CA7396A68D541C85D26508E83_704205402;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_463437589 = varB4EAC82CA7396A68D541C85D26508E83_1414548356;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_463437589 = varB4EAC82CA7396A68D541C85D26508E83_1623410446;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_463437589 = varB4EAC82CA7396A68D541C85D26508E83_1291164334;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_463437589 = varB4EAC82CA7396A68D541C85D26508E83_506939667;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_463437589 = varB4EAC82CA7396A68D541C85D26508E83_553669687;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_463437589 = varB4EAC82CA7396A68D541C85D26508E83_462917497;
                 break;
-            case 8: //Assign result for return ordinal #8
+            case 8: 
                 varA7E53CE21691AB073D9660D615818899_463437589 = varB4EAC82CA7396A68D541C85D26508E83_644888247;
                 break;
-            case 9: //Assign result for return ordinal #9
+            case 9: 
                 varA7E53CE21691AB073D9660D615818899_463437589 = varB4EAC82CA7396A68D541C85D26508E83_871063510;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_463437589 = varB4EAC82CA7396A68D541C85D26508E83_1739666903;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_463437589.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_463437589.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_463437589;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.755 -0400", hash_original_method = "AFA5C2A13F94EAF8D89E1398D2146232", hash_generated_method = "BEAFEF11349E4BFC9EC9975D75DD8A99")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1527461087 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1527461087 = null; 
         NameValue retval = (NameValue) super.clone();
         retval.value = makeClone(value);
         varB4EAC82CA7396A68D541C85D26508E83_1527461087 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_1527461087.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1527461087.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1527461087;
-        // ---------- Original Method ----------
-        //NameValue retval = (NameValue) super.clone();
-        //if (value != null)
-            //retval.value = makeClone(value);
-        //return retval;
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.756 -0400", hash_original_method = "C7D1B39DFE3B0192F0BEF83FC7C40106", hash_generated_method = "4F5EED75D0B91B4B89BE818907A0E651")
     public boolean equals(Object other) {
         {
             boolean varAC16F771BB29A32F2C455E410359AF13_898358579 = (!other.getClass().equals(this.getClass()));
-        } //End collapsed parenthetic
+        } 
         NameValue that = (NameValue) other;
         {
             boolean var692132EB30A37C894BF5193829D9DA63_533084208 = (this.name != null && that.name != null
                 && this.name.compareToIgnoreCase(that.name) != 0);
-        } //End collapsed parenthetic
+        } 
         {
             boolean var935CB035CB1512694C8E94A5D5826A4D_1827051544 = (this.value.equals(that.value));
             String val = (String) this.value;
             String val1 = (String) that.value;
             boolean var694EC846995B9082EDD0C6681276EDF3_537252947 = (val.compareToIgnoreCase(val1) == 0);
-        } //End block
+        } 
         boolean var303D4B38E18B72FB9D40494DA11A631C_1402516887 = (this.value.equals(that.value));
         addTaint(other.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2147352968 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2147352968;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.756 -0400", hash_original_method = "2F0EB2DB361DE1F8D28986094D857BA0", hash_generated_method = "062BD4C5AB79A01D6BBF9F4FBC8FB18E")
     public String getKey() {
-        String varB4EAC82CA7396A68D541C85D26508E83_990254074 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_990254074 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_990254074 = this.name;
-        varB4EAC82CA7396A68D541C85D26508E83_990254074.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_990254074.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_990254074;
-        // ---------- Original Method ----------
-        //return this.name;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.756 -0400", hash_original_method = "4618674F7CF871F15A32C0791ACD2466", hash_generated_method = "DC3CBA04F1BDDAC80CAB9095EBD58E30")
     public String getValue() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1487104947 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1487104947 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1487104947 = value == null ? null : this.value.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1487104947.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1487104947.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1487104947;
-        // ---------- Original Method ----------
-        //return  value == null ? null : this.value.toString();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.757 -0400", hash_original_method = "34CFBA77959CE5FB40B94FB25C9241AB", hash_generated_method = "804FDD958FCF3D185BBA180BAD80564D")
     public String setValue(String value) {
-        String varB4EAC82CA7396A68D541C85D26508E83_719542919 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_719542919 = null; 
         String retval;
         retval = null;
         retval = value;
         this.value = value;
         varB4EAC82CA7396A68D541C85D26508E83_719542919 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_719542919.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_719542919.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_719542919;
-        // ---------- Original Method ----------
-        //String retval = this.value == null ? null : value;
-        //this.value = value;
-        //return retval;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.757 -0400", hash_original_method = "65B8B320E0D14FEF2FD57F3B89A2B17F", hash_generated_method = "373018DF53C5487DBA80D172278356AE")
     @Override
     public int hashCode() {
         int varE7FF42DC0134C7520F1E52867D63D800_706029377 = (this.encode().toLowerCase().hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_952091174 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_952091174;
-        // ---------- Original Method ----------
-        //return this.encode().toLowerCase().hashCode();
+        
+        
     }
 
     

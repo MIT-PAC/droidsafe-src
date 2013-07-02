@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public final class CertificatePolicies extends ExtensionValue {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.741 -0400", hash_original_method = "C31E4B8F2A567252600FDAE2EEE40805", hash_generated_method = "596ED5D28F3D7EA812E6FDACCFE73898")
     public  CertificatePolicies() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,12 +33,13 @@ public final class CertificatePolicies extends ExtensionValue {
     private  CertificatePolicies(List<PolicyInformation> policyInformations, byte[] encoding) {
         this.policyInformations = policyInformations;
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.policyInformations = policyInformations;
-        //this.encoding = encoding;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CertificatePolicies decode(byte[] encoding) throws IOException {
         CertificatePolicies cps = ((CertificatePolicies) ASN1.decode(encoding));
         cps.encoding = encoding;
@@ -46,55 +47,59 @@ public final class CertificatePolicies extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.742 -0400", hash_original_method = "183BA6590E2DC5B6BD268518AC8D5EF9", hash_generated_method = "B0344DC9C7CD147E86342838CC4C375B")
     public List<PolicyInformation> getPolicyInformations() {
-        List<PolicyInformation> varB4EAC82CA7396A68D541C85D26508E83_1686433331 = null; //Variable for return #1
+        List<PolicyInformation> varB4EAC82CA7396A68D541C85D26508E83_1686433331 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1686433331 = new ArrayList<PolicyInformation>(policyInformations);
-        varB4EAC82CA7396A68D541C85D26508E83_1686433331.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1686433331.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1686433331;
-        // ---------- Original Method ----------
-        //return new ArrayList<PolicyInformation>(policyInformations);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.743 -0400", hash_original_method = "A02C1EF38503FEE398CFC051AC7B3321", hash_generated_method = "F0C9D4DFD178989A7F1A3B9F60CD9424")
     public CertificatePolicies addPolicyInformation(PolicyInformation policyInformation) {
-        CertificatePolicies varB4EAC82CA7396A68D541C85D26508E83_119589939 = null; //Variable for return #1
+        CertificatePolicies varB4EAC82CA7396A68D541C85D26508E83_119589939 = null; 
         encoding = null;
         {
             policyInformations = new ArrayList<PolicyInformation>();
-        } //End block
+        } 
         policyInformations.add(policyInformation);
         varB4EAC82CA7396A68D541C85D26508E83_119589939 = this;
         addTaint(policyInformation.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_119589939.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_119589939.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_119589939;
-        // ---------- Original Method ----------
-        //encoding = null;
-        //if (policyInformations == null) {
-            //policyInformations = new ArrayList<PolicyInformation>();
-        //}
-        //policyInformations.add(policyInformation);
-        //return this;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.743 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "49245A61198B7461076760DE8B38F1AD")
     @Override
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1970295984 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1970295984;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.750 -0400", hash_original_method = "B37538291358B4289176EF26A3BFC720", hash_generated_method = "464D5DFC94669B4BA99C9EEB50BC1C78")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
@@ -108,20 +113,20 @@ public final class CertificatePolicies extends ExtensionValue {
                 sb.append("  ");
                 policyInformation.dumpValue(sb);
                 sb.append('\n');
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         sb.append(prefix).append("]\n");
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //sb.append(prefix).append("CertificatePolicies [\n");
-        //for (PolicyInformation policyInformation : policyInformations) {
-            //sb.append(prefix);
-            //sb.append("  ");
-            //policyInformation.dumpValue(sb);
-            //sb.append('\n');
-        //}
-        //sb.append(prefix).append("]\n");
+        
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -137,18 +142,6 @@ public final class CertificatePolicies extends ExtensionValue {
             return cps.policyInformations;
         }
     };
-    /*
-    // orphaned legacy method
-    @Override public Collection getValues(Object object) {
-            CertificatePolicies cps = (CertificatePolicies) object;
-            return cps.policyInformations;
-        }
     
-    // orphaned legacy method
-    @Override public Object getDecodedObject(BerInputStream in) {
-            return new CertificatePolicies((List<PolicyInformation>) in.content, in.getEncoded());
-        }
-    
-    */
 }
 

@@ -1,11 +1,11 @@
 package android.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.i18n.phonenumbers.NumberParseException;
 import com.android.i18n.phonenumbers.PhoneNumberUtil;
@@ -36,7 +36,7 @@ public class PhoneNumberUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.654 -0400", hash_original_method = "0471222FC8B1AE7B60D0D4D370DECD9E", hash_generated_method = "0471222FC8B1AE7B60D0D4D370DECD9E")
     public PhoneNumberUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -81,6 +81,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isSeparator(char ch) {
         return !isDialable(ch) && !(('a' <= ch && ch <= 'z') || ('A' <= ch && ch <= 'Z'));
     }
@@ -123,6 +124,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String extractNetworkPortion(String phoneNumber) {
         if (phoneNumber == null) {
             return null;
@@ -147,6 +149,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String extractNetworkPortionAlt(String phoneNumber) {
         if (phoneNumber == null) {
             return null;
@@ -172,6 +175,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String stripSeparators(String phoneNumber) {
         if (phoneNumber == null) {
             return null;
@@ -188,6 +192,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String convertPreDial(String phoneNumber) {
         if (phoneNumber == null) {
             return null;
@@ -220,11 +225,13 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void log(String msg) {
         Log.d(LOG_TAG, msg);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static private int indexOfLastNetworkChar(String a) {
         int pIndex, wIndex;
         int origLength;
@@ -241,6 +248,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int addPlusChar(String number) {
         int pos = -1;
         if (number.startsWith(CLIR_OFF)) {
@@ -253,6 +261,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String extractPostDialPortion(String phoneNumber) {
         if (phoneNumber == null) return null;
         int trimIndex;
@@ -270,11 +279,13 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean compare(String a, String b) {
         return compare(a, b, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean compare(Context context, String a, String b) {
         boolean useStrict = context.getResources().getBoolean(
                com.android.internal.R.bool.config_use_strict_phone_number_comparation);
@@ -282,11 +293,13 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean compare(String a, String b, boolean useStrictComparation) {
         return (useStrictComparation ? compareStrictly(a, b) : compareLoosely(a, b));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean compareLoosely(String a, String b) {
         int ia, ib;
         int matched;
@@ -351,11 +364,13 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean compareStrictly(String a, String b) {
         return compareStrictly(a, b, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean compareStrictly(String a, String b, boolean acceptInvalidCCCPrefix) {
         if (a == null || b == null) {
             return a == b;
@@ -470,12 +485,14 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toCallerIDMinMatch(String phoneNumber) {
         String np = extractNetworkPortionAlt(phoneNumber);
         return internalGetStrippedReversed(np, MIN_MATCH);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getStrippedReversed(String phoneNumber) {
         String np = extractNetworkPortionAlt(phoneNumber);
         if (np == null) return null;
@@ -483,6 +500,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String internalGetStrippedReversed(String np, int numDigits) {
         if (np == null) return null;
         StringBuilder ret = new StringBuilder(numDigits);
@@ -497,6 +515,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String stringFromStringAndTOA(String s, int TOA) {
         if (s == null) return null;
         if (TOA == TOA_International && s.length() > 0 && s.charAt(0) != '+') {
@@ -506,6 +525,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int toaFromString(String s) {
         if (s != null && s.length() > 0 && s.charAt(0) == '+') {
             return TOA_International;
@@ -514,6 +534,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String calledPartyBCDToString(byte[] bytes, int offset, int length) {
         boolean prependPlus = false;
         StringBuilder ret = new StringBuilder(1 + length * 2);
@@ -570,6 +591,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void internalCalledPartyBCDFragmentToString(
         StringBuilder sb, byte [] bytes, int offset, int length) {
         for (int i = offset ; i < length + offset ; i++) {
@@ -593,6 +615,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String calledPartyBCDFragmentToString(byte [] bytes, int offset, int length) {
         StringBuilder ret = new StringBuilder(length * 2);
         internalCalledPartyBCDFragmentToString(ret, bytes, offset, length);
@@ -613,6 +636,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int charToBCD(char c) {
         if (c >= '0' && c <= '9') {
             return c - '0';
@@ -630,6 +654,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isWellFormedSmsAddress(String address) {
         String networkPortion =
                 PhoneNumberUtils.extractNetworkPortion(address);
@@ -639,6 +664,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isGlobalPhoneNumber(String phoneNumber) {
         if (TextUtils.isEmpty(phoneNumber)) {
             return false;
@@ -648,6 +674,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isDialable(String address) {
         for (int i = 0, count = address.length(); i < count; i++) {
             if (!isDialable(address.charAt(i))) {
@@ -658,6 +685,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isNonSeparator(String address) {
         for (int i = 0, count = address.length(); i < count; i++) {
             if (!isNonSeparator(address.charAt(i))) {
@@ -668,23 +696,27 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] networkPortionToCalledPartyBCD(String s) {
         String networkPortion = extractNetworkPortion(s);
         return numberToCalledPartyBCDHelper(networkPortion, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] networkPortionToCalledPartyBCDWithLength(String s) {
         String networkPortion = extractNetworkPortion(s);
         return numberToCalledPartyBCDHelper(networkPortion, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] numberToCalledPartyBCD(String number) {
         return numberToCalledPartyBCDHelper(number, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static byte[] numberToCalledPartyBCDHelper(String number, boolean includeLength) {
         int numberLenReal = number.length();
         int numberLenEffective = numberLenReal;
@@ -712,6 +744,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatNumber(String source) {
         SpannableStringBuilder text = new SpannableStringBuilder(source);
         formatNumber(text, getFormatTypeForLocale(Locale.getDefault()));
@@ -719,6 +752,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatNumber(String source, int defaultFormattingType) {
         SpannableStringBuilder text = new SpannableStringBuilder(source);
         formatNumber(text, defaultFormattingType);
@@ -726,12 +760,14 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getFormatTypeForLocale(Locale locale) {
         String country = locale.getCountry();
         return getFormatTypeFromCountryCode(country);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void formatNumber(Editable text, int defaultFormattingType) {
         int formatType = defaultFormattingType;
         if (text.length() > 2 && text.charAt(0) == '+') {
@@ -758,6 +794,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void formatNanpNumber(Editable text) {
         int length = text.length();
         if (length > "+1-nnn-nnn-nnnn".length()) {
@@ -832,11 +869,13 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void formatJapaneseNumber(Editable text) {
         JapanesePhoneNumberFormatter.format(text);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void removeDashes(Editable text) {
         int p = 0;
         while (p < text.length()) {
@@ -849,6 +888,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatNumberToE164(String phoneNumber, String defaultCountryIso) {
         PhoneNumberUtil util = PhoneNumberUtil.getInstance();
         String result = null;
@@ -863,6 +903,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatNumber(String phoneNumber, String defaultCountryIso) {
         if (phoneNumber.startsWith("#") || phoneNumber.startsWith("*")) {
             return phoneNumber;
@@ -878,6 +919,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatNumber(
             String phoneNumber, String phoneNumberE164, String defaultCountryIso) {
         int len = phoneNumber.length();
@@ -903,6 +945,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String normalizeNumber(String phoneNumber) {
         StringBuilder sb = new StringBuilder();
         int len = phoneNumber.length();
@@ -918,16 +961,19 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isEmergencyNumber(String number) {
         return isEmergencyNumberInternal(number, true );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isPotentialEmergencyNumber(String number) {
         return isEmergencyNumberInternal(number, false );
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isEmergencyNumberInternal(String number, boolean useExactMatch) {
         if (number == null) return false;
         if (isUriNumber(number)) {
@@ -960,6 +1006,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isEmergencyNumber(String number, String defaultCountryIso) {
         return isEmergencyNumberInternal(number,
                                          defaultCountryIso,
@@ -967,6 +1014,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isPotentialEmergencyNumber(String number, String defaultCountryIso) {
         return isEmergencyNumberInternal(number,
                                          defaultCountryIso,
@@ -974,6 +1022,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isEmergencyNumberInternal(String number,
                                                      String defaultCountryIso,
                                                      boolean useExactMatch) {
@@ -991,6 +1040,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isLocalEmergencyNumber(String number, Context context) {
         return isLocalEmergencyNumberInternal(number,
                                               context,
@@ -998,6 +1048,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isPotentialLocalEmergencyNumber(String number, Context context) {
         return isLocalEmergencyNumberInternal(number,
                                               context,
@@ -1005,6 +1056,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isLocalEmergencyNumberInternal(String number,
                                                           Context context,
                                                           boolean useExactMatch) {
@@ -1023,6 +1075,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isVoiceMailNumber(String number) {
         String vmNumber;
         try {
@@ -1035,6 +1088,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String convertKeypadLettersToDigits(String input) {
         if (input == null) {
             return input;
@@ -1052,6 +1106,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String cdmaCheckAndProcessPlusCode(String dialStr) {
         if (!TextUtils.isEmpty(dialStr)) {
             if (isReallyDialable(dialStr.charAt(0)) &&
@@ -1069,6 +1124,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String cdmaCheckAndProcessPlusCodeByNumberFormat(String dialStr,int currFormat,int defaultFormat) {
         String retStr = dialStr;
         if (dialStr != null &&
@@ -1116,6 +1172,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getDefaultIdp( ) {
         String ps = null;
         SystemProperties.get(PROPERTY_IDP_STRING, ps);
@@ -1135,6 +1192,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getFormatTypeFromCountryCode(String country) {
         int length = NANP_COUNTRIES.length;
         for (int i = 0; i < length; i++) {
@@ -1149,6 +1207,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isNanp(String dialStr) {
         boolean retVal = false;
         if (dialStr != null) {
@@ -1172,6 +1231,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isOneNanp(String dialStr) {
         boolean retVal = false;
         if (dialStr != null) {
@@ -1186,11 +1246,13 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isUriNumber(String number) {
         return number != null && (number.contains("@") || number.contains("%40"));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getUsernameFromUriNumber(String number) {
         int delimiterIndex = number.indexOf('@');
         if (delimiterIndex < 0) {
@@ -1205,6 +1267,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String processPlusCodeWithinNanp(String networkDialStr) {
         String retStr = networkDialStr;
         if (DBG) log("processPlusCodeWithinNanp,networkDialStr=" + networkDialStr);
@@ -1224,6 +1287,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int findDialableIndexFromPostDialStr(String postDialStr) {
         for (int index = 0;index < postDialStr.length();index++) {
              char c = postDialStr.charAt(index);
@@ -1235,6 +1299,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String appendPwCharBackToOrigDialStr(int dialableIndex,String origStr, String dialStr) {
         String retStr;
         if (dialableIndex == 1) {
@@ -1249,6 +1314,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean matchIntlPrefix(String a, int len) {
         int state = 0;
         for (int i = 0 ; i < len ; i++) {
@@ -1277,6 +1343,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean matchIntlPrefixAndCC(String a, int len) {
         int state = 0;
         for (int i = 0 ; i < len ; i++ ) {
@@ -1315,6 +1382,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean matchTrunkPrefix(String a, int len) {
         boolean found;
         found = false;
@@ -1345,6 +1413,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static CountryCallingCodeAndNewIndex tryGetCountryCallingCodeAndNewIndex(
         String str, boolean acceptThailandCase) {
         int state = 0;
@@ -1421,6 +1490,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int tryGetTrunkPrefixOmittedIndex(String str, int currentIndex) {
         int length = str.length();
         for (int i = currentIndex ; i < length ; i++) {
@@ -1466,9 +1536,9 @@ public class PhoneNumberUtils {
         public  CountryCallingCodeAndNewIndex(int countryCode, int newIndex) {
             this.countryCallingCode = countryCode;
             this.newIndex = newIndex;
-            // ---------- Original Method ----------
-            //this.countryCallingCode = countryCode;
-            //this.newIndex = newIndex;
+            
+            
+            
         }
 
         

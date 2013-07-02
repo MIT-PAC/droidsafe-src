@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.harmony.security.asn1.ASN1Choice;
 import org.apache.harmony.security.asn1.ASN1GeneralizedTime;
@@ -17,7 +17,7 @@ public final class Time {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.566 -0400", hash_original_method = "60A6F367D2F724DF18FDD3D5AB6D0102", hash_generated_method = "60A6F367D2F724DF18FDD3D5AB6D0102")
     public Time ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -42,7 +42,7 @@ public final class Time {
             return object;
         }
     };
-    // orphaned legacy method
+    
     public int getIndex(java.lang.Object object) {
             
             if (((java.util.Date) object).getTime() < JAN_01_2050) {
@@ -52,7 +52,7 @@ public final class Time {
             }
         }
     
-    // orphaned legacy method
+    
     public Object getObjectToEncode(Object object) {
             return object;
         }

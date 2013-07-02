@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -45,18 +45,19 @@ public class Properties extends Hashtable<Object, Object> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.429 -0400", hash_original_method = "15BC7402B615AC640D692CA8D591C86A", hash_generated_method = "A0C8CF0DEBFCC799D900ACDC0026C561")
     public  Properties() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.429 -0400", hash_original_method = "5F2D706A0CAB1895C5A727D855C46322", hash_generated_method = "DDFB4D46DBC5C7586044047CB8719A59")
     public  Properties(Properties properties) {
         defaults = properties;
-        // ---------- Original Method ----------
-        //defaults = properties;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.430 -0400", hash_original_method = "8670FB32C289DA514C35A14528148A6D", hash_generated_method = "EBE91636B6DEAC102C20B19EDD8B333E")
     private void dumpString(StringBuilder buffer, String string, boolean key) {
         int i = 0;
@@ -64,36 +65,36 @@ public class Properties extends Hashtable<Object, Object> {
             boolean var34D0A0FAAC14922733F9F34BCB213788_1433034098 = (!key && i < string.length() && string.charAt(i) == ' ');
             {
                 buffer.append("\\ ");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var729E5A733A8BA5CCFE0E0BA21DE6759C_770917864 = (i < string.length());
             {
                 char ch = string.charAt(i);
-                //Begin case '\t' 
+                
                 buffer.append("\\t");
-                //End case '\t' 
-                //Begin case '\n' 
+                
+                
                 buffer.append("\\n");
-                //End case '\n' 
-                //Begin case '\f' 
+                
+                
                 buffer.append("\\f");
-                //End case '\f' 
-                //Begin case '\r' 
+                
+                
                 buffer.append("\\r");
-                //End case '\r' 
-                //Begin case default 
+                
+                
                 {
                     boolean var5DFC28C43123261F22231B1072AE287F_2024388441 = ("\\#!=:".indexOf(ch) >= 0 || (key && ch == ' '));
                     {
                         buffer.append('\\');
-                    } //End block
-                } //End collapsed parenthetic
-                //End case default 
-                //Begin case default 
+                    } 
+                } 
+                
+                
                 {
                     buffer.append(ch);
-                } //End block
+                } 
                 {
                     String hex = Integer.toHexString(ch);
                     buffer.append("\\u");
@@ -102,111 +103,116 @@ public class Properties extends Hashtable<Object, Object> {
                         boolean var370BB82D6D90CD983B3EBAA925D59283_244631472 = (j < 4 - hex.length());
                         {
                             buffer.append("0");
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     buffer.append(hex);
-                } //End block
-                //End case default 
-            } //End block
-        } //End collapsed parenthetic
+                } 
+                
+            } 
+        } 
         addTaint(buffer.getTaint());
         addTaint(string.getTaint());
         addTaint(key);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.431 -0400", hash_original_method = "B2B08C7B9AD3334D72416F92376E272C", hash_generated_method = "25F8B94B0B77D26CFC32AA086A340E6F")
     public String getProperty(String name) {
-        String varB4EAC82CA7396A68D541C85D26508E83_573027755 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_573027755 = null; 
         Object result = super.get(name);
         String property;
         property = (String) result;
         property = null;
         {
             property = defaults.getProperty(name);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_573027755 = property;
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_573027755.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_573027755.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_573027755;
-        // ---------- Original Method ----------
-        //Object result = super.get(name);
-        //String property = result instanceof String ? (String) result : null;
-        //if (property == null && defaults != null) {
-            //property = defaults.getProperty(name);
-        //}
-        //return property;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.432 -0400", hash_original_method = "3601550743DD7ED6E54F365D9B667C39", hash_generated_method = "9B758371AF96FA63987CF9F0F6C46503")
     public String getProperty(String name, String defaultValue) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1759947270 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_787389054 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1759947270 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_787389054 = null; 
         Object result = super.get(name);
         String property;
         property = (String) result;
         property = null;
         {
             property = defaults.getProperty(name);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1759947270 = defaultValue;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_787389054 = property;
         addTaint(name.getTaint());
         addTaint(defaultValue.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_749109629; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_749109629; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_749109629 = varB4EAC82CA7396A68D541C85D26508E83_1759947270;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_749109629 = varB4EAC82CA7396A68D541C85D26508E83_787389054;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_749109629.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_749109629.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_749109629;
-        // ---------- Original Method ----------
-        //Object result = super.get(name);
-        //String property = result instanceof String ? (String) result : null;
-        //if (property == null && defaults != null) {
-            //property = defaults.getProperty(name);
-        //}
-        //if (property == null) {
-            //return defaultValue;
-        //}
-        //return property;
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.433 -0400", hash_original_method = "C9FDCBF4B35B89B1D79FB5B2779CDC77", hash_generated_method = "E21A44BBEA8464A2A99922CCCB34A5C3")
     public void list(PrintStream out) {
         listToAppendable(out);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //listToAppendable(out);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.433 -0400", hash_original_method = "2577CE734D2D6BD05EB3CE3808D03445", hash_generated_method = "6BEDFC494176E84B7E97255CBD826851")
     public void list(PrintWriter out) {
         listToAppendable(out);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //listToAppendable(out);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.434 -0400", hash_original_method = "68CAE489B2B77D788FAF807067B604BA", hash_generated_method = "2D4343DABDAB67904C69CC487DC555C1")
     private void listToAppendable(Appendable out) {
         try 
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("out == null");
-            } //End block
+            } 
             StringBuilder sb = new StringBuilder(80);
             Enumeration<?> keys = propertyNames();
             {
@@ -220,54 +226,56 @@ public class Properties extends Hashtable<Object, Object> {
                     {
                         property = (String) def.get(key);
                         def = def.defaults;
-                    } //End block
+                    } 
                     {
                         boolean var8F62FE0E7F6AF45BBD78239662846E5F_823320509 = (property.length() > 40);
                         {
                             sb.append(property.substring(0, 37));
                             sb.append("...");
-                        } //End block
+                        } 
                         {
                             sb.append(property);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     sb.append(System.lineSeparator());
                     out.append(sb.toString());
                     sb.setLength(0);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (IOException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(ex);
-        } //End block
+        } 
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.435 -0400", hash_original_method = "B8EDE929B09671D07A2F603EF776CD24", hash_generated_method = "07933C07E7CA1068C0BB8CE619F3BD77")
     public synchronized void load(InputStream in) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         load(new InputStreamReader(in, "ISO-8859-1"));
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        //if (in == null) {
-            //throw new NullPointerException();
-        //}
-        //load(new InputStreamReader(in, "ISO-8859-1"));
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.436 -0400", hash_original_method = "3CECE8DDCAF4401F719C3D407BA79CAE", hash_generated_method = "0A53F6DAA9CC117B9536B15C400A189D")
     @SuppressWarnings("fallthrough")
     public synchronized void load(Reader in) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         int mode = NONE;
         int unicode = 0;
         int count = 0;
@@ -285,168 +293,170 @@ public class Properties extends Hashtable<Object, Object> {
                 char[] newBuf = new char[buf.length * 2];
                 System.arraycopy(buf, 0, newBuf, 0, offset);
                 buf = newBuf;
-            } //End block
+            } 
             {
                 int digit = Character.digit(nextChar, 16);
                 {
                     unicode = (unicode << 4) + digit;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid Unicode sequence: illegal character");
-                } //End block
+                } 
                 mode = NONE;
                 buf[offset++] = (char) unicode;
-            } //End block
+            } 
             {
                 mode = NONE;
-                //Begin case '\r' 
+                
                 mode = CONTINUE;
-                //End case '\r' 
-                //Begin case '\n' 
+                
+                
                 mode = IGNORE;
-                //End case '\n' 
-                //Begin case 'b' 
+                
+                
                 nextChar = '\b';
-                //End case 'b' 
-                //Begin case 'f' 
+                
+                
                 nextChar = '\f';
-                //End case 'f' 
-                //Begin case 'n' 
+                
+                
                 nextChar = '\n';
-                //End case 'n' 
-                //Begin case 'r' 
+                
+                
                 nextChar = '\r';
-                //End case 'r' 
-                //Begin case 't' 
+                
+                
                 nextChar = '\t';
-                //End case 't' 
-                //Begin case 'u' 
+                
+                
                 mode = UNICODE;
-                //End case 'u' 
-                //Begin case 'u' 
+                
+                
                 unicode = count = 0;
-                //End case 'u' 
-            } //End block
+                
+            } 
             {
-                //Begin case '#' '!' 
+                
                 {
                     {
                         intVal = br.read();
                         nextChar = (char) intVal;
-                    } //End block
-                } //End block
-                //End case '#' '!' 
-                //Begin case '\n' 
+                    } 
+                } 
+                
+                
                 {
                     mode = IGNORE;
-                } //End block
-                //End case '\n' 
-                //Begin case '\r' 
+                } 
+                
+                
                 mode = NONE;
-                //End case '\r' 
-                //Begin case '\r' 
+                
+                
                 firstChar = true;
-                //End case '\r' 
-                //Begin case '\r' 
+                
+                
                 {
                     {
                         keyLength = offset;
-                    } //End block
+                    } 
                     String temp = new String(buf, 0, offset);
                     put(temp.substring(0, keyLength), temp
                                 .substring(keyLength));
-                } //End block
-                //End case '\r' 
-                //Begin case '\r' 
+                } 
+                
+                
                 keyLength = -1;
-                //End case '\r' 
-                //Begin case '\r' 
+                
+                
                 offset = 0;
-                //End case '\r' 
-                //Begin case '\\' 
+                
+                
                 {
                     keyLength = offset;
-                } //End block
-                //End case '\\' 
-                //Begin case '\\' 
+                } 
+                
+                
                 mode = SLASH;
-                //End case '\\' 
-                //Begin case ':' '=' 
+                
+                
                 {
                     mode = NONE;
                     keyLength = offset;
-                } //End block
-                //End case ':' '=' 
+                } 
+                
                 {
                     boolean var1ED420F8964B295D71B68F4D48D8A3E6_179622501 = (Character.isWhitespace(nextChar));
                     {
                         {
                             mode = IGNORE;
-                        } //End block
+                        } 
                         {
                             mode = KEY_DONE;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 {
                     mode = NONE;
-                } //End block
-            } //End block
+                } 
+            } 
             firstChar = false;
             {
                 keyLength = offset;
                 mode = NONE;
-            } //End block
+            } 
             buf[offset++] = nextChar;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid Unicode sequence: expected format \\uxxxx");
-        } //End block
+        } 
         {
             keyLength = offset;
-        } //End block
+        } 
         {
             String temp = new String(buf, 0, offset);
             String key = temp.substring(0, keyLength);
             String value = temp.substring(keyLength);
             {
                 value += "\u0000";
-            } //End block
+            } 
             put(key, value);
-        } //End block
+        } 
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.437 -0400", hash_original_method = "1BF2C237B8DD3958FB1B8B5C0AE1938E", hash_generated_method = "D07D9721AAEA5280F89D039AEB1C62D6")
     public Enumeration<?> propertyNames() {
-        Enumeration<?> varB4EAC82CA7396A68D541C85D26508E83_193040247 = null; //Variable for return #1
+        Enumeration<?> varB4EAC82CA7396A68D541C85D26508E83_193040247 = null; 
         Hashtable<Object, Object> selected = new Hashtable<Object, Object>();
         selectProperties(selected, false);
         varB4EAC82CA7396A68D541C85D26508E83_193040247 = selected.keys();
-        varB4EAC82CA7396A68D541C85D26508E83_193040247.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_193040247.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_193040247;
-        // ---------- Original Method ----------
-        //Hashtable<Object, Object> selected = new Hashtable<Object, Object>();
-        //selectProperties(selected, false);
-        //return selected.keys();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.437 -0400", hash_original_method = "3F48821B050A70D7E4FF424CB7AEEF4F", hash_generated_method = "83CA5668A9D203C245C6188182A73ACC")
     public Set<String> stringPropertyNames() {
-        Set<String> varB4EAC82CA7396A68D541C85D26508E83_1194146806 = null; //Variable for return #1
+        Set<String> varB4EAC82CA7396A68D541C85D26508E83_1194146806 = null; 
         Hashtable<String, Object> stringProperties = new Hashtable<String, Object>();
         selectProperties(stringProperties, true);
         varB4EAC82CA7396A68D541C85D26508E83_1194146806 = Collections.unmodifiableSet(stringProperties.keySet());
-        varB4EAC82CA7396A68D541C85D26508E83_1194146806.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1194146806.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1194146806;
-        // ---------- Original Method ----------
-        //Hashtable<String, Object> stringProperties = new Hashtable<String, Object>();
-        //selectProperties(stringProperties, true);
-        //return Collections.unmodifiableSet(stringProperties.keySet());
+        
+        
+        
+        
     }
 
     
@@ -454,7 +464,7 @@ public class Properties extends Hashtable<Object, Object> {
     private <K> void selectProperties(Hashtable<K, Object> selectProperties, final boolean isStringOnly) {
         {
             defaults.selectProperties(selectProperties, isStringOnly);
-        } //End block
+        } 
         Enumeration<Object> keys = keys();
         {
             boolean var92FA05435258CA7C805716F7AD9C73B4_2100254778 = (keys.hasMoreElements());
@@ -462,76 +472,80 @@ public class Properties extends Hashtable<Object, Object> {
                 @SuppressWarnings("unchecked") K key = (K) keys.nextElement();
                 Object value = get(key);
                 selectProperties.put(key, value);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(selectProperties.getTaint());
         addTaint(isStringOnly);
-        // ---------- Original Method ----------
-        //if (defaults != null) {
-            //defaults.selectProperties(selectProperties, isStringOnly);
-        //}
-        //Enumeration<Object> keys = keys();
-        //while (keys.hasMoreElements()) {
-            //@SuppressWarnings("unchecked")
-            //K key = (K) keys.nextElement();
-            //if (isStringOnly && !(key instanceof String)) {
-                //continue;
-            //}
-            //Object value = get(key);
-            //selectProperties.put(key, value);
-        //}
+        
+        
+            
+        
+        
+        
+            
+            
+            
+                
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.438 -0400", hash_original_method = "4460892848C3864FEFFB544B0F6CDF7A", hash_generated_method = "07BBB0B3C207FE6FB50496F7BED34182")
     @Deprecated
     public void save(OutputStream out, String comment) {
         try 
         {
             store(out, comment);
-        } //End block
+        } 
         catch (IOException e)
         { }
         addTaint(out.getTaint());
         addTaint(comment.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //store(out, comment);
-        //} catch (IOException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.438 -0400", hash_original_method = "B5A66BBC4F63569C92BD357B6A0BCEAB", hash_generated_method = "4211E2C358785E87ED840E1AB87B2082")
     public Object setProperty(String name, String value) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_12750559 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_12750559 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_12750559 = put(name, value);
         addTaint(name.getTaint());
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_12750559.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_12750559.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_12750559;
-        // ---------- Original Method ----------
-        //return put(name, value);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.439 -0400", hash_original_method = "97010F07EC41CFBEB746B7A1A80A2C1A", hash_generated_method = "300730174592DBAA5F71123F0E1FC40F")
     public synchronized void store(OutputStream out, String comment) throws IOException {
         store(new OutputStreamWriter(out, "ISO-8859-1"), comment);
         addTaint(out.getTaint());
         addTaint(comment.getTaint());
-        // ---------- Original Method ----------
-        //store(new OutputStreamWriter(out, "ISO-8859-1"), comment);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.448 -0400", hash_original_method = "8076CC1A9EBA7B35E4BEA25CCAC41B73", hash_generated_method = "10D38835901481783103B45B48A85EC4")
     public synchronized void store(Writer writer, String comment) throws IOException {
         {
             writer.write("#");
             writer.write(comment);
             writer.write(System.lineSeparator());
-        } //End block
+        } 
         writer.write("#");
         writer.write(new Date().toString());
         writer.write(System.lineSeparator());
@@ -548,78 +562,79 @@ public class Properties extends Hashtable<Object, Object> {
                 sb.append(System.lineSeparator());
                 writer.write(sb.toString());
                 sb.setLength(0);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         writer.flush();
         addTaint(writer.getTaint());
         addTaint(comment.getTaint());
-        // ---------- Original Method ----------
-        //if (comment != null) {
-            //writer.write("#");
-            //writer.write(comment);
-            //writer.write(System.lineSeparator());
-        //}
-        //writer.write("#");
-        //writer.write(new Date().toString());
-        //writer.write(System.lineSeparator());
-        //StringBuilder sb = new StringBuilder(200);
-        //for (Map.Entry<Object, Object> entry : entrySet()) {
-            //String key = (String) entry.getKey();
-            //dumpString(sb, key, true);
-            //sb.append('=');
-            //dumpString(sb, (String) entry.getValue(), false);
-            //sb.append(System.lineSeparator());
-            //writer.write(sb.toString());
-            //sb.setLength(0);
-        //}
-        //writer.flush();
+        
+        
+            
+            
+            
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.452 -0400", hash_original_method = "2CD21803BBD0B22DE3395585690DDBAE", hash_generated_method = "E5C46CD7F2215E74C5F73FFCA6CE8090")
     public synchronized void loadFromXML(InputStream in) throws IOException,
             InvalidPropertiesFormatException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             try 
             {
                 builder = factory.newDocumentBuilder();
-            } //End block
+            } 
             catch (ParserConfigurationException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new Error(e);
-            } //End block
+            } 
             builder.setErrorHandler(new ErrorHandler() {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.449 -0400", hash_original_method = "A780B405018C6E806DD90859BE935681", hash_generated_method = "BD229E5C9E40B702A5D1E2D0134171D6")
                 public void warning(SAXParseException e) throws SAXException {
                     if (DroidSafeAndroidRuntime.control) throw e;
                     addTaint(e.getTaint());
-                    // ---------- Original Method ----------
-                    //throw e;
+                    
+                    
                 }
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.450 -0400", hash_original_method = "1BA627FA566198BCA8957A882673AC06", hash_generated_method = "08441F730E6D4CFD8EFFD245B173D132")
                 public void error(SAXParseException e) throws SAXException {
                     if (DroidSafeAndroidRuntime.control) throw e;
                     addTaint(e.getTaint());
-                    // ---------- Original Method ----------
-                    //throw e;
+                    
+                    
                 }
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.450 -0400", hash_original_method = "3CBD306431C0846BE7A7FBEF3B9920DA", hash_generated_method = "1D84BA36626C8B0851FA28A0702E4559")
                 public void fatalError(SAXParseException e) throws SAXException {
                     if (DroidSafeAndroidRuntime.control) throw e;
                     addTaint(e.getTaint());
-                    // ---------- Original Method ----------
-                    //throw e;
+                    
+                    
                 }
 });
             builder.setEntityResolver(new EntityResolver() {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.451 -0400", hash_original_method = "7B6D510D74072B007F41B0B5792E868F", hash_generated_method = "C40D154825EE5816B721CDD35D94886E")
                 public InputSource resolveEntity(String publicId,
                         String systemId) throws SAXException, IOException {
-                    InputSource varB4EAC82CA7396A68D541C85D26508E83_1553240704 = null; //Variable for return #1
+                    InputSource varB4EAC82CA7396A68D541C85D26508E83_1553240704 = null; 
                     {
                         boolean var291D64E633F0D753C1FE55CB540F0B0D_1603647784 = (systemId.equals(PROP_DTD_NAME));
                         {
@@ -627,26 +642,26 @@ public class Properties extends Hashtable<Object, Object> {
                                 PROP_DTD));
                             result.setSystemId(PROP_DTD_NAME);
                             varB4EAC82CA7396A68D541C85D26508E83_1553240704 = result;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     if (DroidSafeAndroidRuntime.control) throw new SAXException("Invalid DOCTYPE declaration: "
                             + systemId);
                     addTaint(publicId.getTaint());
                     addTaint(systemId.getTaint());
-                    varB4EAC82CA7396A68D541C85D26508E83_1553240704.addTaint(getTaint()); //Add taint from parent
+                    varB4EAC82CA7396A68D541C85D26508E83_1553240704.addTaint(getTaint()); 
                     return varB4EAC82CA7396A68D541C85D26508E83_1553240704;
-                    // ---------- Original Method ----------
-                    //if (systemId.equals(PROP_DTD_NAME)) {
-                        //InputSource result = new InputSource(new StringReader(
-                                //PROP_DTD));
-                        //result.setSystemId(PROP_DTD_NAME);
-                        //return result;
-                    //}
-                    //throw new SAXException("Invalid DOCTYPE declaration: "
-                            //+ systemId);
+                    
+                    
+                        
+                                
+                        
+                        
+                    
+                    
+                            
                 }
 });
-        } //End block
+        } 
         try 
         {
             Document doc = builder.parse(in);
@@ -659,56 +674,58 @@ public class Properties extends Hashtable<Object, Object> {
                     String key = entry.getAttribute("key");
                     String value = entry.getTextContent();
                     put(key, value);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
+        } 
         catch (SAXException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new InvalidPropertiesFormatException(e);
-        } //End block
+        } 
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.452 -0400", hash_original_method = "CF08828D5EA0BDD9B2ACD5D46AA8D14C", hash_generated_method = "5EF0CB072E12BA7C313B737951A6F9CA")
     public void storeToXML(OutputStream os, String comment) throws IOException {
         storeToXML(os, comment, "UTF-8");
         addTaint(os.getTaint());
         addTaint(comment.getTaint());
-        // ---------- Original Method ----------
-        //storeToXML(os, comment, "UTF-8");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.466 -0400", hash_original_method = "88C35F171CF08E9C818A3957B761A932", hash_generated_method = "61D436C0A80292D48DD32B9487768EAB")
     public synchronized void storeToXML(OutputStream os, String comment,
             String encoding) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         String encodingCanonicalName;
         try 
         {
             encodingCanonicalName = Charset.forName(encoding).name();
-        } //End block
+        } 
         catch (IllegalCharsetNameException e)
         {
             System.out.println("Warning: encoding name " + encoding
                     + " is illegal, using UTF-8 as default encoding");
             encodingCanonicalName = "UTF-8";
-        } //End block
+        } 
         catch (UnsupportedCharsetException e)
         {
             System.out.println("Warning: encoding " + encoding
                     + " is not supported, using UTF-8 as default encoding");
             encodingCanonicalName = "UTF-8";
-        } //End block
+        } 
         PrintStream printStream = new PrintStream(os, false,
                 encodingCanonicalName);
         printStream.print("<?xml version=\"1.0\" encoding=\"");
@@ -722,7 +739,7 @@ public class Properties extends Hashtable<Object, Object> {
             printStream.print("<comment>");
             printStream.print(substitutePredefinedEntries(comment));
             printStream.println("</comment>");
-        } //End block
+        } 
         {
             Iterator<Map.Entry<Object, Object>> var0A82970C85229BA60CD383C8AED7D8CF_1144256369 = (entrySet()).iterator();
             var0A82970C85229BA60CD383C8AED7D8CF_1144256369.hasNext();
@@ -735,21 +752,22 @@ public class Properties extends Hashtable<Object, Object> {
                 printStream.print("\">");
                 printStream.print(substitutePredefinedEntries(entryValue));
                 printStream.println("</entry>");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         printStream.println("</properties>");
         printStream.flush();
         addTaint(os.getTaint());
         addTaint(comment.getTaint());
         addTaint(encoding.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.467 -0400", hash_original_method = "C245FBB3FF946795FFB47FE71F12C3B1", hash_generated_method = "C3446F0C1158CB0818BFDC89D41FC064")
     private String substitutePredefinedEntries(String s) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1751337248 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1751337248 = null; 
         s = s.replaceAll("&", "&amp;");
         s = s.replaceAll("<", "&lt;");
         s = s.replaceAll(">", "&gt;");
@@ -757,15 +775,15 @@ public class Properties extends Hashtable<Object, Object> {
         s = s.replaceAll("\"", "&quot;");
         varB4EAC82CA7396A68D541C85D26508E83_1751337248 = s;
         addTaint(s.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1751337248.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1751337248.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1751337248;
-        // ---------- Original Method ----------
-        //s = s.replaceAll("&", "&amp;");
-        //s = s.replaceAll("<", "&lt;");
-        //s = s.replaceAll(">", "&gt;");
-        //s = s.replaceAll("'", "&apos;");
-        //s = s.replaceAll("\"", "&quot;");
-        //return s;
+        
+        
+        
+        
+        
+        
+        
     }
 
     

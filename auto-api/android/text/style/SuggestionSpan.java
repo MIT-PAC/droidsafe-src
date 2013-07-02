@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -61,7 +61,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
         addTaint(context.getTaint());
         addTaint(suggestions[0].getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -71,7 +71,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
         addTaint(locale.getTaint());
         addTaint(suggestions[0].getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -83,34 +83,34 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
         mFlags = flags;
         {
             mLocaleString = context.getResources().getConfiguration().locale.toString();
-        } //End block
+        } 
         {
             mLocaleString = locale.toString();
-        } //End block
+        } 
         {
             mNotificationTargetClassName = notificationTargetClass.getCanonicalName();
-        } //End block
+        } 
         {
             mNotificationTargetClassName = "";
-        } //End block
+        } 
         mHashCode = hashCodeInternal(mSuggestions, mLocaleString, mNotificationTargetClassName);
         initStyle(context);
-        // ---------- Original Method ----------
-        //final int N = Math.min(SUGGESTIONS_MAX_SIZE, suggestions.length);
-        //mSuggestions = Arrays.copyOf(suggestions, N);
-        //mFlags = flags;
-        //if (context != null && locale == null) {
-            //mLocaleString = context.getResources().getConfiguration().locale.toString();
-        //} else {
-            //mLocaleString = locale.toString();
-        //}
-        //if (notificationTargetClass != null) {
-            //mNotificationTargetClassName = notificationTargetClass.getCanonicalName();
-        //} else {
-            //mNotificationTargetClassName = "";
-        //}
-        //mHashCode = hashCodeInternal(mSuggestions, mLocaleString, mNotificationTargetClassName);
-        //initStyle(context);
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -127,21 +127,22 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
         mMisspelledUnderlineThickness = src.readFloat();
         mAutoCorrectionUnderlineColor = src.readInt();
         mAutoCorrectionUnderlineThickness = src.readFloat();
-        // ---------- Original Method ----------
-        //mSuggestions = src.readStringArray();
-        //mFlags = src.readInt();
-        //mLocaleString = src.readString();
-        //mNotificationTargetClassName = src.readString();
-        //mHashCode = src.readInt();
-        //mEasyCorrectUnderlineColor = src.readInt();
-        //mEasyCorrectUnderlineThickness = src.readFloat();
-        //mMisspelledUnderlineColor = src.readInt();
-        //mMisspelledUnderlineThickness = src.readFloat();
-        //mAutoCorrectionUnderlineColor = src.readInt();
-        //mAutoCorrectionUnderlineThickness = src.readFloat();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.957 -0400", hash_original_method = "BA5838B3AC67A7A883D23FDD23135D12", hash_generated_method = "FA9FEFC91C989E04A427C5E20D1F6696")
     private void initStyle(Context context) {
         {
@@ -151,7 +152,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
             mMisspelledUnderlineColor = Color.BLACK;
             mEasyCorrectUnderlineColor = Color.BLACK;
             mAutoCorrectionUnderlineColor = Color.BLACK;
-        } //End block
+        } 
         int defStyle = com.android.internal.R.attr.textAppearanceMisspelledSuggestion;
         TypedArray typedArray = context.obtainStyledAttributes(
                 null, com.android.internal.R.styleable.SuggestionSpan, defStyle, 0);
@@ -174,41 +175,41 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
         mAutoCorrectionUnderlineColor = typedArray.getColor(
                 com.android.internal.R.styleable.SuggestionSpan_textUnderlineColor, Color.BLACK);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.958 -0400", hash_original_method = "04652F77FFC7CAE5D602B0C4E1FED158", hash_generated_method = "8482D4D09362042C4A71EDCD1B649D75")
     public String[] getSuggestions() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1029791560 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1029791560 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1029791560 = mSuggestions;
-        varB4EAC82CA7396A68D541C85D26508E83_1029791560.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1029791560.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1029791560;
-        // ---------- Original Method ----------
-        //return mSuggestions;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.958 -0400", hash_original_method = "A5C216C37271149997104A3E25E89F54", hash_generated_method = "EB7533ADE047D37F7BE214FE475E07D7")
     public String getLocale() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1460474504 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1460474504 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1460474504 = mLocaleString;
-        varB4EAC82CA7396A68D541C85D26508E83_1460474504.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1460474504.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1460474504;
-        // ---------- Original Method ----------
-        //return mLocaleString;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.959 -0400", hash_original_method = "248A1CDF1DF25C4245B012EBF128264F", hash_generated_method = "80F1880D3A1850B754BC51479DD13662")
     public String getNotificationTargetClassName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_893881512 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_893881512 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_893881512 = mNotificationTargetClassName;
-        varB4EAC82CA7396A68D541C85D26508E83_893881512.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_893881512.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_893881512;
-        // ---------- Original Method ----------
-        //return mNotificationTargetClassName;
+        
+        
     }
 
     
@@ -216,16 +217,16 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     public int getFlags() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1796133944 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1796133944;
-        // ---------- Original Method ----------
-        //return mFlags;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.959 -0400", hash_original_method = "CA4BF4BE3BC1B3094957FBC465D7A081", hash_generated_method = "85F0B9F34D43E8A3B2C0982106D45E4D")
     public void setFlags(int flags) {
         mFlags = flags;
-        // ---------- Original Method ----------
-        //mFlags = flags;
+        
+        
     }
 
     
@@ -234,11 +235,12 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145303452 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145303452;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.960 -0400", hash_original_method = "B88B3E1963FF277C84F7B31C7327EB57", hash_generated_method = "143E88ACDB6CC9F5ACAD9C2C55FF5575")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -255,18 +257,18 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
         dest.writeFloat(mAutoCorrectionUnderlineThickness);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeStringArray(mSuggestions);
-        //dest.writeInt(mFlags);
-        //dest.writeString(mLocaleString);
-        //dest.writeString(mNotificationTargetClassName);
-        //dest.writeInt(mHashCode);
-        //dest.writeInt(mEasyCorrectUnderlineColor);
-        //dest.writeFloat(mEasyCorrectUnderlineThickness);
-        //dest.writeInt(mMisspelledUnderlineColor);
-        //dest.writeFloat(mMisspelledUnderlineThickness);
-        //dest.writeInt(mAutoCorrectionUnderlineColor);
-        //dest.writeFloat(mAutoCorrectionUnderlineThickness);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -275,25 +277,26 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1983064362 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1983064362;
-        // ---------- Original Method ----------
-        //return TextUtils.SUGGESTION_SPAN;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.960 -0400", hash_original_method = "DEEF8A91A4946D9B043EDA2DAC8F9CA5", hash_generated_method = "FDA035DF9EB54A1650431271EF6EC0C1")
     @Override
     public boolean equals(Object o) {
         {
             boolean var500A963F8ACD27ABA28675D4855B6937_607686583 = (((SuggestionSpan)o).hashCode() == mHashCode);
-        } //End block
+        } 
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1634495015 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1634495015;
-        // ---------- Original Method ----------
-        //if (o instanceof SuggestionSpan) {
-            //return ((SuggestionSpan)o).hashCode() == mHashCode;
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
@@ -302,11 +305,12 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1600652464 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1600652464;
-        // ---------- Original Method ----------
-        //return mHashCode;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int hashCodeInternal(String[] suggestions, String locale,
             String notificationTargetClassName) {
         return Arrays.hashCode(new Object[] {Long.valueOf(SystemClock.uptimeMillis()), suggestions,
@@ -314,6 +318,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.961 -0400", hash_original_method = "FC1F2F33C12EF11918B48BC18977D662", hash_generated_method = "EB0E539C0DC2F7E9DFE4AAFB81BF71E4")
     @Override
     public void updateDrawState(TextPaint tp) {
@@ -323,28 +328,28 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
         {
             {
                 tp.setUnderlineText(mEasyCorrectUnderlineColor, mEasyCorrectUnderlineThickness);
-            } //End block
+            } 
             {
                 tp.setUnderlineText(mMisspelledUnderlineColor, mMisspelledUnderlineThickness);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             tp.setUnderlineText(mAutoCorrectionUnderlineColor, mAutoCorrectionUnderlineThickness);
-        } //End block
+        } 
         addTaint(tp.getTaint());
-        // ---------- Original Method ----------
-        //final boolean misspelled = (mFlags & FLAG_MISSPELLED) != 0;
-        //final boolean easy = (mFlags & FLAG_EASY_CORRECT) != 0;
-        //final boolean autoCorrection = (mFlags & FLAG_AUTO_CORRECTION) != 0;
-        //if (easy) {
-            //if (!misspelled) {
-                //tp.setUnderlineText(mEasyCorrectUnderlineColor, mEasyCorrectUnderlineThickness);
-            //} else if (tp.underlineColor == 0) {
-                //tp.setUnderlineText(mMisspelledUnderlineColor, mMisspelledUnderlineThickness);
-            //}
-        //} else if (autoCorrection) {
-            //tp.setUnderlineText(mAutoCorrectionUnderlineColor, mAutoCorrectionUnderlineThickness);
-        //}
+        
+        
+        
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -355,20 +360,20 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
         final boolean autoCorrection = (mFlags & FLAG_AUTO_CORRECTION) != 0;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2006591225 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2006591225;
-        // ---------- Original Method ----------
-        //final boolean misspelled = (mFlags & FLAG_MISSPELLED) != 0;
-        //final boolean easy = (mFlags & FLAG_EASY_CORRECT) != 0;
-        //final boolean autoCorrection = (mFlags & FLAG_AUTO_CORRECTION) != 0;
-        //if (easy) {
-            //if (!misspelled) {
-                //return mEasyCorrectUnderlineColor;
-            //} else {
-                //return mMisspelledUnderlineColor;
-            //}
-        //} else if (autoCorrection) {
-            //return mAutoCorrectionUnderlineColor;
-        //}
-        //return 0;
+        
+        
+        
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
+        
     }
 
     

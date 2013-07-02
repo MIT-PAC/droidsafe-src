@@ -1,11 +1,11 @@
 package org.apache.http.impl.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -30,102 +30,107 @@ public class ContentLengthOutputStream extends OutputStream {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Session output buffer may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Content length may not be negative");
-        } //End block
+        } 
         this.out = out;
         this.contentLength = contentLength;
-        // ---------- Original Method ----------
-        //if (out == null) {
-            //throw new IllegalArgumentException("Session output buffer may not be null");
-        //}
-        //if (contentLength < 0) {
-            //throw new IllegalArgumentException("Content length may not be negative");
-        //}
-        //this.out = out;
-        //this.contentLength = contentLength;
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.813 -0400", hash_original_method = "5088685B92B0533111B1789635B9B452", hash_generated_method = "341A4D07E16A7228344021CF35FB4E5A")
     public void close() throws IOException {
         {
             this.closed = true;
             this.out.flush();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!this.closed) {
-            //this.closed = true;
-            //this.out.flush();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.813 -0400", hash_original_method = "A5A452E28D931563D6707491621FFBE7", hash_generated_method = "659F5DF70DF5E6C77EDF97533C3E99AE")
     public void flush() throws IOException {
         this.out.flush();
-        // ---------- Original Method ----------
-        //this.out.flush();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.814 -0400", hash_original_method = "C2CCC6E8489DACB9C9AD7F8549C28D94", hash_generated_method = "35D3954DAD0E8BF4F499582CBBCC1283")
     public void write(byte[] b, int off, int len) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Attempted write to closed stream.");
-        } //End block
+        } 
         {
             long max = this.contentLength - this.total;
             {
                 len = (int) max;
-            } //End block
+            } 
             this.out.write(b, off, len);
             this.total += len;
-        } //End block
+        } 
         addTaint(b[0]);
         addTaint(off);
-        // ---------- Original Method ----------
-        //if (this.closed) {
-            //throw new IOException("Attempted write to closed stream.");
-        //}
-        //if (this.total < this.contentLength) {
-            //long max = this.contentLength - this.total;
-            //if (len > max) {
-                //len = (int) max;
-            //}
-            //this.out.write(b, off, len);
-            //this.total += len;
-        //}
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.814 -0400", hash_original_method = "E1D4EA7BC5A1A039095C078064FA6BD5", hash_generated_method = "5CD09DCFD2AF02670D810AB143DB747D")
     public void write(byte[] b) throws IOException {
         write(b, 0, b.length);
         addTaint(b[0]);
-        // ---------- Original Method ----------
-        //write(b, 0, b.length);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.814 -0400", hash_original_method = "671E4413F0815DA1A7C3D0AAECD8B1E8", hash_generated_method = "7F6F9AA888EC8C28970D5713FE2E5825")
     public void write(int b) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Attempted write to closed stream.");
-        } //End block
+        } 
         {
             this.out.write(b);
-        } //End block
+        } 
         addTaint(b);
-        // ---------- Original Method ----------
-        //if (this.closed) {
-            //throw new IOException("Attempted write to closed stream.");
-        //}
-        //if (this.total < this.contentLength) {
-            //this.out.write(b);
-            //this.total++;
-        //}
+        
+        
+            
+        
+        
+            
+            
+        
     }
 
     

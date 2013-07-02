@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.accounts.Account;
 import android.os.Parcel;
@@ -33,11 +33,11 @@ public class SyncInfo implements Parcelable {
         this.account = account;
         this.authority = authority;
         this.startTime = startTime;
-        // ---------- Original Method ----------
-        //this.authorityId = authorityId;
-        //this.account = account;
-        //this.authority = authority;
-        //this.startTime = startTime;
+        
+        
+        
+        
+        
     }
 
     
@@ -47,11 +47,11 @@ public class SyncInfo implements Parcelable {
         account = new Account(parcel);
         authority = parcel.readString();
         startTime = parcel.readLong();
-        // ---------- Original Method ----------
-        //authorityId = parcel.readInt();
-        //account = new Account(parcel);
-        //authority = parcel.readString();
-        //startTime = parcel.readLong();
+        
+        
+        
+        
+        
     }
 
     
@@ -59,11 +59,12 @@ public class SyncInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200146816 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200146816;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.572 -0400", hash_original_method = "1C5B91DE7E7E8D04DC252E4EE5F1DBAA", hash_generated_method = "ECCBE7C7E7B908524AEAB8159C3B3F88")
     public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeInt(authorityId);
@@ -72,11 +73,11 @@ public class SyncInfo implements Parcelable {
         parcel.writeLong(startTime);
         addTaint(parcel.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //parcel.writeInt(authorityId);
-        //account.writeToParcel(parcel, 0);
-        //parcel.writeString(authority);
-        //parcel.writeLong(startTime);
+        
+        
+        
+        
+        
     }
 
     
@@ -91,12 +92,12 @@ public class SyncInfo implements Parcelable {
             return new SyncInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public SyncInfo createFromParcel(Parcel in) {
             return new SyncInfo(in);
         }
     
-    // orphaned legacy method
+    
     public SyncInfo[] newArray(int size) {
             return new SyncInfo[size];
         }

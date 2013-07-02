@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -22,28 +22,30 @@ public final class AlternativeName extends ExtensionValue {
         super(encoding);
         this.which = which;
         this.alternativeNames = (GeneralNames) GeneralNames.ASN1.decode(encoding);
-        // ---------- Original Method ----------
-        //this.which = which;
-        //this.alternativeNames = (GeneralNames) GeneralNames.ASN1.decode(encoding);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.611 -0400", hash_original_method = "A70D2DB25ABF0E0F1A8BC79C0C161D91", hash_generated_method = "D42A4FFAE1F77B57241182898C23D689")
     @Override
     public byte[] getEncoded() {
         {
             encoding = GeneralNames.ASN1.encode(alternativeNames);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1496239074 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1496239074;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = GeneralNames.ASN1.encode(alternativeNames);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.611 -0400", hash_original_method = "62E9965B6B09CF0D2F916BAB455CC9AA", hash_generated_method = "63AFA54F4682857AE4A9CAFA66F1F855")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
@@ -52,10 +54,10 @@ public final class AlternativeName extends ExtensionValue {
         sb.append(prefix).append("]\n");
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //sb.append(prefix).append((which) ? "Subject" : "Issuer").append(" Alternative Names [\n");
-        //alternativeNames.dumpValue(sb, prefix + "  ");
-        //sb.append(prefix).append("]\n");
+        
+        
+        
+        
     }
 
     

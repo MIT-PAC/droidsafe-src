@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.AsyncResult;
 import android.os.Handler;
@@ -37,26 +37,28 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     public  AdnRecordCache(PhoneBase phone) {
         this.phone = phone;
         mUsimPhoneBookManager = new UsimPhoneBookManager(phone, this);
-        // ---------- Original Method ----------
-        //this.phone = phone;
-        //mUsimPhoneBookManager = new UsimPhoneBookManager(phone, this);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.224 -0400", hash_original_method = "C51C4513003EDC9EA86A76A3037140C3", hash_generated_method = "39E1DB1685B71CBB7026B24F81570F04")
     public void reset() {
         adnLikeFiles.clear();
         mUsimPhoneBookManager.reset();
         clearWaiters();
         clearUserWriters();
-        // ---------- Original Method ----------
-        //adnLikeFiles.clear();
-        //mUsimPhoneBookManager.reset();
-        //clearWaiters();
-        //clearUserWriters();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.225 -0400", hash_original_method = "D74CB42B2A20381108736DF447231499", hash_generated_method = "9BE3827E7A42AD6E8202A5C362FF191D")
     private void clearWaiters() {
         int size = adnLikeWaiters.size();
@@ -66,20 +68,21 @@ public final class AdnRecordCache extends Handler implements IccConstants {
                 ArrayList<Message> waiters = adnLikeWaiters.valueAt(i);
                 AsyncResult ar = new AsyncResult(null, null, new RuntimeException("AdnCache reset"));
                 notifyWaiters(waiters, ar);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         adnLikeWaiters.clear();
-        // ---------- Original Method ----------
-        //int size = adnLikeWaiters.size();
-        //for (int i = 0; i < size; i++) {
-            //ArrayList<Message> waiters = adnLikeWaiters.valueAt(i);
-            //AsyncResult ar = new AsyncResult(null, null, new RuntimeException("AdnCache reset"));
-            //notifyWaiters(waiters, ar);
-        //}
-        //adnLikeWaiters.clear();
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.225 -0400", hash_original_method = "AA0A19B306C1CFC2139DB9008BF6A4C8", hash_generated_method = "5493877FF7FC37824451A2A8753A17EA")
     private void clearUserWriters() {
         int size = userWriteResponse.size();
@@ -87,27 +90,28 @@ public final class AdnRecordCache extends Handler implements IccConstants {
             int i = 0;
             {
                 sendErrorResponse(userWriteResponse.valueAt(i), "AdnCace reset");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         userWriteResponse.clear();
-        // ---------- Original Method ----------
-        //int size = userWriteResponse.size();
-        //for (int i = 0; i < size; i++) {
-            //sendErrorResponse(userWriteResponse.valueAt(i), "AdnCace reset");
-        //}
-        //userWriteResponse.clear();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.226 -0400", hash_original_method = "F416E740ABBE99926C901CF2ED82B3B0", hash_generated_method = "FD3239F80FBFF3A195B990A866AA586B")
     public ArrayList<AdnRecord> getRecordsIfLoaded(int efid) {
-        ArrayList<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_1428087210 = null; //Variable for return #1
+        ArrayList<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_1428087210 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1428087210 = adnLikeFiles.get(efid);
         addTaint(efid);
-        varB4EAC82CA7396A68D541C85D26508E83_1428087210.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1428087210.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1428087210;
-        // ---------- Original Method ----------
-        //return adnLikeFiles.get(efid);
+        
+        
     }
 
     
@@ -116,48 +120,50 @@ public final class AdnRecordCache extends Handler implements IccConstants {
         addTaint(efid);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1440135180 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1440135180;
-        // ---------- Original Method ----------
-        //switch (efid) {
-            //case EF_MBDN: return EF_EXT6;
-            //case EF_ADN: return EF_EXT1;
-            //case EF_SDN: return EF_EXT3;
-            //case EF_FDN: return EF_EXT2;
-            //case EF_MSISDN: return EF_EXT1;
-            //case EF_PBR: return 0; 
-            //default: return -1;
-        //}
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.226 -0400", hash_original_method = "A626AB07A72819AA36869010FF1E4126", hash_generated_method = "C519D630375D34248A722E18F3A8ACDD")
     private void sendErrorResponse(Message response, String errString) {
         {
             Exception e = new RuntimeException(errString);
             AsyncResult.forMessage(response).exception = e;
             response.sendToTarget();
-        } //End block
+        } 
         addTaint(response.getTaint());
         addTaint(errString.getTaint());
-        // ---------- Original Method ----------
-        //if (response != null) {
-            //Exception e = new RuntimeException(errString);
-            //AsyncResult.forMessage(response).exception = e;
-            //response.sendToTarget();
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.227 -0400", hash_original_method = "92DB73E806C3C282A27A1468C26BF7B3", hash_generated_method = "71DC8245313DA2F1856A16155C7976CA")
     public void updateAdnByIndex(int efid, AdnRecord adn, int recordIndex, String pin2,
             Message response) {
         int extensionEF = extensionEfForEf(efid);
         {
             sendErrorResponse(response, "EF is not known ADN-like EF:" + efid);
-        } //End block
+        } 
         Message pendingResponse = userWriteResponse.get(efid);
         {
             sendErrorResponse(response, "Have pending update for EF:" + efid);
-        } //End block
+        } 
         userWriteResponse.put(efid, response);
         new AdnRecordLoader(phone).updateEF(adn, efid, extensionEF,
                 recordIndex, pin2,
@@ -167,24 +173,25 @@ public final class AdnRecordCache extends Handler implements IccConstants {
         addTaint(recordIndex);
         addTaint(pin2.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
-        //int extensionEF = extensionEfForEf(efid);
-        //if (extensionEF < 0) {
-            //sendErrorResponse(response, "EF is not known ADN-like EF:" + efid);
-            //return;
-        //}
-        //Message pendingResponse = userWriteResponse.get(efid);
-        //if (pendingResponse != null) {
-            //sendErrorResponse(response, "Have pending update for EF:" + efid);
-            //return;
-        //}
-        //userWriteResponse.put(efid, response);
-        //new AdnRecordLoader(phone).updateEF(adn, efid, extensionEF,
-                //recordIndex, pin2,
-                //obtainMessage(EVENT_UPDATE_ADN_DONE, efid, recordIndex, adn));
+        
+        
+        
+            
+            
+        
+        
+        
+            
+            
+        
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.228 -0400", hash_original_method = "71F49E0E0C93DA66D27CAD14CA0014CE", hash_generated_method = "98291439ACDC89EAC26F681792138C3F")
     public void updateAdnBySearch(int efid, AdnRecord oldAdn, AdnRecord newAdn,
             String pin2, Message response) {
@@ -192,17 +199,17 @@ public final class AdnRecordCache extends Handler implements IccConstants {
         extensionEF = extensionEfForEf(efid);
         {
             sendErrorResponse(response, "EF is not known ADN-like EF:" + efid);
-        } //End block
+        } 
         ArrayList<AdnRecord> oldAdnList;
         {
             oldAdnList = mUsimPhoneBookManager.loadEfFilesFromUsim();
-        } //End block
+        } 
         {
             oldAdnList = getRecordsIfLoaded(efid);
-        } //End block
+        } 
         {
             sendErrorResponse(response, "Adn list not exist for EF:" + efid);
-        } //End block
+        } 
         int index = -1;
         int count = 1;
         {
@@ -213,13 +220,13 @@ public final class AdnRecordCache extends Handler implements IccConstants {
                     boolean var109153AE8FA7C60942D7115B9D4CF678_1725817479 = (oldAdn.isEqual(it.next()));
                     {
                         index = count;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             sendErrorResponse(response, "Adn record don't exist for " + oldAdn);
-        } //End block
+        } 
         {
             AdnRecord foundAdn = oldAdnList.get(index-1);
             efid = foundAdn.efid;
@@ -228,11 +235,11 @@ public final class AdnRecordCache extends Handler implements IccConstants {
             newAdn.efid = efid;
             newAdn.extRecord = extensionEF;
             newAdn.recordNumber = index;
-        } //End block
+        } 
         Message pendingResponse = userWriteResponse.get(efid);
         {
             sendErrorResponse(response, "Have pending update for EF:" + efid);
-        } //End block
+        } 
         userWriteResponse.put(efid, response);
         new AdnRecordLoader(phone).updateEF(newAdn, efid, extensionEF,
                 index, pin2,
@@ -242,31 +249,32 @@ public final class AdnRecordCache extends Handler implements IccConstants {
         addTaint(newAdn.getTaint());
         addTaint(pin2.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.229 -0400", hash_original_method = "05810E0F51AA47EAC0C24CA3CBEDF0F7", hash_generated_method = "2E2EBCCBA5E4A3E60C301373F960A26E")
     public void requestLoadAllAdnLike(int efid, int extensionEf, Message response) {
         ArrayList<Message> waiters;
         ArrayList<AdnRecord> result;
         {
             result = mUsimPhoneBookManager.loadEfFilesFromUsim();
-        } //End block
+        } 
         {
             result = getRecordsIfLoaded(efid);
-        } //End block
+        } 
         {
             {
                 AsyncResult.forMessage(response).result = result;
                 response.sendToTarget();
-            } //End block
-        } //End block
+            } 
+        } 
         waiters = adnLikeWaiters.get(efid);
         {
             waiters.add(response);
-        } //End block
+        } 
         waiters = new ArrayList<Message>();
         waiters.add(response);
         adnLikeWaiters.put(efid, waiters);
@@ -275,18 +283,19 @@ public final class AdnRecordCache extends Handler implements IccConstants {
                 AsyncResult.forMessage(response).exception
                     = new RuntimeException("EF is not known ADN-like EF:" + efid);
                 response.sendToTarget();
-            } //End block
-        } //End block
+            } 
+        } 
         new AdnRecordLoader(phone).loadAllFromEF(efid, extensionEf,
             obtainMessage(EVENT_LOAD_ALL_ADN_LIKE_DONE, efid, 0));
         addTaint(efid);
         addTaint(extensionEf);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.229 -0400", hash_original_method = "06D7CFA235737447F2D0DAD9C5CA936C", hash_generated_method = "785379A3876D04A7D2D706A120AEEF6F")
     private void notifyWaiters(ArrayList<Message> waiters, AsyncResult ar) {
         {
@@ -296,82 +305,83 @@ public final class AdnRecordCache extends Handler implements IccConstants {
                 Message waiter = waiters.get(i);
                 AsyncResult.forMessage(waiter, ar.result, ar.exception);
                 waiter.sendToTarget();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(waiters.getTaint());
         addTaint(ar.getTaint());
-        // ---------- Original Method ----------
-        //if (waiters == null) {
-            //return;
-        //}
-        //for (int i = 0, s = waiters.size() ; i < s ; i++) {
-            //Message waiter = waiters.get(i);
-            //AsyncResult.forMessage(waiter, ar.result, ar.exception);
-            //waiter.sendToTarget();
-        //}
+        
+        
+            
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.230 -0400", hash_original_method = "EDA0843A3B437B2415185CC41779F06F", hash_generated_method = "31139AC56641BE87559C8B00530CDA43")
     public void handleMessage(Message msg) {
         AsyncResult ar;
         int efid;
-        //Begin case EVENT_LOAD_ALL_ADN_LIKE_DONE 
+        
         ar = (AsyncResult) msg.obj;
-        //End case EVENT_LOAD_ALL_ADN_LIKE_DONE 
-        //Begin case EVENT_LOAD_ALL_ADN_LIKE_DONE 
+        
+        
         efid = msg.arg1;
-        //End case EVENT_LOAD_ALL_ADN_LIKE_DONE 
-        //Begin case EVENT_LOAD_ALL_ADN_LIKE_DONE 
+        
+        
         ArrayList<Message> waiters;
-        //End case EVENT_LOAD_ALL_ADN_LIKE_DONE 
-        //Begin case EVENT_LOAD_ALL_ADN_LIKE_DONE 
+        
+        
         waiters = adnLikeWaiters.get(efid);
-        //End case EVENT_LOAD_ALL_ADN_LIKE_DONE 
-        //Begin case EVENT_LOAD_ALL_ADN_LIKE_DONE 
+        
+        
         adnLikeWaiters.delete(efid);
-        //End case EVENT_LOAD_ALL_ADN_LIKE_DONE 
-        //Begin case EVENT_LOAD_ALL_ADN_LIKE_DONE 
+        
+        
         {
             adnLikeFiles.put(efid, (ArrayList<AdnRecord>) ar.result);
-        } //End block
-        //End case EVENT_LOAD_ALL_ADN_LIKE_DONE 
-        //Begin case EVENT_LOAD_ALL_ADN_LIKE_DONE 
+        } 
+        
+        
         notifyWaiters(waiters, ar);
-        //End case EVENT_LOAD_ALL_ADN_LIKE_DONE 
-        //Begin case EVENT_UPDATE_ADN_DONE 
+        
+        
         ar = (AsyncResult)msg.obj;
-        //End case EVENT_UPDATE_ADN_DONE 
-        //Begin case EVENT_UPDATE_ADN_DONE 
+        
+        
         efid = msg.arg1;
-        //End case EVENT_UPDATE_ADN_DONE 
-        //Begin case EVENT_UPDATE_ADN_DONE 
+        
+        
         int index = msg.arg2;
-        //End case EVENT_UPDATE_ADN_DONE 
-        //Begin case EVENT_UPDATE_ADN_DONE 
+        
+        
         AdnRecord adn = (AdnRecord) (ar.userObj);
-        //End case EVENT_UPDATE_ADN_DONE 
-        //Begin case EVENT_UPDATE_ADN_DONE 
+        
+        
         {
             adnLikeFiles.get(efid).set(index - 1, adn);
             mUsimPhoneBookManager.invalidateCache();
-        } //End block
-        //End case EVENT_UPDATE_ADN_DONE 
-        //Begin case EVENT_UPDATE_ADN_DONE 
+        } 
+        
+        
         Message response = userWriteResponse.get(efid);
-        //End case EVENT_UPDATE_ADN_DONE 
-        //Begin case EVENT_UPDATE_ADN_DONE 
+        
+        
         userWriteResponse.delete(efid);
-        //End case EVENT_UPDATE_ADN_DONE 
-        //Begin case EVENT_UPDATE_ADN_DONE 
+        
+        
         AsyncResult.forMessage(response, null, ar.exception);
-        //End case EVENT_UPDATE_ADN_DONE 
-        //Begin case EVENT_UPDATE_ADN_DONE 
+        
+        
         response.sendToTarget();
-        //End case EVENT_UPDATE_ADN_DONE 
+        
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

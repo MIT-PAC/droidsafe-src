@@ -1,11 +1,11 @@
 package java.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class StringCharacterIterator implements CharacterIterator {
@@ -27,10 +27,10 @@ public final class StringCharacterIterator implements CharacterIterator {
         string = value;
         start = offset = 0;
         end = string.length();
-        // ---------- Original Method ----------
-        //string = value;
-        //start = offset = 0;
-        //end = string.length();
+        
+        
+        
+        
     }
 
     
@@ -41,16 +41,16 @@ public final class StringCharacterIterator implements CharacterIterator {
         end = string.length();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         offset = location;
-        // ---------- Original Method ----------
-        //string = value;
-        //start = 0;
-        //end = string.length();
-        //if (location < 0 || location > end) {
-            //throw new IllegalArgumentException();
-        //}
-        //offset = location;
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -62,59 +62,62 @@ public final class StringCharacterIterator implements CharacterIterator {
                 || location < start || location > end);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.start = start;
         this.end = end;
         offset = location;
-        // ---------- Original Method ----------
-        //string = value;
-        //if (start < 0 || end > string.length() || start > end
-                //|| location < start || location > end) {
-            //throw new IllegalArgumentException();
-        //}
-        //this.start = start;
-        //this.end = end;
-        //offset = location;
+        
+        
+        
+                
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.297 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "1CFE9FD98A4F18486B4C75E56A3777BB")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1400167217 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1400167217 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1400167217 = super.clone();
-        } //End block
+        } 
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1400167217.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1400167217.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1400167217;
-        // ---------- Original Method ----------
-        //try {
-            //return super.clone();
-        //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError(e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.297 -0400", hash_original_method = "0495E4BE554B279F8C8552A3E8BBAE9B", hash_generated_method = "193DB33A4A610A2BA45B3D5F8A1FC1B1")
     public char current() {
         char var21B7B547718317726EE4A22CD454BA01_933217872 = (string.charAt(offset));
         char varA87DEB01C5F539E6BDA34829C8EF2368_1433440828 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1433440828;
-        // ---------- Original Method ----------
-        //if (offset == end) {
-            //return DONE;
-        //}
-        //return string.charAt(offset);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.297 -0400", hash_original_method = "4A7E92C9AA8B158215F27F7CAB59071D", hash_generated_method = "992EE120B5FBC29182C9CBF2ADA6466E")
     @Override
     public boolean equals(Object object) {
@@ -124,28 +127,29 @@ public final class StringCharacterIterator implements CharacterIterator {
         addTaint(object.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_724580750 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_724580750;
-        // ---------- Original Method ----------
-        //if (!(object instanceof StringCharacterIterator)) {
-            //return false;
-        //}
-        //StringCharacterIterator it = (StringCharacterIterator) object;
-        //return string.equals(it.string) && start == it.start && end == it.end
-                //&& offset == it.offset;
+        
+        
+            
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.298 -0400", hash_original_method = "B333B42236D9FFA1243D291D9F8E02D4", hash_generated_method = "07FF3B92070DE29A1FBE971CAEB8779B")
     public char first() {
         offset = start;
         char var21B7B547718317726EE4A22CD454BA01_1984967063 = (string.charAt(offset));
         char varA87DEB01C5F539E6BDA34829C8EF2368_2121500746 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_2121500746;
-        // ---------- Original Method ----------
-        //if (start == end) {
-            //return DONE;
-        //}
-        //offset = start;
-        //return string.charAt(offset);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -153,8 +157,8 @@ public final class StringCharacterIterator implements CharacterIterator {
     public int getBeginIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1271241892 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1271241892;
-        // ---------- Original Method ----------
-        //return start;
+        
+        
     }
 
     
@@ -162,8 +166,8 @@ public final class StringCharacterIterator implements CharacterIterator {
     public int getEndIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_293415067 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_293415067;
-        // ---------- Original Method ----------
-        //return end;
+        
+        
     }
 
     
@@ -171,97 +175,103 @@ public final class StringCharacterIterator implements CharacterIterator {
     public int getIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295273262 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295273262;
-        // ---------- Original Method ----------
-        //return offset;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.301 -0400", hash_original_method = "261EF3CD78C94C444435F1728CE93178", hash_generated_method = "26289A8E5266294B1F9FEEDDAACF2880")
     @Override
     public int hashCode() {
         int varC302329FBC202906BCCCE10F9522C378_1546839520 = (string.hashCode() + start + end + offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1142136781 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1142136781;
-        // ---------- Original Method ----------
-        //return string.hashCode() + start + end + offset;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.302 -0400", hash_original_method = "920E2CC099037AFE91302301CF7E9F3E", hash_generated_method = "163B019551F0061CF4F3D17CC4218485")
     public char last() {
         offset = end - 1;
         char var21B7B547718317726EE4A22CD454BA01_524144223 = (string.charAt(offset));
         char varA87DEB01C5F539E6BDA34829C8EF2368_1571704464 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1571704464;
-        // ---------- Original Method ----------
-        //if (start == end) {
-            //return DONE;
-        //}
-        //offset = end - 1;
-        //return string.charAt(offset);
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.304 -0400", hash_original_method = "8F260F0099582263F775831BBCA28C0F", hash_generated_method = "18CC4C49B92B7AD4ED8F5CC092EC64B0")
     public char next() {
         {
             offset = end;
-        } //End block
+        } 
         char var238AEF82B15A80F78B72DEC013544975_1633211220 = (string.charAt(++offset));
         char varA87DEB01C5F539E6BDA34829C8EF2368_196163271 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_196163271;
-        // ---------- Original Method ----------
-        //if (offset >= (end - 1)) {
-            //offset = end;
-            //return DONE;
-        //}
-        //return string.charAt(++offset);
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.305 -0400", hash_original_method = "6641F70E0E9C6153122A4B9C58397241", hash_generated_method = "10AF1F82C89FA3EAB2A964F67E2166F6")
     public char previous() {
         char var420CAAE2ECFCDE70CA387D7F943D6777_530829273 = (string.charAt(--offset));
         char varA87DEB01C5F539E6BDA34829C8EF2368_1469090027 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1469090027;
-        // ---------- Original Method ----------
-        //if (offset == start) {
-            //return DONE;
-        //}
-        //return string.charAt(--offset);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.305 -0400", hash_original_method = "EE5D609C4869D1C6E36BED6C6655B503", hash_generated_method = "2709E399A408788C245FA326BF1EE07B")
     public char setIndex(int location) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         offset = location;
         char var21B7B547718317726EE4A22CD454BA01_903111100 = (string.charAt(offset));
         char varA87DEB01C5F539E6BDA34829C8EF2368_712519164 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_712519164;
-        // ---------- Original Method ----------
-        //if (location < start || location > end) {
-            //throw new IllegalArgumentException();
-        //}
-        //offset = location;
-        //if (offset == end) {
-            //return DONE;
-        //}
-        //return string.charAt(offset);
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.306 -0400", hash_original_method = "C3050CECF999A44D7D35577309274942", hash_generated_method = "16F449977253B2E84B6BB597D2C69A77")
     public void setText(String value) {
         string = value;
         start = offset = 0;
         end = value.length();
-        // ---------- Original Method ----------
-        //string = value;
-        //start = offset = 0;
-        //end = value.length();
+        
+        
+        
+        
     }
 
     

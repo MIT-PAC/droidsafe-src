@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -21,7 +21,7 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.208 -0400", hash_original_method = "F8437ACFEC0EA098621A29EA36F6AD07", hash_generated_method = "EDCE9066F17AD3973393DCDC0BE762D3")
     public  ServiceInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,9 +30,9 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
         super(orig);
         permission = orig.permission;
         flags = orig.flags;
-        // ---------- Original Method ----------
-        //permission = orig.permission;
-        //flags = orig.flags;
+        
+        
+        
     }
 
     
@@ -41,12 +41,13 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
         super(source);
         permission = source.readString();
         flags = source.readInt();
-        // ---------- Original Method ----------
-        //permission = source.readString();
-        //flags = source.readInt();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.210 -0400", hash_original_method = "DA4A80B9AC3442B8DFBCD8315889AD94", hash_generated_method = "073CA30EFB52483F0D041DCEDE3CE0A0")
     public void dump(Printer pw, String prefix) {
         super.dumpFront(pw, prefix);
@@ -54,25 +55,26 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
         pw.println(prefix + "flags=0x" + Integer.toHexString(flags));
         addTaint(pw.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //super.dumpFront(pw, prefix);
-        //pw.println(prefix + "permission=" + permission);
-        //pw.println(prefix + "flags=0x" + Integer.toHexString(flags));
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.211 -0400", hash_original_method = "59146AE4B3130A7BADEE9DF4447D4A3B", hash_generated_method = "53D54E7C7E7BE3BDCC5A161ACA1B98B2")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1368330506 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1368330506 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1368330506 = "ServiceInfo{"
             + Integer.toHexString(System.identityHashCode(this))
             + " " + name + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_1368330506.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1368330506.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1368330506;
-        // ---------- Original Method ----------
-        //return "ServiceInfo{"
-            //+ Integer.toHexString(System.identityHashCode(this))
-            //+ " " + name + "}";
+        
+        
+            
+            
     }
 
     
@@ -80,11 +82,12 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_694368049 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_694368049;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.212 -0400", hash_original_method = "0D65CECC76E553C003E9EF65F2ADA018", hash_generated_method = "E1047CAE5411B78A9C5E1417C489A103")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         super.writeToParcel(dest, parcelableFlags);
@@ -92,10 +95,10 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
         dest.writeInt(flags);
         addTaint(dest.getTaint());
         addTaint(parcelableFlags);
-        // ---------- Original Method ----------
-        //super.writeToParcel(dest, parcelableFlags);
-        //dest.writeString(permission);
-        //dest.writeInt(flags);
+        
+        
+        
+        
     }
 
     
@@ -113,12 +116,12 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
             return new ServiceInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public ServiceInfo createFromParcel(Parcel source) {
             return new ServiceInfo(source);
         }
     
-    // orphaned legacy method
+    
     public ServiceInfo[] newArray(int size) {
             return new ServiceInfo[size];
         }

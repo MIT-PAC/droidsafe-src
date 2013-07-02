@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.extensions;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.javax.sip.header.extensions.*;
@@ -18,7 +18,7 @@ public class ReplacesParser extends ParametersParser {
     public  ReplacesParser(String callID) {
         super(callID);
         addTaint(callID.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,13 +26,14 @@ public class ReplacesParser extends ParametersParser {
     protected  ReplacesParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.044 -0400", hash_original_method = "C779AD4EE203E642C9A6B93773CE1027", hash_generated_method = "E43C103256DA441F5BFC2A86261A31A3")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_605669374 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_605669374 = null; 
         dbg_enter("parse");
         try 
         {
@@ -44,32 +45,33 @@ public class ReplacesParser extends ParametersParser {
             super.parse(replaces);
             replaces.setCallId(callId);
             varB4EAC82CA7396A68D541C85D26508E83_605669374 = replaces;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_605669374.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_605669374.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_605669374;
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("parse");
-        //try {
-            //headerName(TokenTypes.REPLACES_TO);
-            //Replaces replaces = new Replaces();
-            //this.lexer.SPorHT();
-            //String callId = lexer.byteStringNoSemicolon();
-            //this.lexer.SPorHT();
-            //super.parse(replaces);
-            //replaces.setCallId(callId);
-            //return replaces;
-        //} finally {
-            //if (debug)
-                //dbg_leave("parse");
-        //}
+        
+        
+            
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void main(String args[]) throws ParseException {
         String to[] =
             {   "Replaces: 12345th5z8z\n",

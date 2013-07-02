@@ -1,11 +1,11 @@
 package org.apache.http.conn.scheme;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -25,15 +25,15 @@ public final class PlainSocketFactory implements SocketFactory {
     public  PlainSocketFactory(final HostNameResolver nameResolver) {
         super();
         this.nameResolver = nameResolver;
-        // ---------- Original Method ----------
-        //this.nameResolver = nameResolver;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.287 -0400", hash_original_method = "CB0B0698D5F49CD73D676E27B7E3296D", hash_generated_method = "FDFEC9028F67BD2583D543616664390B")
     public  PlainSocketFactory() {
         this(null);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -44,12 +44,12 @@ public final class PlainSocketFactory implements SocketFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.287 -0400", hash_original_method = "A3A12F6A184479CE87309C0199F9FB19", hash_generated_method = "44364DACE87855C3B461334F3402912B")
     public Socket createSocket() {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_2032126460 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_2032126460 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2032126460 = new Socket();
-        varB4EAC82CA7396A68D541C85D26508E83_2032126460.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2032126460.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2032126460;
-        // ---------- Original Method ----------
-        //return new Socket();
+        
+        
     }
 
     
@@ -57,35 +57,35 @@ public final class PlainSocketFactory implements SocketFactory {
     public Socket connectSocket(Socket sock, String host, int port, 
                                 InetAddress localAddress, int localPort,
                                 HttpParams params) throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1518543975 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1518543975 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Target host may not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Parameters may not be null.");
-        } //End block
+        } 
         sock = createSocket();
         {
             localPort = 0;
             InetSocketAddress isa = new InetSocketAddress(localAddress, localPort);
             sock.bind(isa);
-        } //End block
+        } 
         int timeout = HttpConnectionParams.getConnectionTimeout(params);
         InetSocketAddress remoteAddress;
         {
             remoteAddress = new InetSocketAddress(this.nameResolver.resolve(host), port);
-        } //End block
+        } 
         {
             remoteAddress = new InetSocketAddress(host, port);
-        } //End block
+        } 
         try 
         {
             sock.connect(remoteAddress, timeout);
-        } //End block
+        } 
         catch (SocketTimeoutException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new ConnectTimeoutException("Connect to " + remoteAddress + " timed out");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1518543975 = sock;
         addTaint(sock.getTaint());
         addTaint(host.getTaint());
@@ -93,10 +93,10 @@ public final class PlainSocketFactory implements SocketFactory {
         addTaint(localAddress.getTaint());
         addTaint(localPort);
         addTaint(params.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1518543975.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1518543975.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1518543975;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -104,35 +104,35 @@ public final class PlainSocketFactory implements SocketFactory {
     public final boolean isSecure(Socket sock) throws IllegalArgumentException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Socket may not be null.");
-        } //End block
+        } 
         {
             boolean varDFE99C0BC7B60D5C11521C3F20423928_446147946 = (sock.getClass() != Socket.class);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Socket not created by this factory.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varEFCDCF8D21AE7A43F6220E08DD901C1F_920322796 = (sock.isClosed());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Socket is closed.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(sock.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_555656576 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_555656576;
-        // ---------- Original Method ----------
-        //if (sock == null) {
-            //throw new IllegalArgumentException("Socket may not be null.");
-        //}
-        //if (sock.getClass() != Socket.class) {
-            //throw new IllegalArgumentException
-                //("Socket not created by this factory.");
-        //}
-        //if (sock.isClosed()) {
-            //throw new IllegalArgumentException("Socket is closed.");
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+                
+        
+        
+            
+        
+        
     }
 
     
@@ -143,19 +143,20 @@ public final class PlainSocketFactory implements SocketFactory {
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1501910278 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1501910278;
-        // ---------- Original Method ----------
-        //return (obj == this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.293 -0400", hash_original_method = "EE56C51BBF77F8839109E7F97EF2C650", hash_generated_method = "5AF8BECD12866E000A3B4F12C3E13CFD")
     @Override
     public int hashCode() {
         int varDC06475775C39622F4D2D279D1B4E581_943426593 = (PlainSocketFactory.class.hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_371630990 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_371630990;
-        // ---------- Original Method ----------
-        //return PlainSocketFactory.class.hashCode();
+        
+        
     }
 
     

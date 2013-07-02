@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.ref.WeakReference;
 import android.os.Handler;
@@ -27,7 +27,7 @@ public class SurfaceTexture {
     public  SurfaceTexture(int texName) {
         this(texName, false);
         addTaint(texName);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,38 +38,38 @@ public class SurfaceTexture {
             boolean var59AC82EBCD14E4AA50598F2AE3563759_371810823 = ((looper = Looper.myLooper()) != null);
             {
                 mEventHandler = new EventHandler(looper);
-            } //End block
+            } 
             {
                 boolean var9D854D75870272BF06142F5CE681F893_1368649591 = ((looper = Looper.getMainLooper()) != null);
                 {
                     mEventHandler = new EventHandler(looper);
-                } //End block
+                } 
                 {
                     mEventHandler = null;
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         nativeInit(texName, new WeakReference<SurfaceTexture>(this), allowSynchronousMode);
         addTaint(texName);
         addTaint(allowSynchronousMode);
-        // ---------- Original Method ----------
-        //Looper looper;
-        //if ((looper = Looper.myLooper()) != null) {
-            //mEventHandler = new EventHandler(looper);
-        //} else if ((looper = Looper.getMainLooper()) != null) {
-            //mEventHandler = new EventHandler(looper);
-        //} else {
-            //mEventHandler = null;
-        //}
-        //nativeInit(texName, new WeakReference<SurfaceTexture>(this), allowSynchronousMode);
+        
+        
+        
+            
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.435 -0400", hash_original_method = "D25F82A74C11430669962AA7817D10FE", hash_generated_method = "DD5B842D81AE394243957596610A8178")
     public void setOnFrameAvailableListener(OnFrameAvailableListener l) {
         mOnFrameAvailableListener = l;
-        // ---------- Original Method ----------
-        //mOnFrameAvailableListener = l;
+        
+        
     }
 
     
@@ -78,8 +78,8 @@ public class SurfaceTexture {
         nativeSetDefaultBufferSize(width, height);
         addTaint(width);
         addTaint(height);
-        // ---------- Original Method ----------
-        //nativeSetDefaultBufferSize(width, height);
+        
+        
     }
 
     
@@ -88,12 +88,12 @@ public class SurfaceTexture {
         int err = nativeUpdateTexImage();
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Error during updateTexImage (see logs)");
-        } //End block
-        // ---------- Original Method ----------
-        //int err = nativeUpdateTexImage();
-        //if (err != 0) {
-            //throw new RuntimeException("Error during updateTexImage (see logs)");
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -101,14 +101,14 @@ public class SurfaceTexture {
     public void getTransformMatrix(float[] mtx) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         nativeGetTransformMatrix(mtx);
         addTaint(mtx[0]);
-        // ---------- Original Method ----------
-        //if (mtx.length != 16) {
-            //throw new IllegalArgumentException();
-        //}
-        //nativeGetTransformMatrix(mtx);
+        
+        
+            
+        
+        
     }
 
     
@@ -117,16 +117,16 @@ public class SurfaceTexture {
         long var18BA78939055EC15B891B01928A9AA7A_529166601 = (nativeGetTimestamp());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1914633789 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1914633789;
-        // ---------- Original Method ----------
-        //return nativeGetTimestamp();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.437 -0400", hash_original_method = "D25304D195F58D125972FA32527A0B4B", hash_generated_method = "B7776AF5A8E3FC4F626BC7EA0247303C")
     public void release() {
         nativeRelease();
-        // ---------- Original Method ----------
-        //nativeRelease();
+        
+        
     }
 
     
@@ -135,17 +135,17 @@ public class SurfaceTexture {
         try 
         {
             nativeFinalize();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //nativeFinalize();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -217,7 +217,7 @@ public class SurfaceTexture {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.443 -0400", hash_original_method = "61F4EF1E830289140B20E24C64AAB8C1", hash_generated_method = "A594474F57F2910DF90E8F2B34F97C87")
         public  OutOfResourcesException() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -225,7 +225,7 @@ public class SurfaceTexture {
         public  OutOfResourcesException(String name) {
             super(name);
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -239,7 +239,7 @@ public class SurfaceTexture {
         public  EventHandler(Looper looper) {
             super(looper);
             addTaint(looper.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -248,12 +248,12 @@ public class SurfaceTexture {
         public void handleMessage(Message msg) {
             {
                 mOnFrameAvailableListener.onFrameAvailable(SurfaceTexture.this);
-            } //End block
+            } 
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //if (mOnFrameAvailableListener != null) {
-                //mOnFrameAvailableListener.onFrameAvailable(SurfaceTexture.this);
-            //}
+            
+            
+                
+            
         }
 
         

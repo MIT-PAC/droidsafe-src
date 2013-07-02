@@ -1,11 +1,11 @@
 package javax.net.ssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.KeyStore;
@@ -34,10 +34,10 @@ public class KeyManagerFactory {
         this.provider = provider;
         this.algorithm = algorithm;
         this.spiImpl = factorySpi;
-        // ---------- Original Method ----------
-        //this.provider = provider;
-        //this.algorithm = algorithm;
-        //this.spiImpl = factorySpi;
+        
+        
+        
+        
     }
 
     
@@ -81,23 +81,23 @@ public class KeyManagerFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.551 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "1A1DCC36A103E555F6EC026C47036616")
     public final String getAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_593380941 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_593380941 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_593380941 = algorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_593380941.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_593380941.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_593380941;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.552 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "78D70C30B13B48B1270D176ADCA47D4C")
     public final Provider getProvider() {
-        Provider varB4EAC82CA7396A68D541C85D26508E83_694770890 = null; //Variable for return #1
+        Provider varB4EAC82CA7396A68D541C85D26508E83_694770890 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_694770890 = provider;
-        varB4EAC82CA7396A68D541C85D26508E83_694770890.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_694770890.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_694770890;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
@@ -107,8 +107,8 @@ public class KeyManagerFactory {
         spiImpl.engineInit(ks, password);
         addTaint(ks.getTaint());
         addTaint(password[0]);
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(ks, password);
+        
+        
     }
 
     
@@ -116,19 +116,19 @@ public class KeyManagerFactory {
     public final void init(ManagerFactoryParameters spec) throws InvalidAlgorithmParameterException {
         spiImpl.engineInit(spec);
         addTaint(spec.getTaint());
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(spec);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.555 -0400", hash_original_method = "B9A1EAEE9A7433E4D131EF6C1483617B", hash_generated_method = "DE14C31D0C8DBB804F80C7A2C6ED8099")
     public final KeyManager[] getKeyManagers() {
-        KeyManager[] varB4EAC82CA7396A68D541C85D26508E83_370906568 = null; //Variable for return #1
+        KeyManager[] varB4EAC82CA7396A68D541C85D26508E83_370906568 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_370906568 = spiImpl.engineGetKeyManagers();
-        varB4EAC82CA7396A68D541C85D26508E83_370906568.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_370906568.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_370906568;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGetKeyManagers();
+        
+        
     }
 
     

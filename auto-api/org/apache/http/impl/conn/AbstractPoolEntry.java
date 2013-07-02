@@ -1,11 +1,11 @@
 package org.apache.http.impl.conn;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.apache.http.HttpHost;
@@ -39,58 +39,59 @@ public abstract class AbstractPoolEntry {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Connection operator may not be null");
-        } //End block
+        } 
         this.connOperator = connOperator;
         this.connection = connOperator.createConnection();
         this.route = route;
         this.tracker = null;
-        // ---------- Original Method ----------
-        //if (connOperator == null) {
-            //throw new IllegalArgumentException("Connection operator may not be null");
-        //}
-        //this.connOperator = connOperator;
-        //this.connection = connOperator.createConnection();
-        //this.route = route;
-        //this.tracker = null;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.378 -0400", hash_original_method = "079ECF1B585CB82D2480C2A65F324FB6", hash_generated_method = "AC643DA1D548FCBC05E69B046400B386")
     public Object getState() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1498080390 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1498080390 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1498080390 = state;
-        varB4EAC82CA7396A68D541C85D26508E83_1498080390.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1498080390.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1498080390;
-        // ---------- Original Method ----------
-        //return state;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.378 -0400", hash_original_method = "9D16F7D7F90D43454808FD39B427C300", hash_generated_method = "B09AF06B0499DA01F80DB609204967D6")
     public void setState(final Object state) {
         this.state = state;
-        // ---------- Original Method ----------
-        //this.state = state;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.379 -0400", hash_original_method = "52A8017CB43DDF5506166F15621D416B", hash_generated_method = "492A457CD669FAA17FCA4705BE40665B")
     public void open(HttpRoute route,
                      HttpContext context, HttpParams params) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Route must not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Parameters must not be null.");
-        } //End block
+        } 
         {
             boolean varA53A034F09BC6D3FD6551BC8635A9340_1105990495 = ((this.tracker != null) && this.tracker.isConnected());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Connection already open.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.tracker = new RouteTracker(route);
         final HttpHost proxy = route.getProxyHost();
         connOperator.openConnection
@@ -101,142 +102,145 @@ public abstract class AbstractPoolEntry {
         RouteTracker localTracker = tracker;
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Request aborted");
-        } //End block
+        } 
         {
             localTracker.connectTarget(this.connection.isSecure());
-        } //End block
+        } 
         {
             localTracker.connectProxy(proxy, this.connection.isSecure());
-        } //End block
+        } 
         addTaint(context.getTaint());
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.379 -0400", hash_original_method = "01B7EFBCCE4449D378FBB0354733064C", hash_generated_method = "DEF2751CAD9C595F7E28F98608350E16")
     public void tunnelTarget(boolean secure, HttpParams params) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Parameters must not be null.");
-        } //End block
+        } 
         {
             boolean var618E2647C174E7CCBE3421E13C15B597_1780417701 = ((this.tracker == null) || !this.tracker.isConnected());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Connection not open.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var9FCCA8FE59EBDE44EBD088F0040BBA40_346947117 = (this.tracker.isTunnelled());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
                 ("Connection is already tunnelled.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.connection.update(null, tracker.getTargetHost(),
                                secure, params);
         this.tracker.tunnelTarget(secure);
         addTaint(secure);
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //if (params == null) {
-            //throw new IllegalArgumentException
-                //("Parameters must not be null.");
-        //}
-        //if ((this.tracker == null) || !this.tracker.isConnected()) {
-            //throw new IllegalStateException("Connection not open.");
-        //}
-        //if (this.tracker.isTunnelled()) {
-            //throw new IllegalStateException
-                //("Connection is already tunnelled.");
-        //}
-        //this.connection.update(null, tracker.getTargetHost(),
-                               //secure, params);
-        //this.tracker.tunnelTarget(secure);
+        
+        
+            
+                
+        
+        
+            
+        
+        
+            
+                
+        
+        
+                               
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.380 -0400", hash_original_method = "5E0B2221F8D2EF0994AAAD177B417545", hash_generated_method = "2977ACCFD1CB7D4CDE5DE63D0DC9D23E")
     public void tunnelProxy(HttpHost next, boolean secure, HttpParams params) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Next proxy must not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Parameters must not be null.");
-        } //End block
+        } 
         {
             boolean var618E2647C174E7CCBE3421E13C15B597_1137129205 = ((this.tracker == null) || !this.tracker.isConnected());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Connection not open.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.connection.update(null, next, secure, params);
         this.tracker.tunnelProxy(next, secure);
         addTaint(next.getTaint());
         addTaint(secure);
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //if (next == null) {
-            //throw new IllegalArgumentException
-                //("Next proxy must not be null.");
-        //}
-        //if (params == null) {
-            //throw new IllegalArgumentException
-                //("Parameters must not be null.");
-        //}
-        //if ((this.tracker == null) || !this.tracker.isConnected()) {
-            //throw new IllegalStateException("Connection not open.");
-        //}
-        //this.connection.update(null, next, secure, params);
-        //this.tracker.tunnelProxy(next, secure);
+        
+        
+            
+                
+        
+        
+            
+                
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.381 -0400", hash_original_method = "1EA8AE44B2BF05DF27C07019783A5F43", hash_generated_method = "BD839EF8C295242389310E1F1A90C714")
     public void layerProtocol(HttpContext context, HttpParams params) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Parameters must not be null.");
-        } //End block
+        } 
         {
             boolean var618E2647C174E7CCBE3421E13C15B597_821907092 = ((this.tracker == null) || !this.tracker.isConnected());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Connection not open.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var6BCBA47712BDC3AE761EB09301F97C35_226129657 = (!this.tracker.isTunnelled());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
                 ("Protocol layering without a tunnel not supported.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var76BB44DF9EFE03570CD0DF7926366FE5_892204174 = (this.tracker.isLayered());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
                 ("Multiple protocol layering not supported.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final HttpHost target = tracker.getTargetHost();
         connOperator.updateSecureConnection(this.connection, target,
                                              context, params);
         this.tracker.layerProtocol(this.connection.isSecure());
         addTaint(context.getTaint());
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.382 -0400", hash_original_method = "9A8AC70CC76BCE1A1C90EAA4BDE4B23E", hash_generated_method = "B91CAD5B2338FFE73AC3E521D4481C73")
     protected void shutdownEntry() {
         tracker = null;
-        // ---------- Original Method ----------
-        //tracker = null;
+        
+        
     }
 
     

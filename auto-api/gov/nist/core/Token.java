@@ -1,11 +1,11 @@
 package gov.nist.core;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class Token {
@@ -19,18 +19,18 @@ public class Token {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.926 -0400", hash_original_method = "012AA2A69575899162813BAC8BEE7E0E", hash_generated_method = "012AA2A69575899162813BAC8BEE7E0E")
     public Token ()
     {
-        //Synthesized constructor
+        
     }
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.927 -0400", hash_original_method = "F8E0993DCB6F03EA51553585BFE853D1", hash_generated_method = "7414FB24D2DBACFBC1AC8A4219EA0919")
     public String getTokenValue() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1422635454 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1422635454 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1422635454 = this.tokenValue;
-        varB4EAC82CA7396A68D541C85D26508E83_1422635454.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1422635454.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1422635454;
-        // ---------- Original Method ----------
-        //return this.tokenValue;
+        
+        
     }
 
     
@@ -38,19 +38,20 @@ public class Token {
     public int getTokenType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_351736190 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_351736190;
-        // ---------- Original Method ----------
-        //return this.tokenType;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.927 -0400", hash_original_method = "C6D43B0C1DADE24AF5766A64C57BCE8F", hash_generated_method = "0DC65CE738DAFE3135A8CC5FA6F8CB18")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1388024532 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1388024532 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1388024532 = "tokenValue = " + tokenValue + "/tokenType = " + tokenType;
-        varB4EAC82CA7396A68D541C85D26508E83_1388024532.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1388024532.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1388024532;
-        // ---------- Original Method ----------
-        //return "tokenValue = " + tokenValue + "/tokenType = " + tokenType;
+        
+        
     }
 
     

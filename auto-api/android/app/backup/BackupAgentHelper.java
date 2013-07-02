@@ -1,11 +1,11 @@
 package android.app.backup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.ParcelFileDescriptor;
 import java.io.IOException;
@@ -18,55 +18,58 @@ public class BackupAgentHelper extends BackupAgent {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.394 -0400", hash_original_method = "DE5015AA9AF8D8BEBF76E2231F1F38FA", hash_generated_method = "DE5015AA9AF8D8BEBF76E2231F1F38FA")
     public BackupAgentHelper ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.394 -0400", hash_original_method = "9A231220123F2F65AC76F55439204202", hash_generated_method = "71A9218ACAB5A27C04DC9719D03E8F4A")
     @Override
     public void onBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
              ParcelFileDescriptor newState) throws IOException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mDispatcher.performBackup(oldState, data, newState);
         addTaint(oldState.getTaint());
         addTaint(data.getTaint());
         addTaint(newState.getTaint());
-        // ---------- Original Method ----------
-        //mDispatcher.performBackup(oldState, data, newState);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.395 -0400", hash_original_method = "73F73FE661E634DA2EF3458F6B4B1263", hash_generated_method = "3FEE493A9826F3F7AA65EE8E916D0CE8")
     @Override
     public void onRestore(BackupDataInput data, int appVersionCode, ParcelFileDescriptor newState) throws IOException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mDispatcher.performRestore(data, appVersionCode, newState);
         addTaint(data.getTaint());
         addTaint(appVersionCode);
         addTaint(newState.getTaint());
-        // ---------- Original Method ----------
-        //mDispatcher.performRestore(data, appVersionCode, newState);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.395 -0400", hash_original_method = "846FCA7C7B95F7683BAEC473D9697583", hash_generated_method = "B5C819C1D50F4A00152A944C82527AAD")
     public BackupHelperDispatcher getDispatcher() {
-        BackupHelperDispatcher varB4EAC82CA7396A68D541C85D26508E83_775410918 = null; //Variable for return #1
+        BackupHelperDispatcher varB4EAC82CA7396A68D541C85D26508E83_775410918 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_775410918 = mDispatcher;
-        varB4EAC82CA7396A68D541C85D26508E83_775410918.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_775410918.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_775410918;
-        // ---------- Original Method ----------
-        //return mDispatcher;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.396 -0400", hash_original_method = "6BB48EA11B41145F61B4C8931E48479C", hash_generated_method = "2F9323B6D1DBF2BDB4F92B6FC43A984D")
     public void addHelper(String keyPrefix, BackupHelper helper) {
         mDispatcher.addHelper(keyPrefix, helper);
         addTaint(keyPrefix.getTaint());
         addTaint(helper.getTaint());
-        // ---------- Original Method ----------
-        //mDispatcher.addHelper(keyPrefix, helper);
+        
+        
     }
 
     

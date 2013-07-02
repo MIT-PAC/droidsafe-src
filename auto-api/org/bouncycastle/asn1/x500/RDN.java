@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x500;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1EncodableVector;
@@ -23,8 +23,8 @@ public class RDN extends ASN1Encodable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.393 -0400", hash_original_method = "B2B65A892B577B3023594DECDAE0C7BC", hash_generated_method = "89280BB26732A955423A2E05E8E72AFE")
     private  RDN(ASN1Set values) {
         this.values = values;
-        // ---------- Original Method ----------
-        //this.values = values;
+        
+        
     }
 
     
@@ -36,27 +36,27 @@ public class RDN extends ASN1Encodable {
         this.values = new DERSet(new DERSequence(v));
         addTaint(oid.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //ASN1EncodableVector v = new ASN1EncodableVector();
-        //v.add(oid);
-        //v.add(value);
-        //this.values = new DERSet(new DERSequence(v));
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.394 -0400", hash_original_method = "70441AB748507844E6B6BCC428FBB7E0", hash_generated_method = "7BBD5B09B6231808260E121EB4C29BD7")
     public  RDN(AttributeTypeAndValue attrTAndV) {
         this.values = new DERSet(attrTAndV);
-        // ---------- Original Method ----------
-        //this.values = new DERSet(attrTAndV);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.394 -0400", hash_original_method = "64FFFA196C50B73DE4BDB139C105E877", hash_generated_method = "FE3A4F5D64F6663C43C30F2372D32E20")
     public  RDN(AttributeTypeAndValue[] aAndVs) {
         this.values = new DERSet(aAndVs);
-        // ---------- Original Method ----------
-        //this.values = new DERSet(aAndVs);
+        
+        
     }
 
     
@@ -73,78 +73,81 @@ public class RDN extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.395 -0400", hash_original_method = "8A639F09C3F110E6BEBA76653F26863C", hash_generated_method = "9A7064E6F1A3A780787D77512D62949C")
     public boolean isMultiValued() {
         boolean var4F86FC141AA103956455F16320BF7065_803831811 = (this.values.size() > 1);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1868025395 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1868025395;
-        // ---------- Original Method ----------
-        //return this.values.size() > 1;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.396 -0400", hash_original_method = "C47887FAFD60151A3B1C3C44B7665548", hash_generated_method = "77B9E3132EA8DBA940CADB1E235E1369")
     public AttributeTypeAndValue getFirst() {
-        AttributeTypeAndValue varB4EAC82CA7396A68D541C85D26508E83_236528866 = null; //Variable for return #1
-        AttributeTypeAndValue varB4EAC82CA7396A68D541C85D26508E83_1281801367 = null; //Variable for return #2
+        AttributeTypeAndValue varB4EAC82CA7396A68D541C85D26508E83_236528866 = null; 
+        AttributeTypeAndValue varB4EAC82CA7396A68D541C85D26508E83_1281801367 = null; 
         {
             boolean var54F40CD1C1801E3A72C98CD218C98919_1434204676 = (this.values.size() == 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_236528866 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1281801367 = AttributeTypeAndValue.getInstance(this.values.getObjectAt(0));
-        AttributeTypeAndValue varA7E53CE21691AB073D9660D615818899_2070721996; //Final return value
+        AttributeTypeAndValue varA7E53CE21691AB073D9660D615818899_2070721996; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2070721996 = varB4EAC82CA7396A68D541C85D26508E83_236528866;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2070721996 = varB4EAC82CA7396A68D541C85D26508E83_1281801367;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2070721996.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2070721996.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2070721996;
-        // ---------- Original Method ----------
-        //if (this.values.size() == 0)
-        //{
-            //return null;
-        //}
-        //return AttributeTypeAndValue.getInstance(this.values.getObjectAt(0));
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.397 -0400", hash_original_method = "BEE890DAA6519CDB424A36294BC48156", hash_generated_method = "AAD26373C470F8D266407C4104BD912A")
     public AttributeTypeAndValue[] getTypesAndValues() {
-        AttributeTypeAndValue[] varB4EAC82CA7396A68D541C85D26508E83_1929488572 = null; //Variable for return #1
+        AttributeTypeAndValue[] varB4EAC82CA7396A68D541C85D26508E83_1929488572 = null; 
         AttributeTypeAndValue[] tmp = new AttributeTypeAndValue[values.size()];
         {
             int i = 0;
             {
                 tmp[i] = AttributeTypeAndValue.getInstance(values.getObjectAt(i));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1929488572 = tmp;
-        varB4EAC82CA7396A68D541C85D26508E83_1929488572.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1929488572.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1929488572;
-        // ---------- Original Method ----------
-        //AttributeTypeAndValue[] tmp = new AttributeTypeAndValue[values.size()];
-        //for (int i = 0; i != tmp.length; i++)
-        //{
-            //tmp[i] = AttributeTypeAndValue.getInstance(values.getObjectAt(i));
-        //}
-        //return tmp;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.398 -0400", hash_original_method = "C51EA85277B01B717571B534CACD612E", hash_generated_method = "4EE426731246FA431E7D10DF94F6976C")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1824158216 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1824158216 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1824158216 = values;
-        varB4EAC82CA7396A68D541C85D26508E83_1824158216.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1824158216.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1824158216;
-        // ---------- Original Method ----------
-        //return values;
+        
+        
     }
 
     

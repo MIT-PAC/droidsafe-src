@@ -1,11 +1,11 @@
 package org.apache.commons.codec.binary;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.commons.codec.BinaryDecoder;
 import org.apache.commons.codec.BinaryEncoder;
@@ -17,7 +17,7 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.164 -0400", hash_original_method = "2DB9D16143059D09A54A3BB31C55E28D", hash_generated_method = "2DB9D16143059D09A54A3BB31C55E28D")
     public Base64 ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -32,6 +32,7 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isArrayByteBase64(byte[] arrayOctect) {
         arrayOctect = discardWhitespace(arrayOctect);
         int length = arrayOctect.length;
@@ -47,45 +48,50 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] encodeBase64(byte[] binaryData) {
         return encodeBase64(binaryData, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] encodeBase64Chunked(byte[] binaryData) {
         return encodeBase64(binaryData, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.165 -0400", hash_original_method = "27928DA5608E3EA81ACF98D07D1CDAA8", hash_generated_method = "2BBA9EC7FD16FA8674DA626C94F7BB2E")
     public Object decode(Object pObject) throws DecoderException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_789721773 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_789721773 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new DecoderException("Parameter supplied to Base64 decode is not a byte[]");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_789721773 = decode((byte[]) pObject);
         addTaint(pObject.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_789721773.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_789721773.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_789721773;
-        // ---------- Original Method ----------
-        //if (!(pObject instanceof byte[])) {
-            //throw new DecoderException("Parameter supplied to Base64 decode is not a byte[]");
-        //}
-        //return decode((byte[]) pObject);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.165 -0400", hash_original_method = "E9A5741B84FE67E582817B8B79597420", hash_generated_method = "F1D1C5CBF86CB804F79814907E82BDF4")
     public byte[] decode(byte[] pArray) {
         byte[] var1D913E090727938764A38251CCC47DBA_1555278719 = (decodeBase64(pArray));
         addTaint(pArray[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_568870082 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_568870082;
-        // ---------- Original Method ----------
-        //return decodeBase64(pArray);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] encodeBase64(byte[] binaryData, boolean isChunked) {
         int lengthDataBits = binaryData.length * EIGHTBIT;
         int fewerThan24bits = lengthDataBits % TWENTYFOURBITGROUP;
@@ -185,6 +191,7 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decodeBase64(byte[] base64Data) {
         base64Data = discardNonBase64(base64Data);
         if (base64Data.length == 0) {
@@ -231,6 +238,7 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static byte[] discardWhitespace(byte[] data) {
         byte groomedData[] = new byte[data.length];
         int bytesCopied = 0;
@@ -251,6 +259,7 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static byte[] discardNonBase64(byte[] data) {
         byte groomedData[] = new byte[data.length];
         int bytesCopied = 0;
@@ -265,34 +274,36 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.168 -0400", hash_original_method = "D5F82E7B8136CE61250AF5358F628FEE", hash_generated_method = "43192D96DB86E0B49D4CECD842191F6B")
     public Object encode(Object pObject) throws EncoderException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_74183791 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_74183791 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new EncoderException(
                 "Parameter supplied to Base64 encode is not a byte[]");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_74183791 = encode((byte[]) pObject);
         addTaint(pObject.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_74183791.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_74183791.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_74183791;
-        // ---------- Original Method ----------
-        //if (!(pObject instanceof byte[])) {
-            //throw new EncoderException(
-                //"Parameter supplied to Base64 encode is not a byte[]");
-        //}
-        //return encode((byte[]) pObject);
+        
+        
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.168 -0400", hash_original_method = "D3EC39ECED0CD0D362D80F2CDBB3BB21", hash_generated_method = "B7D1AA1B65C6643E8CF8D20C8376040A")
     public byte[] encode(byte[] pArray) {
         byte[] varA92A7E559FFCE381A6CE5DEBD2A9417B_543118165 = (encodeBase64(pArray, false));
         addTaint(pArray[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_485263436 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_485263436;
-        // ---------- Original Method ----------
-        //return encodeBase64(pArray, false);
+        
+        
     }
 
     

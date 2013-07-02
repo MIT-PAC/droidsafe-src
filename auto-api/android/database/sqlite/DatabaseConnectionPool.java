@@ -1,11 +1,11 @@
 package android.database.sqlite;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.Resources;
 import android.os.SystemClock;
@@ -35,45 +35,47 @@ class DatabaseConnectionPool {
             boolean var7061DF8A5335B809C796044C2A062407_98462310 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 Log.d(TAG, "Max Pool Size: " + mMaxPoolSize);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //this.mParentDbObj = db;
-        //if (Log.isLoggable(TAG, Log.DEBUG)) {
-            //Log.d(TAG, "Max Pool Size: " + mMaxPoolSize);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.091 -0400", hash_original_method = "BA169038399FE60257FEACB6F83742BB", hash_generated_method = "2C96F6090842E5B42D9C86C272D19E7F")
     synchronized void close() {
         {
             boolean var7061DF8A5335B809C796044C2A062407_1560545723 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 Log.d(TAG, "Closing the connection pool on " + mParentDbObj.getPath() + toString());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int i = mPool.size() - 1;
             {
                 mPool.get(i).mDb.close();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mPool.clear();
-        // ---------- Original Method ----------
-        //if (Log.isLoggable(TAG, Log.DEBUG)) {
-            //Log.d(TAG, "Closing the connection pool on " + mParentDbObj.getPath() + toString());
-        //}
-        //for (int i = mPool.size() - 1; i >= 0; i--) {
-            //mPool.get(i).mDb.close();
-        //}
-        //mPool.clear();
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.093 -0400", hash_original_method = "29479C12BC42199BDE721BCCF404E99A", hash_generated_method = "E7F90338B20EA4F9B6D8BD3EAE6AA0D4")
     synchronized SQLiteDatabase get(String sql) {
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_662799551 = null; //Variable for return #1
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_662799551 = null; 
         SQLiteDatabase db = null;
         PoolObj poolObj = null;
         int poolSize = mPool.size();
@@ -81,15 +83,15 @@ class DatabaseConnectionPool {
             boolean var7061DF8A5335B809C796044C2A062407_346300136 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 doAsserts();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var9B1D07D25E4500725BE2762D29331B41_835011691 = (getFreePoolSize() == 0);
             {
                 {
                     {
                         poolObj = mPool.get(0);
-                    } //End block
+                    } 
                     {
                         {
                             int i = 0;
@@ -98,25 +100,25 @@ class DatabaseConnectionPool {
                                     boolean var319607DB85374E6772E2EF345FC32D08_923057484 = (mPool.get(i).mDb.isInStatementCache(sql));
                                     {
                                         poolObj = mPool.get(i);
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
+                                    } 
+                                } 
+                            } 
+                        } 
                         {
                             {
                                 rand = new Random(SystemClock.elapsedRealtime());
-                            } //End block
+                            } 
                             poolObj = mPool.get(rand.nextInt(mMaxPoolSize));
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     db = poolObj.mDb;
-                } //End block
+                } 
                 {
                     db = mParentDbObj.createPoolConnection((short)(poolSize + 1));
                     poolObj = new PoolObj(db);
                     mPool.add(poolSize, poolObj);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 {
                     int i = 0;
@@ -125,10 +127,10 @@ class DatabaseConnectionPool {
                             boolean varBCF331DAA437C07B9E1DC7F5A9576EA7_540370485 = (mPool.get(i).isFree() && mPool.get(i).mDb.isInStatementCache(sql));
                             {
                                 poolObj = mPool.get(i);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     {
                         int i = 0;
@@ -137,100 +139,102 @@ class DatabaseConnectionPool {
                                 boolean var58C433B19A8B81690E11AB44135FE75C_919793289 = (mPool.get(i).isFree());
                                 {
                                     poolObj = mPool.get(i);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 db = poolObj.mDb;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         poolObj.acquire();
         {
             boolean var7061DF8A5335B809C796044C2A062407_1545411635 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 Log.d(TAG, "END get-connection: " + toString() + poolObj.toString());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_662799551 = db;
         addTaint(sql.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_662799551.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_662799551.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_662799551;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.094 -0400", hash_original_method = "C508883C202336989018472FC420E1EA", hash_generated_method = "4C034D207F4C86A2067F5B516B8302C5")
     synchronized void release(SQLiteDatabase db) {
         {
             boolean var7061DF8A5335B809C796044C2A062407_1190566996 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 doAsserts();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         PoolObj poolObj = mPool.get(db.mConnectionNum - 1);
         {
             boolean var7061DF8A5335B809C796044C2A062407_448794401 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 Log.d(TAG, "BEGIN release-conn: " + toString() + poolObj.toString());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varD844887BCF703DE90E24EEEBA4E5F37C_1327896219 = (poolObj.isFree());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Releasing object already freed: " +
                     db.mConnectionNum);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         poolObj.release();
         {
             boolean var7061DF8A5335B809C796044C2A062407_524115095 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 Log.d(TAG, "END release-conn: " + toString() + poolObj.toString());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(db.getTaint());
-        // ---------- Original Method ----------
-        //if (Log.isLoggable(TAG, Log.DEBUG)) {
-            //assert db.mConnectionNum > 0;
-            //doAsserts();
-            //assert mPool.get(db.mConnectionNum - 1).mDb == db;
-        //}
-        //PoolObj poolObj = mPool.get(db.mConnectionNum - 1);
-        //if (Log.isLoggable(TAG, Log.DEBUG)) {
-            //Log.d(TAG, "BEGIN release-conn: " + toString() + poolObj.toString());
-        //}
-        //if (poolObj.isFree()) {
-            //throw new IllegalStateException("Releasing object already freed: " +
-                    //db.mConnectionNum);
-        //}
-        //poolObj.release();
-        //if (Log.isLoggable(TAG, Log.DEBUG)) {
-            //Log.d(TAG, "END release-conn: " + toString() + poolObj.toString());
-        //}
+        
+        
+            
+            
+            
+        
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.095 -0400", hash_original_method = "D267C5BE0AC41A86583B003ED8AE5C35", hash_generated_method = "FBEB39815C024EF6CB0C8C8D22277CCA")
     synchronized ArrayList<SQLiteDatabase> getConnectionList() {
-        ArrayList<SQLiteDatabase> varB4EAC82CA7396A68D541C85D26508E83_1985993242 = null; //Variable for return #1
+        ArrayList<SQLiteDatabase> varB4EAC82CA7396A68D541C85D26508E83_1985993242 = null; 
         ArrayList<SQLiteDatabase> list = new ArrayList<SQLiteDatabase>();
         {
             int i = mPool.size() - 1;
             {
                 list.add(mPool.get(i).mDb);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1985993242 = list;
-        varB4EAC82CA7396A68D541C85D26508E83_1985993242.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1985993242.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1985993242;
-        // ---------- Original Method ----------
-        //ArrayList<SQLiteDatabase> list = new ArrayList<SQLiteDatabase>();
-        //for (int i = mPool.size() - 1; i >= 0; i--) {
-            //list.add(mPool.get(i).mDb);
-        //}
-        //return list;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -242,37 +246,38 @@ class DatabaseConnectionPool {
             {
                 {
                     boolean var6EFA29D66A5AE03A39596A10625232FD_1893899457 = (mPool.get(i).isFree());
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328331245 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328331245;
-        // ---------- Original Method ----------
-        //int count = 0;
-        //for (int i = mPool.size() - 1; i >= 0; i--) {
-            //if (mPool.get(i).isFree()) {
-                //count++;
-            //}
-        //}
-        //return count++;
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.096 -0400", hash_original_method = "94796DA212EFDAF0BC89ABDE3263411C", hash_generated_method = "4879D8A2524B4779DAB3E74B623512B3")
      ArrayList<PoolObj> getPool() {
-        ArrayList<PoolObj> varB4EAC82CA7396A68D541C85D26508E83_1318284326 = null; //Variable for return #1
+        ArrayList<PoolObj> varB4EAC82CA7396A68D541C85D26508E83_1318284326 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1318284326 = mPool;
-        varB4EAC82CA7396A68D541C85D26508E83_1318284326.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1318284326.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1318284326;
-        // ---------- Original Method ----------
-        //return mPool;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.102 -0400", hash_original_method = "9BBFDBA2A96C9EEA2C362B37886D3C5D", hash_generated_method = "C1453FBBAC240626E8FE712502CD3A3F")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2044607846 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2044607846 = null; 
         StringBuilder buff = new StringBuilder();
         buff.append("db: ");
         buff.append(mParentDbObj.getPath());
@@ -289,29 +294,30 @@ class DatabaseConnectionPool {
             {
                 buff.append("\n");
                 buff.append(p.toString());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2044607846 = buff.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_2044607846.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2044607846.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2044607846;
-        // ---------- Original Method ----------
-        //StringBuilder buff = new StringBuilder();
-        //buff.append("db: ");
-        //buff.append(mParentDbObj.getPath());
-        //buff.append(", totalsize = ");
-        //buff.append(mPool.size());
-        //buff.append(", #free = ");
-        //buff.append(getFreePoolSize());
-        //buff.append(", maxpoolsize = ");
-        //buff.append(mMaxPoolSize);
-        //for (PoolObj p : mPool) {
-            //buff.append("\n");
-            //buff.append(p.toString());
-        //}
-        //return buff.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.103 -0400", hash_original_method = "8B6A0047A202C3A27DBFDE3CD809337B", hash_generated_method = "73B92839C89ADE35EBD39C34A71DEBC0")
     private void doAsserts() {
         {
@@ -319,21 +325,21 @@ class DatabaseConnectionPool {
             boolean var54BC86BAC9CE390930BD89A6719C890C_425661240 = (i < mPool.size());
             {
                 mPool.get(i).verify();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //for (int i = 0; i < mPool.size(); i++) {
-            //mPool.get(i).verify();
-            //assert mPool.get(i).mDb.mConnectionNum == (i + 1);
-        //}
+            } 
+        } 
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.103 -0400", hash_original_method = "96488BAB5A39A9E992D6669775E5CBE2", hash_generated_method = "9D4509CE641891DA5CEC26B706A255AF")
     synchronized void setMaxPoolSize(int size) {
         mMaxPoolSize = size;
-        // ---------- Original Method ----------
-        //mMaxPoolSize = size;
+        
+        
     }
 
     
@@ -341,8 +347,8 @@ class DatabaseConnectionPool {
     synchronized int getMaxPoolSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1367700038 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1367700038;
-        // ---------- Original Method ----------
-        //return mMaxPoolSize;
+        
+        
     }
 
     
@@ -352,8 +358,8 @@ class DatabaseConnectionPool {
         addTaint(db.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_696941914 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_696941914;
-        // ---------- Original Method ----------
-        //return mPool.get(db.mConnectionNum - 1).isFree();
+        
+        
     }
 
     
@@ -362,8 +368,8 @@ class DatabaseConnectionPool {
         int var592A56EFB728CEDE41CBCA444E33C6A9_1028027431 = (mPool.size());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_330292086 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_330292086;
-        // ---------- Original Method ----------
-        //return mPool.size();
+        
+        
     }
 
     
@@ -384,8 +390,8 @@ class DatabaseConnectionPool {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.107 -0400", hash_original_method = "DC316C09CB4059B013C925E31D9707E2", hash_generated_method = "C727BF994E820394181F7F366C811F68")
         public  PoolObj(SQLiteDatabase db) {
             mDb = db;
-            // ---------- Original Method ----------
-            //mDb = db;
+            
+            
         }
 
         
@@ -396,18 +402,18 @@ class DatabaseConnectionPool {
                 {
                     long id = Thread.currentThread().getId();
                     mHolderIds.add(id);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mFreeBusyFlag = BUSY;
-            // ---------- Original Method ----------
-            //if (Log.isLoggable(TAG, Log.DEBUG)) {
-                //assert isFree();
-                //long id = Thread.currentThread().getId();
-                //assert !mHolderIds.contains(id);
-                //mHolderIds.add(id);
-            //}
-            //mNumHolders++;
-            //mFreeBusyFlag = BUSY;
+            
+            
+                
+                
+                
+                
+            
+            
+            
         }
 
         
@@ -418,22 +424,22 @@ class DatabaseConnectionPool {
                 {
                     long id = Thread.currentThread().getId();
                     mHolderIds.remove(id);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 mFreeBusyFlag = FREE;
-            } //End block
-            // ---------- Original Method ----------
-            //if (Log.isLoggable(TAG, Log.DEBUG)) {
-                //long id = Thread.currentThread().getId();
-                //assert mHolderIds.size() == mNumHolders;
-                //assert mHolderIds.contains(id);
-                //mHolderIds.remove(id);
-            //}
-            //mNumHolders--;
-            //if (mNumHolders == 0) {
-                //mFreeBusyFlag = FREE;
-            //}
+            } 
+            
+            
+                
+                
+                
+                
+            
+            
+            
+                
+            
         }
 
         
@@ -443,26 +449,26 @@ class DatabaseConnectionPool {
                 boolean varF062350F2983BA11C030C10A71A73C26_1778445409 = (Log.isLoggable(TAG, Log.DEBUG));
                 {
                     verify();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_697599345 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_697599345;
-            // ---------- Original Method ----------
-            //if (Log.isLoggable(TAG, Log.DEBUG)) {
-                //verify();
-            //}
-            //return (mFreeBusyFlag == FREE);
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.108 -0400", hash_original_method = "55CDA36173BE763B72AF18BF479F1305", hash_generated_method = "D870C0B48C8F780AB14EAB37DCC5B591")
         private synchronized void verify() {
-            // ---------- Original Method ----------
-            //if (mFreeBusyFlag == FREE) {
-                //assert mNumHolders == 0;
-            //} else {
-                //assert mNumHolders > 0;
-            //}
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -470,15 +476,15 @@ class DatabaseConnectionPool {
         synchronized int getNumHolders() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1643284459 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1643284459;
-            // ---------- Original Method ----------
-            //return mNumHolders;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.117 -0400", hash_original_method = "6B148DC19CAC05BE88274109F5158F0D", hash_generated_method = "CEA3E8A1FD28440BA3FC698748C7C3C7")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_848306929 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_848306929 = null; 
             StringBuilder buff = new StringBuilder();
             buff.append(", conn # ");
             buff.append(mDb.mConnectionNum);
@@ -493,26 +499,26 @@ class DatabaseConnectionPool {
                     Long l = var0E6E6B9552BE314E653CCAB776377B09_1485567600.next();
                     {
                         buff.append(", id = " + l);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_848306929 = buff.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_848306929.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_848306929.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_848306929;
-            // ---------- Original Method ----------
-            //StringBuilder buff = new StringBuilder();
-            //buff.append(", conn # ");
-            //buff.append(mDb.mConnectionNum);
-            //buff.append(", mCountHolders = ");
-            //synchronized(this) {
-                //buff.append(mNumHolders);
-                //buff.append(", freeBusyFlag = ");
-                //buff.append(mFreeBusyFlag);
-                //for (Long l : mHolderIds) {
-                    //buff.append(", id = " + l);
-                //}
-            //}
-            //return buff.toString();
+            
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                    
+                
+            
+            
         }
 
         

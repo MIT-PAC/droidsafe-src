@@ -1,11 +1,11 @@
 package org.xml.sax.helpers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -30,11 +30,12 @@ public class NamespaceSupport {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.933 -0400", hash_original_method = "1F62AD2938072A93E19EAFFCDA555D07", hash_generated_method = "5851AF68D843BB425B4FF66193756222")
     public  NamespaceSupport() {
         reset();
-        // ---------- Original Method ----------
-        //reset();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.933 -0400", hash_original_method = "2A27A75937E4BE02DA5FD7B031C4079A", hash_generated_method = "AD54F05B2FA16CFBF38021AFA9C2A42C")
     public void reset() {
         contexts = new Context[32];
@@ -42,15 +43,16 @@ public class NamespaceSupport {
         contextPos = 0;
         contexts[contextPos] = currentContext = new Context();
         currentContext.declarePrefix("xml", XMLNS);
-        // ---------- Original Method ----------
-        //contexts = new Context[32];
-        //namespaceDeclUris = false;
-        //contextPos = 0;
-        //contexts[contextPos] = currentContext = new Context();
-        //currentContext.declarePrefix("xml", XMLNS);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.934 -0400", hash_original_method = "B186F7F0BF353B1A746862E337C50A69", hash_generated_method = "B2DEF4CF177D990D9AE81A6169C24230")
     public void pushContext() {
         int max = contexts.length;
@@ -60,153 +62,159 @@ public class NamespaceSupport {
             System.arraycopy(contexts, 0, newContexts, 0, max);
             max *= 2;
             contexts = newContexts;
-        } //End block
+        } 
         currentContext = contexts[contextPos];
         {
             contexts[contextPos] = currentContext = new Context();
-        } //End block
+        } 
         {
             currentContext.setParent(contexts[contextPos - 1]);
-        } //End block
-        // ---------- Original Method ----------
-        //int max = contexts.length;
-        //contexts [contextPos].declsOK = false;
-        //contextPos++;
-        //if (contextPos >= max) {
-        //Context newContexts[] = new Context[max*2];
-        //System.arraycopy(contexts, 0, newContexts, 0, max);
-        //max *= 2;
-        //contexts = newContexts;
-    //}
-        //currentContext = contexts[contextPos];
-        //if (currentContext == null) {
-        //contexts[contextPos] = currentContext = new Context();
-    //}
-        //if (contextPos > 0) {
-        //currentContext.setParent(contexts[contextPos - 1]);
-    //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.934 -0400", hash_original_method = "D28ACF4ED7DED6C7ED370F52380381BA", hash_generated_method = "ED5C2325002017E243DEE0E4AD88FB26")
     public void popContext() {
         contexts[contextPos].clear();
         {
             if (DroidSafeAndroidRuntime.control) throw new EmptyStackException();
-        } //End block
+        } 
         currentContext = contexts[contextPos];
-        // ---------- Original Method ----------
-        //contexts[contextPos].clear();
-        //contextPos--;
-        //if (contextPos < 0) {
-        //throw new EmptyStackException();
-    //}
-        //currentContext = contexts[contextPos];
+        
+        
+        
+        
+        
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.934 -0400", hash_original_method = "90A3EE210CAE689DFC3CD58893529A76", hash_generated_method = "13D68B7734C8FBB3EEA0C68FF7EE3D5D")
     public boolean declarePrefix(String prefix, String uri) {
         {
             boolean var6CD89D1BDC90A7556F69D069AB4E587C_1891082739 = (prefix.equals("xml") || prefix.equals("xmlns"));
             {
                 currentContext.declarePrefix(prefix, uri);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(prefix.getTaint());
         addTaint(uri.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1019637492 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1019637492;
-        // ---------- Original Method ----------
-        //if (prefix.equals("xml") || prefix.equals("xmlns")) {
-        //return false;
-    //} else {
-        //currentContext.declarePrefix(prefix, uri);
-        //return true;
-    //}
+        
+        
+        
+    
+        
+        
+    
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.935 -0400", hash_original_method = "568BC23E816C8735D1D944210F1F3C08", hash_generated_method = "0FFDE5EE46486233B28E32E455F21C56")
     public String [] processName(String qName, String parts[],
                   boolean isAttribute) {
-        String [] varB4EAC82CA7396A68D541C85D26508E83_834374897 = null; //Variable for return #1
-        String [] varB4EAC82CA7396A68D541C85D26508E83_1728722062 = null; //Variable for return #2
+        String [] varB4EAC82CA7396A68D541C85D26508E83_834374897 = null; 
+        String [] varB4EAC82CA7396A68D541C85D26508E83_1728722062 = null; 
         String myParts[] = currentContext.processName(qName, isAttribute);
         {
             varB4EAC82CA7396A68D541C85D26508E83_834374897 = null;
-        } //End block
+        } 
         {
             parts[0] = myParts[0];
             parts[1] = myParts[1];
             parts[2] = myParts[2];
             varB4EAC82CA7396A68D541C85D26508E83_1728722062 = parts;
-        } //End block
+        } 
         addTaint(qName.getTaint());
         addTaint(parts[0].getTaint());
         addTaint(isAttribute);
-        String [] varA7E53CE21691AB073D9660D615818899_1598977241; //Final return value
+        String [] varA7E53CE21691AB073D9660D615818899_1598977241; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1598977241 = varB4EAC82CA7396A68D541C85D26508E83_834374897;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1598977241 = varB4EAC82CA7396A68D541C85D26508E83_1728722062;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1598977241.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1598977241.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1598977241;
-        // ---------- Original Method ----------
-        //String myParts[] = currentContext.processName(qName, isAttribute);
-        //if (myParts == null) {
-        //return null;
-    //} else {
-        //parts[0] = myParts[0];
-        //parts[1] = myParts[1];
-        //parts[2] = myParts[2];
-        //return parts;
-    //}
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.937 -0400", hash_original_method = "AC6673E983BE229DBE393CCBB4A72E75", hash_generated_method = "55CA8A44E3A90B35CB70019CD44FFD61")
     public String getURI(String prefix) {
-        String varB4EAC82CA7396A68D541C85D26508E83_709249020 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_709249020 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_709249020 = currentContext.getURI(prefix);
         addTaint(prefix.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_709249020.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_709249020.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_709249020;
-        // ---------- Original Method ----------
-        //return currentContext.getURI(prefix);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.939 -0400", hash_original_method = "A5B18FED447546E052ABC48FA9E4C291", hash_generated_method = "3E5C833471A8002101C0576FD00FE4A4")
     public Enumeration getPrefixes() {
-        Enumeration varB4EAC82CA7396A68D541C85D26508E83_463015657 = null; //Variable for return #1
+        Enumeration varB4EAC82CA7396A68D541C85D26508E83_463015657 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_463015657 = currentContext.getPrefixes();
-        varB4EAC82CA7396A68D541C85D26508E83_463015657.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_463015657.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_463015657;
-        // ---------- Original Method ----------
-        //return currentContext.getPrefixes();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.940 -0400", hash_original_method = "EEA9ABC8ACBC17B2454F5F5D40E93A34", hash_generated_method = "3D6ACB652CEE29A1A4BF9A5D51202AE4")
     public String getPrefix(String uri) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1657681916 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1657681916 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1657681916 = currentContext.getPrefix(uri);
         addTaint(uri.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1657681916.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1657681916.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1657681916;
-        // ---------- Original Method ----------
-        //return currentContext.getPrefix(uri);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.940 -0400", hash_original_method = "E9FAC6924E2013A13EA977C97AEA2AF7", hash_generated_method = "0A329FC332D8F9661168B854FBFAE3F2")
     public Enumeration getPrefixes(String uri) {
-        Enumeration varB4EAC82CA7396A68D541C85D26508E83_1941844879 = null; //Variable for return #1
+        Enumeration varB4EAC82CA7396A68D541C85D26508E83_1941844879 = null; 
         ArrayList<String> prefixes = new ArrayList<String>();
         Enumeration allPrefixes = getPrefixes();
         {
@@ -217,38 +225,40 @@ public class NamespaceSupport {
                     boolean varAACADE59064A2A7EDFAD29068544E51A_1097239464 = (uri.equals(getURI(prefix)));
                     {
                         prefixes.add(prefix);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1941844879 = Collections.enumeration(prefixes);
         addTaint(uri.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1941844879.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1941844879.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1941844879;
-        // ---------- Original Method ----------
-        //ArrayList<String> prefixes = new ArrayList<String>();
-        //Enumeration allPrefixes = getPrefixes();
-        //while (allPrefixes.hasMoreElements()) {
-            //String prefix = (String) allPrefixes.nextElement();
-            //if (uri.equals(getURI(prefix))) {
-                //prefixes.add(prefix);
-            //}
-        //}
-        //return Collections.enumeration(prefixes);
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.941 -0400", hash_original_method = "410BA98433560BB4462E66EC18960649", hash_generated_method = "150190C1F821BEEB80880DA7AEB42056")
     public Enumeration getDeclaredPrefixes() {
-        Enumeration varB4EAC82CA7396A68D541C85D26508E83_1618962288 = null; //Variable for return #1
+        Enumeration varB4EAC82CA7396A68D541C85D26508E83_1618962288 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1618962288 = currentContext.getDeclaredPrefixes();
-        varB4EAC82CA7396A68D541C85D26508E83_1618962288.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1618962288.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1618962288;
-        // ---------- Original Method ----------
-        //return currentContext.getDeclaredPrefixes();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.942 -0400", hash_original_method = "D57A861BE58AF20E8C88DE55C319347D", hash_generated_method = "D1210C57E7481D7D6CDF790F18C12553")
     public void setNamespaceDeclUris(boolean value) {
         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException ();
@@ -257,19 +267,19 @@ public class NamespaceSupport {
         {
             contexts[contextPos] = currentContext = new Context();
             currentContext.declarePrefix("xml", XMLNS);
-        } //End block
-        // ---------- Original Method ----------
-        //if (contextPos != 0)
-        //throw new IllegalStateException ();
-        //if (value == namespaceDeclUris)
-        //return;
-        //namespaceDeclUris = value;
-        //if (value)
-        //currentContext.declarePrefix ("xmlns", NSDECL);
-    //else {
-        //contexts[contextPos] = currentContext = new Context();
-        //currentContext.declarePrefix("xml", XMLNS);
-    //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+    
     }
 
     
@@ -277,8 +287,8 @@ public class NamespaceSupport {
     public boolean isNamespaceDeclUris() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_592357278 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_592357278;
-        // ---------- Original Method ----------
-        //return namespaceDeclUris;
+        
+        
     }
 
     
@@ -314,8 +324,8 @@ public class NamespaceSupport {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.943 -0400", hash_original_method = "CD5C82C799E78C74801FDB521CEE7324", hash_generated_method = "D7F93DBD3C237D58A202C82545BE75D2")
           Context() {
             copyTables();
-            // ---------- Original Method ----------
-            //copyTables();
+            
+            
         }
 
         
@@ -330,16 +340,16 @@ public class NamespaceSupport {
             defaultNS = parent.defaultNS;
             declSeen = false;
             declsOK = true;
-            // ---------- Original Method ----------
-            //this.parent = parent;
-            //declarations = null;
-            //prefixTable = parent.prefixTable;
-            //uriTable = parent.uriTable;
-            //elementNameTable = parent.elementNameTable;
-            //attributeNameTable = parent.attributeNameTable;
-            //defaultNS = parent.defaultNS;
-            //declSeen = false;
-            //declsOK = true;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -351,13 +361,13 @@ public class NamespaceSupport {
             elementNameTable = null;
             attributeNameTable = null;
             defaultNS = null;
-            // ---------- Original Method ----------
-            //parent = null;
-            //prefixTable = null;
-            //uriTable = null;
-            //elementNameTable = null;
-            //attributeNameTable = null;
-            //defaultNS = null;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -365,13 +375,13 @@ public class NamespaceSupport {
          void declarePrefix(String prefix, String uri) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException ("can't declare any more prefixes in this context");
-            } //End block
+            } 
             {
                 copyTables();
-            } //End block
+            } 
             {
                 declarations = new ArrayList<String>();
-            } //End block
+            } 
             prefix = prefix.intern();
             uri = uri.intern();
             {
@@ -381,63 +391,63 @@ public class NamespaceSupport {
                         boolean var2DF53AC7D79E90697CD530900E95E03A_46674699 = ("".equals(uri));
                         {
                             defaultNS = null;
-                        } //End block
+                        } 
                         {
                             defaultNS = uri;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     prefixTable.put(prefix, uri);
                     uriTable.put(uri, prefix);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             declarations.add(prefix);
             addTaint(prefix.getTaint());
-            // ---------- Original Method ----------
-            //if (!declsOK) {
-            //throw new IllegalStateException ("can't declare any more prefixes in this context");
-        //}
-            //if (!declSeen) {
-            //copyTables();
-        //}
-            //if (declarations == null) {
-            //declarations = new ArrayList<String>();
-        //}
-            //prefix = prefix.intern();
-            //uri = uri.intern();
-            //if ("".equals(prefix)) {
-            //if ("".equals(uri)) {
-                //defaultNS = null;
-            //} else {
-                //defaultNS = uri;
-            //}
-        //} else {
-            //prefixTable.put(prefix, uri);
-            //uriTable.put(uri, prefix); 
-        //}
-            //declarations.add(prefix);
+            
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            
+            
+                
+            
+                
+            
+        
+            
+            
+        
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.946 -0400", hash_original_method = "33259345EBD99FFF49F4E1AAD2529013", hash_generated_method = "92F1CA758E2D2CB93CE2D5CB3AF94D37")
          String [] processName(String qName, boolean isAttribute) {
-            String [] varB4EAC82CA7396A68D541C85D26508E83_1995901396 = null; //Variable for return #1
-            String [] varB4EAC82CA7396A68D541C85D26508E83_1558242450 = null; //Variable for return #2
-            String [] varB4EAC82CA7396A68D541C85D26508E83_1420964328 = null; //Variable for return #3
+            String [] varB4EAC82CA7396A68D541C85D26508E83_1995901396 = null; 
+            String [] varB4EAC82CA7396A68D541C85D26508E83_1558242450 = null; 
+            String [] varB4EAC82CA7396A68D541C85D26508E83_1420964328 = null; 
             String name[];
             Hashtable table;
             declsOK = false;
             {
                 table = attributeNameTable;
-            } //End block
+            } 
             {
                 table = elementNameTable;
-            } //End block
+            } 
             name = (String[])table.get(qName);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1995901396 = name;
-            } //End block
+            } 
             name = new String[3];
             name[2] = qName.intern();
             int index = qName.indexOf(':');
@@ -445,15 +455,15 @@ public class NamespaceSupport {
                 {
                     name[0] = NSDECL;
                     name[0] = "";
-                } //End block
+                } 
                 {
                     name[0] = "";
-                } //End block
+                } 
                 {
                     name[0] = defaultNS;
-                } //End block
+                } 
                 name[1] = name[2];
-            } //End block
+            } 
             {
                 String prefix = qName.substring(0, index);
                 String local = qName.substring(index+1);
@@ -462,156 +472,156 @@ public class NamespaceSupport {
                     boolean var26D4D01AFDE79579ACA9E51155E63317_1492793935 = ("".equals(prefix));
                     {
                         uri = defaultNS;
-                    } //End block
+                    } 
                     {
                         uri = (String)prefixTable.get(prefix);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varECB97B621C72072AD1B6C8D2176BA33B_2034848432 = (uri == null
             || (!isAttribute && "xmlns".equals (prefix)));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1558242450 = null;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 name[0] = uri;
                 name[1] = local.intern();
-            } //End block
+            } 
             table.put(name[2], name);
             varB4EAC82CA7396A68D541C85D26508E83_1420964328 = name;
             addTaint(qName.getTaint());
             addTaint(isAttribute);
-            String [] varA7E53CE21691AB073D9660D615818899_1216218175; //Final return value
+            String [] varA7E53CE21691AB073D9660D615818899_1216218175; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1216218175 = varB4EAC82CA7396A68D541C85D26508E83_1995901396;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1216218175 = varB4EAC82CA7396A68D541C85D26508E83_1558242450;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1216218175 = varB4EAC82CA7396A68D541C85D26508E83_1420964328;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1216218175.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1216218175.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1216218175;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.948 -0400", hash_original_method = "33F968ABABCEBD2BA0661937EB8377F0", hash_generated_method = "920D63C6D4A4080D1B9127E3BD19185F")
          String getURI(String prefix) {
-            String varB4EAC82CA7396A68D541C85D26508E83_840452651 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_1154323899 = null; //Variable for return #2
-            String varB4EAC82CA7396A68D541C85D26508E83_1746749238 = null; //Variable for return #3
+            String varB4EAC82CA7396A68D541C85D26508E83_840452651 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1154323899 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1746749238 = null; 
             {
                 boolean varDBBBA4DCDEBBCD715FEB48F06D1616D2_830438262 = ("".equals(prefix));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_840452651 = defaultNS;
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1154323899 = null;
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1746749238 = (String)prefixTable.get(prefix);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(prefix.getTaint());
-            String varA7E53CE21691AB073D9660D615818899_1020641639; //Final return value
+            String varA7E53CE21691AB073D9660D615818899_1020641639; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1020641639 = varB4EAC82CA7396A68D541C85D26508E83_840452651;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1020641639 = varB4EAC82CA7396A68D541C85D26508E83_1154323899;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1020641639 = varB4EAC82CA7396A68D541C85D26508E83_1746749238;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1020641639.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1020641639.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1020641639;
-            // ---------- Original Method ----------
-            //if ("".equals(prefix)) {
-        //return defaultNS;
-        //} else if (prefixTable == null) {
-        //return null;
-        //} else {
-        //return (String)prefixTable.get(prefix);
-        //}
+            
+            
+        
+        
+        
+        
+        
+        
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.949 -0400", hash_original_method = "62121EA4CFF0891BFB2032F7AF8FE7A1", hash_generated_method = "08BB68716D002BA466DF72F81D844D97")
          String getPrefix(String uri) {
-            String varB4EAC82CA7396A68D541C85D26508E83_791069883 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_480419103 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_791069883 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_480419103 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_791069883 = null;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_480419103 = (String)uriTable.get(uri);
-            } //End block
+            } 
             addTaint(uri.getTaint());
-            String varA7E53CE21691AB073D9660D615818899_597535949; //Final return value
+            String varA7E53CE21691AB073D9660D615818899_597535949; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_597535949 = varB4EAC82CA7396A68D541C85D26508E83_791069883;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_597535949 = varB4EAC82CA7396A68D541C85D26508E83_480419103;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_597535949.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_597535949.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_597535949;
-            // ---------- Original Method ----------
-            //if (uriTable == null) {
-        //return null;
-        //} else {
-        //return (String)uriTable.get(uri);
-        //}
+            
+            
+        
+        
+        
+        
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.950 -0400", hash_original_method = "B116CF358C1D0DA8CF46DFF106939FC0", hash_generated_method = "3200168A124EA2CB356C2E6C0216FB1A")
          Enumeration getDeclaredPrefixes() {
-            Enumeration varB4EAC82CA7396A68D541C85D26508E83_107593497 = null; //Variable for return #1
+            Enumeration varB4EAC82CA7396A68D541C85D26508E83_107593497 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_107593497 = (declarations == null) ? EMPTY_ENUMERATION : Collections.enumeration(declarations);
-            varB4EAC82CA7396A68D541C85D26508E83_107593497.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_107593497.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_107593497;
-            // ---------- Original Method ----------
-            //return (declarations == null) ? EMPTY_ENUMERATION : Collections.enumeration(declarations);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.951 -0400", hash_original_method = "D02303EBFA8DB4A97AF291339C2FB52B", hash_generated_method = "84C4C4F69E06BDD06244C7B6F2CD94E9")
          Enumeration getPrefixes() {
-            Enumeration varB4EAC82CA7396A68D541C85D26508E83_229916810 = null; //Variable for return #1
-            Enumeration varB4EAC82CA7396A68D541C85D26508E83_1453886222 = null; //Variable for return #2
+            Enumeration varB4EAC82CA7396A68D541C85D26508E83_229916810 = null; 
+            Enumeration varB4EAC82CA7396A68D541C85D26508E83_1453886222 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_229916810 = EMPTY_ENUMERATION;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1453886222 = prefixTable.keys();
-            } //End block
-            Enumeration varA7E53CE21691AB073D9660D615818899_476755830; //Final return value
+            } 
+            Enumeration varA7E53CE21691AB073D9660D615818899_476755830; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_476755830 = varB4EAC82CA7396A68D541C85D26508E83_229916810;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_476755830 = varB4EAC82CA7396A68D541C85D26508E83_1453886222;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_476755830.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_476755830.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_476755830;
-            // ---------- Original Method ----------
-            //if (prefixTable == null) {
-        //return EMPTY_ENUMERATION;
-        //} else {
-        //return prefixTable.keys();
-        //}
+            
+            
+        
+        
+        
+        
         }
 
         
@@ -619,33 +629,33 @@ public class NamespaceSupport {
         private void copyTables() {
             {
                 prefixTable = (Hashtable)prefixTable.clone();
-            } //End block
+            } 
             {
                 prefixTable = new Hashtable();
-            } //End block
+            } 
             {
                 uriTable = (Hashtable)uriTable.clone();
-            } //End block
+            } 
             {
                 uriTable = new Hashtable();
-            } //End block
+            } 
             elementNameTable = new Hashtable();
             attributeNameTable = new Hashtable();
             declSeen = true;
-            // ---------- Original Method ----------
-            //if (prefixTable != null) {
-        //prefixTable = (Hashtable)prefixTable.clone();
-        //} else {
-        //prefixTable = new Hashtable();
-        //}
-            //if (uriTable != null) {
-        //uriTable = (Hashtable)uriTable.clone();
-        //} else {
-        //uriTable = new Hashtable();
-        //}
-            //elementNameTable = new Hashtable();
-            //attributeNameTable = new Hashtable();
-            //declSeen = true;
+            
+            
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+            
+            
         }
 
         

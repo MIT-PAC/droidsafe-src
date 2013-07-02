@@ -1,11 +1,11 @@
 package javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class TooManyHopsException extends Exception {
@@ -13,7 +13,7 @@ public class TooManyHopsException extends Exception {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.253 -0400", hash_original_method = "7059525C7D643548AACC26A1B7FECDC6", hash_generated_method = "AF59B1FD7F0919C215A47EAD9FDD1B59")
     public  TooManyHopsException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class TooManyHopsException extends Exception {
     public  TooManyHopsException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,7 +30,7 @@ public class TooManyHopsException extends Exception {
         super(message, cause);
         addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

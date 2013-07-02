@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.ActivityManager;
 import android.content.ComponentCallbacks2;
@@ -28,7 +28,7 @@ final class WindowLeaked extends AndroidRuntimeException {
     public  WindowLeaked(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -48,7 +48,7 @@ public class WindowManagerImpl implements WindowManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.849 -0400", hash_original_method = "3EABCF2A614A6DEC3CA7FC91E47982AB", hash_generated_method = "3EABCF2A614A6DEC3CA7FC91E47982AB")
     public WindowManagerImpl ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -57,6 +57,7 @@ public class WindowManagerImpl implements WindowManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static WindowManager getDefault(CompatibilityInfo compatInfo) {
         CompatibilityInfoHolder cih = new CompatibilityInfoHolder();
         cih.set(compatInfo);
@@ -74,6 +75,7 @@ public class WindowManagerImpl implements WindowManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static WindowManager getDefault(CompatibilityInfoHolder compatInfo) {
         return new CompatModeWrapper(sWindowManager, compatInfo);
     }
@@ -83,19 +85,20 @@ public class WindowManagerImpl implements WindowManager {
     public boolean isHardwareAccelerated() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1746528618 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1746528618;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.850 -0400", hash_original_method = "3A47767500C080C4B7D3F95A5195D385", hash_generated_method = "FB36DAEAEF4BD4BF826A1D9BA1F1967F")
     public void addView(View view) {
         addView(view, new WindowManager.LayoutParams(
             WindowManager.LayoutParams.TYPE_APPLICATION, 0, PixelFormat.OPAQUE));
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        //addView(view, new WindowManager.LayoutParams(
-            //WindowManager.LayoutParams.TYPE_APPLICATION, 0, PixelFormat.OPAQUE));
+        
+        
+            
     }
 
     
@@ -104,8 +107,8 @@ public class WindowManagerImpl implements WindowManager {
         addView(view, params, null, false);
         addTaint(view.getTaint());
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //addView(view, params, null, false);
+        
+        
     }
 
     
@@ -115,8 +118,8 @@ public class WindowManagerImpl implements WindowManager {
         addTaint(view.getTaint());
         addTaint(params.getTaint());
         addTaint(cih.getTaint());
-        // ---------- Original Method ----------
-        //addView(view, params, cih, false);
+        
+        
     }
 
     
@@ -126,7 +129,7 @@ public class WindowManagerImpl implements WindowManager {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "Params must be WindowManager.LayoutParams");
-        } //End block
+        } 
         final WindowManager.LayoutParams wparams = (WindowManager.LayoutParams)params;
         ViewRootImpl root;
         View panelParentView = null;
@@ -136,11 +139,11 @@ public class WindowManagerImpl implements WindowManager {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("View " + view
                             + " has already been added to the window manager.");
-                } //End block
+                } 
                 root = mRoots[index];
                 view.setLayoutParams(wparams);
                 root.setLayoutParams(wparams, true);
-            } //End block
+            } 
             {
                 int count;
                 count = mViews.length;
@@ -152,26 +155,26 @@ public class WindowManagerImpl implements WindowManager {
                             boolean var1D105CECC30286641BD50965ABC9FB7E_530966152 = (mRoots[i].mWindow.asBinder() == wparams.token);
                             {
                                 panelParentView = mViews[i];
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             root = new ViewRootImpl(view.getContext());
             root.mAddNesting = 1;
             {
                 root.mCompatibilityInfo = new CompatibilityInfoHolder();
-            } //End block
+            } 
             {
                 root.mCompatibilityInfo = cih;
-            } //End block
+            } 
             view.setLayoutParams(wparams);
             {
                 index = 1;
                 mViews = new View[1];
                 mRoots = new ViewRootImpl[1];
                 mParams = new WindowManager.LayoutParams[1];
-            } //End block
+            } 
             {
                 index = mViews.length + 1;
                 Object[] old = mViews;
@@ -183,17 +186,17 @@ public class WindowManagerImpl implements WindowManager {
                 old = mParams;
                 mParams = new WindowManager.LayoutParams[index];
                 System.arraycopy(old, 0, mParams, 0, index-1);
-            } //End block
+            } 
             mViews[index] = view;
             mRoots[index] = root;
             mParams[index] = wparams;
-        } //End block
+        } 
         root.setView(view, wparams, panelParentView);
         addTaint(params.getTaint());
         addTaint(cih.getTaint());
         addTaint(nest);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -201,7 +204,7 @@ public class WindowManagerImpl implements WindowManager {
     public void updateViewLayout(View view, ViewGroup.LayoutParams params) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Params must be WindowManager.LayoutParams");
-        } //End block
+        } 
         final WindowManager.LayoutParams wparams = (WindowManager.LayoutParams)params;
         view.setLayoutParams(wparams);
         {
@@ -209,25 +212,26 @@ public class WindowManagerImpl implements WindowManager {
             ViewRootImpl root = mRoots[index];
             mParams[index] = wparams;
             root.setLayoutParams(wparams, false);
-        } //End block
+        } 
         addTaint(view.getTaint());
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //if (!(params instanceof WindowManager.LayoutParams)) {
-            //throw new IllegalArgumentException("Params must be WindowManager.LayoutParams");
-        //}
-        //final WindowManager.LayoutParams wparams
-                //= (WindowManager.LayoutParams)params;
-        //view.setLayoutParams(wparams);
-        //synchronized (this) {
-            //int index = findViewLocked(view, true);
-            //ViewRootImpl root = mRoots[index];
-            //mParams[index] = wparams;
-            //root.setLayoutParams(wparams, false);
-        //}
+        
+        
+            
+        
+        
+                
+        
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.854 -0400", hash_original_method = "6ED1D335390D20FBE30CC53F4D61DE9F", hash_generated_method = "B1EDC57DD3FDFEA758B63C7137E7D6BC")
     public void removeView(View view) {
         {
@@ -235,21 +239,22 @@ public class WindowManagerImpl implements WindowManager {
             View curView = removeViewLocked(index);
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Calling with view " + view
                     + " but the ViewAncestor is attached to " + curView);
-        } //End block
+        } 
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //int index = findViewLocked(view, true);
-            //View curView = removeViewLocked(index);
-            //if (curView == view) {
-                //return;
-            //}
-            //throw new IllegalStateException("Calling with view " + view
-                    //+ " but the ViewAncestor is attached to " + curView);
-        //}
+        
+        
+            
+            
+            
+                
+            
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.854 -0400", hash_original_method = "EE35B3CBE21A32408B24AA67A208567E", hash_generated_method = "CEB450CBC55C2C8F5AD40E50A6056C23")
     public void removeViewImmediate(View view) {
         {
@@ -261,71 +266,71 @@ public class WindowManagerImpl implements WindowManager {
             finishRemoveViewLocked(curView, index);
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Calling with view " + view
                     + " but the ViewAncestor is attached to " + curView);
-        } //End block
+        } 
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //int index = findViewLocked(view, true);
-            //ViewRootImpl root = mRoots[index];
-            //View curView = root.getView();
-            //root.mAddNesting = 0;
-            //root.die(true);
-            //finishRemoveViewLocked(curView, index);
-            //if (curView == view) {
-                //return;
-            //}
-            //throw new IllegalStateException("Calling with view " + view
-                    //+ " but the ViewAncestor is attached to " + curView);
-        //}
+        
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+            
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.855 -0400", hash_original_method = "45C6626A33F0E52A8F561F8DE7007122", hash_generated_method = "726B5C6B11BE136B628B23278D1804DF")
      View removeViewLocked(int index) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1554160997 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1174131886 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_1554160997 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1174131886 = null; 
         ViewRootImpl root = mRoots[index];
         View view = root.getView();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1554160997 = view;
-        } //End block
+        } 
         {
             InputMethodManager imm = InputMethodManager.getInstance(view.getContext());
             {
                 imm.windowDismissed(mViews[index].getWindowToken());
-            } //End block
-        } //End block
+            } 
+        } 
         root.die(false);
         finishRemoveViewLocked(view, index);
         varB4EAC82CA7396A68D541C85D26508E83_1174131886 = view;
         addTaint(index);
-        View varA7E53CE21691AB073D9660D615818899_785770338; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_785770338; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_785770338 = varB4EAC82CA7396A68D541C85D26508E83_1554160997;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_785770338 = varB4EAC82CA7396A68D541C85D26508E83_1174131886;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_785770338.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_785770338.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_785770338;
-        // ---------- Original Method ----------
-        //ViewRootImpl root = mRoots[index];
-        //View view = root.getView();
-        //root.mAddNesting--;
-        //if (root.mAddNesting > 0) {
-            //return view;
-        //}
-        //if (view != null) {
-            //InputMethodManager imm = InputMethodManager.getInstance(view.getContext());
-            //if (imm != null) {
-                //imm.windowDismissed(mViews[index].getWindowToken());
-            //}
-        //}
-        //root.die(false);
-        //finishRemoveViewLocked(view, index);
-        //return view;
+        
+        
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
+        
+        
     }
 
     
@@ -343,27 +348,28 @@ public class WindowManagerImpl implements WindowManager {
         mParams = tmpParams;
         {
             view.assignParent(null);
-        } //End block
+        } 
         addTaint(view.getTaint());
         addTaint(index);
-        // ---------- Original Method ----------
-        //final int count = mViews.length;
-        //View[] tmpViews = new View[count-1];
-        //removeItem(tmpViews, mViews, index);
-        //mViews = tmpViews;
-        //ViewRootImpl[] tmpRoots = new ViewRootImpl[count-1];
-        //removeItem(tmpRoots, mRoots, index);
-        //mRoots = tmpRoots;
-        //WindowManager.LayoutParams[] tmpParams
-                //= new WindowManager.LayoutParams[count-1];
-        //removeItem(tmpParams, mParams, index);
-        //mParams = tmpParams;
-        //if (view != null) {
-            //view.assignParent(null);
-        //}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.857 -0400", hash_original_method = "235A702EEE225FF475D5967A0654B4AA", hash_generated_method = "CADD3A825958ABFDBC2021F66E32D2FC")
     public void closeAll(IBinder token, String who, String what) {
         {
@@ -379,26 +385,27 @@ public class WindowManagerImpl implements WindowManager {
                                 what + " " + who + " has leaked window "
                                 + root.getView() + " that was originally added here");
                             leak.setStackTrace(root.getLocation().getStackTrace());
-                        } //End block
+                        } 
                         removeViewLocked(i);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(token.getTaint());
         addTaint(who.getTaint());
         addTaint(what.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.857 -0400", hash_original_method = "1760CCD9A30F61845B0A646D5EFB7F37", hash_generated_method = "AC4B9DDC6504CE3CC4921439ED946D4A")
     public void trimMemory(int level) {
         {
             boolean varC5B5975D48585E4D1B9A993F5AABAEDD_858206903 = (HardwareRenderer.isAvailable());
             {
-                //Begin case ComponentCallbacks2.TRIM_MEMORY_COMPLETE ComponentCallbacks2.TRIM_MEMORY_MODERATE 
+                
                 {
                     boolean var08753D6884B6AA0740247389AD694E8A_801035523 = (!ActivityManager.isHighEndGfx(getDefaultDisplay()));
                     {
@@ -409,24 +416,25 @@ public class WindowManagerImpl implements WindowManager {
                                 int i = 0;
                                 {
                                     mRoots[i].terminateHardwareResources();
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         ManagedEGLContext.doTerminate();
-                    } //End block
-                } //End collapsed parenthetic
-                //End case ComponentCallbacks2.TRIM_MEMORY_COMPLETE ComponentCallbacks2.TRIM_MEMORY_MODERATE 
-                //Begin case default 
+                    } 
+                } 
+                
+                
                 HardwareRenderer.trimMemory(level);
-                //End case default 
-            } //End block
-        } //End collapsed parenthetic
+                
+            } 
+        } 
         addTaint(level);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.858 -0400", hash_original_method = "B85ACF4E2D1A27D42C4275E82179233A", hash_generated_method = "494BE0E5A83140510E707DE870149E0F")
     public void trimLocalMemory() {
         {
@@ -435,20 +443,21 @@ public class WindowManagerImpl implements WindowManager {
                 int i = 0;
                 {
                     mRoots[i].destroyHardwareLayers();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mViews == null) return;
-            //int count = mViews.length;
-            //for (int i = 0; i < count; i++) {
-                //mRoots[i].destroyHardwareLayers();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.858 -0400", hash_original_method = "8E8B6C2ACDFF2687F40321E0E64E3BBE", hash_generated_method = "749DA15388C23D045CF572893E36C2B3")
     public void dumpGfxInfo(FileDescriptor fd) {
         FileOutputStream fout = new FileOutputStream(fd);
@@ -473,24 +482,25 @@ public class WindowManagerImpl implements WindowManager {
                                 name, info[0], info[1] / 1024.0f);
                             viewsCount += info[0];
                             displayListsSize += info[1];
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     pw.printf("\nTotal ViewRootImpl: %d\n", count);
                     pw.printf("Total Views:        %d\n", viewsCount);
                     pw.printf("Total DisplayList:  %.2f kB\n\n", displayListsSize / 1024.0f);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             pw.flush();
-        } //End block
+        } 
         addTaint(fd.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.859 -0400", hash_original_method = "32E6F8530311607C65FF5EAF5F0BD6AD", hash_generated_method = "6CF92D15E6A5CC2185F6954A5D715840")
     public void setStoppedState(IBinder token, boolean stopped) {
         {
@@ -501,27 +511,28 @@ public class WindowManagerImpl implements WindowManager {
                     {
                         ViewRootImpl root = mRoots[i];
                         root.setStopped(stopped);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(token.getTaint());
         addTaint(stopped);
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mViews == null)
-                //return;
-            //int count = mViews.length;
-            //for (int i=0; i<count; i++) {
-                //if (token == null || mParams[i].token == token) {
-                    //ViewRootImpl root = mRoots[i];
-                    //root.setStopped(stopped);
-                //}
-            //}
-        //}
+        
+        
+            
+                
+            
+            
+                
+                    
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.859 -0400", hash_original_method = "5FCDC552B8E05196F9C2F723B4C31106", hash_generated_method = "2C335A679A688DD1C55792C245024F58")
     public void reportNewConfiguration(Configuration config) {
         {
@@ -532,31 +543,31 @@ public class WindowManagerImpl implements WindowManager {
                 {
                     ViewRootImpl root = mRoots[i];
                     root.requestUpdateConfiguration(config);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(config.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //int count = mViews.length;
-            //config = new Configuration(config);
-            //for (int i=0; i<count; i++) {
-                //ViewRootImpl root = mRoots[i];
-                //root.requestUpdateConfiguration(config);
-            //}
-        //}
+        
+        
+            
+            
+            
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.860 -0400", hash_original_method = "1CFBFD36B7BEFA0EB1A8D0118BDA1924", hash_generated_method = "18FCB80A34F022CC2F23F4470C94D9E2")
     public WindowManager.LayoutParams getRootViewLayoutParameter(View view) {
-        WindowManager.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_576972891 = null; //Variable for return #1
-        WindowManager.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1459241458 = null; //Variable for return #2
-        WindowManager.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1852321614 = null; //Variable for return #3
+        WindowManager.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_576972891 = null; 
+        WindowManager.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1459241458 = null; 
+        WindowManager.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1852321614 = null; 
         ViewParent vp = view.getParent();
         {
             vp = vp.getParent();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_576972891 = null;
         ViewRootImpl vr = (ViewRootImpl)vp;
         int N = mRoots.length;
@@ -565,61 +576,64 @@ public class WindowManagerImpl implements WindowManager {
             {
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1459241458 = mParams[i];
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1852321614 = null;
         addTaint(view.getTaint());
-        WindowManager.LayoutParams varA7E53CE21691AB073D9660D615818899_1207657399; //Final return value
+        WindowManager.LayoutParams varA7E53CE21691AB073D9660D615818899_1207657399; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1207657399 = varB4EAC82CA7396A68D541C85D26508E83_576972891;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1207657399 = varB4EAC82CA7396A68D541C85D26508E83_1459241458;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1207657399 = varB4EAC82CA7396A68D541C85D26508E83_1852321614;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1207657399.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1207657399.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1207657399;
-        // ---------- Original Method ----------
-        //ViewParent vp = view.getParent();
-        //while (vp != null && !(vp instanceof ViewRootImpl)) {
-            //vp = vp.getParent();
-        //}
-        //if (vp == null) return null;
-        //ViewRootImpl vr = (ViewRootImpl)vp;
-        //int N = mRoots.length;
-        //for (int i = 0; i < N; ++i) {
-            //if (mRoots[i] == vr) {
-                //return mParams[i];
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.860 -0400", hash_original_method = "2D5B77D42F80E7BB97C9217066ACC1E7", hash_generated_method = "910D676C81E32EF366F77F71D3376042")
     public void closeAll() {
         closeAll(null, null, null);
-        // ---------- Original Method ----------
-        //closeAll(null, null, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.861 -0400", hash_original_method = "6421FA4950C786DB3C3137628B8417F4", hash_generated_method = "FA3B663AFE320D07F0136FECAF9084F9")
     public Display getDefaultDisplay() {
-        Display varB4EAC82CA7396A68D541C85D26508E83_1045634353 = null; //Variable for return #1
+        Display varB4EAC82CA7396A68D541C85D26508E83_1045634353 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1045634353 = new Display(Display.DEFAULT_DISPLAY, null);
-        varB4EAC82CA7396A68D541C85D26508E83_1045634353.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1045634353.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1045634353;
-        // ---------- Original Method ----------
-        //return new Display(Display.DEFAULT_DISPLAY, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void removeItem(Object[] dst, Object[] src, int index) {
         if (dst.length > 0) {
             if (index > 0) {
@@ -632,6 +646,7 @@ public class WindowManagerImpl implements WindowManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.862 -0400", hash_original_method = "D0BCCB21246B97649D4401D223B22EEE", hash_generated_method = "A9D447BCF6A400D460D39392159F70D3")
     private int findViewLocked(View view, boolean required) {
         {
@@ -640,30 +655,30 @@ public class WindowManagerImpl implements WindowManager {
             count = 0;
             {
                 int i = 0;
-            } //End collapsed parenthetic
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                         "View not attached to window manager");
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(view.getTaint());
         addTaint(required);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1201620303 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1201620303;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //final int count = mViews != null ? mViews.length : 0;
-            //for (int i=0; i<count; i++) {
-                //if (mViews[i] == view) {
-                    //return i;
-                //}
-            //}
-            //if (required) {
-                //throw new IllegalArgumentException(
-                        //"View not attached to window manager");
-            //}
-            //return -1;
-        //}
+        
+        
+            
+            
+                
+                    
+                
+            
+            
+                
+                        
+            
+            
+        
     }
 
     
@@ -684,22 +699,22 @@ public class WindowManagerImpl implements WindowManager {
                     ? ((CompatModeWrapper)wm).mWindowManager : (WindowManagerImpl)wm;
             {
                 mDefaultDisplay = mWindowManager.getDefaultDisplay();
-            } //End block
+            } 
             {
                 mDefaultDisplay = Display.createCompatibleDisplay(
                         mWindowManager.getDefaultDisplay().getDisplayId(), ci);
-            } //End block
+            } 
             mCompatibilityInfo = ci;
-            // ---------- Original Method ----------
-            //mWindowManager = wm instanceof CompatModeWrapper
-                    //? ((CompatModeWrapper)wm).mWindowManager : (WindowManagerImpl)wm;
-            //if (ci == null) {
-                //mDefaultDisplay = mWindowManager.getDefaultDisplay();
-            //} else {
-                //mDefaultDisplay = Display.createCompatibleDisplay(
-                        //mWindowManager.getDefaultDisplay().getDisplayId(), ci);
-            //}
-            //mCompatibilityInfo = ci;
+            
+            
+                    
+            
+                
+            
+                
+                        
+            
+            
         }
 
         
@@ -709,8 +724,8 @@ public class WindowManagerImpl implements WindowManager {
             mWindowManager.addView(view, params, mCompatibilityInfo);
             addTaint(view.getTaint());
             addTaint(params.getTaint());
-            // ---------- Original Method ----------
-            //mWindowManager.addView(view, params, mCompatibilityInfo);
+            
+            
         }
 
         
@@ -720,8 +735,8 @@ public class WindowManagerImpl implements WindowManager {
             mWindowManager.updateViewLayout(view, params);
             addTaint(view.getTaint());
             addTaint(params.getTaint());
-            // ---------- Original Method ----------
-            //mWindowManager.updateViewLayout(view, params);
+            
+            
         }
 
         
@@ -730,20 +745,20 @@ public class WindowManagerImpl implements WindowManager {
         public void removeView(View view) {
             mWindowManager.removeView(view);
             addTaint(view.getTaint());
-            // ---------- Original Method ----------
-            //mWindowManager.removeView(view);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.866 -0400", hash_original_method = "56BE5D6095195D262FD5BEEEDA100E7B", hash_generated_method = "ED76E5DCDD85DF65ABF6CE491EF4D915")
         @Override
         public Display getDefaultDisplay() {
-            Display varB4EAC82CA7396A68D541C85D26508E83_784197259 = null; //Variable for return #1
+            Display varB4EAC82CA7396A68D541C85D26508E83_784197259 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_784197259 = mDefaultDisplay;
-            varB4EAC82CA7396A68D541C85D26508E83_784197259.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_784197259.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_784197259;
-            // ---------- Original Method ----------
-            //return mDefaultDisplay;
+            
+            
         }
 
         
@@ -752,8 +767,8 @@ public class WindowManagerImpl implements WindowManager {
         public void removeViewImmediate(View view) {
             mWindowManager.removeViewImmediate(view);
             addTaint(view.getTaint());
-            // ---------- Original Method ----------
-            //mWindowManager.removeViewImmediate(view);
+            
+            
         }
 
         
@@ -763,8 +778,8 @@ public class WindowManagerImpl implements WindowManager {
             boolean var537FD339DB319870C25465E8732CD454_496148669 = (mWindowManager.isHardwareAccelerated());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1118970497 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1118970497;
-            // ---------- Original Method ----------
-            //return mWindowManager.isHardwareAccelerated();
+            
+            
         }
 
         

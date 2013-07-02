@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.reflect.Method;
 import libcore.util.EmptyArray;
@@ -14,10 +14,11 @@ public final class Void {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.513 -0400", hash_original_method = "CD8BC0E717D271B8A5F5646E1CE2D7A5", hash_generated_method = "824764433804841F8B24CCE495EAD381")
     private  Void() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     private static Class<Void> lookupType() {
         try {

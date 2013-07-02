@@ -1,11 +1,11 @@
 package org.apache.http.entity;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,15 +27,15 @@ public class InputStreamEntity extends AbstractHttpEntity {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Source input stream may not be null");
-        } //End block
+        } 
         this.content = instream;
         this.length = length;
-        // ---------- Original Method ----------
-        //if (instream == null) {
-            //throw new IllegalArgumentException("Source input stream may not be null");
-        //}
-        //this.content = instream;
-        //this.length = length;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -43,8 +43,8 @@ public class InputStreamEntity extends AbstractHttpEntity {
     public boolean isRepeatable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_687518374 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_687518374;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -52,19 +52,19 @@ public class InputStreamEntity extends AbstractHttpEntity {
     public long getContentLength() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_363971981 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_363971981;
-        // ---------- Original Method ----------
-        //return this.length;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.636 -0400", hash_original_method = "ED2F9B5D6194544F22CDAF63FF5B39F6", hash_generated_method = "4484FEB8881F3A85AF7606704CB3C370")
     public InputStream getContent() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_2106244019 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_2106244019 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2106244019 = this.content;
-        varB4EAC82CA7396A68D541C85D26508E83_2106244019.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2106244019.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2106244019;
-        // ---------- Original Method ----------
-        //return this.content;
+        
+        
     }
 
     
@@ -72,7 +72,7 @@ public class InputStreamEntity extends AbstractHttpEntity {
     public void writeTo(final OutputStream outstream) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Output stream may not be null");
-        } //End block
+        } 
         InputStream instream = this.content;
         byte[] buffer = new byte[BUFFER_SIZE];
         int l;
@@ -81,42 +81,42 @@ public class InputStreamEntity extends AbstractHttpEntity {
                 boolean var20A239439BFC45885A38ACB5E9FF40DA_556877905 = ((l = instream.read(buffer)) != -1);
                 {
                     outstream.write(buffer, 0, l);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             long remaining = this.length;
             {
                 l = instream.read(buffer, 0, (int)Math.min(BUFFER_SIZE, remaining));
                 outstream.write(buffer, 0, l);
                 remaining -= l;
-            } //End block
-        } //End block
+            } 
+        } 
         this.consumed = true;
         addTaint(outstream.getTaint());
-        // ---------- Original Method ----------
-        //if (outstream == null) {
-            //throw new IllegalArgumentException("Output stream may not be null");
-        //}
-        //InputStream instream = this.content;
-        //byte[] buffer = new byte[BUFFER_SIZE];
-        //int l;
-        //if (this.length < 0) {
-            //while ((l = instream.read(buffer)) != -1) {
-                //outstream.write(buffer, 0, l);
-            //}
-        //} else {
-            //long remaining = this.length;
-            //while (remaining > 0) {
-                //l = instream.read(buffer, 0, (int)Math.min(BUFFER_SIZE, remaining));
-                //if (l == -1) {
-                    //break;
-                //}
-                //outstream.write(buffer, 0, l);
-                //remaining -= l;
-            //}
-        //}
-        //this.consumed = true;
+        
+        
+            
+        
+        
+        
+        
+        
+            
+                
+            
+        
+            
+            
+                
+                
+                    
+                
+                
+                
+            
+        
+        
     }
 
     
@@ -124,18 +124,19 @@ public class InputStreamEntity extends AbstractHttpEntity {
     public boolean isStreaming() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1307236178 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1307236178;
-        // ---------- Original Method ----------
-        //return !this.consumed;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.638 -0400", hash_original_method = "1B9AD287611C066C29846341DA0AFC9D", hash_generated_method = "BB7A77B851C987DED184DD1B2AE91934")
     public void consumeContent() throws IOException {
         this.consumed = true;
         this.content.close();
-        // ---------- Original Method ----------
-        //this.consumed = true;
-        //this.content.close();
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class GeneralSecurityException extends Exception {
@@ -14,13 +14,13 @@ public class GeneralSecurityException extends Exception {
     public  GeneralSecurityException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.147 -0400", hash_original_method = "F9327F749082DE23B0685F6DD902B858", hash_generated_method = "CD715F134D1B1C417AE32EC947980940")
     public  GeneralSecurityException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ public class GeneralSecurityException extends Exception {
         super(message, cause);
         addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,7 +37,7 @@ public class GeneralSecurityException extends Exception {
     public  GeneralSecurityException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

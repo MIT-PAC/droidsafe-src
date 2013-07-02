@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.PublicKey;
 
@@ -25,32 +25,32 @@ public final class X509PublicKey implements PublicKey {
         this.algorithm = algorithm;
         this.encoded = encoded;
         this.keyBytes = keyBytes;
-        // ---------- Original Method ----------
-        //this.algorithm = algorithm;
-        //this.encoded = encoded;
-        //this.keyBytes = keyBytes;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.585 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "B3E551C33F8962C41C0E758926929516")
     public String getAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1546525319 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1546525319 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1546525319 = algorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_1546525319.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1546525319.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1546525319;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.585 -0400", hash_original_method = "52CFE6084CDA819966418EDF944DBC96", hash_generated_method = "A1216957777543E4F71423276566D585")
     public String getFormat() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1292836088 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1292836088 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1292836088 = "X.509";
-        varB4EAC82CA7396A68D541C85D26508E83_1292836088.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1292836088.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1292836088;
-        // ---------- Original Method ----------
-        //return "X.509";
+        
+        
     }
 
     
@@ -58,26 +58,27 @@ public final class X509PublicKey implements PublicKey {
     public byte[] getEncoded() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_275848615 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_275848615;
-        // ---------- Original Method ----------
-        //return encoded;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.586 -0400", hash_original_method = "20DEFC617AA5E46ABFC95D3E93C239C4", hash_generated_method = "98DB43E51F44D3601C9A04A807A2B0C7")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1711796479 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1711796479 = null; 
         StringBuilder buf = new StringBuilder("algorithm = ");
         buf.append(algorithm);
         buf.append(", params unparsed, unparsed keybits = \n");
         varB4EAC82CA7396A68D541C85D26508E83_1711796479 = buf.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1711796479.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1711796479.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1711796479;
-        // ---------- Original Method ----------
-        //StringBuilder buf = new StringBuilder("algorithm = ");
-        //buf.append(algorithm);
-        //buf.append(", params unparsed, unparsed keybits = \n");
-        //return buf.toString();
+        
+        
+        
+        
+        
     }
 
     

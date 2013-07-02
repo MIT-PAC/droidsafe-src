@@ -1,18 +1,18 @@
 package dalvik.system;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class VMRuntime {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.800 -0400", hash_original_method = "33A03FA36AA2C869C23BC2B48A2B01BF", hash_generated_method = "7F5477CE47831425632DC95401495DBA")
     private  VMRuntime() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,7 +23,7 @@ public final class VMRuntime {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.800 -0400", hash_original_method = "2960BD7EBD269C359C23EB7E2C183AE6", hash_generated_method = "2D5C10CC3D28CEC7E78CF04874E61B1D")
     public String[] properties() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+        
     	String[] props = new String[0];
     	return props;
     }
@@ -31,21 +31,21 @@ public final class VMRuntime {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.800 -0400", hash_original_method = "ACD1BDE0C9D7AA5A704C76C5A226A571", hash_generated_method = "3F7EFD902B37074211328DCB58E5B9CE")
     public String bootClassPath() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+        
     	return new String();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.801 -0400", hash_original_method = "F880EBCB28C92D3EB2F8227CAD3AB51E", hash_generated_method = "A63F2018F96FFCB76D226498854F0584")
     public String classPath() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+        
     	return new String();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.801 -0400", hash_original_method = "91B638A4E83CB522FD5F0DBC3B106E1F", hash_generated_method = "0FC91AF110114BAEF0A2D2BE50FBA59C")
     public String vmVersion() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+        
     	return new String();
     }
 
@@ -62,24 +62,24 @@ public final class VMRuntime {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(newTarget +
                     " out of range (0,1)");
-        } //End block
+        } 
         {
             float oldTarget = getTargetHeapUtilization();
             nativeSetTargetHeapUtilization(newTarget);
-        } //End block
+        } 
         addTaint(newTarget);
         float var546ADE640B6EDFBC8A086EF31347E768_326024903 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_326024903;
-        // ---------- Original Method ----------
-        //if (newTarget <= 0.0 || newTarget >= 1.0) {
-            //throw new IllegalArgumentException(newTarget +
-                    //" out of range (0,1)");
-        //}
-        //synchronized (this) {
-            //float oldTarget = getTargetHeapUtilization();
-            //nativeSetTargetHeapUtilization(newTarget);
-            //return oldTarget;
-        //}
+        
+        
+            
+                    
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -93,8 +93,8 @@ public final class VMRuntime {
     public long getMinimumHeapSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_396573317 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_396573317;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -104,15 +104,15 @@ public final class VMRuntime {
         addTaint(size);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_893968494 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_893968494;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.804 -0400", hash_original_method = "7E7FC96AF2763DCE3DA2004144A94138", hash_generated_method = "C3FE825593A165B12ADFD8E36D4D78F4")
     @Deprecated
     public void gcSoftReferences() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -120,8 +120,8 @@ public final class VMRuntime {
     @Deprecated
     public void runFinalizationSync() {
         System.runFinalization();
-        // ---------- Original Method ----------
-        //System.runFinalization();
+        
+        
     }
 
     
@@ -136,8 +136,8 @@ public final class VMRuntime {
         addTaint(size);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_181546939 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_181546939;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -145,7 +145,7 @@ public final class VMRuntime {
     @Deprecated
     public void trackExternalFree(long size) {
         addTaint(size);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -154,8 +154,8 @@ public final class VMRuntime {
     public long getExternalBytesAllocated() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1548614740 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1548614740;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -169,9 +169,10 @@ public final class VMRuntime {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.814 -0400", hash_original_method = "8EBD5DB8B6D587374B3055052FBB49F5", hash_generated_method = "320B737E55AF8DBCC23875D982D400A7")
     public Object newNonMovableArray(Class<?> componentType, int length) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+        
     	taint.addTaint(length);
     	taint.addTaint(componentType.taint);
     	return new Object();

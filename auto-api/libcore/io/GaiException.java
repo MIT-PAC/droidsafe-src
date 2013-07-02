@@ -1,11 +1,11 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.net.UnknownHostException;
 import libcore.io.OsConstants;
@@ -22,9 +22,9 @@ public final class GaiException extends RuntimeException {
     public  GaiException(String functionName, int error) {
         this.functionName = functionName;
         this.error = error;
-        // ---------- Original Method ----------
-        //this.functionName = functionName;
-        //this.error = error;
+        
+        
+        
     }
 
     
@@ -34,51 +34,54 @@ public final class GaiException extends RuntimeException {
         this.functionName = functionName;
         this.error = error;
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-        //this.functionName = functionName;
-        //this.error = error;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.114 -0400", hash_original_method = "6B923BF9D17AE00E606BE15037C1D30D", hash_generated_method = "418F3C59720BEC6AC023892F3C3349F2")
     @Override
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_625400032 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_625400032 = null; 
         String gaiName = OsConstants.gaiName(error);
         {
             gaiName = "GAI_ error " + error;
-        } //End block
+        } 
         String description = Libcore.os.gai_strerror(error);
         varB4EAC82CA7396A68D541C85D26508E83_625400032 = functionName + " failed: " + gaiName + " (" + description + ")";
-        varB4EAC82CA7396A68D541C85D26508E83_625400032.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_625400032.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_625400032;
-        // ---------- Original Method ----------
-        //String gaiName = OsConstants.gaiName(error);
-        //if (gaiName == null) {
-            //gaiName = "GAI_ error " + error;
-        //}
-        //String description = Libcore.os.gai_strerror(error);
-        //return functionName + " failed: " + gaiName + " (" + description + ")";
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.115 -0400", hash_original_method = "5B589888D552552C8BEA12CEE384825F", hash_generated_method = "7A4191D7075FCBDBA98B75A7DF97203C")
     public UnknownHostException rethrowAsUnknownHostException(String detailMessage) throws UnknownHostException {
         UnknownHostException newException = new UnknownHostException(detailMessage);
         newException.initCause(this);
         throw newException;
-        // ---------- Original Method ----------
-        //UnknownHostException newException = new UnknownHostException(detailMessage);
-        //newException.initCause(this);
-        //throw newException;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.115 -0400", hash_original_method = "81B83C8D72DB912D679B4B84F9977C22", hash_generated_method = "1F1035B2C54E0A812B5D92858BC61427")
     public UnknownHostException rethrowAsUnknownHostException() throws UnknownHostException {
     	throw rethrowAsUnknownHostException(getMessage());
-        // ---------- Original Method ----------
-        //throw rethrowAsUnknownHostException(getMessage());
+        
+        
     }
 
     

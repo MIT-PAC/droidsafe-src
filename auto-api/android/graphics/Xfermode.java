@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class Xfermode {
@@ -16,26 +16,27 @@ public class Xfermode {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.476 -0400", hash_original_method = "C597DAEA4231BF58F4F9DBF898816899", hash_generated_method = "C597DAEA4231BF58F4F9DBF898816899")
     public Xfermode ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.476 -0400", hash_original_method = "E460B29F415CD7A40554AE473F148807", hash_generated_method = "498A22B6312114B222536B9B92E00CB2")
     protected void finalize() throws Throwable {
         try 
         {
             finalizer(native_instance);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //finalizer(native_instance);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     

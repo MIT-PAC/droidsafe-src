@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Bitmap;
 import android.os.Parcel;
@@ -57,17 +57,17 @@ public class Menu implements Parcelable {
         itemsIconSelfExplanatory = false;
         titleIcon = null;
         presentationType = PresentationType.NAVIGATION_OPTIONS;
-        // ---------- Original Method ----------
-        //items = new ArrayList<Item>();
-        //title = null;
-        //titleAttrs = null;
-        //defaultItem = 0;
-        //softKeyPreferred = false;
-        //helpAvailable = false;
-        //titleIconSelfExplanatory = false;
-        //itemsIconSelfExplanatory = false;
-        //titleIcon = null;
-        //presentationType = PresentationType.NAVIGATION_OPTIONS;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -82,29 +82,29 @@ public class Menu implements Parcelable {
             {
                 Item item = in.readParcelable(null);
                 items.add(item);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         defaultItem = in.readInt();
         softKeyPreferred = in.readInt() == 1 ? true : false;
         helpAvailable = in.readInt() == 1 ? true : false;
         titleIconSelfExplanatory = in.readInt() == 1 ? true : false;
         itemsIconSelfExplanatory = in.readInt() == 1 ? true : false;
         presentationType = PresentationType.values()[in.readInt()];
-        // ---------- Original Method ----------
-        //title = in.readString();
-        //titleIcon = in.readParcelable(null);
-        //items = new ArrayList<Item>();
-        //int size = in.readInt();
-        //for (int i=0; i<size; i++) {
-            //Item item = in.readParcelable(null);
-            //items.add(item);
-        //}
-        //defaultItem = in.readInt();
-        //softKeyPreferred = in.readInt() == 1 ? true : false;
-        //helpAvailable = in.readInt() == 1 ? true : false;
-        //titleIconSelfExplanatory = in.readInt() == 1 ? true : false;
-        //itemsIconSelfExplanatory = in.readInt() == 1 ? true : false;
-        //presentationType = PresentationType.values()[in.readInt()];
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -112,11 +112,12 @@ public class Menu implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1113002177 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1113002177;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.673 -0400", hash_original_method = "B96ACF1C9395307298AAD1BDB077B52A", hash_generated_method = "2E336180FA0FF36E950973F9E49D6AD8")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(title);
@@ -127,8 +128,8 @@ public class Menu implements Parcelable {
             int i = 0;
             {
                 dest.writeParcelable(items.get(i), flags);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         dest.writeInt(defaultItem);
         dest.writeInt(softKeyPreferred ? 1 : 0);
         dest.writeInt(helpAvailable ? 1 : 0);
@@ -137,20 +138,20 @@ public class Menu implements Parcelable {
         dest.writeInt(presentationType.ordinal());
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(title);
-        //dest.writeParcelable(titleIcon, flags);
-        //int size = items.size();
-        //dest.writeInt(size);
-        //for (int i=0; i<size; i++) {
-            //dest.writeParcelable(items.get(i), flags);
-        //}
-        //dest.writeInt(defaultItem);
-        //dest.writeInt(softKeyPreferred ? 1 : 0);
-        //dest.writeInt(helpAvailable ? 1 : 0);
-        //dest.writeInt(titleIconSelfExplanatory ? 1 : 0);
-        //dest.writeInt(itemsIconSelfExplanatory ? 1 : 0);
-        //dest.writeInt(presentationType.ordinal());
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -165,12 +166,12 @@ public class Menu implements Parcelable {
             return new Menu[size];
         }
     };
-    // orphaned legacy method
+    
     public Menu createFromParcel(Parcel in) {
             return new Menu(in);
         }
     
-    // orphaned legacy method
+    
     public Menu[] newArray(int size) {
             return new Menu[size];
         }

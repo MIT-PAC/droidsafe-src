@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x500.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.Hashtable;
@@ -28,7 +28,7 @@ public class IETFUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.583 -0400", hash_original_method = "A1DC5483E864AC4E5F00EC3185D86BA1", hash_generated_method = "A1DC5483E864AC4E5F00EC3185D86BA1")
     public IETFUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 

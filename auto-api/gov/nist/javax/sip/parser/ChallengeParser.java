@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
@@ -17,7 +17,7 @@ public abstract class ChallengeParser extends HeaderParser {
     protected  ChallengeParser(String challenge) {
         super(challenge);
         addTaint(challenge.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,10 +25,11 @@ public abstract class ChallengeParser extends HeaderParser {
     protected  ChallengeParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.828 -0400", hash_original_method = "9DA7C681662806B106F4C258133C7994", hash_generated_method = "ACBB75F54B75D8712A7AB87933F2824E")
     protected void parseParameter(AuthenticationHeader header) throws ParseException {
         dbg_enter("parseParameter");
@@ -36,25 +37,26 @@ public abstract class ChallengeParser extends HeaderParser {
         {
             NameValue nv = this.nameValue('=');
             header.setParameter(nv);
-        } //End block
+        } 
         finally 
         {
             dbg_leave("parseParameter");
-        } //End block
+        } 
         addTaint(header.getTaint());
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("parseParameter");
-        //try {
-            //NameValue nv = this.nameValue('=');
-            //header.setParameter(nv);
-        //} finally {
-            //if (debug)
-                //dbg_leave("parseParameter");
-        //}
+        
+        
+            
+        
+            
+            
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.828 -0400", hash_original_method = "B311542306ECD32A0F10ABE0BAAE80D2", hash_generated_method = "1A80ECD48D31B50867E9A757E27221ED")
     public void parse(AuthenticationHeader header) throws ParseException {
         this.lexer.SPorHT();
@@ -72,33 +74,33 @@ public abstract class ChallengeParser extends HeaderParser {
                     char la = lexer.lookAhead(0);
                     this.lexer.match(',');
                     this.lexer.SPorHT();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (ParseException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
+        } 
         addTaint(header.getTaint());
-        // ---------- Original Method ----------
-        //this.lexer.SPorHT();
-        //lexer.match(TokenTypes.ID);
-        //Token type = lexer.getNextToken();
-        //this.lexer.SPorHT();
-        //header.setScheme(type.getTokenValue());
-        //try {
-            //while (lexer.lookAhead(0) != '\n') {
-                //this.parseParameter(header);
-                //this.lexer.SPorHT();
-                //char la = lexer.lookAhead(0);
-                //if (la == '\n' || la == '\0')
-                    //break;
-                //this.lexer.match(',');
-                //this.lexer.SPorHT();
-            //}
-        //} catch (ParseException ex) {
-            //throw ex;
-        //}
+        
+        
+        
+        
+        
+        
+        
+            
+                
+                
+                
+                
+                    
+                
+                
+            
+        
+            
+        
     }
 
     

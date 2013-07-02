@@ -1,11 +1,11 @@
 package android.support.v4.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.Activity;
 import android.content.ComponentName;
@@ -26,7 +26,7 @@ public class ShareCompat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.178 -0400", hash_original_method = "0A13BB4106553207210A279F3A99B9BB", hash_generated_method = "0A13BB4106553207210A279F3A99B9BB")
     public ShareCompat ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -68,7 +68,7 @@ public class ShareCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.183 -0400", hash_original_method = "8064BAE7F7BB15EFDB6F22BEE7DAC14F", hash_generated_method = "8064BAE7F7BB15EFDB6F22BEE7DAC14F")
         public ShareCompatImplBase ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -77,8 +77,8 @@ public class ShareCompat {
             item.setIntent(shareIntent.createChooserIntent());
             addTaint(item.getTaint());
             addTaint(shareIntent.getTaint());
-            // ---------- Original Method ----------
-            //item.setIntent(shareIntent.createChooserIntent());
+            
+            
         }
 
         
@@ -91,7 +91,7 @@ public class ShareCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.183 -0400", hash_original_method = "2CBAE6C93111BB9854C827ED9FA39E30", hash_generated_method = "2CBAE6C93111BB9854C827ED9FA39E30")
         public ShareCompatImplICS ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -101,9 +101,9 @@ public class ShareCompat {
                     shareIntent.getIntent());
             addTaint(item.getTaint());
             addTaint(shareIntent.getTaint());
-            // ---------- Original Method ----------
-            //ShareCompatICS.configureMenuItem(item, shareIntent.getActivity(),
-                    //shareIntent.getIntent());
+            
+            
+                    
         }
 
         
@@ -141,12 +141,12 @@ public class ShareCompat {
             mIntent.putExtra(EXTRA_CALLING_PACKAGE, launchingActivity.getPackageName());
             mIntent.putExtra(EXTRA_CALLING_ACTIVITY, launchingActivity.getComponentName());
             mIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
-            // ---------- Original Method ----------
-            //mActivity = launchingActivity;
-            //mIntent = new Intent().setAction(Intent.ACTION_SEND);
-            //mIntent.putExtra(EXTRA_CALLING_PACKAGE, launchingActivity.getPackageName());
-            //mIntent.putExtra(EXTRA_CALLING_ACTIVITY, launchingActivity.getComponentName());
-            //mIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -157,19 +157,19 @@ public class ShareCompat {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.186 -0400", hash_original_method = "CC05494BB54ABC476F91DA83FFC83A1D", hash_generated_method = "B773277F0E6E868CCE34B9873DF2B3A2")
         public Intent getIntent() {
-            Intent varB4EAC82CA7396A68D541C85D26508E83_1494099958 = null; //Variable for return #1
+            Intent varB4EAC82CA7396A68D541C85D26508E83_1494099958 = null; 
             {
                 combineArrayExtra(Intent.EXTRA_EMAIL, mToAddresses);
                 mToAddresses = null;
-            } //End block
+            } 
             {
                 combineArrayExtra(Intent.EXTRA_CC, mCcAddresses);
                 mCcAddresses = null;
-            } //End block
+            } 
             {
                 combineArrayExtra(Intent.EXTRA_BCC, mBccAddresses);
                 mBccAddresses = null;
-            } //End block
+            } 
             boolean needsSendMultiple = mStreams != null && mStreams.size() > 1;
             boolean isSendMultiple = mIntent.getAction().equals(Intent.ACTION_SEND_MULTIPLE);
             {
@@ -178,41 +178,41 @@ public class ShareCompat {
                     boolean varF139EBEDE45D4A2E2BBF88D451A25947_733377259 = (mStreams != null && !mStreams.isEmpty());
                     {
                         mIntent.putExtra(Intent.EXTRA_STREAM, mStreams.get(0));
-                    } //End block
+                    } 
                     {
                         mIntent.removeExtra(Intent.EXTRA_STREAM);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mStreams = null;
-            } //End block
+            } 
             {
                 mIntent.setAction(Intent.ACTION_SEND_MULTIPLE);
                 {
                     boolean varF139EBEDE45D4A2E2BBF88D451A25947_1166455258 = (mStreams != null && !mStreams.isEmpty());
                     {
                         mIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, mStreams);
-                    } //End block
+                    } 
                     {
                         mIntent.removeExtra(Intent.EXTRA_STREAM);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1494099958 = mIntent;
-            varB4EAC82CA7396A68D541C85D26508E83_1494099958.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1494099958.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1494099958;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.186 -0400", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "736761F747073E33E106A285F3778C7E")
          Activity getActivity() {
-            Activity varB4EAC82CA7396A68D541C85D26508E83_259641511 = null; //Variable for return #1
+            Activity varB4EAC82CA7396A68D541C85D26508E83_259641511 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_259641511 = mActivity;
-            varB4EAC82CA7396A68D541C85D26508E83_259641511.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_259641511.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_259641511;
-            // ---------- Original Method ----------
-            //return mActivity;
+            
+            
         }
 
         
@@ -226,19 +226,19 @@ public class ShareCompat {
             add.toArray(finalAddresses);
             {
                 System.arraycopy(currentAddresses, 0, finalAddresses, add.size(), currentLength);
-            } //End block
+            } 
             mIntent.putExtra(extra, finalAddresses);
             addTaint(extra.getTaint());
             addTaint(add.getTaint());
-            // ---------- Original Method ----------
-            //String[] currentAddresses = mIntent.getStringArrayExtra(extra);
-            //int currentLength = currentAddresses != null ? currentAddresses.length : 0;
-            //String[] finalAddresses = new String[currentLength + add.size()];
-            //add.toArray(finalAddresses);
-            //if (currentAddresses != null) {
-                //System.arraycopy(currentAddresses, 0, finalAddresses, add.size(), currentLength);
-            //}
-            //mIntent.putExtra(extra, finalAddresses);
+            
+            
+            
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -255,321 +255,321 @@ public class ShareCompat {
             intent.putExtra(extra, result);
             addTaint(extra.getTaint());
             addTaint(add[0].getTaint());
-            // ---------- Original Method ----------
-            //Intent intent = getIntent();
-            //String[] old = intent.getStringArrayExtra(extra);
-            //int oldLength = old != null ? old.length : 0;
-            //String[] result = new String[oldLength + add.length];
-            //if (old != null) System.arraycopy(old, 0, result, 0, oldLength);
-            //System.arraycopy(add, 0, result, oldLength, add.length);
-            //intent.putExtra(extra, result);
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.188 -0400", hash_original_method = "4A271FB631FE734F0A005F0662E72303", hash_generated_method = "43080F759E29AEF338F4446B9C39F8BD")
         public Intent createChooserIntent() {
-            Intent varB4EAC82CA7396A68D541C85D26508E83_528838512 = null; //Variable for return #1
+            Intent varB4EAC82CA7396A68D541C85D26508E83_528838512 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_528838512 = Intent.createChooser(getIntent(), mChooserTitle);
-            varB4EAC82CA7396A68D541C85D26508E83_528838512.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_528838512.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_528838512;
-            // ---------- Original Method ----------
-            //return Intent.createChooser(getIntent(), mChooserTitle);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.188 -0400", hash_original_method = "EF93D4C25B6364A5474AC09756C110F4", hash_generated_method = "250CBDFEAEB807D2F8C8C9A9BA870E4A")
         public void startChooser() {
             mActivity.startActivity(createChooserIntent());
-            // ---------- Original Method ----------
-            //mActivity.startActivity(createChooserIntent());
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.189 -0400", hash_original_method = "06E956E502A80DA9473ED82266A5A9DE", hash_generated_method = "C20E2516BAC33A9FD3DF9F422F935B3E")
         public IntentBuilder setChooserTitle(CharSequence title) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1815663813 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1815663813 = null; 
             mChooserTitle = title;
             varB4EAC82CA7396A68D541C85D26508E83_1815663813 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1815663813.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1815663813.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1815663813;
-            // ---------- Original Method ----------
-            //mChooserTitle = title;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.189 -0400", hash_original_method = "03DF458E6ED02C68488BE88E21862CDF", hash_generated_method = "7CC50A33C8E46646B5EF7D49822B237A")
         public IntentBuilder setChooserTitle(int resId) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1985481226 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1985481226 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1985481226 = setChooserTitle(mActivity.getText(resId));
             addTaint(resId);
-            varB4EAC82CA7396A68D541C85D26508E83_1985481226.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1985481226.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1985481226;
-            // ---------- Original Method ----------
-            //return setChooserTitle(mActivity.getText(resId));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.190 -0400", hash_original_method = "FC54C1994B818C86E4DBEFD863458812", hash_generated_method = "1C364D943F8F9585C03E8F76DCA7DFFF")
         public IntentBuilder setType(String mimeType) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1661725575 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1661725575 = null; 
             mIntent.setType(mimeType);
             varB4EAC82CA7396A68D541C85D26508E83_1661725575 = this;
             addTaint(mimeType.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1661725575.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1661725575.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1661725575;
-            // ---------- Original Method ----------
-            //mIntent.setType(mimeType);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.190 -0400", hash_original_method = "C395D7124DB9BC11CF728AC9FB5C05F1", hash_generated_method = "9A339C77A30D82BC9AB35B76FE1EE3FA")
         public IntentBuilder setText(CharSequence text) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1018784947 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1018784947 = null; 
             mIntent.putExtra(Intent.EXTRA_TEXT, text);
             varB4EAC82CA7396A68D541C85D26508E83_1018784947 = this;
             addTaint(text.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1018784947.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1018784947.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1018784947;
-            // ---------- Original Method ----------
-            //mIntent.putExtra(Intent.EXTRA_TEXT, text);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.191 -0400", hash_original_method = "0CC67542367F5DDA6287793533CA2797", hash_generated_method = "BC3B26672F2D5316C376545B38E0A486")
         public IntentBuilder setStream(Uri streamUri) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1136049056 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1136049056 = null; 
             {
                 boolean var3141264D9C3F68A9609EF9BEF3806130_1187984300 = (!mIntent.getAction().equals(Intent.ACTION_SEND));
                 {
                     mIntent.setAction(Intent.ACTION_SEND);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mStreams = null;
             mIntent.putExtra(Intent.EXTRA_STREAM, streamUri);
             varB4EAC82CA7396A68D541C85D26508E83_1136049056 = this;
             addTaint(streamUri.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1136049056.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1136049056.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1136049056;
-            // ---------- Original Method ----------
-            //if (!mIntent.getAction().equals(Intent.ACTION_SEND)) {
-                //mIntent.setAction(Intent.ACTION_SEND);
-            //}
-            //mStreams = null;
-            //mIntent.putExtra(Intent.EXTRA_STREAM, streamUri);
-            //return this;
+            
+            
+                
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.192 -0400", hash_original_method = "5DA0D5B75B65E8A970BBB6A6FE8B4CFF", hash_generated_method = "F9B9675D7F578E12346222B3383BCCA6")
         public IntentBuilder addStream(Uri streamUri) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1020223791 = null; //Variable for return #1
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_14334554 = null; //Variable for return #2
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1020223791 = null; 
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_14334554 = null; 
             Uri currentStream = mIntent.getParcelableExtra(Intent.EXTRA_STREAM);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1020223791 = setStream(streamUri);
-            } //End block
+            } 
             {
                 mStreams = new ArrayList<Uri>();
-            } //End block
+            } 
             {
                 mIntent.removeExtra(Intent.EXTRA_STREAM);
                 mStreams.add(currentStream);
-            } //End block
+            } 
             mStreams.add(streamUri);
             varB4EAC82CA7396A68D541C85D26508E83_14334554 = this;
             addTaint(streamUri.getTaint());
-            IntentBuilder varA7E53CE21691AB073D9660D615818899_542215577; //Final return value
+            IntentBuilder varA7E53CE21691AB073D9660D615818899_542215577; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_542215577 = varB4EAC82CA7396A68D541C85D26508E83_1020223791;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_542215577 = varB4EAC82CA7396A68D541C85D26508E83_14334554;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_542215577.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_542215577.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_542215577;
-            // ---------- Original Method ----------
-            //Uri currentStream = mIntent.getParcelableExtra(Intent.EXTRA_STREAM);
-            //if (currentStream == null) {
-                //return setStream(streamUri);
-            //}
-            //if (mStreams == null) {
-                //mStreams = new ArrayList<Uri>();
-            //}
-            //if (currentStream != null) {
-                //mIntent.removeExtra(Intent.EXTRA_STREAM);
-                //mStreams.add(currentStream);
-            //}
-            //mStreams.add(streamUri);
-            //return this;
+            
+            
+            
+                
+            
+            
+                
+            
+            
+                
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.193 -0400", hash_original_method = "FD4DB555E0D921CCC6ACF7E2C37BCAC4", hash_generated_method = "7A277A9E316EDC1FCA3C86560A58A730")
         public IntentBuilder setEmailTo(String[] addresses) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1694264280 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1694264280 = null; 
             {
                 mToAddresses = null;
-            } //End block
+            } 
             mIntent.putExtra(Intent.EXTRA_EMAIL, addresses);
             varB4EAC82CA7396A68D541C85D26508E83_1694264280 = this;
             addTaint(addresses[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1694264280.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1694264280.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1694264280;
-            // ---------- Original Method ----------
-            //if (mToAddresses != null) {
-                //mToAddresses = null;
-            //}
-            //mIntent.putExtra(Intent.EXTRA_EMAIL, addresses);
-            //return this;
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.195 -0400", hash_original_method = "E206D9565B5E9D24AEF2AF92EC056646", hash_generated_method = "952785727EA210D231CE7717FEE100C8")
         public IntentBuilder addEmailTo(String address) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_544002269 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_544002269 = null; 
             {
                 mToAddresses = new ArrayList<String>();
-            } //End block
+            } 
             mToAddresses.add(address);
             varB4EAC82CA7396A68D541C85D26508E83_544002269 = this;
             addTaint(address.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_544002269.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_544002269.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_544002269;
-            // ---------- Original Method ----------
-            //if (mToAddresses == null) {
-                //mToAddresses = new ArrayList<String>();
-            //}
-            //mToAddresses.add(address);
-            //return this;
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.195 -0400", hash_original_method = "7721A9C42CBA5A2892BFCB8DDD6F7399", hash_generated_method = "5A15C25AC5DA0731B09EE23CD0D4A755")
         public IntentBuilder addEmailTo(String[] addresses) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1867397897 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1867397897 = null; 
             combineArrayExtra(Intent.EXTRA_EMAIL, addresses);
             varB4EAC82CA7396A68D541C85D26508E83_1867397897 = this;
             addTaint(addresses[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1867397897.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1867397897.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1867397897;
-            // ---------- Original Method ----------
-            //combineArrayExtra(Intent.EXTRA_EMAIL, addresses);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.196 -0400", hash_original_method = "BE74A7950B78C22222797B86EEED6F25", hash_generated_method = "47547FC3FBB7416CDC3071B46918083F")
         public IntentBuilder setEmailCc(String[] addresses) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1700173820 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1700173820 = null; 
             mIntent.putExtra(Intent.EXTRA_CC, addresses);
             varB4EAC82CA7396A68D541C85D26508E83_1700173820 = this;
             addTaint(addresses[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1700173820.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1700173820.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1700173820;
-            // ---------- Original Method ----------
-            //mIntent.putExtra(Intent.EXTRA_CC, addresses);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.196 -0400", hash_original_method = "2EF08D607B211A7E5DCF80D337C959CD", hash_generated_method = "9BAAB1284809143C919DCE71D3E596B7")
         public IntentBuilder addEmailCc(String address) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1166803633 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1166803633 = null; 
             {
                 mCcAddresses = new ArrayList<String>();
-            } //End block
+            } 
             mCcAddresses.add(address);
             varB4EAC82CA7396A68D541C85D26508E83_1166803633 = this;
             addTaint(address.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1166803633.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1166803633.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1166803633;
-            // ---------- Original Method ----------
-            //if (mCcAddresses == null) {
-                //mCcAddresses = new ArrayList<String>();
-            //}
-            //mCcAddresses.add(address);
-            //return this;
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.197 -0400", hash_original_method = "18B1AA262CDF43BA34C5BCC06BA146A5", hash_generated_method = "B046C40173AA6CBA6394C1B160554C52")
         public IntentBuilder addEmailCc(String[] addresses) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_388575813 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_388575813 = null; 
             combineArrayExtra(Intent.EXTRA_CC, addresses);
             varB4EAC82CA7396A68D541C85D26508E83_388575813 = this;
             addTaint(addresses[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_388575813.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_388575813.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_388575813;
-            // ---------- Original Method ----------
-            //combineArrayExtra(Intent.EXTRA_CC, addresses);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.198 -0400", hash_original_method = "965E5218675D98D1034B8CE91C4C024C", hash_generated_method = "1210CD86BE32A0C412F3DBF4054ADAC3")
         public IntentBuilder setEmailBcc(String[] addresses) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_378066511 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_378066511 = null; 
             mIntent.putExtra(Intent.EXTRA_BCC, addresses);
             varB4EAC82CA7396A68D541C85D26508E83_378066511 = this;
             addTaint(addresses[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_378066511.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_378066511.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_378066511;
-            // ---------- Original Method ----------
-            //mIntent.putExtra(Intent.EXTRA_BCC, addresses);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.198 -0400", hash_original_method = "68C0EF4D86815A482951AF12B5153611", hash_generated_method = "44E35868F39E8976572A7CC8FF9A0AC9")
         public IntentBuilder addEmailBcc(String address) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_254913127 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_254913127 = null; 
             {
                 mBccAddresses = new ArrayList<String>();
-            } //End block
+            } 
             mBccAddresses.add(address);
             varB4EAC82CA7396A68D541C85D26508E83_254913127 = this;
             addTaint(address.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_254913127.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_254913127.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_254913127;
-            // ---------- Original Method ----------
-            //if (mBccAddresses == null) {
-                //mBccAddresses = new ArrayList<String>();
-            //}
-            //mBccAddresses.add(address);
-            //return this;
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.199 -0400", hash_original_method = "A108079E5E05347E55233C38CDE39CC2", hash_generated_method = "FB7DF1DB5E006DD20FE98E51553C5DDA")
         public IntentBuilder addEmailBcc(String[] addresses) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1114253019 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1114253019 = null; 
             combineArrayExtra(Intent.EXTRA_BCC, addresses);
             varB4EAC82CA7396A68D541C85D26508E83_1114253019 = this;
             addTaint(addresses[0].getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1114253019.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1114253019.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1114253019;
-            // ---------- Original Method ----------
-            //combineArrayExtra(Intent.EXTRA_BCC, addresses);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.199 -0400", hash_original_method = "3E6F6D2B7406A417F246425C88E21422", hash_generated_method = "A6286B7A8649AE330D7A48AE2798F74A")
         public IntentBuilder setSubject(String subject) {
-            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1144793956 = null; //Variable for return #1
+            IntentBuilder varB4EAC82CA7396A68D541C85D26508E83_1144793956 = null; 
             mIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
             varB4EAC82CA7396A68D541C85D26508E83_1144793956 = this;
             addTaint(subject.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1144793956.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1144793956.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1144793956;
-            // ---------- Original Method ----------
-            //mIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-            //return this;
+            
+            
+            
         }
 
         
@@ -600,11 +600,11 @@ public class ShareCompat {
             mIntent = activity.getIntent();
             mCallingPackage = ShareCompat.getCallingPackage(activity);
             mCallingActivity = ShareCompat.getCallingActivity(activity);
-            // ---------- Original Method ----------
-            //mActivity = activity;
-            //mIntent = activity.getIntent();
-            //mCallingPackage = ShareCompat.getCallingPackage(activity);
-            //mCallingActivity = ShareCompat.getCallingActivity(activity);
+            
+            
+            
+            
+            
         }
 
         
@@ -619,9 +619,9 @@ public class ShareCompat {
             boolean var6199C70CF17ED50D954A70C090A4DC62_765240115 = (action.equals(Intent.ACTION_SEND) || action.equals(Intent.ACTION_SEND_MULTIPLE));
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1810106078 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1810106078;
-            // ---------- Original Method ----------
-            //final String action = mIntent.getAction();
-            //return action.equals(Intent.ACTION_SEND) || action.equals(Intent.ACTION_SEND_MULTIPLE);
+            
+            
+            
         }
 
         
@@ -630,8 +630,8 @@ public class ShareCompat {
             boolean var163FBD7B7485DF6491201565A1589C76_85269410 = (mIntent.getAction().equals(Intent.ACTION_SEND));
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_677008214 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_677008214;
-            // ---------- Original Method ----------
-            //return mIntent.getAction().equals(Intent.ACTION_SEND);
+            
+            
         }
 
         
@@ -640,86 +640,86 @@ public class ShareCompat {
             boolean var8AA762653092B3F38E8AE23B1AB05044_1753438440 = (mIntent.getAction().equals(Intent.ACTION_SEND_MULTIPLE));
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1322588732 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1322588732;
-            // ---------- Original Method ----------
-            //return mIntent.getAction().equals(Intent.ACTION_SEND_MULTIPLE);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.204 -0400", hash_original_method = "D2D116B363ACAF23E5ABAEA8317A2D07", hash_generated_method = "3CD60D14EA9AB5CD5E8DF6C5D9489A6F")
         public String getType() {
-            String varB4EAC82CA7396A68D541C85D26508E83_318475690 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_318475690 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_318475690 = mIntent.getType();
-            varB4EAC82CA7396A68D541C85D26508E83_318475690.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_318475690.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_318475690;
-            // ---------- Original Method ----------
-            //return mIntent.getType();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.205 -0400", hash_original_method = "001799CDC7AD568A5D9791D68F82B19E", hash_generated_method = "DC52F67D86B325F344DE382BADFE7557")
         public CharSequence getText() {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_838656272 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_838656272 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_838656272 = mIntent.getCharSequenceExtra(Intent.EXTRA_TEXT);
-            varB4EAC82CA7396A68D541C85D26508E83_838656272.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_838656272.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_838656272;
-            // ---------- Original Method ----------
-            //return mIntent.getCharSequenceExtra(Intent.EXTRA_TEXT);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.206 -0400", hash_original_method = "6766C6C36607D95201A80937E1C93C5B", hash_generated_method = "554F7CE40726B255CCE6E4B67B08F3E7")
         public Uri getStream() {
-            Uri varB4EAC82CA7396A68D541C85D26508E83_1857103562 = null; //Variable for return #1
+            Uri varB4EAC82CA7396A68D541C85D26508E83_1857103562 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1857103562 = mIntent.getParcelableExtra(Intent.EXTRA_STREAM);
-            varB4EAC82CA7396A68D541C85D26508E83_1857103562.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1857103562.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1857103562;
-            // ---------- Original Method ----------
-            //return mIntent.getParcelableExtra(Intent.EXTRA_STREAM);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.207 -0400", hash_original_method = "CA16C800A8BACDD493D26B5DCB8F6704", hash_generated_method = "ED64F459B6C200E3F17A92EC5C864EA4")
         public Uri getStream(int index) {
-            Uri varB4EAC82CA7396A68D541C85D26508E83_1162469898 = null; //Variable for return #1
-            Uri varB4EAC82CA7396A68D541C85D26508E83_205464798 = null; //Variable for return #2
+            Uri varB4EAC82CA7396A68D541C85D26508E83_1162469898 = null; 
+            Uri varB4EAC82CA7396A68D541C85D26508E83_205464798 = null; 
             {
                 boolean varAA8C0850796E27ECE01A9205830925C9_1288841299 = (mStreams == null && isMultipleShare());
                 {
                     mStreams = mIntent.getParcelableArrayListExtra(Intent.EXTRA_STREAM);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1162469898 = mStreams.get(index);
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_205464798 = mIntent.getParcelableExtra(Intent.EXTRA_STREAM);
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("Stream items available: " + getStreamCount() +
                     " index requested: " + index);
             addTaint(index);
-            Uri varA7E53CE21691AB073D9660D615818899_1200325558; //Final return value
+            Uri varA7E53CE21691AB073D9660D615818899_1200325558; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1200325558 = varB4EAC82CA7396A68D541C85D26508E83_1162469898;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1200325558 = varB4EAC82CA7396A68D541C85D26508E83_205464798;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1200325558.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1200325558.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1200325558;
-            // ---------- Original Method ----------
-            //if (mStreams == null && isMultipleShare()) {
-                //mStreams = mIntent.getParcelableArrayListExtra(Intent.EXTRA_STREAM);
-            //}
-            //if (mStreams != null) {
-                //return mStreams.get(index);
-            //}
-            //if (index == 0) {
-                //return mIntent.getParcelableExtra(Intent.EXTRA_STREAM);
-            //}
-            //throw new IndexOutOfBoundsException("Stream items available: " + getStreamCount() +
-                    //" index requested: " + index);
+            
+            
+                
+            
+            
+                
+            
+            
+                
+            
+            
+                    
         }
 
         
@@ -729,210 +729,210 @@ public class ShareCompat {
                 boolean varAA8C0850796E27ECE01A9205830925C9_48841898 = (mStreams == null && isMultipleShare());
                 {
                     mStreams = mIntent.getParcelableArrayListExtra(Intent.EXTRA_STREAM);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 int varD4374328095A9182E73BED2B4E112D5C_1434044495 = (mStreams.size());
-            } //End block
+            } 
             {
                 boolean var19EBAAC96567DABF4F39A6F661817952_552865182 = (mIntent.hasExtra(Intent.EXTRA_STREAM));
-            } //End flattened ternary
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1878786727 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1878786727;
-            // ---------- Original Method ----------
-            //if (mStreams == null && isMultipleShare()) {
-                //mStreams = mIntent.getParcelableArrayListExtra(Intent.EXTRA_STREAM);
-            //}
-            //if (mStreams != null) {
-                //return mStreams.size();
-            //}
-            //return mIntent.hasExtra(Intent.EXTRA_STREAM) ? 1 : 0;
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.209 -0400", hash_original_method = "D1879246F5FB4411F3E91A8AEB3C384C", hash_generated_method = "A2650E3D5DDF06330E858C7584E72CA8")
         public String[] getEmailTo() {
-            String[] varB4EAC82CA7396A68D541C85D26508E83_833932009 = null; //Variable for return #1
+            String[] varB4EAC82CA7396A68D541C85D26508E83_833932009 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_833932009 = mIntent.getStringArrayExtra(Intent.EXTRA_EMAIL);
-            varB4EAC82CA7396A68D541C85D26508E83_833932009.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_833932009.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_833932009;
-            // ---------- Original Method ----------
-            //return mIntent.getStringArrayExtra(Intent.EXTRA_EMAIL);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.210 -0400", hash_original_method = "F2F2C05F2171316000FF1516A5D8CD3A", hash_generated_method = "976CEBE1EC58A957E248FEC0D168BE3A")
         public String[] getEmailCc() {
-            String[] varB4EAC82CA7396A68D541C85D26508E83_1656059322 = null; //Variable for return #1
+            String[] varB4EAC82CA7396A68D541C85D26508E83_1656059322 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1656059322 = mIntent.getStringArrayExtra(Intent.EXTRA_CC);
-            varB4EAC82CA7396A68D541C85D26508E83_1656059322.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1656059322.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1656059322;
-            // ---------- Original Method ----------
-            //return mIntent.getStringArrayExtra(Intent.EXTRA_CC);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.210 -0400", hash_original_method = "8B48BB50B06FCBCC280D77A42BA7B009", hash_generated_method = "73C788A13E00B08B87F9E7C063A833FF")
         public String[] getEmailBcc() {
-            String[] varB4EAC82CA7396A68D541C85D26508E83_1387853362 = null; //Variable for return #1
+            String[] varB4EAC82CA7396A68D541C85D26508E83_1387853362 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1387853362 = mIntent.getStringArrayExtra(Intent.EXTRA_BCC);
-            varB4EAC82CA7396A68D541C85D26508E83_1387853362.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1387853362.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1387853362;
-            // ---------- Original Method ----------
-            //return mIntent.getStringArrayExtra(Intent.EXTRA_BCC);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.211 -0400", hash_original_method = "1E0DCEAE4F7F7EF81C98D4CC969955D0", hash_generated_method = "529CDBE8C0D3448B1785022439CB6D80")
         public String getSubject() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1063436602 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1063436602 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1063436602 = mIntent.getStringExtra(Intent.EXTRA_SUBJECT);
-            varB4EAC82CA7396A68D541C85D26508E83_1063436602.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1063436602.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1063436602;
-            // ---------- Original Method ----------
-            //return mIntent.getStringExtra(Intent.EXTRA_SUBJECT);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.212 -0400", hash_original_method = "599A2909147C5ABF7649B275042032E0", hash_generated_method = "1A774269C44B83AE59A4AC1B35A2FCE2")
         public String getCallingPackage() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1689039019 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1689039019 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1689039019 = mCallingPackage;
-            varB4EAC82CA7396A68D541C85D26508E83_1689039019.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1689039019.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1689039019;
-            // ---------- Original Method ----------
-            //return mCallingPackage;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.213 -0400", hash_original_method = "7754B7141829C06037743B2AEFCB8100", hash_generated_method = "5A80457DE0A37285C92F83B2C3D69BC5")
         public ComponentName getCallingActivity() {
-            ComponentName varB4EAC82CA7396A68D541C85D26508E83_978483958 = null; //Variable for return #1
+            ComponentName varB4EAC82CA7396A68D541C85D26508E83_978483958 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_978483958 = mCallingActivity;
-            varB4EAC82CA7396A68D541C85D26508E83_978483958.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_978483958.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_978483958;
-            // ---------- Original Method ----------
-            //return mCallingActivity;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.214 -0400", hash_original_method = "DF0726DEBD67610C86B101B05D0C636E", hash_generated_method = "66F0D4EC472A3F8B9093570A15499089")
         public Drawable getCallingActivityIcon() {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_1858726983 = null; //Variable for return #1
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_531054472 = null; //Variable for return #2
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_789699527 = null; //Variable for return #3
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_1858726983 = null; 
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_531054472 = null; 
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_789699527 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1858726983 = null;
             PackageManager pm = mActivity.getPackageManager();
             try 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_531054472 = pm.getActivityIcon(mCallingActivity);
-            } //End block
+            } 
             catch (NameNotFoundException e)
             { }
             varB4EAC82CA7396A68D541C85D26508E83_789699527 = null;
-            Drawable varA7E53CE21691AB073D9660D615818899_1282462784; //Final return value
+            Drawable varA7E53CE21691AB073D9660D615818899_1282462784; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1282462784 = varB4EAC82CA7396A68D541C85D26508E83_1858726983;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1282462784 = varB4EAC82CA7396A68D541C85D26508E83_531054472;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1282462784 = varB4EAC82CA7396A68D541C85D26508E83_789699527;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1282462784.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1282462784.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1282462784;
-            // ---------- Original Method ----------
-            //if (mCallingActivity == null) return null;
-            //PackageManager pm = mActivity.getPackageManager();
-            //try {
-                //return pm.getActivityIcon(mCallingActivity);
-            //} catch (NameNotFoundException e) {
-                //Log.e(TAG, "Could not retrieve icon for calling activity", e);
-            //}
-            //return null;
+            
+            
+            
+            
+                
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.215 -0400", hash_original_method = "CF72ECE57DC07F413BA6AAECB91EABC0", hash_generated_method = "C68F8E3C1B50F06A4F92F592DE7056AC")
         public Drawable getCallingApplicationIcon() {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_107052907 = null; //Variable for return #1
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_1687670331 = null; //Variable for return #2
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_1785340625 = null; //Variable for return #3
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_107052907 = null; 
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_1687670331 = null; 
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_1785340625 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_107052907 = null;
             PackageManager pm = mActivity.getPackageManager();
             try 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1687670331 = pm.getApplicationIcon(mCallingPackage);
-            } //End block
+            } 
             catch (NameNotFoundException e)
             { }
             varB4EAC82CA7396A68D541C85D26508E83_1785340625 = null;
-            Drawable varA7E53CE21691AB073D9660D615818899_1026879961; //Final return value
+            Drawable varA7E53CE21691AB073D9660D615818899_1026879961; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1026879961 = varB4EAC82CA7396A68D541C85D26508E83_107052907;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1026879961 = varB4EAC82CA7396A68D541C85D26508E83_1687670331;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1026879961 = varB4EAC82CA7396A68D541C85D26508E83_1785340625;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1026879961.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1026879961.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1026879961;
-            // ---------- Original Method ----------
-            //if (mCallingPackage == null) return null;
-            //PackageManager pm = mActivity.getPackageManager();
-            //try {
-                //return pm.getApplicationIcon(mCallingPackage);
-            //} catch (NameNotFoundException e) {
-                //Log.e(TAG, "Could not retrieve icon for calling application", e);
-            //}
-            //return null;
+            
+            
+            
+            
+                
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.216 -0400", hash_original_method = "F45DE27FE2614ABFE05276FFE92A1DFC", hash_generated_method = "EAB46FF7F8E156326F06BB5EB7C3AC59")
         public CharSequence getCallingApplicationLabel() {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1428774399 = null; //Variable for return #1
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_986456394 = null; //Variable for return #2
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1361535060 = null; //Variable for return #3
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1428774399 = null; 
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_986456394 = null; 
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1361535060 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1428774399 = null;
             PackageManager pm = mActivity.getPackageManager();
             try 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_986456394 = pm.getApplicationLabel(pm.getApplicationInfo(mCallingPackage, 0));
-            } //End block
+            } 
             catch (NameNotFoundException e)
             { }
             varB4EAC82CA7396A68D541C85D26508E83_1361535060 = null;
-            CharSequence varA7E53CE21691AB073D9660D615818899_77135880; //Final return value
+            CharSequence varA7E53CE21691AB073D9660D615818899_77135880; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_77135880 = varB4EAC82CA7396A68D541C85D26508E83_1428774399;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_77135880 = varB4EAC82CA7396A68D541C85D26508E83_986456394;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_77135880 = varB4EAC82CA7396A68D541C85D26508E83_1361535060;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_77135880.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_77135880.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_77135880;
-            // ---------- Original Method ----------
-            //if (mCallingPackage == null) return null;
-            //PackageManager pm = mActivity.getPackageManager();
-            //try {
-                //return pm.getApplicationLabel(pm.getApplicationInfo(mCallingPackage, 0));
-            //} catch (NameNotFoundException e) {
-                //Log.e(TAG, "Could not retrieve label for calling application", e);
-            //}
-            //return null;
+            
+            
+            
+            
+                
+            
+                
+            
+            
         }
 
         

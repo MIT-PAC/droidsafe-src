@@ -1,11 +1,11 @@
 package org.bouncycastle.openssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.security.Key;
@@ -34,7 +34,7 @@ final class PEMUtilities {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.119 -0400", hash_original_method = "5344C5F9BC7B07765B0DBE5794533466", hash_generated_method = "5344C5F9BC7B07765B0DBE5794533466")
     public PEMUtilities ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -92,6 +92,7 @@ final class PEMUtilities {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static byte[] crypt(
         boolean encrypt,
         Provider provider,
@@ -222,6 +223,7 @@ final class PEMUtilities {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static SecretKey getKey(
         char[]  password,
         String  algorithm,

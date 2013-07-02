@@ -1,11 +1,11 @@
 package android.text.method;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -44,12 +44,13 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
     public  TextKeyListener(Capitalize cap, boolean autotext) {
         mAutoCap = cap;
         mAutoText = autotext;
-        // ---------- Original Method ----------
-        //mAutoCap = cap;
-        //mAutoText = autotext;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static TextKeyListener getInstance(boolean autotext,
                                               Capitalize cap) {
         int off = cap.ordinal() * 2 + (autotext ? 1 : 0);
@@ -60,11 +61,13 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static TextKeyListener getInstance() {
         return getInstance(false, Capitalize.NONE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean shouldCap(Capitalize cap, CharSequence cs, int off) {
         int i;
         char c;
@@ -80,21 +83,23 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.575 -0400", hash_original_method = "77B762D33BA1CBC4DB995B196C907EDB", hash_generated_method = "CD97FAED6E2E5E8BF9D146AFCF4372B2")
     public int getInputType() {
         int var9E11457640925EE0EF1D4E5A2BEB5EA9_1323633459 = (makeTextContentType(mAutoCap, mAutoText));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1068752307 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1068752307;
-        // ---------- Original Method ----------
-        //return makeTextContentType(mAutoCap, mAutoText);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.575 -0400", hash_original_method = "81E68D18E6AAF9C62286CED7FE623E2E", hash_generated_method = "AC4B69081227AACF55FFFCECC53F4F93")
     @Override
     public boolean onKeyDown(View view, Editable content,
                              int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         KeyListener im = getKeyListener(event);
         boolean varF286B59ADFF6299A37098A9DB0C8357B_167092905 = (im.onKeyDown(view, content, keyCode, event));
         addTaint(view.getTaint());
@@ -103,17 +108,18 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1060758335 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1060758335;
-        // ---------- Original Method ----------
-        //KeyListener im = getKeyListener(event);
-        //return im.onKeyDown(view, content, keyCode, event);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.576 -0400", hash_original_method = "4D169ED96CD6963312694BD71629C37D", hash_generated_method = "0A390AF57A9684CBDE5D6AF8AFC7822C")
     @Override
     public boolean onKeyUp(View view, Editable content,
                            int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         KeyListener im = getKeyListener(event);
         boolean var95A6FE6B62FCC62B201DE8A79EC297F9_510958228 = (im.onKeyUp(view, content, keyCode, event));
         addTaint(view.getTaint());
@@ -122,16 +128,17 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_208449949 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_208449949;
-        // ---------- Original Method ----------
-        //KeyListener im = getKeyListener(event);
-        //return im.onKeyUp(view, content, keyCode, event);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.576 -0400", hash_original_method = "BC51D61DF5BB87B519CDA007F0E35AD4", hash_generated_method = "E877940B3DC6DB416E95D3C6E279AA4F")
     @Override
     public boolean onKeyOther(View view, Editable content, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         KeyListener im = getKeyListener(event);
         boolean varEE7D10462EE6111109AAADBA63F6F0F6_1672156438 = (im.onKeyOther(view, content, event));
         addTaint(view.getTaint());
@@ -139,12 +146,13 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1107142665 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1107142665;
-        // ---------- Original Method ----------
-        //KeyListener im = getKeyListener(event);
-        //return im.onKeyOther(view, content, event);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void clear(Editable e) {
         e.clear();
         e.removeSpan(ACTIVE);
@@ -162,97 +170,100 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.577 -0400", hash_original_method = "A7E02D03E9AB7CF614DD169102D03FAF", hash_generated_method = "7B286C8C34C0CB912482A9582E50ADC8")
     public void onSpanAdded(Spannable s, Object what, int start, int end) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(s.getTaint());
         addTaint(what.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.577 -0400", hash_original_method = "2C716670C272F54C9EB4064D90DB3C4E", hash_generated_method = "F033A2BD7F1AB312500D2F37A623D63A")
     public void onSpanRemoved(Spannable s, Object what, int start, int end) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(s.getTaint());
         addTaint(what.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.578 -0400", hash_original_method = "C422051A9042B505708BBCABB42F0EAF", hash_generated_method = "1235A9E630F04714A1D4FE1D9F021FE3")
     public void onSpanChanged(Spannable s, Object what, int start, int end,
                               int st, int en) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             s.removeSpan(ACTIVE);
-        } //End block
+        } 
         addTaint(s.getTaint());
         addTaint(what.getTaint());
         addTaint(start);
         addTaint(end);
         addTaint(st);
         addTaint(en);
-        // ---------- Original Method ----------
-        //if (what == Selection.SELECTION_END) {
-            //s.removeSpan(ACTIVE);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.578 -0400", hash_original_method = "AD20E29A89E7D41F4894A2F9AC99B4E0", hash_generated_method = "A148E467A51B139C1D5FD29E5A2BA298")
     private KeyListener getKeyListener(KeyEvent event) {
-        KeyListener varB4EAC82CA7396A68D541C85D26508E83_1161827332 = null; //Variable for return #1
-        KeyListener varB4EAC82CA7396A68D541C85D26508E83_1287207585 = null; //Variable for return #2
-        KeyListener varB4EAC82CA7396A68D541C85D26508E83_882799251 = null; //Variable for return #3
-        KeyListener varB4EAC82CA7396A68D541C85D26508E83_2144761283 = null; //Variable for return #4
+        KeyListener varB4EAC82CA7396A68D541C85D26508E83_1161827332 = null; 
+        KeyListener varB4EAC82CA7396A68D541C85D26508E83_1287207585 = null; 
+        KeyListener varB4EAC82CA7396A68D541C85D26508E83_882799251 = null; 
+        KeyListener varB4EAC82CA7396A68D541C85D26508E83_2144761283 = null; 
         KeyCharacterMap kmap = event.getKeyCharacterMap();
         int kind = kmap.getKeyboardType();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1161827332 = QwertyKeyListener.getInstance(mAutoText, mAutoCap);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1287207585 = MultiTapKeyListener.getInstance(mAutoText, mAutoCap);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_882799251 = QwertyKeyListener.getInstanceForFullKeyboard();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2144761283 = NullKeyListener.getInstance();
         addTaint(event.getTaint());
-        KeyListener varA7E53CE21691AB073D9660D615818899_1238210396; //Final return value
+        KeyListener varA7E53CE21691AB073D9660D615818899_1238210396; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1238210396 = varB4EAC82CA7396A68D541C85D26508E83_1161827332;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1238210396 = varB4EAC82CA7396A68D541C85D26508E83_1287207585;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1238210396 = varB4EAC82CA7396A68D541C85D26508E83_882799251;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1238210396 = varB4EAC82CA7396A68D541C85D26508E83_2144761283;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1238210396.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1238210396.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1238210396;
-        // ---------- Original Method ----------
-        //KeyCharacterMap kmap = event.getKeyCharacterMap();
-        //int kind = kmap.getKeyboardType();
-        //if (kind == KeyCharacterMap.ALPHA) {
-            //return QwertyKeyListener.getInstance(mAutoText, mAutoCap);
-        //} else if (kind == KeyCharacterMap.NUMERIC) {
-            //return MultiTapKeyListener.getInstance(mAutoText, mAutoCap);
-        //} else if (kind == KeyCharacterMap.FULL
-                //|| kind == KeyCharacterMap.SPECIAL_FUNCTION) {
-            //return QwertyKeyListener.getInstanceForFullKeyboard();
-        //}
-        //return NullKeyListener.getInstance();
+        
+        
+        
+        
+            
+        
+            
+        
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.579 -0400", hash_original_method = "565C1A1138C97E5AB635581DD94969A4", hash_generated_method = "2127E09276CC5A041C8C79D8C83F39F3")
     public void release() {
         {
@@ -260,25 +271,26 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
             {
                 contentResolver.unregisterContentObserver(mObserver);
                 mResolver.clear();
-            } //End block
+            } 
             mObserver = null;
             mResolver = null;
             mPrefsInited = false;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mResolver != null) {
-            //final ContentResolver contentResolver = mResolver.get();
-            //if (contentResolver != null) {
-                //contentResolver.unregisterContentObserver(mObserver);
-                //mResolver.clear();
-            //}
-            //mObserver = null;
-            //mResolver = null;
-            //mPrefsInited = false;
-        //}
+        } 
+        
+        
+            
+            
+                
+                
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.579 -0400", hash_original_method = "083A24B7721BE4E40A2817E04F6CDAB7", hash_generated_method = "E05697A0C6467BEBA4A3FF4C9487EA25")
     private void initPrefs(Context context) {
         final ContentResolver contentResolver = context.getContentResolver();
@@ -286,22 +298,23 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
         {
             mObserver = new SettingsObserver();
             contentResolver.registerContentObserver(Settings.System.CONTENT_URI, true, mObserver);
-        } //End block
+        } 
         updatePrefs(contentResolver);
         mPrefsInited = true;
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //final ContentResolver contentResolver = context.getContentResolver();
-        //mResolver = new WeakReference<ContentResolver>(contentResolver);
-        //if (mObserver == null) {
-            //mObserver = new SettingsObserver();
-            //contentResolver.registerContentObserver(Settings.System.CONTENT_URI, true, mObserver);
-        //}
-        //updatePrefs(contentResolver);
-        //mPrefsInited = true;
+        
+        
+        
+        
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.580 -0400", hash_original_method = "4FB87B933010A67FA68BED5325D02530", hash_generated_method = "9127DB2EBD53A5C9BBA003DA4F2D451C")
     private void updatePrefs(ContentResolver resolver) {
         boolean cap = System.getInt(resolver, System.TEXT_AUTO_CAPS, 1) > 0;
@@ -313,15 +326,15 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
                  (period ? AUTO_PERIOD : 0) |
                  (pw ? SHOW_PASSWORD : 0);
         addTaint(resolver.getTaint());
-        // ---------- Original Method ----------
-        //boolean cap = System.getInt(resolver, System.TEXT_AUTO_CAPS, 1) > 0;
-        //boolean text = System.getInt(resolver, System.TEXT_AUTO_REPLACE, 1) > 0;
-        //boolean period = System.getInt(resolver, System.TEXT_AUTO_PUNCTUATE, 1) > 0;
-        //boolean pw = System.getInt(resolver, System.TEXT_SHOW_PASSWORD, 1) > 0;
-        //mPrefs = (cap ? AUTO_CAP : 0) |
-                 //(text ? AUTO_TEXT : 0) |
-                 //(period ? AUTO_PERIOD : 0) |
-                 //(pw ? SHOW_PASSWORD : 0);
+        
+        
+        
+        
+        
+        
+                 
+                 
+                 
     }
 
     
@@ -332,19 +345,19 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
                 boolean var8392636308BE7795B7CB7BDE39EE99F5_1212064128 = (!mPrefsInited || mResolver.get() == null);
                 {
                     initPrefs(context);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(context.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_235580387 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_235580387;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (!mPrefsInited || mResolver.get() == null) {
-                //initPrefs(context);
-            //}
-        //}
-        //return mPrefs;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -358,7 +371,7 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.580 -0400", hash_original_method = "F358F3B966187D3EEEEBD171D03A4696", hash_generated_method = "F358F3B966187D3EEEEBD171D03A4696")
         public NullKeyListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -366,51 +379,51 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
         public int getInputType() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1772520160 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1772520160;
-            // ---------- Original Method ----------
-            //return InputType.TYPE_NULL;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.581 -0400", hash_original_method = "3A5E70FDE36A1D45C2BCBEA410D24514", hash_generated_method = "5E3ECA244A96514B04531CBAAA859A65")
         public boolean onKeyDown(View view, Editable content,
                                  int keyCode, KeyEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(view.getTaint());
             addTaint(content.getTaint());
             addTaint(keyCode);
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_903312888 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_903312888;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.581 -0400", hash_original_method = "1D7ECDFDE217EC70CAE84F2DF1B7B165", hash_generated_method = "A2E9A7322F5CBB4292253F0C26EC7B4F")
         public boolean onKeyUp(View view, Editable content, int keyCode,
                                         KeyEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(view.getTaint());
             addTaint(content.getTaint());
             addTaint(keyCode);
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1227551992 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1227551992;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.582 -0400", hash_original_method = "2352E2665ECFCE8217C303C63497A70F", hash_generated_method = "86FF6B8B90DEE6613AFC914E9C9456E9")
         public boolean onKeyOther(View view, Editable content, KeyEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(view.getTaint());
             addTaint(content.getTaint());
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1136412397 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1136412397;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -419,7 +432,7 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
             addTaint(view.getTaint());
             addTaint(content.getTaint());
             addTaint(states);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -443,38 +456,38 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.582 -0400", hash_original_method = "3A67C3C9DA9AFE8F3EB6304BC772D062", hash_generated_method = "EDD4606589505CE8A23486C182973460")
         public  SettingsObserver() {
             super(new Handler());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.583 -0400", hash_original_method = "9B798686FD4009B7C6E0CF4CD0BD37F7", hash_generated_method = "DF2673ADFBE7C125E62F0EE3A914C552")
         @Override
         public void onChange(boolean selfChange) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 final ContentResolver contentResolver = mResolver.get();
                 {
                     mPrefsInited = false;
-                } //End block
+                } 
                 {
                     updatePrefs(contentResolver);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 mPrefsInited = false;
-            } //End block
+            } 
             addTaint(selfChange);
-            // ---------- Original Method ----------
-            //if (mResolver != null) {
-                //final ContentResolver contentResolver = mResolver.get();
-                //if (contentResolver == null) {
-                    //mPrefsInited = false;
-                //} else {
-                    //updatePrefs(contentResolver);
-                //}
-            //} else {
-                //mPrefsInited = false;
-            //}
+            
+            
+                
+                
+                    
+                
+                    
+                
+            
+                
+            
         }
 
         

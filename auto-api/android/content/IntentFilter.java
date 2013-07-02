@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.net.Uri;
 import android.os.Parcel;
@@ -53,9 +53,9 @@ public class IntentFilter implements Parcelable {
     public  IntentFilter() {
         mPriority = 0;
         mActions = new ArrayList<String>();
-        // ---------- Original Method ----------
-        //mPriority = 0;
-        //mActions = new ArrayList<String>();
+        
+        
+        
     }
 
     
@@ -65,10 +65,10 @@ public class IntentFilter implements Parcelable {
         mActions = new ArrayList<String>();
         addAction(action);
         addTaint(action.getTaint());
-        // ---------- Original Method ----------
-        //mPriority = 0;
-        //mActions = new ArrayList<String>();
-        //addAction(action);
+        
+        
+        
+        
     }
 
     
@@ -80,11 +80,11 @@ public class IntentFilter implements Parcelable {
         addDataType(dataType);
         addTaint(action.getTaint());
         addTaint(dataType.getTaint());
-        // ---------- Original Method ----------
-        //mPriority = 0;
-        //mActions = new ArrayList<String>();
-        //addAction(action);
-        //addDataType(dataType);
+        
+        
+        
+        
+        
     }
 
     
@@ -94,39 +94,39 @@ public class IntentFilter implements Parcelable {
         mActions = new ArrayList<String>(o.mActions);
         {
             mCategories = new ArrayList<String>(o.mCategories);
-        } //End block
+        } 
         {
             mDataTypes = new ArrayList<String>(o.mDataTypes);
-        } //End block
+        } 
         {
             mDataSchemes = new ArrayList<String>(o.mDataSchemes);
-        } //End block
+        } 
         {
             mDataAuthorities = new ArrayList<AuthorityEntry>(o.mDataAuthorities);
-        } //End block
+        } 
         {
             mDataPaths = new ArrayList<PatternMatcher>(o.mDataPaths);
-        } //End block
+        } 
         mHasPartialTypes = o.mHasPartialTypes;
-        // ---------- Original Method ----------
-        //mPriority = o.mPriority;
-        //mActions = new ArrayList<String>(o.mActions);
-        //if (o.mCategories != null) {
-            //mCategories = new ArrayList<String>(o.mCategories);
-        //}
-        //if (o.mDataTypes != null) {
-            //mDataTypes = new ArrayList<String>(o.mDataTypes);
-        //}
-        //if (o.mDataSchemes != null) {
-            //mDataSchemes = new ArrayList<String>(o.mDataSchemes);
-        //}
-        //if (o.mDataAuthorities != null) {
-            //mDataAuthorities = new ArrayList<AuthorityEntry>(o.mDataAuthorities);
-        //}
-        //if (o.mDataPaths != null) {
-            //mDataPaths = new ArrayList<PatternMatcher>(o.mDataPaths);
-        //}
-        //mHasPartialTypes = o.mHasPartialTypes;
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -139,22 +139,22 @@ public class IntentFilter implements Parcelable {
             {
                 mCategories = new ArrayList<String>();
                 source.readStringList(mCategories);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varFD16828A378FD83700BE97539951F787_1700774902 = (source.readInt() != 0);
             {
                 mDataSchemes = new ArrayList<String>();
                 source.readStringList(mDataSchemes);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varFD16828A378FD83700BE97539951F787_1018321867 = (source.readInt() != 0);
             {
                 mDataTypes = new ArrayList<String>();
                 source.readStringList(mDataTypes);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int N = source.readInt();
         {
             mDataAuthorities = new ArrayList<AuthorityEntry>();
@@ -162,9 +162,9 @@ public class IntentFilter implements Parcelable {
                 int i = 0;
                 {
                     mDataAuthorities.add(new AuthorityEntry(source));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         N = source.readInt();
         {
             mDataPaths = new ArrayList<PatternMatcher>();
@@ -172,16 +172,17 @@ public class IntentFilter implements Parcelable {
                 int i = 0;
                 {
                     mDataPaths.add(new PatternMatcher(source));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mPriority = source.readInt();
         mHasPartialTypes = source.readInt() > 0;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int findStringInSet(String[] set, String string,
             int[] lengths, int lenPos) {
         if (set == null) return -1;
@@ -193,6 +194,7 @@ public class IntentFilter implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] addStringToSet(String[] set, String string,
             int[] lengths, int lenPos) {
         if (findStringInSet(set, string, lengths, lenPos) >= 0) return set;
@@ -217,6 +219,7 @@ public class IntentFilter implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] removeStringFromSet(String[] set, String string,
             int[] lengths, int lenPos) {
         int pos = findStringInSet(set, string, lengths, lenPos);
@@ -238,6 +241,7 @@ public class IntentFilter implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static IntentFilter create(String action, String dataType) {
         try {
             return new IntentFilter(action, dataType);
@@ -250,8 +254,8 @@ public class IntentFilter implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.290 -0400", hash_original_method = "1AF904ED06333BC0001A5A8D0FC8E3CC", hash_generated_method = "839A047CDB79A7FD6A97DD19F37CB628")
     public final void setPriority(int priority) {
         mPriority = priority;
-        // ---------- Original Method ----------
-        //mPriority = priority;
+        
+        
     }
 
     
@@ -259,8 +263,8 @@ public class IntentFilter implements Parcelable {
     public final int getPriority() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_884625876 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_884625876;
-        // ---------- Original Method ----------
-        //return mPriority;
+        
+        
     }
 
     
@@ -270,13 +274,13 @@ public class IntentFilter implements Parcelable {
             boolean varDA3436D9D4672C232973BD25181DC765_1077169180 = (!mActions.contains(action));
             {
                 mActions.add(action.intern());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(action.getTaint());
-        // ---------- Original Method ----------
-        //if (!mActions.contains(action)) {
-            //mActions.add(action.intern());
-        //}
+        
+        
+            
+        
     }
 
     
@@ -285,20 +289,20 @@ public class IntentFilter implements Parcelable {
         int var19FD9BE92ED9235C35782B147251E19B_548531672 = (mActions.size());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895907187 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895907187;
-        // ---------- Original Method ----------
-        //return mActions.size();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.292 -0400", hash_original_method = "50CEFE8EA652B37B9EBFC8EA367BBC71", hash_generated_method = "6FFD80170FBF8694C62324FB3BE2A194")
     public final String getAction(int index) {
-        String varB4EAC82CA7396A68D541C85D26508E83_917085000 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_917085000 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_917085000 = mActions.get(index);
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_917085000.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_917085000.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_917085000;
-        // ---------- Original Method ----------
-        //return mActions.get(index);
+        
+        
     }
 
     
@@ -308,8 +312,8 @@ public class IntentFilter implements Parcelable {
         addTaint(action.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1113312981 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1113312981;
-        // ---------- Original Method ----------
-        //return action != null && mActions.contains(action);
+        
+        
     }
 
     
@@ -319,19 +323,19 @@ public class IntentFilter implements Parcelable {
         addTaint(action.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1218002185 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1218002185;
-        // ---------- Original Method ----------
-        //return hasAction(action);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.294 -0400", hash_original_method = "91B40E19A4EE68D85BFA3F1F256EBA72", hash_generated_method = "0F585348D832B7B9023C6273CEB7FBAB")
     public final Iterator<String> actionsIterator() {
-        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_1170067784 = null; //Variable for return #1
+        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_1170067784 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1170067784 = mActions != null ? mActions.iterator() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1170067784.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1170067784.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1170067784;
-        // ---------- Original Method ----------
-        //return mActions != null ? mActions.iterator() : null;
+        
+        
     }
 
     
@@ -349,41 +353,41 @@ public class IntentFilter implements Parcelable {
                         boolean varD49CE2200355496BB92B3C202D8BDEE3_1877107710 = (!mDataTypes.contains(str));
                         {
                             mDataTypes.add(str.intern());
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     mHasPartialTypes = true;
-                } //End block
+                } 
                 {
                     {
                         boolean var14F656F6D90E73ACD7CC37F6B5F05D46_1846734022 = (!mDataTypes.contains(type));
                         {
                             mDataTypes.add(type.intern());
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         if (DroidSafeAndroidRuntime.control) throw new MalformedMimeTypeException(type);
         addTaint(type.getTaint());
-        // ---------- Original Method ----------
-        //final int slashpos = type.indexOf('/');
-        //final int typelen = type.length();
-        //if (slashpos > 0 && typelen >= slashpos+2) {
-            //if (mDataTypes == null) mDataTypes = new ArrayList<String>();
-            //if (typelen == slashpos+2 && type.charAt(slashpos+1) == '*') {
-                //String str = type.substring(0, slashpos);
-                //if (!mDataTypes.contains(str)) {
-                    //mDataTypes.add(str.intern());
-                //}
-                //mHasPartialTypes = true;
-            //} else {
-                //if (!mDataTypes.contains(type)) {
-                    //mDataTypes.add(type.intern());
-                //}
-            //}
-            //return;
-        //}
-        //throw new MalformedMimeTypeException(type);
+        
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+                
+            
+                
+                    
+                
+            
+            
+        
+        
     }
 
     
@@ -393,8 +397,8 @@ public class IntentFilter implements Parcelable {
         addTaint(type.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1600336108 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1600336108;
-        // ---------- Original Method ----------
-        //return mDataTypes != null && findMimeType(type);
+        
+        
     }
 
     
@@ -402,34 +406,34 @@ public class IntentFilter implements Parcelable {
     public final int countDataTypes() {
         {
             Object var5CD61D88055F6C456A17888CA437F389_1964259196 = (mDataTypes.size());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_798645064 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_798645064;
-        // ---------- Original Method ----------
-        //return mDataTypes != null ? mDataTypes.size() : 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.300 -0400", hash_original_method = "1020E9310C4CEB3D9A899FFC3406F498", hash_generated_method = "150A6523827DF1BBA6FC7F8621551BAE")
     public final String getDataType(int index) {
-        String varB4EAC82CA7396A68D541C85D26508E83_728382392 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_728382392 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_728382392 = mDataTypes.get(index);
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_728382392.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_728382392.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_728382392;
-        // ---------- Original Method ----------
-        //return mDataTypes.get(index);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.302 -0400", hash_original_method = "E14DF72F5869874CC38AD67447F5264E", hash_generated_method = "A5DB2017B7D35D7251D6A1E181ACAD9D")
     public final Iterator<String> typesIterator() {
-        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_1131834269 = null; //Variable for return #1
+        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_1131834269 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1131834269 = mDataTypes != null ? mDataTypes.iterator() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1131834269.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1131834269.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1131834269;
-        // ---------- Original Method ----------
-        //return mDataTypes != null ? mDataTypes.iterator() : null;
+        
+        
     }
 
     
@@ -440,14 +444,14 @@ public class IntentFilter implements Parcelable {
             boolean varB4AC16761D5AE1DBD4D7BE4F78F9BCD5_1246753708 = (!mDataSchemes.contains(scheme));
             {
                 mDataSchemes.add(scheme.intern());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(scheme.getTaint());
-        // ---------- Original Method ----------
-        //if (mDataSchemes == null) mDataSchemes = new ArrayList<String>();
-        //if (!mDataSchemes.contains(scheme)) {
-            //mDataSchemes.add(scheme.intern());
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -455,23 +459,23 @@ public class IntentFilter implements Parcelable {
     public final int countDataSchemes() {
         {
             Object var5DA05131A061F74B7E86F57B0DA2F51D_1144343443 = (mDataSchemes.size());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_266824420 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_266824420;
-        // ---------- Original Method ----------
-        //return mDataSchemes != null ? mDataSchemes.size() : 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.304 -0400", hash_original_method = "F55C42908F22C2BF6411521C019E1E71", hash_generated_method = "E1A04871E922688CE1D8D182789BF7F7")
     public final String getDataScheme(int index) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1627784538 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1627784538 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1627784538 = mDataSchemes.get(index);
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_1627784538.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1627784538.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1627784538;
-        // ---------- Original Method ----------
-        //return mDataSchemes.get(index);
+        
+        
     }
 
     
@@ -481,19 +485,19 @@ public class IntentFilter implements Parcelable {
         addTaint(scheme.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_391835833 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_391835833;
-        // ---------- Original Method ----------
-        //return mDataSchemes != null && mDataSchemes.contains(scheme);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.307 -0400", hash_original_method = "B57BF7E15AE8E364684A85B4AA7D0368", hash_generated_method = "B5BD58E1CA15A532729E2D0475208662")
     public final Iterator<String> schemesIterator() {
-        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_1365972365 = null; //Variable for return #1
+        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_1365972365 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1365972365 = mDataSchemes != null ? mDataSchemes.iterator() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1365972365.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1365972365.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1365972365;
-        // ---------- Original Method ----------
-        //return mDataSchemes != null ? mDataSchemes.iterator() : null;
+        
+        
     }
 
     
@@ -505,11 +509,11 @@ public class IntentFilter implements Parcelable {
         mDataAuthorities.add(new AuthorityEntry(host.intern(), port));
         addTaint(host.getTaint());
         addTaint(port.getTaint());
-        // ---------- Original Method ----------
-        //if (mDataAuthorities == null) mDataAuthorities =
-                //new ArrayList<AuthorityEntry>();
-        //if (port != null) port = port.intern();
-        //mDataAuthorities.add(new AuthorityEntry(host.intern(), port));
+        
+        
+                
+        
+        
     }
 
     
@@ -517,23 +521,23 @@ public class IntentFilter implements Parcelable {
     public final int countDataAuthorities() {
         {
             Object var7F3DBF7B704BD2D53B067BCF2DC53B65_1806502509 = (mDataAuthorities.size());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1888831794 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1888831794;
-        // ---------- Original Method ----------
-        //return mDataAuthorities != null ? mDataAuthorities.size() : 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.312 -0400", hash_original_method = "5C821D7ECF8B0A79E64F1031BF4C37BB", hash_generated_method = "39B8FA46CF333FEA6528A105EB2AAF2C")
     public final AuthorityEntry getDataAuthority(int index) {
-        AuthorityEntry varB4EAC82CA7396A68D541C85D26508E83_717205772 = null; //Variable for return #1
+        AuthorityEntry varB4EAC82CA7396A68D541C85D26508E83_717205772 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_717205772 = mDataAuthorities.get(index);
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_717205772.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_717205772.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_717205772;
-        // ---------- Original Method ----------
-        //return mDataAuthorities.get(index);
+        
+        
     }
 
     
@@ -543,19 +547,19 @@ public class IntentFilter implements Parcelable {
         addTaint(data.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_928690023 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_928690023;
-        // ---------- Original Method ----------
-        //return matchDataAuthority(data) >= 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.314 -0400", hash_original_method = "104889BB491104C94E7C1142A3F4BAAD", hash_generated_method = "439EC1477C1DBDA34B9B22BC76A5C17A")
     public final Iterator<AuthorityEntry> authoritiesIterator() {
-        Iterator<AuthorityEntry> varB4EAC82CA7396A68D541C85D26508E83_401919911 = null; //Variable for return #1
+        Iterator<AuthorityEntry> varB4EAC82CA7396A68D541C85D26508E83_401919911 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_401919911 = mDataAuthorities != null ? mDataAuthorities.iterator() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_401919911.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_401919911.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_401919911;
-        // ---------- Original Method ----------
-        //return mDataAuthorities != null ? mDataAuthorities.iterator() : null;
+        
+        
     }
 
     
@@ -565,9 +569,9 @@ public class IntentFilter implements Parcelable {
         mDataPaths.add(new PatternMatcher(path.intern(), type));
         addTaint(path.getTaint());
         addTaint(type);
-        // ---------- Original Method ----------
-        //if (mDataPaths == null) mDataPaths = new ArrayList<PatternMatcher>();
-        //mDataPaths.add(new PatternMatcher(path.intern(), type));
+        
+        
+        
     }
 
     
@@ -575,23 +579,23 @@ public class IntentFilter implements Parcelable {
     public final int countDataPaths() {
         {
             Object var8D28E0B37D5A9D79155F890739E07533_84209942 = (mDataPaths.size());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_196935437 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_196935437;
-        // ---------- Original Method ----------
-        //return mDataPaths != null ? mDataPaths.size() : 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.316 -0400", hash_original_method = "C7BC21A1B57BD5F3F08A1F8B8EBDB051", hash_generated_method = "72640B357FE4E72B1A1CA95B467E488B")
     public final PatternMatcher getDataPath(int index) {
-        PatternMatcher varB4EAC82CA7396A68D541C85D26508E83_1256405229 = null; //Variable for return #1
+        PatternMatcher varB4EAC82CA7396A68D541C85D26508E83_1256405229 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1256405229 = mDataPaths.get(index);
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_1256405229.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1256405229.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1256405229;
-        // ---------- Original Method ----------
-        //return mDataPaths.get(index);
+        
+        
     }
 
     
@@ -604,35 +608,35 @@ public class IntentFilter implements Parcelable {
                 final PatternMatcher pe = mDataPaths.get(i);
                 {
                     boolean varFE731D0FCEDE70D75173DC4C2EBABD75_1229005456 = (pe.match(data));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(data.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_431906673 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_431906673;
-        // ---------- Original Method ----------
-        //if (mDataPaths == null) {
-            //return false;
-        //}
-        //final int numDataPaths = mDataPaths.size();
-        //for (int i = 0; i < numDataPaths; i++) {
-            //final PatternMatcher pe = mDataPaths.get(i);
-            //if (pe.match(data)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.319 -0400", hash_original_method = "DFBFAEBB83F5AF41A1E2404555B650EF", hash_generated_method = "C9A30E4DD609B886F1FB956FB02AA0A4")
     public final Iterator<PatternMatcher> pathsIterator() {
-        Iterator<PatternMatcher> varB4EAC82CA7396A68D541C85D26508E83_1388255708 = null; //Variable for return #1
+        Iterator<PatternMatcher> varB4EAC82CA7396A68D541C85D26508E83_1388255708 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1388255708 = mDataPaths != null ? mDataPaths.iterator() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1388255708.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1388255708.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1388255708;
-        // ---------- Original Method ----------
-        //return mDataPaths != null ? mDataPaths.iterator() : null;
+        
+        
     }
 
     
@@ -644,24 +648,24 @@ public class IntentFilter implements Parcelable {
             {
                 final AuthorityEntry ae = mDataAuthorities.get(i);
                 int match = ae.match(data);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(data.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_44237988 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_44237988;
-        // ---------- Original Method ----------
-        //if (mDataAuthorities == null) {
-            //return NO_MATCH_DATA;
-        //}
-        //final int numDataAuthorities = mDataAuthorities.size();
-        //for (int i = 0; i < numDataAuthorities; i++) {
-            //final AuthorityEntry ae = mDataAuthorities.get(i);
-            //int match = ae.match(data);
-            //if (match >= 0) {
-                //return match;
-            //}
-        //}
-        //return NO_MATCH_DATA;
+        
+        
+            
+        
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -674,48 +678,48 @@ public class IntentFilter implements Parcelable {
         int match = MATCH_CATEGORY_EMPTY;
         {
             {
-                boolean var5E7A05A835B5CF4FFB8629732729276E_1497230149 = (schemes.contains(scheme != null ? scheme : "")); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                boolean var5E7A05A835B5CF4FFB8629732729276E_1497230149 = (schemes.contains(scheme != null ? scheme : "")); 
                 {
                     match = MATCH_CATEGORY_SCHEME;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 int authMatch = matchDataAuthority(data);
                 {
                     {
                         match = authMatch;
-                    } //End block
+                    } 
                     {
                         boolean varEAAE2E15E6A7D5BAE2309C583FB4447C_209112948 = (hasDataPath(data.getPath()));
                         {
                             match = MATCH_CATEGORY_PATH;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 boolean var406CA28FF8859711A6231B15267E09A4_847327454 = (scheme != null && !"".equals(scheme)
                     && !"content".equals(scheme)
                     && !"file".equals(scheme));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             {
                 boolean var98FC73A23AE0FAF08A0BE1B405D035C8_1615568046 = (findMimeType(type));
                 {
                     match = MATCH_CATEGORY_TYPE;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(type.getTaint());
         addTaint(scheme.getTaint());
         addTaint(data.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_838612096 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_838612096;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -726,14 +730,14 @@ public class IntentFilter implements Parcelable {
             boolean var86C5C5511E5C2EED812BD9D1EEE4ACD6_1372451092 = (!mCategories.contains(category));
             {
                 mCategories.add(category.intern());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(category.getTaint());
-        // ---------- Original Method ----------
-        //if (mCategories == null) mCategories = new ArrayList<String>();
-        //if (!mCategories.contains(category)) {
-            //mCategories.add(category.intern());
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -741,23 +745,23 @@ public class IntentFilter implements Parcelable {
     public final int countCategories() {
         {
             Object var7750EA1BB615B3E22F7111A8C74A2076_1491883962 = (mCategories.size());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_267318125 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_267318125;
-        // ---------- Original Method ----------
-        //return mCategories != null ? mCategories.size() : 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.325 -0400", hash_original_method = "9221063C5ACD71C55B9DBC6F8D5B18B1", hash_generated_method = "4E43FE9350A1594F278B73F37DEDF969")
     public final String getCategory(int index) {
-        String varB4EAC82CA7396A68D541C85D26508E83_2070550729 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2070550729 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2070550729 = mCategories.get(index);
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_2070550729.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2070550729.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2070550729;
-        // ---------- Original Method ----------
-        //return mCategories.get(index);
+        
+        
     }
 
     
@@ -767,35 +771,35 @@ public class IntentFilter implements Parcelable {
         addTaint(category.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_249316314 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_249316314;
-        // ---------- Original Method ----------
-        //return mCategories != null && mCategories.contains(category);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.326 -0400", hash_original_method = "A1CBC473D8947BEFDC4AD1E1869906E2", hash_generated_method = "951E0204CC455B5650DDB35BFB1349F2")
     public final Iterator<String> categoriesIterator() {
-        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_532682989 = null; //Variable for return #1
+        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_532682989 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_532682989 = mCategories != null ? mCategories.iterator() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_532682989.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_532682989.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_532682989;
-        // ---------- Original Method ----------
-        //return mCategories != null ? mCategories.iterator() : null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.328 -0400", hash_original_method = "64ACE3DFA3E244FA74278C4A66D2BC47", hash_generated_method = "372BA9AFE603B2DBBF96F1E47B9F658B")
     public final String matchCategories(Set<String> categories) {
-        String varB4EAC82CA7396A68D541C85D26508E83_140706313 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_871599015 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_2013630857 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_881801771 = null; //Variable for return #4
+        String varB4EAC82CA7396A68D541C85D26508E83_140706313 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_871599015 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2013630857 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_881801771 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_140706313 = null;
-        } //End block
+        } 
         Iterator<String> it = categories.iterator();
         {
             varB4EAC82CA7396A68D541C85D26508E83_871599015 = it.hasNext() ? it.next() : null;
-        } //End block
+        } 
         {
             boolean var03729FD53960D8DCA3A41A13A0229637_543880730 = (it.hasNext());
             {
@@ -804,44 +808,44 @@ public class IntentFilter implements Parcelable {
                     boolean var75948F6460E0068B561F42314379BAEB_990913464 = (!mCategories.contains(category));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_2013630857 = category;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_881801771 = null;
         addTaint(categories.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1234287896; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1234287896; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1234287896 = varB4EAC82CA7396A68D541C85D26508E83_140706313;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1234287896 = varB4EAC82CA7396A68D541C85D26508E83_871599015;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1234287896 = varB4EAC82CA7396A68D541C85D26508E83_2013630857;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1234287896 = varB4EAC82CA7396A68D541C85D26508E83_881801771;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1234287896.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1234287896.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1234287896;
-        // ---------- Original Method ----------
-        //if (categories == null) {
-            //return null;
-        //}
-        //Iterator<String> it = categories.iterator();
-        //if (mCategories == null) {
-            //return it.hasNext() ? it.next() : null;
-        //}
-        //while (it.hasNext()) {
-            //final String category = it.next();
-            //if (!mCategories.contains(category)) {
-                //return category;
-            //}
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -859,10 +863,10 @@ public class IntentFilter implements Parcelable {
         addTaint(logTag.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1423420507 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1423420507;
-        // ---------- Original Method ----------
-        //String type = resolve ? intent.resolveType(resolver) : intent.getType();
-        //return match(intent.getAction(), type, intent.getScheme(),
-                     //intent.getData(), intent.getCategories(), logTag);
+        
+        
+        
+                     
     }
 
     
@@ -871,14 +875,14 @@ public class IntentFilter implements Parcelable {
             Uri data, Set<String> categories, String logTag) {
         {
             boolean varAB4B3F206E562062AB2373108EDF62A0_486928560 = (action != null && !matchAction(action));
-        } //End collapsed parenthetic
+        } 
         int dataMatch = matchData(type, scheme, data);
         String categoryMismatch = matchCategories(categories);
         {
             {
                 dataMatch -= mCategories.size() - categories.size();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(action.getTaint());
         addTaint(type.getTaint());
         addTaint(scheme.getTaint());
@@ -887,11 +891,12 @@ public class IntentFilter implements Parcelable {
         addTaint(logTag.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1798620983 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1798620983;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.334 -0400", hash_original_method = "B6C33F6C9AFBFD4465A32F9300C74AFB", hash_generated_method = "0D881EC9F05FA3D2AF041F3D4B4B4E13")
     public void writeToXml(XmlSerializer serializer) throws IOException {
         int N = countActions();
@@ -901,8 +906,8 @@ public class IntentFilter implements Parcelable {
                 serializer.startTag(null, ACTION_STR);
                 serializer.attribute(null, NAME_STR, mActions.get(i));
                 serializer.endTag(null, ACTION_STR);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         N = countCategories();
         {
             int i = 0;
@@ -910,8 +915,8 @@ public class IntentFilter implements Parcelable {
                 serializer.startTag(null, CAT_STR);
                 serializer.attribute(null, NAME_STR, mCategories.get(i));
                 serializer.endTag(null, CAT_STR);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         N = countDataTypes();
         {
             int i = 0;
@@ -921,11 +926,11 @@ public class IntentFilter implements Parcelable {
                 {
                     boolean varF5C6D5EBEA0A2A1C0C5B585B8E141902_877444345 = (type.indexOf('/') < 0);
                     type = type + "/*";
-                } //End collapsed parenthetic
+                } 
                 serializer.attribute(null, NAME_STR, type);
                 serializer.endTag(null, TYPE_STR);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         N = countDataSchemes();
         {
             int i = 0;
@@ -933,8 +938,8 @@ public class IntentFilter implements Parcelable {
                 serializer.startTag(null, SCHEME_STR);
                 serializer.attribute(null, NAME_STR, mDataSchemes.get(i));
                 serializer.endTag(null, SCHEME_STR);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         N = countDataAuthorities();
         {
             int i = 0;
@@ -946,11 +951,11 @@ public class IntentFilter implements Parcelable {
                     boolean varD52B50DE393A2B2F765AF58DB2789B84_638135026 = (ae.getPort() >= 0);
                     {
                         serializer.attribute(null, PORT_STR, Integer.toString(ae.getPort()));
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 serializer.endTag(null, AUTH_STR);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         N = countDataPaths();
         {
             int i = 0;
@@ -959,25 +964,26 @@ public class IntentFilter implements Parcelable {
                 PatternMatcher pe = mDataPaths.get(i);
                 {
                     Object var3F55985824039D507E9B86622028DD13_962901490 = (pe.getType());
-                    //Begin case PatternMatcher.PATTERN_LITERAL 
+                    
                     serializer.attribute(null, LITERAL_STR, pe.getPath());
-                    //End case PatternMatcher.PATTERN_LITERAL 
-                    //Begin case PatternMatcher.PATTERN_PREFIX 
+                    
+                    
                     serializer.attribute(null, PREFIX_STR, pe.getPath());
-                    //End case PatternMatcher.PATTERN_PREFIX 
-                    //Begin case PatternMatcher.PATTERN_SIMPLE_GLOB 
+                    
+                    
                     serializer.attribute(null, SGLOB_STR, pe.getPath());
-                    //End case PatternMatcher.PATTERN_SIMPLE_GLOB 
-                } //End collapsed parenthetic
+                    
+                } 
                 serializer.endTag(null, PATH_STR);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(serializer.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.336 -0400", hash_original_method = "276CC8B213E249CE42650F70E7C4B53B", hash_generated_method = "C8B46B4D0B856235C30DC1D9B16976F6")
     public void readFromXml(XmlPullParser parser) throws XmlPullParserException,
             IOException {
@@ -995,16 +1001,16 @@ public class IntentFilter implements Parcelable {
                         String name = parser.getAttributeValue(null, NAME_STR);
                         {
                             addAction(name);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         boolean varA79B623DA4F2C04CCACF87A377409319_386390903 = (tagName.equals(CAT_STR));
                         {
                             String name = parser.getAttributeValue(null, NAME_STR);
                             {
                                 addCategory(name);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             boolean var977A45C559BECBE43F4912D2273DF0C8_1779265279 = (tagName.equals(TYPE_STR));
                             {
@@ -1013,19 +1019,19 @@ public class IntentFilter implements Parcelable {
                                     try 
                                     {
                                         addDataType(name);
-                                    } //End block
+                                    } 
                                     catch (MalformedMimeTypeException e)
                                     { }
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             {
                                 boolean var6DC38F2E64C783805E18B68A201E5478_1824888889 = (tagName.equals(SCHEME_STR));
                                 {
                                     String name = parser.getAttributeValue(null, NAME_STR);
                                     {
                                         addDataScheme(name);
-                                    } //End block
-                                } //End block
+                                    } 
+                                } 
                                 {
                                     boolean var8853BBB6CFA09C0887644DF8808FF11A_2029953542 = (tagName.equals(AUTH_STR));
                                     {
@@ -1033,43 +1039,44 @@ public class IntentFilter implements Parcelable {
                                         String port = parser.getAttributeValue(null, PORT_STR);
                                         {
                                             addDataAuthority(host, port);
-                                        } //End block
-                                    } //End block
+                                        } 
+                                    } 
                                     {
                                         boolean var22FFAE6F647F1E2186452AB348DF879B_892594119 = (tagName.equals(PATH_STR));
                                         {
                                             String path = parser.getAttributeValue(null, LITERAL_STR);
                                             {
                                                 addDataPath(path, PatternMatcher.PATTERN_LITERAL);
-                                            } //End block
+                                            } 
                                             {
                                                 boolean varFD9E988BC7BA6C67FA0846D5B6BA2EAE_1129729778 = ((path=parser.getAttributeValue(null, PREFIX_STR)) != null);
                                                 {
                                                     addDataPath(path, PatternMatcher.PATTERN_PREFIX);
-                                                } //End block
+                                                } 
                                                 {
                                                     boolean var65A46A0D515CAD733F17FA4060913973_1501712383 = ((path=parser.getAttributeValue(null, SGLOB_STR)) != null);
                                                     {
                                                         addDataPath(path, PatternMatcher.PATTERN_SIMPLE_GLOB);
-                                                    } //End block
-                                                } //End collapsed parenthetic
-                                            } //End collapsed parenthetic
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
+                                                    } 
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 XmlUtils.skipCurrentTag(parser);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(parser.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.338 -0400", hash_original_method = "75FFB292CCD000E47FA0C7D0BE596A36", hash_generated_method = "11ADFB966BD1CDC06F581D2E66318E30")
     public void dump(Printer du, String prefix) {
         StringBuilder sb = new StringBuilder(256);
@@ -1086,10 +1093,10 @@ public class IntentFilter implements Parcelable {
                         sb.append(it.next());
                         sb.append("\"");
                         du.println(sb.toString());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             Iterator<String> it = mCategories.iterator();
             {
@@ -1101,9 +1108,9 @@ public class IntentFilter implements Parcelable {
                     sb.append(it.next());
                     sb.append("\"");
                     du.println(sb.toString());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             Iterator<String> it = mDataSchemes.iterator();
             {
@@ -1115,9 +1122,9 @@ public class IntentFilter implements Parcelable {
                     sb.append(it.next());
                     sb.append("\"");
                     du.println(sb.toString());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             Iterator<AuthorityEntry> it = mDataAuthorities.iterator();
             {
@@ -1132,9 +1139,9 @@ public class IntentFilter implements Parcelable {
                     sb.append(ae.mPort);
                     sb.append(" WILD");
                     du.println(sb.toString());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             Iterator<PatternMatcher> it = mDataPaths.iterator();
             {
@@ -1147,9 +1154,9 @@ public class IntentFilter implements Parcelable {
                     sb.append(pe);
                     sb.append("\"");
                     du.println(sb.toString());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             Iterator<String> it = mDataTypes.iterator();
             {
@@ -1161,9 +1168,9 @@ public class IntentFilter implements Parcelable {
                     sb.append(it.next());
                     sb.append("\"");
                     du.println(sb.toString());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             sb.setLength(0);
             sb.append(prefix);
@@ -1172,11 +1179,11 @@ public class IntentFilter implements Parcelable {
             sb.append(", mHasPartialTypes=");
             sb.append(mHasPartialTypes);
             du.println(sb.toString());
-        } //End block
+        } 
         addTaint(du.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1184,8 +1191,8 @@ public class IntentFilter implements Parcelable {
     public final int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1618553820 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1618553820;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -1195,24 +1202,24 @@ public class IntentFilter implements Parcelable {
         {
             dest.writeInt(1);
             dest.writeStringList(mCategories);
-        } //End block
+        } 
         {
             dest.writeInt(0);
-        } //End block
+        } 
         {
             dest.writeInt(1);
             dest.writeStringList(mDataSchemes);
-        } //End block
+        } 
         {
             dest.writeInt(0);
-        } //End block
+        } 
         {
             dest.writeInt(1);
             dest.writeStringList(mDataTypes);
-        } //End block
+        } 
         {
             dest.writeInt(0);
-        } //End block
+        } 
         {
             final int N = mDataAuthorities.size();
             dest.writeInt(N);
@@ -1220,12 +1227,12 @@ public class IntentFilter implements Parcelable {
                 int i = 0;
                 {
                     mDataAuthorities.get(i).writeToParcel(dest);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             dest.writeInt(0);
-        } //End block
+        } 
         {
             final int N = mDataPaths.size();
             dest.writeInt(N);
@@ -1233,18 +1240,18 @@ public class IntentFilter implements Parcelable {
                 int i = 0;
                 {
                     mDataPaths.get(i).writeToParcel(dest, 0);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             dest.writeInt(0);
-        } //End block
+        } 
         dest.writeInt(mPriority);
         dest.writeInt(mHasPartialTypes ? 1 : 0);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1252,8 +1259,8 @@ public class IntentFilter implements Parcelable {
     public boolean debugCheck() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_850689532 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_850689532;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -1262,22 +1269,22 @@ public class IntentFilter implements Parcelable {
         final ArrayList<String> t = mDataTypes;
         {
             boolean var94BA75702969E64AAFAD0932F9F19FE6_2091735960 = (t.contains(type));
-        } //End collapsed parenthetic
+        } 
         final int typeLength = type.length();
         {
             boolean varC0B1C251D972DB5100663171FE0ED803_469093208 = (typeLength == 3 && type.equals("*/*"));
             {
                 boolean var207FD69B8C4084DC550BC184B4637898_1980885787 = (!t.isEmpty());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varDD39D56D1526DF18BC77C0B3DD038B55_350854249 = (mHasPartialTypes && t.contains("*"));
-        } //End collapsed parenthetic
+        } 
         final int slashpos = type.indexOf('/');
         {
             {
                 boolean var6B9A6E4432B816B7E7FEA6713DF1EE03_1393128996 = (mHasPartialTypes && t.contains(type.substring(0, slashpos)));
-            } //End collapsed parenthetic
+            } 
             {
                 boolean varAF563929C59A468F116FAF629096DE41_984305971 = (typeLength == slashpos+2 && type.charAt(slashpos+1) == '*');
                 {
@@ -1288,17 +1295,17 @@ public class IntentFilter implements Parcelable {
                             final String v = t.get(i);
                             {
                                 boolean var11CCA35FDF5142E21DA9AFB5AAC19B77_1282629581 = (type.regionMatches(0, v, 0, slashpos+1));
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(type.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1396723905 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1396723905;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1306,7 +1313,7 @@ public class IntentFilter implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.343 -0400", hash_original_method = "8500983E91FE33F50F26D266A654E6C8", hash_generated_method = "76D07A54CDCC210EFF1FE4C037CB3505")
         public  MalformedMimeTypeException() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1314,7 +1321,7 @@ public class IntentFilter implements Parcelable {
         public  MalformedMimeTypeException(String name) {
             super(name);
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1342,11 +1349,11 @@ public class IntentFilter implements Parcelable {
             mWild = host.length() > 0 && host.charAt(0) == '*';
             mHost = mWild ? host.substring(1).intern() : host;
             mPort = port != null ? Integer.parseInt(port) : -1;
-            // ---------- Original Method ----------
-            //mOrigHost = host;
-            //mWild = host.length() > 0 && host.charAt(0) == '*';
-            //mHost = mWild ? host.substring(1).intern() : host;
-            //mPort = port != null ? Integer.parseInt(port) : -1;
+            
+            
+            
+            
+            
         }
 
         
@@ -1356,11 +1363,11 @@ public class IntentFilter implements Parcelable {
             mHost = src.readString();
             mWild = src.readInt() != 0;
             mPort = src.readInt();
-            // ---------- Original Method ----------
-            //mOrigHost = src.readString();
-            //mHost = src.readString();
-            //mWild = src.readInt() != 0;
-            //mPort = src.readInt();
+            
+            
+            
+            
+            
         }
 
         
@@ -1371,22 +1378,22 @@ public class IntentFilter implements Parcelable {
             dest.writeInt(mWild ? 1 : 0);
             dest.writeInt(mPort);
             addTaint(dest.getTaint());
-            // ---------- Original Method ----------
-            //dest.writeString(mOrigHost);
-            //dest.writeString(mHost);
-            //dest.writeInt(mWild ? 1 : 0);
-            //dest.writeInt(mPort);
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.346 -0400", hash_original_method = "56B964ED44110D4A8630C57ED8411A1C", hash_generated_method = "144BFF9B3BF5E180BDCFE630D588AE8F")
         public String getHost() {
-            String varB4EAC82CA7396A68D541C85D26508E83_733921036 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_733921036 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_733921036 = mOrigHost;
-            varB4EAC82CA7396A68D541C85D26508E83_733921036.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_733921036.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_733921036;
-            // ---------- Original Method ----------
-            //return mOrigHost;
+            
+            
         }
 
         
@@ -1394,8 +1401,8 @@ public class IntentFilter implements Parcelable {
         public int getPort() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_247537424 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_247537424;
-            // ---------- Original Method ----------
-            //return mPort;
+            
+            
         }
 
         
@@ -1405,43 +1412,43 @@ public class IntentFilter implements Parcelable {
             {
                 {
                     boolean var1B71F291A87433E0716DC39D697C7F3A_864432618 = (host.length() < mHost.length());
-                } //End collapsed parenthetic
+                } 
                 host = host.substring(host.length()-mHost.length());
-            } //End block
+            } 
             {
                 boolean var7D1AEF3A34E8E1E90AF70D1486121E66_1449887036 = (host.compareToIgnoreCase(mHost) != 0);
-            } //End collapsed parenthetic
+            } 
             {
                 {
                     boolean var9F3060E6F5D255CBEEDF2919EC07ED98_1447535666 = (mPort != data.getPort());
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             addTaint(data.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_483908377 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_483908377;
-            // ---------- Original Method ----------
-            //String host = data.getHost();
-            //if (host == null) {
-                //return NO_MATCH_DATA;
-            //}
-            //if (false) Log.v("IntentFilter",
-                    //"Match host " + host + ": " + mHost);
-            //if (mWild) {
-                //if (host.length() < mHost.length()) {
-                    //return NO_MATCH_DATA;
-                //}
-                //host = host.substring(host.length()-mHost.length());
-            //}
-            //if (host.compareToIgnoreCase(mHost) != 0) {
-                //return NO_MATCH_DATA;
-            //}
-            //if (mPort >= 0) {
-                //if (mPort != data.getPort()) {
-                    //return NO_MATCH_DATA;
-                //}
-                //return MATCH_CATEGORY_PORT;
-            //}
-            //return MATCH_CATEGORY_HOST;
+            
+            
+            
+                
+            
+            
+                    
+            
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+                
+                    
+                
+                
+            
+            
         }
 
         
@@ -1542,12 +1549,12 @@ public class IntentFilter implements Parcelable {
             return new IntentFilter[size];
         }
     };
-    // orphaned legacy method
+    
     public IntentFilter createFromParcel(Parcel source) {
             return new IntentFilter(source);
         }
     
-    // orphaned legacy method
+    
     public IntentFilter[] newArray(int size) {
             return new IntentFilter[size];
         }

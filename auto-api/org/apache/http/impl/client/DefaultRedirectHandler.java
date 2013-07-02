@@ -1,11 +1,11 @@
 package org.apache.http.impl.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -33,7 +33,7 @@ public class DefaultRedirectHandler implements RedirectHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.149 -0400", hash_original_method = "2DD669B5624C7C7440898F877B0DEDA7", hash_generated_method = "AF7D1DF7149AE5425855C691382FBA51")
     public  DefaultRedirectHandler() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,26 +43,26 @@ public class DefaultRedirectHandler implements RedirectHandler {
             final HttpContext context) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP response may not be null");
-        } //End block
+        } 
         int statusCode = response.getStatusLine().getStatusCode();
         addTaint(response.getTaint());
         addTaint(context.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1128627570 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1128627570;
-        // ---------- Original Method ----------
-        //if (response == null) {
-            //throw new IllegalArgumentException("HTTP response may not be null");
-        //}
-        //int statusCode = response.getStatusLine().getStatusCode();
-        //switch (statusCode) {
-        //case HttpStatus.SC_MOVED_TEMPORARILY:
-        //case HttpStatus.SC_MOVED_PERMANENTLY:
-        //case HttpStatus.SC_SEE_OTHER:
-        //case HttpStatus.SC_TEMPORARY_REDIRECT:
-            //return true;
-        //default:
-            //return false;
-        //}
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -70,32 +70,32 @@ public class DefaultRedirectHandler implements RedirectHandler {
     public URI getLocationURI(
             final HttpResponse response, 
             final HttpContext context) throws ProtocolException {
-        URI varB4EAC82CA7396A68D541C85D26508E83_684334488 = null; //Variable for return #1
+        URI varB4EAC82CA7396A68D541C85D26508E83_684334488 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP response may not be null");
-        } //End block
+        } 
         Header locationHeader = response.getFirstHeader("location");
         {
             if (DroidSafeAndroidRuntime.control) throw new ProtocolException(
                     "Received redirect response " + response.getStatusLine()
                     + " but no location header");
-        } //End block
+        } 
         String location = locationHeader.getValue();
         {
             boolean var2083B5DFA3893791124BEF94A917A00D_568285426 = (this.log.isDebugEnabled());
             {
                 this.log.debug("Redirect requested to location '" + location + "'");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         URI uri = null;
         try 
         {
             uri = new URI(location);
-        } //End block
+        } 
         catch (URISyntaxException ex)
         {
         	throw new ProtocolException("Invalid redirect URI: " + location, ex);
-        } //End block
+        } 
         HttpParams params = response.getParams();
         {
             boolean varF9B59B784A8C73BDFDBDA505CB685702_1839748198 = (!uri.isAbsolute());
@@ -105,14 +105,14 @@ public class DefaultRedirectHandler implements RedirectHandler {
                     {
                         if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Relative redirect location '" 
                         + uri + "' not allowed");
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 HttpHost target = (HttpHost) context.getAttribute(
                     ExecutionContext.HTTP_TARGET_HOST);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Target host not available " +
                         "in the HTTP context");
-                } //End block
+                } 
                 HttpRequest request = (HttpRequest) context.getAttribute(
                     ExecutionContext.HTTP_REQUEST);
                 try 
@@ -120,13 +120,13 @@ public class DefaultRedirectHandler implements RedirectHandler {
                     URI requestURI = new URI(request.getRequestLine().getUri());
                     URI absoluteRequestURI = URIUtils.rewriteURI(requestURI, target, true);
                     uri = URIUtils.resolve(absoluteRequestURI, uri);
-                } //End block
+                } 
                 catch (URISyntaxException ex)
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ProtocolException(ex.getMessage(), ex);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             boolean var7E39C79F6B08443892071262DECEA45B_1883948728 = (params.isParameterFalse(ClientPNames.ALLOW_CIRCULAR_REDIRECTS));
             {
@@ -135,7 +135,7 @@ public class DefaultRedirectHandler implements RedirectHandler {
                 {
                     redirectLocations = new RedirectLocations();
                     context.setAttribute(REDIRECT_LOCATIONS, redirectLocations);
-                } //End block
+                } 
                 URI redirectURI;
                 {
                     boolean varE4CF964BD57C865082A67C6AC59B32FF_113059501 = (uri.getFragment() != null);
@@ -147,35 +147,35 @@ public class DefaultRedirectHandler implements RedirectHandler {
                             uri.getPort(),
                             uri.getScheme());
                             redirectURI = URIUtils.rewriteURI(uri, target, true);
-                        } //End block
+                        } 
                         catch (URISyntaxException ex)
                         {
                             if (DroidSafeAndroidRuntime.control) throw new ProtocolException(ex.getMessage(), ex);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         redirectURI = uri;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varD81B7BBC1C840166BCF4D092AFDCE75A_1344187849 = (redirectLocations.contains(redirectURI));
                     {
                         if (DroidSafeAndroidRuntime.control) throw new CircularRedirectException("Circular redirect to '" +
                         redirectURI + "'");
-                    } //End block
+                    } 
                     {
                         redirectLocations.add(redirectURI);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_684334488 = uri;
         addTaint(response.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_684334488.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_684334488.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_684334488;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

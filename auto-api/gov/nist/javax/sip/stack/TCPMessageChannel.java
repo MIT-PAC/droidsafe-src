@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.stack;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.javax.sip.message.*;
@@ -67,8 +67,8 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.766 -0400", hash_original_method = "A2B275A41CF549D2A1285292B7E5107C", hash_generated_method = "1B936302B48EAC3381B05CB0C4A70DD8")
     protected  TCPMessageChannel(SIPTransactionStack sipStack) {
         this.sipStack = sipStack;
-        // ---------- Original Method ----------
-        //this.sipStack = sipStack;
+        
+        
     }
 
     
@@ -80,8 +80,8 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
             {
                 sipStack.getStackLogger().logDebug("creating new TCPMessageChannel ");
                 sipStack.getStackLogger().logStackTrace();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mySock = sock;
         peerAddress = mySock.getInetAddress();
         myAddress = msgProcessor.getIpAddress().getHostAddress();
@@ -96,25 +96,25 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
         this.myPort = this.tcpMessageProcessor.getPort();
         super.messageProcessor = msgProcessor;
         mythread.start();
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug("creating new TCPMessageChannel ");
-            //sipStack.getStackLogger().logStackTrace();
-        //}
-        //mySock = sock;
-        //peerAddress = mySock.getInetAddress();
-        //myAddress = msgProcessor.getIpAddress().getHostAddress();
-        //myClientInputStream = mySock.getInputStream();
-        //myClientOutputStream = mySock.getOutputStream();
-        //mythread = new Thread(this);
-        //mythread.setDaemon(true);
-        //mythread.setName("TCPMessageChannelThread");
-        //this.sipStack = sipStack;
-        //this.peerPort = mySock.getPort();
-        //this.tcpMessageProcessor = msgProcessor;
-        //this.myPort = this.tcpMessageProcessor.getPort();
-        //super.messageProcessor = msgProcessor;
-        //mythread.start();
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -126,8 +126,8 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
             {
                 sipStack.getStackLogger().logDebug("creating new TCPMessageChannel ");
                 sipStack.getStackLogger().logStackTrace();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.peerAddress = inetAddr;
         this.peerPort = port;
         this.myPort = messageProcessor.getPort();
@@ -137,20 +137,20 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
         this.myAddress = messageProcessor.getIpAddress().getHostAddress();
         this.key = MessageChannel.getKey(peerAddress, peerPort, "TCP");
         super.messageProcessor = messageProcessor;
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug("creating new TCPMessageChannel ");
-            //sipStack.getStackLogger().logStackTrace();
-        //}
-        //this.peerAddress = inetAddr;
-        //this.peerPort = port;
-        //this.myPort = messageProcessor.getPort();
-        //this.peerProtocol = "TCP";
-        //this.sipStack = sipStack;
-        //this.tcpMessageProcessor = messageProcessor;
-        //this.myAddress = messageProcessor.getIpAddress().getHostAddress();
-        //this.key = MessageChannel.getKey(peerAddress, peerPort, "TCP");
-        //super.messageProcessor = messageProcessor;
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -158,11 +158,12 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     public boolean isReliable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1405753501 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1405753501;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.768 -0400", hash_original_method = "D9B233459FD7A72AC548D3BF0383246D", hash_generated_method = "54969063E676EE94DBA158C993EFEBFB")
     public void close() {
         try 
@@ -170,105 +171,107 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
             {
                 mySock.close();
                 mySock = null;
-            } //End block
+            } 
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_1110810312 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logDebug("Closing message Channel " + this);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         catch (IOException ex)
         {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_361501425 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logDebug("Error closing socket " + ex);
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (mySock != null) {
-                //mySock.close();
-                //mySock = null;
-            //}
-            //if (sipStack.isLoggingEnabled())
-                //sipStack.getStackLogger().logDebug("Closing message Channel " + this);
-        //} catch (IOException ex) {
-            //if (sipStack.isLoggingEnabled())
-                //sipStack.getStackLogger().logDebug("Error closing socket " + ex);
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+            
+            
+                
+        
+            
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.769 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "69A0FFABA6DE1DE6091223129363894D")
     public SIPTransactionStack getSIPStack() {
-        SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_1887019512 = null; //Variable for return #1
+        SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_1887019512 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1887019512 = sipStack;
-        varB4EAC82CA7396A68D541C85D26508E83_1887019512.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1887019512.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1887019512;
-        // ---------- Original Method ----------
-        //return sipStack;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.770 -0400", hash_original_method = "0D1837A773C1185791E8B7504B01CB2E", hash_generated_method = "6E0FF273F69BD2B1A642DAEA4CB0FCDF")
     public String getTransport() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1554796013 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1554796013 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1554796013 = "TCP";
-        varB4EAC82CA7396A68D541C85D26508E83_1554796013.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1554796013.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1554796013;
-        // ---------- Original Method ----------
-        //return "TCP";
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.770 -0400", hash_original_method = "59CC467573DB54CDCEF540AE63F43735", hash_generated_method = "D2DEA4DA3FD4295824AE9C9D446FE899")
     public String getPeerAddress() {
-        String varB4EAC82CA7396A68D541C85D26508E83_871969154 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_152536765 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_871969154 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_152536765 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_871969154 = peerAddress.getHostAddress();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_152536765 = getHost();
-        String varA7E53CE21691AB073D9660D615818899_1241798398; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1241798398; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1241798398 = varB4EAC82CA7396A68D541C85D26508E83_871969154;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1241798398 = varB4EAC82CA7396A68D541C85D26508E83_152536765;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1241798398.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1241798398.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1241798398;
-        // ---------- Original Method ----------
-        //if (peerAddress != null) {
-            //return peerAddress.getHostAddress();
-        //} else
-            //return getHost();
+        
+        
+            
+        
+            
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.771 -0400", hash_original_method = "1F29EC3BC94C3E0863F530FCD37A61F3", hash_generated_method = "9B22F4A0CD2BA75DA5CB666CF3943CE6")
     protected InetAddress getPeerInetAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1342283009 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1342283009 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1342283009 = peerAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_1342283009.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1342283009.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1342283009;
-        // ---------- Original Method ----------
-        //return peerAddress;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.771 -0400", hash_original_method = "DB79607DA3ACB5FA2D24428DF2713F98", hash_generated_method = "C88B2246A17D78D1A60286E550F74DA6")
     public String getPeerProtocol() {
-        String varB4EAC82CA7396A68D541C85D26508E83_369532891 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_369532891 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_369532891 = this.peerProtocol;
-        varB4EAC82CA7396A68D541C85D26508E83_369532891.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_369532891.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_369532891;
-        // ---------- Original Method ----------
-        //return this.peerProtocol;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.772 -0400", hash_original_method = "3044E621F64D9746C61861BC2D15D7B8", hash_generated_method = "C4C783D463CDA45E59D810AB342B26E0")
     private void sendMessage(byte[] msg, boolean retry) throws IOException {
         Socket sock = this.sipStack.ioHandler.sendBytes(this.messageProcessor.getIpAddress(),
@@ -277,7 +280,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
             try 
             {
                 mySock.close();
-            } //End block
+            } 
             catch (IOException ex)
             { }
             mySock = sock;
@@ -287,29 +290,30 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
             thread.setDaemon(true);
             thread.setName("TCPMessageChannelThread");
             thread.start();
-        } //End block
+        } 
         addTaint(msg[0]);
         addTaint(retry);
-        // ---------- Original Method ----------
-        //Socket sock = this.sipStack.ioHandler.sendBytes(this.messageProcessor.getIpAddress(),
-                //this.peerAddress, this.peerPort, this.peerProtocol, msg, retry, this);
-        //if (sock != mySock && sock != null) {
-            //try {
-                //if (mySock != null)
-                    //mySock.close();
-            //} catch (IOException ex) {
-            //}
-            //mySock = sock;
-            //this.myClientInputStream = mySock.getInputStream();
-            //this.myClientOutputStream = mySock.getOutputStream();
-            //Thread thread = new Thread(this);
-            //thread.setDaemon(true);
-            //thread.setName("TCPMessageChannelThread");
-            //thread.start();
-        //}
+        
+        
+                
+        
+            
+                
+                    
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.772 -0400", hash_original_method = "05F3A695AC32E3040A89EFF8F81F947F", hash_generated_method = "18C49CE250C91660DB8B83B5EC168CF4")
     public void sendMessage(SIPMessage sipMessage) throws IOException {
         byte[] msg = sipMessage.encodeAsBytes(this.getTransport());
@@ -318,17 +322,18 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
         {
             boolean var53DEB6CBCADF9510253D9D22204998C3_364740017 = (this.sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES));
             logMessage(sipMessage, peerAddress, peerPort, time);
-        } //End collapsed parenthetic
+        } 
         addTaint(sipMessage.getTaint());
-        // ---------- Original Method ----------
-        //byte[] msg = sipMessage.encodeAsBytes(this.getTransport());
-        //long time = System.currentTimeMillis();
-        //this.sendMessage(msg, true);
-        //if (this.sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES))
-            //logMessage(sipMessage, peerAddress, peerPort, time);
+        
+        
+        
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.774 -0400", hash_original_method = "089EEE36759D74C41252D6311E4E6671", hash_generated_method = "B226A9E248267096AAEA76495DE45A87")
     public void sendMessage(byte message[], InetAddress receiverAddress, int receiverPort,
             boolean retry) throws IOException {
@@ -345,36 +350,37 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
                         {
                             mySock.close();
                             super.cancel();
-                        } //End block
+                        } 
                         catch (IOException ex)
                         { }
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1415334466 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1415334466;
-                        // ---------- Original Method ----------
-                        //try {
-                            //mySock.close();
-                            //super.cancel();
-                        //} catch (IOException ex) {
-                        //}
-                        //return true;
+                        
+                        
+                            
+                            
+                        
+                        
+                        
                     }
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.773 -0400", hash_original_method = "1800F2338CC81B9692B7DA0DF6DF5AE0", hash_generated_method = "387B19C1830DE243C8CB852FA2680BDB")
+                    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.773 -0400", hash_original_method = "1800F2338CC81B9692B7DA0DF6DF5AE0", hash_generated_method = "387B19C1830DE243C8CB852FA2680BDB")
                     @Override
                     public void run() {
                         try 
                         {
                             mySock.close();
-                        } //End block
+                        } 
                         catch (IOException ex)
                         { }
-                        // ---------- Original Method ----------
-                        //try {
-                            //mySock.close();
-                        //} catch (IOException ex) {
-                        //}
+                        
+                        
+                            
+                        
+                        
                     }
 }, 8000);
-            } //End block
+            } 
             mySock = sock;
             this.myClientInputStream = mySock.getInputStream();
             this.myClientOutputStream = mySock.getOutputStream();
@@ -382,23 +388,24 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
             mythread.setDaemon(true);
             mythread.setName("TCPMessageChannelThread");
             mythread.start();
-        } //End block
+        } 
         addTaint(message[0]);
         addTaint(receiverAddress.getTaint());
         addTaint(receiverPort);
         addTaint(retry);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.775 -0400", hash_original_method = "10E78FE9041FD1B7C26A106A739E4ED8", hash_generated_method = "60539FBC31754B2A2D0391EAE4341A80")
     public void handleException(ParseException ex, SIPMessage sipMessage, Class hdrClass,
             String header, String message) throws ParseException {
         {
             boolean varADC6B4D22F314E4E23507BEFD4A59D21_1252248778 = (sipStack.isLoggingEnabled());
             sipStack.getStackLogger().logException(ex);
-        } //End collapsed parenthetic
+        } 
         {
             boolean var4AF4DF15E5A9AA725DAB2E0A6B114A9C_1042451908 = ((hdrClass != null)
                 && (hdrClass.equals(From.class) || hdrClass.equals(To.class)
@@ -411,8 +418,8 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
                     {
                         sipStack.getStackLogger().logDebug(
                         "Encountered Bad Message \n" + sipMessage.toString());
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 String msgString = sipMessage.toString();
                 {
                     boolean varD14AB56EAEC4527AFDDBDB5F15852E6F_27998424 = (!msgString.startsWith("SIP/") && !msgString.startsWith("ACK "));
@@ -424,45 +431,46 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
                                 {
                                     sipStack.getStackLogger().logDebug("Sending automatic 400 Bad Request:");
                                     sipStack.getStackLogger().logDebug(badReqRes);
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             try 
                             {
                                 this.sendMessage(badReqRes.getBytes(), this.getPeerInetAddress(), this
                                 .getPeerPort(), false);
-                            } //End block
+                            } 
                             catch (IOException e)
                             {
                                 this.sipStack.getStackLogger().logException(e);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             {
                                 boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_1209679751 = (sipStack.isLoggingEnabled());
                                 {
                                     sipStack.getStackLogger().logDebug(
                                 "Could not formulate automatic 400 Bad Request");
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 if (DroidSafeAndroidRuntime.control) throw ex;
-            } //End block
+            } 
             {
                 sipMessage.addUnparsed(header);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(ex.getTaint());
         addTaint(sipMessage.getTaint());
         addTaint(hdrClass.getTaint());
         addTaint(header.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.776 -0400", hash_original_method = "688E2F52AD2D71AD93C4E5B7CEC68AD5", hash_generated_method = "FF276E6035E76FCFD6ABF2E5FD8EC2AF")
     public void processMessage(SIPMessage sipMessage) throws Exception {
         try 
@@ -479,10 +487,10 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
                         {
                             sipStack.getStackLogger().logDebug(">>> Dropped Bad Msg");
                             sipStack.getStackLogger().logDebug(badmsg);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             ViaList viaList = sipMessage.getViaHeaders();
             {
                 Via v = (Via) viaList.getFirst();
@@ -496,22 +504,22 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
                             || !hop.getHost().equals(this.peerAddress.getHostAddress()));
                         {
                             v.setParameter(Via.RECEIVED, this.peerAddress.getHostAddress());
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     v.setParameter(Via.RPORT, Integer.toString(this.peerPort));
-                } //End block
+                } 
                 catch (java.text.ParseException ex)
                 {
                     InternalErrorHandler.handleException(ex, sipStack.getStackLogger());
-                } //End block
+                } 
                 {
                     ((TCPMessageProcessor) this.messageProcessor).cacheMessageChannel(this);
                     this.isCached = true;
                     int remotePort = ((java.net.InetSocketAddress) mySock.getRemoteSocketAddress()).getPort();
                     String key = IOHandler.makeKey(mySock.getInetAddress(), remotePort);
                     sipStack.ioHandler.putSocket(key, mySock);
-                } //End block
-            } //End block
+                } 
+            } 
             long receptionTime = System.currentTimeMillis();
             {
                 SIPRequest sipRequest = (SIPRequest) sipMessage;
@@ -519,37 +527,37 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1455063305 = (sipStack.isLoggingEnabled());
                     {
                         sipStack.getStackLogger().logDebug("----Processing Message---");
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var329151020C352D7210D49BED1EED92B4_882243376 = (this.sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES));
                     {
                         sipStack.serverLogger.logMessage(sipMessage, this.getPeerHostPort().toString(),
                             this.getMessageProcessor().getIpAddress().getHostAddress() + ":"
                                     + this.getMessageProcessor().getPort(), false, receptionTime);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varBFE4F5560E1DAE5D9C4B756065954E9B_1008500048 = (sipStack.getMaxMessageSize() > 0
                         && sipRequest.getSize()
                                 + (sipRequest.getContentLength() == null ? 0 : sipRequest
                                         .getContentLength().getContentLength()) > sipStack
-                                .getMaxMessageSize()); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                                .getMaxMessageSize()); 
                     {
                         SIPResponse sipResponse = sipRequest
                             .createResponse(SIPResponse.MESSAGE_TOO_LARGE);
                         byte[] resp = sipResponse.encodeAsBytes(this.getTransport());
                         this.sendMessage(resp, false);
                         if (DroidSafeAndroidRuntime.control) throw new Exception("Message size exceeded");
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 ServerRequestInterface sipServerRequest = sipStack.newSIPServerRequest(
                         sipRequest, this);
                 {
                     try 
                     {
                         sipServerRequest.processRequest(sipRequest, this);
-                    } //End block
+                    } 
                     finally 
                     {
                         {
@@ -557,24 +565,24 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
                             {
                                 boolean varD802744989A665132B75B392ADE40209_1587538607 = (!sipServerTx.passToListener());
                                 ((SIPTransaction) sipServerRequest).releaseSem();
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     {
                         boolean varDA2675C4DA71C7DD141330FDB85BC848_1199073643 = (sipStack.isLoggingEnabled());
                         this.sipStack.getStackLogger()
                             .logWarning("Dropping request -- could not acquire semaphore in 10 sec");
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             {
                 SIPResponse sipResponse = (SIPResponse) sipMessage;
                 try 
                 {
                     sipResponse.checkHeaders();
-                } //End block
+                } 
                 catch (ParseException ex)
                 {
                     {
@@ -582,21 +590,21 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
                         sipStack.getStackLogger()
                                 .logError("Dropping Badly formatted response message >>> "
                                         + sipResponse);
-                    } //End collapsed parenthetic
-                } //End block
+                    } 
+                } 
                 {
                     boolean var13C0D42D19654498AAF89BA284743FD1_1735290784 = (sipStack.getMaxMessageSize() > 0
                         && sipResponse.getSize()
                                 + (sipResponse.getContentLength() == null ? 0 : sipResponse
                                         .getContentLength().getContentLength()) > sipStack
-                                .getMaxMessageSize()); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                                .getMaxMessageSize()); 
                     {
                         {
                             boolean var2AB968A8303910EE00F810B6DE3410F9_219546495 = (sipStack.isLoggingEnabled());
                             this.sipStack.getStackLogger().logDebug("Message size exceeded");
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 ServerResponseInterface sipServerResponse = sipStack.newSIPServerResponse(
                         sipResponse, this);
                 {
@@ -612,36 +620,37 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
                                     sipStack.getStackLogger()
                                         .logError("Dropping response message with invalid tag >>> "
                                                 + sipResponse);
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
                         sipServerResponse.processResponse(sipResponse, this);
-                    } //End block
+                    } 
                     finally 
                     {
                         {
                             boolean varDB4FC2DFFC674AF9290D5BD5A8705AB9_1918759628 = (sipServerResponse instanceof SIPTransaction
                                 && !((SIPTransaction) sipServerResponse).passToListener());
                             ((SIPTransaction) sipServerResponse).releaseSem();
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     sipStack
                             .getStackLogger()
                             .logWarning(
                                     "Application is blocked -- could not acquire semaphore -- dropping response");
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         { }
         addTaint(sipMessage.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.777 -0400", hash_original_method = "D4E0A0BC15B98D38AEFE5154BA5871D0", hash_generated_method = "E8C267B822D2B21C517A0CDFF688B089")
     public void run() {
         Pipeline hispipe = null;
@@ -665,22 +674,22 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
                             {
                                 {
                                     tcpMessageProcessor.notify();
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             hispipe.close();
                             mySock.close();
-                        } //End block
+                        } 
                         catch (IOException ioex)
                         { }
-                    } //End block
+                    } 
                     hispipe.write(msg, 0, nbytes);
-                } //End block
+                } 
                 catch (IOException ex)
                 {
                     try 
                     {
                         hispipe.write("\r\n\r\n".getBytes("UTF-8"));
-                    } //End block
+                    } 
                     catch (Exception e)
                     { }
                     try 
@@ -688,116 +697,119 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
                         {
                             boolean var2AB968A8303910EE00F810B6DE3410F9_2138604772 = (sipStack.isLoggingEnabled());
                             sipStack.getStackLogger().logDebug("IOException  closing sock " + ex);
-                        } //End collapsed parenthetic
+                        } 
                         try 
                         {
                             {
                                 {
                                     tcpMessageProcessor.notify();
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             mySock.close();
                             hispipe.close();
-                        } //End block
+                        } 
                         catch (IOException ioex)
                         { }
-                    } //End block
+                    } 
                     catch (Exception ex1)
                     { }
-                } //End block
+                } 
                 catch (Exception ex)
                 {
                     InternalErrorHandler.handleException(ex, sipStack.getStackLogger());
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             this.isRunning = false;
             this.tcpMessageProcessor.remove(this);
             myParser.close();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.778 -0400", hash_original_method = "588DDE9A59AB3DB90B101694890D3C99", hash_generated_method = "99D3DCE5DA682319A2B659FFC777497D")
     protected void uncache() {
         {
             this.tcpMessageProcessor.remove(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (isCached && !isRunning) {
-    		//this.tcpMessageProcessor.remove(this);
-    	//}
+        } 
+        
+        
+    		
+    	
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.778 -0400", hash_original_method = "A3550F5A4A6E2000221840888A01CA8A", hash_generated_method = "B1D9C276C1868234B9FB3A567C78BD64")
     public boolean equals(Object other) {
         {
             boolean varE5000AFAE6691EEE0058A00BC83324BD_1073619265 = (!this.getClass().equals(other.getClass()));
             {
                 TCPMessageChannel that = (TCPMessageChannel) other;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(other.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1360235447 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1360235447;
-        // ---------- Original Method ----------
-        //if (!this.getClass().equals(other.getClass()))
-            //return false;
-        //else {
-            //TCPMessageChannel that = (TCPMessageChannel) other;
-            //if (this.mySock != that.mySock)
-                //return false;
-            //else
-                //return true;
-        //}
+        
+        
+            
+        
+            
+            
+                
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.779 -0400", hash_original_method = "2DA7D0C3A567190913C90FAF0FAC7F20", hash_generated_method = "152E81E3C1DB59A46AC2E637BBD420C4")
     public String getKey() {
-        String varB4EAC82CA7396A68D541C85D26508E83_854993518 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1776342976 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_854993518 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1776342976 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_854993518 = this.key;
-        } //End block
+        } 
         {
             this.key = MessageChannel.getKey(this.peerAddress, this.peerPort, "TCP");
             varB4EAC82CA7396A68D541C85D26508E83_1776342976 = this.key;
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_1182541837; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1182541837; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1182541837 = varB4EAC82CA7396A68D541C85D26508E83_854993518;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1182541837 = varB4EAC82CA7396A68D541C85D26508E83_1776342976;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1182541837.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1182541837.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1182541837;
-        // ---------- Original Method ----------
-        //if (this.key != null) {
-            //return this.key;
-        //} else {
-            //this.key = MessageChannel.getKey(this.peerAddress, this.peerPort, "TCP");
-            //return this.key;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.780 -0400", hash_original_method = "11E5C6A8F9691D7C5E18B4FE0A22A301", hash_generated_method = "25DC6D601F50A885E38789AE9E3FD23F")
     public String getViaHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1957019293 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1957019293 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1957019293 = myAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_1957019293.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1957019293.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1957019293;
-        // ---------- Original Method ----------
-        //return myAddress;
+        
+        
     }
 
     
@@ -805,8 +817,8 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     public int getViaPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2112362397 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2112362397;
-        // ---------- Original Method ----------
-        //return myPort;
+        
+        
     }
 
     
@@ -814,8 +826,8 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     public int getPeerPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_62299708 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_62299708;
-        // ---------- Original Method ----------
-        //return peerPort;
+        
+        
     }
 
     
@@ -823,19 +835,19 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     public int getPeerPacketSourcePort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1184355345 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1184355345;
-        // ---------- Original Method ----------
-        //return this.peerPort;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:46.781 -0400", hash_original_method = "97EAFF51EEE94208DA244D522468157C", hash_generated_method = "6C3E2E0D9E57DAE31191AB2C9460BE4C")
     public InetAddress getPeerPacketSourceAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1993746136 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1993746136 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1993746136 = this.peerAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_1993746136.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1993746136.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1993746136;
-        // ---------- Original Method ----------
-        //return this.peerAddress;
+        
+        
     }
 
     
@@ -843,8 +855,8 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     public boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_136544888 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_136544888;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     

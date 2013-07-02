@@ -1,11 +1,11 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,36 +25,42 @@ public final class Channels {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.577 -0400", hash_original_method = "E5756BC98BED6794F2A2668CF27D9D40", hash_generated_method = "A3FFC3FD46BE47AAF4DAB2140E96D8E8")
     private  Channels() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InputStream newInputStream(ReadableByteChannel channel) {
         return new ChannelInputStream(channel);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static OutputStream newOutputStream(WritableByteChannel channel) {
         return new ChannelOutputStream(channel);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ReadableByteChannel newChannel(InputStream inputStream) {
         return new InputStreamChannel(inputStream);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static WritableByteChannel newChannel(OutputStream outputStream) {
         return new OutputStreamChannel(outputStream);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Reader newReader(ReadableByteChannel channel,
             CharsetDecoder decoder, int minBufferCapacity) {
         return new InputStreamReader(new ChannelInputStream(channel), decoder);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Reader newReader(ReadableByteChannel channel,
             String charsetName) {
         if (charsetName == null) {
@@ -64,12 +70,14 @@ public final class Channels {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Writer newWriter(WritableByteChannel channel,
             CharsetEncoder encoder, int minBufferCapacity) {
         return new OutputStreamWriter(new ChannelOutputStream(channel), encoder);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Writer newWriter(WritableByteChannel channel,
             String charsetName) {
         if (charsetName == null) {
@@ -79,6 +87,7 @@ public final class Channels {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void checkBlocking(Channel channel) {
         if (channel instanceof SelectableChannel && !((SelectableChannel) channel).isBlocking()) {
             throw new IllegalBlockingModeException();
@@ -95,13 +104,13 @@ public final class Channels {
           ChannelInputStream(ReadableByteChannel channel) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             this.channel = channel;
-            // ---------- Original Method ----------
-            //if (channel == null) {
-                //throw new NullPointerException();
-            //}
-            //this.channel = channel;
+            
+            
+                
+            
+            
         }
 
         
@@ -111,8 +120,8 @@ public final class Channels {
             int var27157AD7296922C5499EDCD13E8A2ED8_2015280742 = (Streams.readSingleByte(this));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2111834929 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2111834929;
-            // ---------- Original Method ----------
-            //return Streams.readSingleByte(this);
+            
+            
         }
 
         
@@ -127,10 +136,10 @@ public final class Channels {
             addTaint(length);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_673022647 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_673022647;
-            // ---------- Original Method ----------
-            //ByteBuffer buffer = ByteBuffer.wrap(target, offset, length);
-            //checkBlocking(channel);
-            //return channel.read(buffer);
+            
+            
+            
+            
         }
 
         
@@ -140,20 +149,20 @@ public final class Channels {
             {
                 FileChannel fileChannel = (FileChannel) channel;
                 long result = fileChannel.size() - fileChannel.position();
-            } //End block
+            } 
             {
                 int var6698ECBC27A3D6C11D735685C1254F7A_2125729759 = (super.available());
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_701101197 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_701101197;
-            // ---------- Original Method ----------
-            //if (channel instanceof FileChannel) {
-                //FileChannel fileChannel = (FileChannel) channel;
-                //long result = fileChannel.size() - fileChannel.position();
-                //return result > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) result;
-            //} else {
-                //return super.available();
-            //}
+            
+            
+                
+                
+                
+            
+                
+            
         }
 
         
@@ -161,8 +170,8 @@ public final class Channels {
         @Override
         public synchronized void close() throws IOException {
             channel.close();
-            // ---------- Original Method ----------
-            //channel.close();
+            
+            
         }
 
         
@@ -179,13 +188,13 @@ public final class Channels {
           ChannelOutputStream(WritableByteChannel channel) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             this.channel = channel;
-            // ---------- Original Method ----------
-            //if (channel == null) {
-                //throw new NullPointerException();
-            //}
-            //this.channel = channel;
+            
+            
+                
+            
+            
         }
 
         
@@ -195,9 +204,9 @@ public final class Channels {
             byte[] wrappedByte = { (byte) oneByte };
             write(wrappedByte);
             addTaint(oneByte);
-            // ---------- Original Method ----------
-            //byte[] wrappedByte = { (byte) oneByte };
-            //write(wrappedByte);
+            
+            
+            
         }
 
         
@@ -209,17 +218,17 @@ public final class Channels {
             int total = 0;
             {
                 total += channel.write(buffer);
-            } //End block
+            } 
             addTaint(source[0]);
             addTaint(offset);
             addTaint(length);
-            // ---------- Original Method ----------
-            //ByteBuffer buffer = ByteBuffer.wrap(source, offset, length);
-            //checkBlocking(channel);
-            //int total = 0;
-            //while (total < length) {
-                //total += channel.write(buffer);
-            //}
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -227,8 +236,8 @@ public final class Channels {
         @Override
         public synchronized void close() throws IOException {
             channel.close();
-            // ---------- Original Method ----------
-            //channel.close();
+            
+            
         }
 
         
@@ -245,13 +254,13 @@ public final class Channels {
           InputStreamChannel(InputStream inputStream) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             this.inputStream = inputStream;
-            // ---------- Original Method ----------
-            //if (inputStream == null) {
-                //throw new NullPointerException();
-            //}
-            //this.inputStream = inputStream;
+            
+            
+                
+            
+            
         }
 
         
@@ -261,8 +270,8 @@ public final class Channels {
                 boolean varC984E2D68DED4A73C5D827F4E91A6961_173474536 = (!isOpen());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ClosedChannelException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             int bytesRemain = target.remaining();
             byte[] bytes = new byte[bytesRemain];
             int readCount = 0;
@@ -270,34 +279,34 @@ public final class Channels {
             {
                 begin();
                 readCount = inputStream.read(bytes);
-            } //End block
+            } 
             finally 
             {
                 end(readCount >= 0);
-            } //End block
+            } 
             {
                 target.put(bytes, 0, readCount);
-            } //End block
+            } 
             addTaint(target.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_249780656 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_249780656;
-            // ---------- Original Method ----------
-            //if (!isOpen()) {
-                //throw new ClosedChannelException();
-            //}
-            //int bytesRemain = target.remaining();
-            //byte[] bytes = new byte[bytesRemain];
-            //int readCount = 0;
-            //try {
-                //begin();
-                //readCount = inputStream.read(bytes);
-            //} finally {
-                //end(readCount >= 0);
-            //}
-            //if (readCount > 0) {
-                //target.put(bytes, 0, readCount);
-            //}
-            //return readCount;
+            
+            
+                
+            
+            
+            
+            
+            
+                
+                
+            
+                
+            
+            
+                
+            
+            
         }
 
         
@@ -305,8 +314,8 @@ public final class Channels {
         @Override
         protected void implCloseChannel() throws IOException {
             inputStream.close();
-            // ---------- Original Method ----------
-            //inputStream.close();
+            
+            
         }
 
         
@@ -323,13 +332,13 @@ public final class Channels {
           OutputStreamChannel(OutputStream outputStream) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             this.outputStream = outputStream;
-            // ---------- Original Method ----------
-            //if (outputStream == null) {
-                //throw new NullPointerException();
-            //}
-            //this.outputStream = outputStream;
+            
+            
+                
+            
+            
         }
 
         
@@ -339,8 +348,8 @@ public final class Channels {
                 boolean varC984E2D68DED4A73C5D827F4E91A6961_655341493 = (!isOpen());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ClosedChannelException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             int bytesRemain = source.remaining();
             byte[] buf = new byte[bytesRemain];
             source.get(buf);
@@ -348,31 +357,31 @@ public final class Channels {
             {
                 begin();
                 outputStream.write(buf, 0, bytesRemain);
-            } //End block
+            } 
             finally 
             {
                 end(bytesRemain >= 0);
-            } //End block
+            } 
             addTaint(source.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_91716340 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_91716340;
-            // ---------- Original Method ----------
-            //if (!isOpen()) {
-                //throw new ClosedChannelException();
-            //}
-            //int bytesRemain = source.remaining();
-            //if (bytesRemain == 0) {
-                //return 0;
-            //}
-            //byte[] buf = new byte[bytesRemain];
-            //source.get(buf);
-            //try {
-                //begin();
-                //outputStream.write(buf, 0, bytesRemain);
-            //} finally {
-                //end(bytesRemain >= 0);
-            //}
-            //return bytesRemain;
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+            
+                
+                
+            
+                
+            
+            
         }
 
         
@@ -380,8 +389,8 @@ public final class Channels {
         @Override
         protected void implCloseChannel() throws IOException {
             outputStream.close();
-            // ---------- Original Method ----------
-            //outputStream.close();
+            
+            
         }
 
         

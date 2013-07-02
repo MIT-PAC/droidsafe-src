@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
@@ -74,14 +74,14 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         mLayoutInflater = LayoutInflater.from(context);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Non-null Intent must be specified.");
-        } //End block
+        } 
         mRequestedViews = new RemoteViewsFrameLayoutRefSet();
         {
             boolean varC25279B3AE4B976D096FE6C4D3EF7578_1876627924 = (intent.hasExtra(RemoteViews.EXTRA_REMOTEADAPTER_APPWIDGET_ID));
             {
                 intent.removeExtra(RemoteViews.EXTRA_REMOTEADAPTER_APPWIDGET_ID);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mWorkerThread = new HandlerThread("RemoteViewsCache-loader");
         mWorkerThread.start();
         mWorkerQueue = new Handler(mWorkerThread.getLooper());
@@ -90,8 +90,8 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         mCallback = new WeakReference<RemoteAdapterConnectionCallback>(callback);
         mServiceConnection = new RemoteViewsAdapterServiceConnection(this);
         requestBindService();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -102,20 +102,20 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         {
             {
                 mWorkerThread.quit();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (mWorkerThread != null) {
-                //mWorkerThread.quit();
-            //}
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -134,36 +134,36 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                             int[] res = mCache.getNextIndexToLoad();
                             position = res[0];
                             isRequested = res[1] > 0;
-                        } //End block
+                        } 
                         {
                             updateRemoteViews(position, isRequested);
                             loadNextIndexInBackground();
-                        } //End block
+                        } 
                         {
                             enqueueDeferredUnbindServiceMessage();
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-                // ---------- Original Method ----------
-                //if (mServiceConnection.isConnected()) {
-                    //int position = -1;
-                    //boolean isRequested = false;
-                    //synchronized (mCache) {
-                        //int[] res = mCache.getNextIndexToLoad();
-                        //position = res[0];
-                        //isRequested = res[1] > 0;
-                    //}
-                    //if (position > -1) {
-                        //updateRemoteViews(position, isRequested);
-                        //loadNextIndexInBackground();
-                    //} else {
-                        //enqueueDeferredUnbindServiceMessage();
-                    //}
-                //}
+                        } 
+                    } 
+                } 
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                        
+                    
+                
             }
 });
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -172,36 +172,36 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         final RemoteViewsMetaData metaData = mCache.getMetaData();
         {
             metaData.reset();
-        } //End block
+        } 
         {
             mCache.reset();
-        } //End block
+        } 
         mMainQueue.post(new Runnable() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.180 -0400", hash_original_method = "20780F1316FA6B5AAEF80ABB110F8A58", hash_generated_method = "9658C6127F239982755926B1BF541104")
             @Override
             public void run() {
                 superNotifyDataSetChanged();
-                // ---------- Original Method ----------
-                //superNotifyDataSetChanged();
+                
+                
             }
 });
         addTaint(method.getTaint());
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
-        //Log.e("RemoteViewsAdapter", "Error in " + method + ": " + e.getMessage());
-        //final RemoteViewsMetaData metaData = mCache.getMetaData();
-        //synchronized (metaData) {
-            //metaData.reset();
-        //}
-        //synchronized (mCache) {
-            //mCache.reset();
-        //}
-        //mMainQueue.post(new Runnable() {
-            //@Override
-            //public void run() {
-                //superNotifyDataSetChanged();
-            //}
-        //});
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -217,25 +217,25 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             RemoteViews firstView = null;
             {
                 firstView = factory.getViewAt(0);
-            } //End block
+            } 
             final RemoteViewsMetaData tmpMetaData = mCache.getTemporaryMetaData();
             {
                 tmpMetaData.hasStableIds = hasStableIds;
                 tmpMetaData.viewTypeCount = viewTypeCount + 1;
                 tmpMetaData.count = count;
                 tmpMetaData.setLoadingViewTemplates(loadingView, firstView);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             processException("updateMetaData", e);
-        } //End block
+        } 
         catch (RuntimeException e)
         {
             processException("updateMetaData", e);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -243,7 +243,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     private void updateRemoteViews(final int position, boolean isRequested) {
         {
             boolean varB639375210F642D25B10B2BDC0461609_1169042087 = (!mServiceConnection.isConnected());
-        } //End collapsed parenthetic
+        } 
         IRemoteViewsFactory factory = mServiceConnection.getRemoteViewsFactory();
         RemoteViews remoteViews = null;
         long itemId = 0;
@@ -251,7 +251,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         {
             remoteViews = factory.getViewAt(position);
             itemId = factory.getItemId(position);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         catch (RuntimeException e)
@@ -265,26 +265,26 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 @Override
                 public void run() {
                     mRequestedViews.notifyOnRemoteViewsLoaded(position, rv, typeId);
-                    // ---------- Original Method ----------
-                    //mRequestedViews.notifyOnRemoteViewsLoaded(position, rv, typeId);
+                    
+                    
                 }
 });
-        } //End block
+        } 
         addTaint(position);
         addTaint(isRequested);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.183 -0400", hash_original_method = "F998EBA4725E32A416A597964901E5AB", hash_generated_method = "597AD99A262A2D1E5C3CDAD8E7B3911D")
     public Intent getRemoteViewsServiceIntent() {
-        Intent varB4EAC82CA7396A68D541C85D26508E83_2146430325 = null; //Variable for return #1
+        Intent varB4EAC82CA7396A68D541C85D26508E83_2146430325 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2146430325 = mIntent;
-        varB4EAC82CA7396A68D541C85D26508E83_2146430325.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2146430325.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2146430325;
-        // ---------- Original Method ----------
-        //return mIntent;
+        
+        
     }
 
     
@@ -293,23 +293,23 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         final RemoteViewsMetaData metaData = mCache.getMetaData();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1193549803 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1193549803;
-        // ---------- Original Method ----------
-        //final RemoteViewsMetaData metaData = mCache.getMetaData();
-        //synchronized (metaData) {
-            //return metaData.count;
-        //}
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.184 -0400", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "68C8FCAEAF9E51AF1D61690B5B9109AA")
     public Object getItem(int position) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_2086008875 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_2086008875 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2086008875 = null;
         addTaint(position);
-        varB4EAC82CA7396A68D541C85D26508E83_2086008875.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2086008875.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2086008875;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -320,19 +320,19 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 boolean varD27C3F53015470E371413C7BF03B06BD_429053957 = (mCache.containsMetaDataAt(position));
                 {
                     long var474C483542D84722B7B45BC8BD1B907D_1193050118 = (mCache.getMetaDataAt(position).itemId);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(position);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_797078989 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_797078989;
-        // ---------- Original Method ----------
-        //synchronized (mCache) {
-            //if (mCache.containsMetaDataAt(position)) {
-                //return mCache.getMetaDataAt(position).itemId;
-            //}
-            //return 0;
-        //}
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -344,29 +344,29 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 boolean varD27C3F53015470E371413C7BF03B06BD_1446391773 = (mCache.containsMetaDataAt(position));
                 {
                     typeId = mCache.getMetaDataAt(position).typeId;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         final RemoteViewsMetaData metaData = mCache.getMetaData();
         {
             int var12B2278118B10569F2BCEC86C96FBA64_1818323715 = (metaData.getMappedViewType(typeId));
-        } //End block
+        } 
         addTaint(position);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1271212724 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1271212724;
-        // ---------- Original Method ----------
-        //int typeId = 0;
-        //synchronized (mCache) {
-            //if (mCache.containsMetaDataAt(position)) {
-                //typeId = mCache.getMetaDataAt(position).typeId;
-            //} else {
-                //return 0;
-            //}
-        //}
-        //final RemoteViewsMetaData metaData = mCache.getMetaData();
-        //synchronized (metaData) {
-            //return metaData.getMappedViewType(typeId);
-        //}
+        
+        
+        
+            
+                
+            
+                
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -377,39 +377,39 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             Object tag = convertView.getTag(com.android.internal.R.id.rowTypeId);
             {
                 typeId = (Integer) tag;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(convertView.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1671834572 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1671834572;
-        // ---------- Original Method ----------
-        //int typeId = -1;
-        //if (convertView != null) {
-            //Object tag = convertView.getTag(com.android.internal.R.id.rowTypeId);
-            //if (tag != null) {
-                //typeId = (Integer) tag;
-            //}
-        //}
-        //return typeId;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.186 -0400", hash_original_method = "6C789CA1A76BB0C76EA62E1C57E6DD64", hash_generated_method = "A51EE207865C445CE021E382769B7913")
     public View getView(int position, View convertView, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_420227584 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_285300278 = null; //Variable for return #2
-        View varB4EAC82CA7396A68D541C85D26508E83_1596293962 = null; //Variable for return #3
-        View varB4EAC82CA7396A68D541C85D26508E83_1153796650 = null; //Variable for return #4
+        View varB4EAC82CA7396A68D541C85D26508E83_420227584 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_285300278 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1596293962 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1153796650 = null; 
         {
             boolean isInCache = mCache.containsRemoteViewAt(position);
             boolean isConnected = mServiceConnection.isConnected();
             boolean hasNewItems = false;
             {
                 requestBindService();
-            } //End block
+            } 
             {
                 hasNewItems = mCache.queuePositionsToBePreloadedFromRequestedPosition(position);
-            } //End block
+            } 
             {
                 View convertViewChild = null;
                 int convertViewTypeId = 0;
@@ -418,7 +418,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                     layout = (RemoteViewsFrameLayout) convertView;
                     convertViewChild = layout.getChildAt(0);
                     convertViewTypeId = getConvertViewTypeId(convertViewChild);
-                } //End block
+                } 
                 Context context = parent.getContext();
                 RemoteViews rv = mCache.getRemoteViewsAt(position);
                 RemoteViewsIndexMetaData indexMetaData = mCache.getMetaDataAt(position);
@@ -430,66 +430,66 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                         {
                             rv.reapply(context, convertViewChild);
                             varB4EAC82CA7396A68D541C85D26508E83_420227584 = layout;
-                        } //End block
+                        } 
                         layout.removeAllViews();
-                    } //End block
+                    } 
                     {
                         layout = new RemoteViewsFrameLayout(context);
-                    } //End block
+                    } 
                     View newView = rv.apply(context, parent);
                     newView.setTagInternal(com.android.internal.R.id.rowTypeId,
                             new Integer(typeId));
                     layout.addView(newView);
                     varB4EAC82CA7396A68D541C85D26508E83_285300278 = layout;
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     RemoteViewsFrameLayout loadingView = null;
                     final RemoteViewsMetaData metaData = mCache.getMetaData();
                     {
                         loadingView = metaData.createLoadingView(position, convertView, parent);
-                    } //End block
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_1596293962 = loadingView;
-                } //End block
+                } 
                 finally 
                 {
                     loadNextIndexInBackground();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 RemoteViewsFrameLayout loadingView = null;
                 final RemoteViewsMetaData metaData = mCache.getMetaData();
                 {
                     loadingView = metaData.createLoadingView(position, convertView, parent);
-                } //End block
+                } 
                 mRequestedViews.add(position, loadingView);
                 mCache.queueRequestedPositionToLoad(position);
                 loadNextIndexInBackground();
                 varB4EAC82CA7396A68D541C85D26508E83_1153796650 = loadingView;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(position);
         addTaint(convertView.getTaint());
         addTaint(parent.getTaint());
-        View varA7E53CE21691AB073D9660D615818899_2147074219; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_2147074219; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2147074219 = varB4EAC82CA7396A68D541C85D26508E83_420227584;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2147074219 = varB4EAC82CA7396A68D541C85D26508E83_285300278;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_2147074219 = varB4EAC82CA7396A68D541C85D26508E83_1596293962;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2147074219 = varB4EAC82CA7396A68D541C85D26508E83_1153796650;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2147074219.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2147074219.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2147074219;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -498,11 +498,11 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         final RemoteViewsMetaData metaData = mCache.getMetaData();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1232963928 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1232963928;
-        // ---------- Original Method ----------
-        //final RemoteViewsMetaData metaData = mCache.getMetaData();
-        //synchronized (metaData) {
-            //return metaData.viewTypeCount;
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -511,11 +511,11 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         final RemoteViewsMetaData metaData = mCache.getMetaData();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_956675985 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_956675985;
-        // ---------- Original Method ----------
-        //final RemoteViewsMetaData metaData = mCache.getMetaData();
-        //synchronized (metaData) {
-            //return metaData.hasStableIds;
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -524,8 +524,8 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         boolean var836519EBBA75D474236DD9A735C5C741_1133586890 = (getCount() <= 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2129713018 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2129713018;
-        // ---------- Original Method ----------
-        //return getCount() <= 0;
+        
+        
     }
 
     
@@ -535,14 +535,14 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         try 
         {
             factory.onDataSetChanged();
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         catch (RuntimeException e)
         { }
         {
             mCache.reset();
-        } //End block
+        } 
         updateTemporaryMetaData();
         mMainQueue.post(new Runnable() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.188 -0400", hash_original_method = "599F6D416D0C87E072E14AB486244C9F", hash_generated_method = "E2BF2A1BF355FF99011493BBC7818C77")
@@ -550,20 +550,20 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             public void run() {
                 {
                     mCache.commitTemporaryMetaData();
-                } //End block
+                } 
                 superNotifyDataSetChanged();
                 enqueueDeferredUnbindServiceMessage();
-                // ---------- Original Method ----------
-                //synchronized (mCache) {
-                    //mCache.commitTemporaryMetaData();
-                //}
-                //superNotifyDataSetChanged();
-                //enqueueDeferredUnbindServiceMessage();
+                
+                
+                    
+                
+                
+                
             }
 });
         mNotifyDataSetChangedAfterOnServiceConnected = false;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -575,41 +575,41 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             {
                 mNotifyDataSetChangedAfterOnServiceConnected = true;
                 requestBindService();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mWorkerQueue.post(new Runnable() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.189 -0400", hash_original_method = "041C495048132FF173BFCDF38ABB5707", hash_generated_method = "A0E7FB80DBA0806D596A5B67FD46EBEA")
             @Override
             public void run() {
                 onNotifyDataSetChanged();
-                // ---------- Original Method ----------
-                //onNotifyDataSetChanged();
+                
+                
             }
 });
-        // ---------- Original Method ----------
-        //mMainQueue.removeMessages(sUnbindServiceMessageType);
-        //if (!mServiceConnection.isConnected()) {
-            //if (mNotifyDataSetChangedAfterOnServiceConnected) {
-                //return;
-            //}
-            //mNotifyDataSetChangedAfterOnServiceConnected = true;
-            //requestBindService();
-            //return;
-        //}
-        //mWorkerQueue.post(new Runnable() {
-            //@Override
-            //public void run() {
-                //onNotifyDataSetChanged();
-            //}
-        //});
+        
+        
+        
+            
+                
+            
+            
+            
+            
+        
+        
+            
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.189 -0400", hash_original_method = "A1EDDF3811A1F9D28CCD28C93269FAD1", hash_generated_method = "13135540CF0C096F7922371AE0301E89")
      void superNotifyDataSetChanged() {
         super.notifyDataSetChanged();
-        // ---------- Original Method ----------
-        //super.notifyDataSetChanged();
+        
+        
     }
 
     
@@ -617,33 +617,33 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     @Override
     public boolean handleMessage(Message msg) {
         boolean result = false;
-        //Begin case sUnbindServiceMessageType 
+        
         {
             boolean varAF0014E6961178BB03E6A35A2A9D4C03_1606431332 = (mServiceConnection.isConnected());
             {
                 mServiceConnection.unbind(mContext, mAppWidgetId, mIntent);
-            } //End block
-        } //End collapsed parenthetic
-        //End case sUnbindServiceMessageType 
-        //Begin case sUnbindServiceMessageType 
+            } 
+        } 
+        
+        
         result = true;
-        //End case sUnbindServiceMessageType 
+        
         addTaint(msg.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1588460834 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1588460834;
-        // ---------- Original Method ----------
-        //boolean result = false;
-        //switch (msg.what) {
-        //case sUnbindServiceMessageType:
-            //if (mServiceConnection.isConnected()) {
-                //mServiceConnection.unbind(mContext, mAppWidgetId, mIntent);
-            //}
-            //result = true;
-            //break;
-        //default:
-            //break;
-        //}
-        //return result;
+        
+        
+        
+        
+            
+                
+            
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -651,9 +651,9 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     private void enqueueDeferredUnbindServiceMessage() {
         mMainQueue.removeMessages(sUnbindServiceMessageType);
         mMainQueue.sendEmptyMessageDelayed(sUnbindServiceMessageType, sUnbindServiceDelay);
-        // ---------- Original Method ----------
-        //mMainQueue.removeMessages(sUnbindServiceMessageType);
-        //mMainQueue.sendEmptyMessageDelayed(sUnbindServiceMessageType, sUnbindServiceDelay);
+        
+        
+        
     }
 
     
@@ -663,18 +663,18 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             boolean varB639375210F642D25B10B2BDC0461609_1166246045 = (!mServiceConnection.isConnected());
             {
                 mServiceConnection.bind(mContext, mAppWidgetId, mIntent);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mMainQueue.removeMessages(sUnbindServiceMessageType);
         boolean var9194E623990DE28F1BF24202733015EB_1358609633 = (mServiceConnection.isConnected());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1545734369 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1545734369;
-        // ---------- Original Method ----------
-        //if (!mServiceConnection.isConnected()) {
-            //mServiceConnection.bind(mContext, mAppWidgetId, mIntent);
-        //}
-        //mMainQueue.removeMessages(sUnbindServiceMessageType);
-        //return mServiceConnection.isConnected();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -695,8 +695,8 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.191 -0400", hash_original_method = "7E10295116D6DF0B2080F7EEB3B8FF2F", hash_generated_method = "2CBC4DD0E19B00EEE4BD2962CC59C85E")
         public  RemoteViewsAdapterServiceConnection(RemoteViewsAdapter adapter) {
             mAdapter = new WeakReference<RemoteViewsAdapter>(adapter);
-            // ---------- Original Method ----------
-            //mAdapter = new WeakReference<RemoteViewsAdapter>(adapter);
+            
+            
         }
 
         
@@ -708,28 +708,28 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                     final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
                     mgr.bindRemoteViewsService(appWidgetId, intent, asBinder());
                     mIsConnecting = true;
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     mIsConnecting = false;
                     mIsConnected = false;
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(context.getTaint());
             addTaint(appWidgetId);
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            //if (!mIsConnecting) {
-                //try {
-                    //final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
-                    //mgr.bindRemoteViewsService(appWidgetId, intent, asBinder());
-                    //mIsConnecting = true;
-                //} catch (Exception e) {
-                    //Log.e("RemoteViewsAdapterServiceConnection", "bind(): " + e.getMessage());
-                    //mIsConnecting = false;
-                    //mIsConnected = false;
-                //}
-            //}
+            
+            
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+            
         }
 
         
@@ -740,31 +740,31 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
                 mgr.unbindRemoteViewsService(appWidgetId, intent);
                 mIsConnecting = false;
-            } //End block
+            } 
             catch (Exception e)
             {
                 mIsConnecting = false;
                 mIsConnected = false;
-            } //End block
+            } 
             addTaint(context.getTaint());
             addTaint(appWidgetId);
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            //try {
-                //final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
-                //mgr.unbindRemoteViewsService(appWidgetId, intent);
-                //mIsConnecting = false;
-            //} catch (Exception e) {
-                //Log.e("RemoteViewsAdapterServiceConnection", "unbind(): " + e.getMessage());
-                //mIsConnecting = false;
-                //mIsConnected = false;
-            //}
+            
+            
+                
+                
+                
+            
+                
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.195 -0400", hash_original_method = "08CA49D02360F6C2A6BB2EFEF11F092E", hash_generated_method = "E885EF799FA088E019A9364D38D2AFA7")
         public synchronized void onServiceConnected(IBinder service) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mRemoteViewsFactory = IRemoteViewsFactory.Stub.asInterface(service);
             final RemoteViewsAdapter adapter = mAdapter.get();
             adapter.mWorkerQueue.post(new Runnable() {                
@@ -773,7 +773,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 public void run() {
                     {
                         adapter.onNotifyDataSetChanged();
-                    } //End block
+                    } 
                     {
                         IRemoteViewsFactory factory = adapter.mServiceConnection.getRemoteViewsFactory();
                         try 
@@ -782,9 +782,9 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                                 boolean varDC9A171480612B8E4508A865A137D536_1154163657 = (!factory.isCreated());
                                 {
                                     factory.onDataSetChanged();
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         catch (RemoteException e)
                         { }
                         catch (RuntimeException e)
@@ -796,38 +796,38 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                             public void run() {
                                 {
                                     adapter.mCache.commitTemporaryMetaData();
-                                } //End block
+                                } 
                                 final RemoteAdapterConnectionCallback callback = adapter.mCallback.get();
                                 {
                                     callback.onRemoteAdapterConnected();
-                                } //End block
-                                // ---------- Original Method ----------
-                                //synchronized (adapter.mCache) {
-                                    //adapter.mCache.commitTemporaryMetaData();
-                                //}
-                                //final RemoteAdapterConnectionCallback callback =
-                                    //adapter.mCallback.get();
-                                //if (callback != null) {
-                                    //callback.onRemoteAdapterConnected();
-                                //}
+                                } 
+                                
+                                
+                                    
+                                
+                                
+                                    
+                                
+                                    
+                                
                             }
 });
-                    } //End block
+                    } 
                     adapter.enqueueDeferredUnbindServiceMessage();
                     mIsConnected = true;
                     mIsConnecting = false;
-                    // ---------- Original Method ----------
-                    // Original Method Too Long, Refer to Original Implementation
+                    
+                    
                 }
 });
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.196 -0400", hash_original_method = "6AD1D56D3A677AEA97BA981AA56DEDEB", hash_generated_method = "672783B4F65B4DBB4B67E541052A53D2")
         public synchronized void onServiceDisconnected() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mIsConnected = false;
             mIsConnecting = false;
             mRemoteViewsFactory = null;
@@ -840,42 +840,42 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                     final RemoteAdapterConnectionCallback callback = adapter.mCallback.get();
                     {
                         callback.onRemoteAdapterDisconnected();
-                    } //End block
-                    // ---------- Original Method ----------
-                    //adapter.mMainQueue.removeMessages(sUnbindServiceMessageType);
-                    //final RemoteAdapterConnectionCallback callback = adapter.mCallback.get();
-                    //if (callback != null) {
-                        //callback.onRemoteAdapterDisconnected();
-                    //}
+                    } 
+                    
+                    
+                    
+                    
+                        
+                    
                 }
 });
-            // ---------- Original Method ----------
-            //mIsConnected = false;
-            //mIsConnecting = false;
-            //mRemoteViewsFactory = null;
-            //final RemoteViewsAdapter adapter = mAdapter.get();
-            //if (adapter == null) return;
-            //adapter.mMainQueue.post(new Runnable() {
-                //@Override
-                //public void run() {
-                    //adapter.mMainQueue.removeMessages(sUnbindServiceMessageType);
-                    //final RemoteAdapterConnectionCallback callback = adapter.mCallback.get();
-                    //if (callback != null) {
-                        //callback.onRemoteAdapterDisconnected();
-                    //}
-                //}
-            //});
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                    
+                    
+                    
+                        
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.197 -0400", hash_original_method = "9AC2F72588B70E9E489A1C9892FF58B7", hash_generated_method = "F6365C9C3E45AD8D99F0F29B817379A0")
         public synchronized IRemoteViewsFactory getRemoteViewsFactory() {
-            IRemoteViewsFactory varB4EAC82CA7396A68D541C85D26508E83_414839946 = null; //Variable for return #1
+            IRemoteViewsFactory varB4EAC82CA7396A68D541C85D26508E83_414839946 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_414839946 = mRemoteViewsFactory;
-            varB4EAC82CA7396A68D541C85D26508E83_414839946.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_414839946.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_414839946;
-            // ---------- Original Method ----------
-            //return mRemoteViewsFactory;
+            
+            
         }
 
         
@@ -883,8 +883,8 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         public synchronized boolean isConnected() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_173648096 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_173648096;
-            // ---------- Original Method ----------
-            //return mIsConnected;
+            
+            
         }
 
         
@@ -898,28 +898,28 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         public  RemoteViewsFrameLayout(Context context) {
             super(context);
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.197 -0400", hash_original_method = "376943697B2A7028E475228F1F5698F0", hash_generated_method = "EDAD6D0AB639A9F83E8F89D9E6520131")
         public void onRemoteViewsLoaded(RemoteViews view) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             try 
             {
                 removeAllViews();
                 addView(view.apply(getContext(), this));
-            } //End block
+            } 
             catch (Exception e)
             { }
             addTaint(view.getTaint());
-            // ---------- Original Method ----------
-            //try {
-                //removeAllViews();
-                //addView(view.apply(getContext(), this));
-            //} catch (Exception e) {
-                //Log.e(TAG, "Failed to apply RemoteViews.");
-            //}
+            
+            
+                
+                
+            
+                
+            
         }
 
         
@@ -935,8 +935,8 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.198 -0400", hash_original_method = "6FF139149B49AE6D730172FAFB07DD3B", hash_generated_method = "04F49291A2A41B3FE0D9405505C49E32")
         public  RemoteViewsFrameLayoutRefSet() {
             mReferences = new HashMap<Integer, LinkedList<RemoteViewsFrameLayout>>();
-            // ---------- Original Method ----------
-            //mReferences = new HashMap<Integer, LinkedList<RemoteViewsFrameLayout>>();
+            
+            
         }
 
         
@@ -948,25 +948,25 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 boolean var1C724F4D3C0F3C792D0F2FED4BE4566F_1197907046 = (mReferences.containsKey(pos));
                 {
                     refs = mReferences.get(pos);
-                } //End block
+                } 
                 {
                     refs = new LinkedList<RemoteViewsFrameLayout>();
                     mReferences.put(pos, refs);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             refs.add(layout);
             addTaint(position);
             addTaint(layout.getTaint());
-            // ---------- Original Method ----------
-            //final Integer pos = position;
-            //LinkedList<RemoteViewsFrameLayout> refs;
-            //if (mReferences.containsKey(pos)) {
-                //refs = mReferences.get(pos);
-            //} else {
-                //refs = new LinkedList<RemoteViewsFrameLayout>();
-                //mReferences.put(pos, refs);
-            //}
-            //refs.add(layout);
+            
+            
+            
+            
+                
+            
+                
+                
+            
+            
         }
 
         
@@ -983,34 +983,34 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                         final RemoteViewsFrameLayout ref = varF330A8C22FC56F2EBE7DC0926BA301AB_121726308.next();
                         {
                             ref.onRemoteViewsLoaded(view);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     refs.clear();
                     mReferences.remove(pos);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(position);
             addTaint(view.getTaint());
             addTaint(typeId);
-            // ---------- Original Method ----------
-            //if (view == null) return;
-            //final Integer pos = position;
-            //if (mReferences.containsKey(pos)) {
-                //final LinkedList<RemoteViewsFrameLayout> refs = mReferences.get(pos);
-                //for (final RemoteViewsFrameLayout ref : refs) {
-                    //ref.onRemoteViewsLoaded(view);
-                //}
-                //refs.clear();
-                //mReferences.remove(pos);
-            //}
+            
+            
+            
+            
+                
+                
+                    
+                
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.200 -0400", hash_original_method = "A232CA036EBBA3D167286637450EBE5D", hash_generated_method = "24EBFCA05188B87B49D1A34189D809C7")
         public void clear() {
             mReferences.clear();
-            // ---------- Original Method ----------
-            //mReferences.clear();
+            
+            
         }
 
         
@@ -1044,8 +1044,8 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.200 -0400", hash_original_method = "A4C124A869EBADBA9AE6D60BBB8A7C9F", hash_generated_method = "3DCD91096CB130F5938CD8D146151676")
         public  RemoteViewsMetaData() {
             reset();
-            // ---------- Original Method ----------
-            //reset();
+            
+            
         }
 
         
@@ -1056,14 +1056,14 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 viewTypeCount = d.viewTypeCount;
                 hasStableIds = d.hasStableIds;
                 setLoadingViewTemplates(d.mUserLoadingView, d.mFirstView);
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (d) {
-                //count = d.count;
-                //viewTypeCount = d.viewTypeCount;
-                //hasStableIds = d.hasStableIds;
-                //setLoadingViewTemplates(d.mUserLoadingView, d.mFirstView);
-            //}
+            } 
+            
+            
+                
+                
+                
+                
+            
         }
 
         
@@ -1076,14 +1076,14 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             mFirstView = null;
             mFirstViewHeight = 0;
             mTypeIdIndexMap.clear();
-            // ---------- Original Method ----------
-            //count = 0;
-            //viewTypeCount = 1;
-            //hasStableIds = true;
-            //mUserLoadingView = null;
-            //mFirstView = null;
-            //mFirstViewHeight = 0;
-            //mTypeIdIndexMap.clear();
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1093,13 +1093,13 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             {
                 mFirstView = firstView;
                 mFirstViewHeight = -1;
-            } //End block
-            // ---------- Original Method ----------
-            //mUserLoadingView = loadingView;
-            //if (firstView != null) {
-                //mFirstView = firstView;
-                //mFirstViewHeight = -1;
-            //}
+            } 
+            
+            
+            
+                
+                
+            
         }
 
         
@@ -1109,30 +1109,30 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 boolean varE72D96C2A7631C4D4068420790F0E31A_1123059300 = (mTypeIdIndexMap.containsKey(typeId));
                 {
                     int varDEAAB1FACE77CC174C29AD8F052D40B4_721355184 = (mTypeIdIndexMap.get(typeId));
-                } //End block
+                } 
                 {
                     int incrementalTypeId = mTypeIdIndexMap.size() + 1;
                     mTypeIdIndexMap.put(typeId, incrementalTypeId);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(typeId);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_872956082 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_872956082;
-            // ---------- Original Method ----------
-            //if (mTypeIdIndexMap.containsKey(typeId)) {
-                //return mTypeIdIndexMap.get(typeId);
-            //} else {
-                //int incrementalTypeId = mTypeIdIndexMap.size() + 1;
-                //mTypeIdIndexMap.put(typeId, incrementalTypeId);
-                //return incrementalTypeId;
-            //}
+            
+            
+                
+            
+                
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.205 -0400", hash_original_method = "6B923D58C715B2F45FA359F8E18C8A1F", hash_generated_method = "41AD079F87EB4A8596B57F031B130137")
         private RemoteViewsFrameLayout createLoadingView(int position, View convertView,
                 ViewGroup parent) {
-            RemoteViewsFrameLayout varB4EAC82CA7396A68D541C85D26508E83_460016669 = null; //Variable for return #1
+            RemoteViewsFrameLayout varB4EAC82CA7396A68D541C85D26508E83_460016669 = null; 
             final Context context = parent.getContext();
             RemoteViewsFrameLayout layout = new RemoteViewsFrameLayout(context);
             {
@@ -1145,10 +1145,10 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                                 new Integer(0));
                         layout.addView(loadingView);
                         customLoadingViewAvailable = true;
-                    } //End block
+                    } 
                     catch (Exception e)
                     { }
-                } //End block
+                } 
                 {
                     {
                         try 
@@ -1159,31 +1159,31 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                                     MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
                             mFirstViewHeight = firstView.getMeasuredHeight();
                             mFirstView = null;
-                        } //End block
+                        } 
                         catch (Exception e)
                         {
                             float density = mContext.getResources().getDisplayMetrics().density;
                             mFirstViewHeight = (int)
                                     Math.round(sDefaultLoadingViewHeight * density);
                             mFirstView = null;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     TextView loadingTextView = (TextView) mLayoutInflater.inflate(
                             com.android.internal.R.layout.remote_views_adapter_default_loading_view,
                             layout, false);
                     loadingTextView.setHeight(mFirstViewHeight);
                     loadingTextView.setTag(new Integer(0));
                     layout.addView(loadingTextView);
-                } //End block
-            } //End block
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_460016669 = layout;
             addTaint(position);
             addTaint(convertView.getTaint());
             addTaint(parent.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_460016669.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_460016669.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_460016669;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1208,8 +1208,8 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             addTaint(v.getTaint());
             addTaint(itemId);
             addTaint(requested);
-            // ---------- Original Method ----------
-            //set(v, itemId, requested);
+            
+            
         }
 
         
@@ -1219,13 +1219,13 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             typeId = v.getLayoutId();
             typeId = 0;
             isRequested = requested;
-            // ---------- Original Method ----------
-            //itemId = id;
-            //if (v != null)
-                //typeId = v.getLayoutId();
-            //else
-                //typeId = 0;
-            //isRequested = requested;
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -1281,18 +1281,18 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             mRequestedIndices = new HashSet<Integer>();
             mLastRequestedIndex = -1;
             mLoadIndices = new HashSet<Integer>();
-            // ---------- Original Method ----------
-            //mMaxCount = maxCacheSize;
-            //mMaxCountSlack = Math.round(sMaxCountSlackPercent * (mMaxCount / 2));
-            //mPreloadLowerBound = 0;
-            //mPreloadUpperBound = -1;
-            //mMetaData = new RemoteViewsMetaData();
-            //mTemporaryMetaData = new RemoteViewsMetaData();
-            //mIndexMetaData = new HashMap<Integer, RemoteViewsIndexMetaData>();
-            //mIndexRemoteViews = new HashMap<Integer, RemoteViews>();
-            //mRequestedIndices = new HashSet<Integer>();
-            //mLastRequestedIndex = -1;
-            //mLoadIndices = new HashSet<Integer>();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1302,8 +1302,8 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 boolean var939008B18DF5E8077A7FBD0DE42BA383_1713577327 = (mIndexRemoteViews.size() >= mMaxCount);
                 {
                     mIndexRemoteViews.remove(getFarthestPositionFrom(position));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             int pruneFromPosition;
             pruneFromPosition = mLastRequestedIndex;
             pruneFromPosition = position;
@@ -1311,109 +1311,109 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 boolean varA90EF5BC5B38B66F275CC4234FBC71D6_442334252 = (getRemoteViewsBitmapMemoryUsage() >= sMaxMemoryLimitInBytes);
                 {
                     mIndexRemoteViews.remove(getFarthestPositionFrom(pruneFromPosition));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var72540E4749D1AF0B6940B3AE7BC6ED24_1947139609 = (mIndexMetaData.containsKey(position));
                 {
                     final RemoteViewsIndexMetaData metaData = mIndexMetaData.get(position);
                     metaData.set(v, itemId, isRequested);
-                } //End block
+                } 
                 {
                     mIndexMetaData.put(position, new RemoteViewsIndexMetaData(v, itemId, isRequested));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mIndexRemoteViews.put(position, v);
             addTaint(position);
             addTaint(v.getTaint());
             addTaint(itemId);
             addTaint(isRequested);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.208 -0400", hash_original_method = "CE79B98C6EC29820DC37D3CBF74EA749", hash_generated_method = "2EF7CEB40E137B3A7E71F4D81F140EB6")
         public RemoteViewsMetaData getMetaData() {
-            RemoteViewsMetaData varB4EAC82CA7396A68D541C85D26508E83_1840198774 = null; //Variable for return #1
+            RemoteViewsMetaData varB4EAC82CA7396A68D541C85D26508E83_1840198774 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1840198774 = mMetaData;
-            varB4EAC82CA7396A68D541C85D26508E83_1840198774.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1840198774.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1840198774;
-            // ---------- Original Method ----------
-            //return mMetaData;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.208 -0400", hash_original_method = "1D24E06D74C40EECF68D58BAFBBECA77", hash_generated_method = "5EF13E1B5721F58AF2F7A5BB77CCE345")
         public RemoteViewsMetaData getTemporaryMetaData() {
-            RemoteViewsMetaData varB4EAC82CA7396A68D541C85D26508E83_1593124448 = null; //Variable for return #1
+            RemoteViewsMetaData varB4EAC82CA7396A68D541C85D26508E83_1593124448 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1593124448 = mTemporaryMetaData;
-            varB4EAC82CA7396A68D541C85D26508E83_1593124448.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1593124448.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1593124448;
-            // ---------- Original Method ----------
-            //return mTemporaryMetaData;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.209 -0400", hash_original_method = "2697DBEF8CDE0991B3151B5A3E03C7EB", hash_generated_method = "697221462F1466E10CC7C076CFF64F09")
         public RemoteViews getRemoteViewsAt(int position) {
-            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1302222845 = null; //Variable for return #1
-            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1347355368 = null; //Variable for return #2
+            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1302222845 = null; 
+            RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1347355368 = null; 
             {
                 boolean var32A42C87332588C7B746B90566692371_1954014174 = (mIndexRemoteViews.containsKey(position));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1302222845 = mIndexRemoteViews.get(position);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1347355368 = null;
             addTaint(position);
-            RemoteViews varA7E53CE21691AB073D9660D615818899_1366366182; //Final return value
+            RemoteViews varA7E53CE21691AB073D9660D615818899_1366366182; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1366366182 = varB4EAC82CA7396A68D541C85D26508E83_1302222845;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1366366182 = varB4EAC82CA7396A68D541C85D26508E83_1347355368;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1366366182.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1366366182.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1366366182;
-            // ---------- Original Method ----------
-            //if (mIndexRemoteViews.containsKey(position)) {
-                //return mIndexRemoteViews.get(position);
-            //}
-            //return null;
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.209 -0400", hash_original_method = "1A017214F368969D3B3DFEA7A0D6E60A", hash_generated_method = "C8F5C216BB298AB9D3E3B74EE6C3B9DC")
         public RemoteViewsIndexMetaData getMetaDataAt(int position) {
-            RemoteViewsIndexMetaData varB4EAC82CA7396A68D541C85D26508E83_915668488 = null; //Variable for return #1
-            RemoteViewsIndexMetaData varB4EAC82CA7396A68D541C85D26508E83_1211479260 = null; //Variable for return #2
+            RemoteViewsIndexMetaData varB4EAC82CA7396A68D541C85D26508E83_915668488 = null; 
+            RemoteViewsIndexMetaData varB4EAC82CA7396A68D541C85D26508E83_1211479260 = null; 
             {
                 boolean var72540E4749D1AF0B6940B3AE7BC6ED24_804060394 = (mIndexMetaData.containsKey(position));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_915668488 = mIndexMetaData.get(position);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1211479260 = null;
             addTaint(position);
-            RemoteViewsIndexMetaData varA7E53CE21691AB073D9660D615818899_2026415981; //Final return value
+            RemoteViewsIndexMetaData varA7E53CE21691AB073D9660D615818899_2026415981; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_2026415981 = varB4EAC82CA7396A68D541C85D26508E83_915668488;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_2026415981 = varB4EAC82CA7396A68D541C85D26508E83_1211479260;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_2026415981.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_2026415981.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_2026415981;
-            // ---------- Original Method ----------
-            //if (mIndexMetaData.containsKey(position)) {
-                //return mIndexMetaData.get(position);
-            //}
-            //return null;
+            
+            
+                
+            
+            
         }
 
         
@@ -1422,14 +1422,14 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             {
                 {
                     mMetaData.set(mTemporaryMetaData);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mTemporaryMetaData) {
-                //synchronized (mMetaData) {
-                    //mMetaData.set(mTemporaryMetaData);
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                
+            
         }
 
         
@@ -1444,20 +1444,20 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                     final RemoteViews v = mIndexRemoteViews.get(i);
                     {
                         mem += v.estimateBitmapMemoryUsage();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_859109068 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_859109068;
-            // ---------- Original Method ----------
-            //int mem = 0;
-            //for (Integer i : mIndexRemoteViews.keySet()) {
-                //final RemoteViews v = mIndexRemoteViews.get(i);
-                //if (v != null) {
-                    //mem += v.estimateBitmapMemoryUsage();
-                //}
-            //}
-            //return mem;
+            
+            
+            
+                
+                
+                    
+                
+            
+            
         }
 
         
@@ -1478,19 +1478,19 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                         {
                             maxDistIndexNonRequested = i;
                             maxDistNonRequested = dist;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         maxDistIndex = i;
                         maxDist = dist;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             addTaint(pos);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1439418407 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1439418407;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1500,13 +1500,13 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             {
                 mRequestedIndices.add(position);
                 mLoadIndices.add(position);
-            } //End block
-            // ---------- Original Method ----------
-            //mLastRequestedIndex = position;
-            //synchronized (mLoadIndices) {
-                //mRequestedIndices.add(position);
-                //mLoadIndices.add(position);
-            //}
+            } 
+            
+            
+            
+                
+                
+            
         }
 
         
@@ -1516,12 +1516,12 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 int center = (mPreloadUpperBound + mPreloadLowerBound) / 2;
                 {
                     boolean var0636EC1C871015A7D4DCFF8D3BC97F2F_2040320720 = (Math.abs(position - center) < mMaxCountSlack);
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             int count = 0;
             {
                 count = mMetaData.count;
-            } //End block
+            } 
             {
                 mLoadIndices.clear();
                 mLoadIndices.addAll(mRequestedIndices);
@@ -1534,14 +1534,14 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                     int i = effectiveLowerBound;
                     {
                         mLoadIndices.add(i);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mLoadIndices.removeAll(mIndexRemoteViews.keySet());
-            } //End block
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_205967480 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_205967480;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1555,35 +1555,35 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                         mRequestedIndices.remove(i);
                         mLoadIndices.remove(i);
                         int[] varC013EB5EEFD0F9EB7779B8A5F2170050_1539571573 = (new int[]{i.intValue(), 1});
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var7A0A9A32B15C45A9D3C895959BD665DF_2054676278 = (!mLoadIndices.isEmpty());
                     {
                         Integer i = mLoadIndices.iterator().next();
                         mLoadIndices.remove(i);
                         int[] var714C8054CC6177CA3595BC84F9003BF3_1736001726 = (new int[]{i.intValue(), 0});
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 int[] varC300C018DCB4F12CE19FE658B052C1CA_202728855 = (new int[]{-1, 0});
-            } //End block
+            } 
             int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1252005922 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_1252005922;
-            // ---------- Original Method ----------
-            //synchronized (mLoadIndices) {
-                //if (!mRequestedIndices.isEmpty()) {
-                    //Integer i = mRequestedIndices.iterator().next();
-                    //mRequestedIndices.remove(i);
-                    //mLoadIndices.remove(i);
-                    //return new int[]{i.intValue(), 1};
-                //}
-                //if (!mLoadIndices.isEmpty()) {
-                    //Integer i = mLoadIndices.iterator().next();
-                    //mLoadIndices.remove(i);
-                    //return new int[]{i.intValue(), 0};
-                //}
-                //return new int[]{-1, 0};
-            //}
+            
+            
+                
+                    
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+                
+                
+            
         }
 
         
@@ -1593,8 +1593,8 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             addTaint(position);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2128653665 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2128653665;
-            // ---------- Original Method ----------
-            //return mIndexRemoteViews.containsKey(position);
+            
+            
         }
 
         
@@ -1604,8 +1604,8 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             addTaint(position);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1300611004 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1300611004;
-            // ---------- Original Method ----------
-            //return mIndexMetaData.containsKey(position);
+            
+            
         }
 
         
@@ -1619,17 +1619,17 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             {
                 mRequestedIndices.clear();
                 mLoadIndices.clear();
-            } //End block
-            // ---------- Original Method ----------
-            //mPreloadLowerBound = 0;
-            //mPreloadUpperBound = -1;
-            //mLastRequestedIndex = -1;
-            //mIndexRemoteViews.clear();
-            //mIndexMetaData.clear();
-            //synchronized (mLoadIndices) {
-                //mRequestedIndices.clear();
-                //mLoadIndices.clear();
-            //}
+            } 
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
         }
 
         

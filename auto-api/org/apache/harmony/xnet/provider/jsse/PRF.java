@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
@@ -20,10 +20,11 @@ public class PRF {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.653 -0400", hash_original_method = "A5FFDA88D1812D20324981FB63A9C9B4", hash_generated_method = "A5FFDA88D1812D20324981FB63A9C9B4")
     public PRF ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     static private void init() {
         try {
             md5_mac = Mac.getInstance("HmacMD5");
@@ -47,6 +48,7 @@ public class PRF {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static synchronized void computePRF_SSLv3(byte[] out, byte[] secret, byte[] seed) {
         if (sha == null) {
             init();
@@ -74,6 +76,7 @@ public class PRF {
     }
 
     
+    @DSModeled(DSC.SAFE)
     synchronized static void computePRF(byte[] out, byte[] secret,
             byte[] str_byts, byte[] seed) throws GeneralSecurityException {
         if (sha_mac == null) {

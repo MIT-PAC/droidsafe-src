@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.SIPHeader;
@@ -21,7 +21,7 @@ public class SecurityClientParser extends SecurityAgreeParser {
     public  SecurityClientParser(String security) {
         super(security);
         addTaint(security.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,13 +29,14 @@ public class SecurityClientParser extends SecurityAgreeParser {
     protected  SecurityClientParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.219 -0400", hash_original_method = "318B353FBE96AE207EFBEBC9BA5B16DF", hash_generated_method = "C4A611EDD9CD0B4CB8C04DE1B5E1A459")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1998959311 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1998959311 = null; 
         dbg_enter("SecuriryClient parse");
         try 
         {
@@ -43,24 +44,24 @@ public class SecurityClientParser extends SecurityAgreeParser {
             SecurityClient secClient = new SecurityClient();
             SecurityClientList secClientList = (SecurityClientList) super.parse(secClient);
             varB4EAC82CA7396A68D541C85D26508E83_1998959311 = secClientList;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("SecuriryClient parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1998959311.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1998959311.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1998959311;
-        // ---------- Original Method ----------
-        //dbg_enter("SecuriryClient parse");
-        //try {
-            //headerName(TokenTypes.SECURITY_CLIENT);
-            //SecurityClient secClient = new SecurityClient();
-            //SecurityClientList secClientList =
-                //(SecurityClientList) super.parse(secClient);
-            //return secClientList;
-        //} finally {
-            //dbg_leave("SecuriryClient parse");
-        //}
+        
+        
+        
+            
+            
+            
+                
+            
+        
+            
+        
     }
 
     

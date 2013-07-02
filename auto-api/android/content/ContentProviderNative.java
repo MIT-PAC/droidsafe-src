@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.AssetFileDescriptor;
 import android.database.BulkCursorNative;
@@ -32,11 +32,12 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.465 -0400", hash_original_method = "AF85EE1D14BCBAFA210CD4FE8D0D0EAA", hash_generated_method = "5B89B81546A27F738FE867A18D587122")
     public  ContentProviderNative() {
         attachInterface(this, descriptor);
-        // ---------- Original Method ----------
-        //attachInterface(this, descriptor);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public IContentProvider asInterface(IBinder obj) {
         if (obj == null) {
             return null;
@@ -53,13 +54,14 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
     public abstract String getProviderName();
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.469 -0400", hash_original_method = "0A95D8923EFA335F625BF0735B390C42", hash_generated_method = "9ADEDA57E061CB3A8B03F34271A85B57")
     @Override
     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         try 
         {
-            //Begin case QUERY_TRANSACTION 
+            
             {
                 data.enforceInterface(IContentProvider.descriptor);
                 Uri url = Uri.CREATOR.createFromParcel(data);
@@ -71,9 +73,9 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                         int i = 0;
                         {
                             projection[i] = data.readString();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 String selection = data.readString();
                 num = data.readInt();
                 String[] selectionArgs = null;
@@ -83,9 +85,9 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                         int i = 0;
                         {
                             selectionArgs[i] = data.readString();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 String sortOrder = data.readString();
                 IContentObserver observer = IContentObserver.Stub.asInterface(
                             data.readStrongBinder());
@@ -103,23 +105,23 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                     reply.writeInt(count);
                     reply.writeInt(index);
                     reply.writeInt(wantsAllOnMoveCalls ? 1 : 0);
-                } //End block
+                } 
                 {
                     reply.writeNoException();
                     reply.writeStrongBinder(null);
-                } //End block
-            } //End block
-            //End case QUERY_TRANSACTION 
-            //Begin case GET_TYPE_TRANSACTION 
+                } 
+            } 
+            
+            
             {
                 data.enforceInterface(IContentProvider.descriptor);
                 Uri url = Uri.CREATOR.createFromParcel(data);
                 String type = getType(url);
                 reply.writeNoException();
                 reply.writeString(type);
-            } //End block
-            //End case GET_TYPE_TRANSACTION 
-            //Begin case INSERT_TRANSACTION 
+            } 
+            
+            
             {
                 data.enforceInterface(IContentProvider.descriptor);
                 Uri url = Uri.CREATOR.createFromParcel(data);
@@ -127,9 +129,9 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                 Uri out = insert(url, values);
                 reply.writeNoException();
                 Uri.writeToParcel(reply, out);
-            } //End block
-            //End case INSERT_TRANSACTION 
-            //Begin case BULK_INSERT_TRANSACTION 
+            } 
+            
+            
             {
                 data.enforceInterface(IContentProvider.descriptor);
                 Uri url = Uri.CREATOR.createFromParcel(data);
@@ -137,9 +139,9 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                 int count = bulkInsert(url, values);
                 reply.writeNoException();
                 reply.writeInt(count);
-            } //End block
-            //End case BULK_INSERT_TRANSACTION 
-            //Begin case APPLY_BATCH_TRANSACTION 
+            } 
+            
+            
             {
                 data.enforceInterface(IContentProvider.descriptor);
                 final int numOperations = data.readInt();
@@ -148,14 +150,14 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                     int i = 0;
                     {
                         operations.add(i, ContentProviderOperation.CREATOR.createFromParcel(data));
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 final ContentProviderResult[] results = applyBatch(operations);
                 reply.writeNoException();
                 reply.writeTypedArray(results, 0);
-            } //End block
-            //End case APPLY_BATCH_TRANSACTION 
-            //Begin case DELETE_TRANSACTION 
+            } 
+            
+            
             {
                 data.enforceInterface(IContentProvider.descriptor);
                 Uri url = Uri.CREATOR.createFromParcel(data);
@@ -164,9 +166,9 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                 int count = delete(url, selection, selectionArgs);
                 reply.writeNoException();
                 reply.writeInt(count);
-            } //End block
-            //End case DELETE_TRANSACTION 
-            //Begin case UPDATE_TRANSACTION 
+            } 
+            
+            
             {
                 data.enforceInterface(IContentProvider.descriptor);
                 Uri url = Uri.CREATOR.createFromParcel(data);
@@ -176,9 +178,9 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                 int count = update(url, values, selection, selectionArgs);
                 reply.writeNoException();
                 reply.writeInt(count);
-            } //End block
-            //End case UPDATE_TRANSACTION 
-            //Begin case OPEN_FILE_TRANSACTION 
+            } 
+            
+            
             {
                 data.enforceInterface(IContentProvider.descriptor);
                 Uri url = Uri.CREATOR.createFromParcel(data);
@@ -190,13 +192,13 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                     reply.writeInt(1);
                     fd.writeToParcel(reply,
                                 Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-                } //End block
+                } 
                 {
                     reply.writeInt(0);
-                } //End block
-            } //End block
-            //End case OPEN_FILE_TRANSACTION 
-            //Begin case OPEN_ASSET_FILE_TRANSACTION 
+                } 
+            } 
+            
+            
             {
                 data.enforceInterface(IContentProvider.descriptor);
                 Uri url = Uri.CREATOR.createFromParcel(data);
@@ -208,13 +210,13 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                     reply.writeInt(1);
                     fd.writeToParcel(reply,
                                 Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-                } //End block
+                } 
                 {
                     reply.writeInt(0);
-                } //End block
-            } //End block
-            //End case OPEN_ASSET_FILE_TRANSACTION 
-            //Begin case CALL_TRANSACTION 
+                } 
+            } 
+            
+            
             {
                 data.enforceInterface(IContentProvider.descriptor);
                 String method = data.readString();
@@ -223,9 +225,9 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                 Bundle responseBundle = call(method, stringArg, args);
                 reply.writeNoException();
                 reply.writeBundle(responseBundle);
-            } //End block
-            //End case CALL_TRANSACTION 
-            //Begin case GET_STREAM_TYPES_TRANSACTION 
+            } 
+            
+            
             {
                 data.enforceInterface(IContentProvider.descriptor);
                 Uri url = Uri.CREATOR.createFromParcel(data);
@@ -233,9 +235,9 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                 String[] types = getStreamTypes(url, mimeTypeFilter);
                 reply.writeNoException();
                 reply.writeStringArray(types);
-            } //End block
-            //End case GET_STREAM_TYPES_TRANSACTION 
-            //Begin case OPEN_TYPED_ASSET_FILE_TRANSACTION 
+            } 
+            
+            
             {
                 data.enforceInterface(IContentProvider.descriptor);
                 Uri url = Uri.CREATOR.createFromParcel(data);
@@ -248,17 +250,17 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                     reply.writeInt(1);
                     fd.writeToParcel(reply,
                                 Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-                } //End block
+                } 
                 {
                     reply.writeInt(0);
-                } //End block
-            } //End block
-            //End case OPEN_TYPED_ASSET_FILE_TRANSACTION 
-        } //End block
+                } 
+            } 
+            
+        } 
         catch (Exception e)
         {
             DatabaseUtils.writeExceptionToParcel(reply, e);
-        } //End block
+        } 
         boolean var3746A99EF74DBE66CD43EDAE5F9B6D9F_678755487 = (super.onTransact(code, data, reply, flags));
         addTaint(code);
         addTaint(data.getTaint());
@@ -266,19 +268,19 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
         addTaint(flags);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1049740935 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1049740935;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.470 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "153BEFFB183AE626B86E971892F0EC51")
     public IBinder asBinder() {
-        IBinder varB4EAC82CA7396A68D541C85D26508E83_1824970526 = null; //Variable for return #1
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_1824970526 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1824970526 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1824970526.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1824970526.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1824970526;
-        // ---------- Original Method ----------
-        //return this;
+        
+        
     }
 
     
@@ -295,26 +297,26 @@ final class ContentProviderProxy implements IContentProvider {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.471 -0400", hash_original_method = "EBB42AB6A7E6F2E0E7C721E0ED401456", hash_generated_method = "2C21C5B1CBD217E3A4D6464EEDE37554")
     public  ContentProviderProxy(IBinder remote) {
         mRemote = remote;
-        // ---------- Original Method ----------
-        //mRemote = remote;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.472 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "8CDA5669F86D45D7FA560C328BAFC589")
     public IBinder asBinder() {
-        IBinder varB4EAC82CA7396A68D541C85D26508E83_1430763592 = null; //Variable for return #1
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_1430763592 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1430763592 = mRemote;
-        varB4EAC82CA7396A68D541C85D26508E83_1430763592.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1430763592.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1430763592;
-        // ---------- Original Method ----------
-        //return mRemote;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.474 -0400", hash_original_method = "E2AF136D03A7F093E9BB31072F6BF55F", hash_generated_method = "3B6C750BC6169E31556D3776E4A3A000")
     public Cursor query(Uri url, String[] projection, String selection,
             String[] selectionArgs, String sortOrder) throws RemoteException {
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_486716008 = null; //Variable for return #1
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_486716008 = null; 
         BulkCursorToCursorAdaptor adaptor = new BulkCursorToCursorAdaptor();
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
@@ -325,28 +327,28 @@ final class ContentProviderProxy implements IContentProvider {
             int length = 0;
             {
                 length = projection.length;
-            } //End block
+            } 
             data.writeInt(length);
             {
                 int i = 0;
                 {
                     data.writeString(projection[i]);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             data.writeString(selection);
             {
                 length = selectionArgs.length;
-            } //End block
+            } 
             {
                 length = 0;
-            } //End block
+            } 
             data.writeInt(length);
             {
                 int i = 0;
                 {
                     data.writeString(selectionArgs[i]);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             data.writeString(sortOrder);
             data.writeStrongBinder(adaptor.getObserver().asBinder());
             mRemote.transact(IContentProvider.QUERY_TRANSACTION, data, reply, 0);
@@ -357,43 +359,43 @@ final class ContentProviderProxy implements IContentProvider {
                 int idColumnPosition = reply.readInt();
                 boolean wantsAllOnMoveCalls = reply.readInt() != 0;
                 adaptor.initialize(bulkCursor, rowCount, idColumnPosition, wantsAllOnMoveCalls);
-            } //End block
+            } 
             {
                 adaptor.close();
                 adaptor = null;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_486716008 = adaptor;
-        } //End block
+        } 
         catch (RemoteException ex)
         {
             adaptor.close();
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
+        } 
         catch (RuntimeException ex)
         {
             adaptor.close();
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
+        } 
         finally 
         {
             data.recycle();
             reply.recycle();
-        } //End block
+        } 
         addTaint(url.getTaint());
         addTaint(projection[0].getTaint());
         addTaint(selection.getTaint());
         addTaint(selectionArgs[0].getTaint());
         addTaint(sortOrder.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_486716008.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_486716008.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_486716008;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.475 -0400", hash_original_method = "53511528A81FA80D8FEA51649EBDE31C", hash_generated_method = "9A83DB00A696365FCC1CEA6F57CD734C")
     public String getType(Uri url) throws RemoteException {
-        String varB4EAC82CA7396A68D541C85D26508E83_967634378 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_967634378 = null; 
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
         try 
@@ -404,35 +406,35 @@ final class ContentProviderProxy implements IContentProvider {
             DatabaseUtils.readExceptionFromParcel(reply);
             String out = reply.readString();
             varB4EAC82CA7396A68D541C85D26508E83_967634378 = out;
-        } //End block
+        } 
         finally 
         {
             data.recycle();
             reply.recycle();
-        } //End block
+        } 
         addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_967634378.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_967634378.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_967634378;
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //try {
-            //data.writeInterfaceToken(IContentProvider.descriptor);
-            //url.writeToParcel(data, 0);
-            //mRemote.transact(IContentProvider.GET_TYPE_TRANSACTION, data, reply, 0);
-            //DatabaseUtils.readExceptionFromParcel(reply);
-            //String out = reply.readString();
-            //return out;
-        //} finally {
-            //data.recycle();
-            //reply.recycle();
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.476 -0400", hash_original_method = "357B46C024ADAE1E71A2CDEC64307714", hash_generated_method = "F79B9DAF001468C3DB6B06B67404FC48")
     public Uri insert(Uri url, ContentValues values) throws RemoteException {
-        Uri varB4EAC82CA7396A68D541C85D26508E83_316061821 = null; //Variable for return #1
+        Uri varB4EAC82CA7396A68D541C85D26508E83_316061821 = null; 
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
         try 
@@ -444,34 +446,35 @@ final class ContentProviderProxy implements IContentProvider {
             DatabaseUtils.readExceptionFromParcel(reply);
             Uri out = Uri.CREATOR.createFromParcel(reply);
             varB4EAC82CA7396A68D541C85D26508E83_316061821 = out;
-        } //End block
+        } 
         finally 
         {
             data.recycle();
             reply.recycle();
-        } //End block
+        } 
         addTaint(url.getTaint());
         addTaint(values.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_316061821.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_316061821.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_316061821;
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //try {
-            //data.writeInterfaceToken(IContentProvider.descriptor);
-            //url.writeToParcel(data, 0);
-            //values.writeToParcel(data, 0);
-            //mRemote.transact(IContentProvider.INSERT_TRANSACTION, data, reply, 0);
-            //DatabaseUtils.readExceptionFromParcel(reply);
-            //Uri out = Uri.CREATOR.createFromParcel(reply);
-            //return out;
-        //} finally {
-            //data.recycle();
-            //reply.recycle();
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.476 -0400", hash_original_method = "C992EC82CACE6E59D7619DBD9F314166", hash_generated_method = "58B042C0D0F392B1F4E6BFC85F46173C")
     public int bulkInsert(Uri url, ContentValues[] values) throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -484,37 +487,38 @@ final class ContentProviderProxy implements IContentProvider {
             mRemote.transact(IContentProvider.BULK_INSERT_TRANSACTION, data, reply, 0);
             DatabaseUtils.readExceptionFromParcel(reply);
             int count = reply.readInt();
-        } //End block
+        } 
         finally 
         {
             data.recycle();
             reply.recycle();
-        } //End block
+        } 
         addTaint(url.getTaint());
         addTaint(values[0].getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1754318950 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1754318950;
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //try {
-            //data.writeInterfaceToken(IContentProvider.descriptor);
-            //url.writeToParcel(data, 0);
-            //data.writeTypedArray(values, 0);
-            //mRemote.transact(IContentProvider.BULK_INSERT_TRANSACTION, data, reply, 0);
-            //DatabaseUtils.readExceptionFromParcel(reply);
-            //int count = reply.readInt();
-            //return count;
-        //} finally {
-            //data.recycle();
-            //reply.recycle();
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.490 -0400", hash_original_method = "4CFA8AC0349C29482D059E42163688C7", hash_generated_method = "68C5F4AD4BBD011A76D00AA966127B0C")
     public ContentProviderResult[] applyBatch(ArrayList<ContentProviderOperation> operations) throws RemoteException, OperationApplicationException {
-        ContentProviderResult[] varB4EAC82CA7396A68D541C85D26508E83_1170917264 = null; //Variable for return #1
+        ContentProviderResult[] varB4EAC82CA7396A68D541C85D26508E83_1170917264 = null; 
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
         try 
@@ -527,39 +531,39 @@ final class ContentProviderProxy implements IContentProvider {
                 ContentProviderOperation operation = varE9602D9F0CB9F920ADAA80E0AEDB4F89_252708152.next();
                 {
                     operation.writeToParcel(data, 0);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mRemote.transact(IContentProvider.APPLY_BATCH_TRANSACTION, data, reply, 0);
             DatabaseUtils.readExceptionWithOperationApplicationExceptionFromParcel(reply);
             final ContentProviderResult[] results = reply.createTypedArray(ContentProviderResult.CREATOR);
             varB4EAC82CA7396A68D541C85D26508E83_1170917264 = results;
-        } //End block
+        } 
         finally 
         {
             data.recycle();
             reply.recycle();
-        } //End block
+        } 
         addTaint(operations.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1170917264.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1170917264.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1170917264;
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //try {
-            //data.writeInterfaceToken(IContentProvider.descriptor);
-            //data.writeInt(operations.size());
-            //for (ContentProviderOperation operation : operations) {
-                //operation.writeToParcel(data, 0);
-            //}
-            //mRemote.transact(IContentProvider.APPLY_BATCH_TRANSACTION, data, reply, 0);
-            //DatabaseUtils.readExceptionWithOperationApplicationExceptionFromParcel(reply);
-            //final ContentProviderResult[] results =
-                    //reply.createTypedArray(ContentProviderResult.CREATOR);
-            //return results;
-        //} finally {
-            //data.recycle();
-            //reply.recycle();
-        //}
+        
+        
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            
+                    
+            
+        
+            
+            
+        
     }
 
     
@@ -576,33 +580,33 @@ final class ContentProviderProxy implements IContentProvider {
             mRemote.transact(IContentProvider.DELETE_TRANSACTION, data, reply, 0);
             DatabaseUtils.readExceptionFromParcel(reply);
             int count = reply.readInt();
-        } //End block
+        } 
         finally 
         {
             data.recycle();
             reply.recycle();
-        } //End block
+        } 
         addTaint(url.getTaint());
         addTaint(selection.getTaint());
         addTaint(selectionArgs[0].getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_952722547 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_952722547;
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //try {
-            //data.writeInterfaceToken(IContentProvider.descriptor);
-            //url.writeToParcel(data, 0);
-            //data.writeString(selection);
-            //data.writeStringArray(selectionArgs);
-            //mRemote.transact(IContentProvider.DELETE_TRANSACTION, data, reply, 0);
-            //DatabaseUtils.readExceptionFromParcel(reply);
-            //int count = reply.readInt();
-            //return count;
-        //} finally {
-            //data.recycle();
-            //reply.recycle();
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -621,41 +625,41 @@ final class ContentProviderProxy implements IContentProvider {
             mRemote.transact(IContentProvider.UPDATE_TRANSACTION, data, reply, 0);
             DatabaseUtils.readExceptionFromParcel(reply);
             int count = reply.readInt();
-        } //End block
+        } 
         finally 
         {
             data.recycle();
             reply.recycle();
-        } //End block
+        } 
         addTaint(url.getTaint());
         addTaint(values.getTaint());
         addTaint(selection.getTaint());
         addTaint(selectionArgs[0].getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1038994386 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1038994386;
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //try {
-            //data.writeInterfaceToken(IContentProvider.descriptor);
-            //url.writeToParcel(data, 0);
-            //values.writeToParcel(data, 0);
-            //data.writeString(selection);
-            //data.writeStringArray(selectionArgs);
-            //mRemote.transact(IContentProvider.UPDATE_TRANSACTION, data, reply, 0);
-            //DatabaseUtils.readExceptionFromParcel(reply);
-            //int count = reply.readInt();
-            //return count;
-        //} finally {
-            //data.recycle();
-            //reply.recycle();
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.493 -0400", hash_original_method = "D396B7AA54F286AF30F0B787DF60D2FE", hash_generated_method = "4FB5D5563398000471ABF53B7BE3E842")
     public ParcelFileDescriptor openFile(Uri url, String mode) throws RemoteException, FileNotFoundException {
-        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_169028878 = null; //Variable for return #1
+        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_169028878 = null; 
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
         try 
@@ -670,38 +674,38 @@ final class ContentProviderProxy implements IContentProvider {
             fd = reply.readFileDescriptor();
             fd = null;
             varB4EAC82CA7396A68D541C85D26508E83_169028878 = fd;
-        } //End block
+        } 
         finally 
         {
             data.recycle();
             reply.recycle();
-        } //End block
+        } 
         addTaint(url.getTaint());
         addTaint(mode.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_169028878.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_169028878.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_169028878;
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //try {
-            //data.writeInterfaceToken(IContentProvider.descriptor);
-            //url.writeToParcel(data, 0);
-            //data.writeString(mode);
-            //mRemote.transact(IContentProvider.OPEN_FILE_TRANSACTION, data, reply, 0);
-            //DatabaseUtils.readExceptionWithFileNotFoundExceptionFromParcel(reply);
-            //int has = reply.readInt();
-            //ParcelFileDescriptor fd = has != 0 ? reply.readFileDescriptor() : null;
-            //return fd;
-        //} finally {
-            //data.recycle();
-            //reply.recycle();
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.495 -0400", hash_original_method = "FE6B9D37BFC5622E35633D8C501B06FF", hash_generated_method = "5DFC1FF7AB0AD5F93D7FDBA6FD171400")
     public AssetFileDescriptor openAssetFile(Uri url, String mode) throws RemoteException, FileNotFoundException {
-        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1596928196 = null; //Variable for return #1
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1596928196 = null; 
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
         try 
@@ -716,39 +720,40 @@ final class ContentProviderProxy implements IContentProvider {
             fd = AssetFileDescriptor.CREATOR.createFromParcel(reply);
             fd = null;
             varB4EAC82CA7396A68D541C85D26508E83_1596928196 = fd;
-        } //End block
+        } 
         finally 
         {
             data.recycle();
             reply.recycle();
-        } //End block
+        } 
         addTaint(url.getTaint());
         addTaint(mode.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1596928196.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1596928196.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1596928196;
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //try {
-            //data.writeInterfaceToken(IContentProvider.descriptor);
-            //url.writeToParcel(data, 0);
-            //data.writeString(mode);
-            //mRemote.transact(IContentProvider.OPEN_ASSET_FILE_TRANSACTION, data, reply, 0);
-            //DatabaseUtils.readExceptionWithFileNotFoundExceptionFromParcel(reply);
-            //int has = reply.readInt();
-            //AssetFileDescriptor fd = has != 0
-                    //? AssetFileDescriptor.CREATOR.createFromParcel(reply) : null;
-            //return fd;
-        //} finally {
-            //data.recycle();
-            //reply.recycle();
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+                    
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.496 -0400", hash_original_method = "EF6BE11399C3C767419E53090230088A", hash_generated_method = "5AB5C13D337334A0C9EBCD3A2224F30B")
     public Bundle call(String method, String request, Bundle args) throws RemoteException {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_712151736 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_712151736 = null; 
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
         try 
@@ -761,39 +766,39 @@ final class ContentProviderProxy implements IContentProvider {
             DatabaseUtils.readExceptionFromParcel(reply);
             Bundle bundle = reply.readBundle();
             varB4EAC82CA7396A68D541C85D26508E83_712151736 = bundle;
-        } //End block
+        } 
         finally 
         {
             data.recycle();
             reply.recycle();
-        } //End block
+        } 
         addTaint(method.getTaint());
         addTaint(request.getTaint());
         addTaint(args.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_712151736.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_712151736.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_712151736;
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //try {
-            //data.writeInterfaceToken(IContentProvider.descriptor);
-            //data.writeString(method);
-            //data.writeString(request);
-            //data.writeBundle(args);
-            //mRemote.transact(IContentProvider.CALL_TRANSACTION, data, reply, 0);
-            //DatabaseUtils.readExceptionFromParcel(reply);
-            //Bundle bundle = reply.readBundle();
-            //return bundle;
-        //} finally {
-            //data.recycle();
-            //reply.recycle();
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.498 -0400", hash_original_method = "395B2F944828CBA26EF4C9D4B93255E5", hash_generated_method = "8E45A8D6D6CEB98B00DEFD9A18492ED0")
     public String[] getStreamTypes(Uri url, String mimeTypeFilter) throws RemoteException {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1292235272 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1292235272 = null; 
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
         try 
@@ -805,37 +810,37 @@ final class ContentProviderProxy implements IContentProvider {
             DatabaseUtils.readExceptionFromParcel(reply);
             String[] out = reply.createStringArray();
             varB4EAC82CA7396A68D541C85D26508E83_1292235272 = out;
-        } //End block
+        } 
         finally 
         {
             data.recycle();
             reply.recycle();
-        } //End block
+        } 
         addTaint(url.getTaint());
         addTaint(mimeTypeFilter.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1292235272.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1292235272.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1292235272;
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //try {
-            //data.writeInterfaceToken(IContentProvider.descriptor);
-            //url.writeToParcel(data, 0);
-            //data.writeString(mimeTypeFilter);
-            //mRemote.transact(IContentProvider.GET_STREAM_TYPES_TRANSACTION, data, reply, 0);
-            //DatabaseUtils.readExceptionFromParcel(reply);
-            //String[] out = reply.createStringArray();
-            //return out;
-        //} finally {
-            //data.recycle();
-            //reply.recycle();
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.499 -0400", hash_original_method = "9C6FC6B0610E79E726A369C065C9DA4C", hash_generated_method = "D2CA52E30938FE06A10B7ECFDA92E819")
     public AssetFileDescriptor openTypedAssetFile(Uri url, String mimeType, Bundle opts) throws RemoteException, FileNotFoundException {
-        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_869646776 = null; //Variable for return #1
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_869646776 = null; 
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
         try 
@@ -851,35 +856,35 @@ final class ContentProviderProxy implements IContentProvider {
             fd = AssetFileDescriptor.CREATOR.createFromParcel(reply);
             fd = null;
             varB4EAC82CA7396A68D541C85D26508E83_869646776 = fd;
-        } //End block
+        } 
         finally 
         {
             data.recycle();
             reply.recycle();
-        } //End block
+        } 
         addTaint(url.getTaint());
         addTaint(mimeType.getTaint());
         addTaint(opts.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_869646776.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_869646776.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_869646776;
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //try {
-            //data.writeInterfaceToken(IContentProvider.descriptor);
-            //url.writeToParcel(data, 0);
-            //data.writeString(mimeType);
-            //data.writeBundle(opts);
-            //mRemote.transact(IContentProvider.OPEN_TYPED_ASSET_FILE_TRANSACTION, data, reply, 0);
-            //DatabaseUtils.readExceptionWithFileNotFoundExceptionFromParcel(reply);
-            //int has = reply.readInt();
-            //AssetFileDescriptor fd = has != 0
-                    //? AssetFileDescriptor.CREATOR.createFromParcel(reply) : null;
-            //return fd;
-        //} finally {
-            //data.recycle();
-            //reply.recycle();
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+                    
+            
+        
+            
+            
+        
     }
 
     

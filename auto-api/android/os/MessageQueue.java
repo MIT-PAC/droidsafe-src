@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.AndroidRuntimeException;
 import android.util.Log;
@@ -37,8 +37,8 @@ public class MessageQueue {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.549 -0400", hash_original_method = "024946A17D31C4FE5B39BFCF4854F539", hash_generated_method = "706665B871FA624C873ACD826DBDE13E")
       MessageQueue() {
         nativeInit();
-        // ---------- Original Method ----------
-        //nativeInit();
+        
+        
     }
 
     
@@ -66,18 +66,18 @@ public class MessageQueue {
     public final void addIdleHandler(IdleHandler handler) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Can't add a null IdleHandler");
-        } //End block
+        } 
         {
             mIdleHandlers.add(handler);
-        } //End block
+        } 
         addTaint(handler.getTaint());
-        // ---------- Original Method ----------
-        //if (handler == null) {
-            //throw new NullPointerException("Can't add a null IdleHandler");
-        //}
-        //synchronized (this) {
-            //mIdleHandlers.add(handler);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -85,12 +85,12 @@ public class MessageQueue {
     public final void removeIdleHandler(IdleHandler handler) {
         {
             mIdleHandlers.remove(handler);
-        } //End block
+        } 
         addTaint(handler.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //mIdleHandlers.remove(handler);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -100,29 +100,29 @@ public class MessageQueue {
         try 
         {
             nativeDestroy();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //nativeDestroy();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.554 -0400", hash_original_method = "FE8F633895A73ADF340290B052DEE51B", hash_generated_method = "0DEAD18817FEABC12C329BAB2AE1657C")
     final Message next() {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1356380453 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_1356380453 = null; 
         int pendingIdleHandlerCount = -1;
         int nextPollTimeoutMillis = 0;
         {
             {
                 Binder.flushPendingCommands();
-            } //End block
+            } 
             nativePollOnce(mPtr, nextPollTimeoutMillis);
             {
                 final long now = SystemClock.uptimeMillis();
@@ -135,25 +135,25 @@ public class MessageQueue {
                         msg.next = null;
                         msg.markInUse();
                         varB4EAC82CA7396A68D541C85D26508E83_1356380453 = msg;
-                    } //End block
+                    } 
                     {
                         nextPollTimeoutMillis = (int) Math.min(when - now, Integer.MAX_VALUE);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     nextPollTimeoutMillis = -1;
-                } //End block
+                } 
                 {
                     pendingIdleHandlerCount = mIdleHandlers.size();
-                } //End block
+                } 
                 {
                     mBlocked = true;
-                } //End block
+                } 
                 {
                     mPendingIdleHandlers = new IdleHandler[Math.max(pendingIdleHandlerCount, 4)];
-                } //End block
+                } 
                 mPendingIdleHandlers = mIdleHandlers.toArray(mPendingIdleHandlers);
-            } //End block
+            } 
             {
                 int i = 0;
                 {
@@ -163,25 +163,25 @@ public class MessageQueue {
                     try 
                     {
                         keep = idler.queueIdle();
-                    } //End block
+                    } 
                     catch (Throwable t)
                     {
                         Log.wtf("MessageQueue", "IdleHandler threw exception", t);
-                    } //End block
+                    } 
                     {
                         {
                             mIdleHandlers.remove(idler);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             pendingIdleHandlerCount = 0;
             nextPollTimeoutMillis = 0;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1356380453.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1356380453.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1356380453;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -192,46 +192,46 @@ public class MessageQueue {
             {
                 if (DroidSafeAndroidRuntime.control) throw new AndroidRuntimeException(msg
                     + " This message is already in use.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Main thread not allowed to quit");
-        } //End block
+        } 
         boolean needWake;
         {
             {
                 RuntimeException e = new RuntimeException(
                     msg.target + " sending message to a Handler on a dead thread");
-            } //End block
+            } 
             {
                 mQuiting = true;
-            } //End block
+            } 
             msg.when = when;
             Message p = mMessages;
             {
                 msg.next = p;
                 mMessages = msg;
                 needWake = mBlocked;
-            } //End block
+            } 
             {
                 Message prev = null;
                 {
                     prev = p;
                     p = p.next;
-                } //End block
+                } 
                 msg.next = prev.next;
                 prev.next = msg;
                 needWake = false;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             nativeWake(mPtr);
-        } //End block
+        } 
         addTaint(when);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1144242890 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1144242890;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -247,7 +247,7 @@ public class MessageQueue {
                 mMessages = n;
                 p.recycle();
                 p = n;
-            } //End block
+            } 
             {
                 Message n = p.next;
                 {
@@ -256,19 +256,19 @@ public class MessageQueue {
                         Message nn = n.next;
                         n.recycle();
                         p.next = nn;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 p = n;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(h.getTaint());
         addTaint(what);
         addTaint(object.getTaint());
         addTaint(doRemove);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_318766116 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_318766116;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -281,7 +281,7 @@ public class MessageQueue {
                 mMessages = n;
                 p.recycle();
                 p = n;
-            } //End block
+            } 
             {
                 Message n = p.next;
                 {
@@ -289,16 +289,16 @@ public class MessageQueue {
                         Message nn = n.next;
                         n.recycle();
                         p.next = nn;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 p = n;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(h.getTaint());
         addTaint(r.getTaint());
         addTaint(object.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -311,7 +311,7 @@ public class MessageQueue {
                 mMessages = n;
                 p.recycle();
                 p = n;
-            } //End block
+            } 
             {
                 Message n = p.next;
                 {
@@ -319,36 +319,36 @@ public class MessageQueue {
                         Message nn = n.next;
                         n.recycle();
                         p.next = nn;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 p = n;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(h.getTaint());
         addTaint(object.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //Message p = mMessages;
-            //while (p != null && p.target == h
-                    //&& (object == null || p.obj == object)) {
-                //Message n = p.next;
-                //mMessages = n;
-                //p.recycle();
-                //p = n;
-            //}
-            //while (p != null) {
-                //Message n = p.next;
-                //if (n != null) {
-                    //if (n.target == h && (object == null || n.obj == object)) {
-                        //Message nn = n.next;
-                        //n.recycle();
-                        //p.next = nn;
-                        //continue;
-                    //}
-                //}
-                //p = n;
-            //}
-        //}
+        
+        
+            
+            
+                    
+                
+                
+                
+                
+            
+            
+                
+                
+                    
+                        
+                        
+                        
+                        
+                    
+                
+                
+            
+        
     }
 
     

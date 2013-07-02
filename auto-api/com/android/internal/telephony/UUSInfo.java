@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class UUSInfo {
@@ -24,10 +24,10 @@ public class UUSInfo {
         this.uusType = UUS_TYPE1_IMPLICIT;
         this.uusDcs = UUS_DCS_IA5c;
         this.uusData = null;
-        // ---------- Original Method ----------
-        //this.uusType = UUS_TYPE1_IMPLICIT;
-        //this.uusDcs = UUS_DCS_IA5c;
-        //this.uusData = null;
+        
+        
+        
+        
     }
 
     
@@ -36,10 +36,10 @@ public class UUSInfo {
         this.uusType = uusType;
         this.uusDcs = uusDcs;
         this.uusData = uusData;
-        // ---------- Original Method ----------
-        //this.uusType = uusType;
-        //this.uusDcs = uusDcs;
-        //this.uusData = uusData;
+        
+        
+        
+        
     }
 
     
@@ -47,16 +47,16 @@ public class UUSInfo {
     public int getDcs() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1135269527 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1135269527;
-        // ---------- Original Method ----------
-        //return uusDcs;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.042 -0400", hash_original_method = "304C29E73AF67DC85E7B439D2558394F", hash_generated_method = "94E5F21EB525F1888281AA89A1F2FFDB")
     public void setDcs(int uusDcs) {
         this.uusDcs = uusDcs;
-        // ---------- Original Method ----------
-        //this.uusDcs = uusDcs;
+        
+        
     }
 
     
@@ -64,16 +64,16 @@ public class UUSInfo {
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1765114376 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1765114376;
-        // ---------- Original Method ----------
-        //return uusType;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.043 -0400", hash_original_method = "4FF18D0C69655C8ABC948EB5DB465A11", hash_generated_method = "3FE8B407493C90F081206001F0842ACB")
     public void setType(int uusType) {
         this.uusType = uusType;
-        // ---------- Original Method ----------
-        //this.uusType = uusType;
+        
+        
     }
 
     
@@ -81,16 +81,16 @@ public class UUSInfo {
     public byte[] getUserData() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1374807648 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1374807648;
-        // ---------- Original Method ----------
-        //return uusData;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.043 -0400", hash_original_method = "E6220F4E83328DF111D0B2120F7A66C4", hash_generated_method = "E70042857A3CF2E987698B8992450A83")
     public void setUserData(byte[] uusData) {
         this.uusData = uusData;
-        // ---------- Original Method ----------
-        //this.uusData = uusData;
+        
+        
     }
 
     

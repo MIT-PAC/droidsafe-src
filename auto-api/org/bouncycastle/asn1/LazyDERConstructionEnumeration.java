@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Enumeration;
 import java.io.IOException;
@@ -22,9 +22,9 @@ class LazyDERConstructionEnumeration implements Enumeration {
     public  LazyDERConstructionEnumeration(byte[] encoded) {
         aIn = new ASN1InputStream(encoded, true);
         nextObj = readObject();
-        // ---------- Original Method ----------
-        //aIn = new ASN1InputStream(encoded, true);
-        //nextObj = readObject();
+        
+        
+        
     }
 
     
@@ -32,48 +32,48 @@ class LazyDERConstructionEnumeration implements Enumeration {
     public boolean hasMoreElements() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1777675651 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1777675651;
-        // ---------- Original Method ----------
-        //return nextObj != null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.881 -0400", hash_original_method = "7A36257711540715C5E7C9FBD3EAD6E1", hash_generated_method = "644AC3C14E6087B09F91D7654D3718E1")
     public Object nextElement() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1825101601 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1825101601 = null; 
         Object o = nextObj;
         nextObj = readObject();
         varB4EAC82CA7396A68D541C85D26508E83_1825101601 = o;
-        varB4EAC82CA7396A68D541C85D26508E83_1825101601.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1825101601.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1825101601;
-        // ---------- Original Method ----------
-        //Object o = nextObj;
-        //nextObj = readObject();
-        //return o;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.881 -0400", hash_original_method = "C7A49820E6202D53B06F271620A3165C", hash_generated_method = "51CD0E6EC0B07304FE6E825CC7E68A57")
     private Object readObject() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_2015952570 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_2015952570 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2015952570 = aIn.readObject();
-        } //End block
+        } 
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new ASN1ParsingException("malformed DER construction: " + e, e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2015952570.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_2015952570.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2015952570;
-        // ---------- Original Method ----------
-        //try
-        //{
-            //return aIn.readObject();
-        //}
-        //catch (IOException e)
-        //{
-            //throw new ASN1ParsingException("malformed DER construction: " + e, e);
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     

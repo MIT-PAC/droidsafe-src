@@ -1,11 +1,11 @@
 package android.opengl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import static javax.microedition.khronos.egl.EGL10.EGL_DEFAULT_DISPLAY;
 import static javax.microedition.khronos.egl.EGL10.EGL_NO_DISPLAY;
@@ -27,45 +27,47 @@ public abstract class ManagedEGLContext {
         mContext = context;
         {
             sActive.add(this);
-        } //End block
-        // ---------- Original Method ----------
-        //mContext = context;
-        //synchronized (sActive) {
-            //sActive.add(this);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.646 -0400", hash_original_method = "0BA5CAD8B17303B4C3A912EF0F9065A7", hash_generated_method = "88DCDDCD264F3F3844FD56C7003BF776")
     public EGLContext getContext() {
-        EGLContext varB4EAC82CA7396A68D541C85D26508E83_1582639129 = null; //Variable for return #1
+        EGLContext varB4EAC82CA7396A68D541C85D26508E83_1582639129 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1582639129 = mContext;
-        varB4EAC82CA7396A68D541C85D26508E83_1582639129.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1582639129.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1582639129;
-        // ---------- Original Method ----------
-        //return mContext;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.646 -0400", hash_original_method = "3A3C884C8DD72479D5B7016BF0489D57", hash_generated_method = "418519E6B0AAFC40765D5AFF890A67AE")
     public void terminate() {
         execTerminate();
-        // ---------- Original Method ----------
-        //execTerminate();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.647 -0400", hash_original_method = "B8E737E7A559452A0DBE946D6943CE60", hash_generated_method = "B6770F67CF9038CAE7126511421AF7E1")
      void execTerminate() {
         onTerminate(mContext);
-        // ---------- Original Method ----------
-        //onTerminate(mContext);
+        
+        
     }
 
     
     public abstract void onTerminate(EGLContext context);
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean doTerminate() {
         ArrayList<ManagedEGLContext> active;
         if (Looper.getMainLooper() != Looper.myLooper()) {

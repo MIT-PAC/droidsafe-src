@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.Message;
@@ -29,8 +29,8 @@ public class ClipboardManager extends android.text.ClipboardManager {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.140 -0400", hash_original_method = "70003E26F597B4FA21D37DAC4C2F415E", hash_generated_method = "F52487E39EC4F57260159A7A23B22DB7")
         public void dispatchPrimaryClipChanged() {
             mHandler.sendEmptyMessage(MSG_REPORT_PRIMARY_CLIP_CHANGED);
-            // ---------- Original Method ----------
-            //mHandler.sendEmptyMessage(MSG_REPORT_PRIMARY_CLIP_CHANGED);
+            
+            
         }
 
         
@@ -41,15 +41,15 @@ public class ClipboardManager extends android.text.ClipboardManager {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.141 -0400", hash_original_method = "5AAF932430F5A3E1179C80D13696BD76", hash_generated_method = "FA752C471052CE88E1745A4EC756AD64")
         @Override
         public void handleMessage(Message msg) {
-            //Begin case MSG_REPORT_PRIMARY_CLIP_CHANGED 
+            
             reportPrimaryClipChanged();
-            //End case MSG_REPORT_PRIMARY_CLIP_CHANGED 
+            
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //switch (msg.what) {
-                //case MSG_REPORT_PRIMARY_CLIP_CHANGED:
-                    //reportPrimaryClipChanged();
-            //}
+            
+            
+                
+                    
+            
         }
 
         
@@ -59,8 +59,8 @@ public class ClipboardManager extends android.text.ClipboardManager {
     public  ClipboardManager(Context context, Handler handler) {
         mContext = context;
         addTaint(handler.getTaint());
-        // ---------- Original Method ----------
-        //mContext = context;
+        
+        
     }
 
     
@@ -81,79 +81,79 @@ public class ClipboardManager extends android.text.ClipboardManager {
         try 
         {
             getService().setPrimaryClip(clip);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(clip.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //getService().setPrimaryClip(clip);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.143 -0400", hash_original_method = "50B348CB23C6EF42B3CBE9B194465F2B", hash_generated_method = "B66560F475B55618A290A824AC4C565A")
     public ClipData getPrimaryClip() {
-        ClipData varB4EAC82CA7396A68D541C85D26508E83_1746267893 = null; //Variable for return #1
-        ClipData varB4EAC82CA7396A68D541C85D26508E83_2018742984 = null; //Variable for return #2
+        ClipData varB4EAC82CA7396A68D541C85D26508E83_1746267893 = null; 
+        ClipData varB4EAC82CA7396A68D541C85D26508E83_2018742984 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1746267893 = getService().getPrimaryClip(mContext.getPackageName());
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_2018742984 = null;
-        } //End block
-        ClipData varA7E53CE21691AB073D9660D615818899_360682439; //Final return value
+        } 
+        ClipData varA7E53CE21691AB073D9660D615818899_360682439; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_360682439 = varB4EAC82CA7396A68D541C85D26508E83_1746267893;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_360682439 = varB4EAC82CA7396A68D541C85D26508E83_2018742984;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_360682439.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_360682439.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_360682439;
-        // ---------- Original Method ----------
-        //try {
-            //return getService().getPrimaryClip(mContext.getPackageName());
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.144 -0400", hash_original_method = "678ECBBFE5F09A43CDAAF81F6FD5AC97", hash_generated_method = "15C810D0AC7B049BDC54BB4345DB9AA8")
     public ClipDescription getPrimaryClipDescription() {
-        ClipDescription varB4EAC82CA7396A68D541C85D26508E83_1780069332 = null; //Variable for return #1
-        ClipDescription varB4EAC82CA7396A68D541C85D26508E83_564955985 = null; //Variable for return #2
+        ClipDescription varB4EAC82CA7396A68D541C85D26508E83_1780069332 = null; 
+        ClipDescription varB4EAC82CA7396A68D541C85D26508E83_564955985 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1780069332 = getService().getPrimaryClipDescription();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_564955985 = null;
-        } //End block
-        ClipDescription varA7E53CE21691AB073D9660D615818899_1172416995; //Final return value
+        } 
+        ClipDescription varA7E53CE21691AB073D9660D615818899_1172416995; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1172416995 = varB4EAC82CA7396A68D541C85D26508E83_1780069332;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1172416995 = varB4EAC82CA7396A68D541C85D26508E83_564955985;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1172416995.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1172416995.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1172416995;
-        // ---------- Original Method ----------
-        //try {
-            //return getService().getPrimaryClipDescription();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -162,17 +162,17 @@ public class ClipboardManager extends android.text.ClipboardManager {
         try 
         {
             boolean var3C757C01DE776AE9A44F6650B0C4FBA6_819536499 = (getService().hasPrimaryClip());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_581591241 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_581591241;
-        // ---------- Original Method ----------
-        //try {
-            //return getService().hasPrimaryClip();
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -186,25 +186,25 @@ public class ClipboardManager extends android.text.ClipboardManager {
                     {
                         getService().addPrimaryClipChangedListener(
                             mPrimaryClipChangedServiceListener);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     { }
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mPrimaryClipChangedListeners.add(what);
-        } //End block
+        } 
         addTaint(what.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mPrimaryClipChangedListeners) {
-            //if (mPrimaryClipChangedListeners.size() == 0) {
-                //try {
-                    //getService().addPrimaryClipChangedListener(
-                            //mPrimaryClipChangedServiceListener);
-                //} catch (RemoteException e) {
-                //}
-            //}
-            //mPrimaryClipChangedListeners.add(what);
-        //}
+        
+        
+            
+                
+                    
+                            
+                
+                
+            
+            
+        
     }
 
     
@@ -219,56 +219,56 @@ public class ClipboardManager extends android.text.ClipboardManager {
                     {
                         getService().removePrimaryClipChangedListener(
                             mPrimaryClipChangedServiceListener);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     { }
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(what.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mPrimaryClipChangedListeners) {
-            //mPrimaryClipChangedListeners.remove(what);
-            //if (mPrimaryClipChangedListeners.size() == 0) {
-                //try {
-                    //getService().removePrimaryClipChangedListener(
-                            //mPrimaryClipChangedServiceListener);
-                //} catch (RemoteException e) {
-                //}
-            //}
-        //}
+        
+        
+            
+            
+                
+                    
+                            
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.148 -0400", hash_original_method = "D9D561BF0732BC43D4A46DB226A10D9C", hash_generated_method = "61F5ED360303BFDD0FE7D9D5294D5BC0")
     public CharSequence getText() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_58976951 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1047364241 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_58976951 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1047364241 = null; 
         ClipData clip = getPrimaryClip();
         {
             boolean var199BC11988A51D31CFFDE3AC3DC661B9_637915753 = (clip != null && clip.getItemCount() > 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_58976951 = clip.getItemAt(0).coerceToText(mContext);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1047364241 = null;
-        CharSequence varA7E53CE21691AB073D9660D615818899_1651336410; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1651336410; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1651336410 = varB4EAC82CA7396A68D541C85D26508E83_58976951;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1651336410 = varB4EAC82CA7396A68D541C85D26508E83_1047364241;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1651336410.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1651336410.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1651336410;
-        // ---------- Original Method ----------
-        //ClipData clip = getPrimaryClip();
-        //if (clip != null && clip.getItemCount() > 0) {
-            //return clip.getItemAt(0).coerceToText(mContext);
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -276,8 +276,8 @@ public class ClipboardManager extends android.text.ClipboardManager {
     public void setText(CharSequence text) {
         setPrimaryClip(ClipData.newPlainText(null, text));
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
-        //setPrimaryClip(ClipData.newPlainText(null, text));
+        
+        
     }
 
     
@@ -286,17 +286,17 @@ public class ClipboardManager extends android.text.ClipboardManager {
         try 
         {
             boolean var5090D494BD5C885F44AA60AE07CD9967_775083184 = (getService().hasClipboardText());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_121832331 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_121832331;
-        // ---------- Original Method ----------
-        //try {
-            //return getService().hasClipboardText();
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -306,25 +306,25 @@ public class ClipboardManager extends android.text.ClipboardManager {
         {
             final int N = mPrimaryClipChangedListeners.size();
             listeners = mPrimaryClipChangedListeners.toArray();
-        } //End block
+        } 
         {
             int i = 0;
             {
                 ((OnPrimaryClipChangedListener)listeners[i]).onPrimaryClipChanged();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //Object[] listeners;
-        //synchronized (mPrimaryClipChangedListeners) {
-            //final int N = mPrimaryClipChangedListeners.size();
-            //if (N <= 0) {
-                //return;
-            //}
-            //listeners = mPrimaryClipChangedListeners.toArray();
-        //}
-        //for (int i=0; i<listeners.length; i++) {
-            //((OnPrimaryClipChangedListener)listeners[i]).onPrimaryClipChanged();
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
+            
+        
     }
 
     

@@ -1,11 +1,11 @@
 package libcore.net.url;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
@@ -43,17 +43,18 @@ public class FileURLConnection extends URLConnection {
         fileName = url.getFile();
         {
             fileName = "";
-        } //End block
+        } 
         fileName = UriCodec.decode(fileName);
-        // ---------- Original Method ----------
-        //fileName = url.getFile();
-        //if (fileName == null) {
-            //fileName = "";
-        //}
-        //fileName = UriCodec.decode(fileName);
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.770 -0400", hash_original_method = "9A475DD1FCE4CCB36A5D73E904D3A34C", hash_generated_method = "33E037FF51E9225151900B00DA00ECEE")
     @Override
     public void connect() throws IOException {
@@ -63,28 +64,29 @@ public class FileURLConnection extends URLConnection {
             {
                 isDir = true;
                 is = getDirectoryListing(f);
-            } //End block
+            } 
             {
                 is = new BufferedInputStream(new FileInputStream(f));
                 long lengthAsLong = f.length();
                 length = lengthAsLong <= Integer.MAX_VALUE ? (int) lengthAsLong : Integer.MAX_VALUE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         connected = true;
-        // ---------- Original Method ----------
-        //File f = new File(fileName);
-        //if (f.isDirectory()) {
-            //isDir = true;
-            //is = getDirectoryListing(f);
-        //} else {
-            //is = new BufferedInputStream(new FileInputStream(f));
-            //long lengthAsLong = f.length();
-            //length = lengthAsLong <= Integer.MAX_VALUE ? (int) lengthAsLong : Integer.MAX_VALUE;
-        //}
-        //connected = true;
+        
+        
+        
+            
+            
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.771 -0400", hash_original_method = "686027F78C1D594BA8DD041F116549D4", hash_generated_method = "D79CC2478400793CB54F8B25CA41AB97")
     @Override
     public int getContentLength() {
@@ -92,107 +94,109 @@ public class FileURLConnection extends URLConnection {
         {
             {
                 connect();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (IOException e)
         { }
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1864837242 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1864837242;
-        // ---------- Original Method ----------
-        //try {
-            //if (!connected) {
-                //connect();
-            //}
-        //} catch (IOException e) {
-        //}
-        //return length;
+        
+        
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.772 -0400", hash_original_method = "72F889733CD7FE79958D9F6D8BD5D3FB", hash_generated_method = "4443B1D97B6AAB84E5BB35AFF43852DF")
     @Override
     public String getContentType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1523249766 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1493968849 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_722681855 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_174325348 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_1489478974 = null; //Variable for return #5
+        String varB4EAC82CA7396A68D541C85D26508E83_1523249766 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1493968849 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_722681855 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_174325348 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1489478974 = null; 
         try 
         {
             {
                 connect();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (IOException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1523249766 = "content/unknown";
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1493968849 = "text/plain";
-        } //End block
+        } 
         String result = guessContentTypeFromName(url.getFile());
         {
             varB4EAC82CA7396A68D541C85D26508E83_722681855 = result;
-        } //End block
+        } 
         try 
         {
             result = guessContentTypeFromStream(is);
-        } //End block
+        } 
         catch (IOException e)
         { }
         {
             varB4EAC82CA7396A68D541C85D26508E83_174325348 = result;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1489478974 = "content/unknown";
-        String varA7E53CE21691AB073D9660D615818899_1023553544; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1023553544; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1023553544 = varB4EAC82CA7396A68D541C85D26508E83_1523249766;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1023553544 = varB4EAC82CA7396A68D541C85D26508E83_1493968849;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1023553544 = varB4EAC82CA7396A68D541C85D26508E83_722681855;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1023553544 = varB4EAC82CA7396A68D541C85D26508E83_174325348;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1023553544 = varB4EAC82CA7396A68D541C85D26508E83_1489478974;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1023553544.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1023553544.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1023553544;
-        // ---------- Original Method ----------
-        //try {
-            //if (!connected) {
-                //connect();
-            //}
-        //} catch (IOException e) {
-            //return "content/unknown";
-        //}
-        //if (isDir) {
-            //return "text/plain";
-        //}
-        //String result = guessContentTypeFromName(url.getFile());
-        //if (result != null) {
-            //return result;
-        //}
-        //try {
-            //result = guessContentTypeFromStream(is);
-        //} catch (IOException e) {
-        //}
-        //if (result != null) {
-            //return result;
-        //}
-        //return "content/unknown";
+        
+        
+            
+                
+            
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.773 -0400", hash_original_method = "D31BC01A8E6F1896A7501EEF99417267", hash_generated_method = "B4DD039AF4FD1438EE7107433A595A86")
     private InputStream getDirectoryListing(File f) {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1272142285 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1272142285 = null; 
         String fileList[] = f.list();
         ByteArrayOutputStream bytes = new java.io.ByteArrayOutputStream();
         PrintStream out = new PrintStream(bytes);
@@ -205,71 +209,72 @@ public class FileURLConnection extends URLConnection {
             i = 0;
             {
                 out.print(fileList[i] + "<br>\n");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         out.close();
         varB4EAC82CA7396A68D541C85D26508E83_1272142285 = new ByteArrayInputStream(bytes.toByteArray());
         addTaint(f.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1272142285.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1272142285.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1272142285;
-        // ---------- Original Method ----------
-        //String fileList[] = f.list();
-        //ByteArrayOutputStream bytes = new java.io.ByteArrayOutputStream();
-        //PrintStream out = new PrintStream(bytes);
-        //out.print("<title>Directory Listing</title>\n");
-        //out.print("<base href=\"file:");
-        //out.print(f.getPath().replace('\\', '/') + "/\"><h1>" + f.getPath()
-                //+ "</h1>\n<hr>\n");
-        //int i;
-        //for (i = 0; i < fileList.length; i++) {
-            //out.print(fileList[i] + "<br>\n");
-        //}
-        //out.close();
-        //return new ByteArrayInputStream(bytes.toByteArray());
+        
+        
+        
+        
+        
+        
+        
+                
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.774 -0400", hash_original_method = "632E8A34CACC91F3F004CEC65E6938CD", hash_generated_method = "CC88EB2AED828A4BFFA87DE9D0DEAFB2")
     @Override
     public InputStream getInputStream() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1189180926 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1189180926 = null; 
         {
             connect();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1189180926 = is;
-        varB4EAC82CA7396A68D541C85D26508E83_1189180926.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1189180926.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1189180926;
-        // ---------- Original Method ----------
-        //if (!connected) {
-            //connect();
-        //}
-        //return is;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.775 -0400", hash_original_method = "FD3C5E750D9B5BE3AE6CD98B1BC8C55C", hash_generated_method = "28CA34768200A1F84E30954A7BCCCD78")
     @Override
     public java.security.Permission getPermission() throws IOException {
-        java.security.Permission varB4EAC82CA7396A68D541C85D26508E83_1676714503 = null; //Variable for return #1
+        java.security.Permission varB4EAC82CA7396A68D541C85D26508E83_1676714503 = null; 
         {
             String path = fileName;
             {
                 path = path.replace('/', File.separatorChar);
-            } //End block
+            } 
             permission = new FilePermission(path, "read");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1676714503 = permission;
-        varB4EAC82CA7396A68D541C85D26508E83_1676714503.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1676714503.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1676714503;
-        // ---------- Original Method ----------
-        //if (permission == null) {
-            //String path = fileName;
-            //if (File.separatorChar != '/') {
-                //path = path.replace('/', File.separatorChar);
-            //}
-            //permission = new FilePermission(path, "read");
-        //}
-        //return permission;
+        
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     

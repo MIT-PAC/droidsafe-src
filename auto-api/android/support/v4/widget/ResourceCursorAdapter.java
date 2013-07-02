@@ -1,11 +1,11 @@
 package android.support.v4.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.database.Cursor;
@@ -31,9 +31,9 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
         mLayout = mDropDownLayout = layout;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         addTaint(c.getTaint());
-        // ---------- Original Method ----------
-        //mLayout = mDropDownLayout = layout;
-        //mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        
+        
+        
     }
 
     
@@ -44,9 +44,9 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         addTaint(c.getTaint());
         addTaint(autoRequery);
-        // ---------- Original Method ----------
-        //mLayout = mDropDownLayout = layout;
-        //mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        
+        
+        
     }
 
     
@@ -57,55 +57,57 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         addTaint(c.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //mLayout = mDropDownLayout = layout;
-        //mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.338 -0400", hash_original_method = "E86C9DC4408CF260B8E6AACF31CF8025", hash_generated_method = "C351B2859969A529C87B3D8BFE4B4FB3")
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1701503117 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1701503117 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1701503117 = mInflater.inflate(mLayout, parent, false);
         addTaint(context.getTaint());
         addTaint(cursor.getTaint());
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1701503117.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1701503117.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1701503117;
-        // ---------- Original Method ----------
-        //return mInflater.inflate(mLayout, parent, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.339 -0400", hash_original_method = "C82CC5D78027B48163EBCC94CFA263B9", hash_generated_method = "88B4F7D2BE9FB11B23B53AA9ED528228")
     @Override
     public View newDropDownView(Context context, Cursor cursor, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_42242571 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_42242571 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_42242571 = mInflater.inflate(mDropDownLayout, parent, false);
         addTaint(context.getTaint());
         addTaint(cursor.getTaint());
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_42242571.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_42242571.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_42242571;
-        // ---------- Original Method ----------
-        //return mInflater.inflate(mDropDownLayout, parent, false);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.339 -0400", hash_original_method = "D5BDA165ADCD99BE26CEA9E8AC3FEB13", hash_generated_method = "1A4A3AE74ACD1FAC94DDB52DB24657BB")
     public void setViewResource(int layout) {
         mLayout = layout;
-        // ---------- Original Method ----------
-        //mLayout = layout;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.341 -0400", hash_original_method = "62C4D5A7D859DBC1B997DA83ECA5AEBB", hash_generated_method = "B6434D367B58893890DAD8DEC2EDE7DC")
     public void setDropDownViewResource(int dropDownLayout) {
         mDropDownLayout = dropDownLayout;
-        // ---------- Original Method ----------
-        //mDropDownLayout = dropDownLayout;
+        
+        
     }
 
     

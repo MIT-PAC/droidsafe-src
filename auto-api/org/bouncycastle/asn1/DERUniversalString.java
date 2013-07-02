@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -19,11 +19,12 @@ public class DERUniversalString extends ASN1Object implements DERString {
     public  DERUniversalString(
         byte[]   string) {
         this.string = string;
-        // ---------- Original Method ----------
-        //this.string = string;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERUniversalString getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERUniversalString)
@@ -34,6 +35,7 @@ public class DERUniversalString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERUniversalString getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -49,61 +51,63 @@ public class DERUniversalString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.798 -0400", hash_original_method = "C8AC92EF6B951363C15B3CD0868FB9EA", hash_generated_method = "A106C3589831FC74CA01D4A8BAD5BBC6")
     public String getString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1600095733 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1600095733 = null; 
         StringBuffer buf = new StringBuffer("#");
         ByteArrayOutputStream bOut = new ByteArrayOutputStream();
         ASN1OutputStream aOut = new ASN1OutputStream(bOut);
         try 
         {
             aOut.writeObject(this);
-        } //End block
+        } 
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("internal error encoding BitString");
-        } //End block
+        } 
         byte[] string = bOut.toByteArray();
         {
             int i = 0;
             {
                 buf.append(table[(string[i] >>> 4) & 0xf]);
                 buf.append(table[string[i] & 0xf]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1600095733 = buf.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1600095733.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1600095733.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1600095733;
-        // ---------- Original Method ----------
-        //StringBuffer    buf = new StringBuffer("#");
-        //ByteArrayOutputStream    bOut = new ByteArrayOutputStream();
-        //ASN1OutputStream            aOut = new ASN1OutputStream(bOut);
-        //try
-        //{
-            //aOut.writeObject(this);
-        //}
-        //catch (IOException e)
-        //{
-           //throw new RuntimeException("internal error encoding BitString");
-        //}
-        //byte[]    string = bOut.toByteArray();
-        //for (int i = 0; i != string.length; i++)
-        //{
-            //buf.append(table[(string[i] >>> 4) & 0xf]);
-            //buf.append(table[string[i] & 0xf]);
-        //}
-        //return buf.toString();
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+           
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.798 -0400", hash_original_method = "79F534E26CC8382FAA66B4080878D117", hash_generated_method = "89CCBBD04C8680A8F41F63131A77A49E")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2122941583 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2122941583 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2122941583 = getString();
-        varB4EAC82CA7396A68D541C85D26508E83_2122941583.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2122941583.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2122941583;
-        // ---------- Original Method ----------
-        //return getString();
+        
+        
     }
 
     
@@ -111,8 +115,8 @@ public class DERUniversalString extends ASN1Object implements DERString {
     public byte[] getOctets() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_416927746 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_416927746;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     
@@ -121,8 +125,8 @@ public class DERUniversalString extends ASN1Object implements DERString {
         DEROutputStream  out) throws IOException {
         out.writeEncoded(UNIVERSAL_STRING, this.getOctets());
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.writeEncoded(UNIVERSAL_STRING, this.getOctets());
+        
+        
     }
 
     
@@ -133,22 +137,23 @@ public class DERUniversalString extends ASN1Object implements DERString {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_115852887 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_115852887;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERUniversalString))
-        //{
-            //return false;
-        //}
-        //return this.getString().equals(((DERUniversalString)o).getString());
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.799 -0400", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "EC8E1E8C1F2D032520863B7A882F152F")
     public int hashCode() {
         int var21276083EDE53370F5E1E00F33D2C218_1718269334 = (this.getString().hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_231749446 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_231749446;
-        // ---------- Original Method ----------
-        //return this.getString().hashCode();
+        
+        
     }
 
     

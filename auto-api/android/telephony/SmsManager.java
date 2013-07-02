@@ -1,11 +1,11 @@
 package android.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.PendingIntent;
 import android.os.RemoteException;
@@ -22,10 +22,11 @@ public final class SmsManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.171 -0400", hash_original_method = "20095975633950A922641E0460F74587", hash_generated_method = "EA8DBC7FD3892C316F9DA405480D8C8E")
     private  SmsManager() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.172 -0400", hash_original_method = "9D6620F75021FD9E9FBB0176F1528DEF", hash_generated_method = "E578DA67A4B771C7899F48578D7D492E")
     public void sendTextMessage(
             String destinationAddress, String scAddress, String text,
@@ -34,21 +35,21 @@ public final class SmsManager {
             boolean varE86D05A26E104A1B0EDAE497337FA7A3_1842815611 = (TextUtils.isEmpty(destinationAddress));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid destinationAddress");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var6C86A511CD0D2845B6E0259573F6A612_773131341 = (TextUtils.isEmpty(text));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid message body");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
             {
                 iccISms.sendText(destinationAddress, scAddress, text, sentIntent, deliveryIntent);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         { }
         addTaint(destinationAddress.getTaint());
@@ -56,35 +57,37 @@ public final class SmsManager {
         addTaint(text.getTaint());
         addTaint(sentIntent.getTaint());
         addTaint(deliveryIntent.getTaint());
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(destinationAddress)) {
-            //throw new IllegalArgumentException("Invalid destinationAddress");
-        //}
-        //if (TextUtils.isEmpty(text)) {
-            //throw new IllegalArgumentException("Invalid message body");
-        //}
-        //try {
-            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
-            //if (iccISms != null) {
-                //iccISms.sendText(destinationAddress, scAddress, text, sentIntent, deliveryIntent);
-            //}
-        //} catch (RemoteException ex) {
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.172 -0400", hash_original_method = "C15BF98DC594420F78E24C2D1AF66E37", hash_generated_method = "A45C8C9EE8A8AD75CEF0EB7AB87110CA")
     public ArrayList<String> divideMessage(String text) {
-        ArrayList<String> varB4EAC82CA7396A68D541C85D26508E83_661418606 = null; //Variable for return #1
+        ArrayList<String> varB4EAC82CA7396A68D541C85D26508E83_661418606 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_661418606 = SmsMessage.fragmentText(text);
         addTaint(text.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_661418606.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_661418606.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_661418606;
-        // ---------- Original Method ----------
-        //return SmsMessage.fragmentText(text);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.173 -0400", hash_original_method = "C9D37AD9E9C3945E93E31952A098B3F5", hash_generated_method = "BFEA3232853A985294926D1312CC67E1")
     public void sendMultipartTextMessage(
             String destinationAddress, String scAddress, ArrayList<String> parts,
@@ -93,14 +96,14 @@ public final class SmsManager {
             boolean varE86D05A26E104A1B0EDAE497337FA7A3_180425073 = (TextUtils.isEmpty(destinationAddress));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid destinationAddress");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var2E04172F06A40E8E21AAB60E7E7515E4_1932965873 = (parts == null || parts.size() < 1);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid message body");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varA44691181AE196D8D15FB58C9A017BC7_875359832 = (parts.size() > 1);
             {
@@ -110,11 +113,11 @@ public final class SmsManager {
                     {
                         iccISms.sendMultipartText(destinationAddress, scAddress, parts,
                             sentIntents, deliveryIntents);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (RemoteException ex)
                 { }
-            } //End block
+            } 
             {
                 PendingIntent sentIntent = null;
                 PendingIntent deliveryIntent = null;
@@ -122,28 +125,29 @@ public final class SmsManager {
                     boolean var17B4198D84E7E0C0200CE6ED7E85D95D_1094004290 = (sentIntents != null && sentIntents.size() > 0);
                     {
                         sentIntent = sentIntents.get(0);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varDD53769B99564EFCB013F3A4AE0EBDF7_1006638045 = (deliveryIntents != null && deliveryIntents.size() > 0);
                     {
                         deliveryIntent = deliveryIntents.get(0);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 sendTextMessage(destinationAddress, scAddress, parts.get(0),
                     sentIntent, deliveryIntent);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(destinationAddress.getTaint());
         addTaint(scAddress.getTaint());
         addTaint(parts.getTaint());
         addTaint(sentIntents.getTaint());
         addTaint(deliveryIntents.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.174 -0400", hash_original_method = "5042F246D8D2B46884C265425E52DAB1", hash_generated_method = "250D60A215C459DC8F39143050B15AD2")
     public void sendDataMessage(
             String destinationAddress, String scAddress, short destinationPort,
@@ -152,19 +156,19 @@ public final class SmsManager {
             boolean varE86D05A26E104A1B0EDAE497337FA7A3_326370365 = (TextUtils.isEmpty(destinationAddress));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid destinationAddress");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid message data");
-        } //End block
+        } 
         try 
         {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
             {
                 iccISms.sendData(destinationAddress, scAddress, destinationPort & 0xFFFF,
                         data, sentIntent, deliveryIntent);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         { }
         addTaint(destinationAddress.getTaint());
@@ -173,21 +177,21 @@ public final class SmsManager {
         addTaint(data[0]);
         addTaint(sentIntent.getTaint());
         addTaint(deliveryIntent.getTaint());
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(destinationAddress)) {
-            //throw new IllegalArgumentException("Invalid destinationAddress");
-        //}
-        //if (data == null || data.length == 0) {
-            //throw new IllegalArgumentException("Invalid message data");
-        //}
-        //try {
-            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
-            //if (iccISms != null) {
-                //iccISms.sendData(destinationAddress, scAddress, destinationPort & 0xFFFF,
-                        //data, sentIntent, deliveryIntent);
-            //}
-        //} catch (RemoteException ex) {
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                
+                        
+            
+        
+        
     }
 
     
@@ -196,6 +200,7 @@ public final class SmsManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.175 -0400", hash_original_method = "149DCB8E596A59716D0EA3B88B730E88", hash_generated_method = "39D08B5FAADA1F9F9470BFEE41762BA4")
     public boolean copyMessageToIcc(byte[] smsc, byte[] pdu, int status) {
         boolean success = false;
@@ -204,8 +209,8 @@ public final class SmsManager {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
             {
                 success = iccISms.copyMessageToIccEf(status, pdu, smsc);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         { }
         addTaint(smsc[0]);
@@ -213,19 +218,20 @@ public final class SmsManager {
         addTaint(status);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_626770608 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_626770608;
-        // ---------- Original Method ----------
-        //boolean success = false;
-        //try {
-            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
-            //if (iccISms != null) {
-                //success = iccISms.copyMessageToIccEf(status, pdu, smsc);
-            //}
-        //} catch (RemoteException ex) {
-        //}
-        //return success;
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.175 -0400", hash_original_method = "D912FCB1DFFBD3EFF004E65AAFF52944", hash_generated_method = "25851F19E42CF9603F4B5F8402161285")
     public boolean deleteMessageFromIcc(int messageIndex) {
         boolean success = false;
@@ -236,28 +242,29 @@ public final class SmsManager {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
             {
                 success = iccISms.updateMessageOnIccEf(messageIndex, STATUS_ON_ICC_FREE, pdu);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         { }
         addTaint(messageIndex);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_145931089 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_145931089;
-        // ---------- Original Method ----------
-        //boolean success = false;
-        //byte[] pdu = new byte[IccConstants.SMS_RECORD_LENGTH-1];
-        //Arrays.fill(pdu, (byte)0xff);
-        //try {
-            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
-            //if (iccISms != null) {
-                //success = iccISms.updateMessageOnIccEf(messageIndex, STATUS_ON_ICC_FREE, pdu);
-            //}
-        //} catch (RemoteException ex) {
-        //}
-        //return success;
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.176 -0400", hash_original_method = "E7AD2FCC9238E9621F78F9C99C389491", hash_generated_method = "ED45832214175BF7CF83D0ED88C0F432")
     public boolean updateMessageOnIcc(int messageIndex, int newStatus, byte[] pdu) {
         boolean success = false;
@@ -266,8 +273,8 @@ public final class SmsManager {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
             {
                 success = iccISms.updateMessageOnIccEf(messageIndex, newStatus, pdu);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         { }
         addTaint(messageIndex);
@@ -275,19 +282,20 @@ public final class SmsManager {
         addTaint(pdu[0]);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1333521767 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1333521767;
-        // ---------- Original Method ----------
-        //boolean success = false;
-        //try {
-            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
-            //if (iccISms != null) {
-                //success = iccISms.updateMessageOnIccEf(messageIndex, newStatus, pdu);
-            //}
-        //} catch (RemoteException ex) {
-        //}
-        //return success;
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ArrayList<SmsMessage> getAllMessagesFromIcc() {
         List<SmsRawData> records = null;
         try {
@@ -301,6 +309,7 @@ public final class SmsManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.177 -0400", hash_original_method = "D2AB66A7ACEF0D4C8C4D01478F148AA5", hash_generated_method = "845CAB302B82862974DA2142C6ABA884")
     public boolean enableCellBroadcast(int messageIdentifier) {
         boolean success = false;
@@ -309,26 +318,27 @@ public final class SmsManager {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
             {
                 success = iccISms.enableCellBroadcast(messageIdentifier);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         { }
         addTaint(messageIdentifier);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_114410069 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_114410069;
-        // ---------- Original Method ----------
-        //boolean success = false;
-        //try {
-            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
-            //if (iccISms != null) {
-                //success = iccISms.enableCellBroadcast(messageIdentifier);
-            //}
-        //} catch (RemoteException ex) {
-        //}
-        //return success;
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.177 -0400", hash_original_method = "BF7C27985ACD2C46C3E7C98C6196EF24", hash_generated_method = "D0BE78D973A2DA08834446CB1A98B3D1")
     public boolean disableCellBroadcast(int messageIdentifier) {
         boolean success = false;
@@ -337,26 +347,27 @@ public final class SmsManager {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
             {
                 success = iccISms.disableCellBroadcast(messageIdentifier);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         { }
         addTaint(messageIdentifier);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1617005533 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1617005533;
-        // ---------- Original Method ----------
-        //boolean success = false;
-        //try {
-            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
-            //if (iccISms != null) {
-                //success = iccISms.disableCellBroadcast(messageIdentifier);
-            //}
-        //} catch (RemoteException ex) {
-        //}
-        //return success;
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.178 -0400", hash_original_method = "48FE73E95EE31EEBE730A030272A67D6", hash_generated_method = "5A64666C19245E8970E41168AD633E8F")
     public boolean enableCellBroadcastRange(int startMessageId, int endMessageId) {
         boolean success = false;
@@ -365,27 +376,28 @@ public final class SmsManager {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
             {
                 success = iccISms.enableCellBroadcastRange(startMessageId, endMessageId);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         { }
         addTaint(startMessageId);
         addTaint(endMessageId);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1427617651 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1427617651;
-        // ---------- Original Method ----------
-        //boolean success = false;
-        //try {
-            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
-            //if (iccISms != null) {
-                //success = iccISms.enableCellBroadcastRange(startMessageId, endMessageId);
-            //}
-        //} catch (RemoteException ex) {
-        //}
-        //return success;
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.178 -0400", hash_original_method = "528508E389FED61ADC9A70FF93AA8789", hash_generated_method = "C5D957FA8C8C816C55D9B172BDF085CB")
     public boolean disableCellBroadcastRange(int startMessageId, int endMessageId) {
         boolean success = false;
@@ -394,27 +406,28 @@ public final class SmsManager {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
             {
                 success = iccISms.disableCellBroadcastRange(startMessageId, endMessageId);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         { }
         addTaint(startMessageId);
         addTaint(endMessageId);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_287238912 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_287238912;
-        // ---------- Original Method ----------
-        //boolean success = false;
-        //try {
-            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
-            //if (iccISms != null) {
-                //success = iccISms.disableCellBroadcastRange(startMessageId, endMessageId);
-            //}
-        //} catch (RemoteException ex) {
-        //}
-        //return success;
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static ArrayList<SmsMessage> createMessageListFromRawRecords(List<SmsRawData> records) {
         ArrayList<SmsMessage> messages = new ArrayList<SmsMessage>();
         if (records != null) {

@@ -1,11 +1,11 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.SystemClock;
@@ -52,12 +52,12 @@ class ConnectionThread extends Thread {
         mId = id;
         mConnectionManager = connectionManager;
         mRequestFeeder = requestFeeder;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //setName("http" + id);
-        //mId = id;
-        //mConnectionManager = connectionManager;
-        //mRequestFeeder = requestFeeder;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -66,15 +66,16 @@ class ConnectionThread extends Thread {
         {
             mRunning = false;
             mRequestFeeder.notify();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mRequestFeeder) {
-            //mRunning = false;
-            //mRequestFeeder.notify();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.765 -0400", hash_original_method = "CA4464BE27725D08DF2A2ECD7DD50C0A", hash_generated_method = "FDA6611530F15CE7E3D8864B08F577C4")
     public void run() {
         android.os.Process.setThreadPriority(
@@ -85,7 +86,7 @@ class ConnectionThread extends Thread {
         {
             {
                 mCurrentThreadTime = SystemClock.currentThreadTimeMillis();
-            } //End block
+            } 
             Request request;
             request = mRequestFeeder.getRequest();
             {
@@ -95,16 +96,16 @@ class ConnectionThread extends Thread {
                     try 
                     {
                         mRequestFeeder.wait();
-                    } //End block
+                    } 
                     catch (InterruptedException e)
                     { }
                     mWaiting = false;
                     {
                         mCurrentThreadTime = SystemClock
                                 .currentThreadTimeMillis();
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             {
                 HttpLog.v("ConnectionThread: new request " +
                                             request.mHost + " " + request );
@@ -118,29 +119,30 @@ class ConnectionThread extends Thread {
                             boolean var4DDBADB5FFB4D38AD68D095920A44FB9_681029120 = (!mConnectionManager.recycleConnection(mConnection));
                             {
                                 mConnection.closeConnection();
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         mConnection.closeConnection();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mConnection = null;
                 {
                     long start = mCurrentThreadTime;
                     mCurrentThreadTime = SystemClock.currentThreadTimeMillis();
                     mTotalThreadTime += mCurrentThreadTime - start;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.766 -0400", hash_original_method = "E5691DA5C4D558B8174DB10F2BE5CF59", hash_generated_method = "B940D8F45763C30A5B55D8B7ADB70A3F")
     public synchronized String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_41386157 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_41386157 = null; 
         String con;
         con = "";
         con = mConnection.toString();
@@ -148,12 +150,12 @@ class ConnectionThread extends Thread {
         active = "w";
         active = "a";
         varB4EAC82CA7396A68D541C85D26508E83_41386157 = "cid " + mId + " " + active + " "  + con;
-        varB4EAC82CA7396A68D541C85D26508E83_41386157.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_41386157.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_41386157;
-        // ---------- Original Method ----------
-        //String con = mConnection == null ? "" : mConnection.toString();
-        //String active = mWaiting ? "w" : "a";
-        //return "cid " + mId + " " + active + " "  + con;
+        
+        
+        
+        
     }
 
     

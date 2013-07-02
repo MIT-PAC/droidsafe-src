@@ -1,11 +1,11 @@
 package android.media;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -86,28 +86,28 @@ public class MediaPlayer {
             boolean var59AC82EBCD14E4AA50598F2AE3563759_293552196 = ((looper = Looper.myLooper()) != null);
             {
                 mEventHandler = new EventHandler(this, looper);
-            } //End block
+            } 
             {
                 boolean var9D854D75870272BF06142F5CE681F893_953970908 = ((looper = Looper.getMainLooper()) != null);
                 {
                     mEventHandler = new EventHandler(this, looper);
-                } //End block
+                } 
                 {
                     mEventHandler = null;
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         native_setup(new WeakReference<MediaPlayer>(this));
-        // ---------- Original Method ----------
-        //Looper looper;
-        //if ((looper = Looper.myLooper()) != null) {
-            //mEventHandler = new EventHandler(this, looper);
-        //} else if ((looper = Looper.getMainLooper()) != null) {
-            //mEventHandler = new EventHandler(this, looper);
-        //} else {
-            //mEventHandler = null;
-        //}
-        //native_setup(new WeakReference<MediaPlayer>(this));
+        
+        
+        
+            
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -116,21 +116,23 @@ public class MediaPlayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.356 -0400", hash_original_method = "9BA2A59C2D2CF14D2B23AE59BE37DCE6", hash_generated_method = "FF542ACAF2DF0FC0A84AF4FD0522073B")
     public Parcel newRequest() {
-        Parcel varB4EAC82CA7396A68D541C85D26508E83_653264648 = null; //Variable for return #1
+        Parcel varB4EAC82CA7396A68D541C85D26508E83_653264648 = null; 
         Parcel parcel = Parcel.obtain();
         parcel.writeInterfaceToken(IMEDIA_PLAYER);
         varB4EAC82CA7396A68D541C85D26508E83_653264648 = parcel;
-        varB4EAC82CA7396A68D541C85D26508E83_653264648.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_653264648.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_653264648;
-        // ---------- Original Method ----------
-        //Parcel parcel = Parcel.obtain();
-        //parcel.writeInterfaceToken(IMEDIA_PLAYER);
-        //return parcel;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.356 -0400", hash_original_method = "F1F9A39481AD241B93A7EFA7B112C8A9", hash_generated_method = "FC9ABDF36556FD47E2387C8C2827042D")
     public int invoke(Parcel request, Parcel reply) {
         int retcode = native_invoke(request, reply);
@@ -139,51 +141,53 @@ public class MediaPlayer {
         addTaint(reply.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415139297 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415139297;
-        // ---------- Original Method ----------
-        //int retcode = native_invoke(request, reply);
-        //reply.setDataPosition(0);
-        //return retcode;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.357 -0400", hash_original_method = "936E4BA5EFE5EFD7E502D57ADB83F5AB", hash_generated_method = "E41C33BC8B5BC23C0AE48B7607536F4B")
     public void setDisplay(SurfaceHolder sh) {
         mSurfaceHolder = sh;
         Surface surface;
         {
             surface = sh.getSurface();
-        } //End block
+        } 
         {
             surface = null;
-        } //End block
+        } 
         _setVideoSurface(surface);
         updateSurfaceScreenOn();
-        // ---------- Original Method ----------
-        //mSurfaceHolder = sh;
-        //Surface surface;
-        //if (sh != null) {
-            //surface = sh.getSurface();
-        //} else {
-            //surface = null;
-        //}
-        //_setVideoSurface(surface);
-        //updateSurfaceScreenOn();
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.358 -0400", hash_original_method = "E1CEE3A46E058530408C5094E8A255A4", hash_generated_method = "71983594FBC4B97967AE8001EE1A2DE8")
     public void setSurface(Surface surface) {
         mSurfaceHolder = null;
         _setVideoSurface(surface);
         updateSurfaceScreenOn();
         addTaint(surface.getTaint());
-        // ---------- Original Method ----------
-        //if (mScreenOnWhilePlaying && surface != null) {
-            //Log.w(TAG, "setScreenOnWhilePlaying(true) is ineffective for Surface");
-        //}
-        //mSurfaceHolder = null;
-        //_setVideoSurface(surface);
-        //updateSurfaceScreenOn();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -212,6 +216,7 @@ public class MediaPlayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MediaPlayer create(Context context, int resid) {
         try {
             AssetFileDescriptor afd = context.getResources().openRawResourceFd(resid);
@@ -237,11 +242,12 @@ public class MediaPlayer {
         setDataSource(context, uri, null);
         addTaint(context.getTaint());
         addTaint(uri.getTaint());
-        // ---------- Original Method ----------
-        //setDataSource(context, uri, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.360 -0400", hash_original_method = "0C532A10BBEED73B371000A59C797624", hash_generated_method = "7C7D4B35027DEDB0C4FB0A1A17DB5976")
     public void setDataSource(Context context, Uri uri, Map<String, String> headers) throws IOException, IllegalArgumentException, SecurityException, IllegalStateException {
         String scheme = uri.getScheme();
@@ -249,8 +255,8 @@ public class MediaPlayer {
             boolean varB783BCB76216B10372231D3D68484DB8_400287571 = (scheme == null || scheme.equals("file"));
             {
                 setDataSource(uri.getPath());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         AssetFileDescriptor fd = null;
         try 
         {
@@ -260,12 +266,12 @@ public class MediaPlayer {
                 boolean var761F6419C241ADD42691E3D2E85CB236_1637026731 = (fd.getDeclaredLength() < 0);
                 {
                     setDataSource(fd.getFileDescriptor());
-                } //End block
+                } 
                 {
                     setDataSource(fd.getFileDescriptor(), fd.getStartOffset(), fd.getDeclaredLength());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (SecurityException ex)
         { }
         catch (IOException ex)
@@ -274,15 +280,15 @@ public class MediaPlayer {
         {
             {
                 fd.close();
-            } //End block
-        } //End block
+            } 
+        } 
         Log.d(TAG, "Couldn't open file on client side, trying server side");
         setDataSource(uri.toString(), headers);
         addTaint(context.getTaint());
         addTaint(uri.getTaint());
         addTaint(headers.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -291,6 +297,7 @@ public class MediaPlayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.365 -0400", hash_original_method = "21A95B4BC3854510C509CF1B7B37D46D", hash_generated_method = "942267C3D1A9F9768464EDF004F07BDA")
     public void setDataSource(String path, Map<String, String> headers) throws IOException, IllegalArgumentException, SecurityException, IllegalStateException {
         String[] keys = null;
@@ -306,26 +313,26 @@ public class MediaPlayer {
                 {
                     keys[i] = entry.getKey();
                     values[i] = entry.getValue();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         _setDataSource(path, keys, values);
         addTaint(path.getTaint());
         addTaint(headers.getTaint());
-        // ---------- Original Method ----------
-        //String[] keys = null;
-        //String[] values = null;
-        //if (headers != null) {
-            //keys = new String[headers.size()];
-            //values = new String[headers.size()];
-            //int i = 0;
-            //for (Map.Entry<String, String> entry: headers.entrySet()) {
-                //keys[i] = entry.getKey();
-                //values[i] = entry.getValue();
-                //++i;
-            //}
-        //}
-        //_setDataSource(path, keys, values);
+        
+        
+        
+        
+            
+            
+            
+            
+                
+                
+                
+            
+        
+        
     }
 
     
@@ -335,12 +342,13 @@ public class MediaPlayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.366 -0400", hash_original_method = "67ED0EB071685F0AFDAFB2EFB1BC8776", hash_generated_method = "5D3A3595104E286D34512CD6C49A5333")
     public void setDataSource(FileDescriptor fd) throws IOException, IllegalArgumentException, IllegalStateException {
         setDataSource(fd, 0, 0x7ffffffffffffffL);
         addTaint(fd.getTaint());
-        // ---------- Original Method ----------
-        //setDataSource(fd, 0, 0x7ffffffffffffffL);
+        
+        
     }
 
     
@@ -359,13 +367,14 @@ public class MediaPlayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.367 -0400", hash_original_method = "40DE58868CCCFC32104AEA08DBC3B0CD", hash_generated_method = "8D9FC9E4EE85EF00796B52D423965C3C")
     public void start() throws IllegalStateException {
         stayAwake(true);
         _start();
-        // ---------- Original Method ----------
-        //stayAwake(true);
-        //_start();
+        
+        
+        
     }
 
     
@@ -374,13 +383,14 @@ public class MediaPlayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.368 -0400", hash_original_method = "09E3A57706D9EF8F79E07C48FA7F3A4D", hash_generated_method = "50D137FD7257996CE996E4B7E4E11980")
     public void stop() throws IllegalStateException {
         stayAwake(false);
         _stop();
-        // ---------- Original Method ----------
-        //stayAwake(false);
-        //_stop();
+        
+        
+        
     }
 
     
@@ -389,13 +399,14 @@ public class MediaPlayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.369 -0400", hash_original_method = "857D1517B1757951DF038ED3088FF3B2", hash_generated_method = "9DD53ADFA67EFE3B90445FCC4D8F68C6")
     public void pause() throws IllegalStateException {
         stayAwake(false);
         _pause();
-        // ---------- Original Method ----------
-        //stayAwake(false);
-        //_pause();
+        
+        
+        
     }
 
     
@@ -404,6 +415,7 @@ public class MediaPlayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.370 -0400", hash_original_method = "2C98FD0B2087D81FFC1D38F1403791EF", hash_generated_method = "F6357A667D36E83BFB91C8AEA9B1D695")
     public void setWakeMode(Context context, int mode) {
         boolean washeld = false;
@@ -413,52 +425,54 @@ public class MediaPlayer {
                 {
                     washeld = true;
                     mWakeLock.release();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mWakeLock = null;
-        } //End block
+        } 
         PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
         mWakeLock = pm.newWakeLock(mode|PowerManager.ON_AFTER_RELEASE, MediaPlayer.class.getName());
         mWakeLock.setReferenceCounted(false);
         {
             mWakeLock.acquire();
-        } //End block
+        } 
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //boolean washeld = false;
-        //if (mWakeLock != null) {
-            //if (mWakeLock.isHeld()) {
-                //washeld = true;
-                //mWakeLock.release();
-            //}
-            //mWakeLock = null;
-        //}
-        //PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
-        //mWakeLock = pm.newWakeLock(mode|PowerManager.ON_AFTER_RELEASE, MediaPlayer.class.getName());
-        //mWakeLock.setReferenceCounted(false);
-        //if (washeld) {
-            //mWakeLock.acquire();
-        //}
+        
+        
+        
+            
+                
+                
+            
+            
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.371 -0400", hash_original_method = "1D2643121E0BBACA918AEEFF16FB1665", hash_generated_method = "795B34F115D3ED8438F49191DBD317B1")
     public void setScreenOnWhilePlaying(boolean screenOn) {
         {
             mScreenOnWhilePlaying = screenOn;
             updateSurfaceScreenOn();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mScreenOnWhilePlaying != screenOn) {
-            //if (screenOn && mSurfaceHolder == null) {
-                //Log.w(TAG, "setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder");
-            //}
-            //mScreenOnWhilePlaying = screenOn;
-            //updateSurfaceScreenOn();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.372 -0400", hash_original_method = "02316AFDA0A1E822630D7CE99583BEE5", hash_generated_method = "DDBF0D2D1A38C5A25D1A58B0D5BB4CE8")
     private void stayAwake(boolean awake) {
         {
@@ -466,39 +480,40 @@ public class MediaPlayer {
                 boolean var2AF05387B6FE9C5F416A6EC845CFCE19_778604710 = (awake && !mWakeLock.isHeld());
                 {
                     mWakeLock.acquire();
-                } //End block
+                } 
                 {
                     boolean var5AEF773A774AC1175FEC7C5357C07830_1252647704 = (!awake && mWakeLock.isHeld());
                     {
                         mWakeLock.release();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         mStayAwake = awake;
         updateSurfaceScreenOn();
-        // ---------- Original Method ----------
-        //if (mWakeLock != null) {
-            //if (awake && !mWakeLock.isHeld()) {
-                //mWakeLock.acquire();
-            //} else if (!awake && mWakeLock.isHeld()) {
-                //mWakeLock.release();
-            //}
-        //}
-        //mStayAwake = awake;
-        //updateSurfaceScreenOn();
+        
+        
+            
+                
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.373 -0400", hash_original_method = "D56BBB45DF467B2DAD5698BBF1920DD6", hash_generated_method = "10DE4749CDD3C23C1A28F71467D50BD5")
     private void updateSurfaceScreenOn() {
         {
             mSurfaceHolder.setKeepScreenOn(mScreenOnWhilePlaying && mStayAwake);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSurfaceHolder != null) {
-            //mSurfaceHolder.setKeepScreenOn(mScreenOnWhilePlaying && mStayAwake);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -545,9 +560,9 @@ public class MediaPlayer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.376 -0400", hash_original_method = "62D59DE780FDA113D7200968BD4DD768", hash_generated_method = "B060531E9D40D6803817D844C1E968F3")
     public Metadata getMetadata(final boolean update_only,
                                 final boolean apply_filter) {
-        Metadata varB4EAC82CA7396A68D541C85D26508E83_894206486 = null; //Variable for return #1
-        Metadata varB4EAC82CA7396A68D541C85D26508E83_2079052973 = null; //Variable for return #2
-        Metadata varB4EAC82CA7396A68D541C85D26508E83_53660715 = null; //Variable for return #3
+        Metadata varB4EAC82CA7396A68D541C85D26508E83_894206486 = null; 
+        Metadata varB4EAC82CA7396A68D541C85D26508E83_2079052973 = null; 
+        Metadata varB4EAC82CA7396A68D541C85D26508E83_53660715 = null; 
         Parcel reply = Parcel.obtain();
         Metadata data = new Metadata();
         {
@@ -555,47 +570,48 @@ public class MediaPlayer {
             {
                 reply.recycle();
                 varB4EAC82CA7396A68D541C85D26508E83_894206486 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varD5B0854FD3A7E24F478943612F0067D6_74349336 = (!data.parse(reply));
             {
                 reply.recycle();
                 varB4EAC82CA7396A68D541C85D26508E83_2079052973 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_53660715 = data;
         addTaint(update_only);
         addTaint(apply_filter);
-        Metadata varA7E53CE21691AB073D9660D615818899_26907211; //Final return value
+        Metadata varA7E53CE21691AB073D9660D615818899_26907211; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_26907211 = varB4EAC82CA7396A68D541C85D26508E83_894206486;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_26907211 = varB4EAC82CA7396A68D541C85D26508E83_2079052973;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_26907211 = varB4EAC82CA7396A68D541C85D26508E83_53660715;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_26907211.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_26907211.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_26907211;
-        // ---------- Original Method ----------
-        //Parcel reply = Parcel.obtain();
-        //Metadata data = new Metadata();
-        //if (!native_getMetadata(update_only, apply_filter, reply)) {
-            //reply.recycle();
-            //return null;
-        //}
-        //if (!data.parse(reply)) {
-            //reply.recycle();
-            //return null;
-        //}
-        //return data;
+        
+        
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.384 -0400", hash_original_method = "B0BBED6481EDE7F10FEA4CF182EBE3D1", hash_generated_method = "1A8498179220A4C924EFB443D5322B6C")
     public int setMetadataFilter(Set<Integer> allow, Set<Integer> block) {
         Parcel request = newRequest();
@@ -604,8 +620,8 @@ public class MediaPlayer {
             boolean var640875AB0A5247DF32010D4EDDB1E66D_161223142 = (request.dataCapacity() < capacity);
             {
                 request.setDataCapacity(capacity);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         request.writeInt(allow.size());
         {
             Iterator<Integer> varC4C5C0703D00EC448346EFAF5E5FC39F_972156967 = (allow).iterator();
@@ -613,8 +629,8 @@ public class MediaPlayer {
             Integer t = varC4C5C0703D00EC448346EFAF5E5FC39F_972156967.next();
             {
                 request.writeInt(t);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         request.writeInt(block.size());
         {
             Iterator<Integer> varFE3C5D648E83A09BB0DA5A5CD9C28882_2143715784 = (block).iterator();
@@ -622,31 +638,32 @@ public class MediaPlayer {
             Integer t = varFE3C5D648E83A09BB0DA5A5CD9C28882_2143715784.next();
             {
                 request.writeInt(t);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varCED2E107F0C63635B55997925961AC14_1991435670 = (native_setMetadataFilter(request));
         addTaint(allow.getTaint());
         addTaint(block.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1651411099 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1651411099;
-        // ---------- Original Method ----------
-        //Parcel request =  newRequest();
-        //int capacity = request.dataSize() + 4 * (1 + allow.size() + 1 + block.size());
-        //if (request.dataCapacity() < capacity) {
-            //request.setDataCapacity(capacity);
-        //}
-        //request.writeInt(allow.size());
-        //for(Integer t: allow) {
-            //request.writeInt(t);
-        //}
-        //request.writeInt(block.size());
-        //for(Integer t: block) {
-            //request.writeInt(t);
-        //}
-        //return native_setMetadataFilter(request);
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.385 -0400", hash_original_method = "40ADFE91226CE43AA5B2CBEBA3591229", hash_generated_method = "BB9AD88E0EDF8FF01039518B20FC95A4")
     public void release() {
         stayAwake(false);
@@ -660,18 +677,18 @@ public class MediaPlayer {
         mOnVideoSizeChangedListener = null;
         mOnTimedTextListener = null;
         _release();
-        // ---------- Original Method ----------
-        //stayAwake(false);
-        //updateSurfaceScreenOn();
-        //mOnPreparedListener = null;
-        //mOnBufferingUpdateListener = null;
-        //mOnCompletionListener = null;
-        //mOnSeekCompleteListener = null;
-        //mOnErrorListener = null;
-        //mOnInfoListener = null;
-        //mOnVideoSizeChangedListener = null;
-        //mOnTimedTextListener = null;
-        //_release();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -680,15 +697,16 @@ public class MediaPlayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.385 -0400", hash_original_method = "0163217153F6E824039D5121A760EBE0", hash_generated_method = "2954E9520438919A7ABC834FCE4C8288")
     public void reset() {
         stayAwake(false);
         _reset();
         mEventHandler.removeCallbacksAndMessages(null);
-        // ---------- Original Method ----------
-        //stayAwake(false);
-        //_reset();
-        //mEventHandler.removeCallbacksAndMessages(null);
+        
+        
+        
+        
     }
 
     
@@ -751,6 +769,7 @@ public class MediaPlayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.389 -0400", hash_original_method = "007895DA6F9E8604D81FFE810C3D87FB", hash_generated_method = "7A43C42955043D36C2AF287B9DEDCD8C")
     public boolean setParameter(int key, String value) {
         Parcel p = Parcel.obtain();
@@ -761,15 +780,16 @@ public class MediaPlayer {
         addTaint(value.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_420640823 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_420640823;
-        // ---------- Original Method ----------
-        //Parcel p = Parcel.obtain();
-        //p.writeString(value);
-        //boolean ret = setParameter(key, p);
-        //p.recycle();
-        //return ret;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.390 -0400", hash_original_method = "42E72BE22D4EC0A8F92EA2FFF9A1B8CD", hash_generated_method = "398526999E8F1877B78146A238CD0C59")
     public boolean setParameter(int key, int value) {
         Parcel p = Parcel.obtain();
@@ -780,12 +800,12 @@ public class MediaPlayer {
         addTaint(value);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1814791650 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1814791650;
-        // ---------- Original Method ----------
-        //Parcel p = Parcel.obtain();
-        //p.writeInt(value);
-        //boolean ret = setParameter(key, p);
-        //p.recycle();
-        //return ret;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -794,42 +814,45 @@ public class MediaPlayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.392 -0400", hash_original_method = "5EBE9A62BAE86EE2E5C065958EFCD9CF", hash_generated_method = "15DBCDDBC10CCE980210D2A85735DB18")
     public Parcel getParcelParameter(int key) {
-        Parcel varB4EAC82CA7396A68D541C85D26508E83_620956842 = null; //Variable for return #1
+        Parcel varB4EAC82CA7396A68D541C85D26508E83_620956842 = null; 
         Parcel p = Parcel.obtain();
         getParameter(key, p);
         varB4EAC82CA7396A68D541C85D26508E83_620956842 = p;
         addTaint(key);
-        varB4EAC82CA7396A68D541C85D26508E83_620956842.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_620956842.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_620956842;
-        // ---------- Original Method ----------
-        //Parcel p = Parcel.obtain();
-        //getParameter(key, p);
-        //return p;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.392 -0400", hash_original_method = "E362F946FCE7F90CCCD629666B73E43A", hash_generated_method = "3558083972FD45A0F6190468D84FB74E")
     public String getStringParameter(int key) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1915926381 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1915926381 = null; 
         Parcel p = Parcel.obtain();
         getParameter(key, p);
         String ret = p.readString();
         p.recycle();
         varB4EAC82CA7396A68D541C85D26508E83_1915926381 = ret;
         addTaint(key);
-        varB4EAC82CA7396A68D541C85D26508E83_1915926381.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1915926381.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1915926381;
-        // ---------- Original Method ----------
-        //Parcel p = Parcel.obtain();
-        //getParameter(key, p);
-        //String ret = p.readString();
-        //p.recycle();
-        //return ret;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.393 -0400", hash_original_method = "6CEECAB43DB86BAC5EC65D39A3A924D5", hash_generated_method = "0A23CD5F1722FB9AB5B7BD487040F9C8")
     public int getIntParameter(int key) {
         Parcel p = Parcel.obtain();
@@ -839,12 +862,12 @@ public class MediaPlayer {
         addTaint(key);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1225133166 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1225133166;
-        // ---------- Original Method ----------
-        //Parcel p = Parcel.obtain();
-        //getParameter(key, p);
-        //int ret = p.readInt();
-        //p.recycle();
-        //return ret;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -890,37 +913,40 @@ public class MediaPlayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.395 -0400", hash_original_method = "BB295A571473D1F777DD0CCBCDDABC95", hash_generated_method = "4E6FE57EFD13C2158922197A9D47E109")
     public boolean enableTimedTextTrackIndex(int index) {
         boolean varF44A7C6F586908C2FF471FA2CC296F4F_515722598 = (setParameter(KEY_PARAMETER_TIMED_TEXT_TRACK_INDEX, index));
         addTaint(index);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_37451278 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_37451278;
-        // ---------- Original Method ----------
-        //if (index < 0) {
-            //return false;
-        //}
-        //return setParameter(KEY_PARAMETER_TIMED_TEXT_TRACK_INDEX, index);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.395 -0400", hash_original_method = "74C1C7D2920140BDBE1C5FB72709063E", hash_generated_method = "58FABAF5DC5F3F04BD8C5DF8A7FD5F98")
     public boolean enableTimedText() {
         boolean var962E6194C8024D9ACCA053481E058D18_2086444441 = (enableTimedTextTrackIndex(0));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_712302091 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_712302091;
-        // ---------- Original Method ----------
-        //return enableTimedTextTrackIndex(0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.396 -0400", hash_original_method = "D4D5A570D263843DA145431C05408526", hash_generated_method = "A99764A6AFA58B9E80A2BD6607332FE5")
     public boolean disableTimedText() {
         boolean var9CC5D1B744DD01592D7EC11B0626EBF9_1713575775 = (setParameter(KEY_PARAMETER_TIMED_TEXT_TRACK_INDEX, -1));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_288735318 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_288735318;
-        // ---------- Original Method ----------
-        //return setParameter(KEY_PARAMETER_TIMED_TEXT_TRACK_INDEX, -1);
+        
+        
     }
 
     
@@ -930,15 +956,17 @@ public class MediaPlayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.396 -0400", hash_original_method = "3228EA20CE4FEF9678E1F1862B5AB446", hash_generated_method = "50625AE6DF481AE64B3EB15F7175DFBD")
     @Override
     protected void finalize() {
         native_finalize();
-        // ---------- Original Method ----------
-        //native_finalize();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void postEventFromNative(Object mediaplayer_ref,
                                             int what, int arg1, int arg2, Object obj) {
         MediaPlayer mp = (MediaPlayer)((WeakReference)mediaplayer_ref).get();
@@ -955,64 +983,64 @@ public class MediaPlayer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.397 -0400", hash_original_method = "652A10B898FA76BB677D4E34679A7B5D", hash_generated_method = "987EBE7B07F0BFE0DA24DF93DF11B855")
     public void setOnPreparedListener(OnPreparedListener listener) {
         mOnPreparedListener = listener;
-        // ---------- Original Method ----------
-        //mOnPreparedListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.397 -0400", hash_original_method = "6CC4251EDF834484FDBD6F0A122C65D9", hash_generated_method = "02AF5E76A57B14C22A8D31C1FD5DA3AF")
     public void setOnCompletionListener(OnCompletionListener listener) {
         mOnCompletionListener = listener;
-        // ---------- Original Method ----------
-        //mOnCompletionListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.397 -0400", hash_original_method = "DDA62D9965B414E96A3CCD5D800217D1", hash_generated_method = "0C9AB338C3C684416FAC16C098DF00A6")
     public void setOnBufferingUpdateListener(OnBufferingUpdateListener listener) {
         mOnBufferingUpdateListener = listener;
-        // ---------- Original Method ----------
-        //mOnBufferingUpdateListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.398 -0400", hash_original_method = "E6C283B9723E51C1AAC734ADC41F741F", hash_generated_method = "09F00DE120F67FA2E06D414F50C2147F")
     public void setOnSeekCompleteListener(OnSeekCompleteListener listener) {
         mOnSeekCompleteListener = listener;
-        // ---------- Original Method ----------
-        //mOnSeekCompleteListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.398 -0400", hash_original_method = "8379FC1073131EA9347F12938BFC14C4", hash_generated_method = "136130265E2833871182C75F9CC3334A")
     public void setOnVideoSizeChangedListener(OnVideoSizeChangedListener listener) {
         mOnVideoSizeChangedListener = listener;
-        // ---------- Original Method ----------
-        //mOnVideoSizeChangedListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.399 -0400", hash_original_method = "EF2D264E164B28DBC06EEC6D3EBE8B23", hash_generated_method = "D337EF32E4653756194FC2A4088DE668")
     public void setOnTimedTextListener(OnTimedTextListener listener) {
         mOnTimedTextListener = listener;
-        // ---------- Original Method ----------
-        //mOnTimedTextListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.399 -0400", hash_original_method = "606EB06B64A07407B83CA5CBEBF309C3", hash_generated_method = "C60A0B1416D18FD751AE5692034CBEE5")
     public void setOnErrorListener(OnErrorListener listener) {
         mOnErrorListener = listener;
-        // ---------- Original Method ----------
-        //mOnErrorListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.399 -0400", hash_original_method = "4D9753A45AFF6F50F6DD9F2BE501A438", hash_generated_method = "CC22DF79C368D299CC0E0400ABB99A07")
     public void setOnInfoListener(OnInfoListener listener) {
         mOnInfoListener = listener;
-        // ---------- Original Method ----------
-        //mOnInfoListener = listener;
+        
+        
     }
 
     
@@ -1026,69 +1054,69 @@ public class MediaPlayer {
             super(looper);
             mMediaPlayer = mp;
             addTaint(looper.getTaint());
-            // ---------- Original Method ----------
-            //mMediaPlayer = mp;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.401 -0400", hash_original_method = "D299385F381B46BF939056A8A39EEDB2", hash_generated_method = "2601EAD94924B8C60A1A4669B6903844")
         @Override
         public void handleMessage(Message msg) {
-            //Begin case MEDIA_PREPARED 
+            
             mOnPreparedListener.onPrepared(mMediaPlayer);
-            //End case MEDIA_PREPARED 
-            //Begin case MEDIA_PLAYBACK_COMPLETE 
+            
+            
             mOnCompletionListener.onCompletion(mMediaPlayer);
-            //End case MEDIA_PLAYBACK_COMPLETE 
-            //Begin case MEDIA_PLAYBACK_COMPLETE 
+            
+            
             stayAwake(false);
-            //End case MEDIA_PLAYBACK_COMPLETE 
-            //Begin case MEDIA_BUFFERING_UPDATE 
+            
+            
             mOnBufferingUpdateListener.onBufferingUpdate(mMediaPlayer, msg.arg1);
-            //End case MEDIA_BUFFERING_UPDATE 
-            //Begin case MEDIA_SEEK_COMPLETE 
+            
+            
             mOnSeekCompleteListener.onSeekComplete(mMediaPlayer);
-            //End case MEDIA_SEEK_COMPLETE 
-            //Begin case MEDIA_SET_VIDEO_SIZE 
+            
+            
             mOnVideoSizeChangedListener.onVideoSizeChanged(mMediaPlayer, msg.arg1, msg.arg2);
-            //End case MEDIA_SET_VIDEO_SIZE 
-            //Begin case MEDIA_ERROR 
+            
+            
             boolean error_was_handled = false;
-            //End case MEDIA_ERROR 
-            //Begin case MEDIA_ERROR 
+            
+            
             {
                 error_was_handled = mOnErrorListener.onError(mMediaPlayer, msg.arg1, msg.arg2);
-            } //End block
-            //End case MEDIA_ERROR 
-            //Begin case MEDIA_ERROR 
+            } 
+            
+            
             {
                 mOnCompletionListener.onCompletion(mMediaPlayer);
-            } //End block
-            //End case MEDIA_ERROR 
-            //Begin case MEDIA_ERROR 
+            } 
+            
+            
             stayAwake(false);
-            //End case MEDIA_ERROR 
-            //Begin case MEDIA_INFO 
+            
+            
             {
                 mOnInfoListener.onInfo(mMediaPlayer, msg.arg1, msg.arg2);
-            } //End block
-            //End case MEDIA_INFO 
-            //Begin case MEDIA_TIMED_TEXT 
+            } 
+            
+            
             {
                 {
                     mOnTimedTextListener.onTimedText(mMediaPlayer, null);
-                } //End block
+                } 
                 {
                     {
                         TimedText text = new TimedText((byte[])(msg.obj));
                         mOnTimedTextListener.onTimedText(mMediaPlayer, text);
-                    } //End block
-                } //End block
-            } //End block
-            //End case MEDIA_TIMED_TEXT 
+                    } 
+                } 
+            } 
+            
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

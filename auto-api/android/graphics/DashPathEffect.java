@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class DashPathEffect extends PathEffect {
@@ -14,18 +14,19 @@ public class DashPathEffect extends PathEffect {
     public  DashPathEffect(float intervals[], float phase) {
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-        } //End block
+        } 
         native_instance = nativeCreate(intervals, phase);
         addTaint(intervals[0]);
         addTaint(phase);
-        // ---------- Original Method ----------
-        //if (intervals.length < 2) {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
-        //native_instance = nativeCreate(intervals, phase);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static int nativeCreate(float intervals[], float phase) {
         return DSUtils.UNKNOWN_INT;
     }

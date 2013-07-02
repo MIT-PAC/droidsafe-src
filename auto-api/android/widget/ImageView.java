@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -109,8 +109,8 @@ public class ImageView extends View {
         super(context);
         initImageView();
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //initImageView();
+        
+        
     }
 
     
@@ -119,7 +119,7 @@ public class ImageView extends View {
         this(context, attrs, 0);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -132,7 +132,7 @@ public class ImageView extends View {
         Drawable d = a.getDrawable(com.android.internal.R.styleable.ImageView_src);
         {
             setImageDrawable(d);
-        } //End block
+        } 
         mBaselineAlignBottom = a.getBoolean(
                 com.android.internal.R.styleable.ImageView_baselineAlignBottom, false);
         mBaseline = a.getDimensionPixelSize(
@@ -147,36 +147,38 @@ public class ImageView extends View {
         int index = a.getInt(com.android.internal.R.styleable.ImageView_scaleType, -1);
         {
             setScaleType(sScaleTypeArray[index]);
-        } //End block
+        } 
         int tint = a.getInt(com.android.internal.R.styleable.ImageView_tint, 0);
         {
             setColorFilter(tint);
-        } //End block
+        } 
         int alpha = a.getInt(com.android.internal.R.styleable.ImageView_drawableAlpha, 255);
         {
             setAlpha(alpha);
-        } //End block
+        } 
         mCropToPadding = a.getBoolean(
                 com.android.internal.R.styleable.ImageView_cropToPadding, false);
         a.recycle();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.762 -0400", hash_original_method = "1C158315B1207DD6F7DBD78E9AF6090A", hash_generated_method = "6C86BA293E0B26AF0AEC484FE877D701")
     private void initImageView() {
         mMatrix     = new Matrix();
         mScaleType  = ScaleType.FIT_CENTER;
-        // ---------- Original Method ----------
-        //mMatrix     = new Matrix();
-        //mScaleType  = ScaleType.FIT_CENTER;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.763 -0400", hash_original_method = "D798939B4195D6D5668E5F7C7E8DA2D2", hash_generated_method = "16F1CE7A61E919C00E17BC02A5746230")
     @Override
     protected boolean verifyDrawable(Drawable dr) {
@@ -184,61 +186,65 @@ public class ImageView extends View {
         addTaint(dr.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1219887797 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1219887797;
-        // ---------- Original Method ----------
-        //return mDrawable == dr || super.verifyDrawable(dr);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.763 -0400", hash_original_method = "EFC358D3732AB4D7E168E7965D2C4CA0", hash_generated_method = "647FF0158A8AD6165B9B2605A87B9B49")
     @Override
     public void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
         mDrawable.jumpToCurrentState();
-        // ---------- Original Method ----------
-        //super.jumpDrawablesToCurrentState();
-        //if (mDrawable != null) mDrawable.jumpToCurrentState();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.764 -0400", hash_original_method = "EB3EC256D00C5FC794745B960350792B", hash_generated_method = "9FAD2A829CFD8C40096433413D3DA1FF")
     @Override
     public void invalidateDrawable(Drawable dr) {
         {
             invalidate();
-        } //End block
+        } 
         {
             super.invalidateDrawable(dr);
-        } //End block
+        } 
         addTaint(dr.getTaint());
-        // ---------- Original Method ----------
-        //if (dr == mDrawable) {
-            //invalidate();
-        //} else {
-            //super.invalidateDrawable(dr);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.765 -0400", hash_original_method = "792DD4F5E748125528D3BF6C27B77C70", hash_generated_method = "1473EF465D08DF2E0DFE7A2D2E4A5051")
     @Override
     public int getResolvedLayoutDirection(Drawable dr) {
         {
             Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_400955483 = (getResolvedLayoutDirection());
             Object varE1F279108E97B96264B9D15008FD7CD5_897046626 = (super.getResolvedLayoutDirection(dr));
-        } //End flattened ternary
+        } 
         addTaint(dr.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723258388 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723258388;
-        // ---------- Original Method ----------
-        //return (dr == mDrawable) ?
-                //getResolvedLayoutDirection() : super.getResolvedLayoutDirection(dr);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.765 -0400", hash_original_method = "000365A595FBC289F16F7AD48241010C", hash_generated_method = "01603B40CEF995474FDB22C2E3FC68ED")
     @Override
     protected boolean onSetAlpha(int alpha) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varF9737FBB3FA84CB9364E87D929DD087B_2123011227 = (getBackground() == null);
             {
@@ -247,60 +253,62 @@ public class ImageView extends View {
                     mViewAlphaScale = scale;
                     mColorMod = true;
                     applyColorMod();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(alpha);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1858948051 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1858948051;
-        // ---------- Original Method ----------
-        //if (getBackground() == null) {
-            //int scale = alpha + (alpha >> 7);
-            //if (mViewAlphaScale != scale) {
-                //mViewAlphaScale = scale;
-                //mColorMod = true;
-                //applyColorMod();
-            //}
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+                
+                
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.765 -0400", hash_original_method = "9770981DD4DB73204B697C6119742B6F", hash_generated_method = "43718B128F2D80A34F4B219DE855305F")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onPopulateAccessibilityEvent(event);
         CharSequence contentDescription = getContentDescription();
         {
             boolean var38FE545BF2449F0AB422311DB9C21872_1920085388 = (!TextUtils.isEmpty(contentDescription));
             {
                 event.getText().add(contentDescription);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //super.onPopulateAccessibilityEvent(event);
-        //CharSequence contentDescription = getContentDescription();
-        //if (!TextUtils.isEmpty(contentDescription)) {
-            //event.getText().add(contentDescription);
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.766 -0400", hash_original_method = "3F8BE319328C68420F5075492EAAB722", hash_generated_method = "E75A3752923BDB60E8353DD155C9F586")
     @android.view.RemotableViewMethod
     public void setAdjustViewBounds(boolean adjustViewBounds) {
         mAdjustViewBounds = adjustViewBounds;
         {
             setScaleType(ScaleType.FIT_CENTER);
-        } //End block
-        // ---------- Original Method ----------
-        //mAdjustViewBounds = adjustViewBounds;
-        //if (adjustViewBounds) {
-            //setScaleType(ScaleType.FIT_CENTER);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -308,8 +316,8 @@ public class ImageView extends View {
     @android.view.RemotableViewMethod
     public void setMaxWidth(int maxWidth) {
         mMaxWidth = maxWidth;
-        // ---------- Original Method ----------
-        //mMaxWidth = maxWidth;
+        
+        
     }
 
     
@@ -317,22 +325,23 @@ public class ImageView extends View {
     @android.view.RemotableViewMethod
     public void setMaxHeight(int maxHeight) {
         mMaxHeight = maxHeight;
-        // ---------- Original Method ----------
-        //mMaxHeight = maxHeight;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.767 -0400", hash_original_method = "53D05784890C72350FD6879A6582F7F3", hash_generated_method = "C00360D6DF516BD58B06DD3F8D687318")
     public Drawable getDrawable() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_114340792 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_114340792 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_114340792 = mDrawable;
-        varB4EAC82CA7396A68D541C85D26508E83_114340792.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_114340792.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_114340792;
-        // ---------- Original Method ----------
-        //return mDrawable;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.767 -0400", hash_original_method = "FEA329647011282E5AA15854AC819C8B", hash_generated_method = "A3643FD5C96F12ABFF4A0FAEB1B47A0F")
     @android.view.RemotableViewMethod
     public void setImageResource(int resId) {
@@ -343,16 +352,16 @@ public class ImageView extends View {
             resolveUri();
             requestLayout();
             invalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mUri != null || mResource != resId) {
-            //updateDrawable(null);
-            //mResource = resId;
-            //mUri = null;
-            //resolveUri();
-            //requestLayout();
-            //invalidate();
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -370,22 +379,23 @@ public class ImageView extends View {
                 resolveUri();
                 requestLayout();
                 invalidate();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mResource != 0 ||
-                //(mUri != uri &&
-                 //(uri == null || mUri == null || !uri.equals(mUri)))) {
-            //updateDrawable(null);
-            //mResource = 0;
-            //mUri = uri;
-            //resolveUri();
-            //requestLayout();
-            //invalidate();
-        //}
+            } 
+        } 
+        
+        
+                
+                 
+            
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.768 -0400", hash_original_method = "5426F5FAF3C8635D29ADE0169269A6F9", hash_generated_method = "C65AD1A27849D0FCE5D39B8F3E51F959")
     public void setImageDrawable(Drawable drawable) {
         {
@@ -396,35 +406,37 @@ public class ImageView extends View {
             updateDrawable(drawable);
             {
                 requestLayout();
-            } //End block
+            } 
             invalidate();
-        } //End block
+        } 
         addTaint(drawable.getTaint());
-        // ---------- Original Method ----------
-        //if (mDrawable != drawable) {
-            //mResource = 0;
-            //mUri = null;
-            //int oldWidth = mDrawableWidth;
-            //int oldHeight = mDrawableHeight;
-            //updateDrawable(drawable);
-            //if (oldWidth != mDrawableWidth || oldHeight != mDrawableHeight) {
-                //requestLayout();
-            //}
-            //invalidate();
-        //}
+        
+        
+            
+            
+            
+            
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.768 -0400", hash_original_method = "5EFFAF8EE29E35792B081E6E83A7DFE3", hash_generated_method = "1AA64D538B4A3D3BD41437317289C896")
     @android.view.RemotableViewMethod
     public void setImageBitmap(Bitmap bm) {
         setImageDrawable(new BitmapDrawable(mContext.getResources(), bm));
         addTaint(bm.getTaint());
-        // ---------- Original Method ----------
-        //setImageDrawable(new BitmapDrawable(mContext.getResources(), bm));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.768 -0400", hash_original_method = "B00DD17D168377A844733E90ECCFE75B", hash_generated_method = "AEB13EE0E78E1C7D679F434ABE923355")
     public void setImageState(int[] state, boolean merge) {
         mState = state;
@@ -432,29 +444,31 @@ public class ImageView extends View {
         {
             refreshDrawableState();
             resizeFromDrawable();
-        } //End block
-        // ---------- Original Method ----------
-        //mState = state;
-        //mMergeState = merge;
-        //if (mDrawable != null) {
-            //refreshDrawableState();
-            //resizeFromDrawable();
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.769 -0400", hash_original_method = "44CE6C01D324B2DC91AFD69B5F1BB742", hash_generated_method = "1D34BBDFEBADC19AD015A84C04CBD506")
     @Override
     public void setSelected(boolean selected) {
         super.setSelected(selected);
         resizeFromDrawable();
         addTaint(selected);
-        // ---------- Original Method ----------
-        //super.setSelected(selected);
-        //resizeFromDrawable();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.769 -0400", hash_original_method = "0A74FF8303919E2F74751A8C668C95F0", hash_generated_method = "5BE8AF9B93F28852EC0CBFB41E400656")
     @android.view.RemotableViewMethod
     public void setImageLevel(int level) {
@@ -462,70 +476,72 @@ public class ImageView extends View {
         {
             mDrawable.setLevel(level);
             resizeFromDrawable();
-        } //End block
-        // ---------- Original Method ----------
-        //mLevel = level;
-        //if (mDrawable != null) {
-            //mDrawable.setLevel(level);
-            //resizeFromDrawable();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.769 -0400", hash_original_method = "63CC1440F0B24F3C6377C34C34E172F5", hash_generated_method = "081CB5FE252ADBD86052D5AC2152848B")
     public void setScaleType(ScaleType scaleType) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         {
             mScaleType = scaleType;
             setWillNotCacheDrawing(mScaleType == ScaleType.CENTER);
             requestLayout();
             invalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //if (scaleType == null) {
-            //throw new NullPointerException();
-        //}
-        //if (mScaleType != scaleType) {
-            //mScaleType = scaleType;
-            //setWillNotCacheDrawing(mScaleType == ScaleType.CENTER);            
-            //requestLayout();
-            //invalidate();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.770 -0400", hash_original_method = "84B4F1338E9C8554FC089CA7254325E0", hash_generated_method = "030628C1AA87F6FB03C2D0E0A5567A25")
     public ScaleType getScaleType() {
-        ScaleType varB4EAC82CA7396A68D541C85D26508E83_2091292108 = null; //Variable for return #1
+        ScaleType varB4EAC82CA7396A68D541C85D26508E83_2091292108 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2091292108 = mScaleType;
-        varB4EAC82CA7396A68D541C85D26508E83_2091292108.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2091292108.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2091292108;
-        // ---------- Original Method ----------
-        //return mScaleType;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.770 -0400", hash_original_method = "5B9FD9A0A164EA90D695E910523F6E96", hash_generated_method = "8333BF655D8C07413B668B1F81492388")
     public Matrix getImageMatrix() {
-        Matrix varB4EAC82CA7396A68D541C85D26508E83_1576888473 = null; //Variable for return #1
+        Matrix varB4EAC82CA7396A68D541C85D26508E83_1576888473 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1576888473 = mMatrix;
-        varB4EAC82CA7396A68D541C85D26508E83_1576888473.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1576888473.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1576888473;
-        // ---------- Original Method ----------
-        //return mMatrix;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.770 -0400", hash_original_method = "A32A82AEE544A388BA62C8178AC7E88C", hash_generated_method = "4278D7B0F8BBCAA0D22CB7695C89D7AE")
     public void setImageMatrix(Matrix matrix) {
         {
             boolean var43647054FCC5E2FEA67BA4DB2B5CFDEC_742092376 = (matrix != null && matrix.isIdentity());
             {
                 matrix = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var07BF5E6DF09B8E40E54FCB7189DEE131_2107317297 = (matrix == null && !mMatrix.isIdentity() ||
                 matrix != null && !mMatrix.equals(matrix));
@@ -533,22 +549,23 @@ public class ImageView extends View {
                 mMatrix.set(matrix);
                 configureBounds();
                 invalidate();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(matrix.getTaint());
-        // ---------- Original Method ----------
-        //if (matrix != null && matrix.isIdentity()) {
-            //matrix = null;
-        //}
-        //if (matrix == null && !mMatrix.isIdentity() ||
-                //matrix != null && !mMatrix.equals(matrix)) {
-            //mMatrix.set(matrix);
-            //configureBounds();
-            //invalidate();
-        //}
+        
+        
+            
+        
+        
+                
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.771 -0400", hash_original_method = "16B1589372902AF87B2F0F65CBDC5B57", hash_generated_method = "A9AACC5B8D6ADB788D5E7E21729CBE83")
     private void resolveUri() {
         Resources rsrc = getResources();
@@ -557,12 +574,12 @@ public class ImageView extends View {
             try 
             {
                 d = rsrc.getDrawable(mResource);
-            } //End block
+            } 
             catch (Exception e)
             {
                 mUri = null;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             String scheme = mUri.getScheme();
             {
@@ -572,10 +589,10 @@ public class ImageView extends View {
                     {
                         ContentResolver.OpenResourceIdResult r = mContext.getContentResolver().getResourceId(mUri);
                         d = r.r.getDrawable(r.id);
-                    } //End block
+                    } 
                     catch (Exception e)
                     { }
-                } //End block
+                } 
                 {
                     boolean varECE6BF2CA2A924F44A15A349FCEFEEC1_2073742395 = (ContentResolver.SCHEME_CONTENT.equals(scheme)
                     || ContentResolver.SCHEME_FILE.equals(scheme));
@@ -585,59 +602,61 @@ public class ImageView extends View {
                             d = Drawable.createFromStream(
                         mContext.getContentResolver().openInputStream(mUri),
                         null);
-                        } //End block
+                        } 
                         catch (Exception e)
                         { }
-                    } //End block
+                    } 
                     {
                         d = Drawable.createFromPath(mUri.toString());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 System.out.println("resolveUri failed on bad bitmap uri: "
                                    + mUri);
                 mUri = null;
-            } //End block
-        } //End block
+            } 
+        } 
         updateDrawable(d);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.772 -0400", hash_original_method = "F00D7A8DB32B373F9AAF90A3CC19DF16", hash_generated_method = "57196D69DFF9C8BDC2386043E97508EB")
     @Override
     public int[] onCreateDrawableState(int extraSpace) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             int[] varEB7CD746CBB534A0BF67F4323334429E_24175966 = (super.onCreateDrawableState(extraSpace));
-        } //End block
+        } 
         {
             int[] varB6313CC42B6FF045E4878C3B3E985625_368799971 = (mergeDrawableStates(
                     super.onCreateDrawableState(extraSpace + mState.length), mState));
-        } //End block
+        } 
         addTaint(extraSpace);
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_2120887669 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_2120887669;
-        // ---------- Original Method ----------
-        //if (mState == null) {
-            //return super.onCreateDrawableState(extraSpace);
-        //} else if (!mMergeState) {
-            //return mState;
-        //} else {
-            //return mergeDrawableStates(
-                    //super.onCreateDrawableState(extraSpace + mState.length), mState);
-        //}
+        
+        
+            
+        
+            
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.772 -0400", hash_original_method = "ADE7139D7C0A9B2AE00EA96739AFBDE5", hash_generated_method = "BA96715C2176AECAF9590FFB3FEE8FFC")
     private void updateDrawable(Drawable d) {
         {
             mDrawable.setCallback(null);
             unscheduleDrawable(mDrawable);
-        } //End block
+        } 
         mDrawable = d;
         {
             d.setCallback(this);
@@ -645,39 +664,40 @@ public class ImageView extends View {
                 boolean var732D4E5C808363BC9BF454DD27943961_700087958 = (d.isStateful());
                 {
                     d.setState(getDrawableState());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             d.setLevel(mLevel);
             mDrawableWidth = d.getIntrinsicWidth();
             mDrawableHeight = d.getIntrinsicHeight();
             applyColorMod();
             configureBounds();
-        } //End block
+        } 
         {
             mDrawableWidth = mDrawableHeight = -1;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mDrawable != null) {
-            //mDrawable.setCallback(null);
-            //unscheduleDrawable(mDrawable);
-        //}
-        //mDrawable = d;
-        //if (d != null) {
-            //d.setCallback(this);
-            //if (d.isStateful()) {
-                //d.setState(getDrawableState());
-            //}
-            //d.setLevel(mLevel);
-            //mDrawableWidth = d.getIntrinsicWidth();
-            //mDrawableHeight = d.getIntrinsicHeight();
-            //applyColorMod();
-            //configureBounds();
-        //} else {
-            //mDrawableWidth = mDrawableHeight = -1;
-        //}
+        } 
+        
+        
+            
+            
+        
+        
+        
+            
+            
+                
+            
+            
+            
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.773 -0400", hash_original_method = "E1DD34F979587974CF0EAF8DF3CFC3FF", hash_generated_method = "884660ED6EE19AFB34FDDACAE0EC5E99")
     private void resizeFromDrawable() {
         Drawable d = mDrawable;
@@ -690,21 +710,21 @@ public class ImageView extends View {
                 mDrawableWidth = w;
                 mDrawableHeight = h;
                 requestLayout();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //Drawable d = mDrawable;
-        //if (d != null) {
-            //int w = d.getIntrinsicWidth();
-            //if (w < 0) w = mDrawableWidth;
-            //int h = d.getIntrinsicHeight();
-            //if (h < 0) h = mDrawableHeight;
-            //if (w != mDrawableWidth || h != mDrawableHeight) {
-                //mDrawableWidth = w;
-                //mDrawableHeight = h;
-                //requestLayout();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+        
     }
 
     
@@ -713,10 +733,11 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.775 -0400", hash_original_method = "5D5C8E0C5B3B131983F43D2E85F23CCE", hash_generated_method = "5171099EE283EC2D7DA58AF4F42A4B60")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         resolveUri();
         int w;
         int h;
@@ -729,7 +750,7 @@ public class ImageView extends View {
             mDrawableWidth = -1;
             mDrawableHeight = -1;
             w = h = 0;
-        } //End block
+        } 
         {
             w = mDrawableWidth;
             h = mDrawableHeight;
@@ -739,8 +760,8 @@ public class ImageView extends View {
                 resizeWidth = widthSpecMode != MeasureSpec.EXACTLY;
                 resizeHeight = heightSpecMode != MeasureSpec.EXACTLY;
                 desiredAspect = (float) w / (float) h;
-            } //End block
-        } //End block
+            } 
+        } 
         int pleft = mPaddingLeft;
         int pright = mPaddingRight;
         int ptop = mPaddingTop;
@@ -763,19 +784,19 @@ public class ImageView extends View {
                             {
                                 widthSize = newWidth;
                                 done = true;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             int newHeight = (int)((widthSize - pleft - pright) / desiredAspect) +
                                 ptop + pbottom;
                             {
                                 heightSize = newHeight;
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             w += pleft + pright;
             h += ptop + pbottom;
@@ -783,54 +804,56 @@ public class ImageView extends View {
             h = Math.max(h, getSuggestedMinimumHeight());
             widthSize = resolveSizeAndState(w, widthMeasureSpec, 0);
             heightSize = resolveSizeAndState(h, heightMeasureSpec, 0);
-        } //End block
+        } 
         setMeasuredDimension(widthSize, heightSize);
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.776 -0400", hash_original_method = "6790E6B3204D72187344DF3593244181", hash_generated_method = "D707244ADE7604EBDD003B0A3EA4A6FD")
     private int resolveAdjustedSize(int desiredSize, int maxSize,
                                    int measureSpec) {
         int result = desiredSize;
         int specMode = MeasureSpec.getMode(measureSpec);
         int specSize = MeasureSpec.getSize(measureSpec);
-        //Begin case MeasureSpec.UNSPECIFIED 
+        
         result = Math.min(desiredSize, maxSize);
-        //End case MeasureSpec.UNSPECIFIED 
-        //Begin case MeasureSpec.AT_MOST 
+        
+        
         result = Math.min(Math.min(desiredSize, specSize), maxSize);
-        //End case MeasureSpec.AT_MOST 
-        //Begin case MeasureSpec.EXACTLY 
+        
+        
         result = specSize;
-        //End case MeasureSpec.EXACTLY 
+        
         addTaint(desiredSize);
         addTaint(maxSize);
         addTaint(measureSpec);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_584423431 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_584423431;
-        // ---------- Original Method ----------
-        //int result = desiredSize;
-        //int specMode = MeasureSpec.getMode(measureSpec);
-        //int specSize =  MeasureSpec.getSize(measureSpec);
-        //switch (specMode) {
-            //case MeasureSpec.UNSPECIFIED:
-                //result = Math.min(desiredSize, maxSize);
-                //break;
-            //case MeasureSpec.AT_MOST:
-                //result = Math.min(Math.min(desiredSize, specSize), maxSize);
-                //break;
-            //case MeasureSpec.EXACTLY:
-                //result = specSize;
-                //break;
-        //}
-        //return result;
+        
+        
+        
+        
+        
+            
+                
+                
+            
+                
+                
+            
+                
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.777 -0400", hash_original_method = "7ED99727E4B1435AFDB83292B92819BD", hash_generated_method = "6B60A3AA0E3145819BD7B6F828827A9E")
     @Override
     protected boolean setFrame(int l, int t, int r, int b) {
@@ -843,14 +866,15 @@ public class ImageView extends View {
         addTaint(b);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_958311926 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_958311926;
-        // ---------- Original Method ----------
-        //boolean changed = super.setFrame(l, t, r, b);
-        //mHaveFrame = true;
-        //configureBounds();
-        //return changed;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.778 -0400", hash_original_method = "3A8E22D575255E0F3266968983CC3C02", hash_generated_method = "F874886E8E0FD8261FB546BC96CDBC94")
     private void configureBounds() {
         int dwidth = mDrawableWidth;
@@ -862,7 +886,7 @@ public class ImageView extends View {
         {
             mDrawable.setBounds(0, 0, vwidth, vheight);
             mDrawMatrix = null;
-        } //End block
+        } 
         {
             mDrawable.setBounds(0, 0, dwidth, dheight);
             {
@@ -870,20 +894,20 @@ public class ImageView extends View {
                     boolean var807A3C6E5DF9AC9E8557F287A85C43B9_937269436 = (mMatrix.isIdentity());
                     {
                         mDrawMatrix = null;
-                    } //End block
+                    } 
                     {
                         mDrawMatrix = mMatrix;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 mDrawMatrix = null;
-            } //End block
+            } 
             {
                 mDrawMatrix = mMatrix;
                 mDrawMatrix.setTranslate((int) ((vwidth - dwidth) * 0.5f + 0.5f),
                                          (int) ((vheight - dheight) * 0.5f + 0.5f));
-            } //End block
+            } 
             {
                 mDrawMatrix = mMatrix;
                 float scale;
@@ -892,14 +916,14 @@ public class ImageView extends View {
                 {
                     scale = (float) vheight / (float) dheight;
                     dx = (vwidth - dwidth * scale) * 0.5f;
-                } //End block
+                } 
                 {
                     scale = (float) vwidth / (float) dwidth;
                     dy = (vheight - dheight * scale) * 0.5f;
-                } //End block
+                } 
                 mDrawMatrix.setScale(scale, scale);
                 mDrawMatrix.postTranslate((int) (dx + 0.5f), (int) (dy + 0.5f));
-            } //End block
+            } 
             {
                 mDrawMatrix = mMatrix;
                 float scale;
@@ -907,28 +931,29 @@ public class ImageView extends View {
                 float dy;
                 {
                     scale = 1.0f;
-                } //End block
+                } 
                 {
                     scale = Math.min((float) vwidth / (float) dwidth,
                             (float) vheight / (float) dheight);
-                } //End block
+                } 
                 dx = (int) ((vwidth - dwidth * scale) * 0.5f + 0.5f);
                 dy = (int) ((vheight - dheight * scale) * 0.5f + 0.5f);
                 mDrawMatrix.setScale(scale, scale);
                 mDrawMatrix.postTranslate(dx, dy);
-            } //End block
+            } 
             {
                 mTempSrc.set(0, 0, dwidth, dheight);
                 mTempDst.set(0, 0, vwidth, vheight);
                 mDrawMatrix = mMatrix;
                 mDrawMatrix.setRectToRect(mTempSrc, mTempDst, scaleTypeToScaleToFit(mScaleType));
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.778 -0400", hash_original_method = "D78E25577A68DABE40154D5E4D97E50D", hash_generated_method = "8F91584BDD382C437D1714CC28E4338A")
     @Override
     protected void drawableStateChanged() {
@@ -938,25 +963,26 @@ public class ImageView extends View {
             boolean var9E4512E9555DA1255DDDA9AE20837176_682973158 = (d != null && d.isStateful());
             {
                 d.setState(getDrawableState());
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //super.drawableStateChanged();
-        //Drawable d = mDrawable;
-        //if (d != null && d.isStateful()) {
-            //d.setState(getDrawableState());
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.779 -0400", hash_original_method = "355C7834E61DDE917A6F527556974749", hash_generated_method = "9110B6B7544B11FDE7DB7E324161AC95")
     @Override
     protected void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDraw(canvas);
         {
             mDrawable.draw(canvas);
-        } //End block
+        } 
         {
             int saveCount = canvas.getSaveCount();
             canvas.save();
@@ -966,63 +992,66 @@ public class ImageView extends View {
                 canvas.clipRect(scrollX + mPaddingLeft, scrollY + mPaddingTop,
                         scrollX + mRight - mLeft - mPaddingRight,
                         scrollY + mBottom - mTop - mPaddingBottom);
-            } //End block
+            } 
             canvas.translate(mPaddingLeft, mPaddingTop);
             {
                 canvas.concat(mDrawMatrix);
-            } //End block
+            } 
             mDrawable.draw(canvas);
             canvas.restoreToCount(saveCount);
-        } //End block
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.779 -0400", hash_original_method = "697E0DCA3A40ADA0E60547E8AD02CB08", hash_generated_method = "7BA1179F580F8E9904EFC63F71C82E70")
     @Override
     @ViewDebug.ExportedProperty(category = "layout")
     public int getBaseline() {
         {
             int var0FD144A91B49367E40CB3EFF8BA82D53_1586461543 = (getMeasuredHeight());
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_782791814 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_782791814;
-        // ---------- Original Method ----------
-        //if (mBaselineAlignBottom) {
-            //return getMeasuredHeight();
-        //} else {
-            //return mBaseline;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.780 -0400", hash_original_method = "8108AC4FDDF644F63A2CB47972E74B33", hash_generated_method = "F52E4655157809D4D5DAB9BDFA329E08")
     public void setBaseline(int baseline) {
         {
             mBaseline = baseline;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mBaseline != baseline) {
-            //mBaseline = baseline;
-            //requestLayout();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.780 -0400", hash_original_method = "ACC3D162C0B2FC40FF806607AF970BEE", hash_generated_method = "9F3EADD7128D9E893534C5087EBFBFE4")
     public void setBaselineAlignBottom(boolean aligned) {
         {
             mBaselineAlignBottom = aligned;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mBaselineAlignBottom != aligned) {
-            //mBaselineAlignBottom = aligned;
-            //requestLayout();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -1030,8 +1059,8 @@ public class ImageView extends View {
     public boolean getBaselineAlignBottom() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_754053992 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_754053992;
-        // ---------- Original Method ----------
-        //return mBaselineAlignBottom;
+        
+        
     }
 
     
@@ -1040,8 +1069,8 @@ public class ImageView extends View {
         setColorFilter(new PorterDuffColorFilter(color, mode));
         addTaint(color);
         addTaint(mode.getTaint());
-        // ---------- Original Method ----------
-        //setColorFilter(new PorterDuffColorFilter(color, mode));
+        
+        
     }
 
     
@@ -1050,19 +1079,20 @@ public class ImageView extends View {
     public final void setColorFilter(int color) {
         setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
         addTaint(color);
-        // ---------- Original Method ----------
-        //setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.781 -0400", hash_original_method = "B358CFD4AAFD748C624F742F21F12081", hash_generated_method = "5C5D223E65BC6100D1D7D1061123E386")
     public final void clearColorFilter() {
         setColorFilter(null);
-        // ---------- Original Method ----------
-        //setColorFilter(null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.781 -0400", hash_original_method = "0E997722FEDD3E607A6B49B3558418D6", hash_generated_method = "50A2DC2D3B3213E8C9E9E6B4664C560F")
     public void setColorFilter(ColorFilter cf) {
         {
@@ -1070,17 +1100,18 @@ public class ImageView extends View {
             mColorMod = true;
             applyColorMod();
             invalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mColorFilter != cf) {
-            //mColorFilter = cf;
-            //mColorMod = true;
-            //applyColorMod();
-            //invalidate();
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.782 -0400", hash_original_method = "F29539FC5DE82D33A1732D8CBDF1B3F0", hash_generated_method = "6D36D0C433F7BBF238B97B5A7EB7CF11")
     @RemotableViewMethod
     public void setAlpha(int alpha) {
@@ -1090,34 +1121,36 @@ public class ImageView extends View {
             mColorMod = true;
             applyColorMod();
             invalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //alpha &= 0xFF;
-        //if (mAlpha != alpha) {
-            //mAlpha = alpha;
-            //mColorMod = true;
-            //applyColorMod();
-            //invalidate();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.782 -0400", hash_original_method = "91840135D820437FBAEF19E5465CA144", hash_generated_method = "D82B0E771B88C4DF60816FA3343812D8")
     private void applyColorMod() {
         {
             mDrawable = mDrawable.mutate();
             mDrawable.setColorFilter(mColorFilter);
             mDrawable.setAlpha(mAlpha * mViewAlphaScale >> 8);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mDrawable != null && mColorMod) {
-            //mDrawable = mDrawable.mutate();
-            //mDrawable.setColorFilter(mColorFilter);
-            //mDrawable.setAlpha(mAlpha * mViewAlphaScale >> 8);
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.782 -0400", hash_original_method = "C6B07741C64FD260DDE5C02AC0455E05", hash_generated_method = "095CF5C3DEBC96A747A3D510DE34B26B")
     @RemotableViewMethod
     @Override
@@ -1125,45 +1158,47 @@ public class ImageView extends View {
         super.setVisibility(visibility);
         {
             mDrawable.setVisible(visibility == VISIBLE, false);
-        } //End block
+        } 
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //super.setVisibility(visibility);
-        //if (mDrawable != null) {
-            //mDrawable.setVisible(visibility == VISIBLE, false);
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.782 -0400", hash_original_method = "3717E0990FC85EED7B1343A97507698D", hash_generated_method = "EC1E159C12789844B8825972D42E1432")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
         {
             mDrawable.setVisible(getVisibility() == VISIBLE, false);
-        } //End block
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //if (mDrawable != null) {
-            //mDrawable.setVisible(getVisibility() == VISIBLE, false);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:11.783 -0400", hash_original_method = "66E6E711A91B2172E1C35BB591AC6445", hash_generated_method = "432FDA0B484BC398E47027374674B201")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDetachedFromWindow();
         {
             mDrawable.setVisible(false, false);
-        } //End block
-        // ---------- Original Method ----------
-        //super.onDetachedFromWindow();
-        //if (mDrawable != null) {
-            //mDrawable.setVisible(false, false);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     

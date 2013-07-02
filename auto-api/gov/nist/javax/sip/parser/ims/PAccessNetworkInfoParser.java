@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.javax.sip.header.ims.PAccessNetworkInfo;
@@ -24,7 +24,7 @@ public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes
     public  PAccessNetworkInfoParser(String accessNetwork) {
         super(accessNetwork);
         addTaint(accessNetwork.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,13 +32,14 @@ public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes
     protected  PAccessNetworkInfoParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.091 -0400", hash_original_method = "0BB1DE6FBD7AB2CBAE3BF43510D39D52", hash_generated_method = "E4075ACA2F24D647C10D1DFA7E23780B")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_101959426 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_101959426 = null; 
         dbg_enter("AccessNetworkInfoParser.parse");
         try 
         {
@@ -58,20 +59,20 @@ public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes
                     NameValue nv = super.nameValue('=');
                     accessNetworkInfo.setParameter(nv);
                     this.lexer.SPorHT();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             this.lexer.SPorHT();
             this.lexer.match('\n');
             varB4EAC82CA7396A68D541C85D26508E83_101959426 = accessNetworkInfo;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("AccessNetworkInfoParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_101959426.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_101959426.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_101959426;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

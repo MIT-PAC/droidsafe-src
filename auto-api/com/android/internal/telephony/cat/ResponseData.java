@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.telephony.EncodeException;
 import com.android.internal.telephony.GsmAlphabet;
@@ -22,13 +22,14 @@ abstract class ResponseData {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.715 -0400", hash_original_method = "814762139FDC16047D72234D9356528B", hash_generated_method = "814762139FDC16047D72234D9356528B")
     public ResponseData ()
     {
-        //Synthesized constructor
+        
     }
 
 
     public abstract void format(ByteArrayOutputStream buf);
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeLength(ByteArrayOutputStream buf, int length) {
         if (length > 0x7F) {
             buf.write(0x81);
@@ -48,11 +49,12 @@ class SelectItemResponseData extends ResponseData {
     public  SelectItemResponseData(int id) {
         super();
         this.id = id;
-        // ---------- Original Method ----------
-        //this.id = id;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.716 -0400", hash_original_method = "FAE871B2C12637F0B15E3EAC43330DD6", hash_generated_method = "08CB218F19B7394F85B963923961E0D4")
     @Override
     public void format(ByteArrayOutputStream buf) {
@@ -61,11 +63,11 @@ class SelectItemResponseData extends ResponseData {
         buf.write(1);
         buf.write(id);
         addTaint(buf.getTaint());
-        // ---------- Original Method ----------
-        //int tag = 0x80 | ComprehensionTlvTag.ITEM_ID.value();
-        //buf.write(tag);
-        //buf.write(1);
-        //buf.write(id);
+        
+        
+        
+        
+        
     }
 
     
@@ -95,11 +97,11 @@ class GetInkeyInputResponseData extends ResponseData {
         this.mIsPacked = packed;
         this.mInData = inData;
         this.mIsYesNo = false;
-        // ---------- Original Method ----------
-        //this.mIsUcs2 = ucs2;
-        //this.mIsPacked = packed;
-        //this.mInData = inData;
-        //this.mIsYesNo = false;
+        
+        
+        
+        
+        
     }
 
     
@@ -111,15 +113,16 @@ class GetInkeyInputResponseData extends ResponseData {
         this.mInData = "";
         this.mIsYesNo = true;
         this.mYesNoResponse = yesNoResponse;
-        // ---------- Original Method ----------
-        //this.mIsUcs2 = false;
-        //this.mIsPacked = false;
-        //this.mInData = "";
-        //this.mIsYesNo = true;
-        //this.mYesNoResponse = yesNoResponse;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.725 -0400", hash_original_method = "E3DE4DD341771272E5ED5B0598896B15", hash_generated_method = "8462FAF75D490045536F9167D46D8EA0")
     @Override
     public void format(ByteArrayOutputStream buf) {
@@ -129,7 +132,7 @@ class GetInkeyInputResponseData extends ResponseData {
         {
             data = new byte[1];
             data[0] = mYesNoResponse ? GET_INKEY_YES : GET_INKEY_NO;
-        } //End block
+        } 
         {
             boolean varAF7BC449AD8E34CF362E47CF5B49C901_1048914615 = (mInData != null && mInData.length() > 0);
             {
@@ -137,50 +140,50 @@ class GetInkeyInputResponseData extends ResponseData {
                 {
                     {
                         data = mInData.getBytes("UTF-16");
-                    } //End block
+                    } 
                     {
                         int size = mInData.length();
                         byte[] tempData = GsmAlphabet
                             .stringToGsm7BitPacked(mInData, 0, 0);
                         data = new byte[size];
                         System.arraycopy(tempData, 1, data, 0, size);
-                    } //End block
+                    } 
                     {
                         data = GsmAlphabet.stringToGsm8BitPacked(mInData);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (UnsupportedEncodingException e)
                 {
                     data = new byte[0];
-                } //End block
+                } 
                 catch (EncodeException e)
                 {
                     data = new byte[0];
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 data = new byte[0];
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         writeLength(buf, data.length + 1);
         {
             buf.write(0x08);
-        } //End block
+        } 
         {
             buf.write(0x00);
-        } //End block
+        } 
         {
             buf.write(0x04);
-        } //End block
+        } 
         {
             byte b = data[0];
             {
                 buf.write(b);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(buf.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -201,11 +204,12 @@ class LanguageResponseData extends ResponseData {
     public  LanguageResponseData(String lang) {
         super();
         this.lang = lang;
-        // ---------- Original Method ----------
-        //this.lang = lang;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.730 -0400", hash_original_method = "0658244A9E7567A9FE447A4F6CD905F4", hash_generated_method = "C405539A45D646822A212ACC281AD016")
     @Override
     public void format(ByteArrayOutputStream buf) {
@@ -216,36 +220,36 @@ class LanguageResponseData extends ResponseData {
             boolean var8027EECC5D064BEF0A00D9F8174F99D0_1331139599 = (lang != null && lang.length() > 0);
             {
                 data = GsmAlphabet.stringToGsm8BitPacked(lang);
-            } //End block
+            } 
             {
                 data = new byte[0];
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         buf.write(data.length);
         {
             byte b = data[0];
             {
                 buf.write(b);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(buf.getTaint());
-        // ---------- Original Method ----------
-        //if (buf == null) {
-            //return;
-        //}
-        //int tag = 0x80 | ComprehensionTlvTag.LANGUAGE.value();
-        //buf.write(tag);
-        //byte[] data;
-        //if (lang != null && lang.length() > 0) {
-            //data = GsmAlphabet.stringToGsm8BitPacked(lang);
-        //}
-        //else {
-            //data = new byte[0];
-        //}
-        //buf.write(data.length);
-        //for (byte b : data) {
-            //buf.write(b);
-        //}
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -260,11 +264,12 @@ class DTTZResponseData extends ResponseData {
     public  DTTZResponseData(Calendar cal) {
         super();
         calendar = cal;
-        // ---------- Original Method ----------
-        //calendar = cal;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.740 -0400", hash_original_method = "3B6DBE61112682FA3D432448D0A26FBC", hash_generated_method = "4B7D8A04B8F6124DC63EB52A17450149")
     @Override
     public void format(ByteArrayOutputStream buf) {
@@ -274,7 +279,7 @@ class DTTZResponseData extends ResponseData {
         data[0] = 0x07;
         {
             calendar = Calendar.getInstance();
-        } //End block
+        } 
         data[1] = byteToBCD(calendar.get(java.util.Calendar.YEAR) % 100);
         data[2] = byteToBCD(calendar.get(java.util.Calendar.MONTH) + 1);
         data[3] = byteToBCD(calendar.get(java.util.Calendar.DATE));
@@ -286,44 +291,46 @@ class DTTZResponseData extends ResponseData {
             boolean varBE27629B530FF8FC4D965B3B47C97135_1408319867 = (TextUtils.isEmpty(tz));
             {
                 data[7] = (byte) 0xFF;
-            } //End block
+            } 
             {
                 TimeZone zone = TimeZone.getTimeZone(tz);
                 int zoneOffset = zone.getRawOffset() + zone.getDSTSavings();
                 data[7] = getTZOffSetByte(zoneOffset);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             byte b = data[0];
             {
                 buf.write(b);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(buf.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.741 -0400", hash_original_method = "8DC11942C3F1A663AB0155C3D476E532", hash_generated_method = "648754F12720334656C0A45620B07C9A")
     private byte byteToBCD(int value) {
         {
             CatLog.d(this, "Err: byteToBCD conversion Value is " + value +
                            " Value has to be between 0 and 99");
-        } //End block
+        } 
         addTaint(value);
         byte var40EA57D3EE3C07BF1C102B466E1C3091_213356495 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_213356495;
-        // ---------- Original Method ----------
-        //if (value < 0 && value > 99) {
-            //CatLog.d(this, "Err: byteToBCD conversion Value is " + value +
-                           //" Value has to be between 0 and 99");
-            //return 0;
-        //}
-        //return (byte) ((value / 10) | ((value % 10) << 4));
+        
+        
+            
+                           
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.741 -0400", hash_original_method = "024E89671E7DB3E94FD073693C0532F0", hash_generated_method = "53B02B315399AB83ED691808B4499DA8")
     private byte getTZOffSetByte(long offSetVal) {
         boolean isNegative = (offSetVal < 0);
@@ -333,12 +340,12 @@ class DTTZResponseData extends ResponseData {
         addTaint(offSetVal);
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1382554106 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1382554106;
-        // ---------- Original Method ----------
-        //boolean isNegative = (offSetVal < 0);
-        //long tzOffset = offSetVal / (15 * 60 * 1000);
-        //tzOffset = (isNegative ? -1 : 1) * tzOffset;
-        //byte bcdVal = byteToBCD((int) tzOffset);
-        //return isNegative ?  (bcdVal |= 0x08) : bcdVal;
+        
+        
+        
+        
+        
+        
     }
 
     

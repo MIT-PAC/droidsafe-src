@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.DataInputStream;
 import java.io.File;
@@ -27,10 +27,11 @@ public class FileClientSessionCache {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.083 -0400", hash_original_method = "EB2573B5E8F417FAB0EF293234CCCD0D", hash_generated_method = "828492362A3CD17C2E63D720E59E71D4")
     private  FileClientSessionCache() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized SSLClientSessionCache usingDirectory(
             File directory) throws IOException {
         FileClientSessionCache.Impl cache = caches.get(directory);
@@ -42,6 +43,7 @@ public class FileClientSessionCache {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static synchronized void reset() {
         caches.clear();
     }
@@ -68,28 +70,28 @@ public class FileClientSessionCache {
                 boolean var73C4E23BD2650D97D73D42200156D21F_2103022049 = (exists && !directory.isDirectory());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException(directory + " exists but is not a directory.");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 initialFiles = directory.list();
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException(directory + " exists but cannot list contents.");
-                } //End block
+                } 
                 Arrays.sort(initialFiles);
                 size = initialFiles.length;
-            } //End block
+            } 
             {
                 {
                     boolean var2324C192F1E4F75429015A88EB6318D9_367295139 = (!directory.mkdirs());
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IOException("Creation of " + directory + " directory failed.");
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 size = 0;
-            } //End block
+            } 
             this.directory = directory;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -114,39 +116,39 @@ public class FileClientSessionCache {
             {
                 {
                     boolean var2DF810EE573D64C563CF5A897E317302_2141945380 = (Arrays.binarySearch(initialFiles, name) < 0);
-                } //End collapsed parenthetic
+                } 
                 file = new File(directory, name);
                 accessOrder.put(name, file);
-            } //End block
+            } 
             FileInputStream in = null;
             try 
             {
                 in = new FileInputStream(file);
-            } //End block
+            } 
             catch (FileNotFoundException e)
             {
                 logReadError(host, file, e);
-            } //End block
+            } 
             try 
             {
                 int size = (int) file.length();
                 byte[] data = new byte[size];
                 new DataInputStream(in).readFully(data);
-            } //End block
+            } 
             catch (IOException e)
             {
                 logReadError(host, file, e);
-            } //End block
+            } 
             finally 
             {
                 IoUtils.closeQuietly(in);
-            } //End block
+            } 
             addTaint(host.getTaint());
             addTaint(port);
             byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_971269726 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_971269726;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -161,7 +163,7 @@ public class FileClientSessionCache {
             String host = session.getPeerHost();
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("sessionData");
-            } //End block
+            } 
             String name = fileName(host, session.getPeerPort());
             File file = new File(directory, name);
             boolean existedBefore = file.exists();
@@ -169,24 +171,24 @@ public class FileClientSessionCache {
             try 
             {
                 out = new FileOutputStream(file);
-            } //End block
+            } 
             catch (FileNotFoundException e)
             {
                 logWriteError(host, file, e);
-            } //End block
+            } 
             {
                 makeRoom();
-            } //End block
+            } 
             boolean writeSuccessful = false;
             try 
             {
                 out.write(sessionData);
                 writeSuccessful = true;
-            } //End block
+            } 
             catch (IOException e)
             {
                 logWriteError(host, file, e);
-            } //End block
+            } 
             finally 
             {
                 boolean closeSuccessful = false;
@@ -194,25 +196,25 @@ public class FileClientSessionCache {
                 {
                     out.close();
                     closeSuccessful = true;
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     logWriteError(host, file, e);
-                } //End block
+                } 
                 finally 
                 {
                     {
                         delete(file);
-                    } //End block
+                    } 
                     {
                         accessOrder.put(name, file);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             addTaint(session.getTaint());
             addTaint(sessionData[0]);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -224,18 +226,18 @@ public class FileClientSessionCache {
             {
                 delete(i.next());
                 i.remove();
-            } //End block
-            // ---------- Original Method ----------
-            //if (size <= MAX_SIZE) {
-                //return;
-            //}
-            //indexFiles();
-            //int removals = size - MAX_SIZE;
-            //Iterator<File> i = accessOrder.values().iterator();
-            //do {
-                //delete(i.next());
-                //i.remove();
-            //} while (--removals > 0);
+            } 
+            
+            
+                
+            
+            
+            
+            
+            
+                
+                
+            
         }
 
         
@@ -252,10 +254,10 @@ public class FileClientSessionCache {
                             boolean var5E8117B16347BFDDCD9CD10B568DF592_102765902 = (!accessOrder.containsKey(name));
                             {
                                 diskOnly.add(new CacheFile(directory, name));
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     boolean varEA32EBD94358505B87B79D39083CDBCC_2053866225 = (!diskOnly.isEmpty());
                     {
@@ -266,15 +268,15 @@ public class FileClientSessionCache {
                             CacheFile cacheFile = varE81EBE9AA5DA88EBDD7EA73A78CB2D37_2133537068.next();
                             {
                                 newOrder.put(cacheFile.name, cacheFile);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         newOrder.putAll(accessOrder);
                         this.accessOrder = newOrder;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+            
+            
         }
 
         
@@ -285,14 +287,14 @@ public class FileClientSessionCache {
                 boolean var8E645B401E2BCD688DAA316F70EFD21B_534559084 = (!file.delete());
                 {
                     System.logW("Failed to delete " + file + ".", new IOException());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(file.getTaint());
-            // ---------- Original Method ----------
-            //if (!file.delete()) {
-                //System.logW("Failed to delete " + file + ".", new IOException());
-            //}
-            //size--;
+            
+            
+                
+            
+            
         }
 
         
@@ -318,8 +320,8 @@ public class FileClientSessionCache {
             super(dir, name);
             this.name = name;
             addTaint(dir.getTaint());
-            // ---------- Original Method ----------
-            //this.name = name;
+            
+            
         }
 
         
@@ -329,15 +331,15 @@ public class FileClientSessionCache {
             long lastModified = this.lastModified;
             {
                 lastModified = this.lastModified = super.lastModified();
-            } //End block
+            } 
             long var0F5264038205EDFB1AC05FBB0E8C5E94_44484035 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_44484035;
-            // ---------- Original Method ----------
-            //long lastModified = this.lastModified;
-            //if (lastModified == -1) {
-                //lastModified = this.lastModified = super.lastModified();
-            //}
-            //return lastModified;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -347,16 +349,16 @@ public class FileClientSessionCache {
             long result = lastModified() - another.lastModified();
             {
                 int varC3D5FFF0272B837F0C4D18E324DDD548_1447316335 = (super.compareTo(another));
-            } //End block
+            } 
             addTaint(another.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_386193310 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_386193310;
-            // ---------- Original Method ----------
-            //long result = lastModified() - another.lastModified();
-            //if (result == 0) {
-                //return super.compareTo(another);
-            //}
-            //return result < 0 ? -1 : 1;
+            
+            
+            
+                
+            
+            
         }
 
         

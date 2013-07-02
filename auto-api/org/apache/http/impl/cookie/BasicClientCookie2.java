@@ -1,11 +1,11 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Date;
 import org.apache.http.cookie.SetCookie2;
@@ -26,7 +26,7 @@ public class BasicClientCookie2 extends BasicClientCookie implements SetCookie2 
         super(name, value);
         addTaint(name.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -35,55 +35,56 @@ public class BasicClientCookie2 extends BasicClientCookie implements SetCookie2 
     public int[] getPorts() {
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1136750745 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1136750745;
-        // ---------- Original Method ----------
-        //return this.ports;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.902 -0400", hash_original_method = "764909B3E1563DDB6A65C5637CB4CC25", hash_generated_method = "C9B871E54B4C065A0B7E18343F865239")
     public void setPorts(final int[] ports) {
         this.ports = ports;
-        // ---------- Original Method ----------
-        //this.ports = ports;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.903 -0400", hash_original_method = "601AD280A8E13C6CCEB794F77493867D", hash_generated_method = "C524B67ABA989F721C799F0F8750F895")
     @Override
     public String getCommentURL() {
-        String varB4EAC82CA7396A68D541C85D26508E83_275415307 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_275415307 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_275415307 = this.commentURL;
-        varB4EAC82CA7396A68D541C85D26508E83_275415307.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_275415307.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_275415307;
-        // ---------- Original Method ----------
-        //return this.commentURL;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.903 -0400", hash_original_method = "D3350C04B38359935C8E8B49E5A32164", hash_generated_method = "0459F7D7F51F9287B0A6EC8A909F9C50")
     public void setCommentURL(final String commentURL) {
         this.commentURL = commentURL;
-        // ---------- Original Method ----------
-        //this.commentURL = commentURL;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.903 -0400", hash_original_method = "9446CEDD4455A1D30E4774BBDD3B750C", hash_generated_method = "E6CDF344C6C1B9923E6E003A3B1B943D")
     public void setDiscard(boolean discard) {
         this.discard = discard;
-        // ---------- Original Method ----------
-        //this.discard = discard;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.904 -0400", hash_original_method = "417FDF5C1FC11A52F2E0DFC4D001D3E3", hash_generated_method = "013C861572A6B8BE9F839BF159A2ED88")
     @Override
     public boolean isPersistent() {
         boolean var8894A75FFDDE4B7033639E14D54C822E_1726033689 = (!this.discard && super.isPersistent());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1127842147 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1127842147;
-        // ---------- Original Method ----------
-        //return !this.discard && super.isPersistent();
+        
+        
     }
 
     
@@ -94,24 +95,25 @@ public class BasicClientCookie2 extends BasicClientCookie implements SetCookie2 
         addTaint(date.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1523419802 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1523419802;
-        // ---------- Original Method ----------
-        //return this.discard || super.isExpired(date);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.906 -0400", hash_original_method = "A1E29AF284BD9497DEE668CED1078224", hash_generated_method = "B29F23B763E457CD40CDDB391729BF3A")
     @Override
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1465947852 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1465947852 = null; 
         BasicClientCookie2 clone = (BasicClientCookie2) super.clone();
         clone.ports = this.ports.clone();
         varB4EAC82CA7396A68D541C85D26508E83_1465947852 = clone;
-        varB4EAC82CA7396A68D541C85D26508E83_1465947852.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1465947852.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1465947852;
-        // ---------- Original Method ----------
-        //BasicClientCookie2 clone = (BasicClientCookie2) super.clone();
-        //clone.ports = this.ports.clone();
-        //return clone;
+        
+        
+        
+        
     }
 
     

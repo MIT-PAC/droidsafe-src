@@ -1,11 +1,11 @@
 package android.preference;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -34,10 +34,10 @@ public class EditTextPreference extends DialogPreference {
         mEditText.setId(com.android.internal.R.id.edit);
         mEditText.setEnabled(true);
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        //mEditText = new EditText(context, attrs);
-        //mEditText.setId(com.android.internal.R.id.edit);
-        //mEditText.setEnabled(true);
+        
+        
+        
+        
     }
 
     
@@ -46,7 +46,7 @@ public class EditTextPreference extends DialogPreference {
         this(context, attrs, com.android.internal.R.attr.editTextPreferenceStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -54,10 +54,11 @@ public class EditTextPreference extends DialogPreference {
     public  EditTextPreference(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.818 -0400", hash_original_method = "CEF16EBC31082C193A3B95CCEE8E6067", hash_generated_method = "8BAEA5ED317996EFC0416235F8A9FFFC")
     public void setText(String text) {
         final boolean wasBlocking = shouldDisableDependents();
@@ -66,33 +67,34 @@ public class EditTextPreference extends DialogPreference {
         final boolean isBlocking = shouldDisableDependents();
         {
             notifyDependencyChange(isBlocking);
-        } //End block
-        // ---------- Original Method ----------
-        //final boolean wasBlocking = shouldDisableDependents();
-        //mText = text;
-        //persistString(text);
-        //final boolean isBlocking = shouldDisableDependents();
-        //if (isBlocking != wasBlocking) {
-            //notifyDependencyChange(isBlocking);
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.818 -0400", hash_original_method = "2FFFCC59A442EF1196B854805331F3A7", hash_generated_method = "7093B3269E9726F5A291B942DC0CDE00")
     public String getText() {
-        String varB4EAC82CA7396A68D541C85D26508E83_344767649 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_344767649 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_344767649 = mText;
-        varB4EAC82CA7396A68D541C85D26508E83_344767649.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_344767649.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_344767649;
-        // ---------- Original Method ----------
-        //return mText;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.819 -0400", hash_original_method = "D07B0890C399F21AD31B9014C9722593", hash_generated_method = "4037425B7ECBCFD5080744C15605167E")
     @Override
     protected void onBindDialogView(View view) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onBindDialogView(view);
         EditText editText = mEditText;
         editText.setText(getText());
@@ -100,49 +102,51 @@ public class EditTextPreference extends DialogPreference {
         {
             {
                 ((ViewGroup) oldParent).removeView(editText);
-            } //End block
+            } 
             onAddEditTextToDialogView(view, editText);
-        } //End block
+        } 
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        //super.onBindDialogView(view);
-        //EditText editText = mEditText;
-        //editText.setText(getText());
-        //ViewParent oldParent = editText.getParent();
-        //if (oldParent != view) {
-            //if (oldParent != null) {
-                //((ViewGroup) oldParent).removeView(editText);
-            //}
-            //onAddEditTextToDialogView(view, editText);
-        //}
+        
+        
+        
+        
+        
+        
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.820 -0400", hash_original_method = "F11E8CFFE1E2D808987B2E38C68D609A", hash_generated_method = "2F38FB0AD41E5AAA7D7E1FEB54441319")
     protected void onAddEditTextToDialogView(View dialogView, EditText editText) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         ViewGroup container = (ViewGroup) dialogView
                 .findViewById(com.android.internal.R.id.edittext_container);
         {
             container.addView(editText, ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT);
-        } //End block
+        } 
         addTaint(dialogView.getTaint());
         addTaint(editText.getTaint());
-        // ---------- Original Method ----------
-        //ViewGroup container = (ViewGroup) dialogView
-                //.findViewById(com.android.internal.R.id.edittext_container);
-        //if (container != null) {
-            //container.addView(editText, ViewGroup.LayoutParams.MATCH_PARENT,
-                    //ViewGroup.LayoutParams.WRAP_CONTENT);
-        //}
+        
+        
+                
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.820 -0400", hash_original_method = "72D88295ED5747003A75C3EC7A0816A7", hash_generated_method = "4731F06471BF9E906896288A08FD8AEB")
     @Override
     protected void onDialogClosed(boolean positiveResult) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDialogClosed(positiveResult);
         {
             String value = mEditText.getText().toString();
@@ -150,67 +154,70 @@ public class EditTextPreference extends DialogPreference {
                 boolean var48E48921DA53707F97C7F6D085D7ADDB_1974577472 = (callChangeListener(value));
                 {
                     setText(value);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(positiveResult);
-        // ---------- Original Method ----------
-        //super.onDialogClosed(positiveResult);
-        //if (positiveResult) {
-            //String value = mEditText.getText().toString();
-            //if (callChangeListener(value)) {
-                //setText(value);
-            //}
-        //}
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.821 -0400", hash_original_method = "617E38A3300A64CD810B1ADC15B8238E", hash_generated_method = "8CC0CE4E6D0640E837656AF6F46BF544")
     @Override
     protected Object onGetDefaultValue(TypedArray a, int index) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Object varB4EAC82CA7396A68D541C85D26508E83_1255559132 = null; //Variable for return #1
+        
+        Object varB4EAC82CA7396A68D541C85D26508E83_1255559132 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1255559132 = a.getString(index);
         addTaint(a.getTaint());
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_1255559132.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1255559132.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1255559132;
-        // ---------- Original Method ----------
-        //return a.getString(index);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.821 -0400", hash_original_method = "5BF4BAC56AB2C13ADD22317FD43163DE", hash_generated_method = "36C43A0C50DD9D5074DC15C6ADF2FFD8")
     @Override
     protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         setText(restoreValue ? getPersistedString(mText) : (String) defaultValue);
         addTaint(restoreValue);
         addTaint(defaultValue.getTaint());
-        // ---------- Original Method ----------
-        //setText(restoreValue ? getPersistedString(mText) : (String) defaultValue);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.822 -0400", hash_original_method = "F5D013C02C2861F04CB4C321BCA17B16", hash_generated_method = "5B0698A7C50AFF5A3B31FD7231FBDE6C")
     @Override
     public boolean shouldDisableDependents() {
         boolean varCB5373E5EBBD696F207E1076E22918F0_1550578459 = (TextUtils.isEmpty(mText) || super.shouldDisableDependents());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1302927902 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1302927902;
-        // ---------- Original Method ----------
-        //return TextUtils.isEmpty(mText) || super.shouldDisableDependents();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.822 -0400", hash_original_method = "25F3ADCBABEE77EF933107206F4A63FB", hash_generated_method = "0C3AF98A31A069BCAE541B58159F7AF7")
     public EditText getEditText() {
-        EditText varB4EAC82CA7396A68D541C85D26508E83_1433811636 = null; //Variable for return #1
+        EditText varB4EAC82CA7396A68D541C85D26508E83_1433811636 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1433811636 = mEditText;
-        varB4EAC82CA7396A68D541C85D26508E83_1433811636.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1433811636.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1433811636;
-        // ---------- Original Method ----------
-        //return mEditText;
+        
+        
     }
 
     
@@ -219,71 +226,73 @@ public class EditTextPreference extends DialogPreference {
     protected boolean needInputMethod() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1203473068 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1203473068;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.823 -0400", hash_original_method = "D74BC4DC00378E9BF3AD83FB4C28C295", hash_generated_method = "B23D2D8C42D53A2346D2CED977AB5F82")
     @Override
     protected Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1313495474 = null; //Variable for return #1
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_440396164 = null; //Variable for return #2
+        
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1313495474 = null; 
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_440396164 = null; 
         final Parcelable superState = super.onSaveInstanceState();
         {
             boolean varA5BC476CED9D472D4630C0C0B6120523_2014292582 = (isPersistent());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1313495474 = superState;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final SavedState myState = new SavedState(superState);
         myState.text = getText();
         varB4EAC82CA7396A68D541C85D26508E83_440396164 = myState;
-        Parcelable varA7E53CE21691AB073D9660D615818899_1500375876; //Final return value
+        Parcelable varA7E53CE21691AB073D9660D615818899_1500375876; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1500375876 = varB4EAC82CA7396A68D541C85D26508E83_1313495474;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1500375876 = varB4EAC82CA7396A68D541C85D26508E83_440396164;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1500375876.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1500375876.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1500375876;
-        // ---------- Original Method ----------
-        //final Parcelable superState = super.onSaveInstanceState();
-        //if (isPersistent()) {
-            //return superState;
-        //}
-        //final SavedState myState = new SavedState(superState);
-        //myState.text = getText();
-        //return myState;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.824 -0400", hash_original_method = "FDF67462F1789AF80412C105807187A6", hash_generated_method = "07C1EB23FF0677219DD6D59985A3336F")
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var9146082C23BCEB2285F1054C3B9F84EE_490702425 = (state == null || !state.getClass().equals(SavedState.class));
             {
                 super.onRestoreInstanceState(state);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         SavedState myState = (SavedState) state;
         super.onRestoreInstanceState(myState.getSuperState());
         setText(myState.text);
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //if (state == null || !state.getClass().equals(SavedState.class)) {
-            //super.onRestoreInstanceState(state);
-            //return;
-        //}
-        //SavedState myState = (SavedState) state;
-        //super.onRestoreInstanceState(myState.getSuperState());
-        //setText(myState.text);
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -296,8 +305,8 @@ public class EditTextPreference extends DialogPreference {
         public  SavedState(Parcel source) {
             super(source);
             text = source.readString();
-            // ---------- Original Method ----------
-            //text = source.readString();
+            
+            
         }
 
         
@@ -305,7 +314,7 @@ public class EditTextPreference extends DialogPreference {
         public  SavedState(Parcelable superState) {
             super(superState);
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -316,9 +325,9 @@ public class EditTextPreference extends DialogPreference {
             dest.writeString(text);
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //super.writeToParcel(dest, flags);
-            //dest.writeString(text);
+            
+            
+            
         }
 
         
@@ -334,12 +343,12 @@ public class EditTextPreference extends DialogPreference {
                 return new SavedState[size];
             }
         };
-        // orphaned legacy method
+        
         public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
         
-        // orphaned legacy method
+        
         public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }

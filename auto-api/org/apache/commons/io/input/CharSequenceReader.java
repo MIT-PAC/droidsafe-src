@@ -1,11 +1,11 @@
 package org.apache.commons.io.input;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Reader;
 import java.io.Serializable;
@@ -24,8 +24,8 @@ public class CharSequenceReader extends Reader implements Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.093 -0400", hash_original_method = "182A6C4ED1D1E19AB9569E928EB756A5", hash_generated_method = "7649B0779FA144D56FC8C85AD6DB095C")
     public  CharSequenceReader(CharSequence charSequence) {
         this.charSequence = charSequence != null ? charSequence : "";
-        // ---------- Original Method ----------
-        //this.charSequence = charSequence != null ? charSequence : "";
+        
+        
     }
 
     
@@ -34,9 +34,9 @@ public class CharSequenceReader extends Reader implements Serializable {
     public void close() {
         idx = 0;
         mark = 0;
-        // ---------- Original Method ----------
-        //idx = 0;
-        //mark = 0;
+        
+        
+        
     }
 
     
@@ -45,8 +45,8 @@ public class CharSequenceReader extends Reader implements Serializable {
     public void mark(int readAheadLimit) {
         mark = idx;
         addTaint(readAheadLimit);
-        // ---------- Original Method ----------
-        //mark = idx;
+        
+        
     }
 
     
@@ -55,11 +55,12 @@ public class CharSequenceReader extends Reader implements Serializable {
     public boolean markSupported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1156169638 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1156169638;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.094 -0400", hash_original_method = "9ACE53EBE9E224BA089484C6AABDF5C3", hash_generated_method = "DA6DE478F7CA99B1F51433A168A92DD6")
     @Override
     public int read() {
@@ -67,66 +68,67 @@ public class CharSequenceReader extends Reader implements Serializable {
             boolean var0BAC35B796DB201D17E4E2BE31ACE3CE_769468810 = (idx >= charSequence.length());
             {
                 int var401D08DA76995D07487593EA36F2A23D_1937376320 = (charSequence.charAt(idx++));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2074761354 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2074761354;
-        // ---------- Original Method ----------
-        //if (idx >= charSequence.length()) {
-            //return -1;
-        //} else {
-            //return charSequence.charAt(idx++);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.095 -0400", hash_original_method = "9EABECFB34552C6029ED722DF84F07FF", hash_generated_method = "B9832C1C4D7C28EE88825513DB0D6853")
     @Override
     public int read(char[] array, int offset, int length) {
         {
             boolean var0BAC35B796DB201D17E4E2BE31ACE3CE_1369890457 = (idx >= charSequence.length());
-        } //End collapsed parenthetic
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Character array is missing");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("Array Size=" + array.length +
                     ", offset=" + offset + ", length=" + length);
-        } //End block
+        } 
         int count = 0;
         {
             int i = 0;
             {
                 int c = read();
                 array[offset + i] = (char)c;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(array[0]);
         addTaint(offset);
         addTaint(length);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1587448687 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1587448687;
-        // ---------- Original Method ----------
-        //if (idx >= charSequence.length()) {
-            //return -1;
-        //}
-        //if (array == null) {
-            //throw new NullPointerException("Character array is missing");
-        //}
-        //if (length < 0 || offset < 0 || offset + length > array.length) {
-            //throw new IndexOutOfBoundsException("Array Size=" + array.length +
-                    //", offset=" + offset + ", length=" + length);
-        //}
-        //int count = 0;
-        //for (int i = 0; i < length; i++) {
-            //int c = read();
-            //if (c == -1) {
-                //return count;
-            //}
-            //array[offset + i] = (char)c;
-            //count++;
-        //}
-        //return count;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+        
+            
+            
+                
+            
+            
+            
+        
+        
     }
 
     
@@ -134,51 +136,53 @@ public class CharSequenceReader extends Reader implements Serializable {
     @Override
     public void reset() {
         idx = mark;
-        // ---------- Original Method ----------
-        //idx = mark;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.096 -0400", hash_original_method = "75F54BDE1C47E9678EFB232794384C6F", hash_generated_method = "C04B9C0FED947AD4EFCBE98B209119C3")
     @Override
     public long skip(long n) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "Number of characters to skip is less than zero: " + n);
-        } //End block
+        } 
         {
             boolean var0BAC35B796DB201D17E4E2BE31ACE3CE_967479429 = (idx >= charSequence.length());
-        } //End collapsed parenthetic
+        } 
         int dest = (int)Math.min(charSequence.length(), idx + n);
         int count = dest - idx;
         idx = dest;
         addTaint(n);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_470887437 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_470887437;
-        // ---------- Original Method ----------
-        //if (n < 0) {
-            //throw new IllegalArgumentException(
-                    //"Number of characters to skip is less than zero: " + n);
-        //}
-        //if (idx >= charSequence.length()) {
-            //return -1;
-        //}
-        //int dest = (int)Math.min(charSequence.length(), idx + n);
-        //int count = dest - idx;
-        //idx = dest;
-        //return count;
+        
+        
+            
+                    
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.097 -0400", hash_original_method = "610F60ED6DB50185F33A85945665EF11", hash_generated_method = "9581E7DBCC987D3123C8FC73850A8A31")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1334389587 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1334389587 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1334389587 = charSequence.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1334389587.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1334389587.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1334389587;
-        // ---------- Original Method ----------
-        //return charSequence.toString();
+        
+        
     }
 
     

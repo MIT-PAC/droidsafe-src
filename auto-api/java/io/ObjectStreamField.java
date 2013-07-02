@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
@@ -35,15 +35,15 @@ public class ObjectStreamField implements Comparable<Object> {
     public  ObjectStreamField(String name, Class<?> cl) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         this.name = name;
         this.type = new WeakReference<Class<?>>(cl);
-        // ---------- Original Method ----------
-        //if (name == null || cl == null) {
-            //throw new NullPointerException();
-        //}
-        //this.name = name;
-        //this.type = new WeakReference<Class<?>>(cl);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -51,17 +51,17 @@ public class ObjectStreamField implements Comparable<Object> {
     public  ObjectStreamField(String name, Class<?> cl, boolean unshared) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         this.name = name;
         this.type = (cl.getClassLoader() == null) ? cl : new WeakReference<Class<?>>(cl);
         this.unshared = unshared;
-        // ---------- Original Method ----------
-        //if (name == null || cl == null) {
-            //throw new NullPointerException();
-        //}
-        //this.name = name;
-        //this.type = (cl.getClassLoader() == null) ? cl : new WeakReference<Class<?>>(cl);
-        //this.unshared = unshared;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -69,22 +69,23 @@ public class ObjectStreamField implements Comparable<Object> {
       ObjectStreamField(String signature, String name) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         this.name = name;
         this.typeString = signature.replace('.', '/').intern();
         defaultResolve();
         this.isDeserialized = true;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException();
-        //}
-        //this.name = name;
-        //this.typeString = signature.replace('.', '/').intern();
-        //defaultResolve();
-        //this.isDeserialized = true;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.712 -0400", hash_original_method = "11ADA6ED2A991966CB49663045730556", hash_generated_method = "10E4455E7BCD23DB94205A7989BBDDD6")
     public int compareTo(Object o) {
         ObjectStreamField f = (ObjectStreamField) o;
@@ -94,25 +95,25 @@ public class ObjectStreamField implements Comparable<Object> {
         addTaint(o.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261182770 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261182770;
-        // ---------- Original Method ----------
-        //ObjectStreamField f = (ObjectStreamField) o;
-        //boolean thisPrimitive = this.isPrimitive();
-        //boolean fPrimitive = f.isPrimitive();
-        //if (thisPrimitive != fPrimitive) {
-            //return thisPrimitive ? -1 : 1;
-        //}
-        //return this.getName().compareTo(f.getName());
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.713 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "80B736505AFF6165C2DFF2471BF64D02")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_457026815 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_457026815 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_457026815 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_457026815.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_457026815.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_457026815;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
@@ -120,123 +121,127 @@ public class ObjectStreamField implements Comparable<Object> {
     public int getOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_92631546 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_92631546;
-        // ---------- Original Method ----------
-        //return offset;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.713 -0400", hash_original_method = "FF08482EB56AA685DDAE41A39E334998", hash_generated_method = "54A902482B1D65CF658A03E994620214")
      Class<?> getTypeInternal() {
-        Class<?> varB4EAC82CA7396A68D541C85D26508E83_505529498 = null; //Variable for return #1
-        Class<?> varB4EAC82CA7396A68D541C85D26508E83_1347182238 = null; //Variable for return #2
+        Class<?> varB4EAC82CA7396A68D541C85D26508E83_505529498 = null; 
+        Class<?> varB4EAC82CA7396A68D541C85D26508E83_1347182238 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_505529498 = (Class<?>) ((WeakReference<?>) type).get();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1347182238 = (Class<?>) type;
-        Class<?> varA7E53CE21691AB073D9660D615818899_827801887; //Final return value
+        Class<?> varA7E53CE21691AB073D9660D615818899_827801887; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_827801887 = varB4EAC82CA7396A68D541C85D26508E83_505529498;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_827801887 = varB4EAC82CA7396A68D541C85D26508E83_1347182238;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_827801887.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_827801887.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_827801887;
-        // ---------- Original Method ----------
-        //if (type instanceof WeakReference) {
-            //return (Class<?>) ((WeakReference<?>) type).get();
-        //}
-        //return (Class<?>) type;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.714 -0400", hash_original_method = "9634509EF2A12286AE62950CEFC0E304", hash_generated_method = "FD4BA908DEE45D14261D2E88E15250D2")
     public Class<?> getType() {
-        Class<?> varB4EAC82CA7396A68D541C85D26508E83_753270977 = null; //Variable for return #1
-        Class<?> varB4EAC82CA7396A68D541C85D26508E83_2112817150 = null; //Variable for return #2
+        Class<?> varB4EAC82CA7396A68D541C85D26508E83_753270977 = null; 
+        Class<?> varB4EAC82CA7396A68D541C85D26508E83_2112817150 = null; 
         Class<?> cl = getTypeInternal();
         {
             boolean varA3679B8742DABFD077DA559AF7FB1A74_1995047252 = (isDeserialized && !cl.isPrimitive());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_753270977 = Object.class;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2112817150 = cl;
-        Class<?> varA7E53CE21691AB073D9660D615818899_1553593780; //Final return value
+        Class<?> varA7E53CE21691AB073D9660D615818899_1553593780; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1553593780 = varB4EAC82CA7396A68D541C85D26508E83_753270977;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1553593780 = varB4EAC82CA7396A68D541C85D26508E83_2112817150;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1553593780.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1553593780.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1553593780;
-        // ---------- Original Method ----------
-        //Class<?> cl = getTypeInternal();
-        //if (isDeserialized && !cl.isPrimitive()) {
-            //return Object.class;
-        //}
-        //return cl;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.714 -0400", hash_original_method = "6C03FA17A8A9EDC07915A4F462B31BC8", hash_generated_method = "1BB302971B1F1DE55770CAF3ABB66869")
     public char getTypeCode() {
         char var1177AA956C7DA25FE5A8F4F00F47BA9F_413668903 = (typeCodeOf(getTypeInternal()));
         char varA87DEB01C5F539E6BDA34829C8EF2368_306091225 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_306091225;
-        // ---------- Original Method ----------
-        //return typeCodeOf(getTypeInternal());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.714 -0400", hash_original_method = "1261A37E9B201158D41DADA58D3D498E", hash_generated_method = "87A6DCB1B814FDD371B98BB15AC40742")
     private char typeCodeOf(Class<?> type) {
         {
             boolean var6A7B33E76BE12D29FD67A26D06CDE611_1815547267 = (type.isArray());
-        } //End collapsed parenthetic
+        } 
         addTaint(type.getTaint());
         char varA87DEB01C5F539E6BDA34829C8EF2368_47308324 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_47308324;
-        // ---------- Original Method ----------
-        //if (type == int.class) {
-            //return 'I';
-        //} else if (type == byte.class) {
-            //return 'B';
-        //} else if (type == char.class) {
-            //return 'C';
-        //} else if (type == short.class) {
-            //return 'S';
-        //} else if (type == boolean.class) {
-            //return 'Z';
-        //} else if (type == long.class) {
-            //return 'J';
-        //} else if (type == float.class) {
-            //return 'F';
-        //} else if (type == double.class) {
-            //return 'D';
-        //} else if (type.isArray()) {
-            //return '[';
-        //} else {
-            //return 'L';
-        //}
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.715 -0400", hash_original_method = "AF834EA72E67DF4239AA5209B5DE5F81", hash_generated_method = "0629BA04FB440A129537B2BB70354538")
     public String getTypeString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1840272799 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_710056847 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1840272799 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_710056847 = null; 
         {
             boolean var66A0FD8833FB78ABA18BF193F91E7A7D_95717526 = (isPrimitive());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1840272799 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             Class<?> t = getTypeInternal();
             String typeName = t.getName().replace('.', '/');
@@ -245,42 +250,43 @@ public class ObjectStreamField implements Comparable<Object> {
             str = typeName;
             str = ("L" + typeName + ';');
             typeString = str.intern();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_710056847 = typeString;
-        String varA7E53CE21691AB073D9660D615818899_1127317436; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1127317436; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1127317436 = varB4EAC82CA7396A68D541C85D26508E83_1840272799;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1127317436 = varB4EAC82CA7396A68D541C85D26508E83_710056847;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1127317436.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1127317436.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1127317436;
-        // ---------- Original Method ----------
-        //if (isPrimitive()) {
-            //return null;
-        //}
-        //if (typeString == null) {
-            //Class<?> t = getTypeInternal();
-            //String typeName = t.getName().replace('.', '/');
-            //String str = (t.isArray()) ? typeName : ("L" + typeName + ';');
-            //typeString = str.intern();
-        //}
-        //return typeString;
+        
+        
+            
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.715 -0400", hash_original_method = "109BC8E5B51BF330504215C17ADD6478", hash_generated_method = "01F38ECA1256101C90E9B64C7C1869B4")
     public boolean isPrimitive() {
         Class<?> t = getTypeInternal();
         boolean varB421F220FEF97A3E096A81B170604319_759406644 = (t != null && t.isPrimitive());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1741715923 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1741715923;
-        // ---------- Original Method ----------
-        //Class<?> t = getTypeInternal();
-        //return t != null && t.isPrimitive();
+        
+        
+        
     }
 
     
@@ -293,31 +299,32 @@ public class ObjectStreamField implements Comparable<Object> {
         addTaint(out.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_433270415 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_433270415;
-        // ---------- Original Method ----------
-        //Class<?> t = getTypeInternal();
-        //out.writeByte(typeCodeOf(t));
-        //out.writeUTF(name);
-        //return (t != null && t.isPrimitive());
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.715 -0400", hash_original_method = "7A66A074CFBB1A834E24DFB5B3A643D5", hash_generated_method = "4305F7EB15B8D74A66017D2CC764F457")
     protected void setOffset(int newValue) {
         this.offset = newValue;
-        // ---------- Original Method ----------
-        //this.offset = newValue;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.716 -0400", hash_original_method = "ABFAE4540EC552EECBD4679559074925", hash_generated_method = "91D32CC8302BE6182F6C4F008D5AEB3C")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1534638664 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1534638664 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1534638664 = this.getClass().getName() + '(' + getName() + ':' + getTypeInternal() + ')';
-        varB4EAC82CA7396A68D541C85D26508E83_1534638664.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1534638664.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1534638664;
-        // ---------- Original Method ----------
-        //return this.getClass().getName() + '(' + getName() + ':' + getTypeInternal() + ')';
+        
+        
     }
 
     
@@ -327,49 +334,49 @@ public class ObjectStreamField implements Comparable<Object> {
             boolean var2D678C45C1F58BEAC668B5F88029903B_2110468829 = (typeString == null && isPrimitive());
             {
                 typeString = String.valueOf(getTypeCode());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varF774A382C8A76B03DD267611340345A4_465689028 = (typeString.length() == 1);
             {
                 {
                     boolean var38E4603B2800FF20134BFF86D9CC31CE_1977813280 = (defaultResolve());
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         String className = typeString.replace('/', '.');
         {
             boolean var4A650C5F977360D4DD17F8170EBAC5FA_1611472087 = (className.charAt(0) == 'L');
             {
                 className = className.substring(1, className.length() - 1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             Class<?> cl = Class.forName(className, false, loader);
             type = (cl.getClassLoader() == null) ? cl : new WeakReference<Class<?>>(cl);
-        } //End block
+        } 
         catch (ClassNotFoundException e)
         { }
         addTaint(loader.getTaint());
-        // ---------- Original Method ----------
-        //if (typeString == null && isPrimitive()) {
-            //typeString = String.valueOf(getTypeCode());
-        //}
-        //if (typeString.length() == 1) {
-            //if (defaultResolve()) {
-                //return;
-            //}
-        //}
-        //String className = typeString.replace('/', '.');
-        //if (className.charAt(0) == 'L') {
-            //className = className.substring(1, className.length() - 1);
-        //}
-        //try {
-            //Class<?> cl = Class.forName(className, false, loader);
-            //type = (cl.getClassLoader() == null) ? cl : new WeakReference<Class<?>>(cl);
-        //} catch (ClassNotFoundException e) {
-        //}
+        
+        
+            
+        
+        
+            
+                
+            
+        
+        
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -377,83 +384,84 @@ public class ObjectStreamField implements Comparable<Object> {
     public boolean isUnshared() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2098507411 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2098507411;
-        // ---------- Original Method ----------
-        //return unshared;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.717 -0400", hash_original_method = "68701E3ED15FAA74732CE575E0F04E5E", hash_generated_method = "78989AD0A169EB11A9E371D43CF1C2E1")
      void setUnshared(boolean unshared) {
         this.unshared = unshared;
-        // ---------- Original Method ----------
-        //this.unshared = unshared;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.717 -0400", hash_original_method = "E1E63B3BD3E5801BD481EB78C5FBD93C", hash_generated_method = "E7C3BC168A8D66E802C09B385D51A360")
     private boolean defaultResolve() {
         {
             Object varA76659841820C1031EE708C4EE618FAA_2146922688 = (typeString.charAt(0));
-            //Begin case 'I' 
+            
             type = int.class;
-            //End case 'I' 
-            //Begin case 'B' 
+            
+            
             type = byte.class;
-            //End case 'B' 
-            //Begin case 'C' 
+            
+            
             type = char.class;
-            //End case 'C' 
-            //Begin case 'S' 
+            
+            
             type = short.class;
-            //End case 'S' 
-            //Begin case 'Z' 
+            
+            
             type = boolean.class;
-            //End case 'Z' 
-            //Begin case 'J' 
+            
+            
             type = long.class;
-            //End case 'J' 
-            //Begin case 'F' 
+            
+            
             type = float.class;
-            //End case 'F' 
-            //Begin case 'D' 
+            
+            
             type = double.class;
-            //End case 'D' 
-            //Begin case default 
+            
+            
             type = Object.class;
-            //End case default 
-        } //End collapsed parenthetic
+            
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_429768701 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_429768701;
-        // ---------- Original Method ----------
-        //switch (typeString.charAt(0)) {
-        //case 'I':
-            //type = int.class;
-            //return true;
-        //case 'B':
-            //type = byte.class;
-            //return true;
-        //case 'C':
-            //type = char.class;
-            //return true;
-        //case 'S':
-            //type = short.class;
-            //return true;
-        //case 'Z':
-            //type = boolean.class;
-            //return true;
-        //case 'J':
-            //type = long.class;
-            //return true;
-        //case 'F':
-            //type = float.class;
-            //return true;
-        //case 'D':
-            //type = double.class;
-            //return true;
-        //default:
-            //type = Object.class;
-            //return false;
-        //}
+        
+        
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
     }
 
     

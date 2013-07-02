@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
@@ -17,7 +17,7 @@ public class AcceptParser extends ParametersParser {
     public  AcceptParser(String accept) {
         super(accept);
         addTaint(accept.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class AcceptParser extends ParametersParser {
     protected  AcceptParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.662 -0400", hash_original_method = "4B990F83EF66D5D2EAA453ED852E8DC7", hash_generated_method = "F0E198A86A7FCB914B55039D92065E64")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_156479035 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_156479035 = null; 
         dbg_enter("AcceptParser.parse");
         AcceptList list = new AcceptList();
         try 
@@ -66,18 +67,18 @@ public class AcceptParser extends ParametersParser {
                     this.lexer.SPorHT();
                     super.parse(accept);
                     list.add(accept);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_156479035 = list;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("AcceptParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_156479035.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_156479035.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_156479035;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.x509;
 
-// Droidsafe Imports
+
 import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Hashtable;
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -36,15 +36,14 @@ import org.bouncycastle.asn1.x9.X9ObjectIdentifiers;
 import org.bouncycastle.jce.X509Principal;
 import org.bouncycastle.util.Strings;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 class X509Util {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.537 -0400", hash_original_method = "19DD25388D9EA3D8C5EFD26CD223A84A", hash_generated_method = "19DD25388D9EA3D8C5EFD26CD223A84A")
     public X509Util ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -68,6 +67,7 @@ class X509Util {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static AlgorithmIdentifier getSigAlgID(
         DERObjectIdentifier sigOid,
         String              algorithmName) {
@@ -182,6 +182,7 @@ class X509Util {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Implementation getImplementation(
         String      baseName,
         String      algorithm,
@@ -224,6 +225,7 @@ class X509Util {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Implementation getImplementation(
         String      baseName,
         String      algorithm) throws NoSuchAlgorithmException {
@@ -247,6 +249,7 @@ class X509Util {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static Provider getProvider(String provider) throws NoSuchProviderException {
         Provider prov = Security.getProvider(provider);
         if (prov == null)
@@ -271,31 +274,31 @@ class X509Util {
             Provider    provider) {
             this.engine = engine;
             this.provider = provider;
-            // ---------- Original Method ----------
-            //this.engine = engine;
-            //this.provider = provider;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.541 -0400", hash_original_method = "BE45F36A26940534B07006714A378835", hash_generated_method = "51B522A9979A390114F57D5F0896C0D6")
          Object getEngine() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1833069912 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1833069912 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1833069912 = engine;
-            varB4EAC82CA7396A68D541C85D26508E83_1833069912.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1833069912.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1833069912;
-            // ---------- Original Method ----------
-            //return engine;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.542 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "8AAA5E6542584067EE45A1695245FD5C")
          Provider getProvider() {
-            Provider varB4EAC82CA7396A68D541C85D26508E83_1332500710 = null; //Variable for return #1
+            Provider varB4EAC82CA7396A68D541C85D26508E83_1332500710 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1332500710 = provider;
-            varB4EAC82CA7396A68D541C85D26508E83_1332500710.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1332500710.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1332500710;
-            // ---------- Original Method ----------
-            //return provider;
+            
+            
         }
 
         

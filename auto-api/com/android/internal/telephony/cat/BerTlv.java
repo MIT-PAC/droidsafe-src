@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -21,20 +21,21 @@ class BerTlv {
     private  BerTlv(int tag, List<ComprehensionTlv> ctlvs) {
         mTag = tag;
         mCompTlvs = ctlvs;
-        // ---------- Original Method ----------
-        //mTag = tag;
-        //mCompTlvs = ctlvs;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.138 -0400", hash_original_method = "4DB54AB9F503DA894E5725BF1F0BC01C", hash_generated_method = "8CA3AAD47FB1C671B56B4D8BAA069B68")
     public List<ComprehensionTlv> getComprehensionTlvs() {
-        List<ComprehensionTlv> varB4EAC82CA7396A68D541C85D26508E83_399602149 = null; //Variable for return #1
+        List<ComprehensionTlv> varB4EAC82CA7396A68D541C85D26508E83_399602149 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_399602149 = mCompTlvs;
-        varB4EAC82CA7396A68D541C85D26508E83_399602149.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_399602149.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_399602149;
-        // ---------- Original Method ----------
-        //return mCompTlvs;
+        
+        
     }
 
     
@@ -42,11 +43,12 @@ class BerTlv {
     public int getTag() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1674238906 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1674238906;
-        // ---------- Original Method ----------
-        //return mTag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static BerTlv decode(byte[] data) throws ResultException {
         int curIndex = 0;
         int endIndex = data.length;

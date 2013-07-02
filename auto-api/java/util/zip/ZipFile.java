@@ -1,11 +1,11 @@
 package java.util.zip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import dalvik.system.CloseGuard;
 import java.io.BufferedInputStream;
@@ -44,7 +44,7 @@ public class ZipFile implements ZipConstants {
     public  ZipFile(File file) throws ZipException, IOException {
         this(file, OPEN_READ);
         addTaint(file.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -53,30 +53,30 @@ public class ZipFile implements ZipConstants {
         fileName = file.getPath();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         {
             fileToDeleteOnClose = file;
-        } //End block
+        } 
         {
             fileToDeleteOnClose = null;
-        } //End block
+        } 
         mRaf = new RandomAccessFile(fileName, "r");
         readCentralDir();
         guard.open("close");
         addTaint(mode);
-        // ---------- Original Method ----------
-        //fileName = file.getPath();
-        //if (mode != OPEN_READ && mode != (OPEN_READ | OPEN_DELETE)) {
-            //throw new IllegalArgumentException();
-        //}
-        //if ((mode & OPEN_DELETE) != 0) {
-            //fileToDeleteOnClose = file; 
-        //} else {
-            //fileToDeleteOnClose = null;
-        //}
-        //mRaf = new RandomAccessFile(fileName, "r");
-        //readCentralDir();
-        //guard.open("close");
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -84,10 +84,11 @@ public class ZipFile implements ZipConstants {
     public  ZipFile(String name) throws IOException {
         this(new File(name), OPEN_READ);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.934 -0400", hash_original_method = "A7163D550D593B0FEEAE03A5B45C66A6", hash_generated_method = "38ACD8B2C26D452DA657D172547FF32A")
     @Override
     protected void finalize() throws IOException {
@@ -95,34 +96,35 @@ public class ZipFile implements ZipConstants {
         {
             {
                 guard.warnIfOpen();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             try 
             {
                 super.finalize();
-            } //End block
+            } 
             catch (Throwable t)
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError(t);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (guard != null) {
-                //guard.warnIfOpen();
-            //}
-        //} finally {
-            //try {
-                //super.finalize();
-            //} catch (Throwable t) {
-                //throw new AssertionError(t);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+        
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.935 -0400", hash_original_method = "B3BE4D570FA623471DB2047631197E6D", hash_generated_method = "35FFB071102C9BA88D036FC71857A2FA")
     public void close() throws IOException {
         guard.close();
@@ -131,43 +133,44 @@ public class ZipFile implements ZipConstants {
             {
                 mRaf = null;
                 raf.close();
-            } //End block
+            } 
             {
                 fileToDeleteOnClose.delete();
                 fileToDeleteOnClose = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //guard.close();
-        //RandomAccessFile raf = mRaf;
-        //if (raf != null) { 
-            //synchronized(raf) {
-                //mRaf = null;
-                //raf.close();
-            //}
-            //if (fileToDeleteOnClose != null) {
-                //fileToDeleteOnClose.delete();
-                //fileToDeleteOnClose = null;
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+                
+                
+            
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.935 -0400", hash_original_method = "65CE3BC8A7A8514DBA7266C40E446CDF", hash_generated_method = "5B1AAF2E45FF011BE251609E7D79CEC6")
     private void checkNotClosed() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Zip file closed");
-        } //End block
-        // ---------- Original Method ----------
-        //if (mRaf == null) {
-            //throw new IllegalStateException("Zip file closed");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.935 -0400", hash_original_method = "C7A9A4F6B932FEDB0ECC5AECA323DFC1", hash_generated_method = "C5ED2F3EB0605E332CFB5AFDA862557B")
     public Enumeration<? extends ZipEntry> entries() {
-        Enumeration<? extends ZipEntry> varB4EAC82CA7396A68D541C85D26508E83_935829947 = null; //Variable for return #1
+        Enumeration<? extends ZipEntry> varB4EAC82CA7396A68D541C85D26508E83_935829947 = null; 
         checkNotClosed();
         final Iterator<ZipEntry> iterator = mEntries.values().iterator();
         varB4EAC82CA7396A68D541C85D26508E83_935829947 = new Enumeration<ZipEntry>() {
@@ -180,61 +183,63 @@ public class ZipFile implements ZipConstants {
                 return iterator.next();
             }
         };
-        varB4EAC82CA7396A68D541C85D26508E83_935829947.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_935829947.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_935829947;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //final Iterator<ZipEntry> iterator = mEntries.values().iterator();
-        //return new Enumeration<ZipEntry>() {
-            //public boolean hasMoreElements() {
-                //checkNotClosed();
-                //return iterator.hasNext();
-            //}
-            //public ZipEntry nextElement() {
-                //checkNotClosed();
-                //return iterator.next();
-            //}
-        //};
+        
+        
+        
+        
+            
+                
+                
+            
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.937 -0400", hash_original_method = "D382D29E599C910662BB0F89A97F218A", hash_generated_method = "A8D28027CB20C798F08100DD5FF9A004")
     public ZipEntry getEntry(String entryName) {
-        ZipEntry varB4EAC82CA7396A68D541C85D26508E83_1413406079 = null; //Variable for return #1
+        ZipEntry varB4EAC82CA7396A68D541C85D26508E83_1413406079 = null; 
         checkNotClosed();
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         ZipEntry ze = mEntries.get(entryName);
         {
             ze = mEntries.get(entryName + "/");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1413406079 = ze;
         addTaint(entryName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1413406079.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1413406079.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1413406079;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //if (entryName == null) {
-            //throw new NullPointerException();
-        //}
-        //ZipEntry ze = mEntries.get(entryName);
-        //if (ze == null) {
-            //ze = mEntries.get(entryName + "/");
-        //}
-        //return ze;
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.938 -0400", hash_original_method = "B69421FB9318C1ABE9ECEEB1DD311069", hash_generated_method = "3875F83A8607AD7A7309F94F470AAAEA")
     public InputStream getInputStream(ZipEntry entry) throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1913275702 = null; //Variable for return #1
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_312876864 = null; //Variable for return #2
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_507799196 = null; //Variable for return #3
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1913275702 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_312876864 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_507799196 = null; 
         entry = getEntry(entry.getName());
         {
             varB4EAC82CA7396A68D541C85D26508E83_1913275702 = null;
-        } //End block
+        } 
         RandomAccessFile raf = mRaf;
         {
             RAFStream rafstrm = new RAFStream(raf, entry.mLocalHeaderRelOffset + 28);
@@ -246,74 +251,76 @@ public class ZipFile implements ZipConstants {
             {
                 int bufSize = Math.max(1024, (int)Math.min(entry.getSize(), 65535L));
                 varB4EAC82CA7396A68D541C85D26508E83_312876864 = new ZipInflaterInputStream(rafstrm, new Inflater(true), bufSize, entry);
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_507799196 = rafstrm;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(entry.getTaint());
-        InputStream varA7E53CE21691AB073D9660D615818899_2140625100; //Final return value
+        InputStream varA7E53CE21691AB073D9660D615818899_2140625100; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2140625100 = varB4EAC82CA7396A68D541C85D26508E83_1913275702;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2140625100 = varB4EAC82CA7396A68D541C85D26508E83_312876864;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2140625100 = varB4EAC82CA7396A68D541C85D26508E83_507799196;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2140625100.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2140625100.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2140625100;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.939 -0400", hash_original_method = "16A0E81CED7078E4D61B7DA2166E122D", hash_generated_method = "977D4119A557101632619A2AE81B2F8A")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_409166960 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_409166960 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_409166960 = fileName;
-        varB4EAC82CA7396A68D541C85D26508E83_409166960.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_409166960.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_409166960;
-        // ---------- Original Method ----------
-        //return fileName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.939 -0400", hash_original_method = "E69009FC6775A108297426EEDE85C8D2", hash_generated_method = "B4EE071BB0F24B2B2D2ADF13CA4C1ACE")
     public int size() {
         checkNotClosed();
         int var85B557D4654E88618B8057DD0AFCFFDA_1689972203 = (mEntries.size());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1530671189 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1530671189;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //return mEntries.size();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.940 -0400", hash_original_method = "C4C5F4E81B860F4CAE8325550F47061B", hash_generated_method = "0B1013ED87C6AD063AC96FDDF2B4E8CB")
     private void readCentralDir() throws IOException {
         long scanOffset = mRaf.length() - ENDHDR;
         {
             if (DroidSafeAndroidRuntime.control) throw new ZipException("too short to be Zip");
-        } //End block
+        } 
         long stopOffset = scanOffset - 65536;
         {
             stopOffset = 0;
-        } //End block
+        } 
         final int ENDHEADERMAGIC = 0x06054b50;
         {
             mRaf.seek(scanOffset);
             {
                 boolean var4ED9CF7268BDF0C528752A1A4EA7FC4F_543305929 = (Integer.reverseBytes(mRaf.readInt()) == ENDHEADERMAGIC);
-            } //End collapsed parenthetic
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new ZipException("EOCD not found; not a Zip archive?");
-            } //End block
-        } //End block
+            } 
+        } 
         byte[] eocd = new byte[18];
         mRaf.readFully(eocd);
         BufferIterator it = HeapBufferIterator.iterator(eocd, 0, eocd.length, ByteOrder.LITTLE_ENDIAN);
@@ -325,7 +332,7 @@ public class ZipFile implements ZipConstants {
         int centralDirOffset = it.readInt();
         {
             if (DroidSafeAndroidRuntime.control) throw new ZipException("spanned archives not supported");
-        } //End block
+        } 
         RAFStream rafs = new RAFStream(mRaf, centralDirOffset);
         BufferedInputStream bin = new BufferedInputStream(rafs, 4096);
         byte[] hdrBuf = new byte[CENHDR];
@@ -334,10 +341,10 @@ public class ZipFile implements ZipConstants {
             {
                 ZipEntry newEntry = new ZipEntry(hdrBuf, bin);
                 mEntries.put(newEntry.getName(), newEntry);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -357,10 +364,10 @@ public class ZipFile implements ZipConstants {
             mSharedRaf = raf;
             mOffset = pos;
             mLength = raf.length();
-            // ---------- Original Method ----------
-            //mSharedRaf = raf;
-            //mOffset = pos;
-            //mLength = raf.length();
+            
+            
+            
+            
         }
 
         
@@ -369,8 +376,8 @@ public class ZipFile implements ZipConstants {
         public int available() throws IOException {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1971278117 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1971278117;
-            // ---------- Original Method ----------
-            //return (mOffset < mLength ? 1 : 0);
+            
+            
         }
 
         
@@ -380,8 +387,8 @@ public class ZipFile implements ZipConstants {
             int var27157AD7296922C5499EDCD13E8A2ED8_843033894 = (Streams.readSingleByte(this));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2047702883 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2047702883;
-            // ---------- Original Method ----------
-            //return Streams.readSingleByte(this);
+            
+            
         }
 
         
@@ -392,31 +399,31 @@ public class ZipFile implements ZipConstants {
                 mSharedRaf.seek(mOffset);
                 {
                     len = (int) (mLength - mOffset);
-                } //End block
+                } 
                 int count = mSharedRaf.read(b, off, len);
                 {
                     mOffset += count;
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(b[0]);
             addTaint(off);
             addTaint(len);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1042384482 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1042384482;
-            // ---------- Original Method ----------
-            //synchronized (mSharedRaf) {
-                //mSharedRaf.seek(mOffset);
-                //if (len > mLength - mOffset) {
-                    //len = (int) (mLength - mOffset);
-                //}
-                //int count = mSharedRaf.read(b, off, len);
-                //if (count > 0) {
-                    //mOffset += count;
-                    //return count;
-                //} else {
-                    //return -1;
-                //}
-            //}
+            
+            
+                
+                
+                    
+                
+                
+                
+                    
+                    
+                
+                    
+                
+            
         }
 
         
@@ -425,16 +432,16 @@ public class ZipFile implements ZipConstants {
         public long skip(long byteCount) throws IOException {
             {
                 byteCount = mLength - mOffset;
-            } //End block
+            } 
             mOffset += byteCount;
             long var0F5264038205EDFB1AC05FBB0E8C5E94_2081772822 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_2081772822;
-            // ---------- Original Method ----------
-            //if (byteCount > mLength - mOffset) {
-                //byteCount = mLength - mOffset;
-            //}
-            //mOffset += byteCount;
-            //return byteCount;
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -457,8 +464,8 @@ public class ZipFile implements ZipConstants {
             addTaint(is.getTaint());
             addTaint(inf.getTaint());
             addTaint(bsize);
-            // ---------- Original Method ----------
-            //this.entry = entry;
+            
+            
         }
 
         
@@ -468,18 +475,18 @@ public class ZipFile implements ZipConstants {
             int i = super.read(buffer, off, nbytes);
             {
                 bytesRead += i;
-            } //End block
+            } 
             addTaint(buffer[0]);
             addTaint(off);
             addTaint(nbytes);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_973277762 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_973277762;
-            // ---------- Original Method ----------
-            //int i = super.read(buffer, off, nbytes);
-            //if (i != -1) {
-                //bytesRead += i;
-            //}
-            //return i;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -489,14 +496,14 @@ public class ZipFile implements ZipConstants {
             {
                 boolean varB468C57145781459693BA514A4AED697_1530691482 = (super.available() == 0);
                 Object var4F59783E13CE810BB8A4B691B940F808_1053414159 = ((int) (entry.getSize() - bytesRead));
-            } //End flattened ternary
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_560713117 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_560713117;
-            // ---------- Original Method ----------
-            //if (closed) {
-                //return 0;
-            //}
-            //return super.available() == 0 ? 0 : (int) (entry.getSize() - bytesRead);
+            
+            
+                
+            
+            
         }
 
         

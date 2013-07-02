@@ -1,11 +1,11 @@
 package android.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -61,7 +61,7 @@ public class ServiceState implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.870 -0400", hash_original_method = "36476E21C74B3827A7B01BE12F666937", hash_generated_method = "A7807DEFF5E02F2472BD589AB7484EC5")
     public  ServiceState() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -69,8 +69,8 @@ public class ServiceState implements Parcelable {
     public  ServiceState(ServiceState s) {
         copyFrom(s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //copyFrom(s);
+        
+        
     }
 
     
@@ -91,25 +91,26 @@ public class ServiceState implements Parcelable {
         mCdmaEriIconIndex = in.readInt();
         mCdmaEriIconMode = in.readInt();
         mIsEmergencyOnly = in.readInt() != 0;
-        // ---------- Original Method ----------
-        //mState = in.readInt();
-        //mRoaming = in.readInt() != 0;
-        //mOperatorAlphaLong = in.readString();
-        //mOperatorAlphaShort = in.readString();
-        //mOperatorNumeric = in.readString();
-        //mIsManualNetworkSelection = in.readInt() != 0;
-        //mRadioTechnology = in.readInt();
-        //mCssIndicator = (in.readInt() != 0);
-        //mNetworkId = in.readInt();
-        //mSystemId = in.readInt();
-        //mCdmaRoamingIndicator = in.readInt();
-        //mCdmaDefaultRoamingIndicator = in.readInt();
-        //mCdmaEriIconIndex = in.readInt();
-        //mCdmaEriIconMode = in.readInt();
-        //mIsEmergencyOnly = in.readInt() != 0;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ServiceState newFromBundle(Bundle m) {
         ServiceState ret;
         ret = new ServiceState();
@@ -135,25 +136,26 @@ public class ServiceState implements Parcelable {
         mCdmaEriIconIndex = s.mCdmaEriIconIndex;
         mCdmaEriIconMode = s.mCdmaEriIconMode;
         mIsEmergencyOnly = s.mIsEmergencyOnly;
-        // ---------- Original Method ----------
-        //mState = s.mState;
-        //mRoaming = s.mRoaming;
-        //mOperatorAlphaLong = s.mOperatorAlphaLong;
-        //mOperatorAlphaShort = s.mOperatorAlphaShort;
-        //mOperatorNumeric = s.mOperatorNumeric;
-        //mIsManualNetworkSelection = s.mIsManualNetworkSelection;
-        //mRadioTechnology = s.mRadioTechnology;
-        //mCssIndicator = s.mCssIndicator;
-        //mNetworkId = s.mNetworkId;
-        //mSystemId = s.mSystemId;
-        //mCdmaRoamingIndicator = s.mCdmaRoamingIndicator;
-        //mCdmaDefaultRoamingIndicator = s.mCdmaDefaultRoamingIndicator;
-        //mCdmaEriIconIndex = s.mCdmaEriIconIndex;
-        //mCdmaEriIconMode = s.mCdmaEriIconMode;
-        //mIsEmergencyOnly = s.mIsEmergencyOnly;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.873 -0400", hash_original_method = "0314D3363C47B5602718344C30C07D2D", hash_generated_method = "75AEE3BF995E14F6D2662E1545CCADEF")
     public void writeToParcel(Parcel out, int flags) {
         out.writeInt(mState);
@@ -173,22 +175,22 @@ public class ServiceState implements Parcelable {
         out.writeInt(mIsEmergencyOnly ? 1 : 0);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeInt(mState);
-        //out.writeInt(mRoaming ? 1 : 0);
-        //out.writeString(mOperatorAlphaLong);
-        //out.writeString(mOperatorAlphaShort);
-        //out.writeString(mOperatorNumeric);
-        //out.writeInt(mIsManualNetworkSelection ? 1 : 0);
-        //out.writeInt(mRadioTechnology);
-        //out.writeInt(mCssIndicator ? 1 : 0);
-        //out.writeInt(mNetworkId);
-        //out.writeInt(mSystemId);
-        //out.writeInt(mCdmaRoamingIndicator);
-        //out.writeInt(mCdmaDefaultRoamingIndicator);
-        //out.writeInt(mCdmaEriIconIndex);
-        //out.writeInt(mCdmaEriIconMode);
-        //out.writeInt(mIsEmergencyOnly ? 1 : 0);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -196,8 +198,8 @@ public class ServiceState implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_703476978 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_703476978;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -205,8 +207,8 @@ public class ServiceState implements Parcelable {
     public int getState() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730089644 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730089644;
-        // ---------- Original Method ----------
-        //return mState;
+        
+        
     }
 
     
@@ -214,8 +216,8 @@ public class ServiceState implements Parcelable {
     public boolean getRoaming() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1096050759 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1096050759;
-        // ---------- Original Method ----------
-        //return mRoaming;
+        
+        
     }
 
     
@@ -223,8 +225,8 @@ public class ServiceState implements Parcelable {
     public boolean isEmergencyOnly() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1152298155 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1152298155;
-        // ---------- Original Method ----------
-        //return mIsEmergencyOnly;
+        
+        
     }
 
     
@@ -232,8 +234,8 @@ public class ServiceState implements Parcelable {
     public int getCdmaRoamingIndicator() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1062669830 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1062669830;
-        // ---------- Original Method ----------
-        //return this.mCdmaRoamingIndicator;
+        
+        
     }
 
     
@@ -241,8 +243,8 @@ public class ServiceState implements Parcelable {
     public int getCdmaDefaultRoamingIndicator() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_462441983 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_462441983;
-        // ---------- Original Method ----------
-        //return this.mCdmaDefaultRoamingIndicator;
+        
+        
     }
 
     
@@ -250,8 +252,8 @@ public class ServiceState implements Parcelable {
     public int getCdmaEriIconIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1054355844 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1054355844;
-        // ---------- Original Method ----------
-        //return this.mCdmaEriIconIndex;
+        
+        
     }
 
     
@@ -259,41 +261,41 @@ public class ServiceState implements Parcelable {
     public int getCdmaEriIconMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1358170952 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1358170952;
-        // ---------- Original Method ----------
-        //return this.mCdmaEriIconMode;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.876 -0400", hash_original_method = "550CF77EB1CEA79355B2985E6B5A4349", hash_generated_method = "891C3B562E45621C1C33FF01C1F57358")
     public String getOperatorAlphaLong() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2132909399 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2132909399 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2132909399 = mOperatorAlphaLong;
-        varB4EAC82CA7396A68D541C85D26508E83_2132909399.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2132909399.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2132909399;
-        // ---------- Original Method ----------
-        //return mOperatorAlphaLong;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.876 -0400", hash_original_method = "86619391C7B398160E7B9E543643DBB4", hash_generated_method = "D769B0D3E2D247AD49FAA00F21283113")
     public String getOperatorAlphaShort() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1618499084 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1618499084 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1618499084 = mOperatorAlphaShort;
-        varB4EAC82CA7396A68D541C85D26508E83_1618499084.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1618499084.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1618499084;
-        // ---------- Original Method ----------
-        //return mOperatorAlphaShort;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.877 -0400", hash_original_method = "608E7A84F718D26C8A9F8E19A83C0931", hash_generated_method = "A1E5E6A03B6C80226A568B5A80AC4BAF")
     public String getOperatorNumeric() {
-        String varB4EAC82CA7396A68D541C85D26508E83_858484385 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_858484385 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_858484385 = mOperatorNumeric;
-        varB4EAC82CA7396A68D541C85D26508E83_858484385.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_858484385.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_858484385;
-        // ---------- Original Method ----------
-        //return mOperatorNumeric;
+        
+        
     }
 
     
@@ -301,11 +303,12 @@ public class ServiceState implements Parcelable {
     public boolean getIsManualSelection() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_819978359 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_819978359;
-        // ---------- Original Method ----------
-        //return mIsManualNetworkSelection;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.878 -0400", hash_original_method = "4FC9291B326FDF96318315E16F56658C", hash_generated_method = "0750EACB3D3411E6BC6FDD5E43576459")
     @Override
     public int hashCode() {
@@ -317,22 +320,23 @@ public class ServiceState implements Parcelable {
                 + ((null == mOperatorNumeric) ? 0 : mOperatorNumeric.hashCode())
                 + mCdmaRoamingIndicator
                 + mCdmaDefaultRoamingIndicator
-                + (mIsEmergencyOnly ? 1 : 0))); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                + (mIsEmergencyOnly ? 1 : 0))); 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_242188235 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_242188235;
-        // ---------- Original Method ----------
-        //return ((mState * 0x1234)
-                //+ (mRoaming ? 1 : 0)
-                //+ (mIsManualNetworkSelection ? 1 : 0)
-                //+ ((null == mOperatorAlphaLong) ? 0 : mOperatorAlphaLong.hashCode())
-                //+ ((null == mOperatorAlphaShort) ? 0 : mOperatorAlphaShort.hashCode())
-                //+ ((null == mOperatorNumeric) ? 0 : mOperatorNumeric.hashCode())
-                //+ mCdmaRoamingIndicator
-                //+ mCdmaDefaultRoamingIndicator
-                //+ (mIsEmergencyOnly ? 1 : 0));
+        
+        
+                
+                
+                
+                
+                
+                
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.122 -0400", hash_original_method = "5AB9F404C745D33B000995514C8414B5", hash_generated_method = "82DA6C98BE9D67BBE2A6345BC4011482")
     @Override
     public boolean equals(Object o) {
@@ -340,7 +344,7 @@ public class ServiceState implements Parcelable {
         try 
         {
             s = (ServiceState) o;
-        } //End block
+        } 
         catch (ClassCastException ex)
         { }
         boolean varEE276B99C43E5154F1BACA397993F41B_1796668691 = ((mState == s.mState
@@ -360,11 +364,12 @@ public class ServiceState implements Parcelable {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1505970036 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1505970036;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String radioTechnologyToString(int rt) {
         String rtString;
         switch(rt) {
@@ -425,10 +430,11 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.879 -0400", hash_original_method = "8261C946B0851B9612BB2224B1BDDEEE", hash_generated_method = "3EC1169DB286121325F64C225AFF9844")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_941690060 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_941690060 = null; 
         String radioTechnology = radioTechnologyToString(mRadioTechnology);
         varB4EAC82CA7396A68D541C85D26508E83_941690060 = (mState + " " + (mRoaming ? "roaming" : "home")
                 + " " + mOperatorAlphaLong
@@ -442,22 +448,22 @@ public class ServiceState implements Parcelable {
                 + " RoamInd=" + mCdmaRoamingIndicator
                 + " DefRoamInd=" + mCdmaDefaultRoamingIndicator
                 + " EmergOnly=" + mIsEmergencyOnly);
-        varB4EAC82CA7396A68D541C85D26508E83_941690060.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_941690060.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_941690060;
-        // ---------- Original Method ----------
-        //String radioTechnology = radioTechnologyToString(mRadioTechnology);
-        //return (mState + " " + (mRoaming ? "roaming" : "home")
-                //+ " " + mOperatorAlphaLong
-                //+ " " + mOperatorAlphaShort
-                //+ " " + mOperatorNumeric
-                //+ " " + (mIsManualNetworkSelection ? "(manual)" : "")
-                //+ " " + radioTechnology
-                //+ " " + (mCssIndicator ? "CSS supported" : "CSS not supported")
-                //+ " " + mNetworkId
-                //+ " " + mSystemId
-                //+ " RoamInd=" + mCdmaRoamingIndicator
-                //+ " DefRoamInd=" + mCdmaDefaultRoamingIndicator
-                //+ " EmergOnly=" + mIsEmergencyOnly);
+        
+        
+        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
     }
 
     
@@ -478,94 +484,96 @@ public class ServiceState implements Parcelable {
         mCdmaEriIconIndex = -1;
         mCdmaEriIconMode = -1;
         mIsEmergencyOnly = false;
-        // ---------- Original Method ----------
-        //mState = state;
-        //mRoaming = false;
-        //mOperatorAlphaLong = null;
-        //mOperatorAlphaShort = null;
-        //mOperatorNumeric = null;
-        //mIsManualNetworkSelection = false;
-        //mRadioTechnology = 0;
-        //mCssIndicator = false;
-        //mNetworkId = -1;
-        //mSystemId = -1;
-        //mCdmaRoamingIndicator = -1;
-        //mCdmaDefaultRoamingIndicator = -1;
-        //mCdmaEriIconIndex = -1;
-        //mCdmaEriIconMode = -1;
-        //mIsEmergencyOnly = false;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.880 -0400", hash_original_method = "638BC09D981AD6B06693C47D3D967201", hash_generated_method = "23CD066BEE1328B3FAF766CB48BCAE3C")
     public void setStateOutOfService() {
         setNullState(STATE_OUT_OF_SERVICE);
-        // ---------- Original Method ----------
-        //setNullState(STATE_OUT_OF_SERVICE);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.880 -0400", hash_original_method = "D9FAF4EA3D294E58217DAB74F17C0351", hash_generated_method = "6564B9436096F301E0C8CC97A1ABB541")
     public void setStateOff() {
         setNullState(STATE_POWER_OFF);
-        // ---------- Original Method ----------
-        //setNullState(STATE_POWER_OFF);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.881 -0400", hash_original_method = "B2257FFBD3B79161D70D00C92F5BABD5", hash_generated_method = "0A89A4D469AFE50CFD17E18CFACCA324")
     public void setState(int state) {
         mState = state;
-        // ---------- Original Method ----------
-        //mState = state;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.881 -0400", hash_original_method = "78DC27B1781D6001A1042BE9E193D14B", hash_generated_method = "7F27798B57A4E4A81DBFB88618240DFD")
     public void setRoaming(boolean roaming) {
         mRoaming = roaming;
-        // ---------- Original Method ----------
-        //mRoaming = roaming;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.881 -0400", hash_original_method = "B2BA3AF9B92E65EA8B062AC201A0C0F0", hash_generated_method = "F2B108E944B0EDB88B7C5DF0C8DEE5B7")
     public void setEmergencyOnly(boolean emergencyOnly) {
         mIsEmergencyOnly = emergencyOnly;
-        // ---------- Original Method ----------
-        //mIsEmergencyOnly = emergencyOnly;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.881 -0400", hash_original_method = "C5CC061ACF011623DDFD13C5F3F99CC3", hash_generated_method = "95FFD314FD0A0685BE1321CF3791396E")
     public void setCdmaRoamingIndicator(int roaming) {
         this.mCdmaRoamingIndicator = roaming;
-        // ---------- Original Method ----------
-        //this.mCdmaRoamingIndicator = roaming;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.882 -0400", hash_original_method = "723EC448C9CB51F7110A335E414C4680", hash_generated_method = "A2BB49F52906E681CF96691F2251B042")
     public void setCdmaDefaultRoamingIndicator(int roaming) {
         this.mCdmaDefaultRoamingIndicator = roaming;
-        // ---------- Original Method ----------
-        //this.mCdmaDefaultRoamingIndicator = roaming;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.882 -0400", hash_original_method = "270DF85E703DBBACE36CF343B8162562", hash_generated_method = "B0AACDB8E38F97633346B3B4835E8917")
     public void setCdmaEriIconIndex(int index) {
         this.mCdmaEriIconIndex = index;
-        // ---------- Original Method ----------
-        //this.mCdmaEriIconIndex = index;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.883 -0400", hash_original_method = "B583E3E822650F1B5214B53503BF1241", hash_generated_method = "0316BEBDF43E5B19472BA6E6AE128413")
     public void setCdmaEriIconMode(int mode) {
         this.mCdmaEriIconMode = mode;
-        // ---------- Original Method ----------
-        //this.mCdmaEriIconMode = mode;
+        
+        
     }
 
     
@@ -574,34 +582,36 @@ public class ServiceState implements Parcelable {
         mOperatorAlphaLong = longName;
         mOperatorAlphaShort = shortName;
         mOperatorNumeric = numeric;
-        // ---------- Original Method ----------
-        //mOperatorAlphaLong = longName;
-        //mOperatorAlphaShort = shortName;
-        //mOperatorNumeric = numeric;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.883 -0400", hash_original_method = "2932DCDD0502DE94804E9827964069D2", hash_generated_method = "E493DDC360F50CDDBDCC3FE4BB704447")
     public void setOperatorAlphaLong(String longName) {
         mOperatorAlphaLong = longName;
-        // ---------- Original Method ----------
-        //mOperatorAlphaLong = longName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.884 -0400", hash_original_method = "C2D18251B53286CEC68F55BEC648A3A6", hash_generated_method = "68A7FEA8A4D1FF9B681DEA0096AE5AFA")
     public void setIsManualSelection(boolean isManual) {
         mIsManualNetworkSelection = isManual;
-        // ---------- Original Method ----------
-        //mIsManualNetworkSelection = isManual;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean equalsHandlesNulls(Object a, Object b) {
         return (a == null) ? (b == null) : a.equals (b);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.885 -0400", hash_original_method = "45F7665F0B17EC4A3962C47A86921C1E", hash_generated_method = "F2DDA3BAB5864A01A9612F2D4D632F3B")
     private void setFromNotifierBundle(Bundle m) {
         mState = m.getInt("state");
@@ -617,23 +627,24 @@ public class ServiceState implements Parcelable {
         mCdmaRoamingIndicator = m.getInt("cdmaRoamingIndicator");
         mCdmaDefaultRoamingIndicator = m.getInt("cdmaDefaultRoamingIndicator");
         mIsEmergencyOnly = m.getBoolean("emergencyOnly");
-        // ---------- Original Method ----------
-        //mState = m.getInt("state");
-        //mRoaming = m.getBoolean("roaming");
-        //mOperatorAlphaLong = m.getString("operator-alpha-long");
-        //mOperatorAlphaShort = m.getString("operator-alpha-short");
-        //mOperatorNumeric = m.getString("operator-numeric");
-        //mIsManualNetworkSelection = m.getBoolean("manual");
-        //mRadioTechnology = m.getInt("radioTechnology");
-        //mCssIndicator = m.getBoolean("cssIndicator");
-        //mNetworkId = m.getInt("networkId");
-        //mSystemId = m.getInt("systemId");
-        //mCdmaRoamingIndicator = m.getInt("cdmaRoamingIndicator");
-        //mCdmaDefaultRoamingIndicator = m.getInt("cdmaDefaultRoamingIndicator");
-        //mIsEmergencyOnly = m.getBoolean("emergencyOnly");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.886 -0400", hash_original_method = "9BCA23D068820B6DD53DFB45DB9457FF", hash_generated_method = "59F36DB27833911CB7C21ED22BCE829F")
     public void fillInNotifierBundle(Bundle m) {
         m.putInt("state", mState);
@@ -650,36 +661,36 @@ public class ServiceState implements Parcelable {
         m.putInt("cdmaDefaultRoamingIndicator", mCdmaDefaultRoamingIndicator);
         m.putBoolean("emergencyOnly", Boolean.valueOf(mIsEmergencyOnly));
         addTaint(m.getTaint());
-        // ---------- Original Method ----------
-        //m.putInt("state", mState);
-        //m.putBoolean("roaming", Boolean.valueOf(mRoaming));
-        //m.putString("operator-alpha-long", mOperatorAlphaLong);
-        //m.putString("operator-alpha-short", mOperatorAlphaShort);
-        //m.putString("operator-numeric", mOperatorNumeric);
-        //m.putBoolean("manual", Boolean.valueOf(mIsManualNetworkSelection));
-        //m.putInt("radioTechnology", mRadioTechnology);
-        //m.putBoolean("cssIndicator", mCssIndicator);
-        //m.putInt("networkId", mNetworkId);
-        //m.putInt("systemId", mSystemId);
-        //m.putInt("cdmaRoamingIndicator", mCdmaRoamingIndicator);
-        //m.putInt("cdmaDefaultRoamingIndicator", mCdmaDefaultRoamingIndicator);
-        //m.putBoolean("emergencyOnly", Boolean.valueOf(mIsEmergencyOnly));
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.886 -0400", hash_original_method = "C012C4DB079EEB33708722C3BF4101EF", hash_generated_method = "1F99DEEAD6AC0C2BC8FBC98190DF50ED")
     public void setRadioTechnology(int state) {
         this.mRadioTechnology = state;
-        // ---------- Original Method ----------
-        //this.mRadioTechnology = state;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.886 -0400", hash_original_method = "C1350CF85A5CAF49D330DF5D8BE50D5D", hash_generated_method = "62E7E29AB3EB805EBAD797E9DF58B733")
     public void setCssIndicator(int css) {
         this.mCssIndicator = (css != 0);
-        // ---------- Original Method ----------
-        //this.mCssIndicator = (css != 0);
+        
+        
     }
 
     
@@ -687,9 +698,9 @@ public class ServiceState implements Parcelable {
     public void setSystemAndNetworkId(int systemId, int networkId) {
         this.mSystemId = systemId;
         this.mNetworkId = networkId;
-        // ---------- Original Method ----------
-        //this.mSystemId = systemId;
-        //this.mNetworkId = networkId;
+        
+        
+        
     }
 
     
@@ -697,8 +708,8 @@ public class ServiceState implements Parcelable {
     public int getRadioTechnology() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_614532155 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_614532155;
-        // ---------- Original Method ----------
-        //return this.mRadioTechnology;
+        
+        
     }
 
     
@@ -706,8 +717,8 @@ public class ServiceState implements Parcelable {
     public int getCssIndicator() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1844742896 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1844742896;
-        // ---------- Original Method ----------
-        //return this.mCssIndicator ? 1 : 0;
+        
+        
     }
 
     
@@ -715,8 +726,8 @@ public class ServiceState implements Parcelable {
     public int getNetworkId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261343632 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261343632;
-        // ---------- Original Method ----------
-        //return this.mNetworkId;
+        
+        
     }
 
     
@@ -724,8 +735,8 @@ public class ServiceState implements Parcelable {
     public int getSystemId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1976193806 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1976193806;
-        // ---------- Original Method ----------
-        //return this.mSystemId;
+        
+        
     }
 
     
@@ -822,12 +833,12 @@ public class ServiceState implements Parcelable {
             return new ServiceState[size];
         }
     };
-    // orphaned legacy method
+    
     public ServiceState createFromParcel(Parcel in) {
             return new ServiceState(in);
         }
     
-    // orphaned legacy method
+    
     public ServiceState[] newArray(int size) {
             return new ServiceState[size];
         }

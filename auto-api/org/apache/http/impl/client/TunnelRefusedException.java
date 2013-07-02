@@ -1,11 +1,11 @@
 package org.apache.http.impl.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.HttpException;
 import org.apache.http.HttpResponse;
@@ -20,19 +20,19 @@ public class TunnelRefusedException extends HttpException {
         super(message);
         this.response = response;
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //this.response = response;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.322 -0400", hash_original_method = "3C5BCF9DD6B811984123D054EF330499", hash_generated_method = "E513FEADBC73829BA57D39622419E271")
     public HttpResponse getResponse() {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1792164881 = null; //Variable for return #1
+        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1792164881 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1792164881 = this.response;
-        varB4EAC82CA7396A68D541C85D26508E83_1792164881.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1792164881.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1792164881;
-        // ---------- Original Method ----------
-        //return this.response;
+        
+        
     }
 
     

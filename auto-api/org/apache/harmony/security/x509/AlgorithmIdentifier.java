@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Arrays;
 import org.apache.harmony.security.asn1.ASN1Any;
@@ -34,7 +34,7 @@ public final class AlgorithmIdentifier {
     public  AlgorithmIdentifier(String algorithm) {
         this(algorithm, null, null);
         addTaint(algorithm.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,7 +43,7 @@ public final class AlgorithmIdentifier {
         this(algorithm, parameters, null);
         addTaint(algorithm.getTaint());
         addTaint(parameters[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -52,44 +52,45 @@ public final class AlgorithmIdentifier {
         this.algorithm = algorithm;
         this.parameters = parameters;
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.algorithm = algorithm;
-        //this.parameters = parameters;
-        //this.encoding = encoding;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.599 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "67D741ADA5D36D228128D8ED8F46F9EE")
     public String getAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1657842179 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1657842179 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1657842179 = algorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_1657842179.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1657842179.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1657842179;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.600 -0400", hash_original_method = "EFA02412B3D98573C0B83612EF561CD2", hash_generated_method = "8AB4879D2C8504A689E7745B326C487D")
     public String getAlgorithmName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1788722465 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1788722465 = null; 
         {
             algorithmName = AlgNameMapper.map2AlgName(algorithm);
             {
                 algorithmName = algorithm;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1788722465 = algorithmName;
-        varB4EAC82CA7396A68D541C85D26508E83_1788722465.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1788722465.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1788722465;
-        // ---------- Original Method ----------
-        //if (algorithmName == null) {
-            //algorithmName = AlgNameMapper.map2AlgName(algorithm);
-            //if (algorithmName == null) {
-                //algorithmName = algorithm;
-            //}
-        //}
-        //return algorithmName;
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -97,26 +98,28 @@ public final class AlgorithmIdentifier {
     public byte[] getParameters() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_92678527 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_92678527;
-        // ---------- Original Method ----------
-        //return parameters;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.600 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "CF602CC01FBD8417966F262F7F68139E")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1539624775 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1539624775;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.600 -0400", hash_original_method = "CF4BFB68A01F84A2E157841F7FC296C6", hash_generated_method = "6EDA311AD735830BB976D8D766B5A5F7")
     @Override
     public boolean equals(Object ai) {
@@ -124,54 +127,56 @@ public final class AlgorithmIdentifier {
         boolean varFF1C3FA168E06CAC42B1D1728A51F2BD_2027035784 = ((algorithm.equals(algid.algorithm))
             && ((parameters == null)
                     ? algid.parameters == null
-                    : Arrays.equals(parameters, algid.parameters))); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                    : Arrays.equals(parameters, algid.parameters))); 
         addTaint(ai.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_531526472 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_531526472;
-        // ---------- Original Method ----------
-        //if (!(ai instanceof AlgorithmIdentifier)) {
-            //return false;
-        //}
-        //AlgorithmIdentifier algid = (AlgorithmIdentifier) ai;
-        //return (algorithm.equals(algid.algorithm))
-            //&& ((parameters == null)
-                    //? algid.parameters == null
-                    //: Arrays.equals(parameters, algid.parameters));
+        
+        
+            
+        
+        
+        
+            
+                    
+                    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.601 -0400", hash_original_method = "E65C54FCC20A7D2FAC5D39EC6758FF2C", hash_generated_method = "B8A5315B3BAF532C75DE3769DF0C904F")
     @Override
     public int hashCode() {
-        int var00D3F6CF5AE875535D0485512E3CCCA7_874774574 = (algorithm.hashCode() * 37 + (parameters != null ? Arrays.hashCode(parameters) : 0)); //DSFIXME:  CODE0008: Nested ternary operator in expression
+        int var00D3F6CF5AE875535D0485512E3CCCA7_874774574 = (algorithm.hashCode() * 37 + (parameters != null ? Arrays.hashCode(parameters) : 0)); 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1568661527 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1568661527;
-        // ---------- Original Method ----------
-        //return algorithm.hashCode() * 37 + (parameters != null ? Arrays.hashCode(parameters) : 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.601 -0400", hash_original_method = "BB3CE84D97D9ED23CA58D78F5AD0AB33", hash_generated_method = "3CAD9530771051823FFB5F3E887743DE")
     public void dumpValue(StringBuilder sb) {
         sb.append(getAlgorithmName());
         {
             sb.append(", no params, ");
-        } //End block
+        } 
         {
             sb.append(", params unparsed, ");
-        } //End block
+        } 
         sb.append("OID = ");
         sb.append(getAlgorithm());
         addTaint(sb.getTaint());
-        // ---------- Original Method ----------
-        //sb.append(getAlgorithmName());
-        //if (parameters == null) {
-            //sb.append(", no params, ");
-        //} else {
-            //sb.append(", params unparsed, ");
-        //}
-        //sb.append("OID = ");
-        //sb.append(getAlgorithm());
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -197,23 +202,6 @@ public final class AlgorithmIdentifier {
             values[1] = aID.getParameters();
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-
-            AlgorithmIdentifier aID = (AlgorithmIdentifier) object;
-
-            values[0] = ObjectIdentifier.toIntArray(aID.getAlgorithm());
-            values[1] = aID.getParameters();
-        }
     
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) {
-            Object[] values = (Object[]) in.content;
-            return new AlgorithmIdentifier(ObjectIdentifier
-                    .toString((int[]) values[0]), (byte[]) values[1]);
-        }
-    
-    */
 }
 

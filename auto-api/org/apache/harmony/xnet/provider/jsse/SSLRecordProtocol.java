@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import javax.net.ssl.SSLProtocolException;
@@ -56,61 +56,64 @@ public class SSLRecordProtocol {
         this.alertProtocol.setRecordProtocol(this);
         this.in = in;
         this.appData = appData;
-        // ---------- Original Method ----------
-        //this.handshakeProtocol = handshakeProtocol;
-        //this.handshakeProtocol.setRecordProtocol(this);
-        //this.alertProtocol = alertProtocol;
-        //this.alertProtocol.setRecordProtocol(this);
-        //this.in = in;
-        //this.appData = appData;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.875 -0400", hash_original_method = "19D70A4F8DD7A34083C18DBEE5C3AF9E", hash_generated_method = "B12ED7FC75CC5D30025E2395CDA42B81")
     protected SSLSessionImpl getSession() {
-        SSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_725349344 = null; //Variable for return #1
+        SSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_725349344 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_725349344 = session;
-        varB4EAC82CA7396A68D541C85D26508E83_725349344.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_725349344.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_725349344;
-        // ---------- Original Method ----------
-        //return session;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.876 -0400", hash_original_method = "68629F3A6781EB04D799B3D741A0C393", hash_generated_method = "9565154BA8A14A45C15D1E5E86EC8200")
     protected int getMinRecordSize() {
         {
             Object var505350AD6118074BE5ECC8503E31BF74_1991806118 = (5 + activeReadState.getMinFragmentSize());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1299592508 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1299592508;
-        // ---------- Original Method ----------
-        //return (activeReadState == null)
-            //? 6 
-            //: 5 + activeReadState.getMinFragmentSize();
+        
+        
+            
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.876 -0400", hash_original_method = "96A9B5266C66AFA94D8E0CC291B5F152", hash_generated_method = "160F5962C9C134706A9A985A66BC02B7")
     protected int getRecordSize(int data_size) {
         {
             int res = 5 + activeWriteState.getFragmentSize(data_size);
-        } //End block
+        } 
         addTaint(data_size);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1634872921 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1634872921;
-        // ---------- Original Method ----------
-        //if (activeWriteState == null) {
-            //return 5+data_size; 
-        //} else {
-            //int res = 5 + activeWriteState.getFragmentSize(data_size);
-            //return (res > MAX_CIPHERED_DATA_LENGTH)
-                //? MAX_CIPHERED_DATA_LENGTH 
-                //: res;
-        //}
+        
+        
+            
+        
+            
+            
+                
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.876 -0400", hash_original_method = "CC13DBD4825E3C45756D9062D61E5D58", hash_generated_method = "83C241457D5BFCBB59A2401387627885")
     protected int getDataSize(int record_size) {
         record_size -= 5;
@@ -118,18 +121,19 @@ public class SSLRecordProtocol {
         addTaint(record_size);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1326900766 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1326900766;
-        // ---------- Original Method ----------
-        //record_size -= 5;
-        //if (record_size > MAX_CIPHERED_DATA_LENGTH) {
-            //return MAX_DATA_LENGTH;
-        //}
-        //if (activeReadState == null) {
-            //return record_size;
-        //}
-        //return activeReadState.getContentSize(record_size);
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.877 -0400", hash_original_method = "5F7DF598938706B482CEEA679EFAD91B", hash_generated_method = "B193A5329B76E596E30CCC0FF05D39C5")
     protected byte[] wrap(byte content_type, DataStream dataStream) {
         byte[] fragment = dataStream.getData(MAX_DATA_LENGTH);
@@ -138,12 +142,13 @@ public class SSLRecordProtocol {
         addTaint(dataStream.getTaint());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_167451255 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_167451255;
-        // ---------- Original Method ----------
-        //byte[] fragment = dataStream.getData(MAX_DATA_LENGTH);
-        //return wrap(content_type, fragment, 0, fragment.length);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.877 -0400", hash_original_method = "55B5DE87A88F61771BAABFB22C57BC6F", hash_generated_method = "E999EFFBDAE0BBE095F8662B36EA458D")
     protected byte[] wrap(byte content_type,
                        byte[] fragment, int offset, int len) {
@@ -151,14 +156,14 @@ public class SSLRecordProtocol {
             logger.println("SSLRecordProtocol.wrap: TLSPlaintext.fragment["
                     +len+"]:");
             logger.print(fragment, offset, len);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new AlertException(
                 AlertProtocol.INTERNAL_ERROR,
                 new SSLProtocolException(
                     "The provided chunk of data is too big: " + len
                     + " > MAX_DATA_LENGTH == "+MAX_DATA_LENGTH));
-        } //End block
+        } 
         byte[] ciphered_fragment = fragment;
         {
             ciphered_fragment =
@@ -168,13 +173,13 @@ public class SSLRecordProtocol {
                     AlertProtocol.INTERNAL_ERROR,
                     new SSLProtocolException(
                         "The ciphered data increased more than on 1024 bytes"));
-            } //End block
+            } 
             {
                 logger.println("SSLRecordProtocol.wrap: TLSCiphertext.fragment["
                         +ciphered_fragment.length+"]:");
                 logger.print(ciphered_fragment);
-            } //End block
-        } //End block
+            } 
+        } 
         byte[] var77EE147AD9DB1173D485204C6379E00F_1192286643 = (packetize(content_type, version, ciphered_fragment));
         addTaint(content_type);
         addTaint(fragment[0]);
@@ -182,11 +187,12 @@ public class SSLRecordProtocol {
         addTaint(len);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_705857689 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_705857689;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.878 -0400", hash_original_method = "5CCC3748379530494C61DB0E5CDE03DA", hash_generated_method = "B2A94CBBD5DE2CB2DE1A18A1695BBC46")
     private byte[] packetize(byte type, byte[] version, byte[] fragment) {
         byte[] buff = new byte[5+fragment.length];
@@ -194,11 +200,11 @@ public class SSLRecordProtocol {
         {
             buff[1] = version[0];
             buff[2] = version[1];
-        } //End block
+        } 
         {
             buff[1] = 3;
             buff[2] = 1;
-        } //End block
+        } 
         buff[3] = (byte) ((0x00FF00 & fragment.length) >> 8);
         buff[4] = (byte) (0x0000FF & fragment.length);
         System.arraycopy(fragment, 0, buff, 5, fragment.length);
@@ -207,56 +213,58 @@ public class SSLRecordProtocol {
         addTaint(fragment[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1094646625 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1094646625;
-        // ---------- Original Method ----------
-        //byte[] buff = new byte[5+fragment.length];
-        //buff[0] = type;
-        //if (version != null) {
-            //buff[1] = version[0];
-            //buff[2] = version[1];
-        //} else {
-            //buff[1] = 3;
-            //buff[2] = 1;
-        //}
-        //buff[3] = (byte) ((0x00FF00 & fragment.length) >> 8);
-        //buff[4] = (byte) (0x0000FF & fragment.length);
-        //System.arraycopy(fragment, 0, buff, 5, fragment.length);
-        //return buff;
+        
+        
+        
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.879 -0400", hash_original_method = "B29F5DC9A2BE75FFC944D86037256C31", hash_generated_method = "9F2179F09C840CFC2559E4979A9E0B18")
     private void setSession(SSLSessionImpl session) {
         {
             {
                 logger.println("SSLRecordProtocol.setSession: Set pending session");
                 logger.println("  cipher name: " + session.getCipherSuite());
-            } //End block
+            } 
             this.session = session;
             pendingConnectionState = ((version == null) || (version[1] == 1))
                 ? (ConnectionState) new ConnectionStateTLS(getSession())
                 : (ConnectionState) new ConnectionStateSSLv3(getSession());
             sessionWasChanged = true;
-        } //End block
+        } 
         {
             sessionWasChanged = false;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!sessionWasChanged) {
-            //if (logger != null) {
-                //logger.println("SSLRecordProtocol.setSession: Set pending session");
-                //logger.println("  cipher name: " + session.getCipherSuite());
-            //}
-            //this.session = session;
-            //pendingConnectionState = ((version == null) || (version[1] == 1))
-                //? (ConnectionState) new ConnectionStateTLS(getSession())
-                //: (ConnectionState) new ConnectionStateSSLv3(getSession());
-            //sessionWasChanged = true;
-        //} else {
-            //sessionWasChanged = false;
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+            
+            
+                
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.880 -0400", hash_original_method = "D4A06B5E6BD10843CEED9C48A36D68A3", hash_generated_method = "1DD7FD2DA974B6B2124EF00433041EA3")
     protected byte[] getChangeCipherSpecMesage(SSLSessionImpl session) {
         byte[] change_cipher_spec_message;
@@ -265,38 +273,39 @@ public class SSLRecordProtocol {
                     ContentType.CHANGE_CIPHER_SPEC, version[0],
                         version[1], 0, 1, 1
                 };
-        } //End block
+        } 
         {
             change_cipher_spec_message =
                 packetize(ContentType.CHANGE_CIPHER_SPEC, version,
                         activeWriteState.encrypt(ContentType.CHANGE_CIPHER_SPEC,
                             change_cipher_spec_byte, 0, 1));
-        } //End block
+        } 
         setSession(session);
         activeWriteState = pendingConnectionState;
         {
             logger.println("SSLRecordProtocol.getChangeCipherSpecMesage");
             logger.println("activeWriteState = pendingConnectionState");
             logger.print(change_cipher_spec_message);
-        } //End block
+        } 
         addTaint(session.getTaint());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1927352834 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1927352834;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.881 -0400", hash_original_method = "B39FD616EE504B12CB9E5F46F7A6A390", hash_generated_method = "30331C56024D3B983CD51BF7896A7E6B")
     protected int unwrap() throws IOException {
         {
             logger.println("SSLRecordProtocol.unwrap: BEGIN [");
-        } //End block
+        } 
         int type = in.readUint8();
         {
             {
                 logger.println("Non v3.1 message type:" + type);
-            } //End block
+            } 
             {
                 int length = (type & 0x7f) << 8 | in.read();
                 byte[] fragment = in.read(length);
@@ -304,15 +313,15 @@ public class SSLRecordProtocol {
                 {
                     logger.println(
                             "SSLRecordProtocol:unwrap ] END, SSLv2 type");
-                } //End block
-            } //End block
+                } 
+            } 
             if (DroidSafeAndroidRuntime.control) throw new AlertException(AlertProtocol.UNEXPECTED_MESSAGE,
                     new SSLProtocolException(
                         "Unexpected message type has been received: "+type));
-        } //End block
+        } 
         {
             logger.println("Got the message of type: " + type);
-        } //End block
+        } 
         {
             {
                 boolean var9CF95A232BA82F79CB810CB1B32E147E_612577846 = ((in.read() != version[0])
@@ -322,107 +331,109 @@ public class SSLRecordProtocol {
                         new SSLProtocolException(
                             "Unexpected message type has been received: " +
                             type));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             in.skip(2);
-        } //End block
+        } 
         int length = in.readUint16();
         {
             logger.println("TLSCiphertext.fragment["+length+"]: ...");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new AlertException(AlertProtocol.RECORD_OVERFLOW,
                     new SSLProtocolException(
                         "Received message is too big."));
-        } //End block
+        } 
         byte[] fragment = in.read(length);
         {
             logger.print(fragment);
-        } //End block
+        } 
         {
             fragment = activeReadState.decrypt((byte) type, fragment);
             {
                 logger.println("TLSPlaintext.fragment:");
                 logger.print(fragment);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new AlertException(AlertProtocol.DECOMPRESSION_FAILURE,
                     new SSLProtocolException(
                         "Decompressed plain data is too big."));
-        } //End block
-        //Begin case ContentType.CHANGE_CIPHER_SPEC 
+        } 
+        
         handshakeProtocol.receiveChangeCipherSpec();
-        //End case ContentType.CHANGE_CIPHER_SPEC 
-        //Begin case ContentType.CHANGE_CIPHER_SPEC 
+        
+        
         setSession(handshakeProtocol.getSession());
-        //End case ContentType.CHANGE_CIPHER_SPEC 
-        //Begin case ContentType.CHANGE_CIPHER_SPEC 
+        
+        
         {
             logger.println("activeReadState = pendingConnectionState");
-        } //End block
-        //End case ContentType.CHANGE_CIPHER_SPEC 
-        //Begin case ContentType.CHANGE_CIPHER_SPEC 
+        } 
+        
+        
         activeReadState = pendingConnectionState;
-        //End case ContentType.CHANGE_CIPHER_SPEC 
-        //Begin case ContentType.ALERT 
+        
+        
         alert(fragment[0], fragment[1]);
-        //End case ContentType.ALERT 
-        //Begin case ContentType.HANDSHAKE 
+        
+        
         handshakeProtocol.unwrap(fragment);
-        //End case ContentType.HANDSHAKE 
-        //Begin case ContentType.APPLICATION_DATA 
+        
+        
         {
             logger.println(
                             "TLSCiphertext.unwrap: APP DATA["+length+"]:");
             logger.println(new String(fragment));
-        } //End block
-        //End case ContentType.APPLICATION_DATA 
-        //Begin case ContentType.APPLICATION_DATA 
+        } 
+        
+        
         appData.append(fragment);
-        //End case ContentType.APPLICATION_DATA 
-        //Begin case default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new AlertException(AlertProtocol.UNEXPECTED_MESSAGE,
                         new SSLProtocolException(
                             "Unexpected message type has been received: " +
                             type));
-        //End case default 
+        
         {
             logger.println("SSLRecordProtocol:unwrap ] END, type: " + type);
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1121057752 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1121057752;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.881 -0400", hash_original_method = "23FCA30C77438F833B36A8A9B6CBC6CC", hash_generated_method = "E553C8CAAE28E710497AA3EFD3CE4744")
     protected void alert(byte level, byte description) {
         {
             logger.println("SSLRecordProtocol.allert: "+level+" "+description);
-        } //End block
+        } 
         alertProtocol.alert(level, description);
         addTaint(level);
         addTaint(description);
-        // ---------- Original Method ----------
-        //if (logger != null) {
-            //logger.println("SSLRecordProtocol.allert: "+level+" "+description);
-        //}
-        //alertProtocol.alert(level, description);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.882 -0400", hash_original_method = "DE69782F4CD99CC5C5DEED4E3A6B9F4E", hash_generated_method = "8F61383BC58CF2000382CEE86F416B66")
     protected void setVersion(byte[] ver) {
         this.version = ver;
-        // ---------- Original Method ----------
-        //this.version = ver;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.882 -0400", hash_original_method = "C2A186E08A6901259D50AE521996EDF2", hash_generated_method = "8EEA8EEB165B1F35525BBB964D9E2AAC")
     protected void shutdown() {
         session = null;
@@ -433,35 +444,35 @@ public class SSLRecordProtocol {
         appData = null;
         {
             pendingConnectionState.shutdown();
-        } //End block
+        } 
         pendingConnectionState = null;
         {
             activeReadState.shutdown();
-        } //End block
+        } 
         activeReadState = null;
         {
             activeReadState.shutdown();
-        } //End block
+        } 
         activeWriteState = null;
-        // ---------- Original Method ----------
-        //session = null;
-        //version = null;
-        //in = null;
-        //handshakeProtocol = null;
-        //alertProtocol = null;
-        //appData = null;
-        //if (pendingConnectionState != null) {
-            //pendingConnectionState.shutdown();
-        //}
-        //pendingConnectionState = null;
-        //if (activeReadState != null) {
-            //activeReadState.shutdown();
-        //}
-        //activeReadState = null;
-        //if (activeReadState != null) {
-            //activeReadState.shutdown();
-        //}
-        //activeWriteState = null;
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     

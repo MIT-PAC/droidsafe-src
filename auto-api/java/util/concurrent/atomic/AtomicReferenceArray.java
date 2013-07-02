@@ -1,11 +1,11 @@
 package java.util.concurrent.atomic;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import sun.misc.Unsafe;
 import java.util.*;
@@ -18,19 +18,20 @@ public class AtomicReferenceArray<E> implements java.io.Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.573 -0400", hash_original_method = "3F3B508809AB9C6785D44F9F17208801", hash_generated_method = "1C5ABD6808E6EB4561F6DB27D784F1DA")
     public  AtomicReferenceArray(int length) {
         array = new Object[length];
-        // ---------- Original Method ----------
-        //array = new Object[length];
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.574 -0400", hash_original_method = "4BF361D91BCD73243E073F36EA6D286A", hash_generated_method = "95C7FC50C6E008639AD150106990A546")
     public  AtomicReferenceArray(E[] array) {
         this.array = array.clone();
-        // ---------- Original Method ----------
-        //this.array = array.clone();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.575 -0400", hash_original_method = "362098406DB6EC351C04D37BE5D9828B", hash_generated_method = "C79F525E5C26CFDB98C9E76A7311DFBC")
     private long checkedByteOffset(int i) {
         if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("index " + i);
@@ -38,10 +39,10 @@ public class AtomicReferenceArray<E> implements java.io.Serializable {
         addTaint(i);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1561016315 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1561016315;
-        // ---------- Original Method ----------
-        //if (i < 0 || i >= array.length)
-            //throw new IndexOutOfBoundsException("index " + i);
-        //return byteOffset(i);
+        
+        
+            
+        
     }
 
     
@@ -54,32 +55,33 @@ public class AtomicReferenceArray<E> implements java.io.Serializable {
     public final int length() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_669042348 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_669042348;
-        // ---------- Original Method ----------
-        //return array.length;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.578 -0400", hash_original_method = "1A08AAB0F92ABC3159CC4A0EF89B33D7", hash_generated_method = "606D98F60AD6BBA4C0E5B8AC917FEAB3")
     public final E get(int i) {
-        E varB4EAC82CA7396A68D541C85D26508E83_786029630 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_786029630 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_786029630 = getRaw(checkedByteOffset(i));
         addTaint(i);
-        varB4EAC82CA7396A68D541C85D26508E83_786029630.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_786029630.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_786029630;
-        // ---------- Original Method ----------
-        //return getRaw(checkedByteOffset(i));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.579 -0400", hash_original_method = "5C38AE7D133AF705563A03AB70E3DC4F", hash_generated_method = "47ADB363AD392050269B57FEC1929B24")
     private E getRaw(long offset) {
-        E varB4EAC82CA7396A68D541C85D26508E83_172421416 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_172421416 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_172421416 = (E) unsafe.getObjectVolatile(array, offset);
         addTaint(offset);
-        varB4EAC82CA7396A68D541C85D26508E83_172421416.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_172421416.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_172421416;
-        // ---------- Original Method ----------
-        //return (E) unsafe.getObjectVolatile(array, offset);
+        
+        
     }
 
     
@@ -88,8 +90,8 @@ public class AtomicReferenceArray<E> implements java.io.Serializable {
         unsafe.putObjectVolatile(array, checkedByteOffset(i), newValue);
         addTaint(i);
         addTaint(newValue.getTaint());
-        // ---------- Original Method ----------
-        //unsafe.putObjectVolatile(array, checkedByteOffset(i), newValue);
+        
+        
     }
 
     
@@ -98,33 +100,33 @@ public class AtomicReferenceArray<E> implements java.io.Serializable {
         unsafe.putOrderedObject(array, checkedByteOffset(i), newValue);
         addTaint(i);
         addTaint(newValue.getTaint());
-        // ---------- Original Method ----------
-        //unsafe.putOrderedObject(array, checkedByteOffset(i), newValue);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.580 -0400", hash_original_method = "3C2E0EC2E1E9CCF934534C20DF12F899", hash_generated_method = "D80348E7B04A89087EA57117759A8093")
     public final E getAndSet(int i, E newValue) {
-        E varB4EAC82CA7396A68D541C85D26508E83_1915753632 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_1915753632 = null; 
         long offset = checkedByteOffset(i);
         {
             E current = (E) getRaw(offset);
             {
                 boolean var05742DE3E307187CDC22816DD73B63B6_2587411 = (compareAndSetRaw(offset, current, newValue));
                 varB4EAC82CA7396A68D541C85D26508E83_1915753632 = current;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(i);
         addTaint(newValue.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1915753632.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1915753632.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1915753632;
-        // ---------- Original Method ----------
-        //long offset = checkedByteOffset(i);
-        //while (true) {
-            //E current = (E) getRaw(offset);
-            //if (compareAndSetRaw(offset, current, newValue))
-                //return current;
-        //}
+        
+        
+        
+            
+            
+                
+        
     }
 
     
@@ -136,11 +138,12 @@ public class AtomicReferenceArray<E> implements java.io.Serializable {
         addTaint(update.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1452763368 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1452763368;
-        // ---------- Original Method ----------
-        //return compareAndSetRaw(checkedByteOffset(i), expect, update);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.581 -0400", hash_original_method = "C142592EE20B948DF28BEA68CBD1D6F8", hash_generated_method = "270551AE919F222FB78F6E2CED4DDFBB")
     private boolean compareAndSetRaw(long offset, E expect, E update) {
         boolean var9853DFFBC57BE539224975C6B2501680_1961243790 = (unsafe.compareAndSwapObject(array, offset, expect, update));
@@ -149,8 +152,8 @@ public class AtomicReferenceArray<E> implements java.io.Serializable {
         addTaint(update.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_557175851 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_557175851;
-        // ---------- Original Method ----------
-        //return unsafe.compareAndSwapObject(array, offset, expect, update);
+        
+        
     }
 
     
@@ -162,15 +165,16 @@ public class AtomicReferenceArray<E> implements java.io.Serializable {
         addTaint(update.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1794720031 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1794720031;
-        // ---------- Original Method ----------
-        //return compareAndSet(i, expect, update);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.582 -0400", hash_original_method = "3492963B9799FA768D7650AC10A0F976", hash_generated_method = "EB73E4A5D67BAFB15CBA531D3BC1EF87")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1295528242 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_833787928 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1295528242 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_833787928 = null; 
         int iMax = array.length - 1;
         varB4EAC82CA7396A68D541C85D26508E83_1295528242 = "[]";
         StringBuilder b = new StringBuilder();
@@ -181,31 +185,31 @@ public class AtomicReferenceArray<E> implements java.io.Serializable {
                 b.append(getRaw(byteOffset(i)));
                 varB4EAC82CA7396A68D541C85D26508E83_833787928 = b.append(']').toString();
                 b.append(',').append(' ');
-            } //End block
-        } //End collapsed parenthetic
-        String varA7E53CE21691AB073D9660D615818899_1264546311; //Final return value
+            } 
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1264546311; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1264546311 = varB4EAC82CA7396A68D541C85D26508E83_1295528242;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1264546311 = varB4EAC82CA7396A68D541C85D26508E83_833787928;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1264546311.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1264546311.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1264546311;
-        // ---------- Original Method ----------
-        //int iMax = array.length - 1;
-        //if (iMax == -1)
-            //return "[]";
-        //StringBuilder b = new StringBuilder();
-        //b.append('[');
-        //for (int i = 0; ; i++) {
-            //b.append(getRaw(byteOffset(i)));
-            //if (i == iMax)
-                //return b.append(']').toString();
-            //b.append(',').append(' ');
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     

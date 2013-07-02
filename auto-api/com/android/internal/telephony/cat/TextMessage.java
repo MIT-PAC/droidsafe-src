@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Bitmap;
 import android.os.Parcel;
@@ -39,7 +39,7 @@ public class TextMessage implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.826 -0400", hash_original_method = "9D0AB1B2CC05C1155E2594BD69FE3EC1", hash_generated_method = "83409D8B2575D0083E782346223705C9")
       TextMessage() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -53,15 +53,15 @@ public class TextMessage implements Parcelable {
         responseNeeded = in.readInt() == 1 ? true : false;
         userClear = in.readInt() == 1 ? true : false;
         duration = in.readParcelable(null);
-        // ---------- Original Method ----------
-        //title = in.readString();
-        //text = in.readString();
-        //icon = in.readParcelable(null);
-        //iconSelfExplanatory = in.readInt() == 1 ? true : false;
-        //isHighPriority = in.readInt() == 1 ? true : false;
-        //responseNeeded = in.readInt() == 1 ? true : false;
-        //userClear = in.readInt() == 1 ? true : false;
-        //duration = in.readParcelable(null);
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -69,8 +69,8 @@ public class TextMessage implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1886803648 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1886803648;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -86,15 +86,15 @@ public class TextMessage implements Parcelable {
         dest.writeParcelable(duration, 0);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(title);
-        //dest.writeString(text);
-        //dest.writeParcelable(icon, 0);
-        //dest.writeInt(iconSelfExplanatory ? 1 : 0);
-        //dest.writeInt(isHighPriority ? 1 : 0);
-        //dest.writeInt(responseNeeded ? 1 : 0);
-        //dest.writeInt(userClear ? 1 : 0);
-        //dest.writeParcelable(duration, 0);
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -109,12 +109,12 @@ public class TextMessage implements Parcelable {
             return new TextMessage[size];
         }
     };
-    // orphaned legacy method
+    
     public TextMessage createFromParcel(Parcel in) {
             return new TextMessage(in);
         }
     
-    // orphaned legacy method
+    
     public TextMessage[] newArray(int size) {
             return new TextMessage[size];
         }

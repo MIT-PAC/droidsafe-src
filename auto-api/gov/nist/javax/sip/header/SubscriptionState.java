@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.SubscriptionStateHeader;
@@ -30,24 +30,25 @@ public class SubscriptionState extends ParametersHeader implements SubscriptionS
         super(SIPHeaderNames.SUBSCRIPTION_STATE);
         expires = -1;
         retryAfter = -1;
-        // ---------- Original Method ----------
-        //expires = -1;
-        //retryAfter = -1;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.705 -0400", hash_original_method = "7314EC394325F26B79C36E58D3FDBB1D", hash_generated_method = "04B3D36CD6A186F86D0A373699E43FBD")
     public void setExpires(int expires) throws InvalidArgumentException {
         if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException(
                 "JAIN-SIP "
                     + "Exception, SubscriptionState, setExpires(), the expires parameter is  < 0");
         this.expires = expires;
-        // ---------- Original Method ----------
-        //if (expires < 0)
-            //throw new InvalidArgumentException(
-                //"JAIN-SIP "
-                    //+ "Exception, SubscriptionState, setExpires(), the expires parameter is  < 0");
-        //this.expires = expires;
+        
+        
+            
+                
+                    
+        
     }
 
     
@@ -55,23 +56,24 @@ public class SubscriptionState extends ParametersHeader implements SubscriptionS
     public int getExpires() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144172388 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144172388;
-        // ---------- Original Method ----------
-        //return expires;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.707 -0400", hash_original_method = "50CA09FDB5676EA1DD99646C83E4C5FC", hash_generated_method = "70C5E2BA0EE72EEFA5CC537E9C6E84D2")
     public void setRetryAfter(int retryAfter) throws InvalidArgumentException {
         if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException(
                 "JAIN-SIP "
                     + "Exception, SubscriptionState, setRetryAfter(), the retryAfter parameter is <=0");
         this.retryAfter = retryAfter;
-        // ---------- Original Method ----------
-        //if (retryAfter <= 0)
-            //throw new InvalidArgumentException(
-                //"JAIN-SIP "
-                    //+ "Exception, SubscriptionState, setRetryAfter(), the retryAfter parameter is <=0");
-        //this.retryAfter = retryAfter;
+        
+        
+            
+                
+                    
+        
     }
 
     
@@ -79,77 +81,81 @@ public class SubscriptionState extends ParametersHeader implements SubscriptionS
     public int getRetryAfter() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_303232093 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_303232093;
-        // ---------- Original Method ----------
-        //return retryAfter;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.709 -0400", hash_original_method = "307A7F7469164C10B67FE98D6B3BB448", hash_generated_method = "5ED0723E18DED3C654FF8957B8879635")
     public String getReasonCode() {
-        String varB4EAC82CA7396A68D541C85D26508E83_699739181 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_699739181 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_699739181 = reasonCode;
-        varB4EAC82CA7396A68D541C85D26508E83_699739181.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_699739181.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_699739181;
-        // ---------- Original Method ----------
-        //return reasonCode;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.710 -0400", hash_original_method = "F3FEA6AFF4A02AB2AF0C89DB66C639D9", hash_generated_method = "682E434ED757BE8D60AE77B64ECAE917")
     public void setReasonCode(String reasonCode) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                 "JAIN-SIP "
                     + "Exception, SubscriptionState, setReasonCode(), the reasonCode parameter is null");
         this.reasonCode = reasonCode;
-        // ---------- Original Method ----------
-        //if (reasonCode == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP "
-                    //+ "Exception, SubscriptionState, setReasonCode(), the reasonCode parameter is null");
-        //this.reasonCode = reasonCode;
+        
+        
+            
+                
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.712 -0400", hash_original_method = "B507B0FDA436CA05802CD34EFC971C76", hash_generated_method = "F099959244FBB3C8F2E6D4F617248A18")
     public String getState() {
-        String varB4EAC82CA7396A68D541C85D26508E83_466910985 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_466910985 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_466910985 = state;
-        varB4EAC82CA7396A68D541C85D26508E83_466910985.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_466910985.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_466910985;
-        // ---------- Original Method ----------
-        //return state;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.712 -0400", hash_original_method = "26B14BBE6685B3C70475DE487DDF5C68", hash_generated_method = "30FA1BA2B9F0FC04EB89C93708198A66")
     public void setState(String state) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                 "JAIN-SIP "
                     + "Exception, SubscriptionState, setState(), the state parameter is null");
         this.state = state;
-        // ---------- Original Method ----------
-        //if (state == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP "
-                    //+ "Exception, SubscriptionState, setState(), the state parameter is null");
-        //this.state = state;
+        
+        
+            
+                
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.714 -0400", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "1E1222956A147348F1FD55CBCC7BAB20")
     public String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_616721145 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_616721145 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_616721145 = encodeBody(new StringBuffer()).toString();
-        varB4EAC82CA7396A68D541C85D26508E83_616721145.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_616721145.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_616721145;
-        // ---------- Original Method ----------
-        //return encodeBody(new StringBuffer()).toString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.715 -0400", hash_original_method = "612E9F6C82A7EBFF3AE59409AADEC810", hash_generated_method = "59E763F82E7446D8A9AF515F6EDF8514")
     protected StringBuffer encodeBody(StringBuffer buffer) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_976307700 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_976307700 = null; 
         buffer.append(state);
         buffer.append(";reason=").append(reasonCode);
         buffer.append(";expires=").append(expires);
@@ -159,26 +165,26 @@ public class SubscriptionState extends ParametersHeader implements SubscriptionS
             {
                 buffer.append(SEMICOLON);
                 parameters.encode(buffer);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_976307700 = buffer;
         addTaint(buffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_976307700.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_976307700.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_976307700;
-        // ---------- Original Method ----------
-        //if (state != null)
-            //buffer.append(state);
-        //if (reasonCode != null)
-            //buffer.append(";reason=").append(reasonCode);
-        //if (expires != -1)
-            //buffer.append(";expires=").append(expires);
-        //if (retryAfter != -1)
-            //buffer.append(";retry-after=").append(retryAfter);
-        //if (!parameters.isEmpty()) {
-            //buffer.append(SEMICOLON);
-            //parameters.encode(buffer);
-        //}
-        //return buffer;
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+            
+        
+        
     }
 
     

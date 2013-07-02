@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -29,17 +29,17 @@ public class ClientKeyExchange extends Message {
         length = this.exchange_keys.length;
         {
             length += 2;
-        } //End block
+        } 
         this.isTLS = isTLS;
         isRSA = true;
-        // ---------- Original Method ----------
-        //this.exchange_keys = encrypted_pre_master_secret;
-        //length = this.exchange_keys.length;
-        //if (isTLS) {
-            //length += 2;
-        //}
-        //this.isTLS = isTLS;
-        //isRSA = true;
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -49,23 +49,23 @@ public class ClientKeyExchange extends Message {
         {
             exchange_keys = new byte[bb.length-1];
             System.arraycopy(bb, 1, exchange_keys, 0, exchange_keys.length);
-        } //End block
+        } 
         {
             exchange_keys = bb;
-        } //End block
+        } 
         length = exchange_keys.length +2;
         isRSA = false;
         addTaint(dh_Yc.getTaint());
-        // ---------- Original Method ----------
-        //byte[] bb = dh_Yc.toByteArray();
-        //if (bb[0] == 0) {
-            //exchange_keys = new byte[bb.length-1];
-            //System.arraycopy(bb, 1, exchange_keys, 0, exchange_keys.length);
-        //} else {
-            //exchange_keys = bb;
-        //}
-        //length = exchange_keys.length +2;
-        //isRSA = false;
+        
+        
+        
+            
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -74,10 +74,10 @@ public class ClientKeyExchange extends Message {
         exchange_keys = EmptyArray.BYTE;
         length = 0;
         isRSA = false;
-        // ---------- Original Method ----------
-        //exchange_keys = EmptyArray.BYTE;
-        //length = 0;
-        //isRSA = false;
+        
+        
+        
+        
     }
 
     
@@ -88,66 +88,67 @@ public class ClientKeyExchange extends Message {
         {
             this.length = 0;
             exchange_keys = EmptyArray.BYTE;
-        } //End block
+        } 
         {
             int size;
             {
                 size = length;
                 this.length = size;
-            } //End block
+            } 
             {
                 size = in.readUint16();
                 this.length = 2 + size;
-            } //End block
+            } 
             exchange_keys = new byte[size];
             Streams.readFully(in, exchange_keys);
             {
                 fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect ClientKeyExchange");
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(in.getTaint());
         addTaint(length);
-        // ---------- Original Method ----------
-        //this.isTLS = isTLS;
-        //this.isRSA = isRSA;
-        //if (length == 0) {
-            //this.length = 0;
-            //exchange_keys = EmptyArray.BYTE;
-        //} else {
-            //int size;
-            //if (isRSA && !isTLS) {
-                //size = length;
-                //this.length = size;
-            //} else { 
-                //size = in.readUint16();
-                //this.length = 2 + size;
-            //}
-            //exchange_keys = new byte[size];
-            //Streams.readFully(in, exchange_keys);
-            //if (this.length != length) {
-                //fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect ClientKeyExchange");
-            //}
-        //}
+        
+        
+        
+        
+            
+            
+        
+            
+            
+                
+                
+            
+                
+                
+            
+            
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.896 -0400", hash_original_method = "355F47F7AE472993E3A2C68F4F83F8CB", hash_generated_method = "77DABBAEB8B6409F28AB795ED8859639")
     @Override
     public void send(HandshakeIODataStream out) {
         {
             {
                 out.writeUint16(exchange_keys.length);
-            } //End block
+            } 
             out.write(exchange_keys);
-        } //End block
+        } 
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //if (exchange_keys.length != 0) {
-            //if (!isRSA || isTLS) {
-                //out.writeUint16(exchange_keys.length);
-            //}
-            //out.write(exchange_keys);
-        //}
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -156,8 +157,8 @@ public class ClientKeyExchange extends Message {
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1894344000 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1894344000;
-        // ---------- Original Method ----------
-        //return Handshake.CLIENT_KEY_EXCHANGE;
+        
+        
     }
 
     
@@ -165,8 +166,8 @@ public class ClientKeyExchange extends Message {
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1988076504 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1988076504;
-        // ---------- Original Method ----------
-        //return (exchange_keys.length == 0);
+        
+        
     }
 
     

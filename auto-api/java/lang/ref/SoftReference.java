@@ -1,11 +1,11 @@
 package java.lang.ref;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class SoftReference<T> extends Reference<T> {
@@ -14,7 +14,7 @@ public class SoftReference<T> extends Reference<T> {
     public  SoftReference(T r) {
         super(r, null);
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,7 +23,7 @@ public class SoftReference<T> extends Reference<T> {
         super(r, q);
         addTaint(r.getTaint());
         addTaint(q.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

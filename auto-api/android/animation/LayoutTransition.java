@@ -1,11 +1,11 @@
 package android.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.view.View;
 import android.view.ViewGroup;
@@ -124,13 +124,13 @@ public class LayoutTransition {
             defaultFadeOut.setDuration(DEFAULT_DURATION);
             defaultFadeOut.setStartDelay(mDisappearingDelay);
             defaultFadeOut.setInterpolator(mDisappearingInterpolator);
-        } //End block
+        } 
         mChangingAppearingAnim = defaultChangeIn;
         mChangingDisappearingAnim = defaultChangeOut;
         mAppearingAnim = defaultFadeIn;
         mDisappearingAnim = defaultFadeOut;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -140,44 +140,44 @@ public class LayoutTransition {
         mChangingDisappearingDuration = duration;
         mAppearingDuration = duration;
         mDisappearingDuration = duration;
-        // ---------- Original Method ----------
-        //mChangingAppearingDuration = duration;
-        //mChangingDisappearingDuration = duration;
-        //mAppearingDuration = duration;
-        //mDisappearingDuration = duration;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.259 -0400", hash_original_method = "939FBD8B4C5590BFCAA9E14AEC15ED50", hash_generated_method = "BCE6354327899DE2956D4D80C0566F68")
     public void setStartDelay(int transitionType, long delay) {
-        //Begin case CHANGE_APPEARING 
+        
         mChangingAppearingDelay = delay;
-        //End case CHANGE_APPEARING 
-        //Begin case CHANGE_DISAPPEARING 
+        
+        
         mChangingDisappearingDelay = delay;
-        //End case CHANGE_DISAPPEARING 
-        //Begin case APPEARING 
+        
+        
         mAppearingDelay = delay;
-        //End case APPEARING 
-        //Begin case DISAPPEARING 
+        
+        
         mDisappearingDelay = delay;
-        //End case DISAPPEARING 
+        
         addTaint(transitionType);
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //mChangingAppearingDelay = delay;
-                //break;
-            //case CHANGE_DISAPPEARING:
-                //mChangingDisappearingDelay = delay;
-                //break;
-            //case APPEARING:
-                //mAppearingDelay = delay;
-                //break;
-            //case DISAPPEARING:
-                //mDisappearingDelay = delay;
-                //break;
-        //}
+        
+        
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+        
     }
 
     
@@ -186,51 +186,51 @@ public class LayoutTransition {
         addTaint(transitionType);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_39973305 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_39973305;
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //return mChangingAppearingDuration;
-            //case CHANGE_DISAPPEARING:
-                //return mChangingDisappearingDuration;
-            //case APPEARING:
-                //return mAppearingDuration;
-            //case DISAPPEARING:
-                //return mDisappearingDuration;
-        //}
-        //return 0;
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.263 -0400", hash_original_method = "2851CBF3AA331995F771441E9F6D0AAD", hash_generated_method = "93E3AFDD083BDB202331DF6E211BA063")
     public void setDuration(int transitionType, long duration) {
-        //Begin case CHANGE_APPEARING 
+        
         mChangingAppearingDuration = duration;
-        //End case CHANGE_APPEARING 
-        //Begin case CHANGE_DISAPPEARING 
+        
+        
         mChangingDisappearingDuration = duration;
-        //End case CHANGE_DISAPPEARING 
-        //Begin case APPEARING 
+        
+        
         mAppearingDuration = duration;
-        //End case APPEARING 
-        //Begin case DISAPPEARING 
+        
+        
         mDisappearingDuration = duration;
-        //End case DISAPPEARING 
+        
         addTaint(transitionType);
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //mChangingAppearingDuration = duration;
-                //break;
-            //case CHANGE_DISAPPEARING:
-                //mChangingDisappearingDuration = duration;
-                //break;
-            //case APPEARING:
-                //mAppearingDuration = duration;
-                //break;
-            //case DISAPPEARING:
-                //mDisappearingDuration = duration;
-                //break;
-        //}
+        
+        
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+        
     }
 
     
@@ -239,39 +239,39 @@ public class LayoutTransition {
         addTaint(transitionType);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_883607429 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_883607429;
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //return mChangingAppearingDuration;
-            //case CHANGE_DISAPPEARING:
-                //return mChangingDisappearingDuration;
-            //case APPEARING:
-                //return mAppearingDuration;
-            //case DISAPPEARING:
-                //return mDisappearingDuration;
-        //}
-        //return 0;
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.270 -0400", hash_original_method = "DB3710D74B2FBFD7C44693C4FBA40808", hash_generated_method = "D9C6245F1664A3D7DBFC6A5958CE4B39")
     public void setStagger(int transitionType, long duration) {
-        //Begin case CHANGE_APPEARING 
+        
         mChangingAppearingStagger = duration;
-        //End case CHANGE_APPEARING 
-        //Begin case CHANGE_DISAPPEARING 
+        
+        
         mChangingDisappearingStagger = duration;
-        //End case CHANGE_DISAPPEARING 
+        
         addTaint(transitionType);
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //mChangingAppearingStagger = duration;
-                //break;
-            //case CHANGE_DISAPPEARING:
-                //mChangingDisappearingStagger = duration;
-                //break;
-        //}
+        
+        
+            
+                
+                
+            
+                
+                
+        
     }
 
     
@@ -280,192 +280,192 @@ public class LayoutTransition {
         addTaint(transitionType);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1115177144 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1115177144;
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //return mChangingAppearingStagger;
-            //case CHANGE_DISAPPEARING:
-                //return mChangingDisappearingStagger;
-        //}
-        //return 0;
+        
+        
+            
+                
+            
+                
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.274 -0400", hash_original_method = "2AD5234EB4F80ED9C0D5C1F0BD7735E5", hash_generated_method = "02FFFA304AEDF303F30ED9BE4A859608")
     public void setInterpolator(int transitionType, TimeInterpolator interpolator) {
-        //Begin case CHANGE_APPEARING 
+        
         mChangingAppearingInterpolator = interpolator;
-        //End case CHANGE_APPEARING 
-        //Begin case CHANGE_DISAPPEARING 
+        
+        
         mChangingDisappearingInterpolator = interpolator;
-        //End case CHANGE_DISAPPEARING 
-        //Begin case APPEARING 
+        
+        
         mAppearingInterpolator = interpolator;
-        //End case APPEARING 
-        //Begin case DISAPPEARING 
+        
+        
         mDisappearingInterpolator = interpolator;
-        //End case DISAPPEARING 
+        
         addTaint(transitionType);
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //mChangingAppearingInterpolator = interpolator;
-                //break;
-            //case CHANGE_DISAPPEARING:
-                //mChangingDisappearingInterpolator = interpolator;
-                //break;
-            //case APPEARING:
-                //mAppearingInterpolator = interpolator;
-                //break;
-            //case DISAPPEARING:
-                //mDisappearingInterpolator = interpolator;
-                //break;
-        //}
+        
+        
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.290 -0400", hash_original_method = "11C2A17826922B819D4ABA31B32AF7FD", hash_generated_method = "A6A2762226E729668F1B8288C72B81DB")
     public TimeInterpolator getInterpolator(int transitionType) {
-        TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_260013283 = null; //Variable for return #1
-        TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_1747955289 = null; //Variable for return #2
-        TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_1017597058 = null; //Variable for return #3
-        TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_1755463504 = null; //Variable for return #4
-        TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_913050506 = null; //Variable for return #5
-        //Begin case CHANGE_APPEARING 
+        TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_260013283 = null; 
+        TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_1747955289 = null; 
+        TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_1017597058 = null; 
+        TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_1755463504 = null; 
+        TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_913050506 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_260013283 = mChangingAppearingInterpolator;
-        //End case CHANGE_APPEARING 
-        //Begin case CHANGE_DISAPPEARING 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1747955289 = mChangingDisappearingInterpolator;
-        //End case CHANGE_DISAPPEARING 
-        //Begin case APPEARING 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1017597058 = mAppearingInterpolator;
-        //End case APPEARING 
-        //Begin case DISAPPEARING 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1755463504 = mDisappearingInterpolator;
-        //End case DISAPPEARING 
+        
         varB4EAC82CA7396A68D541C85D26508E83_913050506 = null;
         addTaint(transitionType);
-        TimeInterpolator varA7E53CE21691AB073D9660D615818899_2143875852; //Final return value
+        TimeInterpolator varA7E53CE21691AB073D9660D615818899_2143875852; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2143875852 = varB4EAC82CA7396A68D541C85D26508E83_260013283;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2143875852 = varB4EAC82CA7396A68D541C85D26508E83_1747955289;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_2143875852 = varB4EAC82CA7396A68D541C85D26508E83_1017597058;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_2143875852 = varB4EAC82CA7396A68D541C85D26508E83_1755463504;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2143875852 = varB4EAC82CA7396A68D541C85D26508E83_913050506;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2143875852.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2143875852.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2143875852;
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //return mChangingAppearingInterpolator;
-            //case CHANGE_DISAPPEARING:
-                //return mChangingDisappearingInterpolator;
-            //case APPEARING:
-                //return mAppearingInterpolator;
-            //case DISAPPEARING:
-                //return mDisappearingInterpolator;
-        //}
-        //return null;
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.292 -0400", hash_original_method = "1CE02B172FBE4A7CE10D1F87669E47EA", hash_generated_method = "740B242662C22BEB9E4E968A95487964")
     public void setAnimator(int transitionType, Animator animator) {
-        //Begin case CHANGE_APPEARING 
+        
         mChangingAppearingAnim = animator;
-        //End case CHANGE_APPEARING 
-        //Begin case CHANGE_DISAPPEARING 
+        
+        
         mChangingDisappearingAnim = animator;
-        //End case CHANGE_DISAPPEARING 
-        //Begin case APPEARING 
+        
+        
         mAppearingAnim = animator;
-        //End case APPEARING 
-        //Begin case DISAPPEARING 
+        
+        
         mDisappearingAnim = animator;
-        //End case DISAPPEARING 
+        
         addTaint(transitionType);
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //mChangingAppearingAnim = animator;
-                //break;
-            //case CHANGE_DISAPPEARING:
-                //mChangingDisappearingAnim = animator;
-                //break;
-            //case APPEARING:
-                //mAppearingAnim = animator;
-                //break;
-            //case DISAPPEARING:
-                //mDisappearingAnim = animator;
-                //break;
-        //}
+        
+        
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.306 -0400", hash_original_method = "FF737FAA09DE0C7945DD1E6E302C4C89", hash_generated_method = "7F56C0F6F9F9F25341617F1B4B622E12")
     public Animator getAnimator(int transitionType) {
-        Animator varB4EAC82CA7396A68D541C85D26508E83_1228364659 = null; //Variable for return #1
-        Animator varB4EAC82CA7396A68D541C85D26508E83_1285027879 = null; //Variable for return #2
-        Animator varB4EAC82CA7396A68D541C85D26508E83_166391027 = null; //Variable for return #3
-        Animator varB4EAC82CA7396A68D541C85D26508E83_1003860398 = null; //Variable for return #4
-        Animator varB4EAC82CA7396A68D541C85D26508E83_1825438734 = null; //Variable for return #5
-        //Begin case CHANGE_APPEARING 
+        Animator varB4EAC82CA7396A68D541C85D26508E83_1228364659 = null; 
+        Animator varB4EAC82CA7396A68D541C85D26508E83_1285027879 = null; 
+        Animator varB4EAC82CA7396A68D541C85D26508E83_166391027 = null; 
+        Animator varB4EAC82CA7396A68D541C85D26508E83_1003860398 = null; 
+        Animator varB4EAC82CA7396A68D541C85D26508E83_1825438734 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1228364659 = mChangingAppearingAnim;
-        //End case CHANGE_APPEARING 
-        //Begin case CHANGE_DISAPPEARING 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1285027879 = mChangingDisappearingAnim;
-        //End case CHANGE_DISAPPEARING 
-        //Begin case APPEARING 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_166391027 = mAppearingAnim;
-        //End case APPEARING 
-        //Begin case DISAPPEARING 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1003860398 = mDisappearingAnim;
-        //End case DISAPPEARING 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1825438734 = null;
         addTaint(transitionType);
-        Animator varA7E53CE21691AB073D9660D615818899_1921284479; //Final return value
+        Animator varA7E53CE21691AB073D9660D615818899_1921284479; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1921284479 = varB4EAC82CA7396A68D541C85D26508E83_1228364659;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1921284479 = varB4EAC82CA7396A68D541C85D26508E83_1285027879;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1921284479 = varB4EAC82CA7396A68D541C85D26508E83_166391027;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1921284479 = varB4EAC82CA7396A68D541C85D26508E83_1003860398;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1921284479 = varB4EAC82CA7396A68D541C85D26508E83_1825438734;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1921284479.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1921284479.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1921284479;
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //return mChangingAppearingAnim;
-            //case CHANGE_DISAPPEARING:
-                //return mChangingDisappearingAnim;
-            //case APPEARING:
-                //return mAppearingAnim;
-            //case DISAPPEARING:
-                //return mDisappearingAnim;
-        //}
-        //return null;
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+        
+        
     }
 
     
@@ -481,7 +481,7 @@ public class LayoutTransition {
         final ViewTreeObserver observer = parent.getViewTreeObserver();
         {
             boolean var8AD88F416FDBC789F76B74DE1C37B0E1_253465536 = (!observer.isAlive());
-        } //End collapsed parenthetic
+        } 
         int numChildren = parent.getChildCount();
         {
             int i = 0;
@@ -489,9 +489,9 @@ public class LayoutTransition {
                 final View child = parent.getChildAt(i);
                 {
                     setupChangeAnimation(parent, changeReason, baseAnimator, duration, child);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             Animator parentAnimator;
             parentAnimator = defaultChangeIn;
@@ -503,16 +503,16 @@ public class LayoutTransition {
                     setupChangeAnimation((ViewGroup)parentParent, changeReason, parentAnimator,
                             duration, tempParent);
                     tempParent = (ViewGroup) parentParent;
-                } //End block
+                } 
                 {
                     tempParent = null;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         observer.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.317 -0400", hash_original_method = "6C01974BA3CD333428484527C9FBE54F", hash_generated_method = "4265B55529DE344C5E70F2BECAD615FD")
             public boolean onPreDraw() {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 parent.getViewTreeObserver().removeOnPreDrawListener(this);
                 int count = layoutChangeListenerMap.size();
                 {
@@ -524,39 +524,39 @@ public class LayoutTransition {
                         {
                             View.OnLayoutChangeListener listener = layoutChangeListenerMap.get(view);
                             view.removeOnLayoutChangeListener(listener);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 layoutChangeListenerMap.clear();
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1736087697 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1736087697;
-                // ---------- Original Method ----------
-                //parent.getViewTreeObserver().removeOnPreDrawListener(this);
-                //int count = layoutChangeListenerMap.size();
-                //if (count > 0) {
-                    //Collection<View> views = layoutChangeListenerMap.keySet();
-                    //for (View view : views) {
-                        //View.OnLayoutChangeListener listener = layoutChangeListenerMap.get(view);
-                        //view.removeOnLayoutChangeListener(listener);
-                    //}
-                //}
-                //layoutChangeListenerMap.clear();
-                //return true;
+                
+                
+                
+                
+                    
+                    
+                        
+                        
+                    
+                
+                
+                
             }
 });
         addTaint(parent.getTaint());
         addTaint(newView.getTaint());
         addTaint(changeReason);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.321 -0400", hash_original_method = "5ECFD2D430BE870F40C042D01FD8A2D6", hash_generated_method = "CEE41014B49B701489653EF4BEF3638A")
     public void setAnimateParentHierarchy(boolean animateParentHierarchy) {
         mAnimateParentHierarchy = animateParentHierarchy;
-        // ---------- Original Method ----------
-        //mAnimateParentHierarchy = animateParentHierarchy;
+        
+        
     }
 
     
@@ -565,7 +565,7 @@ public class LayoutTransition {
             Animator baseAnimator, final long duration, final View child) {
         {
             boolean varA6A7315ADDDC59C70ED73956C763A706_598106775 = (layoutChangeListenerMap.get(child) != null);
-        } //End collapsed parenthetic
+        } 
         final Animator anim;
         anim = baseAnimator.clone();
         anim.setTarget(child);
@@ -575,7 +575,7 @@ public class LayoutTransition {
         {
             currentAnimation.cancel();
             pendingAnimations.remove(child);
-        } //End block
+        } 
         pendingAnimations.put(child, anim);
         ValueAnimator pendingAnimRemover;
         pendingAnimRemover = ValueAnimator.ofFloat(0f, 1f).
@@ -584,11 +584,11 @@ public class LayoutTransition {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:36.622 -0400", hash_original_method = "81B18D5FBD0385E26F1E055D2C44BFFA", hash_generated_method = "5A5AED5D7799D8D31962A97F09B49A74")
             @Override
             public void onAnimationEnd(Animator animation) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 pendingAnimations.remove(child);
                 addTaint(animation.getTaint());
-                // ---------- Original Method ----------
-                //pendingAnimations.remove(child);
+                
+                
             }
 });
         pendingAnimRemover.start();
@@ -643,7 +643,7 @@ public class LayoutTransition {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:36.637 -0400", hash_original_method = "E2B93FC024F741AE866ED6DC48631B6A", hash_generated_method = "603C2476C166DA14B1C746EE7A1E047C")
             @Override
             public void onAnimationStart(Animator animator) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 {
                     {
                         Iterator<TransitionListener> var027539751E49B70605583F80C9C40859_2115323691 = (mListeners).iterator();
@@ -653,34 +653,34 @@ public class LayoutTransition {
                             listener.startTransition(LayoutTransition.this, parent, child,
                                 changeReason == APPEARING ?
                                         CHANGE_APPEARING : CHANGE_DISAPPEARING);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 addTaint(animator.getTaint());
-                // ---------- Original Method ----------
-                //if (mListeners != null) {
-                    //for (TransitionListener listener : mListeners) {
-                        //listener.startTransition(LayoutTransition.this, parent, child,
-                                //changeReason == APPEARING ?
-                                        //CHANGE_APPEARING : CHANGE_DISAPPEARING);
-                    //}
-                //}
+                
+                
+                    
+                        
+                                
+                                        
+                    
+                
             }
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:36.644 -0400", hash_original_method = "06655B4777E7383270776E7CEC1CCF7E", hash_generated_method = "16F2B3561150327735D9155EF6C6B5A6")
             @Override
             public void onAnimationCancel(Animator animator) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 child.removeOnLayoutChangeListener(listener);
                 layoutChangeListenerMap.remove(child);
                 addTaint(animator.getTaint());
-                // ---------- Original Method ----------
-                //child.removeOnLayoutChangeListener(listener);
-                //layoutChangeListenerMap.remove(child);
+                
+                
+                
             }
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:36.659 -0400", hash_original_method = "DE5B5D0FB75885026A5DD6EBE7BC56A2", hash_generated_method = "87696B60C5A7CF409AFE900FA86FA6B4")
             @Override
             public void onAnimationEnd(Animator animator) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 currentChangingAnimations.remove(child);
                 {
                     {
@@ -691,19 +691,19 @@ public class LayoutTransition {
                             listener.endTransition(LayoutTransition.this, parent, child,
                                 changeReason == APPEARING ?
                                         CHANGE_APPEARING : CHANGE_DISAPPEARING);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 addTaint(animator.getTaint());
-                // ---------- Original Method ----------
-                //currentChangingAnimations.remove(child);
-                //if (mListeners != null) {
-                    //for (TransitionListener listener : mListeners) {
-                        //listener.endTransition(LayoutTransition.this, parent, child,
-                                //changeReason == APPEARING ?
-                                        //CHANGE_APPEARING : CHANGE_DISAPPEARING);
-                    //}
-                //}
+                
+                
+                
+                    
+                        
+                                
+                                        
+                    
+                
             }
 });
         child.addOnLayoutChangeListener(listener);
@@ -713,11 +713,12 @@ public class LayoutTransition {
         addTaint(baseAnimator.getTaint());
         addTaint(duration);
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.336 -0400", hash_original_method = "7222BE89A56886A0CF62DC8766C00475", hash_generated_method = "ED6396F1656A4749364A24D31F0BCEB1")
     public void startChangingAnimations() {
         LinkedHashMap<View, Animator> currentAnimCopy = (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
@@ -728,22 +729,23 @@ public class LayoutTransition {
             {
                 {
                     ((ObjectAnimator) anim).setCurrentPlayTime(0);
-                } //End block
+                } 
                 anim.start();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //LinkedHashMap<View, Animator> currentAnimCopy =
-                //(LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
-        //for (Animator anim : currentAnimCopy.values()) {
-            //if (anim instanceof ObjectAnimator) {
-                //((ObjectAnimator) anim).setCurrentPlayTime(0);
-            //}
-            //anim.start();
-        //}
+            } 
+        } 
+        
+        
+                
+        
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.347 -0400", hash_original_method = "7BA742550F1E1298AB8FE77F45C4383D", hash_generated_method = "41201D594F1F18D332DE0657B931C07C")
     public void endChangingAnimations() {
         LinkedHashMap<View, Animator> currentAnimCopy = (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
@@ -754,40 +756,43 @@ public class LayoutTransition {
             {
                 anim.start();
                 anim.end();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //LinkedHashMap<View, Animator> currentAnimCopy =
-                //(LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
-        //for (Animator anim : currentAnimCopy.values()) {
-            //anim.start();
-            //anim.end();
-        //}
+            } 
+        } 
+        
+        
+                
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.351 -0400", hash_original_method = "8C9364165F532DD8BD43415668542398", hash_generated_method = "4EEB71523F2522AE5F6768B453A5189F")
     public boolean isChangingLayout() {
         boolean var4077384608DE00EFE78F41629DE0A95B_1034664843 = ((currentChangingAnimations.size() > 0));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_71761246 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_71761246;
-        // ---------- Original Method ----------
-        //return (currentChangingAnimations.size() > 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.353 -0400", hash_original_method = "7F683046BB72ECC23A172B1D3B81B266", hash_generated_method = "A527C1B2D030F906436FB7A9FCF325CB")
     public boolean isRunning() {
         boolean var987B4F52345B82CBBAB6F416FA45A0C5_1655985637 = ((currentChangingAnimations.size() > 0 || currentAppearingAnimations.size() > 0 ||
                 currentDisappearingAnimations.size() > 0));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1104877809 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1104877809;
-        // ---------- Original Method ----------
-        //return (currentChangingAnimations.size() > 0 || currentAppearingAnimations.size() > 0 ||
-                //currentDisappearingAnimations.size() > 0);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.374 -0400", hash_original_method = "2E46A59670A61A0AF64FD97BDAF7B728", hash_generated_method = "BA4E3E7D59BC25EA7FD554107C62C359")
     public void cancel() {
         {
@@ -800,11 +805,11 @@ public class LayoutTransition {
                     Animator anim = var77A69CCC7893588B99D9F323E4F0D0AD_475300583.next();
                     {
                         anim.cancel();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 currentChangingAnimations.clear();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var581E5FE1178D7616A969479C9EF98728_1781149042 = (currentAppearingAnimations.size() > 0);
             {
@@ -815,11 +820,11 @@ public class LayoutTransition {
                     Animator anim = var77A69CCC7893588B99D9F323E4F0D0AD_560241656.next();
                     {
                         anim.end();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 currentAppearingAnimations.clear();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var08F255EDB4B7971930CFAED58C7D7CB3_751456503 = (currentDisappearingAnimations.size() > 0);
             {
@@ -830,19 +835,20 @@ public class LayoutTransition {
                     Animator anim = var77A69CCC7893588B99D9F323E4F0D0AD_216666265.next();
                     {
                         anim.end();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 currentDisappearingAnimations.clear();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.398 -0400", hash_original_method = "19B870791205108BA3B602A2E8CB5138", hash_generated_method = "5C62F4EF4090F16DDF46FB9F7A9BF65E")
     public void cancel(int transitionType) {
-        //Begin case CHANGE_APPEARING CHANGE_DISAPPEARING 
+        
         {
             boolean var33AE39A73D9B32AC5849C5A957F93302_336713555 = (currentChangingAnimations.size() > 0);
             {
@@ -853,13 +859,13 @@ public class LayoutTransition {
                     Animator anim = var77A69CCC7893588B99D9F323E4F0D0AD_1134414859.next();
                     {
                         anim.cancel();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 currentChangingAnimations.clear();
-            } //End block
-        } //End collapsed parenthetic
-        //End case CHANGE_APPEARING CHANGE_DISAPPEARING 
-        //Begin case APPEARING 
+            } 
+        } 
+        
+        
         {
             boolean var581E5FE1178D7616A969479C9EF98728_429734672 = (currentAppearingAnimations.size() > 0);
             {
@@ -870,13 +876,13 @@ public class LayoutTransition {
                     Animator anim = var77A69CCC7893588B99D9F323E4F0D0AD_2005972064.next();
                     {
                         anim.end();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 currentAppearingAnimations.clear();
-            } //End block
-        } //End collapsed parenthetic
-        //End case APPEARING 
-        //Begin case DISAPPEARING 
+            } 
+        } 
+        
+        
         {
             boolean var08F255EDB4B7971930CFAED58C7D7CB3_282736676 = (currentDisappearingAnimations.size() > 0);
             {
@@ -887,15 +893,15 @@ public class LayoutTransition {
                     Animator anim = var77A69CCC7893588B99D9F323E4F0D0AD_1908030735.next();
                     {
                         anim.end();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 currentDisappearingAnimations.clear();
-            } //End block
-        } //End collapsed parenthetic
-        //End case DISAPPEARING 
+            } 
+        } 
+        
         addTaint(transitionType);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -904,7 +910,7 @@ public class LayoutTransition {
         Animator currentAnimation = currentDisappearingAnimations.get(child);
         {
             currentAnimation.cancel();
-        } //End block
+        } 
         {
             {
                 {
@@ -913,23 +919,23 @@ public class LayoutTransition {
                     TransitionListener listener = var027539751E49B70605583F80C9C40859_1086157448.next();
                     {
                         listener.endTransition(LayoutTransition.this, parent, child, APPEARING);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         Animator anim = mAppearingAnim.clone();
         anim.setTarget(child);
         anim.setStartDelay(mAppearingDelay);
         anim.setDuration(mAppearingDuration);
         {
             ((ObjectAnimator) anim).setCurrentPlayTime(0);
-        } //End block
+        } 
         {
             anim.addListener(new AnimatorListenerAdapter() {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.425 -0400", hash_original_method = "494D571A7E2D39F79DD71B48D4E2ACB8", hash_generated_method = "3406D2B3EE7C1017728E4AC2206E5D71")
                 @Override
                 public void onAnimationEnd(Animator anim) {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     currentAppearingAnimations.remove(child);
                     {
                         Iterator<TransitionListener> var027539751E49B70605583F80C9C40859_521916007 = (mListeners).iterator();
@@ -937,23 +943,23 @@ public class LayoutTransition {
                         TransitionListener listener = var027539751E49B70605583F80C9C40859_521916007.next();
                         {
                             listener.endTransition(LayoutTransition.this, parent, child, APPEARING);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     addTaint(anim.getTaint());
-                    // ---------- Original Method ----------
-                    //currentAppearingAnimations.remove(child);
-                    //for (TransitionListener listener : mListeners) {
-                        //listener.endTransition(LayoutTransition.this, parent, child, APPEARING);
-                    //}
+                    
+                    
+                    
+                        
+                    
                 }
 });
-        } //End block
+        } 
         currentAppearingAnimations.put(child, anim);
         anim.start();
         addTaint(parent.getTaint());
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -962,7 +968,7 @@ public class LayoutTransition {
         Animator currentAnimation = currentAppearingAnimations.get(child);
         {
             currentAnimation.cancel();
-        } //End block
+        } 
         {
             {
                 {
@@ -971,10 +977,10 @@ public class LayoutTransition {
                     TransitionListener listener = var027539751E49B70605583F80C9C40859_2144170313.next();
                     {
                         listener.endTransition(LayoutTransition.this, parent, child, DISAPPEARING);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         Animator anim = mDisappearingAnim.clone();
         anim.setStartDelay(mDisappearingDelay);
         anim.setDuration(mDisappearingDuration);
@@ -984,7 +990,7 @@ public class LayoutTransition {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.454 -0400", hash_original_method = "29C17A3026C40266B26AB145A51034B4", hash_generated_method = "8AB686A46DD1F0BAB0029B982FA6946D")
                 @Override
                 public void onAnimationEnd(Animator anim) {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     currentDisappearingAnimations.remove(child);
                     {
                         Iterator<TransitionListener> var027539751E49B70605583F80C9C40859_1746128190 = (mListeners).iterator();
@@ -992,29 +998,30 @@ public class LayoutTransition {
                         TransitionListener listener = var027539751E49B70605583F80C9C40859_1746128190.next();
                         {
                             listener.endTransition(LayoutTransition.this, parent, child, DISAPPEARING);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     addTaint(anim.getTaint());
-                    // ---------- Original Method ----------
-                    //currentDisappearingAnimations.remove(child);
-                    //for (TransitionListener listener : mListeners) {
-                        //listener.endTransition(LayoutTransition.this, parent, child, DISAPPEARING);
-                    //}
+                    
+                    
+                    
+                        
+                    
                 }
 });
-        } //End block
+        } 
         {
             ((ObjectAnimator) anim).setCurrentPlayTime(0);
-        } //End block
+        } 
         currentDisappearingAnimations.put(child, anim);
         anim.start();
         addTaint(parent.getTaint());
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.475 -0400", hash_original_method = "05533C05F33D5C5B655A5BABA4CC6F65", hash_generated_method = "190BA6B88B19F64330D8404DE7C329CF")
     public void addChild(ViewGroup parent, View child) {
         cancel(DISAPPEARING);
@@ -1026,36 +1033,38 @@ public class LayoutTransition {
                 TransitionListener listener = var027539751E49B70605583F80C9C40859_645857150.next();
                 {
                     listener.startTransition(this, parent, child, APPEARING);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         runChangeTransition(parent, child, APPEARING);
         runAppearingTransition(parent, child);
         addTaint(parent.getTaint());
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //cancel(DISAPPEARING);
-        //cancel(CHANGE_APPEARING);
-        //if (mListeners != null) {
-            //for (TransitionListener listener : mListeners) {
-                //listener.startTransition(this, parent, child, APPEARING);
-            //}
-        //}
-        //runChangeTransition(parent, child, APPEARING);
-        //runAppearingTransition(parent, child);
+        
+        
+        
+        
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.477 -0400", hash_original_method = "5867E97EE566113A4AD2D7416A9B4CB1", hash_generated_method = "95C99C73B2C8A5095E34435724B28DE6")
     public void showChild(ViewGroup parent, View child) {
         addChild(parent, child);
         addTaint(parent.getTaint());
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //addChild(parent, child);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.496 -0400", hash_original_method = "E23F457F66AC508EC3728A00193F4832", hash_generated_method = "8C6ECA44C0779D609BEBBD3058438C1B")
     public void removeChild(ViewGroup parent, View child) {
         cancel(APPEARING);
@@ -1067,71 +1076,75 @@ public class LayoutTransition {
                 TransitionListener listener = var027539751E49B70605583F80C9C40859_239277692.next();
                 {
                     listener.startTransition(this, parent, child, DISAPPEARING);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         runChangeTransition(parent, child, DISAPPEARING);
         runDisappearingTransition(parent, child);
         addTaint(parent.getTaint());
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //cancel(APPEARING);
-        //cancel(CHANGE_DISAPPEARING);
-        //if (mListeners != null) {
-            //for (TransitionListener listener : mListeners) {
-                //listener.startTransition(this, parent, child, DISAPPEARING);
-            //}
-        //}
-        //runChangeTransition(parent, child, DISAPPEARING);
-        //runDisappearingTransition(parent, child);
+        
+        
+        
+        
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.498 -0400", hash_original_method = "59CF94EEC1336BEEB8FFF5467E6ED5F9", hash_generated_method = "A29FAFF27DDBC6B66F44D8F3E67BE879")
     public void hideChild(ViewGroup parent, View child) {
         removeChild(parent, child);
         addTaint(parent.getTaint());
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //removeChild(parent, child);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.501 -0400", hash_original_method = "167EED27AB5F7469F2545513C43EBDC4", hash_generated_method = "33DF80809CD54F9F80083D96E59EE66F")
     public void addTransitionListener(TransitionListener listener) {
         {
             mListeners = new ArrayList<TransitionListener>();
-        } //End block
+        } 
         mListeners.add(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (mListeners == null) {
-            //mListeners = new ArrayList<TransitionListener>();
-        //}
-        //mListeners.add(listener);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.503 -0400", hash_original_method = "CD0DE6419C69039B8FDEE8C2D5BC497D", hash_generated_method = "1088A5954536D6AEF84349B370DCD872")
     public void removeTransitionListener(TransitionListener listener) {
         mListeners.remove(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (mListeners == null) {
-            //return;
-        //}
-        //mListeners.remove(listener);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.508 -0400", hash_original_method = "F0DD3EC0CE94CE6304D7C3009A3E39A6", hash_generated_method = "C92BE9B07996B4901C437E7776FEA48D")
     public List<TransitionListener> getTransitionListeners() {
-        List<TransitionListener> varB4EAC82CA7396A68D541C85D26508E83_885336403 = null; //Variable for return #1
+        List<TransitionListener> varB4EAC82CA7396A68D541C85D26508E83_885336403 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_885336403 = mListeners;
-        varB4EAC82CA7396A68D541C85D26508E83_885336403.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_885336403.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_885336403;
-        // ---------- Original Method ----------
-        //return mListeners;
+        
+        
     }
 
     

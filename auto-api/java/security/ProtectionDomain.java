@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class ProtectionDomain {
@@ -14,7 +14,7 @@ public class ProtectionDomain {
     public  ProtectionDomain(CodeSource cs, PermissionCollection permissions) {
         addTaint(cs.getTaint());
         addTaint(permissions.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,51 +24,51 @@ public class ProtectionDomain {
         addTaint(permissions.getTaint());
         addTaint(cl.getTaint());
         addTaint(principals[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.443 -0400", hash_original_method = "36D40DB51CE149D4D173272547E45D89", hash_generated_method = "D3DFA334D10A46D2CF73C2D81302C3E3")
     public final ClassLoader getClassLoader() {
-        ClassLoader varB4EAC82CA7396A68D541C85D26508E83_2126291282 = null; //Variable for return #1
+        ClassLoader varB4EAC82CA7396A68D541C85D26508E83_2126291282 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2126291282 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_2126291282.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2126291282.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2126291282;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.444 -0400", hash_original_method = "65FBCDB1EF6730AA4782FE733CA5126A", hash_generated_method = "1F6137D3DD0FB67534DFACB022B7F0E4")
     public final CodeSource getCodeSource() {
-        CodeSource varB4EAC82CA7396A68D541C85D26508E83_1553979299 = null; //Variable for return #1
+        CodeSource varB4EAC82CA7396A68D541C85D26508E83_1553979299 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1553979299 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1553979299.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1553979299.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1553979299;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.445 -0400", hash_original_method = "CFFE4D5B0E68CF921A8B9CFC68B153D5", hash_generated_method = "5F194F2E519FF2A13AEEA91672702382")
     public final PermissionCollection getPermissions() {
-        PermissionCollection varB4EAC82CA7396A68D541C85D26508E83_1166624656 = null; //Variable for return #1
+        PermissionCollection varB4EAC82CA7396A68D541C85D26508E83_1166624656 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1166624656 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1166624656.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1166624656.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1166624656;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.445 -0400", hash_original_method = "FC0016516B863D9708ADC9DFA60C3A75", hash_generated_method = "D32D9A70275FD9AFD6649C8DA649340F")
     public final Principal[] getPrincipals() {
-        Principal[] varB4EAC82CA7396A68D541C85D26508E83_559462469 = null; //Variable for return #1
+        Principal[] varB4EAC82CA7396A68D541C85D26508E83_559462469 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_559462469 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_559462469.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_559462469.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_559462469;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -77,8 +77,8 @@ public class ProtectionDomain {
         addTaint(permission.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2108023809 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2108023809;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     

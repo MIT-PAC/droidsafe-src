@@ -1,11 +1,11 @@
 package android.text.method;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.text.Layout;
 import android.text.Spannable;
@@ -19,7 +19,7 @@ public class BaseMovementMethod implements MovementMethod {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.045 -0400", hash_original_method = "1DE84F8ABE7124ECFD52F353C5E545C4", hash_generated_method = "1DE84F8ABE7124ECFD52F353C5E545C4")
     public BaseMovementMethod ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -28,8 +28,8 @@ public class BaseMovementMethod implements MovementMethod {
     public boolean canSelectArbitrarily() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1277254798 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1277254798;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -38,41 +38,43 @@ public class BaseMovementMethod implements MovementMethod {
     public void initialize(TextView widget, Spannable text) {
         addTaint(widget.getTaint());
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.046 -0400", hash_original_method = "51F4180929D179462C8A792E383BE4DE", hash_generated_method = "DEFDB21D0AA99F70D9D40621047146E8")
     @Override
     public boolean onKeyDown(TextView widget, Spannable text, int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int movementMetaState = getMovementMetaState(text, event);
         boolean handled = handleMovementKey(widget, text, keyCode, movementMetaState, event);
         {
             MetaKeyKeyListener.adjustMetaAfterKeypress(text);
             MetaKeyKeyListener.resetLockedMeta(text);
-        } //End block
+        } 
         addTaint(widget.getTaint());
         addTaint(text.getTaint());
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2147050263 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2147050263;
-        // ---------- Original Method ----------
-        //final int movementMetaState = getMovementMetaState(text, event);
-        //boolean handled = handleMovementKey(widget, text, keyCode, movementMetaState, event);
-        //if (handled) {
-            //MetaKeyKeyListener.adjustMetaAfterKeypress(text);
-            //MetaKeyKeyListener.resetLockedMeta(text);
-        //}
-        //return handled;
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.047 -0400", hash_original_method = "8FECF2F4DB21657DC257EBEAC5D3F348", hash_generated_method = "78A1E1F6C86A610C2FDE80066FB4962E")
     @Override
     public boolean onKeyOther(TextView widget, Spannable text, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int movementMetaState = getMovementMetaState(text, event);
         final int keyCode = event.getKeyCode();
         {
@@ -86,108 +88,109 @@ public class BaseMovementMethod implements MovementMethod {
                     {
                         {
                             boolean varB934909A57248142D896FFD0AC144DC8_1889941757 = (!handleMovementKey(widget, text, keyCode, movementMetaState, event));
-                        } //End collapsed parenthetic
+                        } 
                         handled = true;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     MetaKeyKeyListener.adjustMetaAfterKeypress(text);
                     MetaKeyKeyListener.resetLockedMeta(text);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(widget.getTaint());
         addTaint(text.getTaint());
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_432862411 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_432862411;
-        // ---------- Original Method ----------
-        //final int movementMetaState = getMovementMetaState(text, event);
-        //final int keyCode = event.getKeyCode();
-        //if (keyCode != KeyEvent.KEYCODE_UNKNOWN
-                //&& event.getAction() == KeyEvent.ACTION_MULTIPLE) {
-            //final int repeat = event.getRepeatCount();
-            //boolean handled = false;
-            //for (int i = 0; i < repeat; i++) {
-                //if (!handleMovementKey(widget, text, keyCode, movementMetaState, event)) {
-                    //break;
-                //}
-                //handled = true;
-            //}
-            //if (handled) {
-                //MetaKeyKeyListener.adjustMetaAfterKeypress(text);
-                //MetaKeyKeyListener.resetLockedMeta(text);
-            //}
-            //return handled;
-        //}
-        //return false;
+        
+        
+        
+        
+                
+            
+            
+            
+                
+                    
+                
+                
+            
+            
+                
+                
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.047 -0400", hash_original_method = "03F6AD3B58EDAE8DF6A1CC395F5B54B3", hash_generated_method = "BA9B0A4D4F54B26655BC782661C77C2F")
     @Override
     public boolean onKeyUp(TextView widget, Spannable text, int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(widget.getTaint());
         addTaint(text.getTaint());
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_203597386 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_203597386;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.047 -0400", hash_original_method = "AC3F1CB1818DDCB7BD27F03C760797A7", hash_generated_method = "D617C850B9E6AEDCA4942B3A21B86765")
     @Override
     public void onTakeFocus(TextView widget, Spannable text, int direction) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(widget.getTaint());
         addTaint(text.getTaint());
         addTaint(direction);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.048 -0400", hash_original_method = "136932FCA27B55C4FFFE4C0F482F5C95", hash_generated_method = "88747A82B3E2946578C1102029398581")
     @Override
     public boolean onTouchEvent(TextView widget, Spannable text, MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(widget.getTaint());
         addTaint(text.getTaint());
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1472362310 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1472362310;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.049 -0400", hash_original_method = "B091339813AE51B8A0FCC53026E81FDE", hash_generated_method = "7D9F07303968FEE1E1F9AB0F521C88CC")
     @Override
     public boolean onTrackballEvent(TextView widget, Spannable text, MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(widget.getTaint());
         addTaint(text.getTaint());
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1022935929 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1022935929;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.049 -0400", hash_original_method = "F7B7D807C9903B237C0BDFCF28378E9E", hash_generated_method = "46F8F81930C5FF631108914268310548")
     @Override
     public boolean onGenericMotionEvent(TextView widget, Spannable text, MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varB5CEEFE1A0B0FE6CF2A2378211A03C4D_1583682839 = ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0);
             {
                 {
                     Object varC2BF00F96F1D1B1ABEF4B0E3FC4FE9EC_224980144 = (event.getAction());
-                    //Begin case MotionEvent.ACTION_SCROLL 
+                    
                     {
                         float vscroll;
                         float hscroll;
@@ -196,40 +199,41 @@ public class BaseMovementMethod implements MovementMethod {
                             {
                                 vscroll = 0;
                                 hscroll = event.getAxisValue(MotionEvent.AXIS_VSCROLL);
-                            } //End block
+                            } 
                             {
                                 vscroll = -event.getAxisValue(MotionEvent.AXIS_VSCROLL);
                                 hscroll = event.getAxisValue(MotionEvent.AXIS_HSCROLL);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         boolean handled = false;
                         {
                             handled |= scrollLeft(widget, text, (int)Math.ceil(-hscroll));
-                        } //End block
+                        } 
                         {
                             handled |= scrollRight(widget, text, (int)Math.ceil(hscroll));
-                        } //End block
+                        } 
                         {
                             handled |= scrollUp(widget, text, (int)Math.ceil(-vscroll));
-                        } //End block
+                        } 
                         {
                             handled |= scrollDown(widget, text, (int)Math.ceil(vscroll));
-                        } //End block
-                    } //End block
-                    //End case MotionEvent.ACTION_SCROLL 
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                    
+                } 
+            } 
+        } 
         addTaint(widget.getTaint());
         addTaint(text.getTaint());
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_301083949 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_301083949;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.050 -0400", hash_original_method = "DBF5E10955F96650BAEE8C94618C2948", hash_generated_method = "01B2545132BBD05A525E68B719241E1B")
     protected int getMovementMetaState(Spannable buffer, KeyEvent event) {
         int metaState = (event.getMetaState() | MetaKeyKeyListener.getMetaState(buffer))
@@ -239,150 +243,151 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(event.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1925610154 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1925610154;
-        // ---------- Original Method ----------
-        //int metaState = (event.getMetaState() | MetaKeyKeyListener.getMetaState(buffer))
-                //& ~(MetaKeyKeyListener.META_ALT_LOCKED | MetaKeyKeyListener.META_SYM_LOCKED);
-        //return KeyEvent.normalizeMetaState(metaState) & ~KeyEvent.META_SHIFT_MASK;
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.051 -0400", hash_original_method = "53B656A1E8393E8F576933E71ADE5872", hash_generated_method = "01AA1D74B761A19DFA75DF35C9DF6B7E")
     protected boolean handleMovementKey(TextView widget, Spannable buffer,
             int keyCode, int movementMetaState, KeyEvent event) {
-        //Begin case KeyEvent.KEYCODE_DPAD_LEFT 
+        
         {
             boolean varD311727E65FDD806D61A6271FF483A84_1190067943 = (KeyEvent.metaStateHasNoModifiers(movementMetaState));
             {
                 boolean var68D671775614B8A3392859D5A7BFB272_232552339 = (left(widget, buffer));
-            } //End block
+            } 
             {
                 boolean varF7CBF05BAA26D1F0FE66CD64B99CDBDC_2133209024 = (KeyEvent.metaStateHasModifiers(movementMetaState,
                         KeyEvent.META_CTRL_ON));
                 {
                     boolean var8B70984B6D204986E86DC5E9D21EE379_1371808540 = (leftWord(widget, buffer));
-                } //End block
+                } 
                 {
                     boolean var0C59350E9823D9FDC411AFB3B4E4D995_1705039892 = (KeyEvent.metaStateHasModifiers(movementMetaState,
                         KeyEvent.META_ALT_ON));
                     {
                         boolean varF91F8ED470DB3CB92941B7FB32F16F98_1279259855 = (lineStart(widget, buffer));
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_DPAD_LEFT 
-        //Begin case KeyEvent.KEYCODE_DPAD_RIGHT 
+                    } 
+                } 
+            } 
+        } 
+        
+        
         {
             boolean varD311727E65FDD806D61A6271FF483A84_2128363223 = (KeyEvent.metaStateHasNoModifiers(movementMetaState));
             {
                 boolean var611677DDD7BCF208C2108267C92093F0_1163355260 = (right(widget, buffer));
-            } //End block
+            } 
             {
                 boolean varF7CBF05BAA26D1F0FE66CD64B99CDBDC_560839233 = (KeyEvent.metaStateHasModifiers(movementMetaState,
                         KeyEvent.META_CTRL_ON));
                 {
                     boolean var5AAE0481ED9ADA837863356FCD6CBF51_1434949598 = (rightWord(widget, buffer));
-                } //End block
+                } 
                 {
                     boolean var0C59350E9823D9FDC411AFB3B4E4D995_278040447 = (KeyEvent.metaStateHasModifiers(movementMetaState,
                         KeyEvent.META_ALT_ON));
                     {
                         boolean varB65D932CCFD36B7EACB4EE7EE3C54F1E_1643813836 = (lineEnd(widget, buffer));
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_DPAD_RIGHT 
-        //Begin case KeyEvent.KEYCODE_DPAD_UP 
+                    } 
+                } 
+            } 
+        } 
+        
+        
         {
             boolean varD311727E65FDD806D61A6271FF483A84_605795450 = (KeyEvent.metaStateHasNoModifiers(movementMetaState));
             {
                 boolean var7FA4D50FEE7D0B231F734E91D2642307_1561760415 = (up(widget, buffer));
-            } //End block
+            } 
             {
                 boolean var5E32B625D4444A09AA68BCFD992ECE2D_1527121962 = (KeyEvent.metaStateHasModifiers(movementMetaState,
                         KeyEvent.META_ALT_ON));
                 {
                     boolean var7EA610619321657A9AD12517CB6DB46F_1154272395 = (top(widget, buffer));
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_DPAD_UP 
-        //Begin case KeyEvent.KEYCODE_DPAD_DOWN 
+                } 
+            } 
+        } 
+        
+        
         {
             boolean varD311727E65FDD806D61A6271FF483A84_1975757397 = (KeyEvent.metaStateHasNoModifiers(movementMetaState));
             {
                 boolean var8755A1382E2B8967B38EC82AC8AD7026_1369091490 = (down(widget, buffer));
-            } //End block
+            } 
             {
                 boolean var5E32B625D4444A09AA68BCFD992ECE2D_1525117646 = (KeyEvent.metaStateHasModifiers(movementMetaState,
                         KeyEvent.META_ALT_ON));
                 {
                     boolean var147A9E526C33B1617033994832B32BCD_1307280199 = (bottom(widget, buffer));
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_DPAD_DOWN 
-        //Begin case KeyEvent.KEYCODE_PAGE_UP 
+                } 
+            } 
+        } 
+        
+        
         {
             boolean varD311727E65FDD806D61A6271FF483A84_1563208777 = (KeyEvent.metaStateHasNoModifiers(movementMetaState));
             {
                 boolean var7A20B6A7ADD620ED36BF97D295E03752_1541958155 = (pageUp(widget, buffer));
-            } //End block
+            } 
             {
                 boolean var5E32B625D4444A09AA68BCFD992ECE2D_616372027 = (KeyEvent.metaStateHasModifiers(movementMetaState,
                         KeyEvent.META_ALT_ON));
                 {
                     boolean var7EA610619321657A9AD12517CB6DB46F_1729114761 = (top(widget, buffer));
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_PAGE_UP 
-        //Begin case KeyEvent.KEYCODE_PAGE_DOWN 
+                } 
+            } 
+        } 
+        
+        
         {
             boolean varD311727E65FDD806D61A6271FF483A84_1921151126 = (KeyEvent.metaStateHasNoModifiers(movementMetaState));
             {
                 boolean varEAE8B54B2ED18C0A322E5C2C2227ABFE_1657564889 = (pageDown(widget, buffer));
-            } //End block
+            } 
             {
                 boolean var5E32B625D4444A09AA68BCFD992ECE2D_1527980808 = (KeyEvent.metaStateHasModifiers(movementMetaState,
                         KeyEvent.META_ALT_ON));
                 {
                     boolean var147A9E526C33B1617033994832B32BCD_27417223 = (bottom(widget, buffer));
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_PAGE_DOWN 
-        //Begin case KeyEvent.KEYCODE_MOVE_HOME 
+                } 
+            } 
+        } 
+        
+        
         {
             boolean varD311727E65FDD806D61A6271FF483A84_1059039848 = (KeyEvent.metaStateHasNoModifiers(movementMetaState));
             {
                 boolean varB99A5007A511DDDDEC7F28357AA472F1_1855136181 = (home(widget, buffer));
-            } //End block
+            } 
             {
                 boolean varF7CBF05BAA26D1F0FE66CD64B99CDBDC_137277016 = (KeyEvent.metaStateHasModifiers(movementMetaState,
                         KeyEvent.META_CTRL_ON));
                 {
                     boolean var7EA610619321657A9AD12517CB6DB46F_1202199091 = (top(widget, buffer));
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_MOVE_HOME 
-        //Begin case KeyEvent.KEYCODE_MOVE_END 
+                } 
+            } 
+        } 
+        
+        
         {
             boolean varD311727E65FDD806D61A6271FF483A84_1557517830 = (KeyEvent.metaStateHasNoModifiers(movementMetaState));
             {
                 boolean varFD118AD11A361DEDA24BCD2A88D3C277_1466980417 = (end(widget, buffer));
-            } //End block
+            } 
             {
                 boolean varF7CBF05BAA26D1F0FE66CD64B99CDBDC_2106453229 = (KeyEvent.metaStateHasModifiers(movementMetaState,
                         KeyEvent.META_CTRL_ON));
                 {
                     boolean var147A9E526C33B1617033994832B32BCD_1104548841 = (bottom(widget, buffer));
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
-        //End case KeyEvent.KEYCODE_MOVE_END 
+                } 
+            } 
+        } 
+        
         addTaint(widget.getTaint());
         addTaint(buffer.getTaint());
         addTaint(keyCode);
@@ -390,8 +395,8 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1868545553 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1868545553;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -401,8 +406,8 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_940135925 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_940135925;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -412,8 +417,8 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_128754125 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_128754125;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -423,8 +428,8 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_697250951 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_697250951;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -434,8 +439,8 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_552639894 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_552639894;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -445,8 +450,8 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1561527345 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1561527345;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -456,8 +461,8 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_517363422 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_517363422;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -467,8 +472,8 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_695440740 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_695440740;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -478,8 +483,8 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_868042898 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_868042898;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -489,8 +494,8 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_829416619 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_829416619;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -500,8 +505,8 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_174015391 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_174015391;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -511,8 +516,8 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1078195086 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1078195086;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -522,8 +527,8 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1276005395 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1276005395;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -533,8 +538,8 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1975505604 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1975505604;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -544,66 +549,72 @@ public class BaseMovementMethod implements MovementMethod {
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_337237167 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_337237167;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.055 -0400", hash_original_method = "772DAE7A7DE9A4DC4AD657418C90F32E", hash_generated_method = "624BAB20B0312886541A56589BF32408")
     private int getTopLine(TextView widget) {
         int var805F4348DA22D9BE2CA9DD1502114BBC_138993481 = (widget.getLayout().getLineForVertical(widget.getScrollY()));
         addTaint(widget.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_510417795 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_510417795;
-        // ---------- Original Method ----------
-        //return widget.getLayout().getLineForVertical(widget.getScrollY());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.055 -0400", hash_original_method = "653A8A6EB137C95052F7EAEBCC41BD55", hash_generated_method = "8A281B5CA0D6A4095A4AA15BAE935527")
     private int getBottomLine(TextView widget) {
         int var802B9CFC7F9FC9F6D5306002E1A24D67_171594003 = (widget.getLayout().getLineForVertical(widget.getScrollY() + getInnerHeight(widget)));
         addTaint(widget.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_52547455 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_52547455;
-        // ---------- Original Method ----------
-        //return widget.getLayout().getLineForVertical(widget.getScrollY() + getInnerHeight(widget));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.056 -0400", hash_original_method = "C7082848D94AD1EC4FC0EC3514A56C71", hash_generated_method = "44FAFBC7EBAC3068531FCF834BE44408")
     private int getInnerWidth(TextView widget) {
         int var5E051DC25D40FEA956D6187DC3B3424F_1472701895 = (widget.getWidth() - widget.getTotalPaddingLeft() - widget.getTotalPaddingRight());
         addTaint(widget.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1996261690 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1996261690;
-        // ---------- Original Method ----------
-        //return widget.getWidth() - widget.getTotalPaddingLeft() - widget.getTotalPaddingRight();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.056 -0400", hash_original_method = "232D6784857554322EB1F91BB9F6CC48", hash_generated_method = "48C5FF5F11F4C3B4C1CF90A33F1A1D62")
     private int getInnerHeight(TextView widget) {
         int var99A6A405D49CFB17B685FBA2C3B645E4_1479367680 = (widget.getHeight() - widget.getTotalPaddingTop() - widget.getTotalPaddingBottom());
         addTaint(widget.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2085209729 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2085209729;
-        // ---------- Original Method ----------
-        //return widget.getHeight() - widget.getTotalPaddingTop() - widget.getTotalPaddingBottom();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.056 -0400", hash_original_method = "BCC9C4F3EEFF08511FB2E9A20E83B404", hash_generated_method = "01D3DB9F9E880A474B8C7FAFCAC5B62A")
     private int getCharacterWidth(TextView widget) {
         int varD2D617A927571E013F1AB0889DF28F56_1251469417 = ((int) Math.ceil(widget.getPaint().getFontSpacing()));
         addTaint(widget.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_695987150 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_695987150;
-        // ---------- Original Method ----------
-        //return (int) Math.ceil(widget.getPaint().getFontSpacing());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.057 -0400", hash_original_method = "32AF158BA043ADAC837409A280E9071B", hash_generated_method = "912E24CB36CC6CD49782C23C488E73BC")
     private int getScrollBoundsLeft(TextView widget) {
         final Layout layout = widget.getLayout();
@@ -616,30 +627,31 @@ public class BaseMovementMethod implements MovementMethod {
                 final int lineLeft = (int) Math.floor(layout.getLineLeft(line));
                 {
                     left = lineLeft;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(widget.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1484012638 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1484012638;
-        // ---------- Original Method ----------
-        //final Layout layout = widget.getLayout();
-        //final int topLine = getTopLine(widget);
-        //final int bottomLine = getBottomLine(widget);
-        //if (topLine > bottomLine) {
-            //return 0;
-        //}
-        //int left = Integer.MAX_VALUE;
-        //for (int line = topLine; line <= bottomLine; line++) {
-            //final int lineLeft = (int) Math.floor(layout.getLineLeft(line));
-            //if (lineLeft < left) {
-                //left = lineLeft;
-            //}
-        //}
-        //return left;
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.057 -0400", hash_original_method = "F8CD0B2B66ECC22BDFE1C77AF25A13D6", hash_generated_method = "D1563316988B74AF816AC23D9047302D")
     private int getScrollBoundsRight(TextView widget) {
         final Layout layout = widget.getLayout();
@@ -652,30 +664,31 @@ public class BaseMovementMethod implements MovementMethod {
                 final int lineRight = (int) Math.ceil(layout.getLineRight(line));
                 {
                     right = lineRight;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(widget.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_563584076 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_563584076;
-        // ---------- Original Method ----------
-        //final Layout layout = widget.getLayout();
-        //final int topLine = getTopLine(widget);
-        //final int bottomLine = getBottomLine(widget);
-        //if (topLine > bottomLine) {
-            //return 0;
-        //}
-        //int right = Integer.MIN_VALUE;
-        //for (int line = topLine; line <= bottomLine; line++) {
-            //final int lineRight = (int) Math.ceil(layout.getLineRight(line));
-            //if (lineRight > right) {
-                //right = lineRight;
-            //}
-        //}
-        //return right;
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.058 -0400", hash_original_method = "99A2FC579527B2CEA9AC5A41AD01795F", hash_generated_method = "18E2680551A51197B673334987CD3B89")
     protected boolean scrollLeft(TextView widget, Spannable buffer, int amount) {
         final int minScrollX = getScrollBoundsLeft(widget);
@@ -683,24 +696,25 @@ public class BaseMovementMethod implements MovementMethod {
         {
             scrollX = Math.max(scrollX - getCharacterWidth(widget) * amount, minScrollX);
             widget.scrollTo(scrollX, widget.getScrollY());
-        } //End block
+        } 
         addTaint(widget.getTaint());
         addTaint(buffer.getTaint());
         addTaint(amount);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_485735883 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_485735883;
-        // ---------- Original Method ----------
-        //final int minScrollX = getScrollBoundsLeft(widget);
-        //int scrollX = widget.getScrollX();
-        //if (scrollX > minScrollX) {
-            //scrollX = Math.max(scrollX - getCharacterWidth(widget) * amount, minScrollX);
-            //widget.scrollTo(scrollX, widget.getScrollY());
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.059 -0400", hash_original_method = "34082555FFD2A1D5F6DB38655C7C2C48", hash_generated_method = "19960DFCE957FD39E24AE128734D54EB")
     protected boolean scrollRight(TextView widget, Spannable buffer, int amount) {
         final int maxScrollX = getScrollBoundsRight(widget) - getInnerWidth(widget);
@@ -708,24 +722,25 @@ public class BaseMovementMethod implements MovementMethod {
         {
             scrollX = Math.min(scrollX + getCharacterWidth(widget) * amount, maxScrollX);
             widget.scrollTo(scrollX, widget.getScrollY());
-        } //End block
+        } 
         addTaint(widget.getTaint());
         addTaint(buffer.getTaint());
         addTaint(amount);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1853322669 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1853322669;
-        // ---------- Original Method ----------
-        //final int maxScrollX = getScrollBoundsRight(widget) - getInnerWidth(widget);
-        //int scrollX = widget.getScrollX();
-        //if (scrollX < maxScrollX) {
-            //scrollX = Math.min(scrollX + getCharacterWidth(widget) * amount, maxScrollX);
-            //widget.scrollTo(scrollX, widget.getScrollY());
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.060 -0400", hash_original_method = "A3AFC4271D337C51C9B090DAD80C0547", hash_generated_method = "D9B4053255A295D236873734930CAD06")
     protected boolean scrollUp(TextView widget, Spannable buffer, int amount) {
         final Layout layout = widget.getLayout();
@@ -735,33 +750,34 @@ public class BaseMovementMethod implements MovementMethod {
             boolean varEEE5BBB9733FB099657B9686D5BC78E7_1392634654 = (layout.getLineTop(topLine) == top);
             {
                 topLine -= 1;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             topLine = Math.max(topLine - amount + 1, 0);
             Touch.scrollTo(widget, layout, widget.getScrollX(), layout.getLineTop(topLine));
-        } //End block
+        } 
         addTaint(widget.getTaint());
         addTaint(buffer.getTaint());
         addTaint(amount);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1514527005 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1514527005;
-        // ---------- Original Method ----------
-        //final Layout layout = widget.getLayout();
-        //final int top = widget.getScrollY();
-        //int topLine = layout.getLineForVertical(top);
-        //if (layout.getLineTop(topLine) == top) {
-            //topLine -= 1;
-        //}
-        //if (topLine >= 0) {
-            //topLine = Math.max(topLine - amount + 1, 0);
-            //Touch.scrollTo(widget, layout, widget.getScrollX(), layout.getLineTop(topLine));
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+        
+        
+            
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.061 -0400", hash_original_method = "0BF828F72F7601E47AA52D725EC1C4EF", hash_generated_method = "4F7CFB09C8AC333C027C4FB67AD14F5A")
     protected boolean scrollDown(TextView widget, Spannable buffer, int amount) {
         final Layout layout = widget.getLayout();
@@ -772,38 +788,39 @@ public class BaseMovementMethod implements MovementMethod {
             boolean var030919D13F1284BB3F9B91F681DCB1BC_1092208601 = (layout.getLineTop(bottomLine + 1) < bottom + 1);
             {
                 bottomLine += 1;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final int limit = layout.getLineCount() - 1;
         {
             bottomLine = Math.min(bottomLine + amount - 1, limit);
             Touch.scrollTo(widget, layout, widget.getScrollX(),
                     layout.getLineTop(bottomLine + 1) - innerHeight);
-        } //End block
+        } 
         addTaint(widget.getTaint());
         addTaint(buffer.getTaint());
         addTaint(amount);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1519169452 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1519169452;
-        // ---------- Original Method ----------
-        //final Layout layout = widget.getLayout();
-        //final int innerHeight = getInnerHeight(widget);
-        //final int bottom = widget.getScrollY() + innerHeight;
-        //int bottomLine = layout.getLineForVertical(bottom);
-        //if (layout.getLineTop(bottomLine + 1) < bottom + 1) {
-            //bottomLine += 1;
-        //}
-        //final int limit = layout.getLineCount() - 1;
-        //if (bottomLine <= limit) {
-            //bottomLine = Math.min(bottomLine + amount - 1, limit);
-            //Touch.scrollTo(widget, layout, widget.getScrollX(),
-                    //layout.getLineTop(bottomLine + 1) - innerHeight);
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                    
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.061 -0400", hash_original_method = "961665135E04FC2BFD71FE9A7899CD8F", hash_generated_method = "0E0BC21E8CBF0CE19553248B7CFDCE8D")
     protected boolean scrollPageUp(TextView widget, Spannable buffer) {
         final Layout layout = widget.getLayout();
@@ -811,23 +828,24 @@ public class BaseMovementMethod implements MovementMethod {
         int topLine = layout.getLineForVertical(top);
         {
             Touch.scrollTo(widget, layout, widget.getScrollX(), layout.getLineTop(topLine));
-        } //End block
+        } 
         addTaint(widget.getTaint());
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1922162903 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1922162903;
-        // ---------- Original Method ----------
-        //final Layout layout = widget.getLayout();
-        //final int top = widget.getScrollY() - getInnerHeight(widget);
-        //int topLine = layout.getLineForVertical(top);
-        //if (topLine >= 0) {
-            //Touch.scrollTo(widget, layout, widget.getScrollX(), layout.getLineTop(topLine));
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.062 -0400", hash_original_method = "FC4FA64E8CF6D16D369F4D51265A00D0", hash_generated_method = "897A425A6846126E16A5E5ABAFC367C2")
     protected boolean scrollPageDown(TextView widget, Spannable buffer) {
         final Layout layout = widget.getLayout();
@@ -839,26 +857,27 @@ public class BaseMovementMethod implements MovementMethod {
             {
                 Touch.scrollTo(widget, layout, widget.getScrollX(),
                     layout.getLineTop(bottomLine + 1) - innerHeight);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(widget.getTaint());
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_738409564 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_738409564;
-        // ---------- Original Method ----------
-        //final Layout layout = widget.getLayout();
-        //final int innerHeight = getInnerHeight(widget);
-        //final int bottom = widget.getScrollY() + innerHeight + innerHeight;
-        //int bottomLine = layout.getLineForVertical(bottom);
-        //if (bottomLine <= layout.getLineCount() - 1) {
-            //Touch.scrollTo(widget, layout, widget.getScrollX(),
-                    //layout.getLineTop(bottomLine + 1) - innerHeight);
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+        
+        
+        
+            
+                    
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.062 -0400", hash_original_method = "7CF9A5A04E9D7FD8D1056DC0F832B9EF", hash_generated_method = "2C2853BAB74DEAEA5EF3DA04C5F7C429")
     protected boolean scrollTop(TextView widget, Spannable buffer) {
         final Layout layout = widget.getLayout();
@@ -866,22 +885,23 @@ public class BaseMovementMethod implements MovementMethod {
             boolean varA4FA92505E883020183A6E88585B9BF8_856409487 = (getTopLine(widget) >= 0);
             {
                 Touch.scrollTo(widget, layout, widget.getScrollX(), layout.getLineTop(0));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(widget.getTaint());
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_55809702 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_55809702;
-        // ---------- Original Method ----------
-        //final Layout layout = widget.getLayout();
-        //if (getTopLine(widget) >= 0) {
-            //Touch.scrollTo(widget, layout, widget.getScrollX(), layout.getLineTop(0));
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.063 -0400", hash_original_method = "FCBCF26A13DC616293A73F9223FE45DF", hash_generated_method = "3F09ADDC921219FF1E443AE9D0C9C58B")
     protected boolean scrollBottom(TextView widget, Spannable buffer) {
         final Layout layout = widget.getLayout();
@@ -891,65 +911,67 @@ public class BaseMovementMethod implements MovementMethod {
             {
                 Touch.scrollTo(widget, layout, widget.getScrollX(),
                     layout.getLineTop(lineCount) - getInnerHeight(widget));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(widget.getTaint());
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1211645558 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1211645558;
-        // ---------- Original Method ----------
-        //final Layout layout = widget.getLayout();
-        //final int lineCount = layout.getLineCount();
-        //if (getBottomLine(widget) <= lineCount - 1) {
-            //Touch.scrollTo(widget, layout, widget.getScrollX(),
-                    //layout.getLineTop(lineCount) - getInnerHeight(widget));
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+        
+            
+                    
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.063 -0400", hash_original_method = "FDDC66476559B51E1C65BE36B03CFE74", hash_generated_method = "02129BC99FBBFF783B41522680A5C1B5")
     protected boolean scrollLineStart(TextView widget, Spannable buffer) {
         final int minScrollX = getScrollBoundsLeft(widget);
         int scrollX = widget.getScrollX();
         {
             widget.scrollTo(minScrollX, widget.getScrollY());
-        } //End block
+        } 
         addTaint(widget.getTaint());
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2057700724 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2057700724;
-        // ---------- Original Method ----------
-        //final int minScrollX = getScrollBoundsLeft(widget);
-        //int scrollX = widget.getScrollX();
-        //if (scrollX > minScrollX) {
-            //widget.scrollTo(minScrollX, widget.getScrollY());
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.064 -0400", hash_original_method = "83871D5A105C781298F6AD1F6CCA2A68", hash_generated_method = "0BC788D81380A3C7D487683075627F69")
     protected boolean scrollLineEnd(TextView widget, Spannable buffer) {
         final int maxScrollX = getScrollBoundsRight(widget) - getInnerWidth(widget);
         int scrollX = widget.getScrollX();
         {
             widget.scrollTo(maxScrollX, widget.getScrollY());
-        } //End block
+        } 
         addTaint(widget.getTaint());
         addTaint(buffer.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2132692478 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2132692478;
-        // ---------- Original Method ----------
-        //final int maxScrollX = getScrollBoundsRight(widget) - getInnerWidth(widget);
-        //int scrollX = widget.getScrollX();
-        //if (scrollX < maxScrollX) {
-            //widget.scrollTo(maxScrollX, widget.getScrollY());
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     

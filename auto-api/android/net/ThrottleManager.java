@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
@@ -20,7 +20,7 @@ public class ThrottleManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.033 -0400", hash_original_method = "A34F832700CA864903AE32FE53CD267E", hash_generated_method = "3F4BC6E2219D8CDC47CEDF2CEA3212F6")
     @SuppressWarnings({"UnusedDeclaration"})
     private  ThrottleManager() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,63 +29,66 @@ public class ThrottleManager {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                 "ThrottleManager() cannot be constructed with null service");
-        } //End block
+        } 
         mService = service;
-        // ---------- Original Method ----------
-        //if (service == null) {
-            //throw new IllegalArgumentException(
-                //"ThrottleManager() cannot be constructed with null service");
-        //}
-        //mService = service;
+        
+        
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.034 -0400", hash_original_method = "2AA7855A594B5700D93ECFB7D9A7B7C4", hash_generated_method = "ECFAC90EAE2F172B57B5BEA1A35BB922")
     public long getResetTime(String iface) {
         try 
         {
             long var204217EC59A9D04F93D6FDBD469F9D59_1215919088 = (mService.getResetTime(iface));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(iface.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1982311580 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1982311580;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getResetTime(iface);
-        //} catch (RemoteException e) {
-            //return -1;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.034 -0400", hash_original_method = "71ECD56B8A0A75240BCCEB36337D3BA2", hash_generated_method = "D7D6292579156D8F507534F45CFF4E24")
     public long getPeriodStartTime(String iface) {
         try 
         {
             long var41F2168021DDC7A88D402A7B46B6D14A_1316706773 = (mService.getPeriodStartTime(iface));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(iface.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1120216696 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1120216696;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getPeriodStartTime(iface);
-        //} catch (RemoteException e) {
-            //return -1;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.035 -0400", hash_original_method = "8241A155E8F913EC462AEA4A2F5ED1F8", hash_generated_method = "71D46AA5D7BDB58C7A5E9A9EA6CB0B0E")
     public long getByteCount(String iface, int direction, int period, int ago) {
         try 
         {
             long var30378541F1303B54C3A8D606E1FBC18A_1792817468 = (mService.getByteCount(iface, direction, period, ago));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(iface.getTaint());
@@ -94,86 +97,89 @@ public class ThrottleManager {
         addTaint(ago);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_237737618 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_237737618;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getByteCount(iface, direction, period, ago);
-        //} catch (RemoteException e) {
-            //return -1;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.035 -0400", hash_original_method = "1E5CE1E6E971F0A1DB09E08194D8A23E", hash_generated_method = "FE3FDE2C4061649CE3FA54D531B24A05")
     public long getCliffThreshold(String iface, int cliff) {
         try 
         {
             long varAB9EEDBAB9E22E2A16A7FBF573F9D420_1154854018 = (mService.getCliffThreshold(iface, cliff));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(iface.getTaint());
         addTaint(cliff);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_703811821 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_703811821;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getCliffThreshold(iface, cliff);
-        //} catch (RemoteException e) {
-            //return -1;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.036 -0400", hash_original_method = "1E0667CC63B486C17ACE24556BBA89F5", hash_generated_method = "248AA024D833F8B16B5DED3948EC3AF8")
     public int getCliffLevel(String iface, int cliff) {
         try 
         {
             int varCBBABF44689050DB88F0F7777EEC0438_210102660 = (mService.getCliffLevel(iface, cliff));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(iface.getTaint());
         addTaint(cliff);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1346140932 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1346140932;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getCliffLevel(iface, cliff);
-        //} catch (RemoteException e) {
-            //return -1;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.037 -0400", hash_original_method = "BE6DD87215E82DDA8E4A2908333DC9D4", hash_generated_method = "964502FD16682C666E0B6B31634B7968")
     public String getHelpUri() {
-        String varB4EAC82CA7396A68D541C85D26508E83_743153440 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_764581352 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_743153440 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_764581352 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_743153440 = mService.getHelpUri();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_764581352 = null;
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_1328683955; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1328683955; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1328683955 = varB4EAC82CA7396A68D541C85D26508E83_743153440;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1328683955 = varB4EAC82CA7396A68D541C85D26508E83_764581352;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1328683955.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1328683955.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1328683955;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getHelpUri();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     

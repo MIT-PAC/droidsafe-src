@@ -1,11 +1,11 @@
 package java.nio.charset;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.UTFDataFormatException;
 import java.nio.ByteOrder;
@@ -16,10 +16,11 @@ public class ModifiedUtf8 {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.030 -0400", hash_original_method = "64489454DCC17A9858C56DA9699AAAE7", hash_generated_method = "7413CA2F03D7938EC2CAD9273A6D3E8D")
     private  ModifiedUtf8() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String decode(byte[] in, char[] out, int offset, int utfSize) throws UTFDataFormatException {
         int count = 0, s = 0, a;
         while (count < utfSize) {
@@ -52,6 +53,7 @@ public class ModifiedUtf8 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long countBytes(String s, boolean shortLength) throws UTFDataFormatException {
         long result = 0;
         final int length = s.length();
@@ -72,6 +74,7 @@ public class ModifiedUtf8 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void encode(byte[] dst, int offset, String s) {
         final int length = s.length();
         for (int i = 0; i < length; i++) {
@@ -90,6 +93,7 @@ public class ModifiedUtf8 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] encode(String s) throws UTFDataFormatException {
         int utfCount = (int) ModifiedUtf8.countBytes(s, true);
         byte[] result = new byte[SizeOf.SHORT + utfCount];

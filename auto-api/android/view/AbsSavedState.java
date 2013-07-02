@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -18,8 +18,8 @@ public abstract class AbsSavedState implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.815 -0400", hash_original_method = "98DB61DECD5C8032FFDEFFDBC7A07300", hash_generated_method = "DDE4E11A79D0DBE3ACE7A957674D3B72")
     private  AbsSavedState() {
         mSuperState = null;
-        // ---------- Original Method ----------
-        //mSuperState = null;
+        
+        
     }
 
     
@@ -27,13 +27,13 @@ public abstract class AbsSavedState implements Parcelable {
     protected  AbsSavedState(Parcelable superState) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("superState must not be null");
-        } //End block
+        } 
         mSuperState = superState != EMPTY_STATE ? superState : null;
-        // ---------- Original Method ----------
-        //if (superState == null) {
-            //throw new IllegalArgumentException("superState must not be null");
-        //}
-        //mSuperState = superState != EMPTY_STATE ? superState : null;
+        
+        
+            
+        
+        
     }
 
     
@@ -42,20 +42,20 @@ public abstract class AbsSavedState implements Parcelable {
         Parcelable superState = source.readParcelable(null);
         mSuperState = superState != null ? superState : EMPTY_STATE;
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
-        //Parcelable superState = source.readParcelable(null);
-        //mSuperState = superState != null ? superState : EMPTY_STATE;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.817 -0400", hash_original_method = "D1776F094204A2E68E2669C5D33A32E2", hash_generated_method = "A17808A3DA32F8DCF575FBC1242A4FEC")
     final public Parcelable getSuperState() {
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_905194675 = null; //Variable for return #1
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_905194675 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_905194675 = mSuperState;
-        varB4EAC82CA7396A68D541C85D26508E83_905194675.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_905194675.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_905194675;
-        // ---------- Original Method ----------
-        //return mSuperState;
+        
+        
     }
 
     
@@ -63,18 +63,19 @@ public abstract class AbsSavedState implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1632117385 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1632117385;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.817 -0400", hash_original_method = "49F04AE9062C121AE76FFD8C13AF6818", hash_generated_method = "C38593A2809611A9A3F197A8BF2F840F")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeParcelable(mSuperState, flags);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeParcelable(mSuperState, flags);
+        
+        
     }
 
     
@@ -98,7 +99,7 @@ public abstract class AbsSavedState implements Parcelable {
             return new AbsSavedState[size];
         }
     };
-    // orphaned legacy method
+    
     public AbsSavedState createFromParcel(Parcel in) {
             Parcelable superState = in.readParcelable(null);
             if (superState != null) {
@@ -107,7 +108,7 @@ public abstract class AbsSavedState implements Parcelable {
             return EMPTY_STATE;
         }
     
-    // orphaned legacy method
+    
     public AbsSavedState[] newArray(int size) {
             return new AbsSavedState[size];
         }

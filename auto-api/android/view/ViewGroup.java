@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.animation.LayoutTransition;
 import android.content.Context;
@@ -136,15 +136,15 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 View view, int transitionType) {
             {
                 startViewTransition(view);
-            } //End block
+            } 
             addTaint(transition.getTaint());
             addTaint(container.getTaint());
             addTaint(view.getTaint());
             addTaint(transitionType);
-            // ---------- Original Method ----------
-            //if (transitionType == LayoutTransition.DISAPPEARING) {
-                //startViewTransition(view);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -157,23 +157,23 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 {
                     requestLayout();
                     mLayoutSuppressed = false;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 endViewTransition(view);
-            } //End block
+            } 
             addTaint(transition.getTaint());
             addTaint(container.getTaint());
             addTaint(view.getTaint());
             addTaint(transitionType);
-            // ---------- Original Method ----------
-            //if (mLayoutSuppressed && !transition.isChangingLayout()) {
-                //requestLayout();
-                //mLayoutSuppressed = false;
-            //}
-            //if (transitionType == LayoutTransition.DISAPPEARING && mTransitioningViews != null) {
-                //endViewTransition(view);
-            //}
+            
+            
+                
+                
+            
+            
+                
+            
         }
 
         
@@ -184,8 +184,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         super(context);
         initViewGroup();
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //initViewGroup();
+        
+        
     }
 
     
@@ -196,9 +196,9 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         initFromAttributes(context, attrs);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //initViewGroup();
-        //initFromAttributes(context, attrs);
+        
+        
+        
     }
 
     
@@ -210,12 +210,13 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        //initViewGroup();
-        //initFromAttributes(context, attrs);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.945 -0400", hash_original_method = "8201DDC69D3895B689FCA6813D812A1F", hash_generated_method = "8F5B305EF6384689E6459A6FB77644A1")
     private void initViewGroup() {
         setFlags(WILL_NOT_DRAW, DRAW_MASK);
@@ -228,29 +229,30 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             boolean varEEA1697260544E0A5861DD090A86C488_611745307 = (mContext.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.HONEYCOMB);
             {
                 mGroupFlags |= FLAG_SPLIT_MOTION_EVENTS;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         setDescendantFocusability(FOCUS_BEFORE_DESCENDANTS);
         mChildren = new View[ARRAY_INITIAL_CAPACITY];
         mChildrenCount = 0;
         mPersistentDrawingCache = PERSISTENT_SCROLLING_CACHE;
-        // ---------- Original Method ----------
-        //setFlags(WILL_NOT_DRAW, DRAW_MASK);
-        //mGroupFlags |= FLAG_CLIP_CHILDREN;
-        //mGroupFlags |= FLAG_CLIP_TO_PADDING;
-        //mGroupFlags |= FLAG_ANIMATION_DONE;
-        //mGroupFlags |= FLAG_ANIMATION_CACHE;
-        //mGroupFlags |= FLAG_ALWAYS_DRAWN_WITH_CACHE;
-        //if (mContext.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.HONEYCOMB) {
-            //mGroupFlags |= FLAG_SPLIT_MOTION_EVENTS;
-        //}
-        //setDescendantFocusability(FOCUS_BEFORE_DESCENDANTS);
-        //mChildren = new View[ARRAY_INITIAL_CAPACITY];
-        //mChildrenCount = 0;
-        //mPersistentDrawingCache = PERSISTENT_SCROLLING_CACHE;
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.946 -0400", hash_original_method = "4BC426CDAC642CD3FACBBAAA9F56EF39", hash_generated_method = "8F1C37EE121E05D053B7459D774BE1B5")
     private void initFromAttributes(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs,
@@ -260,53 +262,53 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             int i = 0;
             {
                 int attr = a.getIndex(i);
-                //Begin case R.styleable.ViewGroup_clipChildren 
+                
                 setClipChildren(a.getBoolean(attr, true));
-                //End case R.styleable.ViewGroup_clipChildren 
-                //Begin case R.styleable.ViewGroup_clipToPadding 
+                
+                
                 setClipToPadding(a.getBoolean(attr, true));
-                //End case R.styleable.ViewGroup_clipToPadding 
-                //Begin case R.styleable.ViewGroup_animationCache 
+                
+                
                 setAnimationCacheEnabled(a.getBoolean(attr, true));
-                //End case R.styleable.ViewGroup_animationCache 
-                //Begin case R.styleable.ViewGroup_persistentDrawingCache 
+                
+                
                 setPersistentDrawingCache(a.getInt(attr, PERSISTENT_SCROLLING_CACHE));
-                //End case R.styleable.ViewGroup_persistentDrawingCache 
-                //Begin case R.styleable.ViewGroup_addStatesFromChildren 
+                
+                
                 setAddStatesFromChildren(a.getBoolean(attr, false));
-                //End case R.styleable.ViewGroup_addStatesFromChildren 
-                //Begin case R.styleable.ViewGroup_alwaysDrawnWithCache 
+                
+                
                 setAlwaysDrawnWithCacheEnabled(a.getBoolean(attr, true));
-                //End case R.styleable.ViewGroup_alwaysDrawnWithCache 
-                //Begin case R.styleable.ViewGroup_layoutAnimation 
+                
+                
                 int id = a.getResourceId(attr, -1);
-                //End case R.styleable.ViewGroup_layoutAnimation 
-                //Begin case R.styleable.ViewGroup_layoutAnimation 
+                
+                
                 {
                     setLayoutAnimation(AnimationUtils.loadLayoutAnimation(mContext, id));
-                } //End block
-                //End case R.styleable.ViewGroup_layoutAnimation 
-                //Begin case R.styleable.ViewGroup_descendantFocusability 
+                } 
+                
+                
                 setDescendantFocusability(DESCENDANT_FOCUSABILITY_FLAGS[a.getInt(attr, 0)]);
-                //End case R.styleable.ViewGroup_descendantFocusability 
-                //Begin case R.styleable.ViewGroup_splitMotionEvents 
+                
+                
                 setMotionEventSplittingEnabled(a.getBoolean(attr, false));
-                //End case R.styleable.ViewGroup_splitMotionEvents 
-                //Begin case R.styleable.ViewGroup_animateLayoutChanges 
+                
+                
                 boolean animateLayoutChanges = a.getBoolean(attr, false);
-                //End case R.styleable.ViewGroup_animateLayoutChanges 
-                //Begin case R.styleable.ViewGroup_animateLayoutChanges 
+                
+                
                 {
                     setLayoutTransition(new LayoutTransition());
-                } //End block
-                //End case R.styleable.ViewGroup_animateLayoutChanges 
-            } //End block
-        } //End collapsed parenthetic
+                } 
+                
+            } 
+        } 
         a.recycle();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -319,31 +321,32 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     public int getDescendantFocusability() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_916694904 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_916694904;
-        // ---------- Original Method ----------
-        //return mGroupFlags & FLAG_MASK_FOCUSABILITY;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.947 -0400", hash_original_method = "0404A0C2267D357D33DA2838086AAD01", hash_generated_method = "6777C91700ABD3CD3DF9DE9501BE5784")
     public void setDescendantFocusability(int focusability) {
-        //Begin case default 
+        
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("must be one of FOCUS_BEFORE_DESCENDANTS, "
                         + "FOCUS_AFTER_DESCENDANTS, FOCUS_BLOCK_DESCENDANTS");
-        //End case default 
+        
         mGroupFlags &= ~FLAG_MASK_FOCUSABILITY;
         mGroupFlags |= (focusability & FLAG_MASK_FOCUSABILITY);
-        // ---------- Original Method ----------
-        //switch (focusability) {
-            //case FOCUS_BEFORE_DESCENDANTS:
-            //case FOCUS_AFTER_DESCENDANTS:
-            //case FOCUS_BLOCK_DESCENDANTS:
-                //break;
-            //default:
-                //throw new IllegalArgumentException("must be one of FOCUS_BEFORE_DESCENDANTS, "
-                        //+ "FOCUS_AFTER_DESCENDANTS, FOCUS_BLOCK_DESCENDANTS");
-        //}
-        //mGroupFlags &= ~FLAG_MASK_FOCUSABILITY;
-        //mGroupFlags |= (focusability & FLAG_MASK_FOCUSABILITY);
+        
+        
+            
+            
+            
+                
+            
+                
+                        
+        
+        
+        
     }
 
     
@@ -353,58 +356,60 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         {
             mFocused.unFocus();
             mFocused = null;
-        } //End block
+        } 
         super.handleFocusGainInternal(direction, previouslyFocusedRect);
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
-        // ---------- Original Method ----------
-        //if (mFocused != null) {
-            //mFocused.unFocus();
-            //mFocused = null;
-        //}
-        //super.handleFocusGainInternal(direction, previouslyFocusedRect);
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.949 -0400", hash_original_method = "18A4940B9B410F6E2A586E7BEB513255", hash_generated_method = "504940AA5CA771877A6E9A21191E1471")
     public void requestChildFocus(View child, View focused) {
         {
             System.out.println(this + " requestChildFocus()");
-        } //End block
+        } 
         {
             boolean varD47ACE2ACEC5C175A0471B099816BE37_1848177389 = (getDescendantFocusability() == FOCUS_BLOCK_DESCENDANTS);
-        } //End collapsed parenthetic
+        } 
         super.unFocus();
         {
             {
                 mFocused.unFocus();
-            } //End block
+            } 
             mFocused = child;
-        } //End block
+        } 
         {
             mParent.requestChildFocus(this, focused);
-        } //End block
+        } 
         addTaint(focused.getTaint());
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //System.out.println(this + " requestChildFocus()");
-        //}
-        //if (getDescendantFocusability() == FOCUS_BLOCK_DESCENDANTS) {
-            //return;
-        //}
-        //super.unFocus();
-        //if (mFocused != child) {
-            //if (mFocused != null) {
-                //mFocused.unFocus();
-            //}
-            //mFocused = child;
-        //}
-        //if (mParent != null) {
-            //mParent.requestChildFocus(this, focused);
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+                
+            
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.949 -0400", hash_original_method = "B9C632089323DEB68745C50418B61ADF", hash_generated_method = "6D48AE1FE234AF630E487A66DA3D8F4B")
     public void focusableViewAvailable(View v) {
         {
@@ -413,80 +418,82 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 && !(isFocused() && getDescendantFocusability() != FOCUS_AFTER_DESCENDANTS));
             {
                 mParent.focusableViewAvailable(v);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(v.getTaint());
-        // ---------- Original Method ----------
-        //if (mParent != null
-                //&& (getDescendantFocusability() != FOCUS_BLOCK_DESCENDANTS)
-                //&& !(isFocused() && getDescendantFocusability() != FOCUS_AFTER_DESCENDANTS)) {
-            //mParent.focusableViewAvailable(v);
-        //}
+        
+        
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.949 -0400", hash_original_method = "AAA08A22C93220CA5F37A81C00115203", hash_generated_method = "296023B99D4F1E869842D1C0B8015F1E")
     public boolean showContextMenuForChild(View originalView) {
         boolean varBA8B92D993B1A5B6CF969236EEAB6152_669547775 = (mParent != null && mParent.showContextMenuForChild(originalView));
         addTaint(originalView.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1939673462 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1939673462;
-        // ---------- Original Method ----------
-        //return mParent != null && mParent.showContextMenuForChild(originalView);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.950 -0400", hash_original_method = "8C60B2F96F2B489988C14A93A463DAE3", hash_generated_method = "F270CFA1B751C2F73C038FDAE4DF7A1B")
     public ActionMode startActionModeForChild(View originalView, ActionMode.Callback callback) {
-        ActionMode varB4EAC82CA7396A68D541C85D26508E83_1306296268 = null; //Variable for return #1
+        ActionMode varB4EAC82CA7396A68D541C85D26508E83_1306296268 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1306296268 = mParent != null ? mParent.startActionModeForChild(originalView, callback) : null;
         addTaint(originalView.getTaint());
         addTaint(callback.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1306296268.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1306296268.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1306296268;
-        // ---------- Original Method ----------
-        //return mParent != null ? mParent.startActionModeForChild(originalView, callback) : null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.950 -0400", hash_original_method = "32394A633C776A8BC33A6BFC48D3DC37", hash_generated_method = "2E45788551B3AF8CA0980A4A94AE9E72")
     public View focusSearch(View focused, int direction) {
-        View varB4EAC82CA7396A68D541C85D26508E83_410521484 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1624342629 = null; //Variable for return #2
-        View varB4EAC82CA7396A68D541C85D26508E83_226646072 = null; //Variable for return #3
+        View varB4EAC82CA7396A68D541C85D26508E83_410521484 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1624342629 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_226646072 = null; 
         {
             boolean var6900EB30484F14AE1B69428931AEDE0D_1723218640 = (isRootNamespace());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_410521484 = FocusFinder.getInstance().findNextFocus(this, focused, direction);
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1624342629 = mParent.focusSearch(focused, direction);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_226646072 = null;
         addTaint(focused.getTaint());
         addTaint(direction);
-        View varA7E53CE21691AB073D9660D615818899_1430431668; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1430431668; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1430431668 = varB4EAC82CA7396A68D541C85D26508E83_410521484;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1430431668 = varB4EAC82CA7396A68D541C85D26508E83_1624342629;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1430431668 = varB4EAC82CA7396A68D541C85D26508E83_226646072;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1430431668.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1430431668.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1430431668;
-        // ---------- Original Method ----------
-        //if (isRootNamespace()) {
-            //return FocusFinder.getInstance().findNextFocus(this, focused, direction);
-        //} else if (mParent != null) {
-            //return mParent.focusSearch(focused, direction);
-        //}
-        //return null;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -497,11 +504,12 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         addTaint(immediate);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_348466506 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_348466506;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.951 -0400", hash_original_method = "B4AA594F7D6DA64F58B166664BBA4580", hash_generated_method = "FCD74FD73E06D94C6E02AAC27F6212E6")
     public boolean requestSendAccessibilityEvent(View child, AccessibilityEvent event) {
         ViewParent parent = getParent();
@@ -511,53 +519,55 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_656174315 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_656174315;
-        // ---------- Original Method ----------
-        //ViewParent parent = getParent();
-        //if (parent == null) {
-            //return false;
-        //}
-        //final boolean propagate = onRequestSendAccessibilityEvent(child, event);
-        //if (!propagate) {
-            //return false;
-        //}
-        //return parent.requestSendAccessibilityEvent(this, event);
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.951 -0400", hash_original_method = "0D2782B4A269D15DF81200BFDAFE535A", hash_generated_method = "5ED33784E9BDC938F35C29528BFF28A6")
     public boolean onRequestSendAccessibilityEvent(View child, AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var5A0C8D77442C96677A25BCD888A43DDA_1676437145 = (mAccessibilityDelegate.onRequestSendAccessibilityEvent(this, child, event));
-        } //End block
+        } 
         {
             boolean var36AE0BB3330710CD64DFF9DF5BCECE4F_356981700 = (onRequestSendAccessibilityEventInternal(child, event));
-        } //End block
+        } 
         addTaint(child.getTaint());
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1616174399 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1616174399;
-        // ---------- Original Method ----------
-        //if (mAccessibilityDelegate != null) {
-            //return mAccessibilityDelegate.onRequestSendAccessibilityEvent(this, child, event);
-        //} else {
-            //return onRequestSendAccessibilityEventInternal(child, event);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.952 -0400", hash_original_method = "F0DFCA5DE1F330F511BBFF62182D5BD4", hash_generated_method = "FDDE49DFC1DD5DFDA960E159BBDE623A")
      boolean onRequestSendAccessibilityEventInternal(View child, AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(child.getTaint());
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1852199484 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1852199484;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.952 -0400", hash_original_method = "E35CCEA2DF29F8696C548F55094B5B73", hash_generated_method = "131DF5FFCAF885BFFEABEB8ABC169D46")
     @Override
     public boolean dispatchUnhandledMove(View focused, int direction) {
@@ -567,45 +577,47 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         addTaint(direction);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1923987516 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1923987516;
-        // ---------- Original Method ----------
-        //return mFocused != null &&
-                //mFocused.dispatchUnhandledMove(focused, direction);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.952 -0400", hash_original_method = "1A8D22FF280DB81B170D27815BE7BEAA", hash_generated_method = "220D2AF227F8192C20FF0AAD9C6E6B54")
     public void clearChildFocus(View child) {
         {
             System.out.println(this + " clearChildFocus()");
-        } //End block
+        } 
         mFocused = null;
         {
             mParent.clearChildFocus(this);
-        } //End block
+        } 
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //System.out.println(this + " clearChildFocus()");
-        //}
-        //mFocused = null;
-        //if (mParent != null) {
-            //mParent.clearChildFocus(this);
-        //}
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.953 -0400", hash_original_method = "2A2B29C64ED25C5483BB6B32C5BD1628", hash_generated_method = "3342498F7A8B69ACA45B632AC7F311FF")
     @Override
     public void clearFocus() {
         super.clearFocus();
         {
             mFocused.clearFocus();
-        } //End block
-        // ---------- Original Method ----------
-        //super.clearFocus();
-        //if (mFocused != null) {
-            //mFocused.clearFocus();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -614,32 +626,32 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
      void unFocus() {
         {
             System.out.println(this + " unFocus()");
-        } //End block
+        } 
         super.unFocus();
         {
             mFocused.unFocus();
-        } //End block
+        } 
         mFocused = null;
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //System.out.println(this + " unFocus()");
-        //}
-        //super.unFocus();
-        //if (mFocused != null) {
-            //mFocused.unFocus();
-        //}
-        //mFocused = null;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.953 -0400", hash_original_method = "F6AEE91365C496A95D4F4B1572422CF5", hash_generated_method = "3A34C49C7D005CEB466185F73C2DC6D8")
     public View getFocusedChild() {
-        View varB4EAC82CA7396A68D541C85D26508E83_248650730 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_248650730 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_248650730 = mFocused;
-        varB4EAC82CA7396A68D541C85D26508E83_248650730.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_248650730.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_248650730;
-        // ---------- Original Method ----------
-        //return mFocused;
+        
+        
     }
 
     
@@ -648,66 +660,68 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     public boolean hasFocus() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1318427078 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1318427078;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags & FOCUSED) != 0 || mFocused != null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.954 -0400", hash_original_method = "8D50679A3D30F96CD0297A05342EFA70", hash_generated_method = "4CB87EB88AD9FF07B701864EF0333D51")
     @Override
     public View findFocus() {
-        View varB4EAC82CA7396A68D541C85D26508E83_1848113700 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1997205617 = null; //Variable for return #2
-        View varB4EAC82CA7396A68D541C85D26508E83_1549009055 = null; //Variable for return #3
+        View varB4EAC82CA7396A68D541C85D26508E83_1848113700 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1997205617 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1549009055 = null; 
         {
             System.out.println("Find focus in " + this + ": flags="
                     + isFocused() + ", child=" + mFocused);
-        } //End block
+        } 
         {
             boolean var1C23F183BE3EEE2A8667855A22865324_620532249 = (isFocused());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1848113700 = this;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1997205617 = mFocused.findFocus();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1549009055 = null;
-        View varA7E53CE21691AB073D9660D615818899_1716451341; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1716451341; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1716451341 = varB4EAC82CA7396A68D541C85D26508E83_1848113700;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1716451341 = varB4EAC82CA7396A68D541C85D26508E83_1997205617;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1716451341 = varB4EAC82CA7396A68D541C85D26508E83_1549009055;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1716451341.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1716451341.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1716451341;
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //System.out.println("Find focus in " + this + ": flags="
-                    //+ isFocused() + ", child=" + mFocused);
-        //}
-        //if (isFocused()) {
-            //return this;
-        //}
-        //if (mFocused != null) {
-            //return mFocused.findFocus();
-        //}
-        //return null;
+        
+        
+            
+                    
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.955 -0400", hash_original_method = "415824CC4E37F2B08D458BE00E3F5A3F", hash_generated_method = "414A33CAC9F73E579ED0E2098E1028F5")
     @Override
     public boolean hasFocusable() {
         {
             boolean var586AE4CCFE144A60D22CF3B21C623ACC_1418733681 = (isFocusable());
-        } //End collapsed parenthetic
+        } 
         final int descendantFocusability = getDescendantFocusability();
         {
             final int count = mChildrenCount;
@@ -718,45 +732,47 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     final View child = children[i];
                     {
                         boolean var7DC29F4EF4EE5211D58EB348F2B6AE7E_1965868413 = (child.hasFocusable());
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1149225511 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1149225511;
-        // ---------- Original Method ----------
-        //if ((mViewFlags & VISIBILITY_MASK) != VISIBLE) {
-            //return false;
-        //}
-        //if (isFocusable()) {
-            //return true;
-        //}
-        //final int descendantFocusability = getDescendantFocusability();
-        //if (descendantFocusability != FOCUS_BLOCK_DESCENDANTS) {
-            //final int count = mChildrenCount;
-            //final View[] children = mChildren;
-            //for (int i = 0; i < count; i++) {
-                //final View child = children[i];
-                //if (child.hasFocusable()) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+            
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.955 -0400", hash_original_method = "2428CCD79B4CEE814D080BAF1161F8B9", hash_generated_method = "431825FF8AC602907ED2322848F946AB")
     @Override
     public void addFocusables(ArrayList<View> views, int direction) {
         addFocusables(views, direction, FOCUSABLES_TOUCH_MODE);
         addTaint(views.getTaint());
         addTaint(direction);
-        // ---------- Original Method ----------
-        //addFocusables(views, direction, FOCUSABLES_TOUCH_MODE);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.956 -0400", hash_original_method = "A281D125D4DD0434A87F479D62DD0361", hash_generated_method = "0FF7C489805A9FFAE077F11A79830CAE")
     @Override
     public void addFocusables(ArrayList<View> views, int direction, int focusableMode) {
@@ -771,41 +787,42 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     final View child = children[i];
                     {
                         child.addFocusables(views, direction, focusableMode);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var0F1BFD0DBC136B3E2580439E8453837C_25946439 = (descendantFocusability != FOCUS_AFTER_DESCENDANTS ||
                 (focusableCount == views.size()));
             {
                 super.addFocusables(views, direction, focusableMode);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(views.getTaint());
         addTaint(direction);
         addTaint(focusableMode);
-        // ---------- Original Method ----------
-        //final int focusableCount = views.size();
-        //final int descendantFocusability = getDescendantFocusability();
-        //if (descendantFocusability != FOCUS_BLOCK_DESCENDANTS) {
-            //final int count = mChildrenCount;
-            //final View[] children = mChildren;
-            //for (int i = 0; i < count; i++) {
-                //final View child = children[i];
-                //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
-                    //child.addFocusables(views, direction, focusableMode);
-                //}
-            //}
-        //}
-        //if (
-            //descendantFocusability != FOCUS_AFTER_DESCENDANTS ||
-                //(focusableCount == views.size())) {
-            //super.addFocusables(views, direction, focusableMode);
-        //}
+        
+        
+        
+        
+            
+            
+            
+                
+                
+                    
+                
+            
+        
+        
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.957 -0400", hash_original_method = "01B0DFF5DFF6A04EF473202885B21AEA", hash_generated_method = "1C384F8CAF57EFD30A22525108477F28")
     @Override
     public void findViewsWithText(ArrayList<View> outViews, CharSequence text, int flags) {
@@ -818,36 +835,36 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 View child = children[i];
                 {
                     child.findViewsWithText(outViews, text, flags);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(outViews.getTaint());
         addTaint(text.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //super.findViewsWithText(outViews, text, flags);
-        //final int childrenCount = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < childrenCount; i++) {
-            //View child = children[i];
-            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE
-                    //&& (child.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
-                //child.findViewsWithText(outViews, text, flags);
-            //}
-        //}
+        
+        
+        
+        
+        
+            
+            
+                    
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.958 -0400", hash_original_method = "E63784DE90D03F6D10488691622E702B", hash_generated_method = "D408E5CADBE6229BF22E996F5F9A8A69")
     @Override
      View findViewByAccessibilityIdTraversal(int accessibilityId) {
-        View varB4EAC82CA7396A68D541C85D26508E83_2007836568 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_159636968 = null; //Variable for return #2
-        View varB4EAC82CA7396A68D541C85D26508E83_1933599470 = null; //Variable for return #3
+        View varB4EAC82CA7396A68D541C85D26508E83_2007836568 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_159636968 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1933599470 = null; 
         View foundView = super.findViewByAccessibilityIdTraversal(accessibilityId);
         {
             varB4EAC82CA7396A68D541C85D26508E83_2007836568 = foundView;
-        } //End block
+        } 
         final int childrenCount = mChildrenCount;
         final View[] children = mChildren;
         {
@@ -857,43 +874,44 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 foundView = child.findViewByAccessibilityIdTraversal(accessibilityId);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_159636968 = foundView;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1933599470 = null;
         addTaint(accessibilityId);
-        View varA7E53CE21691AB073D9660D615818899_1616167468; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1616167468; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1616167468 = varB4EAC82CA7396A68D541C85D26508E83_2007836568;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1616167468 = varB4EAC82CA7396A68D541C85D26508E83_159636968;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1616167468 = varB4EAC82CA7396A68D541C85D26508E83_1933599470;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1616167468.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1616167468.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1616167468;
-        // ---------- Original Method ----------
-        //View foundView = super.findViewByAccessibilityIdTraversal(accessibilityId);
-        //if (foundView != null) {
-            //return foundView;
-        //}
-        //final int childrenCount = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < childrenCount; i++) {
-            //View child = children[i];
-            //foundView = child.findViewByAccessibilityIdTraversal(accessibilityId);
-            //if (foundView != null) {
-                //return foundView;
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.959 -0400", hash_original_method = "8947E2F3FD45B1E1CD9A8BF9F902DE4D", hash_generated_method = "F96EF608CB361E90A2693B207131EC10")
     @Override
     public void dispatchWindowFocusChanged(boolean hasFocus) {
@@ -904,19 +922,20 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             int i = 0;
             {
                 children[i].dispatchWindowFocusChanged(hasFocus);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(hasFocus);
-        // ---------- Original Method ----------
-        //super.dispatchWindowFocusChanged(hasFocus);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchWindowFocusChanged(hasFocus);
-        //}
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.960 -0400", hash_original_method = "3C050A87A5AA11FCC905DB1242C91519", hash_generated_method = "BA4D79BAA9E692562DBB3E7949BE15E3")
     @Override
     public void addTouchables(ArrayList<View> views) {
@@ -929,23 +948,24 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 final View child = children[i];
                 {
                     child.addTouchables(views);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(views.getTaint());
-        // ---------- Original Method ----------
-        //super.addTouchables(views);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //final View child = children[i];
-            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
-                //child.addTouchables(views);
-            //}
-        //}
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.960 -0400", hash_original_method = "E3ECA4D0183F28678AE9A73BEBE4A4C4", hash_generated_method = "C8ED002026A7FA9FBCEBE30B59038880")
     @Override
     public void dispatchDisplayHint(int hint) {
@@ -956,54 +976,56 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             int i = 0;
             {
                 children[i].dispatchDisplayHint(hint);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(hint);
-        // ---------- Original Method ----------
-        //super.dispatchDisplayHint(hint);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchDisplayHint(hint);
-        //}
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.961 -0400", hash_original_method = "39046505104385736A9526E25AC3965D", hash_generated_method = "B2F64F3B02B2ED6FA2543ED8F731202D")
     protected void onChildVisibilityChanged(View child, int visibility) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             {
                 mTransition.showChild(this, child);
-            } //End block
+            } 
             {
                 mTransition.hideChild(this, child);
-            } //End block
+            } 
             {
                 {
                     mVisibilityChangingChildren = new ArrayList<View>();
-                } //End block
+                } 
                 mVisibilityChangingChildren.add(child);
                 {
                     boolean var062D8AB67088E18389484F6801BD9183_630423176 = (mTransitioningViews != null && mTransitioningViews.contains(child));
                     {
                         addDisappearingView(child);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 notifyChildOfDrag(child);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(child.getTaint());
         addTaint(visibility);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.961 -0400", hash_original_method = "66EC1DB8C5DE29B0D05D23F4BE080169", hash_generated_method = "3F11DA70082CC701FFF81E33C40D7E06")
     @Override
     protected void dispatchVisibilityChanged(View changedView, int visibility) {
@@ -1014,20 +1036,21 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             int i = 0;
             {
                 children[i].dispatchVisibilityChanged(changedView, visibility);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(changedView.getTaint());
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //super.dispatchVisibilityChanged(changedView, visibility);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchVisibilityChanged(changedView, visibility);
-        //}
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.961 -0400", hash_original_method = "110C8ADF44E81EF076420285F756776D", hash_generated_method = "6F001FE10C303FC73B9CE25CAF3EE77E")
     @Override
     public void dispatchWindowVisibilityChanged(int visibility) {
@@ -1038,19 +1061,20 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             int i = 0;
             {
                 children[i].dispatchWindowVisibilityChanged(visibility);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //super.dispatchWindowVisibilityChanged(visibility);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchWindowVisibilityChanged(visibility);
-        //}
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.962 -0400", hash_original_method = "4BA014AA7FB311F49457CF496AD5B6EF", hash_generated_method = "7BCEBC8B4609C339C4E1E95A334E52D1")
     @Override
     public void dispatchConfigurationChanged(Configuration newConfig) {
@@ -1061,31 +1085,32 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             int i = 0;
             {
                 children[i].dispatchConfigurationChanged(newConfig);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(newConfig.getTaint());
-        // ---------- Original Method ----------
-        //super.dispatchConfigurationChanged(newConfig);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchConfigurationChanged(newConfig);
-        //}
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.962 -0400", hash_original_method = "F881B5C75EE06984153060972C295D8F", hash_generated_method = "6944D71F9564A9FCE793F756A93535DA")
     public void recomputeViewAttributes(View child) {
         {
             ViewParent parent = mParent;
             parent.recomputeViewAttributes(this);
-        } //End block
+        } 
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //if (mAttachInfo != null && !mAttachInfo.mRecomputeGlobalAttributes) {
-            //ViewParent parent = mParent;
-            //if (parent != null) parent.recomputeViewAttributes(this);
-        //}
+        
+        
+            
+            
+        
     }
 
     
@@ -1100,20 +1125,21 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             int i = 0;
             {
                 children[i].dispatchCollectViewAttributes(visibility);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //visibility |= mViewFlags&VISIBILITY_MASK;
-        //super.dispatchCollectViewAttributes(visibility);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchCollectViewAttributes(visibility);
-        //}
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.963 -0400", hash_original_method = "C5DA1A7419AFEADC86BA0783BA235334", hash_generated_method = "D28ED1B16BA6AD83380DF20ECD0CA43C")
     public void bringChildToFront(View child) {
         int index = indexOfChild(child);
@@ -1121,18 +1147,19 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             removeFromArray(index);
             addInArray(child, mChildrenCount);
             child.mParent = this;
-        } //End block
+        } 
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //int index = indexOfChild(child);
-        //if (index >= 0) {
-            //removeFromArray(index);
-            //addInArray(child, mChildrenCount);
-            //child.mParent = this;
-        //}
+        
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.980 -0400", hash_original_method = "0B94D743FFC1DE288527F02F6E8345CD", hash_generated_method = "A7013D773220EA12EDB9991E3C4B7F99")
     @Override
     public boolean dispatchDragEvent(DragEvent event) {
@@ -1140,16 +1167,16 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         final float tx = event.mX;
         final float ty = event.mY;
         ViewRootImpl root = getViewRootImpl();
-        //Begin case DragEvent.ACTION_DRAG_STARTED 
+        
         {
             mCurrentDragView = null;
             mCurrentDrag = DragEvent.obtain(event);
             {
                 mDragNotifiedChildren = new HashSet<View>();
-            } //End block
+            } 
             {
                 mDragNotifiedChildren.clear();
-            } //End block
+            } 
             mChildAcceptsDrag = false;
             final int count = mChildrenCount;
             final View[] children = mChildren;
@@ -1164,17 +1191,17 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                             final boolean handled = notifyChildOfDrag(children[i]);
                             {
                                 mChildAcceptsDrag = true;
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 retval = true;
-            } //End block
-        } //End block
-        //End case DragEvent.ACTION_DRAG_STARTED 
-        //Begin case DragEvent.ACTION_DRAG_ENDED 
+            } 
+        } 
+        
+        
         {
             {
                 {
@@ -1185,18 +1212,18 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                         child.dispatchDragEvent(event);
                         child.mPrivateFlags2 &= ~View.DRAG_MASK;
                         child.refreshDrawableState();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mDragNotifiedChildren.clear();
                 mCurrentDrag.recycle();
                 mCurrentDrag = null;
-            } //End block
+            } 
             {
                 retval = true;
-            } //End block
-        } //End block
-        //End case DragEvent.ACTION_DRAG_ENDED 
-        //Begin case DragEvent.ACTION_DRAG_LOCATION 
+            } 
+        } 
+        
+        
         {
             final View target = findFrontmostDroppableChildAt(event.mX, event.mY, mLocalPoint);
             {
@@ -1208,26 +1235,26 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     view.dispatchDragEvent(event);
                     view.mPrivateFlags2 &= ~View.DRAG_HOVERED;
                     view.refreshDrawableState();
-                } //End block
+                } 
                 mCurrentDragView = target;
                 {
                     event.mAction = DragEvent.ACTION_DRAG_ENTERED;
                     target.dispatchDragEvent(event);
                     target.mPrivateFlags2 |= View.DRAG_HOVERED;
                     target.refreshDrawableState();
-                } //End block
+                } 
                 event.mAction = action;
-            } //End block
+            } 
             {
                 event.mX = mLocalPoint.x;
                 event.mY = mLocalPoint.y;
                 retval = target.dispatchDragEvent(event);
                 event.mX = tx;
                 event.mY = ty;
-            } //End block
-        } //End block
-        //End case DragEvent.ACTION_DRAG_LOCATION 
-        //Begin case DragEvent.ACTION_DRAG_EXITED 
+            } 
+        } 
+        
+        
         {
             {
                 final View view = mCurrentDragView;
@@ -1235,10 +1262,10 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 view.mPrivateFlags2 &= ~View.DRAG_HOVERED;
                 view.refreshDrawableState();
                 mCurrentDragView = null;
-            } //End block
-        } //End block
-        //End case DragEvent.ACTION_DRAG_EXITED 
-        //Begin case DragEvent.ACTION_DROP 
+            } 
+        } 
+        
+        
         {
             Log.d(View.VIEW_LOG_TAG, "Drop event: " + event);
             View target = findFrontmostDroppableChildAt(event.mX, event.mY, mLocalPoint);
@@ -1249,28 +1276,28 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 retval = target.dispatchDragEvent(event);
                 event.mX = tx;
                 event.mY = ty;
-            } //End block
+            } 
             {
                 {
                     Log.d(View.VIEW_LOG_TAG, "   not dropped on an accepting view");
-                } //End block
-            } //End block
-        } //End block
-        //End case DragEvent.ACTION_DROP 
+                } 
+            } 
+        } 
+        
         {
             retval = super.dispatchDragEvent(event);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_291723058 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_291723058;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.981 -0400", hash_original_method = "A61A140E816A1C908C27B7F105ECC965", hash_generated_method = "7024E575DC23D6B77E88A1C1B29C9FAE")
      View findFrontmostDroppableChildAt(float x, float y, PointF outLocalPoint) {
-        View varB4EAC82CA7396A68D541C85D26508E83_205528283 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1958966238 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_205528283 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1958966238 = null; 
         final int count = mChildrenCount;
         final View[] children = mChildren;
         {
@@ -1279,43 +1306,43 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 final View child = children[i];
                 {
                     boolean varDD9451246475E78E9B9862A08B40ED39_1337188948 = (!child.canAcceptDrag());
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean varB60C7CACEA3B7B85D44A4D6C320C4F52_1794834151 = (isTransformedTouchPointInView(x, y, child, outLocalPoint));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_205528283 = child;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1958966238 = null;
         addTaint(x);
         addTaint(y);
         addTaint(outLocalPoint.getTaint());
-        View varA7E53CE21691AB073D9660D615818899_1997515913; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1997515913; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1997515913 = varB4EAC82CA7396A68D541C85D26508E83_205528283;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1997515913 = varB4EAC82CA7396A68D541C85D26508E83_1958966238;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1997515913.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1997515913.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1997515913;
-        // ---------- Original Method ----------
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = count - 1; i >= 0; i--) {
-            //final View child = children[i];
-            //if (!child.canAcceptDrag()) {
-                //continue;
-            //}
-            //if (isTransformedTouchPointInView(x, y, child, outLocalPoint)) {
-                //return child;
-            //}
-        //}
-        //return null;
+        
+        
+        
+        
+            
+            
+                
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -1323,7 +1350,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
      boolean notifyChildOfDrag(View child) {
         {
             Log.d(View.VIEW_LOG_TAG, "Sending drag-started to view: " + child);
-        } //End block
+        } 
         boolean canAccept = false;
         {
             boolean var9513878AE6807A2BEC04686702F54F4D_156900274 = (! mDragNotifiedChildren.contains(child));
@@ -1335,30 +1362,31 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     {
                         child.mPrivateFlags2 |= View.DRAG_CAN_ACCEPT;
                         child.refreshDrawableState();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(child.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1665298079 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1665298079;
-        // ---------- Original Method ----------
-        //if (ViewDebug.DEBUG_DRAG) {
-            //Log.d(View.VIEW_LOG_TAG, "Sending drag-started to view: " + child);
-        //}
-        //boolean canAccept = false;
-        //if (! mDragNotifiedChildren.contains(child)) {
-            //mDragNotifiedChildren.add(child);
-            //canAccept = child.dispatchDragEvent(mCurrentDrag);
-            //if (canAccept && !child.canAcceptDrag()) {
-                //child.mPrivateFlags2 |= View.DRAG_CAN_ACCEPT;
-                //child.refreshDrawableState();
-            //}
-        //}
-        //return canAccept;
+        
+        
+            
+        
+        
+        
+            
+            
+            
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.982 -0400", hash_original_method = "6EA017C64305C1BE29415F2C64CCEDD4", hash_generated_method = "41CD938F6A124B7B5600C4F9A0029B7B")
     @Override
     public void dispatchSystemUiVisibilityChanged(int visible) {
@@ -1370,17 +1398,17 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             {
                 final View child = children[i];
                 child.dispatchSystemUiVisibilityChanged(visible);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(visible);
-        // ---------- Original Method ----------
-        //super.dispatchSystemUiVisibilityChanged(visible);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i=0; i <count; i++) {
-            //final View child = children[i];
-            //child.dispatchSystemUiVisibilityChanged(visible);
-        //}
+        
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -1395,149 +1423,154 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             {
                 final View child = children[i];
                 child.updateLocalSystemUiVisibility(localValue, localChanges);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(localValue);
         addTaint(localChanges);
-        // ---------- Original Method ----------
-        //super.updateLocalSystemUiVisibility(localValue, localChanges);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i=0; i <count; i++) {
-            //final View child = children[i];
-            //child.updateLocalSystemUiVisibility(localValue, localChanges);
-        //}
+        
+        
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.983 -0400", hash_original_method = "1796A9ED58069BDF38C7C072FE20CF71", hash_generated_method = "4591144EE6AC4B4C49BE8D1579CDAD08")
     @Override
     public boolean dispatchKeyEventPreIme(KeyEvent event) {
         {
             boolean var69A4D5BA21F9754791BA96F9F5C71142_1266985239 = (super.dispatchKeyEventPreIme(event));
-        } //End block
+        } 
         {
             boolean varFE2571F324BFA6DB9FF0B9BEE57E874E_1422193186 = (mFocused.dispatchKeyEventPreIme(event));
-        } //End block
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_388349832 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_388349832;
-        // ---------- Original Method ----------
-        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
-            //return super.dispatchKeyEventPreIme(event);
-        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
-            //return mFocused.dispatchKeyEventPreIme(event);
-        //}
-        //return false;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.983 -0400", hash_original_method = "1E41A7E6E3EFA9117FFB3A56DB417CA0", hash_generated_method = "F35CD5EC14C8ED0ECF3ACA1234D65BD7")
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         {
             mInputEventConsistencyVerifier.onKeyEvent(event, 1);
-        } //End block
+        } 
         {
             {
                 boolean varCEE2CC9A2E312DCEF21BEB8A1D3D2A74_507674815 = (super.dispatchKeyEvent(event));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             {
                 boolean varBA71E8F3A809B2219624C59EBC2DEB55_1546109392 = (mFocused.dispatchKeyEvent(event));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 1);
-        } //End block
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1042699075 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1042699075;
-        // ---------- Original Method ----------
-        //if (mInputEventConsistencyVerifier != null) {
-            //mInputEventConsistencyVerifier.onKeyEvent(event, 1);
-        //}
-        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
-            //if (super.dispatchKeyEvent(event)) {
-                //return true;
-            //}
-        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
-            //if (mFocused.dispatchKeyEvent(event)) {
-                //return true;
-            //}
-        //}
-        //if (mInputEventConsistencyVerifier != null) {
-            //mInputEventConsistencyVerifier.onUnhandledEvent(event, 1);
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+                
+            
+        
+            
+                
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.984 -0400", hash_original_method = "C8DF4A46704EEB88AB3A3DAEBDA2EE59", hash_generated_method = "7493B8BBDED33E3FDD25ECCDE8050FCF")
     @Override
     public boolean dispatchKeyShortcutEvent(KeyEvent event) {
         {
             boolean varF75FC08430B3CB671A7FC788738670A4_890284502 = (super.dispatchKeyShortcutEvent(event));
-        } //End block
+        } 
         {
             boolean var9C5A31847C19CF0D448BFF804D2D7DBC_37913342 = (mFocused.dispatchKeyShortcutEvent(event));
-        } //End block
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_501088539 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_501088539;
-        // ---------- Original Method ----------
-        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
-            //return super.dispatchKeyShortcutEvent(event);
-        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
-            //return mFocused.dispatchKeyShortcutEvent(event);
-        //}
-        //return false;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.985 -0400", hash_original_method = "CF1D00451039D1CA46B97508DE17783C", hash_generated_method = "1A80FF40B21496FA313938597E9D7BA8")
     @Override
     public boolean dispatchTrackballEvent(MotionEvent event) {
         {
             mInputEventConsistencyVerifier.onTrackballEvent(event, 1);
-        } //End block
+        } 
         {
             {
                 boolean varDD1D6069514DE34833A921C8364915DD_1711105011 = (super.dispatchTrackballEvent(event));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             {
                 boolean var0FFB054D71651438CDA84A82C67C65B6_1154616573 = (mFocused.dispatchTrackballEvent(event));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 1);
-        } //End block
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1573917752 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1573917752;
-        // ---------- Original Method ----------
-        //if (mInputEventConsistencyVerifier != null) {
-            //mInputEventConsistencyVerifier.onTrackballEvent(event, 1);
-        //}
-        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
-            //if (super.dispatchTrackballEvent(event)) {
-                //return true;
-            //}
-        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
-            //if (mFocused.dispatchTrackballEvent(event)) {
-                //return true;
-            //}
-        //}
-        //if (mInputEventConsistencyVerifier != null) {
-            //mInputEventConsistencyVerifier.onUnhandledEvent(event, 1);
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+                
+            
+        
+            
+                
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.986 -0400", hash_original_method = "E0F6A76AF2BEDB6076446B6A929BAC84", hash_generated_method = "40784748BBEDCE84298D11F24A8BB35E")
     @SuppressWarnings({"ConstantConditions"})
     @Override
@@ -1563,7 +1596,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                         {
                             boolean var39A5B2EF267FE4EA5711368BBCBF6FA1_864600460 = (!canViewReceivePointerEvents(child)
                             || !isTransformedTouchPointInView(x, y, child, null));
-                        } //End collapsed parenthetic
+                        } 
                         HoverTarget hoverTarget = firstOldHoverTarget;
                         boolean wasHovered;
                         {
@@ -1572,34 +1605,34 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                                 {
                                     hoverTarget = HoverTarget.obtain(child);
                                     wasHovered = false;
-                                } //End block
+                                } 
                                 {
                                     {
                                         predecessor.next = hoverTarget.next;
-                                    } //End block
+                                    } 
                                     {
                                         firstOldHoverTarget = hoverTarget.next;
-                                    } //End block
+                                    } 
                                     hoverTarget.next = null;
                                     wasHovered = true;
-                                } //End block
+                                } 
                                 predecessor = hoverTarget;
                                 hoverTarget = hoverTarget.next;
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             lastHoverTarget.next = hoverTarget;
-                        } //End block
+                        } 
                         {
                             lastHoverTarget = hoverTarget;
                             mFirstHoverTarget = hoverTarget;
-                        } //End block
+                        } 
                         {
                             {
                                 handled |= dispatchTransformedGenericPointerEvent(
                                     event, child);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             {
                                 eventNoHistory = obtainMotionEventNoHistoryOrSelf(eventNoHistory);
@@ -1609,63 +1642,63 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                                 eventNoHistory.setAction(action);
                                 handled |= dispatchTransformedGenericPointerEvent(
                                     eventNoHistory, child);
-                            } //End block
+                            } 
                             {
                                 handled |= dispatchTransformedGenericPointerEvent(event, child);
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             final View child = firstOldHoverTarget.child;
             {
                 handled |= dispatchTransformedGenericPointerEvent(
                         event, child);
-            } //End block
+            } 
             {
                 {
                     dispatchTransformedGenericPointerEvent(
                             event, child);
-                } //End block
+                } 
                 eventNoHistory = obtainMotionEventNoHistoryOrSelf(eventNoHistory);
                 eventNoHistory.setAction(MotionEvent.ACTION_HOVER_EXIT);
                 dispatchTransformedGenericPointerEvent(
                         eventNoHistory, child);
                 eventNoHistory.setAction(action);
-            } //End block
+            } 
             final HoverTarget nextOldHoverTarget = firstOldHoverTarget.next;
             firstOldHoverTarget.recycle();
             firstOldHoverTarget = nextOldHoverTarget;
-        } //End block
+        } 
         boolean newHoveredSelf = !handled;
         {
             {
                 handled |= super.dispatchHoverEvent(event);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 {
                     handled |= super.dispatchHoverEvent(event);
-                } //End block
+                } 
                 {
                     {
                         super.dispatchHoverEvent(event);
-                    } //End block
+                    } 
                     eventNoHistory = obtainMotionEventNoHistoryOrSelf(eventNoHistory);
                     eventNoHistory.setAction(MotionEvent.ACTION_HOVER_EXIT);
                     super.dispatchHoverEvent(eventNoHistory);
                     eventNoHistory.setAction(action);
-                } //End block
+                } 
                 mHoveredSelf = false;
-            } //End block
+            } 
             {
                 {
                     handled |= super.dispatchHoverEvent(event);
                     mHoveredSelf = true;
-                } //End block
+                } 
                 {
                     eventNoHistory = obtainMotionEventNoHistoryOrSelf(eventNoHistory);
                     eventNoHistory.setAction(MotionEvent.ACTION_HOVER_ENTER);
@@ -1673,17 +1706,17 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     eventNoHistory.setAction(action);
                     handled |= super.dispatchHoverEvent(eventNoHistory);
                     mHoveredSelf = true;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             eventNoHistory.recycle();
-        } //End block
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1301632704 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1301632704;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1692,23 +1725,24 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     protected boolean hasHoveredChild() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1102123598 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1102123598;
-        // ---------- Original Method ----------
-        //return mFirstHoverTarget != null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.987 -0400", hash_original_method = "039A9532EA6933A3F4F8681C30CC9E2B", hash_generated_method = "EBE3C9A9867079705C5FD4010E146071")
     public boolean onInterceptHoverEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1842203427 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1842203427;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
-        private static MotionEvent obtainMotionEventNoHistoryOrSelf(MotionEvent event) {
+        @DSModeled(DSC.SAFE)
+    private static MotionEvent obtainMotionEventNoHistoryOrSelf(MotionEvent event) {
         if (event.getHistorySize() == 0) {
             return event;
         }
@@ -1716,6 +1750,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.988 -0400", hash_original_method = "8425E6039966203E8B52A55F0ACFD97E", hash_generated_method = "97919D65EBD75A27A292457FF887C21B")
     @Override
     protected boolean dispatchGenericPointerEvent(MotionEvent event) {
@@ -1731,60 +1766,62 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     {
                         boolean var330479A3EB93BD7FBB36FC9D307449EC_992786666 = (!canViewReceivePointerEvents(child)
                         || !isTransformedTouchPointInView(x, y, child, null));
-                    } //End collapsed parenthetic
+                    } 
                     {
                         boolean varE3F3EFAB7A0C507CFC1087341B7293FA_133408954 = (dispatchTransformedGenericPointerEvent(event, child));
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         boolean var08E200417CAE6114EB8B8E0EE91851EC_622062955 = (super.dispatchGenericPointerEvent(event));
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1740344322 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1740344322;
-        // ---------- Original Method ----------
-        //final int childrenCount = mChildrenCount;
-        //if (childrenCount != 0) {
-            //final View[] children = mChildren;
-            //final float x = event.getX();
-            //final float y = event.getY();
-            //for (int i = childrenCount - 1; i >= 0; i--) {
-                //final View child = children[i];
-                //if (!canViewReceivePointerEvents(child)
-                        //|| !isTransformedTouchPointInView(x, y, child, null)) {
-                    //continue;
-                //}
-                //if (dispatchTransformedGenericPointerEvent(event, child)) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return super.dispatchGenericPointerEvent(event);
+        
+        
+        
+            
+            
+            
+            
+                
+                
+                        
+                    
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.988 -0400", hash_original_method = "EF2476E6EC182ADC11908B65D0A31365", hash_generated_method = "2156ADAB8BEEBD9D77CB4309D2942D69")
     @Override
     protected boolean dispatchGenericFocusedEvent(MotionEvent event) {
         {
             boolean varB46815DBC1BC9F2955B6C32C32EC3809_1329804991 = (super.dispatchGenericFocusedEvent(event));
-        } //End block
+        } 
         {
             boolean varDAA7826F7D7AE31750BF98F87DE576DE_974223605 = (mFocused.dispatchGenericMotionEvent(event));
-        } //End block
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_667226005 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_667226005;
-        // ---------- Original Method ----------
-        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
-            //return super.dispatchGenericFocusedEvent(event);
-        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
-            //return mFocused.dispatchGenericMotionEvent(event);
-        //}
-        //return false;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.989 -0400", hash_original_method = "89F3902132A72D71D534028C51E6FDBB", hash_generated_method = "DA3C0010230E82C9EE1C111FC5B17172")
     private boolean dispatchTransformedGenericPointerEvent(MotionEvent event, View child) {
         final float offsetX = mScrollX - child.mLeft;
@@ -1798,42 +1835,43 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 transformedEvent.transform(child.getInverseMatrix());
                 handled = child.dispatchGenericMotionEvent(transformedEvent);
                 transformedEvent.recycle();
-            } //End block
+            } 
             {
                 event.offsetLocation(offsetX, offsetY);
                 handled = child.dispatchGenericMotionEvent(event);
                 event.offsetLocation(-offsetX, -offsetY);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(event.getTaint());
         addTaint(child.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1119342538 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1119342538;
-        // ---------- Original Method ----------
-        //final float offsetX = mScrollX - child.mLeft;
-        //final float offsetY = mScrollY - child.mTop;
-        //boolean handled;
-        //if (!child.hasIdentityMatrix()) {
-            //MotionEvent transformedEvent = MotionEvent.obtain(event);
-            //transformedEvent.offsetLocation(offsetX, offsetY);
-            //transformedEvent.transform(child.getInverseMatrix());
-            //handled = child.dispatchGenericMotionEvent(transformedEvent);
-            //transformedEvent.recycle();
-        //} else {
-            //event.offsetLocation(offsetX, offsetY);
-            //handled = child.dispatchGenericMotionEvent(event);
-            //event.offsetLocation(-offsetX, -offsetY);
-        //}
-        //return handled;
+        
+        
+        
+        
+        
+            
+            
+            
+            
+            
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.990 -0400", hash_original_method = "9A4777971E22B675E68E924B82246A95", hash_generated_method = "78E851B99248E6E30CC9B7A0281E1075")
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         {
             mInputEventConsistencyVerifier.onTouchEvent(ev, 1);
-        } //End block
+        } 
         boolean handled = false;
         {
             boolean var6CC6773C2F32650974B473D1B32A8111_900742287 = (onFilterTouchEventForSecurity(ev));
@@ -1843,21 +1881,21 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 {
                     cancelAndClearTouchTargets(ev);
                     resetTouchState();
-                } //End block
+                } 
                 boolean intercepted;
                 {
                     final boolean disallowIntercept = (mGroupFlags & FLAG_DISALLOW_INTERCEPT) != 0;
                     {
                         intercepted = onInterceptTouchEvent(ev);
                         ev.setAction(action);
-                    } //End block
+                    } 
                     {
                         intercepted = false;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     intercepted = true;
-                } //End block
+                } 
                 final boolean canceled = resetCancelNextUpFlag(this)
                     || actionMasked == MotionEvent.ACTION_CANCEL;
                 final boolean split = (mGroupFlags & FLAG_SPLIT_MOTION_EVENTS) != 0;
@@ -1882,11 +1920,11 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                                     {
                                         boolean varA03062BDD929C4635E5C5D880ED86080_2007532454 = (!canViewReceivePointerEvents(child)
                                     || !isTransformedTouchPointInView(x, y, child, null));
-                                    } //End collapsed parenthetic
+                                    } 
                                     newTouchTarget = getTouchTarget(child);
                                     {
                                         newTouchTarget.pointerIdBits |= idBitsToAssign;
-                                    } //End block
+                                    } 
                                     resetCancelNextUpFlag(child);
                                     {
                                         boolean var4D2A48697299CECF9F8D426E12ED9A2F_1142852320 = (dispatchTransformedTouchEvent(ev, false, child, idBitsToAssign));
@@ -1897,24 +1935,24 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                                             mLastTouchDownY = ev.getY();
                                             newTouchTarget = addTouchTarget(child, idBitsToAssign);
                                             alreadyDispatchedToNewTouchTarget = true;
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
                         {
                             newTouchTarget = mFirstTouchTarget;
                             {
                                 newTouchTarget = newTouchTarget.next;
-                            } //End block
+                            } 
                             newTouchTarget.pointerIdBits |= idBitsToAssign;
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     handled = dispatchTransformedTouchEvent(ev, canceled, null,
                         TouchTarget.ALL_POINTER_IDS);
-                } //End block
+                } 
                 {
                     TouchTarget predecessor = null;
                     TouchTarget target = mFirstTouchTarget;
@@ -1922,7 +1960,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                         final TouchTarget next = target.next;
                         {
                             handled = true;
-                        } //End block
+                        } 
                         {
                             final boolean cancelChild = resetCancelNextUpFlag(target.child)
                         || intercepted;
@@ -1931,52 +1969,53 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                                 target.child, target.pointerIdBits));
                                 {
                                     handled = true;
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             {
                                 {
                                     mFirstTouchTarget = next;
-                                } //End block
+                                } 
                                 {
                                     predecessor.next = next;
-                                } //End block
+                                } 
                                 target.recycle();
                                 target = next;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         predecessor = target;
                         target = next;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     resetTouchState();
-                } //End block
+                } 
                 {
                     final int actionIndex = ev.getActionIndex();
                     final int idBitsToRemove = 1 << ev.getPointerId(actionIndex);
                     removePointersFromTouchTargets(idBitsToRemove);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             mInputEventConsistencyVerifier.onUnhandledEvent(ev, 1);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2096574192 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2096574192;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.991 -0400", hash_original_method = "1B0EC47DAA405380670E223779C878A6", hash_generated_method = "FB0BEF6A0D13DDEE91DD6A9C23FE556F")
     private void resetTouchState() {
         clearTouchTargets();
         resetCancelNextUpFlag(this);
         mGroupFlags &= ~FLAG_DISALLOW_INTERCEPT;
-        // ---------- Original Method ----------
-        //clearTouchTargets();
-        //resetCancelNextUpFlag(this);
-        //mGroupFlags &= ~FLAG_DISALLOW_INTERCEPT;
+        
+        
+        
+        
     }
 
     
@@ -1984,19 +2023,20 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     private boolean resetCancelNextUpFlag(View view) {
         {
             view.mPrivateFlags &= ~CANCEL_NEXT_UP_EVENT;
-        } //End block
+        } 
         addTaint(view.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_693240399 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_693240399;
-        // ---------- Original Method ----------
-        //if ((view.mPrivateFlags & CANCEL_NEXT_UP_EVENT) != 0) {
-            //view.mPrivateFlags &= ~CANCEL_NEXT_UP_EVENT;
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.991 -0400", hash_original_method = "C1060B6E54563910E15717B9621A0CC6", hash_generated_method = "1C82E76A7F053704AA1FC4104CF306BD")
     private void clearTouchTargets() {
         TouchTarget target = mFirstTouchTarget;
@@ -2005,22 +2045,23 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 TouchTarget next = target.next;
                 target.recycle();
                 target = next;
-            } //End block
+            } 
             mFirstTouchTarget = null;
-        } //End block
-        // ---------- Original Method ----------
-        //TouchTarget target = mFirstTouchTarget;
-        //if (target != null) {
-            //do {
-                //TouchTarget next = target.next;
-                //target.recycle();
-                //target = next;
-            //} while (target != null);
-            //mFirstTouchTarget = null;
-        //}
+        } 
+        
+        
+        
+            
+                
+                
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.992 -0400", hash_original_method = "45B19A2C35386F46FF7561697C2C88B0", hash_generated_method = "07D23E3DF02FB3823108D326135C9040")
     private void cancelAndClearTouchTargets(MotionEvent event) {
         {
@@ -2031,98 +2072,100 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                         MotionEvent.ACTION_CANCEL, 0.0f, 0.0f, 0);
                 event.setSource(InputDevice.SOURCE_TOUCHSCREEN);
                 syntheticEvent = true;
-            } //End block
+            } 
             {
                 TouchTarget target = mFirstTouchTarget;
                 target = target.next;
                 {
                     resetCancelNextUpFlag(target.child);
                     dispatchTransformedTouchEvent(event, true, target.child, target.pointerIdBits);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             clearTouchTargets();
             {
                 event.recycle();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //if (mFirstTouchTarget != null) {
-            //boolean syntheticEvent = false;
-            //if (event == null) {
-                //final long now = SystemClock.uptimeMillis();
-                //event = MotionEvent.obtain(now, now,
-                        //MotionEvent.ACTION_CANCEL, 0.0f, 0.0f, 0);
-                //event.setSource(InputDevice.SOURCE_TOUCHSCREEN);
-                //syntheticEvent = true;
-            //}
-            //for (TouchTarget target = mFirstTouchTarget; target != null; target = target.next) {
-                //resetCancelNextUpFlag(target.child);
-                //dispatchTransformedTouchEvent(event, true, target.child, target.pointerIdBits);
-            //}
-            //clearTouchTargets();
-            //if (syntheticEvent) {
-                //event.recycle();
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+                        
+                
+                
+            
+            
+                
+                
+            
+            
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.993 -0400", hash_original_method = "1855BFFFC59D88D1613C9B59C4B43D4C", hash_generated_method = "05BDB93C0270959602BA3AB8A4DDF518")
     private TouchTarget getTouchTarget(View child) {
-        TouchTarget varB4EAC82CA7396A68D541C85D26508E83_991662398 = null; //Variable for return #1
-        TouchTarget varB4EAC82CA7396A68D541C85D26508E83_1325059790 = null; //Variable for return #2
+        TouchTarget varB4EAC82CA7396A68D541C85D26508E83_991662398 = null; 
+        TouchTarget varB4EAC82CA7396A68D541C85D26508E83_1325059790 = null; 
         {
             TouchTarget target = mFirstTouchTarget;
             target = target.next;
             {
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_991662398 = target;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1325059790 = null;
         addTaint(child.getTaint());
-        TouchTarget varA7E53CE21691AB073D9660D615818899_733937069; //Final return value
+        TouchTarget varA7E53CE21691AB073D9660D615818899_733937069; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_733937069 = varB4EAC82CA7396A68D541C85D26508E83_991662398;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_733937069 = varB4EAC82CA7396A68D541C85D26508E83_1325059790;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_733937069.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_733937069.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_733937069;
-        // ---------- Original Method ----------
-        //for (TouchTarget target = mFirstTouchTarget; target != null; target = target.next) {
-            //if (target.child == child) {
-                //return target;
-            //}
-        //}
-        //return null;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.993 -0400", hash_original_method = "70A66C4E824C8984FFB5B6F600FB9D61", hash_generated_method = "AB53CA2B5CCA01710FA6731CA540AFAE")
     private TouchTarget addTouchTarget(View child, int pointerIdBits) {
-        TouchTarget varB4EAC82CA7396A68D541C85D26508E83_487636172 = null; //Variable for return #1
+        TouchTarget varB4EAC82CA7396A68D541C85D26508E83_487636172 = null; 
         TouchTarget target = TouchTarget.obtain(child, pointerIdBits);
         target.next = mFirstTouchTarget;
         mFirstTouchTarget = target;
         varB4EAC82CA7396A68D541C85D26508E83_487636172 = target;
         addTaint(child.getTaint());
         addTaint(pointerIdBits);
-        varB4EAC82CA7396A68D541C85D26508E83_487636172.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_487636172.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_487636172;
-        // ---------- Original Method ----------
-        //TouchTarget target = TouchTarget.obtain(child, pointerIdBits);
-        //target.next = mFirstTouchTarget;
-        //mFirstTouchTarget = target;
-        //return target;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.994 -0400", hash_original_method = "89D343983AE77FFA55E239C56C6BE82A", hash_generated_method = "85FCCA886F26F3196A3A91219B9E4ADE")
     private void removePointersFromTouchTargets(int pointerIdBits) {
         TouchTarget predecessor = null;
@@ -2134,48 +2177,50 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 {
                     {
                         mFirstTouchTarget = next;
-                    } //End block
+                    } 
                     {
                         predecessor.next = next;
-                    } //End block
+                    } 
                     target.recycle();
                     target = next;
-                } //End block
-            } //End block
+                } 
+            } 
             predecessor = target;
             target = next;
-        } //End block
+        } 
         addTaint(pointerIdBits);
-        // ---------- Original Method ----------
-        //TouchTarget predecessor = null;
-        //TouchTarget target = mFirstTouchTarget;
-        //while (target != null) {
-            //final TouchTarget next = target.next;
-            //if ((target.pointerIdBits & pointerIdBits) != 0) {
-                //target.pointerIdBits &= ~pointerIdBits;
-                //if (target.pointerIdBits == 0) {
-                    //if (predecessor == null) {
-                        //mFirstTouchTarget = next;
-                    //} else {
-                        //predecessor.next = next;
-                    //}
-                    //target.recycle();
-                    //target = next;
-                    //continue;
-                //}
-            //}
-            //predecessor = target;
-            //target = next;
-        //}
+        
+        
+        
+        
+            
+            
+                
+                
+                    
+                        
+                    
+                        
+                    
+                    
+                    
+                    
+                
+            
+            
+            
+        
     }
 
     
-        private static boolean canViewReceivePointerEvents(View child) {
+        @DSModeled(DSC.SAFE)
+    private static boolean canViewReceivePointerEvents(View child) {
         return (child.mViewFlags & VISIBILITY_MASK) == VISIBLE
                 || child.getAnimation() != null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.996 -0400", hash_original_method = "DEC14653C28ED7E684FDD980020C985C", hash_generated_method = "5145FA9BC80260D847E7E1071379F3DA")
     protected boolean isTransformedTouchPointInView(float x, float y, View child,
             PointF outLocalPoint) {
@@ -2190,37 +2235,38 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 child.getInverseMatrix().mapPoints(localXY);
                 localX = localXY[0];
                 localY = localXY[1];
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final boolean isInView = child.pointInView(localX, localY);
         {
             outLocalPoint.set(localX, localY);
-        } //End block
+        } 
         addTaint(x);
         addTaint(y);
         addTaint(child.getTaint());
         addTaint(outLocalPoint.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_388563272 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_388563272;
-        // ---------- Original Method ----------
-        //float localX = x + mScrollX - child.mLeft;
-        //float localY = y + mScrollY - child.mTop;
-        //if (! child.hasIdentityMatrix() && mAttachInfo != null) {
-            //final float[] localXY = mAttachInfo.mTmpTransformLocation;
-            //localXY[0] = localX;
-            //localXY[1] = localY;
-            //child.getInverseMatrix().mapPoints(localXY);
-            //localX = localXY[0];
-            //localY = localXY[1];
-        //}
-        //final boolean isInView = child.pointInView(localX, localY);
-        //if (isInView && outLocalPoint != null) {
-            //outLocalPoint.set(localX, localY);
-        //}
-        //return isInView;
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.997 -0400", hash_original_method = "EAB22EDFF178A3FABE990E65ADB3332F", hash_generated_method = "03D3972D06FA0C985F26885DCF45C0CF")
     private boolean dispatchTransformedTouchEvent(MotionEvent event, boolean cancel,
             View child, int desiredPointerIdBits) {
@@ -2230,12 +2276,12 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             event.setAction(MotionEvent.ACTION_CANCEL);
             {
                 handled = super.dispatchTouchEvent(event);
-            } //End block
+            } 
             {
                 handled = child.dispatchTouchEvent(event);
-            } //End block
+            } 
             event.setAction(oldAction);
-        } //End block
+        } 
         final int oldPointerIdBits = event.getPointerIdBits();
         final int newPointerIdBits = oldPointerIdBits & desiredPointerIdBits;
         MotionEvent transformedEvent;
@@ -2245,24 +2291,24 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 {
                     {
                         handled = super.dispatchTouchEvent(event);
-                    } //End block
+                    } 
                     {
                         final float offsetX = mScrollX - child.mLeft;
                         final float offsetY = mScrollY - child.mTop;
                         event.offsetLocation(offsetX, offsetY);
                         handled = child.dispatchTouchEvent(event);
                         event.offsetLocation(-offsetX, -offsetY);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             transformedEvent = MotionEvent.obtain(event);
-        } //End block
+        } 
         {
             transformedEvent = event.split(newPointerIdBits);
-        } //End block
+        } 
         {
             handled = super.dispatchTouchEvent(transformedEvent);
-        } //End block
+        } 
         {
             final float offsetX = mScrollX - child.mLeft;
             final float offsetY = mScrollY - child.mTop;
@@ -2271,10 +2317,10 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 boolean varAB47417F79C7B7F4A08CD74D30CD9C74_301580203 = (! child.hasIdentityMatrix());
                 {
                     transformedEvent.transform(child.getInverseMatrix());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             handled = child.dispatchTouchEvent(transformedEvent);
-        } //End block
+        } 
         transformedEvent.recycle();
         addTaint(event.getTaint());
         addTaint(cancel);
@@ -2282,8 +2328,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         addTaint(desiredPointerIdBits);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1630144397 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1630144397;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2291,17 +2337,17 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     public void setMotionEventSplittingEnabled(boolean split) {
         {
             mGroupFlags |= FLAG_SPLIT_MOTION_EVENTS;
-        } //End block
+        } 
         {
             mGroupFlags &= ~FLAG_SPLIT_MOTION_EVENTS;
-        } //End block
+        } 
         addTaint(split);
-        // ---------- Original Method ----------
-        //if (split) {
-            //mGroupFlags |= FLAG_SPLIT_MOTION_EVENTS;
-        //} else {
-            //mGroupFlags &= ~FLAG_SPLIT_MOTION_EVENTS;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -2309,95 +2355,98 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     public boolean isMotionEventSplittingEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_649526292 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_649526292;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & FLAG_SPLIT_MOTION_EVENTS) == FLAG_SPLIT_MOTION_EVENTS;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.998 -0400", hash_original_method = "1DFD5D86FC853DC6CE8B88AE68ABB735", hash_generated_method = "BD20094AB0BAB14D98C2579999E8C1D4")
     public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
         {
             mGroupFlags |= FLAG_DISALLOW_INTERCEPT;
-        } //End block
+        } 
         {
             mGroupFlags &= ~FLAG_DISALLOW_INTERCEPT;
-        } //End block
+        } 
         {
             mParent.requestDisallowInterceptTouchEvent(disallowIntercept);
-        } //End block
+        } 
         addTaint(disallowIntercept);
-        // ---------- Original Method ----------
-        //if (disallowIntercept == ((mGroupFlags & FLAG_DISALLOW_INTERCEPT) != 0)) {
-            //return;
-        //}
-        //if (disallowIntercept) {
-            //mGroupFlags |= FLAG_DISALLOW_INTERCEPT;
-        //} else {
-            //mGroupFlags &= ~FLAG_DISALLOW_INTERCEPT;
-        //}
-        //if (mParent != null) {
-            //mParent.requestDisallowInterceptTouchEvent(disallowIntercept);
-        //}
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.998 -0400", hash_original_method = "2FB27FC0FD3119EC0BB03A9B8DB1F75C", hash_generated_method = "BE8D52658AEC274625CECCCADCC2F544")
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(ev.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1480348691 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1480348691;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.999 -0400", hash_original_method = "C4273E4BE381C7F0CE1D54BE1CF759CA", hash_generated_method = "7978E0AD6BE49330198113D8B27B664D")
     @Override
     public boolean requestFocus(int direction, Rect previouslyFocusedRect) {
         {
             System.out.println(this + " ViewGroup.requestFocus direction="
                     + direction);
-        } //End block
+        } 
         int descendantFocusability = getDescendantFocusability();
-        //Begin case FOCUS_BLOCK_DESCENDANTS 
+        
         boolean var47E40A2FCA4828C6DE42D7889D59C941_1251399509 = (super.requestFocus(direction, previouslyFocusedRect));
-        //End case FOCUS_BLOCK_DESCENDANTS 
-        //Begin case FOCUS_BEFORE_DESCENDANTS 
+        
+        
         {
             final boolean took = super.requestFocus(direction, previouslyFocusedRect);
             {
                 Object var3A5A180257AE9AD15DBCD18319037603_1080564610 = (onRequestFocusInDescendants(direction, previouslyFocusedRect));
-            } //End flattened ternary
-        } //End block
-        //End case FOCUS_BEFORE_DESCENDANTS 
-        //Begin case FOCUS_AFTER_DESCENDANTS 
+            } 
+        } 
+        
+        
         {
             final boolean took = onRequestFocusInDescendants(direction, previouslyFocusedRect);
             {
                 Object var7EEFFE453EE8B06336FEADC34AE77D1B_655862469 = (super.requestFocus(direction, previouslyFocusedRect));
-            } //End flattened ternary
-        } //End block
-        //End case FOCUS_AFTER_DESCENDANTS 
-        //Begin case default 
+            } 
+        } 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("descendant focusability must be "
                         + "one of FOCUS_BEFORE_DESCENDANTS, FOCUS_AFTER_DESCENDANTS, FOCUS_BLOCK_DESCENDANTS "
                         + "but is " + descendantFocusability);
-        //End case default 
+        
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1421147956 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1421147956;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.000 -0400", hash_original_method = "47C4A34C6E68C9FD22237D5A1759ABE2", hash_generated_method = "B0D0489EC3365B951663E2F58E8594FA")
     @SuppressWarnings({"ConstantConditions"})
     protected boolean onRequestFocusInDescendants(int direction,
             Rect previouslyFocusedRect) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int index;
         int increment;
         int end;
@@ -2406,12 +2455,12 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             index = 0;
             increment = 1;
             end = count;
-        } //End block
+        } 
         {
             index = count - 1;
             increment = -1;
             end = -1;
-        } //End block
+        } 
         final View[] children = mChildren;
         {
             int i = index;
@@ -2421,41 +2470,42 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 {
                     {
                         boolean var86823278073885F35F11C1598EACBFE2_1837347098 = (child.requestFocus(direction, previouslyFocusedRect));
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2146215854 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2146215854;
-        // ---------- Original Method ----------
-        //int index;
-        //int increment;
-        //int end;
-        //int count = mChildrenCount;
-        //if ((direction & FOCUS_FORWARD) != 0) {
-            //index = 0;
-            //increment = 1;
-            //end = count;
-        //} else {
-            //index = count - 1;
-            //increment = -1;
-            //end = -1;
-        //}
-        //final View[] children = mChildren;
-        //for (int i = index; i != end; i += increment) {
-            //View child = children[i];
-            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
-                //if (child.requestFocus(direction, previouslyFocusedRect)) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+            
+            
+            
+        
+        
+        
+            
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.000 -0400", hash_original_method = "C10088C0D1BE61F270AE8158B60FC677", hash_generated_method = "3580337FDFD563C83C06B5707A03B094")
     @Override
     public void dispatchStartTemporaryDetach() {
@@ -2466,18 +2516,19 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             int i = 0;
             {
                 children[i].dispatchStartTemporaryDetach();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //super.dispatchStartTemporaryDetach();
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchStartTemporaryDetach();
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.001 -0400", hash_original_method = "F13891122244193473AAFE5583088FC4", hash_generated_method = "F6BA90EE1CC9499E117A5DBCB6DF1F87")
     @Override
     public void dispatchFinishTemporaryDetach() {
@@ -2488,15 +2539,15 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             int i = 0;
             {
                 children[i].dispatchFinishTemporaryDetach();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //super.dispatchFinishTemporaryDetach();
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchFinishTemporaryDetach();
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -2513,20 +2564,20 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             int i = 0;
             {
                 children[i].dispatchAttachedToWindow(info, visibility);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(info.getTaint());
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //mGroupFlags |= FLAG_PREVENT_DISPATCH_ATTACHED_TO_WINDOW;
-        //super.dispatchAttachedToWindow(info, visibility);
-        //mGroupFlags &= ~FLAG_PREVENT_DISPATCH_ATTACHED_TO_WINDOW;
-        //visibility |= mViewFlags & VISIBILITY_MASK;
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchAttachedToWindow(info, visibility);
-        //}
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -2541,34 +2592,34 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 View child = getChildAt(i);
                 {
                     handled = getChildAt(i).dispatchPopulateAccessibilityEvent(event);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2078951352 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2078951352;
-        // ---------- Original Method ----------
-        //boolean handled = super.dispatchPopulateAccessibilityEventInternal(event);
-        //if (handled) {
-            //return handled;
-        //}
-        //for (int i = 0, count = getChildCount(); i < count; i++) {
-            //View child = getChildAt(i);
-            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
-                //handled = getChildAt(i).dispatchPopulateAccessibilityEvent(event);
-                //if (handled) {
-                    //return handled;
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+        
+        
+            
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.002 -0400", hash_original_method = "D1F5A3B1D56655AA52CA4B460A89AF1D", hash_generated_method = "6893005B347075798203371421BAE6F3")
     @Override
      void onInitializeAccessibilityNodeInfoInternal(AccessibilityNodeInfo info) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onInitializeAccessibilityNodeInfoInternal(info);
         {
             int i = 0;
@@ -2577,19 +2628,19 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 View child = mChildren[i];
                 {
                     info.addChild(child);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(info.getTaint());
-        // ---------- Original Method ----------
-        //super.onInitializeAccessibilityNodeInfoInternal(info);
-        //for (int i = 0, count = mChildrenCount; i < count; i++) {
-            //View child = mChildren[i];
-            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE
-                    //&& (child.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
-                //info.addChild(child);
-            //}
-        //}
+        
+        
+        
+            
+            
+                    
+                
+            
+        
     }
 
     
@@ -2602,57 +2653,59 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         {
             mCurrentDrag.recycle();
             mCurrentDrag = null;
-        } //End block
+        } 
         final int count = mChildrenCount;
         final View[] children = mChildren;
         {
             int i = 0;
             {
                 children[i].dispatchDetachedFromWindow();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         super.dispatchDetachedFromWindow();
-        // ---------- Original Method ----------
-        //cancelAndClearTouchTargets(null);
-        //mLayoutSuppressed = false;
-        //mDragNotifiedChildren = null;
-        //if (mCurrentDrag != null) {
-            //mCurrentDrag.recycle();
-            //mCurrentDrag = null;
-        //}
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchDetachedFromWindow();
-        //}
-        //super.dispatchDetachedFromWindow();
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.003 -0400", hash_original_method = "3A8CBF91275A500D30CEFAD8D7209E14", hash_generated_method = "7D2B83FE97EED0B943BA42E5375ABC3C")
     @Override
     public void setPadding(int left, int top, int right, int bottom) {
         super.setPadding(left, top, right, bottom);
         {
             mGroupFlags |= FLAG_PADDING_NOT_NULL;
-        } //End block
+        } 
         {
             mGroupFlags &= ~FLAG_PADDING_NOT_NULL;
-        } //End block
+        } 
         addTaint(left);
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        //super.setPadding(left, top, right, bottom);
-        //if ((mPaddingLeft | mPaddingTop | mPaddingRight | mPaddingBottom) != 0) {
-            //mGroupFlags |= FLAG_PADDING_NOT_NULL;
-        //} else {
-            //mGroupFlags &= ~FLAG_PADDING_NOT_NULL;
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.003 -0400", hash_original_method = "0EF6BC3550040660942BB4435DC1568A", hash_generated_method = "F1E823CC23F43206BCC5BF9496AFB040")
     @Override
     protected void dispatchSaveInstanceState(SparseArray<Parcelable> container) {
@@ -2665,32 +2718,34 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 View c = children[i];
                 {
                     c.dispatchSaveInstanceState(container);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //super.dispatchSaveInstanceState(container);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //View c = children[i];
-            //if ((c.mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED) {
-                //c.dispatchSaveInstanceState(container);
-            //}
-        //}
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.004 -0400", hash_original_method = "38DCBB8C3886F11C25C07FC151CB762B", hash_generated_method = "FF48EB39207BB2570CB12B130D6DA280")
     protected void dispatchFreezeSelfOnly(SparseArray<Parcelable> container) {
         super.dispatchSaveInstanceState(container);
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //super.dispatchSaveInstanceState(container);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.004 -0400", hash_original_method = "79E9ACE6A349ACE584637F3A31A0E869", hash_generated_method = "5126ACFA1B8765AF4D57FAD517B297F4")
     @Override
     protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container) {
@@ -2703,32 +2758,34 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 View c = children[i];
                 {
                     c.dispatchRestoreInstanceState(container);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //super.dispatchRestoreInstanceState(container);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //View c = children[i];
-            //if ((c.mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED) {
-                //c.dispatchRestoreInstanceState(container);
-            //}
-        //}
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.005 -0400", hash_original_method = "85A5428D5025B10E5C75238A5C358628", hash_generated_method = "5E057FFCDB2EDF6C40625C0594CC8467")
     protected void dispatchThawSelfOnly(SparseArray<Parcelable> container) {
         super.dispatchRestoreInstanceState(container);
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //super.dispatchRestoreInstanceState(container);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.006 -0400", hash_original_method = "673779FD01170D0D857F4CAC6D3A5472", hash_generated_method = "17576BF1121F780F0D6BA884DF4F52B1")
     protected void setChildrenDrawingCacheEnabled(boolean enabled) {
         {
@@ -2738,25 +2795,26 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 int i = 0;
                 {
                     children[i].setDrawingCacheEnabled(enabled);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //if (enabled || (mPersistentDrawingCache & PERSISTENT_ALL_CACHES) != PERSISTENT_ALL_CACHES) {
-            //final View[] children = mChildren;
-            //final int count = mChildrenCount;
-            //for (int i = 0; i < count; i++) {
-                //children[i].setDrawingCacheEnabled(enabled);
-            //}
-        //}
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.007 -0400", hash_original_method = "C6BD5BCC8D99F50AFC626E34071E2FAF", hash_generated_method = "900F3418E6678E6258B9E91FD2C4D466")
     @Override
     protected void onAnimationStart() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAnimationStart();
         {
             final int count = mChildrenCount;
@@ -2770,58 +2828,59 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                         child.setDrawingCacheEnabled(true);
                         {
                             child.buildDrawingCache(true);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             mGroupFlags |= FLAG_CHILDREN_DRAWN_WITH_CACHE;
-        } //End block
-        // ---------- Original Method ----------
-        //super.onAnimationStart();
-        //if ((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE) {
-            //final int count = mChildrenCount;
-            //final View[] children = mChildren;
-            //final boolean buildCache = !isHardwareAccelerated();
-            //for (int i = 0; i < count; i++) {
-                //final View child = children[i];
-                //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
-                    //child.setDrawingCacheEnabled(true);
-                    //if (buildCache) {
-                        //child.buildDrawingCache(true);
-                    //}
-                //}
-            //}
-            //mGroupFlags |= FLAG_CHILDREN_DRAWN_WITH_CACHE;
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+                
+                
+                    
+                    
+                        
+                    
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.007 -0400", hash_original_method = "D937B1A7AD9A1EFB7CAF69E9B3174965", hash_generated_method = "35CEF9D8DFD04C9C6DD4F44A075F19A5")
     @Override
     protected void onAnimationEnd() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAnimationEnd();
         {
             mGroupFlags &= ~FLAG_CHILDREN_DRAWN_WITH_CACHE;
             {
                 setChildrenDrawingCacheEnabled(false);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.onAnimationEnd();
-        //if ((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE) {
-            //mGroupFlags &= ~FLAG_CHILDREN_DRAWN_WITH_CACHE;
-            //if ((mPersistentDrawingCache & PERSISTENT_ANIMATION_CACHE) == 0) {
-                //setChildrenDrawingCacheEnabled(false);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.008 -0400", hash_original_method = "8B8B5866E6978A8C0D1BC17BB86DCAFE", hash_generated_method = "4EB2A0ED68FDF8505FC019C5B9DCAF24")
     @Override
      Bitmap createSnapshot(Bitmap.Config quality, int backgroundColor, boolean skipChildren) {
-        Bitmap varB4EAC82CA7396A68D541C85D26508E83_1854346948 = null; //Variable for return #1
+        Bitmap varB4EAC82CA7396A68D541C85D26508E83_1854346948 = null; 
         int count = mChildrenCount;
         int[] visibilities = null;
         {
@@ -2833,48 +2892,49 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     visibilities[i] = child.getVisibility();
                     {
                         child.setVisibility(INVISIBLE);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         Bitmap b = super.createSnapshot(quality, backgroundColor, skipChildren);
         {
             {
                 int i = 0;
                 {
                     getChildAt(i).setVisibility(visibilities[i]);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1854346948 = b;
         addTaint(quality.getTaint());
         addTaint(backgroundColor);
         addTaint(skipChildren);
-        varB4EAC82CA7396A68D541C85D26508E83_1854346948.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1854346948.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1854346948;
-        // ---------- Original Method ----------
-        //int count = mChildrenCount;
-        //int[] visibilities = null;
-        //if (skipChildren) {
-            //visibilities = new int[count];
-            //for (int i = 0; i < count; i++) {
-                //View child = getChildAt(i);
-                //visibilities[i] = child.getVisibility();
-                //if (visibilities[i] == View.VISIBLE) {
-                    //child.setVisibility(INVISIBLE);
-                //}
-            //}
-        //}
-        //Bitmap b = super.createSnapshot(quality, backgroundColor, skipChildren);
-        //if (skipChildren) {
-            //for (int i = 0; i < count; i++) {
-                //getChildAt(i).setVisibility(visibilities[i]);
-            //}
-        //}
-        //return b;
+        
+        
+        
+        
+            
+            
+                
+                
+                
+                    
+                
+            
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.009 -0400", hash_original_method = "B43A05A63ADF740A4A15894A451E95C0", hash_generated_method = "A12ACCFDB33912FB9219323B788C6BCB")
     @Override
     protected void dispatchDraw(Canvas canvas) {
@@ -2898,29 +2958,29 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                                 child.setDrawingCacheEnabled(true);
                                 {
                                     child.buildDrawingCache(true);
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 final LayoutAnimationController controller = mLayoutAnimationController;
                 {
                     boolean varE5D19A1FB2EF5ECD65C0B52011051B10_557415713 = (controller.willOverlap());
                     {
                         mGroupFlags |= FLAG_OPTIMIZE_INVALIDATE;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 controller.start();
                 mGroupFlags &= ~FLAG_RUN_ANIMATION;
                 mGroupFlags &= ~FLAG_ANIMATION_DONE;
                 {
                     mGroupFlags |= FLAG_CHILDREN_DRAWN_WITH_CACHE;
-                } //End block
+                } 
                 {
                     mAnimationListener.onAnimationStart(controller.getAnimation());
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         int saveCount = 0;
         final boolean clipToPadding = (flags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK;
         {
@@ -2928,7 +2988,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             canvas.clipRect(mScrollX + mPaddingLeft, mScrollY + mPaddingTop,
                     mScrollX + mRight - mLeft - mPaddingRight,
                     mScrollY + mBottom - mTop - mPaddingBottom);
-        } //End block
+        } 
         mPrivateFlags &= ~DRAW_ANIMATION;
         mGroupFlags &= ~FLAG_INVALIDATE_REQUIRED;
         boolean more = false;
@@ -2942,11 +3002,11 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                         boolean var0BDBDC6C68643B603A84C571827EFEE7_656067474 = ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null);
                         {
                             more |= drawChild(canvas, child, drawingTime);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 int i = 0;
@@ -2956,11 +3016,11 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                         boolean var0BDBDC6C68643B603A84C571827EFEE7_1246735006 = ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null);
                         {
                             more |= drawChild(canvas, child, drawingTime);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             final ArrayList<View> disappearingChildren = mDisappearingChildren;
             final int disappearingCount = disappearingChildren.size() - 1;
@@ -2969,16 +3029,16 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 {
                     final View child = disappearingChildren.get(i);
                     more |= drawChild(canvas, child, drawingTime);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             canvas.restoreToCount(saveCount);
-        } //End block
+        } 
         flags = mGroupFlags;
         {
             invalidate(true);
-        } //End block
+        } 
         {
             boolean var76A6DBFAA8B517B1E30D0F77E8BBAB75_1055230987 = ((flags & FLAG_ANIMATION_DONE) == 0 && (flags & FLAG_NOTIFY_ANIMATION_LISTENER) == 0 &&
                 mLayoutAnimationController.isDone() && !more);
@@ -2990,11 +3050,11 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                }
             };
                 post(end);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3004,11 +3064,12 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         addTaint(i);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1194024517 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1194024517;
-        // ---------- Original Method ----------
-        //return i;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.010 -0400", hash_original_method = "396DFE394BEDDAB737694626CE3DE3EF", hash_generated_method = "37D71548349BED70A3914C1D49760112")
     private void notifyAnimationListener() {
         mGroupFlags &= ~FLAG_NOTIFY_ANIMATION_LISTENER;
@@ -3020,35 +3081,36 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                }
            };
             post(end);
-        } //End block
+        } 
         {
             mGroupFlags &= ~FLAG_CHILDREN_DRAWN_WITH_CACHE;
             {
                 setChildrenDrawingCacheEnabled(false);
-            } //End block
-        } //End block
+            } 
+        } 
         invalidate(true);
-        // ---------- Original Method ----------
-        //mGroupFlags &= ~FLAG_NOTIFY_ANIMATION_LISTENER;
-        //mGroupFlags |= FLAG_ANIMATION_DONE;
-        //if (mAnimationListener != null) {
-           //final Runnable end = new Runnable() {
-               //public void run() {
-                   //mAnimationListener.onAnimationEnd(mLayoutAnimationController.getAnimation());
-               //}
-           //};
-           //post(end);
-        //}
-        //if ((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE) {
-            //mGroupFlags &= ~FLAG_CHILDREN_DRAWN_WITH_CACHE;
-            //if ((mPersistentDrawingCache & PERSISTENT_ANIMATION_CACHE) == 0) {
-                //setChildrenDrawingCacheEnabled(false);
-            //}
-        //}
-        //invalidate(true);
+        
+        
+        
+        
+           
+               
+                   
+               
+           
+           
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.010 -0400", hash_original_method = "F4EA27B0452D996E61B8467125C95A50", hash_generated_method = "92392593710BDD44FC3F46ED4705AB11")
     @Override
     protected void dispatchGetDisplayList() {
@@ -3066,26 +3128,27 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                         child.mPrivateFlags &= ~INVALIDATED;
                         child.getDisplayList();
                         child.mRecreateDisplayList = false;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //final View child = children[i];
-            //if (((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null) &&
-                    //child.hasStaticLayer()) {
-                //child.mRecreateDisplayList = (child.mPrivateFlags & INVALIDATED) == INVALIDATED;
-                //child.mPrivateFlags &= ~INVALIDATED;
-                //child.getDisplayList();
-                //child.mRecreateDisplayList = false;
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+                    
+                
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.013 -0400", hash_original_method = "A5CF70DDE358EAA9D1CA892FF372BD55", hash_generated_method = "DCB8A8142E8A6637F6DACFE06BB680BA")
     protected boolean drawChild(Canvas canvas, View child, long drawingTime) {
         boolean more = false;
@@ -3098,7 +3161,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         {
             mChildTransformation.clear();
             mGroupFlags &= ~FLAG_CLEAR_TRANSFORMATION;
-        } //End block
+        } 
         Transformation transformToApply = null;
         Transformation invalidationTransform;
         final Animation a = child.getAnimation();
@@ -3112,29 +3175,29 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         {
             caching = true;
             scalingRequired = mAttachInfo.mScalingRequired;
-        } //End block
+        } 
         {
             caching = (layerType != LAYER_TYPE_NONE) || hardwareAccelerated;
-        } //End block
+        } 
         {
             final boolean initialized = a.isInitialized();
             {
                 a.initialize(cr - cl, cb - ct, getWidth(), getHeight());
                 a.initializeInvalidateRegion(0, 0, cr - cl, cb - ct);
                 child.onAnimationStart();
-            } //End block
+            } 
             more = a.getTransformation(drawingTime, mChildTransformation,
                     scalingRequired ? mAttachInfo.mApplicationScale : 1f);
             {
                 {
                     mInvalidationTransformation = new Transformation();
-                } //End block
+                } 
                 invalidationTransform = mInvalidationTransformation;
                 a.getTransformation(drawingTime, invalidationTransform, 1f);
-            } //End block
+            } 
             {
                 invalidationTransform = mChildTransformation;
-            } //End block
+            } 
             transformToApply = mChildTransformation;
             concatMatrix = a.willChangeTransformationMatrix();
             {
@@ -3143,16 +3206,16 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     {
                         {
                             mGroupFlags |= FLAG_INVALIDATE_REQUIRED;
-                        } //End block
+                        } 
                         {
                             mPrivateFlags |= DRAW_ANIMATION;
                             invalidate(cl, ct, cr, cb);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         {
                             mInvalidateRegion = new RectF();
-                        } //End block
+                        } 
                         final RectF region = mInvalidateRegion;
                         a.getInvalidateRegion(0, 0, cr - cl, cb - ct, region, invalidationTransform);
                         mPrivateFlags |= DRAW_ANIMATION;
@@ -3160,10 +3223,10 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                         final int top = ct + (int) region.top;
                         invalidate(left, top, left + (int) (region.width() + .5f),
                             top + (int) (region.height() + .5f));
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             final boolean hasTransform = getChildStaticTransformation(child, mChildTransformation);
             {
@@ -3171,18 +3234,18 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 transformToApply = transformType != Transformation.TYPE_IDENTITY ?
                         mChildTransformation : null;
                 concatMatrix = (transformType & Transformation.TYPE_MATRIX) != 0;
-            } //End block
-        } //End block
+            } 
+        } 
         concatMatrix |= !childHasIdentityMatrix;
         child.mPrivateFlags |= DRAWN;
         {
             boolean var04A9779EE766FABCC1352F467BA0AB22_222749774 = (!concatMatrix && canvas.quickReject(cl, ct, cr, cb, Canvas.EdgeType.BW) &&
                 (child.mPrivateFlags & DRAW_ANIMATION) == 0);
-        } //End collapsed parenthetic
+        } 
         {
             child.mRecreateDisplayList = (child.mPrivateFlags & INVALIDATED) == INVALIDATED;
             child.mPrivateFlags &= ~INVALIDATED;
-        } //End block
+        } 
         child.computeScroll();
         final int sx = child.mScrollX;
         final int sy = child.mScrollY;
@@ -3194,35 +3257,35 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 {
                     layerType = LAYER_TYPE_SOFTWARE;
                     child.buildDrawingCache(true);
-                } //End block
+                } 
                 cache = child.getDrawingCache(true);
-            } //End block
+            } 
             {
-                //Begin case LAYER_TYPE_SOFTWARE 
+                
                 child.buildDrawingCache(true);
-                //End case LAYER_TYPE_SOFTWARE 
-                //Begin case LAYER_TYPE_SOFTWARE 
+                
+                
                 cache = child.getDrawingCache(true);
-                //End case LAYER_TYPE_SOFTWARE 
-                //Begin case LAYER_TYPE_NONE 
+                
+                
                 hasDisplayList = child.canHaveDisplayList();
-                //End case LAYER_TYPE_NONE 
-            } //End block
-        } //End block
+                
+            } 
+        } 
         final boolean hasNoCache = cache == null || hasDisplayList;
         final boolean offsetForScroll = cache == null && !hasDisplayList &&
                 layerType != LAYER_TYPE_HARDWARE;
         final int restoreTo = canvas.save();
         {
             canvas.translate(cl - sx, ct - sy);
-        } //End block
+        } 
         {
             canvas.translate(cl, ct);
             {
                 final float scale = 1.0f / mAttachInfo.mApplicationScale;
                 canvas.scale(scale, scale);
-            } //End block
-        } //End block
+            } 
+        } 
         float alpha = child.getAlpha();
         {
             boolean var934B3E69D3ACD833C0B88FE85A1125E9_65103120 = (transformToApply != null || alpha < 1.0f || !child.hasIdentityMatrix());
@@ -3233,26 +3296,26 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     {
                         transX = -sx;
                         transY = -sy;
-                    } //End block
+                    } 
                     {
                         {
                             canvas.translate(-transX, -transY);
                             canvas.concat(transformToApply.getMatrix());
                             canvas.translate(transX, transY);
                             mGroupFlags |= FLAG_CLEAR_TRANSFORMATION;
-                        } //End block
+                        } 
                         float transformAlpha = transformToApply.getAlpha();
                         {
                             alpha *= transformToApply.getAlpha();
                             mGroupFlags |= FLAG_CLEAR_TRANSFORMATION;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         canvas.translate(-transX, -transY);
                         canvas.concat(child.getMatrix());
                         canvas.translate(transX, transY);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     mGroupFlags |= FLAG_CLEAR_TRANSFORMATION;
                     {
@@ -3263,7 +3326,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                                 int layerFlags = Canvas.HAS_ALPHA_LAYER_SAVE_FLAG;
                                 {
                                     layerFlags |= Canvas.CLIP_TO_LAYER_SAVE_FLAG;
-                                } //End block
+                                } 
                                 {
                                     int scrollX;
                                     scrollX = 0;
@@ -3273,33 +3336,33 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                                     scrollY = sy;
                                     canvas.saveLayerAlpha(scrollX, scrollY, scrollX + cr - cl,
                                     scrollY + cb - ct, multipliedAlpha, layerFlags);
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             {
                                 child.mPrivateFlags |= ALPHA_SET;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 child.onSetAlpha(255);
                 child.mPrivateFlags &= ~ALPHA_SET;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 canvas.clipRect(sx, sy, sx + (cr - cl), sy + (cb - ct));
-            } //End block
+            } 
             {
                 {
                     canvas.clipRect(0, 0, cr - cl, cb - ct);
-                } //End block
+                } 
                 {
                     canvas.clipRect(0, 0, cache.getWidth(), cache.getHeight());
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             displayList = child.getDisplayList();
             {
@@ -3307,9 +3370,9 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 {
                     displayList = null;
                     hasDisplayList = false;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean layerRendered = false;
             {
@@ -3320,7 +3383,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                         child.mLayerPaint.setAlpha((int) (alpha * 255));
                         ((HardwareCanvas) canvas).drawHardwareLayer(layer, 0, 0, child.mLayerPaint);
                         layerRendered = true;
-                    } //End block
+                    } 
                     {
                         int scrollX;
                         scrollX = 0;
@@ -3331,28 +3394,28 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                         canvas.saveLayer(scrollX, scrollY,
                             scrollX + cr - cl, scrollY + cb - ct, child.mLayerPaint,
                             Canvas.HAS_ALPHA_LAYER_SAVE_FLAG | Canvas.CLIP_TO_LAYER_SAVE_FLAG);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 {
                     {
                         {
                             ViewDebug.trace(this, ViewDebug.HierarchyTraceType.DRAW);
-                        } //End block
+                        } 
                         child.mPrivateFlags &= ~DIRTY_MASK;
                         child.dispatchDraw(canvas);
-                    } //End block
+                    } 
                     {
                         child.draw(canvas);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     child.mPrivateFlags &= ~DIRTY_MASK;
                     ((HardwareCanvas) canvas).drawDisplayList(displayList, cr - cl, cb - ct, null);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             child.mPrivateFlags &= ~DIRTY_MASK;
             Paint cachePaint;
@@ -3362,52 +3425,53 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     cachePaint = new Paint();
                     cachePaint.setDither(false);
                     mCachePaint = cachePaint;
-                } //End block
+                } 
                 {
                     cachePaint.setAlpha((int) (alpha * 255));
                     mGroupFlags |= FLAG_ALPHA_LOWER_THAN_ONE;
-                } //End block
+                } 
                 {
                     cachePaint.setAlpha(255);
                     mGroupFlags &= ~FLAG_ALPHA_LOWER_THAN_ONE;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 cachePaint = child.mLayerPaint;
                 cachePaint.setAlpha((int) (alpha * 255));
-            } //End block
+            } 
             canvas.drawBitmap(cache, 0.0f, 0.0f, cachePaint);
-        } //End block
+        } 
         canvas.restoreToCount(restoreTo);
         {
             {
                 boolean varAF4EC4CBE7F4BE862D45CC273E5600AE_716223063 = (!hardwareAccelerated && !a.getFillAfter());
                 {
                     child.onSetAlpha(255);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             finishAnimatingView(child, a);
-        } //End block
+        } 
         {
             invalidate(true);
             {
                 boolean var14BEB88AF6F19C239671B73A03DA27C1_731520628 = (a.hasAlpha() && (child.mPrivateFlags & ALPHA_SET) == ALPHA_SET);
                 {
                     child.invalidate(true);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         child.mRecreateDisplayList = false;
         addTaint(canvas.getTaint());
         addTaint(child.getTaint());
         addTaint(drawingTime);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_829758053 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_829758053;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.014 -0400", hash_original_method = "4095F0AE1BAE27A3A14B16FD7C3431AE", hash_generated_method = "2DE6A392E82B94775B398BE43E9D49DB")
     public void setChildrenLayersEnabled(boolean enabled) {
         {
@@ -3419,42 +3483,45 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     View child = mChildren[i];
                     {
                         child.invalidate(true);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //if (enabled != mDrawLayers) {
-            //mDrawLayers = enabled;
-            //invalidate(true);
-            //for (int i = 0; i < mChildrenCount; i++) {
-                //View child = mChildren[i];
-                //if (child.mLayerType != LAYER_TYPE_NONE) {
-                    //child.invalidate(true);
-                //}
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+            
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.014 -0400", hash_original_method = "1DB85DBA1331DEE146504B0E70B65BE5", hash_generated_method = "38D6A5E8338839B635ADB7C95D35DC38")
     public void setClipChildren(boolean clipChildren) {
         setBooleanFlag(FLAG_CLIP_CHILDREN, clipChildren);
         addTaint(clipChildren);
-        // ---------- Original Method ----------
-        //setBooleanFlag(FLAG_CLIP_CHILDREN, clipChildren);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.015 -0400", hash_original_method = "863AF54978AA2727D0D7509C22DC212D", hash_generated_method = "FE6B05C3B5C693AA7797D22B0F953BD0")
     public void setClipToPadding(boolean clipToPadding) {
         setBooleanFlag(FLAG_CLIP_TO_PADDING, clipToPadding);
         addTaint(clipToPadding);
-        // ---------- Original Method ----------
-        //setBooleanFlag(FLAG_CLIP_TO_PADDING, clipToPadding);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.015 -0400", hash_original_method = "8ABEEBF76C5626CBEA0073E7871E08E9", hash_generated_method = "878A4987E3923CAE3148B05C491B3192")
     @Override
     public void dispatchSetSelected(boolean selected) {
@@ -3464,18 +3531,19 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             int i = 0;
             {
                 children[i].setSelected(selected);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(selected);
-        // ---------- Original Method ----------
-        //final View[] children = mChildren;
-        //final int count = mChildrenCount;
-        //for (int i = 0; i < count; i++) {
-            //children[i].setSelected(selected);
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.015 -0400", hash_original_method = "2F91B8D19CDC8A9E83F3387815EB4D3F", hash_generated_method = "5A1A51CCA813E32AA84591D8601DF84B")
     @Override
     public void dispatchSetActivated(boolean activated) {
@@ -3485,18 +3553,19 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             int i = 0;
             {
                 children[i].setActivated(activated);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(activated);
-        // ---------- Original Method ----------
-        //final View[] children = mChildren;
-        //final int count = mChildrenCount;
-        //for (int i = 0; i < count; i++) {
-            //children[i].setActivated(activated);
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.016 -0400", hash_original_method = "741F0E8D45382BBF6BA56C96532A94D8", hash_generated_method = "D4F79F56C7FCA3657E411804EEA7E233")
     @Override
     protected void dispatchSetPressed(boolean pressed) {
@@ -3506,24 +3575,25 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             int i = 0;
             {
                 children[i].setPressed(pressed);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(pressed);
-        // ---------- Original Method ----------
-        //final View[] children = mChildren;
-        //final int count = mChildrenCount;
-        //for (int i = 0; i < count; i++) {
-            //children[i].setPressed(pressed);
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.016 -0400", hash_original_method = "BD73AAD871B8740D29315EE305D10F4B", hash_generated_method = "6725A8BB4E7F5A1EF4371361264018C1")
     protected void setStaticTransformationsEnabled(boolean enabled) {
         setBooleanFlag(FLAG_SUPPORT_STATIC_TRANSFORMATIONS, enabled);
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //setBooleanFlag(FLAG_SUPPORT_STATIC_TRANSFORMATIONS, enabled);
+        
+        
     }
 
     
@@ -3533,20 +3603,21 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         addTaint(t.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1435909983 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1435909983;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.018 -0400", hash_original_method = "8C56D4BEA5FE426CA6EBD73A64039E70", hash_generated_method = "BD7F3ED96960A88C795A3522C92653E0")
     @Override
     protected View findViewTraversal(int id) {
-        View varB4EAC82CA7396A68D541C85D26508E83_131842363 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_486519027 = null; //Variable for return #2
-        View varB4EAC82CA7396A68D541C85D26508E83_427506726 = null; //Variable for return #3
+        View varB4EAC82CA7396A68D541C85D26508E83_131842363 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_486519027 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_427506726 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_131842363 = this;
-        } //End block
+        } 
         final View[] where = mChildren;
         final int len = mChildrenCount;
         {
@@ -3557,57 +3628,58 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     v = v.findViewById(id);
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_486519027 = v;
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_427506726 = null;
         addTaint(id);
-        View varA7E53CE21691AB073D9660D615818899_941338092; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_941338092; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_941338092 = varB4EAC82CA7396A68D541C85D26508E83_131842363;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_941338092 = varB4EAC82CA7396A68D541C85D26508E83_486519027;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_941338092 = varB4EAC82CA7396A68D541C85D26508E83_427506726;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_941338092.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_941338092.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_941338092;
-        // ---------- Original Method ----------
-        //if (id == mID) {
-            //return this;
-        //}
-        //final View[] where = mChildren;
-        //final int len = mChildrenCount;
-        //for (int i = 0; i < len; i++) {
-            //View v = where[i];
-            //if ((v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
-                //v = v.findViewById(id);
-                //if (v != null) {
-                    //return v;
-                //}
-            //}
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.020 -0400", hash_original_method = "D087F3465F923453754E64A11DB6BED1", hash_generated_method = "2FE436788741F1AD654111D64BD99FEC")
     @Override
     protected View findViewWithTagTraversal(Object tag) {
-        View varB4EAC82CA7396A68D541C85D26508E83_185844916 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1461648900 = null; //Variable for return #2
-        View varB4EAC82CA7396A68D541C85D26508E83_2118019093 = null; //Variable for return #3
+        View varB4EAC82CA7396A68D541C85D26508E83_185844916 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1461648900 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_2118019093 = null; 
         {
             boolean var400CEDD09F5544D49C9E372D9C42B91E_53075433 = (tag != null && tag.equals(mTag));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_185844916 = this;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final View[] where = mChildren;
         final int len = mChildrenCount;
         {
@@ -3618,57 +3690,58 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     v = v.findViewWithTag(tag);
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1461648900 = v;
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2118019093 = null;
         addTaint(tag.getTaint());
-        View varA7E53CE21691AB073D9660D615818899_1844197077; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1844197077; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1844197077 = varB4EAC82CA7396A68D541C85D26508E83_185844916;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1844197077 = varB4EAC82CA7396A68D541C85D26508E83_1461648900;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1844197077 = varB4EAC82CA7396A68D541C85D26508E83_2118019093;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1844197077.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1844197077.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1844197077;
-        // ---------- Original Method ----------
-        //if (tag != null && tag.equals(mTag)) {
-            //return this;
-        //}
-        //final View[] where = mChildren;
-        //final int len = mChildrenCount;
-        //for (int i = 0; i < len; i++) {
-            //View v = where[i];
-            //if ((v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
-                //v = v.findViewWithTag(tag);
-                //if (v != null) {
-                    //return v;
-                //}
-            //}
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.021 -0400", hash_original_method = "0EC5116F4AD2AA9CFA72F9149C3A9529", hash_generated_method = "67238C750F7B9A7F6249259AC27B6AD5")
     @Override
     protected View findViewByPredicateTraversal(Predicate<View> predicate, View childToSkip) {
-        View varB4EAC82CA7396A68D541C85D26508E83_802644357 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1755355367 = null; //Variable for return #2
-        View varB4EAC82CA7396A68D541C85D26508E83_945946552 = null; //Variable for return #3
+        View varB4EAC82CA7396A68D541C85D26508E83_802644357 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1755355367 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_945946552 = null; 
         {
             boolean var9DB3C1E357F4608DF2A7064AE311774F_1690908305 = (predicate.apply(this));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_802644357 = this;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final View[] where = mChildren;
         final int len = mChildrenCount;
         {
@@ -3679,55 +3752,57 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     v = v.findViewByPredicate(predicate);
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1755355367 = v;
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_945946552 = null;
         addTaint(predicate.getTaint());
         addTaint(childToSkip.getTaint());
-        View varA7E53CE21691AB073D9660D615818899_98539755; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_98539755; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_98539755 = varB4EAC82CA7396A68D541C85D26508E83_802644357;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_98539755 = varB4EAC82CA7396A68D541C85D26508E83_1755355367;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_98539755 = varB4EAC82CA7396A68D541C85D26508E83_945946552;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_98539755.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_98539755.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_98539755;
-        // ---------- Original Method ----------
-        //if (predicate.apply(this)) {
-            //return this;
-        //}
-        //final View[] where = mChildren;
-        //final int len = mChildrenCount;
-        //for (int i = 0; i < len; i++) {
-            //View v = where[i];
-            //if (v != childToSkip && (v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
-                //v = v.findViewByPredicate(predicate);
-                //if (v != null) {
-                    //return v;
-                //}
-            //}
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.021 -0400", hash_original_method = "CEC5DF3412108DC355B81A234F778717", hash_generated_method = "181C858E645E3A406557787AB3FC2125")
     public void addView(View child) {
         addView(child, -1);
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //addView(child, -1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.022 -0400", hash_original_method = "052049806EFDCB28F8B1780970FB4D61", hash_generated_method = "18DC8CAC5BFE5BB6A5E950F63B31EEA6")
     public void addView(View child, int index) {
         LayoutParams params = child.getLayoutParams();
@@ -3735,23 +3810,24 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             params = generateDefaultLayoutParams();
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("generateDefaultLayoutParams() cannot return null");
-            } //End block
-        } //End block
+            } 
+        } 
         addView(child, index, params);
         addTaint(child.getTaint());
         addTaint(index);
-        // ---------- Original Method ----------
-        //LayoutParams params = child.getLayoutParams();
-        //if (params == null) {
-            //params = generateDefaultLayoutParams();
-            //if (params == null) {
-                //throw new IllegalArgumentException("generateDefaultLayoutParams() cannot return null");
-            //}
-        //}
-        //addView(child, index, params);
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.022 -0400", hash_original_method = "04069655751E8F150919B197DB2D0EF4", hash_generated_method = "903EA1C4AA122BCBF061D3ECB277EA67")
     public void addView(View child, int width, int height) {
         final LayoutParams params = generateDefaultLayoutParams();
@@ -3761,42 +3837,44 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         addTaint(child.getTaint());
         addTaint(width);
         addTaint(height);
-        // ---------- Original Method ----------
-        //final LayoutParams params = generateDefaultLayoutParams();
-        //params.width = width;
-        //params.height = height;
-        //addView(child, -1, params);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.022 -0400", hash_original_method = "CAABD1DBDF747222034CC373BA6381CC", hash_generated_method = "641806D60D8710F22CD9342A56CC8848")
     public void addView(View child, LayoutParams params) {
         addView(child, -1, params);
         addTaint(child.getTaint());
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //addView(child, -1, params);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.023 -0400", hash_original_method = "BD78A36687CEEF62B7E0786E86501A2F", hash_generated_method = "EFB26DE6BD295DBB249DFC9C64A140D7")
     public void addView(View child, int index, LayoutParams params) {
         {
             System.out.println(this + " addView");
-        } //End block
+        } 
         requestLayout();
         invalidate(true);
         addViewInner(child, index, params, false);
         addTaint(child.getTaint());
         addTaint(index);
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //System.out.println(this + " addView");
-        //}
-        //requestLayout();
-        //invalidate(true);
-        //addViewInner(child, index, params, false);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -3806,25 +3884,25 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             boolean varDBEE735151EA33B4B64A3ED748755A2D_1706817072 = (!checkLayoutParams(params));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid LayoutParams supplied to " + this);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var8034A81DF8A049A1DEC5A101D1129C23_790275386 = (view.mParent != this);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Given view not a child of " + this);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         view.setLayoutParams(params);
         addTaint(view.getTaint());
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //if (!checkLayoutParams(params)) {
-            //throw new IllegalArgumentException("Invalid LayoutParams supplied to " + this);
-        //}
-        //if (view.mParent != this) {
-            //throw new IllegalArgumentException("Given view not a child of " + this);
-        //}
-        //view.setLayoutParams(params);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -3833,44 +3911,44 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         addTaint(p.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1924207052 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1924207052;
-        // ---------- Original Method ----------
-        //return  p != null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.024 -0400", hash_original_method = "2EFEB52353D2008493D1621282A03886", hash_generated_method = "7C3C20C1075C2C96B31EA398AE09593A")
     public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
         mOnHierarchyChangeListener = listener;
-        // ---------- Original Method ----------
-        //mOnHierarchyChangeListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.024 -0400", hash_original_method = "7C8375F0DCFCC6770307465540C43F29", hash_generated_method = "3B4A13063E631F9E09957E2CE7CAEDBA")
     protected void onViewAdded(View child) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mOnHierarchyChangeListener.onChildViewAdded(this, child);
-        } //End block
+        } 
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //if (mOnHierarchyChangeListener != null) {
-            //mOnHierarchyChangeListener.onChildViewAdded(this, child);
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.024 -0400", hash_original_method = "2969A02DF6E73517C4A5610098A20201", hash_generated_method = "E7BD940E5C959E96F9765F094B55BFF8")
     protected void onViewRemoved(View child) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mOnHierarchyChangeListener.onChildViewRemoved(this, child);
-        } //End block
+        } 
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //if (mOnHierarchyChangeListener != null) {
-            //mOnHierarchyChangeListener.onChildViewRemoved(this, child);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -3882,8 +3960,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         addTaint(params.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_448145848 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_448145848;
-        // ---------- Original Method ----------
-        //return addViewInLayout(child, index, params, false);
+        
+        
     }
 
     
@@ -3899,11 +3977,11 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         addTaint(preventRequestLayout);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_562817598 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_562817598;
-        // ---------- Original Method ----------
-        //child.mParent = null;
-        //addViewInner(child, index, params, preventRequestLayout);
-        //child.mPrivateFlags = (child.mPrivateFlags & ~DIRTY_MASK) | DRAWN;
-        //return true;
+        
+        
+        
+        
+        
     }
 
     
@@ -3911,8 +3989,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     protected void cleanupLayoutState(View child) {
         child.mPrivateFlags &= ~View.FORCE_LAYOUT;
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //child.mPrivateFlags &= ~View.FORCE_LAYOUT;
+        
+        
     }
 
     
@@ -3921,45 +3999,45 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             boolean preventRequestLayout) {
         {
             mTransition.cancel(LayoutTransition.DISAPPEARING);
-        } //End block
+        } 
         {
             boolean varA3364C4A63F6A263A8814AE455A29C59_1245912690 = (child.getParent() != null);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("The specified child already has a parent. " +
                     "You must call removeView() on the child's parent first.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             mTransition.addChild(this, child);
-        } //End block
+        } 
         {
             boolean varDBEE735151EA33B4B64A3ED748755A2D_1596158363 = (!checkLayoutParams(params));
             {
                 params = generateLayoutParams(params);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             child.mLayoutParams = params;
-        } //End block
+        } 
         {
             child.setLayoutParams(params);
-        } //End block
+        } 
         {
             index = mChildrenCount;
-        } //End block
+        } 
         addInArray(child, index);
         {
             child.assignParent(this);
-        } //End block
+        } 
         {
             child.mParent = this;
-        } //End block
+        } 
         {
             boolean varDDA55DF480817D6313066967525E9186_1324634642 = (child.hasFocus());
             {
                 requestChildFocus(child, child.findFocus());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         AttachInfo ai = mAttachInfo;
         {
             boolean lastKeepOn = ai.mKeepScreenOn;
@@ -3967,19 +4045,19 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             child.dispatchAttachedToWindow(mAttachInfo, (mViewFlags&VISIBILITY_MASK));
             {
                 needGlobalAttributesUpdate(true);
-            } //End block
+            } 
             ai.mKeepScreenOn = lastKeepOn;
-        } //End block
+        } 
         onViewAdded(child);
         {
             mGroupFlags |= FLAG_NOTIFY_CHILDREN_ON_DRAWABLE_STATE_CHANGE;
-        } //End block
+        } 
         addTaint(child.getTaint());
         addTaint(index);
         addTaint(params.getTaint());
         addTaint(preventRequestLayout);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3993,27 +4071,27 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 mChildren = new View[size + ARRAY_CAPACITY_INCREMENT];
                 System.arraycopy(children, 0, mChildren, 0, size);
                 children = mChildren;
-            } //End block
+            } 
             children[mChildrenCount++] = child;
-        } //End block
+        } 
         {
             {
                 mChildren = new View[size + ARRAY_CAPACITY_INCREMENT];
                 System.arraycopy(children, 0, mChildren, 0, index);
                 System.arraycopy(children, index, mChildren, index + 1, count - index);
                 children = mChildren;
-            } //End block
+            } 
             {
                 System.arraycopy(children, index, children, index + 1, count - index);
-            } //End block
+            } 
             children[index] = child;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("index=" + index + " count=" + count);
-        } //End block
+        } 
         addTaint(index);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4024,44 +4102,44 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             boolean varFD7C05E4772169FABFE9822CC2FF40CC_520948876 = (!(mTransitioningViews != null && mTransitioningViews.contains(children[index])));
             {
                 children[index].mParent = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final int count = mChildrenCount;
         {
             children[--mChildrenCount] = null;
-        } //End block
+        } 
         {
             System.arraycopy(children, index + 1, children, index, count - index - 1);
             children[--mChildrenCount] = null;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         {
             mLastTouchDownTime = 0;
             mLastTouchDownIndex = -1;
-        } //End block
+        } 
         addTaint(index);
-        // ---------- Original Method ----------
-        //final View[] children = mChildren;
-        //if (!(mTransitioningViews != null && mTransitioningViews.contains(children[index]))) {
-            //children[index].mParent = null;
-        //}
-        //final int count = mChildrenCount;
-        //if (index == count - 1) {
-            //children[--mChildrenCount] = null;
-        //} else if (index >= 0 && index < count) {
-            //System.arraycopy(children, index + 1, children, index, count - index - 1);
-            //children[--mChildrenCount] = null;
-        //} else {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (mLastTouchDownIndex == index) {
-            //mLastTouchDownTime = 0;
-            //mLastTouchDownIndex = -1;
-        //} else if (mLastTouchDownIndex > index) {
-            //mLastTouchDownIndex--;
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
+            
+            
+        
+            
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -4077,28 +4155,28 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 {
                     children[i].mParent = null;
                     children[i] = null;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 int i = start;
                 {
                     children[i].mParent = null;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             System.arraycopy(children, end, children, start, childrenCount - end);
             {
                 int i = childrenCount - (end - start);
                 {
                     children[i] = null;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mChildrenCount -= (end - start);
         addTaint(count);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4107,9 +4185,9 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         Animation a = mLayoutAnimationController.getAnimationForView(child);
         child.setAnimation(a);
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //Animation a = mLayoutAnimationController.getAnimationForView(child);
-        //child.setAnimation(a);
+        
+        
+        
     }
 
     
@@ -4120,22 +4198,22 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         {
             animationParams = new LayoutAnimationController.AnimationParameters();
             params.layoutAnimationParameters = animationParams;
-        } //End block
+        } 
         animationParams.count = count;
         animationParams.index = index;
         addTaint(child.getTaint());
         addTaint(params.getTaint());
         addTaint(index);
         addTaint(count);
-        // ---------- Original Method ----------
-        //LayoutAnimationController.AnimationParameters animationParams =
-                    //params.layoutAnimationParameters;
-        //if (animationParams == null) {
-            //animationParams = new LayoutAnimationController.AnimationParameters();
-            //params.layoutAnimationParameters = animationParams;
-        //}
-        //animationParams.count = count;
-        //animationParams.index = index;
+        
+        
+                    
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -4145,10 +4223,10 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         requestLayout();
         invalidate(true);
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        //removeViewInternal(view);
-        //requestLayout();
-        //invalidate(true);
+        
+        
+        
+        
     }
 
     
@@ -4156,8 +4234,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     public void removeViewInLayout(View view) {
         removeViewInternal(view);
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        //removeViewInternal(view);
+        
+        
     }
 
     
@@ -4166,8 +4244,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         removeViewsInternal(start, count);
         addTaint(start);
         addTaint(count);
-        // ---------- Original Method ----------
-        //removeViewsInternal(start, count);
+        
+        
     }
 
     
@@ -4177,10 +4255,10 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         requestLayout();
         invalidate(true);
         addTaint(index);
-        // ---------- Original Method ----------
-        //removeViewInternal(index, getChildAt(index));
-        //requestLayout();
-        //invalidate(true);
+        
+        
+        
+        
     }
 
     
@@ -4191,10 +4269,10 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         invalidate(true);
         addTaint(start);
         addTaint(count);
-        // ---------- Original Method ----------
-        //removeViewsInternal(start, count);
-        //requestLayout();
-        //invalidate(true);
+        
+        
+        
+        
     }
 
     
@@ -4203,13 +4281,13 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         final int index = indexOfChild(view);
         {
             removeViewInternal(index, view);
-        } //End block
+        } 
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        //final int index = indexOfChild(view);
-        //if (index >= 0) {
-            //removeViewInternal(index, view);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -4217,51 +4295,51 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     private void removeViewInternal(int index, View view) {
         {
             mTransition.removeChild(this, view);
-        } //End block
+        } 
         boolean clearChildFocus = false;
         {
             view.clearFocusForRemoval();
             clearChildFocus = true;
-        } //End block
+        } 
         {
             boolean var74C8DDDF999D66AA3EB9771E0CD6D718_2137500750 = (view.getAnimation() != null ||
                 (mTransitioningViews != null && mTransitioningViews.contains(view)));
             {
                 addDisappearingView(view);
-            } //End block
+            } 
             {
                 view.dispatchDetachedFromWindow();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         onViewRemoved(view);
         needGlobalAttributesUpdate(false);
         removeFromArray(index);
         {
             clearChildFocus(view);
-        } //End block
+        } 
         addTaint(index);
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        //if (mTransition != null) {
-            //mTransition.removeChild(this, view);
-        //}
-        //boolean clearChildFocus = false;
-        //if (view == mFocused) {
-            //view.clearFocusForRemoval();
-            //clearChildFocus = true;
-        //}
-        //if (view.getAnimation() != null ||
-                //(mTransitioningViews != null && mTransitioningViews.contains(view))) {
-            //addDisappearingView(view);
-        //} else if (view.mAttachInfo != null) {
-           //view.dispatchDetachedFromWindow();
-        //}
-        //onViewRemoved(view);
-        //needGlobalAttributesUpdate(false);
-        //removeFromArray(index);
-        //if (clearChildFocus) {
-            //clearChildFocus(view);
-        //}
+        
+        
+            
+        
+        
+        
+            
+            
+        
+        
+                
+            
+        
+           
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -4269,30 +4347,30 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     public void setLayoutTransition(LayoutTransition transition) {
         {
             mTransition.removeTransitionListener(mLayoutTransitionListener);
-        } //End block
+        } 
         mTransition = transition;
         {
             mTransition.addTransitionListener(mLayoutTransitionListener);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mTransition != null) {
-            //mTransition.removeTransitionListener(mLayoutTransitionListener);
-        //}
-        //mTransition = transition;
-        //if (mTransition != null) {
-            //mTransition.addTransitionListener(mLayoutTransitionListener);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.033 -0400", hash_original_method = "33E35321C94CA74A9D9819C2C9739D2F", hash_generated_method = "06392D28E22B097227DC208FC0135457")
     public LayoutTransition getLayoutTransition() {
-        LayoutTransition varB4EAC82CA7396A68D541C85D26508E83_1464901344 = null; //Variable for return #1
+        LayoutTransition varB4EAC82CA7396A68D541C85D26508E83_1464901344 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1464901344 = mTransition;
-        varB4EAC82CA7396A68D541C85D26508E83_1464901344.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1464901344.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1464901344;
-        // ---------- Original Method ----------
-        //return mTransition;
+        
+        
     }
 
     
@@ -4309,33 +4387,33 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 final View view = children[i];
                 {
                     mTransition.removeChild(this, view);
-                } //End block
+                } 
                 {
                     view.clearFocusForRemoval();
                     clearChildFocus = view;
-                } //End block
+                } 
                 {
                     boolean var771BCD00CE5FBF80B4F7B15D3C6EBC5E_1748476551 = (view.getAnimation() != null ||
                 (mTransitioningViews != null && mTransitioningViews.contains(view)));
                     {
                         addDisappearingView(view);
-                    } //End block
+                    } 
                     {
                         view.dispatchDetachedFromWindow();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 needGlobalAttributesUpdate(false);
                 onViewRemoved(view);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         removeFromArray(start, count);
         {
             clearChildFocus(clearChildFocus);
-        } //End block
+        } 
         addTaint(start);
         addTaint(count);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4344,10 +4422,10 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         removeAllViewsInLayout();
         requestLayout();
         invalidate(true);
-        // ---------- Original Method ----------
-        //removeAllViewsInLayout();
-        //requestLayout();
-        //invalidate(true);
+        
+        
+        
+        
     }
 
     
@@ -4366,31 +4444,31 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 final View view = children[i];
                 {
                     mTransition.removeChild(this, view);
-                } //End block
+                } 
                 {
                     view.clearFocusForRemoval();
                     clearChildFocus = view;
-                } //End block
+                } 
                 {
                     boolean var25706AD565CAAA05294A1680813DB393_1319997401 = (view.getAnimation() != null ||
                     (mTransitioningViews != null && mTransitioningViews.contains(view)));
                     {
                         addDisappearingView(view);
-                    } //End block
+                    } 
                     {
                         view.dispatchDetachedFromWindow();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 onViewRemoved(view);
                 view.mParent = null;
                 children[i] = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             clearChildFocus(clearChildFocus);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -4398,37 +4476,37 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     protected void removeDetachedView(View child, boolean animate) {
         {
             mTransition.removeChild(this, child);
-        } //End block
+        } 
         {
             child.clearFocus();
-        } //End block
+        } 
         {
             boolean varC784B3814A6616C601A69CC572D538AE_767374823 = ((animate && child.getAnimation() != null) ||
                 (mTransitioningViews != null && mTransitioningViews.contains(child)));
             {
                 addDisappearingView(child);
-            } //End block
+            } 
             {
                 child.dispatchDetachedFromWindow();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         onViewRemoved(child);
         addTaint(child.getTaint());
         addTaint(animate);
-        // ---------- Original Method ----------
-        //if (mTransition != null) {
-            //mTransition.removeChild(this, child);
-        //}
-        //if (child == mFocused) {
-            //child.clearFocus();
-        //}
-        //if ((animate && child.getAnimation() != null) ||
-                //(mTransitioningViews != null && mTransitioningViews.contains(child))) {
-            //addDisappearingView(child);
-        //} else if (child.mAttachInfo != null) {
-            //child.dispatchDetachedFromWindow();
-        //}
-        //onViewRemoved(child);
+        
+        
+            
+        
+        
+            
+        
+        
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -4437,7 +4515,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         child.mLayoutParams = params;
         {
             index = mChildrenCount;
-        } //End block
+        } 
         addInArray(child, index);
         child.mParent = this;
         child.mPrivateFlags = (child.mPrivateFlags & ~DIRTY_MASK & ~DRAWING_CACHE_VALID) |
@@ -4447,24 +4525,24 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             boolean varDDA55DF480817D6313066967525E9186_1742874310 = (child.hasFocus());
             {
                 requestChildFocus(child, child.findFocus());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(child.getTaint());
         addTaint(index);
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //child.mLayoutParams = params;
-        //if (index < 0) {
-            //index = mChildrenCount;
-        //}
-        //addInArray(child, index);
-        //child.mParent = this;
-        //child.mPrivateFlags = (child.mPrivateFlags & ~DIRTY_MASK & ~DRAWING_CACHE_VALID) |
-                //DRAWN | INVALIDATED;
-        //this.mPrivateFlags |= INVALIDATED;
-        //if (child.hasFocus()) {
-            //requestChildFocus(child, child.findFocus());
-        //}
+        
+        
+        
+            
+        
+        
+        
+        
+                
+        
+        
+            
+        
     }
 
     
@@ -4472,8 +4550,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     protected void detachViewFromParent(View child) {
         removeFromArray(indexOfChild(child));
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //removeFromArray(indexOfChild(child));
+        
+        
     }
 
     
@@ -4481,8 +4559,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     protected void detachViewFromParent(int index) {
         removeFromArray(index);
         addTaint(index);
-        // ---------- Original Method ----------
-        //removeFromArray(index);
+        
+        
     }
 
     
@@ -4491,8 +4569,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         removeFromArray(start, count);
         addTaint(start);
         addTaint(count);
-        // ---------- Original Method ----------
-        //removeFromArray(start, count);
+        
+        
     }
 
     
@@ -4506,19 +4584,19 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             {
                 children[i].mParent = null;
                 children[i] = null;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //final int count = mChildrenCount;
-        //if (count <= 0) {
-            //return;
-        //}
-        //final View[] children = mChildren;
-        //mChildrenCount = 0;
-        //for (int i = count - 1; i >= 0; i--) {
-            //children[i].mParent = null;
-            //children[i] = null;
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -4526,7 +4604,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     public final void invalidateChild(View child, final Rect dirty) {
         {
             ViewDebug.trace(this, ViewDebug.HierarchyTraceType.INVALIDATE_CHILD);
-        } //End block
+        } 
         ViewParent parent = this;
         final AttachInfo attachInfo = mAttachInfo;
         {
@@ -4536,7 +4614,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     mPrivateFlags |= INVALIDATED;
                     mPrivateFlags &= ~DRAWING_CACHE_VALID;
                     child.mLocalDirtyRect.setEmpty();
-                } //End block
+                } 
                 {
                     View view = null;
                     {
@@ -4549,34 +4627,34 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                                     final View grandParent = (View) view.getParent();
                                     grandParent.mPrivateFlags |= INVALIDATED;
                                     grandParent.mPrivateFlags &= ~DRAWING_CACHE_VALID;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         {
                             view.mPrivateFlags |= DRAW_ANIMATION;
-                        } //End block
+                        } 
                         {
                             ((ViewRootImpl) parent).mIsAnimating = true;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         ((ViewRootImpl) parent).invalidate();
                         parent = null;
-                    } //End block
+                    } 
                     {
                         {
                             view.mPrivateFlags &= ~DRAWING_CACHE_VALID;
                             view.mPrivateFlags |= DIRTY;
                             parent = view.mParent;
-                        } //End block
+                        } 
                         {
                             parent = null;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 final boolean isOpaque = child.isOpaque() && !drawAnimation &&
                         child.getAnimation() == null;
@@ -4587,7 +4665,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     mPrivateFlags |= INVALIDATED;
                     mPrivateFlags &= ~DRAWING_CACHE_VALID;
                     child.mLocalDirtyRect.union(dirty);
-                } //End block
+                } 
                 final int[] location = attachInfo.mInvalidateChildLocation;
                 location[CHILD_LEFT_INDEX] = child.mLeft;
                 location[CHILD_TOP_INDEX] = child.mTop;
@@ -4602,8 +4680,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                             (int) (boundingRect.top - 0.5f),
                             (int) (boundingRect.right + 0.5f),
                             (int) (boundingRect.bottom + 0.5f));
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     View view = null;
                     {
@@ -4615,29 +4693,29 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                                 final View grandParent = (View) view.getParent();
                                 grandParent.mPrivateFlags |= INVALIDATED;
                                 grandParent.mPrivateFlags &= ~DRAWING_CACHE_VALID;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         {
                             view.mPrivateFlags |= DRAW_ANIMATION;
-                        } //End block
+                        } 
                         {
                             ((ViewRootImpl) parent).mIsAnimating = true;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         {
                             boolean var760C0A78BE5FDB84740BECBCA8BA8947_932763525 = ((view.mViewFlags & FADING_EDGE_MASK) != 0 &&
                                 view.getSolidColor() == 0);
                             {
                                 opaqueFlag = DIRTY;
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             view.mPrivateFlags = (view.mPrivateFlags & ~DIRTY_MASK) | opaqueFlag;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     parent = parent.invalidateChildInParent(location, dirty);
                     {
                         Matrix m = view.getMatrix();
@@ -4650,27 +4728,27 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                                 dirty.set((int) boundingRect.left, (int) boundingRect.top,
                                     (int) (boundingRect.right + 0.5f),
                                     (int) (boundingRect.bottom + 0.5f));
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(child.getTaint());
         addTaint(dirty.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.042 -0400", hash_original_method = "DC318C38544A42EB44071D5AE866F2AB", hash_generated_method = "BC3958F5AD967A8FCE0C9BBC9B587CB1")
     public ViewParent invalidateChildInParent(final int[] location, final Rect dirty) {
-        ViewParent varB4EAC82CA7396A68D541C85D26508E83_844645566 = null; //Variable for return #1
-        ViewParent varB4EAC82CA7396A68D541C85D26508E83_341450184 = null; //Variable for return #2
-        ViewParent varB4EAC82CA7396A68D541C85D26508E83_1454207075 = null; //Variable for return #3
+        ViewParent varB4EAC82CA7396A68D541C85D26508E83_844645566 = null; 
+        ViewParent varB4EAC82CA7396A68D541C85D26508E83_341450184 = null; 
+        ViewParent varB4EAC82CA7396A68D541C85D26508E83_1454207075 = null; 
         {
             ViewDebug.trace(this, ViewDebug.HierarchyTraceType.INVALIDATE_CHILD_IN_PARENT);
-        } //End block
+        } 
         {
             {
                 dirty.offset(location[CHILD_LEFT_INDEX] - mScrollX,
@@ -4687,46 +4765,46 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                         location[CHILD_TOP_INDEX] = top;
                         {
                             mLocalDirtyRect.union(dirty);
-                        } //End block
+                        } 
                         varB4EAC82CA7396A68D541C85D26508E83_844645566 = mParent;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 mPrivateFlags &= ~DRAWN & ~DRAWING_CACHE_VALID;
                 location[CHILD_LEFT_INDEX] = mLeft;
                 location[CHILD_TOP_INDEX] = mTop;
                 {
                     dirty.set(0, 0, mRight - mLeft, mBottom - mTop);
-                } //End block
+                } 
                 {
                     dirty.union(0, 0, mRight - mLeft, mBottom - mTop);
-                } //End block
+                } 
                 {
                     mLocalDirtyRect.union(dirty);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_341450184 = mParent;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1454207075 = null;
         addTaint(location[0]);
         addTaint(dirty.getTaint());
-        ViewParent varA7E53CE21691AB073D9660D615818899_1793980010; //Final return value
+        ViewParent varA7E53CE21691AB073D9660D615818899_1793980010; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1793980010 = varB4EAC82CA7396A68D541C85D26508E83_844645566;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1793980010 = varB4EAC82CA7396A68D541C85D26508E83_341450184;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1793980010 = varB4EAC82CA7396A68D541C85D26508E83_1454207075;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1793980010.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1793980010.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1793980010;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4735,8 +4813,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         offsetRectBetweenParentAndChild(descendant, rect, true, false);
         addTaint(descendant.getTaint());
         addTaint(rect.getTaint());
-        // ---------- Original Method ----------
-        //offsetRectBetweenParentAndChild(descendant, rect, true, false);
+        
+        
     }
 
     
@@ -4745,8 +4823,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         offsetRectBetweenParentAndChild(descendant, rect, false, false);
         addTaint(descendant.getTaint());
         addTaint(rect.getTaint());
-        // ---------- Original Method ----------
-        //offsetRectBetweenParentAndChild(descendant, rect, false, false);
+        
+        
     }
 
     
@@ -4755,7 +4833,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             boolean offsetFromChildToParent, boolean clipToBounds) {
         {
             boolean var9866E6F62DFB6148F201138746ED5750_1084831032 = (descendant == this);
-        } //End collapsed parenthetic
+        } 
         ViewParent theParent = descendant.mParent;
         {
             boolean varDD69D58089B270F3D4B28124BF640FA8_692766925 = ((theParent != null)
@@ -4768,42 +4846,42 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     {
                         View p = (View) theParent;
                         rect.intersect(0, 0, p.mRight - p.mLeft, p.mBottom - p.mTop);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     {
                         View p = (View) theParent;
                         rect.intersect(0, 0, p.mRight - p.mLeft, p.mBottom - p.mTop);
-                    } //End block
+                    } 
                     rect.offset(descendant.mScrollX - descendant.mLeft,
                         descendant.mScrollY - descendant.mTop);
-                } //End block
+                } 
                 descendant = (View) theParent;
                 theParent = descendant.mParent;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var643C98140D61F4DFE43564E3D036760F_1168455771 = (theParent == this);
             {
                 {
                     rect.offset(descendant.mLeft - descendant.mScrollX,
                         descendant.mTop - descendant.mScrollY);
-                } //End block
+                } 
                 {
                     rect.offset(descendant.mScrollX - descendant.mLeft,
                         descendant.mScrollY - descendant.mTop);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("parameter must be a descendant of this view");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(descendant.getTaint());
         addTaint(rect.getTaint());
         addTaint(offsetFromChildToParent);
         addTaint(clipToBounds);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4817,17 +4895,17 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 final View v = children[i];
                 v.mTop += offset;
                 v.mBottom += offset;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(offset);
-        // ---------- Original Method ----------
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //final View v = children[i];
-            //v.mTop += offset;
-            //v.mBottom += offset;
-        //}
+        
+        
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -4841,8 +4919,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             boolean varF2532639FE5A165827FD7F7643C31EF0_879643958 = (!child.hasIdentityMatrix());
             {
                 child.getMatrix().mapRect(rect);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int dx = child.mLeft - mScrollX;
         int dy = child.mTop - mScrollY;
         rect.offset(dx, dy);
@@ -4858,26 +4936,26 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     child.getMatrix().mapPoints(position);
                     offset.x = (int) (position[0] + 0.5f);
                     offset.y = (int) (position[1] + 0.5f);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             offset.x += dx;
             offset.y += dy;
-        } //End block
+        } 
         {
             boolean var08BB32A43948A9AA882E62C649D0F6D4_1513401499 = (rect.intersect(0, 0, mRight - mLeft, mBottom - mTop));
             {
                 r.set((int) (rect.left + 0.5f), (int) (rect.top + 0.5f),
                     (int) (rect.right + 0.5f), (int) (rect.bottom + 0.5f));
                 boolean var815D42ADB6C99D0ABB4FA68231A12D7A_1225988188 = (mParent.getChildVisibleRect(this, r, offset));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(child.getTaint());
         addTaint(r.getTaint());
         addTaint(offset.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2130970052 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2130970052;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4888,21 +4966,21 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             boolean varFB56D3D497D368E0550C6286169A3692_2033240017 = (mTransition == null || !mTransition.isChangingLayout());
             {
                 super.layout(l, t, r, b);
-            } //End block
+            } 
             {
                 mLayoutSuppressed = true;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(l);
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        //if (mTransition == null || !mTransition.isChangingLayout()) {
-            //super.layout(l, t, r, b);
-        //} else {
-            //mLayoutSuppressed = true;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -4915,8 +4993,8 @@ protected abstract void onLayout(boolean changed,
     protected boolean canAnimate() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2099598494 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2099598494;
-        // ---------- Original Method ----------
-        //return mLayoutAnimationController != null;
+        
+        
     }
 
     
@@ -4925,20 +5003,20 @@ protected abstract void onLayout(boolean changed,
         {
             mGroupFlags |= FLAG_RUN_ANIMATION;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mLayoutAnimationController != null) {
-            //mGroupFlags |= FLAG_RUN_ANIMATION;
-            //requestLayout();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.046 -0400", hash_original_method = "06C0C7BBCCF19FA4957838E03EE331C8", hash_generated_method = "79A372FB31048C6468EBF3B2058D214E")
     public void scheduleLayoutAnimation() {
         mGroupFlags |= FLAG_RUN_ANIMATION;
-        // ---------- Original Method ----------
-        //mGroupFlags |= FLAG_RUN_ANIMATION;
+        
+        
     }
 
     
@@ -4947,23 +5025,23 @@ protected abstract void onLayout(boolean changed,
         mLayoutAnimationController = controller;
         {
             mGroupFlags |= FLAG_RUN_ANIMATION;
-        } //End block
-        // ---------- Original Method ----------
-        //mLayoutAnimationController = controller;
-        //if (mLayoutAnimationController != null) {
-            //mGroupFlags |= FLAG_RUN_ANIMATION;
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.047 -0400", hash_original_method = "BD382B237F964A42E5B6E00A5B3A23FD", hash_generated_method = "9BEA79C5E369BCE61004A9B8B47F0348")
     public LayoutAnimationController getLayoutAnimation() {
-        LayoutAnimationController varB4EAC82CA7396A68D541C85D26508E83_1928464835 = null; //Variable for return #1
+        LayoutAnimationController varB4EAC82CA7396A68D541C85D26508E83_1928464835 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1928464835 = mLayoutAnimationController;
-        varB4EAC82CA7396A68D541C85D26508E83_1928464835.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1928464835.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1928464835;
-        // ---------- Original Method ----------
-        //return mLayoutAnimationController;
+        
+        
     }
 
     
@@ -4972,8 +5050,8 @@ protected abstract void onLayout(boolean changed,
     public boolean isAnimationCacheEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_530640225 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_530640225;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE;
+        
+        
     }
 
     
@@ -4981,8 +5059,8 @@ protected abstract void onLayout(boolean changed,
     public void setAnimationCacheEnabled(boolean enabled) {
         setBooleanFlag(FLAG_ANIMATION_CACHE, enabled);
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //setBooleanFlag(FLAG_ANIMATION_CACHE, enabled);
+        
+        
     }
 
     
@@ -4991,8 +5069,8 @@ protected abstract void onLayout(boolean changed,
     public boolean isAlwaysDrawnWithCacheEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_515962271 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_515962271;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & FLAG_ALWAYS_DRAWN_WITH_CACHE) == FLAG_ALWAYS_DRAWN_WITH_CACHE;
+        
+        
     }
 
     
@@ -5000,8 +5078,8 @@ protected abstract void onLayout(boolean changed,
     public void setAlwaysDrawnWithCacheEnabled(boolean always) {
         setBooleanFlag(FLAG_ALWAYS_DRAWN_WITH_CACHE, always);
         addTaint(always);
-        // ---------- Original Method ----------
-        //setBooleanFlag(FLAG_ALWAYS_DRAWN_WITH_CACHE, always);
+        
+        
     }
 
     
@@ -5010,8 +5088,8 @@ protected abstract void onLayout(boolean changed,
     protected boolean isChildrenDrawnWithCacheEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_412153386 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_412153386;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & FLAG_CHILDREN_DRAWN_WITH_CACHE) == FLAG_CHILDREN_DRAWN_WITH_CACHE;
+        
+        
     }
 
     
@@ -5019,8 +5097,8 @@ protected abstract void onLayout(boolean changed,
     protected void setChildrenDrawnWithCacheEnabled(boolean enabled) {
         setBooleanFlag(FLAG_CHILDREN_DRAWN_WITH_CACHE, enabled);
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //setBooleanFlag(FLAG_CHILDREN_DRAWN_WITH_CACHE, enabled);
+        
+        
     }
 
     
@@ -5029,8 +5107,8 @@ protected abstract void onLayout(boolean changed,
     protected boolean isChildrenDrawingOrderEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1948753736 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1948753736;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & FLAG_USE_CHILD_DRAWING_ORDER) == FLAG_USE_CHILD_DRAWING_ORDER;
+        
+        
     }
 
     
@@ -5038,8 +5116,8 @@ protected abstract void onLayout(boolean changed,
     protected void setChildrenDrawingOrderEnabled(boolean enabled) {
         setBooleanFlag(FLAG_USE_CHILD_DRAWING_ORDER, enabled);
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //setBooleanFlag(FLAG_USE_CHILD_DRAWING_ORDER, enabled);
+        
+        
     }
 
     
@@ -5047,17 +5125,17 @@ protected abstract void onLayout(boolean changed,
     private void setBooleanFlag(int flag, boolean value) {
         {
             mGroupFlags |= flag;
-        } //End block
+        } 
         {
             mGroupFlags &= ~flag;
-        } //End block
+        } 
         addTaint(value);
-        // ---------- Original Method ----------
-        //if (value) {
-            //mGroupFlags |= flag;
-        //} else {
-            //mGroupFlags &= ~flag;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -5071,51 +5149,51 @@ protected abstract void onLayout(boolean changed,
     public int getPersistentDrawingCache() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145088961 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145088961;
-        // ---------- Original Method ----------
-        //return mPersistentDrawingCache;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.051 -0400", hash_original_method = "E1A853399F91DFB847E7C25FCC355E2E", hash_generated_method = "8158E6575E5BC3B0CF39A9A0E9990C3F")
     public void setPersistentDrawingCache(int drawingCacheToKeep) {
         mPersistentDrawingCache = drawingCacheToKeep & PERSISTENT_ALL_CACHES;
-        // ---------- Original Method ----------
-        //mPersistentDrawingCache = drawingCacheToKeep & PERSISTENT_ALL_CACHES;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.052 -0400", hash_original_method = "AED9080C69042489485342721EE0B0B1", hash_generated_method = "E920DF8FA66A47886E3047FA275D8380")
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_782810830 = null; //Variable for return #1
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_782810830 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_782810830 = new LayoutParams(getContext(), attrs);
         addTaint(attrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_782810830.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_782810830.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_782810830;
-        // ---------- Original Method ----------
-        //return new LayoutParams(getContext(), attrs);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.053 -0400", hash_original_method = "732F05B425275E63BD87B7814AB2A9CD", hash_generated_method = "ECA42C90F79AF8B206E28F17438C95AD")
     protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_282164468 = null; //Variable for return #1
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_282164468 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_282164468 = p;
         addTaint(p.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_282164468.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_282164468.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_282164468;
-        // ---------- Original Method ----------
-        //return p;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.055 -0400", hash_original_method = "378AC11079CE6884A850F340A9660EF3", hash_generated_method = "18AFE975F06EFB0CCEEA693E811F3E48")
     protected LayoutParams generateDefaultLayoutParams() {
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1324821332 = null; //Variable for return #1
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1324821332 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1324821332 = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        varB4EAC82CA7396A68D541C85D26508E83_1324821332.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1324821332.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1324821332;
-        // ---------- Original Method ----------
-        //return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        
+        
     }
 
     
@@ -5131,27 +5209,27 @@ protected abstract void onLayout(boolean changed,
                 {
                     boolean var701606913081A4231078EDA1C31F9544_1548456037 = (!children[i].dispatchConsistencyCheck(consistency));
                     result = false;
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(consistency);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1010771463 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1010771463;
-        // ---------- Original Method ----------
-        //boolean result = super.dispatchConsistencyCheck(consistency);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //if (!children[i].dispatchConsistencyCheck(consistency)) result = false;
-        //}
-        //return result;
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.056 -0400", hash_original_method = "9938C74D91901C257958D174411BCA62", hash_generated_method = "D6801ADB746BD42EF3B12CBCC5C0BBD0")
     @Override
     protected boolean onConsistencyCheck(int consistency) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean result = super.onConsistencyCheck(consistency);
         final boolean checkLayout = (consistency & ViewDebug.CONSISTENCY_LAYOUT) != 0;
         final boolean checkDrawing = (consistency & ViewDebug.CONSISTENCY_DRAWING) != 0;
@@ -5167,11 +5245,11 @@ protected abstract void onLayout(boolean changed,
                             result = false;
                             android.util.Log.d(ViewDebug.CONSISTENCY_LOG_TAG,
                             "View " + children[i] + " has no parent/a parent that is not " + this);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 final ViewParent parent = getParent();
@@ -5180,15 +5258,15 @@ protected abstract void onLayout(boolean changed,
                         result = false;
                         android.util.Log.d(ViewDebug.CONSISTENCY_LOG_TAG,
                                 "ViewGroup " + this + " is dirty but its parent is not: " + this);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(consistency);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_852805761 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_852805761;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5201,49 +5279,49 @@ protected abstract void onLayout(boolean changed,
             output = debugIndent(depth);
             output += "mFocused";
             Log.d(VIEW_LOG_TAG, output);
-        } //End block
+        } 
         {
             output = debugIndent(depth);
             output += "{";
             Log.d(VIEW_LOG_TAG, output);
-        } //End block
+        } 
         int count = mChildrenCount;
         {
             int i = 0;
             {
                 View child = mChildren[i];
                 child.debug(depth + 1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             output = debugIndent(depth);
             output += "}";
             Log.d(VIEW_LOG_TAG, output);
-        } //End block
+        } 
         addTaint(depth);
-        // ---------- Original Method ----------
-        //super.debug(depth);
-        //String output;
-        //if (mFocused != null) {
-            //output = debugIndent(depth);
-            //output += "mFocused";
-            //Log.d(VIEW_LOG_TAG, output);
-        //}
-        //if (mChildrenCount != 0) {
-            //output = debugIndent(depth);
-            //output += "{";
-            //Log.d(VIEW_LOG_TAG, output);
-        //}
-        //int count = mChildrenCount;
-        //for (int i = 0; i < count; i++) {
-            //View child = mChildren[i];
-            //child.debug(depth + 1);
-        //}
-        //if (mChildrenCount != 0) {
-            //output = debugIndent(depth);
-            //output += "}";
-            //Log.d(VIEW_LOG_TAG, output);
-        //}
+        
+        
+        
+        
+            
+            
+            
+        
+        
+            
+            
+            
+        
+        
+        
+            
+            
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -5253,19 +5331,19 @@ protected abstract void onLayout(boolean changed,
         final View[] children = mChildren;
         {
             int i = 0;
-        } //End collapsed parenthetic
+        } 
         addTaint(child.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995214362 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995214362;
-        // ---------- Original Method ----------
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //if (children[i] == child) {
-                //return i;
-            //}
-        //}
-        //return -1;
+        
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -5273,36 +5351,36 @@ protected abstract void onLayout(boolean changed,
     public int getChildCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1060367866 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1060367866;
-        // ---------- Original Method ----------
-        //return mChildrenCount;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.060 -0400", hash_original_method = "DC55A008910617641F1AE978A0E895D4", hash_generated_method = "B31F32B6A39DF12D51BEA828A9618B58")
     public View getChildAt(int index) {
-        View varB4EAC82CA7396A68D541C85D26508E83_238295834 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_2004819038 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_238295834 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_2004819038 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_238295834 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2004819038 = mChildren[index];
         addTaint(index);
-        View varA7E53CE21691AB073D9660D615818899_461397419; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_461397419; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_461397419 = varB4EAC82CA7396A68D541C85D26508E83_238295834;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_461397419 = varB4EAC82CA7396A68D541C85D26508E83_2004819038;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_461397419.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_461397419.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_461397419;
-        // ---------- Original Method ----------
-        //if (index < 0 || index >= mChildrenCount) {
-            //return null;
-        //}
-        //return mChildren[index];
+        
+        
+            
+        
+        
     }
 
     
@@ -5316,20 +5394,20 @@ protected abstract void onLayout(boolean changed,
                 final View child = children[i];
                 {
                     measureChild(child, widthMeasureSpec, heightMeasureSpec);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        //final int size = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < size; ++i) {
-            //final View child = children[i];
-            //if ((child.mViewFlags & VISIBILITY_MASK) != GONE) {
-                //measureChild(child, widthMeasureSpec, heightMeasureSpec);
-            //}
-        //}
+        
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -5345,13 +5423,13 @@ protected abstract void onLayout(boolean changed,
         addTaint(child.getTaint());
         addTaint(parentWidthMeasureSpec);
         addTaint(parentHeightMeasureSpec);
-        // ---------- Original Method ----------
-        //final LayoutParams lp = child.getLayoutParams();
-        //final int childWidthMeasureSpec = getChildMeasureSpec(parentWidthMeasureSpec,
-                //mPaddingLeft + mPaddingRight, lp.width);
-        //final int childHeightMeasureSpec = getChildMeasureSpec(parentHeightMeasureSpec,
-                //mPaddingTop + mPaddingBottom, lp.height);
-        //child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+        
+        
+        
+                
+        
+                
+        
     }
 
     
@@ -5372,15 +5450,15 @@ protected abstract void onLayout(boolean changed,
         addTaint(widthUsed);
         addTaint(parentHeightMeasureSpec);
         addTaint(heightUsed);
-        // ---------- Original Method ----------
-        //final MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
-        //final int childWidthMeasureSpec = getChildMeasureSpec(parentWidthMeasureSpec,
-                //mPaddingLeft + mPaddingRight + lp.leftMargin + lp.rightMargin
-                        //+ widthUsed, lp.width);
-        //final int childHeightMeasureSpec = getChildMeasureSpec(parentHeightMeasureSpec,
-                //mPaddingTop + mPaddingBottom + lp.topMargin + lp.bottomMargin
-                        //+ heightUsed, lp.height);
-        //child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+        
+        
+        
+                
+                        
+        
+                
+                        
+        
     }
 
     
@@ -5436,11 +5514,11 @@ protected abstract void onLayout(boolean changed,
     public void clearDisappearingChildren() {
         {
             mDisappearingChildren.clear();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mDisappearingChildren != null) {
-            //mDisappearingChildren.clear();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -5449,15 +5527,15 @@ protected abstract void onLayout(boolean changed,
         ArrayList<View> disappearingChildren = mDisappearingChildren;
         {
             disappearingChildren = mDisappearingChildren = new ArrayList<View>();
-        } //End block
+        } 
         disappearingChildren.add(v);
         addTaint(v.getTaint());
-        // ---------- Original Method ----------
-        //ArrayList<View> disappearingChildren = mDisappearingChildren;
-        //if (disappearingChildren == null) {
-            //disappearingChildren = mDisappearingChildren = new ArrayList<View>();
-        //}
-        //disappearingChildren.add(v);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -5471,27 +5549,27 @@ protected abstract void onLayout(boolean changed,
                     disappearingChildren.remove(view);
                     {
                         view.dispatchDetachedFromWindow();
-                    } //End block
+                    } 
                     view.clearAnimation();
                     mGroupFlags |= FLAG_INVALIDATE_REQUIRED;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean var43425F3101AF26F025C7208DDDA7464F_1664208840 = (animation != null && !animation.getFillAfter());
             {
                 view.clearAnimation();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             view.onAnimationEnd();
             view.mPrivateFlags &= ~ANIMATION_STARTED;
             mGroupFlags |= FLAG_INVALIDATE_REQUIRED;
-        } //End block
+        } 
         addTaint(view.getTaint());
         addTaint(animation.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5501,8 +5579,8 @@ protected abstract void onLayout(boolean changed,
         addTaint(view.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1241509513 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1241509513;
-        // ---------- Original Method ----------
-        //return (mTransitioningViews != null && mTransitioningViews.contains(view));
+        
+        
     }
 
     
@@ -5513,18 +5591,18 @@ protected abstract void onLayout(boolean changed,
             {
                 {
                     mTransitioningViews = new ArrayList<View>();
-                } //End block
+                } 
                 mTransitioningViews.add(view);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        //if (view.mParent == this) {
-            //if (mTransitioningViews == null) {
-                //mTransitioningViews = new ArrayList<View>();
-            //}
-            //mTransitioningViews.add(view);
-        //}
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -5542,23 +5620,23 @@ protected abstract void onLayout(boolean changed,
                         mVisibilityChangingChildren.contains(view));
                         {
                             mVisibilityChangingChildren.remove(view);
-                        } //End block
+                        } 
                         {
                             {
                                 view.dispatchDetachedFromWindow();
-                            } //End block
+                            } 
                             {
                                 view.mParent = null;
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
                     mGroupFlags |= FLAG_INVALIDATE_REQUIRED;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5581,33 +5659,33 @@ protected abstract void onLayout(boolean changed,
                             boolean var02F3557A74971374C057D08F3D583563_458786122 = (!child.gatherTransparentRegion(region));
                             {
                                 noneOfTheChildrenAreTransparent = false;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(region.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1270124833 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1270124833;
-        // ---------- Original Method ----------
-        //final boolean meOpaque = (mPrivateFlags & View.REQUEST_TRANSPARENT_REGIONS) == 0;
-        //if (meOpaque && region == null) {
-            //return true;
-        //}
-        //super.gatherTransparentRegion(region);
-        //final View[] children = mChildren;
-        //final int count = mChildrenCount;
-        //boolean noneOfTheChildrenAreTransparent = true;
-        //for (int i = 0; i < count; i++) {
-            //final View child = children[i];
-            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null) {
-                //if (!child.gatherTransparentRegion(region)) {
-                    //noneOfTheChildrenAreTransparent = false;
-                //}
-            //}
-        //}
-        //return meOpaque || noneOfTheChildrenAreTransparent;
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -5617,16 +5695,16 @@ protected abstract void onLayout(boolean changed,
             child.mPrivateFlags |= View.REQUEST_TRANSPARENT_REGIONS;
             {
                 mParent.requestTransparentRegion(this);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //if (child != null) {
-            //child.mPrivateFlags |= View.REQUEST_TRANSPARENT_REGIONS;
-            //if (mParent != null) {
-                //mParent.requestTransparentRegion(this);
-            //}
-        //}
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -5641,36 +5719,36 @@ protected abstract void onLayout(boolean changed,
                 int i = 0;
                 {
                     done = children[i].fitSystemWindows(insets);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(insets.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_194157066 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_194157066;
-        // ---------- Original Method ----------
-        //boolean done = super.fitSystemWindows(insets);
-        //if (!done) {
-            //final int count = mChildrenCount;
-            //final View[] children = mChildren;
-            //for (int i = 0; i < count; i++) {
-                //done = children[i].fitSystemWindows(insets);
-                //if (done) {
-                    //break;
-                //}
-            //}
-        //}
-        //return done;
+        
+        
+        
+            
+            
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.066 -0400", hash_original_method = "B3B3B12C071F8F31617EDB75C1351CBC", hash_generated_method = "8A90E36BA25E7DD373E9954363EF02B6")
     public Animation.AnimationListener getLayoutAnimationListener() {
-        Animation.AnimationListener varB4EAC82CA7396A68D541C85D26508E83_1012811494 = null; //Variable for return #1
+        Animation.AnimationListener varB4EAC82CA7396A68D541C85D26508E83_1012811494 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1012811494 = mAnimationListener;
-        varB4EAC82CA7396A68D541C85D26508E83_1012811494.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1012811494.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1012811494;
-        // ---------- Original Method ----------
-        //return mAnimationListener;
+        
+        
     }
 
     
@@ -5682,7 +5760,7 @@ protected abstract void onLayout(boolean changed,
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("addStateFromChildren cannot be enabled if a"
                         + " child has duplicateParentState set to true");
-            } //End block
+            } 
             final View[] children = mChildren;
             final int count = mChildrenCount;
             {
@@ -5691,26 +5769,26 @@ protected abstract void onLayout(boolean changed,
                     final View child = children[i];
                     {
                         child.refreshDrawableState();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //super.drawableStateChanged();
-        //if ((mGroupFlags & FLAG_NOTIFY_CHILDREN_ON_DRAWABLE_STATE_CHANGE) != 0) {
-            //if ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0) {
-                //throw new IllegalStateException("addStateFromChildren cannot be enabled if a"
-                        //+ " child has duplicateParentState set to true");
-            //}
-            //final View[] children = mChildren;
-            //final int count = mChildrenCount;
-            //for (int i = 0; i < count; i++) {
-                //final View child = children[i];
-                //if ((child.mViewFlags & DUPLICATE_PARENT_STATE) != 0) {
-                    //child.refreshDrawableState();
-                //}
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+            
+                
+                        
+            
+            
+            
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
@@ -5724,25 +5802,25 @@ protected abstract void onLayout(boolean changed,
             int i = 0;
             {
                 children[i].jumpDrawablesToCurrentState();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //super.jumpDrawablesToCurrentState();
-        //final View[] children = mChildren;
-        //final int count = mChildrenCount;
-        //for (int i = 0; i < count; i++) {
-            //children[i].jumpDrawablesToCurrentState();
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.068 -0400", hash_original_method = "0411A3FE715B4530882EE6CBB1252DCB", hash_generated_method = "9CDF581B771840CEEC84784B9733444C")
     @Override
     protected int[] onCreateDrawableState(int extraSpace) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             int[] varEB7CD746CBB534A0BF67F4323334429E_207050741 = (super.onCreateDrawableState(extraSpace));
-        } //End block
+        } 
         int need = 0;
         int n = getChildCount();
         {
@@ -5751,9 +5829,9 @@ protected abstract void onLayout(boolean changed,
                 int[] childState = getChildAt(i).getDrawableState();
                 {
                     need += childState.length;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         int[] state = super.onCreateDrawableState(extraSpace + need);
         {
             int i = 0;
@@ -5761,32 +5839,32 @@ protected abstract void onLayout(boolean changed,
                 int[] childState = getChildAt(i).getDrawableState();
                 {
                     state = mergeDrawableStates(state, childState);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(extraSpace);
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1060938712 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1060938712;
-        // ---------- Original Method ----------
-        //if ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) == 0) {
-            //return super.onCreateDrawableState(extraSpace);
-        //}
-        //int need = 0;
-        //int n = getChildCount();
-        //for (int i = 0; i < n; i++) {
-            //int[] childState = getChildAt(i).getDrawableState();
-            //if (childState != null) {
-                //need += childState.length;
-            //}
-        //}
-        //int[] state = super.onCreateDrawableState(extraSpace + need);
-        //for (int i = 0; i < n; i++) {
-            //int[] childState = getChildAt(i).getDrawableState();
-            //if (childState != null) {
-                //state = mergeDrawableStates(state, childState);
-            //}
-        //}
-        //return state;
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -5794,19 +5872,19 @@ protected abstract void onLayout(boolean changed,
     public void setAddStatesFromChildren(boolean addsStates) {
         {
             mGroupFlags |= FLAG_ADD_STATES_FROM_CHILDREN;
-        } //End block
+        } 
         {
             mGroupFlags &= ~FLAG_ADD_STATES_FROM_CHILDREN;
-        } //End block
+        } 
         refreshDrawableState();
         addTaint(addsStates);
-        // ---------- Original Method ----------
-        //if (addsStates) {
-            //mGroupFlags |= FLAG_ADD_STATES_FROM_CHILDREN;
-        //} else {
-            //mGroupFlags &= ~FLAG_ADD_STATES_FROM_CHILDREN;
-        //}
-        //refreshDrawableState();
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -5814,8 +5892,8 @@ protected abstract void onLayout(boolean changed,
     public boolean addStatesFromChildren() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1725745348 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1725745348;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0;
+        
+        
     }
 
     
@@ -5823,20 +5901,20 @@ protected abstract void onLayout(boolean changed,
     public void childDrawableStateChanged(View child) {
         {
             refreshDrawableState();
-        } //End block
+        } 
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        //if ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0) {
-            //refreshDrawableState();
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.071 -0400", hash_original_method = "CCA9986B4D287F2F006BAE825941ECAA", hash_generated_method = "28A9F6F2C654D2AA771EAFD01C6ECAA2")
     public void setLayoutAnimationListener(Animation.AnimationListener animationListener) {
         mAnimationListener = animationListener;
-        // ---------- Original Method ----------
-        //mAnimationListener = animationListener;
+        
+        
     }
 
     
@@ -5845,13 +5923,13 @@ protected abstract void onLayout(boolean changed,
         ViewRootImpl viewAncestor = getViewRootImpl();
         {
             viewAncestor.requestTransitionStart(transition);
-        } //End block
+        } 
         addTaint(transition.getTaint());
-        // ---------- Original Method ----------
-        //ViewRootImpl viewAncestor = getViewRootImpl();
-        //if (viewAncestor != null) {
-            //viewAncestor.requestTransitionStart(transition);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -5868,19 +5946,19 @@ protected abstract void onLayout(boolean changed,
                     boolean varB5612BFB22B66951C85039D6A4ADA2D6_464402542 = (child.getLayoutDirection() == LAYOUT_DIRECTION_INHERIT);
                     {
                         child.resetResolvedLayoutDirection();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //super.resetResolvedLayoutDirection();
-        //final int count = getChildCount();
-        //for (int i = 0; i < count; i++) {
-            //final View child = getChildAt(i);
-            //if (child.getLayoutDirection() == LAYOUT_DIRECTION_INHERIT) {
-                //child.resetResolvedLayoutDirection();
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -5897,19 +5975,19 @@ protected abstract void onLayout(boolean changed,
                     boolean var97DAD7DCB6178A82512069CD3DA52554_1902002348 = (child.getTextDirection() == TEXT_DIRECTION_INHERIT);
                     {
                         child.resetResolvedTextDirection();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //super.resetResolvedTextDirection();
-        //final int count = getChildCount();
-        //for (int i = 0; i < count; i++) {
-            //final View child = getChildAt(i);
-            //if (child.getTextDirection() == TEXT_DIRECTION_INHERIT) {
-                //child.resetResolvedTextDirection();
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -5917,8 +5995,8 @@ protected abstract void onLayout(boolean changed,
     public boolean shouldDelayChildPressedState() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1913787253 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1913787253;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -5948,12 +6026,12 @@ protected abstract void onLayout(boolean changed,
             a.recycle();
             addTaint(c.getTaint());
             addTaint(attrs.getTaint());
-            // ---------- Original Method ----------
-            //TypedArray a = c.obtainStyledAttributes(attrs, R.styleable.ViewGroup_Layout);
-            //setBaseAttributes(a,
-                    //R.styleable.ViewGroup_Layout_layout_width,
-                    //R.styleable.ViewGroup_Layout_layout_height);
-            //a.recycle();
+            
+            
+            
+                    
+                    
+            
         }
 
         
@@ -5961,9 +6039,9 @@ protected abstract void onLayout(boolean changed,
         public  LayoutParams(int width, int height) {
             this.width = width;
             this.height = height;
-            // ---------- Original Method ----------
-            //this.width = width;
-            //this.height = height;
+            
+            
+            
         }
 
         
@@ -5971,15 +6049,15 @@ protected abstract void onLayout(boolean changed,
         public  LayoutParams(LayoutParams source) {
             this.width = source.width;
             this.height = source.height;
-            // ---------- Original Method ----------
-            //this.width = source.width;
-            //this.height = source.height;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.074 -0400", hash_original_method = "6916C65008FD05252A1C29A02882BE94", hash_generated_method = "45AC97A074BFD055B1BD45042F079476")
           LayoutParams() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -5987,30 +6065,30 @@ protected abstract void onLayout(boolean changed,
         protected void setBaseAttributes(TypedArray a, int widthAttr, int heightAttr) {
             width = a.getLayoutDimension(widthAttr, "layout_width");
             height = a.getLayoutDimension(heightAttr, "layout_height");
-            // ---------- Original Method ----------
-            //width = a.getLayoutDimension(widthAttr, "layout_width");
-            //height = a.getLayoutDimension(heightAttr, "layout_height");
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.075 -0400", hash_original_method = "CE6F1B4BC3F83182FFE42E3A8827DEEC", hash_generated_method = "6D86F89DE956B69559B0A86CF3A2E3CD")
         protected void resolveWithDirection(int layoutDirection) {
             addTaint(layoutDirection);
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.075 -0400", hash_original_method = "E4ABE7598543A22DA450A925C25FFDEA", hash_generated_method = "199DCD2AC13AA3F973D02E8BCFC594AB")
         public String debug(String output) {
-            String varB4EAC82CA7396A68D541C85D26508E83_1514225409 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1514225409 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1514225409 = output + "ViewGroup.LayoutParams={ width="
                     + sizeToString(width) + ", height=" + sizeToString(height) + " }";
             addTaint(output.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1514225409.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1514225409.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1514225409;
-            // ---------- Original Method ----------
-            //return output + "ViewGroup.LayoutParams={ width="
-                    //+ sizeToString(width) + ", height=" + sizeToString(height) + " }";
+            
+            
+                    
         }
 
         
@@ -6074,7 +6152,7 @@ protected abstract void onLayout(boolean changed,
                 topMargin = margin;
                 rightMargin= margin;
                 bottomMargin = margin;
-            } //End block
+            } 
             {
                 leftMargin = a.getDimensionPixelSize(
                         R.styleable.ViewGroup_MarginLayout_layout_marginLeft, 0);
@@ -6088,12 +6166,12 @@ protected abstract void onLayout(boolean changed,
                         R.styleable.ViewGroup_MarginLayout_layout_marginStart, DEFAULT_RELATIVE);
                 endMargin = a.getDimensionPixelSize(
                         R.styleable.ViewGroup_MarginLayout_layout_marginEnd, DEFAULT_RELATIVE);
-            } //End block
+            } 
             a.recycle();
             addTaint(c.getTaint());
             addTaint(attrs.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -6102,7 +6180,7 @@ protected abstract void onLayout(boolean changed,
             super(width, height);
             addTaint(width);
             addTaint(height);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -6116,15 +6194,15 @@ protected abstract void onLayout(boolean changed,
             this.bottomMargin = source.bottomMargin;
             this.startMargin = source.startMargin;
             this.endMargin = source.endMargin;
-            // ---------- Original Method ----------
-            //this.width = source.width;
-            //this.height = source.height;
-            //this.leftMargin = source.leftMargin;
-            //this.topMargin = source.topMargin;
-            //this.rightMargin = source.rightMargin;
-            //this.bottomMargin = source.bottomMargin;
-            //this.startMargin = source.startMargin;
-            //this.endMargin = source.endMargin;
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -6132,7 +6210,7 @@ protected abstract void onLayout(boolean changed,
         public  MarginLayoutParams(LayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -6142,11 +6220,11 @@ protected abstract void onLayout(boolean changed,
             topMargin = top;
             rightMargin = right;
             bottomMargin = bottom;
-            // ---------- Original Method ----------
-            //leftMargin = left;
-            //topMargin = top;
-            //rightMargin = right;
-            //bottomMargin = bottom;
+            
+            
+            
+            
+            
         }
 
         
@@ -6156,11 +6234,11 @@ protected abstract void onLayout(boolean changed,
             topMargin = top;
             endMargin = end;
             bottomMargin = bottom;
-            // ---------- Original Method ----------
-            //startMargin = start;
-            //topMargin = top;
-            //endMargin = end;
-            //bottomMargin = bottom;
+            
+            
+            
+            
+            
         }
 
         
@@ -6168,8 +6246,8 @@ protected abstract void onLayout(boolean changed,
         public int getMarginStart() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_14114264 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_14114264;
-            // ---------- Original Method ----------
-            //return startMargin;
+            
+            
         }
 
         
@@ -6177,8 +6255,8 @@ protected abstract void onLayout(boolean changed,
         public int getMarginEnd() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085583979 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085583979;
-            // ---------- Original Method ----------
-            //return endMargin;
+            
+            
         }
 
         
@@ -6186,39 +6264,39 @@ protected abstract void onLayout(boolean changed,
         public boolean isMarginRelative() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_960763005 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_960763005;
-            // ---------- Original Method ----------
-            //return (startMargin != DEFAULT_RELATIVE) || (endMargin != DEFAULT_RELATIVE);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.082 -0400", hash_original_method = "25B74C4F994FDDCB83271E7B2F9BDDEE", hash_generated_method = "7CFCDD8EC476530E2206429F2D5CDA8F")
         @Override
         protected void resolveWithDirection(int layoutDirection) {
-            //Begin case View.LAYOUT_DIRECTION_RTL 
+            
             leftMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : leftMargin;
-            //End case View.LAYOUT_DIRECTION_RTL 
-            //Begin case View.LAYOUT_DIRECTION_RTL 
+            
+            
             rightMargin = (startMargin > DEFAULT_RELATIVE) ? startMargin : rightMargin;
-            //End case View.LAYOUT_DIRECTION_RTL 
-            //Begin case View.LAYOUT_DIRECTION_LTR default 
+            
+            
             leftMargin = (startMargin > DEFAULT_RELATIVE) ? startMargin : leftMargin;
-            //End case View.LAYOUT_DIRECTION_LTR default 
-            //Begin case View.LAYOUT_DIRECTION_LTR default 
+            
+            
             rightMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : rightMargin;
-            //End case View.LAYOUT_DIRECTION_LTR default 
+            
             addTaint(layoutDirection);
-            // ---------- Original Method ----------
-            //switch(layoutDirection) {
-                //case View.LAYOUT_DIRECTION_RTL:
-                    //leftMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : leftMargin;
-                    //rightMargin = (startMargin > DEFAULT_RELATIVE) ? startMargin : rightMargin;
-                    //break;
-                //case View.LAYOUT_DIRECTION_LTR:
-                //default:
-                    //leftMargin = (startMargin > DEFAULT_RELATIVE) ? startMargin : leftMargin;
-                    //rightMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : rightMargin;
-                    //break;
-            //}
+            
+            
+                
+                    
+                    
+                    
+                
+                
+                    
+                    
+                    
+            
         }
 
         
@@ -6242,7 +6320,7 @@ protected abstract void onLayout(boolean changed,
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.082 -0400", hash_original_method = "5259B67E5A6C02FEFA0EB82F43285FB5", hash_generated_method = "B32A208B999EE5B494ADD3A3C0776E12")
         private  TouchTarget() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -6271,23 +6349,23 @@ protected abstract void onLayout(boolean changed,
                     next = sRecycleBin;
                     sRecycleBin = this;
                     sRecycledCount += 1;
-                } //End block
+                } 
                 {
                     next = null;
-                } //End block
+                } 
                 child = null;
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (sRecycleLock) {
-                //if (sRecycledCount < MAX_RECYCLED) {
-                    //next = sRecycleBin;
-                    //sRecycleBin = this;
-                    //sRecycledCount += 1;
-                //} else {
-                    //next = null;
-                //}
-                //child = null;
-            //}
+            } 
+            
+            
+                
+                    
+                    
+                    
+                
+                    
+                
+                
+            
         }
 
         
@@ -6320,7 +6398,7 @@ protected abstract void onLayout(boolean changed,
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.083 -0400", hash_original_method = "5539B57739929C533DCF7E732D22C4F2", hash_generated_method = "726B690AE07312555BAF165F7E5F62F6")
         private  HoverTarget() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -6348,23 +6426,23 @@ protected abstract void onLayout(boolean changed,
                     next = sRecycleBin;
                     sRecycleBin = this;
                     sRecycledCount += 1;
-                } //End block
+                } 
                 {
                     next = null;
-                } //End block
+                } 
                 child = null;
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (sRecycleLock) {
-                //if (sRecycledCount < MAX_RECYCLED) {
-                    //next = sRecycleBin;
-                    //sRecycleBin = this;
-                    //sRecycledCount += 1;
-                //} else {
-                    //next = null;
-                //}
-                //child = null;
-            //}
+            } 
+            
+            
+                
+                    
+                    
+                    
+                
+                    
+                
+                
+            
         }
 
         

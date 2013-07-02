@@ -1,11 +1,11 @@
 package android.support.v4.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.Bundle;
@@ -33,8 +33,8 @@ public class ListFragment extends Fragment {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.048 -0400", hash_original_method = "4F290F2508C3F0B44E09591C5B0749BC", hash_generated_method = "203642A5324F5F18B21A0D020E65FD5C")
         public void run() {
             mList.focusableViewAvailable(mList);
-            // ---------- Original Method ----------
-            //mList.focusableViewAvailable(mList);
+            
+            
         }
 
         
@@ -44,14 +44,14 @@ public class ListFragment extends Fragment {
     final private AdapterView.OnItemClickListener mOnClickListener = new AdapterView.OnItemClickListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.049 -0400", hash_original_method = "FBAC6E1DF4BED6C0A21E33622DB577EE", hash_generated_method = "D00BEF8ABA88B27607955BB6270FA24E")
         public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             onListItemClick((ListView)parent, v, position, id);
             addTaint(parent.getTaint());
             addTaint(v.getTaint());
             addTaint(position);
             addTaint(id);
-            // ---------- Original Method ----------
-            //onListItemClick((ListView)parent, v, position, id);
+            
+            
         }
 
         
@@ -83,16 +83,17 @@ public class ListFragment extends Fragment {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.049 -0400", hash_original_method = "EF57861318B397409B17ABF77AE47B37", hash_generated_method = "D5B2EF6298161BB1BE7DCF257A07817C")
     public  ListFragment() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.050 -0400", hash_original_method = "92DD87AA93E8A92E60115765257469F5", hash_generated_method = "0FA1DD4B75CF8DD3DCC14FE6B8D47C46")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        View varB4EAC82CA7396A68D541C85D26508E83_46519043 = null; //Variable for return #1
+        
+        View varB4EAC82CA7396A68D541C85D26508E83_46519043 = null; 
         final Context context = getActivity();
         FrameLayout root = new FrameLayout(context);
         LinearLayout pframe = new LinearLayout(context);
@@ -126,58 +127,61 @@ public class ListFragment extends Fragment {
         addTaint(inflater.getTaint());
         addTaint(container.getTaint());
         addTaint(savedInstanceState.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_46519043.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_46519043.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_46519043;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.051 -0400", hash_original_method = "3AF156F2799514C47B044D45A77C4F43", hash_generated_method = "74501A1834F8793F5C8EF071BCD20061")
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onViewCreated(view, savedInstanceState);
         ensureList();
         addTaint(view.getTaint());
         addTaint(savedInstanceState.getTaint());
-        // ---------- Original Method ----------
-        //super.onViewCreated(view, savedInstanceState);
-        //ensureList();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.051 -0400", hash_original_method = "4AE67C9B14400A0313E10E10FEB59F4C", hash_generated_method = "350457CE5B7B3348E789915760B51908")
     @Override
     public void onDestroyView() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mHandler.removeCallbacks(mRequestFocus);
         mList = null;
         mListShown = false;
         mEmptyView = mProgressContainer = mListContainer = null;
         mStandardEmptyView = null;
         super.onDestroyView();
-        // ---------- Original Method ----------
-        //mHandler.removeCallbacks(mRequestFocus);
-        //mList = null;
-        //mListShown = false;
-        //mEmptyView = mProgressContainer = mListContainer = null;
-        //mStandardEmptyView = null;
-        //super.onDestroyView();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.052 -0400", hash_original_method = "BF490B4BB4BD29ACC689E0297B614061", hash_generated_method = "EF64D58407ED8252E2CE18DD4AFFAEF4")
     public void onListItemClick(ListView l, View v, int position, long id) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(l.getTaint());
         addTaint(v.getTaint());
         addTaint(position);
         addTaint(id);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.052 -0400", hash_original_method = "B9F859547BD6410EA28F34027A6366BE", hash_generated_method = "1F0929FABCAD46BD9C27FFDAF70AD071")
     public void setListAdapter(ListAdapter adapter) {
         boolean hadAdapter = mAdapter != null;
@@ -186,116 +190,124 @@ public class ListFragment extends Fragment {
             mList.setAdapter(adapter);
             {
                 setListShown(true, getView().getWindowToken() != null);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //boolean hadAdapter = mAdapter != null;
-        //mAdapter = adapter;
-        //if (mList != null) {
-            //mList.setAdapter(adapter);
-            //if (!mListShown && !hadAdapter) {
-                //setListShown(true, getView().getWindowToken() != null);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.053 -0400", hash_original_method = "6FC4BB7AE2BE523C1207DDD3222220F6", hash_generated_method = "4EABBAADD2097BA5BF04A6EF19B80786")
     public void setSelection(int position) {
         ensureList();
         mList.setSelection(position);
         addTaint(position);
-        // ---------- Original Method ----------
-        //ensureList();
-        //mList.setSelection(position);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.053 -0400", hash_original_method = "602C73B7F7242D55D7B4B399409B7E51", hash_generated_method = "F02DA4F3601DC332E18D69FD8C97B8A8")
     public int getSelectedItemPosition() {
         ensureList();
         int varA719D7AB33A194F7536365FE9FEAD214_777326183 = (mList.getSelectedItemPosition());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2113524907 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2113524907;
-        // ---------- Original Method ----------
-        //ensureList();
-        //return mList.getSelectedItemPosition();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.054 -0400", hash_original_method = "7FA8F631361DB814AF49E068AB6A3A01", hash_generated_method = "DC5CC997D7AC70D1B2D1878555C43F9D")
     public long getSelectedItemId() {
         ensureList();
         long var182667D91D2A4233A45F2A88B322602D_52187943 = (mList.getSelectedItemId());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1504117680 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1504117680;
-        // ---------- Original Method ----------
-        //ensureList();
-        //return mList.getSelectedItemId();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.055 -0400", hash_original_method = "B9D8406BF510100833C8B83670824289", hash_generated_method = "B7DAF22FCD455D5DD6166C9E09B92F83")
     public ListView getListView() {
-        ListView varB4EAC82CA7396A68D541C85D26508E83_1348333578 = null; //Variable for return #1
+        ListView varB4EAC82CA7396A68D541C85D26508E83_1348333578 = null; 
         ensureList();
         varB4EAC82CA7396A68D541C85D26508E83_1348333578 = mList;
-        varB4EAC82CA7396A68D541C85D26508E83_1348333578.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1348333578.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1348333578;
-        // ---------- Original Method ----------
-        //ensureList();
-        //return mList;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.056 -0400", hash_original_method = "BDE8F4E2DF99E8DBF624FF236090A0E2", hash_generated_method = "5F708231B8C2803171A41E2A5B2F632F")
     public void setEmptyText(CharSequence text) {
         ensureList();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Can't be used with a custom content view");
-        } //End block
+        } 
         mStandardEmptyView.setText(text);
         {
             mList.setEmptyView(mStandardEmptyView);
-        } //End block
+        } 
         mEmptyText = text;
-        // ---------- Original Method ----------
-        //ensureList();
-        //if (mStandardEmptyView == null) {
-            //throw new IllegalStateException("Can't be used with a custom content view");
-        //}
-        //mStandardEmptyView.setText(text);
-        //if (mEmptyText == null) {
-            //mList.setEmptyView(mStandardEmptyView);
-        //}
-        //mEmptyText = text;
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.056 -0400", hash_original_method = "58A7D31C5F755970E32BD1449250481A", hash_generated_method = "576224D18FD9380984898F41933212F2")
     public void setListShown(boolean shown) {
         setListShown(shown, true);
         addTaint(shown);
-        // ---------- Original Method ----------
-        //setListShown(shown, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.057 -0400", hash_original_method = "9A20C5F20729EB8F1D1E26962B6A5257", hash_generated_method = "0C1A33C416860E4DAE1118BF4D947724")
     public void setListShownNoAnimation(boolean shown) {
         setListShown(shown, false);
         addTaint(shown);
-        // ---------- Original Method ----------
-        //setListShown(shown, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.057 -0400", hash_original_method = "01D2A62CF5C9E9D8F31EAD95561BA6AA", hash_generated_method = "1015EF4FDF0FFE98688E48D7E7EEDA51")
     private void setListShown(boolean shown, boolean animate) {
         ensureList();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Can't be used with a custom content view");
-        } //End block
+        } 
         mListShown = shown;
         {
             {
@@ -303,62 +315,63 @@ public class ListFragment extends Fragment {
                         getActivity(), android.R.anim.fade_out));
                 mListContainer.startAnimation(AnimationUtils.loadAnimation(
                         getActivity(), android.R.anim.fade_in));
-            } //End block
+            } 
             {
                 mProgressContainer.clearAnimation();
                 mListContainer.clearAnimation();
-            } //End block
+            } 
             mProgressContainer.setVisibility(View.GONE);
             mListContainer.setVisibility(View.VISIBLE);
-        } //End block
+        } 
         {
             {
                 mProgressContainer.startAnimation(AnimationUtils.loadAnimation(
                         getActivity(), android.R.anim.fade_in));
                 mListContainer.startAnimation(AnimationUtils.loadAnimation(
                         getActivity(), android.R.anim.fade_out));
-            } //End block
+            } 
             {
                 mProgressContainer.clearAnimation();
                 mListContainer.clearAnimation();
-            } //End block
+            } 
             mProgressContainer.setVisibility(View.VISIBLE);
             mListContainer.setVisibility(View.GONE);
-        } //End block
+        } 
         addTaint(animate);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.058 -0400", hash_original_method = "6C199B6FBEC38BDF6D031387113C1DD5", hash_generated_method = "51B92C107A5A08825FCE9FA135B388BE")
     public ListAdapter getListAdapter() {
-        ListAdapter varB4EAC82CA7396A68D541C85D26508E83_197988307 = null; //Variable for return #1
+        ListAdapter varB4EAC82CA7396A68D541C85D26508E83_197988307 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_197988307 = mAdapter;
-        varB4EAC82CA7396A68D541C85D26508E83_197988307.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_197988307.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_197988307;
-        // ---------- Original Method ----------
-        //return mAdapter;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.059 -0400", hash_original_method = "2BE3F41178D2C0D0A071A3B313BD8473", hash_generated_method = "348FB20D06284C58588B559B357054AC")
     private void ensureList() {
         View root = getView();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Content view not yet created");
-        } //End block
+        } 
         {
             mList = (ListView)root;
-        } //End block
+        } 
         {
             mStandardEmptyView = (TextView)root.findViewById(INTERNAL_EMPTY_ID);
             {
                 mEmptyView = root.findViewById(android.R.id.empty);
-            } //End block
+            } 
             {
                 mStandardEmptyView.setVisibility(View.GONE);
-            } //End block
+            } 
             mProgressContainer = root.findViewById(INTERNAL_PROGRESS_CONTAINER_ID);
             mListContainer = root.findViewById(INTERNAL_LIST_CONTAINER_ID);
             View rawListView = root.findViewById(android.R.id.list);
@@ -367,35 +380,35 @@ public class ListFragment extends Fragment {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "Your content must have a ListView whose id attribute is " +
                             "'android.R.id.list'");
-                } //End block
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                         "Content has view with id attribute 'android.R.id.list' "
                         + "that is not a ListView class");
-            } //End block
+            } 
             mList = (ListView)rawListView;
             {
                 mList.setEmptyView(mEmptyView);
-            } //End block
+            } 
             {
                 mStandardEmptyView.setText(mEmptyText);
                 mList.setEmptyView(mStandardEmptyView);
-            } //End block
-        } //End block
+            } 
+        } 
         mListShown = true;
         mList.setOnItemClickListener(mOnClickListener);
         {
             ListAdapter adapter = mAdapter;
             mAdapter = null;
             setListAdapter(adapter);
-        } //End block
+        } 
         {
             {
                 setListShown(false, false);
-            } //End block
-        } //End block
+            } 
+        } 
         mHandler.post(mRequestFocus);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

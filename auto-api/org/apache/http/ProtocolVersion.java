@@ -1,11 +1,11 @@
 package org.apache.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 import org.apache.http.util.CharArrayBuffer;
@@ -26,45 +26,45 @@ public class ProtocolVersion implements Serializable, Cloneable {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Protocol name must not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Protocol major version number must not be negative.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Protocol minor version number may not be negative");
-        } //End block
+        } 
         this.protocol = protocol;
         this.major = major;
         this.minor = minor;
-        // ---------- Original Method ----------
-        //if (protocol == null) {
-            //throw new IllegalArgumentException
-                //("Protocol name must not be null.");
-        //}
-        //if (major < 0) {
-            //throw new IllegalArgumentException
-                //("Protocol major version number must not be negative.");
-        //}
-        //if (minor < 0) {
-            //throw new IllegalArgumentException
-                //("Protocol minor version number may not be negative");
-        //}
-        //this.protocol = protocol;
-        //this.major = major;
-        //this.minor = minor;
+        
+        
+            
+                
+        
+        
+            
+                
+        
+        
+            
+                
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.520 -0400", hash_original_method = "A74773FBD6292704847794FB8A3C1AB0", hash_generated_method = "31DDCD6D4D1F4A745ED82920A222630A")
     public final String getProtocol() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1063921996 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1063921996 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1063921996 = protocol;
-        varB4EAC82CA7396A68D541C85D26508E83_1063921996.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1063921996.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1063921996;
-        // ---------- Original Method ----------
-        //return protocol;
+        
+        
     }
 
     
@@ -72,8 +72,8 @@ public class ProtocolVersion implements Serializable, Cloneable {
     public final int getMajor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2070757134 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2070757134;
-        // ---------- Original Method ----------
-        //return major;
+        
+        
     }
 
     
@@ -81,37 +81,38 @@ public class ProtocolVersion implements Serializable, Cloneable {
     public final int getMinor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_108953390 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_108953390;
-        // ---------- Original Method ----------
-        //return minor;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.522 -0400", hash_original_method = "B388FCA8F9FE298631CFCA77574E3195", hash_generated_method = "558A8A823E204B3AF51D43005ED6124E")
     public ProtocolVersion forVersion(int major, int minor) {
-        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_614068264 = null; //Variable for return #1
-        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_1199911455 = null; //Variable for return #2
+        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_614068264 = null; 
+        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_1199911455 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_614068264 = this;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1199911455 = new ProtocolVersion(this.protocol, major, minor);
         addTaint(major);
         addTaint(minor);
-        ProtocolVersion varA7E53CE21691AB073D9660D615818899_856889944; //Final return value
+        ProtocolVersion varA7E53CE21691AB073D9660D615818899_856889944; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_856889944 = varB4EAC82CA7396A68D541C85D26508E83_614068264;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_856889944 = varB4EAC82CA7396A68D541C85D26508E83_1199911455;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_856889944.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_856889944.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_856889944;
-        // ---------- Original Method ----------
-        //if ((major == this.major) && (minor == this.minor)) {
-            //return this;
-        //}
-        //return new ProtocolVersion(this.protocol, major, minor);
+        
+        
+            
+        
+        
     }
 
     
@@ -120,8 +121,8 @@ public class ProtocolVersion implements Serializable, Cloneable {
         int var7960C382AF6881ABBE4F27C3A0F9F4F6_2037900145 = (this.protocol.hashCode() ^ (this.major * 100000) ^ this.minor);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1944892444 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1944892444;
-        // ---------- Original Method ----------
-        //return this.protocol.hashCode() ^ (this.major * 100000) ^ this.minor;
+        
+        
     }
 
     
@@ -134,67 +135,69 @@ public class ProtocolVersion implements Serializable, Cloneable {
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_785007159 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_785007159;
-        // ---------- Original Method ----------
-        //if (this == obj) {
-            //return true;
-        //}
-        //if (!(obj instanceof ProtocolVersion)) {
-            //return false;
-        //}
-        //ProtocolVersion that = (ProtocolVersion) obj;
-        //return ((this.protocol.equals(that.protocol)) &&
-                //(this.major == that.major) &&
-                //(this.minor == that.minor));
+        
+        
+            
+        
+        
+            
+        
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.523 -0400", hash_original_method = "D2B2F5148427A04314DDBDF38EFDB134", hash_generated_method = "6F603C0E4FEC94A18E8450356D9A5E54")
     public boolean isComparable(ProtocolVersion that) {
         boolean var14E8D7DEAC434FF70B1BBCDD1014727A_1110993337 = ((that != null) && this.protocol.equals(that.protocol));
         addTaint(that.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_233079239 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_233079239;
-        // ---------- Original Method ----------
-        //return (that != null) && this.protocol.equals(that.protocol);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.524 -0400", hash_original_method = "3ABC84C7DCB5005CDC448A9D130CFC4F", hash_generated_method = "E16F905F0A4847632AF390423A860056")
     public int compareToVersion(ProtocolVersion that) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Protocol version must not be null.");
-        } //End block
+        } 
         {
             boolean var53AD0993A9E2AF175B8A2D2E160FC405_1117112401 = (!this.protocol.equals(that.protocol));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Versions for different protocols cannot be compared. " +
                  this + " " + that);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int delta = getMajor() - that.getMajor();
         {
             delta = getMinor() - that.getMinor();
-        } //End block
+        } 
         addTaint(that.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2007716484 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2007716484;
-        // ---------- Original Method ----------
-        //if (that == null) {
-            //throw new IllegalArgumentException
-                //("Protocol version must not be null."); 
-        //}
-        //if (!this.protocol.equals(that.protocol)) {
-            //throw new IllegalArgumentException
-                //("Versions for different protocols cannot be compared. " +
-                 //this + " " + that);
-        //}
-        //int delta = getMajor() - that.getMajor();
-        //if (delta == 0) {
-            //delta = getMinor() - that.getMinor();
-        //}
-        //return delta;
+        
+        
+            
+                
+        
+        
+            
+                
+                 
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -204,8 +207,8 @@ public class ProtocolVersion implements Serializable, Cloneable {
         addTaint(version.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1647777064 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1647777064;
-        // ---------- Original Method ----------
-        //return isComparable(version) && (compareToVersion(version) >= 0);
+        
+        
     }
 
     
@@ -215,14 +218,15 @@ public class ProtocolVersion implements Serializable, Cloneable {
         addTaint(version.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1808490088 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1808490088;
-        // ---------- Original Method ----------
-        //return isComparable(version) && (compareToVersion(version) <= 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.525 -0400", hash_original_method = "1AC3EEF7BC77C90C94CB72A8DD95F4D1", hash_generated_method = "7C9335296A09AEB396053B02A11F2A66")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_162642820 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_162642820 = null; 
         CharArrayBuffer buffer = new CharArrayBuffer(16);
         buffer.append(this.protocol);
         buffer.append('/');
@@ -230,27 +234,28 @@ public class ProtocolVersion implements Serializable, Cloneable {
         buffer.append('.');
         buffer.append(Integer.toString(this.minor));
         varB4EAC82CA7396A68D541C85D26508E83_162642820 = buffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_162642820.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_162642820.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_162642820;
-        // ---------- Original Method ----------
-        //CharArrayBuffer buffer = new CharArrayBuffer(16);
-        //buffer.append(this.protocol);
-        //buffer.append('/');
-        //buffer.append(Integer.toString(this.major));
-        //buffer.append('.');
-        //buffer.append(Integer.toString(this.minor));
-        //return buffer.toString();
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.526 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "51EF1FE2A819CC6DEAFF48EAAD1C3DD7")
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_467884692 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_467884692 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_467884692 = super.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_467884692.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_467884692.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_467884692;
-        // ---------- Original Method ----------
-        //return super.clone();
+        
+        
     }
 
     

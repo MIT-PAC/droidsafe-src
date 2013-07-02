@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.telephony.TelephonyProperties;
 
@@ -14,20 +14,23 @@ public class Build {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.905 -0400", hash_original_method = "F7D4D478B3FB8EE28A8245D7D32DBDD3", hash_generated_method = "F7D4D478B3FB8EE28A8245D7D32DBDD3")
     public Build ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String getRadioVersion() {
         return SystemProperties.get(TelephonyProperties.PROPERTY_BASEBAND_VERSION, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getString(String property) {
         return SystemProperties.get(property, UNKNOWN);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static long getLong(String property) {
         try {
             return Long.parseLong(SystemProperties.get(property));
@@ -42,7 +45,7 @@ public class Build {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.906 -0400", hash_original_method = "36407A5836A03DF2FB40C80D8028F841", hash_generated_method = "36407A5836A03DF2FB40C80D8028F841")
         public VERSION ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -76,7 +79,7 @@ public class Build {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.906 -0400", hash_original_method = "0B6BCBBF45E050C1684E109EABF935A3", hash_generated_method = "0B6BCBBF45E050C1684E109EABF935A3")
         public VERSION_CODES ()
         {
-            //Synthesized constructor
+            
         }
 
 

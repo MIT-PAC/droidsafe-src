@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class ResultException extends CatException {
@@ -19,29 +19,29 @@ public class ResultException extends CatException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.752 -0400", hash_original_method = "68A91FDF5AB4F0330196DC8A0AB86338", hash_generated_method = "9EC3F772E884FA27283B606E101DC285")
     public  ResultException(ResultCode result) {
         super();
-        //Begin case TERMINAL_CRNTLY_UNABLE_TO_PROCESS NETWORK_CRNTLY_UNABLE_TO_PROCESS LAUNCH_BROWSER_ERROR MULTI_CARDS_CMD_ERROR USIM_CALL_CONTROL_PERMANENT BIP_ERROR FRAMES_ERROR MMS_ERROR 
+        
         if (DroidSafeAndroidRuntime.control) throw new AssertionError(
                         "For result code, " + result +
                         ", additional information must be given!");
-        //End case TERMINAL_CRNTLY_UNABLE_TO_PROCESS NETWORK_CRNTLY_UNABLE_TO_PROCESS LAUNCH_BROWSER_ERROR MULTI_CARDS_CMD_ERROR USIM_CALL_CONTROL_PERMANENT BIP_ERROR FRAMES_ERROR MMS_ERROR 
+        
         mResult = result;
         mAdditionalInfo = -1;
-        // ---------- Original Method ----------
-        //switch (result) {
-            //case TERMINAL_CRNTLY_UNABLE_TO_PROCESS:    
-            //case NETWORK_CRNTLY_UNABLE_TO_PROCESS:     
-            //case LAUNCH_BROWSER_ERROR:                 
-            //case MULTI_CARDS_CMD_ERROR:                
-            //case USIM_CALL_CONTROL_PERMANENT:          
-            //case BIP_ERROR:                            
-            //case FRAMES_ERROR:                         
-            //case MMS_ERROR:                            
-                //throw new AssertionError(
-                        //"For result code, " + result +
-                        //", additional information must be given!");
-        //}
-        //mResult = result;
-        //mAdditionalInfo = -1;
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                        
+                        
+        
+        
+        
     }
 
     
@@ -51,27 +51,27 @@ public class ResultException extends CatException {
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(
                     "Additional info must be greater than zero!");
-        } //End block
+        } 
         mResult = result;
         mAdditionalInfo = additionalInfo;
-        // ---------- Original Method ----------
-        //if (additionalInfo < 0) {
-            //throw new AssertionError(
-                    //"Additional info must be greater than zero!");
-        //}
-        //mResult = result;
-        //mAdditionalInfo = additionalInfo;
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.753 -0400", hash_original_method = "A57BD664B9013CBC4792F94DA18D35A2", hash_generated_method = "0BF5F8C88895666FE7611D307DB733E7")
     public ResultCode result() {
-        ResultCode varB4EAC82CA7396A68D541C85D26508E83_1780889837 = null; //Variable for return #1
+        ResultCode varB4EAC82CA7396A68D541C85D26508E83_1780889837 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1780889837 = mResult;
-        varB4EAC82CA7396A68D541C85D26508E83_1780889837.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1780889837.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1780889837;
-        // ---------- Original Method ----------
-        //return mResult;
+        
+        
     }
 
     
@@ -79,8 +79,8 @@ public class ResultException extends CatException {
     public boolean hasAdditionalInfo() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1651475536 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1651475536;
-        // ---------- Original Method ----------
-        //return mAdditionalInfo >= 0;
+        
+        
     }
 
     
@@ -88,8 +88,8 @@ public class ResultException extends CatException {
     public int additionalInfo() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_94989666 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_94989666;
-        // ---------- Original Method ----------
-        //return mAdditionalInfo;
+        
+        
     }
 
     

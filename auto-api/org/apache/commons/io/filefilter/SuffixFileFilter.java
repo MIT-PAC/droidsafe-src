@@ -1,11 +1,11 @@
 package org.apache.commons.io.filefilter;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.Serializable;
@@ -24,7 +24,7 @@ public class SuffixFileFilter extends AbstractFileFilter implements Serializable
     public  SuffixFileFilter(String suffix) {
         this(suffix, IOCase.SENSITIVE);
         addTaint(suffix.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,16 +32,16 @@ public class SuffixFileFilter extends AbstractFileFilter implements Serializable
     public  SuffixFileFilter(String suffix, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The suffix must not be null");
-        } //End block
+        } 
         this.suffixes = new String[] {suffix};
         this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
         addTaint(suffix.getTaint());
-        // ---------- Original Method ----------
-        //if (suffix == null) {
-            //throw new IllegalArgumentException("The suffix must not be null");
-        //}
-        //this.suffixes = new String[] {suffix};
-        //this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -49,7 +49,7 @@ public class SuffixFileFilter extends AbstractFileFilter implements Serializable
     public  SuffixFileFilter(String[] suffixes) {
         this(suffixes, IOCase.SENSITIVE);
         addTaint(suffixes[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -57,17 +57,17 @@ public class SuffixFileFilter extends AbstractFileFilter implements Serializable
     public  SuffixFileFilter(String[] suffixes, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The array of suffixes must not be null");
-        } //End block
+        } 
         this.suffixes = new String[suffixes.length];
         System.arraycopy(suffixes, 0, this.suffixes, 0, suffixes.length);
         this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
-        // ---------- Original Method ----------
-        //if (suffixes == null) {
-            //throw new IllegalArgumentException("The array of suffixes must not be null");
-        //}
-        //this.suffixes = new String[suffixes.length];
-        //System.arraycopy(suffixes, 0, this.suffixes, 0, suffixes.length);
-        //this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -75,7 +75,7 @@ public class SuffixFileFilter extends AbstractFileFilter implements Serializable
     public  SuffixFileFilter(List<String> suffixes) {
         this(suffixes, IOCase.SENSITIVE);
         addTaint(suffixes.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -83,77 +83,80 @@ public class SuffixFileFilter extends AbstractFileFilter implements Serializable
     public  SuffixFileFilter(List<String> suffixes, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The list of suffixes must not be null");
-        } //End block
+        } 
         this.suffixes = suffixes.toArray(new String[suffixes.size()]);
         this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
-        // ---------- Original Method ----------
-        //if (suffixes == null) {
-            //throw new IllegalArgumentException("The list of suffixes must not be null");
-        //}
-        //this.suffixes = suffixes.toArray(new String[suffixes.size()]);
-        //this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.963 -0400", hash_original_method = "5E16E41D2D30710800B0664BA6AD31F5", hash_generated_method = "E9D373BD3655D67917378A7D6EE29AFE")
     @Override
     public boolean accept(File file) {
         String name = file.getName();
         {
-            //Iterator<String> var9046116BDA63CCD0C4F42BB25A52E91B_1241276899 = (this.suffixes).iterator();
-            //var9046116BDA63CCD0C4F42BB25A52E91B_1241276899.hasNext();
+            
+            
             String suffix = this.suffixes[0];
             {
                 {
                     boolean var22B2758D82567F3246F8B222D166600F_980649247 = (caseSensitivity.checkEndsWith(name, suffix));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(file.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1505625594 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1505625594;
-        // ---------- Original Method ----------
-        //String name = file.getName();
-        //for (String suffix : this.suffixes) {
-            //if (caseSensitivity.checkEndsWith(name, suffix)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.967 -0400", hash_original_method = "850FABEC2D0BD7FBD751AF5978866C44", hash_generated_method = "BC24FF617D2A157EEBC25A9F508A9DF4")
     @Override
     public boolean accept(File file, String name) {
         {
-            //Iterator<String> var9046116BDA63CCD0C4F42BB25A52E91B_528374756 = (this.suffixes).iterator();
-            //var9046116BDA63CCD0C4F42BB25A52E91B_528374756.hasNext();
+            
+            
             String suffix = this.suffixes[0];
             {
                 {
                     boolean var22B2758D82567F3246F8B222D166600F_733744762 = (caseSensitivity.checkEndsWith(name, suffix));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(file.getTaint());
         addTaint(name.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_804680094 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_804680094;
-        // ---------- Original Method ----------
-        //for (String suffix : this.suffixes) {
-            //if (caseSensitivity.checkEndsWith(name, suffix)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.968 -0400", hash_original_method = "A7E4D946C38615EB73B14A44B4632E34", hash_generated_method = "30E11FD8F514909287C07D2A7163BFB8")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_506536467 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_506536467 = null; 
         StringBuilder buffer = new StringBuilder();
         buffer.append(super.toString());
         buffer.append("(");
@@ -163,29 +166,29 @@ public class SuffixFileFilter extends AbstractFileFilter implements Serializable
                 {
                     {
                         buffer.append(",");
-                    } //End block
+                    } 
                     buffer.append(suffixes[i]);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         buffer.append(")");
         varB4EAC82CA7396A68D541C85D26508E83_506536467 = buffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_506536467.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_506536467.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_506536467;
-        // ---------- Original Method ----------
-        //StringBuilder buffer = new StringBuilder();
-        //buffer.append(super.toString());
-        //buffer.append("(");
-        //if (suffixes != null) {
-            //for (int i = 0; i < suffixes.length; i++) {
-                //if (i > 0) {
-                    //buffer.append(",");
-                //}
-                //buffer.append(suffixes[i]);
-            //}
-        //}
-        //buffer.append(")");
-        //return buffer.toString();
+        
+        
+        
+        
+        
+            
+                
+                    
+                
+                
+            
+        
+        
+        
     }
 
     

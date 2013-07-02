@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.address.*;
 
@@ -16,69 +16,71 @@ public class RecordRoute extends AddressParametersHeader implements javax.sip.he
         super(NAME);
         this.address = address;
         addTaint(address.getTaint());
-        // ---------- Original Method ----------
-        //this.address = address;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.007 -0400", hash_original_method = "F63822F670C4D20D985D1B2C470568FD", hash_generated_method = "6E15848E792F6F3E30F683E515F8A47E")
     public  RecordRoute() {
         super(RECORD_ROUTE);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.008 -0400", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "4BD150B0B693288B4693BE02A2556384")
     public String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1683174307 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1683174307 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1683174307 = encodeBody(new StringBuffer()).toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1683174307.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1683174307.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1683174307;
-        // ---------- Original Method ----------
-        //return encodeBody(new StringBuffer()).toString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.009 -0400", hash_original_method = "1F2E3BF90793586E89EB2C500039787C", hash_generated_method = "1272DEBB8F39134D47D3C69A57B49DED")
     protected StringBuffer encodeBody(StringBuffer buffer) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_327490979 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_327490979 = null; 
         {
             boolean varA8A94084CEDB8AE131E76CDFE26F1997_122476554 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
             {
                 buffer.append(LESS_THAN);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         address.encode(buffer);
         {
             boolean varA8A94084CEDB8AE131E76CDFE26F1997_1575385121 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
             {
                 buffer.append(GREATER_THAN);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varB381AD842454BDB2397F4C2DAD0B3FA1_272900810 = (!parameters.isEmpty());
             {
                 buffer.append(SEMICOLON);
                 this.parameters.encode(buffer);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_327490979 = buffer;
         addTaint(buffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_327490979.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_327490979.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_327490979;
-        // ---------- Original Method ----------
-        //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
-            //buffer.append(LESS_THAN);
-        //}
-        //address.encode(buffer);
-        //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
-            //buffer.append(GREATER_THAN);
-        //}
-        //if (!parameters.isEmpty()) {
-            //buffer.append(SEMICOLON);
-            //this.parameters.encode(buffer);
-        //}
-        //return buffer;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     

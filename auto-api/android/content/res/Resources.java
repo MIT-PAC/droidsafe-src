@@ -1,11 +1,11 @@
 package android.content.res;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.util.XmlUtils;
 import org.xmlpull.v1.XmlPullParser;
@@ -87,7 +87,7 @@ public class Resources {
         addTaint(assets.getTaint());
         addTaint(metrics.getTaint());
         addTaint(config.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -101,12 +101,12 @@ public class Resources {
         assets.ensureStringBlocks();
         addTaint(metrics.getTaint());
         addTaint(config.getTaint());
-        // ---------- Original Method ----------
-        //mAssets = assets;
-        //mMetrics.setToDefaults();
-        //mCompatibilityInfo = compInfo;
-        //updateConfiguration(config, metrics);
-        //assets.ensureStringBlocks();
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -118,22 +118,24 @@ public class Resources {
         updateConfiguration(null, null);
         mAssets.ensureStringBlocks();
         mCompatibilityInfo = CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO;
-        // ---------- Original Method ----------
-        //mAssets = AssetManager.getSystem();
-        //mConfiguration.setToDefaults();
-        //mMetrics.setToDefaults();
-        //updateConfiguration(null, null);
-        //mAssets.ensureStringBlocks();
-        //mCompatibilityInfo = CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     private static <T> LongSparseArray<T> emptySparseArray() {
         return (LongSparseArray<T>) EMPTY_ARRAY;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int selectDefaultTheme(int curTheme, int targetSdkVersion) {
         return selectSystemTheme(curTheme, targetSdkVersion,
                 com.android.internal.R.style.Theme,
@@ -157,6 +159,7 @@ public class Resources {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Resources getSystem() {
         synchronized (mSync) {
             Resources ret = mSystem;
@@ -169,93 +172,96 @@ public class Resources {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.060 -0400", hash_original_method = "ACC5D7202FC5E62E31E1054DCF0E5FCD", hash_generated_method = "E5B6F505D2FA5F98FC4944BBDEAB5213")
     public CharSequence getText(int id) throws NotFoundException {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1302725832 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1302725832 = null; 
         CharSequence res = mAssets.getResourceText(id);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1302725832 = res;
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NotFoundException("String resource ID #0x"
                                     + Integer.toHexString(id));
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_1302725832.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1302725832.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1302725832;
-        // ---------- Original Method ----------
-        //CharSequence res = mAssets.getResourceText(id);
-        //if (res != null) {
-            //return res;
-        //}
-        //throw new NotFoundException("String resource ID #0x"
-                                    //+ Integer.toHexString(id));
+        
+        
+        
+            
+        
+        
+                                    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.061 -0400", hash_original_method = "78A3DFDF860E06736217D448EF07FADF", hash_generated_method = "809C5BC7A7A1746EDCE07BDCC4B94C33")
     public CharSequence getQuantityText(int id, int quantity) throws NotFoundException {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_861650075 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1031515867 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_861650075 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1031515867 = null; 
         NativePluralRules rule = getPluralRule();
         CharSequence res = mAssets.getResourceBagText(id,
                 attrForQuantityCode(rule.quantityForInt(quantity)));
         {
             varB4EAC82CA7396A68D541C85D26508E83_861650075 = res;
-        } //End block
+        } 
         res = mAssets.getResourceBagText(id, ID_OTHER);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1031515867 = res;
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NotFoundException("Plural resource ID #0x" + Integer.toHexString(id)
                 + " quantity=" + quantity
                 + " item=" + stringForQuantityCode(rule.quantityForInt(quantity)));
         addTaint(id);
         addTaint(quantity);
-        CharSequence varA7E53CE21691AB073D9660D615818899_880850045; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_880850045; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_880850045 = varB4EAC82CA7396A68D541C85D26508E83_861650075;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_880850045 = varB4EAC82CA7396A68D541C85D26508E83_1031515867;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_880850045.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_880850045.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_880850045;
-        // ---------- Original Method ----------
-        //NativePluralRules rule = getPluralRule();
-        //CharSequence res = mAssets.getResourceBagText(id,
-                //attrForQuantityCode(rule.quantityForInt(quantity)));
-        //if (res != null) {
-            //return res;
-        //}
-        //res = mAssets.getResourceBagText(id, ID_OTHER);
-        //if (res != null) {
-            //return res;
-        //}
-        //throw new NotFoundException("Plural resource ID #0x" + Integer.toHexString(id)
-                //+ " quantity=" + quantity
-                //+ " item=" + stringForQuantityCode(rule.quantityForInt(quantity)));
+        
+        
+        
+                
+        
+            
+        
+        
+        
+            
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.062 -0400", hash_original_method = "1BFA20E87FBD429BB566BA0632D0EE62", hash_generated_method = "B1582A1C890CE940EEE59D2E943722DE")
     private NativePluralRules getPluralRule() {
-        NativePluralRules varB4EAC82CA7396A68D541C85D26508E83_10513623 = null; //Variable for return #1
+        NativePluralRules varB4EAC82CA7396A68D541C85D26508E83_10513623 = null; 
         {
             {
                 mPluralRule = NativePluralRules.forLocale(mConfiguration.locale);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_10513623 = mPluralRule;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_10513623.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_10513623.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_10513623;
-        // ---------- Original Method ----------
-        //synchronized (mSync) {
-            //if (mPluralRule == null) {
-                //mPluralRule = NativePluralRules.forLocale(mConfiguration.locale);
-            //}
-            //return mPluralRule;
-        //}
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -283,133 +289,139 @@ public class Resources {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.063 -0400", hash_original_method = "537EFC002B8A40B3B7F76596758B9963", hash_generated_method = "C2A8FADA32D3CD5F08976ED5D63C8564")
     public String getString(int id) throws NotFoundException {
-        String varB4EAC82CA7396A68D541C85D26508E83_231141683 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_231141683 = null; 
         CharSequence res = getText(id);
         {
             varB4EAC82CA7396A68D541C85D26508E83_231141683 = res.toString();
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NotFoundException("String resource ID #0x"
                                     + Integer.toHexString(id));
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_231141683.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_231141683.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_231141683;
-        // ---------- Original Method ----------
-        //CharSequence res = getText(id);
-        //if (res != null) {
-            //return res.toString();
-        //}
-        //throw new NotFoundException("String resource ID #0x"
-                                    //+ Integer.toHexString(id));
+        
+        
+        
+            
+        
+        
+                                    
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.064 -0400", hash_original_method = "2EEC36CFDBF61FC5501B8B9376C5F95E", hash_generated_method = "22134274FC0710EFB610ED3CB1A08354")
     public String getString(int id, Object... formatArgs) throws NotFoundException {
-        String varB4EAC82CA7396A68D541C85D26508E83_875299362 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_875299362 = null; 
         String raw = getString(id);
         varB4EAC82CA7396A68D541C85D26508E83_875299362 = String.format(mConfiguration.locale, raw, formatArgs);
         addTaint(id);
         addTaint(formatArgs[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_875299362.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_875299362.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_875299362;
-        // ---------- Original Method ----------
-        //String raw = getString(id);
-        //return String.format(mConfiguration.locale, raw, formatArgs);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.065 -0400", hash_original_method = "3050F7A6F3C08BB33AB97951F94A1A35", hash_generated_method = "45580B67904C3F5CCCDB21ED1184C4CB")
     public String getQuantityString(int id, int quantity, Object... formatArgs) throws NotFoundException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1060952448 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1060952448 = null; 
         String raw = getQuantityText(id, quantity).toString();
         varB4EAC82CA7396A68D541C85D26508E83_1060952448 = String.format(mConfiguration.locale, raw, formatArgs);
         addTaint(id);
         addTaint(quantity);
         addTaint(formatArgs[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1060952448.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1060952448.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1060952448;
-        // ---------- Original Method ----------
-        //String raw = getQuantityText(id, quantity).toString();
-        //return String.format(mConfiguration.locale, raw, formatArgs);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.065 -0400", hash_original_method = "81877842C4E2FEF0D9FCD2095374BD66", hash_generated_method = "DC6329391258BC15CC06EB08821053A5")
     public String getQuantityString(int id, int quantity) throws NotFoundException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1645291545 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1645291545 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1645291545 = getQuantityText(id, quantity).toString();
         addTaint(id);
         addTaint(quantity);
-        varB4EAC82CA7396A68D541C85D26508E83_1645291545.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1645291545.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1645291545;
-        // ---------- Original Method ----------
-        //return getQuantityText(id, quantity).toString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.066 -0400", hash_original_method = "9E76804CDFB0982D016B6CE6163D7455", hash_generated_method = "B047CDB75A4585EC975FF38DE713EF29")
     public CharSequence getText(int id, CharSequence def) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2062336342 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2062336342 = null; 
         CharSequence res;
         res = mAssets.getResourceText(id);
         res = null;
         varB4EAC82CA7396A68D541C85D26508E83_2062336342 = res != null ? res : def;
         addTaint(id);
         addTaint(def.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2062336342.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2062336342.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2062336342;
-        // ---------- Original Method ----------
-        //CharSequence res = id != 0 ? mAssets.getResourceText(id) : null;
-        //return res != null ? res : def;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.067 -0400", hash_original_method = "2FECA5C28D9DC41170E2F1E5700277A0", hash_generated_method = "26AE5C1E635097F8C5664450889C9712")
     public CharSequence[] getTextArray(int id) throws NotFoundException {
-        CharSequence[] varB4EAC82CA7396A68D541C85D26508E83_474453483 = null; //Variable for return #1
+        CharSequence[] varB4EAC82CA7396A68D541C85D26508E83_474453483 = null; 
         CharSequence[] res = mAssets.getResourceTextArray(id);
         {
             varB4EAC82CA7396A68D541C85D26508E83_474453483 = res;
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NotFoundException("Text array resource ID #0x"
                                     + Integer.toHexString(id));
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_474453483.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_474453483.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_474453483;
-        // ---------- Original Method ----------
-        //CharSequence[] res = mAssets.getResourceTextArray(id);
-        //if (res != null) {
-            //return res;
-        //}
-        //throw new NotFoundException("Text array resource ID #0x"
-                                    //+ Integer.toHexString(id));
+        
+        
+        
+            
+        
+        
+                                    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.068 -0400", hash_original_method = "426431DC420CF2DD39FFAF8B295D8654", hash_generated_method = "9646B119AF1C463BFE9D14B9A4A7E00E")
     public String[] getStringArray(int id) throws NotFoundException {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_596620813 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_596620813 = null; 
         String[] res = mAssets.getResourceStringArray(id);
         {
             varB4EAC82CA7396A68D541C85D26508E83_596620813 = res;
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NotFoundException("String array resource ID #0x"
                                     + Integer.toHexString(id));
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_596620813.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_596620813.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_596620813;
-        // ---------- Original Method ----------
-        //String[] res = mAssets.getResourceStringArray(id);
-        //if (res != null) {
-            //return res;
-        //}
-        //throw new NotFoundException("String array resource ID #0x"
-                                    //+ Integer.toHexString(id));
+        
+        
+        
+            
+        
+        
+                                    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.068 -0400", hash_original_method = "65AEFB7747626FD934E6275803D2C392", hash_generated_method = "0933C120024FB1F2685ACE27ED3C373B")
     public int[] getIntArray(int id) throws NotFoundException {
         int[] res = mAssets.getArrayIntResource(id);
@@ -418,44 +430,46 @@ public class Resources {
         addTaint(id);
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1515513801 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1515513801;
-        // ---------- Original Method ----------
-        //int[] res = mAssets.getArrayIntResource(id);
-        //if (res != null) {
-            //return res;
-        //}
-        //throw new NotFoundException("Int array resource ID #0x"
-                                    //+ Integer.toHexString(id));
+        
+        
+        
+            
+        
+        
+                                    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.069 -0400", hash_original_method = "8E5AB34336560F1D8FA12EC65FB34D2E", hash_generated_method = "473C3CD4626B4D6FC9717A3D1BC0563A")
     public TypedArray obtainTypedArray(int id) throws NotFoundException {
-        TypedArray varB4EAC82CA7396A68D541C85D26508E83_52265442 = null; //Variable for return #1
+        TypedArray varB4EAC82CA7396A68D541C85D26508E83_52265442 = null; 
         int len = mAssets.getArraySize(id);
         {
             if (DroidSafeAndroidRuntime.control) throw new NotFoundException("Array resource ID #0x"
                                         + Integer.toHexString(id));
-        } //End block
+        } 
         TypedArray array = getCachedStyledAttributes(len);
         array.mLength = mAssets.retrieveArray(id, array.mData);
         array.mIndices[0] = 0;
         varB4EAC82CA7396A68D541C85D26508E83_52265442 = array;
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_52265442.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_52265442.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_52265442;
-        // ---------- Original Method ----------
-        //int len = mAssets.getArraySize(id);
-        //if (len < 0) {
-            //throw new NotFoundException("Array resource ID #0x"
-                                        //+ Integer.toHexString(id));
-        //}
-        //TypedArray array = getCachedStyledAttributes(len);
-        //array.mLength = mAssets.retrieveArray(id, array.mData);
-        //array.mIndices[0] = 0;
-        //return array;
+        
+        
+        
+            
+                                        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.070 -0400", hash_original_method = "179671F1A37C23E822373A76E19D42EA", hash_generated_method = "21541EDD265B53548E6A28BE61C596A6")
     public float getDimension(int id) throws NotFoundException {
         {
@@ -463,28 +477,29 @@ public class Resources {
             getValue(id, value, true);
             {
                 float var3D1EF52544C26367510F308FBFEC9AF2_619399867 = (TypedValue.complexToDimension(value.data, mMetrics));
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new NotFoundException(
                     "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                     + Integer.toHexString(value.type) + " is not valid");
-        } //End block
+        } 
         addTaint(id);
         float var546ADE640B6EDFBC8A086EF31347E768_111213766 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_111213766;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //TypedValue value = mTmpValue;
-            //getValue(id, value, true);
-            //if (value.type == TypedValue.TYPE_DIMENSION) {
-                //return TypedValue.complexToDimension(value.data, mMetrics);
-            //}
-            //throw new NotFoundException(
-                    //"Resource ID #0x" + Integer.toHexString(id) + " type #0x"
-                    //+ Integer.toHexString(value.type) + " is not valid");
-        //}
+        
+        
+            
+            
+            
+                
+            
+            
+                    
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.072 -0400", hash_original_method = "1833FD2ED6DCA9CF6DFDBF7D9BC0478B", hash_generated_method = "882E51D627F0C323AE19C475DDBD5C40")
     public int getDimensionPixelOffset(int id) throws NotFoundException {
         {
@@ -493,29 +508,30 @@ public class Resources {
             {
                 int varC10E6C7CE4C18B2E8240388CE0B9D4D5_553321675 = (TypedValue.complexToDimensionPixelOffset(
                         value.data, mMetrics));
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new NotFoundException(
                     "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                     + Integer.toHexString(value.type) + " is not valid");
-        } //End block
+        } 
         addTaint(id);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404039539 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404039539;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //TypedValue value = mTmpValue;
-            //getValue(id, value, true);
-            //if (value.type == TypedValue.TYPE_DIMENSION) {
-                //return TypedValue.complexToDimensionPixelOffset(
-                        //value.data, mMetrics);
-            //}
-            //throw new NotFoundException(
-                    //"Resource ID #0x" + Integer.toHexString(id) + " type #0x"
-                    //+ Integer.toHexString(value.type) + " is not valid");
-        //}
+        
+        
+            
+            
+            
+                
+                        
+            
+            
+                    
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.073 -0400", hash_original_method = "E2B2A30088D0238C29DEA7CD0218F3E5", hash_generated_method = "94826B987A4503955C546A0FD36624EC")
     public int getDimensionPixelSize(int id) throws NotFoundException {
         {
@@ -524,29 +540,30 @@ public class Resources {
             {
                 int var618929EFC759B1CAECEF2B8755B3C586_1732945085 = (TypedValue.complexToDimensionPixelSize(
                         value.data, mMetrics));
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new NotFoundException(
                     "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                     + Integer.toHexString(value.type) + " is not valid");
-        } //End block
+        } 
         addTaint(id);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_781695270 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_781695270;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //TypedValue value = mTmpValue;
-            //getValue(id, value, true);
-            //if (value.type == TypedValue.TYPE_DIMENSION) {
-                //return TypedValue.complexToDimensionPixelSize(
-                        //value.data, mMetrics);
-            //}
-            //throw new NotFoundException(
-                    //"Resource ID #0x" + Integer.toHexString(id) + " type #0x"
-                    //+ Integer.toHexString(value.type) + " is not valid");
-        //}
+        
+        
+            
+            
+            
+                
+                        
+            
+            
+                    
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.074 -0400", hash_original_method = "A2DCBF1A3DEF525CC233A65EC473B403", hash_generated_method = "3E535B9649478F4A1B129685F000086C")
     public float getFraction(int id, int base, int pbase) {
         {
@@ -554,113 +571,117 @@ public class Resources {
             getValue(id, value, true);
             {
                 float var32E1DB9737EBC4A230505D9C45C6217C_1013963107 = (TypedValue.complexToFraction(value.data, base, pbase));
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new NotFoundException(
                     "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                     + Integer.toHexString(value.type) + " is not valid");
-        } //End block
+        } 
         addTaint(id);
         addTaint(base);
         addTaint(pbase);
         float var546ADE640B6EDFBC8A086EF31347E768_281439522 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_281439522;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //TypedValue value = mTmpValue;
-            //getValue(id, value, true);
-            //if (value.type == TypedValue.TYPE_FRACTION) {
-                //return TypedValue.complexToFraction(value.data, base, pbase);
-            //}
-            //throw new NotFoundException(
-                    //"Resource ID #0x" + Integer.toHexString(id) + " type #0x"
-                    //+ Integer.toHexString(value.type) + " is not valid");
-        //}
+        
+        
+            
+            
+            
+                
+            
+            
+                    
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.074 -0400", hash_original_method = "40531A8693FC775C03E22F5835EB733B", hash_generated_method = "C1D77609F72881AAED7EAA7079F06C7E")
     public Drawable getDrawable(int id) throws NotFoundException {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_116814547 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_116814547 = null; 
         {
             TypedValue value = mTmpValue;
             getValue(id, value, true);
             varB4EAC82CA7396A68D541C85D26508E83_116814547 = loadDrawable(value, id);
-        } //End block
+        } 
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_116814547.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_116814547.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_116814547;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //TypedValue value = mTmpValue;
-            //getValue(id, value, true);
-            //return loadDrawable(value, id);
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.075 -0400", hash_original_method = "D08D33B833687D530F432098EC5CCB38", hash_generated_method = "C369F8CCF223B0495BE97DFEA342378A")
     public Drawable getDrawableForDensity(int id, int density) throws NotFoundException {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1291814995 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1291814995 = null; 
         {
             TypedValue value = mTmpValue;
             getValueForDensity(id, density, value, true);
             {
                 {
                     value.density = DisplayMetrics.DENSITY_DEVICE;
-                } //End block
+                } 
                 {
                     value.density = (value.density * DisplayMetrics.DENSITY_DEVICE) / density;
-                } //End block
-            } //End block
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1291814995 = loadDrawable(value, id);
-        } //End block
+        } 
         addTaint(id);
         addTaint(density);
-        varB4EAC82CA7396A68D541C85D26508E83_1291814995.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1291814995.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1291814995;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //TypedValue value = mTmpValue;
-            //getValueForDensity(id, density, value, true);
-            //if (value.density > 0 && value.density != TypedValue.DENSITY_NONE) {
-                //if (value.density == density) {
-                    //value.density = DisplayMetrics.DENSITY_DEVICE;
-                //} else {
-                    //value.density = (value.density * DisplayMetrics.DENSITY_DEVICE) / density;
-                //}
-            //}
-            //return loadDrawable(value, id);
-        //}
+        
+        
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.076 -0400", hash_original_method = "973C0EDB6E14C8355746DA3A02A0EBD1", hash_generated_method = "5DAB5EAA3A458DA72699C12E2B4BC9F1")
     public Movie getMovie(int id) throws NotFoundException {
-        Movie varB4EAC82CA7396A68D541C85D26508E83_1537325320 = null; //Variable for return #1
+        Movie varB4EAC82CA7396A68D541C85D26508E83_1537325320 = null; 
         InputStream is = openRawResource(id);
         Movie movie = Movie.decodeStream(is);
         try 
         {
             is.close();
-        } //End block
+        } 
         catch (java.io.IOException e)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_1537325320 = movie;
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_1537325320.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1537325320.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1537325320;
-        // ---------- Original Method ----------
-        //InputStream is = openRawResource(id);
-        //Movie movie = Movie.decodeStream(is);
-        //try {
-            //is.close();
-        //}
-        //catch (java.io.IOException e) {
-        //}
-        //return movie;
+        
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.077 -0400", hash_original_method = "CDFC75613D2F871DC3B09D1CE60F98A4", hash_generated_method = "10CA2796A48220C6E24961383E019054")
     public int getColor(int id) throws NotFoundException {
         {
@@ -669,52 +690,54 @@ public class Resources {
             {
                 ColorStateList csl = loadColorStateList(mTmpValue, id);
                 int var0BE21B049075D2C5C0B5387A1C4FC3D4_2045167906 = (csl.getDefaultColor());
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new NotFoundException(
                 "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                 + Integer.toHexString(value.type) + " is not valid");
-        } //End block
+        } 
         addTaint(id);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_925907138 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_925907138;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //TypedValue value = mTmpValue;
-            //getValue(id, value, true);
-            //if (value.type >= TypedValue.TYPE_FIRST_INT
-                //&& value.type <= TypedValue.TYPE_LAST_INT) {
-                //return value.data;
-            //} else if (value.type == TypedValue.TYPE_STRING) {
-                //ColorStateList csl = loadColorStateList(mTmpValue, id);
-                //return csl.getDefaultColor();
-            //}
-            //throw new NotFoundException(
-                //"Resource ID #0x" + Integer.toHexString(id) + " type #0x"
-                //+ Integer.toHexString(value.type) + " is not valid");
-        //}
+        
+        
+            
+            
+            
+                
+                
+            
+                
+                
+            
+            
+                
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.077 -0400", hash_original_method = "F237EF4FA0AE2D448FCC64592DABDD8D", hash_generated_method = "23E2461D3D5141E6B1A6B741883C8DA2")
     public ColorStateList getColorStateList(int id) throws NotFoundException {
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_252504383 = null; //Variable for return #1
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_252504383 = null; 
         {
             TypedValue value = mTmpValue;
             getValue(id, value, true);
             varB4EAC82CA7396A68D541C85D26508E83_252504383 = loadColorStateList(value, id);
-        } //End block
+        } 
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_252504383.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_252504383.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_252504383;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //TypedValue value = mTmpValue;
-            //getValue(id, value, true);
-            //return loadColorStateList(value, id);
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.078 -0400", hash_original_method = "5C68CA666BA42061546BF98D8883861D", hash_generated_method = "28F074199A19A96A60A49B4016C7D783")
     public boolean getBoolean(int id) throws NotFoundException {
         {
@@ -723,25 +746,26 @@ public class Resources {
             if (DroidSafeAndroidRuntime.control) throw new NotFoundException(
                 "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                 + Integer.toHexString(value.type) + " is not valid");
-        } //End block
+        } 
         addTaint(id);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1661833322 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1661833322;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //TypedValue value = mTmpValue;
-            //getValue(id, value, true);
-            //if (value.type >= TypedValue.TYPE_FIRST_INT
-                //&& value.type <= TypedValue.TYPE_LAST_INT) {
-                //return value.data != 0;
-            //}
-            //throw new NotFoundException(
-                //"Resource ID #0x" + Integer.toHexString(id) + " type #0x"
-                //+ Integer.toHexString(value.type) + " is not valid");
-        //}
+        
+        
+            
+            
+            
+                
+                
+            
+            
+                
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.079 -0400", hash_original_method = "CB2B32F0600F2299579C79C7526A8896", hash_generated_method = "850A97E1D8E41CA27322AAA9902657EF")
     public int getInteger(int id) throws NotFoundException {
         {
@@ -750,114 +774,120 @@ public class Resources {
             if (DroidSafeAndroidRuntime.control) throw new NotFoundException(
                 "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                 + Integer.toHexString(value.type) + " is not valid");
-        } //End block
+        } 
         addTaint(id);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1463357708 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1463357708;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //TypedValue value = mTmpValue;
-            //getValue(id, value, true);
-            //if (value.type >= TypedValue.TYPE_FIRST_INT
-                //&& value.type <= TypedValue.TYPE_LAST_INT) {
-                //return value.data;
-            //}
-            //throw new NotFoundException(
-                //"Resource ID #0x" + Integer.toHexString(id) + " type #0x"
-                //+ Integer.toHexString(value.type) + " is not valid");
-        //}
+        
+        
+            
+            
+            
+                
+                
+            
+            
+                
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.080 -0400", hash_original_method = "53A788F1DE83214BAFCB022ED9363AAC", hash_generated_method = "39C12C7415B26F3F6BB2AB4CC32973E0")
     public XmlResourceParser getLayout(int id) throws NotFoundException {
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_943124862 = null; //Variable for return #1
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_943124862 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_943124862 = loadXmlResourceParser(id, "layout");
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_943124862.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_943124862.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_943124862;
-        // ---------- Original Method ----------
-        //return loadXmlResourceParser(id, "layout");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.081 -0400", hash_original_method = "C3417F93CB7498AF5B43E94B98075C78", hash_generated_method = "EAACE7DF2112FA24C76B2430FD782836")
     public XmlResourceParser getAnimation(int id) throws NotFoundException {
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_1016013292 = null; //Variable for return #1
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_1016013292 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1016013292 = loadXmlResourceParser(id, "anim");
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_1016013292.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1016013292.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1016013292;
-        // ---------- Original Method ----------
-        //return loadXmlResourceParser(id, "anim");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.082 -0400", hash_original_method = "66568C58C76DE1C95FED15C8056E4335", hash_generated_method = "D3B925CABF18A9680DFA5D0210DA8D8F")
     public XmlResourceParser getXml(int id) throws NotFoundException {
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_257692194 = null; //Variable for return #1
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_257692194 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_257692194 = loadXmlResourceParser(id, "xml");
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_257692194.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_257692194.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_257692194;
-        // ---------- Original Method ----------
-        //return loadXmlResourceParser(id, "xml");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.083 -0400", hash_original_method = "2A38C8042909AD0B3921F8B41C50BFD0", hash_generated_method = "BA157CA13B6118AA71E48EE01CC6FB2C")
     public InputStream openRawResource(int id) throws NotFoundException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1236304224 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1236304224 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1236304224 = openRawResource(id, mTmpValue);
-        } //End block
+        } 
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_1236304224.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1236304224.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1236304224;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //return openRawResource(id, mTmpValue);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.084 -0400", hash_original_method = "2E256A4CBCC4636EC939F62266AB39BC", hash_generated_method = "0FBAE9A2B3F4CAF6A602628DF9D02D47")
     public InputStream openRawResource(int id, TypedValue value) throws NotFoundException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_331329981 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_331329981 = null; 
         getValue(id, value, true);
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_331329981 = mAssets.openNonAsset(value.assetCookie, value.string.toString(),
                     AssetManager.ACCESS_STREAMING);
-        } //End block
+        } 
         catch (Exception e)
         {
             NotFoundException rnf = new NotFoundException("File " + value.string.toString() +
                     " from drawable resource ID #0x" + Integer.toHexString(id));
             rnf.initCause(e);
             if (DroidSafeAndroidRuntime.control) throw rnf;
-        } //End block
+        } 
         addTaint(id);
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_331329981.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_331329981.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_331329981;
-        // ---------- Original Method ----------
-        //getValue(id, value, true);
-        //try {
-            //return mAssets.openNonAsset(value.assetCookie, value.string.toString(),
-                    //AssetManager.ACCESS_STREAMING);
-        //} catch (Exception e) {
-            //NotFoundException rnf = new NotFoundException("File " + value.string.toString() +
-                    //" from drawable resource ID #0x" + Integer.toHexString(id));
-            //rnf.initCause(e);
-            //throw rnf;
-        //}
+        
+        
+        
+            
+                    
+        
+            
+                    
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.085 -0400", hash_original_method = "7A496359623417DAF484E4884A244E4E", hash_generated_method = "8EF6B380E97D7C804F028108EE437E4E")
     public AssetFileDescriptor openRawResourceFd(int id) throws NotFoundException {
-        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1407726974 = null; //Variable for return #1
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1407726974 = null; 
         {
             TypedValue value = mTmpValue;
             getValue(id, value, true);
@@ -865,7 +895,7 @@ public class Resources {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1407726974 = mAssets.openNonAssetFd(
                     value.assetCookie, value.string.toString());
-            } //End block
+            } 
             catch (Exception e)
             {
                 NotFoundException rnf = new NotFoundException(
@@ -874,30 +904,31 @@ public class Resources {
                     + Integer.toHexString(id));
                 rnf.initCause(e);
                 if (DroidSafeAndroidRuntime.control) throw rnf;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_1407726974.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1407726974.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1407726974;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //TypedValue value = mTmpValue;
-            //getValue(id, value, true);
-            //try {
-                //return mAssets.openNonAssetFd(
-                    //value.assetCookie, value.string.toString());
-            //} catch (Exception e) {
-                //NotFoundException rnf = new NotFoundException(
-                    //"File " + value.string.toString()
-                    //+ " from drawable resource ID #0x"
-                    //+ Integer.toHexString(id));
-                //rnf.initCause(e);
-                //throw rnf;
-            //}
-        //}
+        
+        
+            
+            
+            
+                
+                    
+            
+                
+                    
+                    
+                    
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.085 -0400", hash_original_method = "286538764BE9255E72B90D7B13646A2E", hash_generated_method = "6A9C0C7A710193F18BA6B12FC73358F3")
     public void getValue(int id, TypedValue outValue, boolean resolveRefs) throws NotFoundException {
         boolean found = mAssets.getResourceValue(id, 0, outValue, resolveRefs);
@@ -906,16 +937,17 @@ public class Resources {
         addTaint(id);
         addTaint(outValue.getTaint());
         addTaint(resolveRefs);
-        // ---------- Original Method ----------
-        //boolean found = mAssets.getResourceValue(id, 0, outValue, resolveRefs);
-        //if (found) {
-            //return;
-        //}
-        //throw new NotFoundException("Resource ID #0x"
-                                    //+ Integer.toHexString(id));
+        
+        
+        
+            
+        
+        
+                                    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.086 -0400", hash_original_method = "FF0649F49CF780958319F2862D12B017", hash_generated_method = "37A5A89CED13F6F67F6BF45D5ECD7EF8")
     public void getValueForDensity(int id, int density, TypedValue outValue, boolean resolveRefs) throws NotFoundException {
         boolean found = mAssets.getResourceValue(id, density, outValue, resolveRefs);
@@ -924,49 +956,51 @@ public class Resources {
         addTaint(density);
         addTaint(outValue.getTaint());
         addTaint(resolveRefs);
-        // ---------- Original Method ----------
-        //boolean found = mAssets.getResourceValue(id, density, outValue, resolveRefs);
-        //if (found) {
-            //return;
-        //}
-        //throw new NotFoundException("Resource ID #0x" + Integer.toHexString(id));
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.086 -0400", hash_original_method = "A4F8C6B97749A99408C92371916352C6", hash_generated_method = "2A8DB9C23C77D945E9BB417C6463BB15")
     public void getValue(String name, TypedValue outValue, boolean resolveRefs) throws NotFoundException {
         int id = getIdentifier(name, "string", null);
         {
             getValue(id, outValue, resolveRefs);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NotFoundException("String resource name " + name);
         addTaint(name.getTaint());
         addTaint(outValue.getTaint());
         addTaint(resolveRefs);
-        // ---------- Original Method ----------
-        //int id = getIdentifier(name, "string", null);
-        //if (id != 0) {
-            //getValue(id, outValue, resolveRefs);
-            //return;
-        //}
-        //throw new NotFoundException("String resource name " + name);
+        
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.087 -0400", hash_original_method = "89EA817324C2BD92A04D61539A7DF9A0", hash_generated_method = "6D42077C7D8C500A72240B7760A7E2A7")
     public final Theme newTheme() {
-        Theme varB4EAC82CA7396A68D541C85D26508E83_662461706 = null; //Variable for return #1
+        Theme varB4EAC82CA7396A68D541C85D26508E83_662461706 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_662461706 = new Theme();
-        varB4EAC82CA7396A68D541C85D26508E83_662461706.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_662461706.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_662461706;
-        // ---------- Original Method ----------
-        //return new Theme();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.088 -0400", hash_original_method = "D166D2286995B941AEE6CFA36445D894", hash_generated_method = "E919FDBA9A692BD411EE43FF2FD81624")
     public TypedArray obtainAttributes(AttributeSet set, int[] attrs) {
-        TypedArray varB4EAC82CA7396A68D541C85D26508E83_1951244345 = null; //Variable for return #1
+        TypedArray varB4EAC82CA7396A68D541C85D26508E83_1951244345 = null; 
         int len = attrs.length;
         TypedArray array = getCachedStyledAttributes(len);
         XmlBlock.Parser parser = (XmlBlock.Parser)set;
@@ -977,59 +1011,61 @@ public class Resources {
         varB4EAC82CA7396A68D541C85D26508E83_1951244345 = array;
         addTaint(set.getTaint());
         addTaint(attrs[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_1951244345.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1951244345.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1951244345;
-        // ---------- Original Method ----------
-        //int len = attrs.length;
-        //TypedArray array = getCachedStyledAttributes(len);
-        //XmlBlock.Parser parser = (XmlBlock.Parser)set;
-        //mAssets.retrieveAttributes(parser.mParseState, attrs,
-                //array.mData, array.mIndices);
-        //array.mRsrcs = attrs;
-        //array.mXml = parser;
-        //return array;
+        
+        
+        
+        
+        
+                
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.089 -0400", hash_original_method = "FADFD61D7F3DC00CFE83DECA8FAB375D", hash_generated_method = "E94702199A1A902DB0E98CCEE70C0FA8")
     public void updateConfiguration(Configuration config,
             DisplayMetrics metrics) {
         updateConfiguration(config, metrics, null);
         addTaint(config.getTaint());
         addTaint(metrics.getTaint());
-        // ---------- Original Method ----------
-        //updateConfiguration(config, metrics, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.091 -0400", hash_original_method = "FB9A4AAA762C456F245AEDCFD4C4194A", hash_generated_method = "0CC0C597DA9BB920E7BA92D0B44CE42F")
     public void updateConfiguration(Configuration config,
             DisplayMetrics metrics, CompatibilityInfo compat) {
         {
             {
                 mCompatibilityInfo = compat;
-            } //End block
+            } 
             {
                 mMetrics.setTo(metrics);
-            } //End block
+            } 
             {
                 mCompatibilityInfo.applyToDisplayMetrics(mMetrics);
-            } //End block
+            } 
             int configChanges = 0xfffffff;
             {
                 mTmpConfig.setTo(config);
                 {
                     mCompatibilityInfo.applyToConfiguration(mTmpConfig);
-                } //End block
+                } 
                 {
                     mTmpConfig.locale = Locale.getDefault();
-                } //End block
+                } 
                 configChanges = mConfiguration.updateFrom(mTmpConfig);
                 configChanges = ActivityInfo.activityInfoConfigToNative(configChanges);
-            } //End block
+            } 
             {
                 mConfiguration.locale = Locale.getDefault();
-            } //End block
+            } 
             mMetrics.scaledDensity = mMetrics.density * mConfiguration.fontScale;
             String locale = null;
             {
@@ -1038,23 +1074,23 @@ public class Resources {
                     boolean varC89ED4BF7AB2BEFA099B67803FBEFA7B_1163015997 = (mConfiguration.locale.getCountry() != null);
                     {
                         locale += "-" + mConfiguration.locale.getCountry();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             int width;
             int height;
             {
                 width = mMetrics.widthPixels;
                 height = mMetrics.heightPixels;
-            } //End block
+            } 
             {
                 width = mMetrics.heightPixels;
                 height = mMetrics.widthPixels;
-            } //End block
+            } 
             int keyboardHidden = mConfiguration.keyboardHidden;
             {
                 keyboardHidden = Configuration.KEYBOARDHIDDEN_SOFT;
-            } //End block
+            } 
             mAssets.setConfiguration(mConfiguration.mcc, mConfiguration.mnc,
                     locale, mConfiguration.orientation,
                     mConfiguration.touchscreen,
@@ -1068,18 +1104,19 @@ public class Resources {
             clearDrawableCache(mColorDrawableCache, configChanges);
             mColorStateListCache.clear();
             flushLayoutCache();
-        } //End block
+        } 
         {
             {
                 mPluralRule = NativePluralRules.forLocale(config.locale);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(metrics.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.093 -0400", hash_original_method = "6418DB8B9640192CDF0630899692D8E1", hash_generated_method = "5B4966C394813D224EE93194C6B37F95")
     private void clearDrawableCache(
             LongSparseArray<WeakReference<ConstantState>> cache,
@@ -1088,7 +1125,7 @@ public class Resources {
         {
             Log.d(TAG, "Cleaning up drawables config changes: 0x"
                     + Integer.toHexString(configChanges));
-        } //End block
+        } 
         {
             int i = 0;
             {
@@ -1105,28 +1142,29 @@ public class Resources {
                                     + Long.toHexString(mDrawableCache.keyAt(i))
                                     + " / " + cs + " with changes: 0x"
                                     + Integer.toHexString(cs.getChangingConfigurations()));
-                                } //End block
+                                } 
                                 cache.setValueAt(i, null);
-                            } //End block
+                            } 
                             {
                                 Log.d(TAG, "(Keeping #0x"
                                 + Long.toHexString(cache.keyAt(i))
                                 + " / " + cs + " with changes: 0x"
                                 + Integer.toHexString(cs.getChangingConfigurations())
                                 + ")");
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(cache.getTaint());
         addTaint(configChanges);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void updateSystemConfiguration(Configuration config, DisplayMetrics metrics,
             CompatibilityInfo compat) {
         if (mSystem != null) {
@@ -1135,6 +1173,7 @@ public class Resources {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void updateSystemConfiguration(Configuration config, DisplayMetrics metrics) {
         updateSystemConfiguration(config, metrics, null);
     }
@@ -1142,57 +1181,59 @@ public class Resources {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.094 -0400", hash_original_method = "7F0483A9A445222C6F2291914FFD169A", hash_generated_method = "E73716B3467A0F6EAF992767631D5364")
     public DisplayMetrics getDisplayMetrics() {
-        DisplayMetrics varB4EAC82CA7396A68D541C85D26508E83_468165093 = null; //Variable for return #1
+        DisplayMetrics varB4EAC82CA7396A68D541C85D26508E83_468165093 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_468165093 = mMetrics;
-        varB4EAC82CA7396A68D541C85D26508E83_468165093.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_468165093.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_468165093;
-        // ---------- Original Method ----------
-        //if (DEBUG_CONFIG) Slog.v(TAG, "Returning DisplayMetrics: " + mMetrics.widthPixels
-                //+ "x" + mMetrics.heightPixels + " " + mMetrics.density);
-        //return mMetrics;
+        
+        
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.095 -0400", hash_original_method = "11CE3ED49D23B920A1DF6398548CD42B", hash_generated_method = "568C08AACF2061E3E055331DC2070462")
     public Configuration getConfiguration() {
-        Configuration varB4EAC82CA7396A68D541C85D26508E83_857336594 = null; //Variable for return #1
+        Configuration varB4EAC82CA7396A68D541C85D26508E83_857336594 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_857336594 = mConfiguration;
-        varB4EAC82CA7396A68D541C85D26508E83_857336594.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_857336594.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_857336594;
-        // ---------- Original Method ----------
-        //return mConfiguration;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.095 -0400", hash_original_method = "5C840D5EBF5D0071E35FFCF10BAAC7BF", hash_generated_method = "E7196BA4071014B0F77C2608872D5C3C")
     public CompatibilityInfo getCompatibilityInfo() {
-        CompatibilityInfo varB4EAC82CA7396A68D541C85D26508E83_2126251590 = null; //Variable for return #1
+        CompatibilityInfo varB4EAC82CA7396A68D541C85D26508E83_2126251590 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2126251590 = mCompatibilityInfo != null ? mCompatibilityInfo
                 : CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO;
-        varB4EAC82CA7396A68D541C85D26508E83_2126251590.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2126251590.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2126251590;
-        // ---------- Original Method ----------
-        //return mCompatibilityInfo != null ? mCompatibilityInfo
-                //: CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO;
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.096 -0400", hash_original_method = "E88B36858B95AF9A2C7AEA9BE51A197A", hash_generated_method = "19A0C189ADB691DEF289F2CC535C7437")
     public void setCompatibilityInfo(CompatibilityInfo ci) {
         mCompatibilityInfo = ci;
         updateConfiguration(mConfiguration, mMetrics);
-        // ---------- Original Method ----------
-        //mCompatibilityInfo = ci;
-        //updateConfiguration(mConfiguration, mMetrics);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.096 -0400", hash_original_method = "5502AEB950C0AF2288FDD25C0479AC75", hash_generated_method = "86E50FBFD365BDFC7E411555D46E62A5")
     public int getIdentifier(String name, String defType, String defPackage) {
         try 
         {
             int var0C5B23BCF8D28A28F4CE8567896762AC_1926767153 = (Integer.parseInt(name));
-        } //End block
+        } 
         catch (Exception e)
         { }
         int var90A48CBEB3A052E5337E8C53FA9D4855_436794901 = (mAssets.getResourceIdentifier(name, defType, defPackage));
@@ -1201,87 +1242,92 @@ public class Resources {
         addTaint(defPackage.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_222082362 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_222082362;
-        // ---------- Original Method ----------
-        //try {
-            //return Integer.parseInt(name);
-        //} catch (Exception e) {
-        //}
-        //return mAssets.getResourceIdentifier(name, defType, defPackage);
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.097 -0400", hash_original_method = "DE13C1A04BA835F16961D1CBF28A7683", hash_generated_method = "68B35E34053AD0830F4536F1AF45502D")
     public String getResourceName(int resid) throws NotFoundException {
-        String varB4EAC82CA7396A68D541C85D26508E83_311699 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_311699 = null; 
         String str = mAssets.getResourceName(resid);
         varB4EAC82CA7396A68D541C85D26508E83_311699 = str;
         if (DroidSafeAndroidRuntime.control) throw new NotFoundException("Unable to find resource ID #0x"
                 + Integer.toHexString(resid));
         addTaint(resid);
-        varB4EAC82CA7396A68D541C85D26508E83_311699.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_311699.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_311699;
-        // ---------- Original Method ----------
-        //String str = mAssets.getResourceName(resid);
-        //if (str != null) return str;
-        //throw new NotFoundException("Unable to find resource ID #0x"
-                //+ Integer.toHexString(resid));
+        
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.098 -0400", hash_original_method = "B498C391BD57BD64150A95598D85C5A0", hash_generated_method = "4B2FC177993FAFCA643F965138906999")
     public String getResourcePackageName(int resid) throws NotFoundException {
-        String varB4EAC82CA7396A68D541C85D26508E83_122064934 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_122064934 = null; 
         String str = mAssets.getResourcePackageName(resid);
         varB4EAC82CA7396A68D541C85D26508E83_122064934 = str;
         if (DroidSafeAndroidRuntime.control) throw new NotFoundException("Unable to find resource ID #0x"
                 + Integer.toHexString(resid));
         addTaint(resid);
-        varB4EAC82CA7396A68D541C85D26508E83_122064934.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_122064934.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_122064934;
-        // ---------- Original Method ----------
-        //String str = mAssets.getResourcePackageName(resid);
-        //if (str != null) return str;
-        //throw new NotFoundException("Unable to find resource ID #0x"
-                //+ Integer.toHexString(resid));
+        
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.098 -0400", hash_original_method = "29427E6B381809C5EA97546233CF8A82", hash_generated_method = "83BB4F3824FC503A2605EA2177C1067B")
     public String getResourceTypeName(int resid) throws NotFoundException {
-        String varB4EAC82CA7396A68D541C85D26508E83_2112311926 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2112311926 = null; 
         String str = mAssets.getResourceTypeName(resid);
         varB4EAC82CA7396A68D541C85D26508E83_2112311926 = str;
         if (DroidSafeAndroidRuntime.control) throw new NotFoundException("Unable to find resource ID #0x"
                 + Integer.toHexString(resid));
         addTaint(resid);
-        varB4EAC82CA7396A68D541C85D26508E83_2112311926.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2112311926.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2112311926;
-        // ---------- Original Method ----------
-        //String str = mAssets.getResourceTypeName(resid);
-        //if (str != null) return str;
-        //throw new NotFoundException("Unable to find resource ID #0x"
-                //+ Integer.toHexString(resid));
+        
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.099 -0400", hash_original_method = "5ED2928930BE3B5AB199F5456042FBFD", hash_generated_method = "A3C22DB09D5456275351C52C1E919417")
     public String getResourceEntryName(int resid) throws NotFoundException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1640190808 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1640190808 = null; 
         String str = mAssets.getResourceEntryName(resid);
         varB4EAC82CA7396A68D541C85D26508E83_1640190808 = str;
         if (DroidSafeAndroidRuntime.control) throw new NotFoundException("Unable to find resource ID #0x"
                 + Integer.toHexString(resid));
         addTaint(resid);
-        varB4EAC82CA7396A68D541C85D26508E83_1640190808.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1640190808.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1640190808;
-        // ---------- Original Method ----------
-        //String str = mAssets.getResourceEntryName(resid);
-        //if (str != null) return str;
-        //throw new NotFoundException("Unable to find resource ID #0x"
-                //+ Integer.toHexString(resid));
+        
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.100 -0400", hash_original_method = "545D8F55664B33539EC622970F1D1819", hash_generated_method = "646AD3FA1B393B17F7A545C660CCD19D")
     public void parseBundleExtras(XmlResourceParser parser, Bundle outBundle) throws XmlPullParserException, IOException {
         int outerDepth = parser.getDepth();
@@ -1296,34 +1342,35 @@ public class Resources {
                     {
                         parseBundleExtra("extra", parser, outBundle);
                         XmlUtils.skipCurrentTag(parser);
-                    } //End block
+                    } 
                     {
                         XmlUtils.skipCurrentTag(parser);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(parser.getTaint());
         addTaint(outBundle.getTaint());
-        // ---------- Original Method ----------
-        //int outerDepth = parser.getDepth();
-        //int type;
-        //while ((type=parser.next()) != XmlPullParser.END_DOCUMENT
-               //&& (type != XmlPullParser.END_TAG || parser.getDepth() > outerDepth)) {
-            //if (type == XmlPullParser.END_TAG || type == XmlPullParser.TEXT) {
-                //continue;
-            //}
-            //String nodeName = parser.getName();
-            //if (nodeName.equals("extra")) {
-                //parseBundleExtra("extra", parser, outBundle);
-                //XmlUtils.skipCurrentTag(parser);
-            //} else {
-                //XmlUtils.skipCurrentTag(parser);
-            //}
-        //}
+        
+        
+        
+        
+               
+            
+                
+            
+            
+            
+                
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.102 -0400", hash_original_method = "A47660356021C86DB26B06C4FCD54400", hash_generated_method = "225EBC844416853C6E445E461A23603F")
     public void parseBundleExtra(String tagName, AttributeSet attrs,
             Bundle outBundle) throws XmlPullParserException {
@@ -1336,53 +1383,53 @@ public class Resources {
             if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("<" + tagName
                     + "> requires an android:name attribute at "
                     + attrs.getPositionDescription());
-        } //End block
+        } 
         TypedValue v = sa.peekValue(
                 com.android.internal.R.styleable.Extra_value);
         {
             {
                 CharSequence cs = v.coerceToString();
                 outBundle.putCharSequence(name, cs);
-            } //End block
+            } 
             {
                 outBundle.putBoolean(name, v.data != 0);
-            } //End block
+            } 
             {
                 outBundle.putInt(name, v.data);
-            } //End block
+            } 
             {
                 outBundle.putFloat(name, v.getFloat());
-            } //End block
+            } 
             {
                 sa.recycle();
                 if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("<" + tagName
                         + "> only supports string, integer, float, color, and boolean at "
                         + attrs.getPositionDescription());
-            } //End block
-        } //End block
+            } 
+        } 
         {
             sa.recycle();
             if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("<" + tagName
                     + "> requires an android:value or android:resource attribute at "
                     + attrs.getPositionDescription());
-        } //End block
+        } 
         sa.recycle();
         addTaint(tagName.getTaint());
         addTaint(attrs.getTaint());
         addTaint(outBundle.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.103 -0400", hash_original_method = "B655DEE21C3816C25C0AC2AC9EDD1950", hash_generated_method = "CBCA5E6265099326D6CB06153FBBFBF0")
     public final AssetManager getAssets() {
-        AssetManager varB4EAC82CA7396A68D541C85D26508E83_1039730545 = null; //Variable for return #1
+        AssetManager varB4EAC82CA7396A68D541C85D26508E83_1039730545 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1039730545 = mAssets;
-        varB4EAC82CA7396A68D541C85D26508E83_1039730545.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1039730545.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1039730545;
-        // ---------- Original Method ----------
-        //return mAssets;
+        
+        
     }
 
     
@@ -1397,23 +1444,23 @@ public class Resources {
                     XmlBlock oldBlock = mCachedXmlBlocks[i];
                     {
                         oldBlock.close();
-                    } //End block
+                    } 
                     mCachedXmlBlocks[i] = null;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mCachedXmlBlockIds) {
-            //final int num = mCachedXmlBlockIds.length;
-            //for (int i=0; i<num; i++) {
-                //mCachedXmlBlockIds[i] = -0;
-                //XmlBlock oldBlock = mCachedXmlBlocks[i];
-                //if (oldBlock != null) {
-                    //oldBlock.close();
-                //}
-                //mCachedXmlBlocks[i] = null;
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                
+                    
+                
+                
+            
+        
     }
 
     
@@ -1422,18 +1469,18 @@ public class Resources {
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Resources already preloaded");
-            } //End block
+            } 
             mPreloaded = true;
             mPreloading = true;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mSync) {
-            //if (mPreloaded) {
-                //throw new IllegalStateException("Resources already preloaded");
-            //}
-            //mPreloaded = true;
-            //mPreloading = true;
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -1442,49 +1489,49 @@ public class Resources {
         {
             mPreloading = false;
             flushLayoutCache();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPreloading) {
-            //mPreloading = false;
-            //flushLayoutCache();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.107 -0400", hash_original_method = "2F02B67F3FD30AAC12B7734E2B09423F", hash_generated_method = "5ACA01D29425DC907D6C4862C4BBBF40")
      Drawable loadDrawable(TypedValue value, int id) throws NotFoundException {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_648926752 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1641759759 = null; //Variable for return #2
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_648926752 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1641759759 = null; 
         {
             {
                 final String name = getResourceName(id);
                 android.util.Log.d("PreloadDrawable", name);
-            } //End block
-        } //End block
+            } 
+        } 
         final long key = (((long) value.assetCookie) << 32) | value.data;
         boolean isColorDrawable = false;
         {
             isColorDrawable = true;
-        } //End block
-        Drawable dr = getCachedDrawable(isColorDrawable ? mColorDrawableCache : mDrawableCache, key);//DSFIXME:  CODE0008: Nested ternary operator in expression
+        } 
+        Drawable dr = getCachedDrawable(isColorDrawable ? mColorDrawableCache : mDrawableCache, key);
         {
             varB4EAC82CA7396A68D541C85D26508E83_648926752 = dr;
-        } //End block
+        } 
         Drawable.ConstantState cs;
         cs = sPreloadedColorDrawables.get(key);
         cs = sPreloadedDrawables.get(key);
         {
             dr = cs.newDrawable(this);
-        } //End block
+        } 
         {
             {
                 dr = new ColorDrawable(value.data);
-            } //End block
+            } 
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NotFoundException(
                             "Resource is not a Drawable (color or path): " + value);
-                } //End block
+                } 
                 String file = value.string.toString();
                 {
                     {
@@ -1492,8 +1539,8 @@ public class Resources {
                         android.util.Log.d(TAG, "Loading framework drawable #"
                                 + Integer.toHexString(id) + ": " + name
                                 + " at " + file);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     boolean varE0987C6B5CC3DA09C3EAA5CE0FE23DAC_1212815519 = (file.endsWith(".xml"));
                     {
@@ -1503,7 +1550,7 @@ public class Resources {
                                 file, id, value.assetCookie, "drawable");
                             dr = Drawable.createFromXml(this, rp);
                             rp.close();
-                        } //End block
+                        } 
                         catch (Exception e)
                         {
                             NotFoundException rnf = new NotFoundException(
@@ -1511,8 +1558,8 @@ public class Resources {
                             + Integer.toHexString(id));
                             rnf.initCause(e);
                             if (DroidSafeAndroidRuntime.control) throw rnf;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         try 
                         {
@@ -1521,7 +1568,7 @@ public class Resources {
                             dr = Drawable.createFromResourceStream(this, value, is,
                                 file, null);
                             is.close();
-                        } //End block
+                        } 
                         catch (Exception e)
                         {
                             NotFoundException rnf = new NotFoundException(
@@ -1529,11 +1576,11 @@ public class Resources {
                             + Integer.toHexString(id));
                             rnf.initCause(e);
                             if (DroidSafeAndroidRuntime.control) throw rnf;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             dr.setChangingConfigurations(value.changingConfigurations);
             cs = dr.getConstantState();
@@ -1541,129 +1588,130 @@ public class Resources {
                 {
                     {
                         sPreloadedColorDrawables.put(key, cs);
-                    } //End block
+                    } 
                     {
                         sPreloadedDrawables.put(key, cs);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     {
                         {
                             mColorDrawableCache.put(key, new WeakReference<Drawable.ConstantState>(cs));
-                        } //End block
+                        } 
                         {
                             mDrawableCache.put(key, new WeakReference<Drawable.ConstantState>(cs));
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1641759759 = dr;
         addTaint(value.getTaint());
         addTaint(id);
-        Drawable varA7E53CE21691AB073D9660D615818899_609424493; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_609424493; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_609424493 = varB4EAC82CA7396A68D541C85D26508E83_648926752;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_609424493 = varB4EAC82CA7396A68D541C85D26508E83_1641759759;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_609424493.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_609424493.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_609424493;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.108 -0400", hash_original_method = "134BDC10D8442526D2E686E53BA1531C", hash_generated_method = "28F60C9D4C1C5540AB206E9AACE1BF89")
     private Drawable getCachedDrawable(
             LongSparseArray<WeakReference<ConstantState>> drawableCache,
             long key) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1356440465 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_107505203 = null; //Variable for return #2
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1356440465 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_107505203 = null; 
         {
             WeakReference<Drawable.ConstantState> wr = drawableCache.get(key);
             {
                 Drawable.ConstantState entry = wr.get();
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1356440465 = entry.newDrawable(this);
-                } //End block
+                } 
                 {
                     drawableCache.delete(key);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_107505203 = null;
         addTaint(drawableCache.getTaint());
         addTaint(key);
-        Drawable varA7E53CE21691AB073D9660D615818899_1613976048; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_1613976048; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1613976048 = varB4EAC82CA7396A68D541C85D26508E83_1356440465;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1613976048 = varB4EAC82CA7396A68D541C85D26508E83_107505203;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1613976048.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1613976048.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1613976048;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //WeakReference<Drawable.ConstantState> wr = drawableCache.get(key);
-            //if (wr != null) {   
-                //Drawable.ConstantState entry = wr.get();
-                //if (entry != null) {
-                    //return entry.newDrawable(this);
-                //}
-                //else {  
-                    //drawableCache.delete(key);
-                //}
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+                
+                    
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.110 -0400", hash_original_method = "035DC5FC794E074E6FAA3F20B34AB858", hash_generated_method = "875551A2B1D9D536DB9DBD7D150B75CE")
      ColorStateList loadColorStateList(TypedValue value, int id) throws NotFoundException {
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_1041063178 = null; //Variable for return #1
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_63105012 = null; //Variable for return #2
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_573922164 = null; //Variable for return #3
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_998401492 = null; //Variable for return #4
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_1722257042 = null; //Variable for return #5
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_1041063178 = null; 
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_63105012 = null; 
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_573922164 = null; 
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_998401492 = null; 
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_1722257042 = null; 
         {
             {
                 final String name = getResourceName(id);
                 android.util.Log.d("PreloadColorStateList", name);
-            } //End block
-        } //End block
+            } 
+        } 
         final int key = (value.assetCookie << 24) | value.data;
         ColorStateList csl;
         {
             csl = mPreloadedColorStateLists.get(key);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1041063178 = csl;
-            } //End block
+            } 
             csl = ColorStateList.valueOf(value.data);
             {
                 mPreloadedColorStateLists.put(key, csl);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_63105012 = csl;
-        } //End block
+        } 
         csl = getCachedColorStateList(key);
         {
             varB4EAC82CA7396A68D541C85D26508E83_573922164 = csl;
-        } //End block
+        } 
         csl = mPreloadedColorStateLists.get(key);
         {
             varB4EAC82CA7396A68D541C85D26508E83_998401492 = csl;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NotFoundException(
                     "Resource is not a ColorStateList (color or path): " + value);
-        } //End block
+        } 
         String file = value.string.toString();
         {
             boolean varD5B89D7D99AA05BDEB10746CCC3A990F_362453652 = (file.endsWith(".xml"));
@@ -1674,7 +1722,7 @@ public class Resources {
                         file, id, value.assetCookie, "colorstatelist");
                     csl = ColorStateList.createFromXml(this, rp);
                     rp.close();
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     NotFoundException rnf = new NotFoundException(
@@ -1682,137 +1730,138 @@ public class Resources {
                     + Integer.toHexString(id));
                     rnf.initCause(e);
                     if (DroidSafeAndroidRuntime.control) throw rnf;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NotFoundException(
                     "File " + file + " from drawable resource ID #0x"
                     + Integer.toHexString(id) + ": .xml extension required");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 mPreloadedColorStateLists.put(key, csl);
-            } //End block
+            } 
             {
                 {
                     mColorStateListCache.put(
                         key, new WeakReference<ColorStateList>(csl));
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1722257042 = csl;
         addTaint(value.getTaint());
         addTaint(id);
-        ColorStateList varA7E53CE21691AB073D9660D615818899_1839920524; //Final return value
+        ColorStateList varA7E53CE21691AB073D9660D615818899_1839920524; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1839920524 = varB4EAC82CA7396A68D541C85D26508E83_1041063178;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1839920524 = varB4EAC82CA7396A68D541C85D26508E83_63105012;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1839920524 = varB4EAC82CA7396A68D541C85D26508E83_573922164;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1839920524 = varB4EAC82CA7396A68D541C85D26508E83_998401492;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1839920524 = varB4EAC82CA7396A68D541C85D26508E83_1722257042;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1839920524.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1839920524.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1839920524;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.113 -0400", hash_original_method = "B7AA5737FC7D8937CDF4D069CBD3DB14", hash_generated_method = "1F73CFEAE2032A4B3A2071331DF1758C")
     private ColorStateList getCachedColorStateList(int key) {
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_1539318609 = null; //Variable for return #1
-        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_2104196231 = null; //Variable for return #2
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_1539318609 = null; 
+        ColorStateList varB4EAC82CA7396A68D541C85D26508E83_2104196231 = null; 
         {
             WeakReference<ColorStateList> wr = mColorStateListCache.get(key);
             {
                 ColorStateList entry = wr.get();
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1539318609 = entry;
-                } //End block
+                } 
                 {
                     mColorStateListCache.delete(key);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2104196231 = null;
         addTaint(key);
-        ColorStateList varA7E53CE21691AB073D9660D615818899_885953085; //Final return value
+        ColorStateList varA7E53CE21691AB073D9660D615818899_885953085; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_885953085 = varB4EAC82CA7396A68D541C85D26508E83_1539318609;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_885953085 = varB4EAC82CA7396A68D541C85D26508E83_2104196231;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_885953085.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_885953085.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_885953085;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //WeakReference<ColorStateList> wr = mColorStateListCache.get(key);
-            //if (wr != null) {   
-                //ColorStateList entry = wr.get();
-                //if (entry != null) {
-                    //return entry;
-                //}
-                //else {  
-                    //mColorStateListCache.delete(key);
-                //}
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+                
+                    
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.114 -0400", hash_original_method = "4C55C30B9C50C80710A05CFD192F83DB", hash_generated_method = "0E519AD26FA65FCDB8C237D0B92241CB")
      XmlResourceParser loadXmlResourceParser(int id, String type) throws NotFoundException {
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_267099759 = null; //Variable for return #1
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_267099759 = null; 
         {
             TypedValue value = mTmpValue;
             getValue(id, value, true);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_267099759 = loadXmlResourceParser(value.string.toString(), id,
                         value.assetCookie, type);
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new NotFoundException(
                     "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                     + Integer.toHexString(value.type) + " is not valid");
-        } //End block
+        } 
         addTaint(id);
         addTaint(type.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_267099759.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_267099759.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_267099759;
-        // ---------- Original Method ----------
-        //synchronized (mTmpValue) {
-            //TypedValue value = mTmpValue;
-            //getValue(id, value, true);
-            //if (value.type == TypedValue.TYPE_STRING) {
-                //return loadXmlResourceParser(value.string.toString(), id,
-                        //value.assetCookie, type);
-            //}
-            //throw new NotFoundException(
-                    //"Resource ID #0x" + Integer.toHexString(id) + " type #0x"
-                    //+ Integer.toHexString(value.type) + " is not valid");
-        //}
+        
+        
+            
+            
+            
+                
+                        
+            
+            
+                    
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.116 -0400", hash_original_method = "B570E59A2D87535635D1C6300E407B49", hash_generated_method = "238A7DBB4E5D955EC0489785B7FF6287")
      XmlResourceParser loadXmlResourceParser(String file, int id,
             int assetCookie, String type) throws NotFoundException {
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_176852266 = null; //Variable for return #1
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_675437028 = null; //Variable for return #2
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_176852266 = null; 
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_675437028 = null; 
         {
             try 
             {
@@ -1823,9 +1872,9 @@ public class Resources {
                         {
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_176852266 = mCachedXmlBlocks[i].newParser();
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
                     XmlBlock block = mAssets.openXmlBlockAsset(
                             assetCookie, file);
                     {
@@ -1835,13 +1884,13 @@ public class Resources {
                         XmlBlock oldBlock = mCachedXmlBlocks[pos];
                         {
                             oldBlock.close();
-                        } //End block
+                        } 
                         mCachedXmlBlockIds[pos] = id;
                         mCachedXmlBlocks[pos] = block;
                         varB4EAC82CA7396A68D541C85D26508E83_675437028 = block.newParser();
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             catch (Exception e)
             {
                 NotFoundException rnf = new NotFoundException(
@@ -1849,35 +1898,36 @@ public class Resources {
                         + Integer.toHexString(id));
                 rnf.initCause(e);
                 if (DroidSafeAndroidRuntime.control) throw rnf;
-            } //End block
-        } //End block
+            } 
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NotFoundException(
                 "File " + file + " from xml type " + type + " resource ID #0x"
                 + Integer.toHexString(id));
         addTaint(file.getTaint());
         addTaint(assetCookie);
         addTaint(type.getTaint());
-        XmlResourceParser varA7E53CE21691AB073D9660D615818899_251454839; //Final return value
+        XmlResourceParser varA7E53CE21691AB073D9660D615818899_251454839; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_251454839 = varB4EAC82CA7396A68D541C85D26508E83_176852266;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_251454839 = varB4EAC82CA7396A68D541C85D26508E83_675437028;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_251454839.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_251454839.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_251454839;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.117 -0400", hash_original_method = "EFFE2C2D7E798E7ABE4C38D3A3D2ED16", hash_generated_method = "B1105EC91AA12C75BA6A97DBB3058080")
     private TypedArray getCachedStyledAttributes(int len) {
-        TypedArray varB4EAC82CA7396A68D541C85D26508E83_575213919 = null; //Variable for return #1
-        TypedArray varB4EAC82CA7396A68D541C85D26508E83_1950439986 = null; //Variable for return #2
-        TypedArray varB4EAC82CA7396A68D541C85D26508E83_1392786371 = null; //Variable for return #3
+        TypedArray varB4EAC82CA7396A68D541C85D26508E83_575213919 = null; 
+        TypedArray varB4EAC82CA7396A68D541C85D26508E83_1950439986 = null; 
+        TypedArray varB4EAC82CA7396A68D541C85D26508E83_1392786371 = null; 
         {
             TypedArray attrs = mCachedStyledAttributes;
             {
@@ -1885,42 +1935,42 @@ public class Resources {
                 {
                     mLastRetrievedAttrs = new RuntimeException("here");
                     mLastRetrievedAttrs.fillInStackTrace();
-                } //End block
+                } 
                 attrs.mLength = len;
                 int fullLen = len * AssetManager.STYLE_NUM_ENTRIES;
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_575213919 = attrs;
-                } //End block
+                } 
                 attrs.mData = new int[fullLen];
                 attrs.mIndices = new int[1+len];
                 varB4EAC82CA7396A68D541C85D26508E83_1950439986 = attrs;
-            } //End block
+            } 
             {
                 RuntimeException here = new RuntimeException("here");
                 here.fillInStackTrace();
                 mLastRetrievedAttrs = here;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1392786371 = new TypedArray(this,
                     new int[len*AssetManager.STYLE_NUM_ENTRIES],
                     new int[1+len], len);
-        } //End block
+        } 
         addTaint(len);
-        TypedArray varA7E53CE21691AB073D9660D615818899_1507618177; //Final return value
+        TypedArray varA7E53CE21691AB073D9660D615818899_1507618177; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1507618177 = varB4EAC82CA7396A68D541C85D26508E83_575213919;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1507618177 = varB4EAC82CA7396A68D541C85D26508E83_1950439986;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1507618177 = varB4EAC82CA7396A68D541C85D26508E83_1392786371;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1507618177.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1507618177.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1507618177;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1928,7 +1978,7 @@ public class Resources {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.118 -0400", hash_original_method = "16646BE2B605A836CC81C1207D23548C", hash_generated_method = "57BD6F9AE62C00D5DA005539BF3270C7")
         public  NotFoundException() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1936,7 +1986,7 @@ public class Resources {
         public  NotFoundException(String name) {
             super(name);
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1956,9 +2006,9 @@ public class Resources {
           Theme() {
             mAssets = Resources.this.mAssets;
             mTheme = mAssets.createTheme();
-            // ---------- Original Method ----------
-            //mAssets = Resources.this.mAssets;
-            //mTheme = mAssets.createTheme();
+            
+            
+            
         }
 
         
@@ -1967,8 +2017,8 @@ public class Resources {
             AssetManager.applyThemeStyle(mTheme, resid, force);
             addTaint(resid);
             addTaint(force);
-            // ---------- Original Method ----------
-            //AssetManager.applyThemeStyle(mTheme, resid, force);
+            
+            
         }
 
         
@@ -1976,14 +2026,14 @@ public class Resources {
         public void setTo(Theme other) {
             AssetManager.copyTheme(mTheme, other.mTheme);
             addTaint(other.getTaint());
-            // ---------- Original Method ----------
-            //AssetManager.copyTheme(mTheme, other.mTheme);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.122 -0400", hash_original_method = "810F63867177324D3683F3630D8FEF5A", hash_generated_method = "64A4D3477539F014064F4793D1A6B0A7")
         public TypedArray obtainStyledAttributes(int[] attrs) {
-            TypedArray varB4EAC82CA7396A68D541C85D26508E83_555565335 = null; //Variable for return #1
+            TypedArray varB4EAC82CA7396A68D541C85D26508E83_555565335 = null; 
             int len = attrs.length;
             TypedArray array = getCachedStyledAttributes(len);
             array.mRsrcs = attrs;
@@ -1991,21 +2041,21 @@ public class Resources {
                     array.mData, array.mIndices);
             varB4EAC82CA7396A68D541C85D26508E83_555565335 = array;
             addTaint(attrs[0]);
-            varB4EAC82CA7396A68D541C85D26508E83_555565335.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_555565335.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_555565335;
-            // ---------- Original Method ----------
-            //int len = attrs.length;
-            //TypedArray array = getCachedStyledAttributes(len);
-            //array.mRsrcs = attrs;
-            //AssetManager.applyStyle(mTheme, 0, 0, 0, attrs,
-                    //array.mData, array.mIndices);
-            //return array;
+            
+            
+            
+            
+            
+                    
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.124 -0400", hash_original_method = "09973A74CD9EB62806AFBCC15CD74823", hash_generated_method = "6C4E11F818CDD718A2814CEE0038C182")
         public TypedArray obtainStyledAttributes(int resid, int[] attrs) throws NotFoundException {
-            TypedArray varB4EAC82CA7396A68D541C85D26508E83_1240590572 = null; //Variable for return #1
+            TypedArray varB4EAC82CA7396A68D541C85D26508E83_1240590572 = null; 
             int len = attrs.length;
             TypedArray array = getCachedStyledAttributes(len);
             array.mRsrcs = attrs;
@@ -2023,8 +2073,8 @@ public class Resources {
                     i=0;
                     {
                         s = s + " 0x" + Integer.toHexString(attrs[i]);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 System.out.println(s);
                 s = "  Found:";
                 TypedValue value = new TypedValue();
@@ -2038,24 +2088,24 @@ public class Resources {
                         value.resourceId = data[d+AssetManager.STYLE_RESOURCE_ID];
                         s = s + " 0x" + Integer.toHexString(attrs[i])
                         + "=" + value;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 System.out.println(s);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1240590572 = array;
             addTaint(resid);
             addTaint(attrs[0]);
-            varB4EAC82CA7396A68D541C85D26508E83_1240590572.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1240590572.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1240590572;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.125 -0400", hash_original_method = "1F1D15615A0F17B362A611476D650DBA", hash_generated_method = "FE968EA178FE104A2476943E38E75F86")
         public TypedArray obtainStyledAttributes(AttributeSet set,
                 int[] attrs, int defStyleAttr, int defStyleRes) {
-            TypedArray varB4EAC82CA7396A68D541C85D26508E83_25192964 = null; //Variable for return #1
+            TypedArray varB4EAC82CA7396A68D541C85D26508E83_25192964 = null; 
             int len = attrs.length;
             TypedArray array = getCachedStyledAttributes(len);
             XmlBlock.Parser parser = (XmlBlock.Parser)set;
@@ -2078,10 +2128,10 @@ public class Resources {
                         int id = set.getAttributeNameResource(i);
                         {
                             s = s + "(0x" + Integer.toHexString(id) + ")";
-                        } //End block
+                        } 
                         s = s + "=" + set.getAttributeValue(i);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 System.out.println(s);
                 s = "  Found:";
                 TypedValue value = new TypedValue();
@@ -2095,19 +2145,19 @@ public class Resources {
                         value.resourceId = data[d+AssetManager.STYLE_RESOURCE_ID];
                         s = s + " 0x" + Integer.toHexString(attrs[i])
                         + "=" + value;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 System.out.println(s);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_25192964 = array;
             addTaint(set.getTaint());
             addTaint(attrs[0]);
             addTaint(defStyleAttr);
             addTaint(defStyleRes);
-            varB4EAC82CA7396A68D541C85D26508E83_25192964.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_25192964.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_25192964;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2120,21 +2170,21 @@ public class Resources {
                     "resolveAttribute #" + Integer.toHexString(resid)
                     + " got=" + got + ", type=0x" + Integer.toHexString(outValue.type)
                     + ", data=0x" + Integer.toHexString(outValue.data));
-            } //End block
+            } 
             addTaint(resid);
             addTaint(outValue.getTaint());
             addTaint(resolveRefs);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_806936252 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_806936252;
-            // ---------- Original Method ----------
-            //boolean got = mAssets.getThemeValue(mTheme, resid, outValue, resolveRefs);
-            //if (false) {
-                //System.out.println(
-                    //"resolveAttribute #" + Integer.toHexString(resid)
-                    //+ " got=" + got + ", type=0x" + Integer.toHexString(outValue.type)
-                    //+ ", data=0x" + Integer.toHexString(outValue.data));
-            //}
-            //return got;
+            
+            
+            
+                
+                    
+                    
+                    
+            
+            
         }
 
         
@@ -2144,8 +2194,8 @@ public class Resources {
             addTaint(priority);
             addTaint(tag.getTaint());
             addTaint(prefix.getTaint());
-            // ---------- Original Method ----------
-            //AssetManager.dumpTheme(mTheme, priority, tag, prefix);
+            
+            
         }
 
         
@@ -2153,9 +2203,9 @@ public class Resources {
         protected void finalize() throws Throwable {
             super.finalize();
             mAssets.releaseTheme(mTheme);
-            // ---------- Original Method ----------
-            //super.finalize();
-            //mAssets.releaseTheme(mTheme);
+            
+            
+            
         }
 
         
@@ -2211,8 +2261,8 @@ public class Resources {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
             addTaint(k);
             addTaint(o.getTaint());
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -2222,8 +2272,8 @@ public class Resources {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
             addTaint(k);
             addTaint(o.getTaint());
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         

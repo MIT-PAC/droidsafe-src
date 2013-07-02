@@ -1,11 +1,11 @@
 package org.apache.harmony.luni.lang.reflect;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.GenericDeclaration;
@@ -61,8 +61,8 @@ public class GenericSignatureParser {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.102 -0400", hash_original_method = "B4AF29B80F8E14619B64C65F02963718", hash_generated_method = "C049BAD034A575B3E9230CA1104DE603")
     public  GenericSignatureParser(ClassLoader loader) {
         this.loader = loader;
-        // ---------- Original Method ----------
-        //this.loader = loader;
+        
+        
     }
 
     
@@ -73,71 +73,73 @@ public class GenericSignatureParser {
             this.buffer = input.toCharArray();
             this.eof = false;
             scanSymbol();
-        } //End block
+        } 
         {
             this.eof = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (input != null) {
-            //this.genericDecl = genericDecl;
-            //this.buffer = input.toCharArray();
-            //this.eof = false;
-            //scanSymbol();
-        //}
-        //else {
-            //this.eof = true;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.103 -0400", hash_original_method = "408B9941E0DDFF19B1C3AECDF838B6FF", hash_generated_method = "513746912D109E621004D872130D6FF5")
     public void parseForClass(GenericDeclaration genericDecl,
             String signature) {
         setInput(genericDecl, signature);
         {
             parseClassSignature();
-        } //End block
+        } 
         {
             {
                 Class c = (Class) genericDecl;
                 this.formalTypeParameters = ListOfVariables.EMPTY;
                 this.superclassType = c.getSuperclass();
                 this.interfaceTypes = new ListOfTypes(c.getInterfaces());
-            } //End block
+            } 
             {
                 this.formalTypeParameters = ListOfVariables.EMPTY;
                 this.superclassType = Object.class;
                 this.interfaceTypes = ListOfTypes.EMPTY;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(genericDecl.getTaint());
         addTaint(signature.getTaint());
-        // ---------- Original Method ----------
-        //setInput(genericDecl, signature);
-        //if (!eof) {
-            //parseClassSignature();
-        //} else {
-            //if(genericDecl instanceof Class) {
-                //Class c = (Class) genericDecl;
-                //this.formalTypeParameters = ListOfVariables.EMPTY;
-                //this.superclassType = c.getSuperclass();
-                //this.interfaceTypes = new ListOfTypes(c.getInterfaces());
-            //} else {
-                //this.formalTypeParameters = ListOfVariables.EMPTY;
-                //this.superclassType = Object.class;
-                //this.interfaceTypes = ListOfTypes.EMPTY;
-            //}
-        //}
+        
+        
+        
+            
+        
+            
+                
+                
+                
+                
+            
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.104 -0400", hash_original_method = "15DFE7F1F24F7739B7BEC1E53A5655D9", hash_generated_method = "8AE146EB400AF0858303234FB36B7A75")
     public void parseForMethod(GenericDeclaration genericDecl,
             String signature, Class<?>[] rawExceptionTypes) {
         setInput(genericDecl, signature);
         {
             parseMethodTypeSignature(rawExceptionTypes);
-        } //End block
+        } 
         {
             {
                 Method m = (Method) genericDecl;
@@ -145,94 +147,96 @@ public class GenericSignatureParser {
                 this.parameterTypes = new ListOfTypes(m.getParameterTypes());
                 this.exceptionTypes = new ListOfTypes(m.getExceptionTypes());
                 this.returnType = m.getReturnType();
-            } //End block
+            } 
             {
                 this.formalTypeParameters = ListOfVariables.EMPTY;
                 this.parameterTypes = ListOfTypes.EMPTY;
                 this.exceptionTypes = ListOfTypes.EMPTY;
                 this.returnType = void.class;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(genericDecl.getTaint());
         addTaint(signature.getTaint());
         addTaint(rawExceptionTypes[0].getTaint());
-        // ---------- Original Method ----------
-        //setInput(genericDecl, signature);
-        //if (!eof) {
-            //parseMethodTypeSignature(rawExceptionTypes);
-        //} else {
-            //if(genericDecl instanceof Method) {
-                //Method m = (Method) genericDecl;
-                //this.formalTypeParameters = ListOfVariables.EMPTY;
-                //this.parameterTypes = new ListOfTypes(m.getParameterTypes());
-                //this.exceptionTypes = new ListOfTypes(m.getExceptionTypes());
-                //this.returnType = m.getReturnType();
-            //} else {
-                //this.formalTypeParameters = ListOfVariables.EMPTY;
-                //this.parameterTypes = ListOfTypes.EMPTY;
-                //this.exceptionTypes = ListOfTypes.EMPTY;
-                //this.returnType = void.class;
-            //}
-        //}
+        
+        
+        
+            
+        
+            
+                
+                
+                
+                
+                
+            
+                
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.105 -0400", hash_original_method = "0C9CA8BB038974E4A40BF19F7EB72426", hash_generated_method = "EE5B3E63DBB24E1E656AA8E0C6772B32")
     public void parseForConstructor(GenericDeclaration genericDecl,
             String signature, Class<?>[] rawExceptionTypes) {
         setInput(genericDecl, signature);
         {
             parseMethodTypeSignature(rawExceptionTypes);
-        } //End block
+        } 
         {
             {
                 Constructor c = (Constructor) genericDecl;
                 this.formalTypeParameters = ListOfVariables.EMPTY;
                 this.parameterTypes = new ListOfTypes(c.getParameterTypes());
                 this.exceptionTypes = new ListOfTypes(c.getExceptionTypes());
-            } //End block
+            } 
             {
                 this.formalTypeParameters = ListOfVariables.EMPTY;
                 this.parameterTypes = ListOfTypes.EMPTY;
                 this.exceptionTypes = ListOfTypes.EMPTY;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(genericDecl.getTaint());
         addTaint(signature.getTaint());
         addTaint(rawExceptionTypes[0].getTaint());
-        // ---------- Original Method ----------
-        //setInput(genericDecl, signature);
-        //if (!eof) {
-            //parseMethodTypeSignature(rawExceptionTypes);
-        //} else {
-            //if(genericDecl instanceof Constructor) {
-                //Constructor c = (Constructor) genericDecl;
-                //this.formalTypeParameters = ListOfVariables.EMPTY;
-                //this.parameterTypes = new ListOfTypes(c.getParameterTypes());
-                //this.exceptionTypes = new ListOfTypes(c.getExceptionTypes());
-            //} else {
-                //this.formalTypeParameters = ListOfVariables.EMPTY;
-                //this.parameterTypes = ListOfTypes.EMPTY;
-                //this.exceptionTypes = ListOfTypes.EMPTY;
-            //}
-        //}
+        
+        
+        
+            
+        
+            
+                
+                
+                
+                
+            
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.105 -0400", hash_original_method = "F697D7E02D0C8DEEF4B0854E9491CC15", hash_generated_method = "68F3BE0EC37F1E3A9FAF7D7E3911B166")
     public void parseForField(GenericDeclaration genericDecl,
             String signature) {
         setInput(genericDecl, signature);
         {
             this.fieldType = parseFieldTypeSignature();
-        } //End block
+        } 
         addTaint(genericDecl.getTaint());
         addTaint(signature.getTaint());
-        // ---------- Original Method ----------
-        //setInput(genericDecl, signature);
-        //if (!eof) {
-            //this.fieldType = parseFieldTypeSignature();
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -243,14 +247,14 @@ public class GenericSignatureParser {
         interfaceTypes = new ListOfTypes(16);
         {
             interfaceTypes.add(parseClassTypeSignature());
-        } //End block
-        // ---------- Original Method ----------
-        //parseOptFormalTypeParameters();
-        //this.superclassType = parseClassTypeSignature();
-        //interfaceTypes = new ListOfTypes(16);
-        //while (symbol > 0) {
-            //interfaceTypes.add(parseClassTypeSignature());
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -262,109 +266,109 @@ public class GenericSignatureParser {
             typeParams.add(parseFormalTypeParameter());
             {
                 typeParams.add(parseFormalTypeParameter());
-            } //End block
+            } 
             expect('>');
-        } //End block
+        } 
         this.formalTypeParameters = typeParams.getArray();
-        // ---------- Original Method ----------
-        //ListOfVariables typeParams = new ListOfVariables();
-        //if (symbol == '<') {
-            //scanSymbol();
-            //typeParams.add(parseFormalTypeParameter());
-            //while ((symbol != '>') && (symbol > 0)) {
-                //typeParams.add(parseFormalTypeParameter());
-            //}
-            //expect('>');
-        //}
-        //this.formalTypeParameters = typeParams.getArray();
+        
+        
+        
+            
+            
+            
+                
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.108 -0400", hash_original_method = "8E4B54F231B830B261D22AAC458F74D2", hash_generated_method = "1797E3627B5D2BCD7F8532AEFC79D6CB")
      ImplForVariable<GenericDeclaration> parseFormalTypeParameter() {
-        ImplForVariable<GenericDeclaration> varB4EAC82CA7396A68D541C85D26508E83_1039332937 = null; //Variable for return #1
+        ImplForVariable<GenericDeclaration> varB4EAC82CA7396A68D541C85D26508E83_1039332937 = null; 
         scanIdentifier();
         String name = identifier.intern();
         ListOfTypes bounds = new ListOfTypes(8);
         expect(':');
         {
             bounds.add(parseFieldTypeSignature());
-        } //End block
+        } 
         {
             scanSymbol();
             bounds.add(parseFieldTypeSignature());
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1039332937 = new ImplForVariable<GenericDeclaration>(genericDecl, name, bounds);
-        varB4EAC82CA7396A68D541C85D26508E83_1039332937.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1039332937.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1039332937;
-        // ---------- Original Method ----------
-        //scanIdentifier();
-        //String name = identifier.intern();
-        //ListOfTypes bounds = new ListOfTypes(8);
-        //expect(':');
-        //if (symbol == 'L' || symbol == '[' || symbol == 'T') {
-            //bounds.add(parseFieldTypeSignature());
-        //}
-        //while (symbol == ':') {
-            //scanSymbol();
-            //bounds.add(parseFieldTypeSignature());
-        //}
-        //return new ImplForVariable<GenericDeclaration>(genericDecl, name, bounds);
+        
+        
+        
+        
+        
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.109 -0400", hash_original_method = "39858CB077F5F270CB13BCD8F5E588C4", hash_generated_method = "2C9288BA5E5CE7B9DA009C3C2C3CD817")
      Type parseFieldTypeSignature() {
-        Type varB4EAC82CA7396A68D541C85D26508E83_1259062002 = null; //Variable for return #1
-        Type varB4EAC82CA7396A68D541C85D26508E83_1585896633 = null; //Variable for return #2
-        Type varB4EAC82CA7396A68D541C85D26508E83_1805125152 = null; //Variable for return #3
-        //Begin case 'L' 
+        Type varB4EAC82CA7396A68D541C85D26508E83_1259062002 = null; 
+        Type varB4EAC82CA7396A68D541C85D26508E83_1585896633 = null; 
+        Type varB4EAC82CA7396A68D541C85D26508E83_1805125152 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1259062002 = parseClassTypeSignature();
-        //End case 'L' 
-        //Begin case '[' 
+        
+        
         scanSymbol();
-        //End case '[' 
-        //Begin case '[' 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1585896633 = new ImplForArray(parseTypeSignature());
-        //End case '[' 
-        //Begin case 'T' 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1805125152 = parseTypeVariableSignature();
-        //End case 'T' 
-        //Begin case default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new GenericSignatureFormatError();
-        //End case default 
-        Type varA7E53CE21691AB073D9660D615818899_1239833621; //Final return value
+        
+        Type varA7E53CE21691AB073D9660D615818899_1239833621; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1239833621 = varB4EAC82CA7396A68D541C85D26508E83_1259062002;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1239833621 = varB4EAC82CA7396A68D541C85D26508E83_1585896633;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1239833621 = varB4EAC82CA7396A68D541C85D26508E83_1805125152;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1239833621.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1239833621.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1239833621;
-        // ---------- Original Method ----------
-        //switch (symbol) {
-        //case 'L':
-            //return parseClassTypeSignature();
-        //case '[':
-            //scanSymbol();
-            //return new ImplForArray(parseTypeSignature());
-        //case 'T':
-            //return parseTypeVariableSignature();
-        //default:
-            //throw new GenericSignatureFormatError();
-        //}
+        
+        
+        
+            
+        
+            
+            
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.113 -0400", hash_original_method = "0940B5693D1CE1CEA33652B7603676B3", hash_generated_method = "D00ECF30D0C687474E87CF16E92B8469")
      Type parseClassTypeSignature() {
-        Type varB4EAC82CA7396A68D541C85D26508E83_1377965008 = null; //Variable for return #1
+        Type varB4EAC82CA7396A68D541C85D26508E83_1377965008 = null; 
         expect('L');
         StringBuilder qualIdent = new StringBuilder();
         scanIdentifier();
@@ -372,7 +376,7 @@ public class GenericSignatureParser {
             scanSymbol();
             qualIdent.append(identifier).append(".");
             scanIdentifier();
-        } //End block
+        } 
         qualIdent.append(this.identifier);
         ListOfTypes typeArgs = parseOptTypeArguments();
         ImplForType parentType = new ImplForType(null, qualIdent.toString(), typeArgs, loader);
@@ -384,238 +388,238 @@ public class GenericSignatureParser {
             typeArgs = parseOptTypeArguments();
             type = new ImplForType(parentType, qualIdent.toString(), typeArgs,
                     loader);
-        } //End block
+        } 
         expect(';');
         varB4EAC82CA7396A68D541C85D26508E83_1377965008 = type;
-        varB4EAC82CA7396A68D541C85D26508E83_1377965008.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1377965008.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1377965008;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.116 -0400", hash_original_method = "FCA6C6C42F8D0470CBF5F70C4C8E2247", hash_generated_method = "2B35EBE73E05774D6DE3BE939C736A50")
      ListOfTypes parseOptTypeArguments() {
-        ListOfTypes varB4EAC82CA7396A68D541C85D26508E83_390622412 = null; //Variable for return #1
+        ListOfTypes varB4EAC82CA7396A68D541C85D26508E83_390622412 = null; 
         ListOfTypes typeArgs = new ListOfTypes(8);
         {
             scanSymbol();
             typeArgs.add(parseTypeArgument());
             {
                 typeArgs.add(parseTypeArgument());
-            } //End block
+            } 
             expect('>');
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_390622412 = typeArgs;
-        varB4EAC82CA7396A68D541C85D26508E83_390622412.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_390622412.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_390622412;
-        // ---------- Original Method ----------
-        //ListOfTypes typeArgs = new ListOfTypes(8);
-        //if (symbol == '<') {
-            //scanSymbol();
-            //typeArgs.add(parseTypeArgument());
-            //while ((symbol != '>') && (symbol > 0)) {
-                //typeArgs.add(parseTypeArgument());
-            //}
-            //expect('>');
-        //}
-        //return typeArgs;
+        
+        
+        
+            
+            
+            
+                
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.117 -0400", hash_original_method = "C611A5720E520CD6B6248914D1F9FF4D", hash_generated_method = "34148DAA7D96C2F922AA23A2113BC6EF")
      Type parseTypeArgument() {
-        Type varB4EAC82CA7396A68D541C85D26508E83_195265166 = null; //Variable for return #1
-        Type varB4EAC82CA7396A68D541C85D26508E83_730355313 = null; //Variable for return #2
-        Type varB4EAC82CA7396A68D541C85D26508E83_2141772099 = null; //Variable for return #3
-        Type varB4EAC82CA7396A68D541C85D26508E83_1589441159 = null; //Variable for return #4
+        Type varB4EAC82CA7396A68D541C85D26508E83_195265166 = null; 
+        Type varB4EAC82CA7396A68D541C85D26508E83_730355313 = null; 
+        Type varB4EAC82CA7396A68D541C85D26508E83_2141772099 = null; 
+        Type varB4EAC82CA7396A68D541C85D26508E83_1589441159 = null; 
         ListOfTypes extendsBound = new ListOfTypes(1);
         ListOfTypes superBound = new ListOfTypes(1);
         {
             scanSymbol();
             extendsBound.add(Object.class);
             varB4EAC82CA7396A68D541C85D26508E83_195265166 = new ImplForWildcard(extendsBound, superBound);
-        } //End block
+        } 
         {
             scanSymbol();
             extendsBound.add(parseFieldTypeSignature());
             varB4EAC82CA7396A68D541C85D26508E83_730355313 = new ImplForWildcard(extendsBound, superBound);
-        } //End block
+        } 
         {
             scanSymbol();
             superBound.add(parseFieldTypeSignature());
             extendsBound.add(Object.class);
             varB4EAC82CA7396A68D541C85D26508E83_2141772099 = new ImplForWildcard(extendsBound, superBound);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1589441159 = parseFieldTypeSignature();
-        } //End block
-        Type varA7E53CE21691AB073D9660D615818899_1340769698; //Final return value
+        } 
+        Type varA7E53CE21691AB073D9660D615818899_1340769698; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1340769698 = varB4EAC82CA7396A68D541C85D26508E83_195265166;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1340769698 = varB4EAC82CA7396A68D541C85D26508E83_730355313;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1340769698 = varB4EAC82CA7396A68D541C85D26508E83_2141772099;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1340769698 = varB4EAC82CA7396A68D541C85D26508E83_1589441159;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1340769698.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1340769698.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1340769698;
-        // ---------- Original Method ----------
-        //ListOfTypes extendsBound = new ListOfTypes(1);
-        //ListOfTypes superBound = new ListOfTypes(1);
-        //if (symbol == '*') {
-            //scanSymbol();
-            //extendsBound.add(Object.class);
-            //return new ImplForWildcard(extendsBound, superBound);
-        //}
-        //else if (symbol == '+') {
-            //scanSymbol();
-            //extendsBound.add(parseFieldTypeSignature());
-            //return new ImplForWildcard(extendsBound, superBound);
-        //}
-        //else if (symbol == '-') {
-            //scanSymbol();
-            //superBound.add(parseFieldTypeSignature());
-            //extendsBound.add(Object.class);
-            //return new ImplForWildcard(extendsBound, superBound);
-        //}
-        //else {
-            //return parseFieldTypeSignature();
-        //}
+        
+        
+        
+        
+            
+            
+            
+        
+        
+            
+            
+            
+        
+        
+            
+            
+            
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.119 -0400", hash_original_method = "FF6DECA5851C272F523D7639C2D071BC", hash_generated_method = "AF1541706354A7209682FD57E4C7E767")
      ImplForVariable<GenericDeclaration> parseTypeVariableSignature() {
-        ImplForVariable<GenericDeclaration> varB4EAC82CA7396A68D541C85D26508E83_1115072858 = null; //Variable for return #1
+        ImplForVariable<GenericDeclaration> varB4EAC82CA7396A68D541C85D26508E83_1115072858 = null; 
         expect('T');
         scanIdentifier();
         expect(';');
         varB4EAC82CA7396A68D541C85D26508E83_1115072858 = new ImplForVariable<GenericDeclaration>(genericDecl, identifier);
-        varB4EAC82CA7396A68D541C85D26508E83_1115072858.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1115072858.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1115072858;
-        // ---------- Original Method ----------
-        //expect('T');
-        //scanIdentifier();
-        //expect(';');
-        //return new ImplForVariable<GenericDeclaration>(genericDecl, identifier);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.121 -0400", hash_original_method = "ABCBB21DD03AAC76512AB0248A5CE39A", hash_generated_method = "7A725D578E5AB17A892C8B4B93BF2B4B")
      Type parseTypeSignature() {
-        Type varB4EAC82CA7396A68D541C85D26508E83_1272146674 = null; //Variable for return #1
-        Type varB4EAC82CA7396A68D541C85D26508E83_1972219956 = null; //Variable for return #2
-        Type varB4EAC82CA7396A68D541C85D26508E83_573314915 = null; //Variable for return #3
-        Type varB4EAC82CA7396A68D541C85D26508E83_403915258 = null; //Variable for return #4
-        Type varB4EAC82CA7396A68D541C85D26508E83_1848621631 = null; //Variable for return #5
-        Type varB4EAC82CA7396A68D541C85D26508E83_2059380219 = null; //Variable for return #6
-        Type varB4EAC82CA7396A68D541C85D26508E83_17194286 = null; //Variable for return #7
-        Type varB4EAC82CA7396A68D541C85D26508E83_452373484 = null; //Variable for return #8
-        Type varB4EAC82CA7396A68D541C85D26508E83_1205661300 = null; //Variable for return #9
-        //Begin case 'B' 
+        Type varB4EAC82CA7396A68D541C85D26508E83_1272146674 = null; 
+        Type varB4EAC82CA7396A68D541C85D26508E83_1972219956 = null; 
+        Type varB4EAC82CA7396A68D541C85D26508E83_573314915 = null; 
+        Type varB4EAC82CA7396A68D541C85D26508E83_403915258 = null; 
+        Type varB4EAC82CA7396A68D541C85D26508E83_1848621631 = null; 
+        Type varB4EAC82CA7396A68D541C85D26508E83_2059380219 = null; 
+        Type varB4EAC82CA7396A68D541C85D26508E83_17194286 = null; 
+        Type varB4EAC82CA7396A68D541C85D26508E83_452373484 = null; 
+        Type varB4EAC82CA7396A68D541C85D26508E83_1205661300 = null; 
+        
         scanSymbol();
-        //End case 'B' 
-        //Begin case 'B' 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1272146674 = byte.class;
-        //End case 'B' 
-        //Begin case 'C' 
+        
+        
         scanSymbol();
-        //End case 'C' 
-        //Begin case 'C' 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1972219956 = char.class;
-        //End case 'C' 
-        //Begin case 'D' 
+        
+        
         scanSymbol();
-        //End case 'D' 
-        //Begin case 'D' 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_573314915 = double.class;
-        //End case 'D' 
-        //Begin case 'F' 
+        
+        
         scanSymbol();
-        //End case 'F' 
-        //Begin case 'F' 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_403915258 = float.class;
-        //End case 'F' 
-        //Begin case 'I' 
+        
+        
         scanSymbol();
-        //End case 'I' 
-        //Begin case 'I' 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1848621631 = int.class;
-        //End case 'I' 
-        //Begin case 'J' 
+        
+        
         scanSymbol();
-        //End case 'J' 
-        //Begin case 'J' 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_2059380219 = long.class;
-        //End case 'J' 
-        //Begin case 'S' 
+        
+        
         scanSymbol();
-        //End case 'S' 
-        //Begin case 'S' 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_17194286 = short.class;
-        //End case 'S' 
-        //Begin case 'Z' 
+        
+        
         scanSymbol();
-        //End case 'Z' 
-        //Begin case 'Z' 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_452373484 = boolean.class;
-        //End case 'Z' 
-        //Begin case default 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1205661300 = parseFieldTypeSignature();
-        //End case default 
-        Type varA7E53CE21691AB073D9660D615818899_1658024752; //Final return value
+        
+        Type varA7E53CE21691AB073D9660D615818899_1658024752; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1658024752 = varB4EAC82CA7396A68D541C85D26508E83_1272146674;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1658024752 = varB4EAC82CA7396A68D541C85D26508E83_1972219956;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1658024752 = varB4EAC82CA7396A68D541C85D26508E83_573314915;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1658024752 = varB4EAC82CA7396A68D541C85D26508E83_403915258;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_1658024752 = varB4EAC82CA7396A68D541C85D26508E83_1848621631;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_1658024752 = varB4EAC82CA7396A68D541C85D26508E83_2059380219;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_1658024752 = varB4EAC82CA7396A68D541C85D26508E83_17194286;
                 break;
-            case 8: //Assign result for return ordinal #8
+            case 8: 
                 varA7E53CE21691AB073D9660D615818899_1658024752 = varB4EAC82CA7396A68D541C85D26508E83_452373484;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1658024752 = varB4EAC82CA7396A68D541C85D26508E83_1205661300;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1658024752.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1658024752.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1658024752;
-        // ---------- Original Method ----------
-        //switch (symbol) {
-        //case 'B': scanSymbol(); return byte.class;
-        //case 'C': scanSymbol(); return char.class;
-        //case 'D': scanSymbol(); return double.class;
-        //case 'F': scanSymbol(); return float.class;
-        //case 'I': scanSymbol(); return int.class;
-        //case 'J': scanSymbol(); return long.class;
-        //case 'S': scanSymbol(); return short.class;
-        //case 'Z': scanSymbol(); return boolean.class;
-        //default:
-            //return parseFieldTypeSignature();
-        //}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -626,7 +630,7 @@ public class GenericSignatureParser {
         expect('(');
         {
             parameterTypes.add(parseTypeSignature());
-        } //End block
+        } 
         expect(')');
         returnType = parseReturnType();
         {
@@ -635,48 +639,48 @@ public class GenericSignatureParser {
                 scanSymbol();
                 {
                     exceptionTypes.add(parseTypeVariableSignature());
-                } //End block
+                } 
                 {
                     exceptionTypes.add(parseClassTypeSignature());
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             exceptionTypes = new ListOfTypes(rawExceptionTypes);
-        } //End block
+        } 
         {
             exceptionTypes = new ListOfTypes(0);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.123 -0400", hash_original_method = "6FEAF434B1E5FC2FC9EAA724A7A39FCB", hash_generated_method = "D61178820A9C699291A60F23BEC2D636")
      Type parseReturnType() {
-        Type varB4EAC82CA7396A68D541C85D26508E83_1205628861 = null; //Variable for return #1
-        Type varB4EAC82CA7396A68D541C85D26508E83_93297255 = null; //Variable for return #2
+        Type varB4EAC82CA7396A68D541C85D26508E83_1205628861 = null; 
+        Type varB4EAC82CA7396A68D541C85D26508E83_93297255 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1205628861 = parseTypeSignature();
-        } //End block
+        } 
         {
             scanSymbol();
             varB4EAC82CA7396A68D541C85D26508E83_93297255 = void.class;
-        } //End block
-        Type varA7E53CE21691AB073D9660D615818899_670836997; //Final return value
+        } 
+        Type varA7E53CE21691AB073D9660D615818899_670836997; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_670836997 = varB4EAC82CA7396A68D541C85D26508E83_1205628861;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_670836997 = varB4EAC82CA7396A68D541C85D26508E83_93297255;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_670836997.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_670836997.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_670836997;
-        // ---------- Original Method ----------
-        //if (symbol != 'V') { return parseTypeSignature(); }
-        //else { scanSymbol(); return void.class; }
+        
+        
+        
     }
 
     
@@ -685,27 +689,27 @@ public class GenericSignatureParser {
         {
             {
                 symbol = buffer[pos];
-            } //End block
+            } 
             {
                 symbol = 0;
                 eof = true;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new GenericSignatureFormatError();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!eof) {
-            //if (pos < buffer.length) {
-                //symbol = buffer[pos];
-                //pos++;
-            //} else {
-                //symbol = 0;
-                //eof = true;
-            //}
-        //} else {
-            //throw new GenericSignatureFormatError();
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+                
+                
+            
+        
+            
+        
     }
 
     
@@ -713,17 +717,17 @@ public class GenericSignatureParser {
      void expect(char c) {
         {
             scanSymbol();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new GenericSignatureFormatError();
-        } //End block
+        } 
         addTaint(c);
-        // ---------- Original Method ----------
-        //if (symbol == c) {
-            //scanSymbol();
-        //} else {
-            //throw new GenericSignatureFormatError();
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -732,16 +736,16 @@ public class GenericSignatureParser {
         addTaint(ch);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1821764892 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1821764892;
-        // ---------- Original Method ----------
-        //switch (ch) {
-        //case ':':
-        //case '/':
-        //case ';':
-        //case '<':
-        //case '.':
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -760,29 +764,29 @@ public class GenericSignatureParser {
                             || !isStopSymbol(ch));
                             {
                                 identBuf.append(buffer[pos]);
-                            } //End block
+                            } 
                             {
                                 identifier = identBuf.toString();
                                 scanSymbol();
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     identifier = identBuf.toString();
                     symbol = 0;
                     eof = true;
-                } //End block
+                } 
                 {
                     symbol = 0;
                     eof = true;
                     if (DroidSafeAndroidRuntime.control) throw new GenericSignatureFormatError();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new GenericSignatureFormatError();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

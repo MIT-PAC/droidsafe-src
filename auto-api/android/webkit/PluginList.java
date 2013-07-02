@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import java.util.ArrayList;
@@ -20,23 +20,24 @@ public class PluginList {
     @Deprecated
     public  PluginList() {
         mPlugins = new ArrayList<Plugin>();
-        // ---------- Original Method ----------
-        //mPlugins = new ArrayList<Plugin>();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.373 -0400", hash_original_method = "1801070113215AA650907EEB61F166CD", hash_generated_method = "FBC44DE60F04FD4D0A25B8A8027B7053")
     @Deprecated
     public synchronized List getList() {
-        List varB4EAC82CA7396A68D541C85D26508E83_1272236828 = null; //Variable for return #1
+        List varB4EAC82CA7396A68D541C85D26508E83_1272236828 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1272236828 = mPlugins;
-        varB4EAC82CA7396A68D541C85D26508E83_1272236828.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1272236828.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1272236828;
-        // ---------- Original Method ----------
-        //return mPlugins;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.374 -0400", hash_original_method = "C7DCB9134CAFAAB6388686E1F6701327", hash_generated_method = "1681F3343C41A62D7F6C152F1CFBEFBE")
     @Deprecated
     public synchronized void addPlugin(Plugin plugin) {
@@ -44,41 +45,44 @@ public class PluginList {
             boolean varC0E6DCC2C7B71BDBD19F3C142F1FFA62_2019771050 = (!mPlugins.contains(plugin));
             {
                 mPlugins.add(plugin);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(plugin.getTaint());
-        // ---------- Original Method ----------
-        //if (!mPlugins.contains(plugin)) {
-            //mPlugins.add(plugin);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.374 -0400", hash_original_method = "980F1FA54E922541E9F37CE45E714F3E", hash_generated_method = "093FB327AB38CC257AA2E3FE018C2F47")
     @Deprecated
     public synchronized void removePlugin(Plugin plugin) {
         int location = mPlugins.indexOf(plugin);
         {
             mPlugins.remove(location);
-        } //End block
+        } 
         addTaint(plugin.getTaint());
-        // ---------- Original Method ----------
-        //int location = mPlugins.indexOf(plugin);
-        //if (location != -1) {
-            //mPlugins.remove(location);
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.374 -0400", hash_original_method = "D08BA028CDC8B846863357DB1B876085", hash_generated_method = "DCFA1CD279657F7D3B02F4C9E52A23CF")
     @Deprecated
     public synchronized void clear() {
         mPlugins.clear();
-        // ---------- Original Method ----------
-        //mPlugins.clear();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.374 -0400", hash_original_method = "FD99E1EA214C7B87A27E9195924486C8", hash_generated_method = "A9F53015B638744701802047DE3454EA")
     @Deprecated
     public synchronized void pluginClicked(Context context, int position) {
@@ -86,17 +90,17 @@ public class PluginList {
         {
             Plugin plugin = mPlugins.get(position);
             plugin.dispatchClickEvent(context);
-        } //End block
+        } 
         catch (IndexOutOfBoundsException e)
         { }
         addTaint(context.getTaint());
         addTaint(position);
-        // ---------- Original Method ----------
-        //try {
-            //Plugin plugin = mPlugins.get(position);
-            //plugin.dispatchClickEvent(context);
-        //} catch (IndexOutOfBoundsException e) {
-        //}
+        
+        
+            
+            
+        
+        
     }
 
     

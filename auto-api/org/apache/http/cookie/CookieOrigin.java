@@ -1,11 +1,11 @@
 package org.apache.http.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Locale;
 
@@ -29,79 +29,79 @@ public final class CookieOrigin {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "Host of origin may not be null");
-        } //End block
+        } 
         {
             boolean var38D5D932AA4F9C313FE6D4227A1EDA26_821235923 = (host.trim().length() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "Host of origin may not be blank");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid port: " + port);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "Path of origin may not be null.");
-        } //End block
+        } 
         this.host = host.toLowerCase(Locale.ENGLISH);
         this.port = port;
         {
             boolean var18EA4D7CF05FC60A9FE5C172FC0380F5_1747997213 = (path.trim().length() != 0);
             {
                 this.path = path;
-            } //End block
+            } 
             {
                 this.path = "/";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.secure = secure;
-        // ---------- Original Method ----------
-        //if (host == null) {
-            //throw new IllegalArgumentException(
-                    //"Host of origin may not be null");
-        //}
-        //if (host.trim().length() == 0) {
-            //throw new IllegalArgumentException(
-                    //"Host of origin may not be blank");
-        //}
-        //if (port < 0) {
-            //throw new IllegalArgumentException("Invalid port: " + port);
-        //}
-        //if (path == null) {
-            //throw new IllegalArgumentException(
-                    //"Path of origin may not be null.");
-        //}
-        //this.host = host.toLowerCase(Locale.ENGLISH);
-        //this.port = port;
-        //if (path.trim().length() != 0) {
-            //this.path = path;
-        //} else {
-            //this.path = "/";
-        //}
-        //this.secure = secure;
+        
+        
+            
+                    
+        
+        
+            
+                    
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.510 -0400", hash_original_method = "052AA62CF2AFB76178CB036EF4B7BAB4", hash_generated_method = "B89FF9B81446B7DB8325C12268E3465F")
     public String getHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_133494978 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_133494978 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_133494978 = this.host;
-        varB4EAC82CA7396A68D541C85D26508E83_133494978.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_133494978.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_133494978;
-        // ---------- Original Method ----------
-        //return this.host;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.510 -0400", hash_original_method = "1447F7E138124D077576DF2B2413D348", hash_generated_method = "3433EBE88FF5A59B21EBDCDA735744AF")
     public String getPath() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1119133560 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1119133560 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1119133560 = this.path;
-        varB4EAC82CA7396A68D541C85D26508E83_1119133560.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1119133560.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1119133560;
-        // ---------- Original Method ----------
-        //return this.path;
+        
+        
     }
 
     
@@ -109,8 +109,8 @@ public final class CookieOrigin {
     public int getPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1313733232 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1313733232;
-        // ---------- Original Method ----------
-        //return this.port;
+        
+        
     }
 
     
@@ -118,40 +118,41 @@ public final class CookieOrigin {
     public boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_362776238 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_362776238;
-        // ---------- Original Method ----------
-        //return this.secure;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.511 -0400", hash_original_method = "04B66E71C7D8EF5D2D79480EE2BA7CE8", hash_generated_method = "B93638A3295F5D92ACB56797C234E3FE")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_360534532 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_360534532 = null; 
         StringBuilder buffer = new StringBuilder();
         buffer.append('[');
         {
             buffer.append("(secure)");
-        } //End block
+        } 
         buffer.append(this.host);
         buffer.append(':');
         buffer.append(Integer.toString(this.port));
         buffer.append(this.path);
         buffer.append(']');
         varB4EAC82CA7396A68D541C85D26508E83_360534532 = buffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_360534532.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_360534532.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_360534532;
-        // ---------- Original Method ----------
-        //StringBuilder buffer = new StringBuilder();
-        //buffer.append('[');
-        //if (this.secure) {
-            //buffer.append("(secure)");
-        //}
-        //buffer.append(this.host);
-        //buffer.append(':');
-        //buffer.append(Integer.toString(this.port));
-        //buffer.append(this.path);
-        //buffer.append(']');
-        //return buffer.toString();
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     

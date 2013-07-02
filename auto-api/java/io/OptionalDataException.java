@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class OptionalDataException extends ObjectStreamException {
@@ -18,7 +18,7 @@ public class OptionalDataException extends ObjectStreamException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.724 -0400", hash_original_method = "C77AFC0EE27E4B45ACE7BE98CCDC7A8A", hash_generated_method = "D7539358F0EC362E989324DB6CBCFA5C")
       OptionalDataException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class OptionalDataException extends ObjectStreamException {
       OptionalDataException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

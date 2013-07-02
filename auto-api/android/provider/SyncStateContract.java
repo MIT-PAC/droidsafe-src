@@ -1,11 +1,11 @@
 package android.provider;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.net.Uri;
 import android.content.ContentProviderClient;
@@ -22,7 +22,7 @@ public class SyncStateContract {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.906 -0400", hash_original_method = "57D9D9CBA9A7CAF29AF0EFFDD8322E47", hash_generated_method = "57D9D9CBA9A7CAF29AF0EFFDD8322E47")
     public SyncStateContract ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -31,7 +31,7 @@ public class SyncStateContract {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.906 -0400", hash_original_method = "E59499DF9DD0978456F50DA5893CC8F6", hash_generated_method = "E59499DF9DD0978456F50DA5893CC8F6")
         public Constants ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -47,7 +47,7 @@ public class SyncStateContract {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.906 -0400", hash_original_method = "9749A8A424C5761B245394E68B42F39B", hash_generated_method = "9749A8A424C5761B245394E68B42F39B")
         public Helpers ()
         {
-            //Synthesized constructor
+            
         }
 
 

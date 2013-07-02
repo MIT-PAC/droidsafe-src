@@ -1,11 +1,11 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
@@ -76,48 +76,48 @@ public final class DiskLruCache implements Closeable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.969 -0400", hash_original_method = "60CB515F13FCF39FB25B426074E3001D", hash_generated_method = "657EDDA2627FCB4772B1A28CA5D1F2C0")
         @Override
         public Void call() throws Exception {
-            Void varB4EAC82CA7396A68D541C85D26508E83_908756601 = null; //Variable for return #1
-            Void varB4EAC82CA7396A68D541C85D26508E83_1282687766 = null; //Variable for return #2
+            Void varB4EAC82CA7396A68D541C85D26508E83_908756601 = null; 
+            Void varB4EAC82CA7396A68D541C85D26508E83_1282687766 = null; 
             {
                 Object varD933D409C8362D8AB4EAAFB238C186FA_2025849265 = (DiskLruCache.this);
                 {
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_908756601 = null;
-                    } //End block
+                    } 
                     trimToSize();
                     {
                         boolean varAE772B6A2261513DC630DDE920DDFCB8_1747341119 = (journalRebuildRequired());
                         {
                             rebuildJournal();
                             redundantOpCount = 0;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1282687766 = null;
-            Void varA7E53CE21691AB073D9660D615818899_309578625; //Final return value
+            Void varA7E53CE21691AB073D9660D615818899_309578625; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_309578625 = varB4EAC82CA7396A68D541C85D26508E83_908756601;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_309578625 = varB4EAC82CA7396A68D541C85D26508E83_1282687766;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_309578625.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_309578625.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_309578625;
-            // ---------- Original Method ----------
-            //synchronized (DiskLruCache.this) {
-                //if (journalWriter == null) {
-                    //return null; 
-                //}
-                //trimToSize();
-                //if (journalRebuildRequired()) {
-                    //rebuildJournal();
-                    //redundantOpCount = 0;
-                //}
-            //}
-            //return null;
+            
+            
+                
+                    
+                
+                
+                
+                    
+                    
+                
+            
+            
         }
 
         
@@ -131,17 +131,18 @@ public final class DiskLruCache implements Closeable {
         this.journalFileTmp = new File(directory, JOURNAL_FILE_TMP);
         this.valueCount = valueCount;
         this.maxSize = maxSize;
-        // ---------- Original Method ----------
-        //this.directory = directory;
-        //this.appVersion = appVersion;
-        //this.journalFile = new File(directory, JOURNAL_FILE);
-        //this.journalFileTmp = new File(directory, JOURNAL_FILE_TMP);
-        //this.valueCount = valueCount;
-        //this.maxSize = maxSize;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
-        public static DiskLruCache open(File directory, int appVersion, int valueCount, long maxSize) throws IOException {
+        @DSModeled(DSC.SAFE)
+    public static DiskLruCache open(File directory, int appVersion, int valueCount, long maxSize) throws IOException {
         if (maxSize <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
@@ -168,6 +169,7 @@ public final class DiskLruCache implements Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.970 -0400", hash_original_method = "D80881F7E6F2A63F9AF02A98171F075C", hash_generated_method = "716309904C20418F213E58B35131B072")
     private void readJournal() throws IOException {
         InputStream in = new BufferedInputStream(new FileInputStream(journalFile));
@@ -187,70 +189,72 @@ public final class DiskLruCache implements Closeable {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("unexpected journal header: ["
                         + magic + ", " + version + ", " + valueCountString + ", " + blank + "]");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 try 
                 {
                     readJournalLine(Streams.readAsciiLine(in));
-                } //End block
+                } 
                 catch (EOFException endOfJournal)
                 { }
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             IoUtils.closeQuietly(in);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.971 -0400", hash_original_method = "B93033832384BE0A8F735535A303EB51", hash_generated_method = "6DB1A8AED675AD5F31B28ABAD8F865B6")
     private void readJournalLine(String line) throws IOException {
         String[] parts = line.split(" ");
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("unexpected journal line: " + line);
-        } //End block
+        } 
         String key = parts[1];
         {
             boolean varAEADAED980A3E2CE65A0FB2D397AC4EF_1686760113 = (parts[0].equals(REMOVE) && parts.length == 2);
             {
                 lruEntries.remove(key);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Entry entry = lruEntries.get(key);
         {
             entry = new Entry(key);
             lruEntries.put(key, entry);
-        } //End block
+        } 
         {
             boolean var98DA74BB3A0D1D55A0A2F6F4FB097B6E_497444052 = (parts[0].equals(CLEAN) && parts.length == 2 + valueCount);
             {
                 entry.readable = true;
                 entry.currentEditor = null;
                 entry.setLengths(Arrays.copyOfRange(parts, 2, parts.length));
-            } //End block
+            } 
             {
                 boolean var1A74343163BF8B3C2F48DFA8E158DAA9_1537950080 = (parts[0].equals(DIRTY) && parts.length == 2);
                 {
                     entry.currentEditor = new Editor(entry);
-                } //End block
+                } 
                 {
                     boolean var1B34DE325BCE96DBE7D78DC7688F24C9_1811012793 = (parts[0].equals(READ) && parts.length == 2);
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IOException("unexpected journal line: " + line);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(line.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.972 -0400", hash_original_method = "BF29FD79336E7D0F2752A5C16F704FCA", hash_generated_method = "24B640361FFBB23EA04097BB59B679CC")
     private void processJournal() throws IOException {
         deleteIfExists(journalFileTmp);
@@ -264,9 +268,9 @@ public final class DiskLruCache implements Closeable {
                         int t = 0;
                         {
                             size += entry.lengths[t];
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     entry.currentEditor = null;
                     {
@@ -274,37 +278,38 @@ public final class DiskLruCache implements Closeable {
                         {
                             deleteIfExists(entry.getCleanFile(t));
                             deleteIfExists(entry.getDirtyFile(t));
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     i.remove();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //deleteIfExists(journalFileTmp);
-        //for (Iterator<Entry> i = lruEntries.values().iterator(); i.hasNext(); ) {
-            //Entry entry = i.next();
-            //if (entry.currentEditor == null) {
-                //for (int t = 0; t < valueCount; t++) {
-                    //size += entry.lengths[t];
-                //}
-            //} else {
-                //entry.currentEditor = null;
-                //for (int t = 0; t < valueCount; t++) {
-                    //deleteIfExists(entry.getCleanFile(t));
-                    //deleteIfExists(entry.getDirtyFile(t));
-                //}
-                //i.remove();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+                    
+                
+            
+                
+                
+                    
+                    
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.978 -0400", hash_original_method = "CAFF8A7D35D4FC2C6D20C8D2E31B18B9", hash_generated_method = "FCF7068065FB23B199D32864A5514808")
     private synchronized void rebuildJournal() throws IOException {
         {
             journalWriter.close();
-        } //End block
+        } 
         Writer writer = new BufferedWriter(new FileWriter(journalFileTmp));
         writer.write(MAGIC);
         writer.write("\n");
@@ -322,21 +327,22 @@ public final class DiskLruCache implements Closeable {
             {
                 {
                     writer.write(DIRTY + ' ' + entry.key + '\n');
-                } //End block
+                } 
                 {
                     writer.write(CLEAN + ' ' + entry.key + entry.getLengths() + '\n');
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         writer.close();
         journalFileTmp.renameTo(journalFile);
         journalWriter = new BufferedWriter(new FileWriter(journalFile, true));
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
-        private static void deleteIfExists(File file) throws IOException {
+        @DSModeled(DSC.SAFE)
+    private static void deleteIfExists(File file) throws IOException {
         try {
             Libcore.os.remove(file.getPath());
         } catch (ErrnoException errnoException) {
@@ -347,21 +353,22 @@ public final class DiskLruCache implements Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.979 -0400", hash_original_method = "8CCA333E37F6F5C0426A3FC5CE5D4B2E", hash_generated_method = "E4F802011C5B118F213ECAE4A1F8E572")
     public synchronized Snapshot get(String key) throws IOException {
-        Snapshot varB4EAC82CA7396A68D541C85D26508E83_1542281905 = null; //Variable for return #1
-        Snapshot varB4EAC82CA7396A68D541C85D26508E83_1899025608 = null; //Variable for return #2
-        Snapshot varB4EAC82CA7396A68D541C85D26508E83_1784822624 = null; //Variable for return #3
-        Snapshot varB4EAC82CA7396A68D541C85D26508E83_1607100392 = null; //Variable for return #4
+        Snapshot varB4EAC82CA7396A68D541C85D26508E83_1542281905 = null; 
+        Snapshot varB4EAC82CA7396A68D541C85D26508E83_1899025608 = null; 
+        Snapshot varB4EAC82CA7396A68D541C85D26508E83_1784822624 = null; 
+        Snapshot varB4EAC82CA7396A68D541C85D26508E83_1607100392 = null; 
         checkNotClosed();
         validateKey(key);
         Entry entry = lruEntries.get(key);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1542281905 = null;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1899025608 = null;
-        } //End block
+        } 
         InputStream[] ins = new InputStream[valueCount];
         try 
         {
@@ -369,123 +376,124 @@ public final class DiskLruCache implements Closeable {
                 int i = 0;
                 {
                     ins[i] = new FileInputStream(entry.getCleanFile(i));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (FileNotFoundException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1784822624 = null;
-        } //End block
+        } 
         journalWriter.append(READ + ' ' + key + '\n');
         {
             boolean varE9BCC6F78EB13BE042B748E2FA1C8B0F_204035347 = (journalRebuildRequired());
             {
                 executorService.submit(cleanupCallable);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1607100392 = new Snapshot(ins);
         addTaint(key.getTaint());
-        Snapshot varA7E53CE21691AB073D9660D615818899_2135112251; //Final return value
+        Snapshot varA7E53CE21691AB073D9660D615818899_2135112251; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2135112251 = varB4EAC82CA7396A68D541C85D26508E83_1542281905;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2135112251 = varB4EAC82CA7396A68D541C85D26508E83_1899025608;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_2135112251 = varB4EAC82CA7396A68D541C85D26508E83_1784822624;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2135112251 = varB4EAC82CA7396A68D541C85D26508E83_1607100392;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2135112251.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2135112251.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2135112251;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //validateKey(key);
-        //Entry entry = lruEntries.get(key);
-        //if (entry == null) {
-            //return null;
-        //}
-        //if (!entry.readable) {
-            //return null;
-        //}
-        //InputStream[] ins = new InputStream[valueCount];
-        //try {
-            //for (int i = 0; i < valueCount; i++) {
-                //ins[i] = new FileInputStream(entry.getCleanFile(i));
-            //}
-        //} catch (FileNotFoundException e) {
-            //return null;
-        //}
-        //redundantOpCount++;
-        //journalWriter.append(READ + ' ' + key + '\n');
-        //if (journalRebuildRequired()) {
-            //executorService.submit(cleanupCallable);
-        //}
-        //return new Snapshot(ins);
+        
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+                
+            
+        
+            
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.980 -0400", hash_original_method = "1C8B92160DB309C26801458073B88259", hash_generated_method = "94AA21B99E6D69B025B858037BEF0290")
     public synchronized Editor edit(String key) throws IOException {
-        Editor varB4EAC82CA7396A68D541C85D26508E83_1832644645 = null; //Variable for return #1
-        Editor varB4EAC82CA7396A68D541C85D26508E83_500077972 = null; //Variable for return #2
+        Editor varB4EAC82CA7396A68D541C85D26508E83_1832644645 = null; 
+        Editor varB4EAC82CA7396A68D541C85D26508E83_500077972 = null; 
         checkNotClosed();
         validateKey(key);
         Entry entry = lruEntries.get(key);
         {
             entry = new Entry(key);
             lruEntries.put(key, entry);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1832644645 = null;
-        } //End block
+        } 
         Editor editor = new Editor(entry);
         entry.currentEditor = editor;
         journalWriter.write(DIRTY + ' ' + key + '\n');
         journalWriter.flush();
         varB4EAC82CA7396A68D541C85D26508E83_500077972 = editor;
         addTaint(key.getTaint());
-        Editor varA7E53CE21691AB073D9660D615818899_533561562; //Final return value
+        Editor varA7E53CE21691AB073D9660D615818899_533561562; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_533561562 = varB4EAC82CA7396A68D541C85D26508E83_1832644645;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_533561562 = varB4EAC82CA7396A68D541C85D26508E83_500077972;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_533561562.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_533561562.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_533561562;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //validateKey(key);
-        //Entry entry = lruEntries.get(key);
-        //if (entry == null) {
-            //entry = new Entry(key);
-            //lruEntries.put(key, entry);
-        //} else if (entry.currentEditor != null) {
-            //return null;
-        //}
-        //Editor editor = new Editor(entry);
-        //entry.currentEditor = editor;
-        //journalWriter.write(DIRTY + ' ' + key + '\n');
-        //journalWriter.flush();
-        //return editor;
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.981 -0400", hash_original_method = "0F452AFCA1F8F7ACF1A711B33CB47BDA", hash_generated_method = "C746A836EDEB50EA8B204649418BED6F")
     public File getDirectory() {
-        File varB4EAC82CA7396A68D541C85D26508E83_1786673281 = null; //Variable for return #1
+        File varB4EAC82CA7396A68D541C85D26508E83_1786673281 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1786673281 = directory;
-        varB4EAC82CA7396A68D541C85D26508E83_1786673281.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1786673281.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1786673281;
-        // ---------- Original Method ----------
-        //return directory;
+        
+        
     }
 
     
@@ -493,8 +501,8 @@ public final class DiskLruCache implements Closeable {
     public long maxSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1680974984 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1680974984;
-        // ---------- Original Method ----------
-        //return maxSize;
+        
+        
     }
 
     
@@ -502,17 +510,18 @@ public final class DiskLruCache implements Closeable {
     public synchronized long size() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_48763410 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_48763410;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.982 -0400", hash_original_method = "E3B5F5B6DB82C9D68E2AD58524FD46D2", hash_generated_method = "4C9BD1C4FD25263CAEB860AED9C11695")
     private synchronized void completeEdit(Editor editor, boolean success) throws IOException {
         Entry entry = editor.entry;
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             {
                 int i = 0;
@@ -522,11 +531,11 @@ public final class DiskLruCache implements Closeable {
                         {
                             editor.abort();
                             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("edit didn't create file " + i);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             int i = 0;
             {
@@ -541,36 +550,37 @@ public final class DiskLruCache implements Closeable {
                             long newLength = clean.length();
                             entry.lengths[i] = newLength;
                             size = size - oldLength + newLength;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     deleteIfExists(dirty);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         entry.currentEditor = null;
         {
             entry.readable = true;
             journalWriter.write(CLEAN + ' ' + entry.key + entry.getLengths() + '\n');
-        } //End block
+        } 
         {
             lruEntries.remove(entry.key);
             journalWriter.write(REMOVE + ' ' + entry.key + '\n');
-        } //End block
+        } 
         {
             boolean var776EDFAB12D0A0A4A863963ED3C1C602_1372921571 = (size > maxSize || journalRebuildRequired());
             {
                 executorService.submit(cleanupCallable);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(editor.getTaint());
         addTaint(success);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.983 -0400", hash_original_method = "BD0CD0940E277CB89BD11D972CAF1EC0", hash_generated_method = "A464779CFE102AA6E61AE8C8DA7E4622")
     private boolean journalRebuildRequired() {
         final int REDUNDANT_OP_COMPACT_THRESHOLD = 2000;
@@ -578,13 +588,14 @@ public final class DiskLruCache implements Closeable {
                 && redundantOpCount >= lruEntries.size());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1351248065 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1351248065;
-        // ---------- Original Method ----------
-        //final int REDUNDANT_OP_COMPACT_THRESHOLD = 2000;
-        //return redundantOpCount >= REDUNDANT_OP_COMPACT_THRESHOLD
-                //&& redundantOpCount >= lruEntries.size();
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.985 -0400", hash_original_method = "EADC8C19CC119124A893E81F5BBBE260", hash_generated_method = "C6C8B8E4680D80560EBD406A83AD8DE6")
     public synchronized boolean remove(String key) throws IOException {
         checkNotClosed();
@@ -598,45 +609,45 @@ public final class DiskLruCache implements Closeable {
                     boolean var662432ADDD39E82511D634813D6392A6_31304521 = (!file.delete());
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IOException("failed to delete " + file);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 size -= entry.lengths[i];
                 entry.lengths[i] = 0;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         journalWriter.append(REMOVE + ' ' + key + '\n');
         lruEntries.remove(key);
         {
             boolean varE9BCC6F78EB13BE042B748E2FA1C8B0F_1663365809 = (journalRebuildRequired());
             {
                 executorService.submit(cleanupCallable);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(key.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_493550984 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_493550984;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //validateKey(key);
-        //Entry entry = lruEntries.get(key);
-        //if (entry == null || entry.currentEditor != null) {
-            //return false;
-        //}
-        //for (int i = 0; i < valueCount; i++) {
-            //File file = entry.getCleanFile(i);
-            //if (!file.delete()) {
-                //throw new IOException("failed to delete " + file);
-            //}
-            //size -= entry.lengths[i];
-            //entry.lengths[i] = 0;
-        //}
-        //redundantOpCount++;
-        //journalWriter.append(REMOVE + ' ' + key + '\n');
-        //lruEntries.remove(key);
-        //if (journalRebuildRequired()) {
-            //executorService.submit(cleanupCallable);
-        //}
-        //return true;
+        
+        
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+            
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -644,35 +655,38 @@ public final class DiskLruCache implements Closeable {
     public boolean isClosed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1316621409 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1316621409;
-        // ---------- Original Method ----------
-        //return journalWriter == null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.987 -0400", hash_original_method = "8ED19EB33A6AB2822DDF1831EB4A2E5C", hash_generated_method = "563F58E3136896F1891C3E5166D27E9A")
     private void checkNotClosed() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("cache is closed");
-        } //End block
-        // ---------- Original Method ----------
-        //if (journalWriter == null) {
-            //throw new IllegalStateException("cache is closed");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.987 -0400", hash_original_method = "329F096E2383A78FF3370B422D55028D", hash_generated_method = "365B35FA4F8864C12CD2EC6688A56CBE")
     public synchronized void flush() throws IOException {
         checkNotClosed();
         trimToSize();
         journalWriter.flush();
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //trimToSize();
-        //journalWriter.flush();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.994 -0400", hash_original_method = "99CE1AB60FDF93828647C541E1949F71", hash_generated_method = "7BE527FDA4B839A7ABCDF9ABFFB25AEF")
     public synchronized void close() throws IOException {
         {
@@ -682,51 +696,54 @@ public final class DiskLruCache implements Closeable {
             {
                 {
                     entry.currentEditor.abort();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         trimToSize();
         journalWriter.close();
         journalWriter = null;
-        // ---------- Original Method ----------
-        //if (journalWriter == null) {
-            //return; 
-        //}
-        //for (Entry entry : new ArrayList<Entry>(lruEntries.values())) {
-            //if (entry.currentEditor != null) {
-                //entry.currentEditor.abort();
-            //}
-        //}
-        //trimToSize();
-        //journalWriter.close();
-        //journalWriter = null;
+        
+        
+            
+        
+        
+            
+                
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.994 -0400", hash_original_method = "52FB98FFFDCED62623018A96063CC5F4", hash_generated_method = "56A9888541E62A6F53EADFDC157B470F")
     private void trimToSize() throws IOException {
         {
             Map.Entry<String, Entry> toEvict = lruEntries.eldest();
             remove(toEvict.getKey());
-        } //End block
-        // ---------- Original Method ----------
-        //while (size > maxSize) {
-            //Map.Entry<String, Entry> toEvict = lruEntries.eldest();
-            //remove(toEvict.getKey());
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.995 -0400", hash_original_method = "E0DF0E5E95BB69DC7E72889656D60AB7", hash_generated_method = "40601D48395A0FDE4DC088AFE1B7872C")
     public void delete() throws IOException {
         close();
         IoUtils.deleteContents(directory);
-        // ---------- Original Method ----------
-        //close();
-        //IoUtils.deleteContents(directory);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.995 -0400", hash_original_method = "A6AB05B3A3783BAC84CED8DCEEB398D1", hash_generated_method = "8F430ECFABD203F3067335388636C6B3")
     private void validateKey(String key) {
         {
@@ -734,18 +751,19 @@ public final class DiskLruCache implements Closeable {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "keys must not contain spaces or newlines: \"" + key + "\"");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(key.getTaint());
-        // ---------- Original Method ----------
-        //if (key.contains(" ") || key.contains("\n") || key.contains("\r")) {
-            //throw new IllegalArgumentException(
-                    //"keys must not contain spaces or newlines: \"" + key + "\"");
-        //}
+        
+        
+            
+                    
+        
     }
 
     
-        private static String inputStreamToString(InputStream in) throws IOException {
+        @DSModeled(DSC.SAFE)
+    private static String inputStreamToString(InputStream in) throws IOException {
         return Streams.readFully(new InputStreamReader(in, Charsets.UTF_8));
     }
 
@@ -758,32 +776,32 @@ public final class DiskLruCache implements Closeable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.996 -0400", hash_original_method = "4874F99779A0A237419F7A04515D002C", hash_generated_method = "6FEE8A1DE88E19521460185A59EEAE25")
         private  Snapshot(InputStream[] ins) {
             this.ins = ins;
-            // ---------- Original Method ----------
-            //this.ins = ins;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.997 -0400", hash_original_method = "1265F3570693D55B3F128D89D3B629D2", hash_generated_method = "D0CD27AEAB006C8CAFFE8DF88D956C6C")
         public InputStream getInputStream(int index) {
-            InputStream varB4EAC82CA7396A68D541C85D26508E83_39208850 = null; //Variable for return #1
+            InputStream varB4EAC82CA7396A68D541C85D26508E83_39208850 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_39208850 = ins[index];
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_39208850.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_39208850.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_39208850;
-            // ---------- Original Method ----------
-            //return ins[index];
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.997 -0400", hash_original_method = "CEACA6862DFE49E3BCD1DEF39CCE35B7", hash_generated_method = "AAA395A56355113524B934ACEB7EBB0B")
         public String getString(int index) throws IOException {
-            String varB4EAC82CA7396A68D541C85D26508E83_335806471 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_335806471 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_335806471 = inputStreamToString(getInputStream(index));
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_335806471.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_335806471.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_335806471;
-            // ---------- Original Method ----------
-            //return inputStreamToString(getInputStream(index));
+            
+            
         }
 
         
@@ -794,12 +812,12 @@ public final class DiskLruCache implements Closeable {
                 InputStream in = ins[0];
                 {
                     IoUtils.closeQuietly(in);
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //for (InputStream in : ins) {
-                //IoUtils.closeQuietly(in);
-            //}
+                } 
+            } 
+            
+            
+                
+            
         }
 
         
@@ -818,15 +836,15 @@ public final class DiskLruCache implements Closeable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.000 -0400", hash_original_method = "DB0A9ACC8813DA2FB44F6FFEC09E8772", hash_generated_method = "9D5F2E1BFEBBC34BED7AEE5B243CB69C")
         private  Editor(Entry entry) {
             this.entry = entry;
-            // ---------- Original Method ----------
-            //this.entry = entry;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.001 -0400", hash_original_method = "E20ADC2C4905CE726058A12470A98795", hash_generated_method = "4EF7EF6EC63FD7C9634E16D305734DF9")
         public InputStream newInputStream(int index) throws IOException {
-            InputStream varB4EAC82CA7396A68D541C85D26508E83_1443277585 = null; //Variable for return #1
-            InputStream varB4EAC82CA7396A68D541C85D26508E83_1242536438 = null; //Variable for return #2
+            InputStream varB4EAC82CA7396A68D541C85D26508E83_1443277585 = null; 
+            InputStream varB4EAC82CA7396A68D541C85D26508E83_1242536438 = null; 
             {
                 Object varD933D409C8362D8AB4EAAFB238C186FA_1515158380 = (DiskLruCache.this);
                 {
@@ -834,56 +852,56 @@ public final class DiskLruCache implements Closeable {
                         boolean var573C982FD8CE38C80E849A01EADDA5C3_404551086 = (entry.currentEditor != this);
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1443277585 = null;
-                    } //End block
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_1242536438 = new FileInputStream(entry.getCleanFile(index));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(index);
-            InputStream varA7E53CE21691AB073D9660D615818899_677277829; //Final return value
+            InputStream varA7E53CE21691AB073D9660D615818899_677277829; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_677277829 = varB4EAC82CA7396A68D541C85D26508E83_1443277585;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_677277829 = varB4EAC82CA7396A68D541C85D26508E83_1242536438;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_677277829.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_677277829.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_677277829;
-            // ---------- Original Method ----------
-            //synchronized (DiskLruCache.this) {
-                //if (entry.currentEditor != this) {
-                    //throw new IllegalStateException();
-                //}
-                //if (!entry.readable) {
-                    //return null;
-                //}
-                //return new FileInputStream(entry.getCleanFile(index));
-            //}
+            
+            
+                
+                    
+                
+                
+                    
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.002 -0400", hash_original_method = "84B73985D87B7C97991726C0644B80BD", hash_generated_method = "615F1536DDCCC9ED59276DDD1D8BBBB9")
         public String getString(int index) throws IOException {
-            String varB4EAC82CA7396A68D541C85D26508E83_1923658831 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1923658831 = null; 
             InputStream in = newInputStream(index);
             varB4EAC82CA7396A68D541C85D26508E83_1923658831 = in != null ? inputStreamToString(in) : null;
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_1923658831.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1923658831.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1923658831;
-            // ---------- Original Method ----------
-            //InputStream in = newInputStream(index);
-            //return in != null ? inputStreamToString(in) : null;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.003 -0400", hash_original_method = "F4B649129433C613B63F53B88A8B2BF4", hash_generated_method = "933C0141C63F9DF544BD8DDE35445539")
         public OutputStream newOutputStream(int index) throws IOException {
-            OutputStream varB4EAC82CA7396A68D541C85D26508E83_787789898 = null; //Variable for return #1
+            OutputStream varB4EAC82CA7396A68D541C85D26508E83_787789898 = null; 
             {
                 Object varD933D409C8362D8AB4EAAFB238C186FA_2003913935 = (DiskLruCache.this);
                 {
@@ -891,21 +909,21 @@ public final class DiskLruCache implements Closeable {
                         boolean var573C982FD8CE38C80E849A01EADDA5C3_110122017 = (entry.currentEditor != this);
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_787789898 = new FaultHidingOutputStream(new FileOutputStream(entry.getDirtyFile(index)));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_787789898.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_787789898.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_787789898;
-            // ---------- Original Method ----------
-            //synchronized (DiskLruCache.this) {
-                //if (entry.currentEditor != this) {
-                    //throw new IllegalStateException();
-                //}
-                //return new FaultHidingOutputStream(new FileOutputStream(entry.getDirtyFile(index)));
-            //}
+            
+            
+                
+                    
+                
+                
+            
         }
 
         
@@ -916,21 +934,21 @@ public final class DiskLruCache implements Closeable {
             {
                 writer = new OutputStreamWriter(newOutputStream(index), Charsets.UTF_8);
                 writer.write(value);
-            } //End block
+            } 
             finally 
             {
                 IoUtils.closeQuietly(writer);
-            } //End block
+            } 
             addTaint(index);
             addTaint(value.getTaint());
-            // ---------- Original Method ----------
-            //Writer writer = null;
-            //try {
-                //writer = new OutputStreamWriter(newOutputStream(index), Charsets.UTF_8);
-                //writer.write(value);
-            //} finally {
-                //IoUtils.closeQuietly(writer);
-            //}
+            
+            
+            
+                
+                
+            
+                
+            
         }
 
         
@@ -939,25 +957,25 @@ public final class DiskLruCache implements Closeable {
             {
                 completeEdit(this, false);
                 remove(entry.key);
-            } //End block
+            } 
             {
                 completeEdit(this, true);
-            } //End block
-            // ---------- Original Method ----------
-            //if (hasErrors) {
-                //completeEdit(this, false);
-                //remove(entry.key); 
-            //} else {
-                //completeEdit(this, true);
-            //}
+            } 
+            
+            
+                
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.004 -0400", hash_original_method = "805CDF65FA82242C2D4B7EB4CBDDF0ED", hash_generated_method = "18E9660C4426C8AA96D2D812955FA89C")
         public void abort() throws IOException {
             completeEdit(this, false);
-            // ---------- Original Method ----------
-            //completeEdit(this, false);
+            
+            
         }
 
         
@@ -967,7 +985,7 @@ public final class DiskLruCache implements Closeable {
             private  FaultHidingOutputStream(OutputStream out) {
                 super(out);
                 addTaint(out.getTaint());
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -977,18 +995,18 @@ public final class DiskLruCache implements Closeable {
                 try 
                 {
                     out.write(oneByte);
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     hasErrors = true;
-                } //End block
+                } 
                 addTaint(oneByte);
-                // ---------- Original Method ----------
-                //try {
-                    //out.write(oneByte);
-                //} catch (IOException e) {
-                    //hasErrors = true;
-                //}
+                
+                
+                    
+                
+                    
+                
             }
 
             
@@ -998,20 +1016,20 @@ public final class DiskLruCache implements Closeable {
                 try 
                 {
                     out.write(buffer, offset, length);
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     hasErrors = true;
-                } //End block
+                } 
                 addTaint(buffer[0]);
                 addTaint(offset);
                 addTaint(length);
-                // ---------- Original Method ----------
-                //try {
-                    //out.write(buffer, offset, length);
-                //} catch (IOException e) {
-                    //hasErrors = true;
-                //}
+                
+                
+                    
+                
+                    
+                
             }
 
             
@@ -1021,17 +1039,17 @@ public final class DiskLruCache implements Closeable {
                 try 
                 {
                     out.close();
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     hasErrors = true;
-                } //End block
-                // ---------- Original Method ----------
-                //try {
-                    //out.close();
-                //} catch (IOException e) {
-                    //hasErrors = true;
-                //}
+                } 
+                
+                
+                    
+                
+                    
+                
             }
 
             
@@ -1041,17 +1059,17 @@ public final class DiskLruCache implements Closeable {
                 try 
                 {
                     out.flush();
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     hasErrors = true;
-                } //End block
-                // ---------- Original Method ----------
-                //try {
-                    //out.flush();
-                //} catch (IOException e) {
-                    //hasErrors = true;
-                //}
+                } 
+                
+                
+                    
+                
+                    
+                
             }
 
             
@@ -1081,31 +1099,31 @@ public final class DiskLruCache implements Closeable {
         private  Entry(String key) {
             this.key = key;
             this.lengths = new long[valueCount];
-            // ---------- Original Method ----------
-            //this.key = key;
-            //this.lengths = new long[valueCount];
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.014 -0400", hash_original_method = "5393AA568299AD2184B5004B9545BCCA", hash_generated_method = "2C106F860D1DA54837178FB3CDE55D44")
         public String getLengths() throws IOException {
-            String varB4EAC82CA7396A68D541C85D26508E83_1875756394 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1875756394 = null; 
             StringBuilder result = new StringBuilder();
             {
                 long size = lengths[0];
                 {
                     result.append(' ').append(size);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1875756394 = result.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1875756394.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1875756394.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1875756394;
-            // ---------- Original Method ----------
-            //StringBuilder result = new StringBuilder();
-            //for (long size : lengths) {
-                //result.append(' ').append(size);
-            //}
-            //return result.toString();
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1113,63 +1131,63 @@ public final class DiskLruCache implements Closeable {
         private void setLengths(String[] strings) throws IOException {
             {
                 if (DroidSafeAndroidRuntime.control) throw invalidLengths(strings);
-            } //End block
+            } 
             try 
             {
                 {
                     int i = 0;
                     {
                         lengths[i] = Long.parseLong(strings[i]);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             catch (NumberFormatException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw invalidLengths(strings);
-            } //End block
-            // ---------- Original Method ----------
-            //if (strings.length != valueCount) {
-                //throw invalidLengths(strings);
-            //}
-            //try {
-                //for (int i = 0; i < strings.length; i++) {
-                    //lengths[i] = Long.parseLong(strings[i]);
-                //}
-            //} catch (NumberFormatException e) {
-                //throw invalidLengths(strings);
-            //}
+            } 
+            
+            
+                
+            
+            
+                
+                    
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.017 -0400", hash_original_method = "0EB1B022FC0EF6548A3015E3FEB332B5", hash_generated_method = "D6244078B0DF0446716611B264ECFCE5")
         private IOException invalidLengths(String[] strings) throws IOException {
         	throw new IOException("unexpected journal line: " + Arrays.toString(strings));
-            // ---------- Original Method ----------
-            //throw new IOException("unexpected journal line: " + Arrays.toString(strings));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.018 -0400", hash_original_method = "C9A2E947DD05DC3D51A797932ED86E55", hash_generated_method = "2AC9E43CB25E464DFEC2EFE58E0C48FB")
         public File getCleanFile(int i) {
-            File varB4EAC82CA7396A68D541C85D26508E83_1177683028 = null; //Variable for return #1
+            File varB4EAC82CA7396A68D541C85D26508E83_1177683028 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1177683028 = new File(directory, key + "." + i);
             addTaint(i);
-            varB4EAC82CA7396A68D541C85D26508E83_1177683028.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1177683028.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1177683028;
-            // ---------- Original Method ----------
-            //return new File(directory, key + "." + i);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.020 -0400", hash_original_method = "7E5BF4AC0CC24327CE09DE834205313B", hash_generated_method = "4CF6A1464E95DB71AADA82E42F265679")
         public File getDirtyFile(int i) {
-            File varB4EAC82CA7396A68D541C85D26508E83_894510302 = null; //Variable for return #1
+            File varB4EAC82CA7396A68D541C85D26508E83_894510302 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_894510302 = new File(directory, key + "." + i + ".tmp");
             addTaint(i);
-            varB4EAC82CA7396A68D541C85D26508E83_894510302.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_894510302.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_894510302;
-            // ---------- Original Method ----------
-            //return new File(directory, key + "." + i + ".tmp");
+            
+            
         }
 
         

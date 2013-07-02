@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.EOFException;
 import java.io.IOException;
@@ -27,24 +27,24 @@ class DefiniteLengthInputStream extends LimitedInputStream {
         super(in, length);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("negative lengths not allowed");
-        } //End block
+        } 
         this._originalLength = length;
         this._remaining = length;
         {
             setParentEofDetect(true);
-        } //End block
+        } 
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        //if (length < 0)
-        //{
-            //throw new IllegalArgumentException("negative lengths not allowed");
-        //}
-        //this._originalLength = length;
-        //this._remaining = length;
-        //if (length == 0)
-        //{
-            //setParentEofDetect(true);
-        //}
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -52,8 +52,8 @@ class DefiniteLengthInputStream extends LimitedInputStream {
      int getRemaining() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061908548 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061908548;
-        // ---------- Original Method ----------
-        //return _remaining;
+        
+        
     }
 
     
@@ -62,27 +62,27 @@ class DefiniteLengthInputStream extends LimitedInputStream {
         int b = _in.read();
         {
             if (DroidSafeAndroidRuntime.control) throw new EOFException("DEF length " + _originalLength + " object truncated by " + _remaining);
-        } //End block
+        } 
         {
             setParentEofDetect(true);
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2142458823 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2142458823;
-        // ---------- Original Method ----------
-        //if (_remaining == 0)
-        //{
-            //return -1;
-        //}
-        //int b = _in.read();
-        //if (b < 0)
-        //{
-            //throw new EOFException("DEF length " + _originalLength + " object truncated by " + _remaining);
-        //}
-        //if (--_remaining == 0)
-        //{
-            //setParentEofDetect(true);
-        //}
-        //return b;
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -92,34 +92,34 @@ class DefiniteLengthInputStream extends LimitedInputStream {
         int numRead = _in.read(buf, off, toRead);
         {
             if (DroidSafeAndroidRuntime.control) throw new EOFException("DEF length " + _originalLength + " object truncated by " + _remaining);
-        } //End block
+        } 
         {
             boolean var7DC1F1C134E4EB2EDC913D527DDDB35A_2119115933 = ((_remaining -= numRead) == 0);
             {
                 setParentEofDetect(true);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(buf[0]);
         addTaint(off);
         addTaint(len);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273471358 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273471358;
-        // ---------- Original Method ----------
-        //if (_remaining == 0)
-        //{
-            //return -1;
-        //}
-        //int toRead = Math.min(len, _remaining);
-        //int numRead = _in.read(buf, off, toRead);
-        //if (numRead < 0)
-        //{
-            //throw new EOFException("DEF length " + _originalLength + " object truncated by " + _remaining);
-        //}
-        //if ((_remaining -= numRead) == 0)
-        //{
-            //setParentEofDetect(true);
-        //}
-        //return numRead;
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -130,23 +130,23 @@ class DefiniteLengthInputStream extends LimitedInputStream {
             boolean var61DCEE07B8C67DB539A45C1CC538D8A7_1982935224 = ((_remaining -= Streams.readFully(_in, bytes)) != 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new EOFException("DEF length " + _originalLength + " object truncated by " + _remaining);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         setParentEofDetect(true);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_189397693 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_189397693;
-        // ---------- Original Method ----------
-        //if (_remaining == 0)
-        //{
-            //return EMPTY_BYTES;
-        //}
-        //byte[] bytes = new byte[_remaining];
-        //if ((_remaining -= Streams.readFully(_in, bytes)) != 0)
-        //{
-            //throw new EOFException("DEF length " + _originalLength + " object truncated by " + _remaining);
-        //}
-        //setParentEofDetect(true);
-        //return bytes;
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     

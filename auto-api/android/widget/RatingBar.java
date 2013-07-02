@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -37,40 +37,40 @@ public class RatingBar extends AbsSeekBar {
         a.recycle();
         {
             setNumStars(numStars);
-        } //End block
+        } 
         {
             setStepSize(stepSize);
-        } //End block
+        } 
         {
             setStepSize(0.5f);
-        } //End block
+        } 
         {
             setRating(rating);
-        } //End block
+        } 
         mTouchProgressOffset = 1.1f;
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RatingBar,
-                //defStyle, 0);
-        //final int numStars = a.getInt(R.styleable.RatingBar_numStars, mNumStars);
-        //setIsIndicator(a.getBoolean(R.styleable.RatingBar_isIndicator, !mIsUserSeekable));
-        //final float rating = a.getFloat(R.styleable.RatingBar_rating, -1);
-        //final float stepSize = a.getFloat(R.styleable.RatingBar_stepSize, -1);
-        //a.recycle();
-        //if (numStars > 0 && numStars != mNumStars) {
-            //setNumStars(numStars);            
-        //}
-        //if (stepSize >= 0) {
-            //setStepSize(stepSize);
-        //} else {
-            //setStepSize(0.5f);
-        //}
-        //if (rating >= 0) {
-            //setRating(rating);
-        //}
-        //mTouchProgressOffset = 1.1f;
+        
+        
+                
+        
+        
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -79,7 +79,7 @@ public class RatingBar extends AbsSeekBar {
         this(context, attrs, com.android.internal.R.attr.ratingBarStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -87,26 +87,26 @@ public class RatingBar extends AbsSeekBar {
     public  RatingBar(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.643 -0400", hash_original_method = "CB44A4D2B638D14CC961BB9C350C60D5", hash_generated_method = "0C38E6D8F5DE50714CF4743825B12928")
     public void setOnRatingBarChangeListener(OnRatingBarChangeListener listener) {
         mOnRatingBarChangeListener = listener;
-        // ---------- Original Method ----------
-        //mOnRatingBarChangeListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.644 -0400", hash_original_method = "695CB7B11E4FD58B096410402E370F4D", hash_generated_method = "95569276B15096362B5BFAFE74F77286")
     public OnRatingBarChangeListener getOnRatingBarChangeListener() {
-        OnRatingBarChangeListener varB4EAC82CA7396A68D541C85D26508E83_1129683080 = null; //Variable for return #1
+        OnRatingBarChangeListener varB4EAC82CA7396A68D541C85D26508E83_1129683080 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1129683080 = mOnRatingBarChangeListener;
-        varB4EAC82CA7396A68D541C85D26508E83_1129683080.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1129683080.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1129683080;
-        // ---------- Original Method ----------
-        //return mOnRatingBarChangeListener;
+        
+        
     }
 
     
@@ -115,9 +115,9 @@ public class RatingBar extends AbsSeekBar {
         mIsUserSeekable = !isIndicator;
         setFocusable(!isIndicator);
         addTaint(isIndicator);
-        // ---------- Original Method ----------
-        //mIsUserSeekable = !isIndicator;
-        //setFocusable(!isIndicator);
+        
+        
+        
     }
 
     
@@ -125,8 +125,8 @@ public class RatingBar extends AbsSeekBar {
     public boolean isIndicator() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2103064940 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2103064940;
-        // ---------- Original Method ----------
-        //return !mIsUserSeekable;
+        
+        
     }
 
     
@@ -134,12 +134,12 @@ public class RatingBar extends AbsSeekBar {
     public void setNumStars(final int numStars) {
         mNumStars = numStars;
         requestLayout();
-        // ---------- Original Method ----------
-        //if (numStars <= 0) {
-            //return;
-        //}
-        //mNumStars = numStars;
-        //requestLayout();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -147,8 +147,8 @@ public class RatingBar extends AbsSeekBar {
     public int getNumStars() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_391591687 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_391591687;
-        // ---------- Original Method ----------
-        //return mNumStars;
+        
+        
     }
 
     
@@ -156,8 +156,8 @@ public class RatingBar extends AbsSeekBar {
     public void setRating(float rating) {
         setProgress(Math.round(rating * getProgressPerStar()));
         addTaint(rating);
-        // ---------- Original Method ----------
-        //setProgress(Math.round(rating * getProgressPerStar()));
+        
+        
     }
 
     
@@ -166,8 +166,8 @@ public class RatingBar extends AbsSeekBar {
         float varC1551137A50504CB0487B61A80640C9D_837306306 = (getProgress() / getProgressPerStar());
         float var546ADE640B6EDFBC8A086EF31347E768_1329134179 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1329134179;
-        // ---------- Original Method ----------
-        //return getProgress() / getProgressPerStar();
+        
+        
     }
 
     
@@ -178,14 +178,14 @@ public class RatingBar extends AbsSeekBar {
         setMax((int) newMax);
         setProgress(newProgress);
         addTaint(stepSize);
-        // ---------- Original Method ----------
-        //if (stepSize <= 0) {
-            //return;
-        //}
-        //final float newMax = mNumStars / stepSize;
-        //final int newProgress = (int) (newMax / getMax() * getProgress());
-        //setMax((int) newMax);
-        //setProgress(newProgress);
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -194,8 +194,8 @@ public class RatingBar extends AbsSeekBar {
         float var580C926BAB1A16EA2E9DB56BF568E6C8_1768269545 = ((float) getNumStars() / getMax());
         float var546ADE640B6EDFBC8A086EF31347E768_1788984891 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1788984891;
-        // ---------- Original Method ----------
-        //return (float) getNumStars() / getMax();
+        
+        
     }
 
     
@@ -203,47 +203,47 @@ public class RatingBar extends AbsSeekBar {
     private float getProgressPerStar() {
         {
             float varE5C947B8561C8E1317DE021C46A9B2D5_518366126 = (1f * getMax() / mNumStars);
-        } //End block
+        } 
         float var546ADE640B6EDFBC8A086EF31347E768_1170713645 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1170713645;
-        // ---------- Original Method ----------
-        //if (mNumStars > 0) {
-            //return 1f * getMax() / mNumStars;
-        //} else {
-            //return 1;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.648 -0400", hash_original_method = "505263BDF0A0C38F11468B8B577065DB", hash_generated_method = "DC3C35B7205AC99D22B5C595B1F94EB0")
     @Override
      Shape getDrawableShape() {
-        Shape varB4EAC82CA7396A68D541C85D26508E83_1304855699 = null; //Variable for return #1
+        Shape varB4EAC82CA7396A68D541C85D26508E83_1304855699 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1304855699 = new RectShape();
-        varB4EAC82CA7396A68D541C85D26508E83_1304855699.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1304855699.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1304855699;
-        // ---------- Original Method ----------
-        //return new RectShape();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.648 -0400", hash_original_method = "9369317EE923D808BCA8DA286976E63F", hash_generated_method = "0F13953CC31CCF22B3AD6E6FD1BD6C96")
     @Override
      void onProgressRefresh(float scale, boolean fromUser) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onProgressRefresh(scale, fromUser);
         updateSecondaryProgress(getProgress());
         {
             dispatchRatingChange(false);
-        } //End block
+        } 
         addTaint(scale);
         addTaint(fromUser);
-        // ---------- Original Method ----------
-        //super.onProgressRefresh(scale, fromUser);
-        //updateSecondaryProgress(getProgress());
-        //if (!fromUser) {
-            //dispatchRatingChange(false);
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -254,80 +254,80 @@ public class RatingBar extends AbsSeekBar {
             final float progressInStars = progress / ratio;
             final int secondaryProgress = (int) (Math.ceil(progressInStars) * ratio);
             setSecondaryProgress(secondaryProgress);
-        } //End block
+        } 
         addTaint(progress);
-        // ---------- Original Method ----------
-        //final float ratio = getProgressPerStar();
-        //if (ratio > 0) {
-            //final float progressInStars = progress / ratio;
-            //final int secondaryProgress = (int) (Math.ceil(progressInStars) * ratio);
-            //setSecondaryProgress(secondaryProgress);
-        //}
+        
+        
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.649 -0400", hash_original_method = "A52B21EAEA0ABEA842DCABF14BA9A11D", hash_generated_method = "87201983ED824CE6F7DA7E28226CB926")
     @Override
     protected synchronized void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         {
             final int width = mSampleTile.getWidth() * mNumStars;
             setMeasuredDimension(resolveSizeAndState(width, widthMeasureSpec, 0),
                     getMeasuredHeight());
-        } //End block
+        } 
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        //if (mSampleTile != null) {
-            //final int width = mSampleTile.getWidth() * mNumStars;
-            //setMeasuredDimension(resolveSizeAndState(width, widthMeasureSpec, 0),
-                    //getMeasuredHeight());
-        //}
+        
+        
+        
+            
+            
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.649 -0400", hash_original_method = "226C4EA3B37AD5190041539897D2C6DD", hash_generated_method = "D46B39EED2C3FCB544AE1F9ECD553F30")
     @Override
      void onStartTrackingTouch() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mProgressOnStartTracking = getProgress();
         super.onStartTrackingTouch();
-        // ---------- Original Method ----------
-        //mProgressOnStartTracking = getProgress();
-        //super.onStartTrackingTouch();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.650 -0400", hash_original_method = "6235EE5490022867BAEF4FF5BA6A4578", hash_generated_method = "B64C821E85AB5404BAA65133456C3C68")
     @Override
      void onStopTrackingTouch() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onStopTrackingTouch();
         {
             boolean varE06DC55B4557AFDCAD49579E6FE8D748_2017947779 = (getProgress() != mProgressOnStartTracking);
             {
                 dispatchRatingChange(true);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //super.onStopTrackingTouch();
-        //if (getProgress() != mProgressOnStartTracking) {
-            //dispatchRatingChange(true);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.650 -0400", hash_original_method = "90A55B8149F7E0DE715F35412D64649C", hash_generated_method = "7BA0FC9D64756D08AFC36F4673AD7D4C")
     @Override
      void onKeyChange() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onKeyChange();
         dispatchRatingChange(true);
-        // ---------- Original Method ----------
-        //super.onKeyChange();
-        //dispatchRatingChange(true);
+        
+        
+        
     }
 
     
@@ -336,13 +336,13 @@ public class RatingBar extends AbsSeekBar {
         {
             mOnRatingBarChangeListener.onRatingChanged(this, getRating(),
                     fromUser);
-        } //End block
+        } 
         addTaint(fromUser);
-        // ---------- Original Method ----------
-        //if (mOnRatingBarChangeListener != null) {
-            //mOnRatingBarChangeListener.onRatingChanged(this, getRating(),
-                    //fromUser);
-        //}
+        
+        
+            
+                    
+        
     }
 
     
@@ -351,11 +351,11 @@ public class RatingBar extends AbsSeekBar {
     public synchronized void setMax(int max) {
         super.setMax(max);
         addTaint(max);
-        // ---------- Original Method ----------
-        //if (max <= 0) {
-            //return;
-        //}
-        //super.setMax(max);
+        
+        
+            
+        
+        
     }
 
     

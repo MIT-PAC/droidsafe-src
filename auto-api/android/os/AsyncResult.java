@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Message;
 
@@ -25,13 +25,14 @@ public class AsyncResult {
         userObj = uo;
         result = r;
         exception = ex;
-        // ---------- Original Method ----------
-        //userObj = uo;
-        //result = r;
-        //exception = ex;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AsyncResult forMessage(Message m, Object r, Throwable ex) {
         AsyncResult ret;
         ret = new AsyncResult (m.obj, r, ex);
@@ -40,6 +41,7 @@ public class AsyncResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AsyncResult forMessage(Message m) {
         AsyncResult ret;
         ret = new AsyncResult (m.obj, null, null);

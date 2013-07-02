@@ -1,11 +1,11 @@
 package android.database;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Handler;
 
@@ -23,54 +23,56 @@ public abstract class ContentObserver {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.674 -0400", hash_original_method = "DEDF781BC2901F5DB53B414F0A999CAB", hash_generated_method = "256B09D59F656DF49A982C4626C638E5")
     public  ContentObserver(Handler handler) {
         mHandler = handler;
-        // ---------- Original Method ----------
-        //mHandler = handler;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.675 -0400", hash_original_method = "01F21475A40B0383A9D17C9A77564941", hash_generated_method = "87F7DE0776165F2B997179C515CD50BD")
     public IContentObserver getContentObserver() {
-        IContentObserver varB4EAC82CA7396A68D541C85D26508E83_794797125 = null; //Variable for return #1
+        IContentObserver varB4EAC82CA7396A68D541C85D26508E83_794797125 = null; 
         {
             {
                 mTransport = new Transport(this);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_794797125 = mTransport;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_794797125.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_794797125.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_794797125;
-        // ---------- Original Method ----------
-        //synchronized(lock) {
-            //if (mTransport == null) {
-                //mTransport = new Transport(this);
-            //}
-            //return mTransport;
-        //}
+        
+        
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.675 -0400", hash_original_method = "0CB42947C64AC2776A7D9A6FF8C462FE", hash_generated_method = "4835350D08438DB90CF642D287A7E135")
     public IContentObserver releaseContentObserver() {
-        IContentObserver varB4EAC82CA7396A68D541C85D26508E83_1579604 = null; //Variable for return #1
+        IContentObserver varB4EAC82CA7396A68D541C85D26508E83_1579604 = null; 
         {
             Transport oldTransport = mTransport;
             {
                 oldTransport.releaseContentObserver();
                 mTransport = null;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1579604 = oldTransport;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1579604.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1579604.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1579604;
-        // ---------- Original Method ----------
-        //synchronized(lock) {
-            //Transport oldTransport = mTransport;
-            //if (oldTransport != null) {
-                //oldTransport.releaseContentObserver();
-                //mTransport = null;
-            //}
-            //return oldTransport;
-        //}
+        
+        
+            
+            
+                
+                
+            
+            
+        
     }
 
     
@@ -78,16 +80,16 @@ public abstract class ContentObserver {
     public boolean deliverSelfNotifications() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1902271680 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1902271680;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.677 -0400", hash_original_method = "6EAEE94A5AFBBE3CB405FFF6432059B8", hash_generated_method = "43E4B8EB52312D77453544CB6778AF9B")
     public void onChange(boolean selfChange) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(selfChange);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -95,17 +97,17 @@ public abstract class ContentObserver {
     public final void dispatchChange(boolean selfChange) {
         {
             onChange(selfChange);
-        } //End block
+        } 
         {
             mHandler.post(new NotificationRunnable(selfChange));
-        } //End block
+        } 
         addTaint(selfChange);
-        // ---------- Original Method ----------
-        //if (mHandler == null) {
-            //onChange(selfChange);
-        //} else {
-            //mHandler.post(new NotificationRunnable(selfChange));
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -117,16 +119,16 @@ public abstract class ContentObserver {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.678 -0400", hash_original_method = "640FAC8E4E08E48125055D1606ED9C9B", hash_generated_method = "8106FFA6B3D07725DE2FEEBDB49EF1E5")
         public  NotificationRunnable(boolean self) {
             mSelf = self;
-            // ---------- Original Method ----------
-            //mSelf = self;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.679 -0400", hash_original_method = "ADCF046F07EA9B09E2364857C3DDF0F7", hash_generated_method = "30ECC851BB12D6B371695B1BC5CB6757")
         public void run() {
             ContentObserver.this.onChange(mSelf);
-            // ---------- Original Method ----------
-            //ContentObserver.this.onChange(mSelf);
+            
+            
         }
 
         
@@ -142,8 +144,8 @@ public abstract class ContentObserver {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.679 -0400", hash_original_method = "C30CAD402A0C8AFFD18AB2CC7EC4F204", hash_generated_method = "FED9587C99F66F414D9E27DD1EDE5BC9")
         public  Transport(ContentObserver contentObserver) {
             mContentObserver = contentObserver;
-            // ---------- Original Method ----------
-            //mContentObserver = contentObserver;
+            
+            
         }
 
         
@@ -152,39 +154,39 @@ public abstract class ContentObserver {
             ContentObserver contentObserver = mContentObserver;
             {
                 boolean var48E239F26E510CFEEA586BDE1698ED7B_1721034418 = (contentObserver.deliverSelfNotifications());
-            } //End block
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_984960313 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_984960313;
-            // ---------- Original Method ----------
-            //ContentObserver contentObserver = mContentObserver;
-            //if (contentObserver != null) {
-                //return contentObserver.deliverSelfNotifications();
-            //}
-            //return false;
+            
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.680 -0400", hash_original_method = "71BABE68DF8E341DA3CAF0778B2BD246", hash_generated_method = "708BBFB488DFE690052E3940AB168E28")
         public void onChange(boolean selfChange) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             ContentObserver contentObserver = mContentObserver;
             {
                 contentObserver.dispatchChange(selfChange);
-            } //End block
+            } 
             addTaint(selfChange);
-            // ---------- Original Method ----------
-            //ContentObserver contentObserver = mContentObserver;
-            //if (contentObserver != null) {
-                //contentObserver.dispatchChange(selfChange);
-            //}
+            
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.681 -0400", hash_original_method = "A0916E3A0DA123DBB345BC81644B70F3", hash_generated_method = "ADD05F525B1B13738DD98FA14B241126")
         public void releaseContentObserver() {
             mContentObserver = null;
-            // ---------- Original Method ----------
-            //mContentObserver = null;
+            
+            
         }
 
         

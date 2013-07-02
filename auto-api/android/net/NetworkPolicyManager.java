@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import static android.content.pm.PackageManager.GET_SIGNATURES;
 import static android.text.format.Time.MONTH_DAY;
@@ -29,143 +29,151 @@ public class NetworkPolicyManager {
     public  NetworkPolicyManager(INetworkPolicyManager service) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("missing INetworkPolicyManager");
-        } //End block
+        } 
         mService = service;
-        // ---------- Original Method ----------
-        //if (service == null) {
-            //throw new IllegalArgumentException("missing INetworkPolicyManager");
-        //}
-        //mService = service;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NetworkPolicyManager getSystemService(Context context) {
         return (NetworkPolicyManager) context.getSystemService(Context.NETWORK_POLICY_SERVICE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.427 -0400", hash_original_method = "6C9718C45778137F76C2603939413095", hash_generated_method = "CAB9DC37DE9BEA0CC66D1DE07A242AB9")
     public void setNetworkPolicies(NetworkPolicy[] policies) {
         try 
         {
             mService.setNetworkPolicies(policies);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(policies[0].getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mService.setNetworkPolicies(policies);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.428 -0400", hash_original_method = "025521C078EE07825554E8E10F94F333", hash_generated_method = "C171D49E1732F3E8FE3AB8FB6878752B")
     public NetworkPolicy[] getNetworkPolicies() {
-        NetworkPolicy[] varB4EAC82CA7396A68D541C85D26508E83_426770256 = null; //Variable for return #1
-        NetworkPolicy[] varB4EAC82CA7396A68D541C85D26508E83_247341331 = null; //Variable for return #2
+        NetworkPolicy[] varB4EAC82CA7396A68D541C85D26508E83_426770256 = null; 
+        NetworkPolicy[] varB4EAC82CA7396A68D541C85D26508E83_247341331 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_426770256 = mService.getNetworkPolicies();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_247341331 = null;
-        } //End block
-        NetworkPolicy[] varA7E53CE21691AB073D9660D615818899_484307121; //Final return value
+        } 
+        NetworkPolicy[] varA7E53CE21691AB073D9660D615818899_484307121; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_484307121 = varB4EAC82CA7396A68D541C85D26508E83_426770256;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_484307121 = varB4EAC82CA7396A68D541C85D26508E83_247341331;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_484307121.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_484307121.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_484307121;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getNetworkPolicies();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.429 -0400", hash_original_method = "A06EA8E312C1B7FA5C4AC7FF7B993ED4", hash_generated_method = "6A5841D3BC023CEBF662D4648F87A3AA")
     public void setUidPolicy(int uid, int policy) {
         try 
         {
             mService.setUidPolicy(uid, policy);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(uid);
         addTaint(policy);
-        // ---------- Original Method ----------
-        //try {
-            //mService.setUidPolicy(uid, policy);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.429 -0400", hash_original_method = "7AF3F24A0466D6FB5C5D518CC41F56AD", hash_generated_method = "3092AACA5B9741CD2DD4DB80698E835D")
     public int getUidPolicy(int uid) {
         try 
         {
             int var2EFE4EBC09097CC24DA539A1E8DCD3CE_1431173586 = (mService.getUidPolicy(uid));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(uid);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_579514837 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_579514837;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getUidPolicy(uid);
-        //} catch (RemoteException e) {
-            //return POLICY_NONE;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.430 -0400", hash_original_method = "14080C9EBE421CBAA0CC7A85DC8AF1A5", hash_generated_method = "F8F2B172F98C25CEE95E5E1A7E12475E")
     public void registerListener(INetworkPolicyListener listener) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         try 
         {
             mService.registerListener(listener);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mService.registerListener(listener);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.431 -0400", hash_original_method = "35702F276EA8A80B200FDB5306DFD41E", hash_generated_method = "51C036CBD170D6512891CB5207B01BDC")
     public void unregisterListener(INetworkPolicyListener listener) {
         try 
         {
             mService.unregisterListener(listener);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mService.unregisterListener(listener);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long computeLastCycleBoundary(long currentTime, NetworkPolicy policy) {
         final Time now = new Time(Time.TIMEZONE_UTC);
         now.set(currentTime);
@@ -185,6 +193,7 @@ public class NetworkPolicyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long computeNextCycleBoundary(long currentTime, NetworkPolicy policy) {
         final Time now = new Time(Time.TIMEZONE_UTC);
         now.set(currentTime);
@@ -204,6 +213,7 @@ public class NetworkPolicyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void snapToCycleDay(Time time, int cycleDay) {
         if (cycleDay > time.getActualMaximum(MONTH_DAY)) {
             time.month += 1;
@@ -245,6 +255,7 @@ public class NetworkPolicyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpPolicy(PrintWriter fout, int policy) {
         fout.write("[");
         if ((policy & POLICY_REJECT_METERED_BACKGROUND) != 0) {
@@ -254,6 +265,7 @@ public class NetworkPolicyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpRules(PrintWriter fout, int rules) {
         fout.write("[");
         if ((rules & RULE_REJECT_METERED) != 0) {

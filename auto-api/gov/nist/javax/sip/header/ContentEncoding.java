@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.ParseException;
 
@@ -17,7 +17,7 @@ public class ContentEncoding extends SIPHeader implements javax.sip.header.Conte
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.393 -0400", hash_original_method = "AF3A83AEFF326F1AB1D055130F5C4343", hash_generated_method = "484568D4CE2DAF62679DC5CF40341916")
     public  ContentEncoding() {
         super(CONTENT_ENCODING);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,43 +25,44 @@ public class ContentEncoding extends SIPHeader implements javax.sip.header.Conte
     public  ContentEncoding(String enc) {
         super(CONTENT_ENCODING);
         contentEncoding = enc;
-        // ---------- Original Method ----------
-        //contentEncoding = enc;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.394 -0400", hash_original_method = "762501862EB015269BBC405DBBAC5194", hash_generated_method = "1F6717C577604E4E8F6C9D9705E053A6")
     public String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_370338622 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_370338622 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_370338622 = contentEncoding;
-        varB4EAC82CA7396A68D541C85D26508E83_370338622.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_370338622.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_370338622;
-        // ---------- Original Method ----------
-        //return contentEncoding;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.395 -0400", hash_original_method = "13F27076508F7754A69639743C7567EC", hash_generated_method = "7307962E1CA8DA39222318A7EDB6C47D")
     public String getEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1060360505 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1060360505 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1060360505 = contentEncoding;
-        varB4EAC82CA7396A68D541C85D26508E83_1060360505.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1060360505.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1060360505;
-        // ---------- Original Method ----------
-        //return contentEncoding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:39.395 -0400", hash_original_method = "250F948E1BF6921E6DE1D81CBA749729", hash_generated_method = "92B9C22D537903AE5A4411BECDEEB83A")
     public void setEncoding(String encoding) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                 "JAIN-SIP Exception, " + " encoding is null");
         contentEncoding = encoding;
-        // ---------- Original Method ----------
-        //if (encoding == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception, " + " encoding is null");
-        //contentEncoding = encoding;
+        
+        
+            
+                
+        
     }
 
     

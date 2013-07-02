@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class SSLv3Constants {
@@ -13,7 +13,7 @@ public class SSLv3Constants {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.108 -0400", hash_original_method = "69F121EA0CB9BBC349DC8505C0D3C215", hash_generated_method = "69F121EA0CB9BBC349DC8505C0D3C215")
     public SSLv3Constants ()
     {
-        //Synthesized constructor
+        
     }
 
 

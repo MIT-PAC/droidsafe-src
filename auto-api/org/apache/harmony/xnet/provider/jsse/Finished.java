@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -18,9 +18,9 @@ public class Finished extends Message {
     public  Finished(byte[] bytes) {
         data = bytes;
         length = data.length;
-        // ---------- Original Method ----------
-        //data = bytes;
-        //length = data.length;
+        
+        
+        
     }
 
     
@@ -29,27 +29,28 @@ public class Finished extends Message {
         {
             data = in.read(length);
             this.length = data.length;
-        } //End block
+        } 
         {
             fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect Finished");
-        } //End block
-        // ---------- Original Method ----------
-        //if (length == 12 || length == 36) {
-            //data = in.read(length);
-            //this.length = data.length;
-        //} else {
-            //fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect Finished");
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.102 -0400", hash_original_method = "E175A61E2BD704850DF6197D24D9CB45", hash_generated_method = "27D8B06A697018A4A77F745BD690F19D")
     @Override
     public void send(HandshakeIODataStream out) {
         out.write(data);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.write(data);
+        
+        
     }
 
     
@@ -58,8 +59,8 @@ public class Finished extends Message {
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1378360735 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1378360735;
-        // ---------- Original Method ----------
-        //return Handshake.FINISHED;
+        
+        
     }
 
     
@@ -67,8 +68,8 @@ public class Finished extends Message {
     public byte[] getData() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1392212333 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1392212333;
-        // ---------- Original Method ----------
-        //return data;
+        
+        
     }
 
     

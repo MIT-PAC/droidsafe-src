@@ -1,11 +1,11 @@
 package android.database;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 
@@ -29,15 +29,15 @@ public class MatrixCursor extends AbstractCursor {
         this.columnCount = columnNames.length;
         {
             initialCapacity = 1;
-        } //End block
+        } 
         this.data = new Object[columnCount * initialCapacity];
-        // ---------- Original Method ----------
-        //this.columnNames = columnNames;
-        //this.columnCount = columnNames.length;
-        //if (initialCapacity < 1) {
-            //initialCapacity = 1;
-        //}
-        //this.data = new Object[columnCount * initialCapacity];
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -45,83 +45,87 @@ public class MatrixCursor extends AbstractCursor {
     public  MatrixCursor(String[] columnNames) {
         this(columnNames, 16);
         addTaint(columnNames[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.029 -0400", hash_original_method = "A7EF9562410A67389E3E61A73FDE647E", hash_generated_method = "17EBB2EB5D90ADE04C20BF1EE249FC31")
     private Object get(int column) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1329725817 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1329725817 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new CursorIndexOutOfBoundsException("Requested column: "
                     + column + ", # of columns: " +  columnCount);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new CursorIndexOutOfBoundsException("Before first row.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new CursorIndexOutOfBoundsException("After last row.");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1329725817 = data[mPos * columnCount + column];
         addTaint(column);
-        varB4EAC82CA7396A68D541C85D26508E83_1329725817.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1329725817.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1329725817;
-        // ---------- Original Method ----------
-        //if (column < 0 || column >= columnCount) {
-            //throw new CursorIndexOutOfBoundsException("Requested column: "
-                    //+ column + ", # of columns: " +  columnCount);
-        //}
-        //if (mPos < 0) {
-            //throw new CursorIndexOutOfBoundsException("Before first row.");
-        //}
-        //if (mPos >= rowCount) {
-            //throw new CursorIndexOutOfBoundsException("After last row.");
-        //}
-        //return data[mPos * columnCount + column];
+        
+        
+            
+                    
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.030 -0400", hash_original_method = "4585CF8720D3AF6A9C9A961267CD63E3", hash_generated_method = "D3A81BAA952A7CCDD3BF13D1F84D55C2")
     public RowBuilder newRow() {
-        RowBuilder varB4EAC82CA7396A68D541C85D26508E83_1889875602 = null; //Variable for return #1
+        RowBuilder varB4EAC82CA7396A68D541C85D26508E83_1889875602 = null; 
         int endIndex = rowCount * columnCount;
         ensureCapacity(endIndex);
         int start = endIndex - columnCount;
         varB4EAC82CA7396A68D541C85D26508E83_1889875602 = new RowBuilder(start, endIndex);
-        varB4EAC82CA7396A68D541C85D26508E83_1889875602.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1889875602.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1889875602;
-        // ---------- Original Method ----------
-        //rowCount++;
-        //int endIndex = rowCount * columnCount;
-        //ensureCapacity(endIndex);
-        //int start = endIndex - columnCount;
-        //return new RowBuilder(start, endIndex);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.030 -0400", hash_original_method = "48B10D52D633E686D99B492C35189F09", hash_generated_method = "17340A7074FD41D0AEA26AE94A038373")
     public void addRow(Object[] columnValues) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("columnNames.length = "
                     + columnCount + ", columnValues.length = "
                     + columnValues.length);
-        } //End block
+        } 
         int start = rowCount++ * columnCount;
         ensureCapacity(start + columnCount);
         System.arraycopy(columnValues, 0, data, start, columnCount);
         addTaint(columnValues[0].getTaint());
-        // ---------- Original Method ----------
-        //if (columnValues.length != columnCount) {
-            //throw new IllegalArgumentException("columnNames.length = "
-                    //+ columnCount + ", columnValues.length = "
-                    //+ columnValues.length);
-        //}
-        //int start = rowCount++ * columnCount;
-        //ensureCapacity(start + columnCount);
-        //System.arraycopy(columnValues, 0, data, start, columnCount);
+        
+        
+            
+                    
+                    
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.305 -0400", hash_original_method = "30233D359459EB079BFCFD374250902B", hash_generated_method = "383EA1B2B167E1C557DB23238955EF67")
     public void addRow(Iterable<?> columnValues) {
         int start;
@@ -131,7 +135,7 @@ public class MatrixCursor extends AbstractCursor {
         ensureCapacity(end);
         {
             addRow((ArrayList<?>) columnValues, start);
-        } //End block
+        } 
         int current;
         current = start;
         Object[] localData;
@@ -144,70 +148,72 @@ public class MatrixCursor extends AbstractCursor {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                         "columnValues.size() > columnNames.length");
-                } //End block
+                } 
                 localData[current++] = columnValue;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "columnValues.size() < columnNames.length");
-        } //End block
+        } 
         addTaint(columnValues.getTaint());
-        // ---------- Original Method ----------
-        //int start = rowCount * columnCount;
-        //int end = start + columnCount;
-        //ensureCapacity(end);
-        //if (columnValues instanceof ArrayList<?>) {
-            //addRow((ArrayList<?>) columnValues, start);
-            //return;
-        //}
-        //int current = start;
-        //Object[] localData = data;
-        //for (Object columnValue : columnValues) {
-            //if (current == end) {
-                //throw new IllegalArgumentException(
-                        //"columnValues.size() > columnNames.length");
-            //}
-            //localData[current++] = columnValue;
-        //}
-        //if (current != end) {
-            //throw new IllegalArgumentException(
-                    //"columnValues.size() < columnNames.length");
-        //}
-        //rowCount++;
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
+            
+                
+                        
+            
+            
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.031 -0400", hash_original_method = "F5D0F3FA334A37A2680A290D6DEEBDBE", hash_generated_method = "CF4687E01C095744F73EB096CF3CC8B6")
     private void addRow(ArrayList<?> columnValues, int start) {
         int size = columnValues.size();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("columnNames.length = "
                     + columnCount + ", columnValues.size() = " + size);
-        } //End block
+        } 
         Object[] localData = data;
         {
             int i = 0;
             {
                 localData[start + i] = columnValues.get(i);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(columnValues.getTaint());
         addTaint(start);
-        // ---------- Original Method ----------
-        //int size = columnValues.size();
-        //if (size != columnCount) {
-            //throw new IllegalArgumentException("columnNames.length = "
-                    //+ columnCount + ", columnValues.size() = " + size);
-        //}
-        //rowCount++;
-        //Object[] localData = data;
-        //for (int i = 0; i < size; i++) {
-            //localData[start + i] = columnValues.get(i);
-        //}
+        
+        
+        
+            
+                    
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.032 -0400", hash_original_method = "0FD21978EF299D1119588B65FAE6C3BE", hash_generated_method = "0C816AACDD986C7B650D33DA95B4D258")
     private void ensureCapacity(int size) {
         {
@@ -215,21 +221,21 @@ public class MatrixCursor extends AbstractCursor {
             int newSize = data.length * 2;
             {
                 newSize = size;
-            } //End block
+            } 
             this.data = new Object[newSize];
             System.arraycopy(oldData, 0, this.data, 0, oldData.length);
-        } //End block
+        } 
         addTaint(size);
-        // ---------- Original Method ----------
-        //if (size > data.length) {
-            //Object[] oldData = this.data;
-            //int newSize = data.length * 2;
-            //if (newSize < size) {
-                //newSize = size;
-            //}
-            //this.data = new Object[newSize];
-            //System.arraycopy(oldData, 0, this.data, 0, oldData.length);
-        //}
+        
+        
+            
+            
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -238,50 +244,52 @@ public class MatrixCursor extends AbstractCursor {
     public int getCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_932682600 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_932682600;
-        // ---------- Original Method ----------
-        //return rowCount;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.033 -0400", hash_original_method = "438CBE048C14BFF65A950EB22F18A5DC", hash_generated_method = "6BBF4487990CBE39816E89BCD530D258")
     @Override
     public String[] getColumnNames() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1745673265 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1745673265 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1745673265 = columnNames;
-        varB4EAC82CA7396A68D541C85D26508E83_1745673265.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1745673265.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1745673265;
-        // ---------- Original Method ----------
-        //return columnNames;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.035 -0400", hash_original_method = "FF3178260B85D85D43C7EA714D59B46B", hash_generated_method = "A574839F17ADC3301AE23DE158D01233")
     @Override
     public String getString(int column) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1727040402 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1603443857 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1727040402 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1603443857 = null; 
         Object value = get(column);
         varB4EAC82CA7396A68D541C85D26508E83_1727040402 = null;
         varB4EAC82CA7396A68D541C85D26508E83_1603443857 = value.toString();
         addTaint(column);
-        String varA7E53CE21691AB073D9660D615818899_1075332166; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1075332166; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1075332166 = varB4EAC82CA7396A68D541C85D26508E83_1727040402;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1075332166 = varB4EAC82CA7396A68D541C85D26508E83_1603443857;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1075332166.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1075332166.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1075332166;
-        // ---------- Original Method ----------
-        //Object value = get(column);
-        //if (value == null) return null;
-        //return value.toString();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.036 -0400", hash_original_method = "60FD43E3A8DF3780BF7590D38393B65C", hash_generated_method = "48F39040532DBCA95F2832732541339C")
     @Override
     public short getShort(int column) {
@@ -291,14 +299,15 @@ public class MatrixCursor extends AbstractCursor {
         addTaint(column);
         short var4F09DAA9D95BCB166A302407A0E0BABE_1051896251 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1051896251;
-        // ---------- Original Method ----------
-        //Object value = get(column);
-        //if (value == null) return 0;
-        //if (value instanceof Number) return ((Number) value).shortValue();
-        //return Short.parseShort(value.toString());
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.037 -0400", hash_original_method = "20798CD66C6EBCBDA86BE86A1F5C23AA", hash_generated_method = "04596518A868DDAE09186C29555D97F5")
     @Override
     public int getInt(int column) {
@@ -308,14 +317,15 @@ public class MatrixCursor extends AbstractCursor {
         addTaint(column);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_768358033 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_768358033;
-        // ---------- Original Method ----------
-        //Object value = get(column);
-        //if (value == null) return 0;
-        //if (value instanceof Number) return ((Number) value).intValue();
-        //return Integer.parseInt(value.toString());
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.037 -0400", hash_original_method = "95E2F837C77BDD8697A8850547DFE4D6", hash_generated_method = "AC3720CB0B69B52EA104E115593399A6")
     @Override
     public long getLong(int column) {
@@ -325,14 +335,15 @@ public class MatrixCursor extends AbstractCursor {
         addTaint(column);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1729780056 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1729780056;
-        // ---------- Original Method ----------
-        //Object value = get(column);
-        //if (value == null) return 0;
-        //if (value instanceof Number) return ((Number) value).longValue();
-        //return Long.parseLong(value.toString());
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.038 -0400", hash_original_method = "5F37DCAACCAC42556DC41D90A8D016BB", hash_generated_method = "9D203E0791F0CEF764A952E833BE5235")
     @Override
     public float getFloat(int column) {
@@ -342,14 +353,15 @@ public class MatrixCursor extends AbstractCursor {
         addTaint(column);
         float var546ADE640B6EDFBC8A086EF31347E768_1320178289 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1320178289;
-        // ---------- Original Method ----------
-        //Object value = get(column);
-        //if (value == null) return 0.0f;
-        //if (value instanceof Number) return ((Number) value).floatValue();
-        //return Float.parseFloat(value.toString());
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.038 -0400", hash_original_method = "C2298AFC87949D13E5DEC28EBEE5D1A6", hash_generated_method = "B04C755E41FB1387E3091D37C5B6C113")
     @Override
     public double getDouble(int column) {
@@ -359,14 +371,15 @@ public class MatrixCursor extends AbstractCursor {
         addTaint(column);
         double varE8CD7DA078A86726031AD64F35F5A6C0_1902978044 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1902978044;
-        // ---------- Original Method ----------
-        //Object value = get(column);
-        //if (value == null) return 0.0d;
-        //if (value instanceof Number) return ((Number) value).doubleValue();
-        //return Double.parseDouble(value.toString());
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.039 -0400", hash_original_method = "9C5D46FB06759EAD0808F8E5E3B27C37", hash_generated_method = "246F4DAFC7F9911C32C6C4628E7750CD")
     @Override
     public byte[] getBlob(int column) {
@@ -374,12 +387,13 @@ public class MatrixCursor extends AbstractCursor {
         addTaint(column);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1633946725 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1633946725;
-        // ---------- Original Method ----------
-        //Object value = get(column);
-        //return (byte[]) value;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.039 -0400", hash_original_method = "8CE769D01E691B0A57CC7218B148D0E1", hash_generated_method = "9B4BF8524D89A66FAB858493C3FC14CC")
     @Override
     public int getType(int column) {
@@ -387,11 +401,12 @@ public class MatrixCursor extends AbstractCursor {
         addTaint(column);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_340686132 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_340686132;
-        // ---------- Original Method ----------
-        //return DatabaseUtils.getTypeOfObject(get(column));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.039 -0400", hash_original_method = "8D2032D2DB514B96136D4116CF16B3F3", hash_generated_method = "C340D19D83F584993A4EC2517B82F6B4")
     @Override
     public boolean isNull(int column) {
@@ -399,8 +414,8 @@ public class MatrixCursor extends AbstractCursor {
         addTaint(column);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_755568750 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_755568750;
-        // ---------- Original Method ----------
-        //return get(column) == null;
+        
+        
     }
 
     
@@ -416,30 +431,30 @@ public class MatrixCursor extends AbstractCursor {
           RowBuilder(int index, int endIndex) {
             this.index = index;
             this.endIndex = endIndex;
-            // ---------- Original Method ----------
-            //this.index = index;
-            //this.endIndex = endIndex;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.041 -0400", hash_original_method = "2C7305D6C3442E9FCBF185523D5AEB72", hash_generated_method = "6CC5F85C2D2589789E402EBB98AFD331")
         public RowBuilder add(Object columnValue) {
-            RowBuilder varB4EAC82CA7396A68D541C85D26508E83_1423060958 = null; //Variable for return #1
+            RowBuilder varB4EAC82CA7396A68D541C85D26508E83_1423060958 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new CursorIndexOutOfBoundsException(
                         "No more columns left.");
-            } //End block
+            } 
             data[index++] = columnValue;
             varB4EAC82CA7396A68D541C85D26508E83_1423060958 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1423060958.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1423060958.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1423060958;
-            // ---------- Original Method ----------
-            //if (index == endIndex) {
-                //throw new CursorIndexOutOfBoundsException(
-                        //"No more columns left.");
-            //}
-            //data[index++] = columnValue;
-            //return this;
+            
+            
+                
+                        
+            
+            
+            
         }
 
         

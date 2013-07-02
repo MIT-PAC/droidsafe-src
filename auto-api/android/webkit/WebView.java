@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.annotation.Widget;
 import android.app.ActivityManager;
@@ -568,7 +568,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public  WebView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -577,7 +577,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         this(context, attrs, com.android.internal.R.attr.webViewStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -587,7 +587,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -599,7 +599,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(attrs.getTaint());
         addTaint(defStyle);
         addTaint(privateBrowsing);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -610,7 +610,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid context argument");
-        } //End block
+        } 
         JniUtil.setContext(context);
         mCallbackProxy = new CallbackProxy(context, this);
         mViewManager = new ViewManager(this);
@@ -625,20 +625,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         updateMultiTouchSupport(context);
         {
             startPrivateBrowsing();
-        } //End block
+        } 
         mAutoFillData = new WebViewCore.AutoFillData();
         addTaint(attrs.getTaint());
         addTaint(defStyle);
         addTaint(privateBrowsing);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.070 -0400", hash_original_method = "1AA2C9794D97C2364A0DADD5E85D90A7", hash_generated_method = "04CCCA39115104D6AC5BA74803FE09D2")
      void incrementTextGeneration() {
-        // ---------- Original Method ----------
-        //mTextGeneration++;
+        
+        
     }
 
     
@@ -684,7 +684,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             BroadcastReceiver packageListener = new PackageListener();
             context.getApplicationContext().registerReceiver(packageListener, filter);
             sPackageInstallationReceiverAdded = true;
-        } //End block
+        } 
         AsyncTask<Void, Void, Set<String>> task = new AsyncTask<Void, Void, Set<String>>() {
             @Override
             protected Set<String> doInBackground(Void... unused) {
@@ -709,8 +709,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         };
         task.execute();
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -718,8 +718,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      void updateMultiTouchSupport(Context context) {
         mZoomManager.updateMultiTouchSupport(context);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //mZoomManager.updateMultiTouchSupport(context);
+        
+        
     }
 
     
@@ -746,8 +746,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         setScrollBarStyle(super.getScrollBarStyle());
         mKeysPressed = new Vector<Integer>(2);
         mHTML5VideoViewProxy = null;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -756,8 +756,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public boolean shouldDelayChildPressedState() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2068102719 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2068102719;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -774,23 +774,23 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         mTextToSpeech = new TextToSpeech(getContext(), null, null,
                             packageName + ".**webview**");
                         addJavascriptInterface(mTextToSpeech, ALIAS_ACCESSIBILITY_JS_INTERFACE);
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (AccessibilityManager.getInstance(mContext).isEnabled()
-                //&& getSettings().getJavaScriptEnabled()) {
-            //final Context ctx = getContext();
-            //if (ctx != null) {
-                //final String packageName = ctx.getPackageName();
-                //if (packageName != null) {
-                    //mTextToSpeech = new TextToSpeech(getContext(), null, null,
-                            //packageName + ".**webview**");
-                    //addJavascriptInterface(mTextToSpeech, ALIAS_ACCESSIBILITY_JS_INTERFACE);
-                //}
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+                
+            
+            
+                
+                
+                    
+                            
+                    
+                
+            
+        
     }
 
     
@@ -800,33 +800,33 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             removeJavascriptInterface(ALIAS_ACCESSIBILITY_JS_INTERFACE);
             mTextToSpeech.shutdown();
             mTextToSpeech = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mTextToSpeech != null) {
-            //removeJavascriptInterface(ALIAS_ACCESSIBILITY_JS_INTERFACE);
-            //mTextToSpeech.shutdown();
-            //mTextToSpeech = null;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.074 -0400", hash_original_method = "A141DE82EA292EFC5B808A2A34BC42D1", hash_generated_method = "BF2F1698187FD089D29324B55BE56A7C")
     @Override
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onInitializeAccessibilityNodeInfo(info);
         info.setScrollable(isScrollableForAccessibility());
         addTaint(info.getTaint());
-        // ---------- Original Method ----------
-        //super.onInitializeAccessibilityNodeInfo(info);
-        //info.setScrollable(isScrollableForAccessibility());
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.075 -0400", hash_original_method = "8DCFDD538D967DF80BFE6CF931F08E30", hash_generated_method = "1AE7F6539BE9C2FBE2F962DA6B8F52FA")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onInitializeAccessibilityEvent(event);
         event.setScrollable(isScrollableForAccessibility());
         event.setScrollX(mScrollX);
@@ -838,17 +838,17 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         final int adjustedViewHeight = getHeight() - mPaddingTop - mPaddingBottom;
         event.setMaxScrollY(Math.max(convertedContentHeight - adjustedViewHeight, 0));
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //super.onInitializeAccessibilityEvent(event);
-        //event.setScrollable(isScrollableForAccessibility());
-        //event.setScrollX(mScrollX);
-        //event.setScrollY(mScrollY);
-        //final int convertedContentWidth = contentToViewX(getContentWidth());
-        //final int adjustedViewWidth = getWidth() - mPaddingLeft - mPaddingRight;
-        //event.setMaxScrollX(Math.max(convertedContentWidth - adjustedViewWidth, 0));
-        //final int convertedContentHeight = contentToViewY(getContentHeight());
-        //final int adjustedViewHeight = getHeight() - mPaddingTop - mPaddingBottom;
-        //event.setMaxScrollY(Math.max(convertedContentHeight - adjustedViewHeight, 0));
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -858,9 +858,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 || contentToViewY(getContentHeight()) > getHeight() - mPaddingTop - mPaddingBottom));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_131921921 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_131921921;
-        // ---------- Original Method ----------
-        //return (contentToViewX(getContentWidth()) > getWidth() - mPaddingLeft - mPaddingRight
-                //|| contentToViewY(getContentHeight()) > getHeight() - mPaddingTop - mPaddingBottom);
+        
+        
+                
     }
 
     
@@ -871,21 +871,21 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             {
                 mOverScrollGlow = new OverScrollGlow(this);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mOverScrollGlow = null;
-        } //End block
+        } 
         addTaint(mode);
-        // ---------- Original Method ----------
-        //super.setOverScrollMode(mode);
-        //if (mode != OVER_SCROLL_NEVER) {
-            //if (mOverScrollGlow == null) {
-                //mOverScrollGlow = new OverScrollGlow(this);
-            //}
-        //} else {
-            //mOverScrollGlow = null;
-        //}
+        
+        
+        
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -895,10 +895,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 * 100 / zoomDensity;
         updateDefaultZoomDensity(density);
         addTaint(zoomDensity);
-        // ---------- Original Method ----------
-        //final float density = mContext.getResources().getDisplayMetrics().density
-                //* 100 / zoomDensity;
-        //updateDefaultZoomDensity(density);
+        
+        
+                
+        
     }
 
     
@@ -906,20 +906,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      void updateDefaultZoomDensity(float density) {
         mNavSlop = (int) (16 * density);
         mZoomManager.updateDefaultZoomDensity(density);
-        // ---------- Original Method ----------
-        //mNavSlop = (int) (16 * density);
-        //mZoomManager.updateDefaultZoomDensity(density);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.079 -0400", hash_original_method = "1B5D77CF114B98B5EB6A625E4FFAB1C2", hash_generated_method = "B43CA8C97E5632C9C2CFEA6ABA207A0B")
      boolean onSavePassword(String schemePlusHost, String username,
             String password, final Message resumeMsg) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean rVal = false;
         {
             mDatabase.setUsernamePassword(schemePlusHost, username, password);
-        } //End block
+        } 
         {
             final Message remember = mPrivateHandler.obtainMessage(
                     REMEMBER_PASSWORD);
@@ -940,58 +940,58 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     new DialogInterface.OnClickListener() {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.078 -0400", hash_original_method = "99DE72360AB23E9BF4985BE8ED3FB8CE", hash_generated_method = "047177DCDA433E769B05E9723991172F")
                 public void onClick(DialogInterface dialog, int which) {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     resumeMsg.sendToTarget();
                     addTaint(dialog.getTaint());
                     addTaint(which);
-                    // ---------- Original Method ----------
-                    //resumeMsg.sendToTarget();
+                    
+                    
                 }
 })
                     .setNeutralButton(com.android.internal.R.string.save_password_remember,
                     new DialogInterface.OnClickListener() {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.078 -0400", hash_original_method = "BC12A66C673827B889B0C1DFB7251A66", hash_generated_method = "42BE6E1313BE7B33B1DC669B1F3396A7")
                 public void onClick(DialogInterface dialog, int which) {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     remember.sendToTarget();
                     addTaint(dialog.getTaint());
                     addTaint(which);
-                    // ---------- Original Method ----------
-                    //remember.sendToTarget();
+                    
+                    
                 }
 })
                     .setNegativeButton(com.android.internal.R.string.save_password_never,
                     new DialogInterface.OnClickListener() {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.078 -0400", hash_original_method = "873315778F761CDAFA793A9437C366FC", hash_generated_method = "9F2C8A88C91D099DE00989B2C8E7E335")
                 public void onClick(DialogInterface dialog, int which) {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     neverRemember.sendToTarget();
                     addTaint(dialog.getTaint());
                     addTaint(which);
-                    // ---------- Original Method ----------
-                    //neverRemember.sendToTarget();
+                    
+                    
                 }
 })
                     .setOnCancelListener(new OnCancelListener() {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.079 -0400", hash_original_method = "93C3AC18FD9E5633ABD9F836EA5CC3F9", hash_generated_method = "A876EDE090C42B673504583186D51370")
                 public void onCancel(DialogInterface dialog) {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     resumeMsg.sendToTarget();
                     addTaint(dialog.getTaint());
-                    // ---------- Original Method ----------
-                    //resumeMsg.sendToTarget();
+                    
+                    
                 }
 }).show();
             rVal = true;
-        } //End block
+        } 
         addTaint(schemePlusHost.getTaint());
         addTaint(username.getTaint());
         addTaint(password.getTaint());
         addTaint(resumeMsg.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1040752626 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1040752626;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1000,20 +1000,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void setScrollBarStyle(int style) {
         {
             mOverlayHorizontalScrollbar = mOverlayVerticalScrollbar = false;
-        } //End block
+        } 
         {
             mOverlayHorizontalScrollbar = mOverlayVerticalScrollbar = true;
-        } //End block
+        } 
         super.setScrollBarStyle(style);
         addTaint(style);
-        // ---------- Original Method ----------
-        //if (style == View.SCROLLBARS_INSIDE_INSET
-                //|| style == View.SCROLLBARS_OUTSIDE_INSET) {
-            //mOverlayHorizontalScrollbar = mOverlayVerticalScrollbar = false;
-        //} else {
-            //mOverlayHorizontalScrollbar = mOverlayVerticalScrollbar = true;
-        //}
-        //super.setScrollBarStyle(style);
+        
+        
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -1021,9 +1021,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void setHorizontalScrollbarOverlay(boolean overlay) {
         checkThread();
         mOverlayHorizontalScrollbar = overlay;
-        // ---------- Original Method ----------
-        //checkThread();
-        //mOverlayHorizontalScrollbar = overlay;
+        
+        
+        
     }
 
     
@@ -1031,9 +1031,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void setVerticalScrollbarOverlay(boolean overlay) {
         checkThread();
         mOverlayVerticalScrollbar = overlay;
-        // ---------- Original Method ----------
-        //checkThread();
-        //mOverlayVerticalScrollbar = overlay;
+        
+        
+        
     }
 
     
@@ -1042,9 +1042,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_971042648 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_971042648;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return mOverlayHorizontalScrollbar;
+        
+        
+        
     }
 
     
@@ -1053,9 +1053,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_312837662 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_312837662;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return mOverlayVerticalScrollbar;
+        
+        
+        
     }
 
     
@@ -1065,19 +1065,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean var292598F3B8B58F58543813175CA4B8DD_73674390 = (!isVerticalScrollBarEnabled() || mOverlayVerticalScrollbar);
             {
                 int var6198C346AE8689F1D3DC081BB775DCCC_1836022784 = (getWidth());
-            } //End block
+            } 
             {
                 int var140744BAF485A6F88159B58920081848_1733884548 = (Math.max(0, getWidth() - getVerticalScrollbarWidth()));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1389936040 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1389936040;
-        // ---------- Original Method ----------
-        //if (!isVerticalScrollBarEnabled() || mOverlayVerticalScrollbar) {
-            //return getWidth();
-        //} else {
-            //return Math.max(0, getWidth() - getVerticalScrollbarWidth());
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1085,11 +1085,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     protected int getTitleHeight() {
         {
             Object var89620761E813C776D9C3C42E19001F67_2096055863 = (mTitleBar.getHeight());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_209849417 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_209849417;
-        // ---------- Original Method ----------
-        //return mTitleBar != null ? mTitleBar.getHeight() : 0;
+        
+        
     }
 
     
@@ -1099,9 +1099,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int var723012357A221391980D0C0C10B6FF34_542610900 = (getVisibleTitleHeightImpl());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_379025026 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_379025026;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return getVisibleTitleHeightImpl();
+        
+        
+        
     }
 
     
@@ -1111,9 +1111,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 getOverlappingActionModeHeight()));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1546476648 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1546476648;
-        // ---------- Original Method ----------
-        //return Math.max(getTitleHeight() - Math.max(0, mScrollY),
-                //getOverlappingActionModeHeight());
+        
+        
+                
     }
 
     
@@ -1123,19 +1123,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             getGlobalVisibleRect(mGlobalVisibleRect, mGlobalVisibleOffset);
             mCachedOverlappingActionModeHeight = Math.max(0,
                     mFindCallback.getActionModeGlobalBottom() - mGlobalVisibleRect.top);
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2014906155 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2014906155;
-        // ---------- Original Method ----------
-        //if (mFindCallback == null) {
-            //return 0;
-        //}
-        //if (mCachedOverlappingActionModeHeight < 0) {
-            //getGlobalVisibleRect(mGlobalVisibleRect, mGlobalVisibleOffset);
-            //mCachedOverlappingActionModeHeight = Math.max(0,
-                    //mFindCallback.getActionModeGlobalBottom() - mGlobalVisibleRect.top);
-        //}
-        //return mCachedOverlappingActionModeHeight;
+        
+        
+            
+        
+        
+            
+            
+                    
+        
+        
     }
 
     
@@ -1144,8 +1144,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int varD548A0758944BD119F0830EAB903948B_1592137799 = (getViewHeightWithTitle() - getVisibleTitleHeightImpl());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1149706125 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1149706125;
-        // ---------- Original Method ----------
-        //return getViewHeightWithTitle() - getVisibleTitleHeightImpl();
+        
+        
     }
 
     
@@ -1156,29 +1156,29 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean varEFFBBF75692B423920E06898DB33B47D_1854338338 = (isHorizontalScrollBarEnabled() && !mOverlayHorizontalScrollbar);
             {
                 height -= getHorizontalScrollbarHeight();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1153285307 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1153285307;
-        // ---------- Original Method ----------
-        //int height = getHeight();
-        //if (isHorizontalScrollBarEnabled() && !mOverlayHorizontalScrollbar) {
-            //height -= getHorizontalScrollbarHeight();
-        //}
-        //return height;
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.086 -0400", hash_original_method = "AD476A7428E3DA09ACFA510788381864", hash_generated_method = "DF81E1731511A58559125E6C89C63ADF")
     public SslCertificate getCertificate() {
-        SslCertificate varB4EAC82CA7396A68D541C85D26508E83_1956789672 = null; //Variable for return #1
+        SslCertificate varB4EAC82CA7396A68D541C85D26508E83_1956789672 = null; 
         checkThread();
         varB4EAC82CA7396A68D541C85D26508E83_1956789672 = mCertificate;
-        varB4EAC82CA7396A68D541C85D26508E83_1956789672.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1956789672.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1956789672;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return mCertificate;
+        
+        
+        
     }
 
     
@@ -1186,12 +1186,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void setCertificate(SslCertificate certificate) {
         checkThread();
         mCertificate = certificate;
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (DebugFlags.WEB_VIEW) {
-            //Log.v(LOGTAG, "setCertificate=" + certificate);
-        //}
-        //mCertificate = certificate;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1202,9 +1202,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(host.getTaint());
         addTaint(username.getTaint());
         addTaint(password.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //mDatabase.setUsernamePassword(host, username, password);
+        
+        
+        
     }
 
     
@@ -1217,24 +1217,24 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(realm.getTaint());
         addTaint(username.getTaint());
         addTaint(password.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //mDatabase.setHttpAuthUsernamePassword(host, realm, username, password);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.088 -0400", hash_original_method = "ECF11FA1B5D29EA7B85A642A97A37762", hash_generated_method = "DB897005E56F393D4786135656D7A931")
     public String[] getHttpAuthUsernamePassword(String host, String realm) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1070832929 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1070832929 = null; 
         checkThread();
         varB4EAC82CA7396A68D541C85D26508E83_1070832929 = mDatabase.getHttpAuthUsernamePassword(host, realm);
         addTaint(host.getTaint());
         addTaint(realm.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1070832929.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1070832929.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1070832929;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return mDatabase.getHttpAuthUsernamePassword(host, realm);
+        
+        
+        
     }
 
     
@@ -1242,17 +1242,17 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private void clearActionModes() {
         {
             mSelectCallback.finish();
-        } //End block
+        } 
         {
             mFindCallback.finish();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSelectCallback != null) {
-            //mSelectCallback.finish();
-        //}
-        //if (mFindCallback != null) {
-            //mFindCallback.finish();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -1262,11 +1262,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         clearActionModes();
         dismissFullScreenMode();
         cancelSelectDialog();
-        // ---------- Original Method ----------
-        //clearTextEntry();
-        //clearActionModes();
-        //dismissFullScreenMode();
-        //cancelSelectDialog();
+        
+        
+        
+        
+        
     }
 
     
@@ -1275,12 +1275,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             mListBoxDialog.cancel();
             mListBoxDialog = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mListBoxDialog != null) {
-            //mListBoxDialog.cancel();
-            //mListBoxDialog = null;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -1288,9 +1288,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void destroy() {
         checkThread();
         destroyImpl();
-        // ---------- Original Method ----------
-        //checkThread();
-        //destroyImpl();
+        
+        
+        
     }
 
     
@@ -1300,11 +1300,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             mListBoxDialog.dismiss();
             mListBoxDialog = null;
-        } //End block
+        } 
         {
             mWebTextView.remove();
             mWebTextView = null;
-        } //End block
+        } 
         nativeStopGL();
         {
             mCallbackProxy.setWebViewClient(null);
@@ -1313,19 +1313,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 WebViewCore webViewCore = mWebViewCore;
                 mWebViewCore = null;
                 webViewCore.destroy();
-            } //End block
+            } 
             mPrivateHandler.removeCallbacksAndMessages(null);
             mCallbackProxy.removeCallbacksAndMessages(null);
             {
                 mCallbackProxy.notify();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             nativeDestroy();
             mNativeClass = 0;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1360,9 +1360,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         mWebViewCore.sendMessage(EventHub.SET_JS_FLAGS, flags);
         addTaint(flags.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //mWebViewCore.sendMessage(EventHub.SET_JS_FLAGS, flags);
+        
+        
+        
     }
 
     
@@ -1372,10 +1372,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         mWebViewCore.sendMessage(EventHub.SET_NETWORK_STATE,
                 networkUp ? 1 : 0, 0);
         addTaint(networkUp);
-        // ---------- Original Method ----------
-        //checkThread();
-        //mWebViewCore.sendMessage(EventHub.SET_NETWORK_STATE,
-                //networkUp ? 1 : 0, 0);
+        
+        
+        
+                
     }
 
     
@@ -1388,32 +1388,32 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         mWebViewCore.sendMessage(EventHub.SET_NETWORK_TYPE, map);
         addTaint(type.getTaint());
         addTaint(subtype.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //Map<String, String> map = new HashMap<String, String>();
-        //map.put("type", type);
-        //map.put("subtype", subtype);
-        //mWebViewCore.sendMessage(EventHub.SET_NETWORK_TYPE, map);
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.092 -0400", hash_original_method = "D76FC1BD4962410EDA97F2F673ACB95E", hash_generated_method = "5C428DD8B68C2D9F6408891BE245DEDB")
     public WebBackForwardList saveState(Bundle outState) {
-        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_1802615569 = null; //Variable for return #1
-        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_610594547 = null; //Variable for return #2
-        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_1342061175 = null; //Variable for return #3
-        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_1932904239 = null; //Variable for return #4
-        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_835243209 = null; //Variable for return #5
+        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_1802615569 = null; 
+        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_610594547 = null; 
+        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_1342061175 = null; 
+        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_1932904239 = null; 
+        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_835243209 = null; 
         checkThread();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1802615569 = null;
-        } //End block
+        } 
         WebBackForwardList list = copyBackForwardList();
         final int currentIndex = list.getCurrentIndex();
         final int size = list.getSize();
         {
             varB4EAC82CA7396A68D541C85D26508E83_610594547 = null;
-        } //End block
+        } 
         outState.putInt("index", currentIndex);
         ArrayList<byte[]> history = new ArrayList<byte[]>(size);
         {
@@ -1422,45 +1422,45 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 WebHistoryItem item = list.getItemAtIndex(i);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1342061175 = null;
-                } //End block
+                } 
                 byte[] data = item.getFlattenedData();
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1932904239 = null;
-                } //End block
+                } 
                 history.add(data);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         outState.putSerializable("history", history);
         {
             outState.putBundle("certificate",
                                SslCertificate.saveState(mCertificate));
-        } //End block
+        } 
         outState.putBoolean("privateBrowsingEnabled", isPrivateBrowsingEnabled());
         mZoomManager.saveZoomState(outState);
         varB4EAC82CA7396A68D541C85D26508E83_835243209 = list;
         addTaint(outState.getTaint());
-        WebBackForwardList varA7E53CE21691AB073D9660D615818899_1488203315; //Final return value
+        WebBackForwardList varA7E53CE21691AB073D9660D615818899_1488203315; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1488203315 = varB4EAC82CA7396A68D541C85D26508E83_1802615569;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1488203315 = varB4EAC82CA7396A68D541C85D26508E83_610594547;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1488203315 = varB4EAC82CA7396A68D541C85D26508E83_1342061175;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1488203315 = varB4EAC82CA7396A68D541C85D26508E83_1932904239;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1488203315 = varB4EAC82CA7396A68D541C85D26508E83_835243209;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1488203315.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1488203315.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1488203315;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1479,7 +1479,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     out = new FileOutputStream(temp);
                     p.writeToStream(out);
                     temp.renameTo(dest);
-                } //End block
+                } 
                 catch (Exception e)
                 { }
                 finally 
@@ -1488,28 +1488,28 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         try 
                         {
                             out.close();
-                        } //End block
+                        } 
                         catch (Exception e)
                         { }
-                    } //End block
+                    } 
                     temp.delete();
-                } //End block
-                // ---------- Original Method ----------
-                //FileOutputStream out = null;
-                //try {
-                    //out = new FileOutputStream(temp);
-                    //p.writeToStream(out);
-                    //temp.renameTo(dest);
-                //} catch (Exception e) {
-                //} finally {
-                    //if (out != null) {
-                        //try {
-                            //out.close();
-                        //} catch (Exception e) {
-                        //}
-                    //}
-                    //temp.delete();
-                //}
+                } 
+                
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                        
+                            
+                        
+                        
+                    
+                    
+                
             }
 }).start();
         b.putInt("scrollX", mScrollX);
@@ -1519,8 +1519,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(dest.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_291756772 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_291756772;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1538,18 +1538,18 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         mHistoryHeight = Math.round(p.getHeight() * scale);
         invalidate();
         addTaint(b.getTaint());
-        // ---------- Original Method ----------
-        //int sx = b.getInt("scrollX", 0);
-        //int sy = b.getInt("scrollY", 0);
-        //mDrawHistory = true;
-        //mHistoryPicture = p;
-        //mScrollX = sx;
-        //mScrollY = sy;
-        //mZoomManager.restoreZoomState(b);
-        //final float scale = mZoomManager.getScale();
-        //mHistoryWidth = Math.round(p.getWidth() * scale);
-        //mHistoryHeight = Math.round(p.getHeight() * scale);
-        //invalidate();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1559,7 +1559,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         {
             boolean varE83409CFB365F3AF171C437BEF6A7D4D_592739943 = (!src.exists());
-        } //End collapsed parenthetic
+        } 
         try 
         {
             final FileInputStream in = new FileInputStream(src);
@@ -1575,50 +1575,50 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.096 -0400", hash_original_method = "C56555B2959C7B009BAA3230DF6B18BD", hash_generated_method = "99D4A60111AD5243B646F29DC3E7007E")
                                 public void run() {
                                     restoreHistoryPictureFields(p, copy);
-                                    // ---------- Original Method ----------
-                                    //restoreHistoryPictureFields(p, copy);
+                                    
+                                    
                                 }
 });
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     finally 
                     {
                         try 
                         {
                             in.close();
-                        } //End block
+                        } 
                         catch (Exception e)
                         { }
-                    } //End block
-                    // ---------- Original Method ----------
-                    //try {
-                        //final Picture p = Picture.createFromStream(in);
-                        //if (p != null) {
-                            //mPrivateHandler.post(new Runnable() {
-                                //public void run() {
-                                    //restoreHistoryPictureFields(p, copy);
-                                //}
-                            //});
-                        //}
-                    //} finally {
-                        //try {
-                            //in.close();
-                        //} catch (Exception e) {
-                        //}
-                    //}
+                    } 
+                    
+                    
+                        
+                        
+                            
+                                
+                                    
+                                
+                            
+                        
+                    
+                        
+                            
+                        
+                        
+                    
                 }
 }).start();
-        } //End block
+        } 
         catch (FileNotFoundException e)
         {
             e.printStackTrace();
-        } //End block
+        } 
         addTaint(b.getTaint());
         addTaint(src.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1579562475 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1579562475;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1627,19 +1627,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         try 
         {
             boolean varD8E0513B299C4708A843791F787A4612_2032945045 = (ViewStateSerializer.serializeViewState(stream, this));
-        } //End block
+        } 
         catch (IOException e)
         { }
         addTaint(stream.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_367854405 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_367854405;
-        // ---------- Original Method ----------
-        //try {
-            //return ViewStateSerializer.serializeViewState(stream, this);
-        //} catch (IOException e) {
-            //Log.w(LOGTAG, "Failed to saveViewState", e);
-        //}
-        //return false;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -1651,22 +1651,22 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             mBlockWebkitViewMessages = true;
             setNewPicture(mLoadedPicture, true);
             mLoadedPicture.mViewState = null;
-        } //End block
+        } 
         catch (IOException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_358719005 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_358719005;
-        // ---------- Original Method ----------
-        //try {
-            //mLoadedPicture = ViewStateSerializer.deserializeViewState(stream, this);
-            //mBlockWebkitViewMessages = true;
-            //setNewPicture(mLoadedPicture, true);
-            //mLoadedPicture.mViewState = null;
-            //return true;
-        //} catch (IOException e) {
-            //Log.w(LOGTAG, "Failed to loadViewState", e);
-        //}
-        //return false;
+        
+        
+            
+            
+            
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -1675,24 +1675,24 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         mBlockWebkitViewMessages = false;
         mLoadedPicture = null;
         invalidate();
-        // ---------- Original Method ----------
-        //mBlockWebkitViewMessages = false;
-        //mLoadedPicture = null;
-        //invalidate();
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.099 -0400", hash_original_method = "99FE452D222A3AA897B1F81F94FFC5BD", hash_generated_method = "914A97025EA9EDA7D5D78DA87F760077")
     public WebBackForwardList restoreState(Bundle inState) {
-        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_415104060 = null; //Variable for return #1
-        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_664132717 = null; //Variable for return #2
-        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_246577357 = null; //Variable for return #3
-        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_1057527952 = null; //Variable for return #4
+        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_415104060 = null; 
+        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_664132717 = null; 
+        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_246577357 = null; 
+        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_1057527952 = null; 
         checkThread();
         WebBackForwardList returnList = null;
         {
             varB4EAC82CA7396A68D541C85D26508E83_415104060 = returnList;
-        } //End block
+        } 
         {
             boolean var2DC9EFB7F916A118778C320ECAEAF366_849514138 = (inState.containsKey("index") && inState.containsKey("history"));
             {
@@ -1705,52 +1705,52 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     final int size = history.size();
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_664132717 = null;
-                    } //End block
+                    } 
                     {
                         int i = 0;
                         {
                             byte[] data = history.remove(0);
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_246577357 = null;
-                            } //End block
+                            } 
                             WebHistoryItem item = new WebHistoryItem(data);
                             list.addHistoryItem(item);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     returnList = copyBackForwardList();
                     returnList.setCurrentIndex(index);
-                } //End block
+                } 
                 {
                     boolean varA762F755263E0165E9C21EFA8E349BE2_1423966137 = (inState.getBoolean("privateBrowsingEnabled"));
                     {
                         getSettings().setPrivateBrowsingEnabled(true);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mZoomManager.restoreZoomState(inState);
                 mWebViewCore.removeMessages();
                 mWebViewCore.sendMessage(EventHub.RESTORE_STATE, index);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1057527952 = returnList;
-        WebBackForwardList varA7E53CE21691AB073D9660D615818899_1647924466; //Final return value
+        WebBackForwardList varA7E53CE21691AB073D9660D615818899_1647924466; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1647924466 = varB4EAC82CA7396A68D541C85D26508E83_415104060;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1647924466 = varB4EAC82CA7396A68D541C85D26508E83_664132717;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1647924466 = varB4EAC82CA7396A68D541C85D26508E83_246577357;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1647924466 = varB4EAC82CA7396A68D541C85D26508E83_1057527952;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1647924466.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1647924466.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1647924466;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1760,9 +1760,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         loadUrlImpl(url, additionalHttpHeaders);
         addTaint(url.getTaint());
         addTaint(additionalHttpHeaders.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //loadUrlImpl(url, additionalHttpHeaders);
+        
+        
+        
     }
 
     
@@ -1776,13 +1776,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         clearHelpers();
         addTaint(url.getTaint());
         addTaint(extraHeaders.getTaint());
-        // ---------- Original Method ----------
-        //switchOutDrawHistory();
-        //WebViewCore.GetUrlData arg = new WebViewCore.GetUrlData();
-        //arg.mUrl = url;
-        //arg.mExtraHeaders = extraHeaders;
-        //mWebViewCore.sendMessage(EventHub.LOAD_URL, arg);
-        //clearHelpers();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1791,9 +1791,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         loadUrlImpl(url);
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //loadUrlImpl(url);
+        
+        
+        
     }
 
     
@@ -1801,11 +1801,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private void loadUrlImpl(String url) {
         loadUrlImpl(url, null);
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //if (url == null) {
-            //return;
-        //}
-        //loadUrlImpl(url, null);
+        
+        
+            
+        
+        
     }
 
     
@@ -1821,25 +1821,25 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 arg.mPostData = postData;
                 mWebViewCore.sendMessage(EventHub.POST_URL, arg);
                 clearHelpers();
-            } //End block
+            } 
             {
                 loadUrlImpl(url);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(url.getTaint());
         addTaint(postData[0]);
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (URLUtil.isNetworkUrl(url)) {
-            //switchOutDrawHistory();
-            //WebViewCore.PostUrlData arg = new WebViewCore.PostUrlData();
-            //arg.mUrl = url;
-            //arg.mPostData = postData;
-            //mWebViewCore.sendMessage(EventHub.POST_URL, arg);
-            //clearHelpers();
-        //} else {
-            //loadUrlImpl(url);
-        //}
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -1850,9 +1850,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(data.getTaint());
         addTaint(mimeType.getTaint());
         addTaint(encoding.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //loadDataImpl(data, mimeType, encoding);
+        
+        
+        
     }
 
     
@@ -1864,23 +1864,23 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean var42C80751A5B21E94C93713173917F7B9_839593299 = ("base64".equals(encoding));
             {
                 dataUrl.append(";base64");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         dataUrl.append(",");
         dataUrl.append(data);
         loadUrlImpl(dataUrl.toString());
         addTaint(data.getTaint());
         addTaint(mimeType.getTaint());
         addTaint(encoding.getTaint());
-        // ---------- Original Method ----------
-        //StringBuilder dataUrl = new StringBuilder("data:");
-        //dataUrl.append(mimeType);
-        //if ("base64".equals(encoding)) {
-            //dataUrl.append(";base64");
-        //}
-        //dataUrl.append(",");
-        //dataUrl.append(data);
-        //loadUrlImpl(dataUrl.toString());
+        
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -1892,8 +1892,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean var66719BDAFAA36B530D74BC3839E26AEE_1701345746 = (baseUrl != null && baseUrl.toLowerCase().startsWith("data:"));
             {
                 loadDataImpl(data, mimeType, encoding);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         switchOutDrawHistory();
         WebViewCore.BaseUrlData arg = new WebViewCore.BaseUrlData();
         arg.mBaseUrl = baseUrl;
@@ -1908,21 +1908,21 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(mimeType.getTaint());
         addTaint(encoding.getTaint());
         addTaint(historyUrl.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (baseUrl != null && baseUrl.toLowerCase().startsWith("data:")) {
-            //loadDataImpl(data, mimeType, encoding);
-            //return;
-        //}
-        //switchOutDrawHistory();
-        //WebViewCore.BaseUrlData arg = new WebViewCore.BaseUrlData();
-        //arg.mBaseUrl = baseUrl;
-        //arg.mData = data;
-        //arg.mMimeType = mimeType;
-        //arg.mEncoding = encoding;
-        //arg.mHistoryUrl = historyUrl;
-        //mWebViewCore.sendMessage(EventHub.LOAD_DATA, arg);
-        //clearHelpers();
+        
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1931,9 +1931,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         saveWebArchiveImpl(filename, false, null);
         addTaint(filename.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //saveWebArchiveImpl(filename, false, null);
+        
+        
+        
     }
 
     
@@ -1944,9 +1944,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(basename.getTaint());
         addTaint(autoname);
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //saveWebArchiveImpl(basename, autoname, callback);
+        
+        
+        
     }
 
     
@@ -1958,9 +1958,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(basename.getTaint());
         addTaint(autoname);
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //mWebViewCore.sendMessage(EventHub.SAVE_WEBARCHIVE,
-            //new SaveWebArchiveMessage(basename, autoname, callback));
+        
+        
+            
     }
 
     
@@ -1969,10 +1969,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         switchOutDrawHistory();
         mWebViewCore.sendMessage(EventHub.STOP_LOADING);
-        // ---------- Original Method ----------
-        //checkThread();
-        //switchOutDrawHistory();
-        //mWebViewCore.sendMessage(EventHub.STOP_LOADING);
+        
+        
+        
+        
     }
 
     
@@ -1982,11 +1982,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         clearHelpers();
         switchOutDrawHistory();
         mWebViewCore.sendMessage(EventHub.RELOAD);
-        // ---------- Original Method ----------
-        //checkThread();
-        //clearHelpers();
-        //switchOutDrawHistory();
-        //mWebViewCore.sendMessage(EventHub.RELOAD);
+        
+        
+        
+        
+        
     }
 
     
@@ -1999,21 +1999,21 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 boolean varC92AFB479800BB86205BB740F728BF6F_766176834 = (l.getClearPending());
                 {
                     boolean var206A5F4DC30C9911DE984FA8A632E8D0_1524346937 = (l.getCurrentIndex() > 0);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1961652836 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1961652836;
-        // ---------- Original Method ----------
-        //checkThread();
-        //WebBackForwardList l = mCallbackProxy.getBackForwardList();
-        //synchronized (l) {
-            //if (l.getClearPending()) {
-                //return false;
-            //} else {
-                //return l.getCurrentIndex() > 0;
-            //}
-        //}
+        
+        
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -2021,9 +2021,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void goBack() {
         checkThread();
         goBackOrForwardImpl(-1);
-        // ---------- Original Method ----------
-        //checkThread();
-        //goBackOrForwardImpl(-1);
+        
+        
+        
     }
 
     
@@ -2036,21 +2036,21 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 boolean varC92AFB479800BB86205BB740F728BF6F_1542721647 = (l.getClearPending());
                 {
                     boolean varCC6932F1C4388293E5C6020CC2BE99D1_1144201917 = (l.getCurrentIndex() < l.getSize() - 1);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1608939199 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1608939199;
-        // ---------- Original Method ----------
-        //checkThread();
-        //WebBackForwardList l = mCallbackProxy.getBackForwardList();
-        //synchronized (l) {
-            //if (l.getClearPending()) {
-                //return false;
-            //} else {
-                //return l.getCurrentIndex() < l.getSize() - 1;
-            //}
-        //}
+        
+        
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -2058,9 +2058,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void goForward() {
         checkThread();
         goBackOrForwardImpl(1);
-        // ---------- Original Method ----------
-        //checkThread();
-        //goBackOrForwardImpl(1);
+        
+        
+        
     }
 
     
@@ -2074,23 +2074,23 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 {
                     int newIndex = l.getCurrentIndex() + steps;
                     boolean varC96153442818D1ECADD5777B6D61A76F_810711597 = (newIndex >= 0 && newIndex < l.getSize());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(steps);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_662952874 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_662952874;
-        // ---------- Original Method ----------
-        //checkThread();
-        //WebBackForwardList l = mCallbackProxy.getBackForwardList();
-        //synchronized (l) {
-            //if (l.getClearPending()) {
-                //return false;
-            //} else {
-                //int newIndex = l.getCurrentIndex() + steps;
-                //return newIndex >= 0 && newIndex < l.getSize();
-            //}
-        //}
+        
+        
+        
+        
+            
+                
+            
+                
+                
+            
+        
     }
 
     
@@ -2099,9 +2099,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         goBackOrForwardImpl(steps);
         addTaint(steps);
-        // ---------- Original Method ----------
-        //checkThread();
-        //goBackOrForwardImpl(steps);
+        
+        
+        
     }
 
     
@@ -2109,8 +2109,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private void goBackOrForwardImpl(int steps) {
         goBackOrForward(steps, false);
         addTaint(steps);
-        // ---------- Original Method ----------
-        //goBackOrForward(steps, false);
+        
+        
     }
 
     
@@ -2120,15 +2120,15 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             clearHelpers();
             mWebViewCore.sendMessage(EventHub.GO_BACK_FORWARD, steps,
                     ignoreSnapshot ? 1 : 0);
-        } //End block
+        } 
         addTaint(steps);
         addTaint(ignoreSnapshot);
-        // ---------- Original Method ----------
-        //if (steps != 0) {
-            //clearHelpers();
-            //mWebViewCore.sendMessage(EventHub.GO_BACK_FORWARD, steps,
-                    //ignoreSnapshot ? 1 : 0);
-        //}
+        
+        
+            
+            
+                    
+        
     }
 
     
@@ -2138,17 +2138,17 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         boolean varB1BAC2416E34E6087A203AED7444A817_1699375123 = (getSettings().isPrivateBrowsingEnabled());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1703192204 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1703192204;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return getSettings().isPrivateBrowsingEnabled();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.108 -0400", hash_original_method = "8FFE0E78B013518E5DDE540FAA1F9039", hash_generated_method = "07E57C68BA1FFA2F79AE67648A8B3103")
     private void startPrivateBrowsing() {
         getSettings().setPrivateBrowsingEnabled(true);
-        // ---------- Original Method ----------
-        //getSettings().setPrivateBrowsingEnabled(true);
+        
+        
     }
 
     
@@ -2161,13 +2161,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(y);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_844488375 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_844488375;
-        // ---------- Original Method ----------
-        //int finalY = mScroller.getFinalY();
-        //int newY = pinLocY(finalY + y);
-        //if (newY == finalY) return false;
-        //mScroller.setFinalY(newY);
-        //mScroller.extendDuration(computeDuration(0, y));
-        //return true;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -2177,41 +2177,41 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         nativeClearCursor();
         {
             boolean varEC29A5852D76967DDCD92AF6EF13DA1B_1654742980 = (pinScrollTo(mScrollX, 0, true, 0));
-        } //End block
+        } 
         int h = getHeight();
         int y;
         {
             y = -h + PAGE_SCROLL_OVERLAP;
-        } //End block
+        } 
         {
             y = -h / 2;
-        } //End block
+        } 
         {
             boolean var7B9D43EC2E9A844D127FEEDB2354EC90_391500474 = (mScroller.isFinished());
             Object var94F8675E9768F954AF02C70C976682F4_1288598411 = (pinScrollBy(0, y, true, 0));
             Object var449359DF1FA0CB82149A78CBDB32B0F8_469474039 = (extendScroll(y));
-        } //End flattened ternary
+        } 
         addTaint(top);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1676441592 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1676441592;
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (mNativeClass == 0) {
-            //return false;
-        //}
-        //nativeClearCursor();
-        //if (top) {
-            //return pinScrollTo(mScrollX, 0, true, 0);
-        //}
-        //int h = getHeight();
-        //int y;
-        //if (h > 2 * PAGE_SCROLL_OVERLAP) {
-            //y = -h + PAGE_SCROLL_OVERLAP;
-        //} else {
-            //y = -h / 2;
-        //}
-        //return mScroller.isFinished() ? pinScrollBy(0, y, true, 0)
-                //: extendScroll(y);
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+            
+        
+        
+                
     }
 
     
@@ -2221,41 +2221,41 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         nativeClearCursor();
         {
             boolean var20824CBC7D9295AF4224D9CEA1714AF5_1069069270 = (pinScrollTo(mScrollX, computeRealVerticalScrollRange(), true, 0));
-        } //End block
+        } 
         int h = getHeight();
         int y;
         {
             y = h - PAGE_SCROLL_OVERLAP;
-        } //End block
+        } 
         {
             y = h / 2;
-        } //End block
+        } 
         {
             boolean var7B9D43EC2E9A844D127FEEDB2354EC90_351954678 = (mScroller.isFinished());
             Object var94F8675E9768F954AF02C70C976682F4_29183228 = (pinScrollBy(0, y, true, 0));
             Object var449359DF1FA0CB82149A78CBDB32B0F8_654960793 = (extendScroll(y));
-        } //End flattened ternary
+        } 
         addTaint(bottom);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1664907932 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1664907932;
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (mNativeClass == 0) {
-            //return false;
-        //}
-        //nativeClearCursor();
-        //if (bottom) {
-            //return pinScrollTo(mScrollX, computeRealVerticalScrollRange(), true, 0);
-        //}
-        //int h = getHeight();
-        //int y;
-        //if (h > 2 * PAGE_SCROLL_OVERLAP) {
-            //y = h - PAGE_SCROLL_OVERLAP;
-        //} else {
-            //y = h / 2;
-        //}
-        //return mScroller.isFinished() ? pinScrollBy(0, y, true, 0)
-                //: extendScroll(y);
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+            
+        
+        
+                
     }
 
     
@@ -2266,41 +2266,41 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         mContentHeight = 0;
         setBaseLayer(0, null, false, false, false);
         mWebViewCore.sendMessage(EventHub.CLEAR_CONTENT);
-        // ---------- Original Method ----------
-        //checkThread();
-        //mContentWidth = 0;
-        //mContentHeight = 0;
-        //setBaseLayer(0, null, false, false, false);
-        //mWebViewCore.sendMessage(EventHub.CLEAR_CONTENT);
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.110 -0400", hash_original_method = "7931D11F61B3E2C3E211E17879AF060C", hash_generated_method = "B49B9F16C48626D87CFEA8F85FDADC67")
     public Picture capturePicture() {
-        Picture varB4EAC82CA7396A68D541C85D26508E83_1587787964 = null; //Variable for return #1
-        Picture varB4EAC82CA7396A68D541C85D26508E83_914965525 = null; //Variable for return #2
+        Picture varB4EAC82CA7396A68D541C85D26508E83_1587787964 = null; 
+        Picture varB4EAC82CA7396A68D541C85D26508E83_914965525 = null; 
         checkThread();
         varB4EAC82CA7396A68D541C85D26508E83_1587787964 = null;
         Picture result = new Picture();
         nativeCopyBaseContentToPicture(result);
         varB4EAC82CA7396A68D541C85D26508E83_914965525 = result;
-        Picture varA7E53CE21691AB073D9660D615818899_1441926836; //Final return value
+        Picture varA7E53CE21691AB073D9660D615818899_1441926836; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1441926836 = varB4EAC82CA7396A68D541C85D26508E83_1587787964;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1441926836 = varB4EAC82CA7396A68D541C85D26508E83_914965525;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1441926836.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1441926836.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1441926836;
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (mNativeClass == 0) return null;
-        //Picture result = new Picture();
-        //nativeCopyBaseContentToPicture(result);
-        //return result;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -2309,8 +2309,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         boolean var5AD34046046BD5597D48FAE1E55DF94F_11117932 = (mWebTextView != null && mWebTextView.getParent() != null);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1268147157 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1268147157;
-        // ---------- Original Method ----------
-        //return mWebTextView != null && mWebTextView.getParent() != null;
+        
+        
     }
 
     
@@ -2320,17 +2320,17 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean varA3F78F0FFF8DCFA8325B8A0EE1160508_729709714 = (inEditingMode());
             {
                 mWebTextView.remove();
-            } //End block
+            } 
             {
                 hideSoftKeyboard();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (inEditingMode()) {
-            //mWebTextView.remove();
-        //} else {
-            //hideSoftKeyboard();
-        //}
+            } 
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -2340,9 +2340,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         float var7BDB5950E779A8350C7AFF5485D9A1D9_130445621 = (mZoomManager.getScale());
         float var546ADE640B6EDFBC8A086EF31347E768_1079012077 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1079012077;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return mZoomManager.getScale();
+        
+        
+        
     }
 
     
@@ -2352,9 +2352,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         float varE59D2240C31D06227A739295405DD61F_131533538 = (density / getScale());
         float var546ADE640B6EDFBC8A086EF31347E768_2004046578 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2004046578;
-        // ---------- Original Method ----------
-        //float density = mContext.getResources().getDisplayMetrics().density;
-        //return density / getScale();
+        
+        
+        
     }
 
     
@@ -2363,8 +2363,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         float var44DB53B9B3C50B031CB12B3205E80427_313493828 = (mZoomManager.getReadingLevelScale());
         float var546ADE640B6EDFBC8A086EF31347E768_1598863605 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1598863605;
-        // ---------- Original Method ----------
-        //return mZoomManager.getReadingLevelScale();
+        
+        
     }
 
     
@@ -2373,9 +2373,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         mZoomManager.setInitialScaleInPercent(scaleInPercent);
         addTaint(scaleInPercent);
-        // ---------- Original Method ----------
-        //checkThread();
-        //mZoomManager.setInitialScaleInPercent(scaleInPercent);
+        
+        
+        
     }
 
     
@@ -2384,40 +2384,40 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         {
             boolean varC7ECA0C6BE9760830C0E65857F85DC44_1345917960 = (!getSettings().supportZoom());
-        } //End collapsed parenthetic
+        } 
         clearHelpers();
         mZoomManager.invokeZoomPicker();
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (!getSettings().supportZoom()) {
-            //Log.w(LOGTAG, "This WebView doesn't support zoom.");
-            //return;
-        //}
-        //clearHelpers();
-        //mZoomManager.invokeZoomPicker();
+        
+        
+        
+            
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.113 -0400", hash_original_method = "F0061B4E013540D6EEECC96F5AFE231A", hash_generated_method = "A3D8DA90C234BC7CA56A34C798241854")
     public HitTestResult getHitTestResult() {
-        HitTestResult varB4EAC82CA7396A68D541C85D26508E83_213762242 = null; //Variable for return #1
+        HitTestResult varB4EAC82CA7396A68D541C85D26508E83_213762242 = null; 
         checkThread();
         varB4EAC82CA7396A68D541C85D26508E83_213762242 = hitTestResult(mInitialHitTestResult);
-        varB4EAC82CA7396A68D541C85D26508E83_213762242.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_213762242.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_213762242;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return hitTestResult(mInitialHitTestResult);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.115 -0400", hash_original_method = "E04AFCDB529274E922EB45C8B3D3ACC8", hash_generated_method = "12F5FD313F52AD8DFD63B8C1B9712AFD")
     private HitTestResult hitTestResult(HitTestResult fallback) {
-        HitTestResult varB4EAC82CA7396A68D541C85D26508E83_1156544621 = null; //Variable for return #1
-        HitTestResult varB4EAC82CA7396A68D541C85D26508E83_750362292 = null; //Variable for return #2
+        HitTestResult varB4EAC82CA7396A68D541C85D26508E83_1156544621 = null; 
+        HitTestResult varB4EAC82CA7396A68D541C85D26508E83_750362292 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1156544621 = null;
-        } //End block
+        } 
         HitTestResult result = new HitTestResult();
         {
             boolean var5225ACD2E56334E54962D68427F36819_490010464 = (nativeHasCursorNode());
@@ -2426,7 +2426,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     boolean var42403AA5DE61CBA02330C9C817D2DC22_89325032 = (nativeCursorIsTextInput());
                     {
                         result.setType(HitTestResult.EDIT_TEXT_TYPE);
-                    } //End block
+                    } 
                     {
                         String text = nativeCursorText();
                         {
@@ -2435,38 +2435,38 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                                 {
                                     result.setType(HitTestResult.PHONE_TYPE);
                                     result.setExtra(text.substring(SCHEME_TEL.length()));
-                                } //End block
+                                } 
                                 {
                                     boolean var8892C872AF1A0DE7CA908AB563D8630A_54630909 = (text.startsWith(SCHEME_MAILTO));
                                     {
                                         result.setType(HitTestResult.EMAIL_TYPE);
                                         result.setExtra(text.substring(SCHEME_MAILTO.length()));
-                                    } //End block
+                                    } 
                                     {
                                         boolean varC83048191C80A2E63B6D052EA1A2AF29_1193106355 = (text.startsWith(SCHEME_GEO));
                                         {
                                             result.setType(HitTestResult.GEO_TYPE);
                                             result.setExtra(URLDecoder.decode(text
                                 .substring(SCHEME_GEO.length())));
-                                        } //End block
+                                        } 
                                         {
                                             boolean var559FEC73A68A4A49F5AE8D79C0655989_154453844 = (nativeCursorIsAnchor());
                                             {
                                                 result.setType(HitTestResult.SRC_ANCHOR_TYPE);
                                                 result.setExtra(text);
-                                            } //End block
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 result = fallback;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int type = result.getType();
         {
             int contentX = viewToContentX(mLastTouchX + mScrollX);
@@ -2477,23 +2477,23 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         HitTestResult.IMAGE_TYPE :
                         HitTestResult.SRC_IMAGE_ANCHOR_TYPE);
                 result.setExtra(text);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_750362292 = result;
         addTaint(fallback.getTaint());
-        HitTestResult varA7E53CE21691AB073D9660D615818899_972640311; //Final return value
+        HitTestResult varA7E53CE21691AB073D9660D615818899_972640311; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_972640311 = varB4EAC82CA7396A68D541C85D26508E83_1156544621;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_972640311 = varB4EAC82CA7396A68D541C85D26508E83_750362292;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_972640311.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_972640311.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_972640311;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2503,12 +2503,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean varA3F78F0FFF8DCFA8325B8A0EE1160508_1955989557 = (inEditingMode());
             {
                 mPrivateHandler.obtainMessage(DOM_FOCUS_CHANGED).sendToTarget();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (inEditingMode()) {
-            //mPrivateHandler.obtainMessage(DOM_FOCUS_CHANGED).sendToTarget();
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
@@ -2531,35 +2531,35 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                             {
                                 contentX = (int) cursorBounds.centerX();
                                 contentY = (int) cursorBounds.centerY();
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         mWebViewCore.sendMessage(EventHub.REQUEST_CURSOR_HREF,
                 contentX, contentY, hrefMsg);
         addTaint(hrefMsg.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (hrefMsg == null) {
-            //return;
-        //}
-        //int contentX = viewToContentX(mLastTouchX + mScrollX);
-        //int contentY = viewToContentY(mLastTouchY + mScrollY);
-        //if (nativeHasCursorNode()) {
-            //Rect cursorBounds = nativeGetCursorRingBounds();
-            //if (!cursorBounds.contains(contentX, contentY)) {
-                //int slop = viewToContentDimension(mNavSlop);
-                //cursorBounds.inset(-slop, -slop);
-                //if (cursorBounds.contains(contentX, contentY)) {
-                    //contentX = (int) cursorBounds.centerX();
-                    //contentY = (int) cursorBounds.centerY();
-                //}
-            //}
-        //}
-        //mWebViewCore.sendMessage(EventHub.REQUEST_CURSOR_HREF,
-                //contentX, contentY, hrefMsg);
+        
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+                
+                
+                    
+                    
+                
+            
+        
+        
+                
     }
 
     
@@ -2574,16 +2574,16 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         msg.setData(data);
         msg.sendToTarget();
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (0 == mNativeClass) return;
-        //int contentX = viewToContentX(mLastTouchX + mScrollX);
-        //int contentY = viewToContentY(mLastTouchY + mScrollY);
-        //String ref = nativeImageURI(contentX, contentY);
-        //Bundle data = msg.getData();
-        //data.putString("url", ref);
-        //msg.setData(data);
-        //msg.sendToTarget();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -2605,9 +2605,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(x);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_272978085 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_272978085;
-        // ---------- Original Method ----------
-        //if (mInOverScrollMode) return x;
-        //return pinLoc(x, getViewWidth(), computeRealHorizontalScrollRange());
+        
+        
+        
     }
 
     
@@ -2618,10 +2618,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(y);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1091808604 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1091808604;
-        // ---------- Original Method ----------
-        //if (mInOverScrollMode) return y;
-        //return pinLoc(y, getViewHeightWithTitle(),
-                      //computeRealVerticalScrollRange() + getTitleHeight());
+        
+        
+        
+                      
     }
 
     
@@ -2629,24 +2629,24 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void setEmbeddedTitleBar(View v) {
         {
             removeView(mTitleBar);
-        } //End block
+        } 
         {
             addView(v, new AbsoluteLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT, 0, 0));
-        } //End block
+        } 
         mTitleBar = v;
-        // ---------- Original Method ----------
-        //if (mTitleBar == v) return;
-        //if (mTitleBar != null) {
-            //removeView(mTitleBar);
-        //}
-        //if (null != v) {
-            //addView(v, new AbsoluteLayout.LayoutParams(
-                    //ViewGroup.LayoutParams.MATCH_PARENT,
-                    //ViewGroup.LayoutParams.WRAP_CONTENT, 0, 0));
-        //}
-        //mTitleBar = v;
+        
+        
+        
+            
+        
+        
+            
+                    
+                    
+        
+        
     }
 
     
@@ -2654,9 +2654,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void setTitleBarGravity(int gravity) {
         mTitleGravity = gravity;
         invalidate();
-        // ---------- Original Method ----------
-        //mTitleGravity = gravity;
-        //invalidate();
+        
+        
+        
     }
 
     
@@ -2666,8 +2666,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(d);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_712040327 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_712040327;
-        // ---------- Original Method ----------
-        //return Math.round(d * mZoomManager.getInvScale());
+        
+        
     }
 
     
@@ -2677,8 +2677,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(x);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_481159395 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_481159395;
-        // ---------- Original Method ----------
-        //return viewToContentDimension(x);
+        
+        
     }
 
     
@@ -2688,8 +2688,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(y);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1031423173 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1031423173;
-        // ---------- Original Method ----------
-        //return viewToContentDimension(y - getTitleHeight());
+        
+        
     }
 
     
@@ -2699,8 +2699,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(x);
         float var546ADE640B6EDFBC8A086EF31347E768_535865883 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_535865883;
-        // ---------- Original Method ----------
-        //return x * mZoomManager.getInvScale();
+        
+        
     }
 
     
@@ -2710,8 +2710,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(y);
         float var546ADE640B6EDFBC8A086EF31347E768_730735598 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_730735598;
-        // ---------- Original Method ----------
-        //return (y - getTitleHeight()) * mZoomManager.getInvScale();
+        
+        
     }
 
     
@@ -2721,8 +2721,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(d);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_595230660 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_595230660;
-        // ---------- Original Method ----------
-        //return Math.round(d * mZoomManager.getScale());
+        
+        
     }
 
     
@@ -2732,8 +2732,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(x);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1527888076 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1527888076;
-        // ---------- Original Method ----------
-        //return contentToViewDimension(x);
+        
+        
     }
 
     
@@ -2743,22 +2743,22 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(y);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_569291515 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_569291515;
-        // ---------- Original Method ----------
-        //return contentToViewDimension(y) + getTitleHeight();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.121 -0400", hash_original_method = "419A85B9EA8E1CC7B182C84B68EBA53A", hash_generated_method = "9617064E711F1FDBA171CEAA7F686D29")
     private Rect contentToViewRect(Rect x) {
-        Rect varB4EAC82CA7396A68D541C85D26508E83_249467971 = null; //Variable for return #1
+        Rect varB4EAC82CA7396A68D541C85D26508E83_249467971 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_249467971 = new Rect(contentToViewX(x.left), contentToViewY(x.top),
                         contentToViewX(x.right), contentToViewY(x.bottom));
         addTaint(x.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_249467971.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_249467971.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_249467971;
-        // ---------- Original Method ----------
-        //return new Rect(contentToViewX(x.left), contentToViewY(x.top),
-                        //contentToViewX(x.right), contentToViewY(x.bottom));
+        
+        
+                        
     }
 
     
@@ -2774,13 +2774,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        //final float scale = mZoomManager.getScale();
-        //final int dy = getTitleHeight();
-        //invalidate((int)Math.floor(l * scale),
-                   //(int)Math.floor(t * scale) + dy,
-                   //(int)Math.ceil(r * scale),
-                   //(int)Math.ceil(b * scale) + dy);
+        
+        
+        
+        
+                   
+                   
+                   
     }
 
     
@@ -2798,14 +2798,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        //final float scale = mZoomManager.getScale();
-        //final int dy = getTitleHeight();
-        //postInvalidateDelayed(delay,
-                              //(int)Math.floor(l * scale),
-                              //(int)Math.floor(t * scale) + dy,
-                              //(int)Math.ceil(r * scale),
-                              //(int)Math.ceil(b * scale) + dy);
+        
+        
+        
+        
+                              
+                              
+                              
+                              
     }
 
     
@@ -2813,8 +2813,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private void invalidateContentRect(Rect r) {
         viewInvalidate(r.left, r.top, r.right, r.bottom);
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //viewInvalidate(r.left, r.top, r.right, r.bottom);
+        
+        
     }
 
     
@@ -2822,9 +2822,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private void abortAnimation() {
         mScroller.abortAnimation();
         mLastVelocity = 0;
-        // ---------- Original Method ----------
-        //mScroller.abortAnimation();
-        //mLastVelocity = 0;
+        
+        
+        
     }
 
     
@@ -2840,39 +2840,39 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     {
                         mScroller.setFinalX(pinLocX(mScroller.getFinalX()));
                         mScroller.setFinalY(pinLocY(mScroller.getFinalY()));
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         contentSizeChanged(updateLayout);
         addTaint(updateLayout);
-        // ---------- Original Method ----------
-        //if ((w | h) == 0) {
-            //return;
-        //}
-        //if (mContentWidth != w || mContentHeight != h) {
-            //mContentWidth = w;
-            //mContentHeight = h;
-            //if (!mDrawHistory) {
-                //updateScrollCoordinates(pinLocX(mScrollX), pinLocY(mScrollY));
-                //if (!mScroller.isFinished()) {
-                    //mScroller.setFinalX(pinLocX(mScroller.getFinalX()));
-                    //mScroller.setFinalY(pinLocY(mScroller.getFinalY()));
-                //}
-            //}
-        //}
-        //contentSizeChanged(updateLayout);
+        
+        
+            
+        
+        
+            
+            
+            
+                
+                
+                    
+                    
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.124 -0400", hash_original_method = "C2A5E734893A55C378E9D7B3FADB3F17", hash_generated_method = "472856BFC108E057962CD8DC4F0F9B72")
      Rect sendOurVisibleRect() {
-        Rect varB4EAC82CA7396A68D541C85D26508E83_1356869606 = null; //Variable for return #1
-        Rect varB4EAC82CA7396A68D541C85D26508E83_1056922326 = null; //Variable for return #2
+        Rect varB4EAC82CA7396A68D541C85D26508E83_1356869606 = null; 
+        Rect varB4EAC82CA7396A68D541C85D26508E83_1056922326 = null; 
         {
             boolean varAE4ECBB9AF2032911A6639ABEB801BF6_2042882803 = (mZoomManager.isPreventingWebkitUpdates());
             varB4EAC82CA7396A68D541C85D26508E83_1356869606 = mLastVisibleRectSent;
-        } //End collapsed parenthetic
+        } 
         calcOurContentVisibleRect(mVisibleRect);
         {
             boolean var00DE442F9F80E5CC469870BAE951674E_1026225099 = (!mVisibleRect.equals(mLastVisibleRectSent));
@@ -2882,35 +2882,35 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     mWebViewCore.removeMessages(EventHub.SET_SCROLL_OFFSET);
                     mWebViewCore.sendMessage(EventHub.SET_SCROLL_OFFSET,
                         nativeMoveGeneration(), mSendScrollEvent ? 1 : 0, mScrollOffset);
-                } //End block
+                } 
                 mLastVisibleRectSent.set(mVisibleRect);
                 mPrivateHandler.removeMessages(SWITCH_TO_LONGPRESS);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var3D2FB3EC4A2EF0714518F74D7378575D_432483606 = (getGlobalVisibleRect(mGlobalVisibleRect)
                 && !mGlobalVisibleRect.equals(mLastGlobalRect));
             {
                 {
                     mWebViewCore.sendMessage(EventHub.SET_GLOBAL_BOUNDS, mGlobalVisibleRect);
-                } //End block
+                } 
                 mLastGlobalRect.set(mGlobalVisibleRect);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1056922326 = mVisibleRect;
-        Rect varA7E53CE21691AB073D9660D615818899_3822487; //Final return value
+        Rect varA7E53CE21691AB073D9660D615818899_3822487; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_3822487 = varB4EAC82CA7396A68D541C85D26508E83_1356869606;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_3822487 = varB4EAC82CA7396A68D541C85D26508E83_1056922326;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_3822487.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_3822487.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_3822487;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2919,9 +2919,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         getGlobalVisibleRect(r, mGlobalVisibleOffset);
         r.offset(-mGlobalVisibleOffset.x, -mGlobalVisibleOffset.y);
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //getGlobalVisibleRect(r, mGlobalVisibleOffset);
-        //r.offset(-mGlobalVisibleOffset.x, -mGlobalVisibleOffset.y);
+        
+        
+        
     }
 
     
@@ -2933,12 +2933,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         r.right = viewToContentX(r.right);
         r.bottom = viewToContentY(r.bottom);
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //calcOurVisibleRect(r);
-        //r.left = viewToContentX(r.left);
-        //r.top = viewToContentY(r.top + getVisibleTitleHeightImpl());
-        //r.right = viewToContentX(r.right);
-        //r.bottom = viewToContentY(r.bottom);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -2950,12 +2950,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         r.right = viewToContentXf(mContentVisibleRect.right);
         r.bottom = viewToContentYf(mContentVisibleRect.bottom);
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //calcOurVisibleRect(mContentVisibleRect);
-        //r.left = viewToContentXf(mContentVisibleRect.left);
-        //r.top = viewToContentYf(mContentVisibleRect.top + getVisibleTitleHeightImpl());
-        //r.right = viewToContentXf(mContentVisibleRect.right);
-        //r.bottom = viewToContentYf(mContentVisibleRect.bottom);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -2963,7 +2963,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      boolean sendViewSizeZoom(boolean force) {
         {
             boolean varAE4ECBB9AF2032911A6639ABEB801BF6_1982261291 = (mZoomManager.isPreventingWebkitUpdates());
-        } //End collapsed parenthetic
+        } 
         int viewWidth = getViewWidth();
         int newWidth = Math.round(viewWidth * mZoomManager.getInvScale());
         int viewHeight = getViewHeightWithTitle() - getTitleHeight();
@@ -2972,7 +2972,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             newHeight = 0;
             heightWidthRatio = 0;
-        } //End block
+        } 
         int actualViewHeight = Math.round(getViewHeight() * mZoomManager.getInvScale());
         {
             ViewSizeData data = new ViewSizeData();
@@ -2991,12 +2991,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             mLastHeightSent = newHeight;
             mLastActualHeightSent = actualViewHeight;
             mZoomManager.clearDocumentAnchor();
-        } //End block
+        } 
         addTaint(force);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1929864369 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1929864369;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3004,8 +3004,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      void updateDoubleTapZoom(int doubleTapZoom) {
         mZoomManager.updateDoubleTapZoom(doubleTapZoom);
         addTaint(doubleTapZoom);
-        // ---------- Original Method ----------
-        //mZoomManager.updateDoubleTapZoom(doubleTapZoom);
+        
+        
     }
 
     
@@ -3013,15 +3013,15 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private int computeRealHorizontalScrollRange() {
         {
             int varFC9DBABA45B6BB7366F73B80D989E991_826054522 = ((int) Math.floor(mContentWidth * mZoomManager.getScale()));
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2146260581 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2146260581;
-        // ---------- Original Method ----------
-        //if (mDrawHistory) {
-            //return mHistoryWidth;
-        //} else {
-            //return (int) Math.floor(mContentWidth * mZoomManager.getScale());
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -3033,22 +3033,22 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         final int overscrollRight = computeMaxScrollX();
         {
             range -= scrollX;
-        } //End block
+        } 
         {
             range += scrollX - overscrollRight;
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_218793178 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_218793178;
-        // ---------- Original Method ----------
-        //int range = computeRealHorizontalScrollRange();
-        //final int scrollX = mScrollX;
-        //final int overscrollRight = computeMaxScrollX();
-        //if (scrollX < 0) {
-            //range -= scrollX;
-        //} else if (scrollX > overscrollRight) {
-            //range += scrollX - overscrollRight;
-        //}
-        //return range;
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -3058,8 +3058,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int var39399E7590852488423D31BF8E113523_1704633925 = (Math.max(mScrollX, 0));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1935471012 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1935471012;
-        // ---------- Original Method ----------
-        //return Math.max(mScrollX, 0);
+        
+        
     }
 
     
@@ -3067,15 +3067,15 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private int computeRealVerticalScrollRange() {
         {
             int var6B23C2077842EB549029F0B0D2DC4BA6_1590606383 = ((int) Math.floor(mContentHeight * mZoomManager.getScale()));
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1036345328 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1036345328;
-        // ---------- Original Method ----------
-        //if (mDrawHistory) {
-            //return mHistoryHeight;
-        //} else {
-            //return (int) Math.floor(mContentHeight * mZoomManager.getScale());
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -3087,22 +3087,22 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         final int overscrollBottom = computeMaxScrollY();
         {
             range -= scrollY;
-        } //End block
+        } 
         {
             range += scrollY - overscrollBottom;
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1198659220 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1198659220;
-        // ---------- Original Method ----------
-        //int range = computeRealVerticalScrollRange();
-        //final int scrollY = mScrollY;
-        //final int overscrollBottom = computeMaxScrollY();
-        //if (scrollY < 0) {
-            //range -= scrollY;
-        //} else if (scrollY > overscrollBottom) {
-            //range += scrollY - overscrollBottom;
-        //}
-        //return range;
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -3112,8 +3112,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int var34E847664C51512EE9641EF813607EB4_2129337462 = (Math.max(mScrollY - getTitleHeight(), 0));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1755749594 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1755749594;
-        // ---------- Original Method ----------
-        //return Math.max(mScrollY - getTitleHeight(), 0);
+        
+        
     }
 
     
@@ -3123,8 +3123,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int varE85BFDDBDAAF56CEC1CA21E104DA822F_525622249 = (getViewHeight());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1666654639 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1666654639;
-        // ---------- Original Method ----------
-        //return getViewHeight();
+        
+        
     }
 
     
@@ -3133,10 +3133,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     protected void onDrawVerticalScrollBar(Canvas canvas,
                                            Drawable scrollBar,
                                            int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             t -= mScrollY;
-        } //End block
+        } 
         scrollBar.setBounds(l, t + getVisibleTitleHeightImpl(), r, b);
         scrollBar.draw(canvas);
         addTaint(canvas.getTaint());
@@ -3145,12 +3145,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        //if (mScrollY < 0) {
-            //t -= mScrollY;
-        //}
-        //scrollBar.setBounds(l, t + getVisibleTitleHeightImpl(), r, b);
-        //scrollBar.draw(canvas);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -3158,127 +3158,127 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @Override
     protected void onOverScrolled(int scrollX, int scrollY, boolean clampedX,
             boolean clampedY) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             scrollLayerTo(scrollX, scrollY);
-        } //End block
+        } 
         mInOverScrollMode = false;
         int maxX = computeMaxScrollX();
         int maxY = computeMaxScrollY();
         {
             scrollX = pinLocX(scrollX);
-        } //End block
+        } 
         {
             mInOverScrollMode = true;
-        } //End block
+        } 
         {
             mInOverScrollMode = true;
-        } //End block
+        } 
         int oldX = mScrollX;
         int oldY = mScrollY;
         super.scrollTo(scrollX, scrollY);
         {
             mOverScrollGlow.pullGlow(mScrollX, mScrollY, oldX, oldY, maxX, maxY);
-        } //End block
+        } 
         addTaint(scrollX);
         addTaint(scrollY);
         addTaint(clampedX);
         addTaint(clampedY);
-        // ---------- Original Method ----------
-        //if (mTouchMode == TOUCH_DRAG_LAYER_MODE) {
-            //scrollLayerTo(scrollX, scrollY);
-            //return;
-        //}
-        //mInOverScrollMode = false;
-        //int maxX = computeMaxScrollX();
-        //int maxY = computeMaxScrollY();
-        //if (maxX == 0) {
-            //scrollX = pinLocX(scrollX);
-        //} else if (scrollX < 0 || scrollX > maxX) {
-            //mInOverScrollMode = true;
-        //}
-        //if (scrollY < 0 || scrollY > maxY) {
-            //mInOverScrollMode = true;
-        //}
-        //int oldX = mScrollX;
-        //int oldY = mScrollY;
-        //super.scrollTo(scrollX, scrollY);
-        //if (mOverScrollGlow != null) {
-            //mOverScrollGlow.pullGlow(mScrollX, mScrollY, oldX, oldY, maxX, maxY);
-        //}
+        
+        
+            
+            
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.130 -0400", hash_original_method = "C4EBBFF9818941C5D5824E8B3F51971E", hash_generated_method = "3A0D0ADDDBE01E6ACA65B128DA4D0A9B")
     public String getUrl() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1237694061 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1237694061 = null; 
         checkThread();
         WebHistoryItem h = mCallbackProxy.getBackForwardList().getCurrentItem();
         varB4EAC82CA7396A68D541C85D26508E83_1237694061 = h != null ? h.getUrl() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1237694061.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1237694061.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1237694061;
-        // ---------- Original Method ----------
-        //checkThread();
-        //WebHistoryItem h = mCallbackProxy.getBackForwardList().getCurrentItem();
-        //return h != null ? h.getUrl() : null;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.130 -0400", hash_original_method = "FC3C6716276F1756949A9C3C5723F4FD", hash_generated_method = "CAED9447DC0BC5CD28D0934F12E5964A")
     public String getOriginalUrl() {
-        String varB4EAC82CA7396A68D541C85D26508E83_854121754 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_854121754 = null; 
         checkThread();
         WebHistoryItem h = mCallbackProxy.getBackForwardList().getCurrentItem();
         varB4EAC82CA7396A68D541C85D26508E83_854121754 = h != null ? h.getOriginalUrl() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_854121754.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_854121754.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_854121754;
-        // ---------- Original Method ----------
-        //checkThread();
-        //WebHistoryItem h = mCallbackProxy.getBackForwardList().getCurrentItem();
-        //return h != null ? h.getOriginalUrl() : null;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.130 -0400", hash_original_method = "D4595F49299490B58C966C4A02CB7245", hash_generated_method = "A3847748FCDD986C6BDA1AA39A3FAC05")
     public String getTitle() {
-        String varB4EAC82CA7396A68D541C85D26508E83_438981922 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_438981922 = null; 
         checkThread();
         WebHistoryItem h = mCallbackProxy.getBackForwardList().getCurrentItem();
         varB4EAC82CA7396A68D541C85D26508E83_438981922 = h != null ? h.getTitle() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_438981922.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_438981922.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_438981922;
-        // ---------- Original Method ----------
-        //checkThread();
-        //WebHistoryItem h = mCallbackProxy.getBackForwardList().getCurrentItem();
-        //return h != null ? h.getTitle() : null;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.131 -0400", hash_original_method = "A06DF5A940D8D02EBDDFDE57ABD78936", hash_generated_method = "C6CB4EFCCF3A70B2B94B0EAB65EB3345")
     public Bitmap getFavicon() {
-        Bitmap varB4EAC82CA7396A68D541C85D26508E83_1682682073 = null; //Variable for return #1
+        Bitmap varB4EAC82CA7396A68D541C85D26508E83_1682682073 = null; 
         checkThread();
         WebHistoryItem h = mCallbackProxy.getBackForwardList().getCurrentItem();
         varB4EAC82CA7396A68D541C85D26508E83_1682682073 = h != null ? h.getFavicon() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1682682073.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1682682073.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1682682073;
-        // ---------- Original Method ----------
-        //checkThread();
-        //WebHistoryItem h = mCallbackProxy.getBackForwardList().getCurrentItem();
-        //return h != null ? h.getFavicon() : null;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.131 -0400", hash_original_method = "12FD5D0FD740156EA8AA35C005AD1672", hash_generated_method = "4901E9A29A1382218937AF5224F044C8")
     public String getTouchIconUrl() {
-        String varB4EAC82CA7396A68D541C85D26508E83_544877657 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_544877657 = null; 
         WebHistoryItem h = mCallbackProxy.getBackForwardList().getCurrentItem();
         varB4EAC82CA7396A68D541C85D26508E83_544877657 = h != null ? h.getTouchIconUrl() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_544877657.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_544877657.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_544877657;
-        // ---------- Original Method ----------
-        //WebHistoryItem h = mCallbackProxy.getBackForwardList().getCurrentItem();
-        //return h != null ? h.getTouchIconUrl() : null;
+        
+        
+        
     }
 
     
@@ -3288,9 +3288,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int var7E8F23F5531EF375BC02F70B93667140_555300065 = (mCallbackProxy.getProgress());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_185912778 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_185912778;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return mCallbackProxy.getProgress();
+        
+        
+        
     }
 
     
@@ -3299,9 +3299,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_898768215 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_898768215;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return mContentHeight;
+        
+        
+        
     }
 
     
@@ -3309,8 +3309,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public int getContentWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89283109 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89283109;
-        // ---------- Original Method ----------
-        //return mContentWidth;
+        
+        
     }
 
     
@@ -3319,8 +3319,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int varDEEC2470ADDE0DE678B2B89837C36FF8_1398821414 = (nativeGetBackgroundColor());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_887791684 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_887791684;
-        // ---------- Original Method ----------
-        //return nativeGetBackgroundColor();
+        
+        
     }
 
     
@@ -3328,9 +3328,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void pauseTimers() {
         checkThread();
         mWebViewCore.sendMessage(EventHub.PAUSE_TIMERS);
-        // ---------- Original Method ----------
-        //checkThread();
-        //mWebViewCore.sendMessage(EventHub.PAUSE_TIMERS);
+        
+        
+        
     }
 
     
@@ -3338,53 +3338,53 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void resumeTimers() {
         checkThread();
         mWebViewCore.sendMessage(EventHub.RESUME_TIMERS);
-        // ---------- Original Method ----------
-        //checkThread();
-        //mWebViewCore.sendMessage(EventHub.RESUME_TIMERS);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.133 -0400", hash_original_method = "1CC368C251E77C3E9F8955DD9780AFB9", hash_generated_method = "9A2C91217964AFD85BD7C1DC25019147")
     public void onPause() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         checkThread();
         {
             mIsPaused = true;
             mWebViewCore.sendMessage(EventHub.ON_PAUSE);
             {
                 mHTML5VideoViewProxy.pauseAndDispatch();
-            } //End block
+            } 
             {
                 nativeSetPauseDrawing(mNativeClass, true);
-            } //End block
+            } 
             cancelSelectDialog();
-        } //End block
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (!mIsPaused) {
-            //mIsPaused = true;
-            //mWebViewCore.sendMessage(EventHub.ON_PAUSE);
-            //if (mHTML5VideoViewProxy != null) {
-                //mHTML5VideoViewProxy.pauseAndDispatch();
-            //}
-            //if (mNativeClass != 0) {
-                //nativeSetPauseDrawing(mNativeClass, true);
-            //}
-            //cancelSelectDialog();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+                
+            
+            
+                
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.134 -0400", hash_original_method = "C4F3357DF5076A3856C176A86E0CF6FC", hash_generated_method = "FCFC44FC2D661CF352F4B01F8E0B1C18")
     @Override
     protected void onWindowVisibilityChanged(int visibility) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onWindowVisibilityChanged(visibility);
         updateDrawingState();
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //super.onWindowVisibilityChanged(visibility);
-        //updateDrawingState();
+        
+        
+        
     }
 
     
@@ -3394,49 +3394,49 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean var7C64E366ECC1C3C33738983696089D46_1856487225 = (getWindowVisibility() != VISIBLE);
             {
                 nativeSetPauseDrawing(mNativeClass, true);
-            } //End block
+            } 
             {
                 boolean varA0A81FC19EFCAB05136A17FC3377BBD3_299414270 = (getVisibility() != VISIBLE);
                 {
                     nativeSetPauseDrawing(mNativeClass, true);
-                } //End block
+                } 
                 {
                     nativeSetPauseDrawing(mNativeClass, false);
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mNativeClass == 0 || mIsPaused) return;
-        //if (getWindowVisibility() != VISIBLE) {
-            //nativeSetPauseDrawing(mNativeClass, true);
-        //} else if (getVisibility() != VISIBLE) {
-            //nativeSetPauseDrawing(mNativeClass, true);
-        //} else {
-            //nativeSetPauseDrawing(mNativeClass, false);
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.134 -0400", hash_original_method = "9F5D63D4787FAE81A0CC8C6A7CD50DBE", hash_generated_method = "FED5B336FC4FDC2946193D66C38CB80D")
     public void onResume() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         checkThread();
         {
             mIsPaused = false;
             mWebViewCore.sendMessage(EventHub.ON_RESUME);
             {
                 nativeSetPauseDrawing(mNativeClass, false);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (mIsPaused) {
-            //mIsPaused = false;
-            //mWebViewCore.sendMessage(EventHub.ON_RESUME);
-            //if (mNativeClass != 0) {
-                //nativeSetPauseDrawing(mNativeClass, false);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -3444,8 +3444,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public boolean isPaused() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_873618120 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_873618120;
-        // ---------- Original Method ----------
-        //return mIsPaused;
+        
+        
     }
 
     
@@ -3453,9 +3453,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void freeMemory() {
         checkThread();
         mWebViewCore.sendMessage(EventHub.FREE_MEMORY);
-        // ---------- Original Method ----------
-        //checkThread();
-        //mWebViewCore.sendMessage(EventHub.FREE_MEMORY);
+        
+        
+        
     }
 
     
@@ -3465,10 +3465,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         mWebViewCore.sendMessage(EventHub.CLEAR_CACHE,
                 includeDiskFiles ? 1 : 0, 0);
         addTaint(includeDiskFiles);
-        // ---------- Original Method ----------
-        //checkThread();
-        //mWebViewCore.sendMessage(EventHub.CLEAR_CACHE,
-                //includeDiskFiles ? 1 : 0, 0);
+        
+        
+        
+                
     }
 
     
@@ -3479,13 +3479,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean varA3F78F0FFF8DCFA8325B8A0EE1160508_870537551 = (inEditingMode());
             {
                 mWebTextView.setAdapterCustom(null);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (inEditingMode()) {
-            //mWebTextView.setAdapterCustom(null);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -3494,10 +3494,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         mCallbackProxy.getBackForwardList().setClearPending();
         mWebViewCore.sendMessage(EventHub.CLEAR_HISTORY);
-        // ---------- Original Method ----------
-        //checkThread();
-        //mCallbackProxy.getBackForwardList().setClearPending();
-        //mWebViewCore.sendMessage(EventHub.CLEAR_HISTORY);
+        
+        
+        
+        
     }
 
     
@@ -3505,22 +3505,22 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void clearSslPreferences() {
         checkThread();
         mWebViewCore.sendMessage(EventHub.CLEAR_SSL_PREF_TABLE);
-        // ---------- Original Method ----------
-        //checkThread();
-        //mWebViewCore.sendMessage(EventHub.CLEAR_SSL_PREF_TABLE);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.136 -0400", hash_original_method = "4E2B6300B08A6182455A3348E7987460", hash_generated_method = "B268BE1489F8A45CC240A64B53DFA648")
     public WebBackForwardList copyBackForwardList() {
-        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_2091511935 = null; //Variable for return #1
+        WebBackForwardList varB4EAC82CA7396A68D541C85D26508E83_2091511935 = null; 
         checkThread();
         varB4EAC82CA7396A68D541C85D26508E83_2091511935 = mCallbackProxy.getBackForwardList().clone();
-        varB4EAC82CA7396A68D541C85D26508E83_2091511935.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2091511935.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2091511935;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return mCallbackProxy.getBackForwardList().clone();
+        
+        
+        
     }
 
     
@@ -3529,10 +3529,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         nativeFindNext(forward);
         addTaint(forward);
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (0 == mNativeClass) return;
-        //nativeFindNext(forward);
+        
+        
+        
+        
     }
 
     
@@ -3547,14 +3547,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         mLastFind = find;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_537956472 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_537956472;
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (0 == mNativeClass) return 0;
-        //int result = find != null ? nativeFindAll(find.toLowerCase(),
-                //find.toUpperCase(), find.equalsIgnoreCase(mLastFind)) : 0;
-        //invalidate();
-        //mLastFind = find;
-        //return result;
+        
+        
+        
+        
+                
+        
+        
+        
     }
 
     
@@ -3564,52 +3564,52 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         FindActionModeCallback callback = new FindActionModeCallback(mContext);
         {
             boolean varD263546D355C6FB3DF70E9DF8F0F7FDE_1400911275 = (getParent() == null || startActionMode(callback) == null);
-        } //End collapsed parenthetic
+        } 
         mCachedOverlappingActionModeHeight = -1;
         mFindCallback = callback;
         setFindIsUp(true);
         mFindCallback.setWebView(this);
         {
             mFindCallback.showSoftInput();
-        } //End block
+        } 
         {
             mFindCallback.setText(text);
             mFindCallback.findAll();
-        } //End block
+        } 
         {
             text = mLastFind;
-        } //End block
+        } 
         {
             mFindCallback.setText(text);
-        } //End block
+        } 
         addTaint(text.getTaint());
         addTaint(showIme);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1859655684 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1859655684;
-        // ---------- Original Method ----------
-        //checkThread();
-        //FindActionModeCallback callback = new FindActionModeCallback(mContext);
-        //if (getParent() == null || startActionMode(callback) == null) {
-            //return false;
-        //}
-        //mCachedOverlappingActionModeHeight = -1;
-        //mFindCallback = callback;
-        //setFindIsUp(true);
-        //mFindCallback.setWebView(this);
-        //if (showIme) {
-            //mFindCallback.showSoftInput();
-        //} else if (text != null) {
-            //mFindCallback.setText(text);
-            //mFindCallback.findAll();
-            //return true;
-        //}
-        //if (text == null) {
-            //text = mLastFind;
-        //}
-        //if (text != null) {
-            //mFindCallback.setText(text);
-        //}
-        //return true;
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+        
+            
+            
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -3617,10 +3617,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private void setFindIsUp(boolean isUp) {
         mFindIsUp = isUp;
         nativeSetFindIsUp(isUp);
-        // ---------- Original Method ----------
-        //mFindIsUp = isUp;
-        //if (0 == mNativeClass) return;
-        //nativeSetFindIsUp(isUp);
+        
+        
+        
+        
     }
 
     
@@ -3629,9 +3629,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int var790C769C9D30EC8562E6C6B0E7276107_990736243 = (nativeFindIndex());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_161699867 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_161699867;
-        // ---------- Original Method ----------
-        //if (0 == mNativeClass) return -1;
-        //return nativeFindIndex();
+        
+        
+        
     }
 
     
@@ -3651,12 +3651,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         nativeSetFindIsEmpty();
         invalidate();
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (mNativeClass == 0)
-            //return;
-        //nativeSetFindIsEmpty();
-        //invalidate();
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -3668,16 +3668,16 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         setFindIsUp(false);
         pinScrollTo(mScrollX, mScrollY, false, 0);
         invalidate();
-        // ---------- Original Method ----------
-        //mFindCallback = null;
-        //mCachedOverlappingActionModeHeight = -1;
-        //if (mWebViewCore == null) {
-            //return;
-        //}
-        //clearMatches();
-        //setFindIsUp(false);
-        //pinScrollTo(mScrollX, mScrollY, false, 0);
-        //invalidate();
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -3686,12 +3686,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         mWebViewCore.sendMessage(EventHub.DOC_HAS_IMAGES, response);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (response == null) {
-            //return;
-        //}
-        //mWebViewCore.sendMessage(EventHub.DOC_HAS_IMAGES, response);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -3699,9 +3699,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void stopScroll() {
         mScroller.forceFinished(true);
         mLastVelocity = 0;
-        // ---------- Original Method ----------
-        //mScroller.forceFinished(true);
-        //mLastVelocity = 0;
+        
+        
+        
     }
 
     
@@ -3728,42 +3728,42 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                             rangeX = mScrollingLayerRect.right;
                             rangeY = mScrollingLayerRect.bottom;
                             overflingDistance = 0;
-                        } //End block
+                        } 
                         overScrollBy(x - oldX, y - oldY, oldX, oldY,
                         rangeX, rangeY,
                         overflingDistance, overflingDistance, false);
                         {
                             mOverScrollGlow.absorbGlow(x, y, oldX, oldY, rangeX, rangeY);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         {
                             mScrollX = x;
                             mScrollY = y;
-                        } //End block
+                        } 
                         {
                             scrollLayerTo(x, y);
-                        } //End block
+                        } 
                         abortAnimation();
                         nativeSetIsScrolling(false);
                         {
                             WebViewCore.resumePriority();
                             {
                                 WebViewCore.resumeUpdatePicture(mWebViewCore);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             sendOurVisibleRect();
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 super.computeScroll();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -3774,15 +3774,15 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         mScrollingLayerRect.top = y;
         onScrollChanged(mScrollX, mScrollY, mScrollX, mScrollY);
         invalidate();
-        // ---------- Original Method ----------
-        //if (x == mScrollingLayerRect.left && y == mScrollingLayerRect.top) {
-            //return;
-        //}
-        //nativeScrollLayer(mCurrentScrollingLayerId, x, y);
-        //mScrollingLayerRect.left = x;
-        //mScrollingLayerRect.top = y;
-        //onScrollChanged(mScrollX, mScrollY, mScrollX, mScrollY);
-        //invalidate();
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -3802,8 +3802,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(animationDuration);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_305725206 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_305725206;
-        // ---------- Original Method ----------
-        //return pinScrollTo(mScrollX + dx, mScrollY + dy, animate, animationDuration);
+        
+        
     }
 
     
@@ -3819,34 +3819,34 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     animationDuration > 0 ? animationDuration : computeDuration(dx, dy));
             awakenScrollBars(mScroller.getDuration());
             invalidate();
-        } //End block
+        } 
         {
             scrollTo(x, y);
-        } //End block
+        } 
         addTaint(x);
         addTaint(y);
         addTaint(animate);
         addTaint(animationDuration);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1472175104 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1472175104;
-        // ---------- Original Method ----------
-        //x = pinLocX(x);
-        //y = pinLocY(y);
-        //int dx = x - mScrollX;
-        //int dy = y - mScrollY;
-        //if ((dx | dy) == 0) {
-            //return false;
-        //}
-        //abortAnimation();
-        //if (animate) {
-            //mScroller.startScroll(mScrollX, mScrollY, dx, dy,
-                    //animationDuration > 0 ? animationDuration : computeDuration(dx, dy));
-            //awakenScrollBars(mScroller.getDuration());
-            //invalidate();
-        //} else {
-            //scrollTo(x, y);
-        //}
-        //return true;
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+                    
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -3860,52 +3860,52 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 calcOurVisibleRect(tempRect);
                 tempRect.offset(cx, cy);
                 requestRectangleOnScreen(tempRect);
-            } //End block
+            } 
             boolean var3FCDFFB9E4E3AC0EFF489E7F0EAB193B_1228947003 = (cy == 0 && cx != 0 && pinScrollBy(cx, 0, animate, 0));
-        } //End block
+        } 
         {
             boolean var29BB42B254A3ABD17ABD36618645F129_2060869595 = (pinScrollBy(cx, cy, animate, 0));
-        } //End block
+        } 
         addTaint(cx);
         addTaint(cy);
         addTaint(animate);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_558284466 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_558284466;
-        // ---------- Original Method ----------
-        //if (mDrawHistory) {
-            //return false;
-        //}
-        //cx = contentToViewDimension(cx);
-        //cy = contentToViewDimension(cy);
-        //if (mHeightCanMeasure) {
-            //if (cy != 0) {
-                //Rect tempRect = new Rect();
-                //calcOurVisibleRect(tempRect);
-                //tempRect.offset(cx, cy);
-                //requestRectangleOnScreen(tempRect);
-            //}
-            //return cy == 0 && cx != 0 && pinScrollBy(cx, 0, animate, 0);
-        //} else {
-            //return pinScrollBy(cx, cy, animate, 0);
-        //}
+        
+        
+            
+        
+        
+        
+        
+            
+                
+                
+                
+                
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.174 -0400", hash_original_method = "F9449ED22C56BBB497563553E364031E", hash_generated_method = "FF087F6777B3DE1118FABF8CF93039F6")
      void onPageStarted(String url) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         setCertificate(null);
         mAccessibilityScriptInjected = false;
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //setCertificate(null);
-        //mAccessibilityScriptInjected = false;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.175 -0400", hash_original_method = "5AA3ECE4362C1B5CB5D5CB21F96F8C24", hash_generated_method = "FE79C621D28DB7E7BE8B64A98CA6602A")
      void onPageFinished(String url) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             {
                 boolean varE94AF5A5E140E4B674F99180E2533924_1164145031 = (mPageThatNeedsToSlideTitleBarOffScreen.equals(url)
@@ -3913,24 +3913,24 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 {
                     pinScrollTo(0, mYDistanceToSlideTitleOffScreen, true,
                         SLIDE_TITLE_DURATION);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mPageThatNeedsToSlideTitleBarOffScreen = null;
-        } //End block
+        } 
         mZoomManager.onPageFinished(url);
         injectAccessibilityForUrl(url);
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //if (mPageThatNeedsToSlideTitleBarOffScreen != null) {
-            //if (mPageThatNeedsToSlideTitleBarOffScreen.equals(url)
-                    //&& mScrollX == 0 && mScrollY == 0) {
-                //pinScrollTo(0, mYDistanceToSlideTitleOffScreen, true,
-                        //SLIDE_TITLE_DURATION);
-            //}
-            //mPageThatNeedsToSlideTitleBarOffScreen = null;
-        //}
-        //mZoomManager.onPageFinished(url);
-        //injectAccessibilityForUrl(url);
+        
+        
+            
+                    
+                
+                        
+            
+            
+        
+        
+        
     }
 
     
@@ -3941,14 +3941,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean var2F55789C2BAEC4B54A3769DF00E1201A_1793808314 = (!accessibilityManager.isEnabled());
             {
                 ensureAccessibilityScriptInjectorInstance(false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var257A8D7DF44254A8F3AFFC587333D831_442031094 = (!getSettings().getJavaScriptEnabled());
             {
                 ensureAccessibilityScriptInjectorInstance(true);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int axsParameterValue = getAxsUrlParameterValue(url);
         {
             boolean onDeviceScriptInjectionEnabled = (Settings.Secure.getInt(mContext
@@ -3957,21 +3957,21 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 ensureAccessibilityScriptInjectorInstance(false);
                 loadUrl(ACCESSIBILITY_SCRIPT_CHOOSER_JAVASCRIPT);
                 mAccessibilityScriptInjected = true;
-            } //End block
+            } 
             {
                 ensureAccessibilityScriptInjectorInstance(true);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             ensureAccessibilityScriptInjectorInstance(true);
-        } //End block
+        } 
         {
             ensureAccessibilityScriptInjectorInstance(false);
             loadUrl(ACCESSIBILITY_SCRIPT_CHOOSER_JAVASCRIPT);
-        } //End block
+        } 
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3980,20 +3980,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             {
                 mAccessibilityInjector = new AccessibilityInjector(this);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mAccessibilityInjector = null;
-        } //End block
+        } 
         addTaint(present);
-        // ---------- Original Method ----------
-        //if (present) {
-            //if (mAccessibilityInjector == null) {
-                //mAccessibilityInjector = new AccessibilityInjector(this);
-            //}
-        //} else {
-            //mAccessibilityInjector = null;
-        //}
+        
+        
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -4001,28 +4001,28 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private int getAxsUrlParameterValue(String url) {
         {
             mMatchAxsUrlParameterPattern = Pattern.compile(PATTERN_MATCH_AXS_URL_PARAMETER);
-        } //End block
+        } 
         Matcher matcher = mMatchAxsUrlParameterPattern.matcher(url);
         {
             boolean var0CA07C7E05B5FB943A39E313382D5DA2_775069163 = (matcher.find());
             {
                 String keyValuePair = url.substring(matcher.start(), matcher.end());
                 int varB4575FE2088203A669F7AEBE1DD89AA0_2111560192 = (Integer.parseInt(keyValuePair.split("=")[1]));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(url.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1292124737 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1292124737;
-        // ---------- Original Method ----------
-        //if (mMatchAxsUrlParameterPattern == null) {
-            //mMatchAxsUrlParameterPattern = Pattern.compile(PATTERN_MATCH_AXS_URL_PARAMETER);
-        //}
-        //Matcher matcher = mMatchAxsUrlParameterPattern.matcher(url);
-        //if (matcher.find()) {
-            //String keyValuePair = url.substring(matcher.start(), matcher.end());
-            //return Integer.parseInt(keyValuePair.split("=")[1]);
-        //}
-        //return -1;
+        
+        
+            
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -4033,30 +4033,30 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             vx = 0;
             vy = 0;
-        } //End block
+        } 
         {
             vx = contentToViewX(cx);
             vy = contentToViewY(cy);
-        } //End block
+        } 
         {
             {
                 boolean varBB2C6738F4D3DE5D7DC74ECC3D92899E_1007720276 = (getProgress() < 100);
                 {
                     mPageThatNeedsToSlideTitleBarOffScreen = getUrl();
                     mYDistanceToSlideTitleOffScreen = vy;
-                } //End block
+                } 
                 {
                     pinScrollTo(vx, vy, true, SLIDE_TITLE_DURATION);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         pinScrollTo(vx, vy, false, 0);
         addTaint(cx);
         addTaint(cy);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1672732211 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1672732211;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4067,13 +4067,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         pinScrollTo(vx, vy, true, 0);
         addTaint(cx);
         addTaint(cy);
-        // ---------- Original Method ----------
-        //if (mDrawHistory) {
-            //return;
-        //}
-        //int vx = contentToViewX(cx);
-        //int vy = contentToViewY(cy);
-        //pinScrollTo(vx, vy, true, 0);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -4085,39 +4085,39 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     || updateLayout);
                 {
                     requestLayout();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 boolean var7183AB9F5F71646AEDE7ABA21E1DCB83_1814152045 = (getMeasuredWidth() != contentToViewDimension(mContentWidth)
                     || updateLayout);
                 {
                     requestLayout();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             sendViewSizeZoom(false);
-        } //End block
+        } 
         addTaint(updateLayout);
-        // ---------- Original Method ----------
-        //if ((mContentWidth | mContentHeight) == 0) {
-            //return;
-        //}
-        //if (mHeightCanMeasure) {
-            //if (getMeasuredHeight() != contentToViewDimension(mContentHeight)
-                    //|| updateLayout) {
-                //requestLayout();
-            //}
-        //} else if (mWidthCanMeasure) {
-            //if (getMeasuredWidth() != contentToViewDimension(mContentWidth)
-                    //|| updateLayout) {
-                //requestLayout();
-            //}
-        //} else {
-            //sendViewSizeZoom(false);
-        //}
+        
+        
+            
+        
+        
+            
+                    
+                
+            
+        
+            
+                    
+                
+            
+        
+            
+        
     }
 
     
@@ -4126,20 +4126,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         mCallbackProxy.setWebViewClient(client);
         addTaint(client.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //mCallbackProxy.setWebViewClient(client);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.179 -0400", hash_original_method = "9510E1691A13C745A9F2E9F4F8D6E00C", hash_generated_method = "C85958358DE9C04B2B4EA84DB0C99DD3")
     public WebViewClient getWebViewClient() {
-        WebViewClient varB4EAC82CA7396A68D541C85D26508E83_585041390 = null; //Variable for return #1
+        WebViewClient varB4EAC82CA7396A68D541C85D26508E83_585041390 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_585041390 = mCallbackProxy.getWebViewClient();
-        varB4EAC82CA7396A68D541C85D26508E83_585041390.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_585041390.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_585041390;
-        // ---------- Original Method ----------
-        //return mCallbackProxy.getWebViewClient();
+        
+        
     }
 
     
@@ -4148,9 +4148,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         mCallbackProxy.setDownloadListener(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //mCallbackProxy.setDownloadListener(listener);
+        
+        
+        
     }
 
     
@@ -4159,20 +4159,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         mCallbackProxy.setWebChromeClient(client);
         addTaint(client.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //mCallbackProxy.setWebChromeClient(client);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.180 -0400", hash_original_method = "0856D3AA879CE0F9861CD0E5275F79DF", hash_generated_method = "AE5ECD0A4FD00914E12BDFF0DE5178FF")
     public WebChromeClient getWebChromeClient() {
-        WebChromeClient varB4EAC82CA7396A68D541C85D26508E83_479213529 = null; //Variable for return #1
+        WebChromeClient varB4EAC82CA7396A68D541C85D26508E83_479213529 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_479213529 = mCallbackProxy.getWebChromeClient();
-        varB4EAC82CA7396A68D541C85D26508E83_479213529.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_479213529.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_479213529;
-        // ---------- Original Method ----------
-        //return mCallbackProxy.getWebChromeClient();
+        
+        
     }
 
     
@@ -4180,19 +4180,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void setWebBackForwardListClient(WebBackForwardListClient client) {
         mCallbackProxy.setWebBackForwardListClient(client);
         addTaint(client.getTaint());
-        // ---------- Original Method ----------
-        //mCallbackProxy.setWebBackForwardListClient(client);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.180 -0400", hash_original_method = "2196B00F919C4231D836D65762ED39B4", hash_generated_method = "0E71F04C6174F36C9BA11B6E1DE2FD28")
     public WebBackForwardListClient getWebBackForwardListClient() {
-        WebBackForwardListClient varB4EAC82CA7396A68D541C85D26508E83_1661135065 = null; //Variable for return #1
+        WebBackForwardListClient varB4EAC82CA7396A68D541C85D26508E83_1661135065 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1661135065 = mCallbackProxy.getWebBackForwardListClient();
-        varB4EAC82CA7396A68D541C85D26508E83_1661135065.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1661135065.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1661135065;
-        // ---------- Original Method ----------
-        //return mCallbackProxy.getWebBackForwardListClient();
+        
+        
     }
 
     
@@ -4201,9 +4201,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void setPictureListener(PictureListener listener) {
         checkThread();
         mPictureListener = listener;
-        // ---------- Original Method ----------
-        //checkThread();
-        //mPictureListener = listener;
+        
+        
+        
     }
 
     
@@ -4211,8 +4211,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void externalRepresentation(Message callback) {
         mWebViewCore.sendMessage(EventHub.REQUEST_EXT_REPRESENTATION, callback);
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //mWebViewCore.sendMessage(EventHub.REQUEST_EXT_REPRESENTATION, callback);
+        
+        
     }
 
     
@@ -4220,8 +4220,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void documentAsText(Message callback) {
         mWebViewCore.sendMessage(EventHub.REQUEST_DOC_AS_TEXT, callback);
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //mWebViewCore.sendMessage(EventHub.REQUEST_DOC_AS_TEXT, callback);
+        
+        
     }
 
     
@@ -4234,15 +4234,15 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         mWebViewCore.sendMessage(EventHub.ADD_JS_INTERFACE, arg);
         addTaint(obj.getTaint());
         addTaint(interfaceName.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (obj == null) {
-            //return;
-        //}
-        //WebViewCore.JSInterfaceData arg = new WebViewCore.JSInterfaceData();
-        //arg.mObject = obj;
-        //arg.mInterfaceName = interfaceName;
-        //mWebViewCore.sendMessage(EventHub.ADD_JS_INTERFACE, arg);
+        
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -4253,28 +4253,28 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             WebViewCore.JSInterfaceData arg = new WebViewCore.JSInterfaceData();
             arg.mInterfaceName = interfaceName;
             mWebViewCore.sendMessage(EventHub.REMOVE_JS_INTERFACE, arg);
-        } //End block
+        } 
         addTaint(interfaceName.getTaint());
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (mWebViewCore != null) {
-            //WebViewCore.JSInterfaceData arg = new WebViewCore.JSInterfaceData();
-            //arg.mInterfaceName = interfaceName;
-            //mWebViewCore.sendMessage(EventHub.REMOVE_JS_INTERFACE, arg);
-        //}
+        
+        
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.182 -0400", hash_original_method = "AE8854F55F54F48403D38F822FA4F88C", hash_generated_method = "37C99CA7D641205323D8FAC4770438F6")
     public WebSettings getSettings() {
-        WebSettings varB4EAC82CA7396A68D541C85D26508E83_1581230192 = null; //Variable for return #1
+        WebSettings varB4EAC82CA7396A68D541C85D26508E83_1581230192 = null; 
         checkThread();
         varB4EAC82CA7396A68D541C85D26508E83_1581230192 = (mWebViewCore != null) ? mWebViewCore.getSettings() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1581230192.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1581230192.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1581230192;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return (mWebViewCore != null) ? mWebViewCore.getSettings() : null;
+        
+        
+        
     }
 
     
@@ -4290,8 +4290,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void refreshPlugins(boolean reloadOpenPages) {
         checkThread();
         addTaint(reloadOpenPages);
-        // ---------- Original Method ----------
-        //checkThread();
+        
+        
     }
 
     
@@ -4306,29 +4306,29 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     @Override
                     public void run() {
                         destroy();
-                        // ---------- Original Method ----------
-                        //destroy();
+                        
+                        
                     }
 });
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (mNativeClass != 0) {
-                //mPrivateHandler.post(new Runnable() {
-                    //@Override
-                    //public void run() {
-                        //destroy();
-                    //}
-                //});
-            //}
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+                    
+                    
+                        
+                    
+                
+            
+        
+            
+        
     }
 
     
@@ -4340,32 +4340,32 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             int newTop = 0;
             {
                 newTop = Math.min(0, mScrollY);
-            } //End block
+            } 
             {
                 newTop = mScrollY;
-            } //End block
+            } 
             mTitleBar.setBottom(newTop + mTitleBar.getHeight());
             mTitleBar.setTop(newTop);
-        } //End block
+        } 
         boolean var2713BACF81F43D1C388D129F1A927E0D_1301717787 = (super.drawChild(canvas, child, drawingTime));
         addTaint(canvas.getTaint());
         addTaint(child.getTaint());
         addTaint(drawingTime);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2083057976 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2083057976;
-        // ---------- Original Method ----------
-        //if (child == mTitleBar) {
-            //mTitleBar.offsetLeftAndRight(mScrollX - mTitleBar.getLeft());
-            //int newTop = 0;
-            //if (mTitleGravity == Gravity.NO_GRAVITY) {
-                //newTop = Math.min(0, mScrollY);
-            //} else if (mTitleGravity == Gravity.TOP) {
-                //newTop = mScrollY;
-            //}
-            //mTitleBar.setBottom(newTop + mTitleBar.getHeight());
-            //mTitleBar.setTop(newTop);
-        //}
-        //return super.drawChild(canvas, child, drawingTime);
+        
+        
+            
+            
+            
+                
+            
+                
+            
+            
+            
+        
+        
     }
 
     
@@ -4375,9 +4375,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 mDrawCursorRing && drawRings);
         addTaint(canvas.getTaint());
         addTaint(drawRings);
-        // ---------- Original Method ----------
-        //drawCoreAndCursorRing(canvas, mBackgroundColor,
-                //mDrawCursorRing && drawRings);
+        
+        
+                
     }
 
     
@@ -4394,7 +4394,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             mOverScrollBorder.setStyle(Paint.Style.STROKE);
             mOverScrollBorder.setStrokeWidth(0);
             mOverScrollBorder.setColor(0xffbbbbbb);
-        } //End block
+        } 
         int top = 0;
         int right = computeRealHorizontalScrollRange();
         int bottom = top + computeRealVerticalScrollRange();
@@ -4407,21 +4407,21 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         canvas.drawRect(-1, top - 1, right, bottom, mOverScrollBorder);
         canvas.clipRect(0, top, right, bottom);
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.185 -0400", hash_original_method = "2571802D3B47DE5AF167AF15E2038D31", hash_generated_method = "DB8CFE245C3F29E4E499CEE0060597B8")
     @Override
     protected void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             canvas.drawColor(mBackgroundColor);
-        } //End block
+        } 
         {
             canvas.drawColor(mBackgroundColor);
-        } //End block
+        } 
         {
             boolean var6EF828C6190BFBF42FDAC581E2D619E5_288675994 = (canvas.isHardwareAccelerated());
             {
@@ -4431,21 +4431,21 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     EGLDisplay eglDisplay = egl.eglGetDisplay(EGL_DEFAULT_DISPLAY);
                     int[] version = new int[2];
                     egl.eglInitialize(eglDisplay, version);
-                } //End block
+                } 
                 mZoomManager.setHardwareAccelerated();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int saveCount = canvas.save();
         {
             boolean var4322EE85B805CBD21A094B57F62ADC23_1963454312 = (mInOverScrollMode && !getSettings()
                 .getUseWebViewBackgroundForOverscrollBackground());
             {
                 drawOverScrollBackground(canvas);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             canvas.translate(0, getTitleHeight());
-        } //End block
+        } 
         boolean drawJavaRings = !mTouchHighlightRegion.isEmpty()
                 && (mTouchMode == TOUCH_INIT_MODE
                 || mTouchMode == TOUCH_SHORTPRESS_START_MODE
@@ -4454,19 +4454,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         boolean drawNativeRings = !drawJavaRings;
         {
             drawNativeRings = !drawJavaRings && !isInTouchMode();
-        } //End block
+        } 
         drawContent(canvas, drawNativeRings);
         canvas.restoreToCount(saveCount);
         {
             invalidate();
-        } //End block
+        } 
         mWebViewCore.signalRepaintDone();
         {
             boolean varEFDBDAC0A2DEB3E5103984743E3C9A57_2098663904 = (mOverScrollGlow != null && mOverScrollGlow.drawEdgeGlows(canvas));
             {
                 invalidate();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             long delay = System.currentTimeMillis() - mTouchHighlightRequested;
             {
@@ -4474,23 +4474,23 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 {
                     Rect r = mTouchHighlightRegion.getBounds();
                     postInvalidateDelayed(delay, r.left, r.top, r.right, r.bottom);
-                } //End block
+                } 
                 {
                     {
                         mTouchHightlightPaint = new Paint();
                         mTouchHightlightPaint.setColor(HIGHLIGHT_COLOR);
-                    } //End block
+                    } 
                     RegionIterator iter = new RegionIterator(mTouchHighlightRegion);
                     Rect r = new Rect();
                     {
                         boolean var777D1BAEECB4D7088A7F6E66A69B6796_2082453955 = (iter.next(r));
                         {
                             canvas.drawRect(r, mTouchHightlightPaint);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 boolean var7909E0FF363982F909528C78CCCF0F02_1331810436 = (getSettings().getNavDump());
@@ -4499,7 +4499,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         {
                             mTouchCrossHairColor = new Paint();
                             mTouchCrossHairColor.setColor(Color.RED);
-                        } //End block
+                        } 
                         canvas.drawLine(mTouchHighlightX - mNavSlop,
                             mTouchHighlightY - mNavSlop, mTouchHighlightX
                                     + mNavSlop + 1, mTouchHighlightY + mNavSlop
@@ -4509,13 +4509,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                                     - mNavSlop,
                             mTouchHighlightY + mNavSlop + 1,
                             mTouchCrossHairColor);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4524,10 +4524,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         mWebViewCore.removeMessages(EventHub.GET_TOUCH_HIGHLIGHT_RECTS);
         mPrivateHandler.removeMessages(SET_TOUCH_HIGHLIGHT_RECTS);
         setTouchHighlightRects(null);
-        // ---------- Original Method ----------
-        //mWebViewCore.removeMessages(EventHub.GET_TOUCH_HIGHLIGHT_RECTS);
-        //mPrivateHandler.removeMessages(SET_TOUCH_HIGHLIGHT_RECTS);
-        //setTouchHighlightRects(null);
+        
+        
+        
+        
     }
 
     
@@ -4536,14 +4536,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void setLayoutParams(ViewGroup.LayoutParams params) {
         {
             mWrapContent = true;
-        } //End block
+        } 
         super.setLayoutParams(params);
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //if (params.height == LayoutParams.WRAP_CONTENT) {
-            //mWrapContent = true;
-        //}
-        //super.setLayoutParams(params);
+        
+        
+            
+        
+        
     }
 
     
@@ -4552,21 +4552,21 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public boolean performLongClick() {
         {
             boolean var88AD79EA276C28AD3B3469360BCE1788_278952375 = (getParent() == null);
-        } //End collapsed parenthetic
+        } 
         final ScaleGestureDetector detector = mZoomManager.getMultiTouchGestureDetector();
         {
             boolean var13D92B99C938B0F2FF8CCF00F803E8A6_1068894468 = (detector != null && detector.isInProgress());
-        } //End collapsed parenthetic
+        } 
         {
             boolean var780C0185A33DB3757005E772477A414D_337540330 = (mNativeClass != 0 && nativeCursorIsTextInput());
             {
                 centerKeyPressOnTextField();
                 rebuildWebTextView();
-            } //End block
+            } 
             {
                 clearTextEntry();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varA3F78F0FFF8DCFA8325B8A0EE1160508_906395250 = (inEditingMode());
             {
@@ -4578,19 +4578,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     mLastTouchY - params.y + mScrollY, 0);
                 mWebTextView.dispatchTouchEvent(fake);
                 boolean var8E1B4A2E9B8893A37E1A84490A65FC9A_559302066 = (mWebTextView.performLongClick());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varC298D59926924FB0808A70DC864C4372_429641369 = (super.performLongClick());
-        } //End collapsed parenthetic
+        } 
         final boolean isSelecting = selectText();
         {
             performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_118261536 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_118261536;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4601,10 +4601,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         boolean varB29E32086CAB7981D2C629145B25F904_1327239491 = (selectText(x, y));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1343035733 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1343035733;
-        // ---------- Original Method ----------
-        //int x = viewToContentX(mLastTouchX + mScrollX);
-        //int y = viewToContentY(mLastTouchY + mScrollY);
-        //return selectText(x, y);
+        
+        
+        
+        
     }
 
     
@@ -4612,7 +4612,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      boolean selectText(int x, int y) {
         {
             boolean varC5ECEC29B03BE800BB553180A5BFDF02_380155655 = (!setUpSelect(true, x, y));
-        } //End collapsed parenthetic
+        } 
         nativeSetExtendSelection();
         mDrawSelectionPointer = false;
         mTouchMode = TOUCH_DRAG_MODE;
@@ -4620,38 +4620,38 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(y);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_348749048 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_348749048;
-        // ---------- Original Method ----------
-        //if (!setUpSelect(true, x, y)) {
-            //return false;
-        //}
-        //nativeSetExtendSelection();
-        //mDrawSelectionPointer = false;
-        //mTouchMode = TOUCH_DRAG_MODE;
-        //return true;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.190 -0400", hash_original_method = "279BA211E48B838241155C78A3D48F21", hash_generated_method = "F99C07CA889DE93B7B3F7B16E73BA782")
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mCachedOverlappingActionModeHeight = -1;
         {
             selectionDone();
-        } //End block
+        } 
         mOrientation = newConfig.orientation;
         {
             mWebViewCore.sendMessage(EventHub.CLEAR_CONTENT);
-        } //End block
-        // ---------- Original Method ----------
-        //mCachedOverlappingActionModeHeight = -1;
-        //if (mSelectingText && mOrientation != newConfig.orientation) {
-            //selectionDone();
-        //}
-        //mOrientation = newConfig.orientation;
-        //if (mWebViewCore != null && !mBlockWebkitViewMessages) {
-            //mWebViewCore.sendMessage(EventHub.CLEAR_CONTENT);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -4663,33 +4663,33 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         calcOurVisibleRect(visibleRect);
         offsetByLayerScrollPosition(vBox);
         boolean onScreen;
-        //Begin case FULLY_ON_SCREEN 
+        
         onScreen = visibleRect.contains(vBox);
-        //End case FULLY_ON_SCREEN 
-        //Begin case INTERSECTS_SCREEN 
+        
+        
         onScreen = Rect.intersects(visibleRect, vBox);
-        //End case INTERSECTS_SCREEN 
-        //Begin case ANYWHERE 
+        
+        
         onScreen = true;
-        //End case ANYWHERE 
-        //Begin case default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new AssertionError(
                         "invalid parameter passed to didUpdateWebTextViewDimensions");
-        //End case default 
+        
         {
             mWebTextView.setRect(vBox.left, vBox.top, vBox.width(),
                     vBox.height());
             mWebTextView.updateTextSize();
             updateWebTextViewPadding();
-        } //End block
+        } 
         {
             mWebTextView.remove();
-        } //End block
+        } 
         addTaint(intersection);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_271188513 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_271188513;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4701,15 +4701,15 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             {
                 box.offsetTo(box.left - mScrollingLayerRect.left,
                     box.top - mScrollingLayerRect.top);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(box.getTaint());
-        // ---------- Original Method ----------
-        //if ((mCurrentScrollingLayerId != 0)
-                //&& (mCurrentScrollingLayerId == nativeFocusCandidateLayerId())) {
-            //box.offsetTo(box.left - mScrollingLayerRect.left,
-                    //box.top - mScrollingLayerRect.top);
-        //}
+        
+        
+                
+            
+                    
+        
     }
 
     
@@ -4720,20 +4720,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 isPictureAfterFirstLayout, registerPageSwapCallback);
         {
             mHTML5VideoViewProxy.setBaseLayer(layer);
-        } //End block
+        } 
         addTaint(layer);
         addTaint(invalRegion.getTaint());
         addTaint(showVisualIndicator);
         addTaint(isPictureAfterFirstLayout);
         addTaint(registerPageSwapCallback);
-        // ---------- Original Method ----------
-        //if (mNativeClass == 0)
-            //return;
-        //nativeSetBaseLayer(layer, invalRegion, showVisualIndicator,
-                //isPictureAfterFirstLayout, registerPageSwapCallback);
-        //if (mHTML5VideoViewProxy != null) {
-            //mHTML5VideoViewProxy.setBaseLayer(layer);
-        //}
+        
+        
+            
+        
+                
+        
+            
+        
     }
 
     
@@ -4742,11 +4742,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int var56C10FDD99E0FDF412C413A619660025_792432056 = (nativeGetBaseLayer());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1512099589 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1512099589;
-        // ---------- Original Method ----------
-        //if (mNativeClass == 0) {
-            //return 0;
-        //}
-        //return nativeGetBaseLayer();
+        
+        
+            
+        
+        
     }
 
     
@@ -4756,12 +4756,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean varA3F78F0FFF8DCFA8325B8A0EE1160508_289724200 = (inEditingMode());
             {
                 mWebTextView.setVisibility(INVISIBLE);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (inEditingMode()) {
-            //mWebTextView.setVisibility(INVISIBLE);
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
@@ -4772,39 +4772,39 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 && didUpdateWebTextViewDimensions(FULLY_ON_SCREEN));
             {
                 mWebTextView.setVisibility(VISIBLE);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (inEditingMode()
-                //&& didUpdateWebTextViewDimensions(FULLY_ON_SCREEN)) {
-            //mWebTextView.setVisibility(VISIBLE);
-        //}
+            } 
+        } 
+        
+        
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.192 -0400", hash_original_method = "D76312EAEA392F17B2BD7F48A7BA5E85", hash_generated_method = "1DA8D4977752B15EE1DC244719C6FA7D")
      void onFixedLengthZoomAnimationStart() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         WebViewCore.pauseUpdatePicture(getWebViewCore());
         onZoomAnimationStart();
-        // ---------- Original Method ----------
-        //WebViewCore.pauseUpdatePicture(getWebViewCore());
-        //onZoomAnimationStart();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.192 -0400", hash_original_method = "7728365CE5185BB89BE1B9394D71C9F8", hash_generated_method = "101EE64BBEBED819506DCE68CFA9A134")
      void onFixedLengthZoomAnimationEnd() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             WebViewCore.resumeUpdatePicture(mWebViewCore);
-        } //End block
+        } 
         onZoomAnimationEnd();
-        // ---------- Original Method ----------
-        //if (!mBlockWebkitViewMessages && !mSelectingText) {
-            //WebViewCore.resumeUpdatePicture(mWebViewCore);
-        //}
-        //onZoomAnimationEnd();
+        
+        
+            
+        
+        
     }
 
     
@@ -4814,7 +4814,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             canvas.scale(mZoomManager.getScale(), mZoomManager.getScale());
             canvas.drawPicture(mHistoryPicture);
-        } //End block
+        } 
         boolean animateZoom = mZoomManager.isFixedLengthAnimationInProgress();
         boolean animateScroll = ((!mScroller.isFinished()
                 || mVelocityTracker != null)
@@ -4826,7 +4826,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 mPrivateHandler.removeMessages(DRAG_HELD_MOTIONLESS);
                 mPrivateHandler.removeMessages(AWAKEN_SCROLL_BARS);
                 mHeldMotionless = MOTIONLESS_FALSE;
-            } //End block
+            } 
             {
                 mPrivateHandler.sendMessageDelayed(mPrivateHandler
                         .obtainMessage(DRAG_HELD_MOTIONLESS), MOTIONLESS_TIME);
@@ -4834,18 +4834,18 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         .obtainMessage(AWAKEN_SCROLL_BARS),
                             ViewConfiguration.getScrollDefaultDelay());
                 mHeldMotionless = MOTIONLESS_PENDING;
-            } //End block
-        } //End block
+            } 
+        } 
         int saveCount = canvas.save();
         {
             mZoomManager.animateZoom(canvas);
-        } //End block
+        } 
         {
             boolean var5969E37520F40BCD8DA013ED3783BF82_1899193951 = (!canvas.isHardwareAccelerated());
             {
                 canvas.scale(mZoomManager.getScale(), mZoomManager.getScale());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean UIAnimationsRunning = false;
         {
             boolean var438456B32769D6A7B316667DCB4406FE_1582402070 = (mNativeClass != 0 && !canvas.isHardwareAccelerated()
@@ -4854,21 +4854,21 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 UIAnimationsRunning = true;
                 mWebViewCore.sendMessage(EventHub.NOTIFY_ANIMATION_STARTED);
                 invalidate();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int extras = DRAW_EXTRAS_NONE;
         {
             extras = DRAW_EXTRAS_FIND;
-        } //End block
+        } 
         {
             extras = DRAW_EXTRAS_SELECTION;
             nativeSetSelectionPointer(mNativeClass,
                     mDrawSelectionPointer,
                     mZoomManager.getInvScale(), mSelectX, mSelectY - getTitleHeight());
-        } //End block
+        } 
         {
             extras = DRAW_EXTRAS_CURSOR_RING;
-        } //End block
+        } 
         calcOurContentVisibleRectF(mVisibleContentRect);
         {
             boolean var6EF828C6190BFBF42FDAC581E2D619E5_27160252 = (canvas.isHardwareAccelerated());
@@ -4887,52 +4887,52 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     {
                         mHardwareAccelSkia = getSettings().getHardwareAccelSkiaEnabled();
                         nativeUseHardwareAccelSkia(mHardwareAccelSkia);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 DrawFilter df = null;
                 {
                     boolean varDFCE6862E0CA36047A4C3134A0AB6043_54746173 = (mZoomManager.isZoomAnimating() || UIAnimationsRunning);
                     {
                         df = mZoomFilter;
-                    } //End block
+                    } 
                     {
                         df = mScrollFilter;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 canvas.setDrawFilter(df);
                 int content = nativeDraw(canvas, mVisibleContentRect, color,
                     extras, false);
                 canvas.setDrawFilter(null);
                 {
                     mWebViewCore.sendMessage(EventHub.SPLIT_PICTURE_SET, content, 0);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         canvas.restoreToCount(saveCount);
         {
             drawTextSelectionHandles(canvas);
-        } //End block
+        } 
         {
             {
                 mTouchMode = TOUCH_SHORTPRESS_MODE;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mFocusSizeChanged = false;
             {
                 boolean varF6566AA8A24398D5119084D846E17436_516865844 = (!canvas.isHardwareAccelerated() && !animateZoom && inEditingMode());
                 {
                     didUpdateWebTextViewDimensions(ANYWHERE);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(canvas.getTaint());
         addTaint(color);
         addTaint(drawCursorRing);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4941,7 +4941,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             mTextSelectionPaint = new Paint();
             mTextSelectionPaint.setColor(HIGHLIGHT_COLOR);
-        } //End block
+        } 
         mTextSelectionRegion.setEmpty();
         nativeGetTextSelectionRegion(mNativeClass, mTextSelectionRegion);
         Rect r = new Rect();
@@ -4958,14 +4958,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     boolean var6DFFCCE966800787D5E5EFDDEDE35151_2001786709 = (r.intersect(clip));
                     {
                         canvas.drawRect(r, mTextSelectionPaint);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             mSelectHandleLeft = mContext.getResources().getDrawable(
                     com.android.internal.R.drawable.text_select_handle_left);
-        } //End block
+        } 
         int[] handles = new int[4];
         nativeGetSelectionHandles(mNativeClass, handles);
         int start_x = contentToViewDimension(handles[0]);
@@ -4979,7 +4979,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             mSelectHandleRight = mContext.getResources().getDrawable(
                     com.android.internal.R.drawable.text_select_handle_right);
-        } //End block
+        } 
         end_x -= mSelectHandleRight.getIntrinsicWidth() / 4;
         mSelectHandleRight.setBounds(end_x, end_y,
                 end_x + mSelectHandleRight.getIntrinsicWidth(),
@@ -4987,12 +4987,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             mSelectHandleLeft.setAlpha(125);
             mSelectHandleRight.setAlpha(125);
-        } //End block
+        } 
         mSelectHandleLeft.draw(canvas);
         mSelectHandleRight.draw(canvas);
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5000,8 +5000,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      boolean drawHistory() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_823551315 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_823551315;
-        // ---------- Original Method ----------
-        //return mDrawHistory;
+        
+        
     }
 
     
@@ -5009,11 +5009,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      int getHistoryPictureWidth() {
         {
             Object var5C92612DE9888EAC00CA7C21ECDC0B5E_1545242793 = (mHistoryPicture.getWidth());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1491452822 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1491452822;
-        // ---------- Original Method ----------
-        //return (mHistoryPicture != null) ? mHistoryPicture.getWidth() : 0;
+        
+        
     }
 
     
@@ -5031,64 +5031,64 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 mScrollY = pinLocY(mScrollY);
                 {
                     onScrollChanged(mScrollX, mScrollY, oldScrollX, oldScrollY);
-                } //End block
+                } 
                 {
                     sendOurVisibleRect();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (null == mWebViewCore) return;
-        //if (mDrawHistory && (getProgress() == 100 || nativeHasContent())) {
-            //mDrawHistory = false;
-            //mHistoryPicture = null;
-            //invalidate();
-            //int oldScrollX = mScrollX;
-            //int oldScrollY = mScrollY;
-            //mScrollX = pinLocX(mScrollX);
-            //mScrollY = pinLocY(mScrollY);
-            //if (oldScrollX != mScrollX || oldScrollY != mScrollY) {
-                //onScrollChanged(mScrollX, mScrollY, oldScrollX, oldScrollY);
-            //} else {
-                //sendOurVisibleRect();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.199 -0400", hash_original_method = "C39AA31A6BA8457E4DE9A390830947C7", hash_generated_method = "CE6490B7CAD5B5F6FD30D77F4A974112")
      WebViewCore.CursorData cursorData() {
-        WebViewCore.CursorData varB4EAC82CA7396A68D541C85D26508E83_30452665 = null; //Variable for return #1
+        WebViewCore.CursorData varB4EAC82CA7396A68D541C85D26508E83_30452665 = null; 
         WebViewCore.CursorData result = cursorDataNoPosition();
         Point position = nativeCursorPosition();
         result.mX = position.x;
         result.mY = position.y;
         varB4EAC82CA7396A68D541C85D26508E83_30452665 = result;
-        varB4EAC82CA7396A68D541C85D26508E83_30452665.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_30452665.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_30452665;
-        // ---------- Original Method ----------
-        //WebViewCore.CursorData result = cursorDataNoPosition();
-        //Point position = nativeCursorPosition();
-        //result.mX = position.x;
-        //result.mY = position.y;
-        //return result;
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.199 -0400", hash_original_method = "A984EE77267D92EBC297A83944E36AE0", hash_generated_method = "664A40409CD5BEA2CFF82743CD4C872B")
      WebViewCore.CursorData cursorDataNoPosition() {
-        WebViewCore.CursorData varB4EAC82CA7396A68D541C85D26508E83_1115379988 = null; //Variable for return #1
+        WebViewCore.CursorData varB4EAC82CA7396A68D541C85D26508E83_1115379988 = null; 
         WebViewCore.CursorData result = new WebViewCore.CursorData();
         result.mMoveGeneration = nativeMoveGeneration();
         result.mFrame = nativeCursorFramePointer();
         varB4EAC82CA7396A68D541C85D26508E83_1115379988 = result;
-        varB4EAC82CA7396A68D541C85D26508E83_1115379988.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1115379988.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1115379988;
-        // ---------- Original Method ----------
-        //WebViewCore.CursorData result = new WebViewCore.CursorData();
-        //result.mMoveGeneration = nativeMoveGeneration();
-        //result.mFrame = nativeCursorFramePointer();
-        //return result;
+        
+        
+        
+        
+        
     }
 
     
@@ -5099,12 +5099,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 data);
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //mTextGeneration++;
-        //WebViewCore.TextSelectionData data
-                //= new WebViewCore.TextSelectionData(start, end);
-        //mWebViewCore.sendMessage(EventHub.DELETE_SELECTION, mTextGeneration, 0,
-                //data);
+        
+        
+        
+                
+        
+                
     }
 
     
@@ -5112,31 +5112,31 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      void setSelection(int start, int end) {
         {
             mWebViewCore.sendMessage(EventHub.SET_SELECTION, start, end);
-        } //End block
+        } 
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //if (mWebViewCore != null) {
-            //mWebViewCore.sendMessage(EventHub.SET_SELECTION, start, end);
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.200 -0400", hash_original_method = "B8CB424E6752CDBFC65482B92F3C8AF0", hash_generated_method = "AEA82FCE7F7F7C1631932CA20748FA31")
     @Override
     public InputConnection onCreateInputConnection(EditorInfo outAttrs) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        InputConnection varB4EAC82CA7396A68D541C85D26508E83_786888004 = null; //Variable for return #1
+        
+        InputConnection varB4EAC82CA7396A68D541C85D26508E83_786888004 = null; 
         InputConnection connection = super.onCreateInputConnection(outAttrs);
         outAttrs.imeOptions |= EditorInfo.IME_FLAG_NO_FULLSCREEN;
         varB4EAC82CA7396A68D541C85D26508E83_786888004 = connection;
         addTaint(outAttrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_786888004.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_786888004.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_786888004;
-        // ---------- Original Method ----------
-        //InputConnection connection = super.onCreateInputConnection(outAttrs);
-        //outAttrs.imeOptions |= EditorInfo.IME_FLAG_NO_FULLSCREEN;
-        //return connection;
+        
+        
+        
+        
     }
 
     
@@ -5148,7 +5148,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             mZoomManager.setZoomCenter(mLastTouchX, mLastTouchY);
             mZoomManager.setZoomScale(mZoomManager.getDefaultScale(), false);
-        } //End block
+        } 
         {
             rebuildWebTextView();
             {
@@ -5157,31 +5157,31 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     imm.showSoftInput(mWebTextView, 0, mWebTextView.getResultReceiver());
                     {
                         didUpdateWebTextViewDimensions(INTERSECTS_SCREEN);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         imm.showSoftInput(this, 0);
         addTaint(isTextView);
-        // ---------- Original Method ----------
-        //InputMethodManager imm = (InputMethodManager)
-                //getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        //boolean zoom = mZoomManager.getScale() < mZoomManager.getDefaultScale();
-        //if (zoom) {
-            //mZoomManager.setZoomCenter(mLastTouchX, mLastTouchY);
-            //mZoomManager.setZoomScale(mZoomManager.getDefaultScale(), false);
-        //}
-        //if (isTextView) {
-            //rebuildWebTextView();
-            //if (inEditingMode()) {
-                //imm.showSoftInput(mWebTextView, 0, mWebTextView.getResultReceiver());
-                //if (zoom) {
-                    //didUpdateWebTextViewDimensions(INTERSECTS_SCREEN);
-                //}
-                //return;
-            //}
-        //}
-        //imm.showSoftInput(this, 0);
+        
+        
+                
+        
+        
+            
+            
+        
+        
+            
+            
+                
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
@@ -5193,14 +5193,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 || (inEditingMode() && imm.isActive(mWebTextView))));
             {
                 imm.hideSoftInputFromWindow(this.getWindowToken(), 0);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //InputMethodManager imm = InputMethodManager.peekInstance();
-        //if (imm != null && (imm.isActive(this)
-                //|| (inEditingMode() && imm.isActive(mWebTextView)))) {
-            //imm.hideSoftInputFromWindow(this.getWindowToken(), 0);
-        //}
+            } 
+        } 
+        
+        
+        
+                
+            
+        
     }
 
     
@@ -5208,20 +5208,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      void rebuildWebTextView() {
         {
             boolean varD65E3F1F95872BCE9675FDBCB6E52A34_1026514184 = (!hasFocus() && (null == mWebTextView || !mWebTextView.hasFocus()));
-        } //End collapsed parenthetic
+        } 
         boolean alreadyThere = inEditingMode();
         {
             boolean var7605F9B50D3E6B1FCD1B43262B1DB86A_1945377177 = (0 == mNativeClass || !nativeFocusCandidateIsTextInput());
             {
                 {
                     mWebTextView.remove();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             mWebTextView = new WebTextView(mContext, WebView.this, mAutoFillData.getQueryId());
             mTextGeneration = 0;
-        } //End block
+        } 
         mWebTextView.updateTextSize();
         updateWebTextViewPosition();
         String text = nativeFocusCandidateText();
@@ -5231,7 +5231,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         mWebTextView.setGravityForRtl(nativeFocusCandidateIsRtlText());
         {
             text = "";
-        } //End block
+        } 
         mWebTextView.setTextAndKeepSelection(text);
         InputMethodManager imm = InputMethodManager.peekInstance();
         {
@@ -5239,16 +5239,16 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             {
                 imm.restartInput(mWebTextView);
                 mWebTextView.clearComposingText();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var1C23F183BE3EEE2A8667855A22865324_1084535377 = (isFocused());
             {
                 mWebTextView.requestFocus();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -5264,20 +5264,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean var5F1F7DC9987FB452C0CD065A1A522578_1326896535 = (!Rect.intersects(bounds, visibleRect));
             {
                 revealSelection();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         updateWebTextViewPadding();
-        // ---------- Original Method ----------
-        //Rect visibleRect = new Rect();
-        //calcOurContentVisibleRect(visibleRect);
-        //Rect bounds = nativeFocusCandidateNodeBounds();
-        //Rect vBox = contentToViewRect(bounds);
-        //offsetByLayerScrollPosition(vBox);
-        //mWebTextView.setRect(vBox.left, vBox.top, vBox.width(), vBox.height());
-        //if (!Rect.intersects(bounds, visibleRect)) {
-            //revealSelection();
-        //}
-        //updateWebTextViewPadding();
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -5290,16 +5290,16 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     contentToViewDimension(paddingRect.top),
                     contentToViewDimension(paddingRect.right),
                     contentToViewDimension(paddingRect.bottom));
-        } //End block
-        // ---------- Original Method ----------
-        //Rect paddingRect = nativeFocusCandidatePaddingRect();
-        //if (paddingRect != null) {
-            //mWebTextView.setPadding(
-                    //contentToViewDimension(paddingRect.left),
-                    //contentToViewDimension(paddingRect.top),
-                    //contentToViewDimension(paddingRect.right),
-                    //contentToViewDimension(paddingRect.bottom));
-        //}
+        } 
+        
+        
+        
+            
+                    
+                    
+                    
+                    
+        
     }
 
     
@@ -5307,11 +5307,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      void revealSelection() {
         {
             mWebViewCore.sendMessage(EventHub.REVEAL_SELECTION);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mWebViewCore != null) {
-            //mWebViewCore.sendMessage(EventHub.REVEAL_SELECTION);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -5327,21 +5327,21 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     update, autoFillable, autoComplete);
                 Thread t = new Thread(updater);
                 t.start();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(name.getTaint());
         addTaint(nodePointer);
         addTaint(autoFillable);
         addTaint(autoComplete);
-        // ---------- Original Method ----------
-        //if (mWebViewCore.getSettings().getSaveFormData()) {
-            //Message update = mPrivateHandler.obtainMessage(REQUEST_FORM_DATA);
-            //update.arg1 = nodePointer;
-            //RequestFormData updater = new RequestFormData(name, getUrl(),
-                    //update, autoFillable, autoComplete);
-            //Thread t = new Thread(updater);
-            //t.start();
-        //}
+        
+        
+            
+            
+            
+                    
+            
+            
+        
     }
 
     
@@ -5351,17 +5351,17 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 nodePointer);
         addTaint(framePointer);
         addTaint(nodePointer);
-        // ---------- Original Method ----------
-        //mWebViewCore.sendMessage(EventHub.REQUEST_LABEL, framePointer,
-                //nodePointer);
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.204 -0400", hash_original_method = "7F39E56A7BC2D02DC2DB6CE203AFE9D8", hash_generated_method = "095BD32945AB1C2E270DEA25ED8552A3")
     public void dumpDisplayTree() {
         nativeDumpDisplayTree(getUrl());
-        // ---------- Original Method ----------
-        //nativeDumpDisplayTree(getUrl());
+        
+        
     }
 
     
@@ -5369,8 +5369,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void dumpDomTree(boolean toFile) {
         mWebViewCore.sendMessage(EventHub.DUMP_DOMTREE, toFile ? 1 : 0, 0);
         addTaint(toFile);
-        // ---------- Original Method ----------
-        //mWebViewCore.sendMessage(EventHub.DUMP_DOMTREE, toFile ? 1 : 0, 0);
+        
+        
     }
 
     
@@ -5378,16 +5378,16 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void dumpRenderTree(boolean toFile) {
         mWebViewCore.sendMessage(EventHub.DUMP_RENDERTREE, toFile ? 1 : 0, 0);
         addTaint(toFile);
-        // ---------- Original Method ----------
-        //mWebViewCore.sendMessage(EventHub.DUMP_RENDERTREE, toFile ? 1 : 0, 0);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.205 -0400", hash_original_method = "3DB0DADC92374DC10778E60C87786EFD", hash_generated_method = "5A01FAE035DC9B2B19C3CFCD95128CE9")
     public void useMockDeviceOrientation() {
         mWebViewCore.sendMessage(EventHub.USE_MOCK_DEVICE_ORIENTATION);
-        // ---------- Original Method ----------
-        //mWebViewCore.sendMessage(EventHub.USE_MOCK_DEVICE_ORIENTATION);
+        
+        
     }
 
     
@@ -5402,46 +5402,46 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(beta);
         addTaint(canProvideGamma);
         addTaint(gamma);
-        // ---------- Original Method ----------
-        //mWebViewCore.setMockDeviceOrientation(canProvideAlpha, alpha, canProvideBeta, beta,
-                //canProvideGamma, gamma);
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.205 -0400", hash_original_method = "6E90BAFCBD427E00C5425E554C19CD44", hash_generated_method = "AD73DDA9DEE4DBACADAAC65BAB256F86")
     public void dumpV8Counters() {
         mWebViewCore.sendMessage(EventHub.DUMP_V8COUNTERS);
-        // ---------- Original Method ----------
-        //mWebViewCore.sendMessage(EventHub.DUMP_V8COUNTERS);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.206 -0400", hash_original_method = "0AE890042DF6DCC9BC247C89484B6A70", hash_generated_method = "A177D34D58948BE0C067105BDA60868C")
     @Override
     public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var858C72F44AB8CD41BC0BE3BD37D47DCB_1814297850 = (keyCode == KeyEvent.KEYCODE_UNKNOWN && event.getCharacters() != null);
             {
                 mWebViewCore.sendMessage(EventHub.KEY_DOWN, event);
                 mWebViewCore.sendMessage(EventHub.KEY_UP, event);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(keyCode);
         addTaint(repeatCount);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2073953294 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2073953294;
-        // ---------- Original Method ----------
-        //if (mBlockWebkitViewMessages) {
-            //return false;
-        //}
-        //if (keyCode == KeyEvent.KEYCODE_UNKNOWN && event.getCharacters() != null) {
-            //mWebViewCore.sendMessage(EventHub.KEY_DOWN, event);
-            //mWebViewCore.sendMessage(EventHub.KEY_UP, event);
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -5450,30 +5450,30 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(keyCode);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1584430128 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1584430128;
-        // ---------- Original Method ----------
-        //return keyCode == KeyEvent.KEYCODE_DPAD_CENTER
-                //|| keyCode == KeyEvent.KEYCODE_ENTER
-                //|| keyCode == KeyEvent.KEYCODE_NUMPAD_ENTER;
+        
+        
+                
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.208 -0400", hash_original_method = "C4CB11A0D6E4EE15235D7023465A85CF", hash_generated_method = "4F21353EA4E25776940054F7D7E0F850")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var057857A71DAAF22FA381D228F5183695_2118778568 = (event.isCtrlPressed());
-        } //End collapsed parenthetic
+        } 
         {
             mAutoRedraw = !mAutoRedraw;
             {
                 invalidate();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean var418B2724488F40E407E2D4BA258E6AE2_1524222709 = (event.isSystem()
                 || mCallbackProxy.uiOverrideKeyEvent(event));
-        } //End collapsed parenthetic
+        } 
         {
             boolean var3BE26FC96DB7CC9256AE59FD11B8D37F_1072109249 = (accessibilityScriptInjected());
             {
@@ -5481,97 +5481,97 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     boolean var32F79E636ABE2CC743BABA6B1971036F_1776654752 = (AccessibilityManager.getInstance(mContext).isEnabled());
                     {
                         mWebViewCore.sendMessage(EventHub.KEY_DOWN, event);
-                    } //End block
+                    } 
                     {
                         mAccessibilityScriptInjected = false;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 {
                     boolean var32F79E636ABE2CC743BABA6B1971036F_899050293 = (AccessibilityManager.getInstance(mContext).isEnabled());
                     {
                         {
                             boolean varF5E342B5F1F37AD0D35FEF217CDDF732_48568023 = (mAccessibilityInjector.onKeyEvent(event));
-                        } //End collapsed parenthetic
-                    } //End block
+                        } 
+                    } 
                     {
                         mAccessibilityInjector = null;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 boolean var01265F35364458CD2A88FFB15C2C1B92_2085201346 = (event.hasNoModifiers());
                 {
                     pageUp(false);
-                } //End block
+                } 
                 {
                     boolean varAB36CD08CFCE6244F546B808D5F456D4_887036438 = (event.hasModifiers(KeyEvent.META_ALT_ON));
                     {
                         pageUp(true);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 boolean var01265F35364458CD2A88FFB15C2C1B92_838464412 = (event.hasNoModifiers());
                 {
                     pageDown(false);
-                } //End block
+                } 
                 {
                     boolean varAB36CD08CFCE6244F546B808D5F456D4_824420853 = (event.hasModifiers(KeyEvent.META_ALT_ON));
                     {
                         pageDown(true);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var4D7637BE3E5BB8DFB8BE9F5DEBBD0190_1840569169 = (keyCode == KeyEvent.KEYCODE_MOVE_HOME && event.hasNoModifiers());
             {
                 pageUp(true);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varCDA174DB103BE1133CABA578513ECF4C_492700550 = (keyCode == KeyEvent.KEYCODE_MOVE_END && event.hasNoModifiers());
             {
                 pageDown(true);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             switchOutDrawHistory();
             {
                 boolean var5EC168B85D610989E99D878E0C758737_816212123 = (nativePageShouldHandleShiftAndArrows());
                 {
                     letPageHandleNavKey(keyCode, event.getEventTime(), true, event.getMetaState());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varAC7A24F7600680817ED76B813249DD81_1749120993 = (event.hasModifiers(KeyEvent.META_ALT_ON));
                 {
-                    //Begin case KeyEvent.KEYCODE_DPAD_UP 
+                    
                     pageUp(true);
-                    //End case KeyEvent.KEYCODE_DPAD_UP 
-                    //Begin case KeyEvent.KEYCODE_DPAD_DOWN 
+                    
+                    
                     pageDown(true);
-                    //End case KeyEvent.KEYCODE_DPAD_DOWN 
-                    //Begin case KeyEvent.KEYCODE_DPAD_LEFT 
+                    
+                    
                     nativeClearCursor();
-                    //End case KeyEvent.KEYCODE_DPAD_LEFT 
-                    //Begin case KeyEvent.KEYCODE_DPAD_LEFT 
+                    
+                    
                     boolean var563F44E657D7D016C02306EF7D73B63C_1013350932 = (pinScrollTo(0, mScrollY, true, 0));
-                    //End case KeyEvent.KEYCODE_DPAD_LEFT 
-                    //Begin case KeyEvent.KEYCODE_DPAD_RIGHT 
+                    
+                    
                     nativeClearCursor();
-                    //End case KeyEvent.KEYCODE_DPAD_RIGHT 
-                    //Begin case KeyEvent.KEYCODE_DPAD_RIGHT 
+                    
+                    
                     boolean var05C6B866B6258D11272BBA227622E49C_328485817 = (pinScrollTo(mContentWidth, mScrollY, true, 0));
-                    //End case KeyEvent.KEYCODE_DPAD_RIGHT 
-                } //End block
-            } //End collapsed parenthetic
+                    
+                } 
+            } 
             {
                 int xRate;
                 xRate = 1;
@@ -5581,14 +5581,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 yRate = 0;
                 int multiplier = event.getRepeatCount() + 1;
                 moveSelection(xRate * multiplier, yRate * multiplier);
-            } //End block
+            } 
             {
                 boolean varECFDC30B9B17E54572F391464D24DDCA_108197937 = (navHandledKey(keyCode, 1, false, event.getEventTime()));
                 {
                     playSoundEffect(keyCodeToSoundsEffect(keyCode));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             switchOutDrawHistory();
             boolean wantsKeyEvents = nativeCursorNodePointer() == 0
@@ -5599,26 +5599,26 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     mGotCenterDown = true;
                     mPrivateHandler.sendMessageDelayed(mPrivateHandler
                         .obtainMessage(LONG_PRESS_CENTER), LONG_PRESS_TIMEOUT);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean var887BE5E0D671A1E9580BF5C98186B06D_583056535 = (getSettings().getNavDump());
             {
-                //Begin case KeyEvent.KEYCODE_4 
+                
                 dumpDisplayTree();
-                //End case KeyEvent.KEYCODE_4 
-                //Begin case KeyEvent.KEYCODE_5 KeyEvent.KEYCODE_6 
+                
+                
                 dumpDomTree(keyCode == KeyEvent.KEYCODE_5);
-                //End case KeyEvent.KEYCODE_5 KeyEvent.KEYCODE_6 
-                //Begin case KeyEvent.KEYCODE_7 KeyEvent.KEYCODE_8 
+                
+                
                 dumpRenderTree(keyCode == KeyEvent.KEYCODE_7);
-                //End case KeyEvent.KEYCODE_7 KeyEvent.KEYCODE_8 
-                //Begin case KeyEvent.KEYCODE_9 
+                
+                
                 nativeInstrumentReport();
-                //End case KeyEvent.KEYCODE_9 
-            } //End block
-        } //End collapsed parenthetic
+                
+            } 
+        } 
         {
             boolean varFBB0B09776F969247DB212E1762B7005_1099941368 = (nativeCursorIsTextInput());
             {
@@ -5630,9 +5630,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     {
                         mWebTextView.setDefaultSelection();
                         boolean var0E01D6F0C9B3C4661498B390117F08D9_431095827 = (mWebTextView.dispatchKeyEvent(event));
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 boolean var4BF8F7F944B1F59AAF473CC034212BAF_505812688 = (nativeHasFocusNode());
                 {
@@ -5642,30 +5642,30 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         {
                             mWebTextView.setDefaultSelection();
                             boolean var94D478091AA1B30B7403F71D4EA231CE_2067102244 = (mWebTextView.dispatchKeyEvent(event));
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             boolean varADCBAC66F6FA9B5781277EF260313BDF_538274927 = (nativeCursorWantsKeyEvents() || true);
             {
                 mWebViewCore.sendMessage(EventHub.KEY_DOWN, event);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1369146629 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1369146629;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.210 -0400", hash_original_method = "64393B626C93173F66EDDE91781ECC7E", hash_generated_method = "694CCD3DD88A7819E6265950FD9996EF")
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varFB3D894E81BEF45C7836AA612BE5CF4E_190825746 = (keyCode == KeyEvent.KEYCODE_CALL && nativeHasCursorNode());
             {
@@ -5676,14 +5676,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     {
                         Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(text));
                         getContext().startActivity(intent);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var418B2724488F40E407E2D4BA258E6AE2_400219967 = (event.isSystem()
                 || mCallbackProxy.uiOverrideKeyEvent(event));
-        } //End collapsed parenthetic
+        } 
         {
             boolean var3BE26FC96DB7CC9256AE59FD11B8D37F_1506725983 = (accessibilityScriptInjected());
             {
@@ -5691,34 +5691,34 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     boolean var32F79E636ABE2CC743BABA6B1971036F_1767317993 = (AccessibilityManager.getInstance(mContext).isEnabled());
                     {
                         mWebViewCore.sendMessage(EventHub.KEY_UP, event);
-                    } //End block
+                    } 
                     {
                         mAccessibilityScriptInjected = false;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 {
                     boolean var32F79E636ABE2CC743BABA6B1971036F_1420289365 = (AccessibilityManager.getInstance(mContext).isEnabled());
                     {
                         {
                             boolean varF5E342B5F1F37AD0D35FEF217CDDF732_280710773 = (mAccessibilityInjector.onKeyEvent(event));
-                        } //End collapsed parenthetic
-                    } //End block
+                        } 
+                    } 
                     {
                         mAccessibilityInjector = null;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 boolean var5EC168B85D610989E99D878E0C758737_2118924434 = (nativePageShouldHandleShiftAndArrows());
                 {
                     letPageHandleNavKey(keyCode, event.getEventTime(), false, event.getMetaState());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean varF2C062DAF4D50BEAFF0E218848138E20_1398487477 = (isEnterActionKey(keyCode));
             {
@@ -5728,17 +5728,17 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     {
                         copySelection();
                         selectionDone();
-                    } //End block
+                    } 
                     {
                         mExtendSelection = true;
                         nativeSetExtendSelection();
                         invalidate();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 Rect visibleRect = sendOurVisibleRect();
                 {
                     boolean var1C0F8D4E9F76762BB9ABC943F1506101_94572478 = (!nativeCursorIntersects(visibleRect));
-                } //End collapsed parenthetic
+                } 
                 WebViewCore.CursorData data = cursorData();
                 mWebViewCore.sendMessage(EventHub.SET_MOVE_MOUSE, data);
                 playSoundEffect(SoundEffectConstants.CLICK);
@@ -5751,36 +5751,36 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                             boolean varDB1B9C12ED48DAB084977319495C514C_971996683 = (inEditingMode());
                             {
                                 mWebTextView.setDefaultSelection();
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 clearTextEntry();
                 nativeShowCursorTimed();
                 {
                     boolean var34E3725E8E3257788672BB9D0420AAC0_2087172445 = (mCallbackProxy.uiOverrideUrlLoading(nativeCursorText()));
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean var2B73408B18669E3ED44DEC84F3F8FE87_729291125 = (nativeCursorNodePointer() != 0 && !nativeCursorWantsKeyEvents());
                     {
                         mWebViewCore.sendMessage(EventHub.CLICK, data.mFrame,
                         nativeCursorNodePointer());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             boolean varADCBAC66F6FA9B5781277EF260313BDF_1785116147 = (nativeCursorWantsKeyEvents() || true);
             {
                 mWebViewCore.sendMessage(EventHub.KEY_UP, event);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_364420683 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_364420683;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5788,27 +5788,27 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private boolean setUpSelect(boolean selectWord, int x, int y) {
         {
             boolean var1C653723DC415BF11BF974AF60071D68_2027985237 = (inFullScreenMode());
-        } //End collapsed parenthetic
+        } 
         nativeResetSelection();
         {
             boolean var5D0F3C45A3AF9494DFD7437F551FA15B_1001047455 = (selectWord && !nativeWordSelection(x, y));
             {
                 selectionDone();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mSelectCallback = new SelectActionModeCallback();
         mSelectCallback.setWebView(this);
         {
             boolean varB8A3B697E17C784F74A8FDA17CF85863_1349063863 = (startActionMode(mSelectCallback) == null);
             {
                 selectionDone();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mExtendSelection = false;
         mSelectingText = mDrawSelectionPointer = true;
         {
             setLayerType(LAYER_TYPE_SOFTWARE, null);
-        } //End block
+        } 
         WebViewCore.pauseUpdatePicture(mWebViewCore);
         {
             boolean var5225ACD2E56334E54962D68427F36819_1150958491 = (nativeHasCursorNode());
@@ -5816,19 +5816,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 Rect rect = nativeCursorNodeBounds();
                 mSelectX = contentToViewX(rect.left);
                 mSelectY = contentToViewY(rect.top);
-            } //End block
+            } 
             {
                 boolean varBE337274F3E43C04FF66B457B0EF7AE1_1605510775 = (mLastTouchY > getVisibleTitleHeightImpl());
                 {
                     mSelectX = mScrollX + mLastTouchX;
                     mSelectY = mScrollY + mLastTouchY;
-                } //End block
+                } 
                 {
                     mSelectX = mScrollX + getViewWidth() / 2;
                     mSelectY = mScrollY + getViewHeightWithTitle() / 2;
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         nativeHideCursor();
         mMinAutoScrollX = 0;
         mMaxAutoScrollX = getViewWidth();
@@ -5843,14 +5843,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         contentToViewX(mScrollingLayerBounds.left));
                 mMaxAutoScrollX = Math.min(mMaxAutoScrollX,
                         contentToViewX(mScrollingLayerBounds.right));
-            } //End block
+            } 
             {
                 mMinAutoScrollY = Math.max(mMinAutoScrollY,
                         contentToViewY(mScrollingLayerBounds.top));
                 mMaxAutoScrollY = Math.min(mMaxAutoScrollY,
                         contentToViewY(mScrollingLayerBounds.bottom));
-            } //End block
-        } //End block
+            } 
+        } 
         mMinAutoScrollX += SELECT_SCROLL;
         mMaxAutoScrollX -= SELECT_SCROLL;
         mMinAutoScrollY += SELECT_SCROLL;
@@ -5860,8 +5860,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(y);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1780630638 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1780630638;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5870,9 +5870,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void emulateShiftHeld() {
         checkThread();
         setUpSelect(false, 0, 0);
-        // ---------- Original Method ----------
-        //checkThread();
-        //setUpSelect(false, 0, 0);
+        
+        
+        
     }
 
     
@@ -5880,28 +5880,28 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void selectAll() {
         {
             boolean var1C653723DC415BF11BF974AF60071D68_201678652 = (inFullScreenMode());
-        } //End collapsed parenthetic
+        } 
         {
             Point select = nativeSelectableText();
             {
                 boolean varAEB90306D9A88D63001E6EB8A442969D_1032362072 = (!selectText(select.x, select.y));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         nativeSelectAll();
         mDrawSelectionPointer = false;
         mExtendSelection = true;
         invalidate();
-        // ---------- Original Method ----------
-        //if (0 == mNativeClass) return;
-        //if (inFullScreenMode()) return;
-        //if (!mSelectingText) {
-            //Point select = nativeSelectableText();
-            //if (!selectText(select.x, select.y)) return;
-        //}
-        //nativeSelectAll();
-        //mDrawSelectionPointer = false;
-        //mExtendSelection = true;
-        //invalidate();
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -5911,7 +5911,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             mSelectingText = false;
             {
                 setLayerType(LAYER_TYPE_NONE, null);
-            } //End block
+            } 
             mSelectCallback.finish();
             mSelectCallback = null;
             WebViewCore.resumePriority();
@@ -5920,22 +5920,22 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             mAutoScrollX = 0;
             mAutoScrollY = 0;
             mSentAutoScrollMessage = false;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSelectingText) {
-            //mSelectingText = false;
-            //if (DEBUG_TEXT_HANDLES) {
-                //setLayerType(LAYER_TYPE_NONE, null);
-            //}
-            //mSelectCallback.finish();
-            //mSelectCallback = null;
-            //WebViewCore.resumePriority();
-            //WebViewCore.resumeUpdatePicture(mWebViewCore);
-            //invalidate(); 
-            //mAutoScrollX = 0;
-            //mAutoScrollY = 0;
-            //mSentAutoScrollMessage = false;
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -5951,206 +5951,206 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             ClipboardManager cm = (ClipboardManager)getContext()
                     .getSystemService(Context.CLIPBOARD_SERVICE);
             cm.setText(selection);
-        } //End block
+        } 
         invalidate();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1166764209 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1166764209;
-        // ---------- Original Method ----------
-        //boolean copiedSomething = false;
-        //String selection = getSelection();
-        //if (selection != null && selection != "") {
-            //if (DebugFlags.WEB_VIEW) {
-                //Log.v(LOGTAG, "copySelection \"" + selection + "\"");
-            //}
-            //Toast.makeText(mContext
-                    //, com.android.internal.R.string.text_copied
-                    //, Toast.LENGTH_SHORT).show();
-            //copiedSomething = true;
-            //ClipboardManager cm = (ClipboardManager)getContext()
-                    //.getSystemService(Context.CLIPBOARD_SERVICE);
-            //cm.setText(selection);
-        //}
-        //invalidate();
-        //return copiedSomething;
+        
+        
+        
+        
+            
+                
+            
+            
+                    
+                    
+            
+            
+                    
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.214 -0400", hash_original_method = "42C460FC98EE957E1B7569B278C0F15C", hash_generated_method = "13BDEA6A884103C80DD6E45A3E107F23")
     public SearchBox getSearchBox() {
-        SearchBox varB4EAC82CA7396A68D541C85D26508E83_601587404 = null; //Variable for return #1
-        SearchBox varB4EAC82CA7396A68D541C85D26508E83_1827824394 = null; //Variable for return #2
+        SearchBox varB4EAC82CA7396A68D541C85D26508E83_601587404 = null; 
+        SearchBox varB4EAC82CA7396A68D541C85D26508E83_1827824394 = null; 
         {
             boolean var575F4597422E60100014A3F178C01D0F_990929828 = ((mWebViewCore == null) || (mWebViewCore.getBrowserFrame() == null));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_601587404 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1827824394 = mWebViewCore.getBrowserFrame().getSearchBox();
-        SearchBox varA7E53CE21691AB073D9660D615818899_1503437201; //Final return value
+        SearchBox varA7E53CE21691AB073D9660D615818899_1503437201; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1503437201 = varB4EAC82CA7396A68D541C85D26508E83_601587404;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1503437201 = varB4EAC82CA7396A68D541C85D26508E83_1827824394;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1503437201.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1503437201.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1503437201;
-        // ---------- Original Method ----------
-        //if ((mWebViewCore == null) || (mWebViewCore.getBrowserFrame() == null)) {
-            //return null;
-        //}
-        //return mWebViewCore.getBrowserFrame().getSearchBox();
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.214 -0400", hash_original_method = "A676AD565525EE3D82CB063563895008", hash_generated_method = "671314791BC40F9DEEBBC91DDB3C52DF")
      String getSelection() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1091903973 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_832570816 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1091903973 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_832570816 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1091903973 = "";
         varB4EAC82CA7396A68D541C85D26508E83_832570816 = nativeGetSelection();
-        String varA7E53CE21691AB073D9660D615818899_1152879486; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1152879486; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1152879486 = varB4EAC82CA7396A68D541C85D26508E83_1091903973;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1152879486 = varB4EAC82CA7396A68D541C85D26508E83_832570816;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1152879486.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1152879486.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1152879486;
-        // ---------- Original Method ----------
-        //if (mNativeClass == 0) return "";
-        //return nativeGetSelection();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.215 -0400", hash_original_method = "0F7A2D956AFF32B8C983C9EE90417286", hash_generated_method = "F7596C9F1C935B61C9608ECFC9A21F61")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
         {
             boolean var34B5A1F13735F7DF66C5DC4570B68E80_1931621803 = (hasWindowFocus());
             setActive(true);
-        } //End collapsed parenthetic
+        } 
         final ViewTreeObserver treeObserver = getViewTreeObserver();
         {
             mGlobalLayoutListener = new InnerGlobalLayoutListener();
             treeObserver.addOnGlobalLayoutListener(mGlobalLayoutListener);
-        } //End block
+        } 
         {
             mScrollChangedListener = new InnerScrollChangedListener();
             treeObserver.addOnScrollChangedListener(mScrollChangedListener);
-        } //End block
+        } 
         addAccessibilityApisToJavaScript();
         mTouchEventQueue.reset();
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //if (hasWindowFocus()) setActive(true);
-        //final ViewTreeObserver treeObserver = getViewTreeObserver();
-        //if (mGlobalLayoutListener == null) {
-            //mGlobalLayoutListener = new InnerGlobalLayoutListener();
-            //treeObserver.addOnGlobalLayoutListener(mGlobalLayoutListener);
-        //}
-        //if (mScrollChangedListener == null) {
-            //mScrollChangedListener = new InnerScrollChangedListener();
-            //treeObserver.addOnScrollChangedListener(mScrollChangedListener);
-        //}
-        //addAccessibilityApisToJavaScript();
-        //mTouchEventQueue.reset();
+        
+        
+        
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.215 -0400", hash_original_method = "6AF9BAC713EAF420417C9DD3E95BAD84", hash_generated_method = "1FB18883EEA64EABDFA4CDF65FB3B70A")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         clearHelpers();
         mZoomManager.dismissZoomPicker();
         {
             boolean var34B5A1F13735F7DF66C5DC4570B68E80_930271753 = (hasWindowFocus());
             setActive(false);
-        } //End collapsed parenthetic
+        } 
         final ViewTreeObserver treeObserver = getViewTreeObserver();
         {
             treeObserver.removeGlobalOnLayoutListener(mGlobalLayoutListener);
             mGlobalLayoutListener = null;
-        } //End block
+        } 
         {
             treeObserver.removeOnScrollChangedListener(mScrollChangedListener);
             mScrollChangedListener = null;
-        } //End block
+        } 
         removeAccessibilityApisFromJavaScript();
         super.onDetachedFromWindow();
-        // ---------- Original Method ----------
-        //clearHelpers();
-        //mZoomManager.dismissZoomPicker();
-        //if (hasWindowFocus()) setActive(false);
-        //final ViewTreeObserver treeObserver = getViewTreeObserver();
-        //if (mGlobalLayoutListener != null) {
-            //treeObserver.removeGlobalOnLayoutListener(mGlobalLayoutListener);
-            //mGlobalLayoutListener = null;
-        //}
-        //if (mScrollChangedListener != null) {
-            //treeObserver.removeOnScrollChangedListener(mScrollChangedListener);
-            //mScrollChangedListener = null;
-        //}
-        //removeAccessibilityApisFromJavaScript();
-        //super.onDetachedFromWindow();
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.216 -0400", hash_original_method = "371011809B792FC8D4394C397E7E010A", hash_generated_method = "ED1A1C337A69915E6C6C26CE222A7D32")
     @Override
     protected void onVisibilityChanged(View changedView, int visibility) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onVisibilityChanged(changedView, visibility);
         {
             mZoomManager.dismissZoomPicker();
-        } //End block
+        } 
         updateDrawingState();
         addTaint(changedView.getTaint());
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //super.onVisibilityChanged(changedView, visibility);
-        //if (visibility != View.VISIBLE && mZoomManager != null) {
-            //mZoomManager.dismissZoomPicker();
-        //}
-        //updateDrawingState();
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.216 -0400", hash_original_method = "1F5E023ED4B943F886020EF0C3C728C0", hash_generated_method = "B273FE7D61E13E6CE45FEB7014C0E93B")
     @Deprecated
     public void onChildViewAdded(View parent, View child) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(parent.getTaint());
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.217 -0400", hash_original_method = "A1852453035469FD96D226C7DED2259E", hash_generated_method = "C170B29F38EB702918070B8FAF483BB6")
     @Deprecated
     public void onChildViewRemoved(View p, View child) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(p.getTaint());
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.217 -0400", hash_original_method = "41543FFF07459A3CC35AF53F19C64652", hash_generated_method = "03699C1B0285E84E7176C9EC92F4A5C1")
     @Deprecated
     public void onGlobalFocusChanged(View oldFocus, View newFocus) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(oldFocus.getTaint());
         addTaint(newFocus.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -6162,49 +6162,49 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 {
                     mDrawCursorRing = !inEditingMode();
                     setFocusControllerActive(true);
-                } //End block
+                } 
                 {
                     mDrawCursorRing = false;
                     {
                         boolean var82DF510B98047A24212E03E202533075_285504146 = (!inEditingMode());
                         {
                             setFocusControllerActive(false);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 boolean varB5F2F3BA6162A40E6EBD61229A1DF48F_2044470054 = (!mZoomManager.isZoomPickerVisible());
                 {
                     mDrawCursorRing = false;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mKeysPressed.clear();
             mPrivateHandler.removeMessages(SWITCH_TO_LONGPRESS);
             mTouchMode = TOUCH_DONE_MODE;
             setFocusControllerActive(false);
-        } //End block
+        } 
         invalidate();
         addTaint(active);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.219 -0400", hash_original_method = "41ADC5D401D396C45811340AC3A1CFB7", hash_generated_method = "A6D90FC0DBB9B2F6415FE9714B5C5EAB")
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         setActive(hasWindowFocus);
         {
             JWebCoreJavaBridge.setActiveWebView(this);
             {
                 WebViewCore.resumeUpdatePicture(mWebViewCore);
                 mPictureUpdatePausedForFocusChange = false;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             JWebCoreJavaBridge.removeActiveWebView(this);
             final WebSettings settings = getSettings();
@@ -6214,29 +6214,29 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 {
                     WebViewCore.pauseUpdatePicture(mWebViewCore);
                     mPictureUpdatePausedForFocusChange = true;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         super.onWindowFocusChanged(hasWindowFocus);
         addTaint(hasWindowFocus);
-        // ---------- Original Method ----------
-        //setActive(hasWindowFocus);
-        //if (hasWindowFocus) {
-            //JWebCoreJavaBridge.setActiveWebView(this);
-            //if (mPictureUpdatePausedForFocusChange) {
-                //WebViewCore.resumeUpdatePicture(mWebViewCore);
-                //mPictureUpdatePausedForFocusChange = false;
-            //}
-        //} else {
-            //JWebCoreJavaBridge.removeActiveWebView(this);
-            //final WebSettings settings = getSettings();
-            //if (settings != null && settings.enableSmoothTransition() &&
-                    //mWebViewCore != null && !WebViewCore.isUpdatePicturePaused(mWebViewCore)) {
-                //WebViewCore.pauseUpdatePicture(mWebViewCore);
-                //mPictureUpdatePausedForFocusChange = true;
-            //}
-        //}
-        //super.onWindowFocusChanged(hasWindowFocus);
+        
+        
+        
+            
+            
+                
+                
+            
+        
+            
+            
+            
+                    
+                
+                
+            
+        
+        
     }
 
     
@@ -6246,15 +6246,15 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             mWebViewCore.sendMessage(mListBoxMessage);
             mListBoxMessage = null;
-        } //End block
+        } 
         addTaint(active);
-        // ---------- Original Method ----------
-        //if (mWebViewCore == null) return;
-        //mWebViewCore.sendMessage(EventHub.SET_ACTIVE, active ? 1 : 0, 0);
-        //if (active && mListBoxMessage != null) {
-            //mWebViewCore.sendMessage(mListBoxMessage);
-            //mListBoxMessage = null;
-        //}
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -6262,47 +6262,47 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @Override
     protected void onFocusChanged(boolean focused, int direction,
             Rect previouslyFocusedRect) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             {
                 boolean var7FF7C69BF2546C1B46A75E34BBC40609_1686746438 = (hasWindowFocus());
                 {
                     mDrawCursorRing = !inEditingMode();
                     setFocusControllerActive(true);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             mDrawCursorRing = false;
             {
                 boolean varD52AFE2B2A5DD9C2C2CA64ADDFB71D04_868985961 = (!inEditingMode());
                 {
                     setFocusControllerActive(false);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mKeysPressed.clear();
-        } //End block
+        } 
         super.onFocusChanged(focused, direction, previouslyFocusedRect);
         addTaint(focused);
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
-        // ---------- Original Method ----------
-        //if (DebugFlags.WEB_VIEW) {
-            //Log.v(LOGTAG, "MT focusChanged " + focused + ", " + direction);
-        //}
-        //if (focused) {
-            //if (hasWindowFocus()) {
-                //mDrawCursorRing = !inEditingMode();
-                //setFocusControllerActive(true);
-            //}
-        //} else {
-            //mDrawCursorRing = false;
-            //if (!inEditingMode()) {
-                //setFocusControllerActive(false);
-            //}
-            //mKeysPressed.clear();
-        //}
-        //super.onFocusChanged(focused, direction, previouslyFocusedRect);
+        
+        
+            
+        
+        
+            
+                
+                
+            
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -6317,29 +6317,29 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             mGLRectViewport.bottom = rootViewHeight - mGLRectViewport.top - getVisibleTitleHeightImpl();
             mGLRectViewport.top = rootViewHeight - savedWebViewBottom;
             mGLViewportEmpty = false;
-        } //End block
+        } 
         {
             mGLViewportEmpty = true;
-        } //End block
+        } 
         calcOurContentVisibleRectF(mVisibleContentRect);
         nativeUpdateDrawGLFunction(mGLViewportEmpty ? null : mGLRectViewport,
                 mGLViewportEmpty ? null : mViewRectViewport, mVisibleContentRect);
-        // ---------- Original Method ----------
-        //boolean visible = getGlobalVisibleRect(mGLRectViewport);
-        //if (visible) {
-            //View rootView = getRootView();
-            //int rootViewHeight = rootView.getHeight();
-            //mViewRectViewport.set(mGLRectViewport);
-            //int savedWebViewBottom = mGLRectViewport.bottom;
-            //mGLRectViewport.bottom = rootViewHeight - mGLRectViewport.top - getVisibleTitleHeightImpl();
-            //mGLRectViewport.top = rootViewHeight - savedWebViewBottom;
-            //mGLViewportEmpty = false;
-        //} else {
-            //mGLViewportEmpty = true;
-        //}
-        //calcOurContentVisibleRectF(mVisibleContentRect);
-        //nativeUpdateDrawGLFunction(mGLViewportEmpty ? null : mGLRectViewport,
-                //mGLViewportEmpty ? null : mViewRectViewport, mVisibleContentRect);
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
+            
+        
+        
+        
+                
     }
 
     
@@ -6349,7 +6349,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         boolean changed = super.setFrame(left, top, right, bottom);
         {
             sendViewSizeZoom(false);
-        } //End block
+        } 
         setGLRectViewport();
         addTaint(left);
         addTaint(top);
@@ -6357,50 +6357,50 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(bottom);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1266913532 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1266913532;
-        // ---------- Original Method ----------
-        //boolean changed = super.setFrame(left, top, right, bottom);
-        //if (!changed && mHeightCanMeasure) {
-            //sendViewSizeZoom(false);
-        //}
-        //setGLRectViewport();
-        //return changed;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.221 -0400", hash_original_method = "CF3FF8B5BD5D2F01947052917B339811", hash_generated_method = "26757D6D1D6C51D7FEA34E95D372E7EA")
     @Override
     protected void onSizeChanged(int w, int h, int ow, int oh) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onSizeChanged(w, h, ow, oh);
         int newMaxViewportWidth = (int) (Math.max(w, h) / mZoomManager.getDefaultMinZoomScale());
         {
             sMaxViewportWidth = newMaxViewportWidth;
-        } //End block
+        } 
         mZoomManager.onSizeChanged(w, h, ow, oh);
         {
             setNewPicture(mLoadedPicture, false);
-        } //End block
+        } 
         addTaint(w);
         addTaint(h);
         addTaint(ow);
         addTaint(oh);
-        // ---------- Original Method ----------
-        //super.onSizeChanged(w, h, ow, oh);
-        //int newMaxViewportWidth = (int) (Math.max(w, h) / mZoomManager.getDefaultMinZoomScale());
-        //if (newMaxViewportWidth > sMaxViewportWidth) {
-            //sMaxViewportWidth = newMaxViewportWidth;
-        //}
-        //mZoomManager.onSizeChanged(w, h, ow, oh);
-        //if (mLoadedPicture != null && mDelaySetPicture == null) {
-            //setNewPicture(mLoadedPicture, false);
-        //}
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.222 -0400", hash_original_method = "0CEF3ADF8A81283D4C4955ED8FEB1A86", hash_generated_method = "04DF6DC1844BC08724E2D2C396590E0E")
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onScrollChanged(l, t, oldl, oldt);
         {
             sendOurVisibleRect();
@@ -6409,22 +6409,22 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 boolean varB4D4A6A79DEACE1E888BD156FFAF1F5C_1561667227 = (Math.max(titleHeight - t, 0) != Math.max(titleHeight - oldt, 0));
                 {
                     sendViewSizeZoom(false);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(l);
         addTaint(t);
         addTaint(oldl);
         addTaint(oldt);
-        // ---------- Original Method ----------
-        //super.onScrollChanged(l, t, oldl, oldt);
-        //if (!mInOverScrollMode) {
-            //sendOurVisibleRect();
-            //int titleHeight = getTitleHeight();
-            //if (Math.max(titleHeight - t, 0) != Math.max(titleHeight - oldt, 0)) {
-                //sendViewSizeZoom(false);
-            //}
-        //}
+        
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -6433,32 +6433,32 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public boolean dispatchKeyEvent(KeyEvent event) {
         {
             Object var9E1FBD251DF7E53AB77C3A31F15B2B38_1137365596 = (event.getAction());
-            //Begin case KeyEvent.ACTION_DOWN 
+            
             mKeysPressed.add(Integer.valueOf(event.getKeyCode()));
-            //End case KeyEvent.ACTION_DOWN 
-            //Begin case KeyEvent.ACTION_UP 
+            
+            
             int location = mKeysPressed.indexOf(Integer.valueOf(event.getKeyCode()));
-            //End case KeyEvent.ACTION_UP 
-            //Begin case KeyEvent.ACTION_UP 
+            
+            
             {
                 mKeysPressed.remove(location);
-            } //End block
-            //End case KeyEvent.ACTION_UP 
-        } //End collapsed parenthetic
+            } 
+            
+        } 
         {
             boolean var5B06505CBCDCB8DEE1F6FB0FBB28CE94_1606644592 = (inEditingMode() && mWebTextView.isFocused());
             {
                 boolean var055C27F4AD9E2119212195DD41858BDC_1464704375 = (mWebTextView.dispatchKeyEvent(event));
-            } //End block
+            } 
             {
                 boolean varCEE2CC9A2E312DCEF21BEB8A1D3D2A74_217583903 = (super.dispatchKeyEvent(event));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1713175606 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1713175606;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -6466,22 +6466,22 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private boolean hitFocusedPlugin(int contentX, int contentY) {
         {
             Rect r = nativeFocusNodeBounds();
-        } //End block
+        } 
         boolean varAADFA5397280FFF07498DCDB610497F5_567700975 = (nativeFocusIsPlugin()
                 && nativeFocusNodeBounds().contains(contentX, contentY));
         addTaint(contentX);
         addTaint(contentY);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1399271897 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1399271897;
-        // ---------- Original Method ----------
-        //if (DebugFlags.WEB_VIEW) {
-            //Log.v(LOGTAG, "nativeFocusIsPlugin()=" + nativeFocusIsPlugin());
-            //Rect r = nativeFocusNodeBounds();
-            //Log.v(LOGTAG, "nativeFocusNodeBounds()=(" + r.left + ", " + r.top
-                    //+ ", " + r.right + ", " + r.bottom + ")");
-        //}
-        //return nativeFocusIsPlugin()
-                //&& nativeFocusNodeBounds().contains(contentX, contentY);
+        
+        
+            
+            
+            
+                    
+        
+        
+                
     }
 
     
@@ -6489,13 +6489,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private boolean shouldForwardTouchEvent() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1846340227 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1846340227;
-        // ---------- Original Method ----------
-        //if (mFullScreenHolder != null) return true;
-        //if (mBlockWebkitViewMessages) return false;
-        //return mForwardTouchEvents
-                //&& !mSelectingText
-                //&& mPreventDefault != PREVENT_DEFAULT_IGNORE
-                //&& mPreventDefault != PREVENT_DEFAULT_NO;
+        
+        
+        
+        
+                
+                
+                
     }
 
     
@@ -6503,8 +6503,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private boolean inFullScreenMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1242898654 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1242898654;
-        // ---------- Original Method ----------
-        //return mFullScreenHolder != null;
+        
+        
     }
 
     
@@ -6515,40 +6515,40 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             {
                 mFullScreenHolder.hide();
                 mFullScreenHolder = null;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (inFullScreenMode()) {
-            //mFullScreenHolder.hide();
-            //mFullScreenHolder = null;
-        //}
+            } 
+        } 
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.224 -0400", hash_original_method = "E1BA99DFD58D25B484C78D43B2B15680", hash_generated_method = "ADA24DB953E0EB7EB11E71E67325FC31")
      void onPinchToZoomAnimationStart() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         cancelTouch();
         onZoomAnimationStart();
-        // ---------- Original Method ----------
-        //cancelTouch();
-        //onZoomAnimationStart();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.224 -0400", hash_original_method = "0EB0C83A18A49941F40FFE292C35177E", hash_generated_method = "4AD7518CAF79EBF2E3378FCEB538018C")
      void onPinchToZoomAnimationEnd(ScaleGestureDetector detector) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         onZoomAnimationEnd();
         mTouchMode = TOUCH_PINCH_DRAG;
         mConfirmMove = true;
         startTouch(detector.getFocusX(), detector.getFocusY(), mLastTouchTime);
         addTaint(detector.getTaint());
-        // ---------- Original Method ----------
-        //onZoomAnimationEnd();
-        //mTouchMode = TOUCH_PINCH_DRAG;
-        //mConfirmMove = true;
-        //startTouch(detector.getFocusX(), detector.getFocusY(), mLastTouchTime);
+        
+        
+        
+        
+        
     }
 
     
@@ -6560,24 +6560,24 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 mScrollingLayerRect, mScrollingLayerBounds);
         {
             mTouchMode = TOUCH_DRAG_LAYER_MODE;
-        } //End block
+        } 
         addTaint(x);
         addTaint(y);
-        // ---------- Original Method ----------
-        //int contentX = viewToContentX((int) x + mScrollX);
-        //int contentY = viewToContentY((int) y + mScrollY);
-        //mCurrentScrollingLayerId = nativeScrollableLayer(contentX, contentY,
-                //mScrollingLayerRect, mScrollingLayerBounds);
-        //if (mCurrentScrollingLayerId != 0) {
-            //mTouchMode = TOUCH_DRAG_LAYER_MODE;
-        //}
+        
+        
+        
+        
+                
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.225 -0400", hash_original_method = "4E27D08D80EBD257E376FA7C97AE0256", hash_generated_method = "5537E6DC12B0FF1DDA170C0031744A29")
     @Override
     public boolean onHoverEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         WebViewCore.CursorData data = cursorDataNoPosition();
         data.mX = viewToContentX((int) event.getX() + mScrollX);
         data.mY = viewToContentY((int) event.getY() + mScrollY);
@@ -6585,52 +6585,52 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2059310152 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2059310152;
-        // ---------- Original Method ----------
-        //if (mNativeClass == 0) {
-            //return false;
-        //}
-        //WebViewCore.CursorData data = cursorDataNoPosition();
-        //data.mX = viewToContentX((int) event.getX() + mScrollX);
-        //data.mY = viewToContentY((int) event.getY() + mScrollY);
-        //mWebViewCore.sendMessage(EventHub.SET_MOVE_MOUSE, data);
-        //return true;
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.225 -0400", hash_original_method = "4ABFBBEB2C120C2EC8658D81232A5900", hash_generated_method = "D2E4621ED5CB6ECA20B4B84AC5B2AC5D")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varAD562CF087912EB5FF0170636C3B2B0D_696403983 = (mNativeClass == 0 || (!isClickable() && !isLongClickable()));
-        } //End collapsed parenthetic
+        } 
         {
             boolean varDD40B025666699E2A78E1AD03139D936_1336094603 = (ev.getPointerCount() > 1 && mPreventDefault != PREVENT_DEFAULT_NO);
             {
                 passMultiTouchToWebKit(ev, mTouchEventQueue.nextTouchSequence());
-            } //End block
+            } 
             {
                 mTouchEventQueue.enqueueTouchEvent(ev);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(ev.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1349432210 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1349432210;
-        // ---------- Original Method ----------
-        //if (mNativeClass == 0 || (!isClickable() && !isLongClickable())) {
-            //return false;
-        //}
-        //if (DebugFlags.WEB_VIEW) {
-            //Log.v(LOGTAG, ev + " at " + ev.getEventTime()
-                //+ " mTouchMode=" + mTouchMode
-                //+ " numPointers=" + ev.getPointerCount());
-        //}
-        //if (ev.getPointerCount() > 1 && mPreventDefault != PREVENT_DEFAULT_NO) {
-            //passMultiTouchToWebKit(ev, mTouchEventQueue.nextTouchSequence());
-        //} else {
-            //mTouchEventQueue.enqueueTouchEvent(ev);
-        //}
-        //return true;
+        
+        
+            
+        
+        
+            
+                
+                
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -6643,10 +6643,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(dy);
         float var546ADE640B6EDFBC8A086EF31347E768_1200957253 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1200957253;
-        // ---------- Original Method ----------
-        //dx = Math.abs(dx);
-        //dy = Math.abs(dy);
-        //return (float) Math.atan2(dy, dx);
+        
+        
+        
+        
     }
 
     
@@ -6659,7 +6659,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int deltaY = mLastTouchY - y;
         int contentX = viewToContentX(x + mScrollX);
         int contentY = viewToContentY(y + mScrollY);
-        //Begin case MotionEvent.ACTION_DOWN 
+        
         {
             mPreventDefault = PREVENT_DEFAULT_NO;
             mConfirmMove = false;
@@ -6671,7 +6671,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     mTouchMode = TOUCH_DRAG_START_MODE;
                     mConfirmMove = true;
                     nativeSetIsScrolling(false);
-                } //End block
+                } 
                 {
                     boolean varBDC63CBFC1D5292A90395B799377E3CA_1364211148 = (mPrivateHandler.hasMessages(RELEASE_SINGLE_TAP));
                     {
@@ -6680,11 +6680,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                             boolean var06EBCE9F7031CD206C1CA9247D6B0EF2_668100244 = (USE_WEBKIT_RINGS || getSettings().supportTouchOnly());
                             {
                                 removeTouchHighlight();
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             mTouchMode = TOUCH_DOUBLE_TAP_MODE;
-                        } //End block
+                        } 
                         {
                             doShortPress();
                             mTouchMode = TOUCH_INIT_MODE;
@@ -6692,8 +6692,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                                 && (!inFullScreenMode() && mForwardTouchEvents)
                                 ? hitFocusedPlugin(contentX, contentY)
                                 : false;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         mTouchMode = TOUCH_INIT_MODE;
                         mDeferTouchProcess = !mBlockWebkitViewMessages
@@ -6703,7 +6703,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         {
                             mWebViewCore.sendMessage(
                                 EventHub.UPDATE_FRAME_CACHE_IF_LOADING);
-                        } //End block
+                        } 
                         {
                             boolean var06EBCE9F7031CD206C1CA9247D6B0EF2_604258214 = (USE_WEBKIT_RINGS || getSettings().supportTouchOnly());
                             {
@@ -6719,7 +6719,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                                     mTouchHighlightRequested = System.currentTimeMillis();
                                     mWebViewCore.sendMessageAtFrontOfQueue(
                                     EventHub.GET_TOUCH_HIGHLIGHT_RECTS, data);
-                                } //End block
+                                } 
                                 {
                                     {
                                         boolean varD778979F37708EA925216FB277FD8D27_1478487075 = (getSettings().getNavDump());
@@ -6731,28 +6731,28 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                                                 public void run() {
                                                     mTouchHighlightX = mTouchHighlightY = 0;
                                                     invalidate();
-                                                    // ---------- Original Method ----------
-                                                    //mTouchHighlightX = mTouchHighlightY = 0;
-                                                    //invalidate();
+                                                    
+                                                    
+                                                    
                                                 }
 }, TOUCH_HIGHLIGHT_ELAPSE_TIME);
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
                         {
                             EventLog.writeEvent(EventLogTags.BROWSER_DOUBLE_TAP_DURATION,
                                 (eventTime - mLastTouchUpTime), eventTime);
-                        } //End block
+                        } 
                         {
                             mDrawSelectionPointer = false;
                             mSelectionStarted = nativeStartSelection(contentX, contentY);
                             invalidate();
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             {
                 mPrivateHandler.sendEmptyMessageDelayed(
                             SWITCH_TO_SHORTPRESS, TAP_TIMEOUT);
@@ -6762,14 +6762,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     boolean var72609C462D4DCD4473D0A433CA78D370_1406281022 = (inFullScreenMode() || mDeferTouchProcess);
                     {
                         mPreventDefault = PREVENT_DEFAULT_YES;
-                    } //End block
+                    } 
                     {
                         mPreventDefault = PREVENT_DEFAULT_MAYBE_YES;
-                    } //End block
+                    } 
                     {
                         mPreventDefault = PREVENT_DEFAULT_NO;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var8932DD5DB07C85349F24CECE7642DABD_1247979880 = (shouldForwardTouchEvent());
                     {
@@ -6791,7 +6791,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         {
                             mLastTouchX = x;
                             mLastTouchY = y;
-                        } //End block
+                        } 
                         {
                             boolean var6904F2C5D7BEAFC799CAAF4B382483D5_487922751 = (!inFullScreenMode());
                             {
@@ -6799,15 +6799,15 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                                 mPrivateHandler.sendMessageDelayed(mPrivateHandler
                                     .obtainMessage(PREVENT_DEFAULT_TIMEOUT,
                                             action, 0), TAP_TIMEOUT);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             startTouch(x, y, eventTime);
-        } //End block
-        //End case MotionEvent.ACTION_DOWN 
-        //Begin case MotionEvent.ACTION_MOVE 
+        } 
+        
+        
         {
             boolean firstMove = false;
             {
@@ -6817,14 +6817,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 firstMove = true;
                 {
                     mTouchMode = TOUCH_INIT_MODE;
-                } //End block
+                } 
                 {
                     boolean varE1DF6CCB4D16FC90F8DBFFED5F41299F_147829610 = (USE_WEBKIT_RINGS || getSettings().supportTouchOnly());
                     {
                         removeTouchHighlight();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 boolean varD5BC4EB905AD1A9E62B09D5876DE7CFA_1154519746 = (shouldForwardTouchEvent() && mConfirmMove && (firstMove
                         || eventTime - mLastSentTouchTime > mCurrentTouchInterval));
@@ -6851,18 +6851,18 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                             mPrivateHandler.sendMessageDelayed(mPrivateHandler
                                 .obtainMessage(PREVENT_DEFAULT_TIMEOUT,
                                         action, 0), TAP_TIMEOUT);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             {
                 mVelocityTracker.addMovement(ev);
-            } //End block
+            } 
             {
                 ViewParent parent = getParent();
                 {
                     parent.requestDisallowInterceptTouchEvent(true);
-                } //End block
+                } 
                 mAutoScrollX = x <= mMinAutoScrollX ? -SELECT_SCROLL
                             : x >= mMaxAutoScrollX ? SELECT_SCROLL : 0;
                 mAutoScrollY = y <= mMinAutoScrollY ? -SELECT_SCROLL
@@ -6871,16 +6871,16 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     mSentAutoScrollMessage = true;
                     mPrivateHandler.sendEmptyMessageDelayed(
                                 SCROLL_SELECT_TEXT, SELECT_SCROLL_INTERVAL);
-                } //End block
+                } 
                 {
                     nativeExtendSelection(contentX, contentY);
                     invalidate();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 {
                     mLastTouchTime = eventTime;
-                } //End block
+                } 
                 final ScaleGestureDetector detector = mZoomManager.getMultiTouchGestureDetector();
                 mAverageAngle = calculateDragAngle(deltaX, deltaY);
                 {
@@ -6890,14 +6890,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                             mSnapScrollMode = SNAP_X;
                             mSnapPositive = deltaX > 0;
                             mAverageAngle = ANGLE_HORIZ;
-                        } //End block
+                        } 
                         {
                             mSnapScrollMode = SNAP_Y;
                             mSnapPositive = deltaY > 0;
                             mAverageAngle = ANGLE_VERT;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 mTouchMode = TOUCH_DRAG_MODE;
                 mLastTouchX = x;
                 mLastTouchY = y;
@@ -6905,12 +6905,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 deltaY = 0;
                 startScrollingLayer(x, y);
                 startDrag();
-            } //End block
+            } 
             boolean done = false;
             boolean keepScrollBarsVisible = false;
             {
                 keepScrollBarsVisible = done = true;
-            } //End block
+            } 
             {
                 mAverageAngle +=
                         (calculateDragAngle(deltaX, deltaY) - mAverageAngle)
@@ -6919,70 +6919,70 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     {
                         {
                             mSnapScrollMode = SNAP_NONE;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         {
                             mSnapScrollMode = SNAP_NONE;
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     {
                         mSnapScrollMode = SNAP_X;
                         mSnapPositive = deltaX > 0;
                         mAverageAngle = (mAverageAngle + ANGLE_HORIZ) / 2;
-                    } //End block
+                    } 
                     {
                         mSnapScrollMode = SNAP_Y;
                         mSnapPositive = deltaY > 0;
                         mAverageAngle = (mAverageAngle + ANGLE_VERT) / 2;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     {
                         deltaY = 0;
-                    } //End block
+                    } 
                     {
                         deltaX = 0;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 mLastTouchX = x;
                 mLastTouchY = y;
                 {
                     mHeldMotionless = MOTIONLESS_FALSE;
                     nativeSetIsScrolling(true);
-                } //End block
+                } 
                 {
                     mHeldMotionless = MOTIONLESS_TRUE;
                     nativeSetIsScrolling(false);
                     keepScrollBarsVisible = true;
-                } //End block
+                } 
                 mLastTouchTime = eventTime;
-            } //End block
+            } 
             doDrag(deltaX, deltaY);
             {
                 {
                     mHeldMotionless = MOTIONLESS_TRUE;
                     invalidate();
-                } //End block
+                } 
                 awakenScrollBars(ViewConfiguration.getScrollDefaultDelay(),
                             false);
                 mPrivateHandler.sendMessageDelayed(mPrivateHandler
                             .obtainMessage(AWAKEN_SCROLL_BARS),
                             ViewConfiguration.getScrollDefaultDelay());
-            } //End block
+            } 
             {
                 mPrivateHandler.removeMessages(AWAKEN_SCROLL_BARS);
-            } //End block
-        } //End block
-        //End case MotionEvent.ACTION_MOVE 
-        //Begin case MotionEvent.ACTION_UP 
+            } 
+        } 
+        
+        
         {
             {
                 boolean varCCB6FB0842D1DC09DCB72C373334A6F6_591246561 = (!isFocused());
                 requestFocus();
-            } //End collapsed parenthetic
+            } 
             {
                 boolean var4F0E2B9C4455366734F8A4D46CDF3837_1774049736 = (shouldForwardTouchEvent());
                 {
@@ -7001,19 +7001,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     ted.mSequence = mTouchEventQueue.nextTouchSequence();
                     mTouchEventQueue.preQueueTouchEventData(ted);
                     mWebViewCore.sendMessage(EventHub.TOUCH_EVENT, ted);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mLastTouchUpTime = eventTime;
             {
                 mAutoScrollX = mAutoScrollY = 0;
-            } //End block
-            //Begin case TOUCH_DOUBLE_TAP_MODE 
+            } 
+            
             mPrivateHandler.removeMessages(SWITCH_TO_SHORTPRESS);
-            //End case TOUCH_DOUBLE_TAP_MODE 
-            //Begin case TOUCH_DOUBLE_TAP_MODE 
+            
+            
             mPrivateHandler.removeMessages(SWITCH_TO_LONGPRESS);
-            //End case TOUCH_DOUBLE_TAP_MODE 
-            //Begin case TOUCH_DOUBLE_TAP_MODE 
+            
+            
             {
                 boolean var99D9C999635D25840B0CAFFCC353615B_1462770515 = (inFullScreenMode() || mDeferTouchProcess);
                 {
@@ -7033,20 +7033,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     ted.mSequence = mTouchEventQueue.nextTouchSequence();
                     mTouchEventQueue.preQueueTouchEventData(ted);
                     mWebViewCore.sendMessage(EventHub.TOUCH_EVENT, ted);
-                } //End block
+                } 
                 {
                     mZoomManager.handleDoubleTap(mLastTouchX, mLastTouchY);
                     mTouchMode = TOUCH_DONE_MODE;
-                } //End block
-            } //End collapsed parenthetic
-            //End case TOUCH_DOUBLE_TAP_MODE 
-            //Begin case TOUCH_INIT_MODE TOUCH_SHORTPRESS_START_MODE TOUCH_SHORTPRESS_MODE 
+                } 
+            } 
+            
+            
             mPrivateHandler.removeMessages(SWITCH_TO_SHORTPRESS);
-            //End case TOUCH_INIT_MODE TOUCH_SHORTPRESS_START_MODE TOUCH_SHORTPRESS_MODE 
-            //Begin case TOUCH_INIT_MODE TOUCH_SHORTPRESS_START_MODE TOUCH_SHORTPRESS_MODE 
+            
+            
             mPrivateHandler.removeMessages(SWITCH_TO_LONGPRESS);
-            //End case TOUCH_INIT_MODE TOUCH_SHORTPRESS_START_MODE TOUCH_SHORTPRESS_MODE 
-            //Begin case TOUCH_INIT_MODE TOUCH_SHORTPRESS_START_MODE TOUCH_SHORTPRESS_MODE 
+            
+            
             {
                 {
                     boolean var9A35F484FD2A3035C5778E7274850AEE_1097129381 = (mPreventDefault != PREVENT_DEFAULT_YES
@@ -7055,21 +7055,21 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     {
                         WebViewCore.reducePriority();
                         WebViewCore.pauseUpdatePicture(mWebViewCore);
-                    } //End block
+                    } 
                     {
                         invalidate();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 {
                     {
                         boolean var52238646ADDC3EDB53CF60FF8D752DAA_135160181 = (!nativeHitSelection(contentX, contentY));
                         {
                             selectionDone();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     boolean var7ECA0E1176F50826819D1E05F7BE240D_199426858 = (mTouchMode == TOUCH_INIT_MODE
                                     && (canZoomIn() || canZoomOut()));
@@ -7077,27 +7077,27 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         mPrivateHandler.sendEmptyMessageDelayed(
                                         RELEASE_SINGLE_TAP, ViewConfiguration
                                                 .getDoubleTapTimeout());
-                    } //End block
+                    } 
                     {
                         doShortPress();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            //End case TOUCH_INIT_MODE TOUCH_SHORTPRESS_START_MODE TOUCH_SHORTPRESS_MODE 
-            //Begin case TOUCH_DRAG_MODE TOUCH_DRAG_LAYER_MODE 
+                    } 
+                } 
+            } 
+            
+            
             mPrivateHandler.removeMessages(DRAG_HELD_MOTIONLESS);
-            //End case TOUCH_DRAG_MODE TOUCH_DRAG_LAYER_MODE 
-            //Begin case TOUCH_DRAG_MODE TOUCH_DRAG_LAYER_MODE 
+            
+            
             mPrivateHandler.removeMessages(AWAKEN_SCROLL_BARS);
-            //End case TOUCH_DRAG_MODE TOUCH_DRAG_LAYER_MODE 
-            //Begin case TOUCH_DRAG_MODE TOUCH_DRAG_LAYER_MODE 
+            
+            
             {
                 {
                     mVelocityTracker.addMovement(ev);
-                } //End block
+                } 
                 mHeldMotionless = MOTIONLESS_IGNORE;
                 doFling();
-            } //End block
+            } 
             {
                 {
                     boolean varBCFC69392A8766EDCCDAD1B162C3D405_746526648 = (mScroller.springBack(mScrollX, mScrollY, 0,
@@ -7105,47 +7105,47 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                                     computeMaxScrollY()));
                     {
                         invalidate();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            //End case TOUCH_DRAG_MODE TOUCH_DRAG_LAYER_MODE 
-            //Begin case TOUCH_DRAG_MODE TOUCH_DRAG_LAYER_MODE 
+                    } 
+                } 
+            } 
+            
+            
             mHeldMotionless = MOTIONLESS_TRUE;
-            //End case TOUCH_DRAG_MODE TOUCH_DRAG_LAYER_MODE 
-            //Begin case TOUCH_DRAG_MODE TOUCH_DRAG_LAYER_MODE 
+            
+            
             invalidate();
-            //End case TOUCH_DRAG_MODE TOUCH_DRAG_LAYER_MODE 
-            //Begin case TOUCH_DRAG_START_MODE 
+            
+            
             mLastVelocity = 0;
-            //End case TOUCH_DRAG_START_MODE 
-            //Begin case TOUCH_DRAG_START_MODE 
+            
+            
             WebViewCore.resumePriority();
-            //End case TOUCH_DRAG_START_MODE 
-            //Begin case TOUCH_DRAG_START_MODE 
+            
+            
             {
                 WebViewCore.resumeUpdatePicture(mWebViewCore);
-            } //End block
-            //End case TOUCH_DRAG_START_MODE 
+            } 
+            
             stopTouch();
-        } //End block
-        //End case MotionEvent.ACTION_UP 
-        //Begin case MotionEvent.ACTION_CANCEL 
+        } 
+        
+        
         {
             {
                 mScroller.springBack(mScrollX, mScrollY, 0,
                             computeMaxScrollX(), 0, computeMaxScrollY());
                 invalidate();
-            } //End block
+            } 
             cancelWebCoreTouchEvent(contentX, contentY, false);
             cancelTouch();
-        } //End block
-        //End case MotionEvent.ACTION_CANCEL 
+        } 
+        
         addTaint(ev.getTaint());
         addTaint(action);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_862437386 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_862437386;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7165,11 +7165,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 int y = viewToContentY((int) ev.getY(c) + mScrollY);
                 ted.mPoints[c] = new Point(x, y);
                 ted.mPointsInView[c] = new Point((int) ev.getX(c), (int) ev.getY(c));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             ted.mActionIndex = ev.getActionIndex();
-        } //End block
+        } 
         ted.mMetaState = ev.getMetaState();
         ted.mReprocess = true;
         ted.mMotionEvent = MotionEvent.obtain(ev);
@@ -7180,8 +7180,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         mPrivateHandler.removeMessages(SWITCH_TO_LONGPRESS);
         addTaint(ev.getTaint());
         addTaint(sequence);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7202,29 +7202,29 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     mPrivateHandler.removeMessages(SWITCH_TO_LONGPRESS);
                     {
                         boolean var1701A38F89582DE3B703C873F3E6A99C_1801242739 = (!mZoomManager.supportsPanDuringZoom());
-                    } //End collapsed parenthetic
+                    } 
                     mTouchMode = TOUCH_DRAG_MODE;
                     {
                         mVelocityTracker = VelocityTracker.obtain();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         int action = ev.getActionMasked();
         {
             cancelTouch();
             action = MotionEvent.ACTION_DOWN;
-        } //End block
+        } 
         {
             boolean var3FCFE6069F8C28D647A3D03480A488F3_1712028234 = (action == MotionEvent.ACTION_POINTER_UP && ev.getPointerCount() >= 2);
             {
                 mLastTouchX = Math.round(x);
                 mLastTouchY = Math.round(y);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         handleTouchEventCommon(ev, action, Math.round(x), Math.round(y));
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7235,7 +7235,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             {
                 {
                     mWebViewCore.removeMessages(EventHub.TOUCH_EVENT);
-                } //End block
+                } 
                 TouchEventData ted = new TouchEventData();
                 ted.mIds = new int[1];
                 ted.mIds[0] = 0;
@@ -7253,14 +7253,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 mPreventDefault = PREVENT_DEFAULT_IGNORE;
                 {
                     mTouchEventQueue.ignoreCurrentlyMissingEvents();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(x);
         addTaint(y);
         addTaint(removeEvents);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7273,14 +7273,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         mSnapScrollMode = SNAP_NONE;
         mPrivateHandler.sendEmptyMessageDelayed(UPDATE_SELECTION,
                 ViewConfiguration.getTapTimeout());
-        // ---------- Original Method ----------
-        //mStartTouchX = mLastTouchX = Math.round(x);
-        //mStartTouchY = mLastTouchY = Math.round(y);
-        //mLastTouchTime = eventTime;
-        //mVelocityTracker = VelocityTracker.obtain();
-        //mSnapScrollMode = SNAP_NONE;
-        //mPrivateHandler.sendEmptyMessageDelayed(UPDATE_SELECTION,
-                //ViewConfiguration.getTapTimeout());
+        
+        
+        
+        
+        
+        
+        
+                
     }
 
     
@@ -7291,21 +7291,21 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         nativeSetIsScrolling(true);
         {
             nativeHideCursor();
-        } //End block
+        } 
         {
             mZoomManager.invokeZoomPicker();
-        } //End block
-        // ---------- Original Method ----------
-        //WebViewCore.reducePriority();
-        //WebViewCore.pauseUpdatePicture(mWebViewCore);
-        //nativeSetIsScrolling(true);
-        //if (!mDragFromTextInput) {
-            //nativeHideCursor();
-        //}
-        //if (mHorizontalScrollBarMode != SCROLLBAR_ALWAYSOFF
-                //|| mVerticalScrollBarMode != SCROLLBAR_ALWAYSOFF) {
-            //mZoomManager.invokeZoomPicker();
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
+        
+                
+            
+        
     }
 
     
@@ -7334,14 +7334,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     oldY = mScrollingLayerRect.top;
                     rangeX = maxX;
                     rangeY = maxY;
-                } //End block
+                } 
                 {
                     mTouchMode = TOUCH_DRAG_MODE;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 mOverScrollGlow.setOverScrollDeltas(deltaX, deltaY);
-            } //End block
+            } 
             overScrollBy(deltaX, deltaY, oldX, oldY,
                     rangeX, rangeY,
                     mOverscrollDistance, mOverscrollDistance, true);
@@ -7349,14 +7349,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 boolean var5792E174AFE968D06415B5B7AAC36535_636284132 = (mOverScrollGlow != null && mOverScrollGlow.isAnimating());
                 {
                     invalidate();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mZoomManager.keepZoomPickerVisible();
         addTaint(deltaX);
         addTaint(deltaY);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7369,29 +7369,29 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 WebViewCore.resumePriority();
                 WebViewCore.resumeUpdatePicture(mWebViewCore);
                 nativeSetIsScrolling(false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             mVelocityTracker.recycle();
             mVelocityTracker = null;
-        } //End block
+        } 
         {
             mOverScrollGlow.releaseAll();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mScroller.isFinished() && !mSelectingText
-                //&& (mTouchMode == TOUCH_DRAG_MODE || mTouchMode == TOUCH_DRAG_LAYER_MODE)) {
-            //WebViewCore.resumePriority();
-            //WebViewCore.resumeUpdatePicture(mWebViewCore);
-            //nativeSetIsScrolling(false);
-        //}
-        //if (mVelocityTracker != null) {
-            //mVelocityTracker.recycle();
-            //mVelocityTracker = null;
-        //}
-        //if (mOverScrollGlow != null) {
-            //mOverScrollGlow.releaseAll();
-        //}
+        } 
+        
+        
+                
+            
+            
+            
+        
+        
+            
+            
+        
+        
+            
+        
     }
 
     
@@ -7400,12 +7400,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             mVelocityTracker.recycle();
             mVelocityTracker = null;
-        } //End block
+        } 
         {
             WebViewCore.resumePriority();
             WebViewCore.resumeUpdatePicture(mWebViewCore);
             nativeSetIsScrolling(false);
-        } //End block
+        } 
         mPrivateHandler.removeMessages(SWITCH_TO_SHORTPRESS);
         mPrivateHandler.removeMessages(SWITCH_TO_LONGPRESS);
         mPrivateHandler.removeMessages(DRAG_HELD_MOTIONLESS);
@@ -7414,26 +7414,26 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean varAC20DC667EA914A16B375E9527C79DFD_72736230 = (USE_WEBKIT_RINGS || getSettings().supportTouchOnly());
             {
                 removeTouchHighlight();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mHeldMotionless = MOTIONLESS_TRUE;
         mTouchMode = TOUCH_DONE_MODE;
         nativeHideCursor();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.240 -0400", hash_original_method = "BE8755468291C2952085EDEBFE1C6BFA", hash_generated_method = "958BEE7C04D621A8D75A29CAA96D0269")
     @Override
     public boolean onGenericMotionEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varB5CEEFE1A0B0FE6CF2A2378211A03C4D_1176443902 = ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0);
             {
                 {
                     Object varC2BF00F96F1D1B1ABEF4B0E3FC4FE9EC_1074781271 = (event.getAction());
-                    //Begin case MotionEvent.ACTION_SCROLL 
+                    
                     {
                         float vscroll;
                         float hscroll;
@@ -7442,30 +7442,30 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                             {
                                 vscroll = 0;
                                 hscroll = event.getAxisValue(MotionEvent.AXIS_VSCROLL);
-                            } //End block
+                            } 
                             {
                                 vscroll = -event.getAxisValue(MotionEvent.AXIS_VSCROLL);
                                 hscroll = event.getAxisValue(MotionEvent.AXIS_HSCROLL);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             final int vdelta = (int) (vscroll * getVerticalScrollFactor());
                             final int hdelta = (int) (hscroll * getHorizontalScrollFactor());
                             {
                                 boolean var2D3D9D2324BD436DC860CC59381AD41D_1179210434 = (pinScrollBy(hdelta, vdelta, false, 0));
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                    //End case MotionEvent.ACTION_SCROLL 
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                    
+                } 
+            } 
+        } 
         boolean var32C1E3DF40BCC120C79428C7AEB27DD1_1893372758 = (super.onGenericMotionEvent(event));
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_275454355 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_275454355;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7473,24 +7473,24 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void setMapTrackballToArrowKeys(boolean setMap) {
         checkThread();
         mMapTrackballToArrowKeys = setMap;
-        // ---------- Original Method ----------
-        //checkThread();
-        //mMapTrackballToArrowKeys = setMap;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.241 -0400", hash_original_method = "B9600CE64DC445389C4969B83D045257", hash_generated_method = "6AC8F93A7F315BEE56D465931AC8D27F")
      void resetTrackballTime() {
         mTrackballLastTime = 0;
-        // ---------- Original Method ----------
-        //mTrackballLastTime = 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.242 -0400", hash_original_method = "09EA1A78F8275AF35981C9BD94B08432", hash_generated_method = "8E783977F9B43269FFAC9D4BBBAA89F8")
     @Override
     public boolean onTrackballEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         long time = ev.getEventTime();
         {
             boolean varF89B2554B17216A1EC58B9D61476F71F_2119775039 = ((ev.getMetaState() & KeyEvent.META_ALT_ON) != 0);
@@ -7498,13 +7498,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 {
                     boolean varF71C9C4037B7A9B705CFAAB9834929D8_1011728223 = (ev.getY() > 0);
                     pageDown(true);
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean var07FD34B1A3496FC381CDBE7EFC3BB0AA_829642780 = (ev.getY() < 0);
                     pageUp(true);
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             boolean var89AADF399BE9B0E2DFA5C9BD5C451F2D_1365676349 = (ev.getAction() == MotionEvent.ACTION_DOWN);
             {
@@ -7514,14 +7514,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     && !mLastCursorBounds.equals(nativeGetCursorRingBounds()));
                     {
                         nativeSelectBestAt(mLastCursorBounds);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varAFC77293C02F773029137FDE42129C14_198324859 = (isInTouchMode());
                     requestFocusFromTouch();
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             boolean var9BE2C50B8CBB194C9242022F6D5B67CC_845724167 = (ev.getAction() == MotionEvent.ACTION_UP);
             {
@@ -7532,32 +7532,32 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     {
                         copySelection();
                         selectionDone();
-                    } //End block
+                    } 
                     {
                         mExtendSelection = true;
                         nativeSetExtendSelection();
                         invalidate();
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var963F7CE81FE031C5E5B8879F84F3644B_1886761836 = ((mMapTrackballToArrowKeys && (ev.getMetaState() & KeyEvent.META_SHIFT_ON) == 0) ||
                 AccessibilityManager.getInstance(mContext).isEnabled());
-        } //End collapsed parenthetic
+        } 
         switchOutDrawHistory();
         {
             mTrackballFirstTime = time;
             mTrackballXMove = mTrackballYMove = 0;
-        } //End block
+        } 
         mTrackballLastTime = time;
         mTrackballRemainsX += ev.getX();
         mTrackballRemainsY += ev.getY();
         doTrackball(time, ev.getMetaState());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_191721212 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_191721212;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7584,8 +7584,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         Rect select = new Rect(mSelectX, mSelectY, mSelectX + 1, mSelectY + 1);
         requestRectangleOnScreen(select);
         invalidate();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7596,28 +7596,28 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             {
                 xMove -= mTrackballXMove;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             xMove -= mTrackballXMove;
-        } //End block
+        } 
         mTrackballXMove = nextXMove;
         addTaint(xRate);
         addTaint(width);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1499203261 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1499203261;
-        // ---------- Original Method ----------
-        //int xMove = (int) (xRate / TRACKBALL_SCALE * width);
-        //int nextXMove = xMove;
-        //if (xMove > 0) {
-            //if (xMove > mTrackballXMove) {
-                //xMove -= mTrackballXMove;
-            //}
-        //} else if (xMove < mTrackballXMove) {
-            //xMove -= mTrackballXMove;
-        //}
-        //mTrackballXMove = nextXMove;
-        //return xMove;
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -7628,28 +7628,28 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         {
             {
                 yMove -= mTrackballYMove;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             yMove -= mTrackballYMove;
-        } //End block
+        } 
         mTrackballYMove = nextYMove;
         addTaint(yRate);
         addTaint(height);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1422832395 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1422832395;
-        // ---------- Original Method ----------
-        //int yMove = (int) (yRate / TRACKBALL_SCALE * height);
-        //int nextYMove = yMove;
-        //if (yMove > 0) {
-            //if (yMove > mTrackballYMove) {
-                //yMove -= mTrackballYMove;
-            //}
-        //} else if (yMove < mTrackballYMove) {
-            //yMove -= mTrackballYMove;
-        //}
-        //mTrackballYMove = nextYMove;
-        //return yMove;
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -7661,20 +7661,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(keyCode);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1267720515 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1267720515;
-        // ---------- Original Method ----------
-        //switch(keyCode) {
-            //case KeyEvent.KEYCODE_DPAD_UP:
-                //return SoundEffectConstants.NAVIGATION_UP;
-            //case KeyEvent.KEYCODE_DPAD_RIGHT:
-                //return SoundEffectConstants.NAVIGATION_RIGHT;
-            //case KeyEvent.KEYCODE_DPAD_DOWN:
-                //return SoundEffectConstants.NAVIGATION_DOWN;
-            //case KeyEvent.KEYCODE_DPAD_LEFT:
-                //return SoundEffectConstants.NAVIGATION_LEFT;
-        //}
-        //throw new IllegalArgumentException("keyCode must be one of " +
-                //"{KEYCODE_DPAD_UP, KEYCODE_DPAD_RIGHT, KEYCODE_DPAD_DOWN, " +
-                //"KEYCODE_DPAD_LEFT}.");
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+        
+        
+                
+                
     }
 
     
@@ -7683,7 +7683,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int elapsed = (int) (mTrackballLastTime - mTrackballFirstTime);
         {
             elapsed = TRACKBALL_TIMEOUT;
-        } //End block
+        } 
         float xRate = mTrackballRemainsX * 1000 / elapsed;
         float yRate = mTrackballRemainsY * 1000 / elapsed;
         int viewWidth = getViewWidth();
@@ -7694,11 +7694,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 mSelectY = contentToViewY(nativeSelectionY());
                 mDrawSelectionPointer = mExtendSelection = true;
                 nativeSetExtendSelection();
-            } //End block
+            } 
             moveSelection(scaleTrackballX(xRate, viewWidth),
                     scaleTrackballY(yRate, viewHeight));
             mTrackballRemainsX = mTrackballRemainsY = 0;
-        } //End block
+        } 
         float ax = Math.abs(xRate);
         float ay = Math.abs(yRate);
         float maxA = Math.max(ax, ay);
@@ -7724,19 +7724,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         int i = 0;
                         {
                             letPageHandleNavKey(selectKeyCode, time, true, metaState);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     letPageHandleNavKey(selectKeyCode, time, false, metaState);
-                } //End block
+                } 
                 {
                     boolean var9216DDA0E70E02F03C94252CA6894A26_661019540 = (navHandledKey(selectKeyCode, count, false, time));
                     {
                         playSoundEffect(keyCodeToSoundsEffect(selectKeyCode));
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             mTrackballRemainsX = mTrackballRemainsY = 0;
-        } //End block
+        } 
         {
             int xMove = scaleTrackballX(xRate, width);
             int yMove = scaleTrackballY(yRate, height);
@@ -7744,22 +7744,22 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 boolean var1510D01512E341B4186F1DC473D82D5C_1196544334 = (Math.abs(mScrollX - oldScrollX) > Math.abs(xMove));
                 {
                     xMove = 0;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varEA9F4D4529504DF5B7FB3F15ED262404_238748067 = (Math.abs(mScrollY - oldScrollY) > Math.abs(yMove));
                 {
                     yMove = 0;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 pinScrollBy(xMove, yMove, true, 0);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(time);
         addTaint(metaState);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7768,8 +7768,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int varA25CFD9DF68C570DBFC28D80EAD42611_859819868 = (Math.max(computeRealHorizontalScrollRange() - getViewWidth(), 0));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273470257 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273470257;
-        // ---------- Original Method ----------
-        //return Math.max(computeRealHorizontalScrollRange() - getViewWidth(), 0);
+        
+        
     }
 
     
@@ -7779,9 +7779,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 - getViewHeightWithTitle(), 0));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1405740180 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1405740180;
-        // ---------- Original Method ----------
-        //return Math.max(computeRealVerticalScrollRange() + getTitleHeight()
-                //- getViewHeightWithTitle(), 0);
+        
+        
+                
     }
 
     
@@ -7793,22 +7793,22 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         mScrollY = y;
         {
             onScrollChanged(mScrollX, mScrollY, oldX, oldY);
-        } //End block
+        } 
         addTaint(x);
         addTaint(y);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1633395623 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1633395623;
-        // ---------- Original Method ----------
-        //int oldX = mScrollX;
-        //int oldY = mScrollY;
-        //mScrollX = x;
-        //mScrollY = y;
-        //if (oldX != mScrollX || oldY != mScrollY) {
-            //onScrollChanged(mScrollX, mScrollY, oldX, oldY);
-            //return true;
-        //} else {
-            //return false;
-        //}
+        
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -7820,11 +7820,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         invalidate();
         addTaint(vx);
         addTaint(vy);
-        // ---------- Original Method ----------
-        //checkThread();
-        //mScroller.fling(mScrollX, mScrollY, vx, vy, 0, computeMaxScrollX(), 0,
-                //computeMaxScrollY(), mOverflingDistance, mOverflingDistance);
-        //invalidate();
+        
+        
+        
+                
+        
     }
 
     
@@ -7845,27 +7845,27 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             maxX = mScrollingLayerRect.right;
             maxY = mScrollingLayerRect.bottom;
             overscrollDistance = overflingDistance = 0;
-        } //End block
+        } 
         {
             {
                 vy = 0;
-            } //End block
+            } 
             {
                 vx = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             WebViewCore.resumePriority();
             {
                 WebViewCore.resumeUpdatePicture(mWebViewCore);
-            } //End block
+            } 
             {
                 boolean var294FD332965037BDDAF5E40360BE82C6_2061624352 = (mScroller.springBack(scrollX, scrollY, 0, maxX, 0, maxY));
                 {
                     invalidate();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         float currentVelocity = mScroller.getCurrVelocity();
         float velocity = (float) Math.hypot(vx, vy);
         {
@@ -7876,28 +7876,28 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 vx += currentVelocity * mLastVelX / mLastVelocity;
                 vy += currentVelocity * mLastVelY / mLastVelocity;
                 velocity = (float) Math.hypot(vx, vy);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean var7D437B480773CFFE36BF196E1126697F_158226518 = ((scrollX == 0 || scrollX == maxX) && Math.abs(vx) < Math.abs(vy));
             {
                 vx = 0;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var062E5EDAB50CDBF113CFC310D559CF03_845985635 = ((scrollY == 0 || scrollY == maxY) && Math.abs(vy) < Math.abs(vx));
             {
                 vy = 0;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 vx = 0;
-            } //End block
+            } 
             {
                 vy = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         mLastVelX = vx;
         mLastVelY = vy;
         mLastVelocity = velocity;
@@ -7906,52 +7906,52 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         final int time = mScroller.getDuration();
         {
             awakenScrollBars(time);
-        } //End block
+        } 
         invalidate();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.250 -0400", hash_original_method = "086CD418AC6EC8E39C422734998A48D8", hash_generated_method = "93BEE8786FC13E18C379FA0D729DD7B2")
     @Deprecated
     public View getZoomControls() {
-        View varB4EAC82CA7396A68D541C85D26508E83_415175399 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_574556167 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_415175399 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_574556167 = null; 
         checkThread();
         {
             boolean varC7ECA0C6BE9760830C0E65857F85DC44_345235906 = (!getSettings().supportZoom());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_415175399 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_574556167 = mZoomManager.getExternalZoomPicker();
-        View varA7E53CE21691AB073D9660D615818899_789628577; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_789628577; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_789628577 = varB4EAC82CA7396A68D541C85D26508E83_415175399;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_789628577 = varB4EAC82CA7396A68D541C85D26508E83_574556167;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_789628577.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_789628577.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_789628577;
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (!getSettings().supportZoom()) {
-            //Log.w(LOGTAG, "This WebView doesn't support zoom.");
-            //return null;
-        //}
-        //return mZoomManager.getExternalZoomPicker();
+        
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.250 -0400", hash_original_method = "EC89FF2696E56191A01C387CAC6B0B5A", hash_generated_method = "E0110D1A2A491ABF92EE451CB29B8360")
      void dismissZoomControl() {
         mZoomManager.dismissZoomPicker();
-        // ---------- Original Method ----------
-        //mZoomManager.dismissZoomPicker();
+        
+        
     }
 
     
@@ -7960,8 +7960,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         float var952A9E36B82C4A93C3ADCF5509083504_457751984 = (mZoomManager.getDefaultScale());
         float var546ADE640B6EDFBC8A086EF31347E768_294197846 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_294197846;
-        // ---------- Original Method ----------
-        //return mZoomManager.getDefaultScale();
+        
+        
     }
 
     
@@ -7970,8 +7970,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         float varEF858DD667F2D952B7E5019CEC33E4DD_1701190954 = (mZoomManager.getZoomOverviewScale());
         float var546ADE640B6EDFBC8A086EF31347E768_25732293 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_25732293;
-        // ---------- Original Method ----------
-        //return mZoomManager.getZoomOverviewScale();
+        
+        
     }
 
     
@@ -7981,9 +7981,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         boolean varB7D0C9863F46AF864AE5BCCDA2FEA388_871048298 = (mZoomManager.canZoomIn());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1923581208 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1923581208;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return mZoomManager.canZoomIn();
+        
+        
+        
     }
 
     
@@ -7993,9 +7993,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         boolean var55B9AB817324FC769B25B74F0D5FB277_805737259 = (mZoomManager.canZoomOut());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_703272025 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_703272025;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return mZoomManager.canZoomOut();
+        
+        
+        
     }
 
     
@@ -8005,9 +8005,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         boolean varAC42C946D5F06586AAF06194E5591056_2023623377 = (mZoomManager.zoomIn());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1049846302 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1049846302;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return mZoomManager.zoomIn();
+        
+        
+        
     }
 
     
@@ -8017,9 +8017,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         boolean varA9C5CE6824B53568BAC50FAF0F581652_1992059016 = (mZoomManager.zoomOut());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2016050325 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2016050325;
-        // ---------- Original Method ----------
-        //checkThread();
-        //return mZoomManager.zoomOut();
+        
+        
+        
     }
 
     
@@ -8033,18 +8033,18 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 contentX + slop, contentY + slop);
         nativeSelectBestAt(rect);
         mInitialHitTestResult = hitTestResult(null);
-        // ---------- Original Method ----------
-        //if (mNativeClass == 0) {
-            //return;
-        //}
-        //mPrivateHandler.removeMessages(UPDATE_SELECTION);
-        //int contentX = viewToContentX(mLastTouchX + mScrollX);
-        //int contentY = viewToContentY(mLastTouchY + mScrollY);
-        //int slop = viewToContentDimension(mNavSlop);
-        //Rect rect = new Rect(contentX - slop, contentY - slop,
-                //contentX + slop, contentY + slop);
-        //nativeSelectBestAt(rect);
-        //mInitialHitTestResult = hitTestResult(null);
+        
+        
+            
+        
+        
+        
+        
+        
+        
+                
+        
+        
     }
 
     
@@ -8052,16 +8052,16 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      void scrollFocusedTextInputX(float xPercent) {
         {
             boolean varBE52B901E21441491C172E8AFC4E1E7E_672092771 = (!inEditingMode() || mWebViewCore == null);
-        } //End collapsed parenthetic
+        } 
         mWebViewCore.sendMessage(EventHub.SCROLL_TEXT_INPUT, 0,
                 new Float(xPercent));
         addTaint(xPercent);
-        // ---------- Original Method ----------
-        //if (!inEditingMode() || mWebViewCore == null) {
-            //return;
-        //}
-        //mWebViewCore.sendMessage(EventHub.SCROLL_TEXT_INPUT, 0,
-                //new Float(xPercent));
+        
+        
+            
+        
+        
+                
     }
 
     
@@ -8069,14 +8069,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      void scrollFocusedTextInputY(int y) {
         {
             boolean varBE52B901E21441491C172E8AFC4E1E7E_1511463893 = (!inEditingMode() || mWebViewCore == null);
-        } //End collapsed parenthetic
+        } 
         mWebViewCore.sendMessage(EventHub.SCROLL_TEXT_INPUT, 0, viewToContentDimension(y));
         addTaint(y);
-        // ---------- Original Method ----------
-        //if (!inEditingMode() || mWebViewCore == null) {
-            //return;
-        //}
-        //mWebViewCore.sendMessage(EventHub.SCROLL_TEXT_INPUT, 0, viewToContentDimension(y));
+        
+        
+            
+        
+        
     }
 
     
@@ -8084,7 +8084,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      void initiateTextFieldDrag(float x, float y, long eventTime) {
         {
             boolean varF4B4E2AD6FDD8C203E6AF24A1C36EF5D_759310418 = (!inEditingMode());
-        } //End collapsed parenthetic
+        } 
         mLastTouchX = Math.round(x + mWebTextView.getLeft() - mScrollX);
         mLastTouchY = Math.round(y + mWebTextView.getTop() - mScrollY);
         mLastTouchTime = eventTime;
@@ -8092,24 +8092,24 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean var2844BA5E42FD344CC642021B350DFDAC_661135278 = (!mScroller.isFinished());
             {
                 abortAnimation();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mSnapScrollMode = SNAP_NONE;
         mVelocityTracker = VelocityTracker.obtain();
         mTouchMode = TOUCH_DRAG_START_MODE;
-        // ---------- Original Method ----------
-        //if (!inEditingMode()) {
-            //return;
-        //}
-        //mLastTouchX = Math.round(x + mWebTextView.getLeft() - mScrollX);
-        //mLastTouchY = Math.round(y + mWebTextView.getTop() - mScrollY);
-        //mLastTouchTime = eventTime;
-        //if (!mScroller.isFinished()) {
-            //abortAnimation();
-        //}
-        //mSnapScrollMode = SNAP_NONE;
-        //mVelocityTracker = VelocityTracker.obtain();
-        //mTouchMode = TOUCH_DRAG_START_MODE;
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -8117,7 +8117,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      boolean textFieldDrag(MotionEvent event) {
         {
             boolean varF4B4E2AD6FDD8C203E6AF24A1C36EF5D_529073644 = (!inEditingMode());
-        } //End collapsed parenthetic
+        } 
         mDragFromTextInput = true;
         event.offsetLocation((float) (mWebTextView.getLeft() - mScrollX),
                 (float) (mWebTextView.getTop() - mScrollY));
@@ -8126,16 +8126,16 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_900396053 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_900396053;
-        // ---------- Original Method ----------
-        //if (!inEditingMode()) {
-            //return false;
-        //}
-        //mDragFromTextInput = true;
-        //event.offsetLocation((float) (mWebTextView.getLeft() - mScrollX),
-                //(float) (mWebTextView.getTop() - mScrollY));
-        //boolean result = onTouchEvent(event);
-        //mDragFromTextInput = false;
-        //return result;
+        
+        
+            
+        
+        
+        
+                
+        
+        
+        
     }
 
     
@@ -8143,20 +8143,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      void touchUpOnTextField(MotionEvent event) {
         {
             boolean varF4B4E2AD6FDD8C203E6AF24A1C36EF5D_1014571108 = (!inEditingMode());
-        } //End collapsed parenthetic
+        } 
         int x = viewToContentX((int) event.getX() + mWebTextView.getLeft());
         int y = viewToContentY((int) event.getY() + mWebTextView.getTop());
         int slop = viewToContentDimension(mNavSlop);
         nativeMotionUp(x, y, slop);
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //if (!inEditingMode()) {
-            //return;
-        //}
-        //int x = viewToContentX((int) event.getX() + mWebTextView.getLeft());
-        //int y = viewToContentY((int) event.getY() + mWebTextView.getTop());
-        //int slop = viewToContentDimension(mNavSlop);
-        //nativeMotionUp(x, y, slop);
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -8164,9 +8164,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      void centerKeyPressOnTextField() {
         mWebViewCore.sendMessage(EventHub.CLICK, nativeCursorFramePointer(),
                     nativeCursorNodePointer());
-        // ---------- Original Method ----------
-        //mWebViewCore.sendMessage(EventHub.CLICK, nativeCursorFramePointer(),
-                    //nativeCursorNodePointer());
+        
+        
+                    
     }
 
     
@@ -8188,12 +8188,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     @Override
                     public void run() {
                         removeTouchHighlight();
-                        // ---------- Original Method ----------
-                        //removeTouchHighlight();
+                        
+                        
                     }
 }, ViewConfiguration.getPressedStateDuration());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var5F51EF0491BBB7096F9C5C6CD4BCA197_1048282814 = (getSettings().supportTouchOnly());
             {
@@ -8201,7 +8201,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 WebViewCore.TouchUpData touchUpData = new WebViewCore.TouchUpData();
                 touchUpData.mMoveGeneration = 0;
                 mWebViewCore.sendMessage(EventHub.TOUCH_UP, touchUpData);
-            } //End block
+            } 
             {
                 boolean varDA83C45CB8F2A6B5FD9F88AE0C10D3FD_206394172 = (nativePointInNavCache(contentX, contentY, slop));
                 {
@@ -8214,14 +8214,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     motionUpData.mY = contentY;
                     mWebViewCore.sendMessageAtFrontOfQueue(EventHub.VALID_NODE_BOUNDS,
                     motionUpData);
-                } //End block
+                } 
                 {
                     doMotionUp(contentX, contentY);
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -8232,69 +8232,69 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean varC55016010C379CE34BF3B6896DDAD394_545211838 = (nativeMotionUp(contentX, contentY, slop) && mLogEvent);
             {
                 EventLog.writeEvent(EventLogTags.BROWSER_SNAP_CENTER);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var7C1BED8D4E1F2400404C847BC14812AF_188860347 = (nativeHasCursorNode() && !nativeCursorIsTextInput());
             {
                 playSoundEffect(SoundEffectConstants.CLICK);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(contentX);
         addTaint(contentY);
-        // ---------- Original Method ----------
-        //int slop = viewToContentDimension(mNavSlop);
-        //if (nativeMotionUp(contentX, contentY, slop) && mLogEvent) {
-            //EventLog.writeEvent(EventLogTags.BROWSER_SNAP_CENTER);
-        //}
-        //if (nativeHasCursorNode() && !nativeCursorIsTextInput()) {
-            //playSoundEffect(SoundEffectConstants.CLICK);
-        //}
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.257 -0400", hash_original_method = "BED1306FE0550DFB625B165B53E3B66F", hash_generated_method = "C93F605E15A477EBB506444304D44C5C")
      void sendPluginDrawMsg() {
         mWebViewCore.sendMessage(EventHub.PLUGIN_SURFACE_READY);
-        // ---------- Original Method ----------
-        //mWebViewCore.sendMessage(EventHub.PLUGIN_SURFACE_READY);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.258 -0400", hash_original_method = "D3A185A17D693CB3B7C02952CB7AEB22", hash_generated_method = "5CA71B8A5D02738A905E972799F9562B")
      Rect getPluginBounds(int x, int y) {
-        Rect varB4EAC82CA7396A68D541C85D26508E83_738033477 = null; //Variable for return #1
-        Rect varB4EAC82CA7396A68D541C85D26508E83_749421613 = null; //Variable for return #2
+        Rect varB4EAC82CA7396A68D541C85D26508E83_738033477 = null; 
+        Rect varB4EAC82CA7396A68D541C85D26508E83_749421613 = null; 
         int slop = viewToContentDimension(mNavSlop);
         {
             boolean varE761D0BE351A5DB0C46D78ECBD6C783A_1810086499 = (nativePointInNavCache(x, y, slop) && nativeCacheHitIsPlugin());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_738033477 = nativeCacheHitNodeBounds();
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_749421613 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(x);
         addTaint(y);
-        Rect varA7E53CE21691AB073D9660D615818899_979399580; //Final return value
+        Rect varA7E53CE21691AB073D9660D615818899_979399580; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_979399580 = varB4EAC82CA7396A68D541C85D26508E83_738033477;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_979399580 = varB4EAC82CA7396A68D541C85D26508E83_749421613;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_979399580.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_979399580.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_979399580;
-        // ---------- Original Method ----------
-        //int slop = viewToContentDimension(mNavSlop);
-        //if (nativePointInNavCache(x, y, slop) && nativeCacheHitIsPlugin()) {
-            //return nativeCacheHitNodeBounds();
-        //} else {
-            //return null;
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -8314,18 +8314,18 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(rect.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_126233755 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_126233755;
-        // ---------- Original Method ----------
-        //final int rectWidth = rect.width();
-        //final int rectHeight = rect.height();
-        //final int viewWidth = getViewWidth();
-        //final int viewHeight = getViewHeightWithTitle();
-        //float scale = Math.min((float) viewWidth / rectWidth, (float) viewHeight / rectHeight);
-        //scale = mZoomManager.computeScaleWithLimits(scale);
-        //return !mZoomManager.willScaleTriggerZoom(scale)
-                //&& contentToViewX(rect.left) >= mScrollX
-                //&& contentToViewX(rect.right) <= mScrollX + viewWidth
-                //&& contentToViewY(rect.top) >= mScrollY
-                //&& contentToViewY(rect.bottom) <= mScrollY + viewHeight;
+        
+        
+        
+        
+        
+        
+        
+        
+                
+                
+                
+                
     }
 
     
@@ -8344,7 +8344,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 pinScrollTo(contentToViewX(rect.left + rectWidth / 2) - viewWidth / 2,
                     contentToViewY(rect.top + rectHeight / 2) - viewHeight / 2,
                     true, 0);
-            } //End block
+            } 
             {
                 float actualScale = mZoomManager.getScale();
                 float oldScreenX = rect.left * actualScale - mScrollX;
@@ -8354,10 +8354,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 float newScreenX = (viewWidth - rectViewWidth) / 2;
                 {
                     newScreenX = rectViewX;
-                } //End block
+                } 
                 {
                     newScreenX = viewWidth - (newMaxWidth - rectViewX);
-                } //End block
+                } 
                 float zoomCenterX = (oldScreenX * scale - newScreenX * actualScale)
                     / (scale - actualScale);
                 float oldScreenY = rect.top * actualScale + getTitleHeight()
@@ -8368,19 +8368,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 float newScreenY = (viewHeight - rectViewHeight) / 2;
                 {
                     newScreenY = rectViewY;
-                } //End block
+                } 
                 {
                     newScreenY = viewHeight - (newMaxHeight - rectViewY);
-                } //End block
+                } 
                 float zoomCenterY = (oldScreenY * scale - newScreenY * actualScale)
                     / (scale - actualScale);
                 mZoomManager.setZoomCenter(zoomCenterX, zoomCenterY);
                 mZoomManager.startZoomAnimation(scale, false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(rect.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -8388,8 +8388,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private void overrideLoading(String url) {
         mCallbackProxy.uiOverrideUrlLoading(url);
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //mCallbackProxy.uiOverrideUrlLoading(url);
+        
+        
     }
 
     
@@ -8402,48 +8402,48 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             {
                 result = mWebTextView.requestFocus(direction,
                     previouslyFocusedRect);
-            } //End block
+            } 
             {
                 result = super.requestFocus(direction, previouslyFocusedRect);
                 {
                     boolean varA494CE1F4ADF8E7072392AACBFD5D724_1441014444 = (mWebViewCore.getSettings().getNeedInitialFocus() && !isInTouchMode());
                     {
                         int fakeKeyDirection = 0;
-                        //Begin case View.FOCUS_UP 
+                        
                         fakeKeyDirection = KeyEvent.KEYCODE_DPAD_UP;
-                        //End case View.FOCUS_UP 
-                        //Begin case View.FOCUS_DOWN 
+                        
+                        
                         fakeKeyDirection = KeyEvent.KEYCODE_DPAD_DOWN;
-                        //End case View.FOCUS_DOWN 
-                        //Begin case View.FOCUS_LEFT 
+                        
+                        
                         fakeKeyDirection = KeyEvent.KEYCODE_DPAD_LEFT;
-                        //End case View.FOCUS_LEFT 
-                        //Begin case View.FOCUS_RIGHT 
+                        
+                        
                         fakeKeyDirection = KeyEvent.KEYCODE_DPAD_RIGHT;
-                        //End case View.FOCUS_RIGHT 
+                        
                         {
                             boolean var191048386196A56D55A1FA6B9EBCC1D7_730219911 = (mNativeClass != 0 && !nativeHasCursorNode());
                             {
                                 navHandledKey(fakeKeyDirection, 1, true, 0);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1136262753 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1136262753;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.262 -0400", hash_original_method = "B3C79783D1B73E1F2F2D459408EF6637", hash_generated_method = "74E87C6658AB4D24F69114429E64ACDD")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
@@ -8461,32 +8461,32 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     measuredHeight = heightSize;
                     mHeightCanMeasure = false;
                     measuredHeight |= MEASURED_STATE_TOO_SMALL;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             mHeightCanMeasure = false;
-        } //End block
+        } 
         {
             nativeSetHeightCanMeasure(mHeightCanMeasure);
-        } //End block
+        } 
         {
             mWidthCanMeasure = true;
             measuredWidth = contentWidth;
-        } //End block
+        } 
         {
             {
                 measuredWidth |= MEASURED_STATE_TOO_SMALL;
-            } //End block
+            } 
             mWidthCanMeasure = false;
-        } //End block
+        } 
         {
             setMeasuredDimension(measuredWidth, measuredHeight);
-        } //End block
+        } 
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -8497,7 +8497,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                                                  boolean immediate) {
         {
             boolean var264B566DF21DF74851E1F42772AB9C13_557909567 = (mZoomManager.isFixedLengthAnimationInProgress());
-        } //End collapsed parenthetic
+        } 
         rect.offset(child.getLeft() - child.getScrollX(),
                 child.getTop() - child.getScrollY());
         Rect content = new Rect(viewToContentX(mScrollX),
@@ -8516,15 +8516,15 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 boolean varD63CDEF6BD028FCFFAC8F4D0CD965025_2032379288 = (rect.height() > 2 * oneThirdOfScreenHeight);
                 {
                     scrollYDelta = rect.top - screenTop;
-                } //End block
+                } 
                 {
                     scrollYDelta = rect.top - (screenTop + oneThirdOfScreenHeight);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             scrollYDelta = rect.top - screenTop;
-        } //End block
+        } 
         int screenLeft = contentToViewX(content.left);
         int screenRight = contentToViewX(content.right);
         int width = screenRight - screenLeft;
@@ -8534,25 +8534,25 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 boolean varAE73F3F4DF09B867223301D92BC7E6F0_731748358 = (rect.width() > width);
                 {
                     scrollXDelta += (rect.left - screenLeft);
-                } //End block
+                } 
                 {
                     scrollXDelta += (rect.right - screenRight);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             scrollXDelta -= (screenLeft - rect.left);
-        } //End block
+        } 
         {
             boolean var5E8E4CF43F6392F54248EF881F3D0871_81612585 = (pinScrollBy(scrollXDelta, scrollYDelta, !immediate, 0));
-        } //End block
+        } 
         addTaint(child.getTaint());
         addTaint(rect.getTaint());
         addTaint(immediate);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1573506984 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1573506984;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -8570,14 +8570,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(replace.getTaint());
         addTaint(newStart);
         addTaint(newEnd);
-        // ---------- Original Method ----------
-        //WebViewCore.ReplaceTextData arg = new WebViewCore.ReplaceTextData();
-        //arg.mReplace = replace;
-        //arg.mNewStart = newStart;
-        //arg.mNewEnd = newEnd;
-        //mTextGeneration++;
-        //arg.mTextGeneration = mTextGeneration;
-        //mWebViewCore.sendMessage(EventHub.REPLACE_TEXT, oldStart, oldEnd, arg);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -8592,29 +8592,29 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 cursorData(), 1000);
         addTaint(currentText.getTaint());
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //if (mWebViewCore == null) {
-            //return;
-        //}
-        //WebViewCore.JSKeyData arg = new WebViewCore.JSKeyData();
-        //arg.mEvent = event;
-        //arg.mCurrentText = currentText;
-        //mTextGeneration++;
-        //mWebViewCore.sendMessage(EventHub.PASS_TO_JS, mTextGeneration, 0, arg);
-        //mWebViewCore.removeMessages(EventHub.SAVE_DOCUMENT_STATE);
-        //mWebViewCore.sendMessageDelayed(EventHub.SAVE_DOCUMENT_STATE,
-                //cursorData(), 1000);
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.264 -0400", hash_original_method = "9E9681EB8914AFEDBD59BEDC85F3A0A3", hash_generated_method = "6ACAFA145EAD2B911B21FF242758AD91")
     public synchronized WebViewCore getWebViewCore() {
-        WebViewCore varB4EAC82CA7396A68D541C85D26508E83_957640153 = null; //Variable for return #1
+        WebViewCore varB4EAC82CA7396A68D541C85D26508E83_957640153 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_957640153 = mWebViewCore;
-        varB4EAC82CA7396A68D541C85D26508E83_957640153.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_957640153.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_957640153;
-        // ---------- Original Method ----------
-        //return mWebViewCore;
+        
+        
     }
 
     
@@ -8634,29 +8634,29 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         || viewRect.height() < getHeight() >> 1);
                         {
                             mTouchHighlightRegion.union(viewRect);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             invalidate(mTouchHighlightRegion.getBounds());
-        } //End block
+        } 
         addTaint(rects.getTaint());
-        // ---------- Original Method ----------
-        //invalidate(mTouchHighlightRegion.getBounds());
-        //mTouchHighlightRegion.setEmpty();
-        //if (rects != null) {
-            //for (Rect rect : rects) {
-                //Rect viewRect = contentToViewRect(rect);
-                //if (viewRect.width() < getWidth() >> 1
-                        //|| viewRect.height() < getHeight() >> 1) {
-                    //mTouchHighlightRegion.union(viewRect);
-                //} else {
-                    //Log.w(LOGTAG, "Skip the huge selection rect:"
-                            //+ viewRect);
-                //}
-            //}
-            //invalidate(mTouchHighlightRegion.getBounds());
-        //}
+        
+        
+        
+        
+            
+                
+                
+                        
+                    
+                
+                    
+                            
+                
+            
+            
+        
     }
 
     
@@ -8666,19 +8666,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             boolean varA3F78F0FFF8DCFA8325B8A0EE1160508_1317715600 = (inEditingMode());
             {
                 didUpdateWebTextViewDimensions(ANYWHERE);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             mWebViewCore.sendMessage(EventHub.NOTIFY_ANIMATION_STARTED);
-        } //End block
+        } 
         addTaint(notifyAnimationStarted);
-        // ---------- Original Method ----------
-        //if (inEditingMode()) {
-            //didUpdateWebTextViewDimensions(ANYWHERE);
-        //}
-        //if (notifyAnimationStarted) {
-            //mWebViewCore.sendMessage(EventHub.NOTIFY_ANIMATION_STARTED);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -8688,9 +8688,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Tried to setNewPicture with"
                         + " a delay picture already set! (memory leak)");
-            } //End block
+            } 
             mDelaySetPicture = draw;
-        } //End block
+        } 
         WebViewCore.ViewState viewState = draw.mViewState;
         boolean isPictureAfterFirstLayout = viewState != null;
         {
@@ -8698,7 +8698,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             setBaseLayer(draw.mBaseLayer, draw.mInvalRegion,
                     getSettings().getShowVisualIndicator(),
                     isPictureAfterFirstLayout, registerPageSwapCallback);
-        } //End block
+        } 
         final Point viewSize = draw.mViewSize;
         final boolean updateLayout = viewSize.x == mLastWidthSent
                 && viewSize.y == mLastHeightSent;
@@ -8715,29 +8715,29 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             setContentScrollTo(scrollX, scrollY);
             {
                 clearTextEntry();
-            } //End block
-        } //End block
+            } 
+        } 
         mSendScrollEvent = true;
         {
             Rect b = draw.mInvalRegion.getBounds();
-        } //End block
+        } 
         invalidateContentRect(draw.mInvalRegion.getBounds());
         {
             mPictureListener.onNewPicture(WebView.this, capturePicture());
-        } //End block
+        } 
         mZoomManager.onNewPicture(draw);
         {
             boolean var926A8D0B5C0D740061680329138C210C_6349299 = (draw.mFocusSizeChanged && inEditingMode());
             {
                 mFocusSizeChanged = true;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             mViewManager.postReadyToDrawAll();
-        } //End block
+        } 
         addTaint(updateBaseLayer);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -8750,17 +8750,17 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 && textGeneration == mTextGeneration);
             {
                 mWebTextView.setSelectionFromWebKit(data.mStart, data.mEnd);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(nodePointer);
         addTaint(textGeneration);
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        //if (inEditingMode()
-                //&& mWebTextView.isSameTextField(nodePointer)
-                //&& textGeneration == mTextGeneration) {
-            //mWebTextView.setSelectionFromWebKit(data.mStart, data.mEnd);
-        //}
+        
+        
+                
+                
+            
+        
     }
 
     
@@ -8772,9 +8772,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(array[0].getTaint());
         addTaint(enabledArray[0]);
         addTaint(selectedArray[0]);
-        // ---------- Original Method ----------
-        //mPrivateHandler.post(
-                //new InvokeListBox(array, enabledArray, selectedArray));
+        
+        
+                
     }
 
     
@@ -8785,9 +8785,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(array[0].getTaint());
         addTaint(enabledArray[0]);
         addTaint(selection);
-        // ---------- Original Method ----------
-        //mPrivateHandler.post(
-                //new InvokeListBox(array, enabledArray, selection));
+        
+        
+                
     }
 
     
@@ -8797,9 +8797,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 new WebViewCore.CursorData(frame, node, 0, 0));
         addTaint(frame);
         addTaint(node);
-        // ---------- Original Method ----------
-        //mWebViewCore.sendMessage(EventHub.SET_MOVE_FOCUS,
-                //new WebViewCore.CursorData(frame, node, 0, 0));
+        
+        
+                
     }
 
     
@@ -8811,9 +8811,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(node);
         addTaint(x);
         addTaint(y);
-        // ---------- Original Method ----------
-        //mWebViewCore.sendMessage(EventHub.SET_MOVE_MOUSE,
-                //new WebViewCore.CursorData(frame, node, x, y));
+        
+        
+                
     }
 
     
@@ -8822,19 +8822,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private void sendMoveMouseIfLatest(boolean removeFocus, boolean stopPaintingCaret) {
         {
             clearTextEntry();
-        } //End block
+        } 
         mWebViewCore.sendMessage(EventHub.SET_MOVE_MOUSE_IF_LATEST,
                 stopPaintingCaret ? 1 : 0, 0,
                 cursorData());
         addTaint(removeFocus);
         addTaint(stopPaintingCaret);
-        // ---------- Original Method ----------
-        //if (removeFocus) {
-            //clearTextEntry();
-        //}
-        //mWebViewCore.sendMessage(EventHub.SET_MOVE_MOUSE_IF_LATEST,
-                //stopPaintingCaret ? 1 : 0, 0,
-                //cursorData());
+        
+        
+            
+        
+        
+                
+                
     }
 
     
@@ -8855,16 +8855,16 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(node);
         addTaint(x);
         addTaint(y);
-        // ---------- Original Method ----------
-        //WebViewCore.TouchUpData touchUpData = new WebViewCore.TouchUpData();
-        //touchUpData.mMoveGeneration = touchGeneration;
-        //touchUpData.mFrame = frame;
-        //touchUpData.mNode = node;
-        //touchUpData.mX = x;
-        //touchUpData.mY = y;
-        //touchUpData.mNativeLayer = nativeScrollableLayer(
-                //x, y, touchUpData.mNativeLayerRect, null);
-        //mWebViewCore.sendMessage(EventHub.TOUCH_UP, touchUpData);
+        
+        
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -8873,25 +8873,25 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int width;
         {
             width = getViewWidth() / 4;
-        } //End block
+        } 
         {
             Rect visRect = new Rect();
             calcOurVisibleRect(visRect);
             width = visRect.width() / 2;
-        } //End block
+        } 
         int var4CD57EC65F046B376944293A38E9A187_1153331563 = (viewToContentX(width));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1581777689 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1581777689;
-        // ---------- Original Method ----------
-        //int width;
-        //if (mHeightCanMeasure == false) {
-            //width = getViewWidth() / 4;
-        //} else {
-            //Rect visRect = new Rect();
-            //calcOurVisibleRect(visRect);
-            //width = visRect.width() / 2;
-        //}
-        //return viewToContentX(width);
+        
+        
+        
+            
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -8900,33 +8900,33 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int height;
         {
             height = getViewHeight() / 4;
-        } //End block
+        } 
         {
             Rect visRect = new Rect();
             calcOurVisibleRect(visRect);
             height = visRect.height() / 2;
-        } //End block
+        } 
         int var3B6C50355F4C83B6515E3BB844F5C669_1047023311 = (Math.round(height * mZoomManager.getInvScale()));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_146176024 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_146176024;
-        // ---------- Original Method ----------
-        //int height;
-        //if (mHeightCanMeasure == false) {
-            //height = getViewHeight() / 4;
-        //} else {
-            //Rect visRect = new Rect();
-            //calcOurVisibleRect(visRect);
-            //height = visRect.height() / 2;
-        //}
-        //return Math.round(height * mZoomManager.getInvScale());
+        
+        
+        
+            
+        
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.287 -0400", hash_original_method = "3D16E8C41705C4F17CEB73CEF0309E84", hash_generated_method = "43791F1CBB48DBD139A4E7B1FDB49008")
     private void viewInvalidate() {
         invalidate();
-        // ---------- Original Method ----------
-        //invalidate();
+        
+        
     }
 
     
@@ -8938,11 +8938,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             keyEventAction = KeyEvent.ACTION_DOWN;
             eventHubAction = EventHub.KEY_DOWN;
             playSoundEffect(keyCodeToSoundsEffect(keyCode));
-        } //End block
+        } 
         {
             keyEventAction = KeyEvent.ACTION_UP;
             eventHubAction = EventHub.KEY_UP;
-        } //End block
+        } 
         KeyEvent event = new KeyEvent(time, time, keyEventAction, keyCode,
                 1, (metaState & KeyEvent.META_SHIFT_ON)
                 | (metaState & KeyEvent.META_ALT_ON)
@@ -8953,23 +8953,23 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(time);
         addTaint(down);
         addTaint(metaState);
-        // ---------- Original Method ----------
-        //int keyEventAction;
-        //int eventHubAction;
-        //if (down) {
-            //keyEventAction = KeyEvent.ACTION_DOWN;
-            //eventHubAction = EventHub.KEY_DOWN;
-            //playSoundEffect(keyCodeToSoundsEffect(keyCode));
-        //} else {
-            //keyEventAction = KeyEvent.ACTION_UP;
-            //eventHubAction = EventHub.KEY_UP;
-        //}
-        //KeyEvent event = new KeyEvent(time, time, keyEventAction, keyCode,
-                //1, (metaState & KeyEvent.META_SHIFT_ON)
-                //| (metaState & KeyEvent.META_ALT_ON)
-                //| (metaState & KeyEvent.META_SYM_ON)
-                //, KeyCharacterMap.VIRTUAL_KEYBOARD, 0, 0);
-        //mWebViewCore.sendMessage(eventHubAction, event);
+        
+        
+        
+        
+            
+            
+            
+        
+            
+            
+        
+        
+                
+                
+                
+                
+        
     }
 
     
@@ -8983,7 +8983,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         Rect contentCursorRingBounds = nativeGetCursorRingBounds();
         {
             boolean var78E9DE151C1DFEF7820F7C4599A2F8D0_103513542 = (contentCursorRingBounds.isEmpty());
-        } //End collapsed parenthetic
+        } 
         Rect viewCursorRingBounds = contentToViewRect(contentCursorRingBounds);
         mLastTouchX = (viewCursorRingBounds.left + viewCursorRingBounds.right) / 2;
         mLastTouchY = (viewCursorRingBounds.top + viewCursorRingBounds.bottom) / 2;
@@ -8995,33 +8995,33 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         outset.inset(-maxXScroll, -maxYScroll);
         {
             boolean varB6D877D107F828AA26477AA9FEE04EDD_1710449557 = (Rect.intersects(outset, viewCursorRingBounds) == false);
-        } //End collapsed parenthetic
+        } 
         int maxH = Math.min(viewCursorRingBounds.right - visRect.right,
                 maxXScroll);
         {
             pinScrollBy(maxH, 0, true, 0);
-        } //End block
+        } 
         {
             maxH = Math.max(viewCursorRingBounds.left - visRect.left,
                     -maxXScroll);
             {
                 pinScrollBy(maxH, 0, true, 0);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean var6A8A4E436D7412BEF448043644BD31DB_57764583 = (mLastCursorBounds.isEmpty());
-        } //End collapsed parenthetic
+        } 
         {
             boolean var46EFF7D5420AE1A7A30F7E288D313B74_854123999 = (mLastCursorBounds.equals(contentCursorRingBounds));
-        } //End collapsed parenthetic
+        } 
         requestRectangleOnScreen(viewCursorRingBounds);
         addTaint(keyCode);
         addTaint(count);
         addTaint(noScroll);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1657871649 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1657871649;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -9029,8 +9029,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private boolean accessibilityScriptInjected() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1247876817 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1247876817;
-        // ---------- Original Method ----------
-        //return mAccessibilityScriptInjected;
+        
+        
     }
 
     
@@ -9039,9 +9039,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     public void setBackgroundColor(int color) {
         mBackgroundColor = color;
         mWebViewCore.sendMessage(EventHub.SET_BACKGROUND_COLOR, color);
-        // ---------- Original Method ----------
-        //mBackgroundColor = color;
-        //mWebViewCore.sendMessage(EventHub.SET_BACKGROUND_COLOR, color);
+        
+        
+        
     }
 
     
@@ -9051,10 +9051,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         checkThread();
         nativeDebugDump();
         mWebViewCore.sendMessage(EventHub.DUMP_NAVTREE);
-        // ---------- Original Method ----------
-        //checkThread();
-        //nativeDebugDump();
-        //mWebViewCore.sendMessage(EventHub.DUMP_NAVTREE);
+        
+        
+        
+        
     }
 
     
@@ -9063,25 +9063,25 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         calcOurContentVisibleRectF(mVisibleContentRect);
         nativeDraw(canvas, mVisibleContentRect, 0, 0, false);
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        //calcOurContentVisibleRectF(mVisibleContentRect);
-        //nativeDraw(canvas, mVisibleContentRect, 0, 0, false);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.290 -0400", hash_original_method = "74367596F95573C97AD83A4084EC0CCE", hash_generated_method = "60F0103DEBE1A0FA6D924B8BF32F9420")
     public void setHTML5VideoViewProxy(HTML5VideoViewProxy proxy) {
         mHTML5VideoViewProxy = proxy;
-        // ---------- Original Method ----------
-        //mHTML5VideoViewProxy = proxy;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.290 -0400", hash_original_method = "3903E5FDBADBBF10F8555758708758EA", hash_generated_method = "0341554DA62305A207D3B8C95E999187")
     public void setTouchInterval(int interval) {
         mCurrentTouchInterval = interval;
-        // ---------- Original Method ----------
-        //mCurrentTouchInterval = interval;
+        
+        
     }
 
     
@@ -9089,8 +9089,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     protected void updateCachedTextfield(String updatedText) {
         nativeUpdateCachedTextfield(updatedText, mTextGeneration);
         addTaint(updatedText.getTaint());
-        // ---------- Original Method ----------
-        //nativeUpdateCachedTextfield(updatedText, mTextGeneration);
+        
+        
     }
 
     
@@ -9098,19 +9098,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      void autoFillForm(int autoFillQueryId) {
         mWebViewCore.sendMessage(EventHub.AUTOFILL_FORM, autoFillQueryId, 0);
         addTaint(autoFillQueryId);
-        // ---------- Original Method ----------
-        //mWebViewCore.sendMessage(EventHub.AUTOFILL_FORM, autoFillQueryId, 0);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.291 -0400", hash_original_method = "D7B2726C13999E8A86361BD414F1463C", hash_generated_method = "42B86BC72D9CF2B6B71B5A6190BDE8E3")
      ViewManager getViewManager() {
-        ViewManager varB4EAC82CA7396A68D541C85D26508E83_1971455825 = null; //Variable for return #1
+        ViewManager varB4EAC82CA7396A68D541C85D26508E83_1971455825 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1971455825 = mViewManager;
-        varB4EAC82CA7396A68D541C85D26508E83_1971455825.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1971455825.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1971455825;
-        // ---------- Original Method ----------
-        //return mViewManager;
+        
+        
     }
 
     
@@ -9131,27 +9131,27 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     protected void contentInvalidateAll() {
         {
             mWebViewCore.sendMessage(EventHub.CONTENT_INVALIDATE_ALL);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mWebViewCore != null && !mBlockWebkitViewMessages) {
-            //mWebViewCore.sendMessage(EventHub.CONTENT_INVALIDATE_ALL);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.291 -0400", hash_original_method = "1FF0BF24E873DB84A51E12C89558A9C5", hash_generated_method = "14F0772081BF82E7E18655BBAC5A6F22")
     protected void registerPageSwapCallback() {
         nativeRegisterPageSwapCallback();
-        // ---------- Original Method ----------
-        //nativeRegisterPageSwapCallback();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.291 -0400", hash_original_method = "78011EF84CA4BFD753BA4CD3D418707C", hash_generated_method = "EAF06CEEDE2D5E5967608F86C355FE16")
     public void tileProfilingStart() {
         nativeTileProfilingStart();
-        // ---------- Original Method ----------
-        //nativeTileProfilingStart();
+        
+        
     }
 
     
@@ -9160,16 +9160,16 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         float varB18687EE139E5166CC9AF408D9889054_603454298 = (nativeTileProfilingStop());
         float var546ADE640B6EDFBC8A086EF31347E768_961288806 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_961288806;
-        // ---------- Original Method ----------
-        //return nativeTileProfilingStop();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.292 -0400", hash_original_method = "D8A15D848E8D038C149DEA2A80E82057", hash_generated_method = "8FDB7E2C7A9F51E9629172BAF0B24960")
     public void tileProfilingClear() {
         nativeTileProfilingClear();
-        // ---------- Original Method ----------
-        //nativeTileProfilingClear();
+        
+        
     }
 
     
@@ -9178,8 +9178,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         int var169947B5FA60947E0B7BC7984522118F_1955652625 = (nativeTileProfilingNumFrames());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_240731887 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_240731887;
-        // ---------- Original Method ----------
-        //return nativeTileProfilingNumFrames();
+        
+        
     }
 
     
@@ -9189,8 +9189,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(frame);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_408516598 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_408516598;
-        // ---------- Original Method ----------
-        //return nativeTileProfilingNumTilesInFrame(frame);
+        
+        
     }
 
     
@@ -9202,8 +9202,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(key.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_88880752 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_88880752;
-        // ---------- Original Method ----------
-        //return nativeTileProfilingGetInt(frame, tile, key);
+        
+        
     }
 
     
@@ -9215,8 +9215,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         addTaint(key.getTaint());
         float var546ADE640B6EDFBC8A086EF31347E768_1210886025 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1210886025;
-        // ---------- Original Method ----------
-        //return nativeTileProfilingGetFloat(frame, tile, key);
+        
+        
     }
 
     
@@ -9300,7 +9300,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.296 -0400", hash_original_method = "CB263EC43145C659054742CE0640D198", hash_generated_method = "2045A184BB97A2996B1887CC917B0804")
     private Point nativeCursorPosition() {
-    	// DSFIXME: information source
+    	
     	return new Point();
     }
 
@@ -9914,23 +9914,23 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.312 -0400", hash_original_method = "8AECAF07C584017DF10A77A8577569BA", hash_generated_method = "8AECAF07C584017DF10A77A8577569BA")
         public InnerGlobalLayoutListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.312 -0400", hash_original_method = "7975E69377E2D4E4371FF984BC41AAFC", hash_generated_method = "6A33CF0332E38AE23B78BC7DFD92F5B0")
         public void onGlobalLayout() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean varA5A6BE3BA1D3A444C74F3EF11E88B324_605322002 = (isShown());
                 {
                     setGLRectViewport();
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (isShown()) {
-                //setGLRectViewport();
-            //}
+                } 
+            } 
+            
+            
+                
+            
         }
 
         
@@ -9943,23 +9943,23 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.312 -0400", hash_original_method = "D47E1EF344A2CD9F3C47AE9E7A00C49D", hash_generated_method = "D47E1EF344A2CD9F3C47AE9E7A00C49D")
         public InnerScrollChangedListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.312 -0400", hash_original_method = "352B17A157C2643E97C8BB6217499D7C", hash_generated_method = "3092C69FC10FCA5FAA46EF2B014FBD07")
         public void onScrollChanged() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean varA5A6BE3BA1D3A444C74F3EF11E88B324_1246732607 = (isShown());
                 {
                     setGLRectViewport();
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (isShown()) {
-                //setGLRectViewport();
-            //}
+                } 
+            } 
+            
+            
+                
+            
         }
 
         
@@ -9975,26 +9975,26 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.312 -0400", hash_original_method = "019254006A207FE7BCA503E59C7BDCD4", hash_generated_method = "019254006A207FE7BCA503E59C7BDCD4")
         public WebViewTransport ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.312 -0400", hash_original_method = "425DF0BB46AC42AA7BF0BE404A263B4A", hash_generated_method = "A9A4B57876E149A4CA9F2A29180461CF")
         public synchronized void setWebView(WebView webview) {
             mWebview = webview;
-            // ---------- Original Method ----------
-            //mWebview = webview;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.313 -0400", hash_original_method = "FCFE2F49718195B26DF12E8855D16060", hash_generated_method = "3D37A83044703632008A075C79F8F92D")
         public synchronized WebView getWebView() {
-            WebView varB4EAC82CA7396A68D541C85D26508E83_1414644641 = null; //Variable for return #1
+            WebView varB4EAC82CA7396A68D541C85D26508E83_1414644641 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1414644641 = mWebview;
-            varB4EAC82CA7396A68D541C85D26508E83_1414644641.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1414644641.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1414644641;
-            // ---------- Original Method ----------
-            //return mWebview;
+            
+            
         }
 
         
@@ -10008,8 +10008,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         private  OnTrimMemoryListener(Context c) {
             c.registerComponentCallbacks(this);
             addTaint(c.getTaint());
-            // ---------- Original Method ----------
-            //c.registerComponentCallbacks(this);
+            
+            
         }
 
         
@@ -10023,34 +10023,34 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.314 -0400", hash_original_method = "8287235C28E9D1E310027A2DDEB95FCD", hash_generated_method = "E555930F6C60B6E43E637690DA6E289E")
         @Override
         public void onConfigurationChanged(Configuration newConfig) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(newConfig.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.314 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "703A059557F06AE044520D2E93D3D2F0")
         @Override
         public void onLowMemory() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            // ---------- Original Method ----------
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.314 -0400", hash_original_method = "F302D96FF2DE7B0F1AFDB07E6DA881CC", hash_generated_method = "00EB74022956906F2D290B50848397C3")
         @Override
         public void onTrimMemory(int level) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 Log.d("WebView", "onTrimMemory: " + level);
-            } //End block
+            } 
             WebView.nativeOnTrimMemory(level);
             addTaint(level);
-            // ---------- Original Method ----------
-            //if (DebugFlags.WEB_VIEW) {
-                //Log.d("WebView", "onTrimMemory: " + level);
-            //}
-            //WebView.nativeOnTrimMemory(level);
+            
+            
+                
+            
+            
         }
 
         
@@ -10072,24 +10072,24 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.315 -0400", hash_original_method = "22122A9CDE290DEBAA97D7928999F948", hash_generated_method = "3E8436A0FC0A9040E95F25D444A899AD")
           HitTestResult() {
             mType = UNKNOWN_TYPE;
-            // ---------- Original Method ----------
-            //mType = UNKNOWN_TYPE;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.315 -0400", hash_original_method = "08A67C8151DE1D5470E41F8D364D7EBB", hash_generated_method = "89AFF8CBC1B7750AC1399D58F1A48453")
         private void setType(int type) {
             mType = type;
-            // ---------- Original Method ----------
-            //mType = type;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.315 -0400", hash_original_method = "5A11195D61FECD91E6C46251DAE6160C", hash_generated_method = "66AE08DAEF8D5073B71F7FF854ADD4F3")
         private void setExtra(String extra) {
             mExtra = extra;
-            // ---------- Original Method ----------
-            //mExtra = extra;
+            
+            
         }
 
         
@@ -10097,19 +10097,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         public int getType() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1468696597 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1468696597;
-            // ---------- Original Method ----------
-            //return mType;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.316 -0400", hash_original_method = "993DAEFB4C11E7BC5E9CBC52DC4B1BBC", hash_generated_method = "8E28350825FF3FE313FD51A71410673F")
         public String getExtra() {
-            String varB4EAC82CA7396A68D541C85D26508E83_454671782 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_454671782 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_454671782 = mExtra;
-            varB4EAC82CA7396A68D541C85D26508E83_454671782.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_454671782.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_454671782;
-            // ---------- Original Method ----------
-            //return mExtra;
+            
+            
         }
 
         
@@ -10154,26 +10154,26 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.317 -0400", hash_original_method = "81C64DA14CD8ADA6B639EE9F61F2A898", hash_generated_method = "81C64DA14CD8ADA6B639EE9F61F2A898")
         public ProxyReceiver ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.317 -0400", hash_original_method = "C1BF85501C9C720293FF5A0F8027F066", hash_generated_method = "AB97D2264FF7D057BCFCB26ED3DF7FEF")
         @Override
         public void onReceive(Context context, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean var5A158AEAA9529F1AFE9F1BFAB51F2DA9_993140750 = (intent.getAction().equals(Proxy.PROXY_CHANGE_ACTION));
                 {
                     handleProxyBroadcast(intent);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            //if (intent.getAction().equals(Proxy.PROXY_CHANGE_ACTION)) {
-                //handleProxyBroadcast(intent);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -10186,20 +10186,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.317 -0400", hash_original_method = "F623A53A552E0B02B7648231F682A935", hash_generated_method = "F623A53A552E0B02B7648231F682A935")
         public PackageListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.318 -0400", hash_original_method = "4BDCCDF31B8D55EFD7432A60E1C7C253", hash_generated_method = "38ED85F109FF5FCE3B870EF4B961001F")
         @Override
         public void onReceive(Context context, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             final String action = intent.getAction();
             final String packageName = intent.getData().getSchemeSpecificPart();
             final boolean replacing = intent.getBooleanExtra(Intent.EXTRA_REPLACING, false);
             {
                 boolean varFF4619C38D73ED134292A51CFC6DAD56_1263769069 = (Intent.ACTION_PACKAGE_REMOVED.equals(action) && replacing);
-            } //End collapsed parenthetic
+            } 
             {
                 boolean varF3A5A3941CCE4017F61B8223025B4DC2_197581651 = (sGoogleApps.contains(packageName));
                 {
@@ -10207,24 +10207,24 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         boolean var37328E8572988711DFAEB7B421756EDC_2032821276 = (Intent.ACTION_PACKAGE_ADDED.equals(action));
                         {
                             WebViewCore.sendStaticMessage(EventHub.ADD_PACKAGE_NAME, packageName);
-                        } //End block
+                        } 
                         {
                             WebViewCore.sendStaticMessage(EventHub.REMOVE_PACKAGE_NAME, packageName);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             PluginManager pm = PluginManager.getInstance(context);
             {
                 boolean varB1BC6389427C1315076A84D35B8A1EAF_801354795 = (pm.containsPluginPermissionAndSignatures(packageName));
                 {
                     pm.refreshPlugins(Intent.ACTION_PACKAGE_ADDED.equals(action));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -10251,10 +10251,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             mBasename = basename;
             mAutoname = autoname;
             mCallback = callback;
-            // ---------- Original Method ----------
-            //mBasename = basename;
-            //mAutoname = autoname;
-            //mCallback = callback;
+            
+            
+            
+            
         }
 
         
@@ -10294,7 +10294,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.318 -0400", hash_original_method = "0E4893AFBBF2A9B13986CA2BDFC332DE", hash_generated_method = "0E4893AFBBF2A9B13986CA2BDFC332DE")
         public ViewSizeData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -10331,13 +10331,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             mAutoFillable = autoFillable;
             mAutoComplete = autoComplete;
             mWebSettings = getSettings();
-            // ---------- Original Method ----------
-            //mName = name;
-            //mUrl = WebTextView.urlForAutoCompleteData(url);
-            //mUpdateMessage = msg;
-            //mAutoFillable = autoFillable;
-            //mAutoComplete = autoComplete;
-            //mWebSettings = getSettings();
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -10353,17 +10353,17 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                             " " +
                             mAutoFillData.getPreviewString());
                         mWebTextView.setAutoFillProfileIsSet(true);
-                    } //End block
+                    } 
                     {
                         pastEntries.add(getResources().getText(
                             com.android.internal.R.string.setup_autofill).toString());
                         mWebTextView.setAutoFillProfileIsSet(false);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 pastEntries.addAll(mDatabase.getFormData(mUrl, mName));
-            } //End block
+            } 
             {
                 boolean var3F0C3C91772BA4E0AAA044D02E105F29_25239833 = (pastEntries.size() > 0);
                 {
@@ -10371,10 +10371,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         AutoCompleteAdapter(mContext, pastEntries);
                     mUpdateMessage.obj = adapter;
                     mUpdateMessage.sendToTarget();
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -10399,86 +10399,86 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.320 -0400", hash_original_method = "FA8EC88E2AD519ABBE81A37B882E4019", hash_generated_method = "FA8EC88E2AD519ABBE81A37B882E4019")
         public QueuedTouch ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.320 -0400", hash_original_method = "201239734E7C46277BDFD2F489AEF42B", hash_generated_method = "03CCE174D35E97095F8C0B0526FC6876")
         public QueuedTouch set(TouchEventData ted) {
-            QueuedTouch varB4EAC82CA7396A68D541C85D26508E83_1866541369 = null; //Variable for return #1
+            QueuedTouch varB4EAC82CA7396A68D541C85D26508E83_1866541369 = null; 
             mSequence = ted.mSequence;
             mTed = ted;
             mEvent = null;
             mNext = null;
             varB4EAC82CA7396A68D541C85D26508E83_1866541369 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1866541369.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1866541369.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1866541369;
-            // ---------- Original Method ----------
-            //mSequence = ted.mSequence;
-            //mTed = ted;
-            //mEvent = null;
-            //mNext = null;
-            //return this;
+            
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.321 -0400", hash_original_method = "7C5D585955A9AAE4BE1049B4A96093DC", hash_generated_method = "18FA7029D242ECA4FE1B00BB4388417B")
         public QueuedTouch set(MotionEvent ev, long sequence) {
-            QueuedTouch varB4EAC82CA7396A68D541C85D26508E83_2145882245 = null; //Variable for return #1
+            QueuedTouch varB4EAC82CA7396A68D541C85D26508E83_2145882245 = null; 
             mEvent = MotionEvent.obtain(ev);
             mSequence = sequence;
             mTed = null;
             mNext = null;
             varB4EAC82CA7396A68D541C85D26508E83_2145882245 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_2145882245.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2145882245.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2145882245;
-            // ---------- Original Method ----------
-            //mEvent = MotionEvent.obtain(ev);
-            //mSequence = sequence;
-            //mTed = null;
-            //mNext = null;
-            //return this;
+            
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.321 -0400", hash_original_method = "2404A1906D32ADB8867231DC065AA7FE", hash_generated_method = "4008EE34916008C059BAD9BB773601AE")
         public QueuedTouch add(QueuedTouch other) {
-            QueuedTouch varB4EAC82CA7396A68D541C85D26508E83_726710008 = null; //Variable for return #1
-            QueuedTouch varB4EAC82CA7396A68D541C85D26508E83_353508929 = null; //Variable for return #2
+            QueuedTouch varB4EAC82CA7396A68D541C85D26508E83_726710008 = null; 
+            QueuedTouch varB4EAC82CA7396A68D541C85D26508E83_353508929 = null; 
             {
                 other.mNext = this;
                 varB4EAC82CA7396A68D541C85D26508E83_726710008 = other;
-            } //End block
+            } 
             QueuedTouch insertAt = this;
             {
                 insertAt = insertAt.mNext;
-            } //End block
+            } 
             other.mNext = insertAt.mNext;
             insertAt.mNext = other;
             varB4EAC82CA7396A68D541C85D26508E83_353508929 = this;
-            QueuedTouch varA7E53CE21691AB073D9660D615818899_1151610096; //Final return value
+            QueuedTouch varA7E53CE21691AB073D9660D615818899_1151610096; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1151610096 = varB4EAC82CA7396A68D541C85D26508E83_726710008;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1151610096 = varB4EAC82CA7396A68D541C85D26508E83_353508929;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1151610096.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1151610096.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1151610096;
-            // ---------- Original Method ----------
-            //if (other.mSequence < mSequence) {
-                //other.mNext = this;
-                //return other;
-            //}
-            //QueuedTouch insertAt = this;
-            //while (insertAt.mNext != null && insertAt.mNext.mSequence < other.mSequence) {
-                //insertAt = insertAt.mNext;
-            //}
-            //other.mNext = insertAt.mNext;
-            //insertAt.mNext = other;
-            //return this;
+            
+            
+                
+                
+            
+            
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -10515,39 +10515,39 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.322 -0400", hash_original_method = "5D2C1BE02BC07B13BBE8FE5DC638DF25", hash_generated_method = "5D2C1BE02BC07B13BBE8FE5DC638DF25")
         public TouchEventQueue ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.322 -0400", hash_original_method = "AB5D44DF048A232DDA2EFFA345FEA34E", hash_generated_method = "F8B953318BD4D919A022828413251F60")
         private QueuedTouch obtainQueuedTouch() {
-            QueuedTouch varB4EAC82CA7396A68D541C85D26508E83_66594832 = null; //Variable for return #1
-            QueuedTouch varB4EAC82CA7396A68D541C85D26508E83_1646119043 = null; //Variable for return #2
+            QueuedTouch varB4EAC82CA7396A68D541C85D26508E83_66594832 = null; 
+            QueuedTouch varB4EAC82CA7396A68D541C85D26508E83_1646119043 = null; 
             {
                 QueuedTouch result = mQueuedTouchRecycleBin;
                 mQueuedTouchRecycleBin = result.mNext;
                 varB4EAC82CA7396A68D541C85D26508E83_66594832 = result;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1646119043 = new QueuedTouch();
-            QueuedTouch varA7E53CE21691AB073D9660D615818899_1163909100; //Final return value
+            QueuedTouch varA7E53CE21691AB073D9660D615818899_1163909100; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1163909100 = varB4EAC82CA7396A68D541C85D26508E83_66594832;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1163909100 = varB4EAC82CA7396A68D541C85D26508E83_1646119043;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1163909100.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1163909100.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1163909100;
-            // ---------- Original Method ----------
-            //if (mQueuedTouchRecycleBin != null) {
-                //QueuedTouch result = mQueuedTouchRecycleBin;
-                //mQueuedTouchRecycleBin = result.mNext;
-                //mQueuedTouchRecycleCount--;
-                //return result;
-            //}
-            //return new QueuedTouch();
+            
+            
+                
+                
+                
+                
+            
+            
         }
 
         
@@ -10555,9 +10555,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         public void ignoreCurrentlyMissingEvents() {
             mIgnoreUntilSequence = mNextTouchSequence;
             runQueuedAndPreQueuedEvents();
-            // ---------- Original Method ----------
-            //mIgnoreUntilSequence = mNextTouchSequence;
-            //runQueuedAndPreQueuedEvents();
+            
+            
+            
         }
 
         
@@ -10570,10 +10570,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 QueuedTouch recycleMe = qd;
                 {
                     mPreQueue = qd.mNext;
-                } //End block
+                } 
                 {
                     mTouchEventQueue = qd.mNext;
-                } //End block
+                } 
                 recycleQueuedTouch(recycleMe);
                 long nextPre;
                 nextPre = mPreQueue.mSequence;
@@ -10583,9 +10583,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 nextQueued = Long.MAX_VALUE;
                 fromPreQueue = nextPre < nextQueued;
                 qd = fromPreQueue ? mPreQueue : mTouchEventQueue;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -10594,29 +10594,29 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             QueuedTouch newTouch = obtainQueuedTouch().set(ted);
             {
                 mPreQueue = newTouch;
-            } //End block
+            } 
             {
                 QueuedTouch insertionPoint = mPreQueue;
                 {
                     insertionPoint = insertionPoint.mNext;
-                } //End block
+                } 
                 newTouch.mNext = insertionPoint.mNext;
                 insertionPoint.mNext = newTouch;
-            } //End block
+            } 
             addTaint(ted.getTaint());
-            // ---------- Original Method ----------
-            //QueuedTouch newTouch = obtainQueuedTouch().set(ted);
-            //if (mPreQueue == null) {
-                //mPreQueue = newTouch;
-            //} else {
-                //QueuedTouch insertionPoint = mPreQueue;
-                //while (insertionPoint.mNext != null &&
-                        //insertionPoint.mNext.mSequence < newTouch.mSequence) {
-                    //insertionPoint = insertionPoint.mNext;
-                //}
-                //newTouch.mNext = insertionPoint.mNext;
-                //insertionPoint.mNext = newTouch;
-            //}
+            
+            
+            
+                
+            
+                
+                
+                        
+                    
+                
+                
+                
+            
         }
 
         
@@ -10625,13 +10625,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             {
                 qd.mNext = mQueuedTouchRecycleBin;
                 mQueuedTouchRecycleBin = qd;
-            } //End block
-            // ---------- Original Method ----------
-            //if (mQueuedTouchRecycleCount < MAX_RECYCLED_QUEUED_TOUCH) {
-                //qd.mNext = mQueuedTouchRecycleBin;
-                //mQueuedTouchRecycleBin = qd;
-                //mQueuedTouchRecycleCount++;
-            //}
+            } 
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -10644,26 +10644,26 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 QueuedTouch recycleMe = mTouchEventQueue;
                 mTouchEventQueue = mTouchEventQueue.mNext;
                 recycleQueuedTouch(recycleMe);
-            } //End block
+            } 
             {
                 QueuedTouch recycleMe = mPreQueue;
                 mPreQueue = mPreQueue.mNext;
                 recycleQueuedTouch(recycleMe);
-            } //End block
-            // ---------- Original Method ----------
-            //mNextTouchSequence = Long.MIN_VALUE + 1;
-            //mLastHandledTouchSequence = Long.MIN_VALUE;
-            //mIgnoreUntilSequence = Long.MIN_VALUE + 1;
-            //while (mTouchEventQueue != null) {
-                //QueuedTouch recycleMe = mTouchEventQueue;
-                //mTouchEventQueue = mTouchEventQueue.mNext;
-                //recycleQueuedTouch(recycleMe);
-            //}
-            //while (mPreQueue != null) {
-                //QueuedTouch recycleMe = mPreQueue;
-                //mPreQueue = mPreQueue.mNext;
-                //recycleQueuedTouch(recycleMe);
-            //}
+            } 
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -10671,8 +10671,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         public long nextTouchSequence() {
             long var0F5264038205EDFB1AC05FBB0E8C5E94_2018403085 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_2018403085;
-            // ---------- Original Method ----------
-            //return mNextTouchSequence++;
+            
+            
         }
 
         
@@ -10682,7 +10682,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             {
                 {
                     mPreQueue = preQueue.mNext;
-                } //End block
+                } 
                 {
                     QueuedTouch prev = preQueue;
                     preQueue = null;
@@ -10690,36 +10690,36 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         {
                             preQueue = prev.mNext;
                             prev.mNext = preQueue.mNext;
-                        } //End block
+                        } 
                         {
                             prev = prev.mNext;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 boolean varBE43CED5DAEAE4AB789CEEFCCB879ABB_308550 = (dropStaleGestures(ted.mMotionEvent, ted.mSequence));
-            } //End collapsed parenthetic
+            } 
             runNextQueuedEvents();
             {
                 {
                     recycleQueuedTouch(preQueue);
                     preQueue = null;
-                } //End block
+                } 
                 handleQueuedTouchEventData(ted);
                 runNextQueuedEvents();
-            } //End block
+            } 
             {
                 QueuedTouch qd;
                 qd = preQueue;
                 qd = obtainQueuedTouch().set(ted);
                 mTouchEventQueue = mTouchEventQueue == null ? qd : mTouchEventQueue.add(qd);
-            } //End block
+            } 
             addTaint(ted.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1461806981 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1461806981;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -10728,31 +10728,31 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             final long sequence = nextTouchSequence();
             {
                 boolean varC743B531629C8022D99C282BCE55BA59_292535290 = (dropStaleGestures(ev, sequence));
-            } //End collapsed parenthetic
+            } 
             runNextQueuedEvents();
             {
                 handleQueuedMotionEvent(ev);
                 runNextQueuedEvents();
-            } //End block
+            } 
             {
                 QueuedTouch qd = obtainQueuedTouch().set(ev, sequence);
                 mTouchEventQueue = mTouchEventQueue == null ? qd : mTouchEventQueue.add(qd);
-            } //End block
+            } 
             addTaint(ev.getTaint());
-            // ---------- Original Method ----------
-            //final long sequence = nextTouchSequence();
-            //if (dropStaleGestures(ev, sequence)) {
-                //return;
-            //}
-            //runNextQueuedEvents();
-            //if (mLastHandledTouchSequence + 1 == sequence) {
-                //handleQueuedMotionEvent(ev);
-                //mLastHandledTouchSequence++;
-                //runNextQueuedEvents();
-            //} else {
-                //QueuedTouch qd = obtainQueuedTouch().set(ev, sequence);
-                //mTouchEventQueue = mTouchEventQueue == null ? qd : mTouchEventQueue.add(qd);
-            //}
+            
+            
+            
+                
+            
+            
+            
+                
+                
+                
+            
+                
+                
+            
         }
 
         
@@ -10764,18 +10764,18 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 QueuedTouch recycleMe = qd;
                 qd = qd.mNext;
                 recycleQueuedTouch(recycleMe);
-            } //End block
+            } 
             mTouchEventQueue = qd;
-            // ---------- Original Method ----------
-            //QueuedTouch qd = mTouchEventQueue;
-            //while (qd != null && qd.mSequence == mLastHandledTouchSequence + 1) {
-                //handleQueuedTouch(qd);
-                //QueuedTouch recycleMe = qd;
-                //qd = qd.mNext;
-                //recycleQueuedTouch(recycleMe);
-                //mLastHandledTouchSequence++;
-            //}
-            //mTouchEventQueue = qd;
+            
+            
+            
+                
+                
+                
+                
+                
+            
+            
         }
 
         
@@ -10789,9 +10789,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     {
                         mPrivateHandler.removeMessages(SWITCH_TO_SHORTPRESS);
                         mPrivateHandler.removeMessages(SWITCH_TO_LONGPRESS);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 boolean varDD96473448E99D0068A310672554EE17_1698602337 = (ev != null && ev.getAction() == MotionEvent.ACTION_DOWN);
                 {
@@ -10804,36 +10804,36 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                             QueuedTouch recycleMe = qd;
                             qd = qd.mNext;
                             recycleQueuedTouch(recycleMe);
-                        } //End block
+                        } 
                         mTouchEventQueue = qd;
                         mLastHandledTouchSequence = sequence - 1;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 QueuedTouch qd = mTouchEventQueue;
                 {
                     QueuedTouch recycleMe = qd;
                     qd = qd.mNext;
                     recycleQueuedTouch(recycleMe);
-                } //End block
+                } 
                 mTouchEventQueue = qd;
                 mLastHandledTouchSequence = mIgnoreUntilSequence - 1;
-            } //End block
+            } 
             {
                 QueuedTouch qd = mPreQueue;
                 {
                     QueuedTouch recycleMe = qd;
                     qd = qd.mNext;
                     recycleQueuedTouch(recycleMe);
-                } //End block
+                } 
                 mPreQueue = qd;
-            } //End block
+            } 
             addTaint(ev.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1812543486 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1812543486;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -10841,19 +10841,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         private void handleQueuedTouch(QueuedTouch qt) {
             {
                 handleQueuedTouchEventData(qt.mTed);
-            } //End block
+            } 
             {
                 handleQueuedMotionEvent(qt.mEvent);
                 qt.mEvent.recycle();
-            } //End block
+            } 
             addTaint(qt.getTaint());
-            // ---------- Original Method ----------
-            //if (qt.mTed != null) {
-                //handleQueuedTouchEventData(qt.mTed);
-            //} else {
-                //handleQueuedMotionEvent(qt.mEvent);
-                //qt.mEvent.recycle();
-            //}
+            
+            
+                
+            
+                
+                
+            
         }
 
         
@@ -10865,27 +10865,27 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 boolean var5547CC292C3C07AC5E49CBFC5588305F_2056170172 = (ev.getPointerCount() > 1);
                 {
                     handleMultiTouchInWebView(ev);
-                } //End block
+                } 
                 {
                     final ScaleGestureDetector detector = mZoomManager.getMultiTouchGestureDetector();
                     {
                         detector.onTouchEvent(ev);
-                    } //End block
+                    } 
                     handleTouchEventCommon(ev, action, Math.round(ev.getX()), Math.round(ev.getY()));
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //mLastEventTime = ev.getEventTime();
-            //int action = ev.getActionMasked();
-            //if (ev.getPointerCount() > 1) {  
-                //handleMultiTouchInWebView(ev);
-            //} else {
-                //final ScaleGestureDetector detector = mZoomManager.getMultiTouchGestureDetector();
-                //if (detector != null && mPreventDefault != PREVENT_DEFAULT_YES) {
-                    //detector.onTouchEvent(ev);
-                //}
-                //handleTouchEventCommon(ev, action, Math.round(ev.getX()), Math.round(ev.getY()));
-            //}
+                } 
+            } 
+            
+            
+            
+            
+                
+            
+                
+                
+                    
+                
+                
+            
         }
 
         
@@ -10893,41 +10893,41 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         private void handleQueuedTouchEventData(TouchEventData ted) {
             {
                 mLastEventTime = ted.mMotionEvent.getEventTime();
-            } //End block
+            } 
             {
                 {
                     mPreventDefault = ted.mNativeResult ? PREVENT_DEFAULT_YES
                             : PREVENT_DEFAULT_NO_FROM_TOUCH_DOWN;
-                } //End block
+                } 
                 {
                     mPreventDefault = ted.mNativeResult ? PREVENT_DEFAULT_YES
                             : PREVENT_DEFAULT_NO;
-                } //End block
+                } 
                 {
                     mTouchHighlightRegion.setEmpty();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 {
                     {
                         mPreventDefault = PREVENT_DEFAULT_NO;
                         handleMultiTouchInWebView(ted.mMotionEvent);
-                    } //End block
+                    } 
                     {
                         mPreventDefault = PREVENT_DEFAULT_YES;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
-                    //Begin case MotionEvent.ACTION_DOWN 
+                    
                     mLastDeferTouchX = ted.mPointsInView[0].x;
-                    //End case MotionEvent.ACTION_DOWN 
-                    //Begin case MotionEvent.ACTION_DOWN 
+                    
+                    
                     mLastDeferTouchY = ted.mPointsInView[0].y;
-                    //End case MotionEvent.ACTION_DOWN 
-                    //Begin case MotionEvent.ACTION_DOWN 
+                    
+                    
                     mDeferTouchMode = TOUCH_INIT_MODE;
-                    //End case MotionEvent.ACTION_DOWN 
-                    //Begin case MotionEvent.ACTION_MOVE 
+                    
+                    
                     {
                         int x = ted.mPointsInView[0].x;
                         int y = ted.mPointsInView[0].y;
@@ -10937,7 +10937,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                             mLastDeferTouchY = y;
                             startScrollingLayer(x, y);
                             startDrag();
-                        } //End block
+                        } 
                         int deltaX = pinLocX((int) (mScrollX
                                     + mLastDeferTouchX - x))
                                     - mScrollX;
@@ -10947,9 +10947,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         doDrag(deltaX, deltaY);
                         mLastDeferTouchX = x;
                         mLastDeferTouchY = y;
-                    } //End block
-                    //End case MotionEvent.ACTION_MOVE 
-                    //Begin case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
+                    } 
+                    
+                    
                     {
                         mScroller.springBack(mScrollX, mScrollY, 0,
                                         computeMaxScrollX(), 0,
@@ -10957,38 +10957,38 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         invalidate();
                         WebViewCore.resumePriority();
                         WebViewCore.resumeUpdatePicture(mWebViewCore);
-                    } //End block
-                    //End case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
-                    //Begin case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
+                    } 
+                    
+                    
                     mDeferTouchMode = TOUCH_DONE_MODE;
-                    //End case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
-                    //Begin case WebViewCore.ACTION_DOUBLETAP 
+                    
+                    
                     mLastDeferTouchX = ted.mPointsInView[0].x;
-                    //End case WebViewCore.ACTION_DOUBLETAP 
-                    //Begin case WebViewCore.ACTION_DOUBLETAP 
+                    
+                    
                     mLastDeferTouchY = ted.mPointsInView[0].y;
-                    //End case WebViewCore.ACTION_DOUBLETAP 
-                    //Begin case WebViewCore.ACTION_DOUBLETAP 
+                    
+                    
                     mZoomManager.handleDoubleTap(mLastTouchX, mLastTouchY);
-                    //End case WebViewCore.ACTION_DOUBLETAP 
-                    //Begin case WebViewCore.ACTION_DOUBLETAP 
+                    
+                    
                     mDeferTouchMode = TOUCH_DONE_MODE;
-                    //End case WebViewCore.ACTION_DOUBLETAP 
-                    //Begin case WebViewCore.ACTION_LONGPRESS 
+                    
+                    
                     HitTestResult hitTest = getHitTestResult();
-                    //End case WebViewCore.ACTION_LONGPRESS 
-                    //Begin case WebViewCore.ACTION_LONGPRESS 
+                    
+                    
                     {
                         performLongClick();
-                    } //End block
-                    //End case WebViewCore.ACTION_LONGPRESS 
-                    //Begin case WebViewCore.ACTION_LONGPRESS 
+                    } 
+                    
+                    
                     mDeferTouchMode = TOUCH_DONE_MODE;
-                    //End case WebViewCore.ACTION_LONGPRESS 
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                    
+                } 
+            } 
+            
+            
         }
 
         
@@ -11007,63 +11007,63 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.330 -0400", hash_original_method = "827423792FD52B61F0723B9DB59191FF", hash_generated_method = "827423792FD52B61F0723B9DB59191FF")
         public PrivateHandler ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.333 -0400", hash_original_method = "9A7677F45780C792E5B09EADF3925AD6", hash_generated_method = "8538D9655251436C3C6BB383D319A649")
         @Override
         public void handleMessage(Message msg) {
-            //Begin case REMEMBER_PASSWORD 
+            
             {
                 mDatabase.setUsernamePassword(
                             msg.getData().getString("host"),
                             msg.getData().getString("username"),
                             msg.getData().getString("password"));
                 ((Message) msg.obj).sendToTarget();
-            } //End block
-            //End case REMEMBER_PASSWORD 
-            //Begin case NEVER_REMEMBER_PASSWORD 
+            } 
+            
+            
             {
                 mDatabase.setUsernamePassword(
                             msg.getData().getString("host"), null, null);
                 ((Message) msg.obj).sendToTarget();
-            } //End block
-            //End case NEVER_REMEMBER_PASSWORD 
-            //Begin case PREVENT_DEFAULT_TIMEOUT 
+            } 
+            
+            
             {
                 {
                     cancelWebCoreTouchEvent(
                                 viewToContentX(mLastTouchX + mScrollX),
                                 viewToContentY(mLastTouchY + mScrollY),
                                 true);
-                } //End block
-            } //End block
-            //End case PREVENT_DEFAULT_TIMEOUT 
-            //Begin case SCROLL_SELECT_TEXT 
+                } 
+            } 
+            
+            
             {
                 {
                     mSentAutoScrollMessage = false;
-                } //End block
+                } 
                 {
                     pinScrollBy(mAutoScrollX, mAutoScrollY, true, 0);
-                } //End block
+                } 
                 {
                     scrollLayerTo(mScrollingLayerRect.left + mAutoScrollX,
                                 mScrollingLayerRect.top + mAutoScrollY);
-                } //End block
+                } 
                 sendEmptyMessageDelayed(
                             SCROLL_SELECT_TEXT, SELECT_SCROLL_INTERVAL);
-            } //End block
-            //End case SCROLL_SELECT_TEXT 
-            //Begin case UPDATE_SELECTION 
+            } 
+            
+            
             {
                 {
                     updateSelection();
-                } //End block
-            } //End block
-            //End case UPDATE_SELECTION 
-            //Begin case SWITCH_TO_SHORTPRESS 
+                } 
+            } 
+            
+            
             {
                 mInitialHitTestResult = null;
                 {
@@ -11073,25 +11073,25 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         {
                             mTouchMode = TOUCH_SHORTPRESS_START_MODE;
                             updateSelection();
-                        } //End block
+                        } 
                         {
                             mTouchMode = TOUCH_SHORTPRESS_MODE;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     mTouchMode = TOUCH_DONE_MODE;
-                } //End block
-            } //End block
-            //End case SWITCH_TO_SHORTPRESS 
-            //Begin case SWITCH_TO_LONGPRESS 
+                } 
+            } 
+            
+            
             {
                 {
                     boolean varE1DF6CCB4D16FC90F8DBFFED5F41299F_1736520799 = (USE_WEBKIT_RINGS || getSettings().supportTouchOnly());
                     {
                         removeTouchHighlight();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var72609C462D4DCD4473D0A433CA78D370_73877739 = (inFullScreenMode() || mDeferTouchProcess);
                     {
@@ -11112,20 +11112,20 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         ted.mSequence = mTouchEventQueue.nextTouchSequence();
                         mTouchEventQueue.preQueueTouchEventData(ted);
                         mWebViewCore.sendMessage(EventHub.TOUCH_EVENT, ted);
-                    } //End block
+                    } 
                     {
                         mTouchMode = TOUCH_DONE_MODE;
                         performLongClick();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            //End case SWITCH_TO_LONGPRESS 
-            //Begin case RELEASE_SINGLE_TAP 
+                    } 
+                } 
+            } 
+            
+            
             {
                 doShortPress();
-            } //End block
-            //End case RELEASE_SINGLE_TAP 
-            //Begin case SCROLL_TO_MSG_ID 
+            } 
+            
+            
             {
                 {
                     InputMethodManager imm = InputMethodManager.peekInstance();
@@ -11133,66 +11133,66 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         boolean varC08B8A0171CF85CA13986B7A742C9FAC_274298977 = (imm == null || !imm.isAcceptingText()
                                 || (!imm.isActive(WebView.this) && (!inEditingMode()
                                 || !imm.isActive(mWebTextView))));
-                    } //End collapsed parenthetic
-                } //End block
+                    } 
+                } 
                 final Point p = (Point) msg.obj;
                 {
                     spawnContentScrollTo(p.x, p.y);
-                } //End block
+                } 
                 {
                     setContentScrollTo(p.x, p.y);
-                } //End block
-            } //End block
-            //End case SCROLL_TO_MSG_ID 
-            //Begin case UPDATE_ZOOM_RANGE 
+                } 
+            } 
+            
+            
             {
                 WebViewCore.ViewState viewState = (WebViewCore.ViewState) msg.obj;
                 mZoomManager.updateZoomRange(viewState, getViewWidth(), viewState.mScrollX);
-            } //End block
-            //End case UPDATE_ZOOM_RANGE 
-            //Begin case UPDATE_ZOOM_DENSITY 
+            } 
+            
+            
             {
                 final float density = (Float) msg.obj;
                 mZoomManager.updateDefaultZoomDensity(density);
-            } //End block
-            //End case UPDATE_ZOOM_DENSITY 
-            //Begin case REPLACE_BASE_CONTENT 
+            } 
+            
+            
             {
                 nativeReplaceBaseContent(msg.arg1);
-            } //End block
-            //End case REPLACE_BASE_CONTENT 
-            //Begin case NEW_PICTURE_MSG_ID 
+            } 
+            
+            
             {
                 final WebViewCore.DrawData draw = (WebViewCore.DrawData) msg.obj;
                 setNewPicture(draw, true);
-            } //End block
-            //End case NEW_PICTURE_MSG_ID 
-            //Begin case WEBCORE_INITIALIZED_MSG_ID 
+            } 
+            
+            
             String drawableDir = BrowserFrame.getRawResFilename(
                             BrowserFrame.DRAWABLEDIR, mContext);
-            //End case WEBCORE_INITIALIZED_MSG_ID 
-            //Begin case WEBCORE_INITIALIZED_MSG_ID 
+            
+            
             WindowManager windowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
-            //End case WEBCORE_INITIALIZED_MSG_ID 
-            //Begin case WEBCORE_INITIALIZED_MSG_ID 
+            
+            
             Display display = windowManager.getDefaultDisplay();
-            //End case WEBCORE_INITIALIZED_MSG_ID 
-            //Begin case WEBCORE_INITIALIZED_MSG_ID 
+            
+            
             nativeCreate(msg.arg1, drawableDir,
                             ActivityManager.isHighEndGfx(display));
-            //End case WEBCORE_INITIALIZED_MSG_ID 
-            //Begin case WEBCORE_INITIALIZED_MSG_ID 
+            
+            
             {
                 setNewPicture(mDelaySetPicture, true);
                 mDelaySetPicture = null;
-            } //End block
-            //End case WEBCORE_INITIALIZED_MSG_ID 
-            //Begin case WEBCORE_INITIALIZED_MSG_ID 
+            } 
+            
+            
             {
                 nativeSetPauseDrawing(mNativeClass, true);
-            } //End block
-            //End case WEBCORE_INITIALIZED_MSG_ID 
-            //Begin case UPDATE_TEXTFIELD_TEXT_MSG_ID 
+            } 
+            
+            
             {
                 boolean var24ED917A45E165B2D0DB73D1C228849D_887084606 = (inEditingMode() &&
                             mWebTextView.isSameTextField(msg.arg1));
@@ -11201,29 +11201,29 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         String text = (String) msg.obj;
                         {
                             text = "";
-                        } //End block
+                        } 
                         mWebTextView.setTextAndKeepSelection(text);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            //End case UPDATE_TEXTFIELD_TEXT_MSG_ID 
-            //Begin case REQUEST_KEYBOARD_WITH_SELECTION_MSG_ID 
+                    } 
+                } 
+            } 
+            
+            
             displaySoftKeyboard(true);
-            //End case REQUEST_KEYBOARD_WITH_SELECTION_MSG_ID 
-            //Begin case UPDATE_TEXT_SELECTION_MSG_ID 
+            
+            
             updateTextSelectionFromMessage(msg.arg1, msg.arg2,
                             (WebViewCore.TextSelectionData) msg.obj);
-            //End case UPDATE_TEXT_SELECTION_MSG_ID 
-            //Begin case FORM_DID_BLUR 
+            
+            
             {
                 boolean varC0F3E2F619BB6609BFF377ECAF6294F7_1518295527 = (inEditingMode()
                             && mWebTextView.isSameTextField(msg.arg1));
                 {
                     hideSoftKeyboard();
-                } //End block
-            } //End collapsed parenthetic
-            //End case FORM_DID_BLUR 
-            //Begin case RETURN_LABEL 
+                } 
+            } 
+            
+            
             {
                 boolean varC0F3E2F619BB6609BFF377ECAF6294F7_1178575011 = (inEditingMode()
                             && mWebTextView.isSameTextField(msg.arg1));
@@ -11234,121 +11234,121 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         boolean varE86969381D8E084EE7486B0BCDFB9761_2057171054 = (imm != null && imm.isActive(mWebTextView));
                         {
                             imm.restartInput(mWebTextView);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-            //End case RETURN_LABEL 
-            //Begin case UNHANDLED_NAV_KEY 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
             navHandledKey(msg.arg1, 1, false, 0);
-            //End case UNHANDLED_NAV_KEY 
-            //Begin case UPDATE_TEXT_ENTRY_MSG_ID 
+            
+            
             {
                 boolean var0513EDBB647F1B1B0CEC2398CB7258CB_1766923152 = (inEditingMode() && nativeCursorIsTextInput());
                 {
                     updateWebTextViewPosition();
-                } //End block
-            } //End collapsed parenthetic
-            //End case UPDATE_TEXT_ENTRY_MSG_ID 
-            //Begin case CLEAR_TEXT_ENTRY 
+                } 
+            } 
+            
+            
             clearTextEntry();
-            //End case CLEAR_TEXT_ENTRY 
-            //Begin case INVAL_RECT_MSG_ID 
+            
+            
             {
                 Rect r = (Rect)msg.obj;
                 {
                     invalidate();
-                } //End block
+                } 
                 {
                     viewInvalidate(r.left, r.top, r.right, r.bottom);
-                } //End block
-            } //End block
-            //End case INVAL_RECT_MSG_ID 
-            //Begin case REQUEST_FORM_DATA 
+                } 
+            } 
+            
+            
             AutoCompleteAdapter adapter = (AutoCompleteAdapter) msg.obj;
-            //End case REQUEST_FORM_DATA 
-            //Begin case REQUEST_FORM_DATA 
+            
+            
             {
                 boolean var543595A323B4887B7F3AF5971C508703_2092886483 = (mWebTextView.isSameTextField(msg.arg1));
                 {
                     mWebTextView.setAdapterCustom(adapter);
-                } //End block
-            } //End collapsed parenthetic
-            //End case REQUEST_FORM_DATA 
-            //Begin case LONG_PRESS_CENTER 
+                } 
+            } 
+            
+            
             mGotCenterDown = false;
-            //End case LONG_PRESS_CENTER 
-            //Begin case LONG_PRESS_CENTER 
+            
+            
             mTrackballDown = false;
-            //End case LONG_PRESS_CENTER 
-            //Begin case LONG_PRESS_CENTER 
+            
+            
             performLongClick();
-            //End case LONG_PRESS_CENTER 
-            //Begin case WEBCORE_NEED_TOUCH_EVENTS 
+            
+            
             mForwardTouchEvents = (msg.arg1 != 0);
-            //End case WEBCORE_NEED_TOUCH_EVENTS 
-            //Begin case PREVENT_TOUCH_ID 
+            
+            
             {
                 boolean varA9995E2AE703E9AF13E24802C20B989A_904386186 = (inFullScreenMode());
-            } //End collapsed parenthetic
-            //End case PREVENT_TOUCH_ID 
-            //Begin case PREVENT_TOUCH_ID 
+            } 
+            
+            
             TouchEventData ted = (TouchEventData) msg.obj;
-            //End case PREVENT_TOUCH_ID 
-            //Begin case PREVENT_TOUCH_ID 
+            
+            
             {
                 boolean var25F0555089CC470A412F802E26A1BE83_564445650 = (mTouchEventQueue.enqueueTouchEvent(ted));
                 {
                     removeMessages(PREVENT_DEFAULT_TIMEOUT);
-                } //End block
-            } //End collapsed parenthetic
-            //End case PREVENT_TOUCH_ID 
-            //Begin case REQUEST_KEYBOARD 
+                } 
+            } 
+            
+            
             {
                 hideSoftKeyboard();
-            } //End block
+            } 
             {
                 displaySoftKeyboard(false);
-            } //End block
-            //End case REQUEST_KEYBOARD 
-            //Begin case FIND_AGAIN 
+            } 
+            
+            
             {
                 mFindCallback.findAll();
-            } //End block
-            //End case FIND_AGAIN 
-            //Begin case DRAG_HELD_MOTIONLESS 
+            } 
+            
+            
             mHeldMotionless = MOTIONLESS_TRUE;
-            //End case DRAG_HELD_MOTIONLESS 
-            //Begin case DRAG_HELD_MOTIONLESS 
+            
+            
             invalidate();
-            //End case DRAG_HELD_MOTIONLESS 
-            //Begin case AWAKEN_SCROLL_BARS 
+            
+            
             {
                 awakenScrollBars(ViewConfiguration
                                 .getScrollDefaultDelay(), false);
                 mPrivateHandler.sendMessageDelayed(mPrivateHandler
                                 .obtainMessage(AWAKEN_SCROLL_BARS),
                                 ViewConfiguration.getScrollDefaultDelay());
-            } //End block
-            //End case AWAKEN_SCROLL_BARS 
-            //Begin case DO_MOTION_UP 
+            } 
+            
+            
             doMotionUp(msg.arg1, msg.arg2);
-            //End case DO_MOTION_UP 
-            //Begin case SCREEN_ON 
+            
+            
             setKeepScreenOn(msg.arg1 == 1);
-            //End case SCREEN_ON 
-            //Begin case ENTER_FULLSCREEN_VIDEO 
+            
+            
             int layerId = msg.arg1;
-            //End case ENTER_FULLSCREEN_VIDEO 
-            //Begin case ENTER_FULLSCREEN_VIDEO 
+            
+            
             String url = (String) msg.obj;
-            //End case ENTER_FULLSCREEN_VIDEO 
-            //Begin case ENTER_FULLSCREEN_VIDEO 
+            
+            
             {
                 mHTML5VideoViewProxy.enterFullScreenVideo(layerId, url);
-            } //End block
-            //End case ENTER_FULLSCREEN_VIDEO 
-            //Begin case SHOW_FULLSCREEN 
+            } 
+            
+            
             {
                 View view = (View) msg.obj;
                 int orientation = msg.arg1;
@@ -11357,26 +11357,26 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     boolean var193BD8982A9C597816FCA9FE1F0F7BC4_1143531125 = (inFullScreenMode());
                     {
                         dismissFullScreenMode();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mFullScreenHolder = new PluginFullScreenHolder(WebView.this, orientation, npp);
                 mFullScreenHolder.setContentView(view);
                 mFullScreenHolder.show();
-            } //End block
-            //End case SHOW_FULLSCREEN 
-            //Begin case HIDE_FULLSCREEN 
+            } 
+            
+            
             dismissFullScreenMode();
-            //End case HIDE_FULLSCREEN 
-            //Begin case DOM_FOCUS_CHANGED 
+            
+            
             {
                 boolean var6767F8BCFB94E18C6E871E21723BAE8C_1032111058 = (inEditingMode());
                 {
                     nativeClearCursor();
                     rebuildWebTextView();
-                } //End block
-            } //End collapsed parenthetic
-            //End case DOM_FOCUS_CHANGED 
-            //Begin case SHOW_RECT_MSG_ID 
+                } 
+            } 
+            
+            
             {
                 WebViewCore.ShowRectData data = (WebViewCore.ShowRectData) msg.obj;
                 int x = mScrollX;
@@ -11386,11 +11386,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 int viewWidth = getViewWidth();
                 {
                     x += left + width / 2 - mScrollX - viewWidth / 2;
-                } //End block
+                } 
                 {
                     x += (int) (left + data.mXPercentInDoc * width
                                 - mScrollX - data.mXPercentInView * viewWidth);
-                } //End block
+                } 
                 x = Math.max(0,
                             (Math.min(maxWidth, x + viewWidth)) - viewWidth);
                 int top = contentToViewY(data.mTop);
@@ -11403,60 +11403,60 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                             (Math.min(maxHeight, y + viewHeight) - viewHeight));
                 y = Math.max(0, y - getVisibleTitleHeightImpl());
                 scrollTo(x, y);
-            } //End block
-            //End case SHOW_RECT_MSG_ID 
-            //Begin case CENTER_FIT_RECT 
+            } 
+            
+            
             centerFitRect((Rect)msg.obj);
-            //End case CENTER_FIT_RECT 
-            //Begin case SET_SCROLLBAR_MODES 
+            
+            
             mHorizontalScrollBarMode = msg.arg1;
-            //End case SET_SCROLLBAR_MODES 
-            //Begin case SET_SCROLLBAR_MODES 
+            
+            
             mVerticalScrollBarMode = msg.arg2;
-            //End case SET_SCROLLBAR_MODES 
-            //Begin case SELECTION_STRING_CHANGED 
+            
+            
             {
                 String selectionString = (String) msg.obj;
                 mAccessibilityInjector.onSelectionStringChange(selectionString);
-            } //End block
-            //End case SELECTION_STRING_CHANGED 
-            //Begin case SET_TOUCH_HIGHLIGHT_RECTS 
+            } 
+            
+            
             @SuppressWarnings("unchecked") ArrayList<Rect> rects = (ArrayList<Rect>) msg.obj;
-            //End case SET_TOUCH_HIGHLIGHT_RECTS 
-            //Begin case SET_TOUCH_HIGHLIGHT_RECTS 
+            
+            
             setTouchHighlightRects(rects);
-            //End case SET_TOUCH_HIGHLIGHT_RECTS 
-            //Begin case SAVE_WEBARCHIVE_FINISHED 
+            
+            
             SaveWebArchiveMessage saveMessage = (SaveWebArchiveMessage)msg.obj;
-            //End case SAVE_WEBARCHIVE_FINISHED 
-            //Begin case SAVE_WEBARCHIVE_FINISHED 
+            
+            
             {
                 saveMessage.mCallback.onReceiveValue(saveMessage.mResultFile);
-            } //End block
-            //End case SAVE_WEBARCHIVE_FINISHED 
-            //Begin case SET_AUTOFILLABLE 
+            } 
+            
+            
             mAutoFillData = (WebViewCore.AutoFillData) msg.obj;
-            //End case SET_AUTOFILLABLE 
-            //Begin case SET_AUTOFILLABLE 
+            
+            
             {
                 mWebTextView.setAutoFillable(mAutoFillData.getQueryId());
                 rebuildWebTextView();
-            } //End block
-            //End case SET_AUTOFILLABLE 
-            //Begin case AUTOFILL_COMPLETE 
+            } 
+            
+            
             {
                 mWebTextView.setAdapterCustom(null);
-            } //End block
-            //End case AUTOFILL_COMPLETE 
-            //Begin case SELECT_AT 
+            } 
+            
+            
             nativeSelectAt(msg.arg1, msg.arg2);
-            //End case SELECT_AT 
-            //Begin case default 
+            
+            
             super.handleMessage(msg);
-            //End case default 
+            
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -11491,19 +11491,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     mContainers[i].mString = array[i];
                     mContainers[i].mEnabled = enabled[i];
                     mContainers[i].mId = i;
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //mMultiple = true;
-            //mSelectedArray = selected;
-            //int length = array.length;
-            //mContainers = new Container[length];
-            //for (int i = 0; i < length; i++) {
-                //mContainers[i] = new Container();
-                //mContainers[i].mString = array[i];
-                //mContainers[i].mEnabled = enabled[i];
-                //mContainers[i].mId = i;
-            //}
+                } 
+            } 
+            
+            
+            
+            
+            
+            
+                
+                
+                
+                
+            
         }
 
         
@@ -11520,19 +11520,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     mContainers[i].mString = array[i];
                     mContainers[i].mEnabled = enabled[i];
                     mContainers[i].mId = i;
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //mSelection = selection;
-            //mMultiple = false;
-            //int length = array.length;
-            //mContainers = new Container[length];
-            //for (int i = 0; i < length; i++) {
-                //mContainers[i] = new Container();
-                //mContainers[i].mString = array[i];
-                //mContainers[i].mEnabled = enabled[i];
-                //mContainers[i].mId = i;
-            //}
+                } 
+            } 
+            
+            
+            
+            
+            
+            
+                
+                
+                
+                
+            
         }
 
         
@@ -11548,35 +11548,35 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 b.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {                    
                     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.336 -0400", hash_original_method = "3150D57594E9A243EB2796EE1880D262", hash_generated_method = "3F6B021AED45769734F28F07ADA17DDB")
                     public void onClick(DialogInterface dialog, int which) {
-                        //DSFIXME:  CODE0009: Possible callback target function detected
+                        
                         mWebViewCore.sendMessage(
                                 EventHub.LISTBOX_CHOICES,
                                 adapter.getCount(), 0,
                                 listView.getCheckedItemPositions());
                         addTaint(dialog.getTaint());
                         addTaint(which);
-                        // ---------- Original Method ----------
-                        //mWebViewCore.sendMessage(
-                                //EventHub.LISTBOX_CHOICES,
-                                //adapter.getCount(), 0,
-                                //listView.getCheckedItemPositions());
+                        
+                        
+                                
+                                
+                                
                     }
 });
                 b.setNegativeButton(android.R.string.cancel,
                         new DialogInterface.OnClickListener() {                    
                     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.336 -0400", hash_original_method = "167C789BB5CCECE2A545076849F2D943", hash_generated_method = "59C07BDADDA6A0C254998825263AE2FF")
                     public void onClick(DialogInterface dialog, int which) {
-                        //DSFIXME:  CODE0009: Possible callback target function detected
+                        
                         mWebViewCore.sendMessage(
                                 EventHub.SINGLE_LISTBOX_CHOICE, -2, 0);
                         addTaint(dialog.getTaint());
                         addTaint(which);
-                        // ---------- Original Method ----------
-                        //mWebViewCore.sendMessage(
-                                //EventHub.SINGLE_LISTBOX_CHOICE, -2, 0);
+                        
+                        
+                                
                     }
 });
-            } //End block
+            } 
             mListBoxDialog = b.create();
             listView.setAdapter(adapter);
             listView.setFocusableInTouchMode(true);
@@ -11588,15 +11588,15 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     int i = 0;
                     {
                         listView.setItemChecked(mSelectedArray[i], true);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 listView.setOnItemClickListener(new OnItemClickListener() {                    
                     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.337 -0400", hash_original_method = "4FB59E3EE3C723FAB3D9C696C9283630", hash_generated_method = "EB5DE1DC2EC2F6B1D40394864B2401AC")
                     public void onItemClick(AdapterView<?> parent, View v,
                             int position, long id) {
-                        //DSFIXME:  CODE0009: Possible callback target function detected
+                        
                         mListBoxMessage = Message.obtain(null,
                                 EventHub.SINGLE_LISTBOX_CHOICE, (int) id, 0);
                         mListBoxDialog.dismiss();
@@ -11605,11 +11605,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         addTaint(v.getTaint());
                         addTaint(position);
                         addTaint(id);
-                        // ---------- Original Method ----------
-                        //mListBoxMessage = Message.obtain(null,
-                                //EventHub.SINGLE_LISTBOX_CHOICE, (int) id, 0);
-                        //mListBoxDialog.dismiss();
-                        //mListBoxDialog = null;
+                        
+                        
+                                
+                        
+                        
                     }
 });
                 {
@@ -11619,25 +11619,25 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     DataSetObserver observer = new SingleDataSetObserver(
                             adapter.getItemId(mSelection), listView, adapter);
                     adapter.registerDataSetObserver(observer);
-                } //End block
-            } //End block
+                } 
+            } 
             mListBoxDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.337 -0400", hash_original_method = "718CBFBF20241D8F0DF84EA7F924765B", hash_generated_method = "03CF01EF3CCA98BA2D99C73624A0B668")
                 public void onCancel(DialogInterface dialog) {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     mWebViewCore.sendMessage(
                                 EventHub.SINGLE_LISTBOX_CHOICE, -2, 0);
                     mListBoxDialog = null;
                     addTaint(dialog.getTaint());
-                    // ---------- Original Method ----------
-                    //mWebViewCore.sendMessage(
-                                //EventHub.SINGLE_LISTBOX_CHOICE, -2, 0);
-                    //mListBoxDialog = null;
+                    
+                    
+                                
+                    
                 }
 });
             mListBoxDialog.show();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -11655,19 +11655,19 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.340 -0400", hash_original_method = "DD3B8E29C865D4F7AB0FED0D35D8C8B4", hash_generated_method = "DD3B8E29C865D4F7AB0FED0D35D8C8B4")
             public Container ()
             {
-                //Synthesized constructor
+                
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.341 -0400", hash_original_method = "47413D805E887745DF3971F679277823", hash_generated_method = "2F50B5CE5FC93A952122151657D68C6D")
             @Override
             public String toString() {
-                String varB4EAC82CA7396A68D541C85D26508E83_1677942168 = null; //Variable for return #1
+                String varB4EAC82CA7396A68D541C85D26508E83_1677942168 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_1677942168 = mString;
-                varB4EAC82CA7396A68D541C85D26508E83_1677942168.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1677942168.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1677942168;
-                // ---------- Original Method ----------
-                //return mString;
+                
+                
             }
 
             
@@ -11692,7 +11692,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         mMultiple ? com.android.internal.R.layout.select_dialog_multichoice :
                         com.android.internal.R.layout.webview_select_singlechoice,
                         mContainers);
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -11700,8 +11700,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             @Override
             public View getView(int position, View convertView,
                     ViewGroup parent) {
-                View varB4EAC82CA7396A68D541C85D26508E83_714226047 = null; //Variable for return #1
-                View varB4EAC82CA7396A68D541C85D26508E83_464609130 = null; //Variable for return #2
+                View varB4EAC82CA7396A68D541C85D26508E83_714226047 = null; 
+                View varB4EAC82CA7396A68D541C85D26508E83_464609130 = null; 
                 convertView = super.getView(position, null, parent);
                 Container c = item(position);
                 {
@@ -11712,16 +11712,16 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                         dividerTop.setBackgroundResource(
                                 android.R.drawable.divider_horizontal_bright);
                         layout.addView(dividerTop);
-                    } //End block
+                    } 
                     {
                         {
                             Assert.assertTrue(convertView instanceof CheckedTextView);
                             ((CheckedTextView) convertView).setCheckMarkDrawable(null);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         convertView.setEnabled(false);
-                    } //End block
+                    } 
                     layout.addView(convertView);
                     {
                         boolean var29E3F9545B0C5E6979D96B1ACDAB027D_739259464 = (position < getCount() - 1);
@@ -11730,27 +11730,27 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                             dividerBottom.setBackgroundResource(
                                 android.R.drawable.divider_horizontal_bright);
                             layout.addView(dividerBottom);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_714226047 = layout;
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_464609130 = convertView;
                 addTaint(position);
                 addTaint(convertView.getTaint());
                 addTaint(parent.getTaint());
-                View varA7E53CE21691AB073D9660D615818899_1027428069; //Final return value
+                View varA7E53CE21691AB073D9660D615818899_1027428069; 
                 switch (DroidSafeAndroidRuntime.switchControl) {
-                    case 1: //Assign result for return ordinal #1
+                    case 1: 
                         varA7E53CE21691AB073D9660D615818899_1027428069 = varB4EAC82CA7396A68D541C85D26508E83_714226047;
                         break;
                     default:
                         varA7E53CE21691AB073D9660D615818899_1027428069 = varB4EAC82CA7396A68D541C85D26508E83_464609130;
                         break;
                 }
-                varA7E53CE21691AB073D9660D615818899_1027428069.addTaint(getTaint()); //Add taint from parent
+                varA7E53CE21691AB073D9660D615818899_1027428069.addTaint(getTaint()); 
                 return varA7E53CE21691AB073D9660D615818899_1027428069;
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 
             
@@ -11759,39 +11759,39 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             public boolean hasStableIds() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1431948331 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1431948331;
-                // ---------- Original Method ----------
-                //return false;
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.343 -0400", hash_original_method = "00B4C931839B7CE79C0BDBB195CA9D3C", hash_generated_method = "4D12C4F1ECFA01C04EB620F7F0DE382E")
             private Container item(int position) {
-                Container varB4EAC82CA7396A68D541C85D26508E83_388833174 = null; //Variable for return #1
-                Container varB4EAC82CA7396A68D541C85D26508E83_1952757157 = null; //Variable for return #2
+                Container varB4EAC82CA7396A68D541C85D26508E83_388833174 = null; 
+                Container varB4EAC82CA7396A68D541C85D26508E83_1952757157 = null; 
                 {
                     boolean var46FB1B51094929768D004AD98A0CD79D_1559042269 = (position < 0 || position >= getCount());
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_388833174 = null;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1952757157 = (Container) getItem(position);
                 addTaint(position);
-                Container varA7E53CE21691AB073D9660D615818899_1014034044; //Final return value
+                Container varA7E53CE21691AB073D9660D615818899_1014034044; 
                 switch (DroidSafeAndroidRuntime.switchControl) {
-                    case 1: //Assign result for return ordinal #1
+                    case 1: 
                         varA7E53CE21691AB073D9660D615818899_1014034044 = varB4EAC82CA7396A68D541C85D26508E83_388833174;
                         break;
                     default:
                         varA7E53CE21691AB073D9660D615818899_1014034044 = varB4EAC82CA7396A68D541C85D26508E83_1952757157;
                         break;
                 }
-                varA7E53CE21691AB073D9660D615818899_1014034044.addTaint(getTaint()); //Add taint from parent
+                varA7E53CE21691AB073D9660D615818899_1014034044.addTaint(getTaint()); 
                 return varA7E53CE21691AB073D9660D615818899_1014034044;
-                // ---------- Original Method ----------
-                //if (position < 0 || position >= getCount()) {
-                    //return null;
-                //}
-                //return (Container) getItem(position);
+                
+                
+                    
+                
+                
             }
 
             
@@ -11802,12 +11802,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 addTaint(position);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1528780506 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1528780506;
-                // ---------- Original Method ----------
-                //Container item = item(position);
-                //if (item == null) {
-                    //return -1;
-                //}
-                //return item.mId;
+                
+                
+                
+                    
+                
+                
             }
 
             
@@ -11816,8 +11816,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
             public boolean areAllItemsEnabled() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_121695107 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_121695107;
-                // ---------- Original Method ----------
-                //return false;
+                
+                
             }
 
             
@@ -11828,12 +11828,12 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 addTaint(position);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_124727877 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_124727877;
-                // ---------- Original Method ----------
-                //Container item = item(position);
-                //if (item == null) {
-                    //return false;
-                //}
-                //return Container.OPTION_ENABLED == item.mEnabled;
+                
+                
+                
+                    
+                
+                
             }
 
             
@@ -11857,17 +11857,17 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                 mCheckedId = id;
                 mListView = l;
                 mAdapter = a;
-                // ---------- Original Method ----------
-                //mCheckedId = id;
-                //mListView = l;
-                //mAdapter = a;
+                
+                
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.345 -0400", hash_original_method = "C5592B2337B812BBABE83D8EC12313CA", hash_generated_method = "BDBBB8630E6EE4497FF0B8DFB56A8C9F")
             @Override
             public void onChanged() {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 int position = mListView.getCheckedItemPosition();
                 long id = mAdapter.getItemId(position);
                 {
@@ -11880,24 +11880,24 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                                 boolean varA60FED54EC8179E35E73102579F12B18_255669053 = (mAdapter.getItemId(i) == mCheckedId);
                                 {
                                     mListView.setItemChecked(i, true);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-                // ---------- Original Method ----------
-                //int position = mListView.getCheckedItemPosition();
-                //long id = mAdapter.getItemId(position);
-                //if (mCheckedId != id) {
-                    //mListView.clearChoices();
-                    //int count = mAdapter.getCount();
-                    //for (int i = 0; i < count; i++) {
-                        //if (mAdapter.getItemId(i) == mCheckedId) {
-                            //mListView.setItemChecked(i, true);
-                            //break;
-                        //}
-                    //}
-                //}
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+                
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                            
+                        
+                    
+                
             }
 
             

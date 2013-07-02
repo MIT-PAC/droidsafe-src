@@ -1,11 +1,11 @@
 package javax.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -17,10 +17,11 @@ public abstract class SocketFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.429 -0400", hash_original_method = "558E5CF77A92B4D322EAE73AA7FC9ED5", hash_generated_method = "49A83C6EA0E2C7D8DB87841B35CCED46")
     protected  SocketFactory() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized SocketFactory getDefault() {
         if (defaultFactory == null) {
             defaultFactory = new DefaultSocketFactory();
@@ -32,8 +33,8 @@ public abstract class SocketFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.429 -0400", hash_original_method = "237BDA73790E5091959E59275734231E", hash_generated_method = "66E219A0BEBC15795219872F319501DD")
     public Socket createSocket() throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new SocketException("Unconnected sockets not implemented");
-        // ---------- Original Method ----------
-        //throw new SocketException("Unconnected sockets not implemented");
+        
+        
         return new Socket();
     }
 

@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.apache.harmony.security.asn1.ASN1Enumerated;
@@ -20,66 +20,68 @@ public final class ReasonCode extends ExtensionValue {
     public  ReasonCode(byte[] encoding) throws IOException {
         super(encoding);
         this.code = ((byte[]) ASN1.decode(encoding))[0];
-        // ---------- Original Method ----------
-        //this.code = ((byte[]) ASN1.decode(encoding))[0];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.307 -0400", hash_original_method = "410E015295E6E50D0A716577DAE7F9D9", hash_generated_method = "02CCE4D110C3D2E0C391CC3735249094")
     @Override
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(new byte[] { code });
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1783814426 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1783814426;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(new byte[] { code });
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.307 -0400", hash_original_method = "12E79139137D00D785F5C6D5EDD972F8", hash_generated_method = "DF5BBAFDB60D24D8D0B762BAD015047F")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix).append("Reason Code: [ ");
-        //Begin case UNSPECIFIED 
+        
         sb.append("unspecified");
-        //End case UNSPECIFIED 
-        //Begin case KEY_COMPROMISE 
+        
+        
         sb.append("keyCompromise");
-        //End case KEY_COMPROMISE 
-        //Begin case CA_COMPROMISE 
+        
+        
         sb.append("cACompromise");
-        //End case CA_COMPROMISE 
-        //Begin case AFFILIATION_CHANGED 
+        
+        
         sb.append("affiliationChanged");
-        //End case AFFILIATION_CHANGED 
-        //Begin case SUPERSEDED 
+        
+        
         sb.append("superseded");
-        //End case SUPERSEDED 
-        //Begin case CESSATION_OF_OPERATION 
+        
+        
         sb.append("cessationOfOperation");
-        //End case CESSATION_OF_OPERATION 
-        //Begin case CERTIFICATE_HOLD 
+        
+        
         sb.append("certificateHold");
-        //End case CERTIFICATE_HOLD 
-        //Begin case REMOVE_FROM_CRL 
+        
+        
         sb.append("removeFromCRL");
-        //End case REMOVE_FROM_CRL 
-        //Begin case PRIVILEGE_WITHDRAWN 
+        
+        
         sb.append("privilegeWithdrawn");
-        //End case PRIVILEGE_WITHDRAWN 
-        //Begin case AA_COMPROMISE 
+        
+        
         sb.append("aACompromise");
-        //End case AA_COMPROMISE 
+        
         sb.append(" ]\n");
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

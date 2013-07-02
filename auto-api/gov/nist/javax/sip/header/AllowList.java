@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.*;
 import java.text.ParseException;
@@ -16,28 +16,30 @@ public class AllowList extends SIPHeaderList<Allow> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.920 -0400", hash_original_method = "F4CA7E921A2CAA269087CDE3B4673EDF", hash_generated_method = "D9C4828F0D645AEECBD56D2F64C1FA84")
     public  AllowList() {
         super(Allow.class, AllowHeader.NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.921 -0400", hash_original_method = "0478A1539FEF5A12FA1EE4755C128735", hash_generated_method = "5E10A443B88ADBE5D001DA04212FA0ED")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1232971617 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1232971617 = null; 
         AllowList retval = new AllowList();
         retval.clonehlist(this.hlist);
         varB4EAC82CA7396A68D541C85D26508E83_1232971617 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_1232971617.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1232971617.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1232971617;
-        // ---------- Original Method ----------
-        //AllowList retval = new AllowList();
-        //retval.clonehlist(this.hlist);
-        //return retval;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.922 -0400", hash_original_method = "AEA3F358A5E0CA1930C1FE1C96E2D485", hash_generated_method = "8764338852D6E1D08B35D04B6101DD87")
     public ListIterator<String> getMethods() {
-        ListIterator<String> varB4EAC82CA7396A68D541C85D26508E83_268036005 = null; //Variable for return #1
+        ListIterator<String> varB4EAC82CA7396A68D541C85D26508E83_268036005 = null; 
         LinkedList<String> ll = new LinkedList<String> ();
         {
             Iterator<Allow> it = this.hlist.iterator();
@@ -45,21 +47,22 @@ public class AllowList extends SIPHeaderList<Allow> {
             {
                 Allow a = (Allow)it.next();
                 ll.add(a.getMethod());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_268036005 = ll.listIterator();
-        varB4EAC82CA7396A68D541C85D26508E83_268036005.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_268036005.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_268036005;
-        // ---------- Original Method ----------
-        //LinkedList<String> ll = new LinkedList<String> ();
-        //for ( Iterator<Allow> it = this.hlist.iterator(); it.hasNext();) {
-            //Allow a = (Allow)it.next();
-            //ll.add(a.getMethod());
-        //}
-        //return ll.listIterator();
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.923 -0400", hash_original_method = "6420AFA8DFEC18654E9A726650C49FF0", hash_generated_method = "6CFDD9E8FCEED905956D5C41086D47B1")
     public void setMethods(List<String> methods) throws ParseException {
         ListIterator<String> it = methods.listIterator();
@@ -69,16 +72,16 @@ public class AllowList extends SIPHeaderList<Allow> {
                 Allow allow = new Allow();
                 allow.setMethod((String) it.next());
                 this.add(allow);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(methods.getTaint());
-        // ---------- Original Method ----------
-        //ListIterator<String> it = methods.listIterator();
-        //while (it.hasNext()) {
-            //Allow allow = new Allow();
-            //allow.setMethod((String) it.next());
-            //this.add(allow);
-        //}
+        
+        
+        
+            
+            
+            
+        
     }
 
     

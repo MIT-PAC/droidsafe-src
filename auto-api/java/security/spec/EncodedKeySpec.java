@@ -1,11 +1,11 @@
 package java.security.spec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class EncodedKeySpec implements KeySpec {
@@ -18,23 +18,24 @@ public abstract class EncodedKeySpec implements KeySpec {
         this.encodedKey = new byte[encodedKey.length];
         System.arraycopy(encodedKey, 0,
                 this.encodedKey, 0, this.encodedKey.length);
-        // ---------- Original Method ----------
-        //this.encodedKey = new byte[encodedKey.length];
-        //System.arraycopy(encodedKey, 0,
-                //this.encodedKey, 0, this.encodedKey.length);
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.080 -0400", hash_original_method = "F8B261F87BF90DD753274675BF9DA222", hash_generated_method = "4FB4AA41D8B335B4F4AC88027836A131")
     public byte[] getEncoded() {
         byte[] ret = new byte[encodedKey.length];
         System.arraycopy(encodedKey, 0, ret, 0, ret.length);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_79874373 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_79874373;
-        // ---------- Original Method ----------
-        //byte[] ret = new byte[encodedKey.length];
-        //System.arraycopy(encodedKey, 0, ret, 0, ret.length);
-        //return ret;
+        
+        
+        
+        
     }
 
     

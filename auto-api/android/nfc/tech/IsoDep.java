@@ -1,11 +1,11 @@
 package android.nfc.tech;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.nfc.ErrorCodes;
 import android.nfc.Tag;
@@ -29,17 +29,18 @@ public final class IsoDep extends BasicTagTechnology {
         {
             mHiLayerResponse = extras.getByteArray(EXTRA_HI_LAYER_RESP);
             mHistBytes = extras.getByteArray(EXTRA_HIST_BYTES);
-        } //End block
+        } 
         addTaint(tag.getTaint());
-        // ---------- Original Method ----------
-        //Bundle extras = tag.getTechExtras(TagTechnology.ISO_DEP);
-        //if (extras != null) {
-            //mHiLayerResponse = extras.getByteArray(EXTRA_HI_LAYER_RESP);
-            //mHistBytes = extras.getByteArray(EXTRA_HIST_BYTES);
-        //}
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static IsoDep get(Tag tag) {
         if (!tag.hasTech(TagTechnology.ISO_DEP)) return null;
         try {
@@ -50,6 +51,7 @@ public final class IsoDep extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.318 -0400", hash_original_method = "C12C31601200CC9185BEA621DAA9D522", hash_generated_method = "F12D7FF24E15ECDE5F81348EE145EB65")
     public void setTimeout(int timeout) {
         try 
@@ -57,40 +59,41 @@ public final class IsoDep extends BasicTagTechnology {
             int err = mTag.getTagService().setTimeout(TagTechnology.ISO_DEP, timeout);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The supplied timeout is not valid");
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         { }
         addTaint(timeout);
-        // ---------- Original Method ----------
-        //try {
-            //int err = mTag.getTagService().setTimeout(TagTechnology.ISO_DEP, timeout);
-            //if (err != ErrorCodes.SUCCESS) {
-                //throw new IllegalArgumentException("The supplied timeout is not valid");
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-        //}
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.319 -0400", hash_original_method = "DE4D3DFA438B7711A20A8976B1AA544A", hash_generated_method = "6ACB3DBBE249F78DB8606B64E5CDD740")
     public int getTimeout() {
         try 
         {
             int varC5FF19B810CBF66E7DB7FC8454C4AFCA_2050241754 = (mTag.getTagService().getTimeout(TagTechnology.ISO_DEP));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_661180736 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_661180736;
-        // ---------- Original Method ----------
-        //try {
-            //return mTag.getTagService().getTimeout(TagTechnology.ISO_DEP);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-            //return 0;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -98,8 +101,8 @@ public final class IsoDep extends BasicTagTechnology {
     public byte[] getHistoricalBytes() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1126075905 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1126075905;
-        // ---------- Original Method ----------
-        //return mHistBytes;
+        
+        
     }
 
     
@@ -107,29 +110,31 @@ public final class IsoDep extends BasicTagTechnology {
     public byte[] getHiLayerResponse() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_313221808 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_313221808;
-        // ---------- Original Method ----------
-        //return mHiLayerResponse;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.320 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "37D0D070CA7E5AB30616E5C214E43F3F")
     public byte[] transceive(byte[] data) throws IOException {
         byte[] var457CAD28AA5A950818B34ED801FB2565_493021071 = (transceive(data, true));
         addTaint(data[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1245194246 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1245194246;
-        // ---------- Original Method ----------
-        //return transceive(data, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.321 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "7664BAEDE97E69BA87AC06C4D7362877")
     public int getMaxTransceiveLength() {
         int varAD50EB2A6987338433A93D587AD15277_38156299 = (getMaxTransceiveLengthInternal());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1955662941 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1955662941;
-        // ---------- Original Method ----------
-        //return getMaxTransceiveLengthInternal();
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.commons.io.input;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.EOFException;
 import java.io.IOException;
@@ -38,7 +38,7 @@ public class NullReader extends Reader {
     public  NullReader(long size) {
         this(size, true, false);
         addTaint(size);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -47,10 +47,10 @@ public class NullReader extends Reader {
         this.size = size;
         this.markSupported = markSupported;
         this.throwEofException = throwEofException;
-        // ---------- Original Method ----------
-        //this.size = size;
-        //this.markSupported = markSupported;
-        //this.throwEofException = throwEofException;
+        
+        
+        
+        
     }
 
     
@@ -58,8 +58,8 @@ public class NullReader extends Reader {
     public long getPosition() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1767993004 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1767993004;
-        // ---------- Original Method ----------
-        //return position;
+        
+        
     }
 
     
@@ -67,8 +67,8 @@ public class NullReader extends Reader {
     public long getSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_898120936 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_898120936;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
@@ -78,27 +78,28 @@ public class NullReader extends Reader {
         eof = false;
         position = 0;
         mark = -1;
-        // ---------- Original Method ----------
-        //eof = false;
-        //position = 0;
-        //mark = -1;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.169 -0400", hash_original_method = "7AEF2C3B62C677DC9FD1211BE4D4F4EB", hash_generated_method = "B2E766FDFDF2D4B287F2AD4768492E2B")
     @Override
     public synchronized void mark(int readlimit) {
         {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Mark not supported");
-        } //End block
+        } 
         mark = position;
         this.readlimit = readlimit;
-        // ---------- Original Method ----------
-        //if (!markSupported) {
-            //throw new UnsupportedOperationException("Mark not supported");
-        //}
-        //mark = position;
-        //this.readlimit = readlimit;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -107,35 +108,37 @@ public class NullReader extends Reader {
     public boolean markSupported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1834549450 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1834549450;
-        // ---------- Original Method ----------
-        //return markSupported;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.170 -0400", hash_original_method = "FBA121B80064AD99E30C613A90CFA3D6", hash_generated_method = "C29003C5393B1E37344641F9EEB77AD6")
     @Override
     public int read() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Read after end of file");
-        } //End block
+        } 
         {
             int varECF9BCF45B9E6F55B0F3F60324CD3B94_412176966 = (doEndOfFile());
-        } //End block
+        } 
         int var6424F44E2FF1A4CA13605FB53080F2DD_964359966 = (processChar());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1533335214 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1533335214;
-        // ---------- Original Method ----------
-        //if (eof) {
-            //throw new IOException("Read after end of file");
-        //}
-        //if (position == size) {
-            //return doEndOfFile();
-        //}
-        //position++;
-        //return processChar();
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.170 -0400", hash_original_method = "4AD28164B3ED3B60A2412B4E7DEDB826", hash_generated_method = "38B2AAFC79FAD3627F2A0D26405ABBD7")
     @Override
     public int read(char[] chars) throws IOException {
@@ -143,113 +146,116 @@ public class NullReader extends Reader {
         addTaint(chars[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1638355297 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1638355297;
-        // ---------- Original Method ----------
-        //return read(chars, 0, chars.length);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.171 -0400", hash_original_method = "C70C3A95CC69C815CEA97A11A597B28A", hash_generated_method = "6CA58C08DE03564C80992364E257F038")
     @Override
     public int read(char[] chars, int offset, int length) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Read after end of file");
-        } //End block
+        } 
         {
             int varECF9BCF45B9E6F55B0F3F60324CD3B94_50048751 = (doEndOfFile());
-        } //End block
+        } 
         position += length;
         int returnLength = length;
         {
             returnLength = length - (int)(position - size);
             position = size;
-        } //End block
+        } 
         processChars(chars, offset, returnLength);
         addTaint(chars[0]);
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1169762941 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1169762941;
-        // ---------- Original Method ----------
-        //if (eof) {
-            //throw new IOException("Read after end of file");
-        //}
-        //if (position == size) {
-            //return doEndOfFile();
-        //}
-        //position += length;
-        //int returnLength = length;
-        //if (position > size) {
-            //returnLength = length - (int)(position - size);
-            //position = size;
-        //}
-        //processChars(chars, offset, returnLength);
-        //return returnLength;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.171 -0400", hash_original_method = "DA70D8E8EFCF4CE896E4E17AB2D27792", hash_generated_method = "ADE91CA8E3BA9D12BD726C9F6A4B7B96")
     @Override
     public synchronized void reset() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Mark not supported");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("No position has been marked");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Marked position [" + mark +
                     "] is no longer valid - passed the read limit [" +
                     readlimit + "]");
-        } //End block
+        } 
         position = mark;
         eof = false;
-        // ---------- Original Method ----------
-        //if (!markSupported) {
-            //throw new UnsupportedOperationException("Mark not supported");
-        //}
-        //if (mark < 0) {
-            //throw new IOException("No position has been marked");
-        //}
-        //if (position > mark + readlimit) {
-            //throw new IOException("Marked position [" + mark +
-                    //"] is no longer valid - passed the read limit [" +
-                    //readlimit + "]");
-        //}
-        //position = mark;
-        //eof = false;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                    
+                    
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.171 -0400", hash_original_method = "438CF302A21CA34274E9B0DDF0F4C413", hash_generated_method = "CA84C599168DE6E39AA08E860848AB5C")
     @Override
     public long skip(long numberOfChars) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Skip after end of file");
-        } //End block
+        } 
         {
             long varECF9BCF45B9E6F55B0F3F60324CD3B94_1614714870 = (doEndOfFile());
-        } //End block
+        } 
         position += numberOfChars;
         long returnLength = numberOfChars;
         {
             returnLength = numberOfChars - (position - size);
             position = size;
-        } //End block
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_568566446 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_568566446;
-        // ---------- Original Method ----------
-        //if (eof) {
-            //throw new IOException("Skip after end of file");
-        //}
-        //if (position == size) {
-            //return doEndOfFile();
-        //}
-        //position += numberOfChars;
-        //long returnLength = numberOfChars;
-        //if (position > size) {
-            //returnLength = numberOfChars - (position - size);
-            //position = size;
-        //}
-        //return returnLength;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -257,8 +263,8 @@ public class NullReader extends Reader {
     protected int processChar() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_899196950 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_899196950;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -267,24 +273,25 @@ public class NullReader extends Reader {
         addTaint(chars[0]);
         addTaint(offset);
         addTaint(length);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.173 -0400", hash_original_method = "19CB45ABF7C0C1D656700921E322A527", hash_generated_method = "A25DD94790A9491ECE023EC491E7914F")
     private int doEndOfFile() throws EOFException {
         eof = true;
         {
             if (DroidSafeAndroidRuntime.control) throw new EOFException();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1706190928 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1706190928;
-        // ---------- Original Method ----------
-        //eof = true;
-        //if (throwEofException) {
-            //throw new EOFException();
-        //}
-        //return -1;
+        
+        
+        
+            
+        
+        
     }
 
     

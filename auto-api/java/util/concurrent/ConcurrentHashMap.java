@@ -1,11 +1,11 @@
 package java.util.concurrent;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.concurrent.locks.*;
 import java.util.*;
@@ -43,7 +43,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         int ssize = 1;
         {
             ssize <<= 1;
-        } //End block
+        } 
         segmentShift = 32 - sshift;
         segmentMask = ssize - 1;
         this.segments = Segment.newArray(ssize);
@@ -54,11 +54,11 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         {
             int i = 0;
             this.segments[i] = new Segment<K,V>(cap, loadFactor);
-        } //End collapsed parenthetic
+        } 
         addTaint(initialCapacity);
         addTaint(concurrencyLevel);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -67,7 +67,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         this(initialCapacity, loadFactor, DEFAULT_CONCURRENCY_LEVEL);
         addTaint(initialCapacity);
         addTaint(loadFactor);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -75,14 +75,14 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     public  ConcurrentHashMap(int initialCapacity) {
         this(initialCapacity, DEFAULT_LOAD_FACTOR, DEFAULT_CONCURRENCY_LEVEL);
         addTaint(initialCapacity);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.274 -0400", hash_original_method = "DFADDF9198F2268E7EB2B4F062BE54B9", hash_generated_method = "D4298CEE30095C17DFF133A738118CBC")
     public  ConcurrentHashMap() {
         this(DEFAULT_INITIAL_CAPACITY, DEFAULT_LOAD_FACTOR, DEFAULT_CONCURRENCY_LEVEL);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -93,8 +93,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
              DEFAULT_LOAD_FACTOR, DEFAULT_CONCURRENCY_LEVEL);
         putAll(m);
         addTaint(m.getTaint());
-        // ---------- Original Method ----------
-        //putAll(m);
+        
+        
     }
 
     
@@ -110,13 +110,13 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.275 -0400", hash_original_method = "9480E4BE528687F57BD0A5E0057A4838", hash_generated_method = "6CACAF00BD54EC52398E52BA529A8692")
     final Segment<K,V> segmentFor(int hash) {
-        Segment<K,V> varB4EAC82CA7396A68D541C85D26508E83_705957343 = null; //Variable for return #1
+        Segment<K,V> varB4EAC82CA7396A68D541C85D26508E83_705957343 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_705957343 = segments[(hash >>> segmentShift) & segmentMask];
         addTaint(hash);
-        varB4EAC82CA7396A68D541C85D26508E83_705957343.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_705957343.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_705957343;
-        // ---------- Original Method ----------
-        //return segments[(hash >>> segmentShift) & segmentMask];
+        
+        
     }
 
     
@@ -129,36 +129,37 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             int i = 0;
             {
                 mcsum += mc[i] = segments[i].modCount;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 int i = 0;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1600478655 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1600478655;
-        // ---------- Original Method ----------
-        //final Segment<K,V>[] segments = this.segments;
-        //int[] mc = new int[segments.length];
-        //int mcsum = 0;
-        //for (int i = 0; i < segments.length; ++i) {
-            //if (segments[i].count != 0)
-                //return false;
-            //else
-                //mcsum += mc[i] = segments[i].modCount;
-        //}
-        //if (mcsum != 0) {
-            //for (int i = 0; i < segments.length; ++i) {
-                //if (segments[i].count != 0 ||
-                    //mc[i] != segments[i].modCount)
-                    //return false;
-            //}
-        //}
-        //return true;
+        
+        
+        
+        
+        
+            
+                
+            
+                
+        
+        
+            
+                
+                    
+                    
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.276 -0400", hash_original_method = "BA4A00EBCDE2550C0DA253B4E73A18FB", hash_generated_method = "FB7DB58FCB359636AE3A3CF5FAE56F59")
     public int size() {
         final Segment<K,V>[] segments = this.segments;
@@ -176,8 +177,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                     {
                         sum += segments[i].count;
                         mcsum += mc[i] = segments[i].modCount;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     {
                         int i = 0;
@@ -185,48 +186,50 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                             check += segments[i].count;
                             {
                                 check = -1;
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             sum = 0;
             {
                 int i = 0;
                 segments[i].lock();
-            } //End collapsed parenthetic
+            } 
             {
                 int i = 0;
                 sum += segments[i].count;
-            } //End collapsed parenthetic
+            } 
             {
                 int i = 0;
                 segments[i].unlock();
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1534710788 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1534710788;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.277 -0400", hash_original_method = "332CB84E85FBD8A2CB62BBB184B280CA", hash_generated_method = "E7E8290C4AB2A8E8D35E366DF72F46C8")
     public V get(Object key) {
-        V varB4EAC82CA7396A68D541C85D26508E83_1725122818 = null; //Variable for return #1
+        V varB4EAC82CA7396A68D541C85D26508E83_1725122818 = null; 
         int hash = hash(key.hashCode());
         varB4EAC82CA7396A68D541C85D26508E83_1725122818 = segmentFor(hash).get(key, hash);
         addTaint(key.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1725122818.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1725122818.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1725122818;
-        // ---------- Original Method ----------
-        //int hash = hash(key.hashCode());
-        //return segmentFor(hash).get(key, hash);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.277 -0400", hash_original_method = "6145F82DE390788BB7B29DCBC031D263", hash_generated_method = "ABDF3E8829936C6B26419CFF1AF33727")
     public boolean containsKey(Object key) {
         int hash = hash(key.hashCode());
@@ -234,12 +237,13 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         addTaint(key.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_747289322 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_747289322;
-        // ---------- Original Method ----------
-        //int hash = hash(key.hashCode());
-        //return segmentFor(hash).containsKey(key, hash);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.278 -0400", hash_original_method = "F1AF23545DF8C9E4F21CC9D8D7EE161E", hash_generated_method = "529FD203C2DF47A4B11BEFD8DB5DEEF0")
     public boolean containsValue(Object value) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -257,9 +261,9 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                         mcsum += mc[i] = segments[i].modCount;
                         {
                             boolean varFE6D9E1890DD06E80AC0DE0A80F87D5C_580599090 = (segments[i].containsValue(value));
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 boolean cleanSweep = true;
                 {
                     {
@@ -268,16 +272,16 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                             int c = segments[i].count;
                             {
                                 cleanSweep = false;
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             int i = 0;
             segments[i].lock();
-        } //End collapsed parenthetic
+        } 
         boolean found = false;
         try 
         {
@@ -288,70 +292,73 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                         boolean var9D288256F2CF948D64C59EFBBE617CE4_385263717 = (segments[i].containsValue(value));
                         {
                             found = true;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
             {
                 int i = 0;
                 segments[i].unlock();
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(value.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_855862551 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_855862551;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.279 -0400", hash_original_method = "E610C30BCCE300EF5870BDD2E1DFFA8F", hash_generated_method = "C847B07210266911166B8FB677A08AD9")
     public boolean contains(Object value) {
         boolean var9D0C71166B134CB9FEA4F5814A8E4863_791689991 = (containsValue(value));
         addTaint(value.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1072358729 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1072358729;
-        // ---------- Original Method ----------
-        //return containsValue(value);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.279 -0400", hash_original_method = "7B5FF6221D53537744EF141B1F8CB9FD", hash_generated_method = "1B5F6AFBEB769CCB6E13A4EF8D2006EC")
     public V put(K key, V value) {
-        V varB4EAC82CA7396A68D541C85D26508E83_1319977476 = null; //Variable for return #1
+        V varB4EAC82CA7396A68D541C85D26508E83_1319977476 = null; 
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         int hash = hash(key.hashCode());
         varB4EAC82CA7396A68D541C85D26508E83_1319977476 = segmentFor(hash).put(key, hash, value, false);
         addTaint(key.getTaint());
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1319977476.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1319977476.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1319977476;
-        // ---------- Original Method ----------
-        //if (value == null)
-            //throw new NullPointerException();
-        //int hash = hash(key.hashCode());
-        //return segmentFor(hash).put(key, hash, value, false);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.280 -0400", hash_original_method = "667464B5C7B8632F9930C4BABEB48EA8", hash_generated_method = "DDC59F8B7857DE28EFED945735F325C9")
     public V putIfAbsent(K key, V value) {
-        V varB4EAC82CA7396A68D541C85D26508E83_232235415 = null; //Variable for return #1
+        V varB4EAC82CA7396A68D541C85D26508E83_232235415 = null; 
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         int hash = hash(key.hashCode());
         varB4EAC82CA7396A68D541C85D26508E83_232235415 = segmentFor(hash).put(key, hash, value, true);
         addTaint(key.getTaint());
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_232235415.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_232235415.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_232235415;
-        // ---------- Original Method ----------
-        //if (value == null)
-            //throw new NullPointerException();
-        //int hash = hash(key.hashCode());
-        //return segmentFor(hash).put(key, hash, value, true);
+        
+        
+            
+        
+        
     }
 
     
@@ -361,28 +368,30 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             m.entrySet().iterator().hasNext();
             Map.Entry<? extends K, ? extends V> e = m.entrySet().iterator().next();
             put(e.getKey(), e.getValue());
-        } //End collapsed parenthetic
+        } 
         addTaint(m.getTaint());
-        // ---------- Original Method ----------
-        //for (Map.Entry<? extends K, ? extends V> e : m.entrySet())
-            //put(e.getKey(), e.getValue());
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.283 -0400", hash_original_method = "337505C9EECB4FFE48F33491B52A72CA", hash_generated_method = "B8B79EBF2494D4B905D8BA99281DC5A5")
     public V remove(Object key) {
-        V varB4EAC82CA7396A68D541C85D26508E83_369914670 = null; //Variable for return #1
+        V varB4EAC82CA7396A68D541C85D26508E83_369914670 = null; 
         int hash = hash(key.hashCode());
         varB4EAC82CA7396A68D541C85D26508E83_369914670 = segmentFor(hash).remove(key, hash, null);
         addTaint(key.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_369914670.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_369914670.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_369914670;
-        // ---------- Original Method ----------
-        //int hash = hash(key.hashCode());
-        //return segmentFor(hash).remove(key, hash, null);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.284 -0400", hash_original_method = "B30F0ED29C44EDE9B7A1F9EA4182F243", hash_generated_method = "875E886136C8EF7A68F409A7F683787C")
     public boolean remove(Object key, Object value) {
         int hash = hash(key.hashCode());
@@ -391,14 +400,15 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         addTaint(value.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1903538463 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1903538463;
-        // ---------- Original Method ----------
-        //int hash = hash(key.hashCode());
-        //if (value == null)
-            //return false;
-        //return segmentFor(hash).remove(key, hash, value) != null;
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.284 -0400", hash_original_method = "FFBE8ED355379D3641A692556CD55FD9", hash_generated_method = "E45A0CBDF6D0B63CD9890847151EC863")
     public boolean replace(K key, V oldValue, V newValue) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -409,102 +419,108 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         addTaint(newValue.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1997488694 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1997488694;
-        // ---------- Original Method ----------
-        //if (oldValue == null || newValue == null)
-            //throw new NullPointerException();
-        //int hash = hash(key.hashCode());
-        //return segmentFor(hash).replace(key, hash, oldValue, newValue);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.285 -0400", hash_original_method = "0AA66A0CD7ECE54F0D1BA81883147959", hash_generated_method = "DAD6026B888ED678B168869FD982B281")
     public V replace(K key, V value) {
-        V varB4EAC82CA7396A68D541C85D26508E83_1656236621 = null; //Variable for return #1
+        V varB4EAC82CA7396A68D541C85D26508E83_1656236621 = null; 
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         int hash = hash(key.hashCode());
         varB4EAC82CA7396A68D541C85D26508E83_1656236621 = segmentFor(hash).replace(key, hash, value);
         addTaint(key.getTaint());
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1656236621.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1656236621.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1656236621;
-        // ---------- Original Method ----------
-        //if (value == null)
-            //throw new NullPointerException();
-        //int hash = hash(key.hashCode());
-        //return segmentFor(hash).replace(key, hash, value);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.286 -0400", hash_original_method = "F4B890B3C1A244A1C39416FB7B7BF8FF", hash_generated_method = "3412EAFC29D2354C02C0AF758845BBAC")
     public void clear() {
         {
             int i = 0;
             segments[i].clear();
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //for (int i = 0; i < segments.length; ++i)
-            //segments[i].clear();
+        } 
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.287 -0400", hash_original_method = "476F610DDCFF0EB4D26DB47138B4B0A3", hash_generated_method = "F81913B2381A2EBCAD7634321CC398F2")
     public Set<K> keySet() {
-        Set<K> varB4EAC82CA7396A68D541C85D26508E83_1158199314 = null; //Variable for return #1
+        Set<K> varB4EAC82CA7396A68D541C85D26508E83_1158199314 = null; 
         Set<K> ks = keySet;
         varB4EAC82CA7396A68D541C85D26508E83_1158199314 = (ks != null) ? ks : (keySet = new KeySet());
-        varB4EAC82CA7396A68D541C85D26508E83_1158199314.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1158199314.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1158199314;
-        // ---------- Original Method ----------
-        //Set<K> ks = keySet;
-        //return (ks != null) ? ks : (keySet = new KeySet());
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.289 -0400", hash_original_method = "04B12ED0E2A0A54B9C93D860501FCFFB", hash_generated_method = "7564D0F64AFA127B07B0D50A0FD4B8BD")
     public Collection<V> values() {
-        Collection<V> varB4EAC82CA7396A68D541C85D26508E83_882230873 = null; //Variable for return #1
+        Collection<V> varB4EAC82CA7396A68D541C85D26508E83_882230873 = null; 
         Collection<V> vs = values;
         varB4EAC82CA7396A68D541C85D26508E83_882230873 = (vs != null) ? vs : (values = new Values());
-        varB4EAC82CA7396A68D541C85D26508E83_882230873.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_882230873.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_882230873;
-        // ---------- Original Method ----------
-        //Collection<V> vs = values;
-        //return (vs != null) ? vs : (values = new Values());
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.292 -0400", hash_original_method = "A019E2D84135E4E25D7FF3C9850D91E8", hash_generated_method = "75D0419235EED8FAD8FA937F55EB6BEB")
     public Set<Map.Entry<K,V>> entrySet() {
-        Set<Map.Entry<K,V>> varB4EAC82CA7396A68D541C85D26508E83_396175473 = null; //Variable for return #1
+        Set<Map.Entry<K,V>> varB4EAC82CA7396A68D541C85D26508E83_396175473 = null; 
         Set<Map.Entry<K,V>> es = entrySet;
         varB4EAC82CA7396A68D541C85D26508E83_396175473 = (es != null) ? es : (entrySet = new EntrySet());
-        varB4EAC82CA7396A68D541C85D26508E83_396175473.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_396175473.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_396175473;
-        // ---------- Original Method ----------
-        //Set<Map.Entry<K,V>> es = entrySet;
-        //return (es != null) ? es : (entrySet = new EntrySet());
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.293 -0400", hash_original_method = "1378C07218E9226BC9F7AD403D7C2636", hash_generated_method = "6AD4B877B38C5AE38FD5D4B9A0AD8B2A")
     public Enumeration<K> keys() {
-        Enumeration<K> varB4EAC82CA7396A68D541C85D26508E83_1015142361 = null; //Variable for return #1
+        Enumeration<K> varB4EAC82CA7396A68D541C85D26508E83_1015142361 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1015142361 = new KeyIterator();
-        varB4EAC82CA7396A68D541C85D26508E83_1015142361.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1015142361.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1015142361;
-        // ---------- Original Method ----------
-        //return new KeyIterator();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.294 -0400", hash_original_method = "5CBB59F043F7E5A98C79AC06A0CCF84B", hash_generated_method = "63EF09249C20669BDA7793BC9899D32D")
     public Enumeration<V> elements() {
-        Enumeration<V> varB4EAC82CA7396A68D541C85D26508E83_1814761324 = null; //Variable for return #1
+        Enumeration<V> varB4EAC82CA7396A68D541C85D26508E83_1814761324 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1814761324 = new ValueIterator();
-        varB4EAC82CA7396A68D541C85D26508E83_1814761324.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1814761324.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1814761324;
-        // ---------- Original Method ----------
-        //return new ValueIterator();
+        
+        
     }
 
     
@@ -528,39 +544,39 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                 {
                                     s.writeObject(e.key);
                                     s.writeObject(e.value);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 finally 
                 {
                     seg.unlock();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         s.writeObject(null);
         s.writeObject(null);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //s.defaultWriteObject();
-        //for (int k = 0; k < segments.length; ++k) {
-            //Segment<K,V> seg = segments[k];
-            //seg.lock();
-            //try {
-                //HashEntry<K,V>[] tab = seg.table;
-                //for (int i = 0; i < tab.length; ++i) {
-                    //for (HashEntry<K,V> e = tab[i]; e != null; e = e.next) {
-                        //s.writeObject(e.key);
-                        //s.writeObject(e.value);
-                    //}
-                //}
-            //} finally {
-                //seg.unlock();
-            //}
-        //}
-        //s.writeObject(null);
-        //s.writeObject(null);
+        
+        
+        
+            
+            
+            
+                
+                
+                    
+                        
+                        
+                    
+                
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -571,26 +587,26 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             int i = 0;
             {
                 segments[i].setTable(new HashEntry[1]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             K key = (K) s.readObject();
             V value = (V) s.readObject();
             put(key, value);
-        } //End block
+        } 
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //s.defaultReadObject();
-        //for (int i = 0; i < segments.length; ++i) {
-            //segments[i].setTable(new HashEntry[1]);
-        //}
-        //for (;;) {
-            //K key = (K) s.readObject();
-            //V value = (V) s.readObject();
-            //if (key == null)
-                //break;
-            //put(key, value);
-        //}
+        
+        
+        
+            
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -614,11 +630,11 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             this.hash = hash;
             this.next = next;
             this.value = value;
-            // ---------- Original Method ----------
-            //this.key = key;
-            //this.hash = hash;
-            //this.next = next;
-            //this.value = value;
+            
+            
+            
+            
+            
         }
 
         
@@ -654,9 +670,9 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             loadFactor = lf;
             setTable(HashEntry.<K,V>newArray(initialCapacity));
             addTaint(initialCapacity);
-            // ---------- Original Method ----------
-            //loadFactor = lf;
-            //setTable(HashEntry.<K,V>newArray(initialCapacity));
+            
+            
+            
         }
 
         
@@ -670,56 +686,56 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
          void setTable(HashEntry<K,V>[] newTable) {
             threshold = (int)(newTable.length * loadFactor);
             table = newTable;
-            // ---------- Original Method ----------
-            //threshold = (int)(newTable.length * loadFactor);
-            //table = newTable;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.301 -0400", hash_original_method = "526D0582321A198EF4385AC6C7D29654", hash_generated_method = "6E62798C430B8C921B4B817862C8B0DC")
          HashEntry<K,V> getFirst(int hash) {
-            HashEntry<K,V> varB4EAC82CA7396A68D541C85D26508E83_1137329796 = null; //Variable for return #1
+            HashEntry<K,V> varB4EAC82CA7396A68D541C85D26508E83_1137329796 = null; 
             HashEntry<K,V>[] tab = table;
             varB4EAC82CA7396A68D541C85D26508E83_1137329796 = tab[hash & (tab.length - 1)];
             addTaint(hash);
-            varB4EAC82CA7396A68D541C85D26508E83_1137329796.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1137329796.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1137329796;
-            // ---------- Original Method ----------
-            //HashEntry<K,V>[] tab = table;
-            //return tab[hash & (tab.length - 1)];
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.302 -0400", hash_original_method = "6C9E8EADE7BF0CF7C06CF8A72D599D54", hash_generated_method = "CBE404264DDDC83CA9FB9475AAE7FEE4")
          V readValueUnderLock(HashEntry<K,V> e) {
-            V varB4EAC82CA7396A68D541C85D26508E83_484352419 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_484352419 = null; 
             lock();
             try 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_484352419 = e.value;
-            } //End block
+            } 
             finally 
             {
                 unlock();
-            } //End block
+            } 
             addTaint(e.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_484352419.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_484352419.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_484352419;
-            // ---------- Original Method ----------
-            //lock();
-            //try {
-                //return e.value;
-            //} finally {
-                //unlock();
-            //}
+            
+            
+            
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.303 -0400", hash_original_method = "1AC5B4CC2690982021F35FD4CB4FB319", hash_generated_method = "7ED4767998FD91ADB8A824A20F828FA7")
          V get(Object key, int hash) {
-            V varB4EAC82CA7396A68D541C85D26508E83_1970478396 = null; //Variable for return #1
-            V varB4EAC82CA7396A68D541C85D26508E83_676984555 = null; //Variable for return #2
-            V varB4EAC82CA7396A68D541C85D26508E83_1516506656 = null; //Variable for return #3
+            V varB4EAC82CA7396A68D541C85D26508E83_1970478396 = null; 
+            V varB4EAC82CA7396A68D541C85D26508E83_676984555 = null; 
+            V varB4EAC82CA7396A68D541C85D26508E83_1516506656 = null; 
             {
                 HashEntry<K,V> e = getFirst(hash);
                 {
@@ -729,42 +745,42 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                             V v = e.value;
                             varB4EAC82CA7396A68D541C85D26508E83_1970478396 = v;
                             varB4EAC82CA7396A68D541C85D26508E83_676984555 = readValueUnderLock(e);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     e = e.next;
-                } //End block
-            } //End block
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1516506656 = null;
             addTaint(key.getTaint());
             addTaint(hash);
-            V varA7E53CE21691AB073D9660D615818899_1461455230; //Final return value
+            V varA7E53CE21691AB073D9660D615818899_1461455230; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1461455230 = varB4EAC82CA7396A68D541C85D26508E83_1970478396;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_1461455230 = varB4EAC82CA7396A68D541C85D26508E83_676984555;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1461455230 = varB4EAC82CA7396A68D541C85D26508E83_1516506656;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1461455230.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1461455230.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1461455230;
-            // ---------- Original Method ----------
-            //if (count != 0) { 
-                //HashEntry<K,V> e = getFirst(hash);
-                //while (e != null) {
-                    //if (e.hash == hash && key.equals(e.key)) {
-                        //V v = e.value;
-                        //if (v != null)
-                            //return v;
-                        //return readValueUnderLock(e); 
-                    //}
-                    //e = e.next;
-                //}
-            //}
-            //return null;
+            
+            
+                
+                
+                    
+                        
+                        
+                            
+                        
+                    
+                    
+                
+            
+            
         }
 
         
@@ -775,24 +791,24 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 {
                     {
                         boolean var8A7AE4752A388591DE1859857B46D43A_1235310325 = (e.hash == hash && key.equals(e.key));
-                    } //End collapsed parenthetic
+                    } 
                     e = e.next;
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(key.getTaint());
             addTaint(hash);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1718748490 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1718748490;
-            // ---------- Original Method ----------
-            //if (count != 0) { 
-                //HashEntry<K,V> e = getFirst(hash);
-                //while (e != null) {
-                    //if (e.hash == hash && key.equals(e.key))
-                        //return true;
-                    //e = e.next;
-                //}
-            //}
-            //return false;
+            
+            
+                
+                
+                    
+                        
+                    
+                
+            
+            
         }
 
         
@@ -812,30 +828,30 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                 v = readValueUnderLock(e);
                                 {
                                     boolean varAF9B2D3689B03A5213EF203D483D8AD4_606687232 = (value.equals(v));
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             addTaint(value.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1623908898 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1623908898;
-            // ---------- Original Method ----------
-            //if (count != 0) { 
-                //HashEntry<K,V>[] tab = table;
-                //int len = tab.length;
-                //for (int i = 0 ; i < len; i++) {
-                    //for (HashEntry<K,V> e = tab[i]; e != null; e = e.next) {
-                        //V v = e.value;
-                        //if (v == null) 
-                            //v = readValueUnderLock(e);
-                        //if (value.equals(v))
-                            //return true;
-                    //}
-                //}
-            //}
-            //return false;
+            
+            
+                
+                
+                
+                    
+                        
+                        
+                            
+                        
+                            
+                    
+                
+            
+            
         }
 
         
@@ -848,47 +864,47 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 {
                     boolean varFA336E0F01A8F7D94110F42C42943CEA_2028146791 = (e != null && (e.hash != hash || !key.equals(e.key)));
                     e = e.next;
-                } //End collapsed parenthetic
+                } 
                 boolean replaced = false;
                 {
                     boolean varB391AA6784122268E404E2A55161AFDC_86208345 = (e != null && oldValue.equals(e.value));
                     {
                         replaced = true;
                         e.value = newValue;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             finally 
             {
                 unlock();
-            } //End block
+            } 
             addTaint(key.getTaint());
             addTaint(hash);
             addTaint(oldValue.getTaint());
             addTaint(newValue.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1788503607 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1788503607;
-            // ---------- Original Method ----------
-            //lock();
-            //try {
-                //HashEntry<K,V> e = getFirst(hash);
-                //while (e != null && (e.hash != hash || !key.equals(e.key)))
-                    //e = e.next;
-                //boolean replaced = false;
-                //if (e != null && oldValue.equals(e.value)) {
-                    //replaced = true;
-                    //e.value = newValue;
-                //}
-                //return replaced;
-            //} finally {
-                //unlock();
-            //}
+            
+            
+            
+                
+                
+                    
+                
+                
+                    
+                    
+                
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.305 -0400", hash_original_method = "496F1B463B31D22372CDAB52F4D749A3", hash_generated_method = "D4BF9CC6F8846B3999A6A5EAD6CC485B")
          V replace(K key, int hash, V newValue) {
-            V varB4EAC82CA7396A68D541C85D26508E83_1920663674 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_1920663674 = null; 
             lock();
             try 
             {
@@ -896,44 +912,44 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 {
                     boolean varFA336E0F01A8F7D94110F42C42943CEA_1285759580 = (e != null && (e.hash != hash || !key.equals(e.key)));
                     e = e.next;
-                } //End collapsed parenthetic
+                } 
                 V oldValue = null;
                 {
                     oldValue = e.value;
                     e.value = newValue;
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1920663674 = oldValue;
-            } //End block
+            } 
             finally 
             {
                 unlock();
-            } //End block
+            } 
             addTaint(key.getTaint());
             addTaint(hash);
             addTaint(newValue.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1920663674.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1920663674.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1920663674;
-            // ---------- Original Method ----------
-            //lock();
-            //try {
-                //HashEntry<K,V> e = getFirst(hash);
-                //while (e != null && (e.hash != hash || !key.equals(e.key)))
-                    //e = e.next;
-                //V oldValue = null;
-                //if (e != null) {
-                    //oldValue = e.value;
-                    //e.value = newValue;
-                //}
-                //return oldValue;
-            //} finally {
-                //unlock();
-            //}
+            
+            
+            
+                
+                
+                    
+                
+                
+                    
+                    
+                
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.306 -0400", hash_original_method = "F92903F43B391F8F1B397027DA8E7AA9", hash_generated_method = "9188D9D2FCFBEF2911223967229A7653")
          V put(K key, int hash, V value, boolean onlyIfAbsent) {
-            V varB4EAC82CA7396A68D541C85D26508E83_173367989 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_173367989 = null; 
             lock();
             try 
             {
@@ -946,31 +962,31 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 {
                     boolean varFA336E0F01A8F7D94110F42C42943CEA_727672728 = (e != null && (e.hash != hash || !key.equals(e.key)));
                     e = e.next;
-                } //End collapsed parenthetic
+                } 
                 V oldValue;
                 {
                     oldValue = e.value;
                     e.value = value;
-                } //End block
+                } 
                 {
                     oldValue = null;
                     tab[index] = new HashEntry<K,V>(key, hash, first, value);
                     count = c;
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_173367989 = oldValue;
-            } //End block
+            } 
             finally 
             {
                 unlock();
-            } //End block
+            } 
             addTaint(key.getTaint());
             addTaint(hash);
             addTaint(value.getTaint());
             addTaint(onlyIfAbsent);
-            varB4EAC82CA7396A68D541C85D26508E83_173367989.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_173367989.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_173367989;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1000,9 +1016,9 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                     {
                                         lastIdx = k;
                                         lastRun = last;
-                                    } //End block
-                                } //End block
-                            } //End collapsed parenthetic
+                                    } 
+                                } 
+                            } 
                             newTable[lastIdx] = lastRun;
                             {
                                 HashEntry<K,V> p = e;
@@ -1012,21 +1028,21 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                     HashEntry<K,V> n = newTable[k];
                                     newTable[k] = new HashEntry<K,V>(p.key, p.hash,
                                                              n, p.value);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             table = newTable;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.310 -0400", hash_original_method = "A22DE89D38A395B57956004D412DD3F5", hash_generated_method = "8672737B8AC29113D1155263B2D612B2")
          V remove(Object key, int hash, Object value) {
-            V varB4EAC82CA7396A68D541C85D26508E83_1463547625 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_1463547625 = null; 
             lock();
             try 
             {
@@ -1038,7 +1054,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 {
                     boolean varFA336E0F01A8F7D94110F42C42943CEA_130422351 = (e != null && (e.hash != hash || !key.equals(e.key)));
                     e = e.next;
-                } //End collapsed parenthetic
+                } 
                 V oldValue = null;
                 {
                     V v = e.value;
@@ -1052,25 +1068,25 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                 p = p.next;
                                 newFirst = new HashEntry<K,V>(p.key, p.hash,
                                                           newFirst, p.value);
-                            } //End collapsed parenthetic
+                            } 
                             tab[index] = newFirst;
                             count = c;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1463547625 = oldValue;
-            } //End block
+            } 
             finally 
             {
                 unlock();
-            } //End block
+            } 
             addTaint(key.getTaint());
             addTaint(hash);
             addTaint(value.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1463547625.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1463547625.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1463547625;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1084,27 +1100,27 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                     {
                         int i = 0;
                         tab[i] = null;
-                    } //End collapsed parenthetic
+                    } 
                     count = 0;
-                } //End block
+                } 
                 finally 
                 {
                     unlock();
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if (count != 0) {
-                //lock();
-                //try {
-                    //HashEntry<K,V>[] tab = table;
-                    //for (int i = 0; i < tab.length ; i++)
-                        //tab[i] = null;
-                    //++modCount;
-                    //count = 0; 
-                //} finally {
-                    //unlock();
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                
+                    
+                    
+                        
+                    
+                    
+                
+                    
+                
+            
         }
 
         
@@ -1137,10 +1153,10 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             nextSegmentIndex = segments.length - 1;
             nextTableIndex = -1;
             advance();
-            // ---------- Original Method ----------
-            //nextSegmentIndex = segments.length - 1;
-            //nextTableIndex = -1;
-            //advance();
+            
+            
+            
+            
         }
 
         
@@ -1149,8 +1165,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             boolean varA4B7F1D30987591EF97AE96837F93D35_1051520204 = (hasNext());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1211629963 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1211629963;
-            // ---------- Original Method ----------
-            //return hasNext();
+            
+            
         }
 
         
@@ -1158,12 +1174,12 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         final void advance() {
             {
                 boolean varAE56CE09D98F8D249FB4EAAAC2365BBF_601498644 = (nextEntry != null && (nextEntry = nextEntry.next) != null);
-            } //End collapsed parenthetic
+            } 
             {
                 {
                     boolean var63500D3C047D4C906175A14EF6FEFB9D_679026107 = ((nextEntry = currentTable[nextTableIndex--]) != null);
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             {
                 Segment<K,V> seg = segments[nextSegmentIndex--];
                 {
@@ -1175,31 +1191,31 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                 boolean var561CE7603C783A55D13FDCDDA31772EC_1747972079 = ((nextEntry = currentTable[j]) != null);
                                 {
                                     nextTableIndex = j - 1;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if (nextEntry != null && (nextEntry = nextEntry.next) != null)
-                //return;
-            //while (nextTableIndex >= 0) {
-                //if ( (nextEntry = currentTable[nextTableIndex--]) != null)
-                    //return;
-            //}
-            //while (nextSegmentIndex >= 0) {
-                //Segment<K,V> seg = segments[nextSegmentIndex--];
-                //if (seg.count != 0) {
-                    //currentTable = seg.table;
-                    //for (int j = currentTable.length - 1; j >= 0; --j) {
-                        //if ( (nextEntry = currentTable[j]) != null) {
-                            //nextTableIndex = j - 1;
-                            //return;
-                        //}
-                    //}
-                //}
-            //}
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
+                
+            
+                
+                    
+            
+            
+                
+                
+                    
+                    
+                        
+                            
+                            
+                        
+                    
+                
+            
         }
 
         
@@ -1207,26 +1223,26 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_857587610 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_857587610;
-            // ---------- Original Method ----------
-            //return nextEntry != null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.319 -0400", hash_original_method = "DB7CF742BB593212DEE9E7DE200FEED8", hash_generated_method = "9324E2A170B546B9C3C14CA94B89BF1B")
          HashEntry<K,V> nextEntry() {
-            HashEntry<K,V> varB4EAC82CA7396A68D541C85D26508E83_1389232511 = null; //Variable for return #1
+            HashEntry<K,V> varB4EAC82CA7396A68D541C85D26508E83_1389232511 = null; 
             if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             lastReturned = nextEntry;
             advance();
             varB4EAC82CA7396A68D541C85D26508E83_1389232511 = lastReturned;
-            varB4EAC82CA7396A68D541C85D26508E83_1389232511.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1389232511.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1389232511;
-            // ---------- Original Method ----------
-            //if (nextEntry == null)
-                //throw new NoSuchElementException();
-            //lastReturned = nextEntry;
-            //advance();
-            //return lastReturned;
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -1235,11 +1251,11 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
             ConcurrentHashMap.this.remove(lastReturned.key);
             lastReturned = null;
-            // ---------- Original Method ----------
-            //if (lastReturned == null)
-                //throw new IllegalStateException();
-            //ConcurrentHashMap.this.remove(lastReturned.key);
-            //lastReturned = null;
+            
+            
+                
+            
+            
         }
 
         
@@ -1252,29 +1268,29 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.322 -0400", hash_original_method = "F1A12FA7FDFCBC1B54210EBDFEB312D4", hash_generated_method = "F1A12FA7FDFCBC1B54210EBDFEB312D4")
         public KeyIterator ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.323 -0400", hash_original_method = "AC02B860B54618170BE24E50FF82F167", hash_generated_method = "6FC43CCC5A581851136FB44ED9EFD93A")
         public K next() {
-            K varB4EAC82CA7396A68D541C85D26508E83_1056883406 = null; //Variable for return #1
+            K varB4EAC82CA7396A68D541C85D26508E83_1056883406 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1056883406 = super.nextEntry().key;
-            varB4EAC82CA7396A68D541C85D26508E83_1056883406.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1056883406.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1056883406;
-            // ---------- Original Method ----------
-            //return super.nextEntry().key;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.324 -0400", hash_original_method = "1473F8B0EF10582FE9B24F9D164CBEAD", hash_generated_method = "370D54BE3AAE2CADBB449D3AFA6E4BC3")
         public K nextElement() {
-            K varB4EAC82CA7396A68D541C85D26508E83_558993161 = null; //Variable for return #1
+            K varB4EAC82CA7396A68D541C85D26508E83_558993161 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_558993161 = super.nextEntry().key;
-            varB4EAC82CA7396A68D541C85D26508E83_558993161.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_558993161.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_558993161;
-            // ---------- Original Method ----------
-            //return super.nextEntry().key;
+            
+            
         }
 
         
@@ -1287,29 +1303,29 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.324 -0400", hash_original_method = "F211FE83547E030E3E0992549D0B21BC", hash_generated_method = "F211FE83547E030E3E0992549D0B21BC")
         public ValueIterator ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.325 -0400", hash_original_method = "282B954004CE321F97FD15862590F160", hash_generated_method = "7ADA228F63CA69FCFBE7802808E0AC5C")
         public V next() {
-            V varB4EAC82CA7396A68D541C85D26508E83_64905453 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_64905453 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_64905453 = super.nextEntry().value;
-            varB4EAC82CA7396A68D541C85D26508E83_64905453.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_64905453.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_64905453;
-            // ---------- Original Method ----------
-            //return super.nextEntry().value;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.326 -0400", hash_original_method = "95D48303D225ADC424CB718F2FA08908", hash_generated_method = "D4613BE504D092918C6B1B8D0DFAD0FC")
         public V nextElement() {
-            V varB4EAC82CA7396A68D541C85D26508E83_2004584222 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_2004584222 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2004584222 = super.nextEntry().value;
-            varB4EAC82CA7396A68D541C85D26508E83_2004584222.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2004584222.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2004584222;
-            // ---------- Original Method ----------
-            //return super.nextEntry().value;
+            
+            
         }
 
         
@@ -1324,25 +1340,25 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             super(k,v);
             addTaint(k.getTaint());
             addTaint(v.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.327 -0400", hash_original_method = "38F302BB69197C5906EE6F553583F6F9", hash_generated_method = "DA22CCF832EA6DF4F6AA069B93311A11")
         public V setValue(V value) {
-            V varB4EAC82CA7396A68D541C85D26508E83_1732834490 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_1732834490 = null; 
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             V v = super.setValue(value);
             ConcurrentHashMap.this.put(getKey(), value);
             varB4EAC82CA7396A68D541C85D26508E83_1732834490 = v;
             addTaint(value.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1732834490.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1732834490.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1732834490;
-            // ---------- Original Method ----------
-            //if (value == null) throw new NullPointerException();
-            //V v = super.setValue(value);
-            //ConcurrentHashMap.this.put(getKey(), value);
-            //return v;
+            
+            
+            
+            
+            
         }
 
         
@@ -1355,20 +1371,20 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.327 -0400", hash_original_method = "B80B70BCEBFE7A41A1C46DBA21C09DAD", hash_generated_method = "B80B70BCEBFE7A41A1C46DBA21C09DAD")
         public EntryIterator ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.328 -0400", hash_original_method = "DA1DC8695C9406305A6247D7AF5617DE", hash_generated_method = "6F452270C78CA7B69299849C8CFACB9B")
         public Map.Entry<K,V> next() {
-            Map.Entry<K,V> varB4EAC82CA7396A68D541C85D26508E83_202451276 = null; //Variable for return #1
+            Map.Entry<K,V> varB4EAC82CA7396A68D541C85D26508E83_202451276 = null; 
             HashEntry<K,V> e = super.nextEntry();
             varB4EAC82CA7396A68D541C85D26508E83_202451276 = new WriteThroughEntry(e.key, e.value);
-            varB4EAC82CA7396A68D541C85D26508E83_202451276.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_202451276.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_202451276;
-            // ---------- Original Method ----------
-            //HashEntry<K,V> e = super.nextEntry();
-            //return new WriteThroughEntry(e.key, e.value);
+            
+            
+            
         }
 
         
@@ -1381,18 +1397,18 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.328 -0400", hash_original_method = "8EEFEB9CAE8A4D06D5B6F35742C5D3CF", hash_generated_method = "8EEFEB9CAE8A4D06D5B6F35742C5D3CF")
         public KeySet ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.329 -0400", hash_original_method = "29CBC31BB957230FC921EA16C45EAF59", hash_generated_method = "1BFBBE7249712AED7940E157A2AE261D")
         public Iterator<K> iterator() {
-            Iterator<K> varB4EAC82CA7396A68D541C85D26508E83_590864025 = null; //Variable for return #1
+            Iterator<K> varB4EAC82CA7396A68D541C85D26508E83_590864025 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_590864025 = new KeyIterator();
-            varB4EAC82CA7396A68D541C85D26508E83_590864025.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_590864025.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_590864025;
-            // ---------- Original Method ----------
-            //return new KeyIterator();
+            
+            
         }
 
         
@@ -1401,8 +1417,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             int var2AE1BD72658B11B83F17E3D8DE9C3742_351848298 = (ConcurrentHashMap.this.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_983569840 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_983569840;
-            // ---------- Original Method ----------
-            //return ConcurrentHashMap.this.size();
+            
+            
         }
 
         
@@ -1411,8 +1427,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             boolean var2129446389ED975B0F4481D55BB56F6F_463157611 = (ConcurrentHashMap.this.isEmpty());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1831712360 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1831712360;
-            // ---------- Original Method ----------
-            //return ConcurrentHashMap.this.isEmpty();
+            
+            
         }
 
         
@@ -1422,8 +1438,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_946303077 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_946303077;
-            // ---------- Original Method ----------
-            //return ConcurrentHashMap.this.containsKey(o);
+            
+            
         }
 
         
@@ -1433,16 +1449,16 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_713354580 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_713354580;
-            // ---------- Original Method ----------
-            //return ConcurrentHashMap.this.remove(o) != null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.332 -0400", hash_original_method = "1F05FD987B33CE5DB834C627215292DB", hash_generated_method = "29610EFF6CC76F338DB294003E83D492")
         public void clear() {
             ConcurrentHashMap.this.clear();
-            // ---------- Original Method ----------
-            //ConcurrentHashMap.this.clear();
+            
+            
         }
 
         
@@ -1455,18 +1471,18 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.332 -0400", hash_original_method = "8414E1987B9E45F65340921EF84D9A89", hash_generated_method = "8414E1987B9E45F65340921EF84D9A89")
         public Values ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.333 -0400", hash_original_method = "3C7262C80A3C469695720BFA46AA113C", hash_generated_method = "BA7EC36DCAC932C59D560259F696E051")
         public Iterator<V> iterator() {
-            Iterator<V> varB4EAC82CA7396A68D541C85D26508E83_1766536095 = null; //Variable for return #1
+            Iterator<V> varB4EAC82CA7396A68D541C85D26508E83_1766536095 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1766536095 = new ValueIterator();
-            varB4EAC82CA7396A68D541C85D26508E83_1766536095.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1766536095.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1766536095;
-            // ---------- Original Method ----------
-            //return new ValueIterator();
+            
+            
         }
 
         
@@ -1475,8 +1491,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             int var2AE1BD72658B11B83F17E3D8DE9C3742_887016620 = (ConcurrentHashMap.this.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1958341162 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1958341162;
-            // ---------- Original Method ----------
-            //return ConcurrentHashMap.this.size();
+            
+            
         }
 
         
@@ -1485,8 +1501,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             boolean var2129446389ED975B0F4481D55BB56F6F_559444036 = (ConcurrentHashMap.this.isEmpty());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_423970598 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_423970598;
-            // ---------- Original Method ----------
-            //return ConcurrentHashMap.this.isEmpty();
+            
+            
         }
 
         
@@ -1496,16 +1512,16 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_742081872 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_742081872;
-            // ---------- Original Method ----------
-            //return ConcurrentHashMap.this.containsValue(o);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.334 -0400", hash_original_method = "1F05FD987B33CE5DB834C627215292DB", hash_generated_method = "29610EFF6CC76F338DB294003E83D492")
         public void clear() {
             ConcurrentHashMap.this.clear();
-            // ---------- Original Method ----------
-            //ConcurrentHashMap.this.clear();
+            
+            
         }
 
         
@@ -1518,18 +1534,18 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.334 -0400", hash_original_method = "AA90B2AD56C6E037D76F6D8ACC9327A5", hash_generated_method = "AA90B2AD56C6E037D76F6D8ACC9327A5")
         public EntrySet ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.335 -0400", hash_original_method = "A1AF959F7C17DD47B4014053BC413A23", hash_generated_method = "D9ADD418A6EF6A839B938E6DE662BA52")
         public Iterator<Map.Entry<K,V>> iterator() {
-            Iterator<Map.Entry<K,V>> varB4EAC82CA7396A68D541C85D26508E83_456843138 = null; //Variable for return #1
+            Iterator<Map.Entry<K,V>> varB4EAC82CA7396A68D541C85D26508E83_456843138 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_456843138 = new EntryIterator();
-            varB4EAC82CA7396A68D541C85D26508E83_456843138.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_456843138.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_456843138;
-            // ---------- Original Method ----------
-            //return new EntryIterator();
+            
+            
         }
 
         
@@ -1541,12 +1557,12 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_892280060 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_892280060;
-            // ---------- Original Method ----------
-            //if (!(o instanceof Map.Entry))
-                //return false;
-            //Map.Entry<?,?> e = (Map.Entry<?,?>)o;
-            //V v = ConcurrentHashMap.this.get(e.getKey());
-            //return v != null && v.equals(e.getValue());
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -1557,11 +1573,11 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1869467291 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1869467291;
-            // ---------- Original Method ----------
-            //if (!(o instanceof Map.Entry))
-                //return false;
-            //Map.Entry<?,?> e = (Map.Entry<?,?>)o;
-            //return ConcurrentHashMap.this.remove(e.getKey(), e.getValue());
+            
+            
+                
+            
+            
         }
 
         
@@ -1570,8 +1586,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             int var2AE1BD72658B11B83F17E3D8DE9C3742_2004085175 = (ConcurrentHashMap.this.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644793986 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644793986;
-            // ---------- Original Method ----------
-            //return ConcurrentHashMap.this.size();
+            
+            
         }
 
         
@@ -1580,16 +1596,16 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             boolean var2129446389ED975B0F4481D55BB56F6F_895033571 = (ConcurrentHashMap.this.isEmpty());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1094466006 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1094466006;
-            // ---------- Original Method ----------
-            //return ConcurrentHashMap.this.isEmpty();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:13.338 -0400", hash_original_method = "1F05FD987B33CE5DB834C627215292DB", hash_generated_method = "29610EFF6CC76F338DB294003E83D492")
         public void clear() {
             ConcurrentHashMap.this.clear();
-            // ---------- Original Method ----------
-            //ConcurrentHashMap.this.clear();
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package dalvik.system;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileDescriptor;
 import java.net.Socket;
@@ -16,7 +16,7 @@ public abstract class SocketTagger {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.776 -0400", hash_original_method = "3FCBFB017A056A47E7F458C1C015DE98", hash_generated_method = "3FCBFB017A056A47E7F458C1C015DE98")
     public SocketTagger ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -32,13 +32,13 @@ public abstract class SocketTagger {
             boolean varD46A2716AEC08881570CED6916EA1310_853262243 = (!socket.isClosed());
             {
                 tag(socket.getFileDescriptor$());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(socket.getTaint());
-        // ---------- Original Method ----------
-        //if (!socket.isClosed()) {
-            //tag(socket.getFileDescriptor$());
-        //}
+        
+        
+            
+        
     }
 
     
@@ -48,13 +48,13 @@ public abstract class SocketTagger {
             boolean varD46A2716AEC08881570CED6916EA1310_316985910 = (!socket.isClosed());
             {
                 untag(socket.getFileDescriptor$());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(socket.getTaint());
-        // ---------- Original Method ----------
-        //if (!socket.isClosed()) {
-            //untag(socket.getFileDescriptor$());
-        //}
+        
+        
+            
+        
     }
 
     
@@ -78,7 +78,7 @@ public abstract class SocketTagger {
         @Override
         public void tag(FileDescriptor socketDescriptor) throws SocketException {
             addTaint(socketDescriptor.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -86,7 +86,7 @@ public abstract class SocketTagger {
         @Override
         public void untag(FileDescriptor socketDescriptor) throws SocketException {
             addTaint(socketDescriptor.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

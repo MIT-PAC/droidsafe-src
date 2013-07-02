@@ -1,11 +1,11 @@
 package libcore.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.net.URI;
 import java.util.Date;
@@ -97,7 +97,7 @@ public final class RequestHeaders {
                     boolean varD77C8259EAFC94FDC3D657C8834E9487_839022175 = ("Cache-Control".equalsIgnoreCase(fieldName));
                     {
                         HeaderParser.parseCacheControl(value, handler);
-                    } //End block
+                    } 
                     {
                         boolean var56F25C5265F567B26213F2536EF32AC1_1758336370 = ("Pragma".equalsIgnoreCase(fieldName));
                         {
@@ -105,128 +105,130 @@ public final class RequestHeaders {
                                 boolean var43BD107A6E901C7747CCE7BFBB8DD07E_304921587 = (value.equalsIgnoreCase("no-cache"));
                                 {
                                     noCache = true;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         {
                             boolean var8DAE09CD6FB1152EE1004A7A7A8CE5E0_1364219116 = ("If-None-Match".equalsIgnoreCase(fieldName));
                             {
                                 ifNoneMatch = value;
-                            } //End block
+                            } 
                             {
                                 boolean varB088D15F96093D53CB7FE5B7CC0836F4_786188180 = ("If-Modified-Since".equalsIgnoreCase(fieldName));
                                 {
                                     ifModifiedSince = value;
-                                } //End block
+                                } 
                                 {
                                     boolean varC67E0A5BE37C2BCADE7BD8E8FBD99D7C_1575808683 = ("Authorization".equalsIgnoreCase(fieldName));
                                     {
                                         hasAuthorization = true;
-                                    } //End block
+                                    } 
                                     {
                                         boolean var83FEBE437E90CCE4FDE377518B344B6F_1488468601 = ("Content-Length".equalsIgnoreCase(fieldName));
                                         {
                                             try 
                                             {
                                                 contentLength = Integer.parseInt(value);
-                                            } //End block
+                                            } 
                                             catch (NumberFormatException ignored)
                                             { }
-                                        } //End block
+                                        } 
                                         {
                                             boolean varFEB01C2A2FAB43A71ACF71F602A1E7B8_1698734791 = ("Transfer-Encoding".equalsIgnoreCase(fieldName));
                                             {
                                                 transferEncoding = value;
-                                            } //End block
+                                            } 
                                             {
                                                 boolean var26CB77545109E7877658F31017118009_2118225432 = ("User-Agent".equalsIgnoreCase(fieldName));
                                                 {
                                                     userAgent = value;
-                                                } //End block
+                                                } 
                                                 {
                                                     boolean var91F34C4C3A2BB00AFC6A87F65E9909E1_637959743 = ("Host".equalsIgnoreCase(fieldName));
                                                     {
                                                         host = value;
-                                                    } //End block
+                                                    } 
                                                     {
                                                         boolean varA2563F9A072AFEA1AC1CD72AE8BD1A4E_495379428 = ("Connection".equalsIgnoreCase(fieldName));
                                                         {
                                                             connection = value;
-                                                        } //End block
+                                                        } 
                                                         {
                                                             boolean var6D5B3BEE656FBD0AF9E0BE01F11D009B_90860161 = ("Accept-Encoding".equalsIgnoreCase(fieldName));
                                                             {
                                                                 acceptEncoding = value;
-                                                            } //End block
+                                                            } 
                                                             {
                                                                 boolean var426283D7FE1D047628A22BB787AE0450_1046988229 = ("Content-Type".equalsIgnoreCase(fieldName));
                                                                 {
                                                                     contentType = value;
-                                                                } //End block
+                                                                } 
                                                                 {
                                                                     boolean varE9641B340B6E4D94EEAB0A00C194975F_1208037435 = ("Proxy-Authorization".equalsIgnoreCase(fieldName));
                                                                     {
                                                                         proxyAuthorization = value;
-                                                                    } //End block
-                                                                } //End collapsed parenthetic
-                                                            } //End collapsed parenthetic
-                                                        } //End collapsed parenthetic
-                                                    } //End collapsed parenthetic
-                                                } //End collapsed parenthetic
-                                            } //End collapsed parenthetic
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                                                                    } 
+                                                                } 
+                                                            } 
+                                                        } 
+                                                    } 
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.437 -0400", hash_original_method = "00B64F53B1189DFD8EFC83FE9CA41E37", hash_generated_method = "FD6E72764FE6A3DB4E9A08F4E816E58E")
     public boolean isChunked() {
         boolean varA16BCACE603C83FBCA10B7C6B1A17953_816913939 = ("chunked".equalsIgnoreCase(transferEncoding));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_553367130 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_553367130;
-        // ---------- Original Method ----------
-        //return "chunked".equalsIgnoreCase(transferEncoding);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.438 -0400", hash_original_method = "0C9005E446549CA2DCD479C6BCCC6A35", hash_generated_method = "7B41B191E5B5E9BC09D6CAE19C6695AF")
     public boolean hasConnectionClose() {
         boolean var81EEBB6E2271640A61DE6C091C411E9C_1700994508 = ("close".equalsIgnoreCase(connection));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_790373579 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_790373579;
-        // ---------- Original Method ----------
-        //return "close".equalsIgnoreCase(connection);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.438 -0400", hash_original_method = "F8E205165DB0FFA5BCD89362DFA95E13", hash_generated_method = "2C11375D97D5EB96394DD5CACC42B08C")
     public URI getUri() {
-        URI varB4EAC82CA7396A68D541C85D26508E83_725914374 = null; //Variable for return #1
+        URI varB4EAC82CA7396A68D541C85D26508E83_725914374 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_725914374 = uri;
-        varB4EAC82CA7396A68D541C85D26508E83_725914374.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_725914374.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_725914374;
-        // ---------- Original Method ----------
-        //return uri;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.438 -0400", hash_original_method = "8B8008667EA7E940C84B2A1E4AADF211", hash_generated_method = "940C09754066C95BF2C1862E5EC74D67")
     public RawHeaders getHeaders() {
-        RawHeaders varB4EAC82CA7396A68D541C85D26508E83_521810279 = null; //Variable for return #1
+        RawHeaders varB4EAC82CA7396A68D541C85D26508E83_521810279 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_521810279 = headers;
-        varB4EAC82CA7396A68D541C85D26508E83_521810279.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_521810279.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_521810279;
-        // ---------- Original Method ----------
-        //return headers;
+        
+        
     }
 
     
@@ -234,8 +236,8 @@ public final class RequestHeaders {
     public boolean isNoCache() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2008430153 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2008430153;
-        // ---------- Original Method ----------
-        //return noCache;
+        
+        
     }
 
     
@@ -243,8 +245,8 @@ public final class RequestHeaders {
     public int getMaxAgeSeconds() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328194788 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328194788;
-        // ---------- Original Method ----------
-        //return maxAgeSeconds;
+        
+        
     }
 
     
@@ -252,8 +254,8 @@ public final class RequestHeaders {
     public int getMaxStaleSeconds() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1564752840 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1564752840;
-        // ---------- Original Method ----------
-        //return maxStaleSeconds;
+        
+        
     }
 
     
@@ -261,8 +263,8 @@ public final class RequestHeaders {
     public int getMinFreshSeconds() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1152278322 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1152278322;
-        // ---------- Original Method ----------
-        //return minFreshSeconds;
+        
+        
     }
 
     
@@ -270,8 +272,8 @@ public final class RequestHeaders {
     public boolean isOnlyIfCached() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_725286792 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_725286792;
-        // ---------- Original Method ----------
-        //return onlyIfCached;
+        
+        
     }
 
     
@@ -279,8 +281,8 @@ public final class RequestHeaders {
     public boolean hasAuthorization() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1462598522 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1462598522;
-        // ---------- Original Method ----------
-        //return hasAuthorization;
+        
+        
     }
 
     
@@ -288,254 +290,263 @@ public final class RequestHeaders {
     public int getContentLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623193279 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623193279;
-        // ---------- Original Method ----------
-        //return contentLength;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.440 -0400", hash_original_method = "0DD6BAEEA01532BD95CE2FFB6DF498BA", hash_generated_method = "D2392E7D1C095315C501C642CB35A81B")
     public String getTransferEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1353535265 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1353535265 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1353535265 = transferEncoding;
-        varB4EAC82CA7396A68D541C85D26508E83_1353535265.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1353535265.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1353535265;
-        // ---------- Original Method ----------
-        //return transferEncoding;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.441 -0400", hash_original_method = "3896A2F0D61044E6B048D62FF1831396", hash_generated_method = "625E2F8A8BCC668584F8526D6B1FB8FB")
     public String getUserAgent() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2070057606 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2070057606 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2070057606 = userAgent;
-        varB4EAC82CA7396A68D541C85D26508E83_2070057606.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2070057606.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2070057606;
-        // ---------- Original Method ----------
-        //return userAgent;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.441 -0400", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "46EC712BD51E25884DC46AC2F482415E")
     public String getHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2108948998 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2108948998 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2108948998 = host;
-        varB4EAC82CA7396A68D541C85D26508E83_2108948998.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2108948998.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2108948998;
-        // ---------- Original Method ----------
-        //return host;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.441 -0400", hash_original_method = "B2D78684E046945E6BE853B24B15E901", hash_generated_method = "6DA1950CA8C3F77FDC10990A2C5E85AC")
     public String getConnection() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1569884002 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1569884002 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1569884002 = connection;
-        varB4EAC82CA7396A68D541C85D26508E83_1569884002.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1569884002.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1569884002;
-        // ---------- Original Method ----------
-        //return connection;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.442 -0400", hash_original_method = "410EE1417DB3FF49910D59AA9DB70C64", hash_generated_method = "0ECC28F3E557E35922B596E6F58AD624")
     public String getAcceptEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1007658196 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1007658196 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1007658196 = acceptEncoding;
-        varB4EAC82CA7396A68D541C85D26508E83_1007658196.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1007658196.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1007658196;
-        // ---------- Original Method ----------
-        //return acceptEncoding;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.442 -0400", hash_original_method = "4B51DEA5FB62A221AFC62E38AC96F76E", hash_generated_method = "607AF8004B58A048DC75455E3728992A")
     public String getContentType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_828150506 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_828150506 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_828150506 = contentType;
-        varB4EAC82CA7396A68D541C85D26508E83_828150506.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_828150506.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_828150506;
-        // ---------- Original Method ----------
-        //return contentType;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.442 -0400", hash_original_method = "1155C704429D96DA13DD63BD82AA2AE1", hash_generated_method = "A67FD134CADCB76AB6B9B72921A6AFC1")
     public String getIfModifiedSince() {
-        String varB4EAC82CA7396A68D541C85D26508E83_971054939 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_971054939 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_971054939 = ifModifiedSince;
-        varB4EAC82CA7396A68D541C85D26508E83_971054939.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_971054939.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_971054939;
-        // ---------- Original Method ----------
-        //return ifModifiedSince;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.442 -0400", hash_original_method = "94547B6348D449CB198230E7B6BBA258", hash_generated_method = "54A69F87D9057CCFAA7628843445B583")
     public String getIfNoneMatch() {
-        String varB4EAC82CA7396A68D541C85D26508E83_306879084 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_306879084 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_306879084 = ifNoneMatch;
-        varB4EAC82CA7396A68D541C85D26508E83_306879084.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_306879084.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_306879084;
-        // ---------- Original Method ----------
-        //return ifNoneMatch;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.443 -0400", hash_original_method = "0FC6BE3D1567DA200B4FD09DB67F8721", hash_generated_method = "B8F2C636C2CD540E3567A1C3E299C361")
     public String getProxyAuthorization() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1791441391 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1791441391 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1791441391 = proxyAuthorization;
-        varB4EAC82CA7396A68D541C85D26508E83_1791441391.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1791441391.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1791441391;
-        // ---------- Original Method ----------
-        //return proxyAuthorization;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.443 -0400", hash_original_method = "F33F8EDA09BCA13DCC3086A1647AF7B6", hash_generated_method = "E6960D9F60ED956BE541131B3F1B8283")
     public void setChunked() {
         {
             headers.removeAll("Transfer-Encoding");
-        } //End block
+        } 
         headers.add("Transfer-Encoding", "chunked");
         this.transferEncoding = "chunked";
-        // ---------- Original Method ----------
-        //if (this.transferEncoding != null) {
-            //headers.removeAll("Transfer-Encoding");
-        //}
-        //headers.add("Transfer-Encoding", "chunked");
-        //this.transferEncoding = "chunked";
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.443 -0400", hash_original_method = "B694A143946FBE7D78723DAA6432C1D4", hash_generated_method = "6FBC4E51BD6CDECD17F4FB5EEC734CFA")
     public void setContentLength(int contentLength) {
         {
             headers.removeAll("Content-Length");
-        } //End block
+        } 
         headers.add("Content-Length", Integer.toString(contentLength));
         this.contentLength = contentLength;
-        // ---------- Original Method ----------
-        //if (this.contentLength != -1) {
-            //headers.removeAll("Content-Length");
-        //}
-        //headers.add("Content-Length", Integer.toString(contentLength));
-        //this.contentLength = contentLength;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.444 -0400", hash_original_method = "DC11EC3DFE82D6B10C121117898B0E91", hash_generated_method = "496E60B2FDDD5519A4561AB71B57F978")
     public void setUserAgent(String userAgent) {
         {
             headers.removeAll("User-Agent");
-        } //End block
+        } 
         headers.add("User-Agent", userAgent);
         this.userAgent = userAgent;
-        // ---------- Original Method ----------
-        //if (this.userAgent != null) {
-            //headers.removeAll("User-Agent");
-        //}
-        //headers.add("User-Agent", userAgent);
-        //this.userAgent = userAgent;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.444 -0400", hash_original_method = "4B7D91EC3E8FCE0AF18D6E617B1DB541", hash_generated_method = "D9899DF3449911473AC09C9E5484D0D5")
     public void setHost(String host) {
         {
             headers.removeAll("Host");
-        } //End block
+        } 
         headers.add("Host", host);
         this.host = host;
-        // ---------- Original Method ----------
-        //if (this.host != null) {
-            //headers.removeAll("Host");
-        //}
-        //headers.add("Host", host);
-        //this.host = host;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.444 -0400", hash_original_method = "3089C76E2E8A40B02693EB13728E7CA8", hash_generated_method = "987FA60620B025A6FD4AFACD5B9FF9BE")
     public void setConnection(String connection) {
         {
             headers.removeAll("Connection");
-        } //End block
+        } 
         headers.add("Connection", connection);
         this.connection = connection;
-        // ---------- Original Method ----------
-        //if (this.connection != null) {
-            //headers.removeAll("Connection");
-        //}
-        //headers.add("Connection", connection);
-        //this.connection = connection;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.444 -0400", hash_original_method = "3166B34126860E43A5A770AE5259F680", hash_generated_method = "A0EEABB8BAE272D93330554EE3541856")
     public void setAcceptEncoding(String acceptEncoding) {
         {
             headers.removeAll("Accept-Encoding");
-        } //End block
+        } 
         headers.add("Accept-Encoding", acceptEncoding);
         this.acceptEncoding = acceptEncoding;
-        // ---------- Original Method ----------
-        //if (this.acceptEncoding != null) {
-            //headers.removeAll("Accept-Encoding");
-        //}
-        //headers.add("Accept-Encoding", acceptEncoding);
-        //this.acceptEncoding = acceptEncoding;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.445 -0400", hash_original_method = "F11902D80B4B7789460A90B0230527B4", hash_generated_method = "0CDB4AD100FC8114C372C03961E376AD")
     public void setContentType(String contentType) {
         {
             headers.removeAll("Content-Type");
-        } //End block
+        } 
         headers.add("Content-Type", contentType);
         this.contentType = contentType;
-        // ---------- Original Method ----------
-        //if (this.contentType != null) {
-            //headers.removeAll("Content-Type");
-        //}
-        //headers.add("Content-Type", contentType);
-        //this.contentType = contentType;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.445 -0400", hash_original_method = "64EEBAAA82D27C1188C64EDA1E7A0A05", hash_generated_method = "DF4520990954E1DA595A74F04F991BCA")
     public void setIfModifiedSince(Date date) {
         {
             headers.removeAll("If-Modified-Since");
-        } //End block
+        } 
         String formattedDate = HttpDate.format(date);
         headers.add("If-Modified-Since", formattedDate);
         ifModifiedSince = formattedDate;
         addTaint(date.getTaint());
-        // ---------- Original Method ----------
-        //if (ifModifiedSince != null) {
-            //headers.removeAll("If-Modified-Since");
-        //}
-        //String formattedDate = HttpDate.format(date);
-        //headers.add("If-Modified-Since", formattedDate);
-        //ifModifiedSince = formattedDate;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.445 -0400", hash_original_method = "E4824BE31FA5B08E01F3918FCE59BE57", hash_generated_method = "C427E25E5D5FD840D8CDE50218DF82FC")
     public void setIfNoneMatch(String ifNoneMatch) {
         {
             headers.removeAll("If-None-Match");
-        } //End block
+        } 
         headers.add("If-None-Match", ifNoneMatch);
         this.ifNoneMatch = ifNoneMatch;
-        // ---------- Original Method ----------
-        //if (this.ifNoneMatch != null) {
-            //headers.removeAll("If-None-Match");
-        //}
-        //headers.add("If-None-Match", ifNoneMatch);
-        //this.ifNoneMatch = ifNoneMatch;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -543,11 +554,12 @@ public final class RequestHeaders {
     public boolean hasConditions() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_987012143 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_987012143;
-        // ---------- Original Method ----------
-        //return ifModifiedSince != null || ifNoneMatch != null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.449 -0400", hash_original_method = "C85A0BA397422D1E98BAC89C6D5C00C6", hash_generated_method = "2191C397CC397E176A207D98DF0CD0A0")
     public void addCookies(Map<String, List<String>> allCookieHeaders) {
         {
@@ -560,18 +572,18 @@ public final class RequestHeaders {
                     boolean varFF8A784490A70F627778704160B1BFA5_905091148 = ("Cookie".equalsIgnoreCase(key) || "Cookie2".equalsIgnoreCase(key));
                     {
                         headers.addAll(key, entry.getValue());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(allCookieHeaders.getTaint());
-        // ---------- Original Method ----------
-        //for (Map.Entry<String, List<String>> entry : allCookieHeaders.entrySet()) {
-            //String key = entry.getKey();
-            //if ("Cookie".equalsIgnoreCase(key) || "Cookie2".equalsIgnoreCase(key)) {
-                //headers.addAll(key, entry.getValue());
-            //}
-        //}
+        
+        
+            
+            
+                
+            
+        
     }
 }
 

@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.NotSerializableException;
@@ -18,7 +18,7 @@ public class InvalidPropertiesFormatException extends IOException {
     public  InvalidPropertiesFormatException(String m) {
         super(m);
         addTaint(m.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,26 +26,28 @@ public class InvalidPropertiesFormatException extends IOException {
     public  InvalidPropertiesFormatException(Throwable c) {
         initCause(c);
         addTaint(c.getTaint());
-        // ---------- Original Method ----------
-        //initCause(c);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.536 -0400", hash_original_method = "D501A96831B009EDE0E99C982A162728", hash_generated_method = "1FA2FA59A0AB409DED5CB9B001CCF5FA")
     private void writeObject(ObjectOutputStream out) throws NotSerializableException {
         if (DroidSafeAndroidRuntime.control) throw new NotSerializableException();
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //throw new NotSerializableException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.536 -0400", hash_original_method = "B2CAB4BC3D811DD242C577EA7CF7F980", hash_generated_method = "E5B9AB5EEC4D816A6EF1C2B3FCAB0E7C")
     private void readObject(ObjectInputStream in) throws NotSerializableException {
         if (DroidSafeAndroidRuntime.control) throw new NotSerializableException();
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        //throw new NotSerializableException();
+        
+        
     }
 
     

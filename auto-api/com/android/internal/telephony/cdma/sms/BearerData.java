@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cdma.sms;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import static android.telephony.SmsMessage.ENCODING_16BIT;
 import static android.telephony.SmsMessage.MAX_USER_DATA_BYTES;
@@ -126,14 +126,15 @@ public final class BearerData {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.821 -0400", hash_original_method = "035CB3DD1AE9F589077AA91F91422CE0", hash_generated_method = "035CB3DD1AE9F589077AA91F91422CE0")
     public BearerData ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.823 -0400", hash_original_method = "E225AAC9CA93385B8BA6F6A4FE181F4E", hash_generated_method = "F53C7A17B6EF053F4801C1093A739401")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1477429078 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1477429078 = null; 
         StringBuilder builder = new StringBuilder();
         builder.append("BearerData ");
         builder.append("{ messageType=" + messageType);
@@ -166,13 +167,14 @@ public final class BearerData {
         builder.append(", userData=" + userData);
         builder.append(" }");
         varB4EAC82CA7396A68D541C85D26508E83_1477429078 = builder.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1477429078.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1477429078.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1477429078;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodeMessageId(BearerData bData, BitwiseOutputStream outStream) throws BitwiseOutputStream.AccessException {
         outStream.write(8, 3);
         outStream.write(4, bData.messageType);
@@ -183,6 +185,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int countAsciiSeptets(CharSequence msg, boolean force) {
         int msgLen = msg.length();
         if (force) return msgLen;
@@ -195,6 +198,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static TextEncodingDetails calcTextEncodingDetails(CharSequence msg,
             boolean force7BitEncoding) {
         TextEncodingDetails ted;
@@ -227,6 +231,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static byte[] encode7bitAscii(String msg, boolean force) throws CodingException {
         try {
             BitwiseOutputStream outStream = new BitwiseOutputStream(msg.length());
@@ -250,6 +255,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static byte[] encodeUtf16(String msg) throws CodingException {
         try {
             return msg.getBytes("utf-16be");
@@ -259,6 +265,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Gsm7bitCodingResult encode7bitGsm(String msg, int septetOffset, boolean force) throws CodingException {
         try {
             byte[] fullData = GsmAlphabet.stringToGsm7BitPacked(msg, septetOffset, !force, 0, 0);
@@ -273,6 +280,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encode7bitEms(UserData uData, byte[] udhData, boolean force) throws CodingException {
         int udhBytes = udhData.length + 1;
         int udhSeptets = ((udhBytes * 8) + 6) / 7;
@@ -286,6 +294,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encode16bitEms(UserData uData, byte[] udhData) throws CodingException {
         byte[] payload = encodeUtf16(uData.payloadStr);
         int udhBytes = udhData.length + 1;
@@ -302,6 +311,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodeEmsUserDataPayload(UserData uData) throws CodingException {
         byte[] headerData = SmsHeader.toByteArray(uData.userDataHeader);
         if (uData.msgEncodingSet) {
@@ -323,6 +333,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodeUserDataPayload(UserData uData) throws CodingException {
         if ((uData.payloadStr == null) && (uData.msgEncoding != UserData.ENCODING_OCTET)) {
             Log.e(LOG_TAG, "user data with null payloadStr");
@@ -375,6 +386,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodeUserData(BearerData bData, BitwiseOutputStream outStream) throws BitwiseOutputStream.AccessException, CodingException {
         encodeUserDataPayload(bData.userData);
         bData.hasUserDataHeader = bData.userData.userDataHeader != null;
@@ -403,6 +415,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodeReplyOption(BearerData bData, BitwiseOutputStream outStream) throws BitwiseOutputStream.AccessException {
         outStream.write(8, 1);
         outStream.write(1, bData.userAckReq     ? 1 : 0);
@@ -413,6 +426,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static byte[] encodeDtmfSmsAddress(String address) {
         int digits = address.length();
         int dataBits = digits * 4;
@@ -433,6 +447,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodeCdmaSmsAddress(CdmaSmsAddress addr) throws CodingException {
         if (addr.digitMode == CdmaSmsAddress.DIGIT_MODE_8BIT_CHAR) {
             try {
@@ -446,6 +461,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodeCallbackNumber(BearerData bData, BitwiseOutputStream outStream) throws BitwiseOutputStream.AccessException, CodingException {
         CdmaSmsAddress addr = bData.callbackNumber;
         encodeCdmaSmsAddress(addr);
@@ -472,6 +488,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodeMsgStatus(BearerData bData, BitwiseOutputStream outStream) throws BitwiseOutputStream.AccessException {
         outStream.write(8, 1);
         outStream.write(2, bData.errorClass);
@@ -479,18 +496,21 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodeMsgCount(BearerData bData, BitwiseOutputStream outStream) throws BitwiseOutputStream.AccessException {
         outStream.write(8, 1);
         outStream.write(8, bData.numberOfMessages);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodeValidityPeriodRel(BearerData bData, BitwiseOutputStream outStream) throws BitwiseOutputStream.AccessException {
         outStream.write(8, 1);
         outStream.write(8, bData.validityPeriodRelative);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodePrivacyIndicator(BearerData bData, BitwiseOutputStream outStream) throws BitwiseOutputStream.AccessException {
         outStream.write(8, 1);
         outStream.write(2, bData.privacy);
@@ -498,12 +518,14 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodeLanguageIndicator(BearerData bData, BitwiseOutputStream outStream) throws BitwiseOutputStream.AccessException {
         outStream.write(8, 1);
         outStream.write(8, bData.language);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodeDisplayMode(BearerData bData, BitwiseOutputStream outStream) throws BitwiseOutputStream.AccessException {
         outStream.write(8, 1);
         outStream.write(2, bData.displayMode);
@@ -511,6 +533,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodePriorityIndicator(BearerData bData, BitwiseOutputStream outStream) throws BitwiseOutputStream.AccessException {
         outStream.write(8, 1);
         outStream.write(2, bData.priority);
@@ -518,6 +541,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void encodeMsgDeliveryAlert(BearerData bData, BitwiseOutputStream outStream) throws BitwiseOutputStream.AccessException {
         outStream.write(8, 1);
         outStream.write(2, bData.alert);
@@ -525,6 +549,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] encode(BearerData bData) {
         bData.hasUserDataHeader = ((bData.userData != null) &&
                 (bData.userData.userDataHeader != null));
@@ -586,6 +611,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeMessageId(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 3 * 8;
         boolean decodeSuccess = false;
@@ -609,6 +635,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeUserData(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException {
         int paramBits = inStream.read(8) * 8;
         bData.userData = new UserData();
@@ -629,6 +656,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String decodeUtf8(byte[] data, int offset, int numFields) throws CodingException {
         try {
             return new String(data, offset, numFields, "UTF-8");
@@ -638,6 +666,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String decodeUtf16(byte[] data, int offset, int numFields) throws CodingException {
         int padding = offset % 2;
         numFields -= (offset + padding) / 2;
@@ -649,6 +678,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String decode7bitAscii(byte[] data, int offset, int numFields) throws CodingException {
         try {
             offset *= 8;
@@ -680,6 +710,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String decode7bitGsm(byte[] data, int offset, int numFields) throws CodingException {
         int offsetBits = offset * 8;
         int offsetSeptets = (offsetBits + 6) / 7;
@@ -694,6 +725,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String decodeLatin(byte[] data, int offset, int numFields) throws CodingException {
         try {
             return new String(data, offset, numFields - offset, "ISO-8859-1");
@@ -703,6 +735,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void decodeUserDataPayload(UserData userData, boolean hasUserDataHeader) throws CodingException {
         int offset = 0;
         if (hasUserDataHeader) {
@@ -747,6 +780,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void decodeIs91VoicemailStatus(BearerData bData) throws BitwiseInputStream.AccessException, CodingException {
         BitwiseInputStream inStream = new BitwiseInputStream(bData.userData.payload);
         int dataLen = inStream.available() / 6;
@@ -780,6 +814,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void decodeIs91ShortMessage(BearerData bData) throws BitwiseInputStream.AccessException, CodingException {
         BitwiseInputStream inStream = new BitwiseInputStream(bData.userData.payload);
         int dataLen = inStream.available() / 6;
@@ -795,6 +830,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void decodeIs91Cli(BearerData bData) throws CodingException {
         BitwiseInputStream inStream = new BitwiseInputStream(bData.userData.payload);
         int dataLen = inStream.available() / 4;
@@ -811,6 +847,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void decodeIs91(BearerData bData) throws BitwiseInputStream.AccessException, CodingException {
         switch (bData.userData.msgType) {
         case UserData.IS91_MSG_TYPE_VOICEMAIL_STATUS:
@@ -830,6 +867,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeReplyOption(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 1 * 8;
         boolean decodeSuccess = false;
@@ -853,6 +891,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeMsgCount(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 1 * 8;
         boolean decodeSuccess = false;
@@ -872,6 +911,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeDepositIndex(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 2 * 8;
         boolean decodeSuccess = false;
@@ -891,6 +931,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String decodeDtmfSmsAddress(byte[] rawData, int numFields) throws CodingException {
         StringBuffer strBuf = new StringBuffer(numFields);
         for (int i = 0; i < numFields; i++) {
@@ -905,6 +946,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void decodeSmsAddress(CdmaSmsAddress addr) throws CodingException {
         if (addr.digitMode == CdmaSmsAddress.DIGIT_MODE_8BIT_CHAR) {
             try {
@@ -918,6 +960,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeCallbackNumber(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         int paramBits = inStream.read(8) * 8;
         CdmaSmsAddress addr = new CdmaSmsAddress();
@@ -948,6 +991,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeMsgStatus(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 1 * 8;
         boolean decodeSuccess = false;
@@ -969,6 +1013,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeMsgCenterTimeStamp(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 6 * 8;
         boolean decodeSuccess = false;
@@ -988,6 +1033,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeValidityAbs(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 6 * 8;
         boolean decodeSuccess = false;
@@ -1007,6 +1053,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeDeferredDeliveryAbs(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 6 * 8;
         boolean decodeSuccess = false;
@@ -1027,6 +1074,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeValidityRel(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 1 * 8;
         boolean decodeSuccess = false;
@@ -1047,6 +1095,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeDeferredDeliveryRel(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 1 * 8;
         boolean decodeSuccess = false;
@@ -1067,6 +1116,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodePrivacyIndicator(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 1 * 8;
         boolean decodeSuccess = false;
@@ -1088,6 +1138,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeLanguageIndicator(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 1 * 8;
         boolean decodeSuccess = false;
@@ -1108,6 +1159,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeDisplayMode(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 1 * 8;
         boolean decodeSuccess = false;
@@ -1129,6 +1181,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodePriorityIndicator(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 1 * 8;
         boolean decodeSuccess = false;
@@ -1150,6 +1203,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeMsgDeliveryAlert(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 1 * 8;
         boolean decodeSuccess = false;
@@ -1171,6 +1225,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean decodeUserResponseCode(BearerData bData, BitwiseInputStream inStream) throws BitwiseInputStream.AccessException, CodingException {
         final int EXPECTED_PARAM_SIZE = 1 * 8;
         boolean decodeSuccess = false;
@@ -1191,6 +1246,7 @@ public final class BearerData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static BearerData decode(byte[] smsData) {
         try {
             BitwiseInputStream inStream = new BitwiseInputStream(smsData);
@@ -1297,7 +1353,7 @@ public final class BearerData {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.834 -0400", hash_original_method = "227CB08289E9E58D2E1A786B0B8104B3", hash_generated_method = "8C18566B3367C0FEDF5A52BA15A777A6")
         public  TimeStamp() {
             super(TimeZone.getDefault().getID());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1328,7 +1384,7 @@ public final class BearerData {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.835 -0400", hash_original_method = "ED297E11B9020980F3FCB379731AD215", hash_generated_method = "D8B8973D35CF2E72CF6D0095D95429FA")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_791781526 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_791781526 = null; 
             StringBuilder builder = new StringBuilder();
             builder.append("TimeStamp ");
             builder.append("{ year=" + year);
@@ -1339,19 +1395,19 @@ public final class BearerData {
             builder.append(", second=" + second);
             builder.append(" }");
             varB4EAC82CA7396A68D541C85D26508E83_791781526 = builder.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_791781526.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_791781526.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_791781526;
-            // ---------- Original Method ----------
-            //StringBuilder builder = new StringBuilder();
-            //builder.append("TimeStamp ");
-            //builder.append("{ year=" + year);
-            //builder.append(", month=" + month);
-            //builder.append(", day=" + monthDay);
-            //builder.append(", hour=" + hour);
-            //builder.append(", minute=" + minute);
-            //builder.append(", second=" + second);
-            //builder.append(" }");
-            //return builder.toString();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1365,7 +1421,7 @@ public final class BearerData {
         public  CodingException(String s) {
             super(s);
             addTaint(s.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1384,7 +1440,7 @@ public final class BearerData {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.835 -0400", hash_original_method = "7E9DFC757F4277B439A8F1AFF7D9B860", hash_generated_method = "7E9DFC757F4277B439A8F1AFF7D9B860")
         public Gsm7bitCodingResult ()
         {
-            //Synthesized constructor
+            
         }
 
 

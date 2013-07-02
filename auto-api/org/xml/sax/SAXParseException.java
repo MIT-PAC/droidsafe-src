@@ -1,11 +1,11 @@
 package org.xml.sax;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class SAXParseException extends SAXException {
@@ -28,19 +28,19 @@ public class SAXParseException extends SAXException {
         {
             init(locator.getPublicId(), locator.getSystemId(),
          locator.getLineNumber(), locator.getColumnNumber());
-        } //End block
+        } 
         {
             init(null, null, -1, -1);
-        } //End block
+        } 
         addTaint(message.getTaint());
         addTaint(locator.getTaint());
-        // ---------- Original Method ----------
-        //if (locator != null) {
-        //init(locator.getPublicId(), locator.getSystemId(),
-         //locator.getLineNumber(), locator.getColumnNumber());
-    //} else {
-        //init(null, null, -1, -1);
-    //}
+        
+        
+        
+         
+    
+        
+    
     }
 
     
@@ -51,20 +51,20 @@ public class SAXParseException extends SAXException {
         {
             init(locator.getPublicId(), locator.getSystemId(),
          locator.getLineNumber(), locator.getColumnNumber());
-        } //End block
+        } 
         {
             init(null, null, -1, -1);
-        } //End block
+        } 
         addTaint(message.getTaint());
         addTaint(locator.getTaint());
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
-        //if (locator != null) {
-        //init(locator.getPublicId(), locator.getSystemId(),
-         //locator.getLineNumber(), locator.getColumnNumber());
-    //} else {
-        //init(null, null, -1, -1);
-    //}
+        
+        
+        
+         
+    
+        
+    
     }
 
     
@@ -78,8 +78,8 @@ public class SAXParseException extends SAXException {
         addTaint(systemId.getTaint());
         addTaint(lineNumber);
         addTaint(columnNumber);
-        // ---------- Original Method ----------
-        //init(publicId, systemId, lineNumber, columnNumber);
+        
+        
     }
 
     
@@ -94,8 +94,8 @@ public class SAXParseException extends SAXException {
         addTaint(lineNumber);
         addTaint(columnNumber);
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
-        //init(publicId, systemId, lineNumber, columnNumber);
+        
+        
     }
 
     
@@ -106,33 +106,33 @@ public class SAXParseException extends SAXException {
         this.systemId = systemId;
         this.lineNumber = lineNumber;
         this.columnNumber = columnNumber;
-        // ---------- Original Method ----------
-        //this.publicId = publicId;
-        //this.systemId = systemId;
-        //this.lineNumber = lineNumber;
-        //this.columnNumber = columnNumber;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.812 -0400", hash_original_method = "651ECBF976325F0553967BB40DF656D7", hash_generated_method = "153F134DBC1DA212B2F97BE081FB1CD1")
     public String getPublicId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_175685833 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_175685833 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_175685833 = this.publicId;
-        varB4EAC82CA7396A68D541C85D26508E83_175685833.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_175685833.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_175685833;
-        // ---------- Original Method ----------
-        //return this.publicId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.815 -0400", hash_original_method = "600C253C44A23EDB0A978A11FA5F90C2", hash_generated_method = "1AFC64A5F10CB228525292D55C35CE96")
     public String getSystemId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1290196415 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1290196415 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1290196415 = this.systemId;
-        varB4EAC82CA7396A68D541C85D26508E83_1290196415.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1290196415.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1290196415;
-        // ---------- Original Method ----------
-        //return this.systemId;
+        
+        
     }
 
     
@@ -140,8 +140,8 @@ public class SAXParseException extends SAXException {
     public int getLineNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_27104787 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_27104787;
-        // ---------- Original Method ----------
-        //return this.lineNumber;
+        
+        
     }
 
     
@@ -149,8 +149,8 @@ public class SAXParseException extends SAXException {
     public int getColumnNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_545963429 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_545963429;
-        // ---------- Original Method ----------
-        //return this.columnNumber;
+        
+        
     }
 
     

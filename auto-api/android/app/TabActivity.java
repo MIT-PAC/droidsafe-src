@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +26,7 @@ public class TabActivity extends ActivityGroup {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.580 -0400", hash_original_method = "7656B1DA8F939C27E9A82F1B44C0847D", hash_generated_method = "31D889F3885F23AF577087DF7DEEA8FD")
     public  TabActivity() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,9 +34,9 @@ public class TabActivity extends ActivityGroup {
     public void setDefaultTab(String tag) {
         mDefaultTab = tag;
         mDefaultTabIndex = -1;
-        // ---------- Original Method ----------
-        //mDefaultTab = tag;
-        //mDefaultTabIndex = -1;
+        
+        
+        
     }
 
     
@@ -44,174 +44,182 @@ public class TabActivity extends ActivityGroup {
     public void setDefaultTab(int index) {
         mDefaultTab = null;
         mDefaultTabIndex = index;
-        // ---------- Original Method ----------
-        //mDefaultTab = null;
-        //mDefaultTabIndex = index;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.583 -0400", hash_original_method = "43FC78560A264DC47797D8670D9C3246", hash_generated_method = "939A3B15CB42FE2B911FD499BC68A408")
     @Override
     protected void onRestoreInstanceState(Bundle state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onRestoreInstanceState(state);
         ensureTabHost();
         String cur = state.getString("currentTab");
         {
             mTabHost.setCurrentTabByTag(cur);
-        } //End block
+        } 
         {
             boolean varB759B15E40530C9C0260D509474713F2_88183735 = (mTabHost.getCurrentTab() < 0);
             {
                 {
                     mTabHost.setCurrentTabByTag(mDefaultTab);
-                } //End block
+                } 
                 {
                     mTabHost.setCurrentTab(mDefaultTabIndex);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //super.onRestoreInstanceState(state);
-        //ensureTabHost();
-        //String cur = state.getString("currentTab");
-        //if (cur != null) {
-            //mTabHost.setCurrentTabByTag(cur);
-        //}
-        //if (mTabHost.getCurrentTab() < 0) {
-            //if (mDefaultTab != null) {
-                //mTabHost.setCurrentTabByTag(mDefaultTab);
-            //} else if (mDefaultTabIndex >= 0) {
-                //mTabHost.setCurrentTab(mDefaultTabIndex);
-            //}
-        //}
+        
+        
+        
+        
+        
+            
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.584 -0400", hash_original_method = "95D0011EE002D17BAA86137B82FD9E88", hash_generated_method = "8DA443D4A4DE42B0AF6ABC102EA34055")
     @Override
     protected void onPostCreate(Bundle icicle) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onPostCreate(icicle);
         ensureTabHost();
         {
             boolean var3C5C9E0FB5B4113877BCFA92B254E3EF_737277142 = (mTabHost.getCurrentTab() == -1);
             {
                 mTabHost.setCurrentTab(0);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(icicle.getTaint());
-        // ---------- Original Method ----------
-        //super.onPostCreate(icicle);
-        //ensureTabHost();
-        //if (mTabHost.getCurrentTab() == -1) {
-            //mTabHost.setCurrentTab(0);
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.584 -0400", hash_original_method = "7A1E5FF4358126AE2CED70B78C4AF1EE", hash_generated_method = "7BDBC13CF2ADC1BB5921E6F503EF00FC")
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onSaveInstanceState(outState);
         String currentTabTag = mTabHost.getCurrentTabTag();
         {
             outState.putString("currentTab", currentTabTag);
-        } //End block
+        } 
         addTaint(outState.getTaint());
-        // ---------- Original Method ----------
-        //super.onSaveInstanceState(outState);
-        //String currentTabTag = mTabHost.getCurrentTabTag();
-        //if (currentTabTag != null) {
-            //outState.putString("currentTab", currentTabTag);
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.585 -0400", hash_original_method = "582B2DDC8E1047355D2EEA6881BB52B9", hash_generated_method = "6372FE2BDAB68FEEB21FA6735B740DDC")
     @Override
     public void onContentChanged() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onContentChanged();
         mTabHost = (TabHost) findViewById(com.android.internal.R.id.tabhost);
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Your content must have a TabHost whose id attribute is " +
                     "'android.R.id.tabhost'");
-        } //End block
+        } 
         mTabHost.setup(getLocalActivityManager());
-        // ---------- Original Method ----------
-        //super.onContentChanged();
-        //mTabHost = (TabHost) findViewById(com.android.internal.R.id.tabhost);
-        //if (mTabHost == null) {
-            //throw new RuntimeException(
-                    //"Your content must have a TabHost whose id attribute is " +
-                    //"'android.R.id.tabhost'");
-        //}
-        //mTabHost.setup(getLocalActivityManager());
+        
+        
+        
+        
+            
+                    
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.586 -0400", hash_original_method = "165BC05C59C361B649DC3EA7F3563399", hash_generated_method = "3B7702C22FE7A89AA5949DCF5F7EE310")
     private void ensureTabHost() {
         {
             this.setContentView(com.android.internal.R.layout.tab_content);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mTabHost == null) {
-            //this.setContentView(com.android.internal.R.layout.tab_content);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.587 -0400", hash_original_method = "90307FAF1FA715C3E880FDADA1597ED5", hash_generated_method = "916F23C6CCFC1FD14307615E77CD6896")
     @Override
     protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var91C02A08111643BA5B7BBC33C7AF13E4_675383115 = (getLocalActivityManager().getCurrentActivity() == childActivity);
             {
                 View tabView = mTabHost.getCurrentTabView();
                 {
                     ((TextView) tabView).setText(title);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(childActivity.getTaint());
         addTaint(title.getTaint());
-        // ---------- Original Method ----------
-        //if (getLocalActivityManager().getCurrentActivity() == childActivity) {
-            //View tabView = mTabHost.getCurrentTabView();
-            //if (tabView != null && tabView instanceof TextView) {
-                //((TextView) tabView).setText(title);
-            //}
-        //}
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.588 -0400", hash_original_method = "6AC0503CD9EB9D407A1E8CBC0E0E9255", hash_generated_method = "A1447184A8A735B6610653ADC67FF2C1")
     public TabHost getTabHost() {
-        TabHost varB4EAC82CA7396A68D541C85D26508E83_1976207668 = null; //Variable for return #1
+        TabHost varB4EAC82CA7396A68D541C85D26508E83_1976207668 = null; 
         ensureTabHost();
         varB4EAC82CA7396A68D541C85D26508E83_1976207668 = mTabHost;
-        varB4EAC82CA7396A68D541C85D26508E83_1976207668.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1976207668.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1976207668;
-        // ---------- Original Method ----------
-        //ensureTabHost();
-        //return mTabHost;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.589 -0400", hash_original_method = "8A117298A466C130739D5E7C43BBFBE6", hash_generated_method = "06CB591F369C23C36BF7B0EFD3FBE85D")
     public TabWidget getTabWidget() {
-        TabWidget varB4EAC82CA7396A68D541C85D26508E83_1215748055 = null; //Variable for return #1
+        TabWidget varB4EAC82CA7396A68D541C85D26508E83_1215748055 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1215748055 = mTabHost.getTabWidget();
-        varB4EAC82CA7396A68D541C85D26508E83_1215748055.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1215748055.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1215748055;
-        // ---------- Original Method ----------
-        //return mTabHost.getTabWidget();
+        
+        
     }
 
     

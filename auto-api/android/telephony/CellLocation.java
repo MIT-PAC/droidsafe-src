@@ -1,11 +1,11 @@
 package android.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.os.RemoteException;
@@ -22,10 +22,11 @@ public abstract class CellLocation {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.386 -0400", hash_original_method = "18EEA113758CA529F35B4B776EC100D9", hash_generated_method = "18EEA113758CA529F35B4B776EC100D9")
     public CellLocation ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void requestLocationUpdate() {
         try {
             ITelephony phone = ITelephony.Stub.asInterface(ServiceManager.getService("phone"));
@@ -37,6 +38,7 @@ public abstract class CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CellLocation newFromBundle(Bundle bundle) {
         switch(TelephonyManager.getDefault().getCurrentPhoneType()) {
         case Phone.PHONE_TYPE_CDMA:
@@ -55,6 +57,7 @@ public abstract class CellLocation {
     public abstract boolean isEmpty();
 
     
+    @DSModeled(DSC.SAFE)
     public static CellLocation getEmpty() {
         switch(TelephonyManager.getDefault().getCurrentPhoneType()) {
         case Phone.PHONE_TYPE_CDMA:

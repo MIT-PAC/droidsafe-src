@@ -1,11 +1,11 @@
 package libcore.icu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.DateFormat;
 import java.util.Arrays;
@@ -127,10 +127,11 @@ public final class LocaleData {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:26.912 -0400", hash_original_method = "CFFFBB83D5CAB96B8DF6F8A1F3FD834E", hash_generated_method = "D26C45D435D79556A74DEBD6612FAA64")
     private  LocaleData() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static LocaleData get(Locale locale) {
         if (locale == null) {
             locale = Locale.getDefault();
@@ -154,6 +155,7 @@ public final class LocaleData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static LocaleData makeLocaleData(Locale locale) {
         String language = locale.getLanguage();
         String country = locale.getCountry();
@@ -171,10 +173,11 @@ public final class LocaleData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:26.921 -0400", hash_original_method = "784F7240396B6696F26C45143188C28A", hash_generated_method = "BD380A1DE41B2301EF6818A3321A5E50")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_306469348 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_306469348 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_306469348 = "LocaleData[" +
                 "firstDayOfWeek=" + firstDayOfWeek + "," +
                 "minimalDaysInFirstWeek=" + minimalDaysInFirstWeek + "," +
@@ -213,10 +216,10 @@ public final class LocaleData {
                 "integerPattern=" + integerPattern + "," +
                 "currencyPattern=" + currencyPattern + "," +
                 "percentPattern=" + percentPattern + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_306469348.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_306469348.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_306469348;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -224,224 +227,227 @@ public final class LocaleData {
     private void overrideWithDataFrom(LocaleData overrides) {
         {
             firstDayOfWeek = overrides.firstDayOfWeek;
-        } //End block
+        } 
         {
             minimalDaysInFirstWeek = overrides.minimalDaysInFirstWeek;
-        } //End block
+        } 
         {
             amPm = overrides.amPm;
-        } //End block
+        } 
         {
             eras = overrides.eras;
-        } //End block
+        } 
         {
             longMonthNames = overrides.longMonthNames;
-        } //End block
+        } 
         {
             shortMonthNames = overrides.shortMonthNames;
-        } //End block
+        } 
         {
             longStandAloneMonthNames = overrides.longStandAloneMonthNames;
-        } //End block
+        } 
         {
             shortStandAloneMonthNames = overrides.shortStandAloneMonthNames;
-        } //End block
+        } 
         {
             longWeekdayNames = overrides.longWeekdayNames;
-        } //End block
+        } 
         {
             shortWeekdayNames = overrides.shortWeekdayNames;
-        } //End block
+        } 
         {
             longStandAloneWeekdayNames = overrides.longStandAloneWeekdayNames;
-        } //End block
+        } 
         {
             shortStandAloneWeekdayNames = overrides.shortStandAloneWeekdayNames;
-        } //End block
+        } 
         {
             fullTimeFormat = overrides.fullTimeFormat;
-        } //End block
+        } 
         {
             longTimeFormat = overrides.longTimeFormat;
-        } //End block
+        } 
         {
             mediumTimeFormat = overrides.mediumTimeFormat;
-        } //End block
+        } 
         {
             shortTimeFormat = overrides.shortTimeFormat;
-        } //End block
+        } 
         {
             fullDateFormat = overrides.fullDateFormat;
-        } //End block
+        } 
         {
             longDateFormat = overrides.longDateFormat;
-        } //End block
+        } 
         {
             mediumDateFormat = overrides.mediumDateFormat;
-        } //End block
+        } 
         {
             shortDateFormat = overrides.shortDateFormat;
-        } //End block
+        } 
         {
             zeroDigit = overrides.zeroDigit;
-        } //End block
+        } 
         {
             decimalSeparator = overrides.decimalSeparator;
-        } //End block
+        } 
         {
             groupingSeparator = overrides.groupingSeparator;
-        } //End block
+        } 
         {
             patternSeparator = overrides.patternSeparator;
-        } //End block
+        } 
         {
             percent = overrides.percent;
-        } //End block
+        } 
         {
             perMill = overrides.perMill;
-        } //End block
+        } 
         {
             monetarySeparator = overrides.monetarySeparator;
-        } //End block
+        } 
         {
             minusSign = overrides.minusSign;
-        } //End block
+        } 
         {
             exponentSeparator = overrides.exponentSeparator;
-        } //End block
+        } 
         {
             NaN = overrides.NaN;
-        } //End block
+        } 
         {
             infinity = overrides.infinity;
-        } //End block
+        } 
         {
             currencySymbol = overrides.currencySymbol;
-        } //End block
+        } 
         {
             internationalCurrencySymbol = overrides.internationalCurrencySymbol;
-        } //End block
+        } 
         {
             numberPattern = overrides.numberPattern;
-        } //End block
+        } 
         {
             integerPattern = overrides.integerPattern;
-        } //End block
+        } 
         {
             currencyPattern = overrides.currencyPattern;
-        } //End block
+        } 
         {
             percentPattern = overrides.percentPattern;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:26.925 -0400", hash_original_method = "348F1EE4DC68FC97E057A91A2366FE0E", hash_generated_method = "747DDA4A8FACFD9B0E6C48080E1AB3D3")
     public String getDateFormat(int style) {
-        String varB4EAC82CA7396A68D541C85D26508E83_761074934 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_835881161 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1418536193 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_1106391997 = null; //Variable for return #4
-        //Begin case DateFormat.SHORT 
+        String varB4EAC82CA7396A68D541C85D26508E83_761074934 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_835881161 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1418536193 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1106391997 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_761074934 = shortDateFormat;
-        //End case DateFormat.SHORT 
-        //Begin case DateFormat.MEDIUM 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_835881161 = mediumDateFormat;
-        //End case DateFormat.MEDIUM 
-        //Begin case DateFormat.LONG 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1418536193 = longDateFormat;
-        //End case DateFormat.LONG 
-        //Begin case DateFormat.FULL 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1106391997 = fullDateFormat;
-        //End case DateFormat.FULL 
+        
         if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         addTaint(style);
-        String varA7E53CE21691AB073D9660D615818899_1456290552; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1456290552; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1456290552 = varB4EAC82CA7396A68D541C85D26508E83_761074934;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1456290552 = varB4EAC82CA7396A68D541C85D26508E83_835881161;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1456290552 = varB4EAC82CA7396A68D541C85D26508E83_1418536193;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1456290552 = varB4EAC82CA7396A68D541C85D26508E83_1106391997;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1456290552.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1456290552.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1456290552;
-        // ---------- Original Method ----------
-        //switch (style) {
-        //case DateFormat.SHORT:
-            //return shortDateFormat;
-        //case DateFormat.MEDIUM:
-            //return mediumDateFormat;
-        //case DateFormat.LONG:
-            //return longDateFormat;
-        //case DateFormat.FULL:
-            //return fullDateFormat;
-        //}
-        //throw new AssertionError();
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:26.926 -0400", hash_original_method = "381AB0475AE772D0631EAF7DD6B1FBEE", hash_generated_method = "ADAA76224EF5F8549F963BDF6999AA7F")
     public String getTimeFormat(int style) {
-        String varB4EAC82CA7396A68D541C85D26508E83_416320345 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_53878634 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_800386036 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_748320010 = null; //Variable for return #4
-        //Begin case DateFormat.SHORT 
+        String varB4EAC82CA7396A68D541C85D26508E83_416320345 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_53878634 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_800386036 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_748320010 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_416320345 = shortTimeFormat;
-        //End case DateFormat.SHORT 
-        //Begin case DateFormat.MEDIUM 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_53878634 = mediumTimeFormat;
-        //End case DateFormat.MEDIUM 
-        //Begin case DateFormat.LONG 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_800386036 = longTimeFormat;
-        //End case DateFormat.LONG 
-        //Begin case DateFormat.FULL 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_748320010 = fullTimeFormat;
-        //End case DateFormat.FULL 
+        
         if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         addTaint(style);
-        String varA7E53CE21691AB073D9660D615818899_1890564994; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1890564994; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1890564994 = varB4EAC82CA7396A68D541C85D26508E83_416320345;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1890564994 = varB4EAC82CA7396A68D541C85D26508E83_53878634;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1890564994 = varB4EAC82CA7396A68D541C85D26508E83_800386036;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1890564994 = varB4EAC82CA7396A68D541C85D26508E83_748320010;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1890564994.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1890564994.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1890564994;
-        // ---------- Original Method ----------
-        //switch (style) {
-        //case DateFormat.SHORT:
-            //return shortTimeFormat;
-        //case DateFormat.MEDIUM:
-            //return mediumTimeFormat;
-        //case DateFormat.LONG:
-            //return longTimeFormat;
-        //case DateFormat.FULL:
-            //return fullTimeFormat;
-        //}
-        //throw new AssertionError();
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static LocaleData initLocaleData(Locale locale) {
         LocaleData localeData = new LocaleData();
         if (!ICU.initLocaleDataImpl(locale.toString(), localeData)) {

@@ -1,11 +1,11 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.Calendar;
@@ -18,14 +18,15 @@ public abstract class ASN1Time extends ASN1StringType {
     public  ASN1Time(int tagNumber) {
         super(tagNumber);
         addTaint(tagNumber);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.660 -0400", hash_original_method = "A8543817917479A67ACF72269E42F301", hash_generated_method = "BBDB2F6078A29481B4D07DCE881653E3")
     @Override
     public Object getDecodedObject(BerInputStream in) throws IOException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1585874364 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1585874364 = null; 
         GregorianCalendar c = new GregorianCalendar(TimeZone.getTimeZone("GMT"));
         c.set(Calendar.YEAR, in.times[0]);
         c.set(Calendar.MONTH, in.times[1]-1);
@@ -36,18 +37,18 @@ public abstract class ASN1Time extends ASN1StringType {
         c.set(Calendar.MILLISECOND, in.times[6]);
         varB4EAC82CA7396A68D541C85D26508E83_1585874364 = c.getTime();
         addTaint(in.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1585874364.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1585874364.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1585874364;
-        // ---------- Original Method ----------
-        //GregorianCalendar c = new GregorianCalendar(TimeZone.getTimeZone("GMT"));
-        //c.set(Calendar.YEAR, in.times[0]);
-        //c.set(Calendar.MONTH, in.times[1]-1);
-        //c.set(Calendar.DAY_OF_MONTH, in.times[2]);
-        //c.set(Calendar.HOUR_OF_DAY, in.times[3]);
-        //c.set(Calendar.MINUTE, in.times[4]);
-        //c.set(Calendar.SECOND, in.times[5]);
-        //c.set(Calendar.MILLISECOND, in.times[6]);
-        //return c.getTime();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.util.Log;
@@ -56,8 +56,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         init(context, textViewResourceId, 0, new ArrayList<T>());
         addTaint(context.getTaint());
         addTaint(textViewResourceId);
-        // ---------- Original Method ----------
-        //init(context, textViewResourceId, 0, new ArrayList<T>());
+        
+        
     }
 
     
@@ -67,8 +67,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         addTaint(context.getTaint());
         addTaint(resource);
         addTaint(textViewResourceId);
-        // ---------- Original Method ----------
-        //init(context, resource, textViewResourceId, new ArrayList<T>());
+        
+        
     }
 
     
@@ -78,8 +78,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         addTaint(context.getTaint());
         addTaint(textViewResourceId);
         addTaint(objects[0].getTaint());
-        // ---------- Original Method ----------
-        //init(context, textViewResourceId, 0, Arrays.asList(objects));
+        
+        
     }
 
     
@@ -90,8 +90,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         addTaint(resource);
         addTaint(textViewResourceId);
         addTaint(objects[0].getTaint());
-        // ---------- Original Method ----------
-        //init(context, resource, textViewResourceId, Arrays.asList(objects));
+        
+        
     }
 
     
@@ -101,8 +101,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         addTaint(context.getTaint());
         addTaint(textViewResourceId);
         addTaint(objects.getTaint());
-        // ---------- Original Method ----------
-        //init(context, textViewResourceId, 0, objects);
+        
+        
     }
 
     
@@ -113,56 +113,58 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         addTaint(resource);
         addTaint(textViewResourceId);
         addTaint(objects.getTaint());
-        // ---------- Original Method ----------
-        //init(context, resource, textViewResourceId, objects);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.848 -0400", hash_original_method = "576CB9C40229B2A1A68C443644828160", hash_generated_method = "8CDA1AC8044C317C7FED82724EC47E36")
     public void add(T object) {
         {
             {
                 mOriginalValues.add(object);
-            } //End block
+            } 
             {
                 mObjects.add(object);
-            } //End block
-        } //End block
+            } 
+        } 
         notifyDataSetChanged();
         addTaint(object.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (mOriginalValues != null) {
-                //mOriginalValues.add(object);
-            //} else {
-                //mObjects.add(object);
-            //}
-        //}
-        //if (mNotifyOnChange) notifyDataSetChanged();
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.848 -0400", hash_original_method = "2106A171487E5CA0624DE157360DB991", hash_generated_method = "CF98F411F6285DDABB58FF08AC251254")
     public void addAll(Collection<? extends T> collection) {
         {
             {
                 mOriginalValues.addAll(collection);
-            } //End block
+            } 
             {
                 mObjects.addAll(collection);
-            } //End block
-        } //End block
+            } 
+        } 
         notifyDataSetChanged();
         addTaint(collection.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (mOriginalValues != null) {
-                //mOriginalValues.addAll(collection);
-            //} else {
-                //mObjects.addAll(collection);
-            //}
-        //}
-        //if (mNotifyOnChange) notifyDataSetChanged();
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -171,140 +173,146 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         {
             {
                 Collections.addAll(mOriginalValues, items);
-            } //End block
+            } 
             {
                 Collections.addAll(mObjects, items);
-            } //End block
-        } //End block
+            } 
+        } 
         notifyDataSetChanged();
         addTaint(items[0].getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (mOriginalValues != null) {
-                //Collections.addAll(mOriginalValues, items);
-            //} else {
-                //Collections.addAll(mObjects, items);
-            //}
-        //}
-        //if (mNotifyOnChange) notifyDataSetChanged();
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.849 -0400", hash_original_method = "E6733B2C388AB0385CFE6D2E53E92DC8", hash_generated_method = "9615234190F7120EC8E7DBAD9DFB581B")
     public void insert(T object, int index) {
         {
             {
                 mOriginalValues.add(index, object);
-            } //End block
+            } 
             {
                 mObjects.add(index, object);
-            } //End block
-        } //End block
+            } 
+        } 
         notifyDataSetChanged();
         addTaint(object.getTaint());
         addTaint(index);
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (mOriginalValues != null) {
-                //mOriginalValues.add(index, object);
-            //} else {
-                //mObjects.add(index, object);
-            //}
-        //}
-        //if (mNotifyOnChange) notifyDataSetChanged();
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.849 -0400", hash_original_method = "6A184D6E0EB34E61EA380878C12E3D42", hash_generated_method = "2AA98E3C5E5CBD374AEDEEFA87F2631C")
     public void remove(T object) {
         {
             {
                 mOriginalValues.remove(object);
-            } //End block
+            } 
             {
                 mObjects.remove(object);
-            } //End block
-        } //End block
+            } 
+        } 
         notifyDataSetChanged();
         addTaint(object.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (mOriginalValues != null) {
-                //mOriginalValues.remove(object);
-            //} else {
-                //mObjects.remove(object);
-            //}
-        //}
-        //if (mNotifyOnChange) notifyDataSetChanged();
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.850 -0400", hash_original_method = "E80E28672DD45A1486192C70E40EF7F5", hash_generated_method = "D0EE9DB86B4184AD54D74223A6563EBD")
     public void clear() {
         {
             {
                 mOriginalValues.clear();
-            } //End block
+            } 
             {
                 mObjects.clear();
-            } //End block
-        } //End block
+            } 
+        } 
         notifyDataSetChanged();
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (mOriginalValues != null) {
-                //mOriginalValues.clear();
-            //} else {
-                //mObjects.clear();
-            //}
-        //}
-        //if (mNotifyOnChange) notifyDataSetChanged();
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.850 -0400", hash_original_method = "56420943E8AF9990310F4859FACB8646", hash_generated_method = "A672839546E7A7C943E3A0A2FD28A1E1")
     public void sort(Comparator<? super T> comparator) {
         {
             {
                 Collections.sort(mOriginalValues, comparator);
-            } //End block
+            } 
             {
                 Collections.sort(mObjects, comparator);
-            } //End block
-        } //End block
+            } 
+        } 
         notifyDataSetChanged();
         addTaint(comparator.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (mOriginalValues != null) {
-                //Collections.sort(mOriginalValues, comparator);
-            //} else {
-                //Collections.sort(mObjects, comparator);
-            //}
-        //}
-        //if (mNotifyOnChange) notifyDataSetChanged();
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.851 -0400", hash_original_method = "4B6963AC4824E23107C3535DF32052A8", hash_generated_method = "B498C1B15F4E1C97F48F52763590B81C")
     @Override
     public void notifyDataSetChanged() {
         super.notifyDataSetChanged();
         mNotifyOnChange = true;
-        // ---------- Original Method ----------
-        //super.notifyDataSetChanged();
-        //mNotifyOnChange = true;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.851 -0400", hash_original_method = "B014C1A32626DBADC83EC827393C5854", hash_generated_method = "DF16B68FF23EAD56FA4255B3D48770B3")
     public void setNotifyOnChange(boolean notifyOnChange) {
         mNotifyOnChange = notifyOnChange;
-        // ---------- Original Method ----------
-        //mNotifyOnChange = notifyOnChange;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.851 -0400", hash_original_method = "0AB52E86A6B570420A2DD21D48564743", hash_generated_method = "2E9BCD700482CBFCE630F7DA8D860DD7")
     private void init(Context context, int resource, int textViewResourceId, List<T> objects) {
         mContext = context;
@@ -312,56 +320,59 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         mResource = mDropDownResource = resource;
         mObjects = objects;
         mFieldId = textViewResourceId;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //mResource = mDropDownResource = resource;
-        //mObjects = objects;
-        //mFieldId = textViewResourceId;
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.852 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "D924872DDDDEBEFD12E5AC3AE981E104")
     public Context getContext() {
-        Context varB4EAC82CA7396A68D541C85D26508E83_696610950 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_696610950 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_696610950 = mContext;
-        varB4EAC82CA7396A68D541C85D26508E83_696610950.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_696610950.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_696610950;
-        // ---------- Original Method ----------
-        //return mContext;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.852 -0400", hash_original_method = "4A653ADD34C98191FCFB37B57CB3ED83", hash_generated_method = "E13CF1D2110DFDBD8831C33486690AC5")
     public int getCount() {
         int var5ADE4B4DEF5A0C302073793E67A9CF7D_161264112 = (mObjects.size());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1878316142 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1878316142;
-        // ---------- Original Method ----------
-        //return mObjects.size();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.853 -0400", hash_original_method = "88739C4EC6C6A6692FBDE51909D97703", hash_generated_method = "E7EC6C84E1CFEA6FC1F7B16FD7D08887")
     public T getItem(int position) {
-        T varB4EAC82CA7396A68D541C85D26508E83_370810023 = null; //Variable for return #1
+        T varB4EAC82CA7396A68D541C85D26508E83_370810023 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_370810023 = mObjects.get(position);
         addTaint(position);
-        varB4EAC82CA7396A68D541C85D26508E83_370810023.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_370810023.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_370810023;
-        // ---------- Original Method ----------
-        //return mObjects.get(position);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.853 -0400", hash_original_method = "4B52B65CCBAD37C22D6FCF1BE4A30381", hash_generated_method = "081F6D8C55893622F1E10ECD2BFC6375")
     public int getPosition(T item) {
         int varD5AAEE2CF798CCCE08D67049B6E97450_273042463 = (mObjects.indexOf(item));
         addTaint(item.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1641790899 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1641790899;
-        // ---------- Original Method ----------
-        //return mObjects.indexOf(item);
+        
+        
     }
 
     
@@ -370,93 +381,97 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         addTaint(position);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1870557709 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1870557709;
-        // ---------- Original Method ----------
-        //return position;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.854 -0400", hash_original_method = "180EEF863853B86A02E5E476168E516D", hash_generated_method = "7CE93F0234EDC8521B867B7987A515C9")
     public View getView(int position, View convertView, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1513037275 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1513037275 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1513037275 = createViewFromResource(position, convertView, parent, mResource);
         addTaint(position);
         addTaint(convertView.getTaint());
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1513037275.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1513037275.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1513037275;
-        // ---------- Original Method ----------
-        //return createViewFromResource(position, convertView, parent, mResource);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.855 -0400", hash_original_method = "86812A0CF4501D7696F9CF0CE2E4D2EB", hash_generated_method = "F804D9ED17DD3ECD41338AAD71A7D5BF")
     private View createViewFromResource(int position, View convertView, ViewGroup parent,
             int resource) {
-        View varB4EAC82CA7396A68D541C85D26508E83_105404536 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_105404536 = null; 
         View view;
         TextView text;
         {
             view = mInflater.inflate(resource, parent, false);
-        } //End block
+        } 
         {
             view = convertView;
-        } //End block
+        } 
         try 
         {
             {
                 text = (TextView) view;
-            } //End block
+            } 
             {
                 text = (TextView) view.findViewById(mFieldId);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ClassCastException e)
         {
         	throw new IllegalStateException(
                     "ArrayAdapter requires the resource ID to be a TextView", e);
-        } //End block
+        } 
         T item = getItem(position);
         {
             text.setText((CharSequence)item);
-        } //End block
+        } 
         {
             text.setText(item.toString());
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_105404536 = view;
         addTaint(position);
         addTaint(convertView.getTaint());
         addTaint(parent.getTaint());
         addTaint(resource);
-        varB4EAC82CA7396A68D541C85D26508E83_105404536.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_105404536.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_105404536;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.855 -0400", hash_original_method = "614355FA33E2A17CA6280A34FDBFFDC0", hash_generated_method = "166D468151E808B5172814612FD9B5A0")
     public void setDropDownViewResource(int resource) {
         this.mDropDownResource = resource;
-        // ---------- Original Method ----------
-        //this.mDropDownResource = resource;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.855 -0400", hash_original_method = "55A24C3FF57565648C18AD1B34A1D191", hash_generated_method = "E521F6D6DE2DA46F4F7EE258A0C2A986")
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1880750599 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1880750599 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1880750599 = createViewFromResource(position, convertView, parent, mDropDownResource);
         addTaint(position);
         addTaint(convertView.getTaint());
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1880750599.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1880750599.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1880750599;
-        // ---------- Original Method ----------
-        //return createViewFromResource(position, convertView, parent, mDropDownResource);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ArrayAdapter<CharSequence> createFromResource(Context context,
             int textArrayResId, int textViewResId) {
         CharSequence[] strings = context.getResources().getTextArray(textArrayResId);
@@ -464,20 +479,21 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.856 -0400", hash_original_method = "93D8CD6E71E9F9D3F84ACCA40E0F811C", hash_generated_method = "95649663C9141E15E358193B5EEADF4F")
     public Filter getFilter() {
-        Filter varB4EAC82CA7396A68D541C85D26508E83_1129769465 = null; //Variable for return #1
+        Filter varB4EAC82CA7396A68D541C85D26508E83_1129769465 = null; 
         {
             mFilter = new ArrayFilter();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1129769465 = mFilter;
-        varB4EAC82CA7396A68D541C85D26508E83_1129769465.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1129769465.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1129769465;
-        // ---------- Original Method ----------
-        //if (mFilter == null) {
-            //mFilter = new ArrayFilter();
-        //}
-        //return mFilter;
+        
+        
+            
+        
+        
     }
 
     
@@ -486,36 +502,36 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.856 -0400", hash_original_method = "1D9325EC6EFFDE6F3FA421C05C5C6F5E", hash_generated_method = "1D9325EC6EFFDE6F3FA421C05C5C6F5E")
         public ArrayFilter ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.857 -0400", hash_original_method = "FCA1EE8188101C684A4D4FE1495B8102", hash_generated_method = "ACDA61A9ED7865746B45FB01B2BBF251")
         @Override
         protected FilterResults performFiltering(CharSequence prefix) {
-            FilterResults varB4EAC82CA7396A68D541C85D26508E83_126943164 = null; //Variable for return #1
+            FilterResults varB4EAC82CA7396A68D541C85D26508E83_126943164 = null; 
             FilterResults results = new FilterResults();
             {
                 {
                     mOriginalValues = new ArrayList<T>(mObjects);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 boolean varC2A2CF8A9676195B62AC39EAB2DC8746_2044080742 = (prefix == null || prefix.length() == 0);
                 {
                     ArrayList<T> list;
                     {
                         list = new ArrayList<T>(mOriginalValues);
-                    } //End block
+                    } 
                     results.values = list;
                     results.count = list.size();
-                } //End block
+                } 
                 {
                     String prefixString = prefix.toString().toLowerCase();
                     ArrayList<T> values;
                     {
                         values = new ArrayList<T>(mOriginalValues);
-                    } //End block
+                    } 
                     final int count = values.size();
                     final ArrayList<T> newValues = new ArrayList<T>();
                     {
@@ -527,7 +543,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
                                 boolean varC74DE7BC36FAC7675733A0D7891E756D_1126260726 = (valueText.startsWith(prefixString));
                                 {
                                     newValues.add(value);
-                                } //End block
+                                } 
                                 {
                                     final String[] words = valueText.split(" ");
                                     final int wordCount = words.length;
@@ -538,24 +554,24 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
                                                 boolean var9D40720128ABFAE9C601988D1E59EBD5_1413658440 = (words[k].startsWith(prefixString));
                                                 {
                                                     newValues.add(value);
-                                                } //End block
-                                            } //End collapsed parenthetic
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
                     results.values = newValues;
                     results.count = newValues.size();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_126943164 = results;
             addTaint(prefix.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_126943164.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_126943164.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_126943164;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -565,19 +581,19 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
             mObjects = (List<T>) results.values;
             {
                 notifyDataSetChanged();
-            } //End block
+            } 
             {
                 notifyDataSetInvalidated();
-            } //End block
+            } 
             addTaint(constraint.getTaint());
             addTaint(results.getTaint());
-            // ---------- Original Method ----------
-            //mObjects = (List<T>) results.values;
-            //if (results.count > 0) {
-                //notifyDataSetChanged();
-            //} else {
-                //notifyDataSetInvalidated();
-            //}
+            
+            
+            
+                
+            
+                
+            
         }
 
         

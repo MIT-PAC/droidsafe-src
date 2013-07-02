@@ -1,11 +1,11 @@
 package org.apache.http.client.utils;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -28,7 +28,7 @@ public class URLEncodedUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.999 -0400", hash_original_method = "81DBDF8E46C8CBBC080FA6A7719DA672", hash_generated_method = "81DBDF8E46C8CBBC080FA6A7719DA672")
     public URLEncodedUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 

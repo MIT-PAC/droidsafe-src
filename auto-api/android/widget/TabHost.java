@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.R;
 import android.app.LocalActivityManager;
@@ -60,8 +60,8 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         super(context);
         initTabHost();
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //initTabHost();
+        
+        
     }
 
     
@@ -75,60 +75,63 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         a.recycle();
         {
             mTabLayoutId = R.layout.tab_indicator_holo;
-        } //End block
+        } 
         initTabHost();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.TabWidget,
-                //com.android.internal.R.attr.tabWidgetStyle, 0);
-        //mTabLayoutId = a.getResourceId(R.styleable.TabWidget_tabLayout, 0);
-        //a.recycle();
-        //if (mTabLayoutId == 0) {
-            //mTabLayoutId = R.layout.tab_indicator_holo;
-        //}
-        //initTabHost();
+        
+        
+                
+                
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.216 -0400", hash_original_method = "E225D110F749DDFECF8013DBC90AF66D", hash_generated_method = "AFD8B2E46F167093444B29ADE7F14CDB")
     private void initTabHost() {
         setFocusableInTouchMode(true);
         setDescendantFocusability(FOCUS_AFTER_DESCENDANTS);
         mCurrentTab = -1;
         mCurrentView = null;
-        // ---------- Original Method ----------
-        //setFocusableInTouchMode(true);
-        //setDescendantFocusability(FOCUS_AFTER_DESCENDANTS);
-        //mCurrentTab = -1;
-        //mCurrentView = null;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.216 -0400", hash_original_method = "9E260D3987C01C55D906A5443FE1F250", hash_generated_method = "F7C92B2B4955648E8A2E1433735D7C64")
     public TabSpec newTabSpec(String tag) {
-        TabSpec varB4EAC82CA7396A68D541C85D26508E83_1616760821 = null; //Variable for return #1
+        TabSpec varB4EAC82CA7396A68D541C85D26508E83_1616760821 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1616760821 = new TabSpec(tag);
         addTaint(tag.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1616760821.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1616760821.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1616760821;
-        // ---------- Original Method ----------
-        //return new TabSpec(tag);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.218 -0400", hash_original_method = "11DAEE90670B382AFFC7A5048665264E", hash_generated_method = "D75475F38CB9D6672FD7CFCDB56936F6")
     public void setup() {
         mTabWidget = (TabWidget) findViewById(com.android.internal.R.id.tabs);
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Your TabHost must have a TabWidget whose id attribute is 'android.R.id.tabs'");
-        } //End block
+        } 
         mTabKeyListener = new OnKeyListener() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.217 -0400", hash_original_method = "C0EA49319FD8B41812699E631E771535", hash_generated_method = "54EE91CC11ED41F8E521463AEBBDC0C4")
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 mTabContent.requestFocus(View.FOCUS_FORWARD);
                 boolean var84776A3E24D16F690695F1BDA914A798_1259612151 = (mTabContent.dispatchKeyEvent(event));
                 addTaint(v.getTaint());
@@ -136,35 +139,35 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
                 addTaint(event.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_854842020 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_854842020;
-                // ---------- Original Method ----------
-                //switch (keyCode) {
-                    //case KeyEvent.KEYCODE_DPAD_CENTER:
-                    //case KeyEvent.KEYCODE_DPAD_LEFT:
-                    //case KeyEvent.KEYCODE_DPAD_RIGHT:
-                    //case KeyEvent.KEYCODE_DPAD_UP:
-                    //case KeyEvent.KEYCODE_DPAD_DOWN:
-                    //case KeyEvent.KEYCODE_ENTER:
-                        //return false;
-                //}
-                //mTabContent.requestFocus(View.FOCUS_FORWARD);
-                //return mTabContent.dispatchKeyEvent(event);
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                        
+                
+                
+                
             }
 };
         mTabWidget.setTabSelectionListener(new TabWidget.OnTabSelectionChanged() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.218 -0400", hash_original_method = "A259B917D04BDEAF062BC2DB0803EBFA", hash_generated_method = "A5C09CDF9E6C00F459BEFBC10A2C1E66")
             public void onTabSelectionChanged(int tabIndex, boolean clicked) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 setCurrentTab(tabIndex);
                 {
                     mTabContent.requestFocus(View.FOCUS_FORWARD);
-                } //End block
+                } 
                 addTaint(tabIndex);
                 addTaint(clicked);
-                // ---------- Original Method ----------
-                //setCurrentTab(tabIndex);
-                //if (clicked) {
-                    //mTabContent.requestFocus(View.FOCUS_FORWARD);
-                //}
+                
+                
+                
+                    
+                
             }
 });
         mTabContent = (FrameLayout) findViewById(com.android.internal.R.id.tabcontent);
@@ -172,9 +175,9 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Your TabHost must have a FrameLayout whose id attribute is "
                             + "'android.R.id.tabcontent'");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -182,108 +185,114 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     @Override
     public void sendAccessibilityEvent(int eventType) {
         addTaint(eventType);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.219 -0400", hash_original_method = "7224354A386E6E21E9006426BE4B5FE4", hash_generated_method = "DB89070E35CFC42DA1D1C60F5FB06ED5")
     public void setup(LocalActivityManager activityGroup) {
         setup();
         mLocalActivityManager = activityGroup;
-        // ---------- Original Method ----------
-        //setup();
-        //mLocalActivityManager = activityGroup;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.220 -0400", hash_original_method = "1749A697E4E6C7318205DA9AE02BC223", hash_generated_method = "4C1B09CC4A3161ACA376A60E7B4F4A76")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
         final ViewTreeObserver treeObserver = getViewTreeObserver();
         treeObserver.addOnTouchModeChangeListener(this);
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //final ViewTreeObserver treeObserver = getViewTreeObserver();
-        //treeObserver.addOnTouchModeChangeListener(this);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.220 -0400", hash_original_method = "56196D931FB093B5A1146C07A075CA12", hash_generated_method = "F26B48291C057827C5C1790AF0239B41")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDetachedFromWindow();
         final ViewTreeObserver treeObserver = getViewTreeObserver();
         treeObserver.removeOnTouchModeChangeListener(this);
-        // ---------- Original Method ----------
-        //super.onDetachedFromWindow();
-        //final ViewTreeObserver treeObserver = getViewTreeObserver();
-        //treeObserver.removeOnTouchModeChangeListener(this);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.220 -0400", hash_original_method = "F30EBD0BC50E7240BEF5418DD0D95D1E", hash_generated_method = "BBF6EE17200B879F05D9A77BE9AC107D")
     public void onTouchModeChanged(boolean isInTouchMode) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             {
                 boolean var831653FF85910083C1125271194BD078_2078017969 = (mCurrentView != null && (!mCurrentView.hasFocus() || mCurrentView.isFocused()));
                 {
                     mTabWidget.getChildTabViewAt(mCurrentTab).requestFocus();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(isInTouchMode);
-        // ---------- Original Method ----------
-        //if (!isInTouchMode) {
-            //if (mCurrentView != null && (!mCurrentView.hasFocus() || mCurrentView.isFocused())) {
-                //mTabWidget.getChildTabViewAt(mCurrentTab).requestFocus();
-            //}
-        //}
+        
+        
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.221 -0400", hash_original_method = "7B3B3CDC4F6E22F75BE659816FB8A96F", hash_generated_method = "4E82D5B8A10825044E0AB4045DA98E9F")
     public void addTab(TabSpec tabSpec) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("you must specify a way to create the tab indicator.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("you must specify a way to create the tab content");
-        } //End block
+        } 
         View tabIndicator = tabSpec.mIndicatorStrategy.createIndicatorView();
         tabIndicator.setOnKeyListener(mTabKeyListener);
         {
             mTabWidget.setStripEnabled(false);
-        } //End block
+        } 
         mTabWidget.addView(tabIndicator);
         mTabSpecs.add(tabSpec);
         {
             setCurrentTab(0);
-        } //End block
+        } 
         addTaint(tabSpec.getTaint());
-        // ---------- Original Method ----------
-        //if (tabSpec.mIndicatorStrategy == null) {
-            //throw new IllegalArgumentException("you must specify a way to create the tab indicator.");
-        //}
-        //if (tabSpec.mContentStrategy == null) {
-            //throw new IllegalArgumentException("you must specify a way to create the tab content");
-        //}
-        //View tabIndicator = tabSpec.mIndicatorStrategy.createIndicatorView();
-        //tabIndicator.setOnKeyListener(mTabKeyListener);
-        //if (tabSpec.mIndicatorStrategy instanceof ViewIndicatorStrategy) {
-            //mTabWidget.setStripEnabled(false);
-        //}
-        //mTabWidget.addView(tabIndicator);
-        //mTabSpecs.add(tabSpec);
-        //if (mCurrentTab == -1) {
-            //setCurrentTab(0);
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.221 -0400", hash_original_method = "FE75A14568F4641ABF7C1D51B3B055E3", hash_generated_method = "EDB41B266040C47F9666482EE95C9A5D")
     public void clearAllTabs() {
         mTabWidget.removeAllViews();
@@ -292,24 +301,24 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         mTabSpecs.clear();
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mTabWidget.removeAllViews();
-        //initTabHost();
-        //mTabContent.removeAllViews();
-        //mTabSpecs.clear();
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.222 -0400", hash_original_method = "43D996FE1B0AF9FB74C6533DD719F381", hash_generated_method = "9DC335C2F35CB2610C4506BE8B4259BB")
     public TabWidget getTabWidget() {
-        TabWidget varB4EAC82CA7396A68D541C85D26508E83_1406338043 = null; //Variable for return #1
+        TabWidget varB4EAC82CA7396A68D541C85D26508E83_1406338043 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1406338043 = mTabWidget;
-        varB4EAC82CA7396A68D541C85D26508E83_1406338043.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1406338043.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1406338043;
-        // ---------- Original Method ----------
-        //return mTabWidget;
+        
+        
     }
 
     
@@ -317,82 +326,85 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     public int getCurrentTab() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_639384749 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_639384749;
-        // ---------- Original Method ----------
-        //return mCurrentTab;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.222 -0400", hash_original_method = "4BF4FAE03E9E8C0B1DA1E933710D00F0", hash_generated_method = "0CD0B75E322755676F35D5153940455C")
     public String getCurrentTabTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1238081696 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_2139285679 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1238081696 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2139285679 = null; 
         {
             boolean varBFF1B1E49A84DE64A6516F714FB4E748_42477023 = (mCurrentTab >= 0 && mCurrentTab < mTabSpecs.size());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1238081696 = mTabSpecs.get(mCurrentTab).getTag();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2139285679 = null;
-        String varA7E53CE21691AB073D9660D615818899_276178412; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_276178412; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_276178412 = varB4EAC82CA7396A68D541C85D26508E83_1238081696;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_276178412 = varB4EAC82CA7396A68D541C85D26508E83_2139285679;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_276178412.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_276178412.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_276178412;
-        // ---------- Original Method ----------
-        //if (mCurrentTab >= 0 && mCurrentTab < mTabSpecs.size()) {
-            //return mTabSpecs.get(mCurrentTab).getTag();
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.223 -0400", hash_original_method = "42AE505B98E20EE6CD2716BFC7687421", hash_generated_method = "BD01AB6971327545BF418BD8F93F16C7")
     public View getCurrentTabView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_676411348 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1039396070 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_676411348 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1039396070 = null; 
         {
             boolean varBFF1B1E49A84DE64A6516F714FB4E748_1565290419 = (mCurrentTab >= 0 && mCurrentTab < mTabSpecs.size());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_676411348 = mTabWidget.getChildTabViewAt(mCurrentTab);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1039396070 = null;
-        View varA7E53CE21691AB073D9660D615818899_933792382; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_933792382; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_933792382 = varB4EAC82CA7396A68D541C85D26508E83_676411348;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_933792382 = varB4EAC82CA7396A68D541C85D26508E83_1039396070;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_933792382.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_933792382.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_933792382;
-        // ---------- Original Method ----------
-        //if (mCurrentTab >= 0 && mCurrentTab < mTabSpecs.size()) {
-            //return mTabWidget.getChildTabViewAt(mCurrentTab);
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.223 -0400", hash_original_method = "EEE501665EA90FABC7BF921A8CA32190", hash_generated_method = "8E55AC697593877F0240F34A70CD29BA")
     public View getCurrentView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_733001547 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_733001547 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_733001547 = mCurrentView;
-        varB4EAC82CA7396A68D541C85D26508E83_733001547.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_733001547.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_733001547;
-        // ---------- Original Method ----------
-        //return mCurrentView;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.224 -0400", hash_original_method = "8C15D02B8DC442237A4CA8C57AA1B8BD", hash_generated_method = "8B2F8A7C74B2E8997FD79ED4AFB098BA")
     public void setCurrentTabByTag(String tag) {
         int i;
@@ -404,33 +416,34 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
                     boolean var4DA02596B8000A9C8E71A047104AEF87_643071434 = (mTabSpecs.get(i).getTag().equals(tag));
                     {
                         setCurrentTab(i);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(tag.getTaint());
-        // ---------- Original Method ----------
-        //int i;
-        //for (i = 0; i < mTabSpecs.size(); i++) {
-            //if (mTabSpecs.get(i).getTag().equals(tag)) {
-                //setCurrentTab(i);
-                //break;
-            //}
-        //}
+        
+        
+        
+            
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.224 -0400", hash_original_method = "14B19444D2789515B31F45C4D21A2D48", hash_generated_method = "FFAA260224DE2CA49CBEBBC5CE29503A")
     public FrameLayout getTabContentView() {
-        FrameLayout varB4EAC82CA7396A68D541C85D26508E83_414497025 = null; //Variable for return #1
+        FrameLayout varB4EAC82CA7396A68D541C85D26508E83_414497025 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_414497025 = mTabContent;
-        varB4EAC82CA7396A68D541C85D26508E83_414497025.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_414497025.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_414497025;
-        // ---------- Original Method ----------
-        //return mTabContent;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.225 -0400", hash_original_method = "C8998AD47D2F3EF23C8F7D2AD28B98AB", hash_generated_method = "5551FDD000FD3DD85B6EFC71CFA48706")
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
@@ -446,50 +459,52 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
             {
                 mTabWidget.getChildTabViewAt(mCurrentTab).requestFocus();
                 playSoundEffect(SoundEffectConstants.NAVIGATION_UP);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1364364278 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1364364278;
-        // ---------- Original Method ----------
-        //final boolean handled = super.dispatchKeyEvent(event);
-        //if (!handled
-                //&& (event.getAction() == KeyEvent.ACTION_DOWN)
-                //&& (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_UP)
-                //&& (mCurrentView != null)
-                //&& (mCurrentView.isRootNamespace())
-                //&& (mCurrentView.hasFocus())
-                //&& (mCurrentView.findFocus().focusSearch(View.FOCUS_UP) == null)) {
-            //mTabWidget.getChildTabViewAt(mCurrentTab).requestFocus();
-            //playSoundEffect(SoundEffectConstants.NAVIGATION_UP);
-            //return true;
-        //}
-        //return handled;
+        
+        
+        
+                
+                
+                
+                
+                
+                
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.225 -0400", hash_original_method = "96A22F6DD8439F6A02086A8F9D6622C9", hash_generated_method = "544E2E74B4D3F9B2265C2BE462ED504B")
     @Override
     public void dispatchWindowFocusChanged(boolean hasFocus) {
         {
             mCurrentView.dispatchWindowFocusChanged(hasFocus);
-        } //End block
+        } 
         addTaint(hasFocus);
-        // ---------- Original Method ----------
-        //if (mCurrentView != null){
-            //mCurrentView.dispatchWindowFocusChanged(hasFocus);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.226 -0400", hash_original_method = "E2648DF1C44758803127AAF509A8077D", hash_generated_method = "21B517D17C38BFCE7882826A35AD5EB3")
     public void setCurrentTab(int index) {
         {
             boolean var12DC1F26A8790AE5636794CCB058F3B4_664216246 = (index < 0 || index >= mTabSpecs.size());
-        } //End collapsed parenthetic
+        } 
         {
             mTabSpecs.get(mCurrentTab).mContentStrategy.tabClosed();
-        } //End block
+        } 
         mCurrentTab = index;
         final TabHost.TabSpec spec = mTabSpecs.get(index);
         mTabWidget.focusCurrentTab(mCurrentTab);
@@ -503,37 +518,38 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
                             new ViewGroup.LayoutParams(
                                     ViewGroup.LayoutParams.MATCH_PARENT,
                                     ViewGroup.LayoutParams.MATCH_PARENT));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varE1415C6CB1A85A422D5231164E146792_1269715270 = (!mTabWidget.hasFocus());
             {
                 mCurrentView.requestFocus();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         invokeOnTabChangeListener();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.226 -0400", hash_original_method = "CAD2636558BA92FD3B25434077F437FA", hash_generated_method = "81BDC8026576E158152F1D6A433CB82E")
     public void setOnTabChangedListener(OnTabChangeListener l) {
         mOnTabChangeListener = l;
-        // ---------- Original Method ----------
-        //mOnTabChangeListener = l;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.226 -0400", hash_original_method = "1A4924ED406293CF6C6A6C1455DF4ECD", hash_generated_method = "635546385617DF117EBD1474C0C10777")
     private void invokeOnTabChangeListener() {
         {
             mOnTabChangeListener.onTabChanged(getCurrentTabTag());
-        } //End block
-        // ---------- Original Method ----------
-        //if (mOnTabChangeListener != null) {
-            //mOnTabChangeListener.onTabChanged(getCurrentTabTag());
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -551,97 +567,97 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.226 -0400", hash_original_method = "B448A25FB17665A97225C3E034B27800", hash_generated_method = "8C52576964B21F07DD2BCCD9B11DF51C")
         private  TabSpec(String tag) {
             mTag = tag;
-            // ---------- Original Method ----------
-            //mTag = tag;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.227 -0400", hash_original_method = "5E409F9D1F2DECB24B35FF4D25A5BAE5", hash_generated_method = "B007003D6B0704B0C1308D3724C25F14")
         public TabSpec setIndicator(CharSequence label) {
-            TabSpec varB4EAC82CA7396A68D541C85D26508E83_732865 = null; //Variable for return #1
+            TabSpec varB4EAC82CA7396A68D541C85D26508E83_732865 = null; 
             mIndicatorStrategy = new LabelIndicatorStrategy(label);
             varB4EAC82CA7396A68D541C85D26508E83_732865 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_732865.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_732865.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_732865;
-            // ---------- Original Method ----------
-            //mIndicatorStrategy = new LabelIndicatorStrategy(label);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.228 -0400", hash_original_method = "23880839A48B028850E58B36E2EDF15E", hash_generated_method = "4E017DC1EB503023924B8F9688739EDD")
         public TabSpec setIndicator(CharSequence label, Drawable icon) {
-            TabSpec varB4EAC82CA7396A68D541C85D26508E83_1263252271 = null; //Variable for return #1
+            TabSpec varB4EAC82CA7396A68D541C85D26508E83_1263252271 = null; 
             mIndicatorStrategy = new LabelAndIconIndicatorStrategy(label, icon);
             varB4EAC82CA7396A68D541C85D26508E83_1263252271 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1263252271.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1263252271.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1263252271;
-            // ---------- Original Method ----------
-            //mIndicatorStrategy = new LabelAndIconIndicatorStrategy(label, icon);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.229 -0400", hash_original_method = "BD5297BEFA4518E605FA03EA203960DD", hash_generated_method = "5F620D8A8FFCA8AAEFB3F2BCFD7B471D")
         public TabSpec setIndicator(View view) {
-            TabSpec varB4EAC82CA7396A68D541C85D26508E83_2050935509 = null; //Variable for return #1
+            TabSpec varB4EAC82CA7396A68D541C85D26508E83_2050935509 = null; 
             mIndicatorStrategy = new ViewIndicatorStrategy(view);
             varB4EAC82CA7396A68D541C85D26508E83_2050935509 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_2050935509.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2050935509.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2050935509;
-            // ---------- Original Method ----------
-            //mIndicatorStrategy = new ViewIndicatorStrategy(view);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.230 -0400", hash_original_method = "4C505DBFF1019A4E7D7D5286BB033694", hash_generated_method = "9B3DEA9C42230AFBF09FBA734C179581")
         public TabSpec setContent(int viewId) {
-            TabSpec varB4EAC82CA7396A68D541C85D26508E83_1842618809 = null; //Variable for return #1
+            TabSpec varB4EAC82CA7396A68D541C85D26508E83_1842618809 = null; 
             mContentStrategy = new ViewIdContentStrategy(viewId);
             varB4EAC82CA7396A68D541C85D26508E83_1842618809 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1842618809.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1842618809.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1842618809;
-            // ---------- Original Method ----------
-            //mContentStrategy = new ViewIdContentStrategy(viewId);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.231 -0400", hash_original_method = "B29A01466A3B1FB70EA06E4B795F088E", hash_generated_method = "853954AD8405D9AA440E9000C9BBAE33")
         public TabSpec setContent(TabContentFactory contentFactory) {
-            TabSpec varB4EAC82CA7396A68D541C85D26508E83_1600270914 = null; //Variable for return #1
+            TabSpec varB4EAC82CA7396A68D541C85D26508E83_1600270914 = null; 
             mContentStrategy = new FactoryContentStrategy(mTag, contentFactory);
             varB4EAC82CA7396A68D541C85D26508E83_1600270914 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1600270914.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1600270914.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1600270914;
-            // ---------- Original Method ----------
-            //mContentStrategy = new FactoryContentStrategy(mTag, contentFactory);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.231 -0400", hash_original_method = "0D57BE6053E1E40100589C46AD4E8491", hash_generated_method = "01823399EA5078952ADBA0067E65E4CF")
         public TabSpec setContent(Intent intent) {
-            TabSpec varB4EAC82CA7396A68D541C85D26508E83_1923306501 = null; //Variable for return #1
+            TabSpec varB4EAC82CA7396A68D541C85D26508E83_1923306501 = null; 
             mContentStrategy = new IntentContentStrategy(mTag, intent);
             varB4EAC82CA7396A68D541C85D26508E83_1923306501 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1923306501.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1923306501.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1923306501;
-            // ---------- Original Method ----------
-            //mContentStrategy = new IntentContentStrategy(mTag, intent);
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.232 -0400", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "FDC37582AC69EC20D17AD26AE6A5AECF")
         public String getTag() {
-            String varB4EAC82CA7396A68D541C85D26508E83_982163834 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_982163834 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_982163834 = mTag;
-            varB4EAC82CA7396A68D541C85D26508E83_982163834.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_982163834.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_982163834;
-            // ---------- Original Method ----------
-            //return mTag;
+            
+            
         }
 
         
@@ -657,14 +673,14 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.232 -0400", hash_original_method = "8DE7E2F209482BC83865CDCF3C7C3957", hash_generated_method = "08E3A6DB2473BDD30016B577A75C17DA")
         private  LabelIndicatorStrategy(CharSequence label) {
             mLabel = label;
-            // ---------- Original Method ----------
-            //mLabel = label;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.233 -0400", hash_original_method = "DC1E36DC8692A133E2BAD2847D81CB26", hash_generated_method = "E809FC9DC067432A4FDD3A632F8E6594")
         public View createIndicatorView() {
-            View varB4EAC82CA7396A68D541C85D26508E83_21808037 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_21808037 = null; 
             final Context context = getContext();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View tabIndicator = inflater.inflate(mTabLayoutId,
@@ -677,25 +693,25 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
                 {
                     tabIndicator.setBackgroundResource(R.drawable.tab_indicator_v4);
                     tv.setTextColor(context.getResources().getColorStateList(R.color.tab_indicator_text_v4));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_21808037 = tabIndicator;
-            varB4EAC82CA7396A68D541C85D26508E83_21808037.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_21808037.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_21808037;
-            // ---------- Original Method ----------
-            //final Context context = getContext();
-            //LayoutInflater inflater =
-                    //(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            //View tabIndicator = inflater.inflate(mTabLayoutId,
-                    //mTabWidget, 
-                    //false);
-            //final TextView tv = (TextView) tabIndicator.findViewById(R.id.title);
-            //tv.setText(mLabel);
-            //if (context.getApplicationInfo().targetSdkVersion <= Build.VERSION_CODES.DONUT) {
-                //tabIndicator.setBackgroundResource(R.drawable.tab_indicator_v4);
-                //tv.setTextColor(context.getResources().getColorStateList(R.color.tab_indicator_text_v4));
-            //}
-            //return tabIndicator;
+            
+            
+            
+                    
+            
+                    
+                    
+            
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -715,15 +731,15 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         private  LabelAndIconIndicatorStrategy(CharSequence label, Drawable icon) {
             mLabel = label;
             mIcon = icon;
-            // ---------- Original Method ----------
-            //mLabel = label;
-            //mIcon = icon;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.235 -0400", hash_original_method = "9B2F586B6F3639CDD79EFCA223D857D6", hash_generated_method = "A0AFCA0B740425E1C026D2515AB31EB6")
         public View createIndicatorView() {
-            View varB4EAC82CA7396A68D541C85D26508E83_1595715757 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_1595715757 = null; 
             final Context context = getContext();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View tabIndicator = inflater.inflate(mTabLayoutId,
@@ -737,19 +753,19 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
             {
                 iconView.setImageDrawable(mIcon);
                 iconView.setVisibility(VISIBLE);
-            } //End block
+            } 
             {
                 boolean var28B97C77588ED043C122E84D836ACC17_2079171457 = (context.getApplicationInfo().targetSdkVersion <= Build.VERSION_CODES.DONUT);
                 {
                     tabIndicator.setBackgroundResource(R.drawable.tab_indicator_v4);
                     tv.setTextColor(context.getResources().getColorStateList(R.color.tab_indicator_text_v4));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1595715757 = tabIndicator;
-            varB4EAC82CA7396A68D541C85D26508E83_1595715757.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1595715757.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1595715757;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -765,19 +781,19 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.235 -0400", hash_original_method = "70774C2CF3D512F90368753CBBBC1864", hash_generated_method = "EDE3C0618D5B4758FB8E879A8598955F")
         private  ViewIndicatorStrategy(View view) {
             mView = view;
-            // ---------- Original Method ----------
-            //mView = view;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.236 -0400", hash_original_method = "E81C3A0236D0948C1B54CB0897C263EB", hash_generated_method = "1B90969FCCE39E7AF82F2802E29D51EF")
         public View createIndicatorView() {
-            View varB4EAC82CA7396A68D541C85D26508E83_578884042 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_578884042 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_578884042 = mView;
-            varB4EAC82CA7396A68D541C85D26508E83_578884042.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_578884042.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_578884042;
-            // ---------- Original Method ----------
-            //return mView;
+            
+            
         }
 
         
@@ -795,40 +811,40 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
             mView = mTabContent.findViewById(viewId);
             {
                 mView.setVisibility(View.GONE);
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Could not create tab content because " +
                         "could not find view with id " + viewId);
-            } //End block
-            // ---------- Original Method ----------
-            //mView = mTabContent.findViewById(viewId);
-            //if (mView != null) {
-                //mView.setVisibility(View.GONE);
-            //} else {
-                //throw new RuntimeException("Could not create tab content because " +
-                        //"could not find view with id " + viewId);
-            //}
+            } 
+            
+            
+            
+                
+            
+                
+                        
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.237 -0400", hash_original_method = "FAF9C6C424D99CBF1D87945750D97718", hash_generated_method = "6F45DB42FA785613F5439BA33A00097B")
         public View getContentView() {
-            View varB4EAC82CA7396A68D541C85D26508E83_245337463 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_245337463 = null; 
             mView.setVisibility(View.VISIBLE);
             varB4EAC82CA7396A68D541C85D26508E83_245337463 = mView;
-            varB4EAC82CA7396A68D541C85D26508E83_245337463.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_245337463.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_245337463;
-            // ---------- Original Method ----------
-            //mView.setVisibility(View.VISIBLE);
-            //return mView;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.237 -0400", hash_original_method = "1538BDA0E7D9A0DE19E0F5AE4CBE24FE", hash_generated_method = "116E4E15B96A554AEE4000FB89294B7A")
         public void tabClosed() {
             mView.setVisibility(View.GONE);
-            // ---------- Original Method ----------
-            //mView.setVisibility(View.GONE);
+            
+            
         }
 
         
@@ -851,36 +867,36 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         public  FactoryContentStrategy(CharSequence tag, TabContentFactory factory) {
             mTag = tag;
             mFactory = factory;
-            // ---------- Original Method ----------
-            //mTag = tag;
-            //mFactory = factory;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.238 -0400", hash_original_method = "ED11D1341C028F4F2DA686CA9100CB0F", hash_generated_method = "183EA12CF474853D4339BA1AB3A48A34")
         public View getContentView() {
-            View varB4EAC82CA7396A68D541C85D26508E83_146522771 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_146522771 = null; 
             {
                 mTabContent = mFactory.createTabContent(mTag.toString());
-            } //End block
+            } 
             mTabContent.setVisibility(View.VISIBLE);
             varB4EAC82CA7396A68D541C85D26508E83_146522771 = mTabContent;
-            varB4EAC82CA7396A68D541C85D26508E83_146522771.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_146522771.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_146522771;
-            // ---------- Original Method ----------
-            //if (mTabContent == null) {
-                //mTabContent = mFactory.createTabContent(mTag.toString());
-            //}
-            //mTabContent.setVisibility(View.VISIBLE);
-            //return mTabContent;
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.239 -0400", hash_original_method = "F4CF7743D7975FC61814EFF15B52191C", hash_generated_method = "A6B6F41E27B96F885E5ACD81C8BD5D11")
         public void tabClosed() {
             mTabContent.setVisibility(View.GONE);
-            // ---------- Original Method ----------
-            //mTabContent.setVisibility(View.GONE);
+            
+            
         }
 
         
@@ -903,18 +919,18 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         private  IntentContentStrategy(String tag, Intent intent) {
             mTag = tag;
             mIntent = intent;
-            // ---------- Original Method ----------
-            //mTag = tag;
-            //mIntent = intent;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.242 -0400", hash_original_method = "FE3CC83835F910E93083BF6BA67BB115", hash_generated_method = "06270EB857519FB4D87B405723552919")
         public View getContentView() {
-            View varB4EAC82CA7396A68D541C85D26508E83_1398500901 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_1398500901 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Did you forget to call 'public void setup(LocalActivityManager activityGroup)'?");
-            } //End block
+            } 
             final Window w = mLocalActivityManager.startActivity(
                     mTag, mIntent);
             View wd;
@@ -925,21 +941,21 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
                     boolean varA425BC4E1B0DD4835B1D70A02CB53CD6_1690082339 = (mLaunchedView.getParent() != null);
                     {
                         mTabContent.removeView(mLaunchedView);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             mLaunchedView = wd;
             {
                 mLaunchedView.setVisibility(View.VISIBLE);
                 mLaunchedView.setFocusableInTouchMode(true);
                 ((ViewGroup) mLaunchedView).setDescendantFocusability(
                         FOCUS_AFTER_DESCENDANTS);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1398500901 = mLaunchedView;
-            varB4EAC82CA7396A68D541C85D26508E83_1398500901.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1398500901.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1398500901;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -947,11 +963,11 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         public void tabClosed() {
             {
                 mLaunchedView.setVisibility(View.GONE);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mLaunchedView != null) {
-                //mLaunchedView.setVisibility(View.GONE);
-            //}
+            } 
+            
+            
+                
+            
         }
 
         

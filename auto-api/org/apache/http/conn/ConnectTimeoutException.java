@@ -1,11 +1,11 @@
 package org.apache.http.conn;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.InterruptedIOException;
 
@@ -14,7 +14,7 @@ public class ConnectTimeoutException extends InterruptedIOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.023 -0400", hash_original_method = "F05E8C7090F12D1341BCD22C7103FC0B", hash_generated_method = "40986EE17DC87DB632A880FBACB481A9")
     public  ConnectTimeoutException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class ConnectTimeoutException extends InterruptedIOException {
     public  ConnectTimeoutException(final String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

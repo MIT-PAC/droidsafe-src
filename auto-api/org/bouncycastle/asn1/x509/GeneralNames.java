@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1Sequence;
@@ -23,8 +23,8 @@ public class GeneralNames extends ASN1Encodable {
         GeneralName  name) {
         this.names = new GeneralName[] { name };
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
-        //this.names = new GeneralName[] { name };
+        
+        
     }
 
     
@@ -37,14 +37,14 @@ public class GeneralNames extends ASN1Encodable {
             boolean varA93A8909C6B18B3F6367766A0DBBDCF3_78650704 = (i != seq.size());
             {
                 names[i] = GeneralName.getInstance(seq.getObjectAt(i));
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //this.names = new GeneralName[seq.size()];
-        //for (int i = 0; i != seq.size(); i++)
-        //{
-            //names[i] = GeneralName.getInstance(seq.getObjectAt(i));
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -69,35 +69,38 @@ public class GeneralNames extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.825 -0400", hash_original_method = "9AED96B400BA543408C9F5E967093153", hash_generated_method = "B7A72A9FE13633B31DA0E9518DCB7542")
     public GeneralName[] getNames() {
-        GeneralName[] varB4EAC82CA7396A68D541C85D26508E83_800146428 = null; //Variable for return #1
+        GeneralName[] varB4EAC82CA7396A68D541C85D26508E83_800146428 = null; 
         GeneralName[] tmp = new GeneralName[names.length];
         System.arraycopy(names, 0, tmp, 0, names.length);
         varB4EAC82CA7396A68D541C85D26508E83_800146428 = tmp;
-        varB4EAC82CA7396A68D541C85D26508E83_800146428.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_800146428.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_800146428;
-        // ---------- Original Method ----------
-        //GeneralName[] tmp = new GeneralName[names.length];
-        //System.arraycopy(names, 0, tmp, 0, names.length);
-        //return tmp;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.825 -0400", hash_original_method = "04D00D35531AB013A64ACFCEB501C4EE", hash_generated_method = "AEDEB0863C43703724C408B5A78E3D7F")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_973329243 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_973329243 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_973329243 = new DERSequence(names);
-        varB4EAC82CA7396A68D541C85D26508E83_973329243.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_973329243.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_973329243;
-        // ---------- Original Method ----------
-        //return new DERSequence(names);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.826 -0400", hash_original_method = "7DDFA5C3E7762D6D39ED7DFFF0863845", hash_generated_method = "AD3B9CF96F8615B30BEF05E494729227")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1007483971 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1007483971 = null; 
         StringBuffer buf = new StringBuffer();
         String sep = System.getProperty("line.separator");
         buf.append("GeneralNames:");
@@ -108,23 +111,23 @@ public class GeneralNames extends ASN1Encodable {
                 buf.append("    ");
                 buf.append(names[i]);
                 buf.append(sep);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1007483971 = buf.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1007483971.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1007483971.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1007483971;
-        // ---------- Original Method ----------
-        //StringBuffer  buf = new StringBuffer();
-        //String        sep = System.getProperty("line.separator");
-        //buf.append("GeneralNames:");
-        //buf.append(sep);
-        //for (int i = 0; i != names.length; i++)
-        //{
-            //buf.append("    ");
-            //buf.append(names[i]);
-            //buf.append(sep);
-        //}
-        //return buf.toString();
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     

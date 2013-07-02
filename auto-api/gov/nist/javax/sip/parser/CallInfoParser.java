@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.javax.sip.address.*;
@@ -17,7 +17,7 @@ public class CallInfoParser extends ParametersParser {
     public  CallInfoParser(String callInfo) {
         super(callInfo);
         addTaint(callInfo.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class CallInfoParser extends ParametersParser {
     protected  CallInfoParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.803 -0400", hash_original_method = "290368D57FB4A6E462380F5F8D42DA38", hash_generated_method = "30B22E6045DE344358DBB86A7B74E0B0")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1865028841 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1865028841 = null; 
         dbg_enter("CallInfoParser.parse");
         CallInfoList list = new CallInfoList();
         try 
@@ -66,20 +67,20 @@ public class CallInfoParser extends ParametersParser {
                             this.lexer.SPorHT();
                             super.parse(callInfo);
                             list.add(callInfo);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1865028841 = list;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("CallInfoParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1865028841.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1865028841.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1865028841;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

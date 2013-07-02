@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import libcore.net.url.UrlUtils;
@@ -16,7 +16,7 @@ public abstract class URLStreamHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.668 -0400", hash_original_method = "2DD01D30EAA2A038CBAA0D570E27B35E", hash_generated_method = "2DD01D30EAA2A038CBAA0D570E27B35E")
     public URLStreamHandler ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -26,8 +26,8 @@ public abstract class URLStreamHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.669 -0400", hash_original_method = "E25BD4FE17DCB1FC5CA1FF6A9FF13CCB", hash_generated_method = "235086DD597D7F1149FEF0E40FBBBF03")
     protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
     	throw new UnsupportedOperationException();
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -35,10 +35,10 @@ public abstract class URLStreamHandler {
     protected void parseURL(URL url, String spec, int start, int end) {
         {
             if (DroidSafeAndroidRuntime.control) throw new SecurityException("Only a URL's stream handler is permitted to mutate it");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(spec, start, end - start);
-        } //End block
+        } 
         int fileStart;
         String authority;
         String userInfo;
@@ -58,11 +58,11 @@ public abstract class URLStreamHandler {
                 {
                     userInfo = spec.substring(authorityStart, userInfoEnd);
                     hostStart = userInfoEnd + 1;
-                } //End block
+                } 
                 {
                     userInfo = null;
                     hostStart = authorityStart;
-                } //End block
+                } 
                 int colonSearchFrom = hostStart;
                 int ipv6End = UrlUtils.findFirstOf(spec, "]", hostStart, fileStart);
                 {
@@ -71,10 +71,10 @@ public abstract class URLStreamHandler {
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Expected an IPv6 address: "
                             + spec.substring(hostStart, ipv6End + 1));
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     colonSearchFrom = ipv6End;
-                } //End block
+                } 
                 int hostEnd = UrlUtils.findFirstOf(spec, ":", colonSearchFrom, fileStart);
                 host = spec.substring(hostStart, hostEnd);
                 int portStart = hostEnd + 1;
@@ -82,12 +82,12 @@ public abstract class URLStreamHandler {
                     port = Integer.parseInt(spec.substring(portStart, fileStart));
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("port < 0: " + port);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 path = null;
                 query = null;
                 ref = null;
-            } //End block
+            } 
             {
                 fileStart = start;
                 authority = url.getAuthority();
@@ -95,62 +95,63 @@ public abstract class URLStreamHandler {
                 host = url.getHost();
                 {
                     host = "";
-                } //End block
+                } 
                 port = url.getPort();
                 path = url.getPath();
                 query = url.getQuery();
                 ref = url.getRef();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int pos = fileStart;
         {
             int nextPos;
             {
                 Object var37FBD7EC15D4DF88223F1C260149F042_1555821893 = (spec.charAt(pos));
-                //Begin case '#' 
+                
                 nextPos = end;
-                //End case '#' 
-                //Begin case '#' 
+                
+                
                 ref = spec.substring(pos + 1, nextPos);
-                //End case '#' 
-                //Begin case '?' 
+                
+                
                 nextPos = UrlUtils.findFirstOf(spec, "#", pos, end);
-                //End case '?' 
-                //Begin case '?' 
+                
+                
                 query = spec.substring(pos + 1, nextPos);
-                //End case '?' 
-                //Begin case '?' 
+                
+                
                 ref = null;
-                //End case '?' 
-                //Begin case default 
+                
+                
                 nextPos = UrlUtils.findFirstOf(spec, "?#", pos, end);
-                //End case default 
-                //Begin case default 
+                
+                
                 path = relativePath(path, spec.substring(pos, nextPos));
-                //End case default 
-                //Begin case default 
+                
+                
                 query = null;
-                //End case default 
-                //Begin case default 
+                
+                
                 ref = null;
-                //End case default 
-            } //End collapsed parenthetic
+                
+            } 
             pos = nextPos;
-        } //End block
+        } 
         {
             path = "";
-        } //End block
+        } 
         path = UrlUtils.authoritySafePath(authority, path);
         setURL(url, url.getProtocol(), host, port, authority, userInfo, path, query, ref);
         addTaint(url.getTaint());
         addTaint(spec.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String relativePath(String base, String path) {
         if (path.startsWith("/")) {
             return UrlUtils.canonicalizePath(path, true);
@@ -169,7 +170,7 @@ public abstract class URLStreamHandler {
             String file, String ref) {
         {
             if (DroidSafeAndroidRuntime.control) throw new SecurityException();
-        } //End block
+        } 
         u.set(protocol, host, port, file, ref);
         addTaint(u.getTaint());
         addTaint(protocol.getTaint());
@@ -177,11 +178,11 @@ public abstract class URLStreamHandler {
         addTaint(port);
         addTaint(file.getTaint());
         addTaint(ref.getTaint());
-        // ---------- Original Method ----------
-        //if (this != u.streamHandler) {
-            //throw new SecurityException();
-        //}
-        //u.set(protocol, host, port, file, ref);
+        
+        
+            
+        
+        
     }
 
     
@@ -191,7 +192,7 @@ public abstract class URLStreamHandler {
             String ref) {
         {
             if (DroidSafeAndroidRuntime.control) throw new SecurityException();
-        } //End block
+        } 
         u.set(protocol, host, port, authority, userInfo, path, query, ref);
         addTaint(u.getTaint());
         addTaint(protocol.getTaint());
@@ -202,29 +203,29 @@ public abstract class URLStreamHandler {
         addTaint(path.getTaint());
         addTaint(query.getTaint());
         addTaint(ref.getTaint());
-        // ---------- Original Method ----------
-        //if (this != u.streamHandler) {
-            //throw new SecurityException();
-        //}
-        //u.set(protocol, host, port, authority, userInfo, path, query, ref);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.676 -0400", hash_original_method = "D96D9FB5C1BC6194BEC4A07D1C2B48A4", hash_generated_method = "7F26CA652E30D7F74610948B9499E25B")
     protected String toExternalForm(URL url) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1751096096 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1751096096 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1751096096 = toExternalForm(url, false);
         addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1751096096.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1751096096.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1751096096;
-        // ---------- Original Method ----------
-        //return toExternalForm(url, false);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.678 -0400", hash_original_method = "629852CED0E76D3D83A14B3CB57F0652", hash_generated_method = "4C2A9D467EEFCFB8C84AE0B429B15407")
      String toExternalForm(URL url, boolean escapeIllegalCharacters) {
-        String varB4EAC82CA7396A68D541C85D26508E83_964297640 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_964297640 = null; 
         StringBuilder result = new StringBuilder();
         result.append(url.getProtocol());
         result.append(':');
@@ -233,37 +234,37 @@ public abstract class URLStreamHandler {
             result.append("//");
             {
                 URI.AUTHORITY_ENCODER.appendPartiallyEncoded(result, authority);
-            } //End block
+            } 
             {
                 result.append(authority);
-            } //End block
-        } //End block
+            } 
+        } 
         String fileAndQuery = url.getFile();
         {
             {
                 URI.FILE_AND_QUERY_ENCODER.appendPartiallyEncoded(result, fileAndQuery);
-            } //End block
+            } 
             {
                 result.append(fileAndQuery);
-            } //End block
-        } //End block
+            } 
+        } 
         String ref = url.getRef();
         {
             result.append('#');
             {
                 URI.ALL_LEGAL_ENCODER.appendPartiallyEncoded(result, ref);
-            } //End block
+            } 
             {
                 result.append(ref);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_964297640 = result.toString();
         addTaint(url.getTaint());
         addTaint(escapeIllegalCharacters);
-        varB4EAC82CA7396A68D541C85D26508E83_964297640.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_964297640.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_964297640;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -276,10 +277,10 @@ public abstract class URLStreamHandler {
         addTaint(b.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_731901616 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_731901616;
-        // ---------- Original Method ----------
-        //return sameFile(a, b)
-                //&& Objects.equal(a.getRef(), b.getRef())
-                //&& Objects.equal(a.getQuery(), b.getQuery());
+        
+        
+                
+                
     }
 
     
@@ -287,16 +288,16 @@ public abstract class URLStreamHandler {
     protected int getDefaultPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_659048355 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_659048355;
-        // ---------- Original Method ----------
-        //return -1;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.680 -0400", hash_original_method = "788D5B882334646F933829D465387DFF", hash_generated_method = "997A30195CA2394C1B9FA1EEAEEF4BF0")
     protected InetAddress getHostAddress(URL url) {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_668314281 = null; //Variable for return #1
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_226474005 = null; //Variable for return #2
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1151645235 = null; //Variable for return #3
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_668314281 = null; 
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_226474005 = null; 
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1151645235 = null; 
         try 
         {
             String host = url.getHost();
@@ -304,39 +305,39 @@ public abstract class URLStreamHandler {
                 boolean varE80B7F8F5DF3C0E96BEA9E404FDFEC5D_1185543631 = (host == null || host.length() == 0);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_668314281 = null;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_226474005 = InetAddress.getByName(host);
-        } //End block
+        } 
         catch (UnknownHostException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1151645235 = null;
-        } //End block
+        } 
         addTaint(url.getTaint());
-        InetAddress varA7E53CE21691AB073D9660D615818899_1692611983; //Final return value
+        InetAddress varA7E53CE21691AB073D9660D615818899_1692611983; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1692611983 = varB4EAC82CA7396A68D541C85D26508E83_668314281;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1692611983 = varB4EAC82CA7396A68D541C85D26508E83_226474005;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1692611983 = varB4EAC82CA7396A68D541C85D26508E83_1151645235;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1692611983.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1692611983.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1692611983;
-        // ---------- Original Method ----------
-        //try {
-            //String host = url.getHost();
-            //if (host == null || host.length() == 0) {
-                //return null;
-            //}
-            //return InetAddress.getByName(host);
-        //} catch (UnknownHostException e) {
-            //return null;
-        //}
+        
+        
+            
+            
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -346,8 +347,8 @@ public abstract class URLStreamHandler {
         addTaint(url.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_170644101 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_170644101;
-        // ---------- Original Method ----------
-        //return toExternalForm(url).hashCode();
+        
+        
     }
 
     
@@ -360,10 +361,10 @@ public abstract class URLStreamHandler {
         addTaint(b.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1001883706 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1001883706;
-        // ---------- Original Method ----------
-        //String aHost = a.getHost();
-        //String bHost = b.getHost();
-        //return (aHost == bHost) || aHost != null && aHost.equalsIgnoreCase(bHost);
+        
+        
+        
+        
     }
 
     
@@ -377,11 +378,11 @@ public abstract class URLStreamHandler {
         addTaint(b.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2120662140 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2120662140;
-        // ---------- Original Method ----------
-        //return Objects.equal(a.getProtocol(), b.getProtocol())
-                //&& hostsEqual(a, b)
-                //&& a.getEffectivePort() == b.getEffectivePort()
-                //&& Objects.equal(a.getFile(), b.getFile());
+        
+        
+                
+                
+                
     }
 
     

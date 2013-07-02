@@ -1,12 +1,12 @@
 package android.content.res;
 
-// Droidsafe Imports
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 import android.os.ParcelFileDescriptor;
@@ -50,20 +50,20 @@ public class AssetManager {
             {
                 mNumRefs = 0;
                 incRefsLocked(this.hashCode());
-            } //End block
+            } 
             init();
             ensureSystemAssets();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (DEBUG_REFS) {
-                //mNumRefs = 0;
-                //incRefsLocked(this.hashCode());
-            //}
-            //init();
-            //if (localLOGV) Log.v(TAG, "New asset manager: " + this);
-            //ensureSystemAssets();
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+            
+            
+            
+        
     }
 
     
@@ -73,22 +73,23 @@ public class AssetManager {
             {
                 mNumRefs = 0;
                 incRefsLocked(this.hashCode());
-            } //End block
-        } //End block
+            } 
+        } 
         init();
         addTaint(isSystem);
-        // ---------- Original Method ----------
-        //if (DEBUG_REFS) {
-            //synchronized (this) {
-                //mNumRefs = 0;
-                //incRefsLocked(this.hashCode());
-            //}
-        //}
-        //init();
-        //if (localLOGV) Log.v(TAG, "New asset manager: " + this);
+        
+        
+            
+                
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void ensureSystemAssets() {
         synchronized (sSync) {
             if (sSystem == null) {
@@ -100,134 +101,136 @@ public class AssetManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AssetManager getSystem() {
         ensureSystemAssets();
         return sSystem;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.391 -0400", hash_original_method = "2C3B764DDE8F79C85110BA90D40DB7B8", hash_generated_method = "A6501E83B35ABE6A99FFC47B746745BD")
     public void close() {
         {
             {
                 mOpen = false;
                 decRefsLocked(this.hashCode());
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized(this) {
-            //if (mOpen) {
-                //mOpen = false;
-                //decRefsLocked(this.hashCode());
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.392 -0400", hash_original_method = "CB81F9A1A3C0416B5CF420A3F62514E3", hash_generated_method = "4551868CDDFBB8D0EE4A6BC969ADB0BD")
     final CharSequence getResourceText(int ident) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1967970680 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1055486125 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_791026370 = null; //Variable for return #3
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1967970680 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1055486125 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_791026370 = null; 
         {
             TypedValue tmpValue = mValue;
             int block = loadResourceValue(ident, (short) 0, tmpValue, true);
             {
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1967970680 = mStringBlocks[block].get(tmpValue.data);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1055486125 = tmpValue.coerceToString();
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_791026370 = null;
         addTaint(ident);
-        CharSequence varA7E53CE21691AB073D9660D615818899_369474662; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_369474662; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_369474662 = varB4EAC82CA7396A68D541C85D26508E83_1967970680;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_369474662 = varB4EAC82CA7396A68D541C85D26508E83_1055486125;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_369474662 = varB4EAC82CA7396A68D541C85D26508E83_791026370;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_369474662.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_369474662.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_369474662;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //TypedValue tmpValue = mValue;
-            //int block = loadResourceValue(ident, (short) 0, tmpValue, true);
-            //if (block >= 0) {
-                //if (tmpValue.type == TypedValue.TYPE_STRING) {
-                    //return mStringBlocks[block].get(tmpValue.data);
-                //}
-                //return tmpValue.coerceToString();
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.394 -0400", hash_original_method = "2C5FA72B5D3C88AECCC2C4639A2FC63C", hash_generated_method = "005878BA9B785AF7CB3652D0B3B880F3")
     final CharSequence getResourceBagText(int ident, int bagEntryId) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_104820888 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_615153485 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_436127915 = null; //Variable for return #3
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_104820888 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_615153485 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_436127915 = null; 
         {
             TypedValue tmpValue = mValue;
             int block = loadResourceBagValue(ident, bagEntryId, tmpValue, true);
             {
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_104820888 = mStringBlocks[block].get(tmpValue.data);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_615153485 = tmpValue.coerceToString();
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_436127915 = null;
         addTaint(ident);
         addTaint(bagEntryId);
-        CharSequence varA7E53CE21691AB073D9660D615818899_1410160018; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1410160018; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1410160018 = varB4EAC82CA7396A68D541C85D26508E83_104820888;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1410160018 = varB4EAC82CA7396A68D541C85D26508E83_615153485;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1410160018 = varB4EAC82CA7396A68D541C85D26508E83_436127915;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1410160018.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1410160018.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1410160018;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //TypedValue tmpValue = mValue;
-            //int block = loadResourceBagValue(ident, bagEntryId, tmpValue, true);
-            //if (block >= 0) {
-                //if (tmpValue.type == TypedValue.TYPE_STRING) {
-                    //return mStringBlocks[block].get(tmpValue.data);
-                //}
-                //return tmpValue.coerceToString();
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.395 -0400", hash_original_method = "15AFE30CDC312B3891A5A8072BD8524F", hash_generated_method = "9AE02B6BD52A8F6BCCCD92B8C6CBD114")
     final String[] getResourceStringArray(final int id) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1042256637 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1042256637 = null; 
         String[] retArray = getArrayStringResource(id);
         varB4EAC82CA7396A68D541C85D26508E83_1042256637 = retArray;
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_1042256637.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1042256637.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1042256637;
-        // ---------- Original Method ----------
-        //String[] retArray = getArrayStringResource(id);
-        //return retArray;
+        
+        
+        
     }
 
     
@@ -239,29 +242,29 @@ public class AssetManager {
         int block = loadResourceValue(ident, (short) density, outValue, resolveRefs);
         {
             outValue.string = mStringBlocks[block].get(outValue.data);
-        } //End block
+        } 
         addTaint(ident);
         addTaint(density);
         addTaint(outValue.getTaint());
         addTaint(resolveRefs);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_589346282 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_589346282;
-        // ---------- Original Method ----------
-        //int block = loadResourceValue(ident, (short) density, outValue, resolveRefs);
-        //if (block >= 0) {
-            //if (outValue.type != TypedValue.TYPE_STRING) {
-                //return true;
-            //}
-            //outValue.string = mStringBlocks[block].get(outValue.data);
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.397 -0400", hash_original_method = "5C4180581403390570CBF3420B87F392", hash_generated_method = "105C50905ADC7AA65B1403BC727C01C4")
     final CharSequence[] getResourceTextArray(final int id) {
-        CharSequence[] varB4EAC82CA7396A68D541C85D26508E83_1216972681 = null; //Variable for return #1
+        CharSequence[] varB4EAC82CA7396A68D541C85D26508E83_1216972681 = null; 
         int[] rawInfoArray = getArrayStringInfo(id);
         int rawInfoArrayLen = rawInfoArray.length;
         final int infoArrayLen = rawInfoArrayLen / 2;
@@ -276,25 +279,25 @@ public class AssetManager {
                 block = rawInfoArray[i];
                 index = rawInfoArray[i + 1];
                 retArray[j] = index >= 0 ? mStringBlocks[block].get(index) : null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1216972681 = retArray;
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_1216972681.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1216972681.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1216972681;
-        // ---------- Original Method ----------
-        //int[] rawInfoArray = getArrayStringInfo(id);
-        //int rawInfoArrayLen = rawInfoArray.length;
-        //final int infoArrayLen = rawInfoArrayLen / 2;
-        //int block;
-        //int index;
-        //CharSequence[] retArray = new CharSequence[infoArrayLen];
-        //for (int i = 0, j = 0; i < rawInfoArrayLen; i = i + 2, j++) {
-            //block = rawInfoArray[i];
-            //index = rawInfoArray[i + 1];
-            //retArray[j] = index >= 0 ? mStringBlocks[block].get(index) : null;
-        //}
-        //return retArray;
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -307,30 +310,30 @@ public class AssetManager {
             {
                 ensureStringBlocks();
                 blocks = mStringBlocks;
-            } //End block
+            } 
             outValue.string = blocks[block].get(outValue.data);
-        } //End block
+        } 
         addTaint(theme);
         addTaint(ident);
         addTaint(outValue.getTaint());
         addTaint(resolveRefs);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_800562152 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_800562152;
-        // ---------- Original Method ----------
-        //int block = loadThemeAttributeValue(theme, ident, outValue, resolveRefs);
-        //if (block >= 0) {
-            //if (outValue.type != TypedValue.TYPE_STRING) {
-                //return true;
-            //}
-            //StringBlock[] blocks = mStringBlocks;
-            //if (blocks == null) {
-                //ensureStringBlocks();
-                //blocks = mStringBlocks;
-            //}
-            //outValue.string = blocks[block].get(outValue.data);
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+            
+            
+                
+                
+            
+            
+            
+        
+        
     }
 
     
@@ -340,17 +343,17 @@ public class AssetManager {
             {
                 {
                     makeStringBlocks(true);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mStringBlocks == null) {
-            //synchronized (this) {
-                //if (mStringBlocks == null) {
-                    //makeStringBlocks(true);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+                
+                    
+                
+            
+        
     }
 
     
@@ -366,116 +369,116 @@ public class AssetManager {
             {
                 {
                     mStringBlocks[i] = sSystem.mStringBlocks[i];
-                } //End block
+                } 
                 {
                     mStringBlocks[i] = new StringBlock(getNativeStringBlock(i), true);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(copyFromSystem);
-        // ---------- Original Method ----------
-        //final int sysNum = copyFromSystem ? sSystem.mStringBlocks.length : 0;
-        //final int num = getStringBlockCount();
-        //mStringBlocks = new StringBlock[num];
-        //if (localLOGV) Log.v(TAG, "Making string blocks for " + this
-                //+ ": " + num);
-        //for (int i=0; i<num; i++) {
-            //if (i < sysNum) {
-                //mStringBlocks[i] = sSystem.mStringBlocks[i];
-            //} else {
-                //mStringBlocks[i] = new StringBlock(getNativeStringBlock(i), true);
-            //}
-        //}
+        
+        
+        
+        
+        
+                
+        
+            
+                
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.399 -0400", hash_original_method = "148EA8945A31568904B22E1C4951294F", hash_generated_method = "832AB40E0CB14E0FF9864E4E748CDC65")
     final CharSequence getPooledString(int block, int id) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1507898348 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1507898348 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1507898348 = mStringBlocks[block-1].get(id);
         addTaint(block);
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_1507898348.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1507898348.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1507898348;
-        // ---------- Original Method ----------
-        //return mStringBlocks[block-1].get(id);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.400 -0400", hash_original_method = "7E1B14522C484E4F1B470AEA16F877D6", hash_generated_method = "52489E979F3C930EBC608CFCF5C3C3C2")
     public final InputStream open(String fileName) throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1393111849 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1393111849 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1393111849 = open(fileName, ACCESS_STREAMING);
         addTaint(fileName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1393111849.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1393111849.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1393111849;
-        // ---------- Original Method ----------
-        //return open(fileName, ACCESS_STREAMING);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.402 -0400", hash_original_method = "EB9FEA0B2CEADB65FF0921C2B52A13F4", hash_generated_method = "014455135984042A5DF8C1B5014767E2")
     public final InputStream open(String fileName, int accessMode) throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1671940773 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1671940773 = null; 
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Assetmanager has been closed");
-            } //End block
+            } 
             int asset = openAsset(fileName, accessMode);
             {
                 AssetInputStream res = new AssetInputStream(asset);
                 incRefsLocked(res.hashCode());
                 varB4EAC82CA7396A68D541C85D26508E83_1671940773 = res;
-            } //End block
-        } //End block
+            } 
+        } 
         if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Asset file: " + fileName);
         addTaint(fileName.getTaint());
         addTaint(accessMode);
-        varB4EAC82CA7396A68D541C85D26508E83_1671940773.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1671940773.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1671940773;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (!mOpen) {
-                //throw new RuntimeException("Assetmanager has been closed");
-            //}
-            //int asset = openAsset(fileName, accessMode);
-            //if (asset != 0) {
-                //AssetInputStream res = new AssetInputStream(asset);
-                //incRefsLocked(res.hashCode());
-                //return res;
-            //}
-        //}
-        //throw new FileNotFoundException("Asset file: " + fileName);
+        
+        
+            
+                
+            
+            
+            
+                
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.405 -0400", hash_original_method = "66D3D468B1706A8E526F268E61D6D3C7", hash_generated_method = "BFF344F9C15CACAAA64A5AE441DCDAA0")
     public final AssetFileDescriptor openFd(String fileName) throws IOException {
-        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1979646457 = null; //Variable for return #1
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1979646457 = null; 
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Assetmanager has been closed");
-            } //End block
+            } 
             ParcelFileDescriptor pfd = openAssetFd(fileName, mOffsets);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1979646457 = new AssetFileDescriptor(pfd, mOffsets[0], mOffsets[1]);
-            } //End block
-        } //End block
+            } 
+        } 
         if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Asset file: " + fileName);
         addTaint(fileName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1979646457.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1979646457.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1979646457;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (!mOpen) {
-                //throw new RuntimeException("Assetmanager has been closed");
-            //}
-            //ParcelFileDescriptor pfd = openAssetFd(fileName, mOffsets);
-            //if (pfd != null) {
-                //return new AssetFileDescriptor(pfd, mOffsets[0], mOffsets[1]);
-            //}
-        //}
-        //throw new FileNotFoundException("Asset file: " + fileName);
+        
+        
+            
+                
+            
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -489,200 +492,200 @@ public class AssetManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.407 -0400", hash_original_method = "B416CA2D934FFC444AFFEA95F80C0673", hash_generated_method = "EF8D8B419938C219E0EE98A124C9517B")
     public final InputStream openNonAsset(String fileName) throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_978495432 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_978495432 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_978495432 = openNonAsset(0, fileName, ACCESS_STREAMING);
         addTaint(fileName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_978495432.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_978495432.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_978495432;
-        // ---------- Original Method ----------
-        //return openNonAsset(0, fileName, ACCESS_STREAMING);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.408 -0400", hash_original_method = "6F98937B657C3DF287FD2A6608D5C403", hash_generated_method = "0B2876353FDBAA44B0FBE909259F3F34")
     public final InputStream openNonAsset(String fileName, int accessMode) throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1372102632 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1372102632 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1372102632 = openNonAsset(0, fileName, accessMode);
         addTaint(fileName.getTaint());
         addTaint(accessMode);
-        varB4EAC82CA7396A68D541C85D26508E83_1372102632.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1372102632.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1372102632;
-        // ---------- Original Method ----------
-        //return openNonAsset(0, fileName, accessMode);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.409 -0400", hash_original_method = "DECD09E6B1808DA43562160A03482F49", hash_generated_method = "050CCB267DCFBDA449C5ED7FA9258DEF")
     public final InputStream openNonAsset(int cookie, String fileName) throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1321455835 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1321455835 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1321455835 = openNonAsset(cookie, fileName, ACCESS_STREAMING);
         addTaint(cookie);
         addTaint(fileName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1321455835.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1321455835.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1321455835;
-        // ---------- Original Method ----------
-        //return openNonAsset(cookie, fileName, ACCESS_STREAMING);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.410 -0400", hash_original_method = "5BC280B3003CA7B8CFB3A2FB67C4E385", hash_generated_method = "5A1423C896EF8BF01D7ACB50724E10C1")
     public final InputStream openNonAsset(int cookie, String fileName, int accessMode) throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_100615535 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_100615535 = null; 
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Assetmanager has been closed");
-            } //End block
+            } 
             int asset = openNonAssetNative(cookie, fileName, accessMode);
             {
                 AssetInputStream res = new AssetInputStream(asset);
                 incRefsLocked(res.hashCode());
                 varB4EAC82CA7396A68D541C85D26508E83_100615535 = res;
-            } //End block
-        } //End block
+            } 
+        } 
         if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Asset absolute file: " + fileName);
         addTaint(cookie);
         addTaint(fileName.getTaint());
         addTaint(accessMode);
-        varB4EAC82CA7396A68D541C85D26508E83_100615535.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_100615535.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_100615535;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (!mOpen) {
-                //throw new RuntimeException("Assetmanager has been closed");
-            //}
-            //int asset = openNonAssetNative(cookie, fileName, accessMode);
-            //if (asset != 0) {
-                //AssetInputStream res = new AssetInputStream(asset);
-                //incRefsLocked(res.hashCode());
-                //return res;
-            //}
-        //}
-        //throw new FileNotFoundException("Asset absolute file: " + fileName);
+        
+        
+            
+                
+            
+            
+            
+                
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.411 -0400", hash_original_method = "E6C638BB28F04E787E5711BF8F421102", hash_generated_method = "88A9F494187D518F6E8A8B47ADA8894B")
     public final AssetFileDescriptor openNonAssetFd(String fileName) throws IOException {
-        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1866855624 = null; //Variable for return #1
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1866855624 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1866855624 = openNonAssetFd(0, fileName);
         addTaint(fileName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1866855624.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1866855624.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1866855624;
-        // ---------- Original Method ----------
-        //return openNonAssetFd(0, fileName);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.414 -0400", hash_original_method = "A0DC944B46306DDC2CA1031D9C43AC47", hash_generated_method = "5633DD16082CAC7FCE8C33141A73BB8F")
     public final AssetFileDescriptor openNonAssetFd(int cookie,
             String fileName) throws IOException {
-        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1287112297 = null; //Variable for return #1
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1287112297 = null; 
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Assetmanager has been closed");
-            } //End block
+            } 
             ParcelFileDescriptor pfd = openNonAssetFdNative(cookie,
                     fileName, mOffsets);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1287112297 = new AssetFileDescriptor(pfd, mOffsets[0], mOffsets[1]);
-            } //End block
-        } //End block
+            } 
+        } 
         if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Asset absolute file: " + fileName);
         addTaint(cookie);
         addTaint(fileName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1287112297.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1287112297.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1287112297;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (!mOpen) {
-                //throw new RuntimeException("Assetmanager has been closed");
-            //}
-            //ParcelFileDescriptor pfd = openNonAssetFdNative(cookie,
-                    //fileName, mOffsets);
-            //if (pfd != null) {
-                //return new AssetFileDescriptor(pfd, mOffsets[0], mOffsets[1]);
-            //}
-        //}
-        //throw new FileNotFoundException("Asset absolute file: " + fileName);
+        
+        
+            
+                
+            
+            
+                    
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.416 -0400", hash_original_method = "602B0A8D272774ACD0101F14F2575F17", hash_generated_method = "0D4303F455F6F6C6294A2A6947984C87")
     public final XmlResourceParser openXmlResourceParser(String fileName) throws IOException {
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_1799777358 = null; //Variable for return #1
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_1799777358 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1799777358 = openXmlResourceParser(0, fileName);
         addTaint(fileName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1799777358.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1799777358.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1799777358;
-        // ---------- Original Method ----------
-        //return openXmlResourceParser(0, fileName);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.417 -0400", hash_original_method = "06F5CBF51BDA69D9C47BB01131F079C4", hash_generated_method = "A3DB1981A906671D4C1EB3852F6F1466")
     public final XmlResourceParser openXmlResourceParser(int cookie,
             String fileName) throws IOException {
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_1642797786 = null; //Variable for return #1
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_1642797786 = null; 
         XmlBlock block = openXmlBlockAsset(cookie, fileName);
         XmlResourceParser rp = block.newParser();
         block.close();
         varB4EAC82CA7396A68D541C85D26508E83_1642797786 = rp;
         addTaint(cookie);
         addTaint(fileName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1642797786.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1642797786.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1642797786;
-        // ---------- Original Method ----------
-        //XmlBlock block = openXmlBlockAsset(cookie, fileName);
-        //XmlResourceParser rp = block.newParser();
-        //block.close();
-        //return rp;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.419 -0400", hash_original_method = "675415F1EB93293576759C69BAEA6DCB", hash_generated_method = "ED8BD201EF62CD49867F875B16893000")
     final XmlBlock openXmlBlockAsset(String fileName) throws IOException {
-        XmlBlock varB4EAC82CA7396A68D541C85D26508E83_508992678 = null; //Variable for return #1
+        XmlBlock varB4EAC82CA7396A68D541C85D26508E83_508992678 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_508992678 = openXmlBlockAsset(0, fileName);
         addTaint(fileName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_508992678.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_508992678.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_508992678;
-        // ---------- Original Method ----------
-        //return openXmlBlockAsset(0, fileName);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.420 -0400", hash_original_method = "9588BC172FA11EB2767F6277EAB2B09E", hash_generated_method = "5AB6C091A79CC0CE4EC75EBD22CC925D")
     final XmlBlock openXmlBlockAsset(int cookie, String fileName) throws IOException {
-        XmlBlock varB4EAC82CA7396A68D541C85D26508E83_949400178 = null; //Variable for return #1
+        XmlBlock varB4EAC82CA7396A68D541C85D26508E83_949400178 = null; 
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Assetmanager has been closed");
-            } //End block
+            } 
             int xmlBlock = openXmlAssetNative(cookie, fileName);
             {
                 XmlBlock res = new XmlBlock(this, xmlBlock);
                 incRefsLocked(res.hashCode());
                 varB4EAC82CA7396A68D541C85D26508E83_949400178 = res;
-            } //End block
-        } //End block
+            } 
+        } 
         if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Asset XML file: " + fileName);
         addTaint(cookie);
         addTaint(fileName.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_949400178.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_949400178.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_949400178;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (!mOpen) {
-                //throw new RuntimeException("Assetmanager has been closed");
-            //}
-            //int xmlBlock = openXmlAssetNative(cookie, fileName);
-            //if (xmlBlock != 0) {
-                //XmlBlock res = new XmlBlock(this, xmlBlock);
-                //incRefsLocked(res.hashCode());
-                //return res;
-            //}
-        //}
-        //throw new FileNotFoundException("Asset XML file: " + fileName);
+        
+        
+            
+                
+            
+            
+            
+                
+                
+                
+            
+        
+        
     }
 
     
@@ -690,12 +693,12 @@ public class AssetManager {
      void xmlBlockGone(int id) {
         {
             decRefsLocked(id);
-        } //End block
+        } 
         addTaint(id);
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //decRefsLocked(id);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -704,21 +707,21 @@ public class AssetManager {
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Assetmanager has been closed");
-            } //End block
+            } 
             int res = newTheme();
             incRefsLocked(res);
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2123990618 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2123990618;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (!mOpen) {
-                //throw new RuntimeException("Assetmanager has been closed");
-            //}
-            //int res = newTheme();
-            //incRefsLocked(res);
-            //return res;
-        //}
+        
+        
+            
+                
+            
+            
+            
+            
+        
     }
 
     
@@ -727,16 +730,17 @@ public class AssetManager {
         {
             deleteTheme(theme);
             decRefsLocked(theme);
-        } //End block
+        } 
         addTaint(theme);
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //deleteTheme(theme);
-            //decRefsLocked(theme);
-        //}
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.431 -0400", hash_original_method = "C1D87D935BC2D519032BCC6CD9CB5D9B", hash_generated_method = "354542E6F9F60830EFE5565A4C3EF18A")
     protected void finalize() throws Throwable {
         try 
@@ -747,30 +751,30 @@ public class AssetManager {
                         Iterator<RuntimeException> var6A8D9EF0A851170F32FF1EDD9601BB79_781528082 = (mRefStacks.values()).iterator();
                         var6A8D9EF0A851170F32FF1EDD9601BB79_781528082.hasNext();
                         RuntimeException e = var6A8D9EF0A851170F32FF1EDD9601BB79_781528082.next();
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             destroy();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (DEBUG_REFS && mNumRefs != 0) {
-                //Log.w(TAG, "AssetManager " + this
-                        //+ " finalized with non-zero refs: " + mNumRefs);
-                //if (mRefStacks != null) {
-                    //for (RuntimeException e : mRefStacks.values()) {
-                        //Log.w(TAG, "Reference from here", e);
-                    //}
-                //}
-            //}
-            //destroy();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+                        
+                
+                    
+                        
+                    
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -788,20 +792,20 @@ public class AssetManager {
             int i = 0;
             {
                 cookies[i] = addAssetPath(paths[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(paths[0].getTaint());
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1077900862 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1077900862;
-        // ---------- Original Method ----------
-        //if (paths == null) {
-            //return null;
-        //}
-        //int[] cookies = new int[paths.length];
-        //for (int i = 0; i < paths.length; i++) {
-            //cookies[i] = addAssetPath(paths[i]);
-        //}
-        //return cookies;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1098,19 +1102,19 @@ public class AssetManager {
                 RuntimeException ex = new RuntimeException();
                 ex.fillInStackTrace();
                 mRefStacks.put(this.hashCode(), ex);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(id);
-        // ---------- Original Method ----------
-        //if (DEBUG_REFS) {
-            //if (mRefStacks == null) {
-                //mRefStacks = new HashMap<Integer, RuntimeException>();
-                //RuntimeException ex = new RuntimeException();
-                //ex.fillInStackTrace();
-                //mRefStacks.put(this.hashCode(), ex);
-            //}
-        //}
-        //mNumRefs++;
+        
+        
+            
+                
+                
+                
+                
+            
+        
+        
     }
 
     
@@ -1118,19 +1122,19 @@ public class AssetManager {
     private final void decRefsLocked(int id) {
         {
             mRefStacks.remove(id);
-        } //End block
+        } 
         {
             destroy();
-        } //End block
+        } 
         addTaint(id);
-        // ---------- Original Method ----------
-        //if (DEBUG_REFS && mRefStacks != null) {
-            //mRefStacks.remove(id);
-        //}
-        //mNumRefs--;
-        //if (mNumRefs == 0) {
-            //destroy();
-        //}
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -1149,9 +1153,9 @@ public class AssetManager {
         private  AssetInputStream(int asset) {
             mAsset = asset;
             mLength = getAssetLength(asset);
-            // ---------- Original Method ----------
-            //mAsset = asset;
-            //mLength = getAssetLength(asset);
+            
+            
+            
         }
 
         
@@ -1159,8 +1163,8 @@ public class AssetManager {
         public final int getAssetInt() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_901200399 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_901200399;
-            // ---------- Original Method ----------
-            //return mAsset;
+            
+            
         }
 
         
@@ -1169,8 +1173,8 @@ public class AssetManager {
             int varE1E0B1D2F32964F8EA30248A4FEDD33A_1895275773 = (readAssetChar(mAsset));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_733716455 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_733716455;
-            // ---------- Original Method ----------
-            //return readAssetChar(mAsset);
+            
+            
         }
 
         
@@ -1178,8 +1182,8 @@ public class AssetManager {
         public final boolean markSupported() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_160098277 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_160098277;
-            // ---------- Original Method ----------
-            //return true;
+            
+            
         }
 
         
@@ -1188,9 +1192,9 @@ public class AssetManager {
             long len = getAssetRemainingLength(mAsset);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_828251346 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_828251346;
-            // ---------- Original Method ----------
-            //long len = getAssetRemainingLength(mAsset);
-            //return len > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int)len;
+            
+            
+            
         }
 
         
@@ -1203,17 +1207,17 @@ public class AssetManager {
                         destroyAsset(mAsset);
                         mAsset = 0;
                         decRefsLocked(hashCode());
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //synchronized (AssetManager.this) {
-                //if (mAsset != 0) {
-                    //destroyAsset(mAsset);
-                    //mAsset = 0;
-                    //decRefsLocked(hashCode());
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+                
+                    
+                    
+                    
+                
+            
         }
 
         
@@ -1221,16 +1225,16 @@ public class AssetManager {
         public final void mark(int readlimit) {
             mMarkPos = seekAsset(mAsset, 0, 0);
             addTaint(readlimit);
-            // ---------- Original Method ----------
-            //mMarkPos = seekAsset(mAsset, 0, 0);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.467 -0400", hash_original_method = "659AE57C7CC5071324BF80AF83D49F86", hash_generated_method = "0CAF64AFA3C71A633C3AE770A153F1FF")
         public final void reset() throws IOException {
             seekAsset(mAsset, mMarkPos, -1);
-            // ---------- Original Method ----------
-            //seekAsset(mAsset, mMarkPos, -1);
+            
+            
         }
 
         
@@ -1240,8 +1244,8 @@ public class AssetManager {
             addTaint(b[0]);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_538660928 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_538660928;
-            // ---------- Original Method ----------
-            //return readAsset(mAsset, b, 0, b.length);
+            
+            
         }
 
         
@@ -1253,8 +1257,8 @@ public class AssetManager {
             addTaint(len);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_353392710 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_353392710;
-            // ---------- Original Method ----------
-            //return readAsset(mAsset, b, off, len);
+            
+            
         }
 
         
@@ -1263,30 +1267,30 @@ public class AssetManager {
             long pos = seekAsset(mAsset, 0, 0);
             {
                 n = mLength-pos;
-            } //End block
+            } 
             {
                 seekAsset(mAsset, n, 0);
-            } //End block
+            } 
             addTaint(n);
             long var0F5264038205EDFB1AC05FBB0E8C5E94_761063447 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_761063447;
-            // ---------- Original Method ----------
-            //long pos = seekAsset(mAsset, 0, 0);
-            //if ((pos+n) > mLength) {
-                //n = mLength-pos;
-            //}
-            //if (n > 0) {
-                //seekAsset(mAsset, n, 0);
-            //}
-            //return n;
+            
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.469 -0400", hash_original_method = "4D47F0EAA663BB7736165BE426E6C1B2", hash_generated_method = "D49A6EC8D8327F8E6A58054E448C9AAB")
         protected void finalize() throws Throwable {
             close();
-            // ---------- Original Method ----------
-            //close();
+            
+            
         }
 
         

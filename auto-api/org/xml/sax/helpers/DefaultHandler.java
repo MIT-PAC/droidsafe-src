@@ -1,11 +1,11 @@
 package org.xml.sax.helpers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.xml.sax.Attributes;
@@ -23,20 +23,20 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.880 -0400", hash_original_method = "C916F3EC761E0C154A1A9AFCDD294D40", hash_generated_method = "C916F3EC761E0C154A1A9AFCDD294D40")
     public DefaultHandler ()
     {
-        //Synthesized constructor
+        
     }
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.881 -0400", hash_original_method = "9EAB8438172711193BA945D78BF156AE", hash_generated_method = "0361CA9409321256AF17F32769CB095D")
     public InputSource resolveEntity(String publicId, String systemId) throws IOException, SAXException {
-        InputSource varB4EAC82CA7396A68D541C85D26508E83_1807119014 = null; //Variable for return #1
+        InputSource varB4EAC82CA7396A68D541C85D26508E83_1807119014 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1807119014 = null;
         addTaint(publicId.getTaint());
         addTaint(systemId.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1807119014.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1807119014.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1807119014;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -45,7 +45,7 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
         addTaint(name.getTaint());
         addTaint(publicId.getTaint());
         addTaint(systemId.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -56,26 +56,26 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
         addTaint(publicId.getTaint());
         addTaint(systemId.getTaint());
         addTaint(notationName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.882 -0400", hash_original_method = "764EC710ED4FDFB68C9E6FE9ED249649", hash_generated_method = "8982242C86C53DDD9F8374B3C93C1CFB")
     public void setDocumentLocator(Locator locator) {
         addTaint(locator.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.882 -0400", hash_original_method = "FAA725B72A2ADC391C781CAB49B849AD", hash_generated_method = "F5ABC17320CB17FAFC02F6F62510312E")
     public void startDocument() throws SAXException {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.883 -0400", hash_original_method = "08AD4CBC251CA96B103DE58FB6AA2921", hash_generated_method = "3ACBE0E14DE791A4A89F8374A54B4D72")
     public void endDocument() throws SAXException {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -83,14 +83,14 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
     public void startPrefixMapping(String prefix, String uri) throws SAXException {
         addTaint(prefix.getTaint());
         addTaint(uri.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.883 -0400", hash_original_method = "0E90E85A66154559EA3C98CC7177C34F", hash_generated_method = "5B3A24B5853AE441BDBBB759C4F775AE")
     public void endPrefixMapping(String prefix) throws SAXException {
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -101,7 +101,7 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
         addTaint(localName.getTaint());
         addTaint(qName.getTaint());
         addTaint(attributes.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -110,25 +110,27 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
         addTaint(uri.getTaint());
         addTaint(localName.getTaint());
         addTaint(qName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.884 -0400", hash_original_method = "62C2434D460BC8554CF92975C4745DF3", hash_generated_method = "04C74D01356F46F7A4B64B7E7175F57D")
     public void characters(char ch[], int start, int length) throws SAXException {
         addTaint(ch[0]);
         addTaint(start);
         addTaint(length);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.884 -0400", hash_original_method = "9049C36C2683070F72629A8BA1D4C193", hash_generated_method = "470C63F3B855B09846FE32D744D9AFD1")
     public void ignorableWhitespace(char ch[], int start, int length) throws SAXException {
         addTaint(ch[0]);
         addTaint(start);
         addTaint(length);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -136,28 +138,28 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
     public void processingInstruction(String target, String data) throws SAXException {
         addTaint(target.getTaint());
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.885 -0400", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "78177C3306D49108B776A6C694C380AB")
     public void skippedEntity(String name) throws SAXException {
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.885 -0400", hash_original_method = "2057473EBAC4D7FF54AEDE0043F741F4", hash_generated_method = "E3D1BDD789EA8A16065134010FB3E5E9")
     public void warning(SAXParseException e) throws SAXException {
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.885 -0400", hash_original_method = "3C476190220BFC4330D41CB0A7E5D96B", hash_generated_method = "A2F3CC24CEE024DB2C3C4D29E0C2AA9C")
     public void error(SAXParseException e) throws SAXException {
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -165,8 +167,8 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
     public void fatalError(SAXParseException e) throws SAXException {
         if (DroidSafeAndroidRuntime.control) throw e;
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
-        //throw e;
+        
+        
     }
 
     

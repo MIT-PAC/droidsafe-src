@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -20,7 +20,7 @@ public class AbsoluteLayout extends ViewGroup {
     public  AbsoluteLayout(Context context) {
         super(context);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ public class AbsoluteLayout extends ViewGroup {
         super(context, attrs);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -40,14 +40,15 @@ public class AbsoluteLayout extends ViewGroup {
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.235 -0400", hash_original_method = "54761EA789A74CBDB221271FE56469B7", hash_generated_method = "C9DB7DED20A167A321529C5525FD97EE")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int count = getChildCount();
         int maxHeight = 0;
         int maxWidth = 0;
@@ -66,10 +67,10 @@ public class AbsoluteLayout extends ViewGroup {
                         childBottom = lp.y + child.getMeasuredHeight();
                         maxWidth = Math.max(maxWidth, childRight);
                         maxHeight = Math.max(maxHeight, childBottom);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         maxWidth += mPaddingLeft + mPaddingRight;
         maxHeight += mPaddingTop + mPaddingBottom;
         maxHeight = Math.max(maxHeight, getSuggestedMinimumHeight());
@@ -78,28 +79,29 @@ public class AbsoluteLayout extends ViewGroup {
                 resolveSizeAndState(maxHeight, heightMeasureSpec, 0));
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.236 -0400", hash_original_method = "383A977BED79B1C96577C54DB1D6FA6E", hash_generated_method = "11B847F0CC604B551BB57A9040B1E5FC")
     @Override
     protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
-        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1760676235 = null; //Variable for return #1
+        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1760676235 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1760676235 = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0, 0);
-        varB4EAC82CA7396A68D541C85D26508E83_1760676235.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1760676235.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1760676235;
-        // ---------- Original Method ----------
-        //return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.237 -0400", hash_original_method = "CB6E73396546FC793F7584A7D119E869", hash_generated_method = "5833725950F744D178BE22A9364B3ACD")
     @Override
     protected void onLayout(boolean changed, int l, int t,
             int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int count = getChildCount();
         {
             int i = 0;
@@ -114,42 +116,42 @@ public class AbsoluteLayout extends ViewGroup {
                         child.layout(childLeft, childTop,
                         childLeft + child.getMeasuredWidth(),
                         childTop + child.getMeasuredHeight());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(changed);
         addTaint(l);
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        //int count = getChildCount();
-        //for (int i = 0; i < count; i++) {
-            //View child = getChildAt(i);
-            //if (child.getVisibility() != GONE) {
-                //AbsoluteLayout.LayoutParams lp =
-                        //(AbsoluteLayout.LayoutParams) child.getLayoutParams();
-                //int childLeft = mPaddingLeft + lp.x;
-                //int childTop = mPaddingTop + lp.y;
-                //child.layout(childLeft, childTop,
-                        //childLeft + child.getMeasuredWidth(),
-                        //childTop + child.getMeasuredHeight());
-            //}
-        //}
+        
+        
+        
+            
+            
+                
+                        
+                
+                
+                
+                        
+                        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.238 -0400", hash_original_method = "D0490D2D5B80C9DD3F55B366503982A5", hash_generated_method = "D66005CFC26B6BF927F0E870852CB101")
     @Override
     public ViewGroup.LayoutParams generateLayoutParams(AttributeSet attrs) {
-        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_2025376024 = null; //Variable for return #1
+        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_2025376024 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2025376024 = new AbsoluteLayout.LayoutParams(getContext(), attrs);
         addTaint(attrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2025376024.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2025376024.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2025376024;
-        // ---------- Original Method ----------
-        //return new AbsoluteLayout.LayoutParams(getContext(), attrs);
+        
+        
     }
 
     
@@ -159,21 +161,21 @@ public class AbsoluteLayout extends ViewGroup {
         addTaint(p.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_685177923 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_685177923;
-        // ---------- Original Method ----------
-        //return p instanceof AbsoluteLayout.LayoutParams;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.239 -0400", hash_original_method = "B595E0482905B38051CD63239BB5F8BA", hash_generated_method = "4E172290280C05BD031270841983D904")
     @Override
     protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
-        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_279362838 = null; //Variable for return #1
+        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_279362838 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_279362838 = new LayoutParams(p);
         addTaint(p.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_279362838.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_279362838.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_279362838;
-        // ---------- Original Method ----------
-        //return new LayoutParams(p);
+        
+        
     }
 
     
@@ -182,8 +184,8 @@ public class AbsoluteLayout extends ViewGroup {
     public boolean shouldDelayChildPressedState() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1984516084 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1984516084;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -202,9 +204,9 @@ public class AbsoluteLayout extends ViewGroup {
             this.y = y;
             addTaint(width);
             addTaint(height);
-            // ---------- Original Method ----------
-            //this.x = x;
-            //this.y = y;
+            
+            
+            
         }
 
         
@@ -220,14 +222,14 @@ public class AbsoluteLayout extends ViewGroup {
             a.recycle();
             addTaint(c.getTaint());
             addTaint(attrs.getTaint());
-            // ---------- Original Method ----------
-            //TypedArray a = c.obtainStyledAttributes(attrs,
-                    //com.android.internal.R.styleable.AbsoluteLayout_Layout);
-            //x = a.getDimensionPixelOffset(
-                    //com.android.internal.R.styleable.AbsoluteLayout_Layout_layout_x, 0);
-            //y = a.getDimensionPixelOffset(
-                    //com.android.internal.R.styleable.AbsoluteLayout_Layout_layout_y, 0);
-            //a.recycle();
+            
+            
+                    
+            
+                    
+            
+                    
+            
         }
 
         
@@ -235,24 +237,24 @@ public class AbsoluteLayout extends ViewGroup {
         public  LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.241 -0400", hash_original_method = "E94865805207BE74BD20D805DD96D818", hash_generated_method = "B8AE1D15617E05EA970797D80E566CC7")
         @Override
         public String debug(String output) {
-            String varB4EAC82CA7396A68D541C85D26508E83_1526880203 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1526880203 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1526880203 = output + "Absolute.LayoutParams={width="
                     + sizeToString(width) + ", height=" + sizeToString(height)
                     + " x=" + x + " y=" + y + "}";
             addTaint(output.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1526880203.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1526880203.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1526880203;
-            // ---------- Original Method ----------
-            //return output + "Absolute.LayoutParams={width="
-                    //+ sizeToString(width) + ", height=" + sizeToString(height)
-                    //+ " x=" + x + " y=" + y + "}";
+            
+            
+                    
+                    
         }
 
         

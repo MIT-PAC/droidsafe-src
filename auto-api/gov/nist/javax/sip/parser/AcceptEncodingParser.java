@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
@@ -18,7 +18,7 @@ public class AcceptEncodingParser extends HeaderParser {
     public  AcceptEncodingParser(String acceptEncoding) {
         super(acceptEncoding);
         addTaint(acceptEncoding.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,13 +26,14 @@ public class AcceptEncodingParser extends HeaderParser {
     protected  AcceptEncodingParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.630 -0400", hash_original_method = "A9DB3F83816CED00173237937952E9D8", hash_generated_method = "CAF88BBB745F9600D227D51D5AFB85BE")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1991795899 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1991795899 = null; 
         AcceptEncodingList acceptEncodingList = new AcceptEncodingList();
         dbg_enter("AcceptEncodingParser.parse");
         try 
@@ -43,7 +44,7 @@ public class AcceptEncodingParser extends HeaderParser {
                 {
                     AcceptEncoding acceptEncoding = new AcceptEncoding();
                     acceptEncodingList.add(acceptEncoding);
-                } //End block
+                } 
                 {
                     {
                         boolean varEE7E52664D9AD5CC0BCC54974CA397F5_1832733343 = (lexer.lookAhead(0) != '\n');
@@ -55,8 +56,8 @@ public class AcceptEncodingParser extends HeaderParser {
                                     lexer.match(TokenTypes.ID);
                                     Token value = lexer.getNextToken();
                                     acceptEncoding.setEncoding(value.getTokenValue());
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             {
                                 boolean varE91A1AFB3AE8E5E9730856A1A36B3A33_1831577870 = (lexer.lookAhead(0) == ';');
                                 {
@@ -72,40 +73,40 @@ public class AcceptEncodingParser extends HeaderParser {
                                     {
                                         float qv = Float.parseFloat(value.getTokenValue());
                                         acceptEncoding.setQValue(qv);
-                                    } //End block
+                                    } 
                                     catch (NumberFormatException ex)
                                     {
                                         if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                                    } //End block
+                                    } 
                                     catch (InvalidArgumentException ex)
                                     {
                                         if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                                    } //End block
+                                    } 
                                     this.lexer.SPorHT();
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             acceptEncodingList.add(acceptEncoding);
                             {
                                 boolean varBB8B123DF79A8601AA2894E0E9CB4B5B_1565643070 = (lexer.lookAhead(0) == ',');
                                 {
                                     this.lexer.match(',');
                                     this.lexer.SPorHT();
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1991795899 = acceptEncodingList;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("AcceptEncodingParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1991795899.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1991795899.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1991795899;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

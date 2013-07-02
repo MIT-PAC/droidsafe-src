@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.pkcs;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1EncodableVector;
@@ -39,11 +39,11 @@ public class RSASSAPSSparams extends ASN1Encodable {
         maskGenAlgorithm = DEFAULT_MASK_GEN_FUNCTION;
         saltLength = DEFAULT_SALT_LENGTH;
         trailerField = DEFAULT_TRAILER_FIELD;
-        // ---------- Original Method ----------
-        //hashAlgorithm = DEFAULT_HASH_ALGORITHM;
-        //maskGenAlgorithm = DEFAULT_MASK_GEN_FUNCTION;
-        //saltLength = DEFAULT_SALT_LENGTH;
-        //trailerField = DEFAULT_TRAILER_FIELD;
+        
+        
+        
+        
+        
     }
 
     
@@ -57,11 +57,11 @@ public class RSASSAPSSparams extends ASN1Encodable {
         this.maskGenAlgorithm = maskGenAlgorithm;
         this.saltLength = saltLength;
         this.trailerField = trailerField;
-        // ---------- Original Method ----------
-        //this.hashAlgorithm = hashAlgorithm;
-        //this.maskGenAlgorithm = maskGenAlgorithm;
-        //this.saltLength = saltLength;
-        //this.trailerField = trailerField;
+        
+        
+        
+        
+        
     }
 
     
@@ -79,27 +79,27 @@ public class RSASSAPSSparams extends ASN1Encodable {
                 ASN1TaggedObject o = (ASN1TaggedObject)seq.getObjectAt(i);
                 {
                     Object var969449A70EDB6FB54C5B842143D30B18_1886272544 = (o.getTagNo());
-                    //Begin case 0 
+                    
                     hashAlgorithm = AlgorithmIdentifier.getInstance(o, true);
-                    //End case 0 
-                    //Begin case 1 
+                    
+                    
                     maskGenAlgorithm = AlgorithmIdentifier.getInstance(o, true);
-                    //End case 1 
-                    //Begin case 2 
+                    
+                    
                     saltLength = DERInteger.getInstance(o, true);
-                    //End case 2 
-                    //Begin case 3 
+                    
+                    
                     trailerField = DERInteger.getInstance(o, true);
-                    //End case 3 
-                    //Begin case default 
+                    
+                    
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("unknown tag");
-                    //End case default 
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    
+                } 
+            } 
+        } 
         addTaint(seq.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -119,98 +119,99 @@ public class RSASSAPSSparams extends ASN1Encodable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.187 -0400", hash_original_method = "987E7AACB66963F632D7C499003CC870", hash_generated_method = "7E472A3693BBAE32F11690930E57A7B0")
     public AlgorithmIdentifier getHashAlgorithm() {
-        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1442401704 = null; //Variable for return #1
+        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1442401704 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1442401704 = hashAlgorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_1442401704.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1442401704.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1442401704;
-        // ---------- Original Method ----------
-        //return hashAlgorithm;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.188 -0400", hash_original_method = "299D9F86E5DBB3444D94BB106A959A17", hash_generated_method = "CE7E2DB91683BCAB8E3EC58D12C400F4")
     public AlgorithmIdentifier getMaskGenAlgorithm() {
-        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_925821948 = null; //Variable for return #1
+        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_925821948 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_925821948 = maskGenAlgorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_925821948.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_925821948.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_925821948;
-        // ---------- Original Method ----------
-        //return maskGenAlgorithm;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.188 -0400", hash_original_method = "DDACDA0D7B5CB6E5558758D456678E3E", hash_generated_method = "895252323325DA0DBFE2B4999C8E230A")
     public DERInteger getSaltLength() {
-        DERInteger varB4EAC82CA7396A68D541C85D26508E83_632761408 = null; //Variable for return #1
+        DERInteger varB4EAC82CA7396A68D541C85D26508E83_632761408 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_632761408 = saltLength;
-        varB4EAC82CA7396A68D541C85D26508E83_632761408.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_632761408.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_632761408;
-        // ---------- Original Method ----------
-        //return saltLength;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.188 -0400", hash_original_method = "EA52051AAE4EFBA3513689CA3A308153", hash_generated_method = "3538EB9ECDFF3EDEA2361F68CEC440A4")
     public DERInteger getTrailerField() {
-        DERInteger varB4EAC82CA7396A68D541C85D26508E83_1575625940 = null; //Variable for return #1
+        DERInteger varB4EAC82CA7396A68D541C85D26508E83_1575625940 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1575625940 = trailerField;
-        varB4EAC82CA7396A68D541C85D26508E83_1575625940.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1575625940.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1575625940;
-        // ---------- Original Method ----------
-        //return trailerField;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.189 -0400", hash_original_method = "AB78784B82028E9E5C0DF1201C6494F4", hash_generated_method = "DE337B40A861419AB7E44780E009755B")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_268974793 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_268974793 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         {
             boolean varBDA6A933599A074F70C6D73A7478ECC9_1100891025 = (!hashAlgorithm.equals(DEFAULT_HASH_ALGORITHM));
             {
                 v.add(new DERTaggedObject(true, 0, hashAlgorithm));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varB45B7789D7F53616545B2ECDA8899BD4_476177674 = (!maskGenAlgorithm.equals(DEFAULT_MASK_GEN_FUNCTION));
             {
                 v.add(new DERTaggedObject(true, 1, maskGenAlgorithm));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varA383131856E4F68C0C020C69E91B712C_456412504 = (!saltLength.equals(DEFAULT_SALT_LENGTH));
             {
                 v.add(new DERTaggedObject(true, 2, saltLength));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varB529EAD7A03F5793407294891B6CC6B0_965688607 = (!trailerField.equals(DEFAULT_TRAILER_FIELD));
             {
                 v.add(new DERTaggedObject(true, 3, trailerField));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_268974793 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_268974793.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_268974793.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_268974793;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector v = new ASN1EncodableVector();
-        //if (!hashAlgorithm.equals(DEFAULT_HASH_ALGORITHM))
-        //{
-            //v.add(new DERTaggedObject(true, 0, hashAlgorithm));
-        //}
-        //if (!maskGenAlgorithm.equals(DEFAULT_MASK_GEN_FUNCTION))
-        //{
-            //v.add(new DERTaggedObject(true, 1, maskGenAlgorithm));
-        //}
-        //if (!saltLength.equals(DEFAULT_SALT_LENGTH))
-        //{
-            //v.add(new DERTaggedObject(true, 2, saltLength));
-        //}
-        //if (!trailerField.equals(DEFAULT_TRAILER_FIELD))
-        //{
-            //v.add(new DERTaggedObject(true, 3, trailerField));
-        //}
-        //return new DERSequence(v);
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     

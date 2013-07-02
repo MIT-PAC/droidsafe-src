@@ -1,11 +1,11 @@
 package android.accounts;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class AuthenticatorException extends AccountsException {
@@ -13,7 +13,7 @@ public class AuthenticatorException extends AccountsException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.516 -0400", hash_original_method = "009F01E7B15DCE52B30E4E13B8632466", hash_generated_method = "1A7DAA5D19D8820B9379AC93220517C2")
     public  AuthenticatorException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class AuthenticatorException extends AccountsException {
     public  AuthenticatorException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,7 +30,7 @@ public class AuthenticatorException extends AccountsException {
         super(message, cause);
         addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,7 +38,7 @@ public class AuthenticatorException extends AccountsException {
     public  AuthenticatorException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

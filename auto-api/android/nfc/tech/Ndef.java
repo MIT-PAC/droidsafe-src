@@ -1,11 +1,11 @@
 package android.nfc.tech;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.nfc.ErrorCodes;
 import android.nfc.FormatException;
@@ -42,24 +42,25 @@ public final class Ndef extends BasicTagTechnology {
             mCardState = extras.getInt(EXTRA_NDEF_CARDSTATE);
             mNdefMsg = extras.getParcelable(EXTRA_NDEF_MSG);
             mNdefType = extras.getInt(EXTRA_NDEF_TYPE);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("NDEF tech extras are null.");
-        } //End block
+        } 
         addTaint(tag.getTaint());
-        // ---------- Original Method ----------
-        //Bundle extras = tag.getTechExtras(TagTechnology.NDEF);
-        //if (extras != null) {
-            //mMaxNdefSize = extras.getInt(EXTRA_NDEF_MAXLENGTH);
-            //mCardState = extras.getInt(EXTRA_NDEF_CARDSTATE);
-            //mNdefMsg = extras.getParcelable(EXTRA_NDEF_MSG);
-            //mNdefType = extras.getInt(EXTRA_NDEF_TYPE);
-        //} else {
-            //throw new NullPointerException("NDEF tech extras are null.");
-        //}
+        
+        
+        
+            
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Ndef get(Tag tag) {
         if (!tag.hasTech(TagTechnology.NDEF)) return null;
         try {
@@ -72,88 +73,88 @@ public final class Ndef extends BasicTagTechnology {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.408 -0400", hash_original_method = "522E1BD05C0F58597909DF2D37B1E51E", hash_generated_method = "98E83CCBE632F456C285369EF60FBFED")
     public NdefMessage getCachedNdefMessage() {
-        NdefMessage varB4EAC82CA7396A68D541C85D26508E83_1546985892 = null; //Variable for return #1
+        NdefMessage varB4EAC82CA7396A68D541C85D26508E83_1546985892 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1546985892 = mNdefMsg;
-        varB4EAC82CA7396A68D541C85D26508E83_1546985892.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1546985892.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1546985892;
-        // ---------- Original Method ----------
-        //return mNdefMsg;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.409 -0400", hash_original_method = "A8A4A8CA63E3E206537FB1A4A1A58DE6", hash_generated_method = "E1729A38668EC46B022A306F10C4D766")
     public String getType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1697372262 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_882414459 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1980760419 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_2067559057 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_142782145 = null; //Variable for return #5
-        String varB4EAC82CA7396A68D541C85D26508E83_12125328 = null; //Variable for return #6
-        String varB4EAC82CA7396A68D541C85D26508E83_2098254879 = null; //Variable for return #7
-        //Begin case TYPE_1 
+        String varB4EAC82CA7396A68D541C85D26508E83_1697372262 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_882414459 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1980760419 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2067559057 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_142782145 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_12125328 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2098254879 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1697372262 = NFC_FORUM_TYPE_1;
-        //End case TYPE_1 
-        //Begin case TYPE_2 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_882414459 = NFC_FORUM_TYPE_2;
-        //End case TYPE_2 
-        //Begin case TYPE_3 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1980760419 = NFC_FORUM_TYPE_3;
-        //End case TYPE_3 
-        //Begin case TYPE_4 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_2067559057 = NFC_FORUM_TYPE_4;
-        //End case TYPE_4 
-        //Begin case TYPE_MIFARE_CLASSIC 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_142782145 = MIFARE_CLASSIC;
-        //End case TYPE_MIFARE_CLASSIC 
-        //Begin case TYPE_ICODE_SLI 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_12125328 = ICODE_SLI;
-        //End case TYPE_ICODE_SLI 
-        //Begin case default 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_2098254879 = UNKNOWN;
-        //End case default 
-        String varA7E53CE21691AB073D9660D615818899_216602215; //Final return value
+        
+        String varA7E53CE21691AB073D9660D615818899_216602215; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_216602215 = varB4EAC82CA7396A68D541C85D26508E83_1697372262;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_216602215 = varB4EAC82CA7396A68D541C85D26508E83_882414459;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_216602215 = varB4EAC82CA7396A68D541C85D26508E83_1980760419;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_216602215 = varB4EAC82CA7396A68D541C85D26508E83_2067559057;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_216602215 = varB4EAC82CA7396A68D541C85D26508E83_142782145;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_216602215 = varB4EAC82CA7396A68D541C85D26508E83_12125328;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_216602215 = varB4EAC82CA7396A68D541C85D26508E83_2098254879;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_216602215.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_216602215.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_216602215;
-        // ---------- Original Method ----------
-        //switch (mNdefType) {
-            //case TYPE_1:
-                //return NFC_FORUM_TYPE_1;
-            //case TYPE_2:
-                //return NFC_FORUM_TYPE_2;
-            //case TYPE_3:
-                //return NFC_FORUM_TYPE_3;
-            //case TYPE_4:
-                //return NFC_FORUM_TYPE_4;
-            //case TYPE_MIFARE_CLASSIC:
-                //return MIFARE_CLASSIC;
-            //case TYPE_ICODE_SLI:
-                //return ICODE_SLI;
-            //default:
-                //return UNKNOWN;
-        //}
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+        
     }
 
     
@@ -161,8 +162,8 @@ public final class Ndef extends BasicTagTechnology {
     public int getMaxSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_911478637 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_911478637;
-        // ---------- Original Method ----------
-        //return mMaxNdefSize;
+        
+        
     }
 
     
@@ -170,16 +171,17 @@ public final class Ndef extends BasicTagTechnology {
     public boolean isWritable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_155896735 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_155896735;
-        // ---------- Original Method ----------
-        //return (mCardState == NDEF_MODE_READ_WRITE);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.412 -0400", hash_original_method = "A26F5401571035886FCD1ABC90F65CF6", hash_generated_method = "BA755BBDE018D2D1109EDA54675512CE")
     public NdefMessage getNdefMessage() throws IOException, FormatException {
-        NdefMessage varB4EAC82CA7396A68D541C85D26508E83_193922826 = null; //Variable for return #1
-        NdefMessage varB4EAC82CA7396A68D541C85D26508E83_501144098 = null; //Variable for return #2
-        NdefMessage varB4EAC82CA7396A68D541C85D26508E83_264462605 = null; //Variable for return #3
+        NdefMessage varB4EAC82CA7396A68D541C85D26508E83_193922826 = null; 
+        NdefMessage varB4EAC82CA7396A68D541C85D26508E83_501144098 = null; 
+        NdefMessage varB4EAC82CA7396A68D541C85D26508E83_264462605 = null; 
         checkConnected();
         try 
         {
@@ -191,46 +193,47 @@ public final class Ndef extends BasicTagTechnology {
                     NdefMessage msg = tagService.ndefRead(serviceHandle);
                     {
                         int errorCode = tagService.getLastError(serviceHandle);
-                        //Begin case ErrorCodes.ERROR_IO 
+                        
                         if (DroidSafeAndroidRuntime.control) throw new IOException();
-                        //End case ErrorCodes.ERROR_IO 
-                        //Begin case ErrorCodes.ERROR_INVALID_PARAM 
+                        
+                        
                         if (DroidSafeAndroidRuntime.control) throw new FormatException();
-                        //End case ErrorCodes.ERROR_INVALID_PARAM 
-                        //Begin case default 
+                        
+                        
                         if (DroidSafeAndroidRuntime.control) throw new IOException();
-                        //End case default 
-                    } //End block
+                        
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_193922826 = msg;
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_501144098 = null;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_264462605 = null;
-        } //End block
-        NdefMessage varA7E53CE21691AB073D9660D615818899_222356568; //Final return value
+        } 
+        NdefMessage varA7E53CE21691AB073D9660D615818899_222356568; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_222356568 = varB4EAC82CA7396A68D541C85D26508E83_193922826;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_222356568 = varB4EAC82CA7396A68D541C85D26508E83_501144098;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_222356568 = varB4EAC82CA7396A68D541C85D26508E83_264462605;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_222356568.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_222356568.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_222356568;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.413 -0400", hash_original_method = "A66DE5F0B266681092CD198588C2EDA0", hash_generated_method = "6CAB3EE6D73903031D921FE53AE1C7FD")
     public void writeNdefMessage(NdefMessage msg) throws IOException, FormatException {
         checkConnected();
@@ -242,51 +245,53 @@ public final class Ndef extends BasicTagTechnology {
                 boolean var9E38A8733EA654A0B89FA7D8640BC718_478680443 = (tagService.isNdef(serviceHandle));
                 {
                     int errorCode = tagService.ndefWrite(serviceHandle, msg);
-                    //Begin case ErrorCodes.ERROR_IO 
+                    
                     if (DroidSafeAndroidRuntime.control) throw new IOException();
-                    //End case ErrorCodes.ERROR_IO 
-                    //Begin case ErrorCodes.ERROR_INVALID_PARAM 
+                    
+                    
                     if (DroidSafeAndroidRuntime.control) throw new FormatException();
-                    //End case ErrorCodes.ERROR_INVALID_PARAM 
-                    //Begin case default 
+                    
+                    
                     if (DroidSafeAndroidRuntime.control) throw new IOException();
-                    //End case default 
-                } //End block
+                    
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("Tag is not ndef");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (RemoteException e)
         { }
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.413 -0400", hash_original_method = "7292FD9562AEE851073EE82DFE58EB20", hash_generated_method = "B9D9BFA35F627D1EF618F17E4946EAFE")
     public boolean canMakeReadOnly() {
         INfcTag tagService = mTag.getTagService();
         try 
         {
             boolean var23592AA0406DB9179A6CBAB847B3EF44_1220671912 = (tagService.canMakeReadOnly(mNdefType));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_829458591 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_829458591;
-        // ---------- Original Method ----------
-        //INfcTag tagService = mTag.getTagService();
-        //try {
-            //return tagService.canMakeReadOnly(mNdefType);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-            //return false;
-        //}
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.414 -0400", hash_original_method = "4D610B9041279D39FD5203194F60B421", hash_generated_method = "31174F843FCB9F6FEE1E76F7DE93C696")
     public boolean makeReadOnly() throws IOException {
         checkConnected();
@@ -297,24 +302,24 @@ public final class Ndef extends BasicTagTechnology {
                 boolean var38FC7228924773AA962BF2A0475BE6CE_498715631 = (tagService.isNdef(mTag.getServiceHandle()));
                 {
                     int errorCode = tagService.ndefMakeReadOnly(mTag.getServiceHandle());
-                    //Begin case ErrorCodes.ERROR_IO 
+                    
                     if (DroidSafeAndroidRuntime.control) throw new IOException();
-                    //End case ErrorCodes.ERROR_IO 
-                    //Begin case default 
+                    
+                    
                     if (DroidSafeAndroidRuntime.control) throw new IOException();
-                    //End case default 
-                } //End block
+                    
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("Tag is not ndef");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_667570017 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_667570017;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

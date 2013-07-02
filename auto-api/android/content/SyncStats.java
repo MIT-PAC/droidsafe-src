@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcelable;
 import android.os.Parcel;
@@ -50,16 +50,16 @@ public class SyncStats implements Parcelable {
         numDeletes = 0;
         numEntries = 0;
         numSkippedEntries = 0;
-        // ---------- Original Method ----------
-        //numAuthExceptions = 0;
-        //numIoExceptions = 0;
-        //numParseExceptions = 0;
-        //numConflictDetectedExceptions = 0;
-        //numInserts = 0;
-        //numUpdates = 0;
-        //numDeletes = 0;
-        //numEntries = 0;
-        //numSkippedEntries = 0;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -74,23 +74,24 @@ public class SyncStats implements Parcelable {
         numDeletes = in.readLong();
         numEntries = in.readLong();
         numSkippedEntries = in.readLong();
-        // ---------- Original Method ----------
-        //numAuthExceptions = in.readLong();
-        //numIoExceptions = in.readLong();
-        //numParseExceptions = in.readLong();
-        //numConflictDetectedExceptions = in.readLong();
-        //numInserts = in.readLong();
-        //numUpdates = in.readLong();
-        //numDeletes = in.readLong();
-        //numEntries = in.readLong();
-        //numSkippedEntries = in.readLong();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.328 -0400", hash_original_method = "2B2EA245A3AB4724B2781C31270E76F8", hash_generated_method = "D566467F949CDD57F7572EBCD38EBAF8")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1071585881 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1071585881 = null; 
         StringBuilder sb = new StringBuilder();
         sb.append(" stats [");
         sb.append(" numAuthExceptions: ").append(numAuthExceptions);
@@ -104,10 +105,10 @@ public class SyncStats implements Parcelable {
         sb.append(" numSkippedEntries: ").append(numSkippedEntries);
         sb.append("]");
         varB4EAC82CA7396A68D541C85D26508E83_1071585881 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1071585881.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1071585881.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1071585881;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -122,16 +123,16 @@ public class SyncStats implements Parcelable {
         numDeletes = 0;
         numEntries = 0;
         numSkippedEntries = 0;
-        // ---------- Original Method ----------
-        //numAuthExceptions = 0;
-        //numIoExceptions = 0;
-        //numParseExceptions = 0;
-        //numConflictDetectedExceptions = 0;
-        //numInserts = 0;
-        //numUpdates = 0;
-        //numDeletes = 0;
-        //numEntries = 0;
-        //numSkippedEntries = 0;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -139,11 +140,12 @@ public class SyncStats implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1848896576 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1848896576;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.332 -0400", hash_original_method = "E0866F8CBFAFA913559B9596FBB866BC", hash_generated_method = "94E7DFD1E4201ABF10E2AEEBC357DE8D")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(numAuthExceptions);
@@ -157,16 +159,16 @@ public class SyncStats implements Parcelable {
         dest.writeLong(numSkippedEntries);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeLong(numAuthExceptions);
-        //dest.writeLong(numIoExceptions);
-        //dest.writeLong(numParseExceptions);
-        //dest.writeLong(numConflictDetectedExceptions);
-        //dest.writeLong(numInserts);
-        //dest.writeLong(numUpdates);
-        //dest.writeLong(numDeletes);
-        //dest.writeLong(numEntries);
-        //dest.writeLong(numSkippedEntries);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -181,12 +183,12 @@ public class SyncStats implements Parcelable {
             return new SyncStats[size];
         }
     };
-    // orphaned legacy method
+    
     public SyncStats createFromParcel(Parcel in) {
             return new SyncStats(in);
         }
     
-    // orphaned legacy method
+    
     public SyncStats[] newArray(int size) {
             return new SyncStats[size];
         }

@@ -1,11 +1,11 @@
 package org.apache.http.impl.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.HashMap;
 import org.apache.http.auth.AuthScope;
@@ -21,8 +21,8 @@ public class BasicCredentialsProvider implements CredentialsProvider {
     public  BasicCredentialsProvider() {
         super();
         this.credMap = new HashMap<AuthScope, Credentials>();
-        // ---------- Original Method ----------
-        //this.credMap = new HashMap<AuthScope, Credentials>();
+        
+        
     }
 
     
@@ -32,15 +32,15 @@ public class BasicCredentialsProvider implements CredentialsProvider {
             final Credentials credentials) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Authentication scope may not be null");
-        } //End block
+        } 
         credMap.put(authscope, credentials);
         addTaint(authscope.getTaint());
         addTaint(credentials.getTaint());
-        // ---------- Original Method ----------
-        //if (authscope == null) {
-            //throw new IllegalArgumentException("Authentication scope may not be null");
-        //}
-        //credMap.put(authscope, credentials);
+        
+        
+            
+        
+        
     }
 
     
@@ -68,39 +68,41 @@ public class BasicCredentialsProvider implements CredentialsProvider {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.001 -0400", hash_original_method = "AB70A2CF4AFF279D0378510F4C86443E", hash_generated_method = "AD28F71197AA08860B7C5671895EFF89")
     public synchronized Credentials getCredentials(final AuthScope authscope) {
-        Credentials varB4EAC82CA7396A68D541C85D26508E83_2022547307 = null; //Variable for return #1
+        Credentials varB4EAC82CA7396A68D541C85D26508E83_2022547307 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Authentication scope may not be null");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2022547307 = matchCredentials(this.credMap, authscope);
         addTaint(authscope.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2022547307.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2022547307.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2022547307;
-        // ---------- Original Method ----------
-        //if (authscope == null) {
-            //throw new IllegalArgumentException("Authentication scope may not be null");
-        //}
-        //return matchCredentials(this.credMap, authscope);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.002 -0400", hash_original_method = "E402ADC687ADEF99C9686D482448AD0B", hash_generated_method = "1DE2679323112DFDB9B5DE64979BF895")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1989501020 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1989501020 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1989501020 = credMap.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1989501020.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1989501020.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1989501020;
-        // ---------- Original Method ----------
-        //return credMap.toString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.002 -0400", hash_original_method = "B811CBD1AC15B296829E7D50AE8C3355", hash_generated_method = "F819287B754D53E25A1D3BFC60FCEF93")
     public synchronized void clear() {
         this.credMap.clear();
-        // ---------- Original Method ----------
-        //this.credMap.clear();
+        
+        
     }
 
     

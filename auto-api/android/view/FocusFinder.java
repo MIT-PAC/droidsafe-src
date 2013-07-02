@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Rect;
 import java.util.ArrayList;
@@ -28,10 +28,11 @@ public class FocusFinder {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.075 -0400", hash_original_method = "DC255E332B77A13B263C537BB61FEC63", hash_generated_method = "F16241C74771068F25916AC2FC4602F5")
     private  FocusFinder() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static FocusFinder getInstance() {
         return tlFocusFinder.get();
     }
@@ -39,8 +40,8 @@ public class FocusFinder {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.077 -0400", hash_original_method = "948D7F222DFBCB81359D4FABF0EA65D3", hash_generated_method = "89086685DDFB940E6CFC75F652B18657")
     public final View findNextFocus(ViewGroup root, View focused, int direction) {
-        View varB4EAC82CA7396A68D541C85D26508E83_804268819 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_735095919 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_804268819 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_735095919 = null; 
         {
             View userSetNextFocus = focused.findUserSetNextFocus(root, direction);
             {
@@ -50,136 +51,138 @@ public class FocusFinder {
                  userSetNextFocus.isFocusableInTouchMode()));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_804268819 = userSetNextFocus;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             focused.getFocusedRect(mFocusedRect);
             root.offsetDescendantRectToMyCoords(focused, mFocusedRect);
-        } //End block
+        } 
         {
-            //Begin case View.FOCUS_RIGHT View.FOCUS_DOWN View.FOCUS_FORWARD 
+            
             final int rootTop = root.getScrollY();
-            //End case View.FOCUS_RIGHT View.FOCUS_DOWN View.FOCUS_FORWARD 
-            //Begin case View.FOCUS_RIGHT View.FOCUS_DOWN View.FOCUS_FORWARD 
+            
+            
             final int rootLeft = root.getScrollX();
-            //End case View.FOCUS_RIGHT View.FOCUS_DOWN View.FOCUS_FORWARD 
-            //Begin case View.FOCUS_RIGHT View.FOCUS_DOWN View.FOCUS_FORWARD 
+            
+            
             mFocusedRect.set(rootLeft, rootTop, rootLeft, rootTop);
-            //End case View.FOCUS_RIGHT View.FOCUS_DOWN View.FOCUS_FORWARD 
-            //Begin case View.FOCUS_LEFT View.FOCUS_UP View.FOCUS_BACKWARD 
+            
+            
             final int rootBottom = root.getScrollY() + root.getHeight();
-            //End case View.FOCUS_LEFT View.FOCUS_UP View.FOCUS_BACKWARD 
-            //Begin case View.FOCUS_LEFT View.FOCUS_UP View.FOCUS_BACKWARD 
+            
+            
             final int rootRight = root.getScrollX() + root.getWidth();
-            //End case View.FOCUS_LEFT View.FOCUS_UP View.FOCUS_BACKWARD 
-            //Begin case View.FOCUS_LEFT View.FOCUS_UP View.FOCUS_BACKWARD 
+            
+            
             mFocusedRect.set(rootRight, rootBottom,
                             rootRight, rootBottom);
-            //End case View.FOCUS_LEFT View.FOCUS_UP View.FOCUS_BACKWARD 
-        } //End block
+            
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_735095919 = findNextFocus(root, focused, mFocusedRect, direction);
         addTaint(root.getTaint());
         addTaint(focused.getTaint());
         addTaint(direction);
-        View varA7E53CE21691AB073D9660D615818899_1606484948; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1606484948; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1606484948 = varB4EAC82CA7396A68D541C85D26508E83_804268819;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1606484948 = varB4EAC82CA7396A68D541C85D26508E83_735095919;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1606484948.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1606484948.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1606484948;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.078 -0400", hash_original_method = "56193535E50A3F40F9A982269CAB09AB", hash_generated_method = "CF57D09DFF0DE5F983A75983236EA329")
     public View findNextFocusFromRect(ViewGroup root, Rect focusedRect, int direction) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1329911692 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1329911692 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1329911692 = findNextFocus(root, null, focusedRect, direction);
         addTaint(root.getTaint());
         addTaint(focusedRect.getTaint());
         addTaint(direction);
-        varB4EAC82CA7396A68D541C85D26508E83_1329911692.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1329911692.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1329911692;
-        // ---------- Original Method ----------
-        //return findNextFocus(root, null, focusedRect, direction);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.081 -0400", hash_original_method = "FE75104CAE6E392867319A5D2E1ED869", hash_generated_method = "BFEEE8B1F4EB3B3AA0C02DED32F42EEF")
     private View findNextFocus(ViewGroup root, View focused, Rect focusedRect, int direction) {
-        View varB4EAC82CA7396A68D541C85D26508E83_339273065 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1349505898 = null; //Variable for return #2
-        View varB4EAC82CA7396A68D541C85D26508E83_1762910399 = null; //Variable for return #3
-        View varB4EAC82CA7396A68D541C85D26508E83_422096814 = null; //Variable for return #4
-        View varB4EAC82CA7396A68D541C85D26508E83_1602141690 = null; //Variable for return #5
-        View varB4EAC82CA7396A68D541C85D26508E83_1595295465 = null; //Variable for return #6
-        View varB4EAC82CA7396A68D541C85D26508E83_1820998310 = null; //Variable for return #7
+        View varB4EAC82CA7396A68D541C85D26508E83_339273065 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1349505898 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1762910399 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_422096814 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1602141690 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1595295465 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1820998310 = null; 
         ArrayList<View> focusables = root.getFocusables(direction);
         {
             boolean varB483D2AE7959E3CA3199EAE571F220FD_1348712978 = (focusables.isEmpty());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_339273065 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 boolean var558EF4A88084E812F35BB7A7E3F7A5F9_1023009967 = (focused != null && !focusables.contains(focused));
                 {
                     focusables.add(focused);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             try 
             {
                 mSequentialFocusComparator.setRoot(root);
                 Collections.sort(focusables, mSequentialFocusComparator);
-            } //End block
+            } 
             finally 
             {
                 mSequentialFocusComparator.recycle();
-            } //End block
+            } 
             final int count = focusables.size();
-            //Begin case View.FOCUS_FORWARD 
+            
             {
                 int position = focusables.lastIndexOf(focused);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1349505898 = focusables.get(position + 1);
-                } //End block
-            } //End block
-            //End case View.FOCUS_FORWARD 
-            //Begin case View.FOCUS_FORWARD 
+                } 
+            } 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_1762910399 = focusables.get(0);
-            //End case View.FOCUS_FORWARD 
-            //Begin case View.FOCUS_BACKWARD 
+            
+            
             {
                 int position = focusables.indexOf(focused);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_422096814 = focusables.get(position - 1);
-                } //End block
-            } //End block
-            //End case View.FOCUS_BACKWARD 
-            //Begin case View.FOCUS_BACKWARD 
+                } 
+            } 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_1602141690 = focusables.get(count - 1);
-            //End case View.FOCUS_BACKWARD 
+            
             varB4EAC82CA7396A68D541C85D26508E83_1595295465 = null;
-        } //End block
+        } 
         mBestCandidateRect.set(focusedRect);
-        //Begin case View.FOCUS_LEFT 
+        
         mBestCandidateRect.offset(focusedRect.width() + 1, 0);
-        //End case View.FOCUS_LEFT 
-        //Begin case View.FOCUS_RIGHT 
+        
+        
         mBestCandidateRect.offset(-(focusedRect.width() + 1), 0);
-        //End case View.FOCUS_RIGHT 
-        //Begin case View.FOCUS_UP 
+        
+        
         mBestCandidateRect.offset(0, focusedRect.height() + 1);
-        //End case View.FOCUS_UP 
-        //Begin case View.FOCUS_DOWN 
+        
+        
         mBestCandidateRect.offset(0, -(focusedRect.height() + 1));
-        //End case View.FOCUS_DOWN 
+        
         View closest = null;
         int numFocusables = focusables.size();
         {
@@ -193,43 +196,43 @@ public class FocusFinder {
                     {
                         mBestCandidateRect.set(mOtherRect);
                         closest = focusable;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1820998310 = closest;
         addTaint(root.getTaint());
         addTaint(focused.getTaint());
         addTaint(focusedRect.getTaint());
         addTaint(direction);
-        View varA7E53CE21691AB073D9660D615818899_1613946353; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1613946353; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1613946353 = varB4EAC82CA7396A68D541C85D26508E83_339273065;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1613946353 = varB4EAC82CA7396A68D541C85D26508E83_1349505898;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1613946353 = varB4EAC82CA7396A68D541C85D26508E83_1762910399;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1613946353 = varB4EAC82CA7396A68D541C85D26508E83_422096814;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_1613946353 = varB4EAC82CA7396A68D541C85D26508E83_1602141690;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_1613946353 = varB4EAC82CA7396A68D541C85D26508E83_1595295465;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1613946353 = varB4EAC82CA7396A68D541C85D26508E83_1820998310;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1613946353.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1613946353.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1613946353;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -237,16 +240,16 @@ public class FocusFinder {
      boolean isBetterCandidate(int direction, Rect source, Rect rect1, Rect rect2) {
         {
             boolean varBC13043B37383B864D2C258B89B82F77_409872835 = (!isCandidate(source, rect1, direction));
-        } //End collapsed parenthetic
+        } 
         {
             boolean var6C5BBF309AB2B70AE83F611B0AEDA9F3_489657936 = (!isCandidate(source, rect2, direction));
-        } //End collapsed parenthetic
+        } 
         {
             boolean varCD7E7A5218518DF12DCE06E579CC94DD_1480449932 = (beamBeats(direction, source, rect1, rect2));
-        } //End collapsed parenthetic
+        } 
         {
             boolean var39045A9398BCFD1ECF208D85EAA8B884_405452307 = (beamBeats(direction, source, rect2, rect1));
-        } //End collapsed parenthetic
+        } 
         boolean varF4867C501B8142DDF7F95D81DB43C565_1773835531 = ((getWeightedDistanceFor(
                         majorAxisDistance(direction, source, rect1),
                         minorAxisDistance(direction, source, rect1))
@@ -259,25 +262,25 @@ public class FocusFinder {
         addTaint(rect2.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_527508123 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_527508123;
-        // ---------- Original Method ----------
-        //if (!isCandidate(source, rect1, direction)) {
-            //return false;
-        //}
-        //if (!isCandidate(source, rect2, direction)) {
-            //return true;
-        //}
-        //if (beamBeats(direction, source, rect1, rect2)) {
-            //return true;
-        //}
-        //if (beamBeats(direction, source, rect2, rect1)) {
-            //return false;
-        //}
-        //return (getWeightedDistanceFor(
-                        //majorAxisDistance(direction, source, rect1),
-                        //minorAxisDistance(direction, source, rect1))
-                //< getWeightedDistanceFor(
-                        //majorAxisDistance(direction, source, rect2),
-                        //minorAxisDistance(direction, source, rect2)));
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+                        
+                        
+                
+                        
+                        
     }
 
     
@@ -287,7 +290,7 @@ public class FocusFinder {
         final boolean rect2InSrcBeam = beamsOverlap(direction, source, rect2);
         {
             boolean var4F9C113203295E38B72887EB6CD3C2AD_1172090609 = (!isToDirectionOf(direction, source, rect2));
-        } //End collapsed parenthetic
+        } 
         boolean varE1D0C65B59C100612AC55BAB0AC3D40F_681073216 = ((majorAxisDistance(direction, source, rect1)
                 < majorAxisDistanceToFarEdge(direction, source, rect2)));
         addTaint(direction);
@@ -296,20 +299,20 @@ public class FocusFinder {
         addTaint(rect2.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1985668222 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1985668222;
-        // ---------- Original Method ----------
-        //final boolean rect1InSrcBeam = beamsOverlap(direction, source, rect1);
-        //final boolean rect2InSrcBeam = beamsOverlap(direction, source, rect2);
-        //if (rect2InSrcBeam || !rect1InSrcBeam) {
-            //return false;
-        //}
-        //if (!isToDirectionOf(direction, source, rect2)) {
-            //return true;
-        //}
-        //if ((direction == View.FOCUS_LEFT || direction == View.FOCUS_RIGHT)) {
-            //return true;
-        //}
-        //return (majorAxisDistance(direction, source, rect1)
-                //< majorAxisDistanceToFarEdge(direction, source, rect2));
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+                
     }
 
     
@@ -319,9 +322,9 @@ public class FocusFinder {
         addTaint(minorAxisDistance);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_338871803 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_338871803;
-        // ---------- Original Method ----------
-        //return 13 * majorAxisDistance * majorAxisDistance
-                //+ minorAxisDistance * minorAxisDistance;
+        
+        
+                
     }
 
     
@@ -334,8 +337,8 @@ public class FocusFinder {
         addTaint(direction);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_509844098 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_509844098;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -348,17 +351,17 @@ public class FocusFinder {
         addTaint(rect2.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_471065167 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_471065167;
-        // ---------- Original Method ----------
-        //switch (direction) {
-            //case View.FOCUS_LEFT:
-            //case View.FOCUS_RIGHT:
-                //return (rect2.bottom >= rect1.top) && (rect2.top <= rect1.bottom);
-            //case View.FOCUS_UP:
-            //case View.FOCUS_DOWN:
-                //return (rect2.right >= rect1.left) && (rect2.left <= rect1.right);
-        //}
-        //throw new IllegalArgumentException("direction must be one of "
-                //+ "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
+        
+        
+            
+            
+                
+            
+            
+                
+        
+        
+                
     }
 
     
@@ -371,27 +374,29 @@ public class FocusFinder {
         addTaint(dest.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_918204477 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_918204477;
-        // ---------- Original Method ----------
-        //switch (direction) {
-            //case View.FOCUS_LEFT:
-                //return src.left >= dest.right;
-            //case View.FOCUS_RIGHT:
-                //return src.right <= dest.left;
-            //case View.FOCUS_UP:
-                //return src.top >= dest.bottom;
-            //case View.FOCUS_DOWN:
-                //return src.bottom <= dest.top;
-        //}
-        //throw new IllegalArgumentException("direction must be one of "
-                //+ "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int majorAxisDistance(int direction, Rect source, Rect dest) {
         return Math.max(0, majorAxisDistanceRaw(direction, source, dest));
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int majorAxisDistanceRaw(int direction, Rect source, Rect dest) {
         switch (direction) {
             case View.FOCUS_LEFT:
@@ -408,11 +413,13 @@ public class FocusFinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int majorAxisDistanceToFarEdge(int direction, Rect source, Rect dest) {
         return Math.max(1, majorAxisDistanceToFarEdgeRaw(direction, source, dest));
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int majorAxisDistanceToFarEdgeRaw(int direction, Rect source, Rect dest) {
         switch (direction) {
             case View.FOCUS_LEFT:
@@ -429,6 +436,7 @@ public class FocusFinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int minorAxisDistance(int direction, Rect source, Rect dest) {
         switch (direction) {
             case View.FOCUS_LEFT:
@@ -447,9 +455,10 @@ public class FocusFinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.086 -0400", hash_original_method = "720FA5A94E3C004CE3F70B83E46D48C3", hash_generated_method = "40757B9FEB39CCDBA586154E46176A44")
     public View findNearestTouchable(ViewGroup root, int x, int y, int direction, int[] deltas) {
-        View varB4EAC82CA7396A68D541C85D26508E83_229476775 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_229476775 = null; 
         ArrayList<View> touchables = root.getTouchables();
         int minDistance = Integer.MAX_VALUE;
         View closest = null;
@@ -465,20 +474,20 @@ public class FocusFinder {
                 root.offsetRectBetweenParentAndChild(touchable, touchableBounds, true, true);
                 {
                     boolean var466CDCB1A655259E8B3D77CB3104058B_1565727036 = (!isTouchCandidate(x, y, touchableBounds, direction));
-                } //End collapsed parenthetic
+                } 
                 int distance = Integer.MAX_VALUE;
-                //Begin case View.FOCUS_LEFT 
+                
                 distance = x - touchableBounds.right + 1;
-                //End case View.FOCUS_LEFT 
-                //Begin case View.FOCUS_RIGHT 
+                
+                
                 distance = touchableBounds.left;
-                //End case View.FOCUS_RIGHT 
-                //Begin case View.FOCUS_UP 
+                
+                
                 distance = y - touchableBounds.bottom + 1;
-                //End case View.FOCUS_UP 
-                //Begin case View.FOCUS_DOWN 
+                
+                
                 distance = touchableBounds.top;
-                //End case View.FOCUS_DOWN 
+                
                 {
                     {
                         boolean varBBAD419F16A98306582B67970B1FD0F6_1673850849 = (closest == null ||
@@ -488,36 +497,37 @@ public class FocusFinder {
                             minDistance = distance;
                             closest = touchable;
                             closestBounds.set(touchableBounds);
-                            //Begin case View.FOCUS_LEFT 
+                            
                             deltas[0] = -distance;
-                            //End case View.FOCUS_LEFT 
-                            //Begin case View.FOCUS_RIGHT 
+                            
+                            
                             deltas[0] = distance;
-                            //End case View.FOCUS_RIGHT 
-                            //Begin case View.FOCUS_UP 
+                            
+                            
                             deltas[1] = -distance;
-                            //End case View.FOCUS_UP 
-                            //Begin case View.FOCUS_DOWN 
+                            
+                            
                             deltas[1] = distance;
-                            //End case View.FOCUS_DOWN 
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                            
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_229476775 = closest;
         addTaint(root.getTaint());
         addTaint(x);
         addTaint(y);
         addTaint(direction);
         addTaint(deltas[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_229476775.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_229476775.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_229476775;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.087 -0400", hash_original_method = "4EDA0197C585E6B2A33216D89691E993", hash_generated_method = "C3F90562BB47836C8CA361B2412F309C")
     private boolean isTouchCandidate(int x, int y, Rect destRect, int direction) {
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("direction must be one of "
@@ -528,19 +538,19 @@ public class FocusFinder {
         addTaint(direction);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1992669016 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1992669016;
-        // ---------- Original Method ----------
-        //switch (direction) {
-            //case View.FOCUS_LEFT:
-                //return destRect.left <= x && destRect.top <= y && y <= destRect.bottom;
-            //case View.FOCUS_RIGHT:
-                //return destRect.left >= x && destRect.top <= y && y <= destRect.bottom;
-            //case View.FOCUS_UP:
-                //return destRect.top <= y && destRect.left <= x && x <= destRect.right;
-            //case View.FOCUS_DOWN:
-                //return destRect.top >= y && destRect.left <= x && x <= destRect.right;
-        //}
-        //throw new IllegalArgumentException("direction must be one of "
-                //+ "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+        
+        
+                
     }
 
     
@@ -558,23 +568,23 @@ public class FocusFinder {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.087 -0400", hash_original_method = "0E280D788A863FD723521B8D9E30F8E5", hash_generated_method = "0E280D788A863FD723521B8D9E30F8E5")
         public SequentialFocusComparator ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.088 -0400", hash_original_method = "AE2DFC878449B0C9A87D974F16153CE8", hash_generated_method = "A8E4B594B1FA8FD9961783DE571544DE")
         public void recycle() {
             mRoot = null;
-            // ---------- Original Method ----------
-            //mRoot = null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.088 -0400", hash_original_method = "0BE2F634C0DBDBECCB40B3CDEBC39607", hash_generated_method = "A135B5CF92D766B2094EDE79DA316D07")
         public void setRoot(ViewGroup root) {
             mRoot = root;
-            // ---------- Original Method ----------
-            //mRoot = root;
+            
+            
         }
 
         
@@ -586,8 +596,8 @@ public class FocusFinder {
             addTaint(second.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785989173 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785989173;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -597,9 +607,9 @@ public class FocusFinder {
             mRoot.offsetDescendantRectToMyCoords(view, rect);
             addTaint(view.getTaint());
             addTaint(rect.getTaint());
-            // ---------- Original Method ----------
-            //view.getDrawingRect(rect);
-            //mRoot.offsetDescendantRectToMyCoords(view, rect);
+            
+            
+            
         }
 
         
@@ -612,12 +622,12 @@ public class FocusFinder {
     private static ThreadLocal<FocusFinder> tlFocusFinder = new ThreadLocal<FocusFinder>() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.091 -0400", hash_original_method = "C8E9892D3DD456F1910EE73E67D2112F", hash_generated_method = "A8EFA4FC1CD5A204A479F53C58732CCF")
         protected FocusFinder initialValue() {
-            FocusFinder varB4EAC82CA7396A68D541C85D26508E83_2045323693 = null; //Variable for return #1
+            FocusFinder varB4EAC82CA7396A68D541C85D26508E83_2045323693 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2045323693 = new FocusFinder();
-            varB4EAC82CA7396A68D541C85D26508E83_2045323693.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2045323693.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2045323693;
-            // ---------- Original Method ----------
-            //return new FocusFinder();
+            
+            
         }
 
         

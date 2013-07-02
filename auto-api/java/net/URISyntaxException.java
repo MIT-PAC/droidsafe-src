@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class URISyntaxException extends Exception {
@@ -21,22 +21,22 @@ public class URISyntaxException extends Exception {
         super(reason);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         this.input = input;
         this.index = index;
         addTaint(reason.getTaint());
-        // ---------- Original Method ----------
-        //if (input == null || reason == null) {
-            //throw new NullPointerException();
-        //}
-        //if (index < -1) {
-            //throw new IllegalArgumentException();
-        //}
-        //this.input = input;
-        //this.index = index;
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -45,16 +45,16 @@ public class URISyntaxException extends Exception {
         super(reason);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         this.input = input;
         index = -1;
         addTaint(reason.getTaint());
-        // ---------- Original Method ----------
-        //if (input == null || reason == null) {
-            //throw new NullPointerException();
-        //}
-        //this.input = input;
-        //index = -1;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -62,60 +62,62 @@ public class URISyntaxException extends Exception {
     public int getIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1998874775 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1998874775;
-        // ---------- Original Method ----------
-        //return index;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.179 -0400", hash_original_method = "D4B65418D906ACD682013E7ACC1989F7", hash_generated_method = "C280C4B8B1DE7EB674837EE9C8B35B41")
     public String getReason() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1763875169 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1763875169 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1763875169 = super.getMessage();
-        varB4EAC82CA7396A68D541C85D26508E83_1763875169.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1763875169.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1763875169;
-        // ---------- Original Method ----------
-        //return super.getMessage();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.179 -0400", hash_original_method = "DF4880B690A0BCFCB8F3C337A75DD5A0", hash_generated_method = "E283875E9B4EE58601EFDF14CE8D73CA")
     public String getInput() {
-        String varB4EAC82CA7396A68D541C85D26508E83_508775183 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_508775183 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_508775183 = input;
-        varB4EAC82CA7396A68D541C85D26508E83_508775183.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_508775183.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_508775183;
-        // ---------- Original Method ----------
-        //return input;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.180 -0400", hash_original_method = "2C0C7C544BFDCEB0F806A466417CE15E", hash_generated_method = "259D8FD8385CCD85AFBA41BA25711161")
     @Override
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_345382387 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1771941735 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_345382387 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1771941735 = null; 
         String reason = super.getMessage();
         {
             varB4EAC82CA7396A68D541C85D26508E83_345382387 = reason + " at index " + index + ": " + input;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1771941735 = reason + ": " + input;
-        String varA7E53CE21691AB073D9660D615818899_491101101; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_491101101; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_491101101 = varB4EAC82CA7396A68D541C85D26508E83_345382387;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_491101101 = varB4EAC82CA7396A68D541C85D26508E83_1771941735;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_491101101.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_491101101.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_491101101;
-        // ---------- Original Method ----------
-        //String reason = super.getMessage();
-        //if (index != -1) {
-            //return reason + " at index " + index + ": " + input;
-        //}
-        //return reason + ": " + input;
+        
+        
+        
+            
+        
+        
     }
 
     

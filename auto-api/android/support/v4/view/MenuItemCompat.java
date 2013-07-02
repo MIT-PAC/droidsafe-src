@@ -1,11 +1,11 @@
 package android.support.v4.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +15,7 @@ public class MenuItemCompat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.441 -0400", hash_original_method = "70825ED8217B35997B960B05005B76A3", hash_generated_method = "70825ED8217B35997B960B05005B76A3")
     public MenuItemCompat ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -34,7 +34,7 @@ public class MenuItemCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.442 -0400", hash_original_method = "BFDC30535AAA3E19A04AFADFFD50E16A", hash_generated_method = "BFDC30535AAA3E19A04AFADFFD50E16A")
         public BaseMenuVersionImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -45,22 +45,22 @@ public class MenuItemCompat {
             addTaint(actionEnum);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_500782261 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_500782261;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.448 -0400", hash_original_method = "971C4B8F174AEBF876692B29A12DA5CF", hash_generated_method = "85ACB89BE96AC2CC66BF5C1A8F54087B")
         @Override
         public MenuItem setActionView(MenuItem item, View view) {
-            MenuItem varB4EAC82CA7396A68D541C85D26508E83_1020288114 = null; //Variable for return #1
+            MenuItem varB4EAC82CA7396A68D541C85D26508E83_1020288114 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1020288114 = item;
             addTaint(item.getTaint());
             addTaint(view.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1020288114.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1020288114.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1020288114;
-            // ---------- Original Method ----------
-            //return item;
+            
+            
         }
 
         
@@ -73,7 +73,7 @@ public class MenuItemCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.449 -0400", hash_original_method = "1A0F236AE805B2AE3CB14132D083E8D6", hash_generated_method = "1A0F236AE805B2AE3CB14132D083E8D6")
         public HoneycombMenuVersionImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -85,23 +85,23 @@ public class MenuItemCompat {
             addTaint(actionEnum);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_147091556 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_147091556;
-            // ---------- Original Method ----------
-            //MenuItemCompatHoneycomb.setShowAsAction(item, actionEnum);
-            //return true;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:03.452 -0400", hash_original_method = "90CAAC5120E272242D0304C5B3BDF689", hash_generated_method = "7E05C6AC3F3D8A74AF15418CD23DC0E8")
         @Override
         public MenuItem setActionView(MenuItem item, View view) {
-            MenuItem varB4EAC82CA7396A68D541C85D26508E83_1102449631 = null; //Variable for return #1
+            MenuItem varB4EAC82CA7396A68D541C85D26508E83_1102449631 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1102449631 = MenuItemCompatHoneycomb.setActionView(item, view);
             addTaint(item.getTaint());
             addTaint(view.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1102449631.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1102449631.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1102449631;
-            // ---------- Original Method ----------
-            //return MenuItemCompatHoneycomb.setActionView(item, view);
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class SelectionKey {
@@ -15,33 +15,33 @@ public abstract class SelectionKey {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.693 -0400", hash_original_method = "506BAEF14D6E9F731FF32E7686B78589", hash_generated_method = "C9F592136899BF1C8C66719DB1AAC6AF")
     protected  SelectionKey() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.694 -0400", hash_original_method = "AFA38A9E30799729C39292277D62F43D", hash_generated_method = "DB8EA6C75FBAD67847A757124D6893FC")
     public final Object attach(Object anObject) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_526511671 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_526511671 = null; 
         Object oldAttachment = attachment;
         attachment = anObject;
         varB4EAC82CA7396A68D541C85D26508E83_526511671 = oldAttachment;
-        varB4EAC82CA7396A68D541C85D26508E83_526511671.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_526511671.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_526511671;
-        // ---------- Original Method ----------
-        //Object oldAttachment = attachment;
-        //attachment = anObject;
-        //return oldAttachment;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.694 -0400", hash_original_method = "F29A40DBFBA770DAC2D3ED3DF7881B6F", hash_generated_method = "CBBF28A2F0C39F35BFD0FC968AD32DF9")
     public final Object attachment() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_310622010 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_310622010 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_310622010 = attachment;
-        varB4EAC82CA7396A68D541C85D26508E83_310622010.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_310622010.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_310622010;
-        // ---------- Original Method ----------
-        //return attachment;
+        
+        
     }
 
     
@@ -62,8 +62,8 @@ public abstract class SelectionKey {
         boolean var3FFF79DDC6269480A262572B7E13C143_1398625079 = ((readyOps() & OP_ACCEPT) == OP_ACCEPT);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1026067313 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1026067313;
-        // ---------- Original Method ----------
-        //return (readyOps() & OP_ACCEPT) == OP_ACCEPT;
+        
+        
     }
 
     
@@ -72,8 +72,8 @@ public abstract class SelectionKey {
         boolean var14023F539790F88C79012E483D506513_811928250 = ((readyOps() & OP_CONNECT) == OP_CONNECT);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_178913203 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_178913203;
-        // ---------- Original Method ----------
-        //return (readyOps() & OP_CONNECT) == OP_CONNECT;
+        
+        
     }
 
     
@@ -82,8 +82,8 @@ public abstract class SelectionKey {
         boolean varB85443E403489FA18BEAF3232BBB1CD0_118829785 = ((readyOps() & OP_READ) == OP_READ);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1930553501 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1930553501;
-        // ---------- Original Method ----------
-        //return (readyOps() & OP_READ) == OP_READ;
+        
+        
     }
 
     
@@ -95,8 +95,8 @@ public abstract class SelectionKey {
         boolean var6D081738662D189EAD46924D1A918A3B_338000753 = ((readyOps() & OP_WRITE) == OP_WRITE);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1722924661 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1722924661;
-        // ---------- Original Method ----------
-        //return (readyOps() & OP_WRITE) == OP_WRITE;
+        
+        
     }
 
     

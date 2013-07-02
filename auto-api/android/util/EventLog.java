@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -23,7 +23,7 @@ public class EventLog {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.286 -0400", hash_original_method = "F2F67500BFF17861178525A826A9D5EF", hash_generated_method = "53C7EDD75DD3FA6552B96F6BC591B81D")
     public  EventLog() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -47,16 +47,19 @@ public class EventLog {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void readEvents(int[] tags, Collection<Event> output) throws IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getTagName(int tag) {
         readTagsFile();
         return sTagNames.get(tag);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getTagCode(String name) {
         readTagsFile();
         Integer code = sTagCodes.get(name);
@@ -64,6 +67,7 @@ public class EventLog {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static synchronized void readTagsFile() {
         if (sTagCodes != null && sTagNames != null) return;
         sTagCodes = new HashMap<String, Integer>();
@@ -107,9 +111,9 @@ public class EventLog {
           Event(byte[] data) {
             mBuffer = ByteBuffer.wrap(data);
             mBuffer.order(ByteOrder.nativeOrder());
-            // ---------- Original Method ----------
-            //mBuffer = ByteBuffer.wrap(data);
-            //mBuffer.order(ByteOrder.nativeOrder());
+            
+            
+            
         }
 
         
@@ -118,8 +122,8 @@ public class EventLog {
             int var74E2E058DA7FA6DFE349A6FD89345E32_164000910 = (mBuffer.getInt(PROCESS_OFFSET));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962184516 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962184516;
-            // ---------- Original Method ----------
-            //return mBuffer.getInt(PROCESS_OFFSET);
+            
+            
         }
 
         
@@ -128,8 +132,8 @@ public class EventLog {
             int varD37A372EE6D3AE184547870BC2768F10_207458612 = (mBuffer.getInt(THREAD_OFFSET));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_905678293 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_905678293;
-            // ---------- Original Method ----------
-            //return mBuffer.getInt(THREAD_OFFSET);
+            
+            
         }
 
         
@@ -139,9 +143,9 @@ public class EventLog {
                     + mBuffer.getInt(NANOSECONDS_OFFSET));
             long var0F5264038205EDFB1AC05FBB0E8C5E94_2057240877 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_2057240877;
-            // ---------- Original Method ----------
-            //return mBuffer.getInt(SECONDS_OFFSET) * 1000000000l
-                    //+ mBuffer.getInt(NANOSECONDS_OFFSET);
+            
+            
+                    
         }
 
         
@@ -150,132 +154,132 @@ public class EventLog {
             int varD454B3BD90192CEEB24FF33DEA85D100_1119740813 = (mBuffer.getInt(TAG_OFFSET));
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1223284126 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1223284126;
-            // ---------- Original Method ----------
-            //return mBuffer.getInt(TAG_OFFSET);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.291 -0400", hash_original_method = "87D859F946E538D2E12E387EABE85774", hash_generated_method = "140E338FB63AB4432D686A3D08151C7E")
         public synchronized Object getData() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_906400024 = null; //Variable for return #1
-            Object varB4EAC82CA7396A68D541C85D26508E83_319892673 = null; //Variable for return #2
-            Object varB4EAC82CA7396A68D541C85D26508E83_961052011 = null; //Variable for return #3
+            Object varB4EAC82CA7396A68D541C85D26508E83_906400024 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_319892673 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_961052011 = null; 
             try 
             {
                 mBuffer.limit(PAYLOAD_START + mBuffer.getShort(LENGTH_OFFSET));
                 mBuffer.position(DATA_START);
                 varB4EAC82CA7396A68D541C85D26508E83_906400024 = decodeObject();
-            } //End block
+            } 
             catch (IllegalArgumentException e)
             {
                 Log.wtf(TAG, "Illegal entry payload: tag=" + getTag(), e);
                 varB4EAC82CA7396A68D541C85D26508E83_319892673 = null;
-            } //End block
+            } 
             catch (BufferUnderflowException e)
             {
                 Log.wtf(TAG, "Truncated entry payload: tag=" + getTag(), e);
                 varB4EAC82CA7396A68D541C85D26508E83_961052011 = null;
-            } //End block
-            Object varA7E53CE21691AB073D9660D615818899_986669359; //Final return value
+            } 
+            Object varA7E53CE21691AB073D9660D615818899_986669359; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_986669359 = varB4EAC82CA7396A68D541C85D26508E83_906400024;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_986669359 = varB4EAC82CA7396A68D541C85D26508E83_319892673;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_986669359 = varB4EAC82CA7396A68D541C85D26508E83_961052011;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_986669359.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_986669359.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_986669359;
-            // ---------- Original Method ----------
-            //try {
-                //mBuffer.limit(PAYLOAD_START + mBuffer.getShort(LENGTH_OFFSET));
-                //mBuffer.position(DATA_START);  
-                //return decodeObject();
-            //} catch (IllegalArgumentException e) {
-                //Log.wtf(TAG, "Illegal entry payload: tag=" + getTag(), e);
-                //return null;
-            //} catch (BufferUnderflowException e) {
-                //Log.wtf(TAG, "Truncated entry payload: tag=" + getTag(), e);
-                //return null;
-            //}
+            
+            
+                
+                
+                
+            
+                
+                
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.292 -0400", hash_original_method = "153DDF284ABF68138956B6F9D94EE6B9", hash_generated_method = "B5122F0E4C98F86A6BBBDE897C9A67C9")
         private Object decodeObject() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1806779217 = null; //Variable for return #1
-            Object varB4EAC82CA7396A68D541C85D26508E83_3123160 = null; //Variable for return #2
-            Object varB4EAC82CA7396A68D541C85D26508E83_1435420051 = null; //Variable for return #3
-            Object varB4EAC82CA7396A68D541C85D26508E83_287010367 = null; //Variable for return #4
-            Object varB4EAC82CA7396A68D541C85D26508E83_2124836482 = null; //Variable for return #5
+            Object varB4EAC82CA7396A68D541C85D26508E83_1806779217 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_3123160 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_1435420051 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_287010367 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_2124836482 = null; 
             byte type = mBuffer.get();
-            //Begin case INT_TYPE 
+            
             varB4EAC82CA7396A68D541C85D26508E83_1806779217 = (Integer) mBuffer.getInt();
-            //End case INT_TYPE 
-            //Begin case LONG_TYPE 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_3123160 = (Long) mBuffer.getLong();
-            //End case LONG_TYPE 
-            //Begin case STRING_TYPE 
+            
+            
             try 
             {
                 int length = mBuffer.getInt();
                 int start = mBuffer.position();
                 mBuffer.position(start + length);
                 varB4EAC82CA7396A68D541C85D26508E83_1435420051 = new String(mBuffer.array(), start, length, "UTF-8");
-            } //End block
+            } 
             catch (UnsupportedEncodingException e)
             {
                 Log.wtf(TAG, "UTF-8 is not supported", e);
                 varB4EAC82CA7396A68D541C85D26508E83_287010367 = null;
-            } //End block
-            //End case STRING_TYPE 
-            //Begin case LIST_TYPE 
+            } 
+            
+            
             int length = mBuffer.get();
-            //End case LIST_TYPE 
-            //Begin case LIST_TYPE 
+            
+            
             length += 256;
-            //End case LIST_TYPE 
-            //Begin case LIST_TYPE 
+            
+            
             Object[] array = new Object[length];
-            //End case LIST_TYPE 
-            //Begin case LIST_TYPE 
+            
+            
             {
                 int i = 0;
                 array[i] = decodeObject();
-            } //End collapsed parenthetic
-            //End case LIST_TYPE 
-            //Begin case LIST_TYPE 
+            } 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_2124836482 = array;
-            //End case LIST_TYPE 
-            //Begin case default 
+            
+            
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown entry type: " + type);
-            //End case default 
-            Object varA7E53CE21691AB073D9660D615818899_721882794; //Final return value
+            
+            Object varA7E53CE21691AB073D9660D615818899_721882794; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_721882794 = varB4EAC82CA7396A68D541C85D26508E83_1806779217;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_721882794 = varB4EAC82CA7396A68D541C85D26508E83_3123160;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_721882794 = varB4EAC82CA7396A68D541C85D26508E83_1435420051;
                     break;
-                case 4: //Assign result for return ordinal #4
+                case 4: 
                     varA7E53CE21691AB073D9660D615818899_721882794 = varB4EAC82CA7396A68D541C85D26508E83_287010367;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_721882794 = varB4EAC82CA7396A68D541C85D26508E83_2124836482;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_721882794.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_721882794.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_721882794;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

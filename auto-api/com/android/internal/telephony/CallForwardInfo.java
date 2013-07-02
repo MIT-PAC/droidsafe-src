@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.telephony.PhoneNumberUtils;
 
@@ -32,26 +32,27 @@ public class CallForwardInfo {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.491 -0400", hash_original_method = "1AD2DD7ADA01B6155671A6205A67842C", hash_generated_method = "1AD2DD7ADA01B6155671A6205A67842C")
     public CallForwardInfo ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.492 -0400", hash_original_method = "EA7E7BF9BED1BC105930545F926483CA", hash_generated_method = "0EB59ED9CD8F9221538A9F1E4CC81139")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2081492170 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2081492170 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2081492170 = super.toString() + (status == 0 ? " not active " : " active ")
             + " reason: " + reason
             + " serviceClass: " + serviceClass
             + " \"" + PhoneNumberUtils.stringFromStringAndTOA(number, toa) + "\" "
             + timeSeconds + " seconds";
-        varB4EAC82CA7396A68D541C85D26508E83_2081492170.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2081492170.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2081492170;
-        // ---------- Original Method ----------
-        //return super.toString() + (status == 0 ? " not active " : " active ")
-            //+ " reason: " + reason
-            //+ " serviceClass: " + serviceClass
-            //+ " \"" + PhoneNumberUtils.stringFromStringAndTOA(number, toa) + "\" "
-            //+ timeSeconds + " seconds";
+        
+        
+            
+            
+            
+            
     }
 
     

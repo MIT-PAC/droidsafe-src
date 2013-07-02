@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 
@@ -23,8 +23,8 @@ public class Random implements Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.512 -0400", hash_original_method = "3173C51AF7594D647EC1C2CFA488A448", hash_generated_method = "973708C9D1F059DB74B65B6DA7E473CF")
     public  Random() {
         setSeed(System.currentTimeMillis() + System.identityHashCode(this));
-        // ---------- Original Method ----------
-        //setSeed(System.currentTimeMillis() + System.identityHashCode(this));
+        
+        
     }
 
     
@@ -32,8 +32,8 @@ public class Random implements Serializable {
     public  Random(long seed) {
         setSeed(seed);
         addTaint(seed);
-        // ---------- Original Method ----------
-        //setSeed(seed);
+        
+        
     }
 
     
@@ -43,22 +43,24 @@ public class Random implements Serializable {
         addTaint(bits);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_739980924 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_739980924;
-        // ---------- Original Method ----------
-        //seed = (seed * multiplier + 0xbL) & ((1L << 48) - 1);
-        //return (int) (seed >>> (48 - bits));
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.513 -0400", hash_original_method = "D8D2D3A52478C6F30DF9DDCAD352622E", hash_generated_method = "B4D6A63558692419AD5CDA89C8A7D46A")
     public boolean nextBoolean() {
         boolean varE5ACCBA47091347A8BDFF4D5327FEC5D_1328751898 = (next(1) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_639037312 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_639037312;
-        // ---------- Original Method ----------
-        //return next(1) != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.514 -0400", hash_original_method = "43464E5BE3E8DA331BE8CD0E59C0FE2A", hash_generated_method = "FE7EB8D9F8CE1C199318751A49B72A60")
     public void nextBytes(byte[] buf) {
         int rand = 0;
@@ -68,51 +70,54 @@ public class Random implements Serializable {
             {
                 rand = nextInt();
                 loop = 3;
-            } //End block
+            } 
             buf[count++] = (byte) rand;
             rand >>= 8;
-        } //End block
+        } 
         addTaint(buf[0]);
-        // ---------- Original Method ----------
-        //int rand = 0, count = 0, loop = 0;
-        //while (count < buf.length) {
-            //if (loop == 0) {
-                //rand = nextInt();
-                //loop = 3;
-            //} else {
-                //loop--;
-            //}
-            //buf[count++] = (byte) rand;
-            //rand >>= 8;
-        //}
+        
+        
+        
+            
+                
+                
+            
+                
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.514 -0400", hash_original_method = "B5A1D72A0CE7841EEF7745ACB102A3D0", hash_generated_method = "03022C0FF2F88BC33EEF60B89A1724CC")
     public double nextDouble() {
         double varC8DBCDB2F76D24AB1BE15CC823BFFACE_752062133 = (((((long) next(26) << 27) + next(27)) / (double) (1L << 53)));
         double varE8CD7DA078A86726031AD64F35F5A6C0_1955105172 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1955105172;
-        // ---------- Original Method ----------
-        //return ((((long) next(26) << 27) + next(27)) / (double) (1L << 53));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.515 -0400", hash_original_method = "D1E3B2B06AA527A72663F03AD501BB2B", hash_generated_method = "C2739F9CAD30C0FF500A749D3FBB7BB6")
     public float nextFloat() {
         float varBCCD376348376BED7CB4BDAAF9F93BD5_1274172339 = ((next(24) / 16777216f));
         float var546ADE640B6EDFBC8A086EF31347E768_1912564222 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1912564222;
-        // ---------- Original Method ----------
-        //return (next(24) / 16777216f);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.516 -0400", hash_original_method = "ABAEC318233CC46845A76D8E695280DE", hash_generated_method = "AA699D8135688D2ACC6358C1F5D1C99C")
     public synchronized double nextGaussian() {
         {
             haveNextNextGaussian = false;
-        } //End block
+        } 
         double v1;
         double v2;
         double s;
@@ -120,80 +125,83 @@ public class Random implements Serializable {
             v1 = 2 * nextDouble() - 1;
             v2 = 2 * nextDouble() - 1;
             s = v1 * v1 + v2 * v2;
-        } //End block
+        } 
         double norm = Math.sqrt(-2 * Math.log(s) / s);
         nextNextGaussian = v2 * norm;
         haveNextNextGaussian = true;
         double varE8CD7DA078A86726031AD64F35F5A6C0_133904603 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_133904603;
-        // ---------- Original Method ----------
-        //if (haveNextNextGaussian) { 
-            //haveNextNextGaussian = false;
-            //return nextNextGaussian;
-        //}
-        //double v1, v2, s;
-        //do {
-            //v1 = 2 * nextDouble() - 1; 
-            //v2 = 2 * nextDouble() - 1;
-            //s = v1 * v1 + v2 * v2;
-        //} while (s >= 1);
-        //double norm = Math.sqrt(-2 * Math.log(s) / s);
-        //nextNextGaussian = v2 * norm;
-        //haveNextNextGaussian = true;
-        //return v1 * norm;
+        
+        
+            
+            
+        
+        
+        
+            
+            
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.517 -0400", hash_original_method = "82F6347EB6C4A01CB76B611DAE5AF092", hash_generated_method = "0127320CFBDE6E1DFEE5BE1F796B7106")
     public int nextInt() {
         int var7C0A77E74215A5F7316622DD5618A3D6_757842225 = (next(32));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1450834487 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1450834487;
-        // ---------- Original Method ----------
-        //return next(32);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.518 -0400", hash_original_method = "173DEE1A34208F3BEEC0CED47E74657B", hash_generated_method = "512E3A4ED4BCE47C5D1FA5A9814BE010")
     public int nextInt(int n) {
         {
             {
                 int varA79DB788DD9B958F0570240FEE805296_432344930 = ((int) ((n * (long) next(31)) >> 31));
-            } //End block
+            } 
             int bits;
             int val;
             {
                 bits = next(31);
                 val = bits % n;
-            } //End block
-        } //End block
+            } 
+        } 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         addTaint(n);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1989328295 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1989328295;
-        // ---------- Original Method ----------
-        //if (n > 0) {
-            //if ((n & -n) == n) {
-                //return (int) ((n * (long) next(31)) >> 31);
-            //}
-            //int bits, val;
-            //do {
-                //bits = next(31);
-                //val = bits % n;
-            //} while (bits - val + (n - 1) < 0);
-            //return val;
-        //}
-        //throw new IllegalArgumentException();
+        
+        
+            
+                
+            
+            
+            
+                
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.519 -0400", hash_original_method = "A03CC01D80C9639D8965955A7EA1BA6B", hash_generated_method = "A12CB030166A962D6AFE3063CD9A98EE")
     public long nextLong() {
         long varBF611F33B152C4A9A72A301CE07D6614_1829200525 = (((long) next(32) << 32) + next(32));
         long var0F5264038205EDFB1AC05FBB0E8C5E94_548257783 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_548257783;
-        // ---------- Original Method ----------
-        //return ((long) next(32) << 32) + next(32);
+        
+        
     }
 
     
@@ -201,9 +209,9 @@ public class Random implements Serializable {
     public synchronized void setSeed(long seed) {
         this.seed = (seed ^ multiplier) & ((1L << 48) - 1);
         haveNextNextGaussian = false;
-        // ---------- Original Method ----------
-        //this.seed = (seed ^ multiplier) & ((1L << 48) - 1);
-        //haveNextNextGaussian = false;
+        
+        
+        
     }
 
     

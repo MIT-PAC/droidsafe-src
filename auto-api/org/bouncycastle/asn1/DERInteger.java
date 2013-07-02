@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -20,8 +20,8 @@ public class DERInteger extends ASN1Object {
     public  DERInteger(
         int         value) {
         bytes = BigInteger.valueOf(value).toByteArray();
-        // ---------- Original Method ----------
-        //bytes = BigInteger.valueOf(value).toByteArray();
+        
+        
     }
 
     
@@ -29,8 +29,8 @@ public class DERInteger extends ASN1Object {
     public  DERInteger(
         BigInteger   value) {
         bytes = value.toByteArray();
-        // ---------- Original Method ----------
-        //bytes = value.toByteArray();
+        
+        
     }
 
     
@@ -38,11 +38,12 @@ public class DERInteger extends ASN1Object {
     public  DERInteger(
         byte[]   bytes) {
         this.bytes = bytes;
-        // ---------- Original Method ----------
-        //this.bytes = bytes;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERInteger getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERInteger)
@@ -53,6 +54,7 @@ public class DERInteger extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERInteger getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -68,25 +70,27 @@ public class DERInteger extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.532 -0400", hash_original_method = "9CD9452AB0CD35F4B73E8FBD8DC6F0C8", hash_generated_method = "7A183B30EED0572DBD4A239BB234D7E3")
     public BigInteger getValue() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1446074192 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1446074192 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1446074192 = new BigInteger(bytes);
-        varB4EAC82CA7396A68D541C85D26508E83_1446074192.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1446074192.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1446074192;
-        // ---------- Original Method ----------
-        //return new BigInteger(bytes);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.532 -0400", hash_original_method = "71BDB36FFF593CAF4C9E79EFECF43EBD", hash_generated_method = "902676602CA8D5D905C0D4EE69FE523B")
     public BigInteger getPositiveValue() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1331894789 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1331894789 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1331894789 = new BigInteger(1, bytes);
-        varB4EAC82CA7396A68D541C85D26508E83_1331894789.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1331894789.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1331894789;
-        // ---------- Original Method ----------
-        //return new BigInteger(1, bytes);
+        
+        
     }
 
     
@@ -95,8 +99,8 @@ public class DERInteger extends ASN1Object {
         DEROutputStream out) throws IOException {
         out.writeEncoded(INTEGER, bytes);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.writeEncoded(INTEGER, bytes);
+        
+        
     }
 
     
@@ -107,17 +111,17 @@ public class DERInteger extends ASN1Object {
             int i = 0;
             {
                 value ^= (bytes[i] & 0xff) << (i % 4);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_326175964 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_326175964;
-        // ---------- Original Method ----------
-        //int     value = 0;
-        //for (int i = 0; i != bytes.length; i++)
-         //{
-             //value ^= (bytes[i] & 0xff) << (i % 4);
-         //}
-        //return value;
+        
+        
+        
+         
+             
+         
+        
     }
 
     
@@ -129,24 +133,25 @@ public class DERInteger extends ASN1Object {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1709889883 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1709889883;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERInteger))
-        //{
-            //return false;
-        //}
-        //DERInteger other = (DERInteger)o;
-        //return Arrays.areEqual(bytes, other.bytes);
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.537 -0400", hash_original_method = "EFB82D2D11830675F5DB319D1D1561C4", hash_generated_method = "774E2ADF213A0540C740B97C6784CDDE")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_451596609 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_451596609 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_451596609 = getValue().toString();
-        varB4EAC82CA7396A68D541C85D26508E83_451596609.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_451596609.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_451596609;
-        // ---------- Original Method ----------
-        //return getValue().toString();
+        
+        
     }
 
     

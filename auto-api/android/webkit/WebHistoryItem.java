@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Bitmap;
 import java.net.MalformedURLException;
@@ -44,11 +44,11 @@ public class WebHistoryItem implements Cloneable {
     private  WebHistoryItem() {
         {
             mId = sNextId++;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (WebHistoryItem.class) {
-            //mId = sNextId++;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -58,13 +58,13 @@ public class WebHistoryItem implements Cloneable {
         mFlattenedData = data;
         {
             mId = sNextId++;
-        } //End block
-        // ---------- Original Method ----------
-        //mUrl = null;
-        //mFlattenedData = data;
-        //synchronized (WebHistoryItem.class) {
-            //mId = sNextId++;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -75,12 +75,12 @@ public class WebHistoryItem implements Cloneable {
         mFlattenedData = item.mFlattenedData;
         mFavicon = item.mFavicon;
         mId = item.mId;
-        // ---------- Original Method ----------
-        //mUrl = item.mUrl;
-        //mTitle = item.mTitle;
-        //mFlattenedData = item.mFlattenedData;
-        //mFavicon = item.mFavicon;
-        //mId = item.mId;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -89,136 +89,137 @@ public class WebHistoryItem implements Cloneable {
     public int getId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2087230751 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2087230751;
-        // ---------- Original Method ----------
-        //return mId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.773 -0400", hash_original_method = "13CE30FBE362EA44FDCE282CA01E7BBC", hash_generated_method = "58A0A33BA1AF923A4C1DD0D4A4C4BF7C")
     public String getUrl() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1455498106 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1455498106 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1455498106 = mUrl;
-        varB4EAC82CA7396A68D541C85D26508E83_1455498106.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1455498106.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1455498106;
-        // ---------- Original Method ----------
-        //return mUrl;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.773 -0400", hash_original_method = "DDE089EE8228BAF5D6A93FF1955EAFD7", hash_generated_method = "C4FFDF6AE43C6BCE3BDDAAECA0F928FD")
     public String getOriginalUrl() {
-        String varB4EAC82CA7396A68D541C85D26508E83_564943595 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_564943595 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_564943595 = mOriginalUrl;
-        varB4EAC82CA7396A68D541C85D26508E83_564943595.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_564943595.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_564943595;
-        // ---------- Original Method ----------
-        //return mOriginalUrl;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.774 -0400", hash_original_method = "B92C3DBC46CE7C1B39B851F67F02433E", hash_generated_method = "E550F7FA9E629B68C58D4E1565292477")
     public String getTitle() {
-        String varB4EAC82CA7396A68D541C85D26508E83_259155355 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_259155355 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_259155355 = mTitle;
-        varB4EAC82CA7396A68D541C85D26508E83_259155355.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_259155355.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_259155355;
-        // ---------- Original Method ----------
-        //return mTitle;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.774 -0400", hash_original_method = "41724C0C6385C3C7BA168B7F37B3B669", hash_generated_method = "7DB0E7326ACC0BF8E5C18CB55E2F9444")
     public Bitmap getFavicon() {
-        Bitmap varB4EAC82CA7396A68D541C85D26508E83_880601183 = null; //Variable for return #1
+        Bitmap varB4EAC82CA7396A68D541C85D26508E83_880601183 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_880601183 = mFavicon;
-        varB4EAC82CA7396A68D541C85D26508E83_880601183.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_880601183.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_880601183;
-        // ---------- Original Method ----------
-        //return mFavicon;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.776 -0400", hash_original_method = "886A530589EC671EA3EEBBE4BA956254", hash_generated_method = "E91F5F5E4612B10B162630E3114C7F84")
     public String getTouchIconUrl() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2054996733 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1918208130 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1652531451 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_380092502 = null; //Variable for return #4
+        String varB4EAC82CA7396A68D541C85D26508E83_2054996733 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1918208130 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1652531451 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_380092502 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2054996733 = mTouchIconUrlFromLink;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1918208130 = mTouchIconUrlServerDefault;
-        } //End block
+        } 
         try 
         {
             URL url = new URL(mOriginalUrl);
             mTouchIconUrlServerDefault = new URL(url.getProtocol(), url.getHost(), url.getPort(),
                     "/apple-touch-icon.png").toString();
-        } //End block
+        } 
         catch (MalformedURLException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1652531451 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_380092502 = mTouchIconUrlServerDefault;
-        String varA7E53CE21691AB073D9660D615818899_598220855; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_598220855; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_598220855 = varB4EAC82CA7396A68D541C85D26508E83_2054996733;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_598220855 = varB4EAC82CA7396A68D541C85D26508E83_1918208130;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_598220855 = varB4EAC82CA7396A68D541C85D26508E83_1652531451;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_598220855 = varB4EAC82CA7396A68D541C85D26508E83_380092502;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_598220855.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_598220855.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_598220855;
-        // ---------- Original Method ----------
-        //if (mTouchIconUrlFromLink != null) {
-            //return mTouchIconUrlFromLink;
-        //} else if (mTouchIconUrlServerDefault != null) {
-            //return mTouchIconUrlServerDefault;
-        //}
-        //try {
-            //URL url = new URL(mOriginalUrl);
-            //mTouchIconUrlServerDefault = new URL(url.getProtocol(), url.getHost(), url.getPort(),
-                    //"/apple-touch-icon.png").toString();
-        //} catch (MalformedURLException e) {
-            //return null;
-        //}
-        //return mTouchIconUrlServerDefault;
+        
+        
+            
+        
+            
+        
+        
+            
+            
+                    
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.776 -0400", hash_original_method = "910685AC0FAB997B808A2261BF18CB41", hash_generated_method = "3F5F068884472E787AF572DEFBC7C957")
     public Object getCustomData() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_388985637 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_388985637 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_388985637 = mCustomData;
-        varB4EAC82CA7396A68D541C85D26508E83_388985637.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_388985637.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_388985637;
-        // ---------- Original Method ----------
-        //return mCustomData;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.777 -0400", hash_original_method = "C3DB27902C6D683426C80DDC02D99EDF", hash_generated_method = "7B907F8F0821BBEC90CC8C8215767869")
     public void setCustomData(Object data) {
         mCustomData = data;
-        // ---------- Original Method ----------
-        //mCustomData = data;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.777 -0400", hash_original_method = "151983BF7C4C69CD96BA6E3E58A2C1A8", hash_generated_method = "0494E26BA7F51A745B44375FBAD2A06E")
      void setFavicon(Bitmap icon) {
         mFavicon = icon;
-        // ---------- Original Method ----------
-        //mFavicon = icon;
+        
+        
     }
 
     
@@ -226,12 +227,12 @@ public class WebHistoryItem implements Cloneable {
      void setTouchIconUrl(String url, boolean precomposed) {
         {
             mTouchIconUrlFromLink = url;
-        } //End block
+        } 
         addTaint(precomposed);
-        // ---------- Original Method ----------
-        //if (precomposed || mTouchIconUrlFromLink == null) {
-            //mTouchIconUrlFromLink = url;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -239,8 +240,8 @@ public class WebHistoryItem implements Cloneable {
      byte[] getFlattenedData() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_485831031 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_485831031;
-        // ---------- Original Method ----------
-        //return mFlattenedData;
+        
+        
     }
 
     
@@ -248,19 +249,20 @@ public class WebHistoryItem implements Cloneable {
      void inflate(int nativeFrame) {
         inflate(nativeFrame, mFlattenedData);
         addTaint(nativeFrame);
-        // ---------- Original Method ----------
-        //inflate(nativeFrame, mFlattenedData);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.778 -0400", hash_original_method = "F79252569D56DBC251BCABE120CFDF67", hash_generated_method = "2DACFFB180E619FD8E1BC9B9792568A3")
     protected synchronized WebHistoryItem clone() {
-        WebHistoryItem varB4EAC82CA7396A68D541C85D26508E83_1823582554 = null; //Variable for return #1
+        WebHistoryItem varB4EAC82CA7396A68D541C85D26508E83_1823582554 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1823582554 = new WebHistoryItem(this);
-        varB4EAC82CA7396A68D541C85D26508E83_1823582554.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1823582554.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1823582554;
-        // ---------- Original Method ----------
-        //return new WebHistoryItem(this);
+        
+        
     }
 
     
@@ -277,12 +279,12 @@ public class WebHistoryItem implements Cloneable {
         mTitle = title;
         mFavicon = favicon;
         mFlattenedData = data;
-        // ---------- Original Method ----------
-        //mUrl = url;
-        //mOriginalUrl = originalUrl;
-        //mTitle = title;
-        //mFavicon = favicon;
-        //mFlattenedData = data;
+        
+        
+        
+        
+        
+        
     }
 
     

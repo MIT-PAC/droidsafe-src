@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
@@ -17,7 +17,7 @@ public class SIPIfMatchParser extends HeaderParser {
     public  SIPIfMatchParser(String etag) {
         super(etag);
         addTaint(etag.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class SIPIfMatchParser extends HeaderParser {
     protected  SIPIfMatchParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.539 -0400", hash_original_method = "3E32D858B03BB295FC48CF43F0845DFE", hash_generated_method = "B5E7B95E98CF65E66AC00A93ED8E0AB2")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_755139025 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_755139025 = null; 
         dbg_enter("SIPIfMatch.parse");
         SIPIfMatch sipIfMatch = new SIPIfMatch();
         try 
@@ -44,30 +45,30 @@ public class SIPIfMatchParser extends HeaderParser {
             this.lexer.SPorHT();
             this.lexer.match('\n');
             varB4EAC82CA7396A68D541C85D26508E83_755139025 = sipIfMatch;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("SIPIfMatch.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_755139025.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_755139025.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_755139025;
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("SIPIfMatch.parse");
-        //SIPIfMatch sipIfMatch = new SIPIfMatch();
-        //try {
-            //headerName(TokenTypes.SIP_IF_MATCH);
-            //this.lexer.SPorHT();
-            //this.lexer.match(TokenTypes.ID);
-            //Token token = lexer.getNextToken();
-            //sipIfMatch.setETag(token.getTokenValue());
-            //this.lexer.SPorHT();
-            //this.lexer.match('\n');
-            //return sipIfMatch;
-        //} finally {
-            //if (debug)
-                //dbg_leave("SIPIfMatch.parse");
-        //}
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+                
+        
     }
 
     

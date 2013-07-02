@@ -1,11 +1,11 @@
 package java.math;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 final class BigInt {
@@ -16,7 +16,7 @@ final class BigInt {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.477 -0400", hash_original_method = "1310F12C90284BE28EAEC322C36620BE", hash_generated_method = "1310F12C90284BE28EAEC322C36620BE")
     public BigInt ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -28,33 +28,33 @@ final class BigInt {
             {
                 NativeBN.BN_free(this.bignum);
                 this.bignum = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (this.bignum != 0) {
-                //NativeBN.BN_free(this.bignum);
-                //this.bignum = 0;
-            //}
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.478 -0400", hash_original_method = "AE4D2CED095C616381028CC9DA4809A2", hash_generated_method = "1DD1F0D90E018DFDA5D9341347B91B73")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_447150837 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_447150837 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_447150837 = this.decString();
-        varB4EAC82CA7396A68D541C85D26508E83_447150837.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_447150837.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_447150837;
-        // ---------- Original Method ----------
-        //return this.decString();
+        
+        
     }
 
     
@@ -62,8 +62,8 @@ final class BigInt {
      int getNativeBIGNUM() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_296925829 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_296925829;
-        // ---------- Original Method ----------
-        //return this.bignum;
+        
+        
     }
 
     
@@ -105,12 +105,12 @@ final class BigInt {
         {
             this.bignum = NativeBN.BN_new();
             Check(this.bignum != 0);
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.bignum == 0) {
-            //this.bignum = NativeBN.BN_new();
-            //Check(this.bignum != 0);
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -132,24 +132,24 @@ final class BigInt {
         this.makeValid();
         Check(NativeBN.BN_copy(this.bignum, from.bignum));
         addTaint(from.getTaint());
-        // ---------- Original Method ----------
-        //this.makeValid();
-        //Check(NativeBN.BN_copy(this.bignum, from.bignum));
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.481 -0400", hash_original_method = "05F85FC1363853C2D04A531626254DA4", hash_generated_method = "C71B698958E5E8D6285B23EF27734C51")
      BigInt copy() {
-        BigInt varB4EAC82CA7396A68D541C85D26508E83_933129040 = null; //Variable for return #1
+        BigInt varB4EAC82CA7396A68D541C85D26508E83_933129040 = null; 
         BigInt bi = new BigInt();
         bi.putCopy(this);
         varB4EAC82CA7396A68D541C85D26508E83_933129040 = bi;
-        varB4EAC82CA7396A68D541C85D26508E83_933129040.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_933129040.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_933129040;
-        // ---------- Original Method ----------
-        //BigInt bi = new BigInt();
-        //bi.putCopy(this);
-        //return bi;
+        
+        
+        
+        
     }
 
     
@@ -158,9 +158,9 @@ final class BigInt {
         this.makeValid();
         Check(NativeBN.putLongInt(this.bignum, val));
         addTaint(val);
-        // ---------- Original Method ----------
-        //this.makeValid();
-        //Check(NativeBN.putLongInt(this.bignum, val));
+        
+        
+        
     }
 
     
@@ -170,17 +170,17 @@ final class BigInt {
         Check(NativeBN.putULongInt(this.bignum, val, neg));
         addTaint(val);
         addTaint(neg);
-        // ---------- Original Method ----------
-        //this.makeValid();
-        //Check(NativeBN.putULongInt(this.bignum, val, neg));
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.483 -0400", hash_original_method = "9B61495EA965D6A6D5A899C3BAA9567B", hash_generated_method = "F37D2EFDD9099236B0A0A50FAC43A037")
     private NumberFormatException invalidBigInteger(String s) {
         throw new NumberFormatException("Invalid BigInteger: " + s);
-        // ---------- Original Method ----------
-        //throw new NumberFormatException("Invalid BigInteger: " + s);
+        
+        
     }
 
     
@@ -194,17 +194,17 @@ final class BigInt {
             boolean varA13F3142E694CF8397A4AEFE6967A458_165038040 = (usedLen < s.length());
             {
                 if (DroidSafeAndroidRuntime.control) throw invalidBigInteger(original);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(original.getTaint());
-        // ---------- Original Method ----------
-        //String s = checkString(original, 10);
-        //this.makeValid();
-        //int usedLen = NativeBN.BN_dec2bn(this.bignum, s);
-        //Check((usedLen > 0));
-        //if (usedLen < s.length()) {
-            //throw invalidBigInteger(original);
-        //}
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -218,37 +218,37 @@ final class BigInt {
             boolean varA13F3142E694CF8397A4AEFE6967A458_1361633217 = (usedLen < s.length());
             {
                 if (DroidSafeAndroidRuntime.control) throw invalidBigInteger(original);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(original.getTaint());
-        // ---------- Original Method ----------
-        //String s = checkString(original, 16);
-        //this.makeValid();
-        //int usedLen = NativeBN.BN_hex2bn(this.bignum, s);
-        //Check((usedLen > 0));
-        //if (usedLen < s.length()) {
-            //throw invalidBigInteger(original);
-        //}
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.484 -0400", hash_original_method = "509B8D432808DFEEDB9A2530ACB4E595", hash_generated_method = "6007B0B5DB931B9B930089ED0696761E")
      String checkString(String s, int base) {
-        String varB4EAC82CA7396A68D541C85D26508E83_650731180 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_650731180 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         int charCount = s.length();
         int i = 0;
         {
             char ch = s.charAt(0);
             {
                 s = s.substring(1);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw invalidBigInteger(s);
-        } //End block
+        } 
         boolean nonAscii = false;
         {
             char ch = s.charAt(i);
@@ -256,22 +256,23 @@ final class BigInt {
                 boolean varF5FD1498482E4E0987145634F68F58CE_405661564 = (Character.digit(ch, base) == -1);
                 {
                     if (DroidSafeAndroidRuntime.control) throw invalidBigInteger(s);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 nonAscii = true;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_650731180 = nonAscii ? toAscii(s, base) : s;
         addTaint(s.getTaint());
         addTaint(base);
-        varB4EAC82CA7396A68D541C85D26508E83_650731180.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_650731180.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_650731180;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static String toAscii(String s, int base) {
         int length = s.length();
         StringBuilder result = new StringBuilder(length);
@@ -293,9 +294,9 @@ final class BigInt {
         Check(NativeBN.BN_bin2bn(a, a.length, neg, this.bignum));
         addTaint(a[0]);
         addTaint(neg);
-        // ---------- Original Method ----------
-        //this.makeValid();
-        //Check(NativeBN.BN_bin2bn(a, a.length, neg, this.bignum));
+        
+        
+        
     }
 
     
@@ -305,9 +306,9 @@ final class BigInt {
         Check(NativeBN.litEndInts2bn(a, a.length, neg, this.bignum));
         addTaint(a[0]);
         addTaint(neg);
-        // ---------- Original Method ----------
-        //this.makeValid();
-        //Check(NativeBN.litEndInts2bn(a, a.length, neg, this.bignum));
+        
+        
+        
     }
 
     
@@ -316,9 +317,9 @@ final class BigInt {
         this.makeValid();
         Check(NativeBN.twosComp2bn(a, a.length, this.bignum));
         addTaint(a[0]);
-        // ---------- Original Method ----------
-        //this.makeValid();
-        //Check(NativeBN.twosComp2bn(a, a.length, this.bignum));
+        
+        
+        
     }
 
     
@@ -327,30 +328,30 @@ final class BigInt {
         long var568B96714232996F05A67FEC3007E730_1857254413 = (NativeBN.longInt(this.bignum));
         long var0F5264038205EDFB1AC05FBB0E8C5E94_198422447 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_198422447;
-        // ---------- Original Method ----------
-        //return NativeBN.longInt(this.bignum);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.486 -0400", hash_original_method = "91D15DC45533D4FB86FF476EA9D84EB9", hash_generated_method = "E1E4987FBDD30843E5EBE5430B6D3686")
      String decString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_626582918 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_626582918 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_626582918 = NativeBN.BN_bn2dec(this.bignum);
-        varB4EAC82CA7396A68D541C85D26508E83_626582918.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_626582918.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_626582918;
-        // ---------- Original Method ----------
-        //return NativeBN.BN_bn2dec(this.bignum);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.487 -0400", hash_original_method = "41C3EB22F67E33809F4134B2F2306A6C", hash_generated_method = "6FFE72713A0A861EC229B6CDD100D06A")
      String hexString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1698758822 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1698758822 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1698758822 = NativeBN.BN_bn2hex(this.bignum);
-        varB4EAC82CA7396A68D541C85D26508E83_1698758822.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1698758822.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1698758822;
-        // ---------- Original Method ----------
-        //return NativeBN.BN_bn2hex(this.bignum);
+        
+        
     }
 
     
@@ -359,8 +360,8 @@ final class BigInt {
         byte[] var5713A3D0946171715E55913A347440FF_732763914 = (NativeBN.BN_bn2bin(this.bignum));
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1580002239 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1580002239;
-        // ---------- Original Method ----------
-        //return NativeBN.BN_bn2bin(this.bignum);
+        
+        
     }
 
     
@@ -369,8 +370,8 @@ final class BigInt {
         int[] var6E1D22610BFEAF10D5E9C9888883D31F_188949748 = (NativeBN.bn2litEndInts(this.bignum));
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_373188897 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_373188897;
-        // ---------- Original Method ----------
-        //return NativeBN.bn2litEndInts(this.bignum);
+        
+        
     }
 
     
@@ -379,8 +380,8 @@ final class BigInt {
         int varA6FFB2EBC8E064F4B12AFD8977763B21_1990688842 = (NativeBN.sign(this.bignum));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1526533030 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1526533030;
-        // ---------- Original Method ----------
-        //return NativeBN.sign(this.bignum);
+        
+        
     }
 
     
@@ -388,17 +389,17 @@ final class BigInt {
      void setSign(int val) {
         {
             NativeBN.BN_set_negative(this.bignum, 0);
-        } //End block
+        } 
         {
             NativeBN.BN_set_negative(this.bignum, 1);
-        } //End block
+        } 
         addTaint(val);
-        // ---------- Original Method ----------
-        //if (val > 0) {
-            //NativeBN.BN_set_negative(this.bignum, 0);
-        //} else {
-            //if (val < 0) NativeBN.BN_set_negative(this.bignum, 1);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -408,9 +409,9 @@ final class BigInt {
         addTaint(desiredByteCount);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1835372389 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1835372389;
-        // ---------- Original Method ----------
-        //int actualByteCount = (NativeBN.bitLength(this.bignum) + 7) / 8;
-        //return actualByteCount <= desiredByteCount;
+        
+        
+        
     }
 
     
@@ -419,8 +420,8 @@ final class BigInt {
         int var27C992443C21A44A87944D4A58DDEBF4_1341356604 = (NativeBN.bitLength(this.bignum));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450511856 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450511856;
-        // ---------- Original Method ----------
-        //return NativeBN.bitLength(this.bignum);
+        
+        
     }
 
     
@@ -430,11 +431,12 @@ final class BigInt {
         addTaint(n);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1064079048 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1064079048;
-        // ---------- Original Method ----------
-        //return NativeBN.BN_is_bit_set(this.bignum, n);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     static BigInt shift(BigInt a, int n) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_shift(r.bignum, a.bignum, n));
@@ -446,8 +448,8 @@ final class BigInt {
      void shift(int n) {
         Check(NativeBN.BN_shift(this.bignum, this.bignum, n));
         addTaint(n);
-        // ---------- Original Method ----------
-        //Check(NativeBN.BN_shift(this.bignum, this.bignum, n));
+        
+        
     }
 
     
@@ -455,8 +457,8 @@ final class BigInt {
      void addPositiveInt(int w) {
         Check(NativeBN.BN_add_word(this.bignum, w));
         addTaint(w);
-        // ---------- Original Method ----------
-        //Check(NativeBN.BN_add_word(this.bignum, w));
+        
+        
     }
 
     
@@ -464,11 +466,12 @@ final class BigInt {
      void multiplyByPositiveInt(int w) {
         Check(NativeBN.BN_mul_word(this.bignum, w));
         addTaint(w);
-        // ---------- Original Method ----------
-        //Check(NativeBN.BN_mul_word(this.bignum, w));
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     static int remainderByPositiveInt(BigInt a, int w) {
         int rem = NativeBN.BN_mod_word(a.bignum, w);
         Check(rem != -1);
@@ -476,6 +479,7 @@ final class BigInt {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static BigInt addition(BigInt a, BigInt b) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_add(r.bignum, a.bignum, b.bignum));
@@ -487,11 +491,12 @@ final class BigInt {
      void add(BigInt a) {
         Check(NativeBN.BN_add(this.bignum, this.bignum, a.bignum));
         addTaint(a.getTaint());
-        // ---------- Original Method ----------
-        //Check(NativeBN.BN_add(this.bignum, this.bignum, a.bignum));
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     static BigInt subtraction(BigInt a, BigInt b) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_sub(r.bignum, a.bignum, b.bignum));
@@ -499,6 +504,7 @@ final class BigInt {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static BigInt gcd(BigInt a, BigInt b) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_gcd(r.bignum, a.bignum, b.bignum));
@@ -506,6 +512,7 @@ final class BigInt {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static BigInt product(BigInt a, BigInt b) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_mul(r.bignum, a.bignum, b.bignum));
@@ -513,6 +520,7 @@ final class BigInt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInt bigExp(BigInt a, BigInt p) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_exp(r.bignum, a.bignum, p.bignum));
@@ -520,6 +528,7 @@ final class BigInt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInt exp(BigInt a, int p) {
         BigInt power = new BigInt();
         power.putLongInt(p);
@@ -527,6 +536,7 @@ final class BigInt {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static void division(BigInt dividend, BigInt divisor,
             BigInt quotient, BigInt remainder) {
         int quot, rem;
@@ -546,6 +556,7 @@ final class BigInt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInt modulus(BigInt a, BigInt m) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_nnmod(r.bignum, a.bignum, m.bignum));
@@ -553,6 +564,7 @@ final class BigInt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInt modExp(BigInt a, BigInt p, BigInt m) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_mod_exp(r.bignum, a.bignum, p.bignum, m.bignum));
@@ -560,6 +572,7 @@ final class BigInt {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static BigInt modInverse(BigInt a, BigInt m) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_mod_inverse(r.bignum, a.bignum, m.bignum));
@@ -567,6 +580,7 @@ final class BigInt {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static BigInt generatePrimeDefault(int bitLength) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_generate_prime_ex(r.bignum, bitLength, false, 0, 0, 0));
@@ -580,8 +594,8 @@ final class BigInt {
         addTaint(certainty);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_776020701 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_776020701;
-        // ---------- Original Method ----------
-        //return NativeBN.BN_is_prime_ex(bignum, certainty, 0);
+        
+        
     }
 
     

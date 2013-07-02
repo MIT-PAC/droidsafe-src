@@ -1,11 +1,11 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.cookie.CookieAttributeHandler;
@@ -19,7 +19,7 @@ public class RFC2965CommentUrlAttributeHandler implements CookieAttributeHandler
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.415 -0400", hash_original_method = "099D2A6A922F722517A29E0583320390", hash_generated_method = "345D1882F6B7C7775370B2F3368D9EB6")
     public  RFC2965CommentUrlAttributeHandler() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,14 +28,14 @@ public class RFC2965CommentUrlAttributeHandler implements CookieAttributeHandler
         {
             SetCookie2 cookie2 = (SetCookie2) cookie;
             cookie2.setCommentURL(commenturl);
-        } //End block
+        } 
         addTaint(cookie.getTaint());
         addTaint(commenturl.getTaint());
-        // ---------- Original Method ----------
-        //if (cookie instanceof SetCookie2) {
-              //SetCookie2 cookie2 = (SetCookie2) cookie;
-              //cookie2.setCommentURL(commenturl);
-          //}
+        
+        
+              
+              
+          
     }
 
     
@@ -43,7 +43,7 @@ public class RFC2965CommentUrlAttributeHandler implements CookieAttributeHandler
     public void validate(final Cookie cookie, final CookieOrigin origin) throws MalformedCookieException {
         addTaint(cookie.getTaint());
         addTaint(origin.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -53,8 +53,8 @@ public class RFC2965CommentUrlAttributeHandler implements CookieAttributeHandler
         addTaint(origin.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1510623967 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1510623967;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     

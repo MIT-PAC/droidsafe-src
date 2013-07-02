@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.net.LocalServerSocket;
@@ -24,15 +24,17 @@ public class PhoneFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.539 -0400", hash_original_method = "BADF3E1DCB0337DAED03CEBED853A313", hash_generated_method = "BADF3E1DCB0337DAED03CEBED853A313")
     public PhoneFactory ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SPEC)
     public static void makeDefaultPhones(Context context) {
         makeDefaultPhone(context);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void makeDefaultPhone(Context context) {
         synchronized(Phone.class) {
             if (!sMadeDefaults) {
@@ -117,6 +119,7 @@ public class PhoneFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getPhoneType(int networkMode) {
         switch(networkMode) {
         case RILConstants.NETWORK_MODE_CDMA:
@@ -144,6 +147,7 @@ public class PhoneFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Phone getDefaultPhone() {
         if (sLooper != Looper.myLooper()) {
             throw new RuntimeException(
@@ -156,6 +160,7 @@ public class PhoneFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Phone getCdmaPhone() {
         Phone phone;
         synchronized(PhoneProxy.lockForRadioTechnologyChange) {
@@ -176,6 +181,7 @@ public class PhoneFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Phone getGsmPhone() {
         synchronized(PhoneProxy.lockForRadioTechnologyChange) {
             Phone phone = new GSMPhone(sContext, sCommandsInterface, sPhoneNotifier);
@@ -184,6 +190,7 @@ public class PhoneFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SipPhone makeSipPhone(String sipUri) {
         return SipPhoneFactory.makePhone(sipUri, sContext, sPhoneNotifier);
     }

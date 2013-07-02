@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
@@ -14,10 +14,11 @@ public class DebugUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.222 -0400", hash_original_method = "4AD5C036447EEE6EF322222D7F2F6DED", hash_generated_method = "40067A418DEF2AF784763164D3515C4D")
     public  DebugUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isObjectSelected(Object object) {
         boolean match = false;
         String s = System.getenv("ANDROID_OBJECT_FILTER");
@@ -57,6 +58,7 @@ public class DebugUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void buildShortClassTag(Object cls, StringBuilder out) {
         if (cls == null) {
             out.append("null");

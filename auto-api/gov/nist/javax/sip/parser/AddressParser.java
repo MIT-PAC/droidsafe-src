@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.address.*;
 import java.text.ParseException;
@@ -17,9 +17,9 @@ public class AddressParser extends Parser {
         this.lexer = lexer;
         this.lexer.selectLexer("charLexer");
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
-        //this.lexer = lexer;
-        //this.lexer.selectLexer("charLexer");
+        
+        
+        
     }
 
     
@@ -27,15 +27,16 @@ public class AddressParser extends Parser {
     public  AddressParser(String address) {
         this.lexer = new Lexer("charLexer", address);
         addTaint(address.getTaint());
-        // ---------- Original Method ----------
-        //this.lexer = new Lexer("charLexer", address);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.701 -0400", hash_original_method = "FFACB1FB21E7531199E63E4BDFD4B5B1", hash_generated_method = "2DB819151F68D618FFC80523D6E447B1")
     protected AddressImpl nameAddr() throws ParseException {
-        AddressImpl varB4EAC82CA7396A68D541C85D26508E83_1492589078 = null; //Variable for return #1
-        AddressImpl varB4EAC82CA7396A68D541C85D26508E83_448158904 = null; //Variable for return #2
+        AddressImpl varB4EAC82CA7396A68D541C85D26508E83_1492589078 = null; 
+        AddressImpl varB4EAC82CA7396A68D541C85D26508E83_448158904 = null; 
         dbg_enter("nameAddr");
         try 
         {
@@ -53,7 +54,7 @@ public class AddressParser extends Parser {
                     this.lexer.SPorHT();
                     this.lexer.match('>');
                     varB4EAC82CA7396A68D541C85D26508E83_1492589078 = retval;
-                } //End block
+                } 
                 {
                     AddressImpl addr = new AddressImpl();
                     addr.setAddressType(AddressImpl.NAME_ADDR);
@@ -63,9 +64,9 @@ public class AddressParser extends Parser {
                         {
                             name = this.lexer.quotedString();
                             this.lexer.SPorHT();
-                        } //End block
+                        } 
                         name = this.lexer.getNextToken('<');
-                    } //End collapsed parenthetic
+                    } 
                     addr.setDisplayName(name.trim());
                     this.lexer.match('<');
                     this.lexer.SPorHT();
@@ -77,32 +78,33 @@ public class AddressParser extends Parser {
                     this.lexer.SPorHT();
                     this.lexer.match('>');
                     varB4EAC82CA7396A68D541C85D26508E83_448158904 = addr;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             dbg_leave("nameAddr");
-        } //End block
-        AddressImpl varA7E53CE21691AB073D9660D615818899_1538459452; //Final return value
+        } 
+        AddressImpl varA7E53CE21691AB073D9660D615818899_1538459452; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1538459452 = varB4EAC82CA7396A68D541C85D26508E83_1492589078;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1538459452 = varB4EAC82CA7396A68D541C85D26508E83_448158904;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1538459452.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1538459452.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1538459452;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.702 -0400", hash_original_method = "54D730AA0CABE4752468E1C28394616F", hash_generated_method = "E8BDA570478D9B9B2A598A17BDB0582A")
     public AddressImpl address( boolean inclParams ) throws ParseException {
-        AddressImpl varB4EAC82CA7396A68D541C85D26508E83_1079224126 = null; //Variable for return #1
+        AddressImpl varB4EAC82CA7396A68D541C85D26508E83_1079224126 = null; 
         dbg_enter("address");
         AddressImpl retval = null;
         try 
@@ -113,33 +115,33 @@ public class AddressParser extends Parser {
                 {
                     char la = lexer.lookAhead(k);
                     if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected EOL");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             char la = lexer.lookAhead(k);
             {
                 retval = nameAddr();
-            } //End block
+            } 
             {
                 retval = new AddressImpl();
                 URLParser uriParser = new URLParser((Lexer) lexer);
                 GenericURI uri = uriParser.uriReference( inclParams );
                 retval.setAddressType(AddressImpl.ADDRESS_SPEC);
                 retval.setURI(uri);
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw createParseException("Bad address spec");
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1079224126 = retval;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("address");
-        } //End block
+        } 
         addTaint(inclParams);
-        varB4EAC82CA7396A68D541C85D26508E83_1079224126.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1079224126.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1079224126;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

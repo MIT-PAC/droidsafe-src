@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.stack;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.core.NameValueList;
@@ -263,14 +263,14 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
         remoteSequenceNumber = -1;
         this.sipProvider = provider;
         eventListeners = new CopyOnWriteArraySet<SIPDialogEventListener>();
-        // ---------- Original Method ----------
-        //this.terminateOnBye = true;
-        //this.routeList = new RouteList();
-        //this.dialogState = NULL_STATE;
-        //localSequenceNumber = 0;
-        //remoteSequenceNumber = -1;
-        //this.sipProvider = provider;
-        //eventListeners = new CopyOnWriteArraySet<SIPDialogEventListener>();
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -292,12 +292,12 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 sipStack.getStackLogger().logDebug(
                     "provider port = " + this.sipProvider.getListeningPoint().getPort());
                 sipStack.getStackLogger().logStackTrace();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.isBackToBackUserAgent = sipStack.isBackToBackUserAgent;
         addEventListener(sipStack);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -309,11 +309,11 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
         this.isBackToBackUserAgent = sipStack.isBackToBackUserAgent;
         addTaint(transaction.getTaint());
         addTaint(sipResponse.getTaint());
-        // ---------- Original Method ----------
-        //if (sipResponse == null)
-            //throw new NullPointerException("Null SipResponse");
-        //this.setLastResponse(transaction, sipResponse);
-        //this.isBackToBackUserAgent = sipStack.isBackToBackUserAgent;
+        
+        
+            
+        
+        
     }
 
     
@@ -336,29 +336,31 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             {
                 sipStack.getStackLogger().logDebug("Creating a dialog : " + this);
                 sipStack.getStackLogger().logStackTrace();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.isBackToBackUserAgent = sipStack.isBackToBackUserAgent;
         addEventListener(sipStack);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.339 -0400", hash_original_method = "9EE497100AA17813744E66E4A05B8669", hash_generated_method = "D730239923E29F7DFE5B86469FB919EC")
     private void recordStackTrace() {
         StringWriter stringWriter = new StringWriter();
         PrintWriter writer = new PrintWriter(stringWriter);
         new Exception().printStackTrace(writer);
         this.stackTrace = stringWriter.getBuffer().toString();
-        // ---------- Original Method ----------
-        //StringWriter stringWriter = new StringWriter();
-        //PrintWriter writer = new PrintWriter(stringWriter);
-        //new Exception().printStackTrace(writer);
-        //this.stackTrace = stringWriter.getBuffer().toString();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.340 -0400", hash_original_method = "40815EC709415499328FA1CBE062ACB5", hash_generated_method = "9DCBF13215B8438A4F76B8FDBAE96775")
     private void printRouteList() {
         {
@@ -366,27 +368,29 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             {
                 sipStack.getStackLogger().logDebug("this : " + this);
                 sipStack.getStackLogger().logDebug("printRouteList : " + this.routeList.encode());
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug("this : " + this);
-            //sipStack.getStackLogger().logDebug("printRouteList : " + this.routeList.encode());
-        //}
+            } 
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.340 -0400", hash_original_method = "6746D685A6EEFE6F86FE53A5B90B58CB", hash_generated_method = "F4BE003ACCFDB2127ABD82C625B6A470")
     private boolean isClientDialog() {
         SIPTransaction transaction = (SIPTransaction) this.getFirstTransaction();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_646681623 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_646681623;
-        // ---------- Original Method ----------
-        //SIPTransaction transaction = (SIPTransaction) this.getFirstTransaction();
-        //return transaction instanceof SIPClientTransaction;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.341 -0400", hash_original_method = "871D6D7CB1794492ED7691CB8C5B804E", hash_generated_method = "9EB2F507E1B456435C1187C6F97690C6")
     private void raiseIOException(String host, int port, String protocol) {
         IOExceptionEvent ioError = new IOExceptionEvent(this, host, port, protocol);
@@ -395,13 +399,14 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
         addTaint(host.getTaint());
         addTaint(port);
         addTaint(protocol.getTaint());
-        // ---------- Original Method ----------
-        //IOExceptionEvent ioError = new IOExceptionEvent(this, host, port, protocol);
-        //sipProvider.handleEvent(ioError, null);
-        //setState(SIPDialog.TERMINATED_STATE);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.341 -0400", hash_original_method = "352742C76D82997D1FD2B39635FE380F", hash_generated_method = "40B25C8E79ABE569B791B398F04AA81B")
     private void raiseErrorEvent(int dialogTimeoutError) {
         SIPDialogErrorEvent newErrorEvent;
@@ -415,66 +420,68 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 {
                     nextListener = (SIPDialogEventListener) listenerIterator.next();
                     nextListener.dialogErrorEvent(newErrorEvent);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         eventListeners.clear();
         {
             delete();
-        } //End block
+        } 
         stopTimer();
         addTaint(dialogTimeoutError);
-        // ---------- Original Method ----------
-        //SIPDialogErrorEvent newErrorEvent;
-        //Iterator<SIPDialogEventListener> listenerIterator;
-        //SIPDialogEventListener nextListener;
-        //newErrorEvent = new SIPDialogErrorEvent(this, dialogTimeoutError);
-        //synchronized (eventListeners) {
-			//listenerIterator = eventListeners.iterator();
-			//while (listenerIterator.hasNext()) {
-				//nextListener = (SIPDialogEventListener) listenerIterator.next();
-				//nextListener.dialogErrorEvent(newErrorEvent);
-			//}
-		//}
-        //eventListeners.clear();
-        //if(dialogTimeoutError != SIPDialogErrorEvent.DIALOG_ACK_NOT_SENT_TIMEOUT &&
-		        //dialogTimeoutError != SIPDialogErrorEvent.DIALOG_ACK_NOT_RECEIVED_TIMEOUT &&
-		        //dialogTimeoutError != SIPDialogErrorEvent.DIALOG_REINVITE_TIMEOUT ) {
-			//delete();
-		//}
-        //stopTimer();
+        
+        
+        
+        
+        
+        
+			
+			
+				
+				
+			
+		
+        
+        
+		        
+		        
+			
+		
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.342 -0400", hash_original_method = "E7371746614A4FB0A7068DCC784728D1", hash_generated_method = "69496B3044C856FEA5FA9EE8B872C9E8")
     private void setRemoteParty(SIPMessage sipMessage) {
         {
             boolean varBEE554E6D1FF8C71A0674E385CDC8906_1281313576 = (!isServer());
             {
                 this.remoteParty = sipMessage.getTo().getAddress();
-            } //End block
+            } 
             {
                 this.remoteParty = sipMessage.getFrom().getAddress();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varADC6B4D22F314E4E23507BEFD4A59D21_237332785 = (sipStack.isLoggingEnabled());
             {
                 sipStack.getStackLogger().logDebug("settingRemoteParty " + this.remoteParty);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (!isServer()) {
-            //this.remoteParty = sipMessage.getTo().getAddress();
-        //} else {
-            //this.remoteParty = sipMessage.getFrom().getAddress();
-        //}
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug("settingRemoteParty " + this.remoteParty);
-        //}
+            } 
+        } 
+        
+        
+            
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.342 -0400", hash_original_method = "07989C3909E96A7576DAE0D29DD189A0", hash_generated_method = "3565882E68CF84698D6691D9533CB20E")
     private void addRoute(RecordRouteList recordRouteList) {
         try 
@@ -496,10 +503,10 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                                 route.setAddress(address);
                                 route.setParameters((NameValueList) rr.getParameters().clone());
                                 this.routeList.add(route);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     this.routeList = new RouteList();
                     ListIterator li = recordRouteList.listIterator();
@@ -515,12 +522,12 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                                 route.setAddress(address);
                                 route.setParameters((NameValueList) rr.getParameters().clone());
                                 routeList.add(route);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
             {
@@ -540,18 +547,18 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                                             sipStack.getStackLogger().logWarning(
                                 "NON LR route in Route set detected for dialog : " + this);
                                             sipStack.getStackLogger().logStackTrace();
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(recordRouteList.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -563,17 +570,18 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             {
                 sipStack.getStackLogger().logDebug("Dialog.setRemoteTarget: " + this.remoteTarget);
                 sipStack.getStackLogger().logStackTrace();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //this.remoteTarget = contact.getAddress();
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug("Dialog.setRemoteTarget: " + this.remoteTarget);
-            //sipStack.getStackLogger().logStackTrace();
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.343 -0400", hash_original_method = "32344AE5A14991821D94A9D2D9260949", hash_generated_method = "3475FA925A427A196EC8102DAF03972A")
     private synchronized void addRoute(SIPResponse sipResponse) {
         try 
@@ -583,8 +591,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 {
                     sipStack.getStackLogger().logDebug(
                         "setContact: dialogState: " + this + "state = " + this.getState());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var8E5EA495FB3AB2BDCCF944451D5CAD5E_1925208625 = (sipResponse.getStatusCode() == 100);
                 {
@@ -597,12 +605,12 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                             && SIPRequest.isTargetRefresh(sipResponse.getCSeq().getMethod()));
                                 {
                                     this.setRemoteTarget((ContactHeader) contactList.getFirst());
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 boolean varA6A85DA8A9FDA48A0ADE5BD360D7C1FE_1385581789 = (!isServer());
                 {
@@ -613,41 +621,42 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                             RecordRouteList rrlist = sipResponse.getRecordRouteHeaders();
                             {
                                 this.addRoute(rrlist);
-                            } //End block
+                            } 
                             {
                                 this.routeList = new RouteList();
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
                     ContactList contactList = sipResponse.getContactHeaders();
                     {
                         this.setRemoteTarget((ContactHeader) contactList.getFirst());
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_1702856355 = (sipStack.isLoggingEnabled());
                 {
                     sipStack.getStackLogger().logStackTrace();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(sipResponse.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.344 -0400", hash_original_method = "EDCC5E2E639B8E515D6889EB4E225297", hash_generated_method = "A3CC71B984116C97D868EE164E7E120B")
     private synchronized RouteList getRouteList() {
-        RouteList varB4EAC82CA7396A68D541C85D26508E83_1131189710 = null; //Variable for return #1
+        RouteList varB4EAC82CA7396A68D541C85D26508E83_1131189710 = null; 
         {
             boolean varADC6B4D22F314E4E23507BEFD4A59D21_540835680 = (sipStack.isLoggingEnabled());
             sipStack.getStackLogger().logDebug("getRouteList " + this);
-        } //End collapsed parenthetic
+        } 
         ListIterator li;
         RouteList retval = new RouteList();
         retval = new RouteList();
@@ -658,9 +667,9 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 {
                     Route route = (Route) li.next();
                     retval.add((Route) route.clone());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean varADC6B4D22F314E4E23507BEFD4A59D21_37757270 = (sipStack.isLoggingEnabled());
             {
@@ -669,35 +678,36 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 sipStack.getStackLogger().logDebug("RouteList = " + retval.encode());
                 sipStack.getStackLogger().logDebug("myRouteList = " + routeList.encode());
                 sipStack.getStackLogger().logDebug("----- ");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1131189710 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_1131189710.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1131189710.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1131189710;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.345 -0400", hash_original_method = "7EC927C7EF5071E2849378214CAB8686", hash_generated_method = "BCC8ED1A5E46655051AE536081FB079D")
      void setRouteList(RouteList routeList) {
         this.routeList = routeList;
-        // ---------- Original Method ----------
-        //this.routeList = routeList;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.346 -0400", hash_original_method = "EE053BB78DA7F62675E98D1AF5A5B915", hash_generated_method = "85533A593E54EE027B153852C0E978C4")
     private void sendAck(Request request, boolean throwIOExceptionAsSipException) throws SipException {
         SIPRequest ackRequest = (SIPRequest) request;
         {
             boolean varADC6B4D22F314E4E23507BEFD4A59D21_83508289 = (sipStack.isLoggingEnabled());
             sipStack.getStackLogger().logDebug("sendAck" + this);
-        } //End collapsed parenthetic
+        } 
         {
             boolean var83038655241FA8664F712343761B6FDA_1199349614 = (!ackRequest.getMethod().equals(Request.ACK));
             if (DroidSafeAndroidRuntime.control) throw new SipException("Bad request method -- should be ACK");
-        } //End collapsed parenthetic
+        } 
         {
             boolean var8D79CFF02C4C85D8676092EC202DE2DE_1070646761 = (this.getState() == null || this.getState().getValue() == EARLY_STATE);
             {
@@ -706,11 +716,11 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     {
                         sipStack.getStackLogger().logError(
                         "Bad Dialog State for " + this + " dialogID = " + this.getDialogId());
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new SipException("Bad dialog state " + this.getState());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var3C70B6348A8CD040C6F768F885F8BDFD_1468325384 = (!this.getCallId().getCallId().equals(((SIPRequest) request).getCallId().getCallId()));
             {
@@ -721,11 +731,11 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                         sipStack.getStackLogger().logError(
                         "RequestCallID = " + ackRequest.getCallId().getCallId());
                         sipStack.getStackLogger().logError("dialog =  " + this);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new SipException("Bad call ID in request");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             {
@@ -736,21 +746,21 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     sipStack.getStackLogger().logDebug(
                         "setting To tag for outgoing ACK = " + this.getRemoteTag());
                     sipStack.getStackLogger().logDebug("ack = " + ackRequest);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var8960EF1666EE0A76790F8BA2DB88F003_62463221 = (this.getLocalTag() != null);
                 ackRequest.getFrom().setTag(this.getLocalTag());
-            } //End collapsed parenthetic
+            } 
             {
                 boolean var2C6389CD64DE33F7E280071219A47D88_541780545 = (this.getRemoteTag() != null);
                 ackRequest.getTo().setTag(this.getRemoteTag());
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         catch (ParseException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new SipException(ex.getMessage());
-        } //End block
+        } 
         Hop hop = sipStack.getNextHop(ackRequest);
         if (DroidSafeAndroidRuntime.control) throw new SipException("No route!");
         try 
@@ -758,7 +768,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_228745693 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logDebug("hop = " + hop);
-            } //End collapsed parenthetic
+            } 
             ListeningPointImpl lp = (ListeningPointImpl) this.sipProvider.getListeningPoint(hop
                     .getTransport());
             if (DroidSafeAndroidRuntime.control) throw new SipException("No listening point for this provider registered at "
@@ -772,8 +782,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 boolean var407F621DCBF6FFA27177104AE6265862_1704302707 = (!this.isAckSent(cseqNo));
                 {
                     releaseAckSem = true;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             this.setLastAckSent(ackRequest);
             messageChannel.sendMessage(ackRequest);
             this.isAcknowledged = true;
@@ -781,65 +791,65 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     ((SIPRequest)ackRequest).getCSeq().getSeqNumber());
             {
                 this.releaseAckSem();
-            } //End block
+            } 
             {
                 {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1991480197 = (sipStack.isLoggingEnabled());
                     {
                         sipStack.getStackLogger().logDebug("Not releasing ack sem for " + this + " isAckSent " + releaseAckSem );
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         catch (IOException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new SipException("Could not send ack", ex);
             this.raiseIOException(hop.getHost(), hop.getPort(), hop.getTransport());
-        } //End block
+        } 
         catch (SipException ex)
         {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_2101649417 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logException(ex);
-            } //End collapsed parenthetic
+            } 
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
+        } 
         catch (Exception ex)
         {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_64323663 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logException(ex);
-            } //End collapsed parenthetic
+            } 
             if (DroidSafeAndroidRuntime.control) throw new SipException("Could not create message channel", ex);
-        } //End block
+        } 
         {
             this.dialogDeleteTask.cancel();
             this.dialogDeleteTask = null;
-        } //End block
+        } 
         this.ackSeen = true;
         addTaint(request.getTaint());
         addTaint(throwIOExceptionAsSipException);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.347 -0400", hash_original_method = "0D216F13B34A5D6836A5B8174F7E5D5B", hash_generated_method = "833699EAF4926A44BA91EB1BE4A6B643")
      void setStack(SIPTransactionStack sipStack) {
         this.sipStack = sipStack;
-        // ---------- Original Method ----------
-        //this.sipStack = sipStack;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.347 -0400", hash_original_method = "4B5A71F52939D771152A6C733BB7B273", hash_generated_method = "DE340CBF06A1B28020C10B03D29352A3")
      SIPTransactionStack getStack() {
-        SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_371993608 = null; //Variable for return #1
+        SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_371993608 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_371993608 = sipStack;
-        varB4EAC82CA7396A68D541C85D26508E83_371993608.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_371993608.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_371993608;
-        // ---------- Original Method ----------
-        //return sipStack;
+        
+        
     }
 
     
@@ -847,8 +857,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
      boolean isTerminatedOnBye() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_76821869 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_76821869;
-        // ---------- Original Method ----------
-        //return this.terminateOnBye;
+        
+        
     }
 
     
@@ -865,17 +875,17 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                         {
                             this.timerTask.cancel();
                             this.timerTask = null;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     finally 
                     {
                         releaseTimerTaskSem();
-                    } //End block
+                    } 
                     this.ackSeen = true;
                     {
                         this.dialogDeleteTask.cancel();
                         this.dialogDeleteTask = null;
-                    } //End block
+                    } 
                     this.setLastAckReceived(sipRequest);
                     {
                         boolean varDA2675C4DA71C7DD141330FDB85BC848_1615201758 = (sipStack.isLoggingEnabled());
@@ -884,18 +894,18 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                             "ackReceived for " + ((SIPTransaction) tr).getMethod());
                             this.ackLine = sipStack.getStackLogger().getLineCount();
                             this.printDebugInfo();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         this.releaseAckSem();
-                    } //End block
+                    } 
                     this.setState(CONFIRMED_STATE);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(sipRequest.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -905,50 +915,53 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
         this.dialogTerminatedEventDelivered = true;
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1189927748 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1189927748;
-        // ---------- Original Method ----------
-        //boolean retval = this.dialogTerminatedEventDelivered;
-        //this.dialogTerminatedEventDelivered = true;
-        //return retval;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.349 -0400", hash_original_method = "6AC129F323D8E39FC544B245C2D3A08C", hash_generated_method = "DEE6DF0D485C15E3BAC1FDCEECB3E5D6")
     public void addEventListener(SIPDialogEventListener newListener) {
         eventListeners.add(newListener);
         addTaint(newListener.getTaint());
-        // ---------- Original Method ----------
-        //eventListeners.add(newListener);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.350 -0400", hash_original_method = "7D9E11919812D827506D2E4A9106FF10", hash_generated_method = "4883BF1C58DAF47B17E44080CD78F7C2")
     public void removeEventListener(SIPDialogEventListener oldListener) {
         eventListeners.remove(oldListener);
         addTaint(oldListener.getTaint());
-        // ---------- Original Method ----------
-        //eventListeners.remove(oldListener);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.350 -0400", hash_original_method = "552E0456C33D24CD63C8EBCDAC1D019B", hash_generated_method = "E17DD994BC845C3BDBBD70ECC432242E")
     public void setApplicationData(Object applicationData) {
         this.applicationData = applicationData;
-        // ---------- Original Method ----------
-        //this.applicationData = applicationData;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.351 -0400", hash_original_method = "5F924FC61375970A4DC758380BEBFF0F", hash_generated_method = "8CD050B4A1985C8DB94DC0E74BDA85FB")
     public Object getApplicationData() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_972664826 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_972664826 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_972664826 = this.applicationData;
-        varB4EAC82CA7396A68D541C85D26508E83_972664826.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_972664826.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_972664826;
-        // ---------- Original Method ----------
-        //return this.applicationData;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.352 -0400", hash_original_method = "CB5AF71091E3878E29C27274F2628D83", hash_generated_method = "F6410E4DE15D6F3C4F0BC4C07CEB09DF")
     public synchronized void requestConsumed() {
         this.nextSeqno = Long.valueOf(this.getRemoteSeqNumber() + 1);
@@ -957,40 +970,42 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             {
                 this.sipStack.getStackLogger().logDebug(
                     "Request Consumed -- next consumable Request Seqno = " + this.nextSeqno);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //this.nextSeqno = Long.valueOf(this.getRemoteSeqNumber() + 1);
-        //if (sipStack.isLoggingEnabled()) {
-            //this.sipStack.getStackLogger().logDebug(
-                    //"Request Consumed -- next consumable Request Seqno = " + this.nextSeqno);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.354 -0400", hash_original_method = "1E1A6C22D1982081DC74374A2FF63AAD", hash_generated_method = "4588AA3780474429C77EE59965114823")
     public synchronized boolean isRequestConsumable(SIPRequest dialogRequest) {
         {
             boolean var6F478D97F2432A825F39F929C2C7D5F9_1917420528 = (dialogRequest.getMethod().equals(Request.ACK));
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Illegal method");
-        } //End collapsed parenthetic
+        } 
         {
             boolean var1B071101B9F8EF253DCB47268A096682_2116839785 = (!this.isSequnceNumberValidation());
-        } //End collapsed parenthetic
+        } 
         boolean var5D47603BA0731A48F49B6853603D82AF_1849391446 = (remoteSequenceNumber < dialogRequest.getCSeq().getSeqNumber());
         addTaint(dialogRequest.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_707193828 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_707193828;
-        // ---------- Original Method ----------
-        //if (dialogRequest.getMethod().equals(Request.ACK))
-            //throw new RuntimeException("Illegal method");
-        //if (!this.isSequnceNumberValidation()) {
-            //return true;
-        //}
-        //return remoteSequenceNumber < dialogRequest.getCSeq().getSeqNumber();
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.356 -0400", hash_original_method = "45E0951257A8FCCA68182E75CB3B0E3E", hash_generated_method = "9085F0969D812520A1C5A8B0A7080C63")
     public void doDeferredDelete() {
         {
@@ -1000,19 +1015,20 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 this.dialogDeleteTask = new DialogDeleteTask();
                 sipStack.getTimer().schedule(this.dialogDeleteTask,
                     SIPTransaction.TIMER_H * SIPTransactionStack.BASE_TIMER_INTERVAL);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (sipStack.getTimer() == null)
-            //this.setState(TERMINATED_STATE);
-        //else {
-            //this.dialogDeleteTask = new DialogDeleteTask();
-            //sipStack.getTimer().schedule(this.dialogDeleteTask,
-                    //SIPTransaction.TIMER_H * SIPTransactionStack.BASE_TIMER_INTERVAL);
-        //}
+            } 
+        } 
+        
+        
+            
+        
+            
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.358 -0400", hash_original_method = "DBF870542E6B78326B5509C5A5BAD885", hash_generated_method = "A96FFC8F03E5DC4728CD126C74C68861")
     public void setState(int state) {
         {
@@ -1028,25 +1044,26 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                             this + "  old dialog state is " + this.getState());
                         sipStack.getStackLogger().logDebug(
                             this + "  New dialog state is " + DialogState.getObject(state));
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         this.dialogState = state;
         {
             {
                 boolean var0CDA542FA791709C98BE4603D7193AE9_1229325462 = (sipStack.getTimer() != null);
                 {
                     sipStack.getTimer().schedule(new LingerTimer(), DIALOG_LINGER_TIME * 1000);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             this.stopTimer();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.360 -0400", hash_original_method = "030EEF9CE7E1904041534ED4E8E41515", hash_generated_method = "3011DECCB18DD6F054C93276A357F15E")
     public void printDebugInfo() {
         {
@@ -1058,17 +1075,17 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 sipStack.getStackLogger().logDebug("localSequenceNumer = " + getLocalSeqNumber());
                 sipStack.getStackLogger().logDebug("remoteSequenceNumer = " + getRemoteSeqNumber());
                 sipStack.getStackLogger().logDebug("ackLine:" + this.getRemoteTag() + " " + ackLine);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug("isServer = " + isServer());
-            //sipStack.getStackLogger().logDebug("localTag = " + getLocalTag());
-            //sipStack.getStackLogger().logDebug("remoteTag = " + getRemoteTag());
-            //sipStack.getStackLogger().logDebug("localSequenceNumer = " + getLocalSeqNumber());
-            //sipStack.getStackLogger().logDebug("remoteSequenceNumer = " + getRemoteSeqNumber());
-            //sipStack.getStackLogger().logDebug("ackLine:" + this.getRemoteTag() + " " + ackLine);
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -1076,27 +1093,28 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     public boolean isAckSeen() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_897643144 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_897643144;
-        // ---------- Original Method ----------
-        //return this.ackSeen;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.362 -0400", hash_original_method = "B546264B9F955F6D37CCFB381DE1D848", hash_generated_method = "78D048F1D9BA641D4A5BA46A2A9B9414")
     public SIPRequest getLastAckSent() {
-        SIPRequest varB4EAC82CA7396A68D541C85D26508E83_2054019958 = null; //Variable for return #1
+        SIPRequest varB4EAC82CA7396A68D541C85D26508E83_2054019958 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2054019958 = this.lastAckSent;
-        varB4EAC82CA7396A68D541C85D26508E83_2054019958.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2054019958.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2054019958;
-        // ---------- Original Method ----------
-        //return this.lastAckSent;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.363 -0400", hash_original_method = "3A1F0F9E8BFDA328E094E225E007A649", hash_generated_method = "D7972645ABC17EF957C48D889665D17C")
     public boolean isAckSent(long cseqNo) {
         {
             boolean var3665C5AC96583983B5AAFA78A2A4A188_1581408778 = (this.getLastTransaction() == null);
-        } //End collapsed parenthetic
+        } 
         {
             boolean varF59958C0898BD203DEF95141C522BCCD_875811362 = (this.getLastTransaction() instanceof ClientTransaction);
             {
@@ -1104,69 +1122,71 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     boolean varCC537E3EE0A3D565D8032AB64F417D5A_275053825 = (this.getLastAckSent() == null);
                     {
                         boolean var98BAD3A8C67276872D114A7BFB474E16_62498241 = (cseqNo <=((SIPRequest) this.getLastAckSent()).getCSeq().getSeqNumber());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(cseqNo);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2065590146 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2065590146;
-        // ---------- Original Method ----------
-        //if (this.getLastTransaction() == null)
-            //return true;
-        //if (this.getLastTransaction() instanceof ClientTransaction) {
-            //if (this.getLastAckSent() == null) {
-                //return false;
-            //} else {
-                //return cseqNo <=((SIPRequest) this.getLastAckSent()).getCSeq().getSeqNumber();
-            //}
-        //} else {
-            //return true;
-        //}
+        
+        
+            
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.364 -0400", hash_original_method = "614E8BDEDCCD12CF6A6EF62939E9BCC1", hash_generated_method = "8838A1E2CCDD42FC2127FFCA7CB2AC07")
     public Transaction getFirstTransaction() {
-        Transaction varB4EAC82CA7396A68D541C85D26508E83_517727028 = null; //Variable for return #1
+        Transaction varB4EAC82CA7396A68D541C85D26508E83_517727028 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_517727028 = this.firstTransaction;
-        varB4EAC82CA7396A68D541C85D26508E83_517727028.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_517727028.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_517727028;
-        // ---------- Original Method ----------
-        //return this.firstTransaction;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.365 -0400", hash_original_method = "A5E017CF1C9F9D5F5F2E302DFCC4F846", hash_generated_method = "1EDDB78711F9AC4AC15B997F1D4FB0DF")
     public Iterator getRouteSet() {
-        Iterator varB4EAC82CA7396A68D541C85D26508E83_1298588876 = null; //Variable for return #1
-        Iterator varB4EAC82CA7396A68D541C85D26508E83_580594493 = null; //Variable for return #2
+        Iterator varB4EAC82CA7396A68D541C85D26508E83_1298588876 = null; 
+        Iterator varB4EAC82CA7396A68D541C85D26508E83_580594493 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1298588876 = new LinkedList().listIterator();
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_580594493 = this.getRouteList().listIterator();
-        } //End block
-        Iterator varA7E53CE21691AB073D9660D615818899_1148333618; //Final return value
+        } 
+        Iterator varA7E53CE21691AB073D9660D615818899_1148333618; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1148333618 = varB4EAC82CA7396A68D541C85D26508E83_1298588876;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1148333618 = varB4EAC82CA7396A68D541C85D26508E83_580594493;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1148333618.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1148333618.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1148333618;
-        // ---------- Original Method ----------
-        //if (this.routeList == null) {
-            //return new LinkedList().listIterator();
-        //} else {
-            //return this.getRouteList().listIterator();
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.365 -0400", hash_original_method = "A8016262F3F363A84230A54DA12F1862", hash_generated_method = "C06BDDD373CCD9E9A82C2E17D958F603")
     public synchronized void addRoute(SIPRequest sipRequest) {
         {
@@ -1174,43 +1194,44 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             {
                 sipStack.getStackLogger().logDebug(
                     "setContact: dialogState: " + this + "state = " + this.getState());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varAF9C68605D64B0F2F115C62532D2B021_1096165596 = (this.dialogState == CONFIRMED_STATE
                 && SIPRequest.isTargetRefresh(sipRequest.getMethod()));
             {
                 this.doTargetRefresh(sipRequest);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varB1C209232695E6D70F6B684A8210FA49_1595480523 = (sipRequest.getToTag()!=null);
-        } //End collapsed parenthetic
+        } 
         RecordRouteList rrlist = sipRequest.getRecordRouteHeaders();
         {
             this.addRoute(rrlist);
-        } //End block
+        } 
         {
             this.routeList = new RouteList();
-        } //End block
+        } 
         ContactList contactList = sipRequest.getContactHeaders();
         {
             this.setRemoteTarget((ContactHeader) contactList.getFirst());
-        } //End block
+        } 
         addTaint(sipRequest.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.366 -0400", hash_original_method = "7A127BC7F5926E2623990DC3EF5AF92A", hash_generated_method = "CB8AA31A85091EA3068885635C30BAC6")
     public void setDialogId(String dialogId) {
         this.dialogId = dialogId;
-        // ---------- Original Method ----------
-        //this.dialogId = dialogId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SIPDialog createFromNOTIFY(SIPClientTransaction subscribeTx,
             SIPTransaction notifyST) {
         SIPDialog d = new SIPDialog(notifyST);
@@ -1237,11 +1258,11 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     public boolean isServer() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2131685444 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2131685444;
-        // ---------- Original Method ----------
-        //if (this.firstTransactionSeen == false)
-            //return this.serverTransactionFlag;
-        //else
-            //return this.firstTransactionIsServerTransaction;
+        
+        
+            
+        
+            
     }
 
     
@@ -1249,25 +1270,27 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     protected boolean isReInvite() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1694508551 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1694508551;
-        // ---------- Original Method ----------
-        //return this.reInviteFlag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.367 -0400", hash_original_method = "E7B2220F30EB97BE925BA6431B089B50", hash_generated_method = "91B9FC44F24921454B832B32AC9E3606")
     public String getDialogId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_206678401 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_206678401 = null; 
         this.dialogId = this.lastResponse.getDialogId(isServer());
         varB4EAC82CA7396A68D541C85D26508E83_206678401 = this.dialogId;
-        varB4EAC82CA7396A68D541C85D26508E83_206678401.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_206678401.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_206678401;
-        // ---------- Original Method ----------
-        //if (this.dialogId == null && this.lastResponse != null)
-            //this.dialogId = this.lastResponse.getDialogId(isServer());
-        //return this.dialogId;
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void storeFirstTransactionInfo(SIPDialog dialog, SIPTransaction transaction) {
         dialog.firstTransaction = transaction;
         dialog.firstTransactionSeen = true;
@@ -1291,6 +1314,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.368 -0400", hash_original_method = "5D1D12A2E6FD98502CE24F8CA665F380", hash_generated_method = "7AD083B34426DCC0227B207B5FA2423B")
     public void addTransaction(SIPTransaction transaction) {
         SIPRequest sipRequest = (SIPRequest) transaction.getOriginalRequest();
@@ -1299,26 +1323,26 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 && transaction.getMethod().equals(firstTransactionMethod));
             {
                 this.reInviteFlag = true;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             storeFirstTransactionInfo(this, transaction);
             {
                 boolean varD92DE4EDF61C41C566AE76DAC140EAB6_1601059484 = (sipRequest.getMethod().equals(Request.SUBSCRIBE));
                 this.eventHeader = (EventHeader) sipRequest.getHeader(EventHeader.NAME);
-            } //End collapsed parenthetic
+            } 
             this.setLocalParty(sipRequest);
             this.setRemoteParty(sipRequest);
             this.setCallId(sipRequest);
             {
                 this.originalRequest = sipRequest;
-            } //End block
+            } 
             {
                 this.method = sipRequest.getMethod();
-            } //End block
+            } 
             {
                 this.hisTag = sipRequest.getFrom().getTag();
-            } //End block
+            } 
             {
                 setLocalSequenceNumber(sipRequest.getCSeq().getSeqNumber());
                 this.originalLocalSequenceNumber = localSequenceNumber;
@@ -1327,9 +1351,9 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1225874861 = (sipStack.isLoggingEnabled());
                     sipStack.getStackLogger().logError(
                             "The request's From header is missing the required Tag parameter.");
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean varDE98D793D4ACAAC2095FDB19E0A65B87_1839710922 = (transaction.getMethod().equals(firstTransactionMethod)
                 && firstTransactionIsServerTransaction != transaction.isServerTransaction());
@@ -1340,8 +1364,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 this.setCallId(sipRequest);
                 this.originalRequest = sipRequest;
                 this.method = sipRequest.getMethod();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         setRemoteSequenceNumber(sipRequest.getCSeq().getSeqNumber());
         this.lastTransaction = transaction;
         {
@@ -1353,13 +1377,14 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     "TID = " + transaction.getTransactionId() + "/"
                             + transaction.isServerTransaction());
                 sipStack.getStackLogger().logStackTrace();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.369 -0400", hash_original_method = "D993372A10E82664D688CA2C725ED950", hash_generated_method = "B194AB751BB5880B43FE471531EF5D16")
     private void setRemoteTag(String hisTag) {
         {
@@ -1368,8 +1393,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 sipStack.getStackLogger().logDebug(
                     "setRemoteTag(): " + this + " remoteTag = " + this.hisTag + " new tag = "
                             + hisTag);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var900B1255CEEB9524C1B77103CD9B853E_531552325 = (this.hisTag != null && hisTag != null && !hisTag.equals(this.hisTag));
             {
@@ -1380,8 +1405,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                             boolean var2AB968A8303910EE00F810B6DE3410F9_1576461575 = (sipStack.isLoggingEnabled());
                             sipStack.getStackLogger().logDebug(
                         "Dialog is already established -- ignoring remote tag re-assignment");
-                        } //End collapsed parenthetic
-                    } //End block
+                        } 
+                    } 
                     {
                         boolean var882658CE99D357DAFA1231A214A8043C_868454776 = (sipStack.isRemoteTagReassignmentAllowed());
                         {
@@ -1391,83 +1416,84 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                         "UNSAFE OPERATION !  tag re-assignment " + this.hisTag
                                 + " trying to set to " + hisTag
                                 + " can cause unexpected effects ");
-                            } //End collapsed parenthetic
+                            } 
                             boolean removed = false;
                             {
                                 boolean var705F9CB3BFC32B68CBC0B119B34F8418_373326235 = (this.sipStack.getDialog(dialogId) == this);
                                 {
                                     this.sipStack.removeDialog(dialogId);
                                     removed = true;
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             this.dialogId = null;
                             this.hisTag = hisTag;
                             {
                                 {
                                     boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_124044951 = (sipStack.isLoggingEnabled());
                                     sipStack.getStackLogger().logDebug("ReInserting Dialog");
-                                } //End collapsed parenthetic
+                                } 
                                 this.sipStack.putDialog(this);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 {
                     this.hisTag = hisTag;
-                } //End block
+                } 
                 {
                     {
                         boolean varDA2675C4DA71C7DD141330FDB85BC848_1712048391 = (sipStack.isLoggingEnabled());
                         sipStack.getStackLogger().logWarning("setRemoteTag : called with null argument ");
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.370 -0400", hash_original_method = "6BDB0ABA2E69E3FFFE0E9E894A65FB29", hash_generated_method = "A32B7FBCF067B0197597E843429489D3")
     public SIPTransaction getLastTransaction() {
-        SIPTransaction varB4EAC82CA7396A68D541C85D26508E83_548984395 = null; //Variable for return #1
+        SIPTransaction varB4EAC82CA7396A68D541C85D26508E83_548984395 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_548984395 = this.lastTransaction;
-        varB4EAC82CA7396A68D541C85D26508E83_548984395.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_548984395.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_548984395;
-        // ---------- Original Method ----------
-        //return this.lastTransaction;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.372 -0400", hash_original_method = "2B80A0EDB61F41D041D4D4B21A265288", hash_generated_method = "E1DC6B8F51B19D12DC9E9DC01C75EC1E")
     public SIPServerTransaction getInviteTransaction() {
-        SIPServerTransaction varB4EAC82CA7396A68D541C85D26508E83_1373230635 = null; //Variable for return #1
-        SIPServerTransaction varB4EAC82CA7396A68D541C85D26508E83_1563019746 = null; //Variable for return #2
+        SIPServerTransaction varB4EAC82CA7396A68D541C85D26508E83_1373230635 = null; 
+        SIPServerTransaction varB4EAC82CA7396A68D541C85D26508E83_1563019746 = null; 
         DialogTimerTask t = this.timerTask;
         varB4EAC82CA7396A68D541C85D26508E83_1373230635 = t.transaction;
         varB4EAC82CA7396A68D541C85D26508E83_1563019746 = null;
-        SIPServerTransaction varA7E53CE21691AB073D9660D615818899_304073276; //Final return value
+        SIPServerTransaction varA7E53CE21691AB073D9660D615818899_304073276; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_304073276 = varB4EAC82CA7396A68D541C85D26508E83_1373230635;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_304073276 = varB4EAC82CA7396A68D541C85D26508E83_1563019746;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_304073276.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_304073276.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_304073276;
-        // ---------- Original Method ----------
-        //DialogTimerTask t = this.timerTask;
-        //if (t != null)
-            //return t.transaction;
-        //else
-            //return null;
+        
+        
+        
+            
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.374 -0400", hash_original_method = "0F222FB6A793487D534C4C9D0AE37F48", hash_generated_method = "B7FDAF73649F0A40EDA73E0DBFFF3813")
     private void setLocalSequenceNumber(long lCseq) {
         {
@@ -1475,38 +1501,39 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             sipStack.getStackLogger().logDebug(
                     "setLocalSequenceNumber: original  " + this.localSequenceNumber + " new  = "
                             + lCseq);
-        } //End collapsed parenthetic
+        } 
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Sequence number should not decrease !");
         this.localSequenceNumber = lCseq;
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled())
-            //sipStack.getStackLogger().logDebug(
-                    //"setLocalSequenceNumber: original  " + this.localSequenceNumber + " new  = "
-                            //+ lCseq);
-        //if (lCseq <= this.localSequenceNumber)
-            //throw new RuntimeException("Sequence number should not decrease !");
-        //this.localSequenceNumber = lCseq;
+        
+        
+            
+                    
+                            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.374 -0400", hash_original_method = "2CD5B084729CE62420C092F3B17E64CA", hash_generated_method = "3097810AEDDA649D9F3FA6679DE2A9DC")
     public void setRemoteSequenceNumber(long rCseq) {
         {
             boolean varADC6B4D22F314E4E23507BEFD4A59D21_2057080421 = (sipStack.isLoggingEnabled());
             sipStack.getStackLogger().logDebug("setRemoteSeqno " + this + "/" + rCseq);
-        } //End collapsed parenthetic
+        } 
         this.remoteSequenceNumber = rCseq;
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled())
-            //sipStack.getStackLogger().logDebug("setRemoteSeqno " + this + "/" + rCseq);
-        //this.remoteSequenceNumber = rCseq;
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.375 -0400", hash_original_method = "ACC9A2408A6E532361DDB7BDD50DD489", hash_generated_method = "0CE7495547330D4CCF2E73D8AE7D692E")
     public void incrementLocalSequenceNumber() {
-        // ---------- Original Method ----------
-        //++this.localSequenceNumber;
+        
+        
     }
 
     
@@ -1514,8 +1541,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     public int getRemoteSequenceNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_782524105 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_782524105;
-        // ---------- Original Method ----------
-        //return (int) this.remoteSequenceNumber;
+        
+        
     }
 
     
@@ -1523,8 +1550,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     public int getLocalSequenceNumber() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1118169882 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1118169882;
-        // ---------- Original Method ----------
-        //return (int) this.localSequenceNumber;
+        
+        
     }
 
     
@@ -1532,8 +1559,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     public long getOriginalLocalSequenceNumber() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_501547370 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_501547370;
-        // ---------- Original Method ----------
-        //return this.originalLocalSequenceNumber;
+        
+        
     }
 
     
@@ -1541,8 +1568,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     public long getLocalSeqNumber() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1375426968 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1375426968;
-        // ---------- Original Method ----------
-        //return this.localSequenceNumber;
+        
+        
     }
 
     
@@ -1550,33 +1577,34 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     public long getRemoteSeqNumber() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1686986507 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1686986507;
-        // ---------- Original Method ----------
-        //return this.remoteSequenceNumber;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.378 -0400", hash_original_method = "0BA81564D0817AED393E2EAE028CBF1E", hash_generated_method = "016786739D074C700D6197E9B436FABC")
     public String getLocalTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1040890792 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1040890792 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1040890792 = this.myTag;
-        varB4EAC82CA7396A68D541C85D26508E83_1040890792.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1040890792.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1040890792;
-        // ---------- Original Method ----------
-        //return this.myTag;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.379 -0400", hash_original_method = "C2413781DD6AA95F52F5C21D9381D08B", hash_generated_method = "7D24D0AAB81D9A81B08FB505F0DF1033")
     public String getRemoteTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1049643139 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1049643139 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1049643139 = hisTag;
-        varB4EAC82CA7396A68D541C85D26508E83_1049643139.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1049643139.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1049643139;
-        // ---------- Original Method ----------
-        //return hisTag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.380 -0400", hash_original_method = "CA511CD87985B97DC1F9ED1FACA7DA9D", hash_generated_method = "08AD61DD1E749CC4D739E91679C0C685")
     private void setLocalTag(String mytag) {
         {
@@ -1584,128 +1612,132 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             {
                 sipStack.getStackLogger().logDebug("set Local tag " + mytag + " " + this.dialogId);
                 sipStack.getStackLogger().logStackTrace();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.myTag = mytag;
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug("set Local tag " + mytag + " " + this.dialogId);
-            //sipStack.getStackLogger().logStackTrace();
-        //}
-        //this.myTag = mytag;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.381 -0400", hash_original_method = "34B72580F00CA0B4FA87EF05393027BE", hash_generated_method = "C41AF72127A1D3997F6A353CD4B6BEE0")
     public void delete() {
         this.setState(TERMINATED_STATE);
-        // ---------- Original Method ----------
-        //this.setState(TERMINATED_STATE);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.383 -0400", hash_original_method = "E30651442243E5536659B8D6D7E6C300", hash_generated_method = "2E8F28B08345E1AD47948A9052351BE8")
     public CallIdHeader getCallId() {
-        CallIdHeader varB4EAC82CA7396A68D541C85D26508E83_1690889296 = null; //Variable for return #1
+        CallIdHeader varB4EAC82CA7396A68D541C85D26508E83_1690889296 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1690889296 = this.callIdHeader;
-        varB4EAC82CA7396A68D541C85D26508E83_1690889296.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1690889296.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1690889296;
-        // ---------- Original Method ----------
-        //return this.callIdHeader;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.384 -0400", hash_original_method = "4B0BBE43D23308E79DF92279003CECC0", hash_generated_method = "517DBAA469E981201785F2FDAACB9B73")
     private void setCallId(SIPRequest sipRequest) {
         this.callIdHeader = sipRequest.getCallId();
-        // ---------- Original Method ----------
-        //this.callIdHeader = sipRequest.getCallId();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.387 -0400", hash_original_method = "1786A3231AA3C60CCA9E19F7DEAE30E7", hash_generated_method = "C2FB77ABCE4D2986BEEA3604559D9F75")
     public javax.sip.address.Address getLocalParty() {
-        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_278079379 = null; //Variable for return #1
+        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_278079379 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_278079379 = this.localParty;
-        varB4EAC82CA7396A68D541C85D26508E83_278079379.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_278079379.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_278079379;
-        // ---------- Original Method ----------
-        //return this.localParty;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.388 -0400", hash_original_method = "1D3A055B19FDF32D0E14CBB9A0F366F2", hash_generated_method = "188C58B3A75EF0FB62160D80E41C8F8F")
     private void setLocalParty(SIPMessage sipMessage) {
         {
             boolean varBEE554E6D1FF8C71A0674E385CDC8906_1315075560 = (!isServer());
             {
                 this.localParty = sipMessage.getFrom().getAddress();
-            } //End block
+            } 
             {
                 this.localParty = sipMessage.getTo().getAddress();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (!isServer()) {
-            //this.localParty = sipMessage.getFrom().getAddress();
-        //} else {
-            //this.localParty = sipMessage.getTo().getAddress();
-        //}
+            } 
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.388 -0400", hash_original_method = "CA9799D7C5644CC201AAA28B1842190A", hash_generated_method = "993DADC0038EA85BF79DCD0D145F867E")
     public javax.sip.address.Address getRemoteParty() {
-        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_1804633701 = null; //Variable for return #1
+        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_1804633701 = null; 
         {
             boolean varADC6B4D22F314E4E23507BEFD4A59D21_1612741276 = (sipStack.isLoggingEnabled());
             {
                 sipStack.getStackLogger().logDebug("gettingRemoteParty " + this.remoteParty);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1804633701 = this.remoteParty;
-        varB4EAC82CA7396A68D541C85D26508E83_1804633701.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1804633701.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1804633701;
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug("gettingRemoteParty " + this.remoteParty);
-        //}
-        //return this.remoteParty;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.389 -0400", hash_original_method = "5663F20A7285801454D4B2BC61212FE3", hash_generated_method = "5D596E56571FE99A7E7D9C96CA90F4AB")
     public javax.sip.address.Address getRemoteTarget() {
-        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_1810747138 = null; //Variable for return #1
+        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_1810747138 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1810747138 = this.remoteTarget;
-        varB4EAC82CA7396A68D541C85D26508E83_1810747138.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1810747138.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1810747138;
-        // ---------- Original Method ----------
-        //return this.remoteTarget;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.390 -0400", hash_original_method = "81C5F6A55277F5330460057DCD70CFE0", hash_generated_method = "FC67DFFE4036FD2EFA31EB8D663AE030")
     public DialogState getState() {
-        DialogState varB4EAC82CA7396A68D541C85D26508E83_1889203996 = null; //Variable for return #1
-        DialogState varB4EAC82CA7396A68D541C85D26508E83_414927827 = null; //Variable for return #2
+        DialogState varB4EAC82CA7396A68D541C85D26508E83_1889203996 = null; 
+        DialogState varB4EAC82CA7396A68D541C85D26508E83_414927827 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1889203996 = null;
         varB4EAC82CA7396A68D541C85D26508E83_414927827 = DialogState.getObject(this.dialogState);
-        DialogState varA7E53CE21691AB073D9660D615818899_73124492; //Final return value
+        DialogState varA7E53CE21691AB073D9660D615818899_73124492; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_73124492 = varB4EAC82CA7396A68D541C85D26508E83_1889203996;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_73124492 = varB4EAC82CA7396A68D541C85D26508E83_414927827;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_73124492.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_73124492.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_73124492;
-        // ---------- Original Method ----------
-        //if (this.dialogState == NULL_STATE)
-            //return null;
-        //return DialogState.getObject(this.dialogState);
+        
+        
+            
+        
     }
 
     
@@ -1713,53 +1745,56 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     public boolean isSecure() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_140932579 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_140932579;
-        // ---------- Original Method ----------
-        //return this.firstTransactionSecure;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.391 -0400", hash_original_method = "41912A3E01B6CF39F4209C49F71F74D2", hash_generated_method = "9092FE5F04B796D0CB46E57A1AA894B5")
     public void sendAck(Request request) throws SipException {
         this.sendAck(request, true);
         addTaint(request.getTaint());
-        // ---------- Original Method ----------
-        //this.sendAck(request, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.392 -0400", hash_original_method = "802F1385694BBDC717BE4DE58C3ED44B", hash_generated_method = "1DEA250E629AD99D983A7FCF7D702CAE")
     public Request createRequest(String method) throws SipException {
-        Request varB4EAC82CA7396A68D541C85D26508E83_735754462 = null; //Variable for return #1
+        Request varB4EAC82CA7396A68D541C85D26508E83_735754462 = null; 
         {
             boolean var7FAEA5BBA47884C7B33E1A58D0E293FA_1192811028 = (method.equals(Request.ACK) || method.equals(Request.PRACK));
             {
                 if (DroidSafeAndroidRuntime.control) throw new SipException("Invalid method specified for createRequest:" + method);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_735754462 = this.createRequest(method, this.lastResponse);
         if (DroidSafeAndroidRuntime.control) throw new SipException("Dialog not yet established -- no response!");
         addTaint(method.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_735754462.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_735754462.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_735754462;
-        // ---------- Original Method ----------
-        //if (method.equals(Request.ACK) || method.equals(Request.PRACK)) {
-            //throw new SipException("Invalid method specified for createRequest:" + method);
-        //}
-        //if (lastResponse != null)
-            //return this.createRequest(method, this.lastResponse);
-        //else
-            //throw new SipException("Dialog not yet established -- no response!");
+        
+        
+            
+        
+        
+            
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.395 -0400", hash_original_method = "B004628D88AAF4473352CE6B2CF39886", hash_generated_method = "1D6A7FCC09D252782DA6959F0D6449FA")
     private Request createRequest(String method, SIPResponse sipResponse) throws SipException {
-        Request varB4EAC82CA7396A68D541C85D26508E83_1926165749 = null; //Variable for return #1
+        Request varB4EAC82CA7396A68D541C85D26508E83_1926165749 = null; 
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null argument");
         {
             boolean var901DDCA4AFD787ED4D3E774E6F5954D2_1605634746 = (method.equals(Request.CANCEL));
             if (DroidSafeAndroidRuntime.control) throw new SipException("Dialog.createRequest(): Invalid request");
-        } //End collapsed parenthetic
+        } 
         {
             boolean var6451C3E80BA914B63DA4E2C0EE66A26D_1066432006 = (this.getState() == null
                 || (this.getState().getValue() == TERMINATED_STATE && !method
@@ -1768,7 +1803,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                         .equalsIgnoreCase(Request.BYE)));
             if (DroidSafeAndroidRuntime.control) throw new SipException("Dialog  " + getDialogId()
                     + " not yet established or terminated " + this.getState());
-        } //End collapsed parenthetic
+        } 
         SipUri sipUri = null;
         {
             boolean var32CB10BEC2D464683496BEC61BDB1C7C_890487366 = (this.getRemoteTarget() != null);
@@ -1776,22 +1811,22 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             {
                 sipUri = (SipUri) this.getRemoteParty().getURI().clone();
                 sipUri.clearUriParms();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         CSeq cseq = new CSeq();
         try 
         {
             cseq.setMethod(method);
             cseq.setSeqNumber(this.getLocalSeqNumber());
-        } //End block
+        } 
         catch (Exception ex)
         {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_1436652435 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logError("Unexpected error");
-            } //End collapsed parenthetic
+            } 
             InternalErrorHandler.handleException(ex);
-        } //End block
+        } 
         ListeningPointImpl lp = (ListeningPointImpl) this.sipProvider
                 .getListeningPoint(sipResponse.getTopmostVia().getTransport());
         {
@@ -1800,10 +1835,10 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 sipStack.getStackLogger().logError(
                         "Cannot find listening point for transport "
                                 + sipResponse.getTopmostVia().getTransport());
-            } //End collapsed parenthetic
+            } 
             if (DroidSafeAndroidRuntime.control) throw new SipException("Cannot find listening point for transport "
                     + sipResponse.getTopmostVia().getTransport());
-        } //End block
+        } 
         Via via = lp.getViaHeader();
         From from = new From();
         from.setAddress(this.localParty);
@@ -1817,68 +1852,70 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     .getListeningPoint(lp.getTransport())).createContactHeader();
                 ((SipURI) contactHeader.getAddress().getURI()).setSecure(this.isSecure());
                 sipRequest.setHeader(contactHeader);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             cseq = (CSeq) sipRequest.getCSeq();
             cseq.setSeqNumber(this.localSequenceNumber + 1);
-        } //End block
+        } 
         catch (InvalidArgumentException ex)
         {
             InternalErrorHandler.handleException(ex);
-        } //End block
+        } 
         {
             boolean varCF8EB2629DEB9D14D2D7AE3B8557C47D_968452767 = (method.equals(Request.SUBSCRIBE));
             {
                 sipRequest.addHeader(eventHeader);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             {
                 boolean var8960EF1666EE0A76790F8BA2DB88F003_998439808 = (this.getLocalTag() != null);
                 {
                     from.setTag(this.getLocalTag());
-                } //End block
+                } 
                 {
                     from.removeTag();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var2C6389CD64DE33F7E280071219A47D88_789402936 = (this.getRemoteTag() != null);
                 {
                     to.setTag(this.getRemoteTag());
-                } //End block
+                } 
                 {
                     to.removeTag();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (ParseException ex)
         {
             InternalErrorHandler.handleException(ex);
-        } //End block
+        } 
         this.updateRequest(sipRequest);
         varB4EAC82CA7396A68D541C85D26508E83_1926165749 = sipRequest;
         addTaint(method.getTaint());
         addTaint(sipResponse.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1926165749.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1926165749.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1926165749;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.396 -0400", hash_original_method = "9C360B0CF1AC53C036709107CECBBC75", hash_generated_method = "12ADC8E628FCA65C06A8DA9FD0AEED45")
     public void sendRequest(ClientTransaction clientTransactionId) throws TransactionDoesNotExistException, SipException {
         this.sendRequest(clientTransactionId, !this.isBackToBackUserAgent);
         addTaint(clientTransactionId.getTaint());
-        // ---------- Original Method ----------
-        //this.sendRequest(clientTransactionId, !this.isBackToBackUserAgent);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.399 -0400", hash_original_method = "E90E816BF2167876B04C570AAB507565", hash_generated_method = "23A252CD5D6ED53BACDCD778BE300DE8")
     public void sendRequest(ClientTransaction clientTransactionId, boolean allowInterleaving) throws TransactionDoesNotExistException, SipException {
         {
@@ -1886,8 +1923,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 && clientTransactionId.getRequest().getMethod().equals(Request.INVITE));
             {
                 new Thread((new ReInviteSender(clientTransactionId))).start();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         SIPRequest dialogRequest = ((SIPClientTransaction) clientTransactionId)
                 .getOriginalRequest();
         {
@@ -1895,30 +1932,30 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             sipStack.getStackLogger().logDebug(
                     "dialog.sendRequest " + " dialog = " + this + "\ndialogRequest = \n"
                             + dialogRequest);
-        } //End collapsed parenthetic
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null parameter");
         {
             boolean var1169745922CE63DD156260B7D456AE05_179145019 = (dialogRequest.getMethod().equals(Request.ACK)
                 || dialogRequest.getMethod().equals(Request.CANCEL));
             if (DroidSafeAndroidRuntime.control) throw new SipException("Bad Request Method. " + dialogRequest.getMethod());
-        } //End collapsed parenthetic
+        } 
         {
             boolean varC96A74E8BBC3DA149625FF2EC6772871_1481702009 = (byeSent && isTerminatedOnBye() && !dialogRequest.getMethod().equals(Request.BYE));
             {
                 {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1074430225 = (sipStack.isLoggingEnabled());
                     sipStack.getStackLogger().logError("BYE already sent for " + this);
-                } //End collapsed parenthetic
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new SipException("Cannot send request; BYE already sent");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varBC4604ED9CEFF5AB625860EF0715C0B5_363231123 = (dialogRequest.getTopmostVia() == null);
             {
                 Via via = ((SIPClientTransaction) clientTransactionId).getOutgoingViaHeader();
                 dialogRequest.addHeader(via);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var906255BA0B7F8ECAF3658C3F65A640E3_881873291 = (!this.getCallId().getCallId().equalsIgnoreCase(dialogRequest.getCallId().getCallId()));
             {
@@ -1929,11 +1966,11 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                         sipStack.getStackLogger().logError(
                         "RequestCallID = " + dialogRequest.getCallId().getCallId());
                         sipStack.getStackLogger().logError("dialog =  " + this);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new SipException("Bad call ID in request");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         ((SIPClientTransaction) clientTransactionId).setDialog(this, this.dialogId);
         this.addTransaction((SIPTransaction) clientTransactionId);
         ((SIPClientTransaction) clientTransactionId).isMapped = true;
@@ -1943,7 +1980,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             boolean varB53BA052D4209F28F5E99708019E0649_971331962 = (this.getLocalTag() != null && from.getTag() != null
                 && !from.getTag().equals(this.getLocalTag()));
             if (DroidSafeAndroidRuntime.control) throw new SipException("From tag mismatch expecting  " + this.getLocalTag());
-        } //End collapsed parenthetic
+        } 
         {
             boolean var89BDFDBB281A8FAD37A897E8D21F188F_912026877 = (this.getRemoteTag() != null && to.getTag() != null
                 && !to.getTag().equals(this.getRemoteTag()));
@@ -1952,42 +1989,42 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_474200380 = (sipStack.isLoggingEnabled());
                     this.sipStack.getStackLogger().logWarning(
                     "To header tag mismatch expecting " + this.getRemoteTag());
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             boolean varD80EDFF969ADE551B15AAA6F81B0F87F_702244137 = (this.getLocalTag() == null && dialogRequest.getMethod().equals(Request.NOTIFY));
             {
                 {
                     boolean varA7B972031300250A30428BA53613E368_1321644427 = (!this.getMethod().equals(Request.SUBSCRIBE));
                     if (DroidSafeAndroidRuntime.control) throw new SipException("Trying to send NOTIFY without SUBSCRIBE Dialog!");
-                } //End collapsed parenthetic
+                } 
                 this.setLocalTag(from.getTag());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             {
                 boolean var8960EF1666EE0A76790F8BA2DB88F003_2024531141 = (this.getLocalTag() != null);
                 from.setTag(this.getLocalTag());
-            } //End collapsed parenthetic
+            } 
             {
                 boolean var2C6389CD64DE33F7E280071219A47D88_229536083 = (this.getRemoteTag() != null);
                 to.setTag(this.getRemoteTag());
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         catch (ParseException ex)
         {
             InternalErrorHandler.handleException(ex);
-        } //End block
+        } 
         Hop hop = ((SIPClientTransaction) clientTransactionId).getNextHop();
         {
             boolean varADC6B4D22F314E4E23507BEFD4A59D21_1092535485 = (sipStack.isLoggingEnabled());
             {
                 sipStack.getStackLogger().logDebug(
                     "Using hop = " + hop.getHost() + " : " + hop.getPort());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             MessageChannel messageChannel = sipStack.createRawMessageChannel(this
@@ -2001,14 +2038,14 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_725831516 = (sipStack.isLoggingEnabled());
                     sipStack.getStackLogger().logDebug(
                             "oldChannel: useCount " + oldChannel.useCount);
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             {
                 {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_394448744 = (sipStack.isLoggingEnabled());
                     sipStack.getStackLogger().logDebug(
                             "Null message channel using outbound proxy !");
-                } //End collapsed parenthetic
+                } 
                 Hop outboundProxy = sipStack.getRouter(dialogRequest).getOutboundProxy();
                 if (DroidSafeAndroidRuntime.control) throw new SipException("No route found! hop=" + hop);
                 messageChannel = sipStack.createRawMessageChannel(this.getSipProvider()
@@ -2016,7 +2053,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                         this.firstTransactionPort, outboundProxy);
                 ((SIPClientTransaction) clientTransactionId)
                             .setEncapsulatedChannel(messageChannel);
-            } //End block
+            } 
             {
                 ((SIPClientTransaction) clientTransactionId)
                         .setEncapsulatedChannel(messageChannel);
@@ -2024,27 +2061,27 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1387580210 = (sipStack.isLoggingEnabled());
                     {
                         sipStack.getStackLogger().logDebug("using message channel " + messageChannel);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             oldChannel.close();
-        } //End block
+        } 
         catch (Exception ex)
         {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_537169084 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logException(ex);
-            } //End collapsed parenthetic
+            } 
             if (DroidSafeAndroidRuntime.control) throw new SipException("Could not create message channel", ex);
-        } //End block
+        } 
         try 
         {
             dialogRequest.getCSeq().setSeqNumber(getLocalSeqNumber());
-        } //End block
+        } 
         catch (InvalidArgumentException ex)
         {
             sipStack.getStackLogger().logFatalError(ex.getMessage());
-        } //End block
+        } 
         try 
         {
             ((SIPClientTransaction) clientTransactionId).sendMessage(dialogRequest);
@@ -2056,19 +2093,19 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                         boolean var61F0069F460C1DE219DEA32CC067873C_144238132 = (isTerminatedOnBye());
                         {
                             this.setState(DialogState._TERMINATED);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         catch (IOException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new SipException("error sending message", ex);
-        } //End block
+        } 
         addTaint(clientTransactionId.getTaint());
         addTaint(allowInterleaving);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2078,20 +2115,20 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             this.retransmissionTicksLeft = 2 * prevRetransmissionTicks;
             this.retransmissionTicksLeft = prevRetransmissionTicks;
             this.prevRetransmissionTicks = retransmissionTicksLeft;
-        } //End block
+        } 
         addTaint(T2);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1155481138 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1155481138;
-        // ---------- Original Method ----------
-        //if (--retransmissionTicksLeft == 0) {
-            //if (2 * prevRetransmissionTicks <= T2)
-                //this.retransmissionTicksLeft = 2 * prevRetransmissionTicks;
-            //else
-                //this.retransmissionTicksLeft = prevRetransmissionTicks;
-            //this.prevRetransmissionTicks = retransmissionTicksLeft;
-            //return true;
-        //} else
-            //return false;
+        
+        
+            
+                
+            
+                
+            
+            
+        
+            
     }
 
     
@@ -2099,12 +2136,13 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     protected void setRetransmissionTicks() {
         this.retransmissionTicksLeft = 1;
         this.prevRetransmissionTicks = 1;
-        // ---------- Original Method ----------
-        //this.retransmissionTicksLeft = 1;
-        //this.prevRetransmissionTicks = 1;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.401 -0400", hash_original_method = "9B2F4C7AC7E3D2DC3FE02C5A18455E2B", hash_generated_method = "3ED09F354D4492964405DC24E44F95E4")
     public void resendAck() throws SipException {
         {
@@ -2119,76 +2157,78 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                         {
                             ts.setTimeStamp(System.currentTimeMillis());
                             getLastAckSent().setHeader(ts);
-                        } //End block
+                        } 
                         catch (InvalidArgumentException e)
                         { }
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 this.sendAck(getLastAckSent(), false);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (this.getLastAckSent() != null) {
-            //if (getLastAckSent().getHeader(TimeStampHeader.NAME) != null
-                    //&& sipStack.generateTimeStampHeader) {
-                //TimeStamp ts = new TimeStamp();
-                //try {
-                    //ts.setTimeStamp(System.currentTimeMillis());
-                    //getLastAckSent().setHeader(ts);
-                //} catch (InvalidArgumentException e) {
-                //}
-            //}
-            //this.sendAck(getLastAckSent(), false);
-        //}
+            } 
+        } 
+        
+        
+            
+                    
+                
+                
+                    
+                    
+                
+                
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.402 -0400", hash_original_method = "691C5451C67574E660997BC2056A5F23", hash_generated_method = "DB9AFB8E7B362C2F06D64D64E977480F")
     public String getMethod() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1263717728 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1263717728 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1263717728 = this.method;
-        varB4EAC82CA7396A68D541C85D26508E83_1263717728.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1263717728.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1263717728;
-        // ---------- Original Method ----------
-        //return this.method;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.404 -0400", hash_original_method = "1E91804F8A3049A9C15BCD340F87DF5D", hash_generated_method = "D65A9F5482073FAE443D873B0275BD76")
     protected void startTimer(SIPServerTransaction transaction) {
         {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_302222774 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logDebug("Timer already running for " + getDialogId());
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             boolean varADC6B4D22F314E4E23507BEFD4A59D21_30268065 = (sipStack.isLoggingEnabled());
             sipStack.getStackLogger().logDebug("Starting dialog timer for " + getDialogId());
-        } //End collapsed parenthetic
+        } 
         this.ackSeen = false;
         acquireTimerTaskSem();
         try 
         {
             {
                 this.timerTask.transaction = transaction;
-            } //End block
+            } 
             {
                 this.timerTask = new DialogTimerTask(transaction);
                 sipStack.getTimer().schedule(timerTask, SIPTransactionStack.BASE_TIMER_INTERVAL,
 	                    SIPTransactionStack.BASE_TIMER_INTERVAL);
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             releaseTimerTaskSem();
-        } //End block
+        } 
         this.setRetransmissionTicks();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.405 -0400", hash_original_method = "3E7472F910A577F9E6FCB71153FF16E3", hash_generated_method = "F1187DBDC9E801B24174FAD13B752CDB")
     protected void stopTimer() {
         try 
@@ -2199,46 +2239,47 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 {
                     this.timerTask.cancel();
                     this.timerTask = null;
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 releaseTimerTaskSem();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (Exception ex)
         { }
-        // ---------- Original Method ----------
-        //try {
-        	//acquireTimerTaskSem();
-        	//try {
-	            //if (this.timerTask != null) {            	
-	            	//this.timerTask.cancel();
-		            //this.timerTask = null;
-	            //}   
-        	//} finally {
-        		//releaseTimerTaskSem();
-        	//}
-        //} catch (Exception ex) {
-        //}
+        
+        
+        	
+        	
+	            
+	            	
+		            
+	            
+        	
+        		
+        	
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.409 -0400", hash_original_method = "B99416CED2F5EC9B5AF4977F926F9FAE", hash_generated_method = "43B60F681A67240D7C831129FAA219AD")
     public Request createPrack(Response relResponse) throws DialogDoesNotExistException,
             SipException {
-        Request varB4EAC82CA7396A68D541C85D26508E83_2038779654 = null; //Variable for return #1
-        Request varB4EAC82CA7396A68D541C85D26508E83_896719523 = null; //Variable for return #2
+        Request varB4EAC82CA7396A68D541C85D26508E83_2038779654 = null; 
+        Request varB4EAC82CA7396A68D541C85D26508E83_896719523 = null; 
         {
             boolean var5F13FEDECFA24670F7B4ECAB7A40873E_1230850246 = (this.getState() == null || this.getState().equals(DialogState.TERMINATED));
             if (DroidSafeAndroidRuntime.control) throw new DialogDoesNotExistException("Dialog not initialized or terminated");
-        } //End collapsed parenthetic
+        } 
         {
             boolean var87BC905A631F8D351A6D3C712E9DE58A_1672617428 = ((RSeq) relResponse.getHeader(RSeqHeader.NAME) == null);
             {
                 if (DroidSafeAndroidRuntime.control) throw new SipException("Missing RSeq Header");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             SIPResponse sipResponse = (SIPResponse) relResponse;
@@ -2253,29 +2294,30 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             rack.setRSequenceNumber(rseq.getSeqNumber());
             sipRequest.setHeader(rack);
             varB4EAC82CA7396A68D541C85D26508E83_2038779654 = (Request) sipRequest;
-        } //End block
+        } 
         catch (Exception ex)
         {
             InternalErrorHandler.handleException(ex);
             varB4EAC82CA7396A68D541C85D26508E83_896719523 = null;
-        } //End block
+        } 
         addTaint(relResponse.getTaint());
-        Request varA7E53CE21691AB073D9660D615818899_1082298635; //Final return value
+        Request varA7E53CE21691AB073D9660D615818899_1082298635; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1082298635 = varB4EAC82CA7396A68D541C85D26508E83_2038779654;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1082298635 = varB4EAC82CA7396A68D541C85D26508E83_896719523;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1082298635.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1082298635.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1082298635;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.409 -0400", hash_original_method = "AE874CF06DEDE92D6543D8F7D52B6043", hash_generated_method = "5FCECC0122B9E8F7A618CF5DDE5A486F")
     private void updateRequest(SIPRequest sipRequest) {
         RouteList rl = this.getRouteList();
@@ -2283,49 +2325,50 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             boolean var1845ECD20E35B086D417AFB72F9DDE84_424094930 = (rl.size() > 0);
             {
                 sipRequest.setHeader(rl);
-            } //End block
+            } 
             {
                 sipRequest.removeHeader(RouteHeader.NAME);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var896FD3C9C4EED86170D10D69961A19CE_850864340 = (MessageFactoryImpl.getDefaultUserAgentHeader() != null);
             {
                 sipRequest.setHeader(MessageFactoryImpl.getDefaultUserAgentHeader());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(sipRequest.getTaint());
-        // ---------- Original Method ----------
-        //RouteList rl = this.getRouteList();
-        //if (rl.size() > 0) {
-            //sipRequest.setHeader(rl);
-        //} else {
-            //sipRequest.removeHeader(RouteHeader.NAME);
-        //}
-        //if (MessageFactoryImpl.getDefaultUserAgentHeader() != null) {
-            //sipRequest.setHeader(MessageFactoryImpl.getDefaultUserAgentHeader());
-        //}
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.412 -0400", hash_original_method = "8ECB2239C30E6B6F2CF5AEE7662DC317", hash_generated_method = "8E1B0C082AA09279F186605870692379")
     public Request createAck(long cseqno) throws InvalidArgumentException, SipException {
-        Request varB4EAC82CA7396A68D541C85D26508E83_898621611 = null; //Variable for return #1
+        Request varB4EAC82CA7396A68D541C85D26508E83_898621611 = null; 
         {
             boolean varD24E8B9BE4529879766AB23987E8AD7C_1057257293 = (!method.equals(Request.INVITE));
             if (DroidSafeAndroidRuntime.control) throw new SipException("Dialog was not created with an INVITE" + method);
-        } //End collapsed parenthetic
+        } 
         if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException("bad cseq <= 0 ");
         if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException("bad cseq > " + ((((long) 1) << 32) - 1));
         {
             if (DroidSafeAndroidRuntime.control) throw new SipException("Cannot create ACK - no remote Target!");
-        } //End block
+        } 
         {
             boolean var01D5629BD6EE4648A9CF76B7CC4467B7_1917451066 = (this.sipStack.isLoggingEnabled());
             {
                 this.sipStack.getStackLogger().logDebug("createAck " + this + " cseqno " + cseqno);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_1808383530 = (sipStack.isLoggingEnabled());
@@ -2333,10 +2376,10 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     this.sipStack.getStackLogger().logDebug(
                     "WARNING : Attempt to crete ACK without OK " + this);
                     this.sipStack.getStackLogger().logDebug("LAST RESPONSE = " + this.lastResponse);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             if (DroidSafeAndroidRuntime.control) throw new SipException("Dialog not yet established -- no OK response!");
-        } //End block
+        } 
         try 
         {
             SipURI uri4transport = null;
@@ -2345,15 +2388,15 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 {
                     Route r = (Route) this.routeList.getFirst();
                     uri4transport = ((SipURI) r.getAddress().getURI());
-                } //End block
+                } 
                 {
                     uri4transport = ((SipURI) this.remoteTarget.getURI());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             String transport = uri4transport.getTransportParam();
             {
                 transport = uri4transport.isSecure() ? ListeningPoint.TLS : ListeningPoint.UDP;
-            } //End block
+            } 
             ListeningPointImpl lp = (ListeningPointImpl) sipProvider.getListeningPoint(transport);
             {
                 {
@@ -2363,12 +2406,12 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                         "remoteTargetURI " + this.remoteTarget.getURI());
                         sipStack.getStackLogger().logError("uri4transport = " + uri4transport);
                         sipStack.getStackLogger().logError("No LP found for transport=" + transport);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new SipException(
                         "Cannot create ACK - no ListeningPoint for transport towards next hop found:"
                                 + transport);
-            } //End block
+            } 
             SIPRequest sipRequest = new SIPRequest();
             sipRequest.setMethod(Request.ACK);
             sipRequest.setRequestURI((SipUri) getRemoteTarget().getURI().clone());
@@ -2386,10 +2429,10 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                         boolean var6A3D0DB6457794914BB4A50CBA9DA9AB_1729573987 = (originalRequestParameters != null && originalRequestParameters.size() > 0);
                         {
                             via.setParameters((NameValueList) originalRequestParameters.clone());
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             via.setBranch(Utils.getInstance().generateBranchId());
             vias.add(via);
             sipRequest.setVia(vias);
@@ -2405,87 +2448,89 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             {
                 Authorization authorization = this.originalRequest.getAuthorization();
                 sipRequest.setHeader(authorization);
-            } //End block
+            } 
             this.updateRequest(sipRequest);
             varB4EAC82CA7396A68D541C85D26508E83_898621611 = sipRequest;
-        } //End block
+        } 
         catch (Exception ex)
         {
             InternalErrorHandler.handleException(ex);
             if (DroidSafeAndroidRuntime.control) throw new SipException("unexpected exception ", ex);
-        } //End block
+        } 
         addTaint(cseqno);
-        varB4EAC82CA7396A68D541C85D26508E83_898621611.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_898621611.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_898621611;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.413 -0400", hash_original_method = "225E26F17D14C81F6F76A7525B288E82", hash_generated_method = "F8E002B8D0B1C16BDB07E9C2F3402C5A")
     public SipProviderImpl getSipProvider() {
-        SipProviderImpl varB4EAC82CA7396A68D541C85D26508E83_1004379954 = null; //Variable for return #1
+        SipProviderImpl varB4EAC82CA7396A68D541C85D26508E83_1004379954 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1004379954 = this.sipProvider;
-        varB4EAC82CA7396A68D541C85D26508E83_1004379954.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1004379954.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1004379954;
-        // ---------- Original Method ----------
-        //return this.sipProvider;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.414 -0400", hash_original_method = "8A8245F47D42BA43478E00CC55ABA836", hash_generated_method = "926E58A1A024385C486CD7AE44684A34")
     public void setSipProvider(SipProviderImpl sipProvider) {
         this.sipProvider = sipProvider;
-        // ---------- Original Method ----------
-        //this.sipProvider = sipProvider;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.415 -0400", hash_original_method = "CF7951DD9E6C51606E8031643391B018", hash_generated_method = "72CB8FCBF63B39753E05C2851C17060E")
     public void setResponseTags(SIPResponse sipResponse) {
         {
             boolean var8902B2D54D9D64C1AD2F6B4D577F0AC1_674993673 = (this.getLocalTag() != null || this.getRemoteTag() != null);
-        } //End collapsed parenthetic
+        } 
         String responseFromTag = sipResponse.getFromTag();
         {
             {
                 boolean varEBFAC7E822975644712D237D7D794A79_294036620 = (responseFromTag.equals(this.getLocalTag()));
                 {
                     sipResponse.setToTag(this.getRemoteTag());
-                } //End block
+                } 
                 {
                     boolean varC5E254C584E79962FDD35AF188F3D95B_1438756142 = (responseFromTag.equals(this.getRemoteTag()));
                     {
                         sipResponse.setToTag(this.getLocalTag());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_1835742627 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logWarning("No from tag in response! Not RFC 3261 compatible.");
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(sipResponse.getTaint());
-        // ---------- Original Method ----------
-        //if (this.getLocalTag() != null || this.getRemoteTag() != null) {
-            //return;
-        //}
-        //String responseFromTag = sipResponse.getFromTag();
-        //if ( responseFromTag != null ) {
-            //if (responseFromTag.equals(this.getLocalTag())) {
-                //sipResponse.setToTag(this.getRemoteTag());
-            //} else if (responseFromTag.equals(this.getRemoteTag())) {
-                //sipResponse.setToTag(this.getLocalTag());
-            //}
-        //} else {
-        	//if (sipStack.isLoggingEnabled())
-        		//sipStack.getStackLogger().logWarning("No from tag in response! Not RFC 3261 compatible.");
-        //}
+        
+        
+            
+        
+        
+        
+            
+                
+            
+                
+            
+        
+        	
+        		
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.419 -0400", hash_original_method = "80C5F1C3A7F1BF77711B99F831173748", hash_generated_method = "7B0360E5988191EA2DFB63551EFEF91A")
     public void setLastResponse(SIPTransaction transaction, SIPResponse sipResponse) {
         this.callIdHeader = sipResponse.getCallId();
@@ -2495,8 +2540,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_912737515 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logWarning(
                     "Invalid status code - 100 in setLastResponse - ignoring");
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         this.lastResponse = sipResponse;
         this.setAssigned();
         {
@@ -2505,8 +2550,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 sipStack.getStackLogger().logDebug(
                     "sipDialog: setLastResponse:" + this + " lastResponse = "
                             + this.lastResponse.getFirstLine());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varECEE72F2BE8BE87D5366A0277FBCE038_1325194308 = (this.getState() == DialogState.TERMINATED);
             {
@@ -2515,17 +2560,17 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     {
                         sipStack.getStackLogger().logDebug(
                         "sipDialog: setLastResponse -- dialog is terminated - ignoring ");
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var7C21E56F04FFB7827B07DB28A1638AE6_936172927 = (sipResponse.getCSeq().getMethod().equals(Request.INVITE) && statusCode == 200);
                     {
                         this.lastInviteOkReceived = Math.max(sipResponse.getCSeq().getSeqNumber(),
                         this.lastInviteOkReceived);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         String cseqMethod = sipResponse.getCSeq().getMethod();
         {
             boolean varADC6B4D22F314E4E23507BEFD4A59D21_446339696 = (sipStack.isLoggingEnabled());
@@ -2536,8 +2581,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 sipStack.getStackLogger().logDebug("method = " + this.getMethod());
                 sipStack.getStackLogger().logDebug("statusCode = " + statusCode);
                 sipStack.getStackLogger().logDebug("transaction = " + transaction);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 boolean var839B41C03A2B5D99C7BD81EF76FDD890_155598440 = (sipStack.isDialogCreated(cseqMethod));
@@ -2554,9 +2599,9 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                                     this.setDialogId(sipResponse.getDialogId(false));
                                     sipStack.putDialog(this);
                                     this.addRoute(sipResponse);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         {
                             boolean varFD6529C640F5D93B1D57A138B69C639B_1245595410 = (getState() != null && getState().equals(DialogState.EARLY)
                         && statusCode / 100 == 1);
@@ -2569,9 +2614,9 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                                         this.setDialogId(sipResponse.getDialogId(false));
                                         sipStack.putDialog(this);
                                         this.addRoute(sipResponse);
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             {
                                 {
                                     boolean var239B25B26F48835960443934FE465816_675470676 = (cseqMethod.equals(getMethod())
@@ -2583,16 +2628,16 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                                         sipStack.putDialog(this);
                                         this.addRoute(sipResponse);
                                         setState(SIPDialog.CONFIRMED_STATE);
-                                    } //End block
-                                } //End collapsed parenthetic
+                                    } 
+                                } 
                                 {
                                     boolean var184B92973316EEACC4E8F3D92F947022_1696892905 = (cseqMethod.equals(Request.INVITE));
                                     {
                                         this.lastInviteOkReceived = Math.max(sipResponse.getCSeq().getSeqNumber(),
                                 this.lastInviteOkReceived);
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             {
                                 boolean var002EA49254D7FFC38F40D126F1CC9B93_1782409253 = (statusCode >= 300
                         && statusCode <= 699
@@ -2600,10 +2645,10 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                                 .getValue() == SIPDialog.EARLY_STATE)));
                                 {
                                     setState(SIPDialog.TERMINATED_STATE);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         boolean varBE8416D96C82B905D899DAE9933207EA_1398660617 = (this.getState() != DialogState.CONFIRMED && this.getState() != DialogState.TERMINATED);
                         {
@@ -2620,15 +2665,15 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                                                 boolean varD5391073D49D26C2405CCD1345D5D087_1142175400 = (route != null && rr.getAddress().equals(route.getAddress()));
                                                 {
                                                     routeList.removeFirst();
-                                                } //End block
-                                            } //End collapsed parenthetic
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     boolean var7AC6283B1986B5EAA725F6A0CF5B9F25_946751001 = (cseqMethod.equals(Request.NOTIFY)
                     && (this.getMethod().equals(Request.SUBSCRIBE) || this.getMethod().equals(
@@ -2638,24 +2683,24 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                         this.setDialogId(sipResponse.getDialogId(true));
                         sipStack.putDialog(this);
                         this.setState(SIPDialog.CONFIRMED_STATE);
-                    } //End block
+                    } 
                     {
                         boolean varE749A0B488BCFEEA24F7764568DA41BB_396103115 = (cseqMethod.equals(Request.BYE) && statusCode / 100 == 2
                     && isTerminatedOnBye());
                         {
                             setState(SIPDialog.TERMINATED_STATE);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 boolean varDFD8EB8316ABF98C4152E3A58F249F7D_911007897 = (cseqMethod.equals(Request.BYE) && statusCode / 100 == 2
                     && this.isTerminatedOnBye());
                 {
                     this.setState(SIPDialog.TERMINATED_STATE);
-                } //End block
+                } 
                 {
                     boolean doPutDialog = false;
                     {
@@ -2664,16 +2709,16 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                         {
                             setLocalTag(sipResponse.getTo().getTag());
                             doPutDialog = true;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         {
                             {
                                 setState(SIPDialog.EARLY_STATE);
                                 this.setDialogId(sipResponse.getDialogId(true));
                                 sipStack.putDialog(this);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             {
                                 boolean var5EEA5383440BFA6F3C614F44448A4223_1896126072 = (statusCode == 489
@@ -2684,19 +2729,19 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                                         boolean var6FE8ACC5352DCA3449210F8EDED912B3_341236484 = (sipStack.isLoggingEnabled());
                                         sipStack.getStackLogger().logDebug(
                                     "RFC 3265 : Not setting dialog to TERMINATED for 489");
-                                    } //End collapsed parenthetic
-                                } //End block
+                                    } 
+                                } 
                                 {
                                     {
                                         boolean varE3695A6993661066E9CCD532BC123501_1207186964 = (!this.isReInvite() && getState() != DialogState.CONFIRMED);
                                         {
                                             this.setState(SIPDialog.TERMINATED_STATE);
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         {
                             boolean var8F048B81832FCC5E25717E696D6EC78F_1713010581 = (this.dialogState <= SIPDialog.EARLY_STATE
@@ -2705,12 +2750,12 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                                     .equals(Request.REFER)));
                             {
                                 this.setState(SIPDialog.CONFIRMED_STATE);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             this.setDialogId(sipResponse.getDialogId(true));
                             sipStack.putDialog(this);
-                        } //End block
+                        } 
                         {
                             boolean varCABBB85C5AA4259E2991A258DBA7D46B_1772858012 = (transaction.getState() != TransactionState.TERMINATED
                             && sipResponse.getStatusCode() == Response.OK
@@ -2725,23 +2770,24 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                                             {
                                                 sipStack.getStackLogger().logDebug(
                                             "Delete dialog -- cannot acquire ackSem");
-                                            } //End block
-                                        } //End collapsed parenthetic
+                                            } 
+                                        } 
                                         this.delete();
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(transaction.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.419 -0400", hash_original_method = "96CF2F98DDD4CA038A3AFDF5A5247694", hash_generated_method = "D2F589F47DEFD2BE2D8B86F8B06450CF")
     public void startRetransmitTimer(SIPServerTransaction sipServerTx, Response response) {
         {
@@ -2749,43 +2795,44 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 && response.getStatusCode() / 100 == 2);
             {
                 this.startTimer(sipServerTx);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(sipServerTx.getTaint());
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
-        //if (sipServerTx.getRequest().getMethod().equals(Request.INVITE)
-                //&& response.getStatusCode() / 100 == 2) {
-            //this.startTimer(sipServerTx);
-        //}
+        
+        
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.420 -0400", hash_original_method = "5F3E7F6102F24C611CAB04E5AE199DBF", hash_generated_method = "6843C137822AFD65E52C492D0946828F")
     public SIPResponse getLastResponse() {
-        SIPResponse varB4EAC82CA7396A68D541C85D26508E83_1473463007 = null; //Variable for return #1
+        SIPResponse varB4EAC82CA7396A68D541C85D26508E83_1473463007 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1473463007 = lastResponse;
-        varB4EAC82CA7396A68D541C85D26508E83_1473463007.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1473463007.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1473463007;
-        // ---------- Original Method ----------
-        //return lastResponse;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.420 -0400", hash_original_method = "5B8AFE9B6B91DF83BE42F6862D2EF06A", hash_generated_method = "04011C598AA11817E2828FAAA72C7959")
     private void doTargetRefresh(SIPMessage sipMessage) {
         ContactList contactList = sipMessage.getContactHeaders();
         {
             Contact contact = (Contact) contactList.getFirst();
             this.setRemoteTarget(contact);
-        } //End block
+        } 
         addTaint(sipMessage.getTaint());
-        // ---------- Original Method ----------
-        //ContactList contactList = sipMessage.getContactHeaders();
-        //if (contactList != null) {
-            //Contact contact = (Contact) contactList.getFirst();
-            //this.setRemoteTarget(contact);
-        //}
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -2799,18 +2846,19 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.421 -0400", hash_original_method = "DE196281E5E185EC5F05D42F6040C5AD", hash_generated_method = "08DB60C6CD3057F7D4638F90A476A4D2")
     public Response createReliableProvisionalResponse(int statusCode) throws InvalidArgumentException, SipException {
-        Response varB4EAC82CA7396A68D541C85D26508E83_872821704 = null; //Variable for return #1
+        Response varB4EAC82CA7396A68D541C85D26508E83_872821704 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new SipException("Not a Server Dialog!");
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException("Bad status code ");
         SIPRequest request = this.originalRequest;
         {
             boolean varF7429BEB5E0EF391085C3EA5B848B555_1111128149 = (!request.getMethod().equals(Request.INVITE));
             if (DroidSafeAndroidRuntime.control) throw new SipException("Bad method");
-        } //End collapsed parenthetic
+        } 
         ListIterator<SIPHeader> list = request.getHeaders(SupportedHeader.NAME);
         {
             boolean var4A2559DE457AD8ED09DD13E71379114F_345688427 = (list == null || !optionPresent(list, "100rel"));
@@ -2820,20 +2868,20 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     boolean var1B8A6F1B7D3894FD5B5CD4B77CBF0692_1641357739 = (list == null || !optionPresent(list, "100rel"));
                     {
                         if (DroidSafeAndroidRuntime.control) throw new SipException("No Supported/Require 100rel header in the request");
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         SIPResponse response = request.createResponse(statusCode);
         Require require = new Require();
         try 
         {
             require.setOptionTag("100rel");
-        } //End block
+        } 
         catch (Exception ex)
         {
             InternalErrorHandler.handleException(ex);
-        } //End block
+        } 
         response.addHeader(require);
         RSeq rseq = new RSeq();
         rseq.setSeqNumber(1L);
@@ -2841,16 +2889,17 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
         {
             RecordRouteList rrlclone = (RecordRouteList) rrl.clone();
             response.setHeader(rrlclone);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_872821704 = response;
         addTaint(statusCode);
-        varB4EAC82CA7396A68D541C85D26508E83_872821704.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_872821704.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_872821704;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.423 -0400", hash_original_method = "CEB91EBD9D583AC6C7E366C7B6D0F858", hash_generated_method = "0DCA6567462D0ED74A8F81A5D4981D8A")
     public boolean handlePrack(SIPRequest prackRequest) {
         {
@@ -2859,9 +2908,9 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1368687658 = (sipStack.isLoggingEnabled());
                     sipStack.getStackLogger().logDebug("Dropping Prack -- not a server Dialog");
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         SIPServerTransaction sipServerTransaction = (SIPServerTransaction) this
                 .getFirstTransaction();
         SIPResponse sipResponse = sipServerTransaction.getReliableProvisionalResponse();
@@ -2870,15 +2919,15 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_653221161 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger()
                         .logDebug("Dropping Prack -- ReliableResponse not found");
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         RAck rack = (RAck) prackRequest.getHeader(RAckHeader.NAME);
         {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_1433010610 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logDebug("Dropping Prack -- rack header not found");
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         CSeq cseq = (CSeq) sipResponse.getCSeq();
         {
             boolean var278DC96722B25CDE6DFD16B8198946C1_1956258288 = (!rack.getMethod().equals(cseq.getMethod()));
@@ -2887,9 +2936,9 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_67790404 = (sipStack.isLoggingEnabled());
                     sipStack.getStackLogger().logDebug(
                         "Dropping Prack -- CSeq Header does not match PRACK");
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             boolean var9E7D79F6F26763E9EC31F75D4B835E42_2113174888 = (rack.getCSeqNumberLong() != cseq.getSeqNumber());
             {
@@ -2897,9 +2946,9 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_978337531 = (sipStack.isLoggingEnabled());
                     sipStack.getStackLogger().logDebug(
                         "Dropping Prack -- CSeq Header does not match PRACK");
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         RSeq rseq = (RSeq) sipResponse.getHeader(RSeqHeader.NAME);
         {
             boolean var14265A1FCB2C0EE420AF27A8D1000FC8_783595446 = (rack.getRSequenceNumber() != rseq.getSeqNumber());
@@ -2908,43 +2957,44 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_593664744 = (sipStack.isLoggingEnabled());
                     sipStack.getStackLogger().logDebug(
                         "Dropping Prack -- RSeq Header does not match PRACK");
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         boolean var9683C82188D8B4F740D5FD5CABA0ABB6_932953554 = (sipServerTransaction.prackRecieved());
         addTaint(prackRequest.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_821727340 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_821727340;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.424 -0400", hash_original_method = "333DA078CA74B6FD5F6C9544F533B1F3", hash_generated_method = "07B20B045E7249395510434AB9FB2EEC")
     public void sendReliableProvisionalResponse(Response relResponse) throws SipException {
         {
             boolean var0E41A90AC7F80C21FD8716EAE0D773F7_1843959968 = (!this.isServer());
             {
                 if (DroidSafeAndroidRuntime.control) throw new SipException("Not a Server Dialog");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         SIPResponse sipResponse = (SIPResponse) relResponse;
         {
             boolean varF58A7EF76B015A36548669D4B5BC189B_402284473 = (relResponse.getStatusCode() == 100);
             if (DroidSafeAndroidRuntime.control) throw new SipException("Cannot send 100 as a reliable provisional response");
-        } //End collapsed parenthetic
+        } 
         {
             boolean var3F06CAF4D76D1B222835AB0581EBBF2D_607907073 = (relResponse.getStatusCode() / 100 > 2);
             if (DroidSafeAndroidRuntime.control) throw new SipException(
                     "Response code is not a 1xx response - should be in the range 101 to 199 ");
-        } //End collapsed parenthetic
+        } 
         {
             boolean var2453F1BE4A002CC1EF6C5E8F78E655A0_1165557148 = (sipResponse.getToTag() == null);
             {
                 if (DroidSafeAndroidRuntime.control) throw new SipException(
                     "Badly formatted response -- To tag mandatory for Reliable Provisional Response");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         ListIterator requireList = (ListIterator) relResponse.getHeaders(RequireHeader.NAME);
         boolean found = false;
         {
@@ -2956,11 +3006,11 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                         boolean varDF9A6A091AE7E489D36022F85E7FEEE0_713622425 = (rh.getOptionTag().equalsIgnoreCase("100rel"));
                         {
                             found = true;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             Require require = new Require("100rel");
             relResponse.addHeader(require);
@@ -2969,9 +3019,9 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 {
                     sipStack.getStackLogger().logDebug(
                         "Require header with optionTag 100rel is needed -- adding one");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         SIPServerTransaction serverTransaction = (SIPServerTransaction) this
                 .getFirstTransaction();
         this.setLastResponse(serverTransaction, sipResponse);
@@ -2979,24 +3029,24 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
         serverTransaction.sendReliableProvisionalResponse(relResponse);
         this.startRetransmitTimer(serverTransaction, relResponse);
         addTaint(relResponse.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.425 -0400", hash_original_method = "BF7D1FA3BFA6C180C8021919F244470C", hash_generated_method = "98FB51F17347B278C789B0BBB791F331")
     public void terminateOnBye(boolean terminateFlag) throws SipException {
         this.terminateOnBye = terminateFlag;
-        // ---------- Original Method ----------
-        //this.terminateOnBye = terminateFlag;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.425 -0400", hash_original_method = "97AA8D077ED8B88563B1FCEB7D3F7A03", hash_generated_method = "3989220F20B7D3A9147AB058D826F7D8")
     public void setAssigned() {
         this.isAssigned = true;
-        // ---------- Original Method ----------
-        //this.isAssigned = true;
+        
+        
     }
 
     
@@ -3004,22 +3054,23 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     public boolean isAssigned() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1547103966 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1547103966;
-        // ---------- Original Method ----------
-        //return this.isAssigned;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.427 -0400", hash_original_method = "370EA53498504D191CA2C54D6246F992", hash_generated_method = "AB9916A508F33D042E9FA939E33CF73F")
     public Contact getMyContactHeader() {
-        Contact varB4EAC82CA7396A68D541C85D26508E83_533384147 = null; //Variable for return #1
+        Contact varB4EAC82CA7396A68D541C85D26508E83_533384147 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_533384147 = contactHeader;
-        varB4EAC82CA7396A68D541C85D26508E83_533384147.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_533384147.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_533384147;
-        // ---------- Original Method ----------
-        //return contactHeader;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.428 -0400", hash_original_method = "1F7F0E32648D183A0E0322F85F939567", hash_generated_method = "43B927228D590E40DC02FFF00898DB70")
     public boolean handleAck(SIPServerTransaction ackTransaction) {
         SIPRequest sipRequest = ackTransaction.getOriginalRequest();
@@ -3031,32 +3082,32 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                     {
                         sipStack.getStackLogger().logDebug(
                         "ACK already seen by dialog -- dropping Ack" + " retransmission");
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 acquireTimerTaskSem();
                 try 
                 {
                     {
                         this.timerTask.cancel();
                         this.timerTask = null;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 finally 
                 {
                     releaseTimerTaskSem();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 boolean var4A98AE6585D44012F8F89352F9238253_1896534763 = (this.getState() == DialogState.TERMINATED);
                 {
                     {
                         boolean varDA2675C4DA71C7DD141330FDB85BC848_751892224 = (sipStack.isLoggingEnabled());
                         sipStack.getStackLogger().logDebug("Dialog is terminated -- dropping ACK");
-                    } //End collapsed parenthetic
-                } //End block
+                    } 
+                } 
                 {
                     SIPServerTransaction tr = getInviteTransaction();
-                    SIPResponse sipResponse = (tr != null ? tr.getLastResponse() : null);//DSFIXME:  CODE0008: Nested ternary operator in expression
+                    SIPResponse sipResponse = (tr != null ? tr.getLastResponse() : null);
                     {
                         boolean var161CF50F3C95997F419241A9096FFB37_2022905337 = (tr != null
                     && sipResponse != null
@@ -3070,43 +3121,43 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                             {
                                 boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_1831878854 = (sipStack.isLoggingEnabled());
                                 sipStack.getStackLogger().logDebug("ACK for 2XX response --- sending to TU ");
-                            } //End collapsed parenthetic
-                        } //End block
+                            } 
+                        } 
                         {
                             {
                                 boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_1239939773 = (sipStack.isLoggingEnabled());
                                 sipStack.getStackLogger().logDebug(
                             " INVITE transaction not found  -- Discarding ACK");
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(ackTransaction.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_764424733 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_764424733;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.429 -0400", hash_original_method = "5C164F59F3DF11F779F16A5BAEE8EAC7", hash_generated_method = "F2805544ABD5BF70A703EFAA8BCD0891")
      void setEarlyDialogId(String earlyDialogId) {
         this.earlyDialogId = earlyDialogId;
-        // ---------- Original Method ----------
-        //this.earlyDialogId = earlyDialogId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.432 -0400", hash_original_method = "275E7276434F5D20F41DC92B4F25BAEE", hash_generated_method = "277F042EC856175D07AA698D66657A55")
      String getEarlyDialogId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_809379949 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_809379949 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_809379949 = earlyDialogId;
-        varB4EAC82CA7396A68D541C85D26508E83_809379949.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_809379949.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_809379949;
-        // ---------- Original Method ----------
-        //return earlyDialogId;
+        
+        
     }
 
     
@@ -3117,17 +3168,17 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_2131527859 = (sipStack.isLoggingEnabled());
                 {
                     sipStack.getStackLogger().logDebug("releaseAckSem]" + this);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             this.ackSem.release();
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.isBackToBackUserAgent) {
-            //if (sipStack.isLoggingEnabled()) {
-                //sipStack.getStackLogger().logDebug("releaseAckSem]" + this);
-            //}
-            //this.ackSem.release();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -3137,8 +3188,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             boolean varADC6B4D22F314E4E23507BEFD4A59D21_477614013 = (sipStack.isLoggingEnabled());
             {
                 sipStack.getStackLogger().logDebug("[takeAckSem " + this);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             {
@@ -3148,59 +3199,59 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                         boolean varDA2675C4DA71C7DD141330FDB85BC848_1073275214 = (sipStack.isLoggingEnabled());
                         {
                             sipStack.getStackLogger().logError("Cannot aquire ACK semaphore");
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         boolean varDA2675C4DA71C7DD141330FDB85BC848_643172588 = (sipStack.isLoggingEnabled());
                         {
                             sipStack.getStackLogger().logDebug("Semaphore previously acquired at " + this.stackTrace);
                             sipStack.getStackLogger().logStackTrace();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_1921894431 = (sipStack.isLoggingEnabled());
                 {
                     this.recordStackTrace();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (InterruptedException ex)
         {
             sipStack.getStackLogger().logError("Cannot aquire ACK semaphore");
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_164398722 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_164398722;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.437 -0400", hash_original_method = "68D4C33CE448DB45C09F49FC9815E4FD", hash_generated_method = "EAFEA098C1D75D51099230EDA00E4652")
     private void setLastAckReceived(SIPRequest lastAckReceived) {
         this.lastAckReceived = lastAckReceived;
-        // ---------- Original Method ----------
-        //this.lastAckReceived = lastAckReceived;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.439 -0400", hash_original_method = "2894D6C9FD5402948626BDE17D2ADDA1", hash_generated_method = "69BB18C02A3DE6D23345F56FBF4C208F")
     protected SIPRequest getLastAckReceived() {
-        SIPRequest varB4EAC82CA7396A68D541C85D26508E83_797814166 = null; //Variable for return #1
+        SIPRequest varB4EAC82CA7396A68D541C85D26508E83_797814166 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_797814166 = lastAckReceived;
-        varB4EAC82CA7396A68D541C85D26508E83_797814166.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_797814166.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_797814166;
-        // ---------- Original Method ----------
-        //return lastAckReceived;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.439 -0400", hash_original_method = "AE316349F4F2DB7FF5C817D5A1FDA212", hash_generated_method = "A753A427692B7DEB55775EE2604691AF")
     private void setLastAckSent(SIPRequest lastAckSent) {
         this.lastAckSent = lastAckSent;
-        // ---------- Original Method ----------
-        //this.lastAckSent = lastAckSent;
+        
+        
     }
 
     
@@ -3208,8 +3259,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     public boolean isAtleastOneAckSent() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_960568428 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_960568428;
-        // ---------- Original Method ----------
-        //return this.isAcknowledged;
+        
+        
     }
 
     
@@ -3217,79 +3268,80 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     public boolean isBackToBackUserAgent() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_625230451 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_625230451;
-        // ---------- Original Method ----------
-        //return this.isBackToBackUserAgent;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.441 -0400", hash_original_method = "1ECA22F9D5D81E6992181CD96CD57EA7", hash_generated_method = "1AE943D4F143E4FE1E66519E310B1AEE")
     public synchronized void doDeferredDeleteIfNoAckSent(long seqno) {
         {
             boolean var57BEDF91C3ACD8FDD0380E079BFC759D_1025468906 = (sipStack.getTimer() == null);
             {
                 this.setState(TERMINATED_STATE);
-            } //End block
+            } 
             {
                 dialogDeleteIfNoAckSentTask = new DialogDeleteIfNoAckSentTask(seqno);
                 sipStack.getTimer().schedule(
 					dialogDeleteIfNoAckSentTask,
 					SIPTransaction.TIMER_J
 							* SIPTransactionStack.BASE_TIMER_INTERVAL);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (sipStack.getTimer() == null) {
-			//this.setState(TERMINATED_STATE);
-		//} else if(dialogDeleteIfNoAckSentTask == null){
-			//dialogDeleteIfNoAckSentTask = new DialogDeleteIfNoAckSentTask(seqno);
-			//sipStack.getTimer().schedule(
-					//dialogDeleteIfNoAckSentTask,
-					//SIPTransaction.TIMER_J
-							//* SIPTransactionStack.BASE_TIMER_INTERVAL);
-		//}
+            } 
+        } 
+        
+        
+			
+		
+			
+			
+					
+					
+							
+		
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.441 -0400", hash_original_method = "782C3B034CC64F54A5BC7BB8ED6FEDA6", hash_generated_method = "5483C632656F6DE6E777597D7F71485A")
     public void setBackToBackUserAgent() {
         this.isBackToBackUserAgent = true;
-        // ---------- Original Method ----------
-        //this.isBackToBackUserAgent = true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.441 -0400", hash_original_method = "3A5B567A7D7C4A4D6D60D4CFA5E677D1", hash_generated_method = "C398B5BD6CE3B0440F841ADB68DD05D4")
      EventHeader getEventHeader() {
-        EventHeader varB4EAC82CA7396A68D541C85D26508E83_204131821 = null; //Variable for return #1
+        EventHeader varB4EAC82CA7396A68D541C85D26508E83_204131821 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_204131821 = eventHeader;
-        varB4EAC82CA7396A68D541C85D26508E83_204131821.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_204131821.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_204131821;
-        // ---------- Original Method ----------
-        //return eventHeader;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.442 -0400", hash_original_method = "C85F235E26C94FDBCE92FE9C88454CDD", hash_generated_method = "63FC881403C5365782CA2C6D3EBC0C51")
      void setEventHeader(EventHeader eventHeader) {
         this.eventHeader = eventHeader;
-        // ---------- Original Method ----------
-        //this.eventHeader = eventHeader;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.442 -0400", hash_original_method = "D178A1777AB3611D9691A3F4A69F3B06", hash_generated_method = "944F48638C23857FD7322257F37AD5CE")
      void setServerTransactionFlag(boolean serverTransactionFlag) {
         this.serverTransactionFlag = serverTransactionFlag;
-        // ---------- Original Method ----------
-        //this.serverTransactionFlag = serverTransactionFlag;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.442 -0400", hash_original_method = "B9FC7E5C15DF48754B63587E10ABF39E", hash_generated_method = "6E41B13A7FD0796718F54CCE53804461")
      void setReInviteFlag(boolean reInviteFlag) {
         this.reInviteFlag = reInviteFlag;
-        // ---------- Original Method ----------
-        //this.reInviteFlag = reInviteFlag;
+        
+        
     }
 
     
@@ -3297,51 +3349,53 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     public boolean isSequnceNumberValidation() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1138979734 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1138979734;
-        // ---------- Original Method ----------
-        //return this.sequenceNumberValidation;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.443 -0400", hash_original_method = "07E72D397966AE985C4FA6CA39D288C5", hash_generated_method = "2CA8E42865DEC07CBC74D648985E0DA5")
     public void disableSequenceNumberValidation() {
         this.sequenceNumberValidation = false;
-        // ---------- Original Method ----------
-        //this.sequenceNumberValidation = false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.443 -0400", hash_original_method = "32EDC5DA45A565F7D6F42D86C325067F", hash_generated_method = "E24F73C1DE23761D5A1B530088832E31")
     public void acquireTimerTaskSem() {
         boolean acquired = false;
         try 
         {
             acquired = this.timerTaskLock.tryAcquire(10, TimeUnit.SECONDS);
-        } //End block
+        } 
         catch (InterruptedException ex)
         {
             acquired = false;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Impossible to acquire the dialog timer task lock");
-        } //End block
-        // ---------- Original Method ----------
-        //boolean acquired = false;
-        //try {
-            //acquired = this.timerTaskLock.tryAcquire(10, TimeUnit.SECONDS);
-        //} catch ( InterruptedException ex) {
-            //acquired = false;
-        //}
-        //if(!acquired) {
-        	//throw new IllegalStateException("Impossible to acquire the dialog timer task lock");
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
+        
+        	
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.444 -0400", hash_original_method = "7C538F01F8063281F04142649C9B2CD0", hash_generated_method = "3B7BE3389027D7D895A0B9E59CA6FC3E")
     public void releaseTimerTaskSem() {
         this.timerTaskLock.release();
-        // ---------- Original Method ----------
-        //this.timerTaskLock.release();
+        
+        
     }
 
     
@@ -3353,8 +3407,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.444 -0400", hash_original_method = "420F244B37AE2567998EBC3FAC66EFCB", hash_generated_method = "F7A2B4C9B57CD24D4C0C2169969C8DE0")
         public  ReInviteSender(ClientTransaction ctx) {
             this.ctx = ctx;
-            // ---------- Original Method ----------
-            //this.ctx = ctx;
+            
+            
         }
 
         
@@ -3364,18 +3418,18 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             {
                 ctx.terminate();
                 Thread.currentThread().interrupt();
-            } //End block
+            } 
             catch (ObjectInUseException e)
             {
                 sipStack.getStackLogger().logError("unexpected error", e);
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //ctx.terminate();
-                //Thread.currentThread().interrupt();
-            //} catch (ObjectInUseException e) {
-                //sipStack.getStackLogger().logError("unexpected error", e);
-            //}
+            } 
+            
+            
+                
+                
+            
+                
+            
         }
 
         
@@ -3392,71 +3446,71 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                             boolean var2AB968A8303910EE00F810B6DE3410F9_1058831588 = (sipStack.isLoggingEnabled());
                             sipStack.getStackLogger().logError(
                             "Could not send re-INVITE time out ClientTransaction");
-                        } //End collapsed parenthetic
+                        } 
                         ((SIPClientTransaction) ctx).fireTimeoutTimer();
                         {
                             boolean var4139F5E7958AE9C2F1C82A94207591C8_1794824224 = (sipProvider.getSipListener() != null && sipProvider.getSipListener() instanceof SipListenerExt);
                             {
                                 raiseErrorEvent(SIPDialogErrorEvent.DIALOG_REINVITE_TIMEOUT);
-                            } //End block
+                            } 
                             {
                                 Request byeRequest = SIPDialog.this.createRequest(Request.BYE);
                                 {
                                     boolean varD7581F5DBD86F25779F5137034C43592_1182511650 = (MessageFactoryImpl.getDefaultUserAgentHeader() != null);
                                     {
                                         byeRequest.addHeader(MessageFactoryImpl.getDefaultUserAgentHeader());
-                                    } //End block
-                                } //End collapsed parenthetic
+                                    } 
+                                } 
                                 ReasonHeader reasonHeader = new Reason();
                                 reasonHeader.setCause(1024);
                                 reasonHeader.setText("Timed out waiting to re-INVITE");
                                 byeRequest.addHeader(reasonHeader);
                                 ClientTransaction byeCtx = SIPDialog.this.getSipProvider().getNewClientTransaction(byeRequest);
                                 SIPDialog.this.sendRequest(byeCtx);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     boolean var269430BA4810976B135F582C3E3C146F_118157576 = (getState() != DialogState.TERMINATED);
                     {
                         timeToWait = System.currentTimeMillis() - startTime;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 try 
                 {
                     {
                         Thread.sleep(SIPDialog.this.reInviteWaitTime);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (InterruptedException ex)
                 {
                     {
                         boolean varDA2675C4DA71C7DD141330FDB85BC848_1888850414 = (sipStack.isLoggingEnabled());
                         sipStack.getStackLogger().logDebug("Interrupted sleep");
-                    } //End collapsed parenthetic
-                } //End block
+                    } 
+                } 
                 {
                     boolean var8A4D69DC3EB47276971D5D31F4B6119D_655619086 = (SIPDialog.this.getState() != DialogState.TERMINATED);
                     {
                         SIPDialog.this.sendRequest(ctx, true);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var36EC98FEAC99F5AF404FDE8DC613FB19_580737813 = (sipStack.isLoggingEnabled());
                     sipStack.getStackLogger().logDebug("re-INVITE successfully sent");
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             catch (Exception ex)
             {
                 sipStack.getStackLogger().logError("Error sending re-INVITE", ex);
-            } //End block
+            } 
             finally 
             {
                 this.ctx = null;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -3471,7 +3525,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.447 -0400", hash_original_method = "FEDA9229694989A502508E95A3FCFE54", hash_generated_method = "CF6D3A28041C64960D5CFB7948EF46EA")
         public  LingerTimer() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -3480,16 +3534,16 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             SIPDialog dialog = SIPDialog.this;
             {
                 eventListeners.clear();
-            } //End block
+            } 
             timerTaskLock = null;
             sipStack.removeDialog(dialog);
-            // ---------- Original Method ----------
-            //SIPDialog dialog = SIPDialog.this;
-            //if(eventListeners != null) {
-            	//eventListeners.clear();
-            //}
-            //timerTaskLock = null;
-            //sipStack.removeDialog(dialog);
+            
+            
+            
+            	
+            
+            
+            
         }
 
         
@@ -3509,9 +3563,9 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
         public  DialogTimerTask(SIPServerTransaction transaction) {
             this.transaction = transaction;
             this.nRetransmissions = 0;
-            // ---------- Original Method ----------
-            //this.transaction = transaction;
-            //this.nRetransmissions = 0;
+            
+            
+            
         }
 
         
@@ -3521,26 +3575,26 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
             {
                 boolean varCD7A6467843458627CC99D2CD95A9CA6_1566706374 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logDebug("Running dialog timer");
-            } //End collapsed parenthetic
+            } 
             SIPServerTransaction transaction = this.transaction;
             {
                 {
                     boolean var4B6640D4DE774F6FA49F20C035CC9869_1403375720 = (sipProvider.getSipListener() != null && sipProvider.getSipListener() instanceof SipListenerExt);
                     {
                         raiseErrorEvent(SIPDialogErrorEvent.DIALOG_ACK_NOT_RECEIVED_TIMEOUT);
-                    } //End block
+                    } 
                     {
                         dialog.delete();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varB2E591CC8FE73A729A5DB2EFC02188A9_447714437 = (transaction != null
                         && transaction.getState() != javax.sip.TransactionState.TERMINATED);
                     {
                         transaction.raiseErrorEvent(SIPTransactionErrorEvent.TIMEOUT_ERROR);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 SIPResponse response = transaction.getLastResponse();
                 {
@@ -3551,13 +3605,13 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                             {
                                 boolean varC839103C0955C82229EFCA85F8C206DB_402350146 = (dialog.toRetransmitFinalResponse(transaction.T2));
                                 transaction.sendMessage(response);
-                            } //End collapsed parenthetic
-                        } //End block
+                            } 
+                        } 
                         catch (IOException ex)
                         {
                             raiseIOException(transaction.getPeerAddress(), transaction.getPeerPort(),
                                 transaction.getPeerProtocol());
-                        } //End block
+                        } 
                         finally 
                         {
                             SIPTransactionStack stack = dialog.sipStack;
@@ -3565,22 +3619,22 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                                 boolean var7E956449752FC9BA92CD92F85600E671_481177926 = (stack.isLoggingEnabled());
                                 {
                                     stack.getStackLogger().logDebug("resend 200 response from " + dialog);
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             transaction.fireTimer();
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 boolean var4EA6B06F6CBCD1FD755A7849352DDFB9_571623357 = (dialog.isAckSeen() || dialog.dialogState == TERMINATED_STATE);
                 {
                     this.transaction = null;
                     this.cancel();
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -3593,15 +3647,15 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.449 -0400", hash_original_method = "51B842BDCF98DBC480B551988FA04041", hash_generated_method = "51B842BDCF98DBC480B551988FA04041")
         public DialogDeleteTask ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.450 -0400", hash_original_method = "705C6BB4461CC5F37E0565BB6F16C084", hash_generated_method = "12743D2452C0A21B643AFBC46E200A26")
         protected void runTask() {
             delete();
-            // ---------- Original Method ----------
-            //delete();
+            
+            
         }
 
         
@@ -3617,8 +3671,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:45.450 -0400", hash_original_method = "D6D7FB77E2882EBB362E9FAF3BE7D45E", hash_generated_method = "A0EA5F4F4663FCA6881081121335338B")
         public  DialogDeleteIfNoAckSentTask(long seqno) {
             this.seqno = seqno;
-            // ---------- Original Method ----------
-            //this.seqno = seqno;
+            
+            
         }
 
         
@@ -3634,27 +3688,27 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                             {
                                 boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_392986695 = (sipStack.isLoggingEnabled());
                                 sipStack.getStackLogger().logError("ACK Was not sent. killing dialog");
-                            } //End collapsed parenthetic
+                            } 
                             {
                                 boolean varB740E386243B854D0A28C1291599B3CA_2109037676 = (((SipProviderImpl)sipProvider).getSipListener() instanceof SipListenerExt);
                                 {
                                     raiseErrorEvent(SIPDialogErrorEvent.DIALOG_ACK_NOT_SENT_TIMEOUT);
-                                } //End block
+                                } 
                                 {
                                     delete();
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         {
                             {
                                 boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_224003429 = (sipStack.isLoggingEnabled());
                                 sipStack.getStackLogger().logError("ACK Was not sent. Sending BYE");
-                            } //End collapsed parenthetic
+                            } 
                             {
                                 boolean varB740E386243B854D0A28C1291599B3CA_2062186544 = (((SipProviderImpl)sipProvider).getSipListener() instanceof SipListenerExt);
                                 {
                                     raiseErrorEvent(SIPDialogErrorEvent.DIALOG_ACK_NOT_SENT_TIMEOUT);
-                                } //End block
+                                } 
                                 {
                                     try 
                                     {
@@ -3663,8 +3717,8 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                                             boolean var53F281250CFE3DAFB9B635A8C29C3932_866489873 = (MessageFactoryImpl.getDefaultUserAgentHeader() != null);
                                             {
                                                 byeRequest.addHeader(MessageFactoryImpl.getDefaultUserAgentHeader());
-                                            } //End block
-                                        } //End collapsed parenthetic
+                                            } 
+                                        } 
                                         ReasonHeader reasonHeader = new Reason();
                                         reasonHeader.setProtocol("SIP");
                                         reasonHeader.setCause(1025);
@@ -3672,19 +3726,19 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
                                         byeRequest.addHeader(reasonHeader);
                                         ClientTransaction byeCtx = SIPDialog.this.getSipProvider().getNewClientTransaction(byeRequest);
                                         SIPDialog.this.sendRequest(byeCtx);
-                                    } //End block
+                                    } 
                                     catch (Exception ex)
                                     {
                                         SIPDialog.this.delete();
-                                    } //End block
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package android.graphics.drawable;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -55,46 +55,48 @@ public abstract class Drawable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.759 -0400", hash_original_method = "31C0F11C44C8FA6382C02786623A036E", hash_generated_method = "31C0F11C44C8FA6382C02786623A036E")
     public Drawable ()
     {
-        //Synthesized constructor
+        
     }
 
 
     public abstract void draw(Canvas canvas);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.760 -0400", hash_original_method = "16D67C97CF930C94423B2F0ABE9E2FB8", hash_generated_method = "2C3A046CC5D232DBBA5C4604FB21E1F8")
     public void setBounds(int left, int top, int right, int bottom) {
         Rect oldBounds = mBounds;
         {
             oldBounds = mBounds = new Rect();
-        } //End block
+        } 
         {
             mBounds.set(left, top, right, bottom);
             onBoundsChange(mBounds);
-        } //End block
+        } 
         addTaint(left);
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        //Rect oldBounds = mBounds;
-        //if (oldBounds == ZERO_BOUNDS_RECT) {
-            //oldBounds = mBounds = new Rect();
-        //}
-        //if (oldBounds.left != left || oldBounds.top != top ||
-                //oldBounds.right != right || oldBounds.bottom != bottom) {
-            //mBounds.set(left, top, right, bottom);
-            //onBoundsChange(mBounds);
-        //}
+        
+        
+        
+            
+        
+        
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.760 -0400", hash_original_method = "343A23DF727C21562F2BBDB7DAA5F811", hash_generated_method = "B75082F091415330B057D05F7820B159")
     public void setBounds(Rect bounds) {
         setBounds(bounds.left, bounds.top, bounds.right, bounds.bottom);
         addTaint(bounds.getTaint());
-        // ---------- Original Method ----------
-        //setBounds(bounds.left, bounds.top, bounds.right, bounds.bottom);
+        
+        
     }
 
     
@@ -102,44 +104,44 @@ public abstract class Drawable {
     public final void copyBounds(Rect bounds) {
         bounds.set(mBounds);
         addTaint(bounds.getTaint());
-        // ---------- Original Method ----------
-        //bounds.set(mBounds);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.761 -0400", hash_original_method = "A623AF26CC98262C126F58F99B918C3F", hash_generated_method = "3593D2CCB327ADE18C4265BD4B61F4A7")
     public final Rect copyBounds() {
-        Rect varB4EAC82CA7396A68D541C85D26508E83_315296405 = null; //Variable for return #1
+        Rect varB4EAC82CA7396A68D541C85D26508E83_315296405 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_315296405 = new Rect(mBounds);
-        varB4EAC82CA7396A68D541C85D26508E83_315296405.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_315296405.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_315296405;
-        // ---------- Original Method ----------
-        //return new Rect(mBounds);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.763 -0400", hash_original_method = "F9C4E095C08A855B9547E5FC046C50BF", hash_generated_method = "E5DA9D2A8C937C00F4089BA50DE46C4B")
     public final Rect getBounds() {
-        Rect varB4EAC82CA7396A68D541C85D26508E83_1600931217 = null; //Variable for return #1
+        Rect varB4EAC82CA7396A68D541C85D26508E83_1600931217 = null; 
         {
             mBounds = new Rect();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1600931217 = mBounds;
-        varB4EAC82CA7396A68D541C85D26508E83_1600931217.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1600931217.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1600931217;
-        // ---------- Original Method ----------
-        //if (mBounds == ZERO_BOUNDS_RECT) {
-            //mBounds = new Rect();
-        //}
-        //return mBounds;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.763 -0400", hash_original_method = "E7340D87AE9D08581CEC5A0FAA0552EE", hash_generated_method = "579750A184ACECD2EAA7D466EBD356DF")
     public void setChangingConfigurations(int configs) {
         mChangingConfigurations = configs;
-        // ---------- Original Method ----------
-        //mChangingConfigurations = configs;
+        
+        
     }
 
     
@@ -147,57 +149,57 @@ public abstract class Drawable {
     public int getChangingConfigurations() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_281842287 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_281842287;
-        // ---------- Original Method ----------
-        //return mChangingConfigurations;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.764 -0400", hash_original_method = "A73E6D639014FDB13967AD6B494837C8", hash_generated_method = "4F5D1BE5F2EFBD95EEA7C718FF48A1E8")
     public void setDither(boolean dither) {
         addTaint(dither);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.764 -0400", hash_original_method = "D611F7535670B80ECD8BF210909C26D1", hash_generated_method = "2A918FAAC3C4C5F1DD17F974F87D0A35")
     public void setFilterBitmap(boolean filter) {
         addTaint(filter);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.765 -0400", hash_original_method = "59192F5DE8ED3EA14FF77E774B104DE3", hash_generated_method = "5E55B460A30793DB0A8FC8DC0A3072A3")
     public final void setCallback(Callback cb) {
         mCallback = new WeakReference<Callback>(cb);
-        // ---------- Original Method ----------
-        //mCallback = new WeakReference<Callback>(cb);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.766 -0400", hash_original_method = "F8C083250821C64B63A1F88F9B7D8469", hash_generated_method = "7D6E5BF0C00594CDE4802DF590C490D3")
     public Callback getCallback() {
-        Callback varB4EAC82CA7396A68D541C85D26508E83_1870110631 = null; //Variable for return #1
-        Callback varB4EAC82CA7396A68D541C85D26508E83_689502292 = null; //Variable for return #2
+        Callback varB4EAC82CA7396A68D541C85D26508E83_1870110631 = null; 
+        Callback varB4EAC82CA7396A68D541C85D26508E83_689502292 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1870110631 = mCallback.get();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_689502292 = null;
-        Callback varA7E53CE21691AB073D9660D615818899_987970292; //Final return value
+        Callback varA7E53CE21691AB073D9660D615818899_987970292; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_987970292 = varB4EAC82CA7396A68D541C85D26508E83_1870110631;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_987970292 = varB4EAC82CA7396A68D541C85D26508E83_689502292;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_987970292.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_987970292.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_987970292;
-        // ---------- Original Method ----------
-        //if (mCallback != null) {
-            //return mCallback.get();
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
@@ -206,12 +208,12 @@ public abstract class Drawable {
         final Callback callback = getCallback();
         {
             callback.invalidateDrawable(this);
-        } //End block
-        // ---------- Original Method ----------
-        //final Callback callback = getCallback();
-        //if (callback != null) {
-            //callback.invalidateDrawable(this);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -220,14 +222,14 @@ public abstract class Drawable {
         final Callback callback = getCallback();
         {
             callback.scheduleDrawable(this, what, when);
-        } //End block
+        } 
         addTaint(what.getTaint());
         addTaint(when);
-        // ---------- Original Method ----------
-        //final Callback callback = getCallback();
-        //if (callback != null) {
-            //callback.scheduleDrawable(this, what, when);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -236,13 +238,13 @@ public abstract class Drawable {
         final Callback callback = getCallback();
         {
             callback.unscheduleDrawable(this, what);
-        } //End block
+        } 
         addTaint(what.getTaint());
-        // ---------- Original Method ----------
-        //final Callback callback = getCallback();
-        //if (callback != null) {
-            //callback.unscheduleDrawable(this, what);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -252,12 +254,12 @@ public abstract class Drawable {
         int var75736B757CD8B520406B8464AF443B02_1942621602 = (((Callback2) callback).getResolvedLayoutDirection(this));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1897668078 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1897668078;
-        // ---------- Original Method ----------
-        //final Callback callback = getCallback();
-        //if (callback == null || !(callback instanceof Callback2)) {
-            //return View.LAYOUT_DIRECTION_LTR;
-        //}
-        //return ((Callback2) callback).getResolvedLayoutDirection(this);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -272,16 +274,16 @@ public abstract class Drawable {
         setColorFilter(new PorterDuffColorFilter(color, mode));
         addTaint(color);
         addTaint(mode.getTaint());
-        // ---------- Original Method ----------
-        //setColorFilter(new PorterDuffColorFilter(color, mode));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.769 -0400", hash_original_method = "B358CFD4AAFD748C624F742F21F12081", hash_generated_method = "4583F0874D1CBB724BCBB622A001163D")
     public void clearColorFilter() {
         setColorFilter(null);
-        // ---------- Original Method ----------
-        //setColorFilter(null);
+        
+        
     }
 
     
@@ -289,8 +291,8 @@ public abstract class Drawable {
     public boolean isStateful() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1686453911 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1686453911;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -301,16 +303,16 @@ public abstract class Drawable {
             {
                 mStateSet = stateSet;
                 boolean var2E8C85253ED8EDDED71485E563D55CAD_844228322 = (onStateChange(stateSet));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_983764206 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_983764206;
-        // ---------- Original Method ----------
-        //if (!Arrays.equals(mStateSet, stateSet)) {
-            //mStateSet = stateSet;
-            //return onStateChange(stateSet);
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -318,25 +320,25 @@ public abstract class Drawable {
     public int[] getState() {
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1486691985 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1486691985;
-        // ---------- Original Method ----------
-        //return mStateSet;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.770 -0400", hash_original_method = "1A9E62CA8A2399C6C2BEF07B26352781", hash_generated_method = "0131A8711CA5A4121C3000F639F15FB6")
     public void jumpToCurrentState() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.771 -0400", hash_original_method = "00D08FCE0657F40CBD93DF1CB810B766", hash_generated_method = "3F888C8336BB3120741B33358C60A615")
     public Drawable getCurrent() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_75679362 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_75679362 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_75679362 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_75679362.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_75679362.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_75679362;
-        // ---------- Original Method ----------
-        //return this;
+        
+        
     }
 
     
@@ -345,15 +347,15 @@ public abstract class Drawable {
         {
             mLevel = level;
             boolean var9872BA4A333C94281EC3A1CE7EB34844_529247623 = (onLevelChange(level));
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1386910744 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1386910744;
-        // ---------- Original Method ----------
-        //if (mLevel != level) {
-            //mLevel = level;
-            //return onLevelChange(level);
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -361,8 +363,8 @@ public abstract class Drawable {
     public final int getLevel() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1417678766 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1417678766;
-        // ---------- Original Method ----------
-        //return mLevel;
+        
+        
     }
 
     
@@ -372,17 +374,17 @@ public abstract class Drawable {
         {
             mVisible = visible;
             invalidateSelf();
-        } //End block
+        } 
         addTaint(restart);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_685484423 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_685484423;
-        // ---------- Original Method ----------
-        //boolean changed = mVisible != visible;
-        //if (changed) {
-            //mVisible = visible;
-            //invalidateSelf();
-        //}
-        //return changed;
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -390,8 +392,8 @@ public abstract class Drawable {
     public final boolean isVisible() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_288349819 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_288349819;
-        // ---------- Original Method ----------
-        //return mVisible;
+        
+        
     }
 
     
@@ -417,42 +419,42 @@ public abstract class Drawable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.776 -0400", hash_original_method = "6885EC41EEEA48BF379C9186E23112DE", hash_generated_method = "4FB8B4D5DC46F6070F6C37DC756B7AFC")
     public Region getTransparentRegion() {
-        Region varB4EAC82CA7396A68D541C85D26508E83_1986835661 = null; //Variable for return #1
+        Region varB4EAC82CA7396A68D541C85D26508E83_1986835661 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1986835661 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1986835661.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1986835661.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1986835661;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.776 -0400", hash_original_method = "B7A8462AFC13A6E0F2F8BCB43385BD49", hash_generated_method = "6E08BA527F1735A87CB5E84B8A98B552")
     protected boolean onStateChange(int[] state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(state[0]);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1530003786 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1530003786;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.776 -0400", hash_original_method = "37D330857F7202D119AB7FE43B955D5E", hash_generated_method = "4C962380068DB79AB8436CEDABC0B24D")
     protected boolean onLevelChange(int level) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(level);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1395690734 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1395690734;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.777 -0400", hash_original_method = "F81B37D492B4B76F5CB4F03B5248220C", hash_generated_method = "7C8E1DAA609E686234CDB191EA8D6665")
     protected void onBoundsChange(Rect bounds) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(bounds.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -460,8 +462,8 @@ public abstract class Drawable {
     public int getIntrinsicWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_539091646 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_539091646;
-        // ---------- Original Method ----------
-        //return -1;
+        
+        
     }
 
     
@@ -469,8 +471,8 @@ public abstract class Drawable {
     public int getIntrinsicHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1180467211 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1180467211;
-        // ---------- Original Method ----------
-        //return -1;
+        
+        
     }
 
     
@@ -479,9 +481,9 @@ public abstract class Drawable {
         final int intrinsicWidth = getIntrinsicWidth();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_769389967 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_769389967;
-        // ---------- Original Method ----------
-        //final int intrinsicWidth = getIntrinsicWidth();
-        //return intrinsicWidth > 0 ? intrinsicWidth : 0;
+        
+        
+        
     }
 
     
@@ -490,9 +492,9 @@ public abstract class Drawable {
         final int intrinsicHeight = getIntrinsicHeight();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1282324388 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1282324388;
-        // ---------- Original Method ----------
-        //final int intrinsicHeight = getIntrinsicHeight();
-        //return intrinsicHeight > 0 ? intrinsicHeight : 0;
+        
+        
+        
     }
 
     
@@ -502,20 +504,20 @@ public abstract class Drawable {
         addTaint(padding.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_746548521 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_746548521;
-        // ---------- Original Method ----------
-        //padding.set(0, 0, 0, 0);
-        //return false;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.779 -0400", hash_original_method = "4655CA169BE542FE87BF20A0D63A5DAC", hash_generated_method = "47DB3BE6B34DCB5EF5DA6D7ABADD5CCC")
     public Drawable mutate() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1428190328 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1428190328 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1428190328 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1428190328.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1428190328.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1428190328;
-        // ---------- Original Method ----------
-        //return this;
+        
+        
     }
 
     
@@ -634,10 +636,10 @@ public abstract class Drawable {
         addTaint(r.getTaint());
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //TypedArray a = r.obtainAttributes(attrs, com.android.internal.R.styleable.Drawable);
-        //inflateWithAttributes(r, parser, a, com.android.internal.R.styleable.Drawable_visible);
-        //a.recycle();
+        
+        
+        
+        
     }
 
     
@@ -647,19 +649,19 @@ public abstract class Drawable {
         mVisible = attrs.getBoolean(visibleAttr, mVisible);
         addTaint(r.getTaint());
         addTaint(parser.getTaint());
-        // ---------- Original Method ----------
-        //mVisible = attrs.getBoolean(visibleAttr, mVisible);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.783 -0400", hash_original_method = "4B02BBF3CC1230B6CEECD73EA01A2039", hash_generated_method = "4CC50822DD94DB1AB9C6924F0C239473")
     public ConstantState getConstantState() {
-        ConstantState varB4EAC82CA7396A68D541C85D26508E83_1785392083 = null; //Variable for return #1
+        ConstantState varB4EAC82CA7396A68D541C85D26508E83_1785392083 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1785392083 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1785392083.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1785392083.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1785392083;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -677,7 +679,7 @@ public abstract class Drawable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.784 -0400", hash_original_method = "1DBA432D049F8FB288727BCBD6197568", hash_generated_method = "1DBA432D049F8FB288727BCBD6197568")
         public ConstantState ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -686,13 +688,13 @@ public abstract class Drawable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.786 -0400", hash_original_method = "5FCE46455F7833ADD9520B3BEB7232AE", hash_generated_method = "74080BA37AC37300A5E6EAC06D2CA412")
         public Drawable newDrawable(Resources res) {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_711619604 = null; //Variable for return #1
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_711619604 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_711619604 = newDrawable();
             addTaint(res.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_711619604.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_711619604.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_711619604;
-            // ---------- Original Method ----------
-            //return newDrawable();
+            
+            
         }
 
         

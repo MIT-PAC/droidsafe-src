@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -25,16 +25,16 @@ public final class GeneralNames {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.056 -0400", hash_original_method = "900922C5A2333ABDC3D6DB9D2843B6C9", hash_generated_method = "8A74688EB414143E6D1C7929DFB8071B")
     public  GeneralNames() {
         generalNames = new ArrayList<GeneralName>();
-        // ---------- Original Method ----------
-        //generalNames = new ArrayList<GeneralName>();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.056 -0400", hash_original_method = "FCF1D75BDAE857F225708496A2E96EC2", hash_generated_method = "6E3DE6D078A590F1F6C1BDB13C3E782D")
     public  GeneralNames(List<GeneralName> generalNames) {
         this.generalNames = generalNames;
-        // ---------- Original Method ----------
-        //this.generalNames = generalNames;
+        
+        
     }
 
     
@@ -42,114 +42,119 @@ public final class GeneralNames {
     private  GeneralNames(List<GeneralName> generalNames, byte[] encoding) {
         this.generalNames = generalNames;
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.generalNames = generalNames;
-        //this.encoding = encoding;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.057 -0400", hash_original_method = "0BE5F893124FC75916B0920319238607", hash_generated_method = "F40C003CB5482941A91BB18530D941A0")
     public List<GeneralName> getNames() {
-        List<GeneralName> varB4EAC82CA7396A68D541C85D26508E83_1102040844 = null; //Variable for return #1
-        List<GeneralName> varB4EAC82CA7396A68D541C85D26508E83_1126648817 = null; //Variable for return #2
+        List<GeneralName> varB4EAC82CA7396A68D541C85D26508E83_1102040844 = null; 
+        List<GeneralName> varB4EAC82CA7396A68D541C85D26508E83_1126648817 = null; 
         {
             boolean var133461071AA2D0765E0C74451BBECA7C_1299705162 = ((generalNames == null) || (generalNames.size() == 0));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1102040844 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1126648817 = new ArrayList<GeneralName>(generalNames);
-        List<GeneralName> varA7E53CE21691AB073D9660D615818899_188578243; //Final return value
+        List<GeneralName> varA7E53CE21691AB073D9660D615818899_188578243; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_188578243 = varB4EAC82CA7396A68D541C85D26508E83_1102040844;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_188578243 = varB4EAC82CA7396A68D541C85D26508E83_1126648817;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_188578243.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_188578243.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_188578243;
-        // ---------- Original Method ----------
-        //if ((generalNames == null) || (generalNames.size() == 0)) {
-            //return null;
-        //}
-        //return new ArrayList<GeneralName>(generalNames);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.059 -0400", hash_original_method = "393D0968412D8AD2DE170EB074DB113A", hash_generated_method = "338FC1079F9FADACE66B2A8D408EA44D")
     public Collection<List<?>> getPairsList() {
-        Collection<List<?>> varB4EAC82CA7396A68D541C85D26508E83_316869650 = null; //Variable for return #1
-        Collection<List<?>> varB4EAC82CA7396A68D541C85D26508E83_721941143 = null; //Variable for return #2
+        Collection<List<?>> varB4EAC82CA7396A68D541C85D26508E83_316869650 = null; 
+        Collection<List<?>> varB4EAC82CA7396A68D541C85D26508E83_721941143 = null; 
         Collection<List<?>> result = new ArrayList<List<?>>();
         {
             varB4EAC82CA7396A68D541C85D26508E83_316869650 = result;
-        } //End block
+        } 
         {
             Iterator<GeneralName> var48792B06BC03602C9020A2E3077F838C_1380848831 = (generalNames).iterator();
             var48792B06BC03602C9020A2E3077F838C_1380848831.hasNext();
             GeneralName generalName = var48792B06BC03602C9020A2E3077F838C_1380848831.next();
             {
                 result.add(generalName.getAsList());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_721941143 = result;
-        Collection<List<?>> varA7E53CE21691AB073D9660D615818899_698740904; //Final return value
+        Collection<List<?>> varA7E53CE21691AB073D9660D615818899_698740904; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_698740904 = varB4EAC82CA7396A68D541C85D26508E83_316869650;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_698740904 = varB4EAC82CA7396A68D541C85D26508E83_721941143;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_698740904.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_698740904.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_698740904;
-        // ---------- Original Method ----------
-        //Collection<List<?>> result = new ArrayList<List<?>>();
-        //if (generalNames == null) {
-            //return result;
-        //}
-        //for (GeneralName generalName : generalNames) {
-            //result.add(generalName.getAsList());
-        //}
-        //return result;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.060 -0400", hash_original_method = "62FCFAA5CD61EB40B84DD9F5E8E0A72D", hash_generated_method = "05F31B80D539EA5452F3942F20682D69")
     public void addName(GeneralName name) {
         encoding = null;
         {
             generalNames = new ArrayList<GeneralName>();
-        } //End block
+        } 
         generalNames.add(name);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
-        //encoding = null;
-        //if (generalNames == null) {
-            //generalNames = new ArrayList<GeneralName>();
-        //}
-        //generalNames.add(name);
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.060 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "24B3C2F38BD1308DCCA3E0DAAEF775FC")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_742892462 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_742892462;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.066 -0400", hash_original_method = "78509CF3CFA7027FFCDFED35C29E300D", hash_generated_method = "D697E4CE6073639C662F802FD08E3AC6")
     public void dumpValue(StringBuilder sb, String prefix) {
         {
@@ -160,19 +165,19 @@ public final class GeneralNames {
                 sb.append(prefix);
                 sb.append(generalName);
                 sb.append('\n');
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //if (generalNames == null) {
-            //return;
-        //}
-        //for (GeneralName generalName : generalNames) {
-            //sb.append(prefix);
-            //sb.append(generalName);
-            //sb.append('\n');
-        //}
+        
+        
+            
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -188,18 +193,6 @@ public final class GeneralNames {
             return gns.generalNames;
         }
     };
-    /*
-    // orphaned legacy method
-    @Override public Collection getValues(Object object) {
-            GeneralNames gns = (GeneralNames) object;
-            return gns.generalNames;
-        }
     
-    // orphaned legacy method
-    @Override public Object getDecodedObject(BerInputStream in) {
-            return new GeneralNames((List<GeneralName>) in.content, in.getEncoded());
-        }
-    
-    */
 }
 

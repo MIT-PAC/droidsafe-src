@@ -1,11 +1,11 @@
 package android.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class Keyframe implements Cloneable {
@@ -25,35 +25,41 @@ public abstract class Keyframe implements Cloneable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.893 -0400", hash_original_method = "59B475F2675EC1DB9A85E43A7051AABA", hash_generated_method = "59B475F2675EC1DB9A85E43A7051AABA")
     public Keyframe ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static Keyframe ofInt(float fraction, int value) {
         return new IntKeyframe(fraction, value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Keyframe ofInt(float fraction) {
         return new IntKeyframe(fraction);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Keyframe ofFloat(float fraction, float value) {
         return new FloatKeyframe(fraction, value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Keyframe ofFloat(float fraction) {
         return new FloatKeyframe(fraction);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Keyframe ofObject(float fraction, Object value) {
         return new ObjectKeyframe(fraction, value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Keyframe ofObject(float fraction) {
         return new ObjectKeyframe(fraction, null);
     }
@@ -63,8 +69,8 @@ public abstract class Keyframe implements Cloneable {
     public boolean hasValue() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1163981829 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1163981829;
-        // ---------- Original Method ----------
-        //return mHasValue;
+        
+        
     }
 
     
@@ -78,46 +84,46 @@ public abstract class Keyframe implements Cloneable {
     public float getFraction() {
         float var546ADE640B6EDFBC8A086EF31347E768_1599421637 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1599421637;
-        // ---------- Original Method ----------
-        //return mFraction;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.904 -0400", hash_original_method = "D865B000D8DE764D2EF6EBC1ED2A153F", hash_generated_method = "B828439CB960C667E31928238589D41F")
     public void setFraction(float fraction) {
         mFraction = fraction;
-        // ---------- Original Method ----------
-        //mFraction = fraction;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.907 -0400", hash_original_method = "69CBD09EBE4A4B5ECD6AD8540DB7CFD0", hash_generated_method = "5B95913439B78948EA52355990C897E8")
     public TimeInterpolator getInterpolator() {
-        TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_351683649 = null; //Variable for return #1
+        TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_351683649 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_351683649 = mInterpolator;
-        varB4EAC82CA7396A68D541C85D26508E83_351683649.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_351683649.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_351683649;
-        // ---------- Original Method ----------
-        //return mInterpolator;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.910 -0400", hash_original_method = "DFEEC0662B39CED0069D1B2AE05648AB", hash_generated_method = "47F1226E1202976956E07A77F6CEA7FC")
     public void setInterpolator(TimeInterpolator interpolator) {
         mInterpolator = interpolator;
-        // ---------- Original Method ----------
-        //mInterpolator = interpolator;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.914 -0400", hash_original_method = "464D9B25E7EBB7EEA5039E323C745893", hash_generated_method = "80AEBD5608B30580E1D83A5CAF5CE7E2")
     public Class getType() {
-        Class varB4EAC82CA7396A68D541C85D26508E83_824081716 = null; //Variable for return #1
+        Class varB4EAC82CA7396A68D541C85D26508E83_824081716 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_824081716 = mValueType;
-        varB4EAC82CA7396A68D541C85D26508E83_824081716.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_824081716.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_824081716;
-        // ---------- Original Method ----------
-        //return mValueType;
+        
+        
     }
 
     
@@ -137,22 +143,22 @@ public abstract Keyframe clone();
             mHasValue = (value != null);
             mValueType = mHasValue ? value.getClass() : Object.class;
             addTaint(fraction);
-            // ---------- Original Method ----------
-            //mFraction = fraction;
-            //mValue = value;
-            //mHasValue = (value != null);
-            //mValueType = mHasValue ? value.getClass() : Object.class;
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.922 -0400", hash_original_method = "8110BFED38B99D4A69F8125D4CA46C20", hash_generated_method = "E84D1C8741AAFDEC5FD2A7FBE9F82B3B")
         public Object getValue() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1389412478 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1389412478 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1389412478 = mValue;
-            varB4EAC82CA7396A68D541C85D26508E83_1389412478.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1389412478.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1389412478;
-            // ---------- Original Method ----------
-            //return mValue;
+            
+            
         }
 
         
@@ -160,25 +166,25 @@ public abstract Keyframe clone();
         public void setValue(Object value) {
             mValue = value;
             mHasValue = (value != null);
-            // ---------- Original Method ----------
-            //mValue = value;
-            //mHasValue = (value != null);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.927 -0400", hash_original_method = "D24C77D2B6663612F515281C3853AB21", hash_generated_method = "C78324ABD2BB859CD142220FA908A7AC")
         @Override
         public ObjectKeyframe clone() {
-            ObjectKeyframe varB4EAC82CA7396A68D541C85D26508E83_335616363 = null; //Variable for return #1
+            ObjectKeyframe varB4EAC82CA7396A68D541C85D26508E83_335616363 = null; 
             ObjectKeyframe kfClone = new ObjectKeyframe(getFraction(), mValue);
             kfClone.setInterpolator(getInterpolator());
             varB4EAC82CA7396A68D541C85D26508E83_335616363 = kfClone;
-            varB4EAC82CA7396A68D541C85D26508E83_335616363.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_335616363.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_335616363;
-            // ---------- Original Method ----------
-            //ObjectKeyframe kfClone = new ObjectKeyframe(getFraction(), mValue);
-            //kfClone.setInterpolator(getInterpolator());
-            //return kfClone;
+            
+            
+            
+            
         }
 
         
@@ -198,11 +204,11 @@ public abstract Keyframe clone();
             mValueType = int.class;
             mHasValue = true;
             addTaint(fraction);
-            // ---------- Original Method ----------
-            //mFraction = fraction;
-            //mValue = value;
-            //mValueType = int.class;
-            //mHasValue = true;
+            
+            
+            
+            
+            
         }
 
         
@@ -211,9 +217,9 @@ public abstract Keyframe clone();
             mFraction = fraction;
             mValueType = int.class;
             addTaint(fraction);
-            // ---------- Original Method ----------
-            //mFraction = fraction;
-            //mValueType = int.class;
+            
+            
+            
         }
 
         
@@ -221,19 +227,19 @@ public abstract Keyframe clone();
         public int getIntValue() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1362801644 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1362801644;
-            // ---------- Original Method ----------
-            //return mValue;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.939 -0400", hash_original_method = "8110BFED38B99D4A69F8125D4CA46C20", hash_generated_method = "AAD73B56F571AB4BBAFA50657DDA3B1C")
         public Object getValue() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1644150164 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1644150164 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1644150164 = mValue;
-            varB4EAC82CA7396A68D541C85D26508E83_1644150164.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1644150164.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1644150164;
-            // ---------- Original Method ----------
-            //return mValue;
+            
+            
         }
 
         
@@ -244,29 +250,29 @@ public abstract Keyframe clone();
                 {
                     mValue = ((Integer)value).intValue();
                     mHasValue = true;
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (value != null && value.getClass() == Integer.class) {
-                //mValue = ((Integer)value).intValue();
-                //mHasValue = true;
-            //}
+                } 
+            } 
+            
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.947 -0400", hash_original_method = "25DF873BDC1EC275AA64D474732FCE13", hash_generated_method = "1AEDE9994527CFA4C9DD7A4941014706")
         @Override
         public IntKeyframe clone() {
-            IntKeyframe varB4EAC82CA7396A68D541C85D26508E83_1186311517 = null; //Variable for return #1
+            IntKeyframe varB4EAC82CA7396A68D541C85D26508E83_1186311517 = null; 
             IntKeyframe kfClone = new IntKeyframe(getFraction(), mValue);
             kfClone.setInterpolator(getInterpolator());
             varB4EAC82CA7396A68D541C85D26508E83_1186311517 = kfClone;
-            varB4EAC82CA7396A68D541C85D26508E83_1186311517.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1186311517.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1186311517;
-            // ---------- Original Method ----------
-            //IntKeyframe kfClone = new IntKeyframe(getFraction(), mValue);
-            //kfClone.setInterpolator(getInterpolator());
-            //return kfClone;
+            
+            
+            
+            
         }
 
         
@@ -286,11 +292,11 @@ public abstract Keyframe clone();
             mValueType = float.class;
             mHasValue = true;
             addTaint(fraction);
-            // ---------- Original Method ----------
-            //mFraction = fraction;
-            //mValue = value;
-            //mValueType = float.class;
-            //mHasValue = true;
+            
+            
+            
+            
+            
         }
 
         
@@ -299,9 +305,9 @@ public abstract Keyframe clone();
             mFraction = fraction;
             mValueType = float.class;
             addTaint(fraction);
-            // ---------- Original Method ----------
-            //mFraction = fraction;
-            //mValueType = float.class;
+            
+            
+            
         }
 
         
@@ -309,19 +315,19 @@ public abstract Keyframe clone();
         public float getFloatValue() {
             float var546ADE640B6EDFBC8A086EF31347E768_711955671 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_711955671;
-            // ---------- Original Method ----------
-            //return mValue;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.958 -0400", hash_original_method = "8110BFED38B99D4A69F8125D4CA46C20", hash_generated_method = "C6C3C1F705F2A5A7094C53C02B113627")
         public Object getValue() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_32380878 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_32380878 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_32380878 = mValue;
-            varB4EAC82CA7396A68D541C85D26508E83_32380878.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_32380878.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_32380878;
-            // ---------- Original Method ----------
-            //return mValue;
+            
+            
         }
 
         
@@ -332,29 +338,29 @@ public abstract Keyframe clone();
                 {
                     mValue = ((Float)value).floatValue();
                     mHasValue = true;
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (value != null && value.getClass() == Float.class) {
-                //mValue = ((Float)value).floatValue();
-                //mHasValue = true;
-            //}
+                } 
+            } 
+            
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:11.966 -0400", hash_original_method = "5FDA2B31FC1B703F745BE5BB0395A79D", hash_generated_method = "4841396A0BA98651288E880020B0A5FF")
         @Override
         public FloatKeyframe clone() {
-            FloatKeyframe varB4EAC82CA7396A68D541C85D26508E83_274389739 = null; //Variable for return #1
+            FloatKeyframe varB4EAC82CA7396A68D541C85D26508E83_274389739 = null; 
             FloatKeyframe kfClone = new FloatKeyframe(getFraction(), mValue);
             kfClone.setInterpolator(getInterpolator());
             varB4EAC82CA7396A68D541C85D26508E83_274389739 = kfClone;
-            varB4EAC82CA7396A68D541C85D26508E83_274389739.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_274389739.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_274389739;
-            // ---------- Original Method ----------
-            //FloatKeyframe kfClone = new FloatKeyframe(getFraction(), mValue);
-            //kfClone.setInterpolator(getInterpolator());
-            //return kfClone;
+            
+            
+            
+            
         }
 
         

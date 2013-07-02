@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Hashtable;
 
@@ -21,9 +21,9 @@ public class ProtocolVersion {
     private  ProtocolVersion(String name, byte[] version) {
         this.name = name;
         this.version = version;
-        // ---------- Original Method ----------
-        //this.name = name;
-        //this.version = version;
+        
+        
+        
     }
 
     
@@ -48,16 +48,19 @@ public class ProtocolVersion {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isSupported(String name) {
         return protocolsByName.containsKey(name);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ProtocolVersion getByName(String name) {
         return protocolsByName.get(name);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ProtocolVersion getLatestVersion(String[] protocols) {
         if (protocols == null || protocols.length == 0) {
             return null;

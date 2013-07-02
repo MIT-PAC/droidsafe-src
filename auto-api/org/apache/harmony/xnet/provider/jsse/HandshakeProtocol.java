@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 import java.security.GeneralSecurityException;
@@ -114,147 +114,148 @@ public abstract class HandshakeProtocol {
             engineOwner = (SSLEngineImpl) owner;
             nonBlocking = true;
             this.parameters = engineOwner.sslParameters;
-        } //End block
+        } 
         {
             socketOwner = (SSLSocketImpl) owner;
             nonBlocking = false;
             this.parameters = socketOwner.sslParameters;
-        } //End block
-        // ---------- Original Method ----------
-        //if (owner instanceof SSLEngineImpl) {
-            //engineOwner = (SSLEngineImpl) owner;
-            //nonBlocking = true;
-            //this.parameters = engineOwner.sslParameters;
-        //}
-        //else if (owner instanceof SSLSocketImpl) {
-            //socketOwner = (SSLSocketImpl) owner;
-            //nonBlocking = false;
-            //this.parameters = socketOwner.sslParameters;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.179 -0400", hash_original_method = "4783F18A2AEFB1BF115D21F8D4F4E6FF", hash_generated_method = "C9083453A9DF96FB9488FD8E42A9D875")
     public void setRecordProtocol(SSLRecordProtocol recordProtocol) {
         this.recordProtocol = recordProtocol;
-        // ---------- Original Method ----------
-        //this.recordProtocol = recordProtocol;
+        
+        
     }
 
     
     public abstract void start();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.180 -0400", hash_original_method = "CCB194A714BDC12D18860313F52671E7", hash_generated_method = "378E1AD191F24D0435A262BA80FF0EED")
     protected void stop() {
         clearMessages();
         status = NOT_HANDSHAKING;
-        // ---------- Original Method ----------
-        //clearMessages();
-        //status = NOT_HANDSHAKING;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.180 -0400", hash_original_method = "0CB6BF73CCE484420EACC5A99703893D", hash_generated_method = "F9A0D059891D3B2629C3E3655DCCC17B")
     public SSLEngineResult.HandshakeStatus getStatus() {
-        SSLEngineResult.HandshakeStatus varB4EAC82CA7396A68D541C85D26508E83_1811700253 = null; //Variable for return #1
-        SSLEngineResult.HandshakeStatus varB4EAC82CA7396A68D541C85D26508E83_1797988295 = null; //Variable for return #2
-        SSLEngineResult.HandshakeStatus varB4EAC82CA7396A68D541C85D26508E83_1281645371 = null; //Variable for return #3
-        SSLEngineResult.HandshakeStatus varB4EAC82CA7396A68D541C85D26508E83_1026856713 = null; //Variable for return #4
-        SSLEngineResult.HandshakeStatus varB4EAC82CA7396A68D541C85D26508E83_71802072 = null; //Variable for return #5
+        SSLEngineResult.HandshakeStatus varB4EAC82CA7396A68D541C85D26508E83_1811700253 = null; 
+        SSLEngineResult.HandshakeStatus varB4EAC82CA7396A68D541C85D26508E83_1797988295 = null; 
+        SSLEngineResult.HandshakeStatus varB4EAC82CA7396A68D541C85D26508E83_1281645371 = null; 
+        SSLEngineResult.HandshakeStatus varB4EAC82CA7396A68D541C85D26508E83_1026856713 = null; 
+        SSLEngineResult.HandshakeStatus varB4EAC82CA7396A68D541C85D26508E83_71802072 = null; 
         {
             boolean var4A912B6D5D3397A70E26E30E30B3CCC9_1276869773 = (io_stream.hasData() || needSendCCSpec ||
                 needSendHelloRequest || delegatedTaskErr != null);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1811700253 = SSLEngineResult.HandshakeStatus.NEED_WRAP;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var9A65276F6F9B0ED8A56151AD30EBD70C_1376590047 = (!delegatedTasks.isEmpty());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1797988295 = SSLEngineResult.HandshakeStatus.NEED_TASK;
-            } //End block
-        } //End collapsed parenthetic
-        //Begin case HandshakeProtocol.NEED_UNWRAP 
+            } 
+        } 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1281645371 = SSLEngineResult.HandshakeStatus.NEED_UNWRAP;
-        //End case HandshakeProtocol.NEED_UNWRAP 
-        //Begin case HandshakeProtocol.FINISHED 
+        
+        
         status = NOT_HANDSHAKING;
-        //End case HandshakeProtocol.FINISHED 
-        //Begin case HandshakeProtocol.FINISHED 
+        
+        
         clearMessages();
-        //End case HandshakeProtocol.FINISHED 
-        //Begin case HandshakeProtocol.FINISHED 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1026856713 = SSLEngineResult.HandshakeStatus.FINISHED;
-        //End case HandshakeProtocol.FINISHED 
-        //Begin case default 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_71802072 = SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING;
-        //End case default 
-        SSLEngineResult.HandshakeStatus varA7E53CE21691AB073D9660D615818899_613409277; //Final return value
+        
+        SSLEngineResult.HandshakeStatus varA7E53CE21691AB073D9660D615818899_613409277; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_613409277 = varB4EAC82CA7396A68D541C85D26508E83_1811700253;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_613409277 = varB4EAC82CA7396A68D541C85D26508E83_1797988295;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_613409277 = varB4EAC82CA7396A68D541C85D26508E83_1281645371;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_613409277 = varB4EAC82CA7396A68D541C85D26508E83_1026856713;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_613409277 = varB4EAC82CA7396A68D541C85D26508E83_71802072;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_613409277.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_613409277.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_613409277;
-        // ---------- Original Method ----------
-        //if (io_stream.hasData() || needSendCCSpec ||
-                //needSendHelloRequest || delegatedTaskErr != null) {
-            //return SSLEngineResult.HandshakeStatus.NEED_WRAP;
-        //}
-        //if (!delegatedTasks.isEmpty()) {
-            //return SSLEngineResult.HandshakeStatus.NEED_TASK;
-        //}
-        //switch (status) {
-        //case HandshakeProtocol.NEED_UNWRAP:
-            //return SSLEngineResult.HandshakeStatus.NEED_UNWRAP;
-        //case HandshakeProtocol.FINISHED:
-            //status = NOT_HANDSHAKING;
-            //clearMessages();
-            //return SSLEngineResult.HandshakeStatus.FINISHED;
-        //default: 
-            //return SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING;
-        //}
+        
+        
+                
+            
+        
+        
+            
+        
+        
+        
+            
+        
+            
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.182 -0400", hash_original_method = "19D70A4F8DD7A34083C18DBEE5C3AF9E", hash_generated_method = "421D8BBC4E76E03731FE10395FE7C518")
     public SSLSessionImpl getSession() {
-        SSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_1286227433 = null; //Variable for return #1
+        SSLSessionImpl varB4EAC82CA7396A68D541C85D26508E83_1286227433 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1286227433 = session;
-        varB4EAC82CA7396A68D541C85D26508E83_1286227433.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1286227433.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1286227433;
-        // ---------- Original Method ----------
-        //return session;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.182 -0400", hash_original_method = "95F30AE0B715D4F051584DDF5B47A5AE", hash_generated_method = "5DF4A49BCAA2F792F82CA4782AE77904")
     protected void sendChangeCipherSpec() {
         needSendCCSpec = true;
-        // ---------- Original Method ----------
-        //needSendCCSpec = true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.183 -0400", hash_original_method = "CD5990AD34611898DF18221C46BBB35B", hash_generated_method = "3ED1C82D1126AC414DC77295B793F13B")
     protected void sendHelloRequest() {
         needSendHelloRequest = true;
-        // ---------- Original Method ----------
-        //needSendHelloRequest = true;
+        
+        
     }
 
     
@@ -270,6 +271,7 @@ public abstract class HandshakeProtocol {
     public abstract void unwrapSSLv2(byte[] bytes);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.184 -0400", hash_original_method = "086592130010ECCB1C6429039BD6D57C", hash_generated_method = "D763F036352C78CAA19BDF5DF11DDA45")
     public byte[] wrap() {
         {
@@ -277,79 +279,85 @@ public abstract class HandshakeProtocol {
             delegatedTaskErr = null;
             fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                     "Error occured in delegated task:" + e.getMessage(), e);
-        } //End block
+        } 
         {
             boolean var9CC89A3A5AC109D0C018B7D53AE8276D_210920386 = (io_stream.hasData());
             {
                 byte[] var3BF1168A5F3DFA56460A41E4D5A14127_785680237 = (recordProtocol.wrap(ContentType.HANDSHAKE, io_stream));
-            } //End block
+            } 
             {
                 makeFinished();
                 needSendCCSpec = false;
                 byte[] var4EE5DBD7B96BD2A3090E287A0DDD2197_2087321880 = (recordProtocol.getChangeCipherSpecMesage(getSession()));
-            } //End block
+            } 
             {
                 needSendHelloRequest = false;
                 byte[] var1EF5A3C0CFD1B342D0B4D4B37120467E_934397125 = (recordProtocol.wrap(ContentType.HANDSHAKE,
                     new byte[] {0, 0, 0, 0}, 0, 4));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2078775111 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2078775111;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.185 -0400", hash_original_method = "DC12A1C8331DD94D1ED64B6A8B107CCD", hash_generated_method = "1FF3788E4C5B9DD3E3A9C1B54B79322B")
     protected void sendWarningAlert(byte description) {
         recordProtocol.alert(AlertProtocol.WARNING, description);
         addTaint(description);
-        // ---------- Original Method ----------
-        //recordProtocol.alert(AlertProtocol.WARNING, description);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.185 -0400", hash_original_method = "5115C1B2C55B3895E035DFBE235241DE", hash_generated_method = "F69AC1801CF91CF5B116C4A126917FF1")
     protected void fatalAlert(byte description, String reason) {
         if (DroidSafeAndroidRuntime.control) throw new AlertException(description, new SSLHandshakeException(reason));
         addTaint(description);
         addTaint(reason.getTaint());
-        // ---------- Original Method ----------
-        //throw new AlertException(description, new SSLHandshakeException(reason));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.185 -0400", hash_original_method = "06E08FFEF783008AA773EFEC73CFC5B4", hash_generated_method = "77DABCD1F8FE0D629CDBD6565D1D4986")
     protected void fatalAlert(byte description, String reason, Exception cause) {
         if (DroidSafeAndroidRuntime.control) throw new AlertException(description, new SSLException(reason, cause));
         addTaint(description);
         addTaint(reason.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-        //throw new AlertException(description, new SSLException(reason, cause));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.185 -0400", hash_original_method = "6E25B9A677528D560BDF206ADC0AD3D2", hash_generated_method = "CEB84A16F4AA15E97DC9076EE04DAD56")
     protected void fatalAlert(byte description, SSLException cause) {
         if (DroidSafeAndroidRuntime.control) throw new AlertException(description, cause);
         addTaint(description);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-        //throw new AlertException(description, cause);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.186 -0400", hash_original_method = "31EC19987B0E319181793E3260EF3B24", hash_generated_method = "D2C484D6ECCF1CD38EE7FB4846E2B688")
     protected void computerReferenceVerifyDataTLS(String label) {
         computerVerifyDataTLS(label, verify_data);
         addTaint(label.getTaint());
-        // ---------- Original Method ----------
-        //computerVerifyDataTLS(label, verify_data);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.186 -0400", hash_original_method = "FE7E38FD7B354AD563BA3A5D1A8C1D76", hash_generated_method = "618A1F2A1DD60C3D3CAD3DD07CD0744E")
     protected void computerVerifyDataTLS(String label, byte[] buf) {
         byte[] md5_digest = io_stream.getDigestMD5();
@@ -362,40 +370,42 @@ public abstract class HandshakeProtocol {
         {
             PRF.computePRF(buf, session.master_secret,
                     label.getBytes(), digest);
-        } //End block
+        } 
         catch (GeneralSecurityException e)
         {
             fatalAlert(AlertProtocol.INTERNAL_ERROR, "PRF error", e);
-        } //End block
+        } 
         addTaint(label.getTaint());
         addTaint(buf[0]);
-        // ---------- Original Method ----------
-        //byte[] md5_digest = io_stream.getDigestMD5();
-        //byte[] sha_digest = io_stream.getDigestSHA();
-        //byte[] digest = new byte[md5_digest.length + sha_digest.length];
-        //System.arraycopy(md5_digest, 0, digest, 0, md5_digest.length);
-        //System.arraycopy(sha_digest, 0, digest, md5_digest.length,
-                //sha_digest.length);
-        //try {
-            //PRF.computePRF(buf, session.master_secret,
-                    //label.getBytes(), digest);
-        //} catch (GeneralSecurityException e) {
-            //fatalAlert(AlertProtocol.INTERNAL_ERROR, "PRF error", e);
-        //}
+        
+        
+        
+        
+        
+        
+                
+        
+            
+                    
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.186 -0400", hash_original_method = "6CF424034910BF5E3BE46A11FAF3035E", hash_generated_method = "46867EFAA6391B9F54CB8BE8CD536BB6")
     protected void computerReferenceVerifyDataSSLv3(byte[] sender) {
         verify_data = new byte[36];
         computerVerifyDataSSLv3(sender, verify_data);
         addTaint(sender[0]);
-        // ---------- Original Method ----------
-        //verify_data = new byte[36];
-        //computerVerifyDataSSLv3(sender, verify_data);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.187 -0400", hash_original_method = "B5635FDA5542E47B9F75EEEF571EFF38", hash_generated_method = "C44E96A83E7BDD2779031CF983A5074B")
     protected void computerVerifyDataSSLv3(byte[] sender, byte[] buf) {
         MessageDigest md5 = null;
@@ -404,13 +414,13 @@ public abstract class HandshakeProtocol {
         {
             md5 = MessageDigest.getInstance("MD5");
             sha = MessageDigest.getInstance("SHA-1");
-        } //End block
+        } 
         catch (Exception e)
         {
             fatalAlert(AlertProtocol.INTERNAL_ERROR,
                        "Could not initialize the Digest Algorithms.",
                        e);
-        } //End block
+        } 
         try 
         {
             byte[] handshake_messages = io_stream.getMessages();
@@ -428,55 +438,59 @@ public abstract class HandshakeProtocol {
             sha.update(session.master_secret);
             sha.update(SSLv3Constants.SHApad2);
             System.arraycopy(sha.digest(b), 0, buf, 16, 20);
-        } //End block
+        } 
         catch (Exception e)
         {
             fatalAlert(AlertProtocol.INTERNAL_ERROR, "INTERNAL ERROR", e);
-        } //End block
+        } 
         addTaint(sender[0]);
         addTaint(buf[0]);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.187 -0400", hash_original_method = "552DD0927697CAC79721F456A43352A2", hash_generated_method = "CF14DCDEB15FAF6115138296FDA43535")
     protected void verifyFinished(byte[] data) {
         {
             boolean var077BC70DF9FFE67884E321AA2E817B02_2002384796 = (!Arrays.equals(verify_data, data));
             {
                 fatalAlert(AlertProtocol.HANDSHAKE_FAILURE, "Incorrect FINISED");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(data[0]);
-        // ---------- Original Method ----------
-        //if (!Arrays.equals(verify_data, data)) {
-            //fatalAlert(AlertProtocol.HANDSHAKE_FAILURE, "Incorrect FINISED");
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.188 -0400", hash_original_method = "BE3E381DC2DA6E41C1335D1916EA3AE1", hash_generated_method = "BB36759016C3CEDFE0C884DBCD94ACA3")
     protected void unexpectedMessage() {
         fatalAlert(AlertProtocol.UNEXPECTED_MESSAGE, "UNEXPECTED MESSAGE");
-        // ---------- Original Method ----------
-        //fatalAlert(AlertProtocol.UNEXPECTED_MESSAGE, "UNEXPECTED MESSAGE");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.188 -0400", hash_original_method = "0009DED469C26D41942AD89710EE0C01", hash_generated_method = "3DC80A41D7289B224BBFBD622ADAC89A")
     public void send(Message message) {
         io_stream.writeUint8(message.getType());
         io_stream.writeUint24(message.length());
         message.send(io_stream);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //io_stream.writeUint8(message.getType());
-        //io_stream.writeUint24(message.length());
-        //message.send(io_stream);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.188 -0400", hash_original_method = "BCBA6A3432596AA0D9419AF9C137B62C", hash_generated_method = "EE060BF40C47ADFA5199C7CF930EF74C")
     public void computerMasterSecret() {
         byte[] seed = new byte[64];
@@ -488,67 +502,69 @@ public abstract class HandshakeProtocol {
             {
                 PRF.computePRF(session.master_secret, preMasterSecret,
                         master_secret_bytes, seed);
-            } //End block
+            } 
             catch (GeneralSecurityException e)
             {
                 fatalAlert(AlertProtocol.INTERNAL_ERROR, "PRF error", e);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             PRF.computePRF_SSLv3(session.master_secret, preMasterSecret, seed);
-        } //End block
+        } 
         Arrays.fill(preMasterSecret, (byte)0);
         preMasterSecret = null;
-        // ---------- Original Method ----------
-        //byte[] seed = new byte[64];
-        //System.arraycopy(clientHello.getRandom(), 0, seed, 0, 32);
-        //System.arraycopy(serverHello.getRandom(), 0, seed, 32, 32);
-        //session.master_secret = new byte[48];
-        //if (serverHello.server_version[1] == 1) { 
-            //try {
-                //PRF.computePRF(session.master_secret, preMasterSecret,
-                        //master_secret_bytes, seed);
-            //} catch (GeneralSecurityException e) {
-                //fatalAlert(AlertProtocol.INTERNAL_ERROR, "PRF error", e);
-            //}
-        //} else { 
-            //PRF.computePRF_SSLv3(session.master_secret, preMasterSecret, seed);
-        //}
-        //Arrays.fill(preMasterSecret, (byte)0);
-        //preMasterSecret = null;
+        
+        
+        
+        
+        
+        
+            
+                
+                        
+            
+                
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.189 -0400", hash_original_method = "CE5478587DF2FFE8F2A4389A21077FB6", hash_generated_method = "0441B29FD8A817DAE096CD5E1E35C582")
     public Runnable getTask() {
-        Runnable varB4EAC82CA7396A68D541C85D26508E83_939239320 = null; //Variable for return #1
-        Runnable varB4EAC82CA7396A68D541C85D26508E83_1985126426 = null; //Variable for return #2
+        Runnable varB4EAC82CA7396A68D541C85D26508E83_939239320 = null; 
+        Runnable varB4EAC82CA7396A68D541C85D26508E83_1985126426 = null; 
         {
             boolean varAF384A5E92898F1CD09E3ACF1C440DC6_294508345 = (delegatedTasks.isEmpty());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_939239320 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1985126426 = delegatedTasks.remove(0);
-        Runnable varA7E53CE21691AB073D9660D615818899_2039255643; //Final return value
+        Runnable varA7E53CE21691AB073D9660D615818899_2039255643; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2039255643 = varB4EAC82CA7396A68D541C85D26508E83_939239320;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2039255643 = varB4EAC82CA7396A68D541C85D26508E83_1985126426;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2039255643.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2039255643.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2039255643;
-        // ---------- Original Method ----------
-        //if (delegatedTasks.isEmpty()) {
-            //return null;
-        //}
-        //return delegatedTasks.remove(0);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.189 -0400", hash_original_method = "3D9F61EAC6A1A98FE4B8371CF8C7FA45", hash_generated_method = "A4CC7ECB0A44218E563D26940E90C14B")
     protected void clearMessages() {
         io_stream.clearBuffer();
@@ -563,22 +579,23 @@ public abstract class HandshakeProtocol {
         certificateVerify = null;
         clientFinished = null;
         serverFinished = null;
-        // ---------- Original Method ----------
-        //io_stream.clearBuffer();
-        //clientHello = null;
-        //serverHello = null;
-        //serverCert = null;
-        //serverKeyExchange = null;
-        //certificateRequest = null;
-        //serverHelloDone = null;
-        //clientCert = null;
-        //clientKeyExchange = null;
-        //certificateVerify = null;
-        //clientFinished = null;
-        //serverFinished = null;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static int getRSAKeyLength(PublicKey pk) throws NoSuchAlgorithmException, InvalidKeySpecException {
         BigInteger mod;
         if (pk instanceof RSAKey) {
@@ -592,17 +609,18 @@ public abstract class HandshakeProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.190 -0400", hash_original_method = "824E291676E2CE83DD380D6DD4B4250F", hash_generated_method = "1161DD90D2A5DBD4D9E11BCBF20F168C")
     protected void shutdown() {
         clearMessages();
         session = null;
         preMasterSecret = null;
         delegatedTasks.clear();
-        // ---------- Original Method ----------
-        //clearMessages();
-        //session = null;
-        //preMasterSecret = null;
-        //delegatedTasks.clear();
+        
+        
+        
+        
+        
     }
 
     

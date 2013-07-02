@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class Timer {
@@ -20,15 +20,15 @@ public class Timer {
     public  Timer(String name, boolean isDaemon) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("name is null");
-        } //End block
+        } 
         this.impl = new TimerImpl(name, isDaemon);
         this.finalizer = new FinalizerHelper(impl);
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException("name is null");
-        //}
-        //this.impl = new TimerImpl(name, isDaemon);
-        //this.finalizer = new FinalizerHelper(impl);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -36,7 +36,7 @@ public class Timer {
     public  Timer(String name) {
         this(name, false);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -44,14 +44,14 @@ public class Timer {
     public  Timer(boolean isDaemon) {
         this("Timer-" + Timer.nextId(), isDaemon);
         addTaint(isDaemon);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.919 -0400", hash_original_method = "0270210C5FDC4EA43E305D84D4C8B476", hash_generated_method = "F6B72E5049AAA19123589FFA16EED6C0")
     public  Timer() {
         this(false);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -60,175 +60,184 @@ public class Timer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.919 -0400", hash_original_method = "4F9571F346BBFC93F458CCCC1BA285E2", hash_generated_method = "8B1BBB6959E6C72980148F70ACDA4DC6")
     public void cancel() {
         impl.cancel();
-        // ---------- Original Method ----------
-        //impl.cancel();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.920 -0400", hash_original_method = "0B011E4041136408340083F55A5156B3", hash_generated_method = "94A566BC2E010AFF57E2D073AAF2102D")
     public int purge() {
         {
             int var8E00E955D506B96DA16229A075B2EF35_829109515 = (impl.purge());
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166598474 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166598474;
-        // ---------- Original Method ----------
-        //synchronized (impl) {
-            //return impl.purge();
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.920 -0400", hash_original_method = "11725ACE17CC712A9ECE78E61369355E", hash_generated_method = "0F7B55369E642E573EB094F2A020632A")
     public void schedule(TimerTask task, Date when) {
         {
             boolean var28AAFB18FEC364CA37F6AC4ACB25179C_1654386520 = (when.getTime() < 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         long delay = when.getTime() - System.currentTimeMillis();
         scheduleImpl(task, delay < 0 ? 0 : delay, -1, false);
         addTaint(task.getTaint());
         addTaint(when.getTaint());
-        // ---------- Original Method ----------
-        //if (when.getTime() < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //long delay = when.getTime() - System.currentTimeMillis();
-        //scheduleImpl(task, delay < 0 ? 0 : delay, -1, false);
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.920 -0400", hash_original_method = "C70A5270C6C8A079FCAADE9A65184BCF", hash_generated_method = "663F36CF237CD720B1B6D4E2591E0906")
     public void schedule(TimerTask task, long delay) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         scheduleImpl(task, delay, -1, false);
         addTaint(task.getTaint());
         addTaint(delay);
-        // ---------- Original Method ----------
-        //if (delay < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //scheduleImpl(task, delay, -1, false);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.920 -0400", hash_original_method = "2638FF3E02C15EB097A85AD3BAF82535", hash_generated_method = "2955127A07E6303E52386A78F2D4624E")
     public void schedule(TimerTask task, long delay, long period) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         scheduleImpl(task, delay, period, false);
         addTaint(task.getTaint());
         addTaint(delay);
         addTaint(period);
-        // ---------- Original Method ----------
-        //if (delay < 0 || period <= 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //scheduleImpl(task, delay, period, false);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.921 -0400", hash_original_method = "D1ECD2ED5B40CEEFE097F1521E46D9CD", hash_generated_method = "16CDBD47B04382DCD9F2B23BC26C3310")
     public void schedule(TimerTask task, Date when, long period) {
         {
             boolean var98E3B2ACDC7E58F10263C88A8AF5A4DE_232403564 = (period <= 0 || when.getTime() < 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         long delay = when.getTime() - System.currentTimeMillis();
         scheduleImpl(task, delay < 0 ? 0 : delay, period, false);
         addTaint(task.getTaint());
         addTaint(when.getTaint());
         addTaint(period);
-        // ---------- Original Method ----------
-        //if (period <= 0 || when.getTime() < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //long delay = when.getTime() - System.currentTimeMillis();
-        //scheduleImpl(task, delay < 0 ? 0 : delay, period, false);
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.921 -0400", hash_original_method = "5346126CCA7833D0BFEF2BABD1293D7B", hash_generated_method = "2519AAD2D6626F4BA6E89D2A8982248F")
     public void scheduleAtFixedRate(TimerTask task, long delay, long period) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         scheduleImpl(task, delay, period, true);
         addTaint(task.getTaint());
         addTaint(delay);
         addTaint(period);
-        // ---------- Original Method ----------
-        //if (delay < 0 || period <= 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //scheduleImpl(task, delay, period, true);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.922 -0400", hash_original_method = "6589A168C51AEA92DBDCD8B282926324", hash_generated_method = "2C978E6DB9F8273E8DF381299B42B09A")
     public void scheduleAtFixedRate(TimerTask task, Date when, long period) {
         {
             boolean var98E3B2ACDC7E58F10263C88A8AF5A4DE_1685281993 = (period <= 0 || when.getTime() < 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         long delay = when.getTime() - System.currentTimeMillis();
         scheduleImpl(task, delay, period, true);
         addTaint(task.getTaint());
         addTaint(when.getTaint());
         addTaint(period);
-        // ---------- Original Method ----------
-        //if (period <= 0 || when.getTime() < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //long delay = when.getTime() - System.currentTimeMillis();
-        //scheduleImpl(task, delay, period, true);
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.923 -0400", hash_original_method = "163F6B0C6203677A1F058E56FE2F9B83", hash_generated_method = "E0EBDCC7B54A55642D7484C133EE4F2E")
     private void scheduleImpl(TimerTask task, long delay, long period, boolean fixed) {
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Timer was canceled");
-            } //End block
+            } 
             long when = delay + System.currentTimeMillis();
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Illegal delay to start the TimerTask: " + when);
-            } //End block
+            } 
             {
                 {
                     boolean var6907B24DBA5C82DAA6F3CA1916D2DC39_290809246 = (task.isScheduled());
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("TimerTask is scheduled already");
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("TimerTask is canceled");
-                } //End block
+                } 
                 task.when = when;
                 task.period = period;
                 task.fixedRate = fixed;
-            } //End block
+            } 
             impl.insertTask(task);
-        } //End block
+        } 
         addTaint(task.getTaint());
         addTaint(delay);
         addTaint(period);
         addTaint(fixed);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -250,10 +259,10 @@ public class Timer {
             this.start();
             addTaint(name.getTaint());
             addTaint(isDaemon);
-            // ---------- Original Method ----------
-            //this.setName(name);
-            //this.setDaemon(isDaemon);
-            //this.start();
+            
+            
+            
+            
         }
 
         
@@ -269,73 +278,73 @@ public class Timer {
                             try 
                             {
                                 this.wait();
-                            } //End block
+                            } 
                             catch (InterruptedException ignored)
                             { }
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     long currentTime = System.currentTimeMillis();
                     task = tasks.minimum();
                     long timeToSleep;
                     {
                         {
                             tasks.delete(0);
-                        } //End block
+                        } 
                         timeToSleep = task.when - currentTime;
-                    } //End block
+                    } 
                     {
                         try 
                         {
                             this.wait(timeToSleep);
-                        } //End block
+                        } 
                         catch (InterruptedException ignored)
                         { }
-                    } //End block
+                    } 
                     {
                         int pos = 0;
                         {
                             boolean varF3D982CB1D1D4376F524CD5CE5CEABCA_157646935 = (tasks.minimum().when != task.when);
                             {
                                 pos = tasks.getTask(task);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             tasks.delete(tasks.getTask(task));
-                        } //End block
+                        } 
                         task.setScheduledTime(task.when);
                         tasks.delete(pos);
                         {
                             {
                                 task.when = task.when + task.period;
-                            } //End block
+                            } 
                             {
                                 task.when = System.currentTimeMillis()
                                         + task.period;
-                            } //End block
+                            } 
                             insertTask(task);
-                        } //End block
+                        } 
                         {
                             task.when = 0;
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 boolean taskCompletedNormally = false;
                 try 
                 {
                     task.run();
                     taskCompletedNormally = true;
-                } //End block
+                } 
                 finally 
                 {
                     {
                         {
                             cancelled = true;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                        } 
+                    } 
+                } 
+            } 
+            
+            
         }
 
         
@@ -344,9 +353,9 @@ public class Timer {
             tasks.insert(newTask);
             this.notify();
             addTaint(newTask.getTaint());
-            // ---------- Original Method ----------
-            //tasks.insert(newTask);
-            //this.notify();
+            
+            
+            
         }
 
         
@@ -355,10 +364,10 @@ public class Timer {
             cancelled = true;
             tasks.reset();
             this.notify();
-            // ---------- Original Method ----------
-            //cancelled = true;
-            //tasks.reset();
-            //this.notify();
+            
+            
+            
+            
         }
 
         
@@ -366,18 +375,18 @@ public class Timer {
         public int purge() {
             {
                 boolean var94892AA28B9C9E2A6A9FBA5CBDBF08E1_1498282876 = (tasks.isEmpty());
-            } //End collapsed parenthetic
+            } 
             tasks.deletedCancelledNumber = 0;
             tasks.deleteIfCancelled();
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_13395315 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_13395315;
-            // ---------- Original Method ----------
-            //if (tasks.isEmpty()) {
-                //return 0;
-            //}
-            //tasks.deletedCancelledNumber = 0;
-            //tasks.deleteIfCancelled();
-            //return tasks.deletedCancelledNumber;
+            
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -398,18 +407,18 @@ public class Timer {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.953 -0400", hash_original_method = "8C2F50BDBBFD0A7BB81F89CAC3407288", hash_generated_method = "8C2F50BDBBFD0A7BB81F89CAC3407288")
             public TimerHeap ()
             {
-                //Synthesized constructor
+                
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.954 -0400", hash_original_method = "54D4D4169DAC5C26DC557B9A789FA70D", hash_generated_method = "327CD31BD0CA81CF47F5148CD87EF858")
             public TimerTask minimum() {
-                TimerTask varB4EAC82CA7396A68D541C85D26508E83_1368371109 = null; //Variable for return #1
+                TimerTask varB4EAC82CA7396A68D541C85D26508E83_1368371109 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_1368371109 = timers[0];
-                varB4EAC82CA7396A68D541C85D26508E83_1368371109.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1368371109.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1368371109;
-                // ---------- Original Method ----------
-                //return timers[0];
+                
+                
             }
 
             
@@ -417,8 +426,8 @@ public class Timer {
             public boolean isEmpty() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_468914170 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_468914170;
-                // ---------- Original Method ----------
-                //return size == 0;
+                
+                
             }
 
             
@@ -428,17 +437,17 @@ public class Timer {
                     TimerTask[] appendedTimers = new TimerTask[size * 2];
                     System.arraycopy(timers, 0, appendedTimers, 0, size);
                     timers = appendedTimers;
-                } //End block
+                } 
                 timers[size++] = task;
                 upHeap();
-                // ---------- Original Method ----------
-                //if (timers.length == size) {
-                    //TimerTask[] appendedTimers = new TimerTask[size * 2];
-                    //System.arraycopy(timers, 0, appendedTimers, 0, size);
-                    //timers = appendedTimers;
-                //}
-                //timers[size++] = task;
-                //upHeap();
+                
+                
+                    
+                    
+                    
+                
+                
+                
             }
 
             
@@ -448,13 +457,13 @@ public class Timer {
                     timers[pos] = timers[--size];
                     timers[size] = null;
                     downHeap(pos);
-                } //End block
-                // ---------- Original Method ----------
-                //if (pos >= 0 && pos < size) {
-                    //timers[pos] = timers[--size];
-                    //timers[size] = null;
-                    //downHeap(pos);
-                //}
+                } 
+                
+                
+                    
+                    
+                    
+                
             }
 
             
@@ -468,17 +477,17 @@ public class Timer {
                     timers[parent] = tmp;
                     current = parent;
                     parent = (current - 1) / 2;
-                } //End block
-                // ---------- Original Method ----------
-                //int current = size - 1;
-                //int parent = (current - 1) / 2;
-                //while (timers[current].when < timers[parent].when) {
-                    //TimerTask tmp = timers[current];
-                    //timers[current] = timers[parent];
-                    //timers[parent] = tmp;
-                    //current = parent;
-                    //parent = (current - 1) / 2;
-                //}
+                } 
+                
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                
             }
 
             
@@ -492,25 +501,25 @@ public class Timer {
                     timers[child] = tmp;
                     current = child;
                     child = 2 * current + 1;
-                } //End block
+                } 
                 addTaint(pos);
-                // ---------- Original Method ----------
-                //int current = pos;
-                //int child = 2 * current + 1;
-                //while (child < size && size > 0) {
-                    //if (child + 1 < size
-                            //&& timers[child + 1].when < timers[child].when) {
-                        //child++;
-                    //}
-                    //if (timers[current].when < timers[child].when) {
-                        //break;
-                    //}
-                    //TimerTask tmp = timers[current];
-                    //timers[current] = timers[child];
-                    //timers[child] = tmp;
-                    //current = child;
-                    //child = 2 * current + 1;
-                //}
+                
+                
+                
+                
+                    
+                            
+                        
+                    
+                    
+                        
+                    
+                    
+                    
+                    
+                    
+                    
+                
             }
 
             
@@ -518,17 +527,17 @@ public class Timer {
             public void reset() {
                 timers = new TimerTask[DEFAULT_HEAP_SIZE];
                 size = 0;
-                // ---------- Original Method ----------
-                //timers = new TimerTask[DEFAULT_HEAP_SIZE];
-                //size = 0;
+                
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.960 -0400", hash_original_method = "D8C208FA954780F7AF0BEF19488333D3", hash_generated_method = "655D2B1724BE5C017764F419A1F28993")
             public void adjustMinimum() {
                 downHeap(0);
-                // ---------- Original Method ----------
-                //downHeap(0);
+                
+                
             }
 
             
@@ -539,17 +548,17 @@ public class Timer {
                     {
                         {
                             delete(i);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-                // ---------- Original Method ----------
-                //for (int i = 0; i < size; i++) {
-                    //if (timers[i].cancelled) {
-                        //deletedCancelledNumber++;
-                        //delete(i);
-                        //i--;
-                    //}
-                //}
+                        } 
+                    } 
+                } 
+                
+                
+                    
+                        
+                        
+                        
+                    
+                
             }
 
             
@@ -557,17 +566,17 @@ public class Timer {
             private int getTask(TimerTask task) {
                 {
                     int i = 0;
-                } //End collapsed parenthetic
+                } 
                 addTaint(task.getTaint());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1420481164 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1420481164;
-                // ---------- Original Method ----------
-                //for (int i = 0; i < timers.length; i++) {
-                    //if (timers[i] == task) {
-                        //return i;
-                    //}
-                //}
-                //return -1;
+                
+                
+                    
+                        
+                    
+                
+                
             }
 
             
@@ -587,8 +596,8 @@ public class Timer {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.961 -0400", hash_original_method = "433E2FD3ED4C8DEDF63A6DA216B65604", hash_generated_method = "4CBFABE13119C5255BCBDD03AEBE9965")
           FinalizerHelper(TimerImpl impl) {
             this.impl = impl;
-            // ---------- Original Method ----------
-            //this.impl = impl;
+            
+            
         }
 
         
@@ -600,21 +609,21 @@ public class Timer {
                 {
                     impl.finished = true;
                     impl.notify();
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 super.finalize();
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //synchronized (impl) {
-                    //impl.finished = true;
-                    //impl.notify();
-                //}
-            //} finally {
-                //super.finalize();
-            //}
+            } 
+            
+            
+                
+                    
+                    
+                
+            
+                
+            
         }
 
         

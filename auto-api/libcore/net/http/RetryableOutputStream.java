@@ -1,11 +1,11 @@
 package libcore.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -24,9 +24,9 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
     public  RetryableOutputStream(int limit) {
         this.limit = limit;
         this.content = new ByteArrayOutputStream(limit);
-        // ---------- Original Method ----------
-        //this.limit = limit;
-        //this.content = new ByteArrayOutputStream(limit);
+        
+        
+        
     }
 
     
@@ -34,12 +34,13 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
     public  RetryableOutputStream() {
         this.limit = -1;
         this.content = new ByteArrayOutputStream();
-        // ---------- Original Method ----------
-        //this.limit = -1;
-        //this.content = new ByteArrayOutputStream();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.682 -0400", hash_original_method = "01295B07B18E8DACBE5B67B8ED73AB45", hash_generated_method = "028CC836BEEE83DA929B6CA6E2FCF592")
     @Override
     public synchronized void close() throws IOException {
@@ -49,20 +50,21 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("content-length promised "
                     + limit + " bytes, but received " + content.size());
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (closed) {
-            //return;
-        //}
-        //closed = true;
-        //if (content.size() < limit) {
-            //throw new IOException("content-length promised "
-                    //+ limit + " bytes, but received " + content.size());
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.682 -0400", hash_original_method = "E1F3BEFD89D2B57927FA9AF72B0F2441", hash_generated_method = "75C74A8407F349AA7A5989CE2AC6D811")
     @Override
     public synchronized void write(byte[] buffer, int offset, int count) throws IOException {
@@ -72,40 +74,42 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
             boolean varFBB799FD761160C95C8FC26A815AB363_1449086305 = (limit != -1 && content.size() > limit - count);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("exceeded content-length limit of " + limit + " bytes");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         content.write(buffer, offset, count);
         addTaint(buffer[0]);
         addTaint(offset);
         addTaint(count);
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //Arrays.checkOffsetAndCount(buffer.length, offset, count);
-        //if (limit != -1 && content.size() > limit - count) {
-            //throw new IOException("exceeded content-length limit of " + limit + " bytes");
-        //}
-        //content.write(buffer, offset, count);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.683 -0400", hash_original_method = "D6DA405C75C9B4A91F36F560BEF2D916", hash_generated_method = "1CAE2101E41E4F8CEB49D12124446827")
     public synchronized int contentLength() throws IOException {
         close();
         int varDB70D34537E06261AFD915EBB900B2E4_270135286 = (content.size());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_137221962 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_137221962;
-        // ---------- Original Method ----------
-        //close();
-        //return content.size();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.683 -0400", hash_original_method = "13EC0747B327446249F03815D15BF368", hash_generated_method = "8956C120F517D63DF06A87C9F18A9571")
     public void writeToSocket(OutputStream socketOut) throws IOException {
         content.writeTo(socketOut);
         addTaint(socketOut.getTaint());
-        // ---------- Original Method ----------
-        //content.writeTo(socketOut);
+        
+        
     }
 
     

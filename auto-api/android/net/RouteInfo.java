@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -35,33 +35,33 @@ public class RouteInfo implements Parcelable {
             {
                 {
                     destination = new LinkAddress(Inet4Address.ANY, 0);
-                } //End block
+                } 
                 {
                     destination = new LinkAddress(Inet6Address.ANY, 0);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Invalid arguments passed in.");
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 boolean var9EBB9AD2F167F7EC69DAE24F357BC566_1024074520 = (destination.getAddress() instanceof Inet4Address);
                 {
                     gateway = Inet4Address.ANY;
-                } //End block
+                } 
                 {
                     gateway = Inet6Address.ANY;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mDestination = new LinkAddress(NetworkUtils.getNetworkPart(destination.getAddress(),
                 destination.getNetworkPrefixLength()), destination.getNetworkPrefixLength());
         mGateway = gateway;
         mIsDefault = isDefault();
         mIsHost = isHost();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -69,15 +69,17 @@ public class RouteInfo implements Parcelable {
     public  RouteInfo(InetAddress gateway) {
         this(null, gateway);
         addTaint(gateway.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static RouteInfo makeHostRoute(InetAddress host) {
         return makeHostRoute(host, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static RouteInfo makeHostRoute(InetAddress host, InetAddress gateway) {
         if (host == null) return null;
         if (host instanceof Inet4Address) {
@@ -88,61 +90,63 @@ public class RouteInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.972 -0400", hash_original_method = "BB5D6BF5854981BD1DD4B0D75DB6E8C7", hash_generated_method = "85A35C19503565F221E116DE6FA10A34")
     private boolean isHost() {
         boolean var47BFA14530C4B496D917771FE378958A_2038330170 = ((mGateway.equals(Inet4Address.ANY) || mGateway.equals(Inet6Address.ANY)));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1053450839 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1053450839;
-        // ---------- Original Method ----------
-        //return (mGateway.equals(Inet4Address.ANY) || mGateway.equals(Inet6Address.ANY));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.972 -0400", hash_original_method = "FAF1A1F97A113F82E8429CDDF8F77F02", hash_generated_method = "1576FBAD0B74327468AD811F0ACA266A")
     private boolean isDefault() {
         boolean val = false;
         {
             {
                 val = (mDestination == null || mDestination.getNetworkPrefixLength() == 0);
-            } //End block
+            } 
             {
                 val = (mDestination == null || mDestination.getNetworkPrefixLength() == 0);
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2116994630 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2116994630;
-        // ---------- Original Method ----------
-        //boolean val = false;
-        //if (mGateway != null) {
-            //if (mGateway instanceof Inet4Address) {
-                //val = (mDestination == null || mDestination.getNetworkPrefixLength() == 0);
-            //} else {
-                //val = (mDestination == null || mDestination.getNetworkPrefixLength() == 0);
-            //}
-        //}
-        //return val;
+        
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.974 -0400", hash_original_method = "1DFF4C9A700CC3886F6C70CFCDBFA85F", hash_generated_method = "8FAAFFE04F176A878FE96503DC7A23BE")
     public LinkAddress getDestination() {
-        LinkAddress varB4EAC82CA7396A68D541C85D26508E83_1208230535 = null; //Variable for return #1
+        LinkAddress varB4EAC82CA7396A68D541C85D26508E83_1208230535 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1208230535 = mDestination;
-        varB4EAC82CA7396A68D541C85D26508E83_1208230535.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1208230535.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1208230535;
-        // ---------- Original Method ----------
-        //return mDestination;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.974 -0400", hash_original_method = "EBF08E83FF9E78B73EDA9A9990BB8494", hash_generated_method = "9BF800A707FA7867B8444ECEE6F3903F")
     public InetAddress getGateway() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1224171908 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1224171908 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1224171908 = mGateway;
-        varB4EAC82CA7396A68D541C85D26508E83_1224171908.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1224171908.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1224171908;
-        // ---------- Original Method ----------
-        //return mGateway;
+        
+        
     }
 
     
@@ -150,8 +154,8 @@ public class RouteInfo implements Parcelable {
     public boolean isDefaultRoute() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1929579596 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1929579596;
-        // ---------- Original Method ----------
-        //return mIsDefault;
+        
+        
     }
 
     
@@ -159,25 +163,26 @@ public class RouteInfo implements Parcelable {
     public boolean isHostRoute() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_954543082 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_954543082;
-        // ---------- Original Method ----------
-        //return mIsHost;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.976 -0400", hash_original_method = "0AA1B383C324478F235BB186C8938BCB", hash_generated_method = "2F16EFD633C9B1F0A528C2B7950EC759")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1159912834 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1159912834 = null; 
         String val = "";
         val = mDestination.toString();
         val += " -> " + mGateway.getHostAddress();
         varB4EAC82CA7396A68D541C85D26508E83_1159912834 = val;
-        varB4EAC82CA7396A68D541C85D26508E83_1159912834.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1159912834.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1159912834;
-        // ---------- Original Method ----------
-        //String val = "";
-        //if (mDestination != null) val = mDestination.toString();
-        //if (mGateway != null) val += " -> " + mGateway.getHostAddress();
-        //return val;
+        
+        
+        
+        
+        
     }
 
     
@@ -185,47 +190,49 @@ public class RouteInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1585638789 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1585638789;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.976 -0400", hash_original_method = "75D0FB165031E3DBB8B900D70000DB62", hash_generated_method = "6D392BF5D3A58C86E54B925EE2822F35")
     public void writeToParcel(Parcel dest, int flags) {
         {
             dest.writeByte((byte) 0);
-        } //End block
+        } 
         {
             dest.writeByte((byte) 1);
             dest.writeByteArray(mDestination.getAddress().getAddress());
             dest.writeInt(mDestination.getNetworkPrefixLength());
-        } //End block
+        } 
         {
             dest.writeByte((byte) 0);
-        } //End block
+        } 
         {
             dest.writeByte((byte) 1);
             dest.writeByteArray(mGateway.getAddress());
-        } //End block
+        } 
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (mDestination == null) {
-            //dest.writeByte((byte) 0);
-        //} else {
-            //dest.writeByte((byte) 1);
-            //dest.writeByteArray(mDestination.getAddress().getAddress());
-            //dest.writeInt(mDestination.getNetworkPrefixLength());
-        //}
-        //if (mGateway == null) {
-            //dest.writeByte((byte) 0);
-        //} else {
-            //dest.writeByte((byte) 1);
-            //dest.writeByteArray(mGateway.getAddress());
-        //}
+        
+        
+            
+        
+            
+            
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.977 -0400", hash_original_method = "5CF3A2DBAE721423A1CBA779912D2779", hash_generated_method = "110AAC0765ECB84C63D7BC167E447DB1")
     @Override
     public boolean equals(Object obj) {
@@ -239,56 +246,59 @@ public class RouteInfo implements Parcelable {
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1697424662 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1697424662;
-        // ---------- Original Method ----------
-        //if (this == obj) return true;
-        //if (!(obj instanceof RouteInfo)) return false;
-        //RouteInfo target = (RouteInfo) obj;
-        //boolean sameDestination = ( mDestination == null) ?
-                //target.getDestination() == null
-                //: mDestination.equals(target.getDestination());
-        //boolean sameAddress = (mGateway == null) ?
-                //target.getGateway() == null
-                //: mGateway.equals(target.getGateway());
-        //return sameDestination && sameAddress
-            //&& mIsDefault == target.mIsDefault;
+        
+        
+        
+        
+        
+                
+                
+        
+                
+                
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.977 -0400", hash_original_method = "BB776300BCED21F4485D8738DE0E6814", hash_generated_method = "CF3E68EE702452E11F274AA8693CBC69")
     @Override
     public int hashCode() {
         int varFECAFB0F1FEE2C4DF70A1FF7F20C39A7_1697787116 = ((mDestination == null ? 0 : mDestination.hashCode())
             + (mGateway == null ? 0 :mGateway.hashCode())
-            + (mIsDefault ? 3 : 7)); //DSFIXME:  CODE0008: Nested ternary operator in expression
+            + (mIsDefault ? 3 : 7)); 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_910839350 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_910839350;
-        // ---------- Original Method ----------
-        //return (mDestination == null ? 0 : mDestination.hashCode())
-            //+ (mGateway == null ? 0 :mGateway.hashCode())
-            //+ (mIsDefault ? 3 : 7);
+        
+        
+            
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.978 -0400", hash_original_method = "CBA981572951BCD1DD27D7FBA4D7D8C9", hash_generated_method = "46ED3C7A72161DE68E1D0EB243F2643E")
     private boolean matches(InetAddress destination) {
         {
             boolean var159E492D9519415ECBACE0F2B303DC2A_2110032314 = (isDefault());
-        } //End collapsed parenthetic
+        } 
         InetAddress dstNet = NetworkUtils.getNetworkPart(destination,
                 mDestination.getNetworkPrefixLength());
         boolean var99C6B9679C063B6179E46A7C4C28C68A_1964862655 = (mDestination.getAddress().equals(dstNet));
         addTaint(destination.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1143098153 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1143098153;
-        // ---------- Original Method ----------
-        //if (destination == null) return false;
-        //if (isDefault()) return true;
-        //InetAddress dstNet = NetworkUtils.getNetworkPart(destination,
-                //mDestination.getNetworkPrefixLength());
-        //return mDestination.getAddress().equals(dstNet);
+        
+        
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static RouteInfo selectBestRoute(Collection<RouteInfo> routes, InetAddress dest) {
         if ((routes == null) || (dest == null)) return null;
         RouteInfo bestRoute = null;
@@ -345,7 +355,7 @@ public class RouteInfo implements Parcelable {
             return new RouteInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public RouteInfo createFromParcel(Parcel in) {
             InetAddress destAddr = null;
             int prefix = 0;
@@ -377,7 +387,7 @@ public class RouteInfo implements Parcelable {
             return new RouteInfo(dest, gateway);
         }
     
-    // orphaned legacy method
+    
     public RouteInfo[] newArray(int size) {
             return new RouteInfo[size];
         }

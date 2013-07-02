@@ -1,11 +1,11 @@
 package dalvik.system;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -27,7 +27,7 @@ public final class DexFile {
     public  DexFile(File file) throws IOException {
         this(file.getPath());
         addTaint(file.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -36,10 +36,10 @@ public final class DexFile {
         mCookie = openDexFile(fileName, null, 0);
         mFileName = fileName;
         guard.open("close");
-        // ---------- Original Method ----------
-        //mCookie = openDexFile(fileName, null, 0);
-        //mFileName = fileName;
-        //guard.open("close");
+        
+        
+        
+        
     }
 
     
@@ -48,10 +48,10 @@ public final class DexFile {
         mCookie = openDexFile(sourceName, outputName, flags);
         mFileName = sourceName;
         guard.open("close");
-        // ---------- Original Method ----------
-        //mCookie = openDexFile(sourceName, outputName, flags);
-        //mFileName = sourceName;
-        //guard.open("close");
+        
+        
+        
+        
     }
 
     
@@ -63,12 +63,12 @@ public final class DexFile {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.650 -0400", hash_original_method = "DFE26EB6CF2622DAE30C5BD1FDBCFEE9", hash_generated_method = "CD4398CF109B4EAD6BC5AAFCFA391918")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_181510391 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_181510391 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_181510391 = mFileName;
-        varB4EAC82CA7396A68D541C85D26508E83_181510391.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_181510391.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_181510391;
-        // ---------- Original Method ----------
-        //return mFileName;
+        
+        
     }
 
     
@@ -77,61 +77,55 @@ public final class DexFile {
         guard.close();
         closeDexFile(mCookie);
         mCookie = 0;
-        // ---------- Original Method ----------
-        //guard.close();
-        //closeDexFile(mCookie);
-        //mCookie = 0;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.651 -0400", hash_original_method = "292E8055A30ED290AAAD3D0A5C7397D8", hash_generated_method = "724610FE5364D69B6E8E57A4F649E645")
     public Class loadClass(String name, ClassLoader loader) {
-        Class varB4EAC82CA7396A68D541C85D26508E83_1827955259 = null; //Variable for return #1
+        Class varB4EAC82CA7396A68D541C85D26508E83_1827955259 = null; 
         String slashName = name.replace('.', '/');
         varB4EAC82CA7396A68D541C85D26508E83_1827955259 = loadClassBinaryName(slashName, loader);
         addTaint(name.getTaint());
         addTaint(loader.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1827955259.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1827955259.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1827955259;
-        // ---------- Original Method ----------
-        //String slashName = name.replace('.', '/');
-        //return loadClassBinaryName(slashName, loader);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.651 -0400", hash_original_method = "66D81951CD1FBB575468E800A0D13125", hash_generated_method = "EFFED9465789BB2ED3870D97E83E0FF9")
     public Class loadClassBinaryName(String name, ClassLoader loader) {
-    	/* Removing the class loader call to defineClass
-        Class varB4EAC82CA7396A68D541C85D26508E83_722685957 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_722685957 = defineClass(name, loader, mCookie);
-        */
+    	
         addTaint(name.getTaint());
         addTaint(loader.getTaint());
         Class newClass = (Class)new Object();
         addTaint(newClass.getTaint());
         return newClass;
-        //varB4EAC82CA7396A68D541C85D26508E83_722685957.addTaint(getTaint()); //Add taint from parent
-        //return varB4EAC82CA7396A68D541C85D26508E83_722685957;
-        // ---------- Original Method ----------
-        //return defineClass(name, loader, mCookie);
+        
+        
+        
+        
     }
 
     
-    /* Removing the class loader call to defineClass
-    private static Class defineClass(String name, ClassLoader loader, int cookie) {
-                //DSFIXME:  This shouldn't happen!
-    }
-    */
+    
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.652 -0400", hash_original_method = "51AB769B18373F25E42ACAB5FC64B8CC", hash_generated_method = "38D5B706B89751CC14553B038B813969")
     public Enumeration<String> entries() {
-        Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_366161473 = null; //Variable for return #1
+        Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_366161473 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_366161473 = new DFEnum(this);
-        varB4EAC82CA7396A68D541C85D26508E83_366161473.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_366161473.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_366161473;
-        // ---------- Original Method ----------
-        //return new DFEnum(this);
+        
+        
     }
 
     
@@ -149,22 +143,22 @@ public final class DexFile {
         {
             {
                 guard.warnIfOpen();
-            } //End block
+            } 
             close();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (guard != null) {
-                //guard.warnIfOpen();
-            //}
-            //close();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -204,9 +198,9 @@ public final class DexFile {
             mIndex = 0;
             mNameList = getClassNameList(mCookie);
             addTaint(df.getTaint());
-            // ---------- Original Method ----------
-            //mIndex = 0;
-            //mNameList = getClassNameList(mCookie);
+            
+            
+            
         }
 
         
@@ -214,19 +208,19 @@ public final class DexFile {
         public boolean hasMoreElements() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1554841106 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1554841106;
-            // ---------- Original Method ----------
-            //return (mIndex < mNameList.length);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.655 -0400", hash_original_method = "EDE97A24B23321A2938B638C5AA975A1", hash_generated_method = "B2188616125B4E794077892B10B25491")
         public String nextElement() {
-            String varB4EAC82CA7396A68D541C85D26508E83_750601599 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_750601599 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_750601599 = mNameList[mIndex++];
-            varB4EAC82CA7396A68D541C85D26508E83_750601599.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_750601599.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_750601599;
-            // ---------- Original Method ----------
-            //return mNameList[mIndex++];
+            
+            
         }
 
         

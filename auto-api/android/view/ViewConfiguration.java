@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.AppGlobals;
 import android.content.Context;
@@ -83,21 +83,21 @@ public class ViewConfiguration {
         mOverscrollDistance = OVERSCROLL_DISTANCE;
         mOverflingDistance = OVERFLING_DISTANCE;
         mFadingMarqueeEnabled = true;
-        // ---------- Original Method ----------
-        //mEdgeSlop = EDGE_SLOP;
-        //mFadingEdgeLength = FADING_EDGE_LENGTH;
-        //mMinimumFlingVelocity = MINIMUM_FLING_VELOCITY;
-        //mMaximumFlingVelocity = MAXIMUM_FLING_VELOCITY;
-        //mScrollbarSize = SCROLL_BAR_SIZE;
-        //mTouchSlop = TOUCH_SLOP;
-        //mPagingTouchSlop = PAGING_TOUCH_SLOP;
-        //mDoubleTapSlop = DOUBLE_TAP_SLOP;
-        //mScaledTouchExplorationTapSlop = TOUCH_EXPLORATION_TAP_SLOP;
-        //mWindowTouchSlop = WINDOW_TOUCH_SLOP;
-        //mMaximumDrawingCacheSize = MAXIMUM_DRAWING_CACHE_SIZE;
-        //mOverscrollDistance = OVERSCROLL_DISTANCE;
-        //mOverflingDistance = OVERFLING_DISTANCE;
-        //mFadingMarqueeEnabled = true;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -112,11 +112,11 @@ public class ViewConfiguration {
             boolean var671BB1C47693047493CD39622A896334_748738295 = (config.isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_XLARGE));
             {
                 sizeAndDensity = density * 1.5f;
-            } //End block
+            } 
             {
                 sizeAndDensity = density;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mEdgeSlop = (int) (sizeAndDensity * EDGE_SLOP + 0.5f);
         mFadingEdgeLength = (int) (sizeAndDensity * FADING_EDGE_LENGTH + 0.5f);
         mMinimumFlingVelocity = (int) (density * MINIMUM_FLING_VELOCITY + 0.5f);
@@ -134,23 +134,24 @@ public class ViewConfiguration {
             {
                 sHasPermanentMenuKey = wm.canStatusBarHide() && !wm.hasNavigationBar();
                 sHasPermanentMenuKeySet = true;
-            } //End block
+            } 
             catch (RemoteException ex)
             {
                 sHasPermanentMenuKey = false;
-            } //End block
-        } //End block
+            } 
+        } 
         mFadingMarqueeEnabled = res.getBoolean(
                 com.android.internal.R.bool.config_ui_enableFadingMarquee);
         mTouchSlop = res.getDimensionPixelSize(
                 com.android.internal.R.dimen.config_viewConfigurationTouchSlop);
         mPagingTouchSlop = mTouchSlop * 2;
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ViewConfiguration get(Context context) {
         final DisplayMetrics metrics = context.getResources().getDisplayMetrics();
         final int density = (int) (100.0f * metrics.density);
@@ -173,8 +174,8 @@ public class ViewConfiguration {
     public int getScaledScrollBarSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1354611346 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1354611346;
-        // ---------- Original Method ----------
-        //return mScrollbarSize;
+        
+        
     }
 
     
@@ -198,8 +199,8 @@ public class ViewConfiguration {
     public int getScaledFadingEdgeLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1637395273 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1637395273;
-        // ---------- Original Method ----------
-        //return mFadingEdgeLength;
+        
+        
     }
 
     
@@ -208,12 +209,14 @@ public class ViewConfiguration {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getLongPressTimeout() {
         return AppGlobals.getIntCoreSetting(Settings.Secure.LONG_PRESS_TIMEOUT,
                 DEFAULT_LONG_PRESS_TIMEOUT);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getKeyRepeatTimeout() {
         return getLongPressTimeout();
     }
@@ -259,8 +262,8 @@ public class ViewConfiguration {
     public int getScaledEdgeSlop() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_222401708 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_222401708;
-        // ---------- Original Method ----------
-        //return mEdgeSlop;
+        
+        
     }
 
     
@@ -274,8 +277,8 @@ public class ViewConfiguration {
     public int getScaledTouchSlop() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061128208 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061128208;
-        // ---------- Original Method ----------
-        //return mTouchSlop;
+        
+        
     }
 
     
@@ -283,8 +286,8 @@ public class ViewConfiguration {
     public int getScaledPagingTouchSlop() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2038364240 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2038364240;
-        // ---------- Original Method ----------
-        //return mPagingTouchSlop;
+        
+        
     }
 
     
@@ -298,8 +301,8 @@ public class ViewConfiguration {
     public int getScaledDoubleTapSlop() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1884184613 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1884184613;
-        // ---------- Original Method ----------
-        //return mDoubleTapSlop;
+        
+        
     }
 
     
@@ -307,8 +310,8 @@ public class ViewConfiguration {
     public int getScaledTouchExplorationTapSlop() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_33715896 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_33715896;
-        // ---------- Original Method ----------
-        //return mScaledTouchExplorationTapSlop;
+        
+        
     }
 
     
@@ -327,8 +330,8 @@ public class ViewConfiguration {
     public int getScaledWindowTouchSlop() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_869937363 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_869937363;
-        // ---------- Original Method ----------
-        //return mWindowTouchSlop;
+        
+        
     }
 
     
@@ -342,8 +345,8 @@ public class ViewConfiguration {
     public int getScaledMinimumFlingVelocity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_364887701 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_364887701;
-        // ---------- Original Method ----------
-        //return mMinimumFlingVelocity;
+        
+        
     }
 
     
@@ -357,8 +360,8 @@ public class ViewConfiguration {
     public int getScaledMaximumFlingVelocity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_720948010 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_720948010;
-        // ---------- Original Method ----------
-        //return mMaximumFlingVelocity;
+        
+        
     }
 
     
@@ -372,8 +375,8 @@ public class ViewConfiguration {
     public int getScaledMaximumDrawingCacheSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_125963922 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_125963922;
-        // ---------- Original Method ----------
-        //return mMaximumDrawingCacheSize;
+        
+        
     }
 
     
@@ -381,8 +384,8 @@ public class ViewConfiguration {
     public int getScaledOverscrollDistance() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_630610154 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_630610154;
-        // ---------- Original Method ----------
-        //return mOverscrollDistance;
+        
+        
     }
 
     
@@ -390,8 +393,8 @@ public class ViewConfiguration {
     public int getScaledOverflingDistance() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1023876613 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1023876613;
-        // ---------- Original Method ----------
-        //return mOverflingDistance;
+        
+        
     }
 
     
@@ -414,8 +417,8 @@ public class ViewConfiguration {
     public boolean hasPermanentMenuKey() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_820786700 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_820786700;
-        // ---------- Original Method ----------
-        //return sHasPermanentMenuKey;
+        
+        
     }
 
     
@@ -423,8 +426,8 @@ public class ViewConfiguration {
     public boolean isFadingMarqueeEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_955728966 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_955728966;
-        // ---------- Original Method ----------
-        //return mFadingMarqueeEnabled;
+        
+        
     }
 
     

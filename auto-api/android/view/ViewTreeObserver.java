@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Rect;
 import android.graphics.Region;
@@ -37,7 +37,7 @@ public final class ViewTreeObserver {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.622 -0400", hash_original_method = "CC9985AE6D7058390B2C51E91CCE49A3", hash_generated_method = "5739F6075FCB84039D6115D26517DF4C")
       ViewTreeObserver() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -46,46 +46,46 @@ public final class ViewTreeObserver {
         {
             {
                 mOnGlobalFocusListeners.addAll(observer.mOnGlobalFocusListeners);
-            } //End block
+            } 
             {
                 mOnGlobalFocusListeners = observer.mOnGlobalFocusListeners;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mOnGlobalLayoutListeners.addAll(observer.mOnGlobalLayoutListeners);
-            } //End block
+            } 
             {
                 mOnGlobalLayoutListeners = observer.mOnGlobalLayoutListeners;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mOnPreDrawListeners.addAll(observer.mOnPreDrawListeners);
-            } //End block
+            } 
             {
                 mOnPreDrawListeners = observer.mOnPreDrawListeners;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mOnTouchModeChangeListeners.addAll(observer.mOnTouchModeChangeListeners);
-            } //End block
+            } 
             {
                 mOnTouchModeChangeListeners = observer.mOnTouchModeChangeListeners;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mOnComputeInternalInsetsListeners.addAll(observer.mOnComputeInternalInsetsListeners);
-            } //End block
+            } 
             {
                 mOnComputeInternalInsetsListeners = observer.mOnComputeInternalInsetsListeners;
-            } //End block
-        } //End block
+            } 
+        } 
         observer.kill();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -94,15 +94,15 @@ public final class ViewTreeObserver {
         checkIsAlive();
         {
             mOnGlobalFocusListeners = new CopyOnWriteArrayList<OnGlobalFocusChangeListener>();
-        } //End block
+        } 
         mOnGlobalFocusListeners.add(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnGlobalFocusListeners == null) {
-            //mOnGlobalFocusListeners = new CopyOnWriteArrayList<OnGlobalFocusChangeListener>();
-        //}
-        //mOnGlobalFocusListeners.add(listener);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -111,12 +111,12 @@ public final class ViewTreeObserver {
         checkIsAlive();
         mOnGlobalFocusListeners.remove(victim);
         addTaint(victim.getTaint());
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnGlobalFocusListeners == null) {
-            //return;
-        //}
-        //mOnGlobalFocusListeners.remove(victim);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -125,15 +125,15 @@ public final class ViewTreeObserver {
         checkIsAlive();
         {
             mOnGlobalLayoutListeners = new CopyOnWriteArrayList<OnGlobalLayoutListener>();
-        } //End block
+        } 
         mOnGlobalLayoutListeners.add(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnGlobalLayoutListeners == null) {
-            //mOnGlobalLayoutListeners = new CopyOnWriteArrayList<OnGlobalLayoutListener>();
-        //}
-        //mOnGlobalLayoutListeners.add(listener);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -142,12 +142,12 @@ public final class ViewTreeObserver {
         checkIsAlive();
         mOnGlobalLayoutListeners.remove(victim);
         addTaint(victim.getTaint());
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnGlobalLayoutListeners == null) {
-            //return;
-        //}
-        //mOnGlobalLayoutListeners.remove(victim);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -156,15 +156,15 @@ public final class ViewTreeObserver {
         checkIsAlive();
         {
             mOnPreDrawListeners = new ArrayList<OnPreDrawListener>();
-        } //End block
+        } 
         mOnPreDrawListeners.add(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnPreDrawListeners == null) {
-            //mOnPreDrawListeners = new ArrayList<OnPreDrawListener>();
-        //}
-        //mOnPreDrawListeners.add(listener);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -173,12 +173,12 @@ public final class ViewTreeObserver {
         checkIsAlive();
         mOnPreDrawListeners.remove(victim);
         addTaint(victim.getTaint());
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnPreDrawListeners == null) {
-            //return;
-        //}
-        //mOnPreDrawListeners.remove(victim);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -187,15 +187,15 @@ public final class ViewTreeObserver {
         checkIsAlive();
         {
             mOnScrollChangedListeners = new CopyOnWriteArrayList<OnScrollChangedListener>();
-        } //End block
+        } 
         mOnScrollChangedListeners.add(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnScrollChangedListeners == null) {
-            //mOnScrollChangedListeners = new CopyOnWriteArrayList<OnScrollChangedListener>();
-        //}
-        //mOnScrollChangedListeners.add(listener);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -204,12 +204,12 @@ public final class ViewTreeObserver {
         checkIsAlive();
         mOnScrollChangedListeners.remove(victim);
         addTaint(victim.getTaint());
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnScrollChangedListeners == null) {
-            //return;
-        //}
-        //mOnScrollChangedListeners.remove(victim);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -218,15 +218,15 @@ public final class ViewTreeObserver {
         checkIsAlive();
         {
             mOnTouchModeChangeListeners = new CopyOnWriteArrayList<OnTouchModeChangeListener>();
-        } //End block
+        } 
         mOnTouchModeChangeListeners.add(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnTouchModeChangeListeners == null) {
-            //mOnTouchModeChangeListeners = new CopyOnWriteArrayList<OnTouchModeChangeListener>();
-        //}
-        //mOnTouchModeChangeListeners.add(listener);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -235,12 +235,12 @@ public final class ViewTreeObserver {
         checkIsAlive();
         mOnTouchModeChangeListeners.remove(victim);
         addTaint(victim.getTaint());
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnTouchModeChangeListeners == null) {
-            //return;
-        //}
-        //mOnTouchModeChangeListeners.remove(victim);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -250,16 +250,16 @@ public final class ViewTreeObserver {
         {
             mOnComputeInternalInsetsListeners =
                     new CopyOnWriteArrayList<OnComputeInternalInsetsListener>();
-        } //End block
+        } 
         mOnComputeInternalInsetsListeners.add(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnComputeInternalInsetsListeners == null) {
-            //mOnComputeInternalInsetsListeners =
-                    //new CopyOnWriteArrayList<OnComputeInternalInsetsListener>();
-        //}
-        //mOnComputeInternalInsetsListeners.add(listener);
+        
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -268,12 +268,12 @@ public final class ViewTreeObserver {
         checkIsAlive();
         mOnComputeInternalInsetsListeners.remove(victim);
         addTaint(victim.getTaint());
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnComputeInternalInsetsListeners == null) {
-            //return;
-        //}
-        //mOnComputeInternalInsetsListeners.remove(victim);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -282,12 +282,12 @@ public final class ViewTreeObserver {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("This ViewTreeObserver is not alive, call "
                     + "getViewTreeObserver() again");
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mAlive) {
-            //throw new IllegalStateException("This ViewTreeObserver is not alive, call "
-                    //+ "getViewTreeObserver() again");
-        //}
+        } 
+        
+        
+            
+                    
+        
     }
 
     
@@ -295,16 +295,16 @@ public final class ViewTreeObserver {
     public boolean isAlive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1689986747 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1689986747;
-        // ---------- Original Method ----------
-        //return mAlive;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.628 -0400", hash_original_method = "CE15D88AAF79A195F4E8949632256817", hash_generated_method = "ADAC88CFF01E50F749BE8EE5F2A18844")
     private void kill() {
         mAlive = false;
-        // ---------- Original Method ----------
-        //mAlive = false;
+        
+        
     }
 
     
@@ -320,19 +320,19 @@ public final class ViewTreeObserver {
                     OnGlobalFocusChangeListener listener = var7A98234764E956E91DA8A394AFDB6376_927880005.next();
                     {
                         listener.onGlobalFocusChanged(oldFocus, newFocus);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(oldFocus.getTaint());
         addTaint(newFocus.getTaint());
-        // ---------- Original Method ----------
-        //final CopyOnWriteArrayList<OnGlobalFocusChangeListener> listeners = mOnGlobalFocusListeners;
-        //if (listeners != null && listeners.size() > 0) {
-            //for (OnGlobalFocusChangeListener listener : listeners) {
-                //listener.onGlobalFocusChanged(oldFocus, newFocus);
-            //}
-        //}
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -348,17 +348,17 @@ public final class ViewTreeObserver {
                     OnGlobalLayoutListener listener = var02C1B6C27E93AF1BF997E51F917D95E9_1007548404.next();
                     {
                         listener.onGlobalLayout();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //final CopyOnWriteArrayList<OnGlobalLayoutListener> listeners = mOnGlobalLayoutListeners;
-        //if (listeners != null && listeners.size() > 0) {
-            //for (OnGlobalLayoutListener listener : listeners) {
-                //listener.onGlobalLayout();
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -374,23 +374,23 @@ public final class ViewTreeObserver {
                     int i = 0;
                     {
                         cancelDraw |= !(listeners.get(i).onPreDraw());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1457841671 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1457841671;
-        // ---------- Original Method ----------
-        //boolean cancelDraw = false;
-        //if (mOnPreDrawListeners != null && mOnPreDrawListeners.size() > 0) {
-            //final ArrayList<OnPreDrawListener> listeners =
-                    //(ArrayList<OnPreDrawListener>) mOnPreDrawListeners.clone();
-            //int numListeners = listeners.size();
-            //for (int i = 0; i < numListeners; ++i) {
-                //cancelDraw |= !(listeners.get(i).onPreDraw());
-            //}
-        //}
-        //return cancelDraw;
+        
+        
+        
+            
+                    
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -406,19 +406,19 @@ public final class ViewTreeObserver {
                     OnTouchModeChangeListener listener = var5BDB6DB73C97A7AE707FC5DFEF30A014_1673825612.next();
                     {
                         listener.onTouchModeChanged(inTouchMode);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(inTouchMode);
-        // ---------- Original Method ----------
-        //final CopyOnWriteArrayList<OnTouchModeChangeListener> listeners =
-                //mOnTouchModeChangeListeners;
-        //if (listeners != null && listeners.size() > 0) {
-            //for (OnTouchModeChangeListener listener : listeners) {
-                //listener.onTouchModeChanged(inTouchMode);
-            //}
-        //}
+        
+        
+                
+        
+            
+                
+            
+        
     }
 
     
@@ -434,17 +434,17 @@ public final class ViewTreeObserver {
                     OnScrollChangedListener listener = var0B46372821778E80A8D567D858E01F84_1334839238.next();
                     {
                         listener.onScrollChanged();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //final CopyOnWriteArrayList<OnScrollChangedListener> listeners = mOnScrollChangedListeners;
-        //if (listeners != null && listeners.size() > 0) {
-            //for (OnScrollChangedListener listener : listeners) {
-                //listener.onScrollChanged();
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -454,10 +454,10 @@ public final class ViewTreeObserver {
         boolean var233860A17AF3E54B07A56CF5069B1172_10028153 = ((listeners != null && listeners.size() > 0));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1290278599 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1290278599;
-        // ---------- Original Method ----------
-        //final CopyOnWriteArrayList<OnComputeInternalInsetsListener> listeners =
-                //mOnComputeInternalInsetsListeners;
-        //return (listeners != null && listeners.size() > 0);
+        
+        
+                
+        
     }
 
     
@@ -473,19 +473,19 @@ public final class ViewTreeObserver {
                     OnComputeInternalInsetsListener listener = varE7B0806474281BD8972102572AA142E1_393836313.next();
                     {
                         listener.onComputeInternalInsets(inoutInfo);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(inoutInfo.getTaint());
-        // ---------- Original Method ----------
-        //final CopyOnWriteArrayList<OnComputeInternalInsetsListener> listeners =
-                //mOnComputeInternalInsetsListeners;
-        //if (listeners != null && listeners.size() > 0) {
-            //for (OnComputeInternalInsetsListener listener : listeners) {
-                //listener.onComputeInternalInsets(inoutInfo);
-            //}
-        //}
+        
+        
+                
+        
+            
+                
+            
+        
     }
 
     
@@ -506,15 +506,15 @@ public final class ViewTreeObserver {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.651 -0400", hash_original_method = "892C39758A803740C8313A0D5A4EBBE8", hash_generated_method = "892C39758A803740C8313A0D5A4EBBE8")
         public InternalInsetsInfo ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.652 -0400", hash_original_method = "01F6FFADBD331B04D5C349DCEDD59961", hash_generated_method = "8DEE7B19E2DFEBD717CC580FD498B385")
         public void setTouchableInsets(int val) {
             mTouchableInsets = val;
-            // ---------- Original Method ----------
-            //mTouchableInsets = val;
+            
+            
         }
 
         
@@ -522,8 +522,8 @@ public final class ViewTreeObserver {
         public int getTouchableInsets() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1059125030 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1059125030;
-            // ---------- Original Method ----------
-            //return mTouchableInsets;
+            
+            
         }
 
         
@@ -533,11 +533,11 @@ public final class ViewTreeObserver {
             visibleInsets.setEmpty();
             touchableRegion.setEmpty();
             mTouchableInsets = TOUCHABLE_INSETS_FRAME;
-            // ---------- Original Method ----------
-            //contentInsets.setEmpty();
-            //visibleInsets.setEmpty();
-            //touchableRegion.setEmpty();
-            //mTouchableInsets = TOUCHABLE_INSETS_FRAME;
+            
+            
+            
+            
+            
         }
 
         
@@ -549,36 +549,36 @@ public final class ViewTreeObserver {
                 InternalInsetsInfo other = (InternalInsetsInfo)o;
                 {
                     boolean varF8197FD6716A4DC8EA1564616E3AEFD3_185103123 = (!contentInsets.equals(other.contentInsets));
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean varD11BBD458E0571A6132940A120BAD8DA_392072794 = (!visibleInsets.equals(other.visibleInsets));
-                } //End collapsed parenthetic
+                } 
                 boolean var92F272DE3D4E93EB7FCECFB0391002D2_1318526786 = (touchableRegion.equals(other.touchableRegion));
-            } //End block
+            } 
             catch (ClassCastException e)
             { }
             addTaint(o.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_400579976 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_400579976;
-            // ---------- Original Method ----------
-            //try {
-                //if (o == null) {
-                    //return false;
-                //}
-                //InternalInsetsInfo other = (InternalInsetsInfo)o;
-                //if (mTouchableInsets != other.mTouchableInsets) {
-                    //return false;
-                //}
-                //if (!contentInsets.equals(other.contentInsets)) {
-                    //return false;
-                //}
-                //if (!visibleInsets.equals(other.visibleInsets)) {
-                    //return false;
-                //}
-                //return touchableRegion.equals(other.touchableRegion);
-            //} catch (ClassCastException e) {
-                //return false;
-            //}
+            
+            
+                
+                    
+                
+                
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                
+                
+            
+                
+            
         }
 
         
@@ -588,11 +588,11 @@ public final class ViewTreeObserver {
             visibleInsets.set(other.visibleInsets);
             touchableRegion.set(other.touchableRegion);
             mTouchableInsets = other.mTouchableInsets;
-            // ---------- Original Method ----------
-            //contentInsets.set(other.contentInsets);
-            //visibleInsets.set(other.visibleInsets);
-            //touchableRegion.set(other.touchableRegion);
-            //mTouchableInsets = other.mTouchableInsets;
+            
+            
+            
+            
+            
         }
 
         

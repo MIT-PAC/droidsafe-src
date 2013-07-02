@@ -1,11 +1,11 @@
 package dalvik.system.profiler;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -64,13 +64,13 @@ public final class SamplingProfiler {
         threadSampler.setDepth(depth);
         hprofData.setFlags(BinaryHprof.ControlSettings.CPU_SAMPLING.bitmask);
         hprofData.setDepth(depth);
-        // ---------- Original Method ----------
-        //this.depth = depth;
-        //this.threadSet = threadSet;
-        //this.threadSampler = findDefaultThreadSampler();
-        //threadSampler.setDepth(depth);
-        //hprofData.setFlags(BinaryHprof.ControlSettings.CPU_SAMPLING.bitmask);
-        //hprofData.setDepth(depth);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -101,24 +101,24 @@ public final class SamplingProfiler {
     public void start(int interval) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("interval < 1");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("profiling already started");
-        } //End block
+        } 
         sampler = new Sampler();
         hprofData.setStartMillis(System.currentTimeMillis());
         timer.scheduleAtFixedRate(sampler, 0, interval);
         addTaint(interval);
-        // ---------- Original Method ----------
-        //if (interval < 1) {
-            //throw new IllegalArgumentException("interval < 1");
-        //}
-        //if (sampler != null) {
-            //throw new IllegalStateException("profiling already started");
-        //}
-        //sampler = new Sampler();
-        //hprofData.setStartMillis(System.currentTimeMillis());
-        //timer.scheduleAtFixedRate(sampler, 0, interval);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -130,26 +130,26 @@ public final class SamplingProfiler {
                 try 
                 {
                     sampler.wait();
-                } //End block
+                } 
                 catch (InterruptedException ignored)
                 { }
-            } //End block
-        } //End block
+            } 
+        } 
         sampler = null;
-        // ---------- Original Method ----------
-        //if (sampler == null) {
-            //return;
-        //}
-        //synchronized(sampler) {
-            //sampler.stop = true;
-            //while (!sampler.stopped) {
-                //try {
-                    //sampler.wait();
-                //} catch (InterruptedException ignored) {
-                //}
-            //}
-        //}
-        //sampler = null;
+        
+        
+            
+        
+        
+            
+            
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
@@ -157,26 +157,26 @@ public final class SamplingProfiler {
     public void shutdown() {
         stop();
         timer.cancel();
-        // ---------- Original Method ----------
-        //stop();
-        //timer.cancel();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.139 -0400", hash_original_method = "ED23570BD9F6C6F13BA5A80428CD13EC", hash_generated_method = "AE4C86A2D23D5E0CBCA4D7BAFB4DA30F")
     public HprofData getHprofData() {
-        HprofData varB4EAC82CA7396A68D541C85D26508E83_1202799013 = null; //Variable for return #1
+        HprofData varB4EAC82CA7396A68D541C85D26508E83_1202799013 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("cannot access hprof data while sampling");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1202799013 = hprofData;
-        varB4EAC82CA7396A68D541C85D26508E83_1202799013.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1202799013.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1202799013;
-        // ---------- Original Method ----------
-        //if (sampler != null) {
-            //throw new IllegalStateException("cannot access hprof data while sampling");
-        //}
-        //return hprofData;
+        
+        
+            
+        
+        
     }
 
     
@@ -189,24 +189,24 @@ public final class SamplingProfiler {
         public  ArrayThreadSet(Thread... threads) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("threads == null");
-            } //End block
+            } 
             this.threads = threads;
-            // ---------- Original Method ----------
-            //if (threads == null) {
-                //throw new NullPointerException("threads == null");
-            //}
-            //this.threads = threads;
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.141 -0400", hash_original_method = "5BD7766F6E0173FC433E1E7F289EB1BE", hash_generated_method = "081C46126D31EFC3BF139F014595EAF4")
         public Thread[] threads() {
-            Thread[] varB4EAC82CA7396A68D541C85D26508E83_1275082088 = null; //Variable for return #1
+            Thread[] varB4EAC82CA7396A68D541C85D26508E83_1275082088 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1275082088 = threads;
-            varB4EAC82CA7396A68D541C85D26508E83_1275082088.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1275082088.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1275082088;
-            // ---------- Original Method ----------
-            //return threads;
+            
+            
         }
 
         
@@ -229,15 +229,15 @@ public final class SamplingProfiler {
         public  ThreadGroupThreadSet(ThreadGroup threadGroup) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("threadGroup == null");
-            } //End block
+            } 
             this.threadGroup = threadGroup;
             resize();
-            // ---------- Original Method ----------
-            //if (threadGroup == null) {
-                //throw new NullPointerException("threadGroup == null");
-            //}
-            //this.threadGroup = threadGroup;
-            //resize();
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -246,45 +246,45 @@ public final class SamplingProfiler {
             int count = threadGroup.activeCount();
             threads = new Thread[count*2];
             lastThread = 0;
-            // ---------- Original Method ----------
-            //int count = threadGroup.activeCount();
-            //threads = new Thread[count*2];
-            //lastThread = 0;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.142 -0400", hash_original_method = "32A384241C8D4460079A29E3C7BA2EEB", hash_generated_method = "ADD7C6F87394440443A339D22AE4CA67")
         public Thread[] threads() {
-            Thread[] varB4EAC82CA7396A68D541C85D26508E83_149990620 = null; //Variable for return #1
+            Thread[] varB4EAC82CA7396A68D541C85D26508E83_149990620 = null; 
             int threadCount;
             {
                 threadCount = threadGroup.enumerate(threads);
                 {
                     resize();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 Arrays.fill(threads, threadCount, lastThread, null);
-            } //End block
+            } 
             lastThread = threadCount;
             varB4EAC82CA7396A68D541C85D26508E83_149990620 = threads;
-            varB4EAC82CA7396A68D541C85D26508E83_149990620.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_149990620.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_149990620;
-            // ---------- Original Method ----------
-            //int threadCount;
-            //while (true) {
-                //threadCount = threadGroup.enumerate(threads);
-                //if (threadCount == threads.length) {
-                    //resize();
-                //} else {
-                    //break;
-                //}
-            //}
-            //if (threadCount < lastThread) {
-                //Arrays.fill(threads, threadCount, lastThread, null);
-            //}
-            //lastThread = threadCount;
-            //return threads;
+            
+            
+            
+                
+                
+                    
+                
+                    
+                
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -306,7 +306,7 @@ public final class SamplingProfiler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.143 -0400", hash_original_method = "CE87D296BDEBBC5B0D30A5ECC13871DD", hash_generated_method = "CE87D296BDEBBC5B0D30A5ECC13871DD")
         public Sampler ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -317,28 +317,28 @@ public final class SamplingProfiler {
                     cancel();
                     stopped = true;
                     notifyAll();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 timerThread = Thread.currentThread();
-            } //End block
+            } 
             Thread[] newThreads = threadSet.threads();
             {
                 boolean var0F1FEDD279682D3FF1BADDAE0138F716_796665235 = (!Arrays.equals(currentThreads, newThreads));
                 {
                     updateThreadHistory(currentThreads, newThreads);
                     currentThreads = newThreads.clone();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 Thread thread = currentThreads[0];
                 {
                     StackTraceElement[] stackFrames = threadSampler.getStackTrace(thread);
                     recordStackTrace(thread, stackFrames);
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -347,7 +347,7 @@ public final class SamplingProfiler {
             Integer threadId = threadIds.get(thread);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown thread " + thread);
-            } //End block
+            } 
             mutableStackTrace.threadId = threadId;
             mutableStackTrace.stackFrames = stackFrames;
             int[] countCell = stackTraces.get(mutableStackTrace);
@@ -356,25 +356,25 @@ public final class SamplingProfiler {
                 StackTraceElement[] stackFramesCopy = stackFrames.clone();
                 HprofData.StackTrace stackTrace = new HprofData.StackTrace(nextStackTraceId++, threadId, stackFramesCopy);
                 hprofData.addStackTrace(stackTrace, countCell);
-            } //End block
+            } 
             addTaint(thread.getTaint());
             addTaint(stackFrames[0].getTaint());
-            // ---------- Original Method ----------
-            //Integer threadId = threadIds.get(thread);
-            //if (threadId == null) {
-                //throw new IllegalArgumentException("Unknown thread " + thread);
-            //}
-            //mutableStackTrace.threadId = threadId;
-            //mutableStackTrace.stackFrames = stackFrames;
-            //int[] countCell = stackTraces.get(mutableStackTrace);
-            //if (countCell == null) {
-                //countCell = new int[1];
-                //StackTraceElement[] stackFramesCopy = stackFrames.clone();
-                //HprofData.StackTrace stackTrace
-                        //= new HprofData.StackTrace(nextStackTraceId++, threadId, stackFramesCopy);
-                //hprofData.addStackTrace(stackTrace, countCell);
-            //}
-            //countCell[0]++;
+            
+            
+            
+                
+            
+            
+            
+            
+            
+                
+                
+                
+                        
+                
+            
+            
         }
 
         
@@ -392,20 +392,20 @@ public final class SamplingProfiler {
                 Thread thread = var72E8A17AE610D2FCC3673AAD53285BD6_1236207146.next();
                 {
                     addStartThread(thread);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 Iterator<Thread> varB1F20EA814E14D4F55D52568568B3272_2054621117 = (removed).iterator();
                 varB1F20EA814E14D4F55D52568568B3272_2054621117.hasNext();
                 Thread thread = varB1F20EA814E14D4F55D52568568B3272_2054621117.next();
                 {
                     addEndThread(thread);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(oldThreads[0].getTaint());
             addTaint(newThreads[0].getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -413,12 +413,12 @@ public final class SamplingProfiler {
         private void addStartThread(Thread thread) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("thread == null");
-            } //End block
+            } 
             int threadId = nextThreadId++;
             Integer old = threadIds.put(thread, threadId);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Thread already registered as " + old);
-            } //End block
+            } 
             String threadName = thread.getName();
             ThreadGroup group = thread.getThreadGroup();
             String groupName;
@@ -434,8 +434,8 @@ public final class SamplingProfiler {
                                                   threadName, groupName, parentGroupName);
             hprofData.addThreadEvent(event);
             addTaint(thread.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -443,24 +443,24 @@ public final class SamplingProfiler {
         private void addEndThread(Thread thread) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("thread == null");
-            } //End block
+            } 
             Integer threadId = threadIds.remove(thread);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown thread " + thread);
-            } //End block
+            } 
             HprofData.ThreadEvent event = HprofData.ThreadEvent.end(threadId);
             hprofData.addThreadEvent(event);
             addTaint(thread.getTaint());
-            // ---------- Original Method ----------
-            //if (thread == null) {
-                //throw new NullPointerException("thread == null");
-            //}
-            //Integer threadId = threadIds.remove(thread);
-            //if (threadId == null) {
-                //throw new IllegalArgumentException("Unknown thread " + thread);
-            //}
-            //HprofData.ThreadEvent event = HprofData.ThreadEvent.end(threadId);
-            //hprofData.addThreadEvent(event);
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
         }
 
         

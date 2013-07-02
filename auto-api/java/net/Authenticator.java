@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class Authenticator {
@@ -37,18 +37,18 @@ public abstract class Authenticator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.014 -0400", hash_original_method = "B4C23A0C6FE3AF9F3FBB3DA6EF5F723C", hash_generated_method = "B4C23A0C6FE3AF9F3FBB3DA6EF5F723C")
     public Authenticator ()
     {
-        //Synthesized constructor
+        
     }
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.014 -0400", hash_original_method = "3093C4DCBD758CB1DB7C3B81720996CD", hash_generated_method = "899F1F1F7617EF9F443ECB0A2A648E90")
     protected PasswordAuthentication getPasswordAuthentication() {
-        PasswordAuthentication varB4EAC82CA7396A68D541C85D26508E83_1746231027 = null; //Variable for return #1
+        PasswordAuthentication varB4EAC82CA7396A68D541C85D26508E83_1746231027 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1746231027 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1746231027.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1746231027.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1746231027;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -56,55 +56,56 @@ public abstract class Authenticator {
     protected final int getRequestingPort() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_598448488 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_598448488;
-        // ---------- Original Method ----------
-        //return this.port;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.015 -0400", hash_original_method = "2B14AF242379C7938332ECF0E248EB1C", hash_generated_method = "354E70E85D691029F66C8E0898DB8137")
     protected final InetAddress getRequestingSite() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_592118117 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_592118117 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_592118117 = this.addr;
-        varB4EAC82CA7396A68D541C85D26508E83_592118117.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_592118117.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_592118117;
-        // ---------- Original Method ----------
-        //return this.addr;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.015 -0400", hash_original_method = "77C5C0A5F58C3B05E3A20169E90243A2", hash_generated_method = "04B0E107D7F463FF233D78950CA4FD21")
     protected final String getRequestingPrompt() {
-        String varB4EAC82CA7396A68D541C85D26508E83_966391876 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_966391876 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_966391876 = this.prompt;
-        varB4EAC82CA7396A68D541C85D26508E83_966391876.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_966391876.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_966391876;
-        // ---------- Original Method ----------
-        //return this.prompt;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.015 -0400", hash_original_method = "0EEBE945906182A6ED15FB53AC64D909", hash_generated_method = "9BF65F2F6376D6642A05F1001493F3BB")
     protected final String getRequestingProtocol() {
-        String varB4EAC82CA7396A68D541C85D26508E83_920532238 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_920532238 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_920532238 = this.protocol;
-        varB4EAC82CA7396A68D541C85D26508E83_920532238.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_920532238.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_920532238;
-        // ---------- Original Method ----------
-        //return this.protocol;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.016 -0400", hash_original_method = "09F9AD99062E3C7EFE932F710107733C", hash_generated_method = "E3ED9918979D27E8F2136E9C4BC3F0D4")
     protected final String getRequestingScheme() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1469098866 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1469098866 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1469098866 = this.scheme;
-        varB4EAC82CA7396A68D541C85D26508E83_1469098866.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1469098866.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1469098866;
-        // ---------- Original Method ----------
-        //return this.scheme;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized PasswordAuthentication requestPasswordAuthentication(
             InetAddress rAddr, int rPort, String rProtocol, String rPrompt,
             String rScheme) {
@@ -126,6 +127,7 @@ public abstract class Authenticator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized PasswordAuthentication requestPasswordAuthentication(
             String rHost, InetAddress rAddr, int rPort, String rProtocol,
             String rPrompt, String rScheme) {
@@ -145,12 +147,12 @@ public abstract class Authenticator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.017 -0400", hash_original_method = "8CC1A8E4CE78153F4006F6F40BA275CE", hash_generated_method = "62A3640DBFB7FF9E95832FE5EBA857C0")
     protected final String getRequestingHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1961382340 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1961382340 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1961382340 = host;
-        varB4EAC82CA7396A68D541C85D26508E83_1961382340.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1961382340.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1961382340;
-        // ---------- Original Method ----------
-        //return host;
+        
+        
     }
 
     
@@ -175,23 +177,23 @@ public abstract class Authenticator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.017 -0400", hash_original_method = "3D575AEF6CE8C91A17FF3C39D0168781", hash_generated_method = "9BF422E405DDFF535F04A5B478CADAA4")
     protected URL getRequestingURL() {
-        URL varB4EAC82CA7396A68D541C85D26508E83_1867394247 = null; //Variable for return #1
+        URL varB4EAC82CA7396A68D541C85D26508E83_1867394247 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1867394247 = url;
-        varB4EAC82CA7396A68D541C85D26508E83_1867394247.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1867394247.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1867394247;
-        // ---------- Original Method ----------
-        //return url;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.018 -0400", hash_original_method = "55F670A5333D0DDAF23FC0CC5542C3C2", hash_generated_method = "01AC5521BDE5A4071DEBD3DCAA6D441A")
     protected Authenticator.RequestorType getRequestorType() {
-        Authenticator.RequestorType varB4EAC82CA7396A68D541C85D26508E83_1727253063 = null; //Variable for return #1
+        Authenticator.RequestorType varB4EAC82CA7396A68D541C85D26508E83_1727253063 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1727253063 = rt;
-        varB4EAC82CA7396A68D541C85D26508E83_1727253063.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1727253063.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1727253063;
-        // ---------- Original Method ----------
-        //return rt;
+        
+        
     }
 
     

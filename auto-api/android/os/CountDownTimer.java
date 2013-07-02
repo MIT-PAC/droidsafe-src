@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.Log;
 
@@ -31,22 +31,22 @@ public abstract class CountDownTimer {
                     final long millisLeft = mStopTimeInFuture - SystemClock.elapsedRealtime();
                     {
                         onFinish();
-                    } //End block
+                    } 
                     {
                         sendMessageDelayed(obtainMessage(MSG), millisLeft);
-                    } //End block
+                    } 
                     {
                         long lastTickStart = SystemClock.elapsedRealtime();
                         onTick(millisLeft);
                         long delay = lastTickStart + mCountdownInterval - SystemClock.elapsedRealtime();
                         delay += mCountdownInterval;
                         sendMessageDelayed(obtainMessage(MSG), delay);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -56,50 +56,50 @@ public abstract class CountDownTimer {
     public  CountDownTimer(long millisInFuture, long countDownInterval) {
         mMillisInFuture = millisInFuture;
         mCountdownInterval = countDownInterval;
-        // ---------- Original Method ----------
-        //mMillisInFuture = millisInFuture;
-        //mCountdownInterval = countDownInterval;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.068 -0400", hash_original_method = "668A5D3225CBBDE8895EF9129976DF1D", hash_generated_method = "CA4F31EEB98095DD1785A84FC0B8E1C5")
     public final void cancel() {
         mHandler.removeMessages(MSG);
-        // ---------- Original Method ----------
-        //mHandler.removeMessages(MSG);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.069 -0400", hash_original_method = "9B88C24B384B8F4F3D5DCE994477E303", hash_generated_method = "339077580597F19C7A4E17CB5742BDE8")
     public synchronized final CountDownTimer start() {
-        CountDownTimer varB4EAC82CA7396A68D541C85D26508E83_1314836445 = null; //Variable for return #1
-        CountDownTimer varB4EAC82CA7396A68D541C85D26508E83_20643210 = null; //Variable for return #2
+        CountDownTimer varB4EAC82CA7396A68D541C85D26508E83_1314836445 = null; 
+        CountDownTimer varB4EAC82CA7396A68D541C85D26508E83_20643210 = null; 
         {
             onFinish();
             varB4EAC82CA7396A68D541C85D26508E83_1314836445 = this;
-        } //End block
+        } 
         mStopTimeInFuture = SystemClock.elapsedRealtime() + mMillisInFuture;
         mHandler.sendMessage(mHandler.obtainMessage(MSG));
         varB4EAC82CA7396A68D541C85D26508E83_20643210 = this;
-        CountDownTimer varA7E53CE21691AB073D9660D615818899_1014187660; //Final return value
+        CountDownTimer varA7E53CE21691AB073D9660D615818899_1014187660; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1014187660 = varB4EAC82CA7396A68D541C85D26508E83_1314836445;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1014187660 = varB4EAC82CA7396A68D541C85D26508E83_20643210;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1014187660.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1014187660.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1014187660;
-        // ---------- Original Method ----------
-        //if (mMillisInFuture <= 0) {
-            //onFinish();
-            //return this;
-        //}
-        //mStopTimeInFuture = SystemClock.elapsedRealtime() + mMillisInFuture;
-        //mHandler.sendMessage(mHandler.obtainMessage(MSG));
-        //return this;
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     

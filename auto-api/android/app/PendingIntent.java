@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.Intent;
@@ -28,16 +28,16 @@ public final class PendingIntent implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.883 -0400", hash_original_method = "3ACE5727953950B87626FD6380A23370", hash_generated_method = "2DB84B772119314499B70FB507774FD6")
       PendingIntent(IIntentSender target) {
         mTarget = target;
-        // ---------- Original Method ----------
-        //mTarget = target;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.884 -0400", hash_original_method = "53C8CE2812EC9BCF2C9E54818A5B8D0D", hash_generated_method = "F144EEFBA4AF7E7804AAA97C0CEB107D")
       PendingIntent(IBinder target) {
         mTarget = IIntentSender.Stub.asInterface(target);
-        // ---------- Original Method ----------
-        //mTarget = IIntentSender.Stub.asInterface(target);
+        
+        
     }
 
     
@@ -120,12 +120,12 @@ public final class PendingIntent implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.885 -0400", hash_original_method = "D9A9ECA0CF76712CB3C35292E7994C6B", hash_generated_method = "A8185329A37FB9841C1A38483F3DE787")
     public IntentSender getIntentSender() {
-        IntentSender varB4EAC82CA7396A68D541C85D26508E83_1063682925 = null; //Variable for return #1
+        IntentSender varB4EAC82CA7396A68D541C85D26508E83_1063682925 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1063682925 = new IntentSender(mTarget);
-        varB4EAC82CA7396A68D541C85D26508E83_1063682925.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1063682925.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1063682925;
-        // ---------- Original Method ----------
-        //return new IntentSender(mTarget);
+        
+        
     }
 
     
@@ -134,22 +134,22 @@ public final class PendingIntent implements Parcelable {
         try 
         {
             ActivityManagerNative.getDefault().cancelIntentSender(mTarget);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
-        // ---------- Original Method ----------
-        //try {
-            //ActivityManagerNative.getDefault().cancelIntentSender(mTarget);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.886 -0400", hash_original_method = "27B2516FC620720BFD785BFD1E716C8B", hash_generated_method = "F7F550965E6EFD08806178788FE1473C")
     public void send() throws CanceledException {
         send(null, 0, null, null, null, null);
-        // ---------- Original Method ----------
-        //send(null, 0, null, null, null, null);
+        
+        
     }
 
     
@@ -157,8 +157,8 @@ public final class PendingIntent implements Parcelable {
     public void send(int code) throws CanceledException {
         send(null, code, null, null, null, null);
         addTaint(code);
-        // ---------- Original Method ----------
-        //send(null, code, null, null, null, null);
+        
+        
     }
 
     
@@ -168,8 +168,8 @@ public final class PendingIntent implements Parcelable {
         addTaint(context.getTaint());
         addTaint(code);
         addTaint(intent.getTaint());
-        // ---------- Original Method ----------
-        //send(context, code, intent, null, null, null);
+        
+        
     }
 
     
@@ -179,8 +179,8 @@ public final class PendingIntent implements Parcelable {
         addTaint(code);
         addTaint(onFinished.getTaint());
         addTaint(handler.getTaint());
-        // ---------- Original Method ----------
-        //send(null, code, null, onFinished, handler, null);
+        
+        
     }
 
     
@@ -193,8 +193,8 @@ public final class PendingIntent implements Parcelable {
         addTaint(intent.getTaint());
         addTaint(onFinished.getTaint());
         addTaint(handler.getTaint());
-        // ---------- Original Method ----------
-        //send(context, code, intent, onFinished, handler, null);
+        
+        
     }
 
     
@@ -210,71 +210,71 @@ public final class PendingIntent implements Parcelable {
                     onFinished != null
                             ? new FinishedDispatcher(this, onFinished, handler)
                             : null,
-                    requiredPermission);//DSFIXME:  CODE0008: Nested ternary operator in expression
+                    requiredPermission);
             {
                 if (DroidSafeAndroidRuntime.control) throw new CanceledException();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new CanceledException(e);
-        } //End block
+        } 
         addTaint(context.getTaint());
         addTaint(code);
         addTaint(intent.getTaint());
         addTaint(onFinished.getTaint());
         addTaint(handler.getTaint());
         addTaint(requiredPermission.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //String resolvedType = intent != null ?
-                    //intent.resolveTypeIfNeeded(context.getContentResolver())
-                    //: null;
-            //int res = mTarget.send(code, intent, resolvedType,
-                    //onFinished != null
-                            //? new FinishedDispatcher(this, onFinished, handler)
-                            //: null,
-                    //requiredPermission);
-            //if (res < 0) {
-                //throw new CanceledException();
-            //}
-        //} catch (RemoteException e) {
-            //throw new CanceledException(e);
-        //}
+        
+        
+            
+                    
+                    
+            
+                    
+                            
+                            
+                    
+            
+                
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.890 -0400", hash_original_method = "1AE048A4984F76615C0EAE5393ABDA6D", hash_generated_method = "EE234EAE5DECAAD864FE32A71A5F1185")
     public String getTargetPackage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_56380705 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1531778657 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_56380705 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1531778657 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_56380705 = ActivityManagerNative.getDefault()
                 .getPackageForIntentSender(mTarget);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1531778657 = null;
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_1605333859; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1605333859; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1605333859 = varB4EAC82CA7396A68D541C85D26508E83_56380705;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1605333859 = varB4EAC82CA7396A68D541C85D26508E83_1531778657;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1605333859.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1605333859.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1605333859;
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault()
-                //.getPackageForIntentSender(mTarget);
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        
+        
+            
+                
+        
+            
+        
     }
 
     
@@ -284,18 +284,18 @@ public final class PendingIntent implements Parcelable {
         {
             boolean var9F243160ADB67F012956364C597C6237_1897692124 = (ActivityManagerNative.getDefault()
                 .isIntentSenderTargetedToPackage(mTarget));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_406846941 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_406846941;
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault()
-                //.isIntentSenderTargetedToPackage(mTarget);
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        
+        
+            
+                
+        
+            
+        
     }
 
     
@@ -305,16 +305,16 @@ public final class PendingIntent implements Parcelable {
         {
             boolean varE0256D3CD4A5623A7BFB562FA1FCFE51_1842309003 = (mTarget.asBinder().equals(((PendingIntent)otherObj)
                     .mTarget.asBinder()));
-        } //End block
+        } 
         addTaint(otherObj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1208534696 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1208534696;
-        // ---------- Original Method ----------
-        //if (otherObj instanceof PendingIntent) {
-            //return mTarget.asBinder().equals(((PendingIntent)otherObj)
-                    //.mTarget.asBinder());
-        //}
-        //return false;
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -324,15 +324,15 @@ public final class PendingIntent implements Parcelable {
         int varE5FBB4A5F6456F5D2CFFCAD33E59F123_1518637991 = (mTarget.asBinder().hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1234294262 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1234294262;
-        // ---------- Original Method ----------
-        //return mTarget.asBinder().hashCode();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.893 -0400", hash_original_method = "A24ED44DCFDBAE1CB5B942522723AC1A", hash_generated_method = "6D53CD70E77DD7BB065D4268EDD448EB")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_264866532 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_264866532 = null; 
         StringBuilder sb = new StringBuilder(128);
         sb.append("PendingIntent{");
         sb.append(Integer.toHexString(System.identityHashCode(this)));
@@ -340,16 +340,16 @@ public final class PendingIntent implements Parcelable {
         sb.append(mTarget != null ? mTarget.asBinder() : null);
         sb.append('}');
         varB4EAC82CA7396A68D541C85D26508E83_264866532 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_264866532.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_264866532.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_264866532;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(128);
-        //sb.append("PendingIntent{");
-        //sb.append(Integer.toHexString(System.identityHashCode(this)));
-        //sb.append(": ");
-        //sb.append(mTarget != null ? mTarget.asBinder() : null);
-        //sb.append('}');
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -357,8 +357,8 @@ public final class PendingIntent implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1423390996 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1423390996;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -367,8 +367,8 @@ public final class PendingIntent implements Parcelable {
         out.writeStrongBinder(mTarget.asBinder());
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeStrongBinder(mTarget.asBinder());
+        
+        
     }
 
     
@@ -387,12 +387,12 @@ public final class PendingIntent implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.895 -0400", hash_original_method = "5A73019C5B7699A011E114A766F68ECD", hash_generated_method = "B7F48630E4517D85DF06725089E92DA9")
     public IIntentSender getTarget() {
-        IIntentSender varB4EAC82CA7396A68D541C85D26508E83_2127171575 = null; //Variable for return #1
+        IIntentSender varB4EAC82CA7396A68D541C85D26508E83_2127171575 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2127171575 = mTarget;
-        varB4EAC82CA7396A68D541C85D26508E83_2127171575.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2127171575.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2127171575;
-        // ---------- Original Method ----------
-        //return mTarget;
+        
+        
     }
 
     
@@ -400,7 +400,7 @@ public final class PendingIntent implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.896 -0400", hash_original_method = "6C791280BC05C3F7B11A7004B8EB7BE8", hash_generated_method = "409DFD8DE802DB94A3DE2ED481AAA231")
         public  CanceledException() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -408,7 +408,7 @@ public final class PendingIntent implements Parcelable {
         public  CanceledException(String name) {
             super(name);
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -416,7 +416,7 @@ public final class PendingIntent implements Parcelable {
         public  CanceledException(Exception cause) {
             super(cause);
             addTaint(cause.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -452,10 +452,10 @@ public final class PendingIntent implements Parcelable {
             mPendingIntent = pi;
             mWho = who;
             mHandler = handler;
-            // ---------- Original Method ----------
-            //mPendingIntent = pi;
-            //mWho = who;
-            //mHandler = handler;
+            
+            
+            
+            
         }
 
         
@@ -468,22 +468,22 @@ public final class PendingIntent implements Parcelable {
             mResultExtras = extras;
             {
                 run();
-            } //End block
+            } 
             {
                 mHandler.post(this);
-            } //End block
+            } 
             addTaint(serialized);
             addTaint(sticky);
-            // ---------- Original Method ----------
-            //mIntent = intent;
-            //mResultCode = resultCode;
-            //mResultData = data;
-            //mResultExtras = extras;
-            //if (mHandler == null) {
-                //run();
-            //} else {
-                //mHandler.post(this);
-            //}
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -491,9 +491,9 @@ public final class PendingIntent implements Parcelable {
         public void run() {
             mWho.onSendFinished(mPendingIntent, mIntent, mResultCode,
                     mResultData, mResultExtras);
-            // ---------- Original Method ----------
-            //mWho.onSendFinished(mPendingIntent, mIntent, mResultCode,
-                    //mResultData, mResultExtras);
+            
+            
+                    
         }
 
         
@@ -532,13 +532,13 @@ public final class PendingIntent implements Parcelable {
             return new PendingIntent[size];
         }
     };
-    // orphaned legacy method
+    
     public PendingIntent createFromParcel(Parcel in) {
             IBinder target = in.readStrongBinder();
             return target != null ? new PendingIntent(target) : null;
         }
     
-    // orphaned legacy method
+    
     public PendingIntent[] newArray(int size) {
             return new PendingIntent[size];
         }

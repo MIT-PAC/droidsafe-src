@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -17,7 +17,7 @@ public class BEROutputStream extends DEROutputStream {
         OutputStream    os) {
         super(os);
         addTaint(os.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,34 +26,34 @@ public class BEROutputStream extends DEROutputStream {
         Object    obj) throws IOException {
         {
             writeNull();
-        } //End block
+        } 
         {
             ((DERObject)obj).encode(this);
-        } //End block
+        } 
         {
             ((DEREncodable)obj).getDERObject().encode(this);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("object not BEREncodable");
-        } //End block
+        } 
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //if (obj == null)
-        //{
-            //writeNull();
-        //}
-        //else if (obj instanceof DERObject)
-        //{
-            //((DERObject)obj).encode(this);
-        //}
-        //else if (obj instanceof DEREncodable)
-        //{
-            //((DEREncodable)obj).getDERObject().encode(this);
-        //}
-        //else
-        //{
-            //throw new IOException("object not BEREncodable");
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     

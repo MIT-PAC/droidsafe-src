@@ -1,11 +1,11 @@
 package libcore.net.url;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Locale;
 
@@ -13,10 +13,11 @@ public final class UrlUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.963 -0400", hash_original_method = "F053AECC4082C3B5C824758EB45DBA0C", hash_generated_method = "C53F924364698517C893492550830BCA")
     private  UrlUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String canonicalizePath(String path, boolean discardRelativePrefix) {
         int segmentStart = 0;
         int deletableSegments = 0;
@@ -55,6 +56,7 @@ public final class UrlUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String authoritySafePath(String authority, String path) {
         if (authority != null && !authority.isEmpty() && !path.isEmpty() && !path.startsWith("/")) {
             return "/" + path;
@@ -63,6 +65,7 @@ public final class UrlUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getSchemePrefix(String spec) {
         int colon = spec.indexOf(':');
         if (colon < 1) {
@@ -89,6 +92,7 @@ public final class UrlUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int findFirstOf(String string, String chars, int start, int end) {
         for (int i = start; i < end; i++) {
             char c = string.charAt(i);

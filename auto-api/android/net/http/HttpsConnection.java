@@ -1,11 +1,11 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.util.Log;
@@ -57,11 +57,12 @@ public class HttpsConnection extends Connection {
         addTaint(context.getTaint());
         addTaint(host.getTaint());
         addTaint(requestFeeder.getTaint());
-        // ---------- Original Method ----------
-        //mProxyHost = proxy;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void initializeEngine(File sessionDir) {
         try {
             SSLClientSessionCache cache = null;
@@ -106,16 +107,16 @@ public class HttpsConnection extends Connection {
      void setCertificate(SslCertificate certificate) {
         mCertificate = certificate;
         addTaint(certificate.getTaint());
-        // ---------- Original Method ----------
-        //mCertificate = certificate;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.007 -0400", hash_original_method = "F14CEFDDF6A25D53C3E36A1E481088F2", hash_generated_method = "B160EA7EEF2631EC58C9B1F6966C7B35")
     @Override
      AndroidHttpClientConnection openConnection(Request req) throws IOException {
-        AndroidHttpClientConnection varB4EAC82CA7396A68D541C85D26508E83_631966457 = null; //Variable for return #1
-        AndroidHttpClientConnection varB4EAC82CA7396A68D541C85D26508E83_1324382163 = null; //Variable for return #2
+        AndroidHttpClientConnection varB4EAC82CA7396A68D541C85D26508E83_631966457 = null; 
+        AndroidHttpClientConnection varB4EAC82CA7396A68D541C85D26508E83_1324382163 = null; 
         SSLSocket sslSock = null;
         {
             AndroidHttpClientConnection proxyConnection = null;
@@ -129,19 +130,19 @@ public class HttpsConnection extends Connection {
                 HttpParams params = new BasicHttpParams();
                 HttpConnectionParams.setSocketBufferSize(params, 8192);
                 proxyConnection.bind(proxySock, params);
-            } //End block
+            } 
             catch (IOException e)
             {
                 {
                     proxyConnection.close();
-                } //End block
+                } 
                 String errorMessage = e.getMessage();
                 {
                     errorMessage =
                         "failed to establish a connection to the proxy";
-                } //End block
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new IOException(errorMessage);
-            } //End block
+            } 
             StatusLine statusLine = null;
             int statusCode = 0;
             Headers headers = new Headers();
@@ -158,63 +159,63 @@ public class HttpsConnection extends Connection {
                             || headerName.equals("host"));
                             {
                                 proxyReq.addHeader(h);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 proxyConnection.sendRequestHeader(proxyReq);
                 proxyConnection.flush();
                 {
                     statusLine = proxyConnection.parseResponseHeader(headers);
                     statusCode = statusLine.getStatusCode();
-                } //End block
-            } //End block
+                } 
+            } 
             catch (ParseException e)
             {
                 String errorMessage = e.getMessage();
                 {
                     errorMessage =
                         "failed to send a CONNECT request";
-                } //End block
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new IOException(errorMessage);
-            } //End block
+            } 
             catch (HttpException e)
             {
                 String errorMessage = e.getMessage();
                 {
                     errorMessage =
                         "failed to send a CONNECT request";
-                } //End block
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new IOException(errorMessage);
-            } //End block
+            } 
             catch (IOException e)
             {
                 String errorMessage = e.getMessage();
                 {
                     errorMessage =
                         "failed to send a CONNECT request";
-                } //End block
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new IOException(errorMessage);
-            } //End block
+            } 
             {
                 try 
                 {
                     sslSock = (SSLSocket) getSocketFactory().createSocket(
                             proxySock, mHost.getHostName(), mHost.getPort(), true);
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     {
                         sslSock.close();
-                    } //End block
+                    } 
                     String errorMessage = e.getMessage();
                     {
                         errorMessage =
                             "failed to create an SSL socket";
-                    } //End block
+                    } 
                     if (DroidSafeAndroidRuntime.control) throw new IOException(errorMessage);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 ProtocolVersion version = statusLine.getProtocolVersion();
                 req.mEventHandler.status(version.getMajor(),
@@ -225,37 +226,37 @@ public class HttpsConnection extends Connection {
                 req.mEventHandler.endData();
                 proxyConnection.close();
                 varB4EAC82CA7396A68D541C85D26508E83_631966457 = null;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             try 
             {
                 sslSock = (SSLSocket) getSocketFactory().createSocket(
                         mHost.getHostName(), mHost.getPort());
                 sslSock.setSoTimeout(SOCKET_TIMEOUT);
-            } //End block
+            } 
             catch (IOException e)
             {
                 {
                     sslSock.close();
-                } //End block
+                } 
                 String errorMessage = e.getMessage();
                 {
                     errorMessage = "failed to create an SSL socket";
-                } //End block
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new IOException(errorMessage);
-            } //End block
-        } //End block
+            } 
+        } 
         SslError error = CertificateChainValidator.getInstance().
             doHandshakeAndValidateServerCertificates(this, sslSock, mHost.getHostName());
         {
             {
                 mSuspended = true;
-            } //End block
+            } 
             boolean canHandle = req.getEventHandler().handleSslErrorRequest(error);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("failed to handle "+ error);
-            } //End block
+            } 
             {
                 {
                     try 
@@ -267,37 +268,37 @@ public class HttpsConnection extends Connection {
                             {
                                 HttpLog.v("HttpsConnection.openConnection():" +
                                           " SSL timeout expired and request was cancelled!!!");
-                            } //End block
-                        } //End block
-                    } //End block
+                            } 
+                        } 
+                    } 
                     catch (InterruptedException e)
                     { }
-                } //End block
+                } 
                 {
                     sslSock.close();
                     if (DroidSafeAndroidRuntime.control) throw new SSLConnectionClosedByUserException("connection closed by the user");
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         AndroidHttpClientConnection conn = new AndroidHttpClientConnection();
         BasicHttpParams params = new BasicHttpParams();
         params.setIntParameter(HttpConnectionParams.SOCKET_BUFFER_SIZE, 8192);
         conn.bind(sslSock, params);
         varB4EAC82CA7396A68D541C85D26508E83_1324382163 = conn;
         addTaint(req.getTaint());
-        AndroidHttpClientConnection varA7E53CE21691AB073D9660D615818899_335269391; //Final return value
+        AndroidHttpClientConnection varA7E53CE21691AB073D9660D615818899_335269391; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_335269391 = varB4EAC82CA7396A68D541C85D26508E83_631966457;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_335269391 = varB4EAC82CA7396A68D541C85D26508E83_1324382163;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_335269391.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_335269391.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_335269391;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -306,36 +307,36 @@ public class HttpsConnection extends Connection {
      void closeConnection() {
         {
             restartConnection(false);
-        } //End block
+        } 
         try 
         {
             {
                 boolean var554318C54B5107CFCDE3465BA6E4A2D0_341169009 = (mHttpClientConnection != null && mHttpClientConnection.isOpen());
                 {
                     mHttpClientConnection.close();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (IOException e)
         {
             HttpLog.v("HttpsConnection.closeConnection():" +
                           " failed closing connection " + mHost);
             e.printStackTrace();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSuspended) {
-            //restartConnection(false);
-        //}
-        //try {
-            //if (mHttpClientConnection != null && mHttpClientConnection.isOpen()) {
-                //mHttpClientConnection.close();
-            //}
-        //} catch (IOException e) {
-            //if (HttpLog.LOGV)
-                //HttpLog.v("HttpsConnection.closeConnection():" +
-                          //" failed closing connection " + mHost);
-            //e.printStackTrace();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+                
+            
+        
+            
+                
+                          
+            
+        
     }
 
     
@@ -344,38 +345,38 @@ public class HttpsConnection extends Connection {
         {
             HttpLog.v("HttpsConnection.restartConnection():" +
                       " proceed: " + proceed);
-        } //End block
+        } 
         {
             {
                 mSuspended = false;
                 mAborted = !proceed;
                 mSuspendLock.notify();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("HttpsConnection.restartConnection():" +
-                      //" proceed: " + proceed);
-        //}
-        //synchronized (mSuspendLock) {
-            //if (mSuspended) {
-                //mSuspended = false;
-                //mAborted = !proceed;
-                //mSuspendLock.notify();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                      
+        
+        
+            
+                
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:39.010 -0400", hash_original_method = "369703D22EBB0B4280A990A7CBC1073E", hash_generated_method = "14C196BF4953237F335C51F3716D7A3D")
     @Override
      String getScheme() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1960329666 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1960329666 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1960329666 = "https";
-        varB4EAC82CA7396A68D541C85D26508E83_1960329666.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1960329666.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1960329666;
-        // ---------- Original Method ----------
-        //return "https";
+        
+        
     }
 
     
@@ -386,17 +387,17 @@ public class HttpsConnection extends Connection {
         initializeEngine(null);
     }
     
-    // orphaned legacy method
+    
     public void checkServerTrusted(
                         X509Certificate[] certs, String authType) {
                     }
     
-    // orphaned legacy method
+    
     public void checkClientTrusted(
                         X509Certificate[] certs, String authType) {
                     }
     
-    // orphaned legacy method
+    
     public X509Certificate[] getAcceptedIssuers() {
                         return null;
                     }
@@ -409,7 +410,7 @@ class SSLConnectionClosedByUserException extends SSLException {
     public  SSLConnectionClosedByUserException(String reason) {
         super(reason);
         addTaint(reason.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -32,14 +32,14 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
         try 
         {
             mGetter = propertyHolder.getMethod(getterName, (Class<?>[])null);
-        } //End block
+        } 
         catch (NoSuchMethodException e)
         {
             getterName = PREFIX_IS + capitalizedName;
             try 
             {
                 mGetter = propertyHolder.getMethod(getterName, (Class<?>[])null);
-            } //End block
+            } 
             catch (NoSuchMethodException e1)
             {
                 try 
@@ -51,53 +51,55 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
                         {
                             if (DroidSafeAndroidRuntime.control) throw new NoSuchPropertyException("Underlying type (" + fieldType + ") " +
                                 "does not match Property type (" + valueType + ")");
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 catch (NoSuchFieldException e2)
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NoSuchPropertyException("No accessor method or field found for"
                             + " property with name " + name);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         Class getterType = mGetter.getReturnType();
         {
             boolean varE0F8B9103254BA81ACC9A19D1436928E_201144115 = (!typesMatch(valueType, getterType));
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchPropertyException("Underlying type (" + getterType + ") " +
                     "does not match Property type (" + valueType + ")");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String setterName = PREFIX_SET + capitalizedName;
         try 
         {
             mSetter = propertyHolder.getMethod(setterName, getterType);
-        } //End block
+        } 
         catch (NoSuchMethodException ignored)
         { }
         addTaint(valueType.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.550 -0400", hash_original_method = "ED015CEE91613D6F524378162B530528", hash_generated_method = "F8F44CC9D5CEE8C11ADA23B9CB6A8750")
     private boolean typesMatch(Class<V> valueType, Class getterType) {
         {
             {
                 boolean var15116A97817E37F8F785F1AE4B1D8378_161625805 = (getterType.isPrimitive());
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(valueType.getTaint());
         addTaint(getterType.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_264735394 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_264735394;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.550 -0400", hash_original_method = "9BC237A59BE2F86E825267381E38AEC8", hash_generated_method = "4D0CC7DEB5DFC49E01B15312CF58C810")
     @Override
     public void set(T object, V value) {
@@ -105,111 +107,112 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
             try 
             {
                 mSetter.invoke(object, value);
-            } //End block
+            } 
             catch (IllegalAccessException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError();
-            } //End block
+            } 
             catch (InvocationTargetException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e.getCause());
-            } //End block
-        } //End block
+            } 
+        } 
         {
             try 
             {
                 mField.set(object, value);
-            } //End block
+            } 
             catch (IllegalAccessException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Property " + getName() +" is read-only");
-        } //End block
+        } 
         addTaint(object.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //if (mSetter != null) {
-            //try {
-                //mSetter.invoke(object, value);
-            //} catch (IllegalAccessException e) {
-                //throw new AssertionError();
-            //} catch (InvocationTargetException e) {
-                //throw new RuntimeException(e.getCause());
-            //}
-        //} else if (mField != null) {
-            //try {
-                //mField.set(object, value);
-            //} catch (IllegalAccessException e) {
-                //throw new AssertionError();
-            //}
-        //} else {
-            //throw new UnsupportedOperationException("Property " + getName() +" is read-only");
-        //}
+        
+        
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.551 -0400", hash_original_method = "4070872B48CA952F40E8D9AD673A26AA", hash_generated_method = "AC7892B10E2D1E20782EE72A4165C9AD")
     @Override
     public V get(T object) {
-        V varB4EAC82CA7396A68D541C85D26508E83_506606232 = null; //Variable for return #1
-        V varB4EAC82CA7396A68D541C85D26508E83_1139843364 = null; //Variable for return #2
+        V varB4EAC82CA7396A68D541C85D26508E83_506606232 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_1139843364 = null; 
         {
             try 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_506606232 = (V) mGetter.invoke(object, (Object[])null);
-            } //End block
+            } 
             catch (IllegalAccessException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError();
-            } //End block
+            } 
             catch (InvocationTargetException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e.getCause());
-            } //End block
-        } //End block
+            } 
+        } 
         {
             try 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1139843364 = (V) mField.get(object);
-            } //End block
+            } 
             catch (IllegalAccessException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError();
-            } //End block
-        } //End block
+            } 
+        } 
         if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         addTaint(object.getTaint());
-        V varA7E53CE21691AB073D9660D615818899_1763632809; //Final return value
+        V varA7E53CE21691AB073D9660D615818899_1763632809; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1763632809 = varB4EAC82CA7396A68D541C85D26508E83_506606232;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1763632809 = varB4EAC82CA7396A68D541C85D26508E83_1139843364;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1763632809.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1763632809.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1763632809;
-        // ---------- Original Method ----------
-        //if (mGetter != null) {
-            //try {
-                //return (V) mGetter.invoke(object, (Object[])null);
-            //} catch (IllegalAccessException e) {
-                //throw new AssertionError();
-            //} catch (InvocationTargetException e) {
-                //throw new RuntimeException(e.getCause());
-            //}
-        //} else if (mField != null) {
-            //try {
-                //return (V) mField.get(object);
-            //} catch (IllegalAccessException e) {
-                //throw new AssertionError();
-            //}
-        //}
-        //throw new AssertionError();
+        
+        
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -218,8 +221,8 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
     public boolean isReadOnly() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1802897594 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1802897594;
-        // ---------- Original Method ----------
-        //return (mSetter == null && mField == null);
+        
+        
     }
 
     

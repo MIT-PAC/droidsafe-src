@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class LinkedHashMap<K, V> extends HashMap<K, V> {
@@ -20,9 +20,9 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
     public  LinkedHashMap() {
         init();
         accessOrder = false;
-        // ---------- Original Method ----------
-        //init();
-        //accessOrder = false;
+        
+        
+        
     }
 
     
@@ -30,7 +30,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
     public  LinkedHashMap(int initialCapacity) {
         this(initialCapacity, DEFAULT_LOAD_FACTOR);
         addTaint(initialCapacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -39,7 +39,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         this(initialCapacity, loadFactor, false);
         addTaint(initialCapacity);
         addTaint(loadFactor);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -51,9 +51,9 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         this.accessOrder = accessOrder;
         addTaint(initialCapacity);
         addTaint(loadFactor);
-        // ---------- Original Method ----------
-        //init();
-        //this.accessOrder = accessOrder;
+        
+        
+        
     }
 
     
@@ -62,8 +62,8 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         this(capacityForInitSize(map.size()));
         constructorPutAll(map);
         addTaint(map.getTaint());
-        // ---------- Original Method ----------
-        //constructorPutAll(map);
+        
+        
     }
 
     
@@ -71,21 +71,21 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
     @Override
      void init() {
         header = new LinkedEntry<K, V>();
-        // ---------- Original Method ----------
-        //header = new LinkedEntry<K, V>();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.717 -0400", hash_original_method = "EB729947D8C5A87C341C9E9026AB1206", hash_generated_method = "E29E2F84BB3FB143AC41BC9AE71E4190")
     public Entry<K, V> eldest() {
-        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_725265908 = null; //Variable for return #1
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_725265908 = null; 
         LinkedEntry<K, V> eldest = header.nxt;
         varB4EAC82CA7396A68D541C85D26508E83_725265908 = eldest != header ? eldest : null;
-        varB4EAC82CA7396A68D541C85D26508E83_725265908.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_725265908.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_725265908;
-        // ---------- Original Method ----------
-        //LinkedEntry<K, V> eldest = header.nxt;
-        //return eldest != header ? eldest : null;
+        
+        
+        
     }
 
     
@@ -98,8 +98,8 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
             boolean var98F762CD6E5967A3F8DD94F64E8DE958_823857173 = (eldest != header && removeEldestEntry(eldest));
             {
                 remove(eldest.key);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         LinkedEntry<K, V> oldTail = header.prv;
         LinkedEntry<K, V> newTail = new LinkedEntry<K,V>(
                 key, value, hash, table[index], header, oldTail);
@@ -108,16 +108,16 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         addTaint(value.getTaint());
         addTaint(hash);
         addTaint(index);
-        // ---------- Original Method ----------
-        //LinkedEntry<K, V> header = this.header;
-        //LinkedEntry<K, V> eldest = header.nxt;
-        //if (eldest != header && removeEldestEntry(eldest)) {
-            //remove(eldest.key);
-        //}
-        //LinkedEntry<K, V> oldTail = header.prv;
-        //LinkedEntry<K, V> newTail = new LinkedEntry<K,V>(
-                //key, value, hash, table[index], header, oldTail);
-        //table[index] = oldTail.nxt = header.prv = newTail;
+        
+        
+        
+        
+            
+        
+        
+        
+                
+        
     }
 
     
@@ -130,23 +130,23 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
             boolean var98F762CD6E5967A3F8DD94F64E8DE958_1109384913 = (eldest != header && removeEldestEntry(eldest));
             {
                 remove(eldest.key);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         LinkedEntry<K, V> oldTail = header.prv;
         LinkedEntry<K, V> newTail = new LinkedEntry<K,V>(
                 null, value, 0, null, header, oldTail);
         entryForNullKey = oldTail.nxt = header.prv = newTail;
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //LinkedEntry<K, V> header = this.header;
-        //LinkedEntry<K, V> eldest = header.nxt;
-        //if (eldest != header && removeEldestEntry(eldest)) {
-            //remove(eldest.key);
-        //}
-        //LinkedEntry<K, V> oldTail = header.prv;
-        //LinkedEntry<K, V> newTail = new LinkedEntry<K,V>(
-                //null, value, 0, null, header, oldTail);
-        //entryForNullKey = oldTail.nxt = header.prv = newTail;
+        
+        
+        
+        
+            
+        
+        
+        
+                
+        
     }
 
     
@@ -154,7 +154,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
     @Override
      HashMapEntry<K, V> constructorNewEntry(
             K key, V value, int hash, HashMapEntry<K, V> next) {
-        HashMapEntry<K, V> varB4EAC82CA7396A68D541C85D26508E83_185243641 = null; //Variable for return #1
+        HashMapEntry<K, V> varB4EAC82CA7396A68D541C85D26508E83_185243641 = null; 
         LinkedEntry<K, V> header = this.header;
         LinkedEntry<K, V> oldTail = header.prv;
         LinkedEntry<K, V> newTail = new LinkedEntry<K,V>(key, value, hash, next, header, oldTail);
@@ -163,30 +163,31 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         addTaint(value.getTaint());
         addTaint(hash);
         addTaint(next.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_185243641.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_185243641.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_185243641;
-        // ---------- Original Method ----------
-        //LinkedEntry<K, V> header = this.header;
-        //LinkedEntry<K, V> oldTail = header.prv;
-        //LinkedEntry<K, V> newTail
-                //= new LinkedEntry<K,V>(key, value, hash, next, header, oldTail);
-        //return oldTail.nxt = header.prv = newTail;
+        
+        
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.722 -0400", hash_original_method = "5C4F6BF9C2C1A7BF64D67EB60F9C3D15", hash_generated_method = "B4F2F3C5309F6AA98013D682AEE89185")
     @Override
     public V get(Object key) {
-        V varB4EAC82CA7396A68D541C85D26508E83_263551801 = null; //Variable for return #1
-        V varB4EAC82CA7396A68D541C85D26508E83_561347499 = null; //Variable for return #2
-        V varB4EAC82CA7396A68D541C85D26508E83_584689355 = null; //Variable for return #3
-        V varB4EAC82CA7396A68D541C85D26508E83_1990540314 = null; //Variable for return #4
+        V varB4EAC82CA7396A68D541C85D26508E83_263551801 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_561347499 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_584689355 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_1990540314 = null; 
         {
             HashMapEntry<K, V> e = entryForNullKey;
             varB4EAC82CA7396A68D541C85D26508E83_263551801 = null;
             makeTail((LinkedEntry<K, V>) e);
             varB4EAC82CA7396A68D541C85D26508E83_561347499 = e.value;
-        } //End block
+        } 
         int hash = key.hashCode();
         hash ^= (hash >>> 20) ^ (hash >>> 12);
         hash ^= (hash >>> 7) ^ (hash >>> 4);
@@ -201,55 +202,56 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
                     {
                         makeTail((LinkedEntry<K, V>) e);
                         varB4EAC82CA7396A68D541C85D26508E83_584689355 = e.value;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1990540314 = null;
         addTaint(key.getTaint());
-        V varA7E53CE21691AB073D9660D615818899_1044400965; //Final return value
+        V varA7E53CE21691AB073D9660D615818899_1044400965; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1044400965 = varB4EAC82CA7396A68D541C85D26508E83_263551801;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1044400965 = varB4EAC82CA7396A68D541C85D26508E83_561347499;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1044400965 = varB4EAC82CA7396A68D541C85D26508E83_584689355;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1044400965 = varB4EAC82CA7396A68D541C85D26508E83_1990540314;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1044400965.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1044400965.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1044400965;
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //HashMapEntry<K, V> e = entryForNullKey;
-            //if (e == null)
-                //return null;
-            //if (accessOrder)
-                //makeTail((LinkedEntry<K, V>) e);
-            //return e.value;
-        //}
-        //int hash = key.hashCode();
-        //hash ^= (hash >>> 20) ^ (hash >>> 12);
-        //hash ^= (hash >>> 7) ^ (hash >>> 4);
-        //HashMapEntry<K, V>[] tab = table;
-        //for (HashMapEntry<K, V> e = tab[hash & (tab.length - 1)];
-                //e != null; e = e.next) {
-            //K eKey = e.key;
-            //if (eKey == key || (e.hash == hash && key.equals(eKey))) {
-                //if (accessOrder)
-                    //makeTail((LinkedEntry<K, V>) e);
-                //return e.value;
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+            
+                
+            
+        
+        
+        
+        
+        
+        
+                
+            
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.723 -0400", hash_original_method = "D37211F13FFE982B5329A6F04D365268", hash_generated_method = "3D3BBFEC671D8C6FFA979D2E2C3E8F10")
     private void makeTail(LinkedEntry<K, V> e) {
         e.prv.nxt = e.nxt;
@@ -260,15 +262,15 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         e.prv = oldTail;
         oldTail.nxt = header.prv = e;
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
-        //e.prv.nxt = e.nxt;
-        //e.nxt.prv = e.prv;
-        //LinkedEntry<K, V> header = this.header;
-        //LinkedEntry<K, V> oldTail = header.prv;
-        //e.nxt = header;
-        //e.prv = oldTail;
-        //oldTail.nxt = header.prv = e;
-        //modCount++;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -277,12 +279,12 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
      void preModify(HashMapEntry<K, V> e) {
         {
             makeTail((LinkedEntry<K, V>) e);
-        } //End block
+        } 
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
-        //if (accessOrder) {
-            //makeTail((LinkedEntry<K, V>) e);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -294,14 +296,15 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         le.nxt.prv = le.prv;
         le.nxt = le.prv = null;
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
-        //LinkedEntry<K, V> le = (LinkedEntry<K, V>) e;
-        //le.prv.nxt = le.nxt;
-        //le.nxt.prv = le.prv;
-        //le.nxt = le.prv = null;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.724 -0400", hash_original_method = "B1ADF7F2DAB1D611A8BB20D2E6FE8BE5", hash_generated_method = "11B0125E3483306067BB2756AA107CB6")
     @Override
     public boolean containsValue(Object value) {
@@ -310,8 +313,8 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
                 LinkedEntry<K, V> header = this.header;
                 LinkedEntry<K, V> e = header.nxt;
                 e = e.nxt;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             LinkedEntry<K, V> header = this.header;
             LinkedEntry<K, V> e = header.nxt;
@@ -319,32 +322,33 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
             {
                 {
                     boolean var88D4FD98A5D9191EF70D3714E40B4A58_1744956072 = (value.equals(e.value));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(value.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_608272479 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_608272479;
-        // ---------- Original Method ----------
-        //if (value == null) {
-            //for (LinkedEntry<K, V> header = this.header, e = header.nxt;
-                    //e != header; e = e.nxt) {
-                //if (e.value == null) {
-                    //return true;
-                //}
-            //}
-            //return false;
-        //}
-        //for (LinkedEntry<K, V> header = this.header, e = header.nxt;
-                //e != header; e = e.nxt) {
-            //if (value.equals(e.value)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                    
+                
+                    
+                
+            
+            
+        
+        
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.724 -0400", hash_original_method = "F9D4D1514A1438141913ED2857BCCF60", hash_generated_method = "FF8F2046642E360F5E3EAF58FEFCC95E")
     public void clear() {
         super.clear();
@@ -355,54 +359,54 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
                 LinkedEntry<K, V> nxt = e.nxt;
                 e.nxt = e.prv = null;
                 e = nxt;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         header.nxt = header.prv = header;
-        // ---------- Original Method ----------
-        //super.clear();
-        //LinkedEntry<K, V> header = this.header;
-        //for (LinkedEntry<K, V> e = header.nxt; e != header; ) {
-            //LinkedEntry<K, V> nxt = e.nxt;
-            //e.nxt = e.prv = null;
-            //e = nxt;
-        //}
-        //header.nxt = header.prv = header;
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.725 -0400", hash_original_method = "E5C2B853B7FE0DFF8A1198070D9AED67", hash_generated_method = "7166D1698F97486746ADCAE860273677")
     @Override
      Iterator<K> newKeyIterator() {
-        Iterator<K> varB4EAC82CA7396A68D541C85D26508E83_86579227 = null; //Variable for return #1
+        Iterator<K> varB4EAC82CA7396A68D541C85D26508E83_86579227 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_86579227 = new KeyIterator();
-        varB4EAC82CA7396A68D541C85D26508E83_86579227.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_86579227.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_86579227;
-        // ---------- Original Method ----------
-        //return new KeyIterator();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.725 -0400", hash_original_method = "58BEE1C21CE9010029EB8FF9FDCDF9B3", hash_generated_method = "B25455F3191AEFEDB94855E42B875526")
     @Override
      Iterator<V> newValueIterator() {
-        Iterator<V> varB4EAC82CA7396A68D541C85D26508E83_455945586 = null; //Variable for return #1
+        Iterator<V> varB4EAC82CA7396A68D541C85D26508E83_455945586 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_455945586 = new ValueIterator();
-        varB4EAC82CA7396A68D541C85D26508E83_455945586.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_455945586.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_455945586;
-        // ---------- Original Method ----------
-        //return new ValueIterator();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.726 -0400", hash_original_method = "7416C435C60270F3DC14B8CDBC0FF1EF", hash_generated_method = "8983A40248C7513EB990EE9F119F0857")
     @Override
      Iterator<Map.Entry<K, V>> newEntryIterator() {
-        Iterator<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_1339795486 = null; //Variable for return #1
+        Iterator<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_1339795486 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1339795486 = new EntryIterator();
-        varB4EAC82CA7396A68D541C85D26508E83_1339795486.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1339795486.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1339795486;
-        // ---------- Original Method ----------
-        //return new EntryIterator();
+        
+        
     }
 
     
@@ -411,8 +415,8 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         addTaint(eldest.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1632296636 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1632296636;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -428,8 +432,8 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
           LinkedEntry() {
             super(null, null, 0, null);
             nxt = prv = this;
-            // ---------- Original Method ----------
-            //nxt = prv = this;
+            
+            
         }
 
         
@@ -443,9 +447,9 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
             addTaint(value.getTaint());
             addTaint(hash);
             addTaint(next.getTaint());
-            // ---------- Original Method ----------
-            //this.nxt = nxt;
-            //this.prv = prv;
+            
+            
+            
         }
 
         
@@ -467,7 +471,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.727 -0400", hash_original_method = "FBBC727CB357F07230390F692D9E6F38", hash_generated_method = "FBBC727CB357F07230390F692D9E6F38")
         public LinkedHashIterator ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -475,29 +479,29 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         public final boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2057698510 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2057698510;
-            // ---------- Original Method ----------
-            //return next != header;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.728 -0400", hash_original_method = "6E1581FE9AE48441E5CB627F97604374", hash_generated_method = "AC3A1E43C53FE0602DC9D89542C3F5E6")
         final LinkedEntry<K, V> nextEntry() {
-            LinkedEntry<K, V> varB4EAC82CA7396A68D541C85D26508E83_764655926 = null; //Variable for return #1
+            LinkedEntry<K, V> varB4EAC82CA7396A68D541C85D26508E83_764655926 = null; 
             if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
             LinkedEntry<K, V> e = next;
             if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             next = e.nxt;
             varB4EAC82CA7396A68D541C85D26508E83_764655926 = lastReturned = e;
-            varB4EAC82CA7396A68D541C85D26508E83_764655926.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_764655926.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_764655926;
-            // ---------- Original Method ----------
-            //if (modCount != expectedModCount)
-                //throw new ConcurrentModificationException();
-            //LinkedEntry<K, V> e = next;
-            //if (e == header)
-                //throw new NoSuchElementException();
-            //next = e.nxt;
-            //return lastReturned = e;
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
@@ -508,14 +512,14 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
             LinkedHashMap.this.remove(lastReturned.key);
             lastReturned = null;
             expectedModCount = modCount;
-            // ---------- Original Method ----------
-            //if (modCount != expectedModCount)
-                //throw new ConcurrentModificationException();
-            //if (lastReturned == null)
-                //throw new IllegalStateException();
-            //LinkedHashMap.this.remove(lastReturned.key);
-            //lastReturned = null;
-            //expectedModCount = modCount;
+            
+            
+                
+            
+                
+            
+            
+            
         }
 
         
@@ -528,18 +532,18 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.728 -0400", hash_original_method = "F1A12FA7FDFCBC1B54210EBDFEB312D4", hash_generated_method = "F1A12FA7FDFCBC1B54210EBDFEB312D4")
         public KeyIterator ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.729 -0400", hash_original_method = "EA50D6F1622FBE805CA447972176B648", hash_generated_method = "A1E6DEA9DDCCFB36C16EFE55720CB41F")
         public final K next() {
-            K varB4EAC82CA7396A68D541C85D26508E83_178566725 = null; //Variable for return #1
+            K varB4EAC82CA7396A68D541C85D26508E83_178566725 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_178566725 = nextEntry().key;
-            varB4EAC82CA7396A68D541C85D26508E83_178566725.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_178566725.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_178566725;
-            // ---------- Original Method ----------
-            //return nextEntry().key;
+            
+            
         }
 
         
@@ -552,18 +556,18 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.729 -0400", hash_original_method = "F211FE83547E030E3E0992549D0B21BC", hash_generated_method = "F211FE83547E030E3E0992549D0B21BC")
         public ValueIterator ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.731 -0400", hash_original_method = "53BB4827D74FCF37FAF510D076C14D5E", hash_generated_method = "ECF0F22A1B162D4AF9D86596F09A15E5")
         public final V next() {
-            V varB4EAC82CA7396A68D541C85D26508E83_1140903906 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_1140903906 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1140903906 = nextEntry().value;
-            varB4EAC82CA7396A68D541C85D26508E83_1140903906.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1140903906.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1140903906;
-            // ---------- Original Method ----------
-            //return nextEntry().value;
+            
+            
         }
 
         
@@ -576,18 +580,18 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.731 -0400", hash_original_method = "B80B70BCEBFE7A41A1C46DBA21C09DAD", hash_generated_method = "B80B70BCEBFE7A41A1C46DBA21C09DAD")
         public EntryIterator ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.732 -0400", hash_original_method = "433D7E99AB55A4B03D9D3E9DC3E9704E", hash_generated_method = "A5A24F57191057750ECD854CE44CB885")
         public final Map.Entry<K, V> next() {
-            Map.Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_790016610 = null; //Variable for return #1
+            Map.Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_790016610 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_790016610 = nextEntry();
-            varB4EAC82CA7396A68D541C85D26508E83_790016610.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_790016610.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_790016610;
-            // ---------- Original Method ----------
-            //return nextEntry();
+            
+            
         }
 
         

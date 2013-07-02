@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.ref.SoftReference;
 import java.lang.reflect.Constructor;
@@ -73,94 +73,95 @@ public class ObjectStreamClass implements Serializable {
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.628 -0400", hash_original_method = "F4D9898A03FC0DADA999BF46D97F9433", hash_generated_method = "A9246BC45205ECF4E818CF0D168C4ADC")
 	ObjectStreamClass() {
-		// ---------- Original Method ----------
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.629 -0400", hash_original_method = "7053F33417C9644BFD49070B9EF96C54", hash_generated_method = "AC3AFCBDE4A9E172383956581C876B87")
 	void setConstructor(long newConstructor) {
 		constructor = newConstructor;
-		// ---------- Original Method ----------
-		// constructor = newConstructor;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.629 -0400", hash_original_method = "AE977884038645FC18D9650C0686387C", hash_generated_method = "C4ED0586FE42610108CA75BBD5409CC5")
 	long getConstructor() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1425690750 = getTaintLong();
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1425690750;
-		// ---------- Original Method ----------
-		// return constructor;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.629 -0400", hash_original_method = "592D0703821799AB937A99A67AB05B5C", hash_generated_method = "8611FC62419E06A96E1473F2BC8AE493")
 	Field getReflectionField(ObjectStreamField osf) {
-		Field varB4EAC82CA7396A68D541C85D26508E83_1449209208 = null; // Variable
-																		// for
-																		// return
-																		// #1
-		Field varB4EAC82CA7396A68D541C85D26508E83_871860779 = null; // Variable
-																	// for
-																	// return #2
-		Field varB4EAC82CA7396A68D541C85D26508E83_881212181 = null; // Variable
-																	// for
-																	// return #3
+		Field varB4EAC82CA7396A68D541C85D26508E83_1449209208 = null; 
+																		
+																		
+																		
+		Field varB4EAC82CA7396A68D541C85D26508E83_871860779 = null; 
+																	
+																	
+		Field varB4EAC82CA7396A68D541C85D26508E83_881212181 = null; 
+																	
+																	
 		{
 			Field field = reflectionFields.get(osf);
 			{
 				varB4EAC82CA7396A68D541C85D26508E83_1449209208 = field;
-			} // End block
-		} // End block
+			} 
+		} 
 		try {
 			Class<?> declaringClass = forClass();
 			Field field = declaringClass.getDeclaredField(osf.getName());
 			field.setAccessible(true);
 			{
 				reflectionFields.put(osf, field);
-			} // End block
+			} 
 			varB4EAC82CA7396A68D541C85D26508E83_871860779 = reflectionFields.get(osf);
-		} // End block
+		} 
 		catch (NoSuchFieldException ex) {
 			varB4EAC82CA7396A68D541C85D26508E83_881212181 = null;
-		} // End block
+		} 
 		addTaint(osf.getTaint());
-		Field varA7E53CE21691AB073D9660D615818899_1507256867; // Final return
-																// value
+		Field varA7E53CE21691AB073D9660D615818899_1507256867; 
+																
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_1507256867 = varB4EAC82CA7396A68D541C85D26508E83_1449209208;
 			break;
-		case 2: // Assign result for return ordinal #2
+		case 2: 
 			varA7E53CE21691AB073D9660D615818899_1507256867 = varB4EAC82CA7396A68D541C85D26508E83_871860779;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_1507256867 = varB4EAC82CA7396A68D541C85D26508E83_881212181;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_1507256867.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varA7E53CE21691AB073D9660D615818899_1507256867.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varA7E53CE21691AB073D9660D615818899_1507256867;
-		// ---------- Original Method ----------
-		// synchronized (reflectionFields) {
-		// Field field = reflectionFields.get(osf);
-		// if (field != null) {
-		// return field;
-		// }
-		// }
-		// try {
-		// Class<?> declaringClass = forClass();
-		// Field field = declaringClass.getDeclaredField(osf.getName());
-		// field.setAccessible(true);
-		// synchronized (reflectionFields) {
-		// reflectionFields.put(osf, field);
-		// }
-		// return reflectionFields.get(osf);
-		// } catch (NoSuchFieldException ex) {
-		// return null;
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
-	private static ObjectStreamClass createClassDesc(Class<?> cl) {
+	@DSModeled(DSC.SAFE)
+    private static ObjectStreamClass createClassDesc(Class<?> cl) {
 		ObjectStreamClass result = new ObjectStreamClass();
 		boolean isArray = cl.isArray();
 		boolean serializable = isSerializable(cl);
@@ -227,12 +228,12 @@ public class ObjectStreamClass implements Serializable {
 			f.setAccessible(true);
 			try {
 				_fields = (ObjectStreamField[]) f.get(null);
-			} // End block
+			} 
 			catch (IllegalAccessException ex) {
 				if (DroidSafeAndroidRuntime.control)
 					throw new AssertionError(ex);
-			} // End block
-		} // End block
+			} 
+		} 
 		{
 			List<ObjectStreamField> serializableFields = new ArrayList<ObjectStreamField>(declaredFields.length);
 			{
@@ -244,20 +245,20 @@ public class ObjectStreamClass implements Serializable {
 						{
 							ObjectStreamField field = new ObjectStreamField(declaredField.getName(), declaredField.getType());
 							serializableFields.add(field);
-						} // End block
-					} // End collapsed parenthetic
-				} // End block
-			} // End collapsed parenthetic
+						} 
+					} 
+				} 
+			} 
 			{
 				boolean varFDB496ED83E038616C56C9314DBD5FA6_2048431108 = (serializableFields.size() == 0);
 				{
 					_fields = NO_FIELDS;
-				} // End block
+				} 
 				{
 					_fields = serializableFields.toArray(new ObjectStreamField[serializableFields.size()]);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		Arrays.sort(_fields);
 		int primOffset = 0;
 		int objectOffset = 0;
@@ -270,20 +271,21 @@ public class ObjectStreamClass implements Serializable {
 					{
 						_fields[i].offset = primOffset;
 						primOffset += primitiveSize(type);
-					} // End block
+					} 
 					{
 						_fields[i].offset = objectOffset++;
-					} // End block
-				} // End collapsed parenthetic
-			} // End block
-		} // End collapsed parenthetic
+					} 
+				} 
+			} 
+		} 
 		fields = _fields;
 		addTaint(declaredFields[0].getTaint());
-		// ---------- Original Method ----------
-		// Original Method Too Long, Refer to Original Implementation
+		
+		
 	}
 
-	private static long computeSerialVersionUID(Class<?> cl, Field[] fields) {
+	@DSModeled(DSC.SAFE)
+    private static long computeSerialVersionUID(Class<?> cl, Field[] fields) {
 		for (int i = 0; i < fields.length; i++) {
 			final Field field = fields[i];
 			if (field.getType() == long.class) {
@@ -405,15 +407,18 @@ public class ObjectStreamClass implements Serializable {
 		return Memory.peekLong(hash, 0, ByteOrder.LITTLE_ENDIAN);
 	}
 
-	private static String descriptorForFieldSignature(String signature) {
+	@DSModeled(DSC.SAFE)
+    private static String descriptorForFieldSignature(String signature) {
 		return signature.replace('.', '/');
 	}
 
-	private static String descriptorForSignature(String signature) {
+	@DSModeled(DSC.SAFE)
+    private static String descriptorForSignature(String signature) {
 		return signature.substring(signature.indexOf("("));
 	}
 
-	static Field fieldSerialPersistentFields(Class<?> cl) {
+	@DSModeled(DSC.SAFE)
+    static Field fieldSerialPersistentFields(Class<?> cl) {
 		try {
 			Field f = cl.getDeclaredField("serialPersistentFields");
 			int modifiers = f.getModifiers();
@@ -427,58 +432,61 @@ public class ObjectStreamClass implements Serializable {
 		return null;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.640 -0400", hash_original_method = "3FC829F6BB79347D76007A55E3423470", hash_generated_method = "D63EC402D38BB2DFA8A7CED3C660D16D")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.640 -0400", hash_original_method = "3FC829F6BB79347D76007A55E3423470", hash_generated_method = "D63EC402D38BB2DFA8A7CED3C660D16D")
 	public Class<?> forClass() {
-		Class<?> varB4EAC82CA7396A68D541C85D26508E83_1538019573 = null; // Variable
-																		// for
-																		// return
-																		// #1
+		Class<?> varB4EAC82CA7396A68D541C85D26508E83_1538019573 = null; 
+																		
+																		
+																		
 		varB4EAC82CA7396A68D541C85D26508E83_1538019573 = resolvedClass;
-		varB4EAC82CA7396A68D541C85D26508E83_1538019573.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1538019573.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1538019573;
-		// ---------- Original Method ----------
-		// return resolvedClass;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.640 -0400", hash_original_method = "CFDAB7386CDDDD8EC35152CD7D073792", hash_generated_method = "DEA791BC18F148AEB2D968623E9210CB")
 	Object newInstance(Class<?> instantiationClass) throws InvalidClassException {
-		Object varB4EAC82CA7396A68D541C85D26508E83_2016379475 = null; // Variable
-																		// for
-																		// return
-																		// #1
+		Object varB4EAC82CA7396A68D541C85D26508E83_2016379475 = null; 
+																		
+																		
+																		
 		resolveConstructorClass(instantiationClass);
 		varB4EAC82CA7396A68D541C85D26508E83_2016379475 = newInstance(instantiationClass, resolvedConstructorMethodId);
 		addTaint(instantiationClass.getTaint());
-		varB4EAC82CA7396A68D541C85D26508E83_2016379475.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_2016379475.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_2016379475;
-		// ---------- Original Method ----------
-		// resolveConstructorClass(instantiationClass);
-		// return newInstance(instantiationClass, resolvedConstructorMethodId);
+		
+		
+		
 	}
 
-	private static Object newInstance(Class<?> instantiationClass, int methodId) {
+	@DSModeled(DSC.SAFE)
+    private static Object newInstance(Class<?> instantiationClass, int methodId) {
 		return new Object();
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.642 -0400", hash_original_method = "66A47A19F5FB8C837FA66140F62CB154", hash_generated_method = "595EAAB94FE3D49F8C3873467DFEAECD")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.642 -0400", hash_original_method = "66A47A19F5FB8C837FA66140F62CB154", hash_generated_method = "595EAAB94FE3D49F8C3873467DFEAECD")
 	private Class<?> resolveConstructorClass(Class<?> objectClass) throws InvalidClassException {
-		Class<?> varB4EAC82CA7396A68D541C85D26508E83_241925724 = null; // Variable
-																		// for
-																		// return
-																		// #1
-		Class<?> varB4EAC82CA7396A68D541C85D26508E83_252712759 = null; // Variable
-																		// for
-																		// return
-																		// #2
+		Class<?> varB4EAC82CA7396A68D541C85D26508E83_241925724 = null; 
+																		
+																		
+																		
+		Class<?> varB4EAC82CA7396A68D541C85D26508E83_252712759 = null; 
+																		
+																		
+																		
 		{
 			varB4EAC82CA7396A68D541C85D26508E83_241925724 = resolvedConstructorClass;
-		} // End block
+		} 
 		Class<?> constructorClass = objectClass;
 		boolean wasSerializable = (flags & ObjectStreamConstants.SC_SERIALIZABLE) != 0;
 		{
@@ -486,24 +494,24 @@ public class ObjectStreamClass implements Serializable {
 				boolean varFDE4CBEE93EED52DBC15AAE1ACE55609_893219583 = (constructorClass != null && ObjectStreamClass.isSerializable(constructorClass));
 				{
 					constructorClass = constructorClass.getSuperclass();
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		Constructor<?> constructor = null;
 		{
 			try {
 				constructor = constructorClass.getDeclaredConstructor(EmptyArray.CLASS);
-			} // End block
+			} 
 			catch (NoSuchMethodException ignored) {
 			}
-		} // End block
+		} 
 		{
 			String className;
 			className = constructorClass.getName();
 			className = null;
 			if (DroidSafeAndroidRuntime.control)
 				throw new InvalidClassException(className, "IllegalAccessException");
-		} // End block
+		} 
 		int constructorModifiers = constructor.getModifiers();
 		boolean isPublic = Modifier.isPublic(constructorModifiers);
 		boolean isProtected = Modifier.isProtected(constructorModifiers);
@@ -512,45 +520,47 @@ public class ObjectStreamClass implements Serializable {
 		{
 			if (DroidSafeAndroidRuntime.control)
 				throw new InvalidClassException(constructorClass.getName(), "IllegalAccessException");
-		} // End block
+		} 
 		{
 			{
 				boolean var01C93A2AE05D9878C907DF6E9F64ECCC_1226439427 = (!inSamePackage(constructorClass, objectClass));
 				{
 					if (DroidSafeAndroidRuntime.control)
 						throw new InvalidClassException(constructorClass.getName(), "IllegalAccessException");
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		resolvedConstructorClass = constructorClass;
 		resolvedConstructorMethodId = getConstructorId(resolvedConstructorClass);
 		varB4EAC82CA7396A68D541C85D26508E83_252712759 = constructorClass;
 		addTaint(objectClass.getTaint());
-		Class<?> varA7E53CE21691AB073D9660D615818899_1733000738; // Final return
-																	// value
+		Class<?> varA7E53CE21691AB073D9660D615818899_1733000738; 
+																	
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_1733000738 = varB4EAC82CA7396A68D541C85D26508E83_241925724;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_1733000738 = varB4EAC82CA7396A68D541C85D26508E83_252712759;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_1733000738.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varA7E53CE21691AB073D9660D615818899_1733000738.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varA7E53CE21691AB073D9660D615818899_1733000738;
-		// ---------- Original Method ----------
-		// Original Method Too Long, Refer to Original Implementation
+		
+		
 	}
 
-	private static int getConstructorId(Class<?> c) {
+	@DSModeled(DSC.SAFE)
+    private static int getConstructorId(Class<?> c) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1812619741 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1812619741;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.643 -0400", hash_original_method = "C730C766F4F6CE91266CBA72D38C529A", hash_generated_method = "8172BD5199700ACCD1EE7FA43F02D881")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.643 -0400", hash_original_method = "C730C766F4F6CE91266CBA72D38C529A", hash_generated_method = "8172BD5199700ACCD1EE7FA43F02D881")
 	private boolean inSamePackage(Class<?> c1, Class<?> c2) {
 		String nameC1 = c1.getName();
 		String nameC2 = c2.getName();
@@ -561,34 +571,36 @@ public class ObjectStreamClass implements Serializable {
 		addTaint(c2.getTaint());
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_207544676 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_207544676;
-		// ---------- Original Method ----------
-		// String nameC1 = c1.getName();
-		// String nameC2 = c2.getName();
-		// int indexDotC1 = nameC1.lastIndexOf('.');
-		// int indexDotC2 = nameC2.lastIndexOf('.');
-		// if (indexDotC1 != indexDotC2) {
-		// return false;
-		// }
-		// if (indexDotC1 == -1) {
-		// return true;
-		// }
-		// return nameC1.regionMatches(0, nameC2, 0, indexDotC1);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
-	static String getConstructorSignature(Constructor<?> c) {
+	@DSModeled(DSC.SAFE)
+    static String getConstructorSignature(Constructor<?> c) {
 		return new String();
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.644 -0400", hash_original_method = "58A307C728457592549C73808957655C", hash_generated_method = "8FF72D37D5259741B2A327CCFC8B5D8A")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.644 -0400", hash_original_method = "58A307C728457592549C73808957655C", hash_generated_method = "8FF72D37D5259741B2A327CCFC8B5D8A")
 	public ObjectStreamField getField(String name) {
-		ObjectStreamField varB4EAC82CA7396A68D541C85D26508E83_560435753 = null; // Variable
-																				// for
-																				// return
-																				// #1
-		ObjectStreamField varB4EAC82CA7396A68D541C85D26508E83_778220312 = null; // Variable
-																				// for
-																				// return
-																				// #2
+		ObjectStreamField varB4EAC82CA7396A68D541C85D26508E83_560435753 = null; 
+																				
+																				
+																				
+		ObjectStreamField varB4EAC82CA7396A68D541C85D26508E83_778220312 = null; 
+																				
+																				
+																				
 		ObjectStreamField[] allFields = getFields();
 		{
 			int i = 0;
@@ -598,148 +610,151 @@ public class ObjectStreamClass implements Serializable {
 					boolean var32E5452974F5912B0D1DFCF62E31A958_1340372051 = (f.getName().equals(name));
 					{
 						varB4EAC82CA7396A68D541C85D26508E83_560435753 = f;
-					} // End block
-				} // End collapsed parenthetic
-			} // End block
-		} // End collapsed parenthetic
+					} 
+				} 
+			} 
+		} 
 		varB4EAC82CA7396A68D541C85D26508E83_778220312 = null;
 		addTaint(name.getTaint());
-		ObjectStreamField varA7E53CE21691AB073D9660D615818899_2135839227; // Final
-																			// return
-																			// value
+		ObjectStreamField varA7E53CE21691AB073D9660D615818899_2135839227; 
+																			
+																			
 		switch (DroidSafeAndroidRuntime.switchControl) {
-		case 1: // Assign result for return ordinal #1
+		case 1: 
 			varA7E53CE21691AB073D9660D615818899_2135839227 = varB4EAC82CA7396A68D541C85D26508E83_560435753;
 			break;
 		default:
 			varA7E53CE21691AB073D9660D615818899_2135839227 = varB4EAC82CA7396A68D541C85D26508E83_778220312;
 			break;
 		}
-		varA7E53CE21691AB073D9660D615818899_2135839227.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varA7E53CE21691AB073D9660D615818899_2135839227.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varA7E53CE21691AB073D9660D615818899_2135839227;
-		// ---------- Original Method ----------
-		// ObjectStreamField[] allFields = getFields();
-		// for (int i = 0; i < allFields.length; i++) {
-		// ObjectStreamField f = allFields[i];
-		// if (f.getName().equals(name)) {
-		// return f;
-		// }
-		// }
-		// return null;
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.647 -0400", hash_original_method = "3D80A7A04F3988E3E464D888981C4A01", hash_generated_method = "BBEBBA3648A24068E82B84EB0A09CB3D")
 	ObjectStreamField[] fields() {
-		ObjectStreamField[] varB4EAC82CA7396A68D541C85D26508E83_1887859363 = null; // Variable
-																					// for
-																					// return
-																					// #1
+		ObjectStreamField[] varB4EAC82CA7396A68D541C85D26508E83_1887859363 = null; 
+																					
+																					
+																					
 		{
 			Class<?> forCl = forClass();
 			{
 				boolean var793D8E01C16F5EE9855A6887A9C40654_2014162983 = (forCl != null && isSerializable() && !forCl.isArray());
 				{
 					buildFieldDescriptors(forCl.getDeclaredFields());
-				} // End block
+				} 
 				{
 					setFields(NO_FIELDS);
-				} // End block
-			} // End collapsed parenthetic
-		} // End block
+				} 
+			} 
+		} 
 		varB4EAC82CA7396A68D541C85D26508E83_1887859363 = fields;
-		varB4EAC82CA7396A68D541C85D26508E83_1887859363.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1887859363.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1887859363;
-		// ---------- Original Method ----------
-		// if (fields == null) {
-		// Class<?> forCl = forClass();
-		// if (forCl != null && isSerializable() && !forCl.isArray()) {
-		// buildFieldDescriptors(forCl.getDeclaredFields());
-		// } else {
-		// setFields(NO_FIELDS);
-		// }
-		// }
-		// return fields;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.648 -0400", hash_original_method = "BA69DA3B5E6C7F20CA233B877CCB0384", hash_generated_method = "80BD9A0ED40A556837E2B4F1838D67E9")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.648 -0400", hash_original_method = "BA69DA3B5E6C7F20CA233B877CCB0384", hash_generated_method = "80BD9A0ED40A556837E2B4F1838D67E9")
 	public ObjectStreamField[] getFields() {
-		ObjectStreamField[] varB4EAC82CA7396A68D541C85D26508E83_1934263097 = null; // Variable
-																					// for
-																					// return
-																					// #1
+		ObjectStreamField[] varB4EAC82CA7396A68D541C85D26508E83_1934263097 = null; 
+																					
+																					
+																					
 		copyFieldAttributes();
 		varB4EAC82CA7396A68D541C85D26508E83_1934263097 = loadFields == null ? fields().clone() : loadFields.clone();
-		varB4EAC82CA7396A68D541C85D26508E83_1934263097.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1934263097.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1934263097;
-		// ---------- Original Method ----------
-		// copyFieldAttributes();
-		// return loadFields == null ? fields().clone() : loadFields.clone();
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.650 -0400", hash_original_method = "8AA71837DDE89491F51C878CBC8B38A5", hash_generated_method = "B83840894AC51F5B849D3B4B0FA643AA")
 	List<ObjectStreamClass> getHierarchy() {
-		List<ObjectStreamClass> varB4EAC82CA7396A68D541C85D26508E83_1562373706 = null; // Variable
-																						// for
-																						// return
-																						// #1
+		List<ObjectStreamClass> varB4EAC82CA7396A68D541C85D26508E83_1562373706 = null; 
+																						
+																						
+																						
 		List<ObjectStreamClass> result = cachedHierarchy;
 		{
 			cachedHierarchy = result = makeHierarchy();
-		} // End block
+		} 
 		varB4EAC82CA7396A68D541C85D26508E83_1562373706 = result;
-		varB4EAC82CA7396A68D541C85D26508E83_1562373706.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1562373706.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1562373706;
-		// ---------- Original Method ----------
-		// List<ObjectStreamClass> result = cachedHierarchy;
-		// if (result == null) {
-		// cachedHierarchy = result = makeHierarchy();
-		// }
-		// return result;
+		
+		
+		
+		
+		
+		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.651 -0400", hash_original_method = "970C4D30E4F07A217EB44CA0880B9D33", hash_generated_method = "D2096202FE142E1732FC42CEDE64A7A7")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.651 -0400", hash_original_method = "970C4D30E4F07A217EB44CA0880B9D33", hash_generated_method = "D2096202FE142E1732FC42CEDE64A7A7")
 	private List<ObjectStreamClass> makeHierarchy() {
-		List<ObjectStreamClass> varB4EAC82CA7396A68D541C85D26508E83_1053179254 = null; // Variable
-																						// for
-																						// return
-																						// #1
+		List<ObjectStreamClass> varB4EAC82CA7396A68D541C85D26508E83_1053179254 = null; 
+																						
+																						
+																						
 		ArrayList<ObjectStreamClass> result = new ArrayList<ObjectStreamClass>();
 		{
 			ObjectStreamClass osc = this;
 			osc = osc.getSuperclass();
 			{
 				result.add(0, osc);
-			} // End block
-		} // End collapsed parenthetic
+			} 
+		} 
 		varB4EAC82CA7396A68D541C85D26508E83_1053179254 = result;
-		varB4EAC82CA7396A68D541C85D26508E83_1053179254.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1053179254.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1053179254;
-		// ---------- Original Method ----------
-		// ArrayList<ObjectStreamClass> result = new
-		// ArrayList<ObjectStreamClass>();
-		// for (ObjectStreamClass osc = this; osc != null; osc =
-		// osc.getSuperclass()) {
-		// result.add(0, osc);
-		// }
-		// return result;
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.652 -0400", hash_original_method = "F57C7EC559BF09EB03BA0EA2BC063E8F", hash_generated_method = "A6AD325DEB326A074CDF5C63128D9C8D")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.652 -0400", hash_original_method = "F57C7EC559BF09EB03BA0EA2BC063E8F", hash_generated_method = "A6AD325DEB326A074CDF5C63128D9C8D")
 	private void copyFieldAttributes() {
 		{
 			int i = 0;
@@ -755,44 +770,44 @@ public class ObjectStreamClass implements Serializable {
 							{
 								loadField.setUnshared(field.isUnshared());
 								loadField.setOffset(field.getOffset());
-							} // End block
-						} // End collapsed parenthetic
-					} // End block
-				} // End collapsed parenthetic
-			} // End block
-		} // End collapsed parenthetic
-			// ---------- Original Method ----------
-			// if ((loadFields == null) || fields == null) {
-			// return;
-		// }
-		// for (int i = 0; i < loadFields.length; i++) {
-		// ObjectStreamField loadField = loadFields[i];
-		// String name = loadField.getName();
-		// for (int j = 0; j < fields.length; j++) {
-		// ObjectStreamField field = fields[j];
-		// if (name.equals(field.getName())) {
-		// loadField.setUnshared(field.isUnshared());
-		// loadField.setOffset(field.getOffset());
-		// break;
-		// }
-		// }
-		// }
+							} 
+						} 
+					} 
+				} 
+			} 
+		} 
+			
+			
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.653 -0400", hash_original_method = "8F334CDB84C81A51C0419AAF322CA87A", hash_generated_method = "49A5A77647A3F9D9046235FBC13079CE")
 	ObjectStreamField[] getLoadFields() {
-		ObjectStreamField[] varB4EAC82CA7396A68D541C85D26508E83_1133706895 = null; // Variable
-																					// for
-																					// return
-																					// #1
+		ObjectStreamField[] varB4EAC82CA7396A68D541C85D26508E83_1133706895 = null; 
+																					
+																					
+																					
 		varB4EAC82CA7396A68D541C85D26508E83_1133706895 = loadFields;
-		varB4EAC82CA7396A68D541C85D26508E83_1133706895.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1133706895.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1133706895;
-		// ---------- Original Method ----------
-		// return loadFields;
+		
+		
 	}
 
 	private static String getFieldSignature(Field f) {
@@ -803,8 +818,8 @@ public class ObjectStreamClass implements Serializable {
 	byte getFlags() {
 		byte var40EA57D3EE3C07BF1C102B466E1C3091_1245108842 = getTaintByte();
 		return var40EA57D3EE3C07BF1C102B466E1C3091_1245108842;
-		// ---------- Original Method ----------
-		// return flags;
+		
+		
 	}
 
 	static String getMethodSignature(Method m) {
@@ -813,50 +828,52 @@ public class ObjectStreamClass implements Serializable {
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.655 -0400", hash_original_method = "4A271A070FBC29EF826D1B50170E00D2", hash_generated_method = "F66372DAA28E9F284E52B2223D8C79F2")
 	public String getName() {
-		String varB4EAC82CA7396A68D541C85D26508E83_1868377228 = null; // Variable
-																		// for
-																		// return
-																		// #1
+		String varB4EAC82CA7396A68D541C85D26508E83_1868377228 = null; 
+																		
+																		
+																		
 		varB4EAC82CA7396A68D541C85D26508E83_1868377228 = className;
-		varB4EAC82CA7396A68D541C85D26508E83_1868377228.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1868377228.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1868377228;
-		// ---------- Original Method ----------
-		// return className;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.656 -0400", hash_original_method = "50DDDA79153910C7DDC4FA6D8AF3586E", hash_generated_method = "BFB61BA302CB57CC955CB2E1A41E888B")
 	public long getSerialVersionUID() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1523350722 = getTaintLong();
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1523350722;
-		// ---------- Original Method ----------
-		// return svUID;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.656 -0400", hash_original_method = "B099B86A783D62A1B2FEC5CAB74CA2FF", hash_generated_method = "446B05A66643E081EAAE5AFE270C9F58")
 	ObjectStreamClass getSuperclass() {
-		ObjectStreamClass varB4EAC82CA7396A68D541C85D26508E83_1792698509 = null; // Variable
-																					// for
-																					// return
-																					// #1
+		ObjectStreamClass varB4EAC82CA7396A68D541C85D26508E83_1792698509 = null; 
+																					
+																					
+																					
 		varB4EAC82CA7396A68D541C85D26508E83_1792698509 = superclass;
-		varB4EAC82CA7396A68D541C85D26508E83_1792698509.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1792698509.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1792698509;
-		// ---------- Original Method ----------
-		// return superclass;
+		
+		
 	}
 
-	private static boolean hasClinit(Class<?> cl) {
+	@DSModeled(DSC.SAFE)
+    private static boolean hasClinit(Class<?> cl) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_153496694 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_153496694;
 	}
 
-	static boolean isExternalizable(Class<?> cl) {
+	@DSModeled(DSC.SAFE)
+    static boolean isExternalizable(Class<?> cl) {
 		return EXTERNALIZABLE.isAssignableFrom(cl);
 	}
 
@@ -864,11 +881,13 @@ public class ObjectStreamClass implements Serializable {
 		return !(typecode == '[' || typecode == 'L');
 	}
 
-	static boolean isSerializable(Class<?> cl) {
+	@DSModeled(DSC.SAFE)
+    static boolean isSerializable(Class<?> cl) {
 		return SERIALIZABLE.isAssignableFrom(cl);
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.658 -0400", hash_original_method = "742EA2900A6EB88CE28517352A724CD7", hash_generated_method = "C3BBF1AF12AC99C743540033EC3FD26A")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.658 -0400", hash_original_method = "742EA2900A6EB88CE28517352A724CD7", hash_generated_method = "C3BBF1AF12AC99C743540033EC3FD26A")
 	private void resolveProperties() {
 		Class<?> cl = forClass();
 		isProxy = Proxy.isProxyClass(cl);
@@ -876,16 +895,16 @@ public class ObjectStreamClass implements Serializable {
 		isSerializable = isSerializable(cl);
 		isExternalizable = isExternalizable(cl);
 		arePropertiesResolved = true;
-		// ---------- Original Method ----------
-		// if (arePropertiesResolved) {
-		// return;
-		// }
-		// Class<?> cl = forClass();
-		// isProxy = Proxy.isProxyClass(cl);
-		// isEnum = Enum.class.isAssignableFrom(cl);
-		// isSerializable = isSerializable(cl);
-		// isExternalizable = isExternalizable(cl);
-		// arePropertiesResolved = true;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.658 -0400", hash_original_method = "250E0179C7C05D1D77B183DF06C38BC2", hash_generated_method = "6F0DEC5BAA2248956AD2E44F3BE865C4")
@@ -893,9 +912,9 @@ public class ObjectStreamClass implements Serializable {
 		resolveProperties();
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_659067420 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_659067420;
-		// ---------- Original Method ----------
-		// resolveProperties();
-		// return isSerializable;
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.659 -0400", hash_original_method = "86835294A15C6057A38D3AF0C7A856A1", hash_generated_method = "DEACE47AF23324A1D818D8A3E4389644")
@@ -903,9 +922,9 @@ public class ObjectStreamClass implements Serializable {
 		resolveProperties();
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1727210800 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1727210800;
-		// ---------- Original Method ----------
-		// resolveProperties();
-		// return isExternalizable;
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.659 -0400", hash_original_method = "052543446E0B6EEA498804C02394B590", hash_generated_method = "70C3467C6274DDC96065B5C42EFA0A56")
@@ -913,9 +932,9 @@ public class ObjectStreamClass implements Serializable {
 		resolveProperties();
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_666368256 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_666368256;
-		// ---------- Original Method ----------
-		// resolveProperties();
-		// return isProxy;
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.659 -0400", hash_original_method = "23781B8C58B21A484CF86E4B23EBD9CC", hash_generated_method = "231E706EAA7974F023A112B750B73D0A")
@@ -923,21 +942,24 @@ public class ObjectStreamClass implements Serializable {
 		resolveProperties();
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2099454599 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_2099454599;
-		// ---------- Original Method ----------
-		// resolveProperties();
-		// return isEnum;
+		
+		
+		
 	}
 
-	public static ObjectStreamClass lookup(Class<?> cl) {
+	@DSModeled(DSC.SAFE)
+    public static ObjectStreamClass lookup(Class<?> cl) {
 		ObjectStreamClass osc = lookupStreamClass(cl);
 		return (osc.isSerializable() || osc.isExternalizable()) ? osc : null;
 	}
 
-	public static ObjectStreamClass lookupAny(Class<?> cl) {
+	@DSModeled(DSC.SAFE)
+    public static ObjectStreamClass lookupAny(Class<?> cl) {
 		return lookupStreamClass(cl);
 	}
 
-	static ObjectStreamClass lookupStreamClass(Class<?> cl) {
+	@DSModeled(DSC.SAFE)
+    static ObjectStreamClass lookupStreamClass(Class<?> cl) {
 		WeakHashMap<Class<?>, ObjectStreamClass> tlc = getCache();
 		ObjectStreamClass cachedValue = tlc.get(cl);
 		if (cachedValue == null) {
@@ -960,7 +982,8 @@ public class ObjectStreamClass implements Serializable {
 		return tls.get();
 	}
 
-	static Method findMethod(Class<?> cl, String methodName) {
+	@DSModeled(DSC.SAFE)
+    static Method findMethod(Class<?> cl, String methodName) {
 		Class<?> search = cl;
 		Method method = null;
 		while (search != null) {
@@ -977,7 +1000,8 @@ public class ObjectStreamClass implements Serializable {
 		return null;
 	}
 
-	static Method findPrivateMethod(Class<?> cl, String methodName, Class<?>[] param) {
+	@DSModeled(DSC.SAFE)
+    static Method findPrivateMethod(Class<?> cl, String methodName, Class<?>[] param) {
 		try {
 			Method method = cl.getDeclaredMethod(methodName, param);
 			if (Modifier.isPrivate(method.getModifiers()) && method.getReturnType() == void.class) {
@@ -993,120 +1017,120 @@ public class ObjectStreamClass implements Serializable {
 	boolean hasMethodWriteReplace() {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1028287424 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1028287424;
-		// ---------- Original Method ----------
-		// return (methodWriteReplace != null);
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.661 -0400", hash_original_method = "42662B3DE24059CFD85E0D286320D7E3", hash_generated_method = "61BEEA9904CB23328B8F168146690B1D")
 	Method getMethodWriteReplace() {
-		Method varB4EAC82CA7396A68D541C85D26508E83_2012613051 = null; // Variable
-																		// for
-																		// return
-																		// #1
+		Method varB4EAC82CA7396A68D541C85D26508E83_2012613051 = null; 
+																		
+																		
+																		
 		varB4EAC82CA7396A68D541C85D26508E83_2012613051 = methodWriteReplace;
-		varB4EAC82CA7396A68D541C85D26508E83_2012613051.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_2012613051.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_2012613051;
-		// ---------- Original Method ----------
-		// return methodWriteReplace;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.661 -0400", hash_original_method = "2852DBB1E5C3B0D1351FCC53EE3E49ED", hash_generated_method = "995357488B52D25BC1E2C4626373F760")
 	boolean hasMethodReadResolve() {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_599949023 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_599949023;
-		// ---------- Original Method ----------
-		// return (methodReadResolve != null);
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.662 -0400", hash_original_method = "4E87A71E13632BD19F893729646A7048", hash_generated_method = "DBCF2F68B8606E775935413A5E461347")
 	Method getMethodReadResolve() {
-		Method varB4EAC82CA7396A68D541C85D26508E83_1329561666 = null; // Variable
-																		// for
-																		// return
-																		// #1
+		Method varB4EAC82CA7396A68D541C85D26508E83_1329561666 = null; 
+																		
+																		
+																		
 		varB4EAC82CA7396A68D541C85D26508E83_1329561666 = methodReadResolve;
-		varB4EAC82CA7396A68D541C85D26508E83_1329561666.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1329561666.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1329561666;
-		// ---------- Original Method ----------
-		// return methodReadResolve;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.662 -0400", hash_original_method = "5A79EE26139C94EE3C3A1C73D8050C0E", hash_generated_method = "F70917DBE527F7F6DBD9812D249E294B")
 	boolean hasMethodWriteObject() {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_230828924 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_230828924;
-		// ---------- Original Method ----------
-		// return (methodWriteObject != null);
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.662 -0400", hash_original_method = "234967F1224E01D561A4A7AA93A723BD", hash_generated_method = "CE7E2CAB268353F4D0584988421EBC09")
 	Method getMethodWriteObject() {
-		Method varB4EAC82CA7396A68D541C85D26508E83_1152270775 = null; // Variable
-																		// for
-																		// return
-																		// #1
+		Method varB4EAC82CA7396A68D541C85D26508E83_1152270775 = null; 
+																		
+																		
+																		
 		varB4EAC82CA7396A68D541C85D26508E83_1152270775 = methodWriteObject;
-		varB4EAC82CA7396A68D541C85D26508E83_1152270775.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1152270775.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1152270775;
-		// ---------- Original Method ----------
-		// return methodWriteObject;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.663 -0400", hash_original_method = "46A702B5AEFAE4B1088A7C3DF1FC5D53", hash_generated_method = "D86AB29E76E5BEEEE76DF36CAB799BFD")
 	boolean hasMethodReadObject() {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1069842555 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1069842555;
-		// ---------- Original Method ----------
-		// return (methodReadObject != null);
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.663 -0400", hash_original_method = "46960222BC0B63A6D59A57191BB77464", hash_generated_method = "A28B6058C89BC4209B639E25C065CFFF")
 	Method getMethodReadObject() {
-		Method varB4EAC82CA7396A68D541C85D26508E83_657351500 = null; // Variable
-																		// for
-																		// return
-																		// #1
+		Method varB4EAC82CA7396A68D541C85D26508E83_657351500 = null; 
+																		
+																		
+																		
 		varB4EAC82CA7396A68D541C85D26508E83_657351500 = methodReadObject;
-		varB4EAC82CA7396A68D541C85D26508E83_657351500.addTaint(getTaint()); // Add
-																			// taint
-																			// from
-																			// parent
+		varB4EAC82CA7396A68D541C85D26508E83_657351500.addTaint(getTaint()); 
+																			
+																			
+																			
 		return varB4EAC82CA7396A68D541C85D26508E83_657351500;
-		// ---------- Original Method ----------
-		// return methodReadObject;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.663 -0400", hash_original_method = "29BCBE89B6EA217724D7699109546E15", hash_generated_method = "BCE5A3340F91E4532B8169E3319642E1")
 	boolean hasMethodReadObjectNoData() {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1192369223 = getTaintBoolean();
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1192369223;
-		// ---------- Original Method ----------
-		// return (methodReadObjectNoData != null);
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.664 -0400", hash_original_method = "04BED52E799E809DB8DD364039964962", hash_generated_method = "39620AE6C6A4ECC7624B185A44B52196")
 	Method getMethodReadObjectNoData() {
-		Method varB4EAC82CA7396A68D541C85D26508E83_2053911821 = null; // Variable
-																		// for
-																		// return
-																		// #1
+		Method varB4EAC82CA7396A68D541C85D26508E83_2053911821 = null; 
+																		
+																		
+																		
 		varB4EAC82CA7396A68D541C85D26508E83_2053911821 = methodReadObjectNoData;
-		varB4EAC82CA7396A68D541C85D26508E83_2053911821.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_2053911821.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_2053911821;
-		// ---------- Original Method ----------
-		// return methodReadObjectNoData;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.664 -0400", hash_original_method = "971C620E95BDC0255A7014EB736B5315", hash_generated_method = "B5F3BDDAE6A803CDF4D471FA2756DB0E")
@@ -1116,102 +1140,104 @@ public class ObjectStreamClass implements Serializable {
 		methodWriteObject = desc.methodWriteObject;
 		methodReadObject = desc.methodReadObject;
 		methodReadObjectNoData = desc.methodReadObjectNoData;
-		// ---------- Original Method ----------
-		// methodWriteReplace = desc.methodWriteReplace;
-		// methodReadResolve = desc.methodReadResolve;
-		// methodWriteObject = desc.methodWriteObject;
-		// methodReadObject = desc.methodReadObject;
-		// methodReadObjectNoData = desc.methodReadObjectNoData;
+		
+		
+		
+		
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.664 -0400", hash_original_method = "7A3AD0F8FFB276A7B1543CE5BED00A8C", hash_generated_method = "F5A742D0B09B68C4FB60A9954C304EDB")
 	void setClass(Class<?> c) {
 		resolvedClass = c;
-		// ---------- Original Method ----------
-		// resolvedClass = c;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.665 -0400", hash_original_method = "95CB44F7E664D85BD475B63456D19F48", hash_generated_method = "621FA11CDA9BF8080C1105CE3A873D93")
 	void setFields(ObjectStreamField[] f) {
 		fields = f;
-		// ---------- Original Method ----------
-		// fields = f;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.665 -0400", hash_original_method = "BCDE99C62E7E698332D80A91E945CB98", hash_generated_method = "D8783C05CB4817ECCBC0A4DB4114E614")
 	void setLoadFields(ObjectStreamField[] f) {
 		loadFields = f;
-		// ---------- Original Method ----------
-		// loadFields = f;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.665 -0400", hash_original_method = "576B4ED3621FB044BCB61FA4A013466B", hash_generated_method = "A1473C1BC66B458281188527CD3D2FFA")
 	void setFlags(byte b) {
 		flags = b;
-		// ---------- Original Method ----------
-		// flags = b;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.666 -0400", hash_original_method = "013A745A10FFAC0063C18ECA8D35B13C", hash_generated_method = "A8DB264CFECA0C5CD0FC0F9AB8AC5A8F")
 	void setName(String newName) {
 		className = newName;
-		// ---------- Original Method ----------
-		// className = newName;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.666 -0400", hash_original_method = "F5AE79B32CCC15982EBF3437ADD142B6", hash_generated_method = "2B1ADB1E939E150C2B4F3759E3B94493")
 	void setSerialVersionUID(long l) {
 		svUID = l;
-		// ---------- Original Method ----------
-		// svUID = l;
+		
+		
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.666 -0400", hash_original_method = "0C66D1C8E17ECB3824AFA99C964D873A", hash_generated_method = "B10D683C7024190847B8FAF4B67B2A8C")
 	void setSuperclass(ObjectStreamClass c) {
 		superclass = c;
-		// ---------- Original Method ----------
-		// superclass = c;
+		
+		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.666 -0400", hash_original_method = "555F932795060D0A381054093FA5AE4C", hash_generated_method = "FAC82077D9841FF34B6FCA29312EE0B2")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.666 -0400", hash_original_method = "555F932795060D0A381054093FA5AE4C", hash_generated_method = "FAC82077D9841FF34B6FCA29312EE0B2")
 	private int primitiveSize(Class<?> type) {
 		if (DroidSafeAndroidRuntime.control)
 			throw new AssertionError();
 		addTaint(type.getTaint());
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1690577052 = getTaintInt();
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1690577052;
-		// ---------- Original Method ----------
-		// if (type == byte.class || type == boolean.class) {
-		// return 1;
-		// }
-		// if (type == short.class || type == char.class) {
-		// return 2;
-		// }
-		// if (type == int.class || type == float.class) {
-		// return 4;
-		// }
-		// if (type == long.class || type == double.class) {
-		// return 8;
-		// }
-		// throw new AssertionError();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.667 -0400", hash_original_method = "0689970A4402522168D5BA272C87560D", hash_generated_method = "A184C8DD035D977BBB8D64F96FCDB5E3")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.667 -0400", hash_original_method = "0689970A4402522168D5BA272C87560D", hash_generated_method = "A184C8DD035D977BBB8D64F96FCDB5E3")
 	@Override
 	public String toString() {
-		String varB4EAC82CA7396A68D541C85D26508E83_1197857063 = null; // Variable
-																		// for
-																		// return
-																		// #1
+		String varB4EAC82CA7396A68D541C85D26508E83_1197857063 = null; 
+																		
+																		
+																		
 		varB4EAC82CA7396A68D541C85D26508E83_1197857063 = getName() + ": static final long serialVersionUID =" + getSerialVersionUID() + "L;";
-		varB4EAC82CA7396A68D541C85D26508E83_1197857063.addTaint(getTaint()); // Add
-																				// taint
-																				// from
-																				// parent
+		varB4EAC82CA7396A68D541C85D26508E83_1197857063.addTaint(getTaint()); 
+																				
+																				
+																				
 		return varB4EAC82CA7396A68D541C85D26508E83_1197857063;
-		// ---------- Original Method ----------
-		// return getName() + ": static final long serialVersionUID =" +
-		// getSerialVersionUID() + "L;";
+		
+		
+		
 	}
 
 	@DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.667 -0400", hash_original_field = "F80ED60A319D1F80CB33832164C227CF", hash_generated_field = "BA8EEE23E6596CE6F7527CE0FB83EF58")
@@ -1263,17 +1289,17 @@ public class ObjectStreamClass implements Serializable {
 	@DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.668 -0400", hash_original_field = "17CA37E35AD877567E00ECAF794A6918", hash_generated_field = "16A63F3AB899CF3EB9607AD6E5CAA631")
 	private static SoftReference<ThreadLocal<WeakHashMap<Class<?>, ObjectStreamClass>>> storage = new SoftReference<ThreadLocal<WeakHashMap<Class<?>, ObjectStreamClass>>>(null);
 
-	// orphaned legacy method
+	
 	public int compare(Class<?> itf1, Class<?> itf2) {
 		return itf1.getName().compareTo(itf2.getName());
 	}
 
-	// orphaned legacy method
+	
 	public WeakHashMap<Class<?>, ObjectStreamClass> initialValue() {
 		return new WeakHashMap<Class<?>, ObjectStreamClass>();
 	}
 
-	// orphaned legacy method
+	
 	public int compare(Method m1, Method m2) {
 		int result = m1.getName().compareTo(m2.getName());
 		if (result == 0) {
@@ -1282,12 +1308,12 @@ public class ObjectStreamClass implements Serializable {
 		return result;
 	}
 
-	// orphaned legacy method
+	
 	public int compare(Constructor<?> ctr1, Constructor<?> ctr2) {
 		return (getConstructorSignature(ctr1).compareTo(getConstructorSignature(ctr2)));
 	}
 
-	// orphaned legacy method
+	
 	public int compare(Field field1, Field field2) {
 		return field1.getName().compareTo(field2.getName());
 	}

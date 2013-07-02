@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.CharBuffer;
 import java.nio.ReadOnlyBufferException;
@@ -18,8 +18,8 @@ public abstract class Reader implements Readable, Closeable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.998 -0400", hash_original_method = "23BD0F45FCD5744DE183656F7640DB10", hash_generated_method = "34ED878B44B0872C50C8F22A6EAAAA08")
     protected  Reader() {
         lock = this;
-        // ---------- Original Method ----------
-        //lock = this;
+        
+        
     }
 
     
@@ -27,25 +27,26 @@ public abstract class Reader implements Readable, Closeable {
     protected  Reader(Object lock) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         this.lock = lock;
-        // ---------- Original Method ----------
-        //if (lock == null) {
-            //throw new NullPointerException();
-        //}
-        //this.lock = lock;
+        
+        
+            
+        
+        
     }
 
     
     public abstract void close() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.001 -0400", hash_original_method = "2066C142E0E9A9BCC65518E0FCDDA1D6", hash_generated_method = "AFAF0F7EF370F6B3675548AD803F6AC7")
     public void mark(int readLimit) throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new IOException();
         addTaint(readLimit);
-        // ---------- Original Method ----------
-        //throw new IOException();
+        
+        
     }
 
     
@@ -53,40 +54,42 @@ public abstract class Reader implements Readable, Closeable {
     public boolean markSupported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_225643605 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_225643605;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.002 -0400", hash_original_method = "4B904F9F4843983C12271BC14A375F35", hash_generated_method = "8130902A26A429F064ECFF31C34E34C2")
     public int read() throws IOException {
         {
             char[] charArray = new char[1];
             {
                 boolean var73E325C49628EE2FF23237E9667EC984_1771266877 = (read(charArray, 0, 1) != -1);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_274877190 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_274877190;
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //char[] charArray = new char[1];
-            //if (read(charArray, 0, 1) != -1) {
-                //return charArray[0];
-            //}
-            //return -1;
-        //}
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.002 -0400", hash_original_method = "E743E3D19B5FD453D0CBC2E5CA424673", hash_generated_method = "D7B3CCA2885C1B5DA1CA75CD39A4D65F")
     public int read(char[] buf) throws IOException {
         int varCC1AB894CEDAC6AF53B5291411180A42_1479471750 = (read(buf, 0, buf.length));
         addTaint(buf[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1689385553 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1689385553;
-        // ---------- Original Method ----------
-        //return read(buf, 0, buf.length);
+        
+        
     }
 
     
@@ -97,24 +100,26 @@ public abstract class Reader implements Readable, Closeable {
     public boolean ready() throws IOException {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1562622863 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1562622863;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.004 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "FB63651561D5F09834B18761B64A9A4D")
     public void reset() throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new IOException();
-        // ---------- Original Method ----------
-        //throw new IOException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.005 -0400", hash_original_method = "7E8A2F73FB8EAE936D216E90BE91676B", hash_generated_method = "D79A10CAAF2031E9C0989C96C1463E48")
     public long skip(long charCount) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("charCount < 0: " + charCount);
-        } //End block
+        } 
         {
             long skipped = 0;
             int toRead;
@@ -126,38 +131,39 @@ public abstract class Reader implements Readable, Closeable {
                 skipped += read;
                 {
                     toRead = (int) (charCount - skipped);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(charCount);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_590205858 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_590205858;
-        // ---------- Original Method ----------
-        //if (charCount < 0) {
-            //throw new IllegalArgumentException("charCount < 0: " + charCount);
-        //}
-        //synchronized (lock) {
-            //long skipped = 0;
-            //int toRead = charCount < 512 ? (int) charCount : 512;
-            //char[] charsSkipped = new char[toRead];
-            //while (skipped < charCount) {
-                //int read = read(charsSkipped, 0, toRead);
-                //if (read == -1) {
-                    //return skipped;
-                //}
-                //skipped += read;
-                //if (read < toRead) {
-                    //return skipped;
-                //}
-                //if (charCount - skipped < toRead) {
-                    //toRead = (int) (charCount - skipped);
-                //}
-            //}
-            //return skipped;
-        //}
+        
+        
+            
+        
+        
+            
+            
+            
+            
+                
+                
+                    
+                
+                
+                
+                    
+                
+                
+                    
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.005 -0400", hash_original_method = "3EEA08DE1417537F34B729CF4FE40629", hash_generated_method = "38461360385D2FD55B4A758B03A13E16")
     public int read(CharBuffer target) throws IOException {
         int length = target.length();
@@ -165,18 +171,18 @@ public abstract class Reader implements Readable, Closeable {
         length = Math.min(length, read(buf));
         {
             target.put(buf, 0, length);
-        } //End block
+        } 
         addTaint(target.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103648764 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103648764;
-        // ---------- Original Method ----------
-        //int length = target.length();
-        //char[] buf = new char[length];
-        //length = Math.min(length, read(buf));
-        //if (length > 0) {
-            //target.put(buf, 0, length);
-        //}
-        //return length;
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     

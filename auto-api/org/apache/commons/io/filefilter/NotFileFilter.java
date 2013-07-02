@@ -1,11 +1,11 @@
 package org.apache.commons.io.filefilter;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.Serializable;
@@ -19,16 +19,17 @@ public class NotFileFilter extends AbstractFileFilter implements Serializable {
     public  NotFileFilter(IOFileFilter filter) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The filter must not be null");
-        } //End block
+        } 
         this.filter = filter;
-        // ---------- Original Method ----------
-        //if (filter == null) {
-            //throw new IllegalArgumentException("The filter must not be null");
-        //}
-        //this.filter = filter;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.860 -0400", hash_original_method = "B4759F01CF5E4CDF4AA4061B5D979652", hash_generated_method = "DD8077FD4D151331D8AE38D61A79F9B2")
     @Override
     public boolean accept(File file) {
@@ -36,11 +37,12 @@ public class NotFileFilter extends AbstractFileFilter implements Serializable {
         addTaint(file.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_18824643 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_18824643;
-        // ---------- Original Method ----------
-        //return ! filter.accept(file);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.861 -0400", hash_original_method = "B0A127C96A64726487AA51E16A0E3CC5", hash_generated_method = "EB6AB6FB0EA3C6F8EFE0E30C1AAB172A")
     @Override
     public boolean accept(File file, String name) {
@@ -49,20 +51,21 @@ public class NotFileFilter extends AbstractFileFilter implements Serializable {
         addTaint(name.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1368021819 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1368021819;
-        // ---------- Original Method ----------
-        //return ! filter.accept(file, name);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.862 -0400", hash_original_method = "0F98CEE5769F2D254ED7C2ED79018DD6", hash_generated_method = "527F9E4E32F39A801AC8F8C26059B2EB")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_248645613 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_248645613 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_248645613 = super.toString() + "(" + filter.toString()  + ")";
-        varB4EAC82CA7396A68D541C85D26508E83_248645613.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_248645613.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_248645613;
-        // ---------- Original Method ----------
-        //return super.toString() + "(" + filter.toString()  + ")";
+        
+        
     }
 
     

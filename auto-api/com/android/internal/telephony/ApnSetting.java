@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class ApnSetting {
@@ -84,27 +84,28 @@ public class ApnSetting {
         this.roamingProtocol = roamingProtocol;
         this.carrierEnabled = carrierEnabled;
         this.bearer = bearer;
-        // ---------- Original Method ----------
-        //this.id = id;
-        //this.numeric = numeric;
-        //this.carrier = carrier;
-        //this.apn = apn;
-        //this.proxy = proxy;
-        //this.port = port;
-        //this.mmsc = mmsc;
-        //this.mmsProxy = mmsProxy;
-        //this.mmsPort = mmsPort;
-        //this.user = user;
-        //this.password = password;
-        //this.authType = authType;
-        //this.types = types;
-        //this.protocol = protocol;
-        //this.roamingProtocol = roamingProtocol;
-        //this.carrierEnabled = carrierEnabled;
-        //this.bearer = bearer;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ApnSetting fromString(String data) {
         if (data == null) return null;
         int version;
@@ -154,9 +155,10 @@ public class ApnSetting {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.321 -0400", hash_original_method = "A2933E4E94FCB15D27495600AE7ECB36", hash_generated_method = "1C67FD580462966091B4A02A2ED84776")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_387217369 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_387217369 = null; 
         StringBuilder sb = new StringBuilder();
         sb.append("[ApnSettingV2] ")
         .append(carrier)
@@ -175,21 +177,22 @@ public class ApnSetting {
                 sb.append(types[i]);
                 {
                     sb.append(" | ");
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         sb.append(", ").append(protocol);
         sb.append(", ").append(roamingProtocol);
         sb.append(", ").append(carrierEnabled);
         sb.append(", ").append(bearer);
         varB4EAC82CA7396A68D541C85D26508E83_387217369 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_387217369.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_387217369.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_387217369;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.327 -0400", hash_original_method = "36728FD5FCF430F65422B3FEF52D0F76", hash_generated_method = "7192304618E36CCA2748D0D02CC77A84")
     public boolean canHandleType(String type) {
         {
@@ -199,33 +202,34 @@ public class ApnSetting {
                     boolean var7778B6DC68CF430DFDEB2873C3E5C489_206432909 = (t.equals(type) || t.equals(Phone.APN_TYPE_ALL) ||
                     (t.equals(Phone.APN_TYPE_DEFAULT) &&
                     type.equals(Phone.APN_TYPE_HIPRI)));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(type.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1988004060 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1988004060;
-        // ---------- Original Method ----------
-        //for (String t : types) {
-            //if (t.equals(type) || t.equals(Phone.APN_TYPE_ALL) ||
-                    //(t.equals(Phone.APN_TYPE_DEFAULT) &&
-                    //type.equals(Phone.APN_TYPE_HIPRI))) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                    
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.327 -0400", hash_original_method = "08D43BEDE35E924972E54800A3F170A8", hash_generated_method = "66AE373B0AB0DE2A93F4F451D6B3D1DD")
     public boolean equals(Object o) {
         boolean var115C3123BE82B2431D507F47953FF07E_1611351901 = ((this.toString().equals(o.toString())));
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_968435527 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_968435527;
-        // ---------- Original Method ----------
-        //if (o instanceof ApnSetting == false) return false;
-        //return (this.toString().equals(o.toString()));
+        
+        
+        
     }
 
     

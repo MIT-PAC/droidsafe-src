@@ -1,11 +1,11 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.HttpRequest;
 import org.apache.http.ProtocolVersion;
@@ -28,23 +28,23 @@ public class BasicHttpRequest extends AbstractHttpMessage implements HttpRequest
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Method name may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Request URI may not be null");
-        } //End block
+        } 
         this.method = method;
         this.uri = uri;
         this.requestline = null;
-        // ---------- Original Method ----------
-        //if (method == null) {
-            //throw new IllegalArgumentException("Method name may not be null");
-        //}
-        //if (uri == null) {
-            //throw new IllegalArgumentException("Request URI may not be null");
-        //}
-        //this.method = method;
-        //this.uri = uri;
-        //this.requestline = null;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -54,7 +54,7 @@ public class BasicHttpRequest extends AbstractHttpMessage implements HttpRequest
         addTaint(method.getTaint());
         addTaint(uri.getTaint());
         addTaint(ver.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -63,79 +63,81 @@ public class BasicHttpRequest extends AbstractHttpMessage implements HttpRequest
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Request line may not be null");
-        } //End block
+        } 
         this.requestline = requestline;
         this.method = requestline.getMethod();
         this.uri = requestline.getUri();
-        // ---------- Original Method ----------
-        //if (requestline == null) {
-            //throw new IllegalArgumentException("Request line may not be null");
-        //}
-        //this.requestline = requestline;
-        //this.method = requestline.getMethod();
-        //this.uri = requestline.getUri();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.071 -0400", hash_original_method = "6D74E90047F33871E1F46E26807064EE", hash_generated_method = "BA8AA49EAC67E69BE1C1FB0B01A6425A")
     public ProtocolVersion getProtocolVersion() {
-        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_1224884611 = null; //Variable for return #1
-        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_852954329 = null; //Variable for return #2
+        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_1224884611 = null; 
+        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_852954329 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1224884611 = this.requestline.getProtocolVersion();
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_852954329 = HttpProtocolParams.getVersion(getParams());
-        } //End block
-        ProtocolVersion varA7E53CE21691AB073D9660D615818899_1387474219; //Final return value
+        } 
+        ProtocolVersion varA7E53CE21691AB073D9660D615818899_1387474219; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1387474219 = varB4EAC82CA7396A68D541C85D26508E83_1224884611;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1387474219 = varB4EAC82CA7396A68D541C85D26508E83_852954329;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1387474219.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1387474219.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1387474219;
-        // ---------- Original Method ----------
-        //if (this.requestline != null) {
-            //return this.requestline.getProtocolVersion();
-        //} else {
-            //return HttpProtocolParams.getVersion(getParams());
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.073 -0400", hash_original_method = "C42D62E680F5FCF6E09789DDCB998F05", hash_generated_method = "8D24DAEDD1B1878497D84C9B0DBD3812")
     public RequestLine getRequestLine() {
-        RequestLine varB4EAC82CA7396A68D541C85D26508E83_390297383 = null; //Variable for return #1
-        RequestLine varB4EAC82CA7396A68D541C85D26508E83_1757391612 = null; //Variable for return #2
+        RequestLine varB4EAC82CA7396A68D541C85D26508E83_390297383 = null; 
+        RequestLine varB4EAC82CA7396A68D541C85D26508E83_1757391612 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_390297383 = this.requestline;
-        } //End block
+        } 
         {
             ProtocolVersion ver = HttpProtocolParams.getVersion(getParams());
             varB4EAC82CA7396A68D541C85D26508E83_1757391612 = new BasicRequestLine(this.method, this.uri, ver);
-        } //End block
-        RequestLine varA7E53CE21691AB073D9660D615818899_1820585529; //Final return value
+        } 
+        RequestLine varA7E53CE21691AB073D9660D615818899_1820585529; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1820585529 = varB4EAC82CA7396A68D541C85D26508E83_390297383;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1820585529 = varB4EAC82CA7396A68D541C85D26508E83_1757391612;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1820585529.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1820585529.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1820585529;
-        // ---------- Original Method ----------
-        //if (this.requestline != null) {
-            //return this.requestline;
-        //} else {
-            //ProtocolVersion ver = HttpProtocolParams.getVersion(getParams());
-            //return new BasicRequestLine(this.method, this.uri, ver);
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     

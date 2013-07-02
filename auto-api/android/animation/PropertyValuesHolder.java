@@ -1,11 +1,11 @@
 package android.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.FloatProperty;
 import android.util.IntProperty;
@@ -51,8 +51,8 @@ public class PropertyValuesHolder implements Cloneable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.747 -0400", hash_original_method = "73C53AD6C55F8F35D3899F0ADDC03638", hash_generated_method = "173B3BF84BCAAD759EC1E53526977EB5")
     private  PropertyValuesHolder(String propertyName) {
         mPropertyName = propertyName;
-        // ---------- Original Method ----------
-        //mPropertyName = propertyName;
+        
+        
     }
 
     
@@ -61,12 +61,12 @@ public class PropertyValuesHolder implements Cloneable {
         mProperty = property;
         {
             mPropertyName = property.getName();
-        } //End block
-        // ---------- Original Method ----------
-        //mProperty = property;
-        //if (property != null) {
-            //mPropertyName = property.getName();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -144,9 +144,9 @@ public class PropertyValuesHolder implements Cloneable {
     public void setIntValues(int... values) {
         mValueType = int.class;
         mKeyframeSet = KeyframeSet.ofInt(values);
-        // ---------- Original Method ----------
-        //mValueType = int.class;
-        //mKeyframeSet = KeyframeSet.ofInt(values);
+        
+        
+        
     }
 
     
@@ -154,9 +154,9 @@ public class PropertyValuesHolder implements Cloneable {
     public void setFloatValues(float... values) {
         mValueType = float.class;
         mKeyframeSet = KeyframeSet.ofFloat(values);
-        // ---------- Original Method ----------
-        //mValueType = float.class;
-        //mKeyframeSet = KeyframeSet.ofFloat(values);
+        
+        
+        
     }
 
     
@@ -169,17 +169,17 @@ public class PropertyValuesHolder implements Cloneable {
             int i = 0;
             {
                 keyframes[i] = (Keyframe)values[i];
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mKeyframeSet = new KeyframeSet(keyframes);
-        // ---------- Original Method ----------
-        //int numKeyframes = values.length;
-        //Keyframe keyframes[] = new Keyframe[Math.max(numKeyframes,2)];
-        //mValueType = ((Keyframe)values[0]).getType();
-        //for (int i = 0; i < numKeyframes; ++i) {
-            //keyframes[i] = (Keyframe)values[i];
-        //}
-        //mKeyframeSet = new KeyframeSet(keyframes);
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -187,16 +187,17 @@ public class PropertyValuesHolder implements Cloneable {
     public void setObjectValues(Object... values) {
         mValueType = values[0].getClass();
         mKeyframeSet = KeyframeSet.ofObject(values);
-        // ---------- Original Method ----------
-        //mValueType = values[0].getClass();
-        //mKeyframeSet = KeyframeSet.ofObject(values);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:38.407 -0400", hash_original_method = "13DE02BBE5B8605736F61BF53DFAC872", hash_generated_method = "1A4AFD96D9EED5033597480A5DC86087")
     private Method getPropertyFunction(Class targetClass, String prefix, Class valueType) {
-        Method varB4EAC82CA7396A68D541C85D26508E83_87597492 = null; //Variable for return #1
-        Method varB4EAC82CA7396A68D541C85D26508E83_196857360 = null; //Variable for return #2
+        Method varB4EAC82CA7396A68D541C85D26508E83_87597492 = null; 
+        Method varB4EAC82CA7396A68D541C85D26508E83_196857360 = null; 
         Method returnVal;
         returnVal = null;
         String methodName;
@@ -207,10 +208,10 @@ public class PropertyValuesHolder implements Cloneable {
             try 
             {
                 returnVal = targetClass.getMethod(methodName, args);
-            } //End block
+            } 
             catch (NoSuchMethodException e)
             { }
-        } //End block
+        } 
         {
             args = new Class[1];
             Class typeVariants[];
@@ -218,24 +219,24 @@ public class PropertyValuesHolder implements Cloneable {
                 boolean varA19CC413B5D979C40823A0DFD08B5B8B_2115484489 = (mValueType.equals(Float.class));
                 {
                     typeVariants = FLOAT_VARIANTS;
-                } //End block
+                } 
                 {
                     boolean varD5B60361EAD528E96F229CD21781680B_1863461398 = (mValueType.equals(Integer.class));
                     {
                         typeVariants = INTEGER_VARIANTS;
-                    } //End block
+                    } 
                     {
                         boolean var0B542F869A194F37A1EAAC7F79A1D812_378240604 = (mValueType.equals(Double.class));
                         {
                             typeVariants = DOUBLE_VARIANTS;
-                        } //End block
+                        } 
                         {
                             typeVariants = new Class[1];
                             typeVariants[0] = mValueType;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             {
                 Class typeVariant = typeVariants[0];
                 {
@@ -245,37 +246,38 @@ public class PropertyValuesHolder implements Cloneable {
                         returnVal = targetClass.getMethod(methodName, args);
                         mValueType = typeVariant;
                         varB4EAC82CA7396A68D541C85D26508E83_87597492 = returnVal;
-                    } //End block
+                    } 
                     catch (NoSuchMethodException e)
                     { }
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_196857360 = returnVal;
         addTaint(targetClass.getTaint());
         addTaint(prefix.getTaint());
         addTaint(valueType.getTaint());
-        Method varA7E53CE21691AB073D9660D615818899_1445172644; //Final return value
+        Method varA7E53CE21691AB073D9660D615818899_1445172644; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1445172644 = varB4EAC82CA7396A68D541C85D26508E83_87597492;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1445172644 = varB4EAC82CA7396A68D541C85D26508E83_196857360;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1445172644.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1445172644.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1445172644;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.768 -0400", hash_original_method = "D9982E89760E4BF7FBC2F6FCA80BFE72", hash_generated_method = "17005EF1C1983F5A0E8AA6AD695764F6")
     private Method setupSetterOrGetter(Class targetClass,
             HashMap<Class, HashMap<String, Method>> propertyMapMap,
             String prefix, Class valueType) {
-        Method varB4EAC82CA7396A68D541C85D26508E83_1941418102 = null; //Variable for return #1
+        Method varB4EAC82CA7396A68D541C85D26508E83_1941418102 = null; 
         Method setterOrGetter = null;
         try 
         {
@@ -283,45 +285,46 @@ public class PropertyValuesHolder implements Cloneable {
             HashMap<String, Method> propertyMap = propertyMapMap.get(targetClass);
             {
                 setterOrGetter = propertyMap.get(mPropertyName);
-            } //End block
+            } 
             {
                 setterOrGetter = getPropertyFunction(targetClass, prefix, valueType);
                 {
                     propertyMap = new HashMap<String, Method>();
                     propertyMapMap.put(targetClass, propertyMap);
-                } //End block
+                } 
                 propertyMap.put(mPropertyName, setterOrGetter);
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             mPropertyMapLock.writeLock().unlock();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1941418102 = setterOrGetter;
         addTaint(targetClass.getTaint());
         addTaint(propertyMapMap.getTaint());
         addTaint(prefix.getTaint());
         addTaint(valueType.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1941418102.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1941418102.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1941418102;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.770 -0400", hash_original_method = "1E4C95A3F0C35809E96A1D77677A320B", hash_generated_method = "57274BDEAD6F4EE1BDEDD294D61925B1")
      void setupSetter(Class targetClass) {
         mSetter = setupSetterOrGetter(targetClass, sSetterPropertyMap, "set", mValueType);
-        // ---------- Original Method ----------
-        //mSetter = setupSetterOrGetter(targetClass, sSetterPropertyMap, "set", mValueType);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.772 -0400", hash_original_method = "8511F8F7AD8858B7DCF32F8ED21ED093", hash_generated_method = "AD073233B0C810F579053BFA42B447EA")
     private void setupGetter(Class targetClass) {
         mGetter = setupSetterOrGetter(targetClass, sGetterPropertyMap, "get", null);
-        // ---------- Original Method ----------
-        //mGetter = setupSetterOrGetter(targetClass, sGetterPropertyMap, "get", null);
+        
+        
     }
 
     
@@ -340,20 +343,20 @@ public class PropertyValuesHolder implements Cloneable {
                             boolean var4D41CBD03F5F0E056BC0D1CE3112DD7D_1550028995 = (!kf.hasValue());
                             {
                                 kf.setValue(mProperty.get(target));
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             catch (ClassCastException e)
             {
                 mProperty = null;
-            } //End block
-        } //End block
+            } 
+        } 
         Class targetClass = target.getClass();
         {
             setupSetter(targetClass);
-        } //End block
+        } 
         {
             Iterator<Keyframe> var30BC71CCD48BB50A1DFF3F1C4E9C9F4A_584600520 = (mKeyframeSet.mKeyframes).iterator();
             var30BC71CCD48BB50A1DFF3F1C4E9C9F4A_584600520.hasNext();
@@ -364,59 +367,60 @@ public class PropertyValuesHolder implements Cloneable {
                     {
                         {
                             setupGetter(targetClass);
-                        } //End block
+                        } 
                         try 
                         {
                             kf.setValue(mGetter.invoke(target));
-                        } //End block
+                        } 
                         catch (InvocationTargetException e)
                         { }
                         catch (IllegalAccessException e)
                         { }
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(target.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.831 -0400", hash_original_method = "FD1A4547C57F636637D228B97E0E8D50", hash_generated_method = "D9F01A664430A841C0BCFE3DC9A61472")
     private void setupValue(Object target, Keyframe kf) {
         {
             kf.setValue(mProperty.get(target));
-        } //End block
+        } 
         try 
         {
             {
                 Class targetClass = target.getClass();
                 setupGetter(targetClass);
-            } //End block
+            } 
             kf.setValue(mGetter.invoke(target));
-        } //End block
+        } 
         catch (InvocationTargetException e)
         { }
         catch (IllegalAccessException e)
         { }
         addTaint(target.getTaint());
         addTaint(kf.getTaint());
-        // ---------- Original Method ----------
-        //if (mProperty != null) {
-            //kf.setValue(mProperty.get(target));
-        //}
-        //try {
-            //if (mGetter == null) {
-                //Class targetClass = target.getClass();
-                //setupGetter(targetClass);
-            //}
-            //kf.setValue(mGetter.invoke(target));
-        //} catch (InvocationTargetException e) {
-            //Log.e("PropertyValuesHolder", e.toString());
-        //} catch (IllegalAccessException e) {
-            //Log.e("PropertyValuesHolder", e.toString());
-        //}
+        
+        
+            
+        
+        
+            
+                
+                
+            
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -424,8 +428,8 @@ public class PropertyValuesHolder implements Cloneable {
      void setupStartValue(Object target) {
         setupValue(target, mKeyframeSet.mKeyframes.get(0));
         addTaint(target.getTaint());
-        // ---------- Original Method ----------
-        //setupValue(target, mKeyframeSet.mKeyframes.get(0));
+        
+        
     }
 
     
@@ -433,16 +437,17 @@ public class PropertyValuesHolder implements Cloneable {
      void setupEndValue(Object target) {
         setupValue(target, mKeyframeSet.mKeyframes.get(mKeyframeSet.mKeyframes.size() - 1));
         addTaint(target.getTaint());
-        // ---------- Original Method ----------
-        //setupValue(target, mKeyframeSet.mKeyframes.get(mKeyframeSet.mKeyframes.size() - 1));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.837 -0400", hash_original_method = "8E6DC562093F236AE410C563F47F28F2", hash_generated_method = "DAD9A40E8F349433249805E376BC088D")
     @Override
     public PropertyValuesHolder clone() {
-        PropertyValuesHolder varB4EAC82CA7396A68D541C85D26508E83_1046091219 = null; //Variable for return #1
-        PropertyValuesHolder varB4EAC82CA7396A68D541C85D26508E83_1090578265 = null; //Variable for return #2
+        PropertyValuesHolder varB4EAC82CA7396A68D541C85D26508E83_1046091219 = null; 
+        PropertyValuesHolder varB4EAC82CA7396A68D541C85D26508E83_1090578265 = null; 
         try 
         {
             PropertyValuesHolder newPVH = (PropertyValuesHolder) super.clone();
@@ -451,33 +456,33 @@ public class PropertyValuesHolder implements Cloneable {
             newPVH.mKeyframeSet = mKeyframeSet.clone();
             newPVH.mEvaluator = mEvaluator;
             varB4EAC82CA7396A68D541C85D26508E83_1046091219 = newPVH;
-        } //End block
+        } 
         catch (CloneNotSupportedException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1090578265 = null;
-        } //End block
-        PropertyValuesHolder varA7E53CE21691AB073D9660D615818899_1524536022; //Final return value
+        } 
+        PropertyValuesHolder varA7E53CE21691AB073D9660D615818899_1524536022; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1524536022 = varB4EAC82CA7396A68D541C85D26508E83_1046091219;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1524536022 = varB4EAC82CA7396A68D541C85D26508E83_1090578265;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1524536022.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1524536022.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1524536022;
-        // ---------- Original Method ----------
-        //try {
-            //PropertyValuesHolder newPVH = (PropertyValuesHolder) super.clone();
-            //newPVH.mPropertyName = mPropertyName;
-            //newPVH.mProperty = mProperty;
-            //newPVH.mKeyframeSet = mKeyframeSet.clone();
-            //newPVH.mEvaluator = mEvaluator;
-            //return newPVH;
-        //} catch (CloneNotSupportedException e) {
-            //return null;
-        //}
+        
+        
+            
+            
+            
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -485,33 +490,33 @@ public class PropertyValuesHolder implements Cloneable {
      void setAnimatedValue(Object target) {
         {
             mProperty.set(target, getAnimatedValue());
-        } //End block
+        } 
         {
             try 
             {
                 mTmpValueArray[0] = getAnimatedValue();
                 mSetter.invoke(target, mTmpValueArray);
-            } //End block
+            } 
             catch (InvocationTargetException e)
             { }
             catch (IllegalAccessException e)
             { }
-        } //End block
+        } 
         addTaint(target.getTaint());
-        // ---------- Original Method ----------
-        //if (mProperty != null) {
-            //mProperty.set(target, getAnimatedValue());
-        //}
-        //if (mSetter != null) {
-            //try {
-                //mTmpValueArray[0] = getAnimatedValue();
-                //mSetter.invoke(target, mTmpValueArray);
-            //} catch (InvocationTargetException e) {
-                //Log.e("PropertyValuesHolder", e.toString());
-            //} catch (IllegalAccessException e) {
-                //Log.e("PropertyValuesHolder", e.toString());
-            //}
-        //}
+        
+        
+            
+        
+        
+            
+                
+                
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -521,90 +526,93 @@ public class PropertyValuesHolder implements Cloneable {
             mEvaluator = (mValueType == Integer.class) ? sIntEvaluator :
                     (mValueType == Float.class) ? sFloatEvaluator :
                     null;
-        } //End block
+        } 
         {
             mKeyframeSet.setEvaluator(mEvaluator);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mEvaluator == null) {
-            //mEvaluator = (mValueType == Integer.class) ? sIntEvaluator :
-                    //(mValueType == Float.class) ? sFloatEvaluator :
-                    //null;
-        //}
-        //if (mEvaluator != null) {
-            //mKeyframeSet.setEvaluator(mEvaluator);
-        //}
+        } 
+        
+        
+            
+                    
+                    
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.841 -0400", hash_original_method = "8817589F1B40B238224DB9B551F0527E", hash_generated_method = "6E854FEA53C36628363D039E79093E2A")
     public void setEvaluator(TypeEvaluator evaluator) {
         mEvaluator = evaluator;
         mKeyframeSet.setEvaluator(evaluator);
-        // ---------- Original Method ----------
-        //mEvaluator = evaluator;
-        //mKeyframeSet.setEvaluator(evaluator);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.841 -0400", hash_original_method = "3D77B6F49E03B0770D03717F27BECD0E", hash_generated_method = "988B14A5F356427273DDE8DEE23C1F6E")
      void calculateValue(float fraction) {
         mAnimatedValue = mKeyframeSet.getValue(fraction);
-        // ---------- Original Method ----------
-        //mAnimatedValue = mKeyframeSet.getValue(fraction);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.842 -0400", hash_original_method = "748680E3CF42F5BF312929F3A98BA3E4", hash_generated_method = "FF84DEB99D9BF13141DD024987B0DB4E")
     public void setPropertyName(String propertyName) {
         mPropertyName = propertyName;
-        // ---------- Original Method ----------
-        //mPropertyName = propertyName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.843 -0400", hash_original_method = "8FEFD1E6365C919A12E22D83DCF12A7D", hash_generated_method = "C7C8013F4ECEE98331FB456D99BFC828")
     public void setProperty(Property property) {
         mProperty = property;
-        // ---------- Original Method ----------
-        //mProperty = property;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.847 -0400", hash_original_method = "53B20749B4CEAC5C134A85897865D0FE", hash_generated_method = "E85C808B5792FA356D8CA289B4BFD34F")
     public String getPropertyName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_994990327 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_994990327 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_994990327 = mPropertyName;
-        varB4EAC82CA7396A68D541C85D26508E83_994990327.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_994990327.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_994990327;
-        // ---------- Original Method ----------
-        //return mPropertyName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.849 -0400", hash_original_method = "7EED53883B814F7F8B112CE8FF982C26", hash_generated_method = "CF442C3F8E83FF5DDF62EAB99AAC4987")
      Object getAnimatedValue() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1150295307 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1150295307 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1150295307 = mAnimatedValue;
-        varB4EAC82CA7396A68D541C85D26508E83_1150295307.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1150295307.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1150295307;
-        // ---------- Original Method ----------
-        //return mAnimatedValue;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.852 -0400", hash_original_method = "BD911D365C7FC80DCCAF5DAD046A5B1C", hash_generated_method = "CA7AFDF7846673EFA2AC1F9322F0DCD9")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_665206067 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_665206067 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_665206067 = mPropertyName + ": " + mKeyframeSet.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_665206067.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_665206067.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_665206067;
-        // ---------- Original Method ----------
-        //return mPropertyName + ": " + mKeyframeSet.toString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String getMethodName(String prefix, String propertyName) {
         if (propertyName == null || propertyName.length() == 0) {
             return prefix;
@@ -655,10 +663,10 @@ public class PropertyValuesHolder implements Cloneable {
             mIntKeyframeSet = (IntKeyframeSet) mKeyframeSet;
             addTaint(propertyName.getTaint());
             addTaint(keyframeSet.getTaint());
-            // ---------- Original Method ----------
-            //mValueType = int.class;
-            //mKeyframeSet = keyframeSet;
-            //mIntKeyframeSet = (IntKeyframeSet) mKeyframeSet;
+            
+            
+            
+            
         }
 
         
@@ -670,16 +678,16 @@ public class PropertyValuesHolder implements Cloneable {
             mIntKeyframeSet = (IntKeyframeSet) mKeyframeSet;
             {
                 mIntProperty = (IntProperty) mProperty;
-            } //End block
+            } 
             addTaint(property.getTaint());
             addTaint(keyframeSet.getTaint());
-            // ---------- Original Method ----------
-            //mValueType = int.class;
-            //mKeyframeSet = keyframeSet;
-            //mIntKeyframeSet = (IntKeyframeSet) mKeyframeSet;
-            //if (property instanceof  IntProperty) {
-                //mIntProperty = (IntProperty) mProperty;
-            //}
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -689,8 +697,8 @@ public class PropertyValuesHolder implements Cloneable {
             setIntValues(values);
             addTaint(propertyName.getTaint());
             addTaint(values[0]);
-            // ---------- Original Method ----------
-            //setIntValues(values);
+            
+            
         }
 
         
@@ -700,14 +708,14 @@ public class PropertyValuesHolder implements Cloneable {
             setIntValues(values);
             {
                 mIntProperty = (IntProperty) mProperty;
-            } //End block
+            } 
             addTaint(property.getTaint());
             addTaint(values[0]);
-            // ---------- Original Method ----------
-            //setIntValues(values);
-            //if (property instanceof  IntProperty) {
-                //mIntProperty = (IntProperty) mProperty;
-            //}
+            
+            
+            
+                
+            
         }
 
         
@@ -717,9 +725,9 @@ public class PropertyValuesHolder implements Cloneable {
             super.setIntValues(values);
             mIntKeyframeSet = (IntKeyframeSet) mKeyframeSet;
             addTaint(values[0]);
-            // ---------- Original Method ----------
-            //super.setIntValues(values);
-            //mIntKeyframeSet = (IntKeyframeSet) mKeyframeSet;
+            
+            
+            
         }
 
         
@@ -727,36 +735,36 @@ public class PropertyValuesHolder implements Cloneable {
         @Override
          void calculateValue(float fraction) {
             mIntAnimatedValue = mIntKeyframeSet.getIntValue(fraction);
-            // ---------- Original Method ----------
-            //mIntAnimatedValue = mIntKeyframeSet.getIntValue(fraction);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.869 -0400", hash_original_method = "CE13DB8914BA3896479030C59B8EB5EA", hash_generated_method = "649E8EA5366146849FB5056D64836C4B")
         @Override
          Object getAnimatedValue() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1268945121 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1268945121 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1268945121 = mIntAnimatedValue;
-            varB4EAC82CA7396A68D541C85D26508E83_1268945121.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1268945121.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1268945121;
-            // ---------- Original Method ----------
-            //return mIntAnimatedValue;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.871 -0400", hash_original_method = "D2AD407C7BF3FF5B871B87BBB92EBDD2", hash_generated_method = "4D0BDEAC37783228BA6BB2F1D7E5B993")
         @Override
         public IntPropertyValuesHolder clone() {
-            IntPropertyValuesHolder varB4EAC82CA7396A68D541C85D26508E83_485658772 = null; //Variable for return #1
+            IntPropertyValuesHolder varB4EAC82CA7396A68D541C85D26508E83_485658772 = null; 
             IntPropertyValuesHolder newPVH = (IntPropertyValuesHolder) super.clone();
             newPVH.mIntKeyframeSet = (IntKeyframeSet) newPVH.mKeyframeSet;
             varB4EAC82CA7396A68D541C85D26508E83_485658772 = newPVH;
-            varB4EAC82CA7396A68D541C85D26508E83_485658772.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_485658772.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_485658772;
-            // ---------- Original Method ----------
-            //IntPropertyValuesHolder newPVH = (IntPropertyValuesHolder) super.clone();
-            //newPVH.mIntKeyframeSet = (IntKeyframeSet) newPVH.mKeyframeSet;
-            //return newPVH;
+            
+            
+            
+            
         }
 
         
@@ -765,27 +773,27 @@ public class PropertyValuesHolder implements Cloneable {
          void setAnimatedValue(Object target) {
             {
                 mIntProperty.setValue(target, mIntAnimatedValue);
-            } //End block
+            } 
             {
                 mProperty.set(target, mIntAnimatedValue);
-            } //End block
+            } 
             {
                 nCallIntMethod(target, mJniSetter, mIntAnimatedValue);
-            } //End block
+            } 
             {
                 try 
                 {
                     mTmpValueArray[0] = mIntAnimatedValue;
                     mSetter.invoke(target, mTmpValueArray);
-                } //End block
+                } 
                 catch (InvocationTargetException e)
                 { }
                 catch (IllegalAccessException e)
                 { }
-            } //End block
+            } 
             addTaint(target.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -800,8 +808,8 @@ public class PropertyValuesHolder implements Cloneable {
                     Integer mJniSetterInteger = propertyMap.get(mPropertyName);
                     {
                         mJniSetter = mJniSetterInteger;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     String methodName = getMethodName("set", mPropertyName);
                     mJniSetter = nGetIntMethod(targetClass, methodName);
@@ -809,25 +817,25 @@ public class PropertyValuesHolder implements Cloneable {
                         {
                             propertyMap = new HashMap<String, Integer>();
                             sJNISetterPropertyMap.put(targetClass, propertyMap);
-                        } //End block
+                        } 
                         propertyMap.put(mPropertyName, mJniSetter);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             catch (NoSuchMethodError e)
             {
                 Log.d("PropertyValuesHolder",
                         "Can't find native method using JNI, use reflection" + e);
-            } //End block
+            } 
             finally 
             {
                 mPropertyMapLock.writeLock().unlock();
-            } //End block
+            } 
             {
                 super.setupSetter(targetClass);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -860,10 +868,10 @@ public class PropertyValuesHolder implements Cloneable {
             mFloatKeyframeSet = (FloatKeyframeSet) mKeyframeSet;
             addTaint(propertyName.getTaint());
             addTaint(keyframeSet.getTaint());
-            // ---------- Original Method ----------
-            //mValueType = float.class;
-            //mKeyframeSet = keyframeSet;
-            //mFloatKeyframeSet = (FloatKeyframeSet) mKeyframeSet;
+            
+            
+            
+            
         }
 
         
@@ -875,16 +883,16 @@ public class PropertyValuesHolder implements Cloneable {
             mFloatKeyframeSet = (FloatKeyframeSet) mKeyframeSet;
             {
                 mFloatProperty = (FloatProperty) mProperty;
-            } //End block
+            } 
             addTaint(property.getTaint());
             addTaint(keyframeSet.getTaint());
-            // ---------- Original Method ----------
-            //mValueType = float.class;
-            //mKeyframeSet = keyframeSet;
-            //mFloatKeyframeSet = (FloatKeyframeSet) mKeyframeSet;
-            //if (property instanceof FloatProperty) {
-                //mFloatProperty = (FloatProperty) mProperty;
-            //}
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -894,8 +902,8 @@ public class PropertyValuesHolder implements Cloneable {
             setFloatValues(values);
             addTaint(propertyName.getTaint());
             addTaint(values[0]);
-            // ---------- Original Method ----------
-            //setFloatValues(values);
+            
+            
         }
 
         
@@ -905,14 +913,14 @@ public class PropertyValuesHolder implements Cloneable {
             setFloatValues(values);
             {
                 mFloatProperty = (FloatProperty) mProperty;
-            } //End block
+            } 
             addTaint(property.getTaint());
             addTaint(values[0]);
-            // ---------- Original Method ----------
-            //setFloatValues(values);
-            //if (property instanceof  FloatProperty) {
-                //mFloatProperty = (FloatProperty) mProperty;
-            //}
+            
+            
+            
+                
+            
         }
 
         
@@ -922,9 +930,9 @@ public class PropertyValuesHolder implements Cloneable {
             super.setFloatValues(values);
             mFloatKeyframeSet = (FloatKeyframeSet) mKeyframeSet;
             addTaint(values[0]);
-            // ---------- Original Method ----------
-            //super.setFloatValues(values);
-            //mFloatKeyframeSet = (FloatKeyframeSet) mKeyframeSet;
+            
+            
+            
         }
 
         
@@ -932,36 +940,36 @@ public class PropertyValuesHolder implements Cloneable {
         @Override
          void calculateValue(float fraction) {
             mFloatAnimatedValue = mFloatKeyframeSet.getFloatValue(fraction);
-            // ---------- Original Method ----------
-            //mFloatAnimatedValue = mFloatKeyframeSet.getFloatValue(fraction);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.886 -0400", hash_original_method = "56F77D961BC82461152CD24C144983C0", hash_generated_method = "E1155EDC7327C7E48D21FDEA7C3A6E2A")
         @Override
          Object getAnimatedValue() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1208508870 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1208508870 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1208508870 = mFloatAnimatedValue;
-            varB4EAC82CA7396A68D541C85D26508E83_1208508870.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1208508870.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1208508870;
-            // ---------- Original Method ----------
-            //return mFloatAnimatedValue;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.889 -0400", hash_original_method = "3798C3AECEA696DCFE0B333FF00EF37C", hash_generated_method = "0A15FBF4FE25A8971FD825C5B898D443")
         @Override
         public FloatPropertyValuesHolder clone() {
-            FloatPropertyValuesHolder varB4EAC82CA7396A68D541C85D26508E83_1708112015 = null; //Variable for return #1
+            FloatPropertyValuesHolder varB4EAC82CA7396A68D541C85D26508E83_1708112015 = null; 
             FloatPropertyValuesHolder newPVH = (FloatPropertyValuesHolder) super.clone();
             newPVH.mFloatKeyframeSet = (FloatKeyframeSet) newPVH.mKeyframeSet;
             varB4EAC82CA7396A68D541C85D26508E83_1708112015 = newPVH;
-            varB4EAC82CA7396A68D541C85D26508E83_1708112015.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1708112015.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1708112015;
-            // ---------- Original Method ----------
-            //FloatPropertyValuesHolder newPVH = (FloatPropertyValuesHolder) super.clone();
-            //newPVH.mFloatKeyframeSet = (FloatKeyframeSet) newPVH.mKeyframeSet;
-            //return newPVH;
+            
+            
+            
+            
         }
 
         
@@ -970,27 +978,27 @@ public class PropertyValuesHolder implements Cloneable {
          void setAnimatedValue(Object target) {
             {
                 mFloatProperty.setValue(target, mFloatAnimatedValue);
-            } //End block
+            } 
             {
                 mProperty.set(target, mFloatAnimatedValue);
-            } //End block
+            } 
             {
                 nCallFloatMethod(target, mJniSetter, mFloatAnimatedValue);
-            } //End block
+            } 
             {
                 try 
                 {
                     mTmpValueArray[0] = mFloatAnimatedValue;
                     mSetter.invoke(target, mTmpValueArray);
-                } //End block
+                } 
                 catch (InvocationTargetException e)
                 { }
                 catch (IllegalAccessException e)
                 { }
-            } //End block
+            } 
             addTaint(target.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1005,8 +1013,8 @@ public class PropertyValuesHolder implements Cloneable {
                     Integer mJniSetterInteger = propertyMap.get(mPropertyName);
                     {
                         mJniSetter = mJniSetterInteger;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     String methodName = getMethodName("set", mPropertyName);
                     mJniSetter = nGetFloatMethod(targetClass, methodName);
@@ -1014,25 +1022,25 @@ public class PropertyValuesHolder implements Cloneable {
                         {
                             propertyMap = new HashMap<String, Integer>();
                             sJNISetterPropertyMap.put(targetClass, propertyMap);
-                        } //End block
+                        } 
                         propertyMap.put(mPropertyName, mJniSetter);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             catch (NoSuchMethodError e)
             {
                 Log.d("PropertyValuesHolder",
                         "Can't find native method using JNI, use reflection" + e);
-            } //End block
+            } 
             finally 
             {
                 mPropertyMapLock.writeLock().unlock();
-            } //End block
+            } 
             {
                 super.setupSetter(targetClass);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         

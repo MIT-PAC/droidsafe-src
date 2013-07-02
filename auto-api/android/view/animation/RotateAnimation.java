@@ -1,11 +1,11 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -56,21 +56,21 @@ public class RotateAnimation extends Animation {
         a.recycle();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.RotateAnimation);
-        //mFromDegrees = a.getFloat(
-                //com.android.internal.R.styleable.RotateAnimation_fromDegrees, 0.0f);
-        //mToDegrees = a.getFloat(com.android.internal.R.styleable.RotateAnimation_toDegrees, 0.0f);
-        //Description d = Description.parseValue(a.peekValue(
-            //com.android.internal.R.styleable.RotateAnimation_pivotX));
-        //mPivotXType = d.type;
-        //mPivotXValue = d.value;
-        //d = Description.parseValue(a.peekValue(
-            //com.android.internal.R.styleable.RotateAnimation_pivotY));
-        //mPivotYType = d.type;
-        //mPivotYValue = d.value;
-        //a.recycle();
+        
+        
+                
+        
+                
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -80,11 +80,11 @@ public class RotateAnimation extends Animation {
         mToDegrees = toDegrees;
         mPivotX = 0.0f;
         mPivotY = 0.0f;
-        // ---------- Original Method ----------
-        //mFromDegrees = fromDegrees;
-        //mToDegrees = toDegrees;
-        //mPivotX = 0.0f;
-        //mPivotY = 0.0f;
+        
+        
+        
+        
+        
     }
 
     
@@ -96,13 +96,13 @@ public class RotateAnimation extends Animation {
         mPivotYType = ABSOLUTE;
         mPivotXValue = pivotX;
         mPivotYValue = pivotY;
-        // ---------- Original Method ----------
-        //mFromDegrees = fromDegrees;
-        //mToDegrees = toDegrees;
-        //mPivotXType = ABSOLUTE;
-        //mPivotYType = ABSOLUTE;
-        //mPivotXValue = pivotX;
-        //mPivotYValue = pivotY;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -115,16 +115,17 @@ public class RotateAnimation extends Animation {
         mPivotXType = pivotXType;
         mPivotYValue = pivotYValue;
         mPivotYType = pivotYType;
-        // ---------- Original Method ----------
-        //mFromDegrees = fromDegrees;
-        //mToDegrees = toDegrees;
-        //mPivotXValue = pivotXValue;
-        //mPivotXType = pivotXType;
-        //mPivotYValue = pivotYValue;
-        //mPivotYType = pivotYType;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.725 -0400", hash_original_method = "194AFADB87C10F3B1916BACFE93A5B2C", hash_generated_method = "DFA947229F681F82A6C83EB495E417C1")
     @Override
     protected void applyTransformation(float interpolatedTime, Transformation t) {
@@ -132,33 +133,34 @@ public class RotateAnimation extends Animation {
         float scale = getScaleFactor();
         {
             t.getMatrix().setRotate(degrees);
-        } //End block
+        } 
         {
             t.getMatrix().setRotate(degrees, mPivotX * scale, mPivotY * scale);
-        } //End block
+        } 
         addTaint(interpolatedTime);
         addTaint(t.getTaint());
-        // ---------- Original Method ----------
-        //float degrees = mFromDegrees + ((mToDegrees - mFromDegrees) * interpolatedTime);
-        //float scale = getScaleFactor();
-        //if (mPivotX == 0.0f && mPivotY == 0.0f) {
-            //t.getMatrix().setRotate(degrees);
-        //} else {
-            //t.getMatrix().setRotate(degrees, mPivotX * scale, mPivotY * scale);
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.726 -0400", hash_original_method = "45493CF0F005891678EBD20A791168F1", hash_generated_method = "53783E9B1C23799F49072FEC34253244")
     @Override
     public void initialize(int width, int height, int parentWidth, int parentHeight) {
         super.initialize(width, height, parentWidth, parentHeight);
         mPivotX = resolveSize(mPivotXType, mPivotXValue, width, parentWidth);
         mPivotY = resolveSize(mPivotYType, mPivotYValue, height, parentHeight);
-        // ---------- Original Method ----------
-        //super.initialize(width, height, parentWidth, parentHeight);
-        //mPivotX = resolveSize(mPivotXType, mPivotXValue, width, parentWidth);
-        //mPivotY = resolveSize(mPivotYType, mPivotYValue, height, parentHeight);
+        
+        
+        
+        
     }
 
     

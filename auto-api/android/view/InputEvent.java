@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -14,7 +14,7 @@ public abstract class InputEvent implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.022 -0400", hash_original_method = "5E30BC92EB346FB6C373466BBBDCD9C6", hash_generated_method = "4C32157640739D892888BF135F5DE17B")
       InputEvent() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,12 +23,12 @@ public abstract class InputEvent implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.023 -0400", hash_original_method = "65C564B77C92C924B4A35B510EAEB2C6", hash_generated_method = "EE6A1FF8A02589CA7F921A38707F1506")
     public final InputDevice getDevice() {
-        InputDevice varB4EAC82CA7396A68D541C85D26508E83_1860262560 = null; //Variable for return #1
+        InputDevice varB4EAC82CA7396A68D541C85D26508E83_1860262560 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1860262560 = InputDevice.getDevice(getDeviceId());
-        varB4EAC82CA7396A68D541C85D26508E83_1860262560.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1860262560.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1860262560;
-        // ---------- Original Method ----------
-        //return InputDevice.getDevice(getDeviceId());
+        
+        
     }
 
     
@@ -57,8 +57,8 @@ public abstract class InputEvent implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1575101566 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1575101566;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -87,7 +87,7 @@ public abstract class InputEvent implements Parcelable {
             return new InputEvent[size];
         }
     };
-    // orphaned legacy method
+    
     public InputEvent createFromParcel(Parcel in) {
             int token = in.readInt();
             if (token == PARCEL_TOKEN_KEY_EVENT) {
@@ -99,7 +99,7 @@ public abstract class InputEvent implements Parcelable {
             }
         }
     
-    // orphaned legacy method
+    
     public InputEvent[] newArray(int size) {
             return new InputEvent[size];
         }

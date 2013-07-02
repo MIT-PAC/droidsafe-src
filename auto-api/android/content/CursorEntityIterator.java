@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.database.Cursor;
 import android.os.RemoteException;
@@ -23,10 +23,10 @@ public abstract class CursorEntityIterator implements EntityIterator {
         mIsClosed = false;
         mCursor = cursor;
         mCursor.moveToFirst();
-        // ---------- Original Method ----------
-        //mIsClosed = false;
-        //mCursor = cursor;
-        //mCursor.moveToFirst();
+        
+        
+        
+        
     }
 
     
@@ -37,61 +37,63 @@ public abstract class CursorEntityIterator implements EntityIterator {
     public final boolean hasNext() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("calling hasNext() when the iterator is closed");
-        } //End block
+        } 
         boolean var1223B7E5B0B9252AE7BAD96C7FEE91F6_1167118456 = (!mCursor.isAfterLast());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_407286510 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_407286510;
-        // ---------- Original Method ----------
-        //if (mIsClosed) {
-            //throw new IllegalStateException("calling hasNext() when the iterator is closed");
-        //}
-        //return !mCursor.isAfterLast();
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 15:38:25.881 -0400", hash_original_method = "D761CE40C9BF5BACB311C894FE3131D0", hash_generated_method = "07405E58FBF028488AAA2574A173D62D")
     public Entity next() {
-        Entity var3A1D93BF29359CD4476F0C42D70CD787_1174289805; //For return ordinal 1
+        Entity var3A1D93BF29359CD4476F0C42D70CD787_1174289805; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("calling next() when the iterator is closed");
-        } //End block
+        } 
         {
             boolean var2CC10AB3C52DD03176ADB3A939341751_737403957 = (!hasNext());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("you may only call next() if hasNext() is true");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             var3A1D93BF29359CD4476F0C42D70CD787_1174289805 = getEntityAndIncrementCursor(mCursor);
-        } //End block
+        } 
         catch (RemoteException e)
         {
         	throw new RuntimeException("caught a remote exception, this process will die soon", e);
-        } //End block
+        } 
         Entity var1E6151782509B2C92750CFF962B742CD_1432176429 = var3A1D93BF29359CD4476F0C42D70CD787_1174289805;
-        var1E6151782509B2C92750CFF962B742CD_1432176429.addTaint(getTaint()); //Add taint from parent
+        var1E6151782509B2C92750CFF962B742CD_1432176429.addTaint(getTaint()); 
         return var1E6151782509B2C92750CFF962B742CD_1432176429;
-        // ---------- Original Method ----------
-        //if (mIsClosed) {
-            //throw new IllegalStateException("calling next() when the iterator is closed");
-        //}
-        //if (!hasNext()) {
-            //throw new IllegalStateException("you may only call next() if hasNext() is true");
-        //}
-        //try {
-            //return getEntityAndIncrementCursor(mCursor);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("caught a remote exception, this process will die soon", e);
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 15:38:25.885 -0400", hash_original_method = "2158F00E167F00121D9D2190C01FAABB", hash_generated_method = "B86A3CB9F87AF9759349B2E60E41A138")
     public void remove() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("remove not supported by EntityIterators");
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException("remove not supported by EntityIterators");
+        
+        
     }
 
     
@@ -99,13 +101,13 @@ public abstract class CursorEntityIterator implements EntityIterator {
     public final void reset() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("calling reset() when the iterator is closed");
-        } //End block
+        } 
         mCursor.moveToFirst();
-        // ---------- Original Method ----------
-        //if (mIsClosed) {
-            //throw new IllegalStateException("calling reset() when the iterator is closed");
-        //}
-        //mCursor.moveToFirst();
+        
+        
+            
+        
+        
     }
 
     
@@ -113,15 +115,15 @@ public abstract class CursorEntityIterator implements EntityIterator {
     public final void close() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("closing when already closed");
-        } //End block
+        } 
         mIsClosed = true;
         mCursor.close();
-        // ---------- Original Method ----------
-        //if (mIsClosed) {
-            //throw new IllegalStateException("closing when already closed");
-        //}
-        //mIsClosed = true;
-        //mCursor.close();
+        
+        
+            
+        
+        
+        
     }
 
     

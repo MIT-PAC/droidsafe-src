@@ -1,11 +1,11 @@
 package javax.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.NoSuchAlgorithmException;
@@ -33,32 +33,32 @@ public class KeyGenerator {
         this.provider = provider;
         this.algorithm = algorithm;
         this.spiImpl = keyGenSpi;
-        // ---------- Original Method ----------
-        //this.provider = provider;
-        //this.algorithm = algorithm;
-        //this.spiImpl = keyGenSpi;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.102 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "CC111E11489496B4D30D96005030FA65")
     public final String getAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_621494669 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_621494669 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_621494669 = algorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_621494669.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_621494669.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_621494669;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.103 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "7EF7C6FC0DFA150256FDC9ACCF457737")
     public final Provider getProvider() {
-        Provider varB4EAC82CA7396A68D541C85D26508E83_208930775 = null; //Variable for return #1
+        Provider varB4EAC82CA7396A68D541C85D26508E83_208930775 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_208930775 = provider;
-        varB4EAC82CA7396A68D541C85D26508E83_208930775.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_208930775.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_208930775;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
@@ -99,12 +99,12 @@ public class KeyGenerator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.104 -0400", hash_original_method = "0D649746A13B62933617343FF6CF66A5", hash_generated_method = "FE9346BC012589B96070BEE4F1BD8B2C")
     public final SecretKey generateKey() {
-        SecretKey varB4EAC82CA7396A68D541C85D26508E83_1687109677 = null; //Variable for return #1
+        SecretKey varB4EAC82CA7396A68D541C85D26508E83_1687109677 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1687109677 = spiImpl.engineGenerateKey();
-        varB4EAC82CA7396A68D541C85D26508E83_1687109677.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1687109677.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1687109677;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateKey();
+        
+        
     }
 
     
@@ -112,8 +112,8 @@ public class KeyGenerator {
     public final void init(AlgorithmParameterSpec params) throws InvalidAlgorithmParameterException {
         spiImpl.engineInit(params, RANDOM);
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(params, RANDOM);
+        
+        
     }
 
     
@@ -122,8 +122,8 @@ public class KeyGenerator {
         spiImpl.engineInit(params, random);
         addTaint(params.getTaint());
         addTaint(random.getTaint());
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(params, random);
+        
+        
     }
 
     
@@ -131,8 +131,8 @@ public class KeyGenerator {
     public final void init(int keysize) {
         spiImpl.engineInit(keysize, RANDOM);
         addTaint(keysize);
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(keysize, RANDOM);
+        
+        
     }
 
     
@@ -141,8 +141,8 @@ public class KeyGenerator {
         spiImpl.engineInit(keysize, random);
         addTaint(keysize);
         addTaint(random.getTaint());
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(keysize, random);
+        
+        
     }
 
     
@@ -150,8 +150,8 @@ public class KeyGenerator {
     public final void init(SecureRandom random) {
         spiImpl.engineInit(random);
         addTaint(random.getTaint());
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(random);
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 class FinitePool<T extends Poolable<T>> implements Pool<T> {
@@ -30,10 +30,10 @@ class FinitePool<T extends Poolable<T>> implements Pool<T> {
         mManager = manager;
         mLimit = 0;
         mInfinite = true;
-        // ---------- Original Method ----------
-        //mManager = manager;
-        //mLimit = 0;
-        //mInfinite = true;
+        
+        
+        
+        
     }
 
     
@@ -43,51 +43,53 @@ class FinitePool<T extends Poolable<T>> implements Pool<T> {
         mManager = manager;
         mLimit = limit;
         mInfinite = false;
-        // ---------- Original Method ----------
-        //if (limit <= 0) throw new IllegalArgumentException("The pool limit must be > 0");
-        //mManager = manager;
-        //mLimit = limit;
-        //mInfinite = false;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.302 -0400", hash_original_method = "7D07537AD43CB2EA058390D31632CED6", hash_generated_method = "1CF6DD69F52816D0E6E955A3F1A32E87")
     public T acquire() {
-        T varB4EAC82CA7396A68D541C85D26508E83_1318690405 = null; //Variable for return #1
+        T varB4EAC82CA7396A68D541C85D26508E83_1318690405 = null; 
         T element;
         {
             element = mRoot;
             mRoot = element.getNextPoolable();
-        } //End block
+        } 
         {
             element = mManager.newInstance();
-        } //End block
+        } 
         {
             element.setNextPoolable(null);
             element.setPooled(false);
             mManager.onAcquired(element);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1318690405 = element;
-        varB4EAC82CA7396A68D541C85D26508E83_1318690405.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1318690405.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1318690405;
-        // ---------- Original Method ----------
-        //T element;
-        //if (mRoot != null) {
-            //element = mRoot;
-            //mRoot = element.getNextPoolable();
-            //mPoolCount--;
-        //} else {
-            //element = mManager.newInstance();
-        //}
-        //if (element != null) {
-            //element.setNextPoolable(null);
-            //element.setPooled(false);
-            //mManager.onAcquired(element);            
-        //}
-        //return element;
+        
+        
+        
+            
+            
+            
+        
+            
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.303 -0400", hash_original_method = "682D089BAC6076782B5E99EF5FBF0695", hash_generated_method = "C3972C47B0A961F24CF696D44F702243")
     public void release(T element) {
         {
@@ -97,22 +99,22 @@ class FinitePool<T extends Poolable<T>> implements Pool<T> {
                     element.setNextPoolable(mRoot);
                     element.setPooled(true);
                     mRoot = element;
-                } //End block
+                } 
                 mManager.onReleased(element);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (!element.isPooled()) {
-            //if (mInfinite || mPoolCount < mLimit) {
-                //mPoolCount++;
-                //element.setNextPoolable(mRoot);
-                //element.setPooled(true);
-                //mRoot = element;
-            //}
-            //mManager.onReleased(element);
-        //} else {
-            //Log.w(LOG_TAG, "Element is already in pool: " + element);
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+                
+                
+            
+            
+        
+            
+        
     }
 
     

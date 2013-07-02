@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -22,123 +22,128 @@ public class UiModeManager {
       UiModeManager() {
         mService = IUiModeManager.Stub.asInterface(
                 ServiceManager.getService(Context.UI_MODE_SERVICE));
-        // ---------- Original Method ----------
-        //mService = IUiModeManager.Stub.asInterface(
-                //ServiceManager.getService(Context.UI_MODE_SERVICE));
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.600 -0400", hash_original_method = "A4DA8672EE11B64C720877911E862CCA", hash_generated_method = "DAFEC616CB6F3914928DC3374EADA885")
     public void enableCarMode(int flags) {
         {
             try 
             {
                 mService.enableCarMode(flags);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
+        } 
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //mService.enableCarMode(flags);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "disableCarMode: RemoteException", e);
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.601 -0400", hash_original_method = "3F662D74C7F5FA5E21AD89C24E03313D", hash_generated_method = "EC9C755E6BCC8979C43BEEE7470CB36F")
     public void disableCarMode(int flags) {
         {
             try 
             {
                 mService.disableCarMode(flags);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
+        } 
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //mService.disableCarMode(flags);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "disableCarMode: RemoteException", e);
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.601 -0400", hash_original_method = "0CD456741A85C32EF5CC7E71365FBB20", hash_generated_method = "ED5E480566432A1554212276FD7FAEA1")
     public int getCurrentModeType() {
         {
             try 
             {
                 int var29ABCCF4A3C40C4AD9C9FABB6311381C_566107582 = (mService.getCurrentModeType());
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1247846174 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1247846174;
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //return mService.getCurrentModeType();
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "getCurrentModeType: RemoteException", e);
-            //}
-        //}
-        //return Configuration.UI_MODE_TYPE_NORMAL;
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.602 -0400", hash_original_method = "D2225F0EDD53710765C544C38EED4B1C", hash_generated_method = "8A673AC13D547016905B9B3D7C2050A4")
     public void setNightMode(int mode) {
         {
             try 
             {
                 mService.setNightMode(mode);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
+        } 
         addTaint(mode);
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //mService.setNightMode(mode);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "setNightMode: RemoteException", e);
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.602 -0400", hash_original_method = "9AFE4882A5DD35A0B7234D31EDC0BDFC", hash_generated_method = "39A3D9EA07575DB1086CF03416E8CE08")
     public int getNightMode() {
         {
             try 
             {
                 int var3C287D9906731F02DF673BDD06743A15_1836746326 = (mService.getNightMode());
-            } //End block
+            } 
             catch (RemoteException e)
             { }
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1409098695 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1409098695;
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //return mService.getNightMode();
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "getNightMode: RemoteException", e);
-            //}
-        //}
-        //return -1;
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     

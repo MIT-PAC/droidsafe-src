@@ -1,11 +1,11 @@
 package com.android.internal.telephony.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.telephony.Call;
 import com.android.internal.telephony.Connection;
@@ -63,48 +63,48 @@ abstract class SipConnectionBase extends Connection {
         postDialString = PhoneNumberUtils.extractPostDialPortion(dialString);
         isIncoming = false;
         createTime = System.currentTimeMillis();
-        // ---------- Original Method ----------
-        //this.dialString = dialString;
-        //postDialString = PhoneNumberUtils.extractPostDialPortion(dialString);
-        //isIncoming = false;
-        //createTime = System.currentTimeMillis();
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.084 -0400", hash_original_method = "9D87CB1ACC156683FA215308BE25D1D9", hash_generated_method = "F5656525211514DEA1ADCE820CBCC947")
     protected void setState(Call.State state) {
-        //Begin case ACTIVE 
+        
         {
             connectTimeReal = SystemClock.elapsedRealtime();
             connectTime = System.currentTimeMillis();
-        } //End block
-        //End case ACTIVE 
-        //Begin case DISCONNECTED 
+        } 
+        
+        
         duration = getDurationMillis();
-        //End case DISCONNECTED 
-        //Begin case DISCONNECTED 
+        
+        
         disconnectTime = System.currentTimeMillis();
-        //End case DISCONNECTED 
-        //Begin case HOLDING 
+        
+        
         holdingStartTime = SystemClock.elapsedRealtime();
-        //End case HOLDING 
+        
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //switch (state) {
-            //case ACTIVE:
-                //if (connectTime == 0) {
-                    //connectTimeReal = SystemClock.elapsedRealtime();
-                    //connectTime = System.currentTimeMillis();
-                //}
-                //break;
-            //case DISCONNECTED:
-                //duration = getDurationMillis();
-                //disconnectTime = System.currentTimeMillis();
-                //break;
-            //case HOLDING:
-                //holdingStartTime = SystemClock.elapsedRealtime();
-                //break;
-        //}
+        
+        
+            
+                
+                    
+                    
+                
+                
+            
+                
+                
+                
+            
+                
+                
+        
     }
 
     
@@ -113,8 +113,8 @@ abstract class SipConnectionBase extends Connection {
     public long getCreateTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_361513468 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_361513468;
-        // ---------- Original Method ----------
-        //return createTime;
+        
+        
     }
 
     
@@ -123,8 +123,8 @@ abstract class SipConnectionBase extends Connection {
     public long getConnectTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_368335593 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_368335593;
-        // ---------- Original Method ----------
-        //return connectTime;
+        
+        
     }
 
     
@@ -133,8 +133,8 @@ abstract class SipConnectionBase extends Connection {
     public long getDisconnectTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_437487633 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_437487633;
-        // ---------- Original Method ----------
-        //return disconnectTime;
+        
+        
     }
 
     
@@ -143,20 +143,21 @@ abstract class SipConnectionBase extends Connection {
     public long getDurationMillis() {
         {
             long var2E584F737203A878ED4A9BB9708321A8_824057952 = (SystemClock.elapsedRealtime() - connectTimeReal);
-        } //End block
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_480656205 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_480656205;
-        // ---------- Original Method ----------
-        //if (connectTimeReal == 0) {
-            //return 0;
-        //} else if (duration < 0) {
-            //return SystemClock.elapsedRealtime() - connectTimeReal;
-        //} else {
-            //return duration;
-        //}
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.086 -0400", hash_original_method = "2CFF5FB4AC83B238AC9B892D795EB1DE", hash_generated_method = "3613E1E66703174741AA5FDF554405FE")
     @Override
     public long getHoldDurationMillis() {
@@ -164,55 +165,55 @@ abstract class SipConnectionBase extends Connection {
             boolean var65303E1BDDCE597941A633CC414B8ACE_1372307130 = (getState() != Call.State.HOLDING);
             {
                 long var2C126D63011C35D772AC44944CB08D74_1061866198 = (SystemClock.elapsedRealtime() - holdingStartTime);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_102049788 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_102049788;
-        // ---------- Original Method ----------
-        //if (getState() != Call.State.HOLDING) {
-            //return 0;
-        //} else {
-            //return SystemClock.elapsedRealtime() - holdingStartTime;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.087 -0400", hash_original_method = "28455B27DA94996FB17C07BF72898FB4", hash_generated_method = "3E4AAC99F1A9C11835B2FA131F93170D")
     @Override
     public DisconnectCause getDisconnectCause() {
-        DisconnectCause varB4EAC82CA7396A68D541C85D26508E83_806055255 = null; //Variable for return #1
+        DisconnectCause varB4EAC82CA7396A68D541C85D26508E83_806055255 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_806055255 = mCause;
-        varB4EAC82CA7396A68D541C85D26508E83_806055255.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_806055255.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_806055255;
-        // ---------- Original Method ----------
-        //return mCause;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.088 -0400", hash_original_method = "04AFA3AB4AAFB99A0A1522AC045EFCCB", hash_generated_method = "CC2251B1F2D7B949CA5CE6AAB3C0D01C")
      void setDisconnectCause(DisconnectCause cause) {
         mCause = cause;
-        // ---------- Original Method ----------
-        //mCause = cause;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.089 -0400", hash_original_method = "4EE87D2E41D94C18F614BA2D1494AD36", hash_generated_method = "610C02ECE56EE4831ACCC7DA8E4CA6BD")
     @Override
     public PostDialState getPostDialState() {
-        PostDialState varB4EAC82CA7396A68D541C85D26508E83_1594450517 = null; //Variable for return #1
+        PostDialState varB4EAC82CA7396A68D541C85D26508E83_1594450517 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1594450517 = postDialState;
-        varB4EAC82CA7396A68D541C85D26508E83_1594450517.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1594450517.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1594450517;
-        // ---------- Original Method ----------
-        //return postDialState;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.091 -0400", hash_original_method = "0751315CA6FC4E16145F947C7FEC6A28", hash_generated_method = "BB3C4E9784C28AF1655F838F726D7EED")
     @Override
     public void proceedAfterWaitChar() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -220,14 +221,14 @@ abstract class SipConnectionBase extends Connection {
     @Override
     public void proceedAfterWildChar(String str) {
         addTaint(str.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.092 -0400", hash_original_method = "A990DB72552DFD3D94264491EEB59CEC", hash_generated_method = "34D7B16591BBD4AA8BCBE387281F2D17")
     @Override
     public void cancelPostDial() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -237,8 +238,8 @@ abstract class SipConnectionBase extends Connection {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.094 -0400", hash_original_method = "0D579DEEA4ADF8476D536663A83CC650", hash_generated_method = "982F58185678C0858B5DE3B041DA43FE")
     @Override
     public String getRemainingPostDialString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1524288963 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1027748425 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1524288963 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1027748425 = null; 
         {
             boolean varCBE29C650BD63B7D36FF87F87B8A05C3_656002874 = (postDialState == PostDialState.CANCELLED
             || postDialState == PostDialState.COMPLETE
@@ -246,28 +247,28 @@ abstract class SipConnectionBase extends Connection {
             || postDialString.length() <= nextPostDialChar);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1524288963 = "";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1027748425 = postDialString.substring(nextPostDialChar);
-        String varA7E53CE21691AB073D9660D615818899_1179384051; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1179384051; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1179384051 = varB4EAC82CA7396A68D541C85D26508E83_1524288963;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1179384051 = varB4EAC82CA7396A68D541C85D26508E83_1027748425;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1179384051.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1179384051.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1179384051;
-        // ---------- Original Method ----------
-        //if (postDialState == PostDialState.CANCELLED
-            //|| postDialState == PostDialState.COMPLETE
-            //|| postDialString == null
-            //|| postDialString.length() <= nextPostDialChar) {
-            //return "";
-        //}
-        //return postDialString.substring(nextPostDialChar);
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -275,8 +276,8 @@ abstract class SipConnectionBase extends Connection {
     private void log(String msg) {
         Log.d(LOG_TAG, "[SipConn] " + msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[SipConn] " + msg);
+        
+        
     }
 
     
@@ -285,20 +286,20 @@ abstract class SipConnectionBase extends Connection {
     public int getNumberPresentation() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_243345067 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_243345067;
-        // ---------- Original Method ----------
-        //return Connection.PRESENTATION_ALLOWED;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.096 -0400", hash_original_method = "8B171385F62C7AA97B0882209EC3A206", hash_generated_method = "F650C5D3FE400B286ED79ABEBFAAB2A1")
     @Override
     public UUSInfo getUUSInfo() {
-        UUSInfo varB4EAC82CA7396A68D541C85D26508E83_1981284828 = null; //Variable for return #1
+        UUSInfo varB4EAC82CA7396A68D541C85D26508E83_1981284828 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1981284828 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1981284828.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1981284828.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1981284828;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     

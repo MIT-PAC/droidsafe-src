@@ -1,11 +1,11 @@
 package org.json;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 class JSON {
@@ -13,10 +13,11 @@ class JSON {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.136 -0400", hash_original_method = "4E4E4AE7CF91B852034C25B487459E58", hash_generated_method = "4E4E4AE7CF91B852034C25B487459E58")
     public JSON ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     static double checkDouble(double d) throws JSONException {
         if (Double.isInfinite(d) || Double.isNaN(d)) {
             throw new JSONException("Forbidden numeric value: " + d);
@@ -25,6 +26,7 @@ class JSON {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static Boolean toBoolean(Object value) {
         if (value instanceof Boolean) {
             return (Boolean) value;
@@ -40,6 +42,7 @@ class JSON {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static Double toDouble(Object value) {
         if (value instanceof Double) {
             return (Double) value;
@@ -55,6 +58,7 @@ class JSON {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static Integer toInteger(Object value) {
         if (value instanceof Integer) {
             return (Integer) value;
@@ -70,6 +74,7 @@ class JSON {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static Long toLong(Object value) {
         if (value instanceof Long) {
             return (Long) value;
@@ -85,6 +90,7 @@ class JSON {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static String toString(Object value) {
         if (value instanceof String) {
             return (String) value;
@@ -95,6 +101,7 @@ class JSON {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static JSONException typeMismatch(Object indexOrName, Object actual,
             String requiredType) throws JSONException {
         if (actual == null) {
@@ -107,6 +114,7 @@ class JSON {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static JSONException typeMismatch(Object actual, String requiredType) throws JSONException {
         if (actual == null) {
             throw new JSONException("Value is null.");

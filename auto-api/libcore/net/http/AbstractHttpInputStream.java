@@ -1,11 +1,11 @@
 package libcore.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,18 +40,18 @@ abstract class AbstractHttpInputStream extends InputStream {
         cacheBody = null;
         {
             cacheRequest = null;
-        } //End block
+        } 
         this.cacheBody = cacheBody;
         this.cacheRequest = cacheRequest;
-        // ---------- Original Method ----------
-        //this.in = in;
-        //this.httpEngine = httpEngine;
-        //OutputStream cacheBody = cacheRequest != null ? cacheRequest.getBody() : null;
-        //if (cacheBody == null) {
-            //cacheRequest = null;
-        //}
-        //this.cacheBody = cacheBody;
-        //this.cacheRequest = cacheRequest;
+        
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -61,8 +61,8 @@ abstract class AbstractHttpInputStream extends InputStream {
         int var5941BF1153E2E81479FC3BECE4E461FF_1388341434 = (Streams.readSingleByte(this));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1100741339 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1100741339;
-        // ---------- Original Method ----------
-        //return Streams.readSingleByte(this);
+        
+        
     }
 
     
@@ -70,11 +70,11 @@ abstract class AbstractHttpInputStream extends InputStream {
     protected final void checkNotClosed() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("stream closed");
-        } //End block
-        // ---------- Original Method ----------
-        //if (closed) {
-            //throw new IOException("stream closed");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -82,14 +82,14 @@ abstract class AbstractHttpInputStream extends InputStream {
     protected final void cacheWrite(byte[] buffer, int offset, int count) throws IOException {
         {
             cacheBody.write(buffer, offset, count);
-        } //End block
+        } 
         addTaint(buffer[0]);
         addTaint(offset);
         addTaint(count);
-        // ---------- Original Method ----------
-        //if (cacheBody != null) {
-            //cacheBody.write(buffer, offset, count);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -97,14 +97,14 @@ abstract class AbstractHttpInputStream extends InputStream {
     protected final void endOfInput(boolean reuseSocket) throws IOException {
         {
             cacheBody.close();
-        } //End block
+        } 
         httpEngine.release(reuseSocket);
         addTaint(reuseSocket);
-        // ---------- Original Method ----------
-        //if (cacheRequest != null) {
-            //cacheBody.close();
-        //}
-        //httpEngine.release(reuseSocket);
+        
+        
+            
+        
+        
     }
 
     
@@ -112,13 +112,13 @@ abstract class AbstractHttpInputStream extends InputStream {
     protected final void unexpectedEndOfInput() {
         {
             cacheRequest.abort();
-        } //End block
+        } 
         httpEngine.release(false);
-        // ---------- Original Method ----------
-        //if (cacheRequest != null) {
-            //cacheRequest.abort();
-        //}
-        //httpEngine.release(false);
+        
+        
+            
+        
+        
     }
 
     

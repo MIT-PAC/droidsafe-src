@@ -1,11 +1,11 @@
 package com.android.internal.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.net.NetworkUtils;
 import android.util.Log;
@@ -24,10 +24,11 @@ public class DomainNameValidator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.347 -0400", hash_original_method = "C5190347A8092226EE089C86AEE611D1", hash_generated_method = "C5190347A8092226EE089C86AEE611D1")
     public DomainNameValidator ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static boolean match(X509Certificate certificate, String thisDomain) {
         if (certificate == null || thisDomain == null || thisDomain.length() == 0) {
             return false;
@@ -41,6 +42,7 @@ public class DomainNameValidator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isIpAddress(String domain) {
         boolean rval = (domain != null && domain.length() != 0);
         if (rval) {
@@ -58,6 +60,7 @@ public class DomainNameValidator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean matchIpAddress(X509Certificate certificate, String thisDomain) {
         if (LOG_ENABLED) {
             Log.v(TAG, "DomainNameValidator.matchIpAddress(): this domain: " + thisDomain);
@@ -91,6 +94,7 @@ public class DomainNameValidator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean matchDns(X509Certificate certificate, String thisDomain) {
         boolean hasDns = false;
         try {
@@ -139,6 +143,7 @@ public class DomainNameValidator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean matchDns(String thisDomain, String thatDomain) {
         if (LOG_ENABLED) {
             Log.v(TAG, "DomainNameValidator.matchDns():" +
@@ -179,6 +184,7 @@ public class DomainNameValidator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean domainTokenMatch(String thisDomainToken, String thatDomainToken) {
         if (thisDomainToken != null && thatDomainToken != null) {
             int starIndex = thatDomainToken.indexOf('*');

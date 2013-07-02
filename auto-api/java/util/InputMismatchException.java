@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 
@@ -13,7 +13,7 @@ public class InputMismatchException extends NoSuchElementException implements Se
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.532 -0400", hash_original_method = "E660D99FFDDF21F21077CDA3D732980B", hash_generated_method = "FB144C024DC7EC0E617E9E9B95497E86")
     public  InputMismatchException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class InputMismatchException extends NoSuchElementException implements Se
     public  InputMismatchException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

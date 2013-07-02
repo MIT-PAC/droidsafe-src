@@ -1,11 +1,11 @@
 package org.apache.harmony.security.pkcs7;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.List;
 import org.apache.harmony.security.asn1.ASN1Implicit;
@@ -48,46 +48,49 @@ public final class SignedData {
         this.certificates = certificates;
         this.crls = crls;
         this.signerInfos = signerInfos;
-        // ---------- Original Method ----------
-        //this.version = version;
-        //this.digestAlgorithms = digestAlgorithms;
-        //this.contentInfo = contentInfo;
-        //this.certificates = certificates;
-        //this.crls = crls;
-        //this.signerInfos = signerInfos;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.024 -0400", hash_original_method = "1A3C998CB17E3A8C920AD81B84D716FA", hash_generated_method = "1774731FE5BD67F7F3DCAC86D8C3166A")
     public List<Certificate> getCertificates() {
-        List<Certificate> varB4EAC82CA7396A68D541C85D26508E83_1112840452 = null; //Variable for return #1
+        List<Certificate> varB4EAC82CA7396A68D541C85D26508E83_1112840452 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1112840452 = certificates;
-        varB4EAC82CA7396A68D541C85D26508E83_1112840452.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1112840452.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1112840452;
-        // ---------- Original Method ----------
-        //return certificates;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.025 -0400", hash_original_method = "3C90A6221E72080B8CAD1325BD108F88", hash_generated_method = "EE5124FC21B23BE51E03AA49ADD41798")
     public List<CertificateList> getCRLs() {
-        List<CertificateList> varB4EAC82CA7396A68D541C85D26508E83_1149044377 = null; //Variable for return #1
+        List<CertificateList> varB4EAC82CA7396A68D541C85D26508E83_1149044377 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1149044377 = crls;
-        varB4EAC82CA7396A68D541C85D26508E83_1149044377.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1149044377.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1149044377;
-        // ---------- Original Method ----------
-        //return crls;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.025 -0400", hash_original_method = "4845FE90A50A204EC6BC5DCC20DC666F", hash_generated_method = "29C71028D73616365EA1C4F5B5E8E380")
     public List<SignerInfo> getSignerInfos() {
-        List<SignerInfo> varB4EAC82CA7396A68D541C85D26508E83_229835702 = null; //Variable for return #1
+        List<SignerInfo> varB4EAC82CA7396A68D541C85D26508E83_229835702 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_229835702 = signerInfos;
-        varB4EAC82CA7396A68D541C85D26508E83_229835702.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_229835702.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_229835702;
-        // ---------- Original Method ----------
-        //return signerInfos;
+        
+        
     }
 
     
@@ -95,15 +98,16 @@ public final class SignedData {
     public int getVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_441484286 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_441484286;
-        // ---------- Original Method ----------
-        //return version;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.026 -0400", hash_original_method = "39B5111592E9C9F7E25B09890D35A8D3", hash_generated_method = "7DAA10B97DE8503F768428D79D5E5A1E")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_964229476 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_964229476 = null; 
         StringBuilder res = new StringBuilder();
         res.append("---- SignedData:");
         res.append("\nversion: ");
@@ -115,38 +119,38 @@ public final class SignedData {
         res.append("\ncertificates: ");
         {
             res.append(certificates.toString());
-        } //End block
+        } 
         res.append("\ncrls: ");
         {
             res.append(crls.toString());
-        } //End block
+        } 
         res.append("\nsignerInfos:\n");
         res.append(signerInfos.toString());
         res.append("\n---- SignedData End\n]");
         varB4EAC82CA7396A68D541C85D26508E83_964229476 = res.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_964229476.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_964229476.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_964229476;
-        // ---------- Original Method ----------
-        //StringBuilder res = new StringBuilder();
-        //res.append("---- SignedData:");
-        //res.append("\nversion: ");
-        //res.append(version);
-        //res.append("\ndigestAlgorithms: ");
-        //res.append(digestAlgorithms.toString());
-        //res.append("\ncontentInfo: ");
-        //res.append(contentInfo.toString());
-        //res.append("\ncertificates: ");
-        //if (certificates != null) {
-            //res.append(certificates.toString());
-        //}
-        //res.append("\ncrls: ");
-        //if (crls != null) {
-            //res.append(crls.toString());
-        //}
-        //res.append("\nsignerInfos:\n");
-        //res.append(signerInfos.toString());
-        //res.append("\n---- SignedData End\n]");
-        //return res.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -187,31 +191,6 @@ public final class SignedData {
                     );
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) {
-            Object[] values = (Object[]) in.content;
-            return new SignedData(
-                        ASN1Integer.toIntValue(values[0]),
-                        (List<?>) values[1],
-                        (ContentInfo) values[2],
-                        (List<Certificate>) values[3],
-                        (List<CertificateList>) values[4],
-                        (List<SignerInfo>) values[5]
-                    );
-        }
     
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            SignedData sd = (SignedData) object;
-            values[0] = new byte[] {(byte)sd.version};
-            values[1] = sd.digestAlgorithms;
-            values[2] = sd.contentInfo;
-            values[3] = sd.certificates;
-            values[4] = sd.crls;
-            values[5] = sd.signerInfos;
-        }
-    
-    */
 }
 

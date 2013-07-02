@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cdma;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.Log;
 import com.android.internal.telephony.Connection;
@@ -45,13 +45,14 @@ public class CdmaCallWaitingNotification {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.421 -0400", hash_original_method = "EA80599905C22E601830CAF570ACF6E5", hash_generated_method = "EA80599905C22E601830CAF570ACF6E5")
     public CdmaCallWaitingNotification ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.425 -0400", hash_original_method = "7BACCCFD399686BD18F0B929D0C46F63", hash_generated_method = "BE0A7D59B4B4258718F9BDD92EFE5E9A")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_147370554 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_147370554 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_147370554 = super.toString() + "Call Waiting Notification  "
             + " number: " + number
             + " numberPresentation: " + numberPresentation
@@ -63,23 +64,24 @@ public class CdmaCallWaitingNotification {
             + " signalType: " + signalType
             + " alertPitch: " + alertPitch
             + " signal: " + signal;
-        varB4EAC82CA7396A68D541C85D26508E83_147370554.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_147370554.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_147370554;
-        // ---------- Original Method ----------
-        //return super.toString() + "Call Waiting Notification  "
-            //+ " number: " + number
-            //+ " numberPresentation: " + numberPresentation
-            //+ " name: " + name
-            //+ " namePresentation: " + namePresentation
-            //+ " numberType: " + numberType
-            //+ " numberPlan: " + numberPlan
-            //+ " isPresent: " + isPresent
-            //+ " signalType: " + signalType
-            //+ " alertPitch: " + alertPitch
-            //+ " signal: " + signal ;
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int presentationFromCLIP(int cli) {
         switch(cli) {
             case 0: return Connection.PRESENTATION_ALLOWED;

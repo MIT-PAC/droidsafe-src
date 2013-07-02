@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.javax.sip.header.ims.ServiceRoute;
@@ -21,7 +21,7 @@ public class ServiceRouteParser extends AddressParametersParser {
     public  ServiceRouteParser(String serviceRoute) {
         super(serviceRoute);
         addTaint(serviceRoute.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,13 +29,14 @@ public class ServiceRouteParser extends AddressParametersParser {
     protected  ServiceRouteParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.235 -0400", hash_original_method = "8017C6E265731C6E1BE6E337AC0EFE2E", hash_generated_method = "3657DE966816C7648CBC274812482199")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_117457860 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_117457860 = null; 
         ServiceRouteList serviceRouteList = new ServiceRouteList();
         dbg_enter("ServiceRouteParser.parse");
         try 
@@ -54,23 +55,23 @@ public class ServiceRouteParser extends AddressParametersParser {
                     {
                         this.lexer.match(',');
                         this.lexer.SPorHT();
-                    } //End block
+                    } 
                     {
                         boolean var91663D5DD0C5A7E21E3D02876DD48380_1680107576 = (lexer.lookAhead(0) == '\n');
                         if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected char");
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_117457860 = serviceRouteList;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("ServiceRouteParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_117457860.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_117457860.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_117457860;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

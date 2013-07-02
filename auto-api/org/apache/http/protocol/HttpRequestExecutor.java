@@ -1,11 +1,11 @@
 package org.apache.http.protocol;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.net.ProtocolException;
@@ -24,7 +24,7 @@ public class HttpRequestExecutor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.599 -0400", hash_original_method = "1B3D6EB0D2C9672C0490DD487A44B10E", hash_generated_method = "5C823C110E4C37030580A4ECF9EB10B9")
     public  HttpRequestExecutor() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,21 +33,21 @@ public class HttpRequestExecutor {
                                           final HttpResponse response) {
         {
             boolean varD156E42C6563538534C094BC9F8B30CC_466256785 = ("HEAD".equalsIgnoreCase(request.getRequestLine().getMethod()));
-        } //End collapsed parenthetic
+        } 
         int status = response.getStatusLine().getStatusCode();
         addTaint(request.getTaint());
         addTaint(response.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_20098127 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_20098127;
-        // ---------- Original Method ----------
-        //if ("HEAD".equalsIgnoreCase(request.getRequestLine().getMethod())) {
-            //return false;
-        //}
-        //int status = response.getStatusLine().getStatusCode();
-        //return status >= HttpStatus.SC_OK 
-            //&& status != HttpStatus.SC_NO_CONTENT 
-            //&& status != HttpStatus.SC_NOT_MODIFIED
-            //&& status != HttpStatus.SC_RESET_CONTENT;
+        
+        
+            
+        
+        
+        
+            
+            
+            
     }
 
     
@@ -56,46 +56,46 @@ public class HttpRequestExecutor {
             final HttpRequest request,
             final HttpClientConnection conn,
             final HttpContext context) throws IOException, HttpException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_827909919 = null; //Variable for return #1
+        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_827909919 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Client connection may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } //End block
+        } 
         try 
         {
             HttpResponse response = doSendRequest(request, conn, context);
             {
                 response = doReceiveResponse(request, conn, context);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_827909919 = response;
-        } //End block
+        } 
         catch (IOException ex)
         {
             conn.close();
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
+        } 
         catch (HttpException ex)
         {
             conn.close();
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
+        } 
         catch (RuntimeException ex)
         {
             conn.close();
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
+        } 
         addTaint(request.getTaint());
         addTaint(conn.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_827909919.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_827909919.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_827909919;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -106,28 +106,28 @@ public class HttpRequestExecutor {
             final HttpContext context) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP processor may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } //End block
+        } 
         processor.process(request, context);
         addTaint(request.getTaint());
         addTaint(processor.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //if (processor == null) {
-            //throw new IllegalArgumentException("HTTP processor may not be null");
-        //}
-        //if (context == null) {
-            //throw new IllegalArgumentException("HTTP context may not be null");
-        //}
-        //processor.process(request, context);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -136,16 +136,16 @@ public class HttpRequestExecutor {
             final HttpRequest request,
             final HttpClientConnection conn,
             final HttpContext context) throws IOException, HttpException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1485334047 = null; //Variable for return #1
+        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1485334047 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP connection may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } //End block
+        } 
         HttpResponse response = null;
         context.setAttribute(ExecutionContext.HTTP_REQ_SENT, Boolean.FALSE);
         conn.sendRequestHeader(request);
@@ -167,37 +167,37 @@ public class HttpRequestExecutor {
                                 boolean var1658CC8B4194AE69AA37E3D73F449498_893317195 = (canResponseHaveBody(request, response));
                                 {
                                     conn.receiveResponseEntity(response);
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             int status = response.getStatusLine().getStatusCode();
                             {
                                 {
                                     if (DroidSafeAndroidRuntime.control) throw new ProtocolException(
                                     "Unexpected response: " + response.getStatusLine());
-                                } //End block
+                                } 
                                 response = null;
-                            } //End block
+                            } 
                             {
                                 sendentity = false;
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 conn.sendRequestEntity((HttpEntityEnclosingRequest) request);
-            } //End block
-        } //End block
+            } 
+        } 
         conn.flush();
         context.setAttribute(ExecutionContext.HTTP_REQ_SENT, Boolean.TRUE);
         varB4EAC82CA7396A68D541C85D26508E83_1485334047 = response;
         addTaint(request.getTaint());
         addTaint(conn.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1485334047.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1485334047.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1485334047;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -206,16 +206,16 @@ public class HttpRequestExecutor {
             final HttpRequest          request,
             final HttpClientConnection conn,
             final HttpContext          context) throws HttpException, IOException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_573680710 = null; //Variable for return #1
+        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_573680710 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP connection may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } //End block
+        } 
         HttpResponse response = null;
         int statuscode = 0;
         {
@@ -224,36 +224,36 @@ public class HttpRequestExecutor {
                 boolean var6B88B4CB1811D7DE18E3DA4B1231F057_272763002 = (canResponseHaveBody(request, response));
                 {
                     conn.receiveResponseEntity(response);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             statuscode = response.getStatusLine().getStatusCode();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_573680710 = response;
         addTaint(request.getTaint());
         addTaint(conn.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_573680710.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_573680710.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_573680710;
-        // ---------- Original Method ----------
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //if (conn == null) {
-            //throw new IllegalArgumentException("HTTP connection may not be null");
-        //}
-        //if (context == null) {
-            //throw new IllegalArgumentException("HTTP context may not be null");
-        //}
-        //HttpResponse response = null;
-        //int statuscode = 0;
-        //while (response == null || statuscode < HttpStatus.SC_OK) {
-            //response = conn.receiveResponseHeader();
-            //if (canResponseHaveBody(request, response)) {
-                //conn.receiveResponseEntity(response);
-            //}
-            //statuscode = response.getStatusLine().getStatusCode();
-        //}
-        //return response;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -264,28 +264,28 @@ public class HttpRequestExecutor {
             final HttpContext context) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP response may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP processor may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } //End block
+        } 
         processor.process(response, context);
         addTaint(response.getTaint());
         addTaint(processor.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //if (response == null) {
-            //throw new IllegalArgumentException("HTTP response may not be null");
-        //}
-        //if (processor == null) {
-            //throw new IllegalArgumentException("HTTP processor may not be null");
-        //}
-        //if (context == null) {
-            //throw new IllegalArgumentException("HTTP context may not be null");
-        //}
-        //processor.process(response, context);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     

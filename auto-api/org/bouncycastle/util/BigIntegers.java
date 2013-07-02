@@ -1,11 +1,11 @@
 package org.bouncycastle.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 import java.security.SecureRandom;
@@ -15,10 +15,11 @@ public final class BigIntegers {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.174 -0400", hash_original_method = "25F257C0960313729C88DA7CF764C995", hash_generated_method = "25F257C0960313729C88DA7CF764C995")
     public BigIntegers ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static byte[] asUnsignedByteArray(
         BigInteger value) {
         byte[] bytes = value.toByteArray();
@@ -32,6 +33,7 @@ public final class BigIntegers {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static BigInteger createRandomInRange(
         BigInteger      min,
         BigInteger      max,

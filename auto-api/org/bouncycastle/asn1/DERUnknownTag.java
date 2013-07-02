@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.bouncycastle.util.Arrays;
@@ -28,7 +28,7 @@ public class DERUnknownTag extends DERObject {
         this(false, tag, data);
         addTaint(tag);
         addTaint(data[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -40,10 +40,10 @@ public class DERUnknownTag extends DERObject {
         this.isConstructed = isConstructed;
         this.tag = tag;
         this.data = data;
-        // ---------- Original Method ----------
-        //this.isConstructed = isConstructed;
-        //this.tag = tag;
-        //this.data = data;
+        
+        
+        
+        
     }
 
     
@@ -51,8 +51,8 @@ public class DERUnknownTag extends DERObject {
     public boolean isConstructed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1500622125 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1500622125;
-        // ---------- Original Method ----------
-        //return isConstructed;
+        
+        
     }
 
     
@@ -60,8 +60,8 @@ public class DERUnknownTag extends DERObject {
     public int getTag() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1344177878 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1344177878;
-        // ---------- Original Method ----------
-        //return tag;
+        
+        
     }
 
     
@@ -69,8 +69,8 @@ public class DERUnknownTag extends DERObject {
     public byte[] getData() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1828843077 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1828843077;
-        // ---------- Original Method ----------
-        //return data;
+        
+        
     }
 
     
@@ -79,11 +79,12 @@ public class DERUnknownTag extends DERObject {
         DEROutputStream  out) throws IOException {
         out.writeEncoded(isConstructed ? DERTags.CONSTRUCTED : 0, tag, data);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.writeEncoded(isConstructed ? DERTags.CONSTRUCTED : 0, tag, data);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.825 -0400", hash_original_method = "FE1F3CE48FE1BAD33C90012410856208", hash_generated_method = "4BA7AFC4A4CCF41F432006FDF6881A41")
     public boolean equals(
         Object o) {
@@ -94,25 +95,26 @@ public class DERUnknownTag extends DERObject {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1467517414 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1467517414;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERUnknownTag))
-        //{
-            //return false;
-        //}
-        //DERUnknownTag other = (DERUnknownTag)o;
-        //return isConstructed == other.isConstructed
-            //&& tag == other.tag
-            //&& Arrays.areEqual(data, other.data);
+        
+        
+        
+            
+        
+        
+        
+            
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.825 -0400", hash_original_method = "6125EE5FC147EEAC675704125571B4F0", hash_generated_method = "4A9C1E6303A1E17EC90D6FF17FAB1739")
     public int hashCode() {
-        int var8CA60B295F8BF7476F35CD9BACCCA8CE_248840644 = ((isConstructed ? ~0 : 0) ^ tag ^ Arrays.hashCode(data)); //DSFIXME:  CODE0008: Nested ternary operator in expression
+        int var8CA60B295F8BF7476F35CD9BACCCA8CE_248840644 = ((isConstructed ? ~0 : 0) ^ tag ^ Arrays.hashCode(data)); 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_973514010 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_973514010;
-        // ---------- Original Method ----------
-        //return (isConstructed ? ~0 : 0) ^ tag ^ Arrays.hashCode(data);
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class InflateException extends RuntimeException {
@@ -13,7 +13,7 @@ public class InflateException extends RuntimeException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.943 -0400", hash_original_method = "0CE2909AE04CF0521618BA35C7B8DC0B", hash_generated_method = "C46C6AA9FCB10C2CE22351751CFC9C73")
     public  InflateException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class InflateException extends RuntimeException {
         super(detailMessage, throwable);
         addTaint(detailMessage.getTaint());
         addTaint(throwable.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,7 +30,7 @@ public class InflateException extends RuntimeException {
     public  InflateException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,7 +38,7 @@ public class InflateException extends RuntimeException {
     public  InflateException(Throwable throwable) {
         super(throwable);
         addTaint(throwable.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

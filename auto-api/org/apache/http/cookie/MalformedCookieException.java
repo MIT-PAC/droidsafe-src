@@ -1,11 +1,11 @@
 package org.apache.http.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.ProtocolException;
 
@@ -14,7 +14,7 @@ public class MalformedCookieException extends ProtocolException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.550 -0400", hash_original_method = "FA8D422BA92412355CA6BC772A1072B7", hash_generated_method = "CA497B5D0BB2E41B59B40607BC68553B")
     public  MalformedCookieException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class MalformedCookieException extends ProtocolException {
     public  MalformedCookieException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,7 +31,7 @@ public class MalformedCookieException extends ProtocolException {
         super(message, cause);
         addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

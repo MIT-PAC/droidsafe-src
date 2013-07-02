@@ -1,11 +1,11 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.channels.FileChannel.MapMode;
 import libcore.io.ErrnoException;
@@ -28,16 +28,16 @@ public abstract class MappedByteBuffer extends ByteBuffer {
             boolean varDC8DBD478B08EB0C265C25CC94CB6B1C_1312516253 = (!directBuffer.isDirect());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.wrapped = (DirectByteBuffer) directBuffer;
         this.mapMode = null;
-        // ---------- Original Method ----------
-        //if (!directBuffer.isDirect()) {
-            //throw new IllegalArgumentException();
-        //}
-        //this.wrapped = (DirectByteBuffer) directBuffer;
-        //this.mapMode = null;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -47,17 +47,17 @@ public abstract class MappedByteBuffer extends ByteBuffer {
         this.mapMode = mapMode;
         {
             wrapped = new ReadOnlyDirectByteBuffer(block, capacity, offset);
-        } //End block
+        } 
         {
             wrapped = new ReadWriteDirectByteBuffer(block, capacity, offset);
-        } //End block
-        // ---------- Original Method ----------
-        //this.mapMode = mapMode;
-        //if (mapMode == MapMode.READ_ONLY) {
-            //wrapped = new ReadOnlyDirectByteBuffer(block, capacity, offset);
-        //} else {
-            //wrapped = new ReadWriteDirectByteBuffer(block, capacity, offset);
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -76,86 +76,86 @@ public abstract class MappedByteBuffer extends ByteBuffer {
             Libcore.os.mincore(address, size, vector);
             {
                 int i = 0;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         catch (ErrnoException errnoException)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1015466321 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1015466321;
-        // ---------- Original Method ----------
-        //long address = block.toInt();
-        //long size = block.getSize();
-        //if (size == 0) {
-            //return true;
-        //}
-        //try {
-            //int pageSize = (int) Libcore.os.sysconf(_SC_PAGE_SIZE);
-            //int pageOffset = (int) (address % pageSize);
-            //address -= pageOffset;
-            //size += pageOffset;
-            //int pageCount = (int) ((size + pageSize - 1) / pageSize);
-            //byte[] vector = new byte[pageCount];
-            //Libcore.os.mincore(address, size, vector);
-            //for (int i = 0; i < vector.length; ++i) {
-                //if ((vector[i] & 1) != 1) {
-                    //return false;
-                //}
-            //}
-            //return true;
-        //} catch (ErrnoException errnoException) {
-            //return false;
-        //}
+        
+        
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                    
+                
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.706 -0400", hash_original_method = "61E403E118E1A4E788B2CC284AD4ABD1", hash_generated_method = "9C3F7BC174DE050BDB912A82BED06C51")
     public final MappedByteBuffer load() {
-        MappedByteBuffer varB4EAC82CA7396A68D541C85D26508E83_115587893 = null; //Variable for return #1
+        MappedByteBuffer varB4EAC82CA7396A68D541C85D26508E83_115587893 = null; 
         try 
         {
             Libcore.os.mlock(block.toInt(), block.getSize());
             Libcore.os.munlock(block.toInt(), block.getSize());
-        } //End block
+        } 
         catch (ErrnoException ignored)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_115587893 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_115587893.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_115587893.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_115587893;
-        // ---------- Original Method ----------
-        //try {
-            //Libcore.os.mlock(block.toInt(), block.getSize());
-            //Libcore.os.munlock(block.toInt(), block.getSize());
-        //} catch (ErrnoException ignored) {
-        //}
-        //return this;
+        
+        
+            
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.708 -0400", hash_original_method = "F84161825A8E4C54BC8547EBE9290572", hash_generated_method = "014D2F200EA65990B5E076C23E331FCA")
     public final MappedByteBuffer force() {
-        MappedByteBuffer varB4EAC82CA7396A68D541C85D26508E83_790670949 = null; //Variable for return #1
+        MappedByteBuffer varB4EAC82CA7396A68D541C85D26508E83_790670949 = null; 
         {
             try 
             {
                 Libcore.os.msync(block.toInt(), block.getSize(), MS_SYNC);
-            } //End block
+            } 
             catch (ErrnoException errnoException)
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError(errnoException);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_790670949 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_790670949.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_790670949.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_790670949;
-        // ---------- Original Method ----------
-        //if (mapMode == MapMode.READ_WRITE) {
-            //try {
-                //Libcore.os.msync(block.toInt(), block.getSize(), MS_SYNC);
-            //} catch (ErrnoException errnoException) {
-                //throw new AssertionError(errnoException);
-            //}
-        //}
-        //return this;
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     

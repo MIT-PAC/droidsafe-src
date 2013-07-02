@@ -1,11 +1,11 @@
 package org.w3c.dom;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class DOMException extends RuntimeException {
@@ -18,8 +18,8 @@ public class DOMException extends RuntimeException {
         super(message);
         this.code = code;
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //this.code = code;
+        
+        
     }
 
     

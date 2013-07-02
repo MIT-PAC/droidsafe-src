@@ -1,11 +1,11 @@
 package android.database.sqlite;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.database.DatabaseErrorHandler;
@@ -43,7 +43,7 @@ public abstract class SQLiteOpenHelper {
         addTaint(name.getTaint());
         addTaint(factory.getTaint());
         addTaint(version);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -53,57 +53,58 @@ public abstract class SQLiteOpenHelper {
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Version must be >= 1, was " + version);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("DatabaseErrorHandler param value can't be null.");
-        } //End block
+        } 
         mContext = context;
         mName = name;
         mFactory = factory;
         mNewVersion = version;
         mErrorHandler = errorHandler;
-        // ---------- Original Method ----------
-        //if (version < 1) throw new IllegalArgumentException("Version must be >= 1, was " + version);
-        //if (errorHandler == null) {
-            //throw new IllegalArgumentException("DatabaseErrorHandler param value can't be null.");
-        //}
-        //mContext = context;
-        //mName = name;
-        //mFactory = factory;
-        //mNewVersion = version;
-        //mErrorHandler = errorHandler;
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.733 -0400", hash_original_method = "68E7432F62212BC238811FF4144A34FC", hash_generated_method = "FEDDC2B8D8BD0F043782FDC6D922759D")
     public String getDatabaseName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_759227918 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_759227918 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_759227918 = mName;
-        varB4EAC82CA7396A68D541C85D26508E83_759227918.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_759227918.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_759227918;
-        // ---------- Original Method ----------
-        //return mName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.735 -0400", hash_original_method = "907737C2FD1DDBAF11A72FCBC6C42218", hash_generated_method = "E267748B64A34BEA1AC888F40BD046FF")
     public synchronized SQLiteDatabase getWritableDatabase() {
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_657306219 = null; //Variable for return #1
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_561061333 = null; //Variable for return #2
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_657306219 = null; 
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_561061333 = null; 
         {
             {
                 boolean var7569BD827A079103D7665EC50E19706D_1044077055 = (!mDatabase.isOpen());
                 {
                     mDatabase = null;
-                } //End block
+                } 
                 {
                     boolean var5F8D535220438AC9802CC821F137F2C6_68404177 = (!mDatabase.isReadOnly());
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_657306219 = mDatabase;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("getWritableDatabase called recursively");
-        } //End block
+        } 
         boolean success = false;
         SQLiteDatabase db = null;
         mDatabase.lock();
@@ -112,10 +113,10 @@ public abstract class SQLiteOpenHelper {
             mIsInitializing = true;
             {
                 db = SQLiteDatabase.create(null);
-            } //End block
+            } 
             {
                 db = mContext.openOrCreateDatabase(mName, 0, mFactory, mErrorHandler);
-            } //End block
+            } 
             int version = db.getVersion();
             {
                 db.beginTransaction();
@@ -123,27 +124,27 @@ public abstract class SQLiteOpenHelper {
                 {
                     {
                         onCreate(db);
-                    } //End block
+                    } 
                     {
                         {
                             onDowngrade(db, version, mNewVersion);
-                        } //End block
+                        } 
                         {
                             onUpgrade(db, version, mNewVersion);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     db.setVersion(mNewVersion);
                     db.setTransactionSuccessful();
-                } //End block
+                } 
                 finally 
                 {
                     db.endTransaction();
-                } //End block
-            } //End block
+                } 
+            } 
             onOpen(db);
             success = true;
             varB4EAC82CA7396A68D541C85D26508E83_561061333 = db;
-        } //End block
+        } 
         finally 
         {
             mIsInitializing = false;
@@ -152,61 +153,62 @@ public abstract class SQLiteOpenHelper {
                     try 
                     {
                         mDatabase.close();
-                    } //End block
+                    } 
                     catch (Exception e)
                     { }
                     mDatabase.unlock();
-                } //End block
+                } 
                 mDatabase = db;
-            } //End block
+            } 
             {
                 mDatabase.unlock();
                 db.close();
-            } //End block
-        } //End block
-        SQLiteDatabase varA7E53CE21691AB073D9660D615818899_1008854718; //Final return value
+            } 
+        } 
+        SQLiteDatabase varA7E53CE21691AB073D9660D615818899_1008854718; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1008854718 = varB4EAC82CA7396A68D541C85D26508E83_657306219;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1008854718 = varB4EAC82CA7396A68D541C85D26508E83_561061333;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1008854718.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1008854718.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1008854718;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.737 -0400", hash_original_method = "2895B1DC2B2D9F1953E668AA67DA7E81", hash_generated_method = "57C3B63FAD1E8B5F7D432DB7AA5438E8")
     public synchronized SQLiteDatabase getReadableDatabase() {
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1452374717 = null; //Variable for return #1
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1458138126 = null; //Variable for return #2
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_2100189276 = null; //Variable for return #3
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1452374717 = null; 
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1458138126 = null; 
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_2100189276 = null; 
         {
             {
                 boolean var7569BD827A079103D7665EC50E19706D_1419459538 = (!mDatabase.isOpen());
                 {
                     mDatabase = null;
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1452374717 = mDatabase;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("getReadableDatabase called recursively");
-        } //End block
+        } 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1458138126 = getWritableDatabase();
-        } //End block
+        } 
         catch (SQLiteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
+        } 
         SQLiteDatabase db = null;
         try 
         {
@@ -219,36 +221,37 @@ public abstract class SQLiteOpenHelper {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new SQLiteException("Can't upgrade read-only database from version " +
                         db.getVersion() + " to " + mNewVersion + ": " + path);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             onOpen(db);
             mDatabase = db;
             varB4EAC82CA7396A68D541C85D26508E83_2100189276 = mDatabase;
-        } //End block
+        } 
         finally 
         {
             mIsInitializing = false;
             db.close();
-        } //End block
-        SQLiteDatabase varA7E53CE21691AB073D9660D615818899_1108446820; //Final return value
+        } 
+        SQLiteDatabase varA7E53CE21691AB073D9660D615818899_1108446820; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1108446820 = varB4EAC82CA7396A68D541C85D26508E83_1452374717;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1108446820 = varB4EAC82CA7396A68D541C85D26508E83_1458138126;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1108446820 = varB4EAC82CA7396A68D541C85D26508E83_2100189276;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1108446820.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1108446820.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1108446820;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.738 -0400", hash_original_method = "C09EB7B9D42A5A795555D7C9A56D8370", hash_generated_method = "5ABB92D91CD8F11E8F101493E91A2E5E")
     public synchronized void close() {
         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Closed during initialization");
@@ -257,14 +260,14 @@ public abstract class SQLiteOpenHelper {
             {
                 mDatabase.close();
                 mDatabase = null;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mIsInitializing) throw new IllegalStateException("Closed during initialization");
-        //if (mDatabase != null && mDatabase.isOpen()) {
-            //mDatabase.close();
-            //mDatabase = null;
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -274,25 +277,26 @@ public abstract class SQLiteOpenHelper {
     public abstract void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.739 -0400", hash_original_method = "E809F845DA52B26B37A0B95640D58A46", hash_generated_method = "543C85F44FA36F9854BA366EC29124EB")
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         if (DroidSafeAndroidRuntime.control) throw new SQLiteException("Can't downgrade database from version " +
                 oldVersion + " to " + newVersion);
         addTaint(db.getTaint());
         addTaint(oldVersion);
         addTaint(newVersion);
-        // ---------- Original Method ----------
-        //throw new SQLiteException("Can't downgrade database from version " +
-                //oldVersion + " to " + newVersion);
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.739 -0400", hash_original_method = "4811C8ED58A3ECFEDC0621F514E7FFAC", hash_generated_method = "114D8028AAA729F2C8D5D48D03E2C088")
     public void onOpen(SQLiteDatabase db) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(db.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

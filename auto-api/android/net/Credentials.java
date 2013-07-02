@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class Credentials {
@@ -24,10 +24,10 @@ public class Credentials {
         this.pid = pid;
         this.uid = uid;
         this.gid = gid;
-        // ---------- Original Method ----------
-        //this.pid = pid;
-        //this.uid = uid;
-        //this.gid = gid;
+        
+        
+        
+        
     }
 
     
@@ -35,8 +35,8 @@ public class Credentials {
     public int getPid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1324850176 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1324850176;
-        // ---------- Original Method ----------
-        //return pid;
+        
+        
     }
 
     
@@ -44,8 +44,8 @@ public class Credentials {
     public int getUid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_633335102 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_633335102;
-        // ---------- Original Method ----------
-        //return uid;
+        
+        
     }
 
     
@@ -53,8 +53,8 @@ public class Credentials {
     public int getGid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_816119329 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_816119329;
-        // ---------- Original Method ----------
-        //return gid;
+        
+        
     }
 
     

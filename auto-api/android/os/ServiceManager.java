@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.os.BinderInternal;
 import android.util.Log;
@@ -17,10 +17,11 @@ public final class ServiceManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.127 -0400", hash_original_method = "C0ECF0E19363472551754760850E1958", hash_generated_method = "C0ECF0E19363472551754760850E1958")
     public ServiceManager ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     private static IServiceManager getIServiceManager() {
         if (sServiceManager != null) {
             return sServiceManager;
@@ -30,6 +31,7 @@ public final class ServiceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static IBinder getService(String name) {
         try {
             IBinder service = sCache.get(name);
@@ -45,6 +47,7 @@ public final class ServiceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void addService(String name, IBinder service) {
         try {
             getIServiceManager().addService(name, service);
@@ -54,6 +57,7 @@ public final class ServiceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static IBinder checkService(String name) {
         try {
             IBinder service = sCache.get(name);
@@ -69,6 +73,7 @@ public final class ServiceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] listServices() throws RemoteException {
         try {
             return getIServiceManager().listServices();
@@ -79,6 +84,7 @@ public final class ServiceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void initServiceCache(Map<String, IBinder> cache) {
         if (sCache.size() != 0) {
             throw new IllegalStateException("setServiceCache may only be called once");

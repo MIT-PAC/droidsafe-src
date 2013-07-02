@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.HashMap;
@@ -22,10 +22,11 @@ final class WebViewWorker extends Handler {
     private  WebViewWorker(Looper looper) {
         super(looper);
         addTaint(looper.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static synchronized WebViewWorker getHandler() {
         if (sWorkerHandler == null) {
             HandlerThread thread = new HandlerThread(THREAD_NAME,
@@ -38,22 +39,23 @@ final class WebViewWorker extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.043 -0400", hash_original_method = "E3F221A899CA64DBBAE93DBAE213C92D", hash_generated_method = "2E6C646172FF2D958ADE03BAF08CBD0B")
     @Override
     public void handleMessage(Message msg) {
-        //Begin case MSG_ADD_STREAMLOADER 
+        
         {
             StreamLoader loader = (StreamLoader) msg.obj;
             loader.load();
-        } //End block
-        //End case MSG_ADD_STREAMLOADER 
-        //Begin case MSG_ADD_HTTPLOADER 
+        } 
+        
+        
         {
             FrameLoader loader = (FrameLoader) msg.obj;
             loader.handleHTTPLoad();
-        } //End block
-        //End case MSG_ADD_HTTPLOADER 
-        //Begin case MSG_CREATE_CACHE 
+        } 
+        
+        
         {
             CacheCreateData data = (CacheCreateData) msg.obj;
             CacheManager.CacheResult cache = CacheManager.createCacheFile(
@@ -61,23 +63,23 @@ final class WebViewWorker extends Handler {
                         data.mMimeType, data.mPostId, false);
             {
                 mCacheResultMap.put(data.mListener, cache);
-            } //End block
+            } 
             {
                 mCacheResultMap.remove(data.mListener);
-            } //End block
-        } //End block
-        //End case MSG_CREATE_CACHE 
-        //Begin case MSG_UPDATE_CACHE_ENCODING 
+            } 
+        } 
+        
+        
         {
             CacheEncoding data = (CacheEncoding) msg.obj;
             CacheManager.CacheResult cache = mCacheResultMap
                         .get(data.mListener);
             {
                 cache.encoding = data.mEncoding;
-            } //End block
-        } //End block
-        //End case MSG_UPDATE_CACHE_ENCODING 
-        //Begin case MSG_APPEND_CACHE 
+            } 
+        } 
+        
+        
         {
             CacheData data = (CacheData) msg.obj;
             CacheManager.CacheResult cache = mCacheResultMap
@@ -87,24 +89,24 @@ final class WebViewWorker extends Handler {
                 {
                     CacheManager.cleanupCacheFile(cache);
                     mCacheResultMap.remove(data.mListener);
-                } //End block
+                } 
                 {
                     try 
                     {
                         cache.outStream.write(data.mChunk.mArray, 0,
                                     data.mChunk.mLength);
-                    } //End block
+                    } 
                     catch (IOException e)
                     {
                         CacheManager.cleanupCacheFile(cache);
                         mCacheResultMap.remove(data.mListener);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             data.mChunk.release();
-        } //End block
-        //End case MSG_APPEND_CACHE 
-        //Begin case MSG_SAVE_CACHE 
+        } 
+        
+        
         {
             CacheSaveData data = (CacheSaveData) msg.obj;
             CacheManager.CacheResult cache = mCacheResultMap
@@ -112,51 +114,51 @@ final class WebViewWorker extends Handler {
             {
                 CacheManager.saveCacheFile(data.mUrl, data.mPostId, cache);
                 mCacheResultMap.remove(data.mListener);
-            } //End block
-        } //End block
-        //End case MSG_SAVE_CACHE 
-        //Begin case MSG_REMOVE_CACHE 
+            } 
+        } 
+        
+        
         {
             LoadListener listener = (LoadListener) msg.obj;
             CacheManager.CacheResult cache = mCacheResultMap.get(listener);
             {
                 CacheManager.cleanupCacheFile(cache);
                 mCacheResultMap.remove(listener);
-            } //End block
-        } //End block
-        //End case MSG_REMOVE_CACHE 
-        //Begin case MSG_TRIM_CACHE 
+            } 
+        } 
+        
+        
         {
             CacheManager.trimCacheIfNeeded();
-        } //End block
-        //End case MSG_TRIM_CACHE 
-        //Begin case MSG_CLEAR_CACHE 
+        } 
+        
+        
         {
             CacheManager.clearCache();
-        } //End block
-        //End case MSG_CLEAR_CACHE 
-        //Begin case MSG_CACHE_TRANSACTION_TICKER 
+        } 
+        
+        
         {
             {
                 CacheManager.endTransaction();
                 CacheManager.startTransaction();
                 sendEmptyMessageDelayed(MSG_CACHE_TRANSACTION_TICKER,
                             CACHE_TRANSACTION_TICKER_INTERVAL);
-            } //End block
-        } //End block
-        //End case MSG_CACHE_TRANSACTION_TICKER 
-        //Begin case MSG_PAUSE_CACHE_TRANSACTION 
+            } 
+        } 
+        
+        
         {
             {
                 boolean varFA939AFA557F3C8BDE81CB8A30FD3E26_432666081 = (CacheManager.disableTransaction());
                 {
                     mCacheTickersBlocked = true;
                     removeMessages(MSG_CACHE_TRANSACTION_TICKER);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        //End case MSG_PAUSE_CACHE_TRANSACTION 
-        //Begin case MSG_RESUME_CACHE_TRANSACTION 
+                } 
+            } 
+        } 
+        
+        
         {
             {
                 boolean var4377346BAA1D98FC8EA6FF27F778C0A9_1063095852 = (CacheManager.enableTransaction());
@@ -164,13 +166,13 @@ final class WebViewWorker extends Handler {
                     mCacheTickersBlocked = false;
                     sendEmptyMessageDelayed(MSG_CACHE_TRANSACTION_TICKER,
                             CACHE_TRANSACTION_TICKER_INTERVAL);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        //End case MSG_RESUME_CACHE_TRANSACTION 
+                } 
+            } 
+        } 
+        
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -197,7 +199,7 @@ final class WebViewWorker extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.043 -0400", hash_original_method = "ECF9CE691C1E9D0D27062E328F2071F1", hash_generated_method = "ECF9CE691C1E9D0D27062E328F2071F1")
         public CacheCreateData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -219,7 +221,7 @@ final class WebViewWorker extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.043 -0400", hash_original_method = "9E757DF8F2598229E9B6588D817525F8", hash_generated_method = "9E757DF8F2598229E9B6588D817525F8")
         public CacheSaveData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -238,7 +240,7 @@ final class WebViewWorker extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.043 -0400", hash_original_method = "F4176929ED2D08D577A72138F39F258C", hash_generated_method = "F4176929ED2D08D577A72138F39F258C")
         public CacheEncoding ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -257,7 +259,7 @@ final class WebViewWorker extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.043 -0400", hash_original_method = "C46F5AA83A69689BFB2DC11439BD4C32", hash_generated_method = "C46F5AA83A69689BFB2DC11439BD4C32")
         public CacheData ()
         {
-            //Synthesized constructor
+            
         }
 
 

@@ -1,18 +1,18 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class AlreadyConnectedException extends IllegalStateException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.550 -0400", hash_original_method = "BD67A8E1DE68C68FC9E851BA7A97E059", hash_generated_method = "8D625B5DA8F76E29F2ED23AFF6FAB737")
     public  AlreadyConnectedException() {
-        // ---------- Original Method ----------
+        
     }
 
     

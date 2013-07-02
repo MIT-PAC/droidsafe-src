@@ -1,18 +1,18 @@
 package org.bouncycastle.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class RuntimeCryptoException extends RuntimeException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.575 -0400", hash_original_method = "967763ED132A6B5D59753D4D73A06C5A", hash_generated_method = "D6A2F7F0EC5B2291AE5C6C87E6295099")
     public  RuntimeCryptoException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class RuntimeCryptoException extends RuntimeException {
         String  message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

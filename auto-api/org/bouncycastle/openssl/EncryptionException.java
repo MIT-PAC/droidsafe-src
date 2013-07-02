@@ -1,11 +1,11 @@
 package org.bouncycastle.openssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -18,7 +18,7 @@ public class EncryptionException extends IOException {
     public  EncryptionException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,19 +27,19 @@ public class EncryptionException extends IOException {
         super(msg);
         this.cause = ex;
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //this.cause = ex;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.955 -0400", hash_original_method = "CDBDBC1C44563A9D34649A0018341F0E", hash_generated_method = "3DBDF6395186A862EFC4B8C309F9CD4A")
     public Throwable getCause() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_1128189813 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_1128189813 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1128189813 = cause;
-        varB4EAC82CA7396A68D541C85D26508E83_1128189813.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1128189813.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1128189813;
-        // ---------- Original Method ----------
-        //return cause;
+        
+        
     }
 
     

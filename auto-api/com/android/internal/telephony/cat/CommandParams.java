@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Bitmap;
 
@@ -17,19 +17,19 @@ class CommandParams {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.334 -0400", hash_original_method = "2B3FA66352959F95E07A360EAE45E831", hash_generated_method = "677B05FD0D442BB524C5F5A6AA3633B9")
       CommandParams(CommandDetails cmdDet) {
         this.cmdDet = cmdDet;
-        // ---------- Original Method ----------
-        //this.cmdDet = cmdDet;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.334 -0400", hash_original_method = "BBFB9BBC2EA7C24F6D809DAEED5D51EA", hash_generated_method = "EC7806F72F5E07E77A8D7BAFF1A16B5B")
      AppInterface.CommandType getCommandType() {
-        AppInterface.CommandType varB4EAC82CA7396A68D541C85D26508E83_1686703053 = null; //Variable for return #1
+        AppInterface.CommandType varB4EAC82CA7396A68D541C85D26508E83_1686703053 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1686703053 = AppInterface.CommandType.fromInt(cmdDet.typeOfCommand);
-        varB4EAC82CA7396A68D541C85D26508E83_1686703053.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1686703053.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1686703053;
-        // ---------- Original Method ----------
-        //return AppInterface.CommandType.fromInt(cmdDet.typeOfCommand);
+        
+        
     }
 
     
@@ -38,8 +38,8 @@ class CommandParams {
         addTaint(icon.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2084972011 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2084972011;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -55,8 +55,8 @@ class DisplayTextParams extends CommandParams {
         super(cmdDet);
         this.textMsg = textMsg;
         addTaint(cmdDet.getTaint());
-        // ---------- Original Method ----------
-        //this.textMsg = textMsg;
+        
+        
     }
 
     
@@ -64,15 +64,15 @@ class DisplayTextParams extends CommandParams {
      boolean setIcon(Bitmap icon) {
         {
             textMsg.icon = icon;
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_255698182 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_255698182;
-        // ---------- Original Method ----------
-        //if (icon != null && textMsg != null) {
-            //textMsg.icon = icon;
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -97,10 +97,10 @@ class LaunchBrowserParams extends CommandParams {
         this.mode = mode;
         this.url = url;
         addTaint(cmdDet.getTaint());
-        // ---------- Original Method ----------
-        //this.confirmMsg = confirmMsg;
-        //this.mode = mode;
-        //this.url = url;
+        
+        
+        
+        
     }
 
     
@@ -108,15 +108,15 @@ class LaunchBrowserParams extends CommandParams {
      boolean setIcon(Bitmap icon) {
         {
             confirmMsg.icon = icon;
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_87335145 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_87335145;
-        // ---------- Original Method ----------
-        //if (icon != null && confirmMsg != null) {
-            //confirmMsg.icon = icon;
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -137,9 +137,9 @@ class PlayToneParams extends CommandParams {
         this.textMsg = textMsg;
         this.settings = new ToneSettings(duration, tone, vibrate);
         addTaint(cmdDet.getTaint());
-        // ---------- Original Method ----------
-        //this.textMsg = textMsg;
-        //this.settings = new ToneSettings(duration, tone, vibrate);
+        
+        
+        
     }
 
     
@@ -147,15 +147,15 @@ class PlayToneParams extends CommandParams {
      boolean setIcon(Bitmap icon) {
         {
             textMsg.icon = icon;
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1611260136 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1611260136;
-        // ---------- Original Method ----------
-        //if (icon != null && textMsg != null) {
-            //textMsg.icon = icon;
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -176,9 +176,9 @@ class CallSetupParams extends CommandParams {
         this.confirmMsg = confirmMsg;
         this.callMsg = callMsg;
         addTaint(cmdDet.getTaint());
-        // ---------- Original Method ----------
-        //this.confirmMsg = confirmMsg;
-        //this.callMsg = callMsg;
+        
+        
+        
     }
 
     
@@ -186,24 +186,24 @@ class CallSetupParams extends CommandParams {
      boolean setIcon(Bitmap icon) {
         {
             confirmMsg.icon = icon;
-        } //End block
+        } 
         {
             callMsg.icon = icon;
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1183383022 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1183383022;
-        // ---------- Original Method ----------
-        //if (icon == null) {
-            //return false;
-        //}
-        //if (confirmMsg != null && confirmMsg.icon == null) {
-            //confirmMsg.icon = icon;
-            //return true;
-        //} else if (callMsg != null && callMsg.icon == null) {
-            //callMsg.icon = icon;
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -223,9 +223,9 @@ class SelectItemParams extends CommandParams {
         this.menu = menu;
         this.loadTitleIcon = loadTitleIcon;
         addTaint(cmdDet.getTaint());
-        // ---------- Original Method ----------
-        //this.menu = menu;
-        //this.loadTitleIcon = loadTitleIcon;
+        
+        
+        
     }
 
     
@@ -234,7 +234,7 @@ class SelectItemParams extends CommandParams {
         {
             {
                 menu.titleIcon = icon;
-            } //End block
+            } 
             {
                 {
                     Iterator<Item> varEC31BF7F1D0D208DA2BB8B90D8CDB8D2_793538664 = (menu.items).iterator();
@@ -242,28 +242,28 @@ class SelectItemParams extends CommandParams {
                     Item item = varEC31BF7F1D0D208DA2BB8B90D8CDB8D2_793538664.next();
                     {
                         item.icon = icon;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_79210410 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_79210410;
-        // ---------- Original Method ----------
-        //if (icon != null && menu != null) {
-            //if (loadTitleIcon && menu.titleIcon == null) {
-                //menu.titleIcon = icon;
-            //} else {
-                //for (Item item : menu.items) {
-                    //if (item.icon != null) {
-                        //continue;
-                    //}
-                    //item.icon = icon;
-                    //break;
-                //}
-            //}
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+                
+            
+                
+                    
+                        
+                    
+                    
+                    
+                
+            
+            
+        
+        
     }
 
     
@@ -279,8 +279,8 @@ class GetInputParams extends CommandParams {
         super(cmdDet);
         this.input = input;
         addTaint(cmdDet.getTaint());
-        // ---------- Original Method ----------
-        //this.input = input;
+        
+        
     }
 
     
@@ -288,14 +288,14 @@ class GetInputParams extends CommandParams {
      boolean setIcon(Bitmap icon) {
         {
             input.icon = icon;
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1410647969 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1410647969;
-        // ---------- Original Method ----------
-        //if (icon != null && input != null) {
-            //input.icon = icon;
-        //}
-        //return true;
+        
+        
+            
+        
+        
     }
 
     

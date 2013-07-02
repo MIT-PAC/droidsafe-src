@@ -1,11 +1,11 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,7 +29,7 @@ public class RFC2965Spec extends RFC2109Spec {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.495 -0400", hash_original_method = "0C9AFF04E5BAABEBA18893034F65C0B5", hash_generated_method = "ED8461C5C758500E2E57B09EC8299F41")
     public  RFC2965Spec() {
         this(null, false);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,19 +43,19 @@ public class RFC2965Spec extends RFC2109Spec {
         registerAttribHandler(ClientCookie.VERSION_ATTR, new RFC2965VersionAttributeHandler());
         addTaint(datepatterns[0].getTaint());
         addTaint(oneHeader);
-        // ---------- Original Method ----------
-        //registerAttribHandler(ClientCookie.DOMAIN_ATTR, new RFC2965DomainAttributeHandler());
-        //registerAttribHandler(ClientCookie.PORT_ATTR, new RFC2965PortAttributeHandler());
-        //registerAttribHandler(ClientCookie.COMMENTURL_ATTR, new RFC2965CommentUrlAttributeHandler());
-        //registerAttribHandler(ClientCookie.DISCARD_ATTR, new RFC2965DiscardAttributeHandler());
-        //registerAttribHandler(ClientCookie.VERSION_ATTR, new RFC2965VersionAttributeHandler());
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.496 -0400", hash_original_method = "4409F0FE45DA6FEDE61567597482D361", hash_generated_method = "870520A37E59E6363D426056AB638B05")
     private BasicClientCookie createCookie(
             final String name, final String value, final CookieOrigin origin) {
-        BasicClientCookie varB4EAC82CA7396A68D541C85D26508E83_784779668 = null; //Variable for return #1
+        BasicClientCookie varB4EAC82CA7396A68D541C85D26508E83_784779668 = null; 
         BasicClientCookie cookie = new BasicClientCookie(name, value);
         cookie.setPath(getDefaultPath(origin));
         cookie.setDomain(getDefaultDomain(origin));
@@ -63,20 +63,20 @@ public class RFC2965Spec extends RFC2109Spec {
         addTaint(name.getTaint());
         addTaint(value.getTaint());
         addTaint(origin.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_784779668.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_784779668.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_784779668;
-        // ---------- Original Method ----------
-        //BasicClientCookie cookie = new BasicClientCookie(name, value);
-        //cookie.setPath(getDefaultPath(origin));
-        //cookie.setDomain(getDefaultDomain(origin));
-        //return cookie;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.497 -0400", hash_original_method = "C203D6CC66BEDFCF9DF77F8143966D25", hash_generated_method = "D2B25DDC4CD0FC0E618BD11FFFDB013F")
     private BasicClientCookie createCookie2(
             final String name, final String value, final CookieOrigin origin) {
-        BasicClientCookie varB4EAC82CA7396A68D541C85D26508E83_1608804050 = null; //Variable for return #1
+        BasicClientCookie varB4EAC82CA7396A68D541C85D26508E83_1608804050 = null; 
         BasicClientCookie2 cookie = new BasicClientCookie2(name, value);
         cookie.setPath(getDefaultPath(origin));
         cookie.setDomain(getDefaultDomain(origin));
@@ -85,14 +85,14 @@ public class RFC2965Spec extends RFC2109Spec {
         addTaint(name.getTaint());
         addTaint(value.getTaint());
         addTaint(origin.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1608804050.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1608804050.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1608804050;
-        // ---------- Original Method ----------
-        //BasicClientCookie2 cookie = new BasicClientCookie2(name, value);
-        //cookie.setPath(getDefaultPath(origin));
-        //cookie.setDomain(getDefaultDomain(origin));
-        //cookie.setPorts(new int [] { origin.getPort() });
-        //return cookie;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -101,13 +101,13 @@ public class RFC2965Spec extends RFC2109Spec {
     public List<Cookie> parse(
             final Header header, 
             CookieOrigin origin) throws MalformedCookieException {
-        List<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1728093860 = null; //Variable for return #1
+        List<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1728093860 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Header may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie origin may not be null");
-        } //End block
+        } 
         origin = adjustEffectiveHost(origin);
         HeaderElement[] elems = header.getElements();
         List<Cookie> cookies = new ArrayList<Cookie>(elems.length);
@@ -120,18 +120,18 @@ public class RFC2965Spec extends RFC2109Spec {
                     boolean var4461637DABA130E2A1B9BDCB33E9CE15_1407052474 = (name == null || name.length() == 0);
                     {
                         if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Cookie name may not be empty");
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 BasicClientCookie cookie;
                 {
                     boolean var6AAE77C4B9E15A12E99793AA7DBB24FF_1570857165 = (header.getName().equals(SM.SET_COOKIE2));
                     {
                         cookie = createCookie2(name, value, origin);
-                    } //End block
+                    } 
                     {
                         cookie = createCookie(name, value, origin);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 NameValuePair[] attribs = headerelement.getParameters();
                 Map<String, NameValuePair> attribmap = new HashMap<String, NameValuePair>(attribs.length);
                 {
@@ -139,8 +139,8 @@ public class RFC2965Spec extends RFC2109Spec {
                     {
                         NameValuePair param = attribs[j];
                         attribmap.put(param.getName().toLowerCase(Locale.ENGLISH), param);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     Iterator<Map.Entry<String, NameValuePair>> var31E344CB7BBCC0B9BB8B4730C2B3AB1B_1363022324 = (attribmap.entrySet()).iterator();
                     var31E344CB7BBCC0B9BB8B4730C2B3AB1B_1363022324.hasNext();
@@ -152,19 +152,19 @@ public class RFC2965Spec extends RFC2109Spec {
                         CookieAttributeHandler handler = findAttribHandler(s);
                         {
                             handler.parse(cookie, attrib.getValue());
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 cookies.add(cookie);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1728093860 = cookies;
         addTaint(header.getTaint());
         addTaint(origin.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1728093860.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1728093860.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1728093860;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -173,23 +173,23 @@ public class RFC2965Spec extends RFC2109Spec {
     public void validate(final Cookie cookie, CookieOrigin origin) throws MalformedCookieException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie origin may not be null");
-        } //End block
+        } 
         origin = adjustEffectiveHost(origin);
         super.validate(cookie, origin);
         addTaint(cookie.getTaint());
         addTaint(origin.getTaint());
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //if (origin == null) {
-            //throw new IllegalArgumentException("Cookie origin may not be null");
-        //}
-        //origin = adjustEffectiveHost(origin);
-        //super.validate(cookie, origin);
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -198,25 +198,25 @@ public class RFC2965Spec extends RFC2109Spec {
     public boolean match(final Cookie cookie, CookieOrigin origin) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie origin may not be null");
-        } //End block
+        } 
         origin = adjustEffectiveHost(origin);
         boolean var4646C80192E3B5F87999DDAAB5D6A6A4_829891725 = (super.match(cookie, origin));
         addTaint(cookie.getTaint());
         addTaint(origin.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1293079565 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1293079565;
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //if (origin == null) {
-            //throw new IllegalArgumentException("Cookie origin may not be null");
-        //}
-        //origin = adjustEffectiveHost(origin);
-        //return super.match(cookie, origin);
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -241,21 +241,21 @@ public class RFC2965Spec extends RFC2109Spec {
                                 {
                                     {
                                         buffer.append(",");
-                                    } //End block
+                                    } 
                                     buffer.append(Integer.toString(ports[i]));
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 buffer.append("\"");
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(buffer.getTaint());
         addTaint(cookie.getTaint());
         addTaint(version);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -287,30 +287,31 @@ public class RFC2965Spec extends RFC2109Spec {
     public int getVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_900821254 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_900821254;
-        // ---------- Original Method ----------
-        //return 1;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.504 -0400", hash_original_method = "135D9D751A7E49D965B3B7FE1A189F11", hash_generated_method = "F3D73CCFD16B539E7A27503C081D5C74")
     @Override
     public Header getVersionHeader() {
-        Header varB4EAC82CA7396A68D541C85D26508E83_1073416693 = null; //Variable for return #1
+        Header varB4EAC82CA7396A68D541C85D26508E83_1073416693 = null; 
         CharArrayBuffer buffer = new CharArrayBuffer(40);
         buffer.append(SM.COOKIE2);
         buffer.append(": ");
         buffer.append("$Version=");
         buffer.append(Integer.toString(getVersion()));
         varB4EAC82CA7396A68D541C85D26508E83_1073416693 = new BufferedHeader(buffer);
-        varB4EAC82CA7396A68D541C85D26508E83_1073416693.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1073416693.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1073416693;
-        // ---------- Original Method ----------
-        //CharArrayBuffer buffer = new CharArrayBuffer(40);
-        //buffer.append(SM.COOKIE2);
-        //buffer.append(": ");
-        //buffer.append("$Version=");
-        //buffer.append(Integer.toString(getVersion()));
-        //return new BufferedHeader(buffer);
+        
+        
+        
+        
+        
+        
+        
     }
 
     

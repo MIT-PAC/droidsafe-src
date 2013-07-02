@@ -1,11 +1,11 @@
 package org.apache.http.impl.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.apache.http.HttpException;
@@ -37,45 +37,45 @@ public class HttpResponseParser extends AbstractMessageParser {
         super(buffer, parser, params);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Response factory may not be null");
-        } //End block
+        } 
         this.responseFactory = responseFactory;
         this.lineBuf = new CharArrayBuffer(128);
         addTaint(buffer.getTaint());
         addTaint(parser.getTaint());
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //if (responseFactory == null) {
-            //throw new IllegalArgumentException("Response factory may not be null");
-        //}
-        //this.responseFactory = responseFactory;
-        //this.lineBuf = new CharArrayBuffer(128);
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.832 -0400", hash_original_method = "3017F26D59D622B6AFE8D24C9E35B44D", hash_generated_method = "DA6D55C564ACF9732AB032A4CFD2C9D6")
     protected HttpMessage parseHead(
             final SessionInputBuffer sessionBuffer) throws IOException, HttpException, ParseException {
-        HttpMessage varB4EAC82CA7396A68D541C85D26508E83_1973174598 = null; //Variable for return #1
+        HttpMessage varB4EAC82CA7396A68D541C85D26508E83_1973174598 = null; 
         this.lineBuf.clear();
         int i = sessionBuffer.readLine(this.lineBuf);
         {
             if (DroidSafeAndroidRuntime.control) throw new NoHttpResponseException("The target server failed to respond");
-        } //End block
+        } 
         ParserCursor cursor = new ParserCursor(0, this.lineBuf.length());
         StatusLine statusline = lineParser.parseStatusLine(this.lineBuf, cursor);
         varB4EAC82CA7396A68D541C85D26508E83_1973174598 = this.responseFactory.newHttpResponse(statusline, null);
         addTaint(sessionBuffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1973174598.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1973174598.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1973174598;
-        // ---------- Original Method ----------
-        //this.lineBuf.clear();
-        //int i = sessionBuffer.readLine(this.lineBuf);
-        //if (i == -1) {
-            //throw new NoHttpResponseException("The target server failed to respond");
-        //}
-        //ParserCursor cursor = new ParserCursor(0, this.lineBuf.length());
-        //StatusLine statusline = lineParser.parseStatusLine(this.lineBuf, cursor);
-        //return this.responseFactory.newHttpResponse(statusline, null);
+        
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     

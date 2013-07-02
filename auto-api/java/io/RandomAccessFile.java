@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import dalvik.system.CloseGuard;
 import java.nio.ByteOrder;
@@ -48,7 +48,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
             boolean var31FE68E20085E76C60E612103E1A721B_4357745 = (mode.equals("r"));
             {
                 flags = O_RDONLY;
-            } //End block
+            } 
             {
                 boolean varC150FED3A23211AE0FE87A89CE48B078_1962028461 = (mode.equals("rw") || mode.equals("rws") || mode.equals("rwd"));
                 {
@@ -57,54 +57,54 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
                         boolean varE03788F9BE4713BC79E72BE8EDB25E88_114174127 = (mode.equals("rws"));
                         {
                             syncMetadata = true;
-                        } //End block
+                        } 
                         {
                             boolean var01F727A511D8361A7B723843053429C0_2092150662 = (mode.equals("rwd"));
                             {
                                 flags |= O_SYNC;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid mode: " + mode);
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         this.mode = flags;
         this.fd = IoBridge.open(file.getAbsolutePath(), flags);
         {
             try 
             {
                 fd.sync();
-            } //End block
+            } 
             catch (IOException e)
             { }
-        } //End block
+        } 
         guard.open("close");
-        // ---------- Original Method ----------
-        //int flags;
-        //if (mode.equals("r")) {
-            //flags = O_RDONLY;
-        //} else if (mode.equals("rw") || mode.equals("rws") || mode.equals("rwd")) {
-            //flags = O_RDWR | O_CREAT;
-            //if (mode.equals("rws")) {
-                //syncMetadata = true;
-            //} else if (mode.equals("rwd")) {
-                //flags |= O_SYNC;
-            //}
-        //} else {
-            //throw new IllegalArgumentException("Invalid mode: " + mode);
-        //}
-        //this.mode = flags;
-        //this.fd = IoBridge.open(file.getAbsolutePath(), flags);
-        //if (syncMetadata) {
-            //try {
-                //fd.sync();
-            //} catch (IOException e) {
-            //}
-        //}
-        //guard.open("close");
+        
+        
+        
+            
+        
+            
+            
+                
+            
+                
+            
+        
+            
+        
+        
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -113,10 +113,11 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         this(new File(fileName), mode);
         addTaint(fileName.getTaint());
         addTaint(mode.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.959 -0400", hash_original_method = "884D49058FBF3FAB457C152EAAE74126", hash_generated_method = "96229194373EEAABDF0A0407B45C6248")
     public void close() throws IOException {
         guard.close();
@@ -126,22 +127,23 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
                 {
                     channel.close();
                     channel = null;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             IoUtils.close(fd);
-        } //End block
-        // ---------- Original Method ----------
-        //guard.close();
-        //synchronized (this) {
-            //if (channel != null && channel.isOpen()) {
-                //channel.close();
-                //channel = null;
-            //}
-            //IoUtils.close(fd);
-        //}
+        } 
+        
+        
+        
+            
+                
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.959 -0400", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "9FC9D50BDD14E42CF33F4D9E8C015023")
     @Override
     protected void finalize() throws Throwable {
@@ -149,118 +151,123 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         {
             {
                 guard.warnIfOpen();
-            } //End block
+            } 
             close();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (guard != null) {
-                //guard.warnIfOpen();
-            //}
-            //close();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.960 -0400", hash_original_method = "C91B0C3B79D457313F842097EE5F90EE", hash_generated_method = "046F21EA9E9354722ABE25A82DD8CC83")
     public final synchronized FileChannel getChannel() {
-        FileChannel varB4EAC82CA7396A68D541C85D26508E83_480498067 = null; //Variable for return #1
+        FileChannel varB4EAC82CA7396A68D541C85D26508E83_480498067 = null; 
         {
             channel = NioUtils.newFileChannel(this, fd, mode);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_480498067 = channel;
-        varB4EAC82CA7396A68D541C85D26508E83_480498067.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_480498067.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_480498067;
-        // ---------- Original Method ----------
-        //if(channel == null) {
-            //channel = NioUtils.newFileChannel(this, fd, mode);
-        //}
-        //return channel;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.961 -0400", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "D6E942D5D4A46B46D087C8F3C010EE97")
     public final FileDescriptor getFD() throws IOException {
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1764415272 = null; //Variable for return #1
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1764415272 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1764415272 = fd;
-        varB4EAC82CA7396A68D541C85D26508E83_1764415272.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1764415272.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1764415272;
-        // ---------- Original Method ----------
-        //return fd;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.962 -0400", hash_original_method = "BF89D60C39AB56A10CD4BF202DEE6E59", hash_generated_method = "7B2EE534E84888F700A0A59839F6DFE3")
     public long getFilePointer() throws IOException {
         try 
         {
             long varF0C05ECAF241A024A616B548A1469DB9_538938133 = (Libcore.os.lseek(fd, 0L, SEEK_CUR));
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsIOException();
-        } //End block
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_328627677 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_328627677;
-        // ---------- Original Method ----------
-        //try {
-            //return Libcore.os.lseek(fd, 0L, SEEK_CUR);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsIOException();
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.963 -0400", hash_original_method = "E8687801225ADA3B0E63B61937B0020C", hash_generated_method = "B91587048CE176C289946B60A6014F3A")
     public long length() throws IOException {
         try 
         {
             long var2D9D0231F90D97A868E782013621466D_586482608 = (Libcore.os.fstat(fd).st_size);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsIOException();
-        } //End block
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1289733818 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1289733818;
-        // ---------- Original Method ----------
-        //try {
-            //return Libcore.os.fstat(fd).st_size;
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsIOException();
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.963 -0400", hash_original_method = "9CBC8BBFD7044A0BC3A194777FBBD2CA", hash_generated_method = "12EF370AE6941CC12BF960CF08762BEB")
     public int read() throws IOException {
         {
             boolean var5AE8D1125A90BB891EE77B81D048DDF5_1671808242 = ((read(scratch, 0, 1) != -1));
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1519680994 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1519680994;
-        // ---------- Original Method ----------
-        //return (read(scratch, 0, 1) != -1) ? scratch[0] & 0xff : -1;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.964 -0400", hash_original_method = "73C43862A3B640F09D97EB0273F5287B", hash_generated_method = "9221C51EBE989892AEBA781338C27593")
     public int read(byte[] buffer) throws IOException {
         int var6FC2792F895D13BB16201EFCBA1330E5_1053643638 = (read(buffer, 0, buffer.length));
         addTaint(buffer[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_790073075 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_790073075;
-        // ---------- Original Method ----------
-        //return read(buffer, 0, buffer.length);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.965 -0400", hash_original_method = "C5A4FB68C0A55B7975F40A4160EB1CAC", hash_generated_method = "F8321FD079A092936371EED3284D53F8")
     public int read(byte[] buffer, int byteOffset, int byteCount) throws IOException {
         int varA119A82C704C62A3513B82F79810D9CB_1594025321 = (IoBridge.read(fd, buffer, byteOffset, byteCount));
@@ -269,8 +276,8 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         addTaint(byteCount);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_632771782 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_632771782;
-        // ---------- Original Method ----------
-        //return IoBridge.read(fd, buffer, byteOffset, byteCount);
+        
+        
     }
 
     
@@ -279,15 +286,15 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         int temp = this.read();
         {
             if (DroidSafeAndroidRuntime.control) throw new EOFException();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_657584553 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_657584553;
-        // ---------- Original Method ----------
-        //int temp = this.read();
-        //if (temp < 0) {
-            //throw new EOFException();
-        //}
-        //return temp != 0;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -296,15 +303,15 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         int temp = this.read();
         {
             if (DroidSafeAndroidRuntime.control) throw new EOFException();
-        } //End block
+        } 
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1132239596 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1132239596;
-        // ---------- Original Method ----------
-        //int temp = this.read();
-        //if (temp < 0) {
-            //throw new EOFException();
-        //}
-        //return (byte) temp;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -313,8 +320,8 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         char varF2ACC106D91692A1DB07375484A6C29E_1000611514 = ((char) readShort());
         char varA87DEB01C5F539E6BDA34829C8EF2368_254143636 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_254143636;
-        // ---------- Original Method ----------
-        //return (char) readShort();
+        
+        
     }
 
     
@@ -323,8 +330,8 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         double var3292A685AD9C8EB2CF3ABF2B88C345AA_150765487 = (Double.longBitsToDouble(readLong()));
         double varE8CD7DA078A86726031AD64F35F5A6C0_1418694979 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1418694979;
-        // ---------- Original Method ----------
-        //return Double.longBitsToDouble(readLong());
+        
+        
     }
 
     
@@ -333,8 +340,8 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         float var6656A3EBF72C98EFC9F149CC98AAD604_305075835 = (Float.intBitsToFloat(readInt()));
         float var546ADE640B6EDFBC8A086EF31347E768_923319826 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_923319826;
-        // ---------- Original Method ----------
-        //return Float.intBitsToFloat(readInt());
+        
+        
     }
 
     
@@ -342,8 +349,8 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     public final void readFully(byte[] dst) throws IOException {
         readFully(dst, 0, dst.length);
         addTaint(dst[0]);
-        // ---------- Original Method ----------
-        //readFully(dst, 0, dst.length);
+        
+        
     }
 
     
@@ -354,23 +361,23 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
             int result = read(dst, offset, byteCount);
             {
                 if (DroidSafeAndroidRuntime.control) throw new EOFException();
-            } //End block
+            } 
             offset += result;
             byteCount -= result;
-        } //End block
+        } 
         addTaint(dst[0]);
         addTaint(offset);
         addTaint(byteCount);
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(dst.length, offset, byteCount);
-        //while (byteCount > 0) {
-            //int result = read(dst, offset, byteCount);
-            //if (result < 0) {
-                //throw new EOFException();
-            //}
-            //offset += result;
-            //byteCount -= result;
-        //}
+        
+        
+        
+            
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -380,70 +387,70 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         int varB097092D008CB2C0CB75F2D5D42B4BD8_1844394976 = (Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_332963805 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_332963805;
-        // ---------- Original Method ----------
-        //readFully(scratch, 0, SizeOf.INT);
-        //return Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.968 -0400", hash_original_method = "A3561FB7999FC54AB0AB272B825D1BA9", hash_generated_method = "F4E380CCB092C741D9FCB11498B62436")
     public final String readLine() throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_25936767 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1289702789 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_638830089 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_1430785728 = null; //Variable for return #4
+        String varB4EAC82CA7396A68D541C85D26508E83_25936767 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1289702789 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_638830089 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1430785728 = null; 
         StringBuilder line = new StringBuilder(80);
         boolean foundTerminator = false;
         long unreadPosition = 0;
         {
             int nextByte = read();
-            //Begin case -1 
+            
             varB4EAC82CA7396A68D541C85D26508E83_25936767 = line.length() != 0 ? line.toString() : null;
-            //End case -1 
-            //Begin case (byte) '\r' 
+            
+            
             {
                 seek(unreadPosition);
                 varB4EAC82CA7396A68D541C85D26508E83_1289702789 = line.toString();
-            } //End block
-            //End case (byte) '\r' 
-            //Begin case (byte) '\r' 
+            } 
+            
+            
             foundTerminator = true;
-            //End case (byte) '\r' 
-            //Begin case (byte) '\r' 
+            
+            
             unreadPosition = getFilePointer();
-            //End case (byte) '\r' 
-            //Begin case (byte) '\n' 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_638830089 = line.toString();
-            //End case (byte) '\n' 
-            //Begin case default 
+            
+            
             {
                 seek(unreadPosition);
                 varB4EAC82CA7396A68D541C85D26508E83_1430785728 = line.toString();
-            } //End block
-            //End case default 
-            //Begin case default 
+            } 
+            
+            
             line.append((char) nextByte);
-            //End case default 
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_255042915; //Final return value
+            
+        } 
+        String varA7E53CE21691AB073D9660D615818899_255042915; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_255042915 = varB4EAC82CA7396A68D541C85D26508E83_25936767;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_255042915 = varB4EAC82CA7396A68D541C85D26508E83_1289702789;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_255042915 = varB4EAC82CA7396A68D541C85D26508E83_638830089;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_255042915 = varB4EAC82CA7396A68D541C85D26508E83_1430785728;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_255042915.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_255042915.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_255042915;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -453,9 +460,9 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         long var9F6710AAE72C6645C9CB5D9BAF2C5E79_414803805 = (Memory.peekLong(scratch, 0, ByteOrder.BIG_ENDIAN));
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1152758740 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1152758740;
-        // ---------- Original Method ----------
-        //readFully(scratch, 0, SizeOf.LONG);
-        //return Memory.peekLong(scratch, 0, ByteOrder.BIG_ENDIAN);
+        
+        
+        
     }
 
     
@@ -465,9 +472,9 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         short var007DE4DE11DFBCEFBB55FC3C89A2F231_669279467 = (Memory.peekShort(scratch, 0, ByteOrder.BIG_ENDIAN));
         short var4F09DAA9D95BCB166A302407A0E0BABE_384984101 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_384984101;
-        // ---------- Original Method ----------
-        //readFully(scratch, 0, SizeOf.SHORT);
-        //return Memory.peekShort(scratch, 0, ByteOrder.BIG_ENDIAN);
+        
+        
+        
     }
 
     
@@ -476,15 +483,15 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         int temp = this.read();
         {
             if (DroidSafeAndroidRuntime.control) throw new EOFException();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1387216916 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1387216916;
-        // ---------- Original Method ----------
-        //int temp = this.read();
-        //if (temp < 0) {
-            //throw new EOFException();
-        //}
-        //return temp;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -493,172 +500,178 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         int var80645AD98CDAD0EE0FB3459E3825971C_1046931841 = (((int) readShort()) & 0xffff);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1504723903 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1504723903;
-        // ---------- Original Method ----------
-        //return ((int) readShort()) & 0xffff;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.975 -0400", hash_original_method = "1E6F905958EDDE8569C0995497961028", hash_generated_method = "4E49B8FBCDA2E5E486A48D2ECFB8A83B")
     public final String readUTF() throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1779659117 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_575430023 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1779659117 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_575430023 = null; 
         int utfSize = readUnsignedShort();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1779659117 = "";
-        } //End block
+        } 
         byte[] buf = new byte[utfSize];
         {
             boolean varCC708F7E031AEDABCA9DFF40A76762B8_557819228 = (read(buf, 0, buf.length) != buf.length);
             {
                 if (DroidSafeAndroidRuntime.control) throw new EOFException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_575430023 = ModifiedUtf8.decode(buf, new char[utfSize], 0, utfSize);
-        String varA7E53CE21691AB073D9660D615818899_2063686772; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_2063686772; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2063686772 = varB4EAC82CA7396A68D541C85D26508E83_1779659117;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2063686772 = varB4EAC82CA7396A68D541C85D26508E83_575430023;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2063686772.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2063686772.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2063686772;
-        // ---------- Original Method ----------
-        //int utfSize = readUnsignedShort();
-        //if (utfSize == 0) {
-            //return "";
-        //}
-        //byte[] buf = new byte[utfSize];
-        //if (read(buf, 0, buf.length) != buf.length) {
-            //throw new EOFException();
-        //}
-        //return ModifiedUtf8.decode(buf, new char[utfSize], 0, utfSize);
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.977 -0400", hash_original_method = "92812216A189B62C22C36FA4ABFCEF90", hash_generated_method = "1EDCC76EAAB68A14E3C73C2F91B5DC47")
     public void seek(long offset) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("offset < 0: " + offset);
-        } //End block
+        } 
         try 
         {
             Libcore.os.lseek(fd, offset, SEEK_SET);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsIOException();
-        } //End block
+        } 
         addTaint(offset);
-        // ---------- Original Method ----------
-        //if (offset < 0) {
-            //throw new IOException("offset < 0: " + offset);
-        //}
-        //try {
-            //Libcore.os.lseek(fd, offset, SEEK_SET);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsIOException();
-        //}
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.978 -0400", hash_original_method = "385EF87B8915AB37CD3540061C92256B", hash_generated_method = "BF7AEF5C171493C5A1C5613BC8D934D9")
     public void setLength(long newLength) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("newLength < 0");
-        } //End block
+        } 
         try 
         {
             Libcore.os.ftruncate(fd, newLength);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsIOException();
-        } //End block
+        } 
         long filePointer = getFilePointer();
         {
             seek(newLength);
-        } //End block
+        } 
         {
             fd.sync();
-        } //End block
+        } 
         addTaint(newLength);
-        // ---------- Original Method ----------
-        //if (newLength < 0) {
-            //throw new IllegalArgumentException("newLength < 0");
-        //}
-        //try {
-            //Libcore.os.ftruncate(fd, newLength);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsIOException();
-        //}
-        //long filePointer = getFilePointer();
-        //if (filePointer > newLength) {
-            //seek(newLength);
-        //}
-        //if (syncMetadata) {
-            //fd.sync();
-        //}
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.979 -0400", hash_original_method = "FB9C2E97D200EE03574ADD76D56D23DD", hash_generated_method = "E845E837176EB08D541065FAF4716E3E")
     public int skipBytes(int count) throws IOException {
         {
             long currentPos = getFilePointer();
             long eof = length();
-            int newCount = (int) ((currentPos + count > eof) ? eof - currentPos : count);//DSFIXME:  CODE0008: Nested ternary operator in expression
+            int newCount = (int) ((currentPos + count > eof) ? eof - currentPos : count);
             seek(currentPos + newCount);
-        } //End block
+        } 
         addTaint(count);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1528934211 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1528934211;
-        // ---------- Original Method ----------
-        //if (count > 0) {
-            //long currentPos = getFilePointer(), eof = length();
-            //int newCount = (int) ((currentPos + count > eof) ? eof - currentPos : count);
-            //seek(currentPos + newCount);
-            //return newCount;
-        //}
-        //return 0;
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.980 -0400", hash_original_method = "773CDFC941DB5BD8F51FCC7460E1F3ED", hash_generated_method = "9CF54F5514EB45305F74BC43AC7A8B7B")
     public void write(byte[] buffer) throws IOException {
         write(buffer, 0, buffer.length);
         addTaint(buffer[0]);
-        // ---------- Original Method ----------
-        //write(buffer, 0, buffer.length);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.980 -0400", hash_original_method = "35FA4EEB101513E91F640D0BB99E182F", hash_generated_method = "8287C1A4E77452B86B1A6636CB10DD0B")
     public void write(byte[] buffer, int byteOffset, int byteCount) throws IOException {
         IoBridge.write(fd, buffer, byteOffset, byteCount);
         {
             fd.sync();
-        } //End block
+        } 
         addTaint(buffer[0]);
         addTaint(byteOffset);
         addTaint(byteCount);
-        // ---------- Original Method ----------
-        //IoBridge.write(fd, buffer, byteOffset, byteCount);
-        //if (syncMetadata) {
-            //fd.sync();
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.981 -0400", hash_original_method = "9AECC3BD7576DA9A6BE139AE80679C12", hash_generated_method = "9FAA380C1F42D314AD87185ABF65B775")
     public void write(int oneByte) throws IOException {
         scratch[0] = (byte) (oneByte & 0xff);
         write(scratch, 0, 1);
-        // ---------- Original Method ----------
-        //scratch[0] = (byte) (oneByte & 0xff);
-        //write(scratch, 0, 1);
+        
+        
+        
     }
 
     
@@ -666,8 +679,8 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     public final void writeBoolean(boolean val) throws IOException {
         write(val ? 1 : 0);
         addTaint(val);
-        // ---------- Original Method ----------
-        //write(val ? 1 : 0);
+        
+        
     }
 
     
@@ -675,8 +688,8 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     public final void writeByte(int val) throws IOException {
         write(val & 0xFF);
         addTaint(val);
-        // ---------- Original Method ----------
-        //write(val & 0xFF);
+        
+        
     }
 
     
@@ -688,16 +701,16 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
             boolean varA02C1B1CDA6C37943246730579D9D4AA_458768576 = (index < str.length());
             {
                 bytes[index] = (byte) (str.charAt(index) & 0xFF);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         write(bytes);
         addTaint(str.getTaint());
-        // ---------- Original Method ----------
-        //byte[] bytes = new byte[str.length()];
-        //for (int index = 0; index < str.length(); index++) {
-            //bytes[index] = (byte) (str.charAt(index) & 0xFF);
-        //}
-        //write(bytes);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -705,8 +718,8 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     public final void writeChar(int val) throws IOException {
         writeShort(val);
         addTaint(val);
-        // ---------- Original Method ----------
-        //writeShort(val);
+        
+        
     }
 
     
@@ -714,8 +727,8 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     public final void writeChars(String str) throws IOException {
         write(str.getBytes("UTF-16BE"));
         addTaint(str.getTaint());
-        // ---------- Original Method ----------
-        //write(str.getBytes("UTF-16BE"));
+        
+        
     }
 
     
@@ -723,8 +736,8 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     public final void writeDouble(double val) throws IOException {
         writeLong(Double.doubleToLongBits(val));
         addTaint(val);
-        // ---------- Original Method ----------
-        //writeLong(Double.doubleToLongBits(val));
+        
+        
     }
 
     
@@ -732,8 +745,8 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     public final void writeFloat(float val) throws IOException {
         writeInt(Float.floatToIntBits(val));
         addTaint(val);
-        // ---------- Original Method ----------
-        //writeInt(Float.floatToIntBits(val));
+        
+        
     }
 
     
@@ -742,9 +755,9 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         Memory.pokeInt(scratch, 0, val, ByteOrder.BIG_ENDIAN);
         write(scratch, 0, SizeOf.INT);
         addTaint(val);
-        // ---------- Original Method ----------
-        //Memory.pokeInt(scratch, 0, val, ByteOrder.BIG_ENDIAN);
-        //write(scratch, 0, SizeOf.INT);
+        
+        
+        
     }
 
     
@@ -753,9 +766,9 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         Memory.pokeLong(scratch, 0, val, ByteOrder.BIG_ENDIAN);
         write(scratch, 0, SizeOf.LONG);
         addTaint(val);
-        // ---------- Original Method ----------
-        //Memory.pokeLong(scratch, 0, val, ByteOrder.BIG_ENDIAN);
-        //write(scratch, 0, SizeOf.LONG);
+        
+        
+        
     }
 
     
@@ -764,9 +777,9 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         Memory.pokeShort(scratch, 0, (short) val, ByteOrder.BIG_ENDIAN);
         write(scratch, 0, SizeOf.SHORT);
         addTaint(val);
-        // ---------- Original Method ----------
-        //Memory.pokeShort(scratch, 0, (short) val, ByteOrder.BIG_ENDIAN);
-        //write(scratch, 0, SizeOf.SHORT);
+        
+        
+        
     }
 
     
@@ -774,8 +787,8 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     public final void writeUTF(String str) throws IOException {
         write(ModifiedUtf8.encode(str));
         addTaint(str.getTaint());
-        // ---------- Original Method ----------
-        //write(ModifiedUtf8.encode(str));
+        
+        
     }
 
     

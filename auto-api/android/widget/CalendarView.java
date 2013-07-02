@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.annotation.Widget;
 import android.app.Service;
@@ -153,7 +153,7 @@ public class CalendarView extends FrameLayout {
     public  CalendarView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -162,7 +162,7 @@ public class CalendarView extends FrameLayout {
         this(context, attrs, 0);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -181,21 +181,21 @@ public class CalendarView extends FrameLayout {
             boolean var90AD151C49446DC9B6504DDCC69BA991_1477973289 = (TextUtils.isEmpty(minDate) || !parseDate(minDate, mMinDate));
             {
                 parseDate(DEFAULT_MIN_DATE, mMinDate);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String maxDate = attributesArray.getString(R.styleable.CalendarView_maxDate);
         {
             boolean varE3F62D79DFB1CE6472EF517746A3B9BD_436829353 = (TextUtils.isEmpty(maxDate) || !parseDate(maxDate, mMaxDate));
             {
                 parseDate(DEFAULT_MAX_DATE, mMaxDate);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var3EF097584A45D1A3246AC332EAF623F3_417588822 = (mMaxDate.before(mMinDate));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Max date cannot be before min date.");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mShownWeekCount = attributesArray.getInt(R.styleable.CalendarView_shownWeekCount,
                 DEFAULT_SHOWN_WEEK_COUNT);
         mSelectedWeekBackgroundColor = attributesArray.getColor(
@@ -246,23 +246,23 @@ public class CalendarView extends FrameLayout {
             boolean var723089A440AF4CB7CC64C5EEF62BE8A3_530504309 = (mTempDate.before(mMinDate));
             {
                 goTo(mMinDate, false, true, true);
-            } //End block
+            } 
             {
                 boolean var3CD27D6CFCFE61CCC254254F95A4E4B6_683011334 = (mMaxDate.before(mTempDate));
                 {
                     goTo(mMaxDate, false, true, true);
-                } //End block
+                } 
                 {
                     goTo(mTempDate, false, true, true);
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         invalidate();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -271,8 +271,8 @@ public class CalendarView extends FrameLayout {
     public void setEnabled(boolean enabled) {
         mListView.setEnabled(enabled);
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //mListView.setEnabled(enabled);
+        
+        
     }
 
     
@@ -282,21 +282,21 @@ public class CalendarView extends FrameLayout {
         boolean var3EFC8F76722ABBAE67832DDF2F2F242C_1692374697 = (mListView.isEnabled());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_572803375 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_572803375;
-        // ---------- Original Method ----------
-        //return mListView.isEnabled();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.151 -0400", hash_original_method = "C452430AEDBDDD78DF8F4D12B9175E89", hash_generated_method = "FB0A11FC0C47EF7B377125BF2E9C2DD7")
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onConfigurationChanged(newConfig);
         setCurrentLocale(newConfig.locale);
         addTaint(newConfig.getTaint());
-        // ---------- Original Method ----------
-        //super.onConfigurationChanged(newConfig);
-        //setCurrentLocale(newConfig.locale);
+        
+        
+        
     }
 
     
@@ -305,8 +305,8 @@ public class CalendarView extends FrameLayout {
         long varE9182735C4E0F8DB15688CAB80ADDB8E_1647610672 = (mMinDate.getTimeInMillis());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_172821006 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_172821006;
-        // ---------- Original Method ----------
-        //return mMinDate.getTimeInMillis();
+        
+        
     }
 
     
@@ -315,42 +315,42 @@ public class CalendarView extends FrameLayout {
         mTempDate.setTimeInMillis(minDate);
         {
             boolean varBA6899CBD1B589E9C9339139EE86931B_1601106127 = (isSameDate(mTempDate, mMinDate));
-        } //End collapsed parenthetic
+        } 
         mMinDate.setTimeInMillis(minDate);
         Calendar date = mAdapter.mSelectedDate;
         {
             boolean varC241E660552FCC0CC300BD358680B846_852870142 = (date.before(mMinDate));
             {
                 mAdapter.setSelectedDay(mMinDate);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mAdapter.init();
         {
             boolean varC241E660552FCC0CC300BD358680B846_576077336 = (date.before(mMinDate));
             {
                 setDate(mTempDate.getTimeInMillis());
-            } //End block
+            } 
             {
                 goTo(date, false, true, false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(minDate);
-        // ---------- Original Method ----------
-        //mTempDate.setTimeInMillis(minDate);
-        //if (isSameDate(mTempDate, mMinDate)) {
-            //return;
-        //}
-        //mMinDate.setTimeInMillis(minDate);
-        //Calendar date = mAdapter.mSelectedDate;
-        //if (date.before(mMinDate)) {
-            //mAdapter.setSelectedDay(mMinDate);
-        //}
-        //mAdapter.init();
-        //if (date.before(mMinDate)) {
-            //setDate(mTempDate.getTimeInMillis());
-        //} else {
-            //goTo(date, false, true, false);
-        //}
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -359,8 +359,8 @@ public class CalendarView extends FrameLayout {
         long var7E289ED2E917AFBA91EF20B25A644C8B_838744376 = (mMaxDate.getTimeInMillis());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1404703453 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1404703453;
-        // ---------- Original Method ----------
-        //return mMaxDate.getTimeInMillis();
+        
+        
     }
 
     
@@ -369,7 +369,7 @@ public class CalendarView extends FrameLayout {
         mTempDate.setTimeInMillis(maxDate);
         {
             boolean var47D8C586FDF6BA5C53CDC73D89D4E5F7_1152636522 = (isSameDate(mTempDate, mMaxDate));
-        } //End collapsed parenthetic
+        } 
         mMaxDate.setTimeInMillis(maxDate);
         mAdapter.init();
         Calendar date = mAdapter.mSelectedDate;
@@ -377,25 +377,25 @@ public class CalendarView extends FrameLayout {
             boolean var41089FD40A46564D975094B1E25CAEC5_1868819658 = (date.after(mMaxDate));
             {
                 setDate(mMaxDate.getTimeInMillis());
-            } //End block
+            } 
             {
                 goTo(date, false, true, false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(maxDate);
-        // ---------- Original Method ----------
-        //mTempDate.setTimeInMillis(maxDate);
-        //if (isSameDate(mTempDate, mMaxDate)) {
-            //return;
-        //}
-        //mMaxDate.setTimeInMillis(maxDate);
-        //mAdapter.init();
-        //Calendar date = mAdapter.mSelectedDate;
-        //if (date.after(mMaxDate)) {
-            //setDate(mMaxDate.getTimeInMillis());
-        //} else {
-            //goTo(date, false, true, false);
-        //}
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -404,13 +404,13 @@ public class CalendarView extends FrameLayout {
         mShowWeekNumber = showWeekNumber;
         mAdapter.notifyDataSetChanged();
         setUpHeader(DEFAULT_WEEK_DAY_TEXT_APPEARANCE_RES_ID);
-        // ---------- Original Method ----------
-        //if (mShowWeekNumber == showWeekNumber) {
-            //return;
-        //}
-        //mShowWeekNumber = showWeekNumber;
-        //mAdapter.notifyDataSetChanged();
-        //setUpHeader(DEFAULT_WEEK_DAY_TEXT_APPEARANCE_RES_ID);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -418,8 +418,8 @@ public class CalendarView extends FrameLayout {
     public boolean getShowWeekNumber() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1034490609 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1034490609;
-        // ---------- Original Method ----------
-        //return mShowWeekNumber;
+        
+        
     }
 
     
@@ -427,8 +427,8 @@ public class CalendarView extends FrameLayout {
     public int getFirstDayOfWeek() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_25471466 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_25471466;
-        // ---------- Original Method ----------
-        //return mFirstDayOfWeek;
+        
+        
     }
 
     
@@ -438,22 +438,22 @@ public class CalendarView extends FrameLayout {
         mAdapter.init();
         mAdapter.notifyDataSetChanged();
         setUpHeader(DEFAULT_WEEK_DAY_TEXT_APPEARANCE_RES_ID);
-        // ---------- Original Method ----------
-        //if (mFirstDayOfWeek == firstDayOfWeek) {
-            //return;
-        //}
-        //mFirstDayOfWeek = firstDayOfWeek;
-        //mAdapter.init();
-        //mAdapter.notifyDataSetChanged();
-        //setUpHeader(DEFAULT_WEEK_DAY_TEXT_APPEARANCE_RES_ID);
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.154 -0400", hash_original_method = "2EC5480533B2BF54D56B2049BA7CA5D7", hash_generated_method = "40E23822C44A26C2CDF30A58488DCCDD")
     public void setOnDateChangeListener(OnDateChangeListener listener) {
         mOnDateChangeListener = listener;
-        // ---------- Original Method ----------
-        //mOnDateChangeListener = listener;
+        
+        
     }
 
     
@@ -462,8 +462,8 @@ public class CalendarView extends FrameLayout {
         long var0F1B39E7345B9CDA182064903BF8E5F0_1723836198 = (mAdapter.mSelectedDate.getTimeInMillis());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2002489964 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2002489964;
-        // ---------- Original Method ----------
-        //return mAdapter.mSelectedDate.getTimeInMillis();
+        
+        
     }
 
     
@@ -471,8 +471,8 @@ public class CalendarView extends FrameLayout {
     public void setDate(long date) {
         setDate(date, false, false);
         addTaint(date);
-        // ---------- Original Method ----------
-        //setDate(date, false, false);
+        
+        
     }
 
     
@@ -481,17 +481,17 @@ public class CalendarView extends FrameLayout {
         mTempDate.setTimeInMillis(date);
         {
             boolean var33AC8D86F9EF69ABC5D4276E04DCBF36_1114654642 = (isSameDate(mTempDate, mAdapter.mSelectedDate));
-        } //End collapsed parenthetic
+        } 
         goTo(mTempDate, animate, true, center);
         addTaint(date);
         addTaint(animate);
         addTaint(center);
-        // ---------- Original Method ----------
-        //mTempDate.setTimeInMillis(date);
-        //if (isSameDate(mTempDate, mAdapter.mSelectedDate)) {
-            //return;
-        //}
-        //goTo(mTempDate, animate, true, center);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -499,59 +499,59 @@ public class CalendarView extends FrameLayout {
     private void setCurrentLocale(Locale locale) {
         {
             boolean varD1CF46D36E6B1C6187CE68AE2BC3F432_1615634747 = (locale.equals(mCurrentLocale));
-        } //End collapsed parenthetic
+        } 
         mCurrentLocale = locale;
         mTempDate = getCalendarForLocale(mTempDate, locale);
         mFirstDayOfMonth = getCalendarForLocale(mFirstDayOfMonth, locale);
         mMinDate = getCalendarForLocale(mMinDate, locale);
         mMaxDate = getCalendarForLocale(mMaxDate, locale);
-        // ---------- Original Method ----------
-        //if (locale.equals(mCurrentLocale)) {
-            //return;
-        //}
-        //mCurrentLocale = locale;
-        //mTempDate = getCalendarForLocale(mTempDate, locale);
-        //mFirstDayOfMonth = getCalendarForLocale(mFirstDayOfMonth, locale);
-        //mMinDate = getCalendarForLocale(mMinDate, locale);
-        //mMaxDate = getCalendarForLocale(mMaxDate, locale);
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.156 -0400", hash_original_method = "FA738DF80665124C3A5E01ADC04827D9", hash_generated_method = "8351B257E984CE033D23F4F313882046")
     private Calendar getCalendarForLocale(Calendar oldCalendar, Locale locale) {
-        Calendar varB4EAC82CA7396A68D541C85D26508E83_468218175 = null; //Variable for return #1
-        Calendar varB4EAC82CA7396A68D541C85D26508E83_2051087816 = null; //Variable for return #2
+        Calendar varB4EAC82CA7396A68D541C85D26508E83_468218175 = null; 
+        Calendar varB4EAC82CA7396A68D541C85D26508E83_2051087816 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_468218175 = Calendar.getInstance(locale);
-        } //End block
+        } 
         {
             final long currentTimeMillis = oldCalendar.getTimeInMillis();
             Calendar newCalendar = Calendar.getInstance(locale);
             newCalendar.setTimeInMillis(currentTimeMillis);
             varB4EAC82CA7396A68D541C85D26508E83_2051087816 = newCalendar;
-        } //End block
+        } 
         addTaint(oldCalendar.getTaint());
         addTaint(locale.getTaint());
-        Calendar varA7E53CE21691AB073D9660D615818899_1655802645; //Final return value
+        Calendar varA7E53CE21691AB073D9660D615818899_1655802645; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1655802645 = varB4EAC82CA7396A68D541C85D26508E83_468218175;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1655802645 = varB4EAC82CA7396A68D541C85D26508E83_2051087816;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1655802645.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1655802645.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1655802645;
-        // ---------- Original Method ----------
-        //if (oldCalendar == null) {
-            //return Calendar.getInstance(locale);
-        //} else {
-            //final long currentTimeMillis = oldCalendar.getTimeInMillis();
-            //Calendar newCalendar = Calendar.getInstance(locale);
-            //newCalendar.setTimeInMillis(currentTimeMillis);
-            //return newCalendar;
-        //}
+        
+        
+            
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -563,9 +563,9 @@ public class CalendarView extends FrameLayout {
         addTaint(secondDate.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_568167833 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_568167833;
-        // ---------- Original Method ----------
-        //return (firstDate.get(Calendar.DAY_OF_YEAR) == secondDate.get(Calendar.DAY_OF_YEAR)
-                //&& firstDate.get(Calendar.YEAR) == secondDate.get(Calendar.YEAR));
+        
+        
+                
     }
 
     
@@ -577,45 +577,45 @@ public class CalendarView extends FrameLayout {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.157 -0400", hash_original_method = "CEA948C87231173C338757A31D25F841", hash_generated_method = "C92C69778624C61CA35BB0BB8B9501CC")
                 @Override
                 public void onChanged() {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     {
                         Calendar selectedDay = mAdapter.getSelectedDay();
                         mOnDateChangeListener.onSelectedDayChange(CalendarView.this,
                                 selectedDay.get(Calendar.YEAR),
                                 selectedDay.get(Calendar.MONTH),
                                 selectedDay.get(Calendar.DAY_OF_MONTH));
-                    } //End block
-                    // ---------- Original Method ----------
-                    //if (mOnDateChangeListener != null) {
-                        //Calendar selectedDay = mAdapter.getSelectedDay();
-                        //mOnDateChangeListener.onSelectedDayChange(CalendarView.this,
-                                //selectedDay.get(Calendar.YEAR),
-                                //selectedDay.get(Calendar.MONTH),
-                                //selectedDay.get(Calendar.DAY_OF_MONTH));
-                    //}
+                    } 
+                    
+                    
+                        
+                        
+                                
+                                
+                                
+                    
                 }
 });
             mListView.setAdapter(mAdapter);
-        } //End block
+        } 
         mAdapter.notifyDataSetChanged();
-        // ---------- Original Method ----------
-        //if (mAdapter == null) {
-            //mAdapter = new WeeksAdapter(getContext());
-            //mAdapter.registerDataSetObserver(new DataSetObserver() {
-                //@Override
-                //public void onChanged() {
-                    //if (mOnDateChangeListener != null) {
-                        //Calendar selectedDay = mAdapter.getSelectedDay();
-                        //mOnDateChangeListener.onSelectedDayChange(CalendarView.this,
-                                //selectedDay.get(Calendar.YEAR),
-                                //selectedDay.get(Calendar.MONTH),
-                                //selectedDay.get(Calendar.DAY_OF_MONTH));
-                    //}
-                //}
-            //});
-            //mListView.setAdapter(mAdapter);
-        //}
-        //mAdapter.notifyDataSetChanged();
+        
+        
+            
+            
+                
+                
+                    
+                        
+                        
+                                
+                                
+                                
+                    
+                
+            
+            
+        
+        
     }
 
     
@@ -631,15 +631,15 @@ public class CalendarView extends FrameLayout {
                 calendarDay = i;
                 mDayLabels[i - mFirstDayOfWeek] = DateUtils.getDayOfWeekString(calendarDay,
                     DateUtils.LENGTH_SHORTEST);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         TextView label = (TextView) mDayNamesHeader.getChildAt(0);
         {
             label.setVisibility(View.VISIBLE);
-        } //End block
+        } 
         {
             label.setVisibility(View.GONE);
-        } //End block
+        } 
         {
             int i = 1;
             int count = mDayNamesHeader.getChildCount();
@@ -647,20 +647,20 @@ public class CalendarView extends FrameLayout {
                 label = (TextView) mDayNamesHeader.getChildAt(i);
                 {
                     label.setTextAppearance(mContext, weekDayTextAppearanceResId);
-                } //End block
+                } 
                 {
                     label.setText(mDayLabels[i - 1]);
                     label.setVisibility(View.VISIBLE);
-                } //End block
+                } 
                 {
                     label.setVisibility(View.GONE);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         mDayNamesHeader.invalidate();
         addTaint(weekDayTextAppearanceResId);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -672,48 +672,48 @@ public class CalendarView extends FrameLayout {
         mListView.setOnScrollListener(new OnScrollListener() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.158 -0400", hash_original_method = "00F32D753053A861AE7DBFD213079352", hash_generated_method = "1440D062D8FF2F2BBCAFE414F0534FCE")
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 CalendarView.this.onScrollStateChanged(view, scrollState);
                 addTaint(view.getTaint());
                 addTaint(scrollState);
-                // ---------- Original Method ----------
-                //CalendarView.this.onScrollStateChanged(view, scrollState);
+                
+                
             }
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.158 -0400", hash_original_method = "E68786505B378D9C994B2BFCAEDF7B06", hash_generated_method = "802A3891201685653DD4F3AA6DFC549A")
             public void onScroll(
                     AbsListView view, int firstVisibleItem, int visibleItemCount,
                     int totalItemCount) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 CalendarView.this.onScroll(view, firstVisibleItem, visibleItemCount,
                         totalItemCount);
                 addTaint(view.getTaint());
                 addTaint(firstVisibleItem);
                 addTaint(visibleItemCount);
                 addTaint(totalItemCount);
-                // ---------- Original Method ----------
-                //CalendarView.this.onScroll(view, firstVisibleItem, visibleItemCount,
-                        //totalItemCount);
+                
+                
+                        
             }
 });
         mListView.setFriction(mFriction);
         mListView.setVelocityScale(mVelocityScale);
-        // ---------- Original Method ----------
-        //mListView.setDivider(null);
-        //mListView.setItemsCanFocus(true);
-        //mListView.setVerticalScrollBarEnabled(false);
-        //mListView.setOnScrollListener(new OnScrollListener() {
-            //public void onScrollStateChanged(AbsListView view, int scrollState) {
-                //CalendarView.this.onScrollStateChanged(view, scrollState);
-            //}
-            //public void onScroll(
-                    //AbsListView view, int firstVisibleItem, int visibleItemCount,
-                    //int totalItemCount) {
-                //CalendarView.this.onScroll(view, firstVisibleItem, visibleItemCount,
-                        //totalItemCount);
-            //}
-        //});
-        //mListView.setFriction(mFriction);
-        //mListView.setVelocityScale(mVelocityScale);
+        
+        
+        
+        
+        
+            
+                
+            
+            
+                    
+                    
+                
+                        
+            
+        
+        
+        
     }
 
     
@@ -724,20 +724,20 @@ public class CalendarView extends FrameLayout {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Time not between " + mMinDate.getTime()
                     + " and " + mMaxDate.getTime());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int firstFullyVisiblePosition = mListView.getFirstVisiblePosition();
         View firstChild = mListView.getChildAt(0);
         {
             boolean varB1D20EF5A4B647F4D83F0C989C37AB89_236554571 = (firstChild != null && firstChild.getTop() < 0);
-        } //End collapsed parenthetic
+        } 
         int lastFullyVisiblePosition = firstFullyVisiblePosition + mShownWeekCount - 1;
         {
             boolean var487141D1BA9B101D21ABAA229C5620F7_1307502306 = (firstChild != null && firstChild.getTop() > mBottomBuffer);
-        } //End collapsed parenthetic
+        } 
         {
             mAdapter.setSelectedDay(date);
-        } //End block
+        } 
         int position = getWeeksSinceMinDate(date);
         {
             mFirstDayOfMonth.setTimeInMillis(date.getTimeInMillis());
@@ -747,30 +747,30 @@ public class CalendarView extends FrameLayout {
                 boolean varA5F71149318293426D0DC11EF1E3EDB8_1022575565 = (mFirstDayOfMonth.before(mMinDate));
                 {
                     position = 0;
-                } //End block
+                } 
                 {
                     position = getWeeksSinceMinDate(mFirstDayOfMonth);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mPreviousScrollState = OnScrollListener.SCROLL_STATE_FLING;
             {
                 mListView.smoothScrollToPositionFromTop(position, mListScrollTopOffset,
                         GOTO_SCROLL_DURATION);
-            } //End block
+            } 
             {
                 mListView.setSelectionFromTop(position, mListScrollTopOffset);
                 onScrollStateChanged(mListView, OnScrollListener.SCROLL_STATE_IDLE);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             setMonthDisplayed(date);
-        } //End block
+        } 
         addTaint(date.getTaint());
         addTaint(animate);
         addTaint(setSelected);
         addTaint(forceScroll);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -779,21 +779,21 @@ public class CalendarView extends FrameLayout {
         try 
         {
             outDate.setTime(mDateFormat.parse(date));
-        } //End block
+        } 
         catch (ParseException e)
         { }
         addTaint(date.getTaint());
         addTaint(outDate.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_192205233 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_192205233;
-        // ---------- Original Method ----------
-        //try {
-            //outDate.setTime(mDateFormat.parse(date));
-            //return true;
-        //} catch (ParseException e) {
-            //Log.w(LOG_TAG, "Date: " + date + " not in format: " + DATE_FORMAT);
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -802,8 +802,8 @@ public class CalendarView extends FrameLayout {
         mScrollStateChangedRunnable.doScrollStateChange(view, scrollState);
         addTaint(view.getTaint());
         addTaint(scrollState);
-        // ---------- Original Method ----------
-        //mScrollStateChangedRunnable.doScrollStateChange(view, scrollState);
+        
+        
     }
 
     
@@ -814,55 +814,55 @@ public class CalendarView extends FrameLayout {
         long currScroll = view.getFirstVisiblePosition() * child.getHeight() - child.getBottom();
         {
             mIsScrollingUp = true;
-        } //End block
+        } 
         {
             mIsScrollingUp = false;
-        } //End block
+        } 
         int offset;
         boolean varB8609941F58CE0559139A9EC21B0733F_1634601547 = (child.getBottom() < mWeekMinVisibleHeight);
         offset = 1;
         offset = 0;
         {
             child = (WeekView) view.getChildAt(SCROLL_HYST_WEEKS + offset);
-        } //End block
+        } 
         {
             child = (WeekView) view.getChildAt(offset);
-        } //End block
+        } 
         int month;
         {
             month = child.getMonthOfFirstWeekDay();
-        } //End block
+        } 
         {
             month = child.getMonthOfLastWeekDay();
-        } //End block
+        } 
         int monthDiff;
         {
             monthDiff = 1;
-        } //End block
+        } 
         {
             monthDiff = -1;
-        } //End block
+        } 
         {
             monthDiff = month - mCurrentMonthDisplayed;
-        } //End block
+        } 
         {
             Calendar firstDay = child.getFirstDay();
             {
                 firstDay.add(Calendar.DAY_OF_MONTH, -DAYS_PER_WEEK);
-            } //End block
+            } 
             {
                 firstDay.add(Calendar.DAY_OF_MONTH, DAYS_PER_WEEK);
-            } //End block
+            } 
             setMonthDisplayed(firstDay);
-        } //End block
+        } 
         mPreviousScrollPosition = currScroll;
         mPreviousScrollState = mCurrentScrollState;
         addTaint(view.getTaint());
         addTaint(firstVisibleItem);
         addTaint(visibleItemCount);
         addTaint(totalItemCount);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -878,20 +878,20 @@ public class CalendarView extends FrameLayout {
             String newMonthName = DateUtils.formatDateRange(mContext, millis, millis, flags);
             mMonthName.setText(newMonthName);
             mMonthName.invalidate();
-        } //End block
+        } 
         addTaint(calendar.getTaint());
-        // ---------- Original Method ----------
-        //final int newMonthDisplayed = calendar.get(Calendar.MONTH);
-        //if (mCurrentMonthDisplayed != newMonthDisplayed) {
-            //mCurrentMonthDisplayed = newMonthDisplayed;
-            //mAdapter.setFocusMonth(mCurrentMonthDisplayed);
-            //final int flags = DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_NO_MONTH_DAY
-                    //| DateUtils.FORMAT_SHOW_YEAR;
-            //final long millis = calendar.getTimeInMillis();
-            //String newMonthName = DateUtils.formatDateRange(mContext, millis, millis, flags);
-            //mMonthName.setText(newMonthName);
-            //mMonthName.invalidate();
-        //}
+        
+        
+        
+            
+            
+            
+                    
+            
+            
+            
+            
+        
     }
 
     
@@ -902,8 +902,8 @@ public class CalendarView extends FrameLayout {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("fromDate: " + mMinDate.getTime()
                     + " does not precede toDate: " + date.getTime());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         long endTimeMillis = date.getTimeInMillis()
                 + date.getTimeZone().getOffset(date.getTimeInMillis());
         long startTimeMillis = mMinDate.getTimeInMillis()
@@ -913,18 +913,18 @@ public class CalendarView extends FrameLayout {
         addTaint(date.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1589043896 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1589043896;
-        // ---------- Original Method ----------
-        //if (date.before(mMinDate)) {
-            //throw new IllegalArgumentException("fromDate: " + mMinDate.getTime()
-                    //+ " does not precede toDate: " + date.getTime());
-        //}
-        //long endTimeMillis = date.getTimeInMillis()
-                //+ date.getTimeZone().getOffset(date.getTimeInMillis());
-        //long startTimeMillis = mMinDate.getTimeInMillis()
-                //+ mMinDate.getTimeZone().getOffset(mMinDate.getTimeInMillis());
-        //long dayOffsetMillis = (mMinDate.get(Calendar.DAY_OF_WEEK) - mFirstDayOfWeek)
-                //* MILLIS_IN_DAY;
-        //return (int) ((endTimeMillis - startTimeMillis + dayOffsetMillis) / MILLIS_IN_WEEK);
+        
+        
+            
+                    
+        
+        
+                
+        
+                
+        
+                
+        
     }
 
     
@@ -939,7 +939,7 @@ public class CalendarView extends FrameLayout {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.164 -0400", hash_original_method = "F2F7D55B897550D0A526C19F647B806C", hash_generated_method = "F2F7D55B897550D0A526C19F647B806C")
         public ScrollStateRunnable ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -949,11 +949,11 @@ public class CalendarView extends FrameLayout {
             mNewState = scrollState;
             removeCallbacks(this);
             postDelayed(this, SCROLL_CHANGE_DELAY);
-            // ---------- Original Method ----------
-            //mView = view;
-            //mNewState = scrollState;
-            //removeCallbacks(this);
-            //postDelayed(this, SCROLL_CHANGE_DELAY);
+            
+            
+            
+            
+            
         }
 
         
@@ -966,15 +966,15 @@ public class CalendarView extends FrameLayout {
                 {
                     {
                         mView.smoothScrollBy(dist - child.getHeight(), ADJUSTMENT_SCROLL_DURATION);
-                    } //End block
+                    } 
                     {
                         mView.smoothScrollBy(dist, ADJUSTMENT_SCROLL_DURATION);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             mPreviousScrollState = mNewState;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1005,10 +1005,10 @@ public class CalendarView extends FrameLayout {
             mGestureDetector = new GestureDetector(mContext, new CalendarGestureListener());
             init();
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
-            //mContext = context;
-            //mGestureDetector = new GestureDetector(mContext, new CalendarGestureListener());
-            //init();
+            
+            
+            
+            
         }
 
         
@@ -1019,14 +1019,14 @@ public class CalendarView extends FrameLayout {
             {
                 boolean varDAA403C0FA949103F0ECF6EFDF5EE393_723293905 = (mMinDate.get(Calendar.DAY_OF_WEEK) != mFirstDayOfWeek
                 || mMaxDate.get(Calendar.DAY_OF_WEEK) != mFirstDayOfWeek);
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //mSelectedWeek = getWeeksSinceMinDate(mSelectedDate);
-            //mTotalWeekCount = getWeeksSinceMinDate(mMaxDate);
-            //if (mMinDate.get(Calendar.DAY_OF_WEEK) != mFirstDayOfWeek
-                //|| mMaxDate.get(Calendar.DAY_OF_WEEK) != mFirstDayOfWeek) {
-                //mTotalWeekCount++;
-            //}
+            } 
+            
+            
+            
+            
+                
+                
+            
         }
 
         
@@ -1035,32 +1035,32 @@ public class CalendarView extends FrameLayout {
             {
                 boolean varCD7956ABABC4DE892AEFB296DF0E8383_974491122 = (selectedDay.get(Calendar.DAY_OF_YEAR) == mSelectedDate.get(Calendar.DAY_OF_YEAR)
                     && selectedDay.get(Calendar.YEAR) == mSelectedDate.get(Calendar.YEAR));
-            } //End collapsed parenthetic
+            } 
             mSelectedDate.setTimeInMillis(selectedDay.getTimeInMillis());
             mSelectedWeek = getWeeksSinceMinDate(mSelectedDate);
             mFocusedMonth = mSelectedDate.get(Calendar.MONTH);
             notifyDataSetChanged();
             addTaint(selectedDay.getTaint());
-            // ---------- Original Method ----------
-            //if (selectedDay.get(Calendar.DAY_OF_YEAR) == mSelectedDate.get(Calendar.DAY_OF_YEAR)
-                    //&& selectedDay.get(Calendar.YEAR) == mSelectedDate.get(Calendar.YEAR)) {
-                //return;
-            //}
-            //mSelectedDate.setTimeInMillis(selectedDay.getTimeInMillis());
-            //mSelectedWeek = getWeeksSinceMinDate(mSelectedDate);
-            //mFocusedMonth = mSelectedDate.get(Calendar.MONTH);
-            //notifyDataSetChanged();
+            
+            
+                    
+                
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.166 -0400", hash_original_method = "B5E95894B654555C190BA20C07877305", hash_generated_method = "36957FC0FE727D9A4DBBEF2723CCAF85")
         public Calendar getSelectedDay() {
-            Calendar varB4EAC82CA7396A68D541C85D26508E83_644077315 = null; //Variable for return #1
+            Calendar varB4EAC82CA7396A68D541C85D26508E83_644077315 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_644077315 = mSelectedDate;
-            varB4EAC82CA7396A68D541C85D26508E83_644077315.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_644077315.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_644077315;
-            // ---------- Original Method ----------
-            //return mSelectedDate;
+            
+            
         }
 
         
@@ -1069,21 +1069,21 @@ public class CalendarView extends FrameLayout {
         public int getCount() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658931847 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658931847;
-            // ---------- Original Method ----------
-            //return mTotalWeekCount;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.167 -0400", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "E49CED1F354DA8167F387B5B0A04F5D7")
         @Override
         public Object getItem(int position) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_2146193909 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_2146193909 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2146193909 = null;
             addTaint(position);
-            varB4EAC82CA7396A68D541C85D26508E83_2146193909.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2146193909.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2146193909;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
@@ -1093,19 +1093,19 @@ public class CalendarView extends FrameLayout {
             addTaint(position);
             long var0F5264038205EDFB1AC05FBB0E8C5E94_453670788 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_453670788;
-            // ---------- Original Method ----------
-            //return position;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.168 -0400", hash_original_method = "381E4A6A7165FC308D77C676467DC158", hash_generated_method = "716A17C7C1105BE24378010F3A7B9F71")
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            View varB4EAC82CA7396A68D541C85D26508E83_257417650 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_257417650 = null; 
             WeekView weekView = null;
             {
                 weekView = (WeekView) convertView;
-            } //End block
+            } 
             {
                 weekView = new WeekView(mContext);
                 android.widget.AbsListView.LayoutParams params = new android.widget.AbsListView.LayoutParams(LayoutParams.WRAP_CONTENT,
@@ -1113,7 +1113,7 @@ public class CalendarView extends FrameLayout {
                 weekView.setLayoutParams(params);
                 weekView.setClickable(true);
                 weekView.setOnTouchListener(this);
-            } //End block
+            } 
             int selectedWeekDay;
             selectedWeekDay = mSelectedDate.get(
                     Calendar.DAY_OF_WEEK);
@@ -1123,25 +1123,25 @@ public class CalendarView extends FrameLayout {
             addTaint(position);
             addTaint(convertView.getTaint());
             addTaint(parent.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_257417650.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_257417650.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_257417650;
-            // ---------- Original Method ----------
-            //WeekView weekView = null;
-            //if (convertView != null) {
-                //weekView = (WeekView) convertView;
-            //} else {
-                //weekView = new WeekView(mContext);
-                //android.widget.AbsListView.LayoutParams params =
-                    //new android.widget.AbsListView.LayoutParams(LayoutParams.WRAP_CONTENT,
-                            //LayoutParams.WRAP_CONTENT);
-                //weekView.setLayoutParams(params);
-                //weekView.setClickable(true);
-                //weekView.setOnTouchListener(this);
-            //}
-            //int selectedWeekDay = (mSelectedWeek == position) ? mSelectedDate.get(
-                    //Calendar.DAY_OF_WEEK) : -1;
-            //weekView.init(position, selectedWeekDay, mFocusedMonth);
-            //return weekView;
+            
+            
+            
+                
+            
+                
+                
+                    
+                            
+                
+                
+                
+            
+            
+                    
+            
+            
         }
 
         
@@ -1149,49 +1149,49 @@ public class CalendarView extends FrameLayout {
         public void setFocusMonth(int month) {
             mFocusedMonth = month;
             notifyDataSetChanged();
-            // ---------- Original Method ----------
-            //if (mFocusedMonth == month) {
-                //return;
-            //}
-            //mFocusedMonth = month;
-            //notifyDataSetChanged();
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.168 -0400", hash_original_method = "0A87811DE71587238059DB215F3C12EA", hash_generated_method = "CF0887948C48874165AB08BF427908D0")
         @Override
         public boolean onTouch(View v, MotionEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean var277EB5C98A687F20CD30DB195A6907DC_1918507589 = (mListView.isEnabled() && mGestureDetector.onTouchEvent(event));
                 {
                     WeekView weekView = (WeekView) v;
                     {
                         boolean varE873966111B65757788D695912C81706_457410508 = (!weekView.getDayFromLocation(event.getX(), mTempDate));
-                    } //End collapsed parenthetic
+                    } 
                     {
                         boolean var06D364B3EF750849619343EA8C49C6D6_710061377 = (mTempDate.before(mMinDate) || mTempDate.after(mMaxDate));
-                    } //End collapsed parenthetic
+                    } 
                     onDateTapped(mTempDate);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(v.getTaint());
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1471790350 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1471790350;
-            // ---------- Original Method ----------
-            //if (mListView.isEnabled() && mGestureDetector.onTouchEvent(event)) {
-                //WeekView weekView = (WeekView) v;
-                //if (!weekView.getDayFromLocation(event.getX(), mTempDate)) {
-                    //return true;
-                //}
-                //if (mTempDate.before(mMinDate) || mTempDate.after(mMaxDate)) {
-                    //return true;
-                //}
-                //onDateTapped(mTempDate);
-                //return true;
-            //}
-            //return false;
+            
+            
+                
+                
+                    
+                
+                
+                    
+                
+                
+                
+            
+            
         }
 
         
@@ -1200,9 +1200,9 @@ public class CalendarView extends FrameLayout {
             setSelectedDay(day);
             setMonthDisplayed(day);
             addTaint(day.getTaint());
-            // ---------- Original Method ----------
-            //setSelectedDay(day);
-            //setMonthDisplayed(day);
+            
+            
+            
         }
 
         
@@ -1211,19 +1211,19 @@ public class CalendarView extends FrameLayout {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.169 -0400", hash_original_method = "CB9AB034B294CB4BEC33AF8713B8812C", hash_generated_method = "CB9AB034B294CB4BEC33AF8713B8812C")
             public CalendarGestureListener ()
             {
-                //Synthesized constructor
+                
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.169 -0400", hash_original_method = "685EB340645172BC9B4FCDA0078720CA", hash_generated_method = "33FB9BADFDF20552B58F84A90B2CF7EC")
             @Override
             public boolean onSingleTapUp(MotionEvent e) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 addTaint(e.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1359386805 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1359386805;
-                // ---------- Original Method ----------
-                //return true;
+                
+                
             }
 
             
@@ -1292,10 +1292,10 @@ public class CalendarView extends FrameLayout {
                     .getPaddingBottom()) / mShownWeekCount;
             setPaintProperties();
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
-            //mHeight = (mListView.getHeight() - mListView.getPaddingTop() - mListView
-                    //.getPaddingBottom()) / mShownWeekCount;
-            //setPaintProperties();
+            
+            
+                    
+            
         }
 
         
@@ -1313,7 +1313,7 @@ public class CalendarView extends FrameLayout {
             int i = 0;
             {
                 mDayNumbers[0] = Integer.toString(mTempDate.get(Calendar.WEEK_OF_YEAR));
-            } //End block
+            } 
             int diff = mFirstDayOfWeek - mTempDate.get(Calendar.DAY_OF_WEEK);
             mTempDate.add(Calendar.DAY_OF_MONTH, diff);
             mFirstDay = (Calendar) mTempDate.clone();
@@ -1324,23 +1324,23 @@ public class CalendarView extends FrameLayout {
                     boolean varA4C78B059CEDEB9FC682C10660E5AFEC_563448149 = (mTempDate.before(mMinDate) || mTempDate.after(mMaxDate));
                     {
                         mDayNumbers[i] = "";
-                    } //End block
+                    } 
                     {
                         mDayNumbers[i] = Integer.toString(mTempDate.get(Calendar.DAY_OF_MONTH));
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mTempDate.add(Calendar.DAY_OF_MONTH, 1);
-            } //End block
+            } 
             {
                 boolean varB636F6DD6694AE5DF7206E7A350EAAF0_292059637 = (mTempDate.get(Calendar.DAY_OF_MONTH) == 1);
                 {
                     mTempDate.add(Calendar.DAY_OF_MONTH, -1);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mLastWeekDayMonth = mTempDate.get(Calendar.MONTH);
             updateSelectionPositions();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1356,17 +1356,17 @@ public class CalendarView extends FrameLayout {
             mMonthNumDrawPaint.setColor(mFocusedMonthDateColor);
             mMonthNumDrawPaint.setStyle(Style.FILL);
             mMonthNumDrawPaint.setTextAlign(Align.CENTER);
-            // ---------- Original Method ----------
-            //mDrawPaint.setFakeBoldText(false);
-            //mDrawPaint.setAntiAlias(true);
-            //mDrawPaint.setTextSize(mDateTextSize);
-            //mDrawPaint.setStyle(Style.FILL);
-            //mMonthNumDrawPaint.setFakeBoldText(true);
-            //mMonthNumDrawPaint.setAntiAlias(true);
-            //mMonthNumDrawPaint.setTextSize(mDateTextSize);
-            //mMonthNumDrawPaint.setColor(mFocusedMonthDateColor);
-            //mMonthNumDrawPaint.setStyle(Style.FILL);
-            //mMonthNumDrawPaint.setTextAlign(Align.CENTER);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1374,8 +1374,8 @@ public class CalendarView extends FrameLayout {
         public int getMonthOfFirstWeekDay() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_647800946 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_647800946;
-            // ---------- Original Method ----------
-            //return mMonthOfFirstWeekDay;
+            
+            
         }
 
         
@@ -1383,19 +1383,19 @@ public class CalendarView extends FrameLayout {
         public int getMonthOfLastWeekDay() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1592512097 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1592512097;
-            // ---------- Original Method ----------
-            //return mLastWeekDayMonth;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.174 -0400", hash_original_method = "58CF666CFDF77BB5B426C92097C0AA79", hash_generated_method = "3BD23AE45796CBB8051A9DD15B8F2B52")
         public Calendar getFirstDay() {
-            Calendar varB4EAC82CA7396A68D541C85D26508E83_1591849630 = null; //Variable for return #1
+            Calendar varB4EAC82CA7396A68D541C85D26508E83_1591849630 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1591849630 = mFirstDay;
-            varB4EAC82CA7396A68D541C85D26508E83_1591849630.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1591849630.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1591849630;
-            // ---------- Original Method ----------
-            //return mFirstDay;
+            
+            
         }
 
         
@@ -1406,7 +1406,7 @@ public class CalendarView extends FrameLayout {
             dayStart = 0;
             {
                 outCalendar.clear();
-            } //End block
+            } 
             int dayPosition = (int) ((x - dayStart) * mDaysPerWeek
                     / (mWidth - dayStart));
             outCalendar.setTimeInMillis(mFirstDay.getTimeInMillis());
@@ -1415,34 +1415,34 @@ public class CalendarView extends FrameLayout {
             addTaint(outCalendar.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2101191509 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2101191509;
-            // ---------- Original Method ----------
-            //int dayStart = mShowWeekNumber ? mWidth / mNumCells : 0;
-            //if (x < dayStart || x > mWidth) {
-                //outCalendar.clear();
-                //return false;
-            //}
-            //int dayPosition = (int) ((x - dayStart) * mDaysPerWeek
-                    /// (mWidth - dayStart));
-            //outCalendar.setTimeInMillis(mFirstDay.getTimeInMillis());
-            //outCalendar.add(Calendar.DAY_OF_MONTH, dayPosition);
-            //return true;
+            
+            
+            
+                
+                
+            
+            
+                    
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.175 -0400", hash_original_method = "2CF8C160EAF6EF1682AC691B4F4CBC56", hash_generated_method = "43DD5C7F82CC8E31B77ADF7E1E8655F4")
         @Override
         protected void onDraw(Canvas canvas) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             drawBackground(canvas);
             drawWeekNumbers(canvas);
             drawWeekSeparators(canvas);
             drawSelectedDateVerticalBars(canvas);
             addTaint(canvas.getTaint());
-            // ---------- Original Method ----------
-            //drawBackground(canvas);
-            //drawWeekNumbers(canvas);
-            //drawWeekSeparators(canvas);
-            //drawSelectedDateVerticalBars(canvas);
+            
+            
+            
+            
+            
         }
 
         
@@ -1458,19 +1458,19 @@ public class CalendarView extends FrameLayout {
             mTempRect.right = mWidth;
             canvas.drawRect(mTempRect, mDrawPaint);
             addTaint(canvas.getTaint());
-            // ---------- Original Method ----------
-            //if (!mHasSelectedDay) {
-                //return;
-            //}
-            //mDrawPaint.setColor(mSelectedWeekBackgroundColor);
-            //mTempRect.top = mWeekSeperatorLineWidth;
-            //mTempRect.bottom = mHeight;
-            //mTempRect.left = mShowWeekNumber ? mWidth / mNumCells : 0;
-            //mTempRect.right = mSelectedLeft - 2;
-            //canvas.drawRect(mTempRect, mDrawPaint);
-            //mTempRect.left = mSelectedRight + 3;
-            //mTempRect.right = mWidth;
-            //canvas.drawRect(mTempRect, mDrawPaint);
+            
+            
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1486,16 +1486,16 @@ public class CalendarView extends FrameLayout {
                 mDrawPaint.setColor(mWeekNumberColor);
                 int x = mWidth / divisor;
                 canvas.drawText(mDayNumbers[0], x, y, mDrawPaint);
-            } //End block
+            } 
             {
                 mMonthNumDrawPaint.setColor(mFocusDay[i] ? mFocusedMonthDateColor
                         : mUnfocusedMonthDateColor);
                 int x = (2 * i + 1) * mWidth / divisor;
                 canvas.drawText(mDayNumbers[i], x, y, mMonthNumDrawPaint);
-            } //End block
+            } 
             addTaint(canvas.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1504,7 +1504,7 @@ public class CalendarView extends FrameLayout {
             int firstFullyVisiblePosition = mListView.getFirstVisiblePosition();
             {
                 boolean varBD978972D5D723FA8E099F9CC95E4825_1469725820 = (mListView.getChildAt(0).getTop() < 0);
-            } //End collapsed parenthetic
+            } 
             mDrawPaint.setColor(mWeekSeparatorLineColor);
             mDrawPaint.setStrokeWidth(mWeekSeperatorLineWidth);
             float x;
@@ -1512,18 +1512,18 @@ public class CalendarView extends FrameLayout {
             x = 0;
             canvas.drawLine(x, 0, mWidth, 0, mDrawPaint);
             addTaint(canvas.getTaint());
-            // ---------- Original Method ----------
-            //int firstFullyVisiblePosition = mListView.getFirstVisiblePosition();
-            //if (mListView.getChildAt(0).getTop() < 0) {
-                //firstFullyVisiblePosition++;
-            //}
-            //if (firstFullyVisiblePosition == mWeek) {
-                //return;
-            //}
-            //mDrawPaint.setColor(mWeekSeparatorLineColor);
-            //mDrawPaint.setStrokeWidth(mWeekSeperatorLineWidth);
-            //float x = mShowWeekNumber ? mWidth / mNumCells : 0;
-            //canvas.drawLine(x, 0, mWidth, 0, mDrawPaint);
+            
+            
+            
+                
+            
+            
+                
+            
+            
+            
+            
+            
         }
 
         
@@ -1538,33 +1538,33 @@ public class CalendarView extends FrameLayout {
                     mSelectedRight + mSelectedDateVerticalBarWidth / 2, mHeight);
             mSelectedDateVerticalBar.draw(canvas);
             addTaint(canvas.getTaint());
-            // ---------- Original Method ----------
-            //if (!mHasSelectedDay) {
-                //return;
-            //}
-            //mSelectedDateVerticalBar.setBounds(mSelectedLeft - mSelectedDateVerticalBarWidth / 2,
-                    //mWeekSeperatorLineWidth,
-                    //mSelectedLeft + mSelectedDateVerticalBarWidth / 2, mHeight);
-            //mSelectedDateVerticalBar.draw(canvas);
-            //mSelectedDateVerticalBar.setBounds(mSelectedRight - mSelectedDateVerticalBarWidth / 2,
-                    //mWeekSeperatorLineWidth,
-                    //mSelectedRight + mSelectedDateVerticalBarWidth / 2, mHeight);
-            //mSelectedDateVerticalBar.draw(canvas);
+            
+            
+                
+            
+            
+                    
+                    
+            
+            
+                    
+                    
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.177 -0400", hash_original_method = "07B6C7DD90A0E1B5FAECCFBA1208B086", hash_generated_method = "1972DAE3BCDF252B5E7725991B95831C")
         @Override
         protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mWidth = w;
             updateSelectionPositions();
             addTaint(h);
             addTaint(oldw);
             addTaint(oldh);
-            // ---------- Original Method ----------
-            //mWidth = w;
-            //updateSelectionPositions();
+            
+            
+            
         }
 
         
@@ -1574,34 +1574,34 @@ public class CalendarView extends FrameLayout {
                 int selectedPosition = mSelectedDay - mFirstDayOfWeek;
                 {
                     selectedPosition += 7;
-                } //End block
+                } 
                 mSelectedLeft = selectedPosition * mWidth / mNumCells;
                 mSelectedRight = (selectedPosition + 1) * mWidth / mNumCells;
-            } //End block
-            // ---------- Original Method ----------
-            //if (mHasSelectedDay) {
-                //int selectedPosition = mSelectedDay - mFirstDayOfWeek;
-                //if (selectedPosition < 0) {
-                    //selectedPosition += 7;
-                //}
-                //if (mShowWeekNumber) {
-                    //selectedPosition++;
-                //}
-                //mSelectedLeft = selectedPosition * mWidth / mNumCells;
-                //mSelectedRight = (selectedPosition + 1) * mWidth / mNumCells;
-            //}
+            } 
+            
+            
+                
+                
+                    
+                
+                
+                    
+                
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.178 -0400", hash_original_method = "F89A4F4FAB6DC416DC0DD7077DC69E1C", hash_generated_method = "B106B2333717447AF45A115BEFE82AB6")
         @Override
         protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             setMeasuredDimension(MeasureSpec.getSize(widthMeasureSpec), mHeight);
             addTaint(widthMeasureSpec);
             addTaint(heightMeasureSpec);
-            // ---------- Original Method ----------
-            //setMeasuredDimension(MeasureSpec.getSize(widthMeasureSpec), mHeight);
+            
+            
         }
 
         

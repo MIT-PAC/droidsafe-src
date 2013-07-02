@@ -1,11 +1,11 @@
 package org.apache.commons.io.filefilter;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.Serializable;
@@ -22,7 +22,7 @@ public class SizeFileFilter extends AbstractFileFilter implements Serializable {
     public  SizeFileFilter(long size) {
         this(size, true);
         addTaint(size);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,18 +30,19 @@ public class SizeFileFilter extends AbstractFileFilter implements Serializable {
     public  SizeFileFilter(long size, boolean acceptLarger) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The size must be non-negative");
-        } //End block
+        } 
         this.size = size;
         this.acceptLarger = acceptLarger;
-        // ---------- Original Method ----------
-        //if (size < 0) {
-            //throw new IllegalArgumentException("The size must be non-negative");
-        //}
-        //this.size = size;
-        //this.acceptLarger = acceptLarger;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.936 -0400", hash_original_method = "13EB4F7103C9E58EC2AD605053CF5788", hash_generated_method = "30CAEA7473C2C3B262ABAECD4BBEFEFC")
     @Override
     public boolean accept(File file) {
@@ -49,25 +50,26 @@ public class SizeFileFilter extends AbstractFileFilter implements Serializable {
         addTaint(file.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_394332050 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_394332050;
-        // ---------- Original Method ----------
-        //boolean smaller = file.length() < size;
-        //return acceptLarger ? !smaller : smaller;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.936 -0400", hash_original_method = "9CC552A05DC39BBA2C336B2A0E87E39E", hash_generated_method = "F6C4D8B71FA160155C64274CC79C8D22")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_796050906 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_796050906 = null; 
         String condition;
         condition = ">=";
         condition = "<";
         varB4EAC82CA7396A68D541C85D26508E83_796050906 = super.toString() + "(" + condition + size + ")";
-        varB4EAC82CA7396A68D541C85D26508E83_796050906.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_796050906.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_796050906;
-        // ---------- Original Method ----------
-        //String condition = acceptLarger ? ">=" : "<";
-        //return super.toString() + "(" + condition + size + ")";
+        
+        
+        
     }
 
     

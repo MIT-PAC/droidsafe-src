@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x9;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 import org.bouncycastle.asn1.ASN1Encodable;
@@ -22,8 +22,8 @@ public class X9FieldElement extends ASN1Encodable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.463 -0400", hash_original_method = "F44590D2DC1CB9A850DEED8AA932C508", hash_generated_method = "B40DD49217D53D4CC78C975F7729E462")
     public  X9FieldElement(ECFieldElement f) {
         this.f = f;
-        // ---------- Original Method ----------
-        //this.f = f;
+        
+        
     }
 
     
@@ -32,7 +32,7 @@ public class X9FieldElement extends ASN1Encodable {
         this(new ECFieldElement.Fp(p, new BigInteger(1, s.getOctets())));
         addTaint(p.getTaint());
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -44,33 +44,34 @@ public class X9FieldElement extends ASN1Encodable {
         addTaint(k2);
         addTaint(k3);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.464 -0400", hash_original_method = "8A2CB601358E90D44574A6BC9E09C2FF", hash_generated_method = "4330531918E511A422068D9F5CE18F79")
     public ECFieldElement getValue() {
-        ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1039484323 = null; //Variable for return #1
+        ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1039484323 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1039484323 = f;
-        varB4EAC82CA7396A68D541C85D26508E83_1039484323.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1039484323.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1039484323;
-        // ---------- Original Method ----------
-        //return f;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:45.464 -0400", hash_original_method = "C3D6716565C168642D40E95793D0D07C", hash_generated_method = "7BFA29D64AD2030113E6CB2FE2D927A3")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_882981143 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_882981143 = null; 
         int byteCount = converter.getByteLength(f);
         byte[] paddedBigInteger = converter.integerToBytes(f.toBigInteger(), byteCount);
         varB4EAC82CA7396A68D541C85D26508E83_882981143 = new DEROctetString(paddedBigInteger);
-        varB4EAC82CA7396A68D541C85D26508E83_882981143.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_882981143.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_882981143;
-        // ---------- Original Method ----------
-        //int byteCount = converter.getByteLength(f);
-        //byte[] paddedBigInteger = converter.integerToBytes(f.toBigInteger(), byteCount);
-        //return new DEROctetString(paddedBigInteger);
+        
+        
+        
+        
     }
 
     

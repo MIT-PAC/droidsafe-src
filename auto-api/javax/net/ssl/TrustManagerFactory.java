@@ -1,11 +1,11 @@
 package javax.net.ssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.KeyStore;
@@ -33,10 +33,10 @@ public class TrustManagerFactory {
         this.provider = provider;
         this.algorithm = algorithm;
         this.spiImpl = factorySpi;
-        // ---------- Original Method ----------
-        //this.provider = provider;
-        //this.algorithm = algorithm;
-        //this.spiImpl = factorySpi;
+        
+        
+        
+        
     }
 
     
@@ -80,23 +80,23 @@ public class TrustManagerFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.744 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "FF82CEB0173A79AE6DFE56B5785E6B32")
     public final String getAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_88385365 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_88385365 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_88385365 = algorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_88385365.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_88385365.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_88385365;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.744 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "A13C0CBB0ABF95B40C601510EFC100F9")
     public final Provider getProvider() {
-        Provider varB4EAC82CA7396A68D541C85D26508E83_35287447 = null; //Variable for return #1
+        Provider varB4EAC82CA7396A68D541C85D26508E83_35287447 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_35287447 = provider;
-        varB4EAC82CA7396A68D541C85D26508E83_35287447.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_35287447.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_35287447;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
@@ -104,8 +104,8 @@ public class TrustManagerFactory {
     public final void init(KeyStore ks) throws KeyStoreException {
         spiImpl.engineInit(ks);
         addTaint(ks.getTaint());
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(ks);
+        
+        
     }
 
     
@@ -113,19 +113,19 @@ public class TrustManagerFactory {
     public final void init(ManagerFactoryParameters spec) throws InvalidAlgorithmParameterException {
         spiImpl.engineInit(spec);
         addTaint(spec.getTaint());
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(spec);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.745 -0400", hash_original_method = "9A37AD00FB926A5C41BF7A3778BB3A49", hash_generated_method = "8DDF002D41617E270FC9191CE015E252")
     public final TrustManager[] getTrustManagers() {
-        TrustManager[] varB4EAC82CA7396A68D541C85D26508E83_777184614 = null; //Variable for return #1
+        TrustManager[] varB4EAC82CA7396A68D541C85D26508E83_777184614 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_777184614 = spiImpl.engineGetTrustManagers();
-        varB4EAC82CA7396A68D541C85D26508E83_777184614.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_777184614.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_777184614;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGetTrustManagers();
+        
+        
     }
 
     

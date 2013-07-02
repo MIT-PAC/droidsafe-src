@@ -1,11 +1,11 @@
 package libcore.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -19,10 +19,11 @@ public final class HttpDate {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.806 -0400", hash_original_method = "0136B205498F115685D55FF9321B6B42", hash_generated_method = "0136B205498F115685D55FF9321B6B42")
     public HttpDate ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static Date parse(String value) {
         try {
             return STANDARD_DATE_FORMAT.get().parse(value);
@@ -38,6 +39,7 @@ public final class HttpDate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String format(Date value) {
         return STANDARD_DATE_FORMAT.get().format(value);
     }
@@ -49,16 +51,16 @@ public final class HttpDate {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.807 -0400", hash_original_method = "884CECE43D2C8988F9978CEA7BD2135F", hash_generated_method = "C825C1CF5D34F144303E23409DAA668A")
         @Override
         protected DateFormat initialValue() {
-            DateFormat varB4EAC82CA7396A68D541C85D26508E83_748319768 = null; //Variable for return #1
+            DateFormat varB4EAC82CA7396A68D541C85D26508E83_748319768 = null; 
             DateFormat rfc1123 = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.US);
             rfc1123.setTimeZone(TimeZone.getTimeZone("UTC"));
             varB4EAC82CA7396A68D541C85D26508E83_748319768 = rfc1123;
-            varB4EAC82CA7396A68D541C85D26508E83_748319768.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_748319768.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_748319768;
-            // ---------- Original Method ----------
-            //DateFormat rfc1123 = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.US);
-            //rfc1123.setTimeZone(TimeZone.getTimeZone("UTC"));
-            //return rfc1123;
+            
+            
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.InterruptedIOException;
 
@@ -13,7 +13,7 @@ public class SocketTimeoutException extends InterruptedIOException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.907 -0400", hash_original_method = "4A11638BF238EC4AAC97B2692C051A84", hash_generated_method = "AA146E7357A4622B881D9BB8D6E998AE")
     public  SocketTimeoutException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class SocketTimeoutException extends InterruptedIOException {
     public  SocketTimeoutException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ public class SocketTimeoutException extends InterruptedIOException {
     public  SocketTimeoutException(Throwable cause) {
         super(null, cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,7 +38,7 @@ public class SocketTimeoutException extends InterruptedIOException {
         super(detailMessage, cause);
         addTaint(detailMessage.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

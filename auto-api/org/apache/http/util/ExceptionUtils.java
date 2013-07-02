@@ -1,11 +1,11 @@
 package org.apache.http.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.reflect.Method;
 
@@ -13,10 +13,11 @@ public final class ExceptionUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.744 -0400", hash_original_method = "A1F3D67C211E4EC7543A3C1E27BD7049", hash_generated_method = "F95AF61D71C58EF7813E91379E4F91E7")
     private  ExceptionUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static private Method getInitCauseMethod() {
         try {
             Class[] paramsClasses = new Class[] { Throwable.class };
@@ -27,6 +28,7 @@ public final class ExceptionUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void initCause(Throwable throwable, Throwable cause) {
         if (INIT_CAUSE_METHOD != null) {
             try {

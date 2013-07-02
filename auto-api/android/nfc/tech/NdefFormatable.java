@@ -1,11 +1,11 @@
 package android.nfc.tech;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.nfc.ErrorCodes;
 import android.nfc.FormatException;
@@ -24,10 +24,11 @@ public final class NdefFormatable extends BasicTagTechnology {
     public  NdefFormatable(Tag tag) throws RemoteException {
         super(tag, TagTechnology.NDEF_FORMATABLE);
         addTaint(tag.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NdefFormatable get(Tag tag) {
         if (!tag.hasTech(TagTechnology.NDEF_FORMATABLE)) return null;
         try {
@@ -38,21 +39,23 @@ public final class NdefFormatable extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.448 -0400", hash_original_method = "6CDCACAEC64FFB65AEDACBA4B44913A4", hash_generated_method = "6C502E51A0F06DA64CEF3D197F447571")
     public void format(NdefMessage firstMessage) throws IOException, FormatException {
         format(firstMessage, false);
         addTaint(firstMessage.getTaint());
-        // ---------- Original Method ----------
-        //format(firstMessage, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.449 -0400", hash_original_method = "2D5D7133932920FB3E992CFF7D090021", hash_generated_method = "FD04A17CA06CACB14F8E96E3D9CB9338")
     public void formatReadOnly(NdefMessage firstMessage) throws IOException, FormatException {
         format(firstMessage, true);
         addTaint(firstMessage.getTaint());
-        // ---------- Original Method ----------
-        //format(firstMessage, true);
+        
+        
     }
 
     
@@ -65,52 +68,52 @@ public final class NdefFormatable extends BasicTagTechnology {
             int serviceHandle = mTag.getServiceHandle();
             INfcTag tagService = mTag.getTagService();
             int errorCode = tagService.formatNdef(serviceHandle, MifareClassic.KEY_DEFAULT);
-            //Begin case ErrorCodes.ERROR_IO 
+            
             if (DroidSafeAndroidRuntime.control) throw new IOException();
-            //End case ErrorCodes.ERROR_IO 
-            //Begin case ErrorCodes.ERROR_INVALID_PARAM 
+            
+            
             if (DroidSafeAndroidRuntime.control) throw new FormatException();
-            //End case ErrorCodes.ERROR_INVALID_PARAM 
-            //Begin case default 
+            
+            
             if (DroidSafeAndroidRuntime.control) throw new IOException();
-            //End case default 
+            
             {
                 boolean var9E38A8733EA654A0B89FA7D8640BC718_23758378 = (tagService.isNdef(serviceHandle));
                 {
                     errorCode = tagService.ndefWrite(serviceHandle, firstMessage);
-                    //Begin case ErrorCodes.ERROR_IO 
+                    
                     if (DroidSafeAndroidRuntime.control) throw new IOException();
-                    //End case ErrorCodes.ERROR_IO 
-                    //Begin case ErrorCodes.ERROR_INVALID_PARAM 
+                    
+                    
                     if (DroidSafeAndroidRuntime.control) throw new FormatException();
-                    //End case ErrorCodes.ERROR_INVALID_PARAM 
-                    //Begin case default 
+                    
+                    
                     if (DroidSafeAndroidRuntime.control) throw new IOException();
-                    //End case default 
-                } //End block
+                    
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 errorCode = tagService.ndefMakeReadOnly(serviceHandle);
-                //Begin case ErrorCodes.ERROR_IO 
+                
                 if (DroidSafeAndroidRuntime.control) throw new IOException();
-                //End case ErrorCodes.ERROR_IO 
-                //Begin case ErrorCodes.ERROR_INVALID_PARAM 
+                
+                
                 if (DroidSafeAndroidRuntime.control) throw new IOException();
-                //End case ErrorCodes.ERROR_INVALID_PARAM 
-                //Begin case default 
+                
+                
                 if (DroidSafeAndroidRuntime.control) throw new IOException();
-                //End case default 
-            } //End block
-        } //End block
+                
+            } 
+        } 
         catch (RemoteException e)
         { }
         addTaint(firstMessage.getTaint());
         addTaint(makeReadOnly);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

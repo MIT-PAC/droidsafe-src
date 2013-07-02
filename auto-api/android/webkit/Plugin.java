@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.R;
 import android.app.AlertDialog;
@@ -41,72 +41,72 @@ public class Plugin {
         mFileName = fileName;
         mDescription = description;
         mHandler = new DefaultClickHandler();
-        // ---------- Original Method ----------
-        //mName = name;
-        //mPath = path;
-        //mFileName = fileName;
-        //mDescription = description;
-        //mHandler = new DefaultClickHandler();
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.348 -0400", hash_original_method = "43BC08E1F7E5C666CAA2DF1AE267F887", hash_generated_method = "82BA4BBD90150800BC92B114227A965E")
     @Deprecated
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1651449583 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1651449583 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1651449583 = mName;
-        varB4EAC82CA7396A68D541C85D26508E83_1651449583.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1651449583.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1651449583;
-        // ---------- Original Method ----------
-        //return mName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.349 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "2F4AD37C25F7D0EE985A590124FAC0B8")
     @Deprecated
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_845076991 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_845076991 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_845076991 = mName;
-        varB4EAC82CA7396A68D541C85D26508E83_845076991.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_845076991.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_845076991;
-        // ---------- Original Method ----------
-        //return mName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.349 -0400", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "47B384FF0ED7EDD1FE3A495A1FC3BD7A")
     @Deprecated
     public String getPath() {
-        String varB4EAC82CA7396A68D541C85D26508E83_881825018 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_881825018 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_881825018 = mPath;
-        varB4EAC82CA7396A68D541C85D26508E83_881825018.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_881825018.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_881825018;
-        // ---------- Original Method ----------
-        //return mPath;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.350 -0400", hash_original_method = "893C26134B08FF7C2100195EAF1C3901", hash_generated_method = "911A6261E041D86C606DF1F321756764")
     @Deprecated
     public String getFileName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1626005586 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1626005586 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1626005586 = mFileName;
-        varB4EAC82CA7396A68D541C85D26508E83_1626005586.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1626005586.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1626005586;
-        // ---------- Original Method ----------
-        //return mFileName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.350 -0400", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "3E557878D151BF31CD0F7A997419211F")
     @Deprecated
     public String getDescription() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1824576174 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1824576174 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1824576174 = mDescription;
-        varB4EAC82CA7396A68D541C85D26508E83_1824576174.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1824576174.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1824576174;
-        // ---------- Original Method ----------
-        //return mDescription;
+        
+        
     }
 
     
@@ -114,8 +114,8 @@ public class Plugin {
     @Deprecated
     public void setName(String name) {
         mName = name;
-        // ---------- Original Method ----------
-        //mName = name;
+        
+        
     }
 
     
@@ -123,8 +123,8 @@ public class Plugin {
     @Deprecated
     public void setPath(String path) {
         mPath = path;
-        // ---------- Original Method ----------
-        //mPath = path;
+        
+        
     }
 
     
@@ -132,8 +132,8 @@ public class Plugin {
     @Deprecated
     public void setFileName(String fileName) {
         mFileName = fileName;
-        // ---------- Original Method ----------
-        //mFileName = fileName;
+        
+        
     }
 
     
@@ -141,8 +141,8 @@ public class Plugin {
     @Deprecated
     public void setDescription(String description) {
         mDescription = description;
-        // ---------- Original Method ----------
-        //mDescription = description;
+        
+        
     }
 
     
@@ -150,8 +150,8 @@ public class Plugin {
     @Deprecated
     public void setClickHandler(PreferencesClickHandler handler) {
         mHandler = handler;
-        // ---------- Original Method ----------
-        //mHandler = handler;
+        
+        
     }
 
     
@@ -160,12 +160,12 @@ public class Plugin {
     public void dispatchClickEvent(Context context) {
         {
             mHandler.handleClickEvent(context);
-        } //End block
+        } 
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //if (mHandler != null) {
-            //mHandler.handleClickEvent(context);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -177,7 +177,7 @@ public class Plugin {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.352 -0400", hash_original_method = "4B0F149C9C655DFB86CE4B1F7F82F0C3", hash_generated_method = "4B0F149C9C655DFB86CE4B1F7F82F0C3")
         public DefaultClickHandler ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -191,30 +191,30 @@ public class Plugin {
                         .setPositiveButton(R.string.ok, this)
                         .setCancelable(false)
                         .show();
-            } //End block
-            // ---------- Original Method ----------
-            //if (mDialog == null) {
-                //mDialog = new AlertDialog.Builder(context)
-                        //.setTitle(mName)
-                        //.setMessage(mDescription)
-                        //.setPositiveButton(R.string.ok, this)
-                        //.setCancelable(false)
-                        //.show();
-            //}
+            } 
+            
+            
+                
+                        
+                        
+                        
+                        
+                        
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.352 -0400", hash_original_method = "AC430E0A291DF33FFA8EC94A86B6279D", hash_generated_method = "1D5D4FF75A48BD8D265C8A29B3785327")
         @Deprecated
         public void onClick(DialogInterface dialog, int which) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mDialog.dismiss();
             mDialog = null;
             addTaint(dialog.getTaint());
             addTaint(which);
-            // ---------- Original Method ----------
-            //mDialog.dismiss();
-            //mDialog = null;
+            
+            
+            
         }
 
         

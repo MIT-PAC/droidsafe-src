@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class DelegatedTask implements Runnable {
@@ -20,32 +20,33 @@ public class DelegatedTask implements Runnable {
     public  DelegatedTask(Runnable action, HandshakeProtocol handshaker) {
         this.action = action;
         this.handshaker = handshaker;
-        // ---------- Original Method ----------
-        //this.action = action;
-        //this.handshaker = handshaker;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.032 -0400", hash_original_method = "BC92620C95DC261FCD2ED821B8965098", hash_generated_method = "187D0088FB192CF2321E7E72C7476352")
     public void run() {
         {
             try 
             {
                 action.run();
-            } //End block
+            } 
             catch (RuntimeException e)
             {
                 handshaker.delegatedTaskErr = e;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (handshaker) {
-            //try {
-                //action.run();
-            //} catch (RuntimeException e) {
-                //handshaker.delegatedTaskErr = e;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     

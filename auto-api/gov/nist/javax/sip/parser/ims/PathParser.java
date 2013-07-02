@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.header.ims.Path;
@@ -21,7 +21,7 @@ public class PathParser extends AddressParametersParser implements TokenTypes {
     public  PathParser(String path) {
         super(path);
         addTaint(path.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,13 +29,14 @@ public class PathParser extends AddressParametersParser implements TokenTypes {
     protected  PathParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.182 -0400", hash_original_method = "F1314A453C93E830C24484946DC25942", hash_generated_method = "0F35743467510C12CF624D86A840B105")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1124771936 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1124771936 = null; 
         PathList pathList = new PathList();
         dbg_enter("PathParser.parse");
         try 
@@ -53,19 +54,19 @@ public class PathParser extends AddressParametersParser implements TokenTypes {
                 {
                     this.lexer.match(',');
                     this.lexer.SPorHT();
-                } //End block
+                } 
                 if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected char");
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1124771936 = pathList;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("PathParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1124771936.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1124771936.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1124771936;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.os.RuntimeInit;
 import java.io.PrintWriter;
@@ -16,7 +16,7 @@ public final class Log {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.349 -0400", hash_original_method = "869367D375FC874369E92ACB08C85ECE", hash_generated_method = "A62EB914C3FFD50186C13765FE4CB4E6")
     private  Log() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -144,7 +144,7 @@ public final class Log {
             super(msg, cause);
             addTaint(msg.getTaint());
             addTaint(cause.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -179,12 +179,12 @@ public final class Log {
     private static TerribleFailureHandler sWtfHandler = new TerribleFailureHandler() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.354 -0400", hash_original_method = "90BA23F8182E406DC4D5C312FC444694", hash_generated_method = "4C8A9452FEB3740EEFD06B4E1BFB8698")
         public void onTerribleFailure(String tag, TerribleFailure what) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             RuntimeInit.wtf(tag, what);
             addTaint(tag.getTaint());
             addTaint(what.getTaint());
-            // ---------- Original Method ----------
-            //RuntimeInit.wtf(tag, what);
+            
+            
         }
 
         

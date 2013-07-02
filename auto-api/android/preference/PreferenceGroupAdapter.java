@@ -1,11 +1,11 @@
 package android.preference;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,8 +46,8 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.482 -0400", hash_original_method = "64E55F1CB25012944C9000EFC5F6389C", hash_generated_method = "098280FA3EF6FEBB87417E5331607D15")
         public void run() {
             syncMyPreferences();
-            // ---------- Original Method ----------
-            //syncMyPreferences();
+            
+            
         }
 
         
@@ -60,20 +60,21 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
         mPreferenceList = new ArrayList<Preference>();
         mPreferenceLayouts = new ArrayList<PreferenceLayout>();
         syncMyPreferences();
-        // ---------- Original Method ----------
-        //mPreferenceGroup = preferenceGroup;
-        //mPreferenceGroup.setOnPreferenceChangeInternalListener(this);
-        //mPreferenceList = new ArrayList<Preference>();
-        //mPreferenceLayouts = new ArrayList<PreferenceLayout>();
-        //syncMyPreferences();
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.483 -0400", hash_original_method = "47CAC8934A77F33A41B8A2FADE539715", hash_generated_method = "933F7AE243A08C301FCD3C02BD7E5023")
     private void syncMyPreferences() {
         {
             mIsSyncing = true;
-        } //End block
+        } 
         List<Preference> newPreferenceList = new ArrayList<Preference>(mPreferenceList.size());
         flattenPreferenceGroup(newPreferenceList, mPreferenceGroup);
         mPreferenceList = newPreferenceList;
@@ -81,25 +82,26 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
         {
             mIsSyncing = false;
             notifyAll();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized(this) {
-            //if (mIsSyncing) {
-                //return;
-            //}
-            //mIsSyncing = true;
-        //}
-        //List<Preference> newPreferenceList = new ArrayList<Preference>(mPreferenceList.size());
-        //flattenPreferenceGroup(newPreferenceList, mPreferenceGroup);
-        //mPreferenceList = newPreferenceList;
-        //notifyDataSetChanged();
-        //synchronized(this) {
-            //mIsSyncing = false;
-            //notifyAll();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
+        
+        
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.483 -0400", hash_original_method = "DB0831C85843D6D53F9495F3413A2CE3", hash_generated_method = "CFFEED66421E33C5BE3C9D4A8243B8C5")
     private void flattenPreferenceGroup(List<Preference> preferences, PreferenceGroup group) {
         group.sortPreferences();
@@ -113,30 +115,31 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
                     boolean var40B43CACDE7540D84B524CC399BFB861_1904913317 = (!mHasReturnedViewTypeCount && !preference.hasSpecifiedLayout());
                     {
                         addPreferenceClassName(preference);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     final PreferenceGroup preferenceAsGroup = (PreferenceGroup) preference;
                     {
                         boolean varE978992A5EA3610B487523EDFB788538_1640408684 = (preferenceAsGroup.isOnSameScreenAsChildren());
                         {
                             flattenPreferenceGroup(preferences, preferenceAsGroup);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 preference.setOnPreferenceChangeInternalListener(this);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(preferences.getTaint());
         addTaint(group.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.486 -0400", hash_original_method = "B927BA6712254BD5B8D47CF220E79C5B", hash_generated_method = "F2437ACEB1F2950AE35435DE3F16D831")
     private PreferenceLayout createPreferenceLayout(Preference preference, PreferenceLayout in) {
-        PreferenceLayout varB4EAC82CA7396A68D541C85D26508E83_806881247 = null; //Variable for return #1
+        PreferenceLayout varB4EAC82CA7396A68D541C85D26508E83_806881247 = null; 
         PreferenceLayout pl;
         pl = in;
         pl = new PreferenceLayout();
@@ -146,17 +149,18 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
         varB4EAC82CA7396A68D541C85D26508E83_806881247 = pl;
         addTaint(preference.getTaint());
         addTaint(in.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_806881247.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_806881247.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_806881247;
-        // ---------- Original Method ----------
-        //PreferenceLayout pl = in != null? in : new PreferenceLayout();
-        //pl.name = preference.getClass().getName();
-        //pl.resId = preference.getLayoutResource();
-        //pl.widgetResId = preference.getWidgetLayoutResource();
-        //return pl;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.486 -0400", hash_original_method = "22004160B58BE5F5ED0505DF7AB89FF1", hash_generated_method = "64C6BDFDFF939CADAD7248C6FFF4FA50")
     private void addPreferenceClassName(Preference preference) {
         final PreferenceLayout pl = createPreferenceLayout(preference, null);
@@ -164,110 +168,115 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
         {
             insertPos = insertPos * -1 - 1;
             mPreferenceLayouts.add(insertPos, pl);
-        } //End block
+        } 
         addTaint(preference.getTaint());
-        // ---------- Original Method ----------
-        //final PreferenceLayout pl = createPreferenceLayout(preference, null);
-        //int insertPos = Collections.binarySearch(mPreferenceLayouts, pl);
-        //if (insertPos < 0) {
-            //insertPos = insertPos * -1 - 1;
-            //mPreferenceLayouts.add(insertPos, pl);
-        //}
+        
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.487 -0400", hash_original_method = "146D9A3F8F2485F6100744DF28993915", hash_generated_method = "B7BBE42F7D0103B8D85E40D0FDBCD31A")
     public int getCount() {
         int var0BB871AF6B245B4A49AE35894863E9A5_239153169 = (mPreferenceList.size());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1729658960 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1729658960;
-        // ---------- Original Method ----------
-        //return mPreferenceList.size();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.487 -0400", hash_original_method = "B1551AF468D615637FECD6277399376D", hash_generated_method = "8B60456E205255A9A783475920B1006C")
     public Preference getItem(int position) {
-        Preference varB4EAC82CA7396A68D541C85D26508E83_1792702108 = null; //Variable for return #1
-        Preference varB4EAC82CA7396A68D541C85D26508E83_841889941 = null; //Variable for return #2
+        Preference varB4EAC82CA7396A68D541C85D26508E83_1792702108 = null; 
+        Preference varB4EAC82CA7396A68D541C85D26508E83_841889941 = null; 
         {
             boolean var45192FB07B3B45171D06867ACD726073_1931302918 = (position < 0 || position >= getCount());
             varB4EAC82CA7396A68D541C85D26508E83_1792702108 = null;
-        } //End collapsed parenthetic
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_841889941 = mPreferenceList.get(position);
         addTaint(position);
-        Preference varA7E53CE21691AB073D9660D615818899_1062617110; //Final return value
+        Preference varA7E53CE21691AB073D9660D615818899_1062617110; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1062617110 = varB4EAC82CA7396A68D541C85D26508E83_1792702108;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1062617110 = varB4EAC82CA7396A68D541C85D26508E83_841889941;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1062617110.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1062617110.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1062617110;
-        // ---------- Original Method ----------
-        //if (position < 0 || position >= getCount()) return null;
-        //return mPreferenceList.get(position);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.488 -0400", hash_original_method = "C2BB649F8AE8B2BA22DD6170BF8090F3", hash_generated_method = "C8F284D396DE0B9B0FFB5A707F2BDF22")
     public long getItemId(int position) {
         {
             boolean var45192FB07B3B45171D06867ACD726073_1660803731 = (position < 0 || position >= getCount());
-        } //End collapsed parenthetic
+        } 
         long var9A0649B1E597F61DA956857B024285E0_668184929 = (this.getItem(position).getId());
         addTaint(position);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1809364200 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1809364200;
-        // ---------- Original Method ----------
-        //if (position < 0 || position >= getCount()) return ListView.INVALID_ROW_ID;
-        //return this.getItem(position).getId();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.489 -0400", hash_original_method = "0A6038B272F94F277CAFD95B96B15A1A", hash_generated_method = "83B7086C6EE9A6A5D808D30EC7A5CE87")
     public View getView(int position, View convertView, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_297616295 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_297616295 = null; 
         final Preference preference = this.getItem(position);
         mTempPreferenceLayout = createPreferenceLayout(preference, mTempPreferenceLayout);
         {
             boolean var0B0B396A5E36CD68AD5961924C81E087_881526379 = (Collections.binarySearch(mPreferenceLayouts, mTempPreferenceLayout) < 0);
             {
                 convertView = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_297616295 = preference.getView(convertView, parent);
         addTaint(position);
         addTaint(convertView.getTaint());
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_297616295.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_297616295.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_297616295;
-        // ---------- Original Method ----------
-        //final Preference preference = this.getItem(position);
-        //mTempPreferenceLayout = createPreferenceLayout(preference, mTempPreferenceLayout);
-        //if (Collections.binarySearch(mPreferenceLayouts, mTempPreferenceLayout) < 0) {
-            //convertView = null;
-        //}
-        //return preference.getView(convertView, parent);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.489 -0400", hash_original_method = "ED75A4DEF716F8048DFD61CCEF0A4510", hash_generated_method = "F801E993F2458F38C20467E408F528DF")
     @Override
     public boolean isEnabled(int position) {
         {
             boolean var45192FB07B3B45171D06867ACD726073_1843062640 = (position < 0 || position >= getCount());
-        } //End collapsed parenthetic
+        } 
         boolean varDF36F1121016E2EC170CA94BD0653774_330335986 = (this.getItem(position).isSelectable());
         addTaint(position);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_8895685 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_8895685;
-        // ---------- Original Method ----------
-        //if (position < 0 || position >= getCount()) return true;
-        //return this.getItem(position).isSelectable();
+        
+        
+        
     }
 
     
@@ -276,30 +285,32 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
     public boolean areAllItemsEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1939270567 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1939270567;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.490 -0400", hash_original_method = "C2E233D65C74168849EC7AB5F1A2D9C0", hash_generated_method = "1DCFE1C6BDEA034C748E4C6D97AA424B")
     public void onPreferenceChange(Preference preference) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         notifyDataSetChanged();
         addTaint(preference.getTaint());
-        // ---------- Original Method ----------
-        //notifyDataSetChanged();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.490 -0400", hash_original_method = "96B325BF777CE525D2D64038C1261EF1", hash_generated_method = "A1FADCE7230F148BC856F774670D35AF")
     public void onPreferenceHierarchyChange(Preference preference) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mHandler.removeCallbacks(mSyncRunnable);
         mHandler.post(mSyncRunnable);
         addTaint(preference.getTaint());
-        // ---------- Original Method ----------
-        //mHandler.removeCallbacks(mSyncRunnable);
-        //mHandler.post(mSyncRunnable);
+        
+        
+        
     }
 
     
@@ -308,58 +319,60 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
     public boolean hasStableIds() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1990393265 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1990393265;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.491 -0400", hash_original_method = "95969FB891958AA0335CF8E62A1ABF37", hash_generated_method = "F0C93C35C3279BA94B402343BA37A191")
     @Override
     public int getItemViewType(int position) {
         {
             mHasReturnedViewTypeCount = true;
-        } //End block
+        } 
         final Preference preference = this.getItem(position);
         {
             boolean var19F6D64A36EFF1C69D8A34EB7BC97077_1645281960 = (preference.hasSpecifiedLayout());
-        } //End collapsed parenthetic
+        } 
         mTempPreferenceLayout = createPreferenceLayout(preference, mTempPreferenceLayout);
         int viewType = Collections.binarySearch(mPreferenceLayouts, mTempPreferenceLayout);
         addTaint(position);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1549318963 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1549318963;
-        // ---------- Original Method ----------
-        //if (!mHasReturnedViewTypeCount) {
-            //mHasReturnedViewTypeCount = true;
-        //}
-        //final Preference preference = this.getItem(position);
-        //if (preference.hasSpecifiedLayout()) {
-            //return IGNORE_ITEM_VIEW_TYPE;
-        //}
-        //mTempPreferenceLayout = createPreferenceLayout(preference, mTempPreferenceLayout);
-        //int viewType = Collections.binarySearch(mPreferenceLayouts, mTempPreferenceLayout);
-        //if (viewType < 0) {
-            //return IGNORE_ITEM_VIEW_TYPE;
-        //} else {
-            //return viewType;
-        //}
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.491 -0400", hash_original_method = "C26A2133E7F568EC0AF4EC87BB082A79", hash_generated_method = "4237D0E3ABF624F0A0C50B901E5EFCBA")
     @Override
     public int getViewTypeCount() {
         {
             mHasReturnedViewTypeCount = true;
-        } //End block
+        } 
         int var2CB183217D2F693D68F15362DCAE0953_690806318 = (Math.max(1, mPreferenceLayouts.size()));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_412927125 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_412927125;
-        // ---------- Original Method ----------
-        //if (!mHasReturnedViewTypeCount) {
-            //mHasReturnedViewTypeCount = true;
-        //}
-        //return Math.max(1, mPreferenceLayouts.size());
+        
+        
+            
+        
+        
     }
 
     
@@ -377,7 +390,7 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.491 -0400", hash_original_method = "12E8ADB8C3EE61AC77B7A82A93B07078", hash_generated_method = "12E8ADB8C3EE61AC77B7A82A93B07078")
         public PreferenceLayout ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -387,21 +400,21 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
             addTaint(other.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_897980871 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_897980871;
-            // ---------- Original Method ----------
-            //int compareNames = name.compareTo(other.name);
-            //if (compareNames == 0) {
-                //if (resId == other.resId) {
-                    //if (widgetResId == other.widgetResId) {
-                        //return 0;
-                    //} else {
-                        //return widgetResId - other.widgetResId;
-                    //}
-                //} else {
-                    //return resId - other.resId;
-                //}
-            //} else {
-                //return compareNames;
-            //}
+            
+            
+            
+                
+                    
+                        
+                    
+                        
+                    
+                
+                    
+                
+            
+                
+            
         }
 
         

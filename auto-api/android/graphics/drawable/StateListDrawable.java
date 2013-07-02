@@ -1,11 +1,11 @@
 package android.graphics.drawable;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -27,7 +27,7 @@ public class StateListDrawable extends DrawableContainer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.621 -0400", hash_original_method = "2C05F8B66F3CA072BC0F3CED1F3E988B", hash_generated_method = "3034A7A547BD403E1E0F238C476B9227")
     public  StateListDrawable() {
         this(null, null);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -39,27 +39,28 @@ public class StateListDrawable extends DrawableContainer {
         onStateChange(getState());
         addTaint(state.getTaint());
         addTaint(res.getTaint());
-        // ---------- Original Method ----------
-        //StateListState as = new StateListState(state, this, res);
-        //mStateListState = as;
-        //setConstantState(as);
-        //onStateChange(getState());
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.621 -0400", hash_original_method = "AF6407614B20F66E7E774377847CB658", hash_generated_method = "26BE0C761E4E1CF40E7B3C02FB83EE5A")
     public void addState(int[] stateSet, Drawable drawable) {
         {
             mStateListState.addStateSet(stateSet, drawable);
             onStateChange(getState());
-        } //End block
+        } 
         addTaint(stateSet[0]);
         addTaint(drawable.getTaint());
-        // ---------- Original Method ----------
-        //if (drawable != null) {
-            //mStateListState.addStateSet(stateSet, drawable);
-            //onStateChange(getState());
-        //}
+        
+        
+            
+            
+        
     }
 
     
@@ -68,42 +69,44 @@ public class StateListDrawable extends DrawableContainer {
     public boolean isStateful() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1772784760 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1772784760;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.622 -0400", hash_original_method = "3B1FAED12170A69A129A87EF9824D4D4", hash_generated_method = "D72AC46F3D739C0FA099BE5A39C4AA8C")
     @Override
     protected boolean onStateChange(int[] stateSet) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int idx = mStateListState.indexOfStateSet(stateSet);
         android.util.Log.i(TAG, "onStateChange " + this + " states "
                 + Arrays.toString(stateSet) + " found " + idx);
         {
             idx = mStateListState.indexOfStateSet(StateSet.WILD_CARD);
-        } //End block
+        } 
         {
             boolean var3E2B49468750734D46A6120849432D6B_1814917420 = (selectDrawable(idx));
-        } //End collapsed parenthetic
+        } 
         boolean var6096784E4C4CB866A4D8B9C324F426C5_1478993015 = (super.onStateChange(stateSet));
         addTaint(stateSet[0]);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_590295740 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_590295740;
-        // ---------- Original Method ----------
-        //int idx = mStateListState.indexOfStateSet(stateSet);
-        //if (DEBUG) android.util.Log.i(TAG, "onStateChange " + this + " states "
-                //+ Arrays.toString(stateSet) + " found " + idx);
-        //if (idx < 0) {
-            //idx = mStateListState.indexOfStateSet(StateSet.WILD_CARD);
-        //}
-        //if (selectDrawable(idx)) {
-            //return true;
-        //}
-        //return super.onStateChange(stateSet);
+        
+        
+        
+                
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:16.554 -0400", hash_original_method = "60A0EEC92FC73D4C3C226304BAFE6ED2", hash_generated_method = "B8BF0ABD78CA2F0DCF09AC9F1B889876")
     @Override
     public void inflate(Resources r, XmlPullParser parser,
@@ -135,7 +138,7 @@ public class StateListDrawable extends DrawableContainer {
             {
                 {
                     boolean var03C44ADC0346A0FD12ECFE38D2A0612F_1752195172 = (depth > innerDepth || !parser.getName().equals("item"));
-                } //End collapsed parenthetic
+                } 
                 int drawableRes;
                 drawableRes = 0;
                 int i;
@@ -152,61 +155,62 @@ public class StateListDrawable extends DrawableContainer {
                         stateResId = attrs.getAttributeNameResource(i);
                         {
                             drawableRes = attrs.getAttributeResourceValue(i, 0);
-                        } //End block
+                        } 
                         {
                             states[j++] = attrs.getAttributeBooleanValue(i, false)
                             ? stateResId
                             : -stateResId;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 states = StateSet.trimStateSet(states, j);
                 Drawable dr;
                 {
                     dr = r.getDrawable(drawableRes);
-                } //End block
+                } 
                 {
                     {
                         boolean var16E7483EB4C069010E58346DA2B7701B_137536045 = ((type = parser.next()) == XmlPullParser.TEXT);
-                    } //End collapsed parenthetic
+                    } 
                     {
                         if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                             parser.getPositionDescription()
                                     + ": <item> tag requires a 'drawable' attribute or "
                                     + "child tag defining a drawable");
-                    } //End block
+                    } 
                     dr = Drawable.createFromXmlInner(r, parser, attrs);
-                } //End block
+                } 
                 mStateListState.addStateSet(states, dr);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         onStateChange(getState());
         addTaint(r.getTaint());
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.624 -0400", hash_original_method = "C30AAB7A53F4234B41E4C7F0859B0584", hash_generated_method = "51880041D36F8D118930C0C8CF5A0BD0")
      StateListState getStateListState() {
-        StateListState varB4EAC82CA7396A68D541C85D26508E83_1463494393 = null; //Variable for return #1
+        StateListState varB4EAC82CA7396A68D541C85D26508E83_1463494393 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1463494393 = mStateListState;
-        varB4EAC82CA7396A68D541C85D26508E83_1463494393.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1463494393.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1463494393;
-        // ---------- Original Method ----------
-        //return mStateListState;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.624 -0400", hash_original_method = "D9E3394F970F5413D258086831B5CB36", hash_generated_method = "97406DD93DAD8F420C454E8ADD6C419C")
     public int getStateCount() {
         int var11CFE54020BD6DC70972CFC97D6175DA_891283166 = (mStateListState.getChildCount());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012469272 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012469272;
-        // ---------- Original Method ----------
-        //return mStateListState.getChildCount();
+        
+        
     }
 
     
@@ -215,38 +219,41 @@ public class StateListDrawable extends DrawableContainer {
         addTaint(index);
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_133276473 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_133276473;
-        // ---------- Original Method ----------
-        //return mStateListState.mStateSets[index];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.625 -0400", hash_original_method = "266BB2A523416F0BDAD03984AE85B606", hash_generated_method = "FB48C4B282B97517FC153762B4CAA3DE")
     public Drawable getStateDrawable(int index) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1121521193 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1121521193 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1121521193 = mStateListState.getChildren()[index];
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_1121521193.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1121521193.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1121521193;
-        // ---------- Original Method ----------
-        //return mStateListState.getChildren()[index];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.626 -0400", hash_original_method = "410013485164C1DC2E995A85C1D3348C", hash_generated_method = "E83CD6609E6907E83F5D4B953E52477A")
     public int getStateDrawableIndex(int[] stateSet) {
         int var32B7534748596CE25EEA3B111D541A0E_1105102415 = (mStateListState.indexOfStateSet(stateSet));
         addTaint(stateSet[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_356658280 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_356658280;
-        // ---------- Original Method ----------
-        //return mStateListState.indexOfStateSet(stateSet);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.627 -0400", hash_original_method = "92CD1CD82DD5DEA6E7693E9ED80EE90B", hash_generated_method = "EEF0D02ACD474C322B7389EE658B718C")
     @Override
     public Drawable mutate() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1253134962 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1253134962 = null; 
         {
             boolean varC94B19053599294E7944C8C841976773_369902452 = (!mMutated && super.mutate() == this);
             {
@@ -259,29 +266,29 @@ public class StateListDrawable extends DrawableContainer {
                         final int[] set = sets[i];
                         {
                             mStateListState.mStateSets[i] = set.clone();
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 mMutated = true;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1253134962 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1253134962.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1253134962.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1253134962;
-        // ---------- Original Method ----------
-        //if (!mMutated && super.mutate() == this) {
-            //final int[][] sets = mStateListState.mStateSets;
-            //final int count = sets.length;
-            //mStateListState.mStateSets = new int[count][];
-            //for (int i = 0; i < count; i++) {
-                //final int[] set = sets[i];
-                //if (set != null) {
-                    //mStateListState.mStateSets[i] = set.clone();
-                //}
-            //}
-            //mMutated = true;
-        //}
-        //return this;
+        
+        
+            
+            
+            
+            
+                
+                
+                    
+                
+            
+            
+        
+        
     }
 
     
@@ -295,18 +302,18 @@ public class StateListDrawable extends DrawableContainer {
             super(orig, owner, res);
             {
                 mStateSets = orig.mStateSets;
-            } //End block
+            } 
             {
                 mStateSets = new int[getChildren().length][];
-            } //End block
+            } 
             addTaint(owner.getTaint());
             addTaint(res.getTaint());
-            // ---------- Original Method ----------
-            //if (orig != null) {
-                //mStateSets = orig.mStateSets;
-            //} else {
-                //mStateSets = new int[getChildren().length][];
-            //}
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -317,10 +324,10 @@ public class StateListDrawable extends DrawableContainer {
             addTaint(drawable.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1769808096 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1769808096;
-            // ---------- Original Method ----------
-            //final int pos = addChild(drawable);
-            //mStateSets[pos] = stateSet;
-            //return pos;
+            
+            
+            
+            
         }
 
         
@@ -333,46 +340,46 @@ public class StateListDrawable extends DrawableContainer {
                 {
                     {
                         boolean var6FDC262EEEF0E02068C5811E55176A45_1879270623 = (StateSet.stateSetMatches(stateSets[i], stateSet));
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             addTaint(stateSet[0]);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1737945014 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1737945014;
-            // ---------- Original Method ----------
-            //final int[][] stateSets = mStateSets;
-            //final int N = getChildCount();
-            //for (int i = 0; i < N; i++) {
-                //if (StateSet.stateSetMatches(stateSets[i], stateSet)) {
-                    //return i;
-                //}
-            //}
-            //return -1;
+            
+            
+            
+            
+                
+                    
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.629 -0400", hash_original_method = "56C51D0FF73BF2A3F52E87DDE967AFF6", hash_generated_method = "59796CA93B7509519C135B45388B9B0C")
         @Override
         public Drawable newDrawable() {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_1595237199 = null; //Variable for return #1
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_1595237199 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1595237199 = new StateListDrawable(this, null);
-            varB4EAC82CA7396A68D541C85D26508E83_1595237199.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1595237199.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1595237199;
-            // ---------- Original Method ----------
-            //return new StateListDrawable(this, null);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.630 -0400", hash_original_method = "DF4CF834DF74C8FC36C20E482CEB7672", hash_generated_method = "A48247F1463CE9AE761445663A9B8D97")
         @Override
         public Drawable newDrawable(Resources res) {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_686611923 = null; //Variable for return #1
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_686611923 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_686611923 = new StateListDrawable(this, res);
             addTaint(res.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_686611923.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_686611923.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_686611923;
-            // ---------- Original Method ----------
-            //return new StateListDrawable(this, res);
+            
+            
         }
 
         
@@ -385,11 +392,11 @@ public class StateListDrawable extends DrawableContainer {
             mStateSets = newStateSets;
             addTaint(oldSize);
             addTaint(newSize);
-            // ---------- Original Method ----------
-            //super.growArray(oldSize, newSize);
-            //final int[][] newStateSets = new int[newSize][];
-            //System.arraycopy(mStateSets, 0, newStateSets, 0, oldSize);
-            //mStateSets = newStateSets;
+            
+            
+            
+            
+            
         }
 
         

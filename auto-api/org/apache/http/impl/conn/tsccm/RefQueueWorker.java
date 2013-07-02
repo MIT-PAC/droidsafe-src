@@ -1,11 +1,11 @@
 package org.apache.http.impl.conn.tsccm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
@@ -30,29 +30,30 @@ public class RefQueueWorker implements Runnable {
     public  RefQueueWorker(ReferenceQueue<?> queue, RefQueueHandler handler) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Queue must not be null.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Handler must not be null.");
-        } //End block
+        } 
         refQueue   = queue;
         refHandler = handler;
-        // ---------- Original Method ----------
-        //if (queue == null) {
-            //throw new IllegalArgumentException("Queue must not be null.");
-        //}
-        //if (handler == null) {
-            //throw new IllegalArgumentException("Handler must not be null.");
-        //}
-        //refQueue   = queue;
-        //refHandler = handler;
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.754 -0400", hash_original_method = "068901515EDCF67E719CCEED21C02CEA", hash_generated_method = "566F05C855126D90B6F6C81BF0F30F25")
     public void run() {
         {
             this.workerThread = Thread.currentThread();
-        } //End block
+        } 
         {
             boolean varE14712F15E5CA00C0DB87D4DDAAE505C_550056354 = (this.workerThread == Thread.currentThread());
             {
@@ -60,60 +61,62 @@ public class RefQueueWorker implements Runnable {
                 {
                     Reference<?> ref = refQueue.remove();
                     refHandler.handleReference(ref);
-                } //End block
+                } 
                 catch (InterruptedException e)
                 {
                     {
                         boolean varB5EA13E236059479AA556C9226E19405_1783955369 = (log.isDebugEnabled());
                         {
                             log.debug(this.toString() + " interrupted", e);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (this.workerThread == null) {
-            //this.workerThread = Thread.currentThread();
-        //}
-        //while (this.workerThread == Thread.currentThread()) {
-            //try {
-                //Reference<?> ref = refQueue.remove();
-                //refHandler.handleReference(ref);
-            //} catch (InterruptedException e) {
-                //if (log.isDebugEnabled()) {
-                    //log.debug(this.toString() + " interrupted", e);
-                //}
-            //}
-        //}
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+                
+                
+            
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.755 -0400", hash_original_method = "4BBB4A6394E78355577BCA1899518AA3", hash_generated_method = "DA735DF86B79FF9748E537A0C86BBAFC")
     public void shutdown() {
         Thread wt = this.workerThread;
         {
             this.workerThread = null;
             wt.interrupt();
-        } //End block
-        // ---------- Original Method ----------
-        //Thread wt = this.workerThread;
-        //if (wt != null) {
-            //this.workerThread = null; 
-            //wt.interrupt();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.755 -0400", hash_original_method = "7EB957F4647F2E9AB09EE1A296B7BEEF", hash_generated_method = "0B11938F10572A470CCB3E8113F58F5B")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1188174140 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1188174140 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1188174140 = "RefQueueWorker::" + this.workerThread;
-        varB4EAC82CA7396A68D541C85D26508E83_1188174140.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1188174140.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1188174140;
-        // ---------- Original Method ----------
-        //return "RefQueueWorker::" + this.workerThread;
+        
+        
     }
 
     

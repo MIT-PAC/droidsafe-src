@@ -1,11 +1,11 @@
 package android.nfc.tech;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.nfc.Tag;
 import android.os.Bundle;
@@ -27,13 +27,14 @@ public final class NfcV extends BasicTagTechnology {
         mRespFlags = extras.getByte(EXTRA_RESP_FLAGS);
         mDsfId = extras.getByte(EXTRA_DSFID);
         addTaint(tag.getTaint());
-        // ---------- Original Method ----------
-        //Bundle extras = tag.getTechExtras(TagTechnology.NFC_V);
-        //mRespFlags = extras.getByte(EXTRA_RESP_FLAGS);
-        //mDsfId = extras.getByte(EXTRA_DSFID);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NfcV get(Tag tag) {
         if (!tag.hasTech(TagTechnology.NFC_V)) return null;
         try {
@@ -48,8 +49,8 @@ public final class NfcV extends BasicTagTechnology {
     public byte getResponseFlags() {
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1099395670 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1099395670;
-        // ---------- Original Method ----------
-        //return mRespFlags;
+        
+        
     }
 
     
@@ -57,29 +58,31 @@ public final class NfcV extends BasicTagTechnology {
     public byte getDsfId() {
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1818461374 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1818461374;
-        // ---------- Original Method ----------
-        //return mDsfId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.509 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "93127A8CDCC912B7871CA535E95E58CE")
     public byte[] transceive(byte[] data) throws IOException {
         byte[] var457CAD28AA5A950818B34ED801FB2565_1933668435 = (transceive(data, true));
         addTaint(data[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_168779613 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_168779613;
-        // ---------- Original Method ----------
-        //return transceive(data, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.510 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "604191FB31DD0FA45B543DFCCB73186C")
     public int getMaxTransceiveLength() {
         int varAD50EB2A6987338433A93D587AD15277_2064586433 = (getMaxTransceiveLengthInternal());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_442536526 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_442536526;
-        // ---------- Original Method ----------
-        //return getMaxTransceiveLengthInternal();
+        
+        
     }
 
     

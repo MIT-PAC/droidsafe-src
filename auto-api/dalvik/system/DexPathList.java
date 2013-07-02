@@ -1,11 +1,11 @@
 package dalvik.system;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.IOException;
@@ -33,10 +33,10 @@ final class DexPathList {
             String libraryPath, File optimizedDirectory) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("definingContext == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("dexPath == null");
-        } //End block
+        } 
         {
             {
                 boolean varD93CE39D5961AECAA042D96C165FFDC0_1433722994 = (!optimizedDirectory.exists());
@@ -44,8 +44,8 @@ final class DexPathList {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                         "optimizedDirectory doesn't exist: "
                         + optimizedDirectory);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varF3D464DBA78635702CCAB9C7B75BD5C3_1550142459 = (!(optimizedDirectory.canRead()
                             && optimizedDirectory.canWrite()));
@@ -53,18 +53,19 @@ final class DexPathList {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                         "optimizedDirectory not readable/writable: "
                         + optimizedDirectory);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         this.definingContext = definingContext;
         this.dexElements =
             makeDexElements(splitDexPath(dexPath), optimizedDirectory);
         this.nativeLibraryDirectories = splitLibraryPath(libraryPath);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static ArrayList<File> splitDexPath(String path) {
         return splitPaths(path, null, false);
     }
@@ -77,6 +78,7 @@ final class DexPathList {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static ArrayList<File> splitPaths(String path1, String path2,
             boolean wantDirectories) {
         ArrayList<File> result = new ArrayList<File>();
@@ -86,6 +88,7 @@ final class DexPathList {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void splitAndAdd(String path, boolean wantDirectories,
             ArrayList<File> resultList) {
         if (path == null) {
@@ -111,6 +114,7 @@ final class DexPathList {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Element[] makeDexElements(ArrayList<File> files,
             File optimizedDirectory) {
         ArrayList<Element> elements = new ArrayList<Element>();
@@ -177,8 +181,8 @@ final class DexPathList {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.735 -0400", hash_original_method = "D0077BF0C677FC7F0C28C59D93206805", hash_generated_method = "C1250A912C3EF85118854BE594634673")
     public Class findClass(String name) {
-        Class varB4EAC82CA7396A68D541C85D26508E83_181365910 = null; //Variable for return #1
-        Class varB4EAC82CA7396A68D541C85D26508E83_1467684545 = null; //Variable for return #2
+        Class varB4EAC82CA7396A68D541C85D26508E83_181365910 = null; 
+        Class varB4EAC82CA7396A68D541C85D26508E83_1467684545 = null; 
         {
             Element element = dexElements[0];
             {
@@ -187,109 +191,110 @@ final class DexPathList {
                     Class clazz = dex.loadClassBinaryName(name, definingContext);
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_181365910 = clazz;
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1467684545 = null;
         addTaint(name.getTaint());
-        Class varA7E53CE21691AB073D9660D615818899_702523122; //Final return value
+        Class varA7E53CE21691AB073D9660D615818899_702523122; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_702523122 = varB4EAC82CA7396A68D541C85D26508E83_181365910;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_702523122 = varB4EAC82CA7396A68D541C85D26508E83_1467684545;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_702523122.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_702523122.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_702523122;
-        // ---------- Original Method ----------
-        //for (Element element : dexElements) {
-            //DexFile dex = element.dexFile;
-            //if (dex != null) {
-                //Class clazz = dex.loadClassBinaryName(name, definingContext);
-                //if (clazz != null) {
-                    //return clazz;
-                //}
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.742 -0400", hash_original_method = "5F5378C3BB7399B364C8BA4B56CD7FC5", hash_generated_method = "5D66804F717129F6272754A7352BD983")
     public URL findResource(String name) {
-        URL varB4EAC82CA7396A68D541C85D26508E83_1811437228 = null; //Variable for return #1
-        URL varB4EAC82CA7396A68D541C85D26508E83_1400396221 = null; //Variable for return #2
+        URL varB4EAC82CA7396A68D541C85D26508E83_1811437228 = null; 
+        URL varB4EAC82CA7396A68D541C85D26508E83_1400396221 = null; 
         {
             Element element = dexElements[0];
             {
                 URL url = element.findResource(name);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1811437228 = url;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1400396221 = null;
         addTaint(name.getTaint());
-        URL varA7E53CE21691AB073D9660D615818899_184992273; //Final return value
+        URL varA7E53CE21691AB073D9660D615818899_184992273; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_184992273 = varB4EAC82CA7396A68D541C85D26508E83_1811437228;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_184992273 = varB4EAC82CA7396A68D541C85D26508E83_1400396221;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_184992273.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_184992273.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_184992273;
-        // ---------- Original Method ----------
-        //for (Element element : dexElements) {
-            //URL url = element.findResource(name);
-            //if (url != null) {
-                //return url;
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.746 -0400", hash_original_method = "804A7034A2DFDDBE0ECC495815CB31BB", hash_generated_method = "A9375F251D03F2AFA56D130290018320")
     public Enumeration<URL> findResources(String name) {
-        Enumeration<URL> varB4EAC82CA7396A68D541C85D26508E83_215516057 = null; //Variable for return #1
+        Enumeration<URL> varB4EAC82CA7396A68D541C85D26508E83_215516057 = null; 
         ArrayList<URL> result = new ArrayList<URL>();
         {
-            //Iterator<Element> varF1D603C6DC3EACB73DA0406834E64496_1393723383 = (dexElements).iterator();
-            //varF1D603C6DC3EACB73DA0406834E64496_1393723383.hasNext();
+            
+            
             Element element = dexElements[0];
             {
                 URL url = element.findResource(name);
                 {
                     result.add(url);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_215516057 = Collections.enumeration(result);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_215516057.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_215516057.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_215516057;
-        // ---------- Original Method ----------
-        //ArrayList<URL> result = new ArrayList<URL>();
-        //for (Element element : dexElements) {
-            //URL url = element.findResource(name);
-            //if (url != null) {
-                //result.add(url);
-            //}
-        //}
-        //return Collections.enumeration(result);
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.754 -0400", hash_original_method = "240DC3968F2BE784AD66FA40662DC8EC", hash_generated_method = "7698EFA0F10944C83F6F07F30584C7CB")
     public String findLibrary(String libraryName) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1286766049 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_125097323 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1286766049 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_125097323 = null; 
         String fileName = System.mapLibraryName(libraryName);
         {
             File directory = nativeLibraryDirectories[0];
@@ -299,32 +304,32 @@ final class DexPathList {
                     boolean varC7394EA2DBCB91C973A311E8518DD73C_748057641 = (file.exists() && file.isFile() && file.canRead());
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1286766049 = file.getPath();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_125097323 = null;
         addTaint(libraryName.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_836835326; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_836835326; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_836835326 = varB4EAC82CA7396A68D541C85D26508E83_1286766049;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_836835326 = varB4EAC82CA7396A68D541C85D26508E83_125097323;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_836835326.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_836835326.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_836835326;
-        // ---------- Original Method ----------
-        //String fileName = System.mapLibraryName(libraryName);
-        //for (File directory : nativeLibraryDirectories) {
-            //File file = new File(directory, fileName);
-            //if (file.exists() && file.isFile() && file.canRead()) {
-                //return file.getPath();
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -344,52 +349,52 @@ final class DexPathList {
             this.file = file;
             this.zipFile = zipFile;
             this.dexFile = dexFile;
-            // ---------- Original Method ----------
-            //this.file = file;
-            //this.zipFile = zipFile;
-            //this.dexFile = dexFile;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.756 -0400", hash_original_method = "853A43CB46D2A1F46888921026F3A6BF", hash_generated_method = "14ED2B8BC0329D4B375DB3E9FAAD410E")
         public URL findResource(String name) {
-            URL varB4EAC82CA7396A68D541C85D26508E83_2056915489 = null; //Variable for return #1
-            URL varB4EAC82CA7396A68D541C85D26508E83_1175852574 = null; //Variable for return #2
+            URL varB4EAC82CA7396A68D541C85D26508E83_2056915489 = null; 
+            URL varB4EAC82CA7396A68D541C85D26508E83_1175852574 = null; 
             {
                 boolean var42372B44F4C376120C0651D6EE365C60_2131541886 = ((zipFile == null) || (zipFile.getEntry(name) == null));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_2056915489 = null;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             try 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1175852574 = new URL("jar:" + file.toURL() + "!/" + name);
-            } //End block
+            } 
             catch (MalformedURLException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
-            } //End block
+            } 
             addTaint(name.getTaint());
-            URL varA7E53CE21691AB073D9660D615818899_1787109825; //Final return value
+            URL varA7E53CE21691AB073D9660D615818899_1787109825; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1787109825 = varB4EAC82CA7396A68D541C85D26508E83_2056915489;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1787109825 = varB4EAC82CA7396A68D541C85D26508E83_1175852574;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1787109825.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1787109825.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1787109825;
-            // ---------- Original Method ----------
-            //if ((zipFile == null) || (zipFile.getEntry(name) == null)) {
-                //return null;
-            //}
-            //try {
-                //return new URL("jar:" + file.toURL() + "!/" + name);
-            //} catch (MalformedURLException ex) {
-                //throw new RuntimeException(ex);
-            //}
+            
+            
+                
+            
+            
+                
+            
+                
+            
         }
 
         

@@ -1,11 +1,11 @@
 package org.apache.http.impl.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,53 +24,55 @@ public class IdentityInputStream extends InputStream {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Session input buffer may not be null");
-        } //End block
+        } 
         this.in = in;
-        // ---------- Original Method ----------
-        //if (in == null) {
-            //throw new IllegalArgumentException("Session input buffer may not be null");
-        //}
-        //this.in = in;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.844 -0400", hash_original_method = "DCB121D8842EB51547DBC31A4230EDC6", hash_generated_method = "6144D4DECE7E15C7EC4E83CF2313B86C")
     public int available() throws IOException {
         {
             boolean var746B940C8D4EFBE901778D2AAB8F79F7_2104797275 = (!this.closed && this.in.isDataAvailable(10));
-        } //End collapsed parenthetic
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1563848814 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1563848814;
-        // ---------- Original Method ----------
-        //if (!this.closed && this.in.isDataAvailable(10)) {
-            //return 1;
-        //} else {
-            //return 0;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.844 -0400", hash_original_method = "311E5281CF91526FD2B39B7023BBB3B5", hash_generated_method = "189AC125925A0F1BC150A3E99E2798E2")
     public void close() throws IOException {
         this.closed = true;
-        // ---------- Original Method ----------
-        //this.closed = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.844 -0400", hash_original_method = "F6A0760AFCA549A5825114F4EAC4FB8F", hash_generated_method = "84A153129EF29604B8D0D73A17E9C316")
     public int read() throws IOException {
         {
             int var737744DC8D1F0D5E4A51D264CDB60748_330868159 = (this.in.read());
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103769236 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103769236;
-        // ---------- Original Method ----------
-        //if (this.closed) {
-            //return -1;
-        //} else {
-            //return this.in.read();
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -78,18 +80,18 @@ public class IdentityInputStream extends InputStream {
     public int read(final byte[] b, int off, int len) throws IOException {
         {
             int varFFB206EE847AC72E4E154CE31485D922_608309558 = (this.in.read(b, off, len));
-        } //End block
+        } 
         addTaint(b[0]);
         addTaint(off);
         addTaint(len);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2102595789 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2102595789;
-        // ---------- Original Method ----------
-        //if (this.closed) {
-            //return -1;
-        //} else {
-            //return this.in.read(b, off, len);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     

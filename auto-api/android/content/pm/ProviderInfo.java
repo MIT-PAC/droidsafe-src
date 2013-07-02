@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -42,7 +42,7 @@ public final class ProviderInfo extends ComponentInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.879 -0400", hash_original_method = "D2CF667D6D9DF94B5D6BB6106BFAE873", hash_generated_method = "B4804D482B030CB842C9B23FD5E0D5C4")
     public  ProviderInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -58,16 +58,16 @@ public final class ProviderInfo extends ComponentInfo implements Parcelable {
         multiprocess = orig.multiprocess;
         initOrder = orig.initOrder;
         isSyncable = orig.isSyncable;
-        // ---------- Original Method ----------
-        //authority = orig.authority;
-        //readPermission = orig.readPermission;
-        //writePermission = orig.writePermission;
-        //grantUriPermissions = orig.grantUriPermissions;
-        //uriPermissionPatterns = orig.uriPermissionPatterns;
-        //pathPermissions = orig.pathPermissions;
-        //multiprocess = orig.multiprocess;
-        //initOrder = orig.initOrder;
-        //isSyncable = orig.isSyncable;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -83,16 +83,16 @@ public final class ProviderInfo extends ComponentInfo implements Parcelable {
         multiprocess = in.readInt() != 0;
         initOrder = in.readInt();
         isSyncable = in.readInt() != 0;
-        // ---------- Original Method ----------
-        //authority = in.readString();
-        //readPermission = in.readString();
-        //writePermission = in.readString();
-        //grantUriPermissions = in.readInt() != 0;
-        //uriPermissionPatterns = in.createTypedArray(PatternMatcher.CREATOR);
-        //pathPermissions = in.createTypedArray(PathPermission.CREATOR);
-        //multiprocess = in.readInt() != 0;
-        //initOrder = in.readInt();
-        //isSyncable = in.readInt() != 0;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -100,11 +100,12 @@ public final class ProviderInfo extends ComponentInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_704073404 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_704073404;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.881 -0400", hash_original_method = "45D9E31DA8DC0720E2897CA268CD8E20", hash_generated_method = "EC543220F201429CCD4C4F74BC70D92C")
     @Override
     public void writeToParcel(Parcel out, int parcelableFlags) {
@@ -120,30 +121,31 @@ public final class ProviderInfo extends ComponentInfo implements Parcelable {
         out.writeInt(isSyncable ? 1 : 0);
         addTaint(out.getTaint());
         addTaint(parcelableFlags);
-        // ---------- Original Method ----------
-        //super.writeToParcel(out, parcelableFlags);
-        //out.writeString(authority);
-        //out.writeString(readPermission);
-        //out.writeString(writePermission);
-        //out.writeInt(grantUriPermissions ? 1 : 0);
-        //out.writeTypedArray(uriPermissionPatterns, parcelableFlags);
-        //out.writeTypedArray(pathPermissions, parcelableFlags);
-        //out.writeInt(multiprocess ? 1 : 0);
-        //out.writeInt(initOrder);
-        //out.writeInt(isSyncable ? 1 : 0);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:27.882 -0400", hash_original_method = "A325E506B6C78D4488CEDF60427F48B5", hash_generated_method = "25951C019AA86E098812CE37685074A2")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2049342050 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2049342050 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2049342050 = "ContentProviderInfo{name=" + authority + " className=" + name
             + " isSyncable=" + (isSyncable ? "true" : "false") + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_2049342050.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2049342050.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2049342050;
-        // ---------- Original Method ----------
-        //return "ContentProviderInfo{name=" + authority + " className=" + name
-            //+ " isSyncable=" + (isSyncable ? "true" : "false") + "}";
+        
+        
+            
     }
 
     
@@ -159,12 +161,12 @@ public final class ProviderInfo extends ComponentInfo implements Parcelable {
             return new ProviderInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public ProviderInfo createFromParcel(Parcel in) {
             return new ProviderInfo(in);
         }
     
-    // orphaned legacy method
+    
     public ProviderInfo[] newArray(int size) {
             return new ProviderInfo[size];
         }

@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cdma.sms;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.telephony.cdma.sms.CdmaSmsSubaddress;
 
@@ -46,7 +46,7 @@ public final class SmsEnvelope {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.898 -0400", hash_original_method = "63C615594341C58AE34F731D1CD086D9", hash_generated_method = "476E2A70F0F2BF824A0CD036D3873D68")
     public  SmsEnvelope() {
-        // ---------- Original Method ----------
+        
     }
 
     

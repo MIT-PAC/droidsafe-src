@@ -1,11 +1,11 @@
 package com.android.i18n.phonenumbers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
 import java.util.Arrays;
@@ -25,34 +25,34 @@ public final class PhoneNumberMatch {
       PhoneNumberMatch(int start, String rawString, PhoneNumber number) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Start index must be >= 0.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         this.start = start;
         this.rawString = rawString;
         this.number = number;
-        // ---------- Original Method ----------
-        //if (start < 0) {
-      //throw new IllegalArgumentException("Start index must be >= 0.");
-    //}
-        //if (rawString == null || number == null) {
-      //throw new NullPointerException();
-    //}
-        //this.start = start;
-        //this.rawString = rawString;
-        //this.number = number;
+        
+        
+      
+    
+        
+      
+    
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.630 -0400", hash_original_method = "3AF6887A924E6E03501A94FECACFA30D", hash_generated_method = "CB3BDF0FE5367C2EAC5A14F6A44DCA5B")
     public PhoneNumber number() {
-        PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_646038756 = null; //Variable for return #1
+        PhoneNumber varB4EAC82CA7396A68D541C85D26508E83_646038756 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_646038756 = number;
-        varB4EAC82CA7396A68D541C85D26508E83_646038756.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_646038756.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_646038756;
-        // ---------- Original Method ----------
-        //return number;
+        
+        
     }
 
     
@@ -60,43 +60,46 @@ public final class PhoneNumberMatch {
     public int start() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003840686 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003840686;
-        // ---------- Original Method ----------
-        //return start;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.631 -0400", hash_original_method = "7D10A3C1D28519413DA457C01967C482", hash_generated_method = "892E6BDBEC62849502C768252F113052")
     public int end() {
         int varB24BA409889D2DF54BA645250444F1AF_1683514761 = (start + rawString.length());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1855543708 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1855543708;
-        // ---------- Original Method ----------
-        //return start + rawString.length();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.631 -0400", hash_original_method = "9FB54278FE2075E29BA0E55156E431DE", hash_generated_method = "34658FEF4166546EFBCA9C148A871950")
     public String rawString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1927376005 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1927376005 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1927376005 = rawString;
-        varB4EAC82CA7396A68D541C85D26508E83_1927376005.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1927376005.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1927376005;
-        // ---------- Original Method ----------
-        //return rawString;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.632 -0400", hash_original_method = "13786FFFFB16751EA6F3DAD6D70C98CC", hash_generated_method = "E72DAD048D2C44EE3103E2042D032A17")
     @Override
     public int hashCode() {
         int var68DAC3103D3FDE3551F375601B10A6D7_200035896 = (Arrays.hashCode(new Object[]{start, rawString, number}));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_680287088 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_680287088;
-        // ---------- Original Method ----------
-        //return Arrays.hashCode(new Object[]{start, rawString, number});
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.632 -0400", hash_original_method = "38076D29780FBE1507C47919C30AB86E", hash_generated_method = "AD7AB0900518EB09A39EF9FAD8ABC62B")
     @Override
     public boolean equals(Object obj) {
@@ -106,28 +109,29 @@ public final class PhoneNumberMatch {
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1730819260 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1730819260;
-        // ---------- Original Method ----------
-        //if (this == obj) {
-      //return true;
-    //}
-        //if (!(obj instanceof PhoneNumberMatch)) {
-      //return false;
-    //}
-        //PhoneNumberMatch other = (PhoneNumberMatch) obj;
-        //return rawString.equals(other.rawString) && (start == other.start) &&
-        //number.equals(other.number);
+        
+        
+      
+    
+        
+      
+    
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.633 -0400", hash_original_method = "9E681ADFB274F0FD80239D8E6C0D9096", hash_generated_method = "42213C0F4F9FBACE1083211E2B9B6CD3")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_726971948 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_726971948 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_726971948 = "PhoneNumberMatch [" + start() + "," + end() + ") " + rawString;
-        varB4EAC82CA7396A68D541C85D26508E83_726971948.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_726971948.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_726971948;
-        // ---------- Original Method ----------
-        //return "PhoneNumberMatch [" + start() + "," + end() + ") " + rawString;
+        
+        
     }
 
     

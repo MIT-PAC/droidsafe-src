@@ -1,11 +1,11 @@
 package com.android.i18n.phonenumbers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +17,7 @@ public class CountryCodeToRegionCodeMap {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.608 -0400", hash_original_method = "63FC822C4B5F1AC648A20B30DF86BC44", hash_generated_method = "63FC822C4B5F1AC648A20B30DF86BC44")
     public CountryCodeToRegionCodeMap ()
     {
-        //Synthesized constructor
+        
     }
 
 

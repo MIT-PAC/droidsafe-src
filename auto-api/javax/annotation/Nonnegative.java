@@ -8,7 +8,9 @@ import javax.annotation.meta.TypeQualifier;
 import javax.annotation.meta.TypeQualifierValidator;
 import javax.annotation.meta.When;
 
-/** Used to annotate a value that should only contain nonnegative values */
+import droidsafe.annotations.*;
+
+
 @Documented
 @TypeQualifier(applicableTo = Number.class)
 @Retention(RetentionPolicy.RUNTIME)
@@ -17,7 +19,8 @@ public @interface Nonnegative {
 
     class Checker implements TypeQualifierValidator<Nonnegative> {
 
-        public When forConstantValue(Nonnegative annotation, Object v) {
+        @DSModeled(DSC.SAFE)
+    public When forConstantValue(Nonnegative annotation, Object v) {
             if (!(v instanceof Number))
                 return When.NEVER;
             boolean isNegative;

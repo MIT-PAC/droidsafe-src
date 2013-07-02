@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.util.ArrayUtils;
 
@@ -14,10 +14,11 @@ public class TemporaryBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.458 -0400", hash_original_method = "4FF062759AAFC6722B3224BBA791BE93", hash_generated_method = "4FF062759AAFC6722B3224BBA791BE93")
     public TemporaryBuffer ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SPEC)
     public static char[] obtain(int len) {
         char[] buf;
         synchronized (TemporaryBuffer.class) {

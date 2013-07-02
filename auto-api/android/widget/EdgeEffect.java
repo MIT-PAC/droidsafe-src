@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.R;
 import android.content.Context;
@@ -95,12 +95,12 @@ public class EdgeEffect {
         mMinWidth = (int) (res.getDisplayMetrics().density * MIN_WIDTH + 0.5f);
         mInterpolator = new DecelerateInterpolator();
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //final Resources res = context.getResources();
-        //mEdge = res.getDrawable(R.drawable.overscroll_edge);
-        //mGlow = res.getDrawable(R.drawable.overscroll_glow);
-        //mMinWidth = (int) (res.getDisplayMetrics().density * MIN_WIDTH + 0.5f);
-        //mInterpolator = new DecelerateInterpolator();
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -108,9 +108,9 @@ public class EdgeEffect {
     public void setSize(int width, int height) {
         mWidth = width;
         mHeight = height;
-        // ---------- Original Method ----------
-        //mWidth = width;
-        //mHeight = height;
+        
+        
+        
     }
 
     
@@ -118,26 +118,27 @@ public class EdgeEffect {
     public boolean isFinished() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_135313931 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_135313931;
-        // ---------- Original Method ----------
-        //return mState == STATE_IDLE;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.491 -0400", hash_original_method = "27AC7ECC3801AAB2943059507B28FB49", hash_generated_method = "4A51E2781D945A7EDF99F072DEC552D1")
     public void finish() {
         mState = STATE_IDLE;
-        // ---------- Original Method ----------
-        //mState = STATE_IDLE;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.491 -0400", hash_original_method = "0B34B4327835671A51286147399AA2A4", hash_generated_method = "0912D40F6BBC7278140035DAD6BE822E")
     public void onPull(float deltaDistance) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final long now = AnimationUtils.currentAnimationTimeMillis();
         {
             mGlowScaleY = PULL_GLOW_BEGIN;
-        } //End block
+        } 
         mState = STATE_PULL;
         mStartTime = now;
         mDuration = PULL_TIME;
@@ -152,24 +153,25 @@ public class EdgeEffect {
         float glowChange = Math.abs(deltaDistance);
         {
             glowChange = -glowChange;
-        } //End block
+        } 
         {
             mGlowScaleY = 0;
-        } //End block
+        } 
         mGlowScaleY = mGlowScaleYStart = Math.min(MAX_GLOW_HEIGHT, Math.max(
                 0, mGlowScaleY + glowChange * PULL_DISTANCE_GLOW_FACTOR));
         mEdgeAlphaFinish = mEdgeAlpha;
         mEdgeScaleYFinish = mEdgeScaleY;
         mGlowAlphaFinish = mGlowAlpha;
         mGlowScaleYFinish = mGlowScaleY;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.492 -0400", hash_original_method = "130A4176B67F340D0300F29A870A39F7", hash_generated_method = "48EABD6C325B873D69ADA88ADC482D05")
     public void onRelease() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mPullDistance = 0;
         mState = STATE_RECEDE;
         mEdgeAlphaStart = mEdgeAlpha;
@@ -182,28 +184,29 @@ public class EdgeEffect {
         mGlowScaleYFinish = 0.f;
         mStartTime = AnimationUtils.currentAnimationTimeMillis();
         mDuration = RECEDE_TIME;
-        // ---------- Original Method ----------
-        //mPullDistance = 0;
-        //if (mState != STATE_PULL && mState != STATE_PULL_DECAY) {
-            //return;
-        //}
-        //mState = STATE_RECEDE;
-        //mEdgeAlphaStart = mEdgeAlpha;
-        //mEdgeScaleYStart = mEdgeScaleY;
-        //mGlowAlphaStart = mGlowAlpha;
-        //mGlowScaleYStart = mGlowScaleY;
-        //mEdgeAlphaFinish = 0.f;
-        //mEdgeScaleYFinish = 0.f;
-        //mGlowAlphaFinish = 0.f;
-        //mGlowScaleYFinish = 0.f;
-        //mStartTime = AnimationUtils.currentAnimationTimeMillis();
-        //mDuration = RECEDE_TIME;
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.493 -0400", hash_original_method = "1D958DC13C828E6D4B8059ABA730E95F", hash_generated_method = "BA825A4857DBCA7D9EF40A9CF75A8279")
     public void onAbsorb(int velocity) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mState = STATE_ABSORB;
         velocity = Math.max(MIN_VELOCITY, Math.abs(velocity));
         mStartTime = AnimationUtils.currentAnimationTimeMillis();
@@ -218,24 +221,25 @@ public class EdgeEffect {
         mGlowScaleYFinish = Math.min(0.025f + (velocity * (velocity / 100) * 0.00015f), 1.75f);
         mGlowAlphaFinish = Math.max(
                 mGlowAlphaStart, Math.min(velocity * VELOCITY_GLOW_FACTOR * .00001f, MAX_ALPHA));
-        // ---------- Original Method ----------
-        //mState = STATE_ABSORB;
-        //velocity = Math.max(MIN_VELOCITY, Math.abs(velocity));
-        //mStartTime = AnimationUtils.currentAnimationTimeMillis();
-        //mDuration = 0.1f + (velocity * 0.03f);
-        //mEdgeAlphaStart = 0.f;
-        //mEdgeScaleY = mEdgeScaleYStart = 0.f;
-        //mGlowAlphaStart = 0.5f;
-        //mGlowScaleYStart = 0.f;
-        //mEdgeAlphaFinish = Math.max(0, Math.min(velocity * VELOCITY_EDGE_FACTOR, 1));
-        //mEdgeScaleYFinish = Math.max(
-                //HELD_EDGE_SCALE_Y, Math.min(velocity * VELOCITY_EDGE_FACTOR, 1.f));
-        //mGlowScaleYFinish = Math.min(0.025f + (velocity * (velocity / 100) * 0.00015f), 1.75f);
-        //mGlowAlphaFinish = Math.max(
-                //mGlowAlphaStart, Math.min(velocity * VELOCITY_GLOW_FACTOR * .00001f, MAX_ALPHA));
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.494 -0400", hash_original_method = "610B6E206A511890E944EC9E15AA39A0", hash_generated_method = "E1A24FED41BC1733AE6EC3EB214DC0EE")
     public boolean draw(Canvas canvas) {
         update();
@@ -250,29 +254,30 @@ public class EdgeEffect {
         {
             int glowLeft = (mWidth - mMinWidth)/2;
             mGlow.setBounds(glowLeft, 0, mWidth - glowLeft, glowBottom);
-        } //End block
+        } 
         {
             mGlow.setBounds(0, 0, mWidth, glowBottom);
-        } //End block
+        } 
         mGlow.draw(canvas);
         mEdge.setAlpha((int) (Math.max(0, Math.min(mEdgeAlpha, 1)) * 255));
         int edgeBottom = (int) (edgeHeight * mEdgeScaleY);
         {
             int edgeLeft = (mWidth - mMinWidth)/2;
             mEdge.setBounds(edgeLeft, 0, mWidth - edgeLeft, edgeBottom);
-        } //End block
+        } 
         {
             mEdge.setBounds(0, 0, mWidth, edgeBottom);
-        } //End block
+        } 
         mEdge.draw(canvas);
         addTaint(canvas.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_465358880 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_465358880;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.495 -0400", hash_original_method = "217F98194ACCE474266C15D1EE978E29", hash_generated_method = "449F73A7F067312DFF505BD3A9DCF80F")
     private void update() {
         final long time = AnimationUtils.currentAnimationTimeMillis();
@@ -283,92 +288,92 @@ public class EdgeEffect {
         mGlowAlpha = mGlowAlphaStart + (mGlowAlphaFinish - mGlowAlphaStart) * interp;
         mGlowScaleY = mGlowScaleYStart + (mGlowScaleYFinish - mGlowScaleYStart) * interp;
         {
-            //Begin case STATE_ABSORB 
+            
             mState = STATE_RECEDE;
-            //End case STATE_ABSORB 
-            //Begin case STATE_ABSORB 
+            
+            
             mStartTime = AnimationUtils.currentAnimationTimeMillis();
-            //End case STATE_ABSORB 
-            //Begin case STATE_ABSORB 
+            
+            
             mDuration = RECEDE_TIME;
-            //End case STATE_ABSORB 
-            //Begin case STATE_ABSORB 
+            
+            
             mEdgeAlphaStart = mEdgeAlpha;
-            //End case STATE_ABSORB 
-            //Begin case STATE_ABSORB 
+            
+            
             mEdgeScaleYStart = mEdgeScaleY;
-            //End case STATE_ABSORB 
-            //Begin case STATE_ABSORB 
+            
+            
             mGlowAlphaStart = mGlowAlpha;
-            //End case STATE_ABSORB 
-            //Begin case STATE_ABSORB 
+            
+            
             mGlowScaleYStart = mGlowScaleY;
-            //End case STATE_ABSORB 
-            //Begin case STATE_ABSORB 
+            
+            
             mEdgeAlphaFinish = 0.f;
-            //End case STATE_ABSORB 
-            //Begin case STATE_ABSORB 
+            
+            
             mEdgeScaleYFinish = 0.f;
-            //End case STATE_ABSORB 
-            //Begin case STATE_ABSORB 
+            
+            
             mGlowAlphaFinish = 0.f;
-            //End case STATE_ABSORB 
-            //Begin case STATE_ABSORB 
+            
+            
             mGlowScaleYFinish = 0.f;
-            //End case STATE_ABSORB 
-            //Begin case STATE_PULL 
+            
+            
             mState = STATE_PULL_DECAY;
-            //End case STATE_PULL 
-            //Begin case STATE_PULL 
+            
+            
             mStartTime = AnimationUtils.currentAnimationTimeMillis();
-            //End case STATE_PULL 
-            //Begin case STATE_PULL 
+            
+            
             mDuration = PULL_DECAY_TIME;
-            //End case STATE_PULL 
-            //Begin case STATE_PULL 
+            
+            
             mEdgeAlphaStart = mEdgeAlpha;
-            //End case STATE_PULL 
-            //Begin case STATE_PULL 
+            
+            
             mEdgeScaleYStart = mEdgeScaleY;
-            //End case STATE_PULL 
-            //Begin case STATE_PULL 
+            
+            
             mGlowAlphaStart = mGlowAlpha;
-            //End case STATE_PULL 
-            //Begin case STATE_PULL 
+            
+            
             mGlowScaleYStart = mGlowScaleY;
-            //End case STATE_PULL 
-            //Begin case STATE_PULL 
+            
+            
             mEdgeAlphaFinish = 0.f;
-            //End case STATE_PULL 
-            //Begin case STATE_PULL 
+            
+            
             mEdgeScaleYFinish = 0.f;
-            //End case STATE_PULL 
-            //Begin case STATE_PULL 
+            
+            
             mGlowAlphaFinish = 0.f;
-            //End case STATE_PULL 
-            //Begin case STATE_PULL 
+            
+            
             mGlowScaleYFinish = 0.f;
-            //End case STATE_PULL 
-            //Begin case STATE_PULL_DECAY 
+            
+            
             float factor;
             factor = 1
                             / (mGlowScaleYFinish * mGlowScaleYFinish);
             factor = Float.MAX_VALUE;
-            //End case STATE_PULL_DECAY 
-            //Begin case STATE_PULL_DECAY 
+            
+            
             mEdgeScaleY = mEdgeScaleYStart +
                         (mEdgeScaleYFinish - mEdgeScaleYStart) *
                             interp * factor;
-            //End case STATE_PULL_DECAY 
-            //Begin case STATE_PULL_DECAY 
+            
+            
             mState = STATE_RECEDE;
-            //End case STATE_PULL_DECAY 
-            //Begin case STATE_RECEDE 
+            
+            
             mState = STATE_IDLE;
-            //End case STATE_RECEDE 
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            
+        } 
+        
+        
     }
 
     

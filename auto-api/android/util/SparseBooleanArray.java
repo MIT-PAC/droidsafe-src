@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.util.ArrayUtils;
 
@@ -23,7 +23,7 @@ public class SparseBooleanArray implements Cloneable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.624 -0400", hash_original_method = "8D15548F78BDFDD752295E5C53E86F2F", hash_generated_method = "615FAF32D19F7E913E71139FAA2C7BA8")
     public  SparseBooleanArray() {
         this(10);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,53 +33,56 @@ public class SparseBooleanArray implements Cloneable {
         mKeys = new int[initialCapacity];
         mValues = new boolean[initialCapacity];
         mSize = 0;
-        // ---------- Original Method ----------
-        //initialCapacity = ArrayUtils.idealIntArraySize(initialCapacity);
-        //mKeys = new int[initialCapacity];
-        //mValues = new boolean[initialCapacity];
-        //mSize = 0;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.627 -0400", hash_original_method = "F55567A3E3F95227EEE521C36E220AEC", hash_generated_method = "5853DE3013939C660E935D4D2A0BA290")
     @Override
     public SparseBooleanArray clone() {
-        SparseBooleanArray varB4EAC82CA7396A68D541C85D26508E83_276522191 = null; //Variable for return #1
+        SparseBooleanArray varB4EAC82CA7396A68D541C85D26508E83_276522191 = null; 
         SparseBooleanArray clone = null;
         try 
         {
             clone = (SparseBooleanArray) super.clone();
             clone.mKeys = mKeys.clone();
             clone.mValues = mValues.clone();
-        } //End block
+        } 
         catch (CloneNotSupportedException cnse)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_276522191 = clone;
-        varB4EAC82CA7396A68D541C85D26508E83_276522191.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_276522191.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_276522191;
-        // ---------- Original Method ----------
-        //SparseBooleanArray clone = null;
-        //try {
-            //clone = (SparseBooleanArray) super.clone();
-            //clone.mKeys = mKeys.clone();
-            //clone.mValues = mValues.clone();
-        //} catch (CloneNotSupportedException cnse) {
-        //}
-        //return clone;
+        
+        
+        
+            
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.628 -0400", hash_original_method = "1186B1642AA4116A541B7A05AB024C1E", hash_generated_method = "D2C1DD207A9FE25D91E6405F4C3F25E3")
     public boolean get(int key) {
         boolean varCD674645E34E1A3C54E107D1D1366795_1428880137 = (get(key, false));
         addTaint(key);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1622959020 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1622959020;
-        // ---------- Original Method ----------
-        //return get(key, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.629 -0400", hash_original_method = "421C2461F361B34EC4C9F82A0C8C35E5", hash_generated_method = "16D73A21FF4E62C743FAB2D18DDE8106")
     public boolean get(int key, boolean valueIfKeyNotFound) {
         int i = binarySearch(mKeys, 0, mSize, key);
@@ -87,40 +90,42 @@ public class SparseBooleanArray implements Cloneable {
         addTaint(valueIfKeyNotFound);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_654115654 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_654115654;
-        // ---------- Original Method ----------
-        //int i = binarySearch(mKeys, 0, mSize, key);
-        //if (i < 0) {
-            //return valueIfKeyNotFound;
-        //} else {
-            //return mValues[i];
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.629 -0400", hash_original_method = "18B11B5534C55393394DE082DEBB04D1", hash_generated_method = "2E921EE5927CBB4B4789C83580F570F0")
     public void delete(int key) {
         int i = binarySearch(mKeys, 0, mSize, key);
         {
             System.arraycopy(mKeys, i + 1, mKeys, i, mSize - (i + 1));
             System.arraycopy(mValues, i + 1, mValues, i, mSize - (i + 1));
-        } //End block
+        } 
         addTaint(key);
-        // ---------- Original Method ----------
-        //int i = binarySearch(mKeys, 0, mSize, key);
-        //if (i >= 0) {
-            //System.arraycopy(mKeys, i + 1, mKeys, i, mSize - (i + 1));
-            //System.arraycopy(mValues, i + 1, mValues, i, mSize - (i + 1));
-            //mSize--;
-        //}
+        
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.630 -0400", hash_original_method = "D051F7BD1248EC7F2DE7541E7D2B2D2A", hash_generated_method = "4DC2C099AEF12802B0866388C098E6D9")
     public void put(int key, boolean value) {
         int i = binarySearch(mKeys, 0, mSize, key);
         {
             mValues[i] = value;
-        } //End block
+        } 
         {
             i = ~i;
             {
@@ -131,16 +136,16 @@ public class SparseBooleanArray implements Cloneable {
                 System.arraycopy(mValues, 0, nvalues, 0, mValues.length);
                 mKeys = nkeys;
                 mValues = nvalues;
-            } //End block
+            } 
             {
                 System.arraycopy(mKeys, i, mKeys, i + 1, mSize - i);
                 System.arraycopy(mValues, i, mValues, i + 1, mSize - i);
-            } //End block
+            } 
             mKeys[i] = key;
             mValues[i] = value;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -148,8 +153,8 @@ public class SparseBooleanArray implements Cloneable {
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_858231436 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_858231436;
-        // ---------- Original Method ----------
-        //return mSize;
+        
+        
     }
 
     
@@ -158,8 +163,8 @@ public class SparseBooleanArray implements Cloneable {
         addTaint(index);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1920956141 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1920956141;
-        // ---------- Original Method ----------
-        //return mKeys[index];
+        
+        
     }
 
     
@@ -168,19 +173,20 @@ public class SparseBooleanArray implements Cloneable {
         addTaint(index);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1669233217 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1669233217;
-        // ---------- Original Method ----------
-        //return mValues[index];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.632 -0400", hash_original_method = "AE2F6996EFD9E2EE7383268F20118C3E", hash_generated_method = "A9A2371F69656C2B5312EB6789B35F92")
     public int indexOfKey(int key) {
         int varEF803A1EE726CA2553B95F3E48B65AD1_1513071618 = (binarySearch(mKeys, 0, mSize, key));
         addTaint(key);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1656454008 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1656454008;
-        // ---------- Original Method ----------
-        //return binarySearch(mKeys, 0, mSize, key);
+        
+        
     }
 
     
@@ -188,31 +194,32 @@ public class SparseBooleanArray implements Cloneable {
     public int indexOfValue(boolean value) {
         {
             int i = 0;
-        } //End collapsed parenthetic
+        } 
         addTaint(value);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_405121587 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_405121587;
-        // ---------- Original Method ----------
-        //for (int i = 0; i < mSize; i++)
-            //if (mValues[i] == value)
-                //return i;
-        //return -1;
+        
+        
+            
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.633 -0400", hash_original_method = "78B640B3511AD026106C387D36058FFC", hash_generated_method = "2F55AFCAF967A1646FEBDAF6AC2C8455")
     public void clear() {
         mSize = 0;
-        // ---------- Original Method ----------
-        //mSize = 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.635 -0400", hash_original_method = "1A2B721538032798B5FC0916FF4BED9A", hash_generated_method = "3A0CEEDAD72BFC8C98B1D7774CC4A291")
     public void append(int key, boolean value) {
         {
             put(key, value);
-        } //End block
+        } 
         int pos = mSize;
         {
             int n = ArrayUtils.idealIntArraySize(pos + 1);
@@ -222,28 +229,28 @@ public class SparseBooleanArray implements Cloneable {
             System.arraycopy(mValues, 0, nvalues, 0, mValues.length);
             mKeys = nkeys;
             mValues = nvalues;
-        } //End block
+        } 
         mKeys[pos] = key;
         mValues[pos] = value;
         mSize = pos + 1;
-        // ---------- Original Method ----------
-        //if (mSize != 0 && key <= mKeys[mSize - 1]) {
-            //put(key, value);
-            //return;
-        //}
-        //int pos = mSize;
-        //if (pos >= mKeys.length) {
-            //int n = ArrayUtils.idealIntArraySize(pos + 1);
-            //int[] nkeys = new int[n];
-            //boolean[] nvalues = new boolean[n];
-            //System.arraycopy(mKeys, 0, nkeys, 0, mKeys.length);
-            //System.arraycopy(mValues, 0, nvalues, 0, mValues.length);
-            //mKeys = nkeys;
-            //mValues = nvalues;
-        //}
-        //mKeys[pos] = key;
-        //mValues[pos] = value;
-        //mSize = pos + 1;
+        
+        
+            
+            
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
+        
+        
+        
     }
 
     

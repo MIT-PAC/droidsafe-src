@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import javax.security.auth.x500.X500Principal;
@@ -27,9 +27,9 @@ public final class DistributionPointName {
     public  DistributionPointName(GeneralNames fullName) {
         this.fullName = fullName;
         this.nameRelativeToCRLIssuer = null;
-        // ---------- Original Method ----------
-        //this.fullName = fullName;
-        //this.nameRelativeToCRLIssuer = null;
+        
+        
+        
     }
 
     
@@ -37,40 +37,41 @@ public final class DistributionPointName {
     public  DistributionPointName(Name nameRelativeToCRLIssuer) {
         this.fullName = null;
         this.nameRelativeToCRLIssuer = nameRelativeToCRLIssuer;
-        // ---------- Original Method ----------
-        //this.fullName = null;
-        //this.nameRelativeToCRLIssuer = nameRelativeToCRLIssuer;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.825 -0400", hash_original_method = "F96CAEAAF8BF6CA887E583CF87D57244", hash_generated_method = "E66940ABFC5E54F668AE0EA75C78B57C")
     public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix);
         sb.append("Distribution Point Name: [\n");
         {
             fullName.dumpValue(sb, prefix + "  ");
-        } //End block
+        } 
         {
             sb.append(prefix);
             sb.append("  ");
             sb.append(nameRelativeToCRLIssuer.getName(X500Principal.RFC2253));
-        } //End block
+        } 
         sb.append(prefix);
         sb.append("]\n");
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //sb.append(prefix);
-        //sb.append("Distribution Point Name: [\n");
-        //if (fullName != null) {
-            //fullName.dumpValue(sb, prefix + "  ");
-        //} else {
-            //sb.append(prefix);
-            //sb.append("  ");
-            //sb.append(nameRelativeToCRLIssuer.getName(X500Principal.RFC2253));
-        //}
-        //sb.append(prefix);
-        //sb.append("]\n");
+        
+        
+        
+        
+            
+        
+            
+            
+            
+        
+        
+        
     }
 
     
@@ -106,28 +107,15 @@ public final class DistributionPointName {
             }
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
-            DistributionPointName result = null;
-            if (in.choiceIndex == 0) {
-                result = new DistributionPointName((GeneralNames) in.content);
-            } else {
-                
-                
-                result = new DistributionPointName((Name) in.content);
-            }
-            return result;
-        }
-    */
     
-    // orphaned legacy method
+    
+    
     public int getIndex(java.lang.Object object) {
             DistributionPointName dpn = (DistributionPointName) object;
             return (dpn.fullName == null) ? 1 : 0;
         }
     
-    // orphaned legacy method
+    
     public Object getObjectToEncode(Object object) {
             DistributionPointName dpn = (DistributionPointName) object;
             if (dpn.fullName == null) {

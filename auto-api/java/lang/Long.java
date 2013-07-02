@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class Long extends Number implements Comparable<Long> {
@@ -16,8 +16,8 @@ public final class Long extends Number implements Comparable<Long> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.293 -0400", hash_original_method = "F7421F28ECB11D742A45928A1DF88A80", hash_generated_method = "5A444BA7F41E5A7F34C5C8078DB04F37")
     public  Long(long value) {
         this.value = value;
-        // ---------- Original Method ----------
-        //this.value = value;
+        
+        
     }
 
     
@@ -25,7 +25,7 @@ public final class Long extends Number implements Comparable<Long> {
     public  Long(String string) throws NumberFormatException {
         this(parseLong(string));
         addTaint(string.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,19 +34,20 @@ public final class Long extends Number implements Comparable<Long> {
     public byte byteValue() {
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1921897128 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1921897128;
-        // ---------- Original Method ----------
-        //return (byte) value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.294 -0400", hash_original_method = "B49F758A210AD21F31F3B71259593715", hash_generated_method = "C8ECDB0F651AED53797BC0E4ADDB8390")
     public int compareTo(Long object) {
         int varEB17148B4676BC6C35C2467C947D57DF_1508121410 = (compare(value, object.value));
         addTaint(object.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_879097250 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_879097250;
-        // ---------- Original Method ----------
-        //return compare(value, object.value);
+        
+        
     }
 
     
@@ -55,11 +56,13 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static NumberFormatException invalidLong(String s) {
         throw new NumberFormatException("Invalid long: \"" + s + "\"");
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Long decode(String string) throws NumberFormatException {
         int length = string.length(), i = 0;
         if (length == 0) {
@@ -104,8 +107,8 @@ public final class Long extends Number implements Comparable<Long> {
     public double doubleValue() {
         double varE8CD7DA078A86726031AD64F35F5A6C0_575307523 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_575307523;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
@@ -115,8 +118,8 @@ public final class Long extends Number implements Comparable<Long> {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1949577284 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1949577284;
-        // ---------- Original Method ----------
-        //return (o instanceof Long) && (((Long) o).value == value);
+        
+        
     }
 
     
@@ -125,11 +128,12 @@ public final class Long extends Number implements Comparable<Long> {
     public float floatValue() {
         float var546ADE640B6EDFBC8A086EF31347E768_1970955106 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1970955106;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Long getLong(String string) {
         if (string == null || string.length() == 0) {
             return null;
@@ -146,6 +150,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Long getLong(String string, long defaultValue) {
         if (string == null || string.length() == 0) {
             return valueOf(defaultValue);
@@ -162,6 +167,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Long getLong(String string, Long defaultValue) {
         if (string == null || string.length() == 0) {
             return defaultValue;
@@ -183,8 +189,8 @@ public final class Long extends Number implements Comparable<Long> {
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_998062440 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_998062440;
-        // ---------- Original Method ----------
-        //return (int) (value ^ (value >>> 32));
+        
+        
     }
 
     
@@ -193,8 +199,8 @@ public final class Long extends Number implements Comparable<Long> {
     public int intValue() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1432585376 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1432585376;
-        // ---------- Original Method ----------
-        //return (int) value;
+        
+        
     }
 
     
@@ -203,16 +209,18 @@ public final class Long extends Number implements Comparable<Long> {
     public long longValue() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1587783595 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1587783595;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long parseLong(String string) throws NumberFormatException {
         return parseLong(string, 10);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long parseLong(String string, int radix) throws NumberFormatException {
         if (radix < Character.MIN_RADIX || radix > Character.MAX_RADIX) {
             throw new NumberFormatException("Invalid radix: " + radix);
@@ -232,6 +240,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static long parse(String string, int offset, int radix, boolean negative) {
         long max = Long.MIN_VALUE / radix;
         long result = 0, length = string.length();
@@ -264,53 +273,61 @@ public final class Long extends Number implements Comparable<Long> {
     public short shortValue() {
         short var4F09DAA9D95BCB166A302407A0E0BABE_489181435 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_489181435;
-        // ---------- Original Method ----------
-        //return (short) value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toBinaryString(long v) {
         return IntegralToString.longToBinaryString(v);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toHexString(long v) {
         return IntegralToString.longToHexString(v);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toOctalString(long v) {
         return IntegralToString.longToOctalString(v);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.300 -0400", hash_original_method = "6878CA43BE92FEF897301589A58FE568", hash_generated_method = "2ED80ED5626581086B39A7FE7E143661")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_460037583 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_460037583 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_460037583 = Long.toString(value);
-        varB4EAC82CA7396A68D541C85D26508E83_460037583.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_460037583.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_460037583;
-        // ---------- Original Method ----------
-        //return Long.toString(value);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(long n) {
         return IntegralToString.longToString(n);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(long v, int radix) {
         return IntegralToString.longToString(v, radix);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Long valueOf(String string) throws NumberFormatException {
         return valueOf(parseLong(string));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Long valueOf(String string, int radix) throws NumberFormatException {
         return valueOf(parseLong(string, radix));
     }
@@ -365,6 +382,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int numberOfTrailingZeros(long v) {
         int low = (int) v;
         return low !=0 ? Integer.numberOfTrailingZeros(low)
@@ -415,6 +433,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Long valueOf(long v) {
         return  v >= 128 || v < -128 ? new Long(v) : SMALL_VALUES[((int) v) + 128];
     }

@@ -1,11 +1,11 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.ref.SoftReference;
 import java.text.ParseException;
@@ -21,10 +21,11 @@ public final class DateUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.157 -0400", hash_original_method = "48D34D966FD8EAADA4B9042FB2D410CB", hash_generated_method = "F2D2192E1AB0D80DE38C401BF608C353")
     private  DateUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Date parseDate(String dateValue) throws DateParseException {
         return parseDate(dateValue, null, null);
     }
@@ -35,6 +36,7 @@ public final class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Date parseDate(
         String dateValue, 
         String[] dateFormats,
@@ -67,11 +69,13 @@ public final class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatDate(Date date) {
         return formatDate(date, PATTERN_RFC1123);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatDate(Date date, String pattern) {
         if (date == null) throw new IllegalArgumentException("date is null");
         if (pattern == null) throw new IllegalArgumentException("pattern is null");
@@ -85,7 +89,7 @@ public final class DateUtils {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.158 -0400", hash_original_method = "6FB3E28AC91977E78E839268C5DC660F", hash_generated_method = "6FB3E28AC91977E78E839268C5DC660F")
         public DateFormatHolder ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -113,14 +117,14 @@ public final class DateUtils {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.159 -0400", hash_original_method = "344E20B97AD97B49F3F39541DF8E3F01", hash_generated_method = "75FC8D79F7241F46085D7AEE2CD6464A")
             @Override
             protected SoftReference<Map<String, SimpleDateFormat>> initialValue() {
-                SoftReference<Map<String, SimpleDateFormat>> varB4EAC82CA7396A68D541C85D26508E83_353515551 = null; //Variable for return #1
+                SoftReference<Map<String, SimpleDateFormat>> varB4EAC82CA7396A68D541C85D26508E83_353515551 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_353515551 = new SoftReference<Map<String, SimpleDateFormat>>(
                         new HashMap<String, SimpleDateFormat>());
-                varB4EAC82CA7396A68D541C85D26508E83_353515551.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_353515551.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_353515551;
-                // ---------- Original Method ----------
-                //return new SoftReference<Map<String, SimpleDateFormat>>(
-                        //new HashMap<String, SimpleDateFormat>());
+                
+                
+                        
             }
 
             

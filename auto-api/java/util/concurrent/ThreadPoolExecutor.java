@@ -1,11 +1,11 @@
 package java.util.concurrent;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.concurrent.locks.*;
 import java.util.concurrent.atomic.*;
@@ -65,7 +65,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         addTaint(keepAliveTime);
         addTaint(unit.getTaint());
         addTaint(workQueue.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -84,7 +84,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         addTaint(unit.getTaint());
         addTaint(workQueue.getTaint());
         addTaint(threadFactory.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -103,7 +103,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         addTaint(unit.getTaint());
         addTaint(workQueue.getTaint());
         addTaint(handler.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -123,20 +123,20 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         this.keepAliveTime = unit.toNanos(keepAliveTime);
         this.threadFactory = threadFactory;
         this.handler = handler;
-        // ---------- Original Method ----------
-        //if (corePoolSize < 0 ||
-            //maximumPoolSize <= 0 ||
-            //maximumPoolSize < corePoolSize ||
-            //keepAliveTime < 0)
-            //throw new IllegalArgumentException();
-        //if (workQueue == null || threadFactory == null || handler == null)
-            //throw new NullPointerException();
-        //this.corePoolSize = corePoolSize;
-        //this.maximumPoolSize = maximumPoolSize;
-        //this.workQueue = workQueue;
-        //this.keepAliveTime = unit.toNanos(keepAliveTime);
-        //this.threadFactory = threadFactory;
-        //this.handler = handler;
+        
+        
+            
+            
+            
+            
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -170,38 +170,42 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.165 -0400", hash_original_method = "AB721E5F3628508DEF5AE872A937DFD4", hash_generated_method = "E8E1FB0E744931F957C5FA5B0B304332")
     private boolean compareAndIncrementWorkerCount(int expect) {
         boolean var0D25B4A75418F47C3A1EE479FF3954DB_1159899436 = (ctl.compareAndSet(expect, expect + 1));
         addTaint(expect);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_515139490 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_515139490;
-        // ---------- Original Method ----------
-        //return ctl.compareAndSet(expect, expect + 1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.166 -0400", hash_original_method = "046A4642208AB0946E7553D201BA8A62", hash_generated_method = "13BB9A9A9A3416C9A513FDAE7AD504FF")
     private boolean compareAndDecrementWorkerCount(int expect) {
         boolean varCEAB9D2C7D844A2C607832120A9DF559_1869918352 = (ctl.compareAndSet(expect, expect - 1));
         addTaint(expect);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1741746755 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1741746755;
-        // ---------- Original Method ----------
-        //return ctl.compareAndSet(expect, expect - 1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.166 -0400", hash_original_method = "197D64850896CFE44F6E60A0B666E58B", hash_generated_method = "F54F8A429506A3E9BF789D340C57887D")
     private void decrementWorkerCount() {
         {
             boolean var9E72ADC6AC1B6DC8A6652AF23ECFA13A_92757482 = (! compareAndDecrementWorkerCount(ctl.get()));
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //do {} while (! compareAndDecrementWorkerCount(ctl.get()));
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.167 -0400", hash_original_method = "F2BE86117A689CA9DA89AB2ED7F58DB7", hash_generated_method = "36904528D1C385BA6C1F6C14D7F26319")
     private void advanceRunState(int targetState) {
         {
@@ -209,16 +213,16 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             {
                 boolean var377820E787C2969E8C3C8BC9C2D5039B_1987795452 = (runStateAtLeast(c, targetState) ||
                 ctl.compareAndSet(c, ctlOf(targetState, workerCountOf(c))));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(targetState);
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int c = ctl.get();
-            //if (runStateAtLeast(c, targetState) ||
-                //ctl.compareAndSet(c, ctlOf(targetState, workerCountOf(c))))
-                //break;
-        //}
+        
+        
+            
+            
+                
+                
+        
     }
 
     
@@ -230,13 +234,13 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                 boolean var74E7770FE49A3B736EAFA345B26F794C_1605697477 = (isRunning(c) ||
                 runStateAtLeast(c, TIDYING) ||
                 (runStateOf(c) == SHUTDOWN && ! workQueue.isEmpty()));
-            } //End collapsed parenthetic
+            } 
             {
                 boolean var15C00CEC4F0FF9F08AE224FA2AB90491_383423094 = (workerCountOf(c) != 0);
                 {
                     interruptIdleWorkers(ONLY_ONE);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             final ReentrantLock mainLock = this.mainLock;
             mainLock.lock();
             try 
@@ -247,25 +251,26 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                         try 
                         {
                             terminated();
-                        } //End block
+                        } 
                         finally 
                         {
                             ctl.set(ctlOf(TERMINATED, 0));
                             termination.signalAll();
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             finally 
             {
                 mainLock.unlock();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.172 -0400", hash_original_method = "AA36F499694835EB802B188BC7C59A14", hash_generated_method = "06C4281B8B348FBB3BBC07F3FFEC743A")
     private void checkShutdownAccess() {
         SecurityManager security = System.getSecurityManager();
@@ -280,29 +285,30 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                     var6931C42F4C1AD656649FE9715A90096D_1886702992.hasNext();
                     Worker w = var6931C42F4C1AD656649FE9715A90096D_1886702992.next();
                     security.checkAccess(w.thread);
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             finally 
             {
                 mainLock.unlock();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //SecurityManager security = System.getSecurityManager();
-        //if (security != null) {
-            //security.checkPermission(shutdownPerm);
-            //final ReentrantLock mainLock = this.mainLock;
-            //mainLock.lock();
-            //try {
-                //for (Worker w : workers)
-                    //security.checkAccess(w.thread);
-            //} finally {
-                //mainLock.unlock();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+            
+                
+                    
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.176 -0400", hash_original_method = "3FD8BB870BC89D5588F0560753D4337F", hash_generated_method = "B85C3BBCFDB667C96111FF704ADCB2B9")
     private void interruptWorkers() {
         final ReentrantLock mainLock = this.mainLock;
@@ -317,32 +323,33 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                     try 
                     {
                         w.thread.interrupt();
-                    } //End block
+                    } 
                     catch (SecurityException ignore)
                     { }
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //for (Worker w : workers) {
-                //try {
-                    //w.thread.interrupt();
-                //} catch (SecurityException ignore) {
-                //}
-            //}
-        //} finally {
-            //mainLock.unlock();
-        //}
+        } 
+        
+        
+        
+        
+            
+                
+                    
+                
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.184 -0400", hash_original_method = "C11819B67BF410300D59BD8104FE87A4", hash_generated_method = "07768E6CCFFF2C8619F820B8A75DF0EE")
     private void interruptIdleWorkers(boolean onlyOne) {
         final ReentrantLock mainLock = this.mainLock;
@@ -361,54 +368,56 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                             try 
                             {
                                 t.interrupt();
-                            } //End block
+                            } 
                             catch (SecurityException ignore)
                             { }
                             finally 
                             {
                                 w.unlock();
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         addTaint(onlyOne);
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //for (Worker w : workers) {
-                //Thread t = w.thread;
-                //if (!t.isInterrupted() && w.tryLock()) {
-                    //try {
-                        //t.interrupt();
-                    //} catch (SecurityException ignore) {
-                    //} finally {
-                        //w.unlock();
-                    //}
-                //}
-                //if (onlyOne)
-                    //break;
-            //}
-        //} finally {
-            //mainLock.unlock();
-        //}
+        
+        
+        
+        
+            
+                
+                
+                    
+                        
+                    
+                    
+                        
+                    
+                
+                
+                    
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.184 -0400", hash_original_method = "8AE0F2FE6E5901DBE1EC6FD71BA67D3B", hash_generated_method = "5A72F35E8F8382990E1FD3DE61AAA8EA")
     private void interruptIdleWorkers() {
         interruptIdleWorkers(false);
-        // ---------- Original Method ----------
-        //interruptIdleWorkers(false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.185 -0400", hash_original_method = "41D1BD0CB95E0A52108020867995148C", hash_generated_method = "5B706AFE715C952CE3A9AE42EE408F30")
     private void clearInterruptsForTaskRun() {
         {
@@ -416,12 +425,12 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             Thread.interrupted() &&
             runStateAtLeast(ctl.get(), STOP));
             Thread.currentThread().interrupt();
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (runStateLessThan(ctl.get(), STOP) &&
-            //Thread.interrupted() &&
-            //runStateAtLeast(ctl.get(), STOP))
-            //Thread.currentThread().interrupt();
+        } 
+        
+        
+            
+            
+            
     }
 
     
@@ -429,15 +438,15 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     final void reject(Runnable command) {
         handler.rejectedExecution(command, this);
         addTaint(command.getTaint());
-        // ---------- Original Method ----------
-        //handler.rejectedExecution(command, this);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.185 -0400", hash_original_method = "0A1F69177689475EC5D7889C7292052F", hash_generated_method = "A8810A0A581CC8BD0FA906871342B1C5")
      void onShutdown() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
@@ -447,15 +456,16 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         addTaint(shutdownOK);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2111537618 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2111537618;
-        // ---------- Original Method ----------
-        //int rs = runStateOf(ctl.get());
-        //return rs == RUNNING || (rs == SHUTDOWN && shutdownOK);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.190 -0400", hash_original_method = "4695ACF3E76D112BC6AF0E9543CB0BFB", hash_generated_method = "3A34452FF741ECA75276BB5BBED0F622")
     private List<Runnable> drainQueue() {
-        List<Runnable> varB4EAC82CA7396A68D541C85D26508E83_627223557 = null; //Variable for return #1
+        List<Runnable> varB4EAC82CA7396A68D541C85D26508E83_627223557 = null; 
         BlockingQueue<Runnable> q = workQueue;
         List<Runnable> taskList = new ArrayList<Runnable>();
         q.drainTo(taskList);
@@ -468,28 +478,29 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                         {
                             boolean var8576918424BDAE7AC11C88E260CF968E_1697624208 = (q.remove(r));
                             taskList.add(r);
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_627223557 = taskList;
-        varB4EAC82CA7396A68D541C85D26508E83_627223557.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_627223557.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_627223557;
-        // ---------- Original Method ----------
-        //BlockingQueue<Runnable> q = workQueue;
-        //List<Runnable> taskList = new ArrayList<Runnable>();
-        //q.drainTo(taskList);
-        //if (!q.isEmpty()) {
-            //for (Runnable r : q.toArray(new Runnable[0])) {
-                //if (q.remove(r))
-                    //taskList.add(r);
-            //}
-        //}
-        //return taskList;
+        
+        
+        
+        
+        
+            
+                
+                    
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.191 -0400", hash_original_method = "7812A944CC6B2EE743043503F380EB35", hash_generated_method = "204A7FBA6AA037678E3C54B330B507E5")
     private boolean addWorker(Runnable firstTask, boolean core) {
         {
@@ -500,18 +511,18 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                 ! (rs == SHUTDOWN &&
                    firstTask == null &&
                    ! workQueue.isEmpty()));
-            } //End collapsed parenthetic
+            } 
             {
                 int wc = workerCountOf(c);
                 {
                     boolean varD3106FA273E29E33F79B0F29BC71E3E9_1460549087 = (compareAndIncrementWorkerCount(c));
-                } //End collapsed parenthetic
+                } 
                 c = ctl.get();
                 {
                     boolean var006D8DC234DA1DD78318D93B61711BB4_2100985367 = (runStateOf(c) != rs);
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         Worker w = new Worker(firstTask);
         Thread t = w.thread;
         final ReentrantLock mainLock = this.mainLock;
@@ -523,29 +534,30 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             {
                 decrementWorkerCount();
                 tryTerminate();
-            } //End block
+            } 
             workers.add(w);
             int s = workers.size();
             largestPoolSize = s;
-        } //End block
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         t.start();
         {
             boolean var1EB04529E4A4A4FAC968DC4C0BDBF0D5_370247167 = (runStateOf(ctl.get()) == STOP && ! t.isInterrupted());
             t.interrupt();
-        } //End collapsed parenthetic
+        } 
         addTaint(firstTask.getTaint());
         addTaint(core);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2078127375 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2078127375;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.192 -0400", hash_original_method = "98853BED73C436EB42A5D4B84EE5AAA8", hash_generated_method = "920AE6A2F5C7B59F092F1D2AA9B560B6")
     private void processWorkerExit(Worker w, boolean completedAbruptly) {
         decrementWorkerCount();
@@ -555,11 +567,11 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         {
             completedTaskCount += w.completedTasks;
             workers.remove(w);
-        } //End block
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         tryTerminate();
         int c = ctl.get();
         {
@@ -572,46 +584,47 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                     {
                         boolean var6D8D038A4484600C74CF88FBA3B0A889_835619924 = (min == 0 && ! workQueue.isEmpty());
                         min = 1;
-                    } //End collapsed parenthetic
+                    } 
                     {
                         boolean varABFCCB119B36440534356FFDFEBD1734_388048410 = (workerCountOf(c) >= min);
-                    } //End collapsed parenthetic
-                } //End block
+                    } 
+                } 
                 addWorker(null, false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(completedAbruptly);
-        // ---------- Original Method ----------
-        //if (completedAbruptly) 
-            //decrementWorkerCount();
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //completedTaskCount += w.completedTasks;
-            //workers.remove(w);
-        //} finally {
-            //mainLock.unlock();
-        //}
-        //tryTerminate();
-        //int c = ctl.get();
-        //if (runStateLessThan(c, STOP)) {
-            //if (!completedAbruptly) {
-                //int min = allowCoreThreadTimeOut ? 0 : corePoolSize;
-                //if (min == 0 && ! workQueue.isEmpty())
-                    //min = 1;
-                //if (workerCountOf(c) >= min)
-                    //return; 
-            //}
-            //addWorker(null, false);
-        //}
+        
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+        
+        
+        
+            
+                
+                
+                    
+                
+                    
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.193 -0400", hash_original_method = "CCE5E762047CA277EB153A60A9218EEF", hash_generated_method = "9F76E4685FCBAD8F4F019AB22079FBA7")
     private Runnable getTask() {
-        Runnable varB4EAC82CA7396A68D541C85D26508E83_1361426928 = null; //Variable for return #1
-        Runnable varB4EAC82CA7396A68D541C85D26508E83_812316812 = null; //Variable for return #2
-        Runnable varB4EAC82CA7396A68D541C85D26508E83_1816906029 = null; //Variable for return #3
+        Runnable varB4EAC82CA7396A68D541C85D26508E83_1361426928 = null; 
+        Runnable varB4EAC82CA7396A68D541C85D26508E83_812316812 = null; 
+        Runnable varB4EAC82CA7396A68D541C85D26508E83_1816906029 = null; 
         boolean timedOut = false;
         {
             int c = ctl.get();
@@ -621,8 +634,8 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                 {
                     decrementWorkerCount();
                     varB4EAC82CA7396A68D541C85D26508E83_1361426928 = null;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             boolean timed;
             {
                 int wc = workerCountOf(c);
@@ -630,12 +643,12 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                 {
                     boolean var6AE6FD94B8549E87FF836D5CDDE57650_1449404972 = (compareAndDecrementWorkerCount(c));
                     varB4EAC82CA7396A68D541C85D26508E83_812316812 = null;
-                } //End collapsed parenthetic
+                } 
                 c = ctl.get();
                 {
                     boolean var006D8DC234DA1DD78318D93B61711BB4_1784948096 = (runStateOf(c) != rs);
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             try 
             {
                 Runnable r;
@@ -643,28 +656,28 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                 r = workQueue.take();
                 varB4EAC82CA7396A68D541C85D26508E83_1816906029 = r;
                 timedOut = true;
-            } //End block
+            } 
             catch (InterruptedException retry)
             {
                 timedOut = false;
-            } //End block
-        } //End block
-        Runnable varA7E53CE21691AB073D9660D615818899_108963955; //Final return value
+            } 
+        } 
+        Runnable varA7E53CE21691AB073D9660D615818899_108963955; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_108963955 = varB4EAC82CA7396A68D541C85D26508E83_1361426928;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_108963955 = varB4EAC82CA7396A68D541C85D26508E83_812316812;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_108963955 = varB4EAC82CA7396A68D541C85D26508E83_1816906029;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_108963955.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_108963955.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_108963955;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -687,46 +700,47 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                         try 
                         {
                             task.run();
-                        } //End block
+                        } 
                         catch (RuntimeException x)
                         {
                             thrown = x;
                             if (DroidSafeAndroidRuntime.control) throw x;
-                        } //End block
+                        } 
                         catch (Error x)
                         {
                             thrown = x;
                             if (DroidSafeAndroidRuntime.control) throw x;
-                        } //End block
+                        } 
                         catch (Throwable x)
                         {
                             thrown = x;
                             if (DroidSafeAndroidRuntime.control) throw new Error(x);
-                        } //End block
+                        } 
                         finally 
                         {
                             afterExecute(task, thrown);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     finally 
                     {
                         task = null;
                         w.unlock();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             completedAbruptly = false;
-        } //End block
+        } 
         finally 
         {
             processWorkerExit(w, completedAbruptly);
-        } //End block
+        } 
         addTaint(w.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.195 -0400", hash_original_method = "D2720E6C2ABD70ABBFB850D5E1C9152E", hash_generated_method = "BE982933F99083E5432BCFF28733163F")
     public void execute(Runnable command) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -736,10 +750,10 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             {
                 {
                     boolean varF2EFA0687D3A42E9CB40767BB4923E49_552019201 = (addWorker(command, true));
-                } //End collapsed parenthetic
+                } 
                 c = ctl.get();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var4A9938DA2F57582B9B2A24D4AB9321D5_263182475 = (isRunning(c) && workQueue.offer(command));
             {
@@ -750,36 +764,37 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                     {
                         boolean varAA10E01B7AA21E8BCFA73D357B3B2488_1327931040 = (workerCountOf(recheck) == 0);
                         addWorker(null, false);
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 boolean varA615DB9E0F0C450CB87AF373F5D24117_1003703695 = (!addWorker(command, false));
                 reject(command);
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(command.getTaint());
-        // ---------- Original Method ----------
-        //if (command == null)
-            //throw new NullPointerException();
-        //int c = ctl.get();
-        //if (workerCountOf(c) < corePoolSize) {
-            //if (addWorker(command, true))
-                //return;
-            //c = ctl.get();
-        //}
-        //if (isRunning(c) && workQueue.offer(command)) {
-            //int recheck = ctl.get();
-            //if (! isRunning(recheck) && remove(command))
-                //reject(command);
-            //else if (workerCountOf(recheck) == 0)
-                //addWorker(null, false);
-        //}
-        //else if (!addWorker(command, false))
-            //reject(command);
+        
+        
+            
+        
+        
+            
+                
+            
+        
+        
+            
+            
+                
+            
+                
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.196 -0400", hash_original_method = "B2E77DE3594C1CCAEA14C26F5B572C39", hash_generated_method = "556962D5741EED8D70DCDA38C6FF2F42")
     public void shutdown() {
         final ReentrantLock mainLock = this.mainLock;
@@ -790,30 +805,31 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             advanceRunState(SHUTDOWN);
             interruptIdleWorkers();
             onShutdown();
-        } //End block
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         tryTerminate();
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //checkShutdownAccess();
-            //advanceRunState(SHUTDOWN);
-            //interruptIdleWorkers();
-            //onShutdown(); 
-        //} finally {
-            //mainLock.unlock();
-        //}
-        //tryTerminate();
+        
+        
+        
+        
+            
+            
+            
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.198 -0400", hash_original_method = "D65CB76EC87687B7E50B9EEFFDD4C298", hash_generated_method = "5D3B060566E3A1921E02DFD124ACA799")
     public List<Runnable> shutdownNow() {
-        List<Runnable> varB4EAC82CA7396A68D541C85D26508E83_1881440208 = null; //Variable for return #1
+        List<Runnable> varB4EAC82CA7396A68D541C85D26508E83_1881440208 = null; 
         List<Runnable> tasks;
         final ReentrantLock mainLock = this.mainLock;
         mainLock.lock();
@@ -823,64 +839,68 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             advanceRunState(STOP);
             interruptWorkers();
             tasks = drainQueue();
-        } //End block
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         tryTerminate();
         varB4EAC82CA7396A68D541C85D26508E83_1881440208 = tasks;
-        varB4EAC82CA7396A68D541C85D26508E83_1881440208.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1881440208.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1881440208;
-        // ---------- Original Method ----------
-        //List<Runnable> tasks;
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //checkShutdownAccess();
-            //advanceRunState(STOP);
-            //interruptWorkers();
-            //tasks = drainQueue();
-        //} finally {
-            //mainLock.unlock();
-        //}
-        //tryTerminate();
-        //return tasks;
+        
+        
+        
+        
+        
+            
+            
+            
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.199 -0400", hash_original_method = "968CAF504B3356CA71CED595275477F9", hash_generated_method = "78C28230A48DEB5D464BF98EFE4196C5")
     public boolean isShutdown() {
         boolean varF33AAB80735339C8E62ED2354FD74B60_138709195 = (! isRunning(ctl.get()));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1521055378 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1521055378;
-        // ---------- Original Method ----------
-        //return ! isRunning(ctl.get());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.200 -0400", hash_original_method = "1B50F454F3FDC6963CA79768BA657116", hash_generated_method = "6624AC9672ABFFDA06389A72744C52BB")
     public boolean isTerminating() {
         int c = ctl.get();
         boolean varE0B540E2ECAB27CA369AF9F26DBBDA29_455056514 = (! isRunning(c) && runStateLessThan(c, TERMINATED));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_28823827 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_28823827;
-        // ---------- Original Method ----------
-        //int c = ctl.get();
-        //return ! isRunning(c) && runStateLessThan(c, TERMINATED);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.201 -0400", hash_original_method = "9F60EBE4EAB8D07AF1E9485C91ACF37E", hash_generated_method = "1772FC4295B8D81301FEAB17897718D9")
     public boolean isTerminated() {
         boolean var9820E1CCF8E41D81F088906A90AC2F49_223988238 = (runStateAtLeast(ctl.get(), TERMINATED));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_845243869 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_845243869;
-        // ---------- Original Method ----------
-        //return runStateAtLeast(ctl.get(), TERMINATED);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.203 -0400", hash_original_method = "D4E88A24481EFB5D05D58739D7C6B24D", hash_generated_method = "9FDB9EFDECDE6C945FC058D11800E579")
     public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
         long nanos = unit.toNanos(timeout);
@@ -891,88 +911,92 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             {
                 {
                     boolean var0E078804F1366C01333D9AD026B9E5A4_51391061 = (runStateAtLeast(ctl.get(), TERMINATED));
-                } //End collapsed parenthetic
+                } 
                 nanos = termination.awaitNanos(nanos);
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         addTaint(timeout);
         addTaint(unit.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1614837427 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1614837427;
-        // ---------- Original Method ----------
-        //long nanos = unit.toNanos(timeout);
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //for (;;) {
-                //if (runStateAtLeast(ctl.get(), TERMINATED))
-                    //return true;
-                //if (nanos <= 0)
-                    //return false;
-                //nanos = termination.awaitNanos(nanos);
-            //}
-        //} finally {
-            //mainLock.unlock();
-        //}
+        
+        
+        
+        
+        
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.204 -0400", hash_original_method = "54A2A12810CC337A284FDAF9A692A515", hash_generated_method = "57134A5D1161D28260EB34D287472E08")
     protected void finalize() {
         shutdown();
-        // ---------- Original Method ----------
-        //shutdown();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.205 -0400", hash_original_method = "59E32FCC6E49B2109079BB0F3E4FFE2B", hash_generated_method = "A88DED1D742F584BEAE5A804A420AB50")
     public void setThreadFactory(ThreadFactory threadFactory) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         this.threadFactory = threadFactory;
-        // ---------- Original Method ----------
-        //if (threadFactory == null)
-            //throw new NullPointerException();
-        //this.threadFactory = threadFactory;
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.206 -0400", hash_original_method = "304653AC486A914BB8844AA1040FA7EB", hash_generated_method = "C007348DC07E525492F357A41A24B6EA")
     public ThreadFactory getThreadFactory() {
-        ThreadFactory varB4EAC82CA7396A68D541C85D26508E83_2014873921 = null; //Variable for return #1
+        ThreadFactory varB4EAC82CA7396A68D541C85D26508E83_2014873921 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2014873921 = threadFactory;
-        varB4EAC82CA7396A68D541C85D26508E83_2014873921.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2014873921.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2014873921;
-        // ---------- Original Method ----------
-        //return threadFactory;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.206 -0400", hash_original_method = "7F03D06860A87C46B9897C91E7329182", hash_generated_method = "69935C6E7F8CF7E6CF73E6589A399FE1")
     public void setRejectedExecutionHandler(RejectedExecutionHandler handler) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         this.handler = handler;
-        // ---------- Original Method ----------
-        //if (handler == null)
-            //throw new NullPointerException();
-        //this.handler = handler;
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.207 -0400", hash_original_method = "6DBE484B7F2A61BE5C5EC698F3E381D8", hash_generated_method = "1AB24D65F86869BB9C93C01B72793DEC")
     public RejectedExecutionHandler getRejectedExecutionHandler() {
-        RejectedExecutionHandler varB4EAC82CA7396A68D541C85D26508E83_991063695 = null; //Variable for return #1
+        RejectedExecutionHandler varB4EAC82CA7396A68D541C85D26508E83_991063695 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_991063695 = handler;
-        varB4EAC82CA7396A68D541C85D26508E83_991063695.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_991063695.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_991063695;
-        // ---------- Original Method ----------
-        //return handler;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.207 -0400", hash_original_method = "753479E48A5DF49EEF8BAF55BE437F30", hash_generated_method = "6E94A9F32B12C5C85B7F9848B8FAF29E")
     public void setCorePoolSize(int corePoolSize) {
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
@@ -988,25 +1012,25 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                     {
                         {
                             boolean var2AF1FFECF97D5086EAD41EBD9DCCCBAF_1950448072 = (workQueue.isEmpty());
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (corePoolSize < 0)
-            //throw new IllegalArgumentException();
-        //int delta = corePoolSize - this.corePoolSize;
-        //this.corePoolSize = corePoolSize;
-        //if (workerCountOf(ctl.get()) > corePoolSize)
-            //interruptIdleWorkers();
-        //else if (delta > 0) {
-            //int k = Math.min(delta, workQueue.size());
-            //while (k-- > 0 && addWorker(null, true)) {
-                //if (workQueue.isEmpty())
-                    //break;
-            //}
-        //}
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
+            
+            
+                
+                    
+            
+        
     }
 
     
@@ -1014,36 +1038,38 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     public int getCorePoolSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500779267 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500779267;
-        // ---------- Original Method ----------
-        //return corePoolSize;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.208 -0400", hash_original_method = "C3B1E657CEA1E5B0B9267C982B6F89C3", hash_generated_method = "F6392A5E3A499A7EAB98CB19BE947EE2")
     public boolean prestartCoreThread() {
         boolean var500E50B69291F8AC83E0DBD4A5C0288F_389735976 = (workerCountOf(ctl.get()) < corePoolSize &&
             addWorker(null, true));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1471500391 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1471500391;
-        // ---------- Original Method ----------
-        //return workerCountOf(ctl.get()) < corePoolSize &&
-            //addWorker(null, true);
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.209 -0400", hash_original_method = "BD3CEF4F9337B2BC7C235E398D43BE2A", hash_generated_method = "28BE3DC4D81729E7F73748F3B3D3D850")
     public int prestartAllCoreThreads() {
         int n = 0;
         {
             boolean var096EA4F950A8AEAC16821018608A2A21_19938394 = (addWorker(null, true));
-        } //End collapsed parenthetic
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_900815835 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_900815835;
-        // ---------- Original Method ----------
-        //int n = 0;
-        //while (addWorker(null, true))
-            //++n;
-        //return n;
+        
+        
+        
+            
+        
     }
 
     
@@ -1051,29 +1077,31 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     public boolean allowsCoreThreadTimeOut() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1780481581 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1780481581;
-        // ---------- Original Method ----------
-        //return allowCoreThreadTimeOut;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.211 -0400", hash_original_method = "3CB040DA26A3A7AB5E245CC61764B17D", hash_generated_method = "85D9BB0D78E10396CBC3943BF9368F98")
     public void allowCoreThreadTimeOut(boolean value) {
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Core threads must have nonzero keep alive times");
         {
             allowCoreThreadTimeOut = value;
             interruptIdleWorkers();
-        } //End block
-        // ---------- Original Method ----------
-        //if (value && keepAliveTime <= 0)
-            //throw new IllegalArgumentException("Core threads must have nonzero keep alive times");
-        //if (value != allowCoreThreadTimeOut) {
-            //allowCoreThreadTimeOut = value;
-            //if (value)
-                //interruptIdleWorkers();
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.211 -0400", hash_original_method = "21349012A93D2851376CF1101665B5CB", hash_generated_method = "1DCD5CFF286710F7DDBF71CDF83A86CC")
     public void setMaximumPoolSize(int maximumPoolSize) {
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
@@ -1081,13 +1109,13 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         {
             boolean var05D3AFE401306D7B03478EC9AD8483E3_655593036 = (workerCountOf(ctl.get()) > maximumPoolSize);
             interruptIdleWorkers();
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (maximumPoolSize <= 0 || maximumPoolSize < corePoolSize)
-            //throw new IllegalArgumentException();
-        //this.maximumPoolSize = maximumPoolSize;
-        //if (workerCountOf(ctl.get()) > maximumPoolSize)
-            //interruptIdleWorkers();
+        } 
+        
+        
+            
+        
+        
+            
     }
 
     
@@ -1095,59 +1123,63 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     public int getMaximumPoolSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909639860 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909639860;
-        // ---------- Original Method ----------
-        //return maximumPoolSize;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.212 -0400", hash_original_method = "863FC09A28296060918F86FB184DF489", hash_generated_method = "21FF2F8954CA1C66BBCFE8D70804D1BA")
     public void setKeepAliveTime(long time, TimeUnit unit) {
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         {
             boolean varE36A88334ABAF702C248888F469CB1B5_1299594167 = (time == 0 && allowsCoreThreadTimeOut());
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Core threads must have nonzero keep alive times");
-        } //End collapsed parenthetic
+        } 
         long keepAliveTime = unit.toNanos(time);
         long delta = keepAliveTime - this.keepAliveTime;
         this.keepAliveTime = keepAliveTime;
         interruptIdleWorkers();
         addTaint(time);
         addTaint(unit.getTaint());
-        // ---------- Original Method ----------
-        //if (time < 0)
-            //throw new IllegalArgumentException();
-        //if (time == 0 && allowsCoreThreadTimeOut())
-            //throw new IllegalArgumentException("Core threads must have nonzero keep alive times");
-        //long keepAliveTime = unit.toNanos(time);
-        //long delta = keepAliveTime - this.keepAliveTime;
-        //this.keepAliveTime = keepAliveTime;
-        //if (delta < 0)
-            //interruptIdleWorkers();
+        
+        
+            
+        
+            
+        
+        
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.213 -0400", hash_original_method = "DF59E7D78F54A4D1FBC20C042F5F1838", hash_generated_method = "D7AA23731F429584BE7E73F0938F0664")
     public long getKeepAliveTime(TimeUnit unit) {
         long var21762EF164EDAA82F42EC374AF5B3AFC_1825410024 = (unit.convert(keepAliveTime, TimeUnit.NANOSECONDS));
         addTaint(unit.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1302517389 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1302517389;
-        // ---------- Original Method ----------
-        //return unit.convert(keepAliveTime, TimeUnit.NANOSECONDS);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.213 -0400", hash_original_method = "BD8FCC0E1F95E7B090761BC333422796", hash_generated_method = "86F65FDC726583CC2853A76C8A912CD6")
     public BlockingQueue<Runnable> getQueue() {
-        BlockingQueue<Runnable> varB4EAC82CA7396A68D541C85D26508E83_1743938517 = null; //Variable for return #1
+        BlockingQueue<Runnable> varB4EAC82CA7396A68D541C85D26508E83_1743938517 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1743938517 = workQueue;
-        varB4EAC82CA7396A68D541C85D26508E83_1743938517.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1743938517.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1743938517;
-        // ---------- Original Method ----------
-        //return workQueue;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.213 -0400", hash_original_method = "79BF7D79C72AB53C9D385B8F29AB696D", hash_generated_method = "6B1B302731BB3C367228C02B64452BB8")
     public boolean remove(Runnable task) {
         boolean removed = workQueue.remove(task);
@@ -1155,13 +1187,14 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         addTaint(task.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_233521600 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_233521600;
-        // ---------- Original Method ----------
-        //boolean removed = workQueue.remove(task);
-        //tryTerminate();
-        //return removed;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.221 -0400", hash_original_method = "9B9E8DAAF98D7F6DDC91DC997B50219A", hash_generated_method = "8AC4C0F917969C1B2677DD100FB629D9")
     public void purge() {
         final BlockingQueue<Runnable> q = workQueue;
@@ -1175,10 +1208,10 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                     {
                         boolean var270276E750C193C865B578E1AE2E22C1_1523552807 = (r instanceof Future<?> && ((Future<?>)r).isCancelled());
                         it.remove();
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         catch (ConcurrentModificationException fallThrough)
         {
             {
@@ -1186,28 +1219,29 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                 {
                     boolean var4E8BBA7479E6059D39986F5769B4F8FA_1337632776 = (r instanceof Future<?> && ((Future<?>)r).isCancelled());
                     q.remove(r);
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         tryTerminate();
-        // ---------- Original Method ----------
-        //final BlockingQueue<Runnable> q = workQueue;
-        //try {
-            //Iterator<Runnable> it = q.iterator();
-            //while (it.hasNext()) {
-                //Runnable r = it.next();
-                //if (r instanceof Future<?> && ((Future<?>)r).isCancelled())
-                    //it.remove();
-            //}
-        //} catch (ConcurrentModificationException fallThrough) {
-            //for (Object r : q.toArray())
-                //if (r instanceof Future<?> && ((Future<?>)r).isCancelled())
-                    //q.remove(r);
-        //}
-        //tryTerminate();
+        
+        
+        
+            
+            
+                
+                
+                    
+            
+        
+            
+                
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.222 -0400", hash_original_method = "4852DC9A347396E4E4A26FF1AFDF98FD", hash_generated_method = "9130516003907D231D8C2B6879831DC8")
     public int getPoolSize() {
         final ReentrantLock mainLock = this.mainLock;
@@ -1217,26 +1251,27 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             {
                 boolean varF68CB7F835009006B5FA4F669CE04294_1583569079 = (runStateAtLeast(ctl.get(), TIDYING));
                 Object var741C3FF695A194FA69D4BFA4908B5EDF_1428622905 = (workers.size());
-            } //End flattened ternary
-        } //End block
+            } 
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_798861381 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_798861381;
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //return runStateAtLeast(ctl.get(), TIDYING) ? 0
-                //: workers.size();
-        //} finally {
-            //mainLock.unlock();
-        //}
+        
+        
+        
+        
+            
+                
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.233 -0400", hash_original_method = "F897DAAB3F6E4FA542BB8276CD2A7AD3", hash_generated_method = "B9ABEA3868501FF913812C462EF1EC42")
     public int getActiveCount() {
         final ReentrantLock mainLock = this.mainLock;
@@ -1250,47 +1285,49 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                 Worker w = var6931C42F4C1AD656649FE9715A90096D_560784024.next();
                 {
                     boolean varBC60F1E56E351594899C6DC36F026C6D_547451880 = (w.isLocked());
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1501404283 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1501404283;
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //int n = 0;
-            //for (Worker w : workers)
-                //if (w.isLocked())
-                    //++n;
-            //return n;
-        //} finally {
-            //mainLock.unlock();
-        //}
+        
+        
+        
+        
+            
+            
+                
+                    
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.234 -0400", hash_original_method = "B4A579D5588949E5556CF38ABCB55065", hash_generated_method = "7F7C83EAD6691B841CEAE17D28E05800")
     public int getLargestPoolSize() {
         final ReentrantLock mainLock = this.mainLock;
         mainLock.lock();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1309830356 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1309830356;
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //return largestPoolSize;
-        //} finally {
-            //mainLock.unlock();
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.240 -0400", hash_original_method = "145E6751E1E0E0F3E4FA35DB76B7EDE5", hash_generated_method = "C3554F5E4F345C82B0D0691858EE5B7B")
     public long getTaskCount() {
         final ReentrantLock mainLock = this.mainLock;
@@ -1306,34 +1343,35 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                     n += w.completedTasks;
                     {
                         boolean var522A9CF7E3545C172CF36E5345BFAC72_1976327526 = (w.isLocked());
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             long varB956FA447F2D153BA84914B4AF4D6590_1581696450 = (n + workQueue.size());
-        } //End block
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1632342008 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1632342008;
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //long n = completedTaskCount;
-            //for (Worker w : workers) {
-                //n += w.completedTasks;
-                //if (w.isLocked())
-                    //++n;
-            //}
-            //return n + workQueue.size();
-        //} finally {
-            //mainLock.unlock();
-        //}
+        
+        
+        
+        
+            
+            
+                
+                
+                    
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.246 -0400", hash_original_method = "C21C1799DAC41B07982333C8F3E02012", hash_generated_method = "CE076E6965E4D57ECE5038D16AFB10EC")
     public long getCompletedTaskCount() {
         final ReentrantLock mainLock = this.mainLock;
@@ -1346,31 +1384,32 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                 var6931C42F4C1AD656649FE9715A90096D_474203727.hasNext();
                 Worker w = var6931C42F4C1AD656649FE9715A90096D_474203727.next();
                 n += w.completedTasks;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_693918806 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_693918806;
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //long n = completedTaskCount;
-            //for (Worker w : workers)
-                //n += w.completedTasks;
-            //return n;
-        //} finally {
-            //mainLock.unlock();
-        //}
+        
+        
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.265 -0400", hash_original_method = "AA5F5BF44F4DA05ED8C1D4957936AC31", hash_generated_method = "E32D7A10A628205AE3CAE94DD68C5063")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_493387981 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_493387981 = null; 
         long ncompleted;
         int nworkers;
         int nactive;
@@ -1389,18 +1428,18 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                     ncompleted += w.completedTasks;
                     {
                         boolean var522A9CF7E3545C172CF36E5345BFAC72_1363935640 = (w.isLocked());
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         int c = ctl.get();
         String rs = (runStateLessThan(c, SHUTDOWN) ? "Running" :
                      (runStateAtLeast(c, TERMINATED) ? "Terminated" :
-                      "Shutting down"));//DSFIXME:  CODE0008: Nested ternary operator in expression
+                      "Shutting down"));
         varB4EAC82CA7396A68D541C85D26508E83_493387981 = super.toString() +
             "[" + rs +
             ", pool size = " + nworkers +
@@ -1408,10 +1447,10 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             ", queued tasks = " + workQueue.size() +
             ", completed tasks = " + ncompleted +
             "]";
-        varB4EAC82CA7396A68D541C85D26508E83_493387981.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_493387981.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_493387981;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1419,7 +1458,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     protected void beforeExecute(Thread t, Runnable r) {
         addTaint(t.getTaint());
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -1427,13 +1466,13 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     protected void afterExecute(Runnable r, Throwable t) {
         addTaint(r.getTaint());
         addTaint(t.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.273 -0400", hash_original_method = "A29D7F7280B94AB8E3FBFAF6674D4BBC", hash_generated_method = "F157B5EF4A6890FC5741BB31F75810D9")
     protected void terminated() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -1452,17 +1491,17 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
           Worker(Runnable firstTask) {
             this.firstTask = firstTask;
             this.thread = getThreadFactory().newThread(this);
-            // ---------- Original Method ----------
-            //this.firstTask = firstTask;
-            //this.thread = getThreadFactory().newThread(this);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.279 -0400", hash_original_method = "776DC8B2F80D9EC817EF7446A13B40B9", hash_generated_method = "1D172B8AE706040037220A6FE99238AC")
         public void run() {
             runWorker(this);
-            // ---------- Original Method ----------
-            //runWorker(this);
+            
+            
         }
 
         
@@ -1471,8 +1510,8 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             boolean var19B741D0D216C6237072ABA5B53D29C0_696392414 = (getState() == 1);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1775473470 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1775473470;
-            // ---------- Original Method ----------
-            //return getState() == 1;
+            
+            
         }
 
         
@@ -1482,17 +1521,17 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                 boolean varF425053993EA879E03DA150C877D7F5C_332975912 = (compareAndSetState(0, 1));
                 {
                     setExclusiveOwnerThread(Thread.currentThread());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(unused);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1649620143 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1649620143;
-            // ---------- Original Method ----------
-            //if (compareAndSetState(0, 1)) {
-                //setExclusiveOwnerThread(Thread.currentThread());
-                //return true;
-            //}
-            //return false;
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -1503,18 +1542,18 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             addTaint(unused);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1228988503 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1228988503;
-            // ---------- Original Method ----------
-            //setExclusiveOwnerThread(null);
-            //setState(0);
-            //return true;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.285 -0400", hash_original_method = "E6AC2D5893CA21F5681F81CF00C94AEB", hash_generated_method = "E250ED120425ABD3596F0FB44742AE76")
         public void lock() {
             acquire(1);
-            // ---------- Original Method ----------
-            //acquire(1);
+            
+            
         }
 
         
@@ -1523,16 +1562,16 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             boolean var983EB53456294FEAD564C34A6EB40052_737293217 = (tryAcquire(1));
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_908669594 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_908669594;
-            // ---------- Original Method ----------
-            //return tryAcquire(1);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.286 -0400", hash_original_method = "375F138297D7668DFC40E00540A7DE61", hash_generated_method = "9980155D40CCECC3DD5DA1A3CA7D2CB7")
         public void unlock() {
             release(1);
-            // ---------- Original Method ----------
-            //release(1);
+            
+            
         }
 
         
@@ -1541,8 +1580,8 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             boolean var7307B0E63112DD101487F0593BCA6CC3_725428659 = (isHeldExclusively());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1356190748 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1356190748;
-            // ---------- Original Method ----------
-            //return isHeldExclusively();
+            
+            
         }
 
         
@@ -1557,7 +1596,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.289 -0400", hash_original_method = "0024AA22CD353D26AF52EE7A7BFF5B6A", hash_generated_method = "EE6F5E0062E38533EDD0CC7DB47C5E41")
         public  CallerRunsPolicy() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1567,14 +1606,14 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                 boolean var25A2508FD0F77674F14744C27A3265D3_405780564 = (!e.isShutdown());
                 {
                     r.run();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(r.getTaint());
             addTaint(e.getTaint());
-            // ---------- Original Method ----------
-            //if (!e.isShutdown()) {
-                //r.run();
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1586,7 +1625,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.291 -0400", hash_original_method = "0E304EA6C47EF7342B79AE7423647CD0", hash_generated_method = "179F0278660B104E944DF3C713C65A75")
         public  AbortPolicy() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1597,10 +1636,10 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                                                  e.toString());
             addTaint(r.getTaint());
             addTaint(e.getTaint());
-            // ---------- Original Method ----------
-            //throw new RejectedExecutionException("Task " + r.toString() +
-                                                 //" rejected from " +
-                                                 //e.toString());
+            
+            
+                                                 
+                                                 
         }
 
         
@@ -1612,7 +1651,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.292 -0400", hash_original_method = "F09B76305D692D1CB8CB62E17F499CB5", hash_generated_method = "C4B475A3525556F9D1B8C945DF152CD4")
         public  DiscardPolicy() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1620,7 +1659,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
             addTaint(r.getTaint());
             addTaint(e.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1632,7 +1671,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.292 -0400", hash_original_method = "7D42DC0AF0C4E1A1DAE9147B8685950D", hash_generated_method = "887F469A96FA729D52338C565521C0C6")
         public  DiscardOldestPolicy() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1643,15 +1682,15 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                 {
                     e.getQueue().poll();
                     e.execute(r);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(r.getTaint());
             addTaint(e.getTaint());
-            // ---------- Original Method ----------
-            //if (!e.isShutdown()) {
-                //e.getQueue().poll();
-                //e.execute(r);
-            //}
+            
+            
+                
+                
+            
         }
 
         

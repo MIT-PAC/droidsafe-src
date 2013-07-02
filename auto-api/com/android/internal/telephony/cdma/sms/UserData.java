@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cdma.sms;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.SparseIntArray;
 import com.android.internal.telephony.SmsHeader;
@@ -40,10 +40,11 @@ public class UserData {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.907 -0400", hash_original_method = "09164C91BCB463A1239D064C926A7134", hash_generated_method = "09164C91BCB463A1239D064C926A7134")
     public UserData ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static byte[] stringToAscii(String str) {
         int len = str.length();
         byte[] result = new byte[len];
@@ -56,10 +57,11 @@ public class UserData {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.907 -0400", hash_original_method = "F1C0D00F51384BB453814F967BB3AF69", hash_generated_method = "7430BB52B9D8805A770A3105F61E2AB5")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_182479142 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_182479142 = null; 
         StringBuilder builder = new StringBuilder();
         builder.append("UserData ");
         builder.append("{ msgEncoding=" + (msgEncodingSet ? msgEncoding : "unset"));
@@ -71,20 +73,20 @@ public class UserData {
         builder.append(", payloadStr='" + payloadStr + "'");
         builder.append(" }");
         varB4EAC82CA7396A68D541C85D26508E83_182479142 = builder.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_182479142.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_182479142.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_182479142;
-        // ---------- Original Method ----------
-        //StringBuilder builder = new StringBuilder();
-        //builder.append("UserData ");
-        //builder.append("{ msgEncoding=" + (msgEncodingSet ? msgEncoding : "unset"));
-        //builder.append(", msgType=" + msgType);
-        //builder.append(", paddingBits=" + paddingBits);
-        //builder.append(", numFields=" + numFields);
-        //builder.append(", userDataHeader=" + userDataHeader);
-        //builder.append(", payload='" + HexDump.toHexString(payload) + "'");
-        //builder.append(", payloadStr='" + payloadStr + "'");
-        //builder.append(" }");
-        //return builder.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

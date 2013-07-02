@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -38,7 +38,7 @@ public class InstrumentationInfo extends PackageItemInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.676 -0400", hash_original_method = "34F974A68EBB10BE10D867312E044FDF", hash_generated_method = "9D87916FE1B410C75B139D4D86872585")
     public  InstrumentationInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -52,14 +52,14 @@ public class InstrumentationInfo extends PackageItemInfo implements Parcelable {
         nativeLibraryDir = orig.nativeLibraryDir;
         handleProfiling = orig.handleProfiling;
         functionalTest = orig.functionalTest;
-        // ---------- Original Method ----------
-        //targetPackage = orig.targetPackage;
-        //sourceDir = orig.sourceDir;
-        //publicSourceDir = orig.publicSourceDir;
-        //dataDir = orig.dataDir;
-        //nativeLibraryDir = orig.nativeLibraryDir;
-        //handleProfiling = orig.handleProfiling;
-        //functionalTest = orig.functionalTest;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -73,29 +73,30 @@ public class InstrumentationInfo extends PackageItemInfo implements Parcelable {
         nativeLibraryDir = source.readString();
         handleProfiling = source.readInt() != 0;
         functionalTest = source.readInt() != 0;
-        // ---------- Original Method ----------
-        //targetPackage = source.readString();
-        //sourceDir = source.readString();
-        //publicSourceDir = source.readString();
-        //dataDir = source.readString();
-        //nativeLibraryDir = source.readString();
-        //handleProfiling = source.readInt() != 0;
-        //functionalTest = source.readInt() != 0;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.681 -0400", hash_original_method = "B5CF3592446C27C5B1615F6776EEEE26", hash_generated_method = "530DCBD292F0F3E111F3D1D4F37EC664")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1247410667 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1247410667 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1247410667 = "InstrumentationInfo{"
             + Integer.toHexString(System.identityHashCode(this))
             + " " + packageName + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_1247410667.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1247410667.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1247410667;
-        // ---------- Original Method ----------
-        //return "InstrumentationInfo{"
-            //+ Integer.toHexString(System.identityHashCode(this))
-            //+ " " + packageName + "}";
+        
+        
+            
+            
     }
 
     
@@ -103,11 +104,12 @@ public class InstrumentationInfo extends PackageItemInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1598180636 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1598180636;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.683 -0400", hash_original_method = "6CE0B2B52F0EF507C684C63B39230F74", hash_generated_method = "43DD9BFB2E96CB9E5F989F77C54135BE")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         super.writeToParcel(dest, parcelableFlags);
@@ -120,15 +122,15 @@ public class InstrumentationInfo extends PackageItemInfo implements Parcelable {
         dest.writeInt((functionalTest == false) ? 0 : 1);
         addTaint(dest.getTaint());
         addTaint(parcelableFlags);
-        // ---------- Original Method ----------
-        //super.writeToParcel(dest, parcelableFlags);
-        //dest.writeString(targetPackage);
-        //dest.writeString(sourceDir);
-        //dest.writeString(publicSourceDir);
-        //dest.writeString(dataDir);
-        //dest.writeString(nativeLibraryDir);
-        //dest.writeInt((handleProfiling == false) ? 0 : 1);
-        //dest.writeInt((functionalTest == false) ? 0 : 1);
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -143,12 +145,12 @@ public class InstrumentationInfo extends PackageItemInfo implements Parcelable {
             return new InstrumentationInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public InstrumentationInfo createFromParcel(Parcel source) {
             return new InstrumentationInfo(source);
         }
     
-    // orphaned legacy method
+    
     public InstrumentationInfo[] newArray(int size) {
             return new InstrumentationInfo[size];
         }

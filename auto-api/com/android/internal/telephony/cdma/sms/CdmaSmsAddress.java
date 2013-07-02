@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cdma.sms;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.SparseBooleanArray;
 import com.android.internal.telephony.SmsAddress;
@@ -28,14 +28,15 @@ public class CdmaSmsAddress extends SmsAddress {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.859 -0400", hash_original_method = "C14D3E49998397C1BAE29B9693261AA4", hash_generated_method = "D0B7A6B483495AD2F861F207E5EE1740")
     public  CdmaSmsAddress() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.859 -0400", hash_original_method = "63A53E613DBD8AE7867F216680739B01", hash_generated_method = "96FDCB140BE2B0103CE4CDD4477264BF")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1854347247 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1854347247 = null; 
         StringBuilder builder = new StringBuilder();
         builder.append("CdmaSmsAddress ");
         builder.append("{ digitMode=" + digitMode);
@@ -47,23 +48,24 @@ public class CdmaSmsAddress extends SmsAddress {
         builder.append(", origBytes=" + HexDump.toHexString(origBytes));
         builder.append(" }");
         varB4EAC82CA7396A68D541C85D26508E83_1854347247 = builder.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1854347247.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1854347247.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1854347247;
-        // ---------- Original Method ----------
-        //StringBuilder builder = new StringBuilder();
-        //builder.append("CdmaSmsAddress ");
-        //builder.append("{ digitMode=" + digitMode);
-        //builder.append(", numberMode=" + numberMode);
-        //builder.append(", numberPlan=" + numberPlan);
-        //builder.append(", numberOfDigits=" + numberOfDigits);
-        //builder.append(", ton=" + ton);
-        //builder.append(", address=\"" + address + "\"");
-        //builder.append(", origBytes=" + HexDump.toHexString(origBytes));
-        //builder.append(" }");
-        //return builder.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static byte[] parseToDtmf(String address) {
         int digits = address.length();
         byte[] result = new byte[digits];
@@ -81,6 +83,7 @@ public class CdmaSmsAddress extends SmsAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String filterNumericSugar(String address) {
         StringBuilder builder = new StringBuilder();
         int len = address.length();
@@ -95,6 +98,7 @@ public class CdmaSmsAddress extends SmsAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String filterWhitespace(String address) {
         StringBuilder builder = new StringBuilder();
         int len = address.length();
@@ -107,6 +111,7 @@ public class CdmaSmsAddress extends SmsAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CdmaSmsAddress parse(String address) {
         CdmaSmsAddress addr = new CdmaSmsAddress();
         addr.address = address;

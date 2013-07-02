@@ -1,11 +1,11 @@
 package java.util.concurrent;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -20,10 +20,11 @@ public class Executors {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.242 -0400", hash_original_method = "F4CB3C27487DF72857FE3507DC40AD75", hash_generated_method = "27F2BAE4FD286E326334A8739E3D4262")
     private  Executors() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ExecutorService newFixedThreadPool(int nThreads) {
         return new ThreadPoolExecutor(nThreads, nThreads,
                                       0L, TimeUnit.MILLISECONDS,
@@ -31,6 +32,7 @@ public class Executors {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
         return new ThreadPoolExecutor(nThreads, nThreads,
                                       0L, TimeUnit.MILLISECONDS,
@@ -39,6 +41,7 @@ public class Executors {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ExecutorService newSingleThreadExecutor() {
         return new FinalizableDelegatedExecutorService
             (new ThreadPoolExecutor(1, 1,
@@ -47,6 +50,7 @@ public class Executors {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactory) {
         return new FinalizableDelegatedExecutorService
             (new ThreadPoolExecutor(1, 1,
@@ -56,6 +60,7 @@ public class Executors {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ExecutorService newCachedThreadPool() {
         return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                       60L, TimeUnit.SECONDS,
@@ -63,6 +68,7 @@ public class Executors {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
         return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                       60L, TimeUnit.SECONDS,
@@ -71,29 +77,34 @@ public class Executors {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ScheduledExecutorService newSingleThreadScheduledExecutor() {
         return new DelegatedScheduledExecutorService
             (new ScheduledThreadPoolExecutor(1));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ScheduledExecutorService newSingleThreadScheduledExecutor(ThreadFactory threadFactory) {
         return new DelegatedScheduledExecutorService
             (new ScheduledThreadPoolExecutor(1, threadFactory));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
         return new ScheduledThreadPoolExecutor(corePoolSize);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ScheduledExecutorService newScheduledThreadPool(
             int corePoolSize, ThreadFactory threadFactory) {
         return new ScheduledThreadPoolExecutor(corePoolSize, threadFactory);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ExecutorService unconfigurableExecutorService(ExecutorService executor) {
         if (executor == null)
             throw new NullPointerException();
@@ -101,6 +112,7 @@ public class Executors {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ScheduledExecutorService unconfigurableScheduledExecutorService(ScheduledExecutorService executor) {
         if (executor == null)
             throw new NullPointerException();
@@ -108,16 +120,19 @@ public class Executors {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ThreadFactory defaultThreadFactory() {
         return new DefaultThreadFactory();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ThreadFactory privilegedThreadFactory() {
         return new PrivilegedThreadFactory();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> Callable<T> callable(Runnable task, T result) {
         if (task == null)
             throw new NullPointerException();
@@ -125,6 +140,7 @@ public class Executors {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Callable<Object> callable(Runnable task) {
         if (task == null)
             throw new NullPointerException();
@@ -148,6 +164,7 @@ public class Executors {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> Callable<T> privilegedCallable(Callable<T> callable) {
         if (callable == null)
             throw new NullPointerException();
@@ -155,6 +172,7 @@ public class Executors {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> Callable<T> privilegedCallableUsingCurrentClassLoader(Callable<T> callable) {
         if (callable == null)
             throw new NullPointerException();
@@ -174,22 +192,22 @@ public class Executors {
           RunnableAdapter(Runnable task, T result) {
             this.task = task;
             this.result = result;
-            // ---------- Original Method ----------
-            //this.task = task;
-            //this.result = result;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.246 -0400", hash_original_method = "0255C7C18478A7E06F3D7DE61652A41C", hash_generated_method = "349864BBB7DE4A46053754258101047B")
         public T call() {
-            T varB4EAC82CA7396A68D541C85D26508E83_354410316 = null; //Variable for return #1
+            T varB4EAC82CA7396A68D541C85D26508E83_354410316 = null; 
             task.run();
             varB4EAC82CA7396A68D541C85D26508E83_354410316 = result;
-            varB4EAC82CA7396A68D541C85D26508E83_354410316.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_354410316.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_354410316;
-            // ---------- Original Method ----------
-            //task.run();
-            //return result;
+            
+            
+            
         }
 
         
@@ -209,15 +227,15 @@ public class Executors {
           PrivilegedCallable(Callable<T> task) {
             this.task = task;
             this.acc = AccessController.getContext();
-            // ---------- Original Method ----------
-            //this.task = task;
-            //this.acc = AccessController.getContext();
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.248 -0400", hash_original_method = "9B84B0D9F1F9FF2095D253EA33535221", hash_generated_method = "8EF29BCB1ED78D6C079AD5D498F9D680")
         public T call() throws Exception {
-            T varB4EAC82CA7396A68D541C85D26508E83_693701752 = null; //Variable for return #1
+            T varB4EAC82CA7396A68D541C85D26508E83_693701752 = null; 
             try 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_693701752 = AccessController.doPrivileged(
@@ -226,28 +244,28 @@ public class Executors {
                             return task.call();
                         }
                     }, acc);
-            } //End block
+            } 
             catch (PrivilegedActionException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw e.getException();
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_693701752.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_693701752.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_693701752;
-            // ---------- Original Method ----------
-            //try {
-                //return AccessController.doPrivileged(
-                    //new PrivilegedExceptionAction<T>() {
-                        //public T run() throws Exception {
-                            //return task.call();
-                        //}
-                    //}, acc);
-            //} catch (PrivilegedActionException e) {
-                //throw e.getException();
-            //}
+            
+            
+                
+                    
+                        
+                            
+                        
+                    
+            
+                
+            
         }
 
         
-        // orphaned legacy method
+        
         public T run() throws Exception {
                             return task.call();
                         }
@@ -273,25 +291,25 @@ public class Executors {
             {
                 sm.checkPermission(new RuntimePermission("getContextClassLoader"));
                 sm.checkPermission(new RuntimePermission("setContextClassLoader"));
-            } //End block
+            } 
             this.task = task;
             this.acc = AccessController.getContext();
             this.ccl = Thread.currentThread().getContextClassLoader();
-            // ---------- Original Method ----------
-            //SecurityManager sm = System.getSecurityManager();
-            //if (sm != null) {
-                //sm.checkPermission(new RuntimePermission("getContextClassLoader")); 
-                //sm.checkPermission(new RuntimePermission("setContextClassLoader"));
-            //}
-            //this.task = task;
-            //this.acc = AccessController.getContext();
-            //this.ccl = Thread.currentThread().getContextClassLoader();
+            
+            
+            
+                
+                
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.249 -0400", hash_original_method = "083E1FD40613168D34C9FEEE9DFC0EBD", hash_generated_method = "2E6558A13F4F0682E612EFA61CA5ED45")
         public T call() throws Exception {
-            T varB4EAC82CA7396A68D541C85D26508E83_851102996 = null; //Variable for return #1
+            T varB4EAC82CA7396A68D541C85D26508E83_851102996 = null; 
             try 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_851102996 = AccessController.doPrivileged(
@@ -312,19 +330,19 @@ public class Executors {
                             }
                         }
                     }, acc);
-            } //End block
+            } 
             catch (PrivilegedActionException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw e.getException();
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_851102996.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_851102996.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_851102996;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
-        // orphaned legacy method
+        
         public T run() throws Exception {
                             ClassLoader savedcl = null;
                             Thread t = Thread.currentThread();
@@ -364,43 +382,43 @@ public class Executors {
             namePrefix = "pool-" +
                           poolNumber.getAndIncrement() +
                          "-thread-";
-            // ---------- Original Method ----------
-            //SecurityManager s = System.getSecurityManager();
-            //group = (s != null) ? s.getThreadGroup() :
-                                  //Thread.currentThread().getThreadGroup();
-            //namePrefix = "pool-" +
-                          //poolNumber.getAndIncrement() +
-                         //"-thread-";
+            
+            
+            
+                                  
+            
+                          
+                         
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.251 -0400", hash_original_method = "FA504429181C673B0F1001408D56C877", hash_generated_method = "F02A1429916E66BFD96A0671800D613D")
         public Thread newThread(Runnable r) {
-            Thread varB4EAC82CA7396A68D541C85D26508E83_2044174361 = null; //Variable for return #1
+            Thread varB4EAC82CA7396A68D541C85D26508E83_2044174361 = null; 
             Thread t = new Thread(group, r,
                                   namePrefix + threadNumber.getAndIncrement(),
                                   0);
             {
                 boolean varF7C18CDC40FE52729E732C3509DE30D5_1020204041 = (t.isDaemon());
                 t.setDaemon(false);
-            } //End collapsed parenthetic
+            } 
             {
                 boolean var79BB14B3C56BE9336B8108F98A5C5A41_163133967 = (t.getPriority() != Thread.NORM_PRIORITY);
                 t.setPriority(Thread.NORM_PRIORITY);
-            } //End collapsed parenthetic
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_2044174361 = t;
             addTaint(r.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2044174361.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2044174361.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2044174361;
-            // ---------- Original Method ----------
-            //Thread t = new Thread(group, r,
-                                  //namePrefix + threadNumber.getAndIncrement(),
-                                  //0);
-            //if (t.isDaemon())
-                //t.setDaemon(false);
-            //if (t.getPriority() != Thread.NORM_PRIORITY)
-                //t.setPriority(Thread.NORM_PRIORITY);
-            //return t;
+            
+            
+                                  
+                                  
+            
+                
+            
+                
+            
         }
 
         
@@ -426,23 +444,23 @@ public class Executors {
             {
                 sm.checkPermission(new RuntimePermission("getContextClassLoader"));
                 sm.checkPermission(new RuntimePermission("setContextClassLoader"));
-            } //End block
+            } 
             this.acc = AccessController.getContext();
             this.ccl = Thread.currentThread().getContextClassLoader();
-            // ---------- Original Method ----------
-            //SecurityManager sm = System.getSecurityManager();
-            //if (sm != null) {
-                //sm.checkPermission(new RuntimePermission("getContextClassLoader")); 
-                //sm.checkPermission(new RuntimePermission("setContextClassLoader"));
-            //}
-            //this.acc = AccessController.getContext();
-            //this.ccl = Thread.currentThread().getContextClassLoader();
+            
+            
+            
+                
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.252 -0400", hash_original_method = "0BB5C6FA3ECC4446695A9AB19E82A9A9", hash_generated_method = "B776D60A6423251E04519371314A1A26")
         public Thread newThread(final Runnable r) {
-            Thread varB4EAC82CA7396A68D541C85D26508E83_2062987160 = null; //Variable for return #1
+            Thread varB4EAC82CA7396A68D541C85D26508E83_2062987160 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2062987160 = super.newThread(new Runnable() {
                 public void run() {
                     AccessController.doPrivileged(new PrivilegedAction<Void>() {
@@ -455,20 +473,20 @@ public class Executors {
                 }
             });
             addTaint(r.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2062987160.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2062987160.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2062987160;
-            // ---------- Original Method ----------
-            //return super.newThread(new Runnable() {
-                //public void run() {
-                    //AccessController.doPrivileged(new PrivilegedAction<Void>() {
-                        //public Void run() {
-                            //Thread.currentThread().setContextClassLoader(ccl);
-                            //r.run();
-                            //return null;
-                        //}
-                    //}, acc);
-                //}
-            //});
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                        
+                    
+                
+            
         }
         
     }
@@ -483,8 +501,8 @@ public class Executors {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.252 -0400", hash_original_method = "69B8656E71D4B49ACEB9CE44B20A63F5", hash_generated_method = "FF9F28349FB8E5F20D2028CD89D51AA0")
           DelegatedExecutorService(ExecutorService executor) {
             e = executor;
-            // ---------- Original Method ----------
-            //e = executor;
+            
+            
         }
 
         
@@ -492,27 +510,27 @@ public class Executors {
         public void execute(Runnable command) {
             e.execute(command);
             addTaint(command.getTaint());
-            // ---------- Original Method ----------
-            //e.execute(command);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.253 -0400", hash_original_method = "AC5ABD61901BFC6045B0080105C55DDA", hash_generated_method = "870B34DC67E6CAF4D4CA22846B67BE5A")
         public void shutdown() {
             e.shutdown();
-            // ---------- Original Method ----------
-            //e.shutdown();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.253 -0400", hash_original_method = "96CCD300667A8693DD62C1833316B3E7", hash_generated_method = "D84B7A16E7FF7DA9F971B55ED8A513F5")
         public List<Runnable> shutdownNow() {
-            List<Runnable> varB4EAC82CA7396A68D541C85D26508E83_1346241293 = null; //Variable for return #1
+            List<Runnable> varB4EAC82CA7396A68D541C85D26508E83_1346241293 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1346241293 = e.shutdownNow();
-            varB4EAC82CA7396A68D541C85D26508E83_1346241293.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1346241293.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1346241293;
-            // ---------- Original Method ----------
-            //return e.shutdownNow();
+            
+            
         }
 
         
@@ -521,8 +539,8 @@ public class Executors {
             boolean var36CED742EFDAB0F6D9A92D25333E2306_1230808859 = (e.isShutdown());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1339451176 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1339451176;
-            // ---------- Original Method ----------
-            //return e.isShutdown();
+            
+            
         }
 
         
@@ -531,8 +549,8 @@ public class Executors {
             boolean var6E4612614060DC815BDD3E4518A67800_998834292 = (e.isTerminated());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1234820755 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1234820755;
-            // ---------- Original Method ----------
-            //return e.isTerminated();
+            
+            
         }
 
         
@@ -543,99 +561,99 @@ public class Executors {
             addTaint(unit.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_675218886 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_675218886;
-            // ---------- Original Method ----------
-            //return e.awaitTermination(timeout, unit);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.255 -0400", hash_original_method = "70A4BA700942918290F358C98B70C3C4", hash_generated_method = "B1C255231E730A2719B7D611AF005519")
         public Future<?> submit(Runnable task) {
-            Future<?> varB4EAC82CA7396A68D541C85D26508E83_1097611105 = null; //Variable for return #1
+            Future<?> varB4EAC82CA7396A68D541C85D26508E83_1097611105 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1097611105 = e.submit(task);
             addTaint(task.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1097611105.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1097611105.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1097611105;
-            // ---------- Original Method ----------
-            //return e.submit(task);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.255 -0400", hash_original_method = "83E0E20FEE789D6C0B6E1A8BE258D9AC", hash_generated_method = "C0EBB20278130179589C8529EA1A5B89")
         public <T> Future<T> submit(Callable<T> task) {
-            Future<T> varB4EAC82CA7396A68D541C85D26508E83_1771655439 = null; //Variable for return #1
+            Future<T> varB4EAC82CA7396A68D541C85D26508E83_1771655439 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1771655439 = e.submit(task);
             addTaint(task.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1771655439.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1771655439.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1771655439;
-            // ---------- Original Method ----------
-            //return e.submit(task);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.256 -0400", hash_original_method = "7C597CCD4131D2329D010B8EED3AD866", hash_generated_method = "ABCD054BD46F70E6A8AA2F84E6F640BD")
         public <T> Future<T> submit(Runnable task, T result) {
-            Future<T> varB4EAC82CA7396A68D541C85D26508E83_1917442772 = null; //Variable for return #1
+            Future<T> varB4EAC82CA7396A68D541C85D26508E83_1917442772 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1917442772 = e.submit(task, result);
             addTaint(task.getTaint());
             addTaint(result.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1917442772.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1917442772.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1917442772;
-            // ---------- Original Method ----------
-            //return e.submit(task, result);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.257 -0400", hash_original_method = "F48A0D0A4C3710017B7673C8DB7925EC", hash_generated_method = "548E07DE98A6303488628F4859A33DFA")
         public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) throws InterruptedException {
-            List<Future<T>> varB4EAC82CA7396A68D541C85D26508E83_41045031 = null; //Variable for return #1
+            List<Future<T>> varB4EAC82CA7396A68D541C85D26508E83_41045031 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_41045031 = e.invokeAll(tasks);
             addTaint(tasks.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_41045031.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_41045031.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_41045031;
-            // ---------- Original Method ----------
-            //return e.invokeAll(tasks);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.258 -0400", hash_original_method = "5F911CE685489301A15E24D766797016", hash_generated_method = "362547F29523FE76EDC7BEDC4BF21476")
         public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks,
                                              long timeout, TimeUnit unit) throws InterruptedException {
-            List<Future<T>> varB4EAC82CA7396A68D541C85D26508E83_1389580958 = null; //Variable for return #1
+            List<Future<T>> varB4EAC82CA7396A68D541C85D26508E83_1389580958 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1389580958 = e.invokeAll(tasks, timeout, unit);
             addTaint(tasks.getTaint());
             addTaint(timeout);
             addTaint(unit.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1389580958.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1389580958.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1389580958;
-            // ---------- Original Method ----------
-            //return e.invokeAll(tasks, timeout, unit);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.259 -0400", hash_original_method = "4C0A5FF3374B9876DAD3CF3A7DB4F9BC", hash_generated_method = "C8C19F6F7043921F2CBA176818FF3F04")
         public <T> T invokeAny(Collection<? extends Callable<T>> tasks) throws InterruptedException, ExecutionException {
-            T varB4EAC82CA7396A68D541C85D26508E83_1037732662 = null; //Variable for return #1
+            T varB4EAC82CA7396A68D541C85D26508E83_1037732662 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1037732662 = e.invokeAny(tasks);
             addTaint(tasks.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1037732662.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1037732662.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1037732662;
-            // ---------- Original Method ----------
-            //return e.invokeAny(tasks);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.259 -0400", hash_original_method = "D15E2648AE9554DE3EDB2502DC3264EF", hash_generated_method = "2BC835A1CEDE5AAE9FB62DF2FEE882EF")
         public <T> T invokeAny(Collection<? extends Callable<T>> tasks,
                                long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
-            T varB4EAC82CA7396A68D541C85D26508E83_1252087006 = null; //Variable for return #1
+            T varB4EAC82CA7396A68D541C85D26508E83_1252087006 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1252087006 = e.invokeAny(tasks, timeout, unit);
             addTaint(tasks.getTaint());
             addTaint(timeout);
             addTaint(unit.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1252087006.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1252087006.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1252087006;
-            // ---------- Original Method ----------
-            //return e.invokeAny(tasks, timeout, unit);
+            
+            
         }
 
         
@@ -649,15 +667,15 @@ public class Executors {
           FinalizableDelegatedExecutorService(ExecutorService executor) {
             super(executor);
             addTaint(executor.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.260 -0400", hash_original_method = "EFBA277C67FEFB15F281D1F7A5118361", hash_generated_method = "75FB1DC5FB180CA67655AFF259FD4832")
         protected void finalize() {
             super.shutdown();
-            // ---------- Original Method ----------
-            //super.shutdown();
+            
+            
         }
 
         
@@ -674,66 +692,66 @@ public class Executors {
           DelegatedScheduledExecutorService(ScheduledExecutorService executor) {
             super(executor);
             e = executor;
-            // ---------- Original Method ----------
-            //e = executor;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.261 -0400", hash_original_method = "D790041C21C164D4B5FF50718A4BC1E6", hash_generated_method = "CA6B41131E901F1C6A196CED0B61E209")
         public ScheduledFuture<?> schedule(Runnable command, long delay,  TimeUnit unit) {
-            ScheduledFuture<?> varB4EAC82CA7396A68D541C85D26508E83_662657404 = null; //Variable for return #1
+            ScheduledFuture<?> varB4EAC82CA7396A68D541C85D26508E83_662657404 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_662657404 = e.schedule(command, delay, unit);
             addTaint(command.getTaint());
             addTaint(delay);
             addTaint(unit.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_662657404.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_662657404.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_662657404;
-            // ---------- Original Method ----------
-            //return e.schedule(command, delay, unit);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.261 -0400", hash_original_method = "21B2A7EFB4EC4FCA85726955706F3411", hash_generated_method = "F6AA314EDFC1A477793DBBF8A68FB64F")
         public <V> ScheduledFuture<V> schedule(Callable<V> callable, long delay, TimeUnit unit) {
-            ScheduledFuture<V> varB4EAC82CA7396A68D541C85D26508E83_738729961 = null; //Variable for return #1
+            ScheduledFuture<V> varB4EAC82CA7396A68D541C85D26508E83_738729961 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_738729961 = e.schedule(callable, delay, unit);
             addTaint(callable.getTaint());
             addTaint(delay);
             addTaint(unit.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_738729961.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_738729961.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_738729961;
-            // ---------- Original Method ----------
-            //return e.schedule(callable, delay, unit);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.262 -0400", hash_original_method = "913AC360688F049D7C1CA1D721236AC7", hash_generated_method = "81D08BF8FBB1FEDFF4F07CD17ACB435A")
         public ScheduledFuture<?> scheduleAtFixedRate(Runnable command, long initialDelay,  long period, TimeUnit unit) {
-            ScheduledFuture<?> varB4EAC82CA7396A68D541C85D26508E83_215989634 = null; //Variable for return #1
+            ScheduledFuture<?> varB4EAC82CA7396A68D541C85D26508E83_215989634 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_215989634 = e.scheduleAtFixedRate(command, initialDelay, period, unit);
             addTaint(command.getTaint());
             addTaint(initialDelay);
             addTaint(period);
             addTaint(unit.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_215989634.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_215989634.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_215989634;
-            // ---------- Original Method ----------
-            //return e.scheduleAtFixedRate(command, initialDelay, period, unit);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.263 -0400", hash_original_method = "6DC4F7F046861AD80936134D3479B23D", hash_generated_method = "F25E0D6361A62560E028F57E1C06BD56")
         public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command, long initialDelay,  long delay, TimeUnit unit) {
-            ScheduledFuture<?> varB4EAC82CA7396A68D541C85D26508E83_138910557 = null; //Variable for return #1
+            ScheduledFuture<?> varB4EAC82CA7396A68D541C85D26508E83_138910557 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_138910557 = e.scheduleWithFixedDelay(command, initialDelay, delay, unit);
             addTaint(command.getTaint());
             addTaint(initialDelay);
             addTaint(delay);
             addTaint(unit.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_138910557.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_138910557.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_138910557;
-            // ---------- Original Method ----------
-            //return e.scheduleWithFixedDelay(command, initialDelay, delay, unit);
+            
+            
         }
 
         

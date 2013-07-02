@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.core.Token;
@@ -30,7 +30,7 @@ public class PAssociatedURIParser extends AddressParametersParser {
     public  PAssociatedURIParser(String associatedURI) {
         super(associatedURI);
         addTaint(associatedURI.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,13 +38,14 @@ public class PAssociatedURIParser extends AddressParametersParser {
     protected  PAssociatedURIParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.106 -0400", hash_original_method = "DA45542244416E40599094AA9DB4C3E3", hash_generated_method = "73ECCF3F354DA69AA95A8D9FDB52CD6A")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1103661305 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1103661305 = null; 
         dbg_enter("PAssociatedURIParser.parse");
         PAssociatedURIList associatedURIList = new PAssociatedURIList();
         try 
@@ -64,20 +65,20 @@ public class PAssociatedURIParser extends AddressParametersParser {
                     super.parse(associatedURI);
                     associatedURIList.add(associatedURI);
                     this.lexer.SPorHT();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             this.lexer.SPorHT();
             this.lexer.match('\n');
             varB4EAC82CA7396A68D541C85D26508E83_1103661305 = associatedURIList;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("PAssociatedURIParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1103661305.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1103661305.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1103661305;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

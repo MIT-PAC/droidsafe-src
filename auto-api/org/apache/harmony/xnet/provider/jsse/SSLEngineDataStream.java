@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.ByteBuffer;
 
@@ -28,10 +28,11 @@ public class SSLEngineDataStream implements DataStream {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.726 -0400", hash_original_method = "81A231B3D4DD015A439D187A80559964", hash_generated_method = "4F884E8C06CBAD5E1E6F5ED508608E8B")
     protected  SSLEngineDataStream() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.727 -0400", hash_original_method = "07A0F5FBA37A4DFBCBEB8B11158C1E83", hash_generated_method = "309560089E72AB4939EEF34DF53428F1")
     protected void setSourceBuffers(ByteBuffer[] srcs, int offset, int length) {
         this.srcs = srcs;
@@ -45,23 +46,23 @@ public class SSLEngineDataStream implements DataStream {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                         "Some of the input parameters are null");
-                } //End block
+                } 
                 available += srcs[i].remaining();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //this.srcs = srcs;
-        //this.offset = offset;
-        //this.limit = offset+length;
-        //this.consumed = 0;
-        //this.available = 0;
-        //for (int i=offset; i<limit; i++) {
-            //if (srcs[i] == null) {
-                //throw new IllegalStateException(
-                        //"Some of the input parameters are null");
-            //}
-            //available += srcs[i].remaining();
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+        
+            
+                
+                        
+            
+            
+        
     }
 
     
@@ -69,8 +70,8 @@ public class SSLEngineDataStream implements DataStream {
     public int available() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2066266707 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2066266707;
-        // ---------- Original Method ----------
-        //return available;
+        
+        
     }
 
     
@@ -78,11 +79,12 @@ public class SSLEngineDataStream implements DataStream {
     public boolean hasData() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1834136272 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1834136272;
-        // ---------- Original Method ----------
-        //return available > 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.728 -0400", hash_original_method = "C75EAA43F8837BF85C32F9A85EFFF2A3", hash_generated_method = "5394715D26288D984111EFA96EE50DB9")
     public byte[] getData(int length) {
         int len;
@@ -97,29 +99,29 @@ public class SSLEngineDataStream implements DataStream {
                 boolean var983D78B773B0161A252B610CBD7A2B33_1879650113 = (srcs[offset].hasRemaining());
                 {
                     res[pos++] = srcs[offset].get();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(length);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1177210771 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1177210771;
-        // ---------- Original Method ----------
-        //int len = (length < available) ? length : available;
-        //available -= len;
-        //consumed += len;
-        //byte[] res = new byte[len];
-        //int pos = 0;
-        //loop:
-        //for (; offset<limit; offset++) {
-            //while (srcs[offset].hasRemaining()) {
-                //res[pos++] = srcs[offset].get();
-                //len --;
-                //if (len == 0) {
-                    //break loop;
-                //}
-            //}
-        //}
-        //return res;
+        
+        
+        
+        
+        
+        
+        
+        
+            
+                
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -127,8 +129,8 @@ public class SSLEngineDataStream implements DataStream {
     protected int consumed() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_435941877 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_435941877;
-        // ---------- Original Method ----------
-        //return consumed;
+        
+        
     }
 
     

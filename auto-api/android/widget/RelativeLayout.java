@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.R;
 import java.util.ArrayList;
@@ -71,7 +71,7 @@ public class RelativeLayout extends ViewGroup {
     public  RelativeLayout(Context context) {
         super(context);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -81,8 +81,8 @@ public class RelativeLayout extends ViewGroup {
         initFromAttributes(context, attrs);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //initFromAttributes(context, attrs);
+        
+        
     }
 
     
@@ -93,11 +93,12 @@ public class RelativeLayout extends ViewGroup {
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        //initFromAttributes(context, attrs);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.836 -0400", hash_original_method = "2508EFC88C6F20ACAB1B8BFE22290A1F", hash_generated_method = "45BDFB27815E73C36E96DE3F50E2CB36")
     private void initFromAttributes(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RelativeLayout);
@@ -106,11 +107,11 @@ public class RelativeLayout extends ViewGroup {
         a.recycle();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RelativeLayout);
-        //mIgnoreGravity = a.getResourceId(R.styleable.RelativeLayout_ignoreGravity, View.NO_ID);
-        //mGravity = a.getInt(R.styleable.RelativeLayout_gravity, mGravity);
-        //a.recycle();
+        
+        
+        
+        
+        
     }
 
     
@@ -119,8 +120,8 @@ public class RelativeLayout extends ViewGroup {
     public boolean shouldDelayChildPressedState() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_473271622 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_473271622;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -128,38 +129,40 @@ public class RelativeLayout extends ViewGroup {
     @android.view.RemotableViewMethod
     public void setIgnoreGravity(int viewId) {
         mIgnoreGravity = viewId;
-        // ---------- Original Method ----------
-        //mIgnoreGravity = viewId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.837 -0400", hash_original_method = "DC8D5E1211DE0926B9DDA2FADCED75EE", hash_generated_method = "70FD7A97C03EACC1814D5C80AB15EB8F")
     @android.view.RemotableViewMethod
     public void setGravity(int gravity) {
         {
             {
                 gravity |= Gravity.START;
-            } //End block
+            } 
             {
                 gravity |= Gravity.TOP;
-            } //End block
+            } 
             mGravity = gravity;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mGravity != gravity) {
-            //if ((gravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) == 0) {
-                //gravity |= Gravity.START;
-            //}
-            //if ((gravity & Gravity.VERTICAL_GRAVITY_MASK) == 0) {
-                //gravity |= Gravity.TOP;
-            //}
-            //mGravity = gravity;
-            //requestLayout();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+                
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.838 -0400", hash_original_method = "076C59065FCBD07F7CAA4FFA6D12CC3A", hash_generated_method = "472F09623C44D3DF3291E5B067DA27D2")
     @android.view.RemotableViewMethod
     public void setHorizontalGravity(int horizontalGravity) {
@@ -167,17 +170,18 @@ public class RelativeLayout extends ViewGroup {
         {
             mGravity = (mGravity & ~Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) | gravity;
             requestLayout();
-        } //End block
+        } 
         addTaint(horizontalGravity);
-        // ---------- Original Method ----------
-        //final int gravity = horizontalGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK;
-        //if ((mGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) != gravity) {
-            //mGravity = (mGravity & ~Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) | gravity;
-            //requestLayout();
-        //}
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.838 -0400", hash_original_method = "EE245B70888F9F1582A126D948173E64", hash_generated_method = "95CC5873BAFE1E11950B4F47E16D066A")
     @android.view.RemotableViewMethod
     public void setVerticalGravity(int verticalGravity) {
@@ -185,42 +189,45 @@ public class RelativeLayout extends ViewGroup {
         {
             mGravity = (mGravity & ~Gravity.VERTICAL_GRAVITY_MASK) | gravity;
             requestLayout();
-        } //End block
+        } 
         addTaint(verticalGravity);
-        // ---------- Original Method ----------
-        //final int gravity = verticalGravity & Gravity.VERTICAL_GRAVITY_MASK;
-        //if ((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != gravity) {
-            //mGravity = (mGravity & ~Gravity.VERTICAL_GRAVITY_MASK) | gravity;
-            //requestLayout();
-        //}
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.839 -0400", hash_original_method = "73585EFBB2973430E05667E2654BAD3F", hash_generated_method = "9E67A7D8F9B5A6F35C9D4E5A66DB22A2")
     @Override
     public int getBaseline() {
         {
             Object var8001D8978A247706B0BAAC60E08FE3F0_101611635 = (mBaselineView.getBaseline());
             Object varEC5F70FA49520212A319ACA653FC0209_1731997439 = (super.getBaseline());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_195852346 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_195852346;
-        // ---------- Original Method ----------
-        //return mBaselineView != null ? mBaselineView.getBaseline() : super.getBaseline();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.839 -0400", hash_original_method = "D40C3344998DDA8004351F538E92F8E3", hash_generated_method = "D2AF17735BD8ABFA2FCAA161F6376D90")
     @Override
     public void requestLayout() {
         super.requestLayout();
         mDirtyHierarchy = true;
-        // ---------- Original Method ----------
-        //super.requestLayout();
-        //mDirtyHierarchy = true;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.847 -0400", hash_original_method = "701273CD7B3C60F684ABCCF0BE7DD8A5", hash_generated_method = "ABECBA19D5EF9F5E2E6E20900D08DBB2")
     private void sortChildren() {
         int count = getChildCount();
@@ -233,14 +240,14 @@ public class RelativeLayout extends ViewGroup {
             {
                 final View child = getChildAt(i);
                 graph.add(child);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             d(LOG_TAG, "=== Sorted vertical children");
             graph.log(getResources(), ABOVE, BELOW, ALIGN_BASELINE, ALIGN_TOP, ALIGN_BOTTOM);
             d(LOG_TAG, "=== Sorted horizontal children");
             graph.log(getResources(), LEFT_OF, RIGHT_OF, ALIGN_LEFT, ALIGN_RIGHT);
-        } //End block
+        } 
         graph.getSortedViews(mSortedVerticalChildren, ABOVE, BELOW, ALIGN_BASELINE,
                 ALIGN_TOP, ALIGN_BOTTOM);
         graph.getSortedViews(mSortedHorizontalChildren, LEFT_OF, RIGHT_OF, ALIGN_LEFT, ALIGN_RIGHT);
@@ -250,29 +257,30 @@ public class RelativeLayout extends ViewGroup {
                 View view = mSortedVerticalChildren[0];
                 {
                     DependencyGraph.printViewId(getResources(), view);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             d(LOG_TAG, "=== Ordered list of horizontal children");
             {
                 View view = mSortedVerticalChildren[0];
                 {
                     DependencyGraph.printViewId(getResources(), view);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.867 -0400", hash_original_method = "E2AF18A4E301BF9A8D0B175790671ACC", hash_generated_method = "AB3154AD9654FE843507A6EAED89812D")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mDirtyHierarchy = false;
             sortChildren();
-        } //End block
+        } 
         int myWidth = -1;
         int myHeight = -1;
         int width = 0;
@@ -283,16 +291,16 @@ public class RelativeLayout extends ViewGroup {
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
         {
             myWidth = widthSize;
-        } //End block
+        } 
         {
             myHeight = heightSize;
-        } //End block
+        } 
         {
             width = myWidth;
-        } //End block
+        } 
         {
             height = myHeight;
-        } //End block
+        } 
         mHasBaselineAlignedChild = false;
         View ignore = null;
         int gravity = mGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK;
@@ -307,7 +315,7 @@ public class RelativeLayout extends ViewGroup {
         boolean offsetVerticalAxis = false;
         {
             ignore = findViewById(mIgnoreGravity);
-        } //End block
+        } 
         final boolean isWrapContentWidth = widthMode != MeasureSpec.EXACTLY;
         final boolean isWrapContentHeight = heightMode != MeasureSpec.EXACTLY;
         View[] views = mSortedHorizontalChildren;
@@ -326,12 +334,12 @@ public class RelativeLayout extends ViewGroup {
                             boolean var4537C16BA1C0C3924FCC94B830A06952_1610270067 = (positionChildHorizontal(child, params, myWidth, isWrapContentWidth));
                             {
                                 offsetHorizontalAxis = true;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         views = mSortedVerticalChildren;
         count = views.length;
         {
@@ -348,26 +356,26 @@ public class RelativeLayout extends ViewGroup {
                             boolean var84A29BCF1C38D9115C84D1FDE3362FD1_2073658308 = (positionChildVertical(child, params, myHeight, isWrapContentHeight));
                             {
                                 offsetVerticalAxis = true;
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         {
                             width = Math.max(width, params.mRight);
-                        } //End block
+                        } 
                         {
                             height = Math.max(height, params.mBottom);
-                        } //End block
+                        } 
                         {
                             left = Math.min(left, params.mLeft - params.leftMargin);
                             top = Math.min(top, params.mTop - params.topMargin);
-                        } //End block
+                        } 
                         {
                             right = Math.max(right, params.mRight + params.rightMargin);
                             bottom = Math.max(bottom, params.mBottom + params.bottomMargin);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 int i = 0;
@@ -381,21 +389,21 @@ public class RelativeLayout extends ViewGroup {
                             {
                                 left = Math.min(left, params.mLeft - params.leftMargin);
                                 top = Math.min(top, params.mTop - params.topMargin);
-                            } //End block
+                            } 
                             {
                                 right = Math.max(right, params.mRight + params.rightMargin);
                                 bottom = Math.max(bottom, params.mBottom + params.bottomMargin);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             width += mPaddingRight;
             {
                 width = Math.max(width, mLayoutParams.width);
-            } //End block
+            } 
             width = Math.max(width, getSuggestedMinimumWidth());
             width = resolveSize(width, widthMeasureSpec);
             {
@@ -410,23 +418,23 @@ public class RelativeLayout extends ViewGroup {
                                 final int[] rules = params.getRules();
                                 {
                                     centerHorizontal(child, params, width);
-                                } //End block
+                                } 
                                 {
                                     final int childWidth = child.getMeasuredWidth();
                                     params.mLeft = width - mPaddingRight - childWidth;
                                     params.mRight = params.mLeft + childWidth;
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             height += mPaddingBottom;
             {
                 height = Math.max(height, mLayoutParams.height);
-            } //End block
+            } 
             height = Math.max(height, getSuggestedMinimumHeight());
             height = resolveSize(height, heightMeasureSpec);
             {
@@ -441,18 +449,18 @@ public class RelativeLayout extends ViewGroup {
                                 final int[] rules = params.getRules();
                                 {
                                     centerVertical(child, params, height);
-                                } //End block
+                                } 
                                 {
                                     final int childHeight = child.getMeasuredHeight();
                                     params.mTop = height - mPaddingBottom - childHeight;
                                     params.mBottom = params.mTop + childHeight;
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             final Rect selfBounds = mSelfBounds;
             selfBounds.set(mPaddingLeft, mPaddingTop, width - mPaddingRight,
@@ -475,25 +483,26 @@ public class RelativeLayout extends ViewGroup {
                                 {
                                     params.mLeft += horizontalOffset;
                                     params.mRight += horizontalOffset;
-                                } //End block
+                                } 
                                 {
                                     params.mTop += verticalOffset;
                                     params.mBottom += verticalOffset;
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         setMeasuredDimension(width, height);
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.868 -0400", hash_original_method = "572E26DE16208C5960AF0F468C9CEB6F", hash_generated_method = "F6E153515DB227305B9E7BC8E6F32B18")
     private void alignBaseline(View child, LayoutParams params) {
         int[] rules = params.getRules();
@@ -505,27 +514,28 @@ public class RelativeLayout extends ViewGroup {
                 int baseline = child.getBaseline();
                 {
                     offset -= baseline;
-                } //End block
+                } 
                 int height = params.mBottom - params.mTop;
                 params.mTop = offset;
                 params.mBottom = params.mTop + height;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mBaselineView = child;
-        } //End block
+        } 
         {
             LayoutParams lp = (LayoutParams) mBaselineView.getLayoutParams();
             {
                 mBaselineView = child;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.868 -0400", hash_original_method = "6FAB1FA940C67F7A3A04C20DF403CDD7", hash_generated_method = "0F78997D7ED8EF1CE776B8BACD5A2314")
     private void measureChild(View child, LayoutParams params, int myWidth, int myHeight) {
         int childWidthMeasureSpec = getChildMeasureSpec(params.mLeft,
@@ -543,21 +553,22 @@ public class RelativeLayout extends ViewGroup {
         addTaint(params.getTaint());
         addTaint(myWidth);
         addTaint(myHeight);
-        // ---------- Original Method ----------
-        //int childWidthMeasureSpec = getChildMeasureSpec(params.mLeft,
-                //params.mRight, params.width,
-                //params.leftMargin, params.rightMargin,
-                //mPaddingLeft, mPaddingRight,
-                //myWidth);
-        //int childHeightMeasureSpec = getChildMeasureSpec(params.mTop,
-                //params.mBottom, params.height,
-                //params.topMargin, params.bottomMargin,
-                //mPaddingTop, mPaddingBottom,
-                //myHeight);
-        //child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+        
+        
+                
+                
+                
+                
+        
+                
+                
+                
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.868 -0400", hash_original_method = "C649DEFF309C12811323B81F575C7972", hash_generated_method = "2057A2726A4AE7D1307C252AD4563E24")
     private void measureChildHorizontal(View child, LayoutParams params, int myWidth, int myHeight) {
         int childWidthMeasureSpec = getChildMeasureSpec(params.mLeft,
@@ -568,31 +579,32 @@ public class RelativeLayout extends ViewGroup {
         int childHeightMeasureSpec;
         {
             childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(myHeight, MeasureSpec.EXACTLY);
-        } //End block
+        } 
         {
             childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(myHeight, MeasureSpec.AT_MOST);
-        } //End block
+        } 
         child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
         addTaint(child.getTaint());
         addTaint(params.getTaint());
         addTaint(myWidth);
         addTaint(myHeight);
-        // ---------- Original Method ----------
-        //int childWidthMeasureSpec = getChildMeasureSpec(params.mLeft,
-                //params.mRight, params.width,
-                //params.leftMargin, params.rightMargin,
-                //mPaddingLeft, mPaddingRight,
-                //myWidth);
-        //int childHeightMeasureSpec;
-        //if (params.width == LayoutParams.MATCH_PARENT) {
-            //childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(myHeight, MeasureSpec.EXACTLY);
-        //} else {
-            //childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(myHeight, MeasureSpec.AT_MOST);
-        //}
-        //child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+        
+        
+                
+                
+                
+                
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.869 -0400", hash_original_method = "78354A3A0D2C9A2AC648B99E7333EDDC", hash_generated_method = "870EF123FE04EDD78628FCBFB02C083E")
     private int getChildMeasureSpec(int childStart, int childEnd,
             int childSize, int startMargin, int endMargin, int startPadding,
@@ -603,40 +615,40 @@ public class RelativeLayout extends ViewGroup {
         int tempEnd = childEnd;
         {
             tempStart = startPadding + startMargin;
-        } //End block
+        } 
         {
             tempEnd = mySize - endPadding - endMargin;
-        } //End block
+        } 
         int maxAvailable = tempEnd - tempStart;
         {
             childSpecMode = MeasureSpec.EXACTLY;
             childSpecSize = maxAvailable;
-        } //End block
+        } 
         {
             {
                 childSpecMode = MeasureSpec.EXACTLY;
                 {
                     childSpecSize = Math.min(maxAvailable, childSize);
-                } //End block
+                } 
                 {
                     childSpecSize = childSize;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 childSpecMode = MeasureSpec.EXACTLY;
                 childSpecSize = maxAvailable;
-            } //End block
+            } 
             {
                 {
                     childSpecMode = MeasureSpec.AT_MOST;
                     childSpecSize = maxAvailable;
-                } //End block
+                } 
                 {
                     childSpecMode = MeasureSpec.UNSPECIFIED;
                     childSpecSize = 0;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int varCF7E02B354BBF9C3C60EFC9675543EF2_897009951 = (MeasureSpec.makeMeasureSpec(childSpecSize, childSpecMode));
         addTaint(childStart);
         addTaint(childEnd);
@@ -648,83 +660,86 @@ public class RelativeLayout extends ViewGroup {
         addTaint(mySize);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1880264662 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1880264662;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.870 -0400", hash_original_method = "B9478380B54B111B46A13309CA4FBB39", hash_generated_method = "3ED495666D854C85092B1A2594D77846")
     private boolean positionChildHorizontal(View child, LayoutParams params, int myWidth,
             boolean wrapContent) {
         int[] rules = params.getRules();
         {
             params.mLeft = params.mRight - child.getMeasuredWidth();
-        } //End block
+        } 
         {
             params.mRight = params.mLeft + child.getMeasuredWidth();
-        } //End block
+        } 
         {
             {
                 {
                     centerHorizontal(child, params, myWidth);
-                } //End block
+                } 
                 {
                     params.mLeft = mPaddingLeft + params.leftMargin;
                     params.mRight = params.mLeft + child.getMeasuredWidth();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 params.mLeft = mPaddingLeft + params.leftMargin;
                 params.mRight = params.mLeft + child.getMeasuredWidth();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(child.getTaint());
         addTaint(params.getTaint());
         addTaint(myWidth);
         addTaint(wrapContent);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1795758940 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1795758940;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.870 -0400", hash_original_method = "09EB493CF05E8E659EC89F37304CD399", hash_generated_method = "55AC0F69D931ADA7ED4D562B85367B56")
     private boolean positionChildVertical(View child, LayoutParams params, int myHeight,
             boolean wrapContent) {
         int[] rules = params.getRules();
         {
             params.mTop = params.mBottom - child.getMeasuredHeight();
-        } //End block
+        } 
         {
             params.mBottom = params.mTop + child.getMeasuredHeight();
-        } //End block
+        } 
         {
             {
                 {
                     centerVertical(child, params, myHeight);
-                } //End block
+                } 
                 {
                     params.mTop = mPaddingTop + params.topMargin;
                     params.mBottom = params.mTop + child.getMeasuredHeight();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 params.mTop = mPaddingTop + params.topMargin;
                 params.mBottom = params.mTop + child.getMeasuredHeight();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(child.getTaint());
         addTaint(params.getTaint());
         addTaint(myHeight);
         addTaint(wrapContent);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_763658572 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_763658572;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.871 -0400", hash_original_method = "C61E9BCFF76D7B76D77F18D001923EFF", hash_generated_method = "E8C625E03B1E315AD804E32B7AAC604F")
     private void applyHorizontalSizeRules(LayoutParams childParams, int myWidth) {
         int[] rules = childParams.getRules();
@@ -735,51 +750,52 @@ public class RelativeLayout extends ViewGroup {
         {
             childParams.mRight = anchorParams.mLeft - (anchorParams.leftMargin +
                     childParams.rightMargin);
-        } //End block
+        } 
         {
             {
                 childParams.mRight = myWidth - mPaddingRight - childParams.rightMargin;
-            } //End block
-        } //End block
+            } 
+        } 
         anchorParams = getRelatedViewParams(rules, RIGHT_OF);
         {
             childParams.mLeft = anchorParams.mRight + (anchorParams.rightMargin +
                     childParams.leftMargin);
-        } //End block
+        } 
         {
             childParams.mLeft = mPaddingLeft + childParams.leftMargin;
-        } //End block
+        } 
         anchorParams = getRelatedViewParams(rules, ALIGN_LEFT);
         {
             childParams.mLeft = anchorParams.mLeft + childParams.leftMargin;
-        } //End block
+        } 
         {
             childParams.mLeft = mPaddingLeft + childParams.leftMargin;
-        } //End block
+        } 
         anchorParams = getRelatedViewParams(rules, ALIGN_RIGHT);
         {
             childParams.mRight = anchorParams.mRight - childParams.rightMargin;
-        } //End block
+        } 
         {
             {
                 childParams.mRight = myWidth - mPaddingRight - childParams.rightMargin;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             childParams.mLeft = mPaddingLeft + childParams.leftMargin;
-        } //End block
+        } 
         {
             {
                 childParams.mRight = myWidth - mPaddingRight - childParams.rightMargin;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(childParams.getTaint());
         addTaint(myWidth);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.873 -0400", hash_original_method = "B3DE38D6CE01D7E90C154524E3D3CC84", hash_generated_method = "79AF11813FC85B5C39A4B95094C8CA8B")
     private void applyVerticalSizeRules(LayoutParams childParams, int myHeight) {
         int[] rules = childParams.getRules();
@@ -790,60 +806,61 @@ public class RelativeLayout extends ViewGroup {
         {
             childParams.mBottom = anchorParams.mTop - (anchorParams.topMargin +
                     childParams.bottomMargin);
-        } //End block
+        } 
         {
             {
                 childParams.mBottom = myHeight - mPaddingBottom - childParams.bottomMargin;
-            } //End block
-        } //End block
+            } 
+        } 
         anchorParams = getRelatedViewParams(rules, BELOW);
         {
             childParams.mTop = anchorParams.mBottom + (anchorParams.bottomMargin +
                     childParams.topMargin);
-        } //End block
+        } 
         {
             childParams.mTop = mPaddingTop + childParams.topMargin;
-        } //End block
+        } 
         anchorParams = getRelatedViewParams(rules, ALIGN_TOP);
         {
             childParams.mTop = anchorParams.mTop + childParams.topMargin;
-        } //End block
+        } 
         {
             childParams.mTop = mPaddingTop + childParams.topMargin;
-        } //End block
+        } 
         anchorParams = getRelatedViewParams(rules, ALIGN_BOTTOM);
         {
             childParams.mBottom = anchorParams.mBottom - childParams.bottomMargin;
-        } //End block
+        } 
         {
             {
                 childParams.mBottom = myHeight - mPaddingBottom - childParams.bottomMargin;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             childParams.mTop = mPaddingTop + childParams.topMargin;
-        } //End block
+        } 
         {
             {
                 childParams.mBottom = myHeight - mPaddingBottom - childParams.bottomMargin;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mHasBaselineAlignedChild = true;
-        } //End block
+        } 
         addTaint(childParams.getTaint());
         addTaint(myHeight);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.874 -0400", hash_original_method = "1C833E1C2ADE997D1187353BA16BCE70", hash_generated_method = "9CE574EFEED47B4E4B77C1EAAE3A02B6")
     private View getRelatedView(int[] rules, int relation) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1777124878 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1863599562 = null; //Variable for return #2
-        View varB4EAC82CA7396A68D541C85D26508E83_2059419626 = null; //Variable for return #3
-        View varB4EAC82CA7396A68D541C85D26508E83_913046106 = null; //Variable for return #4
+        View varB4EAC82CA7396A68D541C85D26508E83_1777124878 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1863599562 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_2059419626 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_913046106 = null; 
         int id = rules[relation];
         {
             DependencyGraph.Node node = mGraph.mKeyNodes.get(id);
@@ -856,104 +873,107 @@ public class RelativeLayout extends ViewGroup {
                     node = mGraph.mKeyNodes.get((rules[relation]));
                     varB4EAC82CA7396A68D541C85D26508E83_1863599562 = null;
                     v = node.view;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_2059419626 = v;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_913046106 = null;
         addTaint(rules[0]);
         addTaint(relation);
-        View varA7E53CE21691AB073D9660D615818899_1073545378; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1073545378; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1073545378 = varB4EAC82CA7396A68D541C85D26508E83_1777124878;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1073545378 = varB4EAC82CA7396A68D541C85D26508E83_1863599562;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1073545378 = varB4EAC82CA7396A68D541C85D26508E83_2059419626;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1073545378 = varB4EAC82CA7396A68D541C85D26508E83_913046106;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1073545378.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1073545378.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1073545378;
-        // ---------- Original Method ----------
-        //int id = rules[relation];
-        //if (id != 0) {
-            //DependencyGraph.Node node = mGraph.mKeyNodes.get(id);
-            //if (node == null) return null;
-            //View v = node.view;
-            //while (v.getVisibility() == View.GONE) {
-                //rules = ((LayoutParams) v.getLayoutParams()).getRules();
-                //node = mGraph.mKeyNodes.get((rules[relation]));
-                //if (node == null) return null;
-                //v = node.view;
-            //}
-            //return v;
-        //}
-        //return null;
+        
+        
+        
+            
+            
+            
+            
+                
+                
+                
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.875 -0400", hash_original_method = "1432C4369AF9849456CCA14753707552", hash_generated_method = "B6543E01F793BA94B33552CE47DD532B")
     private LayoutParams getRelatedViewParams(int[] rules, int relation) {
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1546112865 = null; //Variable for return #1
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_771822660 = null; //Variable for return #2
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1546112865 = null; 
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_771822660 = null; 
         View v = getRelatedView(rules, relation);
         {
             ViewGroup.LayoutParams params = v.getLayoutParams();
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1546112865 = (LayoutParams) v.getLayoutParams();
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_771822660 = null;
         addTaint(rules[0]);
         addTaint(relation);
-        LayoutParams varA7E53CE21691AB073D9660D615818899_356058854; //Final return value
+        LayoutParams varA7E53CE21691AB073D9660D615818899_356058854; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_356058854 = varB4EAC82CA7396A68D541C85D26508E83_1546112865;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_356058854 = varB4EAC82CA7396A68D541C85D26508E83_771822660;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_356058854.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_356058854.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_356058854;
-        // ---------- Original Method ----------
-        //View v = getRelatedView(rules, relation);
-        //if (v != null) {
-            //ViewGroup.LayoutParams params = v.getLayoutParams();
-            //if (params instanceof LayoutParams) {
-                //return (LayoutParams) v.getLayoutParams();
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.875 -0400", hash_original_method = "B96AFAE3C58D6FFF0F9AB9328789A20B", hash_generated_method = "BA4AF922637698725DC0F653C9AEBD02")
     private int getRelatedViewBaseline(int[] rules, int relation) {
         View v = getRelatedView(rules, relation);
         {
             int varBFAAD9EEB54C80D14BB04F7DBAE3674A_1639091670 = (v.getBaseline());
-        } //End block
+        } 
         addTaint(rules[0]);
         addTaint(relation);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_208074274 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_208074274;
-        // ---------- Original Method ----------
-        //View v = getRelatedView(rules, relation);
-        //if (v != null) {
-            //return v.getBaseline();
-        //}
-        //return -1;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.876 -0400", hash_original_method = "8A1AB6E076A6FFB22058EEC6C343479D", hash_generated_method = "5FDCC80EBD3240AD9B182A55F2596BD0")
     private void centerHorizontal(View child, LayoutParams params, int myWidth) {
         int childWidth = child.getMeasuredWidth();
@@ -963,14 +983,15 @@ public class RelativeLayout extends ViewGroup {
         addTaint(child.getTaint());
         addTaint(params.getTaint());
         addTaint(myWidth);
-        // ---------- Original Method ----------
-        //int childWidth = child.getMeasuredWidth();
-        //int left = (myWidth - childWidth) / 2;
-        //params.mLeft = left;
-        //params.mRight = left + childWidth;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.876 -0400", hash_original_method = "D7FF6A5DD857E80D590F5847BEDB8204", hash_generated_method = "23B4033279882218CC99AA3E337C7B83")
     private void centerVertical(View child, LayoutParams params, int myHeight) {
         int childHeight = child.getMeasuredHeight();
@@ -980,18 +1001,19 @@ public class RelativeLayout extends ViewGroup {
         addTaint(child.getTaint());
         addTaint(params.getTaint());
         addTaint(myHeight);
-        // ---------- Original Method ----------
-        //int childHeight = child.getMeasuredHeight();
-        //int top = (myHeight - childHeight) / 2;
-        //params.mTop = top;
-        //params.mBottom = top + childHeight;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.876 -0400", hash_original_method = "05FEBBF616C51C2D421358B4A05D22CE", hash_generated_method = "530A4BB06150C7CCD4FD1F261A5C1777")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int count = getChildCount();
         {
             int i = 0;
@@ -1002,50 +1024,51 @@ public class RelativeLayout extends ViewGroup {
                     {
                         RelativeLayout.LayoutParams st = (RelativeLayout.LayoutParams) child.getLayoutParams();
                         child.layout(st.mLeft, st.mTop, st.mRight, st.mBottom);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(changed);
         addTaint(l);
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        //int count = getChildCount();
-        //for (int i = 0; i < count; i++) {
-            //View child = getChildAt(i);
-            //if (child.getVisibility() != GONE) {
-                //RelativeLayout.LayoutParams st =
-                        //(RelativeLayout.LayoutParams) child.getLayoutParams();
-                //child.layout(st.mLeft, st.mTop, st.mRight, st.mBottom);
-            //}
-        //}
+        
+        
+        
+            
+            
+                
+                        
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.877 -0400", hash_original_method = "233CD3CEF6FDC0096CEB70C074DAEDA3", hash_generated_method = "B5311DAEF0DD1ABA52E0D27D21D217CC")
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_348934040 = null; //Variable for return #1
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_348934040 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_348934040 = new RelativeLayout.LayoutParams(getContext(), attrs);
         addTaint(attrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_348934040.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_348934040.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_348934040;
-        // ---------- Original Method ----------
-        //return new RelativeLayout.LayoutParams(getContext(), attrs);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.878 -0400", hash_original_method = "9A6A2F1616AFA891B0951E317B143439", hash_generated_method = "EF78911D76D81B919844A93EBBD7D110")
     @Override
     protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
-        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_100957154 = null; //Variable for return #1
+        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_100957154 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_100957154 = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        varB4EAC82CA7396A68D541C85D26508E83_100957154.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_100957154.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_100957154;
-        // ---------- Original Method ----------
-        //return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        
+        
     }
 
     
@@ -1055,37 +1078,38 @@ public class RelativeLayout extends ViewGroup {
         addTaint(p.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2016271876 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2016271876;
-        // ---------- Original Method ----------
-        //return p instanceof RelativeLayout.LayoutParams;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.878 -0400", hash_original_method = "B595E0482905B38051CD63239BB5F8BA", hash_generated_method = "7DBC8D6F9D90F80831DF5BA311DC903B")
     @Override
     protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
-        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_116666624 = null; //Variable for return #1
+        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_116666624 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_116666624 = new LayoutParams(p);
         addTaint(p.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_116666624.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_116666624.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_116666624;
-        // ---------- Original Method ----------
-        //return new LayoutParams(p);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.896 -0400", hash_original_method = "02980C12A71A151B5687E23560D62A05", hash_generated_method = "42749508AC7104B6A8B08B9E0C1599D8")
     @Override
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
         {
             mTopToBottomLeftToRightSet = new TreeSet<View>(new TopToBottomLeftToRightComparator());
-        } //End block
+        } 
         {
             int i = 0;
             int count = getChildCount();
             {
                 mTopToBottomLeftToRightSet.add(getChildAt(i));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             Iterator<View> var533C624396C561AA162C41D307444EBC_1238983455 = (mTopToBottomLeftToRightSet).iterator();
             var533C624396C561AA162C41D307444EBC_1238983455.hasNext();
@@ -1096,30 +1120,30 @@ public class RelativeLayout extends ViewGroup {
                     && view.dispatchPopulateAccessibilityEvent(event));
                     {
                         mTopToBottomLeftToRightSet.clear();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         mTopToBottomLeftToRightSet.clear();
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1252968417 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1252968417;
-        // ---------- Original Method ----------
-        //if (mTopToBottomLeftToRightSet == null) {
-            //mTopToBottomLeftToRightSet = new TreeSet<View>(new TopToBottomLeftToRightComparator());
-        //}
-        //for (int i = 0, count = getChildCount(); i < count; i++) {
-            //mTopToBottomLeftToRightSet.add(getChildAt(i));
-        //}
-        //for (View view : mTopToBottomLeftToRightSet) {
-            //if (view.getVisibility() == View.VISIBLE
-                    //&& view.dispatchPopulateAccessibilityEvent(event)) {
-                //mTopToBottomLeftToRightSet.clear();
-                //return true;
-            //}
-        //}
-        //mTopToBottomLeftToRightSet.clear();
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                    
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -1128,7 +1152,7 @@ public class RelativeLayout extends ViewGroup {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.896 -0400", hash_original_method = "32220C1DAB888BE59E67ED1F2F5003D8", hash_generated_method = "32220C1DAB888BE59E67ED1F2F5003D8")
         public TopToBottomLeftToRightComparator ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1142,24 +1166,24 @@ public class RelativeLayout extends ViewGroup {
             addTaint(second.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_410862570 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_410862570;
-            // ---------- Original Method ----------
-            //int topDifference = first.getTop() - second.getTop();
-            //if (topDifference != 0) {
-                //return topDifference;
-            //}
-            //int leftDifference = first.getLeft() - second.getLeft();
-            //if (leftDifference != 0) {
-                //return leftDifference;
-            //}
-            //int heightDiference = first.getHeight() - second.getHeight();
-            //if (heightDiference != 0) {
-                //return heightDiference;
-            //}
-            //int widthDiference = first.getWidth() - second.getWidth();
-            //if (widthDiference != 0) {
-                //return widthDiference;
-            //}
-            //return 0;
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1218,64 +1242,64 @@ public class RelativeLayout extends ViewGroup {
                 int i = 0;
                 {
                     int attr = a.getIndex(i);
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignWithParentIfMissing 
+                    
                     alignWithParent = a.getBoolean(attr, false);
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignWithParentIfMissing 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_toLeftOf 
+                    
+                    
                     rules[LEFT_OF] = a.getResourceId(attr, 0);
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_toLeftOf 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_toRightOf 
+                    
+                    
                     rules[RIGHT_OF] = a.getResourceId(attr, 0);
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_toRightOf 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_above 
+                    
+                    
                     rules[ABOVE] = a.getResourceId(attr, 0);
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_above 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_below 
+                    
+                    
                     rules[BELOW] = a.getResourceId(attr, 0);
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_below 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignBaseline 
+                    
+                    
                     rules[ALIGN_BASELINE] = a.getResourceId(attr, 0);
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignBaseline 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignLeft 
+                    
+                    
                     rules[ALIGN_LEFT] = a.getResourceId(attr, 0);
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignLeft 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignTop 
+                    
+                    
                     rules[ALIGN_TOP] = a.getResourceId(attr, 0);
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignTop 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignRight 
+                    
+                    
                     rules[ALIGN_RIGHT] = a.getResourceId(attr, 0);
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignRight 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignBottom 
+                    
+                    
                     rules[ALIGN_BOTTOM] = a.getResourceId(attr, 0);
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignBottom 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentLeft 
+                    
+                    
                     rules[ALIGN_PARENT_LEFT] = a.getBoolean(attr, false) ? TRUE : 0;
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentLeft 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentTop 
+                    
+                    
                     rules[ALIGN_PARENT_TOP] = a.getBoolean(attr, false) ? TRUE : 0;
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentTop 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentRight 
+                    
+                    
                     rules[ALIGN_PARENT_RIGHT] = a.getBoolean(attr, false) ? TRUE : 0;
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentRight 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentBottom 
+                    
+                    
                     rules[ALIGN_PARENT_BOTTOM] = a.getBoolean(attr, false) ? TRUE : 0;
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentBottom 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_centerInParent 
+                    
+                    
                     rules[CENTER_IN_PARENT] = a.getBoolean(attr, false) ? TRUE : 0;
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_centerInParent 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_centerHorizontal 
+                    
+                    
                     rules[CENTER_HORIZONTAL] = a.getBoolean(attr, false) ? TRUE : 0;
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_centerHorizontal 
-                    //Begin case com.android.internal.R.styleable.RelativeLayout_Layout_layout_centerVertical 
+                    
+                    
                     rules[CENTER_VERTICAL] = a.getBoolean(attr, false) ? TRUE : 0;
-                    //End case com.android.internal.R.styleable.RelativeLayout_Layout_layout_centerVertical 
-                } //End block
-            } //End collapsed parenthetic
+                    
+                } 
+            } 
             a.recycle();
             addTaint(c.getTaint());
             addTaint(attrs.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1284,7 +1308,7 @@ public class RelativeLayout extends ViewGroup {
             super(w, h);
             addTaint(w);
             addTaint(h);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1292,7 +1316,7 @@ public class RelativeLayout extends ViewGroup {
         public  LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1300,38 +1324,38 @@ public class RelativeLayout extends ViewGroup {
         public  LayoutParams(ViewGroup.MarginLayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.900 -0400", hash_original_method = "E4ABE7598543A22DA450A925C25FFDEA", hash_generated_method = "FEFE791B8E5AB60FCC15699FDCB615DB")
         @Override
         public String debug(String output) {
-            String varB4EAC82CA7396A68D541C85D26508E83_1203628656 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1203628656 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1203628656 = output + "ViewGroup.LayoutParams={ width=" + sizeToString(width) +
                     ", height=" + sizeToString(height) + " }";
             addTaint(output.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1203628656.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1203628656.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1203628656;
-            // ---------- Original Method ----------
-            //return output + "ViewGroup.LayoutParams={ width=" + sizeToString(width) +
-                    //", height=" + sizeToString(height) + " }";
+            
+            
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.900 -0400", hash_original_method = "F14B7CDC14D112CF9F86D0C64F4D29ED", hash_generated_method = "93452E0A48B7041D6E93F6CB23E7C08D")
         public void addRule(int verb) {
             mRules[verb] = TRUE;
-            // ---------- Original Method ----------
-            //mRules[verb] = TRUE;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.901 -0400", hash_original_method = "E6336A158C939972C1CFCFE234B123CF", hash_generated_method = "15C34D41A65E9FA80EF1B69E592566CD")
         public void addRule(int verb, int anchor) {
             mRules[verb] = anchor;
-            // ---------- Original Method ----------
-            //mRules[verb] = anchor;
+            
+            
         }
 
         
@@ -1339,8 +1363,8 @@ public class RelativeLayout extends ViewGroup {
         public int[] getRules() {
             int[] varB4CCCA26F9DB9189C32F33E82D425CFB_944962084 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_944962084;
-            // ---------- Original Method ----------
-            //return mRules;
+            
+            
         }
 
         
@@ -1362,7 +1386,7 @@ public class RelativeLayout extends ViewGroup {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.901 -0400", hash_original_method = "970FB9BC48F419CD4D1512AB366BD03A", hash_generated_method = "970FB9BC48F419CD4D1512AB366BD03A")
         public DependencyGraph ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1374,20 +1398,20 @@ public class RelativeLayout extends ViewGroup {
                 int i = 0;
                 {
                     nodes.get(i).release();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             nodes.clear();
             mKeyNodes.clear();
             mRoots.clear();
-            // ---------- Original Method ----------
-            //final ArrayList<Node> nodes = mNodes;
-            //final int count = nodes.size();
-            //for (int i = 0; i < count; i++) {
-                //nodes.get(i).release();
-            //}
-            //nodes.clear();
-            //mKeyNodes.clear();
-            //mRoots.clear();
+            
+            
+            
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -1397,16 +1421,16 @@ public class RelativeLayout extends ViewGroup {
             final Node node = Node.acquire(view);
             {
                 mKeyNodes.put(id, node);
-            } //End block
+            } 
             mNodes.add(node);
             addTaint(view.getTaint());
-            // ---------- Original Method ----------
-            //final int id = view.getId();
-            //final Node node = Node.acquire(view);
-            //if (id != View.NO_ID) {
-                //mKeyNodes.put(id, node);
-            //}
-            //mNodes.add(node);
+            
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1433,26 +1457,26 @@ public class RelativeLayout extends ViewGroup {
                                 boolean varBE2B4F04D91A59A08789366480C2B5BD_223538500 = (dependencies.size() == 0);
                                 {
                                     roots.add(dependent);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Circular dependencies cannot exist"
                         + " in RelativeLayout");
-            } //End block
+            } 
             addTaint(sorted[0].getTaint());
             addTaint(rules[0]);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.907 -0400", hash_original_method = "3833904997A1288F1E7950B84718C1E5", hash_generated_method = "F0B1BA295B9158A0ABA14696D20825D4")
         private LinkedList<Node> findRoots(int[] rulesFilter) {
-            LinkedList<Node> varB4EAC82CA7396A68D541C85D26508E83_1677938563 = null; //Variable for return #1
+            LinkedList<Node> varB4EAC82CA7396A68D541C85D26508E83_1677938563 = null; 
             final SparseArray<Node> keyNodes = mKeyNodes;
             final ArrayList<Node> nodes = mNodes;
             final int count = nodes.size();
@@ -1462,8 +1486,8 @@ public class RelativeLayout extends ViewGroup {
                     final Node node = nodes.get(i);
                     node.dependents.clear();
                     node.dependencies.clear();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 int i = 0;
                 {
@@ -1479,11 +1503,11 @@ public class RelativeLayout extends ViewGroup {
                                 final Node dependency = keyNodes.get(rule);
                                 dependency.dependents.add(node);
                                 node.dependencies.put(rule, dependency);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             final LinkedList<Node> roots = mRoots;
             roots.clear();
             {
@@ -1493,15 +1517,15 @@ public class RelativeLayout extends ViewGroup {
                     {
                         boolean var5E6FEE9956DF9683C1D4121BDE382F81_1132071534 = (node.dependencies.size() == 0);
                         roots.add(node);
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1677938563 = roots;
             addTaint(rulesFilter[0]);
-            varB4EAC82CA7396A68D541C85D26508E83_1677938563.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1677938563.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1677938563;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1514,15 +1538,15 @@ public class RelativeLayout extends ViewGroup {
                 Node node = var7DBAABE4E7F879D93D2EDA1D53070AED_1526231655.next();
                 {
                     printNode(resources, node);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(resources.getTaint());
             addTaint(rules[0]);
-            // ---------- Original Method ----------
-            //final LinkedList<Node> roots = findRoots(rules);
-            //for (Node node : roots) {
-                //printNode(resources, node);
-            //}
+            
+            
+            
+                
+            
         }
 
         
@@ -1591,26 +1615,26 @@ public class RelativeLayout extends ViewGroup {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.915 -0400", hash_original_method = "4AE6680246A461A411C2DCFC3E5C235E", hash_generated_method = "4AE6680246A461A411C2DCFC3E5C235E")
             public Node ()
             {
-                //Synthesized constructor
+                
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.916 -0400", hash_original_method = "A08BF9EBBE4B2747346D150314791002", hash_generated_method = "2FE07B58E0CD5DBB314046E4692100A0")
             public void setNextPoolable(Node element) {
                 mNext = element;
-                // ---------- Original Method ----------
-                //mNext = element;
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.916 -0400", hash_original_method = "3B74D9DA1E659E0940912A17ED2BA31C", hash_generated_method = "0F382ECBC95B0EA7A226E8997B51BB56")
             public Node getNextPoolable() {
-                Node varB4EAC82CA7396A68D541C85D26508E83_1017949239 = null; //Variable for return #1
+                Node varB4EAC82CA7396A68D541C85D26508E83_1017949239 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_1017949239 = mNext;
-                varB4EAC82CA7396A68D541C85D26508E83_1017949239.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1017949239.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1017949239;
-                // ---------- Original Method ----------
-                //return mNext;
+                
+                
             }
 
             
@@ -1618,16 +1642,16 @@ public class RelativeLayout extends ViewGroup {
             public boolean isPooled() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394943721 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1394943721;
-                // ---------- Original Method ----------
-                //return mIsPooled;
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.917 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
             public void setPooled(boolean isPooled) {
                 mIsPooled = isPooled;
-                // ---------- Original Method ----------
-                //mIsPooled = isPooled;
+                
+                
             }
 
             
@@ -1644,11 +1668,11 @@ public class RelativeLayout extends ViewGroup {
                 dependents.clear();
                 dependencies.clear();
                 sPool.release(this);
-                // ---------- Original Method ----------
-                //view = null;
-                //dependents.clear();
-                //dependencies.clear();
-                //sPool.release(this);
+                
+                
+                
+                
+                
             }
 
             
@@ -1670,15 +1694,15 @@ public class RelativeLayout extends ViewGroup {
                         }
                     }, POOL_LIMIT)
             );
-            // orphaned legacy method
+            
             public void onReleased(Node element) {
                         }
             
-            // orphaned legacy method
+            
             public void onAcquired(Node element) {
                         }
             
-            // orphaned legacy method
+            
             public Node newInstance() {
                             return new Node();
                         }

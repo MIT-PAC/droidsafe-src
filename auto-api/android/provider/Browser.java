@@ -1,11 +1,11 @@
 package android.provider;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ContentResolver;
 import android.content.ContentUris;
@@ -28,7 +28,7 @@ public class Browser {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.728 -0400", hash_original_method = "B2A4FF14215B3ADDA31B48F394E70575", hash_generated_method = "B2A4FF14215B3ADDA31B48F394E70575")
     public Browser ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -310,7 +310,7 @@ public class Browser {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.732 -0400", hash_original_method = "F477E31945C7D2DE3BB9433F18AA1C9B", hash_generated_method = "F477E31945C7D2DE3BB9433F18AA1C9B")
         public BookmarkColumns ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -353,7 +353,7 @@ public class Browser {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.732 -0400", hash_original_method = "AD4AB7ABF1D748D8E2B97CBDABE5BB4B", hash_generated_method = "AD4AB7ABF1D748D8E2B97CBDABE5BB4B")
         public SearchColumns ()
         {
-            //Synthesized constructor
+            
         }
 
 

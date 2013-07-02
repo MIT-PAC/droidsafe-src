@@ -1,11 +1,11 @@
 package org.apache.http.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class HttpResponseException extends ClientProtocolException {
@@ -18,8 +18,8 @@ public class HttpResponseException extends ClientProtocolException {
         super(s);
         this.statusCode = statusCode;
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //this.statusCode = statusCode;
+        
+        
     }
 
     
@@ -27,8 +27,8 @@ public class HttpResponseException extends ClientProtocolException {
     public int getStatusCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1564789016 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1564789016;
-        // ---------- Original Method ----------
-        //return this.statusCode;
+        
+        
     }
 
     

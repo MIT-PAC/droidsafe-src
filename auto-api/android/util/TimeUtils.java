@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
@@ -22,10 +22,11 @@ public class TimeUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.738 -0400", hash_original_method = "90FFA2BDF77FA646318F5F30EF504BD2", hash_generated_method = "011199797FD3B540ED86DA17205AFF1D")
     public  TimeUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static TimeZone getTimeZone(int offset, boolean dst, long when, String country) {
         if (country == null) {
             return null;
@@ -76,6 +77,7 @@ public class TimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getTimeZoneDatabaseVersion() {
         return ZoneInfoDB.getVersion();
     }
@@ -120,6 +122,7 @@ public class TimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int formatDurationLocked(long duration, int fieldLen) {
         if (sFormatStr.length < fieldLen) {
             sFormatStr = new char[fieldLen];
@@ -183,6 +186,7 @@ public class TimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void formatDuration(long duration, StringBuilder builder) {
         synchronized (sFormatSync) {
             int len = formatDurationLocked(duration, 0);
@@ -191,6 +195,7 @@ public class TimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void formatDuration(long duration, PrintWriter pw, int fieldLen) {
         synchronized (sFormatSync) {
             int len = formatDurationLocked(duration, fieldLen);
@@ -199,11 +204,13 @@ public class TimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void formatDuration(long duration, PrintWriter pw) {
         formatDuration(duration, pw, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void formatDuration(long time, long now, PrintWriter pw) {
         if (time == 0) {
             pw.print("--");

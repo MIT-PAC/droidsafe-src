@@ -1,11 +1,11 @@
 package org.apache.harmony.xml;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -67,15 +67,15 @@ class ExpatParser {
             this.encoding,
             processNamespaces
         );
-        // ---------- Original Method ----------
-        //this.publicId = publicId;
-        //this.systemId = systemId;
-        //this.xmlReader = xmlReader;
-        //this.encoding = encoding == null ? DEFAULT_ENCODING : encoding;
-        //this.pointer = initialize(
-            //this.encoding,
-            //processNamespaces
-        //);
+        
+        
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -87,12 +87,12 @@ class ExpatParser {
         this.pointer = pointer;
         this.systemId = systemId;
         this.publicId = publicId;
-        // ---------- Original Method ----------
-        //this.encoding = encoding;
-        //this.xmlReader = xmlReader;
-        //this.pointer = pointer;
-        //this.systemId = systemId;
-        //this.publicId = publicId;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -114,32 +114,32 @@ class ExpatParser {
             this.attributeCount = attributeCount;
             contentHandler.startElement(
                     uri, localName, qName, this.attributes);
-        } //End block
+        } 
         finally 
         {
             inStartElement = false;
             this.attributeCount = -1;
             this.attributePointer = 0;
-        } //End block
+        } 
         addTaint(uri.getTaint());
         addTaint(localName.getTaint());
         addTaint(qName.getTaint());
-        // ---------- Original Method ----------
-        //ContentHandler contentHandler = xmlReader.contentHandler;
-        //if (contentHandler == null) {
-            //return;
-        //}
-        //try {
-            //inStartElement = true;
-            //this.attributePointer = attributePointer;
-            //this.attributeCount = attributeCount;
-            //contentHandler.startElement(
-                    //uri, localName, qName, this.attributes);
-        //} finally {
-            //inStartElement = false;
-            //this.attributeCount = -1;
-            //this.attributePointer = 0;
-        //}
+        
+        
+        
+            
+        
+        
+            
+            
+            
+            
+                    
+        
+            
+            
+            
+        
     }
 
     
@@ -148,15 +148,15 @@ class ExpatParser {
         ContentHandler contentHandler = xmlReader.contentHandler;
         {
             contentHandler.endElement(uri, localName, qName);
-        } //End block
+        } 
         addTaint(uri.getTaint());
         addTaint(localName.getTaint());
         addTaint(qName.getTaint());
-        // ---------- Original Method ----------
-        //ContentHandler contentHandler = xmlReader.contentHandler;
-        //if (contentHandler != null) {
-            //contentHandler.endElement(uri, localName, qName);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -165,14 +165,14 @@ class ExpatParser {
         ContentHandler contentHandler = xmlReader.contentHandler;
         {
             contentHandler.characters(text, 0, length);
-        } //End block
+        } 
         addTaint(text[0]);
         addTaint(length);
-        // ---------- Original Method ----------
-        //ContentHandler contentHandler = xmlReader.contentHandler;
-        //if (contentHandler != null) {
-            //contentHandler.characters(text, 0, length);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -181,14 +181,14 @@ class ExpatParser {
         LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
         {
             lexicalHandler.comment(text, 0, length);
-        } //End block
+        } 
         addTaint(text[0]);
         addTaint(length);
-        // ---------- Original Method ----------
-        //LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
-        //if (lexicalHandler != null) {
-            //lexicalHandler.comment(text, 0, length);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -197,12 +197,12 @@ class ExpatParser {
         LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
         {
             lexicalHandler.startCDATA();
-        } //End block
-        // ---------- Original Method ----------
-        //LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
-        //if (lexicalHandler != null) {
-            //lexicalHandler.startCDATA();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -211,12 +211,12 @@ class ExpatParser {
         LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
         {
             lexicalHandler.endCDATA();
-        } //End block
-        // ---------- Original Method ----------
-        //LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
-        //if (lexicalHandler != null) {
-            //lexicalHandler.endCDATA();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -225,14 +225,14 @@ class ExpatParser {
         ContentHandler contentHandler = xmlReader.contentHandler;
         {
             contentHandler.startPrefixMapping(prefix, uri);
-        } //End block
+        } 
         addTaint(prefix.getTaint());
         addTaint(uri.getTaint());
-        // ---------- Original Method ----------
-        //ContentHandler contentHandler = xmlReader.contentHandler;
-        //if (contentHandler != null) {
-            //contentHandler.startPrefixMapping(prefix, uri);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -241,13 +241,13 @@ class ExpatParser {
         ContentHandler contentHandler = xmlReader.contentHandler;
         {
             contentHandler.endPrefixMapping(prefix);
-        } //End block
+        } 
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //ContentHandler contentHandler = xmlReader.contentHandler;
-        //if (contentHandler != null) {
-            //contentHandler.endPrefixMapping(prefix);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -256,15 +256,15 @@ class ExpatParser {
         LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
         {
             lexicalHandler.startDTD(name, publicId, systemId);
-        } //End block
+        } 
         addTaint(name.getTaint());
         addTaint(publicId.getTaint());
         addTaint(systemId.getTaint());
-        // ---------- Original Method ----------
-        //LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
-        //if (lexicalHandler != null) {
-            //lexicalHandler.startDTD(name, publicId, systemId);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -273,12 +273,12 @@ class ExpatParser {
         LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
         {
             lexicalHandler.endDTD();
-        } //End block
-        // ---------- Original Method ----------
-        //LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
-        //if (lexicalHandler != null) {
-            //lexicalHandler.endDTD();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -287,14 +287,14 @@ class ExpatParser {
         ContentHandler contentHandler = xmlReader.contentHandler;
         {
             contentHandler.processingInstruction(target, data);
-        } //End block
+        } 
         addTaint(target.getTaint());
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        //ContentHandler contentHandler = xmlReader.contentHandler;
-        //if (contentHandler != null) {
-            //contentHandler.processingInstruction(target, data);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -303,15 +303,15 @@ class ExpatParser {
         DTDHandler dtdHandler = xmlReader.dtdHandler;
         {
             dtdHandler.notationDecl(name, publicId, systemId);
-        } //End block
+        } 
         addTaint(name.getTaint());
         addTaint(publicId.getTaint());
         addTaint(systemId.getTaint());
-        // ---------- Original Method ----------
-        //DTDHandler dtdHandler = xmlReader.dtdHandler;
-        //if (dtdHandler != null) {
-            //dtdHandler.notationDecl(name, publicId, systemId);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -320,16 +320,16 @@ class ExpatParser {
         DTDHandler dtdHandler = xmlReader.dtdHandler;
         {
             dtdHandler.unparsedEntityDecl(name, publicId, systemId, notationName);
-        } //End block
+        } 
         addTaint(name.getTaint());
         addTaint(publicId.getTaint());
         addTaint(systemId.getTaint());
         addTaint(notationName.getTaint());
-        // ---------- Original Method ----------
-        //DTDHandler dtdHandler = xmlReader.dtdHandler;
-        //if (dtdHandler != null) {
-            //dtdHandler.unparsedEntityDecl(name, publicId, systemId, notationName);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -347,15 +347,15 @@ class ExpatParser {
                         URI baseUri = new URI(this.systemId);
                         systemUri = baseUri.resolve(systemUri);
                         systemId = systemUri.toString();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             catch (Exception e)
             {
                 System.logI("Could not resolve '" + systemId + "' relative to"
                         + " '" + this.systemId + "' at " + locator, e);
-            } //End block
-        } //End block
+            } 
+        } 
         InputSource inputSource = entityResolver.resolveEntity(
                 publicId, systemId);
         String encoding = pickEncoding(inputSource);
@@ -366,50 +366,52 @@ class ExpatParser {
                     pointer, inputSource.getPublicId(),
                     inputSource.getSystemId());
             parseExternalEntity(entityParser, inputSource);
-        } //End block
+        } 
         finally 
         {
             releaseParser(pointer);
-        } //End block
+        } 
         addTaint(context.getTaint());
         addTaint(publicId.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.671 -0400", hash_original_method = "0D6C1F8897C50F2325542C54551DAF6A", hash_generated_method = "75AFC635404E3B249260D09F5A588F7D")
     private String pickEncoding(InputSource inputSource) {
-        String varB4EAC82CA7396A68D541C85D26508E83_159466187 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_344255312 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_159466187 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_344255312 = null; 
         Reader reader = inputSource.getCharacterStream();
         {
             varB4EAC82CA7396A68D541C85D26508E83_159466187 = CHARACTER_ENCODING;
-        } //End block
+        } 
         String encoding = inputSource.getEncoding();
         varB4EAC82CA7396A68D541C85D26508E83_344255312 = encoding == null ? DEFAULT_ENCODING : encoding;
         addTaint(inputSource.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_153020463; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_153020463; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_153020463 = varB4EAC82CA7396A68D541C85D26508E83_159466187;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_153020463 = varB4EAC82CA7396A68D541C85D26508E83_344255312;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_153020463.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_153020463.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_153020463;
-        // ---------- Original Method ----------
-        //Reader reader = inputSource.getCharacterStream();
-        //if (reader != null) {
-            //return CHARACTER_ENCODING;
-        //}
-        //String encoding = inputSource.getEncoding();
-        //return encoding == null ? DEFAULT_ENCODING : encoding;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.671 -0400", hash_original_method = "43999A16FC6A2BCB60CE78FA610F37AD", hash_generated_method = "B26B210EFC1F80252376E16D67B0588D")
     private void parseExternalEntity(ExpatParser entityParser,
             InputSource inputSource) throws IOException, SAXException {
@@ -420,12 +422,12 @@ class ExpatParser {
                 entityParser.append("<externalEntity>");
                 entityParser.parseFragment(reader);
                 entityParser.append("</externalEntity>");
-            } //End block
+            } 
             finally 
             {
                 IoUtils.closeQuietly(reader);
-            } //End block
-        } //End block
+            } 
+        } 
         InputStream in = inputSource.getByteStream();
         {
             try 
@@ -435,16 +437,16 @@ class ExpatParser {
                 entityParser.parseFragment(in);
                 entityParser.append("</externalEntity>"
                         .getBytes(entityParser.encoding));
-            } //End block
+            } 
             finally 
             {
                 IoUtils.closeQuietly(in);
-            } //End block
-        } //End block
+            } 
+        } 
         String systemId = inputSource.getSystemId();
         {
             if (DroidSafeAndroidRuntime.control) throw new ParseException("No input specified.", locator);
-        } //End block
+        } 
         in = openUrl(systemId);
         try 
         {
@@ -453,15 +455,15 @@ class ExpatParser {
             entityParser.parseFragment(in);
             entityParser.append("</externalEntity>"
                     .getBytes(entityParser.encoding));
-        } //End block
+        } 
         finally 
         {
             IoUtils.closeQuietly(in);
-        } //End block
+        } 
         addTaint(entityParser.getTaint());
         addTaint(inputSource.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -475,18 +477,18 @@ class ExpatParser {
         try 
         {
             appendString(this.pointer, xml, false);
-        } //End block
+        } 
         catch (ExpatException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new ParseException(e.getMessage(), this.locator);
-        } //End block
+        } 
         addTaint(xml.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //appendString(this.pointer, xml, false);
-        //} catch (ExpatException e) {
-            //throw new ParseException(e.getMessage(), this.locator);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -500,20 +502,20 @@ class ExpatParser {
         try 
         {
             appendChars(this.pointer, xml, offset, length);
-        } //End block
+        } 
         catch (ExpatException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new ParseException(e.getMessage(), this.locator);
-        } //End block
+        } 
         addTaint(xml[0]);
         addTaint(offset);
         addTaint(length);
-        // ---------- Original Method ----------
-        //try {
-            //appendChars(this.pointer, xml, offset, length);
-        //} catch (ExpatException e) {
-            //throw new ParseException(e.getMessage(), this.locator);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -527,8 +529,8 @@ class ExpatParser {
      void append(byte[] xml) throws SAXException {
         append(xml, 0, xml.length);
         addTaint(xml[0]);
-        // ---------- Original Method ----------
-        //append(xml, 0, xml.length);
+        
+        
     }
 
     
@@ -537,20 +539,20 @@ class ExpatParser {
         try 
         {
             appendBytes(this.pointer, xml, offset, length);
-        } //End block
+        } 
         catch (ExpatException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new ParseException(e.getMessage(), this.locator);
-        } //End block
+        } 
         addTaint(xml[0]);
         addTaint(offset);
         addTaint(length);
-        // ---------- Original Method ----------
-        //try {
-            //appendBytes(this.pointer, xml, offset, length);
-        //} catch (ExpatException e) {
-            //throw new ParseException(e.getMessage(), this.locator);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -568,11 +570,11 @@ class ExpatParser {
         finish();
         endDocument();
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        //startDocument();
-        //parseFragment(in);
-        //finish();
-        //endDocument();
+        
+        
+        
+        
+        
     }
 
     
@@ -583,14 +585,15 @@ class ExpatParser {
         finish();
         endDocument();
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        //startDocument();
-        //parseFragment(in);
-        //finish();
-        //endDocument();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.675 -0400", hash_original_method = "0C2DA7F13CAAE321089EB28883C484D4", hash_generated_method = "95E1AA965EAA1BE8C4960927DE9150D0")
     private void parseFragment(Reader in) throws IOException, SAXException {
         char[] buffer = new char[BUFFER_SIZE / 2];
@@ -601,27 +604,28 @@ class ExpatParser {
                 try 
                 {
                     appendChars(this.pointer, buffer, 0, length);
-                } //End block
+                } 
                 catch (ExpatException e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ParseException(e.getMessage(), locator);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        //char[] buffer = new char[BUFFER_SIZE / 2];
-        //int length;
-        //while ((length = in.read(buffer)) != -1) {
-            //try {
-                //appendChars(this.pointer, buffer, 0, length);
-            //} catch (ExpatException e) {
-                //throw new ParseException(e.getMessage(), locator);
-            //}
-        //}
+        
+        
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.675 -0400", hash_original_method = "3CA57F292A4B96862265187DF8ED7F28", hash_generated_method = "7D3036C8B0AF73B58D8B198B4C0B2F4C")
     private void parseFragment(InputStream in) throws IOException, SAXException {
         byte[] buffer = new byte[BUFFER_SIZE];
@@ -632,56 +636,58 @@ class ExpatParser {
                 try 
                 {
                     appendBytes(this.pointer, buffer, 0, length);
-                } //End block
+                } 
                 catch (ExpatException e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ParseException(e.getMessage(), this.locator);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        //byte[] buffer = new byte[BUFFER_SIZE];
-        //int length;
-        //while ((length = in.read(buffer)) != -1) {
-            //try {
-                //appendBytes(this.pointer, buffer, 0, length);
-            //} catch (ExpatException e) {
-                //throw new ParseException(e.getMessage(), this.locator);
-            //}
-        //}
+        
+        
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.676 -0400", hash_original_method = "E29A8B5517BB7A594660A4782169D49D", hash_generated_method = "2AA4A15521DDF70D3202E7277015463E")
     private void startDocument() throws SAXException {
         ContentHandler contentHandler = xmlReader.contentHandler;
         {
             contentHandler.setDocumentLocator(this.locator);
             contentHandler.startDocument();
-        } //End block
-        // ---------- Original Method ----------
-        //ContentHandler contentHandler = xmlReader.contentHandler;
-        //if (contentHandler != null) {
-            //contentHandler.setDocumentLocator(this.locator);
-            //contentHandler.startDocument();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.676 -0400", hash_original_method = "539A01ACC13B65DFCB758F0CE94D0284", hash_generated_method = "A59994027B0CCEBE6B818E7394535CD0")
     private void endDocument() throws SAXException {
         ContentHandler contentHandler;
         contentHandler = xmlReader.contentHandler;
         {
             contentHandler.endDocument();
-        } //End block
-        // ---------- Original Method ----------
-        //ContentHandler contentHandler;
-        //contentHandler = xmlReader.contentHandler;
-        //if (contentHandler != null) {
-            //contentHandler.endDocument();
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -690,20 +696,21 @@ class ExpatParser {
         try 
         {
             appendString(this.pointer, "", true);
-        } //End block
+        } 
         catch (ExpatException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new ParseException(e.getMessage(), this.locator);
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //appendString(this.pointer, "", true);
-        //} catch (ExpatException e) {
-            //throw new ParseException(e.getMessage(), this.locator);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.678 -0400", hash_original_method = "F20474D747FC599F8D46ABC255AE3ED8", hash_generated_method = "F24D061DFFBC1D3472A38C357930670F")
     @Override
     protected synchronized void finalize() throws Throwable {
@@ -712,21 +719,21 @@ class ExpatParser {
             {
                 release(this.pointer);
                 this.pointer = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (this.pointer != 0) {
-                //release(this.pointer);
-                //this.pointer = 0;
-            //}
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+        
+            
+        
     }
 
     
@@ -743,13 +750,14 @@ class ExpatParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.679 -0400", hash_original_method = "06014D7BF95F9BC6196F9727E94F85D2", hash_generated_method = "BFC29F665A381FAD9DBC9A6985ABB287")
     private int line() {
         int varB027B083F3C5A0885E0646529B3C5E8A_805479220 = (line(this.pointer));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_344378394 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_344378394;
-        // ---------- Original Method ----------
-        //return line(this.pointer);
+        
+        
     }
 
     
@@ -758,13 +766,14 @@ class ExpatParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.680 -0400", hash_original_method = "F3C5081F1B5CC0FD86B00194F6A2466A", hash_generated_method = "9BC2FB4DE08DBED847E0B07DC41826A9")
     private int column() {
         int var6A1EB5916311F41E371AEFB0BB5747DC_425937832 = (column(this.pointer));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995403790 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995403790;
-        // ---------- Original Method ----------
-        //return column(this.pointer);
+        
+        
     }
 
     
@@ -775,37 +784,37 @@ class ExpatParser {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.681 -0400", hash_original_method = "657780C747B6551FC5B90D954C172ACE", hash_generated_method = "25A8E73A64CD38D4393571121F7061DC")
      Attributes cloneAttributes() {
-        Attributes varB4EAC82CA7396A68D541C85D26508E83_978114126 = null; //Variable for return #1
-        Attributes varB4EAC82CA7396A68D541C85D26508E83_109239561 = null; //Variable for return #2
+        Attributes varB4EAC82CA7396A68D541C85D26508E83_978114126 = null; 
+        Attributes varB4EAC82CA7396A68D541C85D26508E83_109239561 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(OUTSIDE_START_ELEMENT);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_978114126 = ClonedAttributes.EMPTY;
-        } //End block
+        } 
         int clonePointer = cloneAttributes(this.attributePointer, this.attributeCount);
         varB4EAC82CA7396A68D541C85D26508E83_109239561 = new ClonedAttributes(pointer, clonePointer, attributeCount);
-        Attributes varA7E53CE21691AB073D9660D615818899_2085053382; //Final return value
+        Attributes varA7E53CE21691AB073D9660D615818899_2085053382; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2085053382 = varB4EAC82CA7396A68D541C85D26508E83_978114126;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2085053382 = varB4EAC82CA7396A68D541C85D26508E83_109239561;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2085053382.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2085053382.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2085053382;
-        // ---------- Original Method ----------
-        //if (!inStartElement) {
-            //throw new IllegalStateException(OUTSIDE_START_ELEMENT);
-        //}
-        //if (attributeCount == 0) {
-            //return ClonedAttributes.EMPTY;
-        //}
-        //int clonePointer
-                //= cloneAttributes(this.attributePointer, this.attributeCount);
-        //return new ClonedAttributes(pointer, clonePointer, attributeCount);
+        
+        
+            
+        
+        
+            
+        
+        
+                
+        
     }
 
     
@@ -814,6 +823,7 @@ class ExpatParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static InputStream openUrl(String url) throws IOException {
         try {
             URLConnection urlConnection = new URL(url).openConnection();
@@ -846,10 +856,10 @@ class ExpatParser {
             this.parserPointer = parserPointer;
             this.pointer = pointer;
             this.length = length;
-            // ---------- Original Method ----------
-            //this.parserPointer = parserPointer;
-            //this.pointer = pointer;
-            //this.length = length;
+            
+            
+            
+            
         }
 
         
@@ -858,8 +868,8 @@ class ExpatParser {
         public int getParserPointer() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_665484442 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_665484442;
-            // ---------- Original Method ----------
-            //return this.parserPointer;
+            
+            
         }
 
         
@@ -868,8 +878,8 @@ class ExpatParser {
         public int getPointer() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1838470203 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1838470203;
-            // ---------- Original Method ----------
-            //return pointer;
+            
+            
         }
 
         
@@ -878,8 +888,8 @@ class ExpatParser {
         public int getLength() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_163762178 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_163762178;
-            // ---------- Original Method ----------
-            //return length;
+            
+            
         }
 
         
@@ -891,21 +901,21 @@ class ExpatParser {
                 {
                     freeAttributes(pointer);
                     pointer = 0;
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 super.finalize();
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //if (pointer != 0) {
-                    //freeAttributes(pointer);
-                    //pointer = 0;
-                //}
-            //} finally {
-                //super.finalize();
-            //}
+            } 
+            
+            
+                
+                    
+                    
+                
+            
+                
+            
         }
 
         
@@ -921,29 +931,29 @@ class ExpatParser {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.684 -0400", hash_original_method = "64DD51F37170009BB48F8E01805F6CAF", hash_generated_method = "64DD51F37170009BB48F8E01805F6CAF")
         public ExpatLocator ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.684 -0400", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "5FB5CE03FB6CF862745A771A4E23112C")
         public String getPublicId() {
-            String varB4EAC82CA7396A68D541C85D26508E83_506435035 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_506435035 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_506435035 = publicId;
-            varB4EAC82CA7396A68D541C85D26508E83_506435035.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_506435035.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_506435035;
-            // ---------- Original Method ----------
-            //return publicId;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.685 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "8FE96B4DBC138D8C92587A8D743D8338")
         public String getSystemId() {
-            String varB4EAC82CA7396A68D541C85D26508E83_370193793 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_370193793 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_370193793 = systemId;
-            varB4EAC82CA7396A68D541C85D26508E83_370193793.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_370193793.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_370193793;
-            // ---------- Original Method ----------
-            //return systemId;
+            
+            
         }
 
         
@@ -952,8 +962,8 @@ class ExpatParser {
             int var78B80DE15B827CB15322EE6FADEF2857_2039634891 = (line());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_98832374 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_98832374;
-            // ---------- Original Method ----------
-            //return line();
+            
+            
         }
 
         
@@ -962,24 +972,24 @@ class ExpatParser {
             int varF98B0285246D9CEBDB8B20DABABB1178_1550804789 = (column());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1162969262 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1162969262;
-            // ---------- Original Method ----------
-            //return column();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.686 -0400", hash_original_method = "DD8FF3BEAAEB603642876DC8691E0663", hash_generated_method = "29132C2482568A76D87E7B76859369C3")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1623920125 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1623920125 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1623920125 = "Locator[publicId: " + publicId + ", systemId: " + systemId
                 + ", line: " + getLineNumber()
                 + ", column: " + getColumnNumber() + "]";
-            varB4EAC82CA7396A68D541C85D26508E83_1623920125.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1623920125.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1623920125;
-            // ---------- Original Method ----------
-            //return "Locator[publicId: " + publicId + ", systemId: " + systemId
-                //+ ", line: " + getLineNumber()
-                //+ ", column: " + getColumnNumber() + "]";
+            
+            
+                
+                
         }
 
         
@@ -992,7 +1002,7 @@ class ExpatParser {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.686 -0400", hash_original_method = "ACF7E0CCF646D645B704B296EF29F814", hash_generated_method = "ACF7E0CCF646D645B704B296EF29F814")
         public CurrentAttributes ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1001,8 +1011,8 @@ class ExpatParser {
         public int getParserPointer() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1391468573 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1391468573;
-            // ---------- Original Method ----------
-            //return pointer;
+            
+            
         }
 
         
@@ -1011,14 +1021,14 @@ class ExpatParser {
         public int getPointer() {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(OUTSIDE_START_ELEMENT);
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889855827 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889855827;
-            // ---------- Original Method ----------
-            //if (!inStartElement) {
-                //throw new IllegalStateException(OUTSIDE_START_ELEMENT);
-            //}
-            //return attributePointer;
+            
+            
+                
+            
+            
         }
 
         
@@ -1027,14 +1037,14 @@ class ExpatParser {
         public int getLength() {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(OUTSIDE_START_ELEMENT);
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1969596115 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1969596115;
-            // ---------- Original Method ----------
-            //if (!inStartElement) {
-                //throw new IllegalStateException(OUTSIDE_START_ELEMENT);
-            //}
-            //return attributeCount;
+            
+            
+                
+            
+            
         }
 
         
@@ -1049,7 +1059,7 @@ class ExpatParser {
             super(makeMessage(message, locator), locator);
             addTaint(message.getTaint());
             addTaint(locator.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1084,7 +1094,7 @@ class ExpatParser {
             addTaint(pointer);
             addTaint(publicId.getTaint());
             addTaint(systemId.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1095,17 +1105,17 @@ class ExpatParser {
             {
                 super.startElement(uri, localName, qName, attributePointer,
                         attributeCount);
-            } //End block
+            } 
             addTaint(uri.getTaint());
             addTaint(localName.getTaint());
             addTaint(qName.getTaint());
             addTaint(attributePointer);
             addTaint(attributeCount);
-            // ---------- Original Method ----------
-            //if (depth++ > 0) {
-                //super.startElement(uri, localName, qName, attributePointer,
-                        //attributeCount);
-            //}
+            
+            
+                
+                        
+            
         }
 
         
@@ -1114,14 +1124,14 @@ class ExpatParser {
          void endElement(String uri, String localName, String qName) throws SAXException {
             {
                 super.endElement(uri, localName, qName);
-            } //End block
+            } 
             addTaint(uri.getTaint());
             addTaint(localName.getTaint());
             addTaint(qName.getTaint());
-            // ---------- Original Method ----------
-            //if (--depth > 0) {
-                //super.endElement(uri, localName, qName);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -1129,7 +1139,7 @@ class ExpatParser {
         @Override
         @SuppressWarnings("FinalizeDoesntCallSuperFinalize")
         protected synchronized void finalize() throws Throwable {
-            // ---------- Original Method ----------
+            
         }
 
         

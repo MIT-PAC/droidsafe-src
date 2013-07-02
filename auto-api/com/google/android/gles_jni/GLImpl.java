@@ -1,11 +1,11 @@
 package com.google.android.gles_jni;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.AppGlobals;
 import android.content.pm.ApplicationInfo;
@@ -59,7 +59,7 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.445 -0400", hash_original_method = "B8D773F1A7CFA96D2497C742B1D0AB9A", hash_generated_method = "11F556B43317BDD2203C73CA96CCDB1C")
     public  GLImpl() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -72,11 +72,12 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("glGetPointerv");
         addTaint(pname);
         addTaint(params[0].getTaint());
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException("glGetPointerv");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean allowIndirectBuffers(String appName) {
         boolean result = false;
         int version = 0;
@@ -249,25 +250,25 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
         );
         {
             _colorPointer = pointer;
-        } //End block
+        } 
         addTaint(size);
         addTaint(type);
         addTaint(stride);
-        // ---------- Original Method ----------
-        //glColorPointerBounds(
-            //size,
-            //type,
-            //stride,
-            //pointer,
-            //pointer.remaining()
-        //);
-        //if ((size == 4) &&
-            //((type == GL_FLOAT) ||
-             //(type == GL_UNSIGNED_BYTE) ||
-             //(type == GL_FIXED)) &&
-            //(stride >= 0)) {
-            //_colorPointer = pointer;
-        //}
+        
+        
+            
+            
+            
+            
+            
+        
+        
+            
+             
+             
+            
+            
+        
     }
 
     
@@ -579,21 +580,21 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
     public String glGetString(
         int name
     ) {
-        String varB4EAC82CA7396A68D541C85D26508E83_985788514 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_985788514 = null; 
         String returnValue;
         returnValue = _glGetString(
             name
         );
         varB4EAC82CA7396A68D541C85D26508E83_985788514 = returnValue;
         addTaint(name);
-        varB4EAC82CA7396A68D541C85D26508E83_985788514.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_985788514.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_985788514;
-        // ---------- Original Method ----------
-        //String returnValue;
-        //returnValue = _glGetString(
-            //name
-        //);
-        //return returnValue;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -925,23 +926,23 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
         );
         {
             _normalPointer = pointer;
-        } //End block
+        } 
         addTaint(type);
         addTaint(stride);
-        // ---------- Original Method ----------
-        //glNormalPointerBounds(
-            //type,
-            //stride,
-            //pointer,
-            //pointer.remaining()
-        //);
-        //if (((type == GL_FLOAT) ||
-             //(type == GL_BYTE) ||
-             //(type == GL_SHORT) ||
-             //(type == GL_FIXED)) &&
-            //(stride >= 0)) {
-            //_normalPointer = pointer;
-        //}
+        
+        
+            
+            
+            
+            
+        
+        
+             
+             
+             
+            
+            
+        
     }
 
     
@@ -1155,28 +1156,28 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
         );
         {
             _texCoordPointer = pointer;
-        } //End block
+        } 
         addTaint(size);
         addTaint(type);
         addTaint(stride);
-        // ---------- Original Method ----------
-        //glTexCoordPointerBounds(
-            //size,
-            //type,
-            //stride,
-            //pointer,
-            //pointer.remaining()
-        //);
-        //if (((size == 2) ||
-             //(size == 3) ||
-             //(size == 4)) &&
-            //((type == GL_FLOAT) ||
-             //(type == GL_BYTE) ||
-             //(type == GL_SHORT) ||
-             //(type == GL_FIXED)) &&
-            //(stride >= 0)) {
-            //_texCoordPointer = pointer;
-        //}
+        
+        
+            
+            
+            
+            
+            
+        
+        
+             
+             
+            
+             
+             
+             
+            
+            
+        
     }
 
     
@@ -1329,28 +1330,28 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
         );
         {
             _vertexPointer = pointer;
-        } //End block
+        } 
         addTaint(size);
         addTaint(type);
         addTaint(stride);
-        // ---------- Original Method ----------
-        //glVertexPointerBounds(
-            //size,
-            //type,
-            //stride,
-            //pointer,
-            //pointer.remaining()
-        //);
-        //if (((size == 2) ||
-             //(size == 3) ||
-             //(size == 4)) &&
-            //((type == GL_FLOAT) ||
-             //(type == GL_BYTE) ||
-             //(type == GL_SHORT) ||
-             //(type == GL_FIXED)) &&
-            //(stride >= 0)) {
-            //_vertexPointer = pointer;
-        //}
+        
+        
+            
+            
+            
+            
+            
+        
+        
+             
+             
+            
+             
+             
+             
+            
+            
+        
     }
 
     
@@ -1897,21 +1898,21 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
         );
         {
             _pointSizePointerOES = pointer;
-        } //End block
+        } 
         addTaint(type);
         addTaint(stride);
-        // ---------- Original Method ----------
-        //glPointSizePointerOESBounds(
-            //type,
-            //stride,
-            //pointer,
-            //pointer.remaining()
-        //);
-        //if (((type == GL_FLOAT) ||
-             //(type == GL_FIXED)) &&
-            //(stride >= 0)) {
-            //_pointSizePointerOES = pointer;
-        //}
+        
+        
+            
+            
+            
+            
+        
+        
+             
+            
+            
+        
     }
 
     
@@ -2173,28 +2174,28 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
         );
         {
             _matrixIndexPointerOES = pointer;
-        } //End block
+        } 
         addTaint(size);
         addTaint(type);
         addTaint(stride);
-        // ---------- Original Method ----------
-        //glMatrixIndexPointerOESBounds(
-            //size,
-            //type,
-            //stride,
-            //pointer,
-            //pointer.remaining()
-        //);
-        //if (((size == 2) ||
-             //(size == 3) ||
-             //(size == 4)) &&
-            //((type == GL_FLOAT) ||
-             //(type == GL_BYTE) ||
-             //(type == GL_SHORT) ||
-             //(type == GL_FIXED)) &&
-            //(stride >= 0)) {
-            //_matrixIndexPointerOES = pointer;
-        //}
+        
+        
+            
+            
+            
+            
+            
+        
+        
+             
+             
+            
+             
+             
+             
+            
+            
+        
     }
 
     
@@ -2237,14 +2238,14 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
         addTaint(type);
         addTaint(stride);
         addTaint(pointer.getTaint());
-        // ---------- Original Method ----------
-        //glWeightPointerOESBounds(
-            //size,
-            //type,
-            //stride,
-            //pointer,
-            //pointer.remaining()
-        //);
+        
+        
+            
+            
+            
+            
+            
+        
     }
 
     

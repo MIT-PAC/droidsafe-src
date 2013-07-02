@@ -1,11 +1,11 @@
 package android.database.sqlite;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.StrictMode;
 import android.util.Log;
@@ -40,25 +40,25 @@ class SQLiteCompiledSql {
             boolean varBD0BED841C7A62596CB2EE0AC9816352_654434239 = (StrictMode.vmSqliteObjectLeaksEnabled());
             {
                 mStackTrace = new DatabaseObjectNotClosedException().fillInStackTrace();
-            } //End block
+            } 
             {
                 mStackTrace = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         nHandle = db.mNativeHandle;
         native_compile(sql);
-        // ---------- Original Method ----------
-        //db.verifyDbIsOpen();
-        //db.verifyLockOwner();
-        //mDatabase = db;
-        //mSqlStmt = sql;
-        //if (StrictMode.vmSqliteObjectLeaksEnabled()) {
-            //mStackTrace = new DatabaseObjectNotClosedException().fillInStackTrace();
-        //} else {
-            //mStackTrace = null;
-        //}
-        //nHandle = db.mNativeHandle;
-        //native_compile(sql);
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -67,12 +67,12 @@ class SQLiteCompiledSql {
         {
             mDatabase.finalizeStatementLater(nStatement);
             nStatement = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (nStatement != 0) {
-            //mDatabase.finalizeStatementLater(nStatement);
-            //nStatement = 0;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -81,35 +81,37 @@ class SQLiteCompiledSql {
         mInUse = true;
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1184697587 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1184697587;
-        // ---------- Original Method ----------
-        //if (mInUse) {
-            //return false;
-        //}
-        //mInUse = true;
-        //return true;
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.146 -0400", hash_original_method = "3B98FAB5CC48492CB208B835B8A64CFB", hash_generated_method = "1D65CE2608C808F3D02CFA088AEF5382")
     synchronized void release() {
         mInUse = false;
-        // ---------- Original Method ----------
-        //mInUse = false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.147 -0400", hash_original_method = "AE3D09E3B5AB69E4329FBD89B4473FE6", hash_generated_method = "70D57804978106FAAE49AD6899F4EA80")
     synchronized void releaseIfNotInUse() {
         {
             releaseSqlStatement();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mInUse) {
-            //releaseSqlStatement();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.147 -0400", hash_original_method = "043FE176FAAAC79BBB94A20B9880CE43", hash_generated_method = "1E1B3671FC94A0BEA99F99EE260C393B")
     @Override
     protected void finalize() throws Throwable {
@@ -117,7 +119,7 @@ class SQLiteCompiledSql {
         {
             {
                 boolean var0AA99A08D31F00E7A6817224CB16C1C3_378584727 = (mDatabase.isInQueueOfStatementsToBeFinalized(nStatement));
-            } //End collapsed parenthetic
+            } 
             {
                 int len = mSqlStmt.length();
                 StrictMode.onSqliteObjectLeaked(
@@ -125,38 +127,39 @@ class SQLiteCompiledSql {
                     "that you explicitly call close() on your cursor: " +
                     mSqlStmt.substring(0, (len > 1000) ? 1000 : len),
                     mStackTrace);
-            } //End block
+            } 
             releaseSqlStatement();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (nStatement == 0) return;
-            //if (mDatabase.isInQueueOfStatementsToBeFinalized(nStatement)) {
-                //return;
-            //}
-            //if (mInUse && mStackTrace != null) {
-                //int len = mSqlStmt.length();
-                //StrictMode.onSqliteObjectLeaked(
-                    //"Releasing statement in a finalizer. Please ensure " +
-                    //"that you explicitly call close() on your cursor: " +
-                    //mSqlStmt.substring(0, (len > 1000) ? 1000 : len),
-                    //mStackTrace);
-            //}
-            //releaseSqlStatement();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+                
+                
+                    
+                    
+                    
+                    
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.148 -0400", hash_original_method = "F4C9B6A641BE298F80672A4BBE3F197C", hash_generated_method = "58FED6F72F7F060B225AAC6F38822E30")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_3775054 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_3775054 = null; 
         {
             StringBuilder buff = new StringBuilder();
             buff.append(" nStatement=");
@@ -171,25 +174,25 @@ class SQLiteCompiledSql {
             int len = mSqlStmt.length();
             buff.append(mSqlStmt.substring(0, (len > 100) ? 100 : len));
             varB4EAC82CA7396A68D541C85D26508E83_3775054 = buff.toString();
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_3775054.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_3775054.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_3775054;
-        // ---------- Original Method ----------
-        //synchronized(this) {
-            //StringBuilder buff = new StringBuilder();
-            //buff.append(" nStatement=");
-            //buff.append(nStatement);
-            //buff.append(", mInUse=");
-            //buff.append(mInUse);
-            //buff.append(", db=");
-            //buff.append(mDatabase.getPath());
-            //buff.append(", db_connectionNum=");
-            //buff.append(mDatabase.mConnectionNum);
-            //buff.append(", sql=");
-            //int len = mSqlStmt.length();
-            //buff.append(mSqlStmt.substring(0, (len > 100) ? 100 : len));
-            //return buff.toString();
-        //}
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     

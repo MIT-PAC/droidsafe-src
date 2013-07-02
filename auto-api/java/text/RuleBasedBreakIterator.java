@@ -1,11 +1,11 @@
 package java.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import libcore.icu.NativeBreakIterator;
 
@@ -15,7 +15,7 @@ class RuleBasedBreakIterator extends BreakIterator {
       RuleBasedBreakIterator(NativeBreakIterator iterator) {
         super(iterator);
         addTaint(iterator.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,8 +25,8 @@ class RuleBasedBreakIterator extends BreakIterator {
         int varBA2D2D328ED3FEB82FDEC26256251008_1782736228 = (wrapped.current());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1289809900 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1289809900;
-        // ---------- Original Method ----------
-        //return wrapped.current();
+        
+        
     }
 
     
@@ -36,8 +36,8 @@ class RuleBasedBreakIterator extends BreakIterator {
         int var36D1CDF8ADA63B3D5029220AC494B86E_925587505 = (wrapped.first());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_987214999 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_987214999;
-        // ---------- Original Method ----------
-        //return wrapped.first();
+        
+        
     }
 
     
@@ -49,9 +49,9 @@ class RuleBasedBreakIterator extends BreakIterator {
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_887837367 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_887837367;
-        // ---------- Original Method ----------
-        //validateOffset(offset);
-        //return wrapped.following(offset);
+        
+        
+        
     }
 
     
@@ -63,27 +63,27 @@ class RuleBasedBreakIterator extends BreakIterator {
             {
                 String message = "Valid range is [" + it.getBeginIndex() + " " + it.getEndIndex() + "]";
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(message);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(offset);
-        // ---------- Original Method ----------
-        //CharacterIterator it = wrapped.getText();
-        //if (offset < it.getBeginIndex() || offset > it.getEndIndex()) {
-            //String message = "Valid range is [" + it.getBeginIndex() + " " + it.getEndIndex() + "]";
-            //throw new IllegalArgumentException(message);
-        //}
+        
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.012 -0400", hash_original_method = "0709975D2E361F60AA4A842C629D2B9B", hash_generated_method = "D9EA17BC0CCDF5FF594B56910E6213CD")
     @Override
     public CharacterIterator getText() {
-        CharacterIterator varB4EAC82CA7396A68D541C85D26508E83_955305544 = null; //Variable for return #1
+        CharacterIterator varB4EAC82CA7396A68D541C85D26508E83_955305544 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_955305544 = wrapped.getText();
-        varB4EAC82CA7396A68D541C85D26508E83_955305544.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_955305544.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_955305544;
-        // ---------- Original Method ----------
-        //return wrapped.getText();
+        
+        
     }
 
     
@@ -93,8 +93,8 @@ class RuleBasedBreakIterator extends BreakIterator {
         int varD1F8981D06B202D2735FED0F8DF46D3D_1167170242 = (wrapped.last());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221906952 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221906952;
-        // ---------- Original Method ----------
-        //return wrapped.last();
+        
+        
     }
 
     
@@ -104,8 +104,8 @@ class RuleBasedBreakIterator extends BreakIterator {
         int var97CE2BF603169EE51D940732E4D0F4C4_190853204 = (wrapped.next());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_343650903 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_343650903;
-        // ---------- Original Method ----------
-        //return wrapped.next();
+        
+        
     }
 
     
@@ -116,8 +116,8 @@ class RuleBasedBreakIterator extends BreakIterator {
         addTaint(n);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_697950980 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_697950980;
-        // ---------- Original Method ----------
-        //return wrapped.next(n);
+        
+        
     }
 
     
@@ -127,20 +127,21 @@ class RuleBasedBreakIterator extends BreakIterator {
         int var510E4D6C7FBCF98CE6E4FAEE433EAFEB_458944702 = (wrapped.previous());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_577742021 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_577742021;
-        // ---------- Original Method ----------
-        //return wrapped.previous();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.013 -0400", hash_original_method = "E75CFE1E66B7B743956F14CBE08A2F07", hash_generated_method = "730A775296B8F58A45F66E4C2733B1DC")
     @Override
     public void setText(CharacterIterator newText) {
         newText.current();
         wrapped.setText(newText);
         addTaint(newText.getTaint());
-        // ---------- Original Method ----------
-        //newText.current();
-        //wrapped.setText(newText);
+        
+        
+        
     }
 
     
@@ -152,9 +153,9 @@ class RuleBasedBreakIterator extends BreakIterator {
         addTaint(offset);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_316097655 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_316097655;
-        // ---------- Original Method ----------
-        //validateOffset(offset);
-        //return wrapped.isBoundary(offset);
+        
+        
+        
     }
 
     
@@ -166,9 +167,9 @@ class RuleBasedBreakIterator extends BreakIterator {
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1750161216 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1750161216;
-        // ---------- Original Method ----------
-        //validateOffset(offset);
-        //return wrapped.preceding(offset);
+        
+        
+        
     }
 
     
@@ -179,23 +180,23 @@ class RuleBasedBreakIterator extends BreakIterator {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_936323457 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_936323457;
-        // ---------- Original Method ----------
-        //if (!(o instanceof RuleBasedBreakIterator)) {
-            //return false;
-        //}
-        //return wrapped.equals(((RuleBasedBreakIterator) o).wrapped);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.015 -0400", hash_original_method = "06F92F6D5094F2398873E74C963FD03D", hash_generated_method = "0FCAFA31176D57ACBC968ECA33650BF1")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1665235654 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1665235654 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1665235654 = wrapped.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1665235654.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1665235654.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1665235654;
-        // ---------- Original Method ----------
-        //return wrapped.toString();
+        
+        
     }
 
     
@@ -205,24 +206,24 @@ class RuleBasedBreakIterator extends BreakIterator {
         int var82A751D45FBB4EB1094404B61E0EB533_1266147404 = (wrapped.hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_985271216 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_985271216;
-        // ---------- Original Method ----------
-        //return wrapped.hashCode();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:00.016 -0400", hash_original_method = "CB8345057924EAB3D86F5E280E0AFDC7", hash_generated_method = "DB54C278BB3BFAD64DDE1B57CD1DE125")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_517286150 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_517286150 = null; 
         RuleBasedBreakIterator cloned = (RuleBasedBreakIterator) super.clone();
         cloned.wrapped = (NativeBreakIterator) wrapped.clone();
         varB4EAC82CA7396A68D541C85D26508E83_517286150 = cloned;
-        varB4EAC82CA7396A68D541C85D26508E83_517286150.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_517286150.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_517286150;
-        // ---------- Original Method ----------
-        //RuleBasedBreakIterator cloned = (RuleBasedBreakIterator) super.clone();
-        //cloned.wrapped = (NativeBreakIterator) wrapped.clone();
-        //return cloned;
+        
+        
+        
+        
     }
 
     

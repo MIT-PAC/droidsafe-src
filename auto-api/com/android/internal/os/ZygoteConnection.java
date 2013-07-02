@@ -1,11 +1,11 @@
 package com.android.internal.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.net.Credentials;
 import android.net.LocalSocket;
@@ -54,35 +54,35 @@ class ZygoteConnection {
         try 
         {
             peer = mSocket.getPeerCredentials();
-        } //End block
+        } 
         catch (IOException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
-        // ---------- Original Method ----------
-        //mSocket = socket;
-        //mSocketOutStream
-                //= new DataOutputStream(socket.getOutputStream());
-        //mSocketReader = new BufferedReader(
-                //new InputStreamReader(socket.getInputStream()), 256);
-        //mSocket.setSoTimeout(CONNECTION_TIMEOUT_MILLIS);
-        //try {
-            //peer = mSocket.getPeerCredentials();
-        //} catch (IOException ex) {
-            //Log.e(TAG, "Cannot read peer credentials", ex);
-            //throw ex;
-        //}
+        } 
+        
+        
+        
+                
+        
+                
+        
+        
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.778 -0400", hash_original_method = "D031047267A17F3FBDEAA6E5A25F7FEC", hash_generated_method = "4F188BB060B4775854BBD511A11EEE58")
      FileDescriptor getFileDesciptor() {
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1227488671 = null; //Variable for return #1
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1227488671 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1227488671 = mSocket.getFileDescriptor();
-        varB4EAC82CA7396A68D541C85D26508E83_1227488671.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1227488671.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1227488671;
-        // ---------- Original Method ----------
-        //return mSocket.getFileDescriptor();
+        
+        
     }
 
     
@@ -93,24 +93,24 @@ class ZygoteConnection {
             {
                 ZygoteInit.gc();
                 loopCount = ZygoteInit.GC_LOOP_COUNT;
-            } //End block
+            } 
             {
                 boolean var3956FC6BD84B33634CFE124145ABBD1D_1481866737 = (runOnce());
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //int loopCount = ZygoteInit.GC_LOOP_COUNT;
-        //while (true) {
-            //if (loopCount <= 0) {
-                //ZygoteInit.gc();
-                //loopCount = ZygoteInit.GC_LOOP_COUNT;
-            //} else {
-                //loopCount--;
-            //}
-            //if (runOnce()) {
-                //break;
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+                
+            
+                
+            
+            
+                
+            
+        
     }
 
     
@@ -123,19 +123,19 @@ class ZygoteConnection {
         {
             args = readArgumentList();
             descriptors = mSocket.getAncillaryFileDescriptors();
-        } //End block
+        } 
         catch (IOException ex)
         {
             closeSocket();
-        } //End block
+        } 
         {
             closeSocket();
-        } //End block
+        } 
         PrintStream newStderr = null;
         {
             newStderr = new PrintStream(
                     new FileOutputStream(descriptors[2]));
-        } //End block
+        } 
         int pid = -1;
         FileDescriptor childPipeFd = null;
         FileDescriptor serverPipeFd = null;
@@ -151,55 +151,55 @@ class ZygoteConnection {
             int[][] rlimits = null;
             {
                 rlimits = parsedArgs.rlimits.toArray(intArray2d);
-            } //End block
+            } 
             {
                 FileDescriptor[] pipeFds = Libcore.os.pipe();
                 childPipeFd = pipeFds[1];
                 serverPipeFd = pipeFds[0];
                 ZygoteInit.setCloseOnExec(serverPipeFd, true);
-            } //End block
+            } 
             pid = Zygote.forkAndSpecialize(parsedArgs.uid, parsedArgs.gid,
                     parsedArgs.gids, parsedArgs.debugFlags, rlimits);
-        } //End block
+        } 
         catch (IOException ex)
         {
             logAndPrintError(newStderr, "Exception creating pipe", ex);
-        } //End block
+        } 
         catch (ErrnoException ex)
         {
             logAndPrintError(newStderr, "Exception creating pipe", ex);
-        } //End block
+        } 
         catch (IllegalArgumentException ex)
         {
             logAndPrintError(newStderr, "Invalid zygote arguments", ex);
-        } //End block
+        } 
         catch (ZygoteSecurityException ex)
         {
             logAndPrintError(newStderr,
                     "Zygote security policy prevents request: ", ex);
-        } //End block
+        } 
         try 
         {
             {
                 IoUtils.closeQuietly(serverPipeFd);
                 serverPipeFd = null;
                 handleChildProc(parsedArgs, descriptors, childPipeFd, newStderr);
-            } //End block
+            } 
             {
                 IoUtils.closeQuietly(childPipeFd);
                 childPipeFd = null;
                 boolean var3BB28BDAA63918F5E760084AB2F56798_601688189 = (handleParentProc(pid, descriptors, serverPipeFd, parsedArgs));
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             IoUtils.closeQuietly(childPipeFd);
             IoUtils.closeQuietly(serverPipeFd);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_914558066 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_914558066;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -208,39 +208,40 @@ class ZygoteConnection {
         try 
         {
             mSocket.close();
-        } //End block
+        } 
         catch (IOException ex)
         { }
-        // ---------- Original Method ----------
-        //try {
-            //mSocket.close();
-        //} catch (IOException ex) {
-            //Log.e(TAG, "Exception while closing command "
-                    //+ "socket in parent", ex);
-        //}
+        
+        
+            
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.782 -0400", hash_original_method = "366F843C8FBE8BB09896187A9CDF1388", hash_generated_method = "932D6CB0DBA31031BD86597C019CF95E")
     private String[] readArgumentList() throws IOException {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_541729181 = null; //Variable for return #1
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1294554178 = null; //Variable for return #2
+        String[] varB4EAC82CA7396A68D541C85D26508E83_541729181 = null; 
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1294554178 = null; 
         int argc = 0;
         try 
         {
             String s = mSocketReader.readLine();
             {
                 varB4EAC82CA7396A68D541C85D26508E83_541729181 = null;
-            } //End block
+            } 
             argc = Integer.parseInt(s);
-        } //End block
+        } 
         catch (NumberFormatException ex)
         { 
         	throw new IOException("invalid wire format");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("max arg count exceeded");
-        } //End block
+        } 
         String[] result = new String[argc];
         {
             int i = 0;
@@ -248,47 +249,48 @@ class ZygoteConnection {
                 result[i] = mSocketReader.readLine();
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("truncated request");
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1294554178 = result;
-        String[] varA7E53CE21691AB073D9660D615818899_864665360; //Final return value
+        String[] varA7E53CE21691AB073D9660D615818899_864665360; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_864665360 = varB4EAC82CA7396A68D541C85D26508E83_541729181;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_864665360 = varB4EAC82CA7396A68D541C85D26508E83_1294554178;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_864665360.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_864665360.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_864665360;
-        // ---------- Original Method ----------
-        //int argc;
-        //try {
-            //String s = mSocketReader.readLine();
-            //if (s == null) {
-                //return null;
-            //}
-            //argc = Integer.parseInt(s);
-        //} catch (NumberFormatException ex) {
-            //Log.e(TAG, "invalid Zygote wire format: non-int at argc");
-            //throw new IOException("invalid wire format");
-        //}
-        //if (argc > MAX_ZYGOTE_ARGC) {   
-            //throw new IOException("max arg count exceeded");
-        //}
-        //String[] result = new String[argc];
-        //for (int i = 0; i < argc; i++) {
-            //result[i] = mSocketReader.readLine();
-            //if (result[i] == null) {
-                //throw new IOException("truncated request");
-            //}
-        //}
-        //return result;
+        
+        
+        
+            
+            
+                
+            
+            
+        
+            
+            
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void applyUidSecurityPolicy(Arguments args, Credentials peer) throws ZygoteSecurityException {
         int peerUid = peer.getUid();
         if (peerUid == 0) {
@@ -321,6 +323,7 @@ class ZygoteConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void applyDebuggerSystemProperty(Arguments args) {
         if ("1".equals(SystemProperties.get("ro.debuggable"))) {
             args.debugFlags |= Zygote.DEBUG_ENABLE_DEBUGGER;
@@ -328,6 +331,7 @@ class ZygoteConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void applyRlimitSecurityPolicy(
             Arguments args, Credentials peer) throws ZygoteSecurityException {
         int peerUid = peer.getUid();
@@ -340,6 +344,7 @@ class ZygoteConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void applyCapabilitiesSecurityPolicy(
             Arguments args, Credentials peer) throws ZygoteSecurityException {
         if (args.permittedCapabilities == 0
@@ -368,6 +373,7 @@ class ZygoteConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void applyInvokeWithSecurityPolicy(Arguments args, Credentials peer) throws ZygoteSecurityException {
         int peerUid = peer.getUid();
         if (args.invokeWith != null && peerUid != 0) {
@@ -377,6 +383,7 @@ class ZygoteConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void applyInvokeWithSystemProperty(Arguments args) {
         if (args.invokeWith == null && args.niceName != null) {
             if (args.niceName != null) {
@@ -393,6 +400,7 @@ class ZygoteConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.794 -0400", hash_original_method = "D56D87B601F5E5F24F9D8C0DB423B19E", hash_generated_method = "65CF7A551AF0CFE94BA1806122874E6B")
     private void handleChildProc(Arguments parsedArgs,
             FileDescriptor[] descriptors, FileDescriptor pipeFd, PrintStream newStderr) throws ZygoteInit.MethodAndArgsCaller {
@@ -401,14 +409,14 @@ class ZygoteConnection {
             {
                 ZygoteInit.setCloseOnExec(mSocket.getFileDescriptor(), true);
                 sPeerWaitSocket = mSocket;
-            } //End block
+            } 
             catch (IOException ex)
             { }
-        } //End block
+        } 
         {
             closeSocket();
             ZygoteInit.closeServerSocket();
-        } //End block
+        } 
         {
             try 
             {
@@ -418,88 +426,89 @@ class ZygoteConnection {
                     FileDescriptor fd = descriptors[0];
                     {
                         IoUtils.closeQuietly(fd);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 newStderr = System.err;
-            } //End block
+            } 
             catch (IOException ex)
             { }
-        } //End block
+        } 
         {
             Process.setArgV0(parsedArgs.niceName);
-        } //End block
+        } 
         {
             {
                 WrapperInit.execApplication(parsedArgs.invokeWith,
                         parsedArgs.niceName, parsedArgs.targetSdkVersion,
                         pipeFd, parsedArgs.remainingArgs);
-            } //End block
+            } 
             {
                 RuntimeInit.zygoteInit(parsedArgs.targetSdkVersion,
                         parsedArgs.remainingArgs);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             String className;
             try 
             {
                 className = parsedArgs.remainingArgs[0];
-            } //End block
+            } 
             catch (ArrayIndexOutOfBoundsException ex)
             {
                 logAndPrintError(newStderr,
                         "Missing required class name argument", null);
                 return;
-            } //End block
+            } 
             String[] mainArgs = new String[parsedArgs.remainingArgs.length - 1];
             System.arraycopy(parsedArgs.remainingArgs, 1,
                     mainArgs, 0, mainArgs.length);
             {
                 WrapperInit.execStandalone(parsedArgs.invokeWith,
                         parsedArgs.classpath, className, mainArgs);
-            } //End block
+            } 
             {
                 ClassLoader cloader;
                 {
                     cloader = new PathClassLoader(parsedArgs.classpath,
                             ClassLoader.getSystemClassLoader());
-                } //End block
+                } 
                 {
                     cloader = ClassLoader.getSystemClassLoader();
-                } //End block
+                } 
                 try 
                 {
                     ZygoteInit.invokeStaticMain(cloader, className, mainArgs);
-                } //End block
+                } 
                 catch (RuntimeException ex)
                 {
                     logAndPrintError(newStderr, "Error starting.", ex);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(parsedArgs.getTaint());
         addTaint(descriptors[0].getTaint());
         addTaint(pipeFd.getTaint());
         addTaint(newStderr.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.807 -0400", hash_original_method = "3D3F8EE18B5CE9AC13BB6381C124884E", hash_generated_method = "548E329BA411F417C6826CD0FEAA7FE9")
     private boolean handleParentProc(int pid,
             FileDescriptor[] descriptors, FileDescriptor pipeFd, Arguments parsedArgs) {
         {
             setChildPgid(pid);
-        } //End block
+        } 
         {
             {
                 FileDescriptor fd = descriptors[0];
                 {
                     IoUtils.closeQuietly(fd);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         boolean usingWrapper = false;
         {
             DataInputStream is = new DataInputStream(new FileInputStream(pipeFd));
@@ -507,7 +516,7 @@ class ZygoteConnection {
             try 
             {
                 innerPid = is.readInt();
-            } //End block
+            } 
             catch (IOException ex)
             { }
             finally 
@@ -515,66 +524,68 @@ class ZygoteConnection {
                 try 
                 {
                     is.close();
-                } //End block
+                } 
                 catch (IOException ex)
                 { }
-            } //End block
+            } 
             {
                 int parentPid = innerPid;
                 {
                     parentPid = Process.getParentPid(parentPid);
-                } //End block
+                } 
                 {
                     pid = innerPid;
                     usingWrapper = true;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         try 
         {
             mSocketOutStream.writeInt(pid);
             mSocketOutStream.writeBoolean(usingWrapper);
-        } //End block
+        } 
         catch (IOException ex)
         { }
         {
             try 
             {
                 mSocket.close();
-            } //End block
+            } 
             catch (IOException ex)
             { }
-        } //End block
+        } 
         addTaint(pid);
         addTaint(descriptors[0].getTaint());
         addTaint(pipeFd.getTaint());
         addTaint(parsedArgs.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_349310165 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_349310165;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.808 -0400", hash_original_method = "A5A16DB5966812C0B6C21E171E7DEF94", hash_generated_method = "890833DA3B7C6054EE7DA059DF81A371")
     private void setChildPgid(int pid) {
         try 
         {
             ZygoteInit.setpgid(pid, ZygoteInit.getpgid(peer.getPid()));
-        } //End block
+        } 
         catch (IOException ex)
         { }
         addTaint(pid);
-        // ---------- Original Method ----------
-        //try {
-            //ZygoteInit.setpgid(pid, ZygoteInit.getpgid(peer.getPid()));
-        //} catch (IOException ex) {
-            //Log.i(TAG, "Zygote: setpgid failed. This is "
-                //+ "normal if peer is not in our session");
-        //}
+        
+        
+            
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void logAndPrintError(PrintStream newStderr,
             String message, Throwable ex) {
         Log.e(TAG, message, ex);
@@ -644,8 +655,8 @@ class ZygoteConnection {
           Arguments(String args[]) throws IllegalArgumentException {
             parseArgs(args);
             addTaint(args[0].getTaint());
-            // ---------- Original Method ----------
-            //parseArgs(args);
+            
+            
         }
 
         
@@ -662,87 +673,87 @@ class ZygoteConnection {
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                                 "Duplicate arg specified");
-                            } //End block
+                            } 
                             uidSpecified = true;
                             uid = Integer.parseInt(
                             arg.substring(arg.indexOf('=') + 1));
-                        } //End block
+                        } 
                         {
                             boolean var615818C78584CF4A74BFFF152C4BEFC2_1674073777 = (arg.startsWith("--setgid="));
                             {
                                 {
                                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                                 "Duplicate arg specified");
-                                } //End block
+                                } 
                                 gidSpecified = true;
                                 gid = Integer.parseInt(
                             arg.substring(arg.indexOf('=') + 1));
-                            } //End block
+                            } 
                             {
                                 boolean var24763721E45D3CA4B8E6E1066D7BCF52_2128054974 = (arg.startsWith("--target-sdk-version="));
                                 {
                                     {
                                         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                                 "Duplicate target-sdk-version specified");
-                                    } //End block
+                                    } 
                                     targetSdkVersionSpecified = true;
                                     targetSdkVersion = Integer.parseInt(
                             arg.substring(arg.indexOf('=') + 1));
-                                } //End block
+                                } 
                                 {
                                     boolean varF8C61B28A5711C2EA7983BBEA5459723_393348618 = (arg.equals("--enable-debugger"));
                                     {
                                         debugFlags |= Zygote.DEBUG_ENABLE_DEBUGGER;
-                                    } //End block
+                                    } 
                                     {
                                         boolean var60CF783C1D3CC8B3A3B2A942F345BEF5_662629123 = (arg.equals("--enable-safemode"));
                                         {
                                             debugFlags |= Zygote.DEBUG_ENABLE_SAFEMODE;
-                                        } //End block
+                                        } 
                                         {
                                             boolean var7BE4F9B0DD1B984250181EF453CE1295_1051239465 = (arg.equals("--enable-checkjni"));
                                             {
                                                 debugFlags |= Zygote.DEBUG_ENABLE_CHECKJNI;
-                                            } //End block
+                                            } 
                                             {
                                                 boolean varDFB4DAD6D222A85617A52FF793FE9196_1174334693 = (arg.equals("--enable-jni-logging"));
                                                 {
                                                     debugFlags |= Zygote.DEBUG_ENABLE_JNI_LOGGING;
-                                                } //End block
+                                                } 
                                                 {
                                                     boolean varC78F887AA1F638387C49BA1038BF2302_1304887556 = (arg.equals("--enable-assert"));
                                                     {
                                                         debugFlags |= Zygote.DEBUG_ENABLE_ASSERT;
-                                                    } //End block
+                                                    } 
                                                     {
                                                         boolean varD484FD677E695FABB55E459F08F42464_1679839538 = (arg.equals("--peer-wait"));
                                                         {
                                                             peerWait = true;
-                                                        } //End block
+                                                        } 
                                                         {
                                                             boolean varBF9C7EF5AA3D2A09214B59220EC60460_509570473 = (arg.equals("--runtime-init"));
                                                             {
                                                                 runtimeInit = true;
-                                                            } //End block
+                                                            } 
                                                             {
                                                                 boolean var81FD0E7377BC8C8914370AAA0942FD02_1930403718 = (arg.startsWith("--capabilities="));
                                                                 {
                                                                     {
                                                                         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                                 "Duplicate arg specified");
-                                                                    } //End block
+                                                                    } 
                                                                     capabilitiesSpecified = true;
                                                                     String capString = arg.substring(arg.indexOf('=')+1);
                                                                     String[] capStrings = capString.split(",", 2);
                                                                     {
                                                                         effectiveCapabilities = Long.decode(capStrings[0]);
                                                                         permittedCapabilities = effectiveCapabilities;
-                                                                    } //End block
+                                                                    } 
                                                                     {
                                                                         permittedCapabilities = Long.decode(capStrings[0]);
                                                                         effectiveCapabilities = Long.decode(capStrings[1]);
-                                                                    } //End block
-                                                                } //End block
+                                                                    } 
+                                                                } 
                                                                 {
                                                                     boolean varD0122AC3E6EE8080F6A63FB354B07667_1354700134 = (arg.startsWith("--rlimit="));
                                                                     {
@@ -750,105 +761,105 @@ class ZygoteConnection {
                                                                         {
                                                                             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                                 "--rlimit= should have 3 comma-delimited ints");
-                                                                        } //End block
+                                                                        } 
                                                                         int[] rlimitTuple = new int[limitStrings.length];
                                                                         {
                                                                             int i = 0;
                                                                             {
                                                                                 rlimitTuple[i] = Integer.parseInt(limitStrings[i]);
-                                                                            } //End block
-                                                                        } //End collapsed parenthetic
+                                                                            } 
+                                                                        } 
                                                                         {
                                                                             rlimits = new ArrayList();
-                                                                        } //End block
+                                                                        } 
                                                                         rlimits.add(rlimitTuple);
-                                                                    } //End block
+                                                                    } 
                                                                     {
                                                                         boolean varFF9705365BEE70B07B6EFFB521D414AA_73114206 = (arg.equals("-classpath"));
                                                                         {
                                                                             {
                                                                                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                                 "Duplicate arg specified");
-                                                                            } //End block
+                                                                            } 
                                                                             try 
                                                                             {
                                                                                 classpath = args[++curArg];
-                                                                            } //End block
+                                                                            } 
                                                                             catch (IndexOutOfBoundsException ex)
                                                                             {
                                                                                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                                 "-classpath requires argument");
-                                                                            } //End block
-                                                                        } //End block
+                                                                            } 
+                                                                        } 
                                                                         {
                                                                             boolean var01A215526D08A822971F3966BC540C5C_1096960916 = (arg.startsWith("--setgroups="));
                                                                             {
                                                                                 {
                                                                                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                                 "Duplicate arg specified");
-                                                                                } //End block
+                                                                                } 
                                                                                 String[] params = arg.substring(arg.indexOf('=') + 1).split(",");
                                                                                 gids = new int[params.length];
                                                                                 {
                                                                                     int i = params.length - 1;
                                                                                     {
                                                                                         gids[i] = Integer.parseInt(params[i]);
-                                                                                    } //End block
-                                                                                } //End collapsed parenthetic
-                                                                            } //End block
+                                                                                    } 
+                                                                                } 
+                                                                            } 
                                                                             {
                                                                                 boolean varAB99EE29FAEDC9A537504420A8FE7C0C_624960670 = (arg.equals("--invoke-with"));
                                                                                 {
                                                                                     {
                                                                                         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                                 "Duplicate arg specified");
-                                                                                    } //End block
+                                                                                    } 
                                                                                     try 
                                                                                     {
                                                                                         invokeWith = args[++curArg];
-                                                                                    } //End block
+                                                                                    } 
                                                                                     catch (IndexOutOfBoundsException ex)
                                                                                     {
                                                                                         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                                 "--invoke-with requires argument");
-                                                                                    } //End block
-                                                                                } //End block
+                                                                                    } 
+                                                                                } 
                                                                                 {
                                                                                     boolean varBB33221C616B9A2EF60ADA576E53C449_1411485315 = (arg.startsWith("--nice-name="));
                                                                                     {
                                                                                         {
                                                                                             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                                 "Duplicate arg specified");
-                                                                                        } //End block
+                                                                                        } 
                                                                                         niceName = arg.substring(arg.indexOf('=') + 1);
-                                                                                    } //End block
-                                                                                } //End collapsed parenthetic
-                                                                            } //End collapsed parenthetic
-                                                                        } //End collapsed parenthetic
-                                                                    } //End collapsed parenthetic
-                                                                } //End collapsed parenthetic
-                                                            } //End collapsed parenthetic
-                                                        } //End collapsed parenthetic
-                                                    } //End collapsed parenthetic
-                                                } //End collapsed parenthetic
-                                            } //End collapsed parenthetic
-                                        } //End collapsed parenthetic
-                                    } //End collapsed parenthetic
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
+                                                                                    } 
+                                                                                } 
+                                                                            } 
+                                                                        } 
+                                                                    } 
+                                                                } 
+                                                            } 
+                                                        } 
+                                                    } 
+                                                } 
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                         "--runtime-init and -classpath are incompatible");
-            } //End block
+            } 
             remainingArgs = new String[args.length - curArg];
             System.arraycopy(args, curArg, remainingArgs, 0,
                     remainingArgs.length);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

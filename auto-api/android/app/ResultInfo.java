@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Intent;
 import android.os.IBinder;
@@ -35,11 +35,11 @@ public class ResultInfo implements Parcelable {
         mRequestCode = requestCode;
         mResultCode = resultCode;
         mData = data;
-        // ---------- Original Method ----------
-        //mResultWho = resultWho;
-        //mRequestCode = requestCode;
-        //mResultCode = resultCode;
-        //mData = data;
+        
+        
+        
+        
+        
     }
 
     
@@ -52,33 +52,34 @@ public class ResultInfo implements Parcelable {
             boolean var25D67F28E4887DDC152DCB9726EAB4D3_1088975851 = (in.readInt() != 0);
             {
                 mData = Intent.CREATOR.createFromParcel(in);
-            } //End block
+            } 
             {
                 mData = null;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //mResultWho = in.readString();
-        //mRequestCode = in.readInt();
-        //mResultCode = in.readInt();
-        //if (in.readInt() != 0) {
-            //mData = Intent.CREATOR.createFromParcel(in);
-        //} else {
-            //mData = null;
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.993 -0400", hash_original_method = "45459039AB19A0482EB7D8EB8705A318", hash_generated_method = "630E4398BC7BFC938B3F72E871DD0E75")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1386252514 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1386252514 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1386252514 = "ResultInfo{who=" + mResultWho + ", request=" + mRequestCode
             + ", result=" + mResultCode + ", data=" + mData + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_1386252514.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1386252514.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1386252514;
-        // ---------- Original Method ----------
-        //return "ResultInfo{who=" + mResultWho + ", request=" + mRequestCode
-            //+ ", result=" + mResultCode + ", data=" + mData + "}";
+        
+        
+            
     }
 
     
@@ -86,11 +87,12 @@ public class ResultInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_540248404 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_540248404;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.995 -0400", hash_original_method = "C00CE2610591477E96DECA81C0021A12", hash_generated_method = "B1BFE7759F145E81AF523935B785959B")
     public void writeToParcel(Parcel out, int flags) {
         out.writeString(mResultWho);
@@ -99,22 +101,22 @@ public class ResultInfo implements Parcelable {
         {
             out.writeInt(1);
             mData.writeToParcel(out, 0);
-        } //End block
+        } 
         {
             out.writeInt(0);
-        } //End block
+        } 
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeString(mResultWho);
-        //out.writeInt(mRequestCode);
-        //out.writeInt(mResultCode);
-        //if (mData != null) {
-            //out.writeInt(1);
-            //mData.writeToParcel(out, 0);
-        //} else {
-            //out.writeInt(0);
-        //}
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -130,12 +132,12 @@ public class ResultInfo implements Parcelable {
             return new ResultInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public ResultInfo createFromParcel(Parcel in) {
             return new ResultInfo(in);
         }
     
-    // orphaned legacy method
+    
     public ResultInfo[] newArray(int size) {
             return new ResultInfo[size];
         }

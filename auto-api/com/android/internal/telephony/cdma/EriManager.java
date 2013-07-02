@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cdma;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.Resources;
@@ -46,63 +46,66 @@ public final class EriManager {
         this.mContext = context;
         this.mEriFileSource = eriFileSource;
         this.mEriFile = new EriFile();
-        // ---------- Original Method ----------
-        //this.mPhone = phone;
-        //this.mContext = context;
-        //this.mEriFileSource = eriFileSource;
-        //this.mEriFile = new EriFile();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.434 -0400", hash_original_method = "E6DC952A5F138026D46EF70E48873C6A", hash_generated_method = "63E6418D6E31FB076F0ABE7FE7C0BC71")
     public void dispose() {
         mEriFile = new EriFile();
         isEriFileLoaded = false;
-        // ---------- Original Method ----------
-        //mEriFile = new EriFile();
-        //isEriFileLoaded = false;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.435 -0400", hash_original_method = "79759E789BC701587754CBB5AD9F0BEC", hash_generated_method = "9AD1C333977B2F5366B5F750F19BD008")
     public void loadEriFile() {
-        //Begin case ERI_FROM_MODEM 
+        
         loadEriFileFromModem();
-        //End case ERI_FROM_MODEM 
-        //Begin case ERI_FROM_FILE_SYSTEM 
+        
+        
         loadEriFileFromFileSystem();
-        //End case ERI_FROM_FILE_SYSTEM 
-        //Begin case ERI_FROM_XML default 
+        
+        
         loadEriFileFromXml();
-        //End case ERI_FROM_XML default 
-        // ---------- Original Method ----------
-        //switch (mEriFileSource) {
-        //case ERI_FROM_MODEM:
-            //loadEriFileFromModem();
-            //break;
-        //case ERI_FROM_FILE_SYSTEM:
-            //loadEriFileFromFileSystem();
-            //break;
-        //case ERI_FROM_XML:
-        //default:
-            //loadEriFileFromXml();
-            //break;
-        //}
+        
+        
+        
+        
+            
+            
+        
+            
+            
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.435 -0400", hash_original_method = "F319D2CF7E3E715B8D39AE2FABF6BF7B", hash_generated_method = "E557464B9F1CB4500DE84483A9542396")
     private void loadEriFileFromModem() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.435 -0400", hash_original_method = "A745E0763E42351C9DE31AD2579A5B7C", hash_generated_method = "E7A0D2EF52E0D62B1AC03B9954F84BEF")
     private void loadEriFileFromFileSystem() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.436 -0400", hash_original_method = "C6A3384D5129DFA3EA95328C5EF0C849", hash_generated_method = "7B67EB2485CE914721A49C786A198E62")
     private void loadEriFileFromXml() {
         XmlPullParser parser = null;
@@ -116,21 +119,21 @@ public final class EriManager {
             parser = Xml.newPullParser();
             parser.setInput(stream, null);
             Log.d(LOG_TAG, "loadEriFileFromXml: opened alternate file");
-        } //End block
+        } 
         catch (FileNotFoundException e)
         {
             Log.d(LOG_TAG, "loadEriFileFromXml: no alternate file");
             parser = null;
-        } //End block
+        } 
         catch (XmlPullParserException e)
         {
             Log.d(LOG_TAG, "loadEriFileFromXml: no parser for alternate file");
             parser = null;
-        } //End block
+        } 
         {
             Log.d(LOG_TAG, "loadEriFileFromXml: open normal file");
             parser = r.getXml(com.android.internal.R.xml.eri);
-        } //End block
+        } 
         try 
         {
             XmlUtils.beginDocument(parser, "EriFile");
@@ -151,8 +154,8 @@ public final class EriManager {
                         String text = parser.getAttributeValue(null, "CallPromptText");
                         {
                             mEriFile.mCallPromptId[id] = text;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         boolean var899A8E63ADE4001FCB3DF2C3D92C8FA5_1609603201 = (name.equals("EriInfo"));
                         {
@@ -166,31 +169,31 @@ public final class EriManager {
                             int alertId = Integer.parseInt(parser.getAttributeValue(null, "AlertId"));
                             mEriFile.mRoamIndTable.put(roamingIndicator, new EriInfo (roamingIndicator,
                             iconIndex, iconMode, eriText, callPromptId, alertId));
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             Log.d(LOG_TAG, "loadEriFileFromXml: eri parsing successful, file loaded");
             isEriFileLoaded = true;
-        } //End block
+        } 
         catch (Exception e)
         { }
         finally 
         {
             {
                 ((XmlResourceParser)parser).close();
-            } //End block
+            } 
             try 
             {
                 {
                     stream.close();
-                } //End block
-            } //End block
+                } 
+            } 
             catch (IOException e)
             { }
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -198,8 +201,8 @@ public final class EriManager {
     public int getEriFileVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1677688634 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1677688634;
-        // ---------- Original Method ----------
-        //return mEriFile.mVersionNumber;
+        
+        
     }
 
     
@@ -207,8 +210,8 @@ public final class EriManager {
     public int getEriNumberOfEntries() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11966921 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11966921;
-        // ---------- Original Method ----------
-        //return mEriFile.mNumberOfEriEntries;
+        
+        
     }
 
     
@@ -216,8 +219,8 @@ public final class EriManager {
     public int getEriFileType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2090584144 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2090584144;
-        // ---------- Original Method ----------
-        //return mEriFile.mEriFileType;
+        
+        
     }
 
     
@@ -225,49 +228,51 @@ public final class EriManager {
     public boolean isEriFileLoaded() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1461918942 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1461918942;
-        // ---------- Original Method ----------
-        //return isEriFileLoaded;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.440 -0400", hash_original_method = "EC9DEB76FD43053D10B144FC41192B14", hash_generated_method = "1F337327BA8F6CA4345FE0205B5898C6")
     private EriInfo getEriInfo(int roamingIndicator) {
-        EriInfo varB4EAC82CA7396A68D541C85D26508E83_967756654 = null; //Variable for return #1
-        EriInfo varB4EAC82CA7396A68D541C85D26508E83_1061082206 = null; //Variable for return #2
+        EriInfo varB4EAC82CA7396A68D541C85D26508E83_967756654 = null; 
+        EriInfo varB4EAC82CA7396A68D541C85D26508E83_1061082206 = null; 
         {
             boolean var57ABABFD2A3B3C6B754E21C0F57554B9_1255232367 = (mEriFile.mRoamIndTable.containsKey(roamingIndicator));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_967756654 = mEriFile.mRoamIndTable.get(roamingIndicator);
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1061082206 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(roamingIndicator);
-        EriInfo varA7E53CE21691AB073D9660D615818899_421779949; //Final return value
+        EriInfo varA7E53CE21691AB073D9660D615818899_421779949; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_421779949 = varB4EAC82CA7396A68D541C85D26508E83_967756654;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_421779949 = varB4EAC82CA7396A68D541C85D26508E83_1061082206;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_421779949.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_421779949.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_421779949;
-        // ---------- Original Method ----------
-        //if (mEriFile.mRoamIndTable.containsKey(roamingIndicator)) {
-            //return mEriFile.mRoamIndTable.get(roamingIndicator);
-        //} else {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.448 -0400", hash_original_method = "D2C726FAB5040CEBEF6EB4A1388860BE", hash_generated_method = "00D8126185AD2017604D4D9E4B4A4E9C")
     private EriDisplayInformation getEriDisplayInformation(int roamInd, int defRoamInd) {
-        EriDisplayInformation varB4EAC82CA7396A68D541C85D26508E83_840848368 = null; //Variable for return #1
-        EriDisplayInformation varB4EAC82CA7396A68D541C85D26508E83_1769402472 = null; //Variable for return #2
+        EriDisplayInformation varB4EAC82CA7396A68D541C85D26508E83_840848368 = null; 
+        EriDisplayInformation varB4EAC82CA7396A68D541C85D26508E83_1769402472 = null; 
         EriDisplayInformation ret;
         {
             EriInfo eriInfo = getEriInfo(roamInd);
@@ -277,87 +282,87 @@ public final class EriManager {
                         eriInfo.mIconMode,
                         eriInfo.mEriText);
                 varB4EAC82CA7396A68D541C85D26508E83_840848368 = ret;
-            } //End block
-        } //End block
-        //Begin case EriInfo.ROAMING_INDICATOR_ON 
+            } 
+        } 
+        
         ret = new EriDisplayInformation(
                     EriInfo.ROAMING_INDICATOR_ON,
                     EriInfo.ROAMING_ICON_MODE_NORMAL,
                     mContext.getText(com.android.internal.R.string.roamingText0).toString());
-        //End case EriInfo.ROAMING_INDICATOR_ON 
-        //Begin case EriInfo.ROAMING_INDICATOR_OFF 
+        
+        
         ret = new EriDisplayInformation(
                     EriInfo.ROAMING_INDICATOR_OFF,
                     EriInfo.ROAMING_ICON_MODE_NORMAL,
                     mContext.getText(com.android.internal.R.string.roamingText1).toString());
-        //End case EriInfo.ROAMING_INDICATOR_OFF 
-        //Begin case EriInfo.ROAMING_INDICATOR_FLASH 
+        
+        
         ret = new EriDisplayInformation(
                     EriInfo.ROAMING_INDICATOR_FLASH,
                     EriInfo.ROAMING_ICON_MODE_FLASH,
                     mContext.getText(com.android.internal.R.string.roamingText2).toString());
-        //End case EriInfo.ROAMING_INDICATOR_FLASH 
-        //Begin case 3 
+        
+        
         ret = new EriDisplayInformation(
                     roamInd,
                     EriInfo.ROAMING_ICON_MODE_NORMAL,
                     mContext.getText(com.android.internal.R.string.roamingText3).toString());
-        //End case 3 
-        //Begin case 4 
+        
+        
         ret = new EriDisplayInformation(
                     roamInd,
                     EriInfo.ROAMING_ICON_MODE_NORMAL,
                     mContext.getText(com.android.internal.R.string.roamingText4).toString());
-        //End case 4 
-        //Begin case 5 
+        
+        
         ret = new EriDisplayInformation(
                     roamInd,
                     EriInfo.ROAMING_ICON_MODE_NORMAL,
                     mContext.getText(com.android.internal.R.string.roamingText5).toString());
-        //End case 5 
-        //Begin case 6 
+        
+        
         ret = new EriDisplayInformation(
                     roamInd,
                     EriInfo.ROAMING_ICON_MODE_NORMAL,
                     mContext.getText(com.android.internal.R.string.roamingText6).toString());
-        //End case 6 
-        //Begin case 7 
+        
+        
         ret = new EriDisplayInformation(
                     roamInd,
                     EriInfo.ROAMING_ICON_MODE_NORMAL,
                     mContext.getText(com.android.internal.R.string.roamingText7).toString());
-        //End case 7 
-        //Begin case 8 
+        
+        
         ret = new EriDisplayInformation(
                     roamInd,
                     EriInfo.ROAMING_ICON_MODE_NORMAL,
                     mContext.getText(com.android.internal.R.string.roamingText8).toString());
-        //End case 8 
-        //Begin case 9 
+        
+        
         ret = new EriDisplayInformation(
                     roamInd,
                     EriInfo.ROAMING_ICON_MODE_NORMAL,
                     mContext.getText(com.android.internal.R.string.roamingText9).toString());
-        //End case 9 
-        //Begin case 10 
+        
+        
         ret = new EriDisplayInformation(
                     roamInd,
                     EriInfo.ROAMING_ICON_MODE_NORMAL,
                     mContext.getText(com.android.internal.R.string.roamingText10).toString());
-        //End case 10 
-        //Begin case 11 
+        
+        
         ret = new EriDisplayInformation(
                     roamInd,
                     EriInfo.ROAMING_ICON_MODE_NORMAL,
                     mContext.getText(com.android.internal.R.string.roamingText11).toString());
-        //End case 11 
-        //Begin case 12 
+        
+        
         ret = new EriDisplayInformation(
                     roamInd,
                     EriInfo.ROAMING_ICON_MODE_NORMAL,
                     mContext.getText(com.android.internal.R.string.roamingText12).toString());
-        //End case 12 
-        //Begin case default 
+        
+        
         {
             Log.d(LOG_TAG, "ERI File not loaded");
             {
@@ -366,34 +371,34 @@ public final class EriManager {
                             EriInfo.ROAMING_ICON_MODE_FLASH,
                             mContext.getText(com.android.internal
                                                             .R.string.roamingText2).toString());
-            } //End block
+            } 
             {
-                //Begin case EriInfo.ROAMING_INDICATOR_ON 
+                
                 ret = new EriDisplayInformation(
                                 EriInfo.ROAMING_INDICATOR_ON,
                                 EriInfo.ROAMING_ICON_MODE_NORMAL,
                                 mContext.getText(com.android.internal
                                                             .R.string.roamingText0).toString());
-                //End case EriInfo.ROAMING_INDICATOR_ON 
-                //Begin case EriInfo.ROAMING_INDICATOR_OFF 
+                
+                
                 ret = new EriDisplayInformation(
                                 EriInfo.ROAMING_INDICATOR_OFF,
                                 EriInfo.ROAMING_ICON_MODE_NORMAL,
                                 mContext.getText(com.android.internal
                                                             .R.string.roamingText1).toString());
-                //End case EriInfo.ROAMING_INDICATOR_OFF 
-                //Begin case EriInfo.ROAMING_INDICATOR_FLASH 
+                
+                
                 ret = new EriDisplayInformation(
                                 EriInfo.ROAMING_INDICATOR_FLASH,
                                 EriInfo.ROAMING_ICON_MODE_FLASH,
                                 mContext.getText(com.android.internal
                                                             .R.string.roamingText2).toString());
-                //End case EriInfo.ROAMING_INDICATOR_FLASH 
-                //Begin case default 
+                
+                
                 ret = new EriDisplayInformation(-1, -1, "ERI text");
-                //End case default 
-            } //End block
-        } //End block
+                
+            } 
+        } 
         {
             EriInfo eriInfo = getEriInfo(roamInd);
             EriInfo defEriInfo = getEriInfo(defRoamInd);
@@ -404,41 +409,42 @@ public final class EriManager {
                                 EriInfo.ROAMING_ICON_MODE_NORMAL,
                                 mContext.getText(com.android.internal
                                                              .R.string.roamingText0).toString());
-                } //End block
+                } 
                 {
                     ret = new EriDisplayInformation(
                                 defEriInfo.mIconIndex,
                                 defEriInfo.mIconMode,
                                 defEriInfo.mEriText);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 ret = new EriDisplayInformation(
                             eriInfo.mIconIndex,
                             eriInfo.mIconMode,
                             eriInfo.mEriText);
-            } //End block
-        } //End block
-        //End case default 
+            } 
+        } 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1769402472 = ret;
         addTaint(roamInd);
         addTaint(defRoamInd);
-        EriDisplayInformation varA7E53CE21691AB073D9660D615818899_1850635916; //Final return value
+        EriDisplayInformation varA7E53CE21691AB073D9660D615818899_1850635916; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1850635916 = varB4EAC82CA7396A68D541C85D26508E83_840848368;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1850635916 = varB4EAC82CA7396A68D541C85D26508E83_1769402472;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1850635916.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1850635916.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1850635916;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.449 -0400", hash_original_method = "0CC10569A68EA715FF25360AD6D9EC97", hash_generated_method = "20D8886E6C9B9DF5AE6F6EEA9264F2F4")
     public int getCdmaEriIconIndex(int roamInd, int defRoamInd) {
         int var515FFAA8B10D5444FFA319B784D84C94_92816638 = (getEriDisplayInformation(roamInd, defRoamInd).mEriIconIndex);
@@ -446,11 +452,12 @@ public final class EriManager {
         addTaint(defRoamInd);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_46915422 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_46915422;
-        // ---------- Original Method ----------
-        //return getEriDisplayInformation(roamInd, defRoamInd).mEriIconIndex;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.450 -0400", hash_original_method = "9AB048E0DEB3BE0C35B104EC83429815", hash_generated_method = "CF18E3787E216C72CA0EDDF2F85A1E6D")
     public int getCdmaEriIconMode(int roamInd, int defRoamInd) {
         int var29D805AE6BA7F58D859AF81BAF606D7F_129397670 = (getEriDisplayInformation(roamInd, defRoamInd).mEriIconMode);
@@ -458,21 +465,22 @@ public final class EriManager {
         addTaint(defRoamInd);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2147219611 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2147219611;
-        // ---------- Original Method ----------
-        //return getEriDisplayInformation(roamInd, defRoamInd).mEriIconMode;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.451 -0400", hash_original_method = "180B939948D08F85119E751A7703AC82", hash_generated_method = "CE80F9D7E3AE2F72FB5E463F4A89D197")
     public String getCdmaEriText(int roamInd, int defRoamInd) {
-        String varB4EAC82CA7396A68D541C85D26508E83_2052243572 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2052243572 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2052243572 = getEriDisplayInformation(roamInd, defRoamInd).mEriIconText;
         addTaint(roamInd);
         addTaint(defRoamInd);
-        varB4EAC82CA7396A68D541C85D26508E83_2052243572.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2052243572.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2052243572;
-        // ---------- Original Method ----------
-        //return getEriDisplayInformation(roamInd, defRoamInd).mEriIconText;
+        
+        
     }
 
     
@@ -500,12 +508,12 @@ public final class EriManager {
             this.mEriFileType = -1;
             this.mCallPromptId = new String[] { "", "", "" };
             this.mRoamIndTable = new HashMap<Integer, EriInfo>();
-            // ---------- Original Method ----------
-            //this.mVersionNumber = -1;
-            //this.mNumberOfEriEntries = 0;
-            //this.mEriFileType = -1;
-            //this.mCallPromptId = new String[] { "", "", "" };
-            //this.mRoamIndTable = new HashMap<Integer, EriInfo>();
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -529,24 +537,24 @@ public final class EriManager {
             mEriIconIndex = eriIconIndex;
             mEriIconMode = eriIconMode;
             mEriIconText = eriIconText;
-            // ---------- Original Method ----------
-            //mEriIconIndex = eriIconIndex;
-            //mEriIconMode = eriIconMode;
-            //mEriIconText = eriIconText;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.455 -0400", hash_original_method = "AD3807950D152469EF511B007C55D141", hash_generated_method = "C060756F8F03546A2D8669AA14016CFD")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1822651615 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1822651615 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1822651615 = "EriDisplayInformation: {" + " IconIndex: " + mEriIconIndex + " EriIconMode: "
                     + mEriIconMode + " EriIconText: " + mEriIconText + " }";
-            varB4EAC82CA7396A68D541C85D26508E83_1822651615.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1822651615.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1822651615;
-            // ---------- Original Method ----------
-            //return "EriDisplayInformation: {" + " IconIndex: " + mEriIconIndex + " EriIconMode: "
-                    //+ mEriIconMode + " EriIconText: " + mEriIconText + " }";
+            
+            
+                    
         }
 
         

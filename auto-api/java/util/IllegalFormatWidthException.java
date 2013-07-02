@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class IllegalFormatWidthException extends IllegalFormatException {
@@ -16,8 +16,8 @@ public class IllegalFormatWidthException extends IllegalFormatException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.527 -0400", hash_original_method = "3E51700FF2AA6FFF2196939892FEBA05", hash_generated_method = "4DD4772DE4285108BD460BD54AF74ECB")
     public  IllegalFormatWidthException(int w) {
         this.w = w;
-        // ---------- Original Method ----------
-        //this.w = w;
+        
+        
     }
 
     
@@ -25,20 +25,21 @@ public class IllegalFormatWidthException extends IllegalFormatException {
     public int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_755913725 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_755913725;
-        // ---------- Original Method ----------
-        //return w;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.528 -0400", hash_original_method = "DC0A01255F859E7DE489CAE4D4B39EB6", hash_generated_method = "6AD4054559AFE4E5CF033DF1D05763E6")
     @Override
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1436430895 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1436430895 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1436430895 = Integer.toString(w);
-        varB4EAC82CA7396A68D541C85D26508E83_1436430895.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1436430895.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1436430895;
-        // ---------- Original Method ----------
-        //return Integer.toString(w);
+        
+        
     }
 
     

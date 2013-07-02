@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.pm.PackageManager;
 import android.os.AsyncResult;
@@ -31,13 +31,13 @@ public class IccPhoneBookInterfaceManagerProxy extends IIccPhoneBook.Stub {
             boolean varBBCAD71E9D2D335673136957A9052C19_526752180 = (ServiceManager.getService("simphonebook") == null);
             {
                 ServiceManager.addService("simphonebook", this);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //mIccPhoneBookInterfaceManager = iccPhoneBookInterfaceManager;
-        //if(ServiceManager.getService("simphonebook") == null) {
-            //ServiceManager.addService("simphonebook", this);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -45,11 +45,12 @@ public class IccPhoneBookInterfaceManagerProxy extends IIccPhoneBook.Stub {
     public void setmIccPhoneBookInterfaceManager(
             IccPhoneBookInterfaceManager iccPhoneBookInterfaceManager) {
         this.mIccPhoneBookInterfaceManager = iccPhoneBookInterfaceManager;
-        // ---------- Original Method ----------
-        //this.mIccPhoneBookInterfaceManager = iccPhoneBookInterfaceManager;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.001 -0400", hash_original_method = "5DDF0C0E89F34CB1A8CBBC902747CC21", hash_generated_method = "E862F49E7319644F52207CA2B8B7C1FF")
     public boolean updateAdnRecordsInEfBySearch(int efid,
             String oldTag, String oldPhoneNumber,
@@ -65,12 +66,13 @@ public class IccPhoneBookInterfaceManagerProxy extends IIccPhoneBook.Stub {
         addTaint(pin2.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_906350195 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_906350195;
-        // ---------- Original Method ----------
-        //return mIccPhoneBookInterfaceManager.updateAdnRecordsInEfBySearch(
-                //efid, oldTag, oldPhoneNumber, newTag, newPhoneNumber, pin2);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.001 -0400", hash_original_method = "9AD4878D7C5B3598149BA0FF3B75DA5E", hash_generated_method = "B32CAE9D7A041943CB0D12A5C9F7FDD4")
     public boolean updateAdnRecordsInEfByIndex(int efid, String newTag,
             String newPhoneNumber, int index, String pin2) throws android.os.RemoteException {
@@ -83,32 +85,34 @@ public class IccPhoneBookInterfaceManagerProxy extends IIccPhoneBook.Stub {
         addTaint(pin2.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1509727539 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1509727539;
-        // ---------- Original Method ----------
-        //return mIccPhoneBookInterfaceManager.updateAdnRecordsInEfByIndex(efid,
-                //newTag, newPhoneNumber, index, pin2);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.001 -0400", hash_original_method = "1CAFC4CE677429A2AF90987C4E8DEFFE", hash_generated_method = "53C3D70B91BB521E1FD23194C99F3D3A")
     public int[] getAdnRecordsSize(int efid) throws android.os.RemoteException {
         int[] varDC9E3C628D902E4383BDC1B8DEEA8E12_2054687497 = (mIccPhoneBookInterfaceManager.getAdnRecordsSize(efid));
         addTaint(efid);
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1821702176 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1821702176;
-        // ---------- Original Method ----------
-        //return mIccPhoneBookInterfaceManager.getAdnRecordsSize(efid);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:22.002 -0400", hash_original_method = "B2C428BBF650EA5A57A68B0456CE8B82", hash_generated_method = "6F48D6147A43BE7F0AF4F96904B455C5")
     public List<AdnRecord> getAdnRecordsInEf(int efid) throws android.os.RemoteException {
-        List<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_778868169 = null; //Variable for return #1
+        List<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_778868169 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_778868169 = mIccPhoneBookInterfaceManager.getAdnRecordsInEf(efid);
         addTaint(efid);
-        varB4EAC82CA7396A68D541C85D26508E83_778868169.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_778868169.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_778868169;
-        // ---------- Original Method ----------
-        //return mIccPhoneBookInterfaceManager.getAdnRecordsInEf(efid);
+        
+        
     }
 
     

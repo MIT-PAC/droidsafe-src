@@ -1,11 +1,11 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.telephony.SmsCbConstants;
 
@@ -48,7 +48,7 @@ public class SmsCbHeader implements SmsCbConstants {
     public  SmsCbHeader(byte[] pdu) throws IllegalArgumentException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Illegal PDU");
-        } //End block
+        } 
         {
             format = FORMAT_ETWS_PRIMARY;
             geographicalScope = -1;
@@ -61,7 +61,7 @@ public class SmsCbHeader implements SmsCbConstants {
             etwsEmergencyUserAlert = (pdu[4] & 0x1) != 0;
             etwsPopup = (pdu[5] & 0x80) != 0;
             etwsWarningType = (pdu[4] & 0xfe) >> 1;
-        } //End block
+        } 
         {
             format = FORMAT_GSM;
             geographicalScope = (pdu[0] & 0xc0) >> 6;
@@ -74,19 +74,19 @@ public class SmsCbHeader implements SmsCbConstants {
             {
                 pageIndex = 1;
                 nrOfPages = 1;
-            } //End block
+            } 
             this.pageIndex = pageIndex;
             this.nrOfPages = nrOfPages;
             etwsEmergencyUserAlert = false;
             etwsPopup = false;
             etwsWarningType = -1;
-        } //End block
+        } 
         {
             format = FORMAT_UMTS;
             int messageType = pdu[0];
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unsupported message type " + messageType);
-            } //End block
+            } 
             messageIdentifier = ((pdu[1] & 0xff) << 8) | pdu[2] & 0xff;
             geographicalScope = (pdu[3] & 0xc0) >> 6;
             messageCode = ((pdu[3] & 0x3f) << 4) | ((pdu[4] & 0xf0) >> 4);
@@ -97,9 +97,9 @@ public class SmsCbHeader implements SmsCbConstants {
             etwsEmergencyUserAlert = false;
             etwsPopup = false;
             etwsWarningType = -1;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -128,23 +128,24 @@ public class SmsCbHeader implements SmsCbConstants {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.617 -0400", hash_original_method = "F77CFF978B7542934CFB3B1620EE83C7", hash_generated_method = "DFC8DE93A37146DD0F7C54FC16DD08FF")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_781538716 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_781538716 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_781538716 = "SmsCbHeader{GS=" + geographicalScope + ", messageCode=0x" +
                 Integer.toHexString(messageCode) + ", updateNumber=" + updateNumber +
                 ", messageIdentifier=0x" + Integer.toHexString(messageIdentifier) +
                 ", DCS=0x" + Integer.toHexString(dataCodingScheme) +
                 ", page " + pageIndex + " of " + nrOfPages + '}';
-        varB4EAC82CA7396A68D541C85D26508E83_781538716.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_781538716.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_781538716;
-        // ---------- Original Method ----------
-        //return "SmsCbHeader{GS=" + geographicalScope + ", messageCode=0x" +
-                //Integer.toHexString(messageCode) + ", updateNumber=" + updateNumber +
-                //", messageIdentifier=0x" + Integer.toHexString(messageIdentifier) +
-                //", DCS=0x" + Integer.toHexString(dataCodingScheme) +
-                //", page " + pageIndex + " of " + nrOfPages + '}';
+        
+        
+                
+                
+                
+                
     }
 
     

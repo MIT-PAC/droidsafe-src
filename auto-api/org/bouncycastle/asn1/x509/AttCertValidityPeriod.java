@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1EncodableVector;
@@ -30,18 +30,18 @@ public class AttCertValidityPeriod extends ASN1Encodable {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad sequence size: "
                     + seq.size());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         notBeforeTime = DERGeneralizedTime.getInstance(seq.getObjectAt(0));
         notAfterTime = DERGeneralizedTime.getInstance(seq.getObjectAt(1));
-        // ---------- Original Method ----------
-        //if (seq.size() != 2)
-        //{
-            //throw new IllegalArgumentException("Bad sequence size: "
-                    //+ seq.size());
-        //}
-        //notBeforeTime = DERGeneralizedTime.getInstance(seq.getObjectAt(0));
-        //notAfterTime = DERGeneralizedTime.getInstance(seq.getObjectAt(1));
+        
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
@@ -51,9 +51,9 @@ public class AttCertValidityPeriod extends ASN1Encodable {
         DERGeneralizedTime notAfterTime) {
         this.notBeforeTime = notBeforeTime;
         this.notAfterTime = notAfterTime;
-        // ---------- Original Method ----------
-        //this.notBeforeTime = notBeforeTime;
-        //this.notAfterTime = notAfterTime;
+        
+        
+        
     }
 
     
@@ -73,40 +73,41 @@ public class AttCertValidityPeriod extends ASN1Encodable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.647 -0400", hash_original_method = "61005B71BB5E250DAD749F45259F34BB", hash_generated_method = "C9E72CDA82855C30655BEEF8E27E9814")
     public DERGeneralizedTime getNotBeforeTime() {
-        DERGeneralizedTime varB4EAC82CA7396A68D541C85D26508E83_2259886 = null; //Variable for return #1
+        DERGeneralizedTime varB4EAC82CA7396A68D541C85D26508E83_2259886 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2259886 = notBeforeTime;
-        varB4EAC82CA7396A68D541C85D26508E83_2259886.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2259886.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2259886;
-        // ---------- Original Method ----------
-        //return notBeforeTime;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.648 -0400", hash_original_method = "3C0941D5D83A6A464C361337736D354A", hash_generated_method = "24964F91D9124B9AB4666B5C4C382086")
     public DERGeneralizedTime getNotAfterTime() {
-        DERGeneralizedTime varB4EAC82CA7396A68D541C85D26508E83_785852405 = null; //Variable for return #1
+        DERGeneralizedTime varB4EAC82CA7396A68D541C85D26508E83_785852405 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_785852405 = notAfterTime;
-        varB4EAC82CA7396A68D541C85D26508E83_785852405.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_785852405.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_785852405;
-        // ---------- Original Method ----------
-        //return notAfterTime;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.649 -0400", hash_original_method = "F304C055A3AB57005A726D651B674F2F", hash_generated_method = "AF792CBFDE3DC170A3515F1974F21C49")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1722129827 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1722129827 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(notBeforeTime);
         v.add(notAfterTime);
         varB4EAC82CA7396A68D541C85D26508E83_1722129827 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_1722129827.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1722129827.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1722129827;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(notBeforeTime);
-        //v.add(notAfterTime);
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
     }
 
     

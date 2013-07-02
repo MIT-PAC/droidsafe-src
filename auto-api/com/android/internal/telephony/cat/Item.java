@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Bitmap;
 import android.os.Parcel;
@@ -27,10 +27,10 @@ public class Item implements Parcelable {
         this.id = id;
         this.text = text;
         this.icon = null;
-        // ---------- Original Method ----------
-        //this.id = id;
-        //this.text = text;
-        //this.icon = null;
+        
+        
+        
+        
     }
 
     
@@ -39,10 +39,10 @@ public class Item implements Parcelable {
         id = in.readInt();
         text = in.readString();
         icon = in.readParcelable(null);
-        // ---------- Original Method ----------
-        //id = in.readInt();
-        //text = in.readString();
-        //icon = in.readParcelable(null);
+        
+        
+        
+        
     }
 
     
@@ -50,11 +50,12 @@ public class Item implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_990595142 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_990595142;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.625 -0400", hash_original_method = "9F06F16F0F60B4944A559AD32B259BAF", hash_generated_method = "6629086FB4583B8DE492C6A6CBBE9B7E")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(id);
@@ -62,21 +63,21 @@ public class Item implements Parcelable {
         dest.writeParcelable(icon, flags);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(id);
-        //dest.writeString(text);
-        //dest.writeParcelable(icon, flags);
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.625 -0400", hash_original_method = "D77DEAB1CC7B5FDE4A537F56E3011951", hash_generated_method = "0AC03AAD67B5BDFBC5AF9AD7DEE91C82")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1296129261 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1296129261 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1296129261 = text;
-        varB4EAC82CA7396A68D541C85D26508E83_1296129261.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1296129261.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1296129261;
-        // ---------- Original Method ----------
-        //return text;
+        
+        
     }
 
     
@@ -91,12 +92,12 @@ public class Item implements Parcelable {
             return new Item[size];
         }
     };
-    // orphaned legacy method
+    
     public Item createFromParcel(Parcel in) {
             return new Item(in);
         }
     
-    // orphaned legacy method
+    
     public Item[] newArray(int size) {
             return new Item[size];
         }

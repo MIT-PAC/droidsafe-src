@@ -1,11 +1,11 @@
 package android.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Handler;
 import android.os.Looper;
@@ -78,7 +78,7 @@ public class ValueAnimator extends Animator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.074 -0400", hash_original_method = "17A6701FB198CD0BD584AB7A0EFE3839", hash_generated_method = "1E0F7AE0C295B96E8122202378305CF8")
     public  ValueAnimator() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -115,24 +115,24 @@ public class ValueAnimator extends Animator {
     public void setIntValues(int... values) {
         {
             setValues(new PropertyValuesHolder[]{PropertyValuesHolder.ofInt("", values)});
-        } //End block
+        } 
         {
             PropertyValuesHolder valuesHolder = mValues[0];
             valuesHolder.setIntValues(values);
-        } //End block
+        } 
         mInitialized = false;
         addTaint(values[0]);
-        // ---------- Original Method ----------
-        //if (values == null || values.length == 0) {
-            //return;
-        //}
-        //if (mValues == null || mValues.length == 0) {
-            //setValues(new PropertyValuesHolder[]{PropertyValuesHolder.ofInt("", values)});
-        //} else {
-            //PropertyValuesHolder valuesHolder = mValues[0];
-            //valuesHolder.setIntValues(values);
-        //}
-        //mInitialized = false;
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -140,24 +140,24 @@ public class ValueAnimator extends Animator {
     public void setFloatValues(float... values) {
         {
             setValues(new PropertyValuesHolder[]{PropertyValuesHolder.ofFloat("", values)});
-        } //End block
+        } 
         {
             PropertyValuesHolder valuesHolder = mValues[0];
             valuesHolder.setFloatValues(values);
-        } //End block
+        } 
         mInitialized = false;
         addTaint(values[0]);
-        // ---------- Original Method ----------
-        //if (values == null || values.length == 0) {
-            //return;
-        //}
-        //if (mValues == null || mValues.length == 0) {
-            //setValues(new PropertyValuesHolder[]{PropertyValuesHolder.ofFloat("", values)});
-        //} else {
-            //PropertyValuesHolder valuesHolder = mValues[0];
-            //valuesHolder.setFloatValues(values);
-        //}
-        //mInitialized = false;
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -166,25 +166,25 @@ public class ValueAnimator extends Animator {
         {
             setValues(new PropertyValuesHolder[]{PropertyValuesHolder.ofObject("",
                     (TypeEvaluator)null, values)});
-        } //End block
+        } 
         {
             PropertyValuesHolder valuesHolder = mValues[0];
             valuesHolder.setObjectValues(values);
-        } //End block
+        } 
         mInitialized = false;
         addTaint(values[0].getTaint());
-        // ---------- Original Method ----------
-        //if (values == null || values.length == 0) {
-            //return;
-        //}
-        //if (mValues == null || mValues.length == 0) {
-            //setValues(new PropertyValuesHolder[]{PropertyValuesHolder.ofObject("",
-                    //(TypeEvaluator)null, values)});
-        //} else {
-            //PropertyValuesHolder valuesHolder = mValues[0];
-            //valuesHolder.setObjectValues(values);
-        //}
-        //mInitialized = false;
+        
+        
+            
+        
+        
+            
+                    
+        
+            
+            
+        
+        
     }
 
     
@@ -198,29 +198,29 @@ public class ValueAnimator extends Animator {
             {
                 PropertyValuesHolder valuesHolder = (PropertyValuesHolder) values[i];
                 mValuesMap.put(valuesHolder.getPropertyName(), valuesHolder);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mInitialized = false;
-        // ---------- Original Method ----------
-        //int numValues = values.length;
-        //mValues = values;
-        //mValuesMap = new HashMap<String, PropertyValuesHolder>(numValues);
-        //for (int i = 0; i < numValues; ++i) {
-            //PropertyValuesHolder valuesHolder = (PropertyValuesHolder) values[i];
-            //mValuesMap.put(valuesHolder.getPropertyName(), valuesHolder);
-        //}
-        //mInitialized = false;
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.081 -0400", hash_original_method = "78A6AA7AD01513781B120BCE5DC9E156", hash_generated_method = "383DA4E88D3FB9E1B08D85A5B5E108DA")
     public PropertyValuesHolder[] getValues() {
-        PropertyValuesHolder[] varB4EAC82CA7396A68D541C85D26508E83_828221140 = null; //Variable for return #1
+        PropertyValuesHolder[] varB4EAC82CA7396A68D541C85D26508E83_828221140 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_828221140 = mValues;
-        varB4EAC82CA7396A68D541C85D26508E83_828221140.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_828221140.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_828221140;
-        // ---------- Original Method ----------
-        //return mValues;
+        
+        
     }
 
     
@@ -232,39 +232,40 @@ public class ValueAnimator extends Animator {
                 int i = 0;
                 {
                     mValues[i].init();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mInitialized = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mInitialized) {
-            //int numValues = mValues.length;
-            //for (int i = 0; i < numValues; ++i) {
-                //mValues[i].init();
-            //}
-            //mInitialized = true;
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.084 -0400", hash_original_method = "622DE942E3334D786E7FE8DBF49B30DE", hash_generated_method = "7E965EC964C8FA1A6C667AD1DB80E38A")
     public ValueAnimator setDuration(long duration) {
-        ValueAnimator varB4EAC82CA7396A68D541C85D26508E83_1853454242 = null; //Variable for return #1
+        ValueAnimator varB4EAC82CA7396A68D541C85D26508E83_1853454242 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Animators cannot have negative duration: " +
                     duration);
-        } //End block
+        } 
         mDuration = duration;
         varB4EAC82CA7396A68D541C85D26508E83_1853454242 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1853454242.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1853454242.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1853454242;
-        // ---------- Original Method ----------
-        //if (duration < 0) {
-            //throw new IllegalArgumentException("Animators cannot have negative duration: " +
-                    //duration);
-        //}
-        //mDuration = duration;
-        //return this;
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
@@ -272,11 +273,12 @@ public class ValueAnimator extends Animator {
     public long getDuration() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_475523095 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_475523095;
-        // ---------- Original Method ----------
-        //return mDuration;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.086 -0400", hash_original_method = "9366966ECC70650E5B5651EBD3539ED0", hash_generated_method = "71E4BADDE8832D39E130F37E82056016")
     public void setCurrentPlayTime(long playTime) {
         initAnimation();
@@ -284,31 +286,32 @@ public class ValueAnimator extends Animator {
         {
             mSeekTime = playTime;
             mPlayingState = SEEKED;
-        } //End block
+        } 
         mStartTime = currentTime - playTime;
         animationFrame(currentTime);
-        // ---------- Original Method ----------
-        //initAnimation();
-        //long currentTime = AnimationUtils.currentAnimationTimeMillis();
-        //if (mPlayingState != RUNNING) {
-            //mSeekTime = playTime;
-            //mPlayingState = SEEKED;
-        //}
-        //mStartTime = currentTime - playTime;
-        //animationFrame(currentTime);
+        
+        
+        
+        
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.089 -0400", hash_original_method = "68655250B160F78BB8C6212DC5765131", hash_generated_method = "8D161A228D33D1E369D2B47327C2B956")
     public long getCurrentPlayTime() {
         long var6F61F9B0364A4D245BC9CF0ACBEF5BEE_87152238 = (AnimationUtils.currentAnimationTimeMillis() - mStartTime);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1613346920 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1613346920;
-        // ---------- Original Method ----------
-        //if (!mInitialized || mPlayingState == STOPPED) {
-            //return 0;
-        //}
-        //return AnimationUtils.currentAnimationTimeMillis() - mStartTime;
+        
+        
+            
+        
+        
     }
 
     
@@ -316,16 +319,16 @@ public class ValueAnimator extends Animator {
     public long getStartDelay() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1361706133 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1361706133;
-        // ---------- Original Method ----------
-        //return mStartDelay;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.091 -0400", hash_original_method = "84D20D1DEBEAE9C7FDE98EA5D287F4D2", hash_generated_method = "FAC2ECF430C77C663A5F61FD6D4BD7CA")
     public void setStartDelay(long startDelay) {
         this.mStartDelay = startDelay;
-        // ---------- Original Method ----------
-        //this.mStartDelay = startDelay;
+        
+        
     }
 
     
@@ -339,71 +342,73 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.095 -0400", hash_original_method = "3CBE561BBB42AB3DB3CAF9B67D05776D", hash_generated_method = "1CC8C17757594A035F80DC78C52E4FC5")
     public Object getAnimatedValue() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1706758822 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_847853944 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_1706758822 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_847853944 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1706758822 = mValues[0].getAnimatedValue();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_847853944 = null;
-        Object varA7E53CE21691AB073D9660D615818899_1838780141; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_1838780141; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1838780141 = varB4EAC82CA7396A68D541C85D26508E83_1706758822;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1838780141 = varB4EAC82CA7396A68D541C85D26508E83_847853944;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1838780141.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1838780141.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1838780141;
-        // ---------- Original Method ----------
-        //if (mValues != null && mValues.length > 0) {
-            //return mValues[0].getAnimatedValue();
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.099 -0400", hash_original_method = "2B530B2B81FC1FAD77C53EC8863AE50E", hash_generated_method = "92DF30D662D17E37F80F8C99D6DD8C4B")
     public Object getAnimatedValue(String propertyName) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1590139728 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_1563787472 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_1590139728 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_1563787472 = null; 
         PropertyValuesHolder valuesHolder = mValuesMap.get(propertyName);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1590139728 = valuesHolder.getAnimatedValue();
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1563787472 = null;
-        } //End block
+        } 
         addTaint(propertyName.getTaint());
-        Object varA7E53CE21691AB073D9660D615818899_902170570; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_902170570; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_902170570 = varB4EAC82CA7396A68D541C85D26508E83_1590139728;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_902170570 = varB4EAC82CA7396A68D541C85D26508E83_1563787472;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_902170570.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_902170570.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_902170570;
-        // ---------- Original Method ----------
-        //PropertyValuesHolder valuesHolder = mValuesMap.get(propertyName);
-        //if (valuesHolder != null) {
-            //return valuesHolder.getAnimatedValue();
-        //} else {
-            //return null;
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.101 -0400", hash_original_method = "4F2FB0A315DAA7A8B07A49F4FCE27399", hash_generated_method = "7098540AE96AF889E34ED53706CB0331")
     public void setRepeatCount(int value) {
         mRepeatCount = value;
-        // ---------- Original Method ----------
-        //mRepeatCount = value;
+        
+        
     }
 
     
@@ -411,16 +416,16 @@ public class ValueAnimator extends Animator {
     public int getRepeatCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1159349195 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1159349195;
-        // ---------- Original Method ----------
-        //return mRepeatCount;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.104 -0400", hash_original_method = "C33D7F87842C98944308EC1438B3A8A7", hash_generated_method = "57CCF83DF3B3AF7C69315FCAF2E9D050")
     public void setRepeatMode(int value) {
         mRepeatMode = value;
-        // ---------- Original Method ----------
-        //mRepeatMode = value;
+        
+        
     }
 
     
@@ -428,39 +433,42 @@ public class ValueAnimator extends Animator {
     public int getRepeatMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1679855463 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1679855463;
-        // ---------- Original Method ----------
-        //return mRepeatMode;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.106 -0400", hash_original_method = "D2A8BFD752ECF80FCD3BD03F5B9AF68A", hash_generated_method = "5E7135EF2BA4C3F11D8555A731C33374")
     public void addUpdateListener(AnimatorUpdateListener listener) {
         {
             mUpdateListeners = new ArrayList<AnimatorUpdateListener>();
-        } //End block
+        } 
         mUpdateListeners.add(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (mUpdateListeners == null) {
-            //mUpdateListeners = new ArrayList<AnimatorUpdateListener>();
-        //}
-        //mUpdateListeners.add(listener);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.108 -0400", hash_original_method = "ABC42C9D08D6EB9E3E04E4FD12636CA0", hash_generated_method = "C442C719649EE8FF274F608780F8CCA1")
     public void removeAllUpdateListeners() {
         mUpdateListeners.clear();
         mUpdateListeners = null;
-        // ---------- Original Method ----------
-        //if (mUpdateListeners == null) {
-            //return;
-        //}
-        //mUpdateListeners.clear();
-        //mUpdateListeners = null;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.110 -0400", hash_original_method = "E6D135867EE130F9CB4EA2C9507FABF5", hash_generated_method = "B6DD6B14DA882E54224EB623D6A9843A")
     public void removeUpdateListener(AnimatorUpdateListener listener) {
         mUpdateListeners.remove(listener);
@@ -468,70 +476,73 @@ public class ValueAnimator extends Animator {
             boolean varA4B084E767DE55BA6AFD2DEBEB0A7784_1607144640 = (mUpdateListeners.size() == 0);
             {
                 mUpdateListeners = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (mUpdateListeners == null) {
-            //return;
-        //}
-        //mUpdateListeners.remove(listener);
-        //if (mUpdateListeners.size() == 0) {
-            //mUpdateListeners = null;
-        //}
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.112 -0400", hash_original_method = "AF77FCDF6C80D02141639AFD7587863F", hash_generated_method = "4AD5CA0900FB4ADF922CC1530AE31746")
     @Override
     public void setInterpolator(TimeInterpolator value) {
         {
             mInterpolator = value;
-        } //End block
+        } 
         {
             mInterpolator = new LinearInterpolator();
-        } //End block
-        // ---------- Original Method ----------
-        //if (value != null) {
-            //mInterpolator = value;
-        //} else {
-            //mInterpolator = new LinearInterpolator();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.113 -0400", hash_original_method = "69CBD09EBE4A4B5ECD6AD8540DB7CFD0", hash_generated_method = "8CCB516995DB3FC108FA9643E6A0A4C6")
     public TimeInterpolator getInterpolator() {
-        TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_654057754 = null; //Variable for return #1
+        TimeInterpolator varB4EAC82CA7396A68D541C85D26508E83_654057754 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_654057754 = mInterpolator;
-        varB4EAC82CA7396A68D541C85D26508E83_654057754.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_654057754.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_654057754;
-        // ---------- Original Method ----------
-        //return mInterpolator;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.114 -0400", hash_original_method = "BC30F1B6BC4F20E2E98ADFB4EC800F88", hash_generated_method = "D174E2891B05C4CB9C1E9C2CA05E9860")
     public void setEvaluator(TypeEvaluator value) {
         {
             mValues[0].setEvaluator(value);
-        } //End block
+        } 
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //if (value != null && mValues != null && mValues.length > 0) {
-            //mValues[0].setEvaluator(value);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.118 -0400", hash_original_method = "4B39A931455D340382CCAC7898FAB8D3", hash_generated_method = "F387211E2B2FC5276671D9915F6A4F26")
     private void start(boolean playBackwards) {
         {
             boolean var607F99F94A9C3E729CF05A4C4A58ABDF_1721742518 = (Looper.myLooper() == null);
             {
                 if (DroidSafeAndroidRuntime.control) throw new AndroidRuntimeException("Animators may only be run on Looper threads");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mPlayingBackwards = playBackwards;
         mCurrentIteration = 0;
         mPlayingState = STOPPED;
@@ -549,30 +560,32 @@ public class ValueAnimator extends Animator {
                     int i = 0;
                     {
                         tmpListeners.get(i).onAnimationStart(this);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         AnimationHandler animationHandler = sAnimationHandler.get();
         {
             animationHandler = new AnimationHandler();
             sAnimationHandler.set(animationHandler);
-        } //End block
+        } 
         animationHandler.sendEmptyMessage(ANIMATION_START);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.119 -0400", hash_original_method = "0E699EAEE0E759B00B92DBAE6A0AB7E1", hash_generated_method = "CF8459FD9743EB11F57C1D75490D5091")
     @Override
     public void start() {
         start(false);
-        // ---------- Original Method ----------
-        //start(false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.133 -0400", hash_original_method = "5EC046ABFAD295E5D2C88DB1426702CD", hash_generated_method = "D2C6B7D7E3102BDE0069D8C2E68494C3")
     @Override
     public void cancel() {
@@ -588,27 +601,28 @@ public class ValueAnimator extends Animator {
                         AnimatorListener listener = var654BA54CE39980A4AD9D75C7F4D7E493_1939780170.next();
                         {
                             listener.onAnimationCancel(this);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 endAnimation();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mPlayingState != STOPPED || sPendingAnimations.get().contains(this) ||
-                //sDelayedAnims.get().contains(this)) {
-            //if (mRunning && mListeners != null) {
-                //ArrayList<AnimatorListener> tmpListeners =
-                        //(ArrayList<AnimatorListener>) mListeners.clone();
-                //for (AnimatorListener listener : tmpListeners) {
-                    //listener.onAnimationCancel(this);
-                //}
-            //}
-            //endAnimation();
-        //}
+            } 
+        } 
+        
+        
+                
+            
+                
+                        
+                
+                    
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.135 -0400", hash_original_method = "55C31F194BE33B60E19FAC66D36F0F3B", hash_generated_method = "F70AC8BEDFC8F4EE3CE24747BE32B16A")
     @Override
     public void end() {
@@ -617,31 +631,31 @@ public class ValueAnimator extends Animator {
             {
                 mStartedDelay = false;
                 startAnimation();
-            } //End block
+            } 
             {
                 initAnimation();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             animateValue(0f);
-        } //End block
+        } 
         {
             animateValue(1f);
-        } //End block
+        } 
         endAnimation();
-        // ---------- Original Method ----------
-        //if (!sAnimations.get().contains(this) && !sPendingAnimations.get().contains(this)) {
-            //mStartedDelay = false;
-            //startAnimation();
-        //} else if (!mInitialized) {
-            //initAnimation();
-        //}
-        //if (mRepeatCount > 0 && (mRepeatCount & 0x01) == 1) {
-            //animateValue(0f);
-        //} else {
-            //animateValue(1f);
-        //}
-        //endAnimation();
+        
+        
+            
+            
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -650,8 +664,8 @@ public class ValueAnimator extends Animator {
     public boolean isRunning() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_86487358 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_86487358;
-        // ---------- Original Method ----------
-        //return (mPlayingState == RUNNING || mRunning);
+        
+        
     }
 
     
@@ -660,11 +674,12 @@ public class ValueAnimator extends Animator {
     public boolean isStarted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_647795131 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_647795131;
-        // ---------- Original Method ----------
-        //return mStarted;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.137 -0400", hash_original_method = "45B2842BAB0EB46941DD63C0EA48CBA2", hash_generated_method = "DC3D2BFD0B7D4074D185BF018F9E839E")
     public void reverse() {
         mPlayingBackwards = !mPlayingBackwards;
@@ -673,23 +688,24 @@ public class ValueAnimator extends Animator {
             long currentPlayTime = currentTime - mStartTime;
             long timeLeft = mDuration - currentPlayTime;
             mStartTime = currentTime - timeLeft;
-        } //End block
+        } 
         {
             start(true);
-        } //End block
-        // ---------- Original Method ----------
-        //mPlayingBackwards = !mPlayingBackwards;
-        //if (mPlayingState == RUNNING) {
-            //long currentTime = AnimationUtils.currentAnimationTimeMillis();
-            //long currentPlayTime = currentTime - mStartTime;
-            //long timeLeft = mDuration - currentPlayTime;
-            //mStartTime = currentTime - timeLeft;
-        //} else {
-            //start(true);
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.139 -0400", hash_original_method = "634DE70818167FA9FFDD8CDDE693BD3B", hash_generated_method = "A6AD3C65AEE0E0F29F3080AB534B938E")
     private void endAnimation() {
         sAnimations.get().remove(this);
@@ -703,29 +719,30 @@ public class ValueAnimator extends Animator {
                 int i = 0;
                 {
                     tmpListeners.get(i).onAnimationEnd(this);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mRunning = false;
         mStarted = false;
-        // ---------- Original Method ----------
-        //sAnimations.get().remove(this);
-        //sPendingAnimations.get().remove(this);
-        //sDelayedAnims.get().remove(this);
-        //mPlayingState = STOPPED;
-        //if (mRunning && mListeners != null) {
-            //ArrayList<AnimatorListener> tmpListeners =
-                    //(ArrayList<AnimatorListener>) mListeners.clone();
-            //int numListeners = tmpListeners.size();
-            //for (int i = 0; i < numListeners; ++i) {
-                //tmpListeners.get(i).onAnimationEnd(this);
-            //}
-        //}
-        //mRunning = false;
-        //mStarted = false;
+        
+        
+        
+        
+        
+        
+            
+                    
+            
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.141 -0400", hash_original_method = "45B9B57EC5A2CFD523C0E84592BD9EAC", hash_generated_method = "9EAACD46099D7699A6221675AC5121EE")
     private void startAnimation() {
         initAnimation();
@@ -737,20 +754,20 @@ public class ValueAnimator extends Animator {
                 int i = 0;
                 {
                     tmpListeners.get(i).onAnimationStart(this);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //initAnimation();
-        //sAnimations.get().add(this);
-        //if (mStartDelay > 0 && mListeners != null) {
-            //ArrayList<AnimatorListener> tmpListeners =
-                    //(ArrayList<AnimatorListener>) mListeners.clone();
-            //int numListeners = tmpListeners.size();
-            //for (int i = 0; i < numListeners; ++i) {
-                //tmpListeners.get(i).onAnimationStart(this);
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+        
+            
+                    
+            
+            
+                
+            
+        
     }
 
     
@@ -759,29 +776,29 @@ public class ValueAnimator extends Animator {
         {
             mStartedDelay = true;
             mDelayStartTime = currentTime;
-        } //End block
+        } 
         {
             long deltaTime = currentTime - mDelayStartTime;
             {
                 mStartTime = currentTime - (deltaTime - mStartDelay);
                 mPlayingState = RUNNING;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1411311493 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1411311493;
-        // ---------- Original Method ----------
-        //if (!mStartedDelay) {
-            //mStartedDelay = true;
-            //mDelayStartTime = currentTime;
-        //} else {
-            //long deltaTime = currentTime - mDelayStartTime;
-            //if (deltaTime > mStartDelay) {
-                //mStartTime = currentTime - (deltaTime - mStartDelay);
-                //mPlayingState = RUNNING;
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+            
+        
+            
+            
+                
+                
+                
+            
+        
+        
     }
 
     
@@ -792,18 +809,18 @@ public class ValueAnimator extends Animator {
             mPlayingState = RUNNING;
             {
                 mStartTime = currentTime;
-            } //End block
+            } 
             {
                 mStartTime = currentTime - mSeekTime;
                 mSeekTime = -1;
-            } //End block
-        } //End block
-        //Begin case RUNNING SEEKED 
+            } 
+        } 
+        
         float fraction;
         fraction = (float)(currentTime - mStartTime) / mDuration;
         fraction = 1f;
-        //End case RUNNING SEEKED 
-        //Begin case RUNNING SEEKED 
+        
+        
         {
             {
                 {
@@ -812,34 +829,34 @@ public class ValueAnimator extends Animator {
                         int i = 0;
                         {
                             mListeners.get(i).onAnimationRepeat(this);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     mPlayingBackwards = mPlayingBackwards ? false : true;
-                } //End block
+                } 
                 mCurrentIteration += (int)fraction;
                 fraction = fraction % 1f;
                 mStartTime += mDuration;
-            } //End block
+            } 
             {
                 done = true;
                 fraction = Math.min(fraction, 1.0f);
-            } //End block
-        } //End block
-        //End case RUNNING SEEKED 
-        //Begin case RUNNING SEEKED 
+            } 
+        } 
+        
+        
         {
             fraction = 1f - fraction;
-        } //End block
-        //End case RUNNING SEEKED 
-        //Begin case RUNNING SEEKED 
+        } 
+        
+        
         animateValue(fraction);
-        //End case RUNNING SEEKED 
+        
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1107229553 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1107229553;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -847,8 +864,8 @@ public class ValueAnimator extends Animator {
     public float getAnimatedFraction() {
         float var546ADE640B6EDFBC8A086EF31347E768_612922690 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_612922690;
-        // ---------- Original Method ----------
-        //return mCurrentFraction;
+        
+        
     }
 
     
@@ -861,37 +878,38 @@ public class ValueAnimator extends Animator {
             int i = 0;
             {
                 mValues[i].calculateValue(fraction);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int numListeners = mUpdateListeners.size();
             {
                 int i = 0;
                 {
                     mUpdateListeners.get(i).onAnimationUpdate(this);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //fraction = mInterpolator.getInterpolation(fraction);
-        //mCurrentFraction = fraction;
-        //int numValues = mValues.length;
-        //for (int i = 0; i < numValues; ++i) {
-            //mValues[i].calculateValue(fraction);
-        //}
-        //if (mUpdateListeners != null) {
-            //int numListeners = mUpdateListeners.size();
-            //for (int i = 0; i < numListeners; ++i) {
-                //mUpdateListeners.get(i).onAnimationUpdate(this);
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.148 -0400", hash_original_method = "E24942BE7DE3A089D4AA1F8054FFC13E", hash_generated_method = "40DEE2D411A0FD1E8208EC22699D93C1")
     @Override
     public ValueAnimator clone() {
-        ValueAnimator varB4EAC82CA7396A68D541C85D26508E83_1526572578 = null; //Variable for return #1
+        ValueAnimator varB4EAC82CA7396A68D541C85D26508E83_1526572578 = null; 
         final ValueAnimator anim = (ValueAnimator) super.clone();
         {
             ArrayList<AnimatorUpdateListener> oldListeners = mUpdateListeners;
@@ -901,9 +919,9 @@ public class ValueAnimator extends Animator {
                 int i = 0;
                 {
                     anim.mUpdateListeners.add(oldListeners.get(i));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         anim.mSeekTime = -1;
         anim.mPlayingBackwards = false;
         anim.mCurrentIteration = 0;
@@ -921,14 +939,14 @@ public class ValueAnimator extends Animator {
                     PropertyValuesHolder newValuesHolder = oldValues[i].clone();
                     anim.mValues[i] = newValuesHolder;
                     anim.mValuesMap.put(newValuesHolder.getPropertyName(), newValuesHolder);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1526572578 = anim;
-        varB4EAC82CA7396A68D541C85D26508E83_1526572578.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1526572578.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1526572578;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -947,27 +965,27 @@ public class ValueAnimator extends Animator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.153 -0400", hash_original_method = "533F41B1624628F4A2CEF95F44B8AA6B", hash_generated_method = "C24A08C451778C515291F8308EB0B101")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1267525378 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1267525378 = null; 
         String returnVal = "ValueAnimator@" + Integer.toHexString(hashCode());
         {
             {
                 int i = 0;
                 {
                     returnVal += "\n    " + mValues[i].toString();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1267525378 = returnVal;
-        varB4EAC82CA7396A68D541C85D26508E83_1267525378.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1267525378.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1267525378;
-        // ---------- Original Method ----------
-        //String returnVal = "ValueAnimator@" + Integer.toHexString(hashCode());
-        //if (mValues != null) {
-            //for (int i = 0; i < mValues.length; ++i) {
-                //returnVal += "\n    " + mValues[i].toString();
-            //}
-        //}
-        //return returnVal;
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -976,7 +994,7 @@ public class ValueAnimator extends Animator {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.153 -0400", hash_original_method = "2DEE4CFD7471B34E056063BEAD8FACC4", hash_generated_method = "2DEE4CFD7471B34E056063BEAD8FACC4")
         public AnimationHandler ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -986,18 +1004,18 @@ public class ValueAnimator extends Animator {
             boolean callAgain = true;
             ArrayList<ValueAnimator> animations = sAnimations.get();
             ArrayList<ValueAnimator> delayedAnims = sDelayedAnims.get();
-            //Begin case ANIMATION_START 
+            
             ArrayList<ValueAnimator> pendingAnimations = sPendingAnimations.get();
-            //End case ANIMATION_START 
-            //Begin case ANIMATION_START 
+            
+            
             {
                 boolean varA1F5D09ABD5BA1EAA9064BD2C7F540A0_1235885646 = (animations.size() > 0 || delayedAnims.size() > 0);
                 {
                     callAgain = false;
-                } //End block
-            } //End collapsed parenthetic
-            //End case ANIMATION_START 
-            //Begin case ANIMATION_START 
+                } 
+            } 
+            
+            
             {
                 boolean var310842A70C8547E073B963714355E2EF_730322598 = (pendingAnimations.size() > 0);
                 {
@@ -1010,28 +1028,28 @@ public class ValueAnimator extends Animator {
                             ValueAnimator anim = pendingCopy.get(i);
                             {
                                 anim.startAnimation();
-                            } //End block
+                            } 
                             {
                                 delayedAnims.add(anim);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-            //End case ANIMATION_START 
-            //Begin case ANIMATION_FRAME 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
             long currentTime = AnimationUtils.currentAnimationTimeMillis();
-            //End case ANIMATION_FRAME 
-            //Begin case ANIMATION_FRAME 
+            
+            
             ArrayList<ValueAnimator> readyAnims = sReadyAnims.get();
-            //End case ANIMATION_FRAME 
-            //Begin case ANIMATION_FRAME 
+            
+            
             ArrayList<ValueAnimator> endingAnims = sEndingAnims.get();
-            //End case ANIMATION_FRAME 
-            //Begin case ANIMATION_FRAME 
+            
+            
             int numDelayedAnims = delayedAnims.size();
-            //End case ANIMATION_FRAME 
-            //Begin case ANIMATION_FRAME 
+            
+            
             {
                 int i = 0;
                 {
@@ -1040,15 +1058,15 @@ public class ValueAnimator extends Animator {
                         boolean var5A6A4AC41707EA57AE87A5C33A49358D_1524024160 = (anim.delayedAnimationFrame(currentTime));
                         {
                             readyAnims.add(anim);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-            //End case ANIMATION_FRAME 
-            //Begin case ANIMATION_FRAME 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
             int numReadyAnims = readyAnims.size();
-            //End case ANIMATION_FRAME 
-            //Begin case ANIMATION_FRAME 
+            
+            
             {
                 {
                     int i = 0;
@@ -1057,35 +1075,35 @@ public class ValueAnimator extends Animator {
                         anim.startAnimation();
                         anim.mRunning = true;
                         delayedAnims.remove(anim);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 readyAnims.clear();
-            } //End block
-            //End case ANIMATION_FRAME 
-            //Begin case ANIMATION_FRAME 
+            } 
+            
+            
             int numAnims = animations.size();
-            //End case ANIMATION_FRAME 
-            //Begin case ANIMATION_FRAME 
+            
+            
             int i = 0;
-            //End case ANIMATION_FRAME 
-            //Begin case ANIMATION_FRAME 
+            
+            
             {
                 ValueAnimator anim = animations.get(i);
                 {
                     boolean varB2157FB20628670967962D499113FAB2_1337275107 = (anim.animationFrame(currentTime));
                     {
                         endingAnims.add(anim);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varB2E9B25FC12B68A819E499BFA350E9C9_696483977 = (animations.size() == numAnims);
                     {
                         endingAnims.remove(anim);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            //End case ANIMATION_FRAME 
-            //Begin case ANIMATION_FRAME 
+                    } 
+                } 
+            } 
+            
+            
             {
                 boolean var24F884196EA732DACEFF40751A202210_1203037629 = (endingAnims.size() > 0);
                 {
@@ -1094,24 +1112,24 @@ public class ValueAnimator extends Animator {
                         boolean var680A26EFE24B5CA3CBE89BBC9415413A_382871546 = (i < endingAnims.size());
                         {
                             endingAnims.get(i).endAnimation();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     endingAnims.clear();
-                } //End block
-            } //End collapsed parenthetic
-            //End case ANIMATION_FRAME 
-            //Begin case ANIMATION_FRAME 
+                } 
+            } 
+            
+            
             {
                 boolean var8A9BF7DDA394FFB721509F4D19C0EAE3_1684062966 = (callAgain && (!animations.isEmpty() || !delayedAnims.isEmpty()));
                 {
                     sendEmptyMessageDelayed(ANIMATION_FRAME, Math.max(0, sFrameDelay -
                             (AnimationUtils.currentAnimationTimeMillis() - currentTime)));
-                } //End block
-            } //End collapsed parenthetic
-            //End case ANIMATION_FRAME 
+                } 
+            } 
+            
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1152,12 +1170,12 @@ public class ValueAnimator extends Animator {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.159 -0400", hash_original_method = "A1919B9D7E2CF94D5A8714BDB3972703", hash_generated_method = "30984E86954B4487FB1FB1FDC9319F03")
         @Override
         protected ArrayList<ValueAnimator> initialValue() {
-            ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_248712503 = null; //Variable for return #1
+            ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_248712503 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_248712503 = new ArrayList<ValueAnimator>();
-            varB4EAC82CA7396A68D541C85D26508E83_248712503.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_248712503.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_248712503;
-            // ---------- Original Method ----------
-            //return new ArrayList<ValueAnimator>();
+            
+            
         }
 
         
@@ -1168,12 +1186,12 @@ public class ValueAnimator extends Animator {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.161 -0400", hash_original_method = "A1919B9D7E2CF94D5A8714BDB3972703", hash_generated_method = "4FF2FD37465665796C1B58FB56AB965F")
         @Override
         protected ArrayList<ValueAnimator> initialValue() {
-            ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_1102750751 = null; //Variable for return #1
+            ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_1102750751 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1102750751 = new ArrayList<ValueAnimator>();
-            varB4EAC82CA7396A68D541C85D26508E83_1102750751.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1102750751.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1102750751;
-            // ---------- Original Method ----------
-            //return new ArrayList<ValueAnimator>();
+            
+            
         }
 
         
@@ -1184,12 +1202,12 @@ public class ValueAnimator extends Animator {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.165 -0400", hash_original_method = "A1919B9D7E2CF94D5A8714BDB3972703", hash_generated_method = "02005CDE0FB40562043DE6CBF2865DD9")
         @Override
         protected ArrayList<ValueAnimator> initialValue() {
-            ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_750130945 = null; //Variable for return #1
+            ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_750130945 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_750130945 = new ArrayList<ValueAnimator>();
-            varB4EAC82CA7396A68D541C85D26508E83_750130945.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_750130945.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_750130945;
-            // ---------- Original Method ----------
-            //return new ArrayList<ValueAnimator>();
+            
+            
         }
 
         
@@ -1200,12 +1218,12 @@ public class ValueAnimator extends Animator {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.167 -0400", hash_original_method = "A1919B9D7E2CF94D5A8714BDB3972703", hash_generated_method = "7346F25FDFB97A2663CECFE8F4D83A73")
         @Override
         protected ArrayList<ValueAnimator> initialValue() {
-            ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_1291337822 = null; //Variable for return #1
+            ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_1291337822 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1291337822 = new ArrayList<ValueAnimator>();
-            varB4EAC82CA7396A68D541C85D26508E83_1291337822.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1291337822.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1291337822;
-            // ---------- Original Method ----------
-            //return new ArrayList<ValueAnimator>();
+            
+            
         }
 
         
@@ -1216,12 +1234,12 @@ public class ValueAnimator extends Animator {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:13.168 -0400", hash_original_method = "A1919B9D7E2CF94D5A8714BDB3972703", hash_generated_method = "1D39BB2D8E01B1E6514960600C7DFC2B")
         @Override
         protected ArrayList<ValueAnimator> initialValue() {
-            ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_1528695003 = null; //Variable for return #1
+            ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_1528695003 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1528695003 = new ArrayList<ValueAnimator>();
-            varB4EAC82CA7396A68D541C85D26508E83_1528695003.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1528695003.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1528695003;
-            // ---------- Original Method ----------
-            //return new ArrayList<ValueAnimator>();
+            
+            
         }
 
         

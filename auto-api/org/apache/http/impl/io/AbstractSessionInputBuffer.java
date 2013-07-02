@@ -1,11 +1,11 @@
 package org.apache.http.impl.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -50,7 +50,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.645 -0400", hash_original_method = "C27F370149363385AD6F9F81753F4445", hash_generated_method = "C27F370149363385AD6F9F81753F4445")
     public AbstractSessionInputBuffer ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -58,13 +58,13 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     protected void init(final InputStream instream, int buffersize, final HttpParams params) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Input stream may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Buffer size may not be negative or zero");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP parameters may not be null");
-        } //End block
+        } 
         this.instream = instream;
         this.buffer = new byte[buffersize];
         this.bufferpos = 0;
@@ -75,21 +75,22 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
                      || this.charset.equalsIgnoreCase(HTTP.ASCII);
         this.maxLineLen = params.getIntParameter(CoreConnectionPNames.MAX_LINE_LENGTH, -1);
         this.metrics = new HttpTransportMetricsImpl();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.646 -0400", hash_original_method = "AED6430DDF1A78B7022960A54C9608D3", hash_generated_method = "86EE911669ED9E9D1802FB75B2B0E6CF")
     protected int fillBuffer() throws IOException {
         {
             int len = this.bufferlen - this.bufferpos;
             {
                 System.arraycopy(this.buffer, this.bufferpos, this.buffer, 0, len);
-            } //End block
+            } 
             this.bufferpos = 0;
             this.bufferlen = len;
-        } //End block
+        } 
         int l;
         int off = this.bufferlen;
         int len = this.buffer.length - off;
@@ -97,29 +98,29 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
         {
             this.bufferlen = off + l;
             this.metrics.incrementBytesTransferred(l);
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_595221142 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_595221142;
-        // ---------- Original Method ----------
-        //if (this.bufferpos > 0) {
-            //int len = this.bufferlen - this.bufferpos;
-            //if (len > 0) {
-                //System.arraycopy(this.buffer, this.bufferpos, this.buffer, 0, len);
-            //}
-            //this.bufferpos = 0;
-            //this.bufferlen = len;
-        //}
-        //int l;
-        //int off = this.bufferlen;
-        //int len = this.buffer.length - off;
-        //l = this.instream.read(this.buffer, off, len);
-        //if (l == -1) {
-            //return -1;
-        //} else {
-            //this.bufferlen = off + l;
-            //this.metrics.incrementBytesTransferred(l);
-            //return l;
-        //}
+        
+        
+            
+            
+                
+            
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+            
+            
+            
+        
     }
 
     
@@ -127,11 +128,12 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     protected boolean hasBufferedData() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_241729260 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_241729260;
-        // ---------- Original Method ----------
-        //return this.bufferpos < this.bufferlen;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.647 -0400", hash_original_method = "E463AA34023422AC03B9513A2E94EA6B", hash_generated_method = "BD4D885A9AD4F83D143C008012C20E9C")
     public int read() throws IOException {
         int noRead = 0;
@@ -139,19 +141,19 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
             boolean varD210C1373B6FBB590F5BF990F9119C91_30848444 = (!hasBufferedData());
             {
                 noRead = fillBuffer();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1852517607 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1852517607;
-        // ---------- Original Method ----------
-        //int noRead = 0;
-        //while (!hasBufferedData()) {
-            //noRead = fillBuffer();
-            //if (noRead == -1) {
-                //return -1;
-            //}
-        //}
-        //return this.buffer[this.bufferpos++] & 0xff;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -162,12 +164,12 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
             boolean varD210C1373B6FBB590F5BF990F9119C91_1779457293 = (!hasBufferedData());
             {
                 noRead = fillBuffer();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int chunk = this.bufferlen - this.bufferpos;
         {
             chunk = len;
-        } //End block
+        } 
         System.arraycopy(this.buffer, this.bufferpos, b, off, chunk);
         this.bufferpos += chunk;
         addTaint(b[0]);
@@ -175,24 +177,24 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
         addTaint(len);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1220121799 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1220121799;
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //return 0;
-        //}
-        //int noRead = 0;
-        //while (!hasBufferedData()) {
-            //noRead = fillBuffer();
-            //if (noRead == -1) {
-                //return -1;
-            //}
-        //}
-        //int chunk = this.bufferlen - this.bufferpos;
-        //if (chunk > len) {
-            //chunk = len;
-        //}
-        //System.arraycopy(this.buffer, this.bufferpos, b, off, chunk);
-        //this.bufferpos += chunk;
-        //return chunk;
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -202,11 +204,11 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
         addTaint(b[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1868233542 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1868233542;
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //return 0;
-        //}
-        //return read(b, 0, b.length);
+        
+        
+            
+        
+        
     }
 
     
@@ -214,16 +216,16 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     private int locateLF() {
         {
             int i = this.bufferpos;
-        } //End collapsed parenthetic
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681113163 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681113163;
-        // ---------- Original Method ----------
-        //for (int i = this.bufferpos; i < this.bufferlen; i++) {
-            //if (this.buffer[i] == HTTP.LF) {
-                //return i;
-            //}
-        //}
-        //return -1;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -231,7 +233,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     public int readLine(final CharArrayBuffer charbuffer) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Char array buffer may not be null");
-        } //End block
+        } 
         this.linebuffer.clear();
         int noRead = 0;
         boolean retry = true;
@@ -242,13 +244,13 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
                     boolean varEBE8EA489B47F8DB0AE71744DD2E6C95_431643264 = (this.linebuffer.isEmpty());
                     {
                         int var297CA58D99A61AD49D3A628841BFAD8C_1617769705 = (lineFromReadBuffer(charbuffer, i));
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 retry = false;
                 int len = i + 1 - this.bufferpos;
                 this.linebuffer.append(this.buffer, this.bufferpos, len);
                 this.bufferpos = i + 1;
-            } //End block
+            } 
             {
                 {
                     boolean varAEA5FA52AEDB2545ECF9D26B26ACDD70_1073426752 = (hasBufferedData());
@@ -256,29 +258,29 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
                         int len = this.bufferlen - this.bufferpos;
                         this.linebuffer.append(this.buffer, this.bufferpos, len);
                         this.bufferpos = this.bufferlen;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 noRead = fillBuffer();
                 {
                     retry = false;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 boolean var7235849E2B0B7AC365A0707BE1ACD937_1124864759 = (this.maxLineLen > 0 && this.linebuffer.length() >= this.maxLineLen);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("Maximum line length limit exceeded");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean var7DF2E4704BE4B8408E4250829EA440A6_309551367 = (noRead == -1 && this.linebuffer.isEmpty());
-        } //End collapsed parenthetic
+        } 
         int varCEC600CF2A719499A0A9466F62AF2872_1321331095 = (lineFromLineBuffer(charbuffer));
         addTaint(charbuffer.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1808340555 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1808340555;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -290,50 +292,50 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
                 boolean varC90433BDC295BDA0712C663BFE02ABD2_2025705470 = (this.linebuffer.byteAt(l - 1) == HTTP.LF);
                 {
                     this.linebuffer.setLength(l);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 {
                     boolean var4AD0E6932E39BC4F55122F4276BA041B_43184543 = (this.linebuffer.byteAt(l - 1) == HTTP.CR);
                     {
                         this.linebuffer.setLength(l);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         l = this.linebuffer.length();
         {
             charbuffer.append(this.linebuffer, 0, l);
-        } //End block
+        } 
         {
             String s = new String(this.linebuffer.buffer(), 0, l, this.charset);
             charbuffer.append(s);
-        } //End block
+        } 
         addTaint(charbuffer.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1949129694 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1949129694;
-        // ---------- Original Method ----------
-        //int l = this.linebuffer.length();
-        //if (l > 0) {
-            //if (this.linebuffer.byteAt(l - 1) == HTTP.LF) {
-                //l--;
-                //this.linebuffer.setLength(l);
-            //}
-            //if (l > 0) {
-                //if (this.linebuffer.byteAt(l - 1) == HTTP.CR) {
-                    //l--;
-                    //this.linebuffer.setLength(l);
-                //}
-            //}
-        //}
-        //l = this.linebuffer.length();
-        //if (this.ascii) {
-            //charbuffer.append(this.linebuffer, 0, l);
-        //} else {
-            //String s = new String(this.linebuffer.buffer(), 0, l, this.charset);
-            //charbuffer.append(s);
-        //}
-        //return l;
+        
+        
+        
+            
+                
+                
+            
+            
+                
+                    
+                    
+                
+            
+        
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -345,74 +347,75 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
         len = pos - off;
         {
             charbuffer.append(this.buffer, off, len);
-        } //End block
+        } 
         {
             String s = new String(this.buffer, off, len, this.charset);
             charbuffer.append(s);
-        } //End block
+        } 
         addTaint(charbuffer.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1541581784 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1541581784;
-        // ---------- Original Method ----------
-        //int off = this.bufferpos;
-        //int len;
-        //this.bufferpos = pos + 1;
-        //if (pos > off && this.buffer[pos - 1] == HTTP.CR) {
-            //pos--;
-        //}
-        //len = pos - off;
-        //if (this.ascii) {
-            //charbuffer.append(this.buffer, off, len);
-        //} else {
-            //String s = new String(this.buffer, off, len, this.charset);
-            //charbuffer.append(s);
-        //}
-        //return len;
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.656 -0400", hash_original_method = "40CE76C5D842CFEF27650CABF8F97946", hash_generated_method = "86C2B4E5CDEA30CE113CFC41679E6120")
     public String readLine() throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1125912682 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1048572541 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1125912682 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1048572541 = null; 
         CharArrayBuffer charbuffer = new CharArrayBuffer(64);
         int l = readLine(charbuffer);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1125912682 = charbuffer.toString();
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1048572541 = null;
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_1806876120; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1806876120; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1806876120 = varB4EAC82CA7396A68D541C85D26508E83_1125912682;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1806876120 = varB4EAC82CA7396A68D541C85D26508E83_1048572541;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1806876120.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1806876120.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1806876120;
-        // ---------- Original Method ----------
-        //CharArrayBuffer charbuffer = new CharArrayBuffer(64);
-        //int l = readLine(charbuffer);
-        //if (l != -1) {
-            //return charbuffer.toString();
-        //} else {
-            //return null;
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.656 -0400", hash_original_method = "E82E77AA369AC2B118042C614F644F5C", hash_generated_method = "9178ED0A38597F636C9DD7F2949C743A")
     public HttpTransportMetrics getMetrics() {
-        HttpTransportMetrics varB4EAC82CA7396A68D541C85D26508E83_263375463 = null; //Variable for return #1
+        HttpTransportMetrics varB4EAC82CA7396A68D541C85D26508E83_263375463 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_263375463 = this.metrics;
-        varB4EAC82CA7396A68D541C85D26508E83_263375463.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_263375463.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_263375463;
-        // ---------- Original Method ----------
-        //return this.metrics;
+        
+        
     }
 
     

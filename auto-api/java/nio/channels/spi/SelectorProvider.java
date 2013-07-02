@@ -1,11 +1,11 @@
 package java.nio.channels.spi;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.nio.SelectorProviderImpl;
@@ -20,10 +20,11 @@ public abstract class SelectorProvider {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.797 -0400", hash_original_method = "DDE564F0B2C96394E14746CA546F5611", hash_generated_method = "6B40AAE650197172BEF43AA1CD6DE226")
     protected  SelectorProvider() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     synchronized public static SelectorProvider provider() {
         if (provider == null) {
             provider = ServiceLoader.loadFromSystemProperty(SelectorProvider.class);
@@ -38,6 +39,7 @@ public abstract class SelectorProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static SelectorProvider loadProviderByJar() {
         for (SelectorProvider provider : ServiceLoader.load(SelectorProvider.class)) {
             return provider;
@@ -64,12 +66,12 @@ public abstract class SelectorProvider {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.799 -0400", hash_original_method = "1567929400994F6BBA42155A37789D93", hash_generated_method = "22004705B61A8A3BCD9E82F94AD21AC5")
     public Channel inheritedChannel() throws IOException {
-        Channel varB4EAC82CA7396A68D541C85D26508E83_2004112928 = null; //Variable for return #1
+        Channel varB4EAC82CA7396A68D541C85D26508E83_2004112928 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2004112928 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_2004112928.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2004112928.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2004112928;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     

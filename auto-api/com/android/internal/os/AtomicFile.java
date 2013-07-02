@@ -1,11 +1,11 @@
 package com.android.internal.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.FileUtils;
 import android.util.Log;
@@ -27,26 +27,27 @@ public class AtomicFile {
     public  AtomicFile(File baseName) {
         mBaseName = baseName;
         mBackupName = new File(baseName.getPath() + ".bak");
-        // ---------- Original Method ----------
-        //mBaseName = baseName;
-        //mBackupName = new File(baseName.getPath() + ".bak");
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.457 -0400", hash_original_method = "9A558AA4F639B650B9F7EAEB27AD7615", hash_generated_method = "C3D2ACEF9417A7EE9EA8A01C417C090B")
     public File getBaseFile() {
-        File varB4EAC82CA7396A68D541C85D26508E83_1648011473 = null; //Variable for return #1
+        File varB4EAC82CA7396A68D541C85D26508E83_1648011473 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1648011473 = mBaseName;
-        varB4EAC82CA7396A68D541C85D26508E83_1648011473.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1648011473.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1648011473;
-        // ---------- Original Method ----------
-        //return mBaseName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.458 -0400", hash_original_method = "3A4012A9534B3FE136043C6A101CE434", hash_generated_method = "E371241176FBA23816080CB3FE41A7C3")
     public FileOutputStream startWrite() throws IOException {
-        FileOutputStream varB4EAC82CA7396A68D541C85D26508E83_829117247 = null; //Variable for return #1
+        FileOutputStream varB4EAC82CA7396A68D541C85D26508E83_829117247 = null; 
         {
             boolean var1323D5E0F3BF0FA81A304BD4896667A7_175736476 = (mBaseName.exists());
             {
@@ -55,19 +56,19 @@ public class AtomicFile {
                     {
                         {
                             boolean varCCE4FE125A8CE4C392A8A729DA52A607_1477078295 = (!mBaseName.renameTo(mBackupName));
-                        } //End collapsed parenthetic
-                    } //End block
+                        } 
+                    } 
                     {
                         mBaseName.delete();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         FileOutputStream str = null;
         try 
         {
             str = new FileOutputStream(mBaseName);
-        } //End block
+        } 
         catch (FileNotFoundException e)
         {
             File parent = mBaseName.getParentFile();
@@ -75,8 +76,8 @@ public class AtomicFile {
                 boolean var59EAC8754CECCC6B5E5BC1C021900B45_1749048260 = (!parent.mkdir());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("Couldn't create directory " + mBaseName);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             FileUtils.setPermissions(
                 parent.getPath(),
                 FileUtils.S_IRWXU|FileUtils.S_IRWXG|FileUtils.S_IXOTH,
@@ -84,20 +85,21 @@ public class AtomicFile {
             try 
             {
                 str = new FileOutputStream(mBaseName);
-            } //End block
+            } 
             catch (FileNotFoundException e2)
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("Couldn't create " + mBaseName);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_829117247 = str;
-        varB4EAC82CA7396A68D541C85D26508E83_829117247.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_829117247.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_829117247;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.459 -0400", hash_original_method = "D04158B1AAD606E61A919B5845F356D0", hash_generated_method = "8C401A23E3044EC84AB14A912731A68D")
     public void finishWrite(FileOutputStream str) {
         {
@@ -106,24 +108,25 @@ public class AtomicFile {
             {
                 str.close();
                 mBackupName.delete();
-            } //End block
+            } 
             catch (IOException e)
             { }
-        } //End block
+        } 
         addTaint(str.getTaint());
-        // ---------- Original Method ----------
-        //if (str != null) {
-            //FileUtils.sync(str);
-            //try {
-                //str.close();
-                //mBackupName.delete();
-            //} catch (IOException e) {
-                //Log.w("AtomicFile", "finishWrite: Got exception:", e);
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.460 -0400", hash_original_method = "4F4EB111C51C134B2301DB792D42BE44", hash_generated_method = "83BCB63F187269805C337B0BDE579DE5")
     public void failWrite(FileOutputStream str) {
         {
@@ -133,47 +136,49 @@ public class AtomicFile {
                 str.close();
                 mBaseName.delete();
                 mBackupName.renameTo(mBaseName);
-            } //End block
+            } 
             catch (IOException e)
             { }
-        } //End block
+        } 
         addTaint(str.getTaint());
-        // ---------- Original Method ----------
-        //if (str != null) {
-            //FileUtils.sync(str);
-            //try {
-                //str.close();
-                //mBaseName.delete();
-                //mBackupName.renameTo(mBaseName);
-            //} catch (IOException e) {
-                //Log.w("AtomicFile", "failWrite: Got exception:", e);
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.461 -0400", hash_original_method = "9D6541EF95DD6CE6D6599F106C94D734", hash_generated_method = "57681D801F020EBB1C39B29D4575EC8A")
     public FileOutputStream openAppend() throws IOException {
-        FileOutputStream varB4EAC82CA7396A68D541C85D26508E83_562640381 = null; //Variable for return #1
+        FileOutputStream varB4EAC82CA7396A68D541C85D26508E83_562640381 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_562640381 = new FileOutputStream(mBaseName, true);
-        } //End block
+        } 
         catch (FileNotFoundException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Couldn't append " + mBaseName);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_562640381.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_562640381.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_562640381;
-        // ---------- Original Method ----------
-        //try {
-            //return new FileOutputStream(mBaseName, true);
-        //} catch (FileNotFoundException e) {
-            //throw new IOException("Couldn't append " + mBaseName);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.462 -0400", hash_original_method = "057A1C42B6EC5037516E78678BBEEE23", hash_generated_method = "1FC7465D04B740FF5F7D171C3913BF51")
     public void truncate() throws IOException {
         try 
@@ -181,47 +186,49 @@ public class AtomicFile {
             FileOutputStream fos = new FileOutputStream(mBaseName);
             FileUtils.sync(fos);
             fos.close();
-        } //End block
+        } 
         catch (FileNotFoundException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Couldn't append " + mBaseName);
-        } //End block
+        } 
         catch (IOException e)
         { }
-        // ---------- Original Method ----------
-        //try {
-            //FileOutputStream fos = new FileOutputStream(mBaseName);
-            //FileUtils.sync(fos);
-            //fos.close();
-        //} catch (FileNotFoundException e) {
-            //throw new IOException("Couldn't append " + mBaseName);
-        //} catch (IOException e) {
-        //}
+        
+        
+            
+            
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.463 -0400", hash_original_method = "1A78B3BB099030EABAF4D8DEC5E5F129", hash_generated_method = "4C928B7544D31ECE3BFC1A029D77BB16")
     public FileInputStream openRead() throws FileNotFoundException {
-        FileInputStream varB4EAC82CA7396A68D541C85D26508E83_1730510810 = null; //Variable for return #1
+        FileInputStream varB4EAC82CA7396A68D541C85D26508E83_1730510810 = null; 
         {
             boolean varCEF6CEE2C4C63504BA214A7A02CF53A4_1501755009 = (mBackupName.exists());
             {
                 mBaseName.delete();
                 mBackupName.renameTo(mBaseName);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1730510810 = new FileInputStream(mBaseName);
-        varB4EAC82CA7396A68D541C85D26508E83_1730510810.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1730510810.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1730510810;
-        // ---------- Original Method ----------
-        //if (mBackupName.exists()) {
-            //mBaseName.delete();
-            //mBackupName.renameTo(mBaseName);
-        //}
-        //return new FileInputStream(mBaseName);
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.463 -0400", hash_original_method = "69475477B3077359758F883E80DC53D4", hash_generated_method = "E977B34A29CD2E48D013976F9E058FD0")
     public byte[] readFully() throws IOException {
         FileInputStream stream = openRead();
@@ -238,37 +245,37 @@ public class AtomicFile {
                     byte[] newData = new byte[pos+avail];
                     System.arraycopy(data, 0, newData, 0, pos);
                     data = newData;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             stream.close();
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1614693247 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1614693247;
-        // ---------- Original Method ----------
-        //FileInputStream stream = openRead();
-        //try {
-            //int pos = 0;
-            //int avail = stream.available();
-            //byte[] data = new byte[avail];
-            //while (true) {
-                //int amt = stream.read(data, pos, data.length-pos);
-                //if (amt <= 0) {
-                    //return data;
-                //}
-                //pos += amt;
-                //avail = stream.available();
-                //if (avail > data.length-pos) {
-                    //byte[] newData = new byte[pos+avail];
-                    //System.arraycopy(data, 0, newData, 0, pos);
-                    //data = newData;
-                //}
-            //}
-        //} finally {
-            //stream.close();
-        //}
+        
+        
+        
+            
+            
+            
+            
+                
+                
+                    
+                
+                
+                
+                
+                    
+                    
+                    
+                
+            
+        
+            
+        
     }
 
     

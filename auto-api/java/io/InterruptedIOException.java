@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class InterruptedIOException extends IOException {
@@ -15,7 +15,7 @@ public class InterruptedIOException extends IOException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.106 -0400", hash_original_method = "BB9DACD07ED93D41347C3772C10021CB", hash_generated_method = "83F36F7416CDB5F5500CC88912367489")
     public  InterruptedIOException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,7 +23,7 @@ public class InterruptedIOException extends IOException {
     public  InterruptedIOException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,7 +32,7 @@ public class InterruptedIOException extends IOException {
         super(detailMessage, cause);
         addTaint(detailMessage.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

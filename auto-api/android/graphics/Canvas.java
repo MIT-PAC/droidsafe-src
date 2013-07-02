@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.text.GraphicsOperations;
 import android.text.SpannableString;
@@ -40,9 +40,9 @@ public class Canvas {
     public  Canvas() {
         mNativeCanvas = initRaster(0);
         mFinalizer = new CanvasFinalizer(mNativeCanvas);
-        // ---------- Original Method ----------
-        //mNativeCanvas = initRaster(0);
-        //mFinalizer = new CanvasFinalizer(mNativeCanvas);
+        
+        
+        
     }
 
     
@@ -53,23 +53,23 @@ public class Canvas {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                             "Immutable bitmap passed to Canvas constructor");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         throwIfRecycled(bitmap);
         mNativeCanvas = initRaster(bitmap.ni());
         mFinalizer = new CanvasFinalizer(mNativeCanvas);
         mBitmap = bitmap;
         mDensity = bitmap.mDensity;
-        // ---------- Original Method ----------
-        //if (!bitmap.isMutable()) {
-            //throw new IllegalStateException(
-                            //"Immutable bitmap passed to Canvas constructor");
-        //}
-        //throwIfRecycled(bitmap);
-        //mNativeCanvas = initRaster(bitmap.ni());
-        //mFinalizer = new CanvasFinalizer(mNativeCanvas);
-        //mBitmap = bitmap;
-        //mDensity = bitmap.mDensity;
+        
+        
+            
+                            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -77,29 +77,29 @@ public class Canvas {
       Canvas(int nativeCanvas) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         mNativeCanvas = nativeCanvas;
         mFinalizer = new CanvasFinalizer(nativeCanvas);
         mDensity = Bitmap.getDefaultDensity();
-        // ---------- Original Method ----------
-        //if (nativeCanvas == 0) {
-            //throw new IllegalStateException();
-        //}
-        //mNativeCanvas = nativeCanvas;
-        //mFinalizer = new CanvasFinalizer(nativeCanvas);
-        //mDensity = Bitmap.getDefaultDensity();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.394 -0400", hash_original_method = "B940DF21824B9124E6B753106E553281", hash_generated_method = "DC8F9EA6BF06B78E305E4FB1C669B569")
     @Deprecated
     protected GL getGL() {
-        GL varB4EAC82CA7396A68D541C85D26508E83_691736971 = null; //Variable for return #1
+        GL varB4EAC82CA7396A68D541C85D26508E83_691736971 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_691736971 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_691736971.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_691736971.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_691736971;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -107,48 +107,49 @@ public class Canvas {
     public boolean isHardwareAccelerated() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_576585519 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_576585519;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.395 -0400", hash_original_method = "F6F982BDFE8AA5C0E01EE9F2D9165328", hash_generated_method = "7EF3D463C1CBEC232901E71C55712D05")
     public void setBitmap(Bitmap bitmap) {
         {
             boolean varBDA84146B1D9E3F7F12351B38C986FB8_1826350586 = (isHardwareAccelerated());
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Can't set a bitmap device on a GL canvas");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int pointer = 0;
         {
             {
                 boolean varF12BF886E543DD07B8FC1D7A55B10614_1966168439 = (!bitmap.isMutable());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             throwIfRecycled(bitmap);
             mDensity = bitmap.mDensity;
             pointer = bitmap.ni();
-        } //End block
+        } 
         native_setBitmap(mNativeCanvas, pointer);
         mBitmap = bitmap;
-        // ---------- Original Method ----------
-        //if (isHardwareAccelerated()) {
-            //throw new RuntimeException("Can't set a bitmap device on a GL canvas");
-        //}
-        //int pointer = 0;
-        //if (bitmap != null) {
-            //if (!bitmap.isMutable()) {
-                //throw new IllegalStateException();
-            //}
-            //throwIfRecycled(bitmap);
-            //mDensity = bitmap.mDensity;
-            //pointer = bitmap.ni();
-        //}
-        //native_setBitmap(mNativeCanvas, pointer);
-        //mBitmap = bitmap;
+        
+        
+            
+        
+        
+        
+            
+                
+            
+            
+            
+            
+        
+        
+        
     }
 
     
@@ -156,7 +157,7 @@ public class Canvas {
     public void setViewport(int width, int height) {
         addTaint(width);
         addTaint(height);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -185,30 +186,31 @@ public class Canvas {
     public int getDensity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2043421633 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2043421633;
-        // ---------- Original Method ----------
-        //return mDensity;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.398 -0400", hash_original_method = "67C9034FA61967648F2458A8FB5F781D", hash_generated_method = "688E20CFFBAB10F58473DF356BBCFE25")
     public void setDensity(int density) {
         {
             mBitmap.setDensity(density);
-        } //End block
+        } 
         mDensity = density;
-        // ---------- Original Method ----------
-        //if (mBitmap != null) {
-            //mBitmap.setDensity(density);
-        //}
-        //mDensity = density;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.398 -0400", hash_original_method = "097B83D968163B69D9FD944A715444E1", hash_generated_method = "A6B4CCAC527ADCBCA2970ADC88659071")
     public void setScreenDensity(int density) {
         mScreenDensity = density;
-        // ---------- Original Method ----------
-        //mScreenDensity = density;
+        
+        
     }
 
     
@@ -216,8 +218,8 @@ public class Canvas {
     public int getMaximumBitmapWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2073249056 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2073249056;
-        // ---------- Original Method ----------
-        //return MAXMIMUM_BITMAP_SIZE;
+        
+        
     }
 
     
@@ -225,8 +227,8 @@ public class Canvas {
     public int getMaximumBitmapHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1194635305 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1194635305;
-        // ---------- Original Method ----------
-        //return MAXMIMUM_BITMAP_SIZE;
+        
+        
     }
 
     
@@ -244,29 +246,31 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.400 -0400", hash_original_method = "D3E38B54874BE956E1980D322B5BE510", hash_generated_method = "C3F6A2E86A4AC8E9C57855D2D208F0D9")
     public int saveLayer(RectF bounds, Paint paint, int saveFlags) {
         int varA5CBFDE30BD9450F18C791C44EFCC5C7_1036711684 = (native_saveLayer(mNativeCanvas, bounds,
                                 paint != null ? paint.mNativePaint : 0,
-                                saveFlags)); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                                saveFlags)); 
         addTaint(bounds.getTaint());
         addTaint(paint.getTaint());
         addTaint(saveFlags);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_654070704 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_654070704;
-        // ---------- Original Method ----------
-        //return native_saveLayer(mNativeCanvas, bounds,
-                                //paint != null ? paint.mNativePaint : 0,
-                                //saveFlags);
+        
+        
+                                
+                                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.401 -0400", hash_original_method = "E5CA8AFF181BF9AD7711CB91FDA3487A", hash_generated_method = "B4DB1B6B6BDFBE0554983BA9A35B37B9")
     public int saveLayer(float left, float top, float right, float bottom,
                          Paint paint, int saveFlags) {
         int var2F61FD39EB631471B29C425EFBBF4F51_451689489 = (native_saveLayer(mNativeCanvas, left, top, right, bottom,
                                 paint != null ? paint.mNativePaint : 0,
-                                saveFlags)); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                                saveFlags)); 
         addTaint(left);
         addTaint(top);
         addTaint(right);
@@ -275,13 +279,14 @@ public class Canvas {
         addTaint(saveFlags);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1013157329 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1013157329;
-        // ---------- Original Method ----------
-        //return native_saveLayer(mNativeCanvas, left, top, right, bottom,
-                                //paint != null ? paint.mNativePaint : 0,
-                                //saveFlags);
+        
+        
+                                
+                                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.401 -0400", hash_original_method = "11712C48B70E4A29EC050275E8757D6B", hash_generated_method = "8A85EA4D576C0CE4DC503F6314888582")
     public int saveLayerAlpha(RectF bounds, int alpha, int saveFlags) {
         alpha = Math.min(255, Math.max(0, alpha));
@@ -291,12 +296,13 @@ public class Canvas {
         addTaint(saveFlags);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_134661578 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_134661578;
-        // ---------- Original Method ----------
-        //alpha = Math.min(255, Math.max(0, alpha));
-        //return native_saveLayerAlpha(mNativeCanvas, bounds, alpha, saveFlags);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.402 -0400", hash_original_method = "1E17DC2ECF868A450BC9B6F62927FD6A", hash_generated_method = "863E2EBFC5C5F3337AFECFFE221F2EA1")
     public int saveLayerAlpha(float left, float top, float right, float bottom,
                               int alpha, int saveFlags) {
@@ -310,9 +316,9 @@ public class Canvas {
         addTaint(saveFlags);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1274641205 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1274641205;
-        // ---------- Original Method ----------
-        //return native_saveLayerAlpha(mNativeCanvas, left, top, right, bottom,
-                                     //alpha, saveFlags);
+        
+        
+                                     
     }
 
     
@@ -352,10 +358,10 @@ public class Canvas {
         addTaint(sy);
         addTaint(px);
         addTaint(py);
-        // ---------- Original Method ----------
-        //translate(px, py);
-        //scale(sx, sy);
-        //translate(-px, -py);
+        
+        
+        
+        
     }
 
     
@@ -372,10 +378,10 @@ public class Canvas {
         addTaint(degrees);
         addTaint(px);
         addTaint(py);
-        // ---------- Original Method ----------
-        //translate(px, py);
-        //rotate(degrees);
-        //translate(-px, -py);
+        
+        
+        
+        
     }
 
     
@@ -384,47 +390,50 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.406 -0400", hash_original_method = "92F93C7D2AC41CA3F3A5613FB52C686A", hash_generated_method = "EB597E9BD6D5D83E7BAECB18C7BD8078")
     public void concat(Matrix matrix) {
         native_concat(mNativeCanvas, matrix.native_instance);
         addTaint(matrix.getTaint());
-        // ---------- Original Method ----------
-        //native_concat(mNativeCanvas, matrix.native_instance);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.407 -0400", hash_original_method = "ABA89A91C9E394A5196A87FF36F2A069", hash_generated_method = "CF91DEE0319445327BD8855B7FCA1DE8")
     public void setMatrix(Matrix matrix) {
         native_setMatrix(mNativeCanvas,
                          matrix == null ? 0 : matrix.native_instance);
         addTaint(matrix.getTaint());
-        // ---------- Original Method ----------
-        //native_setMatrix(mNativeCanvas,
-                         //matrix == null ? 0 : matrix.native_instance);
+        
+        
+                         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.408 -0400", hash_original_method = "43D0B837CD75E40B4AB1C87B7D03A6CC", hash_generated_method = "F52DA59BCA1B56749EF0BBA5C09C6EC4")
     public void getMatrix(Matrix ctm) {
         native_getCTM(mNativeCanvas, ctm.native_instance);
         addTaint(ctm.getTaint());
-        // ---------- Original Method ----------
-        //native_getCTM(mNativeCanvas, ctm.native_instance);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.409 -0400", hash_original_method = "677F0589CC9DCD49ED4AD9753284FD1D", hash_generated_method = "4E706BC9D49D1A8219B31D99322FCD7F")
     public final Matrix getMatrix() {
-        Matrix varB4EAC82CA7396A68D541C85D26508E83_1028301669 = null; //Variable for return #1
+        Matrix varB4EAC82CA7396A68D541C85D26508E83_1028301669 = null; 
         Matrix m = new Matrix();
         getMatrix(m);
         varB4EAC82CA7396A68D541C85D26508E83_1028301669 = m;
-        varB4EAC82CA7396A68D541C85D26508E83_1028301669.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1028301669.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1028301669;
-        // ---------- Original Method ----------
-        //Matrix m = new Matrix();
-        //getMatrix(m);
-        //return m;
+        
+        
+        
+        
     }
 
     
@@ -437,10 +446,10 @@ public class Canvas {
         addTaint(op.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_253547742 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_253547742;
-        // ---------- Original Method ----------
-        //return native_clipRect(mNativeCanvas,
-                               //rect.left, rect.top, rect.right, rect.bottom,
-                               //op.nativeInt);
+        
+        
+                               
+                               
     }
 
     
@@ -453,10 +462,10 @@ public class Canvas {
         addTaint(op.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1403459682 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1403459682;
-        // ---------- Original Method ----------
-        //return native_clipRect(mNativeCanvas,
-                               //rect.left, rect.top, rect.right, rect.bottom,
-                               //op.nativeInt);
+        
+        
+                               
+                               
     }
 
     
@@ -486,9 +495,9 @@ public class Canvas {
         addTaint(op.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2010454854 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2010454854;
-        // ---------- Original Method ----------
-        //return native_clipRect(mNativeCanvas, left, top, right, bottom,
-                               //op.nativeInt);
+        
+        
+                               
     }
 
     
@@ -515,19 +524,20 @@ public class Canvas {
         addTaint(op.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1960607858 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1960607858;
-        // ---------- Original Method ----------
-        //return native_clipPath(mNativeCanvas, path.ni(), op.nativeInt);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.413 -0400", hash_original_method = "1145BB7612B8DCB4209865A3916D22D3", hash_generated_method = "8E40F9FE208F70DAC96E415263AE50B2")
     public boolean clipPath(Path path) {
         boolean var5668FEC2CC06DA8D3911368F8A48CE68_2070400197 = (clipPath(path, Region.Op.INTERSECT));
         addTaint(path.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1328910579 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1328910579;
-        // ---------- Original Method ----------
-        //return clipPath(path, Region.Op.INTERSECT);
+        
+        
     }
 
     
@@ -538,51 +548,54 @@ public class Canvas {
         addTaint(op.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1068887250 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1068887250;
-        // ---------- Original Method ----------
-        //return native_clipRegion(mNativeCanvas, region.ni(), op.nativeInt);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.414 -0400", hash_original_method = "DB214CB3316FBBF79B84FF393892AF1F", hash_generated_method = "112B20345141DACB7E17A70D008538A8")
     public boolean clipRegion(Region region) {
         boolean varEC420F7490712C49934D9178B28B2A4A_1481674041 = (clipRegion(region, Region.Op.INTERSECT));
         addTaint(region.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_727213464 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_727213464;
-        // ---------- Original Method ----------
-        //return clipRegion(region, Region.Op.INTERSECT);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.415 -0400", hash_original_method = "7CFD876AAFB864AD7FF69DF25AA89EAD", hash_generated_method = "242E8FE86FE0E6CF35936FEE144F3C4A")
     public DrawFilter getDrawFilter() {
-        DrawFilter varB4EAC82CA7396A68D541C85D26508E83_1136196968 = null; //Variable for return #1
+        DrawFilter varB4EAC82CA7396A68D541C85D26508E83_1136196968 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1136196968 = mDrawFilter;
-        varB4EAC82CA7396A68D541C85D26508E83_1136196968.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1136196968.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1136196968;
-        // ---------- Original Method ----------
-        //return mDrawFilter;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.415 -0400", hash_original_method = "68F6BB80C574F9A67A1BF360B92238CB", hash_generated_method = "0ED175FA6EF6EE8A5D8D159CB6C0F262")
     public void setDrawFilter(DrawFilter filter) {
         int nativeFilter = 0;
         {
             nativeFilter = filter.mNativeInt;
-        } //End block
+        } 
         mDrawFilter = filter;
         nativeSetDrawFilter(mNativeCanvas, nativeFilter);
-        // ---------- Original Method ----------
-        //int nativeFilter = 0;
-        //if (filter != null) {
-            //nativeFilter = filter.mNativeInt;
-        //}
-        //mDrawFilter = filter;
-        //nativeSetDrawFilter(mNativeCanvas, nativeFilter);
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.416 -0400", hash_original_method = "6593DA2291538241F61FD613E7FE6D5B", hash_generated_method = "CE156856027C7E49DB8EE1FECFC3D1B9")
     public boolean quickReject(RectF rect, EdgeType type) {
         boolean var429A74CF4AF210076B3239D74D69786D_796703509 = (native_quickReject(mNativeCanvas, rect, type.nativeInt));
@@ -590,11 +603,12 @@ public class Canvas {
         addTaint(type.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1891643593 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1891643593;
-        // ---------- Original Method ----------
-        //return native_quickReject(mNativeCanvas, rect, type.nativeInt);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.417 -0400", hash_original_method = "1B5471D21BEA46C8ED1B36EA429F046B", hash_generated_method = "CF9E6D6E958A2FFB81C648DBA2AE990D")
     public boolean quickReject(Path path, EdgeType type) {
         boolean varB3A55B701382D522818E598BFA909059_1070230594 = (native_quickReject(mNativeCanvas, path.ni(), type.nativeInt));
@@ -602,11 +616,12 @@ public class Canvas {
         addTaint(type.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1391280473 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1391280473;
-        // ---------- Original Method ----------
-        //return native_quickReject(mNativeCanvas, path.ni(), type.nativeInt);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.418 -0400", hash_original_method = "A8D2AD12ACC5E410C736D30130C20B13", hash_generated_method = "1A4F8192AB0B88A83B48B5D3E3FEE556")
     public boolean quickReject(float left, float top, float right, float bottom,
                                EdgeType type) {
@@ -619,49 +634,52 @@ public class Canvas {
         addTaint(type.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_663354163 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_663354163;
-        // ---------- Original Method ----------
-        //return native_quickReject(mNativeCanvas, left, top, right, bottom,
-                                  //type.nativeInt);
+        
+        
+                                  
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.418 -0400", hash_original_method = "C4C8EDF474744387A03BAF2FCA9EC7E1", hash_generated_method = "FF939A0CE6F002687C89813C00691846")
     public boolean getClipBounds(Rect bounds) {
         boolean var817922B6BDA738AD08E140FF68D83598_1924503741 = (native_getClipBounds(mNativeCanvas, bounds));
         addTaint(bounds.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2134879590 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2134879590;
-        // ---------- Original Method ----------
-        //return native_getClipBounds(mNativeCanvas, bounds);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.419 -0400", hash_original_method = "081EA481AF3998560C2A7BDAF7DC2D73", hash_generated_method = "5B66DAA3CC9DFC3F06AE4A8A2138E1BD")
     public final Rect getClipBounds() {
-        Rect varB4EAC82CA7396A68D541C85D26508E83_1773606019 = null; //Variable for return #1
+        Rect varB4EAC82CA7396A68D541C85D26508E83_1773606019 = null; 
         Rect r = new Rect();
         getClipBounds(r);
         varB4EAC82CA7396A68D541C85D26508E83_1773606019 = r;
-        varB4EAC82CA7396A68D541C85D26508E83_1773606019.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1773606019.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1773606019;
-        // ---------- Original Method ----------
-        //Rect r = new Rect();
-        //getClipBounds(r);
-        //return r;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.419 -0400", hash_original_method = "512FC5029F1C2BD4A7A7DEBEE6E3C841", hash_generated_method = "E801416B62B290E45235BE390EC13C43")
     public void drawRGB(int r, int g, int b) {
         native_drawRGB(mNativeCanvas, r, g, b);
         addTaint(r);
         addTaint(g);
         addTaint(b);
-        // ---------- Original Method ----------
-        //native_drawRGB(mNativeCanvas, r, g, b);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.420 -0400", hash_original_method = "9BFD91E842A11577904B0CB6F2A3F2B4", hash_generated_method = "464285DDC9CEF38D91810DA38F154B33")
     public void drawARGB(int a, int r, int g, int b) {
         native_drawARGB(mNativeCanvas, a, r, g, b);
@@ -669,17 +687,18 @@ public class Canvas {
         addTaint(r);
         addTaint(g);
         addTaint(b);
-        // ---------- Original Method ----------
-        //native_drawARGB(mNativeCanvas, a, r, g, b);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.420 -0400", hash_original_method = "BF5E846D1EF3BCCEA205827104DDB3E8", hash_generated_method = "993DC51DCBD7D29AF03774D4A8401A39")
     public void drawColor(int color) {
         native_drawColor(mNativeCanvas, color);
         addTaint(color);
-        // ---------- Original Method ----------
-        //native_drawColor(mNativeCanvas, color);
+        
+        
     }
 
     
@@ -688,17 +707,18 @@ public class Canvas {
         native_drawColor(mNativeCanvas, color, mode.nativeInt);
         addTaint(color);
         addTaint(mode.getTaint());
-        // ---------- Original Method ----------
-        //native_drawColor(mNativeCanvas, color, mode.nativeInt);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.421 -0400", hash_original_method = "774CA3D90C36917005A085F0E322036A", hash_generated_method = "960D19FE8C311E69F5CF277E4E308A97")
     public void drawPaint(Paint paint) {
         native_drawPaint(mNativeCanvas, paint.mNativePaint);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //native_drawPaint(mNativeCanvas, paint.mNativePaint);
+        
+        
     }
 
     
@@ -708,13 +728,14 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.422 -0400", hash_original_method = "929DA853C72DCA36C1C2D5AEB0F0EEC1", hash_generated_method = "FDDFB451709B85185722E880B08A03DE")
     public void drawPoints(float[] pts, Paint paint) {
         drawPoints(pts, 0, pts.length, paint);
         addTaint(pts[0]);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //drawPoints(pts, 0, pts.length, paint);
+        
+        
     }
 
     
@@ -723,6 +744,7 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.422 -0400", hash_original_method = "B6DC8903FDEE452D685FA44296B398E4", hash_generated_method = "5167A8AEE4FCFB8B38C2049C02EDBE03")
     public void drawLine(float startX, float startY, float stopX, float stopY,
                          Paint paint) {
@@ -733,9 +755,9 @@ public class Canvas {
         addTaint(stopX);
         addTaint(stopY);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //native_drawLine(mNativeCanvas, startX, startY, stopX, stopY,
-                        //paint.mNativePaint);
+        
+        
+                        
     }
 
     
@@ -745,36 +767,40 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.423 -0400", hash_original_method = "C2DF9F5B70F03E16002905BD3365AB2E", hash_generated_method = "948CC0AF99C144CA637D86455027526E")
     public void drawLines(float[] pts, Paint paint) {
         drawLines(pts, 0, pts.length, paint);
         addTaint(pts[0]);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //drawLines(pts, 0, pts.length, paint);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.423 -0400", hash_original_method = "890D392C9C1E85BE5BBE5EB943FF6481", hash_generated_method = "75B40F341DBAABF3C79C79D828A9036B")
     public void drawRect(RectF rect, Paint paint) {
         native_drawRect(mNativeCanvas, rect, paint.mNativePaint);
         addTaint(rect.getTaint());
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //native_drawRect(mNativeCanvas, rect, paint.mNativePaint);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.424 -0400", hash_original_method = "9CB801DBEAF645326E64FD8725588653", hash_generated_method = "FA5E813207BF7E034D006B42B99B9EDA")
     public void drawRect(Rect r, Paint paint) {
         drawRect(r.left, r.top, r.right, r.bottom, paint);
         addTaint(r.getTaint());
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //drawRect(r.left, r.top, r.right, r.bottom, paint);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.424 -0400", hash_original_method = "CDE86729C0DE5B687E9F3D6C62C89CBA", hash_generated_method = "F657A8C85B064D648BFAC6732A24C0B2")
     public void drawRect(float left, float top, float right, float bottom,
                          Paint paint) {
@@ -785,28 +811,30 @@ public class Canvas {
         addTaint(right);
         addTaint(bottom);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //native_drawRect(mNativeCanvas, left, top, right, bottom,
-                        //paint.mNativePaint);
+        
+        
+                        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.425 -0400", hash_original_method = "68242662823845D3936295A7CE4E7BEF", hash_generated_method = "DBDA9536099B9A60ABBD934ABA689F9F")
     public void drawOval(RectF oval, Paint paint) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         native_drawOval(mNativeCanvas, oval, paint.mNativePaint);
         addTaint(oval.getTaint());
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if (oval == null) {
-            //throw new NullPointerException();
-        //}
-        //native_drawOval(mNativeCanvas, oval, paint.mNativePaint);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.426 -0400", hash_original_method = "6EC335AEB28EA1E608617532103E031D", hash_generated_method = "81D42163DBEDCA820B9261D1C5C4D7CD")
     public void drawCircle(float cx, float cy, float radius, Paint paint) {
         native_drawCircle(mNativeCanvas, cx, cy, radius,
@@ -815,18 +843,19 @@ public class Canvas {
         addTaint(cy);
         addTaint(radius);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //native_drawCircle(mNativeCanvas, cx, cy, radius,
-                          //paint.mNativePaint);
+        
+        
+                          
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.427 -0400", hash_original_method = "5411F007DFA413B9921CB5C131E7CB3B", hash_generated_method = "9387B0579C31E01BF8D0DBA04CB8C48B")
     public void drawArc(RectF oval, float startAngle, float sweepAngle,
                         boolean useCenter, Paint paint) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         native_drawArc(mNativeCanvas, oval, startAngle, sweepAngle,
                        useCenter, paint.mNativePaint);
         addTaint(oval.getTaint());
@@ -834,45 +863,48 @@ public class Canvas {
         addTaint(sweepAngle);
         addTaint(useCenter);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if (oval == null) {
-            //throw new NullPointerException();
-        //}
-        //native_drawArc(mNativeCanvas, oval, startAngle, sweepAngle,
-                       //useCenter, paint.mNativePaint);
+        
+        
+            
+        
+        
+                       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.428 -0400", hash_original_method = "41C1A121517CD12760C521BBD9AF1967", hash_generated_method = "9A06BD928854EDFCC40464703ADA1B81")
     public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         native_drawRoundRect(mNativeCanvas, rect, rx, ry,
                              paint.mNativePaint);
         addTaint(rect.getTaint());
         addTaint(rx);
         addTaint(ry);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if (rect == null) {
-            //throw new NullPointerException();
-        //}
-        //native_drawRoundRect(mNativeCanvas, rect, rx, ry,
-                             //paint.mNativePaint);
+        
+        
+            
+        
+        
+                             
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.428 -0400", hash_original_method = "0771B06A5DB79DCDA48BD1ADBD491833", hash_generated_method = "C3D8CE8FA013DB27B5FC5BFA5BD1AD44")
     public void drawPath(Path path, Paint paint) {
         native_drawPath(mNativeCanvas, path.ni(), paint.mNativePaint);
         addTaint(path.getTaint());
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //native_drawPath(mNativeCanvas, path.ni(), paint.mNativePaint);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void throwIfRecycled(Bitmap bitmap) {
         if (bitmap.isRecycled()) {
             throw new RuntimeException(
@@ -887,10 +919,11 @@ public class Canvas {
         addTaint(chunks[0]);
         addTaint(dst.getTaint());
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.429 -0400", hash_original_method = "31B292C5F0F5731C1C9071C226236EDA", hash_generated_method = "38CFCE49838BBA233C940D18EECE5BFF")
     public void drawBitmap(Bitmap bitmap, float left, float top, Paint paint) {
         throwIfRecycled(bitmap);
@@ -901,19 +934,20 @@ public class Canvas {
         addTaint(left);
         addTaint(top);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //throwIfRecycled(bitmap);
-        //native_drawBitmap(mNativeCanvas, bitmap.ni(), left, top,
-                //paint != null ? paint.mNativePaint : 0, mDensity, mScreenDensity,
-                //bitmap.mDensity);
+        
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.430 -0400", hash_original_method = "C948472D99C8DCD49BAB1292EF9A789B", hash_generated_method = "A11FF561B30617AA57B9B653E9E03986")
     public void drawBitmap(Bitmap bitmap, Rect src, RectF dst, Paint paint) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         throwIfRecycled(bitmap);
         native_drawBitmap(mNativeCanvas, bitmap.ni(), src, dst,
                           paint != null ? paint.mNativePaint : 0,
@@ -922,22 +956,23 @@ public class Canvas {
         addTaint(src.getTaint());
         addTaint(dst.getTaint());
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if (dst == null) {
-            //throw new NullPointerException();
-        //}
-        //throwIfRecycled(bitmap);
-        //native_drawBitmap(mNativeCanvas, bitmap.ni(), src, dst,
-                          //paint != null ? paint.mNativePaint : 0,
-                          //mScreenDensity, bitmap.mDensity);
+        
+        
+            
+        
+        
+        
+                          
+                          
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.430 -0400", hash_original_method = "841672D97CF75C5F24DD91219B8271EA", hash_generated_method = "7D693BD6299EB63587FDFECFD9B896CF")
     public void drawBitmap(Bitmap bitmap, Rect src, Rect dst, Paint paint) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         throwIfRecycled(bitmap);
         native_drawBitmap(mNativeCanvas, bitmap.ni(), src, dst,
                           paint != null ? paint.mNativePaint : 0,
@@ -946,38 +981,39 @@ public class Canvas {
         addTaint(src.getTaint());
         addTaint(dst.getTaint());
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if (dst == null) {
-            //throw new NullPointerException();
-        //}
-        //throwIfRecycled(bitmap);
-        //native_drawBitmap(mNativeCanvas, bitmap.ni(), src, dst,
-                          //paint != null ? paint.mNativePaint : 0,
-                          //mScreenDensity, bitmap.mDensity);
+        
+        
+            
+        
+        
+        
+                          
+                          
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.431 -0400", hash_original_method = "16007B10D324732000F0755E804F2C6B", hash_generated_method = "436223CE11F1E9B891B5F2BC78089ABD")
     public void drawBitmap(int[] colors, int offset, int stride, float x,
                            float y, int width, int height, boolean hasAlpha,
                            Paint paint) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("width must be >= 0");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("height must be >= 0");
-        } //End block
+        } 
         {
             boolean varE73A6561371F12118506FC78AF1B9D6D_1714636169 = (Math.abs(stride) < width);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("abs(stride) must be >= width");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int lastScanline = offset + (height - 1) * stride;
         int length = colors.length;
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-        } //End block
+        } 
         native_drawBitmap(mNativeCanvas, colors, offset, stride, x, y, width, height, hasAlpha,
                 paint != null ? paint.mNativePaint : 0);
         addTaint(colors[0]);
@@ -989,11 +1025,12 @@ public class Canvas {
         addTaint(height);
         addTaint(hasAlpha);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.432 -0400", hash_original_method = "1DECC82647C03783DFB70A54A4715DCA", hash_generated_method = "44B44EB9CAEE9A0A7DD177556159BEB6")
     public void drawBitmap(int[] colors, int offset, int stride, int x, int y,
                            int width, int height, boolean hasAlpha,
@@ -1009,12 +1046,13 @@ public class Canvas {
         addTaint(height);
         addTaint(hasAlpha);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //drawBitmap(colors, offset, stride, (float)x, (float)y, width, height,
-                   //hasAlpha, paint);
+        
+        
+                   
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.432 -0400", hash_original_method = "EB6FF8B38000E2AA8E5468782EF53260", hash_generated_method = "8D366D90312963AD200241CE0567F9D9")
     public void drawBitmap(Bitmap bitmap, Matrix matrix, Paint paint) {
         nativeDrawBitmapMatrix(mNativeCanvas, bitmap.ni(), matrix.ni(),
@@ -1022,12 +1060,13 @@ public class Canvas {
         addTaint(bitmap.getTaint());
         addTaint(matrix.getTaint());
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //nativeDrawBitmapMatrix(mNativeCanvas, bitmap.ni(), matrix.ni(),
-                //paint != null ? paint.mNativePaint : 0);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static void checkRange(int length, int offset, int count) {
         if ((offset | count) < 0 || offset + count > length) {
             throw new ArrayIndexOutOfBoundsException();
@@ -1035,18 +1074,19 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.433 -0400", hash_original_method = "014BBC0AF3F984A031B4F01243EED110", hash_generated_method = "69CC906EC2351608E93A3209BD8FCF1C")
     public void drawBitmapMesh(Bitmap bitmap, int meshWidth, int meshHeight,
                                float[] verts, int vertOffset,
                                int[] colors, int colorOffset, Paint paint) {
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-        } //End block
+        } 
         int count = (meshWidth + 1) * (meshHeight + 1);
         checkRange(verts.length, vertOffset, count * 2);
         {
             checkRange(colors.length, colorOffset, count);
-        } //End block
+        } 
         nativeDrawBitmapMesh(mNativeCanvas, bitmap.ni(), meshWidth, meshHeight,
                              verts, vertOffset, colors, colorOffset,
                              paint != null ? paint.mNativePaint : 0);
@@ -1058,24 +1098,25 @@ public class Canvas {
         addTaint(colors[0]);
         addTaint(colorOffset);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if ((meshWidth | meshHeight | vertOffset | colorOffset) < 0) {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
-        //if (meshWidth == 0 || meshHeight == 0) {
-            //return;
-        //}
-        //int count = (meshWidth + 1) * (meshHeight + 1);
-        //checkRange(verts.length, vertOffset, count * 2);
-        //if (colors != null) {
-            //checkRange(colors.length, colorOffset, count);
-        //}
-        //nativeDrawBitmapMesh(mNativeCanvas, bitmap.ni(), meshWidth, meshHeight,
-                             //verts, vertOffset, colors, colorOffset,
-                             //paint != null ? paint.mNativePaint : 0);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+                             
+                             
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.433 -0400", hash_original_method = "DF78170F74F7916B8CA044C6FA0E7706", hash_generated_method = "848F7029EE3ED7238974B3B52E79E378")
     public void drawVertices(VertexMode mode, int vertexCount,
                              float[] verts, int vertOffset,
@@ -1086,13 +1127,13 @@ public class Canvas {
         checkRange(verts.length, vertOffset, vertexCount);
         {
             checkRange(texs.length, texOffset, vertexCount);
-        } //End block
+        } 
         {
             checkRange(colors.length, colorOffset, vertexCount / 2);
-        } //End block
+        } 
         {
             checkRange(indices.length, indexOffset, indexCount);
-        } //End block
+        } 
         nativeDrawVertices(mNativeCanvas, mode.nativeInt, vertexCount, verts,
                            vertOffset, texs, texOffset, colors, colorOffset,
                           indices, indexOffset, indexCount, paint.mNativePaint);
@@ -1108,29 +1149,30 @@ public class Canvas {
         addTaint(indexOffset);
         addTaint(indexCount);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //checkRange(verts.length, vertOffset, vertexCount);
-        //if (texs != null) {
-            //checkRange(texs.length, texOffset, vertexCount);
-        //}
-        //if (colors != null) {
-            //checkRange(colors.length, colorOffset, vertexCount / 2);
-        //}
-        //if (indices != null) {
-            //checkRange(indices.length, indexOffset, indexCount);
-        //}
-        //nativeDrawVertices(mNativeCanvas, mode.nativeInt, vertexCount, verts,
-                           //vertOffset, texs, texOffset, colors, colorOffset,
-                          //indices, indexOffset, indexCount, paint.mNativePaint);
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+                           
+                          
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.434 -0400", hash_original_method = "B53D951EA30645908EAA0D773F3CD0B1", hash_generated_method = "4756EE29ECB2745262CFB9BC8B4F7003")
     public void drawText(char[] text, int index, int count, float x, float y,
                          Paint paint) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         native_drawText(mNativeCanvas, text, index, count, x, y, paint.mBidiFlags,
                 paint.mNativePaint);
         addTaint(text[0]);
@@ -1139,16 +1181,17 @@ public class Canvas {
         addTaint(x);
         addTaint(y);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if ((index | count | (index + count) |
-            //(text.length - index - count)) < 0) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //native_drawText(mNativeCanvas, text, index, count, x, y, paint.mBidiFlags,
-                //paint.mNativePaint);
+        
+        
+            
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.435 -0400", hash_original_method = "5AF5477506B1C1EE3856DD0F624B5874", hash_generated_method = "FD5A708E3C2E7608EC5B63B0D061BAD2")
     public void drawText(String text, float x, float y, Paint paint) {
         native_drawText(mNativeCanvas, text, 0, text.length(), x, y, paint.mBidiFlags,
@@ -1157,12 +1200,13 @@ public class Canvas {
         addTaint(x);
         addTaint(y);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //native_drawText(mNativeCanvas, text, 0, text.length(), x, y, paint.mBidiFlags,
-                //paint.mNativePaint);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.435 -0400", hash_original_method = "6829DC946932105C9401F9B35E7B6F88", hash_generated_method = "033AC9C540DAA1962972DE8602CF638A")
     public void drawText(String text, int start, int end, float x, float y,
                          Paint paint) {
@@ -1170,8 +1214,8 @@ public class Canvas {
             boolean var9527A5CDD965760192A60A252272F336_484043910 = ((start | end | (end - start) | (text.length() - end)) < 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         native_drawText(mNativeCanvas, text, start, end, x, y, paint.mBidiFlags,
                 paint.mNativePaint);
         addTaint(text.getTaint());
@@ -1180,73 +1224,75 @@ public class Canvas {
         addTaint(x);
         addTaint(y);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if ((start | end | (end - start) | (text.length() - end)) < 0) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //native_drawText(mNativeCanvas, text, start, end, x, y, paint.mBidiFlags,
-                //paint.mNativePaint);
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.436 -0400", hash_original_method = "6FEFF94D9E21F991F21729F6F5F461A6", hash_generated_method = "4FFF3521B38A8A1F745AA33FAD75FADB")
     public void drawText(CharSequence text, int start, int end, float x,
                          float y, Paint paint) {
         {
             native_drawText(mNativeCanvas, text.toString(), start, end, x, y,
                             paint.mBidiFlags, paint.mNativePaint);
-        } //End block
+        } 
         {
             ((GraphicsOperations) text).drawText(this, start, end, x, y,
                                                      paint);
-        } //End block
+        } 
         {
             char[] buf = TemporaryBuffer.obtain(end - start);
             TextUtils.getChars(text, start, end, buf, 0);
             native_drawText(mNativeCanvas, buf, 0, end - start, x, y,
                     paint.mBidiFlags, paint.mNativePaint);
             TemporaryBuffer.recycle(buf);
-        } //End block
+        } 
         addTaint(text.getTaint());
         addTaint(start);
         addTaint(end);
         addTaint(x);
         addTaint(y);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if (text instanceof String || text instanceof SpannedString ||
-            //text instanceof SpannableString) {
-            //native_drawText(mNativeCanvas, text.toString(), start, end, x, y,
-                            //paint.mBidiFlags, paint.mNativePaint);
-        //} else if (text instanceof GraphicsOperations) {
-            //((GraphicsOperations) text).drawText(this, start, end, x, y,
-                                                     //paint);
-        //} else {
-            //char[] buf = TemporaryBuffer.obtain(end - start);
-            //TextUtils.getChars(text, start, end, buf, 0);
-            //native_drawText(mNativeCanvas, buf, 0, end - start, x, y,
-                    //paint.mBidiFlags, paint.mNativePaint);
-            //TemporaryBuffer.recycle(buf);
-        //}
+        
+        
+            
+            
+                            
+        
+            
+                                                     
+        
+            
+            
+            
+                    
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.437 -0400", hash_original_method = "6EBE295547BE775A36E1A6AF2206E2F5", hash_generated_method = "A8C19B1F3A1B082F176887B89299977E")
     public void drawTextRun(char[] text, int index, int count,
             int contextIndex, int contextCount, float x, float y, int dir,
             Paint paint) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("text is null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("paint is null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("unknown dir: " + dir);
-        } //End block
+        } 
         native_drawTextRun(mNativeCanvas, text, index, count,
                 contextIndex, contextCount, x, y, dir, paint.mNativePaint);
         addTaint(text[0]);
@@ -1258,51 +1304,52 @@ public class Canvas {
         addTaint(y);
         addTaint(dir);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if (text == null) {
-            //throw new NullPointerException("text is null");
-        //}
-        //if (paint == null) {
-            //throw new NullPointerException("paint is null");
-        //}
-        //if ((index | count | text.length - index - count) < 0) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (dir != DIRECTION_LTR && dir != DIRECTION_RTL) {
-            //throw new IllegalArgumentException("unknown dir: " + dir);
-        //}
-        //native_drawTextRun(mNativeCanvas, text, index, count,
-                //contextIndex, contextCount, x, y, dir, paint.mNativePaint);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.439 -0400", hash_original_method = "92F46C968D6DA82FFBC09248C72F0C8C", hash_generated_method = "F086170DA12AC34A0E329D714629C0D2")
     public void drawTextRun(CharSequence text, int start, int end,
             int contextStart, int contextEnd, float x, float y, int dir,
             Paint paint) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("text is null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("paint is null");
-        } //End block
+        } 
         {
             boolean var5121ADA1DFFE288F77E0A77339FFD85F_2139062126 = ((start | end | end - start | text.length() - end) < 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int flags;
         flags = 0;
         flags = 1;
         {
             native_drawTextRun(mNativeCanvas, text.toString(), start, end,
                     contextStart, contextEnd, x, y, flags, paint.mNativePaint);
-        } //End block
+        } 
         {
             ((GraphicsOperations) text).drawTextRun(this, start, end,
                     contextStart, contextEnd, x, y, flags, paint);
-        } //End block
+        } 
         {
             int contextLen = contextEnd - contextStart;
             int len = end - start;
@@ -1311,7 +1358,7 @@ public class Canvas {
             native_drawTextRun(mNativeCanvas, buf, start - contextStart, len,
                     0, contextLen, x, y, flags, paint.mNativePaint);
             TemporaryBuffer.recycle(buf);
-        } //End block
+        } 
         addTaint(text.getTaint());
         addTaint(start);
         addTaint(end);
@@ -1321,17 +1368,18 @@ public class Canvas {
         addTaint(y);
         addTaint(dir);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.439 -0400", hash_original_method = "85C4F370BE8714F2CD7DF24F138664E0", hash_generated_method = "58ABD5F72E95D27EE9061176216892CD")
     public void drawPosText(char[] text, int index, int count, float[] pos,
                             Paint paint) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         native_drawPosText(mNativeCanvas, text, index, count, pos,
                            paint.mNativePaint);
         addTaint(text[0]);
@@ -1339,41 +1387,43 @@ public class Canvas {
         addTaint(count);
         addTaint(pos[0]);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if (index < 0 || index + count > text.length || count*2 > pos.length) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //native_drawPosText(mNativeCanvas, text, index, count, pos,
-                           //paint.mNativePaint);
+        
+        
+            
+        
+        
+                           
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.440 -0400", hash_original_method = "887F094692FA72239FA373420B7D2404", hash_generated_method = "2CD3A6AB310A7130EE820D28B5028C0C")
     public void drawPosText(String text, float[] pos, Paint paint) {
         {
             boolean var8252BA30A9512CA9A5F07EEE6666D9DD_615822938 = (text.length()*2 > pos.length);
             {
                 if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         native_drawPosText(mNativeCanvas, text, pos, paint.mNativePaint);
         addTaint(text.getTaint());
         addTaint(pos[0]);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if (text.length()*2 > pos.length) {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
-        //native_drawPosText(mNativeCanvas, text, pos, paint.mNativePaint);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.440 -0400", hash_original_method = "34245E42F942570AFBDEF6E2A30FB787", hash_generated_method = "19E20A3DE8CDC72A400D04573A16ED5C")
     public void drawTextOnPath(char[] text, int index, int count, Path path,
                                float hOffset, float vOffset, Paint paint) {
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-        } //End block
+        } 
         native_drawTextOnPath(mNativeCanvas, text, index, count,
                               path.ni(), hOffset, vOffset,
                               paint.mBidiFlags, paint.mNativePaint);
@@ -1384,16 +1434,17 @@ public class Canvas {
         addTaint(hOffset);
         addTaint(vOffset);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if (index < 0 || index + count > text.length) {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
-        //native_drawTextOnPath(mNativeCanvas, text, index, count,
-                              //path.ni(), hOffset, vOffset,
-                              //paint.mBidiFlags, paint.mNativePaint);
+        
+        
+            
+        
+        
+                              
+                              
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.441 -0400", hash_original_method = "BBB121FCAE128F1EC35D041163A72498", hash_generated_method = "93E283698F2AEA3ABA6FFCF7DCCE4AC2")
     public void drawTextOnPath(String text, Path path, float hOffset,
                                float vOffset, Paint paint) {
@@ -1403,33 +1454,35 @@ public class Canvas {
                 native_drawTextOnPath(mNativeCanvas, text, path.ni(),
                                   hOffset, vOffset, paint.mBidiFlags,
                                   paint.mNativePaint);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(text.getTaint());
         addTaint(path.getTaint());
         addTaint(hOffset);
         addTaint(vOffset);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if (text.length() > 0) {
-            //native_drawTextOnPath(mNativeCanvas, text, path.ni(),
-                                  //hOffset, vOffset, paint.mBidiFlags,
-                                  //paint.mNativePaint);
-        //}
+        
+        
+            
+                                  
+                                  
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.441 -0400", hash_original_method = "DAACDF6D023CC31453619FC0BE061518", hash_generated_method = "6AF143BD685A1D0FABD7AA160263197A")
     public void drawPicture(Picture picture) {
         picture.endRecording();
         native_drawPicture(mNativeCanvas, picture.ni());
         addTaint(picture.getTaint());
-        // ---------- Original Method ----------
-        //picture.endRecording();
-        //native_drawPicture(mNativeCanvas, picture.ni());
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.442 -0400", hash_original_method = "9A4AF54B94158E3C4DCFADF51FCAADD5", hash_generated_method = "56A938B4E8DD2CF8DD030145D44E01AD")
     public void drawPicture(Picture picture, RectF dst) {
         save();
@@ -1439,24 +1492,25 @@ public class Canvas {
             {
                 scale(dst.width() / picture.getWidth(),
                   dst.height() / picture.getHeight());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         drawPicture(picture);
         restore();
         addTaint(picture.getTaint());
         addTaint(dst.getTaint());
-        // ---------- Original Method ----------
-        //save();
-        //translate(dst.left, dst.top);
-        //if (picture.getWidth() > 0 && picture.getHeight() > 0) {
-            //scale(dst.width() / picture.getWidth(),
-                  //dst.height() / picture.getHeight());
-        //}
-        //drawPicture(picture);
-        //restore();
+        
+        
+        
+        
+            
+                  
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.442 -0400", hash_original_method = "A0088B5FD0255BCF9789E7655D1F3782", hash_generated_method = "93BAD45AE61CB69172F3753F66B4DACC")
     public void drawPicture(Picture picture, Rect dst) {
         save();
@@ -1466,21 +1520,21 @@ public class Canvas {
             {
                 scale((float)dst.width() / picture.getWidth(),
                   (float)dst.height() / picture.getHeight());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         drawPicture(picture);
         restore();
         addTaint(picture.getTaint());
         addTaint(dst.getTaint());
-        // ---------- Original Method ----------
-        //save();
-        //translate(dst.left, dst.top);
-        //if (picture.getWidth() > 0 && picture.getHeight() > 0) {
-            //scale((float)dst.width() / picture.getWidth(),
-                  //(float)dst.height() / picture.getHeight());
-        //}
-        //drawPicture(picture);
-        //restore();
+        
+        
+        
+        
+            
+                  
+        
+        
+        
     }
 
     
@@ -1784,8 +1838,8 @@ public class Canvas {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.455 -0400", hash_original_method = "C87133F6F9E7B261DCFE48B3CCDE3AF4", hash_generated_method = "B264373C320A36AAFBD12A28825D248D")
         public  CanvasFinalizer(int nativeCanvas) {
             mNativeCanvas = nativeCanvas;
-            // ---------- Original Method ----------
-            //mNativeCanvas = nativeCanvas;
+            
+            
         }
 
         
@@ -1796,20 +1850,20 @@ public class Canvas {
             {
                 {
                     finalizer(mNativeCanvas);
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 super.finalize();
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //if (mNativeCanvas != 0) {
-                    //finalizer(mNativeCanvas);
-                //}
-            //} finally {
-                //super.finalize();
-            //}
+            } 
+            
+            
+                
+                    
+                
+            
+                
+            
         }
 
         

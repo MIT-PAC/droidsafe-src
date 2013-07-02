@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -97,25 +97,25 @@ public abstract class SMSDispatcher extends Handler {
     private final DialogInterface.OnClickListener mListener = new DialogInterface.OnClickListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.795 -0400", hash_original_method = "318A7382B4CDEC030B530C6AA43A7A60", hash_generated_method = "DB9DB055783B1C757F59603348C158F4")
         public void onClick(DialogInterface dialog, int which) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 Log.d(TAG, "click YES to send out sms");
                 sendMessage(obtainMessage(EVENT_SEND_CONFIRMED_SMS));
-            } //End block
+            } 
             {
                 Log.d(TAG, "click NO to stop sending");
                 sendMessage(obtainMessage(EVENT_STOP_SENDING));
-            } //End block
+            } 
             addTaint(dialog.getTaint());
             addTaint(which);
-            // ---------- Original Method ----------
-            //if (which == DialogInterface.BUTTON_POSITIVE) {
-                    //Log.d(TAG, "click YES to send out sms");
-                    //sendMessage(obtainMessage(EVENT_SEND_CONFIRMED_SMS));
-                //} else if (which == DialogInterface.BUTTON_NEGATIVE) {
-                    //Log.d(TAG, "click NO to stop sending");
-                    //sendMessage(obtainMessage(EVENT_STOP_SENDING));
-                //}
+            
+            
+                    
+                    
+                
+                    
+                    
+                
         }
 
         
@@ -126,18 +126,18 @@ public abstract class SMSDispatcher extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.796 -0400", hash_original_method = "DB25CB42F24A1F0004F16056EEBCBE73", hash_generated_method = "2EB066921744C6644579A933780E2AC4")
         @Override
         public void onReceive(Context context, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             int rc = getResultCode();
             boolean success = (rc == Activity.RESULT_OK)
                     || (rc == Intents.RESULT_SMS_HANDLED);
             acknowledgeLastIncomingSms(success, rc, null);
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            //int rc = getResultCode();
-            //boolean success = (rc == Activity.RESULT_OK)
-                    //|| (rc == Intents.RESULT_SMS_HANDLED);
-            //acknowledgeLastIncomingSms(success, rc, null);
+            
+            
+            
+                    
+            
         }
 
         
@@ -163,8 +163,8 @@ public abstract class SMSDispatcher extends Handler {
         Log.d(TAG, "SMSDispatcher: ctor mSmsCapable=" + mSmsCapable + " format=" + getFormat()
                 + " mSmsReceiveDisabled=" + mSmsReceiveDisabled
                 + " mSmsSendDisabled=" + mSmsSendDisabled);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -180,63 +180,65 @@ public abstract class SMSDispatcher extends Handler {
     protected abstract String getFormat();
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.797 -0400", hash_original_method = "FF8B1C8CEEDF99CA4428854C45370A3A", hash_generated_method = "9C45BC8177998F07A273AAC14939D123")
     @Override
     protected void finalize() {
         Log.d(TAG, "SMSDispatcher finalized");
-        // ---------- Original Method ----------
-        //Log.d(TAG, "SMSDispatcher finalized");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.799 -0400", hash_original_method = "42D9652DD1B0FE51DCC6557D894D344B", hash_generated_method = "43D0E27A4D2CEC63ECC7D0E910190814")
     @Override
     public void handleMessage(Message msg) {
         AsyncResult ar;
-        //Begin case EVENT_NEW_SMS 
+        
         {
             Log.d(TAG, "New SMS Message Received");
-        } //End block
-        //End case EVENT_NEW_SMS 
-        //Begin case EVENT_NEW_SMS 
+        } 
+        
+        
         SmsMessage sms;
-        //End case EVENT_NEW_SMS 
-        //Begin case EVENT_NEW_SMS 
+        
+        
         ar = (AsyncResult) msg.obj;
-        //End case EVENT_NEW_SMS 
-        //Begin case EVENT_NEW_SMS 
+        
+        
         sms = (SmsMessage) ar.result;
-        //End case EVENT_NEW_SMS 
-        //Begin case EVENT_NEW_SMS 
+        
+        
         try 
         {
             int result = dispatchMessage(sms.mWrappedSmsMessage);
             {
                 boolean handled = (result == Intents.RESULT_SMS_HANDLED);
                 notifyAndAcknowledgeLastIncomingSms(handled, result, null);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RuntimeException ex)
         {
             notifyAndAcknowledgeLastIncomingSms(false, Intents.RESULT_SMS_GENERIC_ERROR, null);
-        } //End block
-        //End case EVENT_NEW_SMS 
-        //Begin case EVENT_SEND_SMS_COMPLETE 
+        } 
+        
+        
         handleSendComplete((AsyncResult) msg.obj);
-        //End case EVENT_SEND_SMS_COMPLETE 
-        //Begin case EVENT_SEND_RETRY 
+        
+        
         sendSms((SmsTracker) msg.obj);
-        //End case EVENT_SEND_RETRY 
-        //Begin case EVENT_POST_ALERT 
+        
+        
         handleReachSentLimit((SmsTracker)(msg.obj));
-        //End case EVENT_POST_ALERT 
-        //Begin case EVENT_ALERT_TIMEOUT 
+        
+        
         ((AlertDialog)(msg.obj)).dismiss();
-        //End case EVENT_ALERT_TIMEOUT 
-        //Begin case EVENT_ALERT_TIMEOUT 
+        
+        
         msg.obj = null;
-        //End case EVENT_ALERT_TIMEOUT 
-        //Begin case EVENT_ALERT_TIMEOUT 
+        
+        
         {
             boolean varF079B7C937A1F72AD944CB03063480BB_1119155582 = (mSTrackers.isEmpty() == false);
             {
@@ -244,18 +246,18 @@ public abstract class SMSDispatcher extends Handler {
                 {
                     SmsTracker sTracker = mSTrackers.remove(0);
                     sTracker.mSentIntent.send(RESULT_ERROR_LIMIT_EXCEEDED);
-                } //End block
+                } 
                 catch (CanceledException ex)
                 { }
-            } //End block
-        } //End collapsed parenthetic
-        //End case EVENT_ALERT_TIMEOUT 
-        //Begin case EVENT_ALERT_TIMEOUT 
+            } 
+        } 
+        
+        
         {
             Log.d(TAG, "EVENT_ALERT_TIMEOUT, message stop sending");
-        } //End block
-        //End case EVENT_ALERT_TIMEOUT 
-        //Begin case EVENT_SEND_CONFIRMED_SMS 
+        } 
+        
+        
         {
             boolean varF079B7C937A1F72AD944CB03063480BB_681119163 = (mSTrackers.isEmpty() == false);
             {
@@ -264,16 +266,16 @@ public abstract class SMSDispatcher extends Handler {
                     boolean var25B0DE965FAB09F054D6EF88E363D5E4_1746400168 = (sTracker.isMultipart());
                     {
                         sendMultipartSms(sTracker);
-                    } //End block
+                    } 
                     {
                         sendSms(sTracker);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 removeMessages(EVENT_ALERT_TIMEOUT, msg.obj);
-            } //End block
-        } //End collapsed parenthetic
-        //End case EVENT_SEND_CONFIRMED_SMS 
-        //Begin case EVENT_STOP_SENDING 
+            } 
+        } 
+        
+        
         {
             boolean varF079B7C937A1F72AD944CB03063480BB_1769628518 = (mSTrackers.isEmpty() == false);
             {
@@ -281,28 +283,29 @@ public abstract class SMSDispatcher extends Handler {
                 {
                     SmsTracker sTracker = mSTrackers.remove(mSTrackers.size() - 1);
                     sTracker.mSentIntent.send(RESULT_ERROR_LIMIT_EXCEEDED);
-                } //End block
+                } 
                 catch (CanceledException ex)
                 { }
                 removeMessages(EVENT_ALERT_TIMEOUT, msg.obj);
-            } //End block
-        } //End collapsed parenthetic
-        //End case EVENT_STOP_SENDING 
+            } 
+        } 
+        
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.799 -0400", hash_original_method = "1E59FCBE70CAB945B533C092F603248E", hash_generated_method = "D59BF0F9CEBBA085E16694B8F358387E")
     private void createWakelock() {
         PowerManager pm = (PowerManager)mContext.getSystemService(Context.POWER_SERVICE);
         mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "SMSDispatcher");
         mWakeLock.setReferenceCounted(true);
-        // ---------- Original Method ----------
-        //PowerManager pm = (PowerManager)mContext.getSystemService(Context.POWER_SERVICE);
-        //mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "SMSDispatcher");
-        //mWakeLock.setReferenceCounted(true);
+        
+        
+        
+        
     }
 
     
@@ -313,13 +316,14 @@ public abstract class SMSDispatcher extends Handler {
                 this, Activity.RESULT_OK, null, null);
         addTaint(intent.getTaint());
         addTaint(permission.getTaint());
-        // ---------- Original Method ----------
-        //mWakeLock.acquire(WAKE_LOCK_TIMEOUT);
-        //mContext.sendOrderedBroadcast(intent, permission, mResultReceiver,
-                //this, Activity.RESULT_OK, null, null);
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.800 -0400", hash_original_method = "B9407366468E5E2261EED2E1D1F371B3", hash_generated_method = "06803B9B62218E6762FBF6FE39C53F4E")
     protected void handleSendComplete(AsyncResult ar) {
         SmsTracker tracker = (SmsTracker) ar.userObj;
@@ -328,12 +332,12 @@ public abstract class SMSDispatcher extends Handler {
             {
                 Log.d(TAG, "SMS send complete. Broadcasting "
                         + "intent: " + sentIntent);
-            } //End block
+            } 
             {
                 int messageRef = ((SmsResponse)ar.result).messageRef;
                 tracker.mMessageRef = messageRef;
                 deliveryPendingList.add(tracker);
-            } //End block
+            } 
             {
                 try 
                 {
@@ -341,23 +345,23 @@ public abstract class SMSDispatcher extends Handler {
                         Intent sendNext = new Intent();
                         sendNext.putExtra(SEND_NEXT_MSG_EXTRA, true);
                         sentIntent.send(mContext, Activity.RESULT_OK, sendNext);
-                    } //End block
+                    } 
                     {
                         sentIntent.send(Activity.RESULT_OK);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (CanceledException ex)
                 { }
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 Log.d(TAG, "SMS send failed");
-            } //End block
+            } 
             int ss = mPhone.getServiceState().getState();
             {
                 handleNotInService(ss, tracker);
-            } //End block
+            } 
             {
                 boolean var33840BDE89EFFDAFF4BFAC3550647FC6_816523323 = ((((CommandException)(ar.exception)).getCommandError()
                     == CommandException.Error.SMS_FAIL_RETRY) &&
@@ -365,7 +369,7 @@ public abstract class SMSDispatcher extends Handler {
                 {
                     Message retryMsg = obtainMessage(EVENT_SEND_RETRY, tracker);
                     sendMessageDelayed(retryMsg, SEND_RETRY_DELAY);
-                } //End block
+                } 
                 {
                     int error = RESULT_ERROR_GENERIC_FAILURE;
                     {
@@ -373,31 +377,32 @@ public abstract class SMSDispatcher extends Handler {
                         == CommandException.Error.FDN_CHECK_FAILURE);
                         {
                             error = RESULT_ERROR_FDN_CHECK_FAILURE;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     try 
                     {
                         Intent fillIn = new Intent();
                         {
                             fillIn.putExtra("errorCode", ((SmsResponse)ar.result).errorCode);
-                        } //End block
+                        } 
                         {
                             fillIn.putExtra(SEND_NEXT_MSG_EXTRA, true);
-                        } //End block
+                        } 
                         tracker.mSentIntent.send(mContext, error, fillIn);
-                    } //End block
+                    } 
                     catch (CanceledException ex)
                     { }
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(ar.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
-        protected static void handleNotInService(int ss, SmsTracker tracker) {
+        @DSModeled(DSC.SAFE)
+    protected static void handleNotInService(int ss, SmsTracker tracker) {
         if (tracker.mSentIntent != null) {
             try {
                 if (ss == ServiceState.STATE_POWER_OFF) {
@@ -413,6 +418,7 @@ public abstract class SMSDispatcher extends Handler {
     public abstract int dispatchMessage(SmsMessageBase sms);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.801 -0400", hash_original_method = "FA883D78660186E8315D2F919EDE7FF4", hash_generated_method = "6F2EA20F97EFB797DF8EA79C78772038")
     protected int dispatchNormalMessage(SmsMessageBase sms) {
         SmsHeader smsHeader = sms.getUserDataHeader();
@@ -422,30 +428,31 @@ public abstract class SMSDispatcher extends Handler {
             {
                 {
                     int var6026FCE9AE016D5B5D5DCA94071B0475_1933748775 = (mWapPush.dispatchWapPdu(sms.getUserData()));
-                } //End block
+                } 
                 {
                     dispatchPortAddressedPdus(pdus, smsHeader.portAddrs.destPort);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 dispatchPdus(pdus);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             SmsHeader.ConcatRef concatRef = smsHeader.concatRef;
             SmsHeader.PortAddrs portAddrs = smsHeader.portAddrs;
             int var5318F808814390A50076D4E3D3701348_1317289342 = (processMessagePart(sms.getPdu(), sms.getOriginatingAddress(),
                     concatRef.refNumber, concatRef.seqNumber, concatRef.msgCount,
-                    sms.getTimestampMillis(), (portAddrs != null ? portAddrs.destPort : -1), false)); //DSFIXME:  CODE0008: Nested ternary operator in expression
-        } //End block
+                    sms.getTimestampMillis(), (portAddrs != null ? portAddrs.destPort : -1), false)); 
+        } 
         addTaint(sms.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2121639548 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2121639548;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.802 -0400", hash_original_method = "E4A3787C1C71B47352080C233D4F2AF5", hash_generated_method = "E001DD018E9D76897E2D88D453B9C321")
     protected int processMessagePart(byte[] pdu, String address, int referenceNumber,
             int sequenceNumber, int messageCount, long timestamp, int destPort,
@@ -466,9 +473,9 @@ public abstract class SMSDispatcher extends Handler {
                     byte[] oldPdu = HexDump.hexStringToByteArray(oldPduString);
                     {
                         boolean var2CFAEFED18DDFEB594AF780EC1B68719_720873594 = (!Arrays.equals(oldPdu, pdu));
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             cursor.close();
             String where = "address=? AND reference_number=?";
             String[] whereArgs = new String[] {address, refNumber};
@@ -484,9 +491,9 @@ public abstract class SMSDispatcher extends Handler {
                 values.put("sequence", sequenceNumber);
                 {
                     values.put("destination_port", destPort);
-                } //End block
+                } 
                 mResolver.insert(mRawUri, values);
-            } //End block
+            } 
             pdus = new byte[messageCount][];
             {
                 int i = 0;
@@ -499,42 +506,42 @@ public abstract class SMSDispatcher extends Handler {
                         boolean var936843785D9A2B8B2B39023C8332F7AB_2131757682 = (cursorSequence == 0 && !cursor.isNull(DESTINATION_PORT_COLUMN));
                         {
                             destPort = cursor.getInt(DESTINATION_PORT_COLUMN);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             {
                 pdus[sequenceNumber] = pdu;
-            } //End block
+            } 
             {
                 pdus[sequenceNumber - 1] = pdu;
-            } //End block
+            } 
             mResolver.delete(mRawUri, where, whereArgs);
-        } //End block
+        } 
         catch (SQLException e)
         { }
         finally 
         {
             cursor.close();
-        } //End block
+        } 
         {
             ByteArrayOutputStream output = new ByteArrayOutputStream();
             {
                 int i = 0;
                 {
                     output.write(pdus[i], 0, pdus[i].length);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             byte[] datagram = output.toByteArray();
             {
                 int var377D8EDB33DCBB61EF93663D12935949_637331236 = (mWapPush.dispatchWapPdu(datagram));
-            } //End block
+            } 
             {
                 pdus = new byte[1][];
                 pdus[0] = datagram;
                 dispatchPortAddressedPdus(pdus, destPort);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 ByteArrayOutputStream output = new ByteArrayOutputStream();
@@ -544,17 +551,17 @@ public abstract class SMSDispatcher extends Handler {
                         SmsMessage msg = SmsMessage.createFromPdu(pdus[i], getFormat());
                         byte[] data = msg.getUserData();
                         output.write(data, 0, data.length);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 int varCA864DB5583E37C95D0146DAA7A61979_2098147771 = (mWapPush.dispatchWapPdu(output.toByteArray()));
-            } //End block
+            } 
             {
                 dispatchPortAddressedPdus(pdus, destPort);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             dispatchPdus(pdus);
-        } //End block
+        } 
         addTaint(pdu[0]);
         addTaint(address.getTaint());
         addTaint(referenceNumber);
@@ -565,11 +572,12 @@ public abstract class SMSDispatcher extends Handler {
         addTaint(isCdmaWapPush);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_155883758 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_155883758;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.803 -0400", hash_original_method = "FFA598D36A59A89B4BA165B55017EEB5", hash_generated_method = "758F050550D00438D10C4740245227FC")
     protected void dispatchPdus(byte[][] pdus) {
         Intent intent = new Intent(Intents.SMS_RECEIVED_ACTION);
@@ -577,14 +585,15 @@ public abstract class SMSDispatcher extends Handler {
         intent.putExtra("format", getFormat());
         dispatch(intent, RECEIVE_SMS_PERMISSION);
         addTaint(pdus[0][0]);
-        // ---------- Original Method ----------
-        //Intent intent = new Intent(Intents.SMS_RECEIVED_ACTION);
-        //intent.putExtra("pdus", pdus);
-        //intent.putExtra("format", getFormat());
-        //dispatch(intent, RECEIVE_SMS_PERMISSION);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.803 -0400", hash_original_method = "3F1122361F00F60F28196C29B48EFEBB", hash_generated_method = "F2CEB258BE810C4B852203265D31FC1A")
     protected void dispatchPortAddressedPdus(byte[][] pdus, int port) {
         Uri uri = Uri.parse("sms://localhost:" + port);
@@ -594,12 +603,12 @@ public abstract class SMSDispatcher extends Handler {
         dispatch(intent, RECEIVE_SMS_PERMISSION);
         addTaint(pdus[0][0]);
         addTaint(port);
-        // ---------- Original Method ----------
-        //Uri uri = Uri.parse("sms://localhost:" + port);
-        //Intent intent = new Intent(Intents.DATA_SMS_RECEIVED_ACTION, uri);
-        //intent.putExtra("pdus", pdus);
-        //intent.putExtra("format", getFormat());
-        //dispatch(intent, RECEIVE_SMS_PERMISSION);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -615,6 +624,7 @@ public abstract class SMSDispatcher extends Handler {
             boolean use7bitOnly);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.804 -0400", hash_original_method = "050C8CDC5807717B3CBB93F722D8E33D", hash_generated_method = "48F74C9F758621976ED32CD95533C501")
     protected void sendMultipartText(String destAddr, String scAddr,
             ArrayList<String> parts, ArrayList<PendingIntent> sentIntents,
@@ -630,10 +640,10 @@ public abstract class SMSDispatcher extends Handler {
                 TextEncodingDetails details = calculateLength(parts.get(i), false);
                 {
                     encoding = details.codeUnitSize;
-                } //End block
+                } 
                 encodingForParts[i] = details;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int i = 0;
             {
@@ -647,32 +657,32 @@ public abstract class SMSDispatcher extends Handler {
                 {
                     smsHeader.languageTable = encodingForParts[i].languageTable;
                     smsHeader.languageShiftTable = encodingForParts[i].languageShiftTable;
-                } //End block
+                } 
                 PendingIntent sentIntent = null;
                 {
                     boolean var3DB5B890E041E90E00E1E32AC5A4787C_286910639 = (sentIntents != null && sentIntents.size() > i);
                     {
                         sentIntent = sentIntents.get(i);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 PendingIntent deliveryIntent = null;
                 {
                     boolean varEFDA6B200ECEC013151CF90135B799F7_764602430 = (deliveryIntents != null && deliveryIntents.size() > i);
                     {
                         deliveryIntent = deliveryIntents.get(i);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 sendNewSubmitPdu(destAddr, scAddr, parts.get(i), smsHeader, encoding,
                     sentIntent, deliveryIntent, (i == (msgCount - 1)));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(destAddr.getTaint());
         addTaint(scAddr.getTaint());
         addTaint(parts.getTaint());
         addTaint(sentIntents.getTaint());
         addTaint(deliveryIntents.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -681,6 +691,7 @@ public abstract class SMSDispatcher extends Handler {
             PendingIntent sentIntent, PendingIntent deliveryIntent, boolean lastPart);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.805 -0400", hash_original_method = "17023DDC5CC5357F9142E0DE3564955A", hash_generated_method = "56D891F7D8D6BA7D71E16DFBD3546E34")
     protected void sendRawPdu(byte[] smsc, byte[] pdu, PendingIntent sentIntent,
             PendingIntent deliveryIntent) {
@@ -689,22 +700,22 @@ public abstract class SMSDispatcher extends Handler {
                 try 
                 {
                     sentIntent.send(RESULT_ERROR_NO_SERVICE);
-                } //End block
+                } 
                 catch (CanceledException ex)
                 { }
-            } //End block
+            } 
             Log.d(TAG, "Device does not support sending sms.");
-        } //End block
+        } 
         {
             {
                 try 
                 {
                     sentIntent.send(RESULT_ERROR_NULL_PDU);
-                } //End block
+                } 
                 catch (CanceledException ex)
                 { }
-            } //End block
-        } //End block
+            } 
+        } 
         HashMap<String, Object> map = new HashMap<String, Object>();
         map.put("smsc", smsc);
         map.put("pdu", pdu);
@@ -713,28 +724,29 @@ public abstract class SMSDispatcher extends Handler {
         int ss = mPhone.getServiceState().getState();
         {
             handleNotInService(ss, tracker);
-        } //End block
+        } 
         {
             String appName = getAppNameByIntent(sentIntent);
             {
                 boolean varCC51FA81A63C5EBC2D6B3E746C548A23_177686178 = (mUsageMonitor.check(appName, SINGLE_PART_SMS));
                 {
                     sendSms(tracker);
-                } //End block
+                } 
                 {
                     sendMessage(obtainMessage(EVENT_POST_ALERT, tracker));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(smsc[0]);
         addTaint(pdu[0]);
         addTaint(sentIntent.getTaint());
         addTaint(deliveryIntent.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.806 -0400", hash_original_method = "771250D922DD0FBC637697CE165ADE5B", hash_generated_method = "7E2DF8FE178BE55A57527B0FF41FE9FA")
     protected void handleReachSentLimit(SmsTracker tracker) {
         {
@@ -743,11 +755,11 @@ public abstract class SMSDispatcher extends Handler {
                 try 
                 {
                     tracker.mSentIntent.send(RESULT_ERROR_LIMIT_EXCEEDED);
-                } //End block
+                } 
                 catch (CanceledException ex)
                 { }
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Resources r = Resources.getSystem();
         String appName = getAppNameByIntent(tracker.mSentIntent);
         AlertDialog d = new AlertDialog.Builder(mContext)
@@ -762,12 +774,13 @@ public abstract class SMSDispatcher extends Handler {
         sendMessageDelayed ( obtainMessage(EVENT_ALERT_TIMEOUT, d),
                 DEFAULT_SMS_TIMEOUT);
         addTaint(tracker.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
-        protected static String getAppNameByIntent(PendingIntent intent) {
+        @DSModeled(DSC.SPEC)
+    protected static String getAppNameByIntent(PendingIntent intent) {
         Resources r = Resources.getSystem();
         return (intent != null) ? intent.getTargetPackage()
             : r.getString(R.string.sms_control_default_app_name);
@@ -777,6 +790,7 @@ public abstract class SMSDispatcher extends Handler {
     protected abstract void sendSms(SmsTracker tracker);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.807 -0400", hash_original_method = "3673C71AC378B483B72EBB14D4C20DB7", hash_generated_method = "713FBD25296405107DCAC91E0AE1D16C")
     private void sendMultipartSms(SmsTracker tracker) {
         ArrayList<String> parts;
@@ -799,16 +813,16 @@ public abstract class SMSDispatcher extends Handler {
                         boolean varE26D7E4D9FA9614D62776674C3172AEF_1473751128 = (sentIntents != null && sentIntents.size() > i);
                         {
                             sentIntent = sentIntents.get(i);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     handleNotInService(ss, new SmsTracker(null, sentIntent, null));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         sendMultipartText(destinationAddress, scAddress, parts, sentIntents, deliveryIntents);
         addTaint(tracker.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -816,6 +830,7 @@ public abstract class SMSDispatcher extends Handler {
             int result, Message response);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.808 -0400", hash_original_method = "3FF14669D60F392B7539BF30A1AA74B3", hash_generated_method = "16F61DF7891A5FC2B523FA9AE4283E1C")
     private void notifyAndAcknowledgeLastIncomingSms(boolean success,
             int result, Message response) {
@@ -824,22 +839,23 @@ public abstract class SMSDispatcher extends Handler {
             intent.putExtra("result", result);
             mWakeLock.acquire(WAKE_LOCK_TIMEOUT);
             mContext.sendBroadcast(intent, "android.permission.RECEIVE_SMS");
-        } //End block
+        } 
         acknowledgeLastIncomingSms(success, result, response);
         addTaint(success);
         addTaint(result);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
-        //if (!success) {
-            //Intent intent = new Intent(Intents.SMS_REJECTED_ACTION);
-            //intent.putExtra("result", result);
-            //mWakeLock.acquire(WAKE_LOCK_TIMEOUT);
-            //mContext.sendBroadcast(intent, "android.permission.RECEIVE_SMS");
-        //}
-        //acknowledgeLastIncomingSms(success, result, response);
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.808 -0400", hash_original_method = "978DCF88E3506C5AEC52023DC36FB472", hash_generated_method = "F98970E6FE028C06449125E60987A979")
     protected void dispatchBroadcastPdus(byte[][] pdus, boolean isEmergencyMessage) {
         {
@@ -847,27 +863,27 @@ public abstract class SMSDispatcher extends Handler {
             intent.putExtra("pdus", pdus);
             Log.d(TAG, "Dispatching " + pdus.length + " emergency SMS CB pdus");
             dispatch(intent, RECEIVE_EMERGENCY_BROADCAST_PERMISSION);
-        } //End block
+        } 
         {
             Intent intent = new Intent(Intents.SMS_CB_RECEIVED_ACTION);
             intent.putExtra("pdus", pdus);
             Log.d(TAG, "Dispatching " + pdus.length + " SMS CB pdus");
             dispatch(intent, RECEIVE_SMS_PERMISSION);
-        } //End block
+        } 
         addTaint(pdus[0][0]);
         addTaint(isEmergencyMessage);
-        // ---------- Original Method ----------
-        //if (isEmergencyMessage) {
-            //Intent intent = new Intent(Intents.SMS_EMERGENCY_CB_RECEIVED_ACTION);
-            //intent.putExtra("pdus", pdus);
-            //Log.d(TAG, "Dispatching " + pdus.length + " emergency SMS CB pdus");
-            //dispatch(intent, RECEIVE_EMERGENCY_BROADCAST_PERMISSION);
-        //} else {
-            //Intent intent = new Intent(Intents.SMS_CB_RECEIVED_ACTION);
-            //intent.putExtra("pdus", pdus);
-            //Log.d(TAG, "Dispatching " + pdus.length + " SMS CB pdus");
-            //dispatch(intent, RECEIVE_SMS_PERMISSION);
-        //}
+        
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -895,11 +911,11 @@ public abstract class SMSDispatcher extends Handler {
             mSentIntent = sentIntent;
             mDeliveryIntent = deliveryIntent;
             mRetryCount = 0;
-            // ---------- Original Method ----------
-            //mData = data;
-            //mSentIntent = sentIntent;
-            //mDeliveryIntent = deliveryIntent;
-            //mRetryCount = 0;
+            
+            
+            
+            
+            
         }
 
         
@@ -909,9 +925,9 @@ public abstract class SMSDispatcher extends Handler {
             boolean var9577280E4DBB15FF5932A5F9D1F94961_227241866 = (map.containsKey("parts"));
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1488501135 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1488501135;
-            // ---------- Original Method ----------
-            //HashMap map = mData;
-            //return map.containsKey("parts");
+            
+            
+            
         }
 
         

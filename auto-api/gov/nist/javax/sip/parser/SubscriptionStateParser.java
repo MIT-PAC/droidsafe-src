@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
@@ -18,7 +18,7 @@ public class SubscriptionStateParser extends HeaderParser {
     public  SubscriptionStateParser(String subscriptionState) {
         super(subscriptionState);
         addTaint(subscriptionState.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,13 +26,14 @@ public class SubscriptionStateParser extends HeaderParser {
     protected  SubscriptionStateParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.687 -0400", hash_original_method = "0E07F05FFE6C1C2F83533D7132328ECC", hash_generated_method = "4BBDE6DA4F029B8AE12C1AC5F8D8652C")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1385799926 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1385799926 = null; 
         dbg_enter("SubscriptionStateParser.parse");
         SubscriptionState subscriptionState = new SubscriptionState();
         try 
@@ -59,7 +60,7 @@ public class SubscriptionStateParser extends HeaderParser {
                             token = lexer.getNextToken();
                             value = token.getTokenValue();
                             subscriptionState.setReasonCode(value);
-                        } //End block
+                        } 
                         {
                             boolean var414B5D94C2993E1BAEBD747D160C7C92_1261539187 = (value.equalsIgnoreCase("expires"));
                             {
@@ -72,16 +73,16 @@ public class SubscriptionStateParser extends HeaderParser {
                                 {
                                     int expires = Integer.parseInt(value);
                                     subscriptionState.setExpires(expires);
-                                } //End block
+                                } 
                                 catch (NumberFormatException ex)
                                 {
                                     if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                                } //End block
+                                } 
                                 catch (InvalidArgumentException ex)
                                 {
                                     if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             {
                                 boolean varBD4F51A266EE0B22E2DF148FAC6041BC_2088953221 = (value.equalsIgnoreCase("retry-after"));
                                 {
@@ -94,16 +95,16 @@ public class SubscriptionStateParser extends HeaderParser {
                                     {
                                         int retryAfter = Integer.parseInt(value);
                                         subscriptionState.setRetryAfter(retryAfter);
-                                    } //End block
+                                    } 
                                     catch (NumberFormatException ex)
                                     {
                                         if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                                    } //End block
+                                    } 
                                     catch (InvalidArgumentException ex)
                                     {
                                         if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                                    } //End block
-                                } //End block
+                                    } 
+                                } 
                                 {
                                     this.lexer.match('=');
                                     this.lexer.SPorHT();
@@ -111,23 +112,23 @@ public class SubscriptionStateParser extends HeaderParser {
                                     Token secondToken = lexer.getNextToken();
                                     String secondValue = secondToken.getTokenValue();
                                     subscriptionState.setParameter(value, secondValue);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
                     this.lexer.SPorHT();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             dbg_leave("SubscriptionStateParser.parse");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1385799926 = subscriptionState;
-        varB4EAC82CA7396A68D541C85D26508E83_1385799926.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1385799926.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1385799926;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

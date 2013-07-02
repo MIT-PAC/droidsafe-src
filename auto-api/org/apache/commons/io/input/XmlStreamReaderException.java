@@ -1,11 +1,11 @@
 package org.apache.commons.io.input;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -34,7 +34,7 @@ public class XmlStreamReaderException extends IOException {
         addTaint(bomEnc.getTaint());
         addTaint(xmlGuessEnc.getTaint());
         addTaint(xmlEnc.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -48,67 +48,72 @@ public class XmlStreamReaderException extends IOException {
         xmlGuessEncoding = xmlGuessEnc;
         xmlEncoding = xmlEnc;
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //contentTypeMime = ctMime;
-        //contentTypeEncoding = ctEnc;
-        //bomEncoding = bomEnc;
-        //xmlGuessEncoding = xmlGuessEnc;
-        //xmlEncoding = xmlEnc;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.459 -0400", hash_original_method = "8E6ACC549621DB046C39AAF67FE47CA0", hash_generated_method = "F39DD0F8710A956A124E20D5DE2A8BD3")
     public String getBomEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_183093814 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_183093814 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_183093814 = bomEncoding;
-        varB4EAC82CA7396A68D541C85D26508E83_183093814.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_183093814.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_183093814;
-        // ---------- Original Method ----------
-        //return bomEncoding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.460 -0400", hash_original_method = "93213E0474402E85CBBF9C6807083224", hash_generated_method = "0BAFCA6D52866273DEDD45DE2599303F")
     public String getXmlGuessEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1442299868 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1442299868 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1442299868 = xmlGuessEncoding;
-        varB4EAC82CA7396A68D541C85D26508E83_1442299868.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1442299868.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1442299868;
-        // ---------- Original Method ----------
-        //return xmlGuessEncoding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.462 -0400", hash_original_method = "54494C811BAA1F5B46191C70DF542771", hash_generated_method = "0474B0481C0648E92C636184352FE3B2")
     public String getXmlEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1471431543 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1471431543 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1471431543 = xmlEncoding;
-        varB4EAC82CA7396A68D541C85D26508E83_1471431543.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1471431543.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1471431543;
-        // ---------- Original Method ----------
-        //return xmlEncoding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.462 -0400", hash_original_method = "AF89DB06972BD6AFB50AFEC4B946DE00", hash_generated_method = "7D5612D42CB26253A0228BF421CD7711")
     public String getContentTypeMime() {
-        String varB4EAC82CA7396A68D541C85D26508E83_835103185 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_835103185 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_835103185 = contentTypeMime;
-        varB4EAC82CA7396A68D541C85D26508E83_835103185.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_835103185.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_835103185;
-        // ---------- Original Method ----------
-        //return contentTypeMime;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.463 -0400", hash_original_method = "D63D11323318AB5C82EE37F5F9D391F2", hash_generated_method = "CEB875373D1672EEB451E1912CBD0DEA")
     public String getContentTypeEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_572352456 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_572352456 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_572352456 = contentTypeEncoding;
-        varB4EAC82CA7396A68D541C85D26508E83_572352456.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_572352456.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_572352456;
-        // ---------- Original Method ----------
-        //return contentTypeEncoding;
+        
+        
     }
 
     

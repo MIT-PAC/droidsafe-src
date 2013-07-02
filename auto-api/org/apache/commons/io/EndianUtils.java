@@ -1,11 +1,11 @@
 package org.apache.commons.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.EOFException;
 import java.io.IOException;
@@ -17,7 +17,7 @@ public class EndianUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.271 -0400", hash_original_method = "4B733419E920224AADA57540D2C30FA6", hash_generated_method = "E488AF8E03869E4C02B403C6E6593ADC")
     public  EndianUtils() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,11 +49,13 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float swapFloat(float value) {
         return Float.intBitsToFloat( swapInteger( Float.floatToIntBits( value ) ) );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double swapDouble(double value) {
         return Double.longBitsToDouble( swapLong( Double.doubleToLongBits( value ) ) );
     }
@@ -129,38 +131,45 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeSwappedFloat(byte[] data, int offset, float value) {
         writeSwappedInteger( data, offset, Float.floatToIntBits( value ) );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float readSwappedFloat(byte[] data, int offset) {
         return Float.intBitsToFloat( readSwappedInteger( data, offset ) );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeSwappedDouble(byte[] data, int offset, double value) {
         writeSwappedLong( data, offset, Double.doubleToLongBits( value ) );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double readSwappedDouble(byte[] data, int offset) {
         return Double.longBitsToDouble( readSwappedLong( data, offset ) );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeSwappedShort(OutputStream output, short value) throws IOException {
         output.write( (byte)( ( value >> 0 ) & 0xff ) );
         output.write( (byte)( ( value >> 8 ) & 0xff ) );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static short readSwappedShort(InputStream input) throws IOException {
         return (short)( ( ( read( input ) & 0xff ) << 0 ) +
             ( ( read( input ) & 0xff ) << 8 ) );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int readSwappedUnsignedShort(InputStream input) throws IOException {
         int value1 = read( input );
         int value2 = read( input );
@@ -169,6 +178,7 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeSwappedInteger(OutputStream output, int value) throws IOException {
         output.write( (byte)( ( value >> 0 ) & 0xff ) );
         output.write( (byte)( ( value >> 8 ) & 0xff ) );
@@ -177,6 +187,7 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int readSwappedInteger(InputStream input) throws IOException {
         int value1 = read( input );
         int value2 = read( input );
@@ -189,6 +200,7 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long readSwappedUnsignedInteger(InputStream input) throws IOException {
         int value1 = read( input );
         int value2 = read( input );
@@ -202,6 +214,7 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeSwappedLong(OutputStream output, long value) throws IOException {
         output.write( (byte)( ( value >> 0 ) & 0xff ) );
         output.write( (byte)( ( value >> 8 ) & 0xff ) );
@@ -214,6 +227,7 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long readSwappedLong(InputStream input) throws IOException {
         byte[] bytes = new byte[8];
         for ( int i=0; i<8; i++ ) {
@@ -223,26 +237,31 @@ public class EndianUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeSwappedFloat(OutputStream output, float value) throws IOException {
         writeSwappedInteger( output, Float.floatToIntBits( value ) );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float readSwappedFloat(InputStream input) throws IOException {
         return Float.intBitsToFloat( readSwappedInteger( input ) );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeSwappedDouble(OutputStream output, double value) throws IOException {
         writeSwappedLong( output, Double.doubleToLongBits( value ) );
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double readSwappedDouble(InputStream input) throws IOException {
         return Double.longBitsToDouble( readSwappedLong( input ) );
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int read(InputStream input) throws IOException {
         int value = input.read();
         if( -1 == value ) {

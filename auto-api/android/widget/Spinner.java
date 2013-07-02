@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.annotation.Widget;
 import android.app.AlertDialog;
@@ -45,7 +45,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
     public  Spinner(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -54,7 +54,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         this(context, null, com.android.internal.R.attr.spinnerStyle, mode);
         addTaint(context.getTaint());
         addTaint(mode);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -63,7 +63,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         this(context, attrs, com.android.internal.R.attr.spinnerStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -73,7 +73,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -84,13 +84,13 @@ public class Spinner extends AbsSpinner implements OnClickListener {
                 com.android.internal.R.styleable.Spinner, defStyle, 0);
         {
             mode = a.getInt(com.android.internal.R.styleable.Spinner_spinnerMode, MODE_DIALOG);
-        } //End block
-        //Begin case MODE_DIALOG 
+        } 
+        
         {
             mPopup = new DialogPopup();
-        } //End block
-        //End case MODE_DIALOG 
-        //Begin case MODE_DROPDOWN 
+        } 
+        
+        
         {
             DropdownPopup popup = new DropdownPopup(context, attrs, defStyle);
             mDropDownWidth = a.getLayoutDimension(
@@ -102,15 +102,15 @@ public class Spinner extends AbsSpinner implements OnClickListener {
                     com.android.internal.R.styleable.Spinner_dropDownVerticalOffset, 0);
             {
                 popup.setVerticalOffset(verticalOffset);
-            } //End block
+            } 
             final int horizontalOffset = a.getDimensionPixelOffset(
                     com.android.internal.R.styleable.Spinner_dropDownHorizontalOffset, 0);
             {
                 popup.setHorizontalOffset(horizontalOffset);
-            } //End block
+            } 
             mPopup = popup;
-        } //End block
-        //End case MODE_DROPDOWN 
+        } 
+        
         mGravity = a.getInt(com.android.internal.R.styleable.Spinner_gravity, Gravity.CENTER);
         mPopup.setPromptText(a.getString(com.android.internal.R.styleable.Spinner_prompt));
         mDisableChildrenWhenDisabled = a.getBoolean(
@@ -119,16 +119,17 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         {
             mPopup.setAdapter(mTempAdapter);
             mTempAdapter = null;
-        } //End block
+        } 
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
         addTaint(mode);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.022 -0400", hash_original_method = "E89DC933CAA3948ECC7191CDEBCA4F7F", hash_generated_method = "F80382B2D32924F06F8A7485E9990B23")
     @Override
     public void setEnabled(boolean enabled) {
@@ -139,61 +140,64 @@ public class Spinner extends AbsSpinner implements OnClickListener {
                 int i = 0;
                 {
                     getChildAt(i).setEnabled(enabled);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //super.setEnabled(enabled);
-        //if (mDisableChildrenWhenDisabled) {
-            //final int count = getChildCount();
-            //for (int i = 0; i < count; i++) {
-                //getChildAt(i).setEnabled(enabled);
-            //}
-        //}
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.023 -0400", hash_original_method = "2D67806CEC3CAAEAC987F460E7189BA9", hash_generated_method = "581B3A8CC2ADFBD090B1DE0FBFA07032")
     public void setGravity(int gravity) {
         {
             {
                 gravity |= Gravity.LEFT;
-            } //End block
+            } 
             mGravity = gravity;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mGravity != gravity) {
-            //if ((gravity & Gravity.HORIZONTAL_GRAVITY_MASK) == 0) {
-                //gravity |= Gravity.LEFT;
-            //}
-            //mGravity = gravity;
-            //requestLayout();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.023 -0400", hash_original_method = "60241601236C86A9296272064A15234D", hash_generated_method = "B3BAD5DA17A85B926BCB91F9E8FEBA88")
     @Override
     public void setAdapter(SpinnerAdapter adapter) {
         super.setAdapter(adapter);
         {
             mPopup.setAdapter(new DropDownAdapter(adapter));
-        } //End block
+        } 
         {
             mTempAdapter = new DropDownAdapter(adapter);
-        } //End block
-        // ---------- Original Method ----------
-        //super.setAdapter(adapter);
-        //if (mPopup != null) {
-            //mPopup.setAdapter(new DropDownAdapter(adapter));
-        //} else {
-            //mTempAdapter = new DropDownAdapter(adapter);
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.024 -0400", hash_original_method = "50D7CC7A93B993E2A6FF522D575BAEB5", hash_generated_method = "6964ADA34485D627599A55C8528B9EBF")
     @Override
     public int getBaseline() {
@@ -202,75 +206,78 @@ public class Spinner extends AbsSpinner implements OnClickListener {
             boolean varBF62E6C23FE36C17A3594E034FF46D2E_1683678508 = (getChildCount() > 0);
             {
                 child = getChildAt(0);
-            } //End block
+            } 
             {
                 boolean var64E96C628F62864AA686A96BEDED1403_970513004 = (mAdapter != null && mAdapter.getCount() > 0);
                 {
                     child = makeAndAddView(0);
                     mRecycler.put(0, child);
                     removeAllViewsInLayout();
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             final int childBaseline = child.getBaseline();
             {
                 Object var54BA034BC30EE04F32CE30794275A01A_190803871 = (child.getTop() + childBaseline);
-            } //End flattened ternary
-        } //End block
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_835479921 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_835479921;
-        // ---------- Original Method ----------
-        //View child = null;
-        //if (getChildCount() > 0) {
-            //child = getChildAt(0);
-        //} else if (mAdapter != null && mAdapter.getCount() > 0) {
-            //child = makeAndAddView(0);
-            //mRecycler.put(0, child);
-            //removeAllViewsInLayout();
-        //}
-        //if (child != null) {
-            //final int childBaseline = child.getBaseline();
-            //return childBaseline >= 0 ? child.getTop() + childBaseline : -1;
-        //} else {
-            //return -1;
-        //}
+        
+        
+        
+            
+        
+            
+            
+            
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.025 -0400", hash_original_method = "B6F13EE08FDC85FB02DBBB6CA125C601", hash_generated_method = "0C30FBBDFCA2AD243A8F903B6A958ECF")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDetachedFromWindow();
         {
             boolean varD929D8531D595F5EA0B4A8A252DF969D_769413526 = (mPopup != null && mPopup.isShowing());
             {
                 mPopup.dismiss();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //super.onDetachedFromWindow();
-        //if (mPopup != null && mPopup.isShowing()) {
-            //mPopup.dismiss();
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.025 -0400", hash_original_method = "AE9F9278138E36A1F7A0C4102CD0DE5F", hash_generated_method = "7F5AC0D830F3AD8737EF0FF5E2239EB7")
     @Override
     public void setOnItemClickListener(OnItemClickListener l) {
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("setOnItemClickListener cannot be used with a spinner.");
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //throw new RuntimeException("setOnItemClickListener cannot be used with a spinner.");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.025 -0400", hash_original_method = "EC8AF316641014792672178145DBD315", hash_generated_method = "416704A145E70894D30E4CA6A7A6C81B")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         {
             boolean var5BB94CDAE497737B2AF326771BF24CAC_864453443 = (mPopup != null && MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.AT_MOST);
@@ -280,26 +287,27 @@ public class Spinner extends AbsSpinner implements OnClickListener {
                     measureContentWidth(getAdapter(), getBackground())),
                     MeasureSpec.getSize(widthMeasureSpec)),
                     getMeasuredHeight());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        //if (mPopup != null && MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.AT_MOST) {
-            //final int measuredWidth = getMeasuredWidth();
-            //setMeasuredDimension(Math.min(Math.max(measuredWidth,
-                    //measureContentWidth(getAdapter(), getBackground())),
-                    //MeasureSpec.getSize(widthMeasureSpec)),
-                    //getMeasuredHeight());
-        //}
+        
+        
+        
+            
+            
+                    
+                    
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.026 -0400", hash_original_method = "2F25E46AB3A307ED9F0C91E6C81BDCD4", hash_generated_method = "65ACF9A64D756E5637EB155848E3E853")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onLayout(changed, l, t, r, b);
         mInLayout = true;
         layout(0, false);
@@ -309,11 +317,11 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        //super.onLayout(changed, l, t, r, b);
-        //mInLayout = true;
-        //layout(0, false);
-        //mInLayout = false;
+        
+        
+        
+        
+        
     }
 
     
@@ -324,25 +332,25 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         int childrenWidth = mRight - mLeft - mSpinnerPadding.left - mSpinnerPadding.right;
         {
             handleDataChanged();
-        } //End block
+        } 
         {
             resetList();
-        } //End block
+        } 
         {
             setSelectedPositionInt(mNextSelectedPosition);
-        } //End block
+        } 
         recycleAllViews();
         removeAllViewsInLayout();
         mFirstPosition = mSelectedPosition;
         View sel = makeAndAddView(mSelectedPosition);
         int width = sel.getMeasuredWidth();
         int selectedOffset = childrenLeft;
-        //Begin case Gravity.CENTER_HORIZONTAL 
+        
         selectedOffset = childrenLeft + (childrenWidth / 2) - (width / 2);
-        //End case Gravity.CENTER_HORIZONTAL 
-        //Begin case Gravity.RIGHT 
+        
+        
         selectedOffset = childrenLeft + childrenWidth - width;
-        //End case Gravity.RIGHT 
+        
         sel.offsetLeftAndRight(selectedOffset);
         mRecycler.clear();
         invalidate();
@@ -352,64 +360,66 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         setNextSelectedPositionInt(mSelectedPosition);
         addTaint(delta);
         addTaint(animate);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.027 -0400", hash_original_method = "16A0D15DF35F8329F5BE73262CE9B509", hash_generated_method = "73D00A02A356E9DE576090E0CD5E9D92")
     private View makeAndAddView(int position) {
-        View varB4EAC82CA7396A68D541C85D26508E83_314745667 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1533942955 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_314745667 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1533942955 = null; 
         View child;
         {
             child = mRecycler.get(position);
             {
                 setUpChild(child);
                 varB4EAC82CA7396A68D541C85D26508E83_314745667 = child;
-            } //End block
-        } //End block
+            } 
+        } 
         child = mAdapter.getView(position, null, this);
         setUpChild(child);
         varB4EAC82CA7396A68D541C85D26508E83_1533942955 = child;
         addTaint(position);
-        View varA7E53CE21691AB073D9660D615818899_663316521; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_663316521; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_663316521 = varB4EAC82CA7396A68D541C85D26508E83_314745667;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_663316521 = varB4EAC82CA7396A68D541C85D26508E83_1533942955;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_663316521.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_663316521.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_663316521;
-        // ---------- Original Method ----------
-        //View child;
-        //if (!mDataChanged) {
-            //child = mRecycler.get(position);
-            //if (child != null) {
-                //setUpChild(child);
-                //return child;
-            //}
-        //}
-        //child = mAdapter.getView(position, null, this);
-        //setUpChild(child);
-        //return child;
+        
+        
+        
+            
+            
+                
+                
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.027 -0400", hash_original_method = "EA422D8BE64CA8F3FB87FB3D4E23C7FB", hash_generated_method = "FF2739BD3FA84FB161776F31DE4F3C45")
     private void setUpChild(View child) {
         ViewGroup.LayoutParams lp = child.getLayoutParams();
         {
             lp = generateDefaultLayoutParams();
-        } //End block
+        } 
         addViewInLayout(child, 0, lp);
         child.setSelected(hasFocus());
         {
             child.setEnabled(isEnabled());
-        } //End block
+        } 
         int childHeightSpec = ViewGroup.getChildMeasureSpec(mHeightMeasureSpec,
                 mSpinnerPadding.top + mSpinnerPadding.bottom, lp.height);
         int childWidthSpec = ViewGroup.getChildMeasureSpec(mWidthMeasureSpec,
@@ -426,11 +436,12 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         childRight = childLeft + width;
         child.layout(childLeft, childTop, childRight, childBottom);
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.028 -0400", hash_original_method = "DE0583C7611D1F2BE10915793A501A4C", hash_generated_method = "580B82D55C29167D983995D3E127DA9D")
     @Override
     public boolean performClick() {
@@ -441,62 +452,66 @@ public class Spinner extends AbsSpinner implements OnClickListener {
                 boolean varE54135B8CA552C10B65F25C1BE9A982D_1980950837 = (!mPopup.isShowing());
                 {
                     mPopup.show();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_562686196 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_562686196;
-        // ---------- Original Method ----------
-        //boolean handled = super.performClick();
-        //if (!handled) {
-            //handled = true;
-            //if (!mPopup.isShowing()) {
-                //mPopup.show();
-            //}
-        //}
-        //return handled;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.028 -0400", hash_original_method = "21A8DBFD7E0EEAC4158875C988469F50", hash_generated_method = "4747EBD4AE52098FE6F53157784D7F32")
     public void onClick(DialogInterface dialog, int which) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         setSelection(which);
         dialog.dismiss();
         addTaint(dialog.getTaint());
         addTaint(which);
-        // ---------- Original Method ----------
-        //setSelection(which);
-        //dialog.dismiss();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.029 -0400", hash_original_method = "82831FCEC8FF5E5499EA6A36B12A66DA", hash_generated_method = "5244C7309714851D8F9FA9A60609AE32")
     public void setPrompt(CharSequence prompt) {
         mPopup.setPromptText(prompt);
         addTaint(prompt.getTaint());
-        // ---------- Original Method ----------
-        //mPopup.setPromptText(prompt);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.029 -0400", hash_original_method = "21AEC72317B46CB2881CC90C11A2AA6E", hash_generated_method = "282CDD662BB137828E37FF9AB97BDF04")
     public void setPromptId(int promptId) {
         setPrompt(getContext().getText(promptId));
         addTaint(promptId);
-        // ---------- Original Method ----------
-        //setPrompt(getContext().getText(promptId));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.029 -0400", hash_original_method = "07472705288FF1B8FBB0DCE1C944E4ED", hash_generated_method = "DD42600F7F98DFE51A2108F954A14892")
     public CharSequence getPrompt() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1525183191 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1525183191 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1525183191 = mPopup.getHintText();
-        varB4EAC82CA7396A68D541C85D26508E83_1525183191.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1525183191.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1525183191;
-        // ---------- Original Method ----------
-        //return mPopup.getHintText();
+        
+        
     }
 
     
@@ -518,7 +533,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
                 {
                     itemType = positionType;
                     itemView = null;
-                } //End block
+                } 
                 itemView = adapter.getView(i, itemView, this);
                 {
                     boolean var4600A482EC7CE1FD745D42F74A7EF908_758194397 = (itemView.getLayoutParams() == null);
@@ -526,22 +541,22 @@ public class Spinner extends AbsSpinner implements OnClickListener {
                         itemView.setLayoutParams(new ViewGroup.LayoutParams(
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT));
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 itemView.measure(widthMeasureSpec, heightMeasureSpec);
                 width = Math.max(width, itemView.getMeasuredWidth());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             background.getPadding(mTempRect);
             width += mTempRect.left + mTempRect.right;
-        } //End block
+        } 
         addTaint(adapter.getTaint());
         addTaint(background.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1309386781 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1309386781;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -558,12 +573,12 @@ public class Spinner extends AbsSpinner implements OnClickListener {
             this.mAdapter = adapter;
             {
                 this.mListAdapter = (ListAdapter) adapter;
-            } //End block
-            // ---------- Original Method ----------
-            //this.mAdapter = adapter;
-            //if (adapter instanceof ListAdapter) {
-                //this.mListAdapter = (ListAdapter) adapter;
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
@@ -571,23 +586,23 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         public int getCount() {
             {
                 Object var067BB5993A461EDA4265964116724952_1995570417 = (mAdapter.getCount());
-            } //End flattened ternary
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_286350266 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_286350266;
-            // ---------- Original Method ----------
-            //return mAdapter == null ? 0 : mAdapter.getCount();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.032 -0400", hash_original_method = "E5529375AE985E64AC9FCAEB196D1278", hash_generated_method = "B710389260043CD5E4A22AC6F7AD6C6C")
         public Object getItem(int position) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_112956438 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_112956438 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_112956438 = mAdapter == null ? null : mAdapter.getItem(position);
             addTaint(position);
-            varB4EAC82CA7396A68D541C85D26508E83_112956438.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_112956438.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_112956438;
-            // ---------- Original Method ----------
-            //return mAdapter == null ? null : mAdapter.getItem(position);
+            
+            
         }
 
         
@@ -595,42 +610,42 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         public long getItemId(int position) {
             {
                 Object varE791D48808E44BBA8A766C8461C5A401_1465381140 = (mAdapter.getItemId(position));
-            } //End flattened ternary
+            } 
             addTaint(position);
             long var0F5264038205EDFB1AC05FBB0E8C5E94_2039813133 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_2039813133;
-            // ---------- Original Method ----------
-            //return mAdapter == null ? -1 : mAdapter.getItemId(position);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.033 -0400", hash_original_method = "A9F8983A232A0A246637701F010ACE34", hash_generated_method = "5B9EEF8C1D171F61DA1A97B289653EFA")
         public View getView(int position, View convertView, ViewGroup parent) {
-            View varB4EAC82CA7396A68D541C85D26508E83_152849354 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_152849354 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_152849354 = getDropDownView(position, convertView, parent);
             addTaint(position);
             addTaint(convertView.getTaint());
             addTaint(parent.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_152849354.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_152849354.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_152849354;
-            // ---------- Original Method ----------
-            //return getDropDownView(position, convertView, parent);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.034 -0400", hash_original_method = "F097CA4C24B6E5261C3C9C12681A60CA", hash_generated_method = "1AE9C7EA182BB3AD0184F7644C1ABC1C")
         public View getDropDownView(int position, View convertView, ViewGroup parent) {
-            View varB4EAC82CA7396A68D541C85D26508E83_820483694 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_820483694 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_820483694 = mAdapter == null ? null :
                     mAdapter.getDropDownView(position, convertView, parent);
             addTaint(position);
             addTaint(convertView.getTaint());
             addTaint(parent.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_820483694.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_820483694.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_820483694;
-            // ---------- Original Method ----------
-            //return mAdapter == null ? null :
-                    //mAdapter.getDropDownView(position, convertView, parent);
+            
+            
+                    
         }
 
         
@@ -639,22 +654,22 @@ public class Spinner extends AbsSpinner implements OnClickListener {
             boolean var92A5B2B773F784D23AACADEC549061AE_2119439627 = (mAdapter != null && mAdapter.hasStableIds());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1702022356 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1702022356;
-            // ---------- Original Method ----------
-            //return mAdapter != null && mAdapter.hasStableIds();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.035 -0400", hash_original_method = "809D44C02719E33F590103DE7F6576A1", hash_generated_method = "394F8D6D1C3E11D04B82C1A93DEB883B")
         public void registerDataSetObserver(DataSetObserver observer) {
-            //DSFIXME: CODE0010: Possible callback registration function detected
+            
             {
                 mAdapter.registerDataSetObserver(observer);
-            } //End block
+            } 
             addTaint(observer.getTaint());
-            // ---------- Original Method ----------
-            //if (mAdapter != null) {
-                //mAdapter.registerDataSetObserver(observer);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -662,12 +677,12 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         public void unregisterDataSetObserver(DataSetObserver observer) {
             {
                 mAdapter.unregisterDataSetObserver(observer);
-            } //End block
+            } 
             addTaint(observer.getTaint());
-            // ---------- Original Method ----------
-            //if (mAdapter != null) {
-                //mAdapter.unregisterDataSetObserver(observer);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -676,16 +691,16 @@ public class Spinner extends AbsSpinner implements OnClickListener {
             final ListAdapter adapter = mListAdapter;
             {
                 boolean var985642AB936091C75C15CA5EE89CD4ED_1645793744 = (adapter.areAllItemsEnabled());
-            } //End block
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_550253533 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_550253533;
-            // ---------- Original Method ----------
-            //final ListAdapter adapter = mListAdapter;
-            //if (adapter != null) {
-                //return adapter.areAllItemsEnabled();
-            //} else {
-                //return true;
-            //}
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -694,17 +709,17 @@ public class Spinner extends AbsSpinner implements OnClickListener {
             final ListAdapter adapter = mListAdapter;
             {
                 boolean var1B060CF70AEECE4FB915FA202647B0B7_1939692925 = (adapter.isEnabled(position));
-            } //End block
+            } 
             addTaint(position);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_187101746 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_187101746;
-            // ---------- Original Method ----------
-            //final ListAdapter adapter = mListAdapter;
-            //if (adapter != null) {
-                //return adapter.isEnabled(position);
-            //} else {
-                //return true;
-            //}
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -713,8 +728,8 @@ public class Spinner extends AbsSpinner implements OnClickListener {
             addTaint(position);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1408436595 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1408436595;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
@@ -722,8 +737,8 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         public int getViewTypeCount() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_39054723 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_39054723;
-            // ---------- Original Method ----------
-            //return 1;
+            
+            
         }
 
         
@@ -732,8 +747,8 @@ public class Spinner extends AbsSpinner implements OnClickListener {
             boolean var1E308F1B2924DF35832B0C6653D5399D_379711625 = (getCount() == 0);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1198904125 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1198904125;
-            // ---------- Original Method ----------
-            //return getCount() == 0;
+            
+            
         }
 
         
@@ -755,7 +770,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.037 -0400", hash_original_method = "CE7B674B2EA3FB97987A0C722722E738", hash_generated_method = "CE7B674B2EA3FB97987A0C722722E738")
         public DialogPopup ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -763,9 +778,9 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         public void dismiss() {
             mPopup.dismiss();
             mPopup = null;
-            // ---------- Original Method ----------
-            //mPopup.dismiss();
-            //mPopup = null;
+            
+            
+            
         }
 
         
@@ -773,38 +788,38 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         public boolean isShowing() {
             {
                 Object var064AFD47A2F0375BD3A49E11623DCB44_735895748 = (mPopup.isShowing());
-            } //End flattened ternary
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_75289355 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_75289355;
-            // ---------- Original Method ----------
-            //return mPopup != null ? mPopup.isShowing() : false;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.038 -0400", hash_original_method = "8403FBCA2C28723FD059691B00D88CE1", hash_generated_method = "2A0FFE64737AEA0CAA4489A819F70A16")
         public void setAdapter(ListAdapter adapter) {
             mListAdapter = adapter;
-            // ---------- Original Method ----------
-            //mListAdapter = adapter;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.039 -0400", hash_original_method = "9624F776B01A0F54225A1B393847DC0B", hash_generated_method = "BB0F0F2687998277E739EA69AA391DAB")
         public void setPromptText(CharSequence hintText) {
             mPrompt = hintText;
-            // ---------- Original Method ----------
-            //mPrompt = hintText;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.039 -0400", hash_original_method = "2D362FF1EB68D3106D16676724B21A20", hash_generated_method = "D053CBD0446D1C77B69FA8A756AF78DF")
         public CharSequence getHintText() {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_887867464 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_887867464 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_887867464 = mPrompt;
-            varB4EAC82CA7396A68D541C85D26508E83_887867464.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_887867464.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_887867464;
-            // ---------- Original Method ----------
-            //return mPrompt;
+            
+            
         }
 
         
@@ -813,29 +828,29 @@ public class Spinner extends AbsSpinner implements OnClickListener {
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
             {
                 builder.setTitle(mPrompt);
-            } //End block
+            } 
             mPopup = builder.setSingleChoiceItems(mListAdapter,
                     getSelectedItemPosition(), this).show();
-            // ---------- Original Method ----------
-            //AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            //if (mPrompt != null) {
-                //builder.setTitle(mPrompt);
-            //}
-            //mPopup = builder.setSingleChoiceItems(mListAdapter,
-                    //getSelectedItemPosition(), this).show();
+            
+            
+            
+                
+            
+            
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.040 -0400", hash_original_method = "611F98047F020130E79D369CDAEB53F1", hash_generated_method = "20A80883BB81CEF2BE9AA01C09089F02")
         public void onClick(DialogInterface dialog, int which) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             setSelection(which);
             dismiss();
             addTaint(dialog.getTaint());
             addTaint(which);
-            // ---------- Original Method ----------
-            //setSelection(which);
-            //dismiss();
+            
+            
+            
         }
 
         
@@ -860,31 +875,31 @@ public class Spinner extends AbsSpinner implements OnClickListener {
             setOnItemClickListener(new OnItemClickListener() {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.040 -0400", hash_original_method = "BF22134BB65D55D48C7DDDF1370D6ED2", hash_generated_method = "2159CDD10341E819E3C4AB7B64FB1945")
                 public void onItemClick(AdapterView parent, View v, int position, long id) {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     Spinner.this.setSelection(position);
                     dismiss();
                     addTaint(parent.getTaint());
                     addTaint(v.getTaint());
                     addTaint(position);
                     addTaint(id);
-                    // ---------- Original Method ----------
-                    //Spinner.this.setSelection(position);
-                    //dismiss();
+                    
+                    
+                    
                 }
 });
             addTaint(context.getTaint());
             addTaint(attrs.getTaint());
             addTaint(defStyleRes);
-            // ---------- Original Method ----------
-            //setAnchorView(Spinner.this);
-            //setModal(true);
-            //setPromptPosition(POSITION_PROMPT_ABOVE);
-            //setOnItemClickListener(new OnItemClickListener() {
-                //public void onItemClick(AdapterView parent, View v, int position, long id) {
-                    //Spinner.this.setSelection(position);
-                    //dismiss();
-                //}
-            //});
+            
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
         }
 
         
@@ -893,28 +908,28 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         public void setAdapter(ListAdapter adapter) {
             super.setAdapter(adapter);
             mAdapter = adapter;
-            // ---------- Original Method ----------
-            //super.setAdapter(adapter);
-            //mAdapter = adapter;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.041 -0400", hash_original_method = "708F2EB27A8EC2C1F7F8C9DF82B35D6E", hash_generated_method = "27011EE29443B22D7CFDB17904BD3DFF")
         public CharSequence getHintText() {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_733183051 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_733183051 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_733183051 = mHintText;
-            varB4EAC82CA7396A68D541C85D26508E83_733183051.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_733183051.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_733183051;
-            // ---------- Original Method ----------
-            //return mHintText;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.042 -0400", hash_original_method = "5C072498C5CF07F19C35B82F77A3E1EC", hash_generated_method = "16E5231AF70EBF4E19AB1B172E7CB522")
         public void setPromptText(CharSequence hintText) {
             mHintText = hintText;
-            // ---------- Original Method ----------
-            //mHintText = hintText;
+            
+            
         }
 
         
@@ -928,28 +943,28 @@ public class Spinner extends AbsSpinner implements OnClickListener {
                 setContentWidth(Math.max(
                         measureContentWidth((SpinnerAdapter) mAdapter, getBackground()),
                         spinnerWidth - spinnerPaddingLeft - spinnerPaddingRight));
-            } //End block
+            } 
             {
                 final int spinnerWidth = Spinner.this.getWidth();
                 final int spinnerPaddingRight = Spinner.this.getPaddingRight();
                 setContentWidth(spinnerWidth - spinnerPaddingLeft - spinnerPaddingRight);
-            } //End block
+            } 
             {
                 setContentWidth(mDropDownWidth);
-            } //End block
+            } 
             final Drawable background = getBackground();
             int bgOffset = 0;
             {
                 background.getPadding(mTempRect);
                 bgOffset = -mTempRect.left;
-            } //End block
+            } 
             setHorizontalOffset(bgOffset + spinnerPaddingLeft);
             setInputMethodMode(ListPopupWindow.INPUT_METHOD_NOT_NEEDED);
             super.show();
             getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
             setSelection(Spinner.this.getSelectedItemPosition());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

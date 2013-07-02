@@ -1,11 +1,11 @@
 package android.support.v4.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.database.ContentObserver;
@@ -55,8 +55,8 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         init(context, c, FLAG_AUTO_REQUERY);
         addTaint(context.getTaint());
         addTaint(c.getTaint());
-        // ---------- Original Method ----------
-        //init(context, c, FLAG_AUTO_REQUERY);
+        
+        
     }
 
     
@@ -66,8 +66,8 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         addTaint(context.getTaint());
         addTaint(c.getTaint());
         addTaint(autoRequery);
-        // ---------- Original Method ----------
-        //init(context, c, autoRequery ? FLAG_AUTO_REQUERY : FLAG_REGISTER_CONTENT_OBSERVER);
+        
+        
     }
 
     
@@ -77,11 +77,12 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         addTaint(context.getTaint());
         addTaint(c.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //init(context, c, flags);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.278 -0400", hash_original_method = "8A3F140CB585945159B363BD7170B858", hash_generated_method = "87DB3DBCAAB7E8DC93A13F703C32BA46")
     @Deprecated
     protected void init(Context context, Cursor c, boolean autoRequery) {
@@ -89,8 +90,8 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         addTaint(context.getTaint());
         addTaint(c.getTaint());
         addTaint(autoRequery);
-        // ---------- Original Method ----------
-        //init(context, c, autoRequery ? FLAG_AUTO_REQUERY : FLAG_REGISTER_CONTENT_OBSERVER);
+        
+        
     }
 
     
@@ -99,10 +100,10 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         {
             flags |= FLAG_REGISTER_CONTENT_OBSERVER;
             mAutoRequery = true;
-        } //End block
+        } 
         {
             mAutoRequery = false;
-        } //End block
+        } 
         boolean cursorPresent = c != null;
         mCursor = c;
         mDataValid = cursorPresent;
@@ -111,81 +112,84 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         {
             mChangeObserver = new ChangeObserver();
             mDataSetObserver = new MyDataSetObserver();
-        } //End block
+        } 
         {
             mChangeObserver = null;
             mDataSetObserver = null;
-        } //End block
+        } 
         {
             c.registerContentObserver(mChangeObserver);
             c.registerDataSetObserver(mDataSetObserver);
-        } //End block
+        } 
         addTaint(flags);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.279 -0400", hash_original_method = "ED4C67C6B1C11ED6A644F86CCA800916", hash_generated_method = "BE80C1294AEDA3720627083D5B58B845")
     public Cursor getCursor() {
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_1502966882 = null; //Variable for return #1
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_1502966882 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1502966882 = mCursor;
-        varB4EAC82CA7396A68D541C85D26508E83_1502966882.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1502966882.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1502966882;
-        // ---------- Original Method ----------
-        //return mCursor;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.280 -0400", hash_original_method = "F232C8AA0135C20BD5AF7ACB0020E9DD", hash_generated_method = "437C3856B5DA8F8948B57887899BC0CC")
     public int getCount() {
         {
             int varA0B4CA491E47E321D82FB34DD7E77E5A_752628955 = (mCursor.getCount());
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1766688212 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1766688212;
-        // ---------- Original Method ----------
-        //if (mDataValid && mCursor != null) {
-            //return mCursor.getCount();
-        //} else {
-            //return 0;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.280 -0400", hash_original_method = "0491DE82927D7739F3937D1F88D16ECE", hash_generated_method = "A3892E275012A28D2609115753314467")
     public Object getItem(int position) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_2089633405 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_1829661183 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_2089633405 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_1829661183 = null; 
         {
             mCursor.moveToPosition(position);
             varB4EAC82CA7396A68D541C85D26508E83_2089633405 = mCursor;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1829661183 = null;
-        } //End block
+        } 
         addTaint(position);
-        Object varA7E53CE21691AB073D9660D615818899_1218765593; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_1218765593; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1218765593 = varB4EAC82CA7396A68D541C85D26508E83_2089633405;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1218765593 = varB4EAC82CA7396A68D541C85D26508E83_1829661183;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1218765593.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1218765593.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1218765593;
-        // ---------- Original Method ----------
-        //if (mDataValid && mCursor != null) {
-            //mCursor.moveToPosition(position);
-            //return mCursor;
-        //} else {
-            //return null;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.281 -0400", hash_original_method = "34FC88027666F3EEA6FC8DBB36C510AF", hash_generated_method = "74097715BFC32C985A2F14CFD1E106A8")
     public long getItemId(int position) {
         {
@@ -193,22 +197,22 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
                 boolean var648D0BE9FA954D6C39DFA90BE3F73F88_1790549298 = (mCursor.moveToPosition(position));
                 {
                     long varF10BE29D713799722194E8ADDC7A0650_212428539 = (mCursor.getLong(mRowIDColumn));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(position);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1412169039 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1412169039;
-        // ---------- Original Method ----------
-        //if (mDataValid && mCursor != null) {
-            //if (mCursor.moveToPosition(position)) {
-                //return mCursor.getLong(mRowIDColumn);
-            //} else {
-                //return 0;
-            //}
-        //} else {
-            //return 0;
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -217,153 +221,158 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     public boolean hasStableIds() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_639475756 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_639475756;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.282 -0400", hash_original_method = "04641394EE9B89BDCE0805D3C5BEBDA5", hash_generated_method = "A5D810EB62ECC40925EC8E7D26D2B7B0")
     public View getView(int position, View convertView, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1403224851 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1403224851 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("this should only be called when the cursor is valid");
-        } //End block
+        } 
         {
             boolean var1091E50B8E5D746C74AE8CDCECCDC654_2032975970 = (!mCursor.moveToPosition(position));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("couldn't move cursor to position " + position);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         View v;
         {
             v = newView(mContext, mCursor, parent);
-        } //End block
+        } 
         {
             v = convertView;
-        } //End block
+        } 
         bindView(v, mContext, mCursor);
         varB4EAC82CA7396A68D541C85D26508E83_1403224851 = v;
         addTaint(position);
         addTaint(convertView.getTaint());
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1403224851.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1403224851.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1403224851;
-        // ---------- Original Method ----------
-        //if (!mDataValid) {
-            //throw new IllegalStateException("this should only be called when the cursor is valid");
-        //}
-        //if (!mCursor.moveToPosition(position)) {
-            //throw new IllegalStateException("couldn't move cursor to position " + position);
-        //}
-        //View v;
-        //if (convertView == null) {
-            //v = newView(mContext, mCursor, parent);
-        //} else {
-            //v = convertView;
-        //}
-        //bindView(v, mContext, mCursor);
-        //return v;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.283 -0400", hash_original_method = "8987F0888A94923BAC3C282546957FFA", hash_generated_method = "9762C00DD335B6B68763E67E6BF67D1C")
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1246105789 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1689352475 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_1246105789 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1689352475 = null; 
         {
             mCursor.moveToPosition(position);
             View v;
             {
                 v = newDropDownView(mContext, mCursor, parent);
-            } //End block
+            } 
             {
                 v = convertView;
-            } //End block
+            } 
             bindView(v, mContext, mCursor);
             varB4EAC82CA7396A68D541C85D26508E83_1246105789 = v;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1689352475 = null;
-        } //End block
+        } 
         addTaint(position);
         addTaint(convertView.getTaint());
         addTaint(parent.getTaint());
-        View varA7E53CE21691AB073D9660D615818899_1206138672; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1206138672; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1206138672 = varB4EAC82CA7396A68D541C85D26508E83_1246105789;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1206138672 = varB4EAC82CA7396A68D541C85D26508E83_1689352475;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1206138672.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1206138672.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1206138672;
-        // ---------- Original Method ----------
-        //if (mDataValid) {
-            //mCursor.moveToPosition(position);
-            //View v;
-            //if (convertView == null) {
-                //v = newDropDownView(mContext, mCursor, parent);
-            //} else {
-                //v = convertView;
-            //}
-            //bindView(v, mContext, mCursor);
-            //return v;
-        //} else {
-            //return null;
-        //}
+        
+        
+            
+            
+            
+                
+            
+                
+            
+            
+            
+        
+            
+        
     }
 
     
     public abstract View newView(Context context, Cursor cursor, ViewGroup parent);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.284 -0400", hash_original_method = "4EAF37DD2AC2B68CF9F2E847E9D5C2B4", hash_generated_method = "D9AD6C3959EFA1BD563ABBE881394F21")
     public View newDropDownView(Context context, Cursor cursor, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_51910330 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_51910330 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_51910330 = newView(context, cursor, parent);
         addTaint(context.getTaint());
         addTaint(cursor.getTaint());
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_51910330.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_51910330.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_51910330;
-        // ---------- Original Method ----------
-        //return newView(context, cursor, parent);
+        
+        
     }
 
     
     public abstract void bindView(View view, Context context, Cursor cursor);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.286 -0400", hash_original_method = "A3DB89FF308CDDA8076F4DD4182DC99B", hash_generated_method = "582922BF06D3B728CCDFA9514919B96D")
     public void changeCursor(Cursor cursor) {
         Cursor old = swapCursor(cursor);
         {
             old.close();
-        } //End block
+        } 
         addTaint(cursor.getTaint());
-        // ---------- Original Method ----------
-        //Cursor old = swapCursor(cursor);
-        //if (old != null) {
-            //old.close();
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.288 -0400", hash_original_method = "3AE932C7E61F472FB82D7B0D8E632CE6", hash_generated_method = "FF50076C55CD769E0F22FC572DB5B58A")
     public Cursor swapCursor(Cursor newCursor) {
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_1087517062 = null; //Variable for return #1
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_1681134188 = null; //Variable for return #2
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_1087517062 = null; 
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_1681134188 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1087517062 = null;
-        } //End block
+        } 
         Cursor oldCursor = mCursor;
         {
             oldCursor.unregisterContentObserver(mChangeObserver);
             oldCursor.unregisterDataSetObserver(mDataSetObserver);
-        } //End block
+        } 
         mCursor = newCursor;
         {
             newCursor.registerContentObserver(mChangeObserver);
@@ -371,119 +380,123 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
             mRowIDColumn = newCursor.getColumnIndexOrThrow("_id");
             mDataValid = true;
             notifyDataSetChanged();
-        } //End block
+        } 
         {
             mRowIDColumn = -1;
             mDataValid = false;
             notifyDataSetInvalidated();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1681134188 = oldCursor;
-        Cursor varA7E53CE21691AB073D9660D615818899_1634620208; //Final return value
+        Cursor varA7E53CE21691AB073D9660D615818899_1634620208; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1634620208 = varB4EAC82CA7396A68D541C85D26508E83_1087517062;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1634620208 = varB4EAC82CA7396A68D541C85D26508E83_1681134188;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1634620208.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1634620208.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1634620208;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.289 -0400", hash_original_method = "AC3E4A96BAEBA3C91CE9B7B72B03BE17", hash_generated_method = "71A912DFC1B427F43CE2259BC093AD29")
     public CharSequence convertToString(Cursor cursor) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1408762716 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1408762716 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1408762716 = cursor == null ? "" : cursor.toString();
         addTaint(cursor.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1408762716.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1408762716.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1408762716;
-        // ---------- Original Method ----------
-        //return cursor == null ? "" : cursor.toString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.291 -0400", hash_original_method = "0F9BE7C57911E33C85760ED7E36C9D33", hash_generated_method = "D13DF3FAB27E64EC635D4F0260DDAA13")
     public Cursor runQueryOnBackgroundThread(CharSequence constraint) {
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_2116043855 = null; //Variable for return #1
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_1042566936 = null; //Variable for return #2
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_2116043855 = null; 
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_1042566936 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2116043855 = mFilterQueryProvider.runQuery(constraint);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1042566936 = mCursor;
         addTaint(constraint.getTaint());
-        Cursor varA7E53CE21691AB073D9660D615818899_2102011918; //Final return value
+        Cursor varA7E53CE21691AB073D9660D615818899_2102011918; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2102011918 = varB4EAC82CA7396A68D541C85D26508E83_2116043855;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2102011918 = varB4EAC82CA7396A68D541C85D26508E83_1042566936;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2102011918.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2102011918.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2102011918;
-        // ---------- Original Method ----------
-        //if (mFilterQueryProvider != null) {
-            //return mFilterQueryProvider.runQuery(constraint);
-        //}
-        //return mCursor;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.292 -0400", hash_original_method = "847708A1CBB9CABD379CEB5384747381", hash_generated_method = "130102A06F485A68EEB603F0AA307CB9")
     public Filter getFilter() {
-        Filter varB4EAC82CA7396A68D541C85D26508E83_750634588 = null; //Variable for return #1
+        Filter varB4EAC82CA7396A68D541C85D26508E83_750634588 = null; 
         {
             mCursorFilter = new CursorFilter(this);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_750634588 = mCursorFilter;
-        varB4EAC82CA7396A68D541C85D26508E83_750634588.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_750634588.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_750634588;
-        // ---------- Original Method ----------
-        //if (mCursorFilter == null) {
-            //mCursorFilter = new CursorFilter(this);
-        //}
-        //return mCursorFilter;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.293 -0400", hash_original_method = "67EA54121BE0FFEF70F7156625E7E3CE", hash_generated_method = "0363712649776EAD85A3CACB0D3116DE")
     public FilterQueryProvider getFilterQueryProvider() {
-        FilterQueryProvider varB4EAC82CA7396A68D541C85D26508E83_746194739 = null; //Variable for return #1
+        FilterQueryProvider varB4EAC82CA7396A68D541C85D26508E83_746194739 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_746194739 = mFilterQueryProvider;
-        varB4EAC82CA7396A68D541C85D26508E83_746194739.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_746194739.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_746194739;
-        // ---------- Original Method ----------
-        //return mFilterQueryProvider;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.294 -0400", hash_original_method = "DB32599181A301EC3439063743E0023E", hash_generated_method = "3AC0EC2BF9C403B489B89218AE938BE8")
     public void setFilterQueryProvider(FilterQueryProvider filterQueryProvider) {
         mFilterQueryProvider = filterQueryProvider;
-        // ---------- Original Method ----------
-        //mFilterQueryProvider = filterQueryProvider;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.295 -0400", hash_original_method = "A04D68B5B58FA27E71C6ECAA728402A5", hash_generated_method = "9658F9F63E6B18474F46239F8C8A9F9B")
     protected void onContentChanged() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varDB256AB1A28B69FFDC6BECF06252DBB3_610447194 = (mAutoRequery && mCursor != null && !mCursor.isClosed());
             {
                 mDataValid = mCursor.requery();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mAutoRequery && mCursor != null && !mCursor.isClosed()) {
-            //if (false) Log.v("Cursor", "Auto requerying " + mCursor + " due to update");
-            //mDataValid = mCursor.requery();
-        //}
+            } 
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -492,7 +505,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.295 -0400", hash_original_method = "E9F5B54480B866367BA64F4A5A962E11", hash_generated_method = "26A139A9C94CF802391CF18776297177")
         public  ChangeObserver() {
             super(new Handler());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -501,19 +514,19 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         public boolean deliverSelfNotifications() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_273883583 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_273883583;
-            // ---------- Original Method ----------
-            //return true;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.297 -0400", hash_original_method = "E96460F373279AF9AB8806E159ABA424", hash_generated_method = "14BD20B741BA4562A3870DA491571B1B")
         @Override
         public void onChange(boolean selfChange) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             onContentChanged();
             addTaint(selfChange);
-            // ---------- Original Method ----------
-            //onContentChanged();
+            
+            
         }
 
         
@@ -526,31 +539,31 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.297 -0400", hash_original_method = "B8855E81B638DE0F5C9202168EAE6D42", hash_generated_method = "B8855E81B638DE0F5C9202168EAE6D42")
         public MyDataSetObserver ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.298 -0400", hash_original_method = "06FCBC692E549C3C9873F9D5CBAEB7B0", hash_generated_method = "03FD84DC8C544DE0887FEB106D75CC8E")
         @Override
         public void onChanged() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mDataValid = true;
             notifyDataSetChanged();
-            // ---------- Original Method ----------
-            //mDataValid = true;
-            //notifyDataSetChanged();
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.299 -0400", hash_original_method = "EAE7DF88825384424351353A02D60615", hash_generated_method = "A259386E221C67E9FE12B36668278306")
         @Override
         public void onInvalidated() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mDataValid = false;
             notifyDataSetInvalidated();
-            // ---------- Original Method ----------
-            //mDataValid = false;
-            //notifyDataSetInvalidated();
+            
+            
+            
         }
 
         

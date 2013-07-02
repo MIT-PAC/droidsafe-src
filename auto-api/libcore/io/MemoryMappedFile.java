@@ -1,11 +1,11 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -30,12 +30,13 @@ public final class MemoryMappedFile implements AutoCloseable {
     public  MemoryMappedFile(long address, long size) {
         this.address = address;
         this.size = size;
-        // ---------- Original Method ----------
-        //this.address = address;
-        //this.size = size;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MemoryMappedFile mmapRO(String path) throws ErrnoException {
         FileDescriptor fd = Libcore.os.open(path, O_RDONLY, 0);
         long size = Libcore.os.fstat(fd).st_size;
@@ -45,39 +46,42 @@ public final class MemoryMappedFile implements AutoCloseable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.279 -0400", hash_original_method = "306B75FBBEB2593BE41A1551019979E1", hash_generated_method = "310A733C3D0C8637D5AC57EC8A3060C8")
     public synchronized void close() throws ErrnoException {
         {
             Libcore.os.munmap(address, size);
             address = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (address != 0) {
-            //Libcore.os.munmap(address, size);
-            //address = 0;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.280 -0400", hash_original_method = "F5E87BA491C8F9D5AD5FD041B46AF87F", hash_generated_method = "34E97794F92E4CCF4DED16D984F4794A")
     public BufferIterator bigEndianIterator() {
-        BufferIterator varB4EAC82CA7396A68D541C85D26508E83_1803111243 = null; //Variable for return #1
+        BufferIterator varB4EAC82CA7396A68D541C85D26508E83_1803111243 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1803111243 = new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN);
-        varB4EAC82CA7396A68D541C85D26508E83_1803111243.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1803111243.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1803111243;
-        // ---------- Original Method ----------
-        //return new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.280 -0400", hash_original_method = "C36F73D80556F0AA7A8914E669A58B4A", hash_generated_method = "0345919D1B31FC76A497C68F1868B62B")
     public BufferIterator littleEndianIterator() {
-        BufferIterator varB4EAC82CA7396A68D541C85D26508E83_306169152 = null; //Variable for return #1
+        BufferIterator varB4EAC82CA7396A68D541C85D26508E83_306169152 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_306169152 = new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.LITTLE_ENDIAN);
-        varB4EAC82CA7396A68D541C85D26508E83_306169152.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_306169152.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_306169152;
-        // ---------- Original Method ----------
-        //return new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.LITTLE_ENDIAN);
+        
+        
     }
 
     
@@ -85,8 +89,8 @@ public final class MemoryMappedFile implements AutoCloseable {
     public long size() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_390646114 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_390646114;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     

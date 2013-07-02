@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.pkcs;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 import org.bouncycastle.asn1.ASN1Encodable;
@@ -31,16 +31,16 @@ public class PBEParameter extends ASN1Encodable {
         int         iterations) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("salt length must be 8");
-        } //End block
+        } 
         this.salt = new DEROctetString(salt);
         this.iterations = new DERInteger(iterations);
-        // ---------- Original Method ----------
-        //if (salt.length != 8)
-        //{
-            //throw new IllegalArgumentException("salt length must be 8");
-        //}
-        //this.salt = new DEROctetString(salt);
-        //this.iterations = new DERInteger(iterations);
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -49,9 +49,9 @@ public class PBEParameter extends ASN1Encodable {
         ASN1Sequence  seq) {
         salt = (ASN1OctetString)seq.getObjectAt(0);
         iterations = (DERInteger)seq.getObjectAt(1);
-        // ---------- Original Method ----------
-        //salt = (ASN1OctetString)seq.getObjectAt(0);
-        //iterations = (DERInteger)seq.getObjectAt(1);
+        
+        
+        
     }
 
     
@@ -71,12 +71,12 @@ public class PBEParameter extends ASN1Encodable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.067 -0400", hash_original_method = "12A862718040CD6821608ED594311F7C", hash_generated_method = "1473A63379E6F4FA7C98CF9FFB7DCCD9")
     public BigInteger getIterationCount() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_139875251 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_139875251 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_139875251 = iterations.getValue();
-        varB4EAC82CA7396A68D541C85D26508E83_139875251.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_139875251.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_139875251;
-        // ---------- Original Method ----------
-        //return iterations.getValue();
+        
+        
     }
 
     
@@ -85,25 +85,25 @@ public class PBEParameter extends ASN1Encodable {
         byte[] varD7F29CD46F35607CF852AA4F2D245CDC_1890383206 = (salt.getOctets());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_698935799 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_698935799;
-        // ---------- Original Method ----------
-        //return salt.getOctets();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.068 -0400", hash_original_method = "0DB5FC3A2AA27196084301AD64A15FCF", hash_generated_method = "98333EC142A6EA80D03D7EF78D56A80A")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1529387665 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1529387665 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(salt);
         v.add(iterations);
         varB4EAC82CA7396A68D541C85D26508E83_1529387665 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_1529387665.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1529387665.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1529387665;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(salt);
-        //v.add(iterations);
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.harmony.security.utils;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.Provider;
 import java.security.Security;
@@ -20,26 +20,30 @@ public class AlgNameMapper {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.313 -0400", hash_original_method = "22469560D029349EBF273B6D8BC83B7A", hash_generated_method = "31CEA5AC8FC09495AFA62E889F9BA508")
     private  AlgNameMapper() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String map2OID(String algName) {
         return alg2OidMap.get(algName.toUpperCase(Locale.US));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String map2AlgName(String oid) {
         String algUC = oid2AlgMap.get(oid);
         return algUC == null ? null : algAliasesMap.get(algUC);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getStandardName(String algName) {
         return algAliasesMap.get(algName.toUpperCase(Locale.US));
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void selectEntries(Provider p) {
         Set<Map.Entry<Object, Object>> entrySet = p.entrySet();
         for (String service : serviceName) {
@@ -74,11 +78,13 @@ public class AlgNameMapper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isOID(String alias) {
         return ObjectIdentifier.isOID(normalize(alias));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String normalize(String oid) {
         return oid.startsWith("OID.")
             ? oid.substring(4)

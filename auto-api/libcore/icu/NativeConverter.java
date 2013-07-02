@@ -1,11 +1,11 @@
 package libcore.icu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
@@ -20,7 +20,7 @@ public final class NativeConverter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:26.968 -0400", hash_original_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D", hash_generated_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D")
     public NativeConverter ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -175,13 +175,14 @@ public final class NativeConverter {
 			
 			@Override
 			public boolean contains(Charset charset) {
-				// TODO Auto-generated method stub
+				
 				return false;
 			}
 		};
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int translateCodingErrorAction(CodingErrorAction action) {
         if (action == CodingErrorAction.REPORT) {
             return 0;
@@ -195,6 +196,7 @@ public final class NativeConverter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int setCallbackDecode(long converterHandle, CharsetDecoder decoder) {
         return setCallbackDecode(converterHandle,
                 translateCodingErrorAction(decoder.malformedInputAction()),
@@ -209,6 +211,7 @@ public final class NativeConverter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int setCallbackEncode(long converterHandle, CharsetEncoder encoder) {
         return setCallbackEncode(converterHandle,
                 translateCodingErrorAction(encoder.malformedInputAction()),

@@ -1,11 +1,11 @@
 package org.bouncycastle.util.encoders;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -16,16 +16,18 @@ public class Hex {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.302 -0400", hash_original_method = "2062DFA17AA591396821D3397343CC6D", hash_generated_method = "2062DFA17AA591396821D3397343CC6D")
     public Hex ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static byte[] encode(
         byte[]    data) {
         return encode(data, 0, data.length);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] encode(
         byte[]    data,
         int       off,
@@ -43,6 +45,7 @@ public class Hex {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int encode(
         byte[]         data,
         OutputStream   out) throws IOException {
@@ -50,6 +53,7 @@ public class Hex {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int encode(
         byte[]         data,
         int            off,
@@ -59,6 +63,7 @@ public class Hex {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decode(
         byte[]    data) {
         ByteArrayOutputStream    bOut = new ByteArrayOutputStream();
@@ -74,6 +79,7 @@ public class Hex {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decode(
         String    data) {
         ByteArrayOutputStream    bOut = new ByteArrayOutputStream();
@@ -89,6 +95,7 @@ public class Hex {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int decode(
         String          data,
         OutputStream    out) throws IOException {

@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Rect;
 
@@ -14,15 +14,17 @@ public class Gravity {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.426 -0400", hash_original_method = "C8FD8F8974FEA261C49D0525477D6D45", hash_generated_method = "C8FD8F8974FEA261C49D0525477D6D45")
     public Gravity ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void apply(int gravity, int w, int h, Rect container, Rect outRect) {
         apply(gravity, w, h, container, 0, 0, outRect);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void apply(int gravity, int w, int h, Rect container,
             Rect outRect, int layoutDirection) {
         int absGravity = getAbsoluteGravity(gravity, layoutDirection);
@@ -115,6 +117,7 @@ public class Gravity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void applyDisplay(int gravity, Rect display, Rect inoutObj) {
         if ((gravity&DISPLAY_CLIP_VERTICAL) != 0) {
             if (inoutObj.top < display.top) inoutObj.top = display.top;

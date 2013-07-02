@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.parser.Lexer;
 import gov.nist.javax.sip.parser.TokenTypes;
@@ -22,7 +22,7 @@ public class PAssertedIdentityParser extends AddressParametersParser implements 
     public  PAssertedIdentityParser(String assertedIdentity) {
         super(assertedIdentity);
         addTaint(assertedIdentity.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,13 +30,14 @@ public class PAssertedIdentityParser extends AddressParametersParser implements 
     protected  PAssertedIdentityParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.099 -0400", hash_original_method = "F1FB2D5EE9E961EE6E5DF8A2F520567C", hash_generated_method = "24FD967E86B3628746332EB896B31CAA")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_179376980 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_179376980 = null; 
         dbg_enter("AssertedIdentityParser.parse");
         PAssertedIdentityList assertedIdList = new PAssertedIdentityList();
         try 
@@ -56,20 +57,20 @@ public class PAssertedIdentityParser extends AddressParametersParser implements 
                     super.parse(pai);
                     assertedIdList.add(pai);
                     this.lexer.SPorHT();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             this.lexer.SPorHT();
             this.lexer.match('\n');
             varB4EAC82CA7396A68D541C85D26508E83_179376980 = assertedIdList;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("AssertedIdentityParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_179376980.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_179376980.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_179376980;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.text.method;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.text.Editable;
 import android.text.NoCopySpan;
@@ -20,10 +20,11 @@ public abstract class MetaKeyKeyListener {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.215 -0400", hash_original_method = "50168EE5CC1513DB2EA8BA89DC077CDF", hash_generated_method = "50168EE5CC1513DB2EA8BA89DC077CDF")
     public MetaKeyKeyListener ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void resetMetaState(Spannable text) {
         text.removeSpan(CAP);
         text.removeSpan(ALT);
@@ -56,6 +57,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int getActive(CharSequence text, Object meta,
                                  int on, int lock) {
         if (!(text instanceof Spanned)) {
@@ -73,6 +75,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void adjustMetaAfterKeypress(Spannable content) {
         adjust(content, CAP);
         adjust(content, ALT);
@@ -91,6 +94,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void adjust(Spannable content, Object what) {
         int current = content.getSpanFlags(what);
         if (current == PRESSED)
@@ -100,6 +104,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static void resetLockedMeta(Spannable content) {
         resetLock(content, CAP);
         resetLock(content, ALT);
@@ -108,6 +113,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void resetLock(Spannable content, Object what) {
         int current = content.getSpanFlags(what);
         if (current == LOCKED)
@@ -115,42 +121,44 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.218 -0400", hash_original_method = "624DA77F613D89E75494C45A9B699A03", hash_generated_method = "28A86F201295BA88A07BAA955089683F")
     public boolean onKeyDown(View view, Editable content, int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             press(content, CAP);
-        } //End block
+        } 
         {
             press(content, ALT);
-        } //End block
+        } 
         {
             press(content, SYM);
-        } //End block
+        } 
         addTaint(view.getTaint());
         addTaint(content.getTaint());
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1711377986 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1711377986;
-        // ---------- Original Method ----------
-        //if (keyCode == KeyEvent.KEYCODE_SHIFT_LEFT || keyCode == KeyEvent.KEYCODE_SHIFT_RIGHT) {
-            //press(content, CAP);
-            //return true;
-        //}
-        //if (keyCode == KeyEvent.KEYCODE_ALT_LEFT || keyCode == KeyEvent.KEYCODE_ALT_RIGHT
-                //|| keyCode == KeyEvent.KEYCODE_NUM) {
-            //press(content, ALT);
-            //return true;
-        //}
-        //if (keyCode == KeyEvent.KEYCODE_SYM) {
-            //press(content, SYM);
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
+                
+            
+            
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.219 -0400", hash_original_method = "04CA7F5473BAF6356CB45A56F068D921", hash_generated_method = "A96D2DB60223ECE2FB8FD5684C07CFB8")
     private void press(Editable content, Object what) {
         int state = content.getSpanFlags(what);
@@ -161,110 +169,116 @@ public abstract class MetaKeyKeyListener {
         content.setSpan(what, 0, 0, PRESSED);
         addTaint(content.getTaint());
         addTaint(what.getTaint());
-        // ---------- Original Method ----------
-        //int state = content.getSpanFlags(what);
-        //if (state == PRESSED)
-            //; 
-        //else if (state == RELEASED)
-            //content.setSpan(what, 0, 0, LOCKED);
-        //else if (state == USED)
-            //; 
-        //else if (state == LOCKED)
-            //content.removeSpan(what);
-        //else
-            //content.setSpan(what, 0, 0, PRESSED);
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startSelecting(View view, Spannable content) {
         content.setSpan(SELECTING, 0, 0, PRESSED);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void stopSelecting(View view, Spannable content) {
         content.removeSpan(SELECTING);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.220 -0400", hash_original_method = "B6764DC3BD8B6ED5267E5A941E3F8260", hash_generated_method = "F5365FB48A6D761E37E1A822494AC3AB")
     public boolean onKeyUp(View view, Editable content, int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             release(content, CAP, event);
-        } //End block
+        } 
         {
             release(content, ALT, event);
-        } //End block
+        } 
         {
             release(content, SYM, event);
-        } //End block
+        } 
         addTaint(view.getTaint());
         addTaint(content.getTaint());
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_622444065 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_622444065;
-        // ---------- Original Method ----------
-        //if (keyCode == KeyEvent.KEYCODE_SHIFT_LEFT || keyCode == KeyEvent.KEYCODE_SHIFT_RIGHT) {
-            //release(content, CAP, event);
-            //return true;
-        //}
-        //if (keyCode == KeyEvent.KEYCODE_ALT_LEFT || keyCode == KeyEvent.KEYCODE_ALT_RIGHT
-                //|| keyCode == KeyEvent.KEYCODE_NUM) {
-            //release(content, ALT, event);
-            //return true;
-        //}
-        //if (keyCode == KeyEvent.KEYCODE_SYM) {
-            //release(content, SYM, event);
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
+                
+            
+            
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.220 -0400", hash_original_method = "E71400F62D0FFB0C9763693B0DBF0337", hash_generated_method = "041DC3327E85891F51162C147909018D")
     private void release(Editable content, Object what, KeyEvent event) {
         int current = content.getSpanFlags(what);
         {
             Object varC699C33CC3F83C4F539EF7C49D3EF2D4_1913850831 = (event.getKeyCharacterMap().getModifierBehavior());
-            //Begin case KeyCharacterMap.MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED 
+            
             content.removeSpan(what);
             content.setSpan(what, 0, 0, RELEASED);
-            //End case KeyCharacterMap.MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED 
-            //Begin case default 
+            
+            
             content.removeSpan(what);
-            //End case default 
-        } //End collapsed parenthetic
+            
+        } 
         addTaint(content.getTaint());
         addTaint(what.getTaint());
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //int current = content.getSpanFlags(what);
-        //switch (event.getKeyCharacterMap().getModifierBehavior()) {
-            //case KeyCharacterMap.MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED:
-                //if (current == USED)
-                    //content.removeSpan(what);
-                //else if (current == PRESSED)
-                    //content.setSpan(what, 0, 0, RELEASED);
-                //break;
-            //default:
-                //content.removeSpan(what);
-                //break;
-        //}
+        
+        
+        
+            
+                
+                    
+                
+                    
+                
+            
+                
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.221 -0400", hash_original_method = "A6CA9AE4F5FD679B652E94F0868BFDE8", hash_generated_method = "65C7EB6E1C3E4A667E7C05183CE85EC6")
     public void clearMetaKeyState(View view, Editable content, int states) {
         clearMetaKeyState(content, states);
         addTaint(view.getTaint());
         addTaint(content.getTaint());
         addTaint(states);
-        // ---------- Original Method ----------
-        //clearMetaKeyState(content, states);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void clearMetaKeyState(Editable content, int states) {
         if ((states&META_SHIFT_ON) != 0) content.removeSpan(CAP);
         if ((states&META_ALT_ON) != 0) content.removeSpan(ALT);
@@ -348,6 +362,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long handleKeyDown(long state, int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_SHIFT_LEFT || keyCode == KeyEvent.KEYCODE_SHIFT_RIGHT) {
             return press(state, META_SHIFT_ON, META_SHIFT_MASK,
@@ -381,6 +396,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long handleKeyUp(long state, int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_SHIFT_LEFT || keyCode == KeyEvent.KEYCODE_SHIFT_RIGHT) {
             return release(state, META_SHIFT_ON, META_SHIFT_MASK,
@@ -399,6 +415,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static long release(long state, int what, long mask,
             long pressed, long released, long used, KeyEvent event) {
         switch (event.getKeyCharacterMap().getModifierBehavior()) {
@@ -421,28 +438,28 @@ public abstract class MetaKeyKeyListener {
     public long clearMetaKeyState(long state, int which) {
         {
             state &= ~META_SHIFT_MASK;
-        } //End block
+        } 
         {
             state &= ~META_ALT_MASK;
-        } //End block
+        } 
         {
             state &= ~META_SYM_MASK;
-        } //End block
+        } 
         addTaint(state);
         addTaint(which);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1105519962 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1105519962;
-        // ---------- Original Method ----------
-        //if ((which & META_SHIFT_ON) != 0 && (state & META_CAP_LOCKED) != 0) {
-            //state &= ~META_SHIFT_MASK;
-        //}
-        //if ((which & META_ALT_ON) != 0 && (state & META_ALT_LOCKED) != 0) {
-            //state &= ~META_ALT_MASK;
-        //}
-        //if ((which & META_SYM_ON) != 0 && (state & META_SYM_LOCKED) != 0) {
-            //state &= ~META_SYM_MASK;
-        //}
-        //return state;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     

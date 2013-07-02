@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.ParseException;
 
@@ -17,7 +17,7 @@ public final class AllowEvents extends SIPHeader implements javax.sip.header.All
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.889 -0400", hash_original_method = "B300CC10915D88E488A895EA20EE2A09", hash_generated_method = "60A08C0FBE41C8160995AE7F013B9128")
     public  AllowEvents() {
         super(ALLOW_EVENTS);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,45 +25,46 @@ public final class AllowEvents extends SIPHeader implements javax.sip.header.All
     public  AllowEvents(String m) {
         super(ALLOW_EVENTS);
         eventType = m;
-        // ---------- Original Method ----------
-        //eventType = m;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.890 -0400", hash_original_method = "A10AD710FF1C0BA35C48E4F204BD5CD1", hash_generated_method = "3718623EBCAF4982DC07A5C12B677F8B")
     public void setEventType(String eventType) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                 "JAIN-SIP Exception,"
                     + "AllowEvents, setEventType(), the eventType parameter is null");
         this.eventType = eventType;
-        // ---------- Original Method ----------
-        //if (eventType == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception,"
-                    //+ "AllowEvents, setEventType(), the eventType parameter is null");
-        //this.eventType = eventType;
+        
+        
+            
+                
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.890 -0400", hash_original_method = "801AF3F6658A2A453A4D4DA9830DAF46", hash_generated_method = "80248ED60542FB5C591727E195A35816")
     public String getEventType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1892036202 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1892036202 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1892036202 = eventType;
-        varB4EAC82CA7396A68D541C85D26508E83_1892036202.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1892036202.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1892036202;
-        // ---------- Original Method ----------
-        //return eventType;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.891 -0400", hash_original_method = "895FBB9B6BA00626F6F635DDC47F48B7", hash_generated_method = "7C3FFE51A1DFA27E15CD3DAC3F865D7F")
     protected String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1314610713 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1314610713 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1314610713 = eventType;
-        varB4EAC82CA7396A68D541C85D26508E83_1314610713.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1314610713.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1314610713;
-        // ---------- Original Method ----------
-        //return eventType;
+        
+        
     }
 
     

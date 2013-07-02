@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -18,7 +18,7 @@ public final class InputChannel implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.949 -0400", hash_original_method = "0BA27F691F89E713693B84FE27F01014", hash_generated_method = "ED243824FEFC4B413411561FA4FF02D0")
     public  InputChannel() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -57,26 +57,28 @@ public final class InputChannel implements Parcelable {
     	return s;
     }
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.950 -0400", hash_original_method = "AAF6A8EEDB66DCFEB1E035B63F14BAD7", hash_generated_method = "7B07B9CB0BB6168167263DFA5C36C7E7")
     @Override
     protected void finalize() throws Throwable {
         try 
         {
             nativeDispose(true);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //nativeDispose(true);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InputChannel[] openInputChannelPair(String name) {
         if (name == null) {
             throw new IllegalArgumentException("name must not be null");
@@ -88,39 +90,42 @@ public final class InputChannel implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.951 -0400", hash_original_method = "DD120B8650E4DAC77C83EEDB526B0BAD", hash_generated_method = "9C4C071118B6E56ACF656EDD2958CF1F")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1750015144 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1750015144 = null; 
         String name = nativeGetName();
         varB4EAC82CA7396A68D541C85D26508E83_1750015144 = name != null ? name : "uninitialized";
-        varB4EAC82CA7396A68D541C85D26508E83_1750015144.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1750015144.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1750015144;
-        // ---------- Original Method ----------
-        //String name = nativeGetName();
-        //return name != null ? name : "uninitialized";
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.951 -0400", hash_original_method = "55D32946D61D585CF9CB8D4DE0F8875C", hash_generated_method = "DBF3738A56ED3C108DB00E89DD16E55E")
     public void dispose() {
         nativeDispose(false);
-        // ---------- Original Method ----------
-        //nativeDispose(false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.952 -0400", hash_original_method = "56717C4466E220164D65DBB18C5ECF92", hash_generated_method = "C77F8D1F475C5040EDFAD903E4567839")
     public void transferTo(InputChannel outParameter) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("outParameter must not be null");
-        } //End block
+        } 
         nativeTransferTo(outParameter);
         addTaint(outParameter.getTaint());
-        // ---------- Original Method ----------
-        //if (outParameter == null) {
-            //throw new IllegalArgumentException("outParameter must not be null");
-        //}
-        //nativeTransferTo(outParameter);
+        
+        
+            
+        
+        
     }
 
     
@@ -128,57 +133,60 @@ public final class InputChannel implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_981650059 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_981650059;
-        // ---------- Original Method ----------
-        //return Parcelable.CONTENTS_FILE_DESCRIPTOR;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.953 -0400", hash_original_method = "60688696539354D4CAC238797E17CD4A", hash_generated_method = "645A4AD28E999BAFC918314165B0E3BB")
     public void readFromParcel(Parcel in) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("in must not be null");
-        } //End block
+        } 
         nativeReadFromParcel(in);
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
-        //if (in == null) {
-            //throw new IllegalArgumentException("in must not be null");
-        //}
-        //nativeReadFromParcel(in);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.955 -0400", hash_original_method = "A30FA9E3CB51C121BDB664DAA1EA96F9", hash_generated_method = "25E90635DD4818C705F830AFFA69BE70")
     public void writeToParcel(Parcel out, int flags) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("out must not be null");
-        } //End block
+        } 
         nativeWriteToParcel(out);
         {
             dispose();
-        } //End block
+        } 
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (out == null) {
-            //throw new IllegalArgumentException("out must not be null");
-        //}
-        //nativeWriteToParcel(out);
-        //if ((flags & PARCELABLE_WRITE_RETURN_VALUE) != 0) {
-            //dispose();
-        //}
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.956 -0400", hash_original_method = "EF513D06BF396F11B9CE8E1C6BA16499", hash_generated_method = "469A074B5EDBEBDC079AC3B5E0DE4357")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1253416558 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1253416558 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1253416558 = getName();
-        varB4EAC82CA7396A68D541C85D26508E83_1253416558.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1253416558.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1253416558;
-        // ---------- Original Method ----------
-        //return getName();
+        
+        
     }
 
     
@@ -202,14 +210,14 @@ public final class InputChannel implements Parcelable {
             return new InputChannel[size];
         }
     };
-    // orphaned legacy method
+    
     public InputChannel createFromParcel(Parcel source) {
             InputChannel result = new InputChannel();
             result.readFromParcel(source);
             return result;
         }
     
-    // orphaned legacy method
+    
     public InputChannel[] newArray(int size) {
             return new InputChannel[size];
         }

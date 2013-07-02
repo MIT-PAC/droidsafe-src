@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.telephony.DataCallState.SetupResult;
 import com.android.internal.util.AsyncChannel;
@@ -117,22 +117,22 @@ public abstract class DataConnection extends StateMachine {
         mApnList = new ArrayList<ApnContext>();
         log("DataConnection constructor X");
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
-        //if (DBG) log("DataConnection constructor E");
-        //this.phone = phone;
-        //mId = id;
-        //mRetryMgr = rm;
-        //this.cid = -1;
-        //setDbg(false);
-        //addState(mDefaultState);
-        //addState(mInactiveState, mDefaultState);
-        //addState(mActivatingState, mDefaultState);
-        //addState(mActiveState, mDefaultState);
-        //addState(mDisconnectingState, mDefaultState);
-        //addState(mDisconnectingErrorCreatingConnection, mDefaultState);
-        //setInitialState(mInactiveState);
-        //mApnList = new ArrayList<ApnContext>();
-        //if (DBG) log("DataConnection constructor X");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -149,6 +149,7 @@ public abstract String toString();
     protected abstract void log(String s);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.758 -0400", hash_original_method = "59ED68D7EF373C505428063E232AFE5C", hash_generated_method = "92ED0C1DCF8627DBF14D6B662839E51E")
     private void tearDownData(Object o) {
         int discReason = RILConstants.DEACTIVATE_REASON_NONE;
@@ -159,33 +160,34 @@ public abstract String toString();
                 boolean varC0DA3759AD518C5BDD466277C93185D6_895052820 = (TextUtils.equals(dp.reason, Phone.REASON_RADIO_TURNED_OFF));
                 {
                     discReason = RILConstants.DEACTIVATE_REASON_RADIO_OFF;
-                } //End block
+                } 
                 {
                     boolean var1B725C4E69E932624B2BF80526814400_396496939 = (TextUtils.equals(dp.reason, Phone.REASON_PDP_RESET));
                     {
                         discReason = RILConstants.DEACTIVATE_REASON_PDP_RESET;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             boolean varEB239098BBFA2AD31684A01774D8510E_1688989542 = (phone.mCM.getRadioState().isOn());
             {
                 log("tearDownData radio is on, call deactivateDataCall");
                 phone.mCM.deactivateDataCall(cid, discReason, obtainMessage(EVENT_DEACTIVATE_DONE, o));
-            } //End block
+            } 
             {
                 log("tearDownData radio is off sendMessage EVENT_DEACTIVATE_DONE immediately");
                 AsyncResult ar = new AsyncResult(o, null, null);
                 sendMessage(obtainMessage(EVENT_DEACTIVATE_DONE, ar));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(o.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.759 -0400", hash_original_method = "4864ED15F4860BAE9DD2587736D4A08F", hash_generated_method = "EE2E8E22356420130D7B10C6D01F4DBE")
     private void notifyConnectCompleted(ConnectionParams cp, FailCause cause) {
         Message connectionCompletedMsg = cp.onCompletedMsg;
@@ -194,37 +196,38 @@ public abstract String toString();
         {
             createTime = timeStamp;
             AsyncResult.forMessage(connectionCompletedMsg);
-        } //End block
+        } 
         {
             lastFailCause = cause;
             lastFailTime = timeStamp;
             AsyncResult.forMessage(connectionCompletedMsg, cause,
                                    new CallSetupException(mRetryOverride));
-        } //End block
+        } 
         log("notifyConnectionCompleted at " + timeStamp + " cause=" + cause);
         connectionCompletedMsg.sendToTarget();
         addTaint(cp.getTaint());
-        // ---------- Original Method ----------
-        //Message connectionCompletedMsg = cp.onCompletedMsg;
-        //if (connectionCompletedMsg == null) {
-            //return;
-        //}
-        //long timeStamp = System.currentTimeMillis();
-        //connectionCompletedMsg.arg1 = cid;
-        //if (cause == FailCause.NONE) {
-            //createTime = timeStamp;
-            //AsyncResult.forMessage(connectionCompletedMsg);
-        //} else {
-            //lastFailCause = cause;
-            //lastFailTime = timeStamp;
-            //AsyncResult.forMessage(connectionCompletedMsg, cause,
-                                   //new CallSetupException(mRetryOverride));
-        //}
-        //if (DBG) log("notifyConnectionCompleted at " + timeStamp + " cause=" + cause);
-        //connectionCompletedMsg.sendToTarget();
+        
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+            
+            
+            
+                                   
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.759 -0400", hash_original_method = "DB15644DADCD9FE90AC8779F50E40D9C", hash_generated_method = "867C261EBCB63D2E0C203ED536DC327A")
     private void notifyDisconnectCompleted(DisconnectParams dp) {
         log("NotifyDisconnectCompleted");
@@ -233,47 +236,48 @@ public abstract String toString();
             {
                 log(String.format("msg=%s msg.obj=%s", msg.toString(),
                     ((msg.obj instanceof String) ? (String) msg.obj : "<no-reason>")));
-            } //End block
+            } 
             AsyncResult.forMessage(msg);
             msg.sendToTarget();
-        } //End block
+        } 
         log("NotifyDisconnectCompleted DisconnectParams=" + dp);
         addTaint(dp.getTaint());
-        // ---------- Original Method ----------
-        //if (VDBG) log("NotifyDisconnectCompleted");
-        //if (dp.onCompletedMsg != null) {
-            //Message msg = dp.onCompletedMsg;
-            //if (VDBG) {
-                //log(String.format("msg=%s msg.obj=%s", msg.toString(),
-                    //((msg.obj instanceof String) ? (String) msg.obj : "<no-reason>")));
-            //}
-            //AsyncResult.forMessage(msg);
-            //msg.sendToTarget();
-        //}
-        //if (DBG) log("NotifyDisconnectCompleted DisconnectParams=" + dp);
+        
+        
+        
+            
+            
+                
+                    
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.760 -0400", hash_original_method = "1BB05B964694E45E9B1991E5D1915447", hash_generated_method = "B13665B9B461D8025EE6C1C9B541CC54")
     protected int getRadioTechnology(int defaultRadioTechnology) {
         int radioTechnology;
         {
             radioTechnology = defaultRadioTechnology;
-        } //End block
+        } 
         {
             radioTechnology = phone.getServiceState().getRadioTechnology() + 2;
-        } //End block
+        } 
         addTaint(defaultRadioTechnology);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1203987716 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1203987716;
-        // ---------- Original Method ----------
-        //int radioTechnology;
-        //if (mRilVersion < 6) {
-            //radioTechnology = defaultRadioTechnology;
-        //} else {
-            //radioTechnology = phone.getServiceState().getRadioTechnology() + 2;
-        //}
-        //return radioTechnology;
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -281,75 +285,83 @@ public abstract String toString();
     public int getDataConnectionId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1111251686 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1111251686;
-        // ---------- Original Method ----------
-        //return mId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.761 -0400", hash_original_method = "FC51BF074579EE4E5F8C7AB511B49B8A", hash_generated_method = "DBBBD47539D08FF39085A20C44C89977")
     public int getRetryCount() {
         int var449CA49043C973C5751EB0A39E24CB1F_436226887 = (mRetryMgr.getRetryCount());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_693534914 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_693534914;
-        // ---------- Original Method ----------
-        //return mRetryMgr.getRetryCount();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.762 -0400", hash_original_method = "21D3097027A7BF6D8D1F04609D8A2AE9", hash_generated_method = "C48FB7F1880E2BD2C3B752256459DED7")
     public int getRetryTimer() {
         int var3D330706D3357A0015985CFA9194A2D9_1522159344 = (mRetryMgr.getRetryTimer());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1854314260 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1854314260;
-        // ---------- Original Method ----------
-        //return mRetryMgr.getRetryTimer();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.762 -0400", hash_original_method = "2EFBBED22C4BDBBAA07E00436CC70BDF", hash_generated_method = "0E371755B2F0C7630C7641033AED74E0")
     public void increaseRetryCount() {
         mRetryMgr.increaseRetryCount();
-        // ---------- Original Method ----------
-        //mRetryMgr.increaseRetryCount();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.762 -0400", hash_original_method = "BE0E8B7CBE5F430456218437A69801A6", hash_generated_method = "3F6DC4632EE9A86BC40C570EA4B272E6")
     public boolean isRetryNeeded() {
         boolean var2557A79863F82C24CE058A4712E3B3F7_659972199 = (mRetryMgr.isRetryNeeded());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1953362895 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1953362895;
-        // ---------- Original Method ----------
-        //return mRetryMgr.isRetryNeeded();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.763 -0400", hash_original_method = "6E600B114543C0C51BDDB686B0EEF1BE", hash_generated_method = "32DE04BB7113D9D458E9B8A4B5F7798C")
     public void resetRetryCount() {
         mRetryMgr.resetRetryCount();
-        // ---------- Original Method ----------
-        //mRetryMgr.resetRetryCount();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.763 -0400", hash_original_method = "FE4AFC35148D7FCE7B6DEB885B8B31DF", hash_generated_method = "8D1E6E9AC70CC605B5E9E3DFBC8CC440")
     public void retryForeverUsingLastTimeout() {
         mRetryMgr.retryForeverUsingLastTimeout();
-        // ---------- Original Method ----------
-        //mRetryMgr.retryForeverUsingLastTimeout();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.763 -0400", hash_original_method = "7BE7662A27A4557E7DE38D4C4F7B834F", hash_generated_method = "EE4932D2113DD09CA668128AB3783758")
     public boolean isRetryForever() {
         boolean var491B6D9ADB68663515B16F16BFDDD6EB_968771926 = (mRetryMgr.isRetryForever());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1278702026 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1278702026;
-        // ---------- Original Method ----------
-        //return mRetryMgr.isRetryForever();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.763 -0400", hash_original_method = "7F3E6401D154FAD4235CC7C3EA752D6F", hash_generated_method = "594F6B745A4E1BA6DCB0FCC364B74022")
     public boolean configureRetry(int maxRetryCount, int retryTime, int randomizationTime) {
         boolean var5C383AB26692B2465A8A92603FAE13E1_1169041163 = (mRetryMgr.configure(maxRetryCount, retryTime, randomizationTime));
@@ -358,22 +370,24 @@ public abstract String toString();
         addTaint(randomizationTime);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1227754465 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1227754465;
-        // ---------- Original Method ----------
-        //return mRetryMgr.configure(maxRetryCount, retryTime, randomizationTime);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.764 -0400", hash_original_method = "23B74F0922BA8C1F44E04170074AC8EE", hash_generated_method = "1D0EC68162A02E971880AF8CD0ADA4A3")
     public boolean configureRetry(String configStr) {
         boolean varECAEB0BD560D7A3FDF27280B64D27C2B_362164375 = (mRetryMgr.configure(configStr));
         addTaint(configStr.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1136514507 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1136514507;
-        // ---------- Original Method ----------
-        //return mRetryMgr.configure(configStr);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.764 -0400", hash_original_method = "14EAC6C2DDCA29A3543D7FF941CEE3A4", hash_generated_method = "DCEB0D12A18217ADB13992E69EBA0B03")
     protected void clearSettings() {
         log("clearSettings");
@@ -385,22 +399,22 @@ public abstract String toString();
         cid = -1;
         mLinkProperties = new LinkProperties();
         mApn = null;
-        // ---------- Original Method ----------
-        //if (DBG) log("clearSettings");
-        //createTime = -1;
-        //lastFailTime = -1;
-        //lastFailCause = FailCause.NONE;
-        //mRetryOverride = -1;
-        //mRefCount = 0;
-        //cid = -1;
-        //mLinkProperties = new LinkProperties();
-        //mApn = null;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.765 -0400", hash_original_method = "75094A2EA3723036F1D43E5DA379759D", hash_generated_method = "DA504CAE18EB4AFD4001B3349AD5EBEA")
     private DataCallState.SetupResult onSetupConnectionCompleted(AsyncResult ar) {
-        DataCallState.SetupResult varB4EAC82CA7396A68D541C85D26508E83_257271703 = null; //Variable for return #1
+        DataCallState.SetupResult varB4EAC82CA7396A68D541C85D26508E83_257271703 = null; 
         DataCallState response = (DataCallState) ar.result;
         ConnectionParams cp = (ConnectionParams) ar.userObj;
         DataCallState.SetupResult result;
@@ -408,7 +422,7 @@ public abstract String toString();
             {
                 log("onSetupConnectionCompleted failed, ar.exception=" + ar.exception +
                     " response=" + response);
-            } //End block
+            } 
             {
                 boolean var1E63C7E427F0E7C15DB7AC2E851044B0_1815606170 = (ar.exception instanceof CommandException
                     && ((CommandException) (ar.exception)).getCommandError()
@@ -416,37 +430,37 @@ public abstract String toString();
                 {
                     result = DataCallState.SetupResult.ERR_BadCommand;
                     result.mFailCause = FailCause.RADIO_NOT_AVAILABLE;
-                } //End block
+                } 
                 {
                     result = DataCallState.SetupResult.ERR_GetLastErrorFromRil;
-                } //End block
+                } 
                 {
                     result = DataCallState.SetupResult.ERR_RilError;
                     result.mFailCause = FailCause.fromInt(response.status);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 log("BUG: onSetupConnectionCompleted is stale cp.tag=" + cp.tag + ", mtag=" + mTag);
-            } //End block
+            } 
             result = DataCallState.SetupResult.ERR_Stale;
-        } //End block
+        } 
         {
             result = DataCallState.SetupResult.ERR_RilError;
             result.mFailCause = FailCause.fromInt(response.status);
-        } //End block
+        } 
         {
             log("onSetupConnectionCompleted received DataCallState: " + response);
             cid = response.cid;
             result = updateLinkProperty(response).setupResult;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_257271703 = result;
         addTaint(ar.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_257271703.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_257271703.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_257271703;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -456,24 +470,24 @@ public abstract String toString();
         {
             DataCallState response = (DataCallState) ar.result;
             retry =  response.suggestedRetryTime;
-        } //End block
+        } 
         addTaint(ar.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1731694607 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1731694607;
-        // ---------- Original Method ----------
-        //int retry = -1;
-        //if (ar.exception == null) {
-            //DataCallState response = (DataCallState) ar.result;
-            //retry =  response.suggestedRetryTime;
-        //}
-        //return retry;
+        
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.766 -0400", hash_original_method = "61A23083F49649744D5BB908131730E7", hash_generated_method = "BFB0EB68916E71370898BD29C6416CB1")
     private DataCallState.SetupResult setLinkProperties(DataCallState response,
             LinkProperties lp) {
-        DataCallState.SetupResult varB4EAC82CA7396A68D541C85D26508E83_642776664 = null; //Variable for return #1
+        DataCallState.SetupResult varB4EAC82CA7396A68D541C85D26508E83_642776664 = null; 
         boolean okToUseSystemPropertyDns = false;
         String propertyPrefix = "net." + response.ifname + ".";
         String dnsServers[] = new String[2];
@@ -483,24 +497,25 @@ public abstract String toString();
         varB4EAC82CA7396A68D541C85D26508E83_642776664 = response.setLinkProperties(lp, okToUseSystemPropertyDns);
         addTaint(response.getTaint());
         addTaint(lp.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_642776664.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_642776664.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_642776664;
-        // ---------- Original Method ----------
-        //boolean okToUseSystemPropertyDns = false;
-        //String propertyPrefix = "net." + response.ifname + ".";
-        //String dnsServers[] = new String[2];
-        //dnsServers[0] = SystemProperties.get(propertyPrefix + "dns1");
-        //dnsServers[1] = SystemProperties.get(propertyPrefix + "dns2");
-        //okToUseSystemPropertyDns = isDnsOk(dnsServers);
-        //return response.setLinkProperties(lp, okToUseSystemPropertyDns);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.767 -0400", hash_original_method = "45E9586484C37E223B6289BDE8E786AB", hash_generated_method = "69B6C35A376769DD15DCD5F8F83EE1F0")
     private UpdateLinkPropertyResult updateLinkProperty(DataCallState newState) {
-        UpdateLinkPropertyResult varB4EAC82CA7396A68D541C85D26508E83_1974142976 = null; //Variable for return #1
-        UpdateLinkPropertyResult varB4EAC82CA7396A68D541C85D26508E83_2062856963 = null; //Variable for return #2
-        UpdateLinkPropertyResult varB4EAC82CA7396A68D541C85D26508E83_4305201 = null; //Variable for return #3
+        UpdateLinkPropertyResult varB4EAC82CA7396A68D541C85D26508E83_1974142976 = null; 
+        UpdateLinkPropertyResult varB4EAC82CA7396A68D541C85D26508E83_2062856963 = null; 
+        UpdateLinkPropertyResult varB4EAC82CA7396A68D541C85D26508E83_4305201 = null; 
         UpdateLinkPropertyResult result = new UpdateLinkPropertyResult(mLinkProperties);
         varB4EAC82CA7396A68D541C85D26508E83_1974142976 = result;
         DataCallState.SetupResult setupResult;
@@ -509,7 +524,7 @@ public abstract String toString();
         {
             log("updateLinkProperty failed : " + result.setupResult);
             varB4EAC82CA7396A68D541C85D26508E83_2062856963 = result;
-        } //End block
+        } 
         result.newLp.setHttpProxy(mLinkProperties.getHttpProxy());
         {
             boolean var35DD507CF52E6FD709D552250B552C90_1425526482 = (DBG && (! result.oldLp.equals(result.newLp)));
@@ -517,47 +532,49 @@ public abstract String toString();
                 log("updateLinkProperty old != new");
                 log("updateLinkProperty old LP=" + result.oldLp);
                 log("updateLinkProperty new LP=" + result.newLp);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mLinkProperties = result.newLp;
         varB4EAC82CA7396A68D541C85D26508E83_4305201 = result;
         addTaint(newState.getTaint());
-        UpdateLinkPropertyResult varA7E53CE21691AB073D9660D615818899_75750734; //Final return value
+        UpdateLinkPropertyResult varA7E53CE21691AB073D9660D615818899_75750734; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_75750734 = varB4EAC82CA7396A68D541C85D26508E83_1974142976;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_75750734 = varB4EAC82CA7396A68D541C85D26508E83_2062856963;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_75750734 = varB4EAC82CA7396A68D541C85D26508E83_4305201;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_75750734.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_75750734.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_75750734;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.767 -0400", hash_original_method = "DA4DADB76FBE855C8C796E356354585B", hash_generated_method = "66030F493140D9C63678E6FDBD02C921")
     public void bringUp(Message onCompletedMsg, ApnSetting apn) {
         sendMessage(obtainMessage(EVENT_CONNECT, new ConnectionParams(apn, onCompletedMsg)));
         addTaint(onCompletedMsg.getTaint());
         addTaint(apn.getTaint());
-        // ---------- Original Method ----------
-        //sendMessage(obtainMessage(EVENT_CONNECT, new ConnectionParams(apn, onCompletedMsg)));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.768 -0400", hash_original_method = "16642B60370F95B35D583CCC8A36D6BF", hash_generated_method = "E9018126E6FF6A245DC7AE117B4CD793")
     public void tearDown(String reason, Message onCompletedMsg) {
         sendMessage(obtainMessage(EVENT_DISCONNECT, new DisconnectParams(reason, onCompletedMsg)));
         addTaint(reason.getTaint());
         addTaint(onCompletedMsg.getTaint());
-        // ---------- Original Method ----------
-        //sendMessage(obtainMessage(EVENT_DISCONNECT, new DisconnectParams(reason, onCompletedMsg)));
+        
+        
     }
 
     
@@ -576,9 +593,9 @@ public abstract String toString();
         public  ConnectionParams(ApnSetting apn, Message onCompletedMsg) {
             this.apn = apn;
             this.onCompletedMsg = onCompletedMsg;
-            // ---------- Original Method ----------
-            //this.apn = apn;
-            //this.onCompletedMsg = onCompletedMsg;
+            
+            
+            
         }
 
         
@@ -601,9 +618,9 @@ public abstract String toString();
         public  DisconnectParams(String reason, Message onCompletedMsg) {
             this.reason = reason;
             this.onCompletedMsg = onCompletedMsg;
-            // ---------- Original Method ----------
-            //this.reason = reason;
-            //this.onCompletedMsg = onCompletedMsg;
+            
+            
+            
         }
 
         
@@ -687,8 +704,8 @@ public abstract String toString();
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.769 -0400", hash_original_method = "A504ADA2782D67F9E42B2FFAADC374C6", hash_generated_method = "D56974FF4E6B6EE04E4624DA72A498E3")
           CallSetupException(int retryOverride) {
             mRetryOverride = retryOverride;
-            // ---------- Original Method ----------
-            //mRetryOverride = retryOverride;
+            
+            
         }
 
         
@@ -696,8 +713,8 @@ public abstract String toString();
         public int getRetryOverride() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_586959505 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_586959505;
-            // ---------- Original Method ----------
-            //return mRetryOverride;
+            
+            
         }
 
         
@@ -720,9 +737,9 @@ public abstract String toString();
         public  UpdateLinkPropertyResult(LinkProperties curLp) {
             oldLp = curLp;
             newLp = curLp;
-            // ---------- Original Method ----------
-            //oldLp = curLp;
-            //newLp = curLp;
+            
+            
+            
         }
 
         
@@ -735,7 +752,7 @@ public abstract String toString();
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.770 -0400", hash_original_method = "65DC675B486478379964AECC5A2EA868", hash_generated_method = "65DC675B486478379964AECC5A2EA868")
         public DcDefaultState ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -743,8 +760,8 @@ public abstract String toString();
         @Override
         public void enter() {
             phone.mCM.registerForRilConnected(getHandler(), EVENT_RIL_CONNECTED, null);
-            // ---------- Original Method ----------
-            //phone.mCM.registerForRilConnected(getHandler(), EVENT_RIL_CONNECTED, null);
+            
+            
         }
 
         
@@ -752,8 +769,8 @@ public abstract String toString();
         @Override
         public void exit() {
             phone.mCM.unregisterForRilConnected(getHandler());
-            // ---------- Original Method ----------
-            //phone.mCM.unregisterForRilConnected(getHandler());
+            
+            
         }
 
         
@@ -761,104 +778,104 @@ public abstract String toString();
         @Override
         public boolean processMessage(Message msg) {
             AsyncResult ar;
-            //Begin case AsyncChannel.CMD_CHANNEL_FULL_CONNECTION 
+            
             {
                 {
                     log("Disconnecting to previous connection mAc=" + mAc);
                     mAc.replyToMessage(msg, AsyncChannel.CMD_CHANNEL_FULLY_CONNECTED,
                                 AsyncChannel.STATUS_FULL_CONNECTION_REFUSED_ALREADY_CONNECTED);
-                } //End block
+                } 
                 {
                     mAc = new AsyncChannel();
                     mAc.connected(null, getHandler(), msg.replyTo);
                     log("DcDefaultState: FULL_CONNECTION reply connected");
                     mAc.replyToMessage(msg, AsyncChannel.CMD_CHANNEL_FULLY_CONNECTED,
                                 AsyncChannel.STATUS_SUCCESSFUL, mId, "hi");
-                } //End block
-            } //End block
-            //End case AsyncChannel.CMD_CHANNEL_FULL_CONNECTION 
-            //Begin case AsyncChannel.CMD_CHANNEL_DISCONNECT 
+                } 
+            } 
+            
+            
             {
                 log("CMD_CHANNEL_DISCONNECT");
                 mAc.disconnect();
-            } //End block
-            //End case AsyncChannel.CMD_CHANNEL_DISCONNECT 
-            //Begin case AsyncChannel.CMD_CHANNEL_DISCONNECTED 
+            } 
+            
+            
             {
                 log("CMD_CHANNEL_DISCONNECTED");
                 mAc = null;
-            } //End block
-            //End case AsyncChannel.CMD_CHANNEL_DISCONNECTED 
-            //Begin case DataConnectionAc.REQ_IS_INACTIVE 
+            } 
+            
+            
             {
                 boolean val = getCurrentState() == mInactiveState;
                 log("REQ_IS_INACTIVE  isInactive=" + val);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_IS_INACTIVE, val ? 1 : 0);
-            } //End block
-            //End case DataConnectionAc.REQ_IS_INACTIVE 
-            //Begin case DataConnectionAc.REQ_GET_CID 
+            } 
+            
+            
             {
                 log("REQ_GET_CID  cid=" + cid);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_GET_CID, cid);
-            } //End block
-            //End case DataConnectionAc.REQ_GET_CID 
-            //Begin case DataConnectionAc.REQ_GET_APNSETTING 
+            } 
+            
+            
             {
                 log("REQ_GET_APNSETTING  apnSetting=" + mApn);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_GET_APNSETTING, mApn);
-            } //End block
-            //End case DataConnectionAc.REQ_GET_APNSETTING 
-            //Begin case DataConnectionAc.REQ_GET_LINK_PROPERTIES 
+            } 
+            
+            
             {
                 LinkProperties lp = new LinkProperties(mLinkProperties);
                 log("REQ_GET_LINK_PROPERTIES linkProperties" + lp);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_GET_LINK_PROPERTIES, lp);
-            } //End block
-            //End case DataConnectionAc.REQ_GET_LINK_PROPERTIES 
-            //Begin case DataConnectionAc.REQ_SET_LINK_PROPERTIES_HTTP_PROXY 
+            } 
+            
+            
             {
                 ProxyProperties proxy = (ProxyProperties) msg.obj;
                 log("REQ_SET_LINK_PROPERTIES_HTTP_PROXY proxy=" + proxy);
                 mLinkProperties.setHttpProxy(proxy);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_SET_LINK_PROPERTIES_HTTP_PROXY);
-            } //End block
-            //End case DataConnectionAc.REQ_SET_LINK_PROPERTIES_HTTP_PROXY 
-            //Begin case DataConnectionAc.REQ_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE 
+            } 
+            
+            
             {
                 DataCallState newState = (DataCallState) msg.obj;
                 UpdateLinkPropertyResult result = updateLinkProperty(newState);
                 {
                     log("REQ_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE result="
                             + result + " newState=" + newState);
-                } //End block
+                } 
                 mAc.replyToMessage(msg,
                                    DataConnectionAc.RSP_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE,
                                    result);
-            } //End block
-            //End case DataConnectionAc.REQ_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE 
-            //Begin case DataConnectionAc.REQ_GET_LINK_CAPABILITIES 
+            } 
+            
+            
             {
                 LinkCapabilities lc = new LinkCapabilities(mCapabilities);
                 log("REQ_GET_LINK_CAPABILITIES linkCapabilities" + lc);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_GET_LINK_CAPABILITIES, lc);
-            } //End block
-            //End case DataConnectionAc.REQ_GET_LINK_CAPABILITIES 
-            //Begin case DataConnectionAc.REQ_RESET 
+            } 
+            
+            
             log("DcDefaultState: msg.what=REQ_RESET");
-            //End case DataConnectionAc.REQ_RESET 
-            //Begin case DataConnectionAc.REQ_RESET 
+            
+            
             mAc.replyToMessage(msg, DataConnectionAc.RSP_RESET);
-            //End case DataConnectionAc.REQ_RESET 
-            //Begin case DataConnectionAc.REQ_RESET 
+            
+            
             transitionTo(mInactiveState);
-            //End case DataConnectionAc.REQ_RESET 
-            //Begin case DataConnectionAc.REQ_GET_REFCOUNT 
+            
+            
             {
                 log("REQ_GET_REFCOUNT  refCount=" + mRefCount);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_GET_REFCOUNT, mRefCount);
-            } //End block
-            //End case DataConnectionAc.REQ_GET_REFCOUNT 
-            //Begin case DataConnectionAc.REQ_ADD_APNCONTEXT 
+            } 
+            
+            
             {
                 ApnContext apnContext = (ApnContext) msg.obj;
                 log("REQ_ADD_APNCONTEXT apn=" + apnContext.getApnType());
@@ -866,85 +883,85 @@ public abstract String toString();
                     boolean var4A35D05DBEBBB0D641DCA4C1673022CB_328552094 = (!mApnList.contains(apnContext));
                     {
                         mApnList.add(apnContext);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_ADD_APNCONTEXT);
-            } //End block
-            //End case DataConnectionAc.REQ_ADD_APNCONTEXT 
-            //Begin case DataConnectionAc.REQ_REMOVE_APNCONTEXT 
+            } 
+            
+            
             {
                 ApnContext apnContext = (ApnContext) msg.obj;
                 log("REQ_REMOVE_APNCONTEXT apn=" + apnContext.getApnType());
                 mApnList.remove(apnContext);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_REMOVE_APNCONTEXT);
-            } //End block
-            //End case DataConnectionAc.REQ_REMOVE_APNCONTEXT 
-            //Begin case DataConnectionAc.REQ_GET_APNCONTEXT_LIST 
+            } 
+            
+            
             {
                 log("REQ_GET_APNCONTEXT_LIST num in list=" + mApnList.size());
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_GET_APNCONTEXT_LIST,
                                        new ArrayList<ApnContext>(mApnList));
-            } //End block
-            //End case DataConnectionAc.REQ_GET_APNCONTEXT_LIST 
-            //Begin case DataConnectionAc.REQ_SET_RECONNECT_INTENT 
+            } 
+            
+            
             {
                 PendingIntent intent = (PendingIntent) msg.obj;
                 log("REQ_SET_RECONNECT_INTENT");
                 mReconnectIntent = intent;
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_SET_RECONNECT_INTENT);
-            } //End block
-            //End case DataConnectionAc.REQ_SET_RECONNECT_INTENT 
-            //Begin case DataConnectionAc.REQ_GET_RECONNECT_INTENT 
+            } 
+            
+            
             {
                 log("REQ_GET_RECONNECT_INTENT");
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_GET_RECONNECT_INTENT,
                                        mReconnectIntent);
-            } //End block
-            //End case DataConnectionAc.REQ_GET_RECONNECT_INTENT 
-            //Begin case EVENT_CONNECT 
+            } 
+            
+            
             log("DcDefaultState: msg.what=EVENT_CONNECT, fail not expected");
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_CONNECT 
+            
+            
             ConnectionParams cp = (ConnectionParams) msg.obj;
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_CONNECT 
+            
+            
             notifyConnectCompleted(cp, FailCause.UNKNOWN);
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_DISCONNECT 
+            
+            
             {
                 log("DcDefaultState deferring msg.what=EVENT_DISCONNECT" + mRefCount);
-            } //End block
-            //End case EVENT_DISCONNECT 
-            //Begin case EVENT_DISCONNECT 
+            } 
+            
+            
             deferMessage(msg);
-            //End case EVENT_DISCONNECT 
-            //Begin case EVENT_RIL_CONNECTED 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_RIL_CONNECTED 
-            //Begin case EVENT_RIL_CONNECTED 
+            
+            
             {
                 mRilVersion = (Integer)ar.result;
                 {
                     log("DcDefaultState: msg.what=EVENT_RIL_CONNECTED mRilVersion=" +
                                 mRilVersion);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 log("Unexpected exception on EVENT_RIL_CONNECTED");
                 mRilVersion = -1;
-            } //End block
-            //End case EVENT_RIL_CONNECTED 
-            //Begin case default 
+            } 
+            
+            
             {
                 log("DcDefaultState: shouldn't happen but ignore msg.what=0x" +
                                 Integer.toHexString(msg.what));
-            } //End block
-            //End case default 
+            } 
+            
             addTaint(msg.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1140987360 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1140987360;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -966,7 +983,7 @@ public abstract String toString();
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.775 -0400", hash_original_method = "BBB65F37D8F6078358DD0061CFCF8B87", hash_generated_method = "BBB65F37D8F6078358DD0061CFCF8B87")
         public DcInactiveState ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -978,11 +995,11 @@ public abstract String toString();
             mFailCause = cause;
             mRetryOverride = retryOverride;
             addTaint(retryOverride);
-            // ---------- Original Method ----------
-            //if (VDBG) log("DcInactiveState: setEnterNoticationParams cp,cause");
-            //mConnectionParams = cp;
-            //mFailCause = cause;
-            //mRetryOverride = retryOverride;
+            
+            
+            
+            
+            
         }
 
         
@@ -990,9 +1007,9 @@ public abstract String toString();
         public void setEnterNotificationParams(DisconnectParams dp) {
             log("DcInactiveState: setEnterNoticationParams dp");
             mDisconnectParams = dp;
-            // ---------- Original Method ----------
-            //if (VDBG) log("DcInactiveState: setEnterNoticationParams dp");
-            //mDisconnectParams = dp;
+            
+            
+            
         }
 
         
@@ -1003,23 +1020,23 @@ public abstract String toString();
             {
                 log("DcInactiveState: enter notifyConnectCompleted");
                 notifyConnectCompleted(mConnectionParams, mFailCause);
-            } //End block
+            } 
             {
                 log("DcInactiveState: enter notifyDisconnectCompleted");
                 notifyDisconnectCompleted(mDisconnectParams);
-            } //End block
+            } 
             clearSettings();
-            // ---------- Original Method ----------
-            //mTag += 1;
-            //if ((mConnectionParams != null) && (mFailCause != null)) {
-                //if (VDBG) log("DcInactiveState: enter notifyConnectCompleted");
-                //notifyConnectCompleted(mConnectionParams, mFailCause);
-            //}
-            //if (mDisconnectParams != null) {
-                //if (VDBG) log("DcInactiveState: enter notifyDisconnectCompleted");
-                //notifyDisconnectCompleted(mDisconnectParams);
-            //}
-            //clearSettings();
+            
+            
+            
+                
+                
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -1029,10 +1046,10 @@ public abstract String toString();
             mConnectionParams = null;
             mFailCause = null;
             mDisconnectParams = null;
-            // ---------- Original Method ----------
-            //mConnectionParams = null;
-            //mFailCause = null;
-            //mDisconnectParams = null;
+            
+            
+            
+            
         }
 
         
@@ -1040,64 +1057,64 @@ public abstract String toString();
         @Override
         public boolean processMessage(Message msg) {
             boolean retVal;
-            //Begin case DataConnectionAc.REQ_RESET 
+            
             {
                 log("DcInactiveState: msg.what=RSP_RESET, ignore we're already reset");
-            } //End block
-            //End case DataConnectionAc.REQ_RESET 
-            //Begin case DataConnectionAc.REQ_RESET 
+            } 
+            
+            
             mAc.replyToMessage(msg, DataConnectionAc.RSP_RESET);
-            //End case DataConnectionAc.REQ_RESET 
-            //Begin case DataConnectionAc.REQ_RESET 
+            
+            
             retVal = HANDLED;
-            //End case DataConnectionAc.REQ_RESET 
-            //Begin case EVENT_CONNECT 
+            
+            
             ConnectionParams cp = (ConnectionParams) msg.obj;
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_CONNECT 
+            
+            
             cp.tag = mTag;
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_CONNECT 
+            
+            
             {
                 log("DcInactiveState msg.what=EVENT_CONNECT." + "RefCount = "
                                 + mRefCount);
-            } //End block
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_CONNECT 
+            } 
+            
+            
             mRefCount = 1;
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_CONNECT 
+            
+            
             onConnect(cp);
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_CONNECT 
+            
+            
             transitionTo(mActivatingState);
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_CONNECT 
+            
+            
             retVal = HANDLED;
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_DISCONNECT 
+            
+            
             log("DcInactiveState: msg.what=EVENT_DISCONNECT");
-            //End case EVENT_DISCONNECT 
-            //Begin case EVENT_DISCONNECT 
+            
+            
             notifyDisconnectCompleted((DisconnectParams)msg.obj);
-            //End case EVENT_DISCONNECT 
-            //Begin case EVENT_DISCONNECT 
+            
+            
             retVal = HANDLED;
-            //End case EVENT_DISCONNECT 
-            //Begin case default 
+            
+            
             {
                 log("DcInactiveState nothandled msg.what=0x" +
                                 Integer.toHexString(msg.what));
-            } //End block
-            //End case default 
-            //Begin case default 
+            } 
+            
+            
             retVal = NOT_HANDLED;
-            //End case default 
+            
             addTaint(msg.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_911872691 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_911872691;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1110,7 +1127,7 @@ public abstract String toString();
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.777 -0400", hash_original_method = "3C5900F00C80F9987C90695FBB53350C", hash_generated_method = "3C5900F00C80F9987C90695FBB53350C")
         public DcActivatingState ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1120,111 +1137,111 @@ public abstract String toString();
             boolean retVal;
             AsyncResult ar;
             ConnectionParams cp;
-            //Begin case EVENT_CONNECT 
+            
             log("DcActivatingState deferring msg.what=EVENT_CONNECT refCount = "
                             + mRefCount);
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_CONNECT 
+            
+            
             deferMessage(msg);
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_CONNECT 
+            
+            
             retVal = HANDLED;
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_SETUP_DATA_CONNECTION_DONE 
+            
+            
             log("DcActivatingState msg.what=EVENT_SETUP_DATA_CONNECTION_DONE");
-            //End case EVENT_SETUP_DATA_CONNECTION_DONE 
-            //Begin case EVENT_SETUP_DATA_CONNECTION_DONE 
+            
+            
             ar = (AsyncResult) msg.obj;
-            //End case EVENT_SETUP_DATA_CONNECTION_DONE 
-            //Begin case EVENT_SETUP_DATA_CONNECTION_DONE 
+            
+            
             cp = (ConnectionParams) ar.userObj;
-            //End case EVENT_SETUP_DATA_CONNECTION_DONE 
-            //Begin case EVENT_SETUP_DATA_CONNECTION_DONE 
+            
+            
             DataCallState.SetupResult result = onSetupConnectionCompleted(ar);
-            //End case EVENT_SETUP_DATA_CONNECTION_DONE 
-            //Begin case EVENT_SETUP_DATA_CONNECTION_DONE 
+            
+            
             log("DcActivatingState onSetupConnectionCompleted result=" + result);
-            //End case EVENT_SETUP_DATA_CONNECTION_DONE 
-            //Begin case EVENT_SETUP_DATA_CONNECTION_DONE 
-            //Begin case SUCCESS 
+            
+            
+            
             mActiveState.setEnterNotificationParams(cp, FailCause.NONE);
-            //End case SUCCESS 
-            //Begin case SUCCESS 
+            
+            
             transitionTo(mActiveState);
-            //End case SUCCESS 
-            //Begin case ERR_BadCommand 
+            
+            
             mInactiveState.setEnterNotificationParams(cp, result.mFailCause, -1);
-            //End case ERR_BadCommand 
-            //Begin case ERR_BadCommand 
+            
+            
             transitionTo(mInactiveState);
-            //End case ERR_BadCommand 
-            //Begin case ERR_UnacceptableParameter 
+            
+            
             tearDownData(cp);
-            //End case ERR_UnacceptableParameter 
-            //Begin case ERR_UnacceptableParameter 
+            
+            
             transitionTo(mDisconnectingErrorCreatingConnection);
-            //End case ERR_UnacceptableParameter 
-            //Begin case ERR_GetLastErrorFromRil 
+            
+            
             phone.mCM.getLastDataCallFailCause(
                                     obtainMessage(EVENT_GET_LAST_FAIL_DONE, cp));
-            //End case ERR_GetLastErrorFromRil 
-            //Begin case ERR_RilError 
+            
+            
             mInactiveState.setEnterNotificationParams(cp, result.mFailCause,
                                                                       getSuggestedRetryTime(ar));
-            //End case ERR_RilError 
-            //Begin case ERR_RilError 
+            
+            
             transitionTo(mInactiveState);
-            //End case ERR_RilError 
-            //Begin case default 
+            
+            
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Unknown SetupResult, should not happen");
-            //End case default 
-            //End case EVENT_SETUP_DATA_CONNECTION_DONE 
-            //Begin case EVENT_SETUP_DATA_CONNECTION_DONE 
+            
+            
+            
             retVal = HANDLED;
-            //End case EVENT_SETUP_DATA_CONNECTION_DONE 
-            //Begin case EVENT_GET_LAST_FAIL_DONE 
+            
+            
             ar = (AsyncResult) msg.obj;
-            //End case EVENT_GET_LAST_FAIL_DONE 
-            //Begin case EVENT_GET_LAST_FAIL_DONE 
+            
+            
             cp = (ConnectionParams) ar.userObj;
-            //End case EVENT_GET_LAST_FAIL_DONE 
-            //Begin case EVENT_GET_LAST_FAIL_DONE 
+            
+            
             FailCause cause = FailCause.UNKNOWN;
-            //End case EVENT_GET_LAST_FAIL_DONE 
-            //Begin case EVENT_GET_LAST_FAIL_DONE 
+            
+            
             {
                 log("DcActivatingState msg.what=EVENT_GET_LAST_FAIL_DONE");
                 {
                     int rilFailCause = ((int[]) (ar.result))[0];
                     cause = FailCause.fromInt(rilFailCause);
-                } //End block
+                } 
                 mInactiveState.setEnterNotificationParams(cp, cause, -1);
                 transitionTo(mInactiveState);
-            } //End block
+            } 
             {
                 {
                     log("DcActivatingState EVENT_GET_LAST_FAIL_DONE is stale cp.tag="
                                 + cp.tag + ", mTag=" + mTag);
-                } //End block
-            } //End block
-            //End case EVENT_GET_LAST_FAIL_DONE 
-            //Begin case EVENT_GET_LAST_FAIL_DONE 
+                } 
+            } 
+            
+            
             retVal = HANDLED;
-            //End case EVENT_GET_LAST_FAIL_DONE 
-            //Begin case default 
+            
+            
             {
                 log("DcActivatingState not handled msg.what=0x" +
                                 Integer.toHexString(msg.what));
-            } //End block
-            //End case default 
-            //Begin case default 
+            } 
+            
+            
             retVal = NOT_HANDLED;
-            //End case default 
+            
             addTaint(msg.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_629254078 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_629254078;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1243,7 +1260,7 @@ public abstract String toString();
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.778 -0400", hash_original_method = "5052F6BB3696B9FBB5C9B1F89FD73944", hash_generated_method = "5052F6BB3696B9FBB5C9B1F89FD73944")
         public DcActiveState ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1252,10 +1269,10 @@ public abstract String toString();
             log("DcInactiveState: setEnterNoticationParams cp,cause");
             mConnectionParams = cp;
             mFailCause = cause;
-            // ---------- Original Method ----------
-            //if (VDBG) log("DcInactiveState: setEnterNoticationParams cp,cause");
-            //mConnectionParams = cp;
-            //mFailCause = cause;
+            
+            
+            
+            
         }
 
         
@@ -1265,12 +1282,12 @@ public abstract String toString();
             {
                 log("DcActiveState: enter notifyConnectCompleted");
                 notifyConnectCompleted(mConnectionParams, mFailCause);
-            } //End block
-            // ---------- Original Method ----------
-            //if ((mConnectionParams != null) && (mFailCause != null)) {
-                //if (VDBG) log("DcActiveState: enter notifyConnectCompleted");
-                //notifyConnectCompleted(mConnectionParams, mFailCause);
-            //}
+            } 
+            
+            
+                
+                
+            
         }
 
         
@@ -1279,9 +1296,9 @@ public abstract String toString();
         public void exit() {
             mConnectionParams = null;
             mFailCause = null;
-            // ---------- Original Method ----------
-            //mConnectionParams = null;
-            //mFailCause = null;
+            
+            
+            
         }
 
         
@@ -1289,50 +1306,50 @@ public abstract String toString();
         @Override
         public boolean processMessage(Message msg) {
             boolean retVal;
-            //Begin case EVENT_CONNECT 
+            
             log("DcActiveState msg.what=EVENT_CONNECT RefCount=" + mRefCount);
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_CONNECT 
+            
+            
             {
                 notifyConnectCompleted((ConnectionParams) msg.obj, FailCause.NONE);
-            } //End block
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_CONNECT 
+            } 
+            
+            
             retVal = HANDLED;
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_DISCONNECT 
+            
+            
             log("DcActiveState msg.what=EVENT_DISCONNECT RefCount=" + mRefCount);
-            //End case EVENT_DISCONNECT 
-            //Begin case EVENT_DISCONNECT 
+            
+            
             {
                 DisconnectParams dp = (DisconnectParams) msg.obj;
                 dp.tag = mTag;
                 tearDownData(dp);
                 transitionTo(mDisconnectingState);
-            } //End block
+            } 
             {
                 {
                     notifyDisconnectCompleted((DisconnectParams) msg.obj);
-                } //End block
-            } //End block
-            //End case EVENT_DISCONNECT 
-            //Begin case EVENT_DISCONNECT 
+                } 
+            } 
+            
+            
             retVal = HANDLED;
-            //End case EVENT_DISCONNECT 
-            //Begin case default 
+            
+            
             {
                 log("DcActiveState not handled msg.what=0x" +
                                 Integer.toHexString(msg.what));
-            } //End block
-            //End case default 
-            //Begin case default 
+            } 
+            
+            
             retVal = NOT_HANDLED;
-            //End case default 
+            
             addTaint(msg.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1004238657 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1004238657;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1345,7 +1362,7 @@ public abstract String toString();
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.781 -0400", hash_original_method = "29C0CB68E08F466587ED5BC2F5C6C796", hash_generated_method = "29C0CB68E08F466587ED5BC2F5C6C796")
         public DcDisconnectingState ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1353,52 +1370,52 @@ public abstract String toString();
         @Override
         public boolean processMessage(Message msg) {
             boolean retVal;
-            //Begin case EVENT_CONNECT 
+            
             log("DcDisconnectingState msg.what=EVENT_CONNECT. Defer. RefCount = "
                             + mRefCount);
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_CONNECT 
+            
+            
             deferMessage(msg);
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_CONNECT 
+            
+            
             retVal = HANDLED;
-            //End case EVENT_CONNECT 
-            //Begin case EVENT_DEACTIVATE_DONE 
+            
+            
             log("DcDisconnectingState msg.what=EVENT_DEACTIVATE_DONE");
-            //End case EVENT_DEACTIVATE_DONE 
-            //Begin case EVENT_DEACTIVATE_DONE 
+            
+            
             AsyncResult ar = (AsyncResult) msg.obj;
-            //End case EVENT_DEACTIVATE_DONE 
-            //Begin case EVENT_DEACTIVATE_DONE 
+            
+            
             DisconnectParams dp = (DisconnectParams) ar.userObj;
-            //End case EVENT_DEACTIVATE_DONE 
-            //Begin case EVENT_DEACTIVATE_DONE 
+            
+            
             {
                 mInactiveState.setEnterNotificationParams((DisconnectParams) ar.userObj);
                 transitionTo(mInactiveState);
-            } //End block
+            } 
             {
                 log("DcDisconnectState EVENT_DEACTIVATE_DONE stale dp.tag="
                                 + dp.tag + " mTag=" + mTag);
-            } //End block
-            //End case EVENT_DEACTIVATE_DONE 
-            //Begin case EVENT_DEACTIVATE_DONE 
+            } 
+            
+            
             retVal = HANDLED;
-            //End case EVENT_DEACTIVATE_DONE 
-            //Begin case default 
+            
+            
             {
                 log("DcDisconnectingState not handled msg.what=0x" +
                                 Integer.toHexString(msg.what));
-            } //End block
-            //End case default 
-            //Begin case default 
+            } 
+            
+            
             retVal = NOT_HANDLED;
-            //End case default 
+            
             addTaint(msg.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_853205029 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_853205029;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1411,7 +1428,7 @@ public abstract String toString();
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.782 -0400", hash_original_method = "9EEE01BC14CD1B0E43AEFA5AA17972F9", hash_generated_method = "9EEE01BC14CD1B0E43AEFA5AA17972F9")
         public DcDisconnectionErrorCreatingConnection ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1419,46 +1436,46 @@ public abstract String toString();
         @Override
         public boolean processMessage(Message msg) {
             boolean retVal;
-            //Begin case EVENT_DEACTIVATE_DONE 
+            
             AsyncResult ar = (AsyncResult) msg.obj;
-            //End case EVENT_DEACTIVATE_DONE 
-            //Begin case EVENT_DEACTIVATE_DONE 
+            
+            
             ConnectionParams cp = (ConnectionParams) ar.userObj;
-            //End case EVENT_DEACTIVATE_DONE 
-            //Begin case EVENT_DEACTIVATE_DONE 
+            
+            
             {
                 {
                     log("DcDisconnectionErrorCreatingConnection" +
                                 " msg.what=EVENT_DEACTIVATE_DONE");
-                } //End block
+                } 
                 mInactiveState.setEnterNotificationParams(cp,
                                 FailCause.UNACCEPTABLE_NETWORK_PARAMETER, -1);
                 transitionTo(mInactiveState);
-            } //End block
+            } 
             {
                 {
                     log("DcDisconnectionErrorCreatingConnection EVENT_DEACTIVATE_DONE" +
                                     " stale dp.tag=" + cp.tag + ", mTag=" + mTag);
-                } //End block
-            } //End block
-            //End case EVENT_DEACTIVATE_DONE 
-            //Begin case EVENT_DEACTIVATE_DONE 
+                } 
+            } 
+            
+            
             retVal = HANDLED;
-            //End case EVENT_DEACTIVATE_DONE 
-            //Begin case default 
+            
+            
             {
                 log("DcDisconnectionErrorCreatingConnection not handled msg.what=0x"
                                 + Integer.toHexString(msg.what));
-            } //End block
-            //End case default 
-            //Begin case default 
+            } 
+            
+            
             retVal = NOT_HANDLED;
-            //End case default 
+            
             addTaint(msg.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2001855063 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2001855063;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

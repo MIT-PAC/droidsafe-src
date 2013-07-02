@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
@@ -17,7 +17,7 @@ public class InReplyToParser extends HeaderParser {
     public  InReplyToParser(String inReplyTo) {
         super(inReplyTo);
         addTaint(inReplyTo.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class InReplyToParser extends HeaderParser {
     protected  InReplyToParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.996 -0400", hash_original_method = "A68E0921F08E40A4FFD6BCC285B4B760", hash_generated_method = "D51C5857D27C318AAF4910E0D1A15501")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1065000939 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1065000939 = null; 
         dbg_enter("InReplyToParser.parse");
         InReplyToList list = new InReplyToList();
         try 
@@ -52,11 +53,11 @@ public class InReplyToParser extends HeaderParser {
                             Token secToken = lexer.getNextToken();
                             inReplyTo.setCallId(
                         token.getTokenValue() + "@" + secToken.getTokenValue());
-                        } //End block
+                        } 
                         {
                             inReplyTo.setCallId(token.getTokenValue());
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     this.lexer.SPorHT();
                     list.add(inReplyTo);
                     {
@@ -77,26 +78,26 @@ public class InReplyToParser extends HeaderParser {
                             token.getTokenValue()
                                 + "@"
                                 + secToken.getTokenValue());
-                                } //End block
+                                } 
                                 {
                                     inReplyTo.setCallId(token.getTokenValue());
-                                } //End block
-                            } //End collapsed parenthetic
+                                } 
+                            } 
                             list.add(inReplyTo);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1065000939 = list;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("InReplyToParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1065000939.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1065000939.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1065000939;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

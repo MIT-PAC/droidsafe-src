@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ public class ServerHelloDone extends Message {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.265 -0400", hash_original_method = "452B2923DC2D49E8C5C850D6FAC160F0", hash_generated_method = "444AAD10FB3A2E0EE274ED19A66E35AB")
     public  ServerHelloDone() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,13 +21,13 @@ public class ServerHelloDone extends Message {
     public  ServerHelloDone(HandshakeIODataStream in, int length) throws IOException {
         {
             fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect ServerHelloDone");
-        } //End block
+        } 
         addTaint(in.getTaint());
         addTaint(length);
-        // ---------- Original Method ----------
-        //if (length != 0) {
-            //fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect ServerHelloDone");
-        //}
+        
+        
+            
+        
     }
 
     
@@ -35,7 +35,7 @@ public class ServerHelloDone extends Message {
     @Override
     public void send(HandshakeIODataStream out) {
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -44,8 +44,8 @@ public class ServerHelloDone extends Message {
     public int length() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_698173394 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_698173394;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -54,8 +54,8 @@ public class ServerHelloDone extends Message {
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_336253099 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_336253099;
-        // ---------- Original Method ----------
-        //return Handshake.SERVER_HELLO_DONE;
+        
+        
     }
 
     

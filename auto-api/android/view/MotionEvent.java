@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Matrix;
 import android.os.Parcel;
@@ -29,7 +29,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.612 -0400", hash_original_method = "B1B69F583261D8BEEC921FF43580AA66", hash_generated_method = "40B8D4E791D456515D6D7EBB1643CE79")
     private  MotionEvent() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -47,6 +47,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeInitialize(int nativePtr,
             int deviceId, int source, int action, int flags, int edgeFlags,
             int metaState, int buttonState,
@@ -67,6 +68,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeAddBatch(int nativePtr, long eventTimeNanos,
             PointerCoords[] pointerCoords, int metaState) {
     }
@@ -231,6 +233,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.619 -0400", hash_original_method = "3F0B5C050D986DD9F1F0F2A742C616C8", hash_generated_method = "B421B42F481E4C5401D1FD9631DD22BD")
     @Override
     protected void finalize() throws Throwable {
@@ -239,24 +242,25 @@ public final class MotionEvent extends InputEvent implements Parcelable {
             {
                 nativeDispose(mNativePtr);
                 mNativePtr = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (mNativePtr != 0) {
-                //nativeDispose(mNativePtr);
-                //mNativePtr = 0;
-            //}
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static private MotionEvent obtain() {
         final MotionEvent ev;
         synchronized (gRecyclerLock) {
@@ -274,6 +278,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public MotionEvent obtain(long downTime, long eventTime,
             int action, int pointerCount, PointerProperties[] pointerProperties,
             PointerCoords[] pointerCoords, int metaState, int buttonState,
@@ -289,6 +294,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     static public MotionEvent obtain(long downTime, long eventTime,
             int action, int pointerCount, int[] pointerIds, PointerCoords[] pointerCoords,
@@ -308,6 +314,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public MotionEvent obtain(long downTime, long eventTime, int action,
             float x, float y, float pressure, float size, int metaState,
             float xPrecision, float yPrecision, int deviceId, int edgeFlags) {
@@ -333,6 +340,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     static public MotionEvent obtain(long downTime, long eventTime, int action,
             int pointerCount, float x, float y, float pressure, float size, int metaState,
@@ -342,6 +350,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public MotionEvent obtain(long downTime, long eventTime, int action,
             float x, float y, int metaState) {
         return obtain(downTime, eventTime, action, x, y, 1.0f, 1.0f,
@@ -349,6 +358,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public MotionEvent obtain(MotionEvent other) {
         if (other == null) {
             throw new IllegalArgumentException("other motion event must not be null");
@@ -359,6 +369,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public MotionEvent obtainNoHistory(MotionEvent other) {
         if (other == null) {
             throw new IllegalArgumentException("other motion event must not be null");
@@ -369,15 +380,16 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.620 -0400", hash_original_method = "78DE11FBBF58608981D1F74EEB443B54", hash_generated_method = "490B406F8EBBD71C8FF70C26B1BE8646")
     @Override
     public MotionEvent copy() {
-        MotionEvent varB4EAC82CA7396A68D541C85D26508E83_2068193084 = null; //Variable for return #1
+        MotionEvent varB4EAC82CA7396A68D541C85D26508E83_2068193084 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2068193084 = obtain(this);
-        varB4EAC82CA7396A68D541C85D26508E83_2068193084.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2068193084.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2068193084;
-        // ---------- Original Method ----------
-        //return obtain(this);
+        
+        
     }
 
     
@@ -386,40 +398,40 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(toString() + " recycled twice!", mRecycledLocation);
-            } //End block
+            } 
             mRecycledLocation = new RuntimeException("Last recycled here");
-        } //End block
+        } 
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(toString() + " recycled twice!");
-            } //End block
+            } 
             mRecycled = true;
-        } //End block
+        } 
         {
             {
                 mNext = gRecyclerTop;
                 gRecyclerTop = this;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (TRACK_RECYCLED_LOCATION) {
-            //if (mRecycledLocation != null) {
-                //throw new RuntimeException(toString() + " recycled twice!", mRecycledLocation);
-            //}
-            //mRecycledLocation = new RuntimeException("Last recycled here");
-        //} else {
-            //if (mRecycled) {
-                //throw new RuntimeException(toString() + " recycled twice!");
-            //}
-            //mRecycled = true;
-        //}
-        //synchronized (gRecyclerLock) {
-            //if (gRecyclerUsed < MAX_RECYCLED) {
-                //gRecyclerUsed++;
-                //mNext = gRecyclerTop;
-                //gRecyclerTop = this;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+        
+            
+                
+            
+            
+        
+        
+            
+                
+                
+                
+            
+        
     }
 
     
@@ -427,8 +439,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     public final void scale(float scale) {
         nativeScale(mNativePtr, scale);
         addTaint(scale);
-        // ---------- Original Method ----------
-        //nativeScale(mNativePtr, scale);
+        
+        
     }
 
     
@@ -438,8 +450,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         int varF3B3D3917F994FE161C0ABB4D3E565B5_1737781700 = (nativeGetDeviceId(mNativePtr));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1984637025 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1984637025;
-        // ---------- Original Method ----------
-        //return nativeGetDeviceId(mNativePtr);
+        
+        
     }
 
     
@@ -449,8 +461,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         int var626B65A92B0E4AF71704C1098173596F_782240867 = (nativeGetSource(mNativePtr));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1385934775 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1385934775;
-        // ---------- Original Method ----------
-        //return nativeGetSource(mNativePtr);
+        
+        
     }
 
     
@@ -459,8 +471,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     public final void setSource(int source) {
         nativeSetSource(mNativePtr, source);
         addTaint(source);
-        // ---------- Original Method ----------
-        //nativeSetSource(mNativePtr, source);
+        
+        
     }
 
     
@@ -469,8 +481,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         int var74B8A914B86C4917D117B6A52D32C79D_1906815705 = (nativeGetAction(mNativePtr));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_434976703 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_434976703;
-        // ---------- Original Method ----------
-        //return nativeGetAction(mNativePtr);
+        
+        
     }
 
     
@@ -479,8 +491,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         int var119771AD723EE5854F55019431496A74_737531974 = (nativeGetAction(mNativePtr) & ACTION_MASK);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_978696193 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_978696193;
-        // ---------- Original Method ----------
-        //return nativeGetAction(mNativePtr) & ACTION_MASK;
+        
+        
     }
 
     
@@ -490,9 +502,9 @@ public final class MotionEvent extends InputEvent implements Parcelable {
                 >> ACTION_POINTER_INDEX_SHIFT);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_849351775 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_849351775;
-        // ---------- Original Method ----------
-        //return (nativeGetAction(mNativePtr) & ACTION_POINTER_INDEX_MASK)
-                //>> ACTION_POINTER_INDEX_SHIFT;
+        
+        
+                
     }
 
     
@@ -501,8 +513,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         boolean var12F7F7B53A02590E12DD99382B4D1A89_1835346118 = (nativeIsTouchEvent(mNativePtr));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1155396728 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1155396728;
-        // ---------- Original Method ----------
-        //return nativeIsTouchEvent(mNativePtr);
+        
+        
     }
 
     
@@ -511,8 +523,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         int var31A262589A0563B992AF6C13BB445DA6_1999530623 = (nativeGetFlags(mNativePtr));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1920844947 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1920844947;
-        // ---------- Original Method ----------
-        //return nativeGetFlags(mNativePtr);
+        
+        
     }
 
     
@@ -522,9 +534,9 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         final int flags = getFlags();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_479294130 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_479294130;
-        // ---------- Original Method ----------
-        //final int flags = getFlags();
-        //return (flags & FLAG_TAINTED) != 0;
+        
+        
+        
     }
 
     
@@ -534,9 +546,9 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         final int flags = getFlags();
         nativeSetFlags(mNativePtr, tainted ? flags | FLAG_TAINTED : flags & ~FLAG_TAINTED);
         addTaint(tainted);
-        // ---------- Original Method ----------
-        //final int flags = getFlags();
-        //nativeSetFlags(mNativePtr, tainted ? flags | FLAG_TAINTED : flags & ~FLAG_TAINTED);
+        
+        
+        
     }
 
     
@@ -545,8 +557,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         long varA7AEBDC62AD9E48221ED001FAEE4896D_1425451710 = (nativeGetDownTimeNanos(mNativePtr) / NS_PER_MS);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_349669906 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_349669906;
-        // ---------- Original Method ----------
-        //return nativeGetDownTimeNanos(mNativePtr) / NS_PER_MS;
+        
+        
     }
 
     
@@ -554,8 +566,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     public final void setDownTime(long downTime) {
         nativeSetDownTimeNanos(mNativePtr, downTime * NS_PER_MS);
         addTaint(downTime);
-        // ---------- Original Method ----------
-        //nativeSetDownTimeNanos(mNativePtr, downTime * NS_PER_MS);
+        
+        
     }
 
     
@@ -564,8 +576,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         long varABD7EED75F03AC822986337AA0AEBA8E_1629625550 = (nativeGetEventTimeNanos(mNativePtr, HISTORY_CURRENT) / NS_PER_MS);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1558124494 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1558124494;
-        // ---------- Original Method ----------
-        //return nativeGetEventTimeNanos(mNativePtr, HISTORY_CURRENT) / NS_PER_MS;
+        
+        
     }
 
     
@@ -574,8 +586,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         long var9177F0DF4886BA63EBD71602211F864C_1698908738 = (nativeGetEventTimeNanos(mNativePtr, HISTORY_CURRENT));
         long var0F5264038205EDFB1AC05FBB0E8C5E94_428317742 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_428317742;
-        // ---------- Original Method ----------
-        //return nativeGetEventTimeNanos(mNativePtr, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -584,8 +596,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         float var66044244940F058BEDF52F995ECDF659_1633556416 = (nativeGetAxisValue(mNativePtr, AXIS_X, 0, HISTORY_CURRENT));
         float var546ADE640B6EDFBC8A086EF31347E768_1452240449 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1452240449;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_X, 0, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -594,8 +606,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         float varC75AFE4F07E18DED73B6E9A135DBAA24_1769510992 = (nativeGetAxisValue(mNativePtr, AXIS_Y, 0, HISTORY_CURRENT));
         float var546ADE640B6EDFBC8A086EF31347E768_1241946683 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1241946683;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_Y, 0, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -604,8 +616,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         float varEF9A2F87450786CEB865F6DB8CC3ECFD_1670870849 = (nativeGetAxisValue(mNativePtr, AXIS_PRESSURE, 0, HISTORY_CURRENT));
         float var546ADE640B6EDFBC8A086EF31347E768_1431140028 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1431140028;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_PRESSURE, 0, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -614,8 +626,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         float varDFF5D0290CDD1A07C8B97F2F6E962921_1583957402 = (nativeGetAxisValue(mNativePtr, AXIS_SIZE, 0, HISTORY_CURRENT));
         float var546ADE640B6EDFBC8A086EF31347E768_1124251930 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1124251930;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_SIZE, 0, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -624,8 +636,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         float var2C0DAF19E2431B7454CC6F77C73821E0_899911126 = (nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MAJOR, 0, HISTORY_CURRENT));
         float var546ADE640B6EDFBC8A086EF31347E768_1872190437 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1872190437;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MAJOR, 0, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -634,8 +646,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         float var4508F4DDA7AD6F23C2A12D53FC2B6353_1477389127 = (nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MINOR, 0, HISTORY_CURRENT));
         float var546ADE640B6EDFBC8A086EF31347E768_655834428 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_655834428;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MINOR, 0, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -644,8 +656,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         float varC9DDB5D5521C8A6BB646AB1BF9C7D9E2_273360166 = (nativeGetAxisValue(mNativePtr, AXIS_TOOL_MAJOR, 0, HISTORY_CURRENT));
         float var546ADE640B6EDFBC8A086EF31347E768_1441604782 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1441604782;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MAJOR, 0, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -654,8 +666,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         float var695C0E240E818E6BDB2EBB725DE208C8_1157405650 = (nativeGetAxisValue(mNativePtr, AXIS_TOOL_MINOR, 0, HISTORY_CURRENT));
         float var546ADE640B6EDFBC8A086EF31347E768_1766314591 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1766314591;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MINOR, 0, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -664,8 +676,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         float var75B1DB96187E89974E64BC0FB38B1FEF_602574146 = (nativeGetAxisValue(mNativePtr, AXIS_ORIENTATION, 0, HISTORY_CURRENT));
         float var546ADE640B6EDFBC8A086EF31347E768_720959979 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_720959979;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_ORIENTATION, 0, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -675,8 +687,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(axis);
         float var546ADE640B6EDFBC8A086EF31347E768_146508881 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_146508881;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, axis, 0, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -685,8 +697,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         int var5ACA797B73271718F08C07B0FD1465C3_1425040036 = (nativeGetPointerCount(mNativePtr));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1318495306 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1318495306;
-        // ---------- Original Method ----------
-        //return nativeGetPointerCount(mNativePtr);
+        
+        
     }
 
     
@@ -696,8 +708,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pointerIndex);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_467256779 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_467256779;
-        // ---------- Original Method ----------
-        //return nativeGetPointerId(mNativePtr, pointerIndex);
+        
+        
     }
 
     
@@ -707,8 +719,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pointerIndex);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1256749008 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1256749008;
-        // ---------- Original Method ----------
-        //return nativeGetToolType(mNativePtr, pointerIndex);
+        
+        
     }
 
     
@@ -718,8 +730,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pointerId);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_922905325 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_922905325;
-        // ---------- Original Method ----------
-        //return nativeFindPointerIndex(mNativePtr, pointerId);
+        
+        
     }
 
     
@@ -729,8 +741,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pointerIndex);
         float var546ADE640B6EDFBC8A086EF31347E768_1234282828 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1234282828;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_X, pointerIndex, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -740,8 +752,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pointerIndex);
         float var546ADE640B6EDFBC8A086EF31347E768_2036883359 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2036883359;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_Y, pointerIndex, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -751,8 +763,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pointerIndex);
         float var546ADE640B6EDFBC8A086EF31347E768_1038108137 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1038108137;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_PRESSURE, pointerIndex, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -762,8 +774,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pointerIndex);
         float var546ADE640B6EDFBC8A086EF31347E768_1384873342 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1384873342;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_SIZE, pointerIndex, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -773,8 +785,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pointerIndex);
         float var546ADE640B6EDFBC8A086EF31347E768_948704151 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_948704151;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MAJOR, pointerIndex, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -784,8 +796,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pointerIndex);
         float var546ADE640B6EDFBC8A086EF31347E768_1561841878 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1561841878;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MINOR, pointerIndex, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -795,8 +807,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pointerIndex);
         float var546ADE640B6EDFBC8A086EF31347E768_2044915549 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2044915549;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MAJOR, pointerIndex, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -806,8 +818,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pointerIndex);
         float var546ADE640B6EDFBC8A086EF31347E768_532991087 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_532991087;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MINOR, pointerIndex, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -817,8 +829,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pointerIndex);
         float var546ADE640B6EDFBC8A086EF31347E768_901842017 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_901842017;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_ORIENTATION, pointerIndex, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -829,8 +841,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pointerIndex);
         float var546ADE640B6EDFBC8A086EF31347E768_1572394473 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1572394473;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, axis, pointerIndex, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -839,8 +851,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         nativeGetPointerCoords(mNativePtr, pointerIndex, HISTORY_CURRENT, outPointerCoords);
         addTaint(pointerIndex);
         addTaint(outPointerCoords.getTaint());
-        // ---------- Original Method ----------
-        //nativeGetPointerCoords(mNativePtr, pointerIndex, HISTORY_CURRENT, outPointerCoords);
+        
+        
     }
 
     
@@ -850,8 +862,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         nativeGetPointerProperties(mNativePtr, pointerIndex, outPointerProperties);
         addTaint(pointerIndex);
         addTaint(outPointerProperties.getTaint());
-        // ---------- Original Method ----------
-        //nativeGetPointerProperties(mNativePtr, pointerIndex, outPointerProperties);
+        
+        
     }
 
     
@@ -860,8 +872,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         int var2EB518F4D6071C6F350D1D5C097F88FF_1710692369 = (nativeGetMetaState(mNativePtr));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100551512 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100551512;
-        // ---------- Original Method ----------
-        //return nativeGetMetaState(mNativePtr);
+        
+        
     }
 
     
@@ -870,8 +882,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         int var6E0173150D4C4630052CCF82C8F7DC9F_458166591 = (nativeGetButtonState(mNativePtr));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1968968925 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1968968925;
-        // ---------- Original Method ----------
-        //return nativeGetButtonState(mNativePtr);
+        
+        
     }
 
     
@@ -880,8 +892,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         float var78851251BB2BADD4A73F875B41E82C95_97158451 = (nativeGetRawAxisValue(mNativePtr, AXIS_X, 0, HISTORY_CURRENT));
         float var546ADE640B6EDFBC8A086EF31347E768_247136858 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_247136858;
-        // ---------- Original Method ----------
-        //return nativeGetRawAxisValue(mNativePtr, AXIS_X, 0, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -890,8 +902,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         float varB2F71D566D9DFEDA8765CB859668364C_341089850 = (nativeGetRawAxisValue(mNativePtr, AXIS_Y, 0, HISTORY_CURRENT));
         float var546ADE640B6EDFBC8A086EF31347E768_49657281 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_49657281;
-        // ---------- Original Method ----------
-        //return nativeGetRawAxisValue(mNativePtr, AXIS_Y, 0, HISTORY_CURRENT);
+        
+        
     }
 
     
@@ -900,8 +912,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         float var8C63D112819BF4307BFC05C55813CC7C_2047279547 = (nativeGetXPrecision(mNativePtr));
         float var546ADE640B6EDFBC8A086EF31347E768_2118909464 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2118909464;
-        // ---------- Original Method ----------
-        //return nativeGetXPrecision(mNativePtr);
+        
+        
     }
 
     
@@ -910,8 +922,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         float var2DA4AA757DDFF641DBCEE9F2CC39A8B1_1462453861 = (nativeGetYPrecision(mNativePtr));
         float var546ADE640B6EDFBC8A086EF31347E768_1146574766 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1146574766;
-        // ---------- Original Method ----------
-        //return nativeGetYPrecision(mNativePtr);
+        
+        
     }
 
     
@@ -920,8 +932,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         int var42FF49C139613133CE8AAF262A0781C4_1989067487 = (nativeGetHistorySize(mNativePtr));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1783854354 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1783854354;
-        // ---------- Original Method ----------
-        //return nativeGetHistorySize(mNativePtr);
+        
+        
     }
 
     
@@ -931,8 +943,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_449096024 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_449096024;
-        // ---------- Original Method ----------
-        //return nativeGetEventTimeNanos(mNativePtr, pos) / NS_PER_MS;
+        
+        
     }
 
     
@@ -942,8 +954,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_1653000787 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1653000787;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_X, 0, pos);
+        
+        
     }
 
     
@@ -953,8 +965,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_166965695 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_166965695;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_Y, 0, pos);
+        
+        
     }
 
     
@@ -964,8 +976,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_779153440 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_779153440;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_PRESSURE, 0, pos);
+        
+        
     }
 
     
@@ -975,8 +987,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_505529519 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_505529519;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_SIZE, 0, pos);
+        
+        
     }
 
     
@@ -986,8 +998,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_1315775281 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1315775281;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MAJOR, 0, pos);
+        
+        
     }
 
     
@@ -997,8 +1009,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_1368685339 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1368685339;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MINOR, 0, pos);
+        
+        
     }
 
     
@@ -1008,8 +1020,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_1730641565 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1730641565;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MAJOR, 0, pos);
+        
+        
     }
 
     
@@ -1019,8 +1031,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_405086327 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_405086327;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MINOR, 0, pos);
+        
+        
     }
 
     
@@ -1030,8 +1042,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_21948505 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_21948505;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_ORIENTATION, 0, pos);
+        
+        
     }
 
     
@@ -1042,8 +1054,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_777763489 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_777763489;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, axis, 0, pos);
+        
+        
     }
 
     
@@ -1054,8 +1066,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_1699563135 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1699563135;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_X, pointerIndex, pos);
+        
+        
     }
 
     
@@ -1066,8 +1078,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_1346411639 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1346411639;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_Y, pointerIndex, pos);
+        
+        
     }
 
     
@@ -1078,8 +1090,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_1145737615 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1145737615;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_PRESSURE, pointerIndex, pos);
+        
+        
     }
 
     
@@ -1090,8 +1102,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_1902858600 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1902858600;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_SIZE, pointerIndex, pos);
+        
+        
     }
 
     
@@ -1102,8 +1114,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_1618058446 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1618058446;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MAJOR, pointerIndex, pos);
+        
+        
     }
 
     
@@ -1114,8 +1126,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_408099542 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_408099542;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MINOR, pointerIndex, pos);
+        
+        
     }
 
     
@@ -1126,8 +1138,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_440707738 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_440707738;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MAJOR, pointerIndex, pos);
+        
+        
     }
 
     
@@ -1138,8 +1150,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_982618835 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_982618835;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MINOR, pointerIndex, pos);
+        
+        
     }
 
     
@@ -1150,8 +1162,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_949400326 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_949400326;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, AXIS_ORIENTATION, pointerIndex, pos);
+        
+        
     }
 
     
@@ -1163,8 +1175,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pos);
         float var546ADE640B6EDFBC8A086EF31347E768_1146076081 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1146076081;
-        // ---------- Original Method ----------
-        //return nativeGetAxisValue(mNativePtr, axis, pointerIndex, pos);
+        
+        
     }
 
     
@@ -1175,8 +1187,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(pointerIndex);
         addTaint(pos);
         addTaint(outPointerCoords.getTaint());
-        // ---------- Original Method ----------
-        //nativeGetPointerCoords(mNativePtr, pointerIndex, pos, outPointerCoords);
+        
+        
     }
 
     
@@ -1185,8 +1197,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         int var0FC0D903F55D3C457853DAA4F228A5D4_1620422664 = (nativeGetEdgeFlags(mNativePtr));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1337442212 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1337442212;
-        // ---------- Original Method ----------
-        //return nativeGetEdgeFlags(mNativePtr);
+        
+        
     }
 
     
@@ -1194,8 +1206,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     public final void setEdgeFlags(int flags) {
         nativeSetEdgeFlags(mNativePtr, flags);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //nativeSetEdgeFlags(mNativePtr, flags);
+        
+        
     }
 
     
@@ -1203,8 +1215,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     public final void setAction(int action) {
         nativeSetAction(mNativePtr, action);
         addTaint(action);
-        // ---------- Original Method ----------
-        //nativeSetAction(mNativePtr, action);
+        
+        
     }
 
     
@@ -1213,8 +1225,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         nativeOffsetLocation(mNativePtr, deltaX, deltaY);
         addTaint(deltaX);
         addTaint(deltaY);
-        // ---------- Original Method ----------
-        //nativeOffsetLocation(mNativePtr, deltaX, deltaY);
+        
+        
     }
 
     
@@ -1225,10 +1237,10 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         nativeOffsetLocation(mNativePtr, x - oldX, y - oldY);
         addTaint(x);
         addTaint(y);
-        // ---------- Original Method ----------
-        //float oldX = getX();
-        //float oldY = getY();
-        //nativeOffsetLocation(mNativePtr, x - oldX, y - oldY);
+        
+        
+        
+        
     }
 
     
@@ -1236,14 +1248,14 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     public final void transform(Matrix matrix) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("matrix must not be null");
-        } //End block
+        } 
         nativeTransform(mNativePtr, matrix);
         addTaint(matrix.getTaint());
-        // ---------- Original Method ----------
-        //if (matrix == null) {
-            //throw new IllegalArgumentException("matrix must not be null");
-        //}
-        //nativeTransform(mNativePtr, matrix);
+        
+        
+            
+        
+        
     }
 
     
@@ -1259,24 +1271,24 @@ public final class MotionEvent extends InputEvent implements Parcelable {
             pc[0].pressure = pressure;
             pc[0].size = size;
             nativeAddBatch(mNativePtr, eventTime * NS_PER_MS, pc, metaState);
-        } //End block
+        } 
         addTaint(eventTime);
         addTaint(x);
         addTaint(y);
         addTaint(pressure);
         addTaint(size);
         addTaint(metaState);
-        // ---------- Original Method ----------
-        //synchronized (gSharedTempLock) {
-            //ensureSharedTempPointerCapacity(1);
-            //final PointerCoords[] pc = gSharedTempPointerCoords;
-            //pc[0].clear();
-            //pc[0].x = x;
-            //pc[0].y = y;
-            //pc[0].pressure = pressure;
-            //pc[0].size = size;
-            //nativeAddBatch(mNativePtr, eventTime * NS_PER_MS, pc, metaState);
-        //}
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -1286,8 +1298,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         addTaint(eventTime);
         addTaint(pointerCoords[0].getTaint());
         addTaint(metaState);
-        // ---------- Original Method ----------
-        //nativeAddBatch(mNativePtr, eventTime * NS_PER_MS, pointerCoords, metaState);
+        
+        
     }
 
     
@@ -1300,24 +1312,24 @@ public final class MotionEvent extends InputEvent implements Parcelable {
             {
                 final float x = nativeGetAxisValue(mNativePtr, AXIS_X, i, HISTORY_CURRENT);
                 final float y = nativeGetAxisValue(mNativePtr, AXIS_Y, i, HISTORY_CURRENT);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(left);
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_621854888 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_621854888;
-        // ---------- Original Method ----------
-        //final int pointerCount = nativeGetPointerCount(mNativePtr);
-        //for (int i = 0; i < pointerCount; i++) {
-            //final float x = nativeGetAxisValue(mNativePtr, AXIS_X, i, HISTORY_CURRENT);
-            //final float y = nativeGetAxisValue(mNativePtr, AXIS_Y, i, HISTORY_CURRENT);
-            //if (x < left || x > right || y < top || y > bottom) {
-                //return false;
-            //}
-        //}
-        //return true;
+        
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -1333,7 +1345,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.652 -0400", hash_original_method = "C00E6E79D43678980DA0F4144A65F6A2", hash_generated_method = "0B0663C026662B11A2BA24CE29AC9ABC")
     public final MotionEvent clampNoHistory(float left, float top, float right, float bottom) {
-        MotionEvent varB4EAC82CA7396A68D541C85D26508E83_104941107 = null; //Variable for return #1
+        MotionEvent varB4EAC82CA7396A68D541C85D26508E83_104941107 = null; 
         MotionEvent ev = obtain();
         {
             final int pointerCount = nativeGetPointerCount(mNativePtr);
@@ -1347,8 +1359,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
                     nativeGetPointerCoords(mNativePtr, i, HISTORY_CURRENT, pc[i]);
                     pc[i].x = clamp(pc[i].x, left, right);
                     pc[i].y = clamp(pc[i].y, top, bottom);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             ev.mNativePtr = nativeInitialize(ev.mNativePtr,
                     nativeGetDeviceId(mNativePtr), nativeGetSource(mNativePtr),
                     nativeGetAction(mNativePtr), nativeGetFlags(mNativePtr),
@@ -1360,15 +1372,15 @@ public final class MotionEvent extends InputEvent implements Parcelable {
                     nativeGetEventTimeNanos(mNativePtr, HISTORY_CURRENT),
                     pointerCount, pp, pc);
             varB4EAC82CA7396A68D541C85D26508E83_104941107 = ev;
-        } //End block
+        } 
         addTaint(left);
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        varB4EAC82CA7396A68D541C85D26508E83_104941107.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_104941107.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_104941107;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1380,23 +1392,23 @@ public final class MotionEvent extends InputEvent implements Parcelable {
             int i = 0;
             {
                 idBits |= 1 << nativeGetPointerId(mNativePtr, i);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_199157307 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_199157307;
-        // ---------- Original Method ----------
-        //int idBits = 0;
-        //final int pointerCount = nativeGetPointerCount(mNativePtr);
-        //for (int i = 0; i < pointerCount; i++) {
-            //idBits |= 1 << nativeGetPointerId(mNativePtr, i);
-        //}
-        //return idBits;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.654 -0400", hash_original_method = "4F0FF8B26009CA9D26EE500AEFE507EC", hash_generated_method = "0B29DBB51416976977F6EF419782AC86")
     public final MotionEvent split(int idBits) {
-        MotionEvent varB4EAC82CA7396A68D541C85D26508E83_2133228132 = null; //Variable for return #1
+        MotionEvent varB4EAC82CA7396A68D541C85D26508E83_2133228132 = null; 
         MotionEvent ev = obtain();
         {
             final int oldPointerCount = nativeGetPointerCount(mNativePtr);
@@ -1419,33 +1431,33 @@ public final class MotionEvent extends InputEvent implements Parcelable {
                     {
                         {
                             newActionPointerIndex = newPointerCount;
-                        } //End block
+                        } 
                         map[newPointerCount] = i;
                         newPointerCount += 1;
                         newIdBits |= idBit;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("idBits did not match any ids in the event");
-            } //End block
+            } 
             int newAction;
             {
                 {
                     newAction = ACTION_MOVE;
-                } //End block
+                } 
                 {
                     newAction = oldActionMasked == ACTION_POINTER_DOWN
                             ? ACTION_DOWN : ACTION_UP;
-                } //End block
+                } 
                 {
                     newAction = oldActionMasked
                             | (newActionPointerIndex << ACTION_POINTER_INDEX_SHIFT);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 newAction = oldAction;
-            } //End block
+            } 
             final int historySize = nativeGetHistorySize(mNativePtr);
             {
                 int h = 0;
@@ -1457,8 +1469,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
                         int i = 0;
                         {
                             nativeGetPointerCoords(mNativePtr, map[i], historyPos, pc[i]);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     final long eventTimeNanos = nativeGetEventTimeNanos(mNativePtr, historyPos);
                     {
                         ev.mNativePtr = nativeInitialize(ev.mNativePtr,
@@ -1470,26 +1482,27 @@ public final class MotionEvent extends InputEvent implements Parcelable {
                             nativeGetXPrecision(mNativePtr), nativeGetYPrecision(mNativePtr),
                             nativeGetDownTimeNanos(mNativePtr), eventTimeNanos,
                             newPointerCount, pp, pc);
-                    } //End block
+                    } 
                     {
                         nativeAddBatch(ev.mNativePtr, eventTimeNanos, pc, 0);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_2133228132 = ev;
-        } //End block
+        } 
         addTaint(idBits);
-        varB4EAC82CA7396A68D541C85D26508E83_2133228132.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2133228132.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2133228132;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.656 -0400", hash_original_method = "69A985781D7A79E036178DEB42E5F1F0", hash_generated_method = "3BE2B5B2EFFE93814750FD50B86421AC")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1709717389 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1709717389 = null; 
         StringBuilder msg = new StringBuilder();
         msg.append("MotionEvent { action=").append(actionToString(getAction()));
         final int pointerCount = getPointerCount();
@@ -1501,8 +1514,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
                 msg.append(", y[").append(i).append("]=").append(getY(i));
                 msg.append(", toolType[").append(i).append("]=").append(
                     toolTypeToString(getToolType(i)));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         msg.append(", buttonState=").append(MotionEvent.buttonStateToString(getButtonState()));
         msg.append(", metaState=").append(KeyEvent.metaStateToString(getMetaState()));
         msg.append(", flags=0x").append(Integer.toHexString(getFlags()));
@@ -1515,13 +1528,14 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         msg.append(", source=0x").append(Integer.toHexString(getSource()));
         msg.append(" }");
         varB4EAC82CA7396A68D541C85D26508E83_1709717389 = msg.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1709717389.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1709717389.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1709717389;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String actionToString(int action) {
         switch (action) {
             case ACTION_DOWN:
@@ -1555,12 +1569,14 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String axisToString(int axis) {
         String symbolicName = AXIS_SYMBOLIC_NAMES.get(axis);
         return symbolicName != null ? symbolicName : Integer.toString(axis);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int axisFromString(String symbolicName) {
         if (symbolicName == null) {
             throw new IllegalArgumentException("symbolicName must not be null");
@@ -1579,6 +1595,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String buttonStateToString(int buttonState) {
         if (buttonState == 0) {
             return "0";
@@ -1606,12 +1623,14 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toolTypeToString(int toolType) {
         String symbolicName = TOOL_TYPE_SYMBOLIC_NAMES.get(toolType);
         return symbolicName != null ? symbolicName : Integer.toString(toolType);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MotionEvent createFromParcelBody(Parcel in) {
         MotionEvent ev = obtain();
         ev.mNativePtr = nativeReadFromParcel(ev.mNativePtr, in);
@@ -1619,15 +1638,16 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.660 -0400", hash_original_method = "D732CA58C71ED959C0E1A12C336FC80D", hash_generated_method = "7F92D8EF6DB846D045EDC9EED70EE51B")
     public void writeToParcel(Parcel out, int flags) {
         out.writeInt(PARCEL_TOKEN_MOTION_EVENT);
         nativeWriteToParcel(mNativePtr, out);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeInt(PARCEL_TOKEN_MOTION_EVENT);
-        //nativeWriteToParcel(mNativePtr, out);
+        
+        
+        
     }
 
     
@@ -1668,7 +1688,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.661 -0400", hash_original_method = "30C014872AED120D5788F672204C6D56", hash_generated_method = "02D472FB06CC6A49D31A045DF0321860")
         public  PointerCoords() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1676,8 +1696,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         public  PointerCoords(PointerCoords other) {
             copyFrom(other);
             addTaint(other.getTaint());
-            // ---------- Original Method ----------
-            //copyFrom(other);
+            
+            
         }
 
         
@@ -1702,17 +1722,17 @@ public final class MotionEvent extends InputEvent implements Parcelable {
             toolMajor = 0;
             toolMinor = 0;
             orientation = 0;
-            // ---------- Original Method ----------
-            //mPackedAxisBits = 0;
-            //x = 0;
-            //y = 0;
-            //pressure = 0;
-            //size = 0;
-            //touchMajor = 0;
-            //touchMinor = 0;
-            //toolMajor = 0;
-            //toolMinor = 0;
-            //orientation = 0;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1727,9 +1747,9 @@ public final class MotionEvent extends InputEvent implements Parcelable {
                 {
                     values = new float[otherValues.length];
                     mPackedAxisValues = values;
-                } //End block
+                } 
                 System.arraycopy(otherValues, 0, values, 0, count);
-            } //End block
+            } 
             x = other.x;
             y = other.y;
             pressure = other.pressure;
@@ -1739,65 +1759,65 @@ public final class MotionEvent extends InputEvent implements Parcelable {
             toolMajor = other.toolMajor;
             toolMinor = other.toolMinor;
             orientation = other.orientation;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.663 -0400", hash_original_method = "566631CFDB34A411EF93513211D62594", hash_generated_method = "ED249138EF303F7C20A20E16498131DE")
         public float getAxisValue(int axis) {
-            //Begin case default 
+            
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Axis out of range.");
-                } //End block
+                } 
                 final long bits = mPackedAxisBits;
                 final long axisBit = 1L << axis;
                 final int index = Long.bitCount(bits & (axisBit - 1L));
-            } //End block
-            //End case default 
+            } 
+            
             addTaint(axis);
             float var546ADE640B6EDFBC8A086EF31347E768_904809049 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_904809049;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.663 -0400", hash_original_method = "55E9DEFA01615304E1434A1FAB8328FA", hash_generated_method = "F1760985D3AA8576BD20F9F7593CEB1C")
         public void setAxisValue(int axis, float value) {
-            //Begin case AXIS_X 
+            
             x = value;
-            //End case AXIS_X 
-            //Begin case AXIS_Y 
+            
+            
             y = value;
-            //End case AXIS_Y 
-            //Begin case AXIS_PRESSURE 
+            
+            
             pressure = value;
-            //End case AXIS_PRESSURE 
-            //Begin case AXIS_SIZE 
+            
+            
             size = value;
-            //End case AXIS_SIZE 
-            //Begin case AXIS_TOUCH_MAJOR 
+            
+            
             touchMajor = value;
-            //End case AXIS_TOUCH_MAJOR 
-            //Begin case AXIS_TOUCH_MINOR 
+            
+            
             touchMinor = value;
-            //End case AXIS_TOUCH_MINOR 
-            //Begin case AXIS_TOOL_MAJOR 
+            
+            
             toolMajor = value;
-            //End case AXIS_TOOL_MAJOR 
-            //Begin case AXIS_TOOL_MINOR 
+            
+            
             toolMinor = value;
-            //End case AXIS_TOOL_MINOR 
-            //Begin case AXIS_ORIENTATION 
+            
+            
             orientation = value;
-            //End case AXIS_ORIENTATION 
-            //Begin case default 
+            
+            
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Axis out of range.");
-                } //End block
+                } 
                 final long bits = mPackedAxisBits;
                 final long axisBit = 1L << axis;
                 final int index = Long.bitCount(bits & (axisBit - 1L));
@@ -1806,15 +1826,15 @@ public final class MotionEvent extends InputEvent implements Parcelable {
                     {
                         values = new float[INITIAL_PACKED_AXIS_VALUES];
                         mPackedAxisValues = values;
-                    } //End block
+                    } 
                     {
                         final int count = Long.bitCount(bits);
                         {
                             {
                                 System.arraycopy(values, index, values, index + 1,
                                             count - index);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             float[] newValues = new float[count * 2];
                             System.arraycopy(values, 0, newValues, 0, index);
@@ -1822,16 +1842,16 @@ public final class MotionEvent extends InputEvent implements Parcelable {
                                         count - index);
                             values = newValues;
                             mPackedAxisValues = values;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     mPackedAxisBits = bits | axisBit;
-                } //End block
+                } 
                 values[index] = value;
-            } //End block
-            //End case default 
+            } 
+            
             addTaint(axis);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1853,8 +1873,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.664 -0400", hash_original_method = "D6AAE40F539D7383E827DA395512E95B", hash_generated_method = "207B464AAB7566FD25D2646B7EE6C19D")
         public  PointerProperties() {
             clear();
-            // ---------- Original Method ----------
-            //clear();
+            
+            
         }
 
         
@@ -1862,8 +1882,8 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         public  PointerProperties(PointerProperties other) {
             copyFrom(other);
             addTaint(other.getTaint());
-            // ---------- Original Method ----------
-            //copyFrom(other);
+            
+            
         }
 
         
@@ -1880,9 +1900,9 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         public void clear() {
             id = INVALID_POINTER_ID;
             toolType = TOOL_TYPE_UNKNOWN;
-            // ---------- Original Method ----------
-            //id = INVALID_POINTER_ID;
-            //toolType = TOOL_TYPE_UNKNOWN;
+            
+            
+            
         }
 
         
@@ -1890,9 +1910,9 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         public void copyFrom(PointerProperties other) {
             id = other.id;
             toolType = other.toolType;
-            // ---------- Original Method ----------
-            //id = other.id;
-            //toolType = other.toolType;
+            
+            
+            
         }
 
         
@@ -2294,12 +2314,12 @@ public final class MotionEvent extends InputEvent implements Parcelable {
             return new MotionEvent[size];
         }
     };
-    // orphaned legacy method
+    
     public MotionEvent[] newArray(int size) {
             return new MotionEvent[size];
         }
     
-    // orphaned legacy method
+    
     public MotionEvent createFromParcel(Parcel in) {
             in.readInt(); 
             return MotionEvent.createFromParcelBody(in);

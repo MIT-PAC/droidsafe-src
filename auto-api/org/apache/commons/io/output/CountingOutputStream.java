@@ -1,11 +1,11 @@
 package org.apache.commons.io.output;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.OutputStream;
 
@@ -18,50 +18,53 @@ public class CountingOutputStream extends ProxyOutputStream {
     public  CountingOutputStream( OutputStream out ) {
         super(out);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.655 -0400", hash_original_method = "06A3A1AA076BADB04E4D922D26953A96", hash_generated_method = "D61040F019D093286583FA8CB82CAEF6")
     @Override
     protected synchronized void beforeWrite(int n) {
         count += n;
-        // ---------- Original Method ----------
-        //count += n;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.655 -0400", hash_original_method = "C00FD02DE13770738E0B8BA4159C30F2", hash_generated_method = "022CAC1C44E21A518ED30FB8660D5E09")
     public int getCount() {
         long result = getByteCount();
         {
             if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("The byte count " + result + " is too large to be converted to an int");
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1042607356 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1042607356;
-        // ---------- Original Method ----------
-        //long result = getByteCount();
-        //if (result > Integer.MAX_VALUE) {
-            //throw new ArithmeticException("The byte count " + result + " is too large to be converted to an int");
-        //}
-        //return (int) result;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.655 -0400", hash_original_method = "F5B53F118A4CD127E2B80EC107F6232B", hash_generated_method = "4EA9C5E9AC00B820A8A7FD2BA981EC3A")
     public int resetCount() {
         long result = resetByteCount();
         {
             if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("The byte count " + result + " is too large to be converted to an int");
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_125675907 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_125675907;
-        // ---------- Original Method ----------
-        //long result = resetByteCount();
-        //if (result > Integer.MAX_VALUE) {
-            //throw new ArithmeticException("The byte count " + result + " is too large to be converted to an int");
-        //}
-        //return (int) result;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -69,8 +72,8 @@ public class CountingOutputStream extends ProxyOutputStream {
     public synchronized long getByteCount() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1731318489 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1731318489;
-        // ---------- Original Method ----------
-        //return this.count;
+        
+        
     }
 
     
@@ -80,10 +83,10 @@ public class CountingOutputStream extends ProxyOutputStream {
         this.count = 0;
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2097481897 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2097481897;
-        // ---------- Original Method ----------
-        //long tmp = this.count;
-        //this.count = 0;
-        //return tmp;
+        
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.clientauthutils;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.core.StackLogger;
 import java.security.MessageDigest;
@@ -16,10 +16,11 @@ public class MessageDigestAlgorithm {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.754 -0400", hash_original_method = "867FE15D3C49C82AA29712975204D9D1", hash_generated_method = "867FE15D3C49C82AA29712975204D9D1")
     public MessageDigestAlgorithm ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     static String calculateResponse(String algorithm, String hashUserNameRealmPasswd,
             String nonce_value, String nc_value, String cnonce_value,
             String method, String digest_uri_value, String entity_body, String qop_value,
@@ -59,6 +60,7 @@ public class MessageDigestAlgorithm {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String calculateResponse(String algorithm, String username_value, String realm_value,
             String passwd, String nonce_value, String nc_value, String cnonce_value,
             String method, String digest_uri_value, String entity_body, String qop_value,
@@ -107,6 +109,7 @@ public class MessageDigestAlgorithm {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String H(String data) {
         try {
             MessageDigest digest = MessageDigest.getInstance("MD5");
@@ -117,11 +120,13 @@ public class MessageDigestAlgorithm {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String KD(String secret, String data) {
         return H(secret + ":" + data);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String toHexString(byte b[]) {
         int pos = 0;
         char[] c = new char[b.length * 2];

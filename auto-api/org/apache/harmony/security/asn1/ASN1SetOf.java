@@ -1,11 +1,11 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -15,37 +15,38 @@ public class ASN1SetOf extends ASN1ValueCollection {
     public  ASN1SetOf(ASN1Type type) {
         super(TAG_SETOF, type);
         addTaint(type.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.624 -0400", hash_original_method = "F57C1115BE0470F5CDF9CC2B3F700EBD", hash_generated_method = "A26981B89A1A5F1DDF7F12B464020DF4")
     public Object decode(BerInputStream in) throws IOException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_678046506 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_966242373 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_678046506 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_966242373 = null; 
         in.readSetOf(this);
         {
             varB4EAC82CA7396A68D541C85D26508E83_678046506 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_966242373 = getDecodedObject(in);
         addTaint(in.getTaint());
-        Object varA7E53CE21691AB073D9660D615818899_1187601643; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_1187601643; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1187601643 = varB4EAC82CA7396A68D541C85D26508E83_678046506;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1187601643 = varB4EAC82CA7396A68D541C85D26508E83_966242373;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1187601643.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1187601643.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1187601643;
-        // ---------- Original Method ----------
-        //in.readSetOf(this);
-        //if (in.isVerify) {
-            //return null;
-        //}
-        //return getDecodedObject(in);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -53,8 +54,8 @@ public class ASN1SetOf extends ASN1ValueCollection {
     public final void encodeContent(BerOutputStream out) {
         out.encodeSetOf(this);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.encodeSetOf(this);
+        
+        
     }
 
     
@@ -62,8 +63,8 @@ public class ASN1SetOf extends ASN1ValueCollection {
     public final void setEncodingContent(BerOutputStream out) {
         out.getSetOfLength(this);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.getSetOfLength(this);
+        
+        
     }
 
     

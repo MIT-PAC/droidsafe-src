@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.AndroidRuntimeException;
 
@@ -15,7 +15,7 @@ public class ReceiverCallNotAllowedException extends AndroidRuntimeException {
     public  ReceiverCallNotAllowedException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

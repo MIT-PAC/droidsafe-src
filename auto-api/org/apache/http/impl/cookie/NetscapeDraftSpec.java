@@ -1,11 +1,11 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +31,10 @@ public class NetscapeDraftSpec extends CookieSpecBase {
         super();
         {
             this.datepatterns = datepatterns.clone();
-        } //End block
+        } 
         {
             this.datepatterns = new String[] { EXPIRES_PATTERN };
-        } //End block
+        } 
         registerAttribHandler(ClientCookie.PATH_ATTR, new BasicPathHandler());
         registerAttribHandler(ClientCookie.DOMAIN_ATTR, new NetscapeDomainHandler());
         registerAttribHandler(ClientCookie.MAX_AGE_ATTR, new BasicMaxAgeHandler());
@@ -42,38 +42,38 @@ public class NetscapeDraftSpec extends CookieSpecBase {
         registerAttribHandler(ClientCookie.COMMENT_ATTR, new BasicCommentHandler());
         registerAttribHandler(ClientCookie.EXPIRES_ATTR, new BasicExpiresHandler(
                 this.datepatterns));
-        // ---------- Original Method ----------
-        //if (datepatterns != null) {
-            //this.datepatterns = datepatterns.clone();
-        //} else {
-            //this.datepatterns = new String[] { EXPIRES_PATTERN };
-        //}
-        //registerAttribHandler(ClientCookie.PATH_ATTR, new BasicPathHandler());
-        //registerAttribHandler(ClientCookie.DOMAIN_ATTR, new NetscapeDomainHandler());
-        //registerAttribHandler(ClientCookie.MAX_AGE_ATTR, new BasicMaxAgeHandler());
-        //registerAttribHandler(ClientCookie.SECURE_ATTR, new BasicSecureHandler());
-        //registerAttribHandler(ClientCookie.COMMENT_ATTR, new BasicCommentHandler());
-        //registerAttribHandler(ClientCookie.EXPIRES_ATTR, new BasicExpiresHandler(
-                //this.datepatterns));
+        
+        
+            
+        
+            
+        
+        
+        
+        
+        
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.247 -0400", hash_original_method = "6C3990D1C0CF4149D1074399C8EE261A", hash_generated_method = "F26D5995B8A8A9F5B2F2F2A5E9F900D8")
     public  NetscapeDraftSpec() {
         this(null);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.247 -0400", hash_original_method = "4C234501C46CBF19AFF354B62202B78D", hash_generated_method = "3ECBB252D38C6F8EE6C27509BD140925")
     public List<Cookie> parse(final Header header, final CookieOrigin origin) throws MalformedCookieException {
-        List<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1551555254 = null; //Variable for return #1
+        List<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1551555254 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Header may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie origin may not be null");
-        } //End block
+        } 
         NetscapeDraftHeaderParser parser = NetscapeDraftHeaderParser.DEFAULT;
         CharArrayBuffer buffer;
         ParserCursor cursor;
@@ -82,38 +82,38 @@ public class NetscapeDraftSpec extends CookieSpecBase {
             cursor = new ParserCursor(
                     ((FormattedHeader) header).getValuePos(), 
                     buffer.length());
-        } //End block
+        } 
         {
             String s = header.getValue();
             {
                 if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Header value is null");
-            } //End block
+            } 
             buffer = new CharArrayBuffer(s.length());
             buffer.append(s);
             cursor = new ParserCursor(0, buffer.length());
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1551555254 = parse(new HeaderElement[] { parser.parseHeader(buffer, cursor) }, origin);
         addTaint(header.getTaint());
         addTaint(origin.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1551555254.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1551555254.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1551555254;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.250 -0400", hash_original_method = "A256F1B3B1422E7AF6F0628F304CDE1F", hash_generated_method = "B10157E6584B1FBE3C827346A0B643DE")
     public List<Header> formatCookies(final List<Cookie> cookies) {
-        List<Header> varB4EAC82CA7396A68D541C85D26508E83_85087765 = null; //Variable for return #1
+        List<Header> varB4EAC82CA7396A68D541C85D26508E83_85087765 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("List of cookies may not be null");
-        } //End block
+        } 
         {
             boolean var054F663771300FA8A13A91F733F5D6CB_641356580 = (cookies.isEmpty());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("List of cookies may not be empty");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         CharArrayBuffer buffer = new CharArrayBuffer(20 * cookies.size());
         buffer.append(SM.COOKIE);
         buffer.append(": ");
@@ -124,23 +124,23 @@ public class NetscapeDraftSpec extends CookieSpecBase {
                 Cookie cookie = cookies.get(i);
                 {
                     buffer.append("; ");
-                } //End block
+                } 
                 buffer.append(cookie.getName());
                 String s = cookie.getValue();
                 {
                     buffer.append("=");
                     buffer.append(s);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         List<Header> headers = new ArrayList<Header>(1);
         headers.add(new BufferedHeader(buffer));
         varB4EAC82CA7396A68D541C85D26508E83_85087765 = headers;
         addTaint(cookies.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_85087765.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_85087765.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_85087765;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -148,19 +148,19 @@ public class NetscapeDraftSpec extends CookieSpecBase {
     public int getVersion() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1651176144 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1651176144;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.253 -0400", hash_original_method = "C1FA79C2C3115B4C8F8CB20B10CB9417", hash_generated_method = "B58FC8BAD20B05254B8B5FBF5AF93390")
     public Header getVersionHeader() {
-        Header varB4EAC82CA7396A68D541C85D26508E83_1526629702 = null; //Variable for return #1
+        Header varB4EAC82CA7396A68D541C85D26508E83_1526629702 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1526629702 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1526629702.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1526629702.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1526629702;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     

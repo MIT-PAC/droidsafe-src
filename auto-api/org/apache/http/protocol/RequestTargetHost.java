@@ -1,11 +1,11 @@
 package org.apache.http.protocol;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -24,7 +24,7 @@ public class RequestTargetHost implements HttpRequestInterceptor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.648 -0400", hash_original_method = "8E392018972A7DBBBF7C8FCDEC2420D5", hash_generated_method = "6517A03037392B0D34A56F3318F3EB95")
     public  RequestTargetHost() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,10 +32,10 @@ public class RequestTargetHost implements HttpRequestInterceptor {
     public void process(final HttpRequest request, final HttpContext context) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } //End block
+        } 
         {
             boolean var42F48AC317DCD4FCC14CFA497F63A10F_906651514 = (!request.containsHeader(HTTP.TARGET_HOST));
             {
@@ -49,25 +49,25 @@ public class RequestTargetHost implements HttpRequestInterceptor {
                         int port = ((HttpInetConnection) conn).getRemotePort();
                         {
                             targethost = new HttpHost(address.getHostName(), port);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         ProtocolVersion ver = request.getRequestLine().getProtocolVersion();
                         {
                             boolean var6975353BB6195CBDBBE6503768DE7665_1868055831 = (ver.lessEquals(HttpVersion.HTTP_1_0));
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Target host missing");
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 request.addHeader(HTTP.TARGET_HOST, targethost.toHostString());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(request.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

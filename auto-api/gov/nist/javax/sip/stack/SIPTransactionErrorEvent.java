@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.stack;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.EventObject;
 
@@ -21,8 +21,8 @@ public class SIPTransactionErrorEvent extends EventObject {
         super(sourceTransaction);
         errorID = transactionErrorID;
         addTaint(sourceTransaction.getTaint());
-        // ---------- Original Method ----------
-        //errorID = transactionErrorID;
+        
+        
     }
 
     
@@ -30,8 +30,8 @@ public class SIPTransactionErrorEvent extends EventObject {
     public int getErrorID() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_466790168 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_466790168;
-        // ---------- Original Method ----------
-        //return errorID;
+        
+        
     }
 
     

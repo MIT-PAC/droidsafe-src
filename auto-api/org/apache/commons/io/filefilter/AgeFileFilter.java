@@ -1,11 +1,11 @@
 package org.apache.commons.io.filefilter;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.Serializable;
@@ -24,7 +24,7 @@ public class AgeFileFilter extends AbstractFileFilter implements Serializable {
     public  AgeFileFilter(long cutoff) {
         this(cutoff, true);
         addTaint(cutoff);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,9 +32,9 @@ public class AgeFileFilter extends AbstractFileFilter implements Serializable {
     public  AgeFileFilter(long cutoff, boolean acceptOlder) {
         this.acceptOlder = acceptOlder;
         this.cutoff = cutoff;
-        // ---------- Original Method ----------
-        //this.acceptOlder = acceptOlder;
-        //this.cutoff = cutoff;
+        
+        
+        
     }
 
     
@@ -42,7 +42,7 @@ public class AgeFileFilter extends AbstractFileFilter implements Serializable {
     public  AgeFileFilter(Date cutoffDate) {
         this(cutoffDate, true);
         addTaint(cutoffDate.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -51,7 +51,7 @@ public class AgeFileFilter extends AbstractFileFilter implements Serializable {
         this(cutoffDate.getTime(), acceptOlder);
         addTaint(cutoffDate.getTaint());
         addTaint(acceptOlder);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -59,7 +59,7 @@ public class AgeFileFilter extends AbstractFileFilter implements Serializable {
     public  AgeFileFilter(File cutoffReference) {
         this(cutoffReference, true);
         addTaint(cutoffReference.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -68,10 +68,11 @@ public class AgeFileFilter extends AbstractFileFilter implements Serializable {
         this(cutoffReference.lastModified(), acceptOlder);
         addTaint(cutoffReference.getTaint());
         addTaint(acceptOlder);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.627 -0400", hash_original_method = "C00DF150BD7A81B8538F88231B296818", hash_generated_method = "386D1F266F16E0B015A99BB2B37E8B1A")
     @Override
     public boolean accept(File file) {
@@ -79,25 +80,26 @@ public class AgeFileFilter extends AbstractFileFilter implements Serializable {
         addTaint(file.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1144405946 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1144405946;
-        // ---------- Original Method ----------
-        //boolean newer = FileUtils.isFileNewer(file, cutoff);
-        //return acceptOlder ? !newer : newer;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.627 -0400", hash_original_method = "99B5BE3867B40B3085E3122FEC15BA27", hash_generated_method = "E87B88382605329EBD9420FABEFDF9C4")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1225701437 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1225701437 = null; 
         String condition;
         condition = "<=";
         condition = ">";
         varB4EAC82CA7396A68D541C85D26508E83_1225701437 = super.toString() + "(" + condition + cutoff + ")";
-        varB4EAC82CA7396A68D541C85D26508E83_1225701437.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1225701437.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1225701437;
-        // ---------- Original Method ----------
-        //String condition = acceptOlder ? "<=" : ">";
-        //return super.toString() + "(" + condition + cutoff + ")";
+        
+        
+        
     }
 
     

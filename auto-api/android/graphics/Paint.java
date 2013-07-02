@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.text.GraphicsOperations;
 import android.text.SpannableString;
@@ -68,7 +68,7 @@ public class Paint {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.800 -0400", hash_original_method = "07976DE00CD3F977E8ACA514AAEDE967", hash_generated_method = "2E92EC59FFA72681E3F4ECFD5F5383AA")
     public  Paint() {
         this(0);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -78,10 +78,10 @@ public class Paint {
         setFlags(flags | DEFAULT_PAINT_FLAGS);
         mCompatScaling = mInvCompatScaling = 1;
         addTaint(flags);
-        // ---------- Original Method ----------
-        //mNativePaint = native_init();
-        //setFlags(flags | DEFAULT_PAINT_FLAGS);
-        //mCompatScaling = mInvCompatScaling = 1;
+        
+        
+        
+        
     }
 
     
@@ -89,12 +89,13 @@ public class Paint {
     public  Paint(Paint paint) {
         mNativePaint = native_initWithPaint(paint.mNativePaint);
         setClassVariablesFrom(paint);
-        // ---------- Original Method ----------
-        //mNativePaint = native_initWithPaint(paint.mNativePaint);
-        //setClassVariablesFrom(paint);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.802 -0400", hash_original_method = "500B44D79F50634A486701EEF1530400", hash_generated_method = "4EC68B4DCAA133DD09A2D2EB6717EEB2")
     public void reset() {
         native_reset(mNativePaint);
@@ -102,27 +103,28 @@ public class Paint {
         mHasCompatScaling = false;
         mCompatScaling = mInvCompatScaling = 1;
         mBidiFlags = BIDI_DEFAULT_LTR;
-        // ---------- Original Method ----------
-        //native_reset(mNativePaint);
-        //setFlags(DEFAULT_PAINT_FLAGS);
-        //mHasCompatScaling = false;
-        //mCompatScaling = mInvCompatScaling = 1;
-        //mBidiFlags = BIDI_DEFAULT_LTR;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.803 -0400", hash_original_method = "98AAB6FDA11AA2B9ABF20CA846521C6A", hash_generated_method = "F99284F4099EF5836A6E51FA357ED689")
     public void set(Paint src) {
         {
             native_set(mNativePaint, src.mNativePaint);
             setClassVariablesFrom(src);
-        } //End block
+        } 
         addTaint(src.getTaint());
-        // ---------- Original Method ----------
-        //if (this != src) {
-            //native_set(mNativePaint, src.mNativePaint);
-            //setClassVariablesFrom(src);
-        //}
+        
+        
+            
+            
+        
     }
 
     
@@ -144,23 +146,23 @@ public class Paint {
         shadowRadius = paint.shadowRadius;
         shadowColor = paint.shadowColor;
         mBidiFlags = paint.mBidiFlags;
-        // ---------- Original Method ----------
-        //mColorFilter = paint.mColorFilter;
-        //mMaskFilter = paint.mMaskFilter;
-        //mPathEffect = paint.mPathEffect;
-        //mRasterizer = paint.mRasterizer;
-        //mShader = paint.mShader;
-        //mTypeface = paint.mTypeface;
-        //mXfermode = paint.mXfermode;
-        //mHasCompatScaling = paint.mHasCompatScaling;
-        //mCompatScaling = paint.mCompatScaling;
-        //mInvCompatScaling = paint.mInvCompatScaling;
-        //hasShadow = paint.hasShadow;
-        //shadowDx = paint.shadowDx;
-        //shadowDy = paint.shadowDy;
-        //shadowRadius = paint.shadowRadius;
-        //shadowColor = paint.shadowColor;
-        //mBidiFlags = paint.mBidiFlags;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -169,21 +171,21 @@ public class Paint {
         {
             mHasCompatScaling = false;
             mCompatScaling = mInvCompatScaling = 1.0f;
-        } //End block
+        } 
         {
             mHasCompatScaling = true;
             mCompatScaling = factor;
             mInvCompatScaling = 1.0f/factor;
-        } //End block
-        // ---------- Original Method ----------
-        //if (factor == 1.0) {
-            //mHasCompatScaling = false;
-            //mCompatScaling = mInvCompatScaling = 1.0f;
-        //} else {
-            //mHasCompatScaling = true;
-            //mCompatScaling = factor;
-            //mInvCompatScaling = 1.0f/factor;
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+            
+            
+        
     }
 
     
@@ -191,24 +193,25 @@ public class Paint {
     public int getBidiFlags() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_399752742 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_399752742;
-        // ---------- Original Method ----------
-        //return mBidiFlags;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.805 -0400", hash_original_method = "47898531701F33FAC5767BA6A377013D", hash_generated_method = "A20F8252F7C80C1DD2CD8D7678A19D6B")
     public void setBidiFlags(int flags) {
         flags &= BIDI_FLAG_MASK;
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("unknown bidi flag: " + flags);
-        } //End block
+        } 
         mBidiFlags = flags;
-        // ---------- Original Method ----------
-        //flags &= BIDI_FLAG_MASK;
-        //if (flags > BIDI_MAX_FLAG_VALUE) {
-            //throw new IllegalArgumentException("unknown bidi flag: " + flags);
-        //}
-        //mBidiFlags = flags;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -241,8 +244,8 @@ public class Paint {
         boolean var0A7E8DB3C2F27E0E70AEB7D3C4714849_1304416799 = ((getFlags() & ANTI_ALIAS_FLAG) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_977393543 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_977393543;
-        // ---------- Original Method ----------
-        //return (getFlags() & ANTI_ALIAS_FLAG) != 0;
+        
+        
     }
 
     
@@ -256,8 +259,8 @@ public class Paint {
         boolean var5399F5810C06B5F2B5007E7BFE0F0E00_886451799 = ((getFlags() & DITHER_FLAG) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_717774691 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_717774691;
-        // ---------- Original Method ----------
-        //return (getFlags() & DITHER_FLAG) != 0;
+        
+        
     }
 
     
@@ -271,8 +274,8 @@ public class Paint {
         boolean var79DAF9C030CBADD6B91BC7DC15DBE862_1996732619 = ((getFlags() & LINEAR_TEXT_FLAG) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1835180606 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1835180606;
-        // ---------- Original Method ----------
-        //return (getFlags() & LINEAR_TEXT_FLAG) != 0;
+        
+        
     }
 
     
@@ -286,8 +289,8 @@ public class Paint {
         boolean varA843E4D86CA73BCC98350551BD14C6C0_704221637 = ((getFlags() & SUBPIXEL_TEXT_FLAG) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1067591191 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1067591191;
-        // ---------- Original Method ----------
-        //return (getFlags() & SUBPIXEL_TEXT_FLAG) != 0;
+        
+        
     }
 
     
@@ -301,8 +304,8 @@ public class Paint {
         boolean varE927F016983A6B322D1DB9E7B9D956EF_869673784 = ((getFlags() & UNDERLINE_TEXT_FLAG) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1515457167 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1515457167;
-        // ---------- Original Method ----------
-        //return (getFlags() & UNDERLINE_TEXT_FLAG) != 0;
+        
+        
     }
 
     
@@ -316,8 +319,8 @@ public class Paint {
         boolean var7E7F54E434CA51F1CAA8093A60301247_1648744399 = ((getFlags() & STRIKE_THRU_TEXT_FLAG) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1849215913 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1849215913;
-        // ---------- Original Method ----------
-        //return (getFlags() & STRIKE_THRU_TEXT_FLAG) != 0;
+        
+        
     }
 
     
@@ -331,8 +334,8 @@ public class Paint {
         boolean varBA3E1460985702B77EDFEB4E358B3B6A_1052944725 = ((getFlags() & FAKE_BOLD_TEXT_FLAG) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1170992560 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1170992560;
-        // ---------- Original Method ----------
-        //return (getFlags() & FAKE_BOLD_TEXT_FLAG) != 0;
+        
+        
     }
 
     
@@ -346,8 +349,8 @@ public class Paint {
         boolean var8F4FACEC12D1030ECB4A927B5426F3CC_1600217694 = ((getFlags() & FILTER_BITMAP_FLAG) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1632673518 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1632673518;
-        // ---------- Original Method ----------
-        //return (getFlags() & FILTER_BITMAP_FLAG) != 0;
+        
+        
     }
 
     
@@ -356,23 +359,25 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.812 -0400", hash_original_method = "7A3F88F43B6717422F7911C6C93794E0", hash_generated_method = "B4B2F4CD0EB9E889B1D888657732A7DE")
     public Style getStyle() {
-        Style varB4EAC82CA7396A68D541C85D26508E83_982605555 = null; //Variable for return #1
+        Style varB4EAC82CA7396A68D541C85D26508E83_982605555 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_982605555 = sStyleArray[native_getStyle(mNativePaint)];
-        varB4EAC82CA7396A68D541C85D26508E83_982605555.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_982605555.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_982605555;
-        // ---------- Original Method ----------
-        //return sStyleArray[native_getStyle(mNativePaint)];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.812 -0400", hash_original_method = "0C31442FDD5A78FAD136F991DDCEA542", hash_generated_method = "A3CD231564AE9D96957E5C796740F44F")
     public void setStyle(Style style) {
         native_setStyle(mNativePaint, style.nativeInt);
         addTaint(style.getTaint());
-        // ---------- Original Method ----------
-        //native_setStyle(mNativePaint, style.nativeInt);
+        
+        
     }
 
     
@@ -400,6 +405,7 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.815 -0400", hash_original_method = "61ED3E8FA79427F4AF66F905BEAE9870", hash_generated_method = "229C04BDCD75A76996F0587C993C0385")
     public void setARGB(int a, int r, int g, int b) {
         setColor((a << 24) | (r << 16) | (g << 8) | b);
@@ -407,8 +413,8 @@ public class Paint {
         addTaint(r);
         addTaint(g);
         addTaint(b);
-        // ---------- Original Method ----------
-        //setColor((a << 24) | (r << 16) | (g << 8) | b);
+        
+        
     }
 
     
@@ -436,46 +442,51 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.818 -0400", hash_original_method = "5DCDC8444F177D5C991625E0155BCA4A", hash_generated_method = "6748745B39D55E2D1D06DBBC000DCDA5")
     public Cap getStrokeCap() {
-        Cap varB4EAC82CA7396A68D541C85D26508E83_1946345511 = null; //Variable for return #1
+        Cap varB4EAC82CA7396A68D541C85D26508E83_1946345511 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1946345511 = sCapArray[native_getStrokeCap(mNativePaint)];
-        varB4EAC82CA7396A68D541C85D26508E83_1946345511.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1946345511.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1946345511;
-        // ---------- Original Method ----------
-        //return sCapArray[native_getStrokeCap(mNativePaint)];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.818 -0400", hash_original_method = "D26EF05E574A5A1AE605A2030639B3B0", hash_generated_method = "186FBCA98E34E24406C269CCB5881F97")
     public void setStrokeCap(Cap cap) {
         native_setStrokeCap(mNativePaint, cap.nativeInt);
         addTaint(cap.getTaint());
-        // ---------- Original Method ----------
-        //native_setStrokeCap(mNativePaint, cap.nativeInt);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.819 -0400", hash_original_method = "EC697BED5392A0A7D9DB024F5A9BA066", hash_generated_method = "50B191ADDB4536C66FB051138F1E5910")
     public Join getStrokeJoin() {
-        Join varB4EAC82CA7396A68D541C85D26508E83_1921281717 = null; //Variable for return #1
+        Join varB4EAC82CA7396A68D541C85D26508E83_1921281717 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1921281717 = sJoinArray[native_getStrokeJoin(mNativePaint)];
-        varB4EAC82CA7396A68D541C85D26508E83_1921281717.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1921281717.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1921281717;
-        // ---------- Original Method ----------
-        //return sJoinArray[native_getStrokeJoin(mNativePaint)];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.819 -0400", hash_original_method = "08533C600DCDC9F9AEA810B7ADA01DF0", hash_generated_method = "24A88653DE5A6EF41BE4C2AC012987A7")
     public void setStrokeJoin(Join join) {
         native_setStrokeJoin(mNativePaint, join.nativeInt);
         addTaint(join.getTaint());
-        // ---------- Original Method ----------
-        //native_setStrokeJoin(mNativePaint, join.nativeInt);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.819 -0400", hash_original_method = "47F5CE3F8A2C9B64184DA3E7564A16E0", hash_generated_method = "F84146448C6A96150EE8AF8119BBB989")
     public boolean getFillPath(Path src, Path dst) {
         boolean varD76A52FF867281710D540951850A2520_566584861 = (native_getFillPath(mNativePaint, src.ni(), dst.ni()));
@@ -483,240 +494,248 @@ public class Paint {
         addTaint(dst.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_783436390 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_783436390;
-        // ---------- Original Method ----------
-        //return native_getFillPath(mNativePaint, src.ni(), dst.ni());
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.820 -0400", hash_original_method = "F14F830C87873216E173BB3B6F2D71DE", hash_generated_method = "3FC32388035EE2FAA3BA412071F12E67")
     public Shader getShader() {
-        Shader varB4EAC82CA7396A68D541C85D26508E83_1582101959 = null; //Variable for return #1
+        Shader varB4EAC82CA7396A68D541C85D26508E83_1582101959 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1582101959 = mShader;
-        varB4EAC82CA7396A68D541C85D26508E83_1582101959.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1582101959.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1582101959;
-        // ---------- Original Method ----------
-        //return mShader;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.821 -0400", hash_original_method = "CB91A884CE132802683E082171CC1D6C", hash_generated_method = "0487B6A256084469936BDAD5C56FB3AB")
     public Shader setShader(Shader shader) {
-        Shader varB4EAC82CA7396A68D541C85D26508E83_1264360325 = null; //Variable for return #1
+        Shader varB4EAC82CA7396A68D541C85D26508E83_1264360325 = null; 
         int shaderNative = 0;
         shaderNative = shader.native_instance;
         native_setShader(mNativePaint, shaderNative);
         mShader = shader;
         varB4EAC82CA7396A68D541C85D26508E83_1264360325 = shader;
-        varB4EAC82CA7396A68D541C85D26508E83_1264360325.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1264360325.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1264360325;
-        // ---------- Original Method ----------
-        //int shaderNative = 0;
-        //if (shader != null)
-            //shaderNative = shader.native_instance;
-        //native_setShader(mNativePaint, shaderNative);
-        //mShader = shader;
-        //return shader;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.822 -0400", hash_original_method = "0F313F2FF8A981B6076CED0DBA25A8DB", hash_generated_method = "97781B922783CA5018A552D1C56F89E7")
     public ColorFilter getColorFilter() {
-        ColorFilter varB4EAC82CA7396A68D541C85D26508E83_1574501822 = null; //Variable for return #1
+        ColorFilter varB4EAC82CA7396A68D541C85D26508E83_1574501822 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1574501822 = mColorFilter;
-        varB4EAC82CA7396A68D541C85D26508E83_1574501822.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1574501822.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1574501822;
-        // ---------- Original Method ----------
-        //return mColorFilter;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.823 -0400", hash_original_method = "C7126951024C02787596F4A62EFB1A3F", hash_generated_method = "F47B4F0625CAAD3E9F2C7DF8FE387282")
     public ColorFilter setColorFilter(ColorFilter filter) {
-        ColorFilter varB4EAC82CA7396A68D541C85D26508E83_940424400 = null; //Variable for return #1
+        ColorFilter varB4EAC82CA7396A68D541C85D26508E83_940424400 = null; 
         int filterNative = 0;
         filterNative = filter.native_instance;
         native_setColorFilter(mNativePaint, filterNative);
         mColorFilter = filter;
         varB4EAC82CA7396A68D541C85D26508E83_940424400 = filter;
-        varB4EAC82CA7396A68D541C85D26508E83_940424400.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_940424400.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_940424400;
-        // ---------- Original Method ----------
-        //int filterNative = 0;
-        //if (filter != null)
-            //filterNative = filter.native_instance;
-        //native_setColorFilter(mNativePaint, filterNative);
-        //mColorFilter = filter;
-        //return filter;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.825 -0400", hash_original_method = "DC5D89A34795E2A5122BF3B6DBF85AE6", hash_generated_method = "5F3FC382555AA8626B2DE0196F942047")
     public Xfermode getXfermode() {
-        Xfermode varB4EAC82CA7396A68D541C85D26508E83_103941405 = null; //Variable for return #1
+        Xfermode varB4EAC82CA7396A68D541C85D26508E83_103941405 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_103941405 = mXfermode;
-        varB4EAC82CA7396A68D541C85D26508E83_103941405.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_103941405.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_103941405;
-        // ---------- Original Method ----------
-        //return mXfermode;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.826 -0400", hash_original_method = "42770A58843BCA14944D0826F7595F4B", hash_generated_method = "F32710875A8832DD44A293E2557E7688")
     public Xfermode setXfermode(Xfermode xfermode) {
-        Xfermode varB4EAC82CA7396A68D541C85D26508E83_493234089 = null; //Variable for return #1
+        Xfermode varB4EAC82CA7396A68D541C85D26508E83_493234089 = null; 
         int xfermodeNative = 0;
         xfermodeNative = xfermode.native_instance;
         native_setXfermode(mNativePaint, xfermodeNative);
         mXfermode = xfermode;
         varB4EAC82CA7396A68D541C85D26508E83_493234089 = xfermode;
-        varB4EAC82CA7396A68D541C85D26508E83_493234089.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_493234089.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_493234089;
-        // ---------- Original Method ----------
-        //int xfermodeNative = 0;
-        //if (xfermode != null)
-            //xfermodeNative = xfermode.native_instance;
-        //native_setXfermode(mNativePaint, xfermodeNative);
-        //mXfermode = xfermode;
-        //return xfermode;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.827 -0400", hash_original_method = "D81D17C09FBA25719A586CCEA3F0BEFE", hash_generated_method = "DC9BBFF35ED12DB0F334F8205867710C")
     public PathEffect getPathEffect() {
-        PathEffect varB4EAC82CA7396A68D541C85D26508E83_1268791607 = null; //Variable for return #1
+        PathEffect varB4EAC82CA7396A68D541C85D26508E83_1268791607 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1268791607 = mPathEffect;
-        varB4EAC82CA7396A68D541C85D26508E83_1268791607.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1268791607.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1268791607;
-        // ---------- Original Method ----------
-        //return mPathEffect;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.827 -0400", hash_original_method = "1FFAC2BED25128ED5407987A8834154C", hash_generated_method = "5D29B20E3CFF4FAE67EFCF093FE7DDAA")
     public PathEffect setPathEffect(PathEffect effect) {
-        PathEffect varB4EAC82CA7396A68D541C85D26508E83_466576998 = null; //Variable for return #1
+        PathEffect varB4EAC82CA7396A68D541C85D26508E83_466576998 = null; 
         int effectNative = 0;
         {
             effectNative = effect.native_instance;
-        } //End block
+        } 
         native_setPathEffect(mNativePaint, effectNative);
         mPathEffect = effect;
         varB4EAC82CA7396A68D541C85D26508E83_466576998 = effect;
-        varB4EAC82CA7396A68D541C85D26508E83_466576998.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_466576998.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_466576998;
-        // ---------- Original Method ----------
-        //int effectNative = 0;
-        //if (effect != null) {
-            //effectNative = effect.native_instance;
-        //}
-        //native_setPathEffect(mNativePaint, effectNative);
-        //mPathEffect = effect;
-        //return effect;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.828 -0400", hash_original_method = "E1DE139FF20646B82CF42CE75E145566", hash_generated_method = "F57DF9D93BE005CF809912D0FD84EAC4")
     public MaskFilter getMaskFilter() {
-        MaskFilter varB4EAC82CA7396A68D541C85D26508E83_886742279 = null; //Variable for return #1
+        MaskFilter varB4EAC82CA7396A68D541C85D26508E83_886742279 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_886742279 = mMaskFilter;
-        varB4EAC82CA7396A68D541C85D26508E83_886742279.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_886742279.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_886742279;
-        // ---------- Original Method ----------
-        //return mMaskFilter;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.829 -0400", hash_original_method = "12313867224D56BCBF8C1F85C229A2F0", hash_generated_method = "E02AF3CB281D4F8E8EB3E52EFE7A1A3F")
     public MaskFilter setMaskFilter(MaskFilter maskfilter) {
-        MaskFilter varB4EAC82CA7396A68D541C85D26508E83_1868110798 = null; //Variable for return #1
+        MaskFilter varB4EAC82CA7396A68D541C85D26508E83_1868110798 = null; 
         int maskfilterNative = 0;
         {
             maskfilterNative = maskfilter.native_instance;
-        } //End block
+        } 
         native_setMaskFilter(mNativePaint, maskfilterNative);
         mMaskFilter = maskfilter;
         varB4EAC82CA7396A68D541C85D26508E83_1868110798 = maskfilter;
-        varB4EAC82CA7396A68D541C85D26508E83_1868110798.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1868110798.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1868110798;
-        // ---------- Original Method ----------
-        //int maskfilterNative = 0;
-        //if (maskfilter != null) {
-            //maskfilterNative = maskfilter.native_instance;
-        //}
-        //native_setMaskFilter(mNativePaint, maskfilterNative);
-        //mMaskFilter = maskfilter;
-        //return maskfilter;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.830 -0400", hash_original_method = "E402FEB0FEC812E5128501C647697EA3", hash_generated_method = "BE72136981179F87F4DF8E9E7F4B4824")
     public Typeface getTypeface() {
-        Typeface varB4EAC82CA7396A68D541C85D26508E83_573045177 = null; //Variable for return #1
+        Typeface varB4EAC82CA7396A68D541C85D26508E83_573045177 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_573045177 = mTypeface;
-        varB4EAC82CA7396A68D541C85D26508E83_573045177.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_573045177.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_573045177;
-        // ---------- Original Method ----------
-        //return mTypeface;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.830 -0400", hash_original_method = "73CCDBF9DAC8A72983E784437C89D8D5", hash_generated_method = "FCEE465273C729B597DBE22B77996361")
     public Typeface setTypeface(Typeface typeface) {
-        Typeface varB4EAC82CA7396A68D541C85D26508E83_1137101629 = null; //Variable for return #1
+        Typeface varB4EAC82CA7396A68D541C85D26508E83_1137101629 = null; 
         int typefaceNative = 0;
         {
             typefaceNative = typeface.native_instance;
-        } //End block
+        } 
         native_setTypeface(mNativePaint, typefaceNative);
         mTypeface = typeface;
         varB4EAC82CA7396A68D541C85D26508E83_1137101629 = typeface;
-        varB4EAC82CA7396A68D541C85D26508E83_1137101629.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1137101629.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1137101629;
-        // ---------- Original Method ----------
-        //int typefaceNative = 0;
-        //if (typeface != null) {
-            //typefaceNative = typeface.native_instance;
-        //}
-        //native_setTypeface(mNativePaint, typefaceNative);
-        //mTypeface = typeface;
-        //return typeface;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.831 -0400", hash_original_method = "7F563E2B82AAC612FD94925F2ADE0503", hash_generated_method = "911733565776EFD5C9F507A86C6FFCA9")
     public Rasterizer getRasterizer() {
-        Rasterizer varB4EAC82CA7396A68D541C85D26508E83_1524735502 = null; //Variable for return #1
+        Rasterizer varB4EAC82CA7396A68D541C85D26508E83_1524735502 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1524735502 = mRasterizer;
-        varB4EAC82CA7396A68D541C85D26508E83_1524735502.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1524735502.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1524735502;
-        // ---------- Original Method ----------
-        //return mRasterizer;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.833 -0400", hash_original_method = "C8A0400F51437E6D358556D513DD7EE5", hash_generated_method = "226ACD8A0A32AEC09EE611C8C4EFAD13")
     public Rasterizer setRasterizer(Rasterizer rasterizer) {
-        Rasterizer varB4EAC82CA7396A68D541C85D26508E83_1153008331 = null; //Variable for return #1
+        Rasterizer varB4EAC82CA7396A68D541C85D26508E83_1153008331 = null; 
         int rasterizerNative = 0;
         {
             rasterizerNative = rasterizer.native_instance;
-        } //End block
+        } 
         native_setRasterizer(mNativePaint, rasterizerNative);
         mRasterizer = rasterizer;
         varB4EAC82CA7396A68D541C85D26508E83_1153008331 = rasterizer;
-        varB4EAC82CA7396A68D541C85D26508E83_1153008331.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1153008331.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1153008331;
-        // ---------- Original Method ----------
-        //int rasterizerNative = 0;
-        //if (rasterizer != null) {
-            //rasterizerNative = rasterizer.native_instance;
-        //}
-        //native_setRasterizer(mNativePaint, rasterizerNative);
-        //mRasterizer = rasterizer;
-        //return rasterizer;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.834 -0400", hash_original_method = "30B7CF0D1828E00D1755D0EC1ABBE2FD", hash_generated_method = "890115DE943F753280243985FB0CA4B9")
     public void setShadowLayer(float radius, float dx, float dy, int color) {
         hasShadow = radius > 0.0f;
@@ -725,13 +744,13 @@ public class Paint {
         shadowDy = dy;
         shadowColor = color;
         nSetShadowLayer(radius, dx, dy, color);
-        // ---------- Original Method ----------
-        //hasShadow = radius > 0.0f;
-        //shadowRadius = radius;
-        //shadowDx = dx;
-        //shadowDy = dy;
-        //shadowColor = color;
-        //nSetShadowLayer(radius, dx, dy, color);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -740,33 +759,36 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.836 -0400", hash_original_method = "DB007ED9A7C8404ED556121239348407", hash_generated_method = "69C41E78339835181B7060E466C37E39")
     public void clearShadowLayer() {
         hasShadow = false;
         nSetShadowLayer(0, 0, 0, 0);
-        // ---------- Original Method ----------
-        //hasShadow = false;
-        //nSetShadowLayer(0, 0, 0, 0);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.837 -0400", hash_original_method = "5BB4256D6E91E955B4D3F4F49AADCB0E", hash_generated_method = "ADC99F4CCD17C17D7FA819837A7EAE92")
     public Align getTextAlign() {
-        Align varB4EAC82CA7396A68D541C85D26508E83_642962003 = null; //Variable for return #1
+        Align varB4EAC82CA7396A68D541C85D26508E83_642962003 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_642962003 = sAlignArray[native_getTextAlign(mNativePaint)];
-        varB4EAC82CA7396A68D541C85D26508E83_642962003.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_642962003.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_642962003;
-        // ---------- Original Method ----------
-        //return sAlignArray[native_getTextAlign(mNativePaint)];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.837 -0400", hash_original_method = "9031C48C5C8C88E95D6A94DEBF9597C6", hash_generated_method = "EC12567627067EC06BB38C70707493C5")
     public void setTextAlign(Align align) {
         native_setTextAlign(mNativePaint, align.nativeInt);
         addTaint(align.getTaint());
-        // ---------- Original Method ----------
-        //native_setTextAlign(mNativePaint, align.nativeInt);
+        
+        
     }
 
     
@@ -827,18 +849,19 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.841 -0400", hash_original_method = "413DCA25916B10D66C5EBCBD1F3E5F3E", hash_generated_method = "AAC1A54B531BECE787B0DF4C88ACDF34")
     public FontMetrics getFontMetrics() {
-        FontMetrics varB4EAC82CA7396A68D541C85D26508E83_817468318 = null; //Variable for return #1
+        FontMetrics varB4EAC82CA7396A68D541C85D26508E83_817468318 = null; 
         FontMetrics fm = new FontMetrics();
         getFontMetrics(fm);
         varB4EAC82CA7396A68D541C85D26508E83_817468318 = fm;
-        varB4EAC82CA7396A68D541C85D26508E83_817468318.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_817468318.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_817468318;
-        // ---------- Original Method ----------
-        //FontMetrics fm = new FontMetrics();
-        //getFontMetrics(fm);
-        //return fm;
+        
+        
+        
+        
     }
 
     
@@ -849,42 +872,45 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.842 -0400", hash_original_method = "B88208EBDD064B8ABC7A4B1B4C890CB3", hash_generated_method = "D90CFD26A5599C80A14048DF5DEDAFC1")
     public FontMetricsInt getFontMetricsInt() {
-        FontMetricsInt varB4EAC82CA7396A68D541C85D26508E83_128815484 = null; //Variable for return #1
+        FontMetricsInt varB4EAC82CA7396A68D541C85D26508E83_128815484 = null; 
         FontMetricsInt fm = new FontMetricsInt();
         getFontMetricsInt(fm);
         varB4EAC82CA7396A68D541C85D26508E83_128815484 = fm;
-        varB4EAC82CA7396A68D541C85D26508E83_128815484.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_128815484.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_128815484;
-        // ---------- Original Method ----------
-        //FontMetricsInt fm = new FontMetricsInt();
-        //getFontMetricsInt(fm);
-        //return fm;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.843 -0400", hash_original_method = "EF0ED40E419F51E9B426A955B42CA854", hash_generated_method = "5958EA9D007CB83D5ADAE42CB6B546D3")
     public float getFontSpacing() {
         float varE2260D5039D2A3988D3A0EAEA55ED628_1170448318 = (getFontMetrics(null));
         float var546ADE640B6EDFBC8A086EF31347E768_375033005 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_375033005;
-        // ---------- Original Method ----------
-        //return getFontMetrics(null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.844 -0400", hash_original_method = "4B30EE6B8828803214F6472A454BF7F0", hash_generated_method = "71F05DF76ECE0EF09060C9941D9A6855")
     public float measureText(char[] text, int index, int count) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text cannot be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-        } //End block
+        } 
         {
             float var204A124D7256F67576DEC177530E8CA9_815426820 = (native_measureText(text, index, count));
-        } //End block
+        } 
         final float oldSize = getTextSize();
         setTextSize(oldSize*mCompatScaling);
         float w = native_measureText(text, index, count);
@@ -894,24 +920,24 @@ public class Paint {
         addTaint(count);
         float var546ADE640B6EDFBC8A086EF31347E768_790969339 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_790969339;
-        // ---------- Original Method ----------
-        //if (text == null) {
-            //throw new IllegalArgumentException("text cannot be null");
-        //}
-        //if ((index | count) < 0 || index + count > text.length) {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
-        //if (text.length == 0 || count == 0) {
-            //return 0f;
-        //}
-        //if (!mHasCompatScaling) {
-            //return native_measureText(text, index, count);
-        //}
-        //final float oldSize = getTextSize();
-        //setTextSize(oldSize*mCompatScaling);
-        //float w = native_measureText(text, index, count);
-        //setTextSize(oldSize);
-        //return w*mInvCompatScaling;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -922,23 +948,24 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.846 -0400", hash_original_method = "A455FCC07C61C67A7FE9747C69B01A43", hash_generated_method = "8CE7769A6D346120850227E54D4E5774")
     public float measureText(String text, int start, int end) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text cannot be null");
-        } //End block
+        } 
         {
             boolean var9527A5CDD965760192A60A252272F336_2027628100 = ((start | end | (end - start) | (text.length() - end)) < 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varCB847AF29AA4DC1416413087DD4BD672_837862474 = (text.length() == 0 || start == end);
-        } //End collapsed parenthetic
+        } 
         {
             float var6C5BF54DC4892C8073B52E95C3AE2BA1_562075646 = (native_measureText(text, start, end));
-        } //End block
+        } 
         final float oldSize = getTextSize();
         setTextSize(oldSize*mCompatScaling);
         float w = native_measureText(text, start, end);
@@ -948,24 +975,24 @@ public class Paint {
         addTaint(end);
         float var546ADE640B6EDFBC8A086EF31347E768_855176073 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_855176073;
-        // ---------- Original Method ----------
-        //if (text == null) {
-            //throw new IllegalArgumentException("text cannot be null");
-        //}
-        //if ((start | end | (end - start) | (text.length() - end)) < 0) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (text.length() == 0 || start == end) {
-            //return 0f;
-        //}
-        //if (!mHasCompatScaling) {
-            //return native_measureText(text, start, end);
-        //}
-        //final float oldSize = getTextSize();
-        //setTextSize(oldSize*mCompatScaling);
-        //float w = native_measureText(text, start, end);
-        //setTextSize(oldSize);
-        //return w*mInvCompatScaling;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -976,14 +1003,15 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.847 -0400", hash_original_method = "C4C224EF0059A9B14092F4800A14BAD4", hash_generated_method = "3D131FECDEDF0513364A90A81DC0CB94")
     public float measureText(String text) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text cannot be null");
-        } //End block
+        } 
         {
             boolean var2E3F580615CDCAA5961A2E6CF25EC4EB_323722176 = (text.length() == 0);
-        } //End collapsed parenthetic
+        } 
         float varDE0E49D527135C371027DDD371BB7F5C_397943943 = (native_measureText(text));
         final float oldSize = getTextSize();
         setTextSize(oldSize*mCompatScaling);
@@ -992,19 +1020,19 @@ public class Paint {
         addTaint(text.getTaint());
         float var546ADE640B6EDFBC8A086EF31347E768_1182777098 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1182777098;
-        // ---------- Original Method ----------
-        //if (text == null) {
-            //throw new IllegalArgumentException("text cannot be null");
-        //}
-        //if (text.length() == 0) {
-            //return 0f;
-        //}
-        //if (!mHasCompatScaling) return native_measureText(text);
-        //final float oldSize = getTextSize();
-        //setTextSize(oldSize*mCompatScaling);
-        //float w = native_measureText(text);
-        //setTextSize(oldSize);
-        //return w*mInvCompatScaling;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1015,29 +1043,30 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.848 -0400", hash_original_method = "6EB2D4EE24026300FF5D315D09C81847", hash_generated_method = "1FF4E7F60C3F6484497083AFCB639316")
     public float measureText(CharSequence text, int start, int end) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text cannot be null");
-        } //End block
+        } 
         {
             boolean var9527A5CDD965760192A60A252272F336_1014349043 = ((start | end | (end - start) | (text.length() - end)) < 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varCB847AF29AA4DC1416413087DD4BD672_1105577428 = (text.length() == 0 || start == end);
-        } //End collapsed parenthetic
+        } 
         {
             float var6236CF621C1135D29EAF7BA8ECD372DF_1035607867 = (measureText((String)text, start, end));
-        } //End block
+        } 
         {
             float var315F7BA142189E74DF7F2C7E5074479F_1285686135 = (measureText(text.toString(), start, end));
-        } //End block
+        } 
         {
             float varC657CDB825AED28F6EC29BE81E302484_935354977 = (((GraphicsOperations)text).measureText(start, end, this));
-        } //End block
+        } 
         char[] buf = TemporaryBuffer.obtain(end - start);
         TextUtils.getChars(text, start, end, buf, 0);
         float result = measureText(buf, 0, end - start);
@@ -1047,26 +1076,27 @@ public class Paint {
         addTaint(end);
         float var546ADE640B6EDFBC8A086EF31347E768_315939821 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_315939821;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.848 -0400", hash_original_method = "D72C3AADC526484DACB4DD861B9B7C6F", hash_generated_method = "76FA064751418E1D835C2FE287EDC0EE")
     public int breakText(char[] text, int index, int count,
                                 float maxWidth, float[] measuredWidth) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text cannot be null");
-        } //End block
+        } 
         {
             boolean var0D5AAC51BA58AAF43D4E2413FC1B1BFC_1275084890 = (index < 0 || text.length - index < Math.abs(count));
             {
                 if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int var588A3E34EF8CC7F08FC2E9135A7530BE_1290550776 = (native_breakText(text, index, count, maxWidth, measuredWidth));
-        } //End block
+        } 
         final float oldSize = getTextSize();
         setTextSize(oldSize*mCompatScaling);
         int res = native_breakText(text, index, count, maxWidth*mCompatScaling,
@@ -1080,26 +1110,26 @@ public class Paint {
         addTaint(measuredWidth[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1445666902 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1445666902;
-        // ---------- Original Method ----------
-        //if (text == null) {
-            //throw new IllegalArgumentException("text cannot be null");
-        //}
-        //if (index < 0 || text.length - index < Math.abs(count)) {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
-        //if (text.length == 0 || count == 0) {
-            //return 0;
-        //}
-        //if (!mHasCompatScaling) {
-            //return native_breakText(text, index, count, maxWidth, measuredWidth);
-        //}
-        //final float oldSize = getTextSize();
-        //setTextSize(oldSize*mCompatScaling);
-        //int res = native_breakText(text, index, count, maxWidth*mCompatScaling,
-                //measuredWidth);
-        //setTextSize(oldSize);
-        //if (measuredWidth != null) measuredWidth[0] *= mInvCompatScaling;
-        //return res;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+                
+        
+        
+        
     }
 
     
@@ -1111,38 +1141,39 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.850 -0400", hash_original_method = "35BD856EF91F37D3D6F6474A08F13759", hash_generated_method = "33520D38FA19C20AAE49752743CA0B29")
     public int breakText(CharSequence text, int start, int end,
                          boolean measureForwards,
                          float maxWidth, float[] measuredWidth) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text cannot be null");
-        } //End block
+        } 
         {
             boolean var9527A5CDD965760192A60A252272F336_610641596 = ((start | end | (end - start) | (text.length() - end)) < 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varCB847AF29AA4DC1416413087DD4BD672_1876111536 = (text.length() == 0 || start == end);
-        } //End collapsed parenthetic
+        } 
         {
             boolean varB0BEAB0ED949D4AEA45AA76B829F1BBC_1693744627 = (start == 0 && text instanceof String && end == text.length());
             {
                 int varE185824846EF4861F502E218B9EC6147_1955142068 = (breakText((String) text, measureForwards, maxWidth,
                              measuredWidth));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         char[] buf = TemporaryBuffer.obtain(end - start);
         int result;
         TextUtils.getChars(text, start, end, buf, 0);
         {
             result = breakText(buf, 0, end - start, maxWidth, measuredWidth);
-        } //End block
+        } 
         {
             result = breakText(buf, 0, -(end - start), maxWidth, measuredWidth);
-        } //End block
+        } 
         TemporaryBuffer.recycle(buf);
         addTaint(text.getTaint());
         addTaint(start);
@@ -1152,23 +1183,24 @@ public class Paint {
         addTaint(measuredWidth[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_755283124 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_755283124;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.850 -0400", hash_original_method = "C05DD240630B83BC61ED5B6F9EF8E181", hash_generated_method = "5B36962612C8C24CD180C4D126AF6ED6")
     public int breakText(String text, boolean measureForwards,
                                 float maxWidth, float[] measuredWidth) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text cannot be null");
-        } //End block
+        } 
         {
             boolean var2E3F580615CDCAA5961A2E6CF25EC4EB_795913386 = (text.length() == 0);
-        } //End collapsed parenthetic
+        } 
         {
             int var69E64876CE9B422F0E0C81D70A86C49D_2049846846 = (native_breakText(text, measureForwards, maxWidth, measuredWidth));
-        } //End block
+        } 
         final float oldSize = getTextSize();
         setTextSize(oldSize*mCompatScaling);
         int res = native_breakText(text, measureForwards, maxWidth*mCompatScaling,
@@ -1181,23 +1213,23 @@ public class Paint {
         addTaint(measuredWidth[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1775857440 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1775857440;
-        // ---------- Original Method ----------
-        //if (text == null) {
-            //throw new IllegalArgumentException("text cannot be null");
-        //}
-        //if (text.length() == 0) {
-            //return 0;
-        //}
-        //if (!mHasCompatScaling) {
-            //return native_breakText(text, measureForwards, maxWidth, measuredWidth);
-        //}
-        //final float oldSize = getTextSize();
-        //setTextSize(oldSize*mCompatScaling);
-        //int res = native_breakText(text, measureForwards, maxWidth*mCompatScaling,
-                //measuredWidth);
-        //setTextSize(oldSize);
-        //if (measuredWidth != null) measuredWidth[0] *= mInvCompatScaling;
-        //return res;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+                
+        
+        
+        
     }
 
     
@@ -1209,18 +1241,19 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.851 -0400", hash_original_method = "83C574DC73479463FE44C1F2988A5F29", hash_generated_method = "A3F9F6FD9D56273DB05447C622AC9473")
     public int getTextWidths(char[] text, int index, int count,
                              float[] widths) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text cannot be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-        } //End block
+        } 
         {
             int var0DDD48BB4F1D26244DA9DA23FABF3401_417497531 = (native_getTextWidths(mNativePaint, text, index, count, widths));
-        } //End block
+        } 
         final float oldSize = getTextSize();
         setTextSize(oldSize*mCompatScaling);
         int res = native_getTextWidths(mNativePaint, text, index, count, widths);
@@ -1229,67 +1262,68 @@ public class Paint {
             int i = 0;
             {
                 widths[i] *= mInvCompatScaling;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(text[0]);
         addTaint(index);
         addTaint(count);
         addTaint(widths[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1002849286 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1002849286;
-        // ---------- Original Method ----------
-        //if (text == null) {
-            //throw new IllegalArgumentException("text cannot be null");
-        //}
-        //if ((index | count) < 0 || index + count > text.length
-                //|| count > widths.length) {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
-        //if (text.length == 0 || count == 0) {
-            //return 0;
-        //}
-        //if (!mHasCompatScaling) {
-            //return native_getTextWidths(mNativePaint, text, index, count, widths);
-        //}
-        //final float oldSize = getTextSize();
-        //setTextSize(oldSize*mCompatScaling);
-        //int res = native_getTextWidths(mNativePaint, text, index, count, widths);
-        //setTextSize(oldSize);
-        //for (int i=0; i<res; i++) {
-            //widths[i] *= mInvCompatScaling;
-        //}
-        //return res;
+        
+        
+            
+        
+        
+                
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.852 -0400", hash_original_method = "F14F0812F33DADA5D35A1216285E517E", hash_generated_method = "493995913B048AEADCD3D1FE71E7871C")
     public int getTextWidths(CharSequence text, int start, int end,
                              float[] widths) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text cannot be null");
-        } //End block
+        } 
         {
             boolean var9527A5CDD965760192A60A252272F336_389002083 = ((start | end | (end - start) | (text.length() - end)) < 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-        } //End block
+        } 
         {
             boolean varCB847AF29AA4DC1416413087DD4BD672_1451539565 = (text.length() == 0 || start == end);
-        } //End collapsed parenthetic
+        } 
         {
             int var5D20898AFE082D7DD346F7FD8F9F995D_601988712 = (getTextWidths((String) text, start, end, widths));
-        } //End block
+        } 
         {
             int var75159B67CD95E075E263ED8014FEA7F7_1259633270 = (getTextWidths(text.toString(), start, end, widths));
-        } //End block
+        } 
         {
             int var3A56B5BB09115C0B32F02D407185C205_2143984099 = (((GraphicsOperations) text).getTextWidths(start, end,
                                                                  widths, this));
-        } //End block
+        } 
         char[] buf = TemporaryBuffer.obtain(end - start);
         TextUtils.getChars(text, start, end, buf, 0);
         int result = getTextWidths(buf, 0, end - start, widths);
@@ -1300,31 +1334,32 @@ public class Paint {
         addTaint(widths[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_678131368 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_678131368;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.853 -0400", hash_original_method = "FC7E920984BEE100F69A523319264731", hash_generated_method = "7F225ACC3347A565B65425F2F03B30A8")
     public int getTextWidths(String text, int start, int end, float[] widths) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text cannot be null");
-        } //End block
+        } 
         {
             boolean var9527A5CDD965760192A60A252272F336_1819363565 = ((start | end | (end - start) | (text.length() - end)) < 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-        } //End block
+        } 
         {
             boolean varCB847AF29AA4DC1416413087DD4BD672_477781088 = (text.length() == 0 || start == end);
-        } //End collapsed parenthetic
+        } 
         {
             int varBEC4070C2642CF1E33A5E49FB207AF35_1380121742 = (native_getTextWidths(mNativePaint, text, start, end, widths));
-        } //End block
+        } 
         final float oldSize = getTextSize();
         setTextSize(oldSize*mCompatScaling);
         int res = native_getTextWidths(mNativePaint, text, start, end, widths);
@@ -1333,19 +1368,20 @@ public class Paint {
             int i = 0;
             {
                 widths[i] *= mInvCompatScaling;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(text.getTaint());
         addTaint(start);
         addTaint(end);
         addTaint(widths[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_738727641 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_738727641;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.854 -0400", hash_original_method = "2A3DC3984F2D039C4252250086EEE48E", hash_generated_method = "ACC534E0FC1225B4CF3562914052D863")
     public int getTextWidths(String text, float[] widths) {
         int var69BF8B4981D05965CD3D190575A4DA2F_914713283 = (getTextWidths(text, 0, text.length(), widths));
@@ -1353,31 +1389,32 @@ public class Paint {
         addTaint(widths[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2049060650 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2049060650;
-        // ---------- Original Method ----------
-        //return getTextWidths(text, 0, text.length(), widths);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.855 -0400", hash_original_method = "FA2DB9E943D72A496CC6A996B7086F15", hash_generated_method = "EDD3127212A7E5D46FAEA8FC6754970A")
     public int getTextGlyphs(String text, int start, int end, int contextStart, int contextEnd,
             int flags, char[] glyphs) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text cannot be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("unknown flags value: " + flags);
-        } //End block
+        } 
         {
             boolean var48E9A0E727B5C13031610714A0F3121E_2023207282 = ((start | end | contextStart | contextEnd | (end - start)
                 | (start - contextStart) | (contextEnd - end) | (text.length() - end)
                 | (text.length() - contextEnd)) < 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-        } //End block
+        } 
         int var5604385AD0B712150B1A0044CF957B36_1544405849 = (native_getTextGlyphs(mNativePaint, text, start, end, contextStart, contextEnd,
                 flags, glyphs));
         addTaint(text.getTaint());
@@ -1389,26 +1426,27 @@ public class Paint {
         addTaint(glyphs[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_379680055 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_379680055;
-        // ---------- Original Method ----------
-        //if (text == null) {
-            //throw new IllegalArgumentException("text cannot be null");
-        //}
-        //if (flags != DIRECTION_LTR && flags != DIRECTION_RTL) {
-            //throw new IllegalArgumentException("unknown flags value: " + flags);
-        //}
-        //if ((start | end | contextStart | contextEnd | (end - start)
-                //| (start - contextStart) | (contextEnd - end) | (text.length() - end)
-                //| (text.length() - contextEnd)) < 0) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (end - start > glyphs.length) {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
-        //return native_getTextGlyphs(mNativePaint, text, start, end, contextStart, contextEnd,
-                //flags, glyphs);
+        
+        
+            
+        
+        
+            
+        
+        
+                
+                
+            
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.856 -0400", hash_original_method = "CEF06EAF1F3995907C189C9C72603DEF", hash_generated_method = "01ACC266959A5D893CC3859F0346E6F4")
     public float getTextRunAdvances(char[] chars, int index, int count,
             int contextIndex, int contextCount, int flags, float[] advances,
@@ -1425,29 +1463,30 @@ public class Paint {
         addTaint(advancesIndex);
         float var546ADE640B6EDFBC8A086EF31347E768_287963269 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_287963269;
-        // ---------- Original Method ----------
-        //return getTextRunAdvances(chars, index, count, contextIndex, contextCount, flags,
-                //advances, advancesIndex, 0 );
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.857 -0400", hash_original_method = "5F3C708402843653E3430F9E58C46380", hash_generated_method = "8E524A0D23E07747C85940D65AD248C7")
     public float getTextRunAdvances(char[] chars, int index, int count,
             int contextIndex, int contextCount, int flags, float[] advances,
             int advancesIndex, int reserved) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text cannot be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("unknown flags value: " + flags);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         {
             float var9858EF271DB73A9C5CCA76565BD23E23_1439818930 = (native_getTextRunAdvances(mNativePaint, chars, index, count,
                     contextIndex, contextCount, flags, advances, advancesIndex, reserved));
-        } //End block
+        } 
         final float oldSize = getTextSize();
         setTextSize(oldSize * mCompatScaling);
         float res = native_getTextRunAdvances(mNativePaint, chars, index, count,
@@ -1459,9 +1498,9 @@ public class Paint {
                 int e = i + count;
                 {
                     advances[i] *= mInvCompatScaling;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(chars[0]);
         addTaint(index);
         addTaint(count);
@@ -1473,11 +1512,12 @@ public class Paint {
         addTaint(reserved);
         float var546ADE640B6EDFBC8A086EF31347E768_1308475819 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1308475819;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.857 -0400", hash_original_method = "2F009E21E693FAD74101A2B25EBDF10B", hash_generated_method = "BC31673C62EEBE4415C58A65DB2EFBC5")
     public float getTextRunAdvances(CharSequence text, int start, int end,
             int contextStart, int contextEnd, int flags, float[] advances,
@@ -1494,44 +1534,45 @@ public class Paint {
         addTaint(advancesIndex);
         float var546ADE640B6EDFBC8A086EF31347E768_1074603593 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1074603593;
-        // ---------- Original Method ----------
-        //return getTextRunAdvances(text, start, end, contextStart, contextEnd, flags,
-                //advances, advancesIndex, 0 );
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.858 -0400", hash_original_method = "4EFF4F6D396021295344678FBB8A998E", hash_generated_method = "6AFEE04DCFB6662AF35A2CB996B9FFF1")
     public float getTextRunAdvances(CharSequence text, int start, int end,
             int contextStart, int contextEnd, int flags, float[] advances,
             int advancesIndex, int reserved) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text cannot be null");
-        } //End block
+        } 
         {
             boolean varCD925A198552EF304E37BFC3C54909BB_942134736 = ((start | end | contextStart | contextEnd | advancesIndex | (end - start)
                 | (start - contextStart) | (contextEnd - end)
                 | (text.length() - contextEnd)
                 | (advances == null ? 0 :
-                    (advances.length - advancesIndex - (end - start)))) < 0); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                    (advances.length - advancesIndex - (end - start)))) < 0); 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             float var53C63DC714A80E28C550C886BD1BF771_487513839 = (getTextRunAdvances((String) text, start, end,
                     contextStart, contextEnd, flags, advances, advancesIndex, reserved));
-        } //End block
+        } 
         {
             float var8A3BE239E9FF57407B2B40D6353ADC2C_237677323 = (getTextRunAdvances(text.toString(), start, end,
                     contextStart, contextEnd, flags, advances, advancesIndex, reserved));
-        } //End block
+        } 
         {
             float var5ED11FC83FC39AEF2A8CAFC241CA9694_467447802 = (((GraphicsOperations) text).getTextRunAdvances(start, end,
                     contextStart, contextEnd, flags, advances, advancesIndex, this));
-        } //End block
+        } 
         {
             boolean var8A801BB93DFE1C696CAF475D2408E876_221900899 = (text.length() == 0 || end == start);
-        } //End collapsed parenthetic
+        } 
         int contextLen = contextEnd - contextStart;
         int len = end - start;
         char[] buf = TemporaryBuffer.obtain(contextLen);
@@ -1550,11 +1591,12 @@ public class Paint {
         addTaint(reserved);
         float var546ADE640B6EDFBC8A086EF31347E768_1154534779 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1154534779;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.859 -0400", hash_original_method = "1581EA555CC5336BCB2DDF38747B9672", hash_generated_method = "9EF7274C3023B48019AD9F07BCA1D1ED")
     public float getTextRunAdvances(String text, int start, int end, int contextStart,
             int contextEnd, int flags, float[] advances, int advancesIndex) {
@@ -1570,38 +1612,39 @@ public class Paint {
         addTaint(advancesIndex);
         float var546ADE640B6EDFBC8A086EF31347E768_172054511 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_172054511;
-        // ---------- Original Method ----------
-        //return getTextRunAdvances(text, start, end, contextStart, contextEnd, flags,
-                //advances, advancesIndex, 0 );
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.859 -0400", hash_original_method = "1C46AF2D403F5DA84F25080DCEA69AA0", hash_generated_method = "74F67C767DBB64AC4A6C543CC13D2EB9")
     public float getTextRunAdvances(String text, int start, int end, int contextStart,
             int contextEnd, int flags, float[] advances, int advancesIndex, int reserved) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text cannot be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("unknown flags value: " + flags);
-        } //End block
+        } 
         {
             boolean varCD925A198552EF304E37BFC3C54909BB_349367760 = ((start | end | contextStart | contextEnd | advancesIndex | (end - start)
                 | (start - contextStart) | (contextEnd - end)
                 | (text.length() - contextEnd)
                 | (advances == null ? 0 :
-                    (advances.length - advancesIndex - (end - start)))) < 0); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                    (advances.length - advancesIndex - (end - start)))) < 0); 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varCB847AF29AA4DC1416413087DD4BD672_1640764335 = (text.length() == 0 || start == end);
-        } //End collapsed parenthetic
+        } 
         {
             float varA17437B07A992747272D690A911F4BE8_855491774 = (native_getTextRunAdvances(mNativePaint, text, start, end,
                     contextStart, contextEnd, flags, advances, advancesIndex, reserved));
-        } //End block
+        } 
         final float oldSize = getTextSize();
         setTextSize(oldSize * mCompatScaling);
         float totalAdvance = native_getTextRunAdvances(mNativePaint, text, start, end,
@@ -1613,9 +1656,9 @@ public class Paint {
                 int e = i + (end - start);
                 {
                     advances[i] *= mInvCompatScaling;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(text.getTaint());
         addTaint(start);
         addTaint(end);
@@ -1627,18 +1670,19 @@ public class Paint {
         addTaint(reserved);
         float var546ADE640B6EDFBC8A086EF31347E768_675666513 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_675666513;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.860 -0400", hash_original_method = "EB6D9B15E4067DFED9B2A74E5C744A1F", hash_generated_method = "891F01FF33E97501CAB7B368D08608C8")
     public int getTextRunCursor(char[] text, int contextStart, int contextLength,
             int flags, int offset, int cursorOpt) {
         int contextEnd = contextStart + contextLength;
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         int varE8EBF73E11AF76C72E64792B60A20D56_69722984 = (native_getTextRunCursor(mNativePaint, text,
                 contextStart, contextLength, flags, offset, cursorOpt));
         addTaint(text[0]);
@@ -1649,30 +1693,31 @@ public class Paint {
         addTaint(cursorOpt);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2058634944 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2058634944;
-        // ---------- Original Method ----------
-        //int contextEnd = contextStart + contextLength;
-        //if (((contextStart | contextEnd | offset | (contextEnd - contextStart)
-                //| (offset - contextStart) | (contextEnd - offset)
-                //| (text.length - contextEnd) | cursorOpt) < 0)
-                //|| cursorOpt > CURSOR_OPT_MAX_VALUE) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //return native_getTextRunCursor(mNativePaint, text,
-                //contextStart, contextLength, flags, offset, cursorOpt);
+        
+        
+        
+                
+                
+                
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.861 -0400", hash_original_method = "34AAA4A164F43F1E201745A1F65B4411", hash_generated_method = "BA4BDC992B74F6BE0B4D5A6D5F1C0F28")
     public int getTextRunCursor(CharSequence text, int contextStart,
            int contextEnd, int flags, int offset, int cursorOpt) {
         {
             int var619EE7AC5F2B236B269D3FB8DEBD1DE5_1472287370 = (getTextRunCursor(text.toString(), contextStart, contextEnd,
                     flags, offset, cursorOpt));
-        } //End block
+        } 
         {
             int var5359D01CAC7EB633AB92A9435A4EFA33_417125122 = (((GraphicsOperations) text).getTextRunCursor(
                     contextStart, contextEnd, flags, offset, cursorOpt, this));
-        } //End block
+        } 
         int contextLen = contextEnd - contextStart;
         char[] buf = TemporaryBuffer.obtain(contextLen);
         TextUtils.getChars(text, contextStart, contextEnd, buf, 0);
@@ -1686,25 +1731,26 @@ public class Paint {
         addTaint(cursorOpt);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144435237 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144435237;
-        // ---------- Original Method ----------
-        //if (text instanceof String || text instanceof SpannedString ||
-                //text instanceof SpannableString) {
-            //return getTextRunCursor(text.toString(), contextStart, contextEnd,
-                    //flags, offset, cursorOpt);
-        //}
-        //if (text instanceof GraphicsOperations) {
-            //return ((GraphicsOperations) text).getTextRunCursor(
-                    //contextStart, contextEnd, flags, offset, cursorOpt, this);
-        //}
-        //int contextLen = contextEnd - contextStart;
-        //char[] buf = TemporaryBuffer.obtain(contextLen);
-        //TextUtils.getChars(text, contextStart, contextEnd, buf, 0);
-        //int result = getTextRunCursor(buf, 0, contextLen, flags, offset - contextStart, cursorOpt);
-        //TemporaryBuffer.recycle(buf);
-        //return result;
+        
+        
+                
+            
+                    
+        
+        
+            
+                    
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.861 -0400", hash_original_method = "D546CDC2181E95744AE417A48EFCB65E", hash_generated_method = "E80EEBD7FF7D22A475E08A1A9BCB673F")
     public int getTextRunCursor(String text, int contextStart, int contextEnd,
             int flags, int offset, int cursorOpt) {
@@ -1715,8 +1761,8 @@ public class Paint {
                 || cursorOpt > CURSOR_OPT_MAX_VALUE);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int var5B91A9628724F23D69FCD31F54247A76_1844700343 = (native_getTextRunCursor(mNativePaint, text,
                 contextStart, contextEnd, flags, offset, cursorOpt));
         addTaint(text.getTaint());
@@ -1727,24 +1773,25 @@ public class Paint {
         addTaint(cursorOpt);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1669437012 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1669437012;
-        // ---------- Original Method ----------
-        //if (((contextStart | contextEnd | offset | (contextEnd - contextStart)
-                //| (offset - contextStart) | (contextEnd - offset)
-                //| (text.length() - contextEnd) | cursorOpt) < 0)
-                //|| cursorOpt > CURSOR_OPT_MAX_VALUE) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //return native_getTextRunCursor(mNativePaint, text,
-                //contextStart, contextEnd, flags, offset, cursorOpt);
+        
+        
+                
+                
+                
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.862 -0400", hash_original_method = "0E7040D8937128B20B9E7E7425C5D78D", hash_generated_method = "905D9E78817AB9F6F7234344D8AE96A5")
     public void getTextPath(char[] text, int index, int count,
                             float x, float y, Path path) {
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-        } //End block
+        } 
         native_getTextPath(mNativePaint, mBidiFlags, text, index, count, x, y, 
                 path.ni());
         addTaint(text[0]);
@@ -1753,15 +1800,16 @@ public class Paint {
         addTaint(x);
         addTaint(y);
         addTaint(path.getTaint());
-        // ---------- Original Method ----------
-        //if ((index | count) < 0 || index + count > text.length) {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
-        //native_getTextPath(mNativePaint, mBidiFlags, text, index, count, x, y, 
-                //path.ni());
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.862 -0400", hash_original_method = "F99FE41661C2E1CF4ABA5DAE3EEF7955", hash_generated_method = "026D72EA787FD046EB852AC7187ABDB8")
     public void getTextPath(String text, int start, int end,
                             float x, float y, Path path) {
@@ -1769,8 +1817,8 @@ public class Paint {
             boolean var9527A5CDD965760192A60A252272F336_1277894674 = ((start | end | (end - start) | (text.length() - end)) < 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         native_getTextPath(mNativePaint, mBidiFlags, text, start, end, x, y, 
                 path.ni());
         addTaint(text.getTaint());
@@ -1779,83 +1827,86 @@ public class Paint {
         addTaint(x);
         addTaint(y);
         addTaint(path.getTaint());
-        // ---------- Original Method ----------
-        //if ((start | end | (end - start) | (text.length() - end)) < 0) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //native_getTextPath(mNativePaint, mBidiFlags, text, start, end, x, y, 
-                //path.ni());
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.863 -0400", hash_original_method = "FD83EA4D46005AE0FEF3AC534F19299F", hash_generated_method = "1656585E6967C045738F0077BD86D9A5")
     public void getTextBounds(String text, int start, int end, Rect bounds) {
         {
             boolean var9527A5CDD965760192A60A252272F336_195662685 = ((start | end | (end - start) | (text.length() - end)) < 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("need bounds Rect");
-        } //End block
+        } 
         nativeGetStringBounds(mNativePaint, text, start, end, bounds);
         addTaint(text.getTaint());
         addTaint(start);
         addTaint(end);
         addTaint(bounds.getTaint());
-        // ---------- Original Method ----------
-        //if ((start | end | (end - start) | (text.length() - end)) < 0) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (bounds == null) {
-            //throw new NullPointerException("need bounds Rect");
-        //}
-        //nativeGetStringBounds(mNativePaint, text, start, end, bounds);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.864 -0400", hash_original_method = "989A6FF8CB429D5D016E1FAEDFB33A1F", hash_generated_method = "9008BD67264402A03E682EB91A92F9A9")
     public void getTextBounds(char[] text, int index, int count, Rect bounds) {
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("need bounds Rect");
-        } //End block
+        } 
         nativeGetCharArrayBounds(mNativePaint, text, index, count, bounds);
         addTaint(text[0]);
         addTaint(index);
         addTaint(count);
         addTaint(bounds.getTaint());
-        // ---------- Original Method ----------
-        //if ((index | count) < 0 || index + count > text.length) {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
-        //if (bounds == null) {
-            //throw new NullPointerException("need bounds Rect");
-        //}
-        //nativeGetCharArrayBounds(mNativePaint, text, index, count, bounds);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.865 -0400", hash_original_method = "925DF10B1DD177E135B07F96DE8E7F32", hash_generated_method = "DF419449CAA1B777D791C6F5EE64D2ED")
     @Override
     protected void finalize() throws Throwable {
         try 
         {
             finalizer(mNativePaint);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //finalizer(mNativePaint);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -2105,7 +2156,7 @@ public class Paint {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.872 -0400", hash_original_method = "9D0F6E676FD14A88D6B94EA1234A3DC2", hash_generated_method = "9D0F6E676FD14A88D6B94EA1234A3DC2")
         public FontMetrics ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2133,23 +2184,23 @@ public class Paint {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.873 -0400", hash_original_method = "8179D96EF0A0532FF84A77E27487BF14", hash_generated_method = "8179D96EF0A0532FF84A77E27487BF14")
         public FontMetricsInt ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.875 -0400", hash_original_method = "97A4B08E6C02C426AA89747CCB47B314", hash_generated_method = "C82B2751383C4D0359DE364C2AFBD28C")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_639039381 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_639039381 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_639039381 = "FontMetricsInt: top=" + top + " ascent=" + ascent +
                     " descent=" + descent + " bottom=" + bottom +
                     " leading=" + leading;
-            varB4EAC82CA7396A68D541C85D26508E83_639039381.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_639039381.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_639039381;
-            // ---------- Original Method ----------
-            //return "FontMetricsInt: top=" + top + " ascent=" + ascent +
-                    //" descent=" + descent + " bottom=" + bottom +
-                    //" leading=" + leading;
+            
+            
+                    
+                    
         }
 
         

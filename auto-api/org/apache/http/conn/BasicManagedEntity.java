@@ -1,11 +1,11 @@
 package org.apache.http.conn;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,12 +31,12 @@ public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionR
         this.managedConn = conn;
         this.attemptReuse = reuse;
         addTaint(entity.getTaint());
-        // ---------- Original Method ----------
-        //if (conn == null)
-            //throw new IllegalArgumentException
-                //("Connection may not be null.");
-        //this.managedConn = conn;
-        //this.attemptReuse = reuse;
+        
+        
+            
+                
+        
+        
     }
 
     
@@ -45,23 +45,25 @@ public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionR
     public boolean isRepeatable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_159910725 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_159910725;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.008 -0400", hash_original_method = "5A535D8BC3EB290E639D312782FBEB37", hash_generated_method = "1B74188ED2D141F52305466882CAAED5")
     @Override
     public InputStream getContent() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1189396849 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1189396849 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1189396849 = new EofSensorInputStream(wrappedEntity.getContent(), this);
-        varB4EAC82CA7396A68D541C85D26508E83_1189396849.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1189396849.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1189396849;
-        // ---------- Original Method ----------
-        //return new EofSensorInputStream(wrappedEntity.getContent(), this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.008 -0400", hash_original_method = "58D11A845FE872643BE2CB7CB3DAF1D5", hash_generated_method = "72E886F91EF026DA2DB45EF595418C21")
     @Override
     public void consumeContent() throws IOException {
@@ -70,23 +72,23 @@ public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionR
             {
                 wrappedEntity.consumeContent();
                 managedConn.markReusable();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             releaseManagedConnection();
-        } //End block
-        // ---------- Original Method ----------
-        //if (managedConn == null)
-            //return;
-        //try {
-            //if (attemptReuse) {
-                //wrappedEntity.consumeContent();
-                //managedConn.markReusable();
-            //}
-        //} finally {
-            //releaseManagedConnection();
-        //}
+        } 
+        
+        
+            
+        
+            
+                
+                
+            
+        
+            
+        
     }
 
     
@@ -96,43 +98,46 @@ public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionR
         super.writeTo(outstream);
         consumeContent();
         addTaint(outstream.getTaint());
-        // ---------- Original Method ----------
-        //super.writeTo(outstream);
-        //consumeContent();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.009 -0400", hash_original_method = "4116E5CDB1EF6E698D2E6ADBA9E28033", hash_generated_method = "CCEB45ABA7930FB8F4049A36679817EB")
     public void releaseConnection() throws IOException {
         this.consumeContent();
-        // ---------- Original Method ----------
-        //this.consumeContent();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.009 -0400", hash_original_method = "09E9D1BA9D6B3D57F6131522158659B5", hash_generated_method = "3DB924759B0262B66D83F05661836FE4")
     public void abortConnection() throws IOException {
         {
             try 
             {
                 managedConn.abortConnection();
-            } //End block
+            } 
             finally 
             {
                 managedConn = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (managedConn != null) {
-            //try {
-                //managedConn.abortConnection();
-            //} finally {
-                //managedConn = null;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.009 -0400", hash_original_method = "5A64D16D6F2B869D7FBA53B05FD87C82", hash_generated_method = "94DD930F0347EA847863F3E1BA21835D")
     public boolean eofDetected(InputStream wrapped) throws IOException {
         try 
@@ -140,28 +145,29 @@ public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionR
             {
                 wrapped.close();
                 managedConn.markReusable();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             releaseManagedConnection();
-        } //End block
+        } 
         addTaint(wrapped.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1353103426 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1353103426;
-        // ---------- Original Method ----------
-        //try {
-            //if (attemptReuse && (managedConn != null)) {
-                //wrapped.close();
-                //managedConn.markReusable();
-            //}
-        //} finally {
-            //releaseManagedConnection();
-        //}
-        //return false;
+        
+        
+            
+                
+                
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.010 -0400", hash_original_method = "317830EACA4241C6C1785BE58FAD1AFA", hash_generated_method = "0832D3231E70D1FA26A3E4BBC1EC7B89")
     public boolean streamClosed(InputStream wrapped) throws IOException {
         try 
@@ -169,64 +175,66 @@ public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionR
             {
                 wrapped.close();
                 managedConn.markReusable();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             releaseManagedConnection();
-        } //End block
+        } 
         addTaint(wrapped.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_602197366 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_602197366;
-        // ---------- Original Method ----------
-        //try {
-            //if (attemptReuse && (managedConn != null)) {
-                //wrapped.close();
-                //managedConn.markReusable();
-            //}
-        //} finally {
-            //releaseManagedConnection();
-        //}
-        //return false;
+        
+        
+            
+                
+                
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.010 -0400", hash_original_method = "BAB258C2D5F3651DF9A25667D27EF99D", hash_generated_method = "71B286E47EE3C94C7CFCF0405ACF60EE")
     public boolean streamAbort(InputStream wrapped) throws IOException {
         {
             managedConn.abortConnection();
-        } //End block
+        } 
         addTaint(wrapped.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1065484575 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1065484575;
-        // ---------- Original Method ----------
-        //if (managedConn != null) {
-            //managedConn.abortConnection();
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.010 -0400", hash_original_method = "713B19D560033B1B50E26BAD17DD5FF2", hash_generated_method = "AAC065C27304F895FEA48B70FB406405")
     protected void releaseManagedConnection() throws IOException {
         {
             try 
             {
                 managedConn.releaseConnection();
-            } //End block
+            } 
             finally 
             {
                 managedConn = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (managedConn != null) {
-            //try {
-                //managedConn.releaseConnection();
-            //} finally {
-                //managedConn = null;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     

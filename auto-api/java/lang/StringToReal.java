@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 final class StringToReal {
@@ -13,7 +13,7 @@ final class StringToReal {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.062 -0400", hash_original_method = "50763D5996F4E117B646112682AF8739", hash_generated_method = "50763D5996F4E117B646112682AF8739")
     public StringToReal ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -27,11 +27,13 @@ final class StringToReal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static NumberFormatException invalidReal(String s, boolean isDouble) {
         throw new NumberFormatException("Invalid " + (isDouble ? "double" : "float") + ": \"" + s + "\"");
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static StringExponentPair initialParse(String s, int length, boolean isDouble) {
         StringExponentPair result = new StringExponentPair();
         if (length == 0) {
@@ -141,6 +143,7 @@ final class StringToReal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static float parseName(String name, boolean isDouble) {
         boolean negative = false;
         int i = 0;
@@ -164,6 +167,7 @@ final class StringToReal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double parseDouble(String s) {
         s = s.trim();
         int length = s.length();
@@ -189,6 +193,7 @@ final class StringToReal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float parseFloat(String s) {
         s = s.trim();
         int length = s.length();
@@ -234,7 +239,7 @@ final class StringToReal {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.064 -0400", hash_original_method = "08340FE99073C3A1F05DC2CE36487C0E", hash_generated_method = "08340FE99073C3A1F05DC2CE36487C0E")
         public StringExponentPair ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -242,11 +247,11 @@ final class StringToReal {
         public float specialValue() {
             float var546ADE640B6EDFBC8A086EF31347E768_1876258657 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1876258657;
-            // ---------- Original Method ----------
-            //if (infinity) {
-                //return negative ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;
-            //}
-            //return negative ? -0.0f : 0.0f;
+            
+            
+                
+            
+            
         }
 
         

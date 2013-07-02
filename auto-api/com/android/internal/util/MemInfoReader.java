@@ -1,11 +1,11 @@
 package com.android.internal.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileInputStream;
 import android.os.StrictMode;
@@ -27,7 +27,7 @@ public class MemInfoReader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.739 -0400", hash_original_method = "0A3FF658B31652AA0351B8E33261A030", hash_generated_method = "0A3FF658B31652AA0351B8E33261A030")
     public MemInfoReader ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -39,25 +39,25 @@ public class MemInfoReader {
             {
                 {
                     boolean varD666446A75B53823900A4A6FFC983903_1545595629 = (buffer[index+i] != text.charAt(i));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(buffer[0]);
         addTaint(index);
         addTaint(text.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_915148583 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_915148583;
-        // ---------- Original Method ----------
-        //int N = text.length();
-        //if ((index+N) >= buffer.length) {
-            //return false;
-        //}
-        //for (int i=0; i<N; i++) {
-            //if (buffer[index+i] != text.charAt(i)) {
-                //return false;
-            //}
-        //}
-        //return true;
+        
+        
+        
+            
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -68,30 +68,31 @@ public class MemInfoReader {
                 int start = index;
                 String str = new String(buffer, 0, start, index-start);
                 long var387EC5FC2C0639E7F95A08F66A2DB6D9_696676079 = (((long)Integer.parseInt(str)) * 1024);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(buffer[0]);
         addTaint(index);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1796650885 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1796650885;
-        // ---------- Original Method ----------
-        //while (index < buffer.length && buffer[index] != '\n') {
-            //if (buffer[index] >= '0' && buffer[index] <= '9') {
-                //int start = index;
-                //index++;
-                //while (index < buffer.length && buffer[index] >= '0'
-                    //&& buffer[index] <= '9') {
-                    //index++;
-                //}
-                //String str = new String(buffer, 0, start, index-start);
-                //return ((long)Integer.parseInt(str)) * 1024;
-            //}
-            //index++;
-        //}
-        //return 0;
+        
+        
+            
+                
+                
+                
+                    
+                    
+                
+                
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.742 -0400", hash_original_method = "BB97E1D4EA3CA166050B741E23967BDC", hash_generated_method = "5A57F5D877729FEB145D55DBCE221436")
     public void readMemInfo() {
         StrictMode.ThreadPolicy savedPolicy = StrictMode.allowThreadDiskReads();
@@ -113,25 +114,25 @@ public class MemInfoReader {
                         {
                             i += 8;
                             mTotalSize = extractMemValue(mBuffer, i);
-                        } //End block
+                        } 
                         {
                             boolean var0B9C411E6930A2921E8F44E94088809B_1462947250 = (matchText(mBuffer, i, "MemFree"));
                             {
                                 i += 7;
                                 mFreeSize = extractMemValue(mBuffer, i);
-                            } //End block
+                            } 
                             {
                                 boolean var700D804177A2AFC923A91B385BA28E88_1553618433 = (matchText(mBuffer, i, "Cached"));
                                 {
                                     i += 6;
                                     mCachedSize = extractMemValue(mBuffer, i);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         catch (java.io.FileNotFoundException e)
         { }
         catch (java.io.IOException e)
@@ -139,9 +140,9 @@ public class MemInfoReader {
         finally 
         {
             StrictMode.setThreadPolicy(savedPolicy);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -149,8 +150,8 @@ public class MemInfoReader {
     public long getTotalSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1107853020 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1107853020;
-        // ---------- Original Method ----------
-        //return mTotalSize;
+        
+        
     }
 
     
@@ -158,8 +159,8 @@ public class MemInfoReader {
     public long getFreeSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1095878691 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1095878691;
-        // ---------- Original Method ----------
-        //return mFreeSize;
+        
+        
     }
 
     
@@ -167,8 +168,8 @@ public class MemInfoReader {
     public long getCachedSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_863836822 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_863836822;
-        // ---------- Original Method ----------
-        //return mCachedSize;
+        
+        
     }
 
     

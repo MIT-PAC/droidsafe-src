@@ -1,11 +1,11 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -24,7 +24,7 @@ public class BasicHttpEntityEnclosingRequest extends BasicHttpRequest implements
         super(method, uri);
         addTaint(method.getTaint());
         addTaint(uri.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -35,7 +35,7 @@ public class BasicHttpEntityEnclosingRequest extends BasicHttpRequest implements
         addTaint(method.getTaint());
         addTaint(uri.getTaint());
         addTaint(ver.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,38 +43,39 @@ public class BasicHttpEntityEnclosingRequest extends BasicHttpRequest implements
     public  BasicHttpEntityEnclosingRequest(final RequestLine requestline) {
         super(requestline);
         addTaint(requestline.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.058 -0400", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "FA67727F9BFEA8E078BA81F08B2A4E18")
     public HttpEntity getEntity() {
-        HttpEntity varB4EAC82CA7396A68D541C85D26508E83_1773928422 = null; //Variable for return #1
+        HttpEntity varB4EAC82CA7396A68D541C85D26508E83_1773928422 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1773928422 = this.entity;
-        varB4EAC82CA7396A68D541C85D26508E83_1773928422.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1773928422.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1773928422;
-        // ---------- Original Method ----------
-        //return this.entity;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.059 -0400", hash_original_method = "ACC3C31B4104E926438E24B159B6E3A2", hash_generated_method = "FB3E9570D6065D0B91C8CE936F48D4CA")
     public void setEntity(final HttpEntity entity) {
         this.entity = entity;
-        // ---------- Original Method ----------
-        //this.entity = entity;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.060 -0400", hash_original_method = "A0F17E45777A46D709253948E7008FD4", hash_generated_method = "6EBAF0B5222FE9BEFDE2E03B10C9D930")
     public boolean expectContinue() {
         Header expect = getFirstHeader(HTTP.EXPECT_DIRECTIVE);
         boolean var3EF098E96725F3E61B1788AFB48A2903_743138074 = (expect != null && HTTP.EXPECT_CONTINUE.equalsIgnoreCase(expect.getValue()));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1701558619 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1701558619;
-        // ---------- Original Method ----------
-        //Header expect = getFirstHeader(HTTP.EXPECT_DIRECTIVE);
-        //return expect != null && HTTP.EXPECT_CONTINUE.equalsIgnoreCase(expect.getValue());
+        
+        
+        
     }
 
     

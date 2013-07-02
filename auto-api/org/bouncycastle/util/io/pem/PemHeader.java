@@ -1,11 +1,11 @@
 package org.bouncycastle.util.io.pem;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class PemHeader {
@@ -20,31 +20,31 @@ public class PemHeader {
     public  PemHeader(String name, String value) {
         this.name = name;
         this.value = value;
-        // ---------- Original Method ----------
-        //this.name = name;
-        //this.value = value;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.355 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "F15F196DD9E2CCFF718B701C05053E2D")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_968662581 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_968662581 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_968662581 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_968662581.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_968662581.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_968662581;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:47.356 -0400", hash_original_method = "CFCF943D36987E569CAB72593E604904", hash_generated_method = "A8956300D9EC40D1827A4019C3197F8E")
     public String getValue() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2110070608 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2110070608 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2110070608 = value;
-        varB4EAC82CA7396A68D541C85D26508E83_2110070608.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2110070608.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2110070608;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
@@ -53,8 +53,8 @@ public class PemHeader {
         int varC70158E9C1B434721E06B7892EBB3099_665795492 = (getHashCode(this.name) + 31 * getHashCode(this.value));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1829537318 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1829537318;
-        // ---------- Original Method ----------
-        //return getHashCode(this.name) + 31 * getHashCode(this.value);
+        
+        
     }
 
     
@@ -65,13 +65,13 @@ public class PemHeader {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1554167467 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1554167467;
-        // ---------- Original Method ----------
-        //if (!(o instanceof PemHeader))
-        //{
-            //return false;
-        //}
-        //PemHeader other = (PemHeader)o;
-        //return other == this || (isEqual(this.name, other.name) && isEqual(this.value, other.value));
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -81,12 +81,12 @@ public class PemHeader {
         addTaint(s.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_409186820 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_409186820;
-        // ---------- Original Method ----------
-        //if (s == null)
-        //{
-            //return 1;
-        //}
-        //return s.hashCode();
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -97,16 +97,16 @@ public class PemHeader {
         addTaint(s2.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2098099189 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2098099189;
-        // ---------- Original Method ----------
-        //if (s1 == s2)
-        //{
-            //return true;
-        //}
-        //if (s1 == null || s2 == null)
-        //{
-            //return false;
-        //}
-        //return s1.equals(s2);
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     

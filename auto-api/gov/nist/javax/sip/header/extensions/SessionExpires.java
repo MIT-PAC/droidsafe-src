@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header.extensions;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.ParametersHeader;
 import java.text.ParseException;
@@ -20,7 +20,7 @@ public final class SessionExpires extends ParametersHeader implements ExtensionH
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.095 -0400", hash_original_method = "A8246024A4BBDCEF318DB7F6B74C4E64", hash_generated_method = "0E464BB06220F15972D6EA6681E34A06")
     public  SessionExpires() {
         super(NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,70 +28,75 @@ public final class SessionExpires extends ParametersHeader implements ExtensionH
     public int getExpires() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_91241891 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_91241891;
-        // ---------- Original Method ----------
-        //return expires;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.096 -0400", hash_original_method = "A313D6724829247498596D0326F894CE", hash_generated_method = "1F94C2B6C4EFAB2003C10C5168D24F2A")
     public void setExpires(int expires) throws InvalidArgumentException {
         if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException("bad argument " + expires);
         this.expires = expires;
-        // ---------- Original Method ----------
-        //if (expires < 0)
-            //throw new InvalidArgumentException("bad argument " + expires);
-        //this.expires = expires;
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.096 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
     public void setValue(String value) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new ParseException(value,0);
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //throw new ParseException(value,0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.097 -0400", hash_original_method = "B1D6BF5FEA5681AEA45EA9D4CACD9FB8", hash_generated_method = "2B4DD49EDC7CE6D5D94760C59B11284B")
     protected String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1681534502 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1681534502 = null; 
         String retval = Integer.toString(expires);
         {
             boolean varB381AD842454BDB2397F4C2DAD0B3FA1_1918397249 = (!parameters.isEmpty());
             {
                 retval += SEMICOLON + parameters.encode();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1681534502 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_1681534502.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1681534502.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1681534502;
-        // ---------- Original Method ----------
-        //String retval = Integer.toString(expires);
-        //if (!parameters.isEmpty()) {
-            //retval += SEMICOLON + parameters.encode();
-        //}
-        //return retval;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.097 -0400", hash_original_method = "5E6D9C5D9628C8E8194658511D516C38", hash_generated_method = "FAC52DF9A3945834803AA04EBDC611A5")
     public String getRefresher() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1633610585 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1633610585 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1633610585 = parameters.getParameter(REFRESHER);
-        varB4EAC82CA7396A68D541C85D26508E83_1633610585.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1633610585.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1633610585;
-        // ---------- Original Method ----------
-        //return parameters.getParameter(REFRESHER);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.097 -0400", hash_original_method = "B765158B109DFF1FFF87124C5A68F884", hash_generated_method = "CFBA8027D56906088EF2EB555498C070")
     public void setRefresher(String refresher) {
         this.parameters.set(REFRESHER,refresher);
         addTaint(refresher.getTaint());
-        // ---------- Original Method ----------
-        //this.parameters.set(REFRESHER,refresher);
+        
+        
     }
 
     

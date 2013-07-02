@@ -1,11 +1,11 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.telephony.PhoneNumberUtils;
 import android.text.format.Time;
@@ -65,10 +65,11 @@ public class SmsMessage extends SmsMessageBase {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.699 -0400", hash_original_method = "6C523C791261F68A00BC5A8339EB91FE", hash_generated_method = "6C523C791261F68A00BC5A8339EB91FE")
     public SmsMessage ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static SmsMessage createFromPdu(byte[] pdu) {
         try {
             SmsMessage msg = new SmsMessage();
@@ -85,11 +86,12 @@ public class SmsMessage extends SmsMessageBase {
     public boolean isTypeZero() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1138046072 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1138046072;
-        // ---------- Original Method ----------
-        //return (protocolIdentifier == 0x40);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SmsMessage newFromCMT(String[] lines) {
         try {
             SmsMessage msg = new SmsMessage();
@@ -102,6 +104,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SmsMessage newFromCDS(String line) {
         try {
             SmsMessage msg = new SmsMessage();
@@ -114,6 +117,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SmsMessage createFromEfRecord(int index, byte[] data) {
         try {
             SmsMessage msg = new SmsMessage();
@@ -137,6 +141,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getTPLayerLengthForPDU(String pdu) {
         int len = pdu.length() / 2;
         int smscLen = Integer.parseInt(pdu.substring(0, 2), 16);
@@ -144,6 +149,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SubmitPdu getSubmitPdu(String scAddress,
             String destinationAddress, String message,
             boolean statusReportRequested, byte[] header) {
@@ -152,6 +158,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SubmitPdu getSubmitPdu(String scAddress,
             String destinationAddress, String message,
             boolean statusReportRequested, byte[] header, int encoding,
@@ -234,6 +241,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static byte[] encodeUCS2(String message, byte[] header) throws UnsupportedEncodingException {
         byte[] userData, textPart;
         textPart = message.getBytes("utf-16be");
@@ -253,6 +261,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SubmitPdu getSubmitPdu(String scAddress,
             String destinationAddress, String message,
             boolean statusReportRequested) {
@@ -260,6 +269,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SubmitPdu getSubmitPdu(String scAddress,
             String destinationAddress, int destinationPort, byte[] data,
             boolean statusReportRequested) {
@@ -289,6 +299,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static ByteArrayOutputStream getSubmitPduHead(
             String scAddress, String destinationAddress, byte mtiByte,
             boolean statusReportRequested, SubmitPdu ret) {
@@ -316,6 +327,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static TextEncodingDetails calculateLength(CharSequence msgBody,
             boolean use7bitOnly) {
         TextEncodingDetails ted = GsmAlphabet.countGsmSeptets(msgBody, use7bitOnly);
@@ -343,8 +355,8 @@ public class SmsMessage extends SmsMessageBase {
     public int getProtocolIdentifier() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_985978179 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_985978179;
-        // ---------- Original Method ----------
-        //return protocolIdentifier;
+        
+        
     }
 
     
@@ -352,8 +364,8 @@ public class SmsMessage extends SmsMessageBase {
      int getDataCodingScheme() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1933948078 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1933948078;
-        // ---------- Original Method ----------
-        //return dataCodingScheme;
+        
+        
     }
 
     
@@ -362,13 +374,14 @@ public class SmsMessage extends SmsMessageBase {
     public boolean isReplace() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_432053965 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_432053965;
-        // ---------- Original Method ----------
-        //return (protocolIdentifier & 0xc0) == 0x40
-                //&& (protocolIdentifier & 0x3f) > 0
-                //&& (protocolIdentifier & 0x3f) < 8;
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.754 -0400", hash_original_method = "8C882F4C280C6C8CC6957F303C6657A2", hash_generated_method = "D91A12B82F23652891829FE56450D91D")
     @Override
     public boolean isCphsMwiMessage() {
@@ -376,12 +389,13 @@ public class SmsMessage extends SmsMessageBase {
                 || ((GsmSmsAddress) originatingAddress).isCphsVoiceMessageSet());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_796594987 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_796594987;
-        // ---------- Original Method ----------
-        //return ((GsmSmsAddress) originatingAddress).isCphsVoiceMessageClear()
-                //|| ((GsmSmsAddress) originatingAddress).isCphsVoiceMessageSet();
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.755 -0400", hash_original_method = "70DC4C6B18CE83A6EFAF90F534A37766", hash_generated_method = "7EF4BA3A040C6E9DF2EDD54BEC0B1AA0")
     @Override
     public boolean isMWIClearMessage() {
@@ -389,15 +403,16 @@ public class SmsMessage extends SmsMessageBase {
                 && ((GsmSmsAddress) originatingAddress).isCphsVoiceMessageClear());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2121415108 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2121415108;
-        // ---------- Original Method ----------
-        //if (isMwi && !mwiSense) {
-            //return true;
-        //}
-        //return originatingAddress != null
-                //&& ((GsmSmsAddress) originatingAddress).isCphsVoiceMessageClear();
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.757 -0400", hash_original_method = "29E72ED32BDC3692E9219EFE428EB222", hash_generated_method = "44C62A2BAA8D0F96CB5A3D6027145AB1")
     @Override
     public boolean isMWISetMessage() {
@@ -405,15 +420,16 @@ public class SmsMessage extends SmsMessageBase {
                 && ((GsmSmsAddress) originatingAddress).isCphsVoiceMessageSet());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_657096932 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_657096932;
-        // ---------- Original Method ----------
-        //if (isMwi && mwiSense) {
-            //return true;
-        //}
-        //return originatingAddress != null
-                //&& ((GsmSmsAddress) originatingAddress).isCphsVoiceMessageSet();
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.758 -0400", hash_original_method = "06DE61C568026EFDCDFB983D9CE6FFEE", hash_generated_method = "6F247CB69C6FC53C32ECC166D612DFDD")
     @Override
     public boolean isMwiDontStore() {
@@ -424,23 +440,23 @@ public class SmsMessage extends SmsMessageBase {
                     boolean varBE63956A4C4D7FD446688CEDCE89BD02_1521307530 = (" ".equals(getMessageBody()));
                     {
                         ;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1228562667 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1228562667;
-        // ---------- Original Method ----------
-        //if (isMwi && mwiDontStore) {
-            //return true;
-        //}
-        //if (isCphsMwiMessage()) {
-            //if (" ".equals(getMessageBody())) {
-                //;
-            //}
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -449,8 +465,8 @@ public class SmsMessage extends SmsMessageBase {
     public int getStatus() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1946534190 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1946534190;
-        // ---------- Original Method ----------
-        //return status;
+        
+        
     }
 
     
@@ -459,8 +475,8 @@ public class SmsMessage extends SmsMessageBase {
     public boolean isStatusReportMessage() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_854550859 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_854550859;
-        // ---------- Original Method ----------
-        //return isStatusReportMessage;
+        
+        
     }
 
     
@@ -469,11 +485,12 @@ public class SmsMessage extends SmsMessageBase {
     public boolean isReplyPathPresent() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_81912800 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_81912800;
-        // ---------- Original Method ----------
-        //return replyPathPresent;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.769 -0400", hash_original_method = "AF62799239B28F1660277ADF3CA55E81", hash_generated_method = "DDCDB82AC770C8E4454F58C61DA85807")
     private void parsePdu(byte[] pdu) {
         mPdu = pdu;
@@ -481,42 +498,43 @@ public class SmsMessage extends SmsMessageBase {
         scAddress = p.getSCAddress();
         {
             Log.d(LOG_TAG, "SMS SC address: " + scAddress);
-        } //End block
+        } 
         int firstByte = p.getByte();
         mti = firstByte & 0x3;
-        //Begin case 0 3 
+        
         parseSmsDeliver(p, firstByte);
-        //End case 0 3 
-        //Begin case 2 
+        
+        
         parseSmsStatusReport(p, firstByte);
-        //End case 2 
-        //Begin case default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Unsupported message type");
-        //End case default 
+        
         addTaint(pdu[0]);
-        // ---------- Original Method ----------
-        //mPdu = pdu;
-        //PduParser p = new PduParser(pdu);
-        //scAddress = p.getSCAddress();
-        //if (scAddress != null) {
-            //if (false) Log.d(LOG_TAG, "SMS SC address: " + scAddress);
-        //}
-        //int firstByte = p.getByte();
-        //mti = firstByte & 0x3;
-        //switch (mti) {
-        //case 0:
-        //case 3: 
-            //parseSmsDeliver(p, firstByte);
-            //break;
-        //case 2:
-            //parseSmsStatusReport(p, firstByte);
-            //break;
-        //default:
-            //throw new RuntimeException("Unsupported message type");
-        //}
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+            
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.773 -0400", hash_original_method = "A70831539166366B9681E2ACC95982AC", hash_generated_method = "984DC2F5FB85C538253CA9A3E3604EA6")
     private void parseSmsStatusReport(PduParser p, int firstByte) {
         isStatusReportMessage = true;
@@ -533,24 +551,25 @@ public class SmsMessage extends SmsMessageBase {
                 int moreExtraParams = extraParams;
                 {
                     moreExtraParams = p.getByte();
-                } //End block
+                } 
                 {
                     protocolIdentifier = p.getByte();
-                } //End block
+                } 
                 {
                     dataCodingScheme = p.getByte();
-                } //End block
+                } 
                 {
                     boolean hasUserDataHeader = (firstByte & 0x40) == 0x40;
                     parseUserData(p, hasUserDataHeader);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.775 -0400", hash_original_method = "7E3F60FEC92AD175AC8D63C56FC781E1", hash_generated_method = "CFFABC77675C9E93D4012D250B5D5FB0")
     private void parseSmsDeliver(PduParser p, int firstByte) {
         replyPathPresent = (firstByte & 0x80) == 0x80;
@@ -561,26 +580,27 @@ public class SmsMessage extends SmsMessageBase {
         Log.d(LOG_TAG, "SMS SC timestamp: " + scTimeMillis);
         boolean hasUserDataHeader = (firstByte & 0x40) == 0x40;
         parseUserData(p, hasUserDataHeader);
-        // ---------- Original Method ----------
-        //replyPathPresent = (firstByte & 0x80) == 0x80;
-        //originatingAddress = p.getAddress();
-        //if (originatingAddress != null) {
-            //if (false) Log.v(LOG_TAG, "SMS originating address: "
-                    //+ originatingAddress.address);
-        //}
-        //protocolIdentifier = p.getByte();
-        //dataCodingScheme = p.getByte();
-        //if (false) {
-            //Log.v(LOG_TAG, "SMS TP-PID:" + protocolIdentifier
-                    //+ " data coding scheme: " + dataCodingScheme);
-        //}
-        //scTimeMillis = p.getSCTimestampMillis();
-        //if (false) Log.d(LOG_TAG, "SMS SC timestamp: " + scTimeMillis);
-        //boolean hasUserDataHeader = (firstByte & 0x40) == 0x40;
-        //parseUserData(p, hasUserDataHeader);
+        
+        
+        
+        
+            
+                    
+        
+        
+        
+        
+            
+                    
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.778 -0400", hash_original_method = "445BCC4CA8B8EE2EB716CA993346CBBC", hash_generated_method = "5D4B3D9F51C7A1B2EB8856A93296283E")
     private void parseUserData(PduParser p, boolean hasUserDataHeader) {
         boolean hasMessageClass = false;
@@ -591,105 +611,105 @@ public class SmsMessage extends SmsMessageBase {
             userDataCompressed = (0 != (dataCodingScheme & 0x20));
             hasMessageClass = (0 != (dataCodingScheme & 0x10));
             {
-                //Begin case 0 
+                
                 encodingType = ENCODING_7BIT;
-                //End case 0 
-                //Begin case 2 
+                
+                
                 encodingType = ENCODING_16BIT;
-                //End case 2 
-                //Begin case 1 3 
+                
+                
                 encodingType = ENCODING_8BIT;
-                //End case 1 3 
-            } //End block
-        } //End block
+                
+            } 
+        } 
         {
             automaticDeletion = false;
             hasMessageClass = true;
             userDataCompressed = false;
             {
                 encodingType = ENCODING_7BIT;
-            } //End block
+            } 
             {
                 encodingType = ENCODING_8BIT;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 encodingType = ENCODING_16BIT;
-            } //End block
+            } 
             {
                 encodingType = ENCODING_7BIT;
-            } //End block
+            } 
             userDataCompressed = false;
             boolean active = ((dataCodingScheme & 0x08) == 0x08);
             {
                 isMwi = true;
                 mwiSense = active;
                 mwiDontStore = ((dataCodingScheme & 0xF0) == 0xC0);
-            } //End block
+            } 
             {
                 isMwi = false;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 encodingType = ENCODING_KSC5601;
-            } //End block
-        } //End block
+            } 
+        } 
         int count = p.constructUserData(hasUserDataHeader,
                 encodingType == ENCODING_7BIT);
         this.userData = p.getUserData();
         this.userDataHeader = p.getUserDataHeader();
-        //Begin case ENCODING_UNKNOWN ENCODING_8BIT 
+        
         messageBody = null;
-        //End case ENCODING_UNKNOWN ENCODING_8BIT 
-        //Begin case ENCODING_7BIT 
+        
+        
         messageBody = p.getUserDataGSM7Bit(count,
                     hasUserDataHeader ? userDataHeader.languageTable : 0,
                     hasUserDataHeader ? userDataHeader.languageShiftTable : 0);
-        //End case ENCODING_7BIT 
-        //Begin case ENCODING_16BIT 
+        
+        
         messageBody = p.getUserDataUCS2(count);
-        //End case ENCODING_16BIT 
-        //Begin case ENCODING_KSC5601 
+        
+        
         messageBody = p.getUserDataKSC5601(count);
-        //End case ENCODING_KSC5601 
+        
         {
             parseMessageBody();
-        } //End block
+        } 
         {
             messageClass = MessageClass.UNKNOWN;
-        } //End block
+        } 
         {
-            //Begin case 0 
+            
             messageClass = MessageClass.CLASS_0;
-            //End case 0 
-            //Begin case 1 
+            
+            
             messageClass = MessageClass.CLASS_1;
-            //End case 1 
-            //Begin case 2 
+            
+            
             messageClass = MessageClass.CLASS_2;
-            //End case 2 
-            //Begin case 3 
+            
+            
             messageClass = MessageClass.CLASS_3;
-            //End case 3 
-        } //End block
+            
+        } 
         addTaint(p.getTaint());
         addTaint(hasUserDataHeader);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.786 -0400", hash_original_method = "A363CB6F91B76BEA5906C381D551632B", hash_generated_method = "93E582C17194BB7D9BBA64C3AC8E2F40")
     @Override
     public MessageClass getMessageClass() {
-        MessageClass varB4EAC82CA7396A68D541C85D26508E83_100784008 = null; //Variable for return #1
+        MessageClass varB4EAC82CA7396A68D541C85D26508E83_100784008 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_100784008 = messageClass;
-        varB4EAC82CA7396A68D541C85D26508E83_100784008.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_100784008.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_100784008;
-        // ---------- Original Method ----------
-        //return messageClass;
+        
+        
     }
 
     
@@ -697,9 +717,9 @@ public class SmsMessage extends SmsMessageBase {
      boolean isUsimDataDownload() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1001147643 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1001147643;
-        // ---------- Original Method ----------
-        //return messageClass == MessageClass.CLASS_2 &&
-                //(protocolIdentifier == 0x7f || protocolIdentifier == 0x7c);
+        
+        
+                
     }
 
     
@@ -708,7 +728,7 @@ public class SmsMessage extends SmsMessageBase {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.788 -0400", hash_original_method = "0DF27C295EE94AE1A62B7F3B1FD6EBC8", hash_generated_method = "0DF27C295EE94AE1A62B7F3B1FD6EBC8")
         public SubmitPdu ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -741,55 +761,55 @@ public class SmsMessage extends SmsMessageBase {
             this.pdu = pdu;
             cur = 0;
             mUserDataSeptetPadding = 0;
-            // ---------- Original Method ----------
-            //this.pdu = pdu;
-            //cur = 0;
-            //mUserDataSeptetPadding = 0;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.799 -0400", hash_original_method = "99E23657D695EA8C595E80B24F474921", hash_generated_method = "AF44DAF852B62E156F0D76F81AFAD056")
          String getSCAddress() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1506396358 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1506396358 = null; 
             int len;
             String ret;
             len = getByte();
             {
                 ret = null;
-            } //End block
+            } 
             {
                 try 
                 {
                     ret = PhoneNumberUtils
                             .calledPartyBCDToString(pdu, cur, len);
-                } //End block
+                } 
                 catch (RuntimeException tr)
                 {
                     Log.d(LOG_TAG, "invalid SC address: ", tr);
                     ret = null;
-                } //End block
-            } //End block
+                } 
+            } 
             cur += len;
             varB4EAC82CA7396A68D541C85D26508E83_1506396358 = ret;
-            varB4EAC82CA7396A68D541C85D26508E83_1506396358.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1506396358.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1506396358;
-            // ---------- Original Method ----------
-            //int len;
-            //String ret;
-            //len = getByte();
-            //if (len == 0) {
-                //ret = null;
-            //} else {
-                //try {
-                    //ret = PhoneNumberUtils
-                            //.calledPartyBCDToString(pdu, cur, len);
-                //} catch (RuntimeException tr) {
-                    //Log.d(LOG_TAG, "invalid SC address: ", tr);
-                    //ret = null;
-                //}
-            //}
-            //cur += len;
-            //return ret;
+            
+            
+            
+            
+            
+                
+            
+                
+                    
+                            
+                
+                    
+                    
+                
+            
+            
+            
         }
 
         
@@ -797,29 +817,29 @@ public class SmsMessage extends SmsMessageBase {
          int getByte() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681690534 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681690534;
-            // ---------- Original Method ----------
-            //return pdu[cur++] & 0xff;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.806 -0400", hash_original_method = "F408E9DA0C4025DEBACF10CB13B7E7DC", hash_generated_method = "5CC3C5F7F65213F613CD025222455195")
          GsmSmsAddress getAddress() {
-            GsmSmsAddress varB4EAC82CA7396A68D541C85D26508E83_1050700894 = null; //Variable for return #1
+            GsmSmsAddress varB4EAC82CA7396A68D541C85D26508E83_1050700894 = null; 
             GsmSmsAddress ret;
             int addressLength = pdu[cur] & 0xff;
             int lengthBytes = 2 + (addressLength + 1) / 2;
             ret = new GsmSmsAddress(pdu, cur, lengthBytes);
             cur += lengthBytes;
             varB4EAC82CA7396A68D541C85D26508E83_1050700894 = ret;
-            varB4EAC82CA7396A68D541C85D26508E83_1050700894.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1050700894.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1050700894;
-            // ---------- Original Method ----------
-            //GsmSmsAddress ret;
-            //int addressLength = pdu[cur] & 0xff;
-            //int lengthBytes = 2 + (addressLength + 1) / 2;
-            //ret = new GsmSmsAddress(pdu, cur, lengthBytes);
-            //cur += lengthBytes;
-            //return ret;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -844,8 +864,8 @@ public class SmsMessage extends SmsMessageBase {
             long var71AE5F04DA1797F40C7D521CE4C928C9_193231558 = (time.toMillis(true) - (timezoneOffset * 15 * 60 * 1000));
             long var0F5264038205EDFB1AC05FBB0E8C5E94_323004748 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_323004748;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -865,29 +885,29 @@ public class SmsMessage extends SmsMessageBase {
                 headerSeptets = headerBits / 7;
                 headerSeptets += (headerBits % 7) > 0 ? 1 : 0;
                 mUserDataSeptetPadding = (headerSeptets * 7) - headerBits;
-            } //End block
+            } 
             int bufferLen;
             {
                 bufferLen = pdu.length - offset;
-            } //End block
+            } 
             {
                 bufferLen = userDataLength - (hasUserDataHeader ? (userDataHeaderLength + 1) : 0);
                 {
                     bufferLen = 0;
-                } //End block
-            } //End block
+                } 
+            } 
             userData = new byte[bufferLen];
             System.arraycopy(pdu, offset, userData, 0, userData.length);
             cur = offset;
             {
                 int count = userDataLength - headerSeptets;
-            } //End block
+            } 
             addTaint(hasUserDataHeader);
             addTaint(dataInSeptets);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1954033252 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1954033252;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -895,8 +915,8 @@ public class SmsMessage extends SmsMessageBase {
          byte[] getUserData() {
             byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_954720804 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_954720804;
-            // ---------- Original Method ----------
-            //return userData;
+            
+            
         }
 
         
@@ -904,26 +924,26 @@ public class SmsMessage extends SmsMessageBase {
          int getUserDataSeptetPadding() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_578988751 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_578988751;
-            // ---------- Original Method ----------
-            //return mUserDataSeptetPadding;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.818 -0400", hash_original_method = "4DA43BCCB17FE826B675411D64594E85", hash_generated_method = "7BE720F5BDA007473A20862B1DB2E918")
          SmsHeader getUserDataHeader() {
-            SmsHeader varB4EAC82CA7396A68D541C85D26508E83_1368014076 = null; //Variable for return #1
+            SmsHeader varB4EAC82CA7396A68D541C85D26508E83_1368014076 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1368014076 = userDataHeader;
-            varB4EAC82CA7396A68D541C85D26508E83_1368014076.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1368014076.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1368014076;
-            // ---------- Original Method ----------
-            //return userDataHeader;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.819 -0400", hash_original_method = "51731F422A9CB8603202E115B88733FC", hash_generated_method = "A0B91D03B6322050938D3202D94067EF")
          String getUserDataGSM7Bit(int septetCount, int languageTable,
                 int languageShiftTable) {
-            String varB4EAC82CA7396A68D541C85D26508E83_816098960 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_816098960 = null; 
             String ret;
             ret = GsmAlphabet.gsm7BitPackedToString(pdu, cur, septetCount,
                     mUserDataSeptetPadding, languageTable, languageShiftTable);
@@ -931,72 +951,72 @@ public class SmsMessage extends SmsMessageBase {
             varB4EAC82CA7396A68D541C85D26508E83_816098960 = ret;
             addTaint(languageTable);
             addTaint(languageShiftTable);
-            varB4EAC82CA7396A68D541C85D26508E83_816098960.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_816098960.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_816098960;
-            // ---------- Original Method ----------
-            //String ret;
-            //ret = GsmAlphabet.gsm7BitPackedToString(pdu, cur, septetCount,
-                    //mUserDataSeptetPadding, languageTable, languageShiftTable);
-            //cur += (septetCount * 7) / 8;
-            //return ret;
+            
+            
+            
+                    
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.819 -0400", hash_original_method = "97FC9E20E0F795CD7B2A52C595E2E8DE", hash_generated_method = "952BC57ECEB7373EA834108AA8796E2C")
          String getUserDataUCS2(int byteCount) {
-            String varB4EAC82CA7396A68D541C85D26508E83_211335528 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_211335528 = null; 
             String ret;
             try 
             {
                 ret = new String(pdu, cur, byteCount, "utf-16");
-            } //End block
+            } 
             catch (UnsupportedEncodingException ex)
             {
                 ret = "";
-            } //End block
+            } 
             cur += byteCount;
             varB4EAC82CA7396A68D541C85D26508E83_211335528 = ret;
-            varB4EAC82CA7396A68D541C85D26508E83_211335528.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_211335528.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_211335528;
-            // ---------- Original Method ----------
-            //String ret;
-            //try {
-                //ret = new String(pdu, cur, byteCount, "utf-16");
-            //} catch (UnsupportedEncodingException ex) {
-                //ret = "";
-                //Log.e(LOG_TAG, "implausible UnsupportedEncodingException", ex);
-            //}
-            //cur += byteCount;
-            //return ret;
+            
+            
+            
+                
+            
+                
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.820 -0400", hash_original_method = "D8D8AF92C3889C36EC89CBE6C5FEE71F", hash_generated_method = "5F326F74AB4312B54FED1872170A908A")
          String getUserDataKSC5601(int byteCount) {
-            String varB4EAC82CA7396A68D541C85D26508E83_1493337266 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1493337266 = null; 
             String ret;
             try 
             {
                 ret = new String(pdu, cur, byteCount, "KSC5601");
-            } //End block
+            } 
             catch (UnsupportedEncodingException ex)
             {
                 ret = "";
-            } //End block
+            } 
             cur += byteCount;
             varB4EAC82CA7396A68D541C85D26508E83_1493337266 = ret;
-            varB4EAC82CA7396A68D541C85D26508E83_1493337266.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1493337266.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1493337266;
-            // ---------- Original Method ----------
-            //String ret;
-            //try {
-                //ret = new String(pdu, cur, byteCount, "KSC5601");
-            //} catch (UnsupportedEncodingException ex) {
-                //ret = "";
-                //Log.e(LOG_TAG, "implausible UnsupportedEncodingException", ex);
-            //}
-            //cur += byteCount;
-            //return ret;
+            
+            
+            
+                
+            
+                
+                
+            
+            
+            
         }
 
         
@@ -1004,8 +1024,8 @@ public class SmsMessage extends SmsMessageBase {
          boolean moreDataPresent() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1255537480 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1255537480;
-            // ---------- Original Method ----------
-            //return (pdu.length > cur);
+            
+            
         }
 
         

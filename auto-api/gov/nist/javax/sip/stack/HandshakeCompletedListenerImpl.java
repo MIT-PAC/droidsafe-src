@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.stack;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.net.ssl.HandshakeCompletedEvent;
 import javax.net.ssl.HandshakeCompletedListener;
@@ -22,28 +22,28 @@ public class HandshakeCompletedListenerImpl implements HandshakeCompletedListene
     public  HandshakeCompletedListenerImpl(TLSMessageChannel tlsMessageChannel) {
         this.tlsMessageChannel = tlsMessageChannel;
         tlsMessageChannel.setHandshakeCompletedListener(this);
-        // ---------- Original Method ----------
-        //this.tlsMessageChannel = tlsMessageChannel;
-        //tlsMessageChannel.setHandshakeCompletedListener(this);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.285 -0400", hash_original_method = "059B216A56A7176FB623C11ADC7DE4FF", hash_generated_method = "05C4BFDC91F20AC9D0D05E91F4982E29")
     public void handshakeCompleted(HandshakeCompletedEvent handshakeCompletedEvent) {
         this.handshakeCompletedEvent = handshakeCompletedEvent;
-        // ---------- Original Method ----------
-        //this.handshakeCompletedEvent = handshakeCompletedEvent;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.286 -0400", hash_original_method = "E86D2808B5F943F6445EA098BE441F96", hash_generated_method = "EE2C2D7CA37612E47F0D194704D2F659")
     public HandshakeCompletedEvent getHandshakeCompletedEvent() {
-        HandshakeCompletedEvent varB4EAC82CA7396A68D541C85D26508E83_1715675503 = null; //Variable for return #1
+        HandshakeCompletedEvent varB4EAC82CA7396A68D541C85D26508E83_1715675503 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1715675503 = handshakeCompletedEvent;
-        varB4EAC82CA7396A68D541C85D26508E83_1715675503.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1715675503.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1715675503;
-        // ---------- Original Method ----------
-        //return handshakeCompletedEvent;
+        
+        
     }
 
     

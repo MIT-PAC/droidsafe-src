@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -66,8 +66,8 @@ public class SSLSocketImpl extends SSLSocket {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.026 -0400", hash_original_method = "7B6D79A24FC469186EEF1935CCE0FAAE", hash_generated_method = "76D8E06FA8235152D346BA475221EC7E")
     protected  SSLSocketImpl(SSLParametersImpl sslParameters) {
         this.sslParameters = sslParameters;
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
+        
+        
     }
 
     
@@ -78,9 +78,9 @@ public class SSLSocketImpl extends SSLSocket {
         init();
         addTaint(host.getTaint());
         addTaint(port);
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
-        //init();
+        
+        
+        
     }
 
     
@@ -96,9 +96,9 @@ public class SSLSocketImpl extends SSLSocket {
         addTaint(port);
         addTaint(localHost.getTaint());
         addTaint(localPort);
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
-        //init();
+        
+        
+        
     }
 
     
@@ -110,9 +110,9 @@ public class SSLSocketImpl extends SSLSocket {
         init();
         addTaint(host.getTaint());
         addTaint(port);
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
-        //init();
+        
+        
+        
     }
 
     
@@ -127,318 +127,339 @@ public class SSLSocketImpl extends SSLSocket {
         addTaint(port);
         addTaint(localAddress.getTaint());
         addTaint(localPort);
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
-        //init();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.028 -0400", hash_original_method = "FD845B5AAD012D6985E0ADCD6A0F1286", hash_generated_method = "C7053FCD0C2CAC7A8ED711746999121C")
     protected void init() throws IOException {
         initTransportLayer();
         appDataIS = new SSLSocketInputStream(this);
         appDataOS = new SSLSocketOutputStream(this);
-        // ---------- Original Method ----------
-        //if (appDataIS != null) {
-            //return;
-        //}
-        //initTransportLayer();
-        //appDataIS = new SSLSocketInputStream(this);
-        //appDataOS = new SSLSocketOutputStream(this);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.028 -0400", hash_original_method = "F1A82616FFDC8899DB87D416AB14644B", hash_generated_method = "A4E325529E24EA029F3DA105A3FC705E")
     protected void initTransportLayer() throws IOException {
         input = super.getInputStream();
         output = super.getOutputStream();
-        // ---------- Original Method ----------
-        //input = super.getInputStream();
-        //output = super.getOutputStream();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.028 -0400", hash_original_method = "651677798FC4CE70FB09611DD37A5D23", hash_generated_method = "DC71033D6F8C0E546CC132184F0576C1")
     protected void closeTransportLayer() throws IOException {
         super.close();
         {
             input.close();
             output.close();
-        } //End block
-        // ---------- Original Method ----------
-        //super.close();
-        //if (input != null) {
-            //input.close();
-            //output.close();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.029 -0400", hash_original_method = "12BE90119F3183109C9DE5DBB63B352A", hash_generated_method = "8562C6209F5F44D12CCCE4A6938CA658")
     @Override
     public String[] getSupportedCipherSuites() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1010165124 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1010165124 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1010165124 = CipherSuite.getSupportedCipherSuiteNames();
-        varB4EAC82CA7396A68D541C85D26508E83_1010165124.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1010165124.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1010165124;
-        // ---------- Original Method ----------
-        //return CipherSuite.getSupportedCipherSuiteNames();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.030 -0400", hash_original_method = "80B545F2398A25060AECB1A23E821DD5", hash_generated_method = "C877B80C2EB05BAF36AD2AF489BD6DD5")
     @Override
     public String[] getEnabledCipherSuites() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_221048206 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_221048206 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_221048206 = sslParameters.getEnabledCipherSuites();
-        varB4EAC82CA7396A68D541C85D26508E83_221048206.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_221048206.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_221048206;
-        // ---------- Original Method ----------
-        //return sslParameters.getEnabledCipherSuites();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.030 -0400", hash_original_method = "7C4ABDE66C2DD67AB299013913F9BF06", hash_generated_method = "7F545A6EF3038CFCC5D5B349DF2D820E")
     @Override
     public void setEnabledCipherSuites(String[] suites) {
         sslParameters.setEnabledCipherSuites(suites);
         addTaint(suites[0].getTaint());
-        // ---------- Original Method ----------
-        //sslParameters.setEnabledCipherSuites(suites);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.031 -0400", hash_original_method = "9A36300B3497119D0180A59D3E72D371", hash_generated_method = "9AF4FB66B70062166B6123971C60F354")
     @Override
     public String[] getSupportedProtocols() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1188204641 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1188204641 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1188204641 = ProtocolVersion.supportedProtocols.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_1188204641.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1188204641.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1188204641;
-        // ---------- Original Method ----------
-        //return ProtocolVersion.supportedProtocols.clone();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.031 -0400", hash_original_method = "9376751549A6436575C0783CA6C3A4A0", hash_generated_method = "BE07255A1035D0D0557CAE56240BEEB8")
     @Override
     public String[] getEnabledProtocols() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1737025488 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1737025488 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1737025488 = sslParameters.getEnabledProtocols();
-        varB4EAC82CA7396A68D541C85D26508E83_1737025488.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1737025488.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1737025488;
-        // ---------- Original Method ----------
-        //return sslParameters.getEnabledProtocols();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.031 -0400", hash_original_method = "1CAC4BB68A222585D834DF0E7DBBD0B9", hash_generated_method = "24B3390D4A5DB4328E68855FDA4E4FA9")
     @Override
     public void setEnabledProtocols(String[] protocols) {
         sslParameters.setEnabledProtocols(protocols);
         addTaint(protocols[0].getTaint());
-        // ---------- Original Method ----------
-        //sslParameters.setEnabledProtocols(protocols);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.032 -0400", hash_original_method = "3BB959BD0875F4D150E69C54372A8DCB", hash_generated_method = "56BF5F0CF97BA1C2A298465C12ACB7EC")
     @Override
     public void setUseClientMode(boolean mode) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
             "Could not change the mode after the initial handshake has begun.");
-        } //End block
+        } 
         sslParameters.setUseClientMode(mode);
         addTaint(mode);
-        // ---------- Original Method ----------
-        //if (handshake_started) {
-            //throw new IllegalArgumentException(
-            //"Could not change the mode after the initial handshake has begun.");
-        //}
-        //sslParameters.setUseClientMode(mode);
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.032 -0400", hash_original_method = "01F03276D647357C499C358366605A7A", hash_generated_method = "06177D9087AFDC3DA2122DC60EEED908")
     @Override
     public boolean getUseClientMode() {
         boolean var5D6C317C7C34AA34FED4DDA3BFA46DAC_485640022 = (sslParameters.getUseClientMode());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_754934239 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_754934239;
-        // ---------- Original Method ----------
-        //return sslParameters.getUseClientMode();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.032 -0400", hash_original_method = "87B99BB5E16802D75B8230FD21E2413F", hash_generated_method = "0546B005C61E39ED72A709422B43B69F")
     @Override
     public void setNeedClientAuth(boolean need) {
         sslParameters.setNeedClientAuth(need);
         addTaint(need);
-        // ---------- Original Method ----------
-        //sslParameters.setNeedClientAuth(need);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.032 -0400", hash_original_method = "01CDFCACAD6C113BE18D967A4C320F8F", hash_generated_method = "0579DEE14066F0D631D41ED59B6CB7A6")
     @Override
     public boolean getNeedClientAuth() {
         boolean var666666A183221FEF9E4AC429A4F2FC13_1855551760 = (sslParameters.getNeedClientAuth());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1280799362 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1280799362;
-        // ---------- Original Method ----------
-        //return sslParameters.getNeedClientAuth();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.033 -0400", hash_original_method = "C4BE9213AE4AE3AE8B3FD470CA7DBEA1", hash_generated_method = "36D0D50995337D2D75DCB0482721034F")
     @Override
     public void setWantClientAuth(boolean want) {
         sslParameters.setWantClientAuth(want);
         addTaint(want);
-        // ---------- Original Method ----------
-        //sslParameters.setWantClientAuth(want);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.033 -0400", hash_original_method = "BFCFACF4683D2DA63944456ACA1AFE4C", hash_generated_method = "3FD0A385B8948B58942C1EE7FB96BA4C")
     @Override
     public boolean getWantClientAuth() {
         boolean var1F88322EA2F28C29D3EC82222D21AA46_1751754603 = (sslParameters.getWantClientAuth());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1756260895 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1756260895;
-        // ---------- Original Method ----------
-        //return sslParameters.getWantClientAuth();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.033 -0400", hash_original_method = "CCC6382646A49B02E626A26467D69493", hash_generated_method = "781712039B284C5CB7B48D72B261E886")
     @Override
     public void setEnableSessionCreation(boolean flag) {
         sslParameters.setEnableSessionCreation(flag);
         addTaint(flag);
-        // ---------- Original Method ----------
-        //sslParameters.setEnableSessionCreation(flag);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.033 -0400", hash_original_method = "67C983FA387520F5F3AF315C719B29E4", hash_generated_method = "33709A54A96D9490DAF0B6CFA071C86D")
     @Override
     public boolean getEnableSessionCreation() {
         boolean varAFF7A8ADF82548D8DE353C67D9576F3E_2066983118 = (sslParameters.getEnableSessionCreation());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1968306236 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1968306236;
-        // ---------- Original Method ----------
-        //return sslParameters.getEnableSessionCreation();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.034 -0400", hash_original_method = "8713059613609B55626747E74A63D7AE", hash_generated_method = "1DDE4003021DC76AEDE27BD278D24FA6")
     @Override
     public SSLSession getSession() {
-        SSLSession varB4EAC82CA7396A68D541C85D26508E83_257444082 = null; //Variable for return #1
-        SSLSession varB4EAC82CA7396A68D541C85D26508E83_2132294283 = null; //Variable for return #2
+        SSLSession varB4EAC82CA7396A68D541C85D26508E83_257444082 = null; 
+        SSLSession varB4EAC82CA7396A68D541C85D26508E83_2132294283 = null; 
         {
             try 
             {
                 startHandshake();
-            } //End block
+            } 
             catch (IOException e)
             {
                 varB4EAC82CA7396A68D541C85D26508E83_257444082 = SSLSessionImpl.NULL_SESSION;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2132294283 = session;
-        SSLSession varA7E53CE21691AB073D9660D615818899_929489850; //Final return value
+        SSLSession varA7E53CE21691AB073D9660D615818899_929489850; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_929489850 = varB4EAC82CA7396A68D541C85D26508E83_257444082;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_929489850 = varB4EAC82CA7396A68D541C85D26508E83_2132294283;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_929489850.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_929489850.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_929489850;
-        // ---------- Original Method ----------
-        //if (!handshake_started) {
-            //try {
-                //startHandshake();
-            //} catch (IOException e) {
-                //return SSLSessionImpl.NULL_SESSION;
-            //}
-        //}
-        //return session;
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.034 -0400", hash_original_method = "F46B9A73766B8D71CEE8B005CFE82615", hash_generated_method = "7287E9F6B751EA96DE97D34C6E28B2B8")
     @Override
     public void addHandshakeCompletedListener(
             HandshakeCompletedListener listener) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Provided listener is null");
-        } //End block
+        } 
         {
             listeners = new ArrayList<HandshakeCompletedListener>();
-        } //End block
+        } 
         listeners.add(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //throw new IllegalArgumentException("Provided listener is null");
-        //}
-        //if (listeners == null) {
-            //listeners = new ArrayList<HandshakeCompletedListener>();
-        //}
-        //listeners.add(listener);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.034 -0400", hash_original_method = "AD8204C7E0D7DFC602B3A996AAF9AC40", hash_generated_method = "DF74374818626FDD8DF05F290A98CED4")
     @Override
     public void removeHandshakeCompletedListener(
             HandshakeCompletedListener listener) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Provided listener is null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "Provided listener is not registered");
-        } //End block
+        } 
         {
             boolean var170C22586EF26335003A8446D4D19EBD_672194189 = (!listeners.remove(listener));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "Provided listener is not registered");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //throw new IllegalArgumentException("Provided listener is null");
-        //}
-        //if (listeners == null) {
-            //throw new IllegalArgumentException(
-                    //"Provided listener is not registered");
-        //}
-        //if (!listeners.remove(listener)) {
-            //throw new IllegalArgumentException(
-                    //"Provided listener is not registered");
-        //}
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.035 -0400", hash_original_method = "765B8FA015660A1850228BA85BA4D2EA", hash_generated_method = "85FE42113BB976229861AFC1D864EFB0")
     @Override
     public void startHandshake() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Socket is not connected.");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Socket has already been closed.");
-        } //End block
+        } 
         {
             handshake_started = true;
             {
@@ -446,82 +467,86 @@ public class SSLSocketImpl extends SSLSocket {
                 {
                     {
                         logger.println("SSLSocketImpl: CLIENT");
-                    } //End block
+                    } 
                     handshakeProtocol = new ClientHandshakeImpl(this);
-                } //End block
+                } 
                 {
                     {
                         logger.println("SSLSocketImpl: SERVER");
-                    } //End block
+                    } 
                     handshakeProtocol = new ServerHandshakeImpl(this);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             alertProtocol = new AlertProtocol();
             recordProtocol = new SSLRecordProtocol(handshakeProtocol,
                     alertProtocol, new SSLStreamedInput(input),
                     appDataIS.dataPoint);
-        } //End block
+        } 
         {
             logger.println("SSLSocketImpl.startHandshake");
-        } //End block
+        } 
         handshakeProtocol.start();
         doHandshake();
         {
             logger.println("SSLSocketImpl.startHandshake: END");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.035 -0400", hash_original_method = "9F4C1AA967218079AF1BF56E431987CC", hash_generated_method = "C024944E30F914EEADC67CBBC44D7EDE")
     @Override
     public InputStream getInputStream() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_959855309 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_959855309 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Socket has already been closed.");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_959855309 = appDataIS;
-        varB4EAC82CA7396A68D541C85D26508E83_959855309.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_959855309.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_959855309;
-        // ---------- Original Method ----------
-        //if (socket_was_closed) {
-            //throw new IOException("Socket has already been closed.");
-        //}
-        //return appDataIS;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.036 -0400", hash_original_method = "E9E36047983E43D9B4652427AFC0EE2E", hash_generated_method = "2AFBFB805969D74450F45422A0F985DA")
     @Override
     public OutputStream getOutputStream() throws IOException {
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_2145518422 = null; //Variable for return #1
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_2145518422 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Socket has already been closed.");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2145518422 = appDataOS;
-        varB4EAC82CA7396A68D541C85D26508E83_2145518422.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2145518422.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2145518422;
-        // ---------- Original Method ----------
-        //if (socket_was_closed) {
-            //throw new IOException("Socket has already been closed.");
-        //}
-        //return appDataOS;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.036 -0400", hash_original_method = "9C6F28F8DBD161E857A3A3894EC60A85", hash_generated_method = "6EC10A3B130B293E5D349A9B42C68E1C")
     @Override
     public void connect(SocketAddress endpoint) throws IOException {
         super.connect(endpoint);
         init();
         addTaint(endpoint.getTaint());
-        // ---------- Original Method ----------
-        //super.connect(endpoint);
-        //init();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.036 -0400", hash_original_method = "E1471735BF64AF2EDFAE20D8138E7876", hash_generated_method = "51825E8569446B1B3A8EC885253169CD")
     @Override
     public void connect(SocketAddress endpoint, int timeout) throws IOException {
@@ -529,18 +554,19 @@ public class SSLSocketImpl extends SSLSocket {
         init();
         addTaint(endpoint.getTaint());
         addTaint(timeout);
-        // ---------- Original Method ----------
-        //super.connect(endpoint, timeout);
-        //init();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.037 -0400", hash_original_method = "1C7BF244CDBA20FEDEE01D71D2117BF2", hash_generated_method = "83948190E2B7DC21DA321310F3C8C5F3")
     @Override
     public void close() throws IOException {
         {
             logger.println("SSLSocket.close "+socket_was_closed);
-        } //End block
+        } 
         {
             {
                 alertProtocol.alert(AlertProtocol.WARNING,
@@ -548,59 +574,62 @@ public class SSLSocketImpl extends SSLSocket {
                 try 
                 {
                     output.write(alertProtocol.wrap());
-                } //End block
+                } 
                 catch (IOException ex)
                 { }
                 alertProtocol.setProcessed();
-            } //End block
+            } 
             shutdown();
             closeTransportLayer();
             socket_was_closed = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (logger != null) {
-            //logger.println("SSLSocket.close "+socket_was_closed);
-        //}
-        //if (!socket_was_closed) {
-            //if (handshake_started) {
-                //alertProtocol.alert(AlertProtocol.WARNING,
-                        //AlertProtocol.CLOSE_NOTIFY);
-                //try {
-                    //output.write(alertProtocol.wrap());
-                //} catch (IOException ex) { }
-                //alertProtocol.setProcessed();
-            //}
-            //shutdown();
-            //closeTransportLayer();
-            //socket_was_closed = true;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+                
+                        
+                
+                    
+                
+                
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.037 -0400", hash_original_method = "76A321423E9827230577FC78A6A38E86", hash_generated_method = "0145959A11707D1F1EC56AB488EADBC5")
     @Override
     public void sendUrgentData(int data) throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new SocketException(
                 "Method sendUrgentData() is not supported.");
         addTaint(data);
-        // ---------- Original Method ----------
-        //throw new SocketException(
-                //"Method sendUrgentData() is not supported.");
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.037 -0400", hash_original_method = "274CE2EF30305C6385D88E550D3E79A6", hash_generated_method = "80AC7A3184C574479F25F1CCDE990B4A")
     @Override
     public void setOOBInline(boolean on) throws SocketException {
         if (DroidSafeAndroidRuntime.control) throw new SocketException(
                 "Methods sendUrgentData, setOOBInline are not supported.");
         addTaint(on);
-        // ---------- Original Method ----------
-        //throw new SocketException(
-                //"Methods sendUrgentData, setOOBInline are not supported.");
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.038 -0400", hash_original_method = "14168DA1E68DB132A0DACBB007EAD125", hash_generated_method = "DB8DA0A7842533BECD37164A9F914EE4")
     private void shutdown() {
         {
@@ -610,30 +639,31 @@ public class SSLSocketImpl extends SSLSocket {
             handshakeProtocol = null;
             recordProtocol.shutdown();
             recordProtocol = null;
-        } //End block
+        } 
         socket_was_closed = true;
-        // ---------- Original Method ----------
-        //if (handshake_started) {
-            //alertProtocol.shutdown();
-            //alertProtocol = null;
-            //handshakeProtocol.shutdown();
-            //handshakeProtocol = null;
-            //recordProtocol.shutdown();
-            //recordProtocol = null;
-        //}
-        //socket_was_closed = true;
+        
+        
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.038 -0400", hash_original_method = "9F181DA813C5E35277B72423F9B4689F", hash_generated_method = "F5D2CCD9AF5F0BC7A5AD4545018BCEB8")
     protected void needAppData() throws IOException {
         {
             startHandshake();
-        } //End block
+        } 
         int type;
         {
             logger.println("SSLSocket.needAppData..");
-        } //End block
+        } 
         try 
         {
             {
@@ -641,76 +671,77 @@ public class SSLSocketImpl extends SSLSocket {
                 {
                     {
                         Object var4E37FE4E1A81B3E2D3D944D08C05A90F_2099140407 = (type = recordProtocol.unwrap());
-                        //Begin case ContentType.HANDSHAKE 
+                        
                         {
                             boolean var001467BA25544030FCEB8131CBC2B509_576855400 = (!handshakeProtocol.getStatus().equals(
                                 SSLEngineResult.HandshakeStatus
                                 .NOT_HANDSHAKING));
                             {
                                 doHandshake();
-                            } //End block
-                        } //End collapsed parenthetic
-                        //End case ContentType.HANDSHAKE 
-                        //Begin case ContentType.ALERT 
+                            } 
+                        } 
+                        
+                        
                         processAlert();
-                        //End case ContentType.ALERT 
-                        //Begin case ContentType.APPLICATION_DATA 
+                        
+                        
                         {
                             logger.println(
                                     "SSLSocket.needAppData: got the data");
-                        } //End block
-                        //End case ContentType.APPLICATION_DATA 
-                        //Begin case default 
+                        } 
+                        
+                        
                         reportFatalAlert(AlertProtocol.UNEXPECTED_MESSAGE,
                                 new SSLException("Unexpected message of type "
                                     + type + " has been got"));
-                        //End case default 
-                    } //End collapsed parenthetic
+                        
+                    } 
                     {
                         boolean var2403FF9531EBD6D17D981C2B0AA326B1_1654319029 = (alertProtocol.hasAlert());
                         {
                             output.write(alertProtocol.wrap());
                             alertProtocol.setProcessed();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         appDataIS.setEnd();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         catch (AlertException e)
         {
             reportFatalAlert(e.getDescriptionCode(), e.getReason());
-        } //End block
+        } 
         catch (EndOfSourceException e)
         {
             appDataIS.setEnd();
-        } //End block
+        } 
         {
             logger.println("SSLSocket.needAppData: app data len: "
                     + appDataIS.available());
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.039 -0400", hash_original_method = "BD84CA3E70E7330B95C89C209BCE2D56", hash_generated_method = "3C8D2FF8649A5327CFD202CA6AE99C7A")
     protected void writeAppData(byte[] data, int offset, int len) throws IOException {
         {
             startHandshake();
-        } //End block
+        } 
         {
             logger.println("SSLSocket.writeAppData: " +
                     len + " " + SSLRecordProtocol.MAX_DATA_LENGTH);
-        } //End block
+        } 
         try 
         {
             {
                 output.write(recordProtocol.wrap(ContentType.APPLICATION_DATA,
                             data, offset, len));
-            } //End block
+            } 
             {
                 {
                     output.write(recordProtocol.wrap(
@@ -718,26 +749,27 @@ public class SSLSocketImpl extends SSLSocket {
                                 SSLRecordProtocol.MAX_DATA_LENGTH));
                     offset += SSLRecordProtocol.MAX_DATA_LENGTH;
                     len -= SSLRecordProtocol.MAX_DATA_LENGTH;
-                } //End block
+                } 
                 {
                     output.write(
                         recordProtocol.wrap(ContentType.APPLICATION_DATA,
                                             data, offset, len));
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (AlertException e)
         {
             reportFatalAlert(e.getDescriptionCode(), e.getReason());
-        } //End block
+        } 
         addTaint(data[0]);
         addTaint(offset);
         addTaint(len);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.042 -0400", hash_original_method = "B11A6FC07E880C42041746EA2FD3607A", hash_generated_method = "82F2AD0047731C1B7A465267C629EA9A")
     private void doHandshake() throws IOException {
         SSLEngineResult.HandshakeStatus status;
@@ -755,59 +787,59 @@ public class SSLSocketImpl extends SSLSocket {
                                 SSLEngineResult.HandshakeStatus.NEED_WRAP)));
                             Object var0C0A9498B08BB4C776E5FCE33FD86930_983875294 = ((status.equals(
                                 SSLEngineResult.HandshakeStatus.NEED_UNWRAP)));
-                        } //End flattened ternary
+                        } 
                         s = "NEED_UNWRAP";
                         s = "STATUS: OTHER!";
                         logger.println("SSLSocketImpl: HS status: "+s+" "+status);
-                    } //End block
+                    } 
                     {
                         boolean varA794CBC77B92A94782D7BB220928EB7E_1440946796 = (status.equals(SSLEngineResult.HandshakeStatus.NEED_WRAP));
                         {
                             output.write(handshakeProtocol.wrap());
-                        } //End block
+                        } 
                         {
                             boolean varA4C4CAA5C31A47911ED74B3CF47C970B_96207364 = (status.equals(
                             SSLEngineResult.HandshakeStatus.NEED_UNWRAP));
                             {
                                 {
                                     Object varE51AE817664D86FB975B92A5A0C84BF6_1148576507 = (type = recordProtocol.unwrap());
-                                    //Begin case ContentType.ALERT 
+                                    
                                     processAlert();
-                                    //End case ContentType.ALERT 
-                                    //Begin case default 
+                                    
+                                    
                                     reportFatalAlert(AlertProtocol.UNEXPECTED_MESSAGE,
                                     new SSLException(
                                         "Unexpected message of type "
                                         + type + " has been got"));
-                                    //End case default 
-                                } //End collapsed parenthetic
-                            } //End block
+                                    
+                                } 
+                            } 
                             {
                                 reportFatalAlert(AlertProtocol.INTERNAL_ERROR,
                         new SSLException(
                             "Handshake passed unexpected status: "+status));
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
                     {
                         boolean var2403FF9531EBD6D17D981C2B0AA326B1_1710262213 = (alertProtocol.hasAlert());
                         {
                             output.write(alertProtocol.wrap());
                             alertProtocol.setProcessed();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         catch (EndOfSourceException e)
         {
             appDataIS.setEnd();
             if (DroidSafeAndroidRuntime.control) throw new IOException("Connection was closed");
-        } //End block
+        } 
         catch (AlertException e)
         {
             reportFatalAlert(e.getDescriptionCode(), e.getReason());
-        } //End block
+        } 
         session = recordProtocol.getSession();
         {
             HandshakeCompletedEvent event = new HandshakeCompletedEvent(this, session);
@@ -817,19 +849,20 @@ public class SSLSocketImpl extends SSLSocket {
                 {
                     listeners.get(i)
                     .handshakeCompleted(event);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.043 -0400", hash_original_method = "1DCA961CD2F2BCD453967A97232AAFC6", hash_generated_method = "FCBD097D2700BB6B5D50B69E4C8FC310")
     private void processAlert() throws IOException {
         {
             boolean varBA114C5BBB68A4964579B65C6677BE54_1032058597 = (!alertProtocol.hasAlert());
-        } //End collapsed parenthetic
+        } 
         {
             boolean var4D069DF686D20BBCD8851C3E216CBC3C_959828464 = (alertProtocol.isFatalAlert());
             {
@@ -838,32 +871,33 @@ public class SSLSocketImpl extends SSLSocket {
                 + alertProtocol.getAlertDescription();
                 shutdown();
                 if (DroidSafeAndroidRuntime.control) throw new SSLException(description);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             logger.println("Warning alert received: "
                 + alertProtocol.getAlertDescription());
-        } //End block
+        } 
         {
             Object var182D8DDEF223C10A221BDC17A7C27715_1715088626 = (alertProtocol.getDescriptionCode());
-            //Begin case AlertProtocol.CLOSE_NOTIFY 
+            
             alertProtocol.setProcessed();
-            //End case AlertProtocol.CLOSE_NOTIFY 
-            //Begin case AlertProtocol.CLOSE_NOTIFY 
+            
+            
             appDataIS.setEnd();
-            //End case AlertProtocol.CLOSE_NOTIFY 
-            //Begin case AlertProtocol.CLOSE_NOTIFY 
+            
+            
             close();
-            //End case AlertProtocol.CLOSE_NOTIFY 
-            //Begin case default 
+            
+            
             alertProtocol.setProcessed();
-            //End case default 
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.044 -0400", hash_original_method = "716B8ABB2A0B730F9297C2C81BE3F29D", hash_generated_method = "E8ACAB617807FCE21DCEF5E1395E6368")
     private void reportFatalAlert(byte description_code,
             SSLException reason) throws IOException {
@@ -871,7 +905,7 @@ public class SSLSocketImpl extends SSLSocket {
         try 
         {
             output.write(alertProtocol.wrap());
-        } //End block
+        } 
         catch (IOException ex)
         { }
         alertProtocol.setProcessed();
@@ -879,14 +913,14 @@ public class SSLSocketImpl extends SSLSocket {
         if (DroidSafeAndroidRuntime.control) throw reason;
         addTaint(description_code);
         addTaint(reason.getTaint());
-        // ---------- Original Method ----------
-        //alertProtocol.alert(AlertProtocol.FATAL, description_code);
-        //try {
-            //output.write(alertProtocol.wrap());
-        //} catch (IOException ex) { }
-        //alertProtocol.setProcessed();
-        //shutdown();
-        //throw reason;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     

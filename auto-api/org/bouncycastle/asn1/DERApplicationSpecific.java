@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -30,10 +30,10 @@ public class DERApplicationSpecific extends ASN1Object {
         this.isConstructed = isConstructed;
         this.tag = tag;
         this.octets = octets;
-        // ---------- Original Method ----------
-        //this.isConstructed = isConstructed;
-        //this.tag = tag;
-        //this.octets = octets;
+        
+        
+        
+        
     }
 
     
@@ -44,7 +44,7 @@ public class DERApplicationSpecific extends ASN1Object {
         this(false, tag, octets);
         addTaint(tag);
         addTaint(octets[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -55,7 +55,7 @@ public class DERApplicationSpecific extends ASN1Object {
         this(true, tag, object);
         addTaint(tag);
         addTaint(object.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -69,29 +69,29 @@ public class DERApplicationSpecific extends ASN1Object {
         this.tag = tag;
         {
             this.octets = data;
-        } //End block
+        } 
         {
             int lenBytes = getLengthOfLength(data);
             byte[] tmp = new byte[data.length - lenBytes];
             System.arraycopy(data, lenBytes, tmp, 0, tmp.length);
             this.octets = tmp;
-        } //End block
+        } 
         addTaint(object.getTaint());
-        // ---------- Original Method ----------
-        //byte[] data = object.getDERObject().getDEREncoded();
-        //this.isConstructed = explicit;
-        //this.tag = tag;
-        //if (explicit)
-        //{
-            //this.octets = data;
-        //}
-        //else
-        //{
-            //int lenBytes = getLengthOfLength(data);
-            //byte[] tmp = new byte[data.length - lenBytes];
-            //System.arraycopy(data, lenBytes, tmp, 0, tmp.length);
-            //this.octets = tmp;
-        //}
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -107,31 +107,31 @@ public class DERApplicationSpecific extends ASN1Object {
                 try 
                 {
                     bOut.write(((ASN1Encodable)vec.get(i)).getEncoded());
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ASN1ParsingException("malformed object: " + e, e);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         this.octets = bOut.toByteArray();
         addTaint(vec.getTaint());
-        // ---------- Original Method ----------
-        //this.tag = tagNo;
-        //this.isConstructed = true;
-        //ByteArrayOutputStream bOut = new ByteArrayOutputStream();
-        //for (int i = 0; i != vec.size(); i++)
-        //{
-            //try
-            //{
-                //bOut.write(((ASN1Encodable)vec.get(i)).getEncoded());
-            //}
-            //catch (IOException e)
-            //{
-                //throw new ASN1ParsingException("malformed object: " + e, e);
-            //}
-        //}
-        //this.octets = bOut.toByteArray();
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -141,13 +141,13 @@ public class DERApplicationSpecific extends ASN1Object {
         addTaint(data[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1445052635 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1445052635;
-        // ---------- Original Method ----------
-        //int count = 2;
-        //while((data[count - 1] & 0x80) != 0)
-        //{
-            //count++;
-        //}
-        //return count;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -155,8 +155,8 @@ public class DERApplicationSpecific extends ASN1Object {
     public boolean isConstructed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_485649454 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_485649454;
-        // ---------- Original Method ----------
-        //return isConstructed;
+        
+        
     }
 
     
@@ -164,8 +164,8 @@ public class DERApplicationSpecific extends ASN1Object {
     public byte[] getContents() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1050940010 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1050940010;
-        // ---------- Original Method ----------
-        //return octets;
+        
+        
     }
 
     
@@ -173,49 +173,51 @@ public class DERApplicationSpecific extends ASN1Object {
     public int getApplicationTag() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1564550740 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1564550740;
-        // ---------- Original Method ----------
-        //return tag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.250 -0400", hash_original_method = "E9ECF57BA1A3D60C7D24C2D1B840176E", hash_generated_method = "5F9B4F17A64450644238B933FCC3F940")
     public DERObject getObject() throws IOException {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_595228696 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_595228696 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_595228696 = new ASN1InputStream(getContents()).readObject();
-        varB4EAC82CA7396A68D541C85D26508E83_595228696.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_595228696.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_595228696;
-        // ---------- Original Method ----------
-        //return new ASN1InputStream(getContents()).readObject();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.251 -0400", hash_original_method = "8D6BE9D0FACD64D64BE0372060383689", hash_generated_method = "75B6EF51EC98A0E564DA42A2CF619DB1")
     public DERObject getObject(int derTagNo) throws IOException {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1540386789 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1540386789 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("unsupported tag number");
-        } //End block
+        } 
         byte[] orig = this.getEncoded();
         byte[] tmp = replaceTagNumber(derTagNo, orig);
         {
             tmp[0] |= DERTags.CONSTRUCTED;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1540386789 = new ASN1InputStream(tmp).readObject();
         addTaint(derTagNo);
-        varB4EAC82CA7396A68D541C85D26508E83_1540386789.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1540386789.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1540386789;
-        // ---------- Original Method ----------
-        //if (derTagNo >= 0x1f)
-        //{
-            //throw new IOException("unsupported tag number");
-        //}
-        //byte[] orig = this.getEncoded();
-        //byte[] tmp = replaceTagNumber(derTagNo, orig);
-        //if ((orig[0] & DERTags.CONSTRUCTED) != 0)
-        //{
-            //tmp[0] |= DERTags.CONSTRUCTED;
-        //}
-        //return new ASN1InputStream(tmp).readObject();
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -224,16 +226,16 @@ public class DERApplicationSpecific extends ASN1Object {
         int classBits = DERTags.APPLICATION;
         {
             classBits |= DERTags.CONSTRUCTED;
-        } //End block
+        } 
         out.writeEncoded(classBits, tag, octets);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //int classBits = DERTags.APPLICATION;
-        //if (isConstructed)
-        //{
-            //classBits |= DERTags.CONSTRUCTED; 
-        //}
-        //out.writeEncoded(classBits, tag, octets);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -247,28 +249,30 @@ public class DERApplicationSpecific extends ASN1Object {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_120474125 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_120474125;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERApplicationSpecific))
-        //{
-            //return false;
-        //}
-        //DERApplicationSpecific other = (DERApplicationSpecific)o;
-        //return isConstructed == other.isConstructed
-            //&& tag == other.tag
-            //&& Arrays.areEqual(octets, other.octets);
+        
+        
+        
+            
+        
+        
+        
+            
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.252 -0400", hash_original_method = "CE8CF2E74F2DF6C65F2B809B8ECF710B", hash_generated_method = "326DCDDEFAB1C276DD991839B4A2E6AC")
     public int hashCode() {
-        int varE64E1A0AB0154FE686008799DA931C7F_2057348117 = ((isConstructed ? 1 : 0) ^ tag ^ Arrays.hashCode(octets)); //DSFIXME:  CODE0008: Nested ternary operator in expression
+        int varE64E1A0AB0154FE686008799DA931C7F_2057348117 = ((isConstructed ? 1 : 0) ^ tag ^ Arrays.hashCode(octets)); 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1249093319 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1249093319;
-        // ---------- Original Method ----------
-        //return (isConstructed ? 1 : 0) ^ tag ^ Arrays.hashCode(octets);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.253 -0400", hash_original_method = "DBC165FE2DD4A16BCAF214B19B914EC2", hash_generated_method = "42AFD0A6315433527690C2ECA6CDB543")
     private byte[] replaceTagNumber(int newTag, byte[] input) throws IOException {
         int tagNo = input[0] & 0x1f;
@@ -278,14 +282,14 @@ public class DERApplicationSpecific extends ASN1Object {
             int b = input[index++] & 0xff;
             {
                 if (DroidSafeAndroidRuntime.control) throw new ASN1ParsingException("corrupted stream - invalid high tag number found");
-            } //End block
+            } 
             {
                 tagNo |= (b & 0x7f);
                 tagNo <<= 7;
                 b = input[index++] & 0xff;
-            } //End block
+            } 
             tagNo |= (b & 0x7f);
-        } //End block
+        } 
         byte[] tmp = new byte[input.length - index + 1];
         System.arraycopy(input, index, tmp, 1, tmp.length - 1);
         tmp[0] = (byte)newTag;
@@ -293,29 +297,29 @@ public class DERApplicationSpecific extends ASN1Object {
         addTaint(input[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_549894306 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_549894306;
-        // ---------- Original Method ----------
-        //int tagNo = input[0] & 0x1f;
-        //int index = 1;
-        //if (tagNo == 0x1f)
-        //{
-            //tagNo = 0;
-            //int b = input[index++] & 0xff;
-            //if ((b & 0x7f) == 0) 
-            //{
-                //throw new ASN1ParsingException("corrupted stream - invalid high tag number found");
-            //}
-            //while ((b >= 0) && ((b & 0x80) != 0))
-            //{
-                //tagNo |= (b & 0x7f);
-                //tagNo <<= 7;
-                //b = input[index++] & 0xff;
-            //}
-            //tagNo |= (b & 0x7f);
-        //}
-        //byte[] tmp = new byte[input.length - index + 1];
-        //System.arraycopy(input, index, tmp, 1, tmp.length - 1);
-        //tmp[0] = (byte)newTag;
-        //return tmp;
+        
+        
+        
+        
+        
+            
+            
+            
+            
+                
+            
+            
+            
+                
+                
+                
+            
+            
+        
+        
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Random;
 
@@ -13,7 +13,7 @@ public final class Math {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.361 -0400", hash_original_method = "0273784C246265D2ED8DEE21631953AB", hash_generated_method = "78B9D931D5E71470A5832EAA02F41698")
     private  Math() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -117,6 +117,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double max(double d1, double d2) {
         if (d1 > d2) {
             return d1;
@@ -134,6 +135,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float max(float f1, float f2) {
         if (f1 > f2) {
             return f1;
@@ -161,6 +163,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double min(double d1, double d2) {
         if (d1 > d2) {
             return d2;
@@ -178,6 +181,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float min(float f1, float f2) {
         if (f1 > f2) {
             return f2;
@@ -215,6 +219,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long round(double d) {
         if (d != d) {
             return 0L;
@@ -223,6 +228,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int round(float f) {
         if (f != f) {
             return 0;
@@ -231,6 +237,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double signum(double d) {
         if (Double.isNaN(d)) {
             return Double.NaN;
@@ -245,6 +252,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float signum(float f) {
         if (Float.isNaN(f)) {
             return Float.NaN;
@@ -284,6 +292,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized double random() {
         if (random == null) {
             random = new Random();
@@ -302,6 +311,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double ulp(double d) {
         if (Double.isInfinite(d)) {
             return Double.POSITIVE_INFINITY;
@@ -318,6 +328,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float ulp(float f) {
         if (Float.isNaN(f)) {
             return Float.NaN;
@@ -341,6 +352,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double copySign(double magnitude, double sign) {
         long magnitudeBits = Double.doubleToRawLongBits(magnitude);
         long signBits = Double.doubleToRawLongBits(sign);
@@ -349,6 +361,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float copySign(float magnitude, float sign) {
         int magnitudeBits = Float.floatToRawIntBits(magnitude);
         int signBits = Float.floatToRawIntBits(sign);
@@ -357,6 +370,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getExponent(float f) {
         int bits = Float.floatToRawIntBits(f);
         bits = (bits & Float.EXPONENT_MASK) >> Float.MANTISSA_BITS;
@@ -364,6 +378,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getExponent(double d) {
         long bits = Double.doubleToRawLongBits(d);
         bits = (bits & Double.EXPONENT_MASK) >> Double.MANTISSA_BITS;
@@ -371,6 +386,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double nextAfter(double start, double direction) {
         if (start == 0 && direction == 0) {
             return direction;
@@ -379,6 +395,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float nextAfter(float start, double direction) {
         if (Float.isNaN(start) || Double.isNaN(direction)) {
             return Float.NaN;
@@ -420,6 +437,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double nextUp(double d) {
         if (Double.isNaN(d)) {
             return Double.NaN;
@@ -437,6 +455,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float nextUp(float f) {
         if (Float.isNaN(f)) {
             return Float.NaN;
@@ -454,6 +473,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double scalb(double d, int scaleFactor) {
         if (Double.isNaN(d) || Double.isInfinite(d) || d == 0) {
             return d;
@@ -493,6 +513,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float scalb(float d, int scaleFactor) {
         if (Float.isNaN(d) || Float.isInfinite(d) || d == 0) {
             return d;
@@ -532,6 +553,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int shiftIntBits(int bits, int digits) {
         if (digits > 0) {
             return bits << digits;
@@ -556,6 +578,7 @@ public final class Math {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static long shiftLongBits(long bits, long digits) {
         if (digits > 0) {
             return bits << digits;

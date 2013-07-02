@@ -1,11 +1,11 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.nio.channels.spi.AbstractSelectableChannel;
@@ -15,10 +15,11 @@ public abstract class Pipe {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.670 -0400", hash_original_method = "AB1C252ACF4CEE3E1F01631225D9EB55", hash_generated_method = "FDC0FEC870B63611D7A177DD42514223")
     protected  Pipe() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Pipe open() throws IOException {
         return SelectorProvider.provider().openPipe();
     }
@@ -36,7 +37,7 @@ public abstract class Pipe {
         protected  SinkChannel(SelectorProvider provider) {
             super(provider);
             addTaint(provider.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -45,8 +46,8 @@ public abstract class Pipe {
         public final int validOps() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_824687364 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_824687364;
-            // ---------- Original Method ----------
-            //return SelectionKey.OP_WRITE;
+            
+            
         }
 
         
@@ -60,7 +61,7 @@ public abstract class Pipe {
         protected  SourceChannel(SelectorProvider provider) {
             super(provider);
             addTaint(provider.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -69,8 +70,8 @@ public abstract class Pipe {
         public final int validOps() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1533237234 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1533237234;
-            // ---------- Original Method ----------
-            //return SelectionKey.OP_READ;
+            
+            
         }
 
         

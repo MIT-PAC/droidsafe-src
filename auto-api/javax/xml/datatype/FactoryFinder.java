@@ -1,11 +1,11 @@
 package javax.xml.datatype;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedReader;
 import java.io.File;
@@ -21,10 +21,11 @@ final class FactoryFinder {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.459 -0400", hash_original_method = "7B7719B12A7C6C3FB4A57C9E537309B5", hash_generated_method = "70C8AB5057BD93D35BF5340AED7D1084")
     private  FactoryFinder() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void debugPrintln(String msg) {
         if (debug) {
             System.err.println(
@@ -74,6 +75,7 @@ final class FactoryFinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Object find(String factoryId, String fallbackClassName) throws ConfigurationError {
         ClassLoader classLoader = findClassLoader();
         String systemProp = System.getProperty(factoryId);
@@ -120,6 +122,7 @@ final class FactoryFinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Object findJarServiceProvider(String factoryId) throws ConfigurationError {
         String serviceId = "META-INF/services/" + factoryId;
         InputStream is = null;
@@ -159,6 +162,7 @@ final class FactoryFinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String which(Class clazz) {
         try {
             String classnameAsResource = clazz.getName().replace('.', '/') + ".class";
@@ -198,19 +202,19 @@ final class FactoryFinder {
             super(msg);
             this.exception = x;
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //this.exception = x;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.461 -0400", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "F82A39E40DA1CC7D9DFB9F3220989874")
          Exception getException() {
-            Exception varB4EAC82CA7396A68D541C85D26508E83_689508038 = null; //Variable for return #1
+            Exception varB4EAC82CA7396A68D541C85D26508E83_689508038 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_689508038 = exception;
-            varB4EAC82CA7396A68D541C85D26508E83_689508038.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_689508038.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_689508038;
-            // ---------- Original Method ----------
-            //return exception;
+            
+            
         }
 
         

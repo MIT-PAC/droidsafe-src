@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 class TimSort<T> {
@@ -37,34 +37,36 @@ class TimSort<T> {
         this.c = c;
         int len = a.length;
         @SuppressWarnings({"unchecked", "UnnecessaryLocalVariable"}) T[] newArray = (T[]) new Object[len < 2 * INITIAL_TMP_STORAGE_LENGTH ?
-                                        len >>> 1 : INITIAL_TMP_STORAGE_LENGTH];//DSFIXME:  CODE0008: Nested ternary operator in expression
+                                        len >>> 1 : INITIAL_TMP_STORAGE_LENGTH];
         tmp = newArray;
         int stackLen = (len <    120  ?  5 :
                         len <   1542  ? 10 :
-                        len < 119151  ? 19 : 40);//DSFIXME:  CODE0008: Nested ternary operator in expression
+                        len < 119151  ? 19 : 40);
         runBase = new int[stackLen];
         runLen = new int[stackLen];
-        // ---------- Original Method ----------
-        //this.a = a;
-        //this.c = c;
-        //int len = a.length;
-        //@SuppressWarnings({"unchecked", "UnnecessaryLocalVariable"})
-        //T[] newArray = (T[]) new Object[len < 2 * INITIAL_TMP_STORAGE_LENGTH ?
-                                        //len >>> 1 : INITIAL_TMP_STORAGE_LENGTH];
-        //tmp = newArray;
-        //int stackLen = (len <    120  ?  5 :
-                        //len <   1542  ? 10 :
-                        //len < 119151  ? 19 : 40);
-        //runBase = new int[stackLen];
-        //runLen = new int[stackLen];
+        
+        
+        
+        
+        
+        
+                                        
+        
+        
+                        
+                        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static <T> void sort(T[] a, Comparator<? super T> c) {
         sort(a, 0, a.length, c);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static <T> void sort(T[] a, int lo, int hi, Comparator<? super T> c) {
         if (c == null) {
             Arrays.sort(a, lo, hi);
@@ -99,6 +101,7 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("fallthrough")
     private static <T> void binarySort(T[] a, int lo, int hi, int start,
                                        Comparator<? super T> c) {
@@ -130,6 +133,7 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static <T> int countRunAndMakeAscending(T[] a, int lo, int hi,
                                                     Comparator<? super T> c) {
         if (DEBUG) assert lo < hi;
@@ -173,56 +177,59 @@ class TimSort<T> {
     private void pushRun(int runBase, int runLen) {
         this.runBase[stackSize] = runBase;
         this.runLen[stackSize] = runLen;
-        // ---------- Original Method ----------
-        //this.runBase[stackSize] = runBase;
-        //this.runLen[stackSize] = runLen;
-        //stackSize++;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.822 -0400", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "803A16916F825CB37B1279AACA9FF1AA")
     private void mergeCollapse() {
         {
             int n = stackSize - 2;
             {
                 mergeAt(n);
-            } //End block
+            } 
             {
                 mergeAt(n);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //while (stackSize > 1) {
-            //int n = stackSize - 2;
-            //if (n > 0 && runLen[n-1] <= runLen[n] + runLen[n+1]) {
-                //if (runLen[n - 1] < runLen[n + 1])
-                    //n--;
-                //mergeAt(n);
-            //} else if (runLen[n] <= runLen[n + 1]) {
-                //mergeAt(n);
-            //} else {
-                //break; 
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                    
+                
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.822 -0400", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "93554060FE337192E37822454879853E")
     private void mergeForceCollapse() {
         {
             int n = stackSize - 2;
             mergeAt(n);
-        } //End block
-        // ---------- Original Method ----------
-        //while (stackSize > 1) {
-            //int n = stackSize - 2;
-            //if (n > 0 && runLen[n - 1] < runLen[n + 1])
-                //n--;
-            //mergeAt(n);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.823 -0400", hash_original_method = "8940A54787C662CE81882AD52921A328", hash_generated_method = "E86C34AA42B875E18746D9E9577B5283")
     private void mergeAt(int i) {
         int base1 = runBase[i];
@@ -233,18 +240,19 @@ class TimSort<T> {
         {
             runBase[i + 1] = runBase[i + 2];
             runLen[i + 1] = runLen[i + 2];
-        } //End block
+        } 
         int k = gallopRight(a[base2], a, base1, len1, 0, c);
         base1 += k;
         len1 -= k;
         len2 = gallopLeft(a[base1 + len1 - 1], a, base2, len2, len2 - 1, c);
         mergeLo(base1, len1, base2, len2);
         mergeHi(base1, len1, base2, len2);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static <T> int gallopLeft(T key, T[] a, int base, int len, int hint,
                                       Comparator<? super T> c) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
@@ -290,6 +298,7 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static <T> int gallopRight(T key, T[] a, int base, int len,
                                        int hint, Comparator<? super T> c) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
@@ -335,6 +344,7 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.826 -0400", hash_original_method = "28B33299F4BA824C1BCFC057E41834D8", hash_generated_method = "E79AC9329572C4424058CCA7B4879497")
     private void mergeLo(int base1, int len1, int base2, int len2) {
         T[] a = this.a;
@@ -346,11 +356,11 @@ class TimSort<T> {
         a[dest++] = a[cursor2++];
         {
             System.arraycopy(tmp, cursor1, a, dest, len1);
-        } //End block
+        } 
         {
             System.arraycopy(a, cursor2, a, dest, len2);
             a[dest + len2] = tmp[cursor1];
-        } //End block
+        } 
         Comparator<? super T> c = this.c;
         int minGallop = this.minGallop;
         {
@@ -362,13 +372,13 @@ class TimSort<T> {
                     {
                         a[dest++] = a[cursor2++];
                         count1 = 0;
-                    } //End block
+                    } 
                     {
                         a[dest++] = tmp[cursor1++];
                         count2 = 0;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 count1 = gallopRight(a[cursor2], tmp, cursor1, len1, 0, c);
                 {
@@ -376,7 +386,7 @@ class TimSort<T> {
                     dest += count1;
                     cursor1 += count1;
                     len1 -= count1;
-                } //End block
+                } 
                 a[dest++] = a[cursor2++];
                 count2 = gallopLeft(tmp[cursor1], a, cursor2, len2, 0, c);
                 {
@@ -384,32 +394,33 @@ class TimSort<T> {
                     dest += count2;
                     cursor2 += count2;
                     len2 -= count2;
-                } //End block
+                } 
                 a[dest++] = tmp[cursor1++];
-            } //End block
+            } 
             minGallop = 0;
             minGallop += 2;
-        } //End block
+        } 
         this.minGallop = minGallop < 1 ? 1 : minGallop;
         {
             System.arraycopy(a, cursor2, a, dest, len2);
             a[dest + len2] = tmp[cursor1];
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                 "Comparison method violates its general contract!");
-        } //End block
+        } 
         {
             System.arraycopy(tmp, cursor1, a, dest, len1);
-        } //End block
+        } 
         addTaint(base1);
         addTaint(len1);
         addTaint(base2);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.827 -0400", hash_original_method = "D6C962299FDFC629DCB3EC52DDA4C6D9", hash_generated_method = "A7707BB529A751CABD50E4C7989C8A0D")
     private void mergeHi(int base1, int len1, int base2, int len2) {
         T[] a = this.a;
@@ -421,13 +432,13 @@ class TimSort<T> {
         a[dest--] = a[cursor1--];
         {
             System.arraycopy(tmp, 0, a, dest - (len2 - 1), len2);
-        } //End block
+        } 
         {
             dest -= len1;
             cursor1 -= len1;
             System.arraycopy(a, cursor1 + 1, a, dest + 1, len1);
             a[dest] = tmp[cursor2];
-        } //End block
+        } 
         Comparator<? super T> c = this.c;
         int minGallop = this.minGallop;
         {
@@ -439,13 +450,13 @@ class TimSort<T> {
                     {
                         a[dest--] = a[cursor1--];
                         count2 = 0;
-                    } //End block
+                    } 
                     {
                         a[dest--] = tmp[cursor2--];
                         count1 = 0;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 count1 = len1 - gallopRight(tmp[cursor2], a, base1, len1, len1 - 1, c);
                 {
@@ -453,7 +464,7 @@ class TimSort<T> {
                     cursor1 -= count1;
                     len1 -= count1;
                     System.arraycopy(a, cursor1 + 1, a, dest + 1, count1);
-                } //End block
+                } 
                 a[dest--] = tmp[cursor2--];
                 count2 = len2 - gallopLeft(a[cursor1], tmp, 0, len2, len2 - 1, c);
                 {
@@ -461,38 +472,39 @@ class TimSort<T> {
                     cursor2 -= count2;
                     len2 -= count2;
                     System.arraycopy(tmp, cursor2 + 1, a, dest + 1, count2);
-                } //End block
+                } 
                 a[dest--] = a[cursor1--];
-            } //End block
+            } 
             minGallop = 0;
             minGallop += 2;
-        } //End block
+        } 
         this.minGallop = minGallop < 1 ? 1 : minGallop;
         {
             dest -= len1;
             cursor1 -= len1;
             System.arraycopy(a, cursor1 + 1, a, dest + 1, len1);
             a[dest] = tmp[cursor2];
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                 "Comparison method violates its general contract!");
-        } //End block
+        } 
         {
             System.arraycopy(tmp, 0, a, dest - (len2 - 1), len2);
-        } //End block
+        } 
         addTaint(base1);
         addTaint(len1);
         addTaint(base2);
         addTaint(len2);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.828 -0400", hash_original_method = "DEB75D9E243CF808689902CC0AE95AB4", hash_generated_method = "7E02B0D686774A18CD14428FFE1985EA")
     private T[] ensureCapacity(int minCapacity) {
-        T[] varB4EAC82CA7396A68D541C85D26508E83_1222622596 = null; //Variable for return #1
+        T[] varB4EAC82CA7396A68D541C85D26508E83_1222622596 = null; 
         {
             int newSize = minCapacity;
             newSize |= newSize >> 1;
@@ -504,29 +516,29 @@ class TimSort<T> {
             newSize = Math.min(newSize, a.length >>> 1);
             @SuppressWarnings({"unchecked", "UnnecessaryLocalVariable"}) T[] newArray = (T[]) new Object[newSize];
             tmp = newArray;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1222622596 = tmp;
         addTaint(minCapacity);
-        varB4EAC82CA7396A68D541C85D26508E83_1222622596.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1222622596.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1222622596;
-        // ---------- Original Method ----------
-        //if (tmp.length < minCapacity) {
-            //int newSize = minCapacity;
-            //newSize |= newSize >> 1;
-            //newSize |= newSize >> 2;
-            //newSize |= newSize >> 4;
-            //newSize |= newSize >> 8;
-            //newSize |= newSize >> 16;
-            //newSize++;
-            //if (newSize < 0) 
-                //newSize = minCapacity;
-            //else
-                //newSize = Math.min(newSize, a.length >>> 1);
-            //@SuppressWarnings({"unchecked", "UnnecessaryLocalVariable"})
-            //T[] newArray = (T[]) new Object[newSize];
-            //tmp = newArray;
-        //}
-        //return tmp;
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+            
+            
+        
+        
     }
 
     

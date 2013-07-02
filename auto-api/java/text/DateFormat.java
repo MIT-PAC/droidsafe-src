@@ -1,11 +1,11 @@
 package java.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.InvalidObjectException;
 import java.util.Calendar;
@@ -26,28 +26,30 @@ public abstract class DateFormat extends Format {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.727 -0400", hash_original_method = "B3EF4E3485D0789C83BAEC35E9E3BAD6", hash_generated_method = "4CEB3B1E67F52104B0EDECB49E396168")
     protected  DateFormat() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.728 -0400", hash_original_method = "6214BE37793C3124BC718667B7E0632D", hash_generated_method = "D66A06EEFF73E6E52FFA082F68F15735")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1220196387 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1220196387 = null; 
         DateFormat clone = (DateFormat) super.clone();
         clone.calendar = (Calendar) calendar.clone();
         clone.numberFormat = (NumberFormat) numberFormat.clone();
         varB4EAC82CA7396A68D541C85D26508E83_1220196387 = clone;
-        varB4EAC82CA7396A68D541C85D26508E83_1220196387.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1220196387.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1220196387;
-        // ---------- Original Method ----------
-        //DateFormat clone = (DateFormat) super.clone();
-        //clone.calendar = (Calendar) calendar.clone();
-        //clone.numberFormat = (NumberFormat) numberFormat.clone();
-        //return clone;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.728 -0400", hash_original_method = "ACA6119BE57A696CA271FA419EAF8A87", hash_generated_method = "33968356490D6878ACA36ED8C853F3FE")
     @Override
     public boolean equals(Object object) {
@@ -63,22 +65,22 @@ public abstract class DateFormat extends Format {
         addTaint(object.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_633218185 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_633218185;
-        // ---------- Original Method ----------
-        //if (this == object) {
-            //return true;
-        //}
-        //if (!(object instanceof DateFormat)) {
-            //return false;
-        //}
-        //DateFormat dateFormat = (DateFormat) object;
-        //return numberFormat.equals(dateFormat.numberFormat)
-                //&& calendar.getTimeZone().equals(
-                        //dateFormat.calendar.getTimeZone())
-                //&& calendar.getFirstDayOfWeek() == dateFormat.calendar
-                        //.getFirstDayOfWeek()
-                //&& calendar.getMinimalDaysInFirstWeek() == dateFormat.calendar
-                        //.getMinimalDaysInFirstWeek()
-                //&& calendar.isLenient() == dateFormat.calendar.isLenient();
+        
+        
+            
+        
+        
+            
+        
+        
+        
+                
+                        
+                
+                        
+                
+                        
+                
     }
 
     
@@ -86,53 +88,53 @@ public abstract class DateFormat extends Format {
     @Override
     public final StringBuffer format(Object object, StringBuffer buffer,
             FieldPosition field) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1059416546 = null; //Variable for return #1
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_298941476 = null; //Variable for return #2
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1059416546 = null; 
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_298941476 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1059416546 = format((Date) object, buffer, field);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_298941476 = format(new Date(((Number) object).longValue()), buffer,
                     field);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         addTaint(object.getTaint());
         addTaint(buffer.getTaint());
         addTaint(field.getTaint());
-        StringBuffer varA7E53CE21691AB073D9660D615818899_646095104; //Final return value
+        StringBuffer varA7E53CE21691AB073D9660D615818899_646095104; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_646095104 = varB4EAC82CA7396A68D541C85D26508E83_1059416546;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_646095104 = varB4EAC82CA7396A68D541C85D26508E83_298941476;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_646095104.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_646095104.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_646095104;
-        // ---------- Original Method ----------
-        //if (object instanceof Date) {
-            //return format((Date) object, buffer, field);
-        //}
-        //if (object instanceof Number) {
-            //return format(new Date(((Number) object).longValue()), buffer,
-                    //field);
-        //}
-        //throw new IllegalArgumentException();
+        
+        
+            
+        
+        
+            
+                    
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.729 -0400", hash_original_method = "2A35FD3F5DCDDD81B439EA4274C41413", hash_generated_method = "DF06AC984B438D26A94E2671159115B0")
     public final String format(Date date) {
-        String varB4EAC82CA7396A68D541C85D26508E83_873482182 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_873482182 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_873482182 = format(date, new StringBuffer(), new FieldPosition(0))
                 .toString();
         addTaint(date.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_873482182.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_873482182.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_873482182;
-        // ---------- Original Method ----------
-        //return format(date, new StringBuffer(), new FieldPosition(0))
-                //.toString();
+        
+        
+                
     }
 
     
@@ -140,6 +142,7 @@ public abstract class DateFormat extends Format {
             FieldPosition field);
 
     
+    @DSModeled(DSC.SAFE)
     public static Locale[] getAvailableLocales() {
         return ICU.getAvailableDateFormatLocales();
     }
@@ -147,12 +150,12 @@ public abstract class DateFormat extends Format {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.731 -0400", hash_original_method = "AC2D491D0E9EF49D1E9DF4E35BBACC3B", hash_generated_method = "B13F1499DDE273D4774564DC713E9436")
     public Calendar getCalendar() {
-        Calendar varB4EAC82CA7396A68D541C85D26508E83_363760473 = null; //Variable for return #1
+        Calendar varB4EAC82CA7396A68D541C85D26508E83_363760473 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_363760473 = calendar;
-        varB4EAC82CA7396A68D541C85D26508E83_363760473.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_363760473.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_363760473;
-        // ---------- Original Method ----------
-        //return calendar;
+        
+        
     }
 
     
@@ -201,12 +204,12 @@ public abstract class DateFormat extends Format {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.732 -0400", hash_original_method = "303CF4BDA8F6551FE38CF841A2AE86A7", hash_generated_method = "D87DB035B2CC2497139387C272C22BD4")
     public NumberFormat getNumberFormat() {
-        NumberFormat varB4EAC82CA7396A68D541C85D26508E83_1653557882 = null; //Variable for return #1
+        NumberFormat varB4EAC82CA7396A68D541C85D26508E83_1653557882 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1653557882 = numberFormat;
-        varB4EAC82CA7396A68D541C85D26508E83_1653557882.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1653557882.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1653557882;
-        // ---------- Original Method ----------
-        //return numberFormat;
+        
+        
     }
 
     
@@ -227,17 +230,19 @@ public abstract class DateFormat extends Format {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.733 -0400", hash_original_method = "028D1A898568609D223BE7B30E97723B", hash_generated_method = "0A10CF57D311C8E5E87FF82F1FEBCCE0")
     public TimeZone getTimeZone() {
-        TimeZone varB4EAC82CA7396A68D541C85D26508E83_1220867368 = null; //Variable for return #1
+        TimeZone varB4EAC82CA7396A68D541C85D26508E83_1220867368 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1220867368 = calendar.getTimeZone();
-        varB4EAC82CA7396A68D541C85D26508E83_1220867368.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1220867368.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1220867368;
-        // ---------- Original Method ----------
-        //return calendar.getTimeZone();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.733 -0400", hash_original_method = "3F46A6ECEE37AE5ECC5364DC5B9940AE", hash_generated_method = "B73839BA4F798144A8E6DB6AD3C53F11")
     @Override
     public int hashCode() {
@@ -245,31 +250,33 @@ public abstract class DateFormat extends Format {
                 + calendar.getMinimalDaysInFirstWeek()
                 + calendar.getTimeZone().hashCode()
                 + (calendar.isLenient() ? 1231 : 1237)
-                + numberFormat.hashCode()); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                + numberFormat.hashCode()); 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061425101 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061425101;
-        // ---------- Original Method ----------
-        //return calendar.getFirstDayOfWeek()
-                //+ calendar.getMinimalDaysInFirstWeek()
-                //+ calendar.getTimeZone().hashCode()
-                //+ (calendar.isLenient() ? 1231 : 1237)
-                //+ numberFormat.hashCode();
+        
+        
+                
+                
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.734 -0400", hash_original_method = "C4BF8639B942350BBBDBCDAD05669E72", hash_generated_method = "EE2E782BA5A5011EE9B2AAEDA1C9C20D")
     public boolean isLenient() {
         boolean varCF550C98B3980A2B47AF4BEE3581E80D_915706896 = (calendar.isLenient());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1412391603 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1412391603;
-        // ---------- Original Method ----------
-        //return calendar.isLenient();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.734 -0400", hash_original_method = "CB060FB8FCF7D6D5A12D02C797F79FD4", hash_generated_method = "D58A894A12B5B098A3DAF48AA87976EC")
     public Date parse(String string) throws ParseException {
-        Date varB4EAC82CA7396A68D541C85D26508E83_695415406 = null; //Variable for return #1
+        Date varB4EAC82CA7396A68D541C85D26508E83_695415406 = null; 
         ParsePosition position = new ParsePosition(0);
         Date date = parse(string, position);
         {
@@ -277,74 +284,78 @@ public abstract class DateFormat extends Format {
             {
                 if (DroidSafeAndroidRuntime.control) throw new ParseException("Unparseable date: \"" + string + "\"",
                     position.getErrorIndex());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_695415406 = date;
         addTaint(string.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_695415406.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_695415406.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_695415406;
-        // ---------- Original Method ----------
-        //ParsePosition position = new ParsePosition(0);
-        //Date date = parse(string, position);
-        //if (position.getIndex() == 0) {
-            //throw new ParseException("Unparseable date: \"" + string + "\"",
-                    //position.getErrorIndex());
-        //}
-        //return date;
+        
+        
+        
+        
+            
+                    
+        
+        
     }
 
     
     public abstract Date parse(String string, ParsePosition position);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.735 -0400", hash_original_method = "C9AA8969DE1792F4979FB5B1F65B9849", hash_generated_method = "BF97C718982B3A33A81D1DBE246DB2BE")
     @Override
     public Object parseObject(String string, ParsePosition position) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1970480606 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1970480606 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1970480606 = parse(string, position);
         addTaint(string.getTaint());
         addTaint(position.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1970480606.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1970480606.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1970480606;
-        // ---------- Original Method ----------
-        //return parse(string, position);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.735 -0400", hash_original_method = "6C57FEC8F5EF28EFDF88DCA370317E90", hash_generated_method = "E802D086EAB4F0F67AA7535AB9302E52")
     public void setCalendar(Calendar cal) {
         calendar = cal;
-        // ---------- Original Method ----------
-        //calendar = cal;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.735 -0400", hash_original_method = "C0CD4ED6DB9107DF0F000BE04B2DBCDB", hash_generated_method = "04206A48739095B73E63A4DD062B9C28")
     public void setLenient(boolean value) {
         calendar.setLenient(value);
         addTaint(value);
-        // ---------- Original Method ----------
-        //calendar.setLenient(value);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.735 -0400", hash_original_method = "DB316F58F9072942395CFF97FB7F9BCE", hash_generated_method = "16CBA8285F39434CB2D8444A821C6283")
     public void setNumberFormat(NumberFormat format) {
         numberFormat = format;
-        // ---------- Original Method ----------
-        //numberFormat = format;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.736 -0400", hash_original_method = "21956223404148B0DA41DA5118D6AFF3", hash_generated_method = "84D7DD06357FBDCE6F5A19BCE98E7A9A")
     public void setTimeZone(TimeZone timezone) {
         calendar.setTimeZone(timezone);
         addTaint(timezone.getTaint());
-        // ---------- Original Method ----------
-        //calendar.setTimeZone(timezone);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void checkDateStyle(int style) {
         if (!(style == SHORT || style == MEDIUM || style == LONG
                 || style == FULL || style == DEFAULT)) {
@@ -353,6 +364,7 @@ public abstract class DateFormat extends Format {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void checkTimeStyle(int style) {
         if (!(style == SHORT || style == MEDIUM || style == LONG
                 || style == FULL || style == DEFAULT)) {
@@ -374,14 +386,14 @@ public abstract class DateFormat extends Format {
                 boolean var1B0BEC2FE01BC686D6C0F04E5807969E_825074855 = (calendarField != -1 && table.get(Integer.valueOf(calendarField)) == null);
                 {
                     table.put(Integer.valueOf(calendarField), this);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(fieldName.getTaint());
-            // ---------- Original Method ----------
-            //this.calendarField = calendarField;
-            //if (calendarField != -1 && table.get(Integer.valueOf(calendarField)) == null) {
-                //table.put(Integer.valueOf(calendarField), this);
-            //}
+            
+            
+            
+                
+            
         }
 
         
@@ -389,8 +401,8 @@ public abstract class DateFormat extends Format {
         public int getCalendarField() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_42745566 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_42745566;
-            // ---------- Original Method ----------
-            //return calendarField;
+            
+            
         }
 
         

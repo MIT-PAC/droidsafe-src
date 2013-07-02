@@ -1,11 +1,11 @@
 package org.apache.commons.io.comparator;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.Serializable;
@@ -23,18 +23,18 @@ public class CompositeFileComparator extends AbstractFileComparator implements S
     public  CompositeFileComparator(Comparator<File>... delegates) {
         {
             this.delegates = (Comparator<File>[]) NO_COMPARATORS;
-        } //End block
+        } 
         {
             this.delegates = (Comparator<File>[]) new Comparator<?>[delegates.length];
             System.arraycopy(delegates, 0, this.delegates, 0, delegates.length);
-        } //End block
-        // ---------- Original Method ----------
-        //if (delegates == null) {
-            //this.delegates = (Comparator<File>[]) NO_COMPARATORS;
-        //} else {
-            //this.delegates = (Comparator<File>[]) new Comparator<?>[delegates.length];
-            //System.arraycopy(delegates, 0, this.delegates, 0, delegates.length);
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -43,7 +43,7 @@ public class CompositeFileComparator extends AbstractFileComparator implements S
     public  CompositeFileComparator(Iterable<Comparator<File>> delegates) {
         {
             this.delegates = (Comparator<File>[]) NO_COMPARATORS;
-        } //End block
+        } 
         {
             List<Comparator<File>> list = new ArrayList<Comparator<File>>();
             {
@@ -52,54 +52,56 @@ public class CompositeFileComparator extends AbstractFileComparator implements S
                 Comparator<File> comparator = varF8FBF51AA024B7207DD7A0E3B6BF0197_1561040618.next();
                 {
                     list.add(comparator);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             this.delegates = (Comparator<File>[]) list.toArray(new Comparator<?>[list.size()]);
-        } //End block
-        // ---------- Original Method ----------
-        //if (delegates == null) {
-            //this.delegates = (Comparator<File>[]) NO_COMPARATORS; 
-        //} else {
-            //List<Comparator<File>> list = new ArrayList<Comparator<File>>();
-            //for (Comparator<File> comparator : delegates) {
-                //list.add(comparator);
-            //}
-            //this.delegates = (Comparator<File>[]) list.toArray(new Comparator<?>[list.size()]); 
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.535 -0400", hash_original_method = "6BA921DFE406E4FB2E3ADDA69967D7F7", hash_generated_method = "B443870AA9104D5300D5CF124264F1C5")
     public int compare(File file1, File file2) {
         int result = 0;
         {
-            //Iterator<Comparator<File>> var053A98ADA93ECE30378E86685FF3C740_1816776347 = (delegates).iterator();
-            //var053A98ADA93ECE30378E86685FF3C740_1816776347.hasNext();
+            
+            
             Comparator<File> delegate = delegates[0];
             {
                 result = delegate.compare(file1, file2);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(file1.getTaint());
         addTaint(file2.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_144565157 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_144565157;
-        // ---------- Original Method ----------
-        //int result = 0;
-        //for (Comparator<File> delegate : delegates) {
-            //result = delegate.compare(file1, file2);
-            //if (result != 0) {
-                //break;
-            //}
-        //}
-        //return result;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.537 -0400", hash_original_method = "47C1793FC370107B09B70CFDB1B2DA4E", hash_generated_method = "908C112682F92060655545B3A8D2AC15")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1155873878 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1155873878 = null; 
         StringBuilder builder = new StringBuilder();
         builder.append(super.toString());
         builder.append('{');
@@ -108,26 +110,26 @@ public class CompositeFileComparator extends AbstractFileComparator implements S
             {
                 {
                     builder.append(',');
-                } //End block
+                } 
                 builder.append(delegates[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         builder.append('}');
         varB4EAC82CA7396A68D541C85D26508E83_1155873878 = builder.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1155873878.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1155873878.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1155873878;
-        // ---------- Original Method ----------
-        //StringBuilder builder = new StringBuilder();
-        //builder.append(super.toString());
-        //builder.append('{');
-        //for (int i = 0; i < delegates.length; i++) {
-            //if (i > 0) {
-                //builder.append(',');
-            //}
-            //builder.append(delegates[i]);
-        //}
-        //builder.append('}');
-        //return builder.toString();
+        
+        
+        
+        
+        
+            
+                
+            
+            
+        
+        
+        
     }
 
     

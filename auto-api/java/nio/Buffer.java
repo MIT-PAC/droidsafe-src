@@ -1,11 +1,11 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class Buffer {
@@ -36,16 +36,16 @@ public abstract class Buffer {
         this._elementSizeShift = elementSizeShift;
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("capacity < 0: " + capacity);
-        } //End block
+        } 
         this.capacity = this.limit = capacity;
         this.block = block;
-        // ---------- Original Method ----------
-        //this._elementSizeShift = elementSizeShift;
-        //if (capacity < 0) {
-            //throw new IllegalArgumentException("capacity < 0: " + capacity);
-        //}
-        //this.capacity = this.limit = capacity;
-        //this.block = block;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -59,8 +59,8 @@ public abstract class Buffer {
     public final int capacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_988123086 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_988123086;
-        // ---------- Original Method ----------
-        //return capacity;
+        
+        
     }
 
     
@@ -68,12 +68,12 @@ public abstract class Buffer {
      void checkIndex(int index) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("index=" + index + ", limit=" + limit);
-        } //End block
+        } 
         addTaint(index);
-        // ---------- Original Method ----------
-        //if (index < 0 || index >= limit) {
-            //throw new IndexOutOfBoundsException("index=" + index + ", limit=" + limit);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -82,14 +82,14 @@ public abstract class Buffer {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("index=" + index + ", limit=" + limit +
                     ", size of type=" + sizeOfType);
-        } //End block
+        } 
         addTaint(index);
         addTaint(sizeOfType);
-        // ---------- Original Method ----------
-        //if (index < 0 || index > limit - sizeOfType) {
-            //throw new IndexOutOfBoundsException("index=" + index + ", limit=" + limit +
-                    //", size of type=" + sizeOfType);
-        //}
+        
+        
+            
+                    
+        
     }
 
     
@@ -99,29 +99,29 @@ public abstract class Buffer {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("offset=" + offset +
                     ", count=" + count + ", length=" + length);
-        } //End block
+        } 
         {
             boolean varB9787195162C3B0FEC3FB85BC4A74CE2_271378801 = (byteCount > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(bytesPerElement);
         addTaint(length);
         addTaint(offset);
         addTaint(count);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1445225851 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1445225851;
-        // ---------- Original Method ----------
-        //int byteCount = bytesPerElement * count;
-        //if ((offset | count) < 0 || offset > length || length - offset < count) {
-            //throw new IndexOutOfBoundsException("offset=" + offset +
-                    //", count=" + count + ", length=" + length);
-        //}
-        //if (byteCount > remaining()) {
-            //throw new BufferUnderflowException();
-        //}
-        //return byteCount;
+        
+        
+        
+            
+                    
+        
+        
+            
+        
+        
     }
 
     
@@ -131,38 +131,38 @@ public abstract class Buffer {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("offset=" + offset +
                     ", count=" + count + ", length=" + length);
-        } //End block
+        } 
         {
             boolean varB9787195162C3B0FEC3FB85BC4A74CE2_1445311956 = (byteCount > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferOverflowException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varAC4B8D6BC6438967D655421106AB549D_2112257086 = (isReadOnly());
             {
                 if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(bytesPerElement);
         addTaint(length);
         addTaint(offset);
         addTaint(count);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_435576905 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_435576905;
-        // ---------- Original Method ----------
-        //int byteCount = bytesPerElement * count;
-        //if ((offset | count) < 0 || offset > length || length - offset < count) {
-            //throw new IndexOutOfBoundsException("offset=" + offset +
-                    //", count=" + count + ", length=" + length);
-        //}
-        //if (byteCount > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //if (isReadOnly()) {
-            //throw new ReadOnlyBufferException();
-        //}
-        //return byteCount;
+        
+        
+        
+            
+                    
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -173,49 +173,49 @@ public abstract class Buffer {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("start=" + start + ", end=" + end +
                     ", remaining()=" + remaining());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //if (end < start || start < 0 || end > remaining()) {
-            //throw new IndexOutOfBoundsException("start=" + start + ", end=" + end +
-                    //", remaining()=" + remaining());
-        //}
+        
+        
+            
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.744 -0400", hash_original_method = "7210DA7B6C2A4BE4693F950CE68DF306", hash_generated_method = "6AA179E10071F1FF0DD5E2BB81780105")
     public final Buffer clear() {
-        Buffer varB4EAC82CA7396A68D541C85D26508E83_1161064082 = null; //Variable for return #1
+        Buffer varB4EAC82CA7396A68D541C85D26508E83_1161064082 = null; 
         position = 0;
         mark = UNSET_MARK;
         limit = capacity;
         varB4EAC82CA7396A68D541C85D26508E83_1161064082 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1161064082.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1161064082.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1161064082;
-        // ---------- Original Method ----------
-        //position = 0;
-        //mark = UNSET_MARK;
-        //limit = capacity;
-        //return this;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.746 -0400", hash_original_method = "A8519E3C9C4A5F3DEEC9F7CACEDF020E", hash_generated_method = "76ACE281BEA7A546D79D45732E3145F3")
     public final Buffer flip() {
-        Buffer varB4EAC82CA7396A68D541C85D26508E83_563792291 = null; //Variable for return #1
+        Buffer varB4EAC82CA7396A68D541C85D26508E83_563792291 = null; 
         limit = position;
         position = 0;
         mark = UNSET_MARK;
         varB4EAC82CA7396A68D541C85D26508E83_563792291 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_563792291.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_563792291.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_563792291;
-        // ---------- Original Method ----------
-        //limit = position;
-        //position = 0;
-        //mark = UNSET_MARK;
-        //return this;
+        
+        
+        
+        
+        
     }
 
     
@@ -226,8 +226,8 @@ public abstract class Buffer {
     public final boolean hasRemaining() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_265875138 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_265875138;
-        // ---------- Original Method ----------
-        //return position < limit;
+        
+        
     }
 
     
@@ -243,12 +243,12 @@ public abstract class Buffer {
             boolean varAC4B8D6BC6438967D655421106AB549D_757167095 = (isReadOnly());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("read-only buffer");
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (isReadOnly()) {
-            //throw new IllegalArgumentException("read-only buffer");
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
@@ -256,22 +256,22 @@ public abstract class Buffer {
     public final int limit() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_828569973 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_828569973;
-        // ---------- Original Method ----------
-        //return limit;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.747 -0400", hash_original_method = "44A9FE5FA1BE9CFEEC46842C8860150F", hash_generated_method = "D00CBE0EE40351020C0149D1D8FDEA6F")
     public final Buffer limit(int newLimit) {
-        Buffer varB4EAC82CA7396A68D541C85D26508E83_2057528807 = null; //Variable for return #1
+        Buffer varB4EAC82CA7396A68D541C85D26508E83_2057528807 = null; 
         limitImpl(newLimit);
         varB4EAC82CA7396A68D541C85D26508E83_2057528807 = this;
         addTaint(newLimit);
-        varB4EAC82CA7396A68D541C85D26508E83_2057528807.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2057528807.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2057528807;
-        // ---------- Original Method ----------
-        //limitImpl(newLimit);
-        //return this;
+        
+        
+        
     }
 
     
@@ -279,38 +279,38 @@ public abstract class Buffer {
      void limitImpl(int newLimit) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad limit (capacity " + capacity + "): " + newLimit);
-        } //End block
+        } 
         limit = newLimit;
         {
             position = newLimit;
-        } //End block
+        } 
         {
             mark = UNSET_MARK;
-        } //End block
-        // ---------- Original Method ----------
-        //if (newLimit < 0 || newLimit > capacity) {
-            //throw new IllegalArgumentException("Bad limit (capacity " + capacity + "): " + newLimit);
-        //}
-        //limit = newLimit;
-        //if (position > newLimit) {
-            //position = newLimit;
-        //}
-        //if ((mark != UNSET_MARK) && (mark > newLimit)) {
-            //mark = UNSET_MARK;
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.748 -0400", hash_original_method = "A81425374E4EA5264849380D40913956", hash_generated_method = "75C5398D4DFFBC3E50DB860E8A80B9E5")
     public final Buffer mark() {
-        Buffer varB4EAC82CA7396A68D541C85D26508E83_439844908 = null; //Variable for return #1
+        Buffer varB4EAC82CA7396A68D541C85D26508E83_439844908 = null; 
         mark = position;
         varB4EAC82CA7396A68D541C85D26508E83_439844908 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_439844908.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_439844908.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_439844908;
-        // ---------- Original Method ----------
-        //mark = position;
-        //return this;
+        
+        
+        
     }
 
     
@@ -318,22 +318,22 @@ public abstract class Buffer {
     public final int position() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1540570492 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1540570492;
-        // ---------- Original Method ----------
-        //return position;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.749 -0400", hash_original_method = "E134461CBBE71A88508EDF7172D7480E", hash_generated_method = "A46F35A20D36D426F422938ADDC4F964")
     public final Buffer position(int newPosition) {
-        Buffer varB4EAC82CA7396A68D541C85D26508E83_332031707 = null; //Variable for return #1
+        Buffer varB4EAC82CA7396A68D541C85D26508E83_332031707 = null; 
         positionImpl(newPosition);
         varB4EAC82CA7396A68D541C85D26508E83_332031707 = this;
         addTaint(newPosition);
-        varB4EAC82CA7396A68D541C85D26508E83_332031707.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_332031707.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_332031707;
-        // ---------- Original Method ----------
-        //positionImpl(newPosition);
-        //return this;
+        
+        
+        
     }
 
     
@@ -341,19 +341,19 @@ public abstract class Buffer {
      void positionImpl(int newPosition) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad position (limit " + limit + "): " + newPosition);
-        } //End block
+        } 
         position = newPosition;
         {
             mark = UNSET_MARK;
-        } //End block
-        // ---------- Original Method ----------
-        //if (newPosition < 0 || newPosition > limit) {
-            //throw new IllegalArgumentException("Bad position (limit " + limit + "): " + newPosition);
-        //}
-        //position = newPosition;
-        //if ((mark != UNSET_MARK) && (mark > position)) {
-            //mark = UNSET_MARK;
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -361,49 +361,50 @@ public abstract class Buffer {
     public final int remaining() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1062060903 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1062060903;
-        // ---------- Original Method ----------
-        //return limit - position;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.749 -0400", hash_original_method = "2BE1864DF6C90B2A62411C9F7C095DEC", hash_generated_method = "4C90B6B9C099D8B6B4C824CFAA3A5683")
     public final Buffer reset() {
-        Buffer varB4EAC82CA7396A68D541C85D26508E83_917875233 = null; //Variable for return #1
+        Buffer varB4EAC82CA7396A68D541C85D26508E83_917875233 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new InvalidMarkException("Mark not set");
-        } //End block
+        } 
         position = mark;
         varB4EAC82CA7396A68D541C85D26508E83_917875233 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_917875233.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_917875233.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_917875233;
-        // ---------- Original Method ----------
-        //if (mark == UNSET_MARK) {
-            //throw new InvalidMarkException("Mark not set");
-        //}
-        //position = mark;
-        //return this;
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.750 -0400", hash_original_method = "533909B48B402AC142AA1672CC89D5CC", hash_generated_method = "69711DF4201F1650B59F8A45DE8412CF")
     public final Buffer rewind() {
-        Buffer varB4EAC82CA7396A68D541C85D26508E83_1938827014 = null; //Variable for return #1
+        Buffer varB4EAC82CA7396A68D541C85D26508E83_1938827014 = null; 
         position = 0;
         mark = UNSET_MARK;
         varB4EAC82CA7396A68D541C85D26508E83_1938827014 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1938827014.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1938827014.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1938827014;
-        // ---------- Original Method ----------
-        //position = 0;
-        //mark = UNSET_MARK;
-        //return this;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.750 -0400", hash_original_method = "E469E128CB7197E7BD730454D1CDC172", hash_generated_method = "326E2FBB69CCE09DCE70A373DCAA62E1")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1394558559 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1394558559 = null; 
         StringBuilder buf = new StringBuilder();
         buf.append(getClass().getName());
         buf.append(", status: capacity=");
@@ -413,18 +414,18 @@ public abstract class Buffer {
         buf.append(" limit=");
         buf.append(limit);
         varB4EAC82CA7396A68D541C85D26508E83_1394558559 = buf.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1394558559.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1394558559.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1394558559;
-        // ---------- Original Method ----------
-        //StringBuilder buf = new StringBuilder();
-        //buf.append(getClass().getName());
-        //buf.append(", status: capacity=");
-        //buf.append(capacity);
-        //buf.append(" position=");
-        //buf.append(position);
-        //buf.append(" limit=");
-        //buf.append(limit);
-        //return buf.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

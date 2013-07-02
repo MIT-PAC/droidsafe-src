@@ -1,11 +1,11 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class ASN1Constructed extends ASN1Type {
@@ -14,7 +14,7 @@ public abstract class ASN1Constructed extends ASN1Type {
     protected  ASN1Constructed(int tagNumber) {
         super(CLASS_UNIVERSAL, tagNumber);
         addTaint(tagNumber);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,7 +23,7 @@ public abstract class ASN1Constructed extends ASN1Type {
         super(tagClass, tagNumber);
         addTaint(tagClass);
         addTaint(tagNumber);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,19 +32,20 @@ public abstract class ASN1Constructed extends ASN1Type {
         addTaint(identifier);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1361764363 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1361764363;
-        // ---------- Original Method ----------
-        //return this.constrId == identifier;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.461 -0400", hash_original_method = "D76B5AEAE2B5495729712535531D2D80", hash_generated_method = "046D4CD4CC3DB548D742508889386314")
     public void encodeASN(BerOutputStream out) {
         out.encodeTag(constrId);
         encodeContent(out);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.encodeTag(constrId);
-        //encodeContent(out);
+        
+        
+        
     }
 
     

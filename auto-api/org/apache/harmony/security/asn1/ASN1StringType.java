@@ -1,11 +1,11 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.nio.charset.Charsets;
@@ -16,7 +16,7 @@ public abstract class ASN1StringType extends ASN1Type {
     public  ASN1StringType(int tagNumber) {
         super(tagNumber);
         addTaint(tagNumber);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,66 +25,71 @@ public abstract class ASN1StringType extends ASN1Type {
         addTaint(identifier);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1181865313 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1181865313;
-        // ---------- Original Method ----------
-        //return this.id == identifier || this.constrId == identifier;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.636 -0400", hash_original_method = "3BFD309C154715F9457C75DB61750061", hash_generated_method = "D727A4A0E845A601D3847A6683EE5DC8")
     public Object decode(BerInputStream in) throws IOException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1372041661 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_1880004247 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_1372041661 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_1880004247 = null; 
         in.readString(this);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1372041661 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1880004247 = getDecodedObject(in);
         addTaint(in.getTaint());
-        Object varA7E53CE21691AB073D9660D615818899_80825376; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_80825376; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_80825376 = varB4EAC82CA7396A68D541C85D26508E83_1372041661;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_80825376 = varB4EAC82CA7396A68D541C85D26508E83_1880004247;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_80825376.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_80825376.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_80825376;
-        // ---------- Original Method ----------
-        //in.readString(this);
-        //if (in.isVerify) {
-            //return null;
-        //}
-        //return getDecodedObject(in);
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override public Object getDecodedObject(BerInputStream in) throws IOException {
             return new String(in.buffer, in.contentOffset, in.length, Charsets.UTF_8);
         }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.638 -0400", hash_original_method = "56680739FC748952853149E66560E94E", hash_generated_method = "25D1D9CE9976FB742A46C9A1FF96788B")
     public void encodeASN(BerOutputStream out) {
         out.encodeTag(id);
         encodeContent(out);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.encodeTag(id);
-        //encodeContent(out);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.639 -0400", hash_original_method = "10029CCA141FCEE9BD14EC9FEEE7A0BB", hash_generated_method = "BF1523BCD7C591CB8E3B26A4047B3327")
     public void encodeContent(BerOutputStream out) {
         out.encodeString();
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.encodeString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void setEncodingContent(BerOutputStream out) {
             byte[] bytes = ((String) out.content).getBytes(Charsets.UTF_8);
             out.content = bytes;
@@ -125,11 +130,13 @@ public abstract class ASN1StringType extends ASN1Type {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.642 -0400", hash_original_field = "4C261A036B603BB0A966CDA0E25AA46C", hash_generated_field = "8325E7625E0332A172357D8E029897AE")
 
     public static final ASN1StringType UTF8STRING = new ASN1StringType(TAG_UTF8STRING) {
-        @Override public Object getDecodedObject(BerInputStream in) throws IOException {
+        @DSModeled(DSC.SAFE)
+    @Override public Object getDecodedObject(BerInputStream in) throws IOException {
             return new String(in.buffer, in.contentOffset, in.length, Charsets.UTF_8);
         }
 
-        @Override public void setEncodingContent(BerOutputStream out) {
+        @DSModeled(DSC.SAFE)
+    @Override public void setEncodingContent(BerOutputStream out) {
             byte[] bytes = ((String) out.content).getBytes(Charsets.UTF_8);
             out.content = bytes;
             out.length = bytes.length;

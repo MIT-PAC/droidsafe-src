@@ -1,11 +1,11 @@
 package android.hardware.usb;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -28,16 +28,17 @@ public class UsbManager {
     public  UsbManager(Context context, IUsbManager service) {
         mContext = context;
         mService = service;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mService = service;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.448 -0400", hash_original_method = "0C4F9A912AC5BE14CB67FA981035B977", hash_generated_method = "0EB4ACB6B1A4F017E3D34DEDC28961D6")
     public HashMap<String,UsbDevice> getDeviceList() {
-        HashMap<String,UsbDevice> varB4EAC82CA7396A68D541C85D26508E83_519292992 = null; //Variable for return #1
-        HashMap<String,UsbDevice> varB4EAC82CA7396A68D541C85D26508E83_2063500299 = null; //Variable for return #2
+        HashMap<String,UsbDevice> varB4EAC82CA7396A68D541C85D26508E83_519292992 = null; 
+        HashMap<String,UsbDevice> varB4EAC82CA7396A68D541C85D26508E83_2063500299 = null; 
         Bundle bundle = new Bundle();
         try 
         {
@@ -49,45 +50,46 @@ public class UsbManager {
                 String name = varE476B9C75625B551CC58862C2792B0A3_69617307.next();
                 {
                     result.put(name, (UsbDevice)bundle.get(name));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_519292992 = result;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_2063500299 = null;
-        } //End block
-        HashMap<String,UsbDevice> varA7E53CE21691AB073D9660D615818899_882643812; //Final return value
+        } 
+        HashMap<String,UsbDevice> varA7E53CE21691AB073D9660D615818899_882643812; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_882643812 = varB4EAC82CA7396A68D541C85D26508E83_519292992;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_882643812 = varB4EAC82CA7396A68D541C85D26508E83_2063500299;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_882643812.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_882643812.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_882643812;
-        // ---------- Original Method ----------
-        //Bundle bundle = new Bundle();
-        //try {
-            //mService.getDeviceList(bundle);
-            //HashMap<String,UsbDevice> result = new HashMap<String,UsbDevice>();
-            //for (String name : bundle.keySet()) {
-                //result.put(name, (UsbDevice)bundle.get(name));
-            //}
-            //return result;
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in getDeviceList", e);
-            //return null;
-        //}
+        
+        
+        
+            
+            
+            
+                
+            
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.453 -0400", hash_original_method = "8D8483424EA0CFD952FF0A230CCAC549", hash_generated_method = "8FD24496C00A6204FB66E47B2F52C267")
     public UsbDeviceConnection openDevice(UsbDevice device) {
-        UsbDeviceConnection varB4EAC82CA7396A68D541C85D26508E83_936241239 = null; //Variable for return #1
-        UsbDeviceConnection varB4EAC82CA7396A68D541C85D26508E83_1685244433 = null; //Variable for return #2
+        UsbDeviceConnection varB4EAC82CA7396A68D541C85D26508E83_936241239 = null; 
+        UsbDeviceConnection varB4EAC82CA7396A68D541C85D26508E83_1685244433 = null; 
         try 
         {
             String deviceName = device.getDeviceName();
@@ -98,205 +100,212 @@ public class UsbManager {
                 pfd.close();
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_936241239 = connection;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (Exception e)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_1685244433 = null;
         addTaint(device.getTaint());
-        UsbDeviceConnection varA7E53CE21691AB073D9660D615818899_1147421855; //Final return value
+        UsbDeviceConnection varA7E53CE21691AB073D9660D615818899_1147421855; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1147421855 = varB4EAC82CA7396A68D541C85D26508E83_936241239;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1147421855 = varB4EAC82CA7396A68D541C85D26508E83_1685244433;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1147421855.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1147421855.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1147421855;
-        // ---------- Original Method ----------
-        //try {
-            //String deviceName = device.getDeviceName();
-            //ParcelFileDescriptor pfd = mService.openDevice(deviceName);
-            //if (pfd != null) {
-                //UsbDeviceConnection connection = new UsbDeviceConnection(device);
-                //boolean result = connection.open(deviceName, pfd);
-                //pfd.close();
-                //if (result) {
-                    //return connection;
-                //}
-            //}
-        //} catch (Exception e) {
-            //Log.e(TAG, "exception in UsbManager.openDevice", e);
-        //}
-        //return null;
+        
+        
+            
+            
+            
+                
+                
+                
+                
+                    
+                
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.458 -0400", hash_original_method = "1BBBF6CC2C81B72139C0D4C7AF3A1618", hash_generated_method = "D4D2F303407794D75DA8361E3F83DCD0")
     public UsbAccessory[] getAccessoryList() {
-        UsbAccessory[] varB4EAC82CA7396A68D541C85D26508E83_2032884286 = null; //Variable for return #1
-        UsbAccessory[] varB4EAC82CA7396A68D541C85D26508E83_275189483 = null; //Variable for return #2
-        UsbAccessory[] varB4EAC82CA7396A68D541C85D26508E83_1139612419 = null; //Variable for return #3
+        UsbAccessory[] varB4EAC82CA7396A68D541C85D26508E83_2032884286 = null; 
+        UsbAccessory[] varB4EAC82CA7396A68D541C85D26508E83_275189483 = null; 
+        UsbAccessory[] varB4EAC82CA7396A68D541C85D26508E83_1139612419 = null; 
         try 
         {
             UsbAccessory accessory = mService.getCurrentAccessory();
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2032884286 = null;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_275189483 = new UsbAccessory[] { accessory };
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1139612419 = null;
-        } //End block
-        UsbAccessory[] varA7E53CE21691AB073D9660D615818899_1780298279; //Final return value
+        } 
+        UsbAccessory[] varA7E53CE21691AB073D9660D615818899_1780298279; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1780298279 = varB4EAC82CA7396A68D541C85D26508E83_2032884286;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1780298279 = varB4EAC82CA7396A68D541C85D26508E83_275189483;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1780298279 = varB4EAC82CA7396A68D541C85D26508E83_1139612419;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1780298279.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1780298279.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1780298279;
-        // ---------- Original Method ----------
-        //try {
-            //UsbAccessory accessory = mService.getCurrentAccessory();
-            //if (accessory == null) {
-                //return null;
-            //} else {
-                //return new UsbAccessory[] { accessory };
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in getAccessoryList", e);
-            //return null;
-        //}
+        
+        
+            
+            
+                
+            
+                
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.462 -0400", hash_original_method = "E613A4CA88B6248C79E5606341D1D797", hash_generated_method = "AA0A96F891B4638C242266D23F61FDD9")
     public ParcelFileDescriptor openAccessory(UsbAccessory accessory) {
-        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_2042425566 = null; //Variable for return #1
-        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1726105994 = null; //Variable for return #2
+        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_2042425566 = null; 
+        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1726105994 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2042425566 = mService.openAccessory(accessory);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1726105994 = null;
-        } //End block
+        } 
         addTaint(accessory.getTaint());
-        ParcelFileDescriptor varA7E53CE21691AB073D9660D615818899_1645956187; //Final return value
+        ParcelFileDescriptor varA7E53CE21691AB073D9660D615818899_1645956187; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1645956187 = varB4EAC82CA7396A68D541C85D26508E83_2042425566;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1645956187 = varB4EAC82CA7396A68D541C85D26508E83_1726105994;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1645956187.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1645956187.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1645956187;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.openAccessory(accessory);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in openAccessory", e);
-            //return null;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.465 -0400", hash_original_method = "BC4EEEB293CF372F4C660B9CBB978F7E", hash_generated_method = "55EC9BBEB3FEC6EA838BCFDCAD2CB745")
     public boolean hasPermission(UsbDevice device) {
         try 
         {
             boolean var2ACEC4A457A9C7E23A21275302CE7190_1797804163 = (mService.hasDevicePermission(device));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(device.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1801401642 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1801401642;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.hasDevicePermission(device);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in hasPermission", e);
-            //return false;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.465 -0400", hash_original_method = "8C883717D72FFED5467C2C0C4FA603AB", hash_generated_method = "8A23D5550A03D40EB14718292C352026")
     public boolean hasPermission(UsbAccessory accessory) {
         try 
         {
             boolean varB7BA06AF2876C5D51590BCC07BDF4600_1102884526 = (mService.hasAccessoryPermission(accessory));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(accessory.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_4423145 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_4423145;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.hasAccessoryPermission(accessory);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in hasPermission", e);
-            //return false;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.466 -0400", hash_original_method = "0BC6C49F477F609E4761FAD93127C8B1", hash_generated_method = "9BCF153C6B83B2B9516842FF9DC8CA0D")
     public void requestPermission(UsbDevice device, PendingIntent pi) {
         try 
         {
             mService.requestDevicePermission(device, mContext.getPackageName(), pi);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(device.getTaint());
         addTaint(pi.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mService.requestDevicePermission(device, mContext.getPackageName(), pi);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in requestPermission", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.466 -0400", hash_original_method = "FC51D136A8BB60237D8B3FCD832EDCEE", hash_generated_method = "6CB2CBBAFAF782F00A98AD72ECCAEF0A")
     public void requestPermission(UsbAccessory accessory, PendingIntent pi) {
         try 
         {
             mService.requestAccessoryPermission(accessory, mContext.getPackageName(), pi);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(accessory.getTaint());
         addTaint(pi.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mService.requestAccessoryPermission(accessory, mContext.getPackageName(), pi);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in requestPermission", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean propertyContainsFunction(String property, String function) {
         String functions = SystemProperties.get(property, "");
         int index = functions.indexOf(function);
@@ -308,85 +317,89 @@ public class UsbManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.467 -0400", hash_original_method = "B2F7E99E5659CE0D7ECF8F6FFE68B901", hash_generated_method = "F2EE1E3F7B1451CEDF2D4162ED06F9C5")
     public boolean isFunctionEnabled(String function) {
         boolean varD65D352761ED522FACBF7743A13AD1F5_818494235 = (propertyContainsFunction("sys.usb.config", function));
         addTaint(function.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1758132608 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1758132608;
-        // ---------- Original Method ----------
-        //return propertyContainsFunction("sys.usb.config", function);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.468 -0400", hash_original_method = "4ECB85B34540B5A01AD76105AF55C635", hash_generated_method = "A34D7716495220573B0E61900C745D39")
     public String getDefaultFunction() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1031956665 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1425796146 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1031956665 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1425796146 = null; 
         String functions = SystemProperties.get("persist.sys.usb.config", "");
         int commaIndex = functions.indexOf(',');
         {
             varB4EAC82CA7396A68D541C85D26508E83_1031956665 = functions.substring(0, commaIndex);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1425796146 = functions;
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_923110153; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_923110153; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_923110153 = varB4EAC82CA7396A68D541C85D26508E83_1031956665;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_923110153 = varB4EAC82CA7396A68D541C85D26508E83_1425796146;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_923110153.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_923110153.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_923110153;
-        // ---------- Original Method ----------
-        //String functions = SystemProperties.get("persist.sys.usb.config", "");
-        //int commaIndex = functions.indexOf(',');
-        //if (commaIndex > 0) {
-            //return functions.substring(0, commaIndex);
-        //} else {
-            //return functions;
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.468 -0400", hash_original_method = "F2B908DC7033D00CDC14F7636607BD05", hash_generated_method = "472333D6A7E4BB34260FF15C477AB3F3")
     public void setCurrentFunction(String function, boolean makeDefault) {
         try 
         {
             mService.setCurrentFunction(function, makeDefault);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(function.getTaint());
         addTaint(makeDefault);
-        // ---------- Original Method ----------
-        //try {
-            //mService.setCurrentFunction(function, makeDefault);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in setCurrentFunction", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.469 -0400", hash_original_method = "4FECF17333249386DEF6A0E8A7778CCC", hash_generated_method = "9F9B95094B237A6721710CD9FA1FDA52")
     public void setMassStorageBackingFile(String path) {
         try 
         {
             mService.setMassStorageBackingFile(path);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(path.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mService.setMassStorageBackingFile(path);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in setDefaultFunction", e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     

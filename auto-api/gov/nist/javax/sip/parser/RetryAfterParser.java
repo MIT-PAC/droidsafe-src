@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
@@ -18,7 +18,7 @@ public class RetryAfterParser extends HeaderParser {
     public  RetryAfterParser(String retryAfter) {
         super(retryAfter);
         addTaint(retryAfter.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,13 +26,14 @@ public class RetryAfterParser extends HeaderParser {
     protected  RetryAfterParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.518 -0400", hash_original_method = "4F8238CAC8DB557039065AEC5DC20094", hash_generated_method = "12B585D5DE236C4B7D84E7B13FED62F3")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1028439868 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1028439868 = null; 
         dbg_enter("RetryAfterParser.parse");
         RetryAfter retryAfter = new RetryAfter();
         try 
@@ -43,23 +44,23 @@ public class RetryAfterParser extends HeaderParser {
             {
                 int ds = Integer.parseInt(value);
                 retryAfter.setRetryAfter(ds);
-            } //End block
+            } 
             catch (NumberFormatException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-            } //End block
+            } 
             catch (InvalidArgumentException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-            } //End block
+            } 
             this.lexer.SPorHT();
             {
                 boolean var95A13FB6943DBBB304DBEB25969BEDD8_736841937 = (lexer.lookAhead(0) == '(');
                 {
                     String comment = this.lexer.comment();
                     retryAfter.setComment(comment);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             this.lexer.SPorHT();
             {
                 boolean var23D2B54EEDE70417D1C6C30933AF4A72_1788342988 = (lexer.lookAhead(0) == ';');
@@ -79,16 +80,16 @@ public class RetryAfterParser extends HeaderParser {
                             {
                                 int duration = Integer.parseInt(value);
                                 retryAfter.setDuration(duration);
-                            } //End block
+                            } 
                             catch (NumberFormatException ex)
                             {
                                 if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                            } //End block
+                            } 
                             catch (InvalidArgumentException ex)
                             {
                                 if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             this.lexer.SPorHT();
                             this.lexer.match('=');
@@ -97,21 +98,21 @@ public class RetryAfterParser extends HeaderParser {
                             Token secondToken = lexer.getNextToken();
                             String secondValue = secondToken.getTokenValue();
                             retryAfter.setParameter(value, secondValue);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     this.lexer.SPorHT();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             dbg_leave("RetryAfterParser.parse");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1028439868 = retryAfter;
-        varB4EAC82CA7396A68D541C85D26508E83_1028439868.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1028439868.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1028439868;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

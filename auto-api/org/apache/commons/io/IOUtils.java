@@ -1,11 +1,11 @@
 package org.apache.commons.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -43,10 +43,11 @@ public class IOUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.410 -0400", hash_original_method = "2D9CDAF56900A3E223824D5F717EC43A", hash_generated_method = "1ED3DED33D92DE472039E87E14903543")
     public  IOUtils() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void close(URLConnection conn) {
         if (conn instanceof HttpURLConnection) {
             ((HttpURLConnection) conn).disconnect();
@@ -54,26 +55,31 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeQuietly(Reader input) {
         closeQuietly((Closeable)input);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeQuietly(Writer output) {
         closeQuietly((Closeable)output);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeQuietly(InputStream input) {
         closeQuietly((Closeable)input);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeQuietly(OutputStream output) {
         closeQuietly((Closeable)output);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeQuietly(Closeable closeable) {
         try {
             if (closeable != null) {
@@ -84,6 +90,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeQuietly(Socket sock) {
         if (sock != null){
             try {
@@ -94,6 +101,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeQuietly(Selector selector) {
         if (selector != null){
             try {
@@ -104,6 +112,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeQuietly(ServerSocket sock) {
         if (sock != null){
             try {
@@ -114,16 +123,19 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InputStream toBufferedInputStream(InputStream input) throws IOException {
         return ByteArrayOutputStream.toBufferedInputStream(input);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static BufferedReader toBufferedReader(Reader reader) {
         return reader instanceof BufferedReader ? (BufferedReader) reader : new BufferedReader(reader);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(InputStream input) throws IOException {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         copy(input, output);
@@ -131,6 +143,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(InputStream input, long size) throws IOException {
         if(size > Integer.MAX_VALUE) {
           throw new IllegalArgumentException("Size cannot be greater than Integer max value: " + size);
@@ -139,6 +152,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(InputStream input, int size) throws IOException {
         if (size < 0) {
             throw new IllegalArgumentException("Size must be equal or greater than zero: " + size);
@@ -159,11 +173,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(Reader input) throws IOException {
         return toByteArray(input, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(Reader input, Charset encoding) throws IOException {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         copy(input, output, encoding);
@@ -171,22 +187,26 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(Reader input, String encoding) throws IOException {
         return toByteArray(input, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static byte[] toByteArray(String input) throws IOException {
         return input.getBytes();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(URI uri) throws IOException {
         return IOUtils.toByteArray(uri.toURL());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(URL url) throws IOException {
         URLConnection conn = url.openConnection();
         try {
@@ -197,6 +217,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(URLConnection urlConn) throws IOException {
         InputStream inputStream = urlConn.getInputStream();
         try {
@@ -207,11 +228,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static char[] toCharArray(InputStream is) throws IOException {
         return toCharArray(is, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static char[] toCharArray(InputStream is, Charset encoding) throws IOException {
         CharArrayWriter output = new CharArrayWriter();
         copy(is, output, encoding);
@@ -219,11 +242,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static char[] toCharArray(InputStream is, String encoding) throws IOException {
         return toCharArray(is, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static char[] toCharArray(Reader input) throws IOException {
         CharArrayWriter sw = new CharArrayWriter();
         copy(input, sw);
@@ -231,11 +256,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(InputStream input) throws IOException {
         return toString(input, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(InputStream input, Charset encoding) throws IOException {
         StringBuilderWriter sw = new StringBuilderWriter();
         copy(input, sw, encoding);
@@ -243,11 +270,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(InputStream input, String encoding) throws IOException {
         return toString(input, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(Reader input) throws IOException {
         StringBuilderWriter sw = new StringBuilderWriter();
         copy(input, sw);
@@ -255,26 +284,31 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(URI uri) throws IOException {
         return toString(uri, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(URI uri, Charset encoding) throws IOException {
         return toString(uri.toURL(), Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(URI uri, String encoding) throws IOException {
         return toString(uri, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(URL url) throws IOException {
         return toString(url, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(URL url, Charset encoding) throws IOException {
         InputStream inputStream = url.openStream();
         try {
@@ -285,38 +319,45 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(URL url, String encoding) throws IOException {
         return toString(url, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static String toString(byte[] input) throws IOException {
         return new String(input);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(byte[] input, String encoding) throws IOException {
         return new String(input, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static List<String> readLines(InputStream input) throws IOException {
         return readLines(input, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static List<String> readLines(InputStream input, Charset encoding) throws IOException {
         InputStreamReader reader = new InputStreamReader(input, Charsets.toCharset(encoding));
         return readLines(reader);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static List<String> readLines(InputStream input, String encoding) throws IOException {
         return readLines(input, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static List<String> readLines(Reader input) throws IOException {
         BufferedReader reader = toBufferedReader(input);
         List<String> list = new ArrayList<String>();
@@ -329,52 +370,62 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static LineIterator lineIterator(Reader reader) {
         return new LineIterator(reader);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static LineIterator lineIterator(InputStream input, Charset encoding) throws IOException {
         return new LineIterator(new InputStreamReader(input, Charsets.toCharset(encoding)));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static LineIterator lineIterator(InputStream input, String encoding) throws IOException {
         return lineIterator(input, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InputStream toInputStream(CharSequence input) {
         return toInputStream(input, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InputStream toInputStream(CharSequence input, Charset encoding) {
         return toInputStream(input.toString(), encoding);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InputStream toInputStream(CharSequence input, String encoding) throws IOException {
         return toInputStream(input, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InputStream toInputStream(String input) {
         return toInputStream(input, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InputStream toInputStream(String input, Charset encoding) {
         return new ByteArrayInputStream(input.getBytes(Charsets.toCharset(encoding)));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InputStream toInputStream(String input, String encoding) throws IOException {
         byte[] bytes = input.getBytes(Charsets.toCharset(encoding));
         return new ByteArrayInputStream(bytes);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(byte[] data, OutputStream output) throws IOException {
         if (data != null) {
             output.write(data);
@@ -382,11 +433,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(byte[] data, Writer output) throws IOException {
         write(data, output, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(byte[] data, Writer output, Charset encoding) throws IOException {
         if (data != null) {
             output.write(new String(data, Charsets.toCharset(encoding)));
@@ -394,11 +447,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(byte[] data, Writer output, String encoding) throws IOException {
         write(data, output, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(char[] data, Writer output) throws IOException {
         if (data != null) {
             output.write(data);
@@ -406,11 +461,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(char[] data, OutputStream output) throws IOException {
         write(data, output, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(char[] data, OutputStream output, Charset encoding) throws IOException {
         if (data != null) {
             output.write(new String(data).getBytes(Charsets.toCharset(encoding)));
@@ -418,11 +475,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(char[] data, OutputStream output, String encoding) throws IOException {
         write(data, output, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(CharSequence data, Writer output) throws IOException {
         if (data != null) {
             write(data.toString(), output);
@@ -430,11 +489,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(CharSequence data, OutputStream output) throws IOException {
         write(data, output, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(CharSequence data, OutputStream output, Charset encoding) throws IOException {
         if (data != null) {
             write(data.toString(), output, encoding);
@@ -442,11 +503,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(CharSequence data, OutputStream output, String encoding) throws IOException {
         write(data, output, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(String data, Writer output) throws IOException {
         if (data != null) {
             output.write(data);
@@ -454,11 +517,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(String data, OutputStream output) throws IOException {
         write(data, output, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(String data, OutputStream output, Charset encoding) throws IOException {
         if (data != null) {
             output.write(data.getBytes(Charsets.toCharset(encoding)));
@@ -466,11 +531,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void write(String data, OutputStream output, String encoding) throws IOException {
         write(data, output, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static void write(StringBuffer data, Writer output) throws IOException {
         if (data != null) {
@@ -479,12 +546,14 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static void write(StringBuffer data, OutputStream output) throws IOException {
         write(data, output, (String) null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static void write(StringBuffer data, OutputStream output, String encoding) throws IOException {
         if (data != null) {
@@ -493,12 +562,14 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeLines(Collection<?> lines, String lineEnding,
             OutputStream output) throws IOException {
         writeLines(lines, lineEnding, output, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeLines(Collection<?> lines, String lineEnding, OutputStream output, Charset encoding) throws IOException {
         if (lines == null) {
             return;
@@ -516,12 +587,14 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeLines(Collection<?> lines, String lineEnding,
             OutputStream output, String encoding) throws IOException {
         writeLines(lines, lineEnding, output, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeLines(Collection<?> lines, String lineEnding,
             Writer writer) throws IOException {
         if (lines == null) {
@@ -539,6 +612,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int copy(InputStream input, OutputStream output) throws IOException {
         long count = copyLarge(input, output);
         if (count > Integer.MAX_VALUE) {
@@ -548,11 +622,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long copyLarge(InputStream input, OutputStream output) throws IOException {
         return copyLarge(input, output, new byte[DEFAULT_BUFFER_SIZE]);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long copyLarge(InputStream input, OutputStream output, byte[] buffer) throws IOException {
         long count = 0;
         int n = 0;
@@ -564,6 +640,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long copyLarge(InputStream input, OutputStream output, long inputOffset, long length) throws IOException {
         return copyLarge(input, output, inputOffset, length, new byte[DEFAULT_BUFFER_SIZE]);
     }
@@ -595,22 +672,26 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copy(InputStream input, Writer output) throws IOException {
         copy(input, output, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copy(InputStream input, Writer output, Charset encoding) throws IOException {
         InputStreamReader in = new InputStreamReader(input, Charsets.toCharset(encoding));
         copy(in, output);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copy(InputStream input, Writer output, String encoding) throws IOException {
         copy(input, output, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int copy(Reader input, Writer output) throws IOException {
         long count = copyLarge(input, output);
         if (count > Integer.MAX_VALUE) {
@@ -620,11 +701,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long copyLarge(Reader input, Writer output) throws IOException {
         return copyLarge(input, output, new char[DEFAULT_BUFFER_SIZE]);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long copyLarge(Reader input, Writer output, char [] buffer) throws IOException {
         long count = 0;
         int n = 0;
@@ -665,11 +748,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copy(Reader input, OutputStream output) throws IOException {
         copy(input, output, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copy(Reader input, OutputStream output, Charset encoding) throws IOException {
         OutputStreamWriter out = new OutputStreamWriter(output, Charsets.toCharset(encoding));
         copy(input, out);
@@ -677,11 +762,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copy(Reader input, OutputStream output, String encoding) throws IOException {
         copy(input, output, Charsets.toCharset(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean contentEquals(InputStream input1, InputStream input2) throws IOException {
         if (!(input1 instanceof BufferedInputStream)) {
             input1 = new BufferedInputStream(input1);
@@ -702,6 +789,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean contentEquals(Reader input1, Reader input2) throws IOException {
         input1 = toBufferedReader(input1);
         input2 = toBufferedReader(input2);
@@ -718,6 +806,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean contentEqualsIgnoreEOL(Reader input1, Reader input2) throws IOException {
         BufferedReader br1 = toBufferedReader(input1);
         BufferedReader br2 = toBufferedReader(input2);
@@ -731,6 +820,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long skip(InputStream input, long toSkip) throws IOException {
         if (toSkip < 0) {
             throw new IllegalArgumentException("Skip count must be non-negative, actual: " + toSkip);
@@ -750,6 +840,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long skip(Reader input, long toSkip) throws IOException {
         if (toSkip < 0) {
             throw new IllegalArgumentException("Skip count must be non-negative, actual: " + toSkip);
@@ -769,6 +860,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void skipFully(InputStream input, long toSkip) throws IOException {
         if (toSkip < 0) {
             throw new IllegalArgumentException("Bytes to skip must not be negative: " + toSkip);
@@ -780,6 +872,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void skipFully(Reader input, long toSkip) throws IOException {
         long skipped = skip(input, toSkip);
         if (skipped != toSkip) {
@@ -788,6 +881,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int read(Reader input, char[] buffer, int offset, int length) throws IOException {
         if (length < 0) {
             throw new IllegalArgumentException("Length must not be negative: " + length);
@@ -805,11 +899,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int read(Reader input, char[] buffer) throws IOException {
         return read(input, buffer, 0, buffer.length);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int read(InputStream input, byte[] buffer, int offset, int length) throws IOException {
         if (length < 0) {
             throw new IllegalArgumentException("Length must not be negative: " + length);
@@ -827,11 +923,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int read(InputStream input, byte[] buffer) throws IOException {
         return read(input, buffer, 0, buffer.length);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void readFully(Reader input, char[] buffer, int offset, int length) throws IOException {
         int actual = read(input, buffer, offset, length);
         if (actual != length) {
@@ -840,11 +938,13 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void readFully(Reader input, char[] buffer) throws IOException {
         readFully(input, buffer, 0, buffer.length);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void readFully(InputStream input, byte[] buffer, int offset, int length) throws IOException {
         int actual = read(input, buffer, offset, length);
         if (actual != length) {
@@ -853,6 +953,7 @@ public class IOUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void readFully(InputStream input, byte[] buffer) throws IOException {
         readFully(input, buffer, 0, buffer.length);
     }

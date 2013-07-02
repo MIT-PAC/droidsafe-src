@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.ActivityManager;
 import android.content.ComponentCallbacks;
@@ -110,26 +110,26 @@ class BrowserFrame extends Handler {
                 boolean varD3D608BC6A05F257DDC787DC0D4348D6_2119403800 = (am.getMemoryClass() > 16);
                 {
                     sJavaBridge.setCacheSize(8 * 1024 * 1024);
-                } //End block
+                } 
                 {
                     sJavaBridge.setCacheSize(4 * 1024 * 1024);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             CacheManager.init(appContext);
             CookieSyncManager.createInstance(appContext);
             PluginManager.getInstance(appContext);
-        } //End block
+        } 
         {
             sConfigCallback = new ConfigCallback(
                     (WindowManager) appContext.getSystemService(
                             Context.WINDOW_SERVICE));
             ViewRootImpl.addConfigCallback(sConfigCallback);
-        } //End block
+        } 
         sConfigCallback.addHandler(this);
         mJavaScriptObjects = javascriptInterfaces;
         {
             mJavaScriptObjects = new HashMap<String, Object>();
-        } //End block
+        } 
         mRemovedJavaScriptObjects = new HashSet<Object>();
         mSettings = settings;
         mContext = context;
@@ -140,11 +140,12 @@ class BrowserFrame extends Handler {
         mJavaScriptObjects.put(SearchBoxImpl.JS_INTERFACE_NAME, mSearchBox);
         AssetManager am = context.getAssets();
         nativeCreateFrame(w, am, proxy.getBackForwardList());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.708 -0400", hash_original_method = "056144D27ACF2932EFB0C1980B0D6F98", hash_generated_method = "A9D871D78753CC3A2B7729F07CC58102")
     public void loadUrl(String url, Map<String, String> extraHeaders) {
         mLoadInitFromJava = true;
@@ -153,26 +154,27 @@ class BrowserFrame extends Handler {
             {
                 stringByEvaluatingJavaScriptFromString(
                     url.substring("javascript:".length()));
-            } //End block
+            } 
             {
                 nativeLoadUrl(url, extraHeaders);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mLoadInitFromJava = false;
         addTaint(url.getTaint());
         addTaint(extraHeaders.getTaint());
-        // ---------- Original Method ----------
-        //mLoadInitFromJava = true;
-        //if (URLUtil.isJavaScriptUrl(url)) {
-            //stringByEvaluatingJavaScriptFromString(
-                    //url.substring("javascript:".length()));
-        //} else {
-            //nativeLoadUrl(url, extraHeaders);
-        //}
-        //mLoadInitFromJava = false;
+        
+        
+        
+            
+                    
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.708 -0400", hash_original_method = "55F163F814F53ECA11AC218202D49EB2", hash_generated_method = "2BBB3A696BE44C499CB7A1A4A8E2EEFB")
     public void postUrl(String url, byte[] data) {
         mLoadInitFromJava = true;
@@ -180,13 +182,14 @@ class BrowserFrame extends Handler {
         mLoadInitFromJava = false;
         addTaint(url.getTaint());
         addTaint(data[0]);
-        // ---------- Original Method ----------
-        //mLoadInitFromJava = true;
-        //nativePostUrl(url, data);
-        //mLoadInitFromJava = false;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.709 -0400", hash_original_method = "210E874B3CC8A8754EDB8A64197F3EDD", hash_generated_method = "AC522AEAE59A6B2A48BA00C58E808606")
     public void loadData(String baseUrl, String data, String mimeType,
             String encoding, String historyUrl) {
@@ -195,23 +198,23 @@ class BrowserFrame extends Handler {
             boolean var581113F7BD53DF8B7293B042681B40B2_1453558863 = (historyUrl == null || historyUrl.length() == 0);
             {
                 historyUrl = "about:blank";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             data = "";
-        } //End block
+        } 
         {
             boolean varCB616F65F94E18DD8D2DD4567F35B835_714757730 = (baseUrl == null || baseUrl.length() == 0);
             {
                 baseUrl = "about:blank";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var9AF9469A93530D5A3F337475212051A4_418122105 = (mimeType == null || mimeType.length() == 0);
             {
                 mimeType = "text/html";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         nativeLoadData(baseUrl, data, mimeType, encoding, historyUrl);
         mLoadInitFromJava = false;
         addTaint(baseUrl.getTaint());
@@ -219,51 +222,53 @@ class BrowserFrame extends Handler {
         addTaint(mimeType.getTaint());
         addTaint(encoding.getTaint());
         addTaint(historyUrl.getTaint());
-        // ---------- Original Method ----------
-        //mLoadInitFromJava = true;
-        //if (historyUrl == null || historyUrl.length() == 0) {
-            //historyUrl = "about:blank";
-        //}
-        //if (data == null) {
-            //data = "";
-        //}
-        //if (baseUrl == null || baseUrl.length() == 0) {
-            //baseUrl = "about:blank";
-        //}
-        //if (mimeType == null || mimeType.length() == 0) {
-            //mimeType = "text/html";
-        //}
-        //nativeLoadData(baseUrl, data, mimeType, encoding, historyUrl);
-        //mLoadInitFromJava = false;
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.710 -0400", hash_original_method = "FE36B1316A593126EBA1AA2EF5942205", hash_generated_method = "500B63E05EA6D3A7372595547D280738")
      String saveWebArchive(String basename, boolean autoname) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1524298652 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1524298652 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1524298652 = nativeSaveWebArchive(basename, autoname);
         addTaint(basename.getTaint());
         addTaint(autoname);
-        varB4EAC82CA7396A68D541C85D26508E83_1524298652.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1524298652.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1524298652;
-        // ---------- Original Method ----------
-        //return nativeSaveWebArchive(basename, autoname);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.711 -0400", hash_original_method = "4DB46F10EA63A90C886405E235BD3A38", hash_generated_method = "E142D1E6CCCEA6137F90879F9CE4BC83")
     public void goBackOrForward(int steps) {
         mLoadInitFromJava = true;
         nativeGoBackOrForward(steps);
         mLoadInitFromJava = false;
         addTaint(steps);
-        // ---------- Original Method ----------
-        //mLoadInitFromJava = true;
-        //nativeGoBackOrForward(steps);
-        //mLoadInitFromJava = false;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.711 -0400", hash_original_method = "50E452D86A3E55153B3E0F1DD816D615", hash_generated_method = "814DB2D71ED00E2C6C88E3F53C46F537")
     private void reportError(int errorCode, String description, String failingUrl) {
         resetLoadingStates();
@@ -271,18 +276,18 @@ class BrowserFrame extends Handler {
             boolean var40AE9761DC6AF2B0949485DECF62ABEE_1174614546 = (description == null || description.isEmpty());
             {
                 description = ErrorStrings.getString(errorCode, mContext);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mCallbackProxy.onReceivedError(errorCode, description, failingUrl);
         addTaint(errorCode);
         addTaint(description.getTaint());
         addTaint(failingUrl.getTaint());
-        // ---------- Original Method ----------
-        //resetLoadingStates();
-        //if (description == null || description.isEmpty()) {
-            //description = ErrorStrings.getString(errorCode, mContext);
-        //}
-        //mCallbackProxy.onReceivedError(errorCode, description, failingUrl);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -290,9 +295,9 @@ class BrowserFrame extends Handler {
     private void resetLoadingStates() {
         mCommitted = true;
         mFirstLayoutDone = true;
-        // ---------- Original Method ----------
-        //mCommitted = true;
-        //mFirstLayoutDone = true;
+        
+        
+        
     }
 
     
@@ -300,8 +305,8 @@ class BrowserFrame extends Handler {
      boolean committed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1910676416 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1910676416;
-        // ---------- Original Method ----------
-        //return mCommitted;
+        
+        
     }
 
     
@@ -309,8 +314,8 @@ class BrowserFrame extends Handler {
      boolean firstLayoutDone() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2024260128 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2024260128;
-        // ---------- Original Method ----------
-        //return mFirstLayoutDone;
+        
+        
     }
 
     
@@ -318,8 +323,8 @@ class BrowserFrame extends Handler {
      int loadType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1391956448 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1391956448;
-        // ---------- Original Method ----------
-        //return mLoadType;
+        
+        
     }
 
     
@@ -328,15 +333,16 @@ class BrowserFrame extends Handler {
         {
             mFirstLayoutDone = true;
             mWebViewCore.contentDraw();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mFirstLayoutDone) {
-            //mFirstLayoutDone = true;
-            //mWebViewCore.contentDraw();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.713 -0400", hash_original_method = "588CB65AC18071EB5B02ABC642CC0A1A", hash_generated_method = "495977A334CAC32AD68E1E398A2A2DDF")
     private void loadStarted(String url, Bitmap favicon, int loadType,
             boolean isMainFrame) {
@@ -348,24 +354,25 @@ class BrowserFrame extends Handler {
                 mFirstLayoutDone = false;
                 mCommitted = false;
                 mWebViewCore.removeMessages(WebViewCore.EventHub.WEBKIT_DRAW);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(url.getTaint());
         addTaint(favicon.getTaint());
-        // ---------- Original Method ----------
-        //mIsMainFrame = isMainFrame;
-        //if (isMainFrame || loadType == FRAME_LOADTYPE_STANDARD) {
-            //mLoadType = loadType;
-            //if (isMainFrame) {
-                //mCallbackProxy.onPageStarted(url, favicon);
-                //mFirstLayoutDone = false;
-                //mCommitted = false;
-                //mWebViewCore.removeMessages(WebViewCore.EventHub.WEBKIT_DRAW);
-            //}
-        //}
+        
+        
+        
+            
+            
+                
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.713 -0400", hash_original_method = "C9CC31AE97DBC19619CDCFC15EC7B03E", hash_generated_method = "E206FD24ED9A230005D9B4A44AB6AA73")
     @SuppressWarnings("unused")
     private void saveFormData(HashMap<String, String> data) {
@@ -378,25 +385,26 @@ class BrowserFrame extends Handler {
                     String url = WebTextView.urlForAutoCompleteData(h.getUrl());
                     {
                         mDatabase.setFormData(url, data);
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        //if (mSettings.getSaveFormData()) {
-            //final WebHistoryItem h = mCallbackProxy.getBackForwardList()
-                    //.getCurrentItem();
-            //if (h != null) {
-                //String url = WebTextView.urlForAutoCompleteData(h.getUrl());
-                //if (url != null) {
-                    //mDatabase.setFormData(url, data);
-                //}
-            //}
-        //}
+        
+        
+            
+                    
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.714 -0400", hash_original_method = "F4B9AF2B8B6C0B9D0EBAE01BEE4BF775", hash_generated_method = "895F2BF965F116C9B3197236FCB56B4D")
     @SuppressWarnings("unused")
     private boolean shouldSaveFormData() {
@@ -406,36 +414,38 @@ class BrowserFrame extends Handler {
                 final WebHistoryItem h = mCallbackProxy.getBackForwardList()
                     .getCurrentItem();
                 boolean var0A9CE26076094D732B198C6841494F25_1266692388 = (h != null && h.getUrl() != null);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_545651983 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_545651983;
-        // ---------- Original Method ----------
-        //if (mSettings.getSaveFormData()) {
-            //final WebHistoryItem h = mCallbackProxy.getBackForwardList()
-                    //.getCurrentItem();
-            //return h != null && h.getUrl() != null;
-        //}
-        //return false;
+        
+        
+            
+                    
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.714 -0400", hash_original_method = "7094DD5A86271DA7E952B216F4C46CCD", hash_generated_method = "BC2E329BA0A76D72F8711B8BDDABBEE8")
     private void transitionToCommitted(int loadType, boolean isMainFrame) {
         {
             mCommitted = true;
             mWebViewCore.getWebView().mViewManager.postResetStateAll();
-        } //End block
+        } 
         addTaint(loadType);
         addTaint(isMainFrame);
-        // ---------- Original Method ----------
-        //if (isMainFrame) {
-            //mCommitted = true;
-            //mWebViewCore.getWebView().mViewManager.postResetStateAll();
-        //}
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.715 -0400", hash_original_method = "5C2FD3A5795EB59386117F9A61E0ADCE", hash_generated_method = "0E76D6C1B529652600CC1759CFEFC07B")
     private void loadFinished(String url, int loadType, boolean isMainFrame) {
         {
@@ -443,19 +453,19 @@ class BrowserFrame extends Handler {
                 resetLoadingStates();
                 mCallbackProxy.switchOutDrawHistory();
                 mCallbackProxy.onPageFinished(url);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(url.getTaint());
         addTaint(loadType);
         addTaint(isMainFrame);
-        // ---------- Original Method ----------
-        //if (isMainFrame || loadType == FRAME_LOADTYPE_STANDARD) {
-            //if (isMainFrame) {
-                //resetLoadingStates();
-                //mCallbackProxy.switchOutDrawHistory();
-                //mCallbackProxy.onPageFinished(url);
-            //}
-        //}
+        
+        
+            
+                
+                
+                
+            
+        
     }
 
     
@@ -463,31 +473,33 @@ class BrowserFrame extends Handler {
      void certificate(SslCertificate certificate) {
         {
             mCallbackProxy.onReceivedCertificate(certificate);
-        } //End block
+        } 
         addTaint(certificate.getTaint());
-        // ---------- Original Method ----------
-        //if (mIsMainFrame) {
-            //mCallbackProxy.onReceivedCertificate(certificate);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.715 -0400", hash_original_method = "FF0F600C92E1745B1B3B7823F85C9072", hash_generated_method = "3C727BDF61EF3EB2B960E985C9E7AA07")
     public void destroy() {
         nativeDestroyFrame();
         mBlockMessages = true;
         removeCallbacksAndMessages(null);
-        // ---------- Original Method ----------
-        //nativeDestroyFrame();
-        //mBlockMessages = true;
-        //removeCallbacksAndMessages(null);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.716 -0400", hash_original_method = "08B10BC0FD4D849356EF434C4A57C456", hash_generated_method = "C94B6AF869EC7E1A7A4429CC932AC0F9")
     @Override
     public void handleMessage(Message msg) {
-        //Begin case FRAME_COMPLETED 
+        
         {
             {
                 boolean var62FF4720D31A7507990A918088ECF943_822111214 = (mSettings.getSavePassword() && hasPasswordField());
@@ -500,56 +512,58 @@ class BrowserFrame extends Handler {
                         String[] up = mDatabase.getUsernamePassword(schemePlusHost);
                         {
                             setUsernamePassword(up[0], up[1]);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             {
                 boolean var6B43FCDD8E50C7CA617498FD267AAC18_1033918617 = (!JniUtil.useChromiumHttpStack());
                 {
                     WebViewWorker.getHandler().sendEmptyMessage(
                             WebViewWorker.MSG_TRIM_CACHE);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        //End case FRAME_COMPLETED 
-        //Begin case POLICY_FUNCTION 
+                } 
+            } 
+        } 
+        
+        
         {
             nativeCallPolicyFunction(msg.arg1, msg.arg2);
-        } //End block
-        //End case POLICY_FUNCTION 
-        //Begin case ORIENTATION_CHANGED 
+        } 
+        
+        
         {
             {
                 mOrientation = msg.arg1;
                 nativeOrientationChanged(msg.arg1);
-            } //End block
-        } //End block
-        //End case ORIENTATION_CHANGED 
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.716 -0400", hash_original_method = "71CD366348BF98805D3BCFC6E13F61B1", hash_generated_method = "55478C4548772023BBC8202A9F2F1945")
     private void setTitle(String title) {
         mCallbackProxy.onReceivedTitle(title);
         addTaint(title.getTaint());
-        // ---------- Original Method ----------
-        //mCallbackProxy.onReceivedTitle(title);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.717 -0400", hash_original_method = "DC38D0601A6CA8B3CA54AD6CF11C8ED7", hash_generated_method = "CADF6A855CA06C4D65518E1FB1088547")
     public void externalRepresentation(Message callback) {
         callback.obj = externalRepresentation();
         ;
         callback.sendToTarget();
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //callback.obj = externalRepresentation();
-        //;
-        //callback.sendToTarget();
+        
+        
+        
+        
     }
 
     
@@ -561,28 +575,29 @@ class BrowserFrame extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.717 -0400", hash_original_method = "769B7E21D870172A915EE6F0EB6B2D2C", hash_generated_method = "96274C175398F093AFBCB07F994C45F6")
     public void documentAsText(Message callback) {
         StringBuilder text = new StringBuilder();
         {
             text.append(documentAsText());
-        } //End block
+        } 
         {
             text.append(childFramesAsText());
-        } //End block
+        } 
         callback.obj = text.toString();
         callback.sendToTarget();
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //StringBuilder text = new StringBuilder();
-        //if (callback.arg1 != 0) {
-            //text.append(documentAsText());
-        //}
-        //if (callback.arg2 != 0) {
-            //text.append(childFramesAsText());
-        //}
-        //callback.obj = text.toString();
-        //callback.sendToTarget();
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -591,7 +606,7 @@ class BrowserFrame extends Handler {
     	String s = new String();
     	s.addTaint(taint);
     	return s;
-    	// DSFIXME: source?
+    	
     }
 
     
@@ -600,10 +615,11 @@ class BrowserFrame extends Handler {
     	String s = new String();
     	s.addTaint(taint);
     	return s;
-    	// DSFIXME: source?
+    	
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.718 -0400", hash_original_method = "7D1B04AB7A647E05019AB7BC865C3803", hash_generated_method = "544EE43BAE35067E80943F50A0452C4C")
     private void windowObjectCleared(int nativeFramePointer) {
         Iterator<String> iter = mJavaScriptObjects.keySet().iterator();
@@ -615,80 +631,84 @@ class BrowserFrame extends Handler {
                 {
                     nativeAddJavascriptInterface(nativeFramePointer,
                         mJavaScriptObjects.get(interfaceName), interfaceName);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         mRemovedJavaScriptObjects.clear();
         stringByEvaluatingJavaScriptFromString(SearchBoxImpl.JS_BRIDGE);
         addTaint(nativeFramePointer);
-        // ---------- Original Method ----------
-        //Iterator<String> iter = mJavaScriptObjects.keySet().iterator();
-        //while (iter.hasNext())  {
-            //String interfaceName = iter.next();
-            //Object object = mJavaScriptObjects.get(interfaceName);
-            //if (object != null) {
-                //nativeAddJavascriptInterface(nativeFramePointer,
-                        //mJavaScriptObjects.get(interfaceName), interfaceName);
-            //}
-        //}
-        //mRemovedJavaScriptObjects.clear();
-        //stringByEvaluatingJavaScriptFromString(SearchBoxImpl.JS_BRIDGE);
+        
+        
+        
+            
+            
+            
+                
+                        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.719 -0400", hash_original_method = "2FB67C52CD526BE2C970DC0DB75D361F", hash_generated_method = "73EA5E4D81727A65A23540155A4B52BA")
     public boolean handleUrl(String url) {
         {
             boolean var7DE13210A5C773F021EC43207BBDA187_875053254 = (mCallbackProxy.shouldOverrideUrlLoading(url));
             {
                 didFirstLayout();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(url.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1143668304 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1143668304;
-        // ---------- Original Method ----------
-        //if (mLoadInitFromJava == true) {
-            //return false;
-        //}
-        //if (mCallbackProxy.shouldOverrideUrlLoading(url)) {
-            //didFirstLayout();
-            //return true;
-        //} else {
-            //return false;
-        //}
+        
+        
+            
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.719 -0400", hash_original_method = "8112D6E9F2629FDD519CF9C502DF963B", hash_generated_method = "E178970CCDAC65F2BC4BE3EE6E494718")
     public void addJavascriptInterface(Object obj, String interfaceName) {
         removeJavascriptInterface(interfaceName);
         mJavaScriptObjects.put(interfaceName, obj);
         addTaint(obj.getTaint());
         addTaint(interfaceName.getTaint());
-        // ---------- Original Method ----------
-        //assert obj != null;
-        //removeJavascriptInterface(interfaceName);
-        //mJavaScriptObjects.put(interfaceName, obj);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.719 -0400", hash_original_method = "D4D979316C36EF31BC47A23AC0C9BE50", hash_generated_method = "3CFB3CEE8DFDF437316B59814A1F907D")
     public void removeJavascriptInterface(String interfaceName) {
         {
             boolean varBA61D59CAAA24DBF67D72A8EF3264200_2002267228 = (mJavaScriptObjects.containsKey(interfaceName));
             {
                 mRemovedJavaScriptObjects.add(mJavaScriptObjects.remove(interfaceName));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(interfaceName.getTaint());
-        // ---------- Original Method ----------
-        //if (mJavaScriptObjects.containsKey(interfaceName)) {
-            //mRemovedJavaScriptObjects.add(mJavaScriptObjects.remove(interfaceName));
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.720 -0400", hash_original_method = "DF8E19ADC1C4D892E5E9E24D72F873C3", hash_generated_method = "7B9DA7C003907885EBA0ABB404B50D2C")
     private int getFileSize(String uri) {
         int size = 0;
@@ -698,24 +718,25 @@ class BrowserFrame extends Handler {
                             .openInputStream(Uri.parse(uri));
             size = stream.available();
             stream.close();
-        } //End block
+        } 
         catch (Exception e)
         { }
         addTaint(uri.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1602656467 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1602656467;
-        // ---------- Original Method ----------
-        //int size = 0;
-        //try {
-            //InputStream stream = mContext.getContentResolver()
-                            //.openInputStream(Uri.parse(uri));
-            //size = stream.available();
-            //stream.close();
-        //} catch (Exception e) {}
-        //return size;
+        
+        
+        
+            
+                            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.721 -0400", hash_original_method = "D65A9387A3FB37FCB544A79FFB5606B6", hash_generated_method = "A7274771AC7B3122BD874FFDBE80C0E6")
     private int getFile(String uri, byte[] buffer, int offset,
             int expectedSize) {
@@ -727,62 +748,63 @@ class BrowserFrame extends Handler {
             size = stream.available();
             {
                 stream.read(buffer, offset, size);
-            } //End block
+            } 
             {
                 size = 0;
-            } //End block
+            } 
             stream.close();
-        } //End block
+        } 
         catch (java.io.FileNotFoundException e)
         {
             size = 0;
-        } //End block
+        } 
         catch (java.io.IOException e2)
         {
             size = 0;
-        } //End block
+        } 
         addTaint(uri.getTaint());
         addTaint(buffer[0]);
         addTaint(offset);
         addTaint(expectedSize);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_412011100 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_412011100;
-        // ---------- Original Method ----------
-        //int size = 0;
-        //try {
-            //InputStream stream = mContext.getContentResolver()
-                            //.openInputStream(Uri.parse(uri));
-            //size = stream.available();
-            //if (size <= expectedSize && buffer != null
-                    //&& buffer.length - offset >= size) {
-                //stream.read(buffer, offset, size);
-            //} else {
-                //size = 0;
-            //}
-            //stream.close();
-        //} catch (java.io.FileNotFoundException e) {
-            //Log.e(LOGTAG, "FileNotFoundException:" + e);
-            //size = 0;
-        //} catch (java.io.IOException e2) {
-            //Log.e(LOGTAG, "IOException: " + e2);
-            //size = 0;
-        //}
-        //return size;
+        
+        
+        
+            
+                            
+            
+            
+                    
+                
+            
+                
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.724 -0400", hash_original_method = "60CA323AEDF7C276FF8B65BEFBD4FA69", hash_generated_method = "E1BE12476E1D51F8FA9C927F677AA65B")
     private InputStream inputStreamForAndroidResource(String url) {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1528800657 = null; //Variable for return #1
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_315415418 = null; //Variable for return #2
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1157188784 = null; //Variable for return #3
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_968147465 = null; //Variable for return #4
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_975401420 = null; //Variable for return #5
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_565323356 = null; //Variable for return #6
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1675783857 = null; //Variable for return #7
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1622136459 = null; //Variable for return #8
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_91845693 = null; //Variable for return #9
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1319988136 = null; //Variable for return #10
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1528800657 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_315415418 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1157188784 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_968147465 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_975401420 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_565323356 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1675783857 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1622136459 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_91845693 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1319988136 = null; 
         final String ANDROID_ASSET = "file:///android_asset/";
         final String ANDROID_RESOURCE = "file:///android_res/";
         final String ANDROID_CONTENT = "content:";
@@ -794,13 +816,13 @@ class BrowserFrame extends Handler {
                     boolean var6AB4ECE4FADE49B1DE66FC23626AC729_2131209805 = (url == null || url.length() == 0);
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1528800657 = null;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 int slash = url.indexOf('/');
                 int dot = url.indexOf('.', slash);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_315415418 = null;
-                } //End block
+                } 
                 String subClassName = url.substring(0, slash);
                 String fieldName = url.substring(slash + 1, dot);
                 String errorMsg = null;
@@ -818,16 +840,16 @@ class BrowserFrame extends Handler {
                         varB4EAC82CA7396A68D541C85D26508E83_1157188784 = mContext.getAssets().openNonAsset(
                             value.assetCookie, value.string.toString(),
                             AssetManager.ACCESS_STREAMING);
-                    } //End block
+                    } 
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_968147465 = null;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (Exception e)
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_975401420 = null;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 boolean varA326CC4BBEB8E48966FD18C590AD09E0_212167525 = (url.startsWith(ANDROID_ASSET));
                 {
@@ -836,12 +858,12 @@ class BrowserFrame extends Handler {
                     {
                         AssetManager assets = mContext.getAssets();
                         varB4EAC82CA7396A68D541C85D26508E83_565323356 = assets.open(url, AssetManager.ACCESS_STREAMING);
-                    } //End block
+                    } 
                     catch (IOException e)
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1675783857 = null;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     boolean var9D1D2B0882467AD6080B338924D7EEBD_2040151598 = (mSettings.getAllowContentAccess() &&
                    url.startsWith(ANDROID_CONTENT));
@@ -851,62 +873,63 @@ class BrowserFrame extends Handler {
                             int mimeIndex = url.lastIndexOf('?');
                             {
                                 url = url.substring(0, mimeIndex);
-                            } //End block
+                            } 
                             Uri uri = Uri.parse(url);
                             varB4EAC82CA7396A68D541C85D26508E83_1622136459 = mContext.getContentResolver().openInputStream(uri);
-                        } //End block
+                        } 
                         catch (Exception e)
                         {
                             varB4EAC82CA7396A68D541C85D26508E83_91845693 = null;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1319988136 = null;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(url.getTaint());
-        InputStream varA7E53CE21691AB073D9660D615818899_1509476823; //Final return value
+        InputStream varA7E53CE21691AB073D9660D615818899_1509476823; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1509476823 = varB4EAC82CA7396A68D541C85D26508E83_1528800657;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1509476823 = varB4EAC82CA7396A68D541C85D26508E83_315415418;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1509476823 = varB4EAC82CA7396A68D541C85D26508E83_1157188784;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1509476823 = varB4EAC82CA7396A68D541C85D26508E83_968147465;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_1509476823 = varB4EAC82CA7396A68D541C85D26508E83_975401420;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_1509476823 = varB4EAC82CA7396A68D541C85D26508E83_565323356;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_1509476823 = varB4EAC82CA7396A68D541C85D26508E83_1675783857;
                 break;
-            case 8: //Assign result for return ordinal #8
+            case 8: 
                 varA7E53CE21691AB073D9660D615818899_1509476823 = varB4EAC82CA7396A68D541C85D26508E83_1622136459;
                 break;
-            case 9: //Assign result for return ordinal #9
+            case 9: 
                 varA7E53CE21691AB073D9660D615818899_1509476823 = varB4EAC82CA7396A68D541C85D26508E83_91845693;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1509476823 = varB4EAC82CA7396A68D541C85D26508E83_1319988136;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1509476823.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1509476823.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1509476823;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.725 -0400", hash_original_method = "DEA49E30923C6B4E17F9FB446E1784D4", hash_generated_method = "BEADD5B864A0362F10A234304C7AE19A")
     private LoadListener startLoadingResource(int loaderHandle,
                                               String url,
@@ -920,28 +943,28 @@ class BrowserFrame extends Handler {
                                               boolean synchronous,
                                               String username,
                                               String password) {
-        LoadListener varB4EAC82CA7396A68D541C85D26508E83_800784004 = null; //Variable for return #1
-        LoadListener varB4EAC82CA7396A68D541C85D26508E83_112018095 = null; //Variable for return #2
+        LoadListener varB4EAC82CA7396A68D541C85D26508E83_800784004 = null; 
+        LoadListener varB4EAC82CA7396A68D541C85D26508E83_112018095 = null; 
         {
             boolean var6F8758D2F464DBB6403377B21E3BD81A_310927396 = (mSettings.getCacheMode() != WebSettings.LOAD_DEFAULT);
             {
                 cacheMode = mSettings.getCacheMode();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varE136B9F2BD76354D2C6E072F73228787_410816682 = (method.equals("POST"));
             {
                 {
                     cacheMode = WebSettings.LOAD_NO_CACHE;
-                } //End block
+                } 
                 String[] ret = getUsernamePassword();
                 {
                     String domUsername = ret[0];
                     String domPassword = ret[1];
                     maybeSavePassword(postData, domUsername, domPassword);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         boolean isMainFramePage = mIsMainFrame;
         LoadListener loadListener = LoadListener.getLoadListener(mContext,
                 this, url, loaderHandle, synchronous, isMainFramePage,
@@ -953,8 +976,8 @@ class BrowserFrame extends Handler {
                     android.net.http.EventHandler.ERROR, mContext.getString(
                             com.android.internal.R.string.httpErrorTooManyRequests));
                 varB4EAC82CA7396A68D541C85D26508E83_800784004 = loadListener;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         FrameLoader loader = new FrameLoader(loadListener, mSettings, method,
                 mCallbackProxy.shouldInterceptRequest(url));
         loader.setHeaders(headers);
@@ -975,22 +998,23 @@ class BrowserFrame extends Handler {
         addTaint(synchronous);
         addTaint(username.getTaint());
         addTaint(password.getTaint());
-        LoadListener varA7E53CE21691AB073D9660D615818899_51345312; //Final return value
+        LoadListener varA7E53CE21691AB073D9660D615818899_51345312; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_51345312 = varB4EAC82CA7396A68D541C85D26508E83_800784004;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_51345312 = varB4EAC82CA7396A68D541C85D26508E83_112018095;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_51345312.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_51345312.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_51345312;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.726 -0400", hash_original_method = "69B43B2B2D64063203E22417AF1B4FBE", hash_generated_method = "DFC8D2E080BD6C7D05B82EB66377EDC4")
     private void maybeSavePassword(
             byte[] postData, String username, String password) {
@@ -998,16 +1022,16 @@ class BrowserFrame extends Handler {
             boolean var911F0604D5A8278A2892D81EDC89EA56_50217013 = (postData == null
                 || username == null || username.isEmpty()
                 || password == null || password.isEmpty());
-        } //End collapsed parenthetic
+        } 
         {
             boolean varF748BCF92145CEE9E6F4341D9614C6CE_1364341358 = (!mSettings.getSavePassword());
-        } //End collapsed parenthetic
+        } 
         try 
         {
             {
                 Assert.assertNotNull(mCallbackProxy.getBackForwardList()
                         .getCurrentItem());
-            } //End block
+            } 
             WebAddress uri = new WebAddress(mCallbackProxy
                     .getBackForwardList().getCurrentItem().getUrl());
             String schemePlusHost = uri.getScheme() + uri.getHost();
@@ -1022,33 +1046,34 @@ class BrowserFrame extends Handler {
                         {
                             mDatabase.setUsernamePassword(
                                 schemePlusHost, username, password);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         mCallbackProxy.onSavePassword(schemePlusHost, username,
                             password, null);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         catch (ParseException ex)
         { }
         addTaint(postData[0]);
         addTaint(username.getTaint());
         addTaint(password.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.727 -0400", hash_original_method = "DD9E58924AE2FD70E5FF51B9D61BCBED", hash_generated_method = "8E99E27E333F7503A8062EBC2262CE3E")
     private WebResourceResponse shouldInterceptRequest(String url) {
-        WebResourceResponse varB4EAC82CA7396A68D541C85D26508E83_1445929904 = null; //Variable for return #1
-        WebResourceResponse varB4EAC82CA7396A68D541C85D26508E83_1991826218 = null; //Variable for return #2
+        WebResourceResponse varB4EAC82CA7396A68D541C85D26508E83_1445929904 = null; 
+        WebResourceResponse varB4EAC82CA7396A68D541C85D26508E83_1991826218 = null; 
         InputStream androidResource = inputStreamForAndroidResource(url);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1445929904 = new WebResourceResponse(null, null, androidResource);
-        } //End block
+        } 
         WebResourceResponse response = mCallbackProxy.shouldInterceptRequest(url);
         {
             boolean var847EBE44E86F4F89B92A16B7F267147C_1216999879 = (response == null && "browser:incognito".equals(url));
@@ -1059,99 +1084,106 @@ class BrowserFrame extends Handler {
                     InputStream ins = res.openRawResource(
                         com.android.internal.R.raw.incognito_mode_start_page);
                     response = new WebResourceResponse("text/html", "utf8", ins);
-                } //End block
+                } 
                 catch (NotFoundException ex)
                 { }
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1991826218 = response;
         addTaint(url.getTaint());
-        WebResourceResponse varA7E53CE21691AB073D9660D615818899_1976086314; //Final return value
+        WebResourceResponse varA7E53CE21691AB073D9660D615818899_1976086314; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1976086314 = varB4EAC82CA7396A68D541C85D26508E83_1445929904;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1976086314 = varB4EAC82CA7396A68D541C85D26508E83_1991826218;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1976086314.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1976086314.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1976086314;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.727 -0400", hash_original_method = "07700DAB8245AC940D55DCEF1A17B102", hash_generated_method = "6CDB99422DD7CC63E11F32C6B65590AD")
     private void setProgress(int newProgress) {
         mCallbackProxy.onProgressChanged(newProgress);
         {
             sendMessageDelayed(obtainMessage(FRAME_COMPLETED), 100);
-        } //End block
+        } 
         {
             mCallbackProxy.switchOutDrawHistory();
-        } //End block
+        } 
         addTaint(newProgress);
-        // ---------- Original Method ----------
-        //mCallbackProxy.onProgressChanged(newProgress);
-        //if (newProgress == 100) {
-            //sendMessageDelayed(obtainMessage(FRAME_COMPLETED), 100);
-        //}
-        //if (mFirstLayoutDone && newProgress > TRANSITION_SWITCH_THRESHOLD) {
-            //mCallbackProxy.switchOutDrawHistory();
-        //}
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.728 -0400", hash_original_method = "910C3A78FCE0B1E574FD9CA74D1EE7A9", hash_generated_method = "8931057A11A6DB801BBACC504BC0B535")
     private void didReceiveIcon(Bitmap icon) {
         mCallbackProxy.onReceivedIcon(icon);
         addTaint(icon.getTaint());
-        // ---------- Original Method ----------
-        //mCallbackProxy.onReceivedIcon(icon);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.728 -0400", hash_original_method = "F9E26289979EC36BEDC07872BFD387F0", hash_generated_method = "0C547F9A3B3FA472E5EEEA66A8C009A2")
     private void didReceiveTouchIconUrl(String url, boolean precomposed) {
         mCallbackProxy.onReceivedTouchIconUrl(url, precomposed);
         addTaint(url.getTaint());
         addTaint(precomposed);
-        // ---------- Original Method ----------
-        //mCallbackProxy.onReceivedTouchIconUrl(url, precomposed);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.729 -0400", hash_original_method = "49DBB49355B8BD4E95F5FBA6E171926E", hash_generated_method = "6999FA12A2E170A75757753D32C651CB")
     private BrowserFrame createWindow(boolean dialog, boolean userGesture) {
-        BrowserFrame varB4EAC82CA7396A68D541C85D26508E83_584813136 = null; //Variable for return #1
+        BrowserFrame varB4EAC82CA7396A68D541C85D26508E83_584813136 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_584813136 = mCallbackProxy.createWindow(dialog, userGesture);
         addTaint(dialog);
         addTaint(userGesture);
-        varB4EAC82CA7396A68D541C85D26508E83_584813136.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_584813136.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_584813136;
-        // ---------- Original Method ----------
-        //return mCallbackProxy.createWindow(dialog, userGesture);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.729 -0400", hash_original_method = "05E62B842D0E318583ACCB4619923A88", hash_generated_method = "75CF187AC2BCD2C92D428CFCB1D19AF9")
     private void requestFocus() {
         mCallbackProxy.onRequestFocus();
-        // ---------- Original Method ----------
-        //mCallbackProxy.onRequestFocus();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.729 -0400", hash_original_method = "A6BF5F00A4A45564AACA34EE9DAEC5CF", hash_generated_method = "E71E93E66A811963999EE2C83B4D6747")
     private void closeWindow(WebViewCore w) {
         mCallbackProxy.onCloseWindow(w.getWebView());
         addTaint(w.getTaint());
-        // ---------- Original Method ----------
-        //mCallbackProxy.onCloseWindow(w.getWebView());
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.730 -0400", hash_original_method = "53828DFE68036F8E35ADAC562AA427C9", hash_generated_method = "6F859EE15677210125FB674A8DDAE17E")
     private void decidePolicyForFormResubmission(int policyFunction) {
         Message dontResend = obtainMessage(POLICY_FUNCTION, policyFunction,
@@ -1160,59 +1192,62 @@ class BrowserFrame extends Handler {
                 POLICY_USE);
         mCallbackProxy.onFormResubmission(dontResend, resend);
         addTaint(policyFunction);
-        // ---------- Original Method ----------
-        //Message dontResend = obtainMessage(POLICY_FUNCTION, policyFunction,
-                //POLICY_IGNORE);
-        //Message resend = obtainMessage(POLICY_FUNCTION, policyFunction,
-                //POLICY_USE);
-        //mCallbackProxy.onFormResubmission(dontResend, resend);
+        
+        
+                
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.730 -0400", hash_original_method = "B19BAB1EEF674556A3A9CC47CD14FB0B", hash_generated_method = "12C358F1B02FB6A5EBCB026210775A8E")
     private void updateVisitedHistory(String url, boolean isReload) {
         mCallbackProxy.doUpdateVisitedHistory(url, isReload);
         addTaint(url.getTaint());
         addTaint(isReload);
-        // ---------- Original Method ----------
-        //mCallbackProxy.doUpdateVisitedHistory(url, isReload);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.731 -0400", hash_original_method = "D3ED977A3BCAC48329E24D7D69689852", hash_generated_method = "12455877143015B7FAD8662FCD9EA9FE")
      CallbackProxy getCallbackProxy() {
-        CallbackProxy varB4EAC82CA7396A68D541C85D26508E83_707526993 = null; //Variable for return #1
+        CallbackProxy varB4EAC82CA7396A68D541C85D26508E83_707526993 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_707526993 = mCallbackProxy;
-        varB4EAC82CA7396A68D541C85D26508E83_707526993.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_707526993.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_707526993;
-        // ---------- Original Method ----------
-        //return mCallbackProxy;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.732 -0400", hash_original_method = "F09A8DE53C03EAD5D6B2D7442C92246E", hash_generated_method = "6236BFF31CEE914D5418C25F7EE37D9D")
      String getUserAgentString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_958524413 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_958524413 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_958524413 = mSettings.getUserAgentString();
-        varB4EAC82CA7396A68D541C85D26508E83_958524413.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_958524413.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_958524413;
-        // ---------- Original Method ----------
-        //return mSettings.getUserAgentString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.733 -0400", hash_original_method = "D14466E1FBBBA5A0DDC9A63472126D93", hash_generated_method = "03CD7C5D828F3DC8B2568B6B98ECE0EF")
     private String getRawResFilename(int id) {
-        String varB4EAC82CA7396A68D541C85D26508E83_340682141 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_340682141 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_340682141 = getRawResFilename(id, mContext);
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_340682141.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_340682141.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_340682141;
-        // ---------- Original Method ----------
-        //return getRawResFilename(id, mContext);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String getRawResFilename(int id, Context context) {
         int resid;
         switch (id) {
@@ -1256,13 +1291,14 @@ class BrowserFrame extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.734 -0400", hash_original_method = "E4DD03CAE364FD517B782C57726FD370", hash_generated_method = "93991C3BEA65181322E5CB8CB7E9A891")
     private float density() {
         float var828FED69EC6DBC28F444BC99FA02F5DC_500122634 = (mContext.getResources().getDisplayMetrics().density);
         float var546ADE640B6EDFBC8A086EF31347E768_80841292 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_80841292;
-        // ---------- Original Method ----------
-        //return mContext.getResources().getDisplayMetrics().density;
+        
+        
     }
 
     
@@ -1294,26 +1330,26 @@ class BrowserFrame extends Handler {
         addTaint(realm.getTaint());
         addTaint(useCachedCredentials);
         addTaint(suppressDialog);
-        // ---------- Original Method ----------
-        //HttpAuthHandler handler = new HttpAuthHandler() {
-            //@Override
-            //public boolean useHttpAuthUsernamePassword() {
-                //return useCachedCredentials;
-            //}
-            //@Override
-            //public void proceed(String username, String password) {
-                //nativeAuthenticationProceed(handle, username, password);
-            //}
-            //@Override
-            //public void cancel() {
-                //nativeAuthenticationCancel(handle);
-            //}
-            //@Override
-            //public boolean suppressDialog() {
-                //return suppressDialog;
-            //}
-        //};
-        //mCallbackProxy.onReceivedHttpAuthRequest(handler, host, realm);
+        
+        
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -1326,19 +1362,19 @@ class BrowserFrame extends Handler {
             X509Certificate cert = new X509CertImpl(certDER);
             SslCertificate sslCert = new SslCertificate(cert);
             sslError = SslError.SslErrorFromChromiumErrorCode(certError, sslCert, url);
-        } //End block
+        } 
         catch (IOException e)
         {
             nativeSslCertErrorCancel(handle, certError);
             return;
-        } //End block
+        } 
         {
             boolean var9E891972169349B7CCF07279CD1AABBF_846744547 = (SslCertLookupTable.getInstance().isAllowed(sslError));
             {
                 nativeSslCertErrorProceed(handle);
                 mCallbackProxy.onProceededAfterSslError(sslError);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         SslErrorHandler handler = new SslErrorHandler() {
             @Override
             public void proceed() {
@@ -1355,11 +1391,12 @@ class BrowserFrame extends Handler {
         addTaint(certError);
         addTaint(certDER[0]);
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.735 -0400", hash_original_method = "DFA7C324E28D10E855E86AE4BB5B7562", hash_generated_method = "20D0E1FF1F85BD3C0E2AC94363384EB6")
     private void requestClientCert(int handle, String hostAndPort) {
         SslClientCertLookupTable table = SslClientCertLookupTable.getInstance();
@@ -1369,35 +1406,36 @@ class BrowserFrame extends Handler {
                 nativeSslClientCert(handle,
                                 table.PrivateKey(hostAndPort),
                                 table.CertificateChain(hostAndPort));
-            } //End block
+            } 
             {
                 boolean var50D6A23560AA663AF990FF8C2B0C3B75_1239393996 = (table.IsDenied(hostAndPort));
                 {
                     nativeSslClientCert(handle, null, null);
-                } //End block
+                } 
                 {
                     mCallbackProxy.onReceivedClientCertRequest(
                     new ClientCertRequestHandler(this, handle, hostAndPort, table), hostAndPort);
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(handle);
         addTaint(hostAndPort.getTaint());
-        // ---------- Original Method ----------
-        //SslClientCertLookupTable table = SslClientCertLookupTable.getInstance();
-        //if (table.IsAllowed(hostAndPort)) {
-            //nativeSslClientCert(handle,
-                                //table.PrivateKey(hostAndPort),
-                                //table.CertificateChain(hostAndPort));
-        //} else if (table.IsDenied(hostAndPort)) {
-            //nativeSslClientCert(handle, null, null);
-        //} else {
-            //mCallbackProxy.onReceivedClientCertRequest(
-                    //new ClientCertRequestHandler(this, handle, hostAndPort, table), hostAndPort);
-        //}
+        
+        
+        
+            
+                                
+                                
+        
+            
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.736 -0400", hash_original_method = "322B645C7F09570DF98848B1C3D767D8", hash_generated_method = "A786FA6639CE48F8AF2C41557C868216")
     private void downloadStart(String url, String userAgent,
             String contentDisposition, String mimeType, long contentLength) {
@@ -1409,112 +1447,116 @@ class BrowserFrame extends Handler {
                     String extension = url.substring(url.lastIndexOf('.') + 1);
                     mimeType = libcore.net.MimeUtils.guessMimeTypeFromExtension(extension);
                     mimeType = "";
-                } //End block
+                } 
                 catch (IndexOutOfBoundsException exception)
                 { }
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mimeType = MimeTypeMap.getSingleton().remapGenericMimeType(
                 mimeType, url, contentDisposition);
         {
             boolean var4B3BED1078E8417BFF574BC05F74B45C_66136523 = (CertTool.getCertType(mimeType) != null);
             {
                 mKeyStoreHandler = new KeyStoreHandler(mimeType);
-            } //End block
+            } 
             {
                 mCallbackProxy.onDownloadStart(url, userAgent,
                 contentDisposition, mimeType, contentLength);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(url.getTaint());
         addTaint(userAgent.getTaint());
         addTaint(contentDisposition.getTaint());
         addTaint(contentLength);
-        // ---------- Original Method ----------
-        //if (mimeType.isEmpty()) {
-            //try {
-                //String extension = url.substring(url.lastIndexOf('.') + 1);
-                //mimeType = libcore.net.MimeUtils.guessMimeTypeFromExtension(extension);
-                //if (mimeType == null)
-                    //mimeType = "";
-            //} catch(IndexOutOfBoundsException exception) {
-            //}
-        //}
-        //mimeType = MimeTypeMap.getSingleton().remapGenericMimeType(
-                //mimeType, url, contentDisposition);
-        //if (CertTool.getCertType(mimeType) != null) {
-            //mKeyStoreHandler = new KeyStoreHandler(mimeType);
-        //} else {
-            //mCallbackProxy.onDownloadStart(url, userAgent,
-                //contentDisposition, mimeType, contentLength);
-        //}
+        
+        
+            
+                
+                
+                
+                    
+            
+            
+        
+        
+                
+        
+            
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.736 -0400", hash_original_method = "BAE8CD84EA4D59BD4BB7CAF15EB1C07F", hash_generated_method = "D5625DF4D60A3564448CA5E674D53A5F")
     private void didReceiveData(byte data[], int size) {
         mKeyStoreHandler.didReceiveData(data, size);
         addTaint(data[0]);
         addTaint(size);
-        // ---------- Original Method ----------
-        //if (mKeyStoreHandler != null) mKeyStoreHandler.didReceiveData(data, size);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.736 -0400", hash_original_method = "5EC89579D3745ABD19569589FBBBCA81", hash_generated_method = "B454CCBDA172FF40AB0FF66C63354298")
     private void didFinishLoading() {
         {
             mKeyStoreHandler.installCert(mContext);
             mKeyStoreHandler = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mKeyStoreHandler != null) {
-          //mKeyStoreHandler.installCert(mContext);
-          //mKeyStoreHandler = null;
-      //}
+        } 
+        
+        
+          
+          
+      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.737 -0400", hash_original_method = "A2E04BD398BDF0F096F042D99402CC27", hash_generated_method = "E93478DD44E8640468FA7EA1251A4BA1")
     private void setCertificate(byte cert_der[]) {
         try 
         {
             X509Certificate cert = new X509CertImpl(cert_der);
             mCallbackProxy.onReceivedCertificate(new SslCertificate(cert));
-        } //End block
+        } 
         catch (IOException e)
         { }
         addTaint(cert_der[0]);
-        // ---------- Original Method ----------
-        //try {
-            //X509Certificate cert = new X509CertImpl(cert_der);
-            //mCallbackProxy.onReceivedCertificate(new SslCertificate(cert));
-        //} catch (IOException e) {
-            //Log.e(LOGTAG, "Can't get the certificate from WebKit, canceling");
-            //return;
-        //}
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.737 -0400", hash_original_method = "780A48AF1DFDDD134926E1881FBB7981", hash_generated_method = "B755F354B8DDB5D5154C7AAB514DE3DA")
      SearchBox getSearchBox() {
-        SearchBox varB4EAC82CA7396A68D541C85D26508E83_2010832686 = null; //Variable for return #1
+        SearchBox varB4EAC82CA7396A68D541C85D26508E83_2010832686 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2010832686 = mSearchBox;
-        varB4EAC82CA7396A68D541C85D26508E83_2010832686.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2010832686.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2010832686;
-        // ---------- Original Method ----------
-        //return mSearchBox;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.738 -0400", hash_original_method = "957E1FEE267AF2EB4B4A609321166001", hash_generated_method = "C6F9E370D1FAA1C6CA521D0AEC1F5DEC")
     private void autoLogin(String realm, String account, String args) {
         mCallbackProxy.onReceivedLoginRequest(realm, account, args);
         addTaint(realm.getTaint());
         addTaint(account.getTaint());
         addTaint(args.getTaint());
-        // ---------- Original Method ----------
-        //mCallbackProxy.onReceivedLoginRequest(realm, account, args);
+        
+        
     }
 
     
@@ -1577,6 +1619,7 @@ class BrowserFrame extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.740 -0400", hash_original_method = "6C44E95231996B5164D16D96A5AF9CAD", hash_generated_method = "F293DD4C3989DC497C60C424BC165890")
     private void nativeLoadUrl(String url, Map<String, String> headers) {
     }
@@ -1593,17 +1636,18 @@ class BrowserFrame extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.741 -0400", hash_original_method = "A939F96E349A2DAAC3BA975E2507007D", hash_generated_method = "A20ED99BC6ADB1A37D77ED3EC6142CBA")
     public void stopLoading() {
         {
             resetLoadingStates();
-        } //End block
+        } 
         nativeStopLoading();
-        // ---------- Original Method ----------
-        //if (mIsMainFrame) {
-            //resetLoadingStates();
-        //}
-        //nativeStopLoading();
+        
+        
+            
+        
+        
     }
 
     
@@ -1628,7 +1672,7 @@ class BrowserFrame extends Handler {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.743 -0400", hash_original_method = "865B533AFC1748A162575C4402C4E1D7", hash_generated_method = "649B5EB499FF582D6D8E126787969B7F")
     private String[] getUsernamePassword() {
-    	// DSFIXME: source
+    	
     	String[] s = new String[1];
     	s.addTaint(taint);
     	return s;
@@ -1687,8 +1731,8 @@ class BrowserFrame extends Handler {
         boolean var335C30460623592B55D35997E929AE78_610592606 = (nativeGetShouldStartScrolledRight(mNativeFrame));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_318858133 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_318858133;
-        // ---------- Original Method ----------
-        //return nativeGetShouldStartScrolledRight(mNativeFrame);
+        
+        
     }
 
     
@@ -1710,8 +1754,8 @@ class BrowserFrame extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.745 -0400", hash_original_method = "049F58B9ED595813037671BB1DAC0333", hash_generated_method = "0990D6314CA4E2ACF77F7549B870C8E3")
           ConfigCallback(WindowManager wm) {
             mWindowManager = wm;
-            // ---------- Original Method ----------
-            //mWindowManager = wm;
+            
+            
         }
 
         
@@ -1719,30 +1763,30 @@ class BrowserFrame extends Handler {
         public synchronized void addHandler(Handler h) {
             mHandlers.add(new WeakReference<Handler>(h));
             addTaint(h.getTaint());
-            // ---------- Original Method ----------
-            //mHandlers.add(new WeakReference<Handler>(h));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.757 -0400", hash_original_method = "2BDCB7974021DF1350762A5BB88607D6", hash_generated_method = "AE7FDC1644875F7E24D9FBD2AAF1A982")
         public void onConfigurationChanged(Configuration newConfig) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean var77DE7BD4514F064D49FEE0FA393B405C_212585629 = (mHandlers.size() == 0);
-            } //End collapsed parenthetic
+            } 
             int orientation = mWindowManager.getDefaultDisplay().getOrientation();
-            //Begin case Surface.ROTATION_90 
+            
             orientation = 90;
-            //End case Surface.ROTATION_90 
-            //Begin case Surface.ROTATION_180 
+            
+            
             orientation = 180;
-            //End case Surface.ROTATION_180 
-            //Begin case Surface.ROTATION_270 
+            
+            
             orientation = -90;
-            //End case Surface.ROTATION_270 
-            //Begin case Surface.ROTATION_0 
+            
+            
             orientation = 0;
-            //End case Surface.ROTATION_0 
+            
             {
                 ArrayList<WeakReference> handlersToRemove = new ArrayList<WeakReference>(mHandlers.size());
                 {
@@ -1754,31 +1798,31 @@ class BrowserFrame extends Handler {
                         {
                             h.sendMessage(h.obtainMessage(ORIENTATION_CHANGED,
                                     orientation, 0));
-                        } //End block
+                        } 
                         {
                             handlersToRemove.add(wh);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 {
                     Iterator<WeakReference> varD1D4DD7CA023B24419A744496E994C66_1180401354 = (handlersToRemove).iterator();
                     varD1D4DD7CA023B24419A744496E994C66_1180401354.hasNext();
                     WeakReference weak = varD1D4DD7CA023B24419A744496E994C66_1180401354.next();
                     {
                         mHandlers.remove(weak);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             addTaint(newConfig.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.757 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "39AEB8790734ECC8DC70BBAAEE0BAB0B")
         public void onLowMemory() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            // ---------- Original Method ----------
+            
+            
         }
 
         

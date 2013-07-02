@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -14,10 +14,11 @@ public abstract class ASN1Object extends DERObject {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.909 -0400", hash_original_method = "79A6503CF02D2BF6CA7C22C7ECE56A0E", hash_generated_method = "79A6503CF02D2BF6CA7C22C7ECE56A0E")
     public ASN1Object ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static ASN1Object fromByteArray(byte[] data) throws IOException {
         ASN1InputStream aIn = new ASN1InputStream(data);
         try
@@ -37,12 +38,12 @@ public abstract class ASN1Object extends DERObject {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_67394123 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_67394123;
-        // ---------- Original Method ----------
-        //if (this == o)
-        //{
-            //return true;
-        //}
-        //return (o instanceof DEREncodable) && asn1Equals(((DEREncodable)o).getDERObject());
+        
+        
+        
+            
+        
+        
     }
 
     

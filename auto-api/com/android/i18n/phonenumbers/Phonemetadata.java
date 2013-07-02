@@ -1,11 +1,11 @@
 package com.android.i18n.phonenumbers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Externalizable;
 import java.io.IOException;
@@ -16,7 +16,7 @@ public final class Phonemetadata {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.385 -0400", hash_original_method = "AA2168146A79C42118444B1AF1D13430", hash_generated_method = "01D7B0EC1EB8E0CA70481AF327448A6E")
     private  Phonemetadata() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -51,7 +51,7 @@ public final class Phonemetadata {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.386 -0400", hash_original_method = "AC8E136DE5A642003A57BDCF52FB755A", hash_generated_method = "8FEBA1E1E8A6552B6917C667BFAE4E78")
         public  NumberFormat() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -64,34 +64,34 @@ public final class Phonemetadata {
         public boolean hasPattern() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_724077362 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_724077362;
-            // ---------- Original Method ----------
-            //return hasPattern;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.387 -0400", hash_original_method = "42C6A53B1E4394F40C706B46BCE960D0", hash_generated_method = "C92455DBF057C43F6483D21B6AD73C0A")
         public String getPattern() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1366066185 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1366066185 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1366066185 = pattern_;
-            varB4EAC82CA7396A68D541C85D26508E83_1366066185.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1366066185.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1366066185;
-            // ---------- Original Method ----------
-            //return pattern_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.389 -0400", hash_original_method = "ED9D042141B07F3A02D73E93DCCEE4F0", hash_generated_method = "14C82870BD1DF4E44C2AEE74805A2CB6")
         public NumberFormat setPattern(String value) {
-            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_138468523 = null; //Variable for return #1
+            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_138468523 = null; 
             hasPattern = true;
             pattern_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_138468523 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_138468523.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_138468523.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_138468523;
-            // ---------- Original Method ----------
-            //hasPattern = true;
-            //pattern_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -99,45 +99,45 @@ public final class Phonemetadata {
         public boolean hasFormat() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1029426382 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1029426382;
-            // ---------- Original Method ----------
-            //return hasFormat;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.391 -0400", hash_original_method = "77809F0555E410001A5868E71E8924BD", hash_generated_method = "86B232040B9A06409F9CB52B5D2ABD02")
         public String getFormat() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1889369488 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1889369488 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1889369488 = format_;
-            varB4EAC82CA7396A68D541C85D26508E83_1889369488.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1889369488.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1889369488;
-            // ---------- Original Method ----------
-            //return format_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.392 -0400", hash_original_method = "791160F9BB3B0A81AD0DFEC24C1732C9", hash_generated_method = "6305E7E0D7BA8B975EAA8A81F954FB15")
         public NumberFormat setFormat(String value) {
-            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_1509098038 = null; //Variable for return #1
+            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_1509098038 = null; 
             hasFormat = true;
             format_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1509098038 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1509098038.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1509098038.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1509098038;
-            // ---------- Original Method ----------
-            //hasFormat = true;
-            //format_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.393 -0400", hash_original_method = "E6A52876E9E1328523A23CDD4ADD6081", hash_generated_method = "6166019B99BA98A00BAFAA9FB0887479")
         public java.util.List<String> leadingDigitPatterns() {
-            java.util.List<String> varB4EAC82CA7396A68D541C85D26508E83_584328183 = null; //Variable for return #1
+            java.util.List<String> varB4EAC82CA7396A68D541C85D26508E83_584328183 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_584328183 = leadingDigitsPattern_;
-            varB4EAC82CA7396A68D541C85D26508E83_584328183.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_584328183.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_584328183;
-            // ---------- Original Method ----------
-            //return leadingDigitsPattern_;
+            
+            
         }
 
         
@@ -146,40 +146,40 @@ public final class Phonemetadata {
             int varB0FE41F8E6695F261080B3A10B142102_708634853 = (leadingDigitsPattern_.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1024742535 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1024742535;
-            // ---------- Original Method ----------
-            //return leadingDigitsPattern_.size();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.393 -0400", hash_original_method = "F45A9318A15D3A63FB863C1586B0A383", hash_generated_method = "87358DF0DB0094EB700D0387FE8409FD")
         public String getLeadingDigitsPattern(int index) {
-            String varB4EAC82CA7396A68D541C85D26508E83_2046711665 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_2046711665 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2046711665 = leadingDigitsPattern_.get(index);
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_2046711665.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2046711665.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2046711665;
-            // ---------- Original Method ----------
-            //return leadingDigitsPattern_.get(index);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.394 -0400", hash_original_method = "67AADF10399513606F7245D93555CAB7", hash_generated_method = "E4251F9E215936B9516C70149EE1B4FD")
         public NumberFormat addLeadingDigitsPattern(String value) {
-            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_2028523527 = null; //Variable for return #1
+            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_2028523527 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             leadingDigitsPattern_.add(value);
             varB4EAC82CA7396A68D541C85D26508E83_2028523527 = this;
             addTaint(value.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2028523527.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2028523527.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2028523527;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //leadingDigitsPattern_.add(value);
-            //return this;
+            
+            
+        
+      
+            
+            
         }
 
         
@@ -187,49 +187,49 @@ public final class Phonemetadata {
         public boolean hasNationalPrefixFormattingRule() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1745914838 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1745914838;
-            // ---------- Original Method ----------
-            //return hasNationalPrefixFormattingRule;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.395 -0400", hash_original_method = "4B4C80C20D7D7C0D6F8A6AA39111D13B", hash_generated_method = "660FE8DA307EA205D3E202AB9ED10A9E")
         public String getNationalPrefixFormattingRule() {
-            String varB4EAC82CA7396A68D541C85D26508E83_28555910 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_28555910 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_28555910 = nationalPrefixFormattingRule_;
-            varB4EAC82CA7396A68D541C85D26508E83_28555910.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_28555910.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_28555910;
-            // ---------- Original Method ----------
-            //return nationalPrefixFormattingRule_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.396 -0400", hash_original_method = "6C67B9000B21FDC6ACFC6210DBD720A7", hash_generated_method = "9F03952B2C26E2D7AB94BD117D9DB104")
         public NumberFormat setNationalPrefixFormattingRule(String value) {
-            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_535662094 = null; //Variable for return #1
+            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_535662094 = null; 
             hasNationalPrefixFormattingRule = true;
             nationalPrefixFormattingRule_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_535662094 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_535662094.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_535662094.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_535662094;
-            // ---------- Original Method ----------
-            //hasNationalPrefixFormattingRule = true;
-            //nationalPrefixFormattingRule_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.396 -0400", hash_original_method = "394C283EEDF7D9BA381FE6D7D2DD662E", hash_generated_method = "770F71F2CD1425AC07FDEDAB38E27ED6")
         public NumberFormat clearNationalPrefixFormattingRule() {
-            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_1695258528 = null; //Variable for return #1
+            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_1695258528 = null; 
             hasNationalPrefixFormattingRule = false;
             nationalPrefixFormattingRule_ = "";
             varB4EAC82CA7396A68D541C85D26508E83_1695258528 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1695258528.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1695258528.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1695258528;
-            // ---------- Original Method ----------
-            //hasNationalPrefixFormattingRule = false;
-            //nationalPrefixFormattingRule_ = "";
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -237,93 +237,93 @@ public final class Phonemetadata {
         public boolean hasDomesticCarrierCodeFormattingRule() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_68335809 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_68335809;
-            // ---------- Original Method ----------
-            //return hasDomesticCarrierCodeFormattingRule;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.397 -0400", hash_original_method = "1D78023CBBDF63A0A2ACC33925BD120F", hash_generated_method = "6EC85D9C0C58A7A603E408A8FEF3DA6B")
         public String getDomesticCarrierCodeFormattingRule() {
-            String varB4EAC82CA7396A68D541C85D26508E83_934351509 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_934351509 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_934351509 = domesticCarrierCodeFormattingRule_;
-            varB4EAC82CA7396A68D541C85D26508E83_934351509.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_934351509.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_934351509;
-            // ---------- Original Method ----------
-            //return domesticCarrierCodeFormattingRule_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.398 -0400", hash_original_method = "2168D8046E4A0ED39DDD19551FD64D5A", hash_generated_method = "B9A680DF7281933FFB1A07EF5722F67D")
         public NumberFormat setDomesticCarrierCodeFormattingRule(String value) {
-            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_550870463 = null; //Variable for return #1
+            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_550870463 = null; 
             hasDomesticCarrierCodeFormattingRule = true;
             domesticCarrierCodeFormattingRule_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_550870463 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_550870463.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_550870463.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_550870463;
-            // ---------- Original Method ----------
-            //hasDomesticCarrierCodeFormattingRule = true;
-            //domesticCarrierCodeFormattingRule_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.401 -0400", hash_original_method = "DEB91FB350FEBE5DEE35AF7BFA950AEF", hash_generated_method = "3F5CDF2535F7C11D84D9938A6D6324AB")
         public NumberFormat mergeFrom(NumberFormat other) {
-            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_1630110815 = null; //Variable for return #1
+            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_1630110815 = null; 
             {
                 boolean varF081F818C9346840C1C05850A1E84836_170492226 = (other.hasPattern());
                 {
                     setPattern(other.getPattern());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var3120A21678B49476E859E38D301D6C44_1250916236 = (other.hasFormat());
                 {
                     setFormat(other.getFormat());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             int leadingDigitsPatternSize = other.leadingDigitsPatternSize();
             {
                 int i = 0;
                 {
                     addLeadingDigitsPattern(other.getLeadingDigitsPattern(i));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varDDD2CD16D3ACF0EDF8A5770CE9BF81DE_1560333425 = (other.hasNationalPrefixFormattingRule());
                 {
                     setNationalPrefixFormattingRule(other.getNationalPrefixFormattingRule());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var41F6787BFF8421A70F22829D88E4C6F7_927519120 = (other.hasDomesticCarrierCodeFormattingRule());
                 {
                     setDomesticCarrierCodeFormattingRule(other.getDomesticCarrierCodeFormattingRule());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1630110815 = this;
             addTaint(other.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1630110815.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1630110815.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1630110815;
-            // ---------- Original Method ----------
-            //if (other.hasPattern()) {
-        //setPattern(other.getPattern());
-      //}
-            //if (other.hasFormat()) {
-        //setFormat(other.getFormat());
-      //}
-            //int leadingDigitsPatternSize = other.leadingDigitsPatternSize();
-            //for (int i = 0; i < leadingDigitsPatternSize; i++) {
-        //addLeadingDigitsPattern(other.getLeadingDigitsPattern(i));
-      //}
-            //if (other.hasNationalPrefixFormattingRule()) {
-        //setNationalPrefixFormattingRule(other.getNationalPrefixFormattingRule());
-      //}
-            //if (other.hasDomesticCarrierCodeFormattingRule()) {
-        //setDomesticCarrierCodeFormattingRule(other.getDomesticCarrierCodeFormattingRule());
-      //}
-            //return this;
+            
+            
+        
+      
+            
+        
+      
+            
+            
+        
+      
+            
+        
+      
+            
+        
+      
+            
         }
 
         
@@ -337,33 +337,33 @@ public final class Phonemetadata {
                 int i = 0;
                 {
                     objectOutput.writeUTF(leadingDigitsPattern_.get(i));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             objectOutput.writeBoolean(hasNationalPrefixFormattingRule);
             {
                 objectOutput.writeUTF(nationalPrefixFormattingRule_);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasDomesticCarrierCodeFormattingRule);
             {
                 objectOutput.writeUTF(domesticCarrierCodeFormattingRule_);
-            } //End block
+            } 
             addTaint(objectOutput.getTaint());
-            // ---------- Original Method ----------
-            //objectOutput.writeUTF(pattern_);
-            //objectOutput.writeUTF(format_);
-            //int leadingDigitsPatternSize = leadingDigitsPatternSize();
-            //objectOutput.writeInt(leadingDigitsPatternSize);
-            //for (int i = 0; i < leadingDigitsPatternSize; i++) {
-        //objectOutput.writeUTF(leadingDigitsPattern_.get(i));
-      //}
-            //objectOutput.writeBoolean(hasNationalPrefixFormattingRule);
-            //if (hasNationalPrefixFormattingRule) {
-        //objectOutput.writeUTF(nationalPrefixFormattingRule_);
-      //}
-            //objectOutput.writeBoolean(hasDomesticCarrierCodeFormattingRule);
-            //if (hasDomesticCarrierCodeFormattingRule) {
-        //objectOutput.writeUTF(domesticCarrierCodeFormattingRule_);
-      //}
+            
+            
+            
+            
+            
+            
+        
+      
+            
+            
+        
+      
+            
+            
+        
+      
         }
 
         
@@ -376,34 +376,34 @@ public final class Phonemetadata {
                 int i = 0;
                 {
                     leadingDigitsPattern_.add(objectInput.readUTF());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varF1F2050C0B36B3012DF952FA04096995_259930675 = (objectInput.readBoolean());
                 {
                     setNationalPrefixFormattingRule(objectInput.readUTF());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varF1F2050C0B36B3012DF952FA04096995_1992175198 = (objectInput.readBoolean());
                 {
                     setDomesticCarrierCodeFormattingRule(objectInput.readUTF());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(objectInput.getTaint());
-            // ---------- Original Method ----------
-            //setPattern(objectInput.readUTF());
-            //setFormat(objectInput.readUTF());
-            //int leadingDigitsPatternSize = objectInput.readInt();
-            //for (int i = 0; i < leadingDigitsPatternSize; i++) {
-        //leadingDigitsPattern_.add(objectInput.readUTF());
-      //}
-            //if (objectInput.readBoolean()) {
-        //setNationalPrefixFormattingRule(objectInput.readUTF());
-      //}
-            //if (objectInput.readBoolean()) {
-        //setDomesticCarrierCodeFormattingRule(objectInput.readUTF());
-      //}
+            
+            
+            
+            
+            
+        
+      
+            
+        
+      
+            
+        
+      
         }
 
         
@@ -412,18 +412,18 @@ public final class Phonemetadata {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.404 -0400", hash_original_method = "02DE293B5727013333ED4AAA68C7342C", hash_generated_method = "02DE293B5727013333ED4AAA68C7342C")
             public Builder ()
             {
-                //Synthesized constructor
+                
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.406 -0400", hash_original_method = "0B2E67344AC06F839A81A2533D186625", hash_generated_method = "CC5BF6093641C8724DC21897A107AAB0")
             public NumberFormat build() {
-                NumberFormat varB4EAC82CA7396A68D541C85D26508E83_233764526 = null; //Variable for return #1
+                NumberFormat varB4EAC82CA7396A68D541C85D26508E83_233764526 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_233764526 = this;
-                varB4EAC82CA7396A68D541C85D26508E83_233764526.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_233764526.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_233764526;
-                // ---------- Original Method ----------
-                //return this;
+                
+                
             }
 
             
@@ -460,7 +460,7 @@ public final class Phonemetadata {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.407 -0400", hash_original_method = "7B50B3AE2E947514292047EE4CC3D0B3", hash_generated_method = "FF0F10C59E5A022C63A72AE504F6D672")
         public  PhoneNumberDesc() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -473,34 +473,34 @@ public final class Phonemetadata {
         public boolean hasNationalNumberPattern() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1572497610 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1572497610;
-            // ---------- Original Method ----------
-            //return hasNationalNumberPattern;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.408 -0400", hash_original_method = "AE5307416A342E6E51B0D8AFEA64E005", hash_generated_method = "2DF513AB27E5609E2AB4B7349A4AACCE")
         public String getNationalNumberPattern() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1700888193 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1700888193 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1700888193 = nationalNumberPattern_;
-            varB4EAC82CA7396A68D541C85D26508E83_1700888193.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1700888193.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1700888193;
-            // ---------- Original Method ----------
-            //return nationalNumberPattern_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.409 -0400", hash_original_method = "5843589EEE5242B872EEFCA090E2182C", hash_generated_method = "4ECC11D2BC7C22B3FA7E30F96312DAD4")
         public PhoneNumberDesc setNationalNumberPattern(String value) {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_167277073 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_167277073 = null; 
             hasNationalNumberPattern = true;
             nationalNumberPattern_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_167277073 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_167277073.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_167277073.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_167277073;
-            // ---------- Original Method ----------
-            //hasNationalNumberPattern = true;
-            //nationalNumberPattern_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -508,34 +508,34 @@ public final class Phonemetadata {
         public boolean hasPossibleNumberPattern() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1282814468 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1282814468;
-            // ---------- Original Method ----------
-            //return hasPossibleNumberPattern;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.410 -0400", hash_original_method = "69E173398B553B507060BBCC25879496", hash_generated_method = "3E9659E8AB4CF108724ED8F272247671")
         public String getPossibleNumberPattern() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1071523306 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1071523306 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1071523306 = possibleNumberPattern_;
-            varB4EAC82CA7396A68D541C85D26508E83_1071523306.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1071523306.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1071523306;
-            // ---------- Original Method ----------
-            //return possibleNumberPattern_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.411 -0400", hash_original_method = "E6F0FD7A3910EDF596B66C25C9FCACCB", hash_generated_method = "E04717E48F94DA048865BAEEE4905A5F")
         public PhoneNumberDesc setPossibleNumberPattern(String value) {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_754868118 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_754868118 = null; 
             hasPossibleNumberPattern = true;
             possibleNumberPattern_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_754868118 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_754868118.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_754868118.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_754868118;
-            // ---------- Original Method ----------
-            //hasPossibleNumberPattern = true;
-            //possibleNumberPattern_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -543,73 +543,73 @@ public final class Phonemetadata {
         public boolean hasExampleNumber() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_259939662 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_259939662;
-            // ---------- Original Method ----------
-            //return hasExampleNumber;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.412 -0400", hash_original_method = "4F2E88760366816D23F2792FF3D4D910", hash_generated_method = "9E1D096D7B9A613A8623AAAE5289D7B2")
         public String getExampleNumber() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1990430121 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1990430121 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1990430121 = exampleNumber_;
-            varB4EAC82CA7396A68D541C85D26508E83_1990430121.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1990430121.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1990430121;
-            // ---------- Original Method ----------
-            //return exampleNumber_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.413 -0400", hash_original_method = "99D22C86FFDC5E436BCE118592FFD464", hash_generated_method = "DF1D4B7E8FB79004EB2C293243EEB15E")
         public PhoneNumberDesc setExampleNumber(String value) {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_315125873 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_315125873 = null; 
             hasExampleNumber = true;
             exampleNumber_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_315125873 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_315125873.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_315125873.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_315125873;
-            // ---------- Original Method ----------
-            //hasExampleNumber = true;
-            //exampleNumber_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.414 -0400", hash_original_method = "13E9D2F0445C754E67764A18611FF669", hash_generated_method = "0EC762D6916117B6656D3EBB9067B0A0")
         public PhoneNumberDesc mergeFrom(PhoneNumberDesc other) {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_608230585 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_608230585 = null; 
             {
                 boolean varD58E2A0E1D953219659F1147E75D73F4_378578330 = (other.hasNationalNumberPattern());
                 {
                     setNationalNumberPattern(other.getNationalNumberPattern());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varC6F51288774EBF45A3EF2B68674CCC4F_2125879717 = (other.hasPossibleNumberPattern());
                 {
                     setPossibleNumberPattern(other.getPossibleNumberPattern());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var63E297A85C8F39AFE7F8C657D805A65F_591156899 = (other.hasExampleNumber());
                 {
                     setExampleNumber(other.getExampleNumber());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_608230585 = this;
             addTaint(other.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_608230585.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_608230585.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_608230585;
-            // ---------- Original Method ----------
-            //if (other.hasNationalNumberPattern()) {
-        //setNationalNumberPattern(other.getNationalNumberPattern());
-      //}
-            //if (other.hasPossibleNumberPattern()) {
-        //setPossibleNumberPattern(other.getPossibleNumberPattern());
-      //}
-            //if (other.hasExampleNumber()) {
-        //setExampleNumber(other.getExampleNumber());
-      //}
-            //return this;
+            
+            
+        
+      
+            
+        
+      
+            
+        
+      
+            
         }
 
         
@@ -621,10 +621,10 @@ public final class Phonemetadata {
             addTaint(other.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_522549774 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_522549774;
-            // ---------- Original Method ----------
-            //return nationalNumberPattern_.equals(other.nationalNumberPattern_) &&
-          //possibleNumberPattern_.equals(other.possibleNumberPattern_) &&
-          //exampleNumber_.equals(other.exampleNumber_);
+            
+            
+          
+          
         }
 
         
@@ -633,29 +633,29 @@ public final class Phonemetadata {
             objectOutput.writeBoolean(hasNationalNumberPattern);
             {
                 objectOutput.writeUTF(nationalNumberPattern_);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasPossibleNumberPattern);
             {
                 objectOutput.writeUTF(possibleNumberPattern_);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasExampleNumber);
             {
                 objectOutput.writeUTF(exampleNumber_);
-            } //End block
+            } 
             addTaint(objectOutput.getTaint());
-            // ---------- Original Method ----------
-            //objectOutput.writeBoolean(hasNationalNumberPattern);
-            //if (hasNationalNumberPattern) {
-        //objectOutput.writeUTF(nationalNumberPattern_);
-      //}
-            //objectOutput.writeBoolean(hasPossibleNumberPattern);
-            //if (hasPossibleNumberPattern) {
-        //objectOutput.writeUTF(possibleNumberPattern_);
-      //}
-            //objectOutput.writeBoolean(hasExampleNumber);
-            //if (hasExampleNumber) {
-        //objectOutput.writeUTF(exampleNumber_);
-      //}
+            
+            
+            
+        
+      
+            
+            
+        
+      
+            
+            
+        
+      
         }
 
         
@@ -665,31 +665,31 @@ public final class Phonemetadata {
                 boolean varF1F2050C0B36B3012DF952FA04096995_733791904 = (objectInput.readBoolean());
                 {
                     setNationalNumberPattern(objectInput.readUTF());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varF1F2050C0B36B3012DF952FA04096995_1303606353 = (objectInput.readBoolean());
                 {
                     setPossibleNumberPattern(objectInput.readUTF());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varF1F2050C0B36B3012DF952FA04096995_1566114331 = (objectInput.readBoolean());
                 {
                     setExampleNumber(objectInput.readUTF());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(objectInput.getTaint());
-            // ---------- Original Method ----------
-            //if (objectInput.readBoolean()) {
-        //setNationalNumberPattern(objectInput.readUTF());
-      //}
-            //if (objectInput.readBoolean()) {
-        //setPossibleNumberPattern(objectInput.readUTF());
-      //}
-            //if (objectInput.readBoolean()) {
-        //setExampleNumber(objectInput.readUTF());
-      //}
+            
+            
+        
+      
+            
+        
+      
+            
+        
+      
         }
 
         
@@ -698,18 +698,18 @@ public final class Phonemetadata {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.415 -0400", hash_original_method = "02DE293B5727013333ED4AAA68C7342C", hash_generated_method = "02DE293B5727013333ED4AAA68C7342C")
             public Builder ()
             {
-                //Synthesized constructor
+                
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.415 -0400", hash_original_method = "27A166D755957BD27B60D63CE4983A6A", hash_generated_method = "3480A04395FBF0D786671459940EB0FA")
             public PhoneNumberDesc build() {
-                PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_1844962952 = null; //Variable for return #1
+                PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_1844962952 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_1844962952 = this;
-                varB4EAC82CA7396A68D541C85D26508E83_1844962952.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1844962952.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1844962952;
-                // ---------- Original Method ----------
-                //return this;
+                
+                
             }
 
             
@@ -872,7 +872,7 @@ public final class Phonemetadata {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.417 -0400", hash_original_method = "8411C48F959C93D1C6435DDA5C4FFBF8", hash_generated_method = "246EB5CC112F2B1B6402C47CB846FD5D")
         public  PhoneMetadata() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -885,40 +885,40 @@ public final class Phonemetadata {
         public boolean hasGeneralDesc() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_261851492 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_261851492;
-            // ---------- Original Method ----------
-            //return hasGeneralDesc;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.417 -0400", hash_original_method = "F96C4A1868C09190E3C941F03A2889CB", hash_generated_method = "3AA1F51E38FB768C2998E85457CD18A5")
         public PhoneNumberDesc getGeneralDesc() {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_997481454 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_997481454 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_997481454 = generalDesc_;
-            varB4EAC82CA7396A68D541C85D26508E83_997481454.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_997481454.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_997481454;
-            // ---------- Original Method ----------
-            //return generalDesc_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.418 -0400", hash_original_method = "97D824F311B5130867761544B2540B90", hash_generated_method = "1643705EC34BE9819D7EA525A4877F11")
         public PhoneMetadata setGeneralDesc(PhoneNumberDesc value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_502305023 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_502305023 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             hasGeneralDesc = true;
             generalDesc_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_502305023 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_502305023.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_502305023.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_502305023;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //hasGeneralDesc = true;
-            //generalDesc_ = value;
-            //return this;
+            
+            
+        
+      
+            
+            
+            
         }
 
         
@@ -926,40 +926,40 @@ public final class Phonemetadata {
         public boolean hasFixedLine() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_492481922 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_492481922;
-            // ---------- Original Method ----------
-            //return hasFixedLine;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.418 -0400", hash_original_method = "7111E9DB2C9B99769226207CB0B39C0D", hash_generated_method = "653D928C79F3B72A44A2ED45DC6F23CE")
         public PhoneNumberDesc getFixedLine() {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_179979078 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_179979078 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_179979078 = fixedLine_;
-            varB4EAC82CA7396A68D541C85D26508E83_179979078.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_179979078.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_179979078;
-            // ---------- Original Method ----------
-            //return fixedLine_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.419 -0400", hash_original_method = "4E0B7145906BC721C9DE8D0C32500FC9", hash_generated_method = "FA6112324C729ACD495B405544AFE35F")
         public PhoneMetadata setFixedLine(PhoneNumberDesc value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1478937540 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1478937540 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             hasFixedLine = true;
             fixedLine_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1478937540 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1478937540.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1478937540.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1478937540;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //hasFixedLine = true;
-            //fixedLine_ = value;
-            //return this;
+            
+            
+        
+      
+            
+            
+            
         }
 
         
@@ -967,40 +967,40 @@ public final class Phonemetadata {
         public boolean hasMobile() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_336101723 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_336101723;
-            // ---------- Original Method ----------
-            //return hasMobile;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.419 -0400", hash_original_method = "469BFC723D37FABFB9BC30DE50B7B80A", hash_generated_method = "72E1B8DADFB3EBA5C75293CE76671B25")
         public PhoneNumberDesc getMobile() {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_662699965 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_662699965 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_662699965 = mobile_;
-            varB4EAC82CA7396A68D541C85D26508E83_662699965.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_662699965.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_662699965;
-            // ---------- Original Method ----------
-            //return mobile_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.419 -0400", hash_original_method = "CF0A4860566840BE9C27E4474979A50E", hash_generated_method = "E69E37A5956DB66EA73DAA3204156A41")
         public PhoneMetadata setMobile(PhoneNumberDesc value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_126979106 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_126979106 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             hasMobile = true;
             mobile_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_126979106 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_126979106.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_126979106.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_126979106;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //hasMobile = true;
-            //mobile_ = value;
-            //return this;
+            
+            
+        
+      
+            
+            
+            
         }
 
         
@@ -1008,40 +1008,40 @@ public final class Phonemetadata {
         public boolean hasTollFree() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1955575154 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1955575154;
-            // ---------- Original Method ----------
-            //return hasTollFree;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.420 -0400", hash_original_method = "A25CEA98E2A744A76CD23B6ECE21AB56", hash_generated_method = "0AD2D85F891DE39F624381109E74594F")
         public PhoneNumberDesc getTollFree() {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_1259235494 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_1259235494 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1259235494 = tollFree_;
-            varB4EAC82CA7396A68D541C85D26508E83_1259235494.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1259235494.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1259235494;
-            // ---------- Original Method ----------
-            //return tollFree_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.420 -0400", hash_original_method = "46A649F605F0EC24C76169E259456A93", hash_generated_method = "E46FB953D585ACBB90E0F68A54E3A2B7")
         public PhoneMetadata setTollFree(PhoneNumberDesc value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1742080588 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1742080588 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             hasTollFree = true;
             tollFree_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1742080588 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1742080588.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1742080588.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1742080588;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //hasTollFree = true;
-            //tollFree_ = value;
-            //return this;
+            
+            
+        
+      
+            
+            
+            
         }
 
         
@@ -1049,40 +1049,40 @@ public final class Phonemetadata {
         public boolean hasPremiumRate() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_329174690 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_329174690;
-            // ---------- Original Method ----------
-            //return hasPremiumRate;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.421 -0400", hash_original_method = "14341C327DA8E1CAAD52FEB1F27BC133", hash_generated_method = "23AD0FEEF196726F03F590DF059DDEFC")
         public PhoneNumberDesc getPremiumRate() {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_55487242 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_55487242 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_55487242 = premiumRate_;
-            varB4EAC82CA7396A68D541C85D26508E83_55487242.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_55487242.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_55487242;
-            // ---------- Original Method ----------
-            //return premiumRate_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.421 -0400", hash_original_method = "BC27E8EEE54A894FE20AA77CF35DD102", hash_generated_method = "DF980FD99F8283900DA536FC46A1D914")
         public PhoneMetadata setPremiumRate(PhoneNumberDesc value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1524407382 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1524407382 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             hasPremiumRate = true;
             premiumRate_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1524407382 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1524407382.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1524407382.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1524407382;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //hasPremiumRate = true;
-            //premiumRate_ = value;
-            //return this;
+            
+            
+        
+      
+            
+            
+            
         }
 
         
@@ -1090,40 +1090,40 @@ public final class Phonemetadata {
         public boolean hasSharedCost() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1788650411 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1788650411;
-            // ---------- Original Method ----------
-            //return hasSharedCost;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.422 -0400", hash_original_method = "1FFB14D9D02DC30D3C5835101DD9BAF0", hash_generated_method = "00AA0B06C93A493E248529CB7F4ECC09")
         public PhoneNumberDesc getSharedCost() {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_1948844625 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_1948844625 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1948844625 = sharedCost_;
-            varB4EAC82CA7396A68D541C85D26508E83_1948844625.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1948844625.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1948844625;
-            // ---------- Original Method ----------
-            //return sharedCost_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.422 -0400", hash_original_method = "CDEC9E0DF29779C1B33ED334AA2CAB69", hash_generated_method = "BC96BC45734D30D5CE466516281A6EC1")
         public PhoneMetadata setSharedCost(PhoneNumberDesc value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1527770778 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1527770778 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             hasSharedCost = true;
             sharedCost_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1527770778 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1527770778.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1527770778.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1527770778;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //hasSharedCost = true;
-            //sharedCost_ = value;
-            //return this;
+            
+            
+        
+      
+            
+            
+            
         }
 
         
@@ -1131,40 +1131,40 @@ public final class Phonemetadata {
         public boolean hasPersonalNumber() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_847358214 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_847358214;
-            // ---------- Original Method ----------
-            //return hasPersonalNumber;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.423 -0400", hash_original_method = "4CF811D3746F6643A77AAC306D011902", hash_generated_method = "33E7C8F35BF16D2E695C54C7BA1382A3")
         public PhoneNumberDesc getPersonalNumber() {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_70183618 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_70183618 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_70183618 = personalNumber_;
-            varB4EAC82CA7396A68D541C85D26508E83_70183618.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_70183618.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_70183618;
-            // ---------- Original Method ----------
-            //return personalNumber_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.424 -0400", hash_original_method = "24493CAEB1946A8C79E7D00511D66307", hash_generated_method = "F1E50E2A796F3A30CAC98A38D47C7600")
         public PhoneMetadata setPersonalNumber(PhoneNumberDesc value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1851913378 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1851913378 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             hasPersonalNumber = true;
             personalNumber_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1851913378 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1851913378.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1851913378.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1851913378;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //hasPersonalNumber = true;
-            //personalNumber_ = value;
-            //return this;
+            
+            
+        
+      
+            
+            
+            
         }
 
         
@@ -1172,40 +1172,40 @@ public final class Phonemetadata {
         public boolean hasVoip() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1515178593 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1515178593;
-            // ---------- Original Method ----------
-            //return hasVoip;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.424 -0400", hash_original_method = "3E7A9D2F706E69069EF64F75DD5323E7", hash_generated_method = "12417B8BD83000ADC0251F6750943AFA")
         public PhoneNumberDesc getVoip() {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_738263726 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_738263726 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_738263726 = voip_;
-            varB4EAC82CA7396A68D541C85D26508E83_738263726.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_738263726.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_738263726;
-            // ---------- Original Method ----------
-            //return voip_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.425 -0400", hash_original_method = "5FE2D757C727FFFD1EC6F29B7720BADF", hash_generated_method = "98090AE5B1FD8803B94195D04F58669A")
         public PhoneMetadata setVoip(PhoneNumberDesc value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1207940176 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1207940176 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             hasVoip = true;
             voip_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1207940176 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1207940176.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1207940176.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1207940176;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //hasVoip = true;
-            //voip_ = value;
-            //return this;
+            
+            
+        
+      
+            
+            
+            
         }
 
         
@@ -1213,40 +1213,40 @@ public final class Phonemetadata {
         public boolean hasPager() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1040505999 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1040505999;
-            // ---------- Original Method ----------
-            //return hasPager;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.426 -0400", hash_original_method = "C20F5AA8347238E1E9DA82F58997297F", hash_generated_method = "87CC299AE8501639040491540A59DC2E")
         public PhoneNumberDesc getPager() {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_236509584 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_236509584 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_236509584 = pager_;
-            varB4EAC82CA7396A68D541C85D26508E83_236509584.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_236509584.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_236509584;
-            // ---------- Original Method ----------
-            //return pager_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.426 -0400", hash_original_method = "F7E7BD7CBC5C04503F79204D035D6093", hash_generated_method = "E4D8EABA4792298431CDCDDE2B6B72C9")
         public PhoneMetadata setPager(PhoneNumberDesc value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1090937093 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1090937093 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             hasPager = true;
             pager_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1090937093 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1090937093.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1090937093.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1090937093;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //hasPager = true;
-            //pager_ = value;
-            //return this;
+            
+            
+        
+      
+            
+            
+            
         }
 
         
@@ -1254,40 +1254,40 @@ public final class Phonemetadata {
         public boolean hasUan() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1918874681 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1918874681;
-            // ---------- Original Method ----------
-            //return hasUan;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.427 -0400", hash_original_method = "6E5CDB2B0554F6EDEAFB0A826808F837", hash_generated_method = "90060ACA56702B601EA7A0DF6F9B047A")
         public PhoneNumberDesc getUan() {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_153574705 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_153574705 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_153574705 = uan_;
-            varB4EAC82CA7396A68D541C85D26508E83_153574705.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_153574705.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_153574705;
-            // ---------- Original Method ----------
-            //return uan_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.430 -0400", hash_original_method = "645A0026A31D8D600D28A5F0E2FCB775", hash_generated_method = "9F53381AC950FC5332F21486F1C912AC")
         public PhoneMetadata setUan(PhoneNumberDesc value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1725009118 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1725009118 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             hasUan = true;
             uan_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1725009118 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1725009118.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1725009118.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1725009118;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //hasUan = true;
-            //uan_ = value;
-            //return this;
+            
+            
+        
+      
+            
+            
+            
         }
 
         
@@ -1295,40 +1295,40 @@ public final class Phonemetadata {
         public boolean hasNoInternationalDialling() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_324851993 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_324851993;
-            // ---------- Original Method ----------
-            //return hasNoInternationalDialling;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.433 -0400", hash_original_method = "8BF24E7280AB555752CDF0AB6293C8C0", hash_generated_method = "C7A62191F5AF77B6682E93E4A2D910ED")
         public PhoneNumberDesc getNoInternationalDialling() {
-            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_909125740 = null; //Variable for return #1
+            PhoneNumberDesc varB4EAC82CA7396A68D541C85D26508E83_909125740 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_909125740 = noInternationalDialling_;
-            varB4EAC82CA7396A68D541C85D26508E83_909125740.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_909125740.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_909125740;
-            // ---------- Original Method ----------
-            //return noInternationalDialling_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.435 -0400", hash_original_method = "7DCE821DB5B30DD48C6A3A37AA42A1FD", hash_generated_method = "E6329D7AF108B44E7CE8C67F38385F99")
         public PhoneMetadata setNoInternationalDialling(PhoneNumberDesc value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1011422093 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1011422093 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             hasNoInternationalDialling = true;
             noInternationalDialling_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1011422093 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1011422093.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1011422093.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1011422093;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //hasNoInternationalDialling = true;
-            //noInternationalDialling_ = value;
-            //return this;
+            
+            
+        
+      
+            
+            
+            
         }
 
         
@@ -1336,34 +1336,34 @@ public final class Phonemetadata {
         public boolean hasId() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_761666696 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_761666696;
-            // ---------- Original Method ----------
-            //return hasId;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.436 -0400", hash_original_method = "C805C797DAF63B59CBD999295B2F5158", hash_generated_method = "8CBB470A27BE7E7DE27F6DEF2AAA9E86")
         public String getId() {
-            String varB4EAC82CA7396A68D541C85D26508E83_849086017 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_849086017 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_849086017 = id_;
-            varB4EAC82CA7396A68D541C85D26508E83_849086017.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_849086017.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_849086017;
-            // ---------- Original Method ----------
-            //return id_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.437 -0400", hash_original_method = "6B3AD7A8DB5994F94639D3A9A0778D2B", hash_generated_method = "42B7C9D5EF0FDD1F2F74A92018C07D4B")
         public PhoneMetadata setId(String value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_977976414 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_977976414 = null; 
             hasId = true;
             id_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_977976414 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_977976414.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_977976414.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_977976414;
-            // ---------- Original Method ----------
-            //hasId = true;
-            //id_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -1371,8 +1371,8 @@ public final class Phonemetadata {
         public boolean hasCountryCode() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1951069835 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1951069835;
-            // ---------- Original Method ----------
-            //return hasCountryCode;
+            
+            
         }
 
         
@@ -1380,23 +1380,23 @@ public final class Phonemetadata {
         public int getCountryCode() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1372663677 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1372663677;
-            // ---------- Original Method ----------
-            //return countryCode_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.439 -0400", hash_original_method = "1AB7F6532DA188CC62A13C45F2B9ADF3", hash_generated_method = "3E9448DE977DA78B20264E78DED613FA")
         public PhoneMetadata setCountryCode(int value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1501502542 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1501502542 = null; 
             hasCountryCode = true;
             countryCode_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1501502542 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1501502542.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1501502542.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1501502542;
-            // ---------- Original Method ----------
-            //hasCountryCode = true;
-            //countryCode_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -1404,34 +1404,34 @@ public final class Phonemetadata {
         public boolean hasInternationalPrefix() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_190139702 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_190139702;
-            // ---------- Original Method ----------
-            //return hasInternationalPrefix;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.442 -0400", hash_original_method = "09123B0A33DF502700CE0BB29A84EB95", hash_generated_method = "A8E686E2F0D73D48660A99A2CE084708")
         public String getInternationalPrefix() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1377855678 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1377855678 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1377855678 = internationalPrefix_;
-            varB4EAC82CA7396A68D541C85D26508E83_1377855678.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1377855678.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1377855678;
-            // ---------- Original Method ----------
-            //return internationalPrefix_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.443 -0400", hash_original_method = "3DE0D2253FD6A81DEABED2BF406E5650", hash_generated_method = "30945E7CA4BD7729118D16FE3D255F82")
         public PhoneMetadata setInternationalPrefix(String value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1184489547 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1184489547 = null; 
             hasInternationalPrefix = true;
             internationalPrefix_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1184489547 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1184489547.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1184489547.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1184489547;
-            // ---------- Original Method ----------
-            //hasInternationalPrefix = true;
-            //internationalPrefix_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -1439,34 +1439,34 @@ public final class Phonemetadata {
         public boolean hasPreferredInternationalPrefix() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1538397045 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1538397045;
-            // ---------- Original Method ----------
-            //return hasPreferredInternationalPrefix;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.443 -0400", hash_original_method = "3992DDBA34CC5C49CFC74CF0545FF343", hash_generated_method = "8A33734364C2A3B09F2BAF43BF6350D5")
         public String getPreferredInternationalPrefix() {
-            String varB4EAC82CA7396A68D541C85D26508E83_142499077 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_142499077 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_142499077 = preferredInternationalPrefix_;
-            varB4EAC82CA7396A68D541C85D26508E83_142499077.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_142499077.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_142499077;
-            // ---------- Original Method ----------
-            //return preferredInternationalPrefix_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.444 -0400", hash_original_method = "2F2A95A6FC37FC6A654CD2ED9E105058", hash_generated_method = "6C489D2E6F033E364C4D0FA0F54EB502")
         public PhoneMetadata setPreferredInternationalPrefix(String value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_452400130 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_452400130 = null; 
             hasPreferredInternationalPrefix = true;
             preferredInternationalPrefix_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_452400130 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_452400130.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_452400130.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_452400130;
-            // ---------- Original Method ----------
-            //hasPreferredInternationalPrefix = true;
-            //preferredInternationalPrefix_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -1474,34 +1474,34 @@ public final class Phonemetadata {
         public boolean hasNationalPrefix() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_213502221 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_213502221;
-            // ---------- Original Method ----------
-            //return hasNationalPrefix;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.444 -0400", hash_original_method = "3F6DDEA7E91472B57F47F7AA42FF40A4", hash_generated_method = "9A3B0A42D68B07FD2D5B8A888326E349")
         public String getNationalPrefix() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1392192149 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1392192149 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1392192149 = nationalPrefix_;
-            varB4EAC82CA7396A68D541C85D26508E83_1392192149.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1392192149.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1392192149;
-            // ---------- Original Method ----------
-            //return nationalPrefix_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.445 -0400", hash_original_method = "F24C638CA5CEB8CDF3416D52787AAB8D", hash_generated_method = "035343E552B609F38422E35B439A66D4")
         public PhoneMetadata setNationalPrefix(String value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1531458652 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1531458652 = null; 
             hasNationalPrefix = true;
             nationalPrefix_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1531458652 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1531458652.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1531458652.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1531458652;
-            // ---------- Original Method ----------
-            //hasNationalPrefix = true;
-            //nationalPrefix_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -1509,34 +1509,34 @@ public final class Phonemetadata {
         public boolean hasPreferredExtnPrefix() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_92610395 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_92610395;
-            // ---------- Original Method ----------
-            //return hasPreferredExtnPrefix;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.445 -0400", hash_original_method = "54C0428B3277F86E8CEE26D4467F5D32", hash_generated_method = "78A3DAE21DCBA600DBDE7DECE4466197")
         public String getPreferredExtnPrefix() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1700009498 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1700009498 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1700009498 = preferredExtnPrefix_;
-            varB4EAC82CA7396A68D541C85D26508E83_1700009498.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1700009498.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1700009498;
-            // ---------- Original Method ----------
-            //return preferredExtnPrefix_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.446 -0400", hash_original_method = "6AE031AAEF0021BEEE5C7C14D7E5ADEE", hash_generated_method = "A215FA5E5F32236B9B7FDBAA3E05C94F")
         public PhoneMetadata setPreferredExtnPrefix(String value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_799055059 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_799055059 = null; 
             hasPreferredExtnPrefix = true;
             preferredExtnPrefix_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_799055059 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_799055059.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_799055059.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_799055059;
-            // ---------- Original Method ----------
-            //hasPreferredExtnPrefix = true;
-            //preferredExtnPrefix_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -1544,34 +1544,34 @@ public final class Phonemetadata {
         public boolean hasNationalPrefixForParsing() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_348187236 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_348187236;
-            // ---------- Original Method ----------
-            //return hasNationalPrefixForParsing;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.446 -0400", hash_original_method = "049975D1EC97C98DFAFD92CBA7A3DB4E", hash_generated_method = "D2E8CCDD4A8B0BDFE9D4E2748DC331F0")
         public String getNationalPrefixForParsing() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1467567185 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1467567185 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1467567185 = nationalPrefixForParsing_;
-            varB4EAC82CA7396A68D541C85D26508E83_1467567185.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1467567185.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1467567185;
-            // ---------- Original Method ----------
-            //return nationalPrefixForParsing_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.447 -0400", hash_original_method = "9C0BD3F3F0877996BC57F1866741042E", hash_generated_method = "E26400222D2B62653D67375E61F269F0")
         public PhoneMetadata setNationalPrefixForParsing(String value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_95449469 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_95449469 = null; 
             hasNationalPrefixForParsing = true;
             nationalPrefixForParsing_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_95449469 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_95449469.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_95449469.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_95449469;
-            // ---------- Original Method ----------
-            //hasNationalPrefixForParsing = true;
-            //nationalPrefixForParsing_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -1579,34 +1579,34 @@ public final class Phonemetadata {
         public boolean hasNationalPrefixTransformRule() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_251370598 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_251370598;
-            // ---------- Original Method ----------
-            //return hasNationalPrefixTransformRule;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.447 -0400", hash_original_method = "55DE6447BA6383DE2B8CA08949083559", hash_generated_method = "0B79A1C95C3C532DBE3E13A5D00F6C96")
         public String getNationalPrefixTransformRule() {
-            String varB4EAC82CA7396A68D541C85D26508E83_583942394 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_583942394 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_583942394 = nationalPrefixTransformRule_;
-            varB4EAC82CA7396A68D541C85D26508E83_583942394.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_583942394.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_583942394;
-            // ---------- Original Method ----------
-            //return nationalPrefixTransformRule_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.447 -0400", hash_original_method = "F0F297723C8F168223FB62622F5A1EB6", hash_generated_method = "9F61AA9D1BB5E62D6EA2A82DB7CD26EB")
         public PhoneMetadata setNationalPrefixTransformRule(String value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_160384498 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_160384498 = null; 
             hasNationalPrefixTransformRule = true;
             nationalPrefixTransformRule_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_160384498 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_160384498.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_160384498.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_160384498;
-            // ---------- Original Method ----------
-            //hasNationalPrefixTransformRule = true;
-            //nationalPrefixTransformRule_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -1614,8 +1614,8 @@ public final class Phonemetadata {
         public boolean hasSameMobileAndFixedLinePattern() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_898750473 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_898750473;
-            // ---------- Original Method ----------
-            //return hasSameMobileAndFixedLinePattern;
+            
+            
         }
 
         
@@ -1623,34 +1623,34 @@ public final class Phonemetadata {
         public boolean isSameMobileAndFixedLinePattern() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_784311983 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_784311983;
-            // ---------- Original Method ----------
-            //return sameMobileAndFixedLinePattern_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.448 -0400", hash_original_method = "4899ADA62C5B2767C955044A6A730FDD", hash_generated_method = "44AB80F9B76AFCE592EC21A83F2381C9")
         public PhoneMetadata setSameMobileAndFixedLinePattern(boolean value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1294090046 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1294090046 = null; 
             hasSameMobileAndFixedLinePattern = true;
             sameMobileAndFixedLinePattern_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1294090046 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1294090046.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1294090046.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1294090046;
-            // ---------- Original Method ----------
-            //hasSameMobileAndFixedLinePattern = true;
-            //sameMobileAndFixedLinePattern_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.448 -0400", hash_original_method = "84A1634AEDD3ABF2CF1A3014B5D415EB", hash_generated_method = "1D68F032D7BA07B69CA3F8A45C5365A3")
         public java.util.List<NumberFormat> numberFormats() {
-            java.util.List<NumberFormat> varB4EAC82CA7396A68D541C85D26508E83_93904854 = null; //Variable for return #1
+            java.util.List<NumberFormat> varB4EAC82CA7396A68D541C85D26508E83_93904854 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_93904854 = numberFormat_;
-            varB4EAC82CA7396A68D541C85D26508E83_93904854.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_93904854.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_93904854;
-            // ---------- Original Method ----------
-            //return numberFormat_;
+            
+            
         }
 
         
@@ -1659,51 +1659,51 @@ public final class Phonemetadata {
             int var96E94CB08F0191048A027A706C30A965_1394910057 = (numberFormat_.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1281000844 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1281000844;
-            // ---------- Original Method ----------
-            //return numberFormat_.size();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.449 -0400", hash_original_method = "A540DB640DF9F8195853729D5B88BC06", hash_generated_method = "103AF10C91A417514F0CD5B53CD0D040")
         public NumberFormat getNumberFormat(int index) {
-            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_1884796950 = null; //Variable for return #1
+            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_1884796950 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1884796950 = numberFormat_.get(index);
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_1884796950.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1884796950.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1884796950;
-            // ---------- Original Method ----------
-            //return numberFormat_.get(index);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.449 -0400", hash_original_method = "6431B417B09BF16DE184C0BF7BFD8C0A", hash_generated_method = "A0FBECC17845519313CEB8369477421C")
         public PhoneMetadata addNumberFormat(NumberFormat value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_441026018 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_441026018 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             numberFormat_.add(value);
             varB4EAC82CA7396A68D541C85D26508E83_441026018 = this;
             addTaint(value.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_441026018.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_441026018.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_441026018;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //numberFormat_.add(value);
-            //return this;
+            
+            
+        
+      
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.450 -0400", hash_original_method = "AE158E1AC846181939D70DB177BF740E", hash_generated_method = "80F926ED765FAF86F928D1DABAD1C3A9")
         public java.util.List<NumberFormat> intlNumberFormats() {
-            java.util.List<NumberFormat> varB4EAC82CA7396A68D541C85D26508E83_2018786139 = null; //Variable for return #1
+            java.util.List<NumberFormat> varB4EAC82CA7396A68D541C85D26508E83_2018786139 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2018786139 = intlNumberFormat_;
-            varB4EAC82CA7396A68D541C85D26508E83_2018786139.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2018786139.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2018786139;
-            // ---------- Original Method ----------
-            //return intlNumberFormat_;
+            
+            
         }
 
         
@@ -1712,53 +1712,53 @@ public final class Phonemetadata {
             int varF47E20D9CBB1855464C7D9F5EA17F55A_515730964 = (intlNumberFormat_.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_163296241 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_163296241;
-            // ---------- Original Method ----------
-            //return intlNumberFormat_.size();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.450 -0400", hash_original_method = "14BAA3A4AA80C468A085BC9B63542EE0", hash_generated_method = "B2B37C3B998C69DA6880451A8847DA64")
         public NumberFormat getIntlNumberFormat(int index) {
-            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_2001346038 = null; //Variable for return #1
+            NumberFormat varB4EAC82CA7396A68D541C85D26508E83_2001346038 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2001346038 = intlNumberFormat_.get(index);
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_2001346038.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2001346038.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2001346038;
-            // ---------- Original Method ----------
-            //return intlNumberFormat_.get(index);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.451 -0400", hash_original_method = "DDE7F201B8001F4279DAEE9969BC3EF9", hash_generated_method = "4EB3674B61B2086F6C893C83932C9858")
         public PhoneMetadata addIntlNumberFormat(NumberFormat value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_262076799 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_262076799 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             intlNumberFormat_.add(value);
             varB4EAC82CA7396A68D541C85D26508E83_262076799 = this;
             addTaint(value.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_262076799.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_262076799.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_262076799;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //intlNumberFormat_.add(value);
-            //return this;
+            
+            
+        
+      
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.451 -0400", hash_original_method = "C1C6B471737DB86E719E8005B048F8A4", hash_generated_method = "49D92D78C48865F1CD1E267238E377F6")
         public PhoneMetadata clearIntlNumberFormat() {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1817054118 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1817054118 = null; 
             intlNumberFormat_.clear();
             varB4EAC82CA7396A68D541C85D26508E83_1817054118 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1817054118.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1817054118.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1817054118;
-            // ---------- Original Method ----------
-            //intlNumberFormat_.clear();
-            //return this;
+            
+            
+            
         }
 
         
@@ -1766,8 +1766,8 @@ public final class Phonemetadata {
         public boolean hasMainCountryForCode() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1985509271 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1985509271;
-            // ---------- Original Method ----------
-            //return hasMainCountryForCode;
+            
+            
         }
 
         
@@ -1775,8 +1775,8 @@ public final class Phonemetadata {
         public boolean isMainCountryForCode() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_677382726 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_677382726;
-            // ---------- Original Method ----------
-            //return mainCountryForCode_;
+            
+            
         }
 
         
@@ -1784,23 +1784,23 @@ public final class Phonemetadata {
         public boolean getMainCountryForCode() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_260480861 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_260480861;
-            // ---------- Original Method ----------
-            //return mainCountryForCode_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.452 -0400", hash_original_method = "0E977089CAAEFAD04CCCDA9E72421381", hash_generated_method = "7CEEC6CE70E988879DD1686502F52658")
         public PhoneMetadata setMainCountryForCode(boolean value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1585945222 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_1585945222 = null; 
             hasMainCountryForCode = true;
             mainCountryForCode_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_1585945222 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1585945222.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1585945222.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1585945222;
-            // ---------- Original Method ----------
-            //hasMainCountryForCode = true;
-            //mainCountryForCode_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -1808,34 +1808,34 @@ public final class Phonemetadata {
         public boolean hasLeadingDigits() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1874476595 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1874476595;
-            // ---------- Original Method ----------
-            //return hasLeadingDigits;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.453 -0400", hash_original_method = "BA0CBA2DFD34C6F845467DDF3F7503AD", hash_generated_method = "C08558980EA8B14B67376D34189E007C")
         public String getLeadingDigits() {
-            String varB4EAC82CA7396A68D541C85D26508E83_339517274 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_339517274 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_339517274 = leadingDigits_;
-            varB4EAC82CA7396A68D541C85D26508E83_339517274.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_339517274.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_339517274;
-            // ---------- Original Method ----------
-            //return leadingDigits_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.453 -0400", hash_original_method = "1B8095B1499A1300CC7FD6395528DFB9", hash_generated_method = "FBC18FE94F9D1BBCF72AFB03124FC7D6")
         public PhoneMetadata setLeadingDigits(String value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_544243143 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_544243143 = null; 
             hasLeadingDigits = true;
             leadingDigits_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_544243143 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_544243143.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_544243143.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_544243143;
-            // ---------- Original Method ----------
-            //hasLeadingDigits = true;
-            //leadingDigits_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -1843,8 +1843,8 @@ public final class Phonemetadata {
         public boolean hasLeadingZeroPossible() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_748768425 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_748768425;
-            // ---------- Original Method ----------
-            //return hasLeadingZeroPossible;
+            
+            
         }
 
         
@@ -1852,23 +1852,23 @@ public final class Phonemetadata {
         public boolean isLeadingZeroPossible() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1132866452 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1132866452;
-            // ---------- Original Method ----------
-            //return leadingZeroPossible_;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.454 -0400", hash_original_method = "4E51759A218DB37A00D6735D1891D88D", hash_generated_method = "E99265D1B8EE2C6790C868223F9725C1")
         public PhoneMetadata setLeadingZeroPossible(boolean value) {
-            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_230963120 = null; //Variable for return #1
+            PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_230963120 = null; 
             hasLeadingZeroPossible = true;
             leadingZeroPossible_ = value;
             varB4EAC82CA7396A68D541C85D26508E83_230963120 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_230963120.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_230963120.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_230963120;
-            // ---------- Original Method ----------
-            //hasLeadingZeroPossible = true;
-            //leadingZeroPossible_ = value;
-            //return this;
+            
+            
+            
+            
         }
 
         
@@ -1877,70 +1877,70 @@ public final class Phonemetadata {
             objectOutput.writeBoolean(hasGeneralDesc);
             {
                 generalDesc_.writeExternal(objectOutput);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasFixedLine);
             {
                 fixedLine_.writeExternal(objectOutput);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasMobile);
             {
                 mobile_.writeExternal(objectOutput);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasTollFree);
             {
                 tollFree_.writeExternal(objectOutput);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasPremiumRate);
             {
                 premiumRate_.writeExternal(objectOutput);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasSharedCost);
             {
                 sharedCost_.writeExternal(objectOutput);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasPersonalNumber);
             {
                 personalNumber_.writeExternal(objectOutput);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasVoip);
             {
                 voip_.writeExternal(objectOutput);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasPager);
             {
                 pager_.writeExternal(objectOutput);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasUan);
             {
                 uan_.writeExternal(objectOutput);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasNoInternationalDialling);
             {
                 noInternationalDialling_.writeExternal(objectOutput);
-            } //End block
+            } 
             objectOutput.writeUTF(id_);
             objectOutput.writeInt(countryCode_);
             objectOutput.writeUTF(internationalPrefix_);
             objectOutput.writeBoolean(hasPreferredInternationalPrefix);
             {
                 objectOutput.writeUTF(preferredInternationalPrefix_);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasNationalPrefix);
             {
                 objectOutput.writeUTF(nationalPrefix_);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasPreferredExtnPrefix);
             {
                 objectOutput.writeUTF(preferredExtnPrefix_);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasNationalPrefixForParsing);
             {
                 objectOutput.writeUTF(nationalPrefixForParsing_);
-            } //End block
+            } 
             objectOutput.writeBoolean(hasNationalPrefixTransformRule);
             {
                 objectOutput.writeUTF(nationalPrefixTransformRule_);
-            } //End block
+            } 
             objectOutput.writeBoolean(sameMobileAndFixedLinePattern_);
             int numberFormatSize = numberFormatSize();
             objectOutput.writeInt(numberFormatSize);
@@ -1948,25 +1948,25 @@ public final class Phonemetadata {
                 int i = 0;
                 {
                     numberFormat_.get(i).writeExternal(objectOutput);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             int intlNumberFormatSize = intlNumberFormatSize();
             objectOutput.writeInt(intlNumberFormatSize);
             {
                 int i = 0;
                 {
                     intlNumberFormat_.get(i).writeExternal(objectOutput);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             objectOutput.writeBoolean(mainCountryForCode_);
             objectOutput.writeBoolean(hasLeadingDigits);
             {
                 objectOutput.writeUTF(leadingDigits_);
-            } //End block
+            } 
             objectOutput.writeBoolean(leadingZeroPossible_);
             addTaint(objectOutput.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1977,90 +1977,90 @@ public final class Phonemetadata {
                 PhoneNumberDesc desc = new PhoneNumberDesc();
                 desc.readExternal(objectInput);
                 setGeneralDesc(desc);
-            } //End block
+            } 
             hasDesc = objectInput.readBoolean();
             {
                 PhoneNumberDesc desc = new PhoneNumberDesc();
                 desc.readExternal(objectInput);
                 setFixedLine(desc);
-            } //End block
+            } 
             hasDesc = objectInput.readBoolean();
             {
                 PhoneNumberDesc desc = new PhoneNumberDesc();
                 desc.readExternal(objectInput);
                 setMobile(desc);
-            } //End block
+            } 
             hasDesc = objectInput.readBoolean();
             {
                 PhoneNumberDesc desc = new PhoneNumberDesc();
                 desc.readExternal(objectInput);
                 setTollFree(desc);
-            } //End block
+            } 
             hasDesc = objectInput.readBoolean();
             {
                 PhoneNumberDesc desc = new PhoneNumberDesc();
                 desc.readExternal(objectInput);
                 setPremiumRate(desc);
-            } //End block
+            } 
             hasDesc = objectInput.readBoolean();
             {
                 PhoneNumberDesc desc = new PhoneNumberDesc();
                 desc.readExternal(objectInput);
                 setSharedCost(desc);
-            } //End block
+            } 
             hasDesc = objectInput.readBoolean();
             {
                 PhoneNumberDesc desc = new PhoneNumberDesc();
                 desc.readExternal(objectInput);
                 setPersonalNumber(desc);
-            } //End block
+            } 
             hasDesc = objectInput.readBoolean();
             {
                 PhoneNumberDesc desc = new PhoneNumberDesc();
                 desc.readExternal(objectInput);
                 setVoip(desc);
-            } //End block
+            } 
             hasDesc = objectInput.readBoolean();
             {
                 PhoneNumberDesc desc = new PhoneNumberDesc();
                 desc.readExternal(objectInput);
                 setPager(desc);
-            } //End block
+            } 
             hasDesc = objectInput.readBoolean();
             {
                 PhoneNumberDesc desc = new PhoneNumberDesc();
                 desc.readExternal(objectInput);
                 setUan(desc);
-            } //End block
+            } 
             hasDesc = objectInput.readBoolean();
             {
                 PhoneNumberDesc desc = new PhoneNumberDesc();
                 desc.readExternal(objectInput);
                 setNoInternationalDialling(desc);
-            } //End block
+            } 
             setId(objectInput.readUTF());
             setCountryCode(objectInput.readInt());
             setInternationalPrefix(objectInput.readUTF());
             boolean hasString = objectInput.readBoolean();
             {
                 setPreferredInternationalPrefix(objectInput.readUTF());
-            } //End block
+            } 
             hasString = objectInput.readBoolean();
             {
                 setNationalPrefix(objectInput.readUTF());
-            } //End block
+            } 
             hasString = objectInput.readBoolean();
             {
                 setPreferredExtnPrefix(objectInput.readUTF());
-            } //End block
+            } 
             hasString = objectInput.readBoolean();
             {
                 setNationalPrefixForParsing(objectInput.readUTF());
-            } //End block
+            } 
             hasString = objectInput.readBoolean();
             {
                 setNationalPrefixTransformRule(objectInput.readUTF());
-            } //End block
+            } 
             setSameMobileAndFixedLinePattern(objectInput.readBoolean());
             int nationalFormatSize = objectInput.readInt();
             {
@@ -2069,8 +2069,8 @@ public final class Phonemetadata {
                     NumberFormat numFormat = new NumberFormat();
                     numFormat.readExternal(objectInput);
                     numberFormat_.add(numFormat);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             int intlNumberFormatSize = objectInput.readInt();
             {
                 int i = 0;
@@ -2078,17 +2078,17 @@ public final class Phonemetadata {
                     NumberFormat numFormat = new NumberFormat();
                     numFormat.readExternal(objectInput);
                     intlNumberFormat_.add(numFormat);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             setMainCountryForCode(objectInput.readBoolean());
             hasString = objectInput.readBoolean();
             {
                 setLeadingDigits(objectInput.readUTF());
-            } //End block
+            } 
             setLeadingZeroPossible(objectInput.readBoolean());
             addTaint(objectInput.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2097,18 +2097,18 @@ public final class Phonemetadata {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.456 -0400", hash_original_method = "02DE293B5727013333ED4AAA68C7342C", hash_generated_method = "02DE293B5727013333ED4AAA68C7342C")
             public Builder ()
             {
-                //Synthesized constructor
+                
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.457 -0400", hash_original_method = "FECA3DB69AA5738CC513C59EB359D04E", hash_generated_method = "4B1948ABCCDB559A3937FD2EBCD0E635")
             public PhoneMetadata build() {
-                PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_284390514 = null; //Variable for return #1
+                PhoneMetadata varB4EAC82CA7396A68D541C85D26508E83_284390514 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_284390514 = this;
-                varB4EAC82CA7396A68D541C85D26508E83_284390514.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_284390514.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_284390514;
-                // ---------- Original Method ----------
-                //return this;
+                
+                
             }
 
             
@@ -2130,7 +2130,7 @@ public final class Phonemetadata {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.458 -0400", hash_original_method = "833FEC11FB1A703522FFE165412E2F7D", hash_generated_method = "911AB4D46731349730F9522D952A81AB")
         public  PhoneMetadataCollection() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2141,12 +2141,12 @@ public final class Phonemetadata {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.459 -0400", hash_original_method = "C5ECD645F70FA9D5A2A9EB8CBA32ADEF", hash_generated_method = "11987EA7EF740ED38D29A9DF0E1BEE59")
         public java.util.List<PhoneMetadata> getMetadataList() {
-            java.util.List<PhoneMetadata> varB4EAC82CA7396A68D541C85D26508E83_429349366 = null; //Variable for return #1
+            java.util.List<PhoneMetadata> varB4EAC82CA7396A68D541C85D26508E83_429349366 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_429349366 = metadata_;
-            varB4EAC82CA7396A68D541C85D26508E83_429349366.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_429349366.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_429349366;
-            // ---------- Original Method ----------
-            //return metadata_;
+            
+            
         }
 
         
@@ -2155,28 +2155,28 @@ public final class Phonemetadata {
             int varE8225671ABD39B7016D6383C297CDF20_1747770006 = (metadata_.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_774984618 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_774984618;
-            // ---------- Original Method ----------
-            //return metadata_.size();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.460 -0400", hash_original_method = "D57D52560347164C8871C87ACF1DAD2C", hash_generated_method = "14B31194AA7393BCB38C282E1DA14CD3")
         public PhoneMetadataCollection addMetadata(PhoneMetadata value) {
-            PhoneMetadataCollection varB4EAC82CA7396A68D541C85D26508E83_1657472222 = null; //Variable for return #1
+            PhoneMetadataCollection varB4EAC82CA7396A68D541C85D26508E83_1657472222 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-            } //End block
+            } 
             metadata_.add(value);
             varB4EAC82CA7396A68D541C85D26508E83_1657472222 = this;
             addTaint(value.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1657472222.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1657472222.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1657472222;
-            // ---------- Original Method ----------
-            //if (value == null) {
-        //throw new NullPointerException();
-      //}
-            //metadata_.add(value);
-            //return this;
+            
+            
+        
+      
+            
+            
         }
 
         
@@ -2188,15 +2188,15 @@ public final class Phonemetadata {
                 int i = 0;
                 {
                     metadata_.get(i).writeExternal(objectOutput);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(objectOutput.getTaint());
-            // ---------- Original Method ----------
-            //int size = getMetadataCount();
-            //objectOutput.writeInt(size);
-            //for (int i = 0; i < size; i++) {
-        //metadata_.get(i).writeExternal(objectOutput);
-      //}
+            
+            
+            
+            
+        
+      
         }
 
         
@@ -2209,29 +2209,29 @@ public final class Phonemetadata {
                     PhoneMetadata metadata = new PhoneMetadata();
                     metadata.readExternal(objectInput);
                     metadata_.add(metadata);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(objectInput.getTaint());
-            // ---------- Original Method ----------
-            //int size = objectInput.readInt();
-            //for (int i = 0; i < size; i++) {
-        //PhoneMetadata metadata = new PhoneMetadata();
-        //metadata.readExternal(objectInput);
-        //metadata_.add(metadata);
-      //}
+            
+            
+            
+        
+        
+        
+      
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.461 -0400", hash_original_method = "1BB2E7D611D4F26F7F8136F4B2C1D585", hash_generated_method = "5D61CBD4ADB1B6C9EB29DED5AD743F12")
         public PhoneMetadataCollection clear() {
-            PhoneMetadataCollection varB4EAC82CA7396A68D541C85D26508E83_793537188 = null; //Variable for return #1
+            PhoneMetadataCollection varB4EAC82CA7396A68D541C85D26508E83_793537188 = null; 
             metadata_.clear();
             varB4EAC82CA7396A68D541C85D26508E83_793537188 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_793537188.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_793537188.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_793537188;
-            // ---------- Original Method ----------
-            //metadata_.clear();
-            //return this;
+            
+            
+            
         }
 
         
@@ -2240,18 +2240,18 @@ public final class Phonemetadata {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.462 -0400", hash_original_method = "02DE293B5727013333ED4AAA68C7342C", hash_generated_method = "02DE293B5727013333ED4AAA68C7342C")
             public Builder ()
             {
-                //Synthesized constructor
+                
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.462 -0400", hash_original_method = "62075F60ED3DD2393D61C900D272662C", hash_generated_method = "1498486F5CB94B61E3FE9E400D442D45")
             public PhoneMetadataCollection build() {
-                PhoneMetadataCollection varB4EAC82CA7396A68D541C85D26508E83_1545938656 = null; //Variable for return #1
+                PhoneMetadataCollection varB4EAC82CA7396A68D541C85D26508E83_1545938656 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_1545938656 = this;
-                varB4EAC82CA7396A68D541C85D26508E83_1545938656.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1545938656.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1545938656;
-                // ---------- Original Method ----------
-                //return this;
+                
+                
             }
 
             

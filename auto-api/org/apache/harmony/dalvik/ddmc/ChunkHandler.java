@@ -1,11 +1,11 @@
 package org.apache.harmony.dalvik.ddmc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -14,7 +14,7 @@ public abstract class ChunkHandler {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.039 -0400", hash_original_method = "0BD4350C5F4AC480382F0B830C677606", hash_generated_method = "85D4A412A038AD8195337BC6AC5AD626")
     public  ChunkHandler() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,6 +27,7 @@ public abstract class ChunkHandler {
     public abstract Chunk handleChunk(Chunk request);
 
     
+    @DSModeled(DSC.SAFE)
     public static Chunk createFailChunk(int errorCode, String msg) {
         if (msg == null)
             msg = "";
@@ -39,6 +40,7 @@ public abstract class ChunkHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ByteBuffer wrapChunk(Chunk request) {
         ByteBuffer in;
         in = ByteBuffer.wrap(request.data, request.offset, request.length);
@@ -47,6 +49,7 @@ public abstract class ChunkHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getString(ByteBuffer buf, int len) {
         char[] data = new char[len];
         for (int i = 0; i < len; i++)
@@ -55,6 +58,7 @@ public abstract class ChunkHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void putString(ByteBuffer buf, String str) {
         int len = str.length();
         for (int i = 0; i < len; i++)
@@ -62,6 +66,7 @@ public abstract class ChunkHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int type(String typeName) {
         if (typeName.length() != 4) {
             throw new IllegalArgumentException("Bad type name: " + typeName);
@@ -74,6 +79,7 @@ public abstract class ChunkHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String name(int type) {
         char[] ascii = new char[4];
         ascii[0] = (char) ((type >> 24) & 0xff);

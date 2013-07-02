@@ -1,11 +1,11 @@
 package android.support.v4.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -19,8 +19,8 @@ public class EdgeEffectCompat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.311 -0400", hash_original_method = "D753748532B85BCF2954D7C221C91401", hash_generated_method = "A1ADE811356594F2DB256EED3B0F5EB3")
     public  EdgeEffectCompat(Context context) {
         mEdgeEffect = IMPL.newEdgeEffect(context);
-        // ---------- Original Method ----------
-        //mEdgeEffect = IMPL.newEdgeEffect(context);
+        
+        
     }
 
     
@@ -29,8 +29,8 @@ public class EdgeEffectCompat {
         IMPL.setSize(mEdgeEffect, width, height);
         addTaint(width);
         addTaint(height);
-        // ---------- Original Method ----------
-        //IMPL.setSize(mEdgeEffect, width, height);
+        
+        
     }
 
     
@@ -39,51 +39,51 @@ public class EdgeEffectCompat {
         boolean var3EA09ADF94E351308B7D2F9F554CE5C6_1992267097 = (IMPL.isFinished(mEdgeEffect));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_496735297 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_496735297;
-        // ---------- Original Method ----------
-        //return IMPL.isFinished(mEdgeEffect);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.312 -0400", hash_original_method = "9C12A7C81A14CC06F079C8FA3122B4B4", hash_generated_method = "4D27A3E0F74451F4D051768EA9080087")
     public void finish() {
         IMPL.finish(mEdgeEffect);
-        // ---------- Original Method ----------
-        //IMPL.finish(mEdgeEffect);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.313 -0400", hash_original_method = "1908B5EE653AB1B5A5CE65E81F6BDB7A", hash_generated_method = "103457749EFCA0230A4D5F937EEEBCAF")
     public boolean onPull(float deltaDistance) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean var49F6B611416CEB99433E1723B9963436_1382661942 = (IMPL.onPull(mEdgeEffect, deltaDistance));
         addTaint(deltaDistance);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1821304818 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1821304818;
-        // ---------- Original Method ----------
-        //return IMPL.onPull(mEdgeEffect, deltaDistance);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.313 -0400", hash_original_method = "45F767B8769552AFBFA0E978EE8933FD", hash_generated_method = "B0A354B638626F579340D104DCDCCB9D")
     public boolean onRelease() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean var845123BA855AFA627A6BFC6DB66C1464_1190195589 = (IMPL.onRelease(mEdgeEffect));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_4221266 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_4221266;
-        // ---------- Original Method ----------
-        //return IMPL.onRelease(mEdgeEffect);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.313 -0400", hash_original_method = "F0B0848CCB34A5B04946FEDCFE4DC62C", hash_generated_method = "D2F31BEBE85EA1468845509F9C2A4F83")
     public boolean onAbsorb(int velocity) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean var7983AD964AD2959367886FA4B6FF2BC1_928231716 = (IMPL.onAbsorb(mEdgeEffect, velocity));
         addTaint(velocity);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_623125258 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_623125258;
-        // ---------- Original Method ----------
-        //return IMPL.onAbsorb(mEdgeEffect, velocity);
+        
+        
     }
 
     
@@ -93,8 +93,8 @@ public class EdgeEffectCompat {
         addTaint(canvas.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1475159759 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1475159759;
-        // ---------- Original Method ----------
-        //return IMPL.draw(mEdgeEffect, canvas);
+        
+        
     }
 
     
@@ -103,19 +103,19 @@ public class EdgeEffectCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.314 -0400", hash_original_method = "E93AF950D68741CBF25DC67984C27D7B", hash_generated_method = "E93AF950D68741CBF25DC67984C27D7B")
         public BaseEdgeEffectImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.314 -0400", hash_original_method = "598F7EE7163BC02F940E7AE457E81E71", hash_generated_method = "04BB62EAF6A30E672B87E2FF05E23790")
         public Object newEdgeEffect(Context context) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_442929234 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_442929234 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_442929234 = null;
             addTaint(context.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_442929234.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_442929234.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_442929234;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
@@ -124,7 +124,7 @@ public class EdgeEffectCompat {
             addTaint(edgeEffect.getTaint());
             addTaint(width);
             addTaint(height);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -133,50 +133,50 @@ public class EdgeEffectCompat {
             addTaint(edgeEffect.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_546295224 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_546295224;
-            // ---------- Original Method ----------
-            //return true;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.316 -0400", hash_original_method = "4537DDA1058A07DD12C2683C46DAE0A0", hash_generated_method = "214222B178933FED02E3E3C1CFC2ED00")
         public void finish(Object edgeEffect) {
             addTaint(edgeEffect.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.316 -0400", hash_original_method = "6D6767FA0A7FD096DC5FAE330C25B4EB", hash_generated_method = "3E738DDF48FF5A79F0B1A3E7D01E767B")
         public boolean onPull(Object edgeEffect, float deltaDistance) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(edgeEffect.getTaint());
             addTaint(deltaDistance);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1115260013 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1115260013;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.317 -0400", hash_original_method = "4CCDA82CBCC611597E463B09D91011D3", hash_generated_method = "4D414B3AB7831C2C504EA14C72EAFA0A")
         public boolean onRelease(Object edgeEffect) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(edgeEffect.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1392553248 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1392553248;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.317 -0400", hash_original_method = "E4A19D3F19F8749DFC3F77D5467C90AC", hash_generated_method = "7FA39F5884BE376CF7D3C0CF1EC86945")
         public boolean onAbsorb(Object edgeEffect, int velocity) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(edgeEffect.getTaint());
             addTaint(velocity);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1631848905 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1631848905;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -186,8 +186,8 @@ public class EdgeEffectCompat {
             addTaint(canvas.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1948307614 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1948307614;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -200,19 +200,19 @@ public class EdgeEffectCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.318 -0400", hash_original_method = "722DC077141274393C35BB912CA199C0", hash_generated_method = "722DC077141274393C35BB912CA199C0")
         public EdgeEffectIcsImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.319 -0400", hash_original_method = "4DBA645CACC3049A11EF7913FF866293", hash_generated_method = "B510A2264F07F4D20694EF562746BC80")
         public Object newEdgeEffect(Context context) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1759512460 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1759512460 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1759512460 = EdgeEffectCompatIcs.newEdgeEffect(context);
             addTaint(context.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1759512460.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1759512460.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1759512460;
-            // ---------- Original Method ----------
-            //return EdgeEffectCompatIcs.newEdgeEffect(context);
+            
+            
         }
 
         
@@ -222,8 +222,8 @@ public class EdgeEffectCompat {
             addTaint(edgeEffect.getTaint());
             addTaint(width);
             addTaint(height);
-            // ---------- Original Method ----------
-            //EdgeEffectCompatIcs.setSize(edgeEffect, width, height);
+            
+            
         }
 
         
@@ -233,8 +233,8 @@ public class EdgeEffectCompat {
             addTaint(edgeEffect.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1714177798 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1714177798;
-            // ---------- Original Method ----------
-            //return EdgeEffectCompatIcs.isFinished(edgeEffect);
+            
+            
         }
 
         
@@ -242,46 +242,46 @@ public class EdgeEffectCompat {
         public void finish(Object edgeEffect) {
             EdgeEffectCompatIcs.finish(edgeEffect);
             addTaint(edgeEffect.getTaint());
-            // ---------- Original Method ----------
-            //EdgeEffectCompatIcs.finish(edgeEffect);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.321 -0400", hash_original_method = "A82E9A0A10EC720EFD1907409B81ECC2", hash_generated_method = "F62F21BA73BDE5AFD559B4D6EEB94FD1")
         public boolean onPull(Object edgeEffect, float deltaDistance) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             boolean var433561664B1B1C44BB28414376EF2187_1976931543 = (EdgeEffectCompatIcs.onPull(edgeEffect, deltaDistance));
             addTaint(edgeEffect.getTaint());
             addTaint(deltaDistance);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_988221789 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_988221789;
-            // ---------- Original Method ----------
-            //return EdgeEffectCompatIcs.onPull(edgeEffect, deltaDistance);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.321 -0400", hash_original_method = "D85EB1006C2B11862110869EE99A2168", hash_generated_method = "FD731E103E94157975B65647E5D4D08D")
         public boolean onRelease(Object edgeEffect) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             boolean var96599794B2E390224525D270AB981239_878601707 = (EdgeEffectCompatIcs.onRelease(edgeEffect));
             addTaint(edgeEffect.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_90958651 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_90958651;
-            // ---------- Original Method ----------
-            //return EdgeEffectCompatIcs.onRelease(edgeEffect);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.321 -0400", hash_original_method = "DA1A282FCCAC2CD96B6A4C969DDDC50D", hash_generated_method = "28F90D600F11C2A0420A3BD5339B9040")
         public boolean onAbsorb(Object edgeEffect, int velocity) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             boolean var16606BECCBEA8DCDC86980EE1AE84F47_1244219581 = (EdgeEffectCompatIcs.onAbsorb(edgeEffect, velocity));
             addTaint(edgeEffect.getTaint());
             addTaint(velocity);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_555804398 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_555804398;
-            // ---------- Original Method ----------
-            //return EdgeEffectCompatIcs.onAbsorb(edgeEffect, velocity);
+            
+            
         }
 
         
@@ -292,8 +292,8 @@ public class EdgeEffectCompat {
             addTaint(canvas.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_30601118 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_30601118;
-            // ---------- Original Method ----------
-            //return EdgeEffectCompatIcs.draw(edgeEffect, canvas);
+            
+            
         }
 
         

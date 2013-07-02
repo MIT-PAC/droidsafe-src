@@ -1,11 +1,11 @@
 package android.inputmethodservice;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.os.HandlerCaller;
 import com.android.internal.view.IInputContext;
@@ -54,29 +54,31 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
         mCaller = new HandlerCaller(context.getApplicationContext(), this);
         mInputMethod = new WeakReference<InputMethod>(inputMethod);
         mTargetSdkVersion = context.getApplicationInfo().targetSdkVersion;
-        // ---------- Original Method ----------
-        //mTarget = new WeakReference<AbstractInputMethodService>(context);
-        //mCaller = new HandlerCaller(context.getApplicationContext(), this);
-        //mInputMethod = new WeakReference<InputMethod>(inputMethod);
-        //mTargetSdkVersion = context.getApplicationInfo().targetSdkVersion;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.632 -0400", hash_original_method = "578FDF861144B5ACC99AF98F1B65A29F", hash_generated_method = "B47DBDA72C7443020F7A7C3EDA47BFCC")
     public InputMethod getInternalInputMethod() {
-        InputMethod varB4EAC82CA7396A68D541C85D26508E83_588885093 = null; //Variable for return #1
+        InputMethod varB4EAC82CA7396A68D541C85D26508E83_588885093 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_588885093 = mInputMethod.get();
-        varB4EAC82CA7396A68D541C85D26508E83_588885093.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_588885093.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_588885093;
-        // ---------- Original Method ----------
-        //return mInputMethod.get();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.634 -0400", hash_original_method = "B32BF45DBAE9C0B66E1E8649B58C9B6E", hash_generated_method = "9E431E99E629DF3AF380A2DB458958C2")
     public void executeMessage(Message msg) {
         InputMethod inputMethod = mInputMethod.get();
-        //Begin case DO_DUMP 
+        
         {
             AbstractInputMethodService target = mTarget.get();
             HandlerCaller.SomeArgs args = (HandlerCaller.SomeArgs)msg.obj;
@@ -84,30 +86,30 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
             {
                 target.dump((FileDescriptor)args.arg1,
                             (PrintWriter)args.arg2, (String[])args.arg3);
-            } //End block
+            } 
             catch (RuntimeException e)
             {
                 ((PrintWriter)args.arg2).println("Exception: " + e);
-            } //End block
+            } 
             {
                 ((CountDownLatch)args.arg4).countDown();
-            } //End block
-        } //End block
-        //End case DO_DUMP 
-        //Begin case DO_ATTACH_TOKEN 
+            } 
+        } 
+        
+        
         {
             inputMethod.attachToken((IBinder)msg.obj);
-        } //End block
-        //End case DO_ATTACH_TOKEN 
-        //Begin case DO_SET_INPUT_CONTEXT 
+        } 
+        
+        
         {
             inputMethod.bindInput((InputBinding)msg.obj);
-        } //End block
-        //End case DO_SET_INPUT_CONTEXT 
-        //Begin case DO_UNSET_INPUT_CONTEXT 
+        } 
+        
+        
         inputMethod.unbindInput();
-        //End case DO_UNSET_INPUT_CONTEXT 
-        //Begin case DO_START_INPUT 
+        
+        
         {
             HandlerCaller.SomeArgs args = (HandlerCaller.SomeArgs)msg.obj;
             IInputContext inputContext = (IInputContext)args.arg1;
@@ -117,9 +119,9 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
             EditorInfo info = (EditorInfo)args.arg2;
             info.makeCompatible(mTargetSdkVersion);
             inputMethod.startInput(ic, info);
-        } //End block
-        //End case DO_START_INPUT 
-        //Begin case DO_RESTART_INPUT 
+        } 
+        
+        
         {
             HandlerCaller.SomeArgs args = (HandlerCaller.SomeArgs)msg.obj;
             IInputContext inputContext = (IInputContext)args.arg1;
@@ -129,36 +131,37 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
             EditorInfo info = (EditorInfo)args.arg2;
             info.makeCompatible(mTargetSdkVersion);
             inputMethod.restartInput(ic, info);
-        } //End block
-        //End case DO_RESTART_INPUT 
-        //Begin case DO_CREATE_SESSION 
+        } 
+        
+        
         {
             inputMethod.createSession(new InputMethodSessionCallbackWrapper(
                         mCaller.mContext, (IInputMethodCallback)msg.obj));
-        } //End block
-        //End case DO_CREATE_SESSION 
-        //Begin case DO_SET_SESSION_ENABLED 
+        } 
+        
+        
         inputMethod.setSessionEnabled((InputMethodSession)msg.obj,
                         msg.arg1 != 0);
-        //End case DO_SET_SESSION_ENABLED 
-        //Begin case DO_REVOKE_SESSION 
+        
+        
         inputMethod.revokeSession((InputMethodSession)msg.obj);
-        //End case DO_REVOKE_SESSION 
-        //Begin case DO_SHOW_SOFT_INPUT 
+        
+        
         inputMethod.showSoftInput(msg.arg1, (ResultReceiver)msg.obj);
-        //End case DO_SHOW_SOFT_INPUT 
-        //Begin case DO_HIDE_SOFT_INPUT 
+        
+        
         inputMethod.hideSoftInput(msg.arg1, (ResultReceiver)msg.obj);
-        //End case DO_HIDE_SOFT_INPUT 
-        //Begin case DO_CHANGE_INPUTMETHOD_SUBTYPE 
+        
+        
         inputMethod.changeInputMethodSubtype((InputMethodSubtype)msg.obj);
-        //End case DO_CHANGE_INPUTMETHOD_SUBTYPE 
+        
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.636 -0400", hash_original_method = "0C6C3794FFF9A28E4B4CC38855176730", hash_generated_method = "313855E87880DC682E799C81B6E288D9")
     @Override
     protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
@@ -170,8 +173,8 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
                 fout.println("Permission Denial: can't dump InputMethodManager from from pid="
                     + Binder.getCallingPid()
                     + ", uid=" + Binder.getCallingUid());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         CountDownLatch latch = new CountDownLatch(1);
         mCaller.executeOrSendMessage(mCaller.obtainMessageOOOO(DO_DUMP,
                 fd, fout, args, latch));
@@ -181,30 +184,32 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
                 boolean varD9CF0FF0BA45C9F3F8A99C370C897802_185343441 = (!latch.await(5, TimeUnit.SECONDS));
                 {
                     fout.println("Timeout waiting for dump");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (InterruptedException e)
         {
             fout.println("Interrupted waiting for dump");
-        } //End block
+        } 
         addTaint(fd.getTaint());
         addTaint(fout.getTaint());
         addTaint(args[0].getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.636 -0400", hash_original_method = "3A045444AF5D8A822ADB03EA95145F6B", hash_generated_method = "CE55F5552C04CEE200DADCE50E74FBC8")
     public void attachToken(IBinder token) {
         mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_ATTACH_TOKEN, token));
         addTaint(token.getTaint());
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_ATTACH_TOKEN, token));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.637 -0400", hash_original_method = "D25BEB041B9BF5E5D79B179E52337593", hash_generated_method = "6BB143D5B3092BA82FA183C5F1AA9528")
     public void bindInput(InputBinding binding) {
         InputConnection ic = new InputConnectionWrapper(
@@ -212,55 +217,60 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
         InputBinding nu = new InputBinding(ic, binding);
         mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_SET_INPUT_CONTEXT, nu));
         addTaint(binding.getTaint());
-        // ---------- Original Method ----------
-        //InputConnection ic = new InputConnectionWrapper(
-                //IInputContext.Stub.asInterface(binding.getConnectionToken()));
-        //InputBinding nu = new InputBinding(ic, binding);
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_SET_INPUT_CONTEXT, nu));
+        
+        
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.637 -0400", hash_original_method = "40DD339E1316D187A0FAAB1DCDDB6E26", hash_generated_method = "30B4AF1F3E124873ADD5722DC7A8FD28")
     public void unbindInput() {
         mCaller.executeOrSendMessage(mCaller.obtainMessage(DO_UNSET_INPUT_CONTEXT));
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessage(DO_UNSET_INPUT_CONTEXT));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.638 -0400", hash_original_method = "64774C384C4074770EA84EAA9163C00A", hash_generated_method = "A2ACDDEE3A701F6CE5F7A237EFA6EE60")
     public void startInput(IInputContext inputContext, EditorInfo attribute) {
         mCaller.executeOrSendMessage(mCaller.obtainMessageOO(DO_START_INPUT,
                 inputContext, attribute));
         addTaint(inputContext.getTaint());
         addTaint(attribute.getTaint());
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageOO(DO_START_INPUT,
-                //inputContext, attribute));
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.638 -0400", hash_original_method = "2B9FBA45B912D421D9CC4953D88A52A4", hash_generated_method = "A7F35F143BF163134018D9861EADC8FE")
     public void restartInput(IInputContext inputContext, EditorInfo attribute) {
         mCaller.executeOrSendMessage(mCaller.obtainMessageOO(DO_RESTART_INPUT,
                 inputContext, attribute));
         addTaint(inputContext.getTaint());
         addTaint(attribute.getTaint());
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageOO(DO_RESTART_INPUT,
-                //inputContext, attribute));
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.639 -0400", hash_original_method = "B4BFD5A332191A20B74FC4A001EBF3B5", hash_generated_method = "25EE3C085A1EB0E0727373F2918B4460")
     public void createSession(IInputMethodCallback callback) {
         mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_CREATE_SESSION, callback));
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_CREATE_SESSION, callback));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.639 -0400", hash_original_method = "BC36F335C1EF57BB31635290E9065CDE", hash_generated_method = "449933AFADF00162DD2C1AEC2D558487")
     public void setSessionEnabled(IInputMethodSession session, boolean enabled) {
         try 
@@ -269,23 +279,24 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
                     session).getInternalInputMethodSession();
             mCaller.executeOrSendMessage(mCaller.obtainMessageIO(
                     DO_SET_SESSION_ENABLED, enabled ? 1 : 0, ls));
-        } //End block
+        } 
         catch (ClassCastException e)
         { }
         addTaint(session.getTaint());
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //try {
-            //InputMethodSession ls = ((IInputMethodSessionWrapper)
-                    //session).getInternalInputMethodSession();
-            //mCaller.executeOrSendMessage(mCaller.obtainMessageIO(
-                    //DO_SET_SESSION_ENABLED, enabled ? 1 : 0, ls));
-        //} catch (ClassCastException e) {
-            //Log.w(TAG, "Incoming session not of correct type: " + session, e);
-        //}
+        
+        
+            
+                    
+            
+                    
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.640 -0400", hash_original_method = "6C5BDC012D2E841761539B06F63A9AED", hash_generated_method = "40A4C7757E5AD00E7A164ACFE175DA4D")
     public void revokeSession(IInputMethodSession session) {
         try 
@@ -293,53 +304,56 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
             InputMethodSession ls = ((IInputMethodSessionWrapper)
                     session).getInternalInputMethodSession();
             mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_REVOKE_SESSION, ls));
-        } //End block
+        } 
         catch (ClassCastException e)
         { }
         addTaint(session.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //InputMethodSession ls = ((IInputMethodSessionWrapper)
-                    //session).getInternalInputMethodSession();
-            //mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_REVOKE_SESSION, ls));
-        //} catch (ClassCastException e) {
-            //Log.w(TAG, "Incoming session not of correct type: " + session, e);
-        //}
+        
+        
+            
+                    
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.640 -0400", hash_original_method = "F249E378FF675201B27E0C333F1303AC", hash_generated_method = "8F25E9C99163158409F61C0C4B5AF612")
     public void showSoftInput(int flags, ResultReceiver resultReceiver) {
         mCaller.executeOrSendMessage(mCaller.obtainMessageIO(DO_SHOW_SOFT_INPUT,
                 flags, resultReceiver));
         addTaint(flags);
         addTaint(resultReceiver.getTaint());
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageIO(DO_SHOW_SOFT_INPUT,
-                //flags, resultReceiver));
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.641 -0400", hash_original_method = "B180661AC63EF37C0C75DD9D2F92FEA1", hash_generated_method = "A4E5EB960B804218DEFCE6E23E51F680")
     public void hideSoftInput(int flags, ResultReceiver resultReceiver) {
         mCaller.executeOrSendMessage(mCaller.obtainMessageIO(DO_HIDE_SOFT_INPUT,
                 flags, resultReceiver));
         addTaint(flags);
         addTaint(resultReceiver.getTaint());
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageIO(DO_HIDE_SOFT_INPUT,
-                //flags, resultReceiver));
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.641 -0400", hash_original_method = "AC2D1B005425B264D93FFBD73CFFCA9B", hash_generated_method = "3E63D48A319612F24321BB8C339A4B50")
     public void changeInputMethodSubtype(InputMethodSubtype subtype) {
         mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_CHANGE_INPUTMETHOD_SUBTYPE,
                 subtype));
         addTaint(subtype.getTaint());
-        // ---------- Original Method ----------
-        //mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_CHANGE_INPUTMETHOD_SUBTYPE,
-                //subtype));
+        
+        
+                
     }
 
     
@@ -351,7 +365,7 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.641 -0400", hash_original_method = "55E10D988B76888B9ACFA8C6EB5966C6", hash_generated_method = "55E10D988B76888B9ACFA8C6EB5966C6")
         public Notifier ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -371,9 +385,9 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
           InputMethodSessionCallbackWrapper(Context context, IInputMethodCallback cb) {
             mContext = context;
             mCb = cb;
-            // ---------- Original Method ----------
-            //mContext = context;
-            //mCb = cb;
+            
+            
+            
         }
 
         
@@ -384,25 +398,25 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
                 {
                     IInputMethodSessionWrapper wrap = new IInputMethodSessionWrapper(mContext, session);
                     mCb.sessionCreated(wrap);
-                } //End block
+                } 
                 {
                     mCb.sessionCreated(null);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (RemoteException e)
             { }
             addTaint(session.getTaint());
-            // ---------- Original Method ----------
-            //try {
-                //if (session != null) {
-                    //IInputMethodSessionWrapper wrap =
-                            //new IInputMethodSessionWrapper(mContext, session);
-                    //mCb.sessionCreated(wrap);
-                //} else {
-                    //mCb.sessionCreated(null);
-                //}
-            //} catch (RemoteException e) {
-            //}
+            
+            
+                
+                    
+                            
+                    
+                
+                    
+                
+            
+            
         }
 
         

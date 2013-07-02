@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.security.spec.AlgorithmParameterSpec;
@@ -32,13 +32,14 @@ public class AlgorithmParameters {
         this.provider = provider;
         this.algorithm = algorithm;
         this.spiImpl = algPramSpi;
-        // ---------- Original Method ----------
-        //this.provider = provider;
-        //this.algorithm = algorithm;
-        //this.spiImpl = algPramSpi;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AlgorithmParameters getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -48,6 +49,7 @@ public class AlgorithmParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AlgorithmParameters getInstance(String algorithm,
             String provider) throws NoSuchAlgorithmException,
             NoSuchProviderException {
@@ -62,6 +64,7 @@ public class AlgorithmParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AlgorithmParameters getInstance(String algorithm,
             Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
@@ -77,23 +80,23 @@ public class AlgorithmParameters {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.085 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "4D346C9FCF003B6CE935712FE10F3942")
     public final Provider getProvider() {
-        Provider varB4EAC82CA7396A68D541C85D26508E83_374143840 = null; //Variable for return #1
+        Provider varB4EAC82CA7396A68D541C85D26508E83_374143840 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_374143840 = provider;
-        varB4EAC82CA7396A68D541C85D26508E83_374143840.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_374143840.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_374143840;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.085 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "B3736989121ACB589CFDEC10567B8A8B")
     public final String getAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_931175589 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_931175589 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_931175589 = algorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_931175589.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_931175589.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_931175589;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
@@ -101,16 +104,16 @@ public class AlgorithmParameters {
     public final void init(AlgorithmParameterSpec paramSpec) throws InvalidParameterSpecException {
         {
             if (DroidSafeAndroidRuntime.control) throw new InvalidParameterSpecException("Parameter has already been initialized");
-        } //End block
+        } 
         spiImpl.engineInit(paramSpec);
         initialized = true;
         addTaint(paramSpec.getTaint());
-        // ---------- Original Method ----------
-        //if (initialized) {
-            //throw new InvalidParameterSpecException("Parameter has already been initialized");
-        //}
-        //spiImpl.engineInit(paramSpec);
-        //initialized = true;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -118,16 +121,16 @@ public class AlgorithmParameters {
     public final void init(byte[] params) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Parameter has already been initialized");
-        } //End block
+        } 
         spiImpl.engineInit(params);
         initialized = true;
         addTaint(params[0]);
-        // ---------- Original Method ----------
-        //if (initialized) {
-            //throw new IOException("Parameter has already been initialized");
-        //}
-        //spiImpl.engineInit(params);
-        //initialized = true;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -135,35 +138,35 @@ public class AlgorithmParameters {
     public final void init(byte[] params, String format) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Parameter has already been initialized");
-        } //End block
+        } 
         spiImpl.engineInit(params, format);
         initialized = true;
         addTaint(params[0]);
         addTaint(format.getTaint());
-        // ---------- Original Method ----------
-        //if (initialized) {
-            //throw new IOException("Parameter has already been initialized");
-        //}
-        //spiImpl.engineInit(params, format);
-        //initialized = true;
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.088 -0400", hash_original_method = "9BE0AC13DE94D992E08BA6CD89DD9D38", hash_generated_method = "93EED655EDC7C836AA8831316E2B3043")
     public final <T extends AlgorithmParameterSpec> T getParameterSpec(Class<T> paramSpec) throws InvalidParameterSpecException {
-        T varB4EAC82CA7396A68D541C85D26508E83_1340680911 = null; //Variable for return #1
+        T varB4EAC82CA7396A68D541C85D26508E83_1340680911 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new InvalidParameterSpecException("Parameter has not been initialized");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1340680911 = spiImpl.engineGetParameterSpec(paramSpec);
         addTaint(paramSpec.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1340680911.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1340680911.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1340680911;
-        // ---------- Original Method ----------
-        //if (!initialized) {
-            //throw new InvalidParameterSpecException("Parameter has not been initialized");
-        //}
-        //return spiImpl.engineGetParameterSpec(paramSpec);
+        
+        
+            
+        
+        
     }
 
     
@@ -171,15 +174,15 @@ public class AlgorithmParameters {
     public final byte[] getEncoded() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Parameter has not been initialized");
-        } //End block
+        } 
         byte[] var71FE8FA1349A7263D1CF718AD61F0E29_1033703084 = (spiImpl.engineGetEncoded());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1424084869 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1424084869;
-        // ---------- Original Method ----------
-        //if (!initialized) {
-            //throw new IOException("Parameter has not been initialized");
-        //}
-        //return spiImpl.engineGetEncoded();
+        
+        
+            
+        
+        
     }
 
     
@@ -187,44 +190,44 @@ public class AlgorithmParameters {
     public final byte[] getEncoded(String format) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Parameter has not been initialized");
-        } //End block
+        } 
         byte[] varAB1997B2C1685ABABFB8C83A59472A88_892997565 = (spiImpl.engineGetEncoded(format));
         addTaint(format.getTaint());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1346824373 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1346824373;
-        // ---------- Original Method ----------
-        //if (!initialized) {
-            //throw new IOException("Parameter has not been initialized");
-        //}
-        //return spiImpl.engineGetEncoded(format);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.089 -0400", hash_original_method = "3487587F52CF5404E8DAC6B47C5FD08C", hash_generated_method = "CC70D09F416E2ACFD424044ED758C8B5")
     @Override
     public final String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1856960063 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1868523269 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1856960063 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1868523269 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1856960063 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1868523269 = spiImpl.engineToString();
-        String varA7E53CE21691AB073D9660D615818899_1292383686; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1292383686; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1292383686 = varB4EAC82CA7396A68D541C85D26508E83_1856960063;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1292383686 = varB4EAC82CA7396A68D541C85D26508E83_1868523269;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1292383686.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1292383686.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1292383686;
-        // ---------- Original Method ----------
-        //if (!initialized) {
-            //return null;
-        //}
-        //return spiImpl.engineToString();
+        
+        
+            
+        
+        
     }
 
     

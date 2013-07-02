@@ -1,11 +1,11 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -63,8 +63,8 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         super(selectorProvider);
         fd = IoBridge.socket(false);
         addTaint(selectorProvider.getTaint());
-        // ---------- Original Method ----------
-        //fd = IoBridge.socket(false);
+        
+        
     }
 
     
@@ -74,38 +74,38 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         super(SelectorProvider.provider());
         fd = new FileDescriptor();
         connectAddress = new InetSocketAddress(0);
-        // ---------- Original Method ----------
-        //fd = new FileDescriptor();
-        //connectAddress = new InetSocketAddress(0);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.033 -0400", hash_original_method = "CB0BD0AB90ECCAF1B55A641E507A7D41", hash_generated_method = "6CC1EA1DA7047F39F67921CE096631B9")
     @Override
     synchronized public DatagramSocket socket() {
-        DatagramSocket varB4EAC82CA7396A68D541C85D26508E83_497910754 = null; //Variable for return #1
+        DatagramSocket varB4EAC82CA7396A68D541C85D26508E83_497910754 = null; 
         {
             socket = new DatagramSocketAdapter(new PlainDatagramSocketImpl(fd, localPort), this);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_497910754 = socket;
-        varB4EAC82CA7396A68D541C85D26508E83_497910754.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_497910754.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_497910754;
-        // ---------- Original Method ----------
-        //if (socket == null) {
-            //socket = new DatagramSocketAdapter(new PlainDatagramSocketImpl(fd, localPort), this);
-        //}
-        //return socket;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.033 -0400", hash_original_method = "0E5E291FF84E111D5E99E4DCFA7BD180", hash_generated_method = "9276B6B92218F43DCFE8A571566AE443")
      InetAddress getLocalAddress() {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1332860540 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1332860540 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1332860540 = IoBridge.getSocketLocalAddress(fd);
-        varB4EAC82CA7396A68D541C85D26508E83_1332860540.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1332860540.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1332860540;
-        // ---------- Original Method ----------
-        //return IoBridge.getSocketLocalAddress(fd);
+        
+        
     }
 
     
@@ -114,123 +114,126 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
     synchronized public boolean isConnected() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1664088038 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1664088038;
-        // ---------- Original Method ----------
-        //return connected;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.035 -0400", hash_original_method = "AF75F16707868C3AF8C2693CEE337F7E", hash_generated_method = "DC4BF4BE7759F17720F0AE4BE47CBEB0")
     @Override
     synchronized public DatagramChannel connect(SocketAddress address) throws IOException {
-        DatagramChannel varB4EAC82CA7396A68D541C85D26508E83_1570925233 = null; //Variable for return #1
+        DatagramChannel varB4EAC82CA7396A68D541C85D26508E83_1570925233 = null; 
         checkOpen();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         InetSocketAddress inetSocketAddress = SocketChannelImpl.validateAddress(address);
         try 
         {
             begin();
             IoBridge.connect(fd, inetSocketAddress.getAddress(), inetSocketAddress.getPort());
-        } //End block
+        } 
         catch (ConnectException e)
         { }
         finally 
         {
             end(true);
-        } //End block
+        } 
         connectAddress = inetSocketAddress;
         connected = true;
         isBound = true;
         varB4EAC82CA7396A68D541C85D26508E83_1570925233 = this;
         addTaint(address.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1570925233.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1570925233.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1570925233;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //if (connected) {
-            //throw new IllegalStateException();
-        //}
-        //InetSocketAddress inetSocketAddress = SocketChannelImpl.validateAddress(address);
-        //try {
-            //begin();
-            //IoBridge.connect(fd, inetSocketAddress.getAddress(), inetSocketAddress.getPort());
-        //} catch (ConnectException e) {
-        //} finally {
-            //end(true);
-        //}
-        //connectAddress = inetSocketAddress;
-        //connected = true;
-        //isBound = true;
-        //return this;
+        
+        
+        
+            
+        
+        
+        
+            
+            
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.036 -0400", hash_original_method = "EF6170FA9655FF42105E76598600F7D4", hash_generated_method = "1200709FC8B9E66A4EEC175DF6EA7312")
     @Override
     synchronized public DatagramChannel disconnect() throws IOException {
-        DatagramChannel varB4EAC82CA7396A68D541C85D26508E83_2101294419 = null; //Variable for return #1
-        DatagramChannel varB4EAC82CA7396A68D541C85D26508E83_1568750555 = null; //Variable for return #2
+        DatagramChannel varB4EAC82CA7396A68D541C85D26508E83_2101294419 = null; 
+        DatagramChannel varB4EAC82CA7396A68D541C85D26508E83_1568750555 = null; 
         {
             boolean var131263B9D168DAF17510420A0B1D4997_1580135966 = (!isConnected() || !isOpen());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2101294419 = this;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         connected = false;
         connectAddress = null;
         try 
         {
             Libcore.os.connect(fd, InetAddress.UNSPECIFIED, 0);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsIOException();
-        } //End block
+        } 
         {
             socket.disconnect();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1568750555 = this;
-        DatagramChannel varA7E53CE21691AB073D9660D615818899_788025555; //Final return value
+        DatagramChannel varA7E53CE21691AB073D9660D615818899_788025555; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_788025555 = varB4EAC82CA7396A68D541C85D26508E83_2101294419;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_788025555 = varB4EAC82CA7396A68D541C85D26508E83_1568750555;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_788025555.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_788025555.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_788025555;
-        // ---------- Original Method ----------
-        //if (!isConnected() || !isOpen()) {
-            //return this;
-        //}
-        //connected = false;
-        //connectAddress = null;
-        //try {
-            //Libcore.os.connect(fd, InetAddress.UNSPECIFIED, 0);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsIOException();
-        //}
-        //if (socket != null) {
-            //socket.disconnect();
-        //}
-        //return this;
+        
+        
+            
+        
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.037 -0400", hash_original_method = "0C3D128AF11DA9AEAEB5EC56CF1536D1", hash_generated_method = "D02C13E2A2791DFC53080D354BE635A7")
     @Override
     public SocketAddress receive(ByteBuffer target) throws IOException {
-        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_651050176 = null; //Variable for return #1
-        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_323869675 = null; //Variable for return #2
-        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_2089634676 = null; //Variable for return #3
+        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_651050176 = null; 
+        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_323869675 = null; 
+        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_2089634676 = null; 
         target.checkWritable();
         checkOpen();
         {
             varB4EAC82CA7396A68D541C85D26508E83_651050176 = null;
-        } //End block
+        } 
         SocketAddress retAddr = null;
         try 
         {
@@ -241,66 +244,67 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
                     boolean var60B6DA0786479A0C7489B57034E21AB9_585274015 = (!target.isDirect());
                     {
                         retAddr = receiveImpl(target, loop);
-                    } //End block
+                    } 
                     {
                         retAddr = receiveDirectImpl(target, loop);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         catch (InterruptedIOException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_323869675 = null;
-        } //End block
+        } 
         finally 
         {
             end(retAddr != null);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2089634676 = retAddr;
         addTaint(target.getTaint());
-        SocketAddress varA7E53CE21691AB073D9660D615818899_2014348094; //Final return value
+        SocketAddress varA7E53CE21691AB073D9660D615818899_2014348094; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2014348094 = varB4EAC82CA7396A68D541C85D26508E83_651050176;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2014348094 = varB4EAC82CA7396A68D541C85D26508E83_323869675;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2014348094 = varB4EAC82CA7396A68D541C85D26508E83_2089634676;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2014348094.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2014348094.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2014348094;
-        // ---------- Original Method ----------
-        //target.checkWritable();
-        //checkOpen();
-        //if (!isBound) {
-            //return null;
-        //}
-        //SocketAddress retAddr = null;
-        //try {
-            //begin();
-            //synchronized (readLock) {
-                //boolean loop = isBlocking();
-                //if (!target.isDirect()) {
-                    //retAddr = receiveImpl(target, loop);
-                //} else {
-                    //retAddr = receiveDirectImpl(target, loop);
-                //}
-            //}
-        //} catch (InterruptedIOException e) {
-            //return null;
-        //} finally {
-            //end(retAddr != null);
-        //}
-        //return retAddr;
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+                    
+                
+            
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.038 -0400", hash_original_method = "A505D0369C23E2979AA10DE303251FF7", hash_generated_method = "988064EB4BBBE845C9C12ADAE578A60C")
     private SocketAddress receiveImpl(ByteBuffer target, boolean loop) throws IOException {
-        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_1224510016 = null; //Variable for return #1
+        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_1224510016 = null; 
         SocketAddress retAddr = null;
         DatagramPacket receivePacket;
         int oldposition = target.position();
@@ -309,11 +313,11 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
             boolean var60296D7148D7CD6284B1FB4B0E82F5B5_168565927 = (target.hasArray());
             {
                 receivePacket = new DatagramPacket(target.array(), target.position() + target.arrayOffset(), target.remaining());
-            } //End block
+            } 
             {
                 receivePacket = new DatagramPacket(new byte[target.remaining()], target.remaining());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             received = IoBridge.recvfrom(false, fd, receivePacket.getData(), receivePacket.getOffset(), receivePacket.getLength(), 0, receivePacket, isConnected());
             {
@@ -324,29 +328,30 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
                             boolean var395A28C9488D0B3CF5AF8252A428D998_2024950059 = (target.hasArray());
                             {
                                 target.position(oldposition + received);
-                            } //End block
+                            } 
                             {
                                 target.put(receivePacket.getData(), 0, received);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     retAddr = receivePacket.getSocketAddress();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1224510016 = retAddr;
         addTaint(target.getTaint());
         addTaint(loop);
-        varB4EAC82CA7396A68D541C85D26508E83_1224510016.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1224510016.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1224510016;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.039 -0400", hash_original_method = "3E37D8F586D5D9C430A73700118F801E", hash_generated_method = "9BF1A00F6F55F5DC4428C9D91B9CED3B")
     private SocketAddress receiveDirectImpl(ByteBuffer target, boolean loop) throws IOException {
-        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_81808061 = null; //Variable for return #1
+        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_81808061 = null; 
         SocketAddress retAddr = null;
         DatagramPacket receivePacket = new DatagramPacket(EmptyArray.BYTE, 0);
         int oldposition = target.position();
@@ -358,35 +363,36 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
                 {
                     {
                         target.position(oldposition + received);
-                    } //End block
+                    } 
                     retAddr = receivePacket.getSocketAddress();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_81808061 = retAddr;
         addTaint(target.getTaint());
         addTaint(loop);
-        varB4EAC82CA7396A68D541C85D26508E83_81808061.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_81808061.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_81808061;
-        // ---------- Original Method ----------
-        //SocketAddress retAddr = null;
-        //DatagramPacket receivePacket = new DatagramPacket(EmptyArray.BYTE, 0);
-        //int oldposition = target.position();
-        //int received = 0;
-        //do {
-            //received = IoBridge.recvfrom(false, fd, target, 0, receivePacket, isConnected());
-            //if (receivePacket != null && receivePacket.getAddress() != null) {
-                //if (received > 0) {
-                    //target.position(oldposition + received);
-                //}
-                //retAddr = receivePacket.getSocketAddress();
-                //break;
-            //}
-        //} while (loop);
-        //return retAddr;
+        
+        
+        
+        
+        
+        
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.040 -0400", hash_original_method = "959B6E7D8D0C8B7E48B65559E90B586F", hash_generated_method = "98C8C7D4F0415FC6A9AE4A5FF72D6D53")
     @Override
     public int send(ByteBuffer source, SocketAddress socketAddress) throws IOException {
@@ -397,14 +403,14 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
             boolean var94908F4406976F47F480E81F35A6256E_368977892 = (isa.getAddress() == null);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varACCEE759C92B66C87294B3FE171A86ED_1351707226 = (isConnected() && !connectAddress.equals(isa));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int sendCount = 0;
             try 
@@ -414,44 +420,45 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
                 sendCount = IoBridge.sendto(fd, source, 0, isa.getAddress(), isa.getPort());
                 {
                     source.position(oldPosition + sendCount);
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 end(sendCount >= 0);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(source.getTaint());
         addTaint(socketAddress.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_410106883 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_410106883;
-        // ---------- Original Method ----------
-        //checkNotNull(source);
-        //checkOpen();
-        //InetSocketAddress isa = (InetSocketAddress) socketAddress;
-        //if (isa.getAddress() == null) {
-            //throw new IOException();
-        //}
-        //if (isConnected() && !connectAddress.equals(isa)) {
-            //throw new IllegalArgumentException();
-        //}
-        //synchronized (writeLock) {
-            //int sendCount = 0;
-            //try {
-                //begin();
-                //int oldPosition = source.position();
-                //sendCount = IoBridge.sendto(fd, source, 0, isa.getAddress(), isa.getPort());
-                //if (sendCount > 0) {
-                    //source.position(oldPosition + sendCount);
-                //}
-            //} finally {
-                //end(sendCount >= 0);
-            //}
-            //return sendCount;
-        //}
+        
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                
+                
+                
+                
+                    
+                
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.041 -0400", hash_original_method = "76528871489F953D405DA27A93276CC2", hash_generated_method = "766C2003C34AC0C85A5AFC6C5E27DC4E")
     @Override
     public int read(ByteBuffer target) throws IOException {
@@ -459,7 +466,7 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         checkOpenConnected();
         {
             boolean var20B3BDB73F0932F2A7B4D5F3626BD9B5_420341788 = (!target.hasRemaining());
-        } //End collapsed parenthetic
+        } 
         int readCount = 0;
         {
             boolean varAD3610F4AB318B3E2F2E2CDF9A9A0813_426452930 = (target.isDirect() || target.hasArray());
@@ -467,44 +474,45 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
                 readCount = readImpl(target);
                 {
                     target.position(target.position() + readCount);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 byte[] readArray = new byte[target.remaining()];
                 ByteBuffer readBuffer = ByteBuffer.wrap(readArray);
                 readCount = readImpl(readBuffer);
                 {
                     target.put(readArray, 0, readCount);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(target.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_436694960 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_436694960;
-        // ---------- Original Method ----------
-        //target.checkWritable();
-        //checkOpenConnected();
-        //if (!target.hasRemaining()) {
-            //return 0;
-        //}
-        //int readCount = 0;
-        //if (target.isDirect() || target.hasArray()) {
-            //readCount = readImpl(target);
-            //if (readCount > 0) {
-                //target.position(target.position() + readCount);
-            //}
-        //} else {
-            //byte[] readArray = new byte[target.remaining()];
-            //ByteBuffer readBuffer = ByteBuffer.wrap(readArray);
-            //readCount = readImpl(readBuffer);
-            //if (readCount > 0) {
-                //target.put(readArray, 0, readCount);
-            //}
-        //}
-        //return readCount;
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+            
+            
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.041 -0400", hash_original_method = "73BDAA1D4D5FBBB4136E79D8CC3B2003", hash_generated_method = "FDEE5ADB776386103E93E0B880C24E89")
     @Override
     public long read(ByteBuffer[] targets, int offset, int length) throws IOException {
@@ -521,35 +529,36 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
             int putLength = Math.min(targets[index].remaining(), left);
             targets[index].put(readArray, readCount - left, putLength);
             left -= putLength;
-        } //End block
+        } 
         addTaint(targets[0].getTaint());
         addTaint(offset);
         addTaint(length);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1076596937 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1076596937;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(targets.length, offset, length);
-        //checkOpenConnected();
-        //int totalCount = FileChannelImpl.calculateTotalRemaining(targets, offset, length, true);
-        //if (totalCount == 0) {
-            //return 0;
-        //}
-        //ByteBuffer readBuffer = ByteBuffer.allocate(totalCount);
-        //int readCount;
-        //readCount = readImpl(readBuffer);
-        //int left = readCount;
-        //int index = offset;
-        //byte[] readArray = readBuffer.array();
-        //while (left > 0) {
-            //int putLength = Math.min(targets[index].remaining(), left);
-            //targets[index].put(readArray, readCount - left, putLength);
-            //index++;
-            //left -= putLength;
-        //}
-        //return readCount;
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.042 -0400", hash_original_method = "FFB1F44E8E8861E1A9AE8DEADE3707A8", hash_generated_method = "22741E1F10A529533C3D8FF0474B92C7")
     private int readImpl(ByteBuffer dst) throws IOException {
         {
@@ -558,33 +567,34 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
             {
                 begin();
                 readCount = IoBridge.recvfrom(false, fd, dst, 0, null, isConnected());
-            } //End block
+            } 
             catch (InterruptedIOException e)
             { }
             finally 
             {
                 end(readCount > 0);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(dst.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1967833251 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1967833251;
-        // ---------- Original Method ----------
-        //synchronized (readLock) {
-            //int readCount = 0;
-            //try {
-                //begin();
-                //readCount = IoBridge.recvfrom(false, fd, dst, 0, null, isConnected());
-            //} catch (InterruptedIOException e) {
-                //return 0;
-            //} finally {
-                //end(readCount > 0);
-            //}
-            //return readCount;
-        //}
+        
+        
+            
+            
+                
+                
+            
+                
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.042 -0400", hash_original_method = "EACC5F2E46984D93B58057650609FEF7", hash_generated_method = "43BCEC812F6D9056515935DA8A7EC803")
     @Override
     public int write(ByteBuffer src) throws IOException {
@@ -592,28 +602,29 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         checkOpenConnected();
         {
             boolean var78714B40A2AE0B69755CF30C747E39CB_1886550658 = (!src.hasRemaining());
-        } //End collapsed parenthetic
+        } 
         int writeCount = writeImpl(src);
         {
             src.position(src.position() + writeCount);
-        } //End block
+        } 
         addTaint(src.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_851176957 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_851176957;
-        // ---------- Original Method ----------
-        //checkNotNull(src);
-        //checkOpenConnected();
-        //if (!src.hasRemaining()) {
-            //return 0;
-        //}
-        //int writeCount = writeImpl(src);
-        //if (writeCount > 0) {
-            //src.position(src.position() + writeCount);
-        //}
-        //return writeCount;
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.043 -0400", hash_original_method = "92D26B18BB75EB8AD284E7DC348B13D6", hash_generated_method = "EB32D2D446929B0A216AFD12568F2772")
     @Override
     public long write(ByteBuffer[] sources, int offset, int length) throws IOException {
@@ -628,8 +639,8 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
                 int oldPosition = source.position();
                 writeBuf.put(source);
                 source.position(oldPosition);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         writeBuf.flip();
         int result = writeImpl(writeBuf);
         int val = offset;
@@ -639,17 +650,18 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
             int gap = Math.min(result, source.remaining());
             source.position(source.position() + gap);
             result -= gap;
-        } //End block
+        } 
         addTaint(sources[0].getTaint());
         addTaint(offset);
         addTaint(length);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1892605437 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1892605437;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.043 -0400", hash_original_method = "C5D18F36066EF5A8A32922161E6847D8", hash_generated_method = "C13AD3AB8E53FD46983A08C7EEB54E5C")
     private int writeImpl(ByteBuffer buf) throws IOException {
         {
@@ -658,29 +670,30 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
             {
                 begin();
                 result = IoBridge.sendto(fd, buf, 0, null, 0);
-            } //End block
+            } 
             finally 
             {
                 end(result > 0);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(buf.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_135696062 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_135696062;
-        // ---------- Original Method ----------
-        //synchronized (writeLock) {
-            //int result = 0;
-            //try {
-                //begin();
-                //result = IoBridge.sendto(fd, buf, 0, null, 0);
-            //} finally {
-                //end(result > 0);
-            //}
-            //return result;
-        //}
+        
+        
+            
+            
+                
+                
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.044 -0400", hash_original_method = "CF8B9D693C24D7742692C737C034E989", hash_generated_method = "047305DCE64733F1BEB4BA7BE6DDBB9B")
     @Override
     protected synchronized void implCloseSelectableChannel() throws IOException {
@@ -689,21 +702,22 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
             boolean varA09DB173CEF278ADC32C70770C281924_748602570 = (socket != null && !socket.isClosed());
             {
                 socket.close();
-            } //End block
+            } 
             {
                 IoBridge.closeSocket(fd);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //connected = false;
-        //if (socket != null && !socket.isClosed()) {
-            //socket.close();
-        //} else {
-            //IoBridge.closeSocket(fd);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.044 -0400", hash_original_method = "B277EC5F8A308E553B57A0D050976387", hash_generated_method = "8B7C789DBA97663C2B37893D2B597A95")
     @Override
     protected void implConfigureBlocking(boolean blocking) throws IOException {
@@ -711,31 +725,33 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
             Object var964C97B960BB46676C47DA572AAFDDC9_123248782 = (blockingLock());
             {
                 IoUtils.setBlocking(fd, blocking);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(blocking);
-        // ---------- Original Method ----------
-        //synchronized (blockingLock()) {
-            //IoUtils.setBlocking(fd, blocking);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.045 -0400", hash_original_method = "CB491A74BF9C37F6ADAA84B27A2FC899", hash_generated_method = "812E36289055CBAA6B29670DCB1DFD28")
     private void checkOpen() throws IOException {
         {
             boolean var3A7D61B68AE823F6A30349D498C59A5C_1282662406 = (!isOpen());
             {
                 if (DroidSafeAndroidRuntime.control) throw new ClosedChannelException();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (!isOpen()) {
-            //throw new ClosedChannelException();
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.045 -0400", hash_original_method = "C4EAE028A2901AB3F43566E69E9E24D8", hash_generated_method = "8CE4C2A763E3C19208826512B0D9678E")
     private void checkOpenConnected() throws IOException {
         checkOpen();
@@ -743,37 +759,38 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
             boolean var341AB6969DFD2927CA563855F9EEB77E_1000194903 = (!isConnected());
             {
                 if (DroidSafeAndroidRuntime.control) throw new NotYetConnectedException();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //checkOpen();
-        //if (!isConnected()) {
-            //throw new NotYetConnectedException();
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.045 -0400", hash_original_method = "DE9BF6E7ACC5E7DCC990C5D950818BC0", hash_generated_method = "6F97918BBEC302691B46FE58BE69F4A6")
     private void checkNotNull(ByteBuffer source) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
-        //if (source == null) {
-            //throw new NullPointerException();
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.046 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "98539D5FCF59AB2FA4781E549E66D57D")
     public FileDescriptor getFD() {
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_381586323 = null; //Variable for return #1
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_381586323 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_381586323 = fd;
-        varB4EAC82CA7396A68D541C85D26508E83_381586323.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_381586323.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_381586323;
-        // ---------- Original Method ----------
-        //return fd;
+        
+        
     }
 
     
@@ -788,20 +805,20 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
             super(socketimpl);
             this.channelImpl = channelImpl;
             addTaint(socketimpl.getTaint());
-            // ---------- Original Method ----------
-            //this.channelImpl = channelImpl;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.047 -0400", hash_original_method = "272F2E718E0C10B582849935E6BE168A", hash_generated_method = "F4C8FB7E1F6BD4CBE7AC5C8669DDD228")
         @Override
         public DatagramChannel getChannel() {
-            DatagramChannel varB4EAC82CA7396A68D541C85D26508E83_1035992839 = null; //Variable for return #1
+            DatagramChannel varB4EAC82CA7396A68D541C85D26508E83_1035992839 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1035992839 = channelImpl;
-            varB4EAC82CA7396A68D541C85D26508E83_1035992839.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1035992839.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1035992839;
-            // ---------- Original Method ----------
-            //return channelImpl;
+            
+            
         }
 
         
@@ -810,8 +827,8 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
         public boolean isBound() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2112936932 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2112936932;
-            // ---------- Original Method ----------
-            //return channelImpl.isBound;
+            
+            
         }
 
         
@@ -821,48 +838,48 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
             boolean var62CA8521E6AF586CA79D70D6CF667F20_1790464579 = (channelImpl.isConnected());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_177002542 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_177002542;
-            // ---------- Original Method ----------
-            //return channelImpl.isConnected();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.048 -0400", hash_original_method = "F2E78E937EC010AD3CD73E7409B0139F", hash_generated_method = "4E16A1B089FC585908DF168BE4EF3AEE")
         @Override
         public InetAddress getInetAddress() {
-            InetAddress varB4EAC82CA7396A68D541C85D26508E83_1836533787 = null; //Variable for return #1
-            InetAddress varB4EAC82CA7396A68D541C85D26508E83_304858816 = null; //Variable for return #2
+            InetAddress varB4EAC82CA7396A68D541C85D26508E83_1836533787 = null; 
+            InetAddress varB4EAC82CA7396A68D541C85D26508E83_304858816 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1836533787 = null;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_304858816 = channelImpl.connectAddress.getAddress();
-            InetAddress varA7E53CE21691AB073D9660D615818899_707174437; //Final return value
+            InetAddress varA7E53CE21691AB073D9660D615818899_707174437; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_707174437 = varB4EAC82CA7396A68D541C85D26508E83_1836533787;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_707174437 = varB4EAC82CA7396A68D541C85D26508E83_304858816;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_707174437.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_707174437.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_707174437;
-            // ---------- Original Method ----------
-            //if (channelImpl.connectAddress == null) {
-                //return null;
-            //}
-            //return channelImpl.connectAddress.getAddress();
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.048 -0400", hash_original_method = "2C69EB670D32F39C986C933D03BF3A1E", hash_generated_method = "489D2C59AC444AE479F977C4B1D94644")
         @Override
         public InetAddress getLocalAddress() {
-            InetAddress varB4EAC82CA7396A68D541C85D26508E83_1021442607 = null; //Variable for return #1
+            InetAddress varB4EAC82CA7396A68D541C85D26508E83_1021442607 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1021442607 = channelImpl.getLocalAddress();
-            varB4EAC82CA7396A68D541C85D26508E83_1021442607.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1021442607.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1021442607;
-            // ---------- Original Method ----------
-            //return channelImpl.getLocalAddress();
+            
+            
         }
 
         
@@ -872,11 +889,11 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
             int varC574877425F272779C5F02E9439194EF_210080843 = (channelImpl.connectAddress.getPort());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_929295604 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_929295604;
-            // ---------- Original Method ----------
-            //if (channelImpl.connectAddress == null) {
-                //return -1;
-            //}
-            //return channelImpl.connectAddress.getPort();
+            
+            
+                
+            
+            
         }
 
         
@@ -887,17 +904,17 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
                 boolean var4B0E49754C523761E0E44E87B0B6089A_870843823 = (channelImpl.isConnected());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new AlreadyConnectedException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             super.bind(localAddr);
             channelImpl.isBound = true;
             addTaint(localAddr.getTaint());
-            // ---------- Original Method ----------
-            //if (channelImpl.isConnected()) {
-                //throw new AlreadyConnectedException();
-            //}
-            //super.bind(localAddr);
-            //channelImpl.isBound = true;
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -908,15 +925,15 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
                 boolean varBAE8CEDA21BF2921535BF8B9F4D62736_1932263735 = (!channelImpl.isBlocking());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalBlockingModeException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             super.receive(packet);
             addTaint(packet.getTaint());
-            // ---------- Original Method ----------
-            //if (!channelImpl.isBlocking()) {
-                //throw new IllegalBlockingModeException();
-            //}
-            //super.receive(packet);
+            
+            
+                
+            
+            
         }
 
         
@@ -927,15 +944,15 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
                 boolean varBAE8CEDA21BF2921535BF8B9F4D62736_1522854891 = (!channelImpl.isBlocking());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalBlockingModeException();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             super.send(packet);
             addTaint(packet.getTaint());
-            // ---------- Original Method ----------
-            //if (!channelImpl.isBlocking()) {
-                //throw new IllegalBlockingModeException();
-            //}
-            //super.send(packet);
+            
+            
+                
+            
+            
         }
 
         
@@ -949,23 +966,23 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
                         try 
                         {
                             channelImpl.close();
-                        } //End block
+                        } 
                         catch (IOException e)
                         { }
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 super.close();
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (channelImpl) {
-                //if (channelImpl.isOpen()) {
-                    //try {
-                        //channelImpl.close();
-                    //} catch (IOException e) {
-                    //}
-                //}
-                //super.close();
-            //}
+            } 
+            
+            
+                
+                    
+                        
+                    
+                    
+                
+                
+            
         }
 
         
@@ -975,16 +992,16 @@ class DatagramChannelImpl extends DatagramChannel implements FileDescriptorChann
             try 
             {
                 channelImpl.disconnect();
-            } //End block
+            } 
             catch (IOException e)
             { }
             super.disconnect();
-            // ---------- Original Method ----------
-            //try {
-                //channelImpl.disconnect();
-            //} catch (IOException e) {
-            //}
-            //super.disconnect();
+            
+            
+                
+            
+            
+            
         }
 
         

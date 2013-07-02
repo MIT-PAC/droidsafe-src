@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
@@ -20,16 +20,16 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.742 -0400", hash_original_method = "CCAF801A87F70F53C246D8BAD4668254", hash_generated_method = "91483188A00DC05189FE5D6D1699D52B")
     public  ForegroundColorSpan(int color) {
         mColor = color;
-        // ---------- Original Method ----------
-        //mColor = color;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.742 -0400", hash_original_method = "C1959654A903860C71D5E98AD17C38DB", hash_generated_method = "1D056DE5D0944B8683CDFCC48DB97D3F")
     public  ForegroundColorSpan(Parcel src) {
         mColor = src.readInt();
-        // ---------- Original Method ----------
-        //mColor = src.readInt();
+        
+        
     }
 
     
@@ -37,8 +37,8 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117520752 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117520752;
-        // ---------- Original Method ----------
-        //return TextUtils.FOREGROUND_COLOR_SPAN;
+        
+        
     }
 
     
@@ -46,8 +46,8 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1007819904 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1007819904;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -56,8 +56,8 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
         dest.writeInt(mColor);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mColor);
+        
+        
     }
 
     
@@ -65,8 +65,8 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     public int getForegroundColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1884282762 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1884282762;
-        // ---------- Original Method ----------
-        //return mColor;
+        
+        
     }
 
     
@@ -75,8 +75,8 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     public void updateDrawState(TextPaint ds) {
         ds.setColor(mColor);
         addTaint(ds.getTaint());
-        // ---------- Original Method ----------
-        //ds.setColor(mColor);
+        
+        
     }
 
     

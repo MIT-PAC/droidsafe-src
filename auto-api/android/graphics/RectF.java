@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.PrintWriter;
 import android.os.Parcel;
@@ -29,7 +29,7 @@ public class RectF implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.351 -0400", hash_original_method = "D61F570F41294C50B794115B72F287CF", hash_generated_method = "FB1DA24AD52B1F8131024D12E52691C3")
     public  RectF() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -39,11 +39,11 @@ public class RectF implements Parcelable {
         this.top = top;
         this.right = right;
         this.bottom = bottom;
-        // ---------- Original Method ----------
-        //this.left = left;
-        //this.top = top;
-        //this.right = right;
-        //this.bottom = bottom;
+        
+        
+        
+        
+        
     }
 
     
@@ -53,11 +53,11 @@ public class RectF implements Parcelable {
         top = r.top;
         right = r.right;
         bottom = r.bottom;
-        // ---------- Original Method ----------
-        //left = r.left;
-        //top = r.top;
-        //right = r.right;
-        //bottom = r.bottom;
+        
+        
+        
+        
+        
     }
 
     
@@ -67,41 +67,44 @@ public class RectF implements Parcelable {
         top = r.top;
         right = r.right;
         bottom = r.bottom;
-        // ---------- Original Method ----------
-        //left = r.left;
-        //top = r.top;
-        //right = r.right;
-        //bottom = r.bottom;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.353 -0400", hash_original_method = "FA213D713D9B00A169FC8BD98F160501", hash_generated_method = "C78BA3A0027510E9E61600CC8DB09A85")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1882974513 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1882974513 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1882974513 = "RectF(" + left + ", " + top + ", "
                       + right + ", " + bottom + ")";
-        varB4EAC82CA7396A68D541C85D26508E83_1882974513.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1882974513.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1882974513;
-        // ---------- Original Method ----------
-        //return "RectF(" + left + ", " + top + ", "
-                      //+ right + ", " + bottom + ")";
+        
+        
+                      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.355 -0400", hash_original_method = "1840D8CED4FEDA16C265C984A5256101", hash_generated_method = "3DE19E4F9DB437572E1ED39C350815B4")
     public String toShortString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1084552310 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1084552310 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1084552310 = toShortString(new StringBuilder(32));
-        varB4EAC82CA7396A68D541C85D26508E83_1084552310.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1084552310.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1084552310;
-        // ---------- Original Method ----------
-        //return toShortString(new StringBuilder(32));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.356 -0400", hash_original_method = "2BF61B85E091A9DA2C18EB7FC26222B9", hash_generated_method = "458F9F47B744F557FEBCCF96576B5123")
     public String toShortString(StringBuilder sb) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1681888014 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1681888014 = null; 
         sb.setLength(0);
         sb.append('[');
         sb.append(left);
@@ -114,23 +117,24 @@ public class RectF implements Parcelable {
         sb.append(']');
         varB4EAC82CA7396A68D541C85D26508E83_1681888014 = sb.toString();
         addTaint(sb.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1681888014.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1681888014.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1681888014;
-        // ---------- Original Method ----------
-        //sb.setLength(0);
-        //sb.append('[');
-        //sb.append(left);
-        //sb.append(',');
-        //sb.append(top);
-        //sb.append("][");
-        //sb.append(right);
-        //sb.append(',');
-        //sb.append(bottom);
-        //sb.append(']');
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.356 -0400", hash_original_method = "78960F3D6EA700D282D0F0C0E94AA84C", hash_generated_method = "7CC9973023E2CD924438EDC646D73B58")
     public void printShortString(PrintWriter pw) {
         pw.print('[');
@@ -143,16 +147,16 @@ public class RectF implements Parcelable {
         pw.print(bottom);
         pw.print(']');
         addTaint(pw.getTaint());
-        // ---------- Original Method ----------
-        //pw.print('[');
-        //pw.print(left);
-        //pw.print(',');
-        //pw.print(top);
-        //pw.print("][");
-        //pw.print(right);
-        //pw.print(',');
-        //pw.print(bottom);
-        //pw.print(']');
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -160,8 +164,8 @@ public class RectF implements Parcelable {
     public final boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1834185688 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1834185688;
-        // ---------- Original Method ----------
-        //return left >= right || top >= bottom;
+        
+        
     }
 
     
@@ -169,8 +173,8 @@ public class RectF implements Parcelable {
     public final float width() {
         float var546ADE640B6EDFBC8A086EF31347E768_540462065 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_540462065;
-        // ---------- Original Method ----------
-        //return right - left;
+        
+        
     }
 
     
@@ -178,8 +182,8 @@ public class RectF implements Parcelable {
     public final float height() {
         float var546ADE640B6EDFBC8A086EF31347E768_2018979629 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2018979629;
-        // ---------- Original Method ----------
-        //return bottom - top;
+        
+        
     }
 
     
@@ -187,8 +191,8 @@ public class RectF implements Parcelable {
     public final float centerX() {
         float var546ADE640B6EDFBC8A086EF31347E768_1711445976 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1711445976;
-        // ---------- Original Method ----------
-        //return (left + right) * 0.5f;
+        
+        
     }
 
     
@@ -196,16 +200,16 @@ public class RectF implements Parcelable {
     public final float centerY() {
         float var546ADE640B6EDFBC8A086EF31347E768_826716382 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_826716382;
-        // ---------- Original Method ----------
-        //return (top + bottom) * 0.5f;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.359 -0400", hash_original_method = "86DA251BA391C7524C2010551ABD907E", hash_generated_method = "A534843FC0914524CAF333DFA3D47813")
     public void setEmpty() {
         left = right = top = bottom = 0;
-        // ---------- Original Method ----------
-        //left = right = top = bottom = 0;
+        
+        
     }
 
     
@@ -215,11 +219,11 @@ public class RectF implements Parcelable {
         this.top    = top;
         this.right  = right;
         this.bottom = bottom;
-        // ---------- Original Method ----------
-        //this.left   = left;
-        //this.top    = top;
-        //this.right  = right;
-        //this.bottom = bottom;
+        
+        
+        
+        
+        
     }
 
     
@@ -229,11 +233,11 @@ public class RectF implements Parcelable {
         this.top    = src.top;
         this.right  = src.right;
         this.bottom = src.bottom;
-        // ---------- Original Method ----------
-        //this.left   = src.left;
-        //this.top    = src.top;
-        //this.right  = src.right;
-        //this.bottom = src.bottom;
+        
+        
+        
+        
+        
     }
 
     
@@ -243,11 +247,11 @@ public class RectF implements Parcelable {
         this.top    = src.top;
         this.right  = src.right;
         this.bottom = src.bottom;
-        // ---------- Original Method ----------
-        //this.left   = src.left;
-        //this.top    = src.top;
-        //this.right  = src.right;
-        //this.bottom = src.bottom;
+        
+        
+        
+        
+        
     }
 
     
@@ -257,11 +261,11 @@ public class RectF implements Parcelable {
         top     += dy;
         right   += dx;
         bottom  += dy;
-        // ---------- Original Method ----------
-        //left    += dx;
-        //top     += dy;
-        //right   += dx;
-        //bottom  += dy;
+        
+        
+        
+        
+        
     }
 
     
@@ -271,11 +275,11 @@ public class RectF implements Parcelable {
         bottom += newTop - top;
         left = newLeft;
         top = newTop;
-        // ---------- Original Method ----------
-        //right += newLeft - left;
-        //bottom += newTop - top;
-        //left = newLeft;
-        //top = newTop;
+        
+        
+        
+        
+        
     }
 
     
@@ -285,11 +289,11 @@ public class RectF implements Parcelable {
         top     += dy;
         right   -= dx;
         bottom  -= dy;
-        // ---------- Original Method ----------
-        //left    += dx;
-        //top     += dy;
-        //right   -= dx;
-        //bottom  -= dy;
+        
+        
+        
+        
+        
     }
 
     
@@ -299,9 +303,9 @@ public class RectF implements Parcelable {
         addTaint(y);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1316185637 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1316185637;
-        // ---------- Original Method ----------
-        //return left < right && top < bottom  
-                //&& x >= left && x < right && y >= top && y < bottom;
+        
+        
+                
     }
 
     
@@ -313,10 +317,10 @@ public class RectF implements Parcelable {
         addTaint(bottom);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_185020360 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_185020360;
-        // ---------- Original Method ----------
-        //return this.left < this.right && this.top < this.bottom
-                //&& this.left <= left && this.top <= top
-                //&& this.right >= right && this.bottom >= bottom;
+        
+        
+                
+                
     }
 
     
@@ -325,10 +329,10 @@ public class RectF implements Parcelable {
         addTaint(r.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1242894379 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1242894379;
-        // ---------- Original Method ----------
-        //return this.left < this.right && this.top < this.bottom
-                //&& left <= r.left && top <= r.top
-                //&& right >= r.right && bottom >= r.bottom;
+        
+        
+                
+                
     }
 
     
@@ -337,51 +341,53 @@ public class RectF implements Parcelable {
         {
             {
                 this.left = left;
-            } //End block
+            } 
             {
                 this.top = top;
-            } //End block
+            } 
             {
                 this.right = right;
-            } //End block
+            } 
             {
                 this.bottom = bottom;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_585145265 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_585145265;
-        // ---------- Original Method ----------
-        //if (this.left < right && left < this.right
-                //&& this.top < bottom && top < this.bottom) {
-            //if (this.left < left) {
-                //this.left = left;
-            //}
-            //if (this.top < top) {
-                //this.top = top;
-            //}
-            //if (this.right > right) {
-                //this.right = right;
-            //}
-            //if (this.bottom > bottom) {
-                //this.bottom = bottom;
-            //}
-            //return true;
-        //}
-        //return false;
+        
+        
+                
+            
+                
+            
+            
+                
+            
+            
+                
+            
+            
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.363 -0400", hash_original_method = "F1511D7F30AFB03A76430BC5FB3647DC", hash_generated_method = "DA4B06C1E49E2170C728010107D54618")
     public boolean intersect(RectF r) {
         boolean var774B7820222CF99C9D397FA2889989AA_1734117939 = (intersect(r.left, r.top, r.right, r.bottom));
         addTaint(r.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_244776544 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_244776544;
-        // ---------- Original Method ----------
-        //return intersect(r.left, r.top, r.right, r.bottom);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.364 -0400", hash_original_method = "798EF6BEBDE27EE5C0F4552CB6C0BADF", hash_generated_method = "FC2F97402DFDFED7E112B36D3590660E")
     public boolean setIntersect(RectF a, RectF b) {
         {
@@ -389,19 +395,19 @@ public class RectF implements Parcelable {
             top = Math.max(a.top, b.top);
             right = Math.min(a.right, b.right);
             bottom = Math.min(a.bottom, b.bottom);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_88052381 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_88052381;
-        // ---------- Original Method ----------
-        //if (a.left < b.right && b.left < a.right
-                //&& a.top < b.bottom && b.top < a.bottom) {
-            //left = Math.max(a.left, b.left);
-            //top = Math.max(a.top, b.top);
-            //right = Math.min(a.right, b.right);
-            //bottom = Math.min(a.bottom, b.bottom);
-            //return true;
-        //}
-        //return false;
+        
+        
+                
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -414,9 +420,9 @@ public class RectF implements Parcelable {
         addTaint(bottom);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_970587370 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_970587370;
-        // ---------- Original Method ----------
-        //return this.left < right && left < this.right
-                //&& this.top < bottom && top < this.bottom;
+        
+        
+                
     }
 
     
@@ -426,25 +432,27 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.365 -0400", hash_original_method = "1D9E886326ACAAED42A7320F81B83BDE", hash_generated_method = "FE539F7150ED814B7D80DC25E8406E21")
     public void round(Rect dst) {
         dst.set(FastMath.round(left), FastMath.round(top),
                 FastMath.round(right), FastMath.round(bottom));
         addTaint(dst.getTaint());
-        // ---------- Original Method ----------
-        //dst.set(FastMath.round(left), FastMath.round(top),
-                //FastMath.round(right), FastMath.round(bottom));
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.367 -0400", hash_original_method = "5165AD4866DE272C811B07E7C1D571CC", hash_generated_method = "0941D6AE737A7FAC595D38B19FD01A05")
     public void roundOut(Rect dst) {
         dst.set((int) FloatMath.floor(left), (int) FloatMath.floor(top),
                 (int) FloatMath.ceil(right), (int) FloatMath.ceil(bottom));
         addTaint(dst.getTaint());
-        // ---------- Original Method ----------
-        //dst.set((int) FloatMath.floor(left), (int) FloatMath.floor(top),
-                //(int) FloatMath.ceil(right), (int) FloatMath.ceil(bottom));
+        
+        
+                
     }
 
     
@@ -456,41 +464,42 @@ public class RectF implements Parcelable {
                 this.top = top;
                 this.right = right;
                 this.bottom = bottom;
-            } //End block
+            } 
             {
                 this.left = left;
                 this.top = top;
                 this.right = right;
                 this.bottom = bottom;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if ((left < right) && (top < bottom)) {
-            //if ((this.left < this.right) && (this.top < this.bottom)) {
-                //if (this.left > left)
-                    //this.left = left;
-                //if (this.top > top)
-                    //this.top = top;
-                //if (this.right < right)
-                    //this.right = right;
-                //if (this.bottom < bottom)
-                    //this.bottom = bottom;
-            //} else {
-                //this.left = left;
-                //this.top = top;
-                //this.right = right;
-                //this.bottom = bottom;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+            
+                
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.368 -0400", hash_original_method = "7333A4F184A018E8DCD665D788936108", hash_generated_method = "B92E57F7FC5743A0AFEF17E24058E30F")
     public void union(RectF r) {
         union(r.left, r.top, r.right, r.bottom);
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //union(r.left, r.top, r.right, r.bottom);
+        
+        
     }
 
     
@@ -498,27 +507,27 @@ public class RectF implements Parcelable {
     public void union(float x, float y) {
         {
             left = x;
-        } //End block
+        } 
         {
             right = x;
-        } //End block
+        } 
         {
             top = y;
-        } //End block
+        } 
         {
             bottom = y;
-        } //End block
-        // ---------- Original Method ----------
-        //if (x < left) {
-            //left = x;
-        //} else if (x > right) {
-            //right = x;
-        //}
-        //if (y < top) {
-            //top = y;
-        //} else if (y > bottom) {
-            //bottom = y;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -528,23 +537,23 @@ public class RectF implements Parcelable {
             float temp = left;
             left = right;
             right = temp;
-        } //End block
+        } 
         {
             float temp = top;
             top = bottom;
             bottom = temp;
-        } //End block
-        // ---------- Original Method ----------
-        //if (left > right) {
-            //float temp = left;
-            //left = right;
-            //right = temp;
-        //}
-        //if (top > bottom) {
-            //float temp = top;
-            //top = bottom;
-            //bottom = temp;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -552,11 +561,12 @@ public class RectF implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1524913587 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1524913587;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.370 -0400", hash_original_method = "5C789B83F9658DFF3AD82091DAFFDD49", hash_generated_method = "394C38F3B668560EE9872DC1F5EF552B")
     public void writeToParcel(Parcel out, int flags) {
         out.writeFloat(left);
@@ -565,25 +575,26 @@ public class RectF implements Parcelable {
         out.writeFloat(bottom);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeFloat(left);
-        //out.writeFloat(top);
-        //out.writeFloat(right);
-        //out.writeFloat(bottom);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.370 -0400", hash_original_method = "BACCEAD3B6EC38250A4D00D9AA0D9F78", hash_generated_method = "5840D49EC2222CD5F0BDEB5ED8E3F923")
     public void readFromParcel(Parcel in) {
         left = in.readFloat();
         top = in.readFloat();
         right = in.readFloat();
         bottom = in.readFloat();
-        // ---------- Original Method ----------
-        //left = in.readFloat();
-        //top = in.readFloat();
-        //right = in.readFloat();
-        //bottom = in.readFloat();
+        
+        
+        
+        
+        
     }
 
     
@@ -602,14 +613,14 @@ public class RectF implements Parcelable {
             return new RectF[size];
         }
     };
-    // orphaned legacy method
+    
     public RectF createFromParcel(Parcel in) {
             RectF r = new RectF();
             r.readFromParcel(in);
             return r;
         }
     
-    // orphaned legacy method
+    
     public RectF[] newArray(int size) {
             return new RectF[size];
         }

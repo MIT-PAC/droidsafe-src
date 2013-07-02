@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Arrays;
 import libcore.util.SneakyThrow;
@@ -18,11 +18,12 @@ public class FilterOutputStream extends OutputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.006 -0400", hash_original_method = "970F937F317FD0AE06FB76477C0F6F62", hash_generated_method = "F989161D9880425FAE37888895ADB2DD")
     public  FilterOutputStream(OutputStream out) {
         this.out = out;
-        // ---------- Original Method ----------
-        //this.out = out;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.006 -0400", hash_original_method = "C1E29F96DEA4D8E16CD646B2E66B7808", hash_generated_method = "4AD07C11D3DC436E971D40C751BBB72C")
     @Override
     public void close() throws IOException {
@@ -30,53 +31,55 @@ public class FilterOutputStream extends OutputStream {
         try 
         {
             flush();
-        } //End block
+        } 
         catch (Throwable e)
         {
             thrown = e;
-        } //End block
+        } 
         try 
         {
             out.close();
-        } //End block
+        } 
         catch (Throwable e)
         {
             {
                 thrown = e;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             SneakyThrow.sneakyThrow(thrown);
-        } //End block
-        // ---------- Original Method ----------
-        //Throwable thrown = null;
-        //try {
-            //flush();
-        //} catch (Throwable e) {
-            //thrown = e;
-        //}
-        //try {
-            //out.close();
-        //} catch (Throwable e) {
-            //if (thrown == null) {
-                //thrown = e;
-            //}
-        //}
-        //if (thrown != null) {
-            //SneakyThrow.sneakyThrow(thrown);
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+                
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.006 -0400", hash_original_method = "C99FBA65B0D308569620507D6E099042", hash_generated_method = "A2EF74EEF7203CB573D4B22064D57305")
     @Override
     public void flush() throws IOException {
         out.flush();
-        // ---------- Original Method ----------
-        //out.flush();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.006 -0400", hash_original_method = "6F432F0CBACFD3E73C2E675DFA6BA23C", hash_generated_method = "ABB89CCD843EB3D96EA53C4831B6A1C0")
     @Override
     public void write(byte[] buffer, int offset, int length) throws IOException {
@@ -85,26 +88,27 @@ public class FilterOutputStream extends OutputStream {
             int i = 0;
             {
                 write(buffer[offset + i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(buffer[0]);
         addTaint(offset);
         addTaint(length);
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(buffer.length, offset, length);
-        //for (int i = 0; i < length; i++) {
-            //write(buffer[offset + i]);
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:48.007 -0400", hash_original_method = "10EC24027333F66A6325D4B91084AA70", hash_generated_method = "8D7C17AF8B5A147E6248279AD64AC877")
     @Override
     public void write(int oneByte) throws IOException {
         out.write(oneByte);
         addTaint(oneByte);
-        // ---------- Original Method ----------
-        //out.write(oneByte);
+        
+        
     }
 
     

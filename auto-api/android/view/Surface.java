@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.CompatibilityInfo.Translator;
 import android.graphics.*;
@@ -46,16 +46,16 @@ public class Surface implements Parcelable {
     public  Surface(SurfaceTexture surfaceTexture) {
         {
             mCreationStack = new Exception();
-        } //End block
+        } 
         mCanvas = new CompatibleCanvas();
         initFromSurfaceTexture(surfaceTexture);
         addTaint(surfaceTexture.getTaint());
-        // ---------- Original Method ----------
-        //if (DEBUG_RELEASE) {
-            //mCreationStack = new Exception();
-        //}
-        //mCanvas = new CompatibleCanvas();
-        //initFromSurfaceTexture(surfaceTexture);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -64,7 +64,7 @@ public class Surface implements Parcelable {
             int pid, int display, int w, int h, int format, int flags) throws OutOfResourcesException {
         {
             mCreationStack = new Exception();
-        } //End block
+        } 
         mCanvas = new CompatibleCanvas();
         init(s,pid,null,display,w,h,format,flags);
         addTaint(s.getTaint());
@@ -74,12 +74,12 @@ public class Surface implements Parcelable {
         addTaint(h);
         addTaint(format);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (DEBUG_RELEASE) {
-            //mCreationStack = new Exception();
-        //}
-        //mCanvas = new CompatibleCanvas();
-        //init(s,pid,null,display,w,h,format,flags);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -88,7 +88,7 @@ public class Surface implements Parcelable {
             int pid, String name, int display, int w, int h, int format, int flags) throws OutOfResourcesException {
         {
             mCreationStack = new Exception();
-        } //End block
+        } 
         mCanvas = new CompatibleCanvas();
         init(s,pid,name,display,w,h,format,flags);
         mName = name;
@@ -99,13 +99,13 @@ public class Surface implements Parcelable {
         addTaint(h);
         addTaint(format);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (DEBUG_RELEASE) {
-            //mCreationStack = new Exception();
-        //}
-        //mCanvas = new CompatibleCanvas();
-        //init(s,pid,name,display,w,h,format,flags);
-        //mName = name;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -113,13 +113,13 @@ public class Surface implements Parcelable {
     public  Surface() {
         {
             mCreationStack = new Exception();
-        } //End block
+        } 
         mCanvas = new CompatibleCanvas();
-        // ---------- Original Method ----------
-        //if (DEBUG_RELEASE) {
-            //mCreationStack = new Exception();
-        //}
-        //mCanvas = new CompatibleCanvas();
+        
+        
+            
+        
+        
     }
 
     
@@ -127,8 +127,8 @@ public class Surface implements Parcelable {
     private  Surface(Parcel source) throws OutOfResourcesException {
         init(source);
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
-        //init(source);
+        
+        
     }
 
     
@@ -144,15 +144,16 @@ public class Surface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.822 -0400", hash_original_method = "F02785EB89A3C576418753FA8D7724E3", hash_generated_method = "B14C770528003FA9422E76CF37C61F9C")
     public Canvas lockCanvas(Rect dirty) throws OutOfResourcesException, IllegalArgumentException {
-        Canvas varB4EAC82CA7396A68D541C85D26508E83_1564692391 = null; //Variable for return #1
+        Canvas varB4EAC82CA7396A68D541C85D26508E83_1564692391 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1564692391 = lockCanvasNative(dirty);
         addTaint(dirty.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1564692391.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1564692391.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1564692391;
-        // ---------- Original Method ----------
-        //return lockCanvasNative(dirty);
+        
+        
     }
 
     
@@ -166,15 +167,16 @@ public class Surface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.823 -0400", hash_original_method = "FD610F755B3A8168C37DFBCC26EDD5A5", hash_generated_method = "9EC89A0FB40B17BF47688B7842C7B235")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1151553814 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1151553814 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1151553814 = "Surface(name=" + mName + ", identity=" + getIdentity() + ")";
-        varB4EAC82CA7396A68D541C85D26508E83_1151553814.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1151553814.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1151553814;
-        // ---------- Original Method ----------
-        //return "Surface(name=" + mName + ", identity=" + getIdentity() + ")";
+        
+        
     }
 
     
@@ -182,8 +184,8 @@ public class Surface implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_657419852 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_657419852;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -215,8 +217,8 @@ public class Surface implements Parcelable {
     public int getGenerationId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_922565135 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_922565135;
-        // ---------- Original Method ----------
-        //return mSurfaceGenerationId;
+        
+        
     }
 
     
@@ -226,14 +228,14 @@ public class Surface implements Parcelable {
             float appScale = translator.applicationScale;
             mCompatibleMatrix = new Matrix();
             mCompatibleMatrix.setScale(appScale, appScale);
-        } //End block
+        } 
         addTaint(translator.getTaint());
-        // ---------- Original Method ----------
-        //if (translator != null) {
-            //float appScale = translator.applicationScale;
-            //mCompatibleMatrix = new Matrix();
-            //mCompatibleMatrix.setScale(appScale, appScale);
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -260,6 +262,7 @@ public class Surface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setOrientation(int display, int orientation) {
         setOrientation(display, orientation, 0);
     }
@@ -267,13 +270,13 @@ public class Surface implements Parcelable {
     
     public static Bitmap screenshot(int width, int height) {
     	return BitmapFactory.decodeByteArray(new byte[0], 0, width * height);
-    	// DSFIXME: source
+    	
     }
 
     
     public static Bitmap screenshot(int width, int height, int minLayer, int maxLayer) {
     	return BitmapFactory.decodeByteArray(new byte[0], 0, width * height);
-    	// DSFIXME: source
+    	
     }
 
     
@@ -290,13 +293,14 @@ public class Surface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.827 -0400", hash_original_method = "7F99A19F828A289B6FD343EC8CB65512", hash_generated_method = "0D41602CA9F11D64EA909C3FC190DFDC")
     public void setPosition(int x, int y) {
         setPosition((float)x, (float)y);
         addTaint(x);
         addTaint(y);
-        // ---------- Original Method ----------
-        //setPosition((float)x, (float)y);
+        
+        
     }
 
     
@@ -355,32 +359,33 @@ public class Surface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.831 -0400", hash_original_method = "1BAE2B05EDDA8E2427743FE96FA46E82", hash_generated_method = "7C6EF9F1826766D199070573FA4D17F2")
     @Override
     protected void finalize() throws Throwable {
         try 
         {
             super.finalize();
-        } //End block
+        } 
         finally 
         {
             release();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //super.finalize();
-        //} finally {
-            //if (mNativeSurface != 0 || mSurfaceControl != 0) {
-                //if (DEBUG_RELEASE) {
-                    //Log.w(LOG_TAG, "Surface.finalize() has work. You should have called release() (" 
-                            //+ mNativeSurface + ", " + mSurfaceControl + ")", mCreationStack);
-                //} else {
-                    //Log.w(LOG_TAG, "Surface.finalize() has work. You should have called release() (" 
-                            //+ mNativeSurface + ", " + mSurfaceControl + ")");
-                //}
-            //}
-            //release();            
-        //}
+        } 
+        
+        
+            
+        
+            
+                
+                    
+                            
+                
+                    
+                            
+                
+            
+            
+        
     }
 
     
@@ -411,7 +416,7 @@ public class Surface implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.833 -0400", hash_original_method = "61F4EF1E830289140B20E24C64AAB8C1", hash_generated_method = "A594474F57F2910DF90E8F2B34F97C87")
         public  OutOfResourcesException() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -419,7 +424,7 @@ public class Surface implements Parcelable {
         public  OutOfResourcesException(String name) {
             super(name);
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -435,7 +440,7 @@ public class Surface implements Parcelable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.833 -0400", hash_original_method = "9F84EE428B625E49141923C25C0021D6", hash_generated_method = "9F84EE428B625E49141923C25C0021D6")
         public CompatibleCanvas ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -445,15 +450,15 @@ public class Surface implements Parcelable {
             int w = super.getWidth();
             {
                 w = (int)(w * mCompatibilityTranslator.applicationInvertedScale + .5f);
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_864995614 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_864995614;
-            // ---------- Original Method ----------
-            //int w = super.getWidth();
-            //if (mCompatibilityTranslator != null) {
-                //w = (int)(w * mCompatibilityTranslator.applicationInvertedScale + .5f);
-            //}
-            //return w;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -463,15 +468,15 @@ public class Surface implements Parcelable {
             int h = super.getHeight();
             {
                 h = (int)(h * mCompatibilityTranslator.applicationInvertedScale + .5f);
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1100296223 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1100296223;
-            // ---------- Original Method ----------
-            //int h = super.getHeight();
-            //if (mCompatibilityTranslator != null) {
-                //h = (int)(h * mCompatibilityTranslator.applicationInvertedScale + .5f);
-            //}
-            //return h;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -482,22 +487,22 @@ public class Surface implements Parcelable {
                 boolean varC243940C8E980702D435CDAA12C8D323_1360791363 = (mCompatibleMatrix == null || mOrigMatrix == null || mOrigMatrix.equals(matrix));
                 {
                     super.setMatrix(matrix);
-                } //End block
+                } 
                 {
                     Matrix m = new Matrix(mCompatibleMatrix);
                     m.preConcat(matrix);
                     super.setMatrix(m);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(matrix.getTaint());
-            // ---------- Original Method ----------
-            //if (mCompatibleMatrix == null || mOrigMatrix == null || mOrigMatrix.equals(matrix)) {
-                //super.setMatrix(matrix);
-            //} else {
-                //Matrix m = new Matrix(mCompatibleMatrix);
-                //m.preConcat(matrix);
-                //super.setMatrix(m);
-            //}
+            
+            
+                
+            
+                
+                
+                
+            
         }
 
         
@@ -507,15 +512,15 @@ public class Surface implements Parcelable {
             super.getMatrix(m);
             {
                 mOrigMatrix = new Matrix();
-            } //End block
+            } 
             mOrigMatrix.set(m);
             addTaint(m.getTaint());
-            // ---------- Original Method ----------
-            //super.getMatrix(m);
-            //if (mOrigMatrix == null) {
-                //mOrigMatrix = new Matrix(); 
-            //}
-            //mOrigMatrix.set(m);
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -601,7 +606,7 @@ public class Surface implements Parcelable {
             return new Surface[size];
         }
     };
-    // orphaned legacy method
+    
     public Surface createFromParcel(Parcel source) {
             try {
                 return new Surface(source);
@@ -611,7 +616,7 @@ public class Surface implements Parcelable {
             return null;
         }
     
-    // orphaned legacy method
+    
     public Surface[] newArray(int size) {
             return new Surface[size];
         }

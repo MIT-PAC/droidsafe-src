@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.hardware.Sensor;
@@ -56,11 +56,11 @@ final class DeviceOrientationService implements SensorEventListener {
     public  DeviceOrientationService(DeviceMotionAndOrientationManager manager, Context context) {
         mManager = manager;
         mContext = context;
-        // ---------- Original Method ----------
-        //mManager = manager;
-        //assert(mManager != null);
-        //mContext = context;
-        //assert(mContext != null);
+        
+        
+        
+        
+        
     }
 
     
@@ -68,9 +68,9 @@ final class DeviceOrientationService implements SensorEventListener {
     public void start() {
         mIsRunning = true;
         registerForSensors();
-        // ---------- Original Method ----------
-        //mIsRunning = true;
-        //registerForSensors();
+        
+        
+        
     }
 
     
@@ -78,9 +78,9 @@ final class DeviceOrientationService implements SensorEventListener {
     public void stop() {
         mIsRunning = false;
         unregisterFromSensors();
-        // ---------- Original Method ----------
-        //mIsRunning = false;
-        //unregisterFromSensors();
+        
+        
+        
     }
 
     
@@ -88,11 +88,11 @@ final class DeviceOrientationService implements SensorEventListener {
     public void suspend() {
         {
             unregisterFromSensors();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIsRunning) {
-            //unregisterFromSensors();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -100,14 +100,15 @@ final class DeviceOrientationService implements SensorEventListener {
     public void resume() {
         {
             registerForSensors();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIsRunning) {
-            //registerForSensors();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.514 -0400", hash_original_method = "C4E19FEB85A20B838CCD6120912B24F7", hash_generated_method = "D2A099F451A5BB80045468345430F0FC")
     private void sendErrorEvent() {
         mHaveSentErrorEvent = true;
@@ -117,28 +118,28 @@ final class DeviceOrientationService implements SensorEventListener {
             public void run() {
                 {
                     mManager.onOrientationChange(null, null, null);
-                } //End block
-                // ---------- Original Method ----------
-                //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-                //if (mIsRunning) {
-                    //mManager.onOrientationChange(null, null, null);
-                //}
+                } 
+                
+                
+                
+                    
+                
             }
 });
-        // ---------- Original Method ----------
-        //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-        //if (mHaveSentErrorEvent)
-            //return;
-        //mHaveSentErrorEvent = true;
-        //mHandler.post(new Runnable() {
-            //@Override
-            //public void run() {
-                //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-                //if (mIsRunning) {
-                    //mManager.onOrientationChange(null, null, null);
-                //}
-            //}
-        //});
+        
+        
+        
+            
+        
+        
+            
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
@@ -146,134 +147,138 @@ final class DeviceOrientationService implements SensorEventListener {
     private void registerForSensors() {
         {
             mHandler = new Handler();
-        } //End block
+        } 
         {
             boolean varD10B56D8CDB3C9ACD05B4907C7995E4D_1801295677 = (!registerForAccelerometerSensor() || !registerForMagneticFieldSensor());
             {
                 unregisterFromSensors();
                 sendErrorEvent();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mHandler == null) {
-            //mHandler = new Handler();
-        //}
-        //if (!registerForAccelerometerSensor() || !registerForMagneticFieldSensor()) {
-            //unregisterFromSensors();
-            //sendErrorEvent();
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.515 -0400", hash_original_method = "A3B30EF17FDC8C38C5B1B85F341CAEE6", hash_generated_method = "D51D2EC6A881D3369812C2B31C367E36")
     private void getOrientationUsingGetRotationMatrix() {
         float[] deviceRotationMatrix = new float[9];
         {
             boolean var04E5920A53519DAB5BCCE922FB99C72B_1070761792 = (!SensorManager.getRotationMatrix(
                 deviceRotationMatrix, null, mGravityVector, mMagneticFieldVector));
-        } //End collapsed parenthetic
+        } 
         float[] rotationAngles = new float[3];
         SensorManager.getOrientation(deviceRotationMatrix, rotationAngles);
         double alpha = Math.toDegrees(-rotationAngles[0]) - 90.0;
         {
             alpha += 360.0;
-        } //End block
+        } 
         double beta = Math.toDegrees(-rotationAngles[1]);
         {
             beta += 360.0;
-        } //End block
+        } 
         double gamma = Math.toDegrees(rotationAngles[2]);
         {
             gamma += 360.0;
-        } //End block
+        } 
         maybeSendChange(alpha, beta, gamma);
-        // ---------- Original Method ----------
-        //if (mGravityVector == null || mMagneticFieldVector == null) {
-            //return;
-        //}
-        //float[] deviceRotationMatrix = new float[9];
-        //if (!SensorManager.getRotationMatrix(
-                //deviceRotationMatrix, null, mGravityVector, mMagneticFieldVector)) {
-            //return;
-        //}
-        //float[] rotationAngles = new float[3];
-        //SensorManager.getOrientation(deviceRotationMatrix, rotationAngles);
-        //double alpha = Math.toDegrees(-rotationAngles[0]) - 90.0;
-        //while (alpha < 0.0) { alpha += 360.0; }
-        //double beta = Math.toDegrees(-rotationAngles[1]);
-        //while (beta < -180.0) { beta += 360.0; }
-        //double gamma = Math.toDegrees(rotationAngles[2]);
-        //while (gamma < -90.0) { gamma += 360.0; }
-        //maybeSendChange(alpha, beta, gamma);
+        
+        
+            
+        
+        
+        
+                
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.516 -0400", hash_original_method = "D09B23AC902B5D9C0E49BB52A156F918", hash_generated_method = "7D92AE3B7521DD8FA9B9D55E16CEC48A")
     private SensorManager getSensorManager() {
-        SensorManager varB4EAC82CA7396A68D541C85D26508E83_1766329508 = null; //Variable for return #1
+        SensorManager varB4EAC82CA7396A68D541C85D26508E83_1766329508 = null; 
         {
             mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1766329508 = mSensorManager;
-        varB4EAC82CA7396A68D541C85D26508E83_1766329508.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1766329508.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1766329508;
-        // ---------- Original Method ----------
-        //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-        //if (mSensorManager == null) {
-            //mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
-        //}
-        //return mSensorManager;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.516 -0400", hash_original_method = "B3284C523F8E8DEDA1572FA7CE19585B", hash_generated_method = "4B1CEC4FD53FCC8D14F5E4E0DE8B7008")
     private boolean registerForAccelerometerSensor() {
         List<Sensor> sensors = getSensorManager().getSensorList(Sensor.TYPE_ACCELEROMETER);
         {
             boolean var60EE0D8C32CDAFA59C16DF69FA87513D_1741604164 = (sensors.isEmpty());
-        } //End collapsed parenthetic
+        } 
         boolean var6CCE466F5EF5C5884CB21519A351854C_1951462903 = (getSensorManager().registerListener(
                 this, sensors.get(0), SensorManager.SENSOR_DELAY_FASTEST, mHandler));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1548252258 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1548252258;
-        // ---------- Original Method ----------
-        //List<Sensor> sensors = getSensorManager().getSensorList(Sensor.TYPE_ACCELEROMETER);
-        //if (sensors.isEmpty()) {
-            //return false;
-        //}
-        //return getSensorManager().registerListener(
-                //this, sensors.get(0), SensorManager.SENSOR_DELAY_FASTEST, mHandler);
+        
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.517 -0400", hash_original_method = "DFE78C89ABF5437F78B53A9E5486BEA8", hash_generated_method = "B9C2D02C19E36E810CF975D515B35CC7")
     private boolean registerForMagneticFieldSensor() {
         List<Sensor> sensors = getSensorManager().getSensorList(Sensor.TYPE_MAGNETIC_FIELD);
         {
             boolean var60EE0D8C32CDAFA59C16DF69FA87513D_1850783482 = (sensors.isEmpty());
-        } //End collapsed parenthetic
+        } 
         boolean var6CCE466F5EF5C5884CB21519A351854C_997763147 = (getSensorManager().registerListener(
                 this, sensors.get(0), SensorManager.SENSOR_DELAY_FASTEST, mHandler));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1463047323 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1463047323;
-        // ---------- Original Method ----------
-        //List<Sensor> sensors = getSensorManager().getSensorList(Sensor.TYPE_MAGNETIC_FIELD);
-        //if (sensors.isEmpty()) {
-            //return false;
-        //}
-        //return getSensorManager().registerListener(
-                //this, sensors.get(0), SensorManager.SENSOR_DELAY_FASTEST, mHandler);
+        
+        
+        
+            
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.517 -0400", hash_original_method = "3017DC11BC04FDEC5E6982352A18F2D7", hash_generated_method = "D951C525941C25B5CE19BA545AA9B4D8")
     private void unregisterFromSensors() {
         getSensorManager().unregisterListener(this);
-        // ---------- Original Method ----------
-        //getSensorManager().unregisterListener(this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.517 -0400", hash_original_method = "B4ADD48907D203A526782697C56D84A1", hash_generated_method = "A92ED4DF7C231BBCE6FD08B99CAC8BBC")
     private void maybeSendChange(double alpha, double beta, double gamma) {
         {
@@ -287,75 +292,77 @@ final class DeviceOrientationService implements SensorEventListener {
                 mGamma = gamma;
                 mManager.onOrientationChange(mAlpha, mBeta, mGamma);
                 mHaveSentErrorEvent = false;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-        //if (mAlpha == null || mBeta == null || mGamma == null
-                //|| Math.abs(alpha - mAlpha) > DELTA_DEGRESS
-                //|| Math.abs(beta - mBeta) > DELTA_DEGRESS
-                //|| Math.abs(gamma - mGamma) > DELTA_DEGRESS) {
-            //mAlpha = alpha;
-            //mBeta = beta;
-            //mGamma = gamma;
-            //mManager.onOrientationChange(mAlpha, mBeta, mGamma);
-            //mHaveSentErrorEvent = false;
-        //}
+            } 
+        } 
+        
+        
+        
+                
+                
+                
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.518 -0400", hash_original_method = "2695E209DFB6DD433B7C6CE1A619CE79", hash_generated_method = "DD3A29E2DB66FC28E5E60D04EE0C0DA8")
     public void onSensorChanged(SensorEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             Object var8AEBA24F22EBF3D3976665EB31D66317_326117746 = (event.sensor.getType());
-            //Begin case Sensor.TYPE_ACCELEROMETER 
+            
             {
                 mGravityVector = new float[3];
-            } //End block
-            //End case Sensor.TYPE_ACCELEROMETER 
-            //Begin case Sensor.TYPE_ACCELEROMETER 
+            } 
+            
+            
             mGravityVector[0] = event.values[0];
-            //End case Sensor.TYPE_ACCELEROMETER 
-            //Begin case Sensor.TYPE_ACCELEROMETER 
+            
+            
             mGravityVector[1] = event.values[1];
-            //End case Sensor.TYPE_ACCELEROMETER 
-            //Begin case Sensor.TYPE_ACCELEROMETER 
+            
+            
             mGravityVector[2] = event.values[2];
-            //End case Sensor.TYPE_ACCELEROMETER 
-            //Begin case Sensor.TYPE_ACCELEROMETER 
+            
+            
             getOrientationUsingGetRotationMatrix();
-            //End case Sensor.TYPE_ACCELEROMETER 
-            //Begin case Sensor.TYPE_MAGNETIC_FIELD 
+            
+            
             {
                 mMagneticFieldVector = new float[3];
-            } //End block
-            //End case Sensor.TYPE_MAGNETIC_FIELD 
-            //Begin case Sensor.TYPE_MAGNETIC_FIELD 
+            } 
+            
+            
             mMagneticFieldVector[0] = event.values[0];
-            //End case Sensor.TYPE_MAGNETIC_FIELD 
-            //Begin case Sensor.TYPE_MAGNETIC_FIELD 
+            
+            
             mMagneticFieldVector[1] = event.values[1];
-            //End case Sensor.TYPE_MAGNETIC_FIELD 
-            //Begin case Sensor.TYPE_MAGNETIC_FIELD 
+            
+            
             mMagneticFieldVector[2] = event.values[2];
-            //End case Sensor.TYPE_MAGNETIC_FIELD 
-            //Begin case Sensor.TYPE_MAGNETIC_FIELD 
+            
+            
             getOrientationUsingGetRotationMatrix();
-            //End case Sensor.TYPE_MAGNETIC_FIELD 
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.518 -0400", hash_original_method = "4C77A6863BACF480F39B2826F5CA663C", hash_generated_method = "1A434A1FCBBAC533510C9D8C55877D2F")
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(sensor.getTaint());
         addTaint(accuracy);
-        // ---------- Original Method ----------
-        //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
+        
+        
     }
 
     

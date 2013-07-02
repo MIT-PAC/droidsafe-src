@@ -1,11 +1,11 @@
 package org.apache.commons.io.filefilter;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +26,7 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
     public  MagicNumberFileFilter(byte[] magicNumber) {
         this(magicNumber, 0);
         addTaint(magicNumber[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,7 +34,7 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
     public  MagicNumberFileFilter(String magicNumber) {
         this(magicNumber, 0);
         addTaint(magicNumber.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -42,30 +42,30 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
     public  MagicNumberFileFilter(String magicNumber, long offset) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The magic number cannot be null");
-        } //End block
+        } 
         {
             boolean var8D68F61BC62A144C3DC618700C0337A2_1226362526 = (magicNumber.length() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The magic number must contain at least one byte");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The offset cannot be negative");
-        } //End block
+        } 
         this.magicNumbers = magicNumber.getBytes();
         this.byteOffset = offset;
-        // ---------- Original Method ----------
-        //if (magicNumber == null) {
-            //throw new IllegalArgumentException("The magic number cannot be null");
-        //}
-        //if (magicNumber.length() == 0) {
-            //throw new IllegalArgumentException("The magic number must contain at least one byte");
-        //}
-        //if (offset < 0) {
-            //throw new IllegalArgumentException("The offset cannot be negative");
-        //}
-        //this.magicNumbers = magicNumber.getBytes();
-        //this.byteOffset = offset;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -73,32 +73,33 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
     public  MagicNumberFileFilter(byte[] magicNumber, long offset) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The magic number cannot be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The magic number must contain at least one byte");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The offset cannot be negative");
-        } //End block
+        } 
         this.magicNumbers = new byte[magicNumber.length];
         System.arraycopy(magicNumber, 0, this.magicNumbers, 0, magicNumber.length);
         this.byteOffset = offset;
-        // ---------- Original Method ----------
-        //if (magicNumber == null) {
-            //throw new IllegalArgumentException("The magic number cannot be null");
-        //}
-        //if (magicNumber.length == 0) {
-            //throw new IllegalArgumentException("The magic number must contain at least one byte");
-        //}
-        //if (offset < 0) {
-            //throw new IllegalArgumentException("The offset cannot be negative");
-        //}
-        //this.magicNumbers = new byte[magicNumber.length];
-        //System.arraycopy(magicNumber, 0, this.magicNumbers, 0, magicNumber.length);
-        //this.byteOffset = offset;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.815 -0400", hash_original_method = "B71D2F390F50A93DB66E9BFC22DCB2BE", hash_generated_method = "11743899575A052A9611DA5E6859EAD2")
     @Override
     public boolean accept(File file) {
@@ -113,43 +114,44 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
                     randomAccessFile.seek(byteOffset);
                     int read = randomAccessFile.read(fileBytes);
                     boolean varE564DDF876A3E0FBD38EFF53C02D3D07_1443249057 = (Arrays.equals(this.magicNumbers, fileBytes));
-                } //End block
+                } 
                 catch (IOException ioe)
                 { }
                 finally 
                 {
                     IOUtils.closeQuietly(randomAccessFile);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(file.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_864818671 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_864818671;
-        // ---------- Original Method ----------
-        //if (file != null && file.isFile() && file.canRead()) {
-            //RandomAccessFile randomAccessFile = null;
-            //try {
-                //byte[] fileBytes = new byte[this.magicNumbers.length]; 
-                //randomAccessFile = new RandomAccessFile(file, "r");
-                //randomAccessFile.seek(byteOffset);
-                //int read = randomAccessFile.read(fileBytes);
-                //if (read != magicNumbers.length) {
-                    //return false;
-                //}
-                //return Arrays.equals(this.magicNumbers, fileBytes);
-            //} catch (IOException ioe) {
-            //} finally {
-                //IOUtils.closeQuietly(randomAccessFile);
-            //}
-        //}
-        //return false;
+        
+        
+            
+            
+                
+                
+                
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.816 -0400", hash_original_method = "CB513BDE86C193A798DC85AC9115E8A4", hash_generated_method = "CDC0A95AF659AF2CF7559E84BA93BB8B")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2021137842 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2021137842 = null; 
         StringBuilder builder = new StringBuilder(super.toString());
         builder.append("(");
         builder.append(new String(magicNumbers));
@@ -157,16 +159,16 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
         builder.append(this.byteOffset);
         builder.append(")");
         varB4EAC82CA7396A68D541C85D26508E83_2021137842 = builder.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_2021137842.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2021137842.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2021137842;
-        // ---------- Original Method ----------
-        //StringBuilder builder = new StringBuilder(super.toString());
-        //builder.append("(");
-        //builder.append(new String(magicNumbers));
-        //builder.append(",");
-        //builder.append(this.byteOffset);
-        //builder.append(")");
-        //return builder.toString();
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

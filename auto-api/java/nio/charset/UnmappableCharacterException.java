@@ -1,11 +1,11 @@
 package java.nio.charset;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class UnmappableCharacterException extends CharacterCodingException {
@@ -16,8 +16,8 @@ public class UnmappableCharacterException extends CharacterCodingException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.036 -0400", hash_original_method = "A3967154D82E53B3FB96C6C01ABA540C", hash_generated_method = "CD28904CBDAD593411E47A61730B54DC")
     public  UnmappableCharacterException(int length) {
         this.inputLength = length;
-        // ---------- Original Method ----------
-        //this.inputLength = length;
+        
+        
     }
 
     
@@ -25,20 +25,21 @@ public class UnmappableCharacterException extends CharacterCodingException {
     public int getInputLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620621259 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620621259;
-        // ---------- Original Method ----------
-        //return this.inputLength;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.037 -0400", hash_original_method = "7D10807CFABB560A12F38675F46A3FF5", hash_generated_method = "3825AB5AF044066B19885CAFC2D6ABF6")
     @Override
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1555631007 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1555631007 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1555631007 = "Length: " + inputLength;
-        varB4EAC82CA7396A68D541C85D26508E83_1555631007.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1555631007.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1555631007;
-        // ---------- Original Method ----------
-        //return "Length: " + inputLength;
+        
+        
     }
 
     

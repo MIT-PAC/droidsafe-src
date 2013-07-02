@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,7 +14,7 @@ public class Patterns {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.487 -0400", hash_original_method = "91DADCDFBE7734A1949A5AEB67A00312", hash_generated_method = "DCA1D744818DE2F75F6DF6E223A6F400")
     private  Patterns() {
-        // ---------- Original Method ----------
+        
     }
 
     

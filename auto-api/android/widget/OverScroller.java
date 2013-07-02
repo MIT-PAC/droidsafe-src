@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.hardware.SensorManager;
@@ -36,7 +36,7 @@ public class OverScroller {
     public  OverScroller(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -45,7 +45,7 @@ public class OverScroller {
         this(context, interpolator, true);
         addTaint(context.getTaint());
         addTaint(interpolator.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -57,12 +57,12 @@ public class OverScroller {
         mScrollerY = new SplineOverScroller();
         SplineOverScroller.initFromContext(context);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //mInterpolator = interpolator;
-        //mFlywheel = flywheel;
-        //mScrollerX = new SplineOverScroller();
-        //mScrollerY = new SplineOverScroller();
-        //SplineOverScroller.initFromContext(context);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -74,7 +74,7 @@ public class OverScroller {
         addTaint(interpolator.getTaint());
         addTaint(bounceCoefficientX);
         addTaint(bounceCoefficientY);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -87,7 +87,7 @@ public class OverScroller {
         addTaint(bounceCoefficientX);
         addTaint(bounceCoefficientY);
         addTaint(flywheel);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -96,9 +96,9 @@ public class OverScroller {
         mScrollerX.setFriction(friction);
         mScrollerY.setFriction(friction);
         addTaint(friction);
-        // ---------- Original Method ----------
-        //mScrollerX.setFriction(friction);
-        //mScrollerY.setFriction(friction);
+        
+        
+        
     }
 
     
@@ -106,16 +106,16 @@ public class OverScroller {
     public final boolean isFinished() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_970633312 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_970633312;
-        // ---------- Original Method ----------
-        //return mScrollerX.mFinished && mScrollerY.mFinished;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.308 -0400", hash_original_method = "530BF62F40D21F1D1C05E22ECA085B25", hash_generated_method = "9E50CA69CA03FFBAA94AC2B7585A2958")
     public final void forceFinished(boolean finished) {
         mScrollerX.mFinished = mScrollerY.mFinished = finished;
-        // ---------- Original Method ----------
-        //mScrollerX.mFinished = mScrollerY.mFinished = finished;
+        
+        
     }
 
     
@@ -123,8 +123,8 @@ public class OverScroller {
     public final int getCurrX() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1352251420 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1352251420;
-        // ---------- Original Method ----------
-        //return mScrollerX.mCurrentPosition;
+        
+        
     }
 
     
@@ -132,11 +132,12 @@ public class OverScroller {
     public final int getCurrY() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_884125904 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_884125904;
-        // ---------- Original Method ----------
-        //return mScrollerY.mCurrentPosition;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.309 -0400", hash_original_method = "64BF41B2D89FD1AD797ACAED97E05500", hash_generated_method = "1C48883D46B8985EBDA93D19AF59FB63")
     public float getCurrVelocity() {
         float squaredNorm = mScrollerX.mCurrVelocity * mScrollerX.mCurrVelocity;
@@ -144,10 +145,10 @@ public class OverScroller {
         float varD836AEECDA15973F990993130D0A04EB_2117839630 = (FloatMath.sqrt(squaredNorm));
         float var546ADE640B6EDFBC8A086EF31347E768_242176286 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_242176286;
-        // ---------- Original Method ----------
-        //float squaredNorm = mScrollerX.mCurrVelocity * mScrollerX.mCurrVelocity;
-        //squaredNorm += mScrollerY.mCurrVelocity * mScrollerY.mCurrVelocity;
-        //return FloatMath.sqrt(squaredNorm);
+        
+        
+        
+        
     }
 
     
@@ -155,8 +156,8 @@ public class OverScroller {
     public final int getStartX() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_696415008 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_696415008;
-        // ---------- Original Method ----------
-        //return mScrollerX.mStart;
+        
+        
     }
 
     
@@ -164,8 +165,8 @@ public class OverScroller {
     public final int getStartY() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1078686703 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1078686703;
-        // ---------- Original Method ----------
-        //return mScrollerY.mStart;
+        
+        
     }
 
     
@@ -173,8 +174,8 @@ public class OverScroller {
     public final int getFinalX() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2045346536 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2045346536;
-        // ---------- Original Method ----------
-        //return mScrollerX.mFinal;
+        
+        
     }
 
     
@@ -182,8 +183,8 @@ public class OverScroller {
     public final int getFinalY() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1384100990 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1384100990;
-        // ---------- Original Method ----------
-        //return mScrollerY.mFinal;
+        
+        
     }
 
     
@@ -193,74 +194,78 @@ public class OverScroller {
         int var2AE19ED6BFD3EE2A01F12C594E911C5B_1741411401 = (Math.max(mScrollerX.mDuration, mScrollerY.mDuration));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1426817718 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1426817718;
-        // ---------- Original Method ----------
-        //return Math.max(mScrollerX.mDuration, mScrollerY.mDuration);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.311 -0400", hash_original_method = "C8E559EF6FD22D868574182D9D2BCAF9", hash_generated_method = "85174D09178AD20C6307E259B2250F79")
     @Deprecated
     public void extendDuration(int extend) {
         mScrollerX.extendDuration(extend);
         mScrollerY.extendDuration(extend);
         addTaint(extend);
-        // ---------- Original Method ----------
-        //mScrollerX.extendDuration(extend);
-        //mScrollerY.extendDuration(extend);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.311 -0400", hash_original_method = "21D9AD21BF731806972ABE02338AD0C0", hash_generated_method = "878798B17F47A9CDD4BEC2239BE950F0")
     @Deprecated
     public void setFinalX(int newX) {
         mScrollerX.setFinalPosition(newX);
         addTaint(newX);
-        // ---------- Original Method ----------
-        //mScrollerX.setFinalPosition(newX);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.311 -0400", hash_original_method = "300115417BC2D028444CA0676224C129", hash_generated_method = "2B2791683CA13518092063DB4DC4F7CD")
     @Deprecated
     public void setFinalY(int newY) {
         mScrollerY.setFinalPosition(newY);
         addTaint(newY);
-        // ---------- Original Method ----------
-        //mScrollerY.setFinalPosition(newY);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.312 -0400", hash_original_method = "4391FF82C7FA76BDB2CDCD1D85612F8D", hash_generated_method = "E828894428CE42A4835061B9C21D4FA3")
     public boolean computeScrollOffset() {
         {
             boolean var802B4329042ED423187FD338A790F5A6_1891165806 = (isFinished());
-        } //End collapsed parenthetic
-        //Begin case SCROLL_MODE 
+        } 
+        
         long time = AnimationUtils.currentAnimationTimeMillis();
-        //End case SCROLL_MODE 
-        //Begin case SCROLL_MODE 
+        
+        
         final long elapsedTime = time - mScrollerX.mStartTime;
-        //End case SCROLL_MODE 
-        //Begin case SCROLL_MODE 
+        
+        
         final int duration = mScrollerX.mDuration;
-        //End case SCROLL_MODE 
-        //Begin case SCROLL_MODE 
+        
+        
         {
             float q = (float) (elapsedTime) / duration;
             {
                 q = Scroller.viscousFluid(q);
-            } //End block
+            } 
             {
                 q = mInterpolator.getInterpolation(q);
-            } //End block
+            } 
             mScrollerX.updateScroll(q);
             mScrollerY.updateScroll(q);
-        } //End block
+        } 
         {
             abortAnimation();
-        } //End block
-        //End case SCROLL_MODE 
-        //Begin case FLING_MODE 
+        } 
+        
+        
         {
             {
                 boolean varBFDC0FB1B43EB7BCC4E9E82DEDCD9FC2_1852426744 = (!mScrollerX.update());
@@ -269,13 +274,13 @@ public class OverScroller {
                         boolean varC9F451BE971CCB0A82BBE1EBE98D8511_626426099 = (!mScrollerX.continueWhenFinished());
                         {
                             mScrollerX.finish();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        //End case FLING_MODE 
-        //Begin case FLING_MODE 
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
         {
             {
                 boolean var139B509336DC22E8B49FCE36B537A826_386948877 = (!mScrollerY.update());
@@ -284,19 +289,20 @@ public class OverScroller {
                         boolean var4B1E7AEBADA7A1365CA571D290BAD045_526801840 = (!mScrollerY.continueWhenFinished());
                         {
                             mScrollerY.finish();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        //End case FLING_MODE 
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2142800624 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2142800624;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.312 -0400", hash_original_method = "2558578E34A043045AE1AF32A3800D82", hash_generated_method = "A07157DD1E11902F09548DA565746592")
     public void startScroll(int startX, int startY, int dx, int dy) {
         startScroll(startX, startY, dx, dy, DEFAULT_DURATION);
@@ -304,11 +310,12 @@ public class OverScroller {
         addTaint(startY);
         addTaint(dx);
         addTaint(dy);
-        // ---------- Original Method ----------
-        //startScroll(startX, startY, dx, dy, DEFAULT_DURATION);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.313 -0400", hash_original_method = "C7C9FE1639F9BA6211C746BC2E590EF8", hash_generated_method = "452D72A59FCC3AFBE64D318B53F21E2B")
     public void startScroll(int startX, int startY, int dx, int dy, int duration) {
         mMode = SCROLL_MODE;
@@ -319,13 +326,14 @@ public class OverScroller {
         addTaint(dx);
         addTaint(dy);
         addTaint(duration);
-        // ---------- Original Method ----------
-        //mMode = SCROLL_MODE;
-        //mScrollerX.startScroll(startX, dx, duration);
-        //mScrollerY.startScroll(startY, dy, duration);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.313 -0400", hash_original_method = "E8D7F5B96D38EF5E598258BCD9688B52", hash_generated_method = "BFB92622A289F192F8F7E47C5DDA3DE6")
     public boolean springBack(int startX, int startY, int minX, int maxX, int minY, int maxY) {
         mMode = FLING_MODE;
@@ -339,14 +347,15 @@ public class OverScroller {
         addTaint(maxY);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_92629821 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_92629821;
-        // ---------- Original Method ----------
-        //mMode = FLING_MODE;
-        //final boolean spingbackX = mScrollerX.springback(startX, minX, maxX);
-        //final boolean spingbackY = mScrollerY.springback(startY, minY, maxY);
-        //return spingbackX || spingbackY;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.313 -0400", hash_original_method = "DCC04315E1B3C3B4106F742F922D4431", hash_generated_method = "9DDA62B89487E25EE2B710DEA2345440")
     public void fling(int startX, int startY, int velocityX, int velocityY,
             int minX, int maxX, int minY, int maxY) {
@@ -359,11 +368,12 @@ public class OverScroller {
         addTaint(maxX);
         addTaint(minY);
         addTaint(maxY);
-        // ---------- Original Method ----------
-        //fling(startX, startY, velocityX, velocityY, minX, maxX, minY, maxY, 0, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.314 -0400", hash_original_method = "38A7A19069D4290FC9AB0139CD44ADE1", hash_generated_method = "EF617B04537100E23176B3F98E3E4A4C")
     public void fling(int startX, int startY, int velocityX, int velocityY,
             int minX, int maxX, int minY, int maxY, int overX, int overY) {
@@ -378,10 +388,10 @@ public class OverScroller {
                     {
                         velocityX += oldVelocityX;
                         velocityY += oldVelocityY;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         mMode = FLING_MODE;
         mScrollerX.fling(startX, velocityX, minX, maxX, overX);
         mScrollerY.fling(startY, velocityY, minY, maxY, overY);
@@ -395,79 +405,85 @@ public class OverScroller {
         addTaint(maxY);
         addTaint(overX);
         addTaint(overY);
-        // ---------- Original Method ----------
-        //if (mFlywheel && !isFinished()) {
-            //float oldVelocityX = mScrollerX.mCurrVelocity;
-            //float oldVelocityY = mScrollerY.mCurrVelocity;
-            //if (Math.signum(velocityX) == Math.signum(oldVelocityX) &&
-                    //Math.signum(velocityY) == Math.signum(oldVelocityY)) {
-                //velocityX += oldVelocityX;
-                //velocityY += oldVelocityY;
-            //}
-        //}
-        //mMode = FLING_MODE;
-        //mScrollerX.fling(startX, velocityX, minX, maxX, overX);
-        //mScrollerY.fling(startY, velocityY, minY, maxY, overY);
+        
+        
+            
+            
+            
+                    
+                
+                
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.314 -0400", hash_original_method = "B9132D3CC6E7407A65F178898D94F282", hash_generated_method = "858F9726B4256E4CA817B1C33AFEFCE6")
     public void notifyHorizontalEdgeReached(int startX, int finalX, int overX) {
         mScrollerX.notifyEdgeReached(startX, finalX, overX);
         addTaint(startX);
         addTaint(finalX);
         addTaint(overX);
-        // ---------- Original Method ----------
-        //mScrollerX.notifyEdgeReached(startX, finalX, overX);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.314 -0400", hash_original_method = "EAACB5866396964CA4004FBBF9350F29", hash_generated_method = "097C45C2369177B8DE722E650F0CC61A")
     public void notifyVerticalEdgeReached(int startY, int finalY, int overY) {
         mScrollerY.notifyEdgeReached(startY, finalY, overY);
         addTaint(startY);
         addTaint(finalY);
         addTaint(overY);
-        // ---------- Original Method ----------
-        //mScrollerY.notifyEdgeReached(startY, finalY, overY);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.315 -0400", hash_original_method = "AE5D891ECDFB8C77EC70A4859A3A8CFD", hash_generated_method = "09BF73D01902984F6DCBBC3227580A01")
     public boolean isOverScrolled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1947946922 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1947946922;
-        // ---------- Original Method ----------
-        //return ((!mScrollerX.mFinished &&
-                //mScrollerX.mState != SplineOverScroller.SPLINE) ||
-                //(!mScrollerY.mFinished &&
-                        //mScrollerY.mState != SplineOverScroller.SPLINE));
+        
+        
+                
+                
+                        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.315 -0400", hash_original_method = "E56D99D09F46A8AEF8DD628D53F963A5", hash_generated_method = "694AEC3319AADB935EA112A7C19DD2CD")
     public void abortAnimation() {
         mScrollerX.finish();
         mScrollerY.finish();
-        // ---------- Original Method ----------
-        //mScrollerX.finish();
-        //mScrollerY.finish();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.315 -0400", hash_original_method = "6776820FB8E88CBACCBB30EFABCCA565", hash_generated_method = "062F8527EB3497B441EBC0883017E4A1")
     public int timePassed() {
         final long time = AnimationUtils.currentAnimationTimeMillis();
         final long startTime = Math.min(mScrollerX.mStartTime, mScrollerY.mStartTime);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1233467220 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1233467220;
-        // ---------- Original Method ----------
-        //final long time = AnimationUtils.currentAnimationTimeMillis();
-        //final long startTime = Math.min(mScrollerX.mStartTime, mScrollerY.mStartTime);
-        //return (int) (time - startTime);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.315 -0400", hash_original_method = "EC43B1555D38CD3A665472CFA4E77643", hash_generated_method = "C4D0C7AFA2CD8488B3C2502CBA15BF05")
     public boolean isScrollingInDirection(float xvel, float yvel) {
         final int dx = mScrollerX.mFinal - mScrollerX.mStart;
@@ -478,11 +494,11 @@ public class OverScroller {
         addTaint(yvel);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_105692729 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_105692729;
-        // ---------- Original Method ----------
-        //final int dx = mScrollerX.mFinal - mScrollerX.mStart;
-        //final int dy = mScrollerY.mFinal - mScrollerY.mStart;
-        //return !isFinished() && Math.signum(xvel) == Math.signum(dx) &&
-                //Math.signum(yvel) == Math.signum(dy);
+        
+        
+        
+        
+                
     }
 
     
@@ -533,8 +549,8 @@ public class OverScroller {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.316 -0400", hash_original_method = "D0177E162854BD0B51587B46D28F0B6A", hash_generated_method = "8DA67F7E3849D2B57321066409F02625")
           SplineOverScroller() {
             mFinished = true;
-            // ---------- Original Method ----------
-            //mFinished = true;
+            
+            
         }
 
         
@@ -550,16 +566,16 @@ public class OverScroller {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.317 -0400", hash_original_method = "9532D02E94E4EAFA434C124BD0A8F760", hash_generated_method = "9C1BF5881133CE15D3AD6937E2102C77")
          void setFriction(float friction) {
             mFlingFriction = friction;
-            // ---------- Original Method ----------
-            //mFlingFriction = friction;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.317 -0400", hash_original_method = "64F0298C66739A6C01CABFBC1A2B2075", hash_generated_method = "8D0066CC0B7F2B3783E5F9BC60951860")
          void updateScroll(float q) {
             mCurrentPosition = mStart + Math.round(q * (mFinal - mStart));
-            // ---------- Original Method ----------
-            //mCurrentPosition = mStart + Math.round(q * (mFinal - mStart));
+            
+            
         }
 
         
@@ -581,23 +597,23 @@ public class OverScroller {
                 final float t_sup = SPLINE_TIME[index + 1];
                 final float timeCoef = t_inf + (x - x_inf) / (x_sup - x_inf) * (t_sup - t_inf);
                 mDuration *= timeCoef;
-            } //End block
+            } 
             addTaint(start);
             addTaint(oldFinal);
             addTaint(newFinal);
-            // ---------- Original Method ----------
-            //final int oldDistance = oldFinal - start;
-            //final int newDistance = newFinal - start;
-            //final float x = Math.abs((float) newDistance / oldDistance);
-            //final int index = (int) (NB_SAMPLES * x);
-            //if (index < NB_SAMPLES) {
-                //final float x_inf = (float) index / NB_SAMPLES;
-                //final float x_sup = (float) (index + 1) / NB_SAMPLES;
-                //final float t_inf = SPLINE_TIME[index];
-                //final float t_sup = SPLINE_TIME[index + 1];
-                //final float timeCoef = t_inf + (x - x_inf) / (x_sup - x_inf) * (t_sup - t_inf);
-                //mDuration *= timeCoef;
-            //}
+            
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                
+                
+            
         }
 
         
@@ -610,14 +626,14 @@ public class OverScroller {
             mDuration = duration;
             mDeceleration = 0.0f;
             mVelocity = 0;
-            // ---------- Original Method ----------
-            //mFinished = false;
-            //mStart = start;
-            //mFinal = start + distance;
-            //mStartTime = AnimationUtils.currentAnimationTimeMillis();
-            //mDuration = duration;
-            //mDeceleration = 0.0f;
-            //mVelocity = 0;
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -625,9 +641,9 @@ public class OverScroller {
          void finish() {
             mCurrentPosition = mFinal;
             mFinished = true;
-            // ---------- Original Method ----------
-            //mCurrentPosition = mFinal;
-            //mFinished = true;
+            
+            
+            
         }
 
         
@@ -635,9 +651,9 @@ public class OverScroller {
          void setFinalPosition(int position) {
             mFinal = position;
             mFinished = false;
-            // ---------- Original Method ----------
-            //mFinal = position;
-            //mFinished = false;
+            
+            
+            
         }
 
         
@@ -647,11 +663,11 @@ public class OverScroller {
             final int elapsedTime = (int) (time - mStartTime);
             mDuration = elapsedTime + extend;
             mFinished = false;
-            // ---------- Original Method ----------
-            //final long time = AnimationUtils.currentAnimationTimeMillis();
-            //final int elapsedTime = (int) (time - mStartTime);
-            //mDuration = elapsedTime + extend;
-            //mFinished = false;
+            
+            
+            
+            
+            
         }
 
         
@@ -664,26 +680,26 @@ public class OverScroller {
             mDuration = 0;
             {
                 startSpringback(start, min, 0);
-            } //End block
+            } 
             {
                 startSpringback(start, max, 0);
-            } //End block
+            } 
             addTaint(min);
             addTaint(max);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1353141787 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1353141787;
-            // ---------- Original Method ----------
-            //mFinished = true;
-            //mStart = mFinal = start;
-            //mVelocity = 0;
-            //mStartTime = AnimationUtils.currentAnimationTimeMillis();
-            //mDuration = 0;
-            //if (start < min) {
-                //startSpringback(start, min, 0);
-            //} else if (start > max) {
-                //startSpringback(start, max, 0);
-            //}
-            //return !mFinished;
+            
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+            
         }
 
         
@@ -699,16 +715,16 @@ public class OverScroller {
             mOver = Math.abs(delta);
             mDuration = (int) (1000.0 * Math.sqrt(-2.0 * delta / mDeceleration));
             addTaint(velocity);
-            // ---------- Original Method ----------
-            //mFinished = false;
-            //mState = CUBIC;
-            //mStart = start;
-            //mFinal = end;
-            //final int delta = start - end;
-            //mDeceleration = getDeceleration(delta);
-            //mVelocity = -delta;
-            //mOver = Math.abs(delta);
-            //mDuration = (int) (1000.0 * Math.sqrt(-2.0 * delta / mDeceleration));
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -722,25 +738,25 @@ public class OverScroller {
             mCurrentPosition = mStart = start;
             {
                 startAfterEdge(start, min, max, velocity);
-            } //End block
+            } 
             mState = SPLINE;
             double totalDistance = 0.0;
             {
                 mDuration = mSplineDuration = getSplineFlingDuration(velocity);
                 totalDistance = getSplineFlingDistance(velocity);
-            } //End block
+            } 
             mSplineDistance = (int) (totalDistance * Math.signum(velocity));
             mFinal = start + mSplineDistance;
             {
                 adjustDuration(mStart, mFinal, min);
                 mFinal = min;
-            } //End block
+            } 
             {
                 adjustDuration(mStart, mFinal, max);
                 mFinal = max;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -750,8 +766,8 @@ public class OverScroller {
             addTaint(velocity);
             double varE8CD7DA078A86726031AD64F35F5A6C0_569648772 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_569648772;
-            // ---------- Original Method ----------
-            //return Math.log(INFLEXION * Math.abs(velocity) / (mFlingFriction * PHYSICAL_COEF));
+            
+            
         }
 
         
@@ -763,10 +779,10 @@ public class OverScroller {
             addTaint(velocity);
             double varE8CD7DA078A86726031AD64F35F5A6C0_1860913108 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_1860913108;
-            // ---------- Original Method ----------
-            //final double l = getSplineDeceleration(velocity);
-            //final double decelMinusOne = DECELERATION_RATE - 1.0;
-            //return mFlingFriction * PHYSICAL_COEF * Math.exp(DECELERATION_RATE / decelMinusOne * l);
+            
+            
+            
+            
         }
 
         
@@ -778,10 +794,10 @@ public class OverScroller {
             addTaint(velocity);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378434685 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378434685;
-            // ---------- Original Method ----------
-            //final double l = getSplineDeceleration(velocity);
-            //final double decelMinusOne = DECELERATION_RATE - 1.0;
-            //return (int) (1000.0 * Math.exp(l / decelMinusOne));
+            
+            
+            
+            
         }
 
         
@@ -797,15 +813,15 @@ public class OverScroller {
             mVelocity = (int) (- mDeceleration * totalDuration);
             addTaint(start);
             addTaint(velocity);
-            // ---------- Original Method ----------
-            //final float durationToApex = - velocity / mDeceleration;
-            //final float distanceToApex = velocity * velocity / 2.0f / Math.abs(mDeceleration);
-            //final float distanceToEdge = Math.abs(end - start);
-            //final float totalDuration = (float) Math.sqrt(
-                    //2.0 * (distanceToApex + distanceToEdge) / Math.abs(mDeceleration));
-            //mStartTime -= (int) (1000.0f * (totalDuration - durationToApex));
-            //mStart = end;
-            //mVelocity = (int) (- mDeceleration * totalDuration);
+            
+            
+            
+            
+            
+                    
+            
+            
+            
         }
 
         
@@ -814,10 +830,10 @@ public class OverScroller {
             mDeceleration = getDeceleration(velocity == 0 ? start - end : velocity);
             fitOnBounceCurve(start, end, velocity);
             onEdgeReached();
-            // ---------- Original Method ----------
-            //mDeceleration = getDeceleration(velocity == 0 ? start - end : velocity);
-            //fitOnBounceCurve(start, end, velocity);
-            //onEdgeReached();
+            
+            
+            
+            
         }
 
         
@@ -825,7 +841,7 @@ public class OverScroller {
         private void startAfterEdge(int start, int min, int max, int velocity) {
             {
                 mFinished = true;
-            } //End block
+            } 
             final boolean positive = start > max;
             int edge;
             edge = max;
@@ -834,25 +850,25 @@ public class OverScroller {
             boolean keepIncreasing = overDistance * velocity >= 0;
             {
                 startBounceAfterEdge(start, edge, velocity);
-            } //End block
+            } 
             {
                 final double totalDistance = getSplineFlingDistance(velocity);
                 {
                     boolean varAFFBEB20AB3CF5CAE72A649B507B5311_1535090702 = (totalDistance > Math.abs(overDistance));
                     {
                         fling(start, velocity, positive ? min : start, positive ? start : max, mOver);
-                    } //End block
+                    } 
                     {
                         startSpringback(start, edge, velocity);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             addTaint(start);
             addTaint(min);
             addTaint(max);
             addTaint(velocity);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -862,15 +878,15 @@ public class OverScroller {
                 mOver = over;
                 mStartTime = AnimationUtils.currentAnimationTimeMillis();
                 startAfterEdge(start, end, end, (int) mCurrVelocity);
-            } //End block
+            } 
             addTaint(start);
             addTaint(end);
-            // ---------- Original Method ----------
-            //if (mState == SPLINE) {
-                //mOver = over;
-                //mStartTime = AnimationUtils.currentAnimationTimeMillis();
-                //startAfterEdge(start, end, end, (int) mCurrVelocity);
-            //}
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -881,47 +897,47 @@ public class OverScroller {
             {
                 mDeceleration = - sign * mVelocity * mVelocity / (2.0f * mOver);
                 distance = mOver;
-            } //End block
+            } 
             mOver = (int) distance;
             mState = BALLISTIC;
             mFinal = mStart + (int) (mVelocity > 0 ? distance : -distance);
             mDuration = - (int) (1000.0f * mVelocity / mDeceleration);
-            // ---------- Original Method ----------
-            //float distance = mVelocity * mVelocity / (2.0f * Math.abs(mDeceleration));
-            //final float sign = Math.signum(mVelocity);
-            //if (distance > mOver) {
-                 //mDeceleration = - sign * mVelocity * mVelocity / (2.0f * mOver);
-                 //distance = mOver;
-            //}
-            //mOver = (int) distance;
-            //mState = BALLISTIC;
-            //mFinal = mStart + (int) (mVelocity > 0 ? distance : -distance);
-            //mDuration = - (int) (1000.0f * mVelocity / mDeceleration);
+            
+            
+            
+            
+                 
+                 
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.326 -0400", hash_original_method = "6FDA077121143820AC37360810DDE80A", hash_generated_method = "0BD4078BDC58890537835A582065003C")
          boolean continueWhenFinished() {
-            //Begin case SPLINE 
+            
             {
                 mStart = mFinal;
                 mVelocity = (int) mCurrVelocity;
                 mDeceleration = getDeceleration(mVelocity);
                 mStartTime += mDuration;
                 onEdgeReached();
-            } //End block
-            //End case SPLINE 
-            //Begin case BALLISTIC 
+            } 
+            
+            
             mStartTime += mDuration;
-            //End case BALLISTIC 
-            //Begin case BALLISTIC 
+            
+            
             startSpringback(mFinal, mStart, 0);
-            //End case BALLISTIC 
+            
             update();
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_179551589 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_179551589;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -930,7 +946,7 @@ public class OverScroller {
             final long time = AnimationUtils.currentAnimationTimeMillis();
             final long currentTime = time - mStartTime;
             double distance = 0.0;
-            //Begin case SPLINE 
+            
             {
                 final float t = (float) currentTime / mSplineDuration;
                 final int index = (int) (NB_SAMPLES * t);
@@ -943,32 +959,32 @@ public class OverScroller {
                     final float d_sup = SPLINE_POSITION[index + 1];
                     velocityCoef = (d_sup - d_inf) / (t_sup - t_inf);
                     distanceCoef = d_inf + (t - t_inf) * velocityCoef;
-                } //End block
+                } 
                 distance = distanceCoef * mSplineDistance;
                 mCurrVelocity = velocityCoef * mSplineDistance / mSplineDuration * 1000.0f;
-            } //End block
-            //End case SPLINE 
-            //Begin case BALLISTIC 
+            } 
+            
+            
             {
                 final float t = currentTime / 1000.0f;
                 mCurrVelocity = mVelocity + mDeceleration * t;
                 distance = mVelocity * t + mDeceleration * t * t / 2.0f;
-            } //End block
-            //End case BALLISTIC 
-            //Begin case CUBIC 
+            } 
+            
+            
             {
                 final float t = (float) (currentTime) / mDuration;
                 final float t2 = t * t;
                 final float sign = Math.signum(mVelocity);
                 distance = sign * mOver * (3.0f * t2 - 2.0f * t * t2);
                 mCurrVelocity = sign * mOver * 6.0f * (- t + t2);
-            } //End block
-            //End case CUBIC 
+            } 
+            
             mCurrentPosition = mStart + (int) Math.round(distance);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1373748508 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1373748508;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

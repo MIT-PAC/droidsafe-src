@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class PixelFormat {
@@ -19,7 +19,7 @@ public class PixelFormat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.048 -0400", hash_original_method = "0A480F0344E4C89067BA9E346BA03813", hash_generated_method = "0A480F0344E4C89067BA9E346BA03813")
     public PixelFormat ()
     {
-        //Synthesized constructor
+        
     }
 
 

@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,12 +35,12 @@ class ComprehensionTlv {
         mLength = length;
         mValueIndex = valueIndex;
         mRawValue = data;
-        // ---------- Original Method ----------
-        //mTag = tag;
-        //mCr = cr;
-        //mLength = length;
-        //mValueIndex = valueIndex;
-        //mRawValue = data;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -48,8 +48,8 @@ class ComprehensionTlv {
     public int getTag() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_25727994 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_25727994;
-        // ---------- Original Method ----------
-        //return mTag;
+        
+        
     }
 
     
@@ -57,8 +57,8 @@ class ComprehensionTlv {
     public boolean isComprehensionRequired() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1316570368 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1316570368;
-        // ---------- Original Method ----------
-        //return mCr;
+        
+        
     }
 
     
@@ -66,8 +66,8 @@ class ComprehensionTlv {
     public int getLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1586041862 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1586041862;
-        // ---------- Original Method ----------
-        //return mLength;
+        
+        
     }
 
     
@@ -75,8 +75,8 @@ class ComprehensionTlv {
     public int getValueIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382481416 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382481416;
-        // ---------- Original Method ----------
-        //return mValueIndex;
+        
+        
     }
 
     
@@ -84,11 +84,12 @@ class ComprehensionTlv {
     public byte[] getRawValue() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_468862714 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_468862714;
-        // ---------- Original Method ----------
-        //return mRawValue;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static List<ComprehensionTlv> decodeMany(byte[] data, int startIndex) throws ResultException {
         ArrayList<ComprehensionTlv> items = new ArrayList<ComprehensionTlv>();
         int endIndex = data.length;
@@ -107,6 +108,7 @@ class ComprehensionTlv {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ComprehensionTlv decode(byte[] data, int startIndex) throws ResultException {
         try {
             int curIndex = startIndex;

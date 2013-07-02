@@ -1,11 +1,11 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.telephony.PhoneNumberUtils;
 
@@ -29,28 +29,29 @@ public class SuppServiceNotification {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.854 -0400", hash_original_method = "874E946CBC113089EBEC7DA6D34DA654", hash_generated_method = "874E946CBC113089EBEC7DA6D34DA654")
     public SuppServiceNotification ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.854 -0400", hash_original_method = "A03F8251EC229F0DECFD7D9A52A7C82D", hash_generated_method = "B4D483BC4C426F82C0D9E3ADEFCEAF2F")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2072143963 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2072143963 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2072143963 = super.toString() + " mobile"
             + (notificationType == 0 ? " originated " : " terminated ")
             + " code: " + code
             + " index: " + index
             + " \""
             + PhoneNumberUtils.stringFromStringAndTOA(number, type) + "\" ";
-        varB4EAC82CA7396A68D541C85D26508E83_2072143963.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2072143963.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2072143963;
-        // ---------- Original Method ----------
-        //return super.toString() + " mobile"
-            //+ (notificationType == 0 ? " originated " : " terminated ")
-            //+ " code: " + code
-            //+ " index: " + index
-            //+ " \""
-            //+ PhoneNumberUtils.stringFromStringAndTOA(number, type) + "\" ";
+        
+        
+            
+            
+            
+            
+            
     }
 
     

@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.Binder;
@@ -30,33 +30,35 @@ public class StatusBarManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.544 -0400", hash_original_method = "3CFEC728F9006821D55520F81F0C151A", hash_generated_method = "AA88790BF74B94A758B0908E6E9AD026")
       StatusBarManager(Context context) {
         mContext = context;
-        // ---------- Original Method ----------
-        //mContext = context;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.545 -0400", hash_original_method = "1D3FF7F9C7208A1463AE69512DB03B53", hash_generated_method = "ED03527D851BAA033A49E960DBDB3AB7")
     private synchronized IStatusBarService getService() {
-        IStatusBarService varB4EAC82CA7396A68D541C85D26508E83_790648794 = null; //Variable for return #1
+        IStatusBarService varB4EAC82CA7396A68D541C85D26508E83_790648794 = null; 
         {
             mService = IStatusBarService.Stub.asInterface(
                     ServiceManager.getService(Context.STATUS_BAR_SERVICE));
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_790648794 = mService;
-        varB4EAC82CA7396A68D541C85D26508E83_790648794.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_790648794.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_790648794;
-        // ---------- Original Method ----------
-        //if (mService == null) {
-            //mService = IStatusBarService.Stub.asInterface(
-                    //ServiceManager.getService(Context.STATUS_BAR_SERVICE));
-            //if (mService == null) {
-                //Slog.w("StatusBarManager", "warning: no STATUS_BAR_SERVICE");
-            //}
-        //}
-        //return mService;
+        
+        
+            
+                    
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.546 -0400", hash_original_method = "C0418D4EF5E5492E87411EACA6ADF7F3", hash_generated_method = "426843CAF1D17645186EF08A3813A8D9")
     public void disable(int what) {
         try 
@@ -64,25 +66,26 @@ public class StatusBarManager {
             final IStatusBarService svc = getService();
             {
                 svc.disable(what, mToken, mContext.getPackageName());
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
-        } //End block
+        } 
         addTaint(what);
-        // ---------- Original Method ----------
-        //try {
-            //final IStatusBarService svc = getService();
-            //if (svc != null) {
-                //svc.disable(what, mToken, mContext.getPackageName());
-            //}
-        //} catch (RemoteException ex) {
-            //throw new RuntimeException(ex);
-        //}
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.547 -0400", hash_original_method = "5BF2BF9E6EAB3A672A6E4C279ED476B8", hash_generated_method = "9D6D2397D291A69C4849CCF32F4E2EC9")
     public void expand() {
         try 
@@ -90,24 +93,25 @@ public class StatusBarManager {
             final IStatusBarService svc = getService();
             {
                 svc.expand();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //final IStatusBarService svc = getService();
-            //if (svc != null) {
-                //svc.expand();
-            //}
-        //} catch (RemoteException ex) {
-            //throw new RuntimeException(ex);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.548 -0400", hash_original_method = "E2C83593B12AFE0B35E16B01E1A7A647", hash_generated_method = "79D11863C3B95E669CB024F7C1E913E2")
     public void collapse() {
         try 
@@ -115,24 +119,25 @@ public class StatusBarManager {
             final IStatusBarService svc = getService();
             {
                 svc.collapse();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //final IStatusBarService svc = getService();
-            //if (svc != null) {
-                //svc.collapse();
-            //}
-        //} catch (RemoteException ex) {
-            //throw new RuntimeException(ex);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.549 -0400", hash_original_method = "8A330421DEC3E061C169D87595A7D18D", hash_generated_method = "1502B6E81FCAEB4C110AFAB6B22557E0")
     public void setIcon(String slot, int iconId, int iconLevel, String contentDescription) {
         try 
@@ -141,29 +146,30 @@ public class StatusBarManager {
             {
                 svc.setIcon(slot, mContext.getPackageName(), iconId, iconLevel,
                     contentDescription);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
-        } //End block
+        } 
         addTaint(slot.getTaint());
         addTaint(iconId);
         addTaint(iconLevel);
         addTaint(contentDescription.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //final IStatusBarService svc = getService();
-            //if (svc != null) {
-                //svc.setIcon(slot, mContext.getPackageName(), iconId, iconLevel,
-                    //contentDescription);
-            //}
-        //} catch (RemoteException ex) {
-            //throw new RuntimeException(ex);
-        //}
+        
+        
+            
+            
+                
+                    
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.551 -0400", hash_original_method = "D02D0B03CC45E73478507B52DB06904B", hash_generated_method = "00AE76FFCAFE3BFAF1AFC39C1759227A")
     public void removeIcon(String slot) {
         try 
@@ -171,25 +177,26 @@ public class StatusBarManager {
             final IStatusBarService svc = getService();
             {
                 svc.removeIcon(slot);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
-        } //End block
+        } 
         addTaint(slot.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //final IStatusBarService svc = getService();
-            //if (svc != null) {
-                //svc.removeIcon(slot);
-            //}
-        //} catch (RemoteException ex) {
-            //throw new RuntimeException(ex);
-        //}
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.552 -0400", hash_original_method = "59E45760864584BE81198BD1AADB01C2", hash_generated_method = "C47255F87C65030AF7DC11647901628F")
     public void setIconVisibility(String slot, boolean visible) {
         try 
@@ -197,23 +204,23 @@ public class StatusBarManager {
             final IStatusBarService svc = getService();
             {
                 svc.setIconVisibility(slot, visible);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
-        } //End block
+        } 
         addTaint(slot.getTaint());
         addTaint(visible);
-        // ---------- Original Method ----------
-        //try {
-            //final IStatusBarService svc = getService();
-            //if (svc != null) {
-                //svc.setIconVisibility(slot, visible);
-            //}
-        //} catch (RemoteException ex) {
-            //throw new RuntimeException(ex);
-        //}
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     

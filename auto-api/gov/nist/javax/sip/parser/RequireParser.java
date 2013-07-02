@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
@@ -17,7 +17,7 @@ public class RequireParser extends HeaderParser {
     public  RequireParser(String require) {
         super(require);
         addTaint(require.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class RequireParser extends HeaderParser {
     protected  RequireParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.506 -0400", hash_original_method = "3025739AB5329DC0A390687D4C2BFD5B", hash_generated_method = "702315671FC993D565E11AD2D2A640C3")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1028779979 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1028779979 = null; 
         RequireList requireList = new RequireList();
         dbg_enter("RequireParser.parse");
         try 
@@ -58,20 +59,20 @@ public class RequireParser extends HeaderParser {
                             r.setOptionTag(token.getTokenValue());
                             this.lexer.SPorHT();
                             requireList.add(r);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
             dbg_leave("RequireParser.parse");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1028779979 = requireList;
-        varB4EAC82CA7396A68D541C85D26508E83_1028779979.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1028779979.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1028779979;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

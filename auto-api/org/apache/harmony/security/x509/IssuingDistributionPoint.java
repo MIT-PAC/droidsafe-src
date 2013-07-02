@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.apache.harmony.security.asn1.ASN1Boolean;
@@ -40,12 +40,13 @@ public final class IssuingDistributionPoint extends ExtensionValue {
             ReasonFlags onlySomeReasons) {
         this.distributionPoint = distributionPoint;
         this.onlySomeReasons = onlySomeReasons;
-        // ---------- Original Method ----------
-        //this.distributionPoint = distributionPoint;
-        //this.onlySomeReasons = onlySomeReasons;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static IssuingDistributionPoint decode(byte[] encoding) throws IOException {
         IssuingDistributionPoint idp =
             (IssuingDistributionPoint) ASN1.decode(encoding);
@@ -57,24 +58,24 @@ public final class IssuingDistributionPoint extends ExtensionValue {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.160 -0400", hash_original_method = "03922EAD5E2F9F2AB784075C187D5E70", hash_generated_method = "001164D0F86A35E6C0E014A195A52B2D")
     public void setOnlyContainsUserCerts(boolean onlyContainsUserCerts) {
         this.onlyContainsUserCerts = onlyContainsUserCerts;
-        // ---------- Original Method ----------
-        //this.onlyContainsUserCerts = onlyContainsUserCerts;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.160 -0400", hash_original_method = "6830D99EF8C3DC25A9447803CA3D9DFD", hash_generated_method = "5D96BEC6C002F45CA0C2532E084F39E9")
     public void setOnlyContainsCACerts(boolean onlyContainsCACerts) {
         this.onlyContainsCACerts = onlyContainsCACerts;
-        // ---------- Original Method ----------
-        //this.onlyContainsCACerts = onlyContainsCACerts;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.160 -0400", hash_original_method = "36EDEF780E7094A51B0A764BC2947568", hash_generated_method = "CD3096752BC07691383D6F71ADF7F0E6")
     public void setIndirectCRL(boolean indirectCRL) {
         this.indirectCRL = indirectCRL;
-        // ---------- Original Method ----------
-        //this.indirectCRL = indirectCRL;
+        
+        
     }
 
     
@@ -82,55 +83,57 @@ public final class IssuingDistributionPoint extends ExtensionValue {
     public void setOnlyContainsAttributeCerts(
             boolean onlyContainsAttributeCerts) {
         this.onlyContainsAttributeCerts = onlyContainsAttributeCerts;
-        // ---------- Original Method ----------
-        //this.onlyContainsAttributeCerts = onlyContainsAttributeCerts;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.161 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "D33147B937246085A9D06A07A90233FB")
     @Override
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_442950919 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_442950919;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.161 -0400", hash_original_method = "CFA4D64F052CACDD48400E19E895ABEB", hash_generated_method = "203D38F94547050BB36F7557D99CAFD1")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix).append("Issuing Distribution Point: [\n");
         {
             distributionPoint.dumpValue(sb, "  " + prefix);
-        } //End block
+        } 
         sb.append(prefix).append("  onlyContainsUserCerts: ").append(onlyContainsUserCerts).append('\n');
         sb.append(prefix).append("  onlyContainsCACerts: ").append(onlyContainsCACerts).append('\n');
         {
             onlySomeReasons.dumpValue(sb, prefix + "  ");
-        } //End block
+        } 
         sb.append(prefix).append("  indirectCRL: ").append(indirectCRL).append('\n');
         sb.append(prefix).append("  onlyContainsAttributeCerts: ").append(onlyContainsAttributeCerts).append('\n');
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //sb.append(prefix).append("Issuing Distribution Point: [\n");
-        //if (distributionPoint != null) {
-            //distributionPoint.dumpValue(sb, "  " + prefix);
-        //}
-        //sb.append(prefix).append("  onlyContainsUserCerts: ").append(onlyContainsUserCerts).append('\n');
-        //sb.append(prefix).append("  onlyContainsCACerts: ").append(onlyContainsCACerts).append('\n');
-        //if (onlySomeReasons != null) {
-            //onlySomeReasons.dumpValue(sb, prefix + "  ");
-        //}
-        //sb.append(prefix).append("  indirectCRL: ").append(indirectCRL).append('\n');
-        //sb.append(prefix).append("  onlyContainsAttributeCerts: ").append(onlyContainsAttributeCerts).append('\n');
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -185,7 +188,7 @@ public final class IssuingDistributionPoint extends ExtensionValue {
             values[5] = (idp.onlyContainsAttributeCerts) ? Boolean.TRUE : null;
         }
     };
-    // orphaned legacy method
+    
     protected void getValues(Object object, Object[] values) {
             IssuingDistributionPoint idp = (IssuingDistributionPoint) object;
             values[0] = idp.distributionPoint;
@@ -196,7 +199,7 @@ public final class IssuingDistributionPoint extends ExtensionValue {
             values[5] = (idp.onlyContainsAttributeCerts) ? Boolean.TRUE : null;
         }
     
-    // orphaned legacy method
+    
     protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             IssuingDistributionPoint idp = new IssuingDistributionPoint(

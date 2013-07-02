@@ -1,11 +1,11 @@
 package android.hardware.usb;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -36,12 +36,12 @@ public class UsbInterface implements Parcelable {
         mSubclass = subClass;
         mProtocol = protocol;
         mEndpoints = endpoints;
-        // ---------- Original Method ----------
-        //mId = id;
-        //mClass = Class;
-        //mSubclass = subClass;
-        //mProtocol = protocol;
-        //mEndpoints = endpoints;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -49,8 +49,8 @@ public class UsbInterface implements Parcelable {
     public int getId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_278422975 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_278422975;
-        // ---------- Original Method ----------
-        //return mId;
+        
+        
     }
 
     
@@ -58,8 +58,8 @@ public class UsbInterface implements Parcelable {
     public int getInterfaceClass() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_385677667 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_385677667;
-        // ---------- Original Method ----------
-        //return mClass;
+        
+        
     }
 
     
@@ -67,8 +67,8 @@ public class UsbInterface implements Parcelable {
     public int getInterfaceSubclass() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_872494321 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_872494321;
-        // ---------- Original Method ----------
-        //return mSubclass;
+        
+        
     }
 
     
@@ -76,8 +76,8 @@ public class UsbInterface implements Parcelable {
     public int getInterfaceProtocol() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_136791105 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_136791105;
-        // ---------- Original Method ----------
-        //return mProtocol;
+        
+        
     }
 
     
@@ -85,36 +85,37 @@ public class UsbInterface implements Parcelable {
     public int getEndpointCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_958982457 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_958982457;
-        // ---------- Original Method ----------
-        //return mEndpoints.length;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.412 -0400", hash_original_method = "10BF694D0DC13FB211A1D4B783AFDCB8", hash_generated_method = "AE9EC531BCCFA0520A4E105EBE3BA485")
     public UsbEndpoint getEndpoint(int index) {
-        UsbEndpoint varB4EAC82CA7396A68D541C85D26508E83_197389977 = null; //Variable for return #1
+        UsbEndpoint varB4EAC82CA7396A68D541C85D26508E83_197389977 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_197389977 = (UsbEndpoint)mEndpoints[index];
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_197389977.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_197389977.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_197389977;
-        // ---------- Original Method ----------
-        //return (UsbEndpoint)mEndpoints[index];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.414 -0400", hash_original_method = "7DE8C5BE07836E58A7BC66D5916A69AB", hash_generated_method = "A8FF3481CC5256F83F3EC51569ECBFD1")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_233391511 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_233391511 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_233391511 = "UsbInterface[mId=" + mId + ",mClass=" + mClass +
                 ",mSubclass=" + mSubclass + ",mProtocol=" + mProtocol +
                 ",mEndpoints=" + mEndpoints + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_233391511.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_233391511.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_233391511;
-        // ---------- Original Method ----------
-        //return "UsbInterface[mId=" + mId + ",mClass=" + mClass +
-                //",mSubclass=" + mSubclass + ",mProtocol=" + mProtocol +
-                //",mEndpoints=" + mEndpoints + "]";
+        
+        
+                
+                
     }
 
     
@@ -122,11 +123,12 @@ public class UsbInterface implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_327129201 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_327129201;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.416 -0400", hash_original_method = "F436F428B0571288036EC16237EC67B4", hash_generated_method = "B7C66E9FB57121378E76AEC341D03987")
     public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeInt(mId);
@@ -136,12 +138,12 @@ public class UsbInterface implements Parcelable {
         parcel.writeParcelableArray(mEndpoints, 0);
         addTaint(parcel.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //parcel.writeInt(mId);
-        //parcel.writeInt(mClass);
-        //parcel.writeInt(mSubclass);
-        //parcel.writeInt(mProtocol);
-        //parcel.writeParcelableArray(mEndpoints, 0);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -162,7 +164,7 @@ public class UsbInterface implements Parcelable {
             return new UsbInterface[size];
         }
     };
-    // orphaned legacy method
+    
     public UsbInterface createFromParcel(Parcel in) {
             int id = in.readInt();
             int Class = in.readInt();
@@ -172,7 +174,7 @@ public class UsbInterface implements Parcelable {
             return new UsbInterface(id, Class, subClass, protocol, endpoints);
         }
     
-    // orphaned legacy method
+    
     public UsbInterface[] newArray(int size) {
             return new UsbInterface[size];
         }

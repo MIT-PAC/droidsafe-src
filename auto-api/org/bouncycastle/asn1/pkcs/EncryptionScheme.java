@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.pkcs;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1EncodableVector;
 import org.bouncycastle.asn1.ASN1Sequence;
@@ -24,7 +24,7 @@ public class EncryptionScheme extends AlgorithmIdentifier {
         super(objectId, parameters);
         addTaint(objectId.getTaint());
         addTaint(parameters.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,7 +33,7 @@ public class EncryptionScheme extends AlgorithmIdentifier {
         ASN1Sequence  seq) {
         this((DERObjectIdentifier)seq.getObjectAt(0), seq.getObjectAt(1));
         addTaint(seq.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -52,29 +52,29 @@ public class EncryptionScheme extends AlgorithmIdentifier {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.031 -0400", hash_original_method = "20A4F3D13CF17139753D47801A517EAE", hash_generated_method = "A43C629442A58882FCDF4761461C15A4")
     public DERObject getObject() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1056086661 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1056086661 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1056086661 = (DERObject)getParameters();
-        varB4EAC82CA7396A68D541C85D26508E83_1056086661.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1056086661.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1056086661;
-        // ---------- Original Method ----------
-        //return (DERObject)getParameters();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.032 -0400", hash_original_method = "0A2A11415EF4AC8722D540FA9324533D", hash_generated_method = "2588243B5921124F32C72F1F60C462D2")
     public DERObject getDERObject() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_603052110 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_603052110 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(getObjectId());
         v.add(getParameters());
         varB4EAC82CA7396A68D541C85D26508E83_603052110 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_603052110.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_603052110.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_603052110;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(getObjectId());
-        //v.add(getParameters());
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
     }
 
     

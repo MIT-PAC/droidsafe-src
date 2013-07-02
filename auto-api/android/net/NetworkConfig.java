@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.Log;
 
@@ -39,14 +39,14 @@ public class NetworkConfig {
         restoreTime = Integer.parseInt(fragments[4]);
         dependencyMet = Boolean.parseBoolean(fragments[5]);
         addTaint(init.getTaint());
-        // ---------- Original Method ----------
-        //String fragments[] = init.split(",");
-        //name = fragments[0].trim().toLowerCase();
-        //type = Integer.parseInt(fragments[1]);
-        //radio = Integer.parseInt(fragments[2]);
-        //priority = Integer.parseInt(fragments[3]);
-        //restoreTime = Integer.parseInt(fragments[4]);
-        //dependencyMet = Boolean.parseBoolean(fragments[5]);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -54,8 +54,8 @@ public class NetworkConfig {
     public boolean isDefault() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1361430182 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1361430182;
-        // ---------- Original Method ----------
-        //return (type == radio);
+        
+        
     }
 
     

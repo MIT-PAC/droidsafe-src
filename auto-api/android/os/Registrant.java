@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Handler;
 import android.os.Message;
@@ -28,10 +28,10 @@ public class Registrant {
         refH = new WeakReference(h);
         this.what = what;
         userObj = obj;
-        // ---------- Original Method ----------
-        //refH = new WeakReference(h);
-        //this.what = what;
-        //userObj = obj;
+        
+        
+        
+        
     }
 
     
@@ -39,44 +39,48 @@ public class Registrant {
     public void clear() {
         refH = null;
         userObj = null;
-        // ---------- Original Method ----------
-        //refH = null;
-        //userObj = null;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.032 -0400", hash_original_method = "4409C699F4CAB16C2D504E283EFD3CDE", hash_generated_method = "28D035BF35B005A395534D365D96D57D")
     public void notifyRegistrant() {
         internalNotifyRegistrant (null, null);
-        // ---------- Original Method ----------
-        //internalNotifyRegistrant (null, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.032 -0400", hash_original_method = "64830107363F59A49C8D9CD8F53D1153", hash_generated_method = "46B86220224BBE554C6C21EAF79941A3")
     public void notifyResult(Object result) {
         internalNotifyRegistrant (result, null);
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
-        //internalNotifyRegistrant (result, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.033 -0400", hash_original_method = "3375894D9F21481D987FA847F34F65EF", hash_generated_method = "6889968B02AE2A3512BF312AE25F4B67")
     public void notifyException(Throwable exception) {
         internalNotifyRegistrant (null, exception);
         addTaint(exception.getTaint());
-        // ---------- Original Method ----------
-        //internalNotifyRegistrant (null, exception);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.033 -0400", hash_original_method = "5E7A4559085AA819B0F18D8B5740229E", hash_generated_method = "CD48424D402122C12CA71365CDA1637A")
     public void notifyRegistrant(AsyncResult ar) {
         internalNotifyRegistrant (ar.result, ar.exception);
         addTaint(ar.getTaint());
-        // ---------- Original Method ----------
-        //internalNotifyRegistrant (ar.result, ar.exception);
+        
+        
     }
 
     
@@ -85,89 +89,91 @@ public class Registrant {
         Handler h = getHandler();
         {
             clear();
-        } //End block
+        } 
         {
             Message msg = Message.obtain();
             msg.what = what;
             msg.obj = new AsyncResult(userObj, result, exception);
             h.sendMessage(msg);
-        } //End block
+        } 
         addTaint(result.getTaint());
         addTaint(exception.getTaint());
-        // ---------- Original Method ----------
-        //Handler h = getHandler();
-        //if (h == null) {
-            //clear();
-        //} else {
-            //Message msg = Message.obtain();
-            //msg.what = what;
-            //msg.obj = new AsyncResult(userObj, result, exception);
-            //h.sendMessage(msg);
-        //}
+        
+        
+        
+            
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.034 -0400", hash_original_method = "D348E31FC7F90016E841E35B51E50760", hash_generated_method = "18C6037D0698F82062F84A7C170AF303")
     public Message messageForRegistrant() {
-        Message varB4EAC82CA7396A68D541C85D26508E83_824528238 = null; //Variable for return #1
-        Message varB4EAC82CA7396A68D541C85D26508E83_219832683 = null; //Variable for return #2
+        Message varB4EAC82CA7396A68D541C85D26508E83_824528238 = null; 
+        Message varB4EAC82CA7396A68D541C85D26508E83_219832683 = null; 
         Handler h = getHandler();
         {
             clear();
             varB4EAC82CA7396A68D541C85D26508E83_824528238 = null;
-        } //End block
+        } 
         {
             Message msg = h.obtainMessage();
             msg.what = what;
             msg.obj = userObj;
             varB4EAC82CA7396A68D541C85D26508E83_219832683 = msg;
-        } //End block
-        Message varA7E53CE21691AB073D9660D615818899_273574728; //Final return value
+        } 
+        Message varA7E53CE21691AB073D9660D615818899_273574728; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_273574728 = varB4EAC82CA7396A68D541C85D26508E83_824528238;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_273574728 = varB4EAC82CA7396A68D541C85D26508E83_219832683;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_273574728.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_273574728.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_273574728;
-        // ---------- Original Method ----------
-        //Handler h = getHandler();
-        //if (h == null) {
-            //clear();
-            //return null;
-        //} else {
-            //Message msg = h.obtainMessage();
-            //msg.what = what;
-            //msg.obj = userObj;
-            //return msg;
-        //}
+        
+        
+        
+            
+            
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.035 -0400", hash_original_method = "7FEDB520AB82A5F00001E1B2C02807FF", hash_generated_method = "06988436B24D0E42A27465C722A3945F")
     public Handler getHandler() {
-        Handler varB4EAC82CA7396A68D541C85D26508E83_938251591 = null; //Variable for return #1
-        Handler varB4EAC82CA7396A68D541C85D26508E83_361805942 = null; //Variable for return #2
+        Handler varB4EAC82CA7396A68D541C85D26508E83_938251591 = null; 
+        Handler varB4EAC82CA7396A68D541C85D26508E83_361805942 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_938251591 = null;
         varB4EAC82CA7396A68D541C85D26508E83_361805942 = (Handler) refH.get();
-        Handler varA7E53CE21691AB073D9660D615818899_1438736106; //Final return value
+        Handler varA7E53CE21691AB073D9660D615818899_1438736106; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1438736106 = varB4EAC82CA7396A68D541C85D26508E83_938251591;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1438736106 = varB4EAC82CA7396A68D541C85D26508E83_361805942;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1438736106.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1438736106.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1438736106;
-        // ---------- Original Method ----------
-        //if (refH == null)
-            //return null;
-        //return (Handler) refH.get();
+        
+        
+            
+        
     }
 
     

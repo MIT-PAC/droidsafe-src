@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.hardware.Sensor;
@@ -48,11 +48,11 @@ final class DeviceMotionService implements SensorEventListener {
     public  DeviceMotionService(DeviceMotionAndOrientationManager manager, Context context) {
         mManager = manager;
         mContext = context;
-        // ---------- Original Method ----------
-        //mManager = manager;
-        //assert(mManager != null);
-        //mContext = context;
-        //assert(mContext != null);
+        
+        
+        
+        
+        
     }
 
     
@@ -60,9 +60,9 @@ final class DeviceMotionService implements SensorEventListener {
     public void start() {
         mIsRunning = true;
         registerForSensor();
-        // ---------- Original Method ----------
-        //mIsRunning = true;
-        //registerForSensor();
+        
+        
+        
     }
 
     
@@ -71,10 +71,10 @@ final class DeviceMotionService implements SensorEventListener {
         mIsRunning = false;
         stopSendingUpdates();
         unregisterFromSensor();
-        // ---------- Original Method ----------
-        //mIsRunning = false;
-        //stopSendingUpdates();
-        //unregisterFromSensor();
+        
+        
+        
+        
     }
 
     
@@ -83,12 +83,12 @@ final class DeviceMotionService implements SensorEventListener {
         {
             stopSendingUpdates();
             unregisterFromSensor();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIsRunning) {
-            //stopSendingUpdates();
-            //unregisterFromSensor();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -96,14 +96,15 @@ final class DeviceMotionService implements SensorEventListener {
     public void resume() {
         {
             registerForSensor();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIsRunning) {
-            //registerForSensor();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.430 -0400", hash_original_method = "CDFAD74C98E46044259B3BCC3613C4C6", hash_generated_method = "0288846C3D574FF8119F8CAFA0EC0B0C")
     private void sendErrorEvent() {
         mHaveSentErrorEvent = true;
@@ -114,32 +115,33 @@ final class DeviceMotionService implements SensorEventListener {
             public void run() {
                 {
                     mManager.onMotionChange(null, null, null, 0.0);
-                } //End block
-                // ---------- Original Method ----------
-                //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-                //if (mIsRunning) {
-                    //mManager.onMotionChange(null, null, null, 0.0);
-                //}
+                } 
+                
+                
+                
+                    
+                
             }
 });
-        // ---------- Original Method ----------
-        //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-        //if (mHaveSentErrorEvent)
-            //return;
-        //mHaveSentErrorEvent = true;
-        //createHandler();
-        //mHandler.post(new Runnable() {
-            //@Override
-            //public void run() {
-                //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-                //if (mIsRunning) {
-                    //mManager.onMotionChange(null, null, null, 0.0);
-                //}
-            //}
-        //});
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.432 -0400", hash_original_method = "9B63FE7EDAA2DFAC9F6DE1381BA682EF", hash_generated_method = "4BA22B2D383730BF62A0527069C298E6")
     private void createHandler() {
         mHandler = new Handler();
@@ -152,31 +154,31 @@ final class DeviceMotionService implements SensorEventListener {
                         INTERVAL_MILLIS);
                 mHandler.postDelayed(mUpdateRunnable, INTERVAL_MILLIS);
                 mHaveSentErrorEvent = false;
-                // ---------- Original Method ----------
-                //assert mIsRunning;
-                //mManager.onMotionChange(new Double(mLastAcceleration[0]),
-                        //new Double(mLastAcceleration[1]), new Double(mLastAcceleration[2]),
-                        //INTERVAL_MILLIS);
-                //mHandler.postDelayed(mUpdateRunnable, INTERVAL_MILLIS);
-                //mHaveSentErrorEvent = false;
+                
+                
+                
+                        
+                        
+                
+                
             }
 };
-        // ---------- Original Method ----------
-        //if (mHandler != null) {
-            //return;
-        //}
-        //mHandler = new Handler();
-        //mUpdateRunnable = new Runnable() {
-            //@Override
-            //public void run() {
-                //assert mIsRunning;
-                //mManager.onMotionChange(new Double(mLastAcceleration[0]),
-                        //new Double(mLastAcceleration[1]), new Double(mLastAcceleration[2]),
-                        //INTERVAL_MILLIS);
-                //mHandler.postDelayed(mUpdateRunnable, INTERVAL_MILLIS);
-                //mHaveSentErrorEvent = false;
-            //}
-        //};
+        
+        
+            
+        
+        
+        
+            
+            
+                
+                
+                        
+                        
+                
+                
+            
+        
     }
 
     
@@ -184,9 +186,9 @@ final class DeviceMotionService implements SensorEventListener {
     private void startSendingUpdates() {
         createHandler();
         mUpdateRunnable.run();
-        // ---------- Original Method ----------
-        //createHandler();
-        //mUpdateRunnable.run();
+        
+        
+        
     }
 
     
@@ -194,9 +196,9 @@ final class DeviceMotionService implements SensorEventListener {
     private void stopSendingUpdates() {
         mHandler.removeCallbacks(mUpdateRunnable);
         mLastAcceleration = null;
-        // ---------- Original Method ----------
-        //mHandler.removeCallbacks(mUpdateRunnable);
-        //mLastAcceleration = null;
+        
+        
+        
     }
 
     
@@ -206,93 +208,96 @@ final class DeviceMotionService implements SensorEventListener {
             boolean var7B71D659CEDC4F674BF637DDEB7E8F23_827691317 = (!registerForAccelerometerSensor());
             {
                 sendErrorEvent();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (!registerForAccelerometerSensor()) {
-            //sendErrorEvent();
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.434 -0400", hash_original_method = "D09B23AC902B5D9C0E49BB52A156F918", hash_generated_method = "FC5F2E2673C35C3953BE0025FD0F744B")
     private SensorManager getSensorManager() {
-        SensorManager varB4EAC82CA7396A68D541C85D26508E83_1204667475 = null; //Variable for return #1
+        SensorManager varB4EAC82CA7396A68D541C85D26508E83_1204667475 = null; 
         {
             mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1204667475 = mSensorManager;
-        varB4EAC82CA7396A68D541C85D26508E83_1204667475.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1204667475.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1204667475;
-        // ---------- Original Method ----------
-        //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-        //if (mSensorManager == null) {
-            //mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
-        //}
-        //return mSensorManager;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.435 -0400", hash_original_method = "132C72132CB3FECC364192FB60290F0C", hash_generated_method = "A7EBD80598C54666AE731D6903235A2B")
     private boolean registerForAccelerometerSensor() {
         List<Sensor> sensors = getSensorManager().getSensorList(Sensor.TYPE_ACCELEROMETER);
         {
             boolean var60EE0D8C32CDAFA59C16DF69FA87513D_116456104 = (sensors.isEmpty());
-        } //End collapsed parenthetic
+        } 
         createHandler();
         boolean var9A009F83A3E9451F0925F7E801D939AA_680765523 = (getSensorManager().registerListener(
                 this, sensors.get(0), SensorManager.SENSOR_DELAY_UI, mHandler));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1619043477 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1619043477;
-        // ---------- Original Method ----------
-        //List<Sensor> sensors = getSensorManager().getSensorList(Sensor.TYPE_ACCELEROMETER);
-        //if (sensors.isEmpty()) {
-            //return false;
-        //}
-        //createHandler();
-        //return getSensorManager().registerListener(
-                //this, sensors.get(0), SensorManager.SENSOR_DELAY_UI, mHandler);
+        
+        
+        
+            
+        
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.435 -0400", hash_original_method = "8F0ED17D95B5480F975ECDA7EDF68357", hash_generated_method = "9047F07B49AB7461A60D1DD86FDABEAE")
     private void unregisterFromSensor() {
         getSensorManager().unregisterListener(this);
-        // ---------- Original Method ----------
-        //getSensorManager().unregisterListener(this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.436 -0400", hash_original_method = "7AFE6EE6D4C15EE2C452A64798BB4D96", hash_generated_method = "240E360E1E20A03EDFCA5AFC5DCCC1C0")
     public void onSensorChanged(SensorEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean firstData = mLastAcceleration == null;
         mLastAcceleration = event.values;
         {
             startSendingUpdates();
-        } //End block
-        // ---------- Original Method ----------
-        //assert(event.values.length == 3);
-        //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-        //assert(event.sensor.getType() == Sensor.TYPE_ACCELEROMETER);
-        //if (!mIsRunning) {
-            //return;
-        //}
-        //boolean firstData = mLastAcceleration == null;
-        //mLastAcceleration = event.values;
-        //if (firstData) {
-            //startSendingUpdates();
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.436 -0400", hash_original_method = "4C77A6863BACF480F39B2826F5CA663C", hash_generated_method = "1A434A1FCBBAC533510C9D8C55877D2F")
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(sensor.getTaint());
         addTaint(accuracy);
-        // ---------- Original Method ----------
-        //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
+        
+        
     }
 
     

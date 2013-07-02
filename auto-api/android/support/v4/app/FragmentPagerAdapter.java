@@ -1,11 +1,11 @@
 package android.support.v4.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
@@ -27,8 +27,8 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.982 -0400", hash_original_method = "0907AC653AA851CA26FCA5C2C0476634", hash_generated_method = "B527D72706B763A256C0CF54E42D3B10")
     public  FragmentPagerAdapter(FragmentManager fm) {
         mFragmentManager = fm;
-        // ---------- Original Method ----------
-        //mFragmentManager = fm;
+        
+        
     }
 
     
@@ -39,62 +39,65 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
     @Override
     public void startUpdate(ViewGroup container) {
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.983 -0400", hash_original_method = "0570BF37939320089381A7FFC8719F89", hash_generated_method = "998FD915CF5BD1E1AAB5239C50AB79BE")
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1699261279 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1699261279 = null; 
         {
             mCurTransaction = mFragmentManager.beginTransaction();
-        } //End block
+        } 
         final long itemId = getItemId(position);
         String name = makeFragmentName(container.getId(), itemId);
         Fragment fragment = mFragmentManager.findFragmentByTag(name);
         {
             mCurTransaction.attach(fragment);
-        } //End block
+        } 
         {
             fragment = getItem(position);
             mCurTransaction.add(container.getId(), fragment,
                     makeFragmentName(container.getId(), itemId));
-        } //End block
+        } 
         {
             fragment.setMenuVisibility(false);
             fragment.setUserVisibleHint(false);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1699261279 = fragment;
         addTaint(container.getTaint());
         addTaint(position);
-        varB4EAC82CA7396A68D541C85D26508E83_1699261279.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1699261279.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1699261279;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.984 -0400", hash_original_method = "721682626C0409D5023CB58AAAA50BDD", hash_generated_method = "F049484B1D7B8BE06490DBF4E10C4E04")
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         {
             mCurTransaction = mFragmentManager.beginTransaction();
-        } //End block
+        } 
         mCurTransaction.detach((Fragment)object);
         addTaint(container.getTaint());
         addTaint(position);
         addTaint(object.getTaint());
-        // ---------- Original Method ----------
-        //if (mCurTransaction == null) {
-            //mCurTransaction = mFragmentManager.beginTransaction();
-        //}
-        //if (DEBUG) Log.v(TAG, "Detaching item #" + getItemId(position) + ": f=" + object
-                //+ " v=" + ((Fragment)object).getView());
-        //mCurTransaction.detach((Fragment)object);
+        
+        
+            
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.985 -0400", hash_original_method = "C523B4C098494E2FCA3311FDB475454B", hash_generated_method = "C20525D3EEA39CC49C821323CEC33BAF")
     @Override
     public void setPrimaryItem(ViewGroup container, int position, Object object) {
@@ -103,32 +106,33 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
             {
                 mCurrentPrimaryItem.setMenuVisibility(false);
                 mCurrentPrimaryItem.setUserVisibleHint(false);
-            } //End block
+            } 
             {
                 fragment.setMenuVisibility(true);
                 fragment.setUserVisibleHint(true);
-            } //End block
+            } 
             mCurrentPrimaryItem = fragment;
-        } //End block
+        } 
         addTaint(container.getTaint());
         addTaint(position);
         addTaint(object.getTaint());
-        // ---------- Original Method ----------
-        //Fragment fragment = (Fragment)object;
-        //if (fragment != mCurrentPrimaryItem) {
-            //if (mCurrentPrimaryItem != null) {
-                //mCurrentPrimaryItem.setMenuVisibility(false);
-                //mCurrentPrimaryItem.setUserVisibleHint(false);
-            //}
-            //if (fragment != null) {
-                //fragment.setMenuVisibility(true);
-                //fragment.setUserVisibleHint(true);
-            //}
-            //mCurrentPrimaryItem = fragment;
-        //}
+        
+        
+        
+            
+                
+                
+            
+            
+                
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.985 -0400", hash_original_method = "82B7432FA4441721C4132291867EEFCE", hash_generated_method = "15FE14EC160C5F3BA84D03661684293C")
     @Override
     public void finishUpdate(ViewGroup container) {
@@ -136,17 +140,18 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
             mCurTransaction.commitAllowingStateLoss();
             mCurTransaction = null;
             mFragmentManager.executePendingTransactions();
-        } //End block
+        } 
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //if (mCurTransaction != null) {
-            //mCurTransaction.commitAllowingStateLoss();
-            //mCurTransaction = null;
-            //mFragmentManager.executePendingTransactions();
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.985 -0400", hash_original_method = "326A6E6DDD52502D387B1D32B8739E1F", hash_generated_method = "53BFC9AF7891D54C0DB87DBAF1958BC3")
     @Override
     public boolean isViewFromObject(View view, Object object) {
@@ -155,20 +160,20 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
         addTaint(object.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1465307014 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1465307014;
-        // ---------- Original Method ----------
-        //return ((Fragment)object).getView() == view;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.986 -0400", hash_original_method = "9C10790C9B509FF6855ECD7BB4443BBC", hash_generated_method = "D349C03AC5240D44F65C535F02E19E3E")
     @Override
     public Parcelable saveState() {
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_954453050 = null; //Variable for return #1
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_954453050 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_954453050 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_954453050.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_954453050.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_954453050;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -177,21 +182,23 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
     public void restoreState(Parcelable state, ClassLoader loader) {
         addTaint(state.getTaint());
         addTaint(loader.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.987 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "C45E0B2287D4FF1A2FEA8980413B0F6B")
     public long getItemId(int position) {
         addTaint(position);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1907092388 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1907092388;
-        // ---------- Original Method ----------
-        //return position;
+        
+        
     }
 
     
-        private static String makeFragmentName(int viewId, long id) {
+        @DSModeled(DSC.SAFE)
+    private static String makeFragmentName(int viewId, long id) {
         return "android:switcher:" + viewId + ":" + id;
     }
 

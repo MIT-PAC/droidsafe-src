@@ -1,11 +1,11 @@
 package org.apache.http.impl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Locale;
 import org.apache.http.HttpStatus;
@@ -15,17 +15,18 @@ public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.710 -0400", hash_original_method = "7E219D4204F52B71BC25A968ECCA9516", hash_generated_method = "B7F389F477620D30D508A0713D2A466A")
     protected  EnglishReasonPhraseCatalog() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.710 -0400", hash_original_method = "4DBCBC4442F2A5E0C839147542392D36", hash_generated_method = "59A5E9808B5BBEF2189C8F48074F849D")
     public String getReason(int status, Locale loc) {
-        String varB4EAC82CA7396A68D541C85D26508E83_698990523 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_698990523 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Unknown category for status code " + status + ".");
-        } //End block
+        } 
         final int category = status / 100;
         final int subcode = status - 100*category;
         String reason = null;
@@ -33,19 +34,19 @@ public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
         varB4EAC82CA7396A68D541C85D26508E83_698990523 = reason;
         addTaint(status);
         addTaint(loc.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_698990523.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_698990523.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_698990523;
-        // ---------- Original Method ----------
-        //if ((status < 100) || (status >= 600)) {
-            //throw new IllegalArgumentException
-                //("Unknown category for status code " + status + ".");
-        //}
-        //final int category = status / 100;
-        //final int subcode  = status - 100*category;
-        //String reason = null;
-        //if (REASON_PHRASES[category].length > subcode)
-            //reason = REASON_PHRASES[category][subcode];
-        //return reason;
+        
+        
+            
+                
+        
+        
+        
+        
+        
+            
+        
     }
 
     

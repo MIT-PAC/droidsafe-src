@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public enum TextAlignment {
@@ -17,6 +17,7 @@ public enum TextAlignment {
     TextAlignment(int value) {
         mValue = value;
     }
+    @DSModeled(DSC.SAFE)
     public static TextAlignment fromInt(int value) {
         for (TextAlignment e : TextAlignment.values()) {
             if (e.mValue == value) {

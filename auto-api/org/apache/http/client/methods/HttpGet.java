@@ -1,11 +1,11 @@
 package org.apache.http.client.methods;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.net.URI;
 
@@ -14,7 +14,7 @@ public class HttpGet extends HttpRequestBase {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.760 -0400", hash_original_method = "5037302FD966B72BDD781660024EF657", hash_generated_method = "8EFE493527A73BE90AE403202B61D198")
     public  HttpGet() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,8 +23,8 @@ public class HttpGet extends HttpRequestBase {
         super();
         setURI(uri);
         addTaint(uri.getTaint());
-        // ---------- Original Method ----------
-        //setURI(uri);
+        
+        
     }
 
     
@@ -33,20 +33,20 @@ public class HttpGet extends HttpRequestBase {
         super();
         setURI(URI.create(uri));
         addTaint(uri.getTaint());
-        // ---------- Original Method ----------
-        //setURI(URI.create(uri));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.761 -0400", hash_original_method = "E4A43B2F65721A683997A037549396C3", hash_generated_method = "E0F00128A7BE4152B623A37BA217E977")
     @Override
     public String getMethod() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1091759483 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1091759483 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1091759483 = METHOD_NAME;
-        varB4EAC82CA7396A68D541C85D26508E83_1091759483.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1091759483.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1091759483;
-        // ---------- Original Method ----------
-        //return METHOD_NAME;
+        
+        
     }
 
     

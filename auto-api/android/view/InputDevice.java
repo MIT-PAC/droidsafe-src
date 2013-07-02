@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -35,10 +35,11 @@ public final class InputDevice implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.978 -0400", hash_original_method = "2C37C35B619B46784669EFC9CA5E5179", hash_generated_method = "93E63FA312CE70DEEBBCD18536A99918")
     private  InputDevice() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InputDevice getDevice(int id) {
         IWindowManager wm = Display.getWindowManager();
         try {
@@ -50,6 +51,7 @@ public final class InputDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int[] getDeviceIds() {
         IWindowManager wm = Display.getWindowManager();
         try {
@@ -65,19 +67,19 @@ public final class InputDevice implements Parcelable {
     public int getId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2102397920 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2102397920;
-        // ---------- Original Method ----------
-        //return mId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.979 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "0E67F56F311741BE1CB7BDC5392DB12B")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_956773543 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_956773543 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_956773543 = mName;
-        varB4EAC82CA7396A68D541C85D26508E83_956773543.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_956773543.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_956773543;
-        // ---------- Original Method ----------
-        //return mName;
+        
+        
     }
 
     
@@ -85,8 +87,8 @@ public final class InputDevice implements Parcelable {
     public int getSources() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_779586383 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_779586383;
-        // ---------- Original Method ----------
-        //return mSources;
+        
+        
     }
 
     
@@ -94,37 +96,39 @@ public final class InputDevice implements Parcelable {
     public int getKeyboardType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_47587733 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_47587733;
-        // ---------- Original Method ----------
-        //return mKeyboardType;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.980 -0400", hash_original_method = "88E280A067EB975F01B9806455B5FBF9", hash_generated_method = "6ADCFF795F615B374EB4043BFF6F70E7")
     public KeyCharacterMap getKeyCharacterMap() {
-        KeyCharacterMap varB4EAC82CA7396A68D541C85D26508E83_2103783872 = null; //Variable for return #1
+        KeyCharacterMap varB4EAC82CA7396A68D541C85D26508E83_2103783872 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2103783872 = KeyCharacterMap.load(mId);
-        varB4EAC82CA7396A68D541C85D26508E83_2103783872.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2103783872.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2103783872;
-        // ---------- Original Method ----------
-        //return KeyCharacterMap.load(mId);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.981 -0400", hash_original_method = "6E63969CFD2DFD594C82531499F7DA54", hash_generated_method = "C2BADEC57E99293C4440D995E5895D73")
      String getKeyCharacterMapFile() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1801815941 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1801815941 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1801815941 = mKeyCharacterMapFile;
-        varB4EAC82CA7396A68D541C85D26508E83_1801815941.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1801815941.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1801815941;
-        // ---------- Original Method ----------
-        //return mKeyCharacterMapFile;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.982 -0400", hash_original_method = "496E5C96705FE1519429C9151F8650BC", hash_generated_method = "BF0508C891C629E9F1EB47E3CB30BEF0")
     public MotionRange getMotionRange(int axis) {
-        MotionRange varB4EAC82CA7396A68D541C85D26508E83_277562572 = null; //Variable for return #1
-        MotionRange varB4EAC82CA7396A68D541C85D26508E83_1361047582 = null; //Variable for return #2
+        MotionRange varB4EAC82CA7396A68D541C85D26508E83_277562572 = null; 
+        MotionRange varB4EAC82CA7396A68D541C85D26508E83_1361047582 = null; 
         final int numRanges = mMotionRanges.size();
         {
             int i = 0;
@@ -132,38 +136,39 @@ public final class InputDevice implements Parcelable {
                 final MotionRange range = mMotionRanges.get(i);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_277562572 = range;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1361047582 = null;
         addTaint(axis);
-        MotionRange varA7E53CE21691AB073D9660D615818899_2128450923; //Final return value
+        MotionRange varA7E53CE21691AB073D9660D615818899_2128450923; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2128450923 = varB4EAC82CA7396A68D541C85D26508E83_277562572;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2128450923 = varB4EAC82CA7396A68D541C85D26508E83_1361047582;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2128450923.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2128450923.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2128450923;
-        // ---------- Original Method ----------
-        //final int numRanges = mMotionRanges.size();
-        //for (int i = 0; i < numRanges; i++) {
-            //final MotionRange range = mMotionRanges.get(i);
-            //if (range.mAxis == axis) {
-                //return range;
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.983 -0400", hash_original_method = "2F158E6F6F2CA810A33FC3C995F22831", hash_generated_method = "F2C59B25158D1FE282BEBEC0E102828A")
     public MotionRange getMotionRange(int axis, int source) {
-        MotionRange varB4EAC82CA7396A68D541C85D26508E83_2055495367 = null; //Variable for return #1
-        MotionRange varB4EAC82CA7396A68D541C85D26508E83_1415159400 = null; //Variable for return #2
+        MotionRange varB4EAC82CA7396A68D541C85D26508E83_2055495367 = null; 
+        MotionRange varB4EAC82CA7396A68D541C85D26508E83_1415159400 = null; 
         final int numRanges = mMotionRanges.size();
         {
             int i = 0;
@@ -171,46 +176,48 @@ public final class InputDevice implements Parcelable {
                 final MotionRange range = mMotionRanges.get(i);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_2055495367 = range;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1415159400 = null;
         addTaint(axis);
         addTaint(source);
-        MotionRange varA7E53CE21691AB073D9660D615818899_708767507; //Final return value
+        MotionRange varA7E53CE21691AB073D9660D615818899_708767507; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_708767507 = varB4EAC82CA7396A68D541C85D26508E83_2055495367;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_708767507 = varB4EAC82CA7396A68D541C85D26508E83_1415159400;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_708767507.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_708767507.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_708767507;
-        // ---------- Original Method ----------
-        //final int numRanges = mMotionRanges.size();
-        //for (int i = 0; i < numRanges; i++) {
-            //final MotionRange range = mMotionRanges.get(i);
-            //if (range.mAxis == axis && range.mSource == source) {
-                //return range;
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.984 -0400", hash_original_method = "8F0147E430687E8511683E1D47819832", hash_generated_method = "ABE157A0A0C040481F9B93433F99511F")
     public List<MotionRange> getMotionRanges() {
-        List<MotionRange> varB4EAC82CA7396A68D541C85D26508E83_1113030647 = null; //Variable for return #1
+        List<MotionRange> varB4EAC82CA7396A68D541C85D26508E83_1113030647 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1113030647 = mMotionRanges;
-        varB4EAC82CA7396A68D541C85D26508E83_1113030647.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1113030647.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1113030647;
-        // ---------- Original Method ----------
-        //return mMotionRanges;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.985 -0400", hash_original_method = "F938DEDD59851FE8B4D63705E085118B", hash_generated_method = "A7B1006F6BA450A99A55035280FEF73A")
     private void addMotionRange(int axis, int source,
             float min, float max, float flat, float fuzz) {
@@ -221,11 +228,12 @@ public final class InputDevice implements Parcelable {
         addTaint(max);
         addTaint(flat);
         addTaint(fuzz);
-        // ---------- Original Method ----------
-        //mMotionRanges.add(new MotionRange(axis, source, min, max, flat, fuzz));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.985 -0400", hash_original_method = "66E89B3285A9850971D96BAD9F2BB44F", hash_generated_method = "849DD616D15F71B3CC3FC372AAB4987F")
     private void readFromParcel(Parcel in) {
         mId = in.readInt();
@@ -237,24 +245,25 @@ public final class InputDevice implements Parcelable {
             int axis = in.readInt();
             addMotionRange(axis, in.readInt(),
                     in.readFloat(), in.readFloat(), in.readFloat(), in.readFloat());
-        } //End block
-        // ---------- Original Method ----------
-        //mId = in.readInt();
-        //mName = in.readString();
-        //mSources = in.readInt();
-        //mKeyboardType = in.readInt();
-        //mKeyCharacterMapFile = in.readString();
-        //for (;;) {
-            //int axis = in.readInt();
-            //if (axis < 0) {
-                //break;
-            //}
-            //addMotionRange(axis, in.readInt(),
-                    //in.readFloat(), in.readFloat(), in.readFloat(), in.readFloat());
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.986 -0400", hash_original_method = "91853B6BABA9CBC4F027C3C314DDF153", hash_generated_method = "E28A43D39569CE697EB76284BD97E828")
     @Override
     public void writeToParcel(Parcel out, int flags) {
@@ -274,28 +283,28 @@ public final class InputDevice implements Parcelable {
                 out.writeFloat(range.mMax);
                 out.writeFloat(range.mFlat);
                 out.writeFloat(range.mFuzz);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         out.writeInt(-1);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeInt(mId);
-        //out.writeString(mName);
-        //out.writeInt(mSources);
-        //out.writeInt(mKeyboardType);
-        //out.writeString(mKeyCharacterMapFile);
-        //final int numRanges = mMotionRanges.size();
-        //for (int i = 0; i < numRanges; i++) {
-            //MotionRange range = mMotionRanges.get(i);
-            //out.writeInt(range.mAxis);
-            //out.writeInt(range.mSource);
-            //out.writeFloat(range.mMin);
-            //out.writeFloat(range.mMax);
-            //out.writeFloat(range.mFlat);
-            //out.writeFloat(range.mFuzz);
-        //}
-        //out.writeInt(-1);
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -304,27 +313,28 @@ public final class InputDevice implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1527735453 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1527735453;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.988 -0400", hash_original_method = "9F735BD3745C12E449D13E0D45FB54C8", hash_generated_method = "3B0B2B46AF2D28B7D73F0E4EBF28B741")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_33638546 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_33638546 = null; 
         StringBuilder description = new StringBuilder();
         description.append("Input Device ").append(mId).append(": ").append(mName).append("\n");
         description.append("  Keyboard Type: ");
-        //Begin case KEYBOARD_TYPE_NONE 
+        
         description.append("none");
-        //End case KEYBOARD_TYPE_NONE 
-        //Begin case KEYBOARD_TYPE_NON_ALPHABETIC 
+        
+        
         description.append("non-alphabetic");
-        //End case KEYBOARD_TYPE_NON_ALPHABETIC 
-        //Begin case KEYBOARD_TYPE_ALPHABETIC 
+        
+        
         description.append("alphabetic");
-        //End case KEYBOARD_TYPE_ALPHABETIC 
+        
         description.append("\n");
         description.append("  Key Character Map: ").append(mKeyCharacterMapFile).append("\n");
         description.append("  Sources: 0x").append(Integer.toHexString(mSources)).append(" (");
@@ -350,31 +360,32 @@ public final class InputDevice implements Parcelable {
                 description.append(" flat=").append(range.mFlat);
                 description.append(" fuzz=").append(range.mFuzz);
                 description.append("\n");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_33638546 = description.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_33638546.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_33638546.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_33638546;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.989 -0400", hash_original_method = "C8D7AE07A3174BF8CEBA0E0E2EC288B0", hash_generated_method = "969A62E89D565AE9E26E67CB0D71270B")
     private void appendSourceDescriptionIfApplicable(StringBuilder description, int source,
             String sourceName) {
         {
             description.append(" ");
             description.append(sourceName);
-        } //End block
+        } 
         addTaint(description.getTaint());
         addTaint(source);
         addTaint(sourceName.getTaint());
-        // ---------- Original Method ----------
-        //if ((mSources & source) == source) {
-            //description.append(" ");
-            //description.append(sourceName);
-        //}
+        
+        
+            
+            
+        
     }
 
     
@@ -406,13 +417,13 @@ public final class InputDevice implements Parcelable {
             mMax = max;
             mFlat = flat;
             mFuzz = fuzz;
-            // ---------- Original Method ----------
-            //mAxis = axis;
-            //mSource = source;
-            //mMin = min;
-            //mMax = max;
-            //mFlat = flat;
-            //mFuzz = fuzz;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -420,8 +431,8 @@ public final class InputDevice implements Parcelable {
         public int getAxis() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_757226971 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_757226971;
-            // ---------- Original Method ----------
-            //return mAxis;
+            
+            
         }
 
         
@@ -429,8 +440,8 @@ public final class InputDevice implements Parcelable {
         public int getSource() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1726154920 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1726154920;
-            // ---------- Original Method ----------
-            //return mSource;
+            
+            
         }
 
         
@@ -438,8 +449,8 @@ public final class InputDevice implements Parcelable {
         public float getMin() {
             float var546ADE640B6EDFBC8A086EF31347E768_176742219 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_176742219;
-            // ---------- Original Method ----------
-            //return mMin;
+            
+            
         }
 
         
@@ -447,8 +458,8 @@ public final class InputDevice implements Parcelable {
         public float getMax() {
             float var546ADE640B6EDFBC8A086EF31347E768_1290210832 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1290210832;
-            // ---------- Original Method ----------
-            //return mMax;
+            
+            
         }
 
         
@@ -456,8 +467,8 @@ public final class InputDevice implements Parcelable {
         public float getRange() {
             float var546ADE640B6EDFBC8A086EF31347E768_1706931582 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1706931582;
-            // ---------- Original Method ----------
-            //return mMax - mMin;
+            
+            
         }
 
         
@@ -465,8 +476,8 @@ public final class InputDevice implements Parcelable {
         public float getFlat() {
             float var546ADE640B6EDFBC8A086EF31347E768_570128515 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_570128515;
-            // ---------- Original Method ----------
-            //return mFlat;
+            
+            
         }
 
         
@@ -474,8 +485,8 @@ public final class InputDevice implements Parcelable {
         public float getFuzz() {
             float var546ADE640B6EDFBC8A086EF31347E768_2034964047 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_2034964047;
-            // ---------- Original Method ----------
-            //return mFuzz;
+            
+            
         }
 
         
@@ -593,14 +604,14 @@ public final class InputDevice implements Parcelable {
             return new InputDevice[size];
         }
     };
-    // orphaned legacy method
+    
     public InputDevice createFromParcel(Parcel in) {
             InputDevice result = new InputDevice();
             result.readFromParcel(in);
             return result;
         }
     
-    // orphaned legacy method
+    
     public InputDevice[] newArray(int size) {
             return new InputDevice[size];
         }

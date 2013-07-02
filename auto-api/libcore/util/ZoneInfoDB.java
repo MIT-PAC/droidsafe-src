@@ -1,11 +1,11 @@
 package libcore.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -27,10 +27,11 @@ public final class ZoneInfoDB {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.107 -0400", hash_original_method = "6AD30DC678AA79198B9A535BC6352D82", hash_generated_method = "F186C26C76B663EC1F34BF428D4B8EAF")
     private  ZoneInfoDB() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String readVersion() {
         try {
             byte[] bytes = IoUtils.readFileAsByteArray(ZONE_DIRECTORY_NAME + "zoneinfo.version");
@@ -41,6 +42,7 @@ public final class ZoneInfoDB {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static MemoryMappedFile mapData() {
         try {
             return MemoryMappedFile.mmapRO(ZONE_FILE_NAME);
@@ -50,6 +52,7 @@ public final class ZoneInfoDB {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void readIndex() {
         MemoryMappedFile mappedFile = null;
         try {
@@ -63,6 +66,7 @@ public final class ZoneInfoDB {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void readIndex(MemoryMappedFile mappedFile) throws ErrnoException, IOException {
         BufferIterator it = mappedFile.bigEndianIterator();
         final int SIZEOF_TZNAME = 40;
@@ -99,6 +103,7 @@ public final class ZoneInfoDB {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static TimeZone makeTimeZone(String id) throws IOException {
         int index = Arrays.binarySearch(ids, id);
         if (index < 0) {
@@ -128,11 +133,13 @@ public final class ZoneInfoDB {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] getAvailableIDs() {
         return ids.clone();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] getAvailableIDs(int rawOffset) {
         List<String> matches = new ArrayList<String>();
         for (int i = 0, end = rawUtcOffsets.length; i < end; i++) {
@@ -144,6 +151,7 @@ public final class ZoneInfoDB {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static TimeZone getSystemDefault() {
         synchronized (LOCK) {
             TimezoneGetter tzGetter = TimezoneGetter.getInstance();
@@ -159,6 +167,7 @@ public final class ZoneInfoDB {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static TimeZone getTimeZone(String id) {
         if (id == null) {
             return null;

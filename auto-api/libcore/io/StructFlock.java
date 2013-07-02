@@ -1,11 +1,11 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class StructFlock {
@@ -28,7 +28,7 @@ public final class StructFlock {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.476 -0400", hash_original_method = "DFA63A134B73478BDD4F5CF409821F5F", hash_generated_method = "DFA63A134B73478BDD4F5CF409821F5F")
     public StructFlock ()
     {
-        //Synthesized constructor
+        
     }
 
 

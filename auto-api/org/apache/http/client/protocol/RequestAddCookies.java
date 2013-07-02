@@ -1,11 +1,11 @@
 package org.apache.http.client.protocol;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.net.URI;
@@ -39,7 +39,7 @@ public class RequestAddCookies implements HttpRequestInterceptor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.825 -0400", hash_original_method = "33F7F2F89F06A1D5C3C4E627DB5C44E6", hash_generated_method = "FD33866982A2765D2C23205A551EF459")
     public  RequestAddCookies() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -47,57 +47,57 @@ public class RequestAddCookies implements HttpRequestInterceptor {
     public void process(final HttpRequest request, final HttpContext context) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
-        } //End block
+        } 
         CookieStore cookieStore = (CookieStore) context.getAttribute(
                 ClientContext.COOKIE_STORE);
         {
             this.log.info("Cookie store not available in HTTP context");
-        } //End block
+        } 
         CookieSpecRegistry registry = (CookieSpecRegistry) context.getAttribute(
                 ClientContext.COOKIESPEC_REGISTRY);
         {
             this.log.info("CookieSpec registry not available in HTTP context");
-        } //End block
+        } 
         HttpHost targetHost = (HttpHost) context.getAttribute(
                 ExecutionContext.HTTP_TARGET_HOST);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Target host not specified in HTTP context");
-        } //End block
+        } 
         ManagedClientConnection conn = (ManagedClientConnection) context.getAttribute(
                 ExecutionContext.HTTP_CONNECTION);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Client connection not specified in HTTP context");
-        } //End block
+        } 
         String policy = HttpClientParams.getCookiePolicy(request.getParams());
         {
             boolean var2083B5DFA3893791124BEF94A917A00D_1866643485 = (this.log.isDebugEnabled());
             {
                 this.log.debug("CookieSpec selected: " + policy);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         URI requestURI;
         {
             requestURI = ((HttpUriRequest) request).getURI();
-        } //End block
+        } 
         {
             try 
             {
                 requestURI = new URI(request.getRequestLine().getUri());
-            } //End block
+            } 
             catch (URISyntaxException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Invalid request URI: " + 
                         request.getRequestLine().getUri(), ex);
-            } //End block
-        } //End block
+            } 
+        } 
         String hostName = targetHost.getHostName();
         int port = targetHost.getPort();
         {
             port = conn.getRemotePort();
-        } //End block
+        } 
         CookieOrigin cookieOrigin = new CookieOrigin(
                 hostName, 
                 port, 
@@ -118,13 +118,13 @@ public class RequestAddCookies implements HttpRequestInterceptor {
                             boolean var77FE74E3FD18153DC8BA47A287E94E9C_397602013 = (this.log.isDebugEnabled());
                             {
                                 this.log.debug("Cookie " + cookie + " match " + cookieOrigin);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         matchedCookies.add(cookie);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var39BCE6116D6320BA679FCA2D20CAA501_782639937 = (!matchedCookies.isEmpty());
             {
@@ -135,10 +135,10 @@ public class RequestAddCookies implements HttpRequestInterceptor {
                     Header header = varEB4B2371BC0CCACE92E0AF8B1282EFFC_2140194923.next();
                     {
                         request.addHeader(header);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         int ver = cookieSpec.getVersion();
         {
             boolean needVersionHeader = false;
@@ -151,23 +151,23 @@ public class RequestAddCookies implements HttpRequestInterceptor {
                         boolean var58174ECE9271A4B92BFA8ED180513081_570694318 = (ver != cookie.getVersion());
                         {
                             needVersionHeader = true;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             {
                 Header header = cookieSpec.getVersionHeader();
                 {
                     request.addHeader(header);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         context.setAttribute(ClientContext.COOKIE_SPEC, cookieSpec);
         context.setAttribute(ClientContext.COOKIE_ORIGIN, cookieOrigin);
         addTaint(request.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

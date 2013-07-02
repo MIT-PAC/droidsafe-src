@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -35,7 +35,7 @@ public abstract class Context {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.248 -0400", hash_original_method = "2A0E6F151D2B53080D0338EEFD11F93E", hash_generated_method = "2A0E6F151D2B53080D0338EEFD11F93E")
     public Context ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -57,59 +57,61 @@ public abstract class Context {
     public abstract Context getApplicationContext();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.254 -0400", hash_original_method = "CA41FDFA6BB6EC9A7DA4C7864F293E89", hash_generated_method = "92E68B7DB9E84ADA875EC290914A1714")
     public void registerComponentCallbacks(ComponentCallbacks callback) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         getApplicationContext().registerComponentCallbacks(callback);
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //getApplicationContext().registerComponentCallbacks(callback);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.255 -0400", hash_original_method = "494D7366CDA5CBFD506341B295742C11", hash_generated_method = "19DD6BD87BC129A8C54F691EC8D54853")
     public void unregisterComponentCallbacks(ComponentCallbacks callback) {
         getApplicationContext().unregisterComponentCallbacks(callback);
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //getApplicationContext().unregisterComponentCallbacks(callback);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.257 -0400", hash_original_method = "3F649A13E84C6501035126B3FEE231F4", hash_generated_method = "A68B2D7644760A9C7BF731404D03DBC9")
     public final CharSequence getText(int resId) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_764309444 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_764309444 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_764309444 = getResources().getText(resId);
         addTaint(resId);
-        varB4EAC82CA7396A68D541C85D26508E83_764309444.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_764309444.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_764309444;
-        // ---------- Original Method ----------
-        //return getResources().getText(resId);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.262 -0400", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "717BCE44F98A0E5F9E6E08CF7772E3DC")
     public final String getString(int resId) {
-        String varB4EAC82CA7396A68D541C85D26508E83_667407875 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_667407875 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_667407875 = getResources().getString(resId);
         addTaint(resId);
-        varB4EAC82CA7396A68D541C85D26508E83_667407875.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_667407875.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_667407875;
-        // ---------- Original Method ----------
-        //return getResources().getString(resId);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.265 -0400", hash_original_method = "524F00C5C13CBD3BD0D5C512A4C12294", hash_generated_method = "3161F99BB1D76C509EEEAC68C995A214")
     public final String getString(int resId, Object... formatArgs) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1100829737 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1100829737 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1100829737 = getResources().getString(resId, formatArgs);
         addTaint(resId);
         addTaint(formatArgs[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1100829737.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1100829737.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1100829737;
-        // ---------- Original Method ----------
-        //return getResources().getString(resId, formatArgs);
+        
+        
     }
 
     
@@ -120,8 +122,8 @@ public abstract class Context {
     public int getThemeResId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273798573 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273798573;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -131,59 +133,59 @@ public abstract class Context {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.273 -0400", hash_original_method = "FF26021DC793B4DE3C0383ED66D7E1E8", hash_generated_method = "307CF2B12768BF56F089D7B8A7B8BFEA")
     public final TypedArray obtainStyledAttributes(
             int[] attrs) {
-        TypedArray varB4EAC82CA7396A68D541C85D26508E83_2088804895 = null; //Variable for return #1
+        TypedArray varB4EAC82CA7396A68D541C85D26508E83_2088804895 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2088804895 = getTheme().obtainStyledAttributes(attrs);
         addTaint(attrs[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_2088804895.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2088804895.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2088804895;
-        // ---------- Original Method ----------
-        //return getTheme().obtainStyledAttributes(attrs);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.274 -0400", hash_original_method = "C05CBF641E41D370531BE7FED84BE5CE", hash_generated_method = "3D34E9CB3FA365F9E2BF894C3DD0BA82")
     public final TypedArray obtainStyledAttributes(
             int resid, int[] attrs) throws Resources.NotFoundException {
-        TypedArray varB4EAC82CA7396A68D541C85D26508E83_1839342471 = null; //Variable for return #1
+        TypedArray varB4EAC82CA7396A68D541C85D26508E83_1839342471 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1839342471 = getTheme().obtainStyledAttributes(resid, attrs);
         addTaint(resid);
         addTaint(attrs[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_1839342471.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1839342471.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1839342471;
-        // ---------- Original Method ----------
-        //return getTheme().obtainStyledAttributes(resid, attrs);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.275 -0400", hash_original_method = "C594E5E7DCFBB517BAAED03BB3D45896", hash_generated_method = "90939D4C2FE0CA9BB1507C5AF6FD0E7D")
     public final TypedArray obtainStyledAttributes(
             AttributeSet set, int[] attrs) {
-        TypedArray varB4EAC82CA7396A68D541C85D26508E83_1319485940 = null; //Variable for return #1
+        TypedArray varB4EAC82CA7396A68D541C85D26508E83_1319485940 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1319485940 = getTheme().obtainStyledAttributes(set, attrs, 0, 0);
         addTaint(set.getTaint());
         addTaint(attrs[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_1319485940.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1319485940.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1319485940;
-        // ---------- Original Method ----------
-        //return getTheme().obtainStyledAttributes(set, attrs, 0, 0);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:23.275 -0400", hash_original_method = "23F3A3F4901D9D1C9DD21EEAA884561D", hash_generated_method = "278E4CC13E9742A7C637F4211E22B4D8")
     public final TypedArray obtainStyledAttributes(
             AttributeSet set, int[] attrs, int defStyleAttr, int defStyleRes) {
-        TypedArray varB4EAC82CA7396A68D541C85D26508E83_367386728 = null; //Variable for return #1
+        TypedArray varB4EAC82CA7396A68D541C85D26508E83_367386728 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_367386728 = getTheme().obtainStyledAttributes(
             set, attrs, defStyleAttr, defStyleRes);
         addTaint(set.getTaint());
         addTaint(attrs[0]);
         addTaint(defStyleAttr);
         addTaint(defStyleRes);
-        varB4EAC82CA7396A68D541C85D26508E83_367386728.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_367386728.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_367386728;
-        // ---------- Original Method ----------
-        //return getTheme().obtainStyledAttributes(
-            //set, attrs, defStyleAttr, defStyleRes);
+        
+        
+            
     }
 
     
@@ -428,8 +430,8 @@ public abstract void clearWallpaper() throws IOException;
     public boolean isRestricted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_687825251 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_687825251;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     

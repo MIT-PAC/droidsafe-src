@@ -1,11 +1,11 @@
 package org.apache.commons.io.output;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Writer;
 
@@ -13,48 +13,51 @@ public class NullWriter extends Writer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.733 -0400", hash_original_method = "354338F8D39FF6509677FF2A4C707E5F", hash_generated_method = "7D6BE1FF7763717B9EA41AB0FA4006B9")
     public  NullWriter() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.736 -0400", hash_original_method = "9925E1DC093C6BADDE8464868171339B", hash_generated_method = "2BD86875EA31B2B5B0367EDF53A80476")
     @Override
     public Writer append(char c) {
-        Writer varB4EAC82CA7396A68D541C85D26508E83_731516256 = null; //Variable for return #1
+        Writer varB4EAC82CA7396A68D541C85D26508E83_731516256 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_731516256 = this;
         addTaint(c);
-        varB4EAC82CA7396A68D541C85D26508E83_731516256.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_731516256.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_731516256;
-        // ---------- Original Method ----------
-        //return this;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.737 -0400", hash_original_method = "CD2829CDE96B6ED8A5F4CBF7F6F67CA5", hash_generated_method = "5676826879221DAD27CEBCCBE8105F04")
     @Override
     public Writer append(CharSequence csq, int start, int end) {
-        Writer varB4EAC82CA7396A68D541C85D26508E83_273676631 = null; //Variable for return #1
+        Writer varB4EAC82CA7396A68D541C85D26508E83_273676631 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_273676631 = this;
         addTaint(csq.getTaint());
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_273676631.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_273676631.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_273676631;
-        // ---------- Original Method ----------
-        //return this;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.738 -0400", hash_original_method = "FE294A17C0469E68DE350D9B87B2A84C", hash_generated_method = "C015347B1B31E5259DE2E78FD901A189")
     @Override
     public Writer append(CharSequence csq) {
-        Writer varB4EAC82CA7396A68D541C85D26508E83_1356130046 = null; //Variable for return #1
+        Writer varB4EAC82CA7396A68D541C85D26508E83_1356130046 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1356130046 = this;
         addTaint(csq.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1356130046.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1356130046.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1356130046;
-        // ---------- Original Method ----------
-        //return this;
+        
+        
     }
 
     
@@ -62,7 +65,7 @@ public class NullWriter extends Writer {
     @Override
     public void write(int idx) {
         addTaint(idx);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -70,7 +73,7 @@ public class NullWriter extends Writer {
     @Override
     public void write(char[] chr) {
         addTaint(chr[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -80,7 +83,7 @@ public class NullWriter extends Writer {
         addTaint(chr[0]);
         addTaint(st);
         addTaint(end);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -88,7 +91,7 @@ public class NullWriter extends Writer {
     @Override
     public void write(String str) {
         addTaint(str.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -98,21 +101,21 @@ public class NullWriter extends Writer {
         addTaint(str.getTaint());
         addTaint(st);
         addTaint(end);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.740 -0400", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "4A4713C8ADAF7778CF4E4BBDA39355C2")
     @Override
     public void flush() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.740 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
     @Override
     public void close() {
-        // ---------- Original Method ----------
+        
     }
 
     

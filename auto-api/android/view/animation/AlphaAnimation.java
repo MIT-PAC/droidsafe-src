@@ -1,11 +1,11 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -28,12 +28,12 @@ public class AlphaAnimation extends Animation {
         a.recycle();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //TypedArray a =
-            //context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.AlphaAnimation);
-        //mFromAlpha = a.getFloat(com.android.internal.R.styleable.AlphaAnimation_fromAlpha, 1.0f);
-        //mToAlpha = a.getFloat(com.android.internal.R.styleable.AlphaAnimation_toAlpha, 1.0f);
-        //a.recycle();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -41,12 +41,13 @@ public class AlphaAnimation extends Animation {
     public  AlphaAnimation(float fromAlpha, float toAlpha) {
         mFromAlpha = fromAlpha;
         mToAlpha = toAlpha;
-        // ---------- Original Method ----------
-        //mFromAlpha = fromAlpha;
-        //mToAlpha = toAlpha;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.252 -0400", hash_original_method = "C966828EC5DEEE2C5EF9ADFBDC1A50C3", hash_generated_method = "7EDD12F0FCF10477DB494DCE84668B24")
     @Override
     protected void applyTransformation(float interpolatedTime, Transformation t) {
@@ -54,9 +55,9 @@ public class AlphaAnimation extends Animation {
         t.setAlpha(alpha + ((mToAlpha - alpha) * interpolatedTime));
         addTaint(interpolatedTime);
         addTaint(t.getTaint());
-        // ---------- Original Method ----------
-        //final float alpha = mFromAlpha;
-        //t.setAlpha(alpha + ((mToAlpha - alpha) * interpolatedTime));
+        
+        
+        
     }
 
     
@@ -65,8 +66,8 @@ public class AlphaAnimation extends Animation {
     public boolean willChangeTransformationMatrix() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_966129548 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_966129548;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -75,8 +76,8 @@ public class AlphaAnimation extends Animation {
     public boolean willChangeBounds() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2034262812 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2034262812;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -85,8 +86,8 @@ public class AlphaAnimation extends Animation {
     public boolean hasAlpha() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1449929412 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1449929412;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     

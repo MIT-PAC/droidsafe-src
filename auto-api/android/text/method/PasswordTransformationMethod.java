@@ -1,11 +1,11 @@
 package android.text.method;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -27,13 +27,13 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.349 -0400", hash_original_method = "D8EF6B070A80A550C154BD7630CF21E0", hash_generated_method = "D8EF6B070A80A550C154BD7630CF21E0")
     public PasswordTransformationMethod ()
     {
-        //Synthesized constructor
+        
     }
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.350 -0400", hash_original_method = "46C31F1840FDB44A1F40EC87B2DB5960", hash_generated_method = "4771AA5725C9B4E7D0D4347C56D127F2")
     public CharSequence getTransformation(CharSequence source, View view) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_981359392 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_981359392 = null; 
         {
             Spannable sp = (Spannable) source;
             ViewReference[] vr = sp.getSpans(0, sp.length(),
@@ -42,30 +42,30 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
                 int i = 0;
                 {
                     sp.removeSpan(vr[i]);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             removeVisibleSpans(sp);
             sp.setSpan(new ViewReference(view), 0, 0,
                        Spannable.SPAN_POINT_POINT);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_981359392 = new PasswordCharSequence(source);
         addTaint(source.getTaint());
         addTaint(view.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_981359392.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_981359392.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_981359392;
-        // ---------- Original Method ----------
-        //if (source instanceof Spannable) {
-            //Spannable sp = (Spannable) source;
-            //ViewReference[] vr = sp.getSpans(0, sp.length(),
-                                             //ViewReference.class);
-            //for (int i = 0; i < vr.length; i++) {
-                //sp.removeSpan(vr[i]);
-            //}
-            //removeVisibleSpans(sp);
-            //sp.setSpan(new ViewReference(view), 0, 0,
-                       //Spannable.SPAN_POINT_POINT);
-        //}
-        //return new PasswordCharSequence(source);
+        
+        
+            
+            
+                                             
+            
+                
+            
+            
+            
+                       
+        
+        
     }
 
     
@@ -84,14 +84,14 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
         addTaint(start);
         addTaint(count);
         addTaint(after);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.351 -0400", hash_original_method = "E9233B27956FDFC70D77F5557A52BB47", hash_generated_method = "1AA7773B00C3CA80EF00CCBF7D8AD44C")
     public void onTextChanged(CharSequence s, int start,
                               int before, int count) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             Spannable sp = (Spannable) s;
             ViewReference[] vr = sp.getSpans(0, s.length(),
@@ -101,8 +101,8 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
                 int i = 0;
                 {
                     v = vr[i].get();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             int pref = TextKeyListener.getInstance().getPrefs(v.getContext());
             {
                 {
@@ -110,23 +110,23 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
                     {
                         sp.setSpan(new Visible(sp, this), start, start + count,
                                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(s.getTaint());
         addTaint(start);
         addTaint(before);
         addTaint(count);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.352 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "B1E73F6E6A3A9E89AEF9681CB19F89E5")
     public void afterTextChanged(Editable s) {
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -134,25 +134,25 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
     public void onFocusChanged(View view, CharSequence sourceText,
                                boolean focused, int direction,
                                Rect previouslyFocusedRect) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             {
                 Spannable sp = (Spannable) sourceText;
                 removeVisibleSpans(sp);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(view.getTaint());
         addTaint(sourceText.getTaint());
         addTaint(focused);
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
-        // ---------- Original Method ----------
-        //if (!focused) {
-            //if (sourceText instanceof Spannable) {
-                //Spannable sp = (Spannable) sourceText;
-                //removeVisibleSpans(sp);
-            //}
-        //}
+        
+        
+            
+                
+                
+            
+        
     }
 
     
@@ -172,8 +172,8 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.353 -0400", hash_original_method = "4CDD8381D1031BF5EFE2F94225E565AD", hash_generated_method = "FCA0359EE87C92DA7B42CDF7637C2563")
         public  PasswordCharSequence(CharSequence source) {
             mSource = source;
-            // ---------- Original Method ----------
-            //mSource = source;
+            
+            
         }
 
         
@@ -182,8 +182,8 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
             int var2AA1AAF84029D80557A421966334F312_1691387499 = (mSource.length());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1567841780 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1567841780;
-            // ---------- Original Method ----------
-            //return mSource.length();
+            
+            
         }
 
         
@@ -195,7 +195,7 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
                 int en = sp.getSpanEnd(TextKeyListener.ACTIVE);
                 {
                     char var6112E6DEEAE6AD91FDB07D187D2DFF90_871269400 = (mSource.charAt(i));
-                } //End block
+                } 
                 Visible[] visible = sp.getSpans(0, sp.length(), Visible.class);
                 {
                     int a = 0;
@@ -207,45 +207,45 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
                                 en = sp.getSpanEnd(visible[a]);
                                 {
                                     char var7E935A3165243495E0C8BCA90A6554E7_1294931629 = (mSource.charAt(i));
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             addTaint(i);
             char varA87DEB01C5F539E6BDA34829C8EF2368_108919460 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_108919460;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.355 -0400", hash_original_method = "D736D7B90470DFC8C923D4B5D62B4D1D", hash_generated_method = "A5274150F4E7216AD983AF4DC2CC96DA")
         public CharSequence subSequence(int start, int end) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_517238050 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_517238050 = null; 
             char[] buf = new char[end - start];
             getChars(start, end, buf, 0);
             varB4EAC82CA7396A68D541C85D26508E83_517238050 = new String(buf);
             addTaint(start);
             addTaint(end);
-            varB4EAC82CA7396A68D541C85D26508E83_517238050.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_517238050.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_517238050;
-            // ---------- Original Method ----------
-            //char[] buf = new char[end - start];
-            //getChars(start, end, buf, 0);
-            //return new String(buf);
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.355 -0400", hash_original_method = "814020AAFF189164368E5EE6B0F105D9", hash_generated_method = "C2AAE841A4A043D97B9EC2E64ADDF8CE")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_499911609 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_499911609 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_499911609 = subSequence(0, length()).toString();
-            varB4EAC82CA7396A68D541C85D26508E83_499911609.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_499911609.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_499911609;
-            // ---------- Original Method ----------
-            //return subSequence(0, length()).toString();
+            
+            
         }
 
         
@@ -273,11 +273,11 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
                             {
                                 starts[i] = sp.getSpanStart(visible[i]);
                                 ends[i] = sp.getSpanEnd(visible[i]);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 int i = start;
                 {
@@ -288,21 +288,21 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
                             {
                                 {
                                     visible = true;
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
                         {
                             dest[i - start + off] = DOT;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             addTaint(start);
             addTaint(end);
             addTaint(dest[0]);
             addTaint(off);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -323,18 +323,18 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
             mText = sp;
             mTransformer = ptm;
             postAtTime(this, SystemClock.uptimeMillis() + 1500);
-            // ---------- Original Method ----------
-            //mText = sp;
-            //mTransformer = ptm;
-            //postAtTime(this, SystemClock.uptimeMillis() + 1500);
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.357 -0400", hash_original_method = "C8775617BEE64680D27DACE05ECB8A14", hash_generated_method = "CA165B97F3ECA7B262668016C7A9F1A7")
         public void run() {
             mText.removeSpan(this);
-            // ---------- Original Method ----------
-            //mText.removeSpan(this);
+            
+            
         }
 
         
@@ -348,7 +348,7 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
         public  ViewReference(View v) {
             super(v);
             addTaint(v.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

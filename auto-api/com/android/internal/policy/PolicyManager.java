@@ -1,11 +1,11 @@
 package com.android.internal.policy;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.view.FallbackEventHandler;
@@ -18,25 +18,29 @@ public final class PolicyManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.884 -0400", hash_original_method = "8280FBDEA727C0869187AB3F61DD27B1", hash_generated_method = "84C464024E5F34F099B0A60B3B8B9AAB")
     private  PolicyManager() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Window makeNewWindow(Context context) {
         return sPolicy.makeNewWindow(context);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static LayoutInflater makeNewLayoutInflater(Context context) {
         return sPolicy.makeNewLayoutInflater(context);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static WindowManagerPolicy makeNewWindowManager() {
         return sPolicy.makeNewWindowManager();
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static FallbackEventHandler makeNewFallbackEventHandler(Context context) {
         return sPolicy.makeNewFallbackEventHandler(context);
     }

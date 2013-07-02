@@ -1,11 +1,11 @@
 package gov.nist.javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.Via;
 import gov.nist.javax.sip.message.SIPResponse;
@@ -17,7 +17,7 @@ public class Utils implements UtilsExt {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.063 -0400", hash_original_method = "4A92704CBFAAEA8B3C41F62FC777198C", hash_generated_method = "4A92704CBFAAEA8B3C41F62FC777198C")
     public Utils ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -26,6 +26,7 @@ public class Utils implements UtilsExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toHexString(byte b[]) {
         int pos = 0;
         char[] c = new char[b.length * 2];
@@ -37,11 +38,13 @@ public class Utils implements UtilsExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getQuotedString(String str) {
         return '"' + str.replace( "\"", "\\\"" ) + '"';
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static String reduceString(String input) {
         String newString = input.toLowerCase();
         int len = newString.length();
@@ -56,52 +59,56 @@ public class Utils implements UtilsExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.065 -0400", hash_original_method = "8B9CD4355F65A61EBC08146A51CEAFC7", hash_generated_method = "93E246E0AFCD1EFFB92114BD7C395836")
     public synchronized String generateCallIdentifier(String address) {
-        String varB4EAC82CA7396A68D541C85D26508E83_439574135 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_439574135 = null; 
         String date = Long.toString(System.currentTimeMillis() + callIDCounter++
                     + rand.nextLong());
         byte cid[] = digester.digest(date.getBytes());
         String cidString = Utils.toHexString(cid);
         varB4EAC82CA7396A68D541C85D26508E83_439574135 = cidString + "@" + address;
         addTaint(address.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_439574135.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_439574135.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_439574135;
-        // ---------- Original Method ----------
-        //String date = Long.toString(System.currentTimeMillis() + callIDCounter++
-                    //+ rand.nextLong());
-        //byte cid[] = digester.digest(date.getBytes());
-        //String cidString = Utils.toHexString(cid);
-        //return cidString + "@" + address;
+        
+        
+                    
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.065 -0400", hash_original_method = "9AA82EE1A1BEF7CB34AB2EE7CC0970FC", hash_generated_method = "4E2C17A2B75F1F381D160EF4F7ADFADD")
     public synchronized String generateTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1656557872 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1656557872 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1656557872 = Integer.toHexString(rand.nextInt());
-        varB4EAC82CA7396A68D541C85D26508E83_1656557872.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1656557872.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1656557872;
-        // ---------- Original Method ----------
-        //return Integer.toHexString(rand.nextInt());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.066 -0400", hash_original_method = "7AE3A829A02A70B14E30FF17666004A8", hash_generated_method = "6BFD770BDD0364ED1DB497ACD6AB9B72")
     public synchronized String generateBranchId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_90940272 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_90940272 = null; 
         long num = rand.nextLong() + Utils.counter++  + System.currentTimeMillis();
         byte bid[] = digester.digest(Long.toString(num).getBytes());
         varB4EAC82CA7396A68D541C85D26508E83_90940272 = SIPConstants.BRANCH_MAGIC_COOKIE + Utils.toHexString(bid) + this.signature;
-        varB4EAC82CA7396A68D541C85D26508E83_90940272.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_90940272.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_90940272;
-        // ---------- Original Method ----------
-        //long num = rand.nextLong() + Utils.counter++  + System.currentTimeMillis();
-        //byte bid[] = digester.digest(Long.toString(num).getBytes());
-        //return SIPConstants.BRANCH_MAGIC_COOKIE + Utils.toHexString(bid) + this.signature;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:38.066 -0400", hash_original_method = "C81ECDD34C7D54B91D88A9F561BC20EF", hash_generated_method = "A8C55557781CE62A2BD60BF906815F2B")
     public boolean responseBelongsToUs(SIPResponse response) {
         Via topmostVia = response.getTopmostVia();
@@ -110,10 +117,10 @@ public class Utils implements UtilsExt {
         addTaint(response.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1492398706 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1492398706;
-        // ---------- Original Method ----------
-        //Via topmostVia = response.getTopmostVia();
-        //String branch = topmostVia.getBranch();
-        //return branch != null && branch.endsWith(this.signature);
+        
+        
+        
+        
     }
 
     
@@ -122,6 +129,7 @@ public class Utils implements UtilsExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void main(String[] args) {
         HashSet branchIds = new HashSet();
         for (int b = 0; b < 100000; b++) {

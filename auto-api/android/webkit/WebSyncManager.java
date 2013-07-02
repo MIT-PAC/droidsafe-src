@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.Handler;
@@ -39,33 +39,34 @@ abstract class WebSyncManager implements Runnable {
             mSyncThread = new Thread(this);
             mSyncThread.setName(mThreadName);
             mSyncThread.start();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "WebSyncManager can't be created without context");
-        } //End block
-        // ---------- Original Method ----------
-        //mThreadName = name;
-        //if (context != null) {
-            //mDataBase = WebViewDatabase.getInstance(context);
-            //mSyncThread = new Thread(this);
-            //mSyncThread.setName(mThreadName);
-            //mSyncThread.start();
-        //} else {
-            //throw new IllegalStateException(
-                    //"WebSyncManager can't be created without context");
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
+            
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.051 -0400", hash_original_method = "192983167FE22E48CC26A3CAFDDD8D6B", hash_generated_method = "485516C5E5A309F67F3624B095CDFF25")
     protected Object clone() throws CloneNotSupportedException {
     	throw new CloneNotSupportedException("doesn't implement Cloneable");
-        // ---------- Original Method ----------
-        //throw new CloneNotSupportedException("doesn't implement Cloneable");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.052 -0400", hash_original_method = "8834F89660AF74637C8D229EF4878BE6", hash_generated_method = "73546D478E9530AF20B6B6090EA19E86")
     public void run() {
         Looper.prepare();
@@ -75,97 +76,101 @@ abstract class WebSyncManager implements Runnable {
         Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
         mHandler.sendMessageDelayed(msg, SYNC_LATER_INTERVAL);
         Looper.loop();
-        // ---------- Original Method ----------
-        //Looper.prepare();
-        //mHandler = new SyncHandler();
-        //onSyncInit();
-        //Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-        //Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
-        //mHandler.sendMessageDelayed(msg, SYNC_LATER_INTERVAL);
-        //Looper.loop();
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.053 -0400", hash_original_method = "51D4EC34A270685406E251162F5D8313", hash_generated_method = "FFDF0367E84A9B471942E36965BA3EBE")
     public void sync() {
         mHandler.removeMessages(SYNC_MESSAGE);
         Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
         mHandler.sendMessageDelayed(msg, SYNC_NOW_INTERVAL);
-        // ---------- Original Method ----------
-        //if (DebugFlags.WEB_SYNC_MANAGER) {
-            //Log.v(LOGTAG, "*** WebSyncManager sync ***");
-        //}
-        //if (mHandler == null) {
-            //return;
-        //}
-        //mHandler.removeMessages(SYNC_MESSAGE);
-        //Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
-        //mHandler.sendMessageDelayed(msg, SYNC_NOW_INTERVAL);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.053 -0400", hash_original_method = "84BE51CDF1BC4F6FA0DB81680F35DEC3", hash_generated_method = "1503914F9B1F0CAF52216AB89E06F99C")
     public void resetSync() {
         mHandler.removeMessages(SYNC_MESSAGE);
         Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
         mHandler.sendMessageDelayed(msg, SYNC_LATER_INTERVAL);
-        // ---------- Original Method ----------
-        //if (DebugFlags.WEB_SYNC_MANAGER) {
-            //Log.v(LOGTAG, "*** WebSyncManager resetSync ***");
-        //}
-        //if (mHandler == null) {
-            //return;
-        //}
-        //mHandler.removeMessages(SYNC_MESSAGE);
-        //Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
-        //mHandler.sendMessageDelayed(msg, SYNC_LATER_INTERVAL);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.053 -0400", hash_original_method = "2AEDBC8F7C27D5B102C45AFA67E1CB2E", hash_generated_method = "60268EC4135DD9EB3E7C80A716374E63")
     public void startSync() {
         {
             Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
             mHandler.sendMessageDelayed(msg, SYNC_LATER_INTERVAL);
-        } //End block
-        // ---------- Original Method ----------
-        //if (DebugFlags.WEB_SYNC_MANAGER) {
-            //Log.v(LOGTAG, "***  WebSyncManager startSync ***, Ref count:" + 
-                    //mStartSyncRefCount);
-        //}
-        //if (mHandler == null) {
-            //return;
-        //}
-        //if (++mStartSyncRefCount == 1) {
-            //Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
-            //mHandler.sendMessageDelayed(msg, SYNC_LATER_INTERVAL);
-        //}
+        } 
+        
+        
+            
+                    
+        
+        
+            
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.054 -0400", hash_original_method = "884F3EA0F4676AB73E893C1BBE34114E", hash_generated_method = "3BFD5379371D4F387D1F4760CB0D417F")
     public void stopSync() {
         {
             mHandler.removeMessages(SYNC_MESSAGE);
-        } //End block
-        // ---------- Original Method ----------
-        //if (DebugFlags.WEB_SYNC_MANAGER) {
-            //Log.v(LOGTAG, "*** WebSyncManager stopSync ***, Ref count:" + 
-                    //mStartSyncRefCount);
-        //}
-        //if (mHandler == null) {
-            //return;
-        //}
-        //if (--mStartSyncRefCount == 0) {
-            //mHandler.removeMessages(SYNC_MESSAGE);
-        //}
+        } 
+        
+        
+            
+                    
+        
+        
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.054 -0400", hash_original_method = "E2DCC4A23007ACC5EB483532AA9CED02", hash_generated_method = "39287E7B275BD495C704BF01DE9A8034")
     protected void onSyncInit() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
@@ -177,7 +182,7 @@ abstract class WebSyncManager implements Runnable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.055 -0400", hash_original_method = "A501FFC6AE70F7E6319A21E151433B3A", hash_generated_method = "A501FFC6AE70F7E6319A21E151433B3A")
         public SyncHandler ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -188,17 +193,17 @@ abstract class WebSyncManager implements Runnable {
                 syncFromRamToFlash();
                 Message newmsg = obtainMessage(SYNC_MESSAGE);
                 sendMessageDelayed(newmsg, SYNC_LATER_INTERVAL);
-            } //End block
+            } 
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //if (msg.what == SYNC_MESSAGE) {
-                //if (DebugFlags.WEB_SYNC_MANAGER) {
-                    //Log.v(LOGTAG, "*** WebSyncManager sync ***");
-                //}
-                //syncFromRamToFlash();
-                //Message newmsg = obtainMessage(SYNC_MESSAGE);
-                //sendMessageDelayed(newmsg, SYNC_LATER_INTERVAL);
-            //}
+            
+            
+                
+                    
+                
+                
+                
+                
+            
         }
 
         

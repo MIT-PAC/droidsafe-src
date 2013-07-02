@@ -1,11 +1,11 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
@@ -14,7 +14,7 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
       ReadWriteShortArrayBuffer(short[] array) {
         super(array);
         addTaint(array[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
       ReadWriteShortArrayBuffer(int capacity) {
         super(capacity);
         addTaint(capacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,10 +33,11 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
         addTaint(capacity);
         addTaint(backingArray[0]);
         addTaint(arrayOffset);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ReadWriteShortArrayBuffer copy(ShortArrayBuffer other, int markOfOther) {
         ReadWriteShortArrayBuffer buf =
                 new ReadWriteShortArrayBuffer(other.capacity(), other.backingArray, other.offset);
@@ -47,47 +48,50 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.252 -0400", hash_original_method = "462C3B568A7739CEDBF963B6B469485C", hash_generated_method = "351213274AB8AE69DD39CD3CCFB6AC78")
     @Override
     public ShortBuffer asReadOnlyBuffer() {
-        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_183179393 = null; //Variable for return #1
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_183179393 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_183179393 = ReadOnlyShortArrayBuffer.copy(this, mark);
-        varB4EAC82CA7396A68D541C85D26508E83_183179393.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_183179393.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_183179393;
-        // ---------- Original Method ----------
-        //return ReadOnlyShortArrayBuffer.copy(this, mark);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.253 -0400", hash_original_method = "36F9748654A1F1F28EBEE4901281019B", hash_generated_method = "604163DF2BAFD48F27B28E893C15A84A")
     @Override
     public ShortBuffer compact() {
-        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_651127035 = null; //Variable for return #1
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_651127035 = null; 
         System.arraycopy(backingArray, position + offset, backingArray, offset, remaining());
         position = limit - position;
         limit = capacity;
         mark = UNSET_MARK;
         varB4EAC82CA7396A68D541C85D26508E83_651127035 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_651127035.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_651127035.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_651127035;
-        // ---------- Original Method ----------
-        //System.arraycopy(backingArray, position + offset, backingArray, offset, remaining());
-        //position = limit - position;
-        //limit = capacity;
-        //mark = UNSET_MARK;
-        //return this;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.254 -0400", hash_original_method = "F49238B32F318D341B9FD2839B701A87", hash_generated_method = "4C077F31809CD465AA919FC03CF42E72")
     @Override
     public ShortBuffer duplicate() {
-        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_473832100 = null; //Variable for return #1
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_473832100 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_473832100 = copy(this, mark);
-        varB4EAC82CA7396A68D541C85D26508E83_473832100.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_473832100.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_473832100;
-        // ---------- Original Method ----------
-        //return copy(this, mark);
+        
+        
     }
 
     
@@ -96,8 +100,8 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
     public boolean isReadOnly() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1628805676 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1628805676;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -106,8 +110,8 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
     protected short[] protectedArray() {
         short[] var48EE7E2DDF8A83602BC526873BD0F875_1899015839 = {getTaintShort()};
         return var48EE7E2DDF8A83602BC526873BD0F875_1899015839;
-        // ---------- Original Method ----------
-        //return backingArray;
+        
+        
     }
 
     
@@ -116,8 +120,8 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
     protected int protectedArrayOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_232356189 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_232356189;
-        // ---------- Original Method ----------
-        //return offset;
+        
+        
     }
 
     
@@ -126,87 +130,91 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
     protected boolean protectedHasArray() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2100705863 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2100705863;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.257 -0400", hash_original_method = "54E323A30539354E0A95916606A58A4C", hash_generated_method = "DC608C77BFACA4C37FBD3F99002B624B")
     @Override
     public ShortBuffer put(short c) {
-        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_1607629822 = null; //Variable for return #1
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_1607629822 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new BufferOverflowException();
-        } //End block
+        } 
         backingArray[offset + position++] = c;
         varB4EAC82CA7396A68D541C85D26508E83_1607629822 = this;
         addTaint(c);
-        varB4EAC82CA7396A68D541C85D26508E83_1607629822.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1607629822.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1607629822;
-        // ---------- Original Method ----------
-        //if (position == limit) {
-            //throw new BufferOverflowException();
-        //}
-        //backingArray[offset + position++] = c;
-        //return this;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.259 -0400", hash_original_method = "40ADB3B61FB69E1E8C75AAC651E43068", hash_generated_method = "D5B8AAF9DE5466E996E3ADB56D000051")
     @Override
     public ShortBuffer put(int index, short c) {
-        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_2026306567 = null; //Variable for return #1
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_2026306567 = null; 
         checkIndex(index);
         backingArray[offset + index] = c;
         varB4EAC82CA7396A68D541C85D26508E83_2026306567 = this;
         addTaint(index);
         addTaint(c);
-        varB4EAC82CA7396A68D541C85D26508E83_2026306567.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2026306567.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2026306567;
-        // ---------- Original Method ----------
-        //checkIndex(index);
-        //backingArray[offset + index] = c;
-        //return this;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.260 -0400", hash_original_method = "2F2CA14AF95FC5682B6555E8CB32AB80", hash_generated_method = "E8798D03F39D8BF8344C4B8538E0134B")
     @Override
     public ShortBuffer put(short[] src, int srcOffset, int shortCount) {
-        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_529593502 = null; //Variable for return #1
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_529593502 = null; 
         {
             boolean varD727A1D2181C264BA4333582F807AE27_1756943118 = (shortCount > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferOverflowException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         System.arraycopy(src, srcOffset, backingArray, offset + position, shortCount);
         position += shortCount;
         varB4EAC82CA7396A68D541C85D26508E83_529593502 = this;
         addTaint(src[0]);
         addTaint(srcOffset);
         addTaint(shortCount);
-        varB4EAC82CA7396A68D541C85D26508E83_529593502.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_529593502.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_529593502;
-        // ---------- Original Method ----------
-        //if (shortCount > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //System.arraycopy(src, srcOffset, backingArray, offset + position, shortCount);
-        //position += shortCount;
-        //return this;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.261 -0400", hash_original_method = "295BE67A092E5DAA08585681B1E9120C", hash_generated_method = "B5728A17CF6613868CABDDADE4BCFD2A")
     @Override
     public ShortBuffer slice() {
-        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_127595796 = null; //Variable for return #1
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_127595796 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_127595796 = new ReadWriteShortArrayBuffer(remaining(), backingArray, offset + position);
-        varB4EAC82CA7396A68D541C85D26508E83_127595796.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_127595796.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_127595796;
-        // ---------- Original Method ----------
-        //return new ReadWriteShortArrayBuffer(remaining(), backingArray, offset + position);
+        
+        
     }
 
     

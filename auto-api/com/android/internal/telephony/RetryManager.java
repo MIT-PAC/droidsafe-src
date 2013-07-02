@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.Log;
 import android.util.Pair;
@@ -33,24 +33,25 @@ public class RetryManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.556 -0400", hash_original_method = "86AB11F27A0B5AC38FB55D7069405F57", hash_generated_method = "31503892F4B7E34419F3D4D728BC5E52")
     public  RetryManager() {
         log("constructor");
-        // ---------- Original Method ----------
-        //if (DBG) log("constructor");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.557 -0400", hash_original_method = "1CB950BCC9F48EB334FE7B6B837F3DD2", hash_generated_method = "E4B0EB3583D3B0A38E6C5041DE5313B0")
     public boolean configure(int maxRetryCount, int retryTime, int randomizationTime) {
         Pair<Boolean, Integer> value;
         log("configure: " + maxRetryCount + ", " + retryTime + "," + randomizationTime);
         {
             boolean var3AB49D41D5C68F939ED37DA095899566_946593916 = (!validateNonNegativeInt("maxRetryCount", maxRetryCount));
-        } //End collapsed parenthetic
+        } 
         {
             boolean varA02666B4CAFE9E2A985E3D1741546F93_19429278 = (!validateNonNegativeInt("retryTime", retryTime));
-        } //End collapsed parenthetic
+        } 
         {
             boolean varD4B44DACFD7F64EFBE5121C449B77625_705520730 = (!validateNonNegativeInt("randomizationTime", randomizationTime));
-        } //End collapsed parenthetic
+        } 
         mMaxRetryCount = maxRetryCount;
         resetRetryCount();
         mRetryArray.clear();
@@ -59,34 +60,35 @@ public class RetryManager {
         addTaint(randomizationTime);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1485238969 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1485238969;
-        // ---------- Original Method ----------
-        //Pair<Boolean, Integer> value;
-        //if (DBG) log("configure: " + maxRetryCount + ", " + retryTime + "," + randomizationTime);
-        //if (!validateNonNegativeInt("maxRetryCount", maxRetryCount)) {
-            //return false;
-        //}
-        //if (!validateNonNegativeInt("retryTime", retryTime)) {
-            //return false;
-        //}
-        //if (!validateNonNegativeInt("randomizationTime", randomizationTime)) {
-            //return false;
-        //}
-        //mMaxRetryCount = maxRetryCount;
-        //resetRetryCount();
-        //mRetryArray.clear();
-        //mRetryArray.add(new RetryRec(retryTime, randomizationTime));
-        //return true;
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.559 -0400", hash_original_method = "C6612F6F1694E17ABFCC353841B58B91", hash_generated_method = "323495DDA15E9ACEECAF6656D3F3C536")
     public boolean configure(String configStr) {
         {
             boolean varB77B781AB61A2D0934A557751D613CB0_850498081 = ((configStr.startsWith("\"") && configStr.endsWith("\"")));
             {
                 configStr = configStr.substring(1, configStr.length()-1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         log("configure: '" + configStr + "'");
         {
             boolean varAE24BB49F679C9F0E60523674D56178C_1627295103 = (!TextUtils.isEmpty(configStr));
@@ -113,7 +115,7 @@ public class RetryManager {
                                 {
                                     value = parseNonNegativeInt(splitStr[0], splitStr[1]);
                                     defaultRandomization = value.second;
-                                } //End block
+                                } 
                                 {
                                     boolean varBD7E65A08CA7CD1BFAC5AE33816EFFCB_1225510790 = (TextUtils.equals(splitStr[0], "max_retries"));
                                     {
@@ -121,16 +123,16 @@ public class RetryManager {
                                             boolean varF130CEA657D458113F1796B1DA49E963_1340701980 = (TextUtils.equals("infinite",splitStr[1]));
                                             {
                                                 mRetryForever = true;
-                                            } //End block
+                                            } 
                                             {
                                                 value = parseNonNegativeInt(splitStr[0], splitStr[1]);
                                                 mMaxRetryCount = value.second;
-                                            } //End block
-                                        } //End collapsed parenthetic
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End block
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
                         {
                             splitStr = strArray[i].split(":", 2);
                             splitStr[0] = splitStr[0].trim();
@@ -142,32 +144,32 @@ public class RetryManager {
                                 log("configure: splitStr[1]='" + splitStr[1] + "'");
                                 value = parseNonNegativeInt("randomizationTime", splitStr[1]);
                                 rr.mRandomizationTime = value.second;
-                            } //End block
+                            } 
                             {
                                 rr.mRandomizationTime = defaultRandomization;
-                            } //End block
+                            } 
                             mRetryArray.add(rr);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 {
                     boolean var11069FDB4409494C12B4B638811AF818_926932437 = (mRetryArray.size() > mMaxRetryCount);
                     {
                         mMaxRetryCount = mRetryArray.size();
                         log("configure: setting mMaxRetryCount=" + mMaxRetryCount);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 log("configure: true");
-            } //End block
+            } 
             {
                 log("configure: false it's empty");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(configStr.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_936187998 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_936187998;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -177,13 +179,14 @@ public class RetryManager {
         log("isRetryNeeded: " + retVal);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2012746466 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2012746466;
-        // ---------- Original Method ----------
-        //boolean retVal = mRetryForever || (mRetryCount < mMaxRetryCount);
-        //if (DBG) log("isRetryNeeded: " + retVal);
-        //return retVal;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.560 -0400", hash_original_method = "FDEB093A88716C2A22E1A70262EC26E6", hash_generated_method = "8298F2EF02336CE8E9FDE85B351164E6")
     public int getRetryTimer() {
         int index;
@@ -191,39 +194,39 @@ public class RetryManager {
             boolean var023AA468A6FDC6E9547246DC56EE6D00_335433494 = (mRetryCount < mRetryArray.size());
             {
                 index = mRetryCount;
-            } //End block
+            } 
             {
                 index = mRetryArray.size() - 1;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int retVal;
         {
             boolean var23724F18A85DA0EAAC9ADB5644A0B1CA_1993885387 = ((index >= 0) && (index < mRetryArray.size()));
             {
                 retVal = mRetryArray.get(index).mDelayTime + nextRandomizationTime(index);
-            } //End block
+            } 
             {
                 retVal = 0;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         log("getRetryTimer: " + retVal);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2011073437 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2011073437;
-        // ---------- Original Method ----------
-        //int index;
-        //if (mRetryCount < mRetryArray.size()) {
-            //index = mRetryCount;
-        //} else {
-            //index = mRetryArray.size() - 1;
-        //}
-        //int retVal;
-        //if ((index >= 0) && (index < mRetryArray.size())) {
-            //retVal = mRetryArray.get(index).mDelayTime + nextRandomizationTime(index);
-        //} else {
-            //retVal = 0;
-        //}
-        //if (DBG) log("getRetryTimer: " + retVal);
-        //return retVal;
+        
+        
+        
+            
+        
+            
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -232,9 +235,9 @@ public class RetryManager {
         log("getRetryCount: " + mRetryCount);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1797994130 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1797994130;
-        // ---------- Original Method ----------
-        //if (DBG) log("getRetryCount: " + mRetryCount);
-        //return mRetryCount;
+        
+        
+        
     }
 
     
@@ -242,14 +245,14 @@ public class RetryManager {
     public void increaseRetryCount() {
         {
             mRetryCount = mMaxRetryCount;
-        } //End block
+        } 
         log("increaseRetryCount: " + mRetryCount);
-        // ---------- Original Method ----------
-        //mRetryCount++;
-        //if (mRetryCount > mMaxRetryCount) {
-            //mRetryCount = mMaxRetryCount;
-        //}
-        //if (DBG) log("increaseRetryCount: " + mRetryCount);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -258,22 +261,22 @@ public class RetryManager {
         mRetryCount = count;
         {
             mRetryCount = mMaxRetryCount;
-        } //End block
+        } 
         {
             mRetryCount = 0;
-        } //End block
+        } 
         mRetryForever = false;
         log("setRetryCount: " + mRetryCount);
-        // ---------- Original Method ----------
-        //mRetryCount = count;
-        //if (mRetryCount > mMaxRetryCount) {
-            //mRetryCount = mMaxRetryCount;
-        //}
-        //if (mRetryCount < 0) {
-            //mRetryCount = 0;
-        //}
-        //mRetryForever = false;
-        //if (DBG) log("setRetryCount: " + mRetryCount);
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -281,9 +284,9 @@ public class RetryManager {
     public void resetRetryCount() {
         mRetryCount = 0;
         log("resetRetryCount: " + mRetryCount);
-        // ---------- Original Method ----------
-        //mRetryCount = 0;
-        //if (DBG) log("resetRetryCount: " + mRetryCount);
+        
+        
+        
     }
 
     
@@ -292,10 +295,10 @@ public class RetryManager {
         mRetryCount = mMaxRetryCount;
         mRetryForever = true;
         log("retryForeverUsingLastTimeout: " + mRetryForever + ", " + mRetryCount);
-        // ---------- Original Method ----------
-        //mRetryCount = mMaxRetryCount;
-        //mRetryForever = true;
-        //if (DBG) log("retryForeverUsingLastTimeout: " + mRetryForever + ", " + mRetryCount);
+        
+        
+        
+        
     }
 
     
@@ -304,101 +307,104 @@ public class RetryManager {
         log("isRetryForever: " + mRetryForever);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1417159399 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1417159399;
-        // ---------- Original Method ----------
-        //if (DBG) log("isRetryForever: " + mRetryForever);
-        //return mRetryForever;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.563 -0400", hash_original_method = "CFEE2F1AF91E2D86FFF14B5518822AC3", hash_generated_method = "F9083E7C10BAF6092484E027320E055C")
     private Pair<Boolean, Integer> parseNonNegativeInt(String name, String stringValue) {
-        Pair<Boolean, Integer> varB4EAC82CA7396A68D541C85D26508E83_429681361 = null; //Variable for return #1
+        Pair<Boolean, Integer> varB4EAC82CA7396A68D541C85D26508E83_429681361 = null; 
         int value;
         Pair<Boolean, Integer> retVal;
         try 
         {
             value = Integer.parseInt(stringValue);
             retVal = new Pair<Boolean, Integer>(validateNonNegativeInt(name, value), value);
-        } //End block
+        } 
         catch (NumberFormatException e)
         {
             retVal = new Pair<Boolean, Integer>(false, 0);
-        } //End block
+        } 
         log("parseNonNetativeInt: " + name + ", " + stringValue + ", "
                     + retVal.first + ", " + retVal.second);
         varB4EAC82CA7396A68D541C85D26508E83_429681361 = retVal;
         addTaint(name.getTaint());
         addTaint(stringValue.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_429681361.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_429681361.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_429681361;
-        // ---------- Original Method ----------
-        //int value;
-        //Pair<Boolean, Integer> retVal;
-        //try {
-            //value = Integer.parseInt(stringValue);
-            //retVal = new Pair<Boolean, Integer>(validateNonNegativeInt(name, value), value);
-        //} catch (NumberFormatException e) {
-            //Log.e(LOG_TAG, name + " bad value: " + stringValue, e);
-            //retVal = new Pair<Boolean, Integer>(false, 0);
-        //}
-        //if (DBG) log("parseNonNetativeInt: " + name + ", " + stringValue + ", "
-                    //+ retVal.first + ", " + retVal.second);
-        //return retVal;
+        
+        
+        
+        
+            
+            
+        
+            
+            
+        
+        
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.564 -0400", hash_original_method = "732CF49E361007DEE3B2FC2D605BF87E", hash_generated_method = "7D5AEFB9AEF6B34192C0420A9C83B0C5")
     private boolean validateNonNegativeInt(String name, int value) {
         boolean retVal;
         {
             retVal = false;
-        } //End block
+        } 
         {
             retVal = true;
-        } //End block
+        } 
         log("validateNonNegative: " + name + ", " + value + ", " + retVal);
         addTaint(name.getTaint());
         addTaint(value);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_269496355 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_269496355;
-        // ---------- Original Method ----------
-        //boolean retVal;
-        //if (value < 0) {
-            //Log.e(LOG_TAG, name + " bad value: is < 0");
-            //retVal = false;
-        //} else {
-            //retVal = true;
-        //}
-        //if (DBG) log("validateNonNegative: " + name + ", " + value + ", " + retVal);
-        //return retVal;
+        
+        
+        
+            
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.564 -0400", hash_original_method = "C6100D6542DA0DEE21E22A63B7A19544", hash_generated_method = "7862BCB7EE0F5F144131AD02F38C3CE2")
     private int nextRandomizationTime(int index) {
         int randomTime = mRetryArray.get(index).mRandomizationTime;
         {
             int var92D084210DFBA05FD8C63FE672D2846B_957739324 = (rng.nextInt(randomTime));
-        } //End block
+        } 
         addTaint(index);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1055859146 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1055859146;
-        // ---------- Original Method ----------
-        //int randomTime = mRetryArray.get(index).mRandomizationTime;
-        //if (randomTime == 0) {
-            //return 0;
-        //} else {
-            //return rng.nextInt(randomTime);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.564 -0400", hash_original_method = "4CC3EDAC8B8BC9B5E954A182C692136C", hash_generated_method = "033EF182C46627DE0D2B8D331155EB2B")
     private void log(String s) {
         Log.d(LOG_TAG, s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, s);
+        
+        
     }
 
     
@@ -414,9 +420,9 @@ public class RetryManager {
           RetryRec(int delayTime, int randomizationTime) {
             mDelayTime = delayTime;
             mRandomizationTime = randomizationTime;
-            // ---------- Original Method ----------
-            //mDelayTime = delayTime;
-            //mRandomizationTime = randomizationTime;
+            
+            
+            
         }
 
         

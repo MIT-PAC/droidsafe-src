@@ -1,11 +1,11 @@
 package com.android.internal.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.Reader;
@@ -19,10 +19,11 @@ public class TypedProperties extends HashMap<String, Object> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.989 -0400", hash_original_method = "ECB16241B0AB765E13051ACDAE33A02C", hash_generated_method = "B248ACEE9001880DCCB88F00DD01C611")
     public  TypedProperties() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static StreamTokenizer initTokenizer(Reader r) {
         StreamTokenizer st = new StreamTokenizer(r);
         st.resetSyntax();
@@ -46,6 +47,7 @@ public class TypedProperties extends HashMap<String, Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int interpretType(String typeName) {
         if ("unset".equals(typeName)) {
             return TYPE_UNSET;
@@ -70,6 +72,7 @@ public class TypedProperties extends HashMap<String, Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void parse(Reader r, Map<String, Object> map) throws ParseException, IOException {
         final StreamTokenizer st = initTokenizer(r);
         final String identifierPattern = "[a-zA-Z_$][0-9a-zA-Z_$]*";
@@ -214,359 +217,378 @@ public class TypedProperties extends HashMap<String, Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.991 -0400", hash_original_method = "DEE9183B66993F47A34635E71D1E1A05", hash_generated_method = "D00A13F2BF825310240AF8D8220CE5B0")
     public void load(Reader r) throws IOException {
         parse(r, this);
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //parse(r, this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.992 -0400", hash_original_method = "47BA0B831F55080B235C21EE87FA94B0", hash_generated_method = "BAEB694611B086B6649716B182220292")
     @Override
     public Object get(Object key) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_216046517 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_1905727683 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_216046517 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_1905727683 = null; 
         Object value = super.get(key);
         {
             varB4EAC82CA7396A68D541C85D26508E83_216046517 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1905727683 = value;
         addTaint(key.getTaint());
-        Object varA7E53CE21691AB073D9660D615818899_130728856; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_130728856; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_130728856 = varB4EAC82CA7396A68D541C85D26508E83_216046517;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_130728856 = varB4EAC82CA7396A68D541C85D26508E83_1905727683;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_130728856.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_130728856.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_130728856;
-        // ---------- Original Method ----------
-        //Object value = super.get(key);
-        //if (value == NULL_STRING) {
-            //return null;
-        //}
-        //return value;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.993 -0400", hash_original_method = "6663F38CAE0A0F250100A85B4A9042B2", hash_generated_method = "921324951CCBCC67CFB637730A24F3A9")
     public boolean getBoolean(String property, boolean def) {
         Object value = super.get(property);
         {
             boolean var28F7FA156A0AF9E80777EF1AC0FADFEE_1778189401 = (((Boolean)value).booleanValue());
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new TypeException(property, value, "boolean");
         addTaint(property.getTaint());
         addTaint(def);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_709166092 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_709166092;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value instanceof Boolean) {
-            //return ((Boolean)value).booleanValue();
-        //}
-        //throw new TypeException(property, value, "boolean");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.993 -0400", hash_original_method = "C59AE35C77F78F452B75D7268F0F89E8", hash_generated_method = "C58DD44E9B2E7F191F898ED6A37FF15F")
     public byte getByte(String property, byte def) {
         Object value = super.get(property);
         {
             byte var2006B69F4737BD108E2C51959A456F7A_2114754991 = (((Byte)value).byteValue());
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new TypeException(property, value, "byte");
         addTaint(property.getTaint());
         addTaint(def);
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1968072851 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1968072851;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value instanceof Byte) {
-            //return ((Byte)value).byteValue();
-        //}
-        //throw new TypeException(property, value, "byte");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.994 -0400", hash_original_method = "B3F410F783F41DCDA5B135E26EFE8189", hash_generated_method = "1DCCB16DE4F57B7B782E82E05414D19E")
     public short getShort(String property, short def) {
         Object value = super.get(property);
         {
             short varFA0267FA29F4ECA5E451C256453D307B_1593221205 = (((Short)value).shortValue());
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new TypeException(property, value, "short");
         addTaint(property.getTaint());
         addTaint(def);
         short var4F09DAA9D95BCB166A302407A0E0BABE_2111623667 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_2111623667;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value instanceof Short) {
-            //return ((Short)value).shortValue();
-        //}
-        //throw new TypeException(property, value, "short");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.994 -0400", hash_original_method = "81A20114A7AF0172426C6E77D3C9CCF3", hash_generated_method = "896ADB48153BFB1A646D84E70C10216A")
     public int getInt(String property, int def) {
         Object value = super.get(property);
         {
             int var2BBA3283F2CE0451B65410804794C972_1369985599 = (((Integer)value).intValue());
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new TypeException(property, value, "int");
         addTaint(property.getTaint());
         addTaint(def);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_435600504 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_435600504;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value instanceof Integer) {
-            //return ((Integer)value).intValue();
-        //}
-        //throw new TypeException(property, value, "int");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.995 -0400", hash_original_method = "4BF2AEC507B97708CFEE1BE095F3CD54", hash_generated_method = "EE2E594E256805091E32C942BDF102D4")
     public long getLong(String property, long def) {
         Object value = super.get(property);
         {
             long var2BF4210A74E88C58627A5AE165A6F06C_991141303 = (((Long)value).longValue());
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new TypeException(property, value, "long");
         addTaint(property.getTaint());
         addTaint(def);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1718102253 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1718102253;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value instanceof Long) {
-            //return ((Long)value).longValue();
-        //}
-        //throw new TypeException(property, value, "long");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.995 -0400", hash_original_method = "173DB4357D41B8C372C6266493A88C42", hash_generated_method = "6C82EFD73AD548FC73F520B83946676C")
     public float getFloat(String property, float def) {
         Object value = super.get(property);
         {
             float varE4BF96DFE206165467C1A9039FCB9A6E_1045207307 = (((Float)value).floatValue());
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new TypeException(property, value, "float");
         addTaint(property.getTaint());
         addTaint(def);
         float var546ADE640B6EDFBC8A086EF31347E768_468457308 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_468457308;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value instanceof Float) {
-            //return ((Float)value).floatValue();
-        //}
-        //throw new TypeException(property, value, "float");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.995 -0400", hash_original_method = "319F68DA9A588357DEFC3D0ED78EA71B", hash_generated_method = "02544DFA3A8E5B1C3489A98B0C8D40A1")
     public double getDouble(String property, double def) {
         Object value = super.get(property);
         {
             double varEDFD59838753B0C4E4C8E31575DD2EE2_1935269300 = (((Double)value).doubleValue());
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new TypeException(property, value, "double");
         addTaint(property.getTaint());
         addTaint(def);
         double varE8CD7DA078A86726031AD64F35F5A6C0_300425383 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_300425383;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value instanceof Double) {
-            //return ((Double)value).doubleValue();
-        //}
-        //throw new TypeException(property, value, "double");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.996 -0400", hash_original_method = "3AAFD700C2ABAD81E6BE42DE7BFF48B2", hash_generated_method = "518BB730A7F6CFED5A45844F3661059C")
     public String getString(String property, String def) {
-        String varB4EAC82CA7396A68D541C85D26508E83_600369339 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1601441306 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_944983564 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_600369339 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1601441306 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_944983564 = null; 
         Object value = super.get(property);
         {
             varB4EAC82CA7396A68D541C85D26508E83_600369339 = def;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1601441306 = null;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_944983564 = (String)value;
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new TypeException(property, value, "string");
         addTaint(property.getTaint());
         addTaint(def.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_437208056; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_437208056; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_437208056 = varB4EAC82CA7396A68D541C85D26508E83_600369339;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_437208056 = varB4EAC82CA7396A68D541C85D26508E83_1601441306;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_437208056 = varB4EAC82CA7396A68D541C85D26508E83_944983564;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_437208056.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_437208056.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_437208056;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value == NULL_STRING) {
-            //return null;
-        //} else if (value instanceof String) {
-            //return (String)value;
-        //}
-        //throw new TypeException(property, value, "string");
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.997 -0400", hash_original_method = "AE35D37F95D56A154F209F071D3D7624", hash_generated_method = "1FB38B20C02EE119360DDAAF8E50D4A4")
     public boolean getBoolean(String property) {
         boolean var388FDEBCBAD382EA0CA5866093D63382_609954316 = (getBoolean(property, false));
         addTaint(property.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1484039641 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1484039641;
-        // ---------- Original Method ----------
-        //return getBoolean(property, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.997 -0400", hash_original_method = "370EA3A899989D3F86644B48EA45FC9B", hash_generated_method = "D8E1B207D92494D97AE10FCA487515AD")
     public byte getByte(String property) {
         byte var7F0FFF5B8051771B4969E8BA35C4D305_2026408333 = (getByte(property, (byte)0));
         addTaint(property.getTaint());
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1641446502 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1641446502;
-        // ---------- Original Method ----------
-        //return getByte(property, (byte)0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.997 -0400", hash_original_method = "FA3A5E6826A1DDB74D3D7C867E30B692", hash_generated_method = "50E8FDDFF9CD01997BA4DD301E3C88A7")
     public short getShort(String property) {
         short var61F0CFA8A6350C1C49F6594873C25E68_1920172822 = (getShort(property, (short)0));
         addTaint(property.getTaint());
         short var4F09DAA9D95BCB166A302407A0E0BABE_925991428 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_925991428;
-        // ---------- Original Method ----------
-        //return getShort(property, (short)0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.997 -0400", hash_original_method = "01591AA36D981ABFF3C80720671DB519", hash_generated_method = "C1CE01D0F8CCF185AAB55BA42963B73F")
     public int getInt(String property) {
         int var5E4DEF1A6D970073A28B08FAE5990986_1597616264 = (getInt(property, 0));
         addTaint(property.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_719788197 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_719788197;
-        // ---------- Original Method ----------
-        //return getInt(property, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.998 -0400", hash_original_method = "6768A5BD1563E9807D6B08281CAC66B5", hash_generated_method = "33E3A4F4994410A6F74E58A10E69FAF0")
     public long getLong(String property) {
         long varF3B78247D366110C671AC1A4FCEF03B6_67019755 = (getLong(property, 0L));
         addTaint(property.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1476169550 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1476169550;
-        // ---------- Original Method ----------
-        //return getLong(property, 0L);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.998 -0400", hash_original_method = "EF3DC0C356750228212346284358116F", hash_generated_method = "BB4BBA76DC06BCE44A80DC4F71C90040")
     public float getFloat(String property) {
         float var08EA92EAF84AA2796A6B4604865FDC5E_1071162943 = (getFloat(property, 0.0f));
         addTaint(property.getTaint());
         float var546ADE640B6EDFBC8A086EF31347E768_97414449 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_97414449;
-        // ---------- Original Method ----------
-        //return getFloat(property, 0.0f);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.998 -0400", hash_original_method = "C54C18DE732B31DF63D9F3187CBED443", hash_generated_method = "1A9DECA6085119C134713D2D0436D24C")
     public double getDouble(String property) {
         double varCD55CE0B79D03320287DEC79B3D7917E_521106297 = (getDouble(property, 0.0));
         addTaint(property.getTaint());
         double varE8CD7DA078A86726031AD64F35F5A6C0_1568274322 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1568274322;
-        // ---------- Original Method ----------
-        //return getDouble(property, 0.0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.998 -0400", hash_original_method = "1EC3769C452BFA246F7089382554F763", hash_generated_method = "999B32B2ED0BC293AD29AAD264880CF3")
     public String getString(String property) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1519035011 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1519035011 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1519035011 = getString(property, "");
         addTaint(property.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1519035011.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1519035011.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1519035011;
-        // ---------- Original Method ----------
-        //return getString(property, "");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.999 -0400", hash_original_method = "56B937E7FCE24CC3D04453B96CCA1E2A", hash_generated_method = "B58FA74DC75009835102C5DE2A08EBF9")
     public int getStringInfo(String property) {
         Object value = super.get(property);
         addTaint(property.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1763045787 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1763045787;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return STRING_NOT_SET;
-        //}
-        //if (value == NULL_STRING) {
-            //return STRING_NULL;
-        //} else if (value instanceof String) {
-            //return STRING_SET;
-        //}
-        //return STRING_TYPE_MISMATCH;
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -577,7 +599,7 @@ public class TypedProperties extends HashMap<String, Object> {
             super("expected " + expected + ", saw " + state.toString());
             addTaint(state.getTaint());
             addTaint(expected.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -594,7 +616,7 @@ public class TypedProperties extends HashMap<String, Object> {
             addTaint(property.getTaint());
             addTaint(value.getTaint());
             addTaint(requestedType.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

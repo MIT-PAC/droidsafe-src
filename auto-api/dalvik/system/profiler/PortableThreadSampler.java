@@ -1,11 +1,11 @@
 package dalvik.system.profiler;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Arrays;
 
@@ -17,7 +17,7 @@ class PortableThreadSampler implements ThreadSampler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.099 -0400", hash_original_method = "4D56809BA46B0880BDFB6525AB14F55F", hash_generated_method = "4D56809BA46B0880BDFB6525AB14F55F")
     public PortableThreadSampler ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -25,45 +25,45 @@ class PortableThreadSampler implements ThreadSampler {
     @Override
     public void setDepth(int depth) {
         this.depth = depth;
-        // ---------- Original Method ----------
-        //this.depth = depth;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.101 -0400", hash_original_method = "E8C7A5DFD07B28248405DFC9E0C75853", hash_generated_method = "60EE944416D8FB17E41A29C32CF7A71B")
     @Override
     public StackTraceElement[] getStackTrace(Thread thread) {
-        StackTraceElement[] varB4EAC82CA7396A68D541C85D26508E83_1583791814 = null; //Variable for return #1
-        StackTraceElement[] varB4EAC82CA7396A68D541C85D26508E83_708248070 = null; //Variable for return #2
+        StackTraceElement[] varB4EAC82CA7396A68D541C85D26508E83_1583791814 = null; 
+        StackTraceElement[] varB4EAC82CA7396A68D541C85D26508E83_708248070 = null; 
         StackTraceElement[] stackFrames = thread.getStackTrace();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1583791814 = null;
-        } //End block
+        } 
         {
             stackFrames = Arrays.copyOfRange(stackFrames, 0, depth);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_708248070 = stackFrames;
         addTaint(thread.getTaint());
-        StackTraceElement[] varA7E53CE21691AB073D9660D615818899_1538588931; //Final return value
+        StackTraceElement[] varA7E53CE21691AB073D9660D615818899_1538588931; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1538588931 = varB4EAC82CA7396A68D541C85D26508E83_1583791814;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1538588931 = varB4EAC82CA7396A68D541C85D26508E83_708248070;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1538588931.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1538588931.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1538588931;
-        // ---------- Original Method ----------
-        //StackTraceElement[] stackFrames = thread.getStackTrace();
-        //if (stackFrames.length == 0) {
-            //return null;
-        //}
-        //if (stackFrames.length > depth) {
-            //stackFrames = Arrays.copyOfRange(stackFrames, 0, depth);
-        //}
-        //return stackFrames;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     

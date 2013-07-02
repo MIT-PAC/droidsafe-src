@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.animation.AnimatorInflater;
 import android.animation.ObjectAnimator;
@@ -95,7 +95,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     public  AdapterViewAnimator(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -104,7 +104,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
         this(context, attrs, 0);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -117,17 +117,17 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                 com.android.internal.R.styleable.AdapterViewAnimator_inAnimation, 0);
         {
             setInAnimation(context, resource);
-        } //End block
+        } 
         {
             setInAnimation(getDefaultInAnimation());
-        } //End block
+        } 
         resource = a.getResourceId(com.android.internal.R.styleable.AdapterViewAnimator_outAnimation, 0);
         {
             setOutAnimation(context, resource);
-        } //End block
+        } 
         {
             setOutAnimation(getDefaultOutAnimation());
-        } //End block
+        } 
         boolean flag = a.getBoolean(
                 com.android.internal.R.styleable.AdapterViewAnimator_animateFirstView, true);
         setAnimateFirstView(flag);
@@ -138,16 +138,17 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyleAttr);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.740 -0400", hash_original_method = "4508B464C0C2084478BE2A642B32436E", hash_generated_method = "0AEEC796AE042A1371E848170F3AEF4C")
     private void initViewAnimator() {
         mPreviousViews = new ArrayList<Integer>();
-        // ---------- Original Method ----------
-        //mPreviousViews = new ArrayList<Integer>();
+        
+        
     }
 
     
@@ -160,16 +161,16 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
         removeAllViewsInLayout();
         mCurrentWindowStart = 0;
         mCurrentWindowEnd = -1;
-        // ---------- Original Method ----------
-        //if (activeOffset > numVisibleViews - 1) {
-        //}
-        //mMaxNumActiveViews = numVisibleViews;
-        //mActiveOffset = activeOffset;
-        //mPreviousViews.clear();
-        //mViewsMap.clear();
-        //removeAllViewsInLayout();
-        //mCurrentWindowStart = 0;
-        //mCurrentWindowEnd = -1;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -178,66 +179,68 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
         {
             mInAnimation.setTarget(view);
             mInAnimation.start();
-        } //End block
+        } 
         {
             mOutAnimation.setTarget(view);
             mOutAnimation.start();
-        } //End block
+        } 
         addTaint(fromIndex);
         addTaint(toIndex);
         addTaint(view.getTaint());
         addTaint(animate);
-        // ---------- Original Method ----------
-        //if (fromIndex == -1) {
-            //mInAnimation.setTarget(view);
-            //mInAnimation.start();
-        //} else if (toIndex == -1) {
-            //mOutAnimation.setTarget(view);
-            //mOutAnimation.start();
-        //}
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.742 -0400", hash_original_method = "1B47254A99E5F108270897DC3078BE58", hash_generated_method = "89DD00DB897902D06F37ACF7ECD01ADA")
      ObjectAnimator getDefaultInAnimation() {
-        ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_1563742647 = null; //Variable for return #1
+        ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_1563742647 = null; 
         ObjectAnimator anim = ObjectAnimator.ofFloat(null, "alpha", 0.0f, 1.0f);
         anim.setDuration(DEFAULT_ANIMATION_DURATION);
         varB4EAC82CA7396A68D541C85D26508E83_1563742647 = anim;
-        varB4EAC82CA7396A68D541C85D26508E83_1563742647.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1563742647.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1563742647;
-        // ---------- Original Method ----------
-        //ObjectAnimator anim = ObjectAnimator.ofFloat(null, "alpha", 0.0f, 1.0f);
-        //anim.setDuration(DEFAULT_ANIMATION_DURATION);
-        //return anim;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.743 -0400", hash_original_method = "FB8DA060E53CA502AAAD2E0D3630FF89", hash_generated_method = "73CAC83DED04BFD6177949B40E358244")
      ObjectAnimator getDefaultOutAnimation() {
-        ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_1214666937 = null; //Variable for return #1
+        ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_1214666937 = null; 
         ObjectAnimator anim = ObjectAnimator.ofFloat(null, "alpha", 1.0f, 0.0f);
         anim.setDuration(DEFAULT_ANIMATION_DURATION);
         varB4EAC82CA7396A68D541C85D26508E83_1214666937 = anim;
-        varB4EAC82CA7396A68D541C85D26508E83_1214666937.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1214666937.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1214666937;
-        // ---------- Original Method ----------
-        //ObjectAnimator anim = ObjectAnimator.ofFloat(null, "alpha", 1.0f, 0.0f);
-        //anim.setDuration(DEFAULT_ANIMATION_DURATION);
-        //return anim;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.743 -0400", hash_original_method = "C45281778BDF4A98514907509DE78D33", hash_generated_method = "86CB72FD0FA25F1C193103E9FCC8A84C")
     @android.view.RemotableViewMethod
     public void setDisplayedChild(int whichChild) {
         setDisplayedChild(whichChild, true);
         addTaint(whichChild);
-        // ---------- Original Method ----------
-        //setDisplayedChild(whichChild, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.744 -0400", hash_original_method = "91CB6634BDE3355704A6B2B246DAA7A9", hash_generated_method = "E7133F6B05FE70B63D3551C2E7C73B24")
     private void setDisplayedChild(int whichChild, boolean animate) {
         {
@@ -246,32 +249,32 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                 boolean var4423A414EEE509E3F96136E1F46B5612_1946474133 = (whichChild >= getWindowSize());
                 {
                     mWhichChild = mLoopViews ? 0 : getWindowSize() - 1;
-                } //End block
+                } 
                 {
                     mWhichChild = mLoopViews ? getWindowSize() - 1 : 0;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             boolean hasFocus = getFocusedChild() != null;
             showOnly(mWhichChild, animate);
             {
                 requestFocus(FOCUS_FORWARD);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(animate);
-        // ---------- Original Method ----------
-        //if (mAdapter != null) {
-            //mWhichChild = whichChild;
-            //if (whichChild >= getWindowSize()) {
-                //mWhichChild = mLoopViews ? 0 : getWindowSize() - 1;
-            //} else if (whichChild < 0) {
-                //mWhichChild = mLoopViews ? getWindowSize() - 1 : 0;
-            //}
-            //boolean hasFocus = getFocusedChild() != null;
-            //showOnly(mWhichChild, animate);
-            //if (hasFocus) {
-                //requestFocus(FOCUS_FORWARD);
-            //}
-        //}
+        
+        
+            
+            
+                
+            
+                
+            
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -279,7 +282,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
      void applyTransformForChildAtIndex(View child, int relativeIndex) {
         addTaint(child.getTaint());
         addTaint(relativeIndex);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -287,24 +290,26 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     public int getDisplayedChild() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1695104358 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1695104358;
-        // ---------- Original Method ----------
-        //return mWhichChild;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.744 -0400", hash_original_method = "EFCC34AA69F6F34103211EDFAD5FB56A", hash_generated_method = "EB11A1D2F0D61EF8CF5A7F00E571FA28")
     public void showNext() {
         setDisplayedChild(mWhichChild + 1);
-        // ---------- Original Method ----------
-        //setDisplayedChild(mWhichChild + 1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.745 -0400", hash_original_method = "F846DD3340718784FB63764FD5BBF0F3", hash_generated_method = "A6ED72EB8F3F7302328A84241E26038A")
     public void showPrevious() {
         setDisplayedChild(mWhichChild - 1);
-        // ---------- Original Method ----------
-        //setDisplayedChild(mWhichChild - 1);
+        
+        
     }
 
     
@@ -314,19 +319,19 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
         addTaint(size);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1462952158 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1462952158;
-        // ---------- Original Method ----------
-        //if (size > 0) {
-            //return (size + (pos % size)) % size;
-        //} else {
-            //return 0;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.746 -0400", hash_original_method = "FBBD82E59359C019A1CEF3EB94A89AA2", hash_generated_method = "039141FDB1BC66F8F3CC5B087EFD065A")
      View getViewAtRelativeIndex(int relativeIndex) {
-        View varB4EAC82CA7396A68D541C85D26508E83_962400310 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1478900808 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_962400310 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1478900808 = null; 
         {
             boolean varDAB78BEED386DC6D5D7AAFFD9BC0EFBA_24495707 = (relativeIndex >= 0 && relativeIndex <= getNumActiveViews() - 1 && mAdapter != null);
             {
@@ -335,31 +340,31 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                     boolean var70175653C6235B3C753B7C1934966D77_31497695 = (mViewsMap.get(i) != null);
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_962400310 = mViewsMap.get(i).view;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1478900808 = null;
         addTaint(relativeIndex);
-        View varA7E53CE21691AB073D9660D615818899_851643595; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_851643595; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_851643595 = varB4EAC82CA7396A68D541C85D26508E83_962400310;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_851643595 = varB4EAC82CA7396A68D541C85D26508E83_1478900808;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_851643595.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_851643595.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_851643595;
-        // ---------- Original Method ----------
-        //if (relativeIndex >= 0 && relativeIndex <= getNumActiveViews() - 1 && mAdapter != null) {
-            //int i = modulo(mCurrentWindowStartUnbounded + relativeIndex, getWindowSize());
-            //if (mViewsMap.get(i) != null) {
-                //return mViewsMap.get(i).view;
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -367,15 +372,15 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
      int getNumActiveViews() {
         {
             int varE9842C7B0E064F871BFD47EBA4713105_544049200 = (Math.min(getCount() + 1, mMaxNumActiveViews));
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2022095111 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2022095111;
-        // ---------- Original Method ----------
-        //if (mAdapter != null) {
-            //return Math.min(getCount() + 1, mMaxNumActiveViews);
-        //} else {
-            //return mMaxNumActiveViews;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -385,28 +390,29 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
             int adapterCount = getCount();
             {
                 boolean varF2A5E737A41E4249CC2B5F17FAC5B9C5_1247504305 = (adapterCount <= getNumActiveViews() && mLoopViews);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_711005598 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_711005598;
-        // ---------- Original Method ----------
-        //if (mAdapter != null) {
-            //int adapterCount = getCount();
-            //if (adapterCount <= getNumActiveViews() && mLoopViews) {
-                //return adapterCount*mMaxNumActiveViews;
-            //} else {
-                //return adapterCount;
-            //}
-        //} else {
-            //return 0;
-        //}
+        
+        
+            
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.750 -0400", hash_original_method = "1D56DD893F980F245C60382C98FF1278", hash_generated_method = "5B2B70C1ECD410FE82D5AC0D801C31C7")
     private ViewAndMetaData getMetaDataForChild(View child) {
-        ViewAndMetaData varB4EAC82CA7396A68D541C85D26508E83_474785871 = null; //Variable for return #1
-        ViewAndMetaData varB4EAC82CA7396A68D541C85D26508E83_832747280 = null; //Variable for return #2
+        ViewAndMetaData varB4EAC82CA7396A68D541C85D26508E83_474785871 = null; 
+        ViewAndMetaData varB4EAC82CA7396A68D541C85D26508E83_832747280 = null; 
         {
             Iterator<ViewAndMetaData> var3D0147521320DBAC5B3812CCE6A51C87_1769800417 = (mViewsMap.values()).iterator();
             var3D0147521320DBAC5B3812CCE6A51C87_1769800417.hasNext();
@@ -414,61 +420,61 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
             {
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_474785871 = vm;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_832747280 = null;
         addTaint(child.getTaint());
-        ViewAndMetaData varA7E53CE21691AB073D9660D615818899_2010083423; //Final return value
+        ViewAndMetaData varA7E53CE21691AB073D9660D615818899_2010083423; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2010083423 = varB4EAC82CA7396A68D541C85D26508E83_474785871;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2010083423 = varB4EAC82CA7396A68D541C85D26508E83_832747280;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2010083423.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2010083423.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2010083423;
-        // ---------- Original Method ----------
-        //for (ViewAndMetaData vm: mViewsMap.values()) {
-            //if (vm.view == child) {
-                //return vm;
-            //}
-        //}
-        //return null;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.751 -0400", hash_original_method = "F5EC02A85B8BD647E297FF00917E7C1D", hash_generated_method = "DE765764518AB0C7828909B059571FF3")
      LayoutParams createOrReuseLayoutParams(View v) {
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1364203646 = null; //Variable for return #1
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1491168363 = null; //Variable for return #2
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1364203646 = null; 
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1491168363 = null; 
         final ViewGroup.LayoutParams currentLp = v.getLayoutParams();
         {
             LayoutParams lp = (LayoutParams) currentLp;
             varB4EAC82CA7396A68D541C85D26508E83_1364203646 = lp;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1491168363 = new ViewGroup.LayoutParams(0, 0);
         addTaint(v.getTaint());
-        LayoutParams varA7E53CE21691AB073D9660D615818899_1087808101; //Final return value
+        LayoutParams varA7E53CE21691AB073D9660D615818899_1087808101; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1087808101 = varB4EAC82CA7396A68D541C85D26508E83_1364203646;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1087808101 = varB4EAC82CA7396A68D541C85D26508E83_1491168363;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1087808101.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1087808101.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1087808101;
-        // ---------- Original Method ----------
-        //final ViewGroup.LayoutParams currentLp = v.getLayoutParams();
-        //if (currentLp instanceof ViewGroup.LayoutParams) {
-            //LayoutParams lp = (LayoutParams) currentLp;
-            //return lp;
-        //}
-        //return new ViewGroup.LayoutParams(0, 0);
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -487,36 +493,36 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                         {
                             fl.removeAllViewsInLayout();
                             fl.addView(updatedChild);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mAdapter == null) return;
-        //for (int i = mCurrentWindowStart; i <= mCurrentWindowEnd; i++) {
-            //int index = modulo(i, getWindowSize());
-            //int adapterCount = getCount();
-            //final View updatedChild = mAdapter.getView(modulo(i, adapterCount), null, this);
-            //if (mViewsMap.containsKey(index)) {
-                //final FrameLayout fl = (FrameLayout) mViewsMap.get(index).view;
-                //if (updatedChild != null) {
-                    //fl.removeAllViewsInLayout();
-                    //fl.addView(updatedChild);
-                //}
-            //}
-        //}
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+            
+                
+                
+                    
+                    
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.753 -0400", hash_original_method = "3A74ED5464ECC3EDCA3FF6D985E482E9", hash_generated_method = "CA2C293D76D5FF4B138B52EF0D540DE5")
      FrameLayout getFrameForChild() {
-        FrameLayout varB4EAC82CA7396A68D541C85D26508E83_1607509550 = null; //Variable for return #1
+        FrameLayout varB4EAC82CA7396A68D541C85D26508E83_1607509550 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1607509550 = new FrameLayout(mContext);
-        varB4EAC82CA7396A68D541C85D26508E83_1607509550.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1607509550.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1607509550;
-        // ---------- Original Method ----------
-        //return new FrameLayout(mContext);
+        
+        
     }
 
     
@@ -533,11 +539,11 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                 {
                     ViewGroup vg = (ViewGroup) viewToRemove;
                     vg.removeAllViewsInLayout();
-                } //End block
+                } 
                 applyTransformForChildAtIndex(viewToRemove, -1);
                 removeViewInLayout(viewToRemove);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mPreviousViews.clear();
         int newWindowStartUnbounded = childIndex - mActiveOffset;
         int newWindowEndUnbounded = newWindowStartUnbounded + getNumActiveViews() - 1;
@@ -546,13 +552,13 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
         {
             newWindowStart = newWindowStartUnbounded;
             newWindowEnd = newWindowEndUnbounded;
-        } //End block
+        } 
         int rangeStart = modulo(newWindowStart, getWindowSize());
         int rangeEnd = modulo(newWindowEnd, getWindowSize());
         boolean wrap = false;
         {
             wrap = true;
-        } //End block
+        } 
         {
             Iterator<Integer> var610282C9D2149B9A2642D098939F7602_112210208 = (mViewsMap.keySet()).iterator();
             var610282C9D2149B9A2642D098939F7602_112210208.hasNext();
@@ -561,18 +567,18 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                 boolean remove = false;
                 {
                     remove = true;
-                } //End block
+                } 
                 {
                     remove = true;
-                } //End block
+                } 
                 {
                     View previousView = mViewsMap.get(index).view;
                     int oldRelativeIndex = mViewsMap.get(index).relativeIndex;
                     mPreviousViews.add(index);
                     transformViewForTransition(oldRelativeIndex, -1, previousView, animate);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             {
                 int i = newWindowStart;
@@ -583,11 +589,11 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                         boolean var41FB02AF47D0FFCEDE206EC611FE70C8_526129657 = (mViewsMap.containsKey(index));
                         {
                             oldRelativeIndex = mViewsMap.get(index).relativeIndex;
-                        } //End block
+                        } 
                         {
                             oldRelativeIndex = -1;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     int newRelativeIndex = i - newWindowStartUnbounded;
                     boolean inOldRange = mViewsMap.containsKey(index) && !mPreviousViews.contains(index);
                     {
@@ -595,7 +601,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                         mViewsMap.get(index).relativeIndex = newRelativeIndex;
                         applyTransformForChildAtIndex(view, newRelativeIndex);
                         transformViewForTransition(oldRelativeIndex, newRelativeIndex, view, animate);
-                    } //End block
+                    } 
                     {
                         final int adapterPosition = modulo(i, adapterCount);
                         View newView = mAdapter.getView(adapterPosition, null, this);
@@ -603,29 +609,30 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                         FrameLayout fl = getFrameForChild();
                         {
                             fl.addView(newView);
-                        } //End block
+                        } 
                         mViewsMap.put(index, new ViewAndMetaData(fl, newRelativeIndex,
                             adapterPosition, itemId));
                         addChild(fl);
                         applyTransformForChildAtIndex(fl, newRelativeIndex);
                         transformViewForTransition(-1, newRelativeIndex, fl, animate);
-                    } //End block
+                    } 
                     mViewsMap.get(index).view.bringToFront();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mCurrentWindowStart = newWindowStart;
             mCurrentWindowEnd = newWindowEnd;
             mCurrentWindowStartUnbounded = newWindowStartUnbounded;
-        } //End block
+        } 
         requestLayout();
         invalidate();
         addTaint(childIndex);
         addTaint(animate);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.776 -0400", hash_original_method = "CF7E9270D6A781D39501E4BBAEBB3A13", hash_generated_method = "1DF52A8CC559FE180B7BB6E01F8611F7")
     private void addChild(View child) {
         addViewInLayout(child, -1, createOrReuseLayoutParams(child));
@@ -634,15 +641,15 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
             child.measure(measureSpec, measureSpec);
             mReferenceChildWidth = child.getMeasuredWidth();
             mReferenceChildHeight = child.getMeasuredHeight();
-        } //End block
-        // ---------- Original Method ----------
-        //addViewInLayout(child, -1, createOrReuseLayoutParams(child));
-        //if (mReferenceChildWidth == -1 || mReferenceChildHeight == -1) {
-            //int measureSpec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
-            //child.measure(measureSpec, measureSpec);
-            //mReferenceChildWidth = child.getMeasuredWidth();
-            //mReferenceChildHeight = child.getMeasuredHeight();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -650,8 +657,8 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
      void showTapFeedback(View v) {
         v.setPressed(true);
         addTaint(v.getTaint());
-        // ---------- Original Method ----------
-        //v.setPressed(true);
+        
+        
     }
 
     
@@ -659,8 +666,8 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
      void hideTapFeedback(View v) {
         v.setPressed(false);
         addTaint(v.getTaint());
-        // ---------- Original Method ----------
-        //v.setPressed(false);
+        
+        
     }
 
     
@@ -669,24 +676,25 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
         View v = getCurrentView();
         {
             hideTapFeedback(v);
-        } //End block
+        } 
         mTouchMode = TOUCH_MODE_NONE;
-        // ---------- Original Method ----------
-        //View v = getCurrentView();
-        //if (v != null) {
-            //hideTapFeedback(v);
-        //}
-        //mTouchMode = TOUCH_MODE_NONE;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.778 -0400", hash_original_method = "A2B685172F5BE99872ECD239B8E084E5", hash_generated_method = "EDAE82B984D95CDC858CAF4E30B6E99D")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int action = ev.getAction();
         boolean handled = false;
-        //Begin case MotionEvent.ACTION_DOWN 
+        
         {
             View v = getCurrentView();
             {
@@ -695,15 +703,15 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                     {
                         {
                             mPendingCheckForTap = new CheckForTap();
-                        } //End block
+                        } 
                         mTouchMode = TOUCH_MODE_DOWN_IN_CURRENT_VIEW;
                         postDelayed(mPendingCheckForTap, ViewConfiguration.getTapTimeout());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
-        //End case MotionEvent.ACTION_DOWN 
-        //Begin case MotionEvent.ACTION_UP 
+                    } 
+                } 
+            } 
+        } 
+        
+        
         {
             {
                 final View v = getCurrentView();
@@ -715,7 +723,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                             final Handler handler = getHandler();
                             {
                                 handler.removeCallbacks(mPendingCheckForTap);
-                            } //End block
+                            } 
                             showTapFeedback(v);
                             postDelayed(new Runnable() {                                
                                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.778 -0400", hash_original_method = "514935A2E7728F849473B37374E9557E", hash_generated_method = "D7F73D5A566A45A62C5BC175C84FCC1F")
@@ -727,58 +735,59 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                                             {
                                                 performItemClick(v, viewData.adapterPosition,
                                                         viewData.itemId);
-                                            } //End block
+                                            } 
                                             {
                                                 performItemClick(v, 0, 0);
-                                            } //End block
-                                            // ---------- Original Method ----------
-                                            //if (viewData != null) {
-                                                //performItemClick(v, viewData.adapterPosition,
-                                                        //viewData.itemId);
-                                            //} else {
-                                                //performItemClick(v, 0, 0);
-                                            //}
+                                            } 
+                                            
+                                            
+                                                
+                                                        
+                                            
+                                                
+                                            
                                         }
 });
-                                    // ---------- Original Method ----------
-                                    //hideTapFeedback(v);
-                                    //post(new Runnable() {
-                                        //public void run() {
-                                            //if (viewData != null) {
-                                                //performItemClick(v, viewData.adapterPosition,
-                                                        //viewData.itemId);
-                                            //} else {
-                                                //performItemClick(v, 0, 0);
-                                            //}
-                                        //}
-                                    //});
+                                    
+                                    
+                                    
+                                        
+                                            
+                                                
+                                                        
+                                            
+                                                
+                                            
+                                        
+                                    
                                 }
 }, ViewConfiguration.getPressedStateDuration());
                             handled = true;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             mTouchMode = TOUCH_MODE_NONE;
-        } //End block
-        //End case MotionEvent.ACTION_UP 
-        //Begin case MotionEvent.ACTION_CANCEL 
+        } 
+        
+        
         {
             View v = getCurrentView();
             {
                 hideTapFeedback(v);
-            } //End block
+            } 
             mTouchMode = TOUCH_MODE_NONE;
-        } //End block
-        //End case MotionEvent.ACTION_CANCEL 
+        } 
+        
         addTaint(ev.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_643246132 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_643246132;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.779 -0400", hash_original_method = "CF7CC5DB55CCFC095F8C480C67A97670", hash_generated_method = "861A547720E92BA148A4F8B002647DDB")
     private void measureChildren() {
         final int count = getChildCount();
@@ -790,24 +799,25 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                 final View child = getChildAt(i);
                 child.measure(MeasureSpec.makeMeasureSpec(childWidth, MeasureSpec.EXACTLY),
                     MeasureSpec.makeMeasureSpec(childHeight, MeasureSpec.EXACTLY));
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //final int count = getChildCount();
-        //final int childWidth = getMeasuredWidth() - mPaddingLeft - mPaddingRight;
-        //final int childHeight = getMeasuredHeight() - mPaddingTop - mPaddingBottom;
-        //for (int i = 0; i < count; i++) {
-            //final View child = getChildAt(i);
-            //child.measure(MeasureSpec.makeMeasureSpec(childWidth, MeasureSpec.EXACTLY),
-                    //MeasureSpec.makeMeasureSpec(childHeight, MeasureSpec.EXACTLY));
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.780 -0400", hash_original_method = "B8DC8FCB5714B92F7D9B397FCC5E6B1D", hash_generated_method = "21339F5856B18D6D9CCC7A63B4DC2542")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int widthSpecSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightSpecSize = MeasureSpec.getSize(heightMeasureSpec);
         final int widthSpecMode = MeasureSpec.getMode(widthMeasureSpec);
@@ -816,39 +826,39 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
         {
             heightSpecSize = haveChildRefSize ? mReferenceChildHeight + mPaddingTop +
                     mPaddingBottom : 0;
-        } //End block
+        } 
         {
             {
                 int height = mReferenceChildHeight + mPaddingTop + mPaddingBottom;
                 {
                     heightSpecSize |= MEASURED_STATE_TOO_SMALL;
-                } //End block
+                } 
                 {
                     heightSpecSize = height;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             widthSpecSize = haveChildRefSize ? mReferenceChildWidth + mPaddingLeft +
                     mPaddingRight : 0;
-        } //End block
+        } 
         {
             {
                 int width = mReferenceChildWidth + mPaddingLeft + mPaddingRight;
                 {
                     widthSpecSize |= MEASURED_STATE_TOO_SMALL;
-                } //End block
+                } 
                 {
                     widthSpecSize = width;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         setMeasuredDimension(widthSpecSize, heightSpecSize);
         measureChildren();
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -865,55 +875,56 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                         {
                             mWhichChild = 0;
                             showOnly(mWhichChild, false);
-                        } //End block
+                        } 
                         {
                             boolean var9A54785035833875439C9F0D8D389EC7_815926408 = (mOldItemCount != getCount());
                             {
                                 showOnly(mWhichChild, false);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
                     refreshChildren();
                     requestLayout();
-                    // ---------- Original Method ----------
-                    //handleDataChanged();
-                    //if (mWhichChild >= getWindowSize()) {
-                        //mWhichChild = 0;
-                        //showOnly(mWhichChild, false);
-                    //} else if (mOldItemCount != getCount()) {
-                        //showOnly(mWhichChild, false);
-                    //}
-                    //refreshChildren();
-                    //requestLayout();
+                    
+                    
+                    
+                        
+                        
+                    
+                        
+                    
+                    
+                    
                 }
 });
-        } //End block
+        } 
         mDataChanged = false;
-        // ---------- Original Method ----------
-        //boolean dataChanged = mDataChanged;
-        //if (dataChanged) {
-            //post(new Runnable() {
-                //public void run() {
-                    //handleDataChanged();
-                    //if (mWhichChild >= getWindowSize()) {
-                        //mWhichChild = 0;
-                        //showOnly(mWhichChild, false);
-                    //} else if (mOldItemCount != getCount()) {
-                        //showOnly(mWhichChild, false);
-                    //}
-                    //refreshChildren();
-                    //requestLayout();
-                //}
-            //});
-        //}
-        //mDataChanged = false;
+        
+        
+        
+            
+                
+                    
+                    
+                        
+                        
+                    
+                        
+                    
+                    
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.782 -0400", hash_original_method = "BFF47184DAE09EA9D82185EB27DBF22D", hash_generated_method = "C16D29443711746007F38AF398D9723D")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         checkForAndHandleDataChanged();
         final int childCount = getChildCount();
         {
@@ -923,143 +934,149 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                 int childRight = mPaddingLeft + child.getMeasuredWidth();
                 int childBottom = mPaddingTop + child.getMeasuredHeight();
                 child.layout(mPaddingLeft, mPaddingTop, childRight, childBottom);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(changed);
         addTaint(left);
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        //checkForAndHandleDataChanged();
-        //final int childCount = getChildCount();
-        //for (int i = 0; i < childCount; i++) {
-            //final View child = getChildAt(i);
-            //int childRight = mPaddingLeft + child.getMeasuredWidth();
-            //int childBottom = mPaddingTop + child.getMeasuredHeight();
-            //child.layout(mPaddingLeft, mPaddingTop, childRight, childBottom);
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.783 -0400", hash_original_method = "C09C373B1A1103A4B30F4932FEFEB18D", hash_generated_method = "F8F394959C6C9222F9798D2515EC5A4C")
     @Override
     public Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_919936337 = null; //Variable for return #1
+        
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_919936337 = null; 
         Parcelable superState = super.onSaveInstanceState();
         varB4EAC82CA7396A68D541C85D26508E83_919936337 = new SavedState(superState, mWhichChild);
-        varB4EAC82CA7396A68D541C85D26508E83_919936337.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_919936337.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_919936337;
-        // ---------- Original Method ----------
-        //Parcelable superState = super.onSaveInstanceState();
-        //return new SavedState(superState, mWhichChild);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.783 -0400", hash_original_method = "A2807F1883DAD1F14A6CC088A989D676", hash_generated_method = "DA0CD88694F8BD2E5C500DAD827510A5")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         SavedState ss = (SavedState) state;
         super.onRestoreInstanceState(ss.getSuperState());
         mWhichChild = ss.whichChild;
         {
             mRestoreWhichChild = mWhichChild;
-        } //End block
+        } 
         {
             setDisplayedChild(mWhichChild, false);
-        } //End block
+        } 
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //SavedState ss = (SavedState) state;
-        //super.onRestoreInstanceState(ss.getSuperState());
-        //mWhichChild = ss.whichChild;
-        //if (mRemoteViewsAdapter != null && mAdapter == null) {
-            //mRestoreWhichChild = mWhichChild;
-        //} else {
-            //setDisplayedChild(mWhichChild, false);
-        //}
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.783 -0400", hash_original_method = "906CF989810621761D25CEDBF35A3122", hash_generated_method = "272F70ED96D1C37885C83F9EF6077564")
     public View getCurrentView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_1880031733 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1880031733 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1880031733 = getViewAtRelativeIndex(mActiveOffset);
-        varB4EAC82CA7396A68D541C85D26508E83_1880031733.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1880031733.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1880031733;
-        // ---------- Original Method ----------
-        //return getViewAtRelativeIndex(mActiveOffset);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.784 -0400", hash_original_method = "23AFF2D08DB63552361956C44B4439AE", hash_generated_method = "1D033D1DC2888F9723E3C1BCEB6A2469")
     public ObjectAnimator getInAnimation() {
-        ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_428334702 = null; //Variable for return #1
+        ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_428334702 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_428334702 = mInAnimation;
-        varB4EAC82CA7396A68D541C85D26508E83_428334702.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_428334702.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_428334702;
-        // ---------- Original Method ----------
-        //return mInAnimation;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.784 -0400", hash_original_method = "4E43CB38736F57C9005B93984FDB3BE2", hash_generated_method = "EA5FC0666FD015F2A1540E2A3150D3AB")
     public void setInAnimation(ObjectAnimator inAnimation) {
         mInAnimation = inAnimation;
-        // ---------- Original Method ----------
-        //mInAnimation = inAnimation;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.785 -0400", hash_original_method = "6B0CDF48C8054A61C9B211FDE065CA93", hash_generated_method = "1E67BDF99D79C214019339967487CC92")
     public ObjectAnimator getOutAnimation() {
-        ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_32807768 = null; //Variable for return #1
+        ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_32807768 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_32807768 = mOutAnimation;
-        varB4EAC82CA7396A68D541C85D26508E83_32807768.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_32807768.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_32807768;
-        // ---------- Original Method ----------
-        //return mOutAnimation;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.785 -0400", hash_original_method = "1BCB8E8A3DAEDE15E6756EE2F683DC83", hash_generated_method = "C301EFF9C320600FE647D35958651477")
     public void setOutAnimation(ObjectAnimator outAnimation) {
         mOutAnimation = outAnimation;
-        // ---------- Original Method ----------
-        //mOutAnimation = outAnimation;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.785 -0400", hash_original_method = "8F8897D1BAA8E5AE19C8237937D2CA37", hash_generated_method = "CAF47CC8C4558016170EBDDF433F2BD4")
     public void setInAnimation(Context context, int resourceID) {
         setInAnimation((ObjectAnimator) AnimatorInflater.loadAnimator(context, resourceID));
         addTaint(context.getTaint());
         addTaint(resourceID);
-        // ---------- Original Method ----------
-        //setInAnimation((ObjectAnimator) AnimatorInflater.loadAnimator(context, resourceID));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.785 -0400", hash_original_method = "DAE8806685F393E416F20FAE75D3F12A", hash_generated_method = "985146E0215F8C3AC3E37710B2BAA9C6")
     public void setOutAnimation(Context context, int resourceID) {
         setOutAnimation((ObjectAnimator) AnimatorInflater.loadAnimator(context, resourceID));
         addTaint(context.getTaint());
         addTaint(resourceID);
-        // ---------- Original Method ----------
-        //setOutAnimation((ObjectAnimator) AnimatorInflater.loadAnimator(context, resourceID));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.786 -0400", hash_original_method = "8FC95409534ABC48E92905DC8C518CE2", hash_generated_method = "B8F320B30FC7DD41541BCFCAA6FCA367")
     public void setAnimateFirstView(boolean animate) {
         mAnimateFirstTime = animate;
-        // ---------- Original Method ----------
-        //mAnimateFirstTime = animate;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.786 -0400", hash_original_method = "0B91CAAE76789C8A4B2B18C9D0AAF852", hash_generated_method = "31CF00D7199E3E35E3F8644BED923E68")
     @Override
     public int getBaseline() {
@@ -1067,56 +1084,57 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
             boolean var58F8C7D88FB1D1DD9A5513FB3A54B5BC_1518934689 = ((getCurrentView() != null));
             Object varA7D65C03FD7AD29B41A2824896EF9900_960890332 = (getCurrentView().getBaseline());
             Object varEC5F70FA49520212A319ACA653FC0209_1840511194 = (super.getBaseline());
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1685135230 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1685135230;
-        // ---------- Original Method ----------
-        //return (getCurrentView() != null) ? getCurrentView().getBaseline() : super.getBaseline();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.786 -0400", hash_original_method = "4778E83EF7DB01E18145E85F688E24B4", hash_generated_method = "3BB98781901640FD6294EE33711DDF33")
     @Override
     public Adapter getAdapter() {
-        Adapter varB4EAC82CA7396A68D541C85D26508E83_161797833 = null; //Variable for return #1
+        Adapter varB4EAC82CA7396A68D541C85D26508E83_161797833 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_161797833 = mAdapter;
-        varB4EAC82CA7396A68D541C85D26508E83_161797833.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_161797833.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_161797833;
-        // ---------- Original Method ----------
-        //return mAdapter;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.787 -0400", hash_original_method = "8F781C0E336C7A94E2963F9C2B9D5E7F", hash_generated_method = "9201EA89D41B4A6B1C9958204AE85FE6")
     @Override
     public void setAdapter(Adapter adapter) {
         {
             mAdapter.unregisterDataSetObserver(mDataSetObserver);
-        } //End block
+        } 
         mAdapter = adapter;
         checkFocus();
         {
             mDataSetObserver = new AdapterDataSetObserver();
             mAdapter.registerDataSetObserver(mDataSetObserver);
             mItemCount = mAdapter.getCount();
-        } //End block
+        } 
         setFocusable(true);
         mWhichChild = 0;
         showOnly(mWhichChild, false);
-        // ---------- Original Method ----------
-        //if (mAdapter != null && mDataSetObserver != null) {
-            //mAdapter.unregisterDataSetObserver(mDataSetObserver);
-        //}
-        //mAdapter = adapter;
-        //checkFocus();
-        //if (mAdapter != null) {
-            //mDataSetObserver = new AdapterDataSetObserver();
-            //mAdapter.registerDataSetObserver(mDataSetObserver);
-            //mItemCount = mAdapter.getCount();
-        //}
-        //setFocusable(true);
-        //mWhichChild = 0;
-        //showOnly(mWhichChild, false);
+        
+        
+            
+        
+        
+        
+        
+            
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -1129,111 +1147,115 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
                     mRemoteViewsAdapter.getRemoteViewsServiceIntent());
             {
                 boolean var45C20E8BCA952BA88AD2862513B06923_1591343518 = (fcNew.equals(fcOld));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         mDeferNotifyDataSetChanged = false;
         mRemoteViewsAdapter = new RemoteViewsAdapter(getContext(), intent, this);
-        // ---------- Original Method ----------
-        //if (mRemoteViewsAdapter != null) {
-            //Intent.FilterComparison fcNew = new Intent.FilterComparison(intent);
-            //Intent.FilterComparison fcOld = new Intent.FilterComparison(
-                    //mRemoteViewsAdapter.getRemoteViewsServiceIntent());
-            //if (fcNew.equals(fcOld)) {
-                //return;
-            //}
-        //}
-        //mDeferNotifyDataSetChanged = false;
-        //mRemoteViewsAdapter = new RemoteViewsAdapter(getContext(), intent, this);
+        
+        
+            
+            
+                    
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.788 -0400", hash_original_method = "DA18836BD93C624B14E0649B9FD256B6", hash_generated_method = "7C42918103827E95F3EE4E19188D7CD8")
     @Override
     public void setSelection(int position) {
         setDisplayedChild(position);
         addTaint(position);
-        // ---------- Original Method ----------
-        //setDisplayedChild(position);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.788 -0400", hash_original_method = "B55B55B562FC01D014E8D16B89577F15", hash_generated_method = "757ABADF37FB3FCDF6C636C9C13D4882")
     @Override
     public View getSelectedView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_1079836709 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1079836709 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1079836709 = getViewAtRelativeIndex(mActiveOffset);
-        varB4EAC82CA7396A68D541C85D26508E83_1079836709.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1079836709.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1079836709;
-        // ---------- Original Method ----------
-        //return getViewAtRelativeIndex(mActiveOffset);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.789 -0400", hash_original_method = "0410210FC7BC336B3896BEA7510AAE3D", hash_generated_method = "9D38AC80197E9738EE138974F1EA14DE")
     public void deferNotifyDataSetChanged() {
         mDeferNotifyDataSetChanged = true;
-        // ---------- Original Method ----------
-        //mDeferNotifyDataSetChanged = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.789 -0400", hash_original_method = "9E5375D03017C5CE595A523DBE298043", hash_generated_method = "53373B60F63A8BBC1B557D02AE27224A")
     public boolean onRemoteAdapterConnected() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             setAdapter(mRemoteViewsAdapter);
             {
                 mRemoteViewsAdapter.notifyDataSetChanged();
                 mDeferNotifyDataSetChanged = false;
-            } //End block
+            } 
             {
                 setDisplayedChild(mRestoreWhichChild, false);
                 mRestoreWhichChild = -1;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mRemoteViewsAdapter.superNotifyDataSetChanged();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1792420754 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1792420754;
-        // ---------- Original Method ----------
-        //if (mRemoteViewsAdapter != mAdapter) {
-            //setAdapter(mRemoteViewsAdapter);
-            //if (mDeferNotifyDataSetChanged) {
-                //mRemoteViewsAdapter.notifyDataSetChanged();
-                //mDeferNotifyDataSetChanged = false;
-            //}
-            //if (mRestoreWhichChild > -1) {
-                //setDisplayedChild(mRestoreWhichChild, false);
-                //mRestoreWhichChild = -1;
-            //}
-            //return false;
-        //} else if (mRemoteViewsAdapter != null) {
-            //mRemoteViewsAdapter.superNotifyDataSetChanged();
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+                
+                
+            
+            
+                
+                
+            
+            
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.790 -0400", hash_original_method = "062C10606C6763A75AEC213E65863835", hash_generated_method = "64085B2EAF9EA39B9EA364A5E4CA7F63")
     public void onRemoteAdapterDisconnected() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.790 -0400", hash_original_method = "47C53466AFD69B01265302F86E539CFE", hash_generated_method = "87EFC5B96525071A3735B428531FF9C3")
     public void advance() {
         showNext();
-        // ---------- Original Method ----------
-        //showNext();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.791 -0400", hash_original_method = "1A32686EBDFA985B54B6CF53155BB413", hash_generated_method = "AD4C3644092881C2E0FBB4399DF4389D")
     public void fyiWillBeAdvancedByHostKThx() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -1257,11 +1279,11 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
             this.relativeIndex = relativeIndex;
             this.adapterPosition = adapterPosition;
             this.itemId = itemId;
-            // ---------- Original Method ----------
-            //this.view = view;
-            //this.relativeIndex = relativeIndex;
-            //this.adapterPosition = adapterPosition;
-            //this.itemId = itemId;
+            
+            
+            
+            
+            
         }
 
         
@@ -1274,7 +1296,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.792 -0400", hash_original_method = "AB5DEBF7CC7D6BE3A48A21837827B410", hash_generated_method = "AB5DEBF7CC7D6BE3A48A21837827B410")
         public CheckForTap ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1283,12 +1305,12 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
             {
                 View v = getCurrentView();
                 showTapFeedback(v);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mTouchMode == TOUCH_MODE_DOWN_IN_CURRENT_VIEW) {
-                //View v = getCurrentView();
-                //showTapFeedback(v);
-            //}
+            } 
+            
+            
+                
+                
+            
         }
 
         
@@ -1306,8 +1328,8 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
             super(superState);
             this.whichChild = whichChild;
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
-            //this.whichChild = whichChild;
+            
+            
         }
 
         
@@ -1315,8 +1337,8 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
         private  SavedState(Parcel in) {
             super(in);
             this.whichChild = in.readInt();
-            // ---------- Original Method ----------
-            //this.whichChild = in.readInt();
+            
+            
         }
 
         
@@ -1327,21 +1349,21 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
             out.writeInt(this.whichChild);
             addTaint(out.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //super.writeToParcel(out, flags);
-            //out.writeInt(this.whichChild);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.794 -0400", hash_original_method = "808D88187ABBC8D595A46EE25C5AC5ED", hash_generated_method = "528312AC0EAC62015B4E1697C918F6DA")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_273414930 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_273414930 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_273414930 = "AdapterViewAnimator.SavedState{ whichChild = " + this.whichChild + " }";
-            varB4EAC82CA7396A68D541C85D26508E83_273414930.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_273414930.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_273414930;
-            // ---------- Original Method ----------
-            //return "AdapterViewAnimator.SavedState{ whichChild = " + this.whichChild + " }";
+            
+            
         }
 
         

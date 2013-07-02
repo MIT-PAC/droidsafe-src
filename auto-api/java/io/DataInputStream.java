@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.ByteOrder;
 import java.nio.charset.ModifiedUtf8;
@@ -22,7 +22,7 @@ public class DataInputStream extends FilterInputStream implements DataInput {
     public  DataInputStream(InputStream in) {
         super(in);
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,8 +33,8 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         addTaint(buffer[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1406677225 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1406677225;
-        // ---------- Original Method ----------
-        //return super.read(buffer);
+        
+        
     }
 
     
@@ -47,8 +47,8 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         addTaint(length);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2140519441 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2140519441;
-        // ---------- Original Method ----------
-        //return in.read(buffer, offset, length);
+        
+        
     }
 
     
@@ -57,15 +57,15 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         int temp = in.read();
         {
             if (DroidSafeAndroidRuntime.control) throw new EOFException();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1945598824 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1945598824;
-        // ---------- Original Method ----------
-        //int temp = in.read();
-        //if (temp < 0) {
-            //throw new EOFException();
-        //}
-        //return temp != 0;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -74,15 +74,15 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         int temp = in.read();
         {
             if (DroidSafeAndroidRuntime.control) throw new EOFException();
-        } //End block
+        } 
         byte var40EA57D3EE3C07BF1C102B466E1C3091_426782481 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_426782481;
-        // ---------- Original Method ----------
-        //int temp = in.read();
-        //if (temp < 0) {
-            //throw new EOFException();
-        //}
-        //return (byte) temp;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -91,8 +91,8 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         char varF2ACC106D91692A1DB07375484A6C29E_1004196343 = ((char) readShort());
         char varA87DEB01C5F539E6BDA34829C8EF2368_73506440 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_73506440;
-        // ---------- Original Method ----------
-        //return (char) readShort();
+        
+        
     }
 
     
@@ -101,8 +101,8 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         double var3292A685AD9C8EB2CF3ABF2B88C345AA_260593345 = (Double.longBitsToDouble(readLong()));
         double varE8CD7DA078A86726031AD64F35F5A6C0_654856647 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_654856647;
-        // ---------- Original Method ----------
-        //return Double.longBitsToDouble(readLong());
+        
+        
     }
 
     
@@ -111,8 +111,8 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         float var6656A3EBF72C98EFC9F149CC98AAD604_1837081143 = (Float.intBitsToFloat(readInt()));
         float var546ADE640B6EDFBC8A086EF31347E768_2029566168 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2029566168;
-        // ---------- Original Method ----------
-        //return Float.intBitsToFloat(readInt());
+        
+        
     }
 
     
@@ -120,8 +120,8 @@ public class DataInputStream extends FilterInputStream implements DataInput {
     public final void readFully(byte[] dst) throws IOException {
         readFully(dst, 0, dst.length);
         addTaint(dst[0]);
-        // ---------- Original Method ----------
-        //readFully(dst, 0, dst.length);
+        
+        
     }
 
     
@@ -131,8 +131,8 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         addTaint(dst[0]);
         addTaint(offset);
         addTaint(byteCount);
-        // ---------- Original Method ----------
-        //Streams.readFully(in, dst, offset, byteCount);
+        
+        
     }
 
     
@@ -142,87 +142,87 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         int varB097092D008CB2C0CB75F2D5D42B4BD8_578047449 = (Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2013547500 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2013547500;
-        // ---------- Original Method ----------
-        //Streams.readFully(in, scratch, 0, SizeOf.INT);
-        //return Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.630 -0400", hash_original_method = "65FD20FE420262B12F0063D27F62A405", hash_generated_method = "7A9D784E0F1AC11C8762017A4AE35155")
     @Deprecated
     public final String readLine() throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1965653342 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1979062937 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_864507129 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_1781498610 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_940823076 = null; //Variable for return #5
+        String varB4EAC82CA7396A68D541C85D26508E83_1965653342 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1979062937 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_864507129 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1781498610 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_940823076 = null; 
         StringBuilder line = new StringBuilder(80);
         boolean foundTerminator = false;
         {
             int nextByte = in.read();
-            //Begin case -1 
+            
             {
                 boolean var9283EC23547FB4E91F8ADED78FB3824E_1542675609 = (line.length() == 0 && !foundTerminator);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1965653342 = null;
-                } //End block
-            } //End collapsed parenthetic
-            //End case -1 
-            //Begin case -1 
+                } 
+            } 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_1979062937 = line.toString();
-            //End case -1 
-            //Begin case (byte) '\r' 
+            
+            
             {
                 ((PushbackInputStream) in).unread(nextByte);
                 varB4EAC82CA7396A68D541C85D26508E83_864507129 = line.toString();
-            } //End block
-            //End case (byte) '\r' 
-            //Begin case (byte) '\r' 
+            } 
+            
+            
             foundTerminator = true;
-            //End case (byte) '\r' 
-            //Begin case (byte) '\r' 
+            
+            
             {
                 boolean var2EF3DF204DF2FA3A280904C5F67B208D_1767112713 = (!(in.getClass() == PushbackInputStream.class));
                 {
                     in = new PushbackInputStream(in);
-                } //End block
-            } //End collapsed parenthetic
-            //End case (byte) '\r' 
-            //Begin case (byte) '\n' 
+                } 
+            } 
+            
+            
             varB4EAC82CA7396A68D541C85D26508E83_1781498610 = line.toString();
-            //End case (byte) '\n' 
-            //Begin case default 
+            
+            
             {
                 ((PushbackInputStream) in).unread(nextByte);
                 varB4EAC82CA7396A68D541C85D26508E83_940823076 = line.toString();
-            } //End block
-            //End case default 
-            //Begin case default 
+            } 
+            
+            
             line.append((char) nextByte);
-            //End case default 
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_1739601724; //Final return value
+            
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1739601724; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1739601724 = varB4EAC82CA7396A68D541C85D26508E83_1965653342;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1739601724 = varB4EAC82CA7396A68D541C85D26508E83_1979062937;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1739601724 = varB4EAC82CA7396A68D541C85D26508E83_864507129;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1739601724 = varB4EAC82CA7396A68D541C85D26508E83_1781498610;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1739601724 = varB4EAC82CA7396A68D541C85D26508E83_940823076;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1739601724.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1739601724.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1739601724;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -232,9 +232,9 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         long var9F6710AAE72C6645C9CB5D9BAF2C5E79_855519699 = (Memory.peekLong(scratch, 0, ByteOrder.BIG_ENDIAN));
         long var0F5264038205EDFB1AC05FBB0E8C5E94_779713653 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_779713653;
-        // ---------- Original Method ----------
-        //Streams.readFully(in, scratch, 0, SizeOf.LONG);
-        //return Memory.peekLong(scratch, 0, ByteOrder.BIG_ENDIAN);
+        
+        
+        
     }
 
     
@@ -244,9 +244,9 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         short var007DE4DE11DFBCEFBB55FC3C89A2F231_1250183614 = (Memory.peekShort(scratch, 0, ByteOrder.BIG_ENDIAN));
         short var4F09DAA9D95BCB166A302407A0E0BABE_1449082449 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1449082449;
-        // ---------- Original Method ----------
-        //Streams.readFully(in, scratch, 0, SizeOf.SHORT);
-        //return Memory.peekShort(scratch, 0, ByteOrder.BIG_ENDIAN);
+        
+        
+        
     }
 
     
@@ -255,15 +255,15 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         int temp = in.read();
         {
             if (DroidSafeAndroidRuntime.control) throw new EOFException();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_173360704 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_173360704;
-        // ---------- Original Method ----------
-        //int temp = in.read();
-        //if (temp < 0) {
-            //throw new EOFException();
-        //}
-        //return temp;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -272,34 +272,35 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         int var80645AD98CDAD0EE0FB3459E3825971C_1431381126 = (((int) readShort()) & 0xffff);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_365782097 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_365782097;
-        // ---------- Original Method ----------
-        //return ((int) readShort()) & 0xffff;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.633 -0400", hash_original_method = "5E72291B0CE6A92E15C4771FA586BE01", hash_generated_method = "F9FE688FA2E801B4DDCD0B766183DB02")
     public final String readUTF() throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_2106963676 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2106963676 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2106963676 = decodeUTF(readUnsignedShort());
-        varB4EAC82CA7396A68D541C85D26508E83_2106963676.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2106963676.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2106963676;
-        // ---------- Original Method ----------
-        //return decodeUTF(readUnsignedShort());
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.634 -0400", hash_original_method = "97504F653AF4B98C0D73EF18B85FA029", hash_generated_method = "0FE21242551CE014291681D3C3D44D4A")
      String decodeUTF(int utfSize) throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_386134860 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_386134860 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_386134860 = decodeUTF(utfSize, this);
         addTaint(utfSize);
-        varB4EAC82CA7396A68D541C85D26508E83_386134860.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_386134860.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_386134860;
-        // ---------- Original Method ----------
-        //return decodeUTF(utfSize, this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String decodeUTF(int utfSize, DataInput in) throws IOException {
         byte[] buf = new byte[utfSize];
         in.readFully(buf, 0, utfSize);
@@ -320,18 +321,18 @@ public class DataInputStream extends FilterInputStream implements DataInput {
             boolean var2A4115B73034251059ADD8819B331806_347997368 = (skipped < count && (skip = in.skip(count - skipped)) != 0);
             {
                 skipped += skip;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(count);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1683339777 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1683339777;
-        // ---------- Original Method ----------
-        //int skipped = 0;
-        //long skip;
-        //while (skipped < count && (skip = in.skip(count - skipped)) != 0) {
-            //skipped += skip;
-        //}
-        //return skipped;
+        
+        
+        
+        
+            
+        
+        
     }
 
     

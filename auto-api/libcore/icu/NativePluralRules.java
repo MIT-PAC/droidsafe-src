@@ -1,11 +1,11 @@
 package libcore.icu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Locale;
 
@@ -17,44 +17,47 @@ public final class NativePluralRules {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.713 -0400", hash_original_method = "AA726DD537B18CF5E6F027FB7C25435F", hash_generated_method = "CE58BB3507445ED0089597718F7F8DAB")
     private  NativePluralRules(int address) {
         this.address = address;
-        // ---------- Original Method ----------
-        //this.address = address;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.714 -0400", hash_original_method = "FA021A9562CA4E3CEECA6C94C3E7379A", hash_generated_method = "CF596162EA39646094AA7457D60C8B8A")
     @Override
     protected void finalize() throws Throwable {
         try 
         {
             finalizeImpl(address);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //finalizeImpl(address);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NativePluralRules forLocale(Locale locale) {
         return new NativePluralRules(forLocaleImpl(locale.toString()));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.715 -0400", hash_original_method = "041DB4B792006075282F7DDDC9E8ADDE", hash_generated_method = "995554D1A9A5A93710AF61747BA86785")
     public int quantityForInt(int value) {
         int var241482E4026E286350AA36B21F0B0AA5_1137022351 = (quantityForIntImpl(address, value));
         addTaint(value);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1988970936 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1988970936;
-        // ---------- Original Method ----------
-        //return quantityForIntImpl(address, value);
+        
+        
     }
 
     

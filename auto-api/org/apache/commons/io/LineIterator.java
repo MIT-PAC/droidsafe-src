@@ -1,11 +1,11 @@
 package org.apache.commons.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -28,25 +28,26 @@ public class LineIterator implements Iterator<String> {
     public  LineIterator(final Reader reader) throws IllegalArgumentException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Reader must not be null");
-        } //End block
+        } 
         {
             bufferedReader = (BufferedReader) reader;
-        } //End block
+        } 
         {
             bufferedReader = new BufferedReader(reader);
-        } //End block
-        // ---------- Original Method ----------
-        //if (reader == null) {
-            //throw new IllegalArgumentException("Reader must not be null");
-        //}
-        //if (reader instanceof BufferedReader) {
-            //bufferedReader = (BufferedReader) reader;
-        //} else {
-            //bufferedReader = new BufferedReader(reader);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.434 -0400", hash_original_method = "67C6321C4A560250E895F968089F5E07", hash_generated_method = "B9501D2CAA2EE41807C8DEA568DB6611")
     public boolean hasNext() {
         {
@@ -56,45 +57,45 @@ public class LineIterator implements Iterator<String> {
                     String line = bufferedReader.readLine();
                     {
                         finished = true;
-                    } //End block
+                    } 
                     {
                         boolean varC992E840C9325E3D06A977EA0B1F4CE5_1429551536 = (isValidLine(line));
                         {
                             cachedLine = line;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             catch (IOException ioe)
             {
                 close();
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(ioe);
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_798388599 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_798388599;
-        // ---------- Original Method ----------
-        //if (cachedLine != null) {
-            //return true;
-        //} else if (finished) {
-            //return false;
-        //} else {
-            //try {
-                //while (true) {
-                    //String line = bufferedReader.readLine();
-                    //if (line == null) {
-                        //finished = true;
-                        //return false;
-                    //} else if (isValidLine(line)) {
-                        //cachedLine = line;
-                        //return true;
-                    //}
-                //}
-            //} catch(IOException ioe) {
-                //close();
-                //throw new IllegalStateException(ioe);
-            //}
-        //}
+        
+        
+            
+        
+            
+        
+            
+                
+                    
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                
+            
+                
+                
+            
+        
     }
 
     
@@ -103,66 +104,71 @@ public class LineIterator implements Iterator<String> {
         addTaint(line.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_516442249 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_516442249;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.435 -0400", hash_original_method = "5E316A44D1D2B85B5A94898151BCE074", hash_generated_method = "13801A031B407512D845A9F181833E78")
     public String next() {
-        String varB4EAC82CA7396A68D541C85D26508E83_871566426 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_871566426 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_871566426 = nextLine();
-        varB4EAC82CA7396A68D541C85D26508E83_871566426.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_871566426.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_871566426;
-        // ---------- Original Method ----------
-        //return nextLine();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.436 -0400", hash_original_method = "34C5F6253FCD1E23723623334462E67F", hash_generated_method = "089F54B43D1EA2D056AFA05D6EE93060")
     public String nextLine() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1061571111 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1061571111 = null; 
         {
             boolean var2CC10AB3C52DD03176ADB3A939341751_1094743259 = (!hasNext());
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException("No more lines");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String currentLine = cachedLine;
         cachedLine = null;
         varB4EAC82CA7396A68D541C85D26508E83_1061571111 = currentLine;
-        varB4EAC82CA7396A68D541C85D26508E83_1061571111.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1061571111.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1061571111;
-        // ---------- Original Method ----------
-        //if (!hasNext()) {
-            //throw new NoSuchElementException("No more lines");
-        //}
-        //String currentLine = cachedLine;
-        //cachedLine = null;
-        //return currentLine;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.436 -0400", hash_original_method = "D603D6A8B937767723C974F30C64091E", hash_generated_method = "7E68A5F34F4B01DBAF690434ACC86387")
     public void close() {
         finished = true;
         IOUtils.closeQuietly(bufferedReader);
         cachedLine = null;
-        // ---------- Original Method ----------
-        //finished = true;
-        //IOUtils.closeQuietly(bufferedReader);
-        //cachedLine = null;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.437 -0400", hash_original_method = "AC01E9FFBEF40935A0A093C32EF1F4B2", hash_generated_method = "793F400B9FA36D4F5795E6A6031659CF")
     public void remove() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Remove unsupported on LineIterator");
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException("Remove unsupported on LineIterator");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeQuietly(LineIterator iterator) {
         if (iterator != null) {
             iterator.close();

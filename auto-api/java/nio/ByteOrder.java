@@ -1,11 +1,11 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class ByteOrder {
@@ -20,9 +20,9 @@ public final class ByteOrder {
     private  ByteOrder(String name, boolean needsSwap) {
         this.name = name;
         this.needsSwap = needsSwap;
-        // ---------- Original Method ----------
-        //this.name = name;
-        //this.needsSwap = needsSwap;
+        
+        
+        
     }
 
     
@@ -39,12 +39,12 @@ public final class ByteOrder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.817 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "4CDE331DF1AFFDFE906279B5FDFA0AC6")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1502854660 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1502854660 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1502854660 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_1502854660.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1502854660.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1502854660;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     

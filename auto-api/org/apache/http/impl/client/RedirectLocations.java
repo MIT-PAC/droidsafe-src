@@ -1,11 +1,11 @@
 package org.apache.http.impl.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.net.URI;
 import java.util.HashSet;
@@ -20,8 +20,8 @@ public class RedirectLocations {
     public  RedirectLocations() {
         super();
         this.uris = new HashSet<URI>();
-        // ---------- Original Method ----------
-        //this.uris = new HashSet<URI>();
+        
+        
     }
 
     
@@ -31,8 +31,8 @@ public class RedirectLocations {
         addTaint(uri.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_238013793 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_238013793;
-        // ---------- Original Method ----------
-        //return this.uris.contains(uri);
+        
+        
     }
 
     
@@ -40,8 +40,8 @@ public class RedirectLocations {
     public void add(final URI uri) {
         this.uris.add(uri);
         addTaint(uri.getTaint());
-        // ---------- Original Method ----------
-        //this.uris.add(uri);
+        
+        
     }
 
     
@@ -51,8 +51,8 @@ public class RedirectLocations {
         addTaint(uri.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_122464891 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_122464891;
-        // ---------- Original Method ----------
-        //return this.uris.remove(uri);
+        
+        
     }
 
     

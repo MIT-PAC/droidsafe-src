@@ -1,11 +1,11 @@
 package com.android.internal.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import com.android.internal.R;
@@ -161,37 +161,37 @@ public class AlertController {
     View.OnClickListener mButtonHandler = new View.OnClickListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.870 -0400", hash_original_method = "23692F5F6532A376A1C310E4C1F7AE36", hash_generated_method = "C93E9241920A99CF968E82D80BD17750")
         public void onClick(View v) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Message m = null;
             {
                 m = Message.obtain(mButtonPositiveMessage);
-            } //End block
+            } 
             {
                 m = Message.obtain(mButtonNegativeMessage);
-            } //End block
+            } 
             {
                 m = Message.obtain(mButtonNeutralMessage);
-            } //End block
+            } 
             {
                 m.sendToTarget();
-            } //End block
+            } 
             mHandler.obtainMessage(ButtonHandler.MSG_DISMISS_DIALOG, mDialogInterface)
                     .sendToTarget();
             addTaint(v.getTaint());
-            // ---------- Original Method ----------
-            //Message m = null;
-            //if (v == mButtonPositive && mButtonPositiveMessage != null) {
-                //m = Message.obtain(mButtonPositiveMessage);
-            //} else if (v == mButtonNegative && mButtonNegativeMessage != null) {
-                //m = Message.obtain(mButtonNegativeMessage);
-            //} else if (v == mButtonNeutral && mButtonNeutralMessage != null) {
-                //m = Message.obtain(mButtonNeutralMessage);
-            //}
-            //if (m != null) {
-                //m.sendToTarget();
-            //}
-            //mHandler.obtainMessage(ButtonHandler.MSG_DISMISS_DIALOG, mDialogInterface)
-                    //.sendToTarget();
+            
+            
+            
+                
+            
+                
+            
+                
+            
+            
+                
+            
+            
+                    
         }
 
         
@@ -221,8 +221,8 @@ public class AlertController {
                 com.android.internal.R.styleable.AlertDialog_listItemLayout,
                 com.android.internal.R.layout.select_dialog_item);
         a.recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -262,18 +262,18 @@ public class AlertController {
             {
                 mWindow.setFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM,
                     WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mWindow.setContentView(mAlertDialogLayout);
         setupView();
-        // ---------- Original Method ----------
-        //mWindow.requestFeature(Window.FEATURE_NO_TITLE);
-        //if (mView == null || !canTextInput(mView)) {
-            //mWindow.setFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM,
-                    //WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
-        //}
-        //mWindow.setContentView(mAlertDialogLayout);
-        //setupView();
+        
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
@@ -282,34 +282,35 @@ public class AlertController {
         mTitle = title;
         {
             mTitleView.setText(title);
-        } //End block
-        // ---------- Original Method ----------
-        //mTitle = title;
-        //if (mTitleView != null) {
-            //mTitleView.setText(title);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.873 -0400", hash_original_method = "94C17D404D39F375178D63AA6F858393", hash_generated_method = "9AE38CE4ED732D893D2FAE27057216F6")
     public void setCustomTitle(View customTitleView) {
         mCustomTitleView = customTitleView;
-        // ---------- Original Method ----------
-        //mCustomTitleView = customTitleView;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.874 -0400", hash_original_method = "BE4B8F8527E733138AAA8E77FCFD81CC", hash_generated_method = "D179C467E8D42A1C66F463F558A4C89E")
     public void setMessage(CharSequence message) {
         mMessage = message;
         {
             mMessageView.setText(message);
-        } //End block
-        // ---------- Original Method ----------
-        //mMessage = message;
-        //if (mMessageView != null) {
-            //mMessageView.setText(message);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -317,9 +318,9 @@ public class AlertController {
     public void setView(View view) {
         mView = view;
         mViewSpacingSpecified = false;
-        // ---------- Original Method ----------
-        //mView = view;
-        //mViewSpacingSpecified = false;
+        
+        
+        
     }
 
     
@@ -332,13 +333,13 @@ public class AlertController {
         mViewSpacingTop = viewSpacingTop;
         mViewSpacingRight = viewSpacingRight;
         mViewSpacingBottom = viewSpacingBottom;
-        // ---------- Original Method ----------
-        //mView = view;
-        //mViewSpacingSpecified = true;
-        //mViewSpacingLeft = viewSpacingLeft;
-        //mViewSpacingTop = viewSpacingTop;
-        //mViewSpacingRight = viewSpacingRight;
-        //mViewSpacingBottom = viewSpacingBottom;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -347,187 +348,192 @@ public class AlertController {
             DialogInterface.OnClickListener listener, Message msg) {
         {
             msg = mHandler.obtainMessage(whichButton, listener);
-        } //End block
-        //Begin case DialogInterface.BUTTON_POSITIVE 
+        } 
+        
         mButtonPositiveText = text;
-        //End case DialogInterface.BUTTON_POSITIVE 
-        //Begin case DialogInterface.BUTTON_POSITIVE 
+        
+        
         mButtonPositiveMessage = msg;
-        //End case DialogInterface.BUTTON_POSITIVE 
-        //Begin case DialogInterface.BUTTON_NEGATIVE 
+        
+        
         mButtonNegativeText = text;
-        //End case DialogInterface.BUTTON_NEGATIVE 
-        //Begin case DialogInterface.BUTTON_NEGATIVE 
+        
+        
         mButtonNegativeMessage = msg;
-        //End case DialogInterface.BUTTON_NEGATIVE 
-        //Begin case DialogInterface.BUTTON_NEUTRAL 
+        
+        
         mButtonNeutralText = text;
-        //End case DialogInterface.BUTTON_NEUTRAL 
-        //Begin case DialogInterface.BUTTON_NEUTRAL 
+        
+        
         mButtonNeutralMessage = msg;
-        //End case DialogInterface.BUTTON_NEUTRAL 
-        //Begin case default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Button does not exist");
-        //End case default 
+        
         addTaint(whichButton);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (msg == null && listener != null) {
-            //msg = mHandler.obtainMessage(whichButton, listener);
-        //}
-        //switch (whichButton) {
-            //case DialogInterface.BUTTON_POSITIVE:
-                //mButtonPositiveText = text;
-                //mButtonPositiveMessage = msg;
-                //break;
-            //case DialogInterface.BUTTON_NEGATIVE:
-                //mButtonNegativeText = text;
-                //mButtonNegativeMessage = msg;
-                //break;
-            //case DialogInterface.BUTTON_NEUTRAL:
-                //mButtonNeutralText = text;
-                //mButtonNeutralMessage = msg;
-                //break;
-            //default:
-                //throw new IllegalArgumentException("Button does not exist");
-        //}
+        
+        
+            
+        
+        
+            
+                
+                
+                
+            
+                
+                
+                
+            
+                
+                
+                
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.876 -0400", hash_original_method = "FB4271E4605E30D98972B290FB7DEC88", hash_generated_method = "0176D164EFC68B725D39639B13EC798B")
     public void setIcon(int resId) {
         mIconId = resId;
         {
             {
                 mIconView.setImageResource(mIconId);
-            } //End block
+            } 
             {
                 mIconView.setVisibility(View.GONE);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //mIconId = resId;
-        //if (mIconView != null) {
-            //if (resId > 0) {
-                //mIconView.setImageResource(mIconId);
-            //} else if (resId == 0) {
-                //mIconView.setVisibility(View.GONE);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.876 -0400", hash_original_method = "5C2407A3F3458DD1635D398D03E8F03F", hash_generated_method = "5F81E06242EDAF70870C7F4E905F2256")
     public void setIcon(Drawable icon) {
         mIcon = icon;
         {
             mIconView.setImageDrawable(icon);
-        } //End block
-        // ---------- Original Method ----------
-        //mIcon = icon;
-        //if ((mIconView != null) && (mIcon != null)) {
-            //mIconView.setImageDrawable(icon);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.876 -0400", hash_original_method = "19D779B93DDFF4465E595606B06C3EFE", hash_generated_method = "2877CEF8117E45CC2D5B31E05B27DD1D")
     public void setInverseBackgroundForced(boolean forceInverseBackground) {
         mForceInverseBackground = forceInverseBackground;
-        // ---------- Original Method ----------
-        //mForceInverseBackground = forceInverseBackground;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.877 -0400", hash_original_method = "3273CA9467A607A59D9BD9C18D0394BC", hash_generated_method = "FDED9D9D967A1B836928B05023D803D7")
     public ListView getListView() {
-        ListView varB4EAC82CA7396A68D541C85D26508E83_1858768853 = null; //Variable for return #1
+        ListView varB4EAC82CA7396A68D541C85D26508E83_1858768853 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1858768853 = mListView;
-        varB4EAC82CA7396A68D541C85D26508E83_1858768853.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1858768853.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1858768853;
-        // ---------- Original Method ----------
-        //return mListView;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.877 -0400", hash_original_method = "3833583B80F66F9531985629B1AE2E3F", hash_generated_method = "5B859A8710073887BE6EF128E6430F70")
     public Button getButton(int whichButton) {
-        Button varB4EAC82CA7396A68D541C85D26508E83_1828451288 = null; //Variable for return #1
-        Button varB4EAC82CA7396A68D541C85D26508E83_2083774762 = null; //Variable for return #2
-        Button varB4EAC82CA7396A68D541C85D26508E83_294642646 = null; //Variable for return #3
-        Button varB4EAC82CA7396A68D541C85D26508E83_1634576496 = null; //Variable for return #4
-        //Begin case DialogInterface.BUTTON_POSITIVE 
+        Button varB4EAC82CA7396A68D541C85D26508E83_1828451288 = null; 
+        Button varB4EAC82CA7396A68D541C85D26508E83_2083774762 = null; 
+        Button varB4EAC82CA7396A68D541C85D26508E83_294642646 = null; 
+        Button varB4EAC82CA7396A68D541C85D26508E83_1634576496 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1828451288 = mButtonPositive;
-        //End case DialogInterface.BUTTON_POSITIVE 
-        //Begin case DialogInterface.BUTTON_NEGATIVE 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_2083774762 = mButtonNegative;
-        //End case DialogInterface.BUTTON_NEGATIVE 
-        //Begin case DialogInterface.BUTTON_NEUTRAL 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_294642646 = mButtonNeutral;
-        //End case DialogInterface.BUTTON_NEUTRAL 
-        //Begin case default 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1634576496 = null;
-        //End case default 
+        
         addTaint(whichButton);
-        Button varA7E53CE21691AB073D9660D615818899_2112885985; //Final return value
+        Button varA7E53CE21691AB073D9660D615818899_2112885985; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2112885985 = varB4EAC82CA7396A68D541C85D26508E83_1828451288;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2112885985 = varB4EAC82CA7396A68D541C85D26508E83_2083774762;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_2112885985 = varB4EAC82CA7396A68D541C85D26508E83_294642646;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2112885985 = varB4EAC82CA7396A68D541C85D26508E83_1634576496;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2112885985.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2112885985.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2112885985;
-        // ---------- Original Method ----------
-        //switch (whichButton) {
-            //case DialogInterface.BUTTON_POSITIVE:
-                //return mButtonPositive;
-            //case DialogInterface.BUTTON_NEGATIVE:
-                //return mButtonNegative;
-            //case DialogInterface.BUTTON_NEUTRAL:
-                //return mButtonNeutral;
-            //default:
-                //return null;
-        //}
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.878 -0400", hash_original_method = "B7833AF2811E127AB8391879126162ED", hash_generated_method = "233E4A04788FB1DF749052C7565CB479")
     @SuppressWarnings({"UnusedDeclaration"})
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean varB0629CF80F4172C61489257E2E1A4A2C_469264350 = (mScrollView != null && mScrollView.executeKeyEvent(event));
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_813672693 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_813672693;
-        // ---------- Original Method ----------
-        //return mScrollView != null && mScrollView.executeKeyEvent(event);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.878 -0400", hash_original_method = "98FE899904FE72C0DB5091897F5A09B0", hash_generated_method = "81A0B8906EE29F52651E80E684173A3F")
     @SuppressWarnings({"UnusedDeclaration"})
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean varB0629CF80F4172C61489257E2E1A4A2C_962668842 = (mScrollView != null && mScrollView.executeKeyEvent(event));
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_757783597 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_757783597;
-        // ---------- Original Method ----------
-        //return mScrollView != null && mScrollView.executeKeyEvent(event);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.879 -0400", hash_original_method = "0CE32455CB333C36B4EB85B89D65D186", hash_generated_method = "96E327DC2F066CB0796AFB01B3440B4C")
     private void setupView() {
         LinearLayout contentPanel = (LinearLayout) mWindow.findViewById(R.id.contentPanel);
@@ -541,7 +547,7 @@ public class AlertController {
         {
             buttonPanel.setVisibility(View.GONE);
             mWindow.setCloseOnTouchOutsideIfNotSet(true);
-        } //End block
+        } 
         FrameLayout customPanel = null;
         {
             customPanel = (FrameLayout) mWindow.findViewById(R.id.customPanel);
@@ -550,33 +556,34 @@ public class AlertController {
             {
                 custom.setPadding(mViewSpacingLeft, mViewSpacingTop, mViewSpacingRight,
                         mViewSpacingBottom);
-            } //End block
+            } 
             {
                 ((LinearLayout.LayoutParams) customPanel.getLayoutParams()).weight = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mWindow.findViewById(R.id.customPanel).setVisibility(View.GONE);
-        } //End block
+        } 
         {
             View divider = null;
             {
                 divider = mWindow.findViewById(R.id.titleDivider);
-            } //End block
+            } 
             {
                 divider = mWindow.findViewById(R.id.titleDividerTop);
-            } //End block
+            } 
             {
                 divider.setVisibility(View.VISIBLE);
-            } //End block
-        } //End block
+            } 
+        } 
         setBackground(topPanel, contentPanel, customPanel, hasButtons, a, hasTitle, buttonPanel);
         a.recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.880 -0400", hash_original_method = "291261EC5A45F15B0AF035A0FADD9120", hash_generated_method = "48072D46DB986961EA3F83148620EB17")
     private boolean setupTitle(LinearLayout topPanel) {
         boolean hasTitle = true;
@@ -586,7 +593,7 @@ public class AlertController {
             topPanel.addView(mCustomTitleView, 0, lp);
             View titleTemplate = mWindow.findViewById(R.id.title_template);
             titleTemplate.setVisibility(View.GONE);
-        } //End block
+        } 
         {
             final boolean hasTextTitle = !TextUtils.isEmpty(mTitle);
             mIconView = (ImageView) mWindow.findViewById(R.id.icon);
@@ -595,34 +602,35 @@ public class AlertController {
                 mTitleView.setText(mTitle);
                 {
                     mIconView.setImageResource(mIconId);
-                } //End block
+                } 
                 {
                     mIconView.setImageDrawable(mIcon);
-                } //End block
+                } 
                 {
                     mTitleView.setPadding(mIconView.getPaddingLeft(),
                             mIconView.getPaddingTop(),
                             mIconView.getPaddingRight(),
                             mIconView.getPaddingBottom());
                     mIconView.setVisibility(View.GONE);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 View titleTemplate = mWindow.findViewById(R.id.title_template);
                 titleTemplate.setVisibility(View.GONE);
                 mIconView.setVisibility(View.GONE);
                 topPanel.setVisibility(View.GONE);
                 hasTitle = false;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(topPanel.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2034608458 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2034608458;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.880 -0400", hash_original_method = "887622C8B8EC01B1F9012F53B044827B", hash_generated_method = "C6C7C8E5F34B65AC7B46F229DAF694EC")
     private void setupContent(LinearLayout contentPanel) {
         mScrollView = (ScrollView) mWindow.findViewById(R.id.scrollView);
@@ -630,7 +638,7 @@ public class AlertController {
         mMessageView = (TextView) mWindow.findViewById(R.id.message);
         {
             mMessageView.setText(mMessage);
-        } //End block
+        } 
         {
             mMessageView.setVisibility(View.GONE);
             mScrollView.removeView(mMessageView);
@@ -639,17 +647,18 @@ public class AlertController {
                 contentPanel.addView(mListView,
                         new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT));
                 contentPanel.setLayoutParams(new LinearLayout.LayoutParams(MATCH_PARENT, 0, 1.0f));
-            } //End block
+            } 
             {
                 contentPanel.setVisibility(View.GONE);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(contentPanel.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.881 -0400", hash_original_method = "5BA34AF0614F863A3B9D6C4A8679B5AF", hash_generated_method = "401276D61D9DD9BB11650C027E5CEC86")
     private boolean setupButtons() {
         int BIT_BUTTON_POSITIVE = 1;
@@ -662,60 +671,61 @@ public class AlertController {
             boolean var93FA727FD667414F3938FEED09717F2A_1500352464 = (TextUtils.isEmpty(mButtonPositiveText));
             {
                 mButtonPositive.setVisibility(View.GONE);
-            } //End block
+            } 
             {
                 mButtonPositive.setText(mButtonPositiveText);
                 mButtonPositive.setVisibility(View.VISIBLE);
                 whichButtons = whichButtons | BIT_BUTTON_POSITIVE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mButtonNegative = (Button) mWindow.findViewById(R.id.button2);
         mButtonNegative.setOnClickListener(mButtonHandler);
         {
             boolean var505565EA7766DA4AFDFEB9FF9ACE7D96_222324852 = (TextUtils.isEmpty(mButtonNegativeText));
             {
                 mButtonNegative.setVisibility(View.GONE);
-            } //End block
+            } 
             {
                 mButtonNegative.setText(mButtonNegativeText);
                 mButtonNegative.setVisibility(View.VISIBLE);
                 whichButtons = whichButtons | BIT_BUTTON_NEGATIVE;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mButtonNeutral = (Button) mWindow.findViewById(R.id.button3);
         mButtonNeutral.setOnClickListener(mButtonHandler);
         {
             boolean var5386D208F588E97ACB39A369F476A793_570219287 = (TextUtils.isEmpty(mButtonNeutralText));
             {
                 mButtonNeutral.setVisibility(View.GONE);
-            } //End block
+            } 
             {
                 mButtonNeutral.setText(mButtonNeutralText);
                 mButtonNeutral.setVisibility(View.VISIBLE);
                 whichButtons = whichButtons | BIT_BUTTON_NEUTRAL;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var4F7576D2B8F76BB57F10978A4D9C1675_1734009937 = (shouldCenterSingleButton(mContext));
             {
                 {
                     centerButton(mButtonPositive);
-                } //End block
+                } 
                 {
                     centerButton(mButtonNeutral);
-                } //End block
+                } 
                 {
                     centerButton(mButtonNeutral);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_911068632 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_911068632;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.881 -0400", hash_original_method = "28BC3CB500322D129CBA8E7C7A78AD5A", hash_generated_method = "633F3955F82B01296A8A534384E1512B")
     private void centerButton(Button button) {
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) button.getLayoutParams();
@@ -725,28 +735,29 @@ public class AlertController {
         View leftSpacer = mWindow.findViewById(R.id.leftSpacer);
         {
             leftSpacer.setVisibility(View.VISIBLE);
-        } //End block
+        } 
         View rightSpacer = mWindow.findViewById(R.id.rightSpacer);
         {
             rightSpacer.setVisibility(View.VISIBLE);
-        } //End block
+        } 
         addTaint(button.getTaint());
-        // ---------- Original Method ----------
-        //LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) button.getLayoutParams();
-        //params.gravity = Gravity.CENTER_HORIZONTAL;
-        //params.weight = 0.5f;
-        //button.setLayoutParams(params);
-        //View leftSpacer = mWindow.findViewById(R.id.leftSpacer);
-        //if (leftSpacer != null) {
-            //leftSpacer.setVisibility(View.VISIBLE);
-        //}
-        //View rightSpacer = mWindow.findViewById(R.id.rightSpacer);
-        //if (rightSpacer != null) {
-            //rightSpacer.setVisibility(View.VISIBLE);
-        //}
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.883 -0400", hash_original_method = "6198B5046244FDCE77443F1833B74949", hash_generated_method = "A048C3E7516E297362446E451360BE57")
     private void setBackground(LinearLayout topPanel, LinearLayout contentPanel,
             View customPanel, boolean hasButtons, TypedArray a, boolean hasTitle, 
@@ -777,18 +788,18 @@ public class AlertController {
         {
             views[pos] = topPanel;
             light[pos] = false;
-        } //End block
+        } 
         views[pos] = (contentPanel.getVisibility() == View.GONE) 
                 ? null : contentPanel;
         light[pos] = mListView != null;
         {
             views[pos] = customPanel;
             light[pos] = mForceInverseBackground;
-        } //End block
+        } 
         {
             views[pos] = buttonPanel;
             light[pos] = true;
-        } //End block
+        } 
         boolean setView = false;
         {
             pos=0;
@@ -797,32 +808,32 @@ public class AlertController {
                 {
                     {
                         lastView.setBackgroundResource(lastLight ? topBright : topDark);
-                    } //End block
+                    } 
                     {
                         lastView.setBackgroundResource(lastLight ? centerBright : centerDark);
-                    } //End block
+                    } 
                     setView = true;
-                } //End block
+                } 
                 lastView = v;
                 lastLight = light[pos];
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 lastView.setBackgroundResource(
                         lastLight ? (hasButtons ? bottomMedium : bottomBright) : bottomDark);
-            } //End block
+            } 
             {
                 lastView.setBackgroundResource(lastLight ? fullBright : fullDark);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mListView.setAdapter(mAdapter);
             {
                 mListView.setItemChecked(mCheckedItem, true);
                 mListView.setSelection(mCheckedItem);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(topPanel.getTaint());
         addTaint(contentPanel.getTaint());
         addTaint(customPanel.getTaint());
@@ -830,8 +841,8 @@ public class AlertController {
         addTaint(a.getTaint());
         addTaint(hasTitle);
         addTaint(buttonPanel.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -843,31 +854,31 @@ public class AlertController {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.884 -0400", hash_original_method = "94BD8A25739D33DF469E488FF271595A", hash_generated_method = "4185F310EECDDCDB1822BCA414EA5D62")
         public  ButtonHandler(DialogInterface dialog) {
             mDialog = new WeakReference<DialogInterface>(dialog);
-            // ---------- Original Method ----------
-            //mDialog = new WeakReference<DialogInterface>(dialog);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.885 -0400", hash_original_method = "278B02327B6D097A80A5697E74542815", hash_generated_method = "25807EC7DE0094C6AA427F95B7789EEA")
         @Override
         public void handleMessage(Message msg) {
-            //Begin case DialogInterface.BUTTON_POSITIVE DialogInterface.BUTTON_NEGATIVE DialogInterface.BUTTON_NEUTRAL 
+            
             ((DialogInterface.OnClickListener) msg.obj).onClick(mDialog.get(), msg.what);
-            //End case DialogInterface.BUTTON_POSITIVE DialogInterface.BUTTON_NEGATIVE DialogInterface.BUTTON_NEUTRAL 
-            //Begin case MSG_DISMISS_DIALOG 
+            
+            
             ((DialogInterface) msg.obj).dismiss();
-            //End case MSG_DISMISS_DIALOG 
+            
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //switch (msg.what) {
-                //case DialogInterface.BUTTON_POSITIVE:
-                //case DialogInterface.BUTTON_NEGATIVE:
-                //case DialogInterface.BUTTON_NEUTRAL:
-                    //((DialogInterface.OnClickListener) msg.obj).onClick(mDialog.get(), msg.what);
-                    //break;
-                //case MSG_DISMISS_DIALOG:
-                    //((DialogInterface) msg.obj).dismiss();
-            //}
+            
+            
+                
+                
+                
+                    
+                    
+                
+                    
+            
         }
 
         
@@ -887,7 +898,7 @@ public class AlertController {
         public  RecycleListView(Context context) {
             super(context);
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -896,7 +907,7 @@ public class AlertController {
             super(context, attrs);
             addTaint(context.getTaint());
             addTaint(attrs.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -906,7 +917,7 @@ public class AlertController {
             addTaint(context.getTaint());
             addTaint(attrs.getTaint());
             addTaint(defStyle);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -915,8 +926,8 @@ public class AlertController {
         protected boolean recycleOnMeasure() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_821640162 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_821640162;
-            // ---------- Original Method ----------
-            //return mRecycleOnMeasure;
+            
+            
         }
 
         
@@ -1042,10 +1053,10 @@ public class AlertController {
             mContext = context;
             mCancelable = true;
             mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            // ---------- Original Method ----------
-            //mContext = context;
-            //mCancelable = true;
-            //mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            
+            
+            
+            
         }
 
         
@@ -1053,51 +1064,51 @@ public class AlertController {
         public void apply(AlertController dialog) {
             {
                 dialog.setCustomTitle(mCustomTitleView);
-            } //End block
+            } 
             {
                 {
                     dialog.setTitle(mTitle);
-                } //End block
+                } 
                 {
                     dialog.setIcon(mIcon);
-                } //End block
+                } 
                 {
                     dialog.setIcon(mIconId);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 dialog.setMessage(mMessage);
-            } //End block
+            } 
             {
                 dialog.setButton(DialogInterface.BUTTON_POSITIVE, mPositiveButtonText,
                         mPositiveButtonListener, null);
-            } //End block
+            } 
             {
                 dialog.setButton(DialogInterface.BUTTON_NEGATIVE, mNegativeButtonText,
                         mNegativeButtonListener, null);
-            } //End block
+            } 
             {
                 dialog.setButton(DialogInterface.BUTTON_NEUTRAL, mNeutralButtonText,
                         mNeutralButtonListener, null);
-            } //End block
+            } 
             {
                 dialog.setInverseBackgroundForced(true);
-            } //End block
+            } 
             {
                 createListView(dialog);
-            } //End block
+            } 
             {
                 {
                     dialog.setView(mView, mViewSpacingLeft, mViewSpacingTop, mViewSpacingRight,
                             mViewSpacingBottom);
-                } //End block
+                } 
                 {
                     dialog.setView(mView);
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(dialog.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1113,32 +1124,32 @@ public class AlertController {
                         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.890 -0400", hash_original_method = "23A354B1E3F11023EC3EF5623A4E6D9E", hash_generated_method = "50B3B2CD5B3DB7CF9D523D056653AAA5")
                         @Override
                         public View getView(int position, View convertView, ViewGroup parent) {
-                            View varB4EAC82CA7396A68D541C85D26508E83_1569502143 = null; //Variable for return #1
+                            View varB4EAC82CA7396A68D541C85D26508E83_1569502143 = null; 
                             View view = super.getView(position, convertView, parent);
                             {
                                 boolean isItemChecked = mCheckedItems[position];
                                 {
                                     listView.setItemChecked(position, true);
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             varB4EAC82CA7396A68D541C85D26508E83_1569502143 = view;
                             addTaint(position);
                             addTaint(convertView.getTaint());
                             addTaint(parent.getTaint());
-                            varB4EAC82CA7396A68D541C85D26508E83_1569502143.addTaint(getTaint()); //Add taint from parent
+                            varB4EAC82CA7396A68D541C85D26508E83_1569502143.addTaint(getTaint()); 
                             return varB4EAC82CA7396A68D541C85D26508E83_1569502143;
-                            // ---------- Original Method ----------
-                            //View view = super.getView(position, convertView, parent);
-                            //if (mCheckedItems != null) {
-                                //boolean isItemChecked = mCheckedItems[position];
-                                //if (isItemChecked) {
-                                    //listView.setItemChecked(position, true);
-                                //}
-                            //}
-                            //return view;
+                            
+                            
+                            
+                                
+                                
+                                    
+                                
+                            
+                            
                         }
 };
-                } //End block
+                } 
                 {
                     adapter = new CursorAdapter(mContext, mCursor, false) {                        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.890 -0400", hash_original_field = "5ED5AAFE00FF0DB57B0F6F660CFDC780", hash_generated_field = "6AE1690622EE66BC1693CD9F6D6F3F96")
                         private int mLabelIndex;
@@ -1159,30 +1170,30 @@ public class AlertController {
                             addTaint(view.getTaint());
                             addTaint(context.getTaint());
                             addTaint(cursor.getTaint());
-                            // ---------- Original Method ----------
-                            //CheckedTextView text = (CheckedTextView) view.findViewById(R.id.text1);
-                            //text.setText(cursor.getString(mLabelIndex));
-                            //listView.setItemChecked(cursor.getPosition(),
-                                    //cursor.getInt(mIsCheckedIndex) == 1);
+                            
+                            
+                            
+                            
+                                    
                         }
                         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.891 -0400", hash_original_method = "87A8136D8ED8F9724DD65BD87F7B3B3A", hash_generated_method = "49ADAA7AB525536AAC7F54C710B6D1CF")
                         @Override
                         public View newView(Context context, Cursor cursor, ViewGroup parent) {
-                            View varB4EAC82CA7396A68D541C85D26508E83_1554263762 = null; //Variable for return #1
+                            View varB4EAC82CA7396A68D541C85D26508E83_1554263762 = null; 
                             varB4EAC82CA7396A68D541C85D26508E83_1554263762 = mInflater.inflate(dialog.mMultiChoiceItemLayout,
                                     parent, false);
                             addTaint(context.getTaint());
                             addTaint(cursor.getTaint());
                             addTaint(parent.getTaint());
-                            varB4EAC82CA7396A68D541C85D26508E83_1554263762.addTaint(getTaint()); //Add taint from parent
+                            varB4EAC82CA7396A68D541C85D26508E83_1554263762.addTaint(getTaint()); 
                             return varB4EAC82CA7396A68D541C85D26508E83_1554263762;
-                            // ---------- Original Method ----------
-                            //return mInflater.inflate(dialog.mMultiChoiceItemLayout,
-                                    //parent, false);
+                            
+                            
+                                    
                         }
 };
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 int layout;
                 layout = dialog.mSingleChoiceItemLayout;
@@ -1190,74 +1201,74 @@ public class AlertController {
                 {
                     adapter = (mAdapter != null) ? mAdapter
                             : new ArrayAdapter<CharSequence>(mContext, layout, R.id.text1, mItems);
-                } //End block
+                } 
                 {
                     adapter = new SimpleCursorAdapter(mContext, layout, 
                             mCursor, new String[]{mLabelColumn}, new int[]{R.id.text1});
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 mOnPrepareListViewListener.onPrepareListView(listView);
-            } //End block
+            } 
             dialog.mAdapter = adapter;
             dialog.mCheckedItem = mCheckedItem;
             {
                 listView.setOnItemClickListener(new OnItemClickListener() {                    
                     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.893 -0400", hash_original_method = "8EA9AA28841E6789D2A0900FF06F5143", hash_generated_method = "4247682D5E3A87E064C3FFDCB18EE12E")
                     public void onItemClick(AdapterView parent, View v, int position, long id) {
-                        //DSFIXME:  CODE0009: Possible callback target function detected
+                        
                         mOnClickListener.onClick(dialog.mDialogInterface, position);
                         {
                             dialog.mDialogInterface.dismiss();
-                        } //End block
+                        } 
                         addTaint(parent.getTaint());
                         addTaint(v.getTaint());
                         addTaint(position);
                         addTaint(id);
-                        // ---------- Original Method ----------
-                        //mOnClickListener.onClick(dialog.mDialogInterface, position);
-                        //if (!mIsSingleChoice) {
-                            //dialog.mDialogInterface.dismiss();
-                        //}
+                        
+                        
+                        
+                            
+                        
                     }
 });
-            } //End block
+            } 
             {
                 listView.setOnItemClickListener(new OnItemClickListener() {                    
                     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.895 -0400", hash_original_method = "A7D02743B14CEBBCE2076709416E7025", hash_generated_method = "C2265E766B1EE0541DDBAB09B83F92CD")
                     public void onItemClick(AdapterView parent, View v, int position, long id) {
-                        //DSFIXME:  CODE0009: Possible callback target function detected
+                        
                         {
                             mCheckedItems[position] = listView.isItemChecked(position);
-                        } //End block
+                        } 
                         mOnCheckboxClickListener.onClick(
                                 dialog.mDialogInterface, position, listView.isItemChecked(position));
                         addTaint(parent.getTaint());
                         addTaint(v.getTaint());
                         addTaint(position);
                         addTaint(id);
-                        // ---------- Original Method ----------
-                        //if (mCheckedItems != null) {
-                            //mCheckedItems[position] = listView.isItemChecked(position);
-                        //}
-                        //mOnCheckboxClickListener.onClick(
-                                //dialog.mDialogInterface, position, listView.isItemChecked(position));
+                        
+                        
+                            
+                        
+                        
+                                
                     }
 });
-            } //End block
+            } 
             {
                 listView.setOnItemSelectedListener(mOnItemSelectedListener);
-            } //End block
+            } 
             {
                 listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-            } //End block
+            } 
             {
                 listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-            } //End block
+            } 
             listView.mRecycleOnMeasure = mRecycleOnMeasure;
             dialog.mListView = listView;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

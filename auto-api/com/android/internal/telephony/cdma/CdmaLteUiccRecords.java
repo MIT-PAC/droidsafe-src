@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cdma;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.AsyncResult;
 import android.os.SystemProperties;
@@ -60,44 +60,47 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     public  CdmaLteUiccRecords(PhoneBase p) {
         super(p);
         addTaint(p.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.981 -0400", hash_original_method = "2DE8400081AD5D0DFDE4A5A335B40E41", hash_generated_method = "CA6811C3E8E53F79CAB56366EF38ECC8")
     @Override
     protected void onRecordLoaded() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         recordsToLoad -= 1;
         {
             onAllRecordsLoaded();
-        } //End block
+        } 
         {
             recordsToLoad = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //recordsToLoad -= 1;
-        //if (recordsToLoad == 0 && recordsRequested == true) {
-            //onAllRecordsLoaded();
-        //} else if (recordsToLoad < 0) {
-            //Log.e(LOG_TAG, "SIMRecords: recordsToLoad <0, programmer error suspected");
-            //recordsToLoad = 0;
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.981 -0400", hash_original_method = "E8EE1C045698968684402EFF7D154AD0", hash_generated_method = "EF8A1A3F87EF17E62252C665538BB192")
     @Override
     protected void onAllRecordsLoaded() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         setLocaleFromCsim();
         super.onAllRecordsLoaded();
-        // ---------- Original Method ----------
-        //setLocaleFromCsim();
-        //super.onAllRecordsLoaded();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.981 -0400", hash_original_method = "5BA121C6EACB6C26C7E5BA17D0EA0EBE", hash_generated_method = "8B7B370769E419433BFF02508FAD854A")
     @Override
     protected void fetchSimRecords() {
@@ -124,8 +127,8 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         iccFh.loadEFTransparent(EF_CSIM_EPRL,
                 obtainMessage(EVENT_GET_ICC_RECORD_DONE, new EfCsimEprlLoaded()));
         recordsToLoad += mIsimUiccRecords.fetchIsimRecords(iccFh, this);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -138,15 +141,16 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         addTaint(digits);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1858969977 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1858969977;
-        // ---------- Original Method ----------
-        //digits += 111;
-        //digits = (digits % 10 == 0)?(digits - 10):digits;
-        //digits = ((digits / 10) % 10 == 0)?(digits - 100):digits;
-        //digits = ((digits / 100) % 10 == 0)?(digits - 1000):digits;
-        //return digits;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.982 -0400", hash_original_method = "8ACEB43E18F76CD22FB9AEC49B26074B", hash_generated_method = "D582CF6BA3743032E754A248E27A5DB8")
     private void onGetCSimEprlDone(AsyncResult ar) {
         byte[] data = (byte[]) ar.result;
@@ -154,66 +158,68 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         {
             int prlId = ((data[2] & 0xFF) << 8) | (data[3] & 0xFF);
             mPrlVersion = Integer.toString(prlId);
-        } //End block
+        } 
         log("CSIM PRL version=" + mPrlVersion);
         addTaint(ar.getTaint());
-        // ---------- Original Method ----------
-        //byte[] data = (byte[]) ar.result;
-        //if (DBG) log("CSIM_EPRL=" + IccUtils.bytesToHexString(data));
-        //if (data.length > 3) {
-            //int prlId = ((data[2] & 0xFF) << 8) | (data[3] & 0xFF);
-            //mPrlVersion = Integer.toString(prlId);
-        //}
-        //if (DBG) log("CSIM PRL version=" + mPrlVersion);
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.984 -0400", hash_original_method = "6650B0E8C5FD9109D896567DAC7169B6", hash_generated_method = "53983C10B026189C086A41C730FAE5ED")
     private void setLocaleFromCsim() {
         String prefLang = null;
         prefLang = findBestLanguage(mEFli);
         {
             prefLang = findBestLanguage(mEFpl);
-        } //End block
+        } 
         {
             String imsi = getIMSI();
             String country = null;
             {
                 country = MccTable.countryCodeForMcc(
                                     Integer.parseInt(imsi.substring(0,3)));
-            } //End block
+            } 
             log("Setting locale to " + prefLang + "_" + country);
             phone.setSystemLocale(prefLang, country, false);
-        } //End block
+        } 
         {
             log ("No suitable CSIM selected locale");
-        } //End block
-        // ---------- Original Method ----------
-        //String prefLang = null;
-        //prefLang = findBestLanguage(mEFli);
-        //if (prefLang == null) {
-            //prefLang = findBestLanguage(mEFpl);
-        //}
-        //if (prefLang != null) {
-            //String imsi = getIMSI();
-            //String country = null;
-            //if (imsi != null) {
-                //country = MccTable.countryCodeForMcc(
-                                    //Integer.parseInt(imsi.substring(0,3)));
-            //}
-            //log("Setting locale to " + prefLang + "_" + country);
-            //phone.setSystemLocale(prefLang, country, false);
-        //} else {
-            //log ("No suitable CSIM selected locale");
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+            
+            
+                
+                                    
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.985 -0400", hash_original_method = "389005660E8D32B57FD0D16BC435823F", hash_generated_method = "40AA93154C1ECB99961765D44D190213")
     private String findBestLanguage(byte[] languages) {
-        String varB4EAC82CA7396A68D541C85D26508E83_329346463 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1609677936 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_2089472328 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_329346463 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1609677936 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2089472328 = null; 
         String bestMatch = null;
         String[] locales = phone.getContext().getAssets().getLocales();
         varB4EAC82CA7396A68D541C85D26508E83_329346463 = null;
@@ -232,126 +238,128 @@ public final class CdmaLteUiccRecords extends SIMRecords {
                         locales[j].substring(0, 2).equals(lang));
                                 {
                                     varB4EAC82CA7396A68D541C85D26508E83_1609677936 = lang;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 catch (java.io.UnsupportedEncodingException e)
                 {
                     log ("Failed to parse SIM language records");
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2089472328 = null;
         addTaint(languages[0]);
-        String varA7E53CE21691AB073D9660D615818899_839452016; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_839452016; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_839452016 = varB4EAC82CA7396A68D541C85D26508E83_329346463;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_839452016 = varB4EAC82CA7396A68D541C85D26508E83_1609677936;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_839452016 = varB4EAC82CA7396A68D541C85D26508E83_2089472328;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_839452016.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_839452016.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_839452016;
-        // ---------- Original Method ----------
-        //String bestMatch = null;
-        //String[] locales = phone.getContext().getAssets().getLocales();
-        //if ((languages == null) || (locales == null)) return null;
-        //for (int i = 0; (i + 1) < languages.length; i += 2) {
-            //try {
-                //String lang = new String(languages, i, 2, "ISO-8859-1");
-                //for (int j = 0; j < locales.length; j++) {
-                    //if (locales[j] != null && locales[j].length() >= 2 &&
-                        //locales[j].substring(0, 2).equals(lang)) {
-                        //return lang;
-                    //}
-                //}
-                //if (bestMatch != null) break;
-            //} catch(java.io.UnsupportedEncodingException e) {
-                //log ("Failed to parse SIM language records");
-            //}
-        //}
-        //return null;
+        
+        
+        
+        
+        
+            
+                
+                
+                    
+                        
+                        
+                    
+                
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.986 -0400", hash_original_method = "8715F9DE01323914473DFA590E77B6CC", hash_generated_method = "3B0C37B4DB1B82C374F0F01783AC8402")
     @Override
     protected void log(String s) {
         Log.d(LOG_TAG, "[CSIM] " + s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[CSIM] " + s);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.986 -0400", hash_original_method = "2E582D58F93B3D53A9755A5359649796", hash_generated_method = "01262007AEE252593CEC27CC6EFDD900")
     @Override
     protected void loge(String s) {
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "[CSIM] " + s);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.986 -0400", hash_original_method = "0A56566EECB0365BEB6D3F46827C5157", hash_generated_method = "EC3AB5EA582076BCF92494C446DE9E73")
     public String getMdn() {
-        String varB4EAC82CA7396A68D541C85D26508E83_378287026 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_378287026 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_378287026 = mMdn;
-        varB4EAC82CA7396A68D541C85D26508E83_378287026.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_378287026.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_378287026;
-        // ---------- Original Method ----------
-        //return mMdn;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.987 -0400", hash_original_method = "80A82BB385CD03C9B3FC60961865E100", hash_generated_method = "2AAFC36F19F09EAC4BDA1183232A0E80")
     public String getMin() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2144452580 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2144452580 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2144452580 = mMin;
-        varB4EAC82CA7396A68D541C85D26508E83_2144452580.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2144452580.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2144452580;
-        // ---------- Original Method ----------
-        //return mMin;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.987 -0400", hash_original_method = "063CD09EDCF873A8EE48D2C85BBEA4D0", hash_generated_method = "386D2284BC50A4C12EF1C6199D0E5619")
     public String getSid() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1403888183 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1403888183 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1403888183 = mHomeSystemId;
-        varB4EAC82CA7396A68D541C85D26508E83_1403888183.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1403888183.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1403888183;
-        // ---------- Original Method ----------
-        //return mHomeSystemId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.988 -0400", hash_original_method = "884F79DB94780A6DBB795ED0D5CD48AE", hash_generated_method = "C9B82C62E17FBB9AD01F4B714E824E9D")
     public String getNid() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2005383035 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2005383035 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2005383035 = mHomeNetworkId;
-        varB4EAC82CA7396A68D541C85D26508E83_2005383035.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2005383035.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2005383035;
-        // ---------- Original Method ----------
-        //return mHomeNetworkId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.988 -0400", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "E52E2F7FD9236BAE91BD3FDC4E55FC2A")
     public String getPrlVersion() {
-        String varB4EAC82CA7396A68D541C85D26508E83_899591039 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_899591039 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_899591039 = mPrlVersion;
-        varB4EAC82CA7396A68D541C85D26508E83_899591039.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_899591039.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_899591039;
-        // ---------- Original Method ----------
-        //return mPrlVersion;
+        
+        
     }
 
     
@@ -359,47 +367,49 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     public boolean getCsimSpnDisplayCondition() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_844464040 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_844464040;
-        // ---------- Original Method ----------
-        //return mCsimSpnDisplayCondition;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.989 -0400", hash_original_method = "C3918CF1E72E747DA54324AC57BD2CA6", hash_generated_method = "8856A8409034A32ECAF1C12F7A0B6084")
     @Override
     public IsimRecords getIsimRecords() {
-        IsimRecords varB4EAC82CA7396A68D541C85D26508E83_688136827 = null; //Variable for return #1
+        IsimRecords varB4EAC82CA7396A68D541C85D26508E83_688136827 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_688136827 = mIsimUiccRecords;
-        varB4EAC82CA7396A68D541C85D26508E83_688136827.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_688136827.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_688136827;
-        // ---------- Original Method ----------
-        //return mIsimUiccRecords;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.989 -0400", hash_original_method = "80E64791B17F9A8D9A19FB8366ED7D81", hash_generated_method = "8F2118AACA69FD5FA52397A88F30FAD4")
     @Override
     public boolean isProvisioned() {
         {
             boolean var0DF60DD5FEFC41C1EAAF86A01E334B0D_555839789 = (SystemProperties.getBoolean(PROPERTY_TEST_CSIM, false));
-        } //End collapsed parenthetic
+        } 
         {
             boolean varCD4B507D60337FD84160863D2C35D3EA_844392629 = (phone.mIccCard.isApplicationOnIcc(AppType.APPTYPE_CSIM) &&
             ((mMdn == null) || (mMin == null)));
-        } //End collapsed parenthetic
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_59521256 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_59521256;
-        // ---------- Original Method ----------
-        //if (SystemProperties.getBoolean(PROPERTY_TEST_CSIM, false)) {
-            //return true;
-        //}
-        //if (phone.mIccCard.isApplicationOnIcc(AppType.APPTYPE_CSIM) &&
-            //((mMdn == null) || (mMin == null))) {
-            //return false;
-        //}
-        //return true;
+        
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.990 -0400", hash_original_method = "B5878332DE43EFB46C0A76BAF3DD0FEF", hash_generated_method = "A35E8B314F6863EDFDA4A370FE2F9EFF")
     @Override
     protected int dispatchGsmMessage(SmsMessageBase message) {
@@ -407,8 +417,8 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         addTaint(message.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_152403556 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_152403556;
-        // ---------- Original Method ----------
-        //return ((CDMALTEPhone) phone).m3gppSMS.dispatchMessage(message);
+        
+        
     }
 
     
@@ -417,30 +427,30 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.990 -0400", hash_original_method = "DB9BC3CFEBE0D6E01F9D56ED9DD44BA0", hash_generated_method = "DB9BC3CFEBE0D6E01F9D56ED9DD44BA0")
         public EfPlLoaded ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.990 -0400", hash_original_method = "46D131BE59CA4E55BA893DF6F7101791", hash_generated_method = "A2221A25309EDBFA6BBC6F1A73F34CAD")
         public String getEfName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_10519624 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_10519624 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_10519624 = "EF_PL";
-            varB4EAC82CA7396A68D541C85D26508E83_10519624.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_10519624.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_10519624;
-            // ---------- Original Method ----------
-            //return "EF_PL";
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.990 -0400", hash_original_method = "10BD1E11D2518DCC1D89C745EA9F4059", hash_generated_method = "05C389710CE12C46BC9343BCD871DD75")
         public void onRecordLoaded(AsyncResult ar) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mEFpl = (byte[]) ar.result;
             log("EF_PL=" + IccUtils.bytesToHexString(mEFpl));
             addTaint(ar.getTaint());
-            // ---------- Original Method ----------
-            //mEFpl = (byte[]) ar.result;
-            //if (DBG) log("EF_PL=" + IccUtils.bytesToHexString(mEFpl));
+            
+            
+            
         }
 
         
@@ -453,96 +463,96 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.990 -0400", hash_original_method = "E478CAA1D3303C7E73C9739FE9545558", hash_generated_method = "E478CAA1D3303C7E73C9739FE9545558")
         public EfCsimLiLoaded ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.991 -0400", hash_original_method = "43CB272303B94BD2BDA1313C04660298", hash_generated_method = "FA06A6FCB0B6020EFAB33EE1C4452B5A")
         public String getEfName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1941221240 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1941221240 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1941221240 = "EF_CSIM_LI";
-            varB4EAC82CA7396A68D541C85D26508E83_1941221240.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1941221240.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1941221240;
-            // ---------- Original Method ----------
-            //return "EF_CSIM_LI";
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.992 -0400", hash_original_method = "450EAA4EF2F439560DA5559C99B4124D", hash_generated_method = "713595C5D70F71B8C984B227F848BBC6")
         public void onRecordLoaded(AsyncResult ar) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mEFli = (byte[]) ar.result;
             {
                 int i = 0;
                 i+=2;
                 {
-                    //Begin case 0x01 
+                    
                     mEFli[i] = 'e';
-                    //End case 0x01 
-                    //Begin case 0x01 
+                    
+                    
                     mEFli[i+1] = 'n';
-                    //End case 0x01 
-                    //Begin case 0x02 
+                    
+                    
                     mEFli[i] = 'f';
-                    //End case 0x02 
-                    //Begin case 0x02 
+                    
+                    
                     mEFli[i+1] = 'r';
-                    //End case 0x02 
-                    //Begin case 0x03 
+                    
+                    
                     mEFli[i] = 'e';
-                    //End case 0x03 
-                    //Begin case 0x03 
+                    
+                    
                     mEFli[i+1] = 's';
-                    //End case 0x03 
-                    //Begin case 0x04 
+                    
+                    
                     mEFli[i] = 'j';
-                    //End case 0x04 
-                    //Begin case 0x04 
+                    
+                    
                     mEFli[i+1] = 'a';
-                    //End case 0x04 
-                    //Begin case 0x05 
+                    
+                    
                     mEFli[i] = 'k';
-                    //End case 0x05 
-                    //Begin case 0x05 
+                    
+                    
                     mEFli[i+1] = 'o';
-                    //End case 0x05 
-                    //Begin case 0x06 
+                    
+                    
                     mEFli[i] = 'z';
-                    //End case 0x06 
-                    //Begin case 0x06 
+                    
+                    
                     mEFli[i+1] = 'h';
-                    //End case 0x06 
-                    //Begin case 0x07 
+                    
+                    
                     mEFli[i] = 'h';
-                    //End case 0x07 
-                    //Begin case 0x07 
+                    
+                    
                     mEFli[i+1] = 'e';
-                    //End case 0x07 
-                    //Begin case default 
+                    
+                    
                     mEFli[i] = ' ';
-                    //End case default 
-                    //Begin case default 
+                    
+                    
                     mEFli[i+1] = ' ';
-                    //End case default 
-                } //End block
-            } //End collapsed parenthetic
+                    
+                } 
+            } 
             log("EF_LI=" + IccUtils.bytesToHexString(mEFli));
             addTaint(ar.getTaint());
-            // ---------- Original Method ----------
-            //mEFli = (byte[]) ar.result;
-            //for (int i = 0; i < mEFli.length; i+=2) {
-                //switch(mEFli[i+1]) {
-                //case 0x01: mEFli[i] = 'e'; mEFli[i+1] = 'n';break;
-                //case 0x02: mEFli[i] = 'f'; mEFli[i+1] = 'r';break;
-                //case 0x03: mEFli[i] = 'e'; mEFli[i+1] = 's';break;
-                //case 0x04: mEFli[i] = 'j'; mEFli[i+1] = 'a';break;
-                //case 0x05: mEFli[i] = 'k'; mEFli[i+1] = 'o';break;
-                //case 0x06: mEFli[i] = 'z'; mEFli[i+1] = 'h';break;
-                //case 0x07: mEFli[i] = 'h'; mEFli[i+1] = 'e';break;
-                //default: mEFli[i] = ' '; mEFli[i+1] = ' ';
-                //}
-            //}
-            //if (DBG) log("EF_LI=" + IccUtils.bytesToHexString(mEFli));
+            
+            
+            
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+            
         }
 
         
@@ -555,24 +565,24 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.992 -0400", hash_original_method = "19150581A2F47334F7DE2BBDCA8A8F1E", hash_generated_method = "19150581A2F47334F7DE2BBDCA8A8F1E")
         public EfCsimSpnLoaded ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.993 -0400", hash_original_method = "E361E237BF5D8C3526DBBFADBF2588AE", hash_generated_method = "876B6E7E3A3718066303A802DDDA2876")
         public String getEfName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_36091476 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_36091476 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_36091476 = "EF_CSIM_SPN";
-            varB4EAC82CA7396A68D541C85D26508E83_36091476.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_36091476.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_36091476;
-            // ---------- Original Method ----------
-            //return "EF_CSIM_SPN";
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.994 -0400", hash_original_method = "57EF16BB2157E0EC6AC6B1903C815AC5", hash_generated_method = "2E471B1F026A10CB3B4A507368E9DEC7")
         public void onRecordLoaded(AsyncResult ar) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             byte[] data = (byte[]) ar.result;
             log("CSIM_SPN=" +
                          IccUtils.bytesToHexString(data));
@@ -584,35 +594,35 @@ public final class CdmaLteUiccRecords extends SIMRecords {
             int numBytes;
             {
                 numBytes = 0;
-            } //End collapsed parenthetic
+            } 
             {
                 spn = "";
-            } //End block
+            } 
             try 
             {
-                //Begin case UserData.ENCODING_OCTET UserData.ENCODING_LATIN 
+                
                 spn = new String(spnData, 0, numBytes, "ISO-8859-1");
-                //End case UserData.ENCODING_OCTET UserData.ENCODING_LATIN 
-                //Begin case UserData.ENCODING_IA5 UserData.ENCODING_GSM_7BIT_ALPHABET UserData.ENCODING_7BIT_ASCII 
+                
+                
                 spn = GsmAlphabet.gsm7BitPackedToString(spnData, 0, (numBytes*8)/7);
-                //End case UserData.ENCODING_IA5 UserData.ENCODING_GSM_7BIT_ALPHABET UserData.ENCODING_7BIT_ASCII 
-                //Begin case UserData.ENCODING_UNICODE_16 
+                
+                
                 spn =  new String(spnData, 0, numBytes, "utf-16");
-                //End case UserData.ENCODING_UNICODE_16 
-                //Begin case default 
+                
+                
                 log("SPN encoding not supported");
-                //End case default 
-            } //End block
+                
+            } 
             catch (Exception e)
             {
                 log("spn decode error: " + e);
-            } //End block
+            } 
             log("spn=" + spn);
             log("spnCondition=" + mCsimSpnDisplayCondition);
             phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ALPHA, spn);
             addTaint(ar.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -625,36 +635,36 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.994 -0400", hash_original_method = "FA7FB660C97CE3D4BC72D3E68D236931", hash_generated_method = "FA7FB660C97CE3D4BC72D3E68D236931")
         public EfCsimMdnLoaded ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.996 -0400", hash_original_method = "6DF96F6BE7868B2EF5D1FBEB4BBED3CD", hash_generated_method = "2181D5F61D2209462EA96357FCB280AA")
         public String getEfName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1927159481 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1927159481 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1927159481 = "EF_CSIM_MDN";
-            varB4EAC82CA7396A68D541C85D26508E83_1927159481.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1927159481.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1927159481;
-            // ---------- Original Method ----------
-            //return "EF_CSIM_MDN";
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.997 -0400", hash_original_method = "A47BCAD22D310B4F4C4F5C35578109CD", hash_generated_method = "7AA4FC9E9A84C7C8A51F7D7705D3A6D4")
         public void onRecordLoaded(AsyncResult ar) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             byte[] data = (byte[]) ar.result;
             log("CSIM_MDN=" + IccUtils.bytesToHexString(data));
             int mdnDigitsNum = 0x0F & data[0];
             mMdn = IccUtils.cdmaBcdToString(data, 1, mdnDigitsNum);
             log("CSIM MDN=" + mMdn);
             addTaint(ar.getTaint());
-            // ---------- Original Method ----------
-            //byte[] data = (byte[]) ar.result;
-            //if (DBG) log("CSIM_MDN=" + IccUtils.bytesToHexString(data));
-            //int mdnDigitsNum = 0x0F & data[0];
-            //mMdn = IccUtils.cdmaBcdToString(data, 1, mdnDigitsNum);
-            //if (DBG) log("CSIM MDN=" + mMdn);
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -667,24 +677,24 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.997 -0400", hash_original_method = "E1B1DAC057539F9FD410F55956D30AAC", hash_generated_method = "E1B1DAC057539F9FD410F55956D30AAC")
         public EfCsimImsimLoaded ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.998 -0400", hash_original_method = "076F279972298500654A9EE948D0453D", hash_generated_method = "2C29DC795BEC1E620411627AD46C6D00")
         public String getEfName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_61083654 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_61083654 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_61083654 = "EF_CSIM_IMSIM";
-            varB4EAC82CA7396A68D541C85D26508E83_61083654.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_61083654.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_61083654;
-            // ---------- Original Method ----------
-            //return "EF_CSIM_IMSIM";
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.998 -0400", hash_original_method = "17F309FAD2B89ABBF6BD1F73DBFF98C1", hash_generated_method = "88B800D06CA2AD892118A4CAE849AD45")
         public void onRecordLoaded(AsyncResult ar) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             byte[] data = (byte[]) ar.result;
             log("CSIM_IMSIM=" + IccUtils.bytesToHexString(data));
             boolean provisioned = ((data[7] & 0x80) == 0x80);
@@ -704,13 +714,13 @@ public final class CdmaLteUiccRecords extends SIMRecords {
                 builder.append(String.format(Locale.US, "%03d", last3digits));
                 mMin = builder.toString();
                 log("min present=" + mMin);
-            } //End block
+            } 
             {
                 log("min not present");
-            } //End block
+            } 
             addTaint(ar.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -723,29 +733,29 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.999 -0400", hash_original_method = "860B35F5393621E32B68838EF207B1C4", hash_generated_method = "860B35F5393621E32B68838EF207B1C4")
         public EfCsimCdmaHomeLoaded ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.999 -0400", hash_original_method = "72D2F700CD05B7B8BF5E2816D58B5E15", hash_generated_method = "95427FC313254F1EA6FD06E26C497534")
         public String getEfName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1044904967 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1044904967 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1044904967 = "EF_CSIM_CDMAHOME";
-            varB4EAC82CA7396A68D541C85D26508E83_1044904967.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1044904967.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1044904967;
-            // ---------- Original Method ----------
-            //return "EF_CSIM_CDMAHOME";
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.009 -0400", hash_original_method = "71E7D2ACFBE7DC249602D69114B85759", hash_generated_method = "ACF06BCD94C808F802246D01BC777630")
         public void onRecordLoaded(AsyncResult ar) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             ArrayList<byte[]> dataList = (ArrayList<byte[]>) ar.result;
             log("CSIM_CDMAHOME data size=" + dataList.size());
             {
                 boolean varF19482EB714ACA27D23BC9E396383613_1736460863 = (dataList.isEmpty());
-            } //End collapsed parenthetic
+            } 
             StringBuilder sidBuf = new StringBuilder();
             StringBuilder nidBuf = new StringBuilder();
             {
@@ -758,16 +768,16 @@ public final class CdmaLteUiccRecords extends SIMRecords {
                         int nid = ((data[3] & 0xFF) << 8) | (data[2] & 0xFF);
                         sidBuf.append(sid).append(',');
                         nidBuf.append(nid).append(',');
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             sidBuf.setLength(sidBuf.length()-1);
             nidBuf.setLength(nidBuf.length()-1);
             mHomeSystemId = sidBuf.toString();
             mHomeNetworkId = nidBuf.toString();
             addTaint(ar.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -780,28 +790,28 @@ public final class CdmaLteUiccRecords extends SIMRecords {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.009 -0400", hash_original_method = "352B4C8E045B195C6E9E4E04AF0DE6EE", hash_generated_method = "352B4C8E045B195C6E9E4E04AF0DE6EE")
         public EfCsimEprlLoaded ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.014 -0400", hash_original_method = "04C305ABDF4F5B734468C2FED0130506", hash_generated_method = "F8F88DB6113B3ECAC3A242EAF6AE357B")
         public String getEfName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_173968373 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_173968373 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_173968373 = "EF_CSIM_EPRL";
-            varB4EAC82CA7396A68D541C85D26508E83_173968373.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_173968373.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_173968373;
-            // ---------- Original Method ----------
-            //return "EF_CSIM_EPRL";
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.018 -0400", hash_original_method = "B4E1B568EC9A83A605CFFEF5F57F8030", hash_generated_method = "DEED060B9909A9ED769BC4B5070AD46A")
         public void onRecordLoaded(AsyncResult ar) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             onGetCSimEprlDone(ar);
             addTaint(ar.getTaint());
-            // ---------- Original Method ----------
-            //onGetCSimEprlDone(ar);
+            
+            
         }
 
         

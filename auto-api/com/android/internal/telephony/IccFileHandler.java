@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.*;
 import android.util.Log;
@@ -20,17 +20,18 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     protected  IccFileHandler(PhoneBase phone) {
         super();
         this.phone = phone;
-        // ---------- Original Method ----------
-        //this.phone = phone;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.905 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.905 -0400", hash_original_method = "663260DCC0AEA6DC2CA2BB2A67F595C2", hash_generated_method = "580BC5C27CD831C928AE74ACF9549582")
     public void loadEFLinearFixed(int fileid, int recordNum, Message onLoaded) {
         Message response = obtainMessage(EVENT_GET_RECORD_SIZE_DONE,
@@ -40,15 +41,16 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
         addTaint(fileid);
         addTaint(recordNum);
         addTaint(onLoaded.getTaint());
-        // ---------- Original Method ----------
-        //Message response
-            //= obtainMessage(EVENT_GET_RECORD_SIZE_DONE,
-                        //new LoadLinearFixedContext(fileid, recordNum, onLoaded));
-        //phone.mCM.iccIO(COMMAND_GET_RESPONSE, fileid, getEFPath(fileid),
-                        //0, 0, GET_RESPONSE_EF_SIZE_BYTES, null, null, response);
+        
+        
+            
+                        
+        
+                        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.905 -0400", hash_original_method = "AD3D0941CCBE990655E4D58F2671DA3B", hash_generated_method = "D42B2CA84B93F1C52549C33AFF7563DA")
     public void loadEFImgLinearFixed(int recordNum, Message onLoaded) {
         Message response = obtainMessage(EVENT_READ_IMG_DONE,
@@ -59,16 +61,17 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
                 GET_RESPONSE_EF_IMG_SIZE_BYTES, null, null, response);
         addTaint(recordNum);
         addTaint(onLoaded.getTaint());
-        // ---------- Original Method ----------
-        //Message response = obtainMessage(EVENT_READ_IMG_DONE,
-                //new LoadLinearFixedContext(IccConstants.EF_IMG, recordNum,
-                        //onLoaded));
-        //phone.mCM.iccIO(COMMAND_GET_RESPONSE, IccConstants.EF_IMG, "img",
-                //recordNum, READ_RECORD_MODE_ABSOLUTE,
-                //GET_RESPONSE_EF_IMG_SIZE_BYTES, null, null, response);
+        
+        
+                
+                        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.906 -0400", hash_original_method = "50E0C1880D1B176F78B29AB1FC2AC0F6", hash_generated_method = "55472F8B31AE9A22BD86659F1F4B88DE")
     public void getEFLinearRecordSize(int fileid, Message onLoaded) {
         Message response = obtainMessage(EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE,
@@ -77,15 +80,16 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
                     0, 0, GET_RESPONSE_EF_SIZE_BYTES, null, null, response);
         addTaint(fileid);
         addTaint(onLoaded.getTaint());
-        // ---------- Original Method ----------
-        //Message response
-                //= obtainMessage(EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE,
-                        //new LoadLinearFixedContext(fileid, onLoaded));
-        //phone.mCM.iccIO(COMMAND_GET_RESPONSE, fileid, getEFPath(fileid),
-                    //0, 0, GET_RESPONSE_EF_SIZE_BYTES, null, null, response);
+        
+        
+                
+                        
+        
+                    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.906 -0400", hash_original_method = "65C59C00611DFB92BBD6DFE9FDCAEDDA", hash_generated_method = "6412069C1A73048CA8DE9088F792D013")
     public void loadEFLinearFixedAll(int fileid, Message onLoaded) {
         Message response = obtainMessage(EVENT_GET_RECORD_SIZE_DONE,
@@ -94,14 +98,15 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
                         0, 0, GET_RESPONSE_EF_SIZE_BYTES, null, null, response);
         addTaint(fileid);
         addTaint(onLoaded.getTaint());
-        // ---------- Original Method ----------
-        //Message response = obtainMessage(EVENT_GET_RECORD_SIZE_DONE,
-                        //new LoadLinearFixedContext(fileid,onLoaded));
-        //phone.mCM.iccIO(COMMAND_GET_RESPONSE, fileid, getEFPath(fileid),
-                        //0, 0, GET_RESPONSE_EF_SIZE_BYTES, null, null, response);
+        
+        
+                        
+        
+                        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.907 -0400", hash_original_method = "E6873BA2275643766469BAAFD3B2D8F2", hash_generated_method = "A6EA63A6C6416D40D190B04B1AD41C41")
     public void loadEFTransparent(int fileid, Message onLoaded) {
         Message response = obtainMessage(EVENT_GET_BINARY_SIZE_DONE,
@@ -110,14 +115,15 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
                         0, 0, GET_RESPONSE_EF_SIZE_BYTES, null, null, response);
         addTaint(fileid);
         addTaint(onLoaded.getTaint());
-        // ---------- Original Method ----------
-        //Message response = obtainMessage(EVENT_GET_BINARY_SIZE_DONE,
-                        //fileid, 0, onLoaded);
-        //phone.mCM.iccIO(COMMAND_GET_RESPONSE, fileid, getEFPath(fileid),
-                        //0, 0, GET_RESPONSE_EF_SIZE_BYTES, null, null, response);
+        
+        
+                        
+        
+                        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.908 -0400", hash_original_method = "2560A35ADA01F4B533EB0E56DA8161F2", hash_generated_method = "9AFFF13B99C729FEDAEC406119053401")
     public void loadEFImgTransparent(int fileid, int highOffset, int lowOffset,
             int length, Message onLoaded) {
@@ -130,14 +136,15 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
         addTaint(lowOffset);
         addTaint(length);
         addTaint(onLoaded.getTaint());
-        // ---------- Original Method ----------
-        //Message response = obtainMessage(EVENT_READ_ICON_DONE, fileid, 0,
-                //onLoaded);
-        //phone.mCM.iccIO(COMMAND_READ_BINARY, fileid, "img", highOffset, lowOffset,
-                //length, null, null, response);
+        
+        
+                
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.909 -0400", hash_original_method = "FA70C1BBB046CBB00612B81948F784B1", hash_generated_method = "AE8D22DD7D3FA6396C13767590052FCC")
     public void updateEFLinearFixed(int fileid, int recordNum, byte[] data,
             String pin2, Message onComplete) {
@@ -149,13 +156,14 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
         addTaint(data[0]);
         addTaint(pin2.getTaint());
         addTaint(onComplete.getTaint());
-        // ---------- Original Method ----------
-        //phone.mCM.iccIO(COMMAND_UPDATE_RECORD, fileid, getEFPath(fileid),
-                        //recordNum, READ_RECORD_MODE_ABSOLUTE, data.length,
-                        //IccUtils.bytesToHexString(data), pin2, onComplete);
+        
+        
+                        
+                        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.910 -0400", hash_original_method = "E2C68C0F33001D18516AF5A16FEBCDCE", hash_generated_method = "270B5E73C771D1D7317F0BCC67A20BDB")
     public void updateEFTransparent(int fileid, byte[] data, Message onComplete) {
         phone.mCM.iccIO(COMMAND_UPDATE_BINARY, fileid, getEFPath(fileid),
@@ -164,13 +172,14 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
         addTaint(fileid);
         addTaint(data[0]);
         addTaint(onComplete.getTaint());
-        // ---------- Original Method ----------
-        //phone.mCM.iccIO(COMMAND_UPDATE_BINARY, fileid, getEFPath(fileid),
-                        //0, 0, data.length,
-                        //IccUtils.bytesToHexString(data), null, onComplete);
+        
+        
+                        
+                        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.910 -0400", hash_original_method = "75655596118E033F36F4E4359D6ED264", hash_generated_method = "927E19D6094B263F0E3182C74BEF8A0B")
     private void sendResult(Message response, Object result, Throwable ex) {
         AsyncResult.forMessage(response, result, ex);
@@ -178,15 +187,16 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
         addTaint(response.getTaint());
         addTaint(result.getTaint());
         addTaint(ex.getTaint());
-        // ---------- Original Method ----------
-        //if (response == null) {
-            //return;
-        //}
-        //AsyncResult.forMessage(response, result, ex);
-        //response.sendToTarget();
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.914 -0400", hash_original_method = "7545CD0BE0B692221088F308787036AD", hash_generated_method = "027EA784F1A6481F48C173353DFC471F")
     public void handleMessage(Message msg) {
         AsyncResult ar;
@@ -202,341 +212,341 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
         int recordSize[];
         try 
         {
-            //Begin case EVENT_READ_IMG_DONE 
+            
             ar = (AsyncResult) msg.obj;
-            //End case EVENT_READ_IMG_DONE 
-            //Begin case EVENT_READ_IMG_DONE 
+            
+            
             lc = (LoadLinearFixedContext) ar.userObj;
-            //End case EVENT_READ_IMG_DONE 
-            //Begin case EVENT_READ_IMG_DONE 
+            
+            
             result = (IccIoResult) ar.result;
-            //End case EVENT_READ_IMG_DONE 
-            //Begin case EVENT_READ_IMG_DONE 
+            
+            
             response = lc.onLoaded;
-            //End case EVENT_READ_IMG_DONE 
-            //Begin case EVENT_READ_IMG_DONE 
+            
+            
             iccException = result.getException();
-            //End case EVENT_READ_IMG_DONE 
-            //Begin case EVENT_READ_IMG_DONE 
+            
+            
             {
                 sendResult(response, result.payload, ar.exception);
-            } //End block
-            //End case EVENT_READ_IMG_DONE 
-            //Begin case EVENT_READ_ICON_DONE 
+            } 
+            
+            
             ar = (AsyncResult) msg.obj;
-            //End case EVENT_READ_ICON_DONE 
-            //Begin case EVENT_READ_ICON_DONE 
+            
+            
             response = (Message) ar.userObj;
-            //End case EVENT_READ_ICON_DONE 
-            //Begin case EVENT_READ_ICON_DONE 
+            
+            
             result = (IccIoResult) ar.result;
-            //End case EVENT_READ_ICON_DONE 
-            //Begin case EVENT_READ_ICON_DONE 
+            
+            
             iccException = result.getException();
-            //End case EVENT_READ_ICON_DONE 
-            //Begin case EVENT_READ_ICON_DONE 
+            
+            
             {
                 sendResult(response, result.payload, ar.exception);
-            } //End block
-            //End case EVENT_READ_ICON_DONE 
-            //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
+            } 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             lc = (LoadLinearFixedContext) ar.userObj;
-            //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             result = (IccIoResult) ar.result;
-            //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             response = lc.onLoaded;
-            //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             {
                 sendResult(response, null, ar.exception);
-            } //End block
-            //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
+            } 
+            
+            
             iccException = result.getException();
-            //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             {
                 sendResult(response, null, iccException);
-            } //End block
-            //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
+            } 
+            
+            
             data = result.payload;
-            //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new IccFileTypeMismatch();
-            } //End block
-            //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
+            } 
+            
+            
             recordSize = new int[3];
-            //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             recordSize[0] = data[RESPONSE_DATA_RECORD_LENGTH] & 0xFF;
-            //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             recordSize[1] = ((data[RESPONSE_DATA_FILE_SIZE_1] & 0xff) << 8)
                        + (data[RESPONSE_DATA_FILE_SIZE_2] & 0xff);
-            //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             recordSize[2] = recordSize[1] / recordSize[0];
-            //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
+            
+            
             sendResult(response, recordSize, null);
-            //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            
+            
             lc = (LoadLinearFixedContext) ar.userObj;
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            
+            
             result = (IccIoResult) ar.result;
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            
+            
             response = lc.onLoaded;
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            
+            
             {
                 sendResult(response, null, ar.exception);
-            } //End block
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            } 
+            
+            
             iccException = result.getException();
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            
+            
             {
                 sendResult(response, null, iccException);
-            } //End block
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            } 
+            
+            
             data = result.payload;
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            
+            
             fileid = lc.efid;
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            
+            
             recordNum = lc.recordNum;
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new IccFileTypeMismatch();
-            } //End block
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            } 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new IccFileTypeMismatch();
-            } //End block
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            } 
+            
+            
             lc.recordSize = data[RESPONSE_DATA_RECORD_LENGTH] & 0xFF;
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            
+            
             size = ((data[RESPONSE_DATA_FILE_SIZE_1] & 0xff) << 8)
                        + (data[RESPONSE_DATA_FILE_SIZE_2] & 0xff);
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            
+            
             lc.countRecords = size / lc.recordSize;
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            
+            
             {
                 lc.results = new ArrayList<byte[]>(lc.countRecords);
-            } //End block
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_RECORD_SIZE_DONE 
+            } 
+            
+            
             phone.mCM.iccIO(COMMAND_READ_RECORD, lc.efid, getEFPath(lc.efid),
                          lc.recordNum,
                          READ_RECORD_MODE_ABSOLUTE,
                          lc.recordSize, null, null,
                          obtainMessage(EVENT_READ_RECORD_DONE, lc));
-            //End case EVENT_GET_RECORD_SIZE_DONE 
-            //Begin case EVENT_GET_BINARY_SIZE_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_BINARY_SIZE_DONE 
-            //Begin case EVENT_GET_BINARY_SIZE_DONE 
+            
+            
             response = (Message) ar.userObj;
-            //End case EVENT_GET_BINARY_SIZE_DONE 
-            //Begin case EVENT_GET_BINARY_SIZE_DONE 
+            
+            
             result = (IccIoResult) ar.result;
-            //End case EVENT_GET_BINARY_SIZE_DONE 
-            //Begin case EVENT_GET_BINARY_SIZE_DONE 
+            
+            
             {
                 sendResult(response, null, ar.exception);
-            } //End block
-            //End case EVENT_GET_BINARY_SIZE_DONE 
-            //Begin case EVENT_GET_BINARY_SIZE_DONE 
+            } 
+            
+            
             iccException = result.getException();
-            //End case EVENT_GET_BINARY_SIZE_DONE 
-            //Begin case EVENT_GET_BINARY_SIZE_DONE 
+            
+            
             {
                 sendResult(response, null, iccException);
-            } //End block
-            //End case EVENT_GET_BINARY_SIZE_DONE 
-            //Begin case EVENT_GET_BINARY_SIZE_DONE 
+            } 
+            
+            
             data = result.payload;
-            //End case EVENT_GET_BINARY_SIZE_DONE 
-            //Begin case EVENT_GET_BINARY_SIZE_DONE 
+            
+            
             fileid = msg.arg1;
-            //End case EVENT_GET_BINARY_SIZE_DONE 
-            //Begin case EVENT_GET_BINARY_SIZE_DONE 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new IccFileTypeMismatch();
-            } //End block
-            //End case EVENT_GET_BINARY_SIZE_DONE 
-            //Begin case EVENT_GET_BINARY_SIZE_DONE 
+            } 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new IccFileTypeMismatch();
-            } //End block
-            //End case EVENT_GET_BINARY_SIZE_DONE 
-            //Begin case EVENT_GET_BINARY_SIZE_DONE 
+            } 
+            
+            
             size = ((data[RESPONSE_DATA_FILE_SIZE_1] & 0xff) << 8)
                        + (data[RESPONSE_DATA_FILE_SIZE_2] & 0xff);
-            //End case EVENT_GET_BINARY_SIZE_DONE 
-            //Begin case EVENT_GET_BINARY_SIZE_DONE 
+            
+            
             phone.mCM.iccIO(COMMAND_READ_BINARY, fileid, getEFPath(fileid),
                                 0, 0, size, null, null,
                                 obtainMessage(EVENT_READ_BINARY_DONE,
                                               fileid, 0, response));
-            //End case EVENT_GET_BINARY_SIZE_DONE 
-            //Begin case EVENT_READ_RECORD_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_READ_RECORD_DONE 
-            //Begin case EVENT_READ_RECORD_DONE 
+            
+            
             lc = (LoadLinearFixedContext) ar.userObj;
-            //End case EVENT_READ_RECORD_DONE 
-            //Begin case EVENT_READ_RECORD_DONE 
+            
+            
             result = (IccIoResult) ar.result;
-            //End case EVENT_READ_RECORD_DONE 
-            //Begin case EVENT_READ_RECORD_DONE 
+            
+            
             response = lc.onLoaded;
-            //End case EVENT_READ_RECORD_DONE 
-            //Begin case EVENT_READ_RECORD_DONE 
+            
+            
             {
                 sendResult(response, null, ar.exception);
-            } //End block
-            //End case EVENT_READ_RECORD_DONE 
-            //Begin case EVENT_READ_RECORD_DONE 
+            } 
+            
+            
             iccException = result.getException();
-            //End case EVENT_READ_RECORD_DONE 
-            //Begin case EVENT_READ_RECORD_DONE 
+            
+            
             {
                 sendResult(response, null, iccException);
-            } //End block
-            //End case EVENT_READ_RECORD_DONE 
-            //Begin case EVENT_READ_RECORD_DONE 
+            } 
+            
+            
             {
                 sendResult(response, result.payload, null);
-            } //End block
+            } 
             {
                 lc.results.add(result.payload);
                 {
                     sendResult(response, lc.results, null);
-                } //End block
+                } 
                 {
                     phone.mCM.iccIO(COMMAND_READ_RECORD, lc.efid, getEFPath(lc.efid),
                                     lc.recordNum,
                                     READ_RECORD_MODE_ABSOLUTE,
                                     lc.recordSize, null, null,
                                     obtainMessage(EVENT_READ_RECORD_DONE, lc));
-                } //End block
-            } //End block
-            //End case EVENT_READ_RECORD_DONE 
-            //Begin case EVENT_READ_BINARY_DONE 
+                } 
+            } 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_READ_BINARY_DONE 
-            //Begin case EVENT_READ_BINARY_DONE 
+            
+            
             response = (Message) ar.userObj;
-            //End case EVENT_READ_BINARY_DONE 
-            //Begin case EVENT_READ_BINARY_DONE 
+            
+            
             result = (IccIoResult) ar.result;
-            //End case EVENT_READ_BINARY_DONE 
-            //Begin case EVENT_READ_BINARY_DONE 
+            
+            
             {
                 sendResult(response, null, ar.exception);
-            } //End block
-            //End case EVENT_READ_BINARY_DONE 
-            //Begin case EVENT_READ_BINARY_DONE 
+            } 
+            
+            
             iccException = result.getException();
-            //End case EVENT_READ_BINARY_DONE 
-            //Begin case EVENT_READ_BINARY_DONE 
+            
+            
             {
                 sendResult(response, null, iccException);
-            } //End block
-            //End case EVENT_READ_BINARY_DONE 
-            //Begin case EVENT_READ_BINARY_DONE 
+            } 
+            
+            
             sendResult(response, result.payload, null);
-            //End case EVENT_READ_BINARY_DONE 
-        } //End block
+            
+        } 
         catch (Exception exc)
         {
             {
                 sendResult(response, null, exc);
-            } //End block
+            } 
             {
                 loge("uncaught exception" + exc);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.915 -0400", hash_original_method = "186CFCBD54A740D0E08382313B3D28EB", hash_generated_method = "50CE926CA5F37049A14EF5E9815853D9")
     protected String getCommonIccEFPath(int efid) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1160959065 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_826917832 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_2047119746 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_837533096 = null; //Variable for return #4
-        //Begin case EF_ADN EF_FDN EF_MSISDN EF_SDN EF_EXT1 EF_EXT2 EF_EXT3 
+        String varB4EAC82CA7396A68D541C85D26508E83_1160959065 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_826917832 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2047119746 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_837533096 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1160959065 = MF_SIM + DF_TELECOM;
-        //End case EF_ADN EF_FDN EF_MSISDN EF_SDN EF_EXT1 EF_EXT2 EF_EXT3 
-        //Begin case EF_ICCID EF_PL 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_826917832 = MF_SIM;
-        //End case EF_ICCID EF_PL 
-        //Begin case EF_IMG 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_2047119746 = MF_SIM + DF_TELECOM + DF_GRAPHICS;
-        //End case EF_IMG 
+        
         varB4EAC82CA7396A68D541C85D26508E83_837533096 = null;
         addTaint(efid);
-        String varA7E53CE21691AB073D9660D615818899_557379850; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_557379850; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_557379850 = varB4EAC82CA7396A68D541C85D26508E83_1160959065;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_557379850 = varB4EAC82CA7396A68D541C85D26508E83_826917832;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_557379850 = varB4EAC82CA7396A68D541C85D26508E83_2047119746;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_557379850 = varB4EAC82CA7396A68D541C85D26508E83_837533096;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_557379850.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_557379850.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_557379850;
-        // ---------- Original Method ----------
-        //switch(efid) {
-        //case EF_ADN:
-        //case EF_FDN:
-        //case EF_MSISDN:
-        //case EF_SDN:
-        //case EF_EXT1:
-        //case EF_EXT2:
-        //case EF_EXT3:
-            //return MF_SIM + DF_TELECOM;
-        //case EF_ICCID:
-        //case EF_PL:
-            //return MF_SIM;
-        //case EF_IMG:
-            //return MF_SIM + DF_TELECOM + DF_GRAPHICS;
-        //}
-        //return null;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -578,11 +588,11 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
             this.recordNum = recordNum;
             this.onLoaded = onLoaded;
             this.loadAll = false;
-            // ---------- Original Method ----------
-            //this.efid = efid;
-            //this.recordNum = recordNum;
-            //this.onLoaded = onLoaded;
-            //this.loadAll = false;
+            
+            
+            
+            
+            
         }
 
         
@@ -592,11 +602,11 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
             this.recordNum = 1;
             this.loadAll = true;
             this.onLoaded = onLoaded;
-            // ---------- Original Method ----------
-            //this.efid = efid;
-            //this.recordNum = 1;
-            //this.loadAll = true;
-            //this.onLoaded = onLoaded;
+            
+            
+            
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.annotation.Widget;
 import android.content.Context;
@@ -93,7 +93,7 @@ public class DatePicker extends FrameLayout {
     public  DatePicker(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -102,7 +102,7 @@ public class DatePicker extends FrameLayout {
         this(context, attrs, R.attr.datePickerStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -165,7 +165,7 @@ public class DatePicker extends FrameLayout {
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.400 -0400", hash_original_method = "8EC92A24243B88F9F674F29B26D1EE2F", hash_generated_method = "6BD1278AAE492694E590CDC16AE2F4CF")
             public void onSelectedDayChange(CalendarView view, int year, int month, int monthDay) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 setDate(year, month, monthDay);
                 updateSpinners();
                 notifyDateChanged();
@@ -173,10 +173,10 @@ public class DatePicker extends FrameLayout {
                 addTaint(year);
                 addTaint(month);
                 addTaint(monthDay);
-                // ---------- Original Method ----------
-                //setDate(year, month, monthDay);
-                //updateSpinners();
-                //notifyDateChanged();
+                
+                
+                
+                
             }
 });
         mDaySpinner = (NumberPicker) findViewById(R.id.day);
@@ -197,11 +197,11 @@ public class DatePicker extends FrameLayout {
         mYearSpinnerInput = (EditText) mYearSpinner.findViewById(R.id.numberpicker_input);
         {
             setSpinnersShown(true);
-        } //End block
+        } 
         {
             setSpinnersShown(spinnersShown);
             setCalendarViewShown(calendarViewShown);
-        } //End block
+        } 
         mTempDate.clear();
         {
             boolean varB42B6FD90CE44C7AF0C803D461A4E66F_426703125 = (!TextUtils.isEmpty(minDate));
@@ -210,13 +210,13 @@ public class DatePicker extends FrameLayout {
                     boolean var238973CDF5952F2772E06FD4D70C236A_331789822 = (!parseDate(minDate, mTempDate));
                     {
                         mTempDate.set(startYear, 0, 1);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 mTempDate.set(startYear, 0, 1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         setMinDate(mTempDate.getTimeInMillis());
         mTempDate.clear();
         {
@@ -226,13 +226,13 @@ public class DatePicker extends FrameLayout {
                     boolean varE39F8480BCF72E019FB738D67F843630_161534626 = (!parseDate(maxDate, mTempDate));
                     {
                         mTempDate.set(endYear, 11, 31);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 mTempDate.set(endYear, 11, 31);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         setMaxDate(mTempDate.getTimeInMillis());
         mCurrentDate.setTimeInMillis(System.currentTimeMillis());
         init(mCurrentDate.get(Calendar.YEAR), mCurrentDate.get(Calendar.MONTH), mCurrentDate
@@ -242,13 +242,13 @@ public class DatePicker extends FrameLayout {
             boolean varFEF5E81D9E4B252970529F0E4C094F45_1468799457 = (AccessibilityManager.getInstance(mContext).isEnabled());
             {
                 setContentDescriptions();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -257,8 +257,8 @@ public class DatePicker extends FrameLayout {
         long varB40DE574B5EEB641C77EAC6A2031962A_1425871631 = (mCalendarView.getMinDate());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_997225601 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_997225601;
-        // ---------- Original Method ----------
-        //return mCalendarView.getMinDate();
+        
+        
     }
 
     
@@ -268,7 +268,7 @@ public class DatePicker extends FrameLayout {
         {
             boolean var37BD6CA5F6D0A436AF1D33B6EE39E4BD_1818774863 = (mTempDate.get(Calendar.YEAR) == mMinDate.get(Calendar.YEAR)
                 && mTempDate.get(Calendar.DAY_OF_YEAR) != mMinDate.get(Calendar.DAY_OF_YEAR));
-        } //End collapsed parenthetic
+        } 
         mMinDate.setTimeInMillis(minDate);
         mCalendarView.setMinDate(minDate);
         {
@@ -276,23 +276,23 @@ public class DatePicker extends FrameLayout {
             {
                 mCurrentDate.setTimeInMillis(mMinDate.getTimeInMillis());
                 updateCalendarView();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         updateSpinners();
         addTaint(minDate);
-        // ---------- Original Method ----------
-        //mTempDate.setTimeInMillis(minDate);
-        //if (mTempDate.get(Calendar.YEAR) == mMinDate.get(Calendar.YEAR)
-                //&& mTempDate.get(Calendar.DAY_OF_YEAR) != mMinDate.get(Calendar.DAY_OF_YEAR)) {
-            //return;
-        //}
-        //mMinDate.setTimeInMillis(minDate);
-        //mCalendarView.setMinDate(minDate);
-        //if (mCurrentDate.before(mMinDate)) {
-            //mCurrentDate.setTimeInMillis(mMinDate.getTimeInMillis());
-            //updateCalendarView();
-        //}
-        //updateSpinners();
+        
+        
+        
+                
+            
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -301,8 +301,8 @@ public class DatePicker extends FrameLayout {
         long var9D614FA984E6C6E979B43BD42C2783CC_1015744189 = (mCalendarView.getMaxDate());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1782092670 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1782092670;
-        // ---------- Original Method ----------
-        //return mCalendarView.getMaxDate();
+        
+        
     }
 
     
@@ -312,7 +312,7 @@ public class DatePicker extends FrameLayout {
         {
             boolean var894F7585478762626FCC6E7184683B3E_919096517 = (mTempDate.get(Calendar.YEAR) == mMaxDate.get(Calendar.YEAR)
                 && mTempDate.get(Calendar.DAY_OF_YEAR) != mMaxDate.get(Calendar.DAY_OF_YEAR));
-        } //End collapsed parenthetic
+        } 
         mMaxDate.setTimeInMillis(maxDate);
         mCalendarView.setMaxDate(maxDate);
         {
@@ -320,23 +320,23 @@ public class DatePicker extends FrameLayout {
             {
                 mCurrentDate.setTimeInMillis(mMaxDate.getTimeInMillis());
                 updateCalendarView();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         updateSpinners();
         addTaint(maxDate);
-        // ---------- Original Method ----------
-        //mTempDate.setTimeInMillis(maxDate);
-        //if (mTempDate.get(Calendar.YEAR) == mMaxDate.get(Calendar.YEAR)
-                //&& mTempDate.get(Calendar.DAY_OF_YEAR) != mMaxDate.get(Calendar.DAY_OF_YEAR)) {
-            //return;
-        //}
-        //mMaxDate.setTimeInMillis(maxDate);
-        //mCalendarView.setMaxDate(maxDate);
-        //if (mCurrentDate.after(mMaxDate)) {
-            //mCurrentDate.setTimeInMillis(mMaxDate.getTimeInMillis());
-            //updateCalendarView();
-        //}
-        //updateSpinners();
+        
+        
+        
+                
+            
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -349,16 +349,16 @@ public class DatePicker extends FrameLayout {
         mYearSpinner.setEnabled(enabled);
         mCalendarView.setEnabled(enabled);
         mIsEnabled = enabled;
-        // ---------- Original Method ----------
-        //if (mIsEnabled == enabled) {
-            //return;
-        //}
-        //super.setEnabled(enabled);
-        //mDaySpinner.setEnabled(enabled);
-        //mMonthSpinner.setEnabled(enabled);
-        //mYearSpinner.setEnabled(enabled);
-        //mCalendarView.setEnabled(enabled);
-        //mIsEnabled = enabled;
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -367,8 +367,8 @@ public class DatePicker extends FrameLayout {
     public boolean isEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1259415888 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1259415888;
-        // ---------- Original Method ----------
-        //return mIsEnabled;
+        
+        
     }
 
     
@@ -379,41 +379,41 @@ public class DatePicker extends FrameLayout {
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1204888832 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1204888832;
-        // ---------- Original Method ----------
-        //onPopulateAccessibilityEvent(event);
-        //return true;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.405 -0400", hash_original_method = "C41A760D3D0D618DC4D1C9DC2EF8ACD9", hash_generated_method = "32257B44D733ADBFA912F9BD60A41589")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onPopulateAccessibilityEvent(event);
         final int flags = DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR;
         String selectedDateUtterance = DateUtils.formatDateTime(mContext,
                 mCurrentDate.getTimeInMillis(), flags);
         event.getText().add(selectedDateUtterance);
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //super.onPopulateAccessibilityEvent(event);
-        //final int flags = DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR;
-        //String selectedDateUtterance = DateUtils.formatDateTime(mContext,
-                //mCurrentDate.getTimeInMillis(), flags);
-        //event.getText().add(selectedDateUtterance);
+        
+        
+        
+        
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.405 -0400", hash_original_method = "C452430AEDBDDD78DF8F4D12B9175E89", hash_generated_method = "FB0A11FC0C47EF7B377125BF2E9C2DD7")
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onConfigurationChanged(newConfig);
         setCurrentLocale(newConfig.locale);
         addTaint(newConfig.getTaint());
-        // ---------- Original Method ----------
-        //super.onConfigurationChanged(newConfig);
-        //setCurrentLocale(newConfig.locale);
+        
+        
+        
     }
 
     
@@ -422,19 +422,19 @@ public class DatePicker extends FrameLayout {
         boolean var855A46EE0F6F903AB771316F83829ECB_414752887 = (mCalendarView.isShown());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1105778219 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1105778219;
-        // ---------- Original Method ----------
-        //return mCalendarView.isShown();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.406 -0400", hash_original_method = "E5E91372452D81D0FC87710458852870", hash_generated_method = "F24D3258E341A6219E65982C636D2FC6")
     public CalendarView getCalendarView() {
-        CalendarView varB4EAC82CA7396A68D541C85D26508E83_63940363 = null; //Variable for return #1
+        CalendarView varB4EAC82CA7396A68D541C85D26508E83_63940363 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_63940363 = mCalendarView;
-        varB4EAC82CA7396A68D541C85D26508E83_63940363.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_63940363.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_63940363;
-        // ---------- Original Method ----------
-        //return mCalendarView;
+        
+        
     }
 
     
@@ -442,8 +442,8 @@ public class DatePicker extends FrameLayout {
     public void setCalendarViewShown(boolean shown) {
         mCalendarView.setVisibility(shown ? VISIBLE : GONE);
         addTaint(shown);
-        // ---------- Original Method ----------
-        //mCalendarView.setVisibility(shown ? VISIBLE : GONE);
+        
+        
     }
 
     
@@ -452,8 +452,8 @@ public class DatePicker extends FrameLayout {
         boolean varEE3A01932ADE28CADE36247C8514FDF8_276086362 = (mSpinners.isShown());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1525534739 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1525534739;
-        // ---------- Original Method ----------
-        //return mSpinners.isShown();
+        
+        
     }
 
     
@@ -461,8 +461,8 @@ public class DatePicker extends FrameLayout {
     public void setSpinnersShown(boolean shown) {
         mSpinners.setVisibility(shown ? VISIBLE : GONE);
         addTaint(shown);
-        // ---------- Original Method ----------
-        //mSpinners.setVisibility(shown ? VISIBLE : GONE);
+        
+        
     }
 
     
@@ -470,7 +470,7 @@ public class DatePicker extends FrameLayout {
     private void setCurrentLocale(Locale locale) {
         {
             boolean varD1CF46D36E6B1C6187CE68AE2BC3F432_1898429833 = (locale.equals(mCurrentLocale));
-        } //End collapsed parenthetic
+        } 
         mCurrentLocale = locale;
         mTempDate = getCalendarForLocale(mTempDate, locale);
         mMinDate = getCalendarForLocale(mMinDate, locale);
@@ -483,61 +483,61 @@ public class DatePicker extends FrameLayout {
             {
                 mShortMonths[i] = DateUtils.getMonthString(Calendar.JANUARY + i,
                     DateUtils.LENGTH_MEDIUM);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (locale.equals(mCurrentLocale)) {
-            //return;
-        //}
-        //mCurrentLocale = locale;
-        //mTempDate = getCalendarForLocale(mTempDate, locale);
-        //mMinDate = getCalendarForLocale(mMinDate, locale);
-        //mMaxDate = getCalendarForLocale(mMaxDate, locale);
-        //mCurrentDate = getCalendarForLocale(mCurrentDate, locale);
-        //mNumberOfMonths = mTempDate.getActualMaximum(Calendar.MONTH) + 1;
-        //mShortMonths = new String[mNumberOfMonths];
-        //for (int i = 0; i < mNumberOfMonths; i++) {
-            //mShortMonths[i] = DateUtils.getMonthString(Calendar.JANUARY + i,
-                    //DateUtils.LENGTH_MEDIUM);
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.408 -0400", hash_original_method = "FA738DF80665124C3A5E01ADC04827D9", hash_generated_method = "5A00E4FD3A1149E5C0CFFBD24E6D8EAA")
     private Calendar getCalendarForLocale(Calendar oldCalendar, Locale locale) {
-        Calendar varB4EAC82CA7396A68D541C85D26508E83_2108813901 = null; //Variable for return #1
-        Calendar varB4EAC82CA7396A68D541C85D26508E83_1852935918 = null; //Variable for return #2
+        Calendar varB4EAC82CA7396A68D541C85D26508E83_2108813901 = null; 
+        Calendar varB4EAC82CA7396A68D541C85D26508E83_1852935918 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2108813901 = Calendar.getInstance(locale);
-        } //End block
+        } 
         {
             final long currentTimeMillis = oldCalendar.getTimeInMillis();
             Calendar newCalendar = Calendar.getInstance(locale);
             newCalendar.setTimeInMillis(currentTimeMillis);
             varB4EAC82CA7396A68D541C85D26508E83_1852935918 = newCalendar;
-        } //End block
+        } 
         addTaint(oldCalendar.getTaint());
         addTaint(locale.getTaint());
-        Calendar varA7E53CE21691AB073D9660D615818899_1028398094; //Final return value
+        Calendar varA7E53CE21691AB073D9660D615818899_1028398094; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1028398094 = varB4EAC82CA7396A68D541C85D26508E83_2108813901;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1028398094 = varB4EAC82CA7396A68D541C85D26508E83_1852935918;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1028398094.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1028398094.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1028398094;
-        // ---------- Original Method ----------
-        //if (oldCalendar == null) {
-            //return Calendar.getInstance(locale);
-        //} else {
-            //final long currentTimeMillis = oldCalendar.getTimeInMillis();
-            //Calendar newCalendar = Calendar.getInstance(locale);
-            //newCalendar.setTimeInMillis(currentTimeMillis);
-            //return newCalendar;
-        //}
+        
+        
+            
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -549,31 +549,31 @@ public class DatePicker extends FrameLayout {
         {
             int i = 0;
             {
-                //Begin case DateFormat.DATE 
+                
                 mSpinners.addView(mDaySpinner);
-                //End case DateFormat.DATE 
-                //Begin case DateFormat.DATE 
+                
+                
                 setImeOptions(mDaySpinner, spinnerCount, i);
-                //End case DateFormat.DATE 
-                //Begin case DateFormat.MONTH 
+                
+                
                 mSpinners.addView(mMonthSpinner);
-                //End case DateFormat.MONTH 
-                //Begin case DateFormat.MONTH 
+                
+                
                 setImeOptions(mMonthSpinner, spinnerCount, i);
-                //End case DateFormat.MONTH 
-                //Begin case DateFormat.YEAR 
+                
+                
                 mSpinners.addView(mYearSpinner);
-                //End case DateFormat.YEAR 
-                //Begin case DateFormat.YEAR 
+                
+                
                 setImeOptions(mYearSpinner, spinnerCount, i);
-                //End case DateFormat.YEAR 
-                //Begin case default 
+                
+                
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-                //End case default 
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                
+            } 
+        } 
+        
+        
     }
 
     
@@ -581,7 +581,7 @@ public class DatePicker extends FrameLayout {
     public void updateDate(int year, int month, int dayOfMonth) {
         {
             boolean var47D61AB824D859560C1B4264C334F45F_1398495344 = (!isNewDate(year, month, dayOfMonth));
-        } //End collapsed parenthetic
+        } 
         setDate(year, month, dayOfMonth);
         updateSpinners();
         updateCalendarView();
@@ -589,14 +589,14 @@ public class DatePicker extends FrameLayout {
         addTaint(year);
         addTaint(month);
         addTaint(dayOfMonth);
-        // ---------- Original Method ----------
-        //if (!isNewDate(year, month, dayOfMonth)) {
-            //return;
-        //}
-        //setDate(year, month, dayOfMonth);
-        //updateSpinners();
-        //updateCalendarView();
-        //notifyDateChanged();
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -605,42 +605,42 @@ public class DatePicker extends FrameLayout {
     protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container) {
         dispatchThawSelfOnly(container);
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //dispatchThawSelfOnly(container);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.409 -0400", hash_original_method = "5DB0198ABA6176C6419BBD5D6E2C0EE9", hash_generated_method = "15E6B932888D7335810EB9221F2E10FA")
     @Override
     protected Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1354167400 = null; //Variable for return #1
+        
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1354167400 = null; 
         Parcelable superState = super.onSaveInstanceState();
         varB4EAC82CA7396A68D541C85D26508E83_1354167400 = new SavedState(superState, getYear(), getMonth(), getDayOfMonth());
-        varB4EAC82CA7396A68D541C85D26508E83_1354167400.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1354167400.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1354167400;
-        // ---------- Original Method ----------
-        //Parcelable superState = super.onSaveInstanceState();
-        //return new SavedState(superState, getYear(), getMonth(), getDayOfMonth());
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.410 -0400", hash_original_method = "7BB26B54419EB3FE0435D4F561876035", hash_generated_method = "009BE3E862A71BDD4CD7372D7AA92FFF")
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         SavedState ss = (SavedState) state;
         super.onRestoreInstanceState(ss.getSuperState());
         setDate(ss.mYear, ss.mMonth, ss.mDay);
         updateSpinners();
         updateCalendarView();
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //SavedState ss = (SavedState) state;
-        //super.onRestoreInstanceState(ss.getSuperState());
-        //setDate(ss.mYear, ss.mMonth, ss.mDay);
-        //updateSpinners();
-        //updateCalendarView();
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -654,11 +654,11 @@ public class DatePicker extends FrameLayout {
         addTaint(year);
         addTaint(monthOfYear);
         addTaint(dayOfMonth);
-        // ---------- Original Method ----------
-        //setDate(year, monthOfYear, dayOfMonth);
-        //updateSpinners();
-        //updateCalendarView();
-        //mOnDateChangedListener = onDateChangedListener;
+        
+        
+        
+        
+        
     }
 
     
@@ -667,21 +667,21 @@ public class DatePicker extends FrameLayout {
         try 
         {
             outDate.setTime(mDateFormat.parse(date));
-        } //End block
+        } 
         catch (ParseException e)
         { }
         addTaint(date.getTaint());
         addTaint(outDate.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_908949737 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_908949737;
-        // ---------- Original Method ----------
-        //try {
-            //outDate.setTime(mDateFormat.parse(date));
-            //return true;
-        //} catch (ParseException e) {
-            //Log.w(LOG_TAG, "Date: " + date + " not in format: " + DATE_FORMAT);
-            //return false;
-        //}
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -695,10 +695,10 @@ public class DatePicker extends FrameLayout {
         addTaint(dayOfMonth);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1424632010 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1424632010;
-        // ---------- Original Method ----------
-        //return (mCurrentDate.get(Calendar.YEAR) != year
-                //|| mCurrentDate.get(Calendar.MONTH) != dayOfMonth
-                //|| mCurrentDate.get(Calendar.DAY_OF_MONTH) != month);
+        
+        
+                
+                
     }
 
     
@@ -709,24 +709,24 @@ public class DatePicker extends FrameLayout {
             boolean varAF79101793B04954E3EDCCBE86F07279_1228392727 = (mCurrentDate.before(mMinDate));
             {
                 mCurrentDate.setTimeInMillis(mMinDate.getTimeInMillis());
-            } //End block
+            } 
             {
                 boolean var55E331B3E292E1AA1BBB03ECF049DB7A_195182820 = (mCurrentDate.after(mMaxDate));
                 {
                     mCurrentDate.setTimeInMillis(mMaxDate.getTimeInMillis());
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(year);
         addTaint(month);
         addTaint(dayOfMonth);
-        // ---------- Original Method ----------
-        //mCurrentDate.set(year, month, dayOfMonth);
-        //if (mCurrentDate.before(mMinDate)) {
-            //mCurrentDate.setTimeInMillis(mMinDate.getTimeInMillis());
-        //} else if (mCurrentDate.after(mMaxDate)) {
-            //mCurrentDate.setTimeInMillis(mMaxDate.getTimeInMillis());
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -742,7 +742,7 @@ public class DatePicker extends FrameLayout {
                 mMonthSpinner.setMinValue(mCurrentDate.get(Calendar.MONTH));
                 mMonthSpinner.setMaxValue(mCurrentDate.getActualMaximum(Calendar.MONTH));
                 mMonthSpinner.setWrapSelectorWheel(false);
-            } //End block
+            } 
             {
                 boolean varFDB271A9A713B8545E92F73FD7F04833_775729911 = (mCurrentDate.equals(mMaxDate));
                 {
@@ -753,7 +753,7 @@ public class DatePicker extends FrameLayout {
                     mMonthSpinner.setMinValue(mCurrentDate.getActualMinimum(Calendar.MONTH));
                     mMonthSpinner.setMaxValue(mCurrentDate.get(Calendar.MONTH));
                     mMonthSpinner.setWrapSelectorWheel(false);
-                } //End block
+                } 
                 {
                     mDaySpinner.setMinValue(1);
                     mDaySpinner.setMaxValue(mCurrentDate.getActualMaximum(Calendar.DAY_OF_MONTH));
@@ -762,9 +762,9 @@ public class DatePicker extends FrameLayout {
                     mMonthSpinner.setMinValue(0);
                     mMonthSpinner.setMaxValue(11);
                     mMonthSpinner.setWrapSelectorWheel(true);
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         String[] displayedValues = Arrays.copyOfRange(mShortMonths,
                 mMonthSpinner.getMinValue(), mMonthSpinner.getMaxValue() + 1);
         mMonthSpinner.setDisplayedValues(displayedValues);
@@ -774,16 +774,16 @@ public class DatePicker extends FrameLayout {
         mYearSpinner.setValue(mCurrentDate.get(Calendar.YEAR));
         mMonthSpinner.setValue(mCurrentDate.get(Calendar.MONTH));
         mDaySpinner.setValue(mCurrentDate.get(Calendar.DAY_OF_MONTH));
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.414 -0400", hash_original_method = "FCBFFA03953049B21025A6ECF65DCE7B", hash_generated_method = "1374E2CB7A57CFB36E9738E5446FFEF5")
     private void updateCalendarView() {
         mCalendarView.setDate(mCurrentDate.getTimeInMillis(), false, false);
-        // ---------- Original Method ----------
-        //mCalendarView.setDate(mCurrentDate.getTimeInMillis(), false, false);
+        
+        
     }
 
     
@@ -792,8 +792,8 @@ public class DatePicker extends FrameLayout {
         int var127392EED27C8530975FF0FE230AF135_1992369159 = (mCurrentDate.get(Calendar.YEAR));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_342805989 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_342805989;
-        // ---------- Original Method ----------
-        //return mCurrentDate.get(Calendar.YEAR);
+        
+        
     }
 
     
@@ -802,8 +802,8 @@ public class DatePicker extends FrameLayout {
         int var63A8E5DF7D9BC7596A0A5D007CD5C869_387630034 = (mCurrentDate.get(Calendar.MONTH));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032498960 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032498960;
-        // ---------- Original Method ----------
-        //return mCurrentDate.get(Calendar.MONTH);
+        
+        
     }
 
     
@@ -812,8 +812,8 @@ public class DatePicker extends FrameLayout {
         int var3D3CCF368CDC433565A989130E1288C8_1396129552 = (mCurrentDate.get(Calendar.DAY_OF_MONTH));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_138938297 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_138938297;
-        // ---------- Original Method ----------
-        //return mCurrentDate.get(Calendar.DAY_OF_MONTH);
+        
+        
     }
 
     
@@ -822,12 +822,12 @@ public class DatePicker extends FrameLayout {
         sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
         {
             mOnDateChangedListener.onDateChanged(this, getYear(), getMonth(), getDayOfMonth());
-        } //End block
-        // ---------- Original Method ----------
-        //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
-        //if (mOnDateChangedListener != null) {
-            //mOnDateChangedListener.onDateChanged(this, getYear(), getMonth(), getDayOfMonth());
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -836,24 +836,24 @@ public class DatePicker extends FrameLayout {
         int imeOptions;
         {
             imeOptions = EditorInfo.IME_ACTION_NEXT;
-        } //End block
+        } 
         {
             imeOptions = EditorInfo.IME_ACTION_DONE;
-        } //End block
+        } 
         TextView input = (TextView) spinner.findViewById(R.id.numberpicker_input);
         input.setImeOptions(imeOptions);
         addTaint(spinner.getTaint());
         addTaint(spinnerCount);
         addTaint(spinnerIndex);
-        // ---------- Original Method ----------
-        //final int imeOptions;
-        //if (spinnerIndex < spinnerCount - 1) {
-            //imeOptions = EditorInfo.IME_ACTION_NEXT;
-        //} else {
-            //imeOptions = EditorInfo.IME_ACTION_DONE;
-        //}
-        //TextView input = (TextView) spinner.findViewById(R.id.numberpicker_input);
-        //input.setImeOptions(imeOptions);
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -871,8 +871,8 @@ public class DatePicker extends FrameLayout {
         mYearSpinner.findViewById(R.id.increment).setContentDescription(text);
         text = mContext.getString(R.string.date_picker_decrement_year_button);
         mYearSpinner.findViewById(R.id.decrement).setContentDescription(text);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -885,37 +885,37 @@ public class DatePicker extends FrameLayout {
                 {
                     mYearSpinnerInput.clearFocus();
                     inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-                } //End block
+                } 
                 {
                     boolean var169EEC9AA654CE5D329697D904437F5D_554944594 = (inputMethodManager.isActive(mMonthSpinnerInput));
                     {
                         mMonthSpinnerInput.clearFocus();
                         inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-                    } //End block
+                    } 
                     {
                         boolean var21C60FD83F8FDCDFADA8279B0C7BEED5_1147140145 = (inputMethodManager.isActive(mDaySpinnerInput));
                         {
                             mDaySpinnerInput.clearFocus();
                             inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //InputMethodManager inputMethodManager = InputMethodManager.peekInstance();
-        //if (inputMethodManager != null) {
-            //if (inputMethodManager.isActive(mYearSpinnerInput)) {
-                //mYearSpinnerInput.clearFocus();
-                //inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            //} else if (inputMethodManager.isActive(mMonthSpinnerInput)) {
-                //mMonthSpinnerInput.clearFocus();
-                //inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            //} else if (inputMethodManager.isActive(mDaySpinnerInput)) {
-                //mDaySpinnerInput.clearFocus();
-                //inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            //}
-        //}
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+        
     }
 
     
@@ -937,10 +937,10 @@ public class DatePicker extends FrameLayout {
             mMonth = month;
             mDay = day;
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
-            //mYear = year;
-            //mMonth = month;
-            //mDay = day;
+            
+            
+            
+            
         }
 
         
@@ -950,10 +950,10 @@ public class DatePicker extends FrameLayout {
             mYear = in.readInt();
             mMonth = in.readInt();
             mDay = in.readInt();
-            // ---------- Original Method ----------
-            //mYear = in.readInt();
-            //mMonth = in.readInt();
-            //mDay = in.readInt();
+            
+            
+            
+            
         }
 
         
@@ -966,11 +966,11 @@ public class DatePicker extends FrameLayout {
             dest.writeInt(mDay);
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //super.writeToParcel(dest, flags);
-            //dest.writeInt(mYear);
-            //dest.writeInt(mMonth);
-            //dest.writeInt(mDay);
+            
+            
+            
+            
+            
         }
 
         

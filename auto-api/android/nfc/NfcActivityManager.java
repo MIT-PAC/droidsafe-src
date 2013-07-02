@@ -1,11 +1,11 @@
 package android.nfc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.Activity;
 import android.os.RemoteException;
@@ -28,87 +28,91 @@ public final class NfcActivityManager extends INdefPushCallback.Stub {
         mAdapter = adapter;
         mNfcState = new WeakHashMap<Activity, NfcActivityState>();
         mDefaultEvent = new NfcEvent(mAdapter);
-        // ---------- Original Method ----------
-        //mAdapter = adapter;
-        //mNfcState = new WeakHashMap<Activity, NfcActivityState>();
-        //mDefaultEvent = new NfcEvent(mAdapter);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.093 -0400", hash_original_method = "5C41D3987D5608A9FF91B81AF91F1E3A", hash_generated_method = "314962A6035C81C717F749966E4280B7")
     public synchronized void onResume(Activity activity) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         NfcActivityState state = mNfcState.get(activity);
         Log.d(TAG, "onResume() for " + activity + " " + state);
         {
             state.resumed = true;
             updateNfcService(state);
-        } //End block
+        } 
         addTaint(activity.getTaint());
-        // ---------- Original Method ----------
-        //NfcActivityState state = mNfcState.get(activity);
-        //if (DBG) Log.d(TAG, "onResume() for " + activity + " " + state);
-        //if (state != null) {
-            //state.resumed = true;
-            //updateNfcService(state);
-        //}
+        
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.093 -0400", hash_original_method = "D5BF387644292151C2CC3D8E2C24ADB4", hash_generated_method = "E91C48EB1F6B80BDF09642295B9B2F73")
     public synchronized void onPause(Activity activity) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         NfcActivityState state = mNfcState.get(activity);
         Log.d(TAG, "onPause() for " + activity + " " + state);
         {
             state.resumed = false;
             updateNfcService(state);
-        } //End block
+        } 
         addTaint(activity.getTaint());
-        // ---------- Original Method ----------
-        //NfcActivityState state = mNfcState.get(activity);
-        //if (DBG) Log.d(TAG, "onPause() for " + activity + " " + state);
-        //if (state != null) {
-            //state.resumed = false;
-            //updateNfcService(state);
-        //}
+        
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.094 -0400", hash_original_method = "24F6BFACBC4EE2930906E276E667EC5B", hash_generated_method = "B2DE5092CF55F71DB853F3160AAAC7F5")
     public void onDestroy(Activity activity) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mNfcState.remove(activity);
         addTaint(activity.getTaint());
-        // ---------- Original Method ----------
-        //mNfcState.remove(activity);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.094 -0400", hash_original_method = "571064E533016906493F5781A338B8A8", hash_generated_method = "4EF6F3460087CE18D27FEE172BB73387")
     public synchronized void setNdefPushMessage(Activity activity, NdefMessage message) {
         NfcActivityState state = getOrCreateState(activity, message != null);
         state.ndefMessage = message;
         {
             maybeRemoveState(activity, state);
-        } //End block
+        } 
         {
             updateNfcService(state);
-        } //End block
+        } 
         addTaint(activity.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //NfcActivityState state = getOrCreateState(activity, message != null);
-        //if (state == null || state.ndefMessage == message) {
-            //return;  
-        //}
-        //state.ndefMessage = message;
-        //if (message == null) {
-            //maybeRemoveState(activity, state);
-        //}
-        //if (state.resumed) {
-            //updateNfcService(state);
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -119,24 +123,24 @@ public final class NfcActivityManager extends INdefPushCallback.Stub {
         state.ndefMessageCallback = callback;
         {
             maybeRemoveState(activity, state);
-        } //End block
+        } 
         {
             updateNfcService(state);
-        } //End block
+        } 
         addTaint(activity.getTaint());
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //NfcActivityState state = getOrCreateState(activity, callback != null);
-        //if (state == null || state.ndefMessageCallback == callback) {
-            //return;  
-        //}
-        //state.ndefMessageCallback = callback;
-        //if (callback == null) {
-            //maybeRemoveState(activity, state);
-        //}
-        //if (state.resumed) {
-            //updateNfcService(state);
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -147,71 +151,74 @@ public final class NfcActivityManager extends INdefPushCallback.Stub {
         state.onNdefPushCompleteCallback = callback;
         {
             maybeRemoveState(activity, state);
-        } //End block
+        } 
         {
             updateNfcService(state);
-        } //End block
+        } 
         addTaint(activity.getTaint());
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //NfcActivityState state = getOrCreateState(activity, callback != null);
-        //if (state == null || state.onNdefPushCompleteCallback == callback) {
-            //return;  
-        //}
-        //state.onNdefPushCompleteCallback = callback;
-        //if (callback == null) {
-            //maybeRemoveState(activity, state);
-        //}
-        //if (state.resumed) {
-            //updateNfcService(state);
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.096 -0400", hash_original_method = "85DEBB165D0E03A5E3758750DB067F77", hash_generated_method = "490E2875A1D7EF47506CEA2E019148C9")
     synchronized NfcActivityState getOrCreateState(Activity activity, boolean create) {
-        NfcActivityState varB4EAC82CA7396A68D541C85D26508E83_1618230262 = null; //Variable for return #1
+        NfcActivityState varB4EAC82CA7396A68D541C85D26508E83_1618230262 = null; 
         Log.d(TAG, "getOrCreateState " + activity + " " + create);
         NfcActivityState state = mNfcState.get(activity);
         {
             state = new NfcActivityState();
             mNfcState.put(activity, state);
             NfcFragment.attach(activity);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1618230262 = state;
         addTaint(activity.getTaint());
         addTaint(create);
-        varB4EAC82CA7396A68D541C85D26508E83_1618230262.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1618230262.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1618230262;
-        // ---------- Original Method ----------
-        //if (DBG) Log.d(TAG, "getOrCreateState " + activity + " " + create);
-        //NfcActivityState state = mNfcState.get(activity);
-        //if (state == null && create) {
-            //state = new NfcActivityState();
-            //mNfcState.put(activity, state);
-            //NfcFragment.attach(activity);
-        //}
-        //return state;
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.097 -0400", hash_original_method = "6C42916FD841C6EAFF0C495955BCFCAE", hash_generated_method = "B54FABD0FD59DB0368FA8E150506EA40")
     synchronized void maybeRemoveState(Activity activity, NfcActivityState state) {
         {
             NfcFragment.remove(activity);
             mNfcState.remove(activity);
-        } //End block
+        } 
         addTaint(activity.getTaint());
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //if (state.ndefMessage == null && state.ndefMessageCallback == null &&
-                //state.onNdefPushCompleteCallback == null) {
-            //NfcFragment.remove(activity);
-            //mNfcState.remove(activity);
-        //}
+        
+        
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.097 -0400", hash_original_method = "6FB81CDE896F299C5469DD3DD94C1A99", hash_generated_method = "76D0B894267868B2CA6E718F3BD11784")
     synchronized void updateNfcService(NfcActivityState state) {
         boolean serviceCallbackNeeded = state.ndefMessageCallback != null ||
@@ -220,29 +227,30 @@ public final class NfcActivityManager extends INdefPushCallback.Stub {
         {
             NfcAdapter.sService.setForegroundNdefPush(state.resumed ? state.ndefMessage : null,
                     state.resumed && serviceCallbackNeeded ? this : null);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             mAdapter.attemptDeadServiceRecovery(e);
-        } //End block
+        } 
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //boolean serviceCallbackNeeded = state.ndefMessageCallback != null ||
-                //state.onNdefPushCompleteCallback != null;
-        //try {
-            //NfcAdapter.sService.setForegroundNdefPush(state.resumed ? state.ndefMessage : null,
-                    //state.resumed && serviceCallbackNeeded ? this : null);
-        //} catch (RemoteException e) {
-            //mAdapter.attemptDeadServiceRecovery(e);
-        //}
+        
+        
+                
+        
+            
+                    
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.103 -0400", hash_original_method = "3FF4E80952B14CA972EE064B02088076", hash_generated_method = "BA22802A4B4FDBA0349310EDEAFC7FFF")
     @Override
     public NdefMessage createMessage() {
-        NdefMessage varB4EAC82CA7396A68D541C85D26508E83_1764447395 = null; //Variable for return #1
-        NdefMessage varB4EAC82CA7396A68D541C85D26508E83_2025901280 = null; //Variable for return #2
+        NdefMessage varB4EAC82CA7396A68D541C85D26508E83_1764447395 = null; 
+        NdefMessage varB4EAC82CA7396A68D541C85D26508E83_2025901280 = null; 
         NfcAdapter.CreateNdefMessageCallback callback = null;
         {
             Object varEE293A251EFBECEC10B2E33FA85D9BB2_262422480 = (NfcActivityManager.this);
@@ -254,46 +262,47 @@ public final class NfcActivityManager extends INdefPushCallback.Stub {
                     {
                         {
                             callback = state.ndefMessageCallback;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1764447395 = callback.createNdefMessage(mDefaultEvent);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2025901280 = null;
-        NdefMessage varA7E53CE21691AB073D9660D615818899_1047222740; //Final return value
+        NdefMessage varA7E53CE21691AB073D9660D615818899_1047222740; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1047222740 = varB4EAC82CA7396A68D541C85D26508E83_1764447395;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1047222740 = varB4EAC82CA7396A68D541C85D26508E83_2025901280;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1047222740.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1047222740.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1047222740;
-        // ---------- Original Method ----------
-        //NfcAdapter.CreateNdefMessageCallback callback = null;
-        //synchronized (NfcActivityManager.this) {
-            //for (NfcActivityState state : mNfcState.values()) {
-                //if (state.resumed) {
-                    //callback = state.ndefMessageCallback;
-                //}
-            //}
-        //}
-        //if (callback != null) {
-            //return callback.createNdefMessage(mDefaultEvent);
-        //}
-        //return null;
+        
+        
+        
+            
+                
+                    
+                
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.111 -0400", hash_original_method = "CE2F7F897A262F67EB6F40C6D613EBB1", hash_generated_method = "1886A4FB04AACBF1C08C95A449E46AC4")
     @Override
     public void onNdefPushComplete() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         NfcAdapter.OnNdefPushCompleteCallback callback = null;
         {
             Object varEE293A251EFBECEC10B2E33FA85D9BB2_843745495 = (NfcActivityManager.this);
@@ -305,26 +314,26 @@ public final class NfcActivityManager extends INdefPushCallback.Stub {
                     {
                         {
                             callback = state.onNdefPushCompleteCallback;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             callback.onNdefPushComplete(mDefaultEvent);
-        } //End block
-        // ---------- Original Method ----------
-        //NfcAdapter.OnNdefPushCompleteCallback callback = null;
-        //synchronized (NfcActivityManager.this) {
-            //for (NfcActivityState state : mNfcState.values()) {
-                //if (state.resumed) {
-                    //callback = state.onNdefPushCompleteCallback;
-                //}
-            //}
-        //}
-        //if (callback != null) {
-            //callback.onNdefPushComplete(mDefaultEvent);
-        //}
+        } 
+        
+        
+        
+            
+                
+                    
+                
+            
+        
+        
+            
+        
     }
 
     
@@ -345,25 +354,25 @@ public final class NfcActivityManager extends INdefPushCallback.Stub {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.111 -0400", hash_original_method = "1126BF18A68478D666D07CED7ED74101", hash_generated_method = "1126BF18A68478D666D07CED7ED74101")
         public NfcActivityState ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.112 -0400", hash_original_method = "0458F1EA3F9A5785CA2A5D797EF2D2B7", hash_generated_method = "ED407405C21CF74632C8287978BD9618")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1360006588 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1360006588 = null; 
             StringBuilder s = new StringBuilder("[").append(resumed).append(" ");
             s.append(ndefMessage).append(" ").append(ndefMessageCallback).append(" ");
             s.append(onNdefPushCompleteCallback).append("]");
             varB4EAC82CA7396A68D541C85D26508E83_1360006588 = s.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1360006588.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1360006588.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1360006588;
-            // ---------- Original Method ----------
-            //StringBuilder s = new StringBuilder("[").append(resumed).append(" ");
-            //s.append(ndefMessage).append(" ").append(ndefMessageCallback).append(" ");
-            //s.append(onNdefPushCompleteCallback).append("]");
-            //return s.toString();
+            
+            
+            
+            
+            
         }
 
         

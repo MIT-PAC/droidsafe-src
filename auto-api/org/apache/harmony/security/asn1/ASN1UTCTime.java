@@ -1,11 +1,11 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.nio.charset.Charsets;
@@ -17,7 +17,7 @@ public final class ASN1UTCTime extends ASN1Time {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.699 -0400", hash_original_method = "26950815C4CFBBF28A3CFECAD840C50B", hash_generated_method = "EF7C489E04E77EFC692BF121C27E795F")
     public  ASN1UTCTime() {
         super(TAG_UTCTIME);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,47 +26,50 @@ public final class ASN1UTCTime extends ASN1Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.700 -0400", hash_original_method = "A91CD5C6AC359830199B04A7EA591A03", hash_generated_method = "3D8730624750B44D97DDED9089D2B10C")
     @Override
     public Object decode(BerInputStream in) throws IOException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1487609337 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_230646154 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_1487609337 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_230646154 = null; 
         in.readUTCTime();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1487609337 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_230646154 = getDecodedObject(in);
         addTaint(in.getTaint());
-        Object varA7E53CE21691AB073D9660D615818899_1146239026; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_1146239026; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1146239026 = varB4EAC82CA7396A68D541C85D26508E83_1487609337;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1146239026 = varB4EAC82CA7396A68D541C85D26508E83_230646154;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1146239026.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1146239026.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1146239026;
-        // ---------- Original Method ----------
-        //in.readUTCTime();
-        //if (in.isVerify) {
-            //return null;
-        //}
-        //return getDecodedObject(in);
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.700 -0400", hash_original_method = "7E6261B78AC933A3E78C661A729AB3E3", hash_generated_method = "D4B2F8226DC3D8F41B8735BCEF5FE06A")
     @Override
     public void encodeContent(BerOutputStream out) {
         out.encodeUTCTime();
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.encodeUTCTime();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.700 -0400", hash_original_method = "DF1F65526ADDCB7D66CE158126525DF9", hash_generated_method = "C1F83E7A2A4BD06CAE840BF9B11B7A20")
     @Override
     public void setEncodingContent(BerOutputStream out) {
@@ -75,11 +78,11 @@ public final class ASN1UTCTime extends ASN1Time {
         out.content = sdf.format(out.content).getBytes(Charsets.UTF_8);
         out.length = ((byte[]) out.content).length;
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //SimpleDateFormat sdf = new SimpleDateFormat(UTC_PATTERN);
-        //sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-        //out.content = sdf.format(out.content).getBytes(Charsets.UTF_8);
-        //out.length = ((byte[]) out.content).length;
+        
+        
+        
+        
+        
     }
 
     

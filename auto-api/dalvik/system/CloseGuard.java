@@ -1,11 +1,11 @@
 package dalvik.system;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class CloseGuard {
@@ -15,7 +15,7 @@ public final class CloseGuard {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.625 -0400", hash_original_method = "7E89EAFA67D8405D89044A4D05C8D63F", hash_generated_method = "AA4636AB88E09C5D66362FE0FE9F4125")
     private  CloseGuard() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,27 +49,27 @@ public final class CloseGuard {
     public void open(String closer) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("closer == null");
-        } //End block
+        } 
         String message = "Explicit termination method '" + closer + "' not called";
         allocationSite = new Throwable(message);
         addTaint(closer.getTaint());
-        // ---------- Original Method ----------
-        //if (closer == null) {
-            //throw new NullPointerException("closer == null");
-        //}
-        //if (this == NOOP || !ENABLED) {
-            //return;
-        //}
-        //String message = "Explicit termination method '" + closer + "' not called";
-        //allocationSite = new Throwable(message);
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.626 -0400", hash_original_method = "E7BB2570D728B9A5CD21AC75D54C0108", hash_generated_method = "81B1FE4E6BB63DD2B6DF9A82CBBAEB20")
     public void close() {
         allocationSite = null;
-        // ---------- Original Method ----------
-        //allocationSite = null;
+        
+        
     }
 
     
@@ -78,14 +78,14 @@ public final class CloseGuard {
         String message = ("A resource was acquired at attached stack trace but never released. "
                  + "See java.io.Closeable for information on avoiding resource leaks.");
         REPORTER.report(message, allocationSite);
-        // ---------- Original Method ----------
-        //if (allocationSite == null || !ENABLED) {
-            //return;
-        //}
-        //String message =
-                //("A resource was acquired at attached stack trace but never released. "
-                 //+ "See java.io.Closeable for information on avoiding resource leaks.");
-        //REPORTER.report(message, allocationSite);
+        
+        
+            
+        
+        
+                
+                 
+        
     }
 
     
@@ -94,7 +94,7 @@ public final class CloseGuard {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.627 -0400", hash_original_method = "5AA262E6EA3904FB58CC8171943AAF5F", hash_generated_method = "5AA262E6EA3904FB58CC8171943AAF5F")
         public DefaultReporter ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -103,8 +103,8 @@ public final class CloseGuard {
             System.logW(message, allocationSite);
             addTaint(message.getTaint());
             addTaint(allocationSite.getTaint());
-            // ---------- Original Method ----------
-            //System.logW(message, allocationSite);
+            
+            
         }
 
         

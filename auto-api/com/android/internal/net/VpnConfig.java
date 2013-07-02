@@ -1,11 +1,11 @@
 package com.android.internal.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -49,7 +49,7 @@ public class VpnConfig implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.437 -0400", hash_original_method = "0CC41B74437C55587D7B09044ACFFB33", hash_generated_method = "0CC41B74437C55587D7B09044ACFFB33")
     public VpnConfig ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -60,6 +60,7 @@ public class VpnConfig implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static PendingIntent getIntentForStatusPanel(Context context, VpnConfig config) {
         Intent intent = new Intent();
         intent.setClassName("com.android.vpndialogs", "com.android.vpndialogs.ManageDialog");
@@ -76,11 +77,12 @@ public class VpnConfig implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1379912758 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1379912758;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.438 -0400", hash_original_method = "663713F2190B3FEEC06E42079AE10798", hash_generated_method = "37B3F14C00912D86F15EF02C80122BDC")
     @Override
     public void writeToParcel(Parcel out, int flags) {
@@ -96,17 +98,17 @@ public class VpnConfig implements Parcelable {
         out.writeLong(startTime);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeString(user);
-        //out.writeString(interfaze);
-        //out.writeString(session);
-        //out.writeInt(mtu);
-        //out.writeString(addresses);
-        //out.writeString(routes);
-        //out.writeStringList(dnsServers);
-        //out.writeStringList(searchDomains);
-        //out.writeParcelable(configureIntent, flags);
-        //out.writeLong(startTime);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

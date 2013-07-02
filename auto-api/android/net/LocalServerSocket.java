@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.FileDescriptor;
@@ -25,12 +25,12 @@ public class LocalServerSocket {
         localAddress = new LocalSocketAddress(name);
         impl.bind(localAddress);
         impl.listen(LISTEN_BACKLOG);
-        // ---------- Original Method ----------
-        //impl = new LocalSocketImpl();
-        //impl.create(true);
-        //localAddress = new LocalSocketAddress(name);
-        //impl.bind(localAddress);
-        //impl.listen(LISTEN_BACKLOG);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -39,55 +39,58 @@ public class LocalServerSocket {
         impl = new LocalSocketImpl(fd);
         impl.listen(LISTEN_BACKLOG);
         localAddress = impl.getSockAddress();
-        // ---------- Original Method ----------
-        //impl = new LocalSocketImpl(fd);
-        //impl.listen(LISTEN_BACKLOG);
-        //localAddress = impl.getSockAddress();
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.193 -0400", hash_original_method = "E608923787A6482FF0ABAB03074C01F6", hash_generated_method = "0A3F444EEB251F60463150441B9FDE06")
     public LocalSocketAddress getLocalSocketAddress() {
-        LocalSocketAddress varB4EAC82CA7396A68D541C85D26508E83_1650654309 = null; //Variable for return #1
+        LocalSocketAddress varB4EAC82CA7396A68D541C85D26508E83_1650654309 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1650654309 = localAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_1650654309.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1650654309.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1650654309;
-        // ---------- Original Method ----------
-        //return localAddress;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.194 -0400", hash_original_method = "4C7BE72C58D9A70D111AB53708810EA4", hash_generated_method = "68448B0498C618E0D7E986CB99FF660B")
     public LocalSocket accept() throws IOException {
-        LocalSocket varB4EAC82CA7396A68D541C85D26508E83_1854135402 = null; //Variable for return #1
+        LocalSocket varB4EAC82CA7396A68D541C85D26508E83_1854135402 = null; 
         LocalSocketImpl acceptedImpl = new LocalSocketImpl();
         impl.accept (acceptedImpl);
         varB4EAC82CA7396A68D541C85D26508E83_1854135402 = new LocalSocket(acceptedImpl);
-        varB4EAC82CA7396A68D541C85D26508E83_1854135402.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1854135402.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1854135402;
-        // ---------- Original Method ----------
-        //LocalSocketImpl acceptedImpl = new LocalSocketImpl();
-        //impl.accept (acceptedImpl);
-        //return new LocalSocket(acceptedImpl);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.194 -0400", hash_original_method = "48E5039C4FB2B8BAB81B3561EAA65E0E", hash_generated_method = "393067E204681D3A98AAC0861C077AC2")
     public FileDescriptor getFileDescriptor() {
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_10108737 = null; //Variable for return #1
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_10108737 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_10108737 = impl.getFileDescriptor();
-        varB4EAC82CA7396A68D541C85D26508E83_10108737.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_10108737.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_10108737;
-        // ---------- Original Method ----------
-        //return impl.getFileDescriptor();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.195 -0400", hash_original_method = "CB913E335DEA23070E332AEE6AD401FB", hash_generated_method = "12F0B4AF8EE7B599F14465C727089231")
     public void close() throws IOException {
         impl.close();
-        // ---------- Original Method ----------
-        //impl.close();
+        
+        
     }
 
     

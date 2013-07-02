@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.telephony.ServiceState;
 
@@ -25,18 +25,18 @@ public class RestrictedState {
         setPsRestricted(false);
         setCsNormalRestricted(false);
         setCsEmergencyRestricted(false);
-        // ---------- Original Method ----------
-        //setPsRestricted(false);
-        //setCsNormalRestricted(false);
-        //setCsEmergencyRestricted(false);
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.514 -0400", hash_original_method = "27DE2A90C603578F7F1B28DAC20D7FD4", hash_generated_method = "5EDC4446D159F9F100BFF111EDE92E39")
     public void setCsEmergencyRestricted(boolean csEmergencyRestricted) {
         mCsEmergencyRestricted = csEmergencyRestricted;
-        // ---------- Original Method ----------
-        //mCsEmergencyRestricted = csEmergencyRestricted;
+        
+        
     }
 
     
@@ -44,16 +44,16 @@ public class RestrictedState {
     public boolean isCsEmergencyRestricted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1847882731 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1847882731;
-        // ---------- Original Method ----------
-        //return mCsEmergencyRestricted;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.515 -0400", hash_original_method = "ED07CBE0923251FA30E92E9584BA6081", hash_generated_method = "5F169B3D65E3795B3F157B4F56AFCEB2")
     public void setCsNormalRestricted(boolean csNormalRestricted) {
         mCsNormalRestricted = csNormalRestricted;
-        // ---------- Original Method ----------
-        //mCsNormalRestricted = csNormalRestricted;
+        
+        
     }
 
     
@@ -61,16 +61,16 @@ public class RestrictedState {
     public boolean isCsNormalRestricted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_783672807 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_783672807;
-        // ---------- Original Method ----------
-        //return mCsNormalRestricted;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.515 -0400", hash_original_method = "B4DDDAAC651436E7B51C408529D49F83", hash_generated_method = "B2F8AA07C1EB864385C4B23E12FD8407")
     public void setPsRestricted(boolean psRestricted) {
         mPsRestricted = psRestricted;
-        // ---------- Original Method ----------
-        //mPsRestricted = psRestricted;
+        
+        
     }
 
     
@@ -78,8 +78,8 @@ public class RestrictedState {
     public boolean isPsRestricted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_657453210 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_657453210;
-        // ---------- Original Method ----------
-        //return mPsRestricted;
+        
+        
     }
 
     
@@ -87,8 +87,8 @@ public class RestrictedState {
     public boolean isCsRestricted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1972974800 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1972974800;
-        // ---------- Original Method ----------
-        //return mCsNormalRestricted && mCsEmergencyRestricted;
+        
+        
     }
 
     
@@ -99,55 +99,56 @@ public class RestrictedState {
         try 
         {
             s = (RestrictedState) o;
-        } //End block
+        } 
         catch (ClassCastException ex)
         { }
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1982794584 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1982794584;
-        // ---------- Original Method ----------
-        //RestrictedState s;
-        //try {
-            //s = (RestrictedState) o;
-        //} catch (ClassCastException ex) {
-            //return false;
-        //}
-        //if (o == null) {
-            //return false;
-        //}
-        //return mPsRestricted == s.mPsRestricted
-        //&& mCsNormalRestricted == s.mCsNormalRestricted
-        //&& mCsEmergencyRestricted == s.mCsEmergencyRestricted;
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.516 -0400", hash_original_method = "845D0E6369A38FB89C7B9C67406A7898", hash_generated_method = "00466765992A70E2F35A776F50B03973")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1201698907 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1201698907 = null; 
         String csString = "none";
         {
             csString = "all";
-        } //End block
+        } 
         {
             csString = "emergency";
-        } //End block
+        } 
         {
             csString = "normal call";
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1201698907 = "Restricted State CS: " + csString + " PS:" + mPsRestricted;
-        varB4EAC82CA7396A68D541C85D26508E83_1201698907.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1201698907.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1201698907;
-        // ---------- Original Method ----------
-        //String csString = "none";
-        //if (mCsEmergencyRestricted && mCsNormalRestricted) {
-            //csString = "all";
-        //} else if (mCsEmergencyRestricted && !mCsNormalRestricted) {
-            //csString = "emergency";
-        //} else if (!mCsEmergencyRestricted && mCsNormalRestricted) {
-            //csString = "normal call";
-        //}
-        //return  "Restricted State CS: " + csString + " PS:" + mPsRestricted;
+        
+        
+        
+            
+        
+            
+        
+            
+        
+        
     }
 
     

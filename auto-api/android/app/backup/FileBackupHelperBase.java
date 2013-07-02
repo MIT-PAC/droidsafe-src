@@ -1,11 +1,11 @@
 package android.app.backup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.ParcelFileDescriptor;
@@ -28,31 +28,33 @@ class FileBackupHelperBase {
       FileBackupHelperBase(Context context) {
         mPtr = ctor();
         mContext = context;
-        // ---------- Original Method ----------
-        //mPtr = ctor();
-        //mContext = context;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.552 -0400", hash_original_method = "E8F55F8C7A408972FDF45764F997EF73", hash_generated_method = "A35D76E8DAA6CE81953BE72EF3031A1E")
     protected void finalize() throws Throwable {
         try 
         {
             dtor(mPtr);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //dtor(mPtr);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void performBackup_checked(ParcelFileDescriptor oldState, BackupDataOutput data,
             ParcelFileDescriptor newState, String[] files, String[] keys) {
         if (files.length == 0) {
@@ -88,35 +90,36 @@ class FileBackupHelperBase {
         {
             {
                 mExceptionLogged = true;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(f.getTaint());
         addTaint(in.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1224458612 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1224458612;
-        // ---------- Original Method ----------
-        //int result = -1;
-        //File parent = f.getParentFile();
-        //parent.mkdirs();
-        //result = writeFile_native(mPtr, f.getAbsolutePath(), in.mData.mBackupReader);
-        //if (result != 0) {
-            //if (!mExceptionLogged) {
-                //Log.e(TAG, "Failed restoring file '" + f + "' for app '"
-                        //+ mContext.getPackageName() + "\' result=0x"
-                        //+ Integer.toHexString(result));
-                //mExceptionLogged = true;
-            //}
-        //}
-        //return (result == 0);
+        
+        
+        
+        
+        
+        
+            
+                
+                        
+                        
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.555 -0400", hash_original_method = "2A62291A9AE3A671BAC15E3191D32511", hash_generated_method = "5153D279FC2CE52C55BF618BA11F50C5")
     public void writeNewStateDescription(ParcelFileDescriptor fd) {
         int result = writeSnapshot_native(mPtr, fd.getFileDescriptor());
         addTaint(fd.getTaint());
-        // ---------- Original Method ----------
-        //int result = writeSnapshot_native(mPtr, fd.getFileDescriptor());
+        
+        
     }
 
     
@@ -127,20 +130,20 @@ class FileBackupHelperBase {
             {
                 {
                     boolean var966DD3C3974AE4250FA4127ECE022D38_911971043 = (s.equals(key));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(key.getTaint());
         addTaint(list[0].getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1109950249 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1109950249;
-        // ---------- Original Method ----------
-        //for (String s: list) {
-            //if (s.equals(key)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     

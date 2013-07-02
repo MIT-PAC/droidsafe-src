@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.Resources;
 import android.os.Parcel;
@@ -45,7 +45,7 @@ public class TextUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.449 -0400", hash_original_method = "B02737FE3AF0C7262E7E1815816AFA38", hash_generated_method = "853174FD0AC9B98EEFD3B7193A02A48C")
     private  TextUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -210,6 +210,7 @@ public class TextUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String substring(CharSequence source, int start, int end) {
         if (source instanceof String)
             return ((String) source).substring(start, end);
@@ -225,12 +226,14 @@ public class TextUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence join(Iterable<CharSequence> list) {
         final CharSequence delimiter = Resources.getSystem().getText(R.string.list_delimeter);
         return join(delimiter, list);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String join(CharSequence delimiter, Object[] tokens) {
         StringBuilder sb = new StringBuilder();
         boolean firstTime = true;
@@ -246,6 +249,7 @@ public class TextUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String join(CharSequence delimiter, Iterable tokens) {
         StringBuilder sb = new StringBuilder();
         boolean firstTime = true;
@@ -261,6 +265,7 @@ public class TextUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] split(String text, String expression) {
         if (text.length() == 0) {
             return EMPTY_STRING_ARRAY;
@@ -270,6 +275,7 @@ public class TextUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] split(String text, Pattern pattern) {
         if (text.length() == 0) {
             return EMPTY_STRING_ARRAY;
@@ -1008,8 +1014,8 @@ public class TextUtils {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.460 -0400", hash_original_method = "6A654BA34A10AA2B42750EC65A3F679B", hash_generated_method = "BEDF5C296E1AC394E7130E39CA8E7B49")
         public  SimpleStringSplitter(char delimiter) {
             mDelimiter = delimiter;
-            // ---------- Original Method ----------
-            //mDelimiter = delimiter;
+            
+            
         }
 
         
@@ -1018,21 +1024,21 @@ public class TextUtils {
             mString = string;
             mPosition = 0;
             mLength = mString.length();
-            // ---------- Original Method ----------
-            //mString = string;
-            //mPosition = 0;
-            //mLength = mString.length();
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.461 -0400", hash_original_method = "D653FD0D00864F21EDFF9CBFE1E1B8FB", hash_generated_method = "58A2AD446CA25280B5EE1C8D9124E10F")
         public Iterator<String> iterator() {
-            Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_1824260652 = null; //Variable for return #1
+            Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_1824260652 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1824260652 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1824260652.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1824260652.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1824260652;
-            // ---------- Original Method ----------
-            //return this;
+            
+            
         }
 
         
@@ -1040,39 +1046,39 @@ public class TextUtils {
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2130072382 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2130072382;
-            // ---------- Original Method ----------
-            //return mPosition < mLength;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.462 -0400", hash_original_method = "FB7030CECFBAC326EB2083E83B14C66A", hash_generated_method = "9F1AC9F3B03F396B03640F77665CEF7D")
         public String next() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1814235048 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1814235048 = null; 
             int end = mString.indexOf(mDelimiter, mPosition);
             {
                 end = mLength;
-            } //End block
+            } 
             String nextString = mString.substring(mPosition, end);
             mPosition = end + 1;
             varB4EAC82CA7396A68D541C85D26508E83_1814235048 = nextString;
-            varB4EAC82CA7396A68D541C85D26508E83_1814235048.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1814235048.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1814235048;
-            // ---------- Original Method ----------
-            //int end = mString.indexOf(mDelimiter, mPosition);
-            //if (end == -1) {
-                //end = mLength;
-            //}
-            //String nextString = mString.substring(mPosition, end);
-            //mPosition = end + 1;
-            //return nextString;
+            
+            
+            
+                
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.462 -0400", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "BD0416D7797F4CCA5C01710103DCE99D")
         public void remove() {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -1096,10 +1102,10 @@ public class TextUtils {
             mSource = source;
             mStart = start;
             mEnd = end;
-            // ---------- Original Method ----------
-            //mSource = source;
-            //mStart = start;
-            //mEnd = end;
+            
+            
+            
+            
         }
 
         
@@ -1107,37 +1113,37 @@ public class TextUtils {
         public int length() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1157704618 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1157704618;
-            // ---------- Original Method ----------
-            //return mEnd - mStart;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.465 -0400", hash_original_method = "D736D7B90470DFC8C923D4B5D62B4D1D", hash_generated_method = "844D11D4459B910FDA47CD370E36175C")
         public CharSequence subSequence(int start, int end) {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1318128553 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1318128553 = null; 
             char[] buf = new char[end - start];
             getChars(start, end, buf, 0);
             varB4EAC82CA7396A68D541C85D26508E83_1318128553 = new String(buf);
             addTaint(start);
             addTaint(end);
-            varB4EAC82CA7396A68D541C85D26508E83_1318128553.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1318128553.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1318128553;
-            // ---------- Original Method ----------
-            //char[] buf = new char[end - start];
-            //getChars(start, end, buf, 0);
-            //return new String(buf);
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.466 -0400", hash_original_method = "814020AAFF189164368E5EE6B0F105D9", hash_generated_method = "61EC9D9A66D9A3739E1224EC4E00634F")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_858093845 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_858093845 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_858093845 = subSequence(0, length()).toString();
-            varB4EAC82CA7396A68D541C85D26508E83_858093845.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_858093845.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_858093845;
-            // ---------- Original Method ----------
-            //return subSequence(0, length()).toString();
+            
+            
         }
 
         
@@ -1147,8 +1153,8 @@ public class TextUtils {
             addTaint(off);
             char varA87DEB01C5F539E6BDA34829C8EF2368_1782883747 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_1782883747;
-            // ---------- Original Method ----------
-            //return AndroidCharacter.getMirror(mSource.charAt(mEnd - 1 - off));
+            
+            
         }
 
         
@@ -1165,23 +1171,23 @@ public class TextUtils {
                     char tmp = dest[destoff + i];
                     dest[destoff + i] = dest[destoff + len - i - 1];
                     dest[destoff + len - i - 1] = tmp;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(start);
             addTaint(end);
             addTaint(dest[0]);
             addTaint(destoff);
-            // ---------- Original Method ----------
-            //TextUtils.getChars(mSource, start + mStart, end + mStart,
-                               //dest, destoff);
-            //AndroidCharacter.mirror(dest, 0, end - start);
-            //int len = end - start;
-            //int n = (end - start) / 2;
-            //for (int i = 0; i < n; i++) {
-                //char tmp = dest[destoff + i];
-                //dest[destoff + i] = dest[destoff + len - i - 1];
-                //dest[destoff + len - i - 1] = tmp;
-            //}
+            
+            
+                               
+            
+            
+            
+            
+                
+                
+                
+            
         }
 
         

@@ -1,11 +1,11 @@
 package java.util.concurrent;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.concurrent.locks.*;
 import java.util.*;
@@ -28,18 +28,19 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.999 -0400", hash_original_method = "CA3CB3D951221FCCF0DFF3BB5DF12346", hash_generated_method = "5255A939CCFA97D45156B8A4109C3AE2")
     public  SynchronousQueue() {
         this(false);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.999 -0400", hash_original_method = "2A4F416DA0F8363F009FD8DA8EB74A84", hash_generated_method = "E36170E9580D212BFA99521F1CF0C67D")
     public  SynchronousQueue(boolean fair) {
         transferer = fair ? new TransferQueue() : new TransferStack();
-        // ---------- Original Method ----------
-        //transferer = fair ? new TransferQueue() : new TransferStack();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:14.999 -0400", hash_original_method = "C65E97EC40BB31D50DB029B0D4F47DF5", hash_generated_method = "B4DD094C945FFDB2588CA45A638A6CC6")
     public void put(E o) throws InterruptedException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -48,43 +49,45 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
             {
                 Thread.interrupted();
                 if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(o.getTaint());
-        // ---------- Original Method ----------
-        //if (o == null) throw new NullPointerException();
-        //if (transferer.transfer(o, false, 0) == null) {
-            //Thread.interrupted();
-            //throw new InterruptedException();
-        //}
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.000 -0400", hash_original_method = "3A6AFFAA000C17EA73FBC10B0EC018FD", hash_generated_method = "9D637737ED64F01CE1A3E035DA840832")
     public boolean offer(E o, long timeout, TimeUnit unit) throws InterruptedException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         {
             boolean varF1825FBBB753F22C73534A88EB505062_821877433 = (transferer.transfer(o, true, unit.toNanos(timeout)) != null);
-        } //End collapsed parenthetic
+        } 
         {
             boolean var7802430CC9FA3C264EA55E37D5C0452C_1607066624 = (!Thread.interrupted());
-        } //End collapsed parenthetic
+        } 
         if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
         addTaint(o.getTaint());
         addTaint(timeout);
         addTaint(unit.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_702710458 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_702710458;
-        // ---------- Original Method ----------
-        //if (o == null) throw new NullPointerException();
-        //if (transferer.transfer(o, true, unit.toNanos(timeout)) != null)
-            //return true;
-        //if (!Thread.interrupted())
-            //return false;
-        //throw new InterruptedException();
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.000 -0400", hash_original_method = "A4F84C12941B1214559E662FB5D2360B", hash_generated_method = "E38EC5A4B754ED6E9FDA1075C8E2AA98")
     public boolean offer(E e) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -92,59 +95,62 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         addTaint(e.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1637740626 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1637740626;
-        // ---------- Original Method ----------
-        //if (e == null) throw new NullPointerException();
-        //return transferer.transfer(e, true, 0) != null;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.001 -0400", hash_original_method = "A59182A477060C80E9C0D7B7DD2CA2C3", hash_generated_method = "3C69A8CFCBA0713705ED22398143D16D")
     public E take() throws InterruptedException {
-        E varB4EAC82CA7396A68D541C85D26508E83_1585394876 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_1585394876 = null; 
         Object e = transferer.transfer(null, false, 0);
         varB4EAC82CA7396A68D541C85D26508E83_1585394876 = (E)e;
         Thread.interrupted();
         if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
-        varB4EAC82CA7396A68D541C85D26508E83_1585394876.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1585394876.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1585394876;
-        // ---------- Original Method ----------
-        //Object e = transferer.transfer(null, false, 0);
-        //if (e != null)
-            //return (E)e;
-        //Thread.interrupted();
-        //throw new InterruptedException();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.003 -0400", hash_original_method = "F80BFD27E2D553DA44FF7C91997050D6", hash_generated_method = "BE17FD61BA22E45A3DF9A15DF11FA4E5")
     public E poll(long timeout, TimeUnit unit) throws InterruptedException {
-        E varB4EAC82CA7396A68D541C85D26508E83_1424613616 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_1424613616 = null; 
         Object e = transferer.transfer(null, true, unit.toNanos(timeout));
         {
             boolean varC564A7C2CC52E9BBB2AF6FB9F10A266F_1298862803 = (e != null || !Thread.interrupted());
             varB4EAC82CA7396A68D541C85D26508E83_1424613616 = (E)e;
-        } //End collapsed parenthetic
+        } 
         if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
         addTaint(timeout);
         addTaint(unit.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1424613616.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1424613616.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1424613616;
-        // ---------- Original Method ----------
-        //Object e = transferer.transfer(null, true, unit.toNanos(timeout));
-        //if (e != null || !Thread.interrupted())
-            //return (E)e;
-        //throw new InterruptedException();
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.004 -0400", hash_original_method = "1663F66628103F625AD11623448BFB1D", hash_generated_method = "3457A70D3407616837B39CF6EED5A8DA")
     public E poll() {
-        E varB4EAC82CA7396A68D541C85D26508E83_1388554916 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_1388554916 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1388554916 = (E)transferer.transfer(null, true, 0);
-        varB4EAC82CA7396A68D541C85D26508E83_1388554916.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1388554916.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1388554916;
-        // ---------- Original Method ----------
-        //return (E)transferer.transfer(null, true, 0);
+        
+        
     }
 
     
@@ -152,8 +158,8 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_908829458 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_908829458;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -161,8 +167,8 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917326936 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917326936;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -170,14 +176,14 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     public int remainingCapacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1275207293 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1275207293;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.029 -0400", hash_original_method = "CAFED8DEE3108243325B67F5797719ED", hash_generated_method = "62E208A158681C1F982FD616252404DD")
     public void clear() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -186,8 +192,8 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1472390606 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1472390606;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -196,151 +202,159 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_445311964 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_445311964;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.029 -0400", hash_original_method = "C503BED5AF377C63A87B0C398CACB95B", hash_generated_method = "DF3955680E2D1801EE909216BA0FD749")
     public boolean containsAll(Collection<?> c) {
         boolean varC1DF46038608BCBF5C56CAC54A25A9EA_1151528645 = (c.isEmpty());
         addTaint(c.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1115910118 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1115910118;
-        // ---------- Original Method ----------
-        //return c.isEmpty();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.029 -0400", hash_original_method = "EC0A570B588D76D8968190A1BD3D4040", hash_generated_method = "01C9BE7EECA7B9293FFC0D9F8A0480F6")
     public boolean removeAll(Collection<?> c) {
         addTaint(c.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_489667286 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_489667286;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.030 -0400", hash_original_method = "13D5AD766AE77320C3CF56AB2E9E5FB4", hash_generated_method = "4EFB274482542ECD42613C6C7BAA854B")
     public boolean retainAll(Collection<?> c) {
         addTaint(c.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1084090977 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1084090977;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.030 -0400", hash_original_method = "2DC914F9B3C538818482710C9EAD9EFB", hash_generated_method = "0C7EE5646C5E3FC32789BBB3CE6B8F9A")
     public E peek() {
-        E varB4EAC82CA7396A68D541C85D26508E83_1675749292 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_1675749292 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1675749292 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1675749292.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1675749292.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1675749292;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.030 -0400", hash_original_method = "0BB2C5BB97AA1323E2FE15E87216E7E9", hash_generated_method = "7EEED8F31183CC6C139183B85C17184E")
     public Iterator<E> iterator() {
-        Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1505666410 = null; //Variable for return #1
+        Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1505666410 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1505666410 = Collections.<E>emptySet().iterator();
-        varB4EAC82CA7396A68D541C85D26508E83_1505666410.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1505666410.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1505666410;
-        // ---------- Original Method ----------
-        //return Collections.<E>emptySet().iterator();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.030 -0400", hash_original_method = "AAA5D1CBE91ADDEA174F65821E23BE58", hash_generated_method = "DD67ABE9352AEDFC51547780C336B864")
     public Object[] toArray() {
-        Object[] varB4EAC82CA7396A68D541C85D26508E83_1945801827 = null; //Variable for return #1
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_1945801827 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1945801827 = EmptyArray.OBJECT;
-        varB4EAC82CA7396A68D541C85D26508E83_1945801827.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1945801827.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1945801827;
-        // ---------- Original Method ----------
-        //return EmptyArray.OBJECT;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.031 -0400", hash_original_method = "490A2A0CCABF1E39472F82358B033503", hash_generated_method = "B0647A2CB2A3F6F3EF961954059021BF")
     public <T> T[] toArray(T[] a) {
-        T[] varB4EAC82CA7396A68D541C85D26508E83_1906426775 = null; //Variable for return #1
+        T[] varB4EAC82CA7396A68D541C85D26508E83_1906426775 = null; 
         a[0] = null;
         varB4EAC82CA7396A68D541C85D26508E83_1906426775 = a;
         addTaint(a[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1906426775.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1906426775.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1906426775;
-        // ---------- Original Method ----------
-        //if (a.length > 0)
-            //a[0] = null;
-        //return a;
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.031 -0400", hash_original_method = "B59D7BDF727183928F94F36988272CAC", hash_generated_method = "7349643AAD8491B3841B852FA99D5A4E")
     public int drainTo(Collection<? super E> c) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         {
             boolean var9AEE7ACC5B0D4AF26CA46D5AFC07CCF3_1124084911 = (c == this);
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End collapsed parenthetic
+        } 
         int n = 0;
         E e;
         {
             boolean var2F576A572403388DFCF1A0EB0F29376A_406218560 = ((e = poll()) != null);
             {
                 c.add(e);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(c.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261512829 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261512829;
-        // ---------- Original Method ----------
-        //if (c == null)
-            //throw new NullPointerException();
-        //if (c == this)
-            //throw new IllegalArgumentException();
-        //int n = 0;
-        //E e;
-        //while ( (e = poll()) != null) {
-            //c.add(e);
-            //++n;
-        //}
-        //return n;
+        
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.031 -0400", hash_original_method = "DA549833C1743125BAA2828712BD0C73", hash_generated_method = "3D1ED4021B51E275DAC73BCA61A6045A")
     public int drainTo(Collection<? super E> c, int maxElements) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         {
             boolean var9AEE7ACC5B0D4AF26CA46D5AFC07CCF3_269873435 = (c == this);
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End collapsed parenthetic
+        } 
         int n = 0;
         E e;
         {
         	c.add(poll());
-        } //End collapsed parenthetic
+        } 
         addTaint(c.getTaint());
         addTaint(maxElements);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_306598950 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_306598950;
-        // ---------- Original Method ----------
-        //if (c == null)
-            //throw new NullPointerException();
-        //if (c == this)
-            //throw new IllegalArgumentException();
-        //int n = 0;
-        //E e;
-        //while (n < maxElements && (e = poll()) != null) {
-            //c.add(e);
-            //++n;
-        //}
-        //return n;
+        
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -351,27 +365,27 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
             qlock = new ReentrantLock(true);
             waitingProducers = new FifoWaitQueue();
             waitingConsumers = new FifoWaitQueue();
-        } //End block
+        } 
         {
             qlock = new ReentrantLock();
             waitingProducers = new LifoWaitQueue();
             waitingConsumers = new LifoWaitQueue();
-        } //End block
+        } 
         s.defaultWriteObject();
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //boolean fair = transferer instanceof TransferQueue;
-        //if (fair) {
-            //qlock = new ReentrantLock(true);
-            //waitingProducers = new FifoWaitQueue();
-            //waitingConsumers = new FifoWaitQueue();
-        //}
-        //else {
-            //qlock = new ReentrantLock();
-            //waitingProducers = new LifoWaitQueue();
-            //waitingConsumers = new LifoWaitQueue();
-        //}
-        //s.defaultWriteObject();
+        
+        
+        
+            
+            
+            
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -381,12 +395,12 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         transferer = new TransferQueue();
         transferer = new TransferStack();
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //s.defaultReadObject();
-        //if (waitingProducers instanceof FifoWaitQueue)
-            //transferer = new TransferQueue();
-        //else
-            //transferer = new TransferStack();
+        
+        
+        
+            
+        
+            
     }
 
     
@@ -407,7 +421,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.032 -0400", hash_original_method = "09F8B62CD164A65EFE70D215172CE3CA", hash_generated_method = "09F8B62CD164A65EFE70D215172CE3CA")
         public Transferer ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -426,7 +440,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.032 -0400", hash_original_method = "02B0885CE62BE77F872535266EC48EF9", hash_generated_method = "02B0885CE62BE77F872535266EC48EF9")
         public TransferStack ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -443,9 +457,9 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
             addTaint(nh.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_80328080 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_80328080;
-            // ---------- Original Method ----------
-            //return h == head &&
-                //UNSAFE.compareAndSwapObject(this, headOffset, h, nh);
+            
+            
+                
         }
 
         
@@ -459,10 +473,10 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.034 -0400", hash_original_method = "EF565BC8E8F2E2CD3218F549EBA67BF0", hash_generated_method = "32BF9DAEDF0AFAD3E24740EBA5A87A2D")
          Object transfer(Object e, boolean timed, long nanos) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_282577603 = null; //Variable for return #1
-            Object varB4EAC82CA7396A68D541C85D26508E83_350500795 = null; //Variable for return #2
-            Object varB4EAC82CA7396A68D541C85D26508E83_1540807925 = null; //Variable for return #3
-            Object varB4EAC82CA7396A68D541C85D26508E83_1199472067 = null; //Variable for return #4
+            Object varB4EAC82CA7396A68D541C85D26508E83_282577603 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_350500795 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_1540807925 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_1199472067 = null; 
             SNode s = null;
             int mode;
             mode = REQUEST;
@@ -475,8 +489,8 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                             boolean varAF0FEF72D29268ED4CF841ECB2A137E4_614954895 = (h != null && h.isCancelled());
                             casHead(h, h.next);
                             varB4EAC82CA7396A68D541C85D26508E83_282577603 = null;
-                        } //End collapsed parenthetic
-                    } //End block
+                        } 
+                    } 
                     {
                         boolean var614383346FD226DA87E63D0856A0A09B_2044352119 = (casHead(h, s = snode(s, e, h, mode)));
                         {
@@ -484,15 +498,15 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                             {
                                 clean(s);
                                 varB4EAC82CA7396A68D541C85D26508E83_350500795 = null;
-                            } //End block
+                            } 
                             {
                                 boolean varCEABA499FA984A91272EEF573D762D61_358035850 = ((h = head) != null && h.next == s);
                                 casHead(h, s.next);
-                            } //End collapsed parenthetic
+                            } 
                             varB4EAC82CA7396A68D541C85D26508E83_1540807925 = (mode == REQUEST) ? m.item : s.item;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     boolean var4218B438AD2FB275956E62AB7D82C855_1187226362 = (!isFulfilling(h.mode));
                     {
@@ -507,21 +521,21 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                                         {
                                             casHead(s, null);
                                             s = null;
-                                        } //End block
+                                        } 
                                         SNode mn = m.next;
                                         {
                                             boolean varB1F893F63AA2BB92DE5336301E43E893_1738820475 = (m.tryMatch(s));
                                             {
                                                 casHead(s, mn);
                                                 varB4EAC82CA7396A68D541C85D26508E83_1199472067 = (mode == REQUEST) ? m.item : s.item;
-                                            } //End block
+                                            } 
                                             s.casNext(m, mn);
-                                        } //End collapsed parenthetic
-                                    } //End block
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End block
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         SNode m = h.next;
                         casHead(h, null);
@@ -531,51 +545,51 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                                 boolean varBA066F30AE1F5BAF188C4FB69B8A094C_1495665024 = (m.tryMatch(h));
                                 casHead(h, mn);
                                 h.casNext(m, mn);
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             addTaint(e.getTaint());
             addTaint(timed);
             addTaint(nanos);
-            Object varA7E53CE21691AB073D9660D615818899_581702653; //Final return value
+            Object varA7E53CE21691AB073D9660D615818899_581702653; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_581702653 = varB4EAC82CA7396A68D541C85D26508E83_282577603;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_581702653 = varB4EAC82CA7396A68D541C85D26508E83_350500795;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_581702653 = varB4EAC82CA7396A68D541C85D26508E83_1540807925;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_581702653 = varB4EAC82CA7396A68D541C85D26508E83_1199472067;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_581702653.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_581702653.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_581702653;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.035 -0400", hash_original_method = "8450123659E4F3E3FBDDF976A06B7608", hash_generated_method = "5CD18E5882E0797DD18463C93C91F6BD")
          SNode awaitFulfill(SNode s, boolean timed, long nanos) {
-            SNode varB4EAC82CA7396A68D541C85D26508E83_1542218624 = null; //Variable for return #1
+            SNode varB4EAC82CA7396A68D541C85D26508E83_1542218624 = null; 
             long lastTime;
             lastTime = System.nanoTime();
             lastTime = 0;
             Thread w = Thread.currentThread();
             SNode h = head;
             int spins = (shouldSpin(s) ?
-                         (timed ? maxTimedSpins : maxUntimedSpins) : 0);//DSFIXME:  CODE0008: Nested ternary operator in expression
+                         (timed ? maxTimedSpins : maxUntimedSpins) : 0);
             {
                 {
                     boolean varE18A53653EF476A6AB7DE0F6C07F3E95_1065704415 = (w.isInterrupted());
                     s.tryCancel();
-                } //End collapsed parenthetic
+                } 
                 SNode m = s.match;
                 varB4EAC82CA7396A68D541C85D26508E83_1542218624 = m;
                 {
@@ -584,20 +598,20 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                     lastTime = now;
                     {
                         s.tryCancel();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 spins = shouldSpin(s) ? (spins-1) : 0;
                 s.waiter = w;
                 LockSupport.park(this);
                 LockSupport.parkNanos(this, nanos);
-            } //End block
+            } 
             addTaint(s.getTaint());
             addTaint(timed);
             addTaint(nanos);
-            varB4EAC82CA7396A68D541C85D26508E83_1542218624.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1542218624.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1542218624;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -608,9 +622,9 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
             addTaint(s.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1449572996 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1449572996;
-            // ---------- Original Method ----------
-            //SNode h = head;
-            //return (h == s || h == null || isFulfilling(h.mode));
+            
+            
+            
         }
 
         
@@ -622,37 +636,37 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
             {
                 boolean var4E37DAF71F369F48A6BA6D5D25162637_478336593 = (past != null && past.isCancelled());
                 past = past.next;
-            } //End collapsed parenthetic
+            } 
             SNode p;
             {
                 boolean varE83DFBC86BE14AC937698BA559B0E748_1337473035 = ((p = head) != null && p != past && p.isCancelled());
                 casHead(p, p.next);
-            } //End collapsed parenthetic
+            } 
             {
                 SNode n = p.next;
                 {
                     boolean varFA4190EAA665CEE1627963E04B8B5194_1268453469 = (n != null && n.isCancelled());
                     p.casNext(n, n.next);
                     p = n;
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             addTaint(s.getTaint());
-            // ---------- Original Method ----------
-            //s.item = null;
-            //s.waiter = null;
-            //SNode past = s.next;
-            //if (past != null && past.isCancelled())
-                //past = past.next;
-            //SNode p;
-            //while ((p = head) != null && p != past && p.isCancelled())
-                //casHead(p, p.next);
-            //while (p != null && p != past) {
-                //SNode n = p.next;
-                //if (n != null && n.isCancelled())
-                    //p.casNext(n, n.next);
-                //else
-                    //p = n;
-            //}
+            
+            
+            
+            
+            
+                
+            
+            
+                
+            
+                
+                
+                    
+                
+                    
+            
         }
 
         
@@ -676,8 +690,8 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.037 -0400", hash_original_method = "1B0B8D11CB10F0B4CCAA4D8835EC421B", hash_generated_method = "CF1397AC3B88B93FEFBB222BFAAE5E40")
               SNode(Object item) {
                 this.item = item;
-                // ---------- Original Method ----------
-                //this.item = item;
+                
+                
             }
 
             
@@ -689,9 +703,9 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                 addTaint(val.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1639474514 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1639474514;
-                // ---------- Original Method ----------
-                //return cmp == next &&
-                    //UNSAFE.compareAndSwapObject(this, nextOffset, cmp, val);
+                
+                
+                    
             }
 
             
@@ -705,31 +719,31 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                         {
                             waiter = null;
                             LockSupport.unpark(w);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 addTaint(s.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1296826289 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1296826289;
-                // ---------- Original Method ----------
-                //if (match == null &&
-                    //UNSAFE.compareAndSwapObject(this, matchOffset, null, s)) {
-                    //Thread w = waiter;
-                    //if (w != null) {    
-                        //waiter = null;
-                        //LockSupport.unpark(w);
-                    //}
-                    //return true;
-                //}
-                //return match == s;
+                
+                
+                    
+                    
+                    
+                        
+                        
+                    
+                    
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.038 -0400", hash_original_method = "4364F2F312C8CE7EEFC1A24A7BE396DF", hash_generated_method = "F113C1DDE10ED16910489434287E4197")
              void tryCancel() {
                 UNSAFE.compareAndSwapObject(this, matchOffset, null, this);
-                // ---------- Original Method ----------
-                //UNSAFE.compareAndSwapObject(this, matchOffset, null, this);
+                
+                
             }
 
             
@@ -738,8 +752,8 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                 boolean var7F5D65803B47A70559075CCD6D448518_1860994530 = (match == this);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1168123025 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1168123025;
-                // ---------- Original Method ----------
-                //return match == this;
+                
+                
             }
 
             
@@ -791,10 +805,10 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
             QNode h = new QNode(null, false);
             head = h;
             tail = h;
-            // ---------- Original Method ----------
-            //QNode h = new QNode(null, false);
-            //head = h;
-            //tail = h;
+            
+            
+            
+            
         }
 
         
@@ -804,13 +818,13 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                 boolean varA1699559793DFF39D27BE01166D10E99_1630433121 = (h == head &&
                 UNSAFE.compareAndSwapObject(this, headOffset, h, nh));
                 h.next = h;
-            } //End collapsed parenthetic
+            } 
             addTaint(h.getTaint());
             addTaint(nh.getTaint());
-            // ---------- Original Method ----------
-            //if (h == head &&
-                //UNSAFE.compareAndSwapObject(this, headOffset, h, nh))
-                //h.next = h;
+            
+            
+                
+                
         }
 
         
@@ -819,9 +833,9 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
             UNSAFE.compareAndSwapObject(this, tailOffset, t, nt);
             addTaint(t.getTaint());
             addTaint(nt.getTaint());
-            // ---------- Original Method ----------
-            //if (tail == t)
-                //UNSAFE.compareAndSwapObject(this, tailOffset, t, nt);
+            
+            
+                
         }
 
         
@@ -833,18 +847,18 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
             addTaint(val.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_537237949 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_537237949;
-            // ---------- Original Method ----------
-            //return cleanMe == cmp &&
-                //UNSAFE.compareAndSwapObject(this, cleanMeOffset, cmp, val);
+            
+            
+                
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.042 -0400", hash_original_method = "D9295193CC3F280F47A7E51B4594CC44", hash_generated_method = "B0F0BBBABF370CCB7A51E399305203FD")
          Object transfer(Object e, boolean timed, long nanos) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_597186076 = null; //Variable for return #1
-            Object varB4EAC82CA7396A68D541C85D26508E83_1198655463 = null; //Variable for return #2
-            Object varB4EAC82CA7396A68D541C85D26508E83_1397310144 = null; //Variable for return #3
-            Object varB4EAC82CA7396A68D541C85D26508E83_466067682 = null; //Variable for return #4
+            Object varB4EAC82CA7396A68D541C85D26508E83_597186076 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_1198655463 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_1397310144 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_466067682 = null; 
             QNode s = null;
             boolean isData = (e != null);
             {
@@ -854,28 +868,28 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                     QNode tn = t.next;
                     {
                         advanceTail(t, tn);
-                    } //End block
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_597186076 = null;
                     s = new QNode(e, isData);
                     {
                         boolean var2D6D1EC910A75C1BE0BDF8DC15A993BD_798598044 = (!t.casNext(null, s));
-                    } //End collapsed parenthetic
+                    } 
                     advanceTail(t, s);
                     Object x = awaitFulfill(s, e, timed, nanos);
                     {
                         clean(t, s);
                         varB4EAC82CA7396A68D541C85D26508E83_1198655463 = null;
-                    } //End block
+                    } 
                     {
                         boolean var49DCCE4E1014EF8A97A0B4DE6D6A07F5_2094707015 = (!s.isOffList());
                         {
                             advanceHead(t, s);
                             s.item = s;
                             s.waiter = null;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_1397310144 = (x != null) ? x : e;
-                } //End block
+                } 
                 {
                     QNode m = h.next;
                     Object x = m.item;
@@ -885,52 +899,52 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                         !m.casItem(x, e));
                         {
                             advanceHead(h, m);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     advanceHead(h, m);
                     LockSupport.unpark(m.waiter);
                     varB4EAC82CA7396A68D541C85D26508E83_466067682 = (x != null) ? x : e;
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(e.getTaint());
             addTaint(timed);
             addTaint(nanos);
-            Object varA7E53CE21691AB073D9660D615818899_325755935; //Final return value
+            Object varA7E53CE21691AB073D9660D615818899_325755935; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_325755935 = varB4EAC82CA7396A68D541C85D26508E83_597186076;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_325755935 = varB4EAC82CA7396A68D541C85D26508E83_1198655463;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_325755935 = varB4EAC82CA7396A68D541C85D26508E83_1397310144;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_325755935 = varB4EAC82CA7396A68D541C85D26508E83_466067682;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_325755935.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_325755935.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_325755935;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.043 -0400", hash_original_method = "90C8A09C09ECF2EF83975D209FFEEF37", hash_generated_method = "DA15A3C1D4C73375639EF447C56E8D00")
          Object awaitFulfill(QNode s, Object e, boolean timed, long nanos) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_581800523 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_581800523 = null; 
             long lastTime;
             lastTime = System.nanoTime();
             lastTime = 0;
             Thread w = Thread.currentThread();
             int spins = ((head.next == s) ?
-                         (timed ? maxTimedSpins : maxUntimedSpins) : 0);//DSFIXME:  CODE0008: Nested ternary operator in expression
+                         (timed ? maxTimedSpins : maxUntimedSpins) : 0);
             {
                 {
                     boolean varE18A53653EF476A6AB7DE0F6C07F3E95_819335063 = (w.isInterrupted());
                     s.tryCancel(e);
-                } //End collapsed parenthetic
+                } 
                 Object x = s.item;
                 varB4EAC82CA7396A68D541C85D26508E83_581800523 = x;
                 {
@@ -939,20 +953,20 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                     lastTime = now;
                     {
                         s.tryCancel(e);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 s.waiter = w;
                 LockSupport.park(this);
                 LockSupport.parkNanos(this, nanos);
-            } //End block
+            } 
             addTaint(s.getTaint());
             addTaint(e.getTaint());
             addTaint(timed);
             addTaint(nanos);
-            varB4EAC82CA7396A68D541C85D26508E83_581800523.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_581800523.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_581800523;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -966,19 +980,19 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                     boolean var90BBDE8A0ACDED3C7351797369CBD741_1119265279 = (hn != null && hn.isCancelled());
                     {
                         advanceHead(h, hn);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 QNode t = tail;
                 QNode tn = t.next;
                 {
                     advanceTail(t, tn);
-                } //End block
+                } 
                 {
                     QNode sn = s.next;
                     {
                         boolean var9EC0578845E9330F648DFD38BF8851EE_898092792 = (sn == s || pred.casNext(s, sn));
-                    } //End collapsed parenthetic
-                } //End block
+                    } 
+                } 
                 QNode dp = cleanMe;
                 {
                     QNode d = dp.next;
@@ -992,16 +1006,16 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                          dn != d &&                
                          dp.casNext(d, dn)));
                         casCleanMe(dp, null);
-                    } //End collapsed parenthetic
-                } //End block
+                    } 
+                } 
                 {
                     boolean varF92453FEDC3A2CB53C1EB52CDEA2A7A0_406160321 = (casCleanMe(null, pred));
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             addTaint(pred.getTaint());
             addTaint(s.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1023,9 +1037,9 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
               QNode(Object item, boolean isData) {
                 this.item = item;
                 this.isData = isData;
-                // ---------- Original Method ----------
-                //this.item = item;
-                //this.isData = isData;
+                
+                
+                
             }
 
             
@@ -1037,9 +1051,9 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                 addTaint(val.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_435516591 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_435516591;
-                // ---------- Original Method ----------
-                //return next == cmp &&
-                    //UNSAFE.compareAndSwapObject(this, nextOffset, cmp, val);
+                
+                
+                    
             }
 
             
@@ -1051,9 +1065,9 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                 addTaint(val.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1977539793 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1977539793;
-                // ---------- Original Method ----------
-                //return item == cmp &&
-                    //UNSAFE.compareAndSwapObject(this, itemOffset, cmp, val);
+                
+                
+                    
             }
 
             
@@ -1061,8 +1075,8 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
              void tryCancel(Object cmp) {
                 UNSAFE.compareAndSwapObject(this, itemOffset, cmp, this);
                 addTaint(cmp.getTaint());
-                // ---------- Original Method ----------
-                //UNSAFE.compareAndSwapObject(this, itemOffset, cmp, this);
+                
+                
             }
 
             
@@ -1071,8 +1085,8 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                 boolean varA64503E11EBD2041198E2D58A05084A8_1592751954 = (item == this);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_923521327 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_923521327;
-                // ---------- Original Method ----------
-                //return item == this;
+                
+                
             }
 
             
@@ -1081,8 +1095,8 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
                 boolean varB6C5D4B086DE21F098503EC790F4AB8E_1423888570 = (next == this);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_59181301 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_59181301;
-                // ---------- Original Method ----------
-                //return next == this;
+                
+                
             }
 
             
@@ -1120,7 +1134,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.053 -0400", hash_original_method = "A66BE88BE66C40BD12237E932077BBFA", hash_generated_method = "A66BE88BE66C40BD12237E932077BBFA")
         public WaitQueue ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1133,7 +1147,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.053 -0400", hash_original_method = "2AB7A8E9C876B74C36AEA136750E93EA", hash_generated_method = "2AB7A8E9C876B74C36AEA136750E93EA")
         public LifoWaitQueue ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1149,7 +1163,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.053 -0400", hash_original_method = "2B3543573D85E46D74937DE2E36C8335", hash_generated_method = "2B3543573D85E46D74937DE2E36C8335")
         public FifoWaitQueue ()
         {
-            //Synthesized constructor
+            
         }
 
 

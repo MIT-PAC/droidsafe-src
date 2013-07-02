@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
@@ -20,16 +20,16 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.868 -0400", hash_original_method = "5A8420DEA89D3BA24C51E3449203D410", hash_generated_method = "07EA7FB4A78397A0402CFA97CFD413F0")
     public  ScaleXSpan(float proportion) {
         mProportion = proportion;
-        // ---------- Original Method ----------
-        //mProportion = proportion;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.868 -0400", hash_original_method = "84B8294F7669FCC40D337D5712D24934", hash_generated_method = "6A0BF93ECB06D20C8DD707C448ED318A")
     public  ScaleXSpan(Parcel src) {
         mProportion = src.readFloat();
-        // ---------- Original Method ----------
-        //mProportion = src.readFloat();
+        
+        
     }
 
     
@@ -37,8 +37,8 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_850449203 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_850449203;
-        // ---------- Original Method ----------
-        //return TextUtils.SCALE_X_SPAN;
+        
+        
     }
 
     
@@ -46,8 +46,8 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_414620154 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_414620154;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -56,8 +56,8 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
         dest.writeFloat(mProportion);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeFloat(mProportion);
+        
+        
     }
 
     
@@ -65,8 +65,8 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     public float getScaleX() {
         float var546ADE640B6EDFBC8A086EF31347E768_592127436 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_592127436;
-        // ---------- Original Method ----------
-        //return mProportion;
+        
+        
     }
 
     
@@ -75,8 +75,8 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     public void updateDrawState(TextPaint ds) {
         ds.setTextScaleX(ds.getTextScaleX() * mProportion);
         addTaint(ds.getTaint());
-        // ---------- Original Method ----------
-        //ds.setTextScaleX(ds.getTextScaleX() * mProportion);
+        
+        
     }
 
     
@@ -85,8 +85,8 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     public void updateMeasureState(TextPaint ds) {
         ds.setTextScaleX(ds.getTextScaleX() * mProportion);
         addTaint(ds.getTaint());
-        // ---------- Original Method ----------
-        //ds.setTextScaleX(ds.getTextScaleX() * mProportion);
+        
+        
     }
 
     

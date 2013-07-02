@@ -1,11 +1,11 @@
 package org.apache.commons.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -17,8 +17,8 @@ public class IOExceptionWithCause extends IOException {
         this.initCause(cause);
         addTaint(message.getTaint());
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-        //this.initCause(cause);
+        
+        
     }
 
     
@@ -27,8 +27,8 @@ public class IOExceptionWithCause extends IOException {
         super(cause == null ? null : cause.toString());
         this.initCause(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-        //this.initCause(cause);
+        
+        
     }
 
     

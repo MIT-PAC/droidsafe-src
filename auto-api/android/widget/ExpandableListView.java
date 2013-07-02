@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.R;
 import android.content.Context;
@@ -71,7 +71,7 @@ public class ExpandableListView extends ListView {
     public  ExpandableListView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -80,7 +80,7 @@ public class ExpandableListView extends ListView {
         this(context, attrs, com.android.internal.R.attr.expandableListViewStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -99,7 +99,7 @@ public class ExpandableListView extends ListView {
                 .getDimensionPixelSize(com.android.internal.R.styleable.ExpandableListView_indicatorRight, 0);
         {
             mIndicatorRight = mIndicatorLeft + mGroupIndicator.getIntrinsicWidth();
-        } //End block
+        } 
         mChildIndicatorLeft = a.getDimensionPixelSize(
                 com.android.internal.R.styleable.ExpandableListView_childIndicatorLeft, CHILD_INDICATOR_INHERIT);
         mChildIndicatorRight = a.getDimensionPixelSize(
@@ -109,11 +109,12 @@ public class ExpandableListView extends ListView {
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.731 -0400", hash_original_method = "7A23721B5E073FBA7FD49FF2A748467D", hash_generated_method = "3B546B3A792A0207616E5AEE15E95CAA")
     @Override
     protected void dispatchDraw(Canvas canvas) {
@@ -127,7 +128,7 @@ public class ExpandableListView extends ListView {
             canvas.clipRect(scrollX + mPaddingLeft, scrollY + mPaddingTop,
                     scrollX + mRight - mLeft - mPaddingRight,
                     scrollY + mBottom - mTop - mPaddingBottom);
-        } //End block
+        } 
         final int headerViewsCount = getHeaderViewsCount();
         final int lastChildFlPos = mItemCount - getFooterViewsCount() - headerViewsCount - 1;
         final int myB = mBottom;
@@ -153,45 +154,46 @@ public class ExpandableListView extends ListView {
                             mIndicatorLeft : mChildIndicatorLeft;
                         indicatorRect.right = (mChildIndicatorRight == CHILD_INDICATOR_INHERIT) ?
                             mIndicatorRight : mChildIndicatorRight;
-                    } //End block
+                    } 
                     {
                         indicatorRect.left = mIndicatorLeft;
                         indicatorRect.right = mIndicatorRight;
-                    } //End block
+                    } 
                     indicatorRect.left += mPaddingLeft;
                     indicatorRect.right += mPaddingLeft;
                     lastItemType = pos.position.type;
-                } //End block
+                } 
                 {
                     {
                         indicatorRect.top = t;
                         indicatorRect.bottom = b;
-                    } //End block
+                    } 
                     {
                         indicatorRect.top = t;
                         indicatorRect.bottom = b;
-                    } //End block
+                    } 
                     indicator = getIndicator(pos);
                     {
                         indicator.setBounds(indicatorRect);
                         indicator.draw(canvas);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 pos.recycle();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             canvas.restoreToCount(saveCount);
-        } //End block
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.732 -0400", hash_original_method = "D5F058A591B90F6E54D4D617313791EB", hash_generated_method = "825E9D7F276F84E6B01096959C93C80B")
     private Drawable getIndicator(PositionMetadata pos) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_510313484 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_510313484 = null; 
         Drawable indicator;
         {
             indicator = mGroupIndicator;
@@ -201,11 +203,11 @@ public class ExpandableListView extends ListView {
                     boolean isEmpty = (pos.groupMetadata == null) ||
                         (pos.groupMetadata.lastChildFlPos == pos.groupMetadata.flPos);
                     final int stateSetIndex = (pos.isExpanded() ? 1 : 0) | 
-                    (isEmpty ? 2 : 0);//DSFIXME:  CODE0008: Nested ternary operator in expression
+                    (isEmpty ? 2 : 0);
                     indicator.setState(GROUP_STATE_SETS[stateSetIndex]);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             indicator = mChildIndicator;
             {
@@ -215,23 +217,23 @@ public class ExpandableListView extends ListView {
                     stateSet = CHILD_LAST_STATE_SET;
                     stateSet = EMPTY_STATE_SET;
                     indicator.setState(stateSet);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_510313484 = indicator;
         addTaint(pos.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_510313484.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_510313484.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_510313484;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.733 -0400", hash_original_method = "4C83D9B2FEDBCDF12BA1F2A0723CD37C", hash_generated_method = "D780E95EAAAAB38AA0BB5A1E722724BB")
     public void setChildDivider(Drawable childDivider) {
         mChildDivider = childDivider;
-        // ---------- Original Method ----------
-        //mChildDivider = childDivider;
+        
+        
     }
 
     
@@ -250,33 +252,34 @@ public class ExpandableListView extends ListView {
                     divider.setBounds(bounds);
                     divider.draw(canvas);
                     pos.recycle();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             pos.recycle();
-        } //End block
+        } 
         super.drawDivider(canvas, bounds, flatListPosition);
         addTaint(canvas.getTaint());
         addTaint(bounds.getTaint());
         addTaint(childIndex);
-        // ---------- Original Method ----------
-        //int flatListPosition = childIndex + mFirstPosition;
-        //if (flatListPosition >= 0) {
-            //final int adjustedPosition = getFlatPositionForConnector(flatListPosition);
-            //PositionMetadata pos = mConnector.getUnflattenedPos(adjustedPosition);
-            //if ((pos.position.type == ExpandableListPosition.CHILD) || (pos.isExpanded() &&
-                    //pos.groupMetadata.lastChildFlPos != pos.groupMetadata.flPos)) {
-                //final Drawable divider = mChildDivider;
-                //divider.setBounds(bounds);
-                //divider.draw(canvas);
-                //pos.recycle();
-                //return;
-            //}
-            //pos.recycle();
-        //}
-        //super.drawDivider(canvas, bounds, flatListPosition);
+        
+        
+        
+            
+            
+            
+                    
+                
+                
+                
+                
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.734 -0400", hash_original_method = "A4E4696C244BB97A42B35DBC06E7550F", hash_generated_method = "6754494DC679ADCFF252F8F805CAC44B")
     @Override
     public void setAdapter(ListAdapter adapter) {
@@ -284,67 +287,71 @@ public class ExpandableListView extends ListView {
                 "For ExpandableListView, use setAdapter(ExpandableListAdapter) instead of " +
                 "setAdapter(ListAdapter)");
         addTaint(adapter.getTaint());
-        // ---------- Original Method ----------
-        //throw new RuntimeException(
-                //"For ExpandableListView, use setAdapter(ExpandableListAdapter) instead of " +
-                //"setAdapter(ListAdapter)");
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.734 -0400", hash_original_method = "1C0E40F01B81CC446BCB9E503587C60C", hash_generated_method = "06463B92DC85E9BF7E579843B546B2A6")
     @Override
     public ListAdapter getAdapter() {
-        ListAdapter varB4EAC82CA7396A68D541C85D26508E83_368607584 = null; //Variable for return #1
+        ListAdapter varB4EAC82CA7396A68D541C85D26508E83_368607584 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_368607584 = super.getAdapter();
-        varB4EAC82CA7396A68D541C85D26508E83_368607584.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_368607584.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_368607584;
-        // ---------- Original Method ----------
-        //return super.getAdapter();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.734 -0400", hash_original_method = "B7F875362109C546409DA14CD03B0627", hash_generated_method = "D09C54A72E72DA868011D4626C78AEFE")
     @Override
     public void setOnItemClickListener(OnItemClickListener l) {
         super.setOnItemClickListener(l);
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //super.setOnItemClickListener(l);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.735 -0400", hash_original_method = "86A402EAE8E162910BEF1CBB540CA500", hash_generated_method = "1B6C2A593780D4A33DC3EF5298FD5A30")
     public void setAdapter(ExpandableListAdapter adapter) {
         mAdapter = adapter;
         {
             mConnector = new ExpandableListConnector(adapter);
-        } //End block
+        } 
         {
             mConnector = null;
-        } //End block
+        } 
         super.setAdapter(mConnector);
-        // ---------- Original Method ----------
-        //mAdapter = adapter;
-        //if (adapter != null) {
-            //mConnector = new ExpandableListConnector(adapter);
-        //} else {
-            //mConnector = null;
-        //}
-        //super.setAdapter(mConnector);
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.735 -0400", hash_original_method = "0DEBB462BC2A68BA86FC192DC719C116", hash_generated_method = "F45584527677D2FE780D97831515C3B6")
     public ExpandableListAdapter getExpandableListAdapter() {
-        ExpandableListAdapter varB4EAC82CA7396A68D541C85D26508E83_786853573 = null; //Variable for return #1
+        ExpandableListAdapter varB4EAC82CA7396A68D541C85D26508E83_786853573 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_786853573 = mAdapter;
-        varB4EAC82CA7396A68D541C85D26508E83_786853573.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_786853573.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_786853573;
-        // ---------- Original Method ----------
-        //return mAdapter;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.736 -0400", hash_original_method = "A9D0233B5C169CC66750AD88D31A38E9", hash_generated_method = "16CB3C7BAD2562A946278749C05701E2")
     private boolean isHeaderOrFooterPosition(int position) {
         final int footerViewsStart = mItemCount - getFooterViewsCount();
@@ -352,34 +359,37 @@ public class ExpandableListView extends ListView {
         addTaint(position);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1484924027 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1484924027;
-        // ---------- Original Method ----------
-        //final int footerViewsStart = mItemCount - getFooterViewsCount();
-        //return (position < getHeaderViewsCount() || position >= footerViewsStart);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.736 -0400", hash_original_method = "8FB53CC37B504290AC6948A7A815A683", hash_generated_method = "CDFA1A53AECF64809A27159299D0A08A")
     private int getFlatPositionForConnector(int flatListPosition) {
         int varE9C32C9572990701B6BAF07537D8834F_137280223 = (flatListPosition - getHeaderViewsCount());
         addTaint(flatListPosition);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1311505871 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1311505871;
-        // ---------- Original Method ----------
-        //return flatListPosition - getHeaderViewsCount();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.736 -0400", hash_original_method = "D8821ADD18913687E76F2B3166416BE8", hash_generated_method = "5C35A83BB47AC60B7D5C42EA448A52FE")
     private int getAbsoluteFlatPosition(int flatListPosition) {
         int varD2D8EDD83D5BE6348EBC4248326A4A5B_1053861571 = (flatListPosition + getHeaderViewsCount());
         addTaint(flatListPosition);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_529424541 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_529424541;
-        // ---------- Original Method ----------
-        //return flatListPosition + getHeaderViewsCount();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.736 -0400", hash_original_method = "351E469927E1B73D6D643A520D2ADA68", hash_generated_method = "ACB540F05E931D082E8344B136F42DEF")
     @Override
     public boolean performItemClick(View v, int position, long id) {
@@ -387,8 +397,8 @@ public class ExpandableListView extends ListView {
             boolean var37B5E5C58011B39505D3618135B6EE5B_803101227 = (isHeaderOrFooterPosition(position));
             {
                 boolean var91F020B48E96B24C861AEA82AC2FA0EA_1853840255 = (super.performItemClick(v, position, id));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final int adjustedPosition = getFlatPositionForConnector(position);
         boolean var4C23AE60DB98858DB93D2D17185BD632_71085990 = (handleItemClick(v, adjustedPosition, id));
         addTaint(v.getTaint());
@@ -396,12 +406,12 @@ public class ExpandableListView extends ListView {
         addTaint(id);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_658042823 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_658042823;
-        // ---------- Original Method ----------
-        //if (isHeaderOrFooterPosition(position)) {
-            //return super.performItemClick(v, position, id);
-        //}
-        //final int adjustedPosition = getFlatPositionForConnector(position);
-        //return handleItemClick(v, adjustedPosition, id);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -417,9 +427,9 @@ public class ExpandableListView extends ListView {
                         posMetadata.position.groupPos, id));
                     {
                         posMetadata.recycle();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 boolean varFFE3360DB01E9A6262E0A072169C4E53_2044011922 = (posMetadata.isExpanded());
                 {
@@ -427,53 +437,55 @@ public class ExpandableListView extends ListView {
                     playSoundEffect(SoundEffectConstants.CLICK);
                     {
                         mOnGroupCollapseListener.onGroupCollapse(posMetadata.position.groupPos);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     mConnector.expandGroup(posMetadata);
                     playSoundEffect(SoundEffectConstants.CLICK);
                     {
                         mOnGroupExpandListener.onGroupExpand(posMetadata.position.groupPos);
-                    } //End block
+                    } 
                     final int groupPos = posMetadata.position.groupPos;
                     final int groupFlatPos = posMetadata.position.flatListPos;
                     final int shiftedGroupPosition = groupFlatPos + getHeaderViewsCount();
                     smoothScrollToPosition(shiftedGroupPosition + mAdapter.getChildrenCount(groupPos),
                         shiftedGroupPosition);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             returnValue = true;
-        } //End block
+        } 
         {
             {
                 playSoundEffect(SoundEffectConstants.CLICK);
                 boolean var7B6CA2590F067B319E2DCADB7F136527_1353679449 = (mOnChildClickListener.onChildClick(this, v, posMetadata.position.groupPos,
                         posMetadata.position.childPos, id));
-            } //End block
+            } 
             returnValue = false;
-        } //End block
+        } 
         posMetadata.recycle();
         addTaint(v.getTaint());
         addTaint(position);
         addTaint(id);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1402609326 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1402609326;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.738 -0400", hash_original_method = "98581B0D5B3DDD77A367749C65B03049", hash_generated_method = "C20BE7A795B35BEB8C6F90671654CF56")
     public boolean expandGroup(int groupPos) {
         boolean var158906FF83ADD7763E372E8503097DFF_203271965 = (expandGroup(groupPos, false));
         addTaint(groupPos);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_321350499 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_321350499;
-        // ---------- Original Method ----------
-        //return expandGroup(groupPos, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.738 -0400", hash_original_method = "0C4613B5CED32082A0135BD7DC8647D8", hash_generated_method = "EAADF810FA4F7603D6B75884FEC2A36C")
     public boolean expandGroup(int groupPos, boolean animate) {
         PositionMetadata pm = mConnector.getFlattenedPos(ExpandableListPosition.obtain(
@@ -481,51 +493,52 @@ public class ExpandableListView extends ListView {
         boolean retValue = mConnector.expandGroup(pm);
         {
             mOnGroupExpandListener.onGroupExpand(groupPos);
-        } //End block
+        } 
         {
             final int groupFlatPos = pm.position.flatListPos;
             final int shiftedGroupPosition = groupFlatPos + getHeaderViewsCount();
             smoothScrollToPosition(shiftedGroupPosition + mAdapter.getChildrenCount(groupPos),
                     shiftedGroupPosition);
-        } //End block
+        } 
         pm.recycle();
         addTaint(groupPos);
         addTaint(animate);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1126640382 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1126640382;
-        // ---------- Original Method ----------
-        //PositionMetadata pm = mConnector.getFlattenedPos(ExpandableListPosition.obtain(
-                //ExpandableListPosition.GROUP, groupPos, -1, -1));
-        //boolean retValue = mConnector.expandGroup(pm);
-        //if (mOnGroupExpandListener != null) {
-            //mOnGroupExpandListener.onGroupExpand(groupPos);
-        //}
-        //if (animate) {
-            //final int groupFlatPos = pm.position.flatListPos;
-            //final int shiftedGroupPosition = groupFlatPos + getHeaderViewsCount();
-            //smoothScrollToPosition(shiftedGroupPosition + mAdapter.getChildrenCount(groupPos),
-                    //shiftedGroupPosition);
-        //}
-        //pm.recycle();
-        //return retValue;
+        
+        
+                
+        
+        
+            
+        
+        
+            
+            
+            
+                    
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.738 -0400", hash_original_method = "32E02BBD4C2448429B8A9BB97BA3197B", hash_generated_method = "6D855520F3A37BB369B0AEAB5D74A4A1")
     public boolean collapseGroup(int groupPos) {
         boolean retValue = mConnector.collapseGroup(groupPos);
         {
             mOnGroupCollapseListener.onGroupCollapse(groupPos);
-        } //End block
+        } 
         addTaint(groupPos);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1425276982 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1425276982;
-        // ---------- Original Method ----------
-        //boolean retValue = mConnector.collapseGroup(groupPos);
-        //if (mOnGroupCollapseListener != null) {
-            //mOnGroupCollapseListener.onGroupCollapse(groupPos);
-        //}
-        //return retValue;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -533,8 +546,8 @@ public class ExpandableListView extends ListView {
     public void setOnGroupCollapseListener(
             OnGroupCollapseListener onGroupCollapseListener) {
         mOnGroupCollapseListener = onGroupCollapseListener;
-        // ---------- Original Method ----------
-        //mOnGroupCollapseListener = onGroupCollapseListener;
+        
+        
     }
 
     
@@ -542,24 +555,24 @@ public class ExpandableListView extends ListView {
     public void setOnGroupExpandListener(
             OnGroupExpandListener onGroupExpandListener) {
         mOnGroupExpandListener = onGroupExpandListener;
-        // ---------- Original Method ----------
-        //mOnGroupExpandListener = onGroupExpandListener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.739 -0400", hash_original_method = "C8C3684AA79EC58EA45C462FF87BD202", hash_generated_method = "60F0AD7A476021E95B7ED081EF3A3ED1")
     public void setOnGroupClickListener(OnGroupClickListener onGroupClickListener) {
         mOnGroupClickListener = onGroupClickListener;
-        // ---------- Original Method ----------
-        //mOnGroupClickListener = onGroupClickListener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.739 -0400", hash_original_method = "26EE7772CEF1895E61E52189D15F9720", hash_generated_method = "41F25A2ADE7B9E9231F61EB2282E9FF4")
     public void setOnChildClickListener(OnChildClickListener onChildClickListener) {
         mOnChildClickListener = onChildClickListener;
-        // ---------- Original Method ----------
-        //mOnChildClickListener = onChildClickListener;
+        
+        
     }
 
     
@@ -567,7 +580,7 @@ public class ExpandableListView extends ListView {
     public long getExpandableListPosition(int flatListPosition) {
         {
             boolean varAC46EC688D3DC3F88FC89B09088E4D69_117874140 = (isHeaderOrFooterPosition(flatListPosition));
-        } //End collapsed parenthetic
+        } 
         final int adjustedPosition = getFlatPositionForConnector(flatListPosition);
         PositionMetadata pm = mConnector.getUnflattenedPos(adjustedPosition);
         long packedPos = pm.position.getPackedPosition();
@@ -575,15 +588,15 @@ public class ExpandableListView extends ListView {
         addTaint(flatListPosition);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_67494516 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_67494516;
-        // ---------- Original Method ----------
-        //if (isHeaderOrFooterPosition(flatListPosition)) {
-            //return PACKED_POSITION_VALUE_NULL;
-        //}
-        //final int adjustedPosition = getFlatPositionForConnector(flatListPosition);
-        //PositionMetadata pm = mConnector.getUnflattenedPos(adjustedPosition);
-        //long packedPos = pm.position.getPackedPosition();
-        //pm.recycle();
-        //return packedPos;
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -597,12 +610,12 @@ public class ExpandableListView extends ListView {
         addTaint(packedPosition);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_165467746 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_165467746;
-        // ---------- Original Method ----------
-        //PositionMetadata pm = mConnector.getFlattenedPos(ExpandableListPosition
-                //.obtainPosition(packedPosition));
-        //final int flatListPosition = pm.position.flatListPos;
-        //pm.recycle();
-        //return getAbsoluteFlatPosition(flatListPosition);
+        
+        
+                
+        
+        
+        
     }
 
     
@@ -612,9 +625,9 @@ public class ExpandableListView extends ListView {
         long varA93AAACA6E31AFE99DAE4E2E735CF124_1600474335 = (getExpandableListPosition(selectedPos));
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1546120959 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1546120959;
-        // ---------- Original Method ----------
-        //final int selectedPos = getSelectedItemPosition();
-        //return getExpandableListPosition(selectedPos);
+        
+        
+        
     }
 
     
@@ -626,22 +639,22 @@ public class ExpandableListView extends ListView {
             boolean var2C84455863B32CE893D64B61CD7E9447_601226253 = (getPackedPositionType(packedPos) == PACKED_POSITION_TYPE_GROUP);
             {
                 long var554AC649873DD7DDC319BC4A4CB37B8C_209746579 = (mAdapter.getGroupId(groupPos));
-            } //End block
+            } 
             {
                 long var41EED02771CC59A8F0A0BD62927C27EF_897218867 = (mAdapter.getChildId(groupPos, getPackedPositionChild(packedPos)));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1489171740 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1489171740;
-        // ---------- Original Method ----------
-        //long packedPos = getSelectedPosition();
-        //if (packedPos == PACKED_POSITION_VALUE_NULL) return -1;
-        //int groupPos = getPackedPositionGroup(packedPos);
-        //if (getPackedPositionType(packedPos) == PACKED_POSITION_TYPE_GROUP) {
-            //return mAdapter.getGroupId(groupPos);
-        //} else {
-            //return mAdapter.getChildId(groupPos, getPackedPositionChild(packedPos));
-        //}
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -655,14 +668,14 @@ public class ExpandableListView extends ListView {
         super.setSelection(absoluteFlatPosition);
         pm.recycle();
         addTaint(groupPosition);
-        // ---------- Original Method ----------
-        //ExpandableListPosition elGroupPos = ExpandableListPosition
-                //.obtainGroupPosition(groupPosition);
-        //PositionMetadata pm = mConnector.getFlattenedPos(elGroupPos);
-        //elGroupPos.recycle();
-        //final int absoluteFlatPosition = getAbsoluteFlatPosition(pm.position.flatListPos);
-        //super.setSelection(absoluteFlatPosition);
-        //pm.recycle();
+        
+        
+                
+        
+        
+        
+        
+        
     }
 
     
@@ -676,8 +689,8 @@ public class ExpandableListView extends ListView {
             flatChildPos = mConnector.getFlattenedPos(elChildPos);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Could not find child");
-            } //End block
-        } //End block
+            } 
+        } 
         int absoluteFlatPosition = getAbsoluteFlatPosition(flatChildPos.position.flatListPos);
         super.setSelection(absoluteFlatPosition);
         elChildPos.recycle();
@@ -687,8 +700,8 @@ public class ExpandableListView extends ListView {
         addTaint(shouldExpandGroup);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1670819537 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1670819537;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -698,8 +711,8 @@ public class ExpandableListView extends ListView {
         addTaint(groupPosition);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1253048769 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1253048769;
-        // ---------- Original Method ----------
-        //return mConnector.isGroupExpanded(groupPosition);
+        
+        
     }
 
     
@@ -743,14 +756,14 @@ public class ExpandableListView extends ListView {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.745 -0400", hash_original_method = "E91ADE02598601B56CDD6CB9CE298E24", hash_generated_method = "BA41E80F4155F23F13E1C5C1778FB044")
     @Override
      ContextMenuInfo createContextMenuInfo(View view, int flatListPosition, long id) {
-        ContextMenuInfo varB4EAC82CA7396A68D541C85D26508E83_1462760730 = null; //Variable for return #1
-        ContextMenuInfo varB4EAC82CA7396A68D541C85D26508E83_2013517519 = null; //Variable for return #2
+        ContextMenuInfo varB4EAC82CA7396A68D541C85D26508E83_1462760730 = null; 
+        ContextMenuInfo varB4EAC82CA7396A68D541C85D26508E83_2013517519 = null; 
         {
             boolean varAC46EC688D3DC3F88FC89B09088E4D69_1483856256 = (isHeaderOrFooterPosition(flatListPosition));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1462760730 = new AdapterContextMenuInfo(view, flatListPosition, id);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final int adjustedPosition = getFlatPositionForConnector(flatListPosition);
         PositionMetadata pm = mConnector.getUnflattenedPos(adjustedPosition);
         ExpandableListPosition pos = pm.position;
@@ -762,29 +775,29 @@ public class ExpandableListView extends ListView {
         addTaint(view.getTaint());
         addTaint(flatListPosition);
         addTaint(id);
-        ContextMenuInfo varA7E53CE21691AB073D9660D615818899_1883205301; //Final return value
+        ContextMenuInfo varA7E53CE21691AB073D9660D615818899_1883205301; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1883205301 = varB4EAC82CA7396A68D541C85D26508E83_1462760730;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1883205301 = varB4EAC82CA7396A68D541C85D26508E83_2013517519;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1883205301.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1883205301.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1883205301;
-        // ---------- Original Method ----------
-        //if (isHeaderOrFooterPosition(flatListPosition)) {
-            //return new AdapterContextMenuInfo(view, flatListPosition, id);
-        //}
-        //final int adjustedPosition = getFlatPositionForConnector(flatListPosition);
-        //PositionMetadata pm = mConnector.getUnflattenedPos(adjustedPosition);
-        //ExpandableListPosition pos = pm.position;
-        //pm.recycle();
-        //id = getChildOrGroupId(pos);
-        //long packedPosition = pos.getPackedPosition();
-        //pos.recycle();
-        //return new ExpandableListContextMenuInfo(view, packedPosition, id);
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -792,27 +805,27 @@ public class ExpandableListView extends ListView {
     private long getChildOrGroupId(ExpandableListPosition position) {
         {
             long var47BF608F180062BFB18AD6587640E282_1019434380 = (mAdapter.getChildId(position.groupPos, position.childPos));
-        } //End block
+        } 
         {
             long varB0F15D6830B934D417ABA88161FCAC14_660117264 = (mAdapter.getGroupId(position.groupPos));
-        } //End block
+        } 
         addTaint(position.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_113137155 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_113137155;
-        // ---------- Original Method ----------
-        //if (position.type == ExpandableListPosition.CHILD) {
-            //return mAdapter.getChildId(position.groupPos, position.childPos);
-        //} else {
-            //return mAdapter.getGroupId(position.groupPos);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.746 -0400", hash_original_method = "ED7EE4CBDCF7577D87176969D6DCB802", hash_generated_method = "B85C53B974C3327A3C4829D04B8BCB3A")
     public void setChildIndicator(Drawable childIndicator) {
         mChildIndicator = childIndicator;
-        // ---------- Original Method ----------
-        //mChildIndicator = childIndicator;
+        
+        
     }
 
     
@@ -820,9 +833,9 @@ public class ExpandableListView extends ListView {
     public void setChildIndicatorBounds(int left, int right) {
         mChildIndicatorLeft = left;
         mChildIndicatorRight = right;
-        // ---------- Original Method ----------
-        //mChildIndicatorLeft = left;
-        //mChildIndicatorRight = right;
+        
+        
+        
     }
 
     
@@ -831,12 +844,12 @@ public class ExpandableListView extends ListView {
         mGroupIndicator = groupIndicator;
         {
             mIndicatorRight = mIndicatorLeft + mGroupIndicator.getIntrinsicWidth();
-        } //End block
-        // ---------- Original Method ----------
-        //mGroupIndicator = groupIndicator;
-        //if (mIndicatorRight == 0 && mGroupIndicator != null) {
-            //mIndicatorRight = mIndicatorLeft + mGroupIndicator.getIntrinsicWidth();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -844,52 +857,52 @@ public class ExpandableListView extends ListView {
     public void setIndicatorBounds(int left, int right) {
         mIndicatorLeft = left;
         mIndicatorRight = right;
-        // ---------- Original Method ----------
-        //mIndicatorLeft = left;
-        //mIndicatorRight = right;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.748 -0400", hash_original_method = "D1B709DD85334DB90D0ABC47C1E74159", hash_generated_method = "1A4E9570D4049A9E6A52E6D2BCC68104")
     @Override
     public Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1463915484 = null; //Variable for return #1
+        
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1463915484 = null; 
         Parcelable superState = super.onSaveInstanceState();
         varB4EAC82CA7396A68D541C85D26508E83_1463915484 = new SavedState(superState,
                 mConnector != null ? mConnector.getExpandedGroupMetadataList() : null);
-        varB4EAC82CA7396A68D541C85D26508E83_1463915484.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1463915484.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1463915484;
-        // ---------- Original Method ----------
-        //Parcelable superState = super.onSaveInstanceState();
-        //return new SavedState(superState,
-                //mConnector != null ? mConnector.getExpandedGroupMetadataList() : null);
+        
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.748 -0400", hash_original_method = "FA4E85B1CE7B753D6AFB9648E78FCCBA", hash_generated_method = "249926CB251C1DD27DFD172506BA2AB2")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             super.onRestoreInstanceState(state);
-        } //End block
+        } 
         SavedState ss = (SavedState) state;
         super.onRestoreInstanceState(ss.getSuperState());
         {
             mConnector.setExpandedGroupMetadataList(ss.expandedGroupMetadataList);
-        } //End block
+        } 
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //if (!(state instanceof SavedState)) {
-            //super.onRestoreInstanceState(state);
-            //return;
-        //}
-        //SavedState ss = (SavedState) state;
-        //super.onRestoreInstanceState(ss.getSuperState());
-        //if (mConnector != null && ss.expandedGroupMetadataList != null) {
-            //mConnector.setExpandedGroupMetadataList(ss.expandedGroupMetadataList);
-        //}
+        
+        
+            
+            
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -909,10 +922,10 @@ public class ExpandableListView extends ListView {
             this.targetView = targetView;
             this.packedPosition = packedPosition;
             this.id = id;
-            // ---------- Original Method ----------
-            //this.targetView = targetView;
-            //this.packedPosition = packedPosition;
-            //this.id = id;
+            
+            
+            
+            
         }
 
         
@@ -932,8 +945,8 @@ public class ExpandableListView extends ListView {
             super(superState);
             this.expandedGroupMetadataList = expandedGroupMetadataList;
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
-            //this.expandedGroupMetadataList = expandedGroupMetadataList;
+            
+            
         }
 
         
@@ -943,9 +956,9 @@ public class ExpandableListView extends ListView {
             expandedGroupMetadataList = new ArrayList<ExpandableListConnector.GroupMetadata>();
             in.readList(expandedGroupMetadataList, ExpandableListConnector.class.getClassLoader());
             addTaint(in.getTaint());
-            // ---------- Original Method ----------
-            //expandedGroupMetadataList = new ArrayList<ExpandableListConnector.GroupMetadata>();
-            //in.readList(expandedGroupMetadataList, ExpandableListConnector.class.getClassLoader());
+            
+            
+            
         }
 
         
@@ -956,9 +969,9 @@ public class ExpandableListView extends ListView {
             out.writeList(expandedGroupMetadataList);
             addTaint(out.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //super.writeToParcel(out, flags);
-            //out.writeList(expandedGroupMetadataList);
+            
+            
+            
         }
 
         
@@ -974,12 +987,12 @@ public class ExpandableListView extends ListView {
                 return new SavedState[size];
             }
         };
-        // orphaned legacy method
+        
         public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
         
-        // orphaned legacy method
+        
         public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }

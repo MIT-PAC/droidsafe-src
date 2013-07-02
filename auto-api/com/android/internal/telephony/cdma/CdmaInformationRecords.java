@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cdma;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import static com.android.internal.telephony.RILConstants.*;
 import android.os.Parcel;
@@ -18,36 +18,36 @@ public final class CdmaInformationRecords {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.803 -0400", hash_original_method = "71E05E964ADC392142B0BD4E6150C714", hash_generated_method = "67DC27D169451BDCAB8C305F73417982")
     public  CdmaInformationRecords(Parcel p) {
         int id = p.readInt();
-        //Begin case RIL_CDMA_DISPLAY_INFO_REC RIL_CDMA_EXTENDED_DISPLAY_INFO_REC 
+        
         record  = new CdmaDisplayInfoRec(id, p.readString());
-        //End case RIL_CDMA_DISPLAY_INFO_REC RIL_CDMA_EXTENDED_DISPLAY_INFO_REC 
-        //Begin case RIL_CDMA_CALLED_PARTY_NUMBER_INFO_REC RIL_CDMA_CALLING_PARTY_NUMBER_INFO_REC RIL_CDMA_CONNECTED_NUMBER_INFO_REC 
+        
+        
         record = new CdmaNumberInfoRec(id, p.readString(), p.readInt(), p.readInt(),
                         p.readInt(), p.readInt());
-        //End case RIL_CDMA_CALLED_PARTY_NUMBER_INFO_REC RIL_CDMA_CALLING_PARTY_NUMBER_INFO_REC RIL_CDMA_CONNECTED_NUMBER_INFO_REC 
-        //Begin case RIL_CDMA_SIGNAL_INFO_REC 
+        
+        
         record = new CdmaSignalInfoRec(p.readInt(), p.readInt(), p.readInt(), p.readInt());
-        //End case RIL_CDMA_SIGNAL_INFO_REC 
-        //Begin case RIL_CDMA_REDIRECTING_NUMBER_INFO_REC 
+        
+        
         record = new CdmaRedirectingNumberInfoRec(p.readString(), p.readInt(), p.readInt(),
                         p.readInt(), p.readInt(), p.readInt());
-        //End case RIL_CDMA_REDIRECTING_NUMBER_INFO_REC 
-        //Begin case RIL_CDMA_LINE_CONTROL_INFO_REC 
+        
+        
         record = new CdmaLineControlInfoRec(p.readInt(), p.readInt(), p.readInt(),
                         p.readInt());
-        //End case RIL_CDMA_LINE_CONTROL_INFO_REC 
-        //Begin case RIL_CDMA_T53_CLIR_INFO_REC 
+        
+        
         record = new CdmaT53ClirInfoRec(p.readInt());
-        //End case RIL_CDMA_T53_CLIR_INFO_REC 
-        //Begin case RIL_CDMA_T53_AUDIO_CONTROL_INFO_REC 
+        
+        
         record = new CdmaT53AudioControlInfoRec(p.readInt(), p.readInt());
-        //End case RIL_CDMA_T53_AUDIO_CONTROL_INFO_REC 
-        //Begin case RIL_CDMA_T53_RELEASE_INFO_REC default 
+        
+        
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("RIL_UNSOL_CDMA_INFO_REC: unsupported record. Got "
                                             + CdmaInformationRecords.idToString(id) + " ");
-        //End case RIL_CDMA_T53_RELEASE_INFO_REC default 
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
+        
     }
 
     
@@ -85,7 +85,7 @@ public final class CdmaInformationRecords {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.803 -0400", hash_original_method = "65C1B1FAB01F8320C332C9AE75D3022E", hash_generated_method = "46E0D37F3F57B4E83750C7DDAE4663DA")
         public  CdmaSignalInfoRec() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -95,33 +95,33 @@ public final class CdmaInformationRecords {
             this.signalType = signalType;
             this.alertPitch = alertPitch;
             this.signal = signal;
-            // ---------- Original Method ----------
-            //this.isPresent = isPresent != 0;
-            //this.signalType = signalType;
-            //this.alertPitch = alertPitch;
-            //this.signal = signal;
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.804 -0400", hash_original_method = "7B06985E180C621ECAFE7B9C193EA068", hash_generated_method = "57F1341003D72387A42CE784E7622F5F")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1979362955 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1979362955 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1979362955 = "CdmaSignalInfo: {" +
                     " isPresent: " + isPresent +
                     ", signalType: " + signalType +
                     ", alertPitch: " + alertPitch +
                     ", signal: " + signal +
                     " }";
-            varB4EAC82CA7396A68D541C85D26508E83_1979362955.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1979362955.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1979362955;
-            // ---------- Original Method ----------
-            //return "CdmaSignalInfo: {" +
-                    //" isPresent: " + isPresent +
-                    //", signalType: " + signalType +
-                    //", alertPitch: " + alertPitch +
-                    //", signal: " + signal +
-                    //" }";
+            
+            
+                    
+                    
+                    
+                    
+                    
         }
 
         
@@ -141,27 +141,27 @@ public final class CdmaInformationRecords {
         public  CdmaDisplayInfoRec(int id, String alpha) {
             this.id = id;
             this.alpha = alpha;
-            // ---------- Original Method ----------
-            //this.id = id;
-            //this.alpha = alpha;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.805 -0400", hash_original_method = "CF7F6486CAA3B052EADF0380EBB958B2", hash_generated_method = "52B97B0844A1E2AD4183B99F048181F0")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1260715298 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1260715298 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1260715298 = "CdmaDisplayInfoRec: {" +
                     " id: " + CdmaInformationRecords.idToString(id) +
                     ", alpha: " + alpha +
                     " }";
-            varB4EAC82CA7396A68D541C85D26508E83_1260715298.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1260715298.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1260715298;
-            // ---------- Original Method ----------
-            //return "CdmaDisplayInfoRec: {" +
-                    //" id: " + CdmaInformationRecords.idToString(id) +
-                    //", alpha: " + alpha +
-                    //" }";
+            
+            
+                    
+                    
+                    
         }
 
         
@@ -198,19 +198,19 @@ public final class CdmaInformationRecords {
             this.pi = (byte)pi;
             this.si = (byte)si;
             addTaint(id);
-            // ---------- Original Method ----------
-            //this.number = number;
-            //this.numberType = (byte)numberType;
-            //this.numberPlan = (byte)numberPlan;
-            //this.pi = (byte)pi;
-            //this.si = (byte)si;
+            
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.807 -0400", hash_original_method = "AA45E08965936A74DE899E6F859B6FCB", hash_generated_method = "AA11BB75579C9F29D1964574468EB594")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_651027856 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_651027856 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_651027856 = "CdmaNumberInfoRec: {" +
                     " id: " + CdmaInformationRecords.idToString(id) +
                     ", number: " + number +
@@ -219,17 +219,17 @@ public final class CdmaInformationRecords {
                     ", pi: " + pi +
                     ", si: " + si +
                     " }";
-            varB4EAC82CA7396A68D541C85D26508E83_651027856.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_651027856.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_651027856;
-            // ---------- Original Method ----------
-            //return "CdmaNumberInfoRec: {" +
-                    //" id: " + CdmaInformationRecords.idToString(id) +
-                    //", number: " + number +
-                    //", numberType: " + numberType +
-                    //", numberPlan: " + numberPlan +
-                    //", pi: " + pi +
-                    //", si: " + si +
-                    //" }";
+            
+            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
         }
 
         
@@ -251,28 +251,28 @@ public final class CdmaInformationRecords {
             numberInfoRec = new CdmaNumberInfoRec(RIL_CDMA_REDIRECTING_NUMBER_INFO_REC,
                                                   number, numberType, numberPlan, pi, si);
             redirectingReason = reason;
-            // ---------- Original Method ----------
-            //numberInfoRec = new CdmaNumberInfoRec(RIL_CDMA_REDIRECTING_NUMBER_INFO_REC,
-                                                  //number, numberType, numberPlan, pi, si);
-            //redirectingReason = reason;
+            
+            
+                                                  
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.808 -0400", hash_original_method = "D87DB983AB005EF9C7C06219E3B89A0C", hash_generated_method = "591AE27EF66798841C84CF2BAB2C182A")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1083795861 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1083795861 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1083795861 = "CdmaNumberInfoRec: {" +
                     " numberInfoRec: " + numberInfoRec +
                     ", redirectingReason: " + redirectingReason +
                     " }";
-            varB4EAC82CA7396A68D541C85D26508E83_1083795861.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1083795861.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1083795861;
-            // ---------- Original Method ----------
-            //return "CdmaNumberInfoRec: {" +
-                    //" numberInfoRec: " + numberInfoRec +
-                    //", redirectingReason: " + redirectingReason +
-                    //" }";
+            
+            
+                    
+                    
+                    
         }
 
         
@@ -319,33 +319,33 @@ public final class CdmaInformationRecords {
             this.lineCtrlToggle = (byte)lineCtrlToggle;
             this.lineCtrlReverse = (byte)lineCtrlReverse;
             this.lineCtrlPowerDenial = (byte)lineCtrlPowerDenial;
-            // ---------- Original Method ----------
-            //this.lineCtrlPolarityIncluded = (byte)lineCtrlPolarityIncluded;
-            //this.lineCtrlToggle = (byte)lineCtrlToggle;
-            //this.lineCtrlReverse = (byte)lineCtrlReverse;
-            //this.lineCtrlPowerDenial = (byte)lineCtrlPowerDenial;
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.809 -0400", hash_original_method = "31B594EC48675C621293EE1C64F7F9A1", hash_generated_method = "CED380D55EB219B0C0B6E88CCFF22A2D")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_198476878 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_198476878 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_198476878 = "CdmaLineControlInfoRec: {" +
                     " lineCtrlPolarityIncluded: " + lineCtrlPolarityIncluded +
                     " lineCtrlToggle: " + lineCtrlToggle +
                     " lineCtrlReverse: " + lineCtrlReverse +
                     " lineCtrlPowerDenial: " + lineCtrlPowerDenial +
                     " }";
-            varB4EAC82CA7396A68D541C85D26508E83_198476878.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_198476878.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_198476878;
-            // ---------- Original Method ----------
-            //return "CdmaLineControlInfoRec: {" +
-                    //" lineCtrlPolarityIncluded: " + lineCtrlPolarityIncluded +
-                    //" lineCtrlToggle: " + lineCtrlToggle +
-                    //" lineCtrlReverse: " + lineCtrlReverse +
-                    //" lineCtrlPowerDenial: " + lineCtrlPowerDenial +
-                    //" }";
+            
+            
+                    
+                    
+                    
+                    
+                    
         }
 
         
@@ -361,24 +361,24 @@ public final class CdmaInformationRecords {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.810 -0400", hash_original_method = "7027858F3A41904E7AAC3077331910E1", hash_generated_method = "253A7471455B9175589BC749538D99AF")
         public  CdmaT53ClirInfoRec(int cause) {
             this.cause = (byte)cause;
-            // ---------- Original Method ----------
-            //this.cause = (byte)cause;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.810 -0400", hash_original_method = "74C570B6C9610C7A851D818E47741A96", hash_generated_method = "9F0F09B7E59D1A194CC3E00EEBEA33EF")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1814466525 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1814466525 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1814466525 = "CdmaT53ClirInfoRec: {" +
                     " cause: " + cause +
                     " }";
-            varB4EAC82CA7396A68D541C85D26508E83_1814466525.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1814466525.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1814466525;
-            // ---------- Original Method ----------
-            //return "CdmaT53ClirInfoRec: {" +
-                    //" cause: " + cause +
-                    //" }";
+            
+            
+                    
+                    
         }
 
         
@@ -398,27 +398,27 @@ public final class CdmaInformationRecords {
         public  CdmaT53AudioControlInfoRec(int uplink, int downlink) {
             this.uplink = (byte) uplink;
             this.downlink = (byte) downlink;
-            // ---------- Original Method ----------
-            //this.uplink = (byte) uplink;
-            //this.downlink = (byte) downlink;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.811 -0400", hash_original_method = "2D0051C7D271A045193565807D73F90A", hash_generated_method = "23D2C250A70DFBD3973D20736F99AB25")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_314312030 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_314312030 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_314312030 = "CdmaT53AudioControlInfoRec: {" +
                     " uplink: " + uplink +
                     " downlink: " + downlink +
                     " }";
-            varB4EAC82CA7396A68D541C85D26508E83_314312030.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_314312030.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_314312030;
-            // ---------- Original Method ----------
-            //return "CdmaT53AudioControlInfoRec: {" +
-                    //" uplink: " + uplink +
-                    //" downlink: " + downlink +
-                    //" }";
+            
+            
+                    
+                    
+                    
         }
 
         

@@ -1,11 +1,11 @@
 package org.apache.commons.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -15,10 +15,11 @@ public class HexDump {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.337 -0400", hash_original_method = "DD2FEACFBC451CD61B40E6EB3CDE5668", hash_generated_method = "2D5FB889EB2962854AC6D6EEEAC5CD2F")
     public  HexDump() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dump(byte[] data, long offset,
                             OutputStream stream, int index) throws IOException, ArrayIndexOutOfBoundsException,
             IllegalArgumentException {
@@ -62,6 +63,7 @@ public class HexDump {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static StringBuilder dump(StringBuilder _lbuffer, long value) {
         for (int j = 0; j < 8; j++) {
             _lbuffer
@@ -71,6 +73,7 @@ public class HexDump {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static StringBuilder dump(StringBuilder _cbuffer, byte value) {
         for (int j = 0; j < 2; j++) {
             _cbuffer.append(_hexcodes[value >> _shifts[j + 6] & 15]);

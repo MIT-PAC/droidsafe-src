@@ -1,11 +1,11 @@
 package gov.nist.core;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.net.*;
 
@@ -28,10 +28,10 @@ public class Host extends GenericObject {
         addressType = HOSTNAME;
         stripAddressScopeZones
             = Boolean.getBoolean("gov.nist.core.STRIP_ADDR_SCOPES");
-        // ---------- Original Method ----------
-        //addressType = HOSTNAME;
-        //stripAddressScopeZones
-            //= Boolean.getBoolean("gov.nist.core.STRIP_ADDR_SCOPES");
+        
+        
+        
+            
     }
 
     
@@ -42,12 +42,12 @@ public class Host extends GenericObject {
             = Boolean.getBoolean("gov.nist.core.STRIP_ADDR_SCOPES");
         setHost(hostName, IPV4ADDRESS);
         addTaint(hostName.getTaint());
-        // ---------- Original Method ----------
-        //if (hostName == null)
-            //throw new IllegalArgumentException("null host name");
-        //stripAddressScopeZones
-            //= Boolean.getBoolean("gov.nist.core.STRIP_ADDR_SCOPES");
-        //setHost(hostName, IPV4ADDRESS);
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -58,96 +58,100 @@ public class Host extends GenericObject {
         setHost(name, addrType);
         addTaint(name.getTaint());
         addTaint(addrType);
-        // ---------- Original Method ----------
-        //stripAddressScopeZones
-            //= Boolean.getBoolean("gov.nist.core.STRIP_ADDR_SCOPES");
-        //setHost(name, addrType);
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.454 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "1A6DCC834576C16CA6DB0E3762FEB28B")
     public String encode() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1744922568 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1744922568 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1744922568 = encode(new StringBuffer()).toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1744922568.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1744922568.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1744922568;
-        // ---------- Original Method ----------
-        //return encode(new StringBuffer()).toString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.454 -0400", hash_original_method = "5E49E67C5D7F1A51E2BA67DE70DCB03A", hash_generated_method = "26F8EF52AE7C2596B2E5EA465B689C8A")
     public StringBuffer encode(StringBuffer buffer) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1170340071 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_1170340071 = null; 
         {
             boolean varC42F861CC5187346BD2960ED9E9EAA83_1786680329 = (addressType == IPV6ADDRESS && !isIPv6Reference(hostname));
             {
                 buffer.append('[').append(hostname).append(']');
-            } //End block
+            } 
             {
                 buffer.append(hostname);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1170340071 = buffer;
         addTaint(buffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1170340071.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1170340071.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1170340071;
-        // ---------- Original Method ----------
-        //if (addressType == IPV6ADDRESS && !isIPv6Reference(hostname)) {
-            //buffer.append('[').append(hostname).append(']');
-        //} else {
-            //buffer.append(hostname);
-        //}
-        //return buffer;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.455 -0400", hash_original_method = "9C0AAF91E5C10F0884CC4B99F07D9A3D", hash_generated_method = "3FB1C1FFBCB3DDB08081D476D7CB413A")
     public boolean equals(Object obj) {
         {
             boolean varF430D99975F55787AA0688FDA94E30EC_472004228 = (!this.getClass().equals(obj.getClass()));
-        } //End collapsed parenthetic
+        } 
         Host otherHost = (Host) obj;
         boolean varA2609A8AC616E986006CB3180E3E58D7_1089846079 = (otherHost.hostname.equals(hostname));
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1172274361 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1172274361;
-        // ---------- Original Method ----------
-        //if ( obj == null ) return false;
-        //if (!this.getClass().equals(obj.getClass())) {
-            //return false;
-        //}
-        //Host otherHost = (Host) obj;
-        //return otherHost.hostname.equals(hostname);
+        
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.456 -0400", hash_original_method = "01D438C7CBE6320DFE75C4BCB8CCFBCD", hash_generated_method = "23BE554520BC05729536EA2F3947E1F7")
     public String getHostname() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1397215784 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1397215784 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1397215784 = hostname;
-        varB4EAC82CA7396A68D541C85D26508E83_1397215784.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1397215784.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1397215784;
-        // ---------- Original Method ----------
-        //return hostname;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.457 -0400", hash_original_method = "4A9CAFF1CF2BA97BC04195E67D0EDAE7", hash_generated_method = "62B541DCA4A703C28F547BFF50C91E6F")
     public String getAddress() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1126931659 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1126931659 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1126931659 = hostname;
-        varB4EAC82CA7396A68D541C85D26508E83_1126931659.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1126931659.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1126931659;
-        // ---------- Original Method ----------
-        //return hostname;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.459 -0400", hash_original_method = "217AB83550ED2E15188C82C367958B30", hash_generated_method = "CFCBA014A88695EDA31F92879FB22FD2")
     public String getIpAddress() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2058284331 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_2058905835 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_2058284331 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2058905835 = null; 
         String rawIpAddress = null;
         varB4EAC82CA7396A68D541C85D26508E83_2058284331 = null;
         {
@@ -155,64 +159,67 @@ public class Host extends GenericObject {
             {
                 inetAddress = InetAddress.getByName(hostname);
                 rawIpAddress = inetAddress.getHostAddress();
-            } //End block
+            } 
             catch (UnknownHostException ex)
             {
                 dbgPrint("Could not resolve hostname " + ex);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             rawIpAddress = hostname;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2058905835 = rawIpAddress;
-        String varA7E53CE21691AB073D9660D615818899_90723192; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_90723192; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_90723192 = varB4EAC82CA7396A68D541C85D26508E83_2058284331;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_90723192 = varB4EAC82CA7396A68D541C85D26508E83_2058905835;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_90723192.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_90723192.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_90723192;
-        // ---------- Original Method ----------
-        //String rawIpAddress = null;
-        //if (hostname == null)
-            //return null;
-        //if (addressType == HOSTNAME) {
-            //try {
-                //if (inetAddress == null)
-                    //inetAddress = InetAddress.getByName(hostname);
-                //rawIpAddress = inetAddress.getHostAddress();
-            //} catch (UnknownHostException ex) {
-                //dbgPrint("Could not resolve hostname " + ex);
-            //}
-        //} else {
-            //rawIpAddress = hostname;
-        //}
-        //return rawIpAddress;
+        
+        
+        
+            
+        
+            
+                
+                    
+                
+            
+                
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.460 -0400", hash_original_method = "034E33BB1D9418D32D19E4F440D283F7", hash_generated_method = "CB6A117406F83D1214E324F6D778CB2D")
     public void setHostname(String h) {
         setHost(h, HOSTNAME);
         addTaint(h.getTaint());
-        // ---------- Original Method ----------
-        //setHost(h, HOSTNAME);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.462 -0400", hash_original_method = "FD1F209D65B716B09B8932A7E5ED8BB4", hash_generated_method = "BDBF4DC141FEBFC55C51CE5D4CA69539")
     public void setHostAddress(String address) {
         setHost(address, IPV4ADDRESS);
         addTaint(address.getTaint());
-        // ---------- Original Method ----------
-        //setHost(address, IPV4ADDRESS);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.464 -0400", hash_original_method = "B4E9CFE10688A14DAC1625E8CC87AC41", hash_generated_method = "A8D4533D5E127302A171265D5DA1BA5A")
     private void setHost(String host, int type) {
         inetAddress = null;
@@ -220,7 +227,7 @@ public class Host extends GenericObject {
             boolean var0347F48FF606A14005C4A51713FA20DF_1105527606 = (isIPv6Address(host));
             addressType = IPV6ADDRESS;
             addressType = type;
-        } //End collapsed parenthetic
+        } 
         {
             hostname = host.trim();
             hostname = hostname.toLowerCase();
@@ -231,35 +238,36 @@ public class Host extends GenericObject {
                 && (zoneStart = hostname.indexOf('%'))!= -1);
                 {
                     hostname = hostname.substring(0, zoneStart);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //inetAddress = null;
-        //if (isIPv6Address(host))
-            //addressType = IPV6ADDRESS;
-        //else
-            //addressType = type;
-        //if (host != null){
-            //hostname = host.trim();
-            //if(addressType == HOSTNAME)
-                //hostname = hostname.toLowerCase();
-            //int zoneStart = -1;
-            //if(addressType == IPV6ADDRESS
-                //&& stripAddressScopeZones
-                //&& (zoneStart = hostname.indexOf('%'))!= -1){
-                //hostname = hostname.substring(0, zoneStart);
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+        
+            
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.465 -0400", hash_original_method = "40D2051A869C7630B2CBDEFFB67D40A0", hash_generated_method = "95F285FF94B19712D454B3DAD90AD537")
     public void setAddress(String address) {
         this.setHostAddress(address);
         addTaint(address.getTaint());
-        // ---------- Original Method ----------
-        //this.setHostAddress(address);
+        
+        
     }
 
     
@@ -267,8 +275,8 @@ public class Host extends GenericObject {
     public boolean isHostname() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_718856582 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_718856582;
-        // ---------- Original Method ----------
-        //return addressType == HOSTNAME;
+        
+        
     }
 
     
@@ -276,69 +284,73 @@ public class Host extends GenericObject {
     public boolean isIPAddress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1448127924 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1448127924;
-        // ---------- Original Method ----------
-        //return addressType != HOSTNAME;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.468 -0400", hash_original_method = "0FE7E7513DCC8527F5BCCDE13498B6DC", hash_generated_method = "1964C90A48907751D155BF5A9C78F409")
     public InetAddress getInetAddress() throws java.net.UnknownHostException {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_80589571 = null; //Variable for return #1
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_317199387 = null; //Variable for return #2
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_655108227 = null; //Variable for return #3
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_80589571 = null; 
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_317199387 = null; 
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_655108227 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_80589571 = null;
         varB4EAC82CA7396A68D541C85D26508E83_317199387 = inetAddress;
         inetAddress = InetAddress.getByName(hostname);
         varB4EAC82CA7396A68D541C85D26508E83_655108227 = inetAddress;
-        InetAddress varA7E53CE21691AB073D9660D615818899_681835297; //Final return value
+        InetAddress varA7E53CE21691AB073D9660D615818899_681835297; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_681835297 = varB4EAC82CA7396A68D541C85D26508E83_80589571;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_681835297 = varB4EAC82CA7396A68D541C85D26508E83_317199387;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_681835297 = varB4EAC82CA7396A68D541C85D26508E83_655108227;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_681835297.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_681835297.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_681835297;
-        // ---------- Original Method ----------
-        //if (hostname == null)
-            //return null;
-        //if (inetAddress != null)
-            //return inetAddress;
-        //inetAddress = InetAddress.getByName(hostname);
-        //return inetAddress;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.468 -0400", hash_original_method = "22A9CB4332482AECEE114125E6F63C27", hash_generated_method = "D7277A740A1A52CF25B3D798BF41CD43")
     private boolean isIPv6Address(String address) {
         boolean varDA2F3B3113CA9DF23C9D794B020BA074_308019154 = ((address != null && address.indexOf(':') != -1));
         addTaint(address.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_184045180 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_184045180;
-        // ---------- Original Method ----------
-        //return (address != null && address.indexOf(':') != -1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isIPv6Reference(String address) {
         return address.charAt(0) == '['
             && address.charAt(address.length() - 1) == ']';
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.469 -0400", hash_original_method = "0C8DED4D9F69E994518D3B4A84463600", hash_generated_method = "D469139E929175005725DE6746378783")
     @Override
     public int hashCode() {
         int var84D187FFCA49AC864F6DAE98B5BBEA7E_1460595246 = (this.getHostname().hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1999600940 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1999600940;
-        // ---------- Original Method ----------
-        //return this.getHostname().hashCode();
+        
+        
     }
 
     

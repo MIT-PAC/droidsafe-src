@@ -1,11 +1,11 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,9 +28,9 @@ public class SpnOverride {
       SpnOverride() {
         CarrierSpnMap = new HashMap<String, String>();
         loadSpnOverrides();
-        // ---------- Original Method ----------
-        //CarrierSpnMap = new HashMap<String, String>();
-        //loadSpnOverrides();
+        
+        
+        
     }
 
     
@@ -40,20 +40,20 @@ public class SpnOverride {
         addTaint(carrier.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1920528651 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1920528651;
-        // ---------- Original Method ----------
-        //return CarrierSpnMap.containsKey(carrier);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.830 -0400", hash_original_method = "DEBF8ECBE1690451B3CAF7E732385AF7", hash_generated_method = "6E786F06E40A2833C498495321611ABF")
      String getSpn(String carrier) {
-        String varB4EAC82CA7396A68D541C85D26508E83_255296767 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_255296767 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_255296767 = CarrierSpnMap.get(carrier);
         addTaint(carrier.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_255296767.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_255296767.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_255296767;
-        // ---------- Original Method ----------
-        //return CarrierSpnMap.get(carrier);
+        
+        
     }
 
     
@@ -65,7 +65,7 @@ public class SpnOverride {
         try 
         {
             spnReader = new FileReader(spnFile);
-        } //End block
+        } 
         catch (FileNotFoundException e)
         { return;}
         try 
@@ -78,18 +78,18 @@ public class SpnOverride {
                 String name = parser.getName();
                 {
                     boolean varA14E9DACD961E914DC53CB3D797ACBE7_1925037687 = (!"spnOverride".equals(name));
-                } //End collapsed parenthetic
+                } 
                 String numeric = parser.getAttributeValue(null, "numeric");
                 String data = parser.getAttributeValue(null, "spn");
                 CarrierSpnMap.put(numeric, data);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (XmlPullParserException e)
         { }
         catch (IOException e)
         { }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

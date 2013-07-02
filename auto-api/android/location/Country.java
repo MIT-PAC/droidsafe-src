@@ -1,11 +1,11 @@
 package android.location;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -26,16 +26,16 @@ public class Country implements Parcelable {
     public  Country(final String countryIso, final int source) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         mCountryIso = countryIso.toUpperCase(Locale.US);
         mSource = source;
-        // ---------- Original Method ----------
-        //if (countryIso == null || source < COUNTRY_SOURCE_NETWORK
-                //|| source > COUNTRY_SOURCE_LOCALE) {
-            //throw new IllegalArgumentException();
-        //}
-        //mCountryIso = countryIso.toUpperCase(Locale.US);
-        //mSource = source;
+        
+        
+                
+            
+        
+        
+        
     }
 
     
@@ -43,20 +43,20 @@ public class Country implements Parcelable {
     public  Country(Country country) {
         mCountryIso = country.mCountryIso;
         mSource = country.mSource;
-        // ---------- Original Method ----------
-        //mCountryIso = country.mCountryIso;
-        //mSource = country.mSource;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.110 -0400", hash_original_method = "5F3223376651F8BE6A8AF3345618A060", hash_generated_method = "C15558D19831258D2B1AA150694A49B7")
     public final String getCountryIso() {
-        String varB4EAC82CA7396A68D541C85D26508E83_353682618 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_353682618 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_353682618 = mCountryIso;
-        varB4EAC82CA7396A68D541C85D26508E83_353682618.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_353682618.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_353682618;
-        // ---------- Original Method ----------
-        //return mCountryIso;
+        
+        
     }
 
     
@@ -64,8 +64,8 @@ public class Country implements Parcelable {
     public final int getSource() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_908227077 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_908227077;
-        // ---------- Original Method ----------
-        //return mSource;
+        
+        
     }
 
     
@@ -73,48 +73,51 @@ public class Country implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1348339501 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1348339501;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.111 -0400", hash_original_method = "FCA327E6B3FDBBC7798ED2309FF9DDE2", hash_generated_method = "9B95CF37261D750B9974AD81E9274708")
     public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeString(mCountryIso);
         parcel.writeInt(mSource);
         addTaint(parcel.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //parcel.writeString(mCountryIso);
-        //parcel.writeInt(mSource);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.112 -0400", hash_original_method = "A4E8BAE44F340138225E9939A030C872", hash_generated_method = "53BE73A4783D305989CF3FC66C7AB8F1")
     @Override
     public boolean equals(Object object) {
         {
             boolean var3F549205D4C262003697A031F89E5954_985483022 = (object == this);
-        } //End collapsed parenthetic
+        } 
         {
             Country c = (Country) object;
             boolean var5D7043958EF95E0F56528FF7D9B5EEB9_1889916921 = (mCountryIso.equals(c.getCountryIso()) && mSource == c.getSource());
-        } //End block
+        } 
         addTaint(object.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_424647447 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_424647447;
-        // ---------- Original Method ----------
-        //if (object == this) {
-            //return true;
-        //}
-        //if (object instanceof Country) {
-            //Country c = (Country) object;
-            //return mCountryIso.equals(c.getCountryIso()) && mSource == c.getSource();
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.113 -0400", hash_original_method = "B421DD13AECD8D681C930C2BD9632735", hash_generated_method = "9FDCDBC44DA72B52F219071A8FEFE0EE")
     @Override
     public int hashCode() {
@@ -124,29 +127,30 @@ public class Country implements Parcelable {
             hash = hash * 13 + mCountryIso.hashCode();
             hash = hash * 13 + mSource;
             mHashCode = hash;
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479218057 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479218057;
-        // ---------- Original Method ----------
-        //int hash = mHashCode;
-        //if (hash == 0) {
-            //hash = 17;
-            //hash = hash * 13 + mCountryIso.hashCode();
-            //hash = hash * 13 + mSource;
-            //mHashCode = hash;
-        //}
-        //return mHashCode;
+        
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.113 -0400", hash_original_method = "1D459D842605CA34811091FC29FDA2D4", hash_generated_method = "E00933D671352B04EE8D185579C4B2C9")
     public boolean equalsIgnoreSource(Country country) {
         boolean varD619BC2A0E08DE4307B63AC091555062_685534996 = (country != null && mCountryIso.equals(country.getCountryIso()));
         addTaint(country.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1428544805 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1428544805;
-        // ---------- Original Method ----------
-        //return country != null && mCountryIso.equals(country.getCountryIso());
+        
+        
     }
 
     
@@ -173,12 +177,12 @@ public class Country implements Parcelable {
             return new Country[size];
         }
     };
-    // orphaned legacy method
+    
     public Country createFromParcel(Parcel in) {
             return new Country(in.readString(), in.readInt());
         }
     
-    // orphaned legacy method
+    
     public Country[] newArray(int size) {
             return new Country[size];
         }

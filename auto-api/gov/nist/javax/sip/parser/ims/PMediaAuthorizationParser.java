@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.ParseException;
 import javax.sip.InvalidArgumentException;
@@ -24,7 +24,7 @@ public class PMediaAuthorizationParser extends HeaderParser implements TokenType
     public  PMediaAuthorizationParser(String mediaAuthorization) {
         super(mediaAuthorization);
         addTaint(mediaAuthorization.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,13 +32,14 @@ public class PMediaAuthorizationParser extends HeaderParser implements TokenType
     public  PMediaAuthorizationParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.154 -0400", hash_original_method = "C50B4E6383FAF29D7342642FAF098C0C", hash_generated_method = "33684F9DF6CFF754B66F5E3EA80FF9E9")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1990667297 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1990667297 = null; 
         PMediaAuthorizationList mediaAuthorizationList = new PMediaAuthorizationList();
         dbg_enter("MediaAuthorizationParser.parse");
         try 
@@ -54,11 +55,11 @@ public class PMediaAuthorizationParser extends HeaderParser implements TokenType
                     try 
                     {
                         mediaAuthorization.setMediaAuthorizationToken(token.getTokenValue());
-                    } //End block
+                    } 
                     catch (InvalidArgumentException e)
                     {
                         if (DroidSafeAndroidRuntime.control) throw createParseException(e.getMessage());
-                    } //End block
+                    } 
                     mediaAuthorizationList.add(mediaAuthorization);
                     this.lexer.SPorHT();
                     {
@@ -66,21 +67,21 @@ public class PMediaAuthorizationParser extends HeaderParser implements TokenType
                         {
                             this.lexer.match(',');
                             mediaAuthorization = new PMediaAuthorization();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     this.lexer.SPorHT();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1990667297 = mediaAuthorizationList;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("MediaAuthorizationParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1990667297.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1990667297.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1990667297;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

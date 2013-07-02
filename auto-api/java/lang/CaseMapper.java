@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Locale;
 import libcore.icu.ICU;
@@ -14,10 +14,11 @@ class CaseMapper {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.404 -0400", hash_original_method = "8FD2C0B10363E6DF4E4A890BB3EDCD79", hash_generated_method = "D0D9B1F1B12C1017900AA1743826FCC0")
     private  CaseMapper() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toLowerCase(Locale locale, String s, char[] value, int offset, int count) {
         String languageCode = locale.getLanguage();
         if (languageCode.equals("tr") || languageCode.equals("az") || languageCode.equals("lt")) {
@@ -48,6 +49,7 @@ class CaseMapper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean isFinalSigma(char[] value, int offset, int count, int index) {
         if (index <= offset) {
             return false;
@@ -100,6 +102,7 @@ class CaseMapper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toUpperCase(Locale locale, String s, char[] value, int offset, int count) {
         String languageCode = locale.getLanguage();
         if (languageCode.equals("tr") || languageCode.equals("az") || languageCode.equals("lt")) {

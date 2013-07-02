@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cdma;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.telephony.CommandException;
 import com.android.internal.telephony.CommandsInterface;
@@ -168,13 +168,13 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.329 -0400", hash_original_method = "6B8D04F75A24E09E038AB230F1FA031E", hash_generated_method = "172CE0A53ECBD305539544F2E56D2E30")
         @Override
         public void onChange(boolean selfChange) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             log("Auto time state changed");
             revertToNitzTime();
             addTaint(selfChange);
-            // ---------- Original Method ----------
-            //if (DBG) log("Auto time state changed");
-            //revertToNitzTime();
+            
+            
+            
         }
 
         
@@ -185,13 +185,13 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.330 -0400", hash_original_method = "8FD17110C48D1CBE2477FC41B8E67E94", hash_generated_method = "937331EFFBE00AA83A94C8B5D850F5AD")
         @Override
         public void onChange(boolean selfChange) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             log("Auto time zone state changed");
             revertToNitzTimeZone();
             addTaint(selfChange);
-            // ---------- Original Method ----------
-            //if (DBG) log("Auto time zone state changed");
-            //revertToNitzTimeZone();
+            
+            
+            
         }
 
         
@@ -229,11 +229,12 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
             mAutoTimeZoneObserver);
         setSignalStrengthDefaultValues();
         mNeedToRegForRuimLoaded = true;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.331 -0400", hash_original_method = "4D5D490C37798965D77553069E20CD07", hash_generated_method = "2493853BE4052E2639ABC612314A5661")
     public void dispose() {
         cm.unregisterForAvailable(this);
@@ -248,136 +249,140 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
         cm.unSetOnNITZTime(this);
         cr.unregisterContentObserver(mAutoTimeObserver);
         cr.unregisterContentObserver(mAutoTimeZoneObserver);
-        // ---------- Original Method ----------
-        //cm.unregisterForAvailable(this);
-        //cm.unregisterForRadioStateChanged(this);
-        //cm.unregisterForVoiceNetworkStateChanged(this);
-        //cm.unregisterForRUIMReady(this);
-        //cm.unregisterForNVReady(this);
-        //cm.unregisterForCdmaOtaProvision(this);
-        //phone.unregisterForEriFileLoaded(this);
-        //phone.mIccRecords.unregisterForRecordsLoaded(this);
-        //cm.unSetOnSignalStrengthUpdate(this);
-        //cm.unSetOnNITZTime(this);
-        //cr.unregisterContentObserver(mAutoTimeObserver);
-        //cr.unregisterContentObserver(mAutoTimeZoneObserver);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.331 -0400", hash_original_method = "BA9FDB49D0B6CB52D4E369B5C2B6B17A", hash_generated_method = "C9E7FAAD0D714F705898C9CAA8F5C6C2")
     @Override
     protected void finalize() {
         log("CdmaServiceStateTracker finalized");
-        // ---------- Original Method ----------
-        //if (DBG) log("CdmaServiceStateTracker finalized");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.331 -0400", hash_original_method = "70290EDA16C74DFE014583BB384DB8B5", hash_generated_method = "7C8540ABFE3E7C046CA55F1E7FE71856")
     public void registerForSubscriptionInfoReady(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         Registrant r = new Registrant(h, what, obj);
         cdmaForSubscriptionInfoReadyRegistrants.add(r);
         {
             boolean varE32EA0BBDD6B91C9D19F50A2B5A8A1E3_379565108 = (isMinInfoReady());
             {
                 r.notifyRegistrant();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(h.getTaint());
         addTaint(what);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //Registrant r = new Registrant(h, what, obj);
-        //cdmaForSubscriptionInfoReadyRegistrants.add(r);
-        //if (isMinInfoReady()) {
-            //r.notifyRegistrant();
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.332 -0400", hash_original_method = "19125607721EAC24124C4D5516B60F75", hash_generated_method = "F3352F927858508B726C27C8F8D97BBA")
     public void unregisterForSubscriptionInfoReady(Handler h) {
         cdmaForSubscriptionInfoReadyRegistrants.remove(h);
         addTaint(h.getTaint());
-        // ---------- Original Method ----------
-        //cdmaForSubscriptionInfoReadyRegistrants.remove(h);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.334 -0400", hash_original_method = "754E8D2400977D5A28AAECFFE4ABD510", hash_generated_method = "67DD4B7A5D3B1E83AEC07FC88994FDE5")
     @Override
     public void handleMessage(Message msg) {
         AsyncResult ar;
         int[] ints;
         String[] strings;
-        //Begin case EVENT_RADIO_AVAILABLE 
+        
         log("handleMessage: EVENT_RADIO_AVAILABLE");
-        //End case EVENT_RADIO_AVAILABLE 
-        //Begin case EVENT_RUIM_READY 
+        
+        
         isSubscriptionFromRuim = true;
-        //End case EVENT_RUIM_READY 
-        //Begin case EVENT_RUIM_READY 
+        
+        
         {
             phone.mIccRecords.registerForRecordsLoaded(this,
                         EVENT_RUIM_RECORDS_LOADED, null);
             mNeedToRegForRuimLoaded = false;
-        } //End block
-        //End case EVENT_RUIM_READY 
-        //Begin case EVENT_RUIM_READY 
+        } 
+        
+        
         cm.getCDMASubscription(obtainMessage(EVENT_POLL_STATE_CDMA_SUBSCRIPTION));
-        //End case EVENT_RUIM_READY 
-        //Begin case EVENT_RUIM_READY 
+        
+        
         log("handleMessage: EVENT_RUIM_READY, Send Request getCDMASubscription.");
-        //End case EVENT_RUIM_READY 
-        //Begin case EVENT_RUIM_READY 
+        
+        
         pollState();
-        //End case EVENT_RUIM_READY 
-        //Begin case EVENT_RUIM_READY 
+        
+        
         queueNextSignalStrengthPoll();
-        //End case EVENT_RUIM_READY 
-        //Begin case EVENT_NV_READY 
+        
+        
         isSubscriptionFromRuim = false;
-        //End case EVENT_NV_READY 
-        //Begin case EVENT_NV_READY 
+        
+        
         log("handleMessage: EVENT_NV_READY, Send Request getCDMASubscription.");
-        //End case EVENT_NV_READY 
-        //Begin case EVENT_NV_READY 
+        
+        
         cm.getCDMASubscription( obtainMessage(EVENT_POLL_STATE_CDMA_SUBSCRIPTION));
-        //End case EVENT_NV_READY 
-        //Begin case EVENT_NV_READY 
+        
+        
         pollState();
-        //End case EVENT_NV_READY 
-        //Begin case EVENT_NV_READY 
+        
+        
         queueNextSignalStrengthPoll();
-        //End case EVENT_NV_READY 
-        //Begin case EVENT_RADIO_STATE_CHANGED 
+        
+        
         setPowerStateToDesired();
-        //End case EVENT_RADIO_STATE_CHANGED 
-        //Begin case EVENT_RADIO_STATE_CHANGED 
+        
+        
         pollState();
-        //End case EVENT_RADIO_STATE_CHANGED 
-        //Begin case EVENT_NETWORK_STATE_CHANGED_CDMA 
+        
+        
         pollState();
-        //End case EVENT_NETWORK_STATE_CHANGED_CDMA 
-        //Begin case EVENT_GET_SIGNAL_STRENGTH 
+        
+        
         {
             boolean var526F1BDDC71532C049873C5302565E55_885355343 = (!(cm.getRadioState().isOn()) || (cm.getRadioState().isGsm()));
-        } //End collapsed parenthetic
-        //End case EVENT_GET_SIGNAL_STRENGTH 
-        //Begin case EVENT_GET_SIGNAL_STRENGTH 
+        } 
+        
+        
         ar = (AsyncResult) msg.obj;
-        //End case EVENT_GET_SIGNAL_STRENGTH 
-        //Begin case EVENT_GET_SIGNAL_STRENGTH 
+        
+        
         onSignalStrengthResult(ar);
-        //End case EVENT_GET_SIGNAL_STRENGTH 
-        //Begin case EVENT_GET_SIGNAL_STRENGTH 
+        
+        
         queueNextSignalStrengthPoll();
-        //End case EVENT_GET_SIGNAL_STRENGTH 
-        //Begin case EVENT_GET_LOC_DONE_CDMA 
+        
+        
         ar = (AsyncResult) msg.obj;
-        //End case EVENT_GET_LOC_DONE_CDMA 
-        //Begin case EVENT_GET_LOC_DONE_CDMA 
+        
+        
         {
             String states[] = (String[])ar.result;
             int baseStationId = -1;
@@ -390,47 +395,47 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                 {
                     {
                         baseStationId = Integer.parseInt(states[4]);
-                    } //End block
+                    } 
                     {
                         baseStationLatitude = Integer.parseInt(states[5]);
-                    } //End block
+                    } 
                     {
                         baseStationLongitude = Integer.parseInt(states[6]);
-                    } //End block
+                    } 
                     {
                         baseStationLatitude  = CdmaCellLocation.INVALID_LAT_LONG;
                         baseStationLongitude = CdmaCellLocation.INVALID_LAT_LONG;
-                    } //End block
+                    } 
                     {
                         systemId = Integer.parseInt(states[8]);
-                    } //End block
+                    } 
                     {
                         networkId = Integer.parseInt(states[9]);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (NumberFormatException ex)
                 {
                     loge("error parsing cell location data: " + ex);
-                } //End block
-            } //End block
+                } 
+            } 
             cellLoc.setCellLocationData(baseStationId, baseStationLatitude,
                         baseStationLongitude, systemId, networkId);
             phone.notifyLocationChanged();
-        } //End block
-        //End case EVENT_GET_LOC_DONE_CDMA 
-        //Begin case EVENT_GET_LOC_DONE_CDMA 
+        } 
+        
+        
         disableSingleLocationUpdate();
-        //End case EVENT_GET_LOC_DONE_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA EVENT_POLL_STATE_OPERATOR_CDMA 
+        
+        
         ar = (AsyncResult) msg.obj;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA EVENT_POLL_STATE_OPERATOR_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA EVENT_POLL_STATE_OPERATOR_CDMA 
+        
+        
         handlePollStateResult(msg.what, ar);
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA EVENT_POLL_STATE_OPERATOR_CDMA 
-        //Begin case EVENT_POLL_STATE_CDMA_SUBSCRIPTION 
+        
+        
         ar = (AsyncResult) msg.obj;
-        //End case EVENT_POLL_STATE_CDMA_SUBSCRIPTION 
-        //Begin case EVENT_POLL_STATE_CDMA_SUBSCRIPTION 
+        
+        
         {
             String cdmaSubscription[] = (String[])ar.result;
             {
@@ -443,78 +448,79 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                 updateOtaspState();
                 phone.getIccCard().broadcastIccStateChangedIntent(IccCard.INTENT_VALUE_ICC_IMSI,
                             null);
-            } //End block
+            } 
             {
                 {
                     log("GET_CDMA_SUBSCRIPTION: error parsing cdmaSubscription params num="
                             + cdmaSubscription.length);
-                } //End block
-            } //End block
-        } //End block
-        //End case EVENT_POLL_STATE_CDMA_SUBSCRIPTION 
-        //Begin case EVENT_POLL_SIGNAL_STRENGTH 
+                } 
+            } 
+        } 
+        
+        
         cm.getSignalStrength(obtainMessage(EVENT_GET_SIGNAL_STRENGTH));
-        //End case EVENT_POLL_SIGNAL_STRENGTH 
-        //Begin case EVENT_NITZ_TIME 
+        
+        
         ar = (AsyncResult) msg.obj;
-        //End case EVENT_NITZ_TIME 
-        //Begin case EVENT_NITZ_TIME 
+        
+        
         String nitzString = (String)((Object[])ar.result)[0];
-        //End case EVENT_NITZ_TIME 
-        //Begin case EVENT_NITZ_TIME 
+        
+        
         long nitzReceiveTime = ((Long)((Object[])ar.result)[1]).longValue();
-        //End case EVENT_NITZ_TIME 
-        //Begin case EVENT_NITZ_TIME 
+        
+        
         setTimeFromNITZString(nitzString, nitzReceiveTime);
-        //End case EVENT_NITZ_TIME 
-        //Begin case EVENT_SIGNAL_STRENGTH_UPDATE 
+        
+        
         ar = (AsyncResult) msg.obj;
-        //End case EVENT_SIGNAL_STRENGTH_UPDATE 
-        //Begin case EVENT_SIGNAL_STRENGTH_UPDATE 
+        
+        
         dontPollSignalStrength = true;
-        //End case EVENT_SIGNAL_STRENGTH_UPDATE 
-        //Begin case EVENT_SIGNAL_STRENGTH_UPDATE 
+        
+        
         onSignalStrengthResult(ar);
-        //End case EVENT_SIGNAL_STRENGTH_UPDATE 
-        //Begin case EVENT_RUIM_RECORDS_LOADED 
+        
+        
         updateSpnDisplay();
-        //End case EVENT_RUIM_RECORDS_LOADED 
-        //Begin case EVENT_LOCATION_UPDATES_ENABLED 
+        
+        
         ar = (AsyncResult) msg.obj;
-        //End case EVENT_LOCATION_UPDATES_ENABLED 
-        //Begin case EVENT_LOCATION_UPDATES_ENABLED 
+        
+        
         {
             cm.getVoiceRegistrationState(obtainMessage(EVENT_GET_LOC_DONE_CDMA, null));
-        } //End block
-        //End case EVENT_LOCATION_UPDATES_ENABLED 
-        //Begin case EVENT_ERI_FILE_LOADED 
+        } 
+        
+        
         log("[CdmaServiceStateTracker] ERI file has been loaded, repolling.");
-        //End case EVENT_ERI_FILE_LOADED 
-        //Begin case EVENT_ERI_FILE_LOADED 
+        
+        
         pollState();
-        //End case EVENT_ERI_FILE_LOADED 
-        //Begin case EVENT_OTA_PROVISION_STATUS_CHANGE 
+        
+        
         ar = (AsyncResult)msg.obj;
-        //End case EVENT_OTA_PROVISION_STATUS_CHANGE 
-        //Begin case EVENT_OTA_PROVISION_STATUS_CHANGE 
+        
+        
         {
             ints = (int[]) ar.result;
             int otaStatus = ints[0];
             {
                 log("EVENT_OTA_PROVISION_STATUS_CHANGE: Complete, Reload MDN");
                 cm.getCDMASubscription( obtainMessage(EVENT_POLL_STATE_CDMA_SUBSCRIPTION));
-            } //End block
-        } //End block
-        //End case EVENT_OTA_PROVISION_STATUS_CHANGE 
-        //Begin case default 
+            } 
+        } 
+        
+        
         super.handleMessage(msg);
-        //End case default 
+        
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.335 -0400", hash_original_method = "BC2E3346E1E8D048BB892FC104E776BC", hash_generated_method = "8C4B2B119010790F73ABDBA86F8A9748")
     @Override
     protected void setPowerStateToDesired() {
@@ -523,26 +529,27 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
             && cm.getRadioState() == CommandsInterface.RadioState.RADIO_OFF);
             {
                 cm.setRadioPower(true, null);
-            } //End block
+            } 
             {
                 boolean var9EF9CD1D5966856073F2A7E801160763_53952544 = (!mDesiredPowerState && cm.getRadioState().isOn());
                 {
                     DataConnectionTracker dcTracker = phone.mDataConnectionTracker;
                     powerOffRadioSafely(dcTracker);
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (mDesiredPowerState
-            //&& cm.getRadioState() == CommandsInterface.RadioState.RADIO_OFF) {
-            //cm.setRadioPower(true, null);
-        //} else if (!mDesiredPowerState && cm.getRadioState().isOn()) {
-            //DataConnectionTracker dcTracker = phone.mDataConnectionTracker;
-            //powerOffRadioSafely(dcTracker);
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.335 -0400", hash_original_method = "BDCA4E41D3AB74048D93171255E149A7", hash_generated_method = "9AE83399D19EEE1D735B7BC38DDE559A")
     @Override
     protected void updateSpnDisplay() {
@@ -554,7 +561,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                 {
                     log(String.format("updateSpnDisplay: changed sending intent" +
                             " showPlmn='%b' plmn='%s'", showPlmn, plmn));
-                } //End block
+                } 
                 Intent intent = new Intent(Intents.SPN_STRINGS_UPDATED_ACTION);
                 intent.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
                 intent.putExtra(Intents.EXTRA_SHOW_SPN, false);
@@ -562,189 +569,191 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                 intent.putExtra(Intents.EXTRA_SHOW_PLMN, showPlmn);
                 intent.putExtra(Intents.EXTRA_PLMN, plmn);
                 phone.getContext().sendStickyBroadcast(intent);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mCurPlmn = plmn;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.336 -0400", hash_original_method = "A0DE0F5E4F4D4787509D60C270D17835", hash_generated_method = "284CA33FA4D8508586DB084A046F5842")
     @Override
     protected Phone getPhone() {
-        Phone varB4EAC82CA7396A68D541C85D26508E83_1402735462 = null; //Variable for return #1
+        Phone varB4EAC82CA7396A68D541C85D26508E83_1402735462 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1402735462 = phone;
-        varB4EAC82CA7396A68D541C85D26508E83_1402735462.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1402735462.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1402735462;
-        // ---------- Original Method ----------
-        //return phone;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.336 -0400", hash_original_method = "E924685B280F7636BB1194CB1DB8B328", hash_generated_method = "F22C14614B1CFF5C8AFC818FD3CB961A")
     protected void setCdmaTechnology(int radioTechnology) {
         mNewDataConnectionState = radioTechnologyToDataServiceState(radioTechnology);
         newSS.setRadioTechnology(radioTechnology);
         newNetworkType = radioTechnology;
-        // ---------- Original Method ----------
-        //mNewDataConnectionState = radioTechnologyToDataServiceState(radioTechnology);
-        //newSS.setRadioTechnology(radioTechnology);
-        //newNetworkType = radioTechnology;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.338 -0400", hash_original_method = "BE829AA0C3B19F93CC8F98530D925AC3", hash_generated_method = "D8CB02D6B82F0A060AFD56E29DD80115")
     protected void handlePollStateResultMessage(int what, AsyncResult ar) {
         int ints[];
         String states[];
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
         states = (String[])ar.result;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         int registrationState = 4;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         int radioTechnology = -1;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         int baseStationId = -1;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         int baseStationLatitude = CdmaCellLocation.INVALID_LAT_LONG;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         int baseStationLongitude = CdmaCellLocation.INVALID_LAT_LONG;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         int cssIndicator = 0;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         int systemId = 0;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         int networkId = 0;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         int roamingIndicator = -1;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         int systemIsInPrl = 0;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         int defaultRoamingIndicator = 0;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         int reasonForDenial = 0;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         {
             try 
             {
                 {
                     registrationState = Integer.parseInt(states[0]);
-                } //End block
+                } 
                 {
                     radioTechnology = Integer.parseInt(states[3]);
-                } //End block
+                } 
                 {
                     baseStationId = Integer.parseInt(states[4]);
-                } //End block
+                } 
                 {
                     baseStationLatitude = Integer.parseInt(states[5]);
-                } //End block
+                } 
                 {
                     baseStationLongitude = Integer.parseInt(states[6]);
-                } //End block
+                } 
                 {
                     baseStationLatitude  = CdmaCellLocation.INVALID_LAT_LONG;
                     baseStationLongitude = CdmaCellLocation.INVALID_LAT_LONG;
-                } //End block
+                } 
                 {
                     cssIndicator = Integer.parseInt(states[7]);
-                } //End block
+                } 
                 {
                     systemId = Integer.parseInt(states[8]);
-                } //End block
+                } 
                 {
                     networkId = Integer.parseInt(states[9]);
-                } //End block
+                } 
                 {
                     roamingIndicator = Integer.parseInt(states[10]);
-                } //End block
+                } 
                 {
                     systemIsInPrl = Integer.parseInt(states[11]);
-                } //End block
+                } 
                 {
                     defaultRoamingIndicator = Integer.parseInt(states[12]);
-                } //End block
+                } 
                 {
                     reasonForDenial = Integer.parseInt(states[13]);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (NumberFormatException ex)
             {
                 loge("EVENT_POLL_STATE_REGISTRATION_CDMA: error parsing: " + ex);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Warning! Wrong number of parameters returned from "
                                      + "RIL_REQUEST_REGISTRATION_STATE: expected 14 or more "
                                      + "strings and got " + states.length + " strings");
-        } //End block
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        } 
+        
+        
         mRegistrationState = registrationState;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         mCdmaRoaming =
                     regCodeIsRoaming(registrationState) && !isRoamIndForHomeSystem(states[10]);
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         newSS.setState (regCodeToServiceState(registrationState));
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         setCdmaTechnology(radioTechnology);
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         newSS.setCssIndicator(cssIndicator);
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         newSS.setSystemAndNetworkId(systemId, networkId);
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         mRoamingIndicator = roamingIndicator;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         mIsInPrl = (systemIsInPrl == 0) ? false : true;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         mDefaultRoamingIndicator = defaultRoamingIndicator;
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         newCellLoc.setCellLocationData(baseStationId, baseStationLatitude,
                     baseStationLongitude, systemId, networkId);
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        
+        
         {
             mRegistrationDeniedReason = ServiceStateTracker.REGISTRATION_DENIED_GEN;
-        } //End block
+        } 
         {
             mRegistrationDeniedReason = ServiceStateTracker.REGISTRATION_DENIED_AUTH;
-        } //End block
+        } 
         {
             mRegistrationDeniedReason = "";
-        } //End block
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_REGISTRATION_CDMA 
+        } 
+        
+        
         {
             log("Registration denied, " + mRegistrationDeniedReason);
-        } //End block
-        //End case EVENT_POLL_STATE_REGISTRATION_CDMA 
-        //Begin case EVENT_POLL_STATE_OPERATOR_CDMA 
+        } 
+        
+        
         String opNames[] = (String[])ar.result;
-        //End case EVENT_POLL_STATE_OPERATOR_CDMA 
-        //Begin case EVENT_POLL_STATE_OPERATOR_CDMA 
+        
+        
         {
             {
                 boolean var64F902D6C515FBF5301383078A8A1810_230045222 = ((opNames[2] == null) || (opNames[2].length() < 5)
@@ -757,34 +766,35 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                                 " is bad. Using SystemProperties '" +
                                         CDMAPhone.PROPERTY_CDMA_HOME_OPERATOR_NUMERIC +
                                 "'= " + opNames[2]);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 boolean varBC92A3357E9408F0FD52AC7CBCDE6A5F_1705052071 = (cm.getNvState().isNVReady());
                 {
                     newSS.setOperatorName(null, opNames[1], opNames[2]);
-                } //End block
+                } 
                 {
                     newSS.setOperatorName(opNames[0], opNames[1], opNames[2]);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             log("EVENT_POLL_STATE_OPERATOR_CDMA: error parsing opNames");
-        } //End block
-        //End case EVENT_POLL_STATE_OPERATOR_CDMA 
-        //Begin case default 
+        } 
+        
+        
         loge("handlePollStateResultMessage: RIL response handle in wrong phone!"
                     + " Expected CDMA RIL request and get GSM RIL request.");
-        //End case default 
+        
         addTaint(what);
         addTaint(ar.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.339 -0400", hash_original_method = "1B5F4BD94220D105FC0E737C13196363", hash_generated_method = "7AC9D526FA63ECD587FE1B3CE9EAF99F")
     @Override
     protected void handlePollStateResult(int what, AsyncResult ar) {
@@ -792,44 +802,44 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
             CommandException.Error err = null;
             {
                 err = ((CommandException)(ar.exception)).getCommandError();
-            } //End block
+            } 
             {
                 cancelPollState();
-            } //End block
+            } 
             {
                 boolean var0F541275CA306A5F1AC77D786FD54CFD_1306474582 = (!cm.getRadioState().isOn());
                 {
                     cancelPollState();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 loge("handlePollStateResult: RIL returned an error where it must succeed"
                         + ar.exception);
-            } //End block
-        } //End block
+            } 
+        } 
         try 
         {
             handlePollStateResultMessage(what, ar);
-        } //End block
+        } 
         catch (RuntimeException ex)
         {
             loge("handlePollStateResult: Exception while polling service state. "
                     + "Probably malformed RIL response." + ex);
-        } //End block
+        } 
         {
             boolean namMatch = false;
             {
                 boolean var29AC97C0502F6AB3FF9782C48F8FA76A_1772925383 = (!isSidsAllZeros() && isHomeSid(newSS.getSystemId()));
                 {
                     namMatch = true;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 newSS.setRoaming(isRoamingBetweenOperators(mCdmaRoaming, newSS));
-            } //End block
+            } 
             {
                 newSS.setRoaming(mCdmaRoaming);
-            } //End block
+            } 
             newSS.setCdmaDefaultRoamingIndicator(mDefaultRoamingIndicator);
             newSS.setCdmaRoamingIndicator(mRoamingIndicator);
             boolean isPrlLoaded = true;
@@ -837,33 +847,33 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                 boolean varA035E8FBCA988F8B349976EEFE0F689A_493561064 = (TextUtils.isEmpty(mPrlVersion));
                 {
                     isPrlLoaded = false;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 newSS.setCdmaRoamingIndicator(EriInfo.ROAMING_INDICATOR_OFF);
-            } //End block
+            } 
             {
                 boolean varF459B34130F5C1301CC31DC3B09702EA_1159673588 = (!isSidsAllZeros());
                 {
                     {
                         newSS.setCdmaRoamingIndicator(mDefaultRoamingIndicator);
-                    } //End block
+                    } 
                     {
                         newSS.setCdmaRoamingIndicator(EriInfo.ROAMING_INDICATOR_FLASH);
-                    } //End block
+                    } 
                     {
                         newSS.setCdmaRoamingIndicator(mRoamingIndicator);
-                    } //End block
+                    } 
                     {
                         {
                             newSS.setCdmaRoamingIndicator(EriInfo.ROAMING_INDICATOR_OFF);
-                        } //End block
+                        } 
                         {
                             newSS.setCdmaRoamingIndicator(mRoamingIndicator);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             int roamingIndicator = newSS.getCdmaRoamingIndicator();
             newSS.setCdmaEriIconIndex(phone.mEriManager.getCdmaEriIconIndex(roamingIndicator,
                     mDefaultRoamingIndicator));
@@ -875,89 +885,92 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                     + ". namMatch = " + namMatch + " , mIsInPrl = " + mIsInPrl
                     + ", mRoamingIndicator = " + mRoamingIndicator
                     + ", mDefaultRoamingIndicator= " + mDefaultRoamingIndicator);
-            } //End block
+            } 
             pollStateDone();
-        } //End block
+        } 
         addTaint(what);
         addTaint(ar.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.339 -0400", hash_original_method = "6C8071E15167CEBD3E2C13FCDC5BEC69", hash_generated_method = "4F34229AB8DB2417A1A42514981ACCDB")
     protected void setSignalStrengthDefaultValues() {
         mSignalStrength = new SignalStrength(99, -1, -1, -1, -1, -1, -1, false);
-        // ---------- Original Method ----------
-        //mSignalStrength = new SignalStrength(99, -1, -1, -1, -1, -1, -1, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.340 -0400", hash_original_method = "518F03C8AA7D2E41BBC9B0EF8F2349B8", hash_generated_method = "9F44F55174C7BB046495264C40A5575A")
     protected void pollState() {
         pollingContext = new int[1];
         pollingContext[0] = 0;
         {
             Object varA9E12DC9226BD6A76EE86EBF3C63475C_1904163854 = (cm.getRadioState());
-            //Begin case RADIO_UNAVAILABLE 
+            
             newSS.setStateOutOfService();
-            //End case RADIO_UNAVAILABLE 
-            //Begin case RADIO_UNAVAILABLE 
+            
+            
             newCellLoc.setStateInvalid();
-            //End case RADIO_UNAVAILABLE 
-            //Begin case RADIO_UNAVAILABLE 
+            
+            
             setSignalStrengthDefaultValues();
-            //End case RADIO_UNAVAILABLE 
-            //Begin case RADIO_UNAVAILABLE 
+            
+            
             mGotCountryCode = false;
-            //End case RADIO_UNAVAILABLE 
-            //Begin case RADIO_UNAVAILABLE 
+            
+            
             pollStateDone();
-            //End case RADIO_UNAVAILABLE 
-            //Begin case RADIO_OFF 
+            
+            
             newSS.setStateOff();
-            //End case RADIO_OFF 
-            //Begin case RADIO_OFF 
+            
+            
             newCellLoc.setStateInvalid();
-            //End case RADIO_OFF 
-            //Begin case RADIO_OFF 
+            
+            
             setSignalStrengthDefaultValues();
-            //End case RADIO_OFF 
-            //Begin case RADIO_OFF 
+            
+            
             mGotCountryCode = false;
-            //End case RADIO_OFF 
-            //Begin case RADIO_OFF 
+            
+            
             pollStateDone();
-            //End case RADIO_OFF 
-            //Begin case SIM_NOT_READY SIM_LOCKED_OR_ABSENT SIM_READY 
+            
+            
             log("Radio Technology Change ongoing, setting SS to off");
-            //End case SIM_NOT_READY SIM_LOCKED_OR_ABSENT SIM_READY 
-            //Begin case SIM_NOT_READY SIM_LOCKED_OR_ABSENT SIM_READY 
+            
+            
             newSS.setStateOff();
-            //End case SIM_NOT_READY SIM_LOCKED_OR_ABSENT SIM_READY 
-            //Begin case SIM_NOT_READY SIM_LOCKED_OR_ABSENT SIM_READY 
+            
+            
             newCellLoc.setStateInvalid();
-            //End case SIM_NOT_READY SIM_LOCKED_OR_ABSENT SIM_READY 
-            //Begin case SIM_NOT_READY SIM_LOCKED_OR_ABSENT SIM_READY 
+            
+            
             setSignalStrengthDefaultValues();
-            //End case SIM_NOT_READY SIM_LOCKED_OR_ABSENT SIM_READY 
-            //Begin case SIM_NOT_READY SIM_LOCKED_OR_ABSENT SIM_READY 
+            
+            
             mGotCountryCode = false;
-            //End case SIM_NOT_READY SIM_LOCKED_OR_ABSENT SIM_READY 
-            //Begin case default 
+            
+            
             cm.getOperator(
                     obtainMessage(EVENT_POLL_STATE_OPERATOR_CDMA, pollingContext));
-            //End case default 
-            //Begin case default 
+            
+            
             cm.getVoiceRegistrationState(
                     obtainMessage(EVENT_POLL_STATE_REGISTRATION_CDMA, pollingContext));
-            //End case default 
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.341 -0400", hash_original_method = "E69BA838DECF1BB5E62D048E955B2CB0", hash_generated_method = "788B94D71F2B2EF9C1F4C7030F174A56")
     protected void fixTimeZone(String isoCountryCode) {
         TimeZone zone = null;
@@ -974,38 +987,39 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                     boolean varEEB7CD030807CE702D36FA7DEF7E06F9_335642460 = (getAutoTime());
                     {
                         setAndBroadcastNetworkSetTime(System.currentTimeMillis() - tzOffset);
-                    } //End block
+                    } 
                     {
                         mSavedTime = mSavedTime - tzOffset;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 boolean var26136DD7D51CA801EC28D07A7D018010_967686305 = (isoCountryCode.equals(""));
                 {
                     zone = getNitzTimeZone(mZoneOffset, mZoneDst, mZoneTime);
-                } //End block
+                } 
                 {
                     zone = TimeUtils.getTimeZone(mZoneOffset, mZoneDst, mZoneTime, isoCountryCode);
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         mNeedFixZone = false;
         {
             {
                 boolean var8B664356E036D01AFB0F5E4CF908C02F_2030902812 = (getAutoTimeZone());
                 {
                     setAndBroadcastNetworkSetTimeZone(zone.getID());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             saveNitzTimeZone(zone.getID());
-        } //End block
+        } 
         addTaint(isoCountryCode.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.342 -0400", hash_original_method = "0FA304F04B86F76391D3D9DA6F1DEA62", hash_generated_method = "A47E916C7DBC8E86C3E33A7C1C3E83BB")
     protected void pollStateDone() {
         log("pollStateDone: oldSS=[" + ss + "] newSS=[" + newSS + "]");
@@ -1030,8 +1044,8 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                 EventLog.writeEvent(EventLogTags.CDMA_SERVICE_STATE_CHANGE,
                     ss.getState(), mDataConnectionState,
                     newSS.getState(), mNewDataConnectionState);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         ServiceState tss;
         tss = ss;
         ss = newSS;
@@ -1047,10 +1061,10 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
         {
             phone.setSystemProperty(TelephonyProperties.PROPERTY_DATA_NETWORK_TYPE,
                     ServiceState.radioTechnologyToString(networkType));
-        } //End block
+        } 
         {
             mNetworkAttachedRegistrants.notifyRegistrants();
-        } //End block
+        } 
         {
             {
                 boolean var1644C0B76D1EEAE538D65F783B0A10D2_1181315994 = (cm.getRadioState().isNVReady());
@@ -1060,15 +1074,15 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                         boolean var0782B3C53497F07CDAB38A690B362545_1424827206 = (ss.getState() == ServiceState.STATE_IN_SERVICE);
                         {
                             eriText = phone.getCdmaEriText();
-                        } //End block
+                        } 
                         {
                             eriText = phone.getContext().getText(
                             com.android.internal.R.string.roamingTextSearching).toString();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     ss.setOperatorAlphaLong(eriText);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             String operatorNumeric;
             phone.setSystemProperty(TelephonyProperties.PROPERTY_OPERATOR_ALPHA,
                     ss.getOperatorAlphaLong());
@@ -1077,88 +1091,90 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
             {
                 phone.setSystemProperty(TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY, "");
                 mGotCountryCode = false;
-            } //End block
+            } 
             {
                 String isoCountryCode = "";
                 try 
                 {
                     isoCountryCode = MccTable.countryCodeForMcc(Integer.parseInt(
                             operatorNumeric.substring(0,3)));
-                } //End block
+                } 
                 catch (NumberFormatException ex)
                 {
                     loge("pollStateDone: countryCodeForMcc error" + ex);
-                } //End block
+                } 
                 catch (StringIndexOutOfBoundsException ex)
                 {
                     loge("pollStateDone: countryCodeForMcc error" + ex);
-                } //End block
+                } 
                 phone.setSystemProperty(TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY,
                         isoCountryCode);
                 mGotCountryCode = true;
                 {
                     fixTimeZone(isoCountryCode);
-                } //End block
-            } //End block
+                } 
+            } 
             phone.setSystemProperty(TelephonyProperties.PROPERTY_OPERATOR_ISROAMING,
                     ss.getRoaming() ? "true" : "false");
             updateSpnDisplay();
             phone.notifyServiceStateChanged(ss);
-        } //End block
+        } 
         {
             mAttachedRegistrants.notifyRegistrants();
-        } //End block
+        } 
         {
             mDetachedRegistrants.notifyRegistrants();
-        } //End block
+        } 
         {
             phone.notifyDataConnection(null);
-        } //End block
+        } 
         {
             mRoamingOnRegistrants.notifyRegistrants();
-        } //End block
+        } 
         {
             mRoamingOffRegistrants.notifyRegistrants();
-        } //End block
+        } 
         {
             phone.notifyLocationChanged();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.344 -0400", hash_original_method = "99CED85D89C5E9DD8967FF1E935BF80B", hash_generated_method = "BEEC44FC2CD3F8287BF519AD699CC173")
     private TimeZone getNitzTimeZone(int offset, boolean dst, long when) {
-        TimeZone varB4EAC82CA7396A68D541C85D26508E83_1141043549 = null; //Variable for return #1
+        TimeZone varB4EAC82CA7396A68D541C85D26508E83_1141043549 = null; 
         TimeZone guess = findTimeZone(offset, dst, when);
         {
             guess = findTimeZone(offset, !dst, when);
-        } //End block
+        } 
         log("getNitzTimeZone returning " + (guess == null ? guess : guess.getID()));
         varB4EAC82CA7396A68D541C85D26508E83_1141043549 = guess;
         addTaint(offset);
         addTaint(dst);
         addTaint(when);
-        varB4EAC82CA7396A68D541C85D26508E83_1141043549.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1141043549.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1141043549;
-        // ---------- Original Method ----------
-        //TimeZone guess = findTimeZone(offset, dst, when);
-        //if (guess == null) {
-            //guess = findTimeZone(offset, !dst, when);
-        //}
-        //if (DBG) log("getNitzTimeZone returning " + (guess == null ? guess : guess.getID()));
-        //return guess;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.350 -0400", hash_original_method = "950DB35A634BB86898B3E74AA5BE6013", hash_generated_method = "ECFD3BD7F0F965D68EACBAFECD486575")
     private TimeZone findTimeZone(int offset, boolean dst, long when) {
-        TimeZone varB4EAC82CA7396A68D541C85D26508E83_2055525431 = null; //Variable for return #1
+        TimeZone varB4EAC82CA7396A68D541C85D26508E83_2055525431 = null; 
         int rawOffset = offset;
         {
             rawOffset -= 3600000;
-        } //End block
+        } 
         String[] zones = TimeZone.getAvailableIDs(rawOffset);
         TimeZone guess = null;
         Date d = new Date(when);
@@ -1171,63 +1187,65 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                     tz.inDaylightTime(d) == dst);
                     {
                         guess = tz;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2055525431 = guess;
         addTaint(offset);
         addTaint(dst);
         addTaint(when);
-        varB4EAC82CA7396A68D541C85D26508E83_2055525431.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2055525431.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2055525431;
-        // ---------- Original Method ----------
-        //int rawOffset = offset;
-        //if (dst) {
-            //rawOffset -= 3600000;
-        //}
-        //String[] zones = TimeZone.getAvailableIDs(rawOffset);
-        //TimeZone guess = null;
-        //Date d = new Date(when);
-        //for (String zone : zones) {
-            //TimeZone tz = TimeZone.getTimeZone(zone);
-            //if (tz.getOffset(when) == offset &&
-                    //tz.inDaylightTime(d) == dst) {
-                //guess = tz;
-                //break;
-            //}
-        //}
-        //return guess;
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+            
+                    
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.351 -0400", hash_original_method = "75DB599AC418C41475672A1B4451EF2E", hash_generated_method = "D7D8331F0EE655F73AEDBA537A775557")
     protected void queueNextSignalStrengthPoll() {
         {
             boolean varADAA48EFD9B70BA23908E80A474BFA5A_1969281037 = (dontPollSignalStrength || (cm.getRadioState().isGsm()));
-        } //End collapsed parenthetic
+        } 
         Message msg;
         msg = obtainMessage();
         msg.what = EVENT_POLL_SIGNAL_STRENGTH;
         sendMessageDelayed(msg, POLL_PERIOD_MILLIS);
-        // ---------- Original Method ----------
-        //if (dontPollSignalStrength || (cm.getRadioState().isGsm())) {
-            //return;
-        //}
-        //Message msg;
-        //msg = obtainMessage();
-        //msg.what = EVENT_POLL_SIGNAL_STRENGTH;
-        //sendMessageDelayed(msg, POLL_PERIOD_MILLIS);
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.352 -0400", hash_original_method = "76CDF956056DDB53150BD0C17057AE41", hash_generated_method = "B542436360A03D63F8ABF7991254BEF9")
     protected void onSignalStrengthResult(AsyncResult ar) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         SignalStrength oldSignalStrength = mSignalStrength;
         {
             setSignalStrengthDefaultValues();
-        } //End block
+        } 
         {
             int[] ints = (int[])ar.result;
             int offset = 2;
@@ -1248,83 +1266,85 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
             evdoSnr = -1;
             mSignalStrength = new SignalStrength(99, -1, cdmaDbm, cdmaEcio,
                     evdoRssi, evdoEcio, evdoSnr, false);
-        } //End block
+        } 
         try 
         {
             phone.notifySignalStrength();
-        } //End block
+        } 
         catch (NullPointerException ex)
         {
             loge("onSignalStrengthResult() Phone already destroyed: " + ex
                     + "SignalStrength not notified");
-        } //End block
+        } 
         addTaint(ar.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.352 -0400", hash_original_method = "DF77DC7CB442AC6CF875159BD0FE26E0", hash_generated_method = "74C8FE48135B14E7EB49FDB99FE4C0E2")
     protected int radioTechnologyToDataServiceState(int code) {
         int retVal = ServiceState.STATE_OUT_OF_SERVICE;
-        //Begin case 6 7 8 12 13 
+        
         retVal = ServiceState.STATE_IN_SERVICE;
-        //End case 6 7 8 12 13 
-        //Begin case default 
+        
+        
         loge("radioTechnologyToDataServiceState: Wrong radioTechnology code.");
-        //End case default 
+        
         addTaint(code);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1748794846 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1748794846;
-        // ---------- Original Method ----------
-        //int retVal = ServiceState.STATE_OUT_OF_SERVICE;
-        //switch(code) {
-        //case 0:
-        //case 1:
-        //case 2:
-        //case 3:
-        //case 4:
-        //case 5:
-            //break;
-        //case 6: 
-        //case 7: 
-        //case 8: 
-        //case 12: 
-        //case 13: 
-            //retVal = ServiceState.STATE_IN_SERVICE;
-            //break;
-        //default:
-            //loge("radioTechnologyToDataServiceState: Wrong radioTechnology code.");
-        //break;
-        //}
-        //return(retVal);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.353 -0400", hash_original_method = "DA573DADA483FE1143660303AA3E0D9F", hash_generated_method = "4C4973E727395EE35DC905698450A24B")
     protected int regCodeToServiceState(int code) {
-        //Begin case default 
+        
         loge("regCodeToServiceState: unexpected service state " + code);
-        //End case default 
+        
         addTaint(code);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1399778590 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1399778590;
-        // ---------- Original Method ----------
-        //switch (code) {
-        //case 0: 
-            //return ServiceState.STATE_OUT_OF_SERVICE;
-        //case 1:
-            //return ServiceState.STATE_IN_SERVICE;
-        //case 2: 
-        //case 3: 
-        //case 4: 
-            //return ServiceState.STATE_OUT_OF_SERVICE;
-        //case 5:
-            //return ServiceState.STATE_IN_SERVICE;
-        //default:
-            //loge("regCodeToServiceState: unexpected service state " + code);
-        //return ServiceState.STATE_OUT_OF_SERVICE;
-        //}
+        
+        
+        
+            
+        
+            
+        
+        
+        
+            
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -1332,8 +1352,8 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     public int getCurrentDataConnectionState() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_102943184 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_102943184;
-        // ---------- Original Method ----------
-        //return mDataConnectionState;
+        
+        
     }
 
     
@@ -1342,11 +1362,12 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
         addTaint(code);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1495358123 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1495358123;
-        // ---------- Original Method ----------
-        //return 5 == code;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.359 -0400", hash_original_method = "B4323D2F9A07343D2462A4D59ED08046", hash_generated_method = "F1DF689269823D4BCDBCF8AB10F5A8D7")
     private boolean isRoamIndForHomeSystem(String roamInd) {
         String homeRoamIndicators = SystemProperties.get("ro.cdma.homesystem");
@@ -1358,28 +1379,29 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                     {
                         {
                             boolean varA386460DA3595176FB4BAA16B8D8F859_522181732 = (homeRoamInd.equals(roamInd));
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(roamInd.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_104365476 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_104365476;
-        // ---------- Original Method ----------
-        //String homeRoamIndicators = SystemProperties.get("ro.cdma.homesystem");
-        //if (!TextUtils.isEmpty(homeRoamIndicators)) {
-            //for (String homeRoamInd : homeRoamIndicators.split(",")) {
-                //if (homeRoamInd.equals(roamInd)) {
-                    //return true;
-                //}
-            //}
-            //return false;
-        //}
-        //return false;
+        
+        
+        
+            
+                
+                    
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.360 -0400", hash_original_method = "011C4920ECDF4CF24EF92E838B11DA6F", hash_generated_method = "FB397C3A180AE930529870F922427D24")
     private boolean isRoamingBetweenOperators(boolean cdmaRoaming, ServiceState s) {
         String spn = SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA, "empty");
@@ -1391,23 +1413,24 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
         addTaint(s.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1912761253 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1912761253;
-        // ---------- Original Method ----------
-        //String spn = SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA, "empty");
-        //String onsl = s.getOperatorAlphaLong();
-        //String onss = s.getOperatorAlphaShort();
-        //boolean equalsOnsl = onsl != null && spn.equals(onsl);
-        //boolean equalsOnss = onss != null && spn.equals(onss);
-        //return cdmaRoaming && !(equalsOnsl || equalsOnss);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.362 -0400", hash_original_method = "7ADA939B474B339ADDF025B993055C9A", hash_generated_method = "BCF2BA1380B66DEE0626498D721A6AFB")
     private void setTimeFromNITZString(String nitz, long nitzReceiveTime) {
         long start = SystemClock.elapsedRealtime();
         {
             log("NITZ: " + nitz + "," + nitzReceiveTime +
                         " start=" + start + " delay=" + (start - nitzReceiveTime));
-        } //End block
+        } 
         try 
         {
             Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
@@ -1436,7 +1459,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
             {
                 String tzname = nitzSubs[8].replace('!','/');
                 zone = TimeZone.getTimeZone( tzname );
-            } //End block
+            } 
             String iso = SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY);
             {
                 {
@@ -1446,35 +1469,35 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                             zone = TimeUtils.getTimeZone(tzOffset, dst != 0,
                                 c.getTimeInMillis(),
                                 iso);
-                        } //End block
+                        } 
                         {
                             zone = getNitzTimeZone(tzOffset, (dst != 0), c.getTimeInMillis());
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 mNeedFixZone = true;
                 mZoneOffset  = tzOffset;
                 mZoneDst     = dst != 0;
                 mZoneTime    = c.getTimeInMillis();
-            } //End block
+            } 
             {
                 {
                     boolean var624415BE8DA2189070E2F3831D7C1692_268874446 = (getAutoTimeZone());
                     {
                         setAndBroadcastNetworkSetTimeZone(zone.getID());
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 saveNitzTimeZone(zone.getID());
-            } //End block
+            } 
             String ignore = SystemProperties.get("gsm.ignore-nitz");
             {
                 boolean varE5D77747E14F70AD020ECEBD14623725_2107114260 = (ignore != null && ignore.equals("yes"));
                 {
                     log("NITZ: Not setting clock because gsm.ignore-nitz is set");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             try 
             {
                 mWakeLock.acquire();
@@ -1484,15 +1507,15 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                         log("NITZ: not setting time, clock has rolled "
                                         + "backwards since NITZ time was received, "
                                         + nitz);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     {
                         log("NITZ: not setting time, processing has taken "
                                     + (millisSinceNitzReceived / (1000 * 60 * 60 * 24))
                                     + " days");
-                    } //End block
-                } //End block
+                    } 
+                } 
                 c.add(Calendar.MILLISECOND, (int)millisSinceNitzReceived);
                 {
                     boolean varEEB7CD030807CE702D36FA7DEF7E06F9_428019072 = (getAutoTime());
@@ -1511,87 +1534,90 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                                     log("NITZ: Auto updating time of day to " + c.getTime()
                                 + " NITZ receive delay=" + millisSinceNitzReceived
                                 + "ms gained=" + gained + "ms from " + nitz);
-                                } //End block
+                                } 
                                 setAndBroadcastNetworkSetTime(c.getTimeInMillis());
-                            } //End block
+                            } 
                             {
                                 {
                                     log("NITZ: ignore, a previous update was "
                                 + timeSinceLastUpdate + "ms ago and gained=" + gained + "ms");
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 log("NITZ: update nitz time property");
                 SystemProperties.set("gsm.nitz.time", String.valueOf(c.getTimeInMillis()));
                 mSavedTime = c.getTimeInMillis();
                 mSavedAtTime = SystemClock.elapsedRealtime();
-            } //End block
+            } 
             finally 
             {
                 long end = SystemClock.elapsedRealtime();
                 log("NITZ: end=" + end + " dur=" + (end - start));
                 mWakeLock.release();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RuntimeException ex)
         {
             loge("NITZ: Parsing NITZ time " + nitz + " ex=" + ex);
-        } //End block
+        } 
         addTaint(nitz.getTaint());
         addTaint(nitzReceiveTime);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.363 -0400", hash_original_method = "606CF17A4D40300EAFFE0BD67B82E0B6", hash_generated_method = "27E6DFD7B6D35EDE9C40C3EC13DD740B")
     private boolean getAutoTime() {
         try 
         {
             boolean var0318692E4935505BFEE97424BA2C2BDC_479170489 = (Settings.System.getInt(cr, Settings.System.AUTO_TIME) > 0);
-        } //End block
+        } 
         catch (SettingNotFoundException snfe)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1242625990 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1242625990;
-        // ---------- Original Method ----------
-        //try {
-            //return Settings.System.getInt(cr, Settings.System.AUTO_TIME) > 0;
-        //} catch (SettingNotFoundException snfe) {
-            //return true;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.364 -0400", hash_original_method = "46A307C7AC0E208B22907DFB9CC04F45", hash_generated_method = "DE7909C32BC6234F34139A3E5BC07077")
     private boolean getAutoTimeZone() {
         try 
         {
             boolean var6E6BE051602FD448D5A310EEAFCD9E4E_1910555141 = (Settings.System.getInt(cr, Settings.System.AUTO_TIME_ZONE) > 0);
-        } //End block
+        } 
         catch (SettingNotFoundException snfe)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_129989818 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_129989818;
-        // ---------- Original Method ----------
-        //try {
-            //return Settings.System.getInt(cr, Settings.System.AUTO_TIME_ZONE) > 0;
-        //} catch (SettingNotFoundException snfe) {
-            //return true;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.365 -0400", hash_original_method = "AC4D6B705E7065D39BD6B0621414F077", hash_generated_method = "89E6488BB9B703C7CA9BBABF73A30618")
     private void saveNitzTimeZone(String zoneId) {
         mSavedTimeZone = zoneId;
-        // ---------- Original Method ----------
-        //mSavedTimeZone = zoneId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.365 -0400", hash_original_method = "28A8B5328B033F98ED5E62B240AD20B6", hash_generated_method = "615D9BCC0526644A6FABF0729825DCD5")
     private void setAndBroadcastNetworkSetTimeZone(String zoneId) {
         AlarmManager alarm = (AlarmManager) phone.getContext().getSystemService(Context.ALARM_SERVICE);
@@ -1601,17 +1627,18 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
         intent.putExtra("time-zone", zoneId);
         phone.getContext().sendStickyBroadcast(intent);
         addTaint(zoneId.getTaint());
-        // ---------- Original Method ----------
-        //AlarmManager alarm =
-            //(AlarmManager) phone.getContext().getSystemService(Context.ALARM_SERVICE);
-        //alarm.setTimeZone(zoneId);
-        //Intent intent = new Intent(TelephonyIntents.ACTION_NETWORK_SET_TIMEZONE);
-        //intent.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
-        //intent.putExtra("time-zone", zoneId);
-        //phone.getContext().sendStickyBroadcast(intent);
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.367 -0400", hash_original_method = "062E38B571EEA7E979075562F8B40A5D", hash_generated_method = "156D578D330D03E3808034F191771B34")
     private void setAndBroadcastNetworkSetTime(long time) {
         SystemClock.setCurrentTimeMillis(time);
@@ -1620,60 +1647,62 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
         intent.putExtra("time", time);
         phone.getContext().sendStickyBroadcast(intent);
         addTaint(time);
-        // ---------- Original Method ----------
-        //SystemClock.setCurrentTimeMillis(time);
-        //Intent intent = new Intent(TelephonyIntents.ACTION_NETWORK_SET_TIME);
-        //intent.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
-        //intent.putExtra("time", time);
-        //phone.getContext().sendStickyBroadcast(intent);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.370 -0400", hash_original_method = "FAE09FD02085B2FF4E1D8E37B65790F8", hash_generated_method = "C09818EFBDBC92EDEB2BB84420ADBF75")
     private void revertToNitzTime() {
         {
             boolean var295A15F3D6D43E502B81033D23E388EE_1950030629 = (Settings.System.getInt(cr, Settings.System.AUTO_TIME, 0) == 0);
-        } //End collapsed parenthetic
+        } 
         {
             log("revertToNitzTime: mSavedTime=" + mSavedTime + " mSavedAtTime=" + mSavedAtTime);
-        } //End block
+        } 
         {
             setAndBroadcastNetworkSetTime(mSavedTime
                     + (SystemClock.elapsedRealtime() - mSavedAtTime));
-        } //End block
-        // ---------- Original Method ----------
-        //if (Settings.System.getInt(cr, Settings.System.AUTO_TIME, 0) == 0) {
-            //return;
-        //}
-        //if (DBG) {
-            //log("revertToNitzTime: mSavedTime=" + mSavedTime + " mSavedAtTime=" + mSavedAtTime);
-        //}
-        //if (mSavedTime != 0 && mSavedAtTime != 0) {
-            //setAndBroadcastNetworkSetTime(mSavedTime
-                    //+ (SystemClock.elapsedRealtime() - mSavedAtTime));
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.370 -0400", hash_original_method = "72156026C5CBDDA4CCFB821F20D0E263", hash_generated_method = "20E7E44C77B0820F3813E949AE8B9029")
     private void revertToNitzTimeZone() {
         {
             boolean var368E56141E4682CFD54AD9DE0B6F4586_566907884 = (Settings.System.getInt(phone.getContext().getContentResolver(),
                 Settings.System.AUTO_TIME_ZONE, 0) == 0);
-        } //End collapsed parenthetic
+        } 
         log("revertToNitzTimeZone: tz='" + mSavedTimeZone);
         {
             setAndBroadcastNetworkSetTimeZone(mSavedTimeZone);
-        } //End block
-        // ---------- Original Method ----------
-        //if (Settings.System.getInt(phone.getContext().getContentResolver(),
-                //Settings.System.AUTO_TIME_ZONE, 0) == 0) {
-            //return;
-        //}
-        //if (DBG) log("revertToNitzTimeZone: tz='" + mSavedTimeZone);
-        //if (mSavedTimeZone != null) {
-            //setAndBroadcastNetworkSetTimeZone(mSavedTimeZone);
-        //}
+        } 
+        
+        
+                
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -1682,19 +1711,19 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
         {
             {
                 int i = 0;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_469701099 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_469701099;
-        // ---------- Original Method ----------
-        //if (mHomeSystemId != null) {
-            //for (int i=0; i < mHomeSystemId.length; i++) {
-                //if (mHomeSystemId[i] != 0) {
-                    //return false;
-                //}
-            //}
-        //}
-        //return true;
+        
+        
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -1703,20 +1732,20 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
         {
             {
                 int i = 0;
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(sid);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_477700763 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_477700763;
-        // ---------- Original Method ----------
-        //if (mHomeSystemId != null) {
-            //for (int i=0; i < mHomeSystemId.length; i++) {
-                //if (sid == mHomeSystemId[i]) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -1724,78 +1753,78 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     public boolean isConcurrentVoiceAndDataAllowed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_174189654 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_174189654;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.374 -0400", hash_original_method = "A5028D79B927656E45CDFA536F16F5AB", hash_generated_method = "BDB18B661E1A31B27C82DE5ACAD6D454")
     public String getMdnNumber() {
-        String varB4EAC82CA7396A68D541C85D26508E83_700157978 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_700157978 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_700157978 = mMdn;
-        varB4EAC82CA7396A68D541C85D26508E83_700157978.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_700157978.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_700157978;
-        // ---------- Original Method ----------
-        //return mMdn;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.374 -0400", hash_original_method = "133C132C72A1734541959456CF27FF0A", hash_generated_method = "90714EF9E05309E269C98E1217B3AFEE")
     public String getCdmaMin() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2047227656 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2047227656 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2047227656 = mMin;
-        varB4EAC82CA7396A68D541C85D26508E83_2047227656.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2047227656.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2047227656;
-        // ---------- Original Method ----------
-        //return mMin;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.375 -0400", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "0DC74FE9352E97A8D2D4E6BF89FA744C")
     public String getPrlVersion() {
-        String varB4EAC82CA7396A68D541C85D26508E83_590134224 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_590134224 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_590134224 = mPrlVersion;
-        varB4EAC82CA7396A68D541C85D26508E83_590134224.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_590134224.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_590134224;
-        // ---------- Original Method ----------
-        //return mPrlVersion;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.376 -0400", hash_original_method = "B26D3610EF4478BB5ED2ADA9EDE43E3B", hash_generated_method = "5116F6A5138493B90A727B0403A28971")
      String getImsi() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1099153366 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1942809839 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1099153366 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1942809839 = null; 
         String operatorNumeric = SystemProperties.get(
                 TelephonyProperties.PROPERTY_ICC_OPERATOR_NUMERIC, "");
         {
             boolean varF68187D93855D84C5AED475661AA07AC_590653925 = (!TextUtils.isEmpty(operatorNumeric) && getCdmaMin() != null);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1099153366 = (operatorNumeric + getCdmaMin());
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1942809839 = null;
-            } //End block
-        } //End collapsed parenthetic
-        String varA7E53CE21691AB073D9660D615818899_54113394; //Final return value
+            } 
+        } 
+        String varA7E53CE21691AB073D9660D615818899_54113394; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_54113394 = varB4EAC82CA7396A68D541C85D26508E83_1099153366;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_54113394 = varB4EAC82CA7396A68D541C85D26508E83_1942809839;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_54113394.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_54113394.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_54113394;
-        // ---------- Original Method ----------
-        //String operatorNumeric = SystemProperties.get(
-                //TelephonyProperties.PROPERTY_ICC_OPERATOR_NUMERIC, "");
-        //if (!TextUtils.isEmpty(operatorNumeric) && getCdmaMin() != null) {
-            //return (operatorNumeric + getCdmaMin());
-        //} else {
-            //return null;
-        //}
+        
+        
+                
+        
+            
+        
+            
+        
     }
 
     
@@ -1803,8 +1832,8 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     public boolean isMinInfoReady() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_522257301 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_522257301;
-        // ---------- Original Method ----------
-        //return mIsMinInfoReady;
+        
+        
     }
 
     
@@ -1816,7 +1845,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
             {
                 log("getOtasp: bad mMin='" + mMin + "'");
                 provisioningState = OTASP_UNKNOWN;
-            } //End block
+            } 
             {
                 {
                     boolean varC1F4BAB057A6E1164C1F9ABE5370C980_343040471 = ((mMin.equals(UNACTIVATED_MIN_VALUE)
@@ -1824,35 +1853,36 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                     || SystemProperties.getBoolean("test_cdma_setup", false));
                     {
                         provisioningState = OTASP_NEEDED;
-                    } //End block
+                    } 
                     {
                         provisioningState = OTASP_NOT_NEEDED;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         log("getOtasp: state=" + provisioningState);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1979076597 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1979076597;
-        // ---------- Original Method ----------
-        //int provisioningState;
-        //if (mMin == null || (mMin.length() < 6)) {
-            //if (DBG) log("getOtasp: bad mMin='" + mMin + "'");
-            //provisioningState = OTASP_UNKNOWN;
-        //} else {
-            //if ((mMin.equals(UNACTIVATED_MIN_VALUE)
-                    //|| mMin.substring(0,6).equals(UNACTIVATED_MIN2_VALUE))
-                    //|| SystemProperties.getBoolean("test_cdma_setup", false)) {
-                //provisioningState = OTASP_NEEDED;
-            //} else {
-                //provisioningState = OTASP_NOT_NEEDED;
-            //}
-        //}
-        //if (DBG) log("getOtasp: state=" + provisioningState);
-        //return provisioningState;
+        
+        
+        
+            
+            
+        
+            
+                    
+                    
+                
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.378 -0400", hash_original_method = "99845E4FDDAE6236D8C7F396E4374533", hash_generated_method = "8E63CE6D461F9471D4482A19BF636C81")
     @Override
     protected void hangupAndPowerOff() {
@@ -1860,14 +1890,15 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
         phone.mCT.backgroundCall.hangupIfAlive();
         phone.mCT.foregroundCall.hangupIfAlive();
         cm.setRadioPower(false, null);
-        // ---------- Original Method ----------
-        //phone.mCT.ringingCall.hangupIfAlive();
-        //phone.mCT.backgroundCall.hangupIfAlive();
-        //phone.mCT.foregroundCall.hangupIfAlive();
-        //cm.setRadioPower(false, null);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.379 -0400", hash_original_method = "B2E611749AA45590CADF6B42B9066FE3", hash_generated_method = "E563D6D68115CAC5F4BC3513EA5A2101")
     protected void parseSidNid(String sidStr, String nidStr) {
         {
@@ -1879,14 +1910,14 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                     try 
                     {
                         mHomeSystemId[i] = Integer.parseInt(sid[i]);
-                    } //End block
+                    } 
                     catch (NumberFormatException ex)
                     {
                         loge("error parsing system id: " + ex);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         log("CDMA_SUBSCRIPTION: SID=" + sidStr);
         {
             String[] nid = nidStr.split(",");
@@ -1897,22 +1928,23 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
                     try 
                     {
                         mHomeNetworkId[i] = Integer.parseInt(nid[i]);
-                    } //End block
+                    } 
                     catch (NumberFormatException ex)
                     {
                         loge("CDMA_SUBSCRIPTION: error parsing network id: " + ex);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         log("CDMA_SUBSCRIPTION: NID=" + nidStr);
         addTaint(sidStr.getTaint());
         addTaint(nidStr.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.379 -0400", hash_original_method = "610B4A562CE77C76E210E506F221FC8A", hash_generated_method = "CE43EB21460EA63C3DFA1428FAF555C2")
     protected void updateOtaspState() {
         int otaspMode = getOtasp();
@@ -1921,48 +1953,50 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
         {
             log("CDMA_SUBSCRIPTION: call notifyRegistrants()");
             cdmaForSubscriptionInfoReadyRegistrants.notifyRegistrants();
-        } //End block
+        } 
         {
             {
                 log("CDMA_SUBSCRIPTION: call notifyOtaspChanged old otaspMode=" +
                     oldOtaspMode + " new otaspMode=" + mCurrentOtaspMode);
-            } //End block
+            } 
             phone.notifyOtaspChanged(mCurrentOtaspMode);
-        } //End block
-        // ---------- Original Method ----------
-        //int otaspMode = getOtasp();
-        //int oldOtaspMode = mCurrentOtaspMode;
-        //mCurrentOtaspMode = otaspMode;
-        //if (cdmaForSubscriptionInfoReadyRegistrants != null) {
-            //if (DBG) log("CDMA_SUBSCRIPTION: call notifyRegistrants()");
-            //cdmaForSubscriptionInfoReadyRegistrants.notifyRegistrants();
-        //}
-        //if (oldOtaspMode != mCurrentOtaspMode) {
-            //if (DBG) {
-                //log("CDMA_SUBSCRIPTION: call notifyOtaspChanged old otaspMode=" +
-                    //oldOtaspMode + " new otaspMode=" + mCurrentOtaspMode);
-            //}
-            //phone.notifyOtaspChanged(mCurrentOtaspMode);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+            
+        
+        
+            
+                
+                    
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.380 -0400", hash_original_method = "F8EA3CF0B7D491A29C0D20E35CC8F967", hash_generated_method = "33CC4D22E3E33A24B75B8A1903D1B3D7")
     @Override
     protected void log(String s) {
         Log.d(LOG_TAG, "[CdmaSST] " + s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[CdmaSST] " + s);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.380 -0400", hash_original_method = "385CD47B6889905FF3482AEA1E26688E", hash_generated_method = "1D118F9E2F2137E0FEA65546C90AEC19")
     @Override
     protected void loge(String s) {
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "[CdmaSST] " + s);
+        
+        
     }
 
     

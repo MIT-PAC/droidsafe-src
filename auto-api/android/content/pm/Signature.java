@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -34,8 +34,8 @@ public class Signature implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.231 -0400", hash_original_method = "D6836B125607EB452687B13BDE6808A1", hash_generated_method = "35DC787169E2B15A0B726B2232D59558")
     public  Signature(byte[] signature) {
         mSignature = signature.clone();
-        // ---------- Original Method ----------
-        //mSignature = signature.clone();
+        
+        
     }
 
     
@@ -45,7 +45,7 @@ public class Signature implements Parcelable {
         final int N = input.length;
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("text size " + N + " is not even");
-        } //End block
+        } 
         final byte[] sig = new byte[N / 2];
         int sigIndex = 0;
         {
@@ -54,32 +54,32 @@ public class Signature implements Parcelable {
                 final int hi = parseHexDigit(input[i++]);
                 final int lo = parseHexDigit(input[i++]);
                 sig[sigIndex++] = (byte) ((hi << 4) | lo);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mSignature = sig;
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
-        //final byte[] input = text.getBytes();
-        //final int N = input.length;
-        //if (N % 2 != 0) {
-            //throw new IllegalArgumentException("text size " + N + " is not even");
-        //}
-        //final byte[] sig = new byte[N / 2];
-        //int sigIndex = 0;
-        //for (int i = 0; i < N;) {
-            //final int hi = parseHexDigit(input[i++]);
-            //final int lo = parseHexDigit(input[i++]);
-            //sig[sigIndex++] = (byte) ((hi << 4) | lo);
-        //}
-        //mSignature = sig;
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.234 -0400", hash_original_method = "BBC65E3379EE4CCA92F27F7F3813E8E5", hash_generated_method = "35AE48A1EC65609E4DC5E52450D21B19")
     private  Signature(Parcel source) {
         mSignature = source.createByteArray();
-        // ---------- Original Method ----------
-        //mSignature = source.createByteArray();
+        
+        
     }
 
     
@@ -96,13 +96,14 @@ public class Signature implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.235 -0400", hash_original_method = "01DD3741CD8E2948231CA6DA5A86A75B", hash_generated_method = "B59D0E6C8A4A03FBB5D0F49A6B340F2B")
     public char[] toChars() {
         char[] varA4185AFF435A5F9E12F848CF267BEF10_1257836511 = (toChars(null, null));
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_625864098 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_625864098;
-        // ---------- Original Method ----------
-        //return toChars(null, null);
+        
+        
     }
 
     
@@ -122,96 +123,100 @@ public class Signature implements Parcelable {
                 text[j*2] = (char)(d >= 10 ? ('a' + d - 10) : ('0' + d));
                 d = v&0xf;
                 text[j*2+1] = (char)(d >= 10 ? ('a' + d - 10) : ('0' + d));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         outLen[0] = N;
         addTaint(existingArray[0]);
         addTaint(outLen[0]);
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1878889557 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1878889557;
-        // ---------- Original Method ----------
-        //byte[] sig = mSignature;
-        //final int N = sig.length;
-        //final int N2 = N*2;
-        //char[] text = existingArray == null || N2 > existingArray.length
-                //? new char[N2] : existingArray;
-        //for (int j=0; j<N; j++) {
-            //byte v = sig[j];
-            //int d = (v>>4)&0xf;
-            //text[j*2] = (char)(d >= 10 ? ('a' + d - 10) : ('0' + d));
-            //d = v&0xf;
-            //text[j*2+1] = (char)(d >= 10 ? ('a' + d - 10) : ('0' + d));
-        //}
-        //if (outLen != null) outLen[0] = N;
-        //return text;
+        
+        
+        
+        
+        
+                
+        
+            
+            
+            
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.237 -0400", hash_original_method = "29DBF4766A3C463CDC6A362C590D645B", hash_generated_method = "25BA0D55CEF079B6B2E0D8FCE2692DF8")
     public String toCharsString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1320810963 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1456814845 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1320810963 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1456814845 = null; 
         String str;
         str = null;
         str = mStringRef.get();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1320810963 = str;
-        } //End block
+        } 
         str = new String(toChars());
         mStringRef = new SoftReference<String>(str);
         varB4EAC82CA7396A68D541C85D26508E83_1456814845 = str;
-        String varA7E53CE21691AB073D9660D615818899_587777180; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_587777180; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_587777180 = varB4EAC82CA7396A68D541C85D26508E83_1320810963;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_587777180 = varB4EAC82CA7396A68D541C85D26508E83_1456814845;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_587777180.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_587777180.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_587777180;
-        // ---------- Original Method ----------
-        //String str = mStringRef == null ? null : mStringRef.get();
-        //if (str != null) {
-            //return str;
-        //}
-        //str = new String(toChars());
-        //mStringRef = new SoftReference<String>(str);
-        //return str;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.238 -0400", hash_original_method = "4CD6431E4EA3D105FB97D345441783A7", hash_generated_method = "97DA6E01A64E6458EF1B4860E75CAECD")
     public byte[] toByteArray() {
         byte[] bytes = new byte[mSignature.length];
         System.arraycopy(mSignature, 0, bytes, 0, mSignature.length);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1922351980 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1922351980;
-        // ---------- Original Method ----------
-        //byte[] bytes = new byte[mSignature.length];
-        //System.arraycopy(mSignature, 0, bytes, 0, mSignature.length);
-        //return bytes;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.239 -0400", hash_original_method = "E5DE629FEFDBE513EC2140BEFF8592A6", hash_generated_method = "6669522F19E9FB1FA206F952901F8021")
     public PublicKey getPublicKey() throws CertificateException {
-        PublicKey varB4EAC82CA7396A68D541C85D26508E83_1643823705 = null; //Variable for return #1
+        PublicKey varB4EAC82CA7396A68D541C85D26508E83_1643823705 = null; 
         final CertificateFactory certFactory = CertificateFactory.getInstance("X.509");
         final ByteArrayInputStream bais = new ByteArrayInputStream(mSignature);
         final Certificate cert = certFactory.generateCertificate(bais);
         varB4EAC82CA7396A68D541C85D26508E83_1643823705 = cert.getPublicKey();
-        varB4EAC82CA7396A68D541C85D26508E83_1643823705.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1643823705.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1643823705;
-        // ---------- Original Method ----------
-        //final CertificateFactory certFactory = CertificateFactory.getInstance("X.509");
-        //final ByteArrayInputStream bais = new ByteArrayInputStream(mSignature);
-        //final Certificate cert = certFactory.generateCertificate(bais);
-        //return cert.getPublicKey();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.240 -0400", hash_original_method = "F079A32CA15CD362613DEDB149309CFC", hash_generated_method = "5F0C51FBFA6959E20EE6F089F8FB0FFB")
     @Override
     public boolean equals(Object obj) {
@@ -220,25 +225,26 @@ public class Signature implements Parcelable {
             {
                 Signature other = (Signature)obj;
                 boolean var93A7D6AE339F832ADAAF27B7F6ADCAAB_1518274113 = (this == other || Arrays.equals(mSignature, other.mSignature));
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ClassCastException e)
         { }
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1084666306 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1084666306;
-        // ---------- Original Method ----------
-        //try {
-            //if (obj != null) {
-                //Signature other = (Signature)obj;
-                //return this == other || Arrays.equals(mSignature, other.mSignature);
-            //}
-        //} catch (ClassCastException e) {
-        //}
-        //return false;
+        
+        
+            
+                
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.241 -0400", hash_original_method = "372447AEF502550B73E14443F4E70970", hash_generated_method = "7C0C2C489D2AB135781EFC0142792B7C")
     @Override
     public int hashCode() {
@@ -246,13 +252,13 @@ public class Signature implements Parcelable {
         mHaveHashCode = true;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_503209455 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_503209455;
-        // ---------- Original Method ----------
-        //if (mHaveHashCode) {
-            //return mHashCode;
-        //}
-        //mHashCode = Arrays.hashCode(mSignature);
-        //mHaveHashCode = true;
-        //return mHashCode;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -260,18 +266,19 @@ public class Signature implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1663365846 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1663365846;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.244 -0400", hash_original_method = "0B8B8E5420BBB8BD8CE54CF326578D2C", hash_generated_method = "F1A0DEAFEEC32F115F05764B8A85FA40")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         dest.writeByteArray(mSignature);
         addTaint(dest.getTaint());
         addTaint(parcelableFlags);
-        // ---------- Original Method ----------
-        //dest.writeByteArray(mSignature);
+        
+        
     }
 
     
@@ -287,12 +294,12 @@ public class Signature implements Parcelable {
             return new Signature[size];
         }
     };
-    // orphaned legacy method
+    
     public Signature createFromParcel(Parcel source) {
             return new Signature(source);
         }
     
-    // orphaned legacy method
+    
     public Signature[] newArray(int size) {
             return new Signature[size];
         }

@@ -1,11 +1,11 @@
 package org.apache.commons.io.filefilter;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.Serializable;
@@ -14,10 +14,11 @@ public class CanReadFileFilter extends AbstractFileFilter implements Serializabl
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.690 -0400", hash_original_method = "BDC602CCB29EA618773E287B406AEBFF", hash_generated_method = "3AA53622D67341B3F364451B2BBE4AD8")
     protected  CanReadFileFilter() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.690 -0400", hash_original_method = "04EA67B3A82204BBE7F5B271F46DC797", hash_generated_method = "C01C3413B8FED85B138A5A3D682A88C5")
     @Override
     public boolean accept(File file) {
@@ -25,8 +26,8 @@ public class CanReadFileFilter extends AbstractFileFilter implements Serializabl
         addTaint(file.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_691714733 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_691714733;
-        // ---------- Original Method ----------
-        //return file.canRead();
+        
+        
     }
 
     

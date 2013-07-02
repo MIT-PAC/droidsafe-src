@@ -1,11 +1,11 @@
 package javax.net.ssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class SSLEngineResult {
@@ -27,59 +27,59 @@ public class SSLEngineResult {
             SSLEngineResult.HandshakeStatus handshakeStatus, int bytesConsumed, int bytesProduced) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("status is null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("handshakeStatus is null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("bytesConsumed is negative");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("bytesProduced is negative");
-        } //End block
+        } 
         this.status = status;
         this.handshakeStatus = handshakeStatus;
         this.bytesConsumed = bytesConsumed;
         this.bytesProduced = bytesProduced;
-        // ---------- Original Method ----------
-        //if (status == null) {
-            //throw new IllegalArgumentException("status is null");
-        //}
-        //if (handshakeStatus == null) {
-            //throw new IllegalArgumentException("handshakeStatus is null");
-        //}
-        //if (bytesConsumed < 0) {
-            //throw new IllegalArgumentException("bytesConsumed is negative");
-        //}
-        //if (bytesProduced < 0) {
-            //throw new IllegalArgumentException("bytesProduced is negative");
-        //}
-        //this.status = status;
-        //this.handshakeStatus = handshakeStatus;
-        //this.bytesConsumed = bytesConsumed;
-        //this.bytesProduced = bytesProduced;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.629 -0400", hash_original_method = "50C43A89B1F71600509DCA8EECE4A168", hash_generated_method = "7C1E49D1107B04A8ED497D2650BD91C5")
     public final Status getStatus() {
-        Status varB4EAC82CA7396A68D541C85D26508E83_1158174427 = null; //Variable for return #1
+        Status varB4EAC82CA7396A68D541C85D26508E83_1158174427 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1158174427 = status;
-        varB4EAC82CA7396A68D541C85D26508E83_1158174427.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1158174427.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1158174427;
-        // ---------- Original Method ----------
-        //return status;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.630 -0400", hash_original_method = "C7CAF6278BE86BD417FEC0CDFDF808C8", hash_generated_method = "89182FDEBFCB3D5BDD2D0D8F0A7AA1E9")
     public final HandshakeStatus getHandshakeStatus() {
-        HandshakeStatus varB4EAC82CA7396A68D541C85D26508E83_1604393035 = null; //Variable for return #1
+        HandshakeStatus varB4EAC82CA7396A68D541C85D26508E83_1604393035 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1604393035 = handshakeStatus;
-        varB4EAC82CA7396A68D541C85D26508E83_1604393035.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1604393035.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1604393035;
-        // ---------- Original Method ----------
-        //return handshakeStatus;
+        
+        
     }
 
     
@@ -87,8 +87,8 @@ public class SSLEngineResult {
     public final int bytesConsumed() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_495501764 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_495501764;
-        // ---------- Original Method ----------
-        //return bytesConsumed;
+        
+        
     }
 
     
@@ -96,24 +96,25 @@ public class SSLEngineResult {
     public final int bytesProduced() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1868726037 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1868726037;
-        // ---------- Original Method ----------
-        //return bytesProduced;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.631 -0400", hash_original_method = "FF10D49A46BF312B9918894EBDEF7098", hash_generated_method = "AF0E1F6EBCFA628DB4EC34DCF0ECB41B")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_396210034 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_396210034 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_396210034 = "SSLEngineReport: Status = " + status + "  HandshakeStatus = " + handshakeStatus
                 + "\n                 bytesConsumed = " + bytesConsumed + " bytesProduced = "
                 + bytesProduced;
-        varB4EAC82CA7396A68D541C85D26508E83_396210034.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_396210034.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_396210034;
-        // ---------- Original Method ----------
-        //return "SSLEngineReport: Status = " + status + "  HandshakeStatus = " + handshakeStatus
-                //+ "\n                 bytesConsumed = " + bytesConsumed + " bytesProduced = "
-                //+ bytesProduced;
+        
+        
+                
+                
     }
 
     

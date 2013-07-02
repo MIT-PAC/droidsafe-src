@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -22,16 +22,16 @@ public class DERT61String extends ASN1Object implements DERString {
             int i = 0;
             {
                 cs[i] = (char)(string[i] & 0xff);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.string = new String(cs);
-        // ---------- Original Method ----------
-        //char[]  cs = new char[string.length];
-        //for (int i = 0; i != cs.length; i++)
-        //{
-            //cs[i] = (char)(string[i] & 0xff);
-        //}
-        //this.string = new String(cs);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -39,11 +39,12 @@ public class DERT61String extends ASN1Object implements DERString {
     public  DERT61String(
         String   string) {
         this.string = string;
-        // ---------- Original Method ----------
-        //this.string = string;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERT61String getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERT61String)
@@ -54,6 +55,7 @@ public class DERT61String extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERT61String getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -71,23 +73,23 @@ public class DERT61String extends ASN1Object implements DERString {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.717 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "EF4DC9D78631958C53939B489176D6E7")
     public String getString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_679745873 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_679745873 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_679745873 = string;
-        varB4EAC82CA7396A68D541C85D26508E83_679745873.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_679745873.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_679745873;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.718 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "A84D9171730B611E63AD75DBF93984AE")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_361919076 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_361919076 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_361919076 = string;
-        varB4EAC82CA7396A68D541C85D26508E83_361919076.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_361919076.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_361919076;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     
@@ -96,11 +98,12 @@ public class DERT61String extends ASN1Object implements DERString {
         DEROutputStream  out) throws IOException {
         out.writeEncoded(T61_STRING, this.getOctets());
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.writeEncoded(T61_STRING, this.getOctets());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.720 -0400", hash_original_method = "22CE003B24CA00E42241233D24EF8326", hash_generated_method = "E07FBA249BE95A4CD5A0E9455EBBAEB5")
     public byte[] getOctets() {
         char[] cs = string.toCharArray();
@@ -109,18 +112,18 @@ public class DERT61String extends ASN1Object implements DERString {
             int i = 0;
             {
                 bs[i] = (byte)cs[i];
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2074419830 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2074419830;
-        // ---------- Original Method ----------
-        //char[]  cs = string.toCharArray();
-        //byte[]  bs = new byte[cs.length];
-        //for (int i = 0; i != cs.length; i++)
-        //{
-            //bs[i] = (byte)cs[i];
-        //}
-        //return bs;
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -131,22 +134,23 @@ public class DERT61String extends ASN1Object implements DERString {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1327028723 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1327028723;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERT61String))
-        //{
-            //return false;
-        //}
-        //return this.getString().equals(((DERT61String)o).getString());
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.721 -0400", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "70AC55071B66923EFC5D43FA6826200B")
     public int hashCode() {
         int var21276083EDE53370F5E1E00F33D2C218_601410360 = (this.getString().hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_629710232 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_629710232;
-        // ---------- Original Method ----------
-        //return this.getString().hashCode();
+        
+        
     }
 
     

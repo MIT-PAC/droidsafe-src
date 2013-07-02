@@ -1,11 +1,11 @@
 package org.apache.harmony.xml.dom;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.w3c.dom.DOMError;
 import org.w3c.dom.DOMLocator;
@@ -23,9 +23,9 @@ public final class DOMErrorImpl implements DOMError {
     public  DOMErrorImpl(short severity, String type) {
         this.severity = severity;
         this.type = type;
-        // ---------- Original Method ----------
-        //this.severity = severity;
-        //this.type = type;
+        
+        
+        
     }
 
     
@@ -33,63 +33,63 @@ public final class DOMErrorImpl implements DOMError {
     public short getSeverity() {
         short var4F09DAA9D95BCB166A302407A0E0BABE_905718940 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_905718940;
-        // ---------- Original Method ----------
-        //return severity;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.879 -0400", hash_original_method = "736EB773CAD78737D003DEF14371364B", hash_generated_method = "7C51036A55D9079DA3FD6404A349A090")
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1469760418 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1469760418 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1469760418 = type;
-        varB4EAC82CA7396A68D541C85D26508E83_1469760418.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1469760418.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1469760418;
-        // ---------- Original Method ----------
-        //return type;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.879 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "469F0720F67FC140EFE140CF1E2A4C2E")
     public String getType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1470449931 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1470449931 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1470449931 = type;
-        varB4EAC82CA7396A68D541C85D26508E83_1470449931.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1470449931.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1470449931;
-        // ---------- Original Method ----------
-        //return type;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.880 -0400", hash_original_method = "69DC7C3C45CF145B81BFA491DBEA3D67", hash_generated_method = "71FEF7FDC7FFB6C6D642199AFD9AC691")
     public Object getRelatedException() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_612102527 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_612102527 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_612102527 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_612102527.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_612102527.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_612102527;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.880 -0400", hash_original_method = "2E051F1CC67E124CEB94F15E64801D89", hash_generated_method = "D8A7540938A42CE4047883F9829BC106")
     public Object getRelatedData() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1402651769 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1402651769 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1402651769 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1402651769.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1402651769.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1402651769;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.880 -0400", hash_original_method = "5FDC1F3E63CCD7CD3042D9A19CD94FF4", hash_generated_method = "7C212B1DADE41DD6E034CBC57517CDE4")
     public DOMLocator getLocation() {
-        DOMLocator varB4EAC82CA7396A68D541C85D26508E83_396124574 = null; //Variable for return #1
+        DOMLocator varB4EAC82CA7396A68D541C85D26508E83_396124574 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_396124574 = NULL_DOM_LOCATOR;
-        varB4EAC82CA7396A68D541C85D26508E83_396124574.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_396124574.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_396124574;
-        // ---------- Original Method ----------
-        //return NULL_DOM_LOCATOR;
+        
+        
     }
 
     
@@ -100,8 +100,8 @@ public final class DOMErrorImpl implements DOMError {
         public int getLineNumber() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2078389753 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2078389753;
-            // ---------- Original Method ----------
-            //return -1;
+            
+            
         }
 
         
@@ -109,8 +109,8 @@ public final class DOMErrorImpl implements DOMError {
         public int getColumnNumber() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_113900983 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_113900983;
-            // ---------- Original Method ----------
-            //return -1;
+            
+            
         }
 
         
@@ -118,8 +118,8 @@ public final class DOMErrorImpl implements DOMError {
         public int getByteOffset() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1300430371 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1300430371;
-            // ---------- Original Method ----------
-            //return -1;
+            
+            
         }
 
         
@@ -127,30 +127,30 @@ public final class DOMErrorImpl implements DOMError {
         public int getUtf16Offset() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1651457179 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1651457179;
-            // ---------- Original Method ----------
-            //return -1;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.882 -0400", hash_original_method = "BD213E5A838EDE8A4D1403172904A1AB", hash_generated_method = "5254BCC77657250B9A05F6256FC455A2")
         public Node getRelatedNode() {
-            Node varB4EAC82CA7396A68D541C85D26508E83_2051227868 = null; //Variable for return #1
+            Node varB4EAC82CA7396A68D541C85D26508E83_2051227868 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2051227868 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_2051227868.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2051227868.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2051227868;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.882 -0400", hash_original_method = "08DC8B98EA7E10D6197A6D233921DA55", hash_generated_method = "CD4F23A9BDE71DF49DFCB648FC57E9F7")
         public String getUri() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1385380363 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1385380363 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1385380363 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_1385380363.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1385380363.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1385380363;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         

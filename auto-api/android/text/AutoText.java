@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
@@ -37,12 +37,13 @@ public class AutoText {
     private  AutoText(Resources resources) {
         mLocale = resources.getConfiguration().locale;
         init(resources);
-        // ---------- Original Method ----------
-        //mLocale = resources.getConfiguration().locale;
-        //init(resources);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static AutoText getInstance(View view) {
         Resources res = view.getContext().getResources();
         Locale locale = res.getConfiguration().locale;
@@ -64,6 +65,7 @@ public class AutoText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getSize(View view) {
         return getInstance(view).getSize();
     }
@@ -73,16 +75,16 @@ public class AutoText {
     private int getSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1498556605 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1498556605;
-        // ---------- Original Method ----------
-        //return mSize;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.515 -0400", hash_original_method = "A395619387E5FA987B6ED6EABB20C725", hash_generated_method = "EB0A78CF66A54AC6B9F080556E6CB0A8")
     private String lookup(CharSequence src, final int start, final int end) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1880934495 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1649619178 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1975720945 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1880934495 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1649619178 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1975720945 = null; 
         int here = mTrie[TRIE_ROOT];
         {
             int i = start;
@@ -96,58 +98,59 @@ public class AutoText {
                                 int off = mTrie[here + TRIE_OFF];
                                 int len = mText.charAt(off);
                                 varB4EAC82CA7396A68D541C85D26508E83_1880934495 = mText.substring(off + 1, off + 1 + len);
-                            } //End block
+                            } 
                             here = mTrie[here + TRIE_CHILD];
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1649619178 = null;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1975720945 = null;
         addTaint(src.getTaint());
         addTaint(start);
         addTaint(end);
-        String varA7E53CE21691AB073D9660D615818899_1949866973; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1949866973; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1949866973 = varB4EAC82CA7396A68D541C85D26508E83_1880934495;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1949866973 = varB4EAC82CA7396A68D541C85D26508E83_1649619178;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1949866973 = varB4EAC82CA7396A68D541C85D26508E83_1975720945;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1949866973.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1949866973.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1949866973;
-        // ---------- Original Method ----------
-        //int here = mTrie[TRIE_ROOT];
-        //for (int i = start; i < end; i++) {
-            //char c = src.charAt(i);
-            //for (; here != TRIE_NULL; here = mTrie[here + TRIE_NEXT]) {
-                //if (c == mTrie[here + TRIE_C]) {
-                    //if ((i == end - 1) 
-                            //&& (mTrie[here + TRIE_OFF] != TRIE_NULL)) {
-                        //int off = mTrie[here + TRIE_OFF];
-                        //int len = mText.charAt(off);
-                        //return mText.substring(off + 1, off + 1 + len);
-                    //}
-                    //here = mTrie[here + TRIE_CHILD];
-                    //break;
-                //}
-            //}
-            //if (here == TRIE_NULL) {
-                //return null;
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+            
+                
+                    
+                            
+                        
+                        
+                        
+                    
+                    
+                    
+                
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.516 -0400", hash_original_method = "E19B6C2A17EB3626AF05ED9F48AE64FD", hash_generated_method = "668953189E0ADFB2729733DE43136E8D")
     private void init(Resources r) {
         XmlResourceParser parser = r.getXml(com.android.internal.R.xml.autotext);
@@ -165,7 +168,7 @@ public class AutoText {
                 String element = parser.getName();
                 {
                     boolean var2D95B92CEF5A452FD7925DF9FBF92370_77433144 = (element == null || !(element.equals("word")));
-                } //End collapsed parenthetic
+                } 
                 String src = parser.getAttributeValue(null, "src");
                 {
                     boolean varD9C33DAEA9F0FA8AA020A07656F3B790_1734203493 = (parser.next() == XmlPullParser.TEXT);
@@ -176,38 +179,39 @@ public class AutoText {
                             boolean varDF0A86F34F54C11F6A06F06A2C96505D_1220133009 = (dest.equals(odest));
                             {
                                 off = ooff;
-                            } //End block
+                            } 
                             {
                                 off = (char) right.length();
                                 right.append((char) dest.length());
                                 right.append(dest);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         add(src, off);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             r.flushLayoutCache();
-        } //End block
+        } 
         catch (XmlPullParserException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         finally 
         {
             parser.close();
-        } //End block
+        } 
         mText = right.toString();
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.517 -0400", hash_original_method = "0D3B451571572F26E1C81E0825865666", hash_generated_method = "CC4C5560E76FF94B87B2DDBEE85AD347")
     private void add(String src, char off) {
         int slen = src.length();
@@ -223,12 +227,12 @@ public class AutoText {
                         {
                             {
                                 mTrie[mTrie[herep] + TRIE_OFF] = off;
-                            } //End block
+                            } 
                             herep = mTrie[herep] + TRIE_CHILD;
                             found = true;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 {
                     char node = newTrieNode();
                     mTrie[herep] = node;
@@ -238,37 +242,38 @@ public class AutoText {
                     mTrie[mTrie[herep] + TRIE_CHILD] = TRIE_NULL;
                     {
                         mTrie[mTrie[herep] + TRIE_OFF] = off;
-                    } //End block
+                    } 
                     herep = mTrie[herep] + TRIE_CHILD;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(src.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.518 -0400", hash_original_method = "6974F5A5A1101E98F9450C35EFEECA6C", hash_generated_method = "0642090786C0AA81A2E1A3A19F1C3100")
     private char newTrieNode() {
         {
             char[] copy = new char[mTrie.length + INCREMENT];
             System.arraycopy(mTrie, 0, copy, 0, mTrie.length);
             mTrie = copy;
-        } //End block
+        } 
         char ret = mTrieUsed;
         mTrieUsed += TRIE_SIZEOF;
         char varA87DEB01C5F539E6BDA34829C8EF2368_56048918 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_56048918;
-        // ---------- Original Method ----------
-        //if (mTrieUsed + TRIE_SIZEOF > mTrie.length) {
-            //char[] copy = new char[mTrie.length + INCREMENT];
-            //System.arraycopy(mTrie, 0, copy, 0, mTrie.length);
-            //mTrie = copy;
-        //}
-        //char ret = mTrieUsed;
-        //mTrieUsed += TRIE_SIZEOF;
-        //return ret;
+        
+        
+            
+            
+            
+        
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.pkcs;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 import java.util.Enumeration;
@@ -35,9 +35,9 @@ public class PBKDF2Params extends ASN1Encodable {
         int     iterationCount) {
         this.octStr = new DEROctetString(salt);
         this.iterationCount = new DERInteger(iterationCount);
-        // ---------- Original Method ----------
-        //this.octStr = new DEROctetString(salt);
-        //this.iterationCount = new DERInteger(iterationCount);
+        
+        
+        
     }
 
     
@@ -51,24 +51,24 @@ public class PBKDF2Params extends ASN1Encodable {
             boolean var3EB0A96682EDBE15308427BAC1EC4A4E_2140542533 = (e.hasMoreElements());
             {
                 keyLength = (DERInteger)e.nextElement();
-            } //End block
+            } 
             {
                 keyLength = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(seq.getTaint());
-        // ---------- Original Method ----------
-        //Enumeration e = seq.getObjects();
-        //octStr = (ASN1OctetString)e.nextElement();
-        //iterationCount = (DERInteger)e.nextElement();
-        //if (e.hasMoreElements())
-        //{
-            //keyLength = (DERInteger)e.nextElement();
-        //}
-        //else
-        //{
-            //keyLength = null;
-        //}
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -91,71 +91,71 @@ public class PBKDF2Params extends ASN1Encodable {
         byte[] var59A5FB87189D41C68C894440CB748384_1206579989 = (octStr.getOctets());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1397331365 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1397331365;
-        // ---------- Original Method ----------
-        //return octStr.getOctets();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.092 -0400", hash_original_method = "1C8F1DF1E9A7C9D74F917C50A0F9295E", hash_generated_method = "185731F795B9664B6192DCD5C9787FC7")
     public BigInteger getIterationCount() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_375847283 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_375847283 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_375847283 = iterationCount.getValue();
-        varB4EAC82CA7396A68D541C85D26508E83_375847283.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_375847283.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_375847283;
-        // ---------- Original Method ----------
-        //return iterationCount.getValue();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.092 -0400", hash_original_method = "05FD7C7D47C946F5351B5DDBB4ABDC60", hash_generated_method = "BDD8BB0F0E5A18DE92E49A45157450AF")
     public BigInteger getKeyLength() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1977729410 = null; //Variable for return #1
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1474667136 = null; //Variable for return #2
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1977729410 = null; 
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1474667136 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1977729410 = keyLength.getValue();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1474667136 = null;
-        BigInteger varA7E53CE21691AB073D9660D615818899_162088481; //Final return value
+        BigInteger varA7E53CE21691AB073D9660D615818899_162088481; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_162088481 = varB4EAC82CA7396A68D541C85D26508E83_1977729410;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_162088481 = varB4EAC82CA7396A68D541C85D26508E83_1474667136;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_162088481.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_162088481.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_162088481;
-        // ---------- Original Method ----------
-        //if (keyLength != null)
-        //{
-            //return keyLength.getValue();
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.093 -0400", hash_original_method = "B60CD10E8E03E12312566D8BFE3F0B82", hash_generated_method = "EE3FEFF0F9AA6C8D7F6838D12D2F09AF")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_985477756 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_985477756 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(octStr);
         v.add(iterationCount);
         {
             v.add(keyLength);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_985477756 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_985477756.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_985477756.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_985477756;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(octStr);
-        //v.add(iterationCount);
-        //if (keyLength != null)
-        //{
-            //v.add(keyLength);
-        //}
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     

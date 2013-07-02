@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.pm.PackageManager;
 import android.content.pm.PathPermission;
@@ -51,7 +51,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.340 -0400", hash_original_method = "F039A73ADD81439EFEE4572A926905FF", hash_generated_method = "AE9E67C0D421B97975CBD6F5E7DAC5C3")
     public  ContentProvider() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -65,14 +65,15 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         mReadPermission = readPermission;
         mWritePermission = writePermission;
         mPathPermissions = pathPermissions;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mReadPermission = readPermission;
-        //mWritePermission = writePermission;
-        //mPathPermissions = pathPermissions;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ContentProvider coerceToLocalContentProvider(
             IContentProvider abstractInterface) {
         if (abstractInterface instanceof Transport) {
@@ -84,69 +85,69 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.341 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "CE44610C369E6C0E7F7D982C1E0603A8")
     public final Context getContext() {
-        Context varB4EAC82CA7396A68D541C85D26508E83_1799162595 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_1799162595 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1799162595 = mContext;
-        varB4EAC82CA7396A68D541C85D26508E83_1799162595.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1799162595.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1799162595;
-        // ---------- Original Method ----------
-        //return mContext;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.342 -0400", hash_original_method = "C738A12EDF7704A3BEC0DFE17330C819", hash_generated_method = "5E4FF5E477D8E19F78CD67B08931B74B")
     protected final void setReadPermission(String permission) {
         mReadPermission = permission;
-        // ---------- Original Method ----------
-        //mReadPermission = permission;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.343 -0400", hash_original_method = "5C94FD95ADD3C0054247C1BF6F500E4F", hash_generated_method = "D39DFEB733D8AFA705E2196032B15225")
     public final String getReadPermission() {
-        String varB4EAC82CA7396A68D541C85D26508E83_90295242 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_90295242 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_90295242 = mReadPermission;
-        varB4EAC82CA7396A68D541C85D26508E83_90295242.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_90295242.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_90295242;
-        // ---------- Original Method ----------
-        //return mReadPermission;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.343 -0400", hash_original_method = "6A71B3652F16CF9160129E3EF306B0DC", hash_generated_method = "700C15F3C9EBC3D7B5D3FCF9D079867A")
     protected final void setWritePermission(String permission) {
         mWritePermission = permission;
-        // ---------- Original Method ----------
-        //mWritePermission = permission;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.344 -0400", hash_original_method = "7A0A16A9FA1EB10AD9D087C65A3EFFB1", hash_generated_method = "41FA4082D55D729A951F6F2A3770B1DD")
     public final String getWritePermission() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1807923361 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1807923361 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1807923361 = mWritePermission;
-        varB4EAC82CA7396A68D541C85D26508E83_1807923361.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1807923361.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1807923361;
-        // ---------- Original Method ----------
-        //return mWritePermission;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.345 -0400", hash_original_method = "16570AF799E31BB65FFA9254DA0AB517", hash_generated_method = "1CF8FB57421D0861F87CB9D1F6E697A3")
     protected final void setPathPermissions(PathPermission[] permissions) {
         mPathPermissions = permissions;
-        // ---------- Original Method ----------
-        //mPathPermissions = permissions;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.345 -0400", hash_original_method = "E38FFC0E115EF293B9FB9C6179B78AA8", hash_generated_method = "FFC998A5B7877B8727525DFC08B3CA88")
     public final PathPermission[] getPathPermissions() {
-        PathPermission[] varB4EAC82CA7396A68D541C85D26508E83_867714524 = null; //Variable for return #1
+        PathPermission[] varB4EAC82CA7396A68D541C85D26508E83_867714524 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_867714524 = mPathPermissions;
-        varB4EAC82CA7396A68D541C85D26508E83_867714524.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_867714524.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_867714524;
-        // ---------- Original Method ----------
-        //return mPathPermissions;
+        
+        
     }
 
     
@@ -155,24 +156,24 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.346 -0400", hash_original_method = "8287235C28E9D1E310027A2DDEB95FCD", hash_generated_method = "BA7F1E69C22467D62A959775F321C0BA")
     public void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(newConfig.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.346 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "39AEB8790734ECC8DC70BBAAEE0BAB0B")
     public void onLowMemory() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.346 -0400", hash_original_method = "3AE0D4ACEA3D5F3B779A378D5AB27A6A", hash_generated_method = "C1AFC91F30E138BA03233A690A40C0CC")
     public void onTrimMemory(int level) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(level);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -186,6 +187,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     public abstract Uri insert(Uri uri, ContentValues values);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.347 -0400", hash_original_method = "C678349FF8875CB9D22305FF9A5474DD", hash_generated_method = "1A9306EDB355255CF051ABA4546E09F0")
     public int bulkInsert(Uri uri, ContentValues[] values) {
         int numValues = values.length;
@@ -193,18 +195,18 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
             int i = 0;
             {
                 insert(uri, values[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(uri.getTaint());
         addTaint(values[0].getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2044702471 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2044702471;
-        // ---------- Original Method ----------
-        //int numValues = values.length;
-        //for (int i = 0; i < numValues; i++) {
-            //insert(uri, values[i]);
-        //}
-        //return numValues;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -219,31 +221,31 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     public ParcelFileDescriptor openFile(Uri uri, String mode) throws FileNotFoundException {
     	throw new FileNotFoundException("No files supported by provider at "
                 + uri);
-        // ---------- Original Method ----------
-        //throw new FileNotFoundException("No files supported by provider at "
-                //+ uri);
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.349 -0400", hash_original_method = "58BEA9E66A4FD3FC19246F4A2CA5B928", hash_generated_method = "E2FE7B71DF893DFBE2E8AB984768A07D")
     public AssetFileDescriptor openAssetFile(Uri uri, String mode) throws FileNotFoundException {
-        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1546008861 = null; //Variable for return #1
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1546008861 = null; 
         ParcelFileDescriptor fd = openFile(uri, mode);
         varB4EAC82CA7396A68D541C85D26508E83_1546008861 = fd != null ? new AssetFileDescriptor(fd, 0, -1) : null;
         addTaint(uri.getTaint());
         addTaint(mode.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1546008861.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1546008861.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1546008861;
-        // ---------- Original Method ----------
-        //ParcelFileDescriptor fd = openFile(uri, mode);
-        //return fd != null ? new AssetFileDescriptor(fd, 0, -1) : null;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.350 -0400", hash_original_method = "B77C082B2FC41ABB2AC9CAAF0861BB6A", hash_generated_method = "75A04885CA84C92984326E284F7271BF")
     protected final ParcelFileDescriptor openFileHelper(Uri uri,
             String mode) throws FileNotFoundException {
-        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_2020074063 = null; //Variable for return #1
+        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_2020074063 = null; 
         Cursor c = query(uri, new String[]{"_data"}, null, null, null);
         int count;
         count = c.getCount();
@@ -251,91 +253,91 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         {
             {
                 c.close();
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("No entry for " + uri);
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Multiple items at " + uri);
-        } //End block
+        } 
         c.moveToFirst();
         int i = c.getColumnIndex("_data");
-        String path = (i >= 0 ? c.getString(i) : null);//DSFIXME:  CODE0008: Nested ternary operator in expression
+        String path = (i >= 0 ? c.getString(i) : null);
         c.close();
         {
             if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Column _data not found.");
-        } //End block
+        } 
         int modeBits = ContentResolver.modeToMode(uri, mode);
         varB4EAC82CA7396A68D541C85D26508E83_2020074063 = ParcelFileDescriptor.open(new File(path), modeBits);
         addTaint(uri.getTaint());
         addTaint(mode.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2020074063.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2020074063.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2020074063;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.351 -0400", hash_original_method = "BEF8B956D915C9CD914319D11D9F55DF", hash_generated_method = "3D7B6A8418C227F424DED7514949ADD0")
     public String[] getStreamTypes(Uri uri, String mimeTypeFilter) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1523772123 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1523772123 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1523772123 = null;
         addTaint(uri.getTaint());
         addTaint(mimeTypeFilter.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1523772123.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1523772123.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1523772123;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.352 -0400", hash_original_method = "4E83B7632E2F0C6C101685B3A453F6C7", hash_generated_method = "56D0C056D21B4FD4910A9FFFDF9970DB")
     public AssetFileDescriptor openTypedAssetFile(Uri uri, String mimeTypeFilter, Bundle opts) throws FileNotFoundException {
-        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_495536272 = null; //Variable for return #1
-        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1582947068 = null; //Variable for return #2
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_495536272 = null; 
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1582947068 = null; 
         {
             boolean var4C01B825A6B874B80EFDC93B5CFAC70D_1301690093 = ("*/*".equals(mimeTypeFilter));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_495536272 = openAssetFile(uri, "r");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String baseType = getType(uri);
         {
             boolean var0B401450AF28FAA821E202DA316A98D6_1142197979 = (baseType != null && ClipDescription.compareMimeTypes(baseType, mimeTypeFilter));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1582947068 = openAssetFile(uri, "r");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Can't open " + uri + " as type " + mimeTypeFilter);
         addTaint(uri.getTaint());
         addTaint(mimeTypeFilter.getTaint());
         addTaint(opts.getTaint());
-        AssetFileDescriptor varA7E53CE21691AB073D9660D615818899_889956163; //Final return value
+        AssetFileDescriptor varA7E53CE21691AB073D9660D615818899_889956163; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_889956163 = varB4EAC82CA7396A68D541C85D26508E83_495536272;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_889956163 = varB4EAC82CA7396A68D541C85D26508E83_1582947068;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_889956163.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_889956163.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_889956163;
-        // ---------- Original Method ----------
-        //if ("*/*".equals(mimeTypeFilter)) {
-            //return openAssetFile(uri, "r");
-        //}
-        //String baseType = getType(uri);
-        //if (baseType != null && ClipDescription.compareMimeTypes(baseType, mimeTypeFilter)) {
-            //return openAssetFile(uri, "r");
-        //}
-        //throw new FileNotFoundException("Can't open " + uri + " as type " + mimeTypeFilter);
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:59.013 -0400", hash_original_method = "BC63CE555A1B156ABB3D2B022F0E90CE", hash_generated_method = "A41BDF898F7012C6B71E0A66B151EE80")
     public <T> ParcelFileDescriptor openPipeHelper(final Uri uri, final String mimeType,
             final Bundle opts, final T args, final PipeDataWriter<T> func) throws FileNotFoundException {
-        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_911275854 = null; //Variable for return #1
+        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_911275854 = null; 
         try 
         {
             final ParcelFileDescriptor[] fds;
@@ -355,20 +357,20 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
             };
             task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, (Object[])null);
             varB4EAC82CA7396A68D541C85D26508E83_911275854 = fds[0];
-        } //End block
+        } 
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("failure making pipe");
-        } //End block
+        } 
         addTaint(uri.getTaint());
         addTaint(mimeType.getTaint());
         addTaint(opts.getTaint());
         addTaint(args.getTaint());
         addTaint(func.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_911275854.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_911275854.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_911275854;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -376,19 +378,19 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     protected boolean isTemporary() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1698133992 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1698133992;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.355 -0400", hash_original_method = "883A061900350051FBA62F6F6FD9E085", hash_generated_method = "E46DBFD2C7C44B521F77AEDFF13AFFBB")
     public IContentProvider getIContentProvider() {
-        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_1316038692 = null; //Variable for return #1
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_1316038692 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1316038692 = mTransport;
-        varB4EAC82CA7396A68D541C85D26508E83_1316038692.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1316038692.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1316038692;
-        // ---------- Original Method ----------
-        //return mTransport;
+        
+        
     }
 
     
@@ -403,69 +405,69 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
                 setWritePermission(info.writePermission);
                 setPathPermissions(info.pathPermissions);
                 mExported = info.exported;
-            } //End block
+            } 
             ContentProvider.this.onCreate();
-        } //End block
-        // ---------- Original Method ----------
-        //AsyncTask.init();
-        //if (mContext == null) {
-            //mContext = context;
-            //mMyUid = Process.myUid();
-            //if (info != null) {
-                //setReadPermission(info.readPermission);
-                //setWritePermission(info.writePermission);
-                //setPathPermissions(info.pathPermissions);
-                //mExported = info.exported;
-            //}
-            //ContentProvider.this.onCreate();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+                
+                
+                
+                
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.357 -0400", hash_original_method = "E0DAC3050A9BAD12465D5076F1EE0420", hash_generated_method = "A7ADFDD023688DB1771C71CA30FAFE27")
     public ContentProviderResult[] applyBatch(ArrayList<ContentProviderOperation> operations) throws OperationApplicationException {
-        ContentProviderResult[] varB4EAC82CA7396A68D541C85D26508E83_432541459 = null; //Variable for return #1
+        ContentProviderResult[] varB4EAC82CA7396A68D541C85D26508E83_432541459 = null; 
         final int numOperations = operations.size();
         final ContentProviderResult[] results = new ContentProviderResult[numOperations];
         {
             int i = 0;
             {
                 results[i] = operations.get(i).apply(this, results, i);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_432541459 = results;
         addTaint(operations.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_432541459.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_432541459.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_432541459;
-        // ---------- Original Method ----------
-        //final int numOperations = operations.size();
-        //final ContentProviderResult[] results = new ContentProviderResult[numOperations];
-        //for (int i = 0; i < numOperations; i++) {
-            //results[i] = operations.get(i).apply(this, results, i);
-        //}
-        //return results;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.358 -0400", hash_original_method = "FDEF25FCA992321C96D9ED3D525FD124", hash_generated_method = "0A0BAD4C2A21828DF7A35865E49257E9")
     public Bundle call(String method, String arg, Bundle extras) {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_1918143643 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_1918143643 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1918143643 = null;
         addTaint(method.getTaint());
         addTaint(arg.getTaint());
         addTaint(extras.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1918143643.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1918143643.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1918143643;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.358 -0400", hash_original_method = "D03BEE67B09D4B1E8C6E9290C7758C5F", hash_generated_method = "B150A4E1DC19A0FA6E8508D3F3E8E47D")
     public void shutdown() {
-        // ---------- Original Method ----------
-        //Log.w(TAG, "implement ContentProvider shutdown() to make sure all database " +
-                //"connections are gracefully shutdown");
+        
+        
+                
     }
 
     
@@ -474,37 +476,37 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.359 -0400", hash_original_method = "E8AA98EC6BE3CDFD6C8382F7CC9C6C6F", hash_generated_method = "E8AA98EC6BE3CDFD6C8382F7CC9C6C6F")
         public Transport ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.359 -0400", hash_original_method = "D85CC82248E7B34649DA1C02380D9E2C", hash_generated_method = "88F04C1F1C5D28CF911DE96EE5BA418B")
          ContentProvider getContentProvider() {
-            ContentProvider varB4EAC82CA7396A68D541C85D26508E83_47817433 = null; //Variable for return #1
+            ContentProvider varB4EAC82CA7396A68D541C85D26508E83_47817433 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_47817433 = ContentProvider.this;
-            varB4EAC82CA7396A68D541C85D26508E83_47817433.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_47817433.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_47817433;
-            // ---------- Original Method ----------
-            //return ContentProvider.this;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.360 -0400", hash_original_method = "157A3AC2CED86E999B16E7CDFBD5AE31", hash_generated_method = "7EF98D9F83DBB4C2D1D222D43388121F")
         @Override
         public String getProviderName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_715962022 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_715962022 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_715962022 = getContentProvider().getClass().getName();
-            varB4EAC82CA7396A68D541C85D26508E83_715962022.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_715962022.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_715962022;
-            // ---------- Original Method ----------
-            //return getContentProvider().getClass().getName();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.361 -0400", hash_original_method = "C07C2CC52F2EA8ADD199B18CF964D47B", hash_generated_method = "D9FB4EBE980A4F16F0F0246698621944")
         public Cursor query(Uri uri, String[] projection,
                 String selection, String[] selectionArgs, String sortOrder) {
-            Cursor varB4EAC82CA7396A68D541C85D26508E83_558101988 = null; //Variable for return #1
+            Cursor varB4EAC82CA7396A68D541C85D26508E83_558101988 = null; 
             enforceReadPermission(uri);
             varB4EAC82CA7396A68D541C85D26508E83_558101988 = ContentProvider.this.query(uri, projection, selection,
                     selectionArgs, sortOrder);
@@ -513,39 +515,39 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
             addTaint(selection.getTaint());
             addTaint(selectionArgs[0].getTaint());
             addTaint(sortOrder.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_558101988.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_558101988.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_558101988;
-            // ---------- Original Method ----------
-            //enforceReadPermission(uri);
-            //return ContentProvider.this.query(uri, projection, selection,
-                    //selectionArgs, sortOrder);
+            
+            
+            
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.362 -0400", hash_original_method = "BE9D1875DBA635C7BA04B42A3E893DA2", hash_generated_method = "615F69165F81F6E9A61E8546E545BEBD")
         public String getType(Uri uri) {
-            String varB4EAC82CA7396A68D541C85D26508E83_844904804 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_844904804 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_844904804 = ContentProvider.this.getType(uri);
             addTaint(uri.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_844904804.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_844904804.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_844904804;
-            // ---------- Original Method ----------
-            //return ContentProvider.this.getType(uri);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.363 -0400", hash_original_method = "2D883DF9190F17ADC9F3F05EDAD4CA9E", hash_generated_method = "744C91E9711DDDD9A244BFB8F6B9466D")
         public Uri insert(Uri uri, ContentValues initialValues) {
-            Uri varB4EAC82CA7396A68D541C85D26508E83_252942102 = null; //Variable for return #1
+            Uri varB4EAC82CA7396A68D541C85D26508E83_252942102 = null; 
             enforceWritePermission(uri);
             varB4EAC82CA7396A68D541C85D26508E83_252942102 = ContentProvider.this.insert(uri, initialValues);
             addTaint(uri.getTaint());
             addTaint(initialValues.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_252942102.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_252942102.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_252942102;
-            // ---------- Original Method ----------
-            //enforceWritePermission(uri);
-            //return ContentProvider.this.insert(uri, initialValues);
+            
+            
+            
         }
 
         
@@ -557,15 +559,15 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
             addTaint(initialValues[0].getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1757605872 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1757605872;
-            // ---------- Original Method ----------
-            //enforceWritePermission(uri);
-            //return ContentProvider.this.bulkInsert(uri, initialValues);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.371 -0400", hash_original_method = "8198345EE7E6B486A1CABFB05410D25E", hash_generated_method = "5A7284854FE3808FE307D85186041BC0")
         public ContentProviderResult[] applyBatch(ArrayList<ContentProviderOperation> operations) throws OperationApplicationException {
-            ContentProviderResult[] varB4EAC82CA7396A68D541C85D26508E83_895072536 = null; //Variable for return #1
+            ContentProviderResult[] varB4EAC82CA7396A68D541C85D26508E83_895072536 = null; 
             {
                 Iterator<ContentProviderOperation> varE9602D9F0CB9F920ADAA80E0AEDB4F89_1379530336 = (operations).iterator();
                 varE9602D9F0CB9F920ADAA80E0AEDB4F89_1379530336.hasNext();
@@ -575,30 +577,30 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
                         boolean var648C2431FEB36CA6BCD4B44ED4DEFABF_625273070 = (operation.isReadOperation());
                         {
                             enforceReadPermission(operation.getUri());
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         boolean var76F7573D9527D4C4854BC03A7AAE3020_1212971807 = (operation.isWriteOperation());
                         {
                             enforceWritePermission(operation.getUri());
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_895072536 = ContentProvider.this.applyBatch(operations);
             addTaint(operations.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_895072536.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_895072536.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_895072536;
-            // ---------- Original Method ----------
-            //for (ContentProviderOperation operation : operations) {
-                //if (operation.isReadOperation()) {
-                    //enforceReadPermission(operation.getUri());
-                //}
-                //if (operation.isWriteOperation()) {
-                    //enforceWritePermission(operation.getUri());
-                //}
-            //}
-            //return ContentProvider.this.applyBatch(operations);
+            
+            
+                
+                    
+                
+                
+                    
+                
+            
+            
         }
 
         
@@ -611,9 +613,9 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
             addTaint(selectionArgs[0].getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2124004830 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2124004830;
-            // ---------- Original Method ----------
-            //enforceWritePermission(uri);
-            //return ContentProvider.this.delete(uri, selection, selectionArgs);
+            
+            
+            
         }
 
         
@@ -628,94 +630,94 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
             addTaint(selectionArgs[0].getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461419225 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461419225;
-            // ---------- Original Method ----------
-            //enforceWritePermission(uri);
-            //return ContentProvider.this.update(uri, values, selection, selectionArgs);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.374 -0400", hash_original_method = "A3B5DD3A6EF0BED7F3109E14959CA5EF", hash_generated_method = "05CBA4470472057499B6512A21EF1E39")
         public ParcelFileDescriptor openFile(Uri uri, String mode) throws FileNotFoundException {
-            ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_10163974 = null; //Variable for return #1
+            ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_10163974 = null; 
             {
                 boolean var990C6E0E8CA37484AEEB3E9453431412_1294852661 = (mode != null && mode.startsWith("rw"));
                 enforceWritePermission(uri);
                 enforceReadPermission(uri);
-            } //End collapsed parenthetic
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_10163974 = ContentProvider.this.openFile(uri, mode);
             addTaint(uri.getTaint());
             addTaint(mode.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_10163974.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_10163974.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_10163974;
-            // ---------- Original Method ----------
-            //if (mode != null && mode.startsWith("rw")) enforceWritePermission(uri);
-            //else enforceReadPermission(uri);
-            //return ContentProvider.this.openFile(uri, mode);
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.375 -0400", hash_original_method = "9FC3CF0D01502503E6A8E959789D91E0", hash_generated_method = "6939686D91FA4DA86FA7C3BFB5101E9A")
         public AssetFileDescriptor openAssetFile(Uri uri, String mode) throws FileNotFoundException {
-            AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1819448755 = null; //Variable for return #1
+            AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1819448755 = null; 
             {
                 boolean var990C6E0E8CA37484AEEB3E9453431412_1145177173 = (mode != null && mode.startsWith("rw"));
                 enforceWritePermission(uri);
                 enforceReadPermission(uri);
-            } //End collapsed parenthetic
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1819448755 = ContentProvider.this.openAssetFile(uri, mode);
             addTaint(uri.getTaint());
             addTaint(mode.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1819448755.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1819448755.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1819448755;
-            // ---------- Original Method ----------
-            //if (mode != null && mode.startsWith("rw")) enforceWritePermission(uri);
-            //else enforceReadPermission(uri);
-            //return ContentProvider.this.openAssetFile(uri, mode);
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.376 -0400", hash_original_method = "F8D45B029854B0071CB25BB646C6653D", hash_generated_method = "07A0EEB1EE7603A1A72DCA05AE641757")
         public Bundle call(String method, String arg, Bundle extras) {
-            Bundle varB4EAC82CA7396A68D541C85D26508E83_541072445 = null; //Variable for return #1
+            Bundle varB4EAC82CA7396A68D541C85D26508E83_541072445 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_541072445 = ContentProvider.this.call(method, arg, extras);
             addTaint(method.getTaint());
             addTaint(arg.getTaint());
             addTaint(extras.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_541072445.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_541072445.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_541072445;
-            // ---------- Original Method ----------
-            //return ContentProvider.this.call(method, arg, extras);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.377 -0400", hash_original_method = "8E1F3128EE5808B485D05EE809576B99", hash_generated_method = "2C77FAFE3671C60C83CB825A93C49A01")
         @Override
         public String[] getStreamTypes(Uri uri, String mimeTypeFilter) {
-            String[] varB4EAC82CA7396A68D541C85D26508E83_2120523745 = null; //Variable for return #1
+            String[] varB4EAC82CA7396A68D541C85D26508E83_2120523745 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2120523745 = ContentProvider.this.getStreamTypes(uri, mimeTypeFilter);
             addTaint(uri.getTaint());
             addTaint(mimeTypeFilter.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2120523745.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2120523745.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2120523745;
-            // ---------- Original Method ----------
-            //return ContentProvider.this.getStreamTypes(uri, mimeTypeFilter);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.377 -0400", hash_original_method = "C18E75C38B25261EF8CFA8F7B83C6E2D", hash_generated_method = "64E8527EFEBACD75583265E1BCED95FD")
         @Override
         public AssetFileDescriptor openTypedAssetFile(Uri uri, String mimeType, Bundle opts) throws FileNotFoundException {
-            AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_721664105 = null; //Variable for return #1
+            AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_721664105 = null; 
             enforceReadPermission(uri);
             varB4EAC82CA7396A68D541C85D26508E83_721664105 = ContentProvider.this.openTypedAssetFile(uri, mimeType, opts);
             addTaint(uri.getTaint());
             addTaint(mimeType.getTaint());
             addTaint(opts.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_721664105.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_721664105.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_721664105;
-            // ---------- Original Method ----------
-            //enforceReadPermission(uri);
-            //return ContentProvider.this.openTypedAssetFile(uri, mimeType, opts);
+            
+            
+            
         }
 
         
@@ -729,7 +731,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
                 boolean var11ABD9D7DE204BDD0582E9A702BF61D0_1368732750 = (mExported && (rperm == null
                     || context.checkPermission(rperm, pid, uid)
                     == PackageManager.PERMISSION_GRANTED));
-            } //End collapsed parenthetic
+            } 
             PathPermission[] pps = getPathPermissions();
             {
                 final String path = uri.getPath();
@@ -743,16 +745,16 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
                             {
                                 boolean var02C738C973D4432B9D925BA7105A8603_2082064516 = (context.checkPermission(pprperm, pid, uid)
                                 == PackageManager.PERMISSION_GRANTED);
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 boolean var13E8497132730133410D53B1797E5D75_841590279 = (context.checkUriPermission(uri, pid, uid,
                     Intent.FLAG_GRANT_READ_URI_PERMISSION)
                     == PackageManager.PERMISSION_GRANTED);
-            } //End collapsed parenthetic
+            } 
             String msg = "Permission Denial: reading "
                     + ContentProvider.this.getClass().getName()
                     + " uri " + uri + " from pid=" + Binder.getCallingPid()
@@ -760,8 +762,8 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
                     + " requires " + rperm;
             if (DroidSafeAndroidRuntime.control) throw new SecurityException(msg);
             addTaint(uri.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -775,7 +777,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
                 boolean var87DDA52804F18883BB0B0CEC23D0EDFD_1569688565 = (mExported && (wperm == null
                     || context.checkPermission(wperm, pid, uid)
                     == PackageManager.PERMISSION_GRANTED));
-            } //End collapsed parenthetic
+            } 
             PathPermission[] pps = getPathPermissions();
             {
                 final String path = uri.getPath();
@@ -789,21 +791,21 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
                             {
                                 boolean var635E8626A3F8934298FFDD63E2789994_302980783 = (context.checkPermission(ppwperm, pid, uid)
                                 == PackageManager.PERMISSION_GRANTED);
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             {
                 boolean var88D202BB8B1056D8C1A0EE22D8D71A13_1322298373 = (context.checkUriPermission(uri, pid, uid,
                     Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
                     == PackageManager.PERMISSION_GRANTED);
-            } //End collapsed parenthetic
+            } 
             addTaint(uri.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_758750935 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_758750935;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -811,7 +813,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         private void enforceWritePermission(Uri uri) {
             {
                 boolean var24C3F28B334AD89BB610904621BC7375_2022885375 = (hasWritePermission(uri));
-            } //End collapsed parenthetic
+            } 
             String msg = "Permission Denial: writing "
                     + ContentProvider.this.getClass().getName()
                     + " uri " + uri + " from pid=" + Binder.getCallingPid()
@@ -819,16 +821,16 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
                     + " requires " + getWritePermission();
             if (DroidSafeAndroidRuntime.control) throw new SecurityException(msg);
             addTaint(uri.getTaint());
-            // ---------- Original Method ----------
-            //if (hasWritePermission(uri)) {
-                //return;
-            //}
-            //String msg = "Permission Denial: writing "
-                    //+ ContentProvider.this.getClass().getName()
-                    //+ " uri " + uri + " from pid=" + Binder.getCallingPid()
-                    //+ ", uid=" + Binder.getCallingUid()
-                    //+ " requires " + getWritePermission();
-            //throw new SecurityException(msg);
+            
+            
+                
+            
+            
+                    
+                    
+                    
+                    
+            
         }
 
         
@@ -845,7 +847,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.380 -0400", hash_original_field = "D9DEAD4FE5612F0F829FC72D942CF904", hash_generated_field = "DA15E6471BF02EF7674EB3675F3C058F")
 
     private static final String TAG = "ContentProvider";
-    // orphaned legacy method
+    
        
 }
 

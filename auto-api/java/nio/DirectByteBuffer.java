@@ -1,11 +1,11 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import libcore.io.SizeOf;
 
@@ -20,25 +20,25 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         long baseSize = block.getSize();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("capacity + offset > baseSize");
-        } //End block
+        } 
         this.offset = offset;
         this.effectiveDirectAddress = block.toInt() + offset;
         addTaint(block.getTaint());
         addTaint(capacity);
-        // ---------- Original Method ----------
-        //long baseSize = block.getSize();
-        //if (baseSize >= 0 && (capacity + offset) > baseSize) {
-            //throw new IllegalArgumentException("capacity + offset > baseSize");
-        //}
-        //this.offset = offset;
-        //this.effectiveDirectAddress = block.toInt() + offset;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.087 -0400", hash_original_method = "05EA367CE37FB792328EB9B5E5178E53", hash_generated_method = "9E5E6861D99A458773C1C8210B1DDC5E")
     @Override
     public final ByteBuffer get(byte[] dst, int dstOffset, int byteCount) {
-        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_853983075 = null; //Variable for return #1
+        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_853983075 = null; 
         checkGetBounds(1, dst.length, dstOffset, byteCount);
         this.block.peekByteArray(offset + position, dst, dstOffset, byteCount);
         position += byteCount;
@@ -46,13 +46,13 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         addTaint(dst[0]);
         addTaint(dstOffset);
         addTaint(byteCount);
-        varB4EAC82CA7396A68D541C85D26508E83_853983075.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_853983075.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_853983075;
-        // ---------- Original Method ----------
-        //checkGetBounds(1, dst.length, dstOffset, byteCount);
-        //this.block.peekByteArray(offset + position, dst, dstOffset, byteCount);
-        //position += byteCount;
-        //return this;
+        
+        
+        
+        
+        
     }
 
     
@@ -64,10 +64,10 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         addTaint(dst[0]);
         addTaint(dstOffset);
         addTaint(charCount);
-        // ---------- Original Method ----------
-        //int byteCount = checkGetBounds(SizeOf.CHAR, dst.length, dstOffset, charCount);
-        //this.block.peekCharArray(offset + position, dst, dstOffset, charCount, order.needsSwap);
-        //position += byteCount;
+        
+        
+        
+        
     }
 
     
@@ -79,10 +79,10 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         addTaint(dst[0]);
         addTaint(dstOffset);
         addTaint(doubleCount);
-        // ---------- Original Method ----------
-        //int byteCount = checkGetBounds(SizeOf.DOUBLE, dst.length, dstOffset, doubleCount);
-        //this.block.peekDoubleArray(offset + position, dst, dstOffset, doubleCount, order.needsSwap);
-        //position += byteCount;
+        
+        
+        
+        
     }
 
     
@@ -94,10 +94,10 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         addTaint(dst[0]);
         addTaint(dstOffset);
         addTaint(floatCount);
-        // ---------- Original Method ----------
-        //int byteCount = checkGetBounds(SizeOf.FLOAT, dst.length, dstOffset, floatCount);
-        //this.block.peekFloatArray(offset + position, dst, dstOffset, floatCount, order.needsSwap);
-        //position += byteCount;
+        
+        
+        
+        
     }
 
     
@@ -109,10 +109,10 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         addTaint(dst[0]);
         addTaint(dstOffset);
         addTaint(intCount);
-        // ---------- Original Method ----------
-        //int byteCount = checkGetBounds(SizeOf.INT, dst.length, dstOffset, intCount);
-        //this.block.peekIntArray(offset + position, dst, dstOffset, intCount, order.needsSwap);
-        //position += byteCount;
+        
+        
+        
+        
     }
 
     
@@ -124,10 +124,10 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         addTaint(dst[0]);
         addTaint(dstOffset);
         addTaint(longCount);
-        // ---------- Original Method ----------
-        //int byteCount = checkGetBounds(SizeOf.LONG, dst.length, dstOffset, longCount);
-        //this.block.peekLongArray(offset + position, dst, dstOffset, longCount, order.needsSwap);
-        //position += byteCount;
+        
+        
+        
+        
     }
 
     
@@ -139,10 +139,10 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         addTaint(dst[0]);
         addTaint(dstOffset);
         addTaint(shortCount);
-        // ---------- Original Method ----------
-        //int byteCount = checkGetBounds(SizeOf.SHORT, dst.length, dstOffset, shortCount);
-        //this.block.peekShortArray(offset + position, dst, dstOffset, shortCount, order.needsSwap);
-        //position += byteCount;
+        
+        
+        
+        
     }
 
     
@@ -151,15 +151,15 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
     public final byte get() {
         {
             if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
-        } //End block
+        } 
         byte varBD0DA4AA3A28468377552D0F8F24449E_268600193 = (this.block.peekByte(offset + position++));
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1970299043 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1970299043;
-        // ---------- Original Method ----------
-        //if (position == limit) {
-            //throw new BufferUnderflowException();
-        //}
-        //return this.block.peekByte(offset + position++);
+        
+        
+            
+        
+        
     }
 
     
@@ -171,9 +171,9 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         addTaint(index);
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1967907066 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1967907066;
-        // ---------- Original Method ----------
-        //checkIndex(index);
-        //return this.block.peekByte(offset + index);
+        
+        
+        
     }
 
     
@@ -183,19 +183,19 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         int newPosition = position + SizeOf.CHAR;
         {
             if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
-        } //End block
+        } 
         char result = (char) this.block.peekShort(offset + position, order);
         position = newPosition;
         char varA87DEB01C5F539E6BDA34829C8EF2368_854766145 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_854766145;
-        // ---------- Original Method ----------
-        //int newPosition = position + SizeOf.CHAR;
-        //if (newPosition > limit) {
-            //throw new BufferUnderflowException();
-        //}
-        //char result = (char) this.block.peekShort(offset + position, order);
-        //position = newPosition;
-        //return result;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -207,9 +207,9 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         addTaint(index);
         char varA87DEB01C5F539E6BDA34829C8EF2368_1561738047 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1561738047;
-        // ---------- Original Method ----------
-        //checkIndex(index, SizeOf.CHAR);
-        //return (char) this.block.peekShort(offset + index, order);
+        
+        
+        
     }
 
     
@@ -219,19 +219,19 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         int newPosition = position + SizeOf.DOUBLE;
         {
             if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
-        } //End block
+        } 
         double result = Double.longBitsToDouble(this.block.peekLong(offset + position, order));
         position = newPosition;
         double varE8CD7DA078A86726031AD64F35F5A6C0_1925764009 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1925764009;
-        // ---------- Original Method ----------
-        //int newPosition = position + SizeOf.DOUBLE;
-        //if (newPosition > limit) {
-            //throw new BufferUnderflowException();
-        //}
-        //double result = Double.longBitsToDouble(this.block.peekLong(offset + position, order));
-        //position = newPosition;
-        //return result;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -243,9 +243,9 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         addTaint(index);
         double varE8CD7DA078A86726031AD64F35F5A6C0_1589353882 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1589353882;
-        // ---------- Original Method ----------
-        //checkIndex(index, SizeOf.DOUBLE);
-        //return Double.longBitsToDouble(this.block.peekLong(offset + index, order));
+        
+        
+        
     }
 
     
@@ -255,19 +255,19 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         int newPosition = position + SizeOf.FLOAT;
         {
             if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
-        } //End block
+        } 
         float result = Float.intBitsToFloat(this.block.peekInt(offset + position, order));
         position = newPosition;
         float var546ADE640B6EDFBC8A086EF31347E768_1071961122 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1071961122;
-        // ---------- Original Method ----------
-        //int newPosition = position + SizeOf.FLOAT;
-        //if (newPosition > limit) {
-            //throw new BufferUnderflowException();
-        //}
-        //float result = Float.intBitsToFloat(this.block.peekInt(offset + position, order));
-        //position = newPosition;
-        //return result;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -279,9 +279,9 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         addTaint(index);
         float var546ADE640B6EDFBC8A086EF31347E768_2099456288 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2099456288;
-        // ---------- Original Method ----------
-        //checkIndex(index, SizeOf.FLOAT);
-        //return Float.intBitsToFloat(this.block.peekInt(offset + index, order));
+        
+        
+        
     }
 
     
@@ -291,19 +291,19 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         int newPosition = position + SizeOf.INT;
         {
             if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
-        } //End block
+        } 
         int result = this.block.peekInt(offset + position, order);
         position = newPosition;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1133656655 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1133656655;
-        // ---------- Original Method ----------
-        //int newPosition = position + SizeOf.INT;
-        //if (newPosition > limit) {
-            //throw new BufferUnderflowException();
-        //}
-        //int result = this.block.peekInt(offset + position, order);
-        //position = newPosition;
-        //return result;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -315,9 +315,9 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         addTaint(index);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_454935436 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_454935436;
-        // ---------- Original Method ----------
-        //checkIndex(index, SizeOf.INT);
-        //return this.block.peekInt(offset + index, order);
+        
+        
+        
     }
 
     
@@ -327,19 +327,19 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         int newPosition = position + SizeOf.LONG;
         {
             if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
-        } //End block
+        } 
         long result = this.block.peekLong(offset + position, order);
         position = newPosition;
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1536168873 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1536168873;
-        // ---------- Original Method ----------
-        //int newPosition = position + SizeOf.LONG;
-        //if (newPosition > limit) {
-            //throw new BufferUnderflowException();
-        //}
-        //long result = this.block.peekLong(offset + position, order);
-        //position = newPosition;
-        //return result;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -351,9 +351,9 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         addTaint(index);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_161098829 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_161098829;
-        // ---------- Original Method ----------
-        //checkIndex(index, SizeOf.LONG);
-        //return this.block.peekLong(offset + index, order);
+        
+        
+        
     }
 
     
@@ -363,19 +363,19 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         int newPosition = position + SizeOf.SHORT;
         {
             if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
-        } //End block
+        } 
         short result = this.block.peekShort(offset + position, order);
         position = newPosition;
         short var4F09DAA9D95BCB166A302407A0E0BABE_1160069092 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1160069092;
-        // ---------- Original Method ----------
-        //int newPosition = position + SizeOf.SHORT;
-        //if (newPosition > limit) {
-            //throw new BufferUnderflowException();
-        //}
-        //short result = this.block.peekShort(offset + position, order);
-        //position = newPosition;
-        //return result;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -387,9 +387,9 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         addTaint(index);
         short var4F09DAA9D95BCB166A302407A0E0BABE_966328364 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_966328364;
-        // ---------- Original Method ----------
-        //checkIndex(index, SizeOf.SHORT);
-        //return this.block.peekShort(offset + index, order);
+        
+        
+        
     }
 
     
@@ -398,16 +398,16 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
     public final boolean isDirect() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1133394516 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1133394516;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.096 -0400", hash_original_method = "B372104876D32901CA696FF1048C8368", hash_generated_method = "F9713BDBA9CA6D5B4ADE6EB061597987")
     public final void free() {
         block.free();
-        // ---------- Original Method ----------
-        //block.free();
+        
+        
     }
 
     
@@ -417,27 +417,28 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         byte[] array = this.block.array();
         {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_593138160 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_593138160;
-        // ---------- Original Method ----------
-        //byte[] array = this.block.array();
-        //if (array == null) {
-            //throw new UnsupportedOperationException();
-        //}
-        //return array;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.097 -0400", hash_original_method = "BE42CB64719A7E35581BD2552BC2391A", hash_generated_method = "7B5DA5C4D164CCF04A78E6732FFA5A30")
     @Override
     protected int protectedArrayOffset() {
         protectedArray();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1157256429 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1157256429;
-        // ---------- Original Method ----------
-        //protectedArray();
-        //return offset;
+        
+        
+        
     }
 
     
@@ -447,8 +448,8 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
         boolean var018F21DBC5772CA6D61006F1D966A453_1060493214 = (protectedArray() != null);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1208396593 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1208396593;
-        // ---------- Original Method ----------
-        //return protectedArray() != null;
+        
+        
     }
 
     

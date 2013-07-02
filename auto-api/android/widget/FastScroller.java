@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -137,28 +137,28 @@ class FastScroller {
                 int newThumbY = (int) mInitialTouchY - mThumbH + 10;
                 {
                     newThumbY = 0;
-                } //End block
+                } 
                 {
                     newThumbY = viewHeight - mThumbH;
-                } //End block
+                } 
                 mThumbY = newThumbY;
                 scrollTo((float) mThumbY / (viewHeight - mThumbH));
-            } //End block
+            } 
             mPendingDrag = false;
-            // ---------- Original Method ----------
-            //if (mList.mIsAttached) {
-                //beginDrag();
-                //final int viewHeight = mList.getHeight();
-                //int newThumbY = (int) mInitialTouchY - mThumbH + 10;
-                //if (newThumbY < 0) {
-                    //newThumbY = 0;
-                //} else if (newThumbY + mThumbH > viewHeight) {
-                    //newThumbY = viewHeight - mThumbH;
-                //}
-                //mThumbY = newThumbY;
-                //scrollTo((float) mThumbY / (viewHeight - mThumbH));
-            //}
-            //mPendingDrag = false;
+            
+            
+                
+                
+                
+                
+                    
+                
+                    
+                
+                
+                
+            
+            
         }
 
         
@@ -169,30 +169,31 @@ class FastScroller {
         mList = listView;
         init(context);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //mList = listView;
-        //init(context);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.854 -0400", hash_original_method = "39D93CA5552A2245B487796C83EA3A2C", hash_generated_method = "8514F207357119F1B336448F7E608BBF")
     public void setAlwaysShow(boolean alwaysShow) {
         mAlwaysShow = alwaysShow;
         {
             mHandler.removeCallbacks(mScrollFade);
             setState(STATE_VISIBLE);
-        } //End block
+        } 
         {
             mHandler.postDelayed(mScrollFade, FADE_TIMEOUT);
-        } //End block
-        // ---------- Original Method ----------
-        //mAlwaysShow = alwaysShow;
-        //if (alwaysShow) {
-            //mHandler.removeCallbacks(mScrollFade);
-            //setState(STATE_VISIBLE);
-        //} else if (mState == STATE_VISIBLE) {
-            //mHandler.postDelayed(mScrollFade, FADE_TIMEOUT);
-        //}
+        } 
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -200,11 +201,12 @@ class FastScroller {
     public boolean isAlwaysShowEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1942855534 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1942855534;
-        // ---------- Original Method ----------
-        //return mAlwaysShow;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.854 -0400", hash_original_method = "8A07D5E4DE8CD170DC3BFC9FE8A30504", hash_generated_method = "C8B01E20FF9A04374BBE1228ED9BDCC5")
     private void refreshDrawableState() {
         int[] state;
@@ -214,46 +216,46 @@ class FastScroller {
             boolean varFFD0D4700603A30109E1419E6751DAC5_815689958 = (mThumbDrawable != null && mThumbDrawable.isStateful());
             {
                 mThumbDrawable.setState(state);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var186A66CF4AFBB431FA0AA3F444BEC0A2_1550180972 = (mTrackDrawable != null && mTrackDrawable.isStateful());
             {
                 mTrackDrawable.setState(state);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //int[] state = mState == STATE_DRAGGING ? PRESSED_STATES : DEFAULT_STATES;
-        //if (mThumbDrawable != null && mThumbDrawable.isStateful()) {
-            //mThumbDrawable.setState(state);
-        //}
-        //if (mTrackDrawable != null && mTrackDrawable.isStateful()) {
-            //mTrackDrawable.setState(state);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.855 -0400", hash_original_method = "4A2BCFB2C4534D1665C92142AF186787", hash_generated_method = "92B1C33A8159587A6DA748D5DA5E8540")
     public void setScrollbarPosition(int position) {
         mPosition = position;
-        //Begin case default View.SCROLLBAR_POSITION_DEFAULT View.SCROLLBAR_POSITION_RIGHT 
+        
         mOverlayDrawable = mOverlayDrawableRight;
-        //End case default View.SCROLLBAR_POSITION_DEFAULT View.SCROLLBAR_POSITION_RIGHT 
-        //Begin case View.SCROLLBAR_POSITION_LEFT 
+        
+        
         mOverlayDrawable = mOverlayDrawableLeft;
-        //End case View.SCROLLBAR_POSITION_LEFT 
-        // ---------- Original Method ----------
-        //mPosition = position;
-        //switch (position) {
-            //default:
-            //case View.SCROLLBAR_POSITION_DEFAULT:
-            //case View.SCROLLBAR_POSITION_RIGHT:
-                //mOverlayDrawable = mOverlayDrawableRight;
-                //break;
-            //case View.SCROLLBAR_POSITION_LEFT:
-                //mOverlayDrawable = mOverlayDrawableLeft;
-                //break;
-        //}
+        
+        
+        
+        
+            
+            
+            
+                
+                
+            
+                
+                
+        
     }
 
     
@@ -261,55 +263,56 @@ class FastScroller {
     public int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_131080781 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_131080781;
-        // ---------- Original Method ----------
-        //return mThumbW;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.855 -0400", hash_original_method = "FD0548A7869DD54F34FB4A98FCCC10E9", hash_generated_method = "2E1265B52C2BFFD31AEDF810662BF912")
     public void setState(int state) {
-        //Begin case STATE_NONE 
+        
         mHandler.removeCallbacks(mScrollFade);
-        //End case STATE_NONE 
-        //Begin case STATE_NONE 
+        
+        
         mList.invalidate();
-        //End case STATE_NONE 
-        //Begin case STATE_VISIBLE 
+        
+        
         {
             resetThumbPos();
-        } //End block
-        //End case STATE_VISIBLE 
-        //Begin case STATE_DRAGGING 
+        } 
+        
+        
         mHandler.removeCallbacks(mScrollFade);
-        //End case STATE_DRAGGING 
-        //Begin case STATE_EXIT 
+        
+        
         int viewWidth = mList.getWidth();
-        //End case STATE_EXIT 
-        //Begin case STATE_EXIT 
+        
+        
         mList.invalidate(viewWidth - mThumbW, mThumbY, viewWidth, mThumbY + mThumbH);
-        //End case STATE_EXIT 
+        
         mState = state;
         refreshDrawableState();
-        // ---------- Original Method ----------
-        //switch (state) {
-            //case STATE_NONE:
-                //mHandler.removeCallbacks(mScrollFade);
-                //mList.invalidate();
-                //break;
-            //case STATE_VISIBLE:
-                //if (mState != STATE_VISIBLE) { 
-                    //resetThumbPos();
-                //}
-            //case STATE_DRAGGING:
-                //mHandler.removeCallbacks(mScrollFade);
-                //break;
-            //case STATE_EXIT:
-                //int viewWidth = mList.getWidth();
-                //mList.invalidate(viewWidth - mThumbW, mThumbY, viewWidth, mThumbY + mThumbH);
-                //break;
-        //}
-        //mState = state;
-        //refreshDrawableState();
+        
+        
+            
+                
+                
+                
+            
+                
+                    
+                
+            
+                
+                
+            
+                
+                
+                
+        
+        
+        
     }
 
     
@@ -317,36 +320,38 @@ class FastScroller {
     public int getState() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1486650382 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1486650382;
-        // ---------- Original Method ----------
-        //return mState;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.856 -0400", hash_original_method = "C32E62B08B27A384339E1BC75CFE4552", hash_generated_method = "C22F2240903A802A5C457B10F026EE7C")
     private void resetThumbPos() {
         final int viewWidth = mList.getWidth();
-        //Begin case View.SCROLLBAR_POSITION_DEFAULT View.SCROLLBAR_POSITION_RIGHT 
+        
         mThumbDrawable.setBounds(viewWidth - mThumbW, 0, viewWidth, mThumbH);
-        //End case View.SCROLLBAR_POSITION_DEFAULT View.SCROLLBAR_POSITION_RIGHT 
-        //Begin case View.SCROLLBAR_POSITION_LEFT 
+        
+        
         mThumbDrawable.setBounds(0, 0, mThumbW, mThumbH);
-        //End case View.SCROLLBAR_POSITION_LEFT 
+        
         mThumbDrawable.setAlpha(ScrollFade.ALPHA_MAX);
-        // ---------- Original Method ----------
-        //final int viewWidth = mList.getWidth();
-        //switch (mPosition) {
-            //case View.SCROLLBAR_POSITION_DEFAULT:
-            //case View.SCROLLBAR_POSITION_RIGHT:
-                //mThumbDrawable.setBounds(viewWidth - mThumbW, 0, viewWidth, mThumbH);
-                //break;
-            //case View.SCROLLBAR_POSITION_LEFT:
-                //mThumbDrawable.setBounds(0, 0, mThumbW, mThumbH);
-                //break;
-        //}
-        //mThumbDrawable.setAlpha(ScrollFade.ALPHA_MAX);
+        
+        
+        
+            
+            
+                
+                
+            
+                
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.857 -0400", hash_original_method = "5C6D13F417D5AA8E0A1553C57F0CD3F0", hash_generated_method = "D822EB46DED61EE27CAFB88FDA15052A")
     private void useThumbDrawable(Context context, Drawable drawable) {
         mThumbDrawable = drawable;
@@ -355,27 +360,28 @@ class FastScroller {
                     com.android.internal.R.dimen.fastscroll_thumb_width);
             mThumbH = context.getResources().getDimensionPixelSize(
                     com.android.internal.R.dimen.fastscroll_thumb_height);
-        } //End block
+        } 
         {
             mThumbW = drawable.getIntrinsicWidth();
             mThumbH = drawable.getIntrinsicHeight();
-        } //End block
+        } 
         mChangedBounds = true;
-        // ---------- Original Method ----------
-        //mThumbDrawable = drawable;
-        //if (drawable instanceof NinePatchDrawable) {
-            //mThumbW = context.getResources().getDimensionPixelSize(
-                    //com.android.internal.R.dimen.fastscroll_thumb_width);
-            //mThumbH = context.getResources().getDimensionPixelSize(
-                    //com.android.internal.R.dimen.fastscroll_thumb_height);
-        //} else {
-            //mThumbW = drawable.getIntrinsicWidth();
-            //mThumbH = drawable.getIntrinsicHeight();
-        //}
-        //mChangedBounds = true;
+        
+        
+        
+            
+                    
+            
+                    
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.858 -0400", hash_original_method = "0A57524C8928F6FDE971C9B9E9D3463C", hash_generated_method = "1B53F22650C821028BB536B98806936D")
     private void init(Context context) {
         TypedArray ta = context.getTheme().obtainStyledAttributes(ATTRS);
@@ -402,8 +408,8 @@ class FastScroller {
             boolean var0E9C0EBA61F05B4437A59B11FFE8A9DF_1196224574 = (mList.getWidth() > 0 && mList.getHeight() > 0);
             {
                 onSizeChanged(mList.getWidth(), mList.getHeight(), 0, 0);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mState = STATE_NONE;
         refreshDrawableState();
         ta.recycle();
@@ -411,16 +417,16 @@ class FastScroller {
         mMatchDragPosition = context.getApplicationInfo().targetSdkVersion >=
                 android.os.Build.VERSION_CODES.HONEYCOMB;
         setScrollbarPosition(mList.getVerticalScrollbarPosition());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.858 -0400", hash_original_method = "056243A841F0EC691D28BA5422CDF65B", hash_generated_method = "CFE1ED30A07D3814D31EDD1FE0EF553E")
      void stop() {
         setState(STATE_NONE);
-        // ---------- Original Method ----------
-        //setState(STATE_NONE);
+        
+        
     }
 
     
@@ -428,11 +434,12 @@ class FastScroller {
      boolean isVisible() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1107060791 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1107060791;
-        // ---------- Original Method ----------
-        //return !(mState == STATE_NONE);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.860 -0400", hash_original_method = "C51EC11284E4C57CA49569FFECEAA05A", hash_generated_method = "F75DB694EE5477981613F4DA473B4B06")
     public void draw(Canvas canvas) {
         final int y = mThumbY;
@@ -443,17 +450,17 @@ class FastScroller {
             alpha = scrollFade.getAlpha();
             {
                 mThumbDrawable.setAlpha(alpha * 2);
-            } //End block
+            } 
             int left = 0;
-            //Begin case View.SCROLLBAR_POSITION_DEFAULT View.SCROLLBAR_POSITION_RIGHT 
+            
             left = viewWidth - (mThumbW * alpha) / ScrollFade.ALPHA_MAX;
-            //End case View.SCROLLBAR_POSITION_DEFAULT View.SCROLLBAR_POSITION_RIGHT 
-            //Begin case View.SCROLLBAR_POSITION_LEFT 
+            
+            
             left = -mThumbW + (mThumbW * alpha) / ScrollFade.ALPHA_MAX;
-            //End case View.SCROLLBAR_POSITION_LEFT 
+            
             mThumbDrawable.setBounds(left, 0, left + mThumbW, mThumbH);
             mChangedBounds = true;
-        } //End block
+        } 
         {
             final Rect thumbBounds = mThumbDrawable.getBounds();
             final int left = thumbBounds.left;
@@ -463,21 +470,21 @@ class FastScroller {
             mTrackDrawable.setBounds(trackLeft, halfThumbHeight,
                     trackLeft + trackWidth, mList.getHeight() - halfThumbHeight);
             mTrackDrawable.draw(canvas);
-        } //End block
+        } 
         canvas.translate(0, y);
         mThumbDrawable.draw(canvas);
         canvas.translate(0, -y);
         {
             {
                 int left = 0;
-                //Begin case default View.SCROLLBAR_POSITION_DEFAULT View.SCROLLBAR_POSITION_RIGHT 
+                
                 left = Math.max(0,
                                 mThumbDrawable.getBounds().left - mThumbW - mOverlaySize);
-                //End case default View.SCROLLBAR_POSITION_DEFAULT View.SCROLLBAR_POSITION_RIGHT 
-                //Begin case View.SCROLLBAR_POSITION_LEFT 
+                
+                
                 left = Math.min(mThumbDrawable.getBounds().right + mThumbW,
                                 mList.getWidth() - mOverlaySize);
-                //End case View.SCROLLBAR_POSITION_LEFT 
+                
                 int top = Math.max(0,
                         Math.min(y + (mThumbH - mOverlaySize) / 2, mList.getHeight() - mOverlaySize));
                 final RectF pos = mOverlayPos;
@@ -488,8 +495,8 @@ class FastScroller {
                 {
                     mOverlayDrawable.setBounds((int) pos.left, (int) pos.top,
                             (int) pos.right, (int) pos.bottom);
-                } //End block
-            } //End block
+                } 
+            } 
             mOverlayDrawable.draw(canvas);
             final Paint paint = mPaint;
             float descent = paint.descent();
@@ -501,35 +508,35 @@ class FastScroller {
             canvas.drawText(mSectionText, (int) (rectF.left + rectF.right) / 2 - hOff,
                     (int) (rectF.bottom + rectF.top) / 2 + mOverlaySize / 4 - descent - vOff,
                     paint);
-        } //End block
+        } 
         {
             {
                 setState(STATE_NONE);
-            } //End block
+            } 
             {
                 mList.invalidate(viewWidth - mThumbW, 0, viewWidth, mList.getHeight());
-            } //End block
+            } 
             {
                 mList.invalidate(viewWidth - mThumbW, y, viewWidth, y + mThumbH);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.860 -0400", hash_original_method = "E295B7FC2E9560F481D5875AE2ECD038", hash_generated_method = "A298A030D0E26B87AF6BE14DD07A104A")
      void onSizeChanged(int w, int h, int oldw, int oldh) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
-            //Begin case default View.SCROLLBAR_POSITION_DEFAULT View.SCROLLBAR_POSITION_RIGHT 
+            
             mThumbDrawable.setBounds(w - mThumbW, 0, w, mThumbH);
-            //End case default View.SCROLLBAR_POSITION_DEFAULT View.SCROLLBAR_POSITION_RIGHT 
-            //Begin case View.SCROLLBAR_POSITION_LEFT 
+            
+            
             mThumbDrawable.setBounds(0, 0, mThumbW, mThumbH);
-            //End case View.SCROLLBAR_POSITION_LEFT 
-        } //End block
+            
+        } 
         {
             final RectF pos = mOverlayPos;
             pos.left = (w - mOverlaySize) / 2;
@@ -539,95 +546,95 @@ class FastScroller {
             {
                 mOverlayDrawable.setBounds((int) pos.left, (int) pos.top,
                         (int) pos.right, (int) pos.bottom);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(w);
         addTaint(h);
         addTaint(oldw);
         addTaint(oldh);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.861 -0400", hash_original_method = "33CBCEE809BB980D8FD69134B46323D0", hash_generated_method = "CBE8A31FA740CC2B251FBA33E3999D4C")
      void onItemCountChanged(int oldCount, int newCount) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mLongList = true;
-        } //End block
+        } 
         addTaint(oldCount);
         addTaint(newCount);
-        // ---------- Original Method ----------
-        //if (mAlwaysShow) {
-            //mLongList = true;
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.861 -0400", hash_original_method = "E5B6E6440A22D0800FAD70BDC783A6AE", hash_generated_method = "39E39ECCE1EA581F12FF71D269997FFE")
      void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, 
             int totalItemCount) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mItemCount = totalItemCount;
             mLongList = mItemCount / visibleItemCount >= MIN_PAGES;
-        } //End block
+        } 
         {
             mLongList = true;
-        } //End block
+        } 
         {
             {
                 setState(STATE_NONE);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mThumbY = getThumbPositionForListPosition(firstVisibleItem, visibleItemCount,
                     totalItemCount);
             {
                 resetThumbPos();
                 mChangedBounds = false;
-            } //End block
-        } //End block
+            } 
+        } 
         mScrollCompleted = true;
         mVisibleItem = firstVisibleItem;
         {
             setState(STATE_VISIBLE);
             {
                 mHandler.postDelayed(mScrollFade, FADE_TIMEOUT);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.862 -0400", hash_original_method = "AD42D97439FFEC71F76D9E9B9EF1920A", hash_generated_method = "E9E14B4BBEEF117AB13ED18EACE25F35")
      SectionIndexer getSectionIndexer() {
-        SectionIndexer varB4EAC82CA7396A68D541C85D26508E83_1575190949 = null; //Variable for return #1
+        SectionIndexer varB4EAC82CA7396A68D541C85D26508E83_1575190949 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1575190949 = mSectionIndexer;
-        varB4EAC82CA7396A68D541C85D26508E83_1575190949.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1575190949.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1575190949;
-        // ---------- Original Method ----------
-        //return mSectionIndexer;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.862 -0400", hash_original_method = "0CD968054794DA4AF55762FEAC06E707", hash_generated_method = "F38D06BE2125436BA71EC36897ACB33F")
      Object[] getSections() {
-        Object[] varB4EAC82CA7396A68D541C85D26508E83_1222439687 = null; //Variable for return #1
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_1222439687 = null; 
         {
             getSectionsFromIndexer();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1222439687 = mSections;
-        varB4EAC82CA7396A68D541C85D26508E83_1222439687.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1222439687.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1222439687;
-        // ---------- Original Method ----------
-        //if (mListAdapter == null && mList != null) {
-            //getSectionsFromIndexer();
-        //}
-        //return mSections;
+        
+        
+            
+        
+        
     }
 
     
@@ -638,15 +645,15 @@ class FastScroller {
         {
             mListOffset = ((HeaderViewListAdapter)adapter).getHeadersCount();
             adapter = ((HeaderViewListAdapter)adapter).getWrappedAdapter();
-        } //End block
+        } 
         {
             ExpandableListAdapter expAdapter = ((ExpandableListConnector)adapter).getAdapter();
             {
                 mSectionIndexer = (SectionIndexer) expAdapter;
                 mListAdapter = (BaseAdapter) adapter;
                 mSections = mSectionIndexer.getSections();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mListAdapter = (BaseAdapter) adapter;
@@ -654,24 +661,24 @@ class FastScroller {
                 mSections = mSectionIndexer.getSections();
                 {
                     mSections = new String[] { " " };
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 mListAdapter = (BaseAdapter) adapter;
                 mSections = new String[] { " " };
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.863 -0400", hash_original_method = "B72F5DA2B803BA6E8807DBDDDB2D9463", hash_generated_method = "3DA083163E23080BFCF30DF5DB399931")
     public void onSectionsChanged() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mListAdapter = null;
-        // ---------- Original Method ----------
-        //mListAdapter = null;
+        
+        
     }
 
     
@@ -687,7 +694,7 @@ class FastScroller {
             int section = (int) (position * nSections);
             {
                 section = nSections - 1;
-            } //End block
+            } 
             int exactSection = section;
             sectionIndex = section;
             int index = mSectionIndexer.getPositionForSection(section);
@@ -697,46 +704,46 @@ class FastScroller {
             int nextSection = section + 1;
             {
                 nextIndex = mSectionIndexer.getPositionForSection(section + 1);
-            } //End block
+            } 
             {
                 {
                     prevIndex = mSectionIndexer.getPositionForSection(section);
                     {
                         prevSection = section;
                         sectionIndex = section;
-                    } //End block
+                    } 
                     {
                         sectionIndex = 0;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             int nextNextSection = nextSection + 1;
             {
                 boolean varBB2D3FB3AE20EB293998F7828EEA8D6B_1773121861 = (nextNextSection < nSections &&
                     mSectionIndexer.getPositionForSection(nextNextSection) == nextIndex);
-            } //End collapsed parenthetic
+            } 
             float fPrev = (float) prevSection / nSections;
             float fNext = (float) nextSection / nSections;
             {
                 index = prevIndex;
-            } //End block
+            } 
             {
                 index = prevIndex + (int) ((nextIndex - prevIndex) * (position - fPrev) 
                     / (fNext - fPrev));
-            } //End block
+            } 
             index = count - 1;
             {
                 ExpandableListView expList = (ExpandableListView) mList;
                 expList.setSelectionFromTop(expList.getFlatListPosition(
                         ExpandableListView.getPackedPositionForGroup(index + mListOffset)), 0);
-            } //End block
+            } 
             {
                 ((ListView)mList).setSelectionFromTop(index + mListOffset, 0);
-            } //End block
+            } 
             {
                 mList.setSelection(index + mListOffset);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             int index = (int) (position * count);
             index = count - 1;
@@ -744,39 +751,40 @@ class FastScroller {
                 ExpandableListView expList = (ExpandableListView) mList;
                 expList.setSelectionFromTop(expList.getFlatListPosition(
                         ExpandableListView.getPackedPositionForGroup(index + mListOffset)), 0);
-            } //End block
+            } 
             {
                 ((ListView)mList).setSelectionFromTop(index + mListOffset, 0);
-            } //End block
+            } 
             {
                 mList.setSelection(index + mListOffset);
-            } //End block
+            } 
             sectionIndex = -1;
-        } //End block
+        } 
         {
             String text = mSectionText = sections[sectionIndex].toString();
             mDrawOverlay = (text.length() != 1 || text.charAt(0) != ' ') &&
                     sectionIndex < sections.length;
-        } //End block
+        } 
         {
             mDrawOverlay = false;
-        } //End block
+        } 
         addTaint(position);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.866 -0400", hash_original_method = "5B13E30A0127E5E811D3308FC0C54801", hash_generated_method = "1B3AAD88DBF5DC83E37E63A7CF898605")
     private int getThumbPositionForListPosition(int firstVisibleItem, int visibleItemCount,
             int totalItemCount) {
         {
             getSectionsFromIndexer();
-        } //End block
+        } 
         {
             int var9DBC44A6EBF4F17793F4C156235B003F_1536172957 = (((mList.getHeight() - mThumbH) * firstVisibleItem)
                     / (totalItemCount - visibleItemCount));
-        } //End block
+        } 
         firstVisibleItem -= mListOffset;
         totalItemCount -= mListOffset;
         final int trackHeight = mList.getHeight() - mThumbH;
@@ -797,26 +805,27 @@ class FastScroller {
             final float lastItemVisible = (float) (mList.getHeight() - mList.getPaddingBottom()
                     - lastChild.getTop()) / lastChild.getHeight();
             result += (trackHeight - result) * lastItemVisible;
-        } //End block
+        } 
         addTaint(firstVisibleItem);
         addTaint(visibleItemCount);
         addTaint(totalItemCount);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_612787445 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_612787445;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.866 -0400", hash_original_method = "CEA01B9B754ED8848F89028F972B696F", hash_generated_method = "EE3570EACFEF93FEA7F996E4F2C62C63")
     private void cancelFling() {
         MotionEvent cancelFling = MotionEvent.obtain(0, 0, MotionEvent.ACTION_CANCEL, 0, 0, 0);
         mList.onTouchEvent(cancelFling);
         cancelFling.recycle();
-        // ---------- Original Method ----------
-        //MotionEvent cancelFling = MotionEvent.obtain(0, 0, MotionEvent.ACTION_CANCEL, 0, 0, 0);
-        //mList.onTouchEvent(cancelFling);
-        //cancelFling.recycle();
+        
+        
+        
+        
     }
 
     
@@ -824,9 +833,9 @@ class FastScroller {
      void cancelPendingDrag() {
         mList.removeCallbacks(mDeferStartDrag);
         mPendingDrag = false;
-        // ---------- Original Method ----------
-        //mList.removeCallbacks(mDeferStartDrag);
-        //mPendingDrag = false;
+        
+        
+        
     }
 
     
@@ -834,9 +843,9 @@ class FastScroller {
      void startPendingDrag() {
         mPendingDrag = true;
         mList.postDelayed(mDeferStartDrag, PENDING_DRAG_DELAY);
-        // ---------- Original Method ----------
-        //mPendingDrag = true;
-        //mList.postDelayed(mDeferStartDrag, PENDING_DRAG_DELAY);
+        
+        
+        
     }
 
     
@@ -845,31 +854,31 @@ class FastScroller {
         setState(STATE_DRAGGING);
         {
             getSectionsFromIndexer();
-        } //End block
+        } 
         {
             mList.requestDisallowInterceptTouchEvent(true);
             mList.reportScrollStateChange(OnScrollListener.SCROLL_STATE_TOUCH_SCROLL);
-        } //End block
+        } 
         cancelFling();
-        // ---------- Original Method ----------
-        //setState(STATE_DRAGGING);
-        //if (mListAdapter == null && mList != null) {
-            //getSectionsFromIndexer();
-        //}
-        //if (mList != null) {
-            //mList.requestDisallowInterceptTouchEvent(true);
-            //mList.reportScrollStateChange(OnScrollListener.SCROLL_STATE_TOUCH_SCROLL);
-        //}
-        //cancelFling();
+        
+        
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.869 -0400", hash_original_method = "D950A8D9B3AA1D87B11E428662FC0A13", hash_generated_method = "E57EF4DD6D85E52BE7D1802973E646F7")
      boolean onInterceptTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             Object var74F259241399C7FD6DED5A7AA3E7383D_1967944019 = (ev.getActionMasked());
-            //Begin case MotionEvent.ACTION_DOWN 
+            
             {
                 boolean varA956E413CCC396DCDE8A419D3081CEBC_1631508220 = (mState > STATE_NONE && isPointInside(ev.getX(), ev.getY()));
                 {
@@ -877,43 +886,43 @@ class FastScroller {
                         boolean var5F096BB9A8B8CA8FD2C7A33B3C25AF8F_1240504786 = (!mList.isInScrollingContainer());
                         {
                             beginDrag();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     mInitialTouchY = ev.getY();
                     startPendingDrag();
-                } //End block
-            } //End collapsed parenthetic
-            //End case MotionEvent.ACTION_DOWN 
-            //Begin case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
+                } 
+            } 
+            
+            
             cancelPendingDrag();
-            //End case MotionEvent.ACTION_UP MotionEvent.ACTION_CANCEL 
-        } //End collapsed parenthetic
+            
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1311357597 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1311357597;
-        // ---------- Original Method ----------
-        //switch (ev.getActionMasked()) {
-            //case MotionEvent.ACTION_DOWN:
-                //if (mState > STATE_NONE && isPointInside(ev.getX(), ev.getY())) {
-                    //if (!mList.isInScrollingContainer()) {
-                        //beginDrag();
-                        //return true;
-                    //}
-                    //mInitialTouchY = ev.getY();
-                    //startPendingDrag();
-                //}
-                //break;
-            //case MotionEvent.ACTION_UP:
-            //case MotionEvent.ACTION_CANCEL:
-                //cancelPendingDrag();
-                //break;
-        //}
-        //return false;
+        
+        
+            
+                
+                    
+                        
+                        
+                    
+                    
+                    
+                
+                
+            
+            
+                
+                
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.870 -0400", hash_original_method = "891E4A8523ECAE5B8AA3233AF8AC2D21", hash_generated_method = "E70B03A34092DDF9C1EC6D58D112DEB6")
      boolean onTouchEvent(MotionEvent me) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int action = me.getAction();
         {
             {
@@ -923,13 +932,13 @@ class FastScroller {
                         boolean var5F096BB9A8B8CA8FD2C7A33B3C25AF8F_1023230079 = (!mList.isInScrollingContainer());
                         {
                             beginDrag();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     mInitialTouchY = me.getY();
                     startPendingDrag();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 beginDrag();
@@ -937,28 +946,28 @@ class FastScroller {
                 int newThumbY = (int) me.getY() - mThumbH + 10;
                 {
                     newThumbY = 0;
-                } //End block
+                } 
                 {
                     newThumbY = viewHeight - mThumbH;
-                } //End block
+                } 
                 mThumbY = newThumbY;
                 scrollTo((float) mThumbY / (viewHeight - mThumbH));
                 cancelPendingDrag();
-            } //End block
+            } 
             {
                 {
                     mList.requestDisallowInterceptTouchEvent(false);
                     mList.reportScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
-                } //End block
+                } 
                 setState(STATE_VISIBLE);
                 final Handler handler = mHandler;
                 handler.removeCallbacks(mScrollFade);
                 {
                     handler.postDelayed(mScrollFade, 1000);
-                } //End block
+                } 
                 mList.invalidate();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 final float y = me.getY();
@@ -968,70 +977,70 @@ class FastScroller {
                         setState(STATE_DRAGGING);
                         {
                             getSectionsFromIndexer();
-                        } //End block
+                        } 
                         {
                             mList.requestDisallowInterceptTouchEvent(true);
                             mList.reportScrollStateChange(OnScrollListener.SCROLL_STATE_TOUCH_SCROLL);
-                        } //End block
+                        } 
                         cancelFling();
                         cancelPendingDrag();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 final int viewHeight = mList.getHeight();
                 int newThumbY = (int) me.getY() - mThumbH + 10;
                 {
                     newThumbY = 0;
-                } //End block
+                } 
                 {
                     newThumbY = viewHeight - mThumbH;
-                } //End block
+                } 
                 {
                     boolean varF809D69832046C315D14C292FA46A81C_1148870631 = (Math.abs(mThumbY - newThumbY) < 2);
-                } //End collapsed parenthetic
+                } 
                 mThumbY = newThumbY;
                 {
                     scrollTo((float) mThumbY / (viewHeight - mThumbH));
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             cancelPendingDrag();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1570329875 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1570329875;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.871 -0400", hash_original_method = "4AFF55C64BD9939BD0E5A83378980FDE", hash_generated_method = "661261C42CF0C5F1CF89F37BC1EB1992")
      boolean isPointInside(float x, float y) {
         boolean inTrack = false;
-        //Begin case default View.SCROLLBAR_POSITION_DEFAULT View.SCROLLBAR_POSITION_RIGHT 
+        
         inTrack = x > mList.getWidth() - mThumbW;
-        //End case default View.SCROLLBAR_POSITION_DEFAULT View.SCROLLBAR_POSITION_RIGHT 
-        //Begin case View.SCROLLBAR_POSITION_LEFT 
+        
+        
         inTrack = x < mThumbW;
-        //End case View.SCROLLBAR_POSITION_LEFT 
+        
         addTaint(x);
         addTaint(y);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1294259536 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1294259536;
-        // ---------- Original Method ----------
-        //boolean inTrack = false;
-        //switch (mPosition) {
-            //default:
-            //case View.SCROLLBAR_POSITION_DEFAULT:
-            //case View.SCROLLBAR_POSITION_RIGHT:
-                //inTrack = x > mList.getWidth() - mThumbW;
-                //break;
-            //case View.SCROLLBAR_POSITION_LEFT:
-                //inTrack = x < mThumbW;
-                //break;
-        //}
-        //return inTrack && (mTrackDrawable != null || y >= mThumbY && y <= mThumbY + mThumbH);
+        
+        
+        
+            
+            
+            
+                
+                
+            
+                
+                
+        
+        
     }
 
     
@@ -1046,7 +1055,7 @@ class FastScroller {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.871 -0400", hash_original_method = "5D305A44C44DBEE04C6A110139796128", hash_generated_method = "5D305A44C44DBEE04C6A110139796128")
         public ScrollFade ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1055,10 +1064,10 @@ class FastScroller {
             mFadeDuration = FADE_DURATION;
             mStartTime = SystemClock.uptimeMillis();
             setState(STATE_EXIT);
-            // ---------- Original Method ----------
-            //mFadeDuration = FADE_DURATION;
-            //mStartTime = SystemClock.uptimeMillis();
-            //setState(STATE_EXIT);
+            
+            
+            
+            
         }
 
         
@@ -1066,29 +1075,29 @@ class FastScroller {
          int getAlpha() {
             {
                 boolean var18C99A1467A5E28EFE0461A6C774AF80_1233278327 = (getState() != STATE_EXIT);
-            } //End collapsed parenthetic
+            } 
             int alpha;
             long now = SystemClock.uptimeMillis();
             {
                 alpha = 0;
-            } //End block
+            } 
             {
                 alpha = (int) (ALPHA_MAX - ((now - mStartTime) * ALPHA_MAX) / mFadeDuration);
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_140366432 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_140366432;
-            // ---------- Original Method ----------
-            //if (getState() != STATE_EXIT) {
-                //return ALPHA_MAX;
-            //}
-            //int alpha;
-            //long now = SystemClock.uptimeMillis();
-            //if (now > mStartTime + mFadeDuration) {
-                //alpha = 0;
-            //} else {
-                //alpha = (int) (ALPHA_MAX - ((now - mStartTime) * ALPHA_MAX) / mFadeDuration); 
-            //}
-            //return alpha;
+            
+            
+                
+            
+            
+            
+            
+                
+            
+                
+            
+            
         }
 
         
@@ -1098,27 +1107,27 @@ class FastScroller {
                 boolean var18C99A1467A5E28EFE0461A6C774AF80_497695215 = (getState() != STATE_EXIT);
                 {
                     startFade();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var6703FBB521765E4D7F8ABFF437383AC8_1043353750 = (getAlpha() > 0);
                 {
                     mList.invalidate();
-                } //End block
+                } 
                 {
                     setState(STATE_NONE);
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (getState() != STATE_EXIT) {
-                //startFade();
-                //return;
-            //}
-            //if (getAlpha() > 0) {
-                //mList.invalidate();
-            //} else {
-                //setState(STATE_NONE);
-            //}
+                } 
+            } 
+            
+            
+                
+                
+            
+            
+                
+            
+                
+            
         }
 
         

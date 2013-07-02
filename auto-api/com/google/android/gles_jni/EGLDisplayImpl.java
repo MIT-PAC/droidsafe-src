@@ -1,11 +1,11 @@
 package com.google.android.gles_jni;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.microedition.khronos.egl.*;
 
@@ -17,8 +17,8 @@ public class EGLDisplayImpl extends EGLDisplay {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.368 -0400", hash_original_method = "B0322934834DBEC13FC1DFBB79B301E2", hash_generated_method = "EA529739750644A061A0822664F2C9E8")
     public  EGLDisplayImpl(int dpy) {
         mEGLDisplay = dpy;
-        // ---------- Original Method ----------
-        //mEGLDisplay = dpy;
+        
+        
     }
 
     
@@ -27,16 +27,16 @@ public class EGLDisplayImpl extends EGLDisplay {
     public boolean equals(Object o) {
         {
             boolean var62E9FD43E59369C472D5FDFD656300C3_758777830 = (o == null || getClass() != o.getClass());
-        } //End collapsed parenthetic
+        } 
         EGLDisplayImpl that = (EGLDisplayImpl) o;
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1974866858 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1974866858;
-        // ---------- Original Method ----------
-        //if (this == o) return true;
-        //if (o == null || getClass() != o.getClass()) return false;
-        //EGLDisplayImpl that = (EGLDisplayImpl) o;
-        //return mEGLDisplay == that.mEGLDisplay;
+        
+        
+        
+        
+        
     }
 
     
@@ -45,8 +45,8 @@ public class EGLDisplayImpl extends EGLDisplay {
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_64093625 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_64093625;
-        // ---------- Original Method ----------
-        //return mEGLDisplay;
+        
+        
     }
 
     

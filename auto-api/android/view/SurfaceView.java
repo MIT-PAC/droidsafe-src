@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.view.BaseIWindow;
 import android.content.Context;
@@ -79,34 +79,34 @@ public class SurfaceView extends View {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.953 -0400", hash_original_method = "82BE8897E23B3ED9422918649CBA5FAB", hash_generated_method = "6BEB6804DB838516BA4CFA4771D978CB")
         @Override
         public void handleMessage(Message msg) {
-            //Begin case KEEP_SCREEN_ON_MSG 
+            
             {
                 setKeepScreenOn(msg.arg1 != 0);
-            } //End block
-            //End case KEEP_SCREEN_ON_MSG 
-            //Begin case GET_NEW_SURFACE_MSG 
+            } 
+            
+            
             {
                 handleGetNewSurface();
-            } //End block
-            //End case GET_NEW_SURFACE_MSG 
-            //Begin case UPDATE_WINDOW_MSG 
+            } 
+            
+            
             {
                 updateWindow(false, false);
-            } //End block
-            //End case UPDATE_WINDOW_MSG 
+            } 
+            
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //switch (msg.what) {
-                //case KEEP_SCREEN_ON_MSG: {
-                    //setKeepScreenOn(msg.arg1 != 0);
-                //} break;
-                //case GET_NEW_SURFACE_MSG: {
-                    //handleGetNewSurface();
-                //} break;
-                //case UPDATE_WINDOW_MSG: {
-                    //updateWindow(false, false);
-                //} break;
-            //}
+            
+            
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                
+            
         }
 
         
@@ -116,10 +116,10 @@ public class SurfaceView extends View {
     final ViewTreeObserver.OnScrollChangedListener mScrollChangedListener = new ViewTreeObserver.OnScrollChangedListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.953 -0400", hash_original_method = "5F51326E8091C450ECA5819AAACF378E", hash_generated_method = "9745D3D4F8B077B019362B4564B9A421")
         public void onScrollChanged() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             updateWindow(false, false);
-            // ---------- Original Method ----------
-            //updateWindow(false, false);
+            
+            
         }
 
         
@@ -196,15 +196,15 @@ public class SurfaceView extends View {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.954 -0400", hash_original_method = "BFD620CC97E89E709383D7DD902C160A", hash_generated_method = "2F9E5D9FADD874B33CEA4E7EAF8958D8")
         @Override
         public boolean onPreDraw() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mHaveFrame = getWidth() > 0 && getHeight() > 0;
             updateWindow(false, false);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_423263947 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_423263947;
-            // ---------- Original Method ----------
-            //mHaveFrame = getWidth() > 0 && getHeight() > 0;
-            //updateWindow(false, false);
-            //return true;
+            
+            
+            
+            
         }
 
         
@@ -219,8 +219,8 @@ public class SurfaceView extends View {
         public boolean isCreating() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2145375023 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2145375023;
-            // ---------- Original Method ----------
-            //return mIsCreating;
+            
+            
         }
 
         
@@ -231,16 +231,16 @@ public class SurfaceView extends View {
                     boolean var1B2EEED5E498982D843BE645C828D6CD_462515332 = (mCallbacks.contains(callback) == false);
                     {
                         mCallbacks.add(callback);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             addTaint(callback.getTaint());
-            // ---------- Original Method ----------
-            //synchronized (mCallbacks) {
-                //if (mCallbacks.contains(callback) == false) {      
-                    //mCallbacks.add(callback);
-                //}
-            //}
+            
+            
+                
+                    
+                
+            
         }
 
         
@@ -248,12 +248,12 @@ public class SurfaceView extends View {
         public void removeCallback(Callback callback) {
             {
                 mCallbacks.remove(callback);
-            } //End block
+            } 
             addTaint(callback.getTaint());
-            // ---------- Original Method ----------
-            //synchronized (mCallbacks) {
-                //mCallbacks.remove(callback);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -263,15 +263,15 @@ public class SurfaceView extends View {
                 mRequestedWidth = width;
                 mRequestedHeight = height;
                 requestLayout();
-            } //End block
+            } 
             addTaint(width);
             addTaint(height);
-            // ---------- Original Method ----------
-            //if (mRequestedWidth != width || mRequestedHeight != height) {
-                //mRequestedWidth = width;
-                //mRequestedHeight = height;
-                //requestLayout();
-            //}
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -280,12 +280,12 @@ public class SurfaceView extends View {
             {
                 mRequestedWidth = mRequestedHeight = -1;
                 requestLayout();
-            } //End block
-            // ---------- Original Method ----------
-            //if (mRequestedWidth != -1 || mRequestedHeight != -1) {
-                //mRequestedWidth = mRequestedHeight = -1;
-                //requestLayout();
-            //}
+            } 
+            
+            
+                
+                
+            
         }
 
         
@@ -295,15 +295,15 @@ public class SurfaceView extends View {
             mRequestedFormat = format;
             {
                 updateWindow(false, false);
-            } //End block
+            } 
             addTaint(format);
-            // ---------- Original Method ----------
-            //if (format == PixelFormat.OPAQUE)
-                //format = PixelFormat.RGB_565;
-            //mRequestedFormat = format;
-            //if (mWindow != null) {
-                //updateWindow(false, false);
-            //}
+            
+            
+                
+            
+            
+                
+            
         }
 
         
@@ -311,7 +311,7 @@ public class SurfaceView extends View {
         @Deprecated
         public void setType(int type) {
             addTaint(type);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -321,89 +321,89 @@ public class SurfaceView extends View {
             msg.arg1 = screenOn ? 1 : 0;
             mHandler.sendMessage(msg);
             addTaint(screenOn);
-            // ---------- Original Method ----------
-            //Message msg = mHandler.obtainMessage(KEEP_SCREEN_ON_MSG);
-            //msg.arg1 = screenOn ? 1 : 0;
-            //mHandler.sendMessage(msg);
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.959 -0400", hash_original_method = "62E11A68BFE49B76328D9C868319D907", hash_generated_method = "2EA88269BA14916674E29DFFA53637C6")
         public Canvas lockCanvas() {
-            Canvas varB4EAC82CA7396A68D541C85D26508E83_1416433397 = null; //Variable for return #1
+            Canvas varB4EAC82CA7396A68D541C85D26508E83_1416433397 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1416433397 = internalLockCanvas(null);
-            varB4EAC82CA7396A68D541C85D26508E83_1416433397.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1416433397.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1416433397;
-            // ---------- Original Method ----------
-            //return internalLockCanvas(null);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.959 -0400", hash_original_method = "680C567FEFB26BF9B08DD2E5AA0C3FA9", hash_generated_method = "7FD2CB9F0FE0D2BFA9842A0854F9C8A3")
         public Canvas lockCanvas(Rect dirty) {
-            Canvas varB4EAC82CA7396A68D541C85D26508E83_633323187 = null; //Variable for return #1
+            Canvas varB4EAC82CA7396A68D541C85D26508E83_633323187 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_633323187 = internalLockCanvas(dirty);
             addTaint(dirty.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_633323187.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_633323187.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_633323187;
-            // ---------- Original Method ----------
-            //return internalLockCanvas(dirty);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.960 -0400", hash_original_method = "4B95DCD02F9C44A8215403B28FBCC461", hash_generated_method = "E2365ED314FD823C889E68CD4EC4E0E5")
         private final Canvas internalLockCanvas(Rect dirty) {
-            Canvas varB4EAC82CA7396A68D541C85D26508E83_1001906738 = null; //Variable for return #1
-            Canvas varB4EAC82CA7396A68D541C85D26508E83_757444974 = null; //Variable for return #2
+            Canvas varB4EAC82CA7396A68D541C85D26508E83_1001906738 = null; 
+            Canvas varB4EAC82CA7396A68D541C85D26508E83_757444974 = null; 
             mSurfaceLock.lock();
             Canvas c = null;
             {
                 {
                     {
                         mTmpDirty = new Rect();
-                    } //End block
+                    } 
                     mTmpDirty.set(mSurfaceFrame);
                     dirty = mTmpDirty;
-                } //End block
+                } 
                 try 
                 {
                     c = mSurface.lockCanvas(dirty);
-                } //End block
+                } 
                 catch (Exception e)
                 { }
-            } //End block
+            } 
             {
                 mLastLockTime = SystemClock.uptimeMillis();
                 varB4EAC82CA7396A68D541C85D26508E83_1001906738 = c;
-            } //End block
+            } 
             long now = SystemClock.uptimeMillis();
             long nextTime = mLastLockTime + 100;
             {
                 try 
                 {
                     Thread.sleep(nextTime-now);
-                } //End block
+                } 
                 catch (InterruptedException e)
                 { }
                 now = SystemClock.uptimeMillis();
-            } //End block
+            } 
             mLastLockTime = now;
             mSurfaceLock.unlock();
             varB4EAC82CA7396A68D541C85D26508E83_757444974 = null;
             addTaint(dirty.getTaint());
-            Canvas varA7E53CE21691AB073D9660D615818899_1563807688; //Final return value
+            Canvas varA7E53CE21691AB073D9660D615818899_1563807688; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1563807688 = varB4EAC82CA7396A68D541C85D26508E83_1001906738;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1563807688 = varB4EAC82CA7396A68D541C85D26508E83_757444974;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1563807688.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1563807688.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1563807688;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -412,31 +412,31 @@ public class SurfaceView extends View {
             mSurface.unlockCanvasAndPost(canvas);
             mSurfaceLock.unlock();
             addTaint(canvas.getTaint());
-            // ---------- Original Method ----------
-            //mSurface.unlockCanvasAndPost(canvas);
-            //mSurfaceLock.unlock();
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.961 -0400", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "EAE603A661341677B1E1442890212909")
         public Surface getSurface() {
-            Surface varB4EAC82CA7396A68D541C85D26508E83_993699055 = null; //Variable for return #1
+            Surface varB4EAC82CA7396A68D541C85D26508E83_993699055 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_993699055 = mSurface;
-            varB4EAC82CA7396A68D541C85D26508E83_993699055.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_993699055.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_993699055;
-            // ---------- Original Method ----------
-            //return mSurface;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.962 -0400", hash_original_method = "BE643F9C45A14CE663214357E2B511D8", hash_generated_method = "E910481C9324FAFBE5C38994E3533063")
         public Rect getSurfaceFrame() {
-            Rect varB4EAC82CA7396A68D541C85D26508E83_1622396157 = null; //Variable for return #1
+            Rect varB4EAC82CA7396A68D541C85D26508E83_1622396157 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1622396157 = mSurfaceFrame;
-            varB4EAC82CA7396A68D541C85D26508E83_1622396157.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1622396157.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1622396157;
-            // ---------- Original Method ----------
-            //return mSurfaceFrame;
+            
+            
         }
 
         
@@ -450,8 +450,8 @@ public class SurfaceView extends View {
         super(context);
         init();
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //init();
+        
+        
     }
 
     
@@ -461,8 +461,8 @@ public class SurfaceView extends View {
         init();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //init();
+        
+        
     }
 
     
@@ -473,34 +473,36 @@ public class SurfaceView extends View {
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        //init();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.964 -0400", hash_original_method = "8A7163C0B5D9260FCDBBE7B713CA285D", hash_generated_method = "EC875459420059988B62E0689FF79ECE")
     private void init() {
         setWillNotDraw(true);
-        // ---------- Original Method ----------
-        //setWillNotDraw(true);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.964 -0400", hash_original_method = "11B3726B61DA4E45A86A0978E3D5B1EE", hash_generated_method = "BD18A36C24A687E90C8B26879AD01F11")
     public SurfaceHolder getHolder() {
-        SurfaceHolder varB4EAC82CA7396A68D541C85D26508E83_809269549 = null; //Variable for return #1
+        SurfaceHolder varB4EAC82CA7396A68D541C85D26508E83_809269549 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_809269549 = mSurfaceHolder;
-        varB4EAC82CA7396A68D541C85D26508E83_809269549.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_809269549.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_809269549;
-        // ---------- Original Method ----------
-        //return mSurfaceHolder;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.965 -0400", hash_original_method = "D0F196EB2D52CF89A074E8F883CCEE9A", hash_generated_method = "4F92A694E1BC326CEF41E4764AB3E0B2")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
         mParent.requestTransparentRegion(this);
         mSession = getWindowSession();
@@ -512,39 +514,41 @@ public class SurfaceView extends View {
             observer.addOnScrollChangedListener(mScrollChangedListener);
             observer.addOnPreDrawListener(mDrawListener);
             mGlobalListenersAdded = true;
-        } //End block
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //mParent.requestTransparentRegion(this);
-        //mSession = getWindowSession();
-        //mLayout.token = getWindowToken();
-        //mLayout.setTitle("SurfaceView");
-        //mViewVisibility = getVisibility() == VISIBLE;
-        //if (!mGlobalListenersAdded) {
-            //ViewTreeObserver observer = getViewTreeObserver();
-            //observer.addOnScrollChangedListener(mScrollChangedListener);
-            //observer.addOnPreDrawListener(mDrawListener);
-            //mGlobalListenersAdded = true;
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.965 -0400", hash_original_method = "798A4FFA4C7A67465D94471AB247681B", hash_generated_method = "B598EEA46B3AE9FA935DB6F1CD600126")
     @Override
     protected void onWindowVisibilityChanged(int visibility) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onWindowVisibilityChanged(visibility);
         mWindowVisibility = visibility == VISIBLE;
         mRequestedVisible = mWindowVisibility && mViewVisibility;
         updateWindow(false, false);
-        // ---------- Original Method ----------
-        //super.onWindowVisibilityChanged(visibility);
-        //mWindowVisibility = visibility == VISIBLE;
-        //mRequestedVisible = mWindowVisibility && mViewVisibility;
-        //updateWindow(false, false);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.966 -0400", hash_original_method = "644621127059D6B23356D81576DC6A8B", hash_generated_method = "E5286B2FAA243D4A8768171F99DC52AA")
     @Override
     public void setVisibility(int visibility) {
@@ -552,24 +556,25 @@ public class SurfaceView extends View {
         mViewVisibility = visibility == VISIBLE;
         mRequestedVisible = mWindowVisibility && mViewVisibility;
         updateWindow(false, false);
-        // ---------- Original Method ----------
-        //super.setVisibility(visibility);
-        //mViewVisibility = visibility == VISIBLE;
-        //mRequestedVisible = mWindowVisibility && mViewVisibility;
-        //updateWindow(false, false);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.967 -0400", hash_original_method = "4BCDE7E4A5F0F207B0BFA481971C6B8A", hash_generated_method = "1F2147FFFBCE570A2004730FCF1B9C2C")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             ViewTreeObserver observer = getViewTreeObserver();
             observer.removeOnScrollChangedListener(mScrollChangedListener);
             observer.removeOnPreDrawListener(mDrawListener);
             mGlobalListenersAdded = false;
-        } //End block
+        } 
         mRequestedVisible = false;
         updateWindow(false, false);
         mHaveFrame = false;
@@ -577,41 +582,42 @@ public class SurfaceView extends View {
             try 
             {
                 mSession.remove(mWindow);
-            } //End block
+            } 
             catch (RemoteException ex)
             { }
             mWindow = null;
-        } //End block
+        } 
         mSession = null;
         mLayout.token = null;
         super.onDetachedFromWindow();
-        // ---------- Original Method ----------
-        //if (mGlobalListenersAdded) {
-            //ViewTreeObserver observer = getViewTreeObserver();
-            //observer.removeOnScrollChangedListener(mScrollChangedListener);
-            //observer.removeOnPreDrawListener(mDrawListener);
-            //mGlobalListenersAdded = false;
-        //}
-        //mRequestedVisible = false;
-        //updateWindow(false, false);
-        //mHaveFrame = false;
-        //if (mWindow != null) {
-            //try {
-                //mSession.remove(mWindow);
-            //} catch (RemoteException ex) {
-            //}
-            //mWindow = null;
-        //}
-        //mSession = null;
-        //mLayout.token = null;
-        //super.onDetachedFromWindow();
+        
+        
+            
+            
+            
+            
+        
+        
+        
+        
+        
+            
+                
+            
+            
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.968 -0400", hash_original_method = "D2E319C9E98A8DC50F96090A40CA6589", hash_generated_method = "B33FCAE0F570D91D5140EA0A2F71633D")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int width;
         width = resolveSizeAndState(mRequestedWidth, widthMeasureSpec, 0);
         width = getDefaultSize(0, widthMeasureSpec);
@@ -621,17 +627,18 @@ public class SurfaceView extends View {
         setMeasuredDimension(width, height);
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        //int width = mRequestedWidth >= 0
-                //? resolveSizeAndState(mRequestedWidth, widthMeasureSpec, 0)
-                //: getDefaultSize(0, widthMeasureSpec);
-        //int height = mRequestedHeight >= 0
-                //? resolveSizeAndState(mRequestedHeight, heightMeasureSpec, 0)
-                //: getDefaultSize(0, heightMeasureSpec);
-        //setMeasuredDimension(width, height);
+        
+        
+                
+                
+        
+                
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.968 -0400", hash_original_method = "F99ED41FE6B39B12C38A6C99019A5F97", hash_generated_method = "B2CBD96F20572C1ED9D5CD46EB15336E")
     @Override
     protected boolean setFrame(int left, int top, int right, int bottom) {
@@ -643,23 +650,24 @@ public class SurfaceView extends View {
         addTaint(bottom);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1579217263 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1579217263;
-        // ---------- Original Method ----------
-        //boolean result = super.setFrame(left, top, right, bottom);
-        //updateWindow(false, false);
-        //return result;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.969 -0400", hash_original_method = "41B5D508388526C331B138172391BB1E", hash_generated_method = "4CB47D5376A78B0B596679612CAD0BCB")
     @Override
     public boolean gatherTransparentRegion(Region region) {
         {
             boolean varF8A9FBA81D6E6215EBDB1EA7BDD9AC23_25715634 = (super.gatherTransparentRegion(region));
-        } //End block
+        } 
         boolean opaque = true;
         {
             opaque = super.gatherTransparentRegion(region);
-        } //End block
+        } 
         {
             int w = getWidth();
             int h = getHeight();
@@ -668,78 +676,80 @@ public class SurfaceView extends View {
                 int l = mLocation[0];
                 int t = mLocation[1];
                 region.op(l, t, l+w, t+h, Region.Op.UNION);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean var6B55C97F53CF7E955770F784B7B82E75_832757457 = (PixelFormat.formatHasAlpha(mRequestedFormat));
             {
                 opaque = false;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(region.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_424997458 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_424997458;
-        // ---------- Original Method ----------
-        //if (mWindowType == WindowManager.LayoutParams.TYPE_APPLICATION_PANEL) {
-            //return super.gatherTransparentRegion(region);
-        //}
-        //boolean opaque = true;
-        //if ((mPrivateFlags & SKIP_DRAW) == 0) {
-            //opaque = super.gatherTransparentRegion(region);
-        //} else if (region != null) {
-            //int w = getWidth();
-            //int h = getHeight();
-            //if (w>0 && h>0) {
-                //getLocationInWindow(mLocation);
-                //int l = mLocation[0];
-                //int t = mLocation[1];
-                //region.op(l, t, l+w, t+h, Region.Op.UNION);
-            //}
-        //}
-        //if (PixelFormat.formatHasAlpha(mRequestedFormat)) {
-            //opaque = false;
-        //}
-        //return opaque;
+        
+        
+            
+        
+        
+        
+            
+        
+            
+            
+            
+                
+                
+                
+                
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.970 -0400", hash_original_method = "B44BAC95FDBF1A2D6C6E955BD515D9FE", hash_generated_method = "9A5BF42723B591CFD60868471A5709A0")
     @Override
     public void draw(Canvas canvas) {
         {
             {
                 canvas.drawColor(0, PorterDuff.Mode.CLEAR);
-            } //End block
-        } //End block
+            } 
+        } 
         super.draw(canvas);
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        //if (mWindowType != WindowManager.LayoutParams.TYPE_APPLICATION_PANEL) {
-            //if ((mPrivateFlags & SKIP_DRAW) == 0) {
-                //canvas.drawColor(0, PorterDuff.Mode.CLEAR);
-            //}
-        //}
-        //super.draw(canvas);
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.970 -0400", hash_original_method = "1FF1947FA48636DD52DD4F3203EB471D", hash_generated_method = "E7C717838BCAEE013A4F184FD621B38E")
     @Override
     protected void dispatchDraw(Canvas canvas) {
         {
             {
                 canvas.drawColor(0, PorterDuff.Mode.CLEAR);
-            } //End block
-        } //End block
+            } 
+        } 
         super.dispatchDraw(canvas);
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        //if (mWindowType != WindowManager.LayoutParams.TYPE_APPLICATION_PANEL) {
-            //if ((mPrivateFlags & SKIP_DRAW) == SKIP_DRAW) {
-                //canvas.drawColor(0, PorterDuff.Mode.CLEAR);
-            //}
-        //}
-        //super.dispatchDraw(canvas);
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -748,10 +758,10 @@ public class SurfaceView extends View {
         mWindowType = isMediaOverlay
                 ? WindowManager.LayoutParams.TYPE_APPLICATION_MEDIA_OVERLAY
                 : WindowManager.LayoutParams.TYPE_APPLICATION_MEDIA;
-        // ---------- Original Method ----------
-        //mWindowType = isMediaOverlay
-                //? WindowManager.LayoutParams.TYPE_APPLICATION_MEDIA_OVERLAY
-                //: WindowManager.LayoutParams.TYPE_APPLICATION_MEDIA;
+        
+        
+                
+                
     }
 
     
@@ -760,40 +770,41 @@ public class SurfaceView extends View {
         {
             mWindowType = WindowManager.LayoutParams.TYPE_APPLICATION_PANEL;
             mLayout.flags |= WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM;
-        } //End block
+        } 
         {
             mWindowType = WindowManager.LayoutParams.TYPE_APPLICATION_MEDIA;
             mLayout.flags &= ~WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM;
-        } //End block
+        } 
         addTaint(onTop);
-        // ---------- Original Method ----------
-        //if (onTop) {
-            //mWindowType = WindowManager.LayoutParams.TYPE_APPLICATION_PANEL;
-            //mLayout.flags |= WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM;
-        //} else {
-            //mWindowType = WindowManager.LayoutParams.TYPE_APPLICATION_MEDIA;
-            //mLayout.flags &= ~WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM;
-        //}
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.971 -0400", hash_original_method = "1670DE99B4A30E6D116E6931C42E66D0", hash_generated_method = "038066FDD6533F376555CE67954F9E82")
     public void setWindowType(int type) {
         mWindowType = type;
-        // ---------- Original Method ----------
-        //mWindowType = type;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:55.151 -0400", hash_original_method = "1133978B42097E05A4BF8CED29255FA3", hash_generated_method = "A21FE14C733F0FDFD240128106C1D0CA")
     private void updateWindow(boolean force, boolean redrawNeeded) {
         ViewRootImpl viewRoot = (ViewRootImpl) getRootView().getParent();
         {
             mTranslator = viewRoot.mTranslator;
-        } //End block
+        } 
         {
             mSurface.setCompatibilityTranslator(mTranslator);
-        } //End block
+        } 
         int myWidth = mRequestedWidth;
         myWidth = getWidth();
         int myHeight = mRequestedHeight;
@@ -818,7 +829,7 @@ public class SurfaceView extends View {
                 mLayout.height = getHeight();
                 {
                     mTranslator.translateLayoutParamsInAppWindowToScreen(mLayout);
-                } //End block
+                } 
                 mLayout.format = mRequestedFormat;
                 mLayout.flags |=WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
                               | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
@@ -830,15 +841,15 @@ public class SurfaceView extends View {
                     boolean var38615E851EC561AAF5BCBB7AF3CFECB6_467088985 = (!getContext().getResources().getCompatibilityInfo().supportsScreen());
                     {
                         mLayout.flags |= WindowManager.LayoutParams.FLAG_COMPATIBLE_WINDOW;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     mWindow = new MyWindow(this);
                     mLayout.type = mWindowType;
                     mLayout.gravity = Gravity.LEFT|Gravity.TOP;
                     mSession.addWithoutInputChannel(mWindow, mWindow.mSeq, mLayout,
                             mVisible ? VISIBLE : GONE, mContentInsets);
-                } //End block
+                } 
                 boolean realSizeChanged;
                 boolean reportDrawNeeded;
                 int relayoutResult;
@@ -857,29 +868,29 @@ public class SurfaceView extends View {
                             mVisibleInsets, mConfiguration, mNewSurface);
                     {
                         mReportDrawNeeded = true;
-                    } //End block
+                    } 
                     mSurfaceFrame.left = 0;
                     mSurfaceFrame.top = 0;
                     {
                         mSurfaceFrame.right = mWinFrame.width();
                         mSurfaceFrame.bottom = mWinFrame.height();
-                    } //End block
+                    } 
                     {
                         float appInvertedScale = mTranslator.applicationInvertedScale;
                         mSurfaceFrame.right = (int) (mWinFrame.width() * appInvertedScale + 0.5f);
                         mSurfaceFrame.bottom = (int) (mWinFrame.height() * appInvertedScale + 0.5f);
-                    } //End block
+                    } 
                     final int surfaceWidth = mSurfaceFrame.right;
                     final int surfaceHeight = mSurfaceFrame.bottom;
                     realSizeChanged = mLastSurfaceWidth != surfaceWidth
                             || mLastSurfaceHeight != surfaceHeight;
                     mLastSurfaceWidth = surfaceWidth;
                     mLastSurfaceHeight = surfaceHeight;
-                } //End block
+                } 
                 finally 
                 {
                     mSurfaceLock.unlock();
-                } //End block
+                } 
                 try 
                 {
                     redrawNeeded |= creating | reportDrawNeeded;
@@ -895,11 +906,11 @@ public class SurfaceView extends View {
                                     SurfaceHolder.Callback c = callbacks[0];
                                     {
                                         c.surfaceDestroyed(mSurfaceHolder);
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
                     mSurface.transferFrom(mNewSurface);
                     {
                         {
@@ -907,86 +918,86 @@ public class SurfaceView extends View {
                             mIsCreating = true;
                             {
                                 callbacks = getSurfaceCallbacks();
-                            } //End block
+                            } 
                             {
                                 SurfaceHolder.Callback c = callbacks[0];
                                 {
                                     c.surfaceCreated(mSurfaceHolder);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         {
                             {
                                 callbacks = getSurfaceCallbacks();
-                            } //End block
+                            } 
                             {
                                 SurfaceHolder.Callback c = callbacks[0];
                                 {
                                     c.surfaceChanged(mSurfaceHolder, mFormat, myWidth, myHeight);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         {
                             {
                                 callbacks = getSurfaceCallbacks();
-                            } //End block
+                            } 
                             {
                                 SurfaceHolder.Callback c = callbacks[0];
                                 {
                                     {
                                         ((SurfaceHolder.Callback2)c).surfaceRedrawNeeded(
                                             mSurfaceHolder);
-                                    } //End block
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
-                } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 finally 
                 {
                     mIsCreating = false;
                     {
                         mSession.finishDrawing(mWindow);
-                    } //End block
+                    } 
                     mSession.performDeferredDestroy(mWindow);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (RemoteException ex)
             { }
-        } //End block
+        } 
         addTaint(force);
         addTaint(redrawNeeded);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:55.152 -0400", hash_original_method = "45F3E6A4EE2EB731EF40485FB92CA6AA", hash_generated_method = "0502E1216308A0425D289D3222DCB300")
     private SurfaceHolder.Callback[] getSurfaceCallbacks() {
-        SurfaceHolder.Callback[] varB4EAC82CA7396A68D541C85D26508E83_1583938777 = null; //Variable for return #1
+        SurfaceHolder.Callback[] varB4EAC82CA7396A68D541C85D26508E83_1583938777 = null; 
         SurfaceHolder.Callback callbacks[];
         {
             callbacks = new SurfaceHolder.Callback[mCallbacks.size()];
             mCallbacks.toArray(callbacks);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1583938777 = callbacks;
-        varB4EAC82CA7396A68D541C85D26508E83_1583938777.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1583938777.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1583938777;
-        // ---------- Original Method ----------
-        //SurfaceHolder.Callback callbacks[];
-        //synchronized (mCallbacks) {
-            //callbacks = new SurfaceHolder.Callback[mCallbacks.size()];
-            //mCallbacks.toArray(callbacks);
-        //}
-        //return callbacks;
+        
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:55.152 -0400", hash_original_method = "300B2B985E368655B5E11ADA1916748D", hash_generated_method = "A6C8E4CA52B47BE053F3A9B363230D11")
      void handleGetNewSurface() {
         updateWindow(false, false);
-        // ---------- Original Method ----------
-        //updateWindow(false, false);
+        
+        
     }
 
     
@@ -994,8 +1005,8 @@ public class SurfaceView extends View {
     public boolean isFixedSize() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_368507075 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_368507075;
-        // ---------- Original Method ----------
-        //return (mRequestedWidth != -1 || mRequestedHeight != -1);
+        
+        
     }
 
     
@@ -1013,8 +1024,8 @@ public class SurfaceView extends View {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:55.153 -0400", hash_original_method = "636A3C131A2E0F598D9E9841916F7C6A", hash_generated_method = "C467142DB8EFC51A87F6CBFE9326D247")
         public  MyWindow(SurfaceView surfaceView) {
             mSurfaceView = new WeakReference<SurfaceView>(surfaceView);
-            // ---------- Original Method ----------
-            //mSurfaceView = new WeakReference<SurfaceView>(surfaceView);
+            
+            
         }
 
         
@@ -1030,36 +1041,36 @@ public class SurfaceView extends View {
                         surfaceView.mUpdateWindowNeeded = true;
                         surfaceView.mReportDrawNeeded = true;
                         surfaceView.mHandler.sendEmptyMessage(UPDATE_WINDOW_MSG);
-                    } //End block
+                    } 
                     {
                         boolean var8486FAD69ADE45C78ED5AA2063613E69_440832606 = (surfaceView.mWinFrame.width() != w
                             || surfaceView.mWinFrame.height() != h);
                         {
                             surfaceView.mUpdateWindowNeeded = true;
                             surfaceView.mHandler.sendEmptyMessage(UPDATE_WINDOW_MSG);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 finally 
                 {
                     surfaceView.mSurfaceLock.unlock();
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(w);
             addTaint(h);
             addTaint(coveredInsets.getTaint());
             addTaint(visibleInsets.getTaint());
             addTaint(reportDraw);
             addTaint(newConfig.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:55.154 -0400", hash_original_method = "BE0716F4AD0CF82E07CDF7A02946EA01", hash_generated_method = "8DFBCE56B7B4A7917AC4BEE9870F8E58")
         public void dispatchAppVisibility(boolean visible) {
             addTaint(visible);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1069,13 +1080,13 @@ public class SurfaceView extends View {
             {
                 Message msg = surfaceView.mHandler.obtainMessage(GET_NEW_SURFACE_MSG);
                 surfaceView.mHandler.sendMessage(msg);
-            } //End block
-            // ---------- Original Method ----------
-            //SurfaceView surfaceView = mSurfaceView.get();
-            //if (surfaceView != null) {
-                //Message msg = surfaceView.mHandler.obtainMessage(GET_NEW_SURFACE_MSG);
-                //surfaceView.mHandler.sendMessage(msg);
-            //}
+            } 
+            
+            
+            
+                
+                
+            
         }
 
         
@@ -1083,8 +1094,8 @@ public class SurfaceView extends View {
         public void windowFocusChanged(boolean hasFocus, boolean touchEnabled) {
             addTaint(hasFocus);
             addTaint(touchEnabled);
-            // ---------- Original Method ----------
-            //Log.w("SurfaceView", "Unexpected focus in surface: focus=" + hasFocus + ", touchEnabled=" + touchEnabled);
+            
+            
         }
 
         
@@ -1093,7 +1104,7 @@ public class SurfaceView extends View {
             addTaint(command.getTaint());
             addTaint(parameters.getTaint());
             addTaint(out.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

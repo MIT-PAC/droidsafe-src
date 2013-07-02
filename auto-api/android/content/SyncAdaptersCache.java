@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.pm.RegisteredServicesCache;
 import android.content.pm.XmlSerializerAndParser;
@@ -23,15 +23,16 @@ class SyncAdaptersCache extends RegisteredServicesCache<SyncAdapterType> {
       SyncAdaptersCache(Context context) {
         super(context, SERVICE_INTERFACE, SERVICE_META_DATA, ATTRIBUTES_NAME, sSerializer);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.560 -0400", hash_original_method = "F9B230DBB35FEE10F3AAB555789F4A09", hash_generated_method = "D0E9689488AC8C08490CC8D93858A3AE")
     public SyncAdapterType parseServiceAttributes(Resources res,
             String packageName, AttributeSet attrs) {
-        SyncAdapterType varB4EAC82CA7396A68D541C85D26508E83_359996508 = null; //Variable for return #1
-        SyncAdapterType varB4EAC82CA7396A68D541C85D26508E83_2144439391 = null; //Variable for return #2
+        SyncAdapterType varB4EAC82CA7396A68D541C85D26508E83_359996508 = null; 
+        SyncAdapterType varB4EAC82CA7396A68D541C85D26508E83_2144439391 = null; 
         TypedArray sa = res.obtainAttributes(attrs,
                 com.android.internal.R.styleable.SyncAdapter);
         try 
@@ -40,7 +41,7 @@ class SyncAdaptersCache extends RegisteredServicesCache<SyncAdapterType> {
             final String accountType = sa.getString(com.android.internal.R.styleable.SyncAdapter_accountType);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_359996508 = null;
-            } //End block
+            } 
             final boolean userVisible = sa.getBoolean(com.android.internal.R.styleable.SyncAdapter_userVisible, true);
             final boolean supportsUploading = sa.getBoolean(com.android.internal.R.styleable.SyncAdapter_supportsUploading,
                             true);
@@ -52,27 +53,27 @@ class SyncAdaptersCache extends RegisteredServicesCache<SyncAdapterType> {
                             .SyncAdapter_settingsActivity);
             varB4EAC82CA7396A68D541C85D26508E83_2144439391 = new SyncAdapterType(authority, accountType, userVisible, supportsUploading,
                     isAlwaysSyncable, allowParallelSyncs, settingsActivity);
-        } //End block
+        } 
         finally 
         {
             sa.recycle();
-        } //End block
+        } 
         addTaint(res.getTaint());
         addTaint(packageName.getTaint());
         addTaint(attrs.getTaint());
-        SyncAdapterType varA7E53CE21691AB073D9660D615818899_402077830; //Final return value
+        SyncAdapterType varA7E53CE21691AB073D9660D615818899_402077830; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_402077830 = varB4EAC82CA7396A68D541C85D26508E83_359996508;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_402077830 = varB4EAC82CA7396A68D541C85D26508E83_2144439391;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_402077830.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_402077830.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_402077830;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -81,7 +82,7 @@ class SyncAdaptersCache extends RegisteredServicesCache<SyncAdapterType> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.560 -0400", hash_original_method = "6E1FAE6E6E9693B60CA712A8476AA1E6", hash_generated_method = "6E1FAE6E6E9693B60CA712A8476AA1E6")
         public MySerializer ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -91,25 +92,25 @@ class SyncAdaptersCache extends RegisteredServicesCache<SyncAdapterType> {
             out.attribute(null, "accountType", item.accountType);
             addTaint(item.getTaint());
             addTaint(out.getTaint());
-            // ---------- Original Method ----------
-            //out.attribute(null, "authority", item.authority);
-            //out.attribute(null, "accountType", item.accountType);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.562 -0400", hash_original_method = "E847E68056A13960846185658512993F", hash_generated_method = "A92B1A04849DFF9649CB6C7844B9901C")
         public SyncAdapterType createFromXml(XmlPullParser parser) throws IOException, XmlPullParserException {
-            SyncAdapterType varB4EAC82CA7396A68D541C85D26508E83_1996068489 = null; //Variable for return #1
+            SyncAdapterType varB4EAC82CA7396A68D541C85D26508E83_1996068489 = null; 
             final String authority = parser.getAttributeValue(null, "authority");
             final String accountType = parser.getAttributeValue(null, "accountType");
             varB4EAC82CA7396A68D541C85D26508E83_1996068489 = SyncAdapterType.newKey(authority, accountType);
             addTaint(parser.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1996068489.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1996068489.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1996068489;
-            // ---------- Original Method ----------
-            //final String authority = parser.getAttributeValue(null, "authority");
-            //final String accountType = parser.getAttributeValue(null, "accountType");
-            //return SyncAdapterType.newKey(authority, accountType);
+            
+            
+            
+            
         }
 
         

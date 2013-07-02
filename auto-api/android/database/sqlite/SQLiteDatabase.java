@@ -1,11 +1,11 @@
 package android.database.sqlite;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.AppGlobals;
 import android.content.ContentValues;
@@ -131,7 +131,7 @@ public class SQLiteDatabase extends SQLiteClosable {
             DatabaseErrorHandler errorHandler, short connectionNum) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("path should not be null");
-        } //End block
+        } 
         setMaxSqlCacheSize(DEFAULT_SQL_CACHE_SIZE);
         mFlags = flags;
         mPath = path;
@@ -143,75 +143,78 @@ public class SQLiteDatabase extends SQLiteClosable {
         int limit = Resources.getSystem().getInteger(
                 com.android.internal.R.integer.config_cursorWindowSize) * 1024 * 4;
         native_setSqliteSoftHeapLimit(limit);
-        // ---------- Original Method ----------
-        //if (path == null) {
-            //throw new IllegalArgumentException("path should not be null");
-        //}
-        //setMaxSqlCacheSize(DEFAULT_SQL_CACHE_SIZE);
-        //mFlags = flags;
-        //mPath = path;
-        //mStackTrace = new DatabaseObjectNotClosedException().fillInStackTrace();
-        //mFactory = factory;
-        //mPrograms = new WeakHashMap<SQLiteClosable,Object>();
-        //mErrorHandler = (errorHandler == null) ? new DefaultDatabaseErrorHandler() : errorHandler;
-        //mConnectionNum = connectionNum;
-        //int limit = Resources.getSystem().getInteger(
-                //com.android.internal.R.integer.config_cursorWindowSize) * 1024 * 4;
-        //native_setSqliteSoftHeapLimit(limit);
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.420 -0400", hash_original_method = "C15F9F532AF7810AA7D3562C5DDE29F6", hash_generated_method = "A9D129BBD595A6E61B69715CF5886C26")
     synchronized String getLastSqlStatement() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1031843579 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1031843579 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1031843579 = mLastSqlStatement;
-        varB4EAC82CA7396A68D541C85D26508E83_1031843579.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1031843579.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1031843579;
-        // ---------- Original Method ----------
-        //return mLastSqlStatement;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.420 -0400", hash_original_method = "3743AC991024775005FDBE1593E9891E", hash_generated_method = "77D67C706792A5CD082ECBF7B819ED3C")
     synchronized void setLastSqlStatement(String sql) {
         mLastSqlStatement = sql;
-        // ---------- Original Method ----------
-        //mLastSqlStatement = sql;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.421 -0400", hash_original_method = "FF36C1ABFEC0F5F1C3DFBA7FD0941B56", hash_generated_method = "1288D57E35431D08B50A3F823A743810")
     synchronized void addSQLiteClosable(SQLiteClosable closable) {
         mPrograms.put(closable, null);
         addTaint(closable.getTaint());
-        // ---------- Original Method ----------
-        //mPrograms.put(closable, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.421 -0400", hash_original_method = "030B4AA23DD4EAEE65D260C86C2A8B4C", hash_generated_method = "11BD89EF8E40C2431EAAE66635798713")
     synchronized void removeSQLiteClosable(SQLiteClosable closable) {
         mPrograms.remove(closable);
         addTaint(closable.getTaint());
-        // ---------- Original Method ----------
-        //mPrograms.remove(closable);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.422 -0400", hash_original_method = "29F441CF35047DF9CBB0BC7BF2B03F36", hash_generated_method = "1E8A310ED119CC7354FFD9DFD1B70EB4")
     @Override
     protected void onAllReferencesReleased() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varF14FAC85BD81325B95F4F52AC5545E52_824420640 = (isOpen());
             {
                 close();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (isOpen()) {
-            //close();
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
@@ -223,19 +226,19 @@ public class SQLiteDatabase extends SQLiteClosable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.423 -0400", hash_original_method = "CD58BEDD0347A27F6CFE4EB9BEFDF2F6", hash_generated_method = "A1146177C8FA9BB90B6D94105F882124")
     public void setLockingEnabled(boolean lockingEnabled) {
         mLockingEnabled = lockingEnabled;
-        // ---------- Original Method ----------
-        //mLockingEnabled = lockingEnabled;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.423 -0400", hash_original_method = "6F1C3BA1763F74F7C0395D958A12A363", hash_generated_method = "3EE5C6657C638478CD9F042AD044BF04")
      void onCorruption() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         EventLog.writeEvent(EVENT_DB_CORRUPT, mPath);
         mErrorHandler.onCorruption(this);
-        // ---------- Original Method ----------
-        //EventLog.writeEvent(EVENT_DB_CORRUPT, mPath);
-        //mErrorHandler.onCorruption(this);
+        
+        
+        
     }
 
     
@@ -243,24 +246,25 @@ public class SQLiteDatabase extends SQLiteClosable {
      void lock(String sql) {
         lock(sql, false);
         addTaint(sql.getTaint());
-        // ---------- Original Method ----------
-        //lock(sql, false);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.424 -0400", hash_original_method = "8D6DAA6963637C0BD50884518E0FF993", hash_generated_method = "31DA195A8CACA429F53CC674AB87F7FD")
      void lock() {
         lock(null, false);
-        // ---------- Original Method ----------
-        //lock(null, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.425 -0400", hash_original_method = "550218B4AE04D143508369398336F95D", hash_generated_method = "E38C23FF479889B7BF58ECAD74704AB1")
     private void lock(String sql, boolean forced) {
         {
             boolean var0236CB8C0F56FF35CDAF225C25DD9AAC_789800213 = (Thread.holdsLock(this));
-        } //End collapsed parenthetic
+        } 
         verifyDbIsOpen();
         boolean done = false;
         long timeStart = SystemClock.uptimeMillis();
@@ -268,45 +272,47 @@ public class SQLiteDatabase extends SQLiteClosable {
             try 
             {
                 done = mLock.tryLock(LOCK_WAIT_PERIOD, TimeUnit.SECONDS);
-            } //End block
+            } 
             catch (InterruptedException e)
             { }
-        } //End block
+        } 
         {
             {
                 boolean varFAE68FF2C6BC8FEF8EA9B7CE8CF77E28_2007810258 = (mLock.getHoldCount() == 1);
                 {
                     mLockAcquiredWallTime = SystemClock.elapsedRealtime();
                     mLockAcquiredThreadTime = Debug.threadCpuTimeNanos();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 logTimeStat(sql, timeStart, GET_LOCK_LOG_PREFIX);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(sql.getTaint());
         addTaint(forced);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.425 -0400", hash_original_method = "5F1F87633E052520A24DBAD554D491B1", hash_generated_method = "993B0F3F2A36649E79B8CF2BDCBA15D6")
     private void lockForced() {
         lock(null, true);
-        // ---------- Original Method ----------
-        //lock(null, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.426 -0400", hash_original_method = "E1FDB470EFF9EA86A5AAC7A627D6955E", hash_generated_method = "E9057024B6CF0F4A0EFB9FF9C0D56385")
     private void lockForced(String sql) {
         lock(sql, true);
         addTaint(sql.getTaint());
-        // ---------- Original Method ----------
-        //lock(sql, true);
+        
+        
     }
 
     
@@ -317,21 +323,22 @@ public class SQLiteDatabase extends SQLiteClosable {
                 boolean varFAE68FF2C6BC8FEF8EA9B7CE8CF77E28_835298970 = (mLock.getHoldCount() == 1);
                 {
                     checkLockHoldTime();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mLock.unlock();
-        // ---------- Original Method ----------
-        //if (!mLockingEnabled) return;
-        //if (SQLiteDebug.DEBUG_LOCK_TIME_TRACKING) {
-            //if (mLock.getHoldCount() == 1) {
-                //checkLockHoldTime();
-            //}
-        //}
-        //mLock.unlock();
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.426 -0400", hash_original_method = "CA4E01B405088BC736DA3EA88D772AB0", hash_generated_method = "52067D4BFCF1C652DC601B1D79EFE467")
     private void unlockForced() {
         {
@@ -339,20 +346,21 @@ public class SQLiteDatabase extends SQLiteClosable {
                 boolean varFAE68FF2C6BC8FEF8EA9B7CE8CF77E28_649330657 = (mLock.getHoldCount() == 1);
                 {
                     checkLockHoldTime();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mLock.unlock();
-        // ---------- Original Method ----------
-        //if (SQLiteDebug.DEBUG_LOCK_TIME_TRACKING) {
-            //if (mLock.getHoldCount() == 1) {
-                //checkLockHoldTime();
-            //}
-        //}
-        //mLock.unlock();
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.427 -0400", hash_original_method = "15FB67C6B55CF4F17EB9E05703E68C1A", hash_generated_method = "526E19121CC2B969BD784509F35C6EBB")
     private void checkLockHoldTime() {
         long elapsedTime = SystemClock.elapsedRealtime();
@@ -361,7 +369,7 @@ public class SQLiteDatabase extends SQLiteClosable {
             boolean var1C0B53C7CF19FA5142D07A08F2710172_1628051486 = (lockedTime < LOCK_ACQUIRED_WARNING_TIME_IN_MS_ALWAYS_PRINT &&
                 !Log.isLoggable(TAG, Log.VERBOSE) &&
                 (elapsedTime - mLastLockMessageTime) < LOCK_WARNING_WINDOW_IN_MS);
-        } //End collapsed parenthetic
+        } 
         {
             int threadTime = (int)
                     ((Debug.threadCpuTimeNanos() - mLockAcquiredThreadTime) / 1000000);
@@ -371,52 +379,57 @@ public class SQLiteDatabase extends SQLiteClosable {
                         + threadTime + "ms";
                 {
                     Log.d(TAG, msg, new Exception());
-                } //End block
+                } 
                 {
                     Log.d(TAG, msg);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.427 -0400", hash_original_method = "36B8D50340D02900F098E44F066CFF12", hash_generated_method = "145909AA25037E1D599C021529CE7F8B")
     public void beginTransaction() {
         beginTransaction(null , true);
-        // ---------- Original Method ----------
-        //beginTransaction(null , true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.428 -0400", hash_original_method = "E00D9BE9F4C6FCF885F8A6933F83E5B2", hash_generated_method = "00651A551214FF436836A41E2DCE0672")
     public void beginTransactionNonExclusive() {
         beginTransaction(null , false);
-        // ---------- Original Method ----------
-        //beginTransaction(null , false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.428 -0400", hash_original_method = "5BD04E9A01CA28B4B773A517F832DDF2", hash_generated_method = "4C4A1422AB9FD108DBE0D908DB77F133")
     public void beginTransactionWithListener(SQLiteTransactionListener transactionListener) {
         beginTransaction(transactionListener, true);
         addTaint(transactionListener.getTaint());
-        // ---------- Original Method ----------
-        //beginTransaction(transactionListener, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.428 -0400", hash_original_method = "EB4000007896884F9C35346C5F5B9337", hash_generated_method = "79EFFDA38A1F222AA73AE054EC63DCC8")
     public void beginTransactionWithListenerNonExclusive(
             SQLiteTransactionListener transactionListener) {
         beginTransaction(transactionListener, false);
         addTaint(transactionListener.getTaint());
-        // ---------- Original Method ----------
-        //beginTransaction(transactionListener, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.429 -0400", hash_original_method = "65C15EF02A1263C4153105EBF58851D9", hash_generated_method = "A15A9CC40D1EC07B4DE56E677A148D5D")
     private void beginTransaction(SQLiteTransactionListener transactionListener,
             boolean exclusive) {
@@ -433,16 +446,16 @@ public class SQLiteDatabase extends SQLiteClosable {
                             + "calling setTransactionSuccessful and endTransaction";
                         IllegalStateException e = new IllegalStateException(msg);
                         if (DroidSafeAndroidRuntime.control) throw e;
-                    } //End block
+                    } 
                     ok = true;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 execSQL("BEGIN EXCLUSIVE;");
-            } //End block
+            } 
             {
                 execSQL("BEGIN IMMEDIATE;");
-            } //End block
+            } 
             mTransStartTime = SystemClock.uptimeMillis();
             mTransactionListener = transactionListener;
             mTransactionIsSuccessful = true;
@@ -451,27 +464,28 @@ public class SQLiteDatabase extends SQLiteClosable {
                 try 
                 {
                     transactionListener.onBegin();
-                } //End block
+                } 
                 catch (RuntimeException e)
                 {
                     execSQL("ROLLBACK;");
                     if (DroidSafeAndroidRuntime.control) throw e;
-                } //End block
-            } //End block
+                } 
+            } 
             ok = true;
-        } //End block
+        } 
         finally 
         {
             {
                 unlockForced();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(exclusive);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.430 -0400", hash_original_method = "94F2931FC5A304B6FE8748C95A17E4E3", hash_generated_method = "C3432AC657EB186263D45999ADC99C00")
     public void endTransaction() {
         verifyLockOwner();
@@ -479,66 +493,67 @@ public class SQLiteDatabase extends SQLiteClosable {
         {
             {
                 mInnerTransactionIsSuccessful = false;
-            } //End block
+            } 
             {
                 mTransactionIsSuccessful = false;
-            } //End block
+            } 
             {
                 boolean varBAE3CD5B00DE7A95D508FDA3C102ACA4_10111765 = (mLock.getHoldCount() != 1);
-            } //End collapsed parenthetic
+            } 
             RuntimeException savedException = null;
             {
                 try 
                 {
                     {
                         mTransactionListener.onCommit();
-                    } //End block
+                    } 
                     {
                         mTransactionListener.onRollback();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (RuntimeException e)
                 {
                     savedException = e;
                     mTransactionIsSuccessful = false;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 execSQL(COMMIT_SQL);
                 {
                     execSQL("PRAGMA wal_checkpoint;");
-                } //End block
+                } 
                 {
                     logTimeStat(getLastSqlStatement(), mTransStartTime, COMMIT_SQL);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 try 
                 {
                     execSQL("ROLLBACK;");
                     {
                         if (DroidSafeAndroidRuntime.control) throw savedException;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (SQLException e)
                 {
                     {
                         Log.d(TAG, "exception during rollback, maybe the DB previously "
                                 + "performed an auto-rollback");
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
             mTransactionListener = null;
             unlockForced();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.430 -0400", hash_original_method = "CAD10DEB5A167AB4D97D078F2E23C48E", hash_generated_method = "BFF432B0180F94ED5CC746722BC7C0E2")
     public void setTransactionSuccessful() {
         verifyDbIsOpen();
@@ -546,66 +561,70 @@ public class SQLiteDatabase extends SQLiteClosable {
             boolean varA9768C0684D8D9C3694FCFB8FF7505EA_689579895 = (!mLock.isHeldByCurrentThread());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("no transaction pending");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "setTransactionSuccessful may only be called once per call to beginTransaction");
-        } //End block
+        } 
         mInnerTransactionIsSuccessful = true;
-        // ---------- Original Method ----------
-        //verifyDbIsOpen();
-        //if (!mLock.isHeldByCurrentThread()) {
-            //throw new IllegalStateException("no transaction pending");
-        //}
-        //if (mInnerTransactionIsSuccessful) {
-            //throw new IllegalStateException(
-                    //"setTransactionSuccessful may only be called once per call to beginTransaction");
-        //}
-        //mInnerTransactionIsSuccessful = true;
+        
+        
+        
+            
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.430 -0400", hash_original_method = "6E9122EA7DDDF4A7FCE3C41AA714113C", hash_generated_method = "20FE88F1DAB0BDF9FEC4480DB89DA457")
     public boolean inTransaction() {
         boolean var4C9D249B5D0C4B9126D436C907678D95_1080880820 = (mLock.getHoldCount() > 0 || mTransactionUsingExecSql);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_782978583 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_782978583;
-        // ---------- Original Method ----------
-        //return mLock.getHoldCount() > 0 || mTransactionUsingExecSql;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.431 -0400", hash_original_method = "5CE93639419B30E518363E5F446309C9", hash_generated_method = "EC8B4970B7D4701DE452DCB48911DA26")
     synchronized void setTransactionUsingExecSqlFlag() {
         {
             boolean var7061DF8A5335B809C796044C2A062407_54894200 = (Log.isLoggable(TAG, Log.DEBUG));
-        } //End collapsed parenthetic
+        } 
         mTransactionUsingExecSql = true;
-        // ---------- Original Method ----------
-        //if (Log.isLoggable(TAG, Log.DEBUG)) {
-            //Log.i(TAG, "found execSQL('begin transaction')");
-        //}
-        //mTransactionUsingExecSql = true;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.431 -0400", hash_original_method = "37864C1F3B8C10FDA9B20AB532C7EB78", hash_generated_method = "9E37474059C5CACFB0819BF05A6219AD")
     synchronized void resetTransactionUsingExecSqlFlag() {
         {
             boolean var7061DF8A5335B809C796044C2A062407_1273613689 = (Log.isLoggable(TAG, Log.DEBUG));
-        } //End collapsed parenthetic
+        } 
         mTransactionUsingExecSql = false;
-        // ---------- Original Method ----------
-        //if (Log.isLoggable(TAG, Log.DEBUG)) {
-            //if (mTransactionUsingExecSql) {
-                //Log.i(TAG, "found execSQL('commit or end or rollback')");
-            //}
-        //}
-        //mTransactionUsingExecSql = false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.432 -0400", hash_original_method = "18141E27A4A6F223116C15568E4B1710", hash_generated_method = "83A8DF90BCD023EF3E09A3A294199EC6")
     synchronized boolean amIInTransaction() {
         SQLiteDatabase db;
@@ -618,40 +637,43 @@ public class SQLiteDatabase extends SQLiteClosable {
         b = db.mTransactionUsingExecSql || db.mLock.isHeldByCurrentThread();
         {
             boolean var7061DF8A5335B809C796044C2A062407_1389436330 = (Log.isLoggable(TAG, Log.DEBUG));
-        } //End collapsed parenthetic
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1545214018 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1545214018;
-        // ---------- Original Method ----------
-        //SQLiteDatabase db = (isPooledConnection()) ? mParentConnObj : this;
-        //boolean b = (!db.inTransaction()) ? false :
-                //db.mTransactionUsingExecSql || db.mLock.isHeldByCurrentThread();
-        //if (Log.isLoggable(TAG, Log.DEBUG)) {
-            //Log.i(TAG, "amIinTransaction: " + b);
-        //}
-        //return b;
+        
+        
+        
+                
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.432 -0400", hash_original_method = "810FBEC1135AAF9FE09D5ED72E2387AC", hash_generated_method = "E92F446C2196AAA5BABEDDD9EAC32F35")
     public boolean isDbLockedByCurrentThread() {
         boolean var652252C690B50A2DB779325937C5EC45_480492384 = (mLock.isHeldByCurrentThread());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1000836139 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1000836139;
-        // ---------- Original Method ----------
-        //return mLock.isHeldByCurrentThread();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.433 -0400", hash_original_method = "AFE51BB500BDF01026C5B1FB8FA31F68", hash_generated_method = "3DE3DF7C65BE0A8F93B77EEF2351A6B6")
     public boolean isDbLockedByOtherThreads() {
         boolean var8B5E8AE7202897DC44889938EB039DD8_1546369241 = (!mLock.isHeldByCurrentThread() && mLock.isLocked());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2056534261 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2056534261;
-        // ---------- Original Method ----------
-        //return !mLock.isHeldByCurrentThread() && mLock.isLocked();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.434 -0400", hash_original_method = "275C631F29B5F92F82765C72693E08C5", hash_generated_method = "329B7BB175298CA71631C965A187F977")
     @Deprecated
     public boolean yieldIfContended() {
@@ -659,33 +681,36 @@ public class SQLiteDatabase extends SQLiteClosable {
                 -1 ));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_529271632 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_529271632;
-        // ---------- Original Method ----------
-        //return yieldIfContendedHelper(false ,
-                //-1 );
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.435 -0400", hash_original_method = "E4D6EC2B61BA0EB36CC3F2E9664FDE2E", hash_generated_method = "92B6CC401D8B585841CF7913F44FF5A6")
     public boolean yieldIfContendedSafely() {
         boolean var1B84B5B6D1C3C26E51A46F65AE31AC61_1505928975 = (yieldIfContendedHelper(true , -1 ));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1568457380 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1568457380;
-        // ---------- Original Method ----------
-        //return yieldIfContendedHelper(true , -1 );
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.435 -0400", hash_original_method = "EFD5966AFCC9629F634B854AE0830507", hash_generated_method = "3B3712A56AD5A9B3BEDE55317F0DC872")
     public boolean yieldIfContendedSafely(long sleepAfterYieldDelay) {
         boolean var7C02635E5B9B12611B1E13892F20EFA4_1444662579 = (yieldIfContendedHelper(true , sleepAfterYieldDelay));
         addTaint(sleepAfterYieldDelay);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1184703265 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1184703265;
-        // ---------- Original Method ----------
-        //return yieldIfContendedHelper(true , sleepAfterYieldDelay);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.436 -0400", hash_original_method = "82E88213585314141BE9DBE00F951B10", hash_generated_method = "BBF11FC3963019EF799F8A89779DEBA5")
     private boolean yieldIfContendedHelper(boolean checkFullyYielded, long sleepAfterYieldDelay) {
         {
@@ -693,8 +718,8 @@ public class SQLiteDatabase extends SQLiteClosable {
             {
                 mLockAcquiredWallTime = SystemClock.elapsedRealtime();
                 mLockAcquiredThreadTime = Debug.threadCpuTimeNanos();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         setTransactionSuccessful();
         SQLiteTransactionListener transactionListener = mTransactionListener;
         endTransaction();
@@ -704,9 +729,9 @@ public class SQLiteDatabase extends SQLiteClosable {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                         "Db locked more than once. yielfIfContended cannot yield");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             long remainingDelay = sleepAfterYieldDelay;
             {
@@ -714,36 +739,36 @@ public class SQLiteDatabase extends SQLiteClosable {
                 {
                     Thread.sleep(remainingDelay < SLEEP_AFTER_YIELD_QUANTUM ?
                             remainingDelay : SLEEP_AFTER_YIELD_QUANTUM);
-                } //End block
+                } 
                 catch (InterruptedException e)
                 {
                     Thread.interrupted();
-                } //End block
+                } 
                 remainingDelay -= SLEEP_AFTER_YIELD_QUANTUM;
                 {
                     boolean var741E584956C4EDE940BCF4AF8237BB37_345231376 = (mLock.getQueueLength() == 0);
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         beginTransactionWithListener(transactionListener);
         addTaint(checkFullyYielded);
         addTaint(sleepAfterYieldDelay);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_335660947 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_335660947;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.437 -0400", hash_original_method = "2BF74CD6834BBADBF27F65464DB83499", hash_generated_method = "BD845D605060F3F266DC3B15647C2634")
     @Deprecated
     public Map<String, String> getSyncedTables() {
-        Map<String, String> varB4EAC82CA7396A68D541C85D26508E83_616415640 = null; //Variable for return #1
+        Map<String, String> varB4EAC82CA7396A68D541C85D26508E83_616415640 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_616415640 = new HashMap<String, String>(0);
-        varB4EAC82CA7396A68D541C85D26508E83_616415640.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_616415640.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_616415640;
-        // ---------- Original Method ----------
-        //return new HashMap<String, String>(0);
+        
+        
     }
 
     
@@ -815,22 +840,22 @@ public class SQLiteDatabase extends SQLiteClosable {
     private void setJournalMode(final String dbPath, final String mode) {
         {
             boolean varC8B178D4C16CE00624EBB098975A6C60_382069766 = (dbPath.equalsIgnoreCase(MEMORY_DB_PATH) || isReadOnly());
-        } //End collapsed parenthetic
+        } 
         String s = DatabaseUtils.stringForQuery(this, "PRAGMA journal_mode=" + mode, null);
         {
             boolean varAE0C33F5A2193A82451F284839087E0B_1755177120 = (!s.equalsIgnoreCase(mode));
-        } //End collapsed parenthetic
+        } 
         addTaint(dbPath.getTaint());
         addTaint(mode.getTaint());
-        // ---------- Original Method ----------
-        //if (dbPath.equalsIgnoreCase(MEMORY_DB_PATH) || isReadOnly()) {
-            //return;
-        //}
-        //String s = DatabaseUtils.stringForQuery(this, "PRAGMA journal_mode=" + mode, null);
-        //if (!s.equalsIgnoreCase(mode)) {
-            //Log.e(TAG, "setting journal_mode to " + mode + " failed for db: " + dbPath +
-                    //" (on pragma set journal_mode, sqlite returned:" + s);
-        //}
+        
+        
+            
+        
+        
+        
+            
+                    
+        
     }
 
     
@@ -843,16 +868,16 @@ public class SQLiteDatabase extends SQLiteClosable {
     public void close() {
         {
             boolean var3A7D61B68AE823F6A30349D498C59A5C_1575602087 = (!isOpen());
-        } //End collapsed parenthetic
+        } 
         {
             boolean var7061DF8A5335B809C796044C2A062407_670444238 = (Log.isLoggable(TAG, Log.DEBUG));
-        } //End collapsed parenthetic
+        } 
         lock();
         try 
         {
             {
                 boolean varC984E2D68DED4A73C5D827F4E91A6961_17483451 = (!isOpen());
-            } //End collapsed parenthetic
+            } 
             closeClosable();
             closePendingStatements();
             releaseCustomFunctions();
@@ -860,40 +885,40 @@ public class SQLiteDatabase extends SQLiteClosable {
             {
                 {
                     boolean var4202D0C449E97752DAE596DFB30FD8C9_252533473 = (Log.isLoggable(TAG, Log.DEBUG));
-                } //End collapsed parenthetic
+                } 
                 mConnectionPool.close();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isOpen()) {
-            //return;
-        //}
-        //if (Log.isLoggable(TAG, Log.DEBUG)) {
-            //Log.i(TAG, "closing db: " + mPath + " (connection # " + mConnectionNum);
-        //}
-        //lock();
-        //try {
-            //if (!isOpen()) {
-                //return;
-            //}
-            //closeClosable();
-            //closePendingStatements();
-            //releaseCustomFunctions();
-            //closeDatabase();
-            //if (mConnectionPool != null) {
-                //if (Log.isLoggable(TAG, Log.DEBUG)) {
-                    //assert mConnectionPool != null;
-                    //Log.i(TAG, mConnectionPool.toString());
-                //}
-                //mConnectionPool.close();
-            //}
-        //} finally {
-            //unlock();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+                
+            
+            
+            
+            
+            
+            
+                
+                    
+                    
+                
+                
+            
+        
+            
+        
     }
 
     
@@ -908,19 +933,19 @@ public class SQLiteDatabase extends SQLiteClosable {
                 SQLiteClosable program = entry.getKey();
                 {
                     program.onAllReferencesReleasedFromContainer();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //deallocCachedSqlStatements();
-        //Iterator<Map.Entry<SQLiteClosable, Object>> iter = mPrograms.entrySet().iterator();
-        //while (iter.hasNext()) {
-            //Map.Entry<SQLiteClosable, Object> entry = iter.next();
-            //SQLiteClosable program = entry.getKey();
-            //if (program != null) {
-                //program.onAllReferencesReleasedFromContainer();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -929,7 +954,7 @@ public class SQLiteDatabase extends SQLiteClosable {
         try 
         {
             dbclose();
-        } //End block
+        } 
         catch (SQLiteUnfinalizedObjectsException e)
         {
             String msg = e.getMessage();
@@ -947,27 +972,27 @@ public class SQLiteDatabase extends SQLiteClosable {
                         {
                             msg = compiledSql.toString();
                             found = true;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             {
                 {
                     boolean var264DD9E27C37EF07E76F2B3412A8E5A6_208967011 = (mClosedStatementIds.contains(stmtId));
                     {
                         closePendingStatements();
                         closeDatabase();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new SQLiteUnfinalizedObjectsException(
                         "close() on database: " + getPath() +
                         " failed due to un-close()d SQL statements: " + msg);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -983,24 +1008,24 @@ public class SQLiteDatabase extends SQLiteClosable {
             int ref = native_addCustomFunction(name, numArgs, function);
             {
                 mCustomFunctions.add(new Integer(ref));
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new SQLiteException("failed to add custom function " + name);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(name.getTaint());
         addTaint(numArgs);
         addTaint(function.getTaint());
-        // ---------- Original Method ----------
-        //verifyDbIsOpen();
-        //synchronized (mCustomFunctions) {
-            //int ref = native_addCustomFunction(name, numArgs, function);
-            //if (ref != 0) {
-                //mCustomFunctions.add(new Integer(ref));
-            //} else {
-                //throw new SQLiteException("failed to add custom function " + name);
-            //}
-        //}
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -1013,18 +1038,18 @@ public class SQLiteDatabase extends SQLiteClosable {
                 {
                     Integer function = mCustomFunctions.get(i);
                     native_releaseCustomFunction(function.intValue());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mCustomFunctions.clear();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mCustomFunctions) {
-            //for (int i = 0; i < mCustomFunctions.size(); i++) {
-                //Integer function = mCustomFunctions.get(i);
-                //native_releaseCustomFunction(function.intValue());
-            //}
-            //mCustomFunctions.clear();
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+            
+        
     }
 
     
@@ -1045,8 +1070,8 @@ public class SQLiteDatabase extends SQLiteClosable {
         int var5ED7B897E4829D15D8A8C1ABA4EB6C66_381042800 = (((Long) DatabaseUtils.longForQuery(this, "PRAGMA user_version;", null)).intValue());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1878161252 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1878161252;
-        // ---------- Original Method ----------
-        //return ((Long) DatabaseUtils.longForQuery(this, "PRAGMA user_version;", null)).intValue();
+        
+        
     }
 
     
@@ -1054,8 +1079,8 @@ public class SQLiteDatabase extends SQLiteClosable {
     public void setVersion(int version) {
         execSQL("PRAGMA user_version = " + version);
         addTaint(version);
-        // ---------- Original Method ----------
-        //execSQL("PRAGMA user_version = " + version);
+        
+        
     }
 
     
@@ -1065,9 +1090,9 @@ public class SQLiteDatabase extends SQLiteClosable {
         long varCE811D607639101FC1388FCB35FFCD9C_865017527 = (pageCount * getPageSize());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_508633584 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_508633584;
-        // ---------- Original Method ----------
-        //long pageCount = DatabaseUtils.longForQuery(this, "PRAGMA max_page_count;", null);
-        //return pageCount * getPageSize();
+        
+        
+        
     }
 
     
@@ -1080,15 +1105,15 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(numBytes);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1323432186 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1323432186;
-        // ---------- Original Method ----------
-        //long pageSize = getPageSize();
-        //long numPages = numBytes / pageSize;
-        //if ((numBytes % pageSize) != 0) {
-            //numPages++;
-        //}
-        //long newPageCount = DatabaseUtils.longForQuery(this, "PRAGMA max_page_count = " + numPages,
-                //null);
-        //return newPageCount * pageSize;
+        
+        
+        
+        
+            
+        
+        
+                
+        
     }
 
     
@@ -1097,8 +1122,8 @@ public class SQLiteDatabase extends SQLiteClosable {
         long varA97F1A3236E9434F0519DFDCD56746B7_130932475 = (DatabaseUtils.longForQuery(this, "PRAGMA page_size;", null));
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1891005808 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1891005808;
-        // ---------- Original Method ----------
-        //return DatabaseUtils.longForQuery(this, "PRAGMA page_size;", null);
+        
+        
     }
 
     
@@ -1106,8 +1131,8 @@ public class SQLiteDatabase extends SQLiteClosable {
     public void setPageSize(long numBytes) {
         execSQL("PRAGMA page_size = " + numBytes);
         addTaint(numBytes);
-        // ---------- Original Method ----------
-        //execSQL("PRAGMA page_size = " + numBytes);
+        
+        
     }
 
     
@@ -1116,7 +1141,7 @@ public class SQLiteDatabase extends SQLiteClosable {
     public void markTableSyncable(String table, String deletedTable) {
         addTaint(table.getTaint());
         addTaint(deletedTable.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -1126,7 +1151,7 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(table.getTaint());
         addTaint(foreignKey.getTaint());
         addTaint(updateTable.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -1148,15 +1173,15 @@ public class SQLiteDatabase extends SQLiteClosable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.448 -0400", hash_original_method = "C05C583B39FD005C236783082CBB4E55", hash_generated_method = "2D32F213B646A65E483AE662C17F0873")
     public SQLiteStatement compileStatement(String sql) throws SQLException {
-        SQLiteStatement varB4EAC82CA7396A68D541C85D26508E83_655213099 = null; //Variable for return #1
+        SQLiteStatement varB4EAC82CA7396A68D541C85D26508E83_655213099 = null; 
         verifyDbIsOpen();
         varB4EAC82CA7396A68D541C85D26508E83_655213099 = new SQLiteStatement(this, sql, null);
         addTaint(sql.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_655213099.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_655213099.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_655213099;
-        // ---------- Original Method ----------
-        //verifyDbIsOpen();
-        //return new SQLiteStatement(this, sql, null);
+        
+        
+        
     }
 
     
@@ -1164,7 +1189,7 @@ public class SQLiteDatabase extends SQLiteClosable {
     public Cursor query(boolean distinct, String table, String[] columns,
             String selection, String[] selectionArgs, String groupBy,
             String having, String orderBy, String limit) {
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_1613939391 = null; //Variable for return #1
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_1613939391 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1613939391 = queryWithFactory(null, distinct, table, columns, selection, selectionArgs,
                 groupBy, having, orderBy, limit);
         addTaint(distinct);
@@ -1176,11 +1201,11 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(having.getTaint());
         addTaint(orderBy.getTaint());
         addTaint(limit.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1613939391.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1613939391.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1613939391;
-        // ---------- Original Method ----------
-        //return queryWithFactory(null, distinct, table, columns, selection, selectionArgs,
-                //groupBy, having, orderBy, limit);
+        
+        
+                
     }
 
     
@@ -1189,7 +1214,7 @@ public class SQLiteDatabase extends SQLiteClosable {
             boolean distinct, String table, String[] columns,
             String selection, String[] selectionArgs, String groupBy,
             String having, String orderBy, String limit) {
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_74806993 = null; //Variable for return #1
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_74806993 = null; 
         verifyDbIsOpen();
         String sql = SQLiteQueryBuilder.buildQueryString(
                 distinct, table, columns, selection, groupBy, having, orderBy, limit);
@@ -1205,14 +1230,14 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(having.getTaint());
         addTaint(orderBy.getTaint());
         addTaint(limit.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_74806993.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_74806993.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_74806993;
-        // ---------- Original Method ----------
-        //verifyDbIsOpen();
-        //String sql = SQLiteQueryBuilder.buildQueryString(
-                //distinct, table, columns, selection, groupBy, having, orderBy, limit);
-        //return rawQueryWithFactory(
-                //cursorFactory, sql, selectionArgs, findEditTable(table));
+        
+        
+        
+                
+        
+                
     }
 
     
@@ -1220,7 +1245,7 @@ public class SQLiteDatabase extends SQLiteClosable {
     public Cursor query(String table, String[] columns, String selection,
             String[] selectionArgs, String groupBy, String having,
             String orderBy) {
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_1550050885 = null; //Variable for return #1
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_1550050885 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1550050885 = query(false, table, columns, selection, selectionArgs, groupBy,
                 having, orderBy, null );
         addTaint(table.getTaint());
@@ -1230,11 +1255,11 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(groupBy.getTaint());
         addTaint(having.getTaint());
         addTaint(orderBy.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1550050885.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1550050885.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1550050885;
-        // ---------- Original Method ----------
-        //return query(false, table, columns, selection, selectionArgs, groupBy,
-                //having, orderBy, null );
+        
+        
+                
     }
 
     
@@ -1242,7 +1267,7 @@ public class SQLiteDatabase extends SQLiteClosable {
     public Cursor query(String table, String[] columns, String selection,
             String[] selectionArgs, String groupBy, String having,
             String orderBy, String limit) {
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_1139663765 = null; //Variable for return #1
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_1139663765 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1139663765 = query(false, table, columns, selection, selectionArgs, groupBy,
                 having, orderBy, limit);
         addTaint(table.getTaint());
@@ -1253,24 +1278,24 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(having.getTaint());
         addTaint(orderBy.getTaint());
         addTaint(limit.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1139663765.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1139663765.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1139663765;
-        // ---------- Original Method ----------
-        //return query(false, table, columns, selection, selectionArgs, groupBy,
-                //having, orderBy, limit);
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.451 -0400", hash_original_method = "76B8F97A589187A4837E14E72F2396A8", hash_generated_method = "8E1158323D7ADD4E825EF0BF4BCE87E2")
     public Cursor rawQuery(String sql, String[] selectionArgs) {
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_1029608493 = null; //Variable for return #1
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_1029608493 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1029608493 = rawQueryWithFactory(null, sql, selectionArgs, null);
         addTaint(sql.getTaint());
         addTaint(selectionArgs[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1029608493.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1029608493.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1029608493;
-        // ---------- Original Method ----------
-        //return rawQueryWithFactory(null, sql, selectionArgs, null);
+        
+        
     }
 
     
@@ -1278,7 +1303,7 @@ public class SQLiteDatabase extends SQLiteClosable {
     public Cursor rawQueryWithFactory(
             CursorFactory cursorFactory, String sql, String[] selectionArgs,
             String editTable) {
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_1983990588 = null; //Variable for return #1
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_1983990588 = null; 
         verifyDbIsOpen();
         BlockGuard.getThreadPolicy().onReadFromDisk();
         SQLiteDatabase db = getDbConnection(sql);
@@ -1289,32 +1314,32 @@ public class SQLiteDatabase extends SQLiteClosable {
             cursor = driver.query(
                     cursorFactory != null ? cursorFactory : mFactory,
                     selectionArgs);
-        } //End block
+        } 
         finally 
         {
             releaseDbConnection(db);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1983990588 = cursor;
         addTaint(cursorFactory.getTaint());
         addTaint(sql.getTaint());
         addTaint(selectionArgs[0].getTaint());
         addTaint(editTable.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1983990588.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1983990588.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1983990588;
-        // ---------- Original Method ----------
-        //verifyDbIsOpen();
-        //BlockGuard.getThreadPolicy().onReadFromDisk();
-        //SQLiteDatabase db = getDbConnection(sql);
-        //SQLiteCursorDriver driver = new SQLiteDirectCursorDriver(db, sql, editTable);
-        //Cursor cursor = null;
-        //try {
-            //cursor = driver.query(
-                    //cursorFactory != null ? cursorFactory : mFactory,
-                    //selectionArgs);
-        //} finally {
-            //releaseDbConnection(db);
-        //}
-        //return cursor;
+        
+        
+        
+        
+        
+        
+        
+            
+                    
+                    
+        
+            
+        
+        
     }
 
     
@@ -1323,7 +1348,7 @@ public class SQLiteDatabase extends SQLiteClosable {
         try 
         {
             long varF52CAAA7AE26F4FA45ED0B3A37BD4379_989002542 = (insertWithOnConflict(table, nullColumnHack, values, CONFLICT_NONE));
-        } //End block
+        } 
         catch (SQLException e)
         { }
         addTaint(table.getTaint());
@@ -1331,13 +1356,13 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(values.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1525357512 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1525357512;
-        // ---------- Original Method ----------
-        //try {
-            //return insertWithOnConflict(table, nullColumnHack, values, CONFLICT_NONE);
-        //} catch (SQLException e) {
-            //Log.e(TAG, "Error inserting " + values, e);
-            //return -1;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1349,8 +1374,8 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(values.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1426110391 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1426110391;
-        // ---------- Original Method ----------
-        //return insertWithOnConflict(table, nullColumnHack, values, CONFLICT_NONE);
+        
+        
     }
 
     
@@ -1360,7 +1385,7 @@ public class SQLiteDatabase extends SQLiteClosable {
         {
             long var0B6B818F8EACB8B15016A791818A7376_1803503503 = (insertWithOnConflict(table, nullColumnHack, initialValues,
                     CONFLICT_REPLACE));
-        } //End block
+        } 
         catch (SQLException e)
         { }
         addTaint(table.getTaint());
@@ -1368,14 +1393,14 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(initialValues.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1681613675 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1681613675;
-        // ---------- Original Method ----------
-        //try {
-            //return insertWithOnConflict(table, nullColumnHack, initialValues,
-                    //CONFLICT_REPLACE);
-        //} catch (SQLException e) {
-            //Log.e(TAG, "Error inserting " + initialValues, e);
-            //return -1;
-        //}
+        
+        
+            
+                    
+        
+            
+            
+        
     }
 
     
@@ -1389,9 +1414,9 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(initialValues.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1229950476 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1229950476;
-        // ---------- Original Method ----------
-        //return insertWithOnConflict(table, nullColumnHack, initialValues,
-                //CONFLICT_REPLACE);
+        
+        
+                
     }
 
     
@@ -1420,79 +1445,79 @@ public class SQLiteDatabase extends SQLiteClosable {
                     sql.append((i > 0) ? "," : "");
                     sql.append(colName);
                     bindArgs[i++] = initialValues.get(colName);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             sql.append(')');
             sql.append(" VALUES (");
             {
                 i = 0;
                 {
                     sql.append((i > 0) ? ",?" : "?");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             sql.append(nullColumnHack + ") VALUES (NULL");
-        } //End block
+        } 
         sql.append(')');
         SQLiteStatement statement = new SQLiteStatement(this, sql.toString(), bindArgs);
         try 
         {
             long varF67BA8A1C61A250EDBDBDA7E8358FE23_145123560 = (statement.executeInsert());
-        } //End block
+        } 
         catch (SQLiteDatabaseCorruptException e)
         {
             onCorruption();
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
+        } 
         finally 
         {
             statement.close();
-        } //End block
+        } 
         addTaint(table.getTaint());
         addTaint(nullColumnHack.getTaint());
         addTaint(initialValues.getTaint());
         addTaint(conflictAlgorithm);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1219767381 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1219767381;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.471 -0400", hash_original_method = "D469CE4575675C51277223F3405EF96C", hash_generated_method = "2F23299DF4AD3A199825DCE1517CC64D")
     public int delete(String table, String whereClause, String[] whereArgs) {
         SQLiteStatement statement = new SQLiteStatement(this, "DELETE FROM " + table +
-                (!TextUtils.isEmpty(whereClause) ? " WHERE " + whereClause : ""), whereArgs);//DSFIXME:  CODE0008: Nested ternary operator in expression
+                (!TextUtils.isEmpty(whereClause) ? " WHERE " + whereClause : ""), whereArgs);
         try 
         {
             int varA87545DC17687AF507150C89477E60CF_1217550549 = (statement.executeUpdateDelete());
-        } //End block
+        } 
         catch (SQLiteDatabaseCorruptException e)
         {
             onCorruption();
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
+        } 
         finally 
         {
             statement.close();
-        } //End block
+        } 
         addTaint(table.getTaint());
         addTaint(whereClause.getTaint());
         addTaint(whereArgs[0].getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1757025311 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1757025311;
-        // ---------- Original Method ----------
-        //SQLiteStatement statement =  new SQLiteStatement(this, "DELETE FROM " + table +
-                //(!TextUtils.isEmpty(whereClause) ? " WHERE " + whereClause : ""), whereArgs);
-        //try {
-            //return statement.executeUpdateDelete();
-        //} catch (SQLiteDatabaseCorruptException e) {
-            //onCorruption();
-            //throw e;
-        //} finally {
-            //statement.close();
-        //}
+        
+        
+                
+        
+            
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -1505,8 +1530,8 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(whereArgs[0].getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1450100953 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1450100953;
-        // ---------- Original Method ----------
-        //return updateWithOnConflict(table, values, whereClause, whereArgs, CONFLICT_NONE);
+        
+        
     }
 
     
@@ -1517,8 +1542,8 @@ public class SQLiteDatabase extends SQLiteClosable {
             boolean var7F872E5B929E1733A7225AB743560CA0_340333575 = (values == null || values.size() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Empty values");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         StringBuilder sql = new StringBuilder(120);
         sql.append("UPDATE ");
         sql.append(CONFLICT_VALUES[conflictAlgorithm]);
@@ -1539,37 +1564,37 @@ public class SQLiteDatabase extends SQLiteClosable {
                 sql.append(colName);
                 bindArgs[i++] = values.get(colName);
                 sql.append("=?");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 i = setValuesSize;
                 {
                     bindArgs[i] = whereArgs[i - setValuesSize];
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean varC582A3B0C0625E2C5B62147799474972_1877654624 = (!TextUtils.isEmpty(whereClause));
             {
                 sql.append(" WHERE ");
                 sql.append(whereClause);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         SQLiteStatement statement = new SQLiteStatement(this, sql.toString(), bindArgs);
         try 
         {
             int varA87545DC17687AF507150C89477E60CF_746977821 = (statement.executeUpdateDelete());
-        } //End block
+        } 
         catch (SQLiteDatabaseCorruptException e)
         {
             onCorruption();
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
+        } 
         finally 
         {
             statement.close();
-        } //End block
+        } 
         addTaint(table.getTaint());
         addTaint(values.getTaint());
         addTaint(whereClause.getTaint());
@@ -1577,8 +1602,8 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(conflictAlgorithm);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1359759621 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1359759621;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1586,8 +1611,8 @@ public class SQLiteDatabase extends SQLiteClosable {
     public void execSQL(String sql) throws SQLException {
         executeSql(sql, null);
         addTaint(sql.getTaint());
-        // ---------- Original Method ----------
-        //executeSql(sql, null);
+        
+        
     }
 
     
@@ -1595,15 +1620,15 @@ public class SQLiteDatabase extends SQLiteClosable {
     public void execSQL(String sql, Object[] bindArgs) throws SQLException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Empty bindArgs");
-        } //End block
+        } 
         executeSql(sql, bindArgs);
         addTaint(sql.getTaint());
         addTaint(bindArgs[0].getTaint());
-        // ---------- Original Method ----------
-        //if (bindArgs == null) {
-            //throw new IllegalArgumentException("Empty bindArgs");
-        //}
-        //executeSql(sql, bindArgs);
+        
+        
+            
+        
+        
     }
 
     
@@ -1614,40 +1639,40 @@ public class SQLiteDatabase extends SQLiteClosable {
             {
                 disableWriteAheadLogging();
                 mHasAttachedDbs = true;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         SQLiteStatement statement = new SQLiteStatement(this, sql, bindArgs);
         try 
         {
             int varA87545DC17687AF507150C89477E60CF_488816431 = (statement.executeUpdateDelete());
-        } //End block
+        } 
         catch (SQLiteDatabaseCorruptException e)
         {
             onCorruption();
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
+        } 
         finally 
         {
             statement.close();
-        } //End block
+        } 
         addTaint(sql.getTaint());
         addTaint(bindArgs[0].getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1178729473 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1178729473;
-        // ---------- Original Method ----------
-        //if (DatabaseUtils.getSqlStatementType(sql) == DatabaseUtils.STATEMENT_ATTACH) {
-            //disableWriteAheadLogging();
-            //mHasAttachedDbs = true;
-        //}
-        //SQLiteStatement statement = new SQLiteStatement(this, sql, bindArgs);
-        //try {
-            //return statement.executeUpdateDelete();
-        //} catch (SQLiteDatabaseCorruptException e) {
-            //onCorruption();
-            //throw e;
-        //} finally {
-            //statement.close();
-        //}
+        
+        
+            
+            
+        
+        
+        
+            
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -1662,25 +1687,25 @@ public class SQLiteDatabase extends SQLiteClosable {
                     closeClosable();
                     onAllReferencesReleased();
                     releaseCustomFunctions();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (isOpen()) {
-                //Log.e(TAG, "close() was never explicitly called on database '" +
-                        //mPath + "' ", mStackTrace);
-                //closeClosable();
-                //onAllReferencesReleased();
-                //releaseCustomFunctions();
-            //}
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+                        
+                
+                
+                
+            
+        
+            
+        
     }
 
     
@@ -1688,8 +1713,8 @@ public class SQLiteDatabase extends SQLiteClosable {
     public boolean isReadOnly() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_742102308 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_742102308;
-        // ---------- Original Method ----------
-        //return (mFlags & OPEN_READ_MASK) == OPEN_READONLY;
+        
+        
     }
 
     
@@ -1697,8 +1722,8 @@ public class SQLiteDatabase extends SQLiteClosable {
     public boolean isOpen() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_86209981 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_86209981;
-        // ---------- Original Method ----------
-        //return mNativeHandle != 0;
+        
+        
     }
 
     
@@ -1708,19 +1733,19 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(newVersion);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_75602211 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_75602211;
-        // ---------- Original Method ----------
-        //return newVersion > getVersion();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.490 -0400", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "48A5EDD9A3F94E1C059B90C0B6C9ECCF")
     public final String getPath() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1670074815 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1670074815 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1670074815 = mPath;
-        varB4EAC82CA7396A68D541C85D26508E83_1670074815.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1670074815.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1670074815;
-        // ---------- Original Method ----------
-        //return mPath;
+        
+        
     }
 
     
@@ -1728,13 +1753,13 @@ public class SQLiteDatabase extends SQLiteClosable {
      void logTimeStat(String sql, long beginMillis) {
         {
             logTimeStat(sql, beginMillis, null);
-        } //End block
+        } 
         addTaint(sql.getTaint());
         addTaint(beginMillis);
-        // ---------- Original Method ----------
-        //if (ENABLE_DB_SAMPLE) {
-            //logTimeStat(sql, beginMillis, null);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -1744,23 +1769,23 @@ public class SQLiteDatabase extends SQLiteClosable {
         long durationMillis = SystemClock.uptimeMillis() - beginMillis;
         {
             sQueryLogTimeInMillis = SystemProperties.getInt("db.db_operation.threshold_ms", 500);
-        } //End block
+        } 
         {
             samplePercent = 100;
-        } //End block
+        } 
         {
             samplePercent = (int) (100 * durationMillis / sQueryLogTimeInMillis) + 1;
             {
                 boolean varFD197FF6228B8320A1307AF1741CB740_1247343459 = (mRandom.nextInt(100) >= samplePercent);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             sql = prefix + sql;
-        } //End block
+        } 
         {
             boolean var15761F9B8A55BA7056472F2EB9923186_820303466 = (sql.length() > QUERY_LOG_SQL_LENGTH);
             sql = sql.substring(0, QUERY_LOG_SQL_LENGTH);
-        } //End collapsed parenthetic
+        } 
         String blockingPackage = AppGlobals.getInitialPackage();
         blockingPackage = "";
         EventLog.writeEvent(
@@ -1773,59 +1798,59 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(sql.getTaint());
         addTaint(beginMillis);
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.494 -0400", hash_original_method = "BAC313652C0D08E8CD159DBA09E31731", hash_generated_method = "AF5EA5A81909B259C128E26E1EBDE8A2")
     private String getPathForLogs() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1080462494 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1425312583 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_561510962 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1080462494 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1425312583 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_561510962 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1080462494 = mPathForLogs;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1425312583 = null;
-        } //End block
+        } 
         {
             boolean var9CB372F979D264EF8BD68817AF56AFA9_528950229 = (mPath.indexOf('@') == -1);
             {
                 mPathForLogs = mPath;
-            } //End block
+            } 
             {
                 mPathForLogs = EMAIL_IN_DB_PATTERN.matcher(mPath).replaceAll("XX@YY");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_561510962 = mPathForLogs;
-        String varA7E53CE21691AB073D9660D615818899_473863878; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_473863878; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_473863878 = varB4EAC82CA7396A68D541C85D26508E83_1080462494;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_473863878 = varB4EAC82CA7396A68D541C85D26508E83_1425312583;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_473863878 = varB4EAC82CA7396A68D541C85D26508E83_561510962;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_473863878.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_473863878.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_473863878;
-        // ---------- Original Method ----------
-        //if (mPathForLogs != null) {
-            //return mPathForLogs;
-        //}
-        //if (mPath == null) {
-            //return null;
-        //}
-        //if (mPath.indexOf('@') == -1) {
-            //mPathForLogs = mPath;
-        //} else {
-            //mPathForLogs = EMAIL_IN_DB_PATTERN.matcher(mPath).replaceAll("XX@YY");
-        //}
-        //return mPathForLogs;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -1835,19 +1860,19 @@ public class SQLiteDatabase extends SQLiteClosable {
         try 
         {
             native_setLocale(locale.toString(), mFlags);
-        } //End block
+        } 
         finally 
         {
             unlock();
-        } //End block
+        } 
         addTaint(locale.getTaint());
-        // ---------- Original Method ----------
-        //lock();
-        //try {
-            //native_setLocale(locale.toString(), mFlags);
-        //} finally {
-            //unlock();
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1858,13 +1883,13 @@ public class SQLiteDatabase extends SQLiteClosable {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("database " + getPath() + " (conn# " +
                     mConnectionNum + ") already closed");
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (!isOpen()) {
-            //throw new IllegalStateException("database " + getPath() + " (conn# " +
-                    //mConnectionNum + ") already closed");
-        //}
+            } 
+        } 
+        
+        
+            
+                    
+        
     }
 
     
@@ -1875,13 +1900,13 @@ public class SQLiteDatabase extends SQLiteClosable {
             boolean var165EEFEEA133626155A410875EC632D2_1412227413 = (mLockingEnabled && !isDbLockedByCurrentThread());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Don't have database lock!");
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //verifyDbIsOpen();
-        //if (mLockingEnabled && !isDbLockedByCurrentThread()) {
-            //throw new IllegalStateException("Don't have database lock!");
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -1890,7 +1915,7 @@ public class SQLiteDatabase extends SQLiteClosable {
             String sql, SQLiteCompiledSql compiledStatement) {
         {
             boolean var44AC47AE1DA995B439F70F98684BE351_181320307 = (mCompiledQueries.get(sql) != null);
-        } //End collapsed parenthetic
+        } 
         int maxCacheSz;
         maxCacheSz = mCompiledQueries.maxSize();
         maxCacheSz = mParentConnObj.mCompiledQueries.maxSize();
@@ -1908,15 +1933,15 @@ public class SQLiteDatabase extends SQLiteClosable {
                     String s = var42DDB4F3462F514FC2F124A94345BBD5_741689516.next();
                     {
                         Log.d(TAG, "Sql statement in Cache: " + s);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         mCompiledQueries.put(sql, compiledStatement);
         addTaint(sql.getTaint());
         addTaint(compiledStatement.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1928,26 +1953,26 @@ public class SQLiteDatabase extends SQLiteClosable {
             SQLiteCompiledSql compiledSql = var84DFBFDB238B53D2223BB28209C480FC_1185104536.next();
             {
                 compiledSql.releaseSqlStatement();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mCompiledQueries.evictAll();
-        // ---------- Original Method ----------
-        //for (SQLiteCompiledSql compiledSql : mCompiledQueries.snapshot().values()) {
-            //compiledSql.releaseSqlStatement();
-        //}
-        //mCompiledQueries.evictAll();
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.516 -0400", hash_original_method = "A3F9326C17119FEC2A90D0724FE482CF", hash_generated_method = "D86495735B86301D220E89A75E313AE6")
     synchronized SQLiteCompiledSql getCompiledStatementForSql(String sql) {
-        SQLiteCompiledSql varB4EAC82CA7396A68D541C85D26508E83_198297740 = null; //Variable for return #1
+        SQLiteCompiledSql varB4EAC82CA7396A68D541C85D26508E83_198297740 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_198297740 = mCompiledQueries.get(sql);
         addTaint(sql.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_198297740.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_198297740.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_198297740;
-        // ---------- Original Method ----------
-        //return mCompiledQueries.get(sql);
+        
+        
     }
 
     
@@ -1958,14 +1983,14 @@ public class SQLiteDatabase extends SQLiteClosable {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                         "expected value between 0 and " + MAX_SQL_CACHE_SIZE);
-            } //End block
+            } 
             {
                 boolean var551279D6CBA810FBA7717E31CAA6F559_1880014619 = (oldCompiledQueries != null && cacheSize < oldCompiledQueries.maxSize());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("cannot set cacheSize to a value less than the "
                         + "value set with previous setMaxSqlCacheSize() call.");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mCompiledQueries = new LruCache<String, SQLiteCompiledSql>(cacheSize) {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.517 -0400", hash_original_method = "0287FECCFAEBE5DF6977A7998D9D230B", hash_generated_method = "5D0B8AAE039B3F73DB3A0243FDD1B3BF")
                 @Override
@@ -1977,9 +2002,9 @@ public class SQLiteDatabase extends SQLiteClosable {
                     addTaint(key.getTaint());
                     addTaint(oldValue.getTaint());
                     addTaint(newValue.getTaint());
-                    // ---------- Original Method ----------
-                    //verifyLockOwner();
-                    //oldValue.releaseIfNotInUse();
+                    
+                    
+                    
                 }
 };
             {
@@ -1989,12 +2014,12 @@ public class SQLiteDatabase extends SQLiteClosable {
                     Map.Entry<String, SQLiteCompiledSql> entry = varA959B61746A0B8CD10E93A362DE7BDD9_863600215.next();
                     {
                         mCompiledQueries.put(entry.getKey(), entry.getValue());
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -2004,8 +2029,8 @@ public class SQLiteDatabase extends SQLiteClosable {
         addTaint(sql.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_237802569 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_237802569;
-        // ---------- Original Method ----------
-        //return mCompiledQueries.get(sql) != null;
+        
+        
     }
 
     
@@ -2016,19 +2041,19 @@ public class SQLiteDatabase extends SQLiteClosable {
             boolean var8E99D7E5C4B5DCBB0D60FA02E8F69444_1765911137 = (mCompiledQueries.get(sql) == compiledSql);
             {
                 compiledSql.release();
-            } //End block
+            } 
             {
                 compiledSql.releaseSqlStatement();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(sql.getTaint());
         addTaint(compiledSql.getTaint());
-        // ---------- Original Method ----------
-        //if (mCompiledQueries.get(sql) == compiledSql) {
-            //compiledSql.release();
-        //} else {
-            //compiledSql.releaseSqlStatement();
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -2037,8 +2062,8 @@ public class SQLiteDatabase extends SQLiteClosable {
         int var83B3BA20F9BFC7EB0E1E1591ACDA465E_94974629 = (mCompiledQueries.hitCount());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889595903 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889595903;
-        // ---------- Original Method ----------
-        //return mCompiledQueries.hitCount();
+        
+        
     }
 
     
@@ -2047,8 +2072,8 @@ public class SQLiteDatabase extends SQLiteClosable {
         int varC17CF02ACE8A376983C1F44782AFB555_252235728 = (mCompiledQueries.missCount());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1306605809 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1306605809;
-        // ---------- Original Method ----------
-        //return mCompiledQueries.missCount();
+        
+        
     }
 
     
@@ -2057,8 +2082,8 @@ public class SQLiteDatabase extends SQLiteClosable {
         int var748F027D3AA39F0931CAA3B5AACCC414_1653008832 = (mCompiledQueries.size());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_861721094 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_861721094;
-        // ---------- Original Method ----------
-        //return mCompiledQueries.size();
+        
+        
     }
 
     
@@ -2066,24 +2091,24 @@ public class SQLiteDatabase extends SQLiteClosable {
      void finalizeStatementLater(int id) {
         {
             boolean var3A7D61B68AE823F6A30349D498C59A5C_1977045744 = (!isOpen());
-        } //End collapsed parenthetic
+        } 
         {
             {
                 boolean var6EF4CC3269BBE912A7980A125C3F1053_752935131 = (mClosedStatementIds.contains(id));
-            } //End collapsed parenthetic
+            } 
             mClosedStatementIds.add(id);
-        } //End block
+        } 
         addTaint(id);
-        // ---------- Original Method ----------
-        //if (!isOpen()) {
-            //return;
-        //}
-        //synchronized(mClosedStatementIds) {
-            //if (mClosedStatementIds.contains(id)) {
-                //return;
-            //}
-            //mClosedStatementIds.add(id);
-        //}
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -2091,20 +2116,20 @@ public class SQLiteDatabase extends SQLiteClosable {
      boolean isInQueueOfStatementsToBeFinalized(int id) {
         {
             boolean var3A7D61B68AE823F6A30349D498C59A5C_185694268 = (!isOpen());
-        } //End collapsed parenthetic
+        } 
         {
             boolean var397B91F8D3CC72A0D7DEC2797A4D7920_655959119 = (mClosedStatementIds.contains(id));
-        } //End block
+        } 
         addTaint(id);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1314215363 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1314215363;
-        // ---------- Original Method ----------
-        //if (!isOpen()) {
-            //return true;
-        //}
-        //synchronized(mClosedStatementIds) {
-            //return mClosedStatementIds.contains(id);
-        //}
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -2114,47 +2139,47 @@ public class SQLiteDatabase extends SQLiteClosable {
             boolean var3A7D61B68AE823F6A30349D498C59A5C_1073103599 = (!isOpen());
             {
                 mClosedStatementIds.clear();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         verifyLockOwner();
         ArrayList<Integer> list = new ArrayList<Integer>(mClosedStatementIds.size());
         {
             list.addAll(mClosedStatementIds);
             mClosedStatementIds.clear();
-        } //End block
+        } 
         int size = list.size();
         {
             int i = 0;
             {
                 native_finalize(list.get(i));
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (!isOpen()) {
-            //mClosedStatementIds.clear();
-            //return;
-        //}
-        //verifyLockOwner();
-        //ArrayList<Integer> list = new ArrayList<Integer>(mClosedStatementIds.size());
-        //synchronized(mClosedStatementIds) {
-            //list.addAll(mClosedStatementIds);
-            //mClosedStatementIds.clear();
-        //}
-        //int size = list.size();
-        //for (int i = 0; i < size; i++) {
-            //native_finalize(list.get(i));
-        //}
+            } 
+        } 
+        
+        
+            
+            
+        
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.539 -0400", hash_original_method = "22B8BC0E5EAC4A96A93EF5FA02A6A3E4", hash_generated_method = "C3810FBECF4F441B94A95BFDED4753D4")
      ArrayList<Integer> getQueuedUpStmtList() {
-        ArrayList<Integer> varB4EAC82CA7396A68D541C85D26508E83_1579811099 = null; //Variable for return #1
+        ArrayList<Integer> varB4EAC82CA7396A68D541C85D26508E83_1579811099 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1579811099 = mClosedStatementIds;
-        varB4EAC82CA7396A68D541C85D26508E83_1579811099.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1579811099.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1579811099;
-        // ---------- Original Method ----------
-        //return mClosedStatementIds;
+        
+        
     }
 
     
@@ -2162,33 +2187,33 @@ public class SQLiteDatabase extends SQLiteClosable {
     public boolean enableWriteAheadLogging() {
         {
             boolean varAC4B8D6BC6438967D655421106AB549D_92311710 = (isReadOnly());
-        } //End collapsed parenthetic
+        } 
         lock();
         try 
         {
             {
                 boolean varABBFB9ECCBC8DDD21300FC28D5111825_1110605642 = (mPath.equalsIgnoreCase(MEMORY_DB_PATH));
-            } //End collapsed parenthetic
+            } 
             {
                 {
                     boolean var4202D0C449E97752DAE596DFB30FD8C9_1840121489 = (Log.isLoggable(TAG, Log.DEBUG));
                     {
                         Log.d(TAG,
                             "this database: " + mPath + " has attached databases. can't  enable WAL.");
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             mConnectionPool = new DatabaseConnectionPool(this);
             setJournalMode(mPath, "WAL");
-        } //End block
+        } 
         finally 
         {
             unlock();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1093474129 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1093474129;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2200,31 +2225,31 @@ public class SQLiteDatabase extends SQLiteClosable {
             mConnectionPool.close();
             setJournalMode(mPath, "TRUNCATE");
             mConnectionPool = null;
-        } //End block
+        } 
         finally 
         {
             unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //lock();
-        //try {
-            //if (mConnectionPool == null) {
-                //return; 
-            //}
-            //mConnectionPool.close();
-            //setJournalMode(mPath, "TRUNCATE");
-            //mConnectionPool = null;
-        //} finally {
-            //unlock();
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+            
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.541 -0400", hash_original_method = "E2BFDDA904D316A8C889FACE46B854F6", hash_generated_method = "4175A8511419FAC845E6162F0B92F443")
      SQLiteDatabase getDatabaseHandle(String sql) {
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1699849064 = null; //Variable for return #1
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1066412736 = null; //Variable for return #2
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1417508175 = null; //Variable for return #3
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1699849064 = null; 
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1066412736 = null; 
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1417508175 = null; 
         {
             boolean varFECD86923E904CB3E1FAA0A6D1F256B6_1571155938 = (isPooledConnection());
             {
@@ -2232,68 +2257,68 @@ public class SQLiteDatabase extends SQLiteClosable {
                     boolean var66D7314A9B0C021F5A00D49AE7D90291_1031293583 = (isOpen() && !amIInTransaction());
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1699849064 = this;
-                    } //End block
+                    } 
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1066412736 = getParentDbConnObj().getDbConnection(sql);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1417508175 = getDbConnection(sql);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(sql.getTaint());
-        SQLiteDatabase varA7E53CE21691AB073D9660D615818899_570053006; //Final return value
+        SQLiteDatabase varA7E53CE21691AB073D9660D615818899_570053006; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_570053006 = varB4EAC82CA7396A68D541C85D26508E83_1699849064;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_570053006 = varB4EAC82CA7396A68D541C85D26508E83_1066412736;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_570053006 = varB4EAC82CA7396A68D541C85D26508E83_1417508175;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_570053006.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_570053006.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_570053006;
-        // ---------- Original Method ----------
-        //if (isPooledConnection()) {
-            //if (isOpen() && !amIInTransaction()) {
-                //return this;
-            //} else {
-                //return getParentDbConnObj().getDbConnection(sql);
-            //}
-        //} else {
-            //return getDbConnection(sql);
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.542 -0400", hash_original_method = "3237D800F466D0C40C278AA082141CB7", hash_generated_method = "63AA6728B831F47CCB8E0722F568D540")
      SQLiteDatabase createPoolConnection(short connectionNum) {
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_911562485 = null; //Variable for return #1
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_911562485 = null; 
         SQLiteDatabase db = openDatabase(mPath, mFactory, mFlags, mErrorHandler, connectionNum);
         db.mParentConnObj = this;
         varB4EAC82CA7396A68D541C85D26508E83_911562485 = db;
         addTaint(connectionNum);
-        varB4EAC82CA7396A68D541C85D26508E83_911562485.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_911562485.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_911562485;
-        // ---------- Original Method ----------
-        //SQLiteDatabase db = openDatabase(mPath, mFactory, mFlags, mErrorHandler, connectionNum);
-        //db.mParentConnObj = this;
-        //return db;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.542 -0400", hash_original_method = "205546EE310EB84028F43CE65A7EC94C", hash_generated_method = "CBF629AC348F0A296336C1451DCD2B5B")
     private synchronized SQLiteDatabase getParentDbConnObj() {
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_2114075906 = null; //Variable for return #1
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_2114075906 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2114075906 = mParentConnObj;
-        varB4EAC82CA7396A68D541C85D26508E83_2114075906.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2114075906.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2114075906;
-        // ---------- Original Method ----------
-        //return mParentConnObj;
+        
+        
     }
 
     
@@ -2301,64 +2326,64 @@ public class SQLiteDatabase extends SQLiteClosable {
     private boolean isPooledConnection() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_483071712 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_483071712;
-        // ---------- Original Method ----------
-        //return this.mConnectionNum > 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.544 -0400", hash_original_method = "B485A553653CD27E64DDB9F45483F96A", hash_generated_method = "9AB7AE44E93AAE3C805E3BFCB09CE4C2")
      SQLiteDatabase getDbConnection(String sql) {
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1148603026 = null; //Variable for return #1
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_952791140 = null; //Variable for return #2
-        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1225157633 = null; //Variable for return #3
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1148603026 = null; 
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_952791140 = null; 
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_1225157633 = null; 
         verifyDbIsOpen();
         {
             boolean varFECD86923E904CB3E1FAA0A6D1F256B6_1743848173 = (isPooledConnection());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1148603026 = this;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var02B777F5DE6966D0CEC634290EE91DB0_1462435962 = (amIInTransaction() || mConnectionPool == null);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_952791140 = this;
-            } //End block
+            } 
             {
                 {
                     boolean var4202D0C449E97752DAE596DFB30FD8C9_877853052 = (Log.isLoggable(TAG, Log.DEBUG));
-                } //End collapsed parenthetic
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1225157633 = mConnectionPool.get(sql);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(sql.getTaint());
-        SQLiteDatabase varA7E53CE21691AB073D9660D615818899_1579919393; //Final return value
+        SQLiteDatabase varA7E53CE21691AB073D9660D615818899_1579919393; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1579919393 = varB4EAC82CA7396A68D541C85D26508E83_1148603026;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1579919393 = varB4EAC82CA7396A68D541C85D26508E83_952791140;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1579919393 = varB4EAC82CA7396A68D541C85D26508E83_1225157633;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1579919393.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1579919393.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1579919393;
-        // ---------- Original Method ----------
-        //verifyDbIsOpen();
-        //if (isPooledConnection()) {
-            //return this;
-        //}
-        //if (amIInTransaction() || mConnectionPool == null) {
-            //return this;
-        //} else {
-            //if (Log.isLoggable(TAG, Log.DEBUG)) {
-                //assert mConnectionPool != null;
-                //Log.i(TAG, mConnectionPool.toString());
-            //}
-            //return mConnectionPool.get(sql);
-        //}
+        
+        
+        
+            
+        
+        
+            
+        
+            
+                
+                
+            
+            
+        
     }
 
     
@@ -2366,27 +2391,27 @@ public class SQLiteDatabase extends SQLiteClosable {
     private void releaseDbConnection(SQLiteDatabase db) {
         {
             boolean var2C78F6FD17175C7FB817368E27CF14DF_1373559899 = (!isOpen() || !db.isPooledConnection() || (db == this));
-        } //End collapsed parenthetic
+        } 
         {
             boolean var7061DF8A5335B809C796044C2A062407_1126186424 = (Log.isLoggable(TAG, Log.DEBUG));
             {
                 Log.d(TAG, "releaseDbConnection threadid = " + Thread.currentThread().getId() +
                     ", releasing # " + db.mConnectionNum + ", " + getPath());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mConnectionPool.release(db);
         addTaint(db.getTaint());
-        // ---------- Original Method ----------
-        //if (!isOpen() || !db.isPooledConnection() || (db == this)) {
-            //return;
-        //}
-        //if (Log.isLoggable(TAG, Log.DEBUG)) {
-            //assert isPooledConnection();
-            //assert mConnectionPool != null;
-            //Log.d(TAG, "releaseDbConnection threadid = " + Thread.currentThread().getId() +
-                    //", releasing # " + db.mConnectionNum + ", " + getPath());
-        //}
-        //mConnectionPool.release(db);
+        
+        
+            
+        
+        
+            
+            
+            
+                    
+        
+        
     }
 
     
@@ -2448,20 +2473,20 @@ public class SQLiteDatabase extends SQLiteClosable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.546 -0400", hash_original_method = "40C4DE1C4808AAF54B97D30ED440E3DF", hash_generated_method = "F92DF1FF087BC8C4D1F0EDE9296AFDFB")
     public List<Pair<String, String>> getAttachedDbs() {
-        List<Pair<String, String>> varB4EAC82CA7396A68D541C85D26508E83_1964783634 = null; //Variable for return #1
-        List<Pair<String, String>> varB4EAC82CA7396A68D541C85D26508E83_761314639 = null; //Variable for return #2
-        List<Pair<String, String>> varB4EAC82CA7396A68D541C85D26508E83_2093362758 = null; //Variable for return #3
+        List<Pair<String, String>> varB4EAC82CA7396A68D541C85D26508E83_1964783634 = null; 
+        List<Pair<String, String>> varB4EAC82CA7396A68D541C85D26508E83_761314639 = null; 
+        List<Pair<String, String>> varB4EAC82CA7396A68D541C85D26508E83_2093362758 = null; 
         {
             boolean var3A7D61B68AE823F6A30349D498C59A5C_428733721 = (!isOpen());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1964783634 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         ArrayList<Pair<String, String>> attachedDbs = new ArrayList<Pair<String, String>>();
         {
             attachedDbs.add(new Pair<String, String>("main", mPath));
             varB4EAC82CA7396A68D541C85D26508E83_761314639 = attachedDbs;
-        } //End block
+        } 
         Cursor c = null;
         try 
         {
@@ -2470,32 +2495,32 @@ public class SQLiteDatabase extends SQLiteClosable {
                 boolean var4D86B3BFFD03EEDEB3FCD4358BA0EB15_1108632338 = (c.moveToNext());
                 {
                     attachedDbs.add(new Pair<String, String>(c.getString(1), c.getString(2)));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             {
                 c.close();
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2093362758 = attachedDbs;
-        List<Pair<String, String>> varA7E53CE21691AB073D9660D615818899_1541953432; //Final return value
+        List<Pair<String, String>> varA7E53CE21691AB073D9660D615818899_1541953432; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1541953432 = varB4EAC82CA7396A68D541C85D26508E83_1964783634;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1541953432 = varB4EAC82CA7396A68D541C85D26508E83_761314639;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1541953432 = varB4EAC82CA7396A68D541C85D26508E83_2093362758;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1541953432.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1541953432.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1541953432;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2509,13 +2534,13 @@ public class SQLiteDatabase extends SQLiteClosable {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("databaselist for: " + getPath() + " couldn't " +
                         "be retrieved. probably because the database is closed");
-            } //End block
-        } //End block
+            } 
+        } 
         catch (SQLiteException e)
         {
             attachedDbs = new ArrayList<Pair<String, String>>();
             attachedDbs.add(new Pair<String, String>("main", this.mPath));
-        } //End block
+        } 
         {
             int i = 0;
             boolean var09C6965D75337EEF5127BC42D107026B_551979746 = (i < attachedDbs.size());
@@ -2528,18 +2553,18 @@ public class SQLiteDatabase extends SQLiteClosable {
                     String rslt = prog.simpleQueryForString();
                     {
                         boolean var00AD2367BACBE21804BEE535AC3728B3_1258485371 = (!rslt.equalsIgnoreCase("ok"));
-                    } //End collapsed parenthetic
-                } //End block
+                    } 
+                } 
                 finally 
                 {
                     prog.close();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_727591202 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_727591202;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2586,32 +2611,32 @@ public class SQLiteDatabase extends SQLiteClosable {
           DatabaseReentrantLock(boolean fair) {
             super(fair);
             addTaint(fair);
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.554 -0400", hash_original_method = "1BB82FD0B3090B035906C5C5A5300D7F", hash_generated_method = "662E4EF28132CCA68D8E420D4967368E")
         @Override
         public Thread getOwner() {
-            Thread varB4EAC82CA7396A68D541C85D26508E83_1645605875 = null; //Variable for return #1
+            Thread varB4EAC82CA7396A68D541C85D26508E83_1645605875 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1645605875 = super.getOwner();
-            varB4EAC82CA7396A68D541C85D26508E83_1645605875.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1645605875.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1645605875;
-            // ---------- Original Method ----------
-            //return super.getOwner();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.555 -0400", hash_original_method = "0A30C3A8A16B3E36E180D94391681301", hash_generated_method = "3047A6F7D8457F5B1DE9FCF27CFB251B")
         public String getOwnerDescription() {
-            String varB4EAC82CA7396A68D541C85D26508E83_939158736 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_939158736 = null; 
             Thread t = getOwner();
             varB4EAC82CA7396A68D541C85D26508E83_939158736 = (t== null) ? "none" : String.valueOf(t.getId());
-            varB4EAC82CA7396A68D541C85D26508E83_939158736.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_939158736.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_939158736;
-            // ---------- Original Method ----------
-            //Thread t = getOwner();
-            //return (t== null) ? "none" : String.valueOf(t.getId());
+            
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class StringTokenizer implements Enumeration<Object> {
@@ -26,7 +26,7 @@ public class StringTokenizer implements Enumeration<Object> {
     public  StringTokenizer(String string) {
         this(string, " \t\n\r\f", false);
         addTaint(string.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -35,7 +35,7 @@ public class StringTokenizer implements Enumeration<Object> {
         this(string, delimiters, false);
         addTaint(string.getTaint());
         addTaint(delimiters.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -47,19 +47,20 @@ public class StringTokenizer implements Enumeration<Object> {
             this.delimiters = delimiters;
             this.returnDelimiters = returnDelimiters;
             this.position = 0;
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        // ---------- Original Method ----------
-        //if (string != null) {
-            //this.string = string;
-            //this.delimiters = delimiters;
-            //this.returnDelimiters = returnDelimiters;
-            //this.position = 0;
-        //} else
-            //throw new NullPointerException();
+        
+        
+            
+            
+            
+            
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.739 -0400", hash_original_method = "F396A87D2BE9368C37D12C0E764C04A1", hash_generated_method = "AB4285116E20E8C649268ADF4520AABD")
     public int countTokens() {
         int count = 0;
@@ -73,100 +74,104 @@ public class StringTokenizer implements Enumeration<Object> {
                     {
                         {
                             inToken = false;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         inToken = true;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1203744623 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1203744623;
-        // ---------- Original Method ----------
-        //int count = 0;
-        //boolean inToken = false;
-        //for (int i = position, length = string.length(); i < length; i++) {
-            //if (delimiters.indexOf(string.charAt(i), 0) >= 0) {
-                //if (returnDelimiters)
-                    //count++;
-                //if (inToken) {
-                    //count++;
-                    //inToken = false;
-                //}
-            //} else {
-                //inToken = true;
-            //}
-        //}
-        //if (inToken)
-            //count++;
-        //return count;
+        
+        
+        
+        
+            
+                
+                    
+                
+                    
+                    
+                
+            
+                
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.739 -0400", hash_original_method = "8165B2FDF405707BFEA9EF223873FBB9", hash_generated_method = "400350817CBF2C426891F389F582CBFA")
     public boolean hasMoreElements() {
         boolean varD6DD5EDA7437B9905500CFBE29944506_22219082 = (hasMoreTokens());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1785448961 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1785448961;
-        // ---------- Original Method ----------
-        //return hasMoreTokens();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.740 -0400", hash_original_method = "15C5B981D98A46AC76B0A556FC01F2CE", hash_generated_method = "A122A4944F825827DCBDC31467D434F0")
     public boolean hasMoreTokens() {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         int length = string.length();
         {
             {
                 int i = position;
                 {
                     boolean var51C04FE3BD64EB66A94B1ADE79981D5D_1275820328 = (delimiters.indexOf(string.charAt(i), 0) == -1);
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1795149161 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1795149161;
-        // ---------- Original Method ----------
-        //if (delimiters == null) {
-            //throw new NullPointerException();
-        //}
-        //int length = string.length();
-        //if (position < length) {
-            //if (returnDelimiters)
-                //return true; 
-            //for (int i = position; i < length; i++)
-                //if (delimiters.indexOf(string.charAt(i), 0) == -1)
-                    //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
+        
+            
+                
+            
+                
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.740 -0400", hash_original_method = "0727048C65431FDBB400A5F8931A38E2", hash_generated_method = "AA5C9A6E00C34DCA9EE57D19108E915F")
     public Object nextElement() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1452859604 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1452859604 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1452859604 = nextToken();
-        varB4EAC82CA7396A68D541C85D26508E83_1452859604.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1452859604.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1452859604;
-        // ---------- Original Method ----------
-        //return nextToken();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.741 -0400", hash_original_method = "195590523F66664753FCC18930183C87", hash_generated_method = "E3D4274266AA2F69AA432E714DC2B1C7")
     public String nextToken() {
-        String varB4EAC82CA7396A68D541C85D26508E83_739429749 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_236256589 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_2058388916 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_2072716560 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_36340894 = null; //Variable for return #5
+        String varB4EAC82CA7396A68D541C85D26508E83_739429749 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_236256589 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2058388916 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2072716560 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_36340894 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         int i = position;
         int length = string.length();
         {
@@ -174,61 +179,62 @@ public class StringTokenizer implements Enumeration<Object> {
                 {
                     boolean var3D48EA53132D147C01AFDEE9DDB55A41_122747180 = (delimiters.indexOf(string.charAt(position), 0) >= 0);
                     varB4EAC82CA7396A68D541C85D26508E83_739429749 = String.valueOf(string.charAt(position++));
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean var3D48EA53132D147C01AFDEE9DDB55A41_1391477337 = (delimiters.indexOf(string.charAt(position), 0) >= 0);
                     varB4EAC82CA7396A68D541C85D26508E83_236256589 = string.substring(i, position);
-                } //End collapsed parenthetic
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_2058388916 = string.substring(i);
-            } //End block
+            } 
             {
                 boolean var64D6C26CDC470C826C7D5C1E99C29036_29276919 = (i < length && delimiters.indexOf(string.charAt(i), 0) >= 0);
-            } //End collapsed parenthetic
+            } 
             position = i;
             {
                 {
                     boolean var3D48EA53132D147C01AFDEE9DDB55A41_1081873045 = (delimiters.indexOf(string.charAt(position), 0) >= 0);
                     varB4EAC82CA7396A68D541C85D26508E83_2072716560 = string.substring(i, position);
-                } //End collapsed parenthetic
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_36340894 = string.substring(i);
-            } //End block
-        } //End block
+            } 
+        } 
         if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-        String varA7E53CE21691AB073D9660D615818899_64930186; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_64930186; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_64930186 = varB4EAC82CA7396A68D541C85D26508E83_739429749;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_64930186 = varB4EAC82CA7396A68D541C85D26508E83_236256589;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_64930186 = varB4EAC82CA7396A68D541C85D26508E83_2058388916;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_64930186 = varB4EAC82CA7396A68D541C85D26508E83_2072716560;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_64930186 = varB4EAC82CA7396A68D541C85D26508E83_36340894;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_64930186.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_64930186.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_64930186;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.742 -0400", hash_original_method = "A244E208DF1B5D62AF8E286FEDEE9DEC", hash_generated_method = "4F49AA4213FE8E452A1FB0A2D3379B59")
     public String nextToken(String delims) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1522749866 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1522749866 = null; 
         this.delimiters = delims;
         varB4EAC82CA7396A68D541C85D26508E83_1522749866 = nextToken();
-        varB4EAC82CA7396A68D541C85D26508E83_1522749866.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1522749866.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1522749866;
-        // ---------- Original Method ----------
-        //this.delimiters = delims;
-        //return nextToken();
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.commons.io.filefilter;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.Serializable;
@@ -25,7 +25,7 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
     public  WildcardFileFilter(String wildcard) {
         this(wildcard, null);
         addTaint(wildcard.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,16 +33,16 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
     public  WildcardFileFilter(String wildcard, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The wildcard must not be null");
-        } //End block
+        } 
         this.wildcards = new String[] { wildcard };
         this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
         addTaint(wildcard.getTaint());
-        // ---------- Original Method ----------
-        //if (wildcard == null) {
-            //throw new IllegalArgumentException("The wildcard must not be null");
-        //}
-        //this.wildcards = new String[] { wildcard };
-        //this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -50,7 +50,7 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
     public  WildcardFileFilter(String[] wildcards) {
         this(wildcards, null);
         addTaint(wildcards[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -58,17 +58,17 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
     public  WildcardFileFilter(String[] wildcards, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The wildcard array must not be null");
-        } //End block
+        } 
         this.wildcards = new String[wildcards.length];
         System.arraycopy(wildcards, 0, this.wildcards, 0, wildcards.length);
         this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
-        // ---------- Original Method ----------
-        //if (wildcards == null) {
-            //throw new IllegalArgumentException("The wildcard array must not be null");
-        //}
-        //this.wildcards = new String[wildcards.length];
-        //System.arraycopy(wildcards, 0, this.wildcards, 0, wildcards.length);
-        //this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -76,7 +76,7 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
     public  WildcardFileFilter(List<String> wildcards) {
         this(wildcards, null);
         addTaint(wildcards.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -84,18 +84,19 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
     public  WildcardFileFilter(List<String> wildcards, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The wildcard list must not be null");
-        } //End block
+        } 
         this.wildcards = wildcards.toArray(new String[wildcards.size()]);
         this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
-        // ---------- Original Method ----------
-        //if (wildcards == null) {
-            //throw new IllegalArgumentException("The wildcard list must not be null");
-        //}
-        //this.wildcards = wildcards.toArray(new String[wildcards.size()]);
-        //this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.994 -0400", hash_original_method = "0D7E6F981525F2AA16F60F5ED0631F0E", hash_generated_method = "E63FDF2D2F697CF64C4B6F68EB745B33")
     @Override
     public boolean accept(File dir, String name) {
@@ -104,23 +105,24 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
             {
                 {
                     boolean var0572AA10CB9D5F2CACE237F100D1C60A_495789377 = (FilenameUtils.wildcardMatch(name, wildcard, caseSensitivity));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(dir.getTaint());
         addTaint(name.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1705684877 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1705684877;
-        // ---------- Original Method ----------
-        //for (String wildcard : wildcards) {
-            //if (FilenameUtils.wildcardMatch(name, wildcard, caseSensitivity)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.997 -0400", hash_original_method = "C244C034F5D60E2DBFF912D07EE9EFE9", hash_generated_method = "9135741CC67F8151506F454F32213EF3")
     @Override
     public boolean accept(File file) {
@@ -130,27 +132,28 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
             {
                 {
                     boolean var0572AA10CB9D5F2CACE237F100D1C60A_1054376873 = (FilenameUtils.wildcardMatch(name, wildcard, caseSensitivity));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(file.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_386552908 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_386552908;
-        // ---------- Original Method ----------
-        //String name = file.getName();
-        //for (String wildcard : wildcards) {
-            //if (FilenameUtils.wildcardMatch(name, wildcard, caseSensitivity)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.999 -0400", hash_original_method = "54924678DCA60F174F0C38EC41ACEED7", hash_generated_method = "4F44835E41C61A869782983CF4D52A48")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1155510112 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1155510112 = null; 
         StringBuilder buffer = new StringBuilder();
         buffer.append(super.toString());
         buffer.append("(");
@@ -160,29 +163,29 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
                 {
                     {
                         buffer.append(",");
-                    } //End block
+                    } 
                     buffer.append(wildcards[i]);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         buffer.append(")");
         varB4EAC82CA7396A68D541C85D26508E83_1155510112 = buffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1155510112.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1155510112.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1155510112;
-        // ---------- Original Method ----------
-        //StringBuilder buffer = new StringBuilder();
-        //buffer.append(super.toString());
-        //buffer.append("(");
-        //if (wildcards != null) {
-            //for (int i = 0; i < wildcards.length; i++) {
-                //if (i > 0) {
-                    //buffer.append(",");
-                //}
-                //buffer.append(wildcards[i]);
-            //}
-        //}
-        //buffer.append(")");
-        //return buffer.toString();
+        
+        
+        
+        
+        
+            
+                
+                    
+                
+                
+            
+        
+        
+        
     }
 
     

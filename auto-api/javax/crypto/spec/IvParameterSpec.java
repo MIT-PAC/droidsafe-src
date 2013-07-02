@@ -1,11 +1,11 @@
 package javax.crypto.spec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.spec.AlgorithmParameterSpec;
 import java.util.Arrays;
@@ -19,15 +19,15 @@ public class IvParameterSpec implements AlgorithmParameterSpec {
     public  IvParameterSpec(byte[] iv) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("iv == null");
-        } //End block
+        } 
         this.iv = new byte[iv.length];
         System.arraycopy(iv, 0, this.iv, 0, iv.length);
-        // ---------- Original Method ----------
-        //if (iv == null) {
-            //throw new NullPointerException("iv == null");
-        //}
-        //this.iv = new byte[iv.length];
-        //System.arraycopy(iv, 0, this.iv, 0, iv.length);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -35,31 +35,32 @@ public class IvParameterSpec implements AlgorithmParameterSpec {
     public  IvParameterSpec(byte[] iv, int offset, int byteCount) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
+        } 
         Arrays.checkOffsetAndCount(iv.length, offset, byteCount);
         this.iv = new byte[byteCount];
         System.arraycopy(iv, offset, this.iv, 0, byteCount);
         addTaint(offset);
-        // ---------- Original Method ----------
-        //if ((iv == null) || (iv.length - offset < byteCount)) {
-            //throw new IllegalArgumentException();
-        //}
-        //Arrays.checkOffsetAndCount(iv.length, offset, byteCount);
-        //this.iv = new byte[byteCount];
-        //System.arraycopy(iv, offset, this.iv, 0, byteCount);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.269 -0400", hash_original_method = "A92FDD2E910AFCA63CE828A3161FD7A9", hash_generated_method = "8E28FF10FDC59BACA039E4FE83D8B29D")
     public byte[] getIV() {
         byte[] res = new byte[iv.length];
         System.arraycopy(iv, 0, res, 0, iv.length);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1654569010 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1654569010;
-        // ---------- Original Method ----------
-        //byte[] res = new byte[iv.length];
-        //System.arraycopy(iv, 0, res, 0, iv.length);
-        //return res;
+        
+        
+        
+        
     }
 
     

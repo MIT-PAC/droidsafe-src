@@ -1,11 +1,11 @@
 package android.preference;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.util.XmlUtils;
 import java.io.IOException;
@@ -29,8 +29,8 @@ class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
         init(preferenceManager);
         addTaint(context.getTaint());
         addTaint(preferenceManager.getTaint());
-        // ---------- Original Method ----------
-        //init(preferenceManager);
+        
+        
     }
 
     
@@ -41,39 +41,41 @@ class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
         addTaint(original.getTaint());
         addTaint(preferenceManager.getTaint());
         addTaint(newContext.getTaint());
-        // ---------- Original Method ----------
-        //init(preferenceManager);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.504 -0400", hash_original_method = "FF1F94752C869BA06052B7A67A109910", hash_generated_method = "682C07709D93C69BF492C1EBB0CB6917")
     @Override
     public GenericInflater<Preference, PreferenceGroup> cloneInContext(Context newContext) {
-        GenericInflater<Preference, PreferenceGroup> varB4EAC82CA7396A68D541C85D26508E83_985059816 = null; //Variable for return #1
+        GenericInflater<Preference, PreferenceGroup> varB4EAC82CA7396A68D541C85D26508E83_985059816 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_985059816 = new PreferenceInflater(this, mPreferenceManager, newContext);
         addTaint(newContext.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_985059816.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_985059816.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_985059816;
-        // ---------- Original Method ----------
-        //return new PreferenceInflater(this, mPreferenceManager, newContext);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.504 -0400", hash_original_method = "7B227AC4C6BF5338AF52F597A9EDC5E2", hash_generated_method = "97D721084DFEECEA5417B367F5EF73D1")
     private void init(PreferenceManager preferenceManager) {
         mPreferenceManager = preferenceManager;
         setDefaultPackage("android.preference.");
-        // ---------- Original Method ----------
-        //mPreferenceManager = preferenceManager;
-        //setDefaultPackage("android.preference.");
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.505 -0400", hash_original_method = "295C055EC64DF7189FE6DF67209CBBC4", hash_generated_method = "E68CCD076DB0E20554E7575F6984F7E9")
     @Override
     protected boolean onCreateCustomFromTag(XmlPullParser parser, Preference parentPreference,
             AttributeSet attrs) throws XmlPullParserException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final String tag = parser.getName();
         {
             boolean var5BE944252877569CC94E888792E6D758_662897185 = (tag.equals(INTENT_TAG_NAME));
@@ -82,18 +84,18 @@ class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
                 try 
                 {
                     intent = Intent.parseIntent(getContext().getResources(), parser, attrs);
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     XmlPullParserException ex = new XmlPullParserException(
                         "Error parsing preference");
                     ex.initCause(e);
                     if (DroidSafeAndroidRuntime.control) throw ex;
-                } //End block
+                } 
                 {
                     parentPreference.setIntent(intent);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 boolean varFA18FB7EC231D2706E0747E224A5CB67_1142170943 = (tag.equals(EXTRA_TAG_NAME));
                 {
@@ -102,62 +104,63 @@ class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
                     try 
                     {
                         XmlUtils.skipCurrentTag(parser);
-                    } //End block
+                    } 
                     catch (IOException e)
                     {
                         XmlPullParserException ex = new XmlPullParserException(
                         "Error parsing preference");
                         ex.initCause(e);
                         if (DroidSafeAndroidRuntime.control) throw ex;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(parser.getTaint());
         addTaint(parentPreference.getTaint());
         addTaint(attrs.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_329503763 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_329503763;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.505 -0400", hash_original_method = "677330D7578A225E3A8F3B018B853A0C", hash_generated_method = "EE1B179466990B5E6DEFFD4741E9C279")
     @Override
     protected PreferenceGroup onMergeRoots(PreferenceGroup givenRoot, boolean attachToGivenRoot,
             PreferenceGroup xmlRoot) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        PreferenceGroup varB4EAC82CA7396A68D541C85D26508E83_1816274796 = null; //Variable for return #1
-        PreferenceGroup varB4EAC82CA7396A68D541C85D26508E83_484937459 = null; //Variable for return #2
+        
+        PreferenceGroup varB4EAC82CA7396A68D541C85D26508E83_1816274796 = null; 
+        PreferenceGroup varB4EAC82CA7396A68D541C85D26508E83_484937459 = null; 
         {
             xmlRoot.onAttachedToHierarchy(mPreferenceManager);
             varB4EAC82CA7396A68D541C85D26508E83_1816274796 = xmlRoot;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_484937459 = givenRoot;
-        } //End block
+        } 
         addTaint(givenRoot.getTaint());
         addTaint(attachToGivenRoot);
         addTaint(xmlRoot.getTaint());
-        PreferenceGroup varA7E53CE21691AB073D9660D615818899_713865605; //Final return value
+        PreferenceGroup varA7E53CE21691AB073D9660D615818899_713865605; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_713865605 = varB4EAC82CA7396A68D541C85D26508E83_1816274796;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_713865605 = varB4EAC82CA7396A68D541C85D26508E83_484937459;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_713865605.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_713865605.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_713865605;
-        // ---------- Original Method ----------
-        //if (givenRoot == null) {
-            //xmlRoot.onAttachedToHierarchy(mPreferenceManager);
-            //return xmlRoot;
-        //} else {
-            //return givenRoot;
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     

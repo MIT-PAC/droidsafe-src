@@ -1,11 +1,11 @@
 package java.nio.charset;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class UnsupportedCharsetException extends IllegalArgumentException {
@@ -17,19 +17,19 @@ public class UnsupportedCharsetException extends IllegalArgumentException {
     public  UnsupportedCharsetException(String charsetName) {
         super((charsetName != null) ? charsetName : "null");
         this.charsetName = charsetName;
-        // ---------- Original Method ----------
-        //this.charsetName = charsetName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.042 -0400", hash_original_method = "62D3F36CA78A6EC4185A2D1A05C169E6", hash_generated_method = "179189D055504C1CB7B58FC299FAAC95")
     public String getCharsetName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_655047219 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_655047219 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_655047219 = charsetName;
-        varB4EAC82CA7396A68D541C85D26508E83_655047219.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_655047219.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_655047219;
-        // ---------- Original Method ----------
-        //return charsetName;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.support.v4.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Rect;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
@@ -17,7 +17,7 @@ public class ViewCompat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.072 -0400", hash_original_method = "2D3AD98427119C7C46265965AF02446D", hash_generated_method = "2D3AD98427119C7C46265965AF02446D")
     public ViewCompat ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -42,19 +42,19 @@ public class ViewCompat {
 
     
     public static void onPopulateAccessibilityEvent(View v, AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         IMPL.onPopulateAccessibilityEvent(v, event);
     }
 
     
     public static void onInitializeAccessibilityEvent(View v, AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         IMPL.onInitializeAccessibilityEvent(v, event);
     }
 
     
     public static void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         IMPL.onInitializeAccessibilityNodeInfo(v, info);
     }
 
@@ -69,7 +69,7 @@ public class ViewCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.074 -0400", hash_original_method = "41ADABC234167BF75948986C00D7164F", hash_generated_method = "41ADABC234167BF75948986C00D7164F")
         public BaseViewCompatImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -79,8 +79,8 @@ public class ViewCompat {
             addTaint(direction);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_271542488 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_271542488;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -90,8 +90,8 @@ public class ViewCompat {
             addTaint(direction);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_602001226 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_602001226;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -100,8 +100,8 @@ public class ViewCompat {
             addTaint(v.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500470788 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500470788;
-            // ---------- Original Method ----------
-            //return OVER_SCROLL_NEVER;
+            
+            
         }
 
         
@@ -109,7 +109,7 @@ public class ViewCompat {
         public void setOverScrollMode(View v, int mode) {
             addTaint(v.getTaint());
             addTaint(mode);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -117,34 +117,34 @@ public class ViewCompat {
         public void setAccessibilityDelegate(View v, AccessibilityDelegateCompat delegate) {
             addTaint(v.getTaint());
             addTaint(delegate.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.097 -0400", hash_original_method = "702F7E45C5537D15A13A9B08A18B3D2B", hash_generated_method = "3FE22AACD73F1DAACF65AADBC6F00B9B")
         public void onPopulateAccessibilityEvent(View v, AccessibilityEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(v.getTaint());
             addTaint(event.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.098 -0400", hash_original_method = "9137ED0A1BFDD4FC8792E5A61DC6F04E", hash_generated_method = "52AAFF06B3F65DCB34F9396FD974B22F")
         public void onInitializeAccessibilityEvent(View v, AccessibilityEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(v.getTaint());
             addTaint(event.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.103 -0400", hash_original_method = "E0BDF5AA116BC42106585B9B041EC074", hash_generated_method = "8A4948A59C9913A2E51572DBD040132E")
         public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(v.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -157,7 +157,7 @@ public class ViewCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.104 -0400", hash_original_method = "B29ABB75D45C38E68F6507295346B5B9", hash_generated_method = "B29ABB75D45C38E68F6507295346B5B9")
         public GBViewCompatImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -168,8 +168,8 @@ public class ViewCompat {
             addTaint(v.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1863417854 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1863417854;
-            // ---------- Original Method ----------
-            //return ViewCompatGingerbread.getOverScrollMode(v);
+            
+            
         }
 
         
@@ -179,8 +179,8 @@ public class ViewCompat {
             ViewCompatGingerbread.setOverScrollMode(v, mode);
             addTaint(v.getTaint());
             addTaint(mode);
-            // ---------- Original Method ----------
-            //ViewCompatGingerbread.setOverScrollMode(v, mode);
+            
+            
         }
 
         
@@ -193,7 +193,7 @@ public class ViewCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.107 -0400", hash_original_method = "F82CC7286340E827BB3F02C5F17E58C8", hash_generated_method = "F82CC7286340E827BB3F02C5F17E58C8")
         public ICSViewCompatImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -205,8 +205,8 @@ public class ViewCompat {
             addTaint(direction);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1194512855 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1194512855;
-            // ---------- Original Method ----------
-            //return ViewCompatICS.canScrollHorizontally(v, direction);
+            
+            
         }
 
         
@@ -218,44 +218,44 @@ public class ViewCompat {
             addTaint(direction);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_379968824 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_379968824;
-            // ---------- Original Method ----------
-            //return ViewCompatICS.canScrollVertically(v, direction);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.113 -0400", hash_original_method = "30706FC93A804D8A8DC1FCFB98D98BAD", hash_generated_method = "8DB84EEB990332D88F50500299C445D4")
         @Override
         public void onPopulateAccessibilityEvent(View v, AccessibilityEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             ViewCompatICS.onPopulateAccessibilityEvent(v, event);
             addTaint(v.getTaint());
             addTaint(event.getTaint());
-            // ---------- Original Method ----------
-            //ViewCompatICS.onPopulateAccessibilityEvent(v, event);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.114 -0400", hash_original_method = "D787101BC5F3E4F3C49A8D686CC81288", hash_generated_method = "D977879FF619BD3871C0755EC4291CF7")
         @Override
         public void onInitializeAccessibilityEvent(View v, AccessibilityEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             ViewCompatICS.onInitializeAccessibilityEvent(v, event);
             addTaint(v.getTaint());
             addTaint(event.getTaint());
-            // ---------- Original Method ----------
-            //ViewCompatICS.onInitializeAccessibilityEvent(v, event);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.117 -0400", hash_original_method = "766209C343FE76A0076A6D65E22F224A", hash_generated_method = "F9BF19959595663FE62B35DE243E0A55")
         @Override
         public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             ViewCompatICS.onInitializeAccessibilityNodeInfo(v, info.getImpl());
             addTaint(v.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
-            //ViewCompatICS.onInitializeAccessibilityNodeInfo(v, info.getImpl());
+            
+            
         }
 
         
@@ -265,8 +265,8 @@ public class ViewCompat {
             ViewCompatICS.setAccessibilityDelegate(v, delegate.getBridge());
             addTaint(v.getTaint());
             addTaint(delegate.getTaint());
-            // ---------- Original Method ----------
-            //ViewCompatICS.setAccessibilityDelegate(v, delegate.getBridge());
+            
+            
         }
 
         

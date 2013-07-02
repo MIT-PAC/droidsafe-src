@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Paint;
 import android.graphics.Canvas;
@@ -23,8 +23,8 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     public  QuoteSpan() {
         super();
         mColor = 0xff0000ff;
-        // ---------- Original Method ----------
-        //mColor = 0xff0000ff;
+        
+        
     }
 
     
@@ -32,16 +32,16 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     public  QuoteSpan(int color) {
         super();
         mColor = color;
-        // ---------- Original Method ----------
-        //mColor = color;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.829 -0400", hash_original_method = "4AD2E1D19CE8BCCBC25D1F8A03F5DD71", hash_generated_method = "363E859350F26FF2EA6C7AA4654BCC93")
     public  QuoteSpan(Parcel src) {
         mColor = src.readInt();
-        // ---------- Original Method ----------
-        //mColor = src.readInt();
+        
+        
     }
 
     
@@ -49,8 +49,8 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1237637471 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1237637471;
-        // ---------- Original Method ----------
-        //return TextUtils.QUOTE_SPAN;
+        
+        
     }
 
     
@@ -58,8 +58,8 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1877672294 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1877672294;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -68,8 +68,8 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
         dest.writeInt(mColor);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mColor);
+        
+        
     }
 
     
@@ -77,8 +77,8 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     public int getColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_369484337 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_369484337;
-        // ---------- Original Method ----------
-        //return mColor;
+        
+        
     }
 
     
@@ -87,8 +87,8 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
         addTaint(first);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_917622844 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_917622844;
-        // ---------- Original Method ----------
-        //return STRIPE_WIDTH + GAP_WIDTH;
+        
+        
     }
 
     
@@ -116,14 +116,14 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
         addTaint(end);
         addTaint(first);
         addTaint(layout.getTaint());
-        // ---------- Original Method ----------
-        //Paint.Style style = p.getStyle();
-        //int color = p.getColor();
-        //p.setStyle(Paint.Style.FILL);
-        //p.setColor(mColor);
-        //c.drawRect(x, top, x + dir * STRIPE_WIDTH, bottom, p);
-        //p.setStyle(style);
-        //p.setColor(color);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

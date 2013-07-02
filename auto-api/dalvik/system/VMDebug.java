@@ -1,11 +1,11 @@
 package dalvik.system;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -14,7 +14,7 @@ public final class VMDebug {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.788 -0400", hash_original_method = "90647D9537BEB374A6D0146E2B562497", hash_generated_method = "B9ED968C8D502362A08FEAB9C12CBFD2")
     private  VMDebug() {
-        // ---------- Original Method ----------
+        
     }
 
     

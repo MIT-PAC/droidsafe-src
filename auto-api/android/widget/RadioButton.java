@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -18,7 +18,7 @@ public class RadioButton extends CompoundButton {
     public  RadioButton(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,7 +27,7 @@ public class RadioButton extends CompoundButton {
         this(context, attrs, com.android.internal.R.attr.radioButtonStyle);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,10 +37,11 @@ public class RadioButton extends CompoundButton {
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.627 -0400", hash_original_method = "4F290A4820515377F1C311D5735DB548", hash_generated_method = "9EB6AAB760E783D9065DC453BD5A1A0D")
     @Override
     public void toggle() {
@@ -48,37 +49,38 @@ public class RadioButton extends CompoundButton {
             boolean var7AB0DED7B5B158F799F9F55A9C38731D_1547449799 = (!isChecked());
             {
                 super.toggle();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (!isChecked()) {
-            //super.toggle();
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.627 -0400", hash_original_method = "800F92BFA9EDE937B28EAF651D664B90", hash_generated_method = "BD89E2059544E81F25568F310C44C450")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onPopulateAccessibilityEvent(event);
         {
             boolean varCEC0E711DC0F7C8E920C6F998438D53D_766420515 = (isChecked());
             {
                 event.getText().add(mContext.getString(R.string.radiobutton_selected));
-            } //End block
+            } 
             {
                 event.getText().add(mContext.getString(R.string.radiobutton_not_selected));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //super.onPopulateAccessibilityEvent(event);
-        //if (isChecked()) {
-            //event.getText().add(mContext.getString(R.string.radiobutton_selected));
-        //} else {
-            //event.getText().add(mContext.getString(R.string.radiobutton_not_selected));
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     

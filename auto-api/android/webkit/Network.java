@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -52,23 +52,24 @@ class Network {
         {
             Assert.assertTrue(Thread.currentThread().
                     getName().equals(WebViewCore.THREAD_NAME));
-        } //End block
+        } 
         mContext = context;
         mSslErrorHandler = new SslErrorHandlerImpl();
         mHttpAuthHandler = new HttpAuthHandlerImpl(this);
         mRequestQueue = new RequestQueue(context);
-        // ---------- Original Method ----------
-        //if (DebugFlags.NETWORK) {
-            //Assert.assertTrue(Thread.currentThread().
-                    //getName().equals(WebViewCore.THREAD_NAME));
-        //}
-        //mContext = context;
-        //mSslErrorHandler = new SslErrorHandlerImpl();
-        //mHttpAuthHandler = new HttpAuthHandlerImpl(this);
-        //mRequestQueue = new RequestQueue(context);
+        
+        
+            
+                    
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized Network getInstance(Context context) {
         if (sNetwork == null) {
             sNetwork = new Network(context.getApplicationContext());
@@ -81,6 +82,7 @@ class Network {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void enablePlatformNotifications() {
         if (++sPlatformNotificationEnableRefCount == 1) {
             if (sNetwork != null) {
@@ -93,6 +95,7 @@ class Network {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void disablePlatformNotifications() {
         if (--sPlatformNotificationEnableRefCount == 0) {
             if (sNetwork != null) {
@@ -105,34 +108,37 @@ class Network {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.275 -0400", hash_original_method = "7636534D5021AA0AC5AC07906EACA40E", hash_generated_method = "573E850B74569715EC91B0516CBFD4A2")
     private void monitorRoaming() {
         mRoamingMonitor = new RoamingMonitor();
         IntentFilter filter = new IntentFilter();
         filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
         mContext.registerReceiver(sNetwork.mRoamingMonitor, filter);
-        // ---------- Original Method ----------
-        //mRoamingMonitor = new RoamingMonitor();
-        //IntentFilter filter = new IntentFilter();
-        //filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-        //mContext.registerReceiver(sNetwork.mRoamingMonitor, filter);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.276 -0400", hash_original_method = "7D0FFF1DC9E3EFF208EFD53429D521D6", hash_generated_method = "BE7BFD8BDE9F306DC358C4D926D1564B")
     private void stopMonitoringRoaming() {
         {
             mContext.unregisterReceiver(mRoamingMonitor);
             mRoamingMonitor = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mRoamingMonitor != null) {
-            //mContext.unregisterReceiver(mRoamingMonitor);
-            //mRoamingMonitor = null;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:01.119 -0400", hash_original_method = "E40B5BA7C100221963CCC3BAE15F17EE", hash_generated_method = "963C86C2BF694C952C02FC7139CC4D6D")
     public boolean requestURL(String method,
                               Map<String, String> headers,
@@ -142,14 +148,14 @@ class Network {
         url = loader.url();
         {
             boolean var9241808DC96BE6C44777088970EEB76A_126593523 = (!URLUtil.isValidUrl(url));
-        } //End collapsed parenthetic
+        } 
         {
             boolean var13B7A92743A4FACAEAD7D906C72E3E73_186384305 = (URLUtil.isAssetUrl(url) || URLUtil.isResourceUrl(url)
                 || URLUtil.isFileUrl(url) || URLUtil.isDataUrl(url));
-        } //End collapsed parenthetic
+        } 
         {
             boolean var546DB600072281783BD3F8556B81320C_1615825443 = (mRoaming && headers.containsKey("X-Moz") && "prefetch".equals(headers.get("X-Moz")));
-        } //End collapsed parenthetic
+        } 
         InputStream bodyProvider;
         bodyProvider = null;
         int bodyLength;
@@ -157,7 +163,7 @@ class Network {
         {
             bodyLength = postData.length;
             bodyProvider = new ByteArrayInputStream(postData);
-        } //End block
+        } 
         RequestQueue q;
         q = mRequestQueue;
         RequestHandle handle;
@@ -170,57 +176,59 @@ class Network {
                 loader.attachRequestHandle(handle);
                 handle.processRequest();
                 loader.loadSynchronousMessages();
-            } //End block
+            } 
             {
                 handle = q.queueRequest(url, loader.getWebAddress(), method,
                     headers, loader, bodyProvider, bodyLength);
                 loader.attachRequestHandle(handle);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(method.getTaint());
         addTaint(headers.getTaint());
         addTaint(postData[0]);
         addTaint(loader.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1179949707 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1179949707;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.276 -0400", hash_original_method = "80DD6C6B450A5637726B61D58132A867", hash_generated_method = "4CA2C006705036D26F4EDFD83C0D0E27")
     public boolean isValidProxySet() {
         {
             boolean var3A5567FF18F71476C6C5A982FB7CBBA4_835299708 = (mRequestQueue.getProxyHost() != null);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_398486819 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_398486819;
-        // ---------- Original Method ----------
-        //synchronized (mRequestQueue) {
-            //return mRequestQueue.getProxyHost() != null;
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.277 -0400", hash_original_method = "A2D65C5EAC5BE051C823D07EA076A5B0", hash_generated_method = "9B435164DB7EA72346AD02D0E056FE0D")
     public String getProxyHostname() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1377406503 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1377406503 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1377406503 = mRequestQueue.getProxyHost().getHostName();
-        varB4EAC82CA7396A68D541C85D26508E83_1377406503.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1377406503.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1377406503;
-        // ---------- Original Method ----------
-        //return mRequestQueue.getProxyHost().getHostName();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.277 -0400", hash_original_method = "1266E72491C7223244252637AD0BEC00", hash_generated_method = "DE565B38E8AB04726BC7DAE190912C2A")
     public synchronized String getProxyUsername() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2085041714 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2085041714 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2085041714 = mProxyUsername;
-        varB4EAC82CA7396A68D541C85D26508E83_2085041714.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2085041714.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2085041714;
-        // ---------- Original Method ----------
-        //return mProxyUsername;
+        
+        
     }
 
     
@@ -228,24 +236,24 @@ class Network {
     public synchronized void setProxyUsername(String proxyUsername) {
         {
             Assert.assertTrue(isValidProxySet());
-        } //End block
+        } 
         mProxyUsername = proxyUsername;
-        // ---------- Original Method ----------
-        //if (DebugFlags.NETWORK) {
-            //Assert.assertTrue(isValidProxySet());
-        //}
-        //mProxyUsername = proxyUsername;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.278 -0400", hash_original_method = "B46568E038B4519332317A487603C5DC", hash_generated_method = "4537BE69555DDD42DBC0908A1F1BE2EF")
     public synchronized String getProxyPassword() {
-        String varB4EAC82CA7396A68D541C85D26508E83_119236723 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_119236723 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_119236723 = mProxyPassword;
-        varB4EAC82CA7396A68D541C85D26508E83_119236723.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_119236723.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_119236723;
-        // ---------- Original Method ----------
-        //return mProxyPassword;
+        
+        
     }
 
     
@@ -253,64 +261,68 @@ class Network {
     public synchronized void setProxyPassword(String proxyPassword) {
         {
             Assert.assertTrue(isValidProxySet());
-        } //End block
+        } 
         mProxyPassword = proxyPassword;
-        // ---------- Original Method ----------
-        //if (DebugFlags.NETWORK) {
-            //Assert.assertTrue(isValidProxySet());
-        //}
-        //mProxyPassword = proxyPassword;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.279 -0400", hash_original_method = "7A0CD8F454BFF26B05173D10B6823AEB", hash_generated_method = "C57142ADA6FEF65BC128C7A347F9ED0C")
     public boolean saveState(Bundle outState) {
         boolean var23A5DD913F89F38B05072A1E64502CBD_1366287647 = (mSslErrorHandler.saveState(outState));
         addTaint(outState.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1013036034 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1013036034;
-        // ---------- Original Method ----------
-        //if (DebugFlags.NETWORK) {
-            //Log.v(LOGTAG, "Network.saveState()");
-        //}
-        //return mSslErrorHandler.saveState(outState);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.279 -0400", hash_original_method = "47CE65B8425CCCD6D64866E88AA89041", hash_generated_method = "E636ACDDF8A1D89C7BED12FAA6CC0378")
     public boolean restoreState(Bundle inState) {
         boolean varC82F46112A7C73C564B1DC27227A30E6_1072079416 = (mSslErrorHandler.restoreState(inState));
         addTaint(inState.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_953454933 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_953454933;
-        // ---------- Original Method ----------
-        //if (DebugFlags.NETWORK) {
-            //Log.v(LOGTAG, "Network.restoreState()");
-        //}
-        //return mSslErrorHandler.restoreState(inState);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.279 -0400", hash_original_method = "8F59473C5B0D895146F3319CE625D311", hash_generated_method = "3153B4EE6AA3E66C716C0C9142D18748")
     public void clearUserSslPrefTable() {
         mSslErrorHandler.clear();
-        // ---------- Original Method ----------
-        //mSslErrorHandler.clear();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.279 -0400", hash_original_method = "DEBCC0C268CD067DAE645A47175BAE1D", hash_generated_method = "BCFF4D8DE1D14D37CC51ED43291624FD")
     public void handleSslErrorRequest(LoadListener loader) {
         Assert.assertNotNull(loader);
         {
             mSslErrorHandler.handleSslErrorRequest(loader);
-        } //End block
+        } 
         addTaint(loader.getTaint());
-        // ---------- Original Method ----------
-        //if (DebugFlags.NETWORK) Assert.assertNotNull(loader);
-        //if (loader != null) {
-            //mSslErrorHandler.handleSslErrorRequest(loader);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -319,47 +331,50 @@ class Network {
             SslError error) {
         {
             boolean var8A9D9175BCC2D61042B9D80821CB41E7_1877990920 = (mSslErrorHandler.checkSslPrefTable(loader, error));
-        } //End block
+        } 
         addTaint(loader.getTaint());
         addTaint(error.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_539747996 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_539747996;
-        // ---------- Original Method ----------
-        //if (loader != null && error != null) {
-            //return mSslErrorHandler.checkSslPrefTable(loader, error);
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.280 -0400", hash_original_method = "2D361BDF919FB90BFEE4AC2A951EDF8C", hash_generated_method = "AC5AE5F17B661B55960FC30AC8726B82")
     public void handleAuthRequest(LoadListener loader) {
         Assert.assertNotNull(loader);
         {
             mHttpAuthHandler.handleAuthRequest(loader);
-        } //End block
+        } 
         addTaint(loader.getTaint());
-        // ---------- Original Method ----------
-        //if (DebugFlags.NETWORK) Assert.assertNotNull(loader);
-        //if (loader != null) {
-            //mHttpAuthHandler.handleAuthRequest(loader);
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.280 -0400", hash_original_method = "B02A8324ABFB3032B553A668B2D564CC", hash_generated_method = "53DEA7F03044D0453282AF3C2D955FBB")
     public void startTiming() {
         mRequestQueue.startTiming();
-        // ---------- Original Method ----------
-        //mRequestQueue.startTiming();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.280 -0400", hash_original_method = "72F9E7B8510D03EF4E589AB2ED94957F", hash_generated_method = "A489D8A61618A9CAF6E69BDDB6C9E4B6")
     public void stopTiming() {
         mRequestQueue.stopTiming();
-        // ---------- Original Method ----------
-        //mRequestQueue.stopTiming();
+        
+        
     }
 
     
@@ -368,27 +383,27 @@ class Network {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.281 -0400", hash_original_method = "FB653F8ECDBB15EF238A4B7D0BC2CB07", hash_generated_method = "FB653F8ECDBB15EF238A4B7D0BC2CB07")
         public RoamingMonitor ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.281 -0400", hash_original_method = "FF6D86ABCD7F084A4EADD45C592C2902", hash_generated_method = "80FF5808E66FBA8F0E8F73FD0A52E442")
         @Override
         public void onReceive(Context context, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean var97C96649CC2BBB5BAE1921B8EB878E7B_1013342398 = (!ConnectivityManager.CONNECTIVITY_ACTION.equals(intent.getAction()));
-            } //End collapsed parenthetic
+            } 
             NetworkInfo info = (NetworkInfo)intent.getParcelableExtra(ConnectivityManager.EXTRA_NETWORK_INFO);
             mRoaming = info.isRoaming();
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            //if (!ConnectivityManager.CONNECTIVITY_ACTION.equals(intent.getAction()))
-                //return;
-            //NetworkInfo info = (NetworkInfo)intent.getParcelableExtra(ConnectivityManager.EXTRA_NETWORK_INFO);
-            //if (info != null)
-                //mRoaming = info.isRoaming();
+            
+            
+                
+            
+            
+                
         }
 
         

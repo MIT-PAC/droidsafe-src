@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -27,16 +27,16 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.731 -0400", hash_original_method = "587E05693DC916F3D9913DB57CE5CC25", hash_generated_method = "789768EBC2745941ED923A1AE4190854")
     public  DynamicDrawableSpan() {
         mVerticalAlignment = ALIGN_BOTTOM;
-        // ---------- Original Method ----------
-        //mVerticalAlignment = ALIGN_BOTTOM;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.731 -0400", hash_original_method = "5C20CFC81A776E313C1A5A57E335B286", hash_generated_method = "DB69116249BA33E0EF3EEBB6FDC4C251")
     protected  DynamicDrawableSpan(int verticalAlignment) {
         mVerticalAlignment = verticalAlignment;
-        // ---------- Original Method ----------
-        //mVerticalAlignment = verticalAlignment;
+        
+        
     }
 
     
@@ -44,8 +44,8 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     public int getVerticalAlignment() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_684068051 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_684068051;
-        // ---------- Original Method ----------
-        //return mVerticalAlignment;
+        
+        
     }
 
     
@@ -64,7 +64,7 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
             fm.descent = 0;
             fm.top = fm.ascent;
             fm.bottom = 0;
-        } //End block
+        } 
         addTaint(paint.getTaint());
         addTaint(text.getTaint());
         addTaint(start);
@@ -72,19 +72,20 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
         addTaint(fm.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1890833451 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1890833451;
-        // ---------- Original Method ----------
-        //Drawable d = getCachedDrawable();
-        //Rect rect = d.getBounds();
-        //if (fm != null) {
-            //fm.ascent = -rect.bottom; 
-            //fm.descent = 0; 
-            //fm.top = fm.ascent;
-            //fm.bottom = 0;
-        //}
-        //return rect.right;
+        
+        
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.733 -0400", hash_original_method = "6EDA777F5CB3128927ADAA236FCAEE94", hash_generated_method = "B00E52505CB03871258946A86CEC8B6D")
     @Override
     public void draw(Canvas canvas, CharSequence text,
@@ -95,7 +96,7 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
         int transY = bottom - b.getBounds().bottom;
         {
             transY -= paint.getFontMetricsInt().descent;
-        } //End block
+        } 
         canvas.translate(x, transY);
         b.draw(canvas);
         canvas.restore();
@@ -108,42 +109,43 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
         addTaint(y);
         addTaint(bottom);
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //Drawable b = getCachedDrawable();
-        //canvas.save();
-        //int transY = bottom - b.getBounds().bottom;
-        //if (mVerticalAlignment == ALIGN_BASELINE) {
-            //transY -= paint.getFontMetricsInt().descent;
-        //}
-        //canvas.translate(x, transY);
-        //b.draw(canvas);
-        //canvas.restore();
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.734 -0400", hash_original_method = "0EFD0E735C0FDE972D23D8A040440B54", hash_generated_method = "BAE96E5767FB7DFB5F1BB1A094265644")
     private Drawable getCachedDrawable() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1165864530 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1165864530 = null; 
         WeakReference<Drawable> wr = mDrawableRef;
         Drawable d = null;
         d = wr.get();
         {
             d = getDrawable();
             mDrawableRef = new WeakReference<Drawable>(d);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1165864530 = d;
-        varB4EAC82CA7396A68D541C85D26508E83_1165864530.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1165864530.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1165864530;
-        // ---------- Original Method ----------
-        //WeakReference<Drawable> wr = mDrawableRef;
-        //Drawable d = null;
-        //if (wr != null)
-            //d = wr.get();
-        //if (d == null) {
-            //d = getDrawable();
-            //mDrawableRef = new WeakReference<Drawable>(d);
-        //}
-        //return d;
+        
+        
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     

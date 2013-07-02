@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Arrays;
 
@@ -21,9 +21,9 @@ final class ByteArray {
       ByteArray(byte[] bytes) {
         this.bytes = bytes;
         this.hashCode = Arrays.hashCode(bytes);
-        // ---------- Original Method ----------
-        //this.bytes = bytes;
-        //this.hashCode = Arrays.hashCode(bytes);
+        
+        
+        
     }
 
     
@@ -32,11 +32,12 @@ final class ByteArray {
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1984715036 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1984715036;
-        // ---------- Original Method ----------
-        //return hashCode;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.642 -0400", hash_original_method = "035A671466178159FCEA5052C8344F27", hash_generated_method = "DD40002CC023EF099EDF019F07A2408E")
     @Override
     public boolean equals(Object o) {
@@ -45,12 +46,12 @@ final class ByteArray {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_932136433 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_932136433;
-        // ---------- Original Method ----------
-        //if (!(o instanceof ByteArray)) {
-            //return false;
-        //}
-        //ByteArray lhs = (ByteArray) o;
-        //return Arrays.equals(bytes, lhs.bytes);
+        
+        
+            
+        
+        
+        
     }
 
     

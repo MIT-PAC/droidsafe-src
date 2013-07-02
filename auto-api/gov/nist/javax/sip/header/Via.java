@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.core.Host;
 import gov.nist.core.HostPort;
@@ -35,16 +35,17 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
     public  Via() {
         super(NAME);
         sentProtocol = new Protocol();
-        // ---------- Original Method ----------
-        //sentProtocol = new Protocol();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.919 -0400", hash_original_method = "6B6D36FD3A79EE403682FF6F25A822A5", hash_generated_method = "127B3E11C11E009A649F4474AABDD319")
     public boolean equals(Object other) {
         {
             boolean varBF864F33C9F93117F7F57C5BA4CB58C5_1733129834 = (other==this);
-        } //End collapsed parenthetic
+        } 
         {
             final ViaHeader o = (ViaHeader) other;
             boolean varC87927B8F9959A9F22D460E1EC42385E_328570233 = (getProtocol().equalsIgnoreCase( o.getProtocol() )
@@ -52,115 +53,118 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
                 && getHost().equalsIgnoreCase( o.getHost() )
                 && getPort() == o.getPort()
                 && equalParameters( o ));
-        } //End block
+        } 
         addTaint(other.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2017280289 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2017280289;
-        // ---------- Original Method ----------
-        //if (other==this) return true;
-        //if (other instanceof ViaHeader) {
-            //final ViaHeader o = (ViaHeader) other;
-            //return getProtocol().equalsIgnoreCase( o.getProtocol() )
-                //&& getTransport().equalsIgnoreCase( o.getTransport() )
-                //&& getHost().equalsIgnoreCase( o.getHost() )
-                //&& getPort() == o.getPort()
-                //&& equalParameters( o );
-        //}
-        //return false;
+        
+        
+        
+            
+            
+                
+                
+                
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.919 -0400", hash_original_method = "F03A2761E3B9AF6DF371EC359829DB1F", hash_generated_method = "BD5865EE6009DA74C38FA64F517FEEA8")
     public String getProtocolVersion() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1677883667 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_10117511 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1677883667 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_10117511 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1677883667 = null;
         varB4EAC82CA7396A68D541C85D26508E83_10117511 = sentProtocol.getProtocolVersion();
-        String varA7E53CE21691AB073D9660D615818899_223919373; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_223919373; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_223919373 = varB4EAC82CA7396A68D541C85D26508E83_1677883667;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_223919373 = varB4EAC82CA7396A68D541C85D26508E83_10117511;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_223919373.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_223919373.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_223919373;
-        // ---------- Original Method ----------
-        //if (sentProtocol == null)
-            //return null;
-        //else
-            //return sentProtocol.getProtocolVersion();
+        
+        
+            
+        
+            
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.920 -0400", hash_original_method = "07C91BB13E357235D0646F9B1302A813", hash_generated_method = "1E5B3B963DDB845EFAD56EC088E915BD")
     public Protocol getSentProtocol() {
-        Protocol varB4EAC82CA7396A68D541C85D26508E83_752525077 = null; //Variable for return #1
+        Protocol varB4EAC82CA7396A68D541C85D26508E83_752525077 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_752525077 = sentProtocol;
-        varB4EAC82CA7396A68D541C85D26508E83_752525077.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_752525077.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_752525077;
-        // ---------- Original Method ----------
-        //return sentProtocol;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.920 -0400", hash_original_method = "834E4BBD7298D05AE3719FD543779099", hash_generated_method = "7D99C078893DB521528061346A7CEA1A")
     public HostPort getSentBy() {
-        HostPort varB4EAC82CA7396A68D541C85D26508E83_1224016957 = null; //Variable for return #1
+        HostPort varB4EAC82CA7396A68D541C85D26508E83_1224016957 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1224016957 = sentBy;
-        varB4EAC82CA7396A68D541C85D26508E83_1224016957.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1224016957.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1224016957;
-        // ---------- Original Method ----------
-        //return sentBy;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.921 -0400", hash_original_method = "D671032CD8E13BB36667C287933AFA1D", hash_generated_method = "41E4D0218FB730458875EFDAC7076BF3")
     public Hop getHop() {
-        Hop varB4EAC82CA7396A68D541C85D26508E83_1840275194 = null; //Variable for return #1
+        Hop varB4EAC82CA7396A68D541C85D26508E83_1840275194 = null; 
         HopImpl hop = new HopImpl(sentBy.getHost().getHostname(),
                 sentBy.getPort(),sentProtocol.getTransport());
         varB4EAC82CA7396A68D541C85D26508E83_1840275194 = hop;
-        varB4EAC82CA7396A68D541C85D26508E83_1840275194.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1840275194.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1840275194;
-        // ---------- Original Method ----------
-        //HopImpl hop = new HopImpl(sentBy.getHost().getHostname(),
-                //sentBy.getPort(),sentProtocol.getTransport());
-        //return hop;
+        
+        
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.922 -0400", hash_original_method = "50080B5B5AC1614DCB7B006B51F53E3F", hash_generated_method = "81A9331E44F879FFC51E64A0CDDA29D0")
     public NameValueList getViaParms() {
-        NameValueList varB4EAC82CA7396A68D541C85D26508E83_255014516 = null; //Variable for return #1
+        NameValueList varB4EAC82CA7396A68D541C85D26508E83_255014516 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_255014516 = parameters;
-        varB4EAC82CA7396A68D541C85D26508E83_255014516.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_255014516.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_255014516;
-        // ---------- Original Method ----------
-        //return parameters;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.923 -0400", hash_original_method = "D7C1F8AAD3D2F40DD04B72C74A7D0B69", hash_generated_method = "431A92BF021FF93C90AB41B75F31C96F")
     public String getComment() {
-        String varB4EAC82CA7396A68D541C85D26508E83_101412362 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_101412362 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_101412362 = comment;
-        varB4EAC82CA7396A68D541C85D26508E83_101412362.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_101412362.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_101412362;
-        // ---------- Original Method ----------
-        //return comment;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.924 -0400", hash_original_method = "60E8CE9FCECD3622E03D9910A9625801", hash_generated_method = "A3E4D9363977B2CDB0B931665521D5EC")
     public boolean hasPort() {
         boolean varA9B995C4FEFE1CD5691B349CAE3F341B_554462847 = ((getSentBy()).hasPort());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_821566974 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_821566974;
-        // ---------- Original Method ----------
-        //return (getSentBy()).hasPort();
+        
+        
     }
 
     
@@ -168,92 +172,97 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
     public boolean hasComment() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_945616086 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_945616086;
-        // ---------- Original Method ----------
-        //return comment != null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.924 -0400", hash_original_method = "944AB7146038DECB09A155E81BB22663", hash_generated_method = "79CD3AAB4B019027F3580A1A1672D020")
     public void removePort() {
         sentBy.removePort();
-        // ---------- Original Method ----------
-        //sentBy.removePort();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.924 -0400", hash_original_method = "2FDA3671927B417EA64F28FFDD680773", hash_generated_method = "61BD4B46829E380C1561798A83B14603")
     public void removeComment() {
         comment = null;
-        // ---------- Original Method ----------
-        //comment = null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.925 -0400", hash_original_method = "EAF98E914AE1C4A3745B20F70C227AC7", hash_generated_method = "3DF319B3995B0254B23B70CA4F88E3FA")
     public void setProtocolVersion(String protocolVersion) {
         sentProtocol = new Protocol();
         sentProtocol.setProtocolVersion(protocolVersion);
         addTaint(protocolVersion.getTaint());
-        // ---------- Original Method ----------
-        //if (sentProtocol == null)
-            //sentProtocol = new Protocol();
-        //sentProtocol.setProtocolVersion(protocolVersion);
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.925 -0400", hash_original_method = "DC556AA065BEAF9D4C2B976D57E39DA8", hash_generated_method = "67CE5B6EBE01C1896A24187536D934A2")
     public void setHost(Host host) {
         {
             sentBy = new HostPort();
-        } //End block
+        } 
         sentBy.setHost(host);
         addTaint(host.getTaint());
-        // ---------- Original Method ----------
-        //if (sentBy == null) {
-            //sentBy = new HostPort();
-        //}
-        //sentBy.setHost(host);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.926 -0400", hash_original_method = "F4FB101A445D5E49EE8B10DCE47E32FC", hash_generated_method = "5256462B357CC08BC06E273F7E8B63C4")
     public void setSentProtocol(Protocol s) {
         sentProtocol = s;
-        // ---------- Original Method ----------
-        //sentProtocol = s;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.926 -0400", hash_original_method = "543B4EA18E4F8858630BB59B262697DA", hash_generated_method = "63DB9B02D21F6151DDBE43BA55FA92E9")
     public void setSentBy(HostPort s) {
         sentBy = s;
-        // ---------- Original Method ----------
-        //sentBy = s;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.926 -0400", hash_original_method = "DE8908B9CA5447E854A0D06D0B1B9195", hash_generated_method = "23ECBD58C40560F298AA32A25976DB82")
     public void setComment(String c) {
         comment = c;
-        // ---------- Original Method ----------
-        //comment = c;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.927 -0400", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "86AEA15EE97F3D35BD3140623F610B0D")
     protected String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1990126495 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1990126495 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1990126495 = encodeBody(new StringBuffer()).toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1990126495.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1990126495.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1990126495;
-        // ---------- Original Method ----------
-        //return encodeBody(new StringBuffer()).toString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.927 -0400", hash_original_method = "C937D3FA4F8C32F6B76B74CD5C9B4805", hash_generated_method = "69C218D70C617C142A98352D662ACD7E")
     protected StringBuffer encodeBody(StringBuffer buffer) {
-        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_68237311 = null; //Variable for return #1
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_68237311 = null; 
         sentProtocol.encode(buffer);
         buffer.append(SP);
         sentBy.encode(buffer);
@@ -262,32 +271,33 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
             {
                 buffer.append(SEMICOLON);
                 parameters.encode(buffer);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             buffer.append(SP).append(LPAREN).append(comment).append(RPAREN);
-        } //End block
+        } 
         buffer.append(";rport");
         varB4EAC82CA7396A68D541C85D26508E83_68237311 = buffer;
         addTaint(buffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_68237311.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_68237311.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_68237311;
-        // ---------- Original Method ----------
-        //sentProtocol.encode(buffer);
-        //buffer.append(SP);
-        //sentBy.encode(buffer);
-        //if (!parameters.isEmpty()) {
-            //buffer.append(SEMICOLON);
-            //parameters.encode(buffer);
-        //}
-        //if (comment != null) {
-            //buffer.append(SP).append(LPAREN).append(comment).append(RPAREN);
-        //}
-        //if (rPortFlag) buffer.append(";rport");
-        //return buffer;
+        
+        
+        
+        
+        
+            
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.928 -0400", hash_original_method = "A6610C3C674AD8475435D641E21474E9", hash_generated_method = "7349E57A64FCBD8C830A47E873AD6EAC")
     public void setHost(String host) throws ParseException {
         sentBy = new HostPort();
@@ -295,142 +305,148 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
         {
             Host h = new Host(host);
             sentBy.setHost(h);
-        } //End block
+        } 
         catch (Exception e)
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException(" host parameter is null");
-        } //End block
+        } 
         addTaint(host.getTaint());
-        // ---------- Original Method ----------
-        //if (sentBy == null)
-            //sentBy = new HostPort();
-        //try {
-            //Host h = new Host(host);
-            //sentBy.setHost(h);
-        //} catch (Exception e) {
-            //throw new NullPointerException(" host parameter is null");
-        //}
+        
+        
+            
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.928 -0400", hash_original_method = "C40590C8092ADD61F2FE2F813826D182", hash_generated_method = "4BFC53798207294D5BD12F00D22E9E06")
     public String getHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1198632507 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_745791359 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1667097796 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1198632507 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_745791359 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1667097796 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1198632507 = null;
         {
             Host host = sentBy.getHost();
             varB4EAC82CA7396A68D541C85D26508E83_745791359 = null;
             varB4EAC82CA7396A68D541C85D26508E83_1667097796 = host.getHostname();
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_343765563; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_343765563; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_343765563 = varB4EAC82CA7396A68D541C85D26508E83_1198632507;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_343765563 = varB4EAC82CA7396A68D541C85D26508E83_745791359;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_343765563 = varB4EAC82CA7396A68D541C85D26508E83_1667097796;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_343765563.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_343765563.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_343765563;
-        // ---------- Original Method ----------
-        //if (sentBy == null)
-            //return null;
-        //else {
-            //Host host = sentBy.getHost();
-            //if (host == null)
-                //return null;
-            //else
-                //return host.getHostname();
-        //}
+        
+        
+            
+        
+            
+            
+                
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.929 -0400", hash_original_method = "3BFDF83597585B440A29B8E314A4320F", hash_generated_method = "31395B1EC6918101805656AEAD14947A")
     public void setPort(int port) throws InvalidArgumentException {
         {
             if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException( "Port value out of range -1, [1..65535]" );
-        } //End block
+        } 
         sentBy = new HostPort();
         sentBy.setPort(port);
         addTaint(port);
-        // ---------- Original Method ----------
-        //if ( port!=-1 && (port<1 || port>65535)) {
-            //throw new InvalidArgumentException( "Port value out of range -1, [1..65535]" );
-        //}
-        //if (sentBy == null)
-            //sentBy = new HostPort();
-        //sentBy.setPort(port);
+        
+        
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.930 -0400", hash_original_method = "524778E64DA2B969E2ED4D2BD7E92B55", hash_generated_method = "7B6A17B05EF5967791C55E81D8F72366")
     public void setRPort() {
         rPortFlag = true;
-        // ---------- Original Method ----------
-        //rPortFlag = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.930 -0400", hash_original_method = "E4A7E9B0C37CC00BF245A9AEF6038FD8", hash_generated_method = "EB9E8A2B57019F5F8DCF787DA0931F86")
     public int getPort() {
         int var1F971C6C371EAF98B044A213E0F08CE2_1466008569 = (sentBy.getPort());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1401358288 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1401358288;
-        // ---------- Original Method ----------
-        //if (sentBy == null)
-            //return -1;
-        //return sentBy.getPort();
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.931 -0400", hash_original_method = "8F51D2BD996E5077EFE382EF5CCB28F7", hash_generated_method = "EAAE22502435C555402A36D03F8F4BFC")
     public int getRPort() {
         String strRport = getParameter(ParameterNames.RPORT);
         {
             boolean var8E95033F2505B01B0D05C3D59477EE79_1609491258 = (strRport != null && ! strRport.equals(""));
             int varAEB3681EA4A53125B3833EAD829AB0EB_2141957277 = (Integer.valueOf(strRport).intValue());
-        } //End collapsed parenthetic
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_959192482 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_959192482;
-        // ---------- Original Method ----------
-        //String strRport = getParameter(ParameterNames.RPORT);
-        //if (strRport != null && ! strRport.equals(""))
-            //return Integer.valueOf(strRport).intValue();
-         //else
-            //return -1;
+        
+        
+        
+            
+         
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.934 -0400", hash_original_method = "2C7D6CB162F307BBDEA3C529EA37600B", hash_generated_method = "2B5A34E5E79DCD49B825F9E8ADC12D68")
     public String getTransport() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1533382386 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_834230029 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1533382386 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_834230029 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1533382386 = null;
         varB4EAC82CA7396A68D541C85D26508E83_834230029 = sentProtocol.getTransport();
-        String varA7E53CE21691AB073D9660D615818899_2105119426; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_2105119426; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2105119426 = varB4EAC82CA7396A68D541C85D26508E83_1533382386;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2105119426 = varB4EAC82CA7396A68D541C85D26508E83_834230029;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2105119426.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2105119426.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2105119426;
-        // ---------- Original Method ----------
-        //if (sentProtocol == null)
-            //return null;
-        //return sentProtocol.getTransport();
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.937 -0400", hash_original_method = "DA10FBD3B27193627F0BF00A97E141AB", hash_generated_method = "A1A9F358B7AEDC92892F67FBB5177D9A")
     public void setTransport(String transport) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
@@ -439,41 +455,43 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
         sentProtocol = new Protocol();
         sentProtocol.setTransport(transport);
         addTaint(transport.getTaint());
-        // ---------- Original Method ----------
-        //if (transport == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception, "
-                    //+ "Via, setTransport(), the transport parameter is null.");
-        //if (sentProtocol == null)
-            //sentProtocol = new Protocol();
-        //sentProtocol.setTransport(transport);
+        
+        
+            
+                
+                    
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.939 -0400", hash_original_method = "076253ECD4074E0CF94E6CAE84ACD031", hash_generated_method = "9A2201789B073A5D63E224B857C3BB87")
     public String getProtocol() {
-        String varB4EAC82CA7396A68D541C85D26508E83_154639537 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_912151870 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_154639537 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_912151870 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_154639537 = null;
         varB4EAC82CA7396A68D541C85D26508E83_912151870 = sentProtocol.getProtocol();
-        String varA7E53CE21691AB073D9660D615818899_1049675405; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1049675405; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1049675405 = varB4EAC82CA7396A68D541C85D26508E83_154639537;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1049675405 = varB4EAC82CA7396A68D541C85D26508E83_912151870;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1049675405.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1049675405.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1049675405;
-        // ---------- Original Method ----------
-        //if (sentProtocol == null)
-            //return null;
-        //return sentProtocol.getProtocol();
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.939 -0400", hash_original_method = "983A1DB4807CBA4F5F74F526664C05F9", hash_generated_method = "87EA733C7E9FA58C34F0937F3D81B7A3")
     public void setProtocol(String protocol) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
@@ -482,28 +500,30 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
         sentProtocol = new Protocol();
         sentProtocol.setProtocol(protocol);
         addTaint(protocol.getTaint());
-        // ---------- Original Method ----------
-        //if (protocol == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception, "
-                    //+ "Via, setProtocol(), the protocol parameter is null.");
-        //if (sentProtocol == null)
-            //sentProtocol = new Protocol();
-        //sentProtocol.setProtocol(protocol);
+        
+        
+            
+                
+                    
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.940 -0400", hash_original_method = "AB2BF7863E6929FA549276BF1FCB8F41", hash_generated_method = "6E4911D2B9C91C7ABB652F396FB9FAE8")
     public int getTTL() {
         int ttl = getParameterAsInt(ParameterNames.TTL);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_534055537 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_534055537;
-        // ---------- Original Method ----------
-        //int ttl = getParameterAsInt(ParameterNames.TTL);
-        //return ttl;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.940 -0400", hash_original_method = "275C0FDDD82C74D9D06FF2EBDF31F802", hash_generated_method = "DAC980A428F900A63CE0A2FB51858A48")
     public void setTTL(int ttl) throws InvalidArgumentException {
         if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException(
@@ -511,26 +531,28 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
                     + ", Via, setTTL(), the ttl parameter is < 0");
         setParameter(new NameValue(ParameterNames.TTL, Integer.valueOf(ttl)));
         addTaint(ttl);
-        // ---------- Original Method ----------
-        //if (ttl < 0 && ttl != -1)
-            //throw new InvalidArgumentException(
-                //"JAIN-SIP Exception"
-                    //+ ", Via, setTTL(), the ttl parameter is < 0");
-        //setParameter(new NameValue(ParameterNames.TTL, Integer.valueOf(ttl)));
+        
+        
+            
+                
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.941 -0400", hash_original_method = "BA8497BF19C86E6498457C19F33C2BB1", hash_generated_method = "31E1E7A2EBE075220F76EB42E33AA36B")
     public String getMAddr() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1567157282 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1567157282 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1567157282 = getParameter(ParameterNames.MADDR);
-        varB4EAC82CA7396A68D541C85D26508E83_1567157282.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1567157282.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1567157282;
-        // ---------- Original Method ----------
-        //return getParameter(ParameterNames.MADDR);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.942 -0400", hash_original_method = "6AB0C98EE8B2466C821195A9A73846A0", hash_generated_method = "9AF99C65289100B9AA766573B7830607")
     public void setMAddr(String mAddr) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
@@ -541,29 +563,31 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
         NameValue nameValue = new NameValue(ParameterNames.MADDR, host);
         setParameter(nameValue);
         addTaint(mAddr.getTaint());
-        // ---------- Original Method ----------
-        //if (mAddr == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception, "
-                    //+ "Via, setMAddr(), the mAddr parameter is null.");
-        //Host host = new Host();
-        //host.setAddress(mAddr);
-        //NameValue nameValue = new NameValue(ParameterNames.MADDR, host);
-        //setParameter(nameValue);
+        
+        
+            
+                
+                    
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.943 -0400", hash_original_method = "25AF7C33721E5D780684174C5845DEAD", hash_generated_method = "ED90BE917627FB4AA1DE27D255B35ECA")
     public String getReceived() {
-        String varB4EAC82CA7396A68D541C85D26508E83_839644427 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_839644427 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_839644427 = getParameter(ParameterNames.RECEIVED);
-        varB4EAC82CA7396A68D541C85D26508E83_839644427.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_839644427.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_839644427;
-        // ---------- Original Method ----------
-        //return getParameter(ParameterNames.RECEIVED);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.943 -0400", hash_original_method = "F727BD69B2536BBCBA80253D70F95056", hash_generated_method = "40C5C7EFFDEB6A0B9A13D05577FB4BAE")
     public void setReceived(String received) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
@@ -571,26 +595,28 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
                     + "Via, setReceived(), the received parameter is null.");
         setParameter(ParameterNames.RECEIVED, received);
         addTaint(received.getTaint());
-        // ---------- Original Method ----------
-        //if (received == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception, "
-                    //+ "Via, setReceived(), the received parameter is null.");
-        //setParameter(ParameterNames.RECEIVED, received);
+        
+        
+            
+                
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.945 -0400", hash_original_method = "9A958EF7B290CF5A27A4EB96F15158F0", hash_generated_method = "98448D9E974DC915CF95713FCE39F4F1")
     public String getBranch() {
-        String varB4EAC82CA7396A68D541C85D26508E83_701565236 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_701565236 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_701565236 = getParameter(ParameterNames.BRANCH);
-        varB4EAC82CA7396A68D541C85D26508E83_701565236.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_701565236.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_701565236;
-        // ---------- Original Method ----------
-        //return getParameter(ParameterNames.BRANCH);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.945 -0400", hash_original_method = "5A56F4FACEB17A95A8FCAD93BB83EA63", hash_generated_method = "D173C555D2E8D9273B970D33832D20BA")
     public void setBranch(String branch) throws ParseException {
         {
@@ -598,88 +624,91 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                 "JAIN-SIP Exception, "
                     + "Via, setBranch(), the branch parameter is null or length 0.");
-        } //End collapsed parenthetic
+        } 
         setParameter(ParameterNames.BRANCH, branch);
         addTaint(branch.getTaint());
-        // ---------- Original Method ----------
-        //if (branch == null || branch.length()==0)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception, "
-                    //+ "Via, setBranch(), the branch parameter is null or length 0.");
-        //setParameter(ParameterNames.BRANCH, branch);
+        
+        
+            
+                
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.946 -0400", hash_original_method = "252C53006150044E4EBAAC8A002E65B1", hash_generated_method = "5813A9E94B337D9F291ADEBCB12155A3")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_867023884 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_867023884 = null; 
         Via retval = (Via) super.clone();
         retval.sentProtocol = (Protocol) this.sentProtocol.clone();
         retval.sentBy = (HostPort) this.sentBy.clone();
         {
             boolean var0F30CA1BAF298E42629D8419B9FFBC30_1413565853 = (this.getRPort() != -1);
             retval.setParameter(RPORT,this.getRPort());
-        } //End collapsed parenthetic
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_867023884 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_867023884.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_867023884.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_867023884;
-        // ---------- Original Method ----------
-        //Via retval = (Via) super.clone();
-        //if (this.sentProtocol != null)
-            //retval.sentProtocol = (Protocol) this.sentProtocol.clone();
-        //if (this.sentBy != null)
-            //retval.sentBy = (HostPort) this.sentBy.clone();
-        //if ( this.getRPort() != -1)
-            //retval.setParameter(RPORT,this.getRPort());
-        //return retval;
+        
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.947 -0400", hash_original_method = "5347FDDA2C7AAC95D7D1D2F666800B71", hash_generated_method = "44FBB16B0500AACF31AD012AE9B79B58")
     public String getSentByField() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1016952775 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_639905831 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1016952775 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_639905831 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1016952775 = sentBy.encode();
         varB4EAC82CA7396A68D541C85D26508E83_639905831 = null;
-        String varA7E53CE21691AB073D9660D615818899_1129992070; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1129992070; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1129992070 = varB4EAC82CA7396A68D541C85D26508E83_1016952775;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1129992070 = varB4EAC82CA7396A68D541C85D26508E83_639905831;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1129992070.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1129992070.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1129992070;
-        // ---------- Original Method ----------
-        //if(sentBy != null)
-            //return sentBy.encode();
-        //return null;
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:40.947 -0400", hash_original_method = "128FFEF5D307451BA5388B5193A6BF26", hash_generated_method = "0851E1CC86178F9AAD55347611647425")
     public String getSentProtocolField() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2022389492 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1729747746 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_2022389492 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1729747746 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2022389492 = sentProtocol.encode();
         varB4EAC82CA7396A68D541C85D26508E83_1729747746 = null;
-        String varA7E53CE21691AB073D9660D615818899_1692127068; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1692127068; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1692127068 = varB4EAC82CA7396A68D541C85D26508E83_2022389492;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1692127068 = varB4EAC82CA7396A68D541C85D26508E83_1729747746;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1692127068.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1692127068.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1692127068;
-        // ---------- Original Method ----------
-        //if(sentProtocol != null)
-            //return sentProtocol.encode();
-        //return null;
+        
+        
+            
+        
     }
 
     

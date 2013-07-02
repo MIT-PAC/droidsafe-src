@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class Byte extends Number implements Comparable<Byte> {
@@ -16,8 +16,8 @@ public final class Byte extends Number implements Comparable<Byte> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.357 -0400", hash_original_method = "7E64D11F2C96BA434CA992EF3846EE45", hash_generated_method = "EF48A56C44D8A8A39C1273A89D41BB2B")
     public  Byte(byte value) {
         this.value = value;
-        // ---------- Original Method ----------
-        //this.value = value;
+        
+        
     }
 
     
@@ -25,7 +25,7 @@ public final class Byte extends Number implements Comparable<Byte> {
     public  Byte(String string) throws NumberFormatException {
         this(parseByte(string));
         addTaint(string.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,19 +34,20 @@ public final class Byte extends Number implements Comparable<Byte> {
     public byte byteValue() {
         byte var40EA57D3EE3C07BF1C102B466E1C3091_230819102 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_230819102;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.358 -0400", hash_original_method = "BB597B75ED281325D8B4388243F4CDF9", hash_generated_method = "9D43D1E444E682C232247C83E22C99CD")
     public int compareTo(Byte object) {
         int varEB17148B4676BC6C35C2467C947D57DF_1676994783 = (compare(value, object.value));
         addTaint(object.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620234061 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620234061;
-        // ---------- Original Method ----------
-        //return compare(value, object.value);
+        
+        
     }
 
     
@@ -55,6 +56,7 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Byte decode(String string) throws NumberFormatException {
         int intValue = Integer.decode(string);
         byte result = (byte) intValue;
@@ -70,8 +72,8 @@ public final class Byte extends Number implements Comparable<Byte> {
     public double doubleValue() {
         double varE8CD7DA078A86726031AD64F35F5A6C0_245101633 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_245101633;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
@@ -83,8 +85,8 @@ public final class Byte extends Number implements Comparable<Byte> {
         addTaint(object.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_347672050 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_347672050;
-        // ---------- Original Method ----------
-        //return (object == this) || ((object instanceof Byte) && (((Byte) object).value == value));
+        
+        
     }
 
     
@@ -93,8 +95,8 @@ public final class Byte extends Number implements Comparable<Byte> {
     public float floatValue() {
         float var546ADE640B6EDFBC8A086EF31347E768_849624176 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_849624176;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
@@ -103,8 +105,8 @@ public final class Byte extends Number implements Comparable<Byte> {
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1277004860 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1277004860;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
@@ -113,8 +115,8 @@ public final class Byte extends Number implements Comparable<Byte> {
     public int intValue() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1813268695 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1813268695;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
@@ -123,16 +125,18 @@ public final class Byte extends Number implements Comparable<Byte> {
     public long longValue() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_976516631 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_976516631;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte parseByte(String string) throws NumberFormatException {
         return parseByte(string, 10);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte parseByte(String string, int radix) throws NumberFormatException {
         int intValue = Integer.parseInt(string, radix);
         byte result = (byte) intValue;
@@ -148,38 +152,43 @@ public final class Byte extends Number implements Comparable<Byte> {
     public short shortValue() {
         short var4F09DAA9D95BCB166A302407A0E0BABE_1954310264 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1954310264;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.363 -0400", hash_original_method = "6B315C20A4D45816791A47779D79F014", hash_generated_method = "A4135B7E6A790EEC0B69A16E6E42B1FD")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1586999976 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1586999976 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1586999976 = Integer.toString(value);
-        varB4EAC82CA7396A68D541C85D26508E83_1586999976.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1586999976.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1586999976;
-        // ---------- Original Method ----------
-        //return Integer.toString(value);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toHexString(byte b, boolean upperCase) {
         return IntegralToString.byteToHexString(b, upperCase);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(byte value) {
         return Integer.toString(value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Byte valueOf(String string) throws NumberFormatException {
         return valueOf(parseByte(string));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Byte valueOf(String string, int radix) throws NumberFormatException {
         return valueOf(parseByte(string, radix));
     }

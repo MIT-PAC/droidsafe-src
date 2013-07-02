@@ -1,11 +1,11 @@
 package org.apache.harmony.luni.lang.reflect;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.reflect.MalformedParameterizedTypeException;
 import java.lang.reflect.Type;
@@ -24,33 +24,33 @@ public final class ImplForWildcard implements WildcardType {
     public  ImplForWildcard(ListOfTypes extendsBound, ListOfTypes superBound) {
         this.extendsBound = extendsBound;
         this.superBound = superBound;
-        // ---------- Original Method ----------
-        //this.extendsBound = extendsBound;
-        //this.superBound = superBound;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.194 -0400", hash_original_method = "0E02033FF7243902E994038D555D1587", hash_generated_method = "FBDCDBBE42A1B3E4910A3A1354FEB125")
     public Type[] getLowerBounds() throws TypeNotPresentException,
             MalformedParameterizedTypeException {
-        Type[] varB4EAC82CA7396A68D541C85D26508E83_1660600514 = null; //Variable for return #1
+        Type[] varB4EAC82CA7396A68D541C85D26508E83_1660600514 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1660600514 = superBound.getResolvedTypes().clone();
-        varB4EAC82CA7396A68D541C85D26508E83_1660600514.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1660600514.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1660600514;
-        // ---------- Original Method ----------
-        //return superBound.getResolvedTypes().clone();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.194 -0400", hash_original_method = "F21086AF3EFC8DD73AF90E899FA34F74", hash_generated_method = "8908FB8C58D8CC732C974006EB08F38D")
     public Type[] getUpperBounds() throws TypeNotPresentException,
             MalformedParameterizedTypeException {
-        Type[] varB4EAC82CA7396A68D541C85D26508E83_1617119260 = null; //Variable for return #1
+        Type[] varB4EAC82CA7396A68D541C85D26508E83_1617119260 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1617119260 = extendsBound.getResolvedTypes().clone();
-        varB4EAC82CA7396A68D541C85D26508E83_1617119260.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1617119260.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1617119260;
-        // ---------- Original Method ----------
-        //return extendsBound.getResolvedTypes().clone();
+        
+        
     }
 
     
@@ -63,13 +63,13 @@ public final class ImplForWildcard implements WildcardType {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1764011816 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1764011816;
-        // ---------- Original Method ----------
-        //if(!(o instanceof WildcardType)) {
-            //return false;
-        //}
-        //WildcardType that = (WildcardType) o;
-        //return Arrays.equals(getLowerBounds(), that.getLowerBounds()) &&
-                //Arrays.equals(getUpperBounds(), that.getUpperBounds());
+        
+        
+            
+        
+        
+        
+                
     }
 
     
@@ -80,42 +80,42 @@ public final class ImplForWildcard implements WildcardType {
                 Arrays.hashCode(getUpperBounds()));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2030906445 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2030906445;
-        // ---------- Original Method ----------
-        //return 31 * Arrays.hashCode(getLowerBounds()) +
-                //Arrays.hashCode(getUpperBounds());
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.196 -0400", hash_original_method = "93865AC448C11A5C9C4A3B3F15C62698", hash_generated_method = "17D04E4AACC06E749E3FE64B0EB99C2E")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1072558959 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1072558959 = null; 
         StringBuilder sb = new StringBuilder("?");
         {
             boolean varA3577B98AFF67C83AB66FF69CEE5F1BF_438739358 = ((extendsBound.length() == 1 && extendsBound.getResolvedTypes()[0] != Object.class)
                 || extendsBound.length() > 1);
             {
                 sb.append(" extends ").append(extendsBound);
-            } //End block
+            } 
             {
                 boolean var9C6EFA4256F2038BF750324FCAADBCE2_1744144739 = (superBound.length() > 0);
                 {
                     sb.append(" super ").append(superBound);
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1072558959 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1072558959.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1072558959.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1072558959;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder("?");
-        //if ((extendsBound.length() == 1 && extendsBound.getResolvedTypes()[0] != Object.class)
-                //|| extendsBound.length() > 1) {
-            //sb.append(" extends ").append(extendsBound);
-        //} else if (superBound.length() > 0) {
-            //sb.append(" super ").append(superBound);
-        //}
-        //return sb.toString();
+        
+        
+        
+                
+            
+        
+            
+        
+        
     }
 
     

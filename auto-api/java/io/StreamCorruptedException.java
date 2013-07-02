@@ -1,18 +1,18 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class StreamCorruptedException extends ObjectStreamException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.052 -0400", hash_original_method = "03146CFF1C14D5173926865A5139AFE4", hash_generated_method = "58327F1F20247974100B1AF168E65E97")
     public  StreamCorruptedException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class StreamCorruptedException extends ObjectStreamException {
     public  StreamCorruptedException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

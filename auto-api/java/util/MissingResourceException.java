@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class MissingResourceException extends RuntimeException {
@@ -23,31 +23,31 @@ public class MissingResourceException extends RuntimeException {
         this.className = className;
         key = resourceName;
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-        //this.className = className;
-        //key = resourceName;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.312 -0400", hash_original_method = "8415940D3A1E5651F883E391EC68DA41", hash_generated_method = "565E51378338EC67D87BE74B62B4B958")
     public String getClassName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1389940222 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1389940222 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1389940222 = className;
-        varB4EAC82CA7396A68D541C85D26508E83_1389940222.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1389940222.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1389940222;
-        // ---------- Original Method ----------
-        //return className;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.312 -0400", hash_original_method = "C39C8C9D5BC81C2FE68967748762171F", hash_generated_method = "7985A5E37C4CF05FAA2FB521F8B20725")
     public String getKey() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1481355447 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1481355447 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1481355447 = key;
-        varB4EAC82CA7396A68D541C85D26508E83_1481355447.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1481355447.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1481355447;
-        // ---------- Original Method ----------
-        //return key;
+        
+        
     }
 
     

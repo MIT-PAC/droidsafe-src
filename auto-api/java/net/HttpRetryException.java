@@ -1,11 +1,11 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -22,8 +22,8 @@ public class HttpRetryException extends IOException {
         super(detail);
         responseCode = code;
         addTaint(detail.getTaint());
-        // ---------- Original Method ----------
-        //responseCode = code;
+        
+        
     }
 
     
@@ -33,31 +33,32 @@ public class HttpRetryException extends IOException {
         responseCode = code;
         this.location = location;
         addTaint(detail.getTaint());
-        // ---------- Original Method ----------
-        //responseCode = code;
-        //this.location = location;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.163 -0400", hash_original_method = "958E0B7EB30F5353747022B831D2FD74", hash_generated_method = "0B8FCF248CFA097B33B593727E82F8C9")
     public String getLocation() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1743509981 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1743509981 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1743509981 = location;
-        varB4EAC82CA7396A68D541C85D26508E83_1743509981.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1743509981.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1743509981;
-        // ---------- Original Method ----------
-        //return location;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:53.164 -0400", hash_original_method = "8E1778B505008D9459C329AADF141931", hash_generated_method = "6E85AE78FD12D0BBCBD930B6C3C92D0A")
     public String getReason() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1109277576 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1109277576 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1109277576 = getMessage();
-        varB4EAC82CA7396A68D541C85D26508E83_1109277576.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1109277576.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1109277576;
-        // ---------- Original Method ----------
-        //return getMessage();
+        
+        
     }
 
     
@@ -65,8 +66,8 @@ public class HttpRetryException extends IOException {
     public int responseCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_596311398 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_596311398;
-        // ---------- Original Method ----------
-        //return responseCode;
+        
+        
     }
 
     

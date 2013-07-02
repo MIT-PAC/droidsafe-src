@@ -10,11 +10,9 @@ import javax.annotation.meta.TypeQualifierNickname;
 import javax.annotation.meta.TypeQualifierValidator;
 import javax.annotation.meta.When;
 
-/**
- * This qualifier is used to denote String values that should be a Regular
- * expression.
- * 
- */
+import droidsafe.annotations.*;
+
+
 @Documented
 @Syntax("RegEx")
 @TypeQualifierNickname
@@ -24,7 +22,8 @@ public @interface RegEx {
 
     static class Checker implements TypeQualifierValidator<RegEx> {
 
-        public When forConstantValue(RegEx annotation, Object value) {
+        @DSModeled(DSC.SAFE)
+    public When forConstantValue(RegEx annotation, Object value) {
             if (!(value instanceof String))
                 return When.NEVER;
 

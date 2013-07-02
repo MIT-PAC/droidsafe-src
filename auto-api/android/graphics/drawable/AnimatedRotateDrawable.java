@@ -1,11 +1,11 @@
 package android.graphics.drawable;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Canvas;
 import android.graphics.Rect;
@@ -41,7 +41,7 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.521 -0400", hash_original_method = "69ED55E7C9BDFB1CF0205590E3E993B2", hash_generated_method = "5F987BF114CD8F7A8EE74075FD2E9C32")
     public  AnimatedRotateDrawable() {
         this(null, null);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,12 +49,13 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
     private  AnimatedRotateDrawable(AnimatedRotateState rotateState, Resources res) {
         mState = new AnimatedRotateState(rotateState, this, res);
         init();
-        // ---------- Original Method ----------
-        //mState = new AnimatedRotateState(rotateState, this, res);
-        //init();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.522 -0400", hash_original_method = "10C2A2E1B80AA77427356DB5B80319DC", hash_generated_method = "FC51656BA69B743E51C19648D830D569")
     private void init() {
         final AnimatedRotateState state = mState;
@@ -64,21 +65,22 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
             drawable.setFilterBitmap(true);
             {
                 ((BitmapDrawable) drawable).setAntiAlias(true);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final AnimatedRotateState state = mState;
-        //mIncrement = 360.0f / state.mFramesCount;
-        //final Drawable drawable = state.mDrawable;
-        //if (drawable != null) {
-            //drawable.setFilterBitmap(true);
-            //if (drawable instanceof BitmapDrawable) {
-                //((BitmapDrawable) drawable).setAntiAlias(true);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.523 -0400", hash_original_method = "5DFCBA38220408C5DABBFEFD0FA87F8B", hash_generated_method = "434E1D51671DA0855DA098C752B940E2")
     @Override
     public void draw(Canvas canvas) {
@@ -98,42 +100,44 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
         drawable.draw(canvas);
         canvas.restoreToCount(saveCount);
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        //int saveCount = canvas.save();
-        //final AnimatedRotateState st = mState;
-        //final Drawable drawable = st.mDrawable;
-        //final Rect bounds = drawable.getBounds();
-        //int w = bounds.right - bounds.left;
-        //int h = bounds.bottom - bounds.top;
-        //float px = st.mPivotXRel ? (w * st.mPivotX) : st.mPivotX;
-        //float py = st.mPivotYRel ? (h * st.mPivotY) : st.mPivotY;
-        //canvas.rotate(mCurrentDegrees, px + bounds.left, py + bounds.top);
-        //drawable.draw(canvas);
-        //canvas.restoreToCount(saveCount);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.523 -0400", hash_original_method = "1FA1E7775B3C135CAFD58A0739A38376", hash_generated_method = "9E812F682EF5DA4823FCECFC0C00F9F5")
     public void start() {
         {
             mRunning = true;
             nextFrame();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mRunning) {
-            //mRunning = true;
-            //nextFrame();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.524 -0400", hash_original_method = "9B01F7CABB2406558D1BC0A57268160A", hash_generated_method = "DE4674A61A26FAFB8EEC5D6045E39EA4")
     public void stop() {
         mRunning = false;
         unscheduleSelf(this);
-        // ---------- Original Method ----------
-        //mRunning = false;
-        //unscheduleSelf(this);
+        
+        
+        
     }
 
     
@@ -141,39 +145,42 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
     public boolean isRunning() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_381021729 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_381021729;
-        // ---------- Original Method ----------
-        //return mRunning;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.525 -0400", hash_original_method = "7EB3E4BAE2A62EDC6364E7CD5F30E825", hash_generated_method = "186E401AF8BB6D7DC716D6E328839E6A")
     private void nextFrame() {
         unscheduleSelf(this);
         scheduleSelf(this, SystemClock.uptimeMillis() + mState.mFrameDuration);
-        // ---------- Original Method ----------
-        //unscheduleSelf(this);
-        //scheduleSelf(this, SystemClock.uptimeMillis() + mState.mFrameDuration);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.525 -0400", hash_original_method = "47627FAA36D08729C94EAD6CAAA95F6C", hash_generated_method = "91F28FFFE1A8505DB00F206AC64D46A0")
     public void run() {
         mCurrentDegrees += mIncrement;
         {
             mCurrentDegrees = 0.0f;
-        } //End block
+        } 
         invalidateSelf();
         nextFrame();
-        // ---------- Original Method ----------
-        //mCurrentDegrees += mIncrement;
-        //if (mCurrentDegrees > (360.0f - mIncrement)) {
-            //mCurrentDegrees = 0.0f;
-        //}
-        //invalidateSelf();
-        //nextFrame();
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.526 -0400", hash_original_method = "183F775A408D23F991FB2833203EEE63", hash_generated_method = "1770906A8A6BE7BE996595B901E2A6BE")
     @Override
     public boolean setVisible(boolean visible, boolean restart) {
@@ -183,41 +190,42 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
             {
                 mCurrentDegrees = 0.0f;
                 nextFrame();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             unscheduleSelf(this);
-        } //End block
+        } 
         addTaint(visible);
         addTaint(restart);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1833030681 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1833030681;
-        // ---------- Original Method ----------
-        //mState.mDrawable.setVisible(visible, restart);
-        //boolean changed = super.setVisible(visible, restart);
-        //if (visible) {
-            //if (changed || restart) {
-                //mCurrentDegrees = 0.0f;
-                //nextFrame();
-            //}
-        //} else {
-            //unscheduleSelf(this);
-        //}
-        //return changed;
+        
+        
+        
+        
+            
+                
+                
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.527 -0400", hash_original_method = "CE08CCF44A5C011BE03C2CE7D256555D", hash_generated_method = "7D72C585782E689F5FE9962F68D278C8")
     public Drawable getDrawable() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_849880938 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_849880938 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_849880938 = mState.mDrawable;
-        varB4EAC82CA7396A68D541C85D26508E83_849880938.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_849880938.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_849880938;
-        // ---------- Original Method ----------
-        //return mState.mDrawable;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.527 -0400", hash_original_method = "1BF1269A7F11A078222AE5900C6EC170", hash_generated_method = "92BE5F2CD81BF086744584B1901C543C")
     @Override
     public int getChangingConfigurations() {
@@ -226,92 +234,99 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
                 | mState.mDrawable.getChangingConfigurations());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730323286 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730323286;
-        // ---------- Original Method ----------
-        //return super.getChangingConfigurations()
-                //| mState.mChangingConfigurations
-                //| mState.mDrawable.getChangingConfigurations();
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.527 -0400", hash_original_method = "E07BF10440452C45B5D504184A6B58C8", hash_generated_method = "8801B05A78398BA33099DDD5FC547159")
     @Override
     public void setAlpha(int alpha) {
         mState.mDrawable.setAlpha(alpha);
         addTaint(alpha);
-        // ---------- Original Method ----------
-        //mState.mDrawable.setAlpha(alpha);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.528 -0400", hash_original_method = "6C570D1758B788EA390E83E99A76EB36", hash_generated_method = "7BE9D61989CD3E2790D5181149F40CF6")
     @Override
     public void setColorFilter(ColorFilter cf) {
         mState.mDrawable.setColorFilter(cf);
         addTaint(cf.getTaint());
-        // ---------- Original Method ----------
-        //mState.mDrawable.setColorFilter(cf);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.528 -0400", hash_original_method = "7CC935EC38A8A9ED900F61C0DE237712", hash_generated_method = "DD3FA1BFCCE964EAF3E0FB445420CF6E")
     @Override
     public int getOpacity() {
         int var208671101B6F4CE4F7912D03727B9ECD_457709395 = (mState.mDrawable.getOpacity());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_526011982 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_526011982;
-        // ---------- Original Method ----------
-        //return mState.mDrawable.getOpacity();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.528 -0400", hash_original_method = "289E4B14FC4BAEE8FBED5C03A1D9B634", hash_generated_method = "8ECAF0D2D820C2FF9A9BDD02B639272A")
     public void invalidateDrawable(Drawable who) {
         final Callback callback = getCallback();
         {
             callback.invalidateDrawable(this);
-        } //End block
+        } 
         addTaint(who.getTaint());
-        // ---------- Original Method ----------
-        //final Callback callback = getCallback();
-        //if (callback != null) {
-            //callback.invalidateDrawable(this);
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.529 -0400", hash_original_method = "A01CAF97CFFAA14450A9600E14E88C8D", hash_generated_method = "261415614362F98B81BBEF59F2B1EFAD")
     public void scheduleDrawable(Drawable who, Runnable what, long when) {
         final Callback callback = getCallback();
         {
             callback.scheduleDrawable(this, what, when);
-        } //End block
+        } 
         addTaint(who.getTaint());
         addTaint(what.getTaint());
         addTaint(when);
-        // ---------- Original Method ----------
-        //final Callback callback = getCallback();
-        //if (callback != null) {
-            //callback.scheduleDrawable(this, what, when);
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.529 -0400", hash_original_method = "CA144C86313E3C1A3DC044F014305D8E", hash_generated_method = "A952BE855FAD5CA31947C201D24F3FD9")
     public void unscheduleDrawable(Drawable who, Runnable what) {
         final Callback callback = getCallback();
         {
             callback.unscheduleDrawable(this, what);
-        } //End block
+        } 
         addTaint(who.getTaint());
         addTaint(what.getTaint());
-        // ---------- Original Method ----------
-        //final Callback callback = getCallback();
-        //if (callback != null) {
-            //callback.unscheduleDrawable(this, what);
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.530 -0400", hash_original_method = "02BC41BDC3ED3CF2C30379FA10185DFA", hash_generated_method = "C6BA73113BF3E95CD5D3E1F07ADBEF53")
     @Override
     public boolean getPadding(Rect padding) {
@@ -319,88 +334,94 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
         addTaint(padding.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_762121425 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_762121425;
-        // ---------- Original Method ----------
-        //return mState.mDrawable.getPadding(padding);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.530 -0400", hash_original_method = "6F66CB18BCF39D7C34F81BD35385E69D", hash_generated_method = "97D42A7319F485C4EB881EA9A4C3483F")
     @Override
     public boolean isStateful() {
         boolean var49A6E47C93BCE92CD66848492C5DEB16_2024315595 = (mState.mDrawable.isStateful());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2093428294 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2093428294;
-        // ---------- Original Method ----------
-        //return mState.mDrawable.isStateful();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.530 -0400", hash_original_method = "EF65F96F81169D8EC042745FACAE10FF", hash_generated_method = "4FD0A705CB8023B974D0770B2E09B67B")
     @Override
     protected void onBoundsChange(Rect bounds) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mState.mDrawable.setBounds(bounds.left, bounds.top, bounds.right, bounds.bottom);
         addTaint(bounds.getTaint());
-        // ---------- Original Method ----------
-        //mState.mDrawable.setBounds(bounds.left, bounds.top, bounds.right, bounds.bottom);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.531 -0400", hash_original_method = "5B4218C80F47B6E11FBBAA9FF9621C9F", hash_generated_method = "136C91621F9F08FE11E2451373F1FB1B")
     @Override
     public int getIntrinsicWidth() {
         int varF0E785BE9442695B8C554DDF53D66DF4_920496660 = (mState.mDrawable.getIntrinsicWidth());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1536242182 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1536242182;
-        // ---------- Original Method ----------
-        //return mState.mDrawable.getIntrinsicWidth();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.531 -0400", hash_original_method = "D5692643A14F3CC0D08138E7C727B99D", hash_generated_method = "1A5D3DCECB488C9065E3FAD4BD6C182A")
     @Override
     public int getIntrinsicHeight() {
         int var740C212F7282B7300448D928B6215BB6_1663153453 = (mState.mDrawable.getIntrinsicHeight());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1890056200 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1890056200;
-        // ---------- Original Method ----------
-        //return mState.mDrawable.getIntrinsicHeight();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.532 -0400", hash_original_method = "810CA52F78245136A3D7374C4FDCA32A", hash_generated_method = "3D39F8710BDA50327DB6525D02969E95")
     @Override
     public ConstantState getConstantState() {
-        ConstantState varB4EAC82CA7396A68D541C85D26508E83_998753524 = null; //Variable for return #1
-        ConstantState varB4EAC82CA7396A68D541C85D26508E83_1795503576 = null; //Variable for return #2
+        ConstantState varB4EAC82CA7396A68D541C85D26508E83_998753524 = null; 
+        ConstantState varB4EAC82CA7396A68D541C85D26508E83_1795503576 = null; 
         {
             boolean var80BE086B3CF987C8B4EA155D5304638A_761348776 = (mState.canConstantState());
             {
                 mState.mChangingConfigurations = getChangingConfigurations();
                 varB4EAC82CA7396A68D541C85D26508E83_998753524 = mState;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1795503576 = null;
-        ConstantState varA7E53CE21691AB073D9660D615818899_507900285; //Final return value
+        ConstantState varA7E53CE21691AB073D9660D615818899_507900285; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_507900285 = varB4EAC82CA7396A68D541C85D26508E83_998753524;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_507900285 = varB4EAC82CA7396A68D541C85D26508E83_1795503576;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_507900285.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_507900285.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_507900285;
-        // ---------- Original Method ----------
-        //if (mState.canConstantState()) {
-            //mState.mChangingConfigurations = getChangingConfigurations();
-            //return mState;
-        //}
-        //return null;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.534 -0400", hash_original_method = "A622CEEF500B9000EB94812A972E6C45", hash_generated_method = "0C14DB09B339E66AB10FFA242ACCF066")
     @Override
     public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
@@ -422,7 +443,7 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
         Drawable drawable = null;
         {
             drawable = r.getDrawable(res);
-        } //End block
+        } 
         a.recycle();
         int outerDepth = parser.getDepth();
         int type;
@@ -432,9 +453,9 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
             {
                 {
                     boolean var24A02A5F6DE110121BAFDE44AC7A8F0C_1174390022 = ((drawable = Drawable.createFromXmlInner(r, parser, attrs)) == null);
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         final AnimatedRotateState rotateState = mState;
         rotateState.mDrawable = drawable;
         rotateState.mPivotXRel = pivotXRel;
@@ -444,12 +465,12 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
         init();
         {
             drawable.setCallback(this);
-        } //End block
+        } 
         addTaint(r.getTaint());
         addTaint(parser.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -457,40 +478,41 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
     public void setFramesCount(int framesCount) {
         mState.mFramesCount = framesCount;
         mIncrement = 360.0f / mState.mFramesCount;
-        // ---------- Original Method ----------
-        //mState.mFramesCount = framesCount;
-        //mIncrement = 360.0f / mState.mFramesCount;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.535 -0400", hash_original_method = "CDF8A4A058FBB62E5E21EBF9FD2DD694", hash_generated_method = "A03827D13AD31602F15D5BCB5CBA16BF")
     public void setFramesDuration(int framesDuration) {
         mState.mFrameDuration = framesDuration;
-        // ---------- Original Method ----------
-        //mState.mFrameDuration = framesDuration;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.537 -0400", hash_original_method = "1ABB3B56372A1EBF2E80045724D492E3", hash_generated_method = "61AE289DB6C0043729DA4B62476E77A0")
     @Override
     public Drawable mutate() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_302475763 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_302475763 = null; 
         {
             boolean varC94B19053599294E7944C8C841976773_1787774873 = (!mMutated && super.mutate() == this);
             {
                 mState.mDrawable.mutate();
                 mMutated = true;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_302475763 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_302475763.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_302475763.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_302475763;
-        // ---------- Original Method ----------
-        //if (!mMutated && super.mutate() == this) {
-            //mState.mDrawable.mutate();
-            //mMutated = true;
-        //}
-        //return this;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -532,10 +554,10 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
             {
                 {
                     mDrawable = source.mDrawable.getConstantState().newDrawable(res);
-                } //End block
+                } 
                 {
                     mDrawable = source.mDrawable.getConstantState().newDrawable();
-                } //End block
+                } 
                 mDrawable.setCallback(owner);
                 mPivotXRel = source.mPivotXRel;
                 mPivotX = source.mPivotX;
@@ -544,49 +566,49 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
                 mFramesCount = source.mFramesCount;
                 mFrameDuration = source.mFrameDuration;
                 mCanConstantState = mCheckedConstantState = true;
-            } //End block
+            } 
             addTaint(owner.getTaint());
-            // ---------- Original Method ----------
-            //if (source != null) {
-                //if (res != null) {
-                    //mDrawable = source.mDrawable.getConstantState().newDrawable(res);
-                //} else {
-                    //mDrawable = source.mDrawable.getConstantState().newDrawable();
-                //}
-                //mDrawable.setCallback(owner);
-                //mPivotXRel = source.mPivotXRel;
-                //mPivotX = source.mPivotX;
-                //mPivotYRel = source.mPivotYRel;
-                //mPivotY = source.mPivotY;
-                //mFramesCount = source.mFramesCount;
-                //mFrameDuration = source.mFrameDuration;
-                //mCanConstantState = mCheckedConstantState = true;
-            //}
+            
+            
+                
+                    
+                
+                    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.539 -0400", hash_original_method = "90513075AAF61DC02051F8AF573AA026", hash_generated_method = "A36EFB87C2638CCCD9E55D7D89A84E7E")
         @Override
         public Drawable newDrawable() {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_379840435 = null; //Variable for return #1
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_379840435 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_379840435 = new AnimatedRotateDrawable(this, null);
-            varB4EAC82CA7396A68D541C85D26508E83_379840435.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_379840435.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_379840435;
-            // ---------- Original Method ----------
-            //return new AnimatedRotateDrawable(this, null);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.540 -0400", hash_original_method = "8E62ECEB973FF3825859D252B23F201A", hash_generated_method = "28CC34B201AE11C825C169BC365E5481")
         @Override
         public Drawable newDrawable(Resources res) {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_1342204042 = null; //Variable for return #1
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_1342204042 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1342204042 = new AnimatedRotateDrawable(this, res);
             addTaint(res.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1342204042.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1342204042.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1342204042;
-            // ---------- Original Method ----------
-            //return new AnimatedRotateDrawable(this, res);
+            
+            
         }
 
         
@@ -595,8 +617,8 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
         public int getChangingConfigurations() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1903771422 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1903771422;
-            // ---------- Original Method ----------
-            //return mChangingConfigurations;
+            
+            
         }
 
         
@@ -605,15 +627,15 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
             {
                 mCanConstantState = mDrawable.getConstantState() != null;
                 mCheckedConstantState = true;
-            } //End block
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_8777651 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_8777651;
-            // ---------- Original Method ----------
-            //if (!mCheckedConstantState) {
-                //mCanConstantState = mDrawable.getConstantState() != null;
-                //mCheckedConstantState = true;
-            //}
-            //return mCanConstantState;
+            
+            
+                
+                
+            
+            
         }
 
         

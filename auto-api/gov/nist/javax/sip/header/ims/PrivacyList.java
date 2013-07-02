@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.header.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.SIPHeaderList;
 
@@ -14,20 +14,21 @@ public class PrivacyList extends SIPHeaderList<Privacy> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.474 -0400", hash_original_method = "45F84AF986B8E1D18781B003920274BC", hash_generated_method = "1112F36E1D63D8A6DB0A3433FC13B944")
     public  PrivacyList() {
         super(Privacy.class, PrivacyHeader.NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.474 -0400", hash_original_method = "09C54AFDDBF31F8225613CB28A3AFCA3", hash_generated_method = "41E36169445854C7F81E31168244C139")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_836050146 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_836050146 = null; 
         PrivacyList retval = new PrivacyList();
         varB4EAC82CA7396A68D541C85D26508E83_836050146 = retval.clonehlist(this.hlist);
-        varB4EAC82CA7396A68D541C85D26508E83_836050146.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_836050146.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_836050146;
-        // ---------- Original Method ----------
-        //PrivacyList retval = new PrivacyList();
-        //return retval.clonehlist(this.hlist);
+        
+        
+        
     }
 
     

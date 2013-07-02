@@ -1,11 +1,11 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class BitString {
@@ -20,21 +20,21 @@ public final class BitString {
     public  BitString(byte[] bytes, int unusedBits) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Number of unused bits MUST be in range 0-7");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("For empty bit string unused bits MUST be 0");
-        } //End block
+        } 
         this.bytes = bytes;
         this.unusedBits = unusedBits;
-        // ---------- Original Method ----------
-        //if (unusedBits < 0 || unusedBits > 7) {
-            //throw new IllegalArgumentException("Number of unused bits MUST be in range 0-7");
-        //}
-        //if (bytes.length == 0 && unusedBits != 0) {
-            //throw new IllegalArgumentException("For empty bit string unused bits MUST be 0");
-        //}
-        //this.bytes = bytes;
-        //this.unusedBits = unusedBits;
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -47,18 +47,18 @@ public final class BitString {
             int i = 0;
             {
                 setBit(i, values[i]);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //unusedBits = values.length % 8;
-        //int size = values.length / 8;
-        //if (unusedBits != 0) {
-            //size++;
-        //}
-        //bytes = new byte[size];
-        //for (int i = 0; i < values.length; i++) {
-            //setBit(i, values[i]);
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -69,10 +69,10 @@ public final class BitString {
         addTaint(bit);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_389889187 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_389889187;
-        // ---------- Original Method ----------
-        //int offset = bit % 8;
-        //int index = bit / 8;
-        //return (bytes[index] & SET_MASK[offset]) != 0;
+        
+        
+        
+        
     }
 
     
@@ -82,23 +82,24 @@ public final class BitString {
         int index = bit / 8;
         {
             bytes[index] |= SET_MASK[offset];
-        } //End block
+        } 
         {
             bytes[index] &= RESET_MASK[offset];
-        } //End block
+        } 
         addTaint(bit);
         addTaint(value);
-        // ---------- Original Method ----------
-        //int offset = bit % 8;
-        //int index = bit / 8;
-        //if (value) {
-            //bytes[index] |= SET_MASK[offset];
-        //} else {
-            //bytes[index] &= RESET_MASK[offset];
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.820 -0400", hash_original_method = "6591A9422CBA64DB7D3ADDA84BA94652", hash_generated_method = "F23E5185BFD0E88A79A244D82ACEFB92")
     public boolean[] toBooleanArray() {
         boolean[] result = new boolean[bytes.length * 8 - unusedBits];
@@ -106,16 +107,16 @@ public final class BitString {
             int i = 0;
             {
                 result[i] = getBit(i);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean[] var503EB2F420079C4024483971CE5EDEA8_565474614 = {getTaintBoolean()};
         return var503EB2F420079C4024483971CE5EDEA8_565474614;
-        // ---------- Original Method ----------
-        //boolean[] result = new boolean[bytes.length * 8 - unusedBits];
-        //for (int i = 0; i < result.length; i++) {
-            //result[i] = getBit(i);
-        //}
-        //return result;
+        
+        
+        
+            
+        
+        
     }
 
     

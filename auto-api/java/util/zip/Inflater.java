@@ -1,11 +1,11 @@
 package java.util.zip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import dalvik.system.CloseGuard;
 import java.io.FileDescriptor;
@@ -34,7 +34,7 @@ public class Inflater {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.822 -0400", hash_original_method = "52564046B1BB792C24EFCB3BD00F948F", hash_generated_method = "AC707E8623E67425139398D18FBF6D77")
     public  Inflater() {
         this(false);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -42,9 +42,9 @@ public class Inflater {
     public  Inflater(boolean noHeader) {
         streamHandle = createStream(noHeader);
         guard.open("end");
-        // ---------- Original Method ----------
-        //streamHandle = createStream(noHeader);
-        //guard.open("end");
+        
+        
+        
     }
 
     
@@ -55,6 +55,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.824 -0400", hash_original_method = "2BA55F9CC22F910CD3563C29BAA19EFA", hash_generated_method = "90192E7CE08E9CB52E215C74BC2B6E8D")
     public synchronized void end() {
         guard.close();
@@ -63,15 +64,15 @@ public class Inflater {
             inRead = 0;
             inLength = 0;
             streamHandle = -1;
-        } //End block
-        // ---------- Original Method ----------
-        //guard.close();
-        //if (streamHandle != -1) {
-            //endImpl(streamHandle);
-            //inRead = 0;
-            //inLength = 0;
-            //streamHandle = -1;
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -80,6 +81,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.825 -0400", hash_original_method = "C6D54AF1AC1AC75675A3D536A7405AD5", hash_generated_method = "0D13B19E410AB05D57205178EE4B3F70")
     @Override
     protected void finalize() {
@@ -87,33 +89,33 @@ public class Inflater {
         {
             {
                 guard.warnIfOpen();
-            } //End block
+            } 
             end();
-        } //End block
+        } 
         finally 
         {
             try 
             {
                 super.finalize();
-            } //End block
+            } 
             catch (Throwable t)
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError(t);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (guard != null) {
-                //guard.warnIfOpen();
-            //}
-            //end();
-        //} finally {
-            //try {
-                //super.finalize();
-            //} catch (Throwable t) {
-                //throw new AssertionError(t);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -121,20 +123,21 @@ public class Inflater {
     public synchronized boolean finished() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_391820275 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_391820275;
-        // ---------- Original Method ----------
-        //return finished;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.826 -0400", hash_original_method = "DDE5644D46702B730F5378ABED0CC02C", hash_generated_method = "A1081BD9D65C6F86DB7E2B3EDAE6F6A6")
     public synchronized int getAdler() {
         checkOpen();
         int var7C17F99AF382ECAC44C03A9EA8865A67_733823641 = (getAdlerImpl(streamHandle));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1077687956 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1077687956;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //return getAdlerImpl(streamHandle);
+        
+        
+        
     }
 
     
@@ -145,27 +148,29 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.826 -0400", hash_original_method = "B419E0AF253F709FCCBF4031C175C3E0", hash_generated_method = "DBA6253A8776964214C8604E3EA5404C")
     public synchronized long getBytesRead() {
         checkOpen();
         long var6C0E09A019AABCCDC70FCCC5BD7FF31D_1712460098 = (getTotalInImpl(streamHandle));
         long var0F5264038205EDFB1AC05FBB0E8C5E94_746267825 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_746267825;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //return getTotalInImpl(streamHandle);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.826 -0400", hash_original_method = "B14826F1D1678AA7FAF007D6D8541F5C", hash_generated_method = "45234BA6C346D0EFEDB8C00EEFDA9BDA")
     public synchronized long getBytesWritten() {
         checkOpen();
         long var4BCD5BD6475949FEF14EA9C64C6BCE8A_176657056 = (getTotalOutImpl(streamHandle));
         long var0F5264038205EDFB1AC05FBB0E8C5E94_38218940 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_38218940;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //return getTotalOutImpl(streamHandle);
+        
+        
+        
     }
 
     
@@ -173,20 +178,21 @@ public class Inflater {
     public synchronized int getRemaining() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_311229069 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_311229069;
-        // ---------- Original Method ----------
-        //return inLength - inRead;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.827 -0400", hash_original_method = "9AAB506621EC0609B7127649800D2F50", hash_generated_method = "CEF4E3B9270531AEB1FF1517C309B4F6")
     public synchronized int getTotalIn() {
         checkOpen();
         int var28402305727AF84CD5CF2E283F6E8AA0_22128963 = ((int) Math.min(getTotalInImpl(streamHandle), (long) Integer.MAX_VALUE));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_281781284 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_281781284;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //return (int) Math.min(getTotalInImpl(streamHandle), (long) Integer.MAX_VALUE);
+        
+        
+        
     }
 
     
@@ -197,15 +203,16 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.827 -0400", hash_original_method = "FABA8B5ADD5ED280AE5319590E5362F9", hash_generated_method = "15DA7E2E2BAC827ECD33D29DF484EAED")
     public synchronized int getTotalOut() {
         checkOpen();
         int var4862387F17435FA32F87B1F7CDE9AAF2_72904515 = ((int) Math.min(getTotalOutImpl(streamHandle), (long) Integer.MAX_VALUE));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1760880197 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1760880197;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //return (int) Math.min(getTotalOutImpl(streamHandle), (long) Integer.MAX_VALUE);
+        
+        
+        
     }
 
     
@@ -216,48 +223,50 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.828 -0400", hash_original_method = "7C5FBD7958B67E2748697C6AE75EF54A", hash_generated_method = "C36E546BAB2935595B49C6415A812695")
     public int inflate(byte[] buf) throws DataFormatException {
         int varF6678BD8648B61E5E4F1D27B0C57AA1A_1679056749 = (inflate(buf, 0, buf.length));
         addTaint(buf[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1745142954 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1745142954;
-        // ---------- Original Method ----------
-        //return inflate(buf, 0, buf.length);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.828 -0400", hash_original_method = "A9BECE182D792DD8518CBB91F9F00FF9", hash_generated_method = "D4BF6AB74461B58D6967DBA96A7426AD")
     public synchronized int inflate(byte[] buf, int offset, int byteCount) throws DataFormatException {
         Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
         checkOpen();
         {
             boolean var2A60890E3F6E7BEB547797026F828D12_542688429 = (needsInput());
-        } //End collapsed parenthetic
+        } 
         boolean neededDict = needsDictionary;
         needsDictionary = false;
         int result = inflateImpl(buf, offset, byteCount, streamHandle);
         {
             if (DroidSafeAndroidRuntime.control) throw new DataFormatException("Needs dictionary");
-        } //End block
+        } 
         addTaint(buf[0]);
         addTaint(offset);
         addTaint(byteCount);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_728170100 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_728170100;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
-        //checkOpen();
-        //if (needsInput()) {
-            //return 0;
-        //}
-        //boolean neededDict = needsDictionary;
-        //needsDictionary = false;
-        //int result = inflateImpl(buf, offset, byteCount, streamHandle);
-        //if (needsDictionary && neededDict) {
-            //throw new DataFormatException("Needs dictionary");
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -272,8 +281,8 @@ public class Inflater {
     public synchronized boolean needsDictionary() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1779966440 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1779966440;
-        // ---------- Original Method ----------
-        //return needsDictionary;
+        
+        
     }
 
     
@@ -281,11 +290,12 @@ public class Inflater {
     public synchronized boolean needsInput() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1264366316 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1264366316;
-        // ---------- Original Method ----------
-        //return inRead == inLength;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.829 -0400", hash_original_method = "0513FF2BBDC9BF2AA8F8AFEEBE87C2FB", hash_generated_method = "9138E4362FA0CE03C0B84709CEB65B62")
     public synchronized void reset() {
         checkOpen();
@@ -293,12 +303,12 @@ public class Inflater {
         needsDictionary = false;
         inLength = inRead = 0;
         resetImpl(streamHandle);
-        // ---------- Original Method ----------
-        //checkOpen();
-        //finished = false;
-        //needsDictionary = false;
-        //inLength = inRead = 0;
-        //resetImpl(streamHandle);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -307,15 +317,17 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.830 -0400", hash_original_method = "49DAD22714BA16C1AC9D80CF714D4798", hash_generated_method = "E430FDAF81BF5D15C7E17F19DF2E5991")
     public synchronized void setDictionary(byte[] dictionary) {
         setDictionary(dictionary, 0, dictionary.length);
         addTaint(dictionary[0]);
-        // ---------- Original Method ----------
-        //setDictionary(dictionary, 0, dictionary.length);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.830 -0400", hash_original_method = "568AFB946554DE560CCB8443B419A0F6", hash_generated_method = "9D98C6C3F83E4BDB5153D33243007301")
     public synchronized void setDictionary(byte[] dictionary, int offset, int byteCount) {
         checkOpen();
@@ -324,10 +336,10 @@ public class Inflater {
         addTaint(dictionary[0]);
         addTaint(offset);
         addTaint(byteCount);
-        // ---------- Original Method ----------
-        //checkOpen();
-        //Arrays.checkOffsetAndCount(dictionary.length, offset, byteCount);
-        //setDictionaryImpl(dictionary, offset, byteCount, streamHandle);
+        
+        
+        
+        
     }
 
     
@@ -336,15 +348,17 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.831 -0400", hash_original_method = "76E6701B8618856CEE42A14EB071C689", hash_generated_method = "362E24DAA8732632000B60035769194D")
     public synchronized void setInput(byte[] buf) {
         setInput(buf, 0, buf.length);
         addTaint(buf[0]);
-        // ---------- Original Method ----------
-        //setInput(buf, 0, buf.length);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.831 -0400", hash_original_method = "D18140A9F42CF395349CBB05A8109835", hash_generated_method = "9AA5E2E9FA1E26A79DC843EBB59894A7")
     public synchronized void setInput(byte[] buf, int offset, int byteCount) {
         checkOpen();
@@ -354,12 +368,12 @@ public class Inflater {
         setInputImpl(buf, offset, byteCount, streamHandle);
         addTaint(buf[0]);
         addTaint(offset);
-        // ---------- Original Method ----------
-        //checkOpen();
-        //Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
-        //inRead = 0;
-        //inLength = byteCount;
-        //setInputImpl(buf, offset, byteCount, streamHandle);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -368,6 +382,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.831 -0400", hash_original_method = "AC4A3418B937D51D6E31ACAFC1E07B42", hash_generated_method = "0B8605D20A49B76DAD0BD068757D14F0")
     synchronized int setFileInput(FileDescriptor fd, long offset, int byteCount) {
         checkOpen();
@@ -375,11 +390,11 @@ public class Inflater {
         inLength = setFileInputImpl(fd, offset, byteCount, streamHandle);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1631697383 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1631697383;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //inRead = 0;
-        //inLength = setFileInputImpl(fd, offset, byteCount, streamHandle);
-        //return inLength;
+        
+        
+        
+        
+        
     }
 
     
@@ -390,15 +405,16 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.832 -0400", hash_original_method = "477FE56B6846A3E6E3ED71C242A2D9F4", hash_generated_method = "AF3A8A7419C815DC828233CF022989F3")
     private void checkOpen() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("attempt to use Inflater after calling end");
-        } //End block
-        // ---------- Original Method ----------
-        //if (streamHandle == -1) {
-            //throw new IllegalStateException("attempt to use Inflater after calling end");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     

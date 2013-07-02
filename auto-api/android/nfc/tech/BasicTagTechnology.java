@@ -1,11 +1,11 @@
 package android.nfc.tech;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.nfc.ErrorCodes;
 import android.nfc.Tag;
@@ -30,21 +30,21 @@ abstract class BasicTagTechnology implements TagTechnology {
       BasicTagTechnology(Tag tag, int tech) throws RemoteException {
         mTag = tag;
         mSelectedTechnology = tech;
-        // ---------- Original Method ----------
-        //mTag = tag;
-        //mSelectedTechnology = tech;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.301 -0400", hash_original_method = "FC84E29499397B8918F938A8205313A1", hash_generated_method = "C2B7727FCC725632E78B7DC226AA0721")
     @Override
     public Tag getTag() {
-        Tag varB4EAC82CA7396A68D541C85D26508E83_76953379 = null; //Variable for return #1
+        Tag varB4EAC82CA7396A68D541C85D26508E83_76953379 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_76953379 = mTag;
-        varB4EAC82CA7396A68D541C85D26508E83_76953379.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_76953379.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_76953379;
-        // ---------- Original Method ----------
-        //return mTag;
+        
+        
     }
 
     
@@ -55,40 +55,42 @@ abstract class BasicTagTechnology implements TagTechnology {
                (mTag.getConnectedTechnology() == -1));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Call connect() first!");
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if ((mTag.getConnectedTechnology() != mSelectedTechnology) ||
-               //(mTag.getConnectedTechnology() == -1)) {
-           //throw new IllegalStateException("Call connect() first!");
-       //}
+            } 
+        } 
+        
+        
+               
+           
+       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.302 -0400", hash_original_method = "627518FDA5BCF854C6C8A282AA02DD65", hash_generated_method = "3B1A33E3596A96BF82A3E74C57BE569D")
     @Override
     public boolean isConnected() {
         try 
         {
             boolean var5E5F64CA966EA9C33B4D042F7699BD61_651055864 = (mTag.getTagService().isPresent(mTag.getServiceHandle()));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_862891726 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_862891726;
-        // ---------- Original Method ----------
-        //if (!mIsConnected) {
-            //return false;
-        //}
-        //try {
-            //return mTag.getTagService().isPresent(mTag.getServiceHandle());
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-            //return false;
-        //}
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.303 -0400", hash_original_method = "804D2A1436436AD53D4E3C21667A8A7D", hash_generated_method = "30E0AE32D154059E63071C8C7F2D12C0")
     @Override
     public void connect() throws IOException {
@@ -99,47 +101,48 @@ abstract class BasicTagTechnology implements TagTechnology {
             {
                 mTag.setConnectedTechnology(mSelectedTechnology);
                 mIsConnected = true;
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Connecting to " +
                         "this technology is not supported by the NFC " +
                         "adapter.");
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("NFC service died");
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //int errorCode = mTag.getTagService().connect(mTag.getServiceHandle(),
-                    //mSelectedTechnology);
-            //if (errorCode == ErrorCodes.SUCCESS) {
-                //mTag.setConnectedTechnology(mSelectedTechnology);
-                //mIsConnected = true;
-            //} else if (errorCode == ErrorCodes.ERROR_NOT_SUPPORTED) {
-                //throw new UnsupportedOperationException("Connecting to " +
-                        //"this technology is not supported by the NFC " +
-                        //"adapter.");
-            //} else {
-                //throw new IOException();
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-            //throw new IOException("NFC service died");
-        //}
+        } 
+        
+        
+            
+                    
+            
+                
+                
+            
+                
+                        
+                        
+            
+                
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.303 -0400", hash_original_method = "9693ABC23B7E982FA8E766A116B1D439", hash_generated_method = "D4D09E730F9B69D5D2C99EECD2F7C47F")
     @Override
     public void reconnect() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Technology not connected yet");
-        } //End block
+        } 
         try 
         {
             int errorCode = mTag.getTagService().reconnect(mTag.getServiceHandle());
@@ -147,34 +150,35 @@ abstract class BasicTagTechnology implements TagTechnology {
                 mIsConnected = false;
                 mTag.setTechnologyDisconnected();
                 if (DroidSafeAndroidRuntime.control) throw new IOException();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             mIsConnected = false;
             mTag.setTechnologyDisconnected();
             if (DroidSafeAndroidRuntime.control) throw new IOException("NFC service died");
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mIsConnected) {
-            //throw new IllegalStateException("Technology not connected yet");
-        //}
-        //try {
-            //int errorCode = mTag.getTagService().reconnect(mTag.getServiceHandle());
-            //if (errorCode != ErrorCodes.SUCCESS) {
-                //mIsConnected = false;
-                //mTag.setTechnologyDisconnected();
-                //throw new IOException();
-            //}
-        //} catch (RemoteException e) {
-            //mIsConnected = false;
-            //mTag.setTechnologyDisconnected();
-            //Log.e(TAG, "NFC service dead", e);
-            //throw new IOException("NFC service died");
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+                
+                
+            
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.304 -0400", hash_original_method = "DDF274A17EF36B6492A33A14797987DB", hash_generated_method = "A9D5DBAFE8415F2DA079939520FFC47A")
     @Override
     public void close() throws IOException {
@@ -182,24 +186,24 @@ abstract class BasicTagTechnology implements TagTechnology {
         {
             mTag.getTagService().resetTimeouts();
             mTag.getTagService().reconnect(mTag.getServiceHandle());
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         finally 
         {
             mIsConnected = false;
             mTag.setTechnologyDisconnected();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mTag.getTagService().resetTimeouts();
-            //mTag.getTagService().reconnect(mTag.getServiceHandle());
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-        //} finally {
-            //mIsConnected = false;
-            //mTag.setTechnologyDisconnected();
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -208,18 +212,18 @@ abstract class BasicTagTechnology implements TagTechnology {
         try 
         {
             int var7ACE9C893624C9A3992072F313461E38_1345617301 = (mTag.getTagService().getMaxTransceiveLength(mSelectedTechnology));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1598358200 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1598358200;
-        // ---------- Original Method ----------
-        //try {
-            //return mTag.getTagService().getMaxTransceiveLength(mSelectedTechnology);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-            //return 0;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -232,33 +236,33 @@ abstract class BasicTagTechnology implements TagTechnology {
                     data, raw);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("transceive failed");
-            } //End block
+            } 
             {
                 byte[] var09BF1567DACC2F11C05A732312048852_56165192 = (result.getResponseOrThrow());
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("NFC service died");
-        } //End block
+        } 
         addTaint(data[0]);
         addTaint(raw);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1101951245 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1101951245;
-        // ---------- Original Method ----------
-        //checkConnected();
-        //try {
-            //TransceiveResult result = mTag.getTagService().transceive(mTag.getServiceHandle(),
-                    //data, raw);
-            //if (result == null) {
-                //throw new IOException("transceive failed");
-            //} else {
-                //return result.getResponseOrThrow();
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-            //throw new IOException("NFC service died");
-        //}
+        
+        
+        
+            
+                    
+            
+                
+            
+                
+            
+        
+            
+            
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.http.entity;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,8 +26,8 @@ public class BasicHttpEntity extends AbstractHttpEntity {
     public  BasicHttpEntity() {
         super();
         this.length = -1;
-        // ---------- Original Method ----------
-        //this.length = -1;
+        
+        
     }
 
     
@@ -35,33 +35,34 @@ public class BasicHttpEntity extends AbstractHttpEntity {
     public long getContentLength() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1019542469 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1019542469;
-        // ---------- Original Method ----------
-        //return this.length;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.571 -0400", hash_original_method = "DD43DF1BE34625633489098C75403E56", hash_generated_method = "8C75407664AA37BCEA685099079972F7")
     public InputStream getContent() throws IllegalStateException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_2120905628 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_2120905628 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Content has not been provided");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Content has been consumed");
-        } //End block
+        } 
         this.contentObtained = true;
         varB4EAC82CA7396A68D541C85D26508E83_2120905628 = this.content;
-        varB4EAC82CA7396A68D541C85D26508E83_2120905628.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2120905628.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2120905628;
-        // ---------- Original Method ----------
-        //if (this.content == null) {
-            //throw new IllegalStateException("Content has not been provided");
-        //}
-        //if (this.contentObtained) {
-            //throw new IllegalStateException("Content has been consumed");
-        //}
-        //this.contentObtained = true;
-        //return this.content;
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -69,16 +70,16 @@ public class BasicHttpEntity extends AbstractHttpEntity {
     public boolean isRepeatable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1210150284 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1210150284;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.571 -0400", hash_original_method = "7EB1D34B8B79AC60227ACAB040078324", hash_generated_method = "727B385E1B6CC2143FAFA858B4B3D854")
     public void setContentLength(long len) {
         this.length = len;
-        // ---------- Original Method ----------
-        //this.length = len;
+        
+        
     }
 
     
@@ -86,9 +87,9 @@ public class BasicHttpEntity extends AbstractHttpEntity {
     public void setContent(final InputStream instream) {
         this.content = instream;
         this.contentObtained = false;
-        // ---------- Original Method ----------
-        //this.content = instream;
-        //this.contentObtained = false;
+        
+        
+        
     }
 
     
@@ -96,7 +97,7 @@ public class BasicHttpEntity extends AbstractHttpEntity {
     public void writeTo(final OutputStream outstream) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Output stream may not be null");
-        } //End block
+        } 
         InputStream instream = getContent();
         int l;
         byte[] tmp = new byte[2048];
@@ -104,19 +105,19 @@ public class BasicHttpEntity extends AbstractHttpEntity {
             boolean var760073AB7A72A3E24F5E04B77421525F_363833694 = ((l = instream.read(tmp)) != -1);
             {
                 outstream.write(tmp, 0, l);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(outstream.getTaint());
-        // ---------- Original Method ----------
-        //if (outstream == null) {
-            //throw new IllegalArgumentException("Output stream may not be null");
-        //}
-        //InputStream instream = getContent();
-        //int l;
-        //byte[] tmp = new byte[2048];
-        //while ((l = instream.read(tmp)) != -1) {
-            //outstream.write(tmp, 0, l);
-        //}
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -124,20 +125,21 @@ public class BasicHttpEntity extends AbstractHttpEntity {
     public boolean isStreaming() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1647121247 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1647121247;
-        // ---------- Original Method ----------
-        //return !this.contentObtained && this.content != null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.573 -0400", hash_original_method = "DCFF80E870BC55BBCCB28CB7928D312B", hash_generated_method = "46CCF474F141CDEED1AEE1D6680B93F6")
     public void consumeContent() throws IOException {
         {
             content.close();
-        } //End block
-        // ---------- Original Method ----------
-        //if (content != null) {
-            //content.close(); 
-        //}
+        } 
+        
+        
+            
+        
     }
 
     

@@ -1,11 +1,11 @@
 package dalvik.system.profiler;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -44,9 +44,9 @@ public final class BinaryHprofWriter {
     private  BinaryHprofWriter(HprofData data, OutputStream outputStream) {
         this.data = data;
         this.out = new DataOutputStream(outputStream);
-        // ---------- Original Method ----------
-        //this.data = data;
-        //this.out = new DataOutputStream(outputStream);
+        
+        
+        
     }
 
     
@@ -67,8 +67,8 @@ public final class BinaryHprofWriter {
                 HprofData.ThreadEvent event = var070E69574E1A624F954887941AC708CA_1734549633.next();
                 {
                     writeThreadEvent(event);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             Set<HprofData.Sample> samples = data.getSamples();
             int total = 0;
             {
@@ -78,31 +78,31 @@ public final class BinaryHprofWriter {
                 {
                     total += sample.count;
                     writeStackTrace(sample.stackTrace);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             writeCpuSamples(total, samples);
-        } //End block
+        } 
         finally 
         {
             out.flush();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //writeHeader(data.getStartMillis());
-            //writeControlSettings(data.getFlags(), data.getDepth());
-            //for (HprofData.ThreadEvent event : data.getThreadHistory()) {
-                //writeThreadEvent(event);
-            //}
-            //Set<HprofData.Sample> samples = data.getSamples();
-            //int total = 0;
-            //for (HprofData.Sample sample : samples) {
-                //total += sample.count;
-                //writeStackTrace(sample.stackTrace);
-            //}
-            //writeCpuSamples(total, samples);
-        //} finally {
-            //out.flush();
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            
+                
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -113,11 +113,11 @@ public final class BinaryHprofWriter {
         out.writeInt(BinaryHprof.ID_SIZE);
         out.writeLong(dumpTimeInMilliseconds);
         addTaint(dumpTimeInMilliseconds);
-        // ---------- Original Method ----------
-        //out.writeBytes(BinaryHprof.MAGIC + "1.0.2");
-        //out.writeByte(0);
-        //out.writeInt(BinaryHprof.ID_SIZE);
-        //out.writeLong(dumpTimeInMilliseconds);
+        
+        
+        
+        
+        
     }
 
     
@@ -126,7 +126,7 @@ public final class BinaryHprofWriter {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("depth too large for binary hprof: "
                                                + depth + " > " + Short.MAX_VALUE);
-        } //End block
+        } 
         writeRecordHeader(BinaryHprof.Tag.CONTROL_SETTINGS,
                           0,
                           BinaryHprof.Tag.CONTROL_SETTINGS.maximumSize);
@@ -134,39 +134,39 @@ public final class BinaryHprofWriter {
         out.writeShort((short) depth);
         addTaint(flags);
         addTaint(depth);
-        // ---------- Original Method ----------
-        //if (depth > Short.MAX_VALUE) {
-            //throw new IllegalArgumentException("depth too large for binary hprof: "
-                                               //+ depth + " > " + Short.MAX_VALUE);
-        //}
-        //writeRecordHeader(BinaryHprof.Tag.CONTROL_SETTINGS,
-                          //0,
-                          //BinaryHprof.Tag.CONTROL_SETTINGS.maximumSize);
-        //out.writeInt(flags);
-        //out.writeShort((short) depth);
+        
+        
+            
+                                               
+        
+        
+                          
+                          
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.886 -0400", hash_original_method = "1F5D47BDA1DF5C3350AF092C7A31D89B", hash_generated_method = "0F2DE3230EC283F197093DE4A687E2FD")
     private void writeThreadEvent(HprofData.ThreadEvent e) throws IOException {
-        //Begin case START 
+        
         writeStartThread(e);
-        //End case START 
-        //Begin case END 
+        
+        
         writeStopThread(e);
-        //End case END 
+        
         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(e.type.toString());
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
-        //switch (e.type) {
-            //case START:
-                //writeStartThread(e);
-                //return;
-            //case END:
-                //writeStopThread(e);
-                //return;
-        //}
-        //throw new IllegalStateException(e.type.toString());
+        
+        
+            
+                
+                
+            
+                
+                
+        
+        
     }
 
     
@@ -185,19 +185,19 @@ public final class BinaryHprofWriter {
         writeId(groupNameId);
         writeId(parentGroupNameId);
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
-        //int threadNameId = writeString(e.threadName);
-        //int groupNameId = writeString(e.groupName);
-        //int parentGroupNameId = writeString(e.parentGroupName);
-        //writeRecordHeader(BinaryHprof.Tag.START_THREAD,
-                          //0,
-                          //BinaryHprof.Tag.START_THREAD.maximumSize);
-        //out.writeInt(e.threadId);
-        //writeId(e.objectId);
-        //out.writeInt(0);
-        //writeId(threadNameId);
-        //writeId(groupNameId);
-        //writeId(parentGroupNameId);
+        
+        
+        
+        
+        
+                          
+                          
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -208,11 +208,11 @@ public final class BinaryHprofWriter {
                           BinaryHprof.Tag.END_THREAD.maximumSize);
         out.writeInt(e.threadId);
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
-        //writeRecordHeader(BinaryHprof.Tag.END_THREAD,
-                          //0,
-                          //BinaryHprof.Tag.END_THREAD.maximumSize);
-        //out.writeInt(e.threadId);
+        
+        
+                          
+                          
+        
     }
 
     
@@ -223,21 +223,21 @@ public final class BinaryHprofWriter {
         String error = hprofTag.checkSize(recordLength);
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(error);
-        } //End block
+        } 
         out.writeByte(hprofTag.tag);
         out.writeInt(timeDeltaInMicroseconds);
         out.writeInt(recordLength);
         addTaint(hprofTag.getTaint());
         addTaint(timeDeltaInMicroseconds);
         addTaint(recordLength);
-        // ---------- Original Method ----------
-        //String error = hprofTag.checkSize(recordLength);
-        //if (error != null) {
-            //throw new AssertionError(error);
-        //}
-        //out.writeByte(hprofTag.tag);
-        //out.writeInt(timeDeltaInMicroseconds);
-        //out.writeInt(recordLength);
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -245,8 +245,8 @@ public final class BinaryHprofWriter {
     private void writeId(int id) throws IOException {
         out.writeInt(id);
         addTaint(id);
-        // ---------- Original Method ----------
-        //out.writeInt(id);
+        
+        
     }
 
     
@@ -264,23 +264,23 @@ public final class BinaryHprofWriter {
         addTaint(string.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1788913393 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1788913393;
-        // ---------- Original Method ----------
-        //if (string == null) {
-            //return 0;
-        //}
-        //Integer identifier = stringToId.get(string);
-        //if (identifier != null) {
-            //return identifier;
-        //}
-        //int id = nextStringId++;
-        //stringToId.put(string, id);
-        //byte[] bytes = string.getBytes("UTF-8");
-        //writeRecordHeader(BinaryHprof.Tag.STRING_IN_UTF8,
-                          //0,
-                          //BinaryHprof.ID_SIZE + bytes.length);
-        //out.writeInt(id);
-        //out.write(bytes, 0, bytes.length);
-        //return id;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+        
+                          
+                          
+        
+        
+        
     }
 
     
@@ -297,22 +297,22 @@ public final class BinaryHprofWriter {
             {
                 out.writeInt(sample.count);
                 out.writeInt(sample.stackTrace.stackTraceId);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(totalSamples);
         addTaint(samples.getTaint());
-        // ---------- Original Method ----------
-        //int samplesCount = samples.size();
-        //if (samplesCount == 0) {
-            //return;
-        //}
-        //writeRecordHeader(BinaryHprof.Tag.CPU_SAMPLES, 0, 4 + 4 + (samplesCount * (4 + 4)));
-        //out.writeInt(totalSamples);
-        //out.writeInt(samplesCount);
-        //for (HprofData.Sample sample : samples) {
-            //out.writeInt(sample.count);
-            //out.writeInt(sample.stackTrace.stackTraceId);
-        //}
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -324,8 +324,8 @@ public final class BinaryHprofWriter {
             int i = 0;
             {
                 stackFrameIds[i] = writeStackFrame(stackTrace.stackFrames[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         writeRecordHeader(BinaryHprof.Tag.STACK_TRACE,
                           0,
                           4 + 4 + 4 + (frames * BinaryHprof.ID_SIZE));
@@ -336,24 +336,24 @@ public final class BinaryHprofWriter {
             int stackFrameId = stackFrameIds[0];
             {
                 writeId(stackFrameId);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(stackTrace.getTaint());
-        // ---------- Original Method ----------
-        //int frames = stackTrace.stackFrames.length;
-        //int[] stackFrameIds = new int[frames];
-        //for (int i = 0; i < frames; i++) {
-            //stackFrameIds[i] = writeStackFrame(stackTrace.stackFrames[i]);
-        //}
-        //writeRecordHeader(BinaryHprof.Tag.STACK_TRACE,
-                          //0,
-                          //4 + 4 + 4 + (frames * BinaryHprof.ID_SIZE));
-        //out.writeInt(stackTrace.stackTraceId);
-        //out.writeInt(stackTrace.threadId);
-        //out.writeInt(frames);
-        //for (int stackFrameId : stackFrameIds) {
-            //writeId(stackFrameId);
-        //}
+        
+        
+        
+        
+            
+        
+        
+                          
+                          
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -373,22 +373,22 @@ public final class BinaryHprofWriter {
         addTaint(className.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_966442333 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_966442333;
-        // ---------- Original Method ----------
-        //Integer identifier = classNameToId.get(className);
-        //if (identifier != null) {
-            //return identifier;
-        //}
-        //int id = nextClassId++;
-        //classNameToId.put(className, id);
-        //int classNameId = writeString(className);
-        //writeRecordHeader(BinaryHprof.Tag.LOAD_CLASS,
-                          //0,
-                          //BinaryHprof.Tag.LOAD_CLASS.maximumSize);
-        //out.writeInt(id);
-        //writeId(0);
-        //out.writeInt(0);
-        //writeId(classNameId);
-        //return id;
+        
+        
+        
+            
+        
+        
+        
+        
+        
+                          
+                          
+        
+        
+        
+        
+        
     }
 
     
@@ -412,26 +412,26 @@ public final class BinaryHprofWriter {
         addTaint(stackFrame.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_921628704 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_921628704;
-        // ---------- Original Method ----------
-        //Integer identifier = stackFrameToId.get(stackFrame);
-        //if (identifier != null) {
-            //return identifier;
-        //}
-        //int id = nextStackFrameId++;
-        //stackFrameToId.put(stackFrame, id);
-        //int classId = writeLoadClass(stackFrame.getClassName());
-        //int methodNameId = writeString(stackFrame.getMethodName());
-        //int sourceId = writeString(stackFrame.getFileName());
-        //writeRecordHeader(BinaryHprof.Tag.STACK_FRAME,
-                          //0,
-                          //BinaryHprof.Tag.STACK_FRAME.maximumSize);
-        //writeId(id);
-        //writeId(methodNameId);
-        //writeId(0);
-        //writeId(sourceId);
-        //out.writeInt(classId);
-        //out.writeInt(stackFrame.getLineNumber());
-        //return id;
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+                          
+                          
+        
+        
+        
+        
+        
+        
+        
     }
 
     

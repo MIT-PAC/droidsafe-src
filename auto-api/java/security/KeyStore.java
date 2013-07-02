@@ -1,11 +1,11 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.FileInputStream;
@@ -45,19 +45,21 @@ public class KeyStore {
         this.provider = provider;
         this.implSpi = keyStoreSpi;
         isInit = false;
-        // ---------- Original Method ----------
-        //this.type = type;
-        //this.provider = provider;
-        //this.implSpi = keyStoreSpi;
-        //isInit = false;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void throwNotInitialized() throws KeyStoreException {
         throw new KeyStoreException("KeyStore was not initialized");
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyStore getInstance(String type) throws KeyStoreException {
         if (type == null) {
             throw new NullPointerException();
@@ -71,6 +73,7 @@ public class KeyStore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyStore getInstance(String type, String provider) throws KeyStoreException, NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
             throw new IllegalArgumentException();
@@ -87,6 +90,7 @@ public class KeyStore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyStore getInstance(String type, Provider provider) throws KeyStoreException {
         if (provider == null) {
             throw new IllegalArgumentException();
@@ -111,97 +115,97 @@ public class KeyStore {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.265 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "B5E90E42A2AC7D1FA0CCD20B019C65AC")
     public final Provider getProvider() {
-        Provider varB4EAC82CA7396A68D541C85D26508E83_492131810 = null; //Variable for return #1
+        Provider varB4EAC82CA7396A68D541C85D26508E83_492131810 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_492131810 = provider;
-        varB4EAC82CA7396A68D541C85D26508E83_492131810.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_492131810.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_492131810;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.265 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "E29CB1D79077A934FF7E60B437BDD327")
     public final String getType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1172419483 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1172419483 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1172419483 = type;
-        varB4EAC82CA7396A68D541C85D26508E83_1172419483.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1172419483.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1172419483;
-        // ---------- Original Method ----------
-        //return type;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.266 -0400", hash_original_method = "F59E459BECAEDEBCB13476A41CDEA779", hash_generated_method = "7981CD005F35D9E9F5BC1AA227EB574C")
     public final Key getKey(String alias, char[] password) throws KeyStoreException, NoSuchAlgorithmException,
             UnrecoverableKeyException {
-        Key varB4EAC82CA7396A68D541C85D26508E83_1365057464 = null; //Variable for return #1
+        Key varB4EAC82CA7396A68D541C85D26508E83_1365057464 = null; 
         {
             throwNotInitialized();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1365057464 = implSpi.engineGetKey(alias, password);
         addTaint(alias.getTaint());
         addTaint(password[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_1365057464.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1365057464.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1365057464;
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //return implSpi.engineGetKey(alias, password);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.266 -0400", hash_original_method = "504D1BEC6FF8E94C83F90A431D916244", hash_generated_method = "BEF0C7B9A872706B672975DD346D5CE5")
     public final Certificate[] getCertificateChain(String alias) throws KeyStoreException {
-        Certificate[] varB4EAC82CA7396A68D541C85D26508E83_756965373 = null; //Variable for return #1
+        Certificate[] varB4EAC82CA7396A68D541C85D26508E83_756965373 = null; 
         {
             throwNotInitialized();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_756965373 = implSpi.engineGetCertificateChain(alias);
         addTaint(alias.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_756965373.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_756965373.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_756965373;
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //return implSpi.engineGetCertificateChain(alias);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.267 -0400", hash_original_method = "7FA5F9282816EB62AB780CC8E8ACBC45", hash_generated_method = "9DACDAFCEB767A1F7F692D4A9FB4D258")
     public final Certificate getCertificate(String alias) throws KeyStoreException {
-        Certificate varB4EAC82CA7396A68D541C85D26508E83_1337702994 = null; //Variable for return #1
+        Certificate varB4EAC82CA7396A68D541C85D26508E83_1337702994 = null; 
         {
             throwNotInitialized();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1337702994 = implSpi.engineGetCertificate(alias);
         addTaint(alias.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1337702994.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1337702994.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1337702994;
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //return implSpi.engineGetCertificate(alias);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.268 -0400", hash_original_method = "0EAF8EB6AFEC620E9CCB79F4CF9FFE6B", hash_generated_method = "E6C41BB74D5DA3161482B0BC9787BAFF")
     public final Date getCreationDate(String alias) throws KeyStoreException {
-        Date varB4EAC82CA7396A68D541C85D26508E83_116136707 = null; //Variable for return #1
+        Date varB4EAC82CA7396A68D541C85D26508E83_116136707 = null; 
         {
             throwNotInitialized();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_116136707 = implSpi.engineGetCreationDate(alias);
         addTaint(alias.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_116136707.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_116136707.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_116136707;
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //return implSpi.engineGetCreationDate(alias);
+        
+        
+            
+        
+        
     }
 
     
@@ -210,23 +214,23 @@ public class KeyStore {
             Certificate[] chain) throws KeyStoreException {
         {
             throwNotInitialized();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Certificate chain is not defined for Private key");
-        } //End block
+        } 
         implSpi.engineSetKeyEntry(alias, key, password, chain);
         addTaint(alias.getTaint());
         addTaint(key.getTaint());
         addTaint(password[0]);
         addTaint(chain[0].getTaint());
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //if (key != null && key instanceof PrivateKey && (chain == null || chain.length == 0)) {
-            //throw new IllegalArgumentException("Certificate chain is not defined for Private key");
-        //}
-        //implSpi.engineSetKeyEntry(alias, key, password, chain);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -234,16 +238,16 @@ public class KeyStore {
     public final void setKeyEntry(String alias, byte[] key, Certificate[] chain) throws KeyStoreException {
         {
             throwNotInitialized();
-        } //End block
+        } 
         implSpi.engineSetKeyEntry(alias, key, chain);
         addTaint(alias.getTaint());
         addTaint(key[0]);
         addTaint(chain[0].getTaint());
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //implSpi.engineSetKeyEntry(alias, key, chain);
+        
+        
+            
+        
+        
     }
 
     
@@ -251,15 +255,15 @@ public class KeyStore {
     public final void setCertificateEntry(String alias, Certificate cert) throws KeyStoreException {
         {
             throwNotInitialized();
-        } //End block
+        } 
         implSpi.engineSetCertificateEntry(alias, cert);
         addTaint(alias.getTaint());
         addTaint(cert.getTaint());
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //implSpi.engineSetCertificateEntry(alias, cert);
+        
+        
+            
+        
+        
     }
 
     
@@ -267,31 +271,31 @@ public class KeyStore {
     public final void deleteEntry(String alias) throws KeyStoreException {
         {
             throwNotInitialized();
-        } //End block
+        } 
         implSpi.engineDeleteEntry(alias);
         addTaint(alias.getTaint());
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //implSpi.engineDeleteEntry(alias);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.271 -0400", hash_original_method = "E42AEF144F775210B33C3E2476EBCBA6", hash_generated_method = "200AC168B17BBCB6DF2CB24E799B1665")
     public final Enumeration<String> aliases() throws KeyStoreException {
-        Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_40511027 = null; //Variable for return #1
+        Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_40511027 = null; 
         {
             throwNotInitialized();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_40511027 = implSpi.engineAliases();
-        varB4EAC82CA7396A68D541C85D26508E83_40511027.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_40511027.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_40511027;
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //return implSpi.engineAliases();
+        
+        
+            
+        
+        
     }
 
     
@@ -299,16 +303,16 @@ public class KeyStore {
     public final boolean containsAlias(String alias) throws KeyStoreException {
         {
             throwNotInitialized();
-        } //End block
+        } 
         boolean varC74CBEA33D917A72A543D0A2B74AA83F_1677234386 = (implSpi.engineContainsAlias(alias));
         addTaint(alias.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1788619767 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1788619767;
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //return implSpi.engineContainsAlias(alias);
+        
+        
+            
+        
+        
     }
 
     
@@ -316,15 +320,15 @@ public class KeyStore {
     public final int size() throws KeyStoreException {
         {
             throwNotInitialized();
-        } //End block
+        } 
         int var990E02F085B0E698494A9E5D76EBD4FE_204071070 = (implSpi.engineSize());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_110429483 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_110429483;
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //return implSpi.engineSize();
+        
+        
+            
+        
+        
     }
 
     
@@ -332,16 +336,16 @@ public class KeyStore {
     public final boolean isKeyEntry(String alias) throws KeyStoreException {
         {
             throwNotInitialized();
-        } //End block
+        } 
         boolean varCF4E372910B3A4B047D7B0F4F7409967_2111754598 = (implSpi.engineIsKeyEntry(alias));
         addTaint(alias.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_85379033 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_85379033;
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //return implSpi.engineIsKeyEntry(alias);
+        
+        
+            
+        
+        
     }
 
     
@@ -349,34 +353,34 @@ public class KeyStore {
     public final boolean isCertificateEntry(String alias) throws KeyStoreException {
         {
             throwNotInitialized();
-        } //End block
+        } 
         boolean var641C83C37ECCCB11EF20F817F7B95E37_191998426 = (implSpi.engineIsCertificateEntry(alias));
         addTaint(alias.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1804315595 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1804315595;
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //return implSpi.engineIsCertificateEntry(alias);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.274 -0400", hash_original_method = "2386A451870E6EF1C02A8B8C98B7CB68", hash_generated_method = "A13104D04C3F1D190EFBF18FB169FAAA")
     public final String getCertificateAlias(Certificate cert) throws KeyStoreException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1062521082 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1062521082 = null; 
         {
             throwNotInitialized();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1062521082 = implSpi.engineGetCertificateAlias(cert);
         addTaint(cert.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1062521082.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1062521082.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1062521082;
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //return implSpi.engineGetCertificateAlias(cert);
+        
+        
+            
+        
+        
     }
 
     
@@ -384,15 +388,15 @@ public class KeyStore {
     public final void store(OutputStream stream, char[] password) throws KeyStoreException, IOException, NoSuchAlgorithmException, CertificateException {
         {
             throwNotInitialized();
-        } //End block
+        } 
         implSpi.engineStore(stream, password);
         addTaint(stream.getTaint());
         addTaint(password[0]);
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //implSpi.engineStore(stream, password);
+        
+        
+            
+        
+        
     }
 
     
@@ -401,14 +405,14 @@ public class KeyStore {
             IOException, NoSuchAlgorithmException, CertificateException {
         {
             throwNotInitialized();
-        } //End block
+        } 
         implSpi.engineStore(param);
         addTaint(param.getTaint());
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //implSpi.engineStore(param);
+        
+        
+            
+        
+        
     }
 
     
@@ -418,9 +422,9 @@ public class KeyStore {
         isInit = true;
         addTaint(stream.getTaint());
         addTaint(password[0]);
-        // ---------- Original Method ----------
-        //implSpi.engineLoad(stream, password);
-        //isInit = true;
+        
+        
+        
     }
 
     
@@ -430,34 +434,34 @@ public class KeyStore {
         implSpi.engineLoad(param);
         isInit = true;
         addTaint(param.getTaint());
-        // ---------- Original Method ----------
-        //implSpi.engineLoad(param);
-        //isInit = true;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.275 -0400", hash_original_method = "545D5A95E5DE487291148190C6871E3B", hash_generated_method = "FE3D968C5F9F8E87138774505FAD7175")
     public final Entry getEntry(String alias, ProtectionParameter param) throws NoSuchAlgorithmException, UnrecoverableEntryException, KeyStoreException {
-        Entry varB4EAC82CA7396A68D541C85D26508E83_1139469841 = null; //Variable for return #1
+        Entry varB4EAC82CA7396A68D541C85D26508E83_1139469841 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("alias == null");
-        } //End block
+        } 
         {
             throwNotInitialized();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1139469841 = implSpi.engineGetEntry(alias, param);
         addTaint(alias.getTaint());
         addTaint(param.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1139469841.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1139469841.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1139469841;
-        // ---------- Original Method ----------
-        //if (alias == null) {
-            //throw new NullPointerException("alias == null");
-        //}
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //return implSpi.engineGetEntry(alias, param);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -466,28 +470,28 @@ public class KeyStore {
             ProtectionParameter param) throws KeyStoreException {
         {
             throwNotInitialized();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("alias == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("entry == null");
-        } //End block
+        } 
         implSpi.engineSetEntry(alias, entry, param);
         addTaint(alias.getTaint());
         addTaint(entry.getTaint());
         addTaint(param.getTaint());
-        // ---------- Original Method ----------
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //if (alias == null) {
-            //throw new NullPointerException("alias == null");
-        //}
-        //if (entry == null) {
-            //throw new NullPointerException("entry == null");
-        //}
-        //implSpi.engineSetEntry(alias, entry, param);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -496,29 +500,29 @@ public class KeyStore {
             Class<? extends KeyStore.Entry> entryClass) throws KeyStoreException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("alias == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("entryClass == null");
-        } //End block
+        } 
         {
             throwNotInitialized();
-        } //End block
+        } 
         boolean var559B701D25A2C05BEC5A34404B551992_1694041647 = (implSpi.engineEntryInstanceOf(alias, entryClass));
         addTaint(alias.getTaint());
         addTaint(entryClass.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1733975839 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1733975839;
-        // ---------- Original Method ----------
-        //if (alias == null) {
-            //throw new NullPointerException("alias == null");
-        //}
-        //if (entryClass == null) {
-            //throw new NullPointerException("entryClass == null");
-        //}
-        //if (!isInit) {
-            //throwNotInitialized();
-        //}
-        //return implSpi.engineEntryInstanceOf(alias, entryClass);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -526,7 +530,7 @@ public class KeyStore {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.277 -0400", hash_original_method = "7023F746232F077A36DCA003B1A512D2", hash_generated_method = "6A2D7D49B1C0B8CFA567F3789BFA22DC")
         protected  Builder() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -623,86 +627,86 @@ public class KeyStore {
                 providerForKeyStore = provider;
                 isGetKeyStore = false;
                 lastException = null;
-                // ---------- Original Method ----------
-                //keyStore = ks;
-                //protParameter = pp;
-                //fileForLoad = file;
-                //typeForKeyStore = type;
-                //providerForKeyStore = provider;
-                //isGetKeyStore = false;
-                //lastException = null;
+                
+                
+                
+                
+                
+                
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.282 -0400", hash_original_method = "ACF5EEE61FC6C7F04EA4DB97E46396E0", hash_generated_method = "A38F8E711B3DA2FA7023FFA89ED51A2D")
             @Override
             public synchronized KeyStore getKeyStore() throws KeyStoreException {
-                KeyStore varB4EAC82CA7396A68D541C85D26508E83_722199918 = null; //Variable for return #1
-                KeyStore varB4EAC82CA7396A68D541C85D26508E83_220869037 = null; //Variable for return #2
+                KeyStore varB4EAC82CA7396A68D541C85D26508E83_722199918 = null; 
+                KeyStore varB4EAC82CA7396A68D541C85D26508E83_220869037 = null; 
                 {
                     if (DroidSafeAndroidRuntime.control) throw lastException;
-                } //End block
+                } 
                 {
                     isGetKeyStore = true;
                     varB4EAC82CA7396A68D541C85D26508E83_722199918 = keyStore;
-                } //End block
+                } 
                 try 
                 {
                     final KeyStore ks = (providerForKeyStore == null ? KeyStore
                             .getInstance(typeForKeyStore) : KeyStore
-                            .getInstance(typeForKeyStore, providerForKeyStore));//DSFIXME:  CODE0008: Nested ternary operator in expression
+                            .getInstance(typeForKeyStore, providerForKeyStore));
                     char[] passwd;
                     {
                         passwd = ((PasswordProtection) protParameter)
                                 .getPassword();
-                    } //End block
+                    } 
                     {
                         passwd = KeyStoreSpi
                                 .getPasswordFromCallBack(protParameter);
-                    } //End block
+                    } 
                     {
                         if (DroidSafeAndroidRuntime.control) throw new KeyStoreException("protectionParameter is neither "
                                 + "PasswordProtection nor CallbackHandlerProtection instance");
-                    } //End block
+                    } 
                     {
                         FileInputStream fis = null;
                         try 
                         {
                             fis = new FileInputStream(fileForLoad);
                             ks.load(fis, passwd);
-                        } //End block
+                        } 
                         finally 
                         {
                             IoUtils.closeQuietly(fis);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         ks.load(new TmpLSParameter(protParameter));
-                    } //End block
+                    } 
                     isGetKeyStore = true;
                     varB4EAC82CA7396A68D541C85D26508E83_220869037 = ks;
-                } //End block
+                } 
                 catch (KeyStoreException e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw lastException = e;
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     if (DroidSafeAndroidRuntime.control) throw lastException = new KeyStoreException(e);
-                } //End block
-                KeyStore varA7E53CE21691AB073D9660D615818899_1742875586; //Final return value
+                } 
+                KeyStore varA7E53CE21691AB073D9660D615818899_1742875586; 
                 switch (DroidSafeAndroidRuntime.switchControl) {
-                    case 1: //Assign result for return ordinal #1
+                    case 1: 
                         varA7E53CE21691AB073D9660D615818899_1742875586 = varB4EAC82CA7396A68D541C85D26508E83_722199918;
                         break;
                     default:
                         varA7E53CE21691AB073D9660D615818899_1742875586 = varB4EAC82CA7396A68D541C85D26508E83_220869037;
                         break;
                 }
-                varA7E53CE21691AB073D9660D615818899_1742875586.addTaint(getTaint()); //Add taint from parent
+                varA7E53CE21691AB073D9660D615818899_1742875586.addTaint(getTaint()); 
                 return varA7E53CE21691AB073D9660D615818899_1742875586;
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 
             
@@ -710,25 +714,25 @@ public class KeyStore {
             @Override
             public synchronized ProtectionParameter getProtectionParameter(
                     String alias) throws KeyStoreException {
-                ProtectionParameter varB4EAC82CA7396A68D541C85D26508E83_1280584080 = null; //Variable for return #1
+                ProtectionParameter varB4EAC82CA7396A68D541C85D26508E83_1280584080 = null; 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NullPointerException("alias == null");
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("getKeyStore() was not invoked");
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1280584080 = protParameter;
                 addTaint(alias.getTaint());
-                varB4EAC82CA7396A68D541C85D26508E83_1280584080.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1280584080.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1280584080;
-                // ---------- Original Method ----------
-                //if (alias == null) {
-                    //throw new NullPointerException("alias == null");
-                //}
-                //if (!isGetKeyStore) {
-                    //throw new IllegalStateException("getKeyStore() was not invoked");
-                //}
-                //return protParameter;
+                
+                
+                    
+                
+                
+                    
+                
+                
             }
 
             
@@ -744,19 +748,19 @@ public class KeyStore {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.283 -0400", hash_original_method = "418DF9EAB7B4417735B80C8244C9AAA5", hash_generated_method = "98B7F8D22C8521F8F173B8F76A0B9B73")
             public  TmpLSParameter(ProtectionParameter protPar) {
                 this.protPar = protPar;
-                // ---------- Original Method ----------
-                //this.protPar = protPar;
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.284 -0400", hash_original_method = "DB6A0984AE74C268B3C1D4EEBB473782", hash_generated_method = "AC5E9350BD974129EB4C2FA6C806C4FF")
             public ProtectionParameter getProtectionParameter() {
-                ProtectionParameter varB4EAC82CA7396A68D541C85D26508E83_184284988 = null; //Variable for return #1
+                ProtectionParameter varB4EAC82CA7396A68D541C85D26508E83_184284988 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_184284988 = protPar;
-                varB4EAC82CA7396A68D541C85D26508E83_184284988.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_184284988.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_184284988;
-                // ---------- Original Method ----------
-                //return protPar;
+                
+                
             }
 
             
@@ -777,24 +781,24 @@ public class KeyStore {
         public  CallbackHandlerProtection(CallbackHandler handler) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("handler == null");
-            } //End block
+            } 
             this.callbackHandler = handler;
-            // ---------- Original Method ----------
-            //if (handler == null) {
-                //throw new NullPointerException("handler == null");
-            //}
-            //this.callbackHandler = handler;
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.286 -0400", hash_original_method = "0C642C7CCF2E4FDE3C3DD3C1F1B0C85D", hash_generated_method = "4942B950A4A1E37FF452574A5AABA02B")
         public CallbackHandler getCallbackHandler() {
-            CallbackHandler varB4EAC82CA7396A68D541C85D26508E83_2020219635 = null; //Variable for return #1
+            CallbackHandler varB4EAC82CA7396A68D541C85D26508E83_2020219635 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2020219635 = callbackHandler;
-            varB4EAC82CA7396A68D541C85D26508E83_2020219635.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2020219635.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2020219635;
-            // ---------- Original Method ----------
-            //return callbackHandler;
+            
+            
         }
 
         
@@ -814,11 +818,11 @@ public class KeyStore {
         public  PasswordProtection(char[] password) {
             {
                 this.password = password.clone();
-            } //End block
-            // ---------- Original Method ----------
-            //if (password != null) {
-                //this.password = password.clone();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -826,14 +830,14 @@ public class KeyStore {
         public synchronized char[] getPassword() {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Password was destroyed");
-            } //End block
+            } 
             char[] var50607924ABD4C17119BAF3A1CE41C0EC_1471957532 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_1471957532;
-            // ---------- Original Method ----------
-            //if (isDestroyed) {
-                //throw new IllegalStateException("Password was destroyed");
-            //}
-            //return password;
+            
+            
+                
+            
+            
         }
 
         
@@ -843,13 +847,13 @@ public class KeyStore {
             {
                 Arrays.fill(password, '\u0000');
                 password = null;
-            } //End block
-            // ---------- Original Method ----------
-            //isDestroyed = true;
-            //if (password != null) {
-                //Arrays.fill(password, '\u0000');
-                //password = null;
-            //}
+            } 
+            
+            
+            
+                
+                
+            
         }
 
         
@@ -857,8 +861,8 @@ public class KeyStore {
         public synchronized boolean isDestroyed() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1437951802 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1437951802;
-            // ---------- Original Method ----------
-            //return isDestroyed;
+            
+            
         }
 
         
@@ -878,13 +882,13 @@ public class KeyStore {
         public  PrivateKeyEntry(PrivateKey privateKey, Certificate[] chain) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("privateKey == null");
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("chain == null");
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("chain.length == 0");
-            } //End block
+            } 
             String s = chain[0].getType();
             {
                 boolean varD47D9BD48CBBEB1F61FAB029BE03498A_1366496447 = (!(chain[0].getPublicKey().getAlgorithm()).equals(privateKey.getAlgorithm()));
@@ -892,8 +896,8 @@ public class KeyStore {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Algorithm of private key does not match "
                         + "algorithm of public key in end certificate of entry "
                         + "(with index number: 0)");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 int i = 1;
                 {
@@ -902,10 +906,10 @@ public class KeyStore {
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Certificates from the given chain have "
                                                        + "different types");
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             boolean isAllX509Certificates = true;
             {
                 
@@ -913,59 +917,59 @@ public class KeyStore {
                 {
                     {
                         isAllX509Certificates = false;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 this.chain = new X509Certificate[chain.length];
-            } //End block
+            } 
             {
                 this.chain = new Certificate[chain.length];
-            } //End block
+            } 
             System.arraycopy(chain, 0, this.chain, 0, chain.length);
             this.privateKey = privateKey;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.297 -0400", hash_original_method = "20D5E1BC38F4066008A03A45816FEC0F", hash_generated_method = "EABE0AB4F259F98FACB3A2739F1A4376")
         public PrivateKey getPrivateKey() {
-            PrivateKey varB4EAC82CA7396A68D541C85D26508E83_237430861 = null; //Variable for return #1
+            PrivateKey varB4EAC82CA7396A68D541C85D26508E83_237430861 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_237430861 = privateKey;
-            varB4EAC82CA7396A68D541C85D26508E83_237430861.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_237430861.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_237430861;
-            // ---------- Original Method ----------
-            //return privateKey;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.298 -0400", hash_original_method = "51F3F412A111F70F6F64117AFABD929B", hash_generated_method = "E6325417AAB639E640F5344E32080824")
         public Certificate[] getCertificateChain() {
-            Certificate[] varB4EAC82CA7396A68D541C85D26508E83_572967327 = null; //Variable for return #1
+            Certificate[] varB4EAC82CA7396A68D541C85D26508E83_572967327 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_572967327 = chain.clone();
-            varB4EAC82CA7396A68D541C85D26508E83_572967327.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_572967327.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_572967327;
-            // ---------- Original Method ----------
-            //return chain.clone();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.299 -0400", hash_original_method = "547F6E4E355F50070DC97734154D15F8", hash_generated_method = "DE4183EBA1E765C431E58D198443E6F8")
         public Certificate getCertificate() {
-            Certificate varB4EAC82CA7396A68D541C85D26508E83_561324873 = null; //Variable for return #1
+            Certificate varB4EAC82CA7396A68D541C85D26508E83_561324873 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_561324873 = chain[0];
-            varB4EAC82CA7396A68D541C85D26508E83_561324873.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_561324873.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_561324873;
-            // ---------- Original Method ----------
-            //return chain[0];
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.300 -0400", hash_original_method = "D914F0EEEB01F1C9E1AEDB9A7E511AAE", hash_generated_method = "A9C1F17E3BC9987F5B45966445F1DD78")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_446622741 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_446622741 = null; 
             StringBuilder sb = new StringBuilder(
                     "PrivateKeyEntry: number of elements in certificate chain is ");
             sb.append(Integer.toString(chain.length));
@@ -975,21 +979,21 @@ public class KeyStore {
                 {
                     sb.append(chain[i].toString());
                     sb.append("\n");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_446622741 = sb.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_446622741.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_446622741.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_446622741;
-            // ---------- Original Method ----------
-            //StringBuilder sb = new StringBuilder(
-                    //"PrivateKeyEntry: number of elements in certificate chain is ");
-            //sb.append(Integer.toString(chain.length));
-            //sb.append("\n");
-            //for (int i = 0; i < chain.length; i++) {
-                //sb.append(chain[i].toString());
-                //sb.append("\n");
-            //}
-            //return sb.toString();
+            
+            
+                    
+            
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -1006,40 +1010,40 @@ public class KeyStore {
         public  SecretKeyEntry(SecretKey secretKey) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("secretKey == null");
-            } //End block
+            } 
             this.secretKey = secretKey;
-            // ---------- Original Method ----------
-            //if (secretKey == null) {
-                //throw new NullPointerException("secretKey == null");
-            //}
-            //this.secretKey = secretKey;
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.302 -0400", hash_original_method = "086B5E46810BA78C7777CDD972BB99BA", hash_generated_method = "7C40386FD8355322714D061EBAF24167")
         public SecretKey getSecretKey() {
-            SecretKey varB4EAC82CA7396A68D541C85D26508E83_619906051 = null; //Variable for return #1
+            SecretKey varB4EAC82CA7396A68D541C85D26508E83_619906051 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_619906051 = secretKey;
-            varB4EAC82CA7396A68D541C85D26508E83_619906051.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_619906051.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_619906051;
-            // ---------- Original Method ----------
-            //return secretKey;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.302 -0400", hash_original_method = "55CC87C17B2642C3020CD374CFB01521", hash_generated_method = "5F947C4E317D91421B7EB8C73F8293D2")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1327409086 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1327409086 = null; 
             StringBuilder sb = new StringBuilder("SecretKeyEntry: algorithm - ");
             sb.append(secretKey.getAlgorithm());
             varB4EAC82CA7396A68D541C85D26508E83_1327409086 = sb.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1327409086.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1327409086.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1327409086;
-            // ---------- Original Method ----------
-            //StringBuilder sb = new StringBuilder("SecretKeyEntry: algorithm - ");
-            //sb.append(secretKey.getAlgorithm());
-            //return sb.toString();
+            
+            
+            
+            
         }
 
         
@@ -1056,36 +1060,36 @@ public class KeyStore {
         public  TrustedCertificateEntry(Certificate trustCertificate) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("trustCertificate == null");
-            } //End block
+            } 
             this.trustCertificate = trustCertificate;
-            // ---------- Original Method ----------
-            //if (trustCertificate == null) {
-                //throw new NullPointerException("trustCertificate == null");
-            //}
-            //this.trustCertificate = trustCertificate;
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.303 -0400", hash_original_method = "4E60EB3F26EAC182CAA181F2D2BA1C01", hash_generated_method = "C68BC96E0A88CE162EBF935E4A0A4431")
         public Certificate getTrustedCertificate() {
-            Certificate varB4EAC82CA7396A68D541C85D26508E83_471465534 = null; //Variable for return #1
+            Certificate varB4EAC82CA7396A68D541C85D26508E83_471465534 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_471465534 = trustCertificate;
-            varB4EAC82CA7396A68D541C85D26508E83_471465534.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_471465534.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_471465534;
-            // ---------- Original Method ----------
-            //return trustCertificate;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.304 -0400", hash_original_method = "706775B4BFB1342C7053CE6A0D4515B7", hash_generated_method = "817E5C3A605336C39A646D8BA1D292BE")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_223323213 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_223323213 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_223323213 = "Trusted certificate entry:\n" + trustCertificate;
-            varB4EAC82CA7396A68D541C85D26508E83_223323213.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_223323213.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_223323213;
-            // ---------- Original Method ----------
-            //return "Trusted certificate entry:\n" + trustCertificate;
+            
+            
         }
 
         

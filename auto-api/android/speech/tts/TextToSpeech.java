@@ -1,11 +1,11 @@
 package android.speech.tts;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
@@ -73,7 +73,7 @@ public class TextToSpeech {
         this(context, listener, null);
         addTaint(context.getTaint());
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -83,7 +83,7 @@ public class TextToSpeech {
         addTaint(context.getTaint());
         addTaint(listener.getTaint());
         addTaint(engine.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -99,100 +99,100 @@ public class TextToSpeech {
         mEnginesHelper = new TtsEngines(mContext);
         {
             mPackageName = packageName;
-        } //End block
+        } 
         {
             mPackageName = mContext.getPackageName();
-        } //End block
+        } 
         initTts();
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mInitListener = listener;
-        //mRequestedEngine = engine;
-        //mEarcons = new HashMap<String, Uri>();
-        //mUtterances = new HashMap<String, Uri>();
-        //mUtteranceProgressListener = null;
-        //mEnginesHelper = new TtsEngines(mContext);
-        //if (packageName != null) {
-            //mPackageName = packageName;
-        //} else {
-            //mPackageName = mContext.getPackageName();
-        //}
-        //initTts();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.313 -0400", hash_original_method = "B3E128BBA0564CAE955B890D71B1CE7C", hash_generated_method = "9D634CFE6F2CF4F7922198DF74498369")
     private String getPackageName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_141016466 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_141016466 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_141016466 = mPackageName;
-        varB4EAC82CA7396A68D541C85D26508E83_141016466.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_141016466.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_141016466;
-        // ---------- Original Method ----------
-        //return mPackageName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.313 -0400", hash_original_method = "94C951553FBC2F5928AD7C3B02D8E2C9", hash_generated_method = "F25DA37FE3E692AA6E658CD0B703B881")
     private <R> R runActionNoReconnect(Action<R> action, R errorResult, String method) {
-        R varB4EAC82CA7396A68D541C85D26508E83_575070136 = null; //Variable for return #1
+        R varB4EAC82CA7396A68D541C85D26508E83_575070136 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_575070136 = runAction(action, errorResult, method, false);
         addTaint(action.getTaint());
         addTaint(errorResult.getTaint());
         addTaint(method.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_575070136.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_575070136.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_575070136;
-        // ---------- Original Method ----------
-        //return runAction(action, errorResult, method, false);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.315 -0400", hash_original_method = "29E7B310AE240E4C21F0167C8B8476FB", hash_generated_method = "3852F274F8960EA616679E4E9F1662D6")
     private <R> R runAction(Action<R> action, R errorResult, String method) {
-        R varB4EAC82CA7396A68D541C85D26508E83_1268742917 = null; //Variable for return #1
+        R varB4EAC82CA7396A68D541C85D26508E83_1268742917 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1268742917 = runAction(action, errorResult, method, true);
         addTaint(action.getTaint());
         addTaint(errorResult.getTaint());
         addTaint(method.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1268742917.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1268742917.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1268742917;
-        // ---------- Original Method ----------
-        //return runAction(action, errorResult, method, true);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.316 -0400", hash_original_method = "6EC1A4E0A67965882D9F244E76909BAE", hash_generated_method = "AC62ACC423E04D9A4BF5419C83E84FD0")
     private <R> R runAction(Action<R> action, R errorResult, String method, boolean reconnect) {
-        R varB4EAC82CA7396A68D541C85D26508E83_1677271070 = null; //Variable for return #1
-        R varB4EAC82CA7396A68D541C85D26508E83_2124435936 = null; //Variable for return #2
+        R varB4EAC82CA7396A68D541C85D26508E83_1677271070 = null; 
+        R varB4EAC82CA7396A68D541C85D26508E83_2124435936 = null; 
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1677271070 = errorResult;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_2124435936 = mServiceConnection.runAction(action, errorResult, method, reconnect);
-        } //End block
+        } 
         addTaint(action.getTaint());
         addTaint(errorResult.getTaint());
         addTaint(method.getTaint());
         addTaint(reconnect);
-        R varA7E53CE21691AB073D9660D615818899_639931858; //Final return value
+        R varA7E53CE21691AB073D9660D615818899_639931858; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_639931858 = varB4EAC82CA7396A68D541C85D26508E83_1677271070;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_639931858 = varB4EAC82CA7396A68D541C85D26508E83_2124435936;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_639931858.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_639931858.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_639931858;
-        // ---------- Original Method ----------
-        //synchronized (mStartLock) {
-            //if (mServiceConnection == null) {
-                //Log.w(TAG, method + " failed: not bound to TTS engine");
-                //return errorResult;
-            //}
-            //return mServiceConnection.runAction(action, errorResult, method, reconnect);
-        //}
+        
+        
+            
+                
+                
+            
+            
+        
     }
 
     
@@ -205,10 +205,10 @@ public class TextToSpeech {
                     boolean var8911BEC7CCD0FB9FC7E4675F4D27106A_984440426 = (connectToEngine(mRequestedEngine));
                     {
                         mCurrentEngine = mRequestedEngine;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         final String defaultEngine = getDefaultEngine();
         {
             boolean varABC6D22B8FBEAE604936A23D49D6DDD0_1372492783 = (defaultEngine != null && !defaultEngine.equals(mRequestedEngine));
@@ -217,10 +217,10 @@ public class TextToSpeech {
                     boolean var7836D76553A5F05531279189C3A7B50A_1507092604 = (connectToEngine(defaultEngine));
                     {
                         mCurrentEngine = defaultEngine;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         final String highestRanked = mEnginesHelper.getHighestRankedEngineName();
         {
             boolean var1A9867EA58712819C70FBE667FD48C74_1537125316 = (highestRanked != null && !highestRanked.equals(mRequestedEngine) &&
@@ -230,16 +230,16 @@ public class TextToSpeech {
                     boolean varB08B03620CB751C6F0BCA99823142EEF_1416998448 = (connectToEngine(highestRanked));
                     {
                         mCurrentEngine = highestRanked;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         mCurrentEngine = null;
         dispatchOnInit(ERROR);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1975614373 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1975614373;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -252,18 +252,18 @@ public class TextToSpeech {
         addTaint(engine.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_212625283 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_212625283;
-        // ---------- Original Method ----------
-        //Connection connection = new Connection();
-        //Intent intent = new Intent(Engine.INTENT_ACTION_TTS_SERVICE);
-        //intent.setPackage(engine);
-        //boolean bound = mContext.bindService(intent, connection, Context.BIND_AUTO_CREATE);
-        //if (!bound) {
-            //Log.e(TAG, "Failed to bind to " + engine);
-            //return false;
-        //} else {
-            //Log.i(TAG, "Sucessfully bound to " + engine);
-            //return true;
-        //}
+        
+        
+        
+        
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -273,16 +273,16 @@ public class TextToSpeech {
             {
                 mInitListener.onInit(result);
                 mInitListener = null;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(result);
-        // ---------- Original Method ----------
-        //synchronized (mStartLock) {
-            //if (mInitListener != null) {
-                //mInitListener.onInit(result);
-                //mInitListener = null;
-            //}
-        //}
+        
+        
+            
+                
+                
+            
+        
     }
 
     
@@ -292,7 +292,7 @@ public class TextToSpeech {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.318 -0400", hash_original_method = "1C176575622D770489EE559F23BB4FED", hash_generated_method = "3707B31C6B25768BCF79A76F427DDA48")
             @Override
             public Void run(ITextToSpeechService service) throws RemoteException {
-                Void varB4EAC82CA7396A68D541C85D26508E83_1476847515 = null; //Variable for return #1
+                Void varB4EAC82CA7396A68D541C85D26508E83_1476847515 = null; 
                 service.setCallback(getPackageName(), null);
                 service.stop(getPackageName());
                 mServiceConnection.disconnect();
@@ -300,29 +300,29 @@ public class TextToSpeech {
                 mCurrentEngine = null;
                 varB4EAC82CA7396A68D541C85D26508E83_1476847515 = null;
                 addTaint(service.getTaint());
-                varB4EAC82CA7396A68D541C85D26508E83_1476847515.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1476847515.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1476847515;
-                // ---------- Original Method ----------
-                //service.setCallback(getPackageName(), null);
-                //service.stop(getPackageName());
-                //mServiceConnection.disconnect();
-                //mServiceConnection = null;
-                //mCurrentEngine = null;
-                //return null;
+                
+                
+                
+                
+                
+                
+                
             }
 }, null, "shutdown");
-        // ---------- Original Method ----------
-        //runActionNoReconnect(new Action<Void>() {
-            //@Override
-            //public Void run(ITextToSpeechService service) throws RemoteException {
-                //service.setCallback(getPackageName(), null);
-                //service.stop(getPackageName());
-                //mServiceConnection.disconnect();
-                //mServiceConnection = null;
-                //mCurrentEngine = null;
-                //return null;
-            //}
-        //}, null, "shutdown");
+        
+        
+            
+            
+                
+                
+                
+                
+                
+                
+            
+        
     }
 
     
@@ -330,17 +330,17 @@ public class TextToSpeech {
     public int addSpeech(String text, String packagename, int resourceId) {
         {
             mUtterances.put(text, makeResourceUri(packagename, resourceId));
-        } //End block
+        } 
         addTaint(text.getTaint());
         addTaint(packagename.getTaint());
         addTaint(resourceId);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_913189626 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_913189626;
-        // ---------- Original Method ----------
-        //synchronized (mStartLock) {
-            //mUtterances.put(text, makeResourceUri(packagename, resourceId));
-            //return SUCCESS;
-        //}
+        
+        
+            
+            
+        
     }
 
     
@@ -348,16 +348,16 @@ public class TextToSpeech {
     public int addSpeech(String text, String filename) {
         {
             mUtterances.put(text, Uri.parse(filename));
-        } //End block
+        } 
         addTaint(text.getTaint());
         addTaint(filename.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1888215056 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1888215056;
-        // ---------- Original Method ----------
-        //synchronized (mStartLock) {
-            //mUtterances.put(text, Uri.parse(filename));
-            //return SUCCESS;
-        //}
+        
+        
+            
+            
+        
     }
 
     
@@ -365,17 +365,17 @@ public class TextToSpeech {
     public int addEarcon(String earcon, String packagename, int resourceId) {
         {
             mEarcons.put(earcon, makeResourceUri(packagename, resourceId));
-        } //End block
+        } 
         addTaint(earcon.getTaint());
         addTaint(packagename.getTaint());
         addTaint(resourceId);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1993163488 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1993163488;
-        // ---------- Original Method ----------
-        //synchronized(mStartLock) {
-            //mEarcons.put(earcon, makeResourceUri(packagename, resourceId));
-            //return SUCCESS;
-        //}
+        
+        
+            
+            
+        
     }
 
     
@@ -383,22 +383,22 @@ public class TextToSpeech {
     public int addEarcon(String earcon, String filename) {
         {
             mEarcons.put(earcon, Uri.parse(filename));
-        } //End block
+        } 
         addTaint(earcon.getTaint());
         addTaint(filename.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1833495783 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1833495783;
-        // ---------- Original Method ----------
-        //synchronized(mStartLock) {
-            //mEarcons.put(earcon, Uri.parse(filename));
-            //return SUCCESS;
-        //}
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.321 -0400", hash_original_method = "276BC175828DCE484EB0703A6A0D8E9B", hash_generated_method = "9C6B8397935C9DE309AFC40AC1B5BC3E")
     private Uri makeResourceUri(String packageName, int resourceId) {
-        Uri varB4EAC82CA7396A68D541C85D26508E83_1914109783 = null; //Variable for return #1
+        Uri varB4EAC82CA7396A68D541C85D26508E83_1914109783 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1914109783 = new Uri.Builder()
                 .scheme(ContentResolver.SCHEME_ANDROID_RESOURCE)
                 .encodedAuthority(packageName)
@@ -406,14 +406,14 @@ public class TextToSpeech {
                 .build();
         addTaint(packageName.getTaint());
         addTaint(resourceId);
-        varB4EAC82CA7396A68D541C85D26508E83_1914109783.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1914109783.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1914109783;
-        // ---------- Original Method ----------
-        //return new Uri.Builder()
-                //.scheme(ContentResolver.SCHEME_ANDROID_RESOURCE)
-                //.encodedAuthority(packageName)
-                //.appendEncodedPath(String.valueOf(resourceId))
-                //.build();
+        
+        
+                
+                
+                
+                
     }
 
     
@@ -423,36 +423,36 @@ public class TextToSpeech {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.322 -0400", hash_original_method = "7D06D49EA86F29A3C163217832E59726", hash_generated_method = "3AD389A712BBEC56224914A62756A00B")
             @Override
             public Integer run(ITextToSpeechService service) throws RemoteException {
-                Integer varB4EAC82CA7396A68D541C85D26508E83_135905057 = null; //Variable for return #1
-                Integer varB4EAC82CA7396A68D541C85D26508E83_1213036560 = null; //Variable for return #2
+                Integer varB4EAC82CA7396A68D541C85D26508E83_135905057 = null; 
+                Integer varB4EAC82CA7396A68D541C85D26508E83_1213036560 = null; 
                 Uri utteranceUri = mUtterances.get(text);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_135905057 = service.playAudio(getPackageName(), utteranceUri, queueMode,
                             getParams(params));
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1213036560 = service.speak(getPackageName(), text, queueMode, getParams(params));
-                } //End block
+                } 
                 addTaint(service.getTaint());
-                Integer varA7E53CE21691AB073D9660D615818899_607284139; //Final return value
+                Integer varA7E53CE21691AB073D9660D615818899_607284139; 
                 switch (DroidSafeAndroidRuntime.switchControl) {
-                    case 1: //Assign result for return ordinal #1
+                    case 1: 
                         varA7E53CE21691AB073D9660D615818899_607284139 = varB4EAC82CA7396A68D541C85D26508E83_135905057;
                         break;
                     default:
                         varA7E53CE21691AB073D9660D615818899_607284139 = varB4EAC82CA7396A68D541C85D26508E83_1213036560;
                         break;
                 }
-                varA7E53CE21691AB073D9660D615818899_607284139.addTaint(getTaint()); //Add taint from parent
+                varA7E53CE21691AB073D9660D615818899_607284139.addTaint(getTaint()); 
                 return varA7E53CE21691AB073D9660D615818899_607284139;
-                // ---------- Original Method ----------
-                //Uri utteranceUri = mUtterances.get(text);
-                //if (utteranceUri != null) {
-                    //return service.playAudio(getPackageName(), utteranceUri, queueMode,
-                            //getParams(params));
-                //} else {
-                    //return service.speak(getPackageName(), text, queueMode, getParams(params));
-                //}
+                
+                
+                
+                    
+                            
+                
+                    
+                
             }
 }, ERROR, "speak"));
         addTaint(text.getTaint());
@@ -460,19 +460,19 @@ public class TextToSpeech {
         addTaint(params.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1609154447 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1609154447;
-        // ---------- Original Method ----------
-        //return runAction(new Action<Integer>() {
-            //@Override
-            //public Integer run(ITextToSpeechService service) throws RemoteException {
-                //Uri utteranceUri = mUtterances.get(text);
-                //if (utteranceUri != null) {
-                    //return service.playAudio(getPackageName(), utteranceUri, queueMode,
-                            //getParams(params));
-                //} else {
-                    //return service.speak(getPackageName(), text, queueMode, getParams(params));
-                //}
-            //}
-        //}, ERROR, "speak");
+        
+        
+            
+            
+                
+                
+                    
+                            
+                
+                    
+                
+            
+        
     }
 
     
@@ -483,33 +483,33 @@ public class TextToSpeech {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.324 -0400", hash_original_method = "6A26B14D42F3FBBE45C132D11F693742", hash_generated_method = "9675BBD37D3352281621F0A864DF4E6B")
             @Override
             public Integer run(ITextToSpeechService service) throws RemoteException {
-                Integer varB4EAC82CA7396A68D541C85D26508E83_1259276719 = null; //Variable for return #1
-                Integer varB4EAC82CA7396A68D541C85D26508E83_1457684292 = null; //Variable for return #2
+                Integer varB4EAC82CA7396A68D541C85D26508E83_1259276719 = null; 
+                Integer varB4EAC82CA7396A68D541C85D26508E83_1457684292 = null; 
                 Uri earconUri = mEarcons.get(earcon);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1259276719 = ERROR;
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1457684292 = service.playAudio(getPackageName(), earconUri, queueMode,
                         getParams(params));
                 addTaint(service.getTaint());
-                Integer varA7E53CE21691AB073D9660D615818899_2012622944; //Final return value
+                Integer varA7E53CE21691AB073D9660D615818899_2012622944; 
                 switch (DroidSafeAndroidRuntime.switchControl) {
-                    case 1: //Assign result for return ordinal #1
+                    case 1: 
                         varA7E53CE21691AB073D9660D615818899_2012622944 = varB4EAC82CA7396A68D541C85D26508E83_1259276719;
                         break;
                     default:
                         varA7E53CE21691AB073D9660D615818899_2012622944 = varB4EAC82CA7396A68D541C85D26508E83_1457684292;
                         break;
                 }
-                varA7E53CE21691AB073D9660D615818899_2012622944.addTaint(getTaint()); //Add taint from parent
+                varA7E53CE21691AB073D9660D615818899_2012622944.addTaint(getTaint()); 
                 return varA7E53CE21691AB073D9660D615818899_2012622944;
-                // ---------- Original Method ----------
-                //Uri earconUri = mEarcons.get(earcon);
-                //if (earconUri == null) {
-                    //return ERROR;
-                //}
-                //return service.playAudio(getPackageName(), earconUri, queueMode,
-                        //getParams(params));
+                
+                
+                
+                    
+                
+                
+                        
             }
 }, ERROR, "playEarcon"));
         addTaint(earcon.getTaint());
@@ -517,18 +517,18 @@ public class TextToSpeech {
         addTaint(params.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_237032863 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_237032863;
-        // ---------- Original Method ----------
-        //return runAction(new Action<Integer>() {
-            //@Override
-            //public Integer run(ITextToSpeechService service) throws RemoteException {
-                //Uri earconUri = mEarcons.get(earcon);
-                //if (earconUri == null) {
-                    //return ERROR;
-                //}
-                //return service.playAudio(getPackageName(), earconUri, queueMode,
-                        //getParams(params));
-            //}
-        //}, ERROR, "playEarcon");
+        
+        
+            
+            
+                
+                
+                    
+                
+                
+                        
+            
+        
     }
 
     
@@ -539,15 +539,15 @@ public class TextToSpeech {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.327 -0400", hash_original_method = "78C333BA11B47CA10C93733938393F3E", hash_generated_method = "758A6E54F6EFE9209914219AFADD2F54")
             @Override
             public Integer run(ITextToSpeechService service) throws RemoteException {
-                Integer varB4EAC82CA7396A68D541C85D26508E83_212766505 = null; //Variable for return #1
+                Integer varB4EAC82CA7396A68D541C85D26508E83_212766505 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_212766505 = service.playSilence(getPackageName(), durationInMs, queueMode,
                         getParams(params));
                 addTaint(service.getTaint());
-                varB4EAC82CA7396A68D541C85D26508E83_212766505.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_212766505.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_212766505;
-                // ---------- Original Method ----------
-                //return service.playSilence(getPackageName(), durationInMs, queueMode,
-                        //getParams(params));
+                
+                
+                        
             }
 }, ERROR, "playSilence"));
         addTaint(durationInMs);
@@ -555,20 +555,20 @@ public class TextToSpeech {
         addTaint(params.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1225202138 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1225202138;
-        // ---------- Original Method ----------
-        //return runAction(new Action<Integer>() {
-            //@Override
-            //public Integer run(ITextToSpeechService service) throws RemoteException {
-                //return service.playSilence(getPackageName(), durationInMs, queueMode,
-                        //getParams(params));
-            //}
-        //}, ERROR, "playSilence");
+        
+        
+            
+            
+                
+                        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.328 -0400", hash_original_method = "8AF2E385B6F026EB817E9FE98AB99B1D", hash_generated_method = "4F2F00B170472DAA974E1FF99236AFED")
     public Set<String> getFeatures(final Locale locale) {
-        Set<String> varB4EAC82CA7396A68D541C85D26508E83_1797231943 = null; //Variable for return #1
+        Set<String> varB4EAC82CA7396A68D541C85D26508E83_1797231943 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1797231943 = runAction(new Action<Set<String>>() {
             @Override
             public Set<String> run(ITextToSpeechService service) throws RemoteException {
@@ -583,22 +583,22 @@ public class TextToSpeech {
             }
         }, null, "getFeatures");
         addTaint(locale.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1797231943.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1797231943.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1797231943;
-        // ---------- Original Method ----------
-        //return runAction(new Action<Set<String>>() {
-            //@Override
-            //public Set<String> run(ITextToSpeechService service) throws RemoteException {
-                //String[] features = service.getFeaturesForLanguage(
-                        //locale.getISO3Language(), locale.getISO3Country(), locale.getVariant());
-                //if (features != null) {
-                    //final Set<String> featureSet = new HashSet<String>();
-                    //Collections.addAll(featureSet, features);
-                    //return featureSet;
-                //}
-                //return null;
-            //}
-        //}, null, "getFeatures");
+        
+        
+            
+            
+                
+                        
+                
+                    
+                    
+                    
+                
+                
+            
+        
     }
 
     
@@ -608,24 +608,24 @@ public class TextToSpeech {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.330 -0400", hash_original_method = "CDD6871E0A3D820171A5453DF320B8D3", hash_generated_method = "F935DF240B0BEB6DE181CF798618BE0F")
             @Override
             public Boolean run(ITextToSpeechService service) throws RemoteException {
-                Boolean varB4EAC82CA7396A68D541C85D26508E83_1053986013 = null; //Variable for return #1
+                Boolean varB4EAC82CA7396A68D541C85D26508E83_1053986013 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_1053986013 = service.isSpeaking();
                 addTaint(service.getTaint());
-                varB4EAC82CA7396A68D541C85D26508E83_1053986013.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1053986013.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1053986013;
-                // ---------- Original Method ----------
-                //return service.isSpeaking();
+                
+                
             }
 }, false, "isSpeaking"));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_668717342 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_668717342;
-        // ---------- Original Method ----------
-        //return runAction(new Action<Boolean>() {
-            //@Override
-            //public Boolean run(ITextToSpeechService service) throws RemoteException {
-                //return service.isSpeaking();
-            //}
-        //}, false, "isSpeaking");
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -635,24 +635,24 @@ public class TextToSpeech {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.331 -0400", hash_original_method = "C3E115845E07ACC22BB6BDAD6EAAC990", hash_generated_method = "B507341D53F04445058F8E324966E9CA")
             @Override
             public Integer run(ITextToSpeechService service) throws RemoteException {
-                Integer varB4EAC82CA7396A68D541C85D26508E83_1237063871 = null; //Variable for return #1
+                Integer varB4EAC82CA7396A68D541C85D26508E83_1237063871 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_1237063871 = service.stop(getPackageName());
                 addTaint(service.getTaint());
-                varB4EAC82CA7396A68D541C85D26508E83_1237063871.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1237063871.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1237063871;
-                // ---------- Original Method ----------
-                //return service.stop(getPackageName());
+                
+                
             }
 }, ERROR, "stop"));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295819806 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295819806;
-        // ---------- Original Method ----------
-        //return runAction(new Action<Integer>() {
-            //@Override
-            //public Integer run(ITextToSpeechService service) throws RemoteException {
-                //return service.stop(getPackageName());
-            //}
-        //}, ERROR, "stop");
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -663,23 +663,23 @@ public class TextToSpeech {
             {
                 {
                     mParams.putInt(Engine.KEY_PARAM_RATE, intRate);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(speechRate);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1208216519 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1208216519;
-        // ---------- Original Method ----------
-        //if (speechRate > 0.0f) {
-            //int intRate = (int)(speechRate * 100);
-            //if (intRate > 0) {
-                //synchronized (mStartLock) {
-                    //mParams.putInt(Engine.KEY_PARAM_RATE, intRate);
-                //}
-                //return SUCCESS;
-            //}
-        //}
-        //return ERROR;
+        
+        
+            
+            
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
@@ -690,34 +690,34 @@ public class TextToSpeech {
             {
                 {
                     mParams.putInt(Engine.KEY_PARAM_PITCH, intPitch);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(pitch);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_388453716 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_388453716;
-        // ---------- Original Method ----------
-        //if (pitch > 0.0f) {
-            //int intPitch = (int)(pitch * 100);
-            //if (intPitch > 0) {
-                //synchronized (mStartLock) {
-                    //mParams.putInt(Engine.KEY_PARAM_PITCH, intPitch);
-                //}
-                //return SUCCESS;
-            //}
-        //}
-        //return ERROR;
+        
+        
+            
+            
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.332 -0400", hash_original_method = "6F277B1B16E884F81974EA73065A64D8", hash_generated_method = "D45B9199FE5A820B40DA5B7DF2C6638A")
     public String getCurrentEngine() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2119437381 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2119437381 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2119437381 = mCurrentEngine;
-        varB4EAC82CA7396A68D541C85D26508E83_2119437381.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2119437381.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2119437381;
-        // ---------- Original Method ----------
-        //return mCurrentEngine;
+        
+        
     }
 
     
@@ -727,11 +727,11 @@ public class TextToSpeech {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.334 -0400", hash_original_method = "0CBE42B90B008DE7C85EE0BE4FA8A569", hash_generated_method = "64D547EE3063345229DE27F1AB2ED2FC")
             @Override
             public Integer run(ITextToSpeechService service) throws RemoteException {
-                Integer varB4EAC82CA7396A68D541C85D26508E83_637427362 = null; //Variable for return #1
-                Integer varB4EAC82CA7396A68D541C85D26508E83_14487278 = null; //Variable for return #2
+                Integer varB4EAC82CA7396A68D541C85D26508E83_637427362 = null; 
+                Integer varB4EAC82CA7396A68D541C85D26508E83_14487278 = null; 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_637427362 = LANG_NOT_SUPPORTED;
-                } //End block
+                } 
                 String language = loc.getISO3Language();
                 String country = loc.getISO3Country();
                 String variant = loc.getVariant();
@@ -741,40 +741,40 @@ public class TextToSpeech {
                         variant = "";
                         {
                             country = "";
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     mParams.putString(Engine.KEY_PARAM_LANGUAGE, language);
                     mParams.putString(Engine.KEY_PARAM_COUNTRY, country);
                     mParams.putString(Engine.KEY_PARAM_VARIANT, variant);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_14487278 = result;
                 addTaint(service.getTaint());
-                Integer varA7E53CE21691AB073D9660D615818899_1277912088; //Final return value
+                Integer varA7E53CE21691AB073D9660D615818899_1277912088; 
                 switch (DroidSafeAndroidRuntime.switchControl) {
-                    case 1: //Assign result for return ordinal #1
+                    case 1: 
                         varA7E53CE21691AB073D9660D615818899_1277912088 = varB4EAC82CA7396A68D541C85D26508E83_637427362;
                         break;
                     default:
                         varA7E53CE21691AB073D9660D615818899_1277912088 = varB4EAC82CA7396A68D541C85D26508E83_14487278;
                         break;
                 }
-                varA7E53CE21691AB073D9660D615818899_1277912088.addTaint(getTaint()); //Add taint from parent
+                varA7E53CE21691AB073D9660D615818899_1277912088.addTaint(getTaint()); 
                 return varA7E53CE21691AB073D9660D615818899_1277912088;
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 }, LANG_NOT_SUPPORTED, "setLanguage"));
         addTaint(loc.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1394467290 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1394467290;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.335 -0400", hash_original_method = "BC427E909E00C5BE5A5F111E336651C0", hash_generated_method = "E51EC6FF2CF54CBA78496673FA9D035F")
     public Locale getLanguage() {
-        Locale varB4EAC82CA7396A68D541C85D26508E83_1815210533 = null; //Variable for return #1
+        Locale varB4EAC82CA7396A68D541C85D26508E83_1815210533 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1815210533 = runAction(new Action<Locale>() {
             @Override
             public Locale run(ITextToSpeechService service) throws RemoteException {
@@ -785,19 +785,19 @@ public class TextToSpeech {
                 return null;
             }
         }, null, "getLanguage");
-        varB4EAC82CA7396A68D541C85D26508E83_1815210533.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1815210533.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1815210533;
-        // ---------- Original Method ----------
-        //return runAction(new Action<Locale>() {
-            //@Override
-            //public Locale run(ITextToSpeechService service) throws RemoteException {
-                //String[] locStrings = service.getLanguage();
-                //if (locStrings != null && locStrings.length == 3) {
-                    //return new Locale(locStrings[0], locStrings[1], locStrings[2]);
-                //}
-                //return null;
-            //}
-        //}, null, "getLanguage");
+        
+        
+            
+            
+                
+                
+                    
+                
+                
+            
+        
     }
 
     
@@ -807,28 +807,28 @@ public class TextToSpeech {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.337 -0400", hash_original_method = "104F6D4E3824B9F3A36823FE96275A8A", hash_generated_method = "A39A7E07D4EA1556CE5BBEAEC3417B0A")
             @Override
             public Integer run(ITextToSpeechService service) throws RemoteException {
-                Integer varB4EAC82CA7396A68D541C85D26508E83_1704765782 = null; //Variable for return #1
+                Integer varB4EAC82CA7396A68D541C85D26508E83_1704765782 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_1704765782 = service.isLanguageAvailable(loc.getISO3Language(),
                         loc.getISO3Country(), loc.getVariant());
                 addTaint(service.getTaint());
-                varB4EAC82CA7396A68D541C85D26508E83_1704765782.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1704765782.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1704765782;
-                // ---------- Original Method ----------
-                //return service.isLanguageAvailable(loc.getISO3Language(),
-                        //loc.getISO3Country(), loc.getVariant());
+                
+                
+                        
             }
 }, LANG_NOT_SUPPORTED, "isLanguageAvailable"));
         addTaint(loc.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_532017188 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_532017188;
-        // ---------- Original Method ----------
-        //return runAction(new Action<Integer>() {
-            //@Override
-            //public Integer run(ITextToSpeechService service) throws RemoteException {
-                //return service.isLanguageAvailable(loc.getISO3Language(),
-                        //loc.getISO3Country(), loc.getVariant());
-            //}
-        //}, LANG_NOT_SUPPORTED, "isLanguageAvailable");
+        
+        
+            
+            
+                
+                        
+            
+        
     }
 
     
@@ -839,15 +839,15 @@ public class TextToSpeech {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.339 -0400", hash_original_method = "126F93B055F255BA3903970B4BD95F1E", hash_generated_method = "103F44F380AFBDA83D3E81F035FED799")
             @Override
             public Integer run(ITextToSpeechService service) throws RemoteException {
-                Integer varB4EAC82CA7396A68D541C85D26508E83_1905757266 = null; //Variable for return #1
+                Integer varB4EAC82CA7396A68D541C85D26508E83_1905757266 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_1905757266 = service.synthesizeToFile(getPackageName(), text, filename,
                         getParams(params));
                 addTaint(service.getTaint());
-                varB4EAC82CA7396A68D541C85D26508E83_1905757266.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1905757266.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1905757266;
-                // ---------- Original Method ----------
-                //return service.synthesizeToFile(getPackageName(), text, filename,
-                        //getParams(params));
+                
+                
+                        
             }
 }, ERROR, "synthesizeToFile"));
         addTaint(text.getTaint());
@@ -855,21 +855,21 @@ public class TextToSpeech {
         addTaint(filename.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_178129527 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_178129527;
-        // ---------- Original Method ----------
-        //return runAction(new Action<Integer>() {
-            //@Override
-            //public Integer run(ITextToSpeechService service) throws RemoteException {
-                //return service.synthesizeToFile(getPackageName(), text, filename,
-                        //getParams(params));
-            //}
-        //}, ERROR, "synthesizeToFile");
+        
+        
+            
+            
+                
+                        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.348 -0400", hash_original_method = "F4A729CBEB92036D830EC51C9E6B27A9", hash_generated_method = "4D672F23CCCD766BF71E3CD066A9059F")
     private Bundle getParams(HashMap<String, String> params) {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_529486515 = null; //Variable for return #1
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_186515875 = null; //Variable for return #2
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_529486515 = null; 
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_186515875 = null; 
         {
             boolean var03F97DC16CD5D3704D59B126AFD4BB5D_40117357 = (params != null && !params.isEmpty());
             {
@@ -893,32 +893,32 @@ public class TextToSpeech {
                                     boolean var067B24247B41FD99A3F806EDF88D0891_1648689040 = (key != null && key.startsWith(mCurrentEngine));
                                     {
                                         bundle.putString(key, entry.getValue());
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_529486515 = bundle;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_186515875 = mParams;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(params.getTaint());
-        Bundle varA7E53CE21691AB073D9660D615818899_1935422296; //Final return value
+        Bundle varA7E53CE21691AB073D9660D615818899_1935422296; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1935422296 = varB4EAC82CA7396A68D541C85D26508E83_529486515;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1935422296 = varB4EAC82CA7396A68D541C85D26508E83_186515875;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1935422296.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1935422296.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1935422296;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -927,15 +927,15 @@ public class TextToSpeech {
         String value = params.get(key);
         {
             bundle.putString(key, value);
-        } //End block
+        } 
         addTaint(bundle.getTaint());
         addTaint(params.getTaint());
         addTaint(key.getTaint());
-        // ---------- Original Method ----------
-        //String value = params.get(key);
-        //if (value != null) {
-            //bundle.putString(key, value);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -949,23 +949,23 @@ public class TextToSpeech {
                 {
                     int value = Integer.parseInt(valueString);
                     bundle.putInt(key, value);
-                } //End block
+                } 
                 catch (NumberFormatException ex)
                 { }
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(bundle.getTaint());
         addTaint(params.getTaint());
         addTaint(key.getTaint());
-        // ---------- Original Method ----------
-        //String valueString = params.get(key);
-        //if (!TextUtils.isEmpty(valueString)) {
-            //try {
-                //int value = Integer.parseInt(valueString);
-                //bundle.putInt(key, value);
-            //} catch (NumberFormatException ex) {
-            //}
-        //}
+        
+        
+        
+            
+                
+                
+            
+            
+        
     }
 
     
@@ -979,23 +979,23 @@ public class TextToSpeech {
                 {
                     float value = Float.parseFloat(valueString);
                     bundle.putFloat(key, value);
-                } //End block
+                } 
                 catch (NumberFormatException ex)
                 { }
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(bundle.getTaint());
         addTaint(params.getTaint());
         addTaint(key.getTaint());
-        // ---------- Original Method ----------
-        //String valueString = params.get(key);
-        //if (!TextUtils.isEmpty(valueString)) {
-            //try {
-                //float value = Float.parseFloat(valueString);
-                //bundle.putFloat(key, value);
-            //} catch (NumberFormatException ex) {
-            //}
-        //}
+        
+        
+        
+            
+                
+                
+            
+            
+        
     }
 
     
@@ -1005,9 +1005,9 @@ public class TextToSpeech {
         mUtteranceProgressListener = UtteranceProgressListener.from(listener);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1000486717 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1000486717;
-        // ---------- Original Method ----------
-        //mUtteranceProgressListener = UtteranceProgressListener.from(listener);
-        //return TextToSpeech.SUCCESS;
+        
+        
+        
     }
 
     
@@ -1016,9 +1016,9 @@ public class TextToSpeech {
         mUtteranceProgressListener = listener;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2028335097 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2028335097;
-        // ---------- Original Method ----------
-        //mUtteranceProgressListener = listener;
-        //return TextToSpeech.SUCCESS;
+        
+        
+        
     }
 
     
@@ -1029,20 +1029,20 @@ public class TextToSpeech {
         int var663EB57F9D9E552BC588A53FE17E210D_733586770 = (initTts());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1565336072 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1565336072;
-        // ---------- Original Method ----------
-        //mRequestedEngine = enginePackageName;
-        //return initTts();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.353 -0400", hash_original_method = "AAA28EF74B57D47AEDCF93243FD04D81", hash_generated_method = "93C474896439BF24EC0FE44A3F2EE9B1")
     public String getDefaultEngine() {
-        String varB4EAC82CA7396A68D541C85D26508E83_256565830 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_256565830 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_256565830 = mEnginesHelper.getDefaultEngine();
-        varB4EAC82CA7396A68D541C85D26508E83_256565830.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_256565830.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_256565830;
-        // ---------- Original Method ----------
-        //return mEnginesHelper.getDefaultEngine();
+        
+        
     }
 
     
@@ -1050,19 +1050,19 @@ public class TextToSpeech {
     public boolean areDefaultsEnforced() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1664056272 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1664056272;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.354 -0400", hash_original_method = "C282EF17EB1B4600865CB51DA0934709", hash_generated_method = "B6DF37939677BBAFE3AD2AB9434AF135")
     public List<EngineInfo> getEngines() {
-        List<EngineInfo> varB4EAC82CA7396A68D541C85D26508E83_274380721 = null; //Variable for return #1
+        List<EngineInfo> varB4EAC82CA7396A68D541C85D26508E83_274380721 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_274380721 = mEnginesHelper.getEngines();
-        varB4EAC82CA7396A68D541C85D26508E83_274380721.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_274380721.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_274380721;
-        // ---------- Original Method ----------
-        //return mEnginesHelper.getEngines();
+        
+        
     }
 
     
@@ -1071,7 +1071,7 @@ public class TextToSpeech {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.355 -0400", hash_original_method = "0CEE966FD083EAF9A38425EF355FEEF7", hash_generated_method = "0CEE966FD083EAF9A38425EF355FEEF7")
         public Engine ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1211,51 +1211,51 @@ public class TextToSpeech {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.356 -0400", hash_original_method = "5A69319C8BD2B805ED99ED76716CFEEE", hash_generated_method = "C36FD71BC5968822F50D75F6D7641286")
             @Override
             public void onDone(String utteranceId) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 UtteranceProgressListener listener = mUtteranceProgressListener;
                 {
                     listener.onDone(utteranceId);
-                } //End block
+                } 
                 addTaint(utteranceId.getTaint());
-                // ---------- Original Method ----------
-                //UtteranceProgressListener listener = mUtteranceProgressListener;
-                //if (listener != null) {
-                    //listener.onDone(utteranceId);
-                //}
+                
+                
+                
+                    
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.357 -0400", hash_original_method = "71BFFA04ED8551E163779942DCEAA326", hash_generated_method = "BFEBE931F4A282E2199C01DE22C7D8D5")
             @Override
             public void onError(String utteranceId) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 UtteranceProgressListener listener = mUtteranceProgressListener;
                 {
                     listener.onError(utteranceId);
-                } //End block
+                } 
                 addTaint(utteranceId.getTaint());
-                // ---------- Original Method ----------
-                //UtteranceProgressListener listener = mUtteranceProgressListener;
-                //if (listener != null) {
-                    //listener.onError(utteranceId);
-                //}
+                
+                
+                
+                    
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.357 -0400", hash_original_method = "AC6831F715B5A1560C1EB20081DD1B2E", hash_generated_method = "7FB994A124F9001B2239D7AE9A074095")
             @Override
             public void onStart(String utteranceId) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 UtteranceProgressListener listener = mUtteranceProgressListener;
                 {
                     listener.onStart(utteranceId);
-                } //End block
+                } 
                 addTaint(utteranceId.getTaint());
-                // ---------- Original Method ----------
-                //UtteranceProgressListener listener = mUtteranceProgressListener;
-                //if (listener != null) {
-                    //listener.onStart(utteranceId);
-                //}
+                
+                
+                
+                    
+                
             }
 
             
@@ -1264,137 +1264,137 @@ public class TextToSpeech {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.357 -0400", hash_original_method = "4879E6D30CC79D00A25F9B445CF68B6E", hash_generated_method = "4879E6D30CC79D00A25F9B445CF68B6E")
         public Connection ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.358 -0400", hash_original_method = "E38F495B4498EDF08C66FB9F592C4572", hash_generated_method = "13D0F2DA18AB79324430B218EDA72263")
         public void onServiceConnected(ComponentName name, IBinder service) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 {
                     mServiceConnection.disconnect();
-                } //End block
+                } 
                 mServiceConnection = this;
                 mService = ITextToSpeechService.Stub.asInterface(service);
                 try 
                 {
                     mService.setCallback(getPackageName(), mCallback);
                     dispatchOnInit(SUCCESS);
-                } //End block
+                } 
                 catch (RemoteException re)
                 {
                     dispatchOnInit(ERROR);
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
-            //Log.i(TAG, "Connected to " + name);
-            //synchronized(mStartLock) {
-                //if (mServiceConnection != null) {
-                    //mServiceConnection.disconnect();
-                //}
-                //mServiceConnection = this;
-                //mService = ITextToSpeechService.Stub.asInterface(service);
-                //try {
-                    //mService.setCallback(getPackageName(), mCallback);
-                    //dispatchOnInit(SUCCESS);
-                //} catch (RemoteException re) {
-                    //Log.e(TAG, "Error connecting to service, setCallback() failed");
-                    //dispatchOnInit(ERROR);
-                //}
-            //}
+            
+            
+            
+                
+                    
+                
+                
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.358 -0400", hash_original_method = "9CBB724FFDF56C58A2F363CBB7ADEB66", hash_generated_method = "B197524A11BD86D1FD3BA448E9871989")
         public void onServiceDisconnected(ComponentName name) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 mService = null;
                 {
                     boolean varCFBB343190D0053DBC4029F6CA0B9372_383429783 = (mServiceConnection == this);
                     {
                         mServiceConnection = null;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
-            //synchronized(mStartLock) {
-                //mService = null;
-                //if (mServiceConnection == this) {
-                    //mServiceConnection = null;
-                //}
-            //}
+            
+            
+                
+                
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.358 -0400", hash_original_method = "670DB56217535BA78AC55188B9013676", hash_generated_method = "22BDFB36185642ED4E82BED8A6D53D5B")
         public void disconnect() {
             mContext.unbindService(this);
-            // ---------- Original Method ----------
-            //mContext.unbindService(this);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.359 -0400", hash_original_method = "34464E55B5499CA206CC99D3045C1292", hash_generated_method = "18B86691D994A4D13B385920345791BD")
         public <R> R runAction(Action<R> action, R errorResult, String method, boolean reconnect) {
-            R varB4EAC82CA7396A68D541C85D26508E83_2079859407 = null; //Variable for return #1
-            R varB4EAC82CA7396A68D541C85D26508E83_369131742 = null; //Variable for return #2
-            R varB4EAC82CA7396A68D541C85D26508E83_82352096 = null; //Variable for return #3
+            R varB4EAC82CA7396A68D541C85D26508E83_2079859407 = null; 
+            R varB4EAC82CA7396A68D541C85D26508E83_369131742 = null; 
+            R varB4EAC82CA7396A68D541C85D26508E83_82352096 = null; 
             try 
             {
                 {
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_2079859407 = errorResult;
-                    } //End block
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_369131742 = action.run(mService);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (RemoteException ex)
             {
                 {
                     disconnect();
                     initTts();
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_82352096 = errorResult;
-            } //End block
+            } 
             addTaint(action.getTaint());
             addTaint(errorResult.getTaint());
             addTaint(method.getTaint());
             addTaint(reconnect);
-            R varA7E53CE21691AB073D9660D615818899_71241882; //Final return value
+            R varA7E53CE21691AB073D9660D615818899_71241882; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_71241882 = varB4EAC82CA7396A68D541C85D26508E83_2079859407;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_71241882 = varB4EAC82CA7396A68D541C85D26508E83_369131742;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_71241882 = varB4EAC82CA7396A68D541C85D26508E83_82352096;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_71241882.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_71241882.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_71241882;
-            // ---------- Original Method ----------
-            //try {
-                //synchronized (mStartLock) {
-                    //if (mService == null) {
-                        //Log.w(TAG, method + " failed: not connected to TTS engine");
-                        //return errorResult;
-                    //}
-                    //return action.run(mService);
-                //}
-            //} catch (RemoteException ex) {
-                //Log.e(TAG, method + " failed", ex);
-                //if (reconnect) {
-                    //disconnect();
-                    //initTts();
-                //}
-                //return errorResult;
-            //}
+            
+            
+                
+                    
+                        
+                        
+                    
+                    
+                
+            
+                
+                
+                    
+                    
+                
+                
+            
         }
 
         
@@ -1422,19 +1422,19 @@ public class TextToSpeech {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.359 -0400", hash_original_method = "1BD677F38EE0D51841725F2C2D5029FA", hash_generated_method = "1BD677F38EE0D51841725F2C2D5029FA")
         public EngineInfo ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.360 -0400", hash_original_method = "2BF343FE966C95427B565E993C403E36", hash_generated_method = "A6AB89E5C4B2081A7D16843DC48495DC")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1702809749 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1702809749 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1702809749 = "EngineInfo{name=" + name + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_1702809749.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1702809749.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1702809749;
-            // ---------- Original Method ----------
-            //return "EngineInfo{name=" + name + "}";
+            
+            
         }
 
         

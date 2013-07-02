@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 class VMThread {
@@ -19,8 +19,8 @@ class VMThread {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.496 -0400", hash_original_method = "1F6D5BC845AA1BFC5CA0AAC86B89BD84", hash_generated_method = "491E6C78D5C5B622654A9B44AD8AA760")
       VMThread(Thread t) {
         thread = t;
-        // ---------- Original Method ----------
-        //thread = t;
+        
+        
     }
 
     
@@ -29,7 +29,7 @@ class VMThread {
 
     
     static Thread currentThread() {
-                //DSFIXME:  This shouldn't happen!
+                
     	return new Thread();
     }
 
@@ -64,8 +64,8 @@ class VMThread {
      void start(long stackSize) {
         VMThread.create(thread, stackSize);
         addTaint(stackSize);
-        // ---------- Original Method ----------
-        //VMThread.create(thread, stackSize);
+        
+        
     }
 
     

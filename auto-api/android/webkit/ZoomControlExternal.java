@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.Handler;
@@ -33,8 +33,8 @@ class ZoomControlExternal implements ZoomControlBase {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.077 -0400", hash_original_method = "703B91782EEFAD1D42516E3C0CEC522E", hash_generated_method = "D555F9AE790609D762783FBBEA058A92")
     public  ZoomControlExternal(WebView webView) {
         mWebView = webView;
-        // ---------- Original Method ----------
-        //mWebView = webView;
+        
+        
     }
 
     
@@ -42,15 +42,15 @@ class ZoomControlExternal implements ZoomControlBase {
     public void show() {
         {
             mPrivateHandler.removeCallbacks(mZoomControlRunnable);
-        } //End block
+        } 
         getControls().show(true);
         mPrivateHandler.postDelayed(mZoomControlRunnable, ZOOM_CONTROLS_TIMEOUT);
-        // ---------- Original Method ----------
-        //if(mZoomControlRunnable != null) {
-            //mPrivateHandler.removeCallbacks(mZoomControlRunnable);
-        //}
-        //getControls().show(true);
-        //mPrivateHandler.postDelayed(mZoomControlRunnable, ZOOM_CONTROLS_TIMEOUT);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -58,17 +58,17 @@ class ZoomControlExternal implements ZoomControlBase {
     public void hide() {
         {
             mPrivateHandler.removeCallbacks(mZoomControlRunnable);
-        } //End block
+        } 
         {
             mZoomControls.hide();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mZoomControlRunnable != null) {
-            //mPrivateHandler.removeCallbacks(mZoomControlRunnable);
-        //}
-        //if (mZoomControls != null) {
-            //mZoomControls.hide();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -77,20 +77,20 @@ class ZoomControlExternal implements ZoomControlBase {
         boolean varF8D9AA533EE37505E9946BA96FD65AC0_761241656 = (mZoomControls != null && mZoomControls.isShown());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1153200097 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1153200097;
-        // ---------- Original Method ----------
-        //return mZoomControls != null && mZoomControls.isShown();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.078 -0400", hash_original_method = "DB08A4E4B606EDAC2519981C47E0CF53", hash_generated_method = "FB43C517C4395D2CF5B50D0CBB01D588")
     public void update() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.079 -0400", hash_original_method = "66298D37AA43B5FB63161B411BC0C63C", hash_generated_method = "A43683F0884F6DA3451B0C4E2DC76292")
     public ExtendedZoomControls getControls() {
-        ExtendedZoomControls varB4EAC82CA7396A68D541C85D26508E83_788920075 = null; //Variable for return #1
+        ExtendedZoomControls varB4EAC82CA7396A68D541C85D26508E83_788920075 = null; 
         {
             mZoomControls = createZoomControls();
             mZoomControls.setVisibility(View.VISIBLE);
@@ -101,84 +101,85 @@ class ZoomControlExternal implements ZoomControlBase {
                         boolean varE152E1E7C0AEF664B8FEF946B65893CD_1238846912 = (!mZoomControls.hasFocus());
                         {
                             mZoomControls.hide();
-                        } //End block
+                        } 
                         {
                             mPrivateHandler.removeCallbacks(mZoomControlRunnable);
                             mPrivateHandler.postDelayed(mZoomControlRunnable,
                                 ZOOM_CONTROLS_TIMEOUT);
-                        } //End block
-                    } //End collapsed parenthetic
-                    // ---------- Original Method ----------
-                    //if (!mZoomControls.hasFocus()) {
-                        //mZoomControls.hide();
-                    //} else {
-                        //mPrivateHandler.removeCallbacks(mZoomControlRunnable);
-                        //mPrivateHandler.postDelayed(mZoomControlRunnable,
-                                //ZOOM_CONTROLS_TIMEOUT);
-                    //}
+                        } 
+                    } 
+                    
+                    
+                        
+                    
+                        
+                        
+                                
+                    
                 }
 };
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_788920075 = mZoomControls;
-        varB4EAC82CA7396A68D541C85D26508E83_788920075.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_788920075.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_788920075;
-        // ---------- Original Method ----------
-        //if (mZoomControls == null) {
-            //mZoomControls = createZoomControls();
-            //mZoomControls.setVisibility(View.VISIBLE);
-            //mZoomControlRunnable = new Runnable() {
-                //public void run() {
-                    //if (!mZoomControls.hasFocus()) {
-                        //mZoomControls.hide();
-                    //} else {
-                        //mPrivateHandler.removeCallbacks(mZoomControlRunnable);
-                        //mPrivateHandler.postDelayed(mZoomControlRunnable,
-                                //ZOOM_CONTROLS_TIMEOUT);
-                    //}
-                //}
-            //};
-        //}
-        //return mZoomControls;
+        
+        
+            
+            
+            
+                
+                    
+                        
+                    
+                        
+                        
+                                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.083 -0400", hash_original_method = "3D12A1B47B98985E80612C99D260C6E1", hash_generated_method = "07A017043ED5402B4753D2C27B1FF307")
     private ExtendedZoomControls createZoomControls() {
-        ExtendedZoomControls varB4EAC82CA7396A68D541C85D26508E83_154806958 = null; //Variable for return #1
+        ExtendedZoomControls varB4EAC82CA7396A68D541C85D26508E83_154806958 = null; 
         ExtendedZoomControls zoomControls = new ExtendedZoomControls(mWebView.getContext());
         zoomControls.setOnZoomInClickListener(new OnClickListener() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.081 -0400", hash_original_method = "BFE988BAC78978665C545CEC23B4B60A", hash_generated_method = "2F812B860D54FDFD84C31FD0353AA619")
             public void onClick(View v) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 mPrivateHandler.removeCallbacks(mZoomControlRunnable);
                 mPrivateHandler.postDelayed(mZoomControlRunnable, ZOOM_CONTROLS_TIMEOUT);
                 mWebView.zoomIn();
                 addTaint(v.getTaint());
-                // ---------- Original Method ----------
-                //mPrivateHandler.removeCallbacks(mZoomControlRunnable);
-                //mPrivateHandler.postDelayed(mZoomControlRunnable, ZOOM_CONTROLS_TIMEOUT);
-                //mWebView.zoomIn();
+                
+                
+                
+                
             }
 });
         zoomControls.setOnZoomOutClickListener(new OnClickListener() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.082 -0400", hash_original_method = "0743DD5386D9270B67669A328469CD71", hash_generated_method = "9700C3F15F65FA545E495A440263E6D7")
             public void onClick(View v) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 mPrivateHandler.removeCallbacks(mZoomControlRunnable);
                 mPrivateHandler.postDelayed(mZoomControlRunnable, ZOOM_CONTROLS_TIMEOUT);
                 mWebView.zoomOut();
                 addTaint(v.getTaint());
-                // ---------- Original Method ----------
-                //mPrivateHandler.removeCallbacks(mZoomControlRunnable);
-                //mPrivateHandler.postDelayed(mZoomControlRunnable, ZOOM_CONTROLS_TIMEOUT);
-                //mWebView.zoomOut();
+                
+                
+                
+                
             }
 });
         varB4EAC82CA7396A68D541C85D26508E83_154806958 = zoomControls;
-        varB4EAC82CA7396A68D541C85D26508E83_154806958.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_154806958.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_154806958;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -198,14 +199,14 @@ class ZoomControlExternal implements ZoomControlBase {
             findViewById(com.android.internal.R.id.zoomMagnify).setVisibility(
                     View.GONE);
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
-            //LayoutInflater inflater = (LayoutInflater)
-                    //context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            //inflater.inflate(com.android.internal.R.layout.zoom_magnify, this, true);
-            //mPlusMinusZoomControls = (android.widget.ZoomControls) findViewById(
-                    //com.android.internal.R.id.zoomControls);
-            //findViewById(com.android.internal.R.id.zoomMagnify).setVisibility(
-                    //View.GONE);
+            
+            
+                    
+            
+            
+                    
+            
+                    
         }
 
         
@@ -214,17 +215,17 @@ class ZoomControlExternal implements ZoomControlBase {
             mPlusMinusZoomControls.setVisibility(showZoom ? View.VISIBLE : View.GONE);
             fade(View.VISIBLE, 0.0f, 1.0f);
             addTaint(showZoom);
-            // ---------- Original Method ----------
-            //mPlusMinusZoomControls.setVisibility(showZoom ? View.VISIBLE : View.GONE);
-            //fade(View.VISIBLE, 0.0f, 1.0f);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.084 -0400", hash_original_method = "E5A5304131EA7BA6BF2FB03B8454E0A2", hash_generated_method = "1763705770489D0C249161FFFC62FF0D")
         public void hide() {
             fade(View.GONE, 1.0f, 0.0f);
-            // ---------- Original Method ----------
-            //fade(View.GONE, 1.0f, 0.0f);
+            
+            
         }
 
         
@@ -237,11 +238,11 @@ class ZoomControlExternal implements ZoomControlBase {
             addTaint(visibility);
             addTaint(startAlpha);
             addTaint(endAlpha);
-            // ---------- Original Method ----------
-            //AlphaAnimation anim = new AlphaAnimation(startAlpha, endAlpha);
-            //anim.setDuration(500);
-            //startAnimation(anim);
-            //setVisibility(visibility);
+            
+            
+            
+            
+            
         }
 
         
@@ -250,8 +251,8 @@ class ZoomControlExternal implements ZoomControlBase {
             boolean var51CC819E273B58FA5AA2310FF2130EA9_398236835 = (mPlusMinusZoomControls.hasFocus());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1845897838 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1845897838;
-            // ---------- Original Method ----------
-            //return mPlusMinusZoomControls.hasFocus();
+            
+            
         }
 
         
@@ -259,8 +260,8 @@ class ZoomControlExternal implements ZoomControlBase {
         public void setOnZoomInClickListener(OnClickListener listener) {
             mPlusMinusZoomControls.setOnZoomInClickListener(listener);
             addTaint(listener.getTaint());
-            // ---------- Original Method ----------
-            //mPlusMinusZoomControls.setOnZoomInClickListener(listener);
+            
+            
         }
 
         
@@ -268,8 +269,8 @@ class ZoomControlExternal implements ZoomControlBase {
         public void setOnZoomOutClickListener(OnClickListener listener) {
             mPlusMinusZoomControls.setOnZoomOutClickListener(listener);
             addTaint(listener.getTaint());
-            // ---------- Original Method ----------
-            //mPlusMinusZoomControls.setOnZoomOutClickListener(listener);
+            
+            
         }
 
         

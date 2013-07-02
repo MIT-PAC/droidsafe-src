@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -18,7 +18,7 @@ public class ASN1Exception extends IOException {
       ASN1Exception(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,19 +27,19 @@ public class ASN1Exception extends IOException {
         super(message);
         this.cause = cause;
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //this.cause = cause;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.826 -0400", hash_original_method = "CDBDBC1C44563A9D34649A0018341F0E", hash_generated_method = "8B4076CBC1F898E0A5461C2855BBE13C")
     public Throwable getCause() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_298925464 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_298925464 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_298925464 = cause;
-        varB4EAC82CA7396A68D541C85D26508E83_298925464.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_298925464.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_298925464;
-        // ---------- Original Method ----------
-        //return cause;
+        
+        
     }
 
     

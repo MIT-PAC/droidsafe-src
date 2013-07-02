@@ -1,11 +1,11 @@
 package javax.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.InvalidKeyException;
 import java.security.Key;
@@ -20,14 +20,14 @@ public class NullCipher extends Cipher {
         try 
         {
             this.init(Cipher.ENCRYPT_MODE, (Key)null, (SecureRandom)null);
-        } //End block
+        } 
         catch (InvalidKeyException e)
         { }
-        // ---------- Original Method ----------
-        //try {
-            //this.init(Cipher.ENCRYPT_MODE, (Key)null, (SecureRandom)null);
-        //} catch (InvalidKeyException e) {
-        //}
+        
+        
+            
+        
+        
     }
 
     

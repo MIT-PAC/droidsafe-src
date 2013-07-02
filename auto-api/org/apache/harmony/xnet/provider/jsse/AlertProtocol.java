@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class AlertProtocol {
@@ -21,31 +21,32 @@ public class AlertProtocol {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.626 -0400", hash_original_method = "E092E2209250C02F09C22B7C95E9AB91", hash_generated_method = "89DDAFEDBDC6600ADF822412966FC90D")
     protected  AlertProtocol() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.627 -0400", hash_original_method = "4783F18A2AEFB1BF115D21F8D4F4E6FF", hash_generated_method = "A9742893573022675C3B4131750B59FD")
     protected void setRecordProtocol(SSLRecordProtocol recordProtocol) {
         this.recordProtocol = recordProtocol;
-        // ---------- Original Method ----------
-        //this.recordProtocol = recordProtocol;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.628 -0400", hash_original_method = "F413EBA539C7D7D57656EE1032BAAF7C", hash_generated_method = "AF86BF82B04F9EBA5ABF1162BBD1304F")
     protected void alert(byte level, byte description) {
         {
             logger.println("Alert.alert: "+level+" "+description);
-        } //End block
+        } 
         this.alert[0] = level;
         this.alert[1] = description;
-        // ---------- Original Method ----------
-        //if (logger != null) {
-            //logger.println("Alert.alert: "+level+" "+description);
-        //}
-        //this.alert[0] = level;
-        //this.alert[1] = description;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -53,22 +54,23 @@ public class AlertProtocol {
     protected byte getDescriptionCode() {
         byte var40EA57D3EE3C07BF1C102B466E1C3091_1022690214 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1022690214;
-        // ---------- Original Method ----------
-        //return (alert[0] != 0) ? alert[1] : -100;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.629 -0400", hash_original_method = "87AB9C19E1A7EED4E3BFCF946809E0DA", hash_generated_method = "A0DF94AF8223CEFC3C62A1275D1D3B6C")
     protected void setProcessed() {
         {
             logger.println("Alert.setProcessed");
-        } //End block
+        } 
         this.alert[0] = 0;
-        // ---------- Original Method ----------
-        //if (logger != null) {
-            //logger.println("Alert.setProcessed");
-        //}
-        //this.alert[0] = 0;
+        
+        
+            
+        
+        
     }
 
     
@@ -76,8 +78,8 @@ public class AlertProtocol {
     protected boolean hasAlert() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2089065041 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2089065041;
-        // ---------- Original Method ----------
-        //return (alert[0] != 0);
+        
+        
     }
 
     
@@ -85,197 +87,198 @@ public class AlertProtocol {
     protected boolean isFatalAlert() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1816096502 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1816096502;
-        // ---------- Original Method ----------
-        //return (alert[0] == 2);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.632 -0400", hash_original_method = "4ED335C5479EFEAB65BE48D985C7B953", hash_generated_method = "EC54FD78E82494EB794701B3DA7F554D")
     protected String getAlertDescription() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1372583317 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1836148855 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1409167189 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_2136720334 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_1090216305 = null; //Variable for return #5
-        String varB4EAC82CA7396A68D541C85D26508E83_1313320746 = null; //Variable for return #6
-        String varB4EAC82CA7396A68D541C85D26508E83_785631557 = null; //Variable for return #7
-        String varB4EAC82CA7396A68D541C85D26508E83_93684257 = null; //Variable for return #8
-        String varB4EAC82CA7396A68D541C85D26508E83_70688518 = null; //Variable for return #9
-        String varB4EAC82CA7396A68D541C85D26508E83_536984244 = null; //Variable for return #10
-        String varB4EAC82CA7396A68D541C85D26508E83_928650816 = null; //Variable for return #11
-        String varB4EAC82CA7396A68D541C85D26508E83_1798799991 = null; //Variable for return #12
-        String varB4EAC82CA7396A68D541C85D26508E83_1076326734 = null; //Variable for return #13
-        String varB4EAC82CA7396A68D541C85D26508E83_2135163238 = null; //Variable for return #14
-        String varB4EAC82CA7396A68D541C85D26508E83_90693329 = null; //Variable for return #15
-        String varB4EAC82CA7396A68D541C85D26508E83_8834226 = null; //Variable for return #16
-        String varB4EAC82CA7396A68D541C85D26508E83_599925693 = null; //Variable for return #17
-        String varB4EAC82CA7396A68D541C85D26508E83_1074463955 = null; //Variable for return #18
-        String varB4EAC82CA7396A68D541C85D26508E83_1690547571 = null; //Variable for return #19
-        String varB4EAC82CA7396A68D541C85D26508E83_151821064 = null; //Variable for return #20
-        String varB4EAC82CA7396A68D541C85D26508E83_1750467704 = null; //Variable for return #21
-        String varB4EAC82CA7396A68D541C85D26508E83_1450960508 = null; //Variable for return #22
-        String varB4EAC82CA7396A68D541C85D26508E83_848539561 = null; //Variable for return #23
-        String varB4EAC82CA7396A68D541C85D26508E83_634452103 = null; //Variable for return #24
-        //Begin case CLOSE_NOTIFY 
+        String varB4EAC82CA7396A68D541C85D26508E83_1372583317 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1836148855 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1409167189 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2136720334 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1090216305 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1313320746 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_785631557 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_93684257 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_70688518 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_536984244 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_928650816 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1798799991 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1076326734 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_2135163238 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_90693329 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_8834226 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_599925693 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1074463955 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1690547571 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_151821064 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1750467704 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1450960508 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_848539561 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_634452103 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_1372583317 = "close_notify";
-        //End case CLOSE_NOTIFY 
-        //Begin case UNEXPECTED_MESSAGE 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1836148855 = "unexpected_message";
-        //End case UNEXPECTED_MESSAGE 
-        //Begin case BAD_RECORD_MAC 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1409167189 = "bad_record_mac";
-        //End case BAD_RECORD_MAC 
-        //Begin case DECRYPTION_FAILED 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_2136720334 = "decryption_failed";
-        //End case DECRYPTION_FAILED 
-        //Begin case RECORD_OVERFLOW 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1090216305 = "record_overflow";
-        //End case RECORD_OVERFLOW 
-        //Begin case DECOMPRESSION_FAILURE 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1313320746 = "decompression_failure";
-        //End case DECOMPRESSION_FAILURE 
-        //Begin case HANDSHAKE_FAILURE 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_785631557 = "handshake_failure";
-        //End case HANDSHAKE_FAILURE 
-        //Begin case BAD_CERTIFICATE 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_93684257 = "bad_certificate";
-        //End case BAD_CERTIFICATE 
-        //Begin case UNSUPPORTED_CERTIFICATE 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_70688518 = "unsupported_certificate";
-        //End case UNSUPPORTED_CERTIFICATE 
-        //Begin case CERTIFICATE_REVOKED 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_536984244 = "certificate_revoked";
-        //End case CERTIFICATE_REVOKED 
-        //Begin case CERTIFICATE_EXPIRED 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_928650816 = "certificate_expired";
-        //End case CERTIFICATE_EXPIRED 
-        //Begin case CERTIFICATE_UNKNOWN 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1798799991 = "certificate_unknown";
-        //End case CERTIFICATE_UNKNOWN 
-        //Begin case ILLEGAL_PARAMETER 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1076326734 = "illegal_parameter";
-        //End case ILLEGAL_PARAMETER 
-        //Begin case UNKNOWN_CA 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_2135163238 = "unknown_ca";
-        //End case UNKNOWN_CA 
-        //Begin case ACCESS_DENIED 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_90693329 = "access_denied";
-        //End case ACCESS_DENIED 
-        //Begin case DECODE_ERROR 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_8834226 = "decode_error";
-        //End case DECODE_ERROR 
-        //Begin case DECRYPT_ERROR 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_599925693 = "decrypt_error";
-        //End case DECRYPT_ERROR 
-        //Begin case EXPORT_RESTRICTION 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1074463955 = "export_restriction";
-        //End case EXPORT_RESTRICTION 
-        //Begin case PROTOCOL_VERSION 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1690547571 = "protocol_version";
-        //End case PROTOCOL_VERSION 
-        //Begin case INSUFFICIENT_SECURITY 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_151821064 = "insufficient_security";
-        //End case INSUFFICIENT_SECURITY 
-        //Begin case INTERNAL_ERROR 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1750467704 = "internal_error";
-        //End case INTERNAL_ERROR 
-        //Begin case USER_CANCELED 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1450960508 = "user_canceled";
-        //End case USER_CANCELED 
-        //Begin case NO_RENEGOTIATION 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_848539561 = "no_renegotiation";
-        //End case NO_RENEGOTIATION 
+        
         varB4EAC82CA7396A68D541C85D26508E83_634452103 = null;
-        String varA7E53CE21691AB073D9660D615818899_1099401379; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1099401379; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1372583317;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1836148855;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1409167189;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_2136720334;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1090216305;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1313320746;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_785631557;
                 break;
-            case 8: //Assign result for return ordinal #8
+            case 8: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_93684257;
                 break;
-            case 9: //Assign result for return ordinal #9
+            case 9: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_70688518;
                 break;
-            case 10: //Assign result for return ordinal #10
+            case 10: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_536984244;
                 break;
-            case 11: //Assign result for return ordinal #11
+            case 11: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_928650816;
                 break;
-            case 12: //Assign result for return ordinal #12
+            case 12: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1798799991;
                 break;
-            case 13: //Assign result for return ordinal #13
+            case 13: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1076326734;
                 break;
-            case 14: //Assign result for return ordinal #14
+            case 14: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_2135163238;
                 break;
-            case 15: //Assign result for return ordinal #15
+            case 15: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_90693329;
                 break;
-            case 16: //Assign result for return ordinal #16
+            case 16: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_8834226;
                 break;
-            case 17: //Assign result for return ordinal #17
+            case 17: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_599925693;
                 break;
-            case 18: //Assign result for return ordinal #18
+            case 18: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1074463955;
                 break;
-            case 19: //Assign result for return ordinal #19
+            case 19: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1690547571;
                 break;
-            case 20: //Assign result for return ordinal #20
+            case 20: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_151821064;
                 break;
-            case 21: //Assign result for return ordinal #21
+            case 21: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1750467704;
                 break;
-            case 22: //Assign result for return ordinal #22
+            case 22: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_1450960508;
                 break;
-            case 23: //Assign result for return ordinal #23
+            case 23: 
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_848539561;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1099401379 = varB4EAC82CA7396A68D541C85D26508E83_634452103;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1099401379.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1099401379.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1099401379;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.633 -0400", hash_original_method = "124BFC00035B67AF657D6336BEA07CC5", hash_generated_method = "D104026F02BFEEF761B165A910654EBD")
     protected byte[] wrap() {
         byte[] res = recordProtocol.wrap(ContentType.ALERT, alert, 0, 2);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1284234434 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1284234434;
-        // ---------- Original Method ----------
-        //byte[] res = recordProtocol.wrap(ContentType.ALERT, alert, 0, 2);
-        //return res;
+        
+        
+        
     }
 
     
@@ -284,10 +287,10 @@ public class AlertProtocol {
         alert[0] = 0;
         alert[1] = 0;
         recordProtocol = null;
-        // ---------- Original Method ----------
-        //alert[0] = 0;
-        //alert[1] = 0;
-        //recordProtocol = null;
+        
+        
+        
+        
     }
 
     

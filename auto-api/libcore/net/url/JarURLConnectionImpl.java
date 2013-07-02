@@ -1,11 +1,11 @@
 package libcore.net.url;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -52,12 +52,13 @@ public class JarURLConnectionImpl extends JarURLConnection {
         jarFileURL = getJarFileURL();
         jarFileURLConnection = jarFileURL.openConnection();
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //jarFileURL = getJarFileURL();
-        //jarFileURLConnection = jarFileURL.openConnection();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.924 -0400", hash_original_method = "0D95FCCAA7871FCD5DE5E8081721F47B", hash_generated_method = "926B22BA5526EACA5468913246024D03")
     @Override
     public void connect() throws IOException {
@@ -65,30 +66,32 @@ public class JarURLConnectionImpl extends JarURLConnection {
             findJarFile();
             findJarEntry();
             connected = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!connected) {
-            //findJarFile(); 
-            //findJarEntry(); 
-            //connected = true;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.924 -0400", hash_original_method = "BAB8781FAD6151E9B45BF4A1B941497D", hash_generated_method = "E91088E2D6837BFEB6505BD26F8FF4AE")
     @Override
     public JarFile getJarFile() throws IOException {
-        JarFile varB4EAC82CA7396A68D541C85D26508E83_600736004 = null; //Variable for return #1
+        JarFile varB4EAC82CA7396A68D541C85D26508E83_600736004 = null; 
         connect();
         varB4EAC82CA7396A68D541C85D26508E83_600736004 = jarFile;
-        varB4EAC82CA7396A68D541C85D26508E83_600736004.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_600736004.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_600736004;
-        // ---------- Original Method ----------
-        //connect();
-        //return jarFile;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.924 -0400", hash_original_method = "E0D7867F43E3325F58427586B81262FC", hash_generated_method = "6D2CF7B2A40F9FA8830B02F6B1E91F5A")
     private void findJarFile() throws IOException {
         JarFile jar = null;
@@ -97,7 +100,7 @@ public class JarURLConnectionImpl extends JarURLConnection {
             {
                 {
                     jarFile = jarCache.get(jarFileURL);
-                } //End block
+                } 
                 {
                     jar = openJarFile();
                     {
@@ -105,59 +108,59 @@ public class JarURLConnectionImpl extends JarURLConnection {
                         {
                             jarCache.put(jarFileURL, jar);
                             jarFile = jar;
-                        } //End block
+                        } 
                         {
                             jar.close();
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 jarFile = openJarFile();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException();
-        } //End block
-        // ---------- Original Method ----------
-        //JarFile jar = null;
-        //if (getUseCaches()) {
-            //synchronized (jarCache) {
-                //jarFile = jarCache.get(jarFileURL);
-            //}
-            //if (jarFile == null) {
-                //jar = openJarFile();
-                //synchronized (jarCache) {
-                    //jarFile = jarCache.get(jarFileURL);
-                    //if (jarFile == null) {
-                        //jarCache.put(jarFileURL, jar);
-                        //jarFile = jar;
-                    //} else {
-                        //jar.close();
-                    //}
-                //}
-            //}
-        //} else {
-            //jarFile = openJarFile();
-        //}
-        //if (jarFile == null) {
-            //throw new IOException();
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+            
+                
+                
+                    
+                    
+                        
+                        
+                    
+                        
+                    
+                
+            
+        
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.926 -0400", hash_original_method = "AF67425F611C6CCEA6B4F36EBE571AB2", hash_generated_method = "658AB3E2E016A25E36C69F5DB63746F9")
      JarFile openJarFile() throws IOException {
-        JarFile varB4EAC82CA7396A68D541C85D26508E83_2076210258 = null; //Variable for return #1
-        JarFile varB4EAC82CA7396A68D541C85D26508E83_2117681865 = null; //Variable for return #2
-        JarFile varB4EAC82CA7396A68D541C85D26508E83_1596736629 = null; //Variable for return #3
-        JarFile varB4EAC82CA7396A68D541C85D26508E83_366283455 = null; //Variable for return #4
+        JarFile varB4EAC82CA7396A68D541C85D26508E83_2076210258 = null; 
+        JarFile varB4EAC82CA7396A68D541C85D26508E83_2117681865 = null; 
+        JarFile varB4EAC82CA7396A68D541C85D26508E83_1596736629 = null; 
+        JarFile varB4EAC82CA7396A68D541C85D26508E83_366283455 = null; 
         {
             boolean var4905B00C7F001BF20E914C34E673ABA2_1098527829 = (jarFileURL.getProtocol().equals("file"));
             {
                 String decodedFile = UriCodec.decode(jarFileURL.getFile());
                 varB4EAC82CA7396A68D541C85D26508E83_2076210258 = new JarFile(new File(decodedFile), true, ZipFile.OPEN_READ);
-            } //End block
+            } 
             {
                 final InputStream is = jarFileURL.openConnection().getInputStream();
                 try 
@@ -175,199 +178,204 @@ public class JarURLConnectionImpl extends JarURLConnection {
                             boolean var884A04FD9ADAFCF2F0817BF3B474DB07_205704305 = ((nbytes = is.read(buf)) > -1);
                             {
                                 fos.write(buf, 0, nbytes);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         fos.close();
                         varB4EAC82CA7396A68D541C85D26508E83_2117681865 = new JarFile(tempJar, true, ZipFile.OPEN_READ | ZipFile.OPEN_DELETE);
-                    } //End block
+                    } 
                     catch (IOException e)
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1596736629 = null;
-                    } //End block
+                    } 
                     finally 
                     {
                         {
                             try 
                             {
                                 fos.close();
-                            } //End block
+                            } 
                             catch (IOException ex)
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_366283455 = null;
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 finally 
                 {
                     {
                         is.close();
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        JarFile varA7E53CE21691AB073D9660D615818899_1909037744; //Final return value
+                    } 
+                } 
+            } 
+        } 
+        JarFile varA7E53CE21691AB073D9660D615818899_1909037744; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1909037744 = varB4EAC82CA7396A68D541C85D26508E83_2076210258;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1909037744 = varB4EAC82CA7396A68D541C85D26508E83_2117681865;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1909037744 = varB4EAC82CA7396A68D541C85D26508E83_1596736629;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1909037744 = varB4EAC82CA7396A68D541C85D26508E83_366283455;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1909037744.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1909037744.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1909037744;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.926 -0400", hash_original_method = "4969FA075748EE67279B88C22279B5EB", hash_generated_method = "7FA758A2E4BF01A52539432A0C3E7344")
     @Override
     public JarEntry getJarEntry() throws IOException {
-        JarEntry varB4EAC82CA7396A68D541C85D26508E83_1264151094 = null; //Variable for return #1
+        JarEntry varB4EAC82CA7396A68D541C85D26508E83_1264151094 = null; 
         connect();
         varB4EAC82CA7396A68D541C85D26508E83_1264151094 = jarEntry;
-        varB4EAC82CA7396A68D541C85D26508E83_1264151094.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1264151094.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1264151094;
-        // ---------- Original Method ----------
-        //connect();
-        //return jarEntry;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.927 -0400", hash_original_method = "47E7331F0B55D0071578FE2F3BE66635", hash_generated_method = "AD9A49F16BB7D1DC7D5051AE68590071")
     private void findJarEntry() throws IOException {
         {
             boolean varE49F2B7FF91F623F4C37CC04186E7780_917859429 = (getEntryName() == null);
-        } //End collapsed parenthetic
+        } 
         jarEntry = jarFile.getJarEntry(getEntryName());
         {
             if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException(getEntryName());
-        } //End block
-        // ---------- Original Method ----------
-        //if (getEntryName() == null) {
-            //return;
-        //}
-        //jarEntry = jarFile.getJarEntry(getEntryName());
-        //if (jarEntry == null) {
-            //throw new FileNotFoundException(getEntryName());
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.927 -0400", hash_original_method = "96C498B69E21157D37D76B9902545F24", hash_generated_method = "0650C2C1CC5918DED9C91348BA60D256")
     @Override
     public InputStream getInputStream() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_627025502 = null; //Variable for return #1
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_720852489 = null; //Variable for return #2
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_627025502 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_720852489 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("JarURLConnection InputStream has been closed");
-        } //End block
+        } 
         connect();
         {
             varB4EAC82CA7396A68D541C85D26508E83_627025502 = jarInput;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Jar entry not specified");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_720852489 = jarInput = new JarURLConnectionInputStream(jarFile
                 .getInputStream(jarEntry), jarFile);
-        InputStream varA7E53CE21691AB073D9660D615818899_1525063783; //Final return value
+        InputStream varA7E53CE21691AB073D9660D615818899_1525063783; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1525063783 = varB4EAC82CA7396A68D541C85D26508E83_627025502;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1525063783 = varB4EAC82CA7396A68D541C85D26508E83_720852489;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1525063783.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1525063783.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1525063783;
-        // ---------- Original Method ----------
-        //if (closed) {
-            //throw new IllegalStateException("JarURLConnection InputStream has been closed");
-        //}
-        //connect();
-        //if (jarInput != null) {
-            //return jarInput;
-        //}
-        //if (jarEntry == null) {
-            //throw new IOException("Jar entry not specified");
-        //}
-        //return jarInput = new JarURLConnectionInputStream(jarFile
-                //.getInputStream(jarEntry), jarFile);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.928 -0400", hash_original_method = "626D247225A5C5A729C002EF0C988C29", hash_generated_method = "044D283BF7EE1C54E8E8C08C0820973B")
     @Override
     public String getContentType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_102510648 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_459145972 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_102510648 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_459145972 = null; 
         {
             boolean var5A4D7A486C11D5F49AB1CA63C5A4886E_1412531606 = (url.getFile().endsWith("!/"));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_102510648 = "x-java/jar";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String cType = null;
         String entryName = getEntryName();
         {
             cType = guessContentTypeFromName(entryName);
-        } //End block
+        } 
         {
             try 
             {
                 connect();
                 cType = jarFileURLConnection.getContentType();
-            } //End block
+            } 
             catch (IOException ioe)
             { }
-        } //End block
+        } 
         {
             cType = "content/unknown";
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_459145972 = cType;
-        String varA7E53CE21691AB073D9660D615818899_1752693537; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1752693537; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1752693537 = varB4EAC82CA7396A68D541C85D26508E83_102510648;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1752693537 = varB4EAC82CA7396A68D541C85D26508E83_459145972;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1752693537.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1752693537.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1752693537;
-        // ---------- Original Method ----------
-        //if (url.getFile().endsWith("!/")) {
-            //return "x-java/jar";
-        //}
-        //String cType = null;
-        //String entryName = getEntryName();
-        //if (entryName != null) {
-            //cType = guessContentTypeFromName(entryName);
-        //} else {
-            //try {
-                //connect();
-                //cType = jarFileURLConnection.getContentType();
-            //} catch (IOException ioe) {
-            //}
-        //}
-        //if (cType == null) {
-            //cType = "content/unknown";
-        //}
-        //return cType;
+        
+        
+            
+        
+        
+        
+        
+            
+        
+            
+                
+                
+            
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.928 -0400", hash_original_method = "C82FBA290AE26D875C8865E2241D6919", hash_generated_method = "9D640E82446EC3E199474A0F534EB357")
     @Override
     public int getContentLength() {
@@ -376,110 +384,117 @@ public class JarURLConnectionImpl extends JarURLConnection {
             connect();
             {
                 int var1758F21177BADAC1F67FFD78824D606B_297464002 = (jarFileURLConnection.getContentLength());
-            } //End block
+            } 
             int var2BB2A25985BB5B3A4266161AB3B248B5_28608162 = ((int) getJarEntry().getSize());
-        } //End block
+        } 
         catch (IOException e)
         { }
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_593346350 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_593346350;
-        // ---------- Original Method ----------
-        //try {
-            //connect();
-            //if (jarEntry == null) {
-                //return jarFileURLConnection.getContentLength();
-            //}
-            //return (int) getJarEntry().getSize();
-        //} catch (IOException e) {
-        //}
-        //return -1;
+        
+        
+            
+            
+                
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.929 -0400", hash_original_method = "277EA8603145BCD9B1620E5B0867C76D", hash_generated_method = "709E8360FBDA21E82808083C9CEB4A24")
     @Override
     public Object getContent() throws IOException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1363328224 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_1195041943 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_1363328224 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_1195041943 = null; 
         connect();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1363328224 = jarFile;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1195041943 = super.getContent();
-        Object varA7E53CE21691AB073D9660D615818899_389889130; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_389889130; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_389889130 = varB4EAC82CA7396A68D541C85D26508E83_1363328224;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_389889130 = varB4EAC82CA7396A68D541C85D26508E83_1195041943;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_389889130.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_389889130.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_389889130;
-        // ---------- Original Method ----------
-        //connect();
-        //if (jarEntry == null) {
-            //return jarFile;
-        //}
-        //return super.getContent();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.929 -0400", hash_original_method = "32AB82048771397A8F2D1AACD6751885", hash_generated_method = "99883F8D9F8579BC2BFD28A504C87F8E")
     @Override
     public Permission getPermission() throws IOException {
-        Permission varB4EAC82CA7396A68D541C85D26508E83_1506361939 = null; //Variable for return #1
+        Permission varB4EAC82CA7396A68D541C85D26508E83_1506361939 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1506361939 = jarFileURLConnection.getPermission();
-        varB4EAC82CA7396A68D541C85D26508E83_1506361939.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1506361939.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1506361939;
-        // ---------- Original Method ----------
-        //return jarFileURLConnection.getPermission();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.930 -0400", hash_original_method = "89E1132CC6620CB971998873757D9D18", hash_generated_method = "6BE221698FE156C3003BFB249BE22228")
     @Override
     public boolean getUseCaches() {
         boolean var24AD89541BD4FCF17459EB4AA48D1E1F_128133922 = (jarFileURLConnection.getUseCaches());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1174934836 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1174934836;
-        // ---------- Original Method ----------
-        //return jarFileURLConnection.getUseCaches();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.930 -0400", hash_original_method = "B4491CDE2E10F000A5909671FFF7BF11", hash_generated_method = "9012379D981C6911267996B7CBEFE2D8")
     @Override
     public void setUseCaches(boolean usecaches) {
         jarFileURLConnection.setUseCaches(usecaches);
         addTaint(usecaches);
-        // ---------- Original Method ----------
-        //jarFileURLConnection.setUseCaches(usecaches);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.930 -0400", hash_original_method = "E32A55AFDD8C878EAFF3633240EF835D", hash_generated_method = "10EDF3D28EE7FEE990778CCE25CD1042")
     @Override
     public boolean getDefaultUseCaches() {
         boolean varA32B484A43B8F81923B7FBB94AE29B5F_2063103697 = (jarFileURLConnection.getDefaultUseCaches());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_120510226 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_120510226;
-        // ---------- Original Method ----------
-        //return jarFileURLConnection.getDefaultUseCaches();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.931 -0400", hash_original_method = "9B53AD37225976042371B5DBF82602F6", hash_generated_method = "E507CCE9B13C0BBB46BC63084E0088EB")
     @Override
     public void setDefaultUseCaches(boolean defaultusecaches) {
         jarFileURLConnection.setDefaultUseCaches(defaultusecaches);
         addTaint(defaultusecaches);
-        // ---------- Original Method ----------
-        //jarFileURLConnection.setDefaultUseCaches(defaultusecaches);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeCachedFiles() {
         Set<Map.Entry<URL, JarFile>> s = jarCache.entrySet();
         synchronized (jarCache) {
@@ -507,8 +522,8 @@ public class JarURLConnectionImpl extends JarURLConnection {
             super(in);
             jarFile = file;
             addTaint(in.getTaint());
-            // ---------- Original Method ----------
-            //jarFile = file;
+            
+            
         }
 
         
@@ -521,14 +536,14 @@ public class JarURLConnectionImpl extends JarURLConnection {
                 {
                     closed = true;
                     jarFile.close();
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //super.close();
-            //if (!getUseCaches()) {
-                //closed = true;
-                //jarFile.close();
-            //}
+                } 
+            } 
+            
+            
+            
+                
+                
+            
         }
 
         

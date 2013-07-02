@@ -1,11 +1,11 @@
 package com.android.internal.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Process;
 import android.util.Slog;
@@ -21,10 +21,11 @@ public class WrapperInit {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.715 -0400", hash_original_method = "14AE6538EB86DCD6EBFC0019A87B65D0", hash_generated_method = "F137D9F0016E8D63FEB9D79F37359A64")
     private  WrapperInit() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void main(String[] args) {
         try {
             int fdNum = Integer.parseInt(args[0], 10);
@@ -50,6 +51,7 @@ public class WrapperInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void execApplication(String invokeWith, String niceName,
             int targetSdkVersion, FileDescriptor pipeFd, String[] args) {
         StringBuilder command = new StringBuilder(invokeWith);
@@ -66,6 +68,7 @@ public class WrapperInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void execStandalone(String invokeWith, String classPath, String className,
             String[] args) {
         StringBuilder command = new StringBuilder(invokeWith);

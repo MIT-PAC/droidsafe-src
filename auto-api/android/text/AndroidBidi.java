@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.text.Layout.Directions;
 
@@ -14,10 +14,11 @@ class AndroidBidi {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.479 -0400", hash_original_method = "67801A817F22277FC821400294E4A632", hash_generated_method = "67801A817F22277FC821400294E4A632")
     public AndroidBidi ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static int bidi(int dir, char[] chs, byte[] chInfo, int n, boolean haveInfo) {
         if (chs == null || chInfo == null) {
             throw new NullPointerException();
@@ -38,6 +39,7 @@ class AndroidBidi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Directions directions(int dir, byte[] levels, int lstart,
             char[] chars, int cstart, int len) {
         int baseLevel = dir == Layout.DIR_LEFT_TO_RIGHT ? 0 : 1;

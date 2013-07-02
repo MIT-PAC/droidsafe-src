@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1EncodableVector;
@@ -40,17 +40,17 @@ public class ObjectDigestInfo extends ASN1Encodable {
         this.digestedObjectType = new DEREnumerated(digestedObjectType);
         {
             this.otherObjectTypeID = new DERObjectIdentifier(otherObjectTypeID);
-        } //End block
+        } 
         this.digestAlgorithm = digestAlgorithm;
         this.objectDigest = new DERBitString(objectDigest);
-        // ---------- Original Method ----------
-        //this.digestedObjectType = new DEREnumerated(digestedObjectType);
-        //if (digestedObjectType == otherObjectDigest)
-        //{
-            //this.otherObjectTypeID = new DERObjectIdentifier(otherObjectTypeID);
-        //}
-        //this.digestAlgorithm = digestAlgorithm;
-        //this.objectDigest = new DERBitString(objectDigest);
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -62,36 +62,37 @@ public class ObjectDigestInfo extends ASN1Encodable {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad sequence size: "
                 + seq.size());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         digestedObjectType = DEREnumerated.getInstance(seq.getObjectAt(0));
         int offset = 0;
         {
             boolean varD198700A8B4B6B137665E7A32DD2A838_1864011833 = (seq.size() == 4);
             {
                 otherObjectTypeID = DERObjectIdentifier.getInstance(seq.getObjectAt(1));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         digestAlgorithm = AlgorithmIdentifier.getInstance(seq.getObjectAt(1 + offset));
         objectDigest = DERBitString.getInstance(seq.getObjectAt(2 + offset));
-        // ---------- Original Method ----------
-        //if (seq.size() > 4 || seq.size() < 3)
-        //{
-            //throw new IllegalArgumentException("Bad sequence size: "
-                //+ seq.size());
-        //}
-        //digestedObjectType = DEREnumerated.getInstance(seq.getObjectAt(0));
-        //int offset = 0;
-        //if (seq.size() == 4)
-        //{
-            //otherObjectTypeID = DERObjectIdentifier.getInstance(seq.getObjectAt(1));
-            //offset++;
-        //}
-        //digestAlgorithm = AlgorithmIdentifier.getInstance(seq.getObjectAt(1 + offset));
-        //objectDigest = DERBitString.getInstance(seq.getObjectAt(2 + offset));
+        
+        
+        
+            
+                
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ObjectDigestInfo getInstance(
         Object obj) {
         if (obj == null || obj instanceof ObjectDigestInfo)
@@ -107,6 +108,7 @@ public class ObjectDigestInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ObjectDigestInfo getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -116,71 +118,72 @@ public class ObjectDigestInfo extends ASN1Encodable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.889 -0400", hash_original_method = "6F0ED6AFEE9055594DCEF2A3E1A2F111", hash_generated_method = "E8371BFBF1FF93DDC63B315557947B9F")
     public DEREnumerated getDigestedObjectType() {
-        DEREnumerated varB4EAC82CA7396A68D541C85D26508E83_1083914246 = null; //Variable for return #1
+        DEREnumerated varB4EAC82CA7396A68D541C85D26508E83_1083914246 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1083914246 = digestedObjectType;
-        varB4EAC82CA7396A68D541C85D26508E83_1083914246.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1083914246.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1083914246;
-        // ---------- Original Method ----------
-        //return digestedObjectType;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.889 -0400", hash_original_method = "ED88D29FA12F8D28E30CF15EC0719828", hash_generated_method = "6CEB4331D7C2DBC6D6E8DCDF1262285D")
     public DERObjectIdentifier getOtherObjectTypeID() {
-        DERObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1659388549 = null; //Variable for return #1
+        DERObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1659388549 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1659388549 = otherObjectTypeID;
-        varB4EAC82CA7396A68D541C85D26508E83_1659388549.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1659388549.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1659388549;
-        // ---------- Original Method ----------
-        //return otherObjectTypeID;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.890 -0400", hash_original_method = "80A095D2CD5C912E5290805C4F2E95A6", hash_generated_method = "96232E5FCF4C563D230942DAA11BBC1C")
     public AlgorithmIdentifier getDigestAlgorithm() {
-        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1410955927 = null; //Variable for return #1
+        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1410955927 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1410955927 = digestAlgorithm;
-        varB4EAC82CA7396A68D541C85D26508E83_1410955927.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1410955927.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1410955927;
-        // ---------- Original Method ----------
-        //return digestAlgorithm;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.890 -0400", hash_original_method = "591AAD603948030260B8B2B98E27FE31", hash_generated_method = "22D0C8E40C7D9F7CEDBD164FDA0D69B2")
     public DERBitString getObjectDigest() {
-        DERBitString varB4EAC82CA7396A68D541C85D26508E83_1544294810 = null; //Variable for return #1
+        DERBitString varB4EAC82CA7396A68D541C85D26508E83_1544294810 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1544294810 = objectDigest;
-        varB4EAC82CA7396A68D541C85D26508E83_1544294810.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1544294810.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1544294810;
-        // ---------- Original Method ----------
-        //return objectDigest;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.892 -0400", hash_original_method = "2916DBD20BE914B0B076A9BFA9563581", hash_generated_method = "E8AAB17CB174657931F6EAC85D74B10E")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_1870366940 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1870366940 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(digestedObjectType);
         {
             v.add(otherObjectTypeID);
-        } //End block
+        } 
         v.add(digestAlgorithm);
         v.add(objectDigest);
         varB4EAC82CA7396A68D541C85D26508E83_1870366940 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_1870366940.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1870366940.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1870366940;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector v = new ASN1EncodableVector();
-        //v.add(digestedObjectType);
-        //if (otherObjectTypeID != null)
-        //{
-            //v.add(otherObjectTypeID);
-        //}
-        //v.add(digestAlgorithm);
-        //v.add(objectDigest);
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     

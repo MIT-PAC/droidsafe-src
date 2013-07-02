@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.UnsupportedEncodingException;
 
@@ -13,20 +13,23 @@ public class Base64 {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.189 -0400", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "96F9E0BDD170E9FC5C3951236F2EB54E")
     private  Base64() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decode(String str, int flags) {
         return decode(str.getBytes(), flags);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decode(byte[] input, int flags) {
         return decode(input, 0, input.length, flags);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decode(byte[] input, int offset, int len, int flags) {
         Decoder decoder = new Decoder(flags, new byte[len*3/4]);
         if (!decoder.process(input, offset, len, true)) {
@@ -41,6 +44,7 @@ public class Base64 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String encodeToString(byte[] input, int flags) {
         try {
             return new String(encode(input, flags), "US-ASCII");
@@ -50,6 +54,7 @@ public class Base64 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String encodeToString(byte[] input, int offset, int len, int flags) {
         try {
             return new String(encode(input, offset, len, flags), "US-ASCII");
@@ -59,11 +64,13 @@ public class Base64 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] encode(byte[] input, int flags) {
         return encode(input, 0, input.length, flags);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] encode(byte[] input, int offset, int len, int flags) {
         Encoder encoder = new Encoder(flags, null);
         int output_len = len / 3 * 4;
@@ -100,7 +107,7 @@ public class Base64 {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.190 -0400", hash_original_method = "1EFD9A0D338C10B7A776AFC361894E38", hash_generated_method = "1EFD9A0D338C10B7A776AFC361894E38")
         public Coder ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -132,11 +139,11 @@ public class Base64 {
             state = 0;
             value = 0;
             addTaint(output[0]);
-            // ---------- Original Method ----------
-            //this.output = output;
-            //alphabet = ((flags & URL_SAFE) == 0) ? DECODE : DECODE_WEBSAFE;
-            //state = 0;
-            //value = 0;
+            
+            
+            
+            
+            
         }
 
         
@@ -145,8 +152,8 @@ public class Base64 {
             addTaint(len);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_161778408 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_161778408;
-            // ---------- Original Method ----------
-            //return len * 3/4 + 10;
+            
+            
         }
 
         
@@ -173,39 +180,39 @@ public class Base64 {
                             output[op] = (byte) (value >> 16);
                             op += 3;
                             p += 4;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 int d = alphabet[input[p++] & 0xff];
-                //Begin case 0 
+                
                 {
                     value = d;
-                } //End block
+                } 
                 {
                     this.state = 6;
-                } //End block
-                //End case 0 
-                //Begin case 1 
+                } 
+                
+                
                 {
                     value = (value << 6) | d;
-                } //End block
+                } 
                 {
                     this.state = 6;
-                } //End block
-                //End case 1 
-                //Begin case 2 
+                } 
+                
+                
                 {
                     value = (value << 6) | d;
-                } //End block
+                } 
                 {
                     output[op++] = (byte) (value >> 4);
                     state = 4;
-                } //End block
+                } 
                 {
                     this.state = 6;
-                } //End block
-                //End case 2 
-                //Begin case 3 
+                } 
+                
+                
                 {
                     value = (value << 6) | d;
                     output[op+2] = (byte) value;
@@ -213,48 +220,48 @@ public class Base64 {
                     output[op] = (byte) (value >> 16);
                     op += 3;
                     state = 0;
-                } //End block
+                } 
                 {
                     output[op+1] = (byte) (value >> 2);
                     output[op] = (byte) (value >> 10);
                     op += 2;
                     state = 5;
-                } //End block
+                } 
                 {
                     this.state = 6;
-                } //End block
-                //End case 3 
-                //Begin case 4 
+                } 
+                
+                
                 {
                     this.state = 6;
-                } //End block
-                //End case 4 
-                //Begin case 5 
+                } 
+                
+                
                 {
                     this.state = 6;
-                } //End block
-                //End case 5 
-            } //End block
+                } 
+                
+            } 
             {
                 this.state = state;
                 this.value = value;
                 this.op = op;
-            } //End block
-            //Begin case 1 
+            } 
+            
             this.state = 6;
-            //End case 1 
-            //Begin case 2 
+            
+            
             output[op++] = (byte) (value >> 4);
-            //End case 2 
-            //Begin case 3 
+            
+            
             output[op++] = (byte) (value >> 10);
-            //End case 3 
-            //Begin case 3 
+            
+            
             output[op++] = (byte) (value >> 2);
-            //End case 3 
-            //Begin case 4 
+            
+            
             this.state = 6;
-            //End case 4 
+            
             this.state = state;
             this.op = op;
             addTaint(input[0]);
@@ -263,8 +270,8 @@ public class Base64 {
             addTaint(finish);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1097992231 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1097992231;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -352,15 +359,15 @@ public class Base64 {
             tailLen = 0;
             count = do_newline ? LINE_GROUPS : -1;
             addTaint(output[0]);
-            // ---------- Original Method ----------
-            //this.output = output;
-            //do_padding = (flags & NO_PADDING) == 0;
-            //do_newline = (flags & NO_WRAP) == 0;
-            //do_cr = (flags & CRLF) != 0;
-            //alphabet = ((flags & URL_SAFE) == 0) ? ENCODE : ENCODE_WEBSAFE;
-            //tail = new byte[2];
-            //tailLen = 0;
-            //count = do_newline ? LINE_GROUPS : -1;
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -369,8 +376,8 @@ public class Base64 {
             addTaint(len);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_268966185 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_268966185;
-            // ---------- Original Method ----------
-            //return len * 8/5 + 10;
+            
+            
         }
 
         
@@ -383,25 +390,25 @@ public class Base64 {
             int p = offset;
             len += offset;
             int v = -1;
-            //Begin case 1 
+            
             {
                 v = ((tail[0] & 0xff) << 16) |
                             ((input[p++] & 0xff) << 8) |
                             (input[p++] & 0xff);
                 tailLen = 0;
-            } //End block
-            //End case 1 
-            //Begin case 1 
+            } 
+            
+            
             ;
-            //End case 1 
-            //Begin case 2 
+            
+            
             {
                 v = ((tail[0] & 0xff) << 16) |
                             ((tail[1] & 0xff) << 8) |
                             (input[p++] & 0xff);
                 tailLen = 0;
-            } //End block
-            //End case 2 
+            } 
+            
             {
                 output[op++] = alphabet[(v >> 18) & 0x3f];
                 output[op++] = alphabet[(v >> 12) & 0x3f];
@@ -411,8 +418,8 @@ public class Base64 {
                     output[op++] = '\r';
                     output[op++] = '\n';
                     count = LINE_GROUPS;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 v = ((input[p] & 0xff) << 16) |
                     ((input[p+1] & 0xff) << 8) |
@@ -427,8 +434,8 @@ public class Base64 {
                     output[op++] = '\r';
                     output[op++] = '\n';
                     count = LINE_GROUPS;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 {
                     int t = 0;
@@ -439,12 +446,12 @@ public class Base64 {
                     {
                         output[op++] = '=';
                         output[op++] = '=';
-                    } //End block
+                    } 
                     {
                         output[op++] = '\r';
                         output[op++] = '\n';
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     int t = 0;
                     v = (((tailLen > 1 ? tail[t++] : input[p++]) & 0xff) << 10) |
@@ -455,26 +462,26 @@ public class Base64 {
                     output[op++] = alphabet[v & 0x3f];
                     {
                         output[op++] = '=';
-                    } //End block
+                    } 
                     {
                         output[op++] = '\r';
                         output[op++] = '\n';
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     output[op++] = '\r';
                     output[op++] = '\n';
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 {
                     tail[tailLen++] = input[p];
-                } //End block
+                } 
                 {
                     tail[tailLen++] = input[p];
                     tail[tailLen++] = input[p+1];
-                } //End block
-            } //End block
+                } 
+            } 
             this.op = op;
             this.count = count;
             addTaint(offset);
@@ -482,8 +489,8 @@ public class Base64 {
             addTaint(finish);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_306522832 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_306522832;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

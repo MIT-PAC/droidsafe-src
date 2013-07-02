@@ -1,11 +1,11 @@
 package org.bouncycastle.math.ec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 import java.util.Random;
@@ -15,7 +15,7 @@ public abstract class ECFieldElement implements ECConstants {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.494 -0400", hash_original_method = "18B929116CB81747CE726807F2C6A2C0", hash_generated_method = "18B929116CB81747CE726807F2C6A2C0")
     public ECFieldElement ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -54,12 +54,12 @@ public abstract class ECFieldElement implements ECConstants {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.496 -0400", hash_original_method = "0A600F50B2D3858965A3E5F0EE37FE95", hash_generated_method = "A49B69759EEE3F370F45E73D3F278596")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_288780758 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_288780758 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_288780758 = this.toBigInteger().toString(2);
-        varB4EAC82CA7396A68D541C85D26508E83_288780758.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_288780758.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_288780758;
-        // ---------- Original Method ----------
-        //return this.toBigInteger().toString(2);
+        
+        
     }
 
     
@@ -78,38 +78,38 @@ public abstract class ECFieldElement implements ECConstants {
                 boolean var46B3A30496779CCBFE107E4FE6508D5F_642882526 = (x.compareTo(q) >= 0);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("x value too large in field element");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             this.q = q;
-            // ---------- Original Method ----------
-            //this.x = x;
-            //if (x.compareTo(q) >= 0)
-            //{
-                //throw new IllegalArgumentException("x value too large in field element");
-            //}
-            //this.q = q;
+            
+            
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.498 -0400", hash_original_method = "980758C44AA9D55BE8845E0F1627D066", hash_generated_method = "81D8D86DEE940693E49A382B3FDE6280")
         public BigInteger toBigInteger() {
-            BigInteger varB4EAC82CA7396A68D541C85D26508E83_1121317804 = null; //Variable for return #1
+            BigInteger varB4EAC82CA7396A68D541C85D26508E83_1121317804 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1121317804 = x;
-            varB4EAC82CA7396A68D541C85D26508E83_1121317804.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1121317804.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1121317804;
-            // ---------- Original Method ----------
-            //return x;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.499 -0400", hash_original_method = "0E8B7E675C6828F2CC0DC48F96E6F8E3", hash_generated_method = "982AAB3AB1EA4DF0A8E0E67299B5257B")
         public String getFieldName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_894904204 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_894904204 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_894904204 = "Fp";
-            varB4EAC82CA7396A68D541C85D26508E83_894904204.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_894904204.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_894904204;
-            // ---------- Original Method ----------
-            //return "Fp";
+            
+            
         }
 
         
@@ -118,130 +118,130 @@ public abstract class ECFieldElement implements ECConstants {
             int varA151D78D1E2C09447CC56EDC4DA68901_265929050 = (q.bitLength());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_919420883 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_919420883;
-            // ---------- Original Method ----------
-            //return q.bitLength();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.500 -0400", hash_original_method = "ACFCE2DB75EFF131F33A5EE2D309C15F", hash_generated_method = "79F7FAD235DA1289F281DCB575FA7F3D")
         public BigInteger getQ() {
-            BigInteger varB4EAC82CA7396A68D541C85D26508E83_770702677 = null; //Variable for return #1
+            BigInteger varB4EAC82CA7396A68D541C85D26508E83_770702677 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_770702677 = q;
-            varB4EAC82CA7396A68D541C85D26508E83_770702677.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_770702677.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_770702677;
-            // ---------- Original Method ----------
-            //return q;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.500 -0400", hash_original_method = "81C2635B1C8BBF0D98329C00DDA86CBF", hash_generated_method = "E4363D13D21C2B6F179D2371B030717E")
         public ECFieldElement add(ECFieldElement b) {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1147781185 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1147781185 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1147781185 = new Fp(q, x.add(b.toBigInteger()).mod(q));
             addTaint(b.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1147781185.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1147781185.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1147781185;
-            // ---------- Original Method ----------
-            //return new Fp(q, x.add(b.toBigInteger()).mod(q));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.501 -0400", hash_original_method = "CC55B0F5614FEECA03D2E059411B5A62", hash_generated_method = "4A43EEEBA4D6EB5AE4C48F94D2554BAA")
         public ECFieldElement subtract(ECFieldElement b) {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_185150630 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_185150630 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_185150630 = new Fp(q, x.subtract(b.toBigInteger()).mod(q));
             addTaint(b.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_185150630.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_185150630.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_185150630;
-            // ---------- Original Method ----------
-            //return new Fp(q, x.subtract(b.toBigInteger()).mod(q));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.501 -0400", hash_original_method = "8FDF6CC967FA6FBF2AB862654F18B35A", hash_generated_method = "E2D835E8FCB2CE6A572933878B6C346D")
         public ECFieldElement multiply(ECFieldElement b) {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_2031411984 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_2031411984 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2031411984 = new Fp(q, x.multiply(b.toBigInteger()).mod(q));
             addTaint(b.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2031411984.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2031411984.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2031411984;
-            // ---------- Original Method ----------
-            //return new Fp(q, x.multiply(b.toBigInteger()).mod(q));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.502 -0400", hash_original_method = "273EB04F445D1E8BD427B46F09A750C8", hash_generated_method = "1B873D6D95E1A00B83012B00BB2E4070")
         public ECFieldElement divide(ECFieldElement b) {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1684898581 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1684898581 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1684898581 = new Fp(q, x.multiply(b.toBigInteger().modInverse(q)).mod(q));
             addTaint(b.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1684898581.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1684898581.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1684898581;
-            // ---------- Original Method ----------
-            //return new Fp(q, x.multiply(b.toBigInteger().modInverse(q)).mod(q));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.502 -0400", hash_original_method = "9EF54D69A52E7076272AA6C8111B6A31", hash_generated_method = "F5ABF3121B24C1B07541721DE7AFC8C2")
         public ECFieldElement negate() {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1320428878 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1320428878 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1320428878 = new Fp(q, x.negate().mod(q));
-            varB4EAC82CA7396A68D541C85D26508E83_1320428878.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1320428878.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1320428878;
-            // ---------- Original Method ----------
-            //return new Fp(q, x.negate().mod(q));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.502 -0400", hash_original_method = "1F15D9F4F3F7C45F6D78B4A8A149E9FC", hash_generated_method = "D80329F388C1818B374AE18FB249A10F")
         public ECFieldElement square() {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_228466773 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_228466773 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_228466773 = new Fp(q, x.multiply(x).mod(q));
-            varB4EAC82CA7396A68D541C85D26508E83_228466773.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_228466773.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_228466773;
-            // ---------- Original Method ----------
-            //return new Fp(q, x.multiply(x).mod(q));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.503 -0400", hash_original_method = "87CD41222C6FB4EC59F31E743CC1D431", hash_generated_method = "F57014009DC1AEAD8F0E41D19D22B700")
         public ECFieldElement invert() {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_394924656 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_394924656 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_394924656 = new Fp(q, x.modInverse(q));
-            varB4EAC82CA7396A68D541C85D26508E83_394924656.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_394924656.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_394924656;
-            // ---------- Original Method ----------
-            //return new Fp(q, x.modInverse(q));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.504 -0400", hash_original_method = "27B2154E50FF6039CAEE06398FCA6C60", hash_generated_method = "1F21B279CAD26BF49115558B7A12202A")
         public ECFieldElement sqrt() {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_239687831 = null; //Variable for return #1
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1897203371 = null; //Variable for return #2
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1308630750 = null; //Variable for return #3
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1391315188 = null; //Variable for return #4
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_239687831 = null; 
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1897203371 = null; 
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1308630750 = null; 
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1391315188 = null; 
             {
                 boolean var33697466106CFFEBB33A35A4F7D35ACE_259759492 = (!q.testBit(0));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException("not done yet");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var259B65665E46BAB848067F35F4130465_1306393309 = (q.testBit(1));
                 {
                     ECFieldElement z = new Fp(q, x.modPow(q.shiftRight(2).add(ECConstants.ONE), q));
                     varB4EAC82CA7396A68D541C85D26508E83_239687831 = z.square().equals(this) ? z : null;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             BigInteger qMinusOne = q.subtract(ECConstants.ONE);
             BigInteger legendreExponent = qMinusOne.shiftRight(1);
             {
                 boolean varB8253DA8B9818D81AD3995887916701E_1986467204 = (!(x.modPow(legendreExponent, q).equals(ECConstants.ONE)));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1897203371 = null;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             BigInteger u = qMinusOne.shiftRight(2);
             BigInteger k = u.shiftLeft(1).add(ECConstants.ONE);
             BigInteger Q = this.x;
@@ -253,11 +253,11 @@ public abstract class ECFieldElement implements ECConstants {
                 BigInteger P;
                 {
                     P = new BigInteger(q.bitLength(), rand);
-                } //End block
+                } 
                 {
                     boolean var54E1C85900042E97024D4231C04EF298_948155455 = (P.compareTo(q) >= 0
                     || !(P.multiply(P).subtract(fourQ).modPow(legendreExponent, q).equals(qMinusOne)));
-                } //End collapsed parenthetic
+                } 
                 BigInteger[] result = lucasSequence(q, P, Q, k);
                 U = result[0];
                 V = result[1];
@@ -268,36 +268,36 @@ public abstract class ECFieldElement implements ECConstants {
                             boolean var4333B164173F6BF688DAF78CDB9E335A_204797137 = (V.testBit(0));
                             {
                                 V = V.add(q);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         V = V.shiftRight(1);
                         varB4EAC82CA7396A68D541C85D26508E83_1308630750 = new ECFieldElement.Fp(q, V);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 boolean var5E4BF148E58B0416AAAE5F52B237276F_240253210 = (U.equals(ECConstants.ONE) || U.equals(qMinusOne));
-            } //End collapsed parenthetic
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1391315188 = null;
-            ECFieldElement varA7E53CE21691AB073D9660D615818899_285897242; //Final return value
+            ECFieldElement varA7E53CE21691AB073D9660D615818899_285897242; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_285897242 = varB4EAC82CA7396A68D541C85D26508E83_239687831;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_285897242 = varB4EAC82CA7396A68D541C85D26508E83_1897203371;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_285897242 = varB4EAC82CA7396A68D541C85D26508E83_1308630750;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_285897242 = varB4EAC82CA7396A68D541C85D26508E83_1391315188;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_285897242.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_285897242.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_285897242;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -350,23 +350,23 @@ public abstract class ECFieldElement implements ECConstants {
         public boolean equals(Object other) {
             {
                 boolean varEBAA9C88926E0374801C3AD978616673_397393609 = (other == this);
-            } //End collapsed parenthetic
+            } 
             ECFieldElement.Fp o = (ECFieldElement.Fp)other;
             boolean var93EE7FCE80F32EFF7526E3672BB83382_489576811 = (q.equals(o.q) && x.equals(o.x));
             addTaint(other.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1355995907 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1355995907;
-            // ---------- Original Method ----------
-            //if (other == this)
-            //{
-                //return true;
-            //}
-            //if (!(other instanceof ECFieldElement.Fp))
-            //{
-                //return false;
-            //}
-            //ECFieldElement.Fp o = (ECFieldElement.Fp)other;
-            //return q.equals(o.q) && x.equals(o.x);
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -375,8 +375,8 @@ public abstract class ECFieldElement implements ECConstants {
             int var7C42B5C4D89A4D0A9807B6AA92611DFF_1011963056 = (q.hashCode() ^ x.hashCode());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_519836235 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_519836235;
-            // ---------- Original Method ----------
-            //return q.hashCode() ^ x.hashCode();
+            
+            
         }
 
         
@@ -418,30 +418,30 @@ public abstract class ECFieldElement implements ECConstants {
             this.x = new IntArray(x, t);
             {
                 this.representation = TPB;
-            } //End block
+            } 
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                             "k2 must be smaller than k3");
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                             "k2 must be larger than 0");
-                } //End block
+                } 
                 this.representation = PPB;
-            } //End block
+            } 
             {
                 boolean var1006DCCF4E810448453B3581D5D95413_1781551726 = (x.signum() < 0);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("x value cannot be negative");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             this.m = m;
             this.k1 = k1;
             this.k2 = k2;
             this.k3 = k3;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -451,7 +451,7 @@ public abstract class ECFieldElement implements ECConstants {
             addTaint(m);
             addTaint(k);
             addTaint(x.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -465,47 +465,47 @@ public abstract class ECFieldElement implements ECConstants {
             this.k3 = k3;
             {
                 this.representation = TPB;
-            } //End block
+            } 
             {
                 this.representation = PPB;
-            } //End block
-            // ---------- Original Method ----------
-            //t = (m + 31) >> 5;
-            //this.x = x;
-            //this.m = m;
-            //this.k1 = k1;
-            //this.k2 = k2;
-            //this.k3 = k3;
-            //if ((k2 == 0) && (k3 == 0))
-            //{
-                //this.representation = TPB;
-            //}
-            //else
-            //{
-                //this.representation = PPB;
-            //}
+            } 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+            
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.508 -0400", hash_original_method = "D9240AE462D2FCFCBEB9680DA07047D8", hash_generated_method = "E4AFD8206E7B7F7CFA1FD5CC32A4A76C")
         public BigInteger toBigInteger() {
-            BigInteger varB4EAC82CA7396A68D541C85D26508E83_1933248836 = null; //Variable for return #1
+            BigInteger varB4EAC82CA7396A68D541C85D26508E83_1933248836 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1933248836 = x.toBigInteger();
-            varB4EAC82CA7396A68D541C85D26508E83_1933248836.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1933248836.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1933248836;
-            // ---------- Original Method ----------
-            //return x.toBigInteger();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.509 -0400", hash_original_method = "69EE8C1832EFB43BF906E0C4BE94B23A", hash_generated_method = "F376329580FF6762DDFC68F915619F81")
         public String getFieldName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1197522286 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1197522286 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1197522286 = "F2m";
-            varB4EAC82CA7396A68D541C85D26508E83_1197522286.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1197522286.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1197522286;
-            // ---------- Original Method ----------
-            //return "F2m";
+            
+            
         }
 
         
@@ -513,8 +513,8 @@ public abstract class ECFieldElement implements ECConstants {
         public int getFieldSize() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1906302334 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1906302334;
-            // ---------- Original Method ----------
-            //return m;
+            
+            
         }
 
         
@@ -545,95 +545,95 @@ public abstract class ECFieldElement implements ECConstants {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.511 -0400", hash_original_method = "1771E6C8DC949344BED4A1E6536DC20F", hash_generated_method = "06E2B45C212BD2B1F42714BF1A9E9D89")
         public ECFieldElement add(final ECFieldElement b) {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_703240646 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_703240646 = null; 
             IntArray iarrClone = (IntArray)this.x.clone();
             F2m bF2m = (F2m)b;
             iarrClone.addShifted(bF2m.x, 0);
             varB4EAC82CA7396A68D541C85D26508E83_703240646 = new F2m(m, k1, k2, k3, iarrClone);
             addTaint(b.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_703240646.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_703240646.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_703240646;
-            // ---------- Original Method ----------
-            //IntArray iarrClone = (IntArray)this.x.clone();
-            //F2m bF2m = (F2m)b;
-            //iarrClone.addShifted(bF2m.x, 0);
-            //return new F2m(m, k1, k2, k3, iarrClone);
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.512 -0400", hash_original_method = "DED14713A83018FDD63888AD3FB6A659", hash_generated_method = "261ECA4D2D1A0833C2ED4AC8A629FE3E")
         public ECFieldElement subtract(final ECFieldElement b) {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_975961837 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_975961837 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_975961837 = add(b);
             addTaint(b.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_975961837.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_975961837.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_975961837;
-            // ---------- Original Method ----------
-            //return add(b);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.512 -0400", hash_original_method = "CFFAAAAE4FA7236DDDBD1DC710F4AF58", hash_generated_method = "48B0933DD26E7A8BF22F93314820CE34")
         public ECFieldElement multiply(final ECFieldElement b) {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_719413086 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_719413086 = null; 
             F2m bF2m = (F2m)b;
             IntArray mult = x.multiply(bF2m.x, m);
             mult.reduce(m, new int[]{k1, k2, k3});
             varB4EAC82CA7396A68D541C85D26508E83_719413086 = new F2m(m, k1, k2, k3, mult);
             addTaint(b.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_719413086.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_719413086.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_719413086;
-            // ---------- Original Method ----------
-            //F2m bF2m = (F2m)b;
-            //IntArray mult = x.multiply(bF2m.x, m);
-            //mult.reduce(m, new int[]{k1, k2, k3});
-            //return new F2m(m, k1, k2, k3, mult);
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.513 -0400", hash_original_method = "69832D94122014C087767F6408988886", hash_generated_method = "899EA831DEAB88E70C9761FA6FE483D1")
         public ECFieldElement divide(final ECFieldElement b) {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1000240324 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1000240324 = null; 
             ECFieldElement bInv = b.invert();
             varB4EAC82CA7396A68D541C85D26508E83_1000240324 = multiply(bInv);
             addTaint(b.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1000240324.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1000240324.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1000240324;
-            // ---------- Original Method ----------
-            //ECFieldElement bInv = b.invert();
-            //return multiply(bInv);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.513 -0400", hash_original_method = "3796F7BD0BD7CB77DE18BFC002B0C069", hash_generated_method = "999A74BB87344AC1CD11B82B87AA23A5")
         public ECFieldElement negate() {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_657709130 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_657709130 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_657709130 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_657709130.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_657709130.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_657709130;
-            // ---------- Original Method ----------
-            //return this;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.514 -0400", hash_original_method = "C7941F6A7028361E62B5AB4ECF6F47B0", hash_generated_method = "FBA5672B0EF08A810EDA4897D6C6C5FB")
         public ECFieldElement square() {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1858368621 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1858368621 = null; 
             IntArray squared = x.square(m);
             squared.reduce(m, new int[]{k1, k2, k3});
             varB4EAC82CA7396A68D541C85D26508E83_1858368621 = new F2m(m, k1, k2, k3, squared);
-            varB4EAC82CA7396A68D541C85D26508E83_1858368621.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1858368621.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1858368621;
-            // ---------- Original Method ----------
-            //IntArray squared = x.square(m);
-            //squared.reduce(m, new int[]{k1, k2, k3});
-            //return new F2m(m, k1, k2, k3, squared);
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.515 -0400", hash_original_method = "1700F54C0CA191DF0B1880FDDD97556A", hash_generated_method = "D25CC95ECC691486534BF2DE98B836CD")
         public ECFieldElement invert() {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_502589378 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_502589378 = null; 
             IntArray uz = (IntArray)this.x.clone();
             IntArray vz = new IntArray(t);
             vz.setBit(m);
@@ -642,7 +642,7 @@ public abstract class ECFieldElement implements ECConstants {
             {
                 vz.setBit(this.k2);
                 vz.setBit(this.k3);
-            } //End block
+            } 
             IntArray g1z = new IntArray(t);
             g1z.setBit(0);
             IntArray g2z = new IntArray(t);
@@ -658,29 +658,29 @@ public abstract class ECFieldElement implements ECConstants {
                         g1z = g2z;
                         g2z = g1zCopy;
                         j = -j;
-                    } //End block
+                    } 
                     int jInt = j >> 5;
                     int jBit = j & 0x1F;
                     IntArray vzShift = vz.shiftLeft(jBit);
                     uz.addShifted(vzShift, jInt);
                     IntArray g2zShift = g2z.shiftLeft(jBit);
                     g1z.addShifted(g2zShift, jInt);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_502589378 = new ECFieldElement.F2m(
                     this.m, this.k1, this.k2, this.k3, g2z);
-            varB4EAC82CA7396A68D541C85D26508E83_502589378.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_502589378.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_502589378;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.515 -0400", hash_original_method = "3F2FB8B8358C44CE763B294C61568C61", hash_generated_method = "15DBA8E346D1FAAE2D6C8F5AC1BB1150")
         public ECFieldElement sqrt() {
             throw new RuntimeException("Not implemented");
-            // ---------- Original Method ----------
-            //throw new RuntimeException("Not implemented");
+            
+            
         }
 
         
@@ -688,8 +688,8 @@ public abstract class ECFieldElement implements ECConstants {
         public int getRepresentation() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_173712182 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_173712182;
-            // ---------- Original Method ----------
-            //return this.representation;
+            
+            
         }
 
         
@@ -697,8 +697,8 @@ public abstract class ECFieldElement implements ECConstants {
         public int getM() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1701664315 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1701664315;
-            // ---------- Original Method ----------
-            //return this.m;
+            
+            
         }
 
         
@@ -706,8 +706,8 @@ public abstract class ECFieldElement implements ECConstants {
         public int getK1() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1752652247 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1752652247;
-            // ---------- Original Method ----------
-            //return this.k1;
+            
+            
         }
 
         
@@ -715,8 +715,8 @@ public abstract class ECFieldElement implements ECConstants {
         public int getK2() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_16246122 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_16246122;
-            // ---------- Original Method ----------
-            //return this.k2;
+            
+            
         }
 
         
@@ -724,8 +724,8 @@ public abstract class ECFieldElement implements ECConstants {
         public int getK3() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_804502062 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_804502062;
-            // ---------- Original Method ----------
-            //return this.k3;
+            
+            
         }
 
         
@@ -733,7 +733,7 @@ public abstract class ECFieldElement implements ECConstants {
         public boolean equals(Object anObject) {
             {
                 boolean varDDF650371899A44735E1E943193361F5_461542183 = (anObject == this);
-            } //End collapsed parenthetic
+            } 
             ECFieldElement.F2m b = (ECFieldElement.F2m)anObject;
             boolean var5DC0A1DDDD3118B20B12290F66AB6462_2132014272 = (((this.m == b.m) && (this.k1 == b.k1) && (this.k2 == b.k2)
                 && (this.k3 == b.k3)
@@ -742,20 +742,20 @@ public abstract class ECFieldElement implements ECConstants {
             addTaint(anObject.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1738949305 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1738949305;
-            // ---------- Original Method ----------
-            //if (anObject == this) 
-            //{
-                //return true;
-            //}
-            //if (!(anObject instanceof ECFieldElement.F2m)) 
-            //{
-                //return false;
-            //}
-            //ECFieldElement.F2m b = (ECFieldElement.F2m)anObject;
-            //return ((this.m == b.m) && (this.k1 == b.k1) && (this.k2 == b.k2)
-                //&& (this.k3 == b.k3)
-                //&& (this.representation == b.representation)
-                //&& (this.x.equals(b.x)));
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+                
+                
         }
 
         
@@ -764,8 +764,8 @@ public abstract class ECFieldElement implements ECConstants {
             int varC325A9404638827954521743C4DF1848_1120184732 = (x.hashCode() ^ m ^ k1 ^ k2 ^ k3);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1140507103 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1140507103;
-            // ---------- Original Method ----------
-            //return x.hashCode() ^ m ^ k1 ^ k2 ^ k3;
+            
+            
         }
 
         

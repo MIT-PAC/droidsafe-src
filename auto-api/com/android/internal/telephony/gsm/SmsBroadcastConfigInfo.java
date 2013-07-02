@@ -1,11 +1,11 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class SmsBroadcastConfigInfo {
@@ -33,20 +33,20 @@ public final class SmsBroadcastConfigInfo {
         fromCodeScheme = fromScheme;
         toCodeScheme = toScheme;
         this.selected = selected;
-        // ---------- Original Method ----------
-        //fromServiceId = fromId;
-        //toServiceId = toId;
-        //fromCodeScheme = fromScheme;
-        //toCodeScheme = toScheme;
-        //this.selected = selected;
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.503 -0400", hash_original_method = "EC03A9EAB74ED9CD08C5E767148A9E3D", hash_generated_method = "496707E01480A77738DBF7D33FB881B0")
     public void setFromServiceId(int fromServiceId) {
         this.fromServiceId = fromServiceId;
-        // ---------- Original Method ----------
-        //this.fromServiceId = fromServiceId;
+        
+        
     }
 
     
@@ -54,16 +54,16 @@ public final class SmsBroadcastConfigInfo {
     public int getFromServiceId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_912561593 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_912561593;
-        // ---------- Original Method ----------
-        //return fromServiceId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.504 -0400", hash_original_method = "C662FD0745B0F3A8663C07D8F01AF54F", hash_generated_method = "9127DC336ABDEEC77E06814D5ECDD0CD")
     public void setToServiceId(int toServiceId) {
         this.toServiceId = toServiceId;
-        // ---------- Original Method ----------
-        //this.toServiceId = toServiceId;
+        
+        
     }
 
     
@@ -71,16 +71,16 @@ public final class SmsBroadcastConfigInfo {
     public int getToServiceId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1801562734 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1801562734;
-        // ---------- Original Method ----------
-        //return toServiceId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.505 -0400", hash_original_method = "0A2734671D04AE4B45C1C1B3377422E5", hash_generated_method = "CC8CD577D428ADAA8EA094CC4841F1E7")
     public void setFromCodeScheme(int fromCodeScheme) {
         this.fromCodeScheme = fromCodeScheme;
-        // ---------- Original Method ----------
-        //this.fromCodeScheme = fromCodeScheme;
+        
+        
     }
 
     
@@ -88,16 +88,16 @@ public final class SmsBroadcastConfigInfo {
     public int getFromCodeScheme() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1391558373 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1391558373;
-        // ---------- Original Method ----------
-        //return fromCodeScheme;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.506 -0400", hash_original_method = "33ACE8C1E6B66F0AD44209B7329819FD", hash_generated_method = "E3018D7A149FE0867ABD4D0307C6F9A0")
     public void setToCodeScheme(int toCodeScheme) {
         this.toCodeScheme = toCodeScheme;
-        // ---------- Original Method ----------
-        //this.toCodeScheme = toCodeScheme;
+        
+        
     }
 
     
@@ -105,16 +105,16 @@ public final class SmsBroadcastConfigInfo {
     public int getToCodeScheme() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1486866674 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1486866674;
-        // ---------- Original Method ----------
-        //return toCodeScheme;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.507 -0400", hash_original_method = "F22B16E73947604A26216421AD1B5C38", hash_generated_method = "6A3776683D035BBD3F20B198F2F711A3")
     public void setSelected(boolean selected) {
         this.selected = selected;
-        // ---------- Original Method ----------
-        //this.selected = selected;
+        
+        
     }
 
     
@@ -122,26 +122,27 @@ public final class SmsBroadcastConfigInfo {
     public boolean isSelected() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1979086226 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1979086226;
-        // ---------- Original Method ----------
-        //return selected;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.508 -0400", hash_original_method = "7023ED8B006DA79CC4837559B31EDFCC", hash_generated_method = "A6FECC4436055A61DEFFBB4CE764D557")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_733145527 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_733145527 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_733145527 = "SmsBroadcastConfigInfo: Id [" +
                 fromServiceId + ',' + toServiceId + "] Code [" +
                 fromCodeScheme + ',' + toCodeScheme + "] " +
             (selected ? "ENABLED" : "DISABLED");
-        varB4EAC82CA7396A68D541C85D26508E83_733145527.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_733145527.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_733145527;
-        // ---------- Original Method ----------
-        //return "SmsBroadcastConfigInfo: Id [" +
-                //fromServiceId + ',' + toServiceId + "] Code [" +
-                //fromCodeScheme + ',' + toCodeScheme + "] " +
-            //(selected ? "ENABLED" : "DISABLED");
+        
+        
+                
+                
+            
     }
 
     

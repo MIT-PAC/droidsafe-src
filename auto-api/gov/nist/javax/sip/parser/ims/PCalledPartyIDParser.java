@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.javax.sip.header.ims.PCalledPartyID;
@@ -20,7 +20,7 @@ public class PCalledPartyIDParser extends AddressParametersParser {
     public  PCalledPartyIDParser(String calledPartyID) {
         super(calledPartyID);
         addTaint(calledPartyID.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,13 +28,14 @@ public class PCalledPartyIDParser extends AddressParametersParser {
     protected  PCalledPartyIDParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.111 -0400", hash_original_method = "C43CF84ED746DD134AB177C7FEFB3286", hash_generated_method = "A9F772AB13892E30DEF2FEE8A12F14F0")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_66521183 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_66521183 = null; 
         dbg_enter("PCalledPartyIDParser.parse");
         try 
         {
@@ -45,28 +46,28 @@ public class PCalledPartyIDParser extends AddressParametersParser {
             PCalledPartyID calledPartyID = new PCalledPartyID();
             super.parse(calledPartyID);
             varB4EAC82CA7396A68D541C85D26508E83_66521183 = calledPartyID;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("PCalledPartyIDParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_66521183.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_66521183.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_66521183;
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("PCalledPartyIDParser.parse");
-        //try {
-            //this.lexer.match(TokenTypes.P_CALLED_PARTY_ID);
-            //this.lexer.SPorHT();
-            //this.lexer.match(':');
-            //this.lexer.SPorHT();
-            //PCalledPartyID calledPartyID = new PCalledPartyID();
-            //super.parse(calledPartyID);
-            //return calledPartyID;
-        //} finally {
-            //if (debug)
-                //dbg_leave("PCalledPartyIDParser.parse");
-        //}
+        
+        
+            
+        
+            
+            
+            
+            
+            
+            
+            
+        
+            
+                
+        
     }
 
     

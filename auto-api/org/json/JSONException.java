@@ -1,11 +1,11 @@
 package org.json;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class JSONException extends Exception {
@@ -14,7 +14,7 @@ public class JSONException extends Exception {
     public  JSONException(String s) {
         super(s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

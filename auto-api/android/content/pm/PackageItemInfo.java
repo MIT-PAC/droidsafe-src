@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.XmlResourceParser;
 import android.graphics.drawable.Drawable;
@@ -41,7 +41,7 @@ public class PackageItemInfo {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.780 -0400", hash_original_method = "0DA45D98B1805BAB6DB37663419819EF", hash_generated_method = "A53952B9C896D4AF9B209F1D87FED0D1")
     public  PackageItemInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -56,16 +56,16 @@ public class PackageItemInfo {
         icon = orig.icon;
         logo = orig.logo;
         metaData = orig.metaData;
-        // ---------- Original Method ----------
-        //name = orig.name;
-        //if (name != null) name = name.trim();
-        //packageName = orig.packageName;
-        //labelRes = orig.labelRes;
-        //nonLocalizedLabel = orig.nonLocalizedLabel;
-        //if (nonLocalizedLabel != null) nonLocalizedLabel = nonLocalizedLabel.toString().trim();
-        //icon = orig.icon;
-        //logo = orig.logo;
-        //metaData = orig.metaData;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -79,222 +79,228 @@ public class PackageItemInfo {
         icon = source.readInt();
         logo = source.readInt();
         metaData = source.readBundle();
-        // ---------- Original Method ----------
-        //name = source.readString();
-        //packageName = source.readString();
-        //labelRes = source.readInt();
-        //nonLocalizedLabel
-                //= TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        //icon = source.readInt();
-        //logo = source.readInt();
-        //metaData = source.readBundle();
+        
+        
+        
+        
+        
+                
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.783 -0400", hash_original_method = "7587CF1BD2560A6C6F4B753C933F3AB0", hash_generated_method = "008D85CEFE5C894A3D51263A68A34895")
     public CharSequence loadLabel(PackageManager pm) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1513300313 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_737355712 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_31684520 = null; //Variable for return #3
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2005439968 = null; //Variable for return #4
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1513300313 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_737355712 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_31684520 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2005439968 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1513300313 = nonLocalizedLabel;
-        } //End block
+        } 
         {
             CharSequence label = pm.getText(packageName, labelRes, getApplicationInfo());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_737355712 = label.toString().trim();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_31684520 = name;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2005439968 = packageName;
         addTaint(pm.getTaint());
-        CharSequence varA7E53CE21691AB073D9660D615818899_1896819166; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1896819166; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1896819166 = varB4EAC82CA7396A68D541C85D26508E83_1513300313;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1896819166 = varB4EAC82CA7396A68D541C85D26508E83_737355712;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1896819166 = varB4EAC82CA7396A68D541C85D26508E83_31684520;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1896819166 = varB4EAC82CA7396A68D541C85D26508E83_2005439968;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1896819166.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1896819166.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1896819166;
-        // ---------- Original Method ----------
-        //if (nonLocalizedLabel != null) {
-            //return nonLocalizedLabel;
-        //}
-        //if (labelRes != 0) {
-            //CharSequence label = pm.getText(packageName, labelRes, getApplicationInfo());
-            //if (label != null) {
-                //return label.toString().trim();
-            //}
-        //}
-        //if (name != null) {
-            //return name;
-        //}
-        //return packageName;
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.784 -0400", hash_original_method = "28CAE1EAC4906E828B7AB10B1D04EBA6", hash_generated_method = "50201682588CCBAD7894905253E41A8B")
     public Drawable loadIcon(PackageManager pm) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1032228852 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_152044181 = null; //Variable for return #2
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1032228852 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_152044181 = null; 
         {
             Drawable dr = pm.getDrawable(packageName, icon, getApplicationInfo());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1032228852 = dr;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_152044181 = loadDefaultIcon(pm);
         addTaint(pm.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_2035592708; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_2035592708; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2035592708 = varB4EAC82CA7396A68D541C85D26508E83_1032228852;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2035592708 = varB4EAC82CA7396A68D541C85D26508E83_152044181;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2035592708.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2035592708.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2035592708;
-        // ---------- Original Method ----------
-        //if (icon != 0) {
-            //Drawable dr = pm.getDrawable(packageName, icon, getApplicationInfo());
-            //if (dr != null) {
-                //return dr;
-            //}
-        //}
-        //return loadDefaultIcon(pm);
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.785 -0400", hash_original_method = "8E0B311EF662738B18859A93F77EBD0A", hash_generated_method = "F252FDF9FB44ABBCAC2DC20719D49BD8")
     protected Drawable loadDefaultIcon(PackageManager pm) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1163403936 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1163403936 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1163403936 = pm.getDefaultActivityIcon();
         addTaint(pm.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1163403936.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1163403936.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1163403936;
-        // ---------- Original Method ----------
-        //return pm.getDefaultActivityIcon();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.786 -0400", hash_original_method = "E08D2EB4B7AA31EEDBDC94D57D687BA7", hash_generated_method = "0E555A980726E7A7D64E53D11243C071")
     public Drawable loadLogo(PackageManager pm) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1612659166 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_392307235 = null; //Variable for return #2
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1612659166 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_392307235 = null; 
         {
             Drawable d = pm.getDrawable(packageName, logo, getApplicationInfo());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1612659166 = d;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_392307235 = loadDefaultLogo(pm);
         addTaint(pm.getTaint());
-        Drawable varA7E53CE21691AB073D9660D615818899_2024081644; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_2024081644; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2024081644 = varB4EAC82CA7396A68D541C85D26508E83_1612659166;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2024081644 = varB4EAC82CA7396A68D541C85D26508E83_392307235;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2024081644.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2024081644.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2024081644;
-        // ---------- Original Method ----------
-        //if (logo != 0) {
-            //Drawable d = pm.getDrawable(packageName, logo, getApplicationInfo());
-            //if (d != null) {
-                //return d;
-            //}
-        //}
-        //return loadDefaultLogo(pm);
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.787 -0400", hash_original_method = "790329C099FCB9AD7C46A077CBE50219", hash_generated_method = "316D5F65B39AC5EA15A37158C4DD1A6F")
     protected Drawable loadDefaultLogo(PackageManager pm) {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1720411762 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1720411762 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1720411762 = null;
         addTaint(pm.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1720411762.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1720411762.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1720411762;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.788 -0400", hash_original_method = "3469F3AC66BE0248CB548730284A6983", hash_generated_method = "1314EB0BF93B914D7413775BA862B18F")
     public XmlResourceParser loadXmlMetaData(PackageManager pm, String name) {
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_1701470587 = null; //Variable for return #1
-        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_604519178 = null; //Variable for return #2
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_1701470587 = null; 
+        XmlResourceParser varB4EAC82CA7396A68D541C85D26508E83_604519178 = null; 
         {
             int resid = metaData.getInt(name);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1701470587 = pm.getXml(packageName, resid, getApplicationInfo());
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_604519178 = null;
         addTaint(pm.getTaint());
         addTaint(name.getTaint());
-        XmlResourceParser varA7E53CE21691AB073D9660D615818899_9297596; //Final return value
+        XmlResourceParser varA7E53CE21691AB073D9660D615818899_9297596; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_9297596 = varB4EAC82CA7396A68D541C85D26508E83_1701470587;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_9297596 = varB4EAC82CA7396A68D541C85D26508E83_604519178;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_9297596.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_9297596.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_9297596;
-        // ---------- Original Method ----------
-        //if (metaData != null) {
-            //int resid = metaData.getInt(name);
-            //if (resid != 0) {
-                //return pm.getXml(packageName, resid, getApplicationInfo());
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.788 -0400", hash_original_method = "6B8B2642A2B8BBF6D444F1A91AC9FDCB", hash_generated_method = "02417D6698EDB72ED785CBF64C239DD4")
     protected void dumpFront(Printer pw, String prefix) {
         {
             pw.println(prefix + "name=" + name);
-        } //End block
+        } 
         pw.println(prefix + "packageName=" + packageName);
         {
             pw.println(prefix + "labelRes=0x" + Integer.toHexString(labelRes)
                     + " nonLocalizedLabel=" + nonLocalizedLabel
                     + " icon=0x" + Integer.toHexString(icon));
-        } //End block
+        } 
         addTaint(pw.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //if (name != null) {
-            //pw.println(prefix + "name=" + name);
-        //}
-        //pw.println(prefix + "packageName=" + packageName);
-        //if (labelRes != 0 || nonLocalizedLabel != null || icon != 0) {
-            //pw.println(prefix + "labelRes=0x" + Integer.toHexString(labelRes)
-                    //+ " nonLocalizedLabel=" + nonLocalizedLabel
-                    //+ " icon=0x" + Integer.toHexString(icon));
-        //}
+        
+        
+            
+        
+        
+        
+            
+                    
+                    
+        
     }
 
     
@@ -302,10 +308,11 @@ public class PackageItemInfo {
     protected void dumpBack(Printer pw, String prefix) {
         addTaint(pw.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.789 -0400", hash_original_method = "EBFCAD6F5CD0994BD82522BC30DB76DD", hash_generated_method = "94C02EB46824C31BE01CD94D6AA9CA38")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         dest.writeString(name);
@@ -317,25 +324,25 @@ public class PackageItemInfo {
         dest.writeBundle(metaData);
         addTaint(dest.getTaint());
         addTaint(parcelableFlags);
-        // ---------- Original Method ----------
-        //dest.writeString(name);
-        //dest.writeString(packageName);
-        //dest.writeInt(labelRes);
-        //TextUtils.writeToParcel(nonLocalizedLabel, dest, parcelableFlags);
-        //dest.writeInt(icon);
-        //dest.writeInt(logo);
-        //dest.writeBundle(metaData);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.790 -0400", hash_original_method = "3C095FBE28E1D0A5D79820831D5573F9", hash_generated_method = "F524BBB97562F4218AC234124D490912")
     protected ApplicationInfo getApplicationInfo() {
-        ApplicationInfo varB4EAC82CA7396A68D541C85D26508E83_965782225 = null; //Variable for return #1
+        ApplicationInfo varB4EAC82CA7396A68D541C85D26508E83_965782225 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_965782225 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_965782225.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_965782225.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_965782225;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -350,8 +357,8 @@ public class PackageItemInfo {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:26.790 -0400", hash_original_method = "01BC6A405956ED34F2FEA27AD8C34186", hash_generated_method = "00B9637435B2DF20319BD9D174F2475F")
         public  DisplayNameComparator(PackageManager pm) {
             mPM = pm;
-            // ---------- Original Method ----------
-            //mPM = pm;
+            
+            
         }
 
         
@@ -366,12 +373,12 @@ public class PackageItemInfo {
             addTaint(ab.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2074331654 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2074331654;
-            // ---------- Original Method ----------
-            //CharSequence  sa = aa.loadLabel(mPM);
-            //if (sa == null) sa = aa.name;
-            //CharSequence  sb = ab.loadLabel(mPM);
-            //if (sb == null) sb = ab.name;
-            //return sCollator.compare(sa.toString(), sb.toString());
+            
+            
+            
+            
+            
+            
         }
 
         

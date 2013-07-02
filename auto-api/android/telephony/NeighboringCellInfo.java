@@ -1,11 +1,11 @@
 package android.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -42,12 +42,12 @@ public class NeighboringCellInfo implements Parcelable {
         mCid = UNKNOWN_CID;
         mPsc = UNKNOWN_CID;
         mNetworkType = NETWORK_TYPE_UNKNOWN;
-        // ---------- Original Method ----------
-        //mRssi = UNKNOWN_RSSI;
-        //mLac = UNKNOWN_CID;
-        //mCid = UNKNOWN_CID;
-        //mPsc = UNKNOWN_CID;
-        //mNetworkType = NETWORK_TYPE_UNKNOWN;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -56,9 +56,9 @@ public class NeighboringCellInfo implements Parcelable {
     public  NeighboringCellInfo(int rssi, int cid) {
         mRssi = rssi;
         mCid = cid;
-        // ---------- Original Method ----------
-        //mRssi = rssi;
-        //mCid = cid;
+        
+        
+        
     }
 
     
@@ -75,39 +75,39 @@ public class NeighboringCellInfo implements Parcelable {
                 int i = 0;
                 {
                     location = "0" + location;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         try 
         {
-            //Begin case NETWORK_TYPE_GPRS NETWORK_TYPE_EDGE 
+            
             mNetworkType = radioType;
-            //End case NETWORK_TYPE_GPRS NETWORK_TYPE_EDGE 
-            //Begin case NETWORK_TYPE_GPRS NETWORK_TYPE_EDGE 
+            
+            
             {
                 boolean var69B59DE7F30475B3F92AD5E13EA650DF_458138417 = (!location.equalsIgnoreCase("FFFFFFFF"));
                 {
                     mCid = Integer.valueOf(location.substring(4), 16);
                     mLac = Integer.valueOf(location.substring(0, 4), 16);
-                } //End block
-            } //End collapsed parenthetic
-            //End case NETWORK_TYPE_GPRS NETWORK_TYPE_EDGE 
-            //Begin case NETWORK_TYPE_UMTS NETWORK_TYPE_HSDPA NETWORK_TYPE_HSUPA NETWORK_TYPE_HSPA 
+                } 
+            } 
+            
+            
             mNetworkType = radioType;
-            //End case NETWORK_TYPE_UMTS NETWORK_TYPE_HSDPA NETWORK_TYPE_HSUPA NETWORK_TYPE_HSPA 
-            //Begin case NETWORK_TYPE_UMTS NETWORK_TYPE_HSDPA NETWORK_TYPE_HSUPA NETWORK_TYPE_HSPA 
+            
+            
             mPsc = Integer.valueOf(location, 16);
-            //End case NETWORK_TYPE_UMTS NETWORK_TYPE_HSDPA NETWORK_TYPE_HSUPA NETWORK_TYPE_HSPA 
-        } //End block
+            
+        } 
         catch (NumberFormatException e)
         {
             mPsc = UNKNOWN_CID;
             mLac = UNKNOWN_CID;
             mCid = UNKNOWN_CID;
             mNetworkType = NETWORK_TYPE_UNKNOWN;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -118,12 +118,12 @@ public class NeighboringCellInfo implements Parcelable {
         mCid = in.readInt();
         mPsc = in.readInt();
         mNetworkType = in.readInt();
-        // ---------- Original Method ----------
-        //mRssi = in.readInt();
-        //mLac = in.readInt();
-        //mCid = in.readInt();
-        //mPsc = in.readInt();
-        //mNetworkType = in.readInt();
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -131,8 +131,8 @@ public class NeighboringCellInfo implements Parcelable {
     public int getRssi() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126705208 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126705208;
-        // ---------- Original Method ----------
-        //return mRssi;
+        
+        
     }
 
     
@@ -140,8 +140,8 @@ public class NeighboringCellInfo implements Parcelable {
     public int getLac() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1489756530 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1489756530;
-        // ---------- Original Method ----------
-        //return mLac;
+        
+        
     }
 
     
@@ -149,8 +149,8 @@ public class NeighboringCellInfo implements Parcelable {
     public int getCid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1650670349 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1650670349;
-        // ---------- Original Method ----------
-        //return mCid;
+        
+        
     }
 
     
@@ -158,8 +158,8 @@ public class NeighboringCellInfo implements Parcelable {
     public int getPsc() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_253757157 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_253757157;
-        // ---------- Original Method ----------
-        //return mPsc;
+        
+        
     }
 
     
@@ -167,8 +167,8 @@ public class NeighboringCellInfo implements Parcelable {
     public int getNetworkType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166494144 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166494144;
-        // ---------- Original Method ----------
-        //return mNetworkType;
+        
+        
     }
 
     
@@ -176,8 +176,8 @@ public class NeighboringCellInfo implements Parcelable {
     @Deprecated
     public void setCid(int cid) {
         mCid = cid;
-        // ---------- Original Method ----------
-        //mCid = cid;
+        
+        
     }
 
     
@@ -185,43 +185,44 @@ public class NeighboringCellInfo implements Parcelable {
     @Deprecated
     public void setRssi(int rssi) {
         mRssi = rssi;
-        // ---------- Original Method ----------
-        //mRssi = rssi;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.444 -0400", hash_original_method = "8F5318BC3FCF7BF30F83B998176BAD1B", hash_generated_method = "60B911B5D7074739EC7711CD1275E764")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_696198407 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_696198407 = null; 
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         {
             sb.append(Integer.toHexString(mPsc))
                     .append("@").append(((mRssi == UNKNOWN_RSSI)? "-" : mRssi));
-        } //End block
+        } 
         {
             sb.append(Integer.toHexString(mLac))
                     .append(Integer.toHexString(mCid))
                     .append("@").append(((mRssi == UNKNOWN_RSSI)? "-" : mRssi));
-        } //End block
+        } 
         sb.append("]");
         varB4EAC82CA7396A68D541C85D26508E83_696198407 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_696198407.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_696198407.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_696198407;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder();
-        //sb.append("[");
-        //if (mPsc != UNKNOWN_CID) {
-            //sb.append(Integer.toHexString(mPsc))
-                    //.append("@").append(((mRssi == UNKNOWN_RSSI)? "-" : mRssi));
-        //} else if(mLac != UNKNOWN_CID && mCid != UNKNOWN_CID) {
-            //sb.append(Integer.toHexString(mLac))
-                    //.append(Integer.toHexString(mCid))
-                    //.append("@").append(((mRssi == UNKNOWN_RSSI)? "-" : mRssi));
-        //}
-        //sb.append("]");
-        //return sb.toString();
+        
+        
+        
+        
+            
+                    
+        
+            
+                    
+                    
+        
+        
+        
     }
 
     
@@ -229,11 +230,12 @@ public class NeighboringCellInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1350922717 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1350922717;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.444 -0400", hash_original_method = "1E78D18C8DE0132253C9C6F62415E5D0", hash_generated_method = "DB5C6C04B34A2A832081689AF97AA0BA")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mRssi);
@@ -243,12 +245,12 @@ public class NeighboringCellInfo implements Parcelable {
         dest.writeInt(mNetworkType);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mRssi);
-        //dest.writeInt(mLac);
-        //dest.writeInt(mCid);
-        //dest.writeInt(mPsc);
-        //dest.writeInt(mNetworkType);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -270,12 +272,12 @@ public class NeighboringCellInfo implements Parcelable {
             return new NeighboringCellInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public NeighboringCellInfo createFromParcel(Parcel in) {
             return new NeighboringCellInfo(in);
         }
     
-    // orphaned legacy method
+    
     public NeighboringCellInfo[] newArray(int size) {
             return new NeighboringCellInfo[size];
         }

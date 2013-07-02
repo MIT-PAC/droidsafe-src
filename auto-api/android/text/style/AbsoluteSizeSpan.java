@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
@@ -23,8 +23,8 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.682 -0400", hash_original_method = "9F182F09B08FED6314DBE96ECAD38ABB", hash_generated_method = "808C7C6BBA9410B93532F64C75FFF2BB")
     public  AbsoluteSizeSpan(int size) {
         mSize = size;
-        // ---------- Original Method ----------
-        //mSize = size;
+        
+        
     }
 
     
@@ -32,9 +32,9 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     public  AbsoluteSizeSpan(int size, boolean dip) {
         mSize = size;
         mDip = dip;
-        // ---------- Original Method ----------
-        //mSize = size;
-        //mDip = dip;
+        
+        
+        
     }
 
     
@@ -42,9 +42,9 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     public  AbsoluteSizeSpan(Parcel src) {
         mSize = src.readInt();
         mDip = src.readInt() != 0;
-        // ---------- Original Method ----------
-        //mSize = src.readInt();
-        //mDip = src.readInt() != 0;
+        
+        
+        
     }
 
     
@@ -52,8 +52,8 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1472463000 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1472463000;
-        // ---------- Original Method ----------
-        //return TextUtils.ABSOLUTE_SIZE_SPAN;
+        
+        
     }
 
     
@@ -61,20 +61,21 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1439417021 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1439417021;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.683 -0400", hash_original_method = "8027C06709F3FF60199965EEE92D48C7", hash_generated_method = "26CEBB8D0BDD141847570BC6592CF472")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mSize);
         dest.writeInt(mDip ? 1 : 0);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mSize);
-        //dest.writeInt(mDip ? 1 : 0);
+        
+        
+        
     }
 
     
@@ -82,8 +83,8 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     public int getSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2015675062 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2015675062;
-        // ---------- Original Method ----------
-        //return mSize;
+        
+        
     }
 
     
@@ -91,46 +92,48 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     public boolean getDip() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1207828961 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1207828961;
-        // ---------- Original Method ----------
-        //return mDip;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.684 -0400", hash_original_method = "EA2263AF61F8EA4B1854731646B3D093", hash_generated_method = "42B5C509E8B03CDBA484CF53DFA48AEA")
     @Override
     public void updateDrawState(TextPaint ds) {
         {
             ds.setTextSize(mSize * ds.density);
-        } //End block
+        } 
         {
             ds.setTextSize(mSize);
-        } //End block
+        } 
         addTaint(ds.getTaint());
-        // ---------- Original Method ----------
-        //if (mDip) {
-            //ds.setTextSize(mSize * ds.density);
-        //} else {
-            //ds.setTextSize(mSize);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.685 -0400", hash_original_method = "1F6CC548E4C5BF47656F78351153B803", hash_generated_method = "69E0A7F9D006906EC06EA3AA2EBD66D2")
     @Override
     public void updateMeasureState(TextPaint ds) {
         {
             ds.setTextSize(mSize * ds.density);
-        } //End block
+        } 
         {
             ds.setTextSize(mSize);
-        } //End block
+        } 
         addTaint(ds.getTaint());
-        // ---------- Original Method ----------
-        //if (mDip) {
-            //ds.setTextSize(mSize * ds.density);
-        //} else {
-            //ds.setTextSize(mSize);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     

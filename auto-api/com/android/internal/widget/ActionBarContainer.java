@@ -1,11 +1,11 @@
 package com.android.internal.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.ActionBar;
 import android.content.Context;
@@ -49,7 +49,7 @@ public class ActionBarContainer extends FrameLayout {
     public  ActionBarContainer(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -68,131 +68,140 @@ public class ActionBarContainer extends FrameLayout {
                 mIsSplit = true;
                 mSplitBackground = a.getDrawable(
                     com.android.internal.R.styleable.ActionBar_backgroundSplit);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         a.recycle();
         setWillNotDraw(mIsSplit ? mSplitBackground == null :
                 mBackground == null && mStackedBackground == null);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //setBackgroundDrawable(null);
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.ActionBar);
-        //mBackground = a.getDrawable(com.android.internal.R.styleable.ActionBar_background);
-        //mStackedBackground = a.getDrawable(
-                //com.android.internal.R.styleable.ActionBar_backgroundStacked);
-        //if (getId() == com.android.internal.R.id.split_action_bar) {
-            //mIsSplit = true;
-            //mSplitBackground = a.getDrawable(
-                    //com.android.internal.R.styleable.ActionBar_backgroundSplit);
-        //}
-        //a.recycle();
-        //setWillNotDraw(mIsSplit ? mSplitBackground == null :
-                //mBackground == null && mStackedBackground == null);
+        
+        
+        
+                
+        
+        
+                
+        
+            
+            
+                    
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.707 -0400", hash_original_method = "69B88AD6BEB0BE6EF5F88037F33C1F3D", hash_generated_method = "F17230A7ADDEE4BBF5B41A0A02A67CB1")
     @Override
     public void onFinishInflate() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onFinishInflate();
         mActionBarView = (ActionBarView) findViewById(com.android.internal.R.id.action_bar);
-        // ---------- Original Method ----------
-        //super.onFinishInflate();
-        //mActionBarView = (ActionBarView) findViewById(com.android.internal.R.id.action_bar);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.707 -0400", hash_original_method = "78385A861A7FDA3897557FA33D96C5EA", hash_generated_method = "FDD27ACB7F75CC1B3FA7552F1E5A257A")
     public void setPrimaryBackground(Drawable bg) {
         mBackground = bg;
         invalidate();
-        // ---------- Original Method ----------
-        //mBackground = bg;
-        //invalidate();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.708 -0400", hash_original_method = "D9D97A9D1A3797ABD6FF2A72BC0DD994", hash_generated_method = "73451948A7F40620F184D79F93FAC309")
     public void setStackedBackground(Drawable bg) {
         mStackedBackground = bg;
         invalidate();
-        // ---------- Original Method ----------
-        //mStackedBackground = bg;
-        //invalidate();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.708 -0400", hash_original_method = "EE7203C1470FAC3396749865559F7B8E", hash_generated_method = "60046CBF2719778BB7A31CCB5A94F420")
     public void setSplitBackground(Drawable bg) {
         mSplitBackground = bg;
         invalidate();
-        // ---------- Original Method ----------
-        //mSplitBackground = bg;
-        //invalidate();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.708 -0400", hash_original_method = "B47E345D6B402EE0E60D9E3F40581018", hash_generated_method = "07A61885CB04C34DDD25B20B9D4E80D1")
     public void setTransitioning(boolean isTransitioning) {
         mIsTransitioning = isTransitioning;
         setDescendantFocusability(isTransitioning ? FOCUS_BLOCK_DESCENDANTS
                 : FOCUS_AFTER_DESCENDANTS);
-        // ---------- Original Method ----------
-        //mIsTransitioning = isTransitioning;
-        //setDescendantFocusability(isTransitioning ? FOCUS_BLOCK_DESCENDANTS
-                //: FOCUS_AFTER_DESCENDANTS);
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.709 -0400", hash_original_method = "8E69245395EC81C98ED35F3490421A0A", hash_generated_method = "D64C03869DD5114C61B59799949BECC5")
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean varCB64BEE5318C9BB9804B010A90A93A20_1655529776 = (mIsTransitioning || super.onInterceptTouchEvent(ev));
         addTaint(ev.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_644667889 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_644667889;
-        // ---------- Original Method ----------
-        //return mIsTransitioning || super.onInterceptTouchEvent(ev);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.709 -0400", hash_original_method = "FA8EB54F33D4C310829625567514278C", hash_generated_method = "E6D9D438FB483228F3E40A2ADF243651")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onTouchEvent(ev);
         addTaint(ev.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_193250625 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_193250625;
-        // ---------- Original Method ----------
-        //super.onTouchEvent(ev);
-        //return true;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.709 -0400", hash_original_method = "9A976B5E6EF3A94656A0B6DD07EE34B7", hash_generated_method = "0499A631DD0461CEA2AEFF5FF2EB9957")
     @Override
     public boolean onHoverEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onHoverEvent(ev);
         addTaint(ev.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_115908051 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_115908051;
-        // ---------- Original Method ----------
-        //super.onHoverEvent(ev);
-        //return true;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.710 -0400", hash_original_method = "56F3757B297FC41285B5D7002065B92C", hash_generated_method = "882A7237E1D37224C4F4688F37F1BBFF")
     public void setTabContainer(ScrollingTabContainerView tabView) {
         {
             removeView(mTabContainer);
-        } //End block
+        } 
         mTabContainer = tabView;
         {
             addView(tabView);
@@ -200,87 +209,89 @@ public class ActionBarContainer extends FrameLayout {
             lp.width = LayoutParams.MATCH_PARENT;
             lp.height = LayoutParams.WRAP_CONTENT;
             tabView.setAllowCollapse(false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mTabContainer != null) {
-            //removeView(mTabContainer);
-        //}
-        //mTabContainer = tabView;
-        //if (tabView != null) {
-            //addView(tabView);
-            //final ViewGroup.LayoutParams lp = tabView.getLayoutParams();
-            //lp.width = LayoutParams.MATCH_PARENT;
-            //lp.height = LayoutParams.WRAP_CONTENT;
-            //tabView.setAllowCollapse(false);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+            
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.711 -0400", hash_original_method = "1563ACF140881C9576C37880F51665C0", hash_generated_method = "BEA9515D76969D30AAD58C016BE498DF")
     public View getTabContainer() {
-        View varB4EAC82CA7396A68D541C85D26508E83_1367443680 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1367443680 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1367443680 = mTabContainer;
-        varB4EAC82CA7396A68D541C85D26508E83_1367443680.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1367443680.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1367443680;
-        // ---------- Original Method ----------
-        //return mTabContainer;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.711 -0400", hash_original_method = "643CD56BC30DF4A83018A79008BF6616", hash_generated_method = "C12E4E4B7708D0163143F58EEACBD280")
     @Override
     public void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var53365F3898D8A9E9BAE3603F3CDBE261_1451841872 = (getWidth() == 0 || getHeight() == 0);
-        } //End collapsed parenthetic
+        } 
         {
             mSplitBackground.draw(canvas);
-        } //End block
+        } 
         {
             {
                 mBackground.draw(canvas);
-            } //End block
+            } 
             {
                 mStackedBackground.draw(canvas);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        //if (getWidth() == 0 || getHeight() == 0) {
-            //return;
-        //}
-        //if (mIsSplit) {
-            //if (mSplitBackground != null) mSplitBackground.draw(canvas);
-        //} else {
-            //if (mBackground != null) {
-                //mBackground.draw(canvas);
-            //}
-            //if (mStackedBackground != null && mIsStacked) {
-                //mStackedBackground.draw(canvas);
-            //}
-        //}
+        
+        
+            
+        
+        
+            
+        
+            
+                
+            
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.712 -0400", hash_original_method = "195483BC208A3A4410E3220FCA03E982", hash_generated_method = "A822A3678532FFEA615B4B20F42C00A9")
     @Override
     public ActionMode startActionModeForChild(View child, ActionMode.Callback callback) {
-        ActionMode varB4EAC82CA7396A68D541C85D26508E83_875490622 = null; //Variable for return #1
+        ActionMode varB4EAC82CA7396A68D541C85D26508E83_875490622 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_875490622 = null;
         addTaint(child.getTaint());
         addTaint(callback.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_875490622.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_875490622.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_875490622;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.712 -0400", hash_original_method = "8D0F26C3446558D3092AD9D990B93994", hash_generated_method = "32C4D468425312C14414C7BEA1FE4A94")
     @Override
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         final LayoutParams lp = (LayoutParams) mActionBarView.getLayoutParams();
         int actionBarViewHeight;
@@ -296,20 +307,21 @@ public class ActionBarContainer extends FrameLayout {
                     setMeasuredDimension(getMeasuredWidth(),
                         Math.min(actionBarViewHeight + mTabContainer.getMeasuredHeight(),
                                 maxHeight));
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.713 -0400", hash_original_method = "325ECF81F05468831378A42F90AA0A17", hash_generated_method = "520C5D2EE72F72587433BBB3C9C7D877")
     @Override
     public void onLayout(boolean changed, int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onLayout(changed, l, t, r, b);
         final boolean hasTabs = mTabContainer != null && mTabContainer.getVisibility() != GONE;
         {
@@ -329,50 +341,50 @@ public class ActionBarContainer extends FrameLayout {
                                     boolean var28A666D856FCA260F0AAF19F9E4D575A_2019045235 = (!mActionBarView.isCollapsed());
                                     {
                                         child.offsetTopAndBottom(tabHeight);
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
+                                    } 
+                                } 
+                            } 
+                        } 
                         mTabContainer.layout(l, 0, r, tabHeight);
-                    } //End block
+                    } 
                     {
                         mTabContainer.layout(l, containerHeight - tabHeight, r, containerHeight);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         boolean needsInvalidate = false;
         {
             {
                 mSplitBackground.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                 needsInvalidate = true;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mBackground.setBounds(mActionBarView.getLeft(), mActionBarView.getTop(),
                         mActionBarView.getRight(), mActionBarView.getBottom());
                 needsInvalidate = true;
-            } //End block
+            } 
             {
                 boolean varCA15C6C8070D24F0937F9B0071309C40_369307012 = ((mIsStacked = hasTabs && mStackedBackground != null));
                 {
                     mStackedBackground.setBounds(mTabContainer.getLeft(), mTabContainer.getTop(),
                         mTabContainer.getRight(), mTabContainer.getBottom());
                     needsInvalidate = true;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             invalidate();
-        } //End block
+        } 
         addTaint(changed);
         addTaint(l);
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

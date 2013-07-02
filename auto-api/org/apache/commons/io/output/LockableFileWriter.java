@@ -1,11 +1,11 @@
 package org.apache.commons.io.output;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -32,7 +32,7 @@ public class LockableFileWriter extends Writer {
     public  LockableFileWriter(String fileName) throws IOException {
         this(fileName, false, null);
         addTaint(fileName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -41,7 +41,7 @@ public class LockableFileWriter extends Writer {
         this(fileName, append, null);
         addTaint(fileName.getTaint());
         addTaint(append);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -51,7 +51,7 @@ public class LockableFileWriter extends Writer {
         addTaint(fileName.getTaint());
         addTaint(append);
         addTaint(lockDir.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -59,7 +59,7 @@ public class LockableFileWriter extends Writer {
     public  LockableFileWriter(File file) throws IOException {
         this(file, false, null);
         addTaint(file.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -68,7 +68,7 @@ public class LockableFileWriter extends Writer {
         this(file, append, null);
         addTaint(file.getTaint());
         addTaint(append);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -78,7 +78,7 @@ public class LockableFileWriter extends Writer {
         addTaint(file.getTaint());
         addTaint(append);
         addTaint(lockDir.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -87,7 +87,7 @@ public class LockableFileWriter extends Writer {
         this(file, encoding, false, null);
         addTaint(file.getTaint());
         addTaint(encoding.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -96,7 +96,7 @@ public class LockableFileWriter extends Writer {
         this(file, encoding, false, null);
         addTaint(file.getTaint());
         addTaint(encoding.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -109,17 +109,17 @@ public class LockableFileWriter extends Writer {
             boolean var3C6B443E1FDDD4F5DD4166952B7B8EBC_1236643666 = (file.getParentFile() != null);
             {
                 FileUtils.forceMkdir(file.getParentFile());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varB4EF7A82C29897D1EBAB65E15CCB5408_311205990 = (file.isDirectory());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("File specified is a directory");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             lockDir = System.getProperty("java.io.tmpdir");
-        } //End block
+        } 
         File lockDirFile = new File(lockDir);
         FileUtils.forceMkdir(lockDirFile);
         testLockDir(lockDirFile);
@@ -127,23 +127,23 @@ public class LockableFileWriter extends Writer {
         createLock();
         out = initWriter(file, encoding, append);
         addTaint(lockDir.getTaint());
-        // ---------- Original Method ----------
-        //file = file.getAbsoluteFile();
-        //if (file.getParentFile() != null) {
-            //FileUtils.forceMkdir(file.getParentFile());
-        //}
-        //if (file.isDirectory()) {
-            //throw new IOException("File specified is a directory");
-        //}
-        //if (lockDir == null) {
-            //lockDir = System.getProperty("java.io.tmpdir");
-        //}
-        //File lockDirFile = new File(lockDir);
-        //FileUtils.forceMkdir(lockDirFile);
-        //testLockDir(lockDirFile);
-        //lockFile = new File(lockDirFile, file.getName() + LCK);
-        //createLock();
-        //out = initWriter(file, encoding, append);
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -155,10 +155,11 @@ public class LockableFileWriter extends Writer {
         addTaint(encoding.getTaint());
         addTaint(append);
         addTaint(lockDir.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.717 -0400", hash_original_method = "8D77B36F2D36A74D4D1D738F1EFBDA2C", hash_generated_method = "4102FC8D71B9CA5008F18178D8E74D12")
     private void testLockDir(File lockDir) throws IOException {
         {
@@ -166,28 +167,29 @@ public class LockableFileWriter extends Writer {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException(
                     "Could not find lockDir: " + lockDir.getAbsolutePath());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varB96F37B67BDFBF29B8473930027E6EB2_203651512 = (!lockDir.canWrite());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException(
                     "Could not write to lockDir: " + lockDir.getAbsolutePath());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(lockDir.getTaint());
-        // ---------- Original Method ----------
-        //if (!lockDir.exists()) {
-            //throw new IOException(
-                    //"Could not find lockDir: " + lockDir.getAbsolutePath());
-        //}
-        //if (!lockDir.canWrite()) {
-            //throw new IOException(
-                    //"Could not write to lockDir: " + lockDir.getAbsolutePath());
-        //}
+        
+        
+            
+                    
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.717 -0400", hash_original_method = "17CDBB829EF4B0C5B4419966B6F98CAD", hash_generated_method = "762C010CEC8830B75AAF0CB6DC023B81")
     private void createLock() throws IOException {
         {
@@ -196,24 +198,25 @@ public class LockableFileWriter extends Writer {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("Can't write file, lock " +
                         lockFile.getAbsolutePath() + " exists");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             lockFile.deleteOnExit();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (LockableFileWriter.class) {
-            //if (!lockFile.createNewFile()) {
-                //throw new IOException("Can't write file, lock " +
-                        //lockFile.getAbsolutePath() + " exists");
-            //}
-            //lockFile.deleteOnExit();
-        //}
+        } 
+        
+        
+            
+                
+                        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.718 -0400", hash_original_method = "9026BE33E3D40906CA316E83E271B1B8", hash_generated_method = "A130F12573322AF1B807813F995DFCC5")
     private Writer initWriter(File file, Charset encoding, boolean append) throws IOException {
-        Writer varB4EAC82CA7396A68D541C85D26508E83_333495091 = null; //Variable for return #1
+        Writer varB4EAC82CA7396A68D541C85D26508E83_333495091 = null; 
         boolean fileExistedAlready = file.exists();
         OutputStream stream = null;
         Writer writer = null;
@@ -221,7 +224,7 @@ public class LockableFileWriter extends Writer {
         {
             stream = new FileOutputStream(file.getAbsolutePath(), append);
             writer = new OutputStreamWriter(stream, Charsets.toCharset(encoding));
-        } //End block
+        } 
         catch (IOException ex)
         {
             IOUtils.closeQuietly(writer);
@@ -229,9 +232,9 @@ public class LockableFileWriter extends Writer {
             FileUtils.deleteQuietly(lockFile);
             {
                 FileUtils.deleteQuietly(file);
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
+        } 
         catch (RuntimeException ex)
         {
             IOUtils.closeQuietly(writer);
@@ -239,60 +242,64 @@ public class LockableFileWriter extends Writer {
             FileUtils.deleteQuietly(lockFile);
             {
                 FileUtils.deleteQuietly(file);
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw ex;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_333495091 = writer;
         addTaint(file.getTaint());
         addTaint(encoding.getTaint());
         addTaint(append);
-        varB4EAC82CA7396A68D541C85D26508E83_333495091.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_333495091.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_333495091;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.719 -0400", hash_original_method = "C9C28C6746F703FA832F2D42517AD4AE", hash_generated_method = "D57CA109FD8E5C197C2A4A548F02BC22")
     @Override
     public void close() throws IOException {
         try 
         {
             out.close();
-        } //End block
+        } 
         finally 
         {
             lockFile.delete();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //out.close();
-        //} finally {
-            //lockFile.delete();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.720 -0400", hash_original_method = "EE30809419C042C9133DA321A16F7DFD", hash_generated_method = "9D3E64422199D911A8FED9F04D0CD032")
     @Override
     public void write(int idx) throws IOException {
         out.write(idx);
         addTaint(idx);
-        // ---------- Original Method ----------
-        //out.write(idx);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.720 -0400", hash_original_method = "46EC5EF747261262EAD8ED1BD4879967", hash_generated_method = "575758C142209E068CE55D69C08DC03C")
     @Override
     public void write(char[] chr) throws IOException {
         out.write(chr);
         addTaint(chr[0]);
-        // ---------- Original Method ----------
-        //out.write(chr);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.720 -0400", hash_original_method = "4007BD37B56F652F2DD863D7816336D0", hash_generated_method = "574C18C42E6F03671E82D29AA383A523")
     @Override
     public void write(char[] chr, int st, int end) throws IOException {
@@ -300,21 +307,23 @@ public class LockableFileWriter extends Writer {
         addTaint(chr[0]);
         addTaint(st);
         addTaint(end);
-        // ---------- Original Method ----------
-        //out.write(chr, st, end);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.721 -0400", hash_original_method = "570C1378326063600110CB3D156C7691", hash_generated_method = "01483C2A984EC8B0C3967FC4CB8B0DB7")
     @Override
     public void write(String str) throws IOException {
         out.write(str);
         addTaint(str.getTaint());
-        // ---------- Original Method ----------
-        //out.write(str);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.721 -0400", hash_original_method = "694B238FF5AB1AB4441171CB6DC98A7A", hash_generated_method = "93542F5D13EEB77A09805F9165E14C09")
     @Override
     public void write(String str, int st, int end) throws IOException {
@@ -322,17 +331,18 @@ public class LockableFileWriter extends Writer {
         addTaint(str.getTaint());
         addTaint(st);
         addTaint(end);
-        // ---------- Original Method ----------
-        //out.write(str, st, end);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.722 -0400", hash_original_method = "C99FBA65B0D308569620507D6E099042", hash_generated_method = "A2EF74EEF7203CB573D4B22064D57305")
     @Override
     public void flush() throws IOException {
         out.flush();
-        // ---------- Original Method ----------
-        //out.flush();
+        
+        
     }
 
     

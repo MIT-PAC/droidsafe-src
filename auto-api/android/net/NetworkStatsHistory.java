@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import static android.net.NetworkStats.IFACE_ALL;
 import static android.net.NetworkStats.SET_DEFAULT;
@@ -62,7 +62,7 @@ public class NetworkStatsHistory implements Parcelable {
     public  NetworkStatsHistory(long bucketDuration) {
         this(bucketDuration, 10, FIELD_ALL);
         addTaint(bucketDuration);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -71,7 +71,7 @@ public class NetworkStatsHistory implements Parcelable {
         this(bucketDuration, initialSize, FIELD_ALL);
         addTaint(bucketDuration);
         addTaint(initialSize);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -87,16 +87,16 @@ public class NetworkStatsHistory implements Parcelable {
         operations = new long[initialSize];
         bucketCount = 0;
         addTaint(fields);
-        // ---------- Original Method ----------
-        //this.bucketDuration = bucketDuration;
-        //bucketStart = new long[initialSize];
-        //if ((fields & FIELD_ACTIVE_TIME) != 0) activeTime = new long[initialSize];
-        //if ((fields & FIELD_RX_BYTES) != 0) rxBytes = new long[initialSize];
-        //if ((fields & FIELD_RX_PACKETS) != 0) rxPackets = new long[initialSize];
-        //if ((fields & FIELD_TX_BYTES) != 0) txBytes = new long[initialSize];
-        //if ((fields & FIELD_TX_PACKETS) != 0) txPackets = new long[initialSize];
-        //if ((fields & FIELD_OPERATIONS) != 0) operations = new long[initialSize];
-        //bucketCount = 0;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -111,23 +111,23 @@ public class NetworkStatsHistory implements Parcelable {
         txPackets = readLongArray(in);
         operations = readLongArray(in);
         bucketCount = bucketStart.length;
-        // ---------- Original Method ----------
-        //bucketDuration = in.readLong();
-        //bucketStart = readLongArray(in);
-        //activeTime = readLongArray(in);
-        //rxBytes = readLongArray(in);
-        //rxPackets = readLongArray(in);
-        //txBytes = readLongArray(in);
-        //txPackets = readLongArray(in);
-        //operations = readLongArray(in);
-        //bucketCount = bucketStart.length;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.759 -0400", hash_original_method = "EDC1A57CB9EE8B46632E6D4E4377F32F", hash_generated_method = "B9334DBAC7A00A65E299AB0D876FB6CC")
     public  NetworkStatsHistory(DataInputStream in) throws IOException {
         final int version = in.readInt();
-        //Begin case VERSION_INIT 
+        
         {
             bucketDuration = in.readLong();
             bucketStart = readFullLongArray(in);
@@ -137,9 +137,9 @@ public class NetworkStatsHistory implements Parcelable {
             txPackets = new long[bucketStart.length];
             operations = new long[bucketStart.length];
             bucketCount = bucketStart.length;
-        } //End block
-        //End case VERSION_INIT 
-        //Begin case VERSION_ADD_PACKETS VERSION_ADD_ACTIVE 
+        } 
+        
+        
         {
             bucketDuration = in.readLong();
             bucketStart = readVarLongArray(in);
@@ -151,18 +151,19 @@ public class NetworkStatsHistory implements Parcelable {
             txPackets = readVarLongArray(in);
             operations = readVarLongArray(in);
             bucketCount = bucketStart.length;
-        } //End block
-        //End case VERSION_ADD_PACKETS VERSION_ADD_ACTIVE 
-        //Begin case default 
+        } 
+        
+        
         {
             if (DroidSafeAndroidRuntime.control) throw new ProtocolException("unexpected version: " + version);
-        } //End block
-        //End case default 
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.760 -0400", hash_original_method = "7FCED8E87AE3E02DFD52BA28011A12D7", hash_generated_method = "D3413475BB64E6DF8E5F89A3FDA24F42")
     public void writeToParcel(Parcel out, int flags) {
         out.writeLong(bucketDuration);
@@ -175,18 +176,19 @@ public class NetworkStatsHistory implements Parcelable {
         writeLongArray(out, operations, bucketCount);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeLong(bucketDuration);
-        //writeLongArray(out, bucketStart, bucketCount);
-        //writeLongArray(out, activeTime, bucketCount);
-        //writeLongArray(out, rxBytes, bucketCount);
-        //writeLongArray(out, rxPackets, bucketCount);
-        //writeLongArray(out, txBytes, bucketCount);
-        //writeLongArray(out, txPackets, bucketCount);
-        //writeLongArray(out, operations, bucketCount);
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.761 -0400", hash_original_method = "F25B937341175CC0273E2E92554C8F17", hash_generated_method = "564F0212121CB09CACF818855DC74EC1")
     public void writeToStream(DataOutputStream out) throws IOException {
         out.writeInt(VERSION_ADD_ACTIVE);
@@ -199,16 +201,16 @@ public class NetworkStatsHistory implements Parcelable {
         writeVarLongArray(out, txPackets, bucketCount);
         writeVarLongArray(out, operations, bucketCount);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.writeInt(VERSION_ADD_ACTIVE);
-        //out.writeLong(bucketDuration);
-        //writeVarLongArray(out, bucketStart, bucketCount);
-        //writeVarLongArray(out, activeTime, bucketCount);
-        //writeVarLongArray(out, rxBytes, bucketCount);
-        //writeVarLongArray(out, rxPackets, bucketCount);
-        //writeVarLongArray(out, txBytes, bucketCount);
-        //writeVarLongArray(out, txPackets, bucketCount);
-        //writeVarLongArray(out, operations, bucketCount);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -216,8 +218,8 @@ public class NetworkStatsHistory implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_211742541 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_211742541;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -225,8 +227,8 @@ public class NetworkStatsHistory implements Parcelable {
     public int size() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1942335836 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1942335836;
-        // ---------- Original Method ----------
-        //return bucketCount;
+        
+        
     }
 
     
@@ -234,8 +236,8 @@ public class NetworkStatsHistory implements Parcelable {
     public long getBucketDuration() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_215514627 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_215514627;
-        // ---------- Original Method ----------
-        //return bucketDuration;
+        
+        
     }
 
     
@@ -243,12 +245,12 @@ public class NetworkStatsHistory implements Parcelable {
     public long getStart() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_983319023 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_983319023;
-        // ---------- Original Method ----------
-        //if (bucketCount > 0) {
-            //return bucketStart[0];
-        //} else {
-            //return Long.MAX_VALUE;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -256,66 +258,69 @@ public class NetworkStatsHistory implements Parcelable {
     public long getEnd() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_969773309 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_969773309;
-        // ---------- Original Method ----------
-        //if (bucketCount > 0) {
-            //return bucketStart[bucketCount - 1] + bucketDuration;
-        //} else {
-            //return Long.MIN_VALUE;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.763 -0400", hash_original_method = "44CA8F6D269FC47862A9173C06F73618", hash_generated_method = "4EDBC0382ED39CE6090EDC8DF3A01BC2")
     public int getIndexBefore(long time) {
         int index = Arrays.binarySearch(bucketStart, 0, bucketCount, time);
         {
             index = (~index) - 1;
-        } //End block
+        } 
         {
             index -= 1;
-        } //End block
+        } 
         int var9BF4435ACED8AF26C4B672EFA1D4FDD8_1714312691 = (MathUtils.constrain(index, 0, bucketCount - 1));
         addTaint(time);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1743110128 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1743110128;
-        // ---------- Original Method ----------
-        //int index = Arrays.binarySearch(bucketStart, 0, bucketCount, time);
-        //if (index < 0) {
-            //index = (~index) - 1;
-        //} else {
-            //index -= 1;
-        //}
-        //return MathUtils.constrain(index, 0, bucketCount - 1);
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.763 -0400", hash_original_method = "44680AD61A9756C7015B14278BDED4D1", hash_generated_method = "870BCFEFE0777AF88FF3C8C85E1B7E43")
     public int getIndexAfter(long time) {
         int index = Arrays.binarySearch(bucketStart, 0, bucketCount, time);
         {
             index = ~index;
-        } //End block
+        } 
         {
             index += 1;
-        } //End block
+        } 
         int var9BF4435ACED8AF26C4B672EFA1D4FDD8_1672033776 = (MathUtils.constrain(index, 0, bucketCount - 1));
         addTaint(time);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1278514939 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1278514939;
-        // ---------- Original Method ----------
-        //int index = Arrays.binarySearch(bucketStart, 0, bucketCount, time);
-        //if (index < 0) {
-            //index = ~index;
-        //} else {
-            //index += 1;
-        //}
-        //return MathUtils.constrain(index, 0, bucketCount - 1);
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.764 -0400", hash_original_method = "75531F5194A56E3573F283D646BEE902", hash_generated_method = "67F50AE07433EC56060BB0AACE6EDC06")
     public Entry getValues(int i, Entry recycle) {
-        Entry varB4EAC82CA7396A68D541C85D26508E83_1208541224 = null; //Variable for return #1
+        Entry varB4EAC82CA7396A68D541C85D26508E83_1208541224 = null; 
         Entry entry;
         entry = recycle;
         entry = new Entry();
@@ -329,22 +334,23 @@ public class NetworkStatsHistory implements Parcelable {
         entry.operations = getLong(operations, i, UNKNOWN);
         varB4EAC82CA7396A68D541C85D26508E83_1208541224 = entry;
         addTaint(recycle.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1208541224.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1208541224.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1208541224;
-        // ---------- Original Method ----------
-        //final Entry entry = recycle != null ? recycle : new Entry();
-        //entry.bucketStart = bucketStart[i];
-        //entry.bucketDuration = bucketDuration;
-        //entry.activeTime = getLong(activeTime, i, UNKNOWN);
-        //entry.rxBytes = getLong(rxBytes, i, UNKNOWN);
-        //entry.rxPackets = getLong(rxPackets, i, UNKNOWN);
-        //entry.txBytes = getLong(txBytes, i, UNKNOWN);
-        //entry.txPackets = getLong(txPackets, i, UNKNOWN);
-        //entry.operations = getLong(operations, i, UNKNOWN);
-        //return entry;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.765 -0400", hash_original_method = "74712D26283E9B32FCB8C3574DCFFFFA", hash_generated_method = "5155DA0E3013F5124BA261315CAF4897")
     @Deprecated
     public void recordData(long start, long end, long rxBytes, long txBytes) {
@@ -354,9 +360,9 @@ public class NetworkStatsHistory implements Parcelable {
         addTaint(end);
         addTaint(rxBytes);
         addTaint(txBytes);
-        // ---------- Original Method ----------
-        //recordData(start, end, new NetworkStats.Entry(
-                //IFACE_ALL, UID_ALL, SET_DEFAULT, TAG_NONE, rxBytes, 0L, txBytes, 0L, 0L));
+        
+        
+                
     }
 
     
@@ -364,7 +370,7 @@ public class NetworkStatsHistory implements Parcelable {
     public void recordData(long start, long end, NetworkStats.Entry entry) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("tried recording negative data");
-        } //End block
+        } 
         ensureBuckets(start, end);
         long duration = end - start;
         final int startIndex = getIndexAfter(end);
@@ -391,15 +397,16 @@ public class NetworkStatsHistory implements Parcelable {
                 addLong(operations, i, fracOperations);
                 entry.operations -= fracOperations;
                 duration -= overlap;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.766 -0400", hash_original_method = "3DDEBC644DC519B4D2C820693B031478", hash_generated_method = "433B7123A7D6965C5C1AB0471CF55061")
     public void recordEntireHistory(NetworkStatsHistory input) {
         final NetworkStats.Entry entry = new NetworkStats.Entry(
@@ -415,24 +422,25 @@ public class NetworkStatsHistory implements Parcelable {
                 entry.txPackets = getLong(input.txPackets, i, 0L);
                 entry.operations = getLong(input.operations, i, 0L);
                 recordData(start, end, entry);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //final NetworkStats.Entry entry = new NetworkStats.Entry(
-                //IFACE_ALL, UID_ALL, SET_DEFAULT, TAG_NONE, 0L, 0L, 0L, 0L, 0L);
-        //for (int i = 0; i < input.bucketCount; i++) {
-            //final long start = input.bucketStart[i];
-            //final long end = start + input.bucketDuration;
-            //entry.rxBytes = getLong(input.rxBytes, i, 0L);
-            //entry.rxPackets = getLong(input.rxPackets, i, 0L);
-            //entry.txBytes = getLong(input.txBytes, i, 0L);
-            //entry.txPackets = getLong(input.txPackets, i, 0L);
-            //entry.operations = getLong(input.operations, i, 0L);
-            //recordData(start, end, entry);
-        //}
+            } 
+        } 
+        
+        
+                
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.767 -0400", hash_original_method = "B927CFA0CEDE41C1E5D84D22AEB0E325", hash_generated_method = "2D8985A126B1CD5616DE82480A3C4FCD")
     private void ensureBuckets(long start, long end) {
         start -= start % bucketDuration;
@@ -444,23 +452,24 @@ public class NetworkStatsHistory implements Parcelable {
                 final int index = Arrays.binarySearch(bucketStart, 0, bucketCount, now);
                 {
                     insertBucket(~index, now);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //start -= start % bucketDuration;
-        //end += (bucketDuration - (end % bucketDuration)) % bucketDuration;
-        //for (long now = start; now < end; now += bucketDuration) {
-            //final int index = Arrays.binarySearch(bucketStart, 0, bucketCount, now);
-            //if (index < 0) {
-                //insertBucket(~index, now);
-            //}
-        //}
+        
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.767 -0400", hash_original_method = "B3108244F274B858A2EC662DDA9927CD", hash_generated_method = "0C1004BEAFE33D159D7F3144901F8D4A")
     private void insertBucket(int index, long start) {
         {
@@ -472,7 +481,7 @@ public class NetworkStatsHistory implements Parcelable {
             txBytes = Arrays.copyOf(txBytes, newLength);
             txPackets = Arrays.copyOf(txPackets, newLength);
             operations = Arrays.copyOf(operations, newLength);
-        } //End block
+        } 
         {
             final int dstPos = index + 1;
             final int length = bucketCount - index;
@@ -483,7 +492,7 @@ public class NetworkStatsHistory implements Parcelable {
             System.arraycopy(txBytes, index, txBytes, dstPos, length);
             System.arraycopy(txPackets, index, txPackets, dstPos, length);
             System.arraycopy(operations, index, operations, dstPos, length);
-        } //End block
+        } 
         bucketStart[index] = start;
         setLong(activeTime, index, 0L);
         setLong(rxBytes, index, 0L);
@@ -491,11 +500,12 @@ public class NetworkStatsHistory implements Parcelable {
         setLong(txBytes, index, 0L);
         setLong(txPackets, index, 0L);
         setLong(operations, index, 0L);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.768 -0400", hash_original_method = "D42FFE9A180911A657FA083FF5768836", hash_generated_method = "E00D3F70EF2D7A29A20E19289489F99F")
     public void removeBucketsBefore(long cutoff) {
         int i;
@@ -504,8 +514,8 @@ public class NetworkStatsHistory implements Parcelable {
             {
                 final long curStart = bucketStart[i];
                 final long curEnd = curStart + bucketDuration;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             final int length = bucketStart.length;
             bucketStart = Arrays.copyOfRange(bucketStart, i, length);
@@ -516,30 +526,32 @@ public class NetworkStatsHistory implements Parcelable {
             txPackets = Arrays.copyOfRange(txPackets, i, length);
             operations = Arrays.copyOfRange(operations, i, length);
             bucketCount -= i;
-        } //End block
+        } 
         addTaint(cutoff);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.769 -0400", hash_original_method = "846F78477F792FCCB9A623410DF90C52", hash_generated_method = "310A40CC17852830F359E26B2B2E1864")
     public Entry getValues(long start, long end, Entry recycle) {
-        Entry varB4EAC82CA7396A68D541C85D26508E83_676732783 = null; //Variable for return #1
+        Entry varB4EAC82CA7396A68D541C85D26508E83_676732783 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_676732783 = getValues(start, end, Long.MAX_VALUE, recycle);
         addTaint(start);
         addTaint(end);
         addTaint(recycle.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_676732783.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_676732783.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_676732783;
-        // ---------- Original Method ----------
-        //return getValues(start, end, Long.MAX_VALUE, recycle);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.771 -0400", hash_original_method = "FB71475C239CC1C7BD0FFCD80328C5DA", hash_generated_method = "791C931C4D81786937D35AC7D77D6CFB")
     public Entry getValues(long start, long end, long now, Entry recycle) {
-        Entry varB4EAC82CA7396A68D541C85D26508E83_1386519990 = null; //Variable for return #1
+        Entry varB4EAC82CA7396A68D541C85D26508E83_1386519990 = null; 
         Entry entry;
         entry = recycle;
         entry = new Entry();
@@ -561,7 +573,7 @@ public class NetworkStatsHistory implements Parcelable {
                 long overlap;
                 {
                     overlap = bucketDuration;
-                } //End block
+                } 
                 {
                     long overlapEnd;
                     overlapEnd = curEnd;
@@ -570,25 +582,26 @@ public class NetworkStatsHistory implements Parcelable {
                     overlapStart = curStart;
                     overlapStart = start;
                     overlap = overlapEnd - overlapStart;
-                } //End block
+                } 
                 entry.activeTime += activeTime[i] * overlap / bucketDuration;
                 entry.rxBytes += rxBytes[i] * overlap / bucketDuration;
                 entry.rxPackets += rxPackets[i] * overlap / bucketDuration;
                 entry.txBytes += txBytes[i] * overlap / bucketDuration;
                 entry.txPackets += txPackets[i] * overlap / bucketDuration;
                 entry.operations += operations[i] * overlap / bucketDuration;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1386519990 = entry;
         addTaint(now);
         addTaint(recycle.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1386519990.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1386519990.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1386519990;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.773 -0400", hash_original_method = "AB86ED9AABA220FE0A64D0BEB0ADF734", hash_generated_method = "89F060343F8ED45AFDCB7C613C06FF91")
     @Deprecated
     public void generateRandom(long start, long end, long bytes) {
@@ -603,18 +616,19 @@ public class NetworkStatsHistory implements Parcelable {
         addTaint(start);
         addTaint(end);
         addTaint(bytes);
-        // ---------- Original Method ----------
-        //final Random r = new Random();
-        //final float fractionRx = r.nextFloat();
-        //final long rxBytes = (long) (bytes * fractionRx);
-        //final long txBytes = (long) (bytes * (1 - fractionRx));
-        //final long rxPackets = rxBytes / 1024;
-        //final long txPackets = txBytes / 1024;
-        //final long operations = rxBytes / 2048;
-        //generateRandom(start, end, rxBytes, rxPackets, txBytes, txPackets, operations, r);
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.774 -0400", hash_original_method = "2B4929E4FB42F9E11DEF8BA8131121D5", hash_generated_method = "F1B00EC9D07EDA31062A22CBBD23422E")
     @Deprecated
     public void generateRandom(long start, long end, long rxBytes, long rxPackets, long txBytes,
@@ -636,19 +650,21 @@ public class NetworkStatsHistory implements Parcelable {
             txPackets -= entry.txPackets;
             operations -= entry.operations;
             recordData(curStart, curEnd, entry);
-        } //End block
+        } 
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long randomLong(Random r, long start, long end) {
         return (long) (start + (r.nextFloat() * (end - start)));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.775 -0400", hash_original_method = "9A3509822F71494F86F9AA38F61F7118", hash_generated_method = "77DA6E157426E18705D5B326E09343AF")
     public void dump(String prefix, PrintWriter pw, boolean fullHistory) {
         pw.print(prefix);
@@ -662,7 +678,7 @@ public class NetworkStatsHistory implements Parcelable {
             pw.print("  (omitting ");
             pw.print(start);
             pw.println(" buckets)");
-        } //End block
+        } 
         {
             int i = start;
             {
@@ -672,51 +688,52 @@ public class NetworkStatsHistory implements Parcelable {
                 {
                     pw.print(" activeTime=");
                     pw.print(activeTime[i]);
-                } //End block
+                } 
                 {
                     pw.print(" rxBytes=");
                     pw.print(rxBytes[i]);
-                } //End block
+                } 
                 {
                     pw.print(" rxPackets=");
                     pw.print(rxPackets[i]);
-                } //End block
+                } 
                 {
                     pw.print(" txBytes=");
                     pw.print(txBytes[i]);
-                } //End block
+                } 
                 {
                     pw.print(" txPackets=");
                     pw.print(txPackets[i]);
-                } //End block
+                } 
                 {
                     pw.print(" operations=");
                     pw.print(operations[i]);
-                } //End block
+                } 
                 pw.println();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(prefix.getTaint());
         addTaint(pw.getTaint());
         addTaint(fullHistory);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.776 -0400", hash_original_method = "BC70BAB3B88F6C51172FD25602AB6B1A", hash_generated_method = "26548943D11CC3444E0C3FCBFD273389")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_350935382 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_350935382 = null; 
         final CharArrayWriter writer = new CharArrayWriter();
         dump("", new PrintWriter(writer), false);
         varB4EAC82CA7396A68D541C85D26508E83_350935382 = writer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_350935382.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_350935382.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_350935382;
-        // ---------- Original Method ----------
-        //final CharArrayWriter writer = new CharArrayWriter();
-        //dump("", new PrintWriter(writer), false);
-        //return writer.toString();
+        
+        
+        
+        
     }
 
     
@@ -764,7 +781,7 @@ public class NetworkStatsHistory implements Parcelable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.776 -0400", hash_original_method = "629F4A8E90A91F8ECA92C26A9EB219B2", hash_generated_method = "629F4A8E90A91F8ECA92C26A9EB219B2")
         public Entry ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -780,7 +797,7 @@ public class NetworkStatsHistory implements Parcelable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.777 -0400", hash_original_method = "19FEB3F8DC1B5C5DFE6BAC6ABFB6225F", hash_generated_method = "19FEB3F8DC1B5C5DFE6BAC6ABFB6225F")
         public DataStreamUtils ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -857,7 +874,7 @@ public class NetworkStatsHistory implements Parcelable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.778 -0400", hash_original_method = "B81D28E36C3A9E7E89F9825844B173D9", hash_generated_method = "B81D28E36C3A9E7E89F9825844B173D9")
         public ParcelUtils ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -932,12 +949,12 @@ public class NetworkStatsHistory implements Parcelable {
             return new NetworkStatsHistory[size];
         }
     };
-    // orphaned legacy method
+    
     public NetworkStatsHistory createFromParcel(Parcel in) {
             return new NetworkStatsHistory(in);
         }
     
-    // orphaned legacy method
+    
     public NetworkStatsHistory[] newArray(int size) {
             return new NetworkStatsHistory[size];
         }

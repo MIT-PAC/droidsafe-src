@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
@@ -17,7 +17,7 @@ public class PriorityParser extends HeaderParser {
     public  PriorityParser(String priority) {
         super(priority);
         addTaint(priority.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class PriorityParser extends HeaderParser {
     protected  PriorityParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.415 -0400", hash_original_method = "9ECC1E43903CC22F0322E70EF9078767", hash_generated_method = "CAB4D3CD49C715237596B80F32BE651C")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1866494879 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1866494879 = null; 
         dbg_enter("PriorityParser.parse");
         Priority priority = new Priority();
         try 
@@ -43,32 +44,33 @@ public class PriorityParser extends HeaderParser {
             this.lexer.SPorHT();
             this.lexer.match('\n');
             varB4EAC82CA7396A68D541C85D26508E83_1866494879 = priority;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("PriorityParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1866494879.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1866494879.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1866494879;
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("PriorityParser.parse");
-        //Priority priority = new Priority();
-        //try {
-            //headerName(TokenTypes.PRIORITY);
-            //priority.setHeaderName(SIPHeaderNames.PRIORITY);
-            //this.lexer.SPorHT();
-            //priority.setPriority(this.lexer.ttokenSafe());
-            //this.lexer.SPorHT();
-            //this.lexer.match('\n');
-            //return priority;
-        //} finally {
-            //if (debug)
-                //dbg_leave("PriorityParser.parse");
-        //}
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void main(String args[]) throws ParseException {
         String p[] = {
             "Priority: 8;a\n"

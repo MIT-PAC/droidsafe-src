@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.address.AddressImpl;
 import gov.nist.javax.sip.address.SipUri;
@@ -23,7 +23,7 @@ public class ContactParser extends AddressParametersParser {
     public  ContactParser(String contact) {
         super(contact);
         addTaint(contact.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,14 +32,15 @@ public class ContactParser extends AddressParametersParser {
         super(lexer);
         this.lexer = lexer;
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
-        //this.lexer = lexer;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.839 -0400", hash_original_method = "BF729EDB4B0BCD2BE7D180520FE998E8", hash_generated_method = "C04FCA89C6856E61CC0C00BB760BBB50")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_340753400 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_340753400 = null; 
         headerName(TokenTypes.CONTACT);
         ContactList retval = new ContactList();
         {
@@ -51,29 +52,29 @@ public class ContactParser extends AddressParametersParser {
                     {
                         this.lexer.match('*');
                         contact.setWildCardFlag(true);
-                    } //End block
+                    } 
                     {
                         super.parse(contact);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     super.parse(contact);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             retval.add(contact);
             this.lexer.SPorHT();
             char la = lexer.lookAhead(0);
             {
                 this.lexer.match(',');
                 this.lexer.SPorHT();
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected char");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_340753400 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_340753400.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_340753400.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_340753400;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

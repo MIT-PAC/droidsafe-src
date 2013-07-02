@@ -1,11 +1,11 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -44,14 +44,14 @@ final class IoVec {
         this.ioBuffers = new Object[bufferCount];
         this.offsets = new int[bufferCount];
         this.byteCounts = new int[bufferCount];
-        // ---------- Original Method ----------
-        //this.byteBuffers = byteBuffers;
-        //this.offset = offset;
-        //this.bufferCount = bufferCount;
-        //this.direction = direction;
-        //this.ioBuffers = new Object[bufferCount];
-        //this.offsets = new int[bufferCount];
-        //this.byteCounts = new int[bufferCount];
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -64,44 +64,44 @@ final class IoVec {
                 ByteBuffer b = byteBuffers[i + offset];
                 {
                     b.checkWritable();
-                } //End block
+                } 
                 int remaining = b.remaining();
                 {
                     boolean var485497B2C9BE8560C87D0DBBE26ABBEA_763082764 = (b.isDirect());
                     {
                         ioBuffers[i] = b;
                         offsets[i] = b.position();
-                    } //End block
+                    } 
                     {
                         ioBuffers[i] = NioUtils.unsafeArray(b);
                         offsets[i] = NioUtils.unsafeArrayOffset(b) + b.position();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 byteCounts[i] = remaining;
                 totalRemaining += remaining;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_52836387 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_52836387;
-        // ---------- Original Method ----------
-        //int totalRemaining = 0;
-        //for (int i = 0; i < bufferCount; ++i) {
-            //ByteBuffer b = byteBuffers[i + offset];
-            //if (direction == Direction.READV) {
-                //b.checkWritable();
-            //}
-            //int remaining = b.remaining();
-            //if (b.isDirect()) {
-                //ioBuffers[i] = b;
-                //offsets[i] = b.position();
-            //} else {
-                //ioBuffers[i] = NioUtils.unsafeArray(b);
-                //offsets[i] = NioUtils.unsafeArrayOffset(b) + b.position();
-            //}
-            //byteCounts[i] = remaining;
-            //totalRemaining += remaining;
-        //}
-        //return totalRemaining;
+        
+        
+        
+            
+            
+                
+            
+            
+            
+                
+                
+            
+                
+                
+            
+            
+            
+        
+        
     }
 
     
@@ -113,33 +113,33 @@ final class IoVec {
                 int result = Libcore.os.readv(fd, ioBuffers, offsets, byteCounts);
                 {
                     result = -1;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 int var74139DC41892DAA1E1523A68BE0BA9F9_570994815 = (Libcore.os.writev(fd, ioBuffers, offsets, byteCounts));
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsIOException();
-        } //End block
+        } 
         addTaint(fd.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1826572869 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1826572869;
-        // ---------- Original Method ----------
-        //try {
-            //if (direction == Direction.READV) {
-                //int result = Libcore.os.readv(fd, ioBuffers, offsets, byteCounts);
-                //if (result == 0) {
-                    //result = -1;
-                //}
-                //return result;
-            //} else {
-                //return Libcore.os.writev(fd, ioBuffers, offsets, byteCounts);
-            //}
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsIOException();
-        //}
+        
+        
+            
+                
+                
+                    
+                
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -152,25 +152,25 @@ final class IoVec {
                 {
                     b.position(b.limit());
                     byteCount -= byteCounts[i];
-                } //End block
+                } 
                 {
                     b.position((direction == Direction.WRITEV ? b.position() : 0) + byteCount);
                     byteCount = 0;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(byteCount);
-        // ---------- Original Method ----------
-        //for (int i = 0; byteCount > 0 && i < bufferCount; ++i) {
-            //ByteBuffer b = byteBuffers[i + offset];
-            //if (byteCounts[i] < byteCount) {
-                //b.position(b.limit());
-                //byteCount -= byteCounts[i];
-            //} else {
-                //b.position((direction == Direction.WRITEV ? b.position() : 0) + byteCount);
-                //byteCount = 0;
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+            
+                
+                
+            
+        
     }
 
     

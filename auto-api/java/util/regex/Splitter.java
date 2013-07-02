@@ -1,11 +1,11 @@
 package java.util.regex;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +14,11 @@ public class Splitter {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.695 -0400", hash_original_method = "B7F2802825C1EAFD928ACADA9E8D9911", hash_generated_method = "4F7ABE410345F930060448FAB205D46B")
     private  Splitter() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] fastSplit(String re, String input, int limit) {
         int len = re.length();
         if (len == 0) {
@@ -48,6 +49,7 @@ public class Splitter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] split(Pattern pattern, String re, String input, int limit) {
         String[] fastResult = fastSplit(re, input, limit);
         if (fastResult != null) {
@@ -68,6 +70,7 @@ public class Splitter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] finishSplit(List<String> list, String input, int begin, int maxSize, int limit) {
         if (begin < input.length()) {
             list.add(input.substring(begin));

@@ -1,11 +1,11 @@
 package javax.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.nio.ByteBuffer;
 import java.security.AlgorithmParameters;
@@ -44,23 +44,23 @@ public class Cipher {
             String transformation) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         this.provider = provider;
         this.transformation = transformation;
         this.spiImpl = cipherSpi;
-        // ---------- Original Method ----------
-        //if (cipherSpi == null) {
-            //throw new NullPointerException();
-        //}
-        //if (!(cipherSpi instanceof NullCipherSpi) && provider == null) {
-            //throw new NullPointerException();
-        //}
-        //this.provider = provider;
-        //this.transformation = transformation;
-        //this.spiImpl = cipherSpi;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -94,11 +94,13 @@ public class Cipher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static NoSuchAlgorithmException invalidTransformation(String transformation) throws NoSuchAlgorithmException {
         throw new NoSuchAlgorithmException("Invalid transformation: " + transformation);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static synchronized Cipher getCipher(String transformation, Provider provider) throws NoSuchAlgorithmException, NoSuchPaddingException {
         if (transformation == null || transformation.isEmpty()) {
             throw invalidTransformation(transformation);
@@ -170,6 +172,7 @@ public class Cipher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] checkTransformation(String transformation) throws NoSuchAlgorithmException {
         if (transformation.startsWith("/")) {
             transformation = transformation.substring(1);
@@ -197,23 +200,23 @@ public class Cipher {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.021 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "556800877635B8674584351A6F27213F")
     public final Provider getProvider() {
-        Provider varB4EAC82CA7396A68D541C85D26508E83_1362745600 = null; //Variable for return #1
+        Provider varB4EAC82CA7396A68D541C85D26508E83_1362745600 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1362745600 = provider;
-        varB4EAC82CA7396A68D541C85D26508E83_1362745600.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1362745600.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1362745600;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.021 -0400", hash_original_method = "8DF6BCF87B142C85CC5BB8E6263E3718", hash_generated_method = "63B262510F972597FAFDFA2015E3E8C3")
     public final String getAlgorithm() {
-        String varB4EAC82CA7396A68D541C85D26508E83_907612727 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_907612727 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_907612727 = transformation;
-        varB4EAC82CA7396A68D541C85D26508E83_907612727.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_907612727.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_907612727;
-        // ---------- Original Method ----------
-        //return transformation;
+        
+        
     }
 
     
@@ -222,8 +225,8 @@ public class Cipher {
         int var7364A97EC441053FEC79B2C935557BB1_1876410631 = (spiImpl.engineGetBlockSize());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_290100198 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_290100198;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGetBlockSize();
+        
+        
     }
 
     
@@ -231,16 +234,16 @@ public class Cipher {
     public final int getOutputSize(int inputLen) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Cipher has not yet been initialized");
-        } //End block
+        } 
         int var179ED6F279F10B55227291448D76B240_2118134508 = (spiImpl.engineGetOutputSize(inputLen));
         addTaint(inputLen);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1054651993 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1054651993;
-        // ---------- Original Method ----------
-        //if (mode == 0) {
-            //throw new IllegalStateException("Cipher has not yet been initialized");
-        //}
-        //return spiImpl.engineGetOutputSize(inputLen);
+        
+        
+            
+        
+        
     }
 
     
@@ -249,30 +252,30 @@ public class Cipher {
         byte[] varF39A8F67ED88EFD7729A12FFE5019423_461362493 = (spiImpl.engineGetIV());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_920752533 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_920752533;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGetIV();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.023 -0400", hash_original_method = "1EF273790A635FFB8595723F2B2D47C7", hash_generated_method = "C3901A7E692565867CE8B4D877053B98")
     public final AlgorithmParameters getParameters() {
-        AlgorithmParameters varB4EAC82CA7396A68D541C85D26508E83_441021092 = null; //Variable for return #1
+        AlgorithmParameters varB4EAC82CA7396A68D541C85D26508E83_441021092 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_441021092 = spiImpl.engineGetParameters();
-        varB4EAC82CA7396A68D541C85D26508E83_441021092.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_441021092.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_441021092;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGetParameters();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.024 -0400", hash_original_method = "8BD6E3BF151C3D35A58DA717088B655C", hash_generated_method = "0C47E023A9BEC5EE3C8B941C6C9CB9C6")
     public final ExemptionMechanism getExemptionMechanism() {
-        ExemptionMechanism varB4EAC82CA7396A68D541C85D26508E83_98678319 = null; //Variable for return #1
+        ExemptionMechanism varB4EAC82CA7396A68D541C85D26508E83_98678319 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_98678319 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_98678319.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_98678319.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_98678319;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -280,15 +283,15 @@ public class Cipher {
     public final void init(int opmode, Key key) throws InvalidKeyException {
         {
             secureRandom = new SecureRandom();
-        } //End block
+        } 
         init(opmode, key, secureRandom);
         addTaint(opmode);
         addTaint(key.getTaint());
-        // ---------- Original Method ----------
-        //if (secureRandom == null) {
-            //secureRandom = new SecureRandom();
-        //}
-        //init(opmode, key, secureRandom);
+        
+        
+            
+        
+        
     }
 
     
@@ -299,24 +302,25 @@ public class Cipher {
         mode = opmode;
         addTaint(key.getTaint());
         addTaint(random.getTaint());
-        // ---------- Original Method ----------
-        //checkMode(opmode);
-        //spiImpl.engineInit(opmode, key, random);
-        //mode = opmode;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:17.026 -0400", hash_original_method = "09F21B40649178B5CD7EDFF6A1F24869", hash_generated_method = "A0C5FF0AFE61DA0FD37EB83FC981A6E3")
     private void checkMode(int mode) {
         {
             if (DroidSafeAndroidRuntime.control) throw new InvalidParameterException("Invalid mode: " + mode);
-        } //End block
+        } 
         addTaint(mode);
-        // ---------- Original Method ----------
-        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE
-            //&& mode != UNWRAP_MODE && mode != WRAP_MODE) {
-            //throw new InvalidParameterException("Invalid mode: " + mode);
-        //}
+        
+        
+            
+            
+        
     }
 
     
@@ -324,16 +328,16 @@ public class Cipher {
     public final void init(int opmode, Key key, AlgorithmParameterSpec params) throws InvalidKeyException, InvalidAlgorithmParameterException {
         {
             secureRandom = new SecureRandom();
-        } //End block
+        } 
         init(opmode, key, params, secureRandom);
         addTaint(opmode);
         addTaint(key.getTaint());
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //if (secureRandom == null) {
-            //secureRandom = new SecureRandom();
-        //}
-        //init(opmode, key, params, secureRandom);
+        
+        
+            
+        
+        
     }
 
     
@@ -347,10 +351,10 @@ public class Cipher {
         addTaint(key.getTaint());
         addTaint(params.getTaint());
         addTaint(random.getTaint());
-        // ---------- Original Method ----------
-        //checkMode(opmode);
-        //spiImpl.engineInit(opmode, key, params, random);
-        //mode = opmode;
+        
+        
+        
+        
     }
 
     
@@ -358,16 +362,16 @@ public class Cipher {
     public final void init(int opmode, Key key, AlgorithmParameters params) throws InvalidKeyException, InvalidAlgorithmParameterException {
         {
             secureRandom = new SecureRandom();
-        } //End block
+        } 
         init(opmode, key, params, secureRandom);
         addTaint(opmode);
         addTaint(key.getTaint());
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //if (secureRandom == null) {
-            //secureRandom = new SecureRandom();
-        //}
-        //init(opmode, key, params, secureRandom);
+        
+        
+            
+        
+        
     }
 
     
@@ -381,10 +385,10 @@ public class Cipher {
         addTaint(key.getTaint());
         addTaint(params.getTaint());
         addTaint(random.getTaint());
-        // ---------- Original Method ----------
-        //checkMode(opmode);
-        //spiImpl.engineInit(opmode, key, params, random);
-        //mode = opmode;
+        
+        
+        
+        
     }
 
     
@@ -392,15 +396,15 @@ public class Cipher {
     public final void init(int opmode, Certificate certificate) throws InvalidKeyException {
         {
             secureRandom = new SecureRandom();
-        } //End block
+        } 
         init(opmode, certificate, secureRandom);
         addTaint(opmode);
         addTaint(certificate.getTaint());
-        // ---------- Original Method ----------
-        //if (secureRandom == null) {
-            //secureRandom = new SecureRandom();
-        //}
-        //init(opmode, certificate, secureRandom);
+        
+        
+            
+        
+        
     }
 
     
@@ -423,32 +427,32 @@ public class Cipher {
                                 boolean varF237574E9036314771607A16E87EB51E_147398365 = (oid.equals("2.5.29.15"));
                                 {
                                     critical = true;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         boolean[] keyUsage = ((X509Certificate) certificate).getKeyUsage();
                         {
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new InvalidKeyException("The public key in the certificate "
                                                           + "cannot be used for ENCRYPT_MODE");
-                            } //End block
+                            } 
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new InvalidKeyException("The public key in the certificate "
                                                           + "cannot be used for WRAP_MODE");
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         spiImpl.engineInit(opmode, certificate.getPublicKey(), random);
         mode = opmode;
         addTaint(certificate.getTaint());
         addTaint(random.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -456,25 +460,25 @@ public class Cipher {
     public final byte[] update(byte[] input) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("input == null");
-        } //End block
+        } 
         byte[] varBB9EEFA976093A356AD99D9F975AF898_1121287716 = (spiImpl.engineUpdate(input, 0, input.length));
         addTaint(input[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1870825117 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1870825117;
-        // ---------- Original Method ----------
-        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
-            //throw new IllegalStateException();
-        //}
-        //if (input == null) {
-            //throw new IllegalArgumentException("input == null");
-        //}
-        //if (input.length == 0) {
-            //return null;
-        //}
-        //return spiImpl.engineUpdate(input, 0, input.length);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -482,35 +486,35 @@ public class Cipher {
     public final byte[] update(byte[] input, int inputOffset, int inputLen) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("input == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Incorrect inputOffset/inputLen parameters");
-        } //End block
+        } 
         byte[] varE2D2921D02BFC84845A8291C070C3EF9_2143946451 = (spiImpl.engineUpdate(input, inputOffset, inputLen));
         addTaint(input[0]);
         addTaint(inputOffset);
         addTaint(inputLen);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_453104001 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_453104001;
-        // ---------- Original Method ----------
-        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
-            //throw new IllegalStateException();
-        //}
-        //if (input == null) {
-            //throw new IllegalArgumentException("input == null");
-        //}
-        //if (inputOffset < 0 || inputLen < 0
-                //|| inputLen > input.length
-                //|| inputOffset > input.length - inputLen) {
-            //throw new IllegalArgumentException("Incorrect inputOffset/inputLen parameters");
-        //}
-        //if (input.length == 0) {
-            //return null;
-        //}
-        //return spiImpl.engineUpdate(input, inputOffset, inputLen);
+        
+        
+            
+        
+        
+            
+        
+        
+                
+                
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -524,8 +528,8 @@ public class Cipher {
         addTaint(output[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1227334077 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1227334077;
-        // ---------- Original Method ----------
-        //return update(input, inputOffset, inputLen, output, 0);
+        
+        
     }
 
     
@@ -534,19 +538,19 @@ public class Cipher {
             byte[] output, int outputOffset) throws ShortBufferException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("input == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("output == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("outputOffset < 0");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Incorrect inputOffset/inputLen parameters");
-        } //End block
+        } 
         int varF0FBC9F5208602AFDCA262C62CD07438_873632066 = (spiImpl.engineUpdate(input, inputOffset, inputLen, output,
                 outputOffset));
         addTaint(input[0]);
@@ -556,8 +560,8 @@ public class Cipher {
         addTaint(outputOffset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1269860206 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1269860206;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -565,23 +569,23 @@ public class Cipher {
     public final int update(ByteBuffer input, ByteBuffer output) throws ShortBufferException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("input == output");
-        } //End block
+        } 
         int var08D6DCA405F0E2AFF23DAB431AE4D5FA_1192698535 = (spiImpl.engineUpdate(input, output));
         addTaint(input.getTaint());
         addTaint(output.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1646841131 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1646841131;
-        // ---------- Original Method ----------
-        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
-            //throw new IllegalStateException();
-        //}
-        //if (input == output) {
-            //throw new IllegalArgumentException("input == output");
-        //}
-        //return spiImpl.engineUpdate(input, output);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -590,15 +594,15 @@ public class Cipher {
             BadPaddingException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         byte[] var1BC40C2B1F5E74FBA517B9B562AEB668_526003160 = (spiImpl.engineDoFinal(null, 0, 0));
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_650399498 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_650399498;
-        // ---------- Original Method ----------
-        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
-            //throw new IllegalStateException();
-        //}
-        //return spiImpl.engineDoFinal(null, 0, 0);
+        
+        
+            
+        
+        
     }
 
     
@@ -607,23 +611,23 @@ public class Cipher {
             BadPaddingException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("outputOffset < 0");
-        } //End block
+        } 
         int var40DF1829FABED58AAFBB5BB03C28C7DA_1090020718 = (spiImpl.engineDoFinal(null, 0, 0, output, outputOffset));
         addTaint(output[0]);
         addTaint(outputOffset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1329920778 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1329920778;
-        // ---------- Original Method ----------
-        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
-            //throw new IllegalStateException();
-        //}
-        //if (outputOffset < 0) {
-            //throw new IllegalArgumentException("outputOffset < 0");
-        //}
-        //return spiImpl.engineDoFinal(null, 0, 0, output, outputOffset);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -632,16 +636,16 @@ public class Cipher {
             BadPaddingException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         byte[] varFB0DA14B66B0D469CBEEC4EA577AD97A_1302265619 = (spiImpl.engineDoFinal(input, 0, input.length));
         addTaint(input[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2106767576 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2106767576;
-        // ---------- Original Method ----------
-        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
-            //throw new IllegalStateException();
-        //}
-        //return spiImpl.engineDoFinal(input, 0, input.length);
+        
+        
+            
+        
+        
     }
 
     
@@ -649,24 +653,24 @@ public class Cipher {
     public final byte[] doFinal(byte[] input, int inputOffset, int inputLen) throws IllegalBlockSizeException, BadPaddingException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Incorrect inputOffset/inputLen parameters");
-        } //End block
+        } 
         byte[] var758EBECFA415D86DE74D50800380706C_1758690143 = (spiImpl.engineDoFinal(input, inputOffset, inputLen));
         addTaint(input[0]);
         addTaint(inputOffset);
         addTaint(inputLen);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_303678602 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_303678602;
-        // ---------- Original Method ----------
-        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
-            //throw new IllegalStateException();
-        //}
-        //if (inputOffset < 0 || inputLen < 0 || inputOffset + inputLen > input.length) {
-            //throw new IllegalArgumentException("Incorrect inputOffset/inputLen parameters");
-        //}
-        //return spiImpl.engineDoFinal(input, inputOffset, inputLen);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -681,8 +685,8 @@ public class Cipher {
         addTaint(output[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1418100486 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1418100486;
-        // ---------- Original Method ----------
-        //return doFinal(input, inputOffset, inputLen, output, 0);
+        
+        
     }
 
     
@@ -692,10 +696,10 @@ public class Cipher {
             IllegalBlockSizeException, BadPaddingException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Incorrect inputOffset/inputLen parameters");
-        } //End block
+        } 
         int var7E4391C5895FEE22ABF165285F029094_37932472 = (spiImpl.engineDoFinal(input, inputOffset, inputLen, output,
                 outputOffset));
         addTaint(input[0]);
@@ -705,15 +709,15 @@ public class Cipher {
         addTaint(outputOffset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_249217521 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_249217521;
-        // ---------- Original Method ----------
-        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
-            //throw new IllegalStateException();
-        //}
-        //if (inputOffset < 0 || inputLen < 0 || inputOffset + inputLen > input.length) {
-            //throw new IllegalArgumentException("Incorrect inputOffset/inputLen parameters");
-        //}
-        //return spiImpl.engineDoFinal(input, inputOffset, inputLen, output,
-                //outputOffset);
+        
+        
+            
+        
+        
+            
+        
+        
+                
     }
 
     
@@ -722,23 +726,23 @@ public class Cipher {
             BadPaddingException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("input == output");
-        } //End block
+        } 
         int varB435D60D692DCFF98C9D0347FB2085E3_7765540 = (spiImpl.engineDoFinal(input, output));
         addTaint(input.getTaint());
         addTaint(output.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_158779149 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_158779149;
-        // ---------- Original Method ----------
-        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
-            //throw new IllegalStateException();
-        //}
-        //if (input == output) {
-            //throw new IllegalArgumentException("input == output");
-        //}
-        //return spiImpl.engineDoFinal(input, output);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -747,16 +751,16 @@ public class Cipher {
             InvalidKeyException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         byte[] var8A1D9A52886535C3DCA3313F381A0875_901755792 = (spiImpl.engineWrap(key));
         addTaint(key.getTaint());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_312979840 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_312979840;
-        // ---------- Original Method ----------
-        //if (mode != WRAP_MODE) {
-            //throw new IllegalStateException();
-        //}
-        //return spiImpl.engineWrap(key);
+        
+        
+            
+        
+        
     }
 
     
@@ -764,23 +768,23 @@ public class Cipher {
     public final Key unwrap(byte[] wrappedKey, String wrappedKeyAlgorithm,
             int wrappedKeyType) throws InvalidKeyException,
             NoSuchAlgorithmException {
-        Key varB4EAC82CA7396A68D541C85D26508E83_1177554599 = null; //Variable for return #1
+        Key varB4EAC82CA7396A68D541C85D26508E83_1177554599 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1177554599 = spiImpl.engineUnwrap(wrappedKey, wrappedKeyAlgorithm,
                 wrappedKeyType);
         addTaint(wrappedKey[0]);
         addTaint(wrappedKeyAlgorithm.getTaint());
         addTaint(wrappedKeyType);
-        varB4EAC82CA7396A68D541C85D26508E83_1177554599.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1177554599.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1177554599;
-        // ---------- Original Method ----------
-        //if (mode != UNWRAP_MODE) {
-            //throw new IllegalStateException();
-        //}
-        //return spiImpl.engineUnwrap(wrappedKey, wrappedKeyAlgorithm,
-                //wrappedKeyType);
+        
+        
+            
+        
+        
+                
     }
 
     

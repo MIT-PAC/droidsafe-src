@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.Binder;
@@ -24,11 +24,12 @@ public class NotificationManager {
       NotificationManager(Context context, Handler handler) {
         mContext = context;
         addTaint(handler.getTaint());
-        // ---------- Original Method ----------
-        //mContext = context;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public INotificationManager getService() {
         if (sService != null) {
             return sService;
@@ -39,16 +40,18 @@ public class NotificationManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.846 -0400", hash_original_method = "8A4CA4E7E43847BF1836AE50422D1EC2", hash_generated_method = "50B2FE1186CF8101034F9FCF8FC6A32F")
     public void notify(int id, Notification notification) {
         notify(null, id, notification);
         addTaint(id);
         addTaint(notification.getTaint());
-        // ---------- Original Method ----------
-        //notify(null, id, notification);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.847 -0400", hash_original_method = "825D6C1D97F576BD7D887B295C793809", hash_generated_method = "D500007E9D1FBCD71CF484D8CA0B17D6")
     public void notify(String tag, int id, Notification notification) {
         int[] idOut = new int[1];
@@ -57,36 +60,38 @@ public class NotificationManager {
         try 
         {
             service.enqueueNotificationWithTag(pkg, tag, id, notification, idOut);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(tag.getTaint());
         addTaint(id);
         addTaint(notification.getTaint());
-        // ---------- Original Method ----------
-        //int[] idOut = new int[1];
-        //INotificationManager service = getService();
-        //String pkg = mContext.getPackageName();
-        //if (localLOGV) Log.v(TAG, pkg + ": notify(" + id + ", " + notification + ")");
-        //try {
-            //service.enqueueNotificationWithTag(pkg, tag, id, notification, idOut);
-            //if (id != idOut[0]) {
-                //Log.w(TAG, "notify: id corrupted: sent " + id + ", got back " + idOut[0]);
-            //}
-        //} catch (RemoteException e) {
-        //}
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.847 -0400", hash_original_method = "C3E2CA3977B6A0DFE40EA0B5D969CEEE", hash_generated_method = "E602EE1A45929109937348BE796AF928")
     public void cancel(int id) {
         cancel(null, id);
         addTaint(id);
-        // ---------- Original Method ----------
-        //cancel(null, id);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.848 -0400", hash_original_method = "40D57D78EF425D9AA1571205DDC7CF63", hash_generated_method = "4EC0E3074AA7ADDC8BE8A4EFF12C16BC")
     public void cancel(String tag, int id) {
         INotificationManager service = getService();
@@ -94,22 +99,23 @@ public class NotificationManager {
         try 
         {
             service.cancelNotificationWithTag(pkg, tag, id);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(tag.getTaint());
         addTaint(id);
-        // ---------- Original Method ----------
-        //INotificationManager service = getService();
-        //String pkg = mContext.getPackageName();
-        //if (localLOGV) Log.v(TAG, pkg + ": cancel(" + id + ")");
-        //try {
-            //service.cancelNotificationWithTag(pkg, tag, id);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.849 -0400", hash_original_method = "755B5F96474649FA97E86F2D74D1F0A8", hash_generated_method = "EA6899A922EFF2BFA4C8DC28DE68FB3D")
     public void cancelAll() {
         INotificationManager service = getService();
@@ -117,17 +123,17 @@ public class NotificationManager {
         try 
         {
             service.cancelAllNotifications(pkg);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
-        // ---------- Original Method ----------
-        //INotificationManager service = getService();
-        //String pkg = mContext.getPackageName();
-        //if (localLOGV) Log.v(TAG, pkg + ": cancelAll()");
-        //try {
-            //service.cancelAllNotifications(pkg);
-        //} catch (RemoteException e) {
-        //}
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package java.nio.channels.spi;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.nio.channels.AsynchronousCloseException;
@@ -30,15 +30,15 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
             {
                 interrupted = true;
                 AbstractInterruptibleChannel.this.close();
-            } //End block
+            } 
             catch (IOException ignored)
             { }
-            // ---------- Original Method ----------
-            //try {
-                //interrupted = true;
-                //AbstractInterruptibleChannel.this.close();
-            //} catch (IOException ignored) {
-            //}
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -46,7 +46,7 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.733 -0400", hash_original_method = "8D566223F7B6A201818F5E4BFCF4F6EB", hash_generated_method = "06F598EF6A4A993889CD9DF449D06062")
     protected  AbstractInterruptibleChannel() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -55,8 +55,8 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
     public synchronized final boolean isOpen() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1765466520 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1765466520;
-        // ---------- Original Method ----------
-        //return !closed;
+        
+        
     }
 
     
@@ -68,26 +68,26 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
                 {
                     closed = true;
                     implCloseChannel();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (!closed) {
-            //synchronized (this) {
-                //if (!closed) {
-                    //closed = true;
-                    //implCloseChannel();
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+                
+                    
+                    
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.734 -0400", hash_original_method = "F0AA56CB3350B0CEA7EF4FF29453D45D", hash_generated_method = "6DCC83F0ECF94F334D94D331BE79DAA7")
     protected final void begin() {
         Thread.currentThread().pushInterruptAction$(interruptAndCloseRunnable);
-        // ---------- Original Method ----------
-        //Thread.currentThread().pushInterruptAction$(interruptAndCloseRunnable);
+        
+        
     }
 
     
@@ -97,20 +97,20 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
         {
             interrupted = false;
             if (DroidSafeAndroidRuntime.control) throw new ClosedByInterruptException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new AsynchronousCloseException();
-        } //End block
+        } 
         addTaint(success);
-        // ---------- Original Method ----------
-        //Thread.currentThread().popInterruptAction$(interruptAndCloseRunnable);
-        //if (interrupted) {
-            //interrupted = false;
-            //throw new ClosedByInterruptException();
-        //}
-        //if (!success && closed) {
-            //throw new AsynchronousCloseException();
-        //}
+        
+        
+        
+            
+            
+        
+        
+            
+        
     }
 
     

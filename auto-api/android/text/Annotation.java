@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 
@@ -21,9 +21,9 @@ public class Annotation implements ParcelableSpan {
     public  Annotation(String key, String value) {
         mKey = key;
         mValue = value;
-        // ---------- Original Method ----------
-        //mKey = key;
-        //mValue = value;
+        
+        
+        
     }
 
     
@@ -31,9 +31,9 @@ public class Annotation implements ParcelableSpan {
     public  Annotation(Parcel src) {
         mKey = src.readString();
         mValue = src.readString();
-        // ---------- Original Method ----------
-        //mKey = src.readString();
-        //mValue = src.readString();
+        
+        
+        
     }
 
     
@@ -41,8 +41,8 @@ public class Annotation implements ParcelableSpan {
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1035921873 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1035921873;
-        // ---------- Original Method ----------
-        //return TextUtils.ANNOTATION;
+        
+        
     }
 
     
@@ -50,42 +50,43 @@ public class Annotation implements ParcelableSpan {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2052589213 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2052589213;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.491 -0400", hash_original_method = "5E98CA8EC4399E1C3E6F7EE2C72DE36F", hash_generated_method = "050C587251250F58D52303A17D41175F")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mKey);
         dest.writeString(mValue);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(mKey);
-        //dest.writeString(mValue);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.492 -0400", hash_original_method = "E0CEA0C6ABDC55C32B991C1D155B5E3E", hash_generated_method = "35F1BA94969B9742D79EE6BEE319442C")
     public String getKey() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1550153472 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1550153472 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1550153472 = mKey;
-        varB4EAC82CA7396A68D541C85D26508E83_1550153472.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1550153472.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1550153472;
-        // ---------- Original Method ----------
-        //return mKey;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.493 -0400", hash_original_method = "20F1B7D715A473C2ABE076C27B2A3109", hash_generated_method = "E6D7CB48D260B2C9D2FFD5CBCDA37A55")
     public String getValue() {
-        String varB4EAC82CA7396A68D541C85D26508E83_617250636 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_617250636 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_617250636 = mValue;
-        varB4EAC82CA7396A68D541C85D26508E83_617250636.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_617250636.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_617250636;
-        // ---------- Original Method ----------
-        //return mValue;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Closeable;
 import java.io.FileDescriptor;
@@ -33,43 +33,43 @@ final class PipeImpl extends Pipe {
             FileDescriptor[] fds = Libcore.os.pipe();
             this.sink = new PipeSinkChannel(fds[1]);
             this.source = new PipeSourceChannel(fds[0]);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsIOException();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //FileDescriptor[] fds = Libcore.os.pipe();
-            //this.sink = new PipeSinkChannel(fds[1]);
-            //this.source = new PipeSourceChannel(fds[0]);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsIOException();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.846 -0400", hash_original_method = "C0C603D3286C71D643834A21D35D5621", hash_generated_method = "DE286B883EC4588C22580E876BA49453")
     @Override
     public SinkChannel sink() {
-        SinkChannel varB4EAC82CA7396A68D541C85D26508E83_1127501470 = null; //Variable for return #1
+        SinkChannel varB4EAC82CA7396A68D541C85D26508E83_1127501470 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1127501470 = sink;
-        varB4EAC82CA7396A68D541C85D26508E83_1127501470.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1127501470.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1127501470;
-        // ---------- Original Method ----------
-        //return sink;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.847 -0400", hash_original_method = "06051B335F1A44C7022D361E395E201A", hash_generated_method = "928D469E5A5780EE4F27158D7D5BA8BB")
     @Override
     public SourceChannel source() {
-        SourceChannel varB4EAC82CA7396A68D541C85D26508E83_1936260888 = null; //Variable for return #1
+        SourceChannel varB4EAC82CA7396A68D541C85D26508E83_1936260888 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1936260888 = source;
-        varB4EAC82CA7396A68D541C85D26508E83_1936260888.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1936260888.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1936260888;
-        // ---------- Original Method ----------
-        //return source;
+        
+        
     }
 
     
@@ -81,16 +81,16 @@ final class PipeImpl extends Pipe {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.847 -0400", hash_original_method = "86C415C3CB1DC768FC064168AEB16626", hash_generated_method = "848D3F377F277155D9207132A062928F")
         private  FdCloser(FileDescriptor fd) {
             this.fd = fd;
-            // ---------- Original Method ----------
-            //this.fd = fd;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.848 -0400", hash_original_method = "086A2D08812022B74CB094B0E86783F6", hash_generated_method = "6B149A865F845EB3A84DA324127301FE")
         public void close() throws IOException {
             IoUtils.close(fd);
-            // ---------- Original Method ----------
-            //IoUtils.close(fd);
+            
+            
         }
 
         
@@ -111,9 +111,9 @@ final class PipeImpl extends Pipe {
             super(SelectorProvider.provider());
             this.fd = fd;
             this.channel = NioUtils.newFileChannel(new FdCloser(fd), fd, O_RDONLY);
-            // ---------- Original Method ----------
-            //this.fd = fd;
-            //this.channel = NioUtils.newFileChannel(new FdCloser(fd), fd, O_RDONLY);
+            
+            
+            
         }
 
         
@@ -121,8 +121,8 @@ final class PipeImpl extends Pipe {
         @Override
         protected void implCloseSelectableChannel() throws IOException {
             channel.close();
-            // ---------- Original Method ----------
-            //channel.close();
+            
+            
         }
 
         
@@ -131,8 +131,8 @@ final class PipeImpl extends Pipe {
         protected void implConfigureBlocking(boolean blocking) throws IOException {
             IoUtils.setBlocking(getFD(), blocking);
             addTaint(blocking);
-            // ---------- Original Method ----------
-            //IoUtils.setBlocking(getFD(), blocking);
+            
+            
         }
 
         
@@ -142,8 +142,8 @@ final class PipeImpl extends Pipe {
             addTaint(buffer.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1826185570 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1826185570;
-            // ---------- Original Method ----------
-            //return channel.read(buffer);
+            
+            
         }
 
         
@@ -153,8 +153,8 @@ final class PipeImpl extends Pipe {
             addTaint(buffers[0].getTaint());
             long var0F5264038205EDFB1AC05FBB0E8C5E94_207051984 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_207051984;
-            // ---------- Original Method ----------
-            //return channel.read(buffers);
+            
+            
         }
 
         
@@ -166,19 +166,19 @@ final class PipeImpl extends Pipe {
             addTaint(length);
             long var0F5264038205EDFB1AC05FBB0E8C5E94_648794975 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_648794975;
-            // ---------- Original Method ----------
-            //return channel.read(buffers, offset, length);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.850 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "9E9681FD3CF602DAA4DA915C6A652D85")
         public FileDescriptor getFD() {
-            FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1430906948 = null; //Variable for return #1
+            FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1430906948 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1430906948 = fd;
-            varB4EAC82CA7396A68D541C85D26508E83_1430906948.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1430906948.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1430906948;
-            // ---------- Original Method ----------
-            //return fd;
+            
+            
         }
 
         
@@ -199,9 +199,9 @@ final class PipeImpl extends Pipe {
             super(SelectorProvider.provider());
             this.fd = fd;
             this.channel = NioUtils.newFileChannel(new FdCloser(fd), fd, O_WRONLY);
-            // ---------- Original Method ----------
-            //this.fd = fd;
-            //this.channel = NioUtils.newFileChannel(new FdCloser(fd), fd, O_WRONLY);
+            
+            
+            
         }
 
         
@@ -209,8 +209,8 @@ final class PipeImpl extends Pipe {
         @Override
         protected void implCloseSelectableChannel() throws IOException {
             channel.close();
-            // ---------- Original Method ----------
-            //channel.close();
+            
+            
         }
 
         
@@ -219,8 +219,8 @@ final class PipeImpl extends Pipe {
         protected void implConfigureBlocking(boolean blocking) throws IOException {
             IoUtils.setBlocking(getFD(), blocking);
             addTaint(blocking);
-            // ---------- Original Method ----------
-            //IoUtils.setBlocking(getFD(), blocking);
+            
+            
         }
 
         
@@ -230,8 +230,8 @@ final class PipeImpl extends Pipe {
             addTaint(buffer.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1026263908 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1026263908;
-            // ---------- Original Method ----------
-            //return channel.write(buffer);
+            
+            
         }
 
         
@@ -241,8 +241,8 @@ final class PipeImpl extends Pipe {
             addTaint(buffers[0].getTaint());
             long var0F5264038205EDFB1AC05FBB0E8C5E94_1473314559 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1473314559;
-            // ---------- Original Method ----------
-            //return channel.write(buffers);
+            
+            
         }
 
         
@@ -254,19 +254,19 @@ final class PipeImpl extends Pipe {
             addTaint(length);
             long var0F5264038205EDFB1AC05FBB0E8C5E94_1044941408 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1044941408;
-            // ---------- Original Method ----------
-            //return channel.write(buffers, offset, length);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.852 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "F281C50659282924D1A74666FFB3C17F")
         public FileDescriptor getFD() {
-            FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1934077347 = null; //Variable for return #1
+            FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1934077347 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1934077347 = fd;
-            varB4EAC82CA7396A68D541C85D26508E83_1934077347.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1934077347.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1934077347;
-            // ---------- Original Method ----------
-            //return fd;
+            
+            
         }
 
         

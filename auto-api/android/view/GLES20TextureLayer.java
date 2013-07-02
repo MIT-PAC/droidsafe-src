@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
@@ -26,20 +26,20 @@ class GLES20TextureLayer extends GLES20Layer {
         {
             mTexture = layerInfo[0];
             mFinalizer = new Finalizer(mLayer);
-        } //End block
+        } 
         {
             mFinalizer = null;
-        } //End block
+        } 
         addTaint(isOpaque);
-        // ---------- Original Method ----------
-        //int[] layerInfo = new int[2];
-        //mLayer = GLES20Canvas.nCreateTextureLayer(isOpaque, layerInfo);
-        //if (mLayer != 0) {
-            //mTexture = layerInfo[0];
-            //mFinalizer = new Finalizer(mLayer);
-        //} else {
-            //mFinalizer = null;
-        //}
+        
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -48,8 +48,8 @@ class GLES20TextureLayer extends GLES20Layer {
      boolean isValid() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_567830195 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_567830195;
-        // ---------- Original Method ----------
-        //return mLayer != 0 && mTexture != 0;
+        
+        
     }
 
     
@@ -58,32 +58,32 @@ class GLES20TextureLayer extends GLES20Layer {
      void resize(int width, int height) {
         addTaint(width);
         addTaint(height);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.297 -0400", hash_original_method = "FE3F18C4DF5FFEAAB94B6C71D2FF4AC1", hash_generated_method = "70E98F674CFB6E939CE29EED10957BF2")
     @Override
      HardwareCanvas getCanvas() {
-        HardwareCanvas varB4EAC82CA7396A68D541C85D26508E83_2030746177 = null; //Variable for return #1
+        HardwareCanvas varB4EAC82CA7396A68D541C85D26508E83_2030746177 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2030746177 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_2030746177.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2030746177.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2030746177;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.298 -0400", hash_original_method = "2311903AB2BF759F2AF64EC85ECFCD74", hash_generated_method = "E08CF8B27E2309E0F114628D46B0257A")
     @Override
      HardwareCanvas start(Canvas currentCanvas) {
-        HardwareCanvas varB4EAC82CA7396A68D541C85D26508E83_496522555 = null; //Variable for return #1
+        HardwareCanvas varB4EAC82CA7396A68D541C85D26508E83_496522555 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_496522555 = null;
         addTaint(currentCanvas.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_496522555.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_496522555.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_496522555;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -91,24 +91,24 @@ class GLES20TextureLayer extends GLES20Layer {
     @Override
      void end(Canvas currentCanvas) {
         addTaint(currentCanvas.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.299 -0400", hash_original_method = "CDD23CBBC42E4C818DBF49A0C1C7FFA6", hash_generated_method = "F05E7B18C73C32C70CDB176A73611C27")
      SurfaceTexture getSurfaceTexture() {
-        SurfaceTexture varB4EAC82CA7396A68D541C85D26508E83_834800292 = null; //Variable for return #1
+        SurfaceTexture varB4EAC82CA7396A68D541C85D26508E83_834800292 = null; 
         {
             mSurface = new SurfaceTexture(mTexture, false);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_834800292 = mSurface;
-        varB4EAC82CA7396A68D541C85D26508E83_834800292.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_834800292.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_834800292;
-        // ---------- Original Method ----------
-        //if (mSurface == null) {
-            //mSurface = new SurfaceTexture(mTexture, false);
-        //}
-        //return mSurface;
+        
+        
+            
+        
+        
     }
 
     
@@ -120,9 +120,9 @@ class GLES20TextureLayer extends GLES20Layer {
         addTaint(width);
         addTaint(height);
         addTaint(isOpaque);
-        // ---------- Original Method ----------
-        //super.update(width, height, isOpaque);
-        //GLES20Canvas.nUpdateTextureLayer(mLayer, width, height, isOpaque, mSurface);
+        
+        
+        
     }
 
     
@@ -131,8 +131,8 @@ class GLES20TextureLayer extends GLES20Layer {
      void setTransform(Matrix matrix) {
         GLES20Canvas.nSetTextureLayerTransform(mLayer, matrix.native_instance);
         addTaint(matrix.getTaint());
-        // ---------- Original Method ----------
-        //GLES20Canvas.nSetTextureLayerTransform(mLayer, matrix.native_instance);
+        
+        
     }
 
     

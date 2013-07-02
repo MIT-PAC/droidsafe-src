@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.hardware.SensorManager;
@@ -87,7 +87,7 @@ public class Scroller {
     public  Scroller(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -97,7 +97,7 @@ public class Scroller {
                 context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.HONEYCOMB);
         addTaint(context.getTaint());
         addTaint(interpolator.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -108,20 +108,20 @@ public class Scroller {
         mPpi = context.getResources().getDisplayMetrics().density * 160.0f;
         mDeceleration = computeDeceleration(ViewConfiguration.getScrollFriction());
         mFlywheel = flywheel;
-        // ---------- Original Method ----------
-        //mFinished = true;
-        //mInterpolator = interpolator;
-        //mPpi = context.getResources().getDisplayMetrics().density * 160.0f;
-        //mDeceleration = computeDeceleration(ViewConfiguration.getScrollFriction());
-        //mFlywheel = flywheel;
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.630 -0400", hash_original_method = "7DBB574AF8BCDDD777C332A70FF88B50", hash_generated_method = "C44A601CD635F484BC869D788997D666")
     public final void setFriction(float friction) {
         mDeceleration = computeDeceleration(friction);
-        // ---------- Original Method ----------
-        //mDeceleration = computeDeceleration(friction);
+        
+        
     }
 
     
@@ -130,11 +130,11 @@ public class Scroller {
         addTaint(friction);
         float var546ADE640B6EDFBC8A086EF31347E768_1341365422 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1341365422;
-        // ---------- Original Method ----------
-        //return SensorManager.GRAVITY_EARTH   
-                      //* 39.37f               
-                      //* mPpi                 
-                      //* friction;
+        
+        
+                      
+                      
+                      
     }
 
     
@@ -142,16 +142,16 @@ public class Scroller {
     public final boolean isFinished() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1908751834 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1908751834;
-        // ---------- Original Method ----------
-        //return mFinished;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.631 -0400", hash_original_method = "D2A5F5698F1FC9281D0C68AF0BDE844E", hash_generated_method = "D6C7C127B9A2DD566E1703BC4B7A58DD")
     public final void forceFinished(boolean finished) {
         mFinished = finished;
-        // ---------- Original Method ----------
-        //mFinished = finished;
+        
+        
     }
 
     
@@ -159,8 +159,8 @@ public class Scroller {
     public final int getDuration() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1583012204 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1583012204;
-        // ---------- Original Method ----------
-        //return mDuration;
+        
+        
     }
 
     
@@ -168,8 +168,8 @@ public class Scroller {
     public final int getCurrX() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_514070692 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_514070692;
-        // ---------- Original Method ----------
-        //return mCurrX;
+        
+        
     }
 
     
@@ -177,18 +177,19 @@ public class Scroller {
     public final int getCurrY() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1674118917 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1674118917;
-        // ---------- Original Method ----------
-        //return mCurrY;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.633 -0400", hash_original_method = "B027DED22A5B5763CA61B11517344C6D", hash_generated_method = "6052A505452C91F7683FA385DE591C57")
     public float getCurrVelocity() {
         float var4E1A0AA14190C662937E996756C006EC_1542349093 = (mVelocity - mDeceleration * timePassed() / 2000.0f);
         float var546ADE640B6EDFBC8A086EF31347E768_790795274 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_790795274;
-        // ---------- Original Method ----------
-        //return mVelocity - mDeceleration * timePassed() / 2000.0f;
+        
+        
     }
 
     
@@ -196,8 +197,8 @@ public class Scroller {
     public final int getStartX() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_590305976 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_590305976;
-        // ---------- Original Method ----------
-        //return mStartX;
+        
+        
     }
 
     
@@ -205,8 +206,8 @@ public class Scroller {
     public final int getStartY() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1315718491 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1315718491;
-        // ---------- Original Method ----------
-        //return mStartY;
+        
+        
     }
 
     
@@ -214,8 +215,8 @@ public class Scroller {
     public final int getFinalX() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1407385543 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1407385543;
-        // ---------- Original Method ----------
-        //return mFinalX;
+        
+        
     }
 
     
@@ -223,85 +224,87 @@ public class Scroller {
     public final int getFinalY() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1497743303 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1497743303;
-        // ---------- Original Method ----------
-        //return mFinalY;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.635 -0400", hash_original_method = "1D0B82032F5CA4B8FBC2BBD45CD555A7", hash_generated_method = "1E55228FB1145A2B1980C12190BF731C")
     public boolean computeScrollOffset() {
         int timePassed = (int)(AnimationUtils.currentAnimationTimeMillis() - mStartTime);
         {
-            //Begin case SCROLL_MODE 
+            
             float x = timePassed * mDurationReciprocal;
-            //End case SCROLL_MODE 
-            //Begin case SCROLL_MODE 
+            
+            
             x = viscousFluid(x);
             x = mInterpolator.getInterpolation(x);
-            //End case SCROLL_MODE 
-            //Begin case SCROLL_MODE 
+            
+            
             mCurrX = mStartX + Math.round(x * mDeltaX);
-            //End case SCROLL_MODE 
-            //Begin case SCROLL_MODE 
+            
+            
             mCurrY = mStartY + Math.round(x * mDeltaY);
-            //End case SCROLL_MODE 
-            //Begin case FLING_MODE 
+            
+            
             final float t = (float) timePassed / mDuration;
-            //End case FLING_MODE 
-            //Begin case FLING_MODE 
+            
+            
             final int index = (int) (NB_SAMPLES * t);
-            //End case FLING_MODE 
-            //Begin case FLING_MODE 
+            
+            
             final float t_inf = (float) index / NB_SAMPLES;
-            //End case FLING_MODE 
-            //Begin case FLING_MODE 
+            
+            
             final float t_sup = (float) (index + 1) / NB_SAMPLES;
-            //End case FLING_MODE 
-            //Begin case FLING_MODE 
+            
+            
             final float d_inf = SPLINE[index];
-            //End case FLING_MODE 
-            //Begin case FLING_MODE 
+            
+            
             final float d_sup = SPLINE[index + 1];
-            //End case FLING_MODE 
-            //Begin case FLING_MODE 
+            
+            
             final float distanceCoef = d_inf + (t - t_inf) / (t_sup - t_inf) * (d_sup - d_inf);
-            //End case FLING_MODE 
-            //Begin case FLING_MODE 
+            
+            
             mCurrX = mStartX + Math.round(distanceCoef * (mFinalX - mStartX));
-            //End case FLING_MODE 
-            //Begin case FLING_MODE 
+            
+            
             mCurrX = Math.min(mCurrX, mMaxX);
-            //End case FLING_MODE 
-            //Begin case FLING_MODE 
+            
+            
             mCurrX = Math.max(mCurrX, mMinX);
-            //End case FLING_MODE 
-            //Begin case FLING_MODE 
+            
+            
             mCurrY = mStartY + Math.round(distanceCoef * (mFinalY - mStartY));
-            //End case FLING_MODE 
-            //Begin case FLING_MODE 
+            
+            
             mCurrY = Math.min(mCurrY, mMaxY);
-            //End case FLING_MODE 
-            //Begin case FLING_MODE 
+            
+            
             mCurrY = Math.max(mCurrY, mMinY);
-            //End case FLING_MODE 
-            //Begin case FLING_MODE 
+            
+            
             {
                 mFinished = true;
-            } //End block
-            //End case FLING_MODE 
-        } //End block
+            } 
+            
+        } 
         {
             mCurrX = mFinalX;
             mCurrY = mFinalY;
             mFinished = true;
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_224462165 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_224462165;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.635 -0400", hash_original_method = "2558578E34A043045AE1AF32A3800D82", hash_generated_method = "A07157DD1E11902F09548DA565746592")
     public void startScroll(int startX, int startY, int dx, int dy) {
         startScroll(startX, startY, dx, dy, DEFAULT_DURATION);
@@ -309,11 +312,12 @@ public class Scroller {
         addTaint(startY);
         addTaint(dx);
         addTaint(dy);
-        // ---------- Original Method ----------
-        //startScroll(startX, startY, dx, dy, DEFAULT_DURATION);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.636 -0400", hash_original_method = "81DB7D22C5A12E34B7101A322373D8F4", hash_generated_method = "4116373163E1068BC0B7EF53F8D2F6A2")
     public void startScroll(int startX, int startY, int dx, int dy, int duration) {
         mMode = SCROLL_MODE;
@@ -327,21 +331,22 @@ public class Scroller {
         mDeltaX = dx;
         mDeltaY = dy;
         mDurationReciprocal = 1.0f / (float) mDuration;
-        // ---------- Original Method ----------
-        //mMode = SCROLL_MODE;
-        //mFinished = false;
-        //mDuration = duration;
-        //mStartTime = AnimationUtils.currentAnimationTimeMillis();
-        //mStartX = startX;
-        //mStartY = startY;
-        //mFinalX = startX + dx;
-        //mFinalY = startY + dy;
-        //mDeltaX = dx;
-        //mDeltaY = dy;
-        //mDurationReciprocal = 1.0f / (float) mDuration;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.636 -0400", hash_original_method = "9117CBBBDEAEC710E4E0E8355A758A12", hash_generated_method = "888C8ADCAA13A83CFC5A8CA24178F764")
     public void fling(int startX, int startY, int velocityX, int velocityY,
             int minX, int maxX, int minY, int maxY) {
@@ -360,9 +365,9 @@ public class Scroller {
                 {
                     velocityX += oldVelocityX;
                     velocityY += oldVelocityY;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mMode = FLING_MODE;
         mFinished = false;
         float velocity = FloatMath.sqrt(velocityX * velocityX + velocityY * velocityY);
@@ -391,11 +396,12 @@ public class Scroller {
         mFinalY = Math.max(mFinalY, mMinY);
         addTaint(velocityX);
         addTaint(velocityY);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static float viscousFluid(float x) {
         x *= sViscousFluidScale;
         if (x < 1.0f) {
@@ -415,34 +421,36 @@ public class Scroller {
         mCurrX = mFinalX;
         mCurrY = mFinalY;
         mFinished = true;
-        // ---------- Original Method ----------
-        //mCurrX = mFinalX;
-        //mCurrY = mFinalY;
-        //mFinished = true;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.637 -0400", hash_original_method = "B7B8889BAD93C262A7F1BCB27AD999FF", hash_generated_method = "7C57A056C34EC0EB988396CC50A8107D")
     public void extendDuration(int extend) {
         int passed = timePassed();
         mDuration = passed + extend;
         mDurationReciprocal = 1.0f / mDuration;
         mFinished = false;
-        // ---------- Original Method ----------
-        //int passed = timePassed();
-        //mDuration = passed + extend;
-        //mDurationReciprocal = 1.0f / mDuration;
-        //mFinished = false;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.638 -0400", hash_original_method = "2E2DDE91830A97E8B4307DB61F63C9CC", hash_generated_method = "282F725DB7364D0E03657F65030647C7")
     public int timePassed() {
         int varB31274B63FB1A219A03CF7B3308E210D_1096668923 = ((int)(AnimationUtils.currentAnimationTimeMillis() - mStartTime));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_279892122 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_279892122;
-        // ---------- Original Method ----------
-        //return (int)(AnimationUtils.currentAnimationTimeMillis() - mStartTime);
+        
+        
     }
 
     
@@ -451,10 +459,10 @@ public class Scroller {
         mFinalX = newX;
         mDeltaX = mFinalX - mStartX;
         mFinished = false;
-        // ---------- Original Method ----------
-        //mFinalX = newX;
-        //mDeltaX = mFinalX - mStartX;
-        //mFinished = false;
+        
+        
+        
+        
     }
 
     
@@ -463,13 +471,14 @@ public class Scroller {
         mFinalY = newY;
         mDeltaY = mFinalY - mStartY;
         mFinished = false;
-        // ---------- Original Method ----------
-        //mFinalY = newY;
-        //mDeltaY = mFinalY - mStartY;
-        //mFinished = false;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.638 -0400", hash_original_method = "8B3C79E02507006E36F2788C827D3070", hash_generated_method = "77B6438F83558334D2018B4FDAF7C37B")
     public boolean isScrollingInDirection(float xvel, float yvel) {
         boolean var059728334551CBB30CCF37D7663E618C_949757689 = (!mFinished && Math.signum(xvel) == Math.signum(mFinalX - mStartX) &&
@@ -478,9 +487,9 @@ public class Scroller {
         addTaint(yvel);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1218383500 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1218383500;
-        // ---------- Original Method ----------
-        //return !mFinished && Math.signum(xvel) == Math.signum(mFinalX - mStartX) &&
-                //Math.signum(yvel) == Math.signum(mFinalY - mStartY);
+        
+        
+                
     }
 
     

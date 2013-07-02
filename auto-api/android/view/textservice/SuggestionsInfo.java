@@ -1,11 +1,11 @@
 package android.view.textservice;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.util.ArrayUtils;
 import android.os.Parcel;
@@ -34,24 +34,24 @@ public final class SuggestionsInfo implements Parcelable {
         {
             mSuggestions = EMPTY;
             mSuggestionsAvailable = false;
-        } //End block
+        } 
         {
             mSuggestions = suggestions;
             mSuggestionsAvailable = true;
-        } //End block
+        } 
         mCookie = 0;
         mSequence = 0;
-        // ---------- Original Method ----------
-        //mSuggestionsAttributes = suggestionsAttributes;
-        //if (suggestions == null) {
-            //mSuggestions = EMPTY;
-            //mSuggestionsAvailable = false;
-        //} else {
-            //mSuggestions = suggestions;
-            //mSuggestionsAvailable = true;
-        //}
-        //mCookie = 0;
-        //mSequence = 0;
+        
+        
+        
+            
+            
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -61,25 +61,25 @@ public final class SuggestionsInfo implements Parcelable {
         {
             mSuggestions = EMPTY;
             mSuggestionsAvailable = false;
-        } //End block
+        } 
         {
             mSuggestions = suggestions;
             mSuggestionsAvailable = true;
-        } //End block
+        } 
         mSuggestionsAttributes = suggestionsAttributes;
         mCookie = cookie;
         mSequence = sequence;
-        // ---------- Original Method ----------
-        //if (suggestions == null) {
-            //mSuggestions = EMPTY;
-            //mSuggestionsAvailable = false;
-        //} else {
-            //mSuggestions = suggestions;
-            //mSuggestionsAvailable = true;
-        //}
-        //mSuggestionsAttributes = suggestionsAttributes;
-        //mCookie = cookie;
-        //mSequence = sequence;
+        
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -90,15 +90,16 @@ public final class SuggestionsInfo implements Parcelable {
         mCookie = source.readInt();
         mSequence = source.readInt();
         mSuggestionsAvailable = source.readInt() == 1;
-        // ---------- Original Method ----------
-        //mSuggestionsAttributes = source.readInt();
-        //mSuggestions = source.readStringArray();
-        //mCookie = source.readInt();
-        //mSequence = source.readInt();
-        //mSuggestionsAvailable = source.readInt() == 1;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.461 -0400", hash_original_method = "D6F7E488E85F5F73C07F51AB39369D4C", hash_generated_method = "29C6117D6C49F2EC6258DA355F2E96AB")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -109,12 +110,12 @@ public final class SuggestionsInfo implements Parcelable {
         dest.writeInt(mSuggestionsAvailable ? 1 : 0);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mSuggestionsAttributes);
-        //dest.writeStringArray(mSuggestions);
-        //dest.writeInt(mCookie);
-        //dest.writeInt(mSequence);
-        //dest.writeInt(mSuggestionsAvailable ? 1 : 0);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -122,9 +123,9 @@ public final class SuggestionsInfo implements Parcelable {
     public void setCookieAndSequence(int cookie, int sequence) {
         mCookie = cookie;
         mSequence = sequence;
-        // ---------- Original Method ----------
-        //mCookie = cookie;
-        //mSequence = sequence;
+        
+        
+        
     }
 
     
@@ -132,8 +133,8 @@ public final class SuggestionsInfo implements Parcelable {
     public int getCookie() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2139298726 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2139298726;
-        // ---------- Original Method ----------
-        //return mCookie;
+        
+        
     }
 
     
@@ -141,8 +142,8 @@ public final class SuggestionsInfo implements Parcelable {
     public int getSequence() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_342141499 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_342141499;
-        // ---------- Original Method ----------
-        //return mSequence;
+        
+        
     }
 
     
@@ -150,8 +151,8 @@ public final class SuggestionsInfo implements Parcelable {
     public int getSuggestionsAttributes() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1428320502 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1428320502;
-        // ---------- Original Method ----------
-        //return mSuggestionsAttributes;
+        
+        
     }
 
     
@@ -159,23 +160,23 @@ public final class SuggestionsInfo implements Parcelable {
     public int getSuggestionsCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_428467668 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_428467668;
-        // ---------- Original Method ----------
-        //if (!mSuggestionsAvailable) {
-            //return -1;
-        //}
-        //return mSuggestions.length;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.464 -0400", hash_original_method = "303722B2FF6B72DC10F6A88905A65E92", hash_generated_method = "55E50B06D3F041E35AB66B1832BA079F")
     public String getSuggestionAt(int i) {
-        String varB4EAC82CA7396A68D541C85D26508E83_966015205 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_966015205 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_966015205 = mSuggestions[i];
         addTaint(i);
-        varB4EAC82CA7396A68D541C85D26508E83_966015205.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_966015205.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_966015205;
-        // ---------- Original Method ----------
-        //return mSuggestions[i];
+        
+        
     }
 
     
@@ -184,8 +185,8 @@ public final class SuggestionsInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1761795220 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1761795220;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     

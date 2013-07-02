@@ -1,11 +1,11 @@
 package org.bouncycastle.jce;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.asn1.nist.NISTNamedCurves;
@@ -21,10 +21,11 @@ public class ECNamedCurveTable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.138 -0400", hash_original_method = "BD64543C1F72D4D2B4CE5D415F2B3F42", hash_generated_method = "BD64543C1F72D4D2B4CE5D415F2B3F42")
     public ECNamedCurveTable ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static ECNamedCurveParameterSpec getParameterSpec(
         String  name) {
         X9ECParameters  ecP = X962NamedCurves.getByName(name);
@@ -70,6 +71,7 @@ public class ECNamedCurveTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Enumeration getNames() {
         Vector v = new Vector();
         addEnumeration(v, X962NamedCurves.getNames());
@@ -79,6 +81,7 @@ public class ECNamedCurveTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void addEnumeration(
         Vector v, 
         Enumeration e) {

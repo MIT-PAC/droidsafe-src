@@ -1,11 +1,11 @@
 package org.apache.commons.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.lang.ref.PhantomReference;
@@ -36,125 +36,133 @@ public class FileCleaningTracker {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.294 -0400", hash_original_method = "426A3F67BDF174C11E9DF835FA4ECA6C", hash_generated_method = "426A3F67BDF174C11E9DF835FA4ECA6C")
     public FileCleaningTracker ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.295 -0400", hash_original_method = "F07020199FD227FDE709D6E57E38422A", hash_generated_method = "7529397C6148DE80D8E9BE7F8F88FD3B")
     public void track(File file, Object marker) {
         track(file, marker, (FileDeleteStrategy) null);
         addTaint(file.getTaint());
         addTaint(marker.getTaint());
-        // ---------- Original Method ----------
-        //track(file, marker, (FileDeleteStrategy) null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.295 -0400", hash_original_method = "86C594F1F9E71F35FFEC0A77C084143C", hash_generated_method = "43196371CE61D98A9CCE25CBB092AE7E")
     public void track(File file, Object marker, FileDeleteStrategy deleteStrategy) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("The file must not be null");
-        } //End block
+        } 
         addTracker(file.getPath(), marker, deleteStrategy);
         addTaint(file.getTaint());
         addTaint(marker.getTaint());
         addTaint(deleteStrategy.getTaint());
-        // ---------- Original Method ----------
-        //if (file == null) {
-            //throw new NullPointerException("The file must not be null");
-        //}
-        //addTracker(file.getPath(), marker, deleteStrategy);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.295 -0400", hash_original_method = "A3E86DDC0D794AB85A77D2E23B6B45C0", hash_generated_method = "3A8AAC58FD4C7257046E8CED49B8396D")
     public void track(String path, Object marker) {
         track(path, marker, (FileDeleteStrategy) null);
         addTaint(path.getTaint());
         addTaint(marker.getTaint());
-        // ---------- Original Method ----------
-        //track(path, marker, (FileDeleteStrategy) null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.296 -0400", hash_original_method = "543B22C2EC07CA4C1AEB003D5BB6B718", hash_generated_method = "CB8F452D5BC4BCEFA1929E4A70B2F473")
     public void track(String path, Object marker, FileDeleteStrategy deleteStrategy) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("The path must not be null");
-        } //End block
+        } 
         addTracker(path, marker, deleteStrategy);
         addTaint(path.getTaint());
         addTaint(marker.getTaint());
         addTaint(deleteStrategy.getTaint());
-        // ---------- Original Method ----------
-        //if (path == null) {
-            //throw new NullPointerException("The path must not be null");
-        //}
-        //addTracker(path, marker, deleteStrategy);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.296 -0400", hash_original_method = "954E11DA9D99B56A3E0C00DDF1274471", hash_generated_method = "DCF3B97236E7A9C29FEB57A01A9C52B9")
     private synchronized void addTracker(String path, Object marker, FileDeleteStrategy deleteStrategy) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No new trackers can be added once exitWhenFinished() is called");
-        } //End block
+        } 
         {
             reaper = new Reaper();
             reaper.start();
-        } //End block
+        } 
         trackers.add(new Tracker(path, deleteStrategy, marker, q));
         addTaint(path.getTaint());
         addTaint(marker.getTaint());
         addTaint(deleteStrategy.getTaint());
-        // ---------- Original Method ----------
-        //if (exitWhenFinished) {
-            //throw new IllegalStateException("No new trackers can be added once exitWhenFinished() is called");
-        //}
-        //if (reaper == null) {
-            //reaper = new Reaper();
-            //reaper.start();
-        //}
-        //trackers.add(new Tracker(path, deleteStrategy, marker, q));
+        
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.297 -0400", hash_original_method = "0EFA130573A478F2919BB30F1541B30D", hash_generated_method = "EA1C7CEF40C33D0129FA5A12464F07CC")
     public int getTrackCount() {
         int var7853BB5C1D06EADAC5F74F0DBD6FDCE0_1603260380 = (trackers.size());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479807508 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479807508;
-        // ---------- Original Method ----------
-        //return trackers.size();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.298 -0400", hash_original_method = "643CA49BD82C37C2D2981C66A57227C8", hash_generated_method = "089CDE587395BCA4B37E1CB7334F8B2D")
     public List<String> getDeleteFailures() {
-        List<String> varB4EAC82CA7396A68D541C85D26508E83_1381425429 = null; //Variable for return #1
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_1381425429 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1381425429 = deleteFailures;
-        varB4EAC82CA7396A68D541C85D26508E83_1381425429.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1381425429.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1381425429;
-        // ---------- Original Method ----------
-        //return deleteFailures;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.298 -0400", hash_original_method = "4DFB4596FA2073A710F42E9B9443E144", hash_generated_method = "9177AAD41BE6B5E70CE3C0F8D3C5AC38")
     public synchronized void exitWhenFinished() {
         exitWhenFinished = true;
         {
             {
                 reaper.interrupt();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //exitWhenFinished = true;
-        //if (reaper != null) {
-            //synchronized (reaper) {
-                //reaper.interrupt();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -165,9 +173,9 @@ public class FileCleaningTracker {
             super("File Reaper");
             setPriority(Thread.MAX_PRIORITY);
             setDaemon(true);
-            // ---------- Original Method ----------
-            //setPriority(Thread.MAX_PRIORITY);
-            //setDaemon(true);
+            
+            
+            
         }
 
         
@@ -185,27 +193,27 @@ public class FileCleaningTracker {
                             boolean var99BD88113948D5AC8A3BFE23164FCEB4_859482290 = (!tracker.delete());
                             {
                                 deleteFailures.add(tracker.getPath());
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         tracker.clear();
-                    } //End block
+                    } 
                     catch (InterruptedException e)
                     { }
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //while (exitWhenFinished == false || trackers.size() > 0) {
-                //try {
-                    //Tracker tracker = (Tracker) q.remove(); 
-                    //trackers.remove(tracker);
-                    //if (!tracker.delete()) {
-                        //deleteFailures.add(tracker.getPath());
-                    //}
-                    //tracker.clear();
-                //} catch (InterruptedException e) {
-                    //continue;
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                    
+                    
+                        
+                    
+                    
+                
+                    
+                
+            
         }
 
         
@@ -228,20 +236,20 @@ public class FileCleaningTracker {
             this.deleteStrategy = deleteStrategy == null ? FileDeleteStrategy.NORMAL : deleteStrategy;
             addTaint(marker.getTaint());
             addTaint(queue.getTaint());
-            // ---------- Original Method ----------
-            //this.path = path;
-            //this.deleteStrategy = deleteStrategy == null ? FileDeleteStrategy.NORMAL : deleteStrategy;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.302 -0400", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "3D5DD9718925260090B2CB5855686DE0")
         public String getPath() {
-            String varB4EAC82CA7396A68D541C85D26508E83_406444421 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_406444421 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_406444421 = path;
-            varB4EAC82CA7396A68D541C85D26508E83_406444421.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_406444421.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_406444421;
-            // ---------- Original Method ----------
-            //return path;
+            
+            
         }
 
         
@@ -250,8 +258,8 @@ public class FileCleaningTracker {
             boolean var16512D20B0098962570808FE3BD35F8A_1377431716 = (deleteStrategy.deleteQuietly(new File(path)));
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1003246200 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1003246200;
-            // ---------- Original Method ----------
-            //return deleteStrategy.deleteQuietly(new File(path));
+            
+            
         }
 
         

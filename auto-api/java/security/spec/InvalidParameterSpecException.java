@@ -1,11 +1,11 @@
 package java.security.spec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.GeneralSecurityException;
 
@@ -15,13 +15,13 @@ public class InvalidParameterSpecException extends GeneralSecurityException {
     public  InvalidParameterSpecException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:58.094 -0400", hash_original_method = "8EAE2A7FB2FA88B3FDA40537BCBC1806", hash_generated_method = "AC7D4098D3DDF51A0AD7D0E5575B2B91")
     public  InvalidParameterSpecException() {
-        // ---------- Original Method ----------
+        
     }
 
     

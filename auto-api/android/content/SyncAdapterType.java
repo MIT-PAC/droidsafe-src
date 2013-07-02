@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.text.TextUtils;
 import android.os.Parcelable;
@@ -44,14 +44,14 @@ public class SyncAdapterType implements Parcelable {
             boolean var9779973367485DB1CCDF8689D3EBF254_1763917891 = (TextUtils.isEmpty(authority));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("the authority must not be empty: " + authority);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var391C91EA3B1EA59E4CC01368F2E5593B_1798470936 = (TextUtils.isEmpty(accountType));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("the accountType must not be empty: " + accountType);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.authority = authority;
         this.accountType = accountType;
         this.userVisible = userVisible;
@@ -60,21 +60,21 @@ public class SyncAdapterType implements Parcelable {
         this.allowParallelSyncs = false;
         this.settingsActivity = null;
         this.isKey = false;
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(authority)) {
-            //throw new IllegalArgumentException("the authority must not be empty: " + authority);
-        //}
-        //if (TextUtils.isEmpty(accountType)) {
-            //throw new IllegalArgumentException("the accountType must not be empty: " + accountType);
-        //}
-        //this.authority = authority;
-        //this.accountType = accountType;
-        //this.userVisible = userVisible;
-        //this.supportsUploading = supportsUploading;
-        //this.isAlwaysSyncable = false;
-        //this.allowParallelSyncs = false;
-        //this.settingsActivity = null;
-        //this.isKey = false;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -88,14 +88,14 @@ public class SyncAdapterType implements Parcelable {
             boolean var9779973367485DB1CCDF8689D3EBF254_349258784 = (TextUtils.isEmpty(authority));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("the authority must not be empty: " + authority);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var391C91EA3B1EA59E4CC01368F2E5593B_1424959834 = (TextUtils.isEmpty(accountType));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("the accountType must not be empty: " + accountType);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.authority = authority;
         this.accountType = accountType;
         this.userVisible = userVisible;
@@ -104,21 +104,21 @@ public class SyncAdapterType implements Parcelable {
         this.allowParallelSyncs = allowParallelSyncs;
         this.settingsActivity = settingsActivity;
         this.isKey = false;
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(authority)) {
-            //throw new IllegalArgumentException("the authority must not be empty: " + authority);
-        //}
-        //if (TextUtils.isEmpty(accountType)) {
-            //throw new IllegalArgumentException("the accountType must not be empty: " + accountType);
-        //}
-        //this.authority = authority;
-        //this.accountType = accountType;
-        //this.userVisible = userVisible;
-        //this.supportsUploading = supportsUploading;
-        //this.isAlwaysSyncable = isAlwaysSyncable;
-        //this.allowParallelSyncs = allowParallelSyncs;
-        //this.settingsActivity = settingsActivity;
-        //this.isKey = false;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -128,14 +128,14 @@ public class SyncAdapterType implements Parcelable {
             boolean var9779973367485DB1CCDF8689D3EBF254_888724354 = (TextUtils.isEmpty(authority));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("the authority must not be empty: " + authority);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var391C91EA3B1EA59E4CC01368F2E5593B_1932092127 = (TextUtils.isEmpty(accountType));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("the accountType must not be empty: " + accountType);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.authority = authority;
         this.accountType = accountType;
         this.userVisible = true;
@@ -144,21 +144,21 @@ public class SyncAdapterType implements Parcelable {
         this.allowParallelSyncs = false;
         this.settingsActivity = null;
         this.isKey = true;
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(authority)) {
-            //throw new IllegalArgumentException("the authority must not be empty: " + authority);
-        //}
-        //if (TextUtils.isEmpty(accountType)) {
-            //throw new IllegalArgumentException("the accountType must not be empty: " + accountType);
-        //}
-        //this.authority = authority;
-        //this.accountType = accountType;
-        //this.userVisible = true;
-        //this.supportsUploading = true;
-        //this.isAlwaysSyncable = false;
-        //this.allowParallelSyncs = false;
-        //this.settingsActivity = null;
-        //this.isKey = true;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -173,120 +173,128 @@ public class SyncAdapterType implements Parcelable {
                 source.readInt() != 0,
                 source.readString());
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.533 -0400", hash_original_method = "1E794225B2A769540CA80516F7B50837", hash_generated_method = "61FD79CD4524552AE59609A022EE7723")
     public boolean supportsUploading() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "this method is not allowed to be called when this is a key");
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_783724763 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_783724763;
-        // ---------- Original Method ----------
-        //if (isKey) {
-            //throw new IllegalStateException(
-                    //"this method is not allowed to be called when this is a key");
-        //}
-        //return supportsUploading;
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.534 -0400", hash_original_method = "E748D000233018148FC3D8951248BEFC", hash_generated_method = "60281A0E824B3F53FF1A1833B452A304")
     public boolean isUserVisible() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "this method is not allowed to be called when this is a key");
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_832209464 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_832209464;
-        // ---------- Original Method ----------
-        //if (isKey) {
-            //throw new IllegalStateException(
-                    //"this method is not allowed to be called when this is a key");
-        //}
-        //return userVisible;
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.534 -0400", hash_original_method = "BB6B5E7B63E7D5F5261B5E5C8991DA1B", hash_generated_method = "108D601F4EB4AC30E1CCF6A87793710C")
     public boolean allowParallelSyncs() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "this method is not allowed to be called when this is a key");
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2067615530 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2067615530;
-        // ---------- Original Method ----------
-        //if (isKey) {
-            //throw new IllegalStateException(
-                    //"this method is not allowed to be called when this is a key");
-        //}
-        //return allowParallelSyncs;
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.535 -0400", hash_original_method = "3EF9FB902D552C4056546E3547411F1A", hash_generated_method = "24958C0A9C98DF3E0B2674ADABB71B50")
     public boolean isAlwaysSyncable() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "this method is not allowed to be called when this is a key");
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1427007358 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1427007358;
-        // ---------- Original Method ----------
-        //if (isKey) {
-            //throw new IllegalStateException(
-                    //"this method is not allowed to be called when this is a key");
-        //}
-        //return isAlwaysSyncable;
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.536 -0400", hash_original_method = "255B2528E2817C3729D95130236DCF63", hash_generated_method = "B494F2B7718A0EC5DCCB5F7D202AA260")
     public String getSettingsActivity() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2006877821 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2006877821 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "this method is not allowed to be called when this is a key");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2006877821 = settingsActivity;
-        varB4EAC82CA7396A68D541C85D26508E83_2006877821.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2006877821.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2006877821;
-        // ---------- Original Method ----------
-        //if (isKey) {
-            //throw new IllegalStateException(
-                    //"this method is not allowed to be called when this is a key");
-        //}
-        //return settingsActivity;
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SyncAdapterType newKey(String authority, String accountType) {
         return new SyncAdapterType(authority, accountType);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.537 -0400", hash_original_method = "A1CF6D87DAC8D16BD1DD7945C12C597D", hash_generated_method = "963AA50C67DFF05160EF7773DBBD380D")
     public boolean equals(Object o) {
         {
             boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_530673385 = (o == this);
-        } //End collapsed parenthetic
+        } 
         final SyncAdapterType other = (SyncAdapterType)o;
         boolean var5E7B2BE5B83770AB325FD6B40928AD13_1548383266 = (authority.equals(other.authority) && accountType.equals(other.accountType));
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_403518566 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_403518566;
-        // ---------- Original Method ----------
-        //if (o == this) return true;
-        //if (!(o instanceof SyncAdapterType)) return false;
-        //final SyncAdapterType other = (SyncAdapterType)o;
-        //return authority.equals(other.authority) && accountType.equals(other.accountType);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.538 -0400", hash_original_method = "16D7E959FAC6345A599199AFC4EA50EB", hash_generated_method = "A5AFB894D1400F2DD187BDA646E60E23")
     public int hashCode() {
         int result = 17;
@@ -294,23 +302,24 @@ public class SyncAdapterType implements Parcelable {
         result = 31 * result + accountType.hashCode();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1889456598 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1889456598;
-        // ---------- Original Method ----------
-        //int result = 17;
-        //result = 31 * result + authority.hashCode();
-        //result = 31 * result + accountType.hashCode();
-        //return result;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.539 -0400", hash_original_method = "35ACA65A211F277218A9C2784AA8F4DE", hash_generated_method = "D6EA6CBD88C77A1CE85EDEB4B02BA32D")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_281258751 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1632123153 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_281258751 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1632123153 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_281258751 = "SyncAdapterType Key {name=" + authority
                     + ", type=" + accountType
                     + "}";
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1632123153 = "SyncAdapterType {name=" + authority
                     + ", type=" + accountType
@@ -320,33 +329,33 @@ public class SyncAdapterType implements Parcelable {
                     + ", allowParallelSyncs=" + allowParallelSyncs
                     + ", settingsActivity=" + settingsActivity
                     + "}";
-        } //End block
-        String varA7E53CE21691AB073D9660D615818899_1545493671; //Final return value
+        } 
+        String varA7E53CE21691AB073D9660D615818899_1545493671; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1545493671 = varB4EAC82CA7396A68D541C85D26508E83_281258751;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1545493671 = varB4EAC82CA7396A68D541C85D26508E83_1632123153;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1545493671.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1545493671.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1545493671;
-        // ---------- Original Method ----------
-        //if (isKey) {
-            //return "SyncAdapterType Key {name=" + authority
-                    //+ ", type=" + accountType
-                    //+ "}";
-        //} else {
-            //return "SyncAdapterType {name=" + authority
-                    //+ ", type=" + accountType
-                    //+ ", userVisible=" + userVisible
-                    //+ ", supportsUploading=" + supportsUploading
-                    //+ ", isAlwaysSyncable=" + isAlwaysSyncable
-                    //+ ", allowParallelSyncs=" + allowParallelSyncs
-                    //+ ", settingsActivity=" + settingsActivity
-                    //+ "}";
-        //}
+        
+        
+            
+                    
+                    
+        
+            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+        
     }
 
     
@@ -354,16 +363,17 @@ public class SyncAdapterType implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1707091819 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1707091819;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.541 -0400", hash_original_method = "B6F0FAFEE232DA1C5B972583BC48E189", hash_generated_method = "8696CB918FF4B34C9AE538373A6A13DB")
     public void writeToParcel(Parcel dest, int flags) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("keys aren't parcelable");
-        } //End block
+        } 
         dest.writeString(authority);
         dest.writeString(accountType);
         dest.writeInt(userVisible ? 1 : 0);
@@ -373,17 +383,17 @@ public class SyncAdapterType implements Parcelable {
         dest.writeString(settingsActivity);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (isKey) {
-            //throw new IllegalStateException("keys aren't parcelable");
-        //}
-        //dest.writeString(authority);
-        //dest.writeString(accountType);
-        //dest.writeInt(userVisible ? 1 : 0);
-        //dest.writeInt(supportsUploading ? 1 : 0);
-        //dest.writeInt(isAlwaysSyncable ? 1 : 0);
-        //dest.writeInt(allowParallelSyncs ? 1 : 0);
-        //dest.writeString(settingsActivity);
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -398,12 +408,12 @@ public class SyncAdapterType implements Parcelable {
             return new SyncAdapterType[size];
         }
     };
-    // orphaned legacy method
+    
     public SyncAdapterType createFromParcel(Parcel source) {
             return new SyncAdapterType(source);
         }
     
-    // orphaned legacy method
+    
     public SyncAdapterType[] newArray(int size) {
             return new SyncAdapterType[size];
         }

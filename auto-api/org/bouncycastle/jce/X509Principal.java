@@ -1,11 +1,11 @@
 package org.bouncycastle.jce;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.security.Principal;
@@ -23,7 +23,7 @@ public class X509Principal extends X509Name implements Principal {
         byte[]  bytes) throws IOException {
         super(readSequence(new ASN1InputStream(bytes)));
         addTaint(bytes[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,7 +32,7 @@ public class X509Principal extends X509Name implements Principal {
         X509Name  name) {
         super((ASN1Sequence)name.getDERObject());
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -41,7 +41,7 @@ public class X509Principal extends X509Name implements Principal {
         Hashtable  attributes) {
         super(attributes);
         addTaint(attributes.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -52,7 +52,7 @@ public class X509Principal extends X509Name implements Principal {
         super(ordering, attributes);
         addTaint(ordering.getTaint());
         addTaint(attributes.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -63,7 +63,7 @@ public class X509Principal extends X509Name implements Principal {
         super(oids, values);
         addTaint(oids.getTaint());
         addTaint(values.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -72,7 +72,7 @@ public class X509Principal extends X509Name implements Principal {
         String  dirName) {
         super(dirName);
         addTaint(dirName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -83,7 +83,7 @@ public class X509Principal extends X509Name implements Principal {
         super(reverse, dirName);
         addTaint(reverse);
         addTaint(dirName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -96,10 +96,11 @@ public class X509Principal extends X509Name implements Principal {
         addTaint(reverse);
         addTaint(lookUp.getTaint());
         addTaint(dirName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static ASN1Sequence readSequence(
         ASN1InputStream aIn) throws IOException {
         try
@@ -113,38 +114,40 @@ public class X509Principal extends X509Name implements Principal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.216 -0400", hash_original_method = "73EC4210941682DD4DF1478421683765", hash_generated_method = "8E53742389FAB39148962293E9E1E7D7")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_499680567 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_499680567 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_499680567 = this.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_499680567.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_499680567.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_499680567;
-        // ---------- Original Method ----------
-        //return this.toString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.216 -0400", hash_original_method = "FFCAA10D74329AA15B8FE83335744F82", hash_generated_method = "D8ABEA63752AA822153571C725591AF4")
     public byte[] getEncoded() {
         try 
         {
             byte[] var29AE989CF6B7F50AE5155A143357E72F_69096097 = (this.getEncoded(ASN1Encodable.DER));
-        } //End block
+        } 
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e.toString());
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1883095751 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1883095751;
-        // ---------- Original Method ----------
-        //try
-        //{
-            //return this.getEncoded(ASN1Encodable.DER);
-        //}
-        //catch (IOException e)
-        //{
-            //throw new RuntimeException(e.toString());
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     

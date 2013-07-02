@@ -1,11 +1,11 @@
 package org.apache.http.impl.conn;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.apache.http.HttpHost;
@@ -26,8 +26,8 @@ public abstract class AbstractPooledConnAdapter extends AbstractClientConnAdapte
         super(manager, entry.connection);
         this.poolEntry = entry;
         addTaint(manager.getTaint());
-        // ---------- Original Method ----------
-        //this.poolEntry = entry;
+        
+        
     }
 
     
@@ -35,40 +35,43 @@ public abstract class AbstractPooledConnAdapter extends AbstractClientConnAdapte
     protected final void assertAttached() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Adapter is detached.");
-        } //End block
-        // ---------- Original Method ----------
-        //if (poolEntry == null) {
-            //throw new IllegalStateException("Adapter is detached.");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.392 -0400", hash_original_method = "C26DE5726C89C8A41E4FE63D33F7E7C2", hash_generated_method = "A1B21E7B51D2D59879F3FC61DC918C7B")
     @Override
     protected void detach() {
         super.detach();
         poolEntry = null;
-        // ---------- Original Method ----------
-        //super.detach();
-        //poolEntry = null;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.393 -0400", hash_original_method = "AC84258A505CCE105FD230876F787C36", hash_generated_method = "0C864B2B555B3A789A08A37EDD5D9E1C")
     public HttpRoute getRoute() {
-        HttpRoute varB4EAC82CA7396A68D541C85D26508E83_276635799 = null; //Variable for return #1
+        HttpRoute varB4EAC82CA7396A68D541C85D26508E83_276635799 = null; 
         assertAttached();
         varB4EAC82CA7396A68D541C85D26508E83_276635799 = (poolEntry.tracker == null) ?
             null : poolEntry.tracker.toRoute();
-        varB4EAC82CA7396A68D541C85D26508E83_276635799.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_276635799.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_276635799;
-        // ---------- Original Method ----------
-        //assertAttached();
-        //return (poolEntry.tracker == null) ?
-            //null : poolEntry.tracker.toRoute();
+        
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.393 -0400", hash_original_method = "80A37316B4189201422C5F911C37390F", hash_generated_method = "064242F4C801FC8D5E43A7BF648D77EC")
     public void open(HttpRoute route,
                      HttpContext context, HttpParams params) throws IOException {
@@ -77,24 +80,26 @@ public abstract class AbstractPooledConnAdapter extends AbstractClientConnAdapte
         addTaint(route.getTaint());
         addTaint(context.getTaint());
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //assertAttached();
-        //poolEntry.open(route, context, params);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.394 -0400", hash_original_method = "88C576A6679A37807219C856CF85AF45", hash_generated_method = "0C1C67D38C4EE99D64A0C008127136D7")
     public void tunnelTarget(boolean secure, HttpParams params) throws IOException {
         assertAttached();
         poolEntry.tunnelTarget(secure, params);
         addTaint(secure);
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //assertAttached();
-        //poolEntry.tunnelTarget(secure, params);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.395 -0400", hash_original_method = "183042F5C82645DA134EED3F0129F7AB", hash_generated_method = "6D15F10C6580542FF1C1BA6B79CD026B")
     public void tunnelProxy(HttpHost next, boolean secure, HttpParams params) throws IOException {
         assertAttached();
@@ -102,68 +107,72 @@ public abstract class AbstractPooledConnAdapter extends AbstractClientConnAdapte
         addTaint(next.getTaint());
         addTaint(secure);
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //assertAttached();
-        //poolEntry.tunnelProxy(next, secure, params);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.396 -0400", hash_original_method = "265D546872DD850E8FA8148DAC362DDA", hash_generated_method = "9E5AF541B547C34FBDE63A9FC0D69816")
     public void layerProtocol(HttpContext context, HttpParams params) throws IOException {
         assertAttached();
         poolEntry.layerProtocol(context, params);
         addTaint(context.getTaint());
         addTaint(params.getTaint());
-        // ---------- Original Method ----------
-        //assertAttached();
-        //poolEntry.layerProtocol(context, params);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.397 -0400", hash_original_method = "8ECE47B171EFAD2F7C7D2EB622E49CF6", hash_generated_method = "B3F91C311DA197007A0BE7587DA57B2B")
     public void close() throws IOException {
         poolEntry.shutdownEntry();
         OperatedClientConnection conn = getWrappedConnection();
         {
             conn.close();
-        } //End block
-        // ---------- Original Method ----------
-        //if (poolEntry != null)
-            //poolEntry.shutdownEntry();
-        //OperatedClientConnection conn = getWrappedConnection();
-        //if (conn != null) {
-            //conn.close();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.398 -0400", hash_original_method = "62B1930ABF96982C844F6DB1D64DBF05", hash_generated_method = "07567FDB8D1E51C1016991FBA256155B")
     public void shutdown() throws IOException {
         poolEntry.shutdownEntry();
         OperatedClientConnection conn = getWrappedConnection();
         {
             conn.shutdown();
-        } //End block
-        // ---------- Original Method ----------
-        //if (poolEntry != null)
-            //poolEntry.shutdownEntry();
-        //OperatedClientConnection conn = getWrappedConnection();
-        //if (conn != null) {
-            //conn.shutdown();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.399 -0400", hash_original_method = "C5C538BA26E5B2F7103C95948BE64C97", hash_generated_method = "7C39F27CA21D7391AF1722D75FEDF6FF")
     public Object getState() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_383728970 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_383728970 = null; 
         assertAttached();
         varB4EAC82CA7396A68D541C85D26508E83_383728970 = poolEntry.getState();
-        varB4EAC82CA7396A68D541C85D26508E83_383728970.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_383728970.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_383728970;
-        // ---------- Original Method ----------
-        //assertAttached();
-        //return poolEntry.getState();
+        
+        
+        
     }
 
     
@@ -172,9 +181,9 @@ public abstract class AbstractPooledConnAdapter extends AbstractClientConnAdapte
         assertAttached();
         poolEntry.setState(state);
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //assertAttached();
-        //poolEntry.setState(state);
+        
+        
+        
     }
 
     

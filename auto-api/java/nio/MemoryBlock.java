@@ -1,11 +1,11 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import dalvik.system.VMRuntime;
 import java.io.FileDescriptor;
@@ -28,12 +28,13 @@ class MemoryBlock {
     private  MemoryBlock(int address, long size) {
         this.address = address;
         this.size = size;
-        // ---------- Original Method ----------
-        //this.address = address;
-        //this.size = size;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MemoryBlock mmap(FileDescriptor fd, long offset, long size, MapMode mapMode) throws IOException {
         if (size == 0) {
             return new MemoryBlock(0, 0);
@@ -62,6 +63,7 @@ class MemoryBlock {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static MemoryBlock allocate(int byteCount) {
         VMRuntime runtime = VMRuntime.getRuntime();
         byte[] array = (byte[]) runtime.newNonMovableArray(byte.class, byteCount);
@@ -70,6 +72,7 @@ class MemoryBlock {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static MemoryBlock wrapFromJni(int address, long byteCount) {
         return new UnmanagedBlock(address, byteCount);
     }
@@ -79,14 +82,14 @@ class MemoryBlock {
     public byte[] array() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1841263369 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1841263369;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.812 -0400", hash_original_method = "DAA4200658B56FF77DA7170F747BB7D3", hash_generated_method = "5BE07C58F63F85984738B520AF21ADD2")
     public void free() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -95,8 +98,8 @@ class MemoryBlock {
         Memory.pokeByte(address + offset, value);
         addTaint(offset);
         addTaint(value);
-        // ---------- Original Method ----------
-        //Memory.pokeByte(address + offset, value);
+        
+        
     }
 
     
@@ -107,8 +110,8 @@ class MemoryBlock {
         addTaint(src[0]);
         addTaint(srcOffset);
         addTaint(byteCount);
-        // ---------- Original Method ----------
-        //Memory.pokeByteArray(address + offset, src, srcOffset, byteCount);
+        
+        
     }
 
     
@@ -120,8 +123,8 @@ class MemoryBlock {
         addTaint(srcOffset);
         addTaint(charCount);
         addTaint(swap);
-        // ---------- Original Method ----------
-        //Memory.pokeCharArray(address + offset, src, srcOffset, charCount, swap);
+        
+        
     }
 
     
@@ -133,8 +136,8 @@ class MemoryBlock {
         addTaint(srcOffset);
         addTaint(doubleCount);
         addTaint(swap);
-        // ---------- Original Method ----------
-        //Memory.pokeDoubleArray(address + offset, src, srcOffset, doubleCount, swap);
+        
+        
     }
 
     
@@ -146,8 +149,8 @@ class MemoryBlock {
         addTaint(srcOffset);
         addTaint(floatCount);
         addTaint(swap);
-        // ---------- Original Method ----------
-        //Memory.pokeFloatArray(address + offset, src, srcOffset, floatCount, swap);
+        
+        
     }
 
     
@@ -159,8 +162,8 @@ class MemoryBlock {
         addTaint(srcOffset);
         addTaint(intCount);
         addTaint(swap);
-        // ---------- Original Method ----------
-        //Memory.pokeIntArray(address + offset, src, srcOffset, intCount, swap);
+        
+        
     }
 
     
@@ -172,8 +175,8 @@ class MemoryBlock {
         addTaint(srcOffset);
         addTaint(longCount);
         addTaint(swap);
-        // ---------- Original Method ----------
-        //Memory.pokeLongArray(address + offset, src, srcOffset, longCount, swap);
+        
+        
     }
 
     
@@ -185,8 +188,8 @@ class MemoryBlock {
         addTaint(srcOffset);
         addTaint(shortCount);
         addTaint(swap);
-        // ---------- Original Method ----------
-        //Memory.pokeShortArray(address + offset, src, srcOffset, shortCount, swap);
+        
+        
     }
 
     
@@ -196,8 +199,8 @@ class MemoryBlock {
         addTaint(offset);
         byte var40EA57D3EE3C07BF1C102B466E1C3091_684166697 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_684166697;
-        // ---------- Original Method ----------
-        //return Memory.peekByte(address + offset);
+        
+        
     }
 
     
@@ -208,8 +211,8 @@ class MemoryBlock {
         addTaint(dst[0]);
         addTaint(dstOffset);
         addTaint(byteCount);
-        // ---------- Original Method ----------
-        //Memory.peekByteArray(address + offset, dst, dstOffset, byteCount);
+        
+        
     }
 
     
@@ -221,8 +224,8 @@ class MemoryBlock {
         addTaint(dstOffset);
         addTaint(charCount);
         addTaint(swap);
-        // ---------- Original Method ----------
-        //Memory.peekCharArray(address + offset, dst, dstOffset, charCount, swap);
+        
+        
     }
 
     
@@ -234,8 +237,8 @@ class MemoryBlock {
         addTaint(dstOffset);
         addTaint(doubleCount);
         addTaint(swap);
-        // ---------- Original Method ----------
-        //Memory.peekDoubleArray(address + offset, dst, dstOffset, doubleCount, swap);
+        
+        
     }
 
     
@@ -247,8 +250,8 @@ class MemoryBlock {
         addTaint(dstOffset);
         addTaint(floatCount);
         addTaint(swap);
-        // ---------- Original Method ----------
-        //Memory.peekFloatArray(address + offset, dst, dstOffset, floatCount, swap);
+        
+        
     }
 
     
@@ -260,8 +263,8 @@ class MemoryBlock {
         addTaint(dstOffset);
         addTaint(intCount);
         addTaint(swap);
-        // ---------- Original Method ----------
-        //Memory.peekIntArray(address + offset, dst, dstOffset, intCount, swap);
+        
+        
     }
 
     
@@ -273,8 +276,8 @@ class MemoryBlock {
         addTaint(dstOffset);
         addTaint(longCount);
         addTaint(swap);
-        // ---------- Original Method ----------
-        //Memory.peekLongArray(address + offset, dst, dstOffset, longCount, swap);
+        
+        
     }
 
     
@@ -286,8 +289,8 @@ class MemoryBlock {
         addTaint(dstOffset);
         addTaint(shortCount);
         addTaint(swap);
-        // ---------- Original Method ----------
-        //Memory.peekShortArray(address + offset, dst, dstOffset, shortCount, swap);
+        
+        
     }
 
     
@@ -297,8 +300,8 @@ class MemoryBlock {
         addTaint(offset);
         addTaint(value);
         addTaint(order.getTaint());
-        // ---------- Original Method ----------
-        //Memory.pokeShort(address + offset, value, order.needsSwap);
+        
+        
     }
 
     
@@ -309,8 +312,8 @@ class MemoryBlock {
         addTaint(order.getTaint());
         short var4F09DAA9D95BCB166A302407A0E0BABE_1131563496 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1131563496;
-        // ---------- Original Method ----------
-        //return Memory.peekShort(address + offset, order.needsSwap);
+        
+        
     }
 
     
@@ -320,8 +323,8 @@ class MemoryBlock {
         addTaint(offset);
         addTaint(value);
         addTaint(order.getTaint());
-        // ---------- Original Method ----------
-        //Memory.pokeInt(address + offset, value, order.needsSwap);
+        
+        
     }
 
     
@@ -332,8 +335,8 @@ class MemoryBlock {
         addTaint(order.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050453392 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050453392;
-        // ---------- Original Method ----------
-        //return Memory.peekInt(address + offset, order.needsSwap);
+        
+        
     }
 
     
@@ -343,8 +346,8 @@ class MemoryBlock {
         addTaint(offset);
         addTaint(value);
         addTaint(order.getTaint());
-        // ---------- Original Method ----------
-        //Memory.pokeLong(address + offset, value, order.needsSwap);
+        
+        
     }
 
     
@@ -355,8 +358,8 @@ class MemoryBlock {
         addTaint(order.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1882078985 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1882078985;
-        // ---------- Original Method ----------
-        //return Memory.peekLong(address + offset, order.needsSwap);
+        
+        
     }
 
     
@@ -364,19 +367,19 @@ class MemoryBlock {
     public final int toInt() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1118586682 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1118586682;
-        // ---------- Original Method ----------
-        //return address;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.819 -0400", hash_original_method = "831AD59EEB851A828F16911921FE25F3", hash_generated_method = "7B2E0545F303F025E9075784FF0B6BDE")
     public final String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_115808128 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_115808128 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_115808128 = getClass().getName() + "[" + address + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_115808128.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_115808128.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_115808128;
-        // ---------- Original Method ----------
-        //return getClass().getName() + "[" + address + "]";
+        
+        
     }
 
     
@@ -384,8 +387,8 @@ class MemoryBlock {
     public final long getSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_643859748 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_643859748;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
@@ -396,7 +399,7 @@ class MemoryBlock {
             super(address, byteCount);
             addTaint(address);
             addTaint(byteCount);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -407,22 +410,22 @@ class MemoryBlock {
                 try 
                 {
                     Libcore.os.munmap(address, size);
-                } //End block
+                } 
                 catch (ErrnoException errnoException)
                 {
                     if (DroidSafeAndroidRuntime.control) throw new AssertionError(errnoException);
-                } //End block
+                } 
                 address = 0;
-            } //End block
-            // ---------- Original Method ----------
-            //if (address != 0) {
-                //try {
-                    //Libcore.os.munmap(address, size);
-                //} catch (ErrnoException errnoException) {
-                    //throw new AssertionError(errnoException);
-                //}
-                //address = 0;
-            //}
+            } 
+            
+            
+                
+                    
+                
+                    
+                
+                
+            
         }
 
         
@@ -430,8 +433,8 @@ class MemoryBlock {
         @Override
         protected void finalize() throws Throwable {
             free();
-            // ---------- Original Method ----------
-            //free();
+            
+            
         }
 
         
@@ -450,8 +453,8 @@ class MemoryBlock {
             this.array = array;
             addTaint(address);
             addTaint(byteCount);
-            // ---------- Original Method ----------
-            //this.array = array;
+            
+            
         }
 
         
@@ -460,8 +463,8 @@ class MemoryBlock {
         public byte[] array() {
             byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_534881579 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_534881579;
-            // ---------- Original Method ----------
-            //return array;
+            
+            
         }
 
         
@@ -470,9 +473,9 @@ class MemoryBlock {
         public void free() {
             array = null;
             address = 0;
-            // ---------- Original Method ----------
-            //array = null;
-            //address = 0;
+            
+            
+            
         }
 
         
@@ -487,7 +490,7 @@ class MemoryBlock {
             super(address, byteCount);
             addTaint(address);
             addTaint(byteCount);
-            // ---------- Original Method ----------
+            
         }
 
         

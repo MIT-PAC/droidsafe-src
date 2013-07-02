@@ -1,11 +1,11 @@
 package org.apache.http.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.ProtocolException;
 
@@ -14,7 +14,7 @@ public class NonRepeatableRequestException extends ProtocolException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:38.719 -0400", hash_original_method = "14DECFA9FD444F48F1267DE5834D3279", hash_generated_method = "4508DC95E498ADBE80B4E49F391FDFA0")
     public  NonRepeatableRequestException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class NonRepeatableRequestException extends ProtocolException {
     public  NonRepeatableRequestException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

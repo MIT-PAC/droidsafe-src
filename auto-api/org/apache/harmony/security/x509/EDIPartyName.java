@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.harmony.security.asn1.ASN1Explicit;
 import org.apache.harmony.security.asn1.ASN1Sequence;
@@ -29,25 +29,26 @@ public final class EDIPartyName {
         this.nameAssigner = nameAssigner;
         this.partyName = partyName;
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.nameAssigner = nameAssigner;
-        //this.partyName = partyName;
-        //this.encoding = encoding;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.832 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "9CDDD339577A1DC5D9CDF06B9F77A7E6")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_403418560 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_403418560;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
@@ -74,21 +75,6 @@ public final class EDIPartyName {
             values[1] = epn.partyName;
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            EDIPartyName epn = (EDIPartyName) object;
-            values[0] = epn.nameAssigner;
-            values[1] = epn.partyName;
-        }
     
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) {
-            Object[] values = (Object[]) in.content;
-            return new EDIPartyName((String) values[0], (String) values[1],
-                    in.getEncoded());
-        }
-    
-    */
 }
 

@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class TimerTask implements Runnable {
@@ -30,7 +30,7 @@ public abstract class TimerTask implements Runnable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:11.968 -0400", hash_original_method = "41AFEAE31E9AFC51442EB32F1B803F09", hash_generated_method = "77D10C16E519E63639DFE51A512851F6")
     protected  TimerTask() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,10 +38,10 @@ public abstract class TimerTask implements Runnable {
      long getWhen() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1167467531 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1167467531;
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //return when;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -49,11 +49,11 @@ public abstract class TimerTask implements Runnable {
      void setScheduledTime(long time) {
         {
             scheduledTime = time;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //scheduledTime = time;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -61,10 +61,10 @@ public abstract class TimerTask implements Runnable {
      boolean isScheduled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_627401863 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_627401863;
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //return when > 0 || scheduledTime > 0;
-        //}
+        
+        
+            
+        
     }
 
     
@@ -73,15 +73,15 @@ public abstract class TimerTask implements Runnable {
         {
             boolean willRun = !cancelled && when > 0;
             cancelled = true;
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1074819960 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1074819960;
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //boolean willRun = !cancelled && when > 0;
-            //cancelled = true;
-            //return willRun;
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -89,10 +89,10 @@ public abstract class TimerTask implements Runnable {
     public long scheduledExecutionTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1076201421 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1076201421;
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //return scheduledTime;
-        //}
+        
+        
+            
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Build;
 import android.util.Log;
@@ -80,7 +80,7 @@ public final class InputEventConsistencyVerifier {
         this(caller, flags, InputEventConsistencyVerifier.class.getSimpleName());
         addTaint(caller.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -89,10 +89,10 @@ public final class InputEventConsistencyVerifier {
         this.mCaller = caller;
         this.mFlags = flags;
         this.mLogTag = (logTag != null) ? logTag : "InputEventConsistencyVerifier";
-        // ---------- Original Method ----------
-        //this.mCaller = caller;
-        //this.mFlags = flags;
-        //this.mLogTag = (logTag != null) ? logTag : "InputEventConsistencyVerifier";
+        
+        
+        
+        
     }
 
     
@@ -101,6 +101,7 @@ public final class InputEventConsistencyVerifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.098 -0400", hash_original_method = "13418E29B3FCE72BDE84CBF193C1BADD", hash_generated_method = "2446BF42931AD240C640B25505DC599F")
     public void reset() {
         mLastEvent = null;
@@ -115,74 +116,76 @@ public final class InputEventConsistencyVerifier {
             final KeyState state = mKeyStateList;
             mKeyStateList = state.next;
             state.recycle();
-        } //End block
-        // ---------- Original Method ----------
-        //mLastEvent = null;
-        //mLastNestingLevel = 0;
-        //mTrackballDown = false;
-        //mTrackballUnhandled = false;
-        //mTouchEventStreamPointers = 0;
-        //mTouchEventStreamIsTainted = false;
-        //mTouchEventStreamUnhandled = false;
-        //mHoverEntered = false;
-        //while (mKeyStateList != null) {
-            //final KeyState state = mKeyStateList;
-            //mKeyStateList = state.next;
-            //state.recycle();
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.099 -0400", hash_original_method = "9981F0DD702462FD09DA371539E225DF", hash_generated_method = "01177B91D0A6D67B081710F67306769E")
     public void onInputEvent(InputEvent event, int nestingLevel) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             final KeyEvent keyEvent = (KeyEvent)event;
             onKeyEvent(keyEvent, nestingLevel);
-        } //End block
+        } 
         {
             final MotionEvent motionEvent = (MotionEvent)event;
             {
                 boolean var1D97065BD820BD0456B45C7E9DBBA082_1325981818 = (motionEvent.isTouchEvent());
                 {
                     onTouchEvent(motionEvent, nestingLevel);
-                } //End block
+                } 
                 {
                     boolean var1548696A1C108F52D98124BF03CF8313_1724490205 = ((motionEvent.getSource() & InputDevice.SOURCE_CLASS_TRACKBALL) != 0);
                     {
                         onTrackballEvent(motionEvent, nestingLevel);
-                    } //End block
+                    } 
                     {
                         onGenericMotionEvent(motionEvent, nestingLevel);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(event.getTaint());
         addTaint(nestingLevel);
-        // ---------- Original Method ----------
-        //if (event instanceof KeyEvent) {
-            //final KeyEvent keyEvent = (KeyEvent)event;
-            //onKeyEvent(keyEvent, nestingLevel);
-        //} else {
-            //final MotionEvent motionEvent = (MotionEvent)event;
-            //if (motionEvent.isTouchEvent()) {
-                //onTouchEvent(motionEvent, nestingLevel);
-            //} else if ((motionEvent.getSource() & InputDevice.SOURCE_CLASS_TRACKBALL) != 0) {
-                //onTrackballEvent(motionEvent, nestingLevel);
-            //} else {
-                //onGenericMotionEvent(motionEvent, nestingLevel);
-            //}
-        //}
+        
+        
+            
+            
+        
+            
+            
+                
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.100 -0400", hash_original_method = "37A5317EE58F7483AB8019E5DEA39C1C", hash_generated_method = "73D0664F1D5AEACB85D5E8954364A742")
     public void onKeyEvent(KeyEvent event, int nestingLevel) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var1C9540E6394A7A11097E4E4C24A69E5A_173564809 = (!startEvent(event, nestingLevel, EVENT_TYPE_KEY));
-        } //End collapsed parenthetic
+        } 
         try 
         {
             ensureMetaStateIsNormalized(event.getMetaState());
@@ -190,137 +193,139 @@ public final class InputEventConsistencyVerifier {
             final int deviceId = event.getDeviceId();
             final int source = event.getSource();
             final int keyCode = event.getKeyCode();
-            //Begin case KeyEvent.ACTION_DOWN 
+            
             {
                 KeyState state = findKeyState(deviceId, source, keyCode,  false);
                 {
                     {
                         state.unhandled = false;
-                    } //End block
+                    } 
                     {
                         boolean varBB7C3BAA0F2DE303A64E00E840FF7A59_1491207514 = ((mFlags & FLAG_RAW_DEVICE_INPUT) == 0
                                 && event.getRepeatCount() == 0);
                         {
                             problem("ACTION_DOWN but key is already down and this event "
                                     + "is not a key repeat.");
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     addKeyState(deviceId, source, keyCode);
-                } //End block
-            } //End block
-            //End case KeyEvent.ACTION_DOWN 
-            //Begin case KeyEvent.ACTION_UP 
+                } 
+            } 
+            
+            
             {
                 KeyState state = findKeyState(deviceId, source, keyCode,  true);
                 {
                     problem("ACTION_UP but key was not down.");
-                } //End block
+                } 
                 {
                     state.recycle();
-                } //End block
-            } //End block
-            //End case KeyEvent.ACTION_UP 
-            //Begin case default 
+                } 
+            } 
+            
+            
             problem("Invalid action " + KeyEvent.actionToString(action)
                             + " for key event.");
-            //End case default 
-        } //End block
+            
+        } 
         finally 
         {
             finishEvent();
-        } //End block
+        } 
         addTaint(event.getTaint());
         addTaint(nestingLevel);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.101 -0400", hash_original_method = "742053359AC2416542EBDE8E8736FB44", hash_generated_method = "67D5194C093B7DB24B4C41CAD7500294")
     public void onTrackballEvent(MotionEvent event, int nestingLevel) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var5BA64422812B4CD0774617583F7E1D53_1969828250 = (!startEvent(event, nestingLevel, EVENT_TYPE_TRACKBALL));
-        } //End collapsed parenthetic
+        } 
         try 
         {
             ensureMetaStateIsNormalized(event.getMetaState());
             final int action = event.getAction();
             final int source = event.getSource();
             {
-                //Begin case MotionEvent.ACTION_DOWN 
+                
                 {
                     problem("ACTION_DOWN but trackball is already down.");
-                } //End block
+                } 
                 {
                     mTrackballDown = true;
                     mTrackballUnhandled = false;
-                } //End block
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                } 
+                
+                
                 ensureHistorySizeIsZeroForThisAction(event);
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                
+                
                 ensurePointerCountIsOneForThisAction(event);
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_UP 
+                
+                
                 {
                     problem("ACTION_UP but trackball is not down.");
-                } //End block
+                } 
                 {
                     mTrackballDown = false;
                     mTrackballUnhandled = false;
-                } //End block
-                //End case MotionEvent.ACTION_UP 
-                //Begin case MotionEvent.ACTION_UP 
+                } 
+                
+                
                 ensureHistorySizeIsZeroForThisAction(event);
-                //End case MotionEvent.ACTION_UP 
-                //Begin case MotionEvent.ACTION_UP 
+                
+                
                 ensurePointerCountIsOneForThisAction(event);
-                //End case MotionEvent.ACTION_UP 
-                //Begin case MotionEvent.ACTION_MOVE 
+                
+                
                 ensurePointerCountIsOneForThisAction(event);
-                //End case MotionEvent.ACTION_MOVE 
-                //Begin case default 
+                
+                
                 problem("Invalid action " + MotionEvent.actionToString(action)
                                 + " for trackball event.");
-                //End case default 
+                
                 {
                     boolean varF8125AB1D243142529D579C7BF1C5525_253918015 = (mTrackballDown && event.getPressure() <= 0);
                     {
                         problem("Trackball is down but pressure is not greater than 0.");
-                    } //End block
+                    } 
                     {
                         boolean var48456D7B62EC643623B97245B65EE0A7_1237072842 = (!mTrackballDown && event.getPressure() != 0);
                         {
                             problem("Trackball is up but pressure is not equal to 0.");
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 problem("Source was not SOURCE_CLASS_TRACKBALL.");
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             finishEvent();
-        } //End block
+        } 
         addTaint(event.getTaint());
         addTaint(nestingLevel);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.102 -0400", hash_original_method = "F64D7AF6BB2368971DDEEF01EB83BDA6", hash_generated_method = "BF607E2C808441E0C5E6F81C02BFDE58")
     public void onTouchEvent(MotionEvent event, int nestingLevel) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var5C200FBFC1B0213F6CDA14409F83D214_2100975379 = (!startEvent(event, nestingLevel, EVENT_TYPE_TOUCH));
-        } //End collapsed parenthetic
+        } 
         final int action = event.getAction();
         final boolean newStream = action == MotionEvent.ACTION_DOWN
                 || action == MotionEvent.ACTION_CANCEL;
@@ -328,10 +333,10 @@ public final class InputEventConsistencyVerifier {
             mTouchEventStreamIsTainted = false;
             mTouchEventStreamUnhandled = false;
             mTouchEventStreamPointers = 0;
-        } //End block
+        } 
         {
             event.setTainted(true);
-        } //End block
+        } 
         try 
         {
             ensureMetaStateIsNormalized(event.getMetaState());
@@ -343,39 +348,39 @@ public final class InputEventConsistencyVerifier {
                         + ", previous source " + Integer.toHexString(mTouchEventStreamSource)
                         + ", new device id " + deviceId
                         + ", new source " + Integer.toHexString(source));
-            } //End block
+            } 
             mTouchEventStreamDeviceId = deviceId;
             mTouchEventStreamSource = source;
             final int pointerCount = event.getPointerCount();
             {
-                //Begin case MotionEvent.ACTION_DOWN 
+                
                 {
                     problem("ACTION_DOWN but pointers are already down.  "
                                     + "Probably missing ACTION_UP from previous gesture.");
-                } //End block
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                } 
+                
+                
                 ensureHistorySizeIsZeroForThisAction(event);
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                
+                
                 ensurePointerCountIsOneForThisAction(event);
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                
+                
                 mTouchEventStreamPointers = 1 << event.getPointerId(0);
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_UP 
+                
+                
                 ensureHistorySizeIsZeroForThisAction(event);
-                //End case MotionEvent.ACTION_UP 
-                //Begin case MotionEvent.ACTION_UP 
+                
+                
                 ensurePointerCountIsOneForThisAction(event);
-                //End case MotionEvent.ACTION_UP 
-                //Begin case MotionEvent.ACTION_UP 
+                
+                
                 mTouchEventStreamPointers = 0;
-                //End case MotionEvent.ACTION_UP 
-                //Begin case MotionEvent.ACTION_UP 
+                
+                
                 mTouchEventStreamIsTainted = false;
-                //End case MotionEvent.ACTION_UP 
-                //Begin case MotionEvent.ACTION_MOVE 
+                
+                
                 {
                     final int expectedPointerCount = Integer.bitCount(mTouchEventStreamPointers);
                     {
@@ -383,30 +388,30 @@ public final class InputEventConsistencyVerifier {
                                     + " pointers but there are currently "
                                     + expectedPointerCount + " pointers down.");
                         mTouchEventStreamIsTainted = true;
-                    } //End block
-                } //End block
-                //End case MotionEvent.ACTION_MOVE 
-                //Begin case MotionEvent.ACTION_CANCEL 
+                    } 
+                } 
+                
+                
                 mTouchEventStreamPointers = 0;
-                //End case MotionEvent.ACTION_CANCEL 
-                //Begin case MotionEvent.ACTION_CANCEL 
+                
+                
                 mTouchEventStreamIsTainted = false;
-                //End case MotionEvent.ACTION_CANCEL 
-                //Begin case MotionEvent.ACTION_OUTSIDE 
+                
+                
                 {
                     problem("ACTION_OUTSIDE but pointers are still down.");
-                } //End block
-                //End case MotionEvent.ACTION_OUTSIDE 
-                //Begin case MotionEvent.ACTION_OUTSIDE 
+                } 
+                
+                
                 ensureHistorySizeIsZeroForThisAction(event);
-                //End case MotionEvent.ACTION_OUTSIDE 
-                //Begin case MotionEvent.ACTION_OUTSIDE 
+                
+                
                 ensurePointerCountIsOneForThisAction(event);
-                //End case MotionEvent.ACTION_OUTSIDE 
-                //Begin case MotionEvent.ACTION_OUTSIDE 
+                
+                
                 mTouchEventStreamIsTainted = false;
-                //End case MotionEvent.ACTION_OUTSIDE 
-                //Begin case default 
+                
+                
                 {
                     final int actionMasked = event.getActionMasked();
                     final int actionIndex = event.getActionIndex();
@@ -414,12 +419,12 @@ public final class InputEventConsistencyVerifier {
                         {
                             problem("ACTION_POINTER_DOWN but no other pointers were down.");
                             mTouchEventStreamIsTainted = true;
-                        } //End block
+                        } 
                         {
                             problem("ACTION_POINTER_DOWN index is " + actionIndex
                                         + " but the pointer count is " + pointerCount + ".");
                             mTouchEventStreamIsTainted = true;
-                        } //End block
+                        } 
                         {
                             final int id = event.getPointerId(actionIndex);
                             final int idBit = 1 << id;
@@ -427,19 +432,19 @@ public final class InputEventConsistencyVerifier {
                                 problem("ACTION_POINTER_DOWN specified pointer id " + id
                                             + " which is already down.");
                                 mTouchEventStreamIsTainted = true;
-                            } //End block
+                            } 
                             {
                                 mTouchEventStreamPointers |= idBit;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         ensureHistorySizeIsZeroForThisAction(event);
-                    } //End block
+                    } 
                     {
                         {
                             problem("ACTION_POINTER_UP index is " + actionIndex
                                         + " but the pointer count is " + pointerCount + ".");
                             mTouchEventStreamIsTainted = true;
-                        } //End block
+                        } 
                         {
                             final int id = event.getPointerId(actionIndex);
                             final int idBit = 1 << id;
@@ -447,102 +452,104 @@ public final class InputEventConsistencyVerifier {
                                 problem("ACTION_POINTER_UP specified pointer id " + id
                                             + " which is not currently down.");
                                 mTouchEventStreamIsTainted = true;
-                            } //End block
+                            } 
                             {
                                 mTouchEventStreamPointers &= ~idBit;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         ensureHistorySizeIsZeroForThisAction(event);
-                    } //End block
+                    } 
                     {
                         problem("Invalid action " + MotionEvent.actionToString(action)
                                     + " for touch event.");
-                    } //End block
-                } //End block
-                //End case default 
-            } //End block
+                    } 
+                } 
+                
+            } 
             {
                 problem("Source was not SOURCE_CLASS_POINTER.");
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             finishEvent();
-        } //End block
+        } 
         addTaint(nestingLevel);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.103 -0400", hash_original_method = "23EA37DFEC977078F682E35F151F1942", hash_generated_method = "748E33D074125C187219837654B851F7")
     public void onGenericMotionEvent(MotionEvent event, int nestingLevel) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var6C693FE76F7AB1F8804D07C4E7E4F955_1743276934 = (!startEvent(event, nestingLevel, EVENT_TYPE_GENERIC_MOTION));
-        } //End collapsed parenthetic
+        } 
         try 
         {
             ensureMetaStateIsNormalized(event.getMetaState());
             final int action = event.getAction();
             final int source = event.getSource();
             {
-                //Begin case MotionEvent.ACTION_HOVER_ENTER 
+                
                 ensurePointerCountIsOneForThisAction(event);
-                //End case MotionEvent.ACTION_HOVER_ENTER 
-                //Begin case MotionEvent.ACTION_HOVER_ENTER 
+                
+                
                 mHoverEntered = true;
-                //End case MotionEvent.ACTION_HOVER_ENTER 
-                //Begin case MotionEvent.ACTION_HOVER_MOVE 
+                
+                
                 ensurePointerCountIsOneForThisAction(event);
-                //End case MotionEvent.ACTION_HOVER_MOVE 
-                //Begin case MotionEvent.ACTION_HOVER_EXIT 
+                
+                
                 ensurePointerCountIsOneForThisAction(event);
-                //End case MotionEvent.ACTION_HOVER_EXIT 
-                //Begin case MotionEvent.ACTION_HOVER_EXIT 
+                
+                
                 {
                     problem("ACTION_HOVER_EXIT without prior ACTION_HOVER_ENTER");
-                } //End block
-                //End case MotionEvent.ACTION_HOVER_EXIT 
-                //Begin case MotionEvent.ACTION_HOVER_EXIT 
+                } 
+                
+                
                 mHoverEntered = false;
-                //End case MotionEvent.ACTION_HOVER_EXIT 
-                //Begin case MotionEvent.ACTION_SCROLL 
+                
+                
                 ensureHistorySizeIsZeroForThisAction(event);
-                //End case MotionEvent.ACTION_SCROLL 
-                //Begin case MotionEvent.ACTION_SCROLL 
+                
+                
                 ensurePointerCountIsOneForThisAction(event);
-                //End case MotionEvent.ACTION_SCROLL 
-                //Begin case default 
+                
+                
                 problem("Invalid action for generic pointer event.");
-                //End case default 
-            } //End block
+                
+            } 
             {
-                //Begin case MotionEvent.ACTION_MOVE 
+                
                 ensurePointerCountIsOneForThisAction(event);
-                //End case MotionEvent.ACTION_MOVE 
-                //Begin case default 
+                
+                
                 problem("Invalid action for generic joystick event.");
-                //End case default 
-            } //End block
-        } //End block
+                
+            } 
+        } 
         finally 
         {
             finishEvent();
-        } //End block
+        } 
         addTaint(event.getTaint());
         addTaint(nestingLevel);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.104 -0400", hash_original_method = "95A33BD7B12ABE8439BBD32736BE35D7", hash_generated_method = "B315F3DAB2DEFBCB6968393FCF1B8A6F")
     public void onUnhandledEvent(InputEvent event, int nestingLevel) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mRecentEventsUnhandled[mMostRecentEventIndex] = true;
-        } //End block
+        } 
         {
             final KeyEvent keyEvent = (KeyEvent)event;
             final int deviceId = keyEvent.getDeviceId();
@@ -551,80 +558,83 @@ public final class InputEventConsistencyVerifier {
             final KeyState state = findKeyState(deviceId, source, keyCode,  false);
             {
                 state.unhandled = true;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             final MotionEvent motionEvent = (MotionEvent)event;
             {
                 boolean var1D97065BD820BD0456B45C7E9DBBA082_580614457 = (motionEvent.isTouchEvent());
                 {
                     mTouchEventStreamUnhandled = true;
-                } //End block
+                } 
                 {
                     boolean var1548696A1C108F52D98124BF03CF8313_1176021076 = ((motionEvent.getSource() & InputDevice.SOURCE_CLASS_TRACKBALL) != 0);
                     {
                         {
                             mTrackballUnhandled = true;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(event.getTaint());
         addTaint(nestingLevel);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.104 -0400", hash_original_method = "0D02225F7CFB86AB0627FF86E895BCB3", hash_generated_method = "A541D7AB642E747488FAB36ECC41162E")
     private void ensureMetaStateIsNormalized(int metaState) {
         final int normalizedMetaState = KeyEvent.normalizeMetaState(metaState);
         {
             problem(String.format("Metastate not normalized.  Was 0x%08x but expected 0x%08x.",
                     metaState, normalizedMetaState));
-        } //End block
+        } 
         addTaint(metaState);
-        // ---------- Original Method ----------
-        //final int normalizedMetaState = KeyEvent.normalizeMetaState(metaState);
-        //if (normalizedMetaState != metaState) {
-            //problem(String.format("Metastate not normalized.  Was 0x%08x but expected 0x%08x.",
-                    //metaState, normalizedMetaState));
-        //}
+        
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.104 -0400", hash_original_method = "960C41882671A36CAB1E6050FF4DEA3B", hash_generated_method = "D740BCD4EA5F5B249CF326D29D24B15B")
     private void ensurePointerCountIsOneForThisAction(MotionEvent event) {
         final int pointerCount = event.getPointerCount();
         {
             problem("Pointer count is " + pointerCount + " but it should always be 1 for "
                     + MotionEvent.actionToString(event.getAction()));
-        } //End block
+        } 
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //final int pointerCount = event.getPointerCount();
-        //if (pointerCount != 1) {
-            //problem("Pointer count is " + pointerCount + " but it should always be 1 for "
-                    //+ MotionEvent.actionToString(event.getAction()));
-        //}
+        
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.105 -0400", hash_original_method = "418A844BE60240583EF50FE17898B3BB", hash_generated_method = "6FC7E3C13AB9D1601299CB6F9EA0E6F8")
     private void ensureHistorySizeIsZeroForThisAction(MotionEvent event) {
         final int historySize = event.getHistorySize();
         {
             problem("History size is " + historySize + " but it should always be 0 for "
                     + MotionEvent.actionToString(event.getAction()));
-        } //End block
+        } 
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //final int historySize = event.getHistorySize();
-        //if (historySize != 0) {
-            //problem("History size is " + historySize + " but it should always be 0 for "
-                    //+ MotionEvent.actionToString(event.getAction()));
-        //}
+        
+        
+        
+            
+                    
+        
     }
 
     
@@ -634,36 +644,37 @@ public final class InputEventConsistencyVerifier {
             mLastEvent = event;
             mLastEventType = eventType;
             mLastNestingLevel = nestingLevel;
-        } //End block
+        } 
         {
             mLastEvent = null;
             mLastEventType = null;
             mLastNestingLevel = 0;
-        } //End block
+        } 
         mCurrentEvent = event;
         mCurrentEventType = eventType;
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1816113617 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1816113617;
-        // ---------- Original Method ----------
-        //if (event == mLastEvent && nestingLevel < mLastNestingLevel
-                //&& eventType == mLastEventType) {
-            //return false;
-        //}
-        //if (nestingLevel > 0) {
-            //mLastEvent = event;
-            //mLastEventType = eventType;
-            //mLastNestingLevel = nestingLevel;
-        //} else {
-            //mLastEvent = null;
-            //mLastEventType = null;
-            //mLastNestingLevel = 0;
-        //}
-        //mCurrentEvent = event;
-        //mCurrentEventType = eventType;
-        //return true;
+        
+        
+                
+            
+        
+        
+            
+            
+            
+        
+            
+            
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.106 -0400", hash_original_method = "ED6D322EBF7819A0A849ACCBA13E8A32", hash_generated_method = "9EF3E838AF6B8448D8F661649F7643D3")
     private void finishEvent() {
         {
@@ -685,36 +696,37 @@ public final class InputEventConsistencyVerifier {
                                     final InputEvent event = mRecentEvents[index];
                                     mViolationMessage.append("\n  ");
                                     appendEvent(mViolationMessage, i + 1, event, mRecentEventsUnhandled[index]);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
+                                } 
+                            } 
+                        } 
                         Log.d(mLogTag, mViolationMessage.toString());
                         mCurrentEvent.setTainted(true);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mViolationMessage.setLength(0);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             {
                 mRecentEvents = new InputEvent[RECENT_EVENTS_TO_LOG];
                 mRecentEventsUnhandled = new boolean[RECENT_EVENTS_TO_LOG];
-            } //End block
+            } 
             final int index = (mMostRecentEventIndex + 1) % RECENT_EVENTS_TO_LOG;
             mMostRecentEventIndex = index;
             {
                 mRecentEvents[index].recycle();
-            } //End block
+            } 
             mRecentEvents[index] = mCurrentEvent.copy();
             mRecentEventsUnhandled[index] = false;
-        } //End block
+        } 
         mCurrentEvent = null;
         mCurrentEventType = null;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void appendEvent(StringBuilder message, int index,
             InputEvent event, boolean unhandled) {
         message.append(index).append(": sent at ").append(event.getEventTimeNano());
@@ -726,39 +738,40 @@ public final class InputEventConsistencyVerifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.107 -0400", hash_original_method = "C6124E8B7D001D6ECE47F875379D529E", hash_generated_method = "C30013576538A5A2641D80EAC5E473F6")
     private void problem(String message) {
         {
             mViolationMessage = new StringBuilder();
-        } //End block
+        } 
         {
             boolean varADDF521E749D23BF1A55223D8CD76170_787817714 = (mViolationMessage.length() == 0);
             {
                 mViolationMessage.append(mCurrentEventType).append(": ");
-            } //End block
+            } 
             {
                 mViolationMessage.append("\n  ");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mViolationMessage.append(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
-        //if (mViolationMessage == null) {
-            //mViolationMessage = new StringBuilder();
-        //}
-        //if (mViolationMessage.length() == 0) {
-            //mViolationMessage.append(mCurrentEventType).append(": ");
-        //} else {
-            //mViolationMessage.append("\n  ");
-        //}
-        //mViolationMessage.append(message);
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.107 -0400", hash_original_method = "98F44F7E9C89F442263CA208119E2058", hash_generated_method = "454091B39206E4B0121CA7A45CD923EB")
     private KeyState findKeyState(int deviceId, int source, int keyCode, boolean remove) {
-        KeyState varB4EAC82CA7396A68D541C85D26508E83_876023940 = null; //Variable for return #1
-        KeyState varB4EAC82CA7396A68D541C85D26508E83_63653847 = null; //Variable for return #2
+        KeyState varB4EAC82CA7396A68D541C85D26508E83_876023940 = null; 
+        KeyState varB4EAC82CA7396A68D541C85D26508E83_63653847 = null; 
         KeyState last = null;
         KeyState state = mKeyStateList;
         {
@@ -766,56 +779,57 @@ public final class InputEventConsistencyVerifier {
                 {
                     {
                         last.next = state.next;
-                    } //End block
+                    } 
                     {
                         mKeyStateList = state.next;
-                    } //End block
+                    } 
                     state.next = null;
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_876023940 = state;
-            } //End block
+            } 
             last = state;
             state = state.next;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_63653847 = null;
         addTaint(deviceId);
         addTaint(source);
         addTaint(keyCode);
         addTaint(remove);
-        KeyState varA7E53CE21691AB073D9660D615818899_1909493803; //Final return value
+        KeyState varA7E53CE21691AB073D9660D615818899_1909493803; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1909493803 = varB4EAC82CA7396A68D541C85D26508E83_876023940;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1909493803 = varB4EAC82CA7396A68D541C85D26508E83_63653847;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1909493803.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1909493803.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1909493803;
-        // ---------- Original Method ----------
-        //KeyState last = null;
-        //KeyState state = mKeyStateList;
-        //while (state != null) {
-            //if (state.deviceId == deviceId && state.source == source
-                    //&& state.keyCode == keyCode) {
-                //if (remove) {
-                    //if (last != null) {
-                        //last.next = state.next;
-                    //} else {
-                        //mKeyStateList = state.next;
-                    //}
-                    //state.next = null;
-                //}
-                //return state;
-            //}
-            //last = state;
-            //state = state.next;
-        //}
-        //return null;
+        
+        
+        
+        
+            
+                    
+                
+                    
+                        
+                    
+                        
+                    
+                    
+                
+                
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.108 -0400", hash_original_method = "49CD2D0DE125B77D543B3E0017318A6E", hash_generated_method = "C9EAB3BAB5A4D89669611384D2A06C93")
     private void addKeyState(int deviceId, int source, int keyCode) {
         KeyState state = KeyState.obtain(deviceId, source, keyCode);
@@ -824,10 +838,10 @@ public final class InputEventConsistencyVerifier {
         addTaint(deviceId);
         addTaint(source);
         addTaint(keyCode);
-        // ---------- Original Method ----------
-        //KeyState state = KeyState.obtain(deviceId, source, keyCode);
-        //state.next = mKeyStateList;
-        //mKeyStateList = state;
+        
+        
+        
+        
     }
 
     
@@ -850,7 +864,7 @@ public final class InputEventConsistencyVerifier {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.108 -0400", hash_original_method = "9B72C46296302693275D5291E4057DE0", hash_generated_method = "46EE7D525ED839CFC8CA395DBE68DDF7")
         private  KeyState() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -877,12 +891,12 @@ public final class InputEventConsistencyVerifier {
             {
                 next = mRecycledList;
                 mRecycledList = next;
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mRecycledListLock) {
-                //next = mRecycledList;
-                //mRecycledList = next;
-            //}
+            } 
+            
+            
+                
+                
+            
         }
 
         

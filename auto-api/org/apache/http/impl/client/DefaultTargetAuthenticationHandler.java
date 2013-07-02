@@ -1,11 +1,11 @@
 package org.apache.http.impl.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Map;
 import org.apache.http.Header;
@@ -20,7 +20,7 @@ public class DefaultTargetAuthenticationHandler extends AbstractAuthenticationHa
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.257 -0400", hash_original_method = "83B142C3BB9A0955DF4A02493E658347", hash_generated_method = "4FACE08269B9BC298D130C2482F30092")
     public  DefaultTargetAuthenticationHandler() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,18 +30,18 @@ public class DefaultTargetAuthenticationHandler extends AbstractAuthenticationHa
             final HttpContext context) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP response may not be null");
-        } //End block
+        } 
         int status = response.getStatusLine().getStatusCode();
         addTaint(response.getTaint());
         addTaint(context.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_251271208 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_251271208;
-        // ---------- Original Method ----------
-        //if (response == null) {
-            //throw new IllegalArgumentException("HTTP response may not be null");
-        //}
-        //int status = response.getStatusLine().getStatusCode();
-        //return status == HttpStatus.SC_UNAUTHORIZED;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -49,22 +49,22 @@ public class DefaultTargetAuthenticationHandler extends AbstractAuthenticationHa
     public Map<String, Header> getChallenges(
             final HttpResponse response, 
             final HttpContext context) throws MalformedChallengeException {
-        Map<String, Header> varB4EAC82CA7396A68D541C85D26508E83_24946355 = null; //Variable for return #1
+        Map<String, Header> varB4EAC82CA7396A68D541C85D26508E83_24946355 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP response may not be null");
-        } //End block
+        } 
         Header[] headers = response.getHeaders(AUTH.WWW_AUTH);
         varB4EAC82CA7396A68D541C85D26508E83_24946355 = parseChallenges(headers);
         addTaint(response.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_24946355.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_24946355.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_24946355;
-        // ---------- Original Method ----------
-        //if (response == null) {
-            //throw new IllegalArgumentException("HTTP response may not be null");
-        //}
-        //Header[] headers = response.getHeaders(AUTH.WWW_AUTH);
-        //return parseChallenges(headers);
+        
+        
+            
+        
+        
+        
     }
 
     

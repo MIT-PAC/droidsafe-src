@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class NinePatch {
@@ -31,11 +31,11 @@ public class NinePatch {
         mChunk = chunk;
         mSrcName = srcName;
         validateNinePatchChunk(mBitmap.ni(), chunk);
-        // ---------- Original Method ----------
-        //mBitmap = bitmap;
-        //mChunk = chunk;
-        //mSrcName = srcName;
-        //validateNinePatchChunk(mBitmap.ni(), chunk);
+        
+        
+        
+        
+        
     }
 
     
@@ -46,27 +46,28 @@ public class NinePatch {
         mSrcName = patch.mSrcName;
         {
             mPaint = new Paint(patch.mPaint);
-        } //End block
+        } 
         validateNinePatchChunk(mBitmap.ni(), mChunk);
-        // ---------- Original Method ----------
-        //mBitmap = patch.mBitmap;
-        //mChunk = patch.mChunk;
-        //mSrcName = patch.mSrcName;
-        //if (patch.mPaint != null) {
-            //mPaint = new Paint(patch.mPaint);
-        //}
-        //validateNinePatchChunk(mBitmap.ni(), mChunk);
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.693 -0400", hash_original_method = "D0981A681D74F230E15D58DC6CAB4B12", hash_generated_method = "6C5BAF6F2F11B93DFDBE2A7B4FA1E0F5")
     public void setPaint(Paint p) {
         mPaint = p;
-        // ---------- Original Method ----------
-        //mPaint = p;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.693 -0400", hash_original_method = "EAF50CB5C0E6A8C8743BB0867CC2AAFE", hash_generated_method = "CCB69FD9C0216E8B60C06DA0B9717336")
     public void draw(Canvas canvas, RectF location) {
         {
@@ -76,25 +77,26 @@ public class NinePatch {
                        mBitmap.ni(), mChunk,
                        mPaint != null ? mPaint.mNativePaint : 0,
                        canvas.mDensity, mBitmap.mDensity);
-            } //End block
+            } 
             {
                 canvas.drawPatch(mBitmap, mChunk, location, mPaint);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(canvas.getTaint());
         addTaint(location.getTaint());
-        // ---------- Original Method ----------
-        //if (!canvas.isHardwareAccelerated()) {
-            //nativeDraw(canvas.mNativeCanvas, location,
-                       //mBitmap.ni(), mChunk,
-                       //mPaint != null ? mPaint.mNativePaint : 0,
-                       //canvas.mDensity, mBitmap.mDensity);
-        //} else {
-            //canvas.drawPatch(mBitmap, mChunk, location, mPaint);
-        //}
+        
+        
+            
+                       
+                       
+                       
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.694 -0400", hash_original_method = "0ABE1DB59D00B8D3A7DF4CB4F149C27D", hash_generated_method = "7B12BC98574286EAE085A520014018AD")
     public void draw(Canvas canvas, Rect location) {
         {
@@ -104,27 +106,28 @@ public class NinePatch {
                         mBitmap.ni(), mChunk,
                         mPaint != null ? mPaint.mNativePaint : 0,
                         canvas.mDensity, mBitmap.mDensity);
-            } //End block
+            } 
             {
                 mRect.set(location);
                 canvas.drawPatch(mBitmap, mChunk, mRect, mPaint);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(canvas.getTaint());
         addTaint(location.getTaint());
-        // ---------- Original Method ----------
-        //if (!canvas.isHardwareAccelerated()) {
-            //nativeDraw(canvas.mNativeCanvas, location,
-                        //mBitmap.ni(), mChunk,
-                        //mPaint != null ? mPaint.mNativePaint : 0,
-                        //canvas.mDensity, mBitmap.mDensity);
-        //} else {
-            //mRect.set(location);
-            //canvas.drawPatch(mBitmap, mChunk, mRect, mPaint);
-        //}
+        
+        
+            
+                        
+                        
+                        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.695 -0400", hash_original_method = "CF14EE2D4C6547AB65BEAA94D29C006C", hash_generated_method = "53D7B6FAB2CE092423CE990E19C62E3F")
     public void draw(Canvas canvas, Rect location, Paint paint) {
         {
@@ -133,24 +136,24 @@ public class NinePatch {
                 nativeDraw(canvas.mNativeCanvas, location,
                     mBitmap.ni(), mChunk, paint != null ? paint.mNativePaint : 0,
                     canvas.mDensity, mBitmap.mDensity);
-            } //End block
+            } 
             {
                 mRect.set(location);
                 canvas.drawPatch(mBitmap, mChunk, mRect, paint);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(canvas.getTaint());
         addTaint(location.getTaint());
         addTaint(paint.getTaint());
-        // ---------- Original Method ----------
-        //if (!canvas.isHardwareAccelerated()) {
-            //nativeDraw(canvas.mNativeCanvas, location,
-                    //mBitmap.ni(), mChunk, paint != null ? paint.mNativePaint : 0,
-                    //canvas.mDensity, mBitmap.mDensity);
-        //} else {
-            //mRect.set(location);
-            //canvas.drawPatch(mBitmap, mChunk, mRect, paint);
-        //}
+        
+        
+            
+                    
+                    
+        
+            
+            
+        
     }
 
     
@@ -158,28 +161,30 @@ public class NinePatch {
     public int getDensity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1680660388 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1680660388;
-        // ---------- Original Method ----------
-        //return mBitmap.mDensity;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.695 -0400", hash_original_method = "248DEDBBF8E87ACAD7F5460B83DB8F69", hash_generated_method = "9638CB6CAAC70ADFCDA2A24A775A3081")
     public int getWidth() {
         int var57D36AC407EFDDA4FB3640AD5BF79509_256816758 = (mBitmap.getWidth());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1071901844 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1071901844;
-        // ---------- Original Method ----------
-        //return mBitmap.getWidth();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.696 -0400", hash_original_method = "2785E3A64A823A27985D4386D66934E2", hash_generated_method = "12B9F1FCE6BA1F862208F6A0BEBE9496")
     public int getHeight() {
         int varD4CB35A60B9E5617CB00E88FD9661C8C_311355647 = (mBitmap.getHeight());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1682608790 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1682608790;
-        // ---------- Original Method ----------
-        //return mBitmap.getHeight();
+        
+        
     }
 
     
@@ -188,22 +193,22 @@ public class NinePatch {
         boolean varCC9B942DAF8C11B799B81316FCD04AE8_1272823495 = (mBitmap.hasAlpha());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1990309565 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1990309565;
-        // ---------- Original Method ----------
-        //return mBitmap.hasAlpha();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.698 -0400", hash_original_method = "057B771D19C75A7C087A15EB64E8E6F2", hash_generated_method = "04A68C89F16D32C38EA4C19C83680715")
     public final Region getTransparentRegion(Rect location) {
-        Region varB4EAC82CA7396A68D541C85D26508E83_1312531615 = null; //Variable for return #1
+        Region varB4EAC82CA7396A68D541C85D26508E83_1312531615 = null; 
         int r = nativeGetTransparentRegion(mBitmap.ni(), mChunk, location);
         varB4EAC82CA7396A68D541C85D26508E83_1312531615 = r != 0 ? new Region(r) : null;
         addTaint(location.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1312531615.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1312531615.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1312531615;
-        // ---------- Original Method ----------
-        //int r = nativeGetTransparentRegion(mBitmap.ni(), mChunk, location);
-        //return r != 0 ? new Region(r) : null;
+        
+        
+        
     }
 
     

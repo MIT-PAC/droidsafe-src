@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
@@ -21,15 +21,16 @@ public class ThreadLocal<T> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.377 -0400", hash_original_method = "CCBA978684365F19FBD68BD48C79C23F", hash_generated_method = "A892989B2AACDC92217F9E3C26407114")
     public  ThreadLocal() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.378 -0400", hash_original_method = "17AB1D63AD8B7EADE4880D6FD1744965", hash_generated_method = "C9AF28DA5DAF289D4ACF0E1118F516FD")
     @SuppressWarnings("unchecked")
     public T get() {
-        T varB4EAC82CA7396A68D541C85D26508E83_1109647217 = null; //Variable for return #1
-        T varB4EAC82CA7396A68D541C85D26508E83_117938135 = null; //Variable for return #2
+        T varB4EAC82CA7396A68D541C85D26508E83_1109647217 = null; 
+        T varB4EAC82CA7396A68D541C85D26508E83_117938135 = null; 
         Thread currentThread = Thread.currentThread();
         Values values = values(currentThread);
         {
@@ -37,106 +38,109 @@ public class ThreadLocal<T> {
             int index = hash & values.mask;
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1109647217 = (T) table[index + 1];
-            } //End block
-        } //End block
+            } 
+        } 
         {
             values = initializeValues(currentThread);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_117938135 = (T) values.getAfterMiss(this);
-        T varA7E53CE21691AB073D9660D615818899_1317553300; //Final return value
+        T varA7E53CE21691AB073D9660D615818899_1317553300; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1317553300 = varB4EAC82CA7396A68D541C85D26508E83_1109647217;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1317553300 = varB4EAC82CA7396A68D541C85D26508E83_117938135;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1317553300.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1317553300.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1317553300;
-        // ---------- Original Method ----------
-        //Thread currentThread = Thread.currentThread();
-        //Values values = values(currentThread);
-        //if (values != null) {
-            //Object[] table = values.table;
-            //int index = hash & values.mask;
-            //if (this.reference == table[index]) {
-                //return (T) table[index + 1];
-            //}
-        //} else {
-            //values = initializeValues(currentThread);
-        //}
-        //return (T) values.getAfterMiss(this);
+        
+        
+        
+        
+            
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.378 -0400", hash_original_method = "65001977AEEFEE3DB28BF88E33FB8DD1", hash_generated_method = "3215CC40816123D344853A1894140964")
     protected T initialValue() {
-        T varB4EAC82CA7396A68D541C85D26508E83_181460532 = null; //Variable for return #1
+        T varB4EAC82CA7396A68D541C85D26508E83_181460532 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_181460532 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_181460532.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_181460532.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_181460532;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.378 -0400", hash_original_method = "93D51722B7CB3C8EF0C38EE234F866B9", hash_generated_method = "C6285F78F249AE0D0B20CEF57E524CB2")
     public void set(T value) {
         Thread currentThread = Thread.currentThread();
         Values values = values(currentThread);
         {
             values = initializeValues(currentThread);
-        } //End block
+        } 
         values.put(this, value);
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //Thread currentThread = Thread.currentThread();
-        //Values values = values(currentThread);
-        //if (values == null) {
-            //values = initializeValues(currentThread);
-        //}
-        //values.put(this, value);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.378 -0400", hash_original_method = "E12F04AD7D9687B33AD1C273DE0809EB", hash_generated_method = "96AE536EC9B24531901259632C7BB069")
     public void remove() {
         Thread currentThread = Thread.currentThread();
         Values values = values(currentThread);
         {
             values.remove(this);
-        } //End block
-        // ---------- Original Method ----------
-        //Thread currentThread = Thread.currentThread();
-        //Values values = values(currentThread);
-        //if (values != null) {
-            //values.remove(this);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.379 -0400", hash_original_method = "F6756F2BA503B7A43E41A22536745AD1", hash_generated_method = "89ABD112F7785AF2B25579F48703EED9")
      Values initializeValues(Thread current) {
-        Values varB4EAC82CA7396A68D541C85D26508E83_1167832317 = null; //Variable for return #1
+        Values varB4EAC82CA7396A68D541C85D26508E83_1167832317 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1167832317 = current.localValues = new Values();
         addTaint(current.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1167832317.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1167832317.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1167832317;
-        // ---------- Original Method ----------
-        //return current.localValues = new Values();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.379 -0400", hash_original_method = "303C743BABF91BBE1D2B949725040AC0", hash_generated_method = "1385597D92C37614AA6B4981A7074875")
      Values values(Thread current) {
-        Values varB4EAC82CA7396A68D541C85D26508E83_1636084739 = null; //Variable for return #1
+        Values varB4EAC82CA7396A68D541C85D26508E83_1636084739 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1636084739 = current.localValues;
         addTaint(current.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1636084739.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1636084739.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1636084739;
-        // ---------- Original Method ----------
-        //return current.localValues;
+        
+        
     }
 
     
@@ -165,10 +169,10 @@ public class ThreadLocal<T> {
             initializeTable(INITIAL_SIZE);
             this.size = 0;
             this.tombstones = 0;
-            // ---------- Original Method ----------
-            //initializeTable(INITIAL_SIZE);
-            //this.size = 0;
-            //this.tombstones = 0;
+            
+            
+            
+            
         }
 
         
@@ -181,14 +185,14 @@ public class ThreadLocal<T> {
             this.maximumLoad = fromParent.maximumLoad;
             this.clean = fromParent.clean;
             inheritValues(fromParent);
-            // ---------- Original Method ----------
-            //this.table = fromParent.table.clone();
-            //this.mask = fromParent.mask;
-            //this.size = fromParent.size;
-            //this.tombstones = fromParent.tombstones;
-            //this.maximumLoad = fromParent.maximumLoad;
-            //this.clean = fromParent.clean;
-            //inheritValues(fromParent);
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -205,17 +209,17 @@ public class ThreadLocal<T> {
                     InheritableThreadLocal key = reference.get();
                     {
                         table[i + 1] = key.childValue(fromParent.table[i + 1]);
-                    } //End block
+                    } 
                     {
                         table[i] = TOMBSTONE;
                         table[i + 1] = null;
                         fromParent.table[i] = TOMBSTONE;
                         fromParent.table[i + 1] = null;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+            
+            
         }
 
         
@@ -225,11 +229,11 @@ public class ThreadLocal<T> {
             this.mask = table.length - 1;
             this.clean = 0;
             this.maximumLoad = capacity * 2 / 3;
-            // ---------- Original Method ----------
-            //this.table = new Object[capacity * 2];
-            //this.mask = table.length - 1;
-            //this.clean = 0;
-            //this.maximumLoad = capacity * 2 / 3;
+            
+            
+            
+            
+            
         }
 
         
@@ -237,7 +241,7 @@ public class ThreadLocal<T> {
         private void cleanUp() {
             {
                 boolean var11013A33888A8BC57FF439A64A6EF186_1903976220 = (rehash());
-            } //End collapsed parenthetic
+            } 
             int index = clean;
             Object[] table = this.table;
             {
@@ -252,13 +256,13 @@ public class ThreadLocal<T> {
                         {
                             table[index] = TOMBSTONE;
                             table[index + 1] = null;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             clean = index;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -268,7 +272,7 @@ public class ThreadLocal<T> {
             int newCapacity = capacity;
             {
                 newCapacity = capacity * 2;
-            } //End block
+            } 
             Object[] oldTable = this.table;
             initializeTable(newCapacity);
             this.tombstones = 0;
@@ -281,13 +285,13 @@ public class ThreadLocal<T> {
                     ThreadLocal<?> key = reference.get();
                     {
                         add(key, oldTable[i + 1]);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_645026373 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_645026373;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -301,18 +305,18 @@ public class ThreadLocal<T> {
                     {
                         table[index] = key.reference;
                         table[index + 1] = value;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //for (int index = key.hash & mask;; index = next(index)) {
-                //Object k = table[index];
-                //if (k == null) {
-                    //table[index] = key.reference;
-                    //table[index + 1] = value;
-                    //return;
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+                
+                
+                    
+                    
+                    
+                
+            
         }
 
         
@@ -327,33 +331,33 @@ public class ThreadLocal<T> {
                     Object k = table[index];
                     {
                         table[index + 1] = value;
-                    } //End block
+                    } 
                     {
                         {
                             table[index] = key.reference;
                             table[index + 1] = value;
-                        } //End block
+                        } 
                         table[firstTombstone] = key.reference;
                         table[firstTombstone + 1] = value;
-                    } //End block
+                    } 
                     {
                         firstTombstone = index;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.390 -0400", hash_original_method = "27C70593962E283B71D24D73AE4C9368", hash_generated_method = "6CD8BCBD01E74AAAC7FA3AEC592F8389")
          Object getAfterMiss(ThreadLocal<?> key) {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1482922841 = null; //Variable for return #1
-            Object varB4EAC82CA7396A68D541C85D26508E83_1410609496 = null; //Variable for return #2
-            Object varB4EAC82CA7396A68D541C85D26508E83_1501884743 = null; //Variable for return #3
-            Object varB4EAC82CA7396A68D541C85D26508E83_2135851924 = null; //Variable for return #4
-            Object varB4EAC82CA7396A68D541C85D26508E83_1253707107 = null; //Variable for return #5
-            Object varB4EAC82CA7396A68D541C85D26508E83_2046137459 = null; //Variable for return #6
+            Object varB4EAC82CA7396A68D541C85D26508E83_1482922841 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_1410609496 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_1501884743 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_2135851924 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_1253707107 = null; 
+            Object varB4EAC82CA7396A68D541C85D26508E83_2046137459 = null; 
             Object[] table = this.table;
             int index = key.hash & mask;
             {
@@ -363,10 +367,10 @@ public class ThreadLocal<T> {
                     table[index + 1] = value;
                     cleanUp();
                     varB4EAC82CA7396A68D541C85D26508E83_1482922841 = value;
-                } //End block
+                } 
                 put(key, value);
                 varB4EAC82CA7396A68D541C85D26508E83_1410609496 = value;
-            } //End block
+            } 
             int firstTombstone = -1;
             {
                 index = next(index);
@@ -375,7 +379,7 @@ public class ThreadLocal<T> {
                     Object reference = table[index];
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1501884743 = table[index + 1];
-                    } //End block
+                    } 
                     {
                         Object value = key.initialValue();
                         {
@@ -383,47 +387,47 @@ public class ThreadLocal<T> {
                                 table[firstTombstone] = key.reference;
                                 table[firstTombstone + 1] = value;
                                 varB4EAC82CA7396A68D541C85D26508E83_2135851924 = value;
-                            } //End block
+                            } 
                             {
                                 table[index] = key.reference;
                                 table[index + 1] = value;
                                 cleanUp();
                                 varB4EAC82CA7396A68D541C85D26508E83_1253707107 = value;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         put(key, value);
                         varB4EAC82CA7396A68D541C85D26508E83_2046137459 = value;
-                    } //End block
+                    } 
                     {
                         firstTombstone = index;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            Object varA7E53CE21691AB073D9660D615818899_335068492; //Final return value
+                    } 
+                } 
+            } 
+            Object varA7E53CE21691AB073D9660D615818899_335068492; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_335068492 = varB4EAC82CA7396A68D541C85D26508E83_1482922841;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_335068492 = varB4EAC82CA7396A68D541C85D26508E83_1410609496;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_335068492 = varB4EAC82CA7396A68D541C85D26508E83_1501884743;
                     break;
-                case 4: //Assign result for return ordinal #4
+                case 4: 
                     varA7E53CE21691AB073D9660D615818899_335068492 = varB4EAC82CA7396A68D541C85D26508E83_2135851924;
                     break;
-                case 5: //Assign result for return ordinal #5
+                case 5: 
                     varA7E53CE21691AB073D9660D615818899_335068492 = varB4EAC82CA7396A68D541C85D26508E83_1253707107;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_335068492 = varB4EAC82CA7396A68D541C85D26508E83_2046137459;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_335068492.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_335068492.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_335068492;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -438,25 +442,25 @@ public class ThreadLocal<T> {
                     {
                         table[index] = TOMBSTONE;
                         table[index + 1] = null;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             addTaint(key.getTaint());
-            // ---------- Original Method ----------
-            //cleanUp();
-            //for (int index = key.hash & mask;; index = next(index)) {
-                //Object reference = table[index];
-                //if (reference == key.reference) {
-                    //table[index] = TOMBSTONE;
-                    //table[index + 1] = null;
-                    //tombstones++;
-                    //size--;
-                    //return;
-                //}
-                //if (reference == null) {
-                    //return;
-                //}
-            //}
+            
+            
+            
+                
+                
+                    
+                    
+                    
+                    
+                    
+                
+                
+                    
+                
+            
         }
 
         
@@ -465,8 +469,8 @@ public class ThreadLocal<T> {
             addTaint(index);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_238520779 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_238520779;
-            // ---------- Original Method ----------
-            //return (index + 2) & mask;
+            
+            
         }
 
         

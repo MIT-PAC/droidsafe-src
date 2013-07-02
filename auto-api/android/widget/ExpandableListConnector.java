@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.database.DataSetObserver;
 import android.os.Parcel;
@@ -38,34 +38,35 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         mExpGroupMetadataList = new ArrayList<GroupMetadata>();
         setExpandableListAdapter(expandableListAdapter);
         addTaint(expandableListAdapter.getTaint());
-        // ---------- Original Method ----------
-        //mExpGroupMetadataList = new ArrayList<GroupMetadata>();
-        //setExpandableListAdapter(expandableListAdapter);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.624 -0400", hash_original_method = "20624F8A2041913E46624C5620B8C178", hash_generated_method = "FB1DC4090E6D5BD8E208E8CC70F2F954")
     public void setExpandableListAdapter(ExpandableListAdapter expandableListAdapter) {
         {
             mExpandableListAdapter.unregisterDataSetObserver(mDataSetObserver);
-        } //End block
+        } 
         mExpandableListAdapter = expandableListAdapter;
         expandableListAdapter.registerDataSetObserver(mDataSetObserver);
-        // ---------- Original Method ----------
-        //if (mExpandableListAdapter != null) {
-            //mExpandableListAdapter.unregisterDataSetObserver(mDataSetObserver);
-        //}
-        //mExpandableListAdapter = expandableListAdapter;
-        //expandableListAdapter.registerDataSetObserver(mDataSetObserver);
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.625 -0400", hash_original_method = "1168BEC82030FA7343EA44D40ECA13BC", hash_generated_method = "39348E96F774E53FC2C51327B6D7ECA2")
      PositionMetadata getUnflattenedPos(final int flPos) {
-        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_629892889 = null; //Variable for return #1
-        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_757873259 = null; //Variable for return #2
-        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_1615895087 = null; //Variable for return #3
-        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_756672667 = null; //Variable for return #4
+        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_629892889 = null; 
+        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_757873259 = null; 
+        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_1615895087 = null; 
+        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_756672667 = null; 
         final ArrayList<GroupMetadata> egml = mExpGroupMetadataList;
         final int numExpGroups = egml.size();
         int leftExpGroupIndex = 0;
@@ -75,7 +76,7 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         {
             varB4EAC82CA7396A68D541C85D26508E83_629892889 = PositionMetadata.obtain(flPos, ExpandableListPosition.GROUP, flPos,
                     -1, null, 0);
-        } //End block
+        } 
         {
             midExpGroupIndex =
                     (rightExpGroupIndex - leftExpGroupIndex) / 2
@@ -83,20 +84,20 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
             midExpGm = egml.get(midExpGroupIndex);
             {
                 leftExpGroupIndex = midExpGroupIndex + 1;
-            } //End block
+            } 
             {
                 rightExpGroupIndex = midExpGroupIndex - 1;
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_757873259 = PositionMetadata.obtain(flPos, ExpandableListPosition.GROUP,
                         midExpGm.gPos, -1, midExpGm, midExpGroupIndex);
-            } //End block
+            } 
             {
                 final int childPos = flPos - (midExpGm.flPos + 1);
                 varB4EAC82CA7396A68D541C85D26508E83_1615895087 = PositionMetadata.obtain(flPos, ExpandableListPosition.CHILD,
                         midExpGm.gPos, childPos, midExpGm, midExpGroupIndex);
-            } //End block
-        } //End block
+            } 
+        } 
         int insertPosition = 0;
         int groupPos = 0;
         {
@@ -104,50 +105,50 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
             insertPosition = leftExpGroupIndex;
             groupPos =
                 (flPos - leftExpGm.lastChildFlPos) + leftExpGm.gPos;
-        } //End block
+        } 
         {
             final GroupMetadata rightExpGm = egml.get(++rightExpGroupIndex);
             insertPosition = rightExpGroupIndex;
             groupPos = rightExpGm.gPos - (rightExpGm.flPos - flPos);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Unknown state");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_756672667 = PositionMetadata.obtain(flPos, ExpandableListPosition.GROUP, groupPos, -1,
                 null, insertPosition);
         addTaint(flPos);
-        PositionMetadata varA7E53CE21691AB073D9660D615818899_1376825990; //Final return value
+        PositionMetadata varA7E53CE21691AB073D9660D615818899_1376825990; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1376825990 = varB4EAC82CA7396A68D541C85D26508E83_629892889;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1376825990 = varB4EAC82CA7396A68D541C85D26508E83_757873259;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1376825990 = varB4EAC82CA7396A68D541C85D26508E83_1615895087;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1376825990 = varB4EAC82CA7396A68D541C85D26508E83_756672667;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1376825990.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1376825990.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1376825990;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.627 -0400", hash_original_method = "1D3F8862F07489DB803D2A10735D7C2B", hash_generated_method = "A469C1E63CDFA6D2845C53E8F2AE421D")
      PositionMetadata getFlattenedPos(final ExpandableListPosition pos) {
-        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_1799621461 = null; //Variable for return #1
-        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_1515222213 = null; //Variable for return #2
-        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_1839701127 = null; //Variable for return #3
-        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_298298262 = null; //Variable for return #4
-        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_1755507044 = null; //Variable for return #5
-        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_1102370997 = null; //Variable for return #6
-        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_2014150619 = null; //Variable for return #7
-        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_1435748749 = null; //Variable for return #8
+        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_1799621461 = null; 
+        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_1515222213 = null; 
+        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_1839701127 = null; 
+        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_298298262 = null; 
+        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_1755507044 = null; 
+        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_1102370997 = null; 
+        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_2014150619 = null; 
+        PositionMetadata varB4EAC82CA7396A68D541C85D26508E83_1435748749 = null; 
         final ArrayList<GroupMetadata> egml = mExpGroupMetadataList;
         final int numExpGroups = egml.size();
         int leftExpGroupIndex = 0;
@@ -157,97 +158,99 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         {
             varB4EAC82CA7396A68D541C85D26508E83_1799621461 = PositionMetadata.obtain(pos.groupPos, pos.type,
                     pos.groupPos, pos.childPos, null, 0);
-        } //End block
+        } 
         {
             midExpGroupIndex = (rightExpGroupIndex - leftExpGroupIndex)/2 + leftExpGroupIndex;
             midExpGm = egml.get(midExpGroupIndex);
             {
                 leftExpGroupIndex = midExpGroupIndex + 1;
-            } //End block
+            } 
             {
                 rightExpGroupIndex = midExpGroupIndex - 1;
-            } //End block
+            } 
             {
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1515222213 = PositionMetadata.obtain(midExpGm.flPos, pos.type,
                             pos.groupPos, pos.childPos, midExpGm, midExpGroupIndex);
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1839701127 = PositionMetadata.obtain(midExpGm.flPos + pos.childPos
                             + 1, pos.type, pos.groupPos, pos.childPos,
                             midExpGm, midExpGroupIndex);
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_298298262 = null;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1755507044 = null;
-        } //End block
+        } 
         {
             final GroupMetadata leftExpGm = egml.get(leftExpGroupIndex-1);
             final int flPos = leftExpGm.lastChildFlPos
                             + (pos.groupPos - leftExpGm.gPos);
             varB4EAC82CA7396A68D541C85D26508E83_1102370997 = PositionMetadata.obtain(flPos, pos.type, pos.groupPos,
                     pos.childPos, null, leftExpGroupIndex);
-        } //End block
+        } 
         {
             final GroupMetadata rightExpGm = egml.get(++rightExpGroupIndex);
             final int flPos = rightExpGm.flPos
                             - (rightExpGm.gPos - pos.groupPos);
             varB4EAC82CA7396A68D541C85D26508E83_2014150619 = PositionMetadata.obtain(flPos, pos.type, pos.groupPos,
                     pos.childPos, null, rightExpGroupIndex);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1435748749 = null;
-        } //End block
+        } 
         addTaint(pos.getTaint());
-        PositionMetadata varA7E53CE21691AB073D9660D615818899_1070293028; //Final return value
+        PositionMetadata varA7E53CE21691AB073D9660D615818899_1070293028; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1070293028 = varB4EAC82CA7396A68D541C85D26508E83_1799621461;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1070293028 = varB4EAC82CA7396A68D541C85D26508E83_1515222213;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1070293028 = varB4EAC82CA7396A68D541C85D26508E83_1839701127;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1070293028 = varB4EAC82CA7396A68D541C85D26508E83_298298262;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_1070293028 = varB4EAC82CA7396A68D541C85D26508E83_1755507044;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_1070293028 = varB4EAC82CA7396A68D541C85D26508E83_1102370997;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_1070293028 = varB4EAC82CA7396A68D541C85D26508E83_2014150619;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1070293028 = varB4EAC82CA7396A68D541C85D26508E83_1435748749;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1070293028.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1070293028.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1070293028;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.628 -0400", hash_original_method = "DAE4954D9EDE366A718556293A5AA5D3", hash_generated_method = "1B884AA4008C2DF3E1180DC7C85BB8D5")
     @Override
     public boolean areAllItemsEnabled() {
         boolean var5A180658E7F9DF714EBCBF2EE1C5FDF9_641425044 = (mExpandableListAdapter.areAllItemsEnabled());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1224196933 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1224196933;
-        // ---------- Original Method ----------
-        //return mExpandableListAdapter.areAllItemsEnabled();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.629 -0400", hash_original_method = "0084AC4844BFD434CBA804E2DF22BA27", hash_generated_method = "7C5D60ECB6FFCC9482B9F0116484CB21")
     @Override
     public boolean isEnabled(int flatListPos) {
@@ -255,75 +258,78 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         boolean retValue;
         {
             retValue = mExpandableListAdapter.isChildSelectable(pos.groupPos, pos.childPos);
-        } //End block
+        } 
         {
             retValue = true;
-        } //End block
+        } 
         pos.recycle();
         addTaint(flatListPos);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1172240457 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1172240457;
-        // ---------- Original Method ----------
-        //final ExpandableListPosition pos = getUnflattenedPos(flatListPos).position;
-        //boolean retValue;
-        //if (pos.type == ExpandableListPosition.CHILD) {
-            //retValue = mExpandableListAdapter.isChildSelectable(pos.groupPos, pos.childPos);
-        //} else {
-            //retValue = true;
-        //}
-        //pos.recycle();
-        //return retValue;
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.629 -0400", hash_original_method = "E43CB6EF7F0706DB8CAE1E4EB2A6AE3E", hash_generated_method = "A6B568365B1240A77C225AD1FE153087")
     public int getCount() {
         int var46C97A40993028EB7F14B5C60FAA31C2_1771194953 = (mExpandableListAdapter.getGroupCount() + mTotalExpChildrenCount);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1937355214 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1937355214;
-        // ---------- Original Method ----------
-        //return mExpandableListAdapter.getGroupCount() + mTotalExpChildrenCount;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.630 -0400", hash_original_method = "06B72D417088BC3B17164CA741049075", hash_generated_method = "1B1194A056B9240EB312950635935C96")
     public Object getItem(int flatListPos) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1500904852 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1500904852 = null; 
         final PositionMetadata posMetadata = getUnflattenedPos(flatListPos);
         Object retValue;
         {
             retValue = mExpandableListAdapter
                     .getGroup(posMetadata.position.groupPos);
-        } //End block
+        } 
         {
             retValue = mExpandableListAdapter.getChild(posMetadata.position.groupPos,
                     posMetadata.position.childPos);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Flat list position is of unknown type");
-        } //End block
+        } 
         posMetadata.recycle();
         varB4EAC82CA7396A68D541C85D26508E83_1500904852 = retValue;
         addTaint(flatListPos);
-        varB4EAC82CA7396A68D541C85D26508E83_1500904852.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1500904852.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1500904852;
-        // ---------- Original Method ----------
-        //final PositionMetadata posMetadata = getUnflattenedPos(flatListPos);
-        //Object retValue;
-        //if (posMetadata.position.type == ExpandableListPosition.GROUP) {
-            //retValue = mExpandableListAdapter
-                    //.getGroup(posMetadata.position.groupPos);
-        //} else if (posMetadata.position.type == ExpandableListPosition.CHILD) {
-            //retValue = mExpandableListAdapter.getChild(posMetadata.position.groupPos,
-                    //posMetadata.position.childPos);
-        //} else {
-            //throw new RuntimeException("Flat list position is of unknown type");
-        //}
-        //posMetadata.recycle();
-        //return retValue;
+        
+        
+        
+        
+            
+                    
+        
+            
+                    
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.630 -0400", hash_original_method = "4AC16A8A6C46491D50BE7E30F75A3576", hash_generated_method = "88FD5309B097943456601B976C89D39A")
     public long getItemId(int flatListPos) {
         final PositionMetadata posMetadata = getUnflattenedPos(flatListPos);
@@ -331,53 +337,55 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         long retValue;
         {
             retValue = mExpandableListAdapter.getCombinedGroupId(groupId);
-        } //End block
+        } 
         {
             final long childId = mExpandableListAdapter.getChildId(posMetadata.position.groupPos,
                     posMetadata.position.childPos);
             retValue = mExpandableListAdapter.getCombinedChildId(groupId, childId);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Flat list position is of unknown type");
-        } //End block
+        } 
         posMetadata.recycle();
         addTaint(flatListPos);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2104088218 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2104088218;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.631 -0400", hash_original_method = "E8F063B04C087445609A9E5E66DA0C8E", hash_generated_method = "4BB6978740F30AB711B66A925BDA25DC")
     public View getView(int flatListPos, View convertView, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_233548295 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_233548295 = null; 
         final PositionMetadata posMetadata = getUnflattenedPos(flatListPos);
         View retValue;
         {
             retValue = mExpandableListAdapter.getGroupView(posMetadata.position.groupPos,
                     posMetadata.isExpanded(), convertView, parent);
-        } //End block
+        } 
         {
             final boolean isLastChild = posMetadata.groupMetadata.lastChildFlPos == flatListPos;
             retValue = mExpandableListAdapter.getChildView(posMetadata.position.groupPos,
                     posMetadata.position.childPos, isLastChild, convertView, parent);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Flat list position is of unknown type");
-        } //End block
+        } 
         posMetadata.recycle();
         varB4EAC82CA7396A68D541C85D26508E83_233548295 = retValue;
         addTaint(flatListPos);
         addTaint(convertView.getTaint());
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_233548295.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_233548295.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_233548295;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.632 -0400", hash_original_method = "99547DA2855DBC2792C3AF02654A4FE0", hash_generated_method = "E2AA2104ECD0BF19AE6830AD7FCF88A3")
     @Override
     public int getItemViewType(int flatListPos) {
@@ -387,60 +395,63 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
             HeterogeneousExpandableList adapter = (HeterogeneousExpandableList) mExpandableListAdapter;
             {
                 retValue = adapter.getGroupType(pos.groupPos);
-            } //End block
+            } 
             {
                 final int childType = adapter.getChildType(pos.groupPos, pos.childPos);
                 retValue = adapter.getGroupTypeCount() + childType;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 retValue = 0;
-            } //End block
+            } 
             {
                 retValue = 1;
-            } //End block
-        } //End block
+            } 
+        } 
         pos.recycle();
         addTaint(flatListPos);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1661287398 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1661287398;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.632 -0400", hash_original_method = "CE0634CAEF6413BEB2C07851873B554E", hash_generated_method = "0E8A0D536AA27AFCDAEACFAF096B0133")
     @Override
     public int getViewTypeCount() {
         {
             HeterogeneousExpandableList adapter = (HeterogeneousExpandableList) mExpandableListAdapter;
             int varE6779AD3637EC37D8C7FC74DBF1FBC3D_1822259845 = (adapter.getGroupTypeCount() + adapter.getChildTypeCount());
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571370602 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571370602;
-        // ---------- Original Method ----------
-        //if (mExpandableListAdapter instanceof HeterogeneousExpandableList) {
-            //HeterogeneousExpandableList adapter =
-                    //(HeterogeneousExpandableList) mExpandableListAdapter;
-            //return adapter.getGroupTypeCount() + adapter.getChildTypeCount();
-        //} else {
-            //return 2;
-        //}
+        
+        
+            
+                    
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.632 -0400", hash_original_method = "4910256FB1EE08A13057FF7D9F357251", hash_generated_method = "9D70C1C75AD02987062F59D3A3ADB87E")
     @Override
     public boolean hasStableIds() {
         boolean varD96F239D0CDB2AF91A2C618E3B3AED55_2039040995 = (mExpandableListAdapter.hasStableIds());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1251071383 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1251071383;
-        // ---------- Original Method ----------
-        //return mExpandableListAdapter.hasStableIds();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.633 -0400", hash_original_method = "E23B4E2A713C93A88E352378F7DC6B9B", hash_generated_method = "A8EF2E1192ABA88971AE5DC944ED6ABE")
     @SuppressWarnings("unchecked")
     private void refreshExpGroupMetadataList(boolean forceChildrenCountRefresh,
@@ -459,16 +470,16 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
                     {
                         {
                             egml.remove(i);
-                        } //End block
+                        } 
                         curGm.gPos = newGPos;
                         positionsChanged = true;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 Collections.sort(egml);
-            } //End block
-        } //End block
+            } 
+        } 
         int gChildrenCount;
         int lastGPos = 0;
         {
@@ -477,22 +488,22 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
                 GroupMetadata curGm = egml.get(i);
                 {
                     gChildrenCount = mExpandableListAdapter.getChildrenCount(curGm.gPos);
-                } //End block
+                } 
                 {
                     gChildrenCount = curGm.lastChildFlPos - curGm.flPos;
-                } //End block
+                } 
                 mTotalExpChildrenCount += gChildrenCount;
                 curFlPos += (curGm.gPos - lastGPos);
                 lastGPos = curGm.gPos;
                 curGm.flPos = curFlPos;
                 curFlPos += gChildrenCount;
                 curGm.lastChildFlPos = curFlPos;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(forceChildrenCountRefresh);
         addTaint(syncGroupPositions);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -505,13 +516,13 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         addTaint(groupPos);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1883186067 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1883186067;
-        // ---------- Original Method ----------
-        //PositionMetadata pm = getFlattenedPos(ExpandableListPosition.obtain(
-                //ExpandableListPosition.GROUP, groupPos, -1, -1));
-        //if (pm == null) return false;
-        //boolean retValue = collapseGroup(pm);
-        //pm.recycle();
-        //return retValue;
+        
+        
+                
+        
+        
+        
+        
     }
 
     
@@ -524,13 +535,13 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         addTaint(posMetadata.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1860970689 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1860970689;
-        // ---------- Original Method ----------
-        //if (posMetadata.groupMetadata == null) return false;
-        //mExpGroupMetadataList.remove(posMetadata.groupMetadata);
-        //refreshExpGroupMetadataList(false, false);
-        //notifyDataSetChanged();
-        //mExpandableListAdapter.onGroupCollapsed(posMetadata.groupMetadata.gPos);
-        //return true;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -543,12 +554,12 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         addTaint(groupPos);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_842044108 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_842044108;
-        // ---------- Original Method ----------
-        //PositionMetadata pm = getFlattenedPos(ExpandableListPosition.obtain(
-                //ExpandableListPosition.GROUP, groupPos, -1, -1));
-        //boolean retValue = expandGroup(pm);
-        //pm.recycle();
-        //return retValue;
+        
+        
+                
+        
+        
+        
     }
 
     
@@ -556,15 +567,15 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
      boolean expandGroup(PositionMetadata posMetadata) {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Need group");
-        } //End block
+        } 
         {
             boolean var0BF36D97B0462C030BBCF30B44542AC5_2086195371 = (mExpGroupMetadataList.size() >= mMaxExpGroupCount);
             {
                 GroupMetadata collapsedGm = mExpGroupMetadataList.get(0);
                 int collapsedIndex = mExpGroupMetadataList.indexOf(collapsedGm);
                 collapseGroup(collapsedGm.gPos);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         GroupMetadata expandedGm = GroupMetadata.obtain(
                 GroupMetadata.REFRESH,
                 GroupMetadata.REFRESH,
@@ -577,11 +588,12 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         addTaint(posMetadata.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1620861094 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1620861094;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.635 -0400", hash_original_method = "14DD7EE25463BE2F409F1A554DB1FBD9", hash_generated_method = "2024FAE80D2239D75847ADECCE1DAD04")
     public boolean isGroupExpanded(int groupPosition) {
         GroupMetadata groupMetadata;
@@ -589,82 +601,83 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
             int i = mExpGroupMetadataList.size() - 1;
             {
                 groupMetadata = mExpGroupMetadataList.get(i);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(groupPosition);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1696268175 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1696268175;
-        // ---------- Original Method ----------
-        //GroupMetadata groupMetadata;
-        //for (int i = mExpGroupMetadataList.size() - 1; i >= 0; i--) {
-            //groupMetadata = mExpGroupMetadataList.get(i);
-            //if (groupMetadata.gPos == groupPosition) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.635 -0400", hash_original_method = "5DCA730791D083145030F1469300702C", hash_generated_method = "ADF6079EFB27B709D59795A65482C88A")
     public void setMaxExpGroupCount(int maxExpGroupCount) {
         mMaxExpGroupCount = maxExpGroupCount;
-        // ---------- Original Method ----------
-        //mMaxExpGroupCount = maxExpGroupCount;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.636 -0400", hash_original_method = "473155659E1950E1738B6CCA8650B997", hash_generated_method = "C0099983E3D658185182660626BEC3B0")
      ExpandableListAdapter getAdapter() {
-        ExpandableListAdapter varB4EAC82CA7396A68D541C85D26508E83_1508893619 = null; //Variable for return #1
+        ExpandableListAdapter varB4EAC82CA7396A68D541C85D26508E83_1508893619 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1508893619 = mExpandableListAdapter;
-        varB4EAC82CA7396A68D541C85D26508E83_1508893619.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1508893619.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1508893619;
-        // ---------- Original Method ----------
-        //return mExpandableListAdapter;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.636 -0400", hash_original_method = "D7C89EA0D9DD591B12578E8793100CE2", hash_generated_method = "E6A75A0665051CB9FCA5E1BB0A64C8A0")
     public Filter getFilter() {
-        Filter varB4EAC82CA7396A68D541C85D26508E83_1545649734 = null; //Variable for return #1
-        Filter varB4EAC82CA7396A68D541C85D26508E83_263255082 = null; //Variable for return #2
+        Filter varB4EAC82CA7396A68D541C85D26508E83_1545649734 = null; 
+        Filter varB4EAC82CA7396A68D541C85D26508E83_263255082 = null; 
         ExpandableListAdapter adapter = getAdapter();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1545649734 = ((Filterable) adapter).getFilter();
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_263255082 = null;
-        } //End block
-        Filter varA7E53CE21691AB073D9660D615818899_1851924302; //Final return value
+        } 
+        Filter varA7E53CE21691AB073D9660D615818899_1851924302; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1851924302 = varB4EAC82CA7396A68D541C85D26508E83_1545649734;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1851924302 = varB4EAC82CA7396A68D541C85D26508E83_263255082;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1851924302.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1851924302.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1851924302;
-        // ---------- Original Method ----------
-        //ExpandableListAdapter adapter = getAdapter();
-        //if (adapter instanceof Filterable) {
-            //return ((Filterable) adapter).getFilter();
-        //} else {
-            //return null;
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.637 -0400", hash_original_method = "740752E96AF2B266538C6125F8E79937", hash_generated_method = "B5055ACE392D487F5C27C5D04B4D6D91")
      ArrayList<GroupMetadata> getExpandedGroupMetadataList() {
-        ArrayList<GroupMetadata> varB4EAC82CA7396A68D541C85D26508E83_1266105252 = null; //Variable for return #1
+        ArrayList<GroupMetadata> varB4EAC82CA7396A68D541C85D26508E83_1266105252 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1266105252 = mExpGroupMetadataList;
-        varB4EAC82CA7396A68D541C85D26508E83_1266105252.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1266105252.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1266105252;
-        // ---------- Original Method ----------
-        //return mExpGroupMetadataList;
+        
+        
     }
 
     
@@ -676,38 +689,39 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
             {
                 {
                     boolean var5AB2E6FDCD2FE74673EFC61C15C26F08_1924865286 = (expandedGroupMetadataList.get(i).gPos >= numGroups);
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         mExpGroupMetadataList = expandedGroupMetadataList;
         refreshExpGroupMetadataList(true, false);
-        // ---------- Original Method ----------
-        //if ((expandedGroupMetadataList == null) || (mExpandableListAdapter == null)) {
-            //return;
-        //}
-        //int numGroups = mExpandableListAdapter.getGroupCount();
-        //for (int i = expandedGroupMetadataList.size() - 1; i >= 0; i--) {
-            //if (expandedGroupMetadataList.get(i).gPos >= numGroups) {
-                //return;
-            //}
-        //}
-        //mExpGroupMetadataList = expandedGroupMetadataList;
-        //refreshExpGroupMetadataList(true, false);
+        
+        
+            
+        
+        
+        
+            
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.639 -0400", hash_original_method = "DF256FE26F67ED917C946C2E9410F027", hash_generated_method = "965E3B7763ECBCC09432802095F56EC7")
     @Override
     public boolean isEmpty() {
         ExpandableListAdapter adapter = getAdapter();
         {
             Object var0693446521B9036041825FEBAE0330F0_1830491914 = (adapter.isEmpty());
-        } //End flattened ternary
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2039760506 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2039760506;
-        // ---------- Original Method ----------
-        //ExpandableListAdapter adapter = getAdapter();
-        //return adapter != null ? adapter.isEmpty() : true;
+        
+        
+        
     }
 
     
@@ -733,19 +747,19 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
                 {
                     seedGroupPosition = last;
                     next = false;
-                } //End block
+                } 
                 {
                     seedGroupPosition = first;
                     next = true;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(groupIdToMatch);
         addTaint(seedGroupPosition);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1315964467 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1315964467;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -754,31 +768,31 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.640 -0400", hash_original_method = "B8855E81B638DE0F5C9202168EAE6D42", hash_generated_method = "B8855E81B638DE0F5C9202168EAE6D42")
         public MyDataSetObserver ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.640 -0400", hash_original_method = "6638C55358D7A5972C632ED02BA3E5C3", hash_generated_method = "423E58DDE1ED590711D4AB94EA334FA7")
         @Override
         public void onChanged() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             refreshExpGroupMetadataList(true, true);
             notifyDataSetChanged();
-            // ---------- Original Method ----------
-            //refreshExpGroupMetadataList(true, true);
-            //notifyDataSetChanged();
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.641 -0400", hash_original_method = "097361F82E1EAFBA4D6D3BF1780C0DD3", hash_generated_method = "A5B595EB134C6A10414CBA53942E11E4")
         @Override
         public void onInvalidated() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             refreshExpGroupMetadataList(true, true);
             notifyDataSetInvalidated();
-            // ---------- Original Method ----------
-            //refreshExpGroupMetadataList(true, true);
-            //notifyDataSetInvalidated();
+            
+            
+            
         }
 
         
@@ -802,7 +816,7 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.641 -0400", hash_original_method = "D22B32F032ACC40BC7080CC4DC6C0D5E", hash_generated_method = "DE6C626044B8E9CC58838E683EF276B1")
         private  GroupMetadata() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -820,15 +834,15 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         public int compareTo(GroupMetadata another) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-            } //End block
+            } 
             addTaint(another.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1713225388 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1713225388;
-            // ---------- Original Method ----------
-            //if (another == null) {
-                //throw new IllegalArgumentException();
-            //}
-            //return gPos - another.gPos;
+            
+            
+                
+            
+            
         }
 
         
@@ -836,8 +850,8 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1135117248 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1135117248;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
@@ -849,11 +863,11 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
             dest.writeLong(gId);
             addTaint(dest.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //dest.writeInt(flPos);
-            //dest.writeInt(lastChildFlPos);
-            //dest.writeInt(gPos);
-            //dest.writeLong(gId);
+            
+            
+            
+            
+            
         }
 
         
@@ -878,7 +892,7 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
                 return new GroupMetadata[size];
             }
         };
-        // orphaned legacy method
+        
         public GroupMetadata createFromParcel(Parcel in) {
                 GroupMetadata gm = GroupMetadata.obtain(
                         in.readInt(),
@@ -888,7 +902,7 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
                 return gm;
             }
         
-        // orphaned legacy method
+        
         public GroupMetadata[] newArray(int size) {
                 return new GroupMetadata[size];
             }
@@ -910,7 +924,7 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.643 -0400", hash_original_method = "D695D4EB809D075329F88CC11AC9F37B", hash_generated_method = "72FA864FA9C855DE015B0EDB93BB6462")
         private  PositionMetadata() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -919,10 +933,10 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
             position = null;
             groupMetadata = null;
             groupInsertIndex = 0;
-            // ---------- Original Method ----------
-            //position = null;
-            //groupMetadata = null;
-            //groupInsertIndex = 0;
+            
+            
+            
+            
         }
 
         
@@ -957,15 +971,15 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
                     boolean var9985C19DB3277BD510D6C0334A18B696_2005416092 = (sPool.size() < MAX_POOL_SIZE);
                     {
                         sPool.add(this);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (sPool) {
-                //if (sPool.size() < MAX_POOL_SIZE) {
-                    //sPool.add(this);
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+                
+                    
+                
+            
         }
 
         
@@ -973,8 +987,8 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         public boolean isExpanded() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1891001016 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1891001016;
-            // ---------- Original Method ----------
-            //return groupMetadata != null;
+            
+            
         }
 
         

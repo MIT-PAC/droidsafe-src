@@ -1,11 +1,11 @@
 package com.android.internal.view.menu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -76,17 +76,17 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
         a.recycle();
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        //TypedArray a =
-            //context.obtainStyledAttributes(
-                //attrs, com.android.internal.R.styleable.MenuView, defStyle, 0);
-        //mBackground = a.getDrawable(com.android.internal.R.styleable.MenuView_itemBackground);
-        //mTextAppearance = a.getResourceId(com.android.internal.R.styleable.
-                                          //MenuView_itemTextAppearance, -1);
-        //mPreserveIconSpacing = a.getBoolean(
-                //com.android.internal.R.styleable.MenuView_preserveIconSpacing, false);
-        //mTextAppearanceContext = context;
-        //a.recycle();
+        
+        
+            
+                
+        
+        
+                                          
+        
+                
+        
+        
     }
 
     
@@ -95,34 +95,36 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
         this(context, attrs, 0);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.118 -0400", hash_original_method = "85E45C4D26BDFDA8B8A891EEA2149544", hash_generated_method = "AA5A4A8ED5FBBADB5F442414B3DFD0B8")
     @Override
     protected void onFinishInflate() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onFinishInflate();
         setBackgroundDrawable(mBackground);
         mTitleView = (TextView) findViewById(com.android.internal.R.id.title);
         {
             mTitleView.setTextAppearance(mTextAppearanceContext,
                                          mTextAppearance);
-        } //End block
+        } 
         mShortcutView = (TextView) findViewById(com.android.internal.R.id.shortcut);
-        // ---------- Original Method ----------
-        //super.onFinishInflate();
-        //setBackgroundDrawable(mBackground);
-        //mTitleView = (TextView) findViewById(com.android.internal.R.id.title);
-        //if (mTextAppearance != -1) {
-            //mTitleView.setTextAppearance(mTextAppearanceContext,
-                                         //mTextAppearance);
-        //}
-        //mShortcutView = (TextView) findViewById(com.android.internal.R.id.shortcut);
+        
+        
+        
+        
+        
+            
+                                         
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.118 -0400", hash_original_method = "5092F6390AF72578BEED6176B75C91D1", hash_generated_method = "ECA5DB92E6F45AE6E8CEA972B9504B66")
     public void initialize(MenuItemImpl itemData, int menuType) {
         mItemData = itemData;
@@ -133,26 +135,27 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
         setShortcut(itemData.shouldShowShortcut(), itemData.getShortcut());
         setIcon(itemData.getIcon());
         setEnabled(itemData.isEnabled());
-        // ---------- Original Method ----------
-        //mItemData = itemData;
-        //mMenuType = menuType;
-        //setVisibility(itemData.isVisible() ? View.VISIBLE : View.GONE);
-        //setTitle(itemData.getTitleForItemView(this));
-        //setCheckable(itemData.isCheckable());
-        //setShortcut(itemData.shouldShowShortcut(), itemData.getShortcut());
-        //setIcon(itemData.getIcon());
-        //setEnabled(itemData.isEnabled());
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.119 -0400", hash_original_method = "D8A614357C6F3F0E863735D7939D36DF", hash_generated_method = "000029833D7B44F7160178B4662C1051")
     public void setForceShowIcon(boolean forceShow) {
         mPreserveIconSpacing = mForceShowIcon = forceShow;
-        // ---------- Original Method ----------
-        //mPreserveIconSpacing = mForceShowIcon = forceShow;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.119 -0400", hash_original_method = "D643CEDDD2281EA2D982E86A77F53965", hash_generated_method = "A38A495E6C265B8233C5F688A9675931")
     public void setTitle(CharSequence title) {
         {
@@ -160,36 +163,37 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
             {
                 boolean var6A26BDD4CD8F66D96EADF8E7F98C3BBA_1801708861 = (mTitleView.getVisibility() != VISIBLE);
                 mTitleView.setVisibility(VISIBLE);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             {
                 boolean varC348C04616DB2B7E7ED08834EC89EED5_1824052995 = (mTitleView.getVisibility() != GONE);
                 mTitleView.setVisibility(GONE);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(title.getTaint());
-        // ---------- Original Method ----------
-        //if (title != null) {
-            //mTitleView.setText(title);
-            //if (mTitleView.getVisibility() != VISIBLE) mTitleView.setVisibility(VISIBLE);
-        //} else {
-            //if (mTitleView.getVisibility() != GONE) mTitleView.setVisibility(GONE);
-        //}
+        
+        
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.119 -0400", hash_original_method = "F39E0849ABCF707480ABC0B9D2EE2311", hash_generated_method = "BEA34F7CFC8AA3B868F4EFE2DF93EA22")
     public MenuItemImpl getItemData() {
-        MenuItemImpl varB4EAC82CA7396A68D541C85D26508E83_1331852646 = null; //Variable for return #1
+        MenuItemImpl varB4EAC82CA7396A68D541C85D26508E83_1331852646 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1331852646 = mItemData;
-        varB4EAC82CA7396A68D541C85D26508E83_1331852646.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1331852646.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1331852646;
-        // ---------- Original Method ----------
-        //return mItemData;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.120 -0400", hash_original_method = "10ED998AF45E09E3692DBD756F730611", hash_generated_method = "3CF6EA6E193F29A419F7376CDED6D657")
     public void setCheckable(boolean checkable) {
         CompoundButton compoundButton;
@@ -199,18 +203,18 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
             {
                 {
                     insertRadioButton();
-                } //End block
+                } 
                 compoundButton = mRadioButton;
                 otherCompoundButton = mCheckBox;
-            } //End block
+            } 
             {
                 {
                     insertCheckBox();
-                } //End block
+                } 
                 compoundButton = mCheckBox;
                 otherCompoundButton = mRadioButton;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             compoundButton.setChecked(mItemData.isChecked());
             int newVisibility;
@@ -220,25 +224,26 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
                 boolean var278E62155688BDD429E0506E96C362DB_836681038 = (compoundButton.getVisibility() != newVisibility);
                 {
                     compoundButton.setVisibility(newVisibility);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean varC7C687FF6B837D6E269EE292464FDC93_233245280 = (otherCompoundButton != null && otherCompoundButton.getVisibility() != GONE);
                 {
                     otherCompoundButton.setVisibility(GONE);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             mCheckBox.setVisibility(GONE);
             mRadioButton.setVisibility(GONE);
-        } //End block
+        } 
         addTaint(checkable);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.121 -0400", hash_original_method = "1046275995CFEC2A71A54D8E1F9C97CC", hash_generated_method = "D5C6B31030E3EF84BE681861D2C7736D")
     public void setChecked(boolean checked) {
         CompoundButton compoundButton;
@@ -247,35 +252,36 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
             {
                 {
                     insertRadioButton();
-                } //End block
+                } 
                 compoundButton = mRadioButton;
-            } //End block
+            } 
             {
                 {
                     insertCheckBox();
-                } //End block
+                } 
                 compoundButton = mCheckBox;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         compoundButton.setChecked(checked);
         addTaint(checked);
-        // ---------- Original Method ----------
-        //CompoundButton compoundButton;
-        //if (mItemData.isExclusiveCheckable()) {
-            //if (mRadioButton == null) {
-                //insertRadioButton();
-            //}
-            //compoundButton = mRadioButton;
-        //} else {
-            //if (mCheckBox == null) {
-                //insertCheckBox();
-            //}
-            //compoundButton = mCheckBox;
-        //}
-        //compoundButton.setChecked(checked);
+        
+        
+        
+            
+                
+            
+            
+        
+            
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.121 -0400", hash_original_method = "4983CC204EB78339386267D8C73D5694", hash_generated_method = "BB07CFF9CA4FCD9EE28AC2072F6B9EFD")
     public void setShortcut(boolean showShortcut, char shortcutKey) {
         int newVisibility;
@@ -284,108 +290,112 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
         newVisibility = GONE;
         {
             mShortcutView.setText(mItemData.getShortcutLabel());
-        } //End block
+        } 
         {
             boolean varBC84E88EF5B81A3829D08C1817D35065_1344392264 = (mShortcutView.getVisibility() != newVisibility);
             {
                 mShortcutView.setVisibility(newVisibility);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(showShortcut);
         addTaint(shortcutKey);
-        // ---------- Original Method ----------
-        //final int newVisibility = (showShortcut && mItemData.shouldShowShortcut())
-                //? VISIBLE : GONE;
-        //if (newVisibility == VISIBLE) {
-            //mShortcutView.setText(mItemData.getShortcutLabel());
-        //}
-        //if (mShortcutView.getVisibility() != newVisibility) {
-            //mShortcutView.setVisibility(newVisibility);
-        //}
+        
+        
+                
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.122 -0400", hash_original_method = "19EB37BE18B7BC088A147E31A5EAA2CE", hash_generated_method = "C9BE67582FF52B73234B1B67AB47DD0D")
     public void setIcon(Drawable icon) {
         final boolean showIcon = mItemData.shouldShowIcon() || mForceShowIcon;
         {
             insertIconView();
-        } //End block
+        } 
         {
             mIconView.setImageDrawable(showIcon ? icon : null);
             {
                 boolean var0C43E4EEEC50619525D9BC5009577965_493097145 = (mIconView.getVisibility() != VISIBLE);
                 {
                     mIconView.setVisibility(VISIBLE);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             mIconView.setVisibility(GONE);
-        } //End block
+        } 
         addTaint(icon.getTaint());
-        // ---------- Original Method ----------
-        //final boolean showIcon = mItemData.shouldShowIcon() || mForceShowIcon;
-        //if (!showIcon && !mPreserveIconSpacing) {
-            //return;
-        //}
-        //if (mIconView == null && icon == null && !mPreserveIconSpacing) {
-            //return;
-        //}
-        //if (mIconView == null) {
-            //insertIconView();
-        //}
-        //if (icon != null || mPreserveIconSpacing) {
-            //mIconView.setImageDrawable(showIcon ? icon : null);
-            //if (mIconView.getVisibility() != VISIBLE) {
-                //mIconView.setVisibility(VISIBLE);
-            //}
-        //} else {
-            //mIconView.setVisibility(GONE);
-        //}
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.123 -0400", hash_original_method = "EB04FE2393D8303D2CC7459EB64C837F", hash_generated_method = "56EC8460668AE5C75C73C66699AC8D36")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             ViewGroup.LayoutParams lp = getLayoutParams();
             LayoutParams iconLp = (LayoutParams) mIconView.getLayoutParams();
             {
                 iconLp.width = lp.height;
-            } //End block
-        } //End block
+            } 
+        } 
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        //if (mIconView != null && mPreserveIconSpacing) {
-            //ViewGroup.LayoutParams lp = getLayoutParams();
-            //LayoutParams iconLp = (LayoutParams) mIconView.getLayoutParams();
-            //if (lp.height > 0 && iconLp.width <= 0) {
-                //iconLp.width = lp.height;
-            //}
-        //}
-        //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.123 -0400", hash_original_method = "10F5F40E2932688DF3201248310D8E11", hash_generated_method = "EC98767F367014966ED63E3EF0789564")
     private void insertIconView() {
         LayoutInflater inflater = getInflater();
         mIconView = (ImageView) inflater.inflate(com.android.internal.R.layout.list_menu_item_icon,
                 this, false);
         addView(mIconView, 0);
-        // ---------- Original Method ----------
-        //LayoutInflater inflater = getInflater();
-        //mIconView = (ImageView) inflater.inflate(com.android.internal.R.layout.list_menu_item_icon,
-                //this, false);
-        //addView(mIconView, 0);
+        
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.124 -0400", hash_original_method = "3AE05F112F28FE467A439CFB98DC5418", hash_generated_method = "15CE423BB152D917B454510BB59793B1")
     private void insertRadioButton() {
         LayoutInflater inflater = getInflater();
@@ -393,15 +403,16 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
                 (RadioButton) inflater.inflate(com.android.internal.R.layout.list_menu_item_radio,
                 this, false);
         addView(mRadioButton);
-        // ---------- Original Method ----------
-        //LayoutInflater inflater = getInflater();
-        //mRadioButton =
-                //(RadioButton) inflater.inflate(com.android.internal.R.layout.list_menu_item_radio,
-                //this, false);
-        //addView(mRadioButton);
+        
+        
+        
+                
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.125 -0400", hash_original_method = "C1CFD343D3CE36D4657F4BFD8E338B9A", hash_generated_method = "7247AEBE06DD9AC00AEB216787940048")
     private void insertCheckBox() {
         LayoutInflater inflater = getInflater();
@@ -409,12 +420,12 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
                 (CheckBox) inflater.inflate(com.android.internal.R.layout.list_menu_item_checkbox,
                 this, false);
         addView(mCheckBox);
-        // ---------- Original Method ----------
-        //LayoutInflater inflater = getInflater();
-        //mCheckBox =
-                //(CheckBox) inflater.inflate(com.android.internal.R.layout.list_menu_item_checkbox,
-                //this, false);
-        //addView(mCheckBox);
+        
+        
+        
+                
+                
+        
     }
 
     
@@ -422,8 +433,8 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     public boolean prefersCondensedTitle() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2051272448 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2051272448;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -431,25 +442,26 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     public boolean showsIcon() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_330789058 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_330789058;
-        // ---------- Original Method ----------
-        //return mForceShowIcon;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.128 -0400", hash_original_method = "800EDA97716EBA1ECAA54C866B1D88CB", hash_generated_method = "3401ADC4A3D8E013593EF4C6A110F0A1")
     private LayoutInflater getInflater() {
-        LayoutInflater varB4EAC82CA7396A68D541C85D26508E83_699412661 = null; //Variable for return #1
+        LayoutInflater varB4EAC82CA7396A68D541C85D26508E83_699412661 = null; 
         {
             mInflater = LayoutInflater.from(mContext);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_699412661 = mInflater;
-        varB4EAC82CA7396A68D541C85D26508E83_699412661.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_699412661.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_699412661;
-        // ---------- Original Method ----------
-        //if (mInflater == null) {
-            //mInflater = LayoutInflater.from(mContext);
-        //}
-        //return mInflater;
+        
+        
+            
+        
+        
     }
 
     

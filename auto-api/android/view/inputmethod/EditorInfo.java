@@ -1,11 +1,11 @@
 package android.view.inputmethod;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -61,32 +61,33 @@ public class EditorInfo implements InputType, Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.963 -0400", hash_original_method = "B9ADFD40DF801C34FF4D54782A68254E", hash_generated_method = "B9ADFD40DF801C34FF4D54782A68254E")
     public EditorInfo ()
     {
-        //Synthesized constructor
+        
     }
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.963 -0400", hash_original_method = "3C6DC9D32EA44A62EDD92C5C9BF78DEF", hash_generated_method = "C0DE863073E875D2B023CECE40A1414E")
     public final void makeCompatible(int targetSdkVersion) {
         {
-            //Begin case TYPE_CLASS_TEXT|TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS 
+            
             inputType = TYPE_CLASS_TEXT|TYPE_TEXT_VARIATION_EMAIL_ADDRESS
                             | (inputType&TYPE_MASK_FLAGS);
-            //End case TYPE_CLASS_TEXT|TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS 
-            //Begin case TYPE_CLASS_TEXT|TYPE_TEXT_VARIATION_WEB_PASSWORD 
+            
+            
             inputType = TYPE_CLASS_TEXT|TYPE_TEXT_VARIATION_PASSWORD
                             | (inputType&TYPE_MASK_FLAGS);
-            //End case TYPE_CLASS_TEXT|TYPE_TEXT_VARIATION_WEB_PASSWORD 
-            //Begin case TYPE_CLASS_NUMBER|TYPE_NUMBER_VARIATION_NORMAL TYPE_CLASS_NUMBER|TYPE_NUMBER_VARIATION_PASSWORD 
+            
+            
             inputType = TYPE_CLASS_NUMBER
                             | (inputType&TYPE_MASK_FLAGS);
-            //End case TYPE_CLASS_NUMBER|TYPE_NUMBER_VARIATION_NORMAL TYPE_CLASS_NUMBER|TYPE_NUMBER_VARIATION_PASSWORD 
-        } //End block
+            
+        } 
         addTaint(targetSdkVersion);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.964 -0400", hash_original_method = "52E48D457BDB05F3C0DFF77F15A840F2", hash_generated_method = "2BA6177C056FA939C27E7E82856CD213")
     public void dump(Printer pw, String prefix) {
         pw.println(prefix + "inputType=0x" + Integer.toHexString(inputType)
@@ -106,25 +107,26 @@ public class EditorInfo implements InputType, Parcelable {
         pw.println(prefix + "extras=" + extras);
         addTaint(pw.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //pw.println(prefix + "inputType=0x" + Integer.toHexString(inputType)
-                //+ " imeOptions=0x" + Integer.toHexString(imeOptions)
-                //+ " privateImeOptions=" + privateImeOptions);
-        //pw.println(prefix + "actionLabel=" + actionLabel
-                //+ " actionId=" + actionId);
-        //pw.println(prefix + "initialSelStart=" + initialSelStart
-                //+ " initialSelEnd=" + initialSelEnd
-                //+ " initialCapsMode=0x"
-                //+ Integer.toHexString(initialCapsMode));
-        //pw.println(prefix + "hintText=" + hintText
-                //+ " label=" + label);
-        //pw.println(prefix + "packageName=" + packageName
-                //+ " fieldId=" + fieldId
-                //+ " fieldName=" + fieldName);
-        //pw.println(prefix + "extras=" + extras);
+        
+        
+                
+                
+        
+                
+        
+                
+                
+                
+        
+                
+        
+                
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.965 -0400", hash_original_method = "0DCEB67BA2166B08F017930A62049273", hash_generated_method = "9105B96928E81B7D74B82B2DD943E7B6")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(inputType);
@@ -143,21 +145,21 @@ public class EditorInfo implements InputType, Parcelable {
         dest.writeBundle(extras);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(inputType);
-        //dest.writeInt(imeOptions);
-        //dest.writeString(privateImeOptions);
-        //TextUtils.writeToParcel(actionLabel, dest, flags);
-        //dest.writeInt(actionId);
-        //dest.writeInt(initialSelStart);
-        //dest.writeInt(initialSelEnd);
-        //dest.writeInt(initialCapsMode);
-        //TextUtils.writeToParcel(hintText, dest, flags);
-        //TextUtils.writeToParcel(label, dest, flags);
-        //dest.writeString(packageName);
-        //dest.writeInt(fieldId);
-        //dest.writeString(fieldName);
-        //dest.writeBundle(extras);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -165,8 +167,8 @@ public class EditorInfo implements InputType, Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1999125958 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1999125958;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -244,7 +246,7 @@ public class EditorInfo implements InputType, Parcelable {
             return new EditorInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public EditorInfo createFromParcel(Parcel source) {
             EditorInfo res = new EditorInfo();
             res.inputType = source.readInt();
@@ -264,7 +266,7 @@ public class EditorInfo implements InputType, Parcelable {
             return res;
         }
     
-    // orphaned legacy method
+    
     public EditorInfo[] newArray(int size) {
             return new EditorInfo[size];
         }

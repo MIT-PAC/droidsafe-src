@@ -1,11 +1,11 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA;
 import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_ISO_COUNTRY;
@@ -93,45 +93,48 @@ public class SIMRecords extends IccRecords {
         p.mCM.registerForIccRefresh(this, EVENT_SIM_REFRESH, null);
         onRadioOffOrNotAvailable();
         addTaint(p.getTaint());
-        // ---------- Original Method ----------
-        //adnCache = new AdnRecordCache(phone);
-        //mVmConfig = new VoiceMailConstants();
-        //mSpnOverride = new SpnOverride();
-        //recordsRequested = false;
-        //recordsToLoad = 0;
-        //p.mCM.registerForSIMReady(this, EVENT_SIM_READY, null);
-        //p.mCM.registerForOffOrNotAvailable(
-                        //this, EVENT_RADIO_OFF_OR_NOT_AVAILABLE, null);
-        //p.mCM.setOnSmsOnSim(this, EVENT_SMS_ON_SIM, null);
-        //p.mCM.registerForIccRefresh(this, EVENT_SIM_REFRESH, null);
-        //onRadioOffOrNotAvailable();
+        
+        
+        
+        
+        
+        
+        
+        
+                        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.877 -0400", hash_original_method = "60B34C0CDC881E5C8D40C8AAD990557F", hash_generated_method = "3EA07F3E006CA7F93EFE786B4B31CD0A")
     @Override
     public void dispose() {
         phone.mCM.unregisterForSIMReady(this);
         phone.mCM.unregisterForOffOrNotAvailable( this);
         phone.mCM.unregisterForIccRefresh(this);
-        // ---------- Original Method ----------
-        //phone.mCM.unregisterForSIMReady(this);
-        //phone.mCM.unregisterForOffOrNotAvailable( this);
-        //phone.mCM.unregisterForIccRefresh(this);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.878 -0400", hash_original_method = "D676C6F3D2367DC0A4942786FE826692", hash_generated_method = "6E2BC99A5C88DFAF422E2B6A62A301F5")
     protected void finalize() {
         Log.d(LOG_TAG, "SIMRecords finalized");
-        // ---------- Original Method ----------
-        //if(DBG) Log.d(LOG_TAG, "SIMRecords finalized");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.878 -0400", hash_original_method = "1C495E4F05849546A87C14B5D6E64BED", hash_generated_method = "DFF28017DADF7D467DB4EC42F6547305")
     protected void onRadioOffOrNotAvailable() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         imsi = null;
         msisdn = null;
         voiceMailNum = null;
@@ -148,61 +151,62 @@ public class SIMRecords extends IccRecords {
         phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ALPHA, null);
         phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ISO_COUNTRY, null);
         recordsRequested = false;
-        // ---------- Original Method ----------
-        //imsi = null;
-        //msisdn = null;
-        //voiceMailNum = null;
-        //countVoiceMessages = 0;
-        //mncLength = UNINITIALIZED;
-        //iccid = null;
-        //spnDisplayCondition = -1;
-        //efMWIS = null;
-        //efCPHS_MWI = null;
-        //spdiNetworks = null;
-        //pnnHomeName = null;
-        //adnCache.reset();
-        //phone.setSystemProperty(PROPERTY_ICC_OPERATOR_NUMERIC, null);
-        //phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ALPHA, null);
-        //phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ISO_COUNTRY, null);
-        //recordsRequested = false;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.879 -0400", hash_original_method = "3D26DD60574339032566256F631F5DB8", hash_generated_method = "DC3BF66C3E0B0A7B072A54FD2C43AE57")
     @Override
     public String getIMSI() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1560255634 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1560255634 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1560255634 = imsi;
-        varB4EAC82CA7396A68D541C85D26508E83_1560255634.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1560255634.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1560255634;
-        // ---------- Original Method ----------
-        //return imsi;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.880 -0400", hash_original_method = "9D42E73ED1AA846035EF94EBFAAEA8F6", hash_generated_method = "ED1701BFFCA032A6099F4C40973EBF36")
     public String getMsisdnNumber() {
-        String varB4EAC82CA7396A68D541C85D26508E83_768962132 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_768962132 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_768962132 = msisdn;
-        varB4EAC82CA7396A68D541C85D26508E83_768962132.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_768962132.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_768962132;
-        // ---------- Original Method ----------
-        //return msisdn;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.881 -0400", hash_original_method = "F96F62208A76C85F8691E193053EFC74", hash_generated_method = "757447D5198DCEACFDA593E927809AD4")
     @Override
     public UsimServiceTable getUsimServiceTable() {
-        UsimServiceTable varB4EAC82CA7396A68D541C85D26508E83_1037974135 = null; //Variable for return #1
+        UsimServiceTable varB4EAC82CA7396A68D541C85D26508E83_1037974135 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1037974135 = mUsimServiceTable;
-        varB4EAC82CA7396A68D541C85D26508E83_1037974135.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1037974135.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1037974135;
-        // ---------- Original Method ----------
-        //return mUsimServiceTable;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.881 -0400", hash_original_method = "7B16D051528D70BC1665C409BE0B92A5", hash_generated_method = "6D93835E811DE359D8EF935EC46B9D1D")
     public void setMsisdnNumber(String alphaTag, String number,
             Message onComplete) {
@@ -215,38 +219,39 @@ public class SIMRecords extends IccRecords {
         addTaint(alphaTag.getTaint());
         addTaint(number.getTaint());
         addTaint(onComplete.getTaint());
-        // ---------- Original Method ----------
-        //msisdn = number;
-        //msisdnTag = alphaTag;
-        //if(DBG) log("Set MSISDN: " + msisdnTag + " " +  "xxxxxxx");
-        //AdnRecord adn = new AdnRecord(msisdnTag, msisdn);
-        //new AdnRecordLoader(phone).updateEF(adn, EF_MSISDN, EF_EXT1, 1, null,
-                //obtainMessage(EVENT_SET_MSISDN_DONE, onComplete));
+        
+        
+        
+        
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.882 -0400", hash_original_method = "E32EFED28CC433860D178485CFB4EEE4", hash_generated_method = "CA1449A6BA0CF18F5ECB4F5DA716BEBA")
     public String getMsisdnAlphaTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1141984702 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1141984702 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1141984702 = msisdnTag;
-        varB4EAC82CA7396A68D541C85D26508E83_1141984702.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1141984702.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1141984702;
-        // ---------- Original Method ----------
-        //return msisdnTag;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.883 -0400", hash_original_method = "77FFC0D98CD3CB2629C7F6A7D27E6FFF", hash_generated_method = "9CBF5276134A7217DB4EF34052C70ED4")
     public String getVoiceMailNumber() {
-        String varB4EAC82CA7396A68D541C85D26508E83_464295153 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_464295153 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_464295153 = voiceMailNum;
-        varB4EAC82CA7396A68D541C85D26508E83_464295153.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_464295153.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_464295153;
-        // ---------- Original Method ----------
-        //return voiceMailNum;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.883 -0400", hash_original_method = "BBA59ED68AB83B35B5A29C09BCF3BE4C", hash_generated_method = "38417C56F3FDC2AE58D441C58C80C8AA")
     public void setVoiceMailNumber(String alphaTag, String voiceNumber,
             Message onComplete) {
@@ -254,7 +259,7 @@ public class SIMRecords extends IccRecords {
             AsyncResult.forMessage((onComplete)).exception =
                     new IccVmFixedException("Voicemail number is fixed by operator");
             onComplete.sendToTarget();
-        } //End block
+        } 
         newVoiceMailNum = voiceNumber;
         newVoiceMailTag = alphaTag;
         AdnRecord adn = new AdnRecord(newVoiceMailTag, newVoiceMailNum);
@@ -262,47 +267,48 @@ public class SIMRecords extends IccRecords {
             new AdnRecordLoader(phone).updateEF(adn, EF_MBDN, EF_EXT6,
                     mailboxIndex, null,
                     obtainMessage(EVENT_SET_MBDN_DONE, onComplete));
-        } //End block
+        } 
         {
             boolean var49EDB32946FB23439D4ABEF334DBE8F4_449718295 = (isCphsMailboxEnabled());
             {
                 new AdnRecordLoader(phone).updateEF(adn, EF_MAILBOX_CPHS,
                     EF_EXT1, 1, null,
                     obtainMessage(EVENT_SET_CPHS_MAILBOX_DONE, onComplete));
-            } //End block
+            } 
             {
                 AsyncResult.forMessage((onComplete)).exception =
                     new IccVmNotSupportedException("Update SIM voice mailbox error");
                 onComplete.sendToTarget();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(alphaTag.getTaint());
         addTaint(voiceNumber.getTaint());
         addTaint(onComplete.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.884 -0400", hash_original_method = "5A91F4662DCD8CEE6B5E6A046B7A4ABC", hash_generated_method = "91A4A3399403859059A739256592860D")
     public String getVoiceMailAlphaTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1844780881 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1844780881 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1844780881 = voiceMailTag;
-        varB4EAC82CA7396A68D541C85D26508E83_1844780881.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1844780881.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1844780881;
-        // ---------- Original Method ----------
-        //return voiceMailTag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.885 -0400", hash_original_method = "75BFE4AFE8A3A09F4E38976A214FAF70", hash_generated_method = "ED2C812C930BC414206CF263F8543B3E")
     public void setVoiceMessageWaiting(int line, int countWaiting) {
         {
             countWaiting = -1;
-        } //End block
+        } 
         {
             countWaiting = 0xff;
-        } //End block
+        } 
         countVoiceMessages = countWaiting;
         phone.notifyMessageWaitingIndicator();
         try 
@@ -312,27 +318,27 @@ public class SIMRecords extends IccRecords {
                                     | (countVoiceMessages == 0 ? 0 : 1));
                 {
                     efMWIS[1] = 0;
-                } //End block
+                } 
                 {
                     efMWIS[1] = (byte) countWaiting;
-                } //End block
+                } 
                 phone.getIccFileHandler().updateEFLinearFixed(
                     EF_MWIS, 1, efMWIS, null,
                     obtainMessage (EVENT_UPDATE_DONE, EF_MWIS));
-            } //End block
+            } 
             {
                 efCPHS_MWI[0] = (byte)((efCPHS_MWI[0] & 0xf0)
                             | (countVoiceMessages == 0 ? 0x5 : 0xa));
                 phone.getIccFileHandler().updateEFTransparent(
                     EF_VOICE_MAIL_INDICATOR_CPHS, efCPHS_MWI,
                     obtainMessage (EVENT_UPDATE_DONE, EF_VOICE_MAIL_INDICATOR_CPHS));
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ArrayIndexOutOfBoundsException ex)
         { }
         addTaint(line);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -341,11 +347,12 @@ public class SIMRecords extends IccRecords {
     public boolean getVoiceCallForwardingFlag() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1647930140 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1647930140;
-        // ---------- Original Method ----------
-        //return callForwardingEnabled;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.886 -0400", hash_original_method = "141082A6B47AB008F9D1AEFE7E7266B0", hash_generated_method = "7D470D879E0BE633F0C906E6A355A40F")
     @Override
     public void setVoiceCallForwardingFlag(int line, boolean enable) {
@@ -356,93 +363,96 @@ public class SIMRecords extends IccRecords {
             {
                 {
                     mEfCfis[1] |= 1;
-                } //End block
+                } 
                 {
                     mEfCfis[1] &= 0xfe;
-                } //End block
+                } 
                 phone.getIccFileHandler().updateEFLinearFixed(
                         EF_CFIS, 1, mEfCfis, null,
                         obtainMessage (EVENT_UPDATE_DONE, EF_CFIS));
-            } //End block
+            } 
             {
                 {
                     mEfCff[0] = (byte) ((mEfCff[0] & CFF_LINE1_RESET)
                             | CFF_UNCONDITIONAL_ACTIVE);
-                } //End block
+                } 
                 {
                     mEfCff[0] = (byte) ((mEfCff[0] & CFF_LINE1_RESET)
                             | CFF_UNCONDITIONAL_DEACTIVE);
-                } //End block
+                } 
                 phone.getIccFileHandler().updateEFTransparent(
                         EF_CFF_CPHS, mEfCff,
                         obtainMessage (EVENT_UPDATE_DONE, EF_CFF_CPHS));
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ArrayIndexOutOfBoundsException ex)
         { }
         addTaint(line);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.886 -0400", hash_original_method = "3729AD4A21CE0EDB3800382FBE3F87EC", hash_generated_method = "7912B183DD2EB642356E1DD30C60FE60")
     public void onRefresh(boolean fileChanged, int[] fileList) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             fetchSimRecords();
-        } //End block
+        } 
         addTaint(fileChanged);
         addTaint(fileList[0]);
-        // ---------- Original Method ----------
-        //if (fileChanged) {
-            //fetchSimRecords();
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.887 -0400", hash_original_method = "7E03E5ED77A0C757F38448793B936037", hash_generated_method = "F465C874A02EC2C70BF940A57072AF5D")
     @Override
     public String getOperatorNumeric() {
-        String varB4EAC82CA7396A68D541C85D26508E83_964642249 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_245775431 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1991624694 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_964642249 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_245775431 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1991624694 = null; 
         {
             Log.d(LOG_TAG, "getOperatorNumeric: IMSI == null");
             varB4EAC82CA7396A68D541C85D26508E83_964642249 = null;
-        } //End block
+        } 
         {
             Log.d(LOG_TAG, "getSIMOperatorNumeric: bad mncLength");
             varB4EAC82CA7396A68D541C85D26508E83_245775431 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1991624694 = imsi.substring(0, 3 + mncLength);
-        String varA7E53CE21691AB073D9660D615818899_500184012; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_500184012; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_500184012 = varB4EAC82CA7396A68D541C85D26508E83_964642249;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_500184012 = varB4EAC82CA7396A68D541C85D26508E83_245775431;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_500184012 = varB4EAC82CA7396A68D541C85D26508E83_1991624694;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_500184012.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_500184012.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_500184012;
-        // ---------- Original Method ----------
-        //if (imsi == null) {
-            //Log.d(LOG_TAG, "getOperatorNumeric: IMSI == null");
-            //return null;
-        //}
-        //if (mncLength == UNINITIALIZED || mncLength == UNKNOWN) {
-            //Log.d(LOG_TAG, "getSIMOperatorNumeric: bad mncLength");
-            //return null;
-        //}
-        //return imsi.substring(0, 3 + mncLength);
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.271 -0400", hash_original_method = "5FA65278BC21B747191DBEA87B814DA9", hash_generated_method = "C4CEA5E6D5DE9F995A999EB8091F4467")
     public void handleMessage(Message msg) {
         AsyncResult ar;
@@ -451,33 +461,33 @@ public class SIMRecords extends IccRecords {
         boolean isRecordLoadResponse = false;
         try 
         {
-            //Begin case EVENT_SIM_READY 
+            
             onSimReady();
-            //End case EVENT_SIM_READY 
-            //Begin case EVENT_RADIO_OFF_OR_NOT_AVAILABLE 
+            
+            
             onRadioOffOrNotAvailable();
-            //End case EVENT_RADIO_OFF_OR_NOT_AVAILABLE 
-            //Begin case EVENT_GET_IMSI_DONE 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_IMSI_DONE 
-            //Begin case EVENT_GET_IMSI_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_IMSI_DONE 
-            //Begin case EVENT_GET_IMSI_DONE 
+            
+            
             imsi = (String) ar.result;
-            //End case EVENT_GET_IMSI_DONE 
-            //Begin case EVENT_GET_IMSI_DONE 
+            
+            
             {
                 boolean var830EA25F7AEDECBD15578DB21CAE52BA_1180645789 = (imsi != null && (imsi.length() < 6 || imsi.length() > 15));
                 {
                     imsi = null;
-                } //End block
-            } //End collapsed parenthetic
-            //End case EVENT_GET_IMSI_DONE 
-            //Begin case EVENT_GET_IMSI_DONE 
+                } 
+            } 
+            
+            
             Log.d(LOG_TAG, "IMSI: " +  "xxxxxxx");
-            //End case EVENT_GET_IMSI_DONE 
-            //Begin case EVENT_GET_IMSI_DONE 
+            
+            
             {
                 boolean varAA3845750DE6743614D7EDB45EFDA541_1042252715 = (((mncLength == UNKNOWN) || (mncLength == 2)) &&
                         ((imsi != null) && (imsi.length() >= 6)));
@@ -490,51 +500,51 @@ public class SIMRecords extends IccRecords {
                                 boolean var7D3F2C7003F88A96589D9955600C8CFE_338658983 = (mccmnc.equals(mccmncCode));
                                 {
                                     mncLength = 3;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-            //End case EVENT_GET_IMSI_DONE 
-            //Begin case EVENT_GET_IMSI_DONE 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
             {
                 try 
                 {
                     int mcc = Integer.parseInt(imsi.substring(0,3));
                     mncLength = MccTable.smallestDigitsMccForMnc(mcc);
-                } //End block
+                } 
                 catch (NumberFormatException e)
                 {
                     mncLength = UNKNOWN;
-                } //End block
-            } //End block
-            //End case EVENT_GET_IMSI_DONE 
-            //Begin case EVENT_GET_IMSI_DONE 
+                } 
+            } 
+            
+            
             {
                 MccTable.updateMccMncConfiguration(phone, imsi.substring(0, 3 + mncLength));
-            } //End block
-            //End case EVENT_GET_IMSI_DONE 
-            //Begin case EVENT_GET_IMSI_DONE 
+            } 
+            
+            
             phone.mIccCard.broadcastIccStateChangedIntent(
                         SimCard.INTENT_VALUE_ICC_IMSI, null);
-            //End case EVENT_GET_IMSI_DONE 
-            //Begin case EVENT_GET_MBI_DONE 
+            
+            
             boolean isValidMbdn;
-            //End case EVENT_GET_MBI_DONE 
-            //Begin case EVENT_GET_MBI_DONE 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_MBI_DONE 
-            //Begin case EVENT_GET_MBI_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_MBI_DONE 
-            //Begin case EVENT_GET_MBI_DONE 
+            
+            
             data = (byte[]) ar.result;
-            //End case EVENT_GET_MBI_DONE 
-            //Begin case EVENT_GET_MBI_DONE 
+            
+            
             isValidMbdn = false;
-            //End case EVENT_GET_MBI_DONE 
-            //Begin case EVENT_GET_MBI_DONE 
+            
+            
             {
                 Log.d(LOG_TAG, "EF_MBI: " +
                             IccUtils.bytesToHexString(data));
@@ -542,36 +552,36 @@ public class SIMRecords extends IccRecords {
                 {
                     Log.d(LOG_TAG, "Got valid mailbox number for MBDN");
                     isValidMbdn = true;
-                } //End block
-            } //End block
-            //End case EVENT_GET_MBI_DONE 
-            //Begin case EVENT_GET_MBI_DONE 
+                } 
+            } 
+            
+            
             recordsToLoad += 1;
-            //End case EVENT_GET_MBI_DONE 
-            //Begin case EVENT_GET_MBI_DONE 
+            
+            
             {
                 new AdnRecordLoader(phone).loadFromEF(EF_MBDN, EF_EXT6,
                             mailboxIndex, obtainMessage(EVENT_GET_MBDN_DONE));
-            } //End block
+            } 
             {
                 new AdnRecordLoader(phone).loadFromEF(EF_MAILBOX_CPHS,
                             EF_EXT1, 1,
                             obtainMessage(EVENT_GET_CPHS_MAILBOX_DONE));
-            } //End block
-            //End case EVENT_GET_MBI_DONE 
-            //Begin case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
+            } 
+            
+            
             voiceMailNum = null;
-            //End case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
-            //Begin case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
+            
+            
             voiceMailTag = null;
-            //End case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
-            //Begin case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
-            //Begin case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
-            //Begin case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
+            
+            
             {
                 Log.d(LOG_TAG, "Invalid or missing EF"
                         + ((msg.what == EVENT_GET_CPHS_MAILBOX_DONE) ? "[MAILBOX]" : "[MBDN]"));
@@ -580,17 +590,17 @@ public class SIMRecords extends IccRecords {
                     new AdnRecordLoader(phone).loadFromEF(
                                 EF_MAILBOX_CPHS, EF_EXT1, 1,
                                 obtainMessage(EVENT_GET_CPHS_MAILBOX_DONE));
-                } //End block
-            } //End block
-            //End case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
-            //Begin case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
+                } 
+            } 
+            
+            
             adn = (AdnRecord)ar.result;
-            //End case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
-            //Begin case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
+            
+            
             Log.d(LOG_TAG, "VM: " + adn +
                         ((msg.what == EVENT_GET_CPHS_MAILBOX_DONE) ? " EF[MAILBOX]" : " EF[MBDN]"));
-            //End case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
-            //Begin case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
+            
+            
             {
                 boolean var6E610A8EE073A016325ACA342BC92511_467372891 = (adn.isEmpty() && msg.what == EVENT_GET_MBDN_DONE);
                 {
@@ -598,126 +608,126 @@ public class SIMRecords extends IccRecords {
                     new AdnRecordLoader(phone).loadFromEF(
                             EF_MAILBOX_CPHS, EF_EXT1, 1,
                             obtainMessage(EVENT_GET_CPHS_MAILBOX_DONE));
-                } //End block
-            } //End collapsed parenthetic
-            //End case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
-            //Begin case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
+                } 
+            } 
+            
+            
             voiceMailNum = adn.getNumber();
-            //End case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
-            //Begin case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
+            
+            
             voiceMailTag = adn.getAlphaTag();
-            //End case EVENT_GET_CPHS_MAILBOX_DONE EVENT_GET_MBDN_DONE 
-            //Begin case EVENT_GET_MSISDN_DONE 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_MSISDN_DONE 
-            //Begin case EVENT_GET_MSISDN_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_MSISDN_DONE 
-            //Begin case EVENT_GET_MSISDN_DONE 
+            
+            
             {
                 Log.d(LOG_TAG, "Invalid or missing EF[MSISDN]");
-            } //End block
-            //End case EVENT_GET_MSISDN_DONE 
-            //Begin case EVENT_GET_MSISDN_DONE 
+            } 
+            
+            
             adn = (AdnRecord)ar.result;
-            //End case EVENT_GET_MSISDN_DONE 
-            //Begin case EVENT_GET_MSISDN_DONE 
+            
+            
             msisdn = adn.getNumber();
-            //End case EVENT_GET_MSISDN_DONE 
-            //Begin case EVENT_GET_MSISDN_DONE 
+            
+            
             msisdnTag = adn.getAlphaTag();
-            //End case EVENT_GET_MSISDN_DONE 
-            //Begin case EVENT_GET_MSISDN_DONE 
+            
+            
             Log.d(LOG_TAG, "MSISDN: " +  "xxxxxxx");
-            //End case EVENT_GET_MSISDN_DONE 
-            //Begin case EVENT_SET_MSISDN_DONE 
+            
+            
             isRecordLoadResponse = false;
-            //End case EVENT_SET_MSISDN_DONE 
-            //Begin case EVENT_SET_MSISDN_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_SET_MSISDN_DONE 
-            //Begin case EVENT_SET_MSISDN_DONE 
+            
+            
             {
                 AsyncResult.forMessage(((Message) ar.userObj)).exception
                             = ar.exception;
                 ((Message) ar.userObj).sendToTarget();
-            } //End block
-            //End case EVENT_SET_MSISDN_DONE 
-            //Begin case EVENT_GET_MWIS_DONE 
+            } 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_MWIS_DONE 
-            //Begin case EVENT_GET_MWIS_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_MWIS_DONE 
-            //Begin case EVENT_GET_MWIS_DONE 
+            
+            
             data = (byte[])ar.result;
-            //End case EVENT_GET_MWIS_DONE 
-            //Begin case EVENT_GET_MWIS_DONE 
+            
+            
             Log.d(LOG_TAG, "EF_MWIS: " +
                    IccUtils.bytesToHexString(data));
-            //End case EVENT_GET_MWIS_DONE 
-            //Begin case EVENT_GET_MWIS_DONE 
+            
+            
             efMWIS = data;
-            //End case EVENT_GET_MWIS_DONE 
-            //Begin case EVENT_GET_MWIS_DONE 
+            
+            
             {
                 Log.d(LOG_TAG, "SIMRecords: Uninitialized record MWIS");
-            } //End block
-            //End case EVENT_GET_MWIS_DONE 
-            //Begin case EVENT_GET_MWIS_DONE 
+            } 
+            
+            
             boolean voiceMailWaiting = ((data[0] & 0x01) != 0);
-            //End case EVENT_GET_MWIS_DONE 
-            //Begin case EVENT_GET_MWIS_DONE 
+            
+            
             countVoiceMessages = data[1] & 0xff;
-            //End case EVENT_GET_MWIS_DONE 
-            //Begin case EVENT_GET_MWIS_DONE 
+            
+            
             {
                 countVoiceMessages = -1;
-            } //End block
-            //End case EVENT_GET_MWIS_DONE 
-            //Begin case EVENT_GET_MWIS_DONE 
+            } 
+            
+            
             phone.notifyMessageWaitingIndicator();
-            //End case EVENT_GET_MWIS_DONE 
-            //Begin case EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE 
-            //Begin case EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE 
-            //Begin case EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE 
+            
+            
             data = (byte[])ar.result;
-            //End case EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE 
-            //Begin case EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE 
+            
+            
             efCPHS_MWI = data;
-            //End case EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE 
-            //Begin case EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE 
+            
+            
             {
                 int indicator = (int)(data[0] & 0xf);
                 {
                     countVoiceMessages = -1;
-                } //End block
+                } 
                 {
                     countVoiceMessages = 0;
-                } //End block
+                } 
                 phone.notifyMessageWaitingIndicator();
-            } //End block
-            //End case EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE 
-            //Begin case EVENT_GET_ICCID_DONE 
+            } 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_ICCID_DONE 
-            //Begin case EVENT_GET_ICCID_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_ICCID_DONE 
-            //Begin case EVENT_GET_ICCID_DONE 
+            
+            
             data = (byte[])ar.result;
-            //End case EVENT_GET_ICCID_DONE 
-            //Begin case EVENT_GET_ICCID_DONE 
+            
+            
             iccid = IccUtils.bcdToString(data, 0, data.length);
-            //End case EVENT_GET_ICCID_DONE 
-            //Begin case EVENT_GET_ICCID_DONE 
+            
+            
             Log.d(LOG_TAG, "iccid: " + iccid);
-            //End case EVENT_GET_ICCID_DONE 
-            //Begin case EVENT_GET_AD_DONE 
+            
+            
             try 
             {
                 isRecordLoadResponse = true;
@@ -727,15 +737,15 @@ public class SIMRecords extends IccRecords {
                             IccUtils.bytesToHexString(data));
                 {
                     Log.d(LOG_TAG, "SIMRecords: Corrupt AD data on SIM");
-                } //End block
+                } 
                 {
                     Log.d(LOG_TAG, "SIMRecords: MNC length not present in EF_AD");
-                } //End block
+                } 
                 mncLength = (int)data[3] & 0xf;
                 {
                     mncLength = UNKNOWN;
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 {
@@ -750,94 +760,94 @@ public class SIMRecords extends IccRecords {
                                     boolean var84BDA82F133A3C6DFBD3E95E8608ED9C_1658156434 = (mccmnc.equals(mccmncCode));
                                     {
                                         mncLength = 3;
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     {
                         try 
                         {
                             int mcc = Integer.parseInt(imsi.substring(0,3));
                             mncLength = MccTable.smallestDigitsMccForMnc(mcc);
-                        } //End block
+                        } 
                         catch (NumberFormatException e)
                         {
                             mncLength = UNKNOWN;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         mncLength = UNKNOWN;
                         Log.d(LOG_TAG, "SIMRecords: MNC length not present in EF_AD");
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     MccTable.updateMccMncConfiguration(phone, imsi.substring(0, 3 + mncLength));
-                } //End block
-            } //End block
-            //End case EVENT_GET_AD_DONE 
-            //Begin case EVENT_GET_SPN_DONE 
+                } 
+            } 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_SPN_DONE 
-            //Begin case EVENT_GET_SPN_DONE 
+            
+            
             ar = (AsyncResult) msg.obj;
-            //End case EVENT_GET_SPN_DONE 
-            //Begin case EVENT_GET_SPN_DONE 
+            
+            
             getSpnFsm(false, ar);
-            //End case EVENT_GET_SPN_DONE 
-            //Begin case EVENT_GET_CFF_DONE 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_CFF_DONE 
-            //Begin case EVENT_GET_CFF_DONE 
+            
+            
             ar = (AsyncResult) msg.obj;
-            //End case EVENT_GET_CFF_DONE 
-            //Begin case EVENT_GET_CFF_DONE 
+            
+            
             data = (byte[]) ar.result;
-            //End case EVENT_GET_CFF_DONE 
-            //Begin case EVENT_GET_CFF_DONE 
+            
+            
             Log.d(LOG_TAG, "EF_CFF_CPHS: " +
                         IccUtils.bytesToHexString(data));
-            //End case EVENT_GET_CFF_DONE 
-            //Begin case EVENT_GET_CFF_DONE 
+            
+            
             mEfCff = data;
-            //End case EVENT_GET_CFF_DONE 
-            //Begin case EVENT_GET_CFF_DONE 
+            
+            
             {
                 callForwardingEnabled =
                         ((data[0] & CFF_LINE1_MASK) == CFF_UNCONDITIONAL_ACTIVE);
                 phone.notifyCallForwardingIndicator();
-            } //End block
-            //End case EVENT_GET_CFF_DONE 
-            //Begin case EVENT_GET_SPDI_DONE 
+            } 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_SPDI_DONE 
-            //Begin case EVENT_GET_SPDI_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_SPDI_DONE 
-            //Begin case EVENT_GET_SPDI_DONE 
+            
+            
             data = (byte[])ar.result;
-            //End case EVENT_GET_SPDI_DONE 
-            //Begin case EVENT_GET_SPDI_DONE 
+            
+            
             parseEfSpdi(data);
-            //End case EVENT_GET_SPDI_DONE 
-            //Begin case EVENT_UPDATE_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_UPDATE_DONE 
-            //Begin case EVENT_GET_PNN_DONE 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_PNN_DONE 
-            //Begin case EVENT_GET_PNN_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_PNN_DONE 
-            //Begin case EVENT_GET_PNN_DONE 
+            
+            
             data = (byte[])ar.result;
-            //End case EVENT_GET_PNN_DONE 
-            //Begin case EVENT_GET_PNN_DONE 
+            
+            
             SimTlv tlv = new SimTlv(data, 0, data.length);
-            //End case EVENT_GET_PNN_DONE 
-            //Begin case EVENT_GET_PNN_DONE 
+            
+            
             {
                 boolean varCB644CCA004D571A2231D5557A3D0712_600031 = (tlv.isValidObject());
                 tlv.nextObject();
@@ -848,87 +858,87 @@ public class SIMRecords extends IccRecords {
                             pnnHomeName
                             = IccUtils.networkNameToString(
                                 tlv.getData(), 0, tlv.getData().length);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-            //End case EVENT_GET_PNN_DONE 
-            //Begin case EVENT_GET_ALL_SMS_DONE 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_ALL_SMS_DONE 
-            //Begin case EVENT_GET_ALL_SMS_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_ALL_SMS_DONE 
-            //Begin case EVENT_GET_ALL_SMS_DONE 
+            
+            
             handleSmses((ArrayList) ar.result);
-            //End case EVENT_GET_ALL_SMS_DONE 
-            //Begin case EVENT_SMS_ON_SIM 
+            
+            
             isRecordLoadResponse = false;
-            //End case EVENT_SMS_ON_SIM 
-            //Begin case EVENT_SMS_ON_SIM 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_SMS_ON_SIM 
-            //Begin case EVENT_SMS_ON_SIM 
+            
+            
             int[] index = (int[])ar.result;
-            //End case EVENT_SMS_ON_SIM 
-            //Begin case EVENT_SMS_ON_SIM 
+            
+            
             {
                 Log.d(LOG_TAG, "READ EF_SMS RECORD index=" + index[0]);
                 phone.getIccFileHandler().loadEFLinearFixed(EF_SMS,index[0],
                             obtainMessage(EVENT_GET_SMS_DONE));
-            } //End block
-            //End case EVENT_SMS_ON_SIM 
-            //Begin case EVENT_GET_SMS_DONE 
+            } 
+            
+            
             isRecordLoadResponse = false;
-            //End case EVENT_GET_SMS_DONE 
-            //Begin case EVENT_GET_SMS_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_SMS_DONE 
-            //Begin case EVENT_GET_SMS_DONE 
+            
+            
             {
                 handleSms((byte[])ar.result);
-            } //End block
-            //End case EVENT_GET_SMS_DONE 
-            //Begin case EVENT_GET_SST_DONE 
+            } 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_SST_DONE 
-            //Begin case EVENT_GET_SST_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_SST_DONE 
-            //Begin case EVENT_GET_SST_DONE 
+            
+            
             data = (byte[])ar.result;
-            //End case EVENT_GET_SST_DONE 
-            //Begin case EVENT_GET_SST_DONE 
+            
+            
             mUsimServiceTable = new UsimServiceTable(data);
-            //End case EVENT_GET_SST_DONE 
-            //Begin case EVENT_GET_SST_DONE 
+            
+            
             log("SST: " + mUsimServiceTable);
-            //End case EVENT_GET_SST_DONE 
-            //Begin case EVENT_GET_INFO_CPHS_DONE 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_INFO_CPHS_DONE 
-            //Begin case EVENT_GET_INFO_CPHS_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_INFO_CPHS_DONE 
-            //Begin case EVENT_GET_INFO_CPHS_DONE 
+            
+            
             mCphsInfo = (byte[])ar.result;
-            //End case EVENT_GET_INFO_CPHS_DONE 
-            //Begin case EVENT_GET_INFO_CPHS_DONE 
+            
+            
             log("iCPHS: " + IccUtils.bytesToHexString(mCphsInfo));
-            //End case EVENT_GET_INFO_CPHS_DONE 
-            //Begin case EVENT_SET_MBDN_DONE 
+            
+            
             isRecordLoadResponse = false;
-            //End case EVENT_SET_MBDN_DONE 
-            //Begin case EVENT_SET_MBDN_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_SET_MBDN_DONE 
-            //Begin case EVENT_SET_MBDN_DONE 
+            
+            
             {
                 voiceMailNum = newVoiceMailNum;
                 voiceMailTag = newVoiceMailTag;
-            } //End block
-            //End case EVENT_SET_MBDN_DONE 
-            //Begin case EVENT_SET_MBDN_DONE 
+            } 
+            
+            
             {
                 boolean varDB6C50FA3E4BE068EAA8443655261A1E_796197387 = (isCphsMailboxEnabled());
                 {
@@ -940,186 +950,190 @@ public class SIMRecords extends IccRecords {
                         ((Message) ar.userObj).sendToTarget();
                         log("Callback with MBDN successful.");
                         onCphsCompleted = null;
-                    } //End block
+                    } 
                     new AdnRecordLoader(phone).
                             updateEF(adn, EF_MAILBOX_CPHS, EF_EXT1, 1, null,
                             obtainMessage(EVENT_SET_CPHS_MAILBOX_DONE,
                                     onCphsCompleted));
-                } //End block
+                } 
                 {
                     {
                         AsyncResult.forMessage(((Message) ar.userObj)).exception
                                 = ar.exception;
                         ((Message) ar.userObj).sendToTarget();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            //End case EVENT_SET_MBDN_DONE 
-            //Begin case EVENT_SET_CPHS_MAILBOX_DONE 
+                    } 
+                } 
+            } 
+            
+            
             isRecordLoadResponse = false;
-            //End case EVENT_SET_CPHS_MAILBOX_DONE 
-            //Begin case EVENT_SET_CPHS_MAILBOX_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_SET_CPHS_MAILBOX_DONE 
-            //Begin case EVENT_SET_CPHS_MAILBOX_DONE 
+            
+            
             {
                 voiceMailNum = newVoiceMailNum;
                 voiceMailTag = newVoiceMailTag;
-            } //End block
+            } 
             {
                 log("Set CPHS MailBox with exception: "
                             + ar.exception);
-            } //End block
-            //End case EVENT_SET_CPHS_MAILBOX_DONE 
-            //Begin case EVENT_SET_CPHS_MAILBOX_DONE 
+            } 
+            
+            
             {
                 log("Callback with CPHS MB successful.");
                 AsyncResult.forMessage(((Message) ar.userObj)).exception
                             = ar.exception;
                 ((Message) ar.userObj).sendToTarget();
-            } //End block
-            //End case EVENT_SET_CPHS_MAILBOX_DONE 
-            //Begin case EVENT_SIM_REFRESH 
+            } 
+            
+            
             isRecordLoadResponse = false;
-            //End case EVENT_SIM_REFRESH 
-            //Begin case EVENT_SIM_REFRESH 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_SIM_REFRESH 
-            //Begin case EVENT_SIM_REFRESH 
+            
+            
             log("Sim REFRESH with exception: " + ar.exception);
-            //End case EVENT_SIM_REFRESH 
-            //Begin case EVENT_SIM_REFRESH 
+            
+            
             {
                 handleSimRefresh((int[])(ar.result));
-            } //End block
-            //End case EVENT_SIM_REFRESH 
-            //Begin case EVENT_GET_CFIS_DONE 
+            } 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_CFIS_DONE 
-            //Begin case EVENT_GET_CFIS_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_CFIS_DONE 
-            //Begin case EVENT_GET_CFIS_DONE 
+            
+            
             data = (byte[])ar.result;
-            //End case EVENT_GET_CFIS_DONE 
-            //Begin case EVENT_GET_CFIS_DONE 
+            
+            
             Log.d(LOG_TAG, "EF_CFIS: " +
                    IccUtils.bytesToHexString(data));
-            //End case EVENT_GET_CFIS_DONE 
-            //Begin case EVENT_GET_CFIS_DONE 
+            
+            
             mEfCfis = data;
-            //End case EVENT_GET_CFIS_DONE 
-            //Begin case EVENT_GET_CFIS_DONE 
+            
+            
             callForwardingEnabled = ((data[1] & 0x01) != 0);
-            //End case EVENT_GET_CFIS_DONE 
-            //Begin case EVENT_GET_CFIS_DONE 
+            
+            
             phone.notifyCallForwardingIndicator();
-            //End case EVENT_GET_CFIS_DONE 
-            //Begin case EVENT_GET_CSP_CPHS_DONE 
+            
+            
             isRecordLoadResponse = true;
-            //End case EVENT_GET_CSP_CPHS_DONE 
-            //Begin case EVENT_GET_CSP_CPHS_DONE 
+            
+            
             ar = (AsyncResult)msg.obj;
-            //End case EVENT_GET_CSP_CPHS_DONE 
-            //Begin case EVENT_GET_CSP_CPHS_DONE 
+            
+            
             data = (byte[])ar.result;
-            //End case EVENT_GET_CSP_CPHS_DONE 
-            //Begin case EVENT_GET_CSP_CPHS_DONE 
+            
+            
             handleEfCspData(data);
-            //End case EVENT_GET_CSP_CPHS_DONE 
-            //Begin case default 
+            
+            
             super.handleMessage(msg);
-            //End case default 
-        } //End block
+            
+        } 
         catch (RuntimeException exc)
         { }
         finally 
         {
             {
                 onRecordLoaded();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.272 -0400", hash_original_method = "E530DF481CB4FAA0037A4FE4ABD87373", hash_generated_method = "CF925A38E53DE3280062F2C1678C27C7")
     private void handleFileUpdate(int efid) {
-        //Begin case EF_MBDN 
+        
         new AdnRecordLoader(phone).loadFromEF(EF_MBDN, EF_EXT6,
                         mailboxIndex, obtainMessage(EVENT_GET_MBDN_DONE));
-        //End case EF_MBDN 
-        //Begin case EF_MAILBOX_CPHS 
+        
+        
         new AdnRecordLoader(phone).loadFromEF(EF_MAILBOX_CPHS, EF_EXT1,
                         1, obtainMessage(EVENT_GET_CPHS_MAILBOX_DONE));
-        //End case EF_MAILBOX_CPHS 
-        //Begin case EF_CSP_CPHS 
+        
+        
         phone.getIccFileHandler().loadEFTransparent(EF_CSP_CPHS,
                         obtainMessage(EVENT_GET_CSP_CPHS_DONE));
-        //End case EF_CSP_CPHS 
-        //Begin case default 
+        
+        
         adnCache.reset();
-        //End case default 
-        //Begin case default 
+        
+        
         fetchSimRecords();
-        //End case default 
+        
         addTaint(efid);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.272 -0400", hash_original_method = "CBD0F454D52453FACC84E0D26FD9E162", hash_generated_method = "6F7CBFE63EFAA218F12FC0D0A1526E69")
     private void handleSimRefresh(int[] result) {
         {
             log("handleSimRefresh without input");
-        } //End block
-        //Begin case CommandsInterface.SIM_REFRESH_FILE_UPDATED 
+        } 
+        
         log("handleSimRefresh with SIM_REFRESH_FILE_UPDATED");
-        //End case CommandsInterface.SIM_REFRESH_FILE_UPDATED 
-        //Begin case CommandsInterface.SIM_REFRESH_FILE_UPDATED 
+        
+        
         int efid = result[1];
-        //End case CommandsInterface.SIM_REFRESH_FILE_UPDATED 
-        //Begin case CommandsInterface.SIM_REFRESH_FILE_UPDATED 
+        
+        
         handleFileUpdate(efid);
-        //End case CommandsInterface.SIM_REFRESH_FILE_UPDATED 
-        //Begin case CommandsInterface.SIM_REFRESH_INIT 
+        
+        
         log("handleSimRefresh with SIM_REFRESH_INIT");
-        //End case CommandsInterface.SIM_REFRESH_INIT 
-        //Begin case CommandsInterface.SIM_REFRESH_INIT 
+        
+        
         adnCache.reset();
-        //End case CommandsInterface.SIM_REFRESH_INIT 
-        //Begin case CommandsInterface.SIM_REFRESH_INIT 
+        
+        
         fetchSimRecords();
-        //End case CommandsInterface.SIM_REFRESH_INIT 
-        //Begin case CommandsInterface.SIM_REFRESH_RESET 
+        
+        
         log("handleSimRefresh with SIM_REFRESH_RESET");
-        //End case CommandsInterface.SIM_REFRESH_RESET 
-        //Begin case CommandsInterface.SIM_REFRESH_RESET 
+        
+        
         phone.mCM.setRadioPower(false, null);
-        //End case CommandsInterface.SIM_REFRESH_RESET 
-        //Begin case default 
+        
+        
         log("handleSimRefresh with unknown operation");
-        //End case default 
+        
         addTaint(result[0]);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.272 -0400", hash_original_method = "0F425E7BAA03121C5111F3872E01B168", hash_generated_method = "D0B11F033A6A0BF726B093FA97601524")
     protected int dispatchGsmMessage(SmsMessageBase message) {
         int varA522FA72751E3B8CCDC974402CB11ED3_282000223 = (phone.mSMS.dispatchMessage(message));
         addTaint(message.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_500356706 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_500356706;
-        // ---------- Original Method ----------
-        //return phone.mSMS.dispatchMessage(message);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.273 -0400", hash_original_method = "3974DFF11A620863F24401AEED15BD51", hash_generated_method = "FAE6B8C5FC7BDD8B08AEE377367766D1")
     private void handleSms(byte[] ba) {
         Log.d("ENF", "status : " + ba[0]);
@@ -1129,21 +1143,22 @@ public class SIMRecords extends IccRecords {
             System.arraycopy(ba, 1, pdu, 0, n - 1);
             SmsMessage message = SmsMessage.createFromPdu(pdu);
             dispatchGsmMessage(message);
-        } //End block
+        } 
         addTaint(ba[0]);
-        // ---------- Original Method ----------
-        //if (ba[0] != 0)
-            //Log.d("ENF", "status : " + ba[0]);
-        //if (ba[0] == 3) {
-            //int n = ba.length;
-            //byte[] pdu = new byte[n - 1];
-            //System.arraycopy(ba, 1, pdu, 0, n - 1);
-            //SmsMessage message = SmsMessage.createFromPdu(pdu);
-            //dispatchGsmMessage(message);
-        //}
+        
+        
+            
+        
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.273 -0400", hash_original_method = "AAB2EB039B628CD9C66D57B4359C7EA6", hash_generated_method = "3A25439F4BB0217C6FEA131B643E0419")
     private void handleSmses(ArrayList messages) {
         int count = messages.size();
@@ -1161,89 +1176,93 @@ public class SIMRecords extends IccRecords {
                     {
                         phone.getIccFileHandler().updateEFLinearFixed(EF_SMS,
                             i, ba, null, obtainMessage(EVENT_MARK_SMS_READ_DONE, i));
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(messages.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.275 -0400", hash_original_method = "2DE8400081AD5D0DFDE4A5A335B40E41", hash_generated_method = "15D741D51610FD01EF0C6B9D8351E8E7")
     protected void onRecordLoaded() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         recordsToLoad -= 1;
         {
             onAllRecordsLoaded();
-        } //End block
+        } 
         {
             recordsToLoad = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //recordsToLoad -= 1;
-        //if (recordsToLoad == 0 && recordsRequested == true) {
-            //onAllRecordsLoaded();
-        //} else if (recordsToLoad < 0) {
-            //Log.e(LOG_TAG, "SIMRecords: recordsToLoad <0, programmer error suspected");
-            //recordsToLoad = 0;
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.276 -0400", hash_original_method = "66CB4A941BE4FC702CDC8E50BFF0F26C", hash_generated_method = "055036E05FF5744D28E05ED9E2BF3DCE")
     protected void onAllRecordsLoaded() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         Log.d(LOG_TAG, "SIMRecords: record load complete");
         String operator = getOperatorNumeric();
         phone.setSystemProperty(PROPERTY_ICC_OPERATOR_NUMERIC, operator);
         {
             phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ISO_COUNTRY,
                     MccTable.countryCodeForMcc(Integer.parseInt(imsi.substring(0,3))));
-        } //End block
+        } 
         setVoiceMailByCountry(operator);
         setSpnFromConfig(operator);
         recordsLoadedRegistrants.notifyRegistrants(
             new AsyncResult(null, null, null));
         phone.mIccCard.broadcastIccStateChangedIntent(
                 SimCard.INTENT_VALUE_ICC_LOADED, null);
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "SIMRecords: record load complete");
-        //String operator = getOperatorNumeric();
-        //phone.setSystemProperty(PROPERTY_ICC_OPERATOR_NUMERIC, operator);
-        //if (imsi != null) {
-            //phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ISO_COUNTRY,
-                    //MccTable.countryCodeForMcc(Integer.parseInt(imsi.substring(0,3))));
-        //}
-        //else {
-            //Log.e("SIM", "[SIMRecords] onAllRecordsLoaded: imsi is NULL!");
-        //}
-        //setVoiceMailByCountry(operator);
-        //setSpnFromConfig(operator);
-        //recordsLoadedRegistrants.notifyRegistrants(
-            //new AsyncResult(null, null, null));
-        //phone.mIccCard.broadcastIccStateChangedIntent(
-                //SimCard.INTENT_VALUE_ICC_LOADED, null);
+        
+        
+        
+        
+        
+            
+                    
+        
+        
+            
+        
+        
+        
+        
+            
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.277 -0400", hash_original_method = "F5FC22B4152F67EB826E6610A6C9072B", hash_generated_method = "0ABB72C5A95B01F4F06EE096C3961E2C")
     private void setSpnFromConfig(String carrier) {
         {
             boolean var421905470EB904055FD073228F381009_687234600 = (mSpnOverride.containsCarrier(carrier));
             {
                 spn = mSpnOverride.getSpn(carrier);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(carrier.getTaint());
-        // ---------- Original Method ----------
-        //if (mSpnOverride.containsCarrier(carrier)) {
-            //spn = mSpnOverride.getSpn(carrier);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.278 -0400", hash_original_method = "0A1C3646AC6E538340751C4EFB011D4A", hash_generated_method = "4B5DD787EAA14E40702454D2782D4911")
     private void setVoiceMailByCountry(String spn) {
         {
@@ -1252,31 +1271,33 @@ public class SIMRecords extends IccRecords {
                 isVoiceMailFixed = true;
                 voiceMailNum = mVmConfig.getVoiceMailNumber(spn);
                 voiceMailTag = mVmConfig.getVoiceMailTag(spn);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(spn.getTaint());
-        // ---------- Original Method ----------
-        //if (mVmConfig.containsCarrier(spn)) {
-            //isVoiceMailFixed = true;
-            //voiceMailNum = mVmConfig.getVoiceMailNumber(spn);
-            //voiceMailTag = mVmConfig.getVoiceMailTag(spn);
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.280 -0400", hash_original_method = "9A96815ED791357C0C0DD55806DDDE67", hash_generated_method = "F27FE7CD305FE9A5DC0CE32EB9377D86")
     public void onSimReady() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         phone.mIccCard.broadcastIccStateChangedIntent(
                 SimCard.INTENT_VALUE_ICC_READY, null);
         fetchSimRecords();
-        // ---------- Original Method ----------
-        //phone.mIccCard.broadcastIccStateChangedIntent(
-                //SimCard.INTENT_VALUE_ICC_READY, null);
-        //fetchSimRecords();
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.281 -0400", hash_original_method = "267620266787F01EC9F0E5E0AE15B613", hash_generated_method = "440A40E7179FC91A15744508075743DC")
     protected void fetchSimRecords() {
         recordsRequested = true;
@@ -1301,7 +1322,7 @@ public class SIMRecords extends IccRecords {
         iccFh.loadEFTransparent(EF_CSP_CPHS,obtainMessage(EVENT_GET_CSP_CPHS_DONE));
         {
             iccFh.loadEFLinearFixedAll(EF_SMS, obtainMessage(EVENT_GET_ALL_SMS_DONE));
-        } //End block
+        } 
         {
             String sms = "0107912160130310f20404d0110041007030208054832b0120"
                          + "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
@@ -1312,61 +1333,63 @@ public class SIMRecords extends IccRecords {
             byte[] ba = IccUtils.hexStringToBytes(sms);
             iccFh.updateEFLinearFixed(EF_SMS, 1, ba, null,
                             obtainMessage(EVENT_MARK_SMS_READ_DONE, 1));
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.281 -0400", hash_original_method = "409DDAA47064BEED68B0319934A64CD2", hash_generated_method = "9DAEDAF73B4A4D8FDCA55D6DE1E351EC")
     @Override
     public int getDisplayRule(String plmn) {
         int rule;
         {
             rule = SPN_RULE_SHOW_PLMN;
-        } //End block
+        } 
         {
             boolean var93D8A656618E8CC215C13DA82B4B7F6B_2045450016 = (isOnMatchingPlmn(plmn));
             {
                 rule = SPN_RULE_SHOW_SPN;
                 {
                     rule |= SPN_RULE_SHOW_PLMN;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 rule = SPN_RULE_SHOW_PLMN;
                 {
                     rule |= SPN_RULE_SHOW_SPN;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(plmn.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1624317429 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1624317429;
-        // ---------- Original Method ----------
-        //int rule;
-        //if (spn == null || spnDisplayCondition == -1) {
-            //rule = SPN_RULE_SHOW_PLMN;
-        //} else if (isOnMatchingPlmn(plmn)) {
-            //rule = SPN_RULE_SHOW_SPN;
-            //if ((spnDisplayCondition & 0x01) == 0x01) {
-                //rule |= SPN_RULE_SHOW_PLMN;
-            //}
-        //} else {
-            //rule = SPN_RULE_SHOW_PLMN;
-            //if ((spnDisplayCondition & 0x02) == 0x00) {
-                //rule |= SPN_RULE_SHOW_SPN;
-            //}
-        //}
-        //return rule;
+        
+        
+        
+            
+        
+            
+            
+                
+            
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.291 -0400", hash_original_method = "94EB8BB16DAD2AA5FAF871DB9935C4E1", hash_generated_method = "29D26533AD0D6AF81ACC0A8DE2C7CF19")
     private boolean isOnMatchingPlmn(String plmn) {
         {
             boolean var0FF98638333814881B939E2E997568A8_1285237761 = (plmn.equals(getOperatorNumeric()));
-        } //End collapsed parenthetic
+        } 
         {
             {
                 Iterator<String> var2DB1354A1A9DE1AE97AA82A80F522F26_630432573 = (spdiNetworks).iterator();
@@ -1375,46 +1398,47 @@ public class SIMRecords extends IccRecords {
                 {
                     {
                         boolean var41CE6775E09518F8198A5D804233075F_840953428 = (plmn.equals(spdiNet));
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(plmn.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1589429165 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1589429165;
-        // ---------- Original Method ----------
-        //if (plmn == null) return false;
-        //if (plmn.equals(getOperatorNumeric())) {
-            //return true;
-        //}
-        //if (spdiNetworks != null) {
-            //for (String spdiNet : spdiNetworks) {
-                //if (plmn.equals(spdiNet)) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+        
+        
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.293 -0400", hash_original_method = "CF95CAB3FC09F3005867C57538604F5A", hash_generated_method = "0694F46C0760348BD60538CF2BA8A465")
     private void getSpnFsm(boolean start, AsyncResult ar) {
         byte[] data;
         {
             spnState = Get_Spn_Fsm_State.INIT;
-        } //End block
-        //Begin case INIT 
+        } 
+        
         spn = null;
-        //End case INIT 
-        //Begin case INIT 
+        
+        
         phone.getIccFileHandler().loadEFTransparent( EF_SPN,
                         obtainMessage(EVENT_GET_SPN_DONE));
-        //End case INIT 
-        //Begin case INIT 
+        
+        
         spnState = Get_Spn_Fsm_State.READ_SPN_3GPP;
-        //End case INIT 
-        //Begin case READ_SPN_3GPP 
+        
+        
         {
             data = (byte[]) ar.result;
             spnDisplayCondition = 0xff & data[0];
@@ -1423,15 +1447,15 @@ public class SIMRecords extends IccRecords {
                             + " spnDisplayCondition: " + spnDisplayCondition);
             phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ALPHA, spn);
             spnState = Get_Spn_Fsm_State.IDLE;
-        } //End block
+        } 
         {
             phone.getIccFileHandler().loadEFTransparent( EF_SPN_CPHS,
                             obtainMessage(EVENT_GET_SPN_DONE));
             spnState = Get_Spn_Fsm_State.READ_SPN_CPHS;
             spnDisplayCondition = -1;
-        } //End block
-        //End case READ_SPN_3GPP 
-        //Begin case READ_SPN_CPHS 
+        } 
+        
+        
         {
             data = (byte[]) ar.result;
             spn = IccUtils.adnStringFieldToString(
@@ -1439,38 +1463,39 @@ public class SIMRecords extends IccRecords {
             log("Load EF_SPN_CPHS: " + spn);
             phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ALPHA, spn);
             spnState = Get_Spn_Fsm_State.IDLE;
-        } //End block
+        } 
         {
             phone.getIccFileHandler().loadEFTransparent(
                             EF_SPN_SHORT_CPHS, obtainMessage(EVENT_GET_SPN_DONE));
             spnState = Get_Spn_Fsm_State.READ_SPN_SHORT_CPHS;
-        } //End block
-        //End case READ_SPN_CPHS 
-        //Begin case READ_SPN_SHORT_CPHS 
+        } 
+        
+        
         {
             data = (byte[]) ar.result;
             spn = IccUtils.adnStringFieldToString(
                             data, 0, data.length - 1);
             log("Load EF_SPN_SHORT_CPHS: " + spn);
             phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ALPHA, spn);
-        } //End block
+        } 
         {
             log("No SPN loaded in either CHPS or 3GPP");
-        } //End block
-        //End case READ_SPN_SHORT_CPHS 
-        //Begin case READ_SPN_SHORT_CPHS 
+        } 
+        
+        
         spnState = Get_Spn_Fsm_State.IDLE;
-        //End case READ_SPN_SHORT_CPHS 
-        //Begin case default 
+        
+        
         spnState = Get_Spn_Fsm_State.IDLE;
-        //End case default 
+        
         addTaint(start);
         addTaint(ar.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.294 -0400", hash_original_method = "2AE095A71557CBF993C4F4933FD42467", hash_generated_method = "99591E4D5B9A55B3AAF9C1955ACED425")
     private void parseEfSpdi(byte[] data) {
         SimTlv tlv = new SimTlv(data, 0, data.length);
@@ -1483,16 +1508,16 @@ public class SIMRecords extends IccRecords {
                     boolean var06676F894B0CE0AFE5FFB22891957C33_530572213 = (tlv.getTag() == TAG_SPDI);
                     {
                         tlv = new SimTlv(tlv.getData(), 0, tlv.getData().length);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var737E9541DB57851299264A8B92818535_1601551955 = (tlv.getTag() == TAG_SPDI_PLMN_LIST);
                     {
                         plmnEntries = tlv.getData();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         spdiNetworks = new ArrayList<String>(plmnEntries.length / 3);
         {
             int i = 0;
@@ -1505,13 +1530,13 @@ public class SIMRecords extends IccRecords {
                     {
                         log("EF_SPDI network: " + plmnCode);
                         spdiNetworks.add(plmnCode);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(data[0]);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1519,26 +1544,28 @@ public class SIMRecords extends IccRecords {
     private boolean isCphsMailboxEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1399925829 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1399925829;
-        // ---------- Original Method ----------
-        //if (mCphsInfo == null)  return false;
-        //return ((mCphsInfo[1] & CPHS_SST_MBN_MASK) == CPHS_SST_MBN_ENABLED );
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.295 -0400", hash_original_method = "A8BE9816664C9DE6B42ACDFC7DA8D2D5", hash_generated_method = "80BD34BE1E1004B1AFCEA0216220D37A")
     protected void log(String s) {
         Log.d(LOG_TAG, "[SIMRecords] " + s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[SIMRecords] " + s);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.296 -0400", hash_original_method = "747DCE9A0C1CA0D85263EB0A5CECAE60", hash_generated_method = "9369A1FBEE7E35E0523A47E129631C96")
     protected void loge(String s) {
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "[SIMRecords] " + s);
+        
+        
     }
 
     
@@ -1546,11 +1573,12 @@ public class SIMRecords extends IccRecords {
     public boolean isCspPlmnEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_153257505 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_153257505;
-        // ---------- Original Method ----------
-        //return mCspPlmnEnabled;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.297 -0400", hash_original_method = "5509D297F6B8CC0BD321C284BD8D086E", hash_generated_method = "DFD224299304ECBB1ABC55273DB7E080")
     private void handleEfCspData(byte[] data) {
         int usedCspGroups = data.length / 2;
@@ -1562,17 +1590,17 @@ public class SIMRecords extends IccRecords {
                 {
                     {
                         mCspPlmnEnabled = true;
-                    } //End block
+                    } 
                     {
                         mCspPlmnEnabled = false;
                         phone.setNetworkSelectionModeAutomatic(null);
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(data[0]);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

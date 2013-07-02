@@ -1,11 +1,11 @@
 package android.location;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -41,7 +41,7 @@ public class Criteria implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.198 -0400", hash_original_method = "56D25A23ADD1F3C93CB7F827DA5DFB02", hash_generated_method = "3EFEE149D939DD3A0C00E9F5B56EE461")
     public  Criteria() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -56,30 +56,31 @@ public class Criteria implements Parcelable {
         mBearingRequired = criteria.mBearingRequired;
         mSpeedRequired = criteria.mSpeedRequired;
         mCostAllowed = criteria.mCostAllowed;
-        // ---------- Original Method ----------
-        //mHorizontalAccuracy = criteria.mHorizontalAccuracy;
-        //mVerticalAccuracy = criteria.mVerticalAccuracy;
-        //mSpeedAccuracy = criteria.mSpeedAccuracy;
-        //mBearingAccuracy = criteria.mBearingAccuracy;
-        //mPowerRequirement = criteria.mPowerRequirement;
-        //mAltitudeRequired = criteria.mAltitudeRequired;
-        //mBearingRequired = criteria.mBearingRequired;
-        //mSpeedRequired = criteria.mSpeedRequired;
-        //mCostAllowed = criteria.mCostAllowed;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.199 -0400", hash_original_method = "F7CDA1AEB030C3E960B93BFBD444E4B1", hash_generated_method = "E8749775A6252B6CEA2B3082A99CCBF8")
     public void setHorizontalAccuracy(int accuracy) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("accuracy=" + accuracy);
-        } //End block
+        } 
         mHorizontalAccuracy = accuracy;
-        // ---------- Original Method ----------
-        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
-            //throw new IllegalArgumentException("accuracy=" + accuracy);
-        //}
-        //mHorizontalAccuracy = accuracy;
+        
+        
+            
+        
+        
     }
 
     
@@ -87,22 +88,23 @@ public class Criteria implements Parcelable {
     public int getHorizontalAccuracy() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_298580329 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_298580329;
-        // ---------- Original Method ----------
-        //return mHorizontalAccuracy;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.199 -0400", hash_original_method = "A234CD6EE2124B9B176BE728225522DE", hash_generated_method = "168D8439CFFEE937D49C7BF7E30F44B4")
     public void setVerticalAccuracy(int accuracy) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("accuracy=" + accuracy);
-        } //End block
+        } 
         mVerticalAccuracy = accuracy;
-        // ---------- Original Method ----------
-        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
-            //throw new IllegalArgumentException("accuracy=" + accuracy);
-        //}
-        //mVerticalAccuracy = accuracy;
+        
+        
+            
+        
+        
     }
 
     
@@ -110,22 +112,23 @@ public class Criteria implements Parcelable {
     public int getVerticalAccuracy() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_474651999 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_474651999;
-        // ---------- Original Method ----------
-        //return mVerticalAccuracy;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.200 -0400", hash_original_method = "7DA41913012CB9940E77425DCF2D2731", hash_generated_method = "CB9C9C478342B4624B1115D0372BCDEE")
     public void setSpeedAccuracy(int accuracy) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("accuracy=" + accuracy);
-        } //End block
+        } 
         mSpeedAccuracy = accuracy;
-        // ---------- Original Method ----------
-        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
-            //throw new IllegalArgumentException("accuracy=" + accuracy);
-        //}
-        //mSpeedAccuracy = accuracy;
+        
+        
+            
+        
+        
     }
 
     
@@ -133,22 +136,23 @@ public class Criteria implements Parcelable {
     public int getSpeedAccuracy() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716302242 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716302242;
-        // ---------- Original Method ----------
-        //return mSpeedAccuracy;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.201 -0400", hash_original_method = "7D38552738106C949C369F73EBC07BAD", hash_generated_method = "416287711FC5E0955426ED7533EDC32B")
     public void setBearingAccuracy(int accuracy) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("accuracy=" + accuracy);
-        } //End block
+        } 
         mBearingAccuracy = accuracy;
-        // ---------- Original Method ----------
-        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
-            //throw new IllegalArgumentException("accuracy=" + accuracy);
-        //}
-        //mBearingAccuracy = accuracy;
+        
+        
+            
+        
+        
     }
 
     
@@ -156,32 +160,33 @@ public class Criteria implements Parcelable {
     public int getBearingAccuracy() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1927686867 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1927686867;
-        // ---------- Original Method ----------
-        //return mBearingAccuracy;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.202 -0400", hash_original_method = "F2B3644622DFC41E9C3EF3B6293185D6", hash_generated_method = "1032FF480DDEF47453FA060D6D10F4C2")
     public void setAccuracy(int accuracy) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("accuracy=" + accuracy);
-        } //End block
+        } 
         {
             mHorizontalAccuracy = ACCURACY_HIGH;
-        } //End block
+        } 
         {
             mHorizontalAccuracy = ACCURACY_LOW;
-        } //End block
+        } 
         addTaint(accuracy);
-        // ---------- Original Method ----------
-        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_COARSE) {
-            //throw new IllegalArgumentException("accuracy=" + accuracy);
-        //}
-        //if (accuracy == ACCURACY_FINE) {
-            //mHorizontalAccuracy = ACCURACY_HIGH;
-        //} else {
-            //mHorizontalAccuracy = ACCURACY_LOW;
-        //}
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -189,26 +194,27 @@ public class Criteria implements Parcelable {
     public int getAccuracy() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1407154540 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1407154540;
-        // ---------- Original Method ----------
-        //if (mHorizontalAccuracy >= ACCURACY_HIGH) {
-            //return ACCURACY_FINE;
-        //} else {
-            //return ACCURACY_COARSE;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.204 -0400", hash_original_method = "91C2D38607A4F9F70C65E1811565AAD2", hash_generated_method = "3704BC2673B57DB61DA0B07ED4AB4CCE")
     public void setPowerRequirement(int level) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("level=" + level);
-        } //End block
+        } 
         mPowerRequirement = level;
-        // ---------- Original Method ----------
-        //if (level < NO_REQUIREMENT || level > POWER_HIGH) {
-            //throw new IllegalArgumentException("level=" + level);
-        //}
-        //mPowerRequirement = level;
+        
+        
+            
+        
+        
     }
 
     
@@ -216,16 +222,16 @@ public class Criteria implements Parcelable {
     public int getPowerRequirement() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_767987971 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_767987971;
-        // ---------- Original Method ----------
-        //return mPowerRequirement;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.204 -0400", hash_original_method = "F89CAE570739AB3028DA707B2893B5C5", hash_generated_method = "443B9DB636371A2B7B02DF32D76227F5")
     public void setCostAllowed(boolean costAllowed) {
         mCostAllowed = costAllowed;
-        // ---------- Original Method ----------
-        //mCostAllowed = costAllowed;
+        
+        
     }
 
     
@@ -233,16 +239,16 @@ public class Criteria implements Parcelable {
     public boolean isCostAllowed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_913937874 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_913937874;
-        // ---------- Original Method ----------
-        //return mCostAllowed;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.205 -0400", hash_original_method = "22D4EC779FEBEFBD7A04B35673FD6242", hash_generated_method = "524AA438AB1E72E536604C84A2FEE4DD")
     public void setAltitudeRequired(boolean altitudeRequired) {
         mAltitudeRequired = altitudeRequired;
-        // ---------- Original Method ----------
-        //mAltitudeRequired = altitudeRequired;
+        
+        
     }
 
     
@@ -250,16 +256,16 @@ public class Criteria implements Parcelable {
     public boolean isAltitudeRequired() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_151687576 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_151687576;
-        // ---------- Original Method ----------
-        //return mAltitudeRequired;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.206 -0400", hash_original_method = "6A27513D0E2583F73F00042D0FDBD9E3", hash_generated_method = "8525723E1D70E6CFA504642A945EA5E3")
     public void setSpeedRequired(boolean speedRequired) {
         mSpeedRequired = speedRequired;
-        // ---------- Original Method ----------
-        //mSpeedRequired = speedRequired;
+        
+        
     }
 
     
@@ -267,16 +273,16 @@ public class Criteria implements Parcelable {
     public boolean isSpeedRequired() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_511689564 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_511689564;
-        // ---------- Original Method ----------
-        //return mSpeedRequired;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.206 -0400", hash_original_method = "B68158C6EC7F405A349EABCD21ABA300", hash_generated_method = "9B323C768409D641E011EE1EA543FD58")
     public void setBearingRequired(boolean bearingRequired) {
         mBearingRequired = bearingRequired;
-        // ---------- Original Method ----------
-        //mBearingRequired = bearingRequired;
+        
+        
     }
 
     
@@ -284,8 +290,8 @@ public class Criteria implements Parcelable {
     public boolean isBearingRequired() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_619323178 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_619323178;
-        // ---------- Original Method ----------
-        //return mBearingRequired;
+        
+        
     }
 
     
@@ -293,11 +299,12 @@ public class Criteria implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1064427878 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1064427878;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.207 -0400", hash_original_method = "F656AD17D4B37BFDE841686B6FE00CD9", hash_generated_method = "C28FA2939785A6D59F56795BF92C71CD")
     public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeInt(mHorizontalAccuracy);
@@ -311,16 +318,16 @@ public class Criteria implements Parcelable {
         parcel.writeInt(mCostAllowed ? 1 : 0);
         addTaint(parcel.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //parcel.writeInt(mHorizontalAccuracy);
-        //parcel.writeInt(mVerticalAccuracy);
-        //parcel.writeInt(mSpeedAccuracy);
-        //parcel.writeInt(mBearingAccuracy);
-        //parcel.writeInt(mPowerRequirement);
-        //parcel.writeInt(mAltitudeRequired ? 1 : 0);
-        //parcel.writeInt(mBearingRequired ? 1 : 0);
-        //parcel.writeInt(mSpeedRequired ? 1 : 0);
-        //parcel.writeInt(mCostAllowed ? 1 : 0);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -373,7 +380,7 @@ public class Criteria implements Parcelable {
             return new Criteria[size];
         }
     };
-    // orphaned legacy method
+    
     public Criteria createFromParcel(Parcel in) {
             Criteria c = new Criteria();
             c.mHorizontalAccuracy = in.readInt();
@@ -388,7 +395,7 @@ public class Criteria implements Parcelable {
             return c;
         }
     
-    // orphaned legacy method
+    
     public Criteria[] newArray(int size) {
             return new Criteria[size];
         }

@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.extensions;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.javax.sip.header.extensions.*;
@@ -18,7 +18,7 @@ public class JoinParser extends ParametersParser {
     public  JoinParser(String callID) {
         super(callID);
         addTaint(callID.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,13 +26,14 @@ public class JoinParser extends ParametersParser {
     protected  JoinParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.001 -0400", hash_original_method = "66B10ECC601C3201E5F156FEACCA3B45", hash_generated_method = "47E5A44773A5D5FCFB4AD23B75E2F54E")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_182543705 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_182543705 = null; 
         dbg_enter("parse");
         try 
         {
@@ -44,32 +45,33 @@ public class JoinParser extends ParametersParser {
             super.parse(join);
             join.setCallId(callId);
             varB4EAC82CA7396A68D541C85D26508E83_182543705 = join;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_182543705.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_182543705.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_182543705;
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("parse");
-        //try {
-            //headerName(TokenTypes.JOIN_TO);
-            //Join join = new Join();
-            //this.lexer.SPorHT();
-            //String callId = lexer.byteStringNoSemicolon();
-            //this.lexer.SPorHT();
-            //super.parse(join);
-            //join.setCallId(callId);
-            //return join;
-        //} finally {
-            //if (debug)
-                //dbg_leave("parse");
-        //}
+        
+        
+            
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void main(String args[]) throws ParseException {
         String to[] =
             {   "Join: 12345th5z8z\n",

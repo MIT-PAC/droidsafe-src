@@ -1,11 +1,11 @@
 package com.android.internal.telephony.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.AsyncResult;
 import android.os.Handler;
@@ -33,10 +33,11 @@ public final class IsimUiccRecords implements IsimRecords {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.980 -0400", hash_original_method = "A25994306BA700F1CD652F8E8E6DC6B3", hash_generated_method = "A25994306BA700F1CD652F8E8E6DC6B3")
     public IsimUiccRecords ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.981 -0400", hash_original_method = "65EA4CC7473CC6604A3DE8B9A82FCC11", hash_generated_method = "7CFBBAD4E8DCC7865E5EBB356ECD8BD0")
     public int fetchIsimRecords(IccFileHandler iccFh, Handler h) {
         iccFh.loadEFTransparent(EF_IMPI, h.obtainMessage(
@@ -49,17 +50,18 @@ public final class IsimUiccRecords implements IsimRecords {
         addTaint(h.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_839590873 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_839590873;
-        // ---------- Original Method ----------
-        //iccFh.loadEFTransparent(EF_IMPI, h.obtainMessage(
-                //IccRecords.EVENT_GET_ICC_RECORD_DONE, new EfIsimImpiLoaded()));
-        //iccFh.loadEFLinearFixedAll(EF_IMPU, h.obtainMessage(
-                //IccRecords.EVENT_GET_ICC_RECORD_DONE, new EfIsimImpuLoaded()));
-        //iccFh.loadEFTransparent(EF_DOMAIN, h.obtainMessage(
-                //IccRecords.EVENT_GET_ICC_RECORD_DONE, new EfIsimDomainLoaded()));
-        //return 3;
+        
+        
+                
+        
+                
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String isimTlvToString(byte[] record) {
         SimTlv tlv = new SimTlv(record, 0, record.length);
         do {
@@ -76,49 +78,50 @@ public final class IsimUiccRecords implements IsimRecords {
      void log(String s) {
         Log.d(LOG_TAG, "[ISIM] " + s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //if (DBG) Log.d(LOG_TAG, "[ISIM] " + s);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.982 -0400", hash_original_method = "D22606291D00D3FF31B88F1A658749A5", hash_generated_method = "8C7FFEF49AD2265CA109C917D25E8D3D")
      void loge(String s) {
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //if (DBG) Log.e(LOG_TAG, "[ISIM] " + s);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.982 -0400", hash_original_method = "0C48887FF3A7960AF9ADE0B3DADCC487", hash_generated_method = "39C97CE94834141F066EC5B44E85555B")
     public String getIsimImpi() {
-        String varB4EAC82CA7396A68D541C85D26508E83_314820319 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_314820319 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_314820319 = mIsimImpi;
-        varB4EAC82CA7396A68D541C85D26508E83_314820319.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_314820319.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_314820319;
-        // ---------- Original Method ----------
-        //return mIsimImpi;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.983 -0400", hash_original_method = "4243CC1C17FF1186628D392C9E7E1EB1", hash_generated_method = "6EB3D26A635D2E8718FEDA5F3FFA256E")
     public String getIsimDomain() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1932871839 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1932871839 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1932871839 = mIsimDomain;
-        varB4EAC82CA7396A68D541C85D26508E83_1932871839.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1932871839.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1932871839;
-        // ---------- Original Method ----------
-        //return mIsimDomain;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.984 -0400", hash_original_method = "9090A8F6ED42A9AE952A72E5A0840C23", hash_generated_method = "BA139C01BF97ED122E5D11ED010E3888")
     public String[] getIsimImpu() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_2066471481 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_2066471481 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2066471481 = (mIsimImpu != null) ? mIsimImpu.clone() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_2066471481.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2066471481.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2066471481;
-        // ---------- Original Method ----------
-        //return (mIsimImpu != null) ? mIsimImpu.clone() : null;
+        
+        
     }
 
     
@@ -127,32 +130,32 @@ public final class IsimUiccRecords implements IsimRecords {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.984 -0400", hash_original_method = "1648BD81357865C3A3E303A2434827DF", hash_generated_method = "1648BD81357865C3A3E303A2434827DF")
         public EfIsimImpiLoaded ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.984 -0400", hash_original_method = "81740E578FCC01A298E59A120ACB7A20", hash_generated_method = "7178950E2FDE4FE01AD79B06F0E23470")
         public String getEfName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1950306373 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1950306373 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1950306373 = "EF_ISIM_IMPI";
-            varB4EAC82CA7396A68D541C85D26508E83_1950306373.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1950306373.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1950306373;
-            // ---------- Original Method ----------
-            //return "EF_ISIM_IMPI";
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.985 -0400", hash_original_method = "90A14C4AAFF433EE7EAC0700F3BB549F", hash_generated_method = "2FF6A27BB0D3A86CA06715A5D8ED73A4")
         public void onRecordLoaded(AsyncResult ar) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             byte[] data = (byte[]) ar.result;
             mIsimImpi = isimTlvToString(data);
             log("EF_IMPI=" + mIsimImpi);
             addTaint(ar.getTaint());
-            // ---------- Original Method ----------
-            //byte[] data = (byte[]) ar.result;
-            //mIsimImpi = isimTlvToString(data);
-            //if (DUMP_RECORDS) log("EF_IMPI=" + mIsimImpi);
+            
+            
+            
+            
         }
 
         
@@ -165,24 +168,24 @@ public final class IsimUiccRecords implements IsimRecords {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.985 -0400", hash_original_method = "D36761040F857F140719B8DB530580FC", hash_generated_method = "D36761040F857F140719B8DB530580FC")
         public EfIsimImpuLoaded ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.986 -0400", hash_original_method = "6ACADD4D30DF15849A74BDE374634092", hash_generated_method = "4381216760DA5FDA7B19C349F405C2F1")
         public String getEfName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1668018052 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1668018052 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1668018052 = "EF_ISIM_IMPU";
-            varB4EAC82CA7396A68D541C85D26508E83_1668018052.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1668018052.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1668018052;
-            // ---------- Original Method ----------
-            //return "EF_ISIM_IMPU";
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.994 -0400", hash_original_method = "6EEA897801EC1809D035B3B23B9DD12A", hash_generated_method = "F87D2EEB35466391C7E9794184481DA9")
         public void onRecordLoaded(AsyncResult ar) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             ArrayList<byte[]> impuList = (ArrayList<byte[]>) ar.result;
             log("EF_IMPU record count: " + impuList.size());
             mIsimImpu = new String[impuList.size()];
@@ -195,19 +198,19 @@ public final class IsimUiccRecords implements IsimRecords {
                     String impu = isimTlvToString(identity);
                     log("EF_IMPU[" + i + "]=" + impu);
                     mIsimImpu[i++] = impu;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(ar.getTaint());
-            // ---------- Original Method ----------
-            //ArrayList<byte[]> impuList = (ArrayList<byte[]>) ar.result;
-            //if (DBG) log("EF_IMPU record count: " + impuList.size());
-            //mIsimImpu = new String[impuList.size()];
-            //int i = 0;
-            //for (byte[] identity : impuList) {
-                //String impu = isimTlvToString(identity);
-                //if (DUMP_RECORDS) log("EF_IMPU[" + i + "]=" + impu);
-                //mIsimImpu[i++] = impu;
-            //}
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -220,32 +223,32 @@ public final class IsimUiccRecords implements IsimRecords {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.994 -0400", hash_original_method = "0E7AAEB3F527509DE6629FF8F10D67B7", hash_generated_method = "0E7AAEB3F527509DE6629FF8F10D67B7")
         public EfIsimDomainLoaded ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.995 -0400", hash_original_method = "42CE7E28C1D31526FC06B2AB64B01116", hash_generated_method = "0AD1B22CE87A1053F6F8FA77CD60519E")
         public String getEfName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_507251467 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_507251467 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_507251467 = "EF_ISIM_DOMAIN";
-            varB4EAC82CA7396A68D541C85D26508E83_507251467.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_507251467.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_507251467;
-            // ---------- Original Method ----------
-            //return "EF_ISIM_DOMAIN";
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.995 -0400", hash_original_method = "7C79F77549AD4915107C48F1E050653A", hash_generated_method = "D192C690D8427E8A1C501811A198DFE7")
         public void onRecordLoaded(AsyncResult ar) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             byte[] data = (byte[]) ar.result;
             mIsimDomain = isimTlvToString(data);
             log("EF_DOMAIN=" + mIsimDomain);
             addTaint(ar.getTaint());
-            // ---------- Original Method ----------
-            //byte[] data = (byte[]) ar.result;
-            //mIsimDomain = isimTlvToString(data);
-            //if (DUMP_RECORDS) log("EF_DOMAIN=" + mIsimDomain);
+            
+            
+            
+            
         }
 
         

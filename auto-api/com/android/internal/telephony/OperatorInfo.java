@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -33,11 +33,11 @@ public class OperatorInfo implements Parcelable {
         this.operatorAlphaShort = operatorAlphaShort;
         this.operatorNumeric = operatorNumeric;
         this.state = state;
-        // ---------- Original Method ----------
-        //this.operatorAlphaLong = operatorAlphaLong;
-        //this.operatorAlphaShort = operatorAlphaShort;
-        //this.operatorNumeric = operatorNumeric;
-        //this.state = state;
+        
+        
+        
+        
+        
     }
 
     
@@ -52,54 +52,55 @@ public class OperatorInfo implements Parcelable {
         addTaint(operatorAlphaShort.getTaint());
         addTaint(operatorNumeric.getTaint());
         addTaint(stateString.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.318 -0400", hash_original_method = "B51FA3C3765E71F08A241B1C8BA79C96", hash_generated_method = "1CF12C97C5F9A3EAB10934BFD15CD016")
     public String getOperatorAlphaLong() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1250520272 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1250520272 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1250520272 = operatorAlphaLong;
-        varB4EAC82CA7396A68D541C85D26508E83_1250520272.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1250520272.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1250520272;
-        // ---------- Original Method ----------
-        //return operatorAlphaLong;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.318 -0400", hash_original_method = "A8269EAEF0CA69A19C2F3D33BBF8152B", hash_generated_method = "6B4ED1DA5AB4FDACD4A3818A92E99B85")
     public String getOperatorAlphaShort() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1285069017 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1285069017 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1285069017 = operatorAlphaShort;
-        varB4EAC82CA7396A68D541C85D26508E83_1285069017.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1285069017.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1285069017;
-        // ---------- Original Method ----------
-        //return operatorAlphaShort;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.318 -0400", hash_original_method = "06DBB2F851A1F540C7CE21639E1F11FC", hash_generated_method = "89A11062C5D0CD123F2B63A5AF7D724F")
     public String getOperatorNumeric() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1185635879 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1185635879 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1185635879 = operatorNumeric;
-        varB4EAC82CA7396A68D541C85D26508E83_1185635879.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1185635879.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1185635879;
-        // ---------- Original Method ----------
-        //return operatorNumeric;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.319 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "2580255178973BBD21138857068BBD3F")
     public State getState() {
-        State varB4EAC82CA7396A68D541C85D26508E83_1427492831 = null; //Variable for return #1
+        State varB4EAC82CA7396A68D541C85D26508E83_1427492831 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1427492831 = state;
-        varB4EAC82CA7396A68D541C85D26508E83_1427492831.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1427492831.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1427492831;
-        // ---------- Original Method ----------
-        //return state;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static State rilStateToState(String s) {
         if (s.equals("unknown")) {
             return State.UNKNOWN;
@@ -116,20 +117,21 @@ public class OperatorInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.319 -0400", hash_original_method = "3A69A53B1D569DD83E423933B58E91F0", hash_generated_method = "678FB19E809BB0D1A1018020524727F3")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_95958623 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_95958623 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_95958623 = "OperatorInfo " + operatorAlphaLong
                 + "/" + operatorAlphaShort
                 + "/" + operatorNumeric
                 + "/" + state;
-        varB4EAC82CA7396A68D541C85D26508E83_95958623.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_95958623.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_95958623;
-        // ---------- Original Method ----------
-        //return "OperatorInfo " + operatorAlphaLong
-                //+ "/" + operatorAlphaShort
-                //+ "/" + operatorNumeric
-                //+ "/" + state;
+        
+        
+                
+                
+                
     }
 
     
@@ -137,11 +139,12 @@ public class OperatorInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521660289 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521660289;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.320 -0400", hash_original_method = "8E3E997094B6FE23C6A87821AE0A248F", hash_generated_method = "6E5BA4C7E7E7495AE3AECBBDBB1C1037")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(operatorAlphaLong);
@@ -150,11 +153,11 @@ public class OperatorInfo implements Parcelable {
         dest.writeSerializable(state);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(operatorAlphaLong);
-        //dest.writeString(operatorAlphaShort);
-        //dest.writeString(operatorNumeric);
-        //dest.writeSerializable(state);
+        
+        
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.opengl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class Matrix {
@@ -13,7 +13,7 @@ public class Matrix {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.806 -0400", hash_original_method = "80154EE353DD9055CB6181108953825F", hash_generated_method = "80154EE353DD9055CB6181108953825F")
     public Matrix ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -140,6 +140,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void orthoM(float[] m, int mOffset,
         float left, float right, float bottom, float top,
         float near, float far) {
@@ -180,6 +181,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void frustumM(float[] m, int offset,
             float left, float right, float bottom, float top,
             float near, float far) {
@@ -226,6 +228,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void perspectiveM(float[] m, int offset,
           float fovy, float aspect, float zNear, float zFar) {
         float f = 1.0f / (float) Math.tan(fovy * (Math.PI / 360.0));
@@ -249,6 +252,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float length(float x, float y, float z) {
         return (float) Math.sqrt(x * x + y * y + z * z);
     }
@@ -314,6 +318,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void rotateM(float[] rm, int rmOffset,
             float[] m, int mOffset,
             float a, float x, float y, float z) {
@@ -324,6 +329,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void rotateM(float[] m, int mOffset,
             float a, float x, float y, float z) {
         synchronized(sTemp) {
@@ -334,6 +340,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setRotateM(float[] rm, int rmOffset,
             float a, float x, float y, float z) {
         rm[rmOffset + 3] = 0;
@@ -392,6 +399,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setRotateEulerM(float[] rm, int rmOffset,
             float x, float y, float z) {
         x *= (float) (Math.PI / 180.0f);
@@ -424,6 +432,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setLookAtM(float[] rm, int rmOffset,
             float eyeX, float eyeY, float eyeZ,
             float centerX, float centerY, float centerZ, float upX, float upY,

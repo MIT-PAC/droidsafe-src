@@ -1,18 +1,18 @@
 package android.database.sqlite;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class SQLiteUnfinalizedObjectsException extends SQLiteException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.906 -0400", hash_original_method = "0168ADBC27E80A037CCB3D02847CE356", hash_generated_method = "BE9ED7898925C6F334EC78DCE051C648")
     public  SQLiteUnfinalizedObjectsException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class SQLiteUnfinalizedObjectsException extends SQLiteException {
     public  SQLiteUnfinalizedObjectsException(String error) {
         super(error);
         addTaint(error.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.Application;
 import android.content.Context;
@@ -89,42 +89,42 @@ public abstract class Window {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.699 -0400", hash_original_method = "50ED378DEE1AF31F505AB3EFDADA9166", hash_generated_method = "2F4374F5D0B28DE042B0A979121F000F")
     public  Window(Context context) {
         mContext = context;
-        // ---------- Original Method ----------
-        //mContext = context;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.699 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "204DABD1C95581DC7C058B350208B4DE")
     public final Context getContext() {
-        Context varB4EAC82CA7396A68D541C85D26508E83_743666177 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_743666177 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_743666177 = mContext;
-        varB4EAC82CA7396A68D541C85D26508E83_743666177.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_743666177.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_743666177;
-        // ---------- Original Method ----------
-        //return mContext;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.700 -0400", hash_original_method = "F2F0D9C02E357CB8D6CDE50C6B929622", hash_generated_method = "0891D879665CD7A8525E198C2F3800F9")
     public final TypedArray getWindowStyle() {
-        TypedArray varB4EAC82CA7396A68D541C85D26508E83_1625938014 = null; //Variable for return #1
+        TypedArray varB4EAC82CA7396A68D541C85D26508E83_1625938014 = null; 
         {
             {
                 mWindowStyle = mContext.obtainStyledAttributes(
                         com.android.internal.R.styleable.Window);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1625938014 = mWindowStyle;
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1625938014.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1625938014.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1625938014;
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mWindowStyle == null) {
-                //mWindowStyle = mContext.obtainStyledAttributes(
-                        //com.android.internal.R.styleable.Window);
-            //}
-            //return mWindowStyle;
-        //}
+        
+        
+            
+                
+                        
+            
+            
+        
     }
 
     
@@ -135,25 +135,25 @@ public abstract class Window {
             mFeatures |= 1<<FEATURE_NO_TITLE;
             mLocalFeatures |= 1<<FEATURE_NO_TITLE;
             container.mHasChildren = true;
-        } //End block
-        // ---------- Original Method ----------
-        //mContainer = container;
-        //if (container != null) {
-            //mFeatures |= 1<<FEATURE_NO_TITLE;
-            //mLocalFeatures |= 1<<FEATURE_NO_TITLE;
-            //container.mHasChildren = true;
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.701 -0400", hash_original_method = "DCCDF946CE22DD9064205FD95E96DECD", hash_generated_method = "62226A6E36DC8420F52E16FD52D128AD")
     public final Window getContainer() {
-        Window varB4EAC82CA7396A68D541C85D26508E83_128046437 = null; //Variable for return #1
+        Window varB4EAC82CA7396A68D541C85D26508E83_128046437 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_128046437 = mContainer;
-        varB4EAC82CA7396A68D541C85D26508E83_128046437.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_128046437.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_128046437;
-        // ---------- Original Method ----------
-        //return mContainer;
+        
+        
     }
 
     
@@ -161,16 +161,16 @@ public abstract class Window {
     public final boolean hasChildren() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_187656801 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_187656801;
-        // ---------- Original Method ----------
-        //return mHasChildren;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.702 -0400", hash_original_method = "66C6B9EE658776AAE6ED0A2EE9CF8E48", hash_generated_method = "592FCE4D1921959BBFF73FDA835F18F9")
     public final void destroy() {
         mDestroyed = true;
-        // ---------- Original Method ----------
-        //mDestroyed = true;
+        
+        
     }
 
     
@@ -178,8 +178,8 @@ public abstract class Window {
     public final boolean isDestroyed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2100617108 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2100617108;
-        // ---------- Original Method ----------
-        //return mDestroyed;
+        
+        
     }
 
     
@@ -189,8 +189,8 @@ public abstract class Window {
         addTaint(wm.getTaint());
         addTaint(appToken.getTaint());
         addTaint(appName.getTaint());
-        // ---------- Original Method ----------
-        //setWindowManager(wm, appToken, appName, false);
+        
+        
     }
 
     
@@ -201,15 +201,15 @@ public abstract class Window {
         mAppName = appName;
         {
             wm = WindowManagerImpl.getDefault();
-        } //End block
+        } 
         mWindowManager = new LocalWindowManager(wm, hardwareAccelerated);
-        // ---------- Original Method ----------
-        //mAppToken = appToken;
-        //mAppName = appName;
-        //if (wm == null) {
-            //wm = WindowManagerImpl.getDefault();
-        //}
-        //mWindowManager = new LocalWindowManager(wm, hardwareAccelerated);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -221,31 +221,31 @@ public abstract class Window {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.704 -0400", hash_original_method = "1DCFADD2C71F0E408EA049F81A8ACDED", hash_generated_method = "5B46D961940B4B21EC0C0868D41B84B6")
     public WindowManager getWindowManager() {
-        WindowManager varB4EAC82CA7396A68D541C85D26508E83_1664370324 = null; //Variable for return #1
+        WindowManager varB4EAC82CA7396A68D541C85D26508E83_1664370324 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1664370324 = mWindowManager;
-        varB4EAC82CA7396A68D541C85D26508E83_1664370324.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1664370324.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1664370324;
-        // ---------- Original Method ----------
-        //return mWindowManager;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.704 -0400", hash_original_method = "DD1DEB01F922CA329B6B6BD86F551D46", hash_generated_method = "C7938EB55EEAA39F9972B5240A5CA9B0")
     public void setCallback(Callback callback) {
         mCallback = callback;
-        // ---------- Original Method ----------
-        //mCallback = callback;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.705 -0400", hash_original_method = "F07002384A5D5C29596645EE02BC1965", hash_generated_method = "2DD6E96C0363A3DB7948069A2BE0C32F")
     public final Callback getCallback() {
-        Callback varB4EAC82CA7396A68D541C85D26508E83_1019063465 = null; //Variable for return #1
+        Callback varB4EAC82CA7396A68D541C85D26508E83_1019063465 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1019063465 = mCallback;
-        varB4EAC82CA7396A68D541C85D26508E83_1019063465.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1019063465.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1019063465;
-        // ---------- Original Method ----------
-        //return mCallback;
+        
+        
     }
 
     
@@ -265,16 +265,16 @@ public abstract class Window {
         attrs.height = height;
         {
             mCallback.onWindowAttributesChanged(attrs);
-        } //End block
+        } 
         addTaint(width);
         addTaint(height);
-        // ---------- Original Method ----------
-        //final WindowManager.LayoutParams attrs = getAttributes();
-        //attrs.width = width;
-        //attrs.height = height;
-        //if (mCallback != null) {
-            //mCallback.onWindowAttributesChanged(attrs);
-        //}
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -284,14 +284,14 @@ public abstract class Window {
         attrs.gravity = gravity;
         {
             mCallback.onWindowAttributesChanged(attrs);
-        } //End block
+        } 
         addTaint(gravity);
-        // ---------- Original Method ----------
-        //final WindowManager.LayoutParams attrs = getAttributes();
-        //attrs.gravity = gravity;
-        //if (mCallback != null) {
-            //mCallback.onWindowAttributesChanged(attrs);
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -301,14 +301,14 @@ public abstract class Window {
         attrs.type = type;
         {
             mCallback.onWindowAttributesChanged(attrs);
-        } //End block
+        } 
         addTaint(type);
-        // ---------- Original Method ----------
-        //final WindowManager.LayoutParams attrs = getAttributes();
-        //attrs.type = type;
-        //if (mCallback != null) {
-            //mCallback.onWindowAttributesChanged(attrs);
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -318,27 +318,27 @@ public abstract class Window {
         {
             attrs.format = format;
             mHaveWindowFormat = true;
-        } //End block
+        } 
         {
             attrs.format = mDefaultWindowFormat;
             mHaveWindowFormat = false;
-        } //End block
+        } 
         {
             mCallback.onWindowAttributesChanged(attrs);
-        } //End block
+        } 
         addTaint(format);
-        // ---------- Original Method ----------
-        //final WindowManager.LayoutParams attrs = getAttributes();
-        //if (format != PixelFormat.UNKNOWN) {
-            //attrs.format = format;
-            //mHaveWindowFormat = true;
-        //} else {
-            //attrs.format = mDefaultWindowFormat;
-            //mHaveWindowFormat = false;
-        //}
-        //if (mCallback != null) {
-            //mCallback.onWindowAttributesChanged(attrs);
-        //}
+        
+        
+        
+            
+            
+        
+            
+            
+        
+        
+            
+        
     }
 
     
@@ -348,14 +348,14 @@ public abstract class Window {
         attrs.windowAnimations = resId;
         {
             mCallback.onWindowAttributesChanged(attrs);
-        } //End block
+        } 
         addTaint(resId);
-        // ---------- Original Method ----------
-        //final WindowManager.LayoutParams attrs = getAttributes();
-        //attrs.windowAnimations = resId;
-        //if (mCallback != null) {
-            //mCallback.onWindowAttributesChanged(attrs);
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -365,25 +365,25 @@ public abstract class Window {
         {
             attrs.softInputMode = mode;
             mHasSoftInputMode = true;
-        } //End block
+        } 
         {
             mHasSoftInputMode = false;
-        } //End block
+        } 
         {
             mCallback.onWindowAttributesChanged(attrs);
-        } //End block
+        } 
         addTaint(mode);
-        // ---------- Original Method ----------
-        //final WindowManager.LayoutParams attrs = getAttributes();
-        //if (mode != WindowManager.LayoutParams.SOFT_INPUT_STATE_UNSPECIFIED) {
-            //attrs.softInputMode = mode;
-            //mHasSoftInputMode = true;
-        //} else {
-            //mHasSoftInputMode = false;
-        //}
-        //if (mCallback != null) {
-            //mCallback.onWindowAttributesChanged(attrs);
-        //}
+        
+        
+        
+            
+            
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -391,8 +391,8 @@ public abstract class Window {
     public void addFlags(int flags) {
         setFlags(flags, flags);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //setFlags(flags, flags);
+        
+        
     }
 
     
@@ -400,8 +400,8 @@ public abstract class Window {
     public void clearFlags(int flags) {
         setFlags(0, flags);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //setFlags(0, flags);
+        
+        
     }
 
     
@@ -411,22 +411,22 @@ public abstract class Window {
         attrs.flags = (attrs.flags&~mask) | (flags&mask);
         {
             attrs.privateFlags |= WindowManager.LayoutParams.PRIVATE_FLAG_SET_NEEDS_MENU_KEY;
-        } //End block
+        } 
         mForcedWindowFlags |= mask;
         {
             mCallback.onWindowAttributesChanged(attrs);
-        } //End block
+        } 
         addTaint(flags);
-        // ---------- Original Method ----------
-        //final WindowManager.LayoutParams attrs = getAttributes();
-        //attrs.flags = (attrs.flags&~mask) | (flags&mask);
-        //if ((mask&WindowManager.LayoutParams.FLAG_NEEDS_MENU_KEY) != 0) {
-            //attrs.privateFlags |= WindowManager.LayoutParams.PRIVATE_FLAG_SET_NEEDS_MENU_KEY;
-        //}
-        //mForcedWindowFlags |= mask;
-        //if (mCallback != null) {
-            //mCallback.onWindowAttributesChanged(attrs);
-        //}
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -437,15 +437,15 @@ public abstract class Window {
         mHaveDimAmount = true;
         {
             mCallback.onWindowAttributesChanged(attrs);
-        } //End block
+        } 
         addTaint(amount);
-        // ---------- Original Method ----------
-        //final WindowManager.LayoutParams attrs = getAttributes();
-        //attrs.dimAmount = amount;
-        //mHaveDimAmount = true;
-        //if (mCallback != null) {
-            //mCallback.onWindowAttributesChanged(attrs);
-        //}
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -454,24 +454,24 @@ public abstract class Window {
         mWindowAttributes.copyFrom(a);
         {
             mCallback.onWindowAttributesChanged(mWindowAttributes);
-        } //End block
+        } 
         addTaint(a.getTaint());
-        // ---------- Original Method ----------
-        //mWindowAttributes.copyFrom(a);
-        //if (mCallback != null) {
-            //mCallback.onWindowAttributesChanged(mWindowAttributes);
-        //}
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.710 -0400", hash_original_method = "1740BD4A684D4859A9304C42BFBB0628", hash_generated_method = "DDE6BEB4B68504F258ACAB9A654BAA47")
     public final WindowManager.LayoutParams getAttributes() {
-        WindowManager.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_2026113444 = null; //Variable for return #1
+        WindowManager.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_2026113444 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2026113444 = mWindowAttributes;
-        varB4EAC82CA7396A68D541C85D26508E83_2026113444.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2026113444.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2026113444;
-        // ---------- Original Method ----------
-        //return mWindowAttributes;
+        
+        
     }
 
     
@@ -479,8 +479,8 @@ public abstract class Window {
     protected final int getForcedWindowFlags() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_127655105 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_127655105;
-        // ---------- Original Method ----------
-        //return mForcedWindowFlags;
+        
+        
     }
 
     
@@ -488,8 +488,8 @@ public abstract class Window {
     protected final boolean hasSoftInputMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1409970915 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1409970915;
-        // ---------- Original Method ----------
-        //return mHasSoftInputMode;
+        
+        
     }
 
     
@@ -497,9 +497,9 @@ public abstract class Window {
     public void setCloseOnTouchOutside(boolean close) {
         mCloseOnTouchOutside = close;
         mSetCloseOnTouchOutside = true;
-        // ---------- Original Method ----------
-        //mCloseOnTouchOutside = close;
-        //mSetCloseOnTouchOutside = true;
+        
+        
+        
     }
 
     
@@ -508,12 +508,12 @@ public abstract class Window {
         {
             mCloseOnTouchOutside = close;
             mSetCloseOnTouchOutside = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mSetCloseOnTouchOutside) {
-            //mCloseOnTouchOutside = close;
-            //mSetCloseOnTouchOutside = true;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -525,17 +525,17 @@ public abstract class Window {
         {
             boolean var61852665015A4DA2650F638F2B403163_1265817851 = (mCloseOnTouchOutside && event.getAction() == MotionEvent.ACTION_DOWN
                 && isOutOfBounds(context, event) && peekDecorView() != null);
-        } //End collapsed parenthetic
+        } 
         addTaint(context.getTaint());
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1400963796 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1400963796;
-        // ---------- Original Method ----------
-        //if (mCloseOnTouchOutside && event.getAction() == MotionEvent.ACTION_DOWN
-                //&& isOutOfBounds(context, event) && peekDecorView() != null) {
-            //return true;
-        //}
-        //return false;
+        
+        
+                
+            
+        
+        
     }
 
     
@@ -552,14 +552,14 @@ public abstract class Window {
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_111102038 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_111102038;
-        // ---------- Original Method ----------
-        //final int x = (int) event.getX();
-        //final int y = (int) event.getY();
-        //final int slop = ViewConfiguration.get(context).getScaledWindowTouchSlop();
-        //final View decorView = getDecorView();
-        //return (x < -slop) || (y < -slop)
-                //|| (x > (decorView.getWidth()+slop))
-                //|| (y > (decorView.getHeight()+slop));
+        
+        
+        
+        
+        
+        
+                
+                
     }
 
     
@@ -571,11 +571,11 @@ public abstract class Window {
         addTaint(featureId);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1144704106 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1144704106;
-        // ---------- Original Method ----------
-        //final int flag = 1<<featureId;
-        //mFeatures |= flag;
-        //mLocalFeatures |= mContainer != null ? (flag&~mContainer.mFeatures) : flag;
-        //return (mFeatures&flag) != 0;
+        
+        
+        
+        
+        
     }
 
     
@@ -585,10 +585,10 @@ public abstract class Window {
         mFeatures &= ~flag;
         mLocalFeatures &= ~(mContainer != null ? (flag&~mContainer.mFeatures) : flag);
         addTaint(featureId);
-        // ---------- Original Method ----------
-        //final int flag = 1<<featureId;
-        //mFeatures &= ~flag;
-        //mLocalFeatures &= ~(mContainer != null ? (flag&~mContainer.mFeatures) : flag);
+        
+        
+        
+        
     }
 
     
@@ -597,20 +597,20 @@ public abstract class Window {
         {
             {
                 mContainer.mActiveChild.mIsActive = false;
-            } //End block
+            } 
             mContainer.mActiveChild = this;
-        } //End block
+        } 
         mIsActive = true;
         onActive();
-        // ---------- Original Method ----------
-        //if (mContainer != null) {
-            //if (mContainer.mActiveChild != null) {
-                //mContainer.mActiveChild.mIsActive = false;
-            //}
-            //mContainer.mActiveChild = this;
-        //}
-        //mIsActive = true;
-        //onActive();
+        
+        
+            
+                
+            
+            
+        
+        
+        
     }
 
     
@@ -618,20 +618,20 @@ public abstract class Window {
     public final boolean isActive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1523801343 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1523801343;
-        // ---------- Original Method ----------
-        //return mIsActive;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.715 -0400", hash_original_method = "06392AB1384FAD789566489ED7477D15", hash_generated_method = "D9AF3838C215ABFA1480A973A9DFBC47")
     public View findViewById(int id) {
-        View varB4EAC82CA7396A68D541C85D26508E83_727952545 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_727952545 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_727952545 = getDecorView().findViewById(id);
         addTaint(id);
-        varB4EAC82CA7396A68D541C85D26508E83_727952545.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_727952545.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_727952545;
-        // ---------- Original Method ----------
-        //return getDecorView().findViewById(id);
+        
+        
     }
 
     
@@ -695,8 +695,8 @@ public abstract class Window {
     public void setBackgroundDrawableResource(int resid) {
         setBackgroundDrawable(mContext.getResources().getDrawable(resid));
         addTaint(resid);
-        // ---------- Original Method ----------
-        //setBackgroundDrawable(mContext.getResources().getDrawable(resid));
+        
+        
     }
 
     
@@ -755,8 +755,8 @@ public abstract class Window {
     protected final int getFeatures() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2086538507 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2086538507;
-        // ---------- Original Method ----------
-        //return mFeatures;
+        
+        
     }
 
     
@@ -766,8 +766,8 @@ public abstract class Window {
         addTaint(feature);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1234540849 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1234540849;
-        // ---------- Original Method ----------
-        //return (getFeatures() & (1 << feature)) != 0;
+        
+        
     }
 
     
@@ -775,8 +775,8 @@ public abstract class Window {
     protected final int getLocalFeatures() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012749535 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012749535;
-        // ---------- Original Method ----------
-        //return mLocalFeatures;
+        
+        
     }
 
     
@@ -788,17 +788,17 @@ public abstract class Window {
             attrs.format = format;
             {
                 mCallback.onWindowAttributesChanged(attrs);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //mDefaultWindowFormat = format;
-        //if (!mHaveWindowFormat) {
-            //final WindowManager.LayoutParams attrs = getAttributes();
-            //attrs.format = format;
-            //if (mCallback != null) {
-                //mCallback.onWindowAttributesChanged(attrs);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -806,8 +806,8 @@ public abstract class Window {
     protected boolean haveDimAmount() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1555621882 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1555621882;
-        // ---------- Original Method ----------
-        //return mHaveDimAmount;
+        
+        
     }
 
     
@@ -829,7 +829,7 @@ public abstract class Window {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.724 -0400", hash_original_method = "5C7A5DC825C127CAEB67314627C1344D", hash_generated_method = "41402CC6B89BFAB78A866C7788612094")
     public void setUiOptions(int uiOptions) {
         addTaint(uiOptions);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -837,7 +837,7 @@ public abstract class Window {
     public void setUiOptions(int uiOptions, int mask) {
         addTaint(uiOptions);
         addTaint(mask);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -852,9 +852,9 @@ public abstract class Window {
             mHardwareAccelerated = hardwareAccelerated ||
                     SystemProperties.getBoolean(PROPERTY_HARDWARE_UI, false);
             addTaint(wm.getTaint());
-            // ---------- Original Method ----------
-            //mHardwareAccelerated = hardwareAccelerated ||
-                    //SystemProperties.getBoolean(PROPERTY_HARDWARE_UI, false);
+            
+            
+                    
         }
 
         
@@ -862,8 +862,8 @@ public abstract class Window {
         public boolean isHardwareAccelerated() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_887503205 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_887503205;
-            // ---------- Original Method ----------
-            //return mHardwareAccelerated;
+            
+            
         }
 
         
@@ -876,60 +876,60 @@ public abstract class Window {
                     View decor = peekDecorView();
                     {
                         wp.token = decor.getWindowToken();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     boolean var618225A5546F933901E333CD89F06D8F_14744281 = (curTitle == null || curTitle.length() == 0);
                     {
                         String title;
                         {
                             title="Media";
-                        } //End block
+                        } 
                         {
                             title="MediaOvr";
-                        } //End block
+                        } 
                         {
                             title="Panel";
-                        } //End block
+                        } 
                         {
                             title="SubPanel";
-                        } //End block
+                        } 
                         {
                             title="AtchDlg";
-                        } //End block
+                        } 
                         {
                             title=Integer.toString(wp.type);
-                        } //End block
+                        } 
                         {
                             title += ":" + mAppName;
-                        } //End block
+                        } 
                         wp.setTitle(title);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 {
                     wp.token = mContainer == null ? mAppToken : mContainer.mAppToken;
-                } //End block
+                } 
                 {
                     boolean var04C9EAD0DFD9824FFF800C82EFF499AF_883359645 = ((curTitle == null || curTitle.length() == 0)
                         && mAppName != null);
                     {
                         wp.setTitle(mAppName);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 wp.packageName = mContext.getPackageName();
-            } //End block
+            } 
             {
                 wp.flags |= WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED;
-            } //End block
+            } 
             super.addView(view, params);
             addTaint(view.getTaint());
             addTaint(params.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import java.net.Socket;
@@ -25,14 +25,14 @@ class HttpConnection extends Connection {
         addTaint(context.getTaint());
         addTaint(host.getTaint());
         addTaint(requestFeeder.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.904 -0400", hash_original_method = "EFF3BAA5D0EF7633E7DF2DAA76502E87", hash_generated_method = "D24A782F3417D77D4C0D36495DEECB30")
     @Override
      AndroidHttpClientConnection openConnection(Request req) throws IOException {
-        AndroidHttpClientConnection varB4EAC82CA7396A68D541C85D26508E83_656824489 = null; //Variable for return #1
+        AndroidHttpClientConnection varB4EAC82CA7396A68D541C85D26508E83_656824489 = null; 
         EventHandler eventHandler = req.getEventHandler();
         mCertificate = null;
         eventHandler.certificate(mCertificate);
@@ -43,18 +43,18 @@ class HttpConnection extends Connection {
         conn.bind(sock, params);
         varB4EAC82CA7396A68D541C85D26508E83_656824489 = conn;
         addTaint(req.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_656824489.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_656824489.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_656824489;
-        // ---------- Original Method ----------
-        //EventHandler eventHandler = req.getEventHandler();
-        //mCertificate = null;
-        //eventHandler.certificate(mCertificate);
-        //AndroidHttpClientConnection conn = new AndroidHttpClientConnection();
-        //BasicHttpParams params = new BasicHttpParams();
-        //Socket sock = new Socket(mHost.getHostName(), mHost.getPort());
-        //params.setIntParameter(HttpConnectionParams.SOCKET_BUFFER_SIZE, 8192);
-        //conn.bind(sock, params);
-        //return conn;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -66,45 +66,45 @@ class HttpConnection extends Connection {
                 boolean var554318C54B5107CFCDE3465BA6E4A2D0_542549130 = (mHttpClientConnection != null && mHttpClientConnection.isOpen());
                 {
                     mHttpClientConnection.close();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         catch (IOException e)
         {
             HttpLog.v(
                     "closeConnection(): failed closing connection " +
                     mHost);
             e.printStackTrace();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (mHttpClientConnection != null && mHttpClientConnection.isOpen()) {
-                //mHttpClientConnection.close();
-            //}
-        //} catch (IOException e) {
-            //if (HttpLog.LOGV) HttpLog.v(
-                    //"closeConnection(): failed closing connection " +
-                    //mHost);
-            //e.printStackTrace();
-        //}
+        } 
+        
+        
+            
+                
+            
+        
+            
+                    
+                    
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.905 -0400", hash_original_method = "F65A3585D6DFE09EE931E3CB8D7B855F", hash_generated_method = "3D03B196C0054FDF260344F57DB44DDC")
      void restartConnection(boolean abort) {
         addTaint(abort);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.906 -0400", hash_original_method = "28A13316B46B35CCB565BDA96B57339B", hash_generated_method = "EF3535413166AF956867FE3F2B61BE6B")
      String getScheme() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1907829731 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1907829731 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1907829731 = "http";
-        varB4EAC82CA7396A68D541C85D26508E83_1907829731.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1907829731.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1907829731;
-        // ---------- Original Method ----------
-        //return "http";
+        
+        
     }
 
     

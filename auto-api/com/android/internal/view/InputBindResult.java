@@ -1,11 +1,11 @@
 package com.android.internal.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -26,10 +26,10 @@ public final class InputBindResult implements Parcelable {
         method = _method;
         id = _id;
         sequence = _sequence;
-        // ---------- Original Method ----------
-        //method = _method;
-        //id = _id;
-        //sequence = _sequence;
+        
+        
+        
+        
     }
 
     
@@ -38,27 +38,29 @@ public final class InputBindResult implements Parcelable {
         method = IInputMethodSession.Stub.asInterface(source.readStrongBinder());
         id = source.readString();
         sequence = source.readInt();
-        // ---------- Original Method ----------
-        //method = IInputMethodSession.Stub.asInterface(source.readStrongBinder());
-        //id = source.readString();
-        //sequence = source.readInt();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.711 -0400", hash_original_method = "7D3C8FC32444FE9148F633706CA9BDDA", hash_generated_method = "EA4DC0C457A69A0FE7B3513F57AAF4CC")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_898204275 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_898204275 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_898204275 = "InputBindResult{" + method + " " + id
                 + " #" + sequence + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_898204275.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_898204275.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_898204275;
-        // ---------- Original Method ----------
-        //return "InputBindResult{" + method + " " + id
-                //+ " #" + sequence + "}";
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.711 -0400", hash_original_method = "D059CB42BC9C8F046048FBE3BCB19D52", hash_generated_method = "06820C64692AE69B031442EB94319C6B")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeStrongInterface(method);
@@ -66,10 +68,10 @@ public final class InputBindResult implements Parcelable {
         dest.writeInt(sequence);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeStrongInterface(method);
-        //dest.writeString(id);
-        //dest.writeInt(sequence);
+        
+        
+        
+        
     }
 
     
@@ -77,8 +79,8 @@ public final class InputBindResult implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_290140338 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_290140338;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -96,12 +98,12 @@ public final class InputBindResult implements Parcelable {
             return new InputBindResult[size];
         }
     };
-    // orphaned legacy method
+    
     public InputBindResult createFromParcel(Parcel source) {
             return new InputBindResult(source);
         }
     
-    // orphaned legacy method
+    
     public InputBindResult[] newArray(int size) {
             return new InputBindResult[size];
         }

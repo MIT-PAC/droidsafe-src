@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -26,16 +26,16 @@ public class UserInfo implements Parcelable {
         this.id = id;
         this.name = name;
         this.flags = flags;
-        // ---------- Original Method ----------
-        //this.id = id;
-        //this.name = name;
-        //this.flags = flags;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.260 -0400", hash_original_method = "FFEDB19A4FE2EC199D413AD96B705A93", hash_generated_method = "EF7390497822A172718BFC5C0489B1A3")
     public  UserInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -44,10 +44,10 @@ public class UserInfo implements Parcelable {
         name = orig.name;
         id = orig.id;
         flags = orig.flags;
-        // ---------- Original Method ----------
-        //name = orig.name;
-        //id = orig.id;
-        //flags = orig.flags;
+        
+        
+        
+        
     }
 
     
@@ -56,10 +56,10 @@ public class UserInfo implements Parcelable {
         id = source.readInt();
         name = source.readString();
         flags = source.readInt();
-        // ---------- Original Method ----------
-        //id = source.readInt();
-        //name = source.readString();
-        //flags = source.readInt();
+        
+        
+        
+        
     }
 
     
@@ -67,8 +67,8 @@ public class UserInfo implements Parcelable {
     public boolean isPrimary() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1401219087 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1401219087;
-        // ---------- Original Method ----------
-        //return (flags & FLAG_PRIMARY) == FLAG_PRIMARY;
+        
+        
     }
 
     
@@ -76,8 +76,8 @@ public class UserInfo implements Parcelable {
     public boolean isAdmin() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_680738408 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_680738408;
-        // ---------- Original Method ----------
-        //return (flags & FLAG_ADMIN) == FLAG_ADMIN;
+        
+        
     }
 
     
@@ -85,20 +85,21 @@ public class UserInfo implements Parcelable {
     public boolean isGuest() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1174187527 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1174187527;
-        // ---------- Original Method ----------
-        //return (flags & FLAG_GUEST) == FLAG_GUEST;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.264 -0400", hash_original_method = "0DF6D7695BB85FE21EB781D1BB3F7789", hash_generated_method = "4C51837EEE5F747C7CFAD9A47077C47A")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1448758 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1448758 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1448758 = "UserInfo{" + id + ":" + name + ":" + Integer.toHexString(flags) + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_1448758.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1448758.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1448758;
-        // ---------- Original Method ----------
-        //return "UserInfo{" + id + ":" + name + ":" + Integer.toHexString(flags) + "}";
+        
+        
     }
 
     
@@ -106,11 +107,12 @@ public class UserInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_179632629 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_179632629;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.265 -0400", hash_original_method = "82A3C338305AFFE9E85DC8705D16ECA4", hash_generated_method = "68209779AE83DCEB4B756C2D7CF72084")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         dest.writeInt(id);
@@ -118,10 +120,10 @@ public class UserInfo implements Parcelable {
         dest.writeInt(flags);
         addTaint(dest.getTaint());
         addTaint(parcelableFlags);
-        // ---------- Original Method ----------
-        //dest.writeInt(id);
-        //dest.writeString(name);
-        //dest.writeInt(flags);
+        
+        
+        
+        
     }
 
     
@@ -145,12 +147,12 @@ public class UserInfo implements Parcelable {
             return new UserInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public UserInfo createFromParcel(Parcel source) {
             return new UserInfo(source);
         }
     
-    // orphaned legacy method
+    
     public UserInfo[] newArray(int size) {
             return new UserInfo[size];
         }

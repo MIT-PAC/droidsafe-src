@@ -1,11 +1,11 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Matrix;
 import java.io.PrintWriter;
@@ -24,29 +24,30 @@ public class Transformation {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.786 -0400", hash_original_method = "B51BFBC203820EC809B8E082E20903C2", hash_generated_method = "3F4DA68BCEF9BF3D04E9F77E20D14323")
     public  Transformation() {
         clear();
-        // ---------- Original Method ----------
-        //clear();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.787 -0400", hash_original_method = "BA6C10BE71EC314AFE280F9349735494", hash_generated_method = "6F7AB4A86286C643C91F048E17B23CAB")
     public void clear() {
         {
             mMatrix = new Matrix();
-        } //End block
+        } 
         {
             mMatrix.reset();
-        } //End block
+        } 
         mAlpha = 1.0f;
         mTransformationType = TYPE_BOTH;
-        // ---------- Original Method ----------
-        //if (mMatrix == null) {
-            //mMatrix = new Matrix();
-        //} else {
-            //mMatrix.reset();
-        //}
-        //mAlpha = 1.0f;
-        //mTransformationType = TYPE_BOTH;
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -54,57 +55,59 @@ public class Transformation {
     public int getTransformationType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_579486271 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_579486271;
-        // ---------- Original Method ----------
-        //return mTransformationType;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.787 -0400", hash_original_method = "B4636E05B9A8A9BE17FDDB51FD79878A", hash_generated_method = "39AC39ACD4F7908E138EDFE8ECD24ED9")
     public void setTransformationType(int transformationType) {
         mTransformationType = transformationType;
-        // ---------- Original Method ----------
-        //mTransformationType = transformationType;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.787 -0400", hash_original_method = "6A74ACE3E87C2A5E84C908FCAD2903E1", hash_generated_method = "AA3A3FDF21E49D36483D40C6AB86DBDC")
     public void set(Transformation t) {
         mAlpha = t.getAlpha();
         mMatrix.set(t.getMatrix());
         mTransformationType = t.getTransformationType();
-        // ---------- Original Method ----------
-        //mAlpha = t.getAlpha();
-        //mMatrix.set(t.getMatrix());
-        //mTransformationType = t.getTransformationType();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.788 -0400", hash_original_method = "2FE33ABC0A8D366A40495EBCED9F5958", hash_generated_method = "B2C134E54DEE8C2414C9FCCC7ADE8EB3")
     public void compose(Transformation t) {
         mAlpha *= t.getAlpha();
         mMatrix.preConcat(t.getMatrix());
-        // ---------- Original Method ----------
-        //mAlpha *= t.getAlpha();
-        //mMatrix.preConcat(t.getMatrix());
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.788 -0400", hash_original_method = "2E54F4327BDE93D0CE557FC100DEED67", hash_generated_method = "373F7E7AA24C0E46FE98DC4DD993962A")
     public Matrix getMatrix() {
-        Matrix varB4EAC82CA7396A68D541C85D26508E83_1452495124 = null; //Variable for return #1
+        Matrix varB4EAC82CA7396A68D541C85D26508E83_1452495124 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1452495124 = mMatrix;
-        varB4EAC82CA7396A68D541C85D26508E83_1452495124.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1452495124.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1452495124;
-        // ---------- Original Method ----------
-        //return mMatrix;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.788 -0400", hash_original_method = "0C33009713633FC103F0B586FD422009", hash_generated_method = "C9CD91170EA13924C0FBD5C314E4E67F")
     public void setAlpha(float alpha) {
         mAlpha = alpha;
-        // ---------- Original Method ----------
-        //mAlpha = alpha;
+        
+        
     }
 
     
@@ -112,44 +115,47 @@ public class Transformation {
     public float getAlpha() {
         float var546ADE640B6EDFBC8A086EF31347E768_1141668607 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1141668607;
-        // ---------- Original Method ----------
-        //return mAlpha;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.789 -0400", hash_original_method = "6F2D8252A709B880F4404B074507697E", hash_generated_method = "C48C977B2AA7323F67D0F5108F4DAEFF")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_984626214 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_984626214 = null; 
         StringBuilder sb = new StringBuilder(64);
         sb.append("Transformation");
         toShortString(sb);
         varB4EAC82CA7396A68D541C85D26508E83_984626214 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_984626214.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_984626214.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_984626214;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(64);
-        //sb.append("Transformation");
-        //toShortString(sb);
-        //return sb.toString();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.790 -0400", hash_original_method = "9DDD7B6FB851EDEB6218261EF1A63117", hash_generated_method = "495477F5DE55D9A7ACE7CA207E2DCB11")
     public String toShortString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_683946207 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_683946207 = null; 
         StringBuilder sb = new StringBuilder(64);
         toShortString(sb);
         varB4EAC82CA7396A68D541C85D26508E83_683946207 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_683946207.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_683946207.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_683946207;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(64);
-        //toShortString(sb);
-        //return sb.toString();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.790 -0400", hash_original_method = "1DD4705BF9B7609556F25B5998828696", hash_generated_method = "25104FFC2C9DF4BC68754A056E7F4D39")
     public void toShortString(StringBuilder sb) {
         sb.append("{alpha=");
@@ -158,15 +164,16 @@ public class Transformation {
         mMatrix.toShortString(sb);
         sb.append('}');
         addTaint(sb.getTaint());
-        // ---------- Original Method ----------
-        //sb.append("{alpha=");
-        //sb.append(mAlpha);
-        //sb.append(" matrix=");
-        //mMatrix.toShortString(sb);
-        //sb.append('}');
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.790 -0400", hash_original_method = "434986F5E9E4AD2D5C5ADC5B37E7986B", hash_generated_method = "6190B2B61A87EAE60402E95C7B997A34")
     public void printShortString(PrintWriter pw) {
         pw.print("{alpha=");
@@ -175,12 +182,12 @@ public class Transformation {
         mMatrix.printShortString(pw);
         pw.print('}');
         addTaint(pw.getTaint());
-        // ---------- Original Method ----------
-        //pw.print("{alpha=");
-        //pw.print(mAlpha);
-        //pw.print(" matrix=");
-        //mMatrix.printShortString(pw);
-        //pw.print('}');
+        
+        
+        
+        
+        
+        
     }
 
     

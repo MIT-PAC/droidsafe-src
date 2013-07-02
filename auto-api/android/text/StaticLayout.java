@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Bitmap;
 import android.graphics.Paint;
@@ -63,7 +63,7 @@ public class StaticLayout extends Layout {
         addTaint(spacingmult);
         addTaint(spacingadd);
         addTaint(includepad);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -82,7 +82,7 @@ public class StaticLayout extends Layout {
         addTaint(spacingmult);
         addTaint(spacingadd);
         addTaint(includepad);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -103,7 +103,7 @@ public class StaticLayout extends Layout {
         addTaint(spacingmult);
         addTaint(spacingadd);
         addTaint(includepad);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -125,7 +125,7 @@ public class StaticLayout extends Layout {
         addTaint(spacingmult);
         addTaint(spacingadd);
         addTaint(includepad);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -150,7 +150,7 @@ public class StaticLayout extends Layout {
         addTaint(includepad);
         addTaint(ellipsize.getTaint());
         addTaint(ellipsizedWidth);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -174,11 +174,11 @@ public class StaticLayout extends Layout {
             e.mMethod = ellipsize;
             mEllipsizedWidth = ellipsizedWidth;
             mColumns = COLUMNS_ELLIPSIZE;
-        } //End block
+        } 
         {
             mColumns = COLUMNS_NORMAL;
             mEllipsizedWidth = outerwidth;
-        } //End block
+        } 
         mLines = new int[ArrayUtils.idealIntArraySize(2 * mColumns)];
         mLineDirections = new Directions[
                              ArrayUtils.idealIntArraySize(2 * mColumns)];
@@ -199,8 +199,8 @@ public class StaticLayout extends Layout {
         addTaint(spacingadd);
         addTaint(includepad);
         addTaint(ellipsize.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -213,12 +213,12 @@ public class StaticLayout extends Layout {
                              ArrayUtils.idealIntArraySize(2 * mColumns)];
         mMeasured = MeasuredText.obtain();
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
-        //mColumns = COLUMNS_ELLIPSIZE;
-        //mLines = new int[ArrayUtils.idealIntArraySize(2 * mColumns)];
-        //mLineDirections = new Directions[
-                             //ArrayUtils.idealIntArraySize(2 * mColumns)];
-        //mMeasured = MeasuredText.obtain();
+        
+        
+        
+        
+                             
+        
     }
 
     
@@ -262,29 +262,29 @@ public class StaticLayout extends Layout {
                                 LeadingMarginSpan2 lms2 = (LeadingMarginSpan2) lms;
                                 int lmsFirstLine = getLineForOffset(spanned.getSpanStart(lms2));
                                 firstWidthLineLimit = lmsFirstLine + lms2.getLeadingMarginLineCount();
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
                     chooseHt = getParagraphSpans(spanned, paraStart, paraEnd, LineHeightSpan.class);
                     {
                         {
                             chooseHtv = new int[ArrayUtils.idealIntArraySize(
                                             chooseHt.length)];
-                        } //End block
+                        } 
                         {
                             int i = 0;
                             {
                                 int o = spanned.getSpanStart(chooseHt[i]);
                                 {
                                     chooseHtv[i] = getLineTop(getLineForOffset(o));
-                                } //End block
+                                } 
                                 {
                                     chooseHtv[i] = v;
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 measured.setPara(source, paraStart, paraEnd, textDir);
                 char[] chs = measured.mChars;
                 float[] widths = measured.mWidths;
@@ -322,14 +322,14 @@ public class StaticLayout extends Layout {
                             int spanLen = spanEnd - spanStart;
                             {
                                 measured.addStyleRun(paint, spanLen, fm);
-                            } //End block
+                            } 
                             {
                                 MetricAffectingSpan[] spans = spanned.getSpans(spanStart, spanEnd, MetricAffectingSpan.class);
                                 spans = TextUtils.removeEmptySpans(spans, spanned,
                                 MetricAffectingSpan.class);
                                 measured.addStyleRun(paint, spans, spanLen, fm);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         nextSpanStart = spanEnd;
                         int fmTop = fm.top;
                         int fmBottom = fm.bottom;
@@ -348,16 +348,16 @@ public class StaticLayout extends Layout {
                                         paraEnd, TabStopSpan.class);
                                             {
                                                 tabStops = new TabStops(TAB_INCREMENT, spans);
-                                            } //End block
-                                        } //End block
-                                    } //End block
+                                            } 
+                                        } 
+                                    } 
                                     {
                                         w = tabStops.nextTab(w);
-                                    } //End block
+                                    } 
                                     {
                                         w = TabStops.nextDefaultStop(w, TAB_INCREMENT);
-                                    } //End block
-                                } //End block
+                                    } 
+                                } 
                                 {
                                     int emoji = Character.codePointAt(chs, j - paraStart);
                                     {
@@ -366,25 +366,25 @@ public class StaticLayout extends Layout {
                                             Paint whichPaint;
                                             {
                                                 whichPaint = paint;
-                                            } //End block
+                                            } 
                                             {
                                                 whichPaint = mWorkPaint;
-                                            } //End block
+                                            } 
                                             float wid = bm.getWidth() * -whichPaint.ascent() / bm.getHeight();
                                             w += wid;
                                             hasTabOrEmoji = true;
-                                        } //End block
+                                        } 
                                         {
                                             w += widths[j - paraStart];
-                                        } //End block
-                                    } //End block
+                                        } 
+                                    } 
                                     {
                                         w += widths[j - paraStart];
-                                    } //End block
-                                } //End block
+                                    } 
+                                } 
                                 {
                                     w += widths[j - paraStart];
-                                } //End block
+                                } 
                                 {
                                     fitWidth = w;
                                     fit = j + 1;
@@ -409,9 +409,9 @@ public class StaticLayout extends Layout {
                                             okAscent = fitAscent;
                                             okDescent = fitDescent;
                                             okBottom = fitBottom;
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
+                                        } 
+                                    } 
+                                } 
                                 {
                                     final boolean moreChars = (j + 1 < spanEnd);
                                     int endPos;
@@ -428,7 +428,7 @@ public class StaticLayout extends Layout {
                                         top = okTop;
                                         bottom = okBottom;
                                         currentTextWidth = okWidth;
-                                    } //End block
+                                    } 
                                     {
                                         endPos = fit;
                                         above = fitAscent;
@@ -436,7 +436,7 @@ public class StaticLayout extends Layout {
                                         top = fitTop;
                                         bottom = fitBottom;
                                         currentTextWidth = fitWidth;
-                                    } //End block
+                                    } 
                                     {
                                         endPos = here + 1;
                                         above = fm.ascent;
@@ -444,7 +444,7 @@ public class StaticLayout extends Layout {
                                         top = fm.top;
                                         bottom = fm.bottom;
                                         currentTextWidth = widths[here - paraStart];
-                                    } //End block
+                                    } 
                                     v = out(source, here, endPos,
                                 above, below, top, bottom,
                                 v, spacingmult, spacingadd, chooseHt,chooseHtv, fm, hasTabOrEmoji,
@@ -454,22 +454,22 @@ public class StaticLayout extends Layout {
                                     here = endPos;
                                     {
                                         j = nextSpanStart = here;
-                                    } //End block
+                                    } 
                                     {
                                         j = here - 1;
-                                    } //End block
+                                    } 
                                     ok = fit = here;
                                     w = 0;
                                     fitAscent = fitDescent = fitTop = fitBottom = 0;
                                     okAscent = okDescent = okTop = okBottom = 0;
                                     {
                                         width = restWidth;
-                                    } //End block
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     {
                         paint.getFontMetricsInt(fm);
@@ -477,7 +477,7 @@ public class StaticLayout extends Layout {
                         fitBottom = fm.bottom;
                         fitAscent = fm.ascent;
                         fitDescent = fm.descent;
-                    } //End block
+                    } 
                     v = out(source,
                         here, paraEnd, fitAscent, fitDescent,
                         fitTop, fitBottom,
@@ -488,10 +488,10 @@ public class StaticLayout extends Layout {
                         includepad, trackpad, chs,
                         widths, paraStart, ellipsize,
                         ellipsizedWidth, w, paint, paraEnd != bufEnd);
-                } //End block
+                } 
                 paraStart = paraEnd;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varD6A6A425370B61445227FF156BD0D4E6_1567037708 = ((bufEnd == bufStart || source.charAt(bufEnd - 1) == CHAR_NEW_LINE) &&
                 mLineCount < mMaximumVisibleLineCount);
@@ -507,8 +507,8 @@ public class StaticLayout extends Layout {
                     includepad, trackpad, null,
                     null, bufStart, ellipsize,
                     ellipsizedWidth, 0, paint, false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(source.getTaint());
         addTaint(bufStart);
         addTaint(bufEnd);
@@ -521,8 +521,8 @@ public class StaticLayout extends Layout {
         addTaint(trackpad);
         addTaint(ellipsizedWidth);
         addTaint(ellipsize.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -633,7 +633,7 @@ public class StaticLayout extends Layout {
             System.arraycopy(mLineDirections, 0, grow2, 0,
                              mLineDirections.length);
             mLineDirections = grow2;
-        } //End block
+        } 
         {
             fm.ascent = above;
             fm.descent = below;
@@ -645,46 +645,46 @@ public class StaticLayout extends Layout {
                     {
                         ((LineHeightSpan.WithDensity) chooseHt[i]).
                         chooseHeight(text, start, end, chooseHtv[i], v, fm, paint);
-                    } //End block
+                    } 
                     {
                         chooseHt[i].chooseHeight(text, start, end, chooseHtv[i], v, fm);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             above = fm.ascent;
             below = fm.descent;
             top = fm.top;
             bottom = fm.bottom;
-        } //End block
+        } 
         {
             {
                 mTopPadding = top - above;
-            } //End block
+            } 
             {
                 above = top;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mBottomPadding = bottom - below;
-            } //End block
+            } 
             {
                 below = bottom;
-            } //End block
-        } //End block
+            } 
+        } 
         int extra;
         {
             double ex = (below - above) * (spacingmult - 1) + spacingadd;
             {
                 extra = (int)(ex + EXTRA_ROUNDING);
-            } //End block
+            } 
             {
                 extra = -(int)(-ex + EXTRA_ROUNDING);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             extra = 0;
-        } //End block
+        } 
         lines[off + START] = start;
         lines[off + TOP] = v;
         lines[off + DESCENT] = below + extra;
@@ -696,11 +696,11 @@ public class StaticLayout extends Layout {
         Directions linedirs = DIRS_ALL_LEFT_TO_RIGHT;
         {
             mLineDirections[j] = linedirs;
-        } //End block
+        } 
         {
             mLineDirections[j] = AndroidBidi.directions(dir, chdirs, start - widthStart, chs,
                     start - widthStart, end - start);
-        } //End block
+        } 
         {
             boolean firstLine = (j == 0);
             boolean currentLineIsTheLastVisibleOne = (j + 1 == mMaximumVisibleLineCount);
@@ -713,8 +713,8 @@ public class StaticLayout extends Layout {
                 calculateEllipsis(start, end, widths, widthStart,
                         ellipsisWidth, ellipsize, j,
                         textWidth, paint, forceEllipsis);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(text.getTaint());
         addTaint(spacingmult);
         addTaint(spacingadd);
@@ -735,8 +735,8 @@ public class StaticLayout extends Layout {
         addTaint(moreChars);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1112286526 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1112286526;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -749,9 +749,9 @@ public class StaticLayout extends Layout {
         {
             mLines[mColumns * line + ELLIPSIS_START] = 0;
             mLines[mColumns * line + ELLIPSIS_COUNT] = 0;
-        } //End block
+        } 
         float ellipsisWidth = paint.measureText(
-                (where == TextUtils.TruncateAt.END_SMALL) ? ELLIPSIS_TWO_DOTS : ELLIPSIS_NORMAL);//DSFIXME:  CODE0008: Nested ternary operator in expression
+                (where == TextUtils.TruncateAt.END_SMALL) ? ELLIPSIS_TWO_DOTS : ELLIPSIS_NORMAL);
         int ellipsisStart = 0;
         int ellipsisCount = 0;
         int len = lineEnd - lineStart;
@@ -764,17 +764,17 @@ public class StaticLayout extends Layout {
                     {
                         float w = widths[i - 1 + lineStart - widthStart];
                         sum += w;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 ellipsisStart = 0;
                 ellipsisCount = i;
-            } //End block
+            } 
             {
                 {
                     boolean varDB9C000D9EED0EBC5F67F0C4656298B5_25358252 = (Log.isLoggable(TAG, Log.WARN));
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             float sum = 0;
             int i;
@@ -783,15 +783,15 @@ public class StaticLayout extends Layout {
                 {
                     float w = widths[i + lineStart - widthStart];
                     sum += w;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             ellipsisStart = i;
             ellipsisCount = len - i;
             {
                 ellipsisStart = len - 1;
                 ellipsisCount = 1;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 float lsum = 0;
@@ -804,25 +804,25 @@ public class StaticLayout extends Layout {
                     {
                         float w = widths[right - 1 + lineStart - widthStart];
                         rsum += w;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 float lavail = avail - ellipsisWidth - rsum;
                 {
                     left = 0;
                     {
                         float w = widths[left + lineStart - widthStart];
                         lsum += w;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 ellipsisStart = left;
                 ellipsisCount = right - left;
-            } //End block
+            } 
             {
                 {
                     boolean varDB9C000D9EED0EBC5F67F0C4656298B5_489729295 = (Log.isLoggable(TAG, Log.WARN));
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         mLines[mColumns * line + ELLIPSIS_START] = ellipsisStart;
         mLines[mColumns * line + ELLIPSIS_COUNT] = ellipsisCount;
         addTaint(lineStart);
@@ -834,8 +834,8 @@ public class StaticLayout extends Layout {
         addTaint(textWidth);
         addTaint(paint.getTaint());
         addTaint(forceEllipsis);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -850,32 +850,32 @@ public class StaticLayout extends Layout {
             guess = (high + low) >> 1;
             {
                 high = guess;
-            } //End block
+            } 
             {
                 low = guess;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(vertical);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_447592966 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_447592966;
-        // ---------- Original Method ----------
-        //int high = mLineCount;
-        //int low = -1;
-        //int guess;
-        //int[] lines = mLines;
-        //while (high - low > 1) {
-            //guess = (high + low) >> 1;
-            //if (lines[mColumns * guess + TOP] > vertical){
-                //high = guess;
-            //} else {
-                //low = guess;
-            //}
-        //}
-        //if (low < 0) {
-            //return 0;
-        //} else {
-            //return low;
-        //}
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -884,48 +884,50 @@ public class StaticLayout extends Layout {
     public int getLineCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_3341264 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_3341264;
-        // ---------- Original Method ----------
-        //return mLineCount;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.664 -0400", hash_original_method = "79A8E86A0E5ABFEF4F09B2D188FA97FB", hash_generated_method = "E41548883407A503B3658564CDF68342")
     @Override
     public int getLineTop(int line) {
         int top = mLines[mColumns * line + TOP];
         {
             top += getBottomPadding();
-        } //End block
+        } 
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1710749421 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1710749421;
-        // ---------- Original Method ----------
-        //int top = mLines[mColumns * line + TOP];
-        //if (mMaximumVisibleLineCount > 0 && line >= mMaximumVisibleLineCount &&
-                //line != mLineCount) {
-            //top += getBottomPadding();
-        //}
-        //return top;
+        
+        
+        
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.665 -0400", hash_original_method = "24456204DB122ABBCF95E31F6A475D1C", hash_generated_method = "D5EEF90FDDB4353C3C8B402511479878")
     @Override
     public int getLineDescent(int line) {
         int descent = mLines[mColumns * line + DESCENT];
         {
             descent += getBottomPadding();
-        } //End block
+        } 
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_795000893 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_795000893;
-        // ---------- Original Method ----------
-        //int descent = mLines[mColumns * line + DESCENT];
-        //if (mMaximumVisibleLineCount > 0 && line >= mMaximumVisibleLineCount - 1 && 
-                //line != mLineCount) {
-            //descent += getBottomPadding();
-        //}
-        //return descent;
+        
+        
+        
+                
+            
+        
+        
     }
 
     
@@ -935,8 +937,8 @@ public class StaticLayout extends Layout {
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_934480593 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_934480593;
-        // ---------- Original Method ----------
-        //return mLines[mColumns * line + START] & START_MASK;
+        
+        
     }
 
     
@@ -946,8 +948,8 @@ public class StaticLayout extends Layout {
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1877435826 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1877435826;
-        // ---------- Original Method ----------
-        //return mLines[mColumns * line + DIR] >> DIR_SHIFT;
+        
+        
     }
 
     
@@ -957,21 +959,21 @@ public class StaticLayout extends Layout {
         addTaint(line);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_273670571 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_273670571;
-        // ---------- Original Method ----------
-        //return (mLines[mColumns * line + TAB] & TAB_MASK) != 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.667 -0400", hash_original_method = "E4C2D852DF30293005E76B99E82745CD", hash_generated_method = "77EC707F6401176B95DEFA08250855D5")
     @Override
     public final Directions getLineDirections(int line) {
-        Directions varB4EAC82CA7396A68D541C85D26508E83_1123300126 = null; //Variable for return #1
+        Directions varB4EAC82CA7396A68D541C85D26508E83_1123300126 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1123300126 = mLineDirections[line];
         addTaint(line);
-        varB4EAC82CA7396A68D541C85D26508E83_1123300126.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1123300126.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1123300126;
-        // ---------- Original Method ----------
-        //return mLineDirections[line];
+        
+        
     }
 
     
@@ -980,8 +982,8 @@ public class StaticLayout extends Layout {
     public int getTopPadding() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2136490905 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2136490905;
-        // ---------- Original Method ----------
-        //return mTopPadding;
+        
+        
     }
 
     
@@ -990,8 +992,8 @@ public class StaticLayout extends Layout {
     public int getBottomPadding() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_875113214 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_875113214;
-        // ---------- Original Method ----------
-        //return mBottomPadding;
+        
+        
     }
 
     
@@ -1001,11 +1003,11 @@ public class StaticLayout extends Layout {
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1777894655 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1777894655;
-        // ---------- Original Method ----------
-        //if (mColumns < COLUMNS_ELLIPSIZE) {
-            //return 0;
-        //}
-        //return mLines[mColumns * line + ELLIPSIS_COUNT];
+        
+        
+            
+        
+        
     }
 
     
@@ -1015,11 +1017,11 @@ public class StaticLayout extends Layout {
         addTaint(line);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382546618 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382546618;
-        // ---------- Original Method ----------
-        //if (mColumns < COLUMNS_ELLIPSIZE) {
-            //return 0;
-        //}
-        //return mLines[mColumns * line + ELLIPSIS_START];
+        
+        
+            
+        
+        
     }
 
     
@@ -1028,24 +1030,24 @@ public class StaticLayout extends Layout {
     public int getEllipsizedWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1110545071 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1110545071;
-        // ---------- Original Method ----------
-        //return mEllipsizedWidth;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.670 -0400", hash_original_method = "B52C8C631677053C363ACE90856C8484", hash_generated_method = "95EDBE59F598FE401B87F39CB299AF78")
      void prepare() {
         mMeasured = MeasuredText.obtain();
-        // ---------- Original Method ----------
-        //mMeasured = MeasuredText.obtain();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.671 -0400", hash_original_method = "C0F6C3CAFEEBD4E75E81773515CBCC0B", hash_generated_method = "25F76FF05D99A4E8F3EC719ABEED0A6E")
      void finish() {
         mMeasured = MeasuredText.recycle(mMeasured);
-        // ---------- Original Method ----------
-        //mMeasured = MeasuredText.recycle(mMeasured);
+        
+        
     }
 
     

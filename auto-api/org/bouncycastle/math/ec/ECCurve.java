@@ -1,11 +1,11 @@
 package org.bouncycastle.math.ec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 import java.util.Random;
@@ -21,7 +21,7 @@ public abstract class ECCurve {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.376 -0400", hash_original_method = "3ADB63016220614BC8D776351AA4CC0A", hash_generated_method = "3ADB63016220614BC8D776351AA4CC0A")
     public ECCurve ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -42,23 +42,23 @@ public abstract class ECCurve {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.378 -0400", hash_original_method = "E518DFD3A1B52E4C2FA641AF9C8BD0EA", hash_generated_method = "5BC65537E066A1BA82DECA88629348B5")
     public ECFieldElement getA() {
-        ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1565236589 = null; //Variable for return #1
+        ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1565236589 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1565236589 = a;
-        varB4EAC82CA7396A68D541C85D26508E83_1565236589.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1565236589.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1565236589;
-        // ---------- Original Method ----------
-        //return a;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.378 -0400", hash_original_method = "E3D5F4BB1EEF47030E7E58DC1A7D0CBC", hash_generated_method = "F037F9DB289B067114A86D5C521E685C")
     public ECFieldElement getB() {
-        ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1496616872 = null; //Variable for return #1
+        ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1496616872 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1496616872 = b;
-        varB4EAC82CA7396A68D541C85D26508E83_1496616872.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1496616872.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1496616872;
-        // ---------- Original Method ----------
-        //return b;
+        
+        
     }
 
     
@@ -78,22 +78,22 @@ public abstract class ECCurve {
             this.infinity = new ECPoint.Fp(this, null, null);
             addTaint(a.getTaint());
             addTaint(b.getTaint());
-            // ---------- Original Method ----------
-            //this.q = q;
-            //this.a = fromBigInteger(a);
-            //this.b = fromBigInteger(b);
-            //this.infinity = new ECPoint.Fp(this, null, null);
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.380 -0400", hash_original_method = "ACFCE2DB75EFF131F33A5EE2D309C15F", hash_generated_method = "448B033B1B8C5473F5F1EA40948BBE9D")
         public BigInteger getQ() {
-            BigInteger varB4EAC82CA7396A68D541C85D26508E83_1617504673 = null; //Variable for return #1
+            BigInteger varB4EAC82CA7396A68D541C85D26508E83_1617504673 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1617504673 = q;
-            varB4EAC82CA7396A68D541C85D26508E83_1617504673.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1617504673.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1617504673;
-            // ---------- Original Method ----------
-            //return q;
+            
+            
         }
 
         
@@ -102,121 +102,121 @@ public abstract class ECCurve {
             int varA151D78D1E2C09447CC56EDC4DA68901_52618806 = (q.bitLength());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_288654312 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_288654312;
-            // ---------- Original Method ----------
-            //return q.bitLength();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.381 -0400", hash_original_method = "717FAD51B8C0866C7878DF981123AAA4", hash_generated_method = "718B09DBD2E3E24C3F655E27E0863617")
         public ECFieldElement fromBigInteger(BigInteger x) {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_553373425 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_553373425 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_553373425 = new ECFieldElement.Fp(this.q, x);
             addTaint(x.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_553373425.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_553373425.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_553373425;
-            // ---------- Original Method ----------
-            //return new ECFieldElement.Fp(this.q, x);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.382 -0400", hash_original_method = "E2F0508F86D70ECB95714B920D7ED166", hash_generated_method = "7257D69E68E13629584AE5EFBA592F12")
         public ECPoint createPoint(BigInteger x, BigInteger y, boolean withCompression) {
-            ECPoint varB4EAC82CA7396A68D541C85D26508E83_1521133388 = null; //Variable for return #1
+            ECPoint varB4EAC82CA7396A68D541C85D26508E83_1521133388 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1521133388 = new ECPoint.Fp(this, fromBigInteger(x), fromBigInteger(y), withCompression);
             addTaint(x.getTaint());
             addTaint(y.getTaint());
             addTaint(withCompression);
-            varB4EAC82CA7396A68D541C85D26508E83_1521133388.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1521133388.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1521133388;
-            // ---------- Original Method ----------
-            //return new ECPoint.Fp(this, fromBigInteger(x), fromBigInteger(y), withCompression);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.383 -0400", hash_original_method = "1737D5EF0BE777F7A805235738F1CA68", hash_generated_method = "639B2EA26B58B9992F2305470D3FF169")
         public ECPoint decodePoint(byte[] encoded) {
-            ECPoint varB4EAC82CA7396A68D541C85D26508E83_689918247 = null; //Variable for return #1
+            ECPoint varB4EAC82CA7396A68D541C85D26508E83_689918247 = null; 
             ECPoint p = null;
-            //Begin case 0x00 
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Invalid point encoding");
-            } //End block
-            //End case 0x00 
-            //Begin case 0x00 
+            } 
+            
+            
             p = getInfinity();
-            //End case 0x00 
-            //Begin case 0x02 0x03 
+            
+            
             int ytilde = encoded[0] & 1;
-            //End case 0x02 0x03 
-            //Begin case 0x02 0x03 
+            
+            
             byte[] i = new byte[encoded.length - 1];
-            //End case 0x02 0x03 
-            //Begin case 0x02 0x03 
+            
+            
             System.arraycopy(encoded, 1, i, 0, i.length);
-            //End case 0x02 0x03 
-            //Begin case 0x02 0x03 
+            
+            
             ECFieldElement x = new ECFieldElement.Fp(this.q, new BigInteger(1, i));
-            //End case 0x02 0x03 
-            //Begin case 0x02 0x03 
+            
+            
             ECFieldElement alpha = x.multiply(x.square().add(a)).add(b);
-            //End case 0x02 0x03 
-            //Begin case 0x02 0x03 
+            
+            
             ECFieldElement beta = alpha.sqrt();
-            //End case 0x02 0x03 
-            //Begin case 0x02 0x03 
+            
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Invalid point compression");
-            } //End block
-            //End case 0x02 0x03 
-            //Begin case 0x02 0x03 
-            int bit0 = (beta.toBigInteger().testBit(0) ? 1 : 0);//DSFIXME:  CODE0008: Nested ternary operator in expression
-            //End case 0x02 0x03 
-            //Begin case 0x02 0x03 
+            } 
+            
+            
+            int bit0 = (beta.toBigInteger().testBit(0) ? 1 : 0);
+            
+            
             {
                 p = new ECPoint.Fp(this, x, beta, true);
-            } //End block
+            } 
             {
                 p = new ECPoint.Fp(this, x,
                         new ECFieldElement.Fp(this.q, q.subtract(beta.toBigInteger())), true);
-            } //End block
-            //End case 0x02 0x03 
-            //Begin case 0x04 0x06 0x07 
+            } 
+            
+            
             byte[] xEnc = new byte[(encoded.length - 1) / 2];
-            //End case 0x04 0x06 0x07 
-            //Begin case 0x04 0x06 0x07 
+            
+            
             byte[] yEnc = new byte[(encoded.length - 1) / 2];
-            //End case 0x04 0x06 0x07 
-            //Begin case 0x04 0x06 0x07 
+            
+            
             System.arraycopy(encoded, 1, xEnc, 0, xEnc.length);
-            //End case 0x04 0x06 0x07 
-            //Begin case 0x04 0x06 0x07 
+            
+            
             System.arraycopy(encoded, xEnc.length + 1, yEnc, 0, yEnc.length);
-            //End case 0x04 0x06 0x07 
-            //Begin case 0x04 0x06 0x07 
+            
+            
             p = new ECPoint.Fp(this,
                         new ECFieldElement.Fp(this.q, new BigInteger(1, xEnc)),
                         new ECFieldElement.Fp(this.q, new BigInteger(1, yEnc)));
-            //End case 0x04 0x06 0x07 
-            //Begin case default 
+            
+            
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Invalid point encoding 0x" + Integer.toString(encoded[0], 16));
-            //End case default 
+            
             varB4EAC82CA7396A68D541C85D26508E83_689918247 = p;
             addTaint(encoded[0]);
-            varB4EAC82CA7396A68D541C85D26508E83_689918247.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_689918247.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_689918247;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.384 -0400", hash_original_method = "D748A17CBCA9116B03723FC1B2367E9D", hash_generated_method = "D325BA48C8822FD2C44633CE29BD35DB")
         public ECPoint getInfinity() {
-            ECPoint varB4EAC82CA7396A68D541C85D26508E83_701975355 = null; //Variable for return #1
+            ECPoint varB4EAC82CA7396A68D541C85D26508E83_701975355 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_701975355 = infinity;
-            varB4EAC82CA7396A68D541C85D26508E83_701975355.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_701975355.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_701975355;
-            // ---------- Original Method ----------
-            //return infinity;
+            
+            
         }
 
         
@@ -225,25 +225,25 @@ public abstract class ECCurve {
             Object anObject) {
             {
                 boolean varDDF650371899A44735E1E943193361F5_1652522422 = (anObject == this);
-            } //End collapsed parenthetic
+            } 
             ECCurve.Fp other = (ECCurve.Fp) anObject;
             boolean varA05429A3F1E17A3F73EAEAFC61009686_564751814 = (this.q.equals(other.q) 
                     && a.equals(other.a) && b.equals(other.b));
             addTaint(anObject.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1480431241 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1480431241;
-            // ---------- Original Method ----------
-            //if (anObject == this) 
-            //{
-                //return true;
-            //}
-            //if (!(anObject instanceof ECCurve.Fp)) 
-            //{
-                //return false;
-            //}
-            //ECCurve.Fp other = (ECCurve.Fp) anObject;
-            //return this.q.equals(other.q) 
-                    //&& a.equals(other.a) && b.equals(other.b);
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                    
         }
 
         
@@ -252,8 +252,8 @@ public abstract class ECCurve {
             int varE700A94E94A70FE59B4AEED0B662AD32_1205321678 = (a.hashCode() ^ b.hashCode() ^ q.hashCode());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1544627558 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1544627558;
-            // ---------- Original Method ----------
-            //return a.hashCode() ^ b.hashCode() ^ q.hashCode();
+            
+            
         }
 
         
@@ -301,7 +301,7 @@ public abstract class ECCurve {
             addTaint(k);
             addTaint(a.getTaint());
             addTaint(b.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -320,7 +320,7 @@ public abstract class ECCurve {
             addTaint(b.getTaint());
             addTaint(n.getTaint());
             addTaint(h.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -339,7 +339,7 @@ public abstract class ECCurve {
             addTaint(k3);
             addTaint(a.getTaint());
             addTaint(b.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -361,27 +361,27 @@ public abstract class ECCurve {
             this.h = h;
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("k1 must be > 0");
-            } //End block
+            } 
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("k3 must be 0 if k2 == 0");
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("k2 must be > k1");
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("k3 must be > k2");
-                } //End block
-            } //End block
+                } 
+            } 
             this.a = fromBigInteger(a);
             this.b = fromBigInteger(b);
             this.infinity = new ECPoint.F2m(this, null, null);
             addTaint(a.getTaint());
             addTaint(b.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -389,102 +389,102 @@ public abstract class ECCurve {
         public int getFieldSize() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_168566227 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_168566227;
-            // ---------- Original Method ----------
-            //return m;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.387 -0400", hash_original_method = "7AF48CB12A1921AAC7C154231A16AA21", hash_generated_method = "B591814FA6216FC3109A59EAC52756C7")
         public ECFieldElement fromBigInteger(BigInteger x) {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1498887990 = null; //Variable for return #1
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1498887990 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1498887990 = new ECFieldElement.F2m(this.m, this.k1, this.k2, this.k3, x);
             addTaint(x.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1498887990.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1498887990.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1498887990;
-            // ---------- Original Method ----------
-            //return new ECFieldElement.F2m(this.m, this.k1, this.k2, this.k3, x);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.388 -0400", hash_original_method = "166EA7512C9A204978606C53F7DDDB4A", hash_generated_method = "5274B1179465A6FCE4A7516D64375CCE")
         public ECPoint createPoint(BigInteger x, BigInteger y, boolean withCompression) {
-            ECPoint varB4EAC82CA7396A68D541C85D26508E83_399141532 = null; //Variable for return #1
+            ECPoint varB4EAC82CA7396A68D541C85D26508E83_399141532 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_399141532 = new ECPoint.F2m(this, fromBigInteger(x), fromBigInteger(y), withCompression);
             addTaint(x.getTaint());
             addTaint(y.getTaint());
             addTaint(withCompression);
-            varB4EAC82CA7396A68D541C85D26508E83_399141532.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_399141532.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_399141532;
-            // ---------- Original Method ----------
-            //return new ECPoint.F2m(this, fromBigInteger(x), fromBigInteger(y), withCompression);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.389 -0400", hash_original_method = "3A440A2E6AC052FD5047F5B01472DA22", hash_generated_method = "18A028716B4D8B36DB54D45B233130DF")
         public ECPoint decodePoint(byte[] encoded) {
-            ECPoint varB4EAC82CA7396A68D541C85D26508E83_1952732287 = null; //Variable for return #1
+            ECPoint varB4EAC82CA7396A68D541C85D26508E83_1952732287 = null; 
             ECPoint p = null;
-            //Begin case 0x00 
+            
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Invalid point encoding");
-            } //End block
-            //End case 0x00 
-            //Begin case 0x00 
+            } 
+            
+            
             p = getInfinity();
-            //End case 0x00 
-            //Begin case 0x02 0x03 
+            
+            
             byte[] enc = new byte[encoded.length - 1];
-            //End case 0x02 0x03 
-            //Begin case 0x02 0x03 
+            
+            
             System.arraycopy(encoded, 1, enc, 0, enc.length);
-            //End case 0x02 0x03 
-            //Begin case 0x02 0x03 
+            
+            
             {
                 p = decompressPoint(enc, 0);
-            } //End block
+            } 
             {
                 p = decompressPoint(enc, 1);
-            } //End block
-            //End case 0x02 0x03 
-            //Begin case 0x04 0x06 0x07 
+            } 
+            
+            
             byte[] xEnc = new byte[(encoded.length - 1) / 2];
-            //End case 0x04 0x06 0x07 
-            //Begin case 0x04 0x06 0x07 
+            
+            
             byte[] yEnc = new byte[(encoded.length - 1) / 2];
-            //End case 0x04 0x06 0x07 
-            //Begin case 0x04 0x06 0x07 
+            
+            
             System.arraycopy(encoded, 1, xEnc, 0, xEnc.length);
-            //End case 0x04 0x06 0x07 
-            //Begin case 0x04 0x06 0x07 
+            
+            
             System.arraycopy(encoded, xEnc.length + 1, yEnc, 0, yEnc.length);
-            //End case 0x04 0x06 0x07 
-            //Begin case 0x04 0x06 0x07 
+            
+            
             p = new ECPoint.F2m(this,
                     new ECFieldElement.F2m(this.m, this.k1, this.k2, this.k3,
                         new BigInteger(1, xEnc)),
                     new ECFieldElement.F2m(this.m, this.k1, this.k2, this.k3,
                         new BigInteger(1, yEnc)), false);
-            //End case 0x04 0x06 0x07 
-            //Begin case default 
+            
+            
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Invalid point encoding 0x" + Integer.toString(encoded[0], 16));
-            //End case default 
+            
             varB4EAC82CA7396A68D541C85D26508E83_1952732287 = p;
             addTaint(encoded[0]);
-            varB4EAC82CA7396A68D541C85D26508E83_1952732287.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1952732287.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1952732287;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.390 -0400", hash_original_method = "D748A17CBCA9116B03723FC1B2367E9D", hash_generated_method = "CA3FD604B741B35193BC454DC83FBECD")
         public ECPoint getInfinity() {
-            ECPoint varB4EAC82CA7396A68D541C85D26508E83_1549850925 = null; //Variable for return #1
+            ECPoint varB4EAC82CA7396A68D541C85D26508E83_1549850925 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1549850925 = infinity;
-            varB4EAC82CA7396A68D541C85D26508E83_1549850925.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1549850925.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1549850925;
-            // ---------- Original Method ----------
-            //return infinity;
+            
+            
         }
 
         
@@ -496,11 +496,11 @@ public abstract class ECCurve {
                     (b.toBigInteger().equals(ECConstants.ONE))));
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1414260212 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1414260212;
-            // ---------- Original Method ----------
-            //return ((n != null) && (h != null) &&
-                    //((a.toBigInteger().equals(ECConstants.ZERO)) ||
-                    //(a.toBigInteger().equals(ECConstants.ONE))) &&
-                    //(b.toBigInteger().equals(ECConstants.ONE)));
+            
+            
+                    
+                    
+                    
         }
 
         
@@ -508,33 +508,33 @@ public abstract class ECCurve {
         synchronized byte getMu() {
             {
                 mu = Tnaf.getMu(this);
-            } //End block
+            } 
             byte var40EA57D3EE3C07BF1C102B466E1C3091_1170288358 = getTaintByte();
             return var40EA57D3EE3C07BF1C102B466E1C3091_1170288358;
-            // ---------- Original Method ----------
-            //if (mu == 0)
-            //{
-                //mu = Tnaf.getMu(this);
-            //}
-            //return mu;
+            
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.393 -0400", hash_original_method = "C02001236D393BDCA3D2D65CC0F3FCD6", hash_generated_method = "39398BA8DD5A834916E9216F27A1BE5B")
         synchronized BigInteger[] getSi() {
-            BigInteger[] varB4EAC82CA7396A68D541C85D26508E83_647664918 = null; //Variable for return #1
+            BigInteger[] varB4EAC82CA7396A68D541C85D26508E83_647664918 = null; 
             {
                 si = Tnaf.getSi(this);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_647664918 = si;
-            varB4EAC82CA7396A68D541C85D26508E83_647664918.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_647664918.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_647664918;
-            // ---------- Original Method ----------
-            //if (si == null)
-            //{
-                //si = Tnaf.getSi(this);
-            //}
-            //return si;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -542,7 +542,7 @@ public abstract class ECCurve {
         private ECPoint decompressPoint(
             byte[] xEnc, 
             int ypBit) {
-            ECPoint varB4EAC82CA7396A68D541C85D26508E83_661506339 = null; //Variable for return #1
+            ECPoint varB4EAC82CA7396A68D541C85D26508E83_661506339 = null; 
             ECFieldElement xp = new ECFieldElement.F2m(
                     this.m, this.k1, this.k2, this.k3, new BigInteger(1, xEnc));
             ECFieldElement yp = null;
@@ -554,53 +554,53 @@ public abstract class ECCurve {
                         int i = 0;
                         {
                             yp = yp.square();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     ECFieldElement beta = xp.add(a).add(
                         b.multiply(xp.square().invert()));
                     ECFieldElement z = solveQuadradicEquation(beta);
                     {
                         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Invalid point compression");
-                    } //End block
+                    } 
                     int zBit = 0;
                     {
                         boolean var584500F14C5C32181BBFF11166A2781E_1957272221 = (z.toBigInteger().testBit(0));
                         {
                             zBit = 1;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         z = z.add(new ECFieldElement.F2m(this.m, this.k1, this.k2,
                             this.k3, ECConstants.ONE));
-                    } //End block
+                    } 
                     yp = xp.multiply(z);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_661506339 = new ECPoint.F2m(this, xp, yp);
             addTaint(xEnc[0]);
             addTaint(ypBit);
-            varB4EAC82CA7396A68D541C85D26508E83_661506339.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_661506339.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_661506339;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.397 -0400", hash_original_method = "25ED10C579C6ED4884A834D5A2CEB482", hash_generated_method = "D4893CEA8C3C15490E11189EE8473E6E")
         private ECFieldElement solveQuadradicEquation(ECFieldElement beta) {
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1698764210 = null; //Variable for return #1
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1114776911 = null; //Variable for return #2
-            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1354979031 = null; //Variable for return #3
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1698764210 = null; 
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1114776911 = null; 
+            ECFieldElement varB4EAC82CA7396A68D541C85D26508E83_1354979031 = null; 
             ECFieldElement zeroElement = new ECFieldElement.F2m(
                     this.m, this.k1, this.k2, this.k3, ECConstants.ZERO);
             {
                 boolean var8E624E2CB7B76E196F1A3B3E4E14BFB1_353346998 = (beta.toBigInteger().equals(ECConstants.ZERO));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1698764210 = zeroElement;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             ECFieldElement z = null;
             ECFieldElement gamma = zeroElement;
             Random rand = new Random();
@@ -615,37 +615,37 @@ public abstract class ECCurve {
                         ECFieldElement w2 = w.square();
                         z = z.square().add(w2.multiply(t));
                         w = w2.add(beta);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var1F5A575FD8B96856949BBB9072892017_101961527 = (!w.toBigInteger().equals(ECConstants.ZERO));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1114776911 = null;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 gamma = z.square().add(z);
-            } //End block
+            } 
             {
                 boolean var3737DC55BBBC931D31E5C79A85F192CA_1979918599 = (gamma.toBigInteger().equals(ECConstants.ZERO));
-            } //End collapsed parenthetic
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1354979031 = z;
             addTaint(beta.getTaint());
-            ECFieldElement varA7E53CE21691AB073D9660D615818899_755226179; //Final return value
+            ECFieldElement varA7E53CE21691AB073D9660D615818899_755226179; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_755226179 = varB4EAC82CA7396A68D541C85D26508E83_1698764210;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_755226179 = varB4EAC82CA7396A68D541C85D26508E83_1114776911;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_755226179 = varB4EAC82CA7396A68D541C85D26508E83_1354979031;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_755226179.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_755226179.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_755226179;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -654,7 +654,7 @@ public abstract class ECCurve {
             Object anObject) {
             {
                 boolean varDDF650371899A44735E1E943193361F5_959307415 = (anObject == this);
-            } //End collapsed parenthetic
+            } 
             ECCurve.F2m other = (ECCurve.F2m)anObject;
             boolean varDF9613A8AC9951FE2881D381E8399C1A_1160623152 = ((this.m == other.m) && (this.k1 == other.k1)
                 && (this.k2 == other.k2) && (this.k3 == other.k3)
@@ -662,19 +662,19 @@ public abstract class ECCurve {
             addTaint(anObject.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_902911396 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_902911396;
-            // ---------- Original Method ----------
-            //if (anObject == this) 
-            //{
-                //return true;
-            //}
-            //if (!(anObject instanceof ECCurve.F2m)) 
-            //{
-                //return false;
-            //}
-            //ECCurve.F2m other = (ECCurve.F2m)anObject;
-            //return (this.m == other.m) && (this.k1 == other.k1)
-                //&& (this.k2 == other.k2) && (this.k3 == other.k3)
-                //&& a.equals(other.a) && b.equals(other.b);
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+                
         }
 
         
@@ -683,8 +683,8 @@ public abstract class ECCurve {
             int varCEDF45682C77802F189E014D3E26DA89_1206416528 = (this.a.hashCode() ^ this.b.hashCode() ^ m ^ k1 ^ k2 ^ k3);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2073931016 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2073931016;
-            // ---------- Original Method ----------
-            //return this.a.hashCode() ^ this.b.hashCode() ^ m ^ k1 ^ k2 ^ k3;
+            
+            
         }
 
         
@@ -692,8 +692,8 @@ public abstract class ECCurve {
         public int getM() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_391640237 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_391640237;
-            // ---------- Original Method ----------
-            //return m;
+            
+            
         }
 
         
@@ -701,8 +701,8 @@ public abstract class ECCurve {
         public boolean isTrinomial() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1918184983 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1918184983;
-            // ---------- Original Method ----------
-            //return k2 == 0 && k3 == 0;
+            
+            
         }
 
         
@@ -710,8 +710,8 @@ public abstract class ECCurve {
         public int getK1() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_428432301 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_428432301;
-            // ---------- Original Method ----------
-            //return k1;
+            
+            
         }
 
         
@@ -719,8 +719,8 @@ public abstract class ECCurve {
         public int getK2() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2110368189 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2110368189;
-            // ---------- Original Method ----------
-            //return k2;
+            
+            
         }
 
         
@@ -728,30 +728,30 @@ public abstract class ECCurve {
         public int getK3() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2015900358 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2015900358;
-            // ---------- Original Method ----------
-            //return k3;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.408 -0400", hash_original_method = "30674A850FAA3528D3976F32A0E4EE43", hash_generated_method = "838935F59543267FF45DB1FC360D0F4B")
         public BigInteger getN() {
-            BigInteger varB4EAC82CA7396A68D541C85D26508E83_140182911 = null; //Variable for return #1
+            BigInteger varB4EAC82CA7396A68D541C85D26508E83_140182911 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_140182911 = n;
-            varB4EAC82CA7396A68D541C85D26508E83_140182911.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_140182911.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_140182911;
-            // ---------- Original Method ----------
-            //return n;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:46.408 -0400", hash_original_method = "A75824F76318CCD34CB8B7E35601A9FC", hash_generated_method = "6CF972CA258D7D030944383F6286B067")
         public BigInteger getH() {
-            BigInteger varB4EAC82CA7396A68D541C85D26508E83_729485439 = null; //Variable for return #1
+            BigInteger varB4EAC82CA7396A68D541C85D26508E83_729485439 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_729485439 = h;
-            varB4EAC82CA7396A68D541C85D26508E83_729485439.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_729485439.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_729485439;
-            // ---------- Original Method ----------
-            //return h;
+            
+            
         }
 
         

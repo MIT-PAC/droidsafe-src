@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.core.*;
@@ -17,7 +17,7 @@ public class ContentEncodingParser extends HeaderParser {
     public  ContentEncodingParser(String contentEncoding) {
         super(contentEncoding);
         addTaint(contentEncoding.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class ContentEncodingParser extends HeaderParser {
     protected  ContentEncodingParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.858 -0400", hash_original_method = "8ACC6861A4ACA970AEBA8CCFE6984687", hash_generated_method = "010FF5F01DF80BAEBF9AA8E9DB474252")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1976187923 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1976187923 = null; 
         dbg_enter("ContentEncodingParser.parse");
         ContentEncodingList list = new ContentEncodingList();
         try 
@@ -60,24 +61,24 @@ public class ContentEncodingParser extends HeaderParser {
                             cl.setEncoding(token.getTokenValue());
                             this.lexer.SPorHT();
                             list.add(cl);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1976187923 = list;
-        } //End block
+        } 
         catch (ParseException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-        } //End block
+        } 
         finally 
         {
             dbg_leave("ContentEncodingParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1976187923.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1976187923.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1976187923;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

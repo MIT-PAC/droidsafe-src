@@ -1,11 +1,11 @@
 package android.accounts;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.Activity;
 import android.content.Intent;
@@ -52,7 +52,7 @@ public class AccountManager {
     private final BroadcastReceiver mAccountsChangedBroadcastReceiver = new BroadcastReceiver() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.275 -0400", hash_original_method = "06776CFD48438B35B07B048BEACBE4B9", hash_generated_method = "36F56EEE450A855D1F32BF53B0FC45A6")
         public void onReceive(final Context context, final Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             final Account[] accounts = getAccounts();
             {
                 {
@@ -61,19 +61,19 @@ public class AccountManager {
                     Map.Entry<OnAccountsUpdateListener, Handler> entry = var0D76520BC83D9FFEE9B0229B4DA6D653_762397780.next();
                     {
                         postToHandler(entry.getValue(), entry.getKey(), accounts);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
-            // ---------- Original Method ----------
-            //final Account[] accounts = getAccounts();
-            //synchronized (mAccountsUpdatedListeners) {
-                //for (Map.Entry<OnAccountsUpdateListener, Handler> entry :
-                        //mAccountsUpdatedListeners.entrySet()) {
-                    //postToHandler(entry.getValue(), entry.getKey(), accounts);
-                //}
-            //}
+            
+            
+            
+                
+                        
+                    
+                
+            
         }
 
         
@@ -84,10 +84,10 @@ public class AccountManager {
         mContext = context;
         mService = service;
         mMainHandler = new Handler(mContext.getMainLooper());
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mService = service;
-        //mMainHandler = new Handler(mContext.getMainLooper());
+        
+        
+        
+        
     }
 
     
@@ -96,14 +96,15 @@ public class AccountManager {
         mContext = context;
         mService = service;
         mMainHandler = handler;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mService = service;
-        //mMainHandler = handler;
+        
+        
+        
+        
     }
 
     
-        public static Bundle sanitizeResult(Bundle result) {
+        @DSModeled(DSC.SAFE)
+    public static Bundle sanitizeResult(Bundle result) {
         if (result != null) {
             if (result.containsKey(KEY_AUTHTOKEN)
                     && !TextUtils.isEmpty(result.getString(KEY_AUTHTOKEN))) {
@@ -116,7 +117,8 @@ public class AccountManager {
     }
 
     
-        public static AccountManager get(Context context) {
+        @DSModeled(DSC.SAFE)
+    public static AccountManager get(Context context) {
         if (context == null) throw new IllegalArgumentException("context is null");
         return (AccountManager) context.getSystemService(Context.ACCOUNT_SERVICE);
     }
@@ -124,121 +126,124 @@ public class AccountManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.282 -0400", hash_original_method = "96491C15B9EBF498D1F12389B670F852", hash_generated_method = "985127BD2EC05DD67B9372B1AFE69DF7")
     public String getPassword(final Account account) {
-        String varB4EAC82CA7396A68D541C85D26508E83_952241827 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_952241827 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("account is null");
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_952241827 = mService.getPassword(account);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         addTaint(account.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_952241827.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_952241827.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_952241827;
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //try {
-            //return mService.getPassword(account);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException(e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.284 -0400", hash_original_method = "8DF662EA0E604D155E2F8EF5AE185580", hash_generated_method = "00682D175AD2DE025EC4222A9692884C")
     public String getUserData(final Account account, final String key) {
-        String varB4EAC82CA7396A68D541C85D26508E83_274565725 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_274565725 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("account is null");
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("key is null");
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_274565725 = mService.getUserData(account, key);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         addTaint(account.getTaint());
         addTaint(key.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_274565725.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_274565725.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_274565725;
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //if (key == null) throw new IllegalArgumentException("key is null");
-        //try {
-            //return mService.getUserData(account, key);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException(e);
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.286 -0400", hash_original_method = "CE81752A69974A848970631715E35659", hash_generated_method = "97B2CF0729B56417DB4659E71F28E6F9")
     public AuthenticatorDescription[] getAuthenticatorTypes() {
-        AuthenticatorDescription[] varB4EAC82CA7396A68D541C85D26508E83_653412032 = null; //Variable for return #1
+        AuthenticatorDescription[] varB4EAC82CA7396A68D541C85D26508E83_653412032 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_653412032 = mService.getAuthenticatorTypes();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_653412032.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_653412032.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_653412032;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getAuthenticatorTypes();
-        //} catch (RemoteException e) {
-            //throw new RuntimeException(e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.288 -0400", hash_original_method = "CBAE32CDB06D92C44980C30430EF1CC0", hash_generated_method = "44FC17B87EA1B1BCAAB801483A806DF7")
     public Account[] getAccounts() {
-        Account[] varB4EAC82CA7396A68D541C85D26508E83_1726879243 = null; //Variable for return #1
+        Account[] varB4EAC82CA7396A68D541C85D26508E83_1726879243 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1726879243 = mService.getAccounts(null);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1726879243.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1726879243.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1726879243;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getAccounts(null);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException(e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.292 -0400", hash_original_method = "182706774272102452F63339D769DBB2", hash_generated_method = "614AFD08BBDE0AA468DA6B1BCBFFE1B7")
     public Account[] getAccountsByType(String type) {
-        Account[] varB4EAC82CA7396A68D541C85D26508E83_1961962338 = null; //Variable for return #1
+        Account[] varB4EAC82CA7396A68D541C85D26508E83_1961962338 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1961962338 = mService.getAccounts(type);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         addTaint(type.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1961962338.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1961962338.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1961962338;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getAccounts(type);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException(e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -246,7 +251,7 @@ public class AccountManager {
     public AccountManagerFuture<Boolean> hasFeatures(final Account account,
             final String[] features,
             AccountManagerCallback<Boolean> callback, Handler handler) {
-        AccountManagerFuture<Boolean> varB4EAC82CA7396A68D541C85D26508E83_13196819 = null; //Variable for return #1
+        AccountManagerFuture<Boolean> varB4EAC82CA7396A68D541C85D26508E83_13196819 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("account is null");
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("features is null");
         varB4EAC82CA7396A68D541C85D26508E83_13196819 = new Future2Task<Boolean>(handler, callback) {
@@ -264,22 +269,22 @@ public class AccountManager {
         addTaint(features[0].getTaint());
         addTaint(callback.getTaint());
         addTaint(handler.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_13196819.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_13196819.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_13196819;
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //if (features == null) throw new IllegalArgumentException("features is null");
-        //return new Future2Task<Boolean>(handler, callback) {
-            //public void doWork() throws RemoteException {
-                //mService.hasFeatures(mResponse, account, features);
-            //}
-            //public Boolean bundleToResult(Bundle bundle) throws AuthenticatorException {
-                //if (!bundle.containsKey(KEY_BOOLEAN_RESULT)) {
-                    //throw new AuthenticatorException("no result in response");
-                //}
-                //return bundle.getBoolean(KEY_BOOLEAN_RESULT);
-            //}
-        //}.start();
+        
+        
+        
+        
+            
+                
+            
+            
+                
+                    
+                
+                
+            
+        
     }
 
     
@@ -287,7 +292,7 @@ public class AccountManager {
     public AccountManagerFuture<Account[]> getAccountsByTypeAndFeatures(
             final String type, final String[] features,
             AccountManagerCallback<Account[]> callback, Handler handler) {
-        AccountManagerFuture<Account[]> varB4EAC82CA7396A68D541C85D26508E83_983205156 = null; //Variable for return #1
+        AccountManagerFuture<Account[]> varB4EAC82CA7396A68D541C85D26508E83_983205156 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("type is null");
         varB4EAC82CA7396A68D541C85D26508E83_983205156 = new Future2Task<Account[]>(handler, callback) {
             public void doWork() throws RemoteException {
@@ -309,43 +314,44 @@ public class AccountManager {
         addTaint(features[0].getTaint());
         addTaint(callback.getTaint());
         addTaint(handler.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_983205156.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_983205156.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_983205156;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.299 -0400", hash_original_method = "757D4D500E44E3A8DF2EF3DE74D56199", hash_generated_method = "11BA7A575843F10BD3E138BC750580D7")
     public boolean addAccountExplicitly(Account account, String password, Bundle userdata) {
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("account is null");
         try 
         {
             boolean var3A306B1C872C1237D35170E997FB4C71_1599122257 = (mService.addAccount(account, password, userdata));
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         addTaint(account.getTaint());
         addTaint(password.getTaint());
         addTaint(userdata.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_431981832 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_431981832;
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //try {
-            //return mService.addAccount(account, password, userdata);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException(e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.302 -0400", hash_original_method = "E8BA698C89E3CF76A294446D4D176FF0", hash_generated_method = "8E75420477BDA0E2C3636947F426F7EA")
     public AccountManagerFuture<Boolean> removeAccount(final Account account,
             AccountManagerCallback<Boolean> callback, Handler handler) {
-        AccountManagerFuture<Boolean> varB4EAC82CA7396A68D541C85D26508E83_1712482511 = null; //Variable for return #1
+        AccountManagerFuture<Boolean> varB4EAC82CA7396A68D541C85D26508E83_1712482511 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("account is null");
         varB4EAC82CA7396A68D541C85D26508E83_1712482511 = new Future2Task<Boolean>(handler, callback) {
             public void doWork() throws RemoteException {
@@ -361,21 +367,21 @@ public class AccountManager {
         addTaint(account.getTaint());
         addTaint(callback.getTaint());
         addTaint(handler.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1712482511.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1712482511.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1712482511;
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //return new Future2Task<Boolean>(handler, callback) {
-            //public void doWork() throws RemoteException {
-                //mService.removeAccount(mResponse, account);
-            //}
-            //public Boolean bundleToResult(Bundle bundle) throws AuthenticatorException {
-                //if (!bundle.containsKey(KEY_BOOLEAN_RESULT)) {
-                    //throw new AuthenticatorException("no result in response");
-                //}
-                //return bundle.getBoolean(KEY_BOOLEAN_RESULT);
-            //}
-        //}.start();
+        
+        
+        
+            
+                
+            
+            
+                
+                    
+                
+                
+            
+        
     }
 
     
@@ -386,51 +392,51 @@ public class AccountManager {
         {
             {
                 mService.invalidateAuthToken(accountType, authToken);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         addTaint(accountType.getTaint());
         addTaint(authToken.getTaint());
-        // ---------- Original Method ----------
-        //if (accountType == null) throw new IllegalArgumentException("accountType is null");
-        //try {
-            //if (authToken != null) {
-                //mService.invalidateAuthToken(accountType, authToken);
-            //}
-        //} catch (RemoteException e) {
-            //throw new RuntimeException(e);
-        //}
+        
+        
+        
+            
+                
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.305 -0400", hash_original_method = "DF00C62B1FBE79E2C2C3124DAA6E8CCA", hash_generated_method = "7EB04B801924D417FFF9F7F4EF71AEAE")
     public String peekAuthToken(final Account account, final String authTokenType) {
-        String varB4EAC82CA7396A68D541C85D26508E83_2080935054 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2080935054 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("account is null");
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("authTokenType is null");
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2080935054 = mService.peekAuthToken(account, authTokenType);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         addTaint(account.getTaint());
         addTaint(authTokenType.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2080935054.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2080935054.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2080935054;
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
-        //try {
-            //return mService.peekAuthToken(account, authTokenType);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException(e);
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -440,20 +446,20 @@ public class AccountManager {
         try 
         {
             mService.setPassword(account, password);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         addTaint(account.getTaint());
         addTaint(password.getTaint());
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //try {
-            //mService.setPassword(account, password);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException(e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -463,19 +469,19 @@ public class AccountManager {
         try 
         {
             mService.clearPassword(account);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         addTaint(account.getTaint());
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //try {
-            //mService.clearPassword(account);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException(e);
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -486,22 +492,22 @@ public class AccountManager {
         try 
         {
             mService.setUserData(account, key, value);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         addTaint(account.getTaint());
         addTaint(key.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //if (key == null) throw new IllegalArgumentException("key is null");
-        //try {
-            //mService.setUserData(account, key, value);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException(e);
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -512,63 +518,64 @@ public class AccountManager {
         try 
         {
             mService.setAuthToken(account, authTokenType, authToken);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
-        } //End block
+        } 
         addTaint(account.getTaint());
         addTaint(authTokenType.getTaint());
         addTaint(authToken.getTaint());
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
-        //try {
-            //mService.setAuthToken(account, authTokenType, authToken);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException(e);
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.316 -0400", hash_original_method = "51CDD8704FBB21791536BE5C26E3F85E", hash_generated_method = "19AEE2DFB2A823FF27DB1551B923053B")
     public String blockingGetAuthToken(Account account, String authTokenType,
             boolean notifyAuthFailure) throws OperationCanceledException, IOException, AuthenticatorException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1236346620 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1376582530 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1236346620 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1376582530 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("account is null");
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("authTokenType is null");
         Bundle bundle = getAuthToken(account, authTokenType, notifyAuthFailure, null ,
                 null ).getResult();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1236346620 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1376582530 = bundle.getString(KEY_AUTHTOKEN);
         addTaint(account.getTaint());
         addTaint(authTokenType.getTaint());
         addTaint(notifyAuthFailure);
-        String varA7E53CE21691AB073D9660D615818899_1937651370; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1937651370; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1937651370 = varB4EAC82CA7396A68D541C85D26508E83_1236346620;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1937651370 = varB4EAC82CA7396A68D541C85D26508E83_1376582530;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1937651370.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1937651370.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1937651370;
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
-        //Bundle bundle = getAuthToken(account, authTokenType, notifyAuthFailure, null ,
-                //null ).getResult();
-        //if (bundle == null) {
-            //Log.e(TAG, "blockingGetAuthToken: null was returned from getResult() for "
-                    //+ account + ", authTokenType " + authTokenType);
-            //return null;
-        //}
-        //return bundle.getString(KEY_AUTHTOKEN);
+        
+        
+        
+        
+                
+        
+            
+                    
+            
+        
+        
     }
 
     
@@ -576,14 +583,14 @@ public class AccountManager {
     public AccountManagerFuture<Bundle> getAuthToken(
             final Account account, final String authTokenType, final Bundle options,
             final Activity activity, AccountManagerCallback<Bundle> callback, Handler handler) {
-        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_806140456 = null; //Variable for return #1
+        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_806140456 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("account is null");
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("authTokenType is null");
         final Bundle optionsIn;
         optionsIn = new Bundle();
         {
             optionsIn.putAll(options);
-        } //End block
+        } 
         optionsIn.putString(KEY_ANDROID_PACKAGE_NAME, mContext.getPackageName());
         varB4EAC82CA7396A68D541C85D26508E83_806140456 = new AmsTask(activity, handler, callback) {
             public void doWork() throws RemoteException {
@@ -598,23 +605,23 @@ public class AccountManager {
         addTaint(activity.getTaint());
         addTaint(callback.getTaint());
         addTaint(handler.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_806140456.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_806140456.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_806140456;
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
-        //final Bundle optionsIn = new Bundle();
-        //if (options != null) {
-            //optionsIn.putAll(options);
-        //}
-        //optionsIn.putString(KEY_ANDROID_PACKAGE_NAME, mContext.getPackageName());
-        //return new AmsTask(activity, handler, callback) {
-            //public void doWork() throws RemoteException {
-                //mService.getAuthToken(mResponse, account, authTokenType,
-                        //false , true ,
-                        //optionsIn);
-            //}
-        //}.start();
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+                
+                        
+                        
+            
+        
     }
 
     
@@ -624,7 +631,7 @@ public class AccountManager {
             final Account account, final String authTokenType, 
             final boolean notifyAuthFailure,
             AccountManagerCallback<Bundle> callback, Handler handler) {
-        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_434311572 = null; //Variable for return #1
+        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_434311572 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_434311572 = getAuthToken(account, authTokenType, null, notifyAuthFailure, callback, 
                 handler);
         addTaint(account.getTaint());
@@ -632,11 +639,11 @@ public class AccountManager {
         addTaint(notifyAuthFailure);
         addTaint(callback.getTaint());
         addTaint(handler.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_434311572.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_434311572.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_434311572;
-        // ---------- Original Method ----------
-        //return getAuthToken(account, authTokenType, null, notifyAuthFailure, callback, 
-                //handler);
+        
+        
+                
     }
 
     
@@ -645,14 +652,14 @@ public class AccountManager {
             final Account account, final String authTokenType, final Bundle options,
             final boolean notifyAuthFailure,
             AccountManagerCallback<Bundle> callback, Handler handler) {
-        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_1667316121 = null; //Variable for return #1
+        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_1667316121 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("account is null");
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("authTokenType is null");
         final Bundle optionsIn;
         optionsIn = new Bundle();
         {
             optionsIn.putAll(options);
-        } //End block
+        } 
         optionsIn.putString(KEY_ANDROID_PACKAGE_NAME, mContext.getPackageName());
         varB4EAC82CA7396A68D541C85D26508E83_1667316121 = new AmsTask(null, handler, callback) {
             public void doWork() throws RemoteException {
@@ -666,22 +673,22 @@ public class AccountManager {
         addTaint(notifyAuthFailure);
         addTaint(callback.getTaint());
         addTaint(handler.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1667316121.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1667316121.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1667316121;
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
-        //final Bundle optionsIn = new Bundle();
-        //if (options != null) {
-            //optionsIn.putAll(options);
-        //}
-        //optionsIn.putString(KEY_ANDROID_PACKAGE_NAME, mContext.getPackageName());
-        //return new AmsTask(null, handler, callback) {
-            //public void doWork() throws RemoteException {
-                //mService.getAuthToken(mResponse, account, authTokenType,
-                        //notifyAuthFailure, false , optionsIn);
-            //}
-        //}.start();
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+                
+                        
+            
+        
     }
 
     
@@ -690,13 +697,13 @@ public class AccountManager {
             final String authTokenType, final String[] requiredFeatures,
             final Bundle addAccountOptions,
             final Activity activity, AccountManagerCallback<Bundle> callback, Handler handler) {
-        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_1451603363 = null; //Variable for return #1
+        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_1451603363 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("accountType is null");
         final Bundle optionsIn;
         optionsIn = new Bundle();
         {
             optionsIn.putAll(addAccountOptions);
-        } //End block
+        } 
         optionsIn.putString(KEY_ANDROID_PACKAGE_NAME, mContext.getPackageName());
         varB4EAC82CA7396A68D541C85D26508E83_1451603363 = new AmsTask(activity, handler, callback) {
             public void doWork() throws RemoteException {
@@ -711,21 +718,21 @@ public class AccountManager {
         addTaint(activity.getTaint());
         addTaint(callback.getTaint());
         addTaint(handler.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1451603363.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1451603363.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1451603363;
-        // ---------- Original Method ----------
-        //if (accountType == null) throw new IllegalArgumentException("accountType is null");
-        //final Bundle optionsIn = new Bundle();
-        //if (addAccountOptions != null) {
-            //optionsIn.putAll(addAccountOptions);
-        //}
-        //optionsIn.putString(KEY_ANDROID_PACKAGE_NAME, mContext.getPackageName());
-        //return new AmsTask(activity, handler, callback) {
-            //public void doWork() throws RemoteException {
-                //mService.addAcount(mResponse, accountType, authTokenType,
-                        //requiredFeatures, activity != null, optionsIn);
-            //}
-        //}.start();
+        
+        
+        
+        
+            
+        
+        
+        
+            
+                
+                        
+            
+        
     }
 
     
@@ -735,7 +742,7 @@ public class AccountManager {
             final Activity activity,
             final AccountManagerCallback<Bundle> callback,
             final Handler handler) {
-        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_699476945 = null; //Variable for return #1
+        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_699476945 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("account is null");
         varB4EAC82CA7396A68D541C85D26508E83_699476945 = new AmsTask(activity, handler, callback) {
             public void doWork() throws RemoteException {
@@ -747,15 +754,15 @@ public class AccountManager {
         addTaint(activity.getTaint());
         addTaint(callback.getTaint());
         addTaint(handler.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_699476945.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_699476945.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_699476945;
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //return new AmsTask(activity, handler, callback) {
-            //public void doWork() throws RemoteException {
-                //mService.confirmCredentials(mResponse, account, options, activity != null);
-            //}
-        //}.start();
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -765,7 +772,7 @@ public class AccountManager {
             final Bundle options, final Activity activity,
             final AccountManagerCallback<Bundle> callback,
             final Handler handler) {
-        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_2007948231 = null; //Variable for return #1
+        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_2007948231 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("account is null");
         varB4EAC82CA7396A68D541C85D26508E83_2007948231 = new AmsTask(activity, handler, callback) {
             public void doWork() throws RemoteException {
@@ -779,16 +786,16 @@ public class AccountManager {
         addTaint(activity.getTaint());
         addTaint(callback.getTaint());
         addTaint(handler.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2007948231.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2007948231.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2007948231;
-        // ---------- Original Method ----------
-        //if (account == null) throw new IllegalArgumentException("account is null");
-        //return new AmsTask(activity, handler, callback) {
-            //public void doWork() throws RemoteException {
-                //mService.updateCredentials(mResponse, account, authTokenType, activity != null,
-                        //options);
-            //}
-        //}.start();
+        
+        
+        
+            
+                
+                        
+            
+        
     }
 
     
@@ -796,7 +803,7 @@ public class AccountManager {
     public AccountManagerFuture<Bundle> editProperties(final String accountType,
             final Activity activity, final AccountManagerCallback<Bundle> callback,
             final Handler handler) {
-        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_100754752 = null; //Variable for return #1
+        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_100754752 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("accountType is null");
         varB4EAC82CA7396A68D541C85D26508E83_100754752 = new AmsTask(activity, handler, callback) {
             public void doWork() throws RemoteException {
@@ -807,18 +814,19 @@ public class AccountManager {
         addTaint(activity.getTaint());
         addTaint(callback.getTaint());
         addTaint(handler.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_100754752.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_100754752.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_100754752;
-        // ---------- Original Method ----------
-        //if (accountType == null) throw new IllegalArgumentException("accountType is null");
-        //return new AmsTask(activity, handler, callback) {
-            //public void doWork() throws RemoteException {
-                //mService.editProperties(mResponse, accountType, activity != null);
-            //}
-        //}.start();
+        
+        
+        
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.331 -0400", hash_original_method = "05C769BBE692F72E464B52B58848EACE", hash_generated_method = "DC8123E264A79679D7AF497859AA8F06")
     private void ensureNotOnMainThread() {
         final Looper looper = Looper.myLooper();
@@ -831,21 +839,21 @@ public class AccountManager {
                     boolean var231355A96CE7FC42909F1BC96305F121_1116320483 = (mContext.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.FROYO);
                     {
                         if (DroidSafeAndroidRuntime.control) throw exception;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //final Looper looper = Looper.myLooper();
-        //if (looper != null && looper == mContext.getMainLooper()) {
-            //final IllegalStateException exception = new IllegalStateException(
-                    //"calling this from your main thread can lead to deadlock");
-            //Log.e(TAG, "calling this from your main thread can lead to deadlock and/or ANRs",
-                    //exception);
-            //if (mContext.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.FROYO) {
-                //throw exception;
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+            
+                    
+            
+                    
+            
+                
+            
+        
     }
 
     
@@ -857,20 +865,20 @@ public class AccountManager {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.333 -0400", hash_original_method = "BDBA0E8ABF21CCC323F7A43F04981195", hash_generated_method = "0CA3FE6CFE2D535345F3115B21FF729A")
             public void run() {
                 callback.run(future);
-                // ---------- Original Method ----------
-                //callback.run(future);
+                
+                
             }
 });
         addTaint(handler.getTaint());
         addTaint(callback.getTaint());
         addTaint(future.getTaint());
-        // ---------- Original Method ----------
-        //handler = handler == null ? mMainHandler : handler;
-        //handler.post(new Runnable() {
-            //public void run() {
-                //callback.run(future);
-            //}
-        //});
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -887,92 +895,93 @@ public class AccountManager {
                 try 
                 {
                     listener.onAccountsUpdated(accountsCopy);
-                } //End block
+                } 
                 catch (SQLException e)
                 { }
-                // ---------- Original Method ----------
-                //try {
-                    //listener.onAccountsUpdated(accountsCopy);
-                //} catch (SQLException e) {
-                    //Log.e(TAG, "Can't update accounts", e);
-                //}
+                
+                
+                    
+                
+                    
+                
             }
 });
         addTaint(handler.getTaint());
         addTaint(listener.getTaint());
         addTaint(accounts[0].getTaint());
-        // ---------- Original Method ----------
-        //final Account[] accountsCopy = new Account[accounts.length];
-        //System.arraycopy(accounts, 0, accountsCopy, 0, accountsCopy.length);
-        //handler = (handler == null) ? mMainHandler : handler;
-        //handler.post(new Runnable() {
-            //public void run() {
-                //try {
-                    //listener.onAccountsUpdated(accountsCopy);
-                //} catch (SQLException e) {
-                    //Log.e(TAG, "Can't update accounts", e);
-                //}
-            //}
-        //});
+        
+        
+        
+        
+        
+            
+                
+                    
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.338 -0400", hash_original_method = "6FDE075EEB86D1BECEDE842FFDA184DE", hash_generated_method = "D0E28CB4D98EC32A745451FC020F7AC3")
     private Exception convertErrorToException(int code, String message) {
-        Exception varB4EAC82CA7396A68D541C85D26508E83_895572130 = null; //Variable for return #1
-        Exception varB4EAC82CA7396A68D541C85D26508E83_598919546 = null; //Variable for return #2
-        Exception varB4EAC82CA7396A68D541C85D26508E83_1709413601 = null; //Variable for return #3
-        Exception varB4EAC82CA7396A68D541C85D26508E83_17326384 = null; //Variable for return #4
-        Exception varB4EAC82CA7396A68D541C85D26508E83_599341952 = null; //Variable for return #5
+        Exception varB4EAC82CA7396A68D541C85D26508E83_895572130 = null; 
+        Exception varB4EAC82CA7396A68D541C85D26508E83_598919546 = null; 
+        Exception varB4EAC82CA7396A68D541C85D26508E83_1709413601 = null; 
+        Exception varB4EAC82CA7396A68D541C85D26508E83_17326384 = null; 
+        Exception varB4EAC82CA7396A68D541C85D26508E83_599341952 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_895572130 = new IOException(message);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_598919546 = new UnsupportedOperationException(message);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1709413601 = new AuthenticatorException(message);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_17326384 = new IllegalArgumentException(message);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_599341952 = new AuthenticatorException(message);
         addTaint(code);
         addTaint(message.getTaint());
-        Exception varA7E53CE21691AB073D9660D615818899_1977473381; //Final return value
+        Exception varA7E53CE21691AB073D9660D615818899_1977473381; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1977473381 = varB4EAC82CA7396A68D541C85D26508E83_895572130;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1977473381 = varB4EAC82CA7396A68D541C85D26508E83_598919546;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1977473381 = varB4EAC82CA7396A68D541C85D26508E83_1709413601;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1977473381 = varB4EAC82CA7396A68D541C85D26508E83_17326384;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1977473381 = varB4EAC82CA7396A68D541C85D26508E83_599341952;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1977473381.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1977473381.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1977473381;
-        // ---------- Original Method ----------
-        //if (code == ERROR_CODE_NETWORK_ERROR) {
-            //return new IOException(message);
-        //}
-        //if (code == ERROR_CODE_UNSUPPORTED_OPERATION) {
-            //return new UnsupportedOperationException(message);
-        //}
-        //if (code == ERROR_CODE_INVALID_RESPONSE) {
-            //return new AuthenticatorException(message);
-        //}
-        //if (code == ERROR_CODE_BAD_ARGUMENTS) {
-            //return new IllegalArgumentException(message);
-        //}
-        //return new AuthenticatorException(message);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -982,7 +991,7 @@ public class AccountManager {
             final Activity activity, final Bundle addAccountOptions,
             final Bundle getAuthTokenOptions,
             final AccountManagerCallback<Bundle> callback, final Handler handler) {
-        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_104768074 = null; //Variable for return #1
+        AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_104768074 = null; 
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("account type is null");
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("authTokenType is null");
         final GetAuthTokenByTypeAndFeaturesTask task = new GetAuthTokenByTypeAndFeaturesTask(accountType, authTokenType, features,
@@ -997,20 +1006,21 @@ public class AccountManager {
         addTaint(getAuthTokenOptions.getTaint());
         addTaint(callback.getTaint());
         addTaint(handler.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_104768074.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_104768074.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_104768074;
-        // ---------- Original Method ----------
-        //if (accountType == null) throw new IllegalArgumentException("account type is null");
-        //if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
-        //final GetAuthTokenByTypeAndFeaturesTask task =
-                //new GetAuthTokenByTypeAndFeaturesTask(accountType, authTokenType, features,
-                //activity, addAccountOptions, getAuthTokenOptions, callback, handler);
-        //task.start();
-        //return task;
+        
+        
+        
+        
+                
+                
+        
+        
     }
 
     
-        static public Intent newChooseAccountIntent(Account selectedAccount,
+        @DSModeled(DSC.SAFE)
+    static public Intent newChooseAccountIntent(Account selectedAccount,
             ArrayList<Account> allowableAccounts,
             String[] allowableAccountTypes,
             boolean alwaysPromptForAccount,
@@ -1045,14 +1055,14 @@ public class AccountManager {
             Handler handler, boolean updateImmediately) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("the listener is null");
-        } //End block
+        } 
         {
             {
                 boolean varABDC43B51A11969F947C4F80A2C4B841_1419187622 = (mAccountsUpdatedListeners.containsKey(listener));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("this listener is already added");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             final boolean wasEmpty = mAccountsUpdatedListeners.isEmpty();
             mAccountsUpdatedListeners.put(listener, handler);
             {
@@ -1060,47 +1070,48 @@ public class AccountManager {
                 intentFilter.addAction(LOGIN_ACCOUNTS_CHANGED_ACTION);
                 intentFilter.addAction(Intent.ACTION_DEVICE_STORAGE_OK);
                 mContext.registerReceiver(mAccountsChangedBroadcastReceiver, intentFilter);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             postToHandler(handler, listener, getAccounts());
-        } //End block
+        } 
         addTaint(listener.getTaint());
         addTaint(handler.getTaint());
         addTaint(updateImmediately);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.347 -0400", hash_original_method = "66F9A18B2BBFAE47B027D9D23A795F11", hash_generated_method = "424933DBC363A9F4B535F9AEA36E64C8")
     public void removeOnAccountsUpdatedListener(OnAccountsUpdateListener listener) {
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("listener is null");
         {
             {
                 boolean var1C6325FC6028CC056AEBDA572E73C2D0_239515609 = (!mAccountsUpdatedListeners.containsKey(listener));
-            } //End collapsed parenthetic
+            } 
             mAccountsUpdatedListeners.remove(listener);
             {
                 boolean varED431896F12693751A225EDAD100E63A_751152765 = (mAccountsUpdatedListeners.isEmpty());
                 {
                     mContext.unregisterReceiver(mAccountsChangedBroadcastReceiver);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //if (listener == null) throw new IllegalArgumentException("listener is null");
-        //synchronized (mAccountsUpdatedListeners) {
-            //if (!mAccountsUpdatedListeners.containsKey(listener)) {
-                //Log.e(TAG, "Listener was not previously added");
-                //return;
-            //}
-            //mAccountsUpdatedListeners.remove(listener);
-            //if (mAccountsUpdatedListeners.isEmpty()) {
-                //mContext.unregisterReceiver(mAccountsChangedBroadcastReceiver);
-            //}
-        //}
+        
+        
+        
+            
+                
+                
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -1129,35 +1140,35 @@ public class AccountManager {
             mCallback = callback;
             mActivity = activity;
             mResponse = new Response();
-            // ---------- Original Method ----------
-            //mHandler = handler;
-            //mCallback = callback;
-            //mActivity = activity;
-            //mResponse = new Response();
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.354 -0400", hash_original_method = "E07DE3E7F6D29C4D4BDAC4812A3CF430", hash_generated_method = "917EC7245975BFE8F4DDC20E69477149")
         public final AccountManagerFuture<Bundle> start() {
-            AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_1520483523 = null; //Variable for return #1
+            AccountManagerFuture<Bundle> varB4EAC82CA7396A68D541C85D26508E83_1520483523 = null; 
             try 
             {
                 doWork();
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 setException(e);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1520483523 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1520483523.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1520483523.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1520483523;
-            // ---------- Original Method ----------
-            //try {
-                //doWork();
-            //} catch (RemoteException e) {
-                //setException(e);
-            //}
-            //return this;
+            
+            
+                
+            
+                
+            
+            
         }
 
         
@@ -1165,11 +1176,11 @@ public class AccountManager {
         protected void set(Bundle bundle) {
             super.set(bundle);
             addTaint(bundle.getTaint());
-            // ---------- Original Method ----------
-            //if (bundle == null) {
-                //Log.e(TAG, "the bundle must not be null", new Exception());
-            //}
-            //super.set(bundle);
+            
+            
+                
+            
+            
         }
 
         
@@ -1178,27 +1189,27 @@ public class AccountManager {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.362 -0400", hash_original_method = "6C34E289CBAB2DD26AA2603338539143", hash_generated_method = "AC4805E4E90E522B80759316E3B6FA51")
         private Bundle internalGetResult(Long timeout, TimeUnit unit) throws OperationCanceledException, IOException, AuthenticatorException {
-            Bundle varB4EAC82CA7396A68D541C85D26508E83_517624621 = null; //Variable for return #1
-            Bundle varB4EAC82CA7396A68D541C85D26508E83_1765746850 = null; //Variable for return #2
+            Bundle varB4EAC82CA7396A68D541C85D26508E83_517624621 = null; 
+            Bundle varB4EAC82CA7396A68D541C85D26508E83_1765746850 = null; 
             {
                 boolean var1D60817A8CAE63E309C47BE23A4C8C61_2099210286 = (!isDone());
                 {
                     ensureNotOnMainThread();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             try 
             {
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_517624621 = get();
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1765746850 = get(timeout, unit);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (CancellationException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new OperationCanceledException();
-            } //End block
+            } 
             catch (TimeoutException e)
             { }
             catch (InterruptedException e)
@@ -1208,67 +1219,67 @@ public class AccountManager {
                 final Throwable cause = e.getCause();
                 {
                     if (DroidSafeAndroidRuntime.control) throw (IOException) cause;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new AuthenticatorException(cause);
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw (AuthenticatorException) cause;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw (RuntimeException) cause;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw (Error) cause;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(cause);
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 cancel(true );
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new OperationCanceledException();
             addTaint(timeout.getTaint());
             addTaint(unit.getTaint());
-            Bundle varA7E53CE21691AB073D9660D615818899_1785526104; //Final return value
+            Bundle varA7E53CE21691AB073D9660D615818899_1785526104; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1785526104 = varB4EAC82CA7396A68D541C85D26508E83_517624621;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1785526104 = varB4EAC82CA7396A68D541C85D26508E83_1765746850;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1785526104.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1785526104.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1785526104;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.364 -0400", hash_original_method = "7428E8716809F4A01AF7F726F040DE64", hash_generated_method = "5DD734C7B3F4F34E0A85B0D1B9697EC8")
         public Bundle getResult() throws OperationCanceledException, IOException, AuthenticatorException {
-            Bundle varB4EAC82CA7396A68D541C85D26508E83_887373530 = null; //Variable for return #1
+            Bundle varB4EAC82CA7396A68D541C85D26508E83_887373530 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_887373530 = internalGetResult(null, null);
-            varB4EAC82CA7396A68D541C85D26508E83_887373530.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_887373530.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_887373530;
-            // ---------- Original Method ----------
-            //return internalGetResult(null, null);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.366 -0400", hash_original_method = "2DB61FA3CF370F8EAC405A022C9CA553", hash_generated_method = "2D6D46945F2B0030123D6CF788C76700")
         public Bundle getResult(long timeout, TimeUnit unit) throws OperationCanceledException, IOException, AuthenticatorException {
-            Bundle varB4EAC82CA7396A68D541C85D26508E83_526859759 = null; //Variable for return #1
+            Bundle varB4EAC82CA7396A68D541C85D26508E83_526859759 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_526859759 = internalGetResult(timeout, unit);
             addTaint(timeout);
             addTaint(unit.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_526859759.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_526859759.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_526859759;
-            // ---------- Original Method ----------
-            //return internalGetResult(timeout, unit);
+            
+            
         }
 
         
@@ -1276,11 +1287,11 @@ public class AccountManager {
         protected void done() {
             {
                 postToHandler(mHandler, mCallback, this);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mCallback != null) {
-                //postToHandler(mHandler, mCallback, this);
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -1289,62 +1300,62 @@ public class AccountManager {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.369 -0400", hash_original_method = "1C91C9705FD3BE3D2A4F4357891D41FD", hash_generated_method = "1C91C9705FD3BE3D2A4F4357891D41FD")
             public Response ()
             {
-                //Synthesized constructor
+                
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.371 -0400", hash_original_method = "BC11F9A6ED106794CC5C9152E9BD3B43", hash_generated_method = "4C0DC30F0E38FED10EA4EAF38D148F27")
             public void onResult(Bundle bundle) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 Intent intent = bundle.getParcelable(KEY_INTENT);
                 {
                     mActivity.startActivity(intent);
-                } //End block
+                } 
                 {
                     boolean var80E32410CA7CB1AFA3ABADA4FB788EDD_1435389289 = (bundle.getBoolean("retry"));
                     {
                         try 
                         {
                             doWork();
-                        } //End block
+                        } 
                         catch (RemoteException e)
                         { }
-                    } //End block
+                    } 
                     {
                         set(bundle);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 addTaint(bundle.getTaint());
-                // ---------- Original Method ----------
-                //Intent intent = bundle.getParcelable(KEY_INTENT);
-                //if (intent != null && mActivity != null) {
-                    //mActivity.startActivity(intent);
-                //} else if (bundle.getBoolean("retry")) {
-                    //try {
-                        //doWork();
-                    //} catch (RemoteException e) {
-                    //}
-                //} else {
-                    //set(bundle);
-                //}
+                
+                
+                
+                    
+                
+                    
+                        
+                    
+                    
+                
+                    
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.373 -0400", hash_original_method = "DD61FDBEB518045420249589A7AE75D2", hash_generated_method = "E2AD38EEB164268ED26CE9220A6F77FA")
             public void onError(int code, String message) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 {
                     cancel(true );
-                } //End block
+                } 
                 setException(convertErrorToException(code, message));
                 addTaint(code);
                 addTaint(message.getTaint());
-                // ---------- Original Method ----------
-                //if (code == ERROR_CODE_CANCELED) {
-                    //cancel(true );
-                    //return;
-                //}
-                //setException(convertErrorToException(code, message));
+                
+                
+                    
+                    
+                
+                
             }
 
             
@@ -1373,9 +1384,9 @@ public class AccountManager {
             });
             mHandler = handler;
             mResponse = new Response();
-            // ---------- Original Method ----------
-            //mHandler = handler;
-            //mResponse = new Response();
+            
+            
+            
         }
 
         
@@ -1392,9 +1403,9 @@ public class AccountManager {
             handler = mHandler;
             handler.post(runnable);
             addTaint(runnable.getTaint());
-            // ---------- Original Method ----------
-            //Handler handler = (mHandler == null) ? mMainHandler : mHandler;
-            //handler.post(runnable);
+            
+            
+            
         }
 
         
@@ -1403,17 +1414,17 @@ public class AccountManager {
             try 
             {
                 doWork();
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 setException(e);
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //doWork();
-            //} catch (RemoteException e) {
-                //setException(e);
-            //}
+            } 
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -1422,54 +1433,54 @@ public class AccountManager {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.378 -0400", hash_original_method = "1C91C9705FD3BE3D2A4F4357891D41FD", hash_generated_method = "1C91C9705FD3BE3D2A4F4357891D41FD")
             public Response ()
             {
-                //Synthesized constructor
+                
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.379 -0400", hash_original_method = "B8AEC5DE9AFE3040461BEFA9E791EE34", hash_generated_method = "9E6C8496A03A151C6EE9EB9A46EE8720")
             public void onResult(Bundle bundle) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 try 
                 {
                     T result = bundleToResult(bundle);
                     set(result);
-                } //End block
+                } 
                 catch (ClassCastException e)
                 { }
                 catch (AuthenticatorException e)
                 { }
                 onError(ERROR_CODE_INVALID_RESPONSE, "no result in response");
                 addTaint(bundle.getTaint());
-                // ---------- Original Method ----------
-                //try {
-                    //T result = bundleToResult(bundle);
-                    //if (result == null) {
-                        //return;
-                    //}
-                    //set(result);
-                    //return;
-                //} catch (ClassCastException e) {
-                //} catch (AuthenticatorException e) {
-                //}
-                //onError(ERROR_CODE_INVALID_RESPONSE, "no result in response");
+                
+                
+                    
+                    
+                        
+                    
+                    
+                    
+                
+                
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.381 -0400", hash_original_method = "DD61FDBEB518045420249589A7AE75D2", hash_generated_method = "E2AD38EEB164268ED26CE9220A6F77FA")
             public void onError(int code, String message) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 {
                     cancel(true );
-                } //End block
+                } 
                 setException(convertErrorToException(code, message));
                 addTaint(code);
                 addTaint(message.getTaint());
-                // ---------- Original Method ----------
-                //if (code == ERROR_CODE_CANCELED) {
-                    //cancel(true );
-                    //return;
-                //}
-                //setException(convertErrorToException(code, message));
+                
+                
+                    
+                    
+                
+                
             }
 
             
@@ -1491,8 +1502,8 @@ public class AccountManager {
             super(handler);
             mCallback = callback;
             addTaint(handler.getTaint());
-            // ---------- Original Method ----------
-            //mCallback = callback;
+            
+            
         }
 
         
@@ -1503,54 +1514,54 @@ public class AccountManager {
                     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.385 -0400", hash_original_method = "0F70B80A50B592CBF5F504B35808D596", hash_generated_method = "7101081B29B4523A9AECBBD0EF73571E")
                     public void run() {
                         mCallback.run(Future2Task.this);
-                        // ---------- Original Method ----------
-                        //mCallback.run(Future2Task.this);
+                        
+                        
                     }
 });
-            } //End block
-            // ---------- Original Method ----------
-            //if (mCallback != null) {
-                //postRunnableToHandler(new Runnable() {
-                    //public void run() {
-                        //mCallback.run(Future2Task.this);
-                    //}
-                //});
-            //}
+            } 
+            
+            
+                
+                    
+                        
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.387 -0400", hash_original_method = "31A85EDC6833090D765F6613E9274CD1", hash_generated_method = "E9D3FDF049794CD792CA140C69ADC2EF")
         public Future2Task<T> start() {
-            Future2Task<T> varB4EAC82CA7396A68D541C85D26508E83_564412986 = null; //Variable for return #1
+            Future2Task<T> varB4EAC82CA7396A68D541C85D26508E83_564412986 = null; 
             startTask();
             varB4EAC82CA7396A68D541C85D26508E83_564412986 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_564412986.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_564412986.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_564412986;
-            // ---------- Original Method ----------
-            //startTask();
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.390 -0400", hash_original_method = "41F0112BBEC6735226A2F41FF2202D7E", hash_generated_method = "2EB612AFDF139F41A9BB2D645B0EBCA8")
         private T internalGetResult(Long timeout, TimeUnit unit) throws OperationCanceledException, IOException, AuthenticatorException {
-            T varB4EAC82CA7396A68D541C85D26508E83_44828897 = null; //Variable for return #1
-            T varB4EAC82CA7396A68D541C85D26508E83_1750031291 = null; //Variable for return #2
+            T varB4EAC82CA7396A68D541C85D26508E83_44828897 = null; 
+            T varB4EAC82CA7396A68D541C85D26508E83_1750031291 = null; 
             {
                 boolean var1D60817A8CAE63E309C47BE23A4C8C61_1881109904 = (!isDone());
                 {
                     ensureNotOnMainThread();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             try 
             {
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_44828897 = get();
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1750031291 = get(timeout, unit);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (InterruptedException e)
             { }
             catch (TimeoutException e)
@@ -1562,67 +1573,67 @@ public class AccountManager {
                 final Throwable cause = e.getCause();
                 {
                     if (DroidSafeAndroidRuntime.control) throw (IOException) cause;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new AuthenticatorException(cause);
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw (AuthenticatorException) cause;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw (RuntimeException) cause;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw (Error) cause;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(cause);
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 cancel(true );
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new OperationCanceledException();
             addTaint(timeout.getTaint());
             addTaint(unit.getTaint());
-            T varA7E53CE21691AB073D9660D615818899_1828086155; //Final return value
+            T varA7E53CE21691AB073D9660D615818899_1828086155; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1828086155 = varB4EAC82CA7396A68D541C85D26508E83_44828897;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1828086155 = varB4EAC82CA7396A68D541C85D26508E83_1750031291;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1828086155.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1828086155.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1828086155;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.392 -0400", hash_original_method = "F09B519E265A8A66FE763E800742348B", hash_generated_method = "712595C4B80041614CE95C9B228222CB")
         public T getResult() throws OperationCanceledException, IOException, AuthenticatorException {
-            T varB4EAC82CA7396A68D541C85D26508E83_1189469541 = null; //Variable for return #1
+            T varB4EAC82CA7396A68D541C85D26508E83_1189469541 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1189469541 = internalGetResult(null, null);
-            varB4EAC82CA7396A68D541C85D26508E83_1189469541.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1189469541.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1189469541;
-            // ---------- Original Method ----------
-            //return internalGetResult(null, null);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.395 -0400", hash_original_method = "50CBD7888960B26C4BF28EA57E206BB1", hash_generated_method = "ED650D806F5FEB57BCE5B71C3EE3CA52")
         public T getResult(long timeout, TimeUnit unit) throws OperationCanceledException, IOException, AuthenticatorException {
-            T varB4EAC82CA7396A68D541C85D26508E83_236006801 = null; //Variable for return #1
+            T varB4EAC82CA7396A68D541C85D26508E83_236006801 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_236006801 = internalGetResult(timeout, unit);
             addTaint(timeout);
             addTaint(unit.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_236006801.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_236006801.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_236006801;
-            // ---------- Original Method ----------
-            //return internalGetResult(timeout, unit);
+            
+            
         }
 
         
@@ -1672,14 +1683,14 @@ public class AccountManager {
             addTaint(activityForPrompting.getTaint());
             addTaint(callback.getTaint());
             addTaint(handler.getTaint());
-            // ---------- Original Method ----------
-            //if (accountType == null) throw new IllegalArgumentException("account type is null");
-            //mAccountType = accountType;
-            //mAuthTokenType = authTokenType;
-            //mFeatures = features;
-            //mAddAccountOptions = addAccountOptions;
-            //mLoginOptions = loginOptions;
-            //mMyCallback = this;
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1693,25 +1704,25 @@ public class AccountManager {
                     try 
                     {
                         accounts = future.getResult();
-                    } //End block
+                    } 
                     catch (OperationCanceledException e)
                     {
                         setException(e);
-                    } //End block
+                    } 
                     catch (IOException e)
                     {
                         setException(e);
-                    } //End block
+                    } 
                     catch (AuthenticatorException e)
                     {
                         setException(e);
-                    } //End block
+                    } 
                     mNumAccounts = accounts.length;
                     {
                         {
                             mFuture = addAccount(mAccountType, mAuthTokenType, mFeatures,
                                             mAddAccountOptions, mActivity, mMyCallback, mHandler);
-                        } //End block
+                        } 
                         {
                             Bundle result;
                             result = new Bundle();
@@ -1721,22 +1732,22 @@ public class AccountManager {
                             try 
                             {
                                 mResponse.onResult(result);
-                            } //End block
+                            } 
                             catch (RemoteException e)
                             { }
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         {
                             mFuture = getAuthToken(accounts[0], mAuthTokenType,
                                             false , mMyCallback, mHandler);
-                        } //End block
+                        } 
                         {
                             mFuture = getAuthToken(accounts[0],
                                             mAuthTokenType, mLoginOptions,
                                             mActivity, mMyCallback, mHandler);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         {
                             IAccountManagerResponse chooseResponse;
@@ -1761,7 +1772,7 @@ public class AccountManager {
                             intent.putExtra(KEY_ACCOUNT_MANAGER_RESPONSE,
                                             new AccountManagerResponse(chooseResponse));
                             mActivity.startActivity(intent);
-                        } //End block
+                        } 
                         {
                             Bundle result;
                             result = new Bundle();
@@ -1769,18 +1780,18 @@ public class AccountManager {
                             try 
                             {
                                 mResponse.onResult(result);
-                            } //End block
+                            } 
                             catch (RemoteException e)
                             { }
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     addTaint(future.getTaint());
-                    // ---------- Original Method ----------
-                    // Original Method Too Long, Refer to Original Implementation
+                    
+                    
                 }
 }, mHandler);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1796,30 +1807,30 @@ public class AccountManager {
                         boolean var82B2475C7FDB438FF43C0F4978E62379_490737682 = (TextUtils.isEmpty(accountName) || TextUtils.isEmpty(accountType));
                         {
                             setException(new AuthenticatorException("account not in result"));
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     final Account account = new Account(accountName, accountType);
                     mNumAccounts = 1;
                     getAuthToken(account, mAuthTokenType, null , mActivity,
                             mMyCallback, mHandler);
-                } //End block
+                } 
                 set(result);
-            } //End block
+            } 
             catch (OperationCanceledException e)
             {
                 cancel(true );
-            } //End block
+            } 
             catch (IOException e)
             {
                 setException(e);
-            } //End block
+            } 
             catch (AuthenticatorException e)
             {
                 setException(e);
-            } //End block
+            } 
             addTaint(future.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

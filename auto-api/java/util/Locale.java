@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -34,10 +34,10 @@ public final class Locale implements Cloneable, Serializable {
         this.countryCode = upperCaseCountryCode;
         this.variantCode = "";
         addTaint(unused);
-        // ---------- Original Method ----------
-        //this.languageCode = lowerCaseLanguageCode;
-        //this.countryCode = upperCaseCountryCode;
-        //this.variantCode = "";
+        
+        
+        
+        
     }
 
     
@@ -45,7 +45,7 @@ public final class Locale implements Cloneable, Serializable {
     public  Locale(String language) {
         this(language, "", "");
         addTaint(language.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -54,7 +54,7 @@ public final class Locale implements Cloneable, Serializable {
         this(language, country, "");
         addTaint(language.getTaint());
         addTaint(country.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -62,111 +62,114 @@ public final class Locale implements Cloneable, Serializable {
     public  Locale(String language, String country, String variant) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        } //End block
+        } 
         {
             boolean var17F6FDFF37BC30D399CD41E1E481E2CE_1805487353 = (language.isEmpty() && country.isEmpty());
             {
                 languageCode = "";
                 countryCode = "";
                 variantCode = variant;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         languageCode = language.toLowerCase(Locale.US);
         {
             boolean var88B3A49202DE1B8033707F4C2B73C3A6_2087878296 = (languageCode.equals("he"));
             {
                 languageCode = "iw";
-            } //End block
+            } 
             {
                 boolean var48FBA8ACF9EAD6B66139FA4B3FE15951_73233445 = (languageCode.equals("id"));
                 {
                     languageCode = "in";
-                } //End block
+                } 
                 {
                     boolean var5B3211E51E6B494A37194C37EDA1B0D5_1141632937 = (languageCode.equals("yi"));
                     {
                         languageCode = "ji";
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         countryCode = country.toUpperCase(Locale.US);
         variantCode = variant;
-        // ---------- Original Method ----------
-        //if (language == null || country == null || variant == null) {
-            //throw new NullPointerException();
-        //}
-        //if (language.isEmpty() && country.isEmpty()) {
-            //languageCode = "";
-            //countryCode = "";
-            //variantCode = variant;
-            //return;
-        //}
-        //languageCode = language.toLowerCase(Locale.US);
-        //if (languageCode.equals("he")) {
-            //languageCode = "iw";
-        //} else if (languageCode.equals("id")) {
-            //languageCode = "in";
-        //} else if (languageCode.equals("yi")) {
-            //languageCode = "ji";
-        //}
-        //countryCode = country.toUpperCase(Locale.US);
-        //variantCode = variant;
+        
+        
+            
+        
+        
+            
+            
+            
+            
+        
+        
+        
+            
+        
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.207 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "187A066AFB358D386274C93C3D023724")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1142556829 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1142556829 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1142556829 = super.clone();
-        } //End block
+        } 
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1142556829.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1142556829.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1142556829;
-        // ---------- Original Method ----------
-        //try {
-            //return super.clone();
-        //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError(e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.209 -0400", hash_original_method = "B2DF95EC92791D38C85586E37BBFDFD0", hash_generated_method = "66652CCC7D992239003A0F5CA1B7ECBD")
     @Override
     public boolean equals(Object object) {
         {
             boolean var3F549205D4C262003697A031F89E5954_267249708 = (object == this);
-        } //End collapsed parenthetic
+        } 
         {
             Locale o = (Locale) object;
             boolean var0304798EE1CBEE36CAD75CC155557DCC_1656942844 = (languageCode.equals(o.languageCode)
                     && countryCode.equals(o.countryCode)
                     && variantCode.equals(o.variantCode));
-        } //End block
+        } 
         addTaint(object.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1423967504 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1423967504;
-        // ---------- Original Method ----------
-        //if (object == this) {
-            //return true;
-        //}
-        //if (object instanceof Locale) {
-            //Locale o = (Locale) object;
-            //return languageCode.equals(o.languageCode)
-                    //&& countryCode.equals(o.countryCode)
-                    //&& variantCode.equals(o.variantCode);
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+            
+                    
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Locale[] getAvailableLocales() {
         return ICU.getAvailableLocales();
     }
@@ -174,12 +177,12 @@ public final class Locale implements Cloneable, Serializable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.210 -0400", hash_original_method = "40EA1D1DD90B3BAB3C58BE2B6A46A98D", hash_generated_method = "C92174AB3AA4172CCB8E3F46EDC01B31")
     public String getCountry() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1240303686 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1240303686 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1240303686 = countryCode;
-        varB4EAC82CA7396A68D541C85D26508E83_1240303686.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1240303686.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1240303686;
-        // ---------- Original Method ----------
-        //return countryCode;
+        
+        
     }
 
     
@@ -190,118 +193,121 @@ public final class Locale implements Cloneable, Serializable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.210 -0400", hash_original_method = "6B1507A0394E6A6AE91AAA3FFF27DCC6", hash_generated_method = "E89E6106C2BDEE2DC6863D0CD6AACC73")
     public final String getDisplayCountry() {
-        String varB4EAC82CA7396A68D541C85D26508E83_754660363 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_754660363 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_754660363 = getDisplayCountry(getDefault());
-        varB4EAC82CA7396A68D541C85D26508E83_754660363.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_754660363.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_754660363;
-        // ---------- Original Method ----------
-        //return getDisplayCountry(getDefault());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.211 -0400", hash_original_method = "6391C14D02F936975118F82A1E774FAD", hash_generated_method = "CD965D0DD8C723EC2D19E59126B6CE6C")
     public String getDisplayCountry(Locale locale) {
-        String varB4EAC82CA7396A68D541C85D26508E83_656588618 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1847475079 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_656588618 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1847475079 = null; 
         {
             boolean varC33211C406C1C4EFA2F1535CC7F3910E_1308925605 = (countryCode.isEmpty());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_656588618 = "";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String result = ICU.getDisplayCountryNative(toString(), locale.toString());
         {
             result = ICU.getDisplayCountryNative(toString(), Locale.getDefault().toString());
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1847475079 = result;
         addTaint(locale.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1891537896; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1891537896; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1891537896 = varB4EAC82CA7396A68D541C85D26508E83_656588618;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1891537896 = varB4EAC82CA7396A68D541C85D26508E83_1847475079;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1891537896.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1891537896.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1891537896;
-        // ---------- Original Method ----------
-        //if (countryCode.isEmpty()) {
-            //return "";
-        //}
-        //String result = ICU.getDisplayCountryNative(toString(), locale.toString());
-        //if (result == null) { 
-            //result = ICU.getDisplayCountryNative(toString(), Locale.getDefault().toString());
-        //}
-        //return result;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.211 -0400", hash_original_method = "8536CE63A6B8A68C05EDBD72A683988E", hash_generated_method = "C74F05258ADA00F50415CF22C9469DD8")
     public final String getDisplayLanguage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_115576608 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_115576608 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_115576608 = getDisplayLanguage(getDefault());
-        varB4EAC82CA7396A68D541C85D26508E83_115576608.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_115576608.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_115576608;
-        // ---------- Original Method ----------
-        //return getDisplayLanguage(getDefault());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.212 -0400", hash_original_method = "C0028041B7C295EE912CA1345544B282", hash_generated_method = "D06F4D33C2D1585D38D94678B88D007A")
     public String getDisplayLanguage(Locale locale) {
-        String varB4EAC82CA7396A68D541C85D26508E83_93264376 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1022365779 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_93264376 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1022365779 = null; 
         {
             boolean var0FEF216489AE51E4D4C267CA08E5B9A9_1786863392 = (languageCode.isEmpty());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_93264376 = "";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String result = ICU.getDisplayLanguageNative(toString(), locale.toString());
         {
             result = ICU.getDisplayLanguageNative(toString(), Locale.getDefault().toString());
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1022365779 = result;
         addTaint(locale.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_432704426; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_432704426; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_432704426 = varB4EAC82CA7396A68D541C85D26508E83_93264376;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_432704426 = varB4EAC82CA7396A68D541C85D26508E83_1022365779;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_432704426.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_432704426.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_432704426;
-        // ---------- Original Method ----------
-        //if (languageCode.isEmpty()) {
-            //return "";
-        //}
-        //String result = ICU.getDisplayLanguageNative(toString(), locale.toString());
-        //if (result == null) { 
-            //result = ICU.getDisplayLanguageNative(toString(), Locale.getDefault().toString());
-        //}
-        //return result;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.213 -0400", hash_original_method = "CBF375FE343ED989DA3B5B8CCC8BE7E0", hash_generated_method = "31E9A343F0E139FC343EFB504F910FE6")
     public final String getDisplayName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_600232164 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_600232164 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_600232164 = getDisplayName(getDefault());
-        varB4EAC82CA7396A68D541C85D26508E83_600232164.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_600232164.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_600232164;
-        // ---------- Original Method ----------
-        //return getDisplayName(getDefault());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.213 -0400", hash_original_method = "82746EC2958D563F59B7A18594C66ADB", hash_generated_method = "235758DF4E1085DE110EC7A59E2FBCB4")
     public String getDisplayName(Locale locale) {
-        String varB4EAC82CA7396A68D541C85D26508E83_2107675580 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2107675580 = null; 
         int count = 0;
         StringBuilder buffer = new StringBuilder();
         {
@@ -309,158 +315,163 @@ public final class Locale implements Cloneable, Serializable {
             {
                 String displayLanguage = getDisplayLanguage(locale);
                 buffer.append(displayLanguage.isEmpty() ? languageCode : displayLanguage);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varBCFFDF6DE02D3D82ADC2B64B371D3030_1327713867 = (!countryCode.isEmpty());
             {
                 {
                     buffer.append(" (");
-                } //End block
+                } 
                 String displayCountry = getDisplayCountry(locale);
                 buffer.append(displayCountry.isEmpty() ? countryCode : displayCountry);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var2765EBC38A2EE33A058AF3B323D9B258_664175647 = (!variantCode.isEmpty());
             {
                 {
                     buffer.append(" (");
-                } //End block
+                } 
                 {
                     buffer.append(",");
-                } //End block
+                } 
                 String displayVariant = getDisplayVariant(locale);
                 buffer.append(displayVariant.isEmpty() ? variantCode : displayVariant);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             buffer.append(")");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2107675580 = buffer.toString();
         addTaint(locale.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2107675580.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2107675580.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2107675580;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.214 -0400", hash_original_method = "A8FFA206A883AC51133D493CCCB1ED67", hash_generated_method = "593B590A77C5C2D96A4672BDF1F6BAC2")
     public final String getDisplayVariant() {
-        String varB4EAC82CA7396A68D541C85D26508E83_187091114 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_187091114 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_187091114 = getDisplayVariant(getDefault());
-        varB4EAC82CA7396A68D541C85D26508E83_187091114.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_187091114.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_187091114;
-        // ---------- Original Method ----------
-        //return getDisplayVariant(getDefault());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.215 -0400", hash_original_method = "4A12574A7D5205BB7F7224B1AB3BA842", hash_generated_method = "F161A449A73891ED4059C049D23AD10E")
     public String getDisplayVariant(Locale locale) {
-        String varB4EAC82CA7396A68D541C85D26508E83_297993286 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1898881018 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_297993286 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1898881018 = null; 
         {
             boolean var2B0047DE9038ECDA2703DC74AA6453D5_2013637666 = (variantCode.length() == 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_297993286 = variantCode;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String result = ICU.getDisplayVariantNative(toString(), locale.toString());
         {
             result = ICU.getDisplayVariantNative(toString(), Locale.getDefault().toString());
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1898881018 = result;
         addTaint(locale.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1713958758; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1713958758; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1713958758 = varB4EAC82CA7396A68D541C85D26508E83_297993286;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1713958758 = varB4EAC82CA7396A68D541C85D26508E83_1898881018;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1713958758.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1713958758.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1713958758;
-        // ---------- Original Method ----------
-        //if (variantCode.length() == 0) {
-            //return variantCode;
-        //}
-        //String result = ICU.getDisplayVariantNative(toString(), locale.toString());
-        //if (result == null) { 
-            //result = ICU.getDisplayVariantNative(toString(), Locale.getDefault().toString());
-        //}
-        //return result;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.216 -0400", hash_original_method = "E7148683E6358C89AEF160E990AAEE93", hash_generated_method = "B4A54C3C0C34A327FFB9074A2904BE1D")
     public String getISO3Country() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1001062189 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_598600991 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1001062189 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_598600991 = null; 
         {
             boolean varEEE0CD3F3CB38C3CE139809FBEC698B9_1087009905 = (countryCode.length() == 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1001062189 = countryCode;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_598600991 = ICU.getISO3CountryNative(toString());
-        String varA7E53CE21691AB073D9660D615818899_524367624; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_524367624; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_524367624 = varB4EAC82CA7396A68D541C85D26508E83_1001062189;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_524367624 = varB4EAC82CA7396A68D541C85D26508E83_598600991;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_524367624.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_524367624.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_524367624;
-        // ---------- Original Method ----------
-        //if (countryCode.length() == 0) {
-            //return countryCode;
-        //}
-        //return ICU.getISO3CountryNative(toString());
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.217 -0400", hash_original_method = "10ED62717CAC900A278627831D37EC4E", hash_generated_method = "B47DBEB6121ECFDFE7E264D9B5CB8AB4")
     public String getISO3Language() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1851726711 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1382379775 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1851726711 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1382379775 = null; 
         {
             boolean var705C215E009953572112B52C38E1CF29_1981915094 = (languageCode.length() == 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1851726711 = languageCode;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1382379775 = ICU.getISO3LanguageNative(toString());
-        String varA7E53CE21691AB073D9660D615818899_899991216; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_899991216; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_899991216 = varB4EAC82CA7396A68D541C85D26508E83_1851726711;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_899991216 = varB4EAC82CA7396A68D541C85D26508E83_1382379775;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_899991216.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_899991216.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_899991216;
-        // ---------- Original Method ----------
-        //if (languageCode.length() == 0) {
-            //return languageCode;
-        //}
-        //return ICU.getISO3LanguageNative(toString());
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] getISOCountries() {
         return ICU.getISOCountries();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] getISOLanguages() {
         return ICU.getISOLanguages();
     }
@@ -468,26 +479,27 @@ public final class Locale implements Cloneable, Serializable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.218 -0400", hash_original_method = "1C720E5AEB210852D4C515195DCC49D3", hash_generated_method = "363EC3A26D8CC87A01ED7BC9AA09BB09")
     public String getLanguage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2044795253 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2044795253 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2044795253 = languageCode;
-        varB4EAC82CA7396A68D541C85D26508E83_2044795253.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2044795253.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2044795253;
-        // ---------- Original Method ----------
-        //return languageCode;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.218 -0400", hash_original_method = "A8C86ADBDB8FE1FD75DA90D3A9B92BDE", hash_generated_method = "FF8DAA1A1DC33A34A6E90EA282CE9769")
     public String getVariant() {
-        String varB4EAC82CA7396A68D541C85D26508E83_589541278 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_589541278 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_589541278 = variantCode;
-        varB4EAC82CA7396A68D541C85D26508E83_589541278.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_589541278.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_589541278;
-        // ---------- Original Method ----------
-        //return variantCode;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.219 -0400", hash_original_method = "206F92E8CAE7869CD0834AB1BBCCF6BE", hash_generated_method = "6C06F562D2D0E05958878DE52EEA8B68")
     @Override
     public synchronized int hashCode() {
@@ -495,12 +507,13 @@ public final class Locale implements Cloneable, Serializable {
                 + variantCode.hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1198583281 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1198583281;
-        // ---------- Original Method ----------
-        //return countryCode.hashCode() + languageCode.hashCode()
-                //+ variantCode.hashCode();
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     public synchronized static void setDefault(Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
@@ -512,73 +525,75 @@ public final class Locale implements Cloneable, Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.219 -0400", hash_original_method = "8023BB72D2CCCB0AE8421793FA5DB667", hash_generated_method = "E9DC83C2F19EF4FB0E8F0AFAFD345F9A")
     @Override
     public final String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1518751620 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1518751620 = null; 
         String result = cachedToStringResult;
         varB4EAC82CA7396A68D541C85D26508E83_1518751620 = (result == null) ? (cachedToStringResult = toNewString()) : result;
-        varB4EAC82CA7396A68D541C85D26508E83_1518751620.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1518751620.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1518751620;
-        // ---------- Original Method ----------
-        //String result = cachedToStringResult;
-        //return (result == null) ? (cachedToStringResult = toNewString()) : result;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.220 -0400", hash_original_method = "C73C94720A0586E8BA389B0E4B761A7E", hash_generated_method = "BCE96F73647F186D05420827C9B44CC7")
     private String toNewString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_467685284 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1455130220 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_467685284 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1455130220 = null; 
         {
             boolean var477BD50214513067E9CE857B6E4A4436_1208561049 = (languageCode.length() == 0 && countryCode.length() == 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_467685284 = "";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         StringBuilder result = new StringBuilder(11);
         result.append(languageCode);
         {
             boolean var7985240C78B818263278A990811D7703_1429094606 = (countryCode.length() > 0 || variantCode.length() > 0);
             {
                 result.append('_');
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         result.append(countryCode);
         {
             boolean var5529CB82C32A642B7E90788B9461B87C_851288958 = (variantCode.length() > 0);
             {
                 result.append('_');
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         result.append(variantCode);
         varB4EAC82CA7396A68D541C85D26508E83_1455130220 = result.toString();
-        String varA7E53CE21691AB073D9660D615818899_192464435; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_192464435; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_192464435 = varB4EAC82CA7396A68D541C85D26508E83_467685284;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_192464435 = varB4EAC82CA7396A68D541C85D26508E83_1455130220;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_192464435.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_192464435.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_192464435;
-        // ---------- Original Method ----------
-        //if (languageCode.length() == 0 && countryCode.length() == 0) {
-            //return "";
-        //}
-        //StringBuilder result = new StringBuilder(11);
-        //result.append(languageCode);
-        //if (countryCode.length() > 0 || variantCode.length() > 0) {
-            //result.append('_');
-        //}
-        //result.append(countryCode);
-        //if (variantCode.length() > 0) {
-            //result.append('_');
-        //}
-        //result.append(variantCode);
-        //return result.toString();
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.221 -0400", hash_original_method = "03500CE785032DF09CF1C69BAF02C627", hash_generated_method = "5B31048148B62FA35ABE36F59C9BB241")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         ObjectOutputStream.PutField fields = stream.putFields();
@@ -588,16 +603,17 @@ public final class Locale implements Cloneable, Serializable {
         fields.put("variant", variantCode);
         stream.writeFields();
         addTaint(stream.getTaint());
-        // ---------- Original Method ----------
-        //ObjectOutputStream.PutField fields = stream.putFields();
-        //fields.put("country", countryCode);
-        //fields.put("hashcode", -1);
-        //fields.put("language", languageCode);
-        //fields.put("variant", variantCode);
-        //stream.writeFields();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:10.222 -0400", hash_original_method = "119900B43F45E61950B2C4FD2DBBE050", hash_generated_method = "96105A65FA520BCB4E76A71AC62B5F44")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         ObjectInputStream.GetField fields = stream.readFields();
@@ -605,11 +621,11 @@ public final class Locale implements Cloneable, Serializable {
         languageCode = (String) fields.get("language", "");
         variantCode = (String) fields.get("variant", "");
         addTaint(stream.getTaint());
-        // ---------- Original Method ----------
-        //ObjectInputStream.GetField fields = stream.readFields();
-        //countryCode = (String) fields.get("country", "");
-        //languageCode = (String) fields.get("language", "");
-        //variantCode = (String) fields.get("variant", "");
+        
+        
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.commons.io.input;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,7 +19,7 @@ public class CountingInputStream extends ProxyInputStream {
     public  CountingInputStream(InputStream in) {
         super(in);
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,57 +31,60 @@ public class CountingInputStream extends ProxyInputStream {
         addTaint(length);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_92156846 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_92156846;
-        // ---------- Original Method ----------
-        //final long skip = super.skip(length);
-        //this.count += skip;
-        //return skip;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.113 -0400", hash_original_method = "90EDC96C8584B0F7C76A1BA2408C4520", hash_generated_method = "5BCF420B7EC98EEAA43840188F92278A")
     @Override
     protected synchronized void afterRead(int n) {
         {
             this.count += n;
-        } //End block
-        // ---------- Original Method ----------
-        //if (n != -1) {
-            //this.count += n;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.113 -0400", hash_original_method = "C00FD02DE13770738E0B8BA4159C30F2", hash_generated_method = "FFE0CCBECEB00544C7E3609F53298DF2")
     public int getCount() {
         long result = getByteCount();
         {
             if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("The byte count " + result + " is too large to be converted to an int");
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2138638305 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2138638305;
-        // ---------- Original Method ----------
-        //long result = getByteCount();
-        //if (result > Integer.MAX_VALUE) {
-            //throw new ArithmeticException("The byte count " + result + " is too large to be converted to an int");
-        //}
-        //return (int) result;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.114 -0400", hash_original_method = "F5B53F118A4CD127E2B80EC107F6232B", hash_generated_method = "08FF710035CDA59004AE09BA25A4651C")
     public int resetCount() {
         long result = resetByteCount();
         {
             if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("The byte count " + result + " is too large to be converted to an int");
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117246811 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117246811;
-        // ---------- Original Method ----------
-        //long result = resetByteCount();
-        //if (result > Integer.MAX_VALUE) {
-            //throw new ArithmeticException("The byte count " + result + " is too large to be converted to an int");
-        //}
-        //return (int) result;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -89,8 +92,8 @@ public class CountingInputStream extends ProxyInputStream {
     public synchronized long getByteCount() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_383574755 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_383574755;
-        // ---------- Original Method ----------
-        //return this.count;
+        
+        
     }
 
     
@@ -100,10 +103,10 @@ public class CountingInputStream extends ProxyInputStream {
         this.count = 0;
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1480480407 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1480480407;
-        // ---------- Original Method ----------
-        //long tmp = this.count;
-        //this.count = 0;
-        //return tmp;
+        
+        
+        
+        
     }
 
     

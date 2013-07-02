@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import java.text.ParseException;
@@ -17,7 +17,7 @@ public class TimeStampParser extends HeaderParser {
     public  TimeStampParser(String timeStamp) {
         super(timeStamp);
         addTaint(timeStamp.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class TimeStampParser extends HeaderParser {
     protected  TimeStampParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.720 -0400", hash_original_method = "2B179D27AA0FC8FCF5481D4095B4030E", hash_generated_method = "5AE92CF5C1F96DCB3E25F5753F082468")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_998917731 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_998917731 = null; 
         dbg_enter("TimeStampParser.parse");
         TimeStamp timeStamp = new TimeStamp();
         try 
@@ -50,21 +51,21 @@ public class TimeStampParser extends HeaderParser {
                         String s = firstNumber + "." + secondNumber;
                         float ts = Float.parseFloat(s);
                         timeStamp.setTimeStamp(ts);
-                    } //End block
+                    } 
                     {
                         long ts = Long.parseLong(firstNumber);
                         timeStamp.setTime(ts);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             catch (NumberFormatException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-            } //End block
+            } 
             catch (InvalidArgumentException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-            } //End block
+            } 
             this.lexer.SPorHT();
             {
                 boolean varA38820C66B6BCE71087D920E2767FF09_744233608 = (lexer.lookAhead(0) != '\n');
@@ -80,33 +81,33 @@ public class TimeStampParser extends HeaderParser {
                                 String s = firstNumber + "." + secondNumber;
                                 float ts = Float.parseFloat(s);
                                 timeStamp.setDelay(ts);
-                            } //End block
+                            } 
                             {
                                 int ts = Integer.parseInt(firstNumber);
                                 timeStamp.setDelay(ts);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     catch (NumberFormatException ex)
                     {
                         if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                    } //End block
+                    } 
                     catch (InvalidArgumentException ex)
                     {
                         if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
             dbg_leave("TimeStampParser.parse");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_998917731 = timeStamp;
-        varB4EAC82CA7396A68D541C85D26508E83_998917731.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_998917731.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_998917731;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

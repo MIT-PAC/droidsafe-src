@@ -1,11 +1,11 @@
 package android.net.wifi;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -27,6 +27,7 @@ public enum SupplicantState implements Parcelable {
     public static boolean isValidState(SupplicantState state) {
         return state != UNINITIALIZED && state != INVALID;
     }
+    @DSModeled(DSC.SAFE)
     static boolean isHandshakeState(SupplicantState state) {
         switch(state) {
             case AUTHENTICATING:
@@ -48,6 +49,7 @@ public enum SupplicantState implements Parcelable {
                 throw new IllegalArgumentException("Unknown supplicant state");
         }
     }
+    @DSModeled(DSC.SAFE)
     static boolean isConnecting(SupplicantState state) {
         switch(state) {
             case AUTHENTICATING:
@@ -69,6 +71,7 @@ public enum SupplicantState implements Parcelable {
                 throw new IllegalArgumentException("Unknown supplicant state");
         }
     }
+    @DSModeled(DSC.SAFE)
     static boolean isDriverActive(SupplicantState state) {
         switch(state) {
             case DISCONNECTED:
@@ -93,6 +96,7 @@ public enum SupplicantState implements Parcelable {
     public int describeContents() {
         return 0;
     }
+    @DSModeled(DSC.SAFE)
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name());
     }

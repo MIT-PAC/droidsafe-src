@@ -1,11 +1,11 @@
 package org.apache.http.conn;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class ConnectionPoolTimeoutException extends ConnectTimeoutException {
@@ -13,7 +13,7 @@ public class ConnectionPoolTimeoutException extends ConnectTimeoutException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.028 -0400", hash_original_method = "1DCDBD8202B02F10B12F065EF60143EE", hash_generated_method = "BE96AD196165FA8632030FC355956F28")
     public  ConnectionPoolTimeoutException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class ConnectionPoolTimeoutException extends ConnectTimeoutException {
     public  ConnectionPoolTimeoutException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

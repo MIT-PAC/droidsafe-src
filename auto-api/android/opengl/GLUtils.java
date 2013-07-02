@@ -1,11 +1,11 @@
 package android.opengl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Bitmap;
 import javax.microedition.khronos.egl.EGL10;
@@ -15,10 +15,11 @@ public final class GLUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.632 -0400", hash_original_method = "A98AAD2DCE964D3E8867B0B125C8757B", hash_generated_method = "602B8AFAFBDBCCEF4BCB5E24B6A14FC8")
     private  GLUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getInternalFormat(Bitmap bitmap) {
         if (bitmap == null) {
             throw new NullPointerException("getInternalFormat can't be used with a null Bitmap");
@@ -34,6 +35,7 @@ public final class GLUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getType(Bitmap bitmap) {
         if (bitmap == null) {
             throw new NullPointerException("getType can't be used with a null Bitmap");
@@ -49,6 +51,7 @@ public final class GLUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void texImage2D(int target, int level, int internalformat,
             Bitmap bitmap, int border) {
         if (bitmap == null) {
@@ -63,6 +66,7 @@ public final class GLUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void texImage2D(int target, int level, int internalformat,
             Bitmap bitmap, int type, int border) {
         if (bitmap == null) {
@@ -77,6 +81,7 @@ public final class GLUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void texImage2D(int target, int level, Bitmap bitmap,
             int border) {
         if (bitmap == null) {
@@ -91,6 +96,7 @@ public final class GLUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void texSubImage2D(int target, int level, int xoffset, int yoffset,
             Bitmap bitmap) {
         if (bitmap == null) {
@@ -106,6 +112,7 @@ public final class GLUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void texSubImage2D(int target, int level, int xoffset, int yoffset,
             Bitmap bitmap, int format, int type) {
         if (bitmap == null) {
@@ -120,6 +127,7 @@ public final class GLUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getEGLErrorString(int error) {
         switch (error) {
             case EGL10.EGL_SUCCESS:

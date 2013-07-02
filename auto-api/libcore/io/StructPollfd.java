@@ -1,11 +1,11 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.FileDescriptor;
 
@@ -26,19 +26,20 @@ public final class StructPollfd {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.497 -0400", hash_original_method = "46E26FF7732270460330521087FDEE88", hash_generated_method = "46E26FF7732270460330521087FDEE88")
     public StructPollfd ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.498 -0400", hash_original_method = "A14B5D7144ADE29CBA1A23DAE6B04BC8", hash_generated_method = "8D0D022D552C9782B525F57A52E7E604")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1744072669 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1744072669 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1744072669 = "StructPollfd[fd=" + fd + ",events=" + events + ",revents=" + revents + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_1744072669.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1744072669.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1744072669;
-        // ---------- Original Method ----------
-        //return "StructPollfd[fd=" + fd + ",events=" + events + ",revents=" + revents + "]";
+        
+        
     }
 
     

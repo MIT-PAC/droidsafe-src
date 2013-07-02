@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.AssetManager;
 import java.io.File;
@@ -19,23 +19,24 @@ public class Typeface {
     private  Typeface(int ni) {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("native typeface cannot be made");
-        } //End block
+        } 
         native_instance = ni;
-        // ---------- Original Method ----------
-        //if (0 == ni) {
-            //throw new RuntimeException("native typeface cannot be made");
-        //}
-        //native_instance = ni;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.467 -0400", hash_original_method = "49E10597FC0BC827A75ECB0B721408FD", hash_generated_method = "6303F7A5D37BFF6856F1D7B6C47EC51B")
     public int getStyle() {
         int varCC8146FE37057C783852ABB31B70890B_1864914390 = (nativeGetStyle(native_instance));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2140542619 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2140542619;
-        // ---------- Original Method ----------
-        //return nativeGetStyle(native_instance);
+        
+        
     }
 
     
@@ -44,8 +45,8 @@ public class Typeface {
         boolean varAC449BBC6E6FF967A98988CD6BC036E4_649107239 = ((getStyle() & BOLD) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1363575336 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1363575336;
-        // ---------- Original Method ----------
-        //return (getStyle() & BOLD) != 0;
+        
+        
     }
 
     
@@ -54,16 +55,18 @@ public class Typeface {
         boolean varC18F23FAAD9335DAC1AAA5AFA8F49D10_2072689347 = ((getStyle() & ITALIC) != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_640424891 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_640424891;
-        // ---------- Original Method ----------
-        //return (getStyle() & ITALIC) != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Typeface create(String familyName, int style) {
         return new Typeface(nativeCreate(familyName, style));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Typeface create(Typeface family, int style) {
         int ni = 0;
         if (family != null) {
@@ -78,28 +81,32 @@ public class Typeface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Typeface createFromAsset(AssetManager mgr, String path) {
         return new Typeface(nativeCreateFromAsset(mgr, path));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Typeface createFromFile(File path) {
         return new Typeface(nativeCreateFromFile(path.getAbsolutePath()));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Typeface createFromFile(String path) {
         return new Typeface(nativeCreateFromFile(path));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.470 -0400", hash_original_method = "365BC48BBC32364F202A52D242C543E7", hash_generated_method = "542BA0200575B34094B0AA4D80DE2CA4")
     protected void finalize() throws Throwable {
         super.finalize();
         nativeUnref(native_instance);
-        // ---------- Original Method ----------
-        //super.finalize();
-        //nativeUnref(native_instance);
+        
+        
+        
     }
 
     

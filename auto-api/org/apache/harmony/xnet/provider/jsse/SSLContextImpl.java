@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -33,9 +33,9 @@ public class SSLContextImpl extends SSLContextSpi {
     public  SSLContextImpl() {
         clientSessionContext = new ClientSessionContext();
         serverSessionContext = new ServerSessionContext();
-        // ---------- Original Method ----------
-        //clientSessionContext = new ClientSessionContext();
-        //serverSessionContext = new ServerSessionContext();
+        
+        
+        
     }
 
     
@@ -46,138 +46,143 @@ public class SSLContextImpl extends SSLContextSpi {
                 clientSessionContext = new ClientSessionContext();
                 serverSessionContext = new ServerSessionContext();
                 DEFAULT_SSL_CONTEXT_IMPL = (DefaultSSLContextImpl)this;
-            } //End block
+            } 
             {
                 clientSessionContext = DEFAULT_SSL_CONTEXT_IMPL.engineGetClientSessionContext();
                 serverSessionContext = DEFAULT_SSL_CONTEXT_IMPL.engineGetServerSessionContext();
-            } //End block
+            } 
             sslParameters = new SSLParametersImpl(DEFAULT_SSL_CONTEXT_IMPL.getKeyManagers(),
                                                   DEFAULT_SSL_CONTEXT_IMPL.getTrustManagers(),
                                                   null,
                                                   clientSessionContext,
                                                   serverSessionContext);
-        } //End block
+        } 
         addTaint(dummy.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.700 -0400", hash_original_method = "0824770EA02EDCBB315A7517C68CBF9B", hash_generated_method = "5ED612AF34CD0AC820A10D3E7C4E5A8B")
     @Override
     public void engineInit(KeyManager[] kms, TrustManager[] tms,
             SecureRandom sr) throws KeyManagementException {
         sslParameters = new SSLParametersImpl(kms, tms, sr,
                                               clientSessionContext, serverSessionContext);
-        // ---------- Original Method ----------
-        //sslParameters = new SSLParametersImpl(kms, tms, sr,
-                                              //clientSessionContext, serverSessionContext);
+        
+        
+                                              
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.701 -0400", hash_original_method = "004191AE8609FCF33514DFCEA01A5714", hash_generated_method = "D3E78B7BC0BA51CB922FE351330FBEC3")
     @Override
     public SSLSocketFactory engineGetSocketFactory() {
-        SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_335056501 = null; //Variable for return #1
+        SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_335056501 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("SSLContext is not initialized.");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_335056501 = new SSLSocketFactoryImpl(sslParameters);
-        varB4EAC82CA7396A68D541C85D26508E83_335056501.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_335056501.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_335056501;
-        // ---------- Original Method ----------
-        //if (sslParameters == null) {
-            //throw new IllegalStateException("SSLContext is not initialized.");
-        //}
-        //return new SSLSocketFactoryImpl(sslParameters);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.701 -0400", hash_original_method = "65E8F32416A9204F9A4329BBE6993AED", hash_generated_method = "1E0E2426849EB8DA4C114053817437FC")
     @Override
     public SSLServerSocketFactory engineGetServerSocketFactory() {
-        SSLServerSocketFactory varB4EAC82CA7396A68D541C85D26508E83_1897914627 = null; //Variable for return #1
+        SSLServerSocketFactory varB4EAC82CA7396A68D541C85D26508E83_1897914627 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("SSLContext is not initialized.");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1897914627 = new SSLServerSocketFactoryImpl(sslParameters);
-        varB4EAC82CA7396A68D541C85D26508E83_1897914627.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1897914627.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1897914627;
-        // ---------- Original Method ----------
-        //if (sslParameters == null) {
-            //throw new IllegalStateException("SSLContext is not initialized.");
-        //}
-        //return new SSLServerSocketFactoryImpl(sslParameters);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.702 -0400", hash_original_method = "29CE564F844B35192AD02B59CF29ABFD", hash_generated_method = "35702A67007F2740D5C30B1D64FCC1A4")
     @Override
     public SSLEngine engineCreateSSLEngine(String host, int port) {
-        SSLEngine varB4EAC82CA7396A68D541C85D26508E83_312849414 = null; //Variable for return #1
+        SSLEngine varB4EAC82CA7396A68D541C85D26508E83_312849414 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("SSLContext is not initialized.");
-        } //End block
+        } 
         SSLParametersImpl p = (SSLParametersImpl) sslParameters.clone();
         p.setUseClientMode(false);
         varB4EAC82CA7396A68D541C85D26508E83_312849414 = new SSLEngineImpl(host, port, p);
         addTaint(host.getTaint());
         addTaint(port);
-        varB4EAC82CA7396A68D541C85D26508E83_312849414.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_312849414.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_312849414;
-        // ---------- Original Method ----------
-        //if (sslParameters == null) {
-            //throw new IllegalStateException("SSLContext is not initialized.");
-        //}
-        //SSLParametersImpl p = (SSLParametersImpl) sslParameters.clone();
-        //p.setUseClientMode(false);
-        //return new SSLEngineImpl(host, port, p);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.703 -0400", hash_original_method = "1B7221E2350F2BEF0C28DC221F83475D", hash_generated_method = "B0F99111CC1398097DEA90DE8CC7241E")
     @Override
     public SSLEngine engineCreateSSLEngine() {
-        SSLEngine varB4EAC82CA7396A68D541C85D26508E83_1986140109 = null; //Variable for return #1
+        SSLEngine varB4EAC82CA7396A68D541C85D26508E83_1986140109 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("SSLContext is not initialized.");
-        } //End block
+        } 
         SSLParametersImpl p = (SSLParametersImpl) sslParameters.clone();
         p.setUseClientMode(false);
         varB4EAC82CA7396A68D541C85D26508E83_1986140109 = new SSLEngineImpl(p);
-        varB4EAC82CA7396A68D541C85D26508E83_1986140109.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1986140109.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1986140109;
-        // ---------- Original Method ----------
-        //if (sslParameters == null) {
-            //throw new IllegalStateException("SSLContext is not initialized.");
-        //}
-        //SSLParametersImpl p = (SSLParametersImpl) sslParameters.clone();
-        //p.setUseClientMode(false);
-        //return new SSLEngineImpl(p);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.704 -0400", hash_original_method = "D250F9B5B60A63355C4DD3366841F3DE", hash_generated_method = "8A610170A85BB5CC2F4D9999AF582097")
     @Override
     public ServerSessionContext engineGetServerSessionContext() {
-        ServerSessionContext varB4EAC82CA7396A68D541C85D26508E83_677714192 = null; //Variable for return #1
+        ServerSessionContext varB4EAC82CA7396A68D541C85D26508E83_677714192 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_677714192 = serverSessionContext;
-        varB4EAC82CA7396A68D541C85D26508E83_677714192.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_677714192.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_677714192;
-        // ---------- Original Method ----------
-        //return serverSessionContext;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:37.705 -0400", hash_original_method = "F7A52ACBCF1ABAC2A6697027AD059F72", hash_generated_method = "A5A4A63E111BF3C53D720DA16326E992")
     @Override
     public ClientSessionContext engineGetClientSessionContext() {
-        ClientSessionContext varB4EAC82CA7396A68D541C85D26508E83_326531216 = null; //Variable for return #1
+        ClientSessionContext varB4EAC82CA7396A68D541C85D26508E83_326531216 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_326531216 = clientSessionContext;
-        varB4EAC82CA7396A68D541C85D26508E83_326531216.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_326531216.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_326531216;
-        // ---------- Original Method ----------
-        //return clientSessionContext;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.harmony.xml.dom;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.w3c.dom.Attr;
 import org.w3c.dom.DOMException;
@@ -43,8 +43,8 @@ public final class AttrImpl extends NodeImpl implements Attr {
         addTaint(document.getTaint());
         addTaint(namespaceURI.getTaint());
         addTaint(qualifiedName.getTaint());
-        // ---------- Original Method ----------
-        //setNameNS(this, namespaceURI, qualifiedName);
+        
+        
     }
 
     
@@ -54,59 +54,61 @@ public final class AttrImpl extends NodeImpl implements Attr {
         setName(this, name);
         addTaint(document.getTaint());
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
-        //setName(this, name);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.745 -0400", hash_original_method = "006A1593C2EDDFD80B5C8C9A0B08E49A", hash_generated_method = "1E01ABC335A38BB1B8613AFADB2DF5D6")
     @Override
     public String getLocalName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_246750345 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_246750345 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_246750345 = namespaceAware ? localName : null;
-        varB4EAC82CA7396A68D541C85D26508E83_246750345.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_246750345.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_246750345;
-        // ---------- Original Method ----------
-        //return namespaceAware ? localName : null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.746 -0400", hash_original_method = "2829D25C85859024022592A3A30C0BDC", hash_generated_method = "148A27A531028897DCAE315ED21E619F")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1890296795 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1890296795 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1890296795 = prefix != null
                 ? prefix + ":" + localName
                 : localName;
-        varB4EAC82CA7396A68D541C85D26508E83_1890296795.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1890296795.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1890296795;
-        // ---------- Original Method ----------
-        //return prefix != null
-                //? prefix + ":" + localName
-                //: localName;
+        
+        
+                
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.746 -0400", hash_original_method = "1455FE8FE34AF373D39E8278191439A8", hash_generated_method = "E2CF218E93DC664BB3AEB771041DFD0D")
     @Override
     public String getNamespaceURI() {
-        String varB4EAC82CA7396A68D541C85D26508E83_617640454 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_617640454 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_617640454 = namespaceURI;
-        varB4EAC82CA7396A68D541C85D26508E83_617640454.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_617640454.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_617640454;
-        // ---------- Original Method ----------
-        //return namespaceURI;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.747 -0400", hash_original_method = "C003064639FF6BDC59C8E14D85630B7A", hash_generated_method = "9D067A4EFE63DEF078F137FA4938A99C")
     @Override
     public String getNodeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2054999899 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2054999899 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2054999899 = getName();
-        varB4EAC82CA7396A68D541C85D26508E83_2054999899.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2054999899.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2054999899;
-        // ---------- Original Method ----------
-        //return getName();
+        
+        
     }
 
     
@@ -114,43 +116,44 @@ public final class AttrImpl extends NodeImpl implements Attr {
     public short getNodeType() {
         short var4F09DAA9D95BCB166A302407A0E0BABE_1757383734 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1757383734;
-        // ---------- Original Method ----------
-        //return Node.ATTRIBUTE_NODE;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.750 -0400", hash_original_method = "4300CB9DE8CDB8D1025C33AA1D8539DA", hash_generated_method = "60DAC3C613B6089AF98CE49E6BF201C3")
     @Override
     public String getNodeValue() {
-        String varB4EAC82CA7396A68D541C85D26508E83_528726325 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_528726325 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_528726325 = getValue();
-        varB4EAC82CA7396A68D541C85D26508E83_528726325.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_528726325.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_528726325;
-        // ---------- Original Method ----------
-        //return getValue();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.751 -0400", hash_original_method = "B2B2C7739C0F8FABC1AEF26C1D9AEC3F", hash_generated_method = "417DB5BB201F06A9B2932AB0B4908B43")
     public Element getOwnerElement() {
-        Element varB4EAC82CA7396A68D541C85D26508E83_2000169615 = null; //Variable for return #1
+        Element varB4EAC82CA7396A68D541C85D26508E83_2000169615 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2000169615 = ownerElement;
-        varB4EAC82CA7396A68D541C85D26508E83_2000169615.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2000169615.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2000169615;
-        // ---------- Original Method ----------
-        //return ownerElement;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.753 -0400", hash_original_method = "FA5CE5A0FCC0C736D9446FFEBD0CAB9D", hash_generated_method = "37E42F96331BC1FBF9A9F984A943455C")
     @Override
     public String getPrefix() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1317037494 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1317037494 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1317037494 = prefix;
-        varB4EAC82CA7396A68D541C85D26508E83_1317037494.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1317037494.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1317037494;
-        // ---------- Original Method ----------
-        //return prefix;
+        
+        
     }
 
     
@@ -158,47 +161,48 @@ public final class AttrImpl extends NodeImpl implements Attr {
     public boolean getSpecified() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1009867923 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1009867923;
-        // ---------- Original Method ----------
-        //return value != null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.755 -0400", hash_original_method = "CFCF943D36987E569CAB72593E604904", hash_generated_method = "E0B5563CB9666BA1A07560603A4FD262")
     public String getValue() {
-        String varB4EAC82CA7396A68D541C85D26508E83_833999034 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_833999034 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_833999034 = value;
-        varB4EAC82CA7396A68D541C85D26508E83_833999034.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_833999034.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_833999034;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.755 -0400", hash_original_method = "3E19055116AC2D87625766EB1DC83913", hash_generated_method = "756E644F22A977734EE8F4F9494CEE85")
     @Override
     public void setPrefix(String prefix) {
         this.prefix = validatePrefix(prefix, namespaceAware, namespaceURI);
-        // ---------- Original Method ----------
-        //this.prefix = validatePrefix(prefix, namespaceAware, namespaceURI);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.756 -0400", hash_original_method = "32019E33BF64530F6370A7D9E04CDBBC", hash_generated_method = "373507266CE99450E905DA9FE496A1CE")
     public void setValue(String value) throws DOMException {
         this.value = value;
-        // ---------- Original Method ----------
-        //this.value = value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.757 -0400", hash_original_method = "C51D6ACA797563231B3A9D05774313B4", hash_generated_method = "73F290DA2DD0E1A2A95D664D7EF0B005")
     public TypeInfo getSchemaTypeInfo() {
-        TypeInfo varB4EAC82CA7396A68D541C85D26508E83_159076141 = null; //Variable for return #1
+        TypeInfo varB4EAC82CA7396A68D541C85D26508E83_159076141 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_159076141 = NULL_TYPE_INFO;
-        varB4EAC82CA7396A68D541C85D26508E83_159076141.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_159076141.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_159076141;
-        // ---------- Original Method ----------
-        //return NULL_TYPE_INFO;
+        
+        
     }
 
     
@@ -206,8 +210,8 @@ public final class AttrImpl extends NodeImpl implements Attr {
     public boolean isId() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1728180055 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1728180055;
-        // ---------- Original Method ----------
-        //return isId;
+        
+        
     }
 
     

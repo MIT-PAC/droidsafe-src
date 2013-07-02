@@ -1,11 +1,11 @@
 package android.text.method;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.text.*;
 import android.text.method.TextKeyListener.Capitalize;
@@ -30,10 +30,10 @@ public class QwertyKeyListener extends BaseKeyListener {
         mAutoCap = cap;
         mAutoText = autoText;
         mFullKeyboard = fullKeyboard;
-        // ---------- Original Method ----------
-        //mAutoCap = cap;
-        //mAutoText = autoText;
-        //mFullKeyboard = fullKeyboard;
+        
+        
+        
+        
     }
 
     
@@ -42,10 +42,11 @@ public class QwertyKeyListener extends BaseKeyListener {
         this(cap, autoText, false);
         addTaint(cap.getTaint());
         addTaint(autoText);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static QwertyKeyListener getInstance(boolean autoText, Capitalize cap) {
         int off = cap.ordinal() * 2 + (autoText ? 1 : 0);
         if (sInstance[off] == null) {
@@ -55,6 +56,7 @@ public class QwertyKeyListener extends BaseKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static QwertyKeyListener getInstanceForFullKeyboard() {
         if (sFullKeyboardInstance == null) {
             sFullKeyboardInstance = new QwertyKeyListener(Capitalize.NONE, false, true);
@@ -63,26 +65,28 @@ public class QwertyKeyListener extends BaseKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.458 -0400", hash_original_method = "77B762D33BA1CBC4DB995B196C907EDB", hash_generated_method = "675ECB65F2DCC8D74BEF2BD5509BFE00")
     public int getInputType() {
         int var9E11457640925EE0EF1D4E5A2BEB5EA9_1038704727 = (makeTextContentType(mAutoCap, mAutoText));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_960031481 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_960031481;
-        // ---------- Original Method ----------
-        //return makeTextContentType(mAutoCap, mAutoText);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.461 -0400", hash_original_method = "516B59E01E71ED9ADC80D2A022ED13A5", hash_generated_method = "1DF26F409C007FF31F24C7538005054C")
     public boolean onKeyDown(View view, Editable content,
                              int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int selStart;
         int selEnd;
         int pref = 0;
         {
             pref = TextKeyListener.getInstance().getPrefs(view.getContext());
-        } //End block
+        } 
         {
             int a = Selection.getSelectionStart(content);
             int b = Selection.getSelectionEnd(content);
@@ -91,8 +95,8 @@ public class QwertyKeyListener extends BaseKeyListener {
             {
                 selStart = selEnd = 0;
                 Selection.setSelection(content, 0, 0);
-            } //End block
-        } //End block
+            } 
+        } 
         int activeStart = content.getSpanStart(TextKeyListener.ACTIVE);
         int activeEnd = content.getSpanEnd(TextKeyListener.ACTIVE);
         int i = event.getUnicodeChar(event.getMetaState() | getMetaState(content));
@@ -107,19 +111,19 @@ public class QwertyKeyListener extends BaseKeyListener {
                             boolean var3A4CFAE07BB301A00CB69F8E4E4CC5E3_240535999 = (showCharacterPicker(view, content, c, false, count));
                             {
                                 resetMetaState(content);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 showCharacterPicker(view, content,
                                     KeyCharacterMap.PICKER_DIALOG_INPUT, true, 1);
-            } //End block
+            } 
             resetMetaState(content);
-        } //End block
+        } 
         {
             int start;
             {
@@ -127,34 +131,34 @@ public class QwertyKeyListener extends BaseKeyListener {
                 {
                     boolean var5100BA0861E05BEDA363AB7F77660DF4_655716552 = (start > 0 && selEnd - start < 4 &&
                        Character.digit(content.charAt(start - 1), 16) >= 0);
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             {
                 start = selStart;
-            } //End block
+            } 
             int ch = -1;
             try 
             {
                 String hex = TextUtils.substring(content, start, selEnd);
                 ch = Integer.parseInt(hex, 16);
-            } //End block
+            } 
             catch (NumberFormatException nfe)
             { }
             {
                 selStart = start;
                 Selection.setSelection(content, selStart, selEnd);
                 i = ch;
-            } //End block
+            } 
             {
                 i = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean dead = false;
             {
                 dead = true;
                 i = i & KeyCharacterMap.COMBINING_ACCENT_MASK;
-            } //End block
+            } 
             {
                 boolean replace = false;
                 {
@@ -163,14 +167,14 @@ public class QwertyKeyListener extends BaseKeyListener {
                     {
                         i = composed;
                         replace = true;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     Selection.setSelection(content, selEnd);
                     content.removeSpan(TextKeyListener.ACTIVE);
                     selStart = selEnd;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 boolean varBE145749AB7392F6E9A13E60C4DFB571_36613940 = ((pref & TextKeyListener.AUTO_CAP) != 0 &&
                 Character.isLowerCase(i) && 
@@ -180,7 +184,7 @@ public class QwertyKeyListener extends BaseKeyListener {
                     int flags = content.getSpanFlags(TextKeyListener.CAPPED);
                     {
                         content.removeSpan(TextKeyListener.CAPPED);
-                    } //End block
+                    } 
                     {
                         flags = i << 16;
                         i = Character.toUpperCase(i);
@@ -190,12 +194,12 @@ public class QwertyKeyListener extends BaseKeyListener {
                                         selStart - 1, selStart,
                                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE |
                                         flags);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 Selection.setSelection(content, selEnd);
-            } //End block
+            } 
             content.setSpan(OLD_SEL_START, selStart, selStart,
                             Spannable.SPAN_MARK_MARK);
             content.replace(selStart, selEnd, String.valueOf((char) i));
@@ -209,8 +213,8 @@ public class QwertyKeyListener extends BaseKeyListener {
                     Selection.setSelection(content, oldStart, selEnd);
                     content.setSpan(TextKeyListener.ACTIVE, oldStart, selEnd,
                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                } //End block
-            } //End block
+                } 
+            } 
             adjustMetaAfterKeypress(content);
             {
                 boolean var3DE8430D8F4467F6E16B3E1835A79473_1691084792 = ((pref & TextKeyListener.AUTO_TEXT) != 0 && mAutoText &&
@@ -227,9 +231,9 @@ public class QwertyKeyListener extends BaseKeyListener {
                             char c = content.charAt(x - 1);
                             {
                                 boolean var27F2B2DD6BB1AB52FA2903BF7730F518_1295180121 = (c != '\'' && !Character.isLetter(c));
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
                     String rep = getReplacement(content, x, oldStart, view);
                     {
                         Replaced[] repl = content.getSpans(0, content.length(),
@@ -237,15 +241,15 @@ public class QwertyKeyListener extends BaseKeyListener {
                         {
                             int a = 0;
                             content.removeSpan(repl[a]);
-                        } //End collapsed parenthetic
+                        } 
                         char[] orig = new char[oldStart - x];
                         TextUtils.getChars(content, x, oldStart, orig, 0);
                         content.setSpan(new Replaced(orig), x, oldStart,
                                     Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                         content.replace(x, oldStart, rep);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 selEnd = Selection.getSelectionEnd(content);
                 {
@@ -262,21 +266,21 @@ public class QwertyKeyListener extends BaseKeyListener {
                                 Character.getType(c) == Character.END_PUNCTUATION);
                                         {
                                             c = content.charAt(j - 1);
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End collapsed parenthetic
+                                        } 
+                                    } 
+                                } 
+                            } 
                             {
                                 boolean var27BE4AD8BD3DF20B46B4AD84D1293F53_1075405802 = (Character.isLetter(c) || Character.isDigit(c));
                                 {
                                     content.replace(selEnd - 2, selEnd - 1, ".");
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var943341EBD10AE8248F41BC7B51FBBC77_1583141881 = (keyCode == KeyEvent.KEYCODE_DEL
                 && (event.hasNoModifiers() || event.hasModifiers(KeyEvent.META_ALT_ON))
@@ -289,9 +293,9 @@ public class QwertyKeyListener extends BaseKeyListener {
                         {
                             boolean var9091D3B32733FD0E4769CD319F1E9809_595325406 = (content.charAt(selStart - 1) != '\n');
                             consider = 2;
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 Replaced[] repl = content.getSpans(selStart - consider, selStart,
                                              Replaced.class);
                 {
@@ -308,19 +312,19 @@ public class QwertyKeyListener extends BaseKeyListener {
                             content.setSpan(TextKeyListener.INHIBIT_REPLACEMENT,
                                         en - 1, en,
                                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                        } //End block
+                        } 
                         {
                             content.removeSpan(TextKeyListener.INHIBIT_REPLACEMENT);
-                        } //End block
+                        } 
                         adjustMetaAfterKeypress(content);
-                    } //End block
+                    } 
                     {
                         adjustMetaAfterKeypress(content);
                         boolean var58B6BB38A2D75494923DCF439D1D87C5_984875252 = (super.onKeyDown(view, content, keyCode, event));
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         boolean var250B4652E205BB567180858BBC354846_835706730 = (super.onKeyDown(view, content, keyCode, event));
         addTaint(view.getTaint());
         addTaint(content.getTaint());
@@ -328,17 +332,18 @@ public class QwertyKeyListener extends BaseKeyListener {
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_481769788 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_481769788;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.463 -0400", hash_original_method = "56CD99307A3C343252D0E9D8CB37E313", hash_generated_method = "703231398DB1D29D78F81D011DD9739C")
     private String getReplacement(CharSequence src, int start, int end,
                                   View view) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1576804184 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1688665695 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1082201945 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1576804184 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1688665695 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1082201945 = null; 
         int len = end - start;
         boolean changecase = false;
         String replacement = AutoText.get(src, start, end, view);
@@ -347,7 +352,7 @@ public class QwertyKeyListener extends BaseKeyListener {
             replacement = AutoText.get(key, 0, end - start, view);
             changecase = true;
             varB4EAC82CA7396A68D541C85D26508E83_1576804184 = null;
-        } //End block
+        } 
         int caps = 0;
         {
             {
@@ -355,10 +360,10 @@ public class QwertyKeyListener extends BaseKeyListener {
                 {
                     {
                         boolean var03EF0CF77F98DD2DEA4339D12B8D9487_1390772225 = (Character.isUpperCase(src.charAt(j)));
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         String out;
         out = replacement;
         out = toTitleCase(replacement);
@@ -368,31 +373,32 @@ public class QwertyKeyListener extends BaseKeyListener {
             boolean varCA4381C3F2EBCEEA02732EC71859751E_1447900260 = (out.length() == len &&
             TextUtils.regionMatches(src, start, out, 0, len));
             varB4EAC82CA7396A68D541C85D26508E83_1688665695 = null;
-        } //End collapsed parenthetic
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1082201945 = out;
         addTaint(src.getTaint());
         addTaint(start);
         addTaint(end);
         addTaint(view.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_114244832; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_114244832; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_114244832 = varB4EAC82CA7396A68D541C85D26508E83_1576804184;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_114244832 = varB4EAC82CA7396A68D541C85D26508E83_1688665695;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_114244832 = varB4EAC82CA7396A68D541C85D26508E83_1082201945;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_114244832.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_114244832.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_114244832;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void markAsReplaced(Spannable content, int start, int end,
                                       String original) {
         Replaced[] repl = content.getSpans(0, content.length(), Replaced.class);
@@ -407,6 +413,7 @@ public class QwertyKeyListener extends BaseKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.463 -0400", hash_original_method = "2E7DB5AEEB189920125EB7B1E5F21218", hash_generated_method = "DF39FFC69D2E23890D5258189E8DAFD0")
     private boolean showCharacterPicker(View view, Editable content, char c,
                                         boolean insert, int count) {
@@ -414,7 +421,7 @@ public class QwertyKeyListener extends BaseKeyListener {
         {
             new CharacterPickerDialog(view.getContext(),
                                       view, content, set, insert).show();
-        } //End block
+        } 
         addTaint(view.getTaint());
         addTaint(content.getTaint());
         addTaint(c);
@@ -422,19 +429,20 @@ public class QwertyKeyListener extends BaseKeyListener {
         addTaint(count);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1693455340 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1693455340;
-        // ---------- Original Method ----------
-        //String set = PICKER_SETS.get(c);
-        //if (set == null) {
-            //return false;
-        //}
-        //if (count == 1) {
-            //new CharacterPickerDialog(view.getContext(),
-                                      //view, content, set, insert).show();
-        //}
-        //return true;
+        
+        
+        
+            
+        
+        
+            
+                                      
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String toTitleCase(String src) {
         return Character.toUpperCase(src.charAt(0)) + src.substring(1);
     }
@@ -448,8 +456,8 @@ public class QwertyKeyListener extends BaseKeyListener {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.464 -0400", hash_original_method = "573A0A1D2F4880FCE39DFE2EE4242AA3", hash_generated_method = "F3CF1157AFAB5B17CB35BAA0BE11F0EA")
         public  Replaced(char[] text) {
             mText = text;
-            // ---------- Original Method ----------
-            //mText = text;
+            
+            
         }
 
         

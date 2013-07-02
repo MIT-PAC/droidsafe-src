@@ -1,11 +1,11 @@
 package org.apache.http.impl.conn.tsccm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Date;
 import java.util.concurrent.locks.Condition;
@@ -28,51 +28,52 @@ public class WaitingThread {
     public  WaitingThread(Condition cond, RouteSpecificPool pool) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Condition must not be null.");
-        } //End block
+        } 
         this.cond = cond;
         this.pool = pool;
-        // ---------- Original Method ----------
-        //if (cond == null) {
-            //throw new IllegalArgumentException("Condition must not be null.");
-        //}
-        //this.cond = cond;
-        //this.pool = pool;
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.814 -0400", hash_original_method = "06148A18B01DA630C8E9D1BE56535730", hash_generated_method = "4292C8E04A4DA37A534933B361F9C664")
     public final Condition getCondition() {
-        Condition varB4EAC82CA7396A68D541C85D26508E83_263868005 = null; //Variable for return #1
+        Condition varB4EAC82CA7396A68D541C85D26508E83_263868005 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_263868005 = this.cond;
-        varB4EAC82CA7396A68D541C85D26508E83_263868005.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_263868005.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_263868005;
-        // ---------- Original Method ----------
-        //return this.cond;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.815 -0400", hash_original_method = "7ACEF95834A46E1067A2FCD807704A00", hash_generated_method = "06CEC8FFA09ED047EFB2AA0ED71E1A3C")
     public final RouteSpecificPool getPool() {
-        RouteSpecificPool varB4EAC82CA7396A68D541C85D26508E83_906260925 = null; //Variable for return #1
+        RouteSpecificPool varB4EAC82CA7396A68D541C85D26508E83_906260925 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_906260925 = this.pool;
-        varB4EAC82CA7396A68D541C85D26508E83_906260925.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_906260925.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_906260925;
-        // ---------- Original Method ----------
-        //return this.pool;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.815 -0400", hash_original_method = "71CC45999E743AA15F11389550D41BFD", hash_generated_method = "469AFE0A85AB8D8886484DC31F908DD4")
     public final Thread getThread() {
-        Thread varB4EAC82CA7396A68D541C85D26508E83_1794274948 = null; //Variable for return #1
+        Thread varB4EAC82CA7396A68D541C85D26508E83_1794274948 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1794274948 = this.waiter;
-        varB4EAC82CA7396A68D541C85D26508E83_1794274948.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1794274948.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1794274948;
-        // ---------- Original Method ----------
-        //return this.waiter;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.816 -0400", hash_original_method = "7B6DA174509B07DB7E171D838B6C3551", hash_generated_method = "36395AAEFBD36E46E5AA5735AEEDDB8D")
     public boolean await(Date deadline) throws InterruptedException {
         {
@@ -80,7 +81,7 @@ public class WaitingThread {
                 ("A thread is already waiting on this object." +
                  "\ncaller: " + Thread.currentThread() +
                  "\nwaiter: " + this.waiter);
-        } //End block
+        } 
         if (DroidSafeAndroidRuntime.control) throw new InterruptedException("Operation interrupted");
         this.waiter = Thread.currentThread();
         boolean success = false;
@@ -88,48 +89,50 @@ public class WaitingThread {
         {
             {
                 success = this.cond.awaitUntil(deadline);
-            } //End block
+            } 
             {
                 this.cond.await();
                 success = true;
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new InterruptedException("Operation interrupted");
-        } //End block
+        } 
         finally 
         {
             this.waiter = null;
-        } //End block
+        } 
         addTaint(deadline.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1868858270 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1868858270;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.816 -0400", hash_original_method = "BAB31B5D41D1F7BEE0FF6A7B649DDB38", hash_generated_method = "63271BF5CCC07312701AB020FDE84FFA")
     public void wakeup() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
                 ("Nobody waiting on this object.");
-        } //End block
+        } 
         this.cond.signalAll();
-        // ---------- Original Method ----------
-        //if (this.waiter == null) {
-            //throw new IllegalStateException
-                //("Nobody waiting on this object.");
-        //}
-        //this.cond.signalAll();
+        
+        
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.816 -0400", hash_original_method = "BFE3F8B3CBA9A24F2514C6FAB517057D", hash_generated_method = "A5EA451F6D91CB4B8E0C2D7D002E7ED2")
     public void interrupt() {
         aborted = true;
         this.cond.signalAll();
-        // ---------- Original Method ----------
-        //aborted = true;
-        //this.cond.signalAll();
+        
+        
+        
     }
 
     

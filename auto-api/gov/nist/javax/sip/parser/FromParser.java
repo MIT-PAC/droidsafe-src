@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.From;
 import gov.nist.javax.sip.header.SIPHeader;
@@ -17,7 +17,7 @@ public class FromParser extends AddressParametersParser {
     public  FromParser(String from) {
         super(from);
         addTaint(from.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,14 @@ public class FromParser extends AddressParametersParser {
     protected  FromParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:42.963 -0400", hash_original_method = "090BCBCCA2A0D46A805C56D0690187FF", hash_generated_method = "2DB82840B36D2B9D6DCFCE06BC2B1CA1")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_257100382 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_257100382 = null; 
         From from = new From();
         this.lexer.match(TokenTypes.FROM);
         this.lexer.SPorHT();
@@ -40,17 +41,17 @@ public class FromParser extends AddressParametersParser {
         super.parse(from);
         this.lexer.match('\n');
         varB4EAC82CA7396A68D541C85D26508E83_257100382 = from;
-        varB4EAC82CA7396A68D541C85D26508E83_257100382.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_257100382.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_257100382;
-        // ---------- Original Method ----------
-        //From from = new From();
-        //this.lexer.match(TokenTypes.FROM);
-        //this.lexer.SPorHT();
-        //this.lexer.match(':');
-        //this.lexer.SPorHT();
-        //super.parse(from);
-        //this.lexer.match('\n');
-        //return from;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

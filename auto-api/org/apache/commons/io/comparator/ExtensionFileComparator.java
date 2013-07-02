@@ -1,11 +1,11 @@
 package org.apache.commons.io.comparator;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.Serializable;
@@ -21,19 +21,20 @@ public class ExtensionFileComparator extends AbstractFileComparator implements S
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.557 -0400", hash_original_method = "3A8CFBD8D9978421723DC262FBD1326A", hash_generated_method = "9F96B0108A63B53B5B64CA583D497F4D")
     public  ExtensionFileComparator() {
         this.caseSensitivity = IOCase.SENSITIVE;
-        // ---------- Original Method ----------
-        //this.caseSensitivity = IOCase.SENSITIVE;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.557 -0400", hash_original_method = "F5D6469F4576D324414C9087777D12E4", hash_generated_method = "968A3F2FFD10D88E4150A74443ABB7BE")
     public  ExtensionFileComparator(IOCase caseSensitivity) {
         this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
-        // ---------- Original Method ----------
-        //this.caseSensitivity = caseSensitivity == null ? IOCase.SENSITIVE : caseSensitivity;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.557 -0400", hash_original_method = "9212C488AEDF56E62CAE314A88D3084B", hash_generated_method = "C9FE5A784A692B27A9F33A78A06AD2F3")
     public int compare(File file1, File file2) {
         String suffix1 = FilenameUtils.getExtension(file1.getName());
@@ -43,22 +44,23 @@ public class ExtensionFileComparator extends AbstractFileComparator implements S
         addTaint(file2.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_851537980 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_851537980;
-        // ---------- Original Method ----------
-        //String suffix1 = FilenameUtils.getExtension(file1.getName());
-        //String suffix2 = FilenameUtils.getExtension(file2.getName());
-        //return caseSensitivity.checkCompareTo(suffix1, suffix2);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:31.558 -0400", hash_original_method = "2C8858F1FEF258A79F4059C0A1CB8058", hash_generated_method = "FD3D9BFFBBAFB241520A38CB83956035")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2035443353 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2035443353 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2035443353 = super.toString() + "[caseSensitivity=" + caseSensitivity + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_2035443353.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2035443353.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2035443353;
-        // ---------- Original Method ----------
-        //return super.toString() + "[caseSensitivity=" + caseSensitivity + "]";
+        
+        
     }
 
     

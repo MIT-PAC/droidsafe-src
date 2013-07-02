@@ -1,11 +1,11 @@
 package android.support.v4.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,41 +43,42 @@ public class LocalBroadcastManager {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.331 -0400", hash_original_method = "83DCC689423DD34BA48280EAD0078C8B", hash_generated_method = "8768E9F95CC97BA95BE9EA1B61F64374")
             @Override
             public void handleMessage(Message msg) {
-                //Begin case MSG_EXEC_PENDING_BROADCASTS 
+                
                 executePendingBroadcasts();
-                //End case MSG_EXEC_PENDING_BROADCASTS 
-                //Begin case default 
+                
+                
                 super.handleMessage(msg);
-                //End case default 
+                
                 addTaint(msg.getTaint());
-                // ---------- Original Method ----------
-                //switch (msg.what) {
-                    //case MSG_EXEC_PENDING_BROADCASTS:
-                        //executePendingBroadcasts();
-                        //break;
-                    //default:
-                        //super.handleMessage(msg);
-                //}
+                
+                
+                    
+                        
+                        
+                    
+                        
+                
             }
 };
-        // ---------- Original Method ----------
-        //mAppContext = context;
-        //mHandler = new Handler(context.getMainLooper()) {
-            //@Override
-            //public void handleMessage(Message msg) {
-                //switch (msg.what) {
-                    //case MSG_EXEC_PENDING_BROADCASTS:
-                        //executePendingBroadcasts();
-                        //break;
-                    //default:
-                        //super.handleMessage(msg);
-                //}
-            //}
-        //};
+        
+        
+        
+            
+            
+                
+                    
+                        
+                        
+                    
+                        
+                
+            
+        
     }
 
     
-        public static LocalBroadcastManager getInstance(Context context) {
+        @DSModeled(DSC.SAFE)
+    public static LocalBroadcastManager getInstance(Context context) {
         synchronized (mLock) {
             if (mInstance == null) {
                 mInstance = new LocalBroadcastManager(context.getApplicationContext());
@@ -87,16 +88,17 @@ public class LocalBroadcastManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.332 -0400", hash_original_method = "D32BC0D25E86F605EE68EB4056334640", hash_generated_method = "48F4C1E4FFB98687F2DFD63F92A3717E")
     public void registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         {
             ReceiverRecord entry = new ReceiverRecord(filter, receiver);
             ArrayList<IntentFilter> filters = mReceivers.get(receiver);
             {
                 filters = new ArrayList<IntentFilter>(1);
                 mReceivers.put(receiver, filters);
-            } //End block
+            } 
             filters.add(filter);
             {
                 int i = 0;
@@ -107,35 +109,36 @@ public class LocalBroadcastManager {
                     {
                         entries = new ArrayList<ReceiverRecord>(1);
                         mActions.put(action, entries);
-                    } //End block
+                    } 
                     entries.add(entry);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(receiver.getTaint());
         addTaint(filter.getTaint());
-        // ---------- Original Method ----------
-        //synchronized (mReceivers) {
-            //ReceiverRecord entry = new ReceiverRecord(filter, receiver);
-            //ArrayList<IntentFilter> filters = mReceivers.get(receiver);
-            //if (filters == null) {
-                //filters = new ArrayList<IntentFilter>(1);
-                //mReceivers.put(receiver, filters);
-            //}
-            //filters.add(filter);
-            //for (int i=0; i<filter.countActions(); i++) {
-                //String action = filter.getAction(i);
-                //ArrayList<ReceiverRecord> entries = mActions.get(action);
-                //if (entries == null) {
-                    //entries = new ArrayList<ReceiverRecord>(1);
-                    //mActions.put(action, entries);
-                //}
-                //entries.add(entry);
-            //}
-        //}
+        
+        
+            
+            
+            
+                
+                
+            
+            
+            
+                
+                
+                
+                    
+                    
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.333 -0400", hash_original_method = "8566D0E7C4974CA9CB93E779F651E45B", hash_generated_method = "CC959B041E7D8EF28B97D2D8E1D55E4F")
     public void unregisterReceiver(BroadcastReceiver receiver) {
         {
@@ -160,25 +163,25 @@ public class LocalBroadcastManager {
                                             boolean var204C4D0780D72B9665FEA752CB5727B4_331735204 = (receivers.get(k).receiver == receiver);
                                             {
                                                 receivers.remove(k);
-                                            } //End block
-                                        } //End collapsed parenthetic
-                                    } //End block
-                                } //End collapsed parenthetic
+                                            } 
+                                        } 
+                                    } 
+                                } 
                                 {
                                     boolean var21B5F9DD1CF05B49A466EB3465279263_578588099 = (receivers.size() <= 0);
                                     {
                                         mActions.remove(action);
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(receiver.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -206,55 +209,55 @@ public class LocalBroadcastManager {
                         {
                             {
                                 receivers = new ArrayList<ReceiverRecord>();
-                            } //End block
+                            } 
                             receivers.add(receiver);
                             receiver.broadcasting = true;
-                        } //End block
+                        } 
                         {
                             {
                                 String reason;
-                                //Begin case IntentFilter.NO_MATCH_ACTION 
+                                
                                 reason = "action";
-                                //End case IntentFilter.NO_MATCH_ACTION 
-                                //Begin case IntentFilter.NO_MATCH_CATEGORY 
+                                
+                                
                                 reason = "category";
-                                //End case IntentFilter.NO_MATCH_CATEGORY 
-                                //Begin case IntentFilter.NO_MATCH_DATA 
+                                
+                                
                                 reason = "data";
-                                //End case IntentFilter.NO_MATCH_DATA 
-                                //Begin case IntentFilter.NO_MATCH_TYPE 
+                                
+                                
                                 reason = "type";
-                                //End case IntentFilter.NO_MATCH_TYPE 
-                                //Begin case default 
+                                
+                                
                                 reason = "unknown reason";
-                                //End case default 
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
+                                
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     {
                         int i = 0;
                         boolean var5174ACD26D785FE3D9FBE932B90AC2E9_2106685504 = (i<receivers.size());
                         {
                             receivers.get(i).broadcasting = false;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     mPendingBroadcasts.add(new BroadcastRecord(intent, receivers));
                     {
                         boolean var8519EB213129236BD57B99C2409DFA9A_118898435 = (!mHandler.hasMessages(MSG_EXEC_PENDING_BROADCASTS));
                         {
                             mHandler.sendEmptyMessage(MSG_EXEC_PENDING_BROADCASTS);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(intent.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1090104157 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1090104157;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -264,16 +267,17 @@ public class LocalBroadcastManager {
             boolean varD093B39402F43C48B30156FAFB746858_443544672 = (sendBroadcast(intent));
             {
                 executePendingBroadcasts();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(intent.getTaint());
-        // ---------- Original Method ----------
-        //if (sendBroadcast(intent)) {
-            //executePendingBroadcasts();
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.335 -0400", hash_original_method = "3F6742DF10D1E655ECFD08018DEE1CF4", hash_generated_method = "58C88C4181DF64A8EF984B9E4187CDAC")
     private void executePendingBroadcasts() {
         {
@@ -283,7 +287,7 @@ public class LocalBroadcastManager {
                 brs = new BroadcastRecord[N];
                 mPendingBroadcasts.toArray(brs);
                 mPendingBroadcasts.clear();
-            } //End block
+            } 
             {
                 int i = 0;
                 {
@@ -293,30 +297,30 @@ public class LocalBroadcastManager {
                         boolean var54E6167BE1C436BE068C8BF6236AA9F1_862937288 = (j<br.receivers.size());
                         {
                             br.receivers.get(j).receiver.onReceive(mAppContext, br.intent);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //while (true) {
-            //BroadcastRecord[] brs = null;
-            //synchronized (mReceivers) {
-                //final int N = mPendingBroadcasts.size();
-                //if (N <= 0) {
-                    //return;
-                //}
-                //brs = new BroadcastRecord[N];
-                //mPendingBroadcasts.toArray(brs);
-                //mPendingBroadcasts.clear();
-            //}
-            //for (int i=0; i<brs.length; i++) {
-                //BroadcastRecord br = brs[i];
-                //for (int j=0; j<br.receivers.size(); j++) {
-                    //br.receivers.get(j).receiver.onReceive(mAppContext, br.intent);
-                //}
-            //}
-        //}
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                    
+                
+                
+                
+                
+            
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
@@ -335,16 +339,16 @@ public class LocalBroadcastManager {
           ReceiverRecord(IntentFilter _filter, BroadcastReceiver _receiver) {
             filter = _filter;
             receiver = _receiver;
-            // ---------- Original Method ----------
-            //filter = _filter;
-            //receiver = _receiver;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.336 -0400", hash_original_method = "5F4A257948A58F0B78B34620CDA69880", hash_generated_method = "AF41414BD3BDE9B145C97B0C94947356")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1633743229 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1633743229 = null; 
             StringBuilder builder = new StringBuilder(128);
             builder.append("Receiver{");
             builder.append(receiver);
@@ -352,16 +356,16 @@ public class LocalBroadcastManager {
             builder.append(filter);
             builder.append("}");
             varB4EAC82CA7396A68D541C85D26508E83_1633743229 = builder.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1633743229.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1633743229.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1633743229;
-            // ---------- Original Method ----------
-            //StringBuilder builder = new StringBuilder(128);
-            //builder.append("Receiver{");
-            //builder.append(receiver);
-            //builder.append(" filter=");
-            //builder.append(filter);
-            //builder.append("}");
-            //return builder.toString();
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -381,9 +385,9 @@ public class LocalBroadcastManager {
           BroadcastRecord(Intent _intent, ArrayList<ReceiverRecord> _receivers) {
             intent = _intent;
             receivers = _receivers;
-            // ---------- Original Method ----------
-            //intent = _intent;
-            //receivers = _receivers;
+            
+            
+            
         }
 
         

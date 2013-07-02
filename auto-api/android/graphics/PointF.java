@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -21,7 +21,7 @@ public class PointF implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.081 -0400", hash_original_method = "AC71EBB0EDB844032A48DF20A80FB47B", hash_generated_method = "80B58F578A9E18CAE61877DE29226528")
     public  PointF() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,9 +29,9 @@ public class PointF implements Parcelable {
     public  PointF(float x, float y) {
         this.x = x;
         this.y = y;
-        // ---------- Original Method ----------
-        //this.x = x;
-        //this.y = y;
+        
+        
+        
     }
 
     
@@ -39,9 +39,9 @@ public class PointF implements Parcelable {
     public  PointF(Point p) {
         this.x = p.x;
         this.y = p.y;
-        // ---------- Original Method ----------
-        //this.x = p.x;
-        //this.y = p.y;
+        
+        
+        
     }
 
     
@@ -49,9 +49,9 @@ public class PointF implements Parcelable {
     public final void set(float x, float y) {
         this.x = x;
         this.y = y;
-        // ---------- Original Method ----------
-        //this.x = x;
-        //this.y = y;
+        
+        
+        
     }
 
     
@@ -59,9 +59,9 @@ public class PointF implements Parcelable {
     public final void set(PointF p) {
         this.x = p.x;
         this.y = p.y;
-        // ---------- Original Method ----------
-        //this.x = p.x;
-        //this.y = p.y;
+        
+        
+        
     }
 
     
@@ -69,9 +69,9 @@ public class PointF implements Parcelable {
     public final void negate() {
         x = -x;
         y = -y;
-        // ---------- Original Method ----------
-        //x = -x;
-        //y = -y;
+        
+        
+        
     }
 
     
@@ -79,9 +79,9 @@ public class PointF implements Parcelable {
     public final void offset(float dx, float dy) {
         x += dx;
         y += dy;
-        // ---------- Original Method ----------
-        //x += dx;
-        //y += dy;
+        
+        
+        
     }
 
     
@@ -91,8 +91,8 @@ public class PointF implements Parcelable {
         addTaint(y);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1662693135 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1662693135;
-        // ---------- Original Method ----------
-        //return this.x == x && this.y == y;
+        
+        
     }
 
     
@@ -101,11 +101,12 @@ public class PointF implements Parcelable {
         float var21060411D30E39607092FBEE24A1F23B_1362777973 = (length(x, y));
         float var546ADE640B6EDFBC8A086EF31347E768_1475691668 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1475691668;
-        // ---------- Original Method ----------
-        //return length(x, y);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float length(float x, float y) {
         return FloatMath.sqrt(x * x + y * y);
     }
@@ -116,11 +117,12 @@ public class PointF implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_109809748 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_109809748;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.088 -0400", hash_original_method = "498F687E010E97B616DAA29FD28A4DFC", hash_generated_method = "386FAFA8156B4A7A0E33B4DAF4B92EFB")
     @Override
     public void writeToParcel(Parcel out, int flags) {
@@ -128,19 +130,20 @@ public class PointF implements Parcelable {
         out.writeFloat(y);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeFloat(x);
-        //out.writeFloat(y);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:32.089 -0400", hash_original_method = "1ADDB8AA93A41CBDC98F8DD97BD3942F", hash_generated_method = "0BFCD1D65346AFF3FD9BA0C6DFBDDA42")
     public void readFromParcel(Parcel in) {
         x = in.readFloat();
         y = in.readFloat();
-        // ---------- Original Method ----------
-        //x = in.readFloat();
-        //y = in.readFloat();
+        
+        
+        
     }
 
     
@@ -159,14 +162,14 @@ public class PointF implements Parcelable {
             return new PointF[size];
         }
     };
-    // orphaned legacy method
+    
     public PointF createFromParcel(Parcel in) {
             PointF r = new PointF();
             r.readFromParcel(in);
             return r;
         }
     
-    // orphaned legacy method
+    
     public PointF[] newArray(int size) {
             return new PointF[size];
         }

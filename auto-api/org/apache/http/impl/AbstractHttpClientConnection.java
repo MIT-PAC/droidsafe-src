@@ -1,11 +1,11 @@
 package org.apache.http.impl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import org.apache.http.HttpClientConnection;
@@ -57,45 +57,48 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
         super();
         this.entityserializer = createEntitySerializer();
         this.entitydeserializer = createEntityDeserializer();
-        // ---------- Original Method ----------
-        //this.entityserializer = createEntitySerializer();
-        //this.entitydeserializer = createEntityDeserializer();
+        
+        
+        
     }
 
     
     protected abstract void assertOpen() throws IllegalStateException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.666 -0400", hash_original_method = "DBD25E48E38888EDD7F8AA52F5A67EB4", hash_generated_method = "9E3EB8ECDEBE65F536B17CEABF36C9FF")
     protected EntityDeserializer createEntityDeserializer() {
-        EntityDeserializer varB4EAC82CA7396A68D541C85D26508E83_77563949 = null; //Variable for return #1
+        EntityDeserializer varB4EAC82CA7396A68D541C85D26508E83_77563949 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_77563949 = new EntityDeserializer(new LaxContentLengthStrategy());
-        varB4EAC82CA7396A68D541C85D26508E83_77563949.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_77563949.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_77563949;
-        // ---------- Original Method ----------
-        //return new EntityDeserializer(new LaxContentLengthStrategy());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.667 -0400", hash_original_method = "FD78F978388B59B364B21C2EBA485800", hash_generated_method = "4FF55403A4FCCD801E6D5E575DA11C2F")
     protected EntitySerializer createEntitySerializer() {
-        EntitySerializer varB4EAC82CA7396A68D541C85D26508E83_299541032 = null; //Variable for return #1
+        EntitySerializer varB4EAC82CA7396A68D541C85D26508E83_299541032 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_299541032 = new EntitySerializer(new StrictContentLengthStrategy());
-        varB4EAC82CA7396A68D541C85D26508E83_299541032.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_299541032.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_299541032;
-        // ---------- Original Method ----------
-        //return new EntitySerializer(new StrictContentLengthStrategy());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.667 -0400", hash_original_method = "104F821730DDF9B7746DC5273A66A390", hash_generated_method = "3D3E5A1F03FCE058A4FE382DDB5DBB5D")
     protected HttpResponseFactory createHttpResponseFactory() {
-        HttpResponseFactory varB4EAC82CA7396A68D541C85D26508E83_809456034 = null; //Variable for return #1
+        HttpResponseFactory varB4EAC82CA7396A68D541C85D26508E83_809456034 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_809456034 = new DefaultHttpResponseFactory();
-        varB4EAC82CA7396A68D541C85D26508E83_809456034.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_809456034.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_809456034;
-        // ---------- Original Method ----------
-        //return new DefaultHttpResponseFactory();
+        
+        
     }
 
     
@@ -104,15 +107,15 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
             final SessionInputBuffer buffer,
             final HttpResponseFactory responseFactory,
             final HttpParams params) {
-        HttpMessageParser varB4EAC82CA7396A68D541C85D26508E83_166596185 = null; //Variable for return #1
+        HttpMessageParser varB4EAC82CA7396A68D541C85D26508E83_166596185 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_166596185 = new HttpResponseParser(buffer, null, responseFactory, params);
         addTaint(buffer.getTaint());
         addTaint(responseFactory.getTaint());
         addTaint(params.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_166596185.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_166596185.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_166596185;
-        // ---------- Original Method ----------
-        //return new HttpResponseParser(buffer, null, responseFactory, params);
+        
+        
     }
 
     
@@ -120,14 +123,14 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
     protected HttpMessageWriter createRequestWriter(
             final SessionOutputBuffer buffer,
             final HttpParams params) {
-        HttpMessageWriter varB4EAC82CA7396A68D541C85D26508E83_970742689 = null; //Variable for return #1
+        HttpMessageWriter varB4EAC82CA7396A68D541C85D26508E83_970742689 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_970742689 = new HttpRequestWriter(buffer, null, params);
         addTaint(buffer.getTaint());
         addTaint(params.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_970742689.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_970742689.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_970742689;
-        // ---------- Original Method ----------
-        //return new HttpRequestWriter(buffer, null, params);
+        
+        
     }
 
     
@@ -138,10 +141,10 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
             final HttpParams params) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Input session buffer may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Output session buffer may not be null");
-        } //End block
+        } 
         this.inbuffer = inbuffer;
         this.outbuffer = outbuffer;
         this.responseParser = createResponseParser(
@@ -153,27 +156,28 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
         this.metrics = new HttpConnectionMetricsImpl(
                 inbuffer.getMetrics(),
                 outbuffer.getMetrics());
-        // ---------- Original Method ----------
-        //if (inbuffer == null) {
-            //throw new IllegalArgumentException("Input session buffer may not be null");
-        //}
-        //if (outbuffer == null) {
-            //throw new IllegalArgumentException("Output session buffer may not be null");
-        //}
-        //this.inbuffer = inbuffer;
-        //this.outbuffer = outbuffer;
-        //this.responseParser = createResponseParser(
-                //inbuffer, 
-                //createHttpResponseFactory(), 
-                //params);
-        //this.requestWriter = createRequestWriter(
-                //outbuffer, params);
-        //this.metrics = new HttpConnectionMetricsImpl(
-                //inbuffer.getMetrics(),
-                //outbuffer.getMetrics());
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+                
+                
+                
+        
+                
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.669 -0400", hash_original_method = "EC2664454103C0151B5CF1E9311C3275", hash_generated_method = "54BD827256A0918520DA91674306C3E6")
     public boolean isResponseAvailable(int timeout) throws IOException {
         assertOpen();
@@ -181,9 +185,9 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
         addTaint(timeout);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1167738905 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1167738905;
-        // ---------- Original Method ----------
-        //assertOpen();
-        //return this.inbuffer.isDataAvailable(timeout);
+        
+        
+        
     }
 
     
@@ -191,18 +195,18 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
     public void sendRequestHeader(final HttpRequest request) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } //End block
+        } 
         assertOpen();
         this.requestWriter.write(request);
         this.metrics.incrementRequestCount();
         addTaint(request.getTaint());
-        // ---------- Original Method ----------
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //assertOpen();
-        //this.requestWriter.write(request);
-        //this.metrics.incrementRequestCount();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -210,70 +214,73 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
     public void sendRequestEntity(final HttpEntityEnclosingRequest request) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } //End block
+        } 
         assertOpen();
         {
             boolean varD49B899B4DAE647F6EFF10130B7BC7C1_1744796849 = (request.getEntity() == null);
-        } //End collapsed parenthetic
+        } 
         this.entityserializer.serialize(
                 this.outbuffer,
                 request,
                 request.getEntity());
         addTaint(request.getTaint());
-        // ---------- Original Method ----------
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //assertOpen();
-        //if (request.getEntity() == null) {
-            //return;
-        //}
-        //this.entityserializer.serialize(
-                //this.outbuffer,
-                //request,
-                //request.getEntity());
+        
+        
+            
+        
+        
+        
+            
+        
+        
+                
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.671 -0400", hash_original_method = "DE0B8B580EE6D4219521C9A2503EB8AB", hash_generated_method = "4D1A2508A821B55E0B18D024D4D93DA1")
     protected void doFlush() throws IOException {
         this.outbuffer.flush();
-        // ---------- Original Method ----------
-        //this.outbuffer.flush();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.671 -0400", hash_original_method = "166CB1CAE087E4752127F8680D07EE90", hash_generated_method = "C32057FFD327A27B41D17512113B46BE")
     public void flush() throws IOException {
         assertOpen();
         doFlush();
-        // ---------- Original Method ----------
-        //assertOpen();
-        //doFlush();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.671 -0400", hash_original_method = "D806319F8045D19DF3AF6D1ED4567F14", hash_generated_method = "37D0178F9DF70EA4A29194FC81F7B923")
     public HttpResponse receiveResponseHeader() throws HttpException, IOException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1936570091 = null; //Variable for return #1
+        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1936570091 = null; 
         assertOpen();
         HttpResponse response = (HttpResponse) this.responseParser.parse();
         {
             boolean varB5B2EC3425FB899C45C158916CB752AD_1364722319 = (response.getStatusLine().getStatusCode() >= 200);
             {
                 this.metrics.incrementResponseCount();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1936570091 = response;
-        varB4EAC82CA7396A68D541C85D26508E83_1936570091.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1936570091.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1936570091;
-        // ---------- Original Method ----------
-        //assertOpen();
-        //HttpResponse response = (HttpResponse) this.responseParser.parse();
-        //if (response.getStatusLine().getStatusCode() >= 200) {
-            //this.metrics.incrementResponseCount();
-        //}
-        //return response;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -281,61 +288,62 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
     public void receiveResponseEntity(final HttpResponse response) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP response may not be null");
-        } //End block
+        } 
         assertOpen();
         HttpEntity entity = this.entitydeserializer.deserialize(this.inbuffer, response);
         response.setEntity(entity);
         addTaint(response.getTaint());
-        // ---------- Original Method ----------
-        //if (response == null) {
-            //throw new IllegalArgumentException("HTTP response may not be null");
-        //}
-        //assertOpen();
-        //HttpEntity entity = this.entitydeserializer.deserialize(this.inbuffer, response);
-        //response.setEntity(entity);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.672 -0400", hash_original_method = "DD669E10200A1B56B0064A07B14E647E", hash_generated_method = "4C2A46B0C0940B33344A71D8BDDDF6E8")
     public boolean isStale() {
         {
             boolean var3A7D61B68AE823F6A30349D498C59A5C_142733822 = (!isOpen());
-        } //End collapsed parenthetic
+        } 
         try 
         {
             {
                 boolean var2FEEA41B390182DA2C49083FDE33E2E5_1158668686 = (((SocketInputBuffer) inbuffer).isStale());
-            } //End block
+            } 
             this.inbuffer.isDataAvailable(1);
-        } //End block
+        } 
         catch (IOException ex)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_161530362 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_161530362;
-        // ---------- Original Method ----------
-        //if (!isOpen()) {
-            //return true;
-        //}
-        //try {
-            //if (inbuffer instanceof SocketInputBuffer) {
-                //return ((SocketInputBuffer) inbuffer).isStale();
-            //}
-            //this.inbuffer.isDataAvailable(1);
-            //return false;
-        //} catch (IOException ex) {
-            //return true;
-        //}
+        
+        
+            
+        
+        
+            
+                
+            
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.673 -0400", hash_original_method = "B4ACF96912B4372C3DFCBFF37024F952", hash_generated_method = "19F9C933C6A3539EEDA47E07773C88EC")
     public HttpConnectionMetrics getMetrics() {
-        HttpConnectionMetrics varB4EAC82CA7396A68D541C85D26508E83_1695421355 = null; //Variable for return #1
+        HttpConnectionMetrics varB4EAC82CA7396A68D541C85D26508E83_1695421355 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1695421355 = this.metrics;
-        varB4EAC82CA7396A68D541C85D26508E83_1695421355.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1695421355.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1695421355;
-        // ---------- Original Method ----------
-        //return this.metrics;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.database.DataSetObserver;
@@ -109,7 +109,7 @@ public class ListPopupWindow {
     public  ListPopupWindow(Context context) {
         this(context, null, com.android.internal.R.attr.listPopupWindowStyle, 0);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -118,7 +118,7 @@ public class ListPopupWindow {
         this(context, attrs, com.android.internal.R.attr.listPopupWindowStyle, 0);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -128,7 +128,7 @@ public class ListPopupWindow {
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyleAttr);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -137,49 +137,50 @@ public class ListPopupWindow {
         mContext = context;
         mPopup = new PopupWindow(context, attrs, defStyleAttr, defStyleRes);
         mPopup.setInputMethodMode(PopupWindow.INPUT_METHOD_NEEDED);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mPopup = new PopupWindow(context, attrs, defStyleAttr, defStyleRes);
-        //mPopup.setInputMethodMode(PopupWindow.INPUT_METHOD_NEEDED);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.308 -0400", hash_original_method = "B55D1F7EE07C2CDF60B7B314069C1E48", hash_generated_method = "EDAB9113CCCC22D9A06FD8121B5B6D2C")
     public void setAdapter(ListAdapter adapter) {
         {
             mObserver = new PopupDataSetObserver();
-        } //End block
+        } 
         {
             mAdapter.unregisterDataSetObserver(mObserver);
-        } //End block
+        } 
         mAdapter = adapter;
         {
             adapter.registerDataSetObserver(mObserver);
-        } //End block
+        } 
         {
             mDropDownList.setAdapter(mAdapter);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mObserver == null) {
-            //mObserver = new PopupDataSetObserver();
-        //} else if (mAdapter != null) {
-            //mAdapter.unregisterDataSetObserver(mObserver);
-        //}
-        //mAdapter = adapter;
-        //if (mAdapter != null) {
-            //adapter.registerDataSetObserver(mObserver);
-        //}
-        //if (mDropDownList != null) {
-            //mDropDownList.setAdapter(mAdapter);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.309 -0400", hash_original_method = "7CC61A3797371517F86E3D676D22847C", hash_generated_method = "CE87A26F1F31625F1A82E312F687DB1A")
     public void setPromptPosition(int position) {
         mPromptPosition = position;
-        // ---------- Original Method ----------
-        //mPromptPosition = position;
+        
+        
     }
 
     
@@ -187,19 +188,20 @@ public class ListPopupWindow {
     public int getPromptPosition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2076169326 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2076169326;
-        // ---------- Original Method ----------
-        //return mPromptPosition;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.309 -0400", hash_original_method = "320A57FA9129485B3F1A01EDA8808ED5", hash_generated_method = "D0A4E10B11955C6EF4D4A7F65C74F2BF")
     public void setModal(boolean modal) {
         mModal = true;
         mPopup.setFocusable(modal);
         addTaint(modal);
-        // ---------- Original Method ----------
-        //mModal = true;
-        //mPopup.setFocusable(modal);
+        
+        
+        
     }
 
     
@@ -207,24 +209,24 @@ public class ListPopupWindow {
     public boolean isModal() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1449386719 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1449386719;
-        // ---------- Original Method ----------
-        //return mModal;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.310 -0400", hash_original_method = "B51F6D3B2B582EB2529861E286FFBDAA", hash_generated_method = "C259F7A19612B2ACBFCE0BD237FE9AAB")
     public void setForceIgnoreOutsideTouch(boolean forceIgnoreOutsideTouch) {
         mForceIgnoreOutsideTouch = forceIgnoreOutsideTouch;
-        // ---------- Original Method ----------
-        //mForceIgnoreOutsideTouch = forceIgnoreOutsideTouch;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.310 -0400", hash_original_method = "0D7558B683A811B4FB459E3A92DCFACB", hash_generated_method = "6C5818E602B53931F3E1B0DBF55A9DBB")
     public void setDropDownAlwaysVisible(boolean dropDownAlwaysVisible) {
         mDropDownAlwaysVisible = dropDownAlwaysVisible;
-        // ---------- Original Method ----------
-        //mDropDownAlwaysVisible = dropDownAlwaysVisible;
+        
+        
     }
 
     
@@ -232,93 +234,99 @@ public class ListPopupWindow {
     public boolean isDropDownAlwaysVisible() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_634429333 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_634429333;
-        // ---------- Original Method ----------
-        //return mDropDownAlwaysVisible;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.311 -0400", hash_original_method = "E80B835CA17A4D3E815EC079FA1EE953", hash_generated_method = "8A780C7809C5C55408662AB78E3D6AE7")
     public void setSoftInputMode(int mode) {
         mPopup.setSoftInputMode(mode);
         addTaint(mode);
-        // ---------- Original Method ----------
-        //mPopup.setSoftInputMode(mode);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.311 -0400", hash_original_method = "EF5235E70AE7C9521CFD0F4410B9073C", hash_generated_method = "6AC0F5A5B808DB8F668C2C34D5D80F3B")
     public int getSoftInputMode() {
         int var33219CA59686C86DFE930490FC0C5D79_766702166 = (mPopup.getSoftInputMode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1555025574 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1555025574;
-        // ---------- Original Method ----------
-        //return mPopup.getSoftInputMode();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.311 -0400", hash_original_method = "00D6E099D8DC922D12B17B03F893B884", hash_generated_method = "FF67F34E40E9A65B6F576056899652DB")
     public void setListSelector(Drawable selector) {
         mDropDownListHighlight = selector;
-        // ---------- Original Method ----------
-        //mDropDownListHighlight = selector;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.312 -0400", hash_original_method = "48A20BD7A1656DF8848E524613AD69C1", hash_generated_method = "A85769A4AE868C1F2F170DE77A4F57FB")
     public Drawable getBackground() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1870786126 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1870786126 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1870786126 = mPopup.getBackground();
-        varB4EAC82CA7396A68D541C85D26508E83_1870786126.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1870786126.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1870786126;
-        // ---------- Original Method ----------
-        //return mPopup.getBackground();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.312 -0400", hash_original_method = "53EE8E67A046C4A20122C0C008F8CCAA", hash_generated_method = "BD70D3B0AFF0C8D7DB54CAD63485854E")
     public void setBackgroundDrawable(Drawable d) {
         mPopup.setBackgroundDrawable(d);
         addTaint(d.getTaint());
-        // ---------- Original Method ----------
-        //mPopup.setBackgroundDrawable(d);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.312 -0400", hash_original_method = "CF4F09D135A7A5849055A447382D076E", hash_generated_method = "1F08BBCFEFAD3E761FCB230941BBB65B")
     public void setAnimationStyle(int animationStyle) {
         mPopup.setAnimationStyle(animationStyle);
         addTaint(animationStyle);
-        // ---------- Original Method ----------
-        //mPopup.setAnimationStyle(animationStyle);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.312 -0400", hash_original_method = "A53F654A1BF514C432C9F43DB9ED5E7B", hash_generated_method = "06DDC2CAA11C8AB15534265637751476")
     public int getAnimationStyle() {
         int varFF59793919A82B1D3C72ECF85DD5BB92_904538235 = (mPopup.getAnimationStyle());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2054338314 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2054338314;
-        // ---------- Original Method ----------
-        //return mPopup.getAnimationStyle();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.313 -0400", hash_original_method = "875C75F19631B214BE64A011FD6A41E4", hash_generated_method = "BCD62A5BA0C845990A3E38AE220F9F1E")
     public View getAnchorView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_367212713 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_367212713 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_367212713 = mDropDownAnchorView;
-        varB4EAC82CA7396A68D541C85D26508E83_367212713.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_367212713.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_367212713;
-        // ---------- Original Method ----------
-        //return mDropDownAnchorView;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.313 -0400", hash_original_method = "91753F7FEC6E3180927B7B9D55B8E090", hash_generated_method = "63EE2FBCA0AADA3A31B95FC73D9580CE")
     public void setAnchorView(View anchor) {
         mDropDownAnchorView = anchor;
-        // ---------- Original Method ----------
-        //mDropDownAnchorView = anchor;
+        
+        
     }
 
     
@@ -326,16 +334,16 @@ public class ListPopupWindow {
     public int getHorizontalOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_619298921 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_619298921;
-        // ---------- Original Method ----------
-        //return mDropDownHorizontalOffset;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.313 -0400", hash_original_method = "37914D7AC2B7A80AA5FE528B058A9DBC", hash_generated_method = "C126BA21DD750A9AFE1BD084B715A818")
     public void setHorizontalOffset(int offset) {
         mDropDownHorizontalOffset = offset;
-        // ---------- Original Method ----------
-        //mDropDownHorizontalOffset = offset;
+        
+        
     }
 
     
@@ -343,11 +351,11 @@ public class ListPopupWindow {
     public int getVerticalOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103405322 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103405322;
-        // ---------- Original Method ----------
-        //if (!mDropDownVerticalOffsetSet) {
-            //return 0;
-        //}
-        //return mDropDownVerticalOffset;
+        
+        
+            
+        
+        
     }
 
     
@@ -355,9 +363,9 @@ public class ListPopupWindow {
     public void setVerticalOffset(int offset) {
         mDropDownVerticalOffset = offset;
         mDropDownVerticalOffsetSet = true;
-        // ---------- Original Method ----------
-        //mDropDownVerticalOffset = offset;
-        //mDropDownVerticalOffsetSet = true;
+        
+        
+        
     }
 
     
@@ -365,37 +373,38 @@ public class ListPopupWindow {
     public int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1688136883 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1688136883;
-        // ---------- Original Method ----------
-        //return mDropDownWidth;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.314 -0400", hash_original_method = "1FDBBF009B47D57DAE1EE309EAA8DA19", hash_generated_method = "9D744DA174B0219B1092FF60AD2FCB92")
     public void setWidth(int width) {
         mDropDownWidth = width;
-        // ---------- Original Method ----------
-        //mDropDownWidth = width;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.314 -0400", hash_original_method = "1CC81B1489D8EBDAA358E87EA72284F9", hash_generated_method = "1D5AE1AB512CBE1E1137C76DB1C43C1A")
     public void setContentWidth(int width) {
         Drawable popupBackground = mPopup.getBackground();
         {
             popupBackground.getPadding(mTempRect);
             mDropDownWidth = mTempRect.left + mTempRect.right + width;
-        } //End block
+        } 
         {
             setWidth(width);
-        } //End block
-        // ---------- Original Method ----------
-        //Drawable popupBackground = mPopup.getBackground();
-        //if (popupBackground != null) {
-            //popupBackground.getPadding(mTempRect);
-            //mDropDownWidth = mTempRect.left + mTempRect.right + width;
-        //} else {
-            //setWidth(width);
-        //}
+        } 
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -403,65 +412,68 @@ public class ListPopupWindow {
     public int getHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1508233350 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1508233350;
-        // ---------- Original Method ----------
-        //return mDropDownHeight;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.315 -0400", hash_original_method = "CAA84DCA25312E828BE740B15493FB25", hash_generated_method = "4DA8EB017D81399AC9FA9C78A28822F1")
     public void setHeight(int height) {
         mDropDownHeight = height;
-        // ---------- Original Method ----------
-        //mDropDownHeight = height;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.315 -0400", hash_original_method = "500645EE5CDA87E171AAE4D175AC763E", hash_generated_method = "2D5D314BA37B280C0EC1EB015FA6FF32")
     public void setOnItemClickListener(AdapterView.OnItemClickListener clickListener) {
         mItemClickListener = clickListener;
-        // ---------- Original Method ----------
-        //mItemClickListener = clickListener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.315 -0400", hash_original_method = "77C1F384A6316C978289202E5719DEEE", hash_generated_method = "9F10FF9A076A5EE31B9093767F0F184A")
     public void setOnItemSelectedListener(AdapterView.OnItemSelectedListener selectedListener) {
         mItemSelectedListener = selectedListener;
-        // ---------- Original Method ----------
-        //mItemSelectedListener = selectedListener;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.315 -0400", hash_original_method = "F870D6C36930B52993EA962C5CEE4741", hash_generated_method = "AEDEF20FDB033FB98E6AB86506718EBD")
     public void setPromptView(View prompt) {
         boolean showing = isShowing();
         {
             removePromptView();
-        } //End block
+        } 
         mPromptView = prompt;
         {
             show();
-        } //End block
-        // ---------- Original Method ----------
-        //boolean showing = isShowing();
-        //if (showing) {
-            //removePromptView();
-        //}
-        //mPromptView = prompt;
-        //if (showing) {
-            //show();
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.316 -0400", hash_original_method = "6F8BB8AB5CFBCAF655CCF7F8C4D42CCD", hash_generated_method = "12A7B7B2D0ABC916C160864A366BF13A")
     public void postShow() {
         mHandler.post(mShowDropDownRunnable);
-        // ---------- Original Method ----------
-        //mHandler.post(mShowDropDownRunnable);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.317 -0400", hash_original_method = "B0532D10D967B708828191A62293AA30", hash_generated_method = "71D858384C4330D1056E79EA067D1672")
     public void show() {
         int height = buildDropDown();
@@ -474,60 +486,60 @@ public class ListPopupWindow {
             {
                 {
                     widthSpec = -1;
-                } //End block
+                } 
                 {
                     widthSpec = getAnchorView().getWidth();
-                } //End block
+                } 
                 {
                     widthSpec = mDropDownWidth;
-                } //End block
+                } 
                 {
                     heightSpec = noInputMethod ? height : ViewGroup.LayoutParams.MATCH_PARENT;
                     {
                         mPopup.setWindowLayoutMode(
                             mDropDownWidth == ViewGroup.LayoutParams.MATCH_PARENT ?
                                     ViewGroup.LayoutParams.MATCH_PARENT : 0, 0);
-                    } //End block
+                    } 
                     {
                         mPopup.setWindowLayoutMode(
                             mDropDownWidth == ViewGroup.LayoutParams.MATCH_PARENT ?
                                     ViewGroup.LayoutParams.MATCH_PARENT : 0,
                             ViewGroup.LayoutParams.MATCH_PARENT);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     heightSpec = height;
-                } //End block
+                } 
                 {
                     heightSpec = mDropDownHeight;
-                } //End block
+                } 
                 mPopup.setOutsideTouchable(!mForceIgnoreOutsideTouch && !mDropDownAlwaysVisible);
                 mPopup.update(getAnchorView(), mDropDownHorizontalOffset,
                     mDropDownVerticalOffset, widthSpec, heightSpec);
-            } //End block
+            } 
             {
                 {
                     widthSpec = ViewGroup.LayoutParams.MATCH_PARENT;
-                } //End block
+                } 
                 {
                     {
                         mPopup.setWidth(getAnchorView().getWidth());
-                    } //End block
+                    } 
                     {
                         mPopup.setWidth(mDropDownWidth);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     heightSpec = ViewGroup.LayoutParams.MATCH_PARENT;
-                } //End block
+                } 
                 {
                     {
                         mPopup.setHeight(height);
-                    } //End block
+                    } 
                     {
                         mPopup.setHeight(mDropDownHeight);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 mPopup.setWindowLayoutMode(widthSpec, heightSpec);
                 mPopup.setClipToScreenEnabled(true);
                 mPopup.setOutsideTouchable(!mForceIgnoreOutsideTouch && !mDropDownAlwaysVisible);
@@ -539,18 +551,19 @@ public class ListPopupWindow {
                     boolean varFBD33AEB1C7B877FCB56A03F8E624BE0_1671856782 = (!mModal || mDropDownList.isInTouchMode());
                     {
                         clearListSelection();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     mHandler.post(mHideSelector);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.317 -0400", hash_original_method = "B4B1B4676A26C0E0D07AD81974E2090B", hash_generated_method = "9DC863547F53C27A47992D34B3B95A71")
     public void dismiss() {
         mPopup.dismiss();
@@ -558,12 +571,12 @@ public class ListPopupWindow {
         mPopup.setContentView(null);
         mDropDownList = null;
         mHandler.removeCallbacks(mResizePopupRunnable);
-        // ---------- Original Method ----------
-        //mPopup.dismiss();
-        //removePromptView();
-        //mPopup.setContentView(null);
-        //mDropDownList = null;
-        //mHandler.removeCallbacks(mResizePopupRunnable);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -571,11 +584,12 @@ public class ListPopupWindow {
     public void setOnDismissListener(PopupWindow.OnDismissListener listener) {
         mPopup.setOnDismissListener(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //mPopup.setOnDismissListener(listener);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.317 -0400", hash_original_method = "202D4492803683737094012DDF6DD86F", hash_generated_method = "48C2AEB2401450EC6625310B3FE26886")
     private void removePromptView() {
         {
@@ -583,38 +597,41 @@ public class ListPopupWindow {
             {
                 final ViewGroup group = (ViewGroup) parent;
                 group.removeView(mPromptView);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPromptView != null) {
-            //final ViewParent parent = mPromptView.getParent();
-            //if (parent instanceof ViewGroup) {
-                //final ViewGroup group = (ViewGroup) parent;
-                //group.removeView(mPromptView);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.318 -0400", hash_original_method = "288B7DB6446AD4FA82AB3ACE9506A35B", hash_generated_method = "7AD2713FA630DB6E27D0A251E2CCE4A4")
     public void setInputMethodMode(int mode) {
         mPopup.setInputMethodMode(mode);
         addTaint(mode);
-        // ---------- Original Method ----------
-        //mPopup.setInputMethodMode(mode);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.318 -0400", hash_original_method = "341CBB053B214C5E0FB1B54637325DA3", hash_generated_method = "52EDC7EB05013C99222808628C992638")
     public int getInputMethodMode() {
         int varCAD19FC29631D9DEB0E193028B2569D9_1584103995 = (mPopup.getInputMethodMode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1839107357 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1839107357;
-        // ---------- Original Method ----------
-        //return mPopup.getInputMethodMode();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.318 -0400", hash_original_method = "119CA9359C56E2DDD442B9A05EFE812C", hash_generated_method = "DE0D2B662BFC53C10EEFF2E8E4923394")
     public void setSelection(int position) {
         DropDownListView list = mDropDownList;
@@ -627,23 +644,24 @@ public class ListPopupWindow {
                     boolean var24E210557EA947C11E8431EB5891287F_724401533 = (list.getChoiceMode() != ListView.CHOICE_MODE_NONE);
                     {
                         list.setItemChecked(position, true);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(position);
-        // ---------- Original Method ----------
-        //DropDownListView list = mDropDownList;
-        //if (isShowing() && list != null) {
-            //list.mListSelectionHidden = false;
-            //list.setSelection(position);
-            //if (list.getChoiceMode() != ListView.CHOICE_MODE_NONE) {
-                //list.setItemChecked(position, true);
-            //}
-        //}
+        
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.319 -0400", hash_original_method = "5E25633D1BEAE372BF50698DAAA66CA7", hash_generated_method = "81FB08F99D3A1B7D44D07E8682A59967")
     public void clearListSelection() {
         final DropDownListView list = mDropDownList;
@@ -651,37 +669,40 @@ public class ListPopupWindow {
             list.mListSelectionHidden = true;
             list.hideSelector();
             list.requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //final DropDownListView list = mDropDownList;
-        //if (list != null) {
-            //list.mListSelectionHidden = true;
-            //list.hideSelector();
-            //list.requestLayout();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.319 -0400", hash_original_method = "CA9C4C0CD645F38E1AAA797FE00ECFCE", hash_generated_method = "B79F6D3064F305AC02CB95E4DA2AC562")
     public boolean isShowing() {
         boolean varC4D0BEF5C8B8A88A8F0203AF22B9D645_953300805 = (mPopup.isShowing());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1785549870 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1785549870;
-        // ---------- Original Method ----------
-        //return mPopup.isShowing();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.320 -0400", hash_original_method = "C5EEC00F4CE1C916DAF561B7CF397229", hash_generated_method = "D838C09D8EF44484282EF73FFEBE7D21")
     public boolean isInputMethodNotNeeded() {
         boolean varCB697D8A9E9B8855A49BA45F9E6E55D8_926315097 = (mPopup.getInputMethodMode() == INPUT_METHOD_NOT_NEEDED);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1217147444 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1217147444;
-        // ---------- Original Method ----------
-        //return mPopup.getInputMethodMode() == INPUT_METHOD_NOT_NEEDED;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.320 -0400", hash_original_method = "5D56F9149CAA09C31AB36A31C90B128D", hash_generated_method = "76FE2FA8299816BD0A2DE07C3148C651")
     public boolean performItemClick(int position) {
         {
@@ -692,140 +713,145 @@ public class ListPopupWindow {
                     final View child = list.getChildAt(position - list.getFirstVisiblePosition());
                     final ListAdapter adapter = list.getAdapter();
                     mItemClickListener.onItemClick(list, child, position, adapter.getItemId(position));
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(position);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_700853587 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_700853587;
-        // ---------- Original Method ----------
-        //if (isShowing()) {
-            //if (mItemClickListener != null) {
-                //final DropDownListView list = mDropDownList;
-                //final View child = list.getChildAt(position - list.getFirstVisiblePosition());
-                //final ListAdapter adapter = list.getAdapter();
-                //mItemClickListener.onItemClick(list, child, position, adapter.getItemId(position));
-            //}
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+                
+                
+                
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.321 -0400", hash_original_method = "E481FD4B78A135BB1B6DC4E83167B196", hash_generated_method = "C3990CF343FBDCE7B26CCB7E05266D51")
     public Object getSelectedItem() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1475117661 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_2051269113 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_1475117661 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_2051269113 = null; 
         {
             boolean var67F0F8A90F47989DCF9FDFD2C3F61D76_556323827 = (!isShowing());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1475117661 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2051269113 = mDropDownList.getSelectedItem();
-        Object varA7E53CE21691AB073D9660D615818899_1848986385; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_1848986385; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1848986385 = varB4EAC82CA7396A68D541C85D26508E83_1475117661;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1848986385 = varB4EAC82CA7396A68D541C85D26508E83_2051269113;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1848986385.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1848986385.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1848986385;
-        // ---------- Original Method ----------
-        //if (!isShowing()) {
-            //return null;
-        //}
-        //return mDropDownList.getSelectedItem();
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.321 -0400", hash_original_method = "055DCA84E8C7B3F34F7D7819C2CD5AC3", hash_generated_method = "6712EDBFC3B2DE422D50D7333588ADF0")
     public int getSelectedItemPosition() {
         {
             boolean var67F0F8A90F47989DCF9FDFD2C3F61D76_1374693410 = (!isShowing());
-        } //End collapsed parenthetic
+        } 
         int varFFCD2483F75EA19D2EC4EA912FAF68BC_628412113 = (mDropDownList.getSelectedItemPosition());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_222180366 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_222180366;
-        // ---------- Original Method ----------
-        //if (!isShowing()) {
-            //return ListView.INVALID_POSITION;
-        //}
-        //return mDropDownList.getSelectedItemPosition();
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.322 -0400", hash_original_method = "4492784EC84C61BD8D41E43112FEBCD0", hash_generated_method = "04047E856E3926FCCBFB19FB95656B50")
     public long getSelectedItemId() {
         {
             boolean var67F0F8A90F47989DCF9FDFD2C3F61D76_1041176736 = (!isShowing());
-        } //End collapsed parenthetic
+        } 
         long var831263C88E6FFB9B4AA451205D89724F_732483507 = (mDropDownList.getSelectedItemId());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_539660909 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_539660909;
-        // ---------- Original Method ----------
-        //if (!isShowing()) {
-            //return ListView.INVALID_ROW_ID;
-        //}
-        //return mDropDownList.getSelectedItemId();
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.323 -0400", hash_original_method = "A94FEEC1ECDAC3555C21CB10FFC68C47", hash_generated_method = "B555E569EC63130F367941648304815C")
     public View getSelectedView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_1891189882 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1901058170 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_1891189882 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1901058170 = null; 
         {
             boolean var67F0F8A90F47989DCF9FDFD2C3F61D76_887039918 = (!isShowing());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1891189882 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1901058170 = mDropDownList.getSelectedView();
-        View varA7E53CE21691AB073D9660D615818899_890115027; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_890115027; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_890115027 = varB4EAC82CA7396A68D541C85D26508E83_1891189882;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_890115027 = varB4EAC82CA7396A68D541C85D26508E83_1901058170;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_890115027.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_890115027.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_890115027;
-        // ---------- Original Method ----------
-        //if (!isShowing()) {
-            //return null;
-        //}
-        //return mDropDownList.getSelectedView();
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.323 -0400", hash_original_method = "D21142DAF85C899FDAA3783E4BBEC12E", hash_generated_method = "38CA2881FC39D5B01C368EA0EDCD0505")
     public ListView getListView() {
-        ListView varB4EAC82CA7396A68D541C85D26508E83_29458922 = null; //Variable for return #1
+        ListView varB4EAC82CA7396A68D541C85D26508E83_29458922 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_29458922 = mDropDownList;
-        varB4EAC82CA7396A68D541C85D26508E83_29458922.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_29458922.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_29458922;
-        // ---------- Original Method ----------
-        //return mDropDownList;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.324 -0400", hash_original_method = "21262ED785FC4787FB1F1DE7107BCA92", hash_generated_method = "7D6D8AA3A24EB925896215A339982186")
      void setListItemExpandMax(int max) {
         mListItemExpandMaximum = max;
-        // ---------- Original Method ----------
-        //mListItemExpandMaximum = max;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.325 -0400", hash_original_method = "D4938DA23F7CC8247819641EDCB20246", hash_generated_method = "68EABA36A652DC1FEF8A2D14AFCE7E16")
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var4A685BA46E35F21FC0CB2BDAFA9CFEA5_1834688421 = (isShowing());
             {
@@ -848,72 +874,74 @@ public class ListPopupWindow {
                             mDropDownList.lookForSelectablePosition(0, true);
                             lastItem = allEnabled ? adapter.getCount() - 1 :
                             mDropDownList.lookForSelectablePosition(adapter.getCount() - 1, false);
-                        } //End block
+                        } 
                         {
                             clearListSelection();
                             mPopup.setInputMethodMode(PopupWindow.INPUT_METHOD_NEEDED);
                             show();
-                        } //End block
+                        } 
                         {
                             mDropDownList.mListSelectionHidden = false;
-                        } //End block
+                        } 
                         consumed = mDropDownList.onKeyDown(keyCode, event);
                         {
                             mPopup.setInputMethodMode(PopupWindow.INPUT_METHOD_NOT_NEEDED);
                             mDropDownList.requestFocusFromTouch();
                             show();
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1866578590 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1866578590;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.325 -0400", hash_original_method = "CD01E8977B386E95EB43DA8A15EDF875", hash_generated_method = "95534EA393693022B0E6C6CA37919674")
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var94A367403F58644D7C7080281BCAEB6B_804370751 = (isShowing() && mDropDownList.getSelectedItemPosition() >= 0);
             {
                 boolean consumed = mDropDownList.onKeyUp(keyCode, event);
                 {
-                    //Begin case KeyEvent.KEYCODE_ENTER KeyEvent.KEYCODE_DPAD_CENTER 
+                    
                     dismiss();
-                    //End case KeyEvent.KEYCODE_ENTER KeyEvent.KEYCODE_DPAD_CENTER 
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    
+                } 
+            } 
+        } 
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_813971905 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_813971905;
-        // ---------- Original Method ----------
-        //if (isShowing() && mDropDownList.getSelectedItemPosition() >= 0) {
-            //boolean consumed = mDropDownList.onKeyUp(keyCode, event);
-            //if (consumed) {
-                //switch (keyCode) {
-                    //case KeyEvent.KEYCODE_ENTER:
-                    //case KeyEvent.KEYCODE_DPAD_CENTER:
-                        //dismiss();
-                        //break;
-                //}
-            //}
-            //return consumed;
-        //}
-        //return false;
+        
+        
+            
+            
+                
+                    
+                    
+                        
+                        
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.326 -0400", hash_original_method = "5D81C652E72C1CAFD12E9CC95CD171E7", hash_generated_method = "D72826BA07AFCD5B1B12D6E1ED57F0ED")
     public boolean onKeyPreIme(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var405C80F78320ACCD1F0C2596742EF82D_1942065009 = (keyCode == KeyEvent.KEYCODE_BACK && isShowing());
             {
@@ -924,35 +952,36 @@ public class ListPopupWindow {
                         KeyEvent.DispatcherState state = anchorView.getKeyDispatcherState();
                         {
                             state.startTracking(event, this);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         boolean varA6D964A9D1A4D1D485BD8D60F2BFCDEE_285851310 = (event.getAction() == KeyEvent.ACTION_UP);
                         {
                             KeyEvent.DispatcherState state = anchorView.getKeyDispatcherState();
                             {
                                 state.handleUpEvent(event);
-                            } //End block
+                            } 
                             {
                                 boolean varBE09C907F92D135687297C67489D82A5_2035106257 = (event.isTracking() && !event.isCanceled());
                                 {
                                     dismiss();
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2137120454 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2137120454;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.328 -0400", hash_original_method = "F5C740553BB47CFEBEC052FD2A1DEFBA", hash_generated_method = "B8DB4C9333D7DE5ABC6CA7F6AF57F55B")
     private int buildDropDown() {
         ViewGroup dropDownView;
@@ -967,19 +996,19 @@ public class ListPopupWindow {
                         boolean varB5043B80B6F8EE24E2CA3965BAE7CC2D_312827849 = (view != null && view.getWindowToken() != null);
                         {
                             show();
-                        } //End block
-                    } //End collapsed parenthetic
-                    // ---------- Original Method ----------
-                    //View view = getAnchorView();
-                    //if (view != null && view.getWindowToken() != null) {
-                        //show();
-                    //}
+                        } 
+                    } 
+                    
+                    
+                    
+                        
+                    
                 }
 };
             mDropDownList = new DropDownListView(context, !mModal);
             {
                 mDropDownList.setSelector(mDropDownListHighlight);
-            } //End block
+            } 
             mDropDownList.setAdapter(mAdapter);
             mDropDownList.setOnItemClickListener(mItemClickListener);
             mDropDownList.setFocusable(true);
@@ -988,36 +1017,36 @@ public class ListPopupWindow {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.327 -0400", hash_original_method = "A3D9BDCD43F35F92A348E2938D25FA58", hash_generated_method = "C7E487604C140F3DB1013223B257F6D8")
                 public void onItemSelected(AdapterView<?> parent, View view,
                         int position, long id) {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     {
                         DropDownListView dropDownList = mDropDownList;
                         {
                             dropDownList.mListSelectionHidden = false;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     addTaint(parent.getTaint());
                     addTaint(view.getTaint());
                     addTaint(position);
                     addTaint(id);
-                    // ---------- Original Method ----------
-                    //if (position != -1) {
-                        //DropDownListView dropDownList = mDropDownList;
-                        //if (dropDownList != null) {
-                            //dropDownList.mListSelectionHidden = false;
-                        //}
-                    //}
+                    
+                    
+                        
+                        
+                            
+                        
+                    
                 }
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.327 -0400", hash_original_method = "ABAE53FB2582432DFD925A1EB74EEC53", hash_generated_method = "12A103C6C860E1CA8C576C5166DA4783")
                 public void onNothingSelected(AdapterView<?> parent) {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     addTaint(parent.getTaint());
-                    // ---------- Original Method ----------
+                    
                 }
 });
             mDropDownList.setOnScrollListener(mScrollListener);
             {
                 mDropDownList.setOnItemSelectedListener(mItemSelectedListener);
-            } //End block
+            } 
             dropDownView = mDropDownList;
             View hintView = mPromptView;
             {
@@ -1026,18 +1055,18 @@ public class ListPopupWindow {
                 LinearLayout.LayoutParams hintParams = new LinearLayout.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT, 0, 1.0f
                 );
-                //Begin case POSITION_PROMPT_BELOW 
+                
                 hintContainer.addView(dropDownView, hintParams);
-                //End case POSITION_PROMPT_BELOW 
-                //Begin case POSITION_PROMPT_BELOW 
+                
+                
                 hintContainer.addView(hintView);
-                //End case POSITION_PROMPT_BELOW 
-                //Begin case POSITION_PROMPT_ABOVE 
+                
+                
                 hintContainer.addView(hintView);
-                //End case POSITION_PROMPT_ABOVE 
-                //Begin case POSITION_PROMPT_ABOVE 
+                
+                
                 hintContainer.addView(dropDownView, hintParams);
-                //End case POSITION_PROMPT_ABOVE 
+                
                 int widthSpec = MeasureSpec.makeMeasureSpec(mDropDownWidth, MeasureSpec.AT_MOST);
                 int heightSpec = MeasureSpec.UNSPECIFIED;
                 hintView.measure(widthSpec, heightSpec);
@@ -1045,9 +1074,9 @@ public class ListPopupWindow {
                 otherHeights = hintView.getMeasuredHeight() + hintParams.topMargin
                         + hintParams.bottomMargin;
                 dropDownView = hintContainer;
-            } //End block
+            } 
             mPopup.setContentView(dropDownView);
-        } //End block
+        } 
         {
             dropDownView = (ViewGroup) mPopup.getContentView();
             final View view = mPromptView;
@@ -1055,8 +1084,8 @@ public class ListPopupWindow {
                 LinearLayout.LayoutParams hintParams = (LinearLayout.LayoutParams) view.getLayoutParams();
                 otherHeights = view.getMeasuredHeight() + hintParams.topMargin
                         + hintParams.bottomMargin;
-            } //End block
-        } //End block
+            } 
+        } 
         int padding = 0;
         Drawable background = mPopup.getBackground();
         {
@@ -1064,8 +1093,8 @@ public class ListPopupWindow {
             padding = mTempRect.top + mTempRect.bottom;
             {
                 mDropDownVerticalOffset = -mTempRect.top;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean ignoreBottomDecorations = mPopup.getInputMethodMode() == PopupWindow.INPUT_METHOD_NOT_NEEDED;
         final int maxHeight = mPopup.getMaxAvailableHeight(
                 getAnchorView(), mDropDownVerticalOffset, ignoreBottomDecorations);
@@ -1074,8 +1103,8 @@ public class ListPopupWindow {
         otherHeights += padding;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_253879185 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_253879185;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1093,31 +1122,31 @@ public class ListPopupWindow {
             mHijackFocus = hijackFocus;
             setCacheColorHint(0);
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
-            //mHijackFocus = hijackFocus;
-            //setCacheColorHint(0);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.329 -0400", hash_original_method = "3F1E6A7533EB0FC6DBDDA209BB95D590", hash_generated_method = "27683D4F9065C3AAF72614553239F5AB")
         @Override
          View obtainView(int position, boolean[] isScrap) {
-            View varB4EAC82CA7396A68D541C85D26508E83_488932407 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_488932407 = null; 
             View view = super.obtainView(position, isScrap);
             {
                 ((TextView) view).setHorizontallyScrolling(true);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_488932407 = view;
             addTaint(position);
             addTaint(isScrap[0]);
-            varB4EAC82CA7396A68D541C85D26508E83_488932407.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_488932407.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_488932407;
-            // ---------- Original Method ----------
-            //View view = super.obtainView(position, isScrap);
-            //if (view instanceof TextView) {
-                //((TextView) view).setHorizontallyScrolling(true);
-            //}
-            //return view;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1127,8 +1156,8 @@ public class ListPopupWindow {
             boolean varCB3639C670B5B423000979DCEC75E658_1914526597 = ((mHijackFocus && mListSelectionHidden) || super.isInTouchMode());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1367367339 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1367367339;
-            // ---------- Original Method ----------
-            //return (mHijackFocus && mListSelectionHidden) || super.isInTouchMode();
+            
+            
         }
 
         
@@ -1138,8 +1167,8 @@ public class ListPopupWindow {
             boolean var0940CCD88AFB8F7CE2228B535D86CA58_1453356160 = (mHijackFocus || super.hasWindowFocus());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1845246683 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1845246683;
-            // ---------- Original Method ----------
-            //return mHijackFocus || super.hasWindowFocus();
+            
+            
         }
 
         
@@ -1149,8 +1178,8 @@ public class ListPopupWindow {
             boolean var56C93152DFB9CA3165D7CC2B9542D965_1494474619 = (mHijackFocus || super.isFocused());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_807501825 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_807501825;
-            // ---------- Original Method ----------
-            //return mHijackFocus || super.isFocused();
+            
+            
         }
 
         
@@ -1160,8 +1189,8 @@ public class ListPopupWindow {
             boolean varEE54D6BCCFD3521CE60CAD79A56FB942_1902901639 = (mHijackFocus || super.hasFocus());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1425956993 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1425956993;
-            // ---------- Original Method ----------
-            //return mHijackFocus || super.hasFocus();
+            
+            
         }
 
         
@@ -1177,34 +1206,34 @@ public class ListPopupWindow {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.330 -0400", hash_original_method = "2B87497157622859499FF49FBED7C822", hash_generated_method = "2B87497157622859499FF49FBED7C822")
         public PopupDataSetObserver ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.331 -0400", hash_original_method = "6E4DA5A5D077D6C0AA24FD2BF6BDF53A", hash_generated_method = "81F62F0B59E332BD89D6DE2904A7DE99")
         @Override
         public void onChanged() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean varC328115627DFB8318D2C3484959F5057_2092529159 = (isShowing());
                 {
                     show();
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (isShowing()) {
-                //show();
-            //}
+                } 
+            } 
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.331 -0400", hash_original_method = "BEB5883597D4F7E6EC69D5E4B00F4808", hash_generated_method = "77ED6FEC41ABFE0FF7B87CF1F8DE3B8B")
         @Override
         public void onInvalidated() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             dismiss();
-            // ---------- Original Method ----------
-            //dismiss();
+            
+            
         }
 
         
@@ -1217,15 +1246,15 @@ public class ListPopupWindow {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.331 -0400", hash_original_method = "850B001590E034AECBB57C89D4E5B01F", hash_generated_method = "850B001590E034AECBB57C89D4E5B01F")
         public ListSelectorHider ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.331 -0400", hash_original_method = "9AD729468BC88951DC9B447B72E180D0", hash_generated_method = "33F921B8E266BA77FD9A621DF2DFDB10")
         public void run() {
             clearListSelection();
-            // ---------- Original Method ----------
-            //clearListSelection();
+            
+            
         }
 
         
@@ -1238,7 +1267,7 @@ public class ListPopupWindow {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.331 -0400", hash_original_method = "3BE1DF808B5AE0104DCA795D143316E5", hash_generated_method = "3BE1DF808B5AE0104DCA795D143316E5")
         public ResizePopupRunnable ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1250,14 +1279,14 @@ public class ListPopupWindow {
                 {
                     mPopup.setInputMethodMode(PopupWindow.INPUT_METHOD_NOT_NEEDED);
                     show();
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (mDropDownList != null && mDropDownList.getCount() > mDropDownList.getChildCount() &&
-                    //mDropDownList.getChildCount() <= mListItemExpandMaximum) {
-                //mPopup.setInputMethodMode(PopupWindow.INPUT_METHOD_NOT_NEEDED);
-                //show();
-            //}
+                } 
+            } 
+            
+            
+                    
+                
+                
+            
         }
 
         
@@ -1270,13 +1299,13 @@ public class ListPopupWindow {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.332 -0400", hash_original_method = "EC3EA52176E4094388A66835C5736568", hash_generated_method = "EC3EA52176E4094388A66835C5736568")
         public PopupTouchInterceptor ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.333 -0400", hash_original_method = "6DB51D562B35DA9065539F31B98AD12D", hash_generated_method = "3E30742451A3E0CB0CF815F1BE6566D6")
         public boolean onTouch(View v, MotionEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             final int action = event.getAction();
             final int x = (int) event.getX();
             final int y = (int) event.getY();
@@ -1286,27 +1315,27 @@ public class ListPopupWindow {
                     (x >= 0 && x < mPopup.getWidth() && y >= 0 && y < mPopup.getHeight()));
                 {
                     mHandler.postDelayed(mResizePopupRunnable, EXPAND_LIST_TIMEOUT);
-                } //End block
+                } 
                 {
                     mHandler.removeCallbacks(mResizePopupRunnable);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(v.getTaint());
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1029259338 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1029259338;
-            // ---------- Original Method ----------
-            //final int action = event.getAction();
-            //final int x = (int) event.getX();
-            //final int y = (int) event.getY();
-            //if (action == MotionEvent.ACTION_DOWN &&
-                    //mPopup != null && mPopup.isShowing() &&
-                    //(x >= 0 && x < mPopup.getWidth() && y >= 0 && y < mPopup.getHeight())) {
-                //mHandler.postDelayed(mResizePopupRunnable, EXPAND_LIST_TIMEOUT);
-            //} else if (action == MotionEvent.ACTION_UP) {
-                //mHandler.removeCallbacks(mResizePopupRunnable);
-            //}
-            //return false;
+            
+            
+            
+            
+            
+                    
+                    
+                
+            
+                
+            
+            
         }
 
         
@@ -1319,41 +1348,41 @@ public class ListPopupWindow {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.333 -0400", hash_original_method = "F5F35EF888BB5CF4AB79CAB2F875B0A7", hash_generated_method = "F5F35EF888BB5CF4AB79CAB2F875B0A7")
         public PopupScrollListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.334 -0400", hash_original_method = "6B5691236DBDB14CA060F218338C51C6", hash_generated_method = "1E0CD89024A89C685CED8A22BF60B332")
         public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
                 int totalItemCount) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(view.getTaint());
             addTaint(firstVisibleItem);
             addTaint(visibleItemCount);
             addTaint(totalItemCount);
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.334 -0400", hash_original_method = "50D93865D772C2EF3B15BE53BF421FFA", hash_generated_method = "93527C574EF41A4CEDE69A8D7DCD5D76")
         public void onScrollStateChanged(AbsListView view, int scrollState) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean var812725D6D4B7B7F1E2BFD35C1B20C4F6_1914203384 = (scrollState == SCROLL_STATE_TOUCH_SCROLL &&
                     !isInputMethodNotNeeded() && mPopup.getContentView() != null);
                 {
                     mHandler.removeCallbacks(mResizePopupRunnable);
                     mResizePopupRunnable.run();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(view.getTaint());
             addTaint(scrollState);
-            // ---------- Original Method ----------
-            //if (scrollState == SCROLL_STATE_TOUCH_SCROLL &&
-                    //!isInputMethodNotNeeded() && mPopup.getContentView() != null) {
-                //mHandler.removeCallbacks(mResizePopupRunnable);
-                //mResizePopupRunnable.run();
-            //}
+            
+            
+                    
+                
+                
+            
         }
 
         

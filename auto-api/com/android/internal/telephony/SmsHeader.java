@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.telephony.SmsMessage;
 import com.android.internal.util.HexDump;
@@ -32,10 +32,11 @@ public class SmsHeader {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.904 -0400", hash_original_method = "F06BD280EA34997B1794CB44E7D9D16A", hash_generated_method = "EBF9FF6335726A7119DA9BD07425785D")
     public  SmsHeader() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SmsHeader fromByteArray(byte[] data) {
         ByteArrayInputStream inStream = new ByteArrayInputStream(data);
         SmsHeader smsHeader = new SmsHeader();
@@ -99,6 +100,7 @@ public class SmsHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(SmsHeader smsHeader) {
         if ((smsHeader.portAddrs == null) &&
             (smsHeader.concatRef == null) &&
@@ -158,39 +160,40 @@ public class SmsHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.919 -0400", hash_original_method = "3B501A432F153619ABA258E9F603F65E", hash_generated_method = "B957EEED3551FDAF871B995DD5F9FF7D")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_824035299 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_824035299 = null; 
         StringBuilder builder = new StringBuilder();
         builder.append("UserDataHeader ");
         builder.append("{ ConcatRef ");
         {
             builder.append("unset");
-        } //End block
+        } 
         {
             builder.append("{ refNumber=" + concatRef.refNumber);
             builder.append(", msgCount=" + concatRef.msgCount);
             builder.append(", seqNumber=" + concatRef.seqNumber);
             builder.append(", isEightBits=" + concatRef.isEightBits);
             builder.append(" }");
-        } //End block
+        } 
         builder.append(", PortAddrs ");
         {
             builder.append("unset");
-        } //End block
+        } 
         {
             builder.append("{ destPort=" + portAddrs.destPort);
             builder.append(", origPort=" + portAddrs.origPort);
             builder.append(", areEightBits=" + portAddrs.areEightBits);
             builder.append(" }");
-        } //End block
+        } 
         {
             builder.append(", languageShiftTable=" + languageShiftTable);
-        } //End block
+        } 
         {
             builder.append(", languageTable=" + languageTable);
-        } //End block
+        } 
         {
             Iterator<MiscElt> var37918556E8645AADA45026E0287225E4_1787808274 = (miscEltList).iterator();
             var37918556E8645AADA45026E0287225E4_1787808274.hasNext();
@@ -201,14 +204,14 @@ public class SmsHeader {
                 builder.append(", length=" + miscElt.data.length);
                 builder.append(", data=" + HexDump.toHexString(miscElt.data));
                 builder.append(" }");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         builder.append(" }");
         varB4EAC82CA7396A68D541C85D26508E83_824035299 = builder.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_824035299.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_824035299.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_824035299;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -226,7 +229,7 @@ public class SmsHeader {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.919 -0400", hash_original_method = "0146EA7913C9A86565770A69E4015B6C", hash_generated_method = "0146EA7913C9A86565770A69E4015B6C")
         public PortAddrs ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -251,7 +254,7 @@ public class SmsHeader {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.919 -0400", hash_original_method = "F12AD75E9E03099DD407C7814D08C2E0", hash_generated_method = "F12AD75E9E03099DD407C7814D08C2E0")
         public ConcatRef ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -270,7 +273,7 @@ public class SmsHeader {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.919 -0400", hash_original_method = "424479238E621C77A92D33EDE0B97D13", hash_generated_method = "424479238E621C77A92D33EDE0B97D13")
         public MiscElt ()
         {
-            //Synthesized constructor
+            
         }
 
 

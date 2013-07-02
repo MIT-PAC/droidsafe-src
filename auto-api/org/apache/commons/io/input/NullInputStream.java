@@ -1,11 +1,11 @@
 package org.apache.commons.io.input;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.EOFException;
 import java.io.IOException;
@@ -38,7 +38,7 @@ public class NullInputStream extends InputStream {
     public  NullInputStream(long size) {
         this(size, true, false);
         addTaint(size);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -47,10 +47,10 @@ public class NullInputStream extends InputStream {
         this.size = size;
         this.markSupported = markSupported;
         this.throwEofException = throwEofException;
-        // ---------- Original Method ----------
-        //this.size = size;
-        //this.markSupported = markSupported;
-        //this.throwEofException = throwEofException;
+        
+        
+        
+        
     }
 
     
@@ -58,8 +58,8 @@ public class NullInputStream extends InputStream {
     public long getPosition() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1251779550 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1251779550;
-        // ---------- Original Method ----------
-        //return position;
+        
+        
     }
 
     
@@ -67,8 +67,8 @@ public class NullInputStream extends InputStream {
     public long getSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1764238727 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1764238727;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
@@ -78,15 +78,15 @@ public class NullInputStream extends InputStream {
         long avail = size - position;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1345570323 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1345570323;
-        // ---------- Original Method ----------
-        //long avail = size - position;
-        //if (avail <= 0) {
-            //return 0;
-        //} else if (avail > Integer.MAX_VALUE) {
-            //return Integer.MAX_VALUE;
-        //} else {
-            //return (int)avail;
-        //}
+        
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -96,27 +96,28 @@ public class NullInputStream extends InputStream {
         eof = false;
         position = 0;
         mark = -1;
-        // ---------- Original Method ----------
-        //eof = false;
-        //position = 0;
-        //mark = -1;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.151 -0400", hash_original_method = "7AEF2C3B62C677DC9FD1211BE4D4F4EB", hash_generated_method = "B2E766FDFDF2D4B287F2AD4768492E2B")
     @Override
     public synchronized void mark(int readlimit) {
         {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Mark not supported");
-        } //End block
+        } 
         mark = position;
         this.readlimit = readlimit;
-        // ---------- Original Method ----------
-        //if (!markSupported) {
-            //throw new UnsupportedOperationException("Mark not supported");
-        //}
-        //mark = position;
-        //this.readlimit = readlimit;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -125,35 +126,37 @@ public class NullInputStream extends InputStream {
     public boolean markSupported() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1731807085 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1731807085;
-        // ---------- Original Method ----------
-        //return markSupported;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.152 -0400", hash_original_method = "58A7A50486EDC9346A5D459542A5BDB7", hash_generated_method = "35C19800DD5263720422DED903BE8373")
     @Override
     public int read() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Read after end of file");
-        } //End block
+        } 
         {
             int varECF9BCF45B9E6F55B0F3F60324CD3B94_1966014413 = (doEndOfFile());
-        } //End block
+        } 
         int varC45080C1A9D5F691112CA879E7686659_276647895 = (processByte());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1659687995 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1659687995;
-        // ---------- Original Method ----------
-        //if (eof) {
-            //throw new IOException("Read after end of file");
-        //}
-        //if (position == size) {
-            //return doEndOfFile();
-        //}
-        //position++;
-        //return processByte();
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.153 -0400", hash_original_method = "1E949846598722C79E2F0E8E4DF0AE25", hash_generated_method = "1F96D39DE1A248BE6D85B675AED1A86A")
     @Override
     public int read(byte[] bytes) throws IOException {
@@ -161,113 +164,116 @@ public class NullInputStream extends InputStream {
         addTaint(bytes[0]);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1481794037 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1481794037;
-        // ---------- Original Method ----------
-        //return read(bytes, 0, bytes.length);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.153 -0400", hash_original_method = "05A90D0FB660BAF10AD4D61031A72FD9", hash_generated_method = "BB7C41664E47996C65F8343DE625A5AD")
     @Override
     public int read(byte[] bytes, int offset, int length) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Read after end of file");
-        } //End block
+        } 
         {
             int varECF9BCF45B9E6F55B0F3F60324CD3B94_1130891783 = (doEndOfFile());
-        } //End block
+        } 
         position += length;
         int returnLength = length;
         {
             returnLength = length - (int)(position - size);
             position = size;
-        } //End block
+        } 
         processBytes(bytes, offset, returnLength);
         addTaint(bytes[0]);
         addTaint(offset);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_736054703 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_736054703;
-        // ---------- Original Method ----------
-        //if (eof) {
-            //throw new IOException("Read after end of file");
-        //}
-        //if (position == size) {
-            //return doEndOfFile();
-        //}
-        //position += length;
-        //int returnLength = length;
-        //if (position > size) {
-            //returnLength = length - (int)(position - size);
-            //position = size;
-        //}
-        //processBytes(bytes, offset, returnLength);
-        //return returnLength;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.154 -0400", hash_original_method = "DA70D8E8EFCF4CE896E4E17AB2D27792", hash_generated_method = "ADE91CA8E3BA9D12BD726C9F6A4B7B96")
     @Override
     public synchronized void reset() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Mark not supported");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("No position has been marked");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Marked position [" + mark +
                     "] is no longer valid - passed the read limit [" +
                     readlimit + "]");
-        } //End block
+        } 
         position = mark;
         eof = false;
-        // ---------- Original Method ----------
-        //if (!markSupported) {
-            //throw new UnsupportedOperationException("Mark not supported");
-        //}
-        //if (mark < 0) {
-            //throw new IOException("No position has been marked");
-        //}
-        //if (position > mark + readlimit) {
-            //throw new IOException("Marked position [" + mark +
-                    //"] is no longer valid - passed the read limit [" +
-                    //readlimit + "]");
-        //}
-        //position = mark;
-        //eof = false;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                    
+                    
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.156 -0400", hash_original_method = "9210FB6C78C901008C5A67E434CB9A0B", hash_generated_method = "539A99B8229D8889125B6986D6E011F1")
     @Override
     public long skip(long numberOfBytes) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Skip after end of file");
-        } //End block
+        } 
         {
             long varECF9BCF45B9E6F55B0F3F60324CD3B94_1908490101 = (doEndOfFile());
-        } //End block
+        } 
         position += numberOfBytes;
         long returnLength = numberOfBytes;
         {
             returnLength = numberOfBytes - (position - size);
             position = size;
-        } //End block
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1724078627 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1724078627;
-        // ---------- Original Method ----------
-        //if (eof) {
-            //throw new IOException("Skip after end of file");
-        //}
-        //if (position == size) {
-            //return doEndOfFile();
-        //}
-        //position += numberOfBytes;
-        //long returnLength = numberOfBytes;
-        //if (position > size) {
-            //returnLength = numberOfBytes - (position - size);
-            //position = size;
-        //}
-        //return returnLength;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -275,8 +281,8 @@ public class NullInputStream extends InputStream {
     protected int processByte() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_961364543 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_961364543;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -285,24 +291,25 @@ public class NullInputStream extends InputStream {
         addTaint(bytes[0]);
         addTaint(offset);
         addTaint(length);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.158 -0400", hash_original_method = "19CB45ABF7C0C1D656700921E322A527", hash_generated_method = "531DF8DA24F5B56DFCC23AE58076872E")
     private int doEndOfFile() throws EOFException {
         eof = true;
         {
             if (DroidSafeAndroidRuntime.control) throw new EOFException();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1640735882 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1640735882;
-        // ---------- Original Method ----------
-        //eof = true;
-        //if (throwEofException) {
-            //throw new EOFException();
-        //}
-        //return -1;
+        
+        
+        
+            
+        
+        
     }
 
     

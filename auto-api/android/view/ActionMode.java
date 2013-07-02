@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class ActionMode {
@@ -16,26 +16,26 @@ public abstract class ActionMode {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.821 -0400", hash_original_method = "D3C302D61DC5B7843982EAB33028FB58", hash_generated_method = "D3C302D61DC5B7843982EAB33028FB58")
     public ActionMode ()
     {
-        //Synthesized constructor
+        
     }
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.822 -0400", hash_original_method = "256DC994AF5E64F19A2C820A8209C31D", hash_generated_method = "744E4F063BB0F5116D0A7B37E397A74C")
     public void setTag(Object tag) {
         mTag = tag;
-        // ---------- Original Method ----------
-        //mTag = tag;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.822 -0400", hash_original_method = "15C9157ADF1B79E512CAFF71050D7BD7", hash_generated_method = "59867257D53E6D32AD48D3B15800DDCF")
     public Object getTag() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_573798272 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_573798272 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_573798272 = mTag;
-        varB4EAC82CA7396A68D541C85D26508E83_573798272.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_573798272.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_573798272;
-        // ---------- Original Method ----------
-        //return mTag;
+        
+        
     }
 
     
@@ -79,8 +79,8 @@ public abstract class ActionMode {
     public boolean isUiFocusable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1371759618 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1371759618;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     

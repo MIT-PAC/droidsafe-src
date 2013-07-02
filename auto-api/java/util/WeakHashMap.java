@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
@@ -33,7 +33,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.918 -0400", hash_original_method = "B976885DE3CF2C49EC1331AC2786A4B5", hash_generated_method = "947788F1D50A3898B6C48AAEC3B777CB")
     public  WeakHashMap() {
         this(DEFAULT_SIZE);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -45,20 +45,20 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
             loadFactor = 7500;
             computeMaxSize();
             referenceQueue = new ReferenceQueue<K>();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
-        // ---------- Original Method ----------
-        //if (capacity >= 0) {
-            //elementCount = 0;
-            //elementData = newEntryArray(capacity == 0 ? 1 : capacity);
-            //loadFactor = 7500; 
-            //computeMaxSize();
-            //referenceQueue = new ReferenceQueue<K>();
-        //} else {
-            //throw new IllegalArgumentException();
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -70,20 +70,20 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
             this.loadFactor = (int) (loadFactor * 10000);
             computeMaxSize();
             referenceQueue = new ReferenceQueue<K>();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
-        } //End block
-        // ---------- Original Method ----------
-        //if (capacity >= 0 && loadFactor > 0) {
-            //elementCount = 0;
-            //elementData = newEntryArray(capacity == 0 ? 1 : capacity);
-            //this.loadFactor = (int) (loadFactor * 10000);
-            //computeMaxSize();
-            //referenceQueue = new ReferenceQueue<K>();
-        //} else {
-            //throw new IllegalArgumentException();
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -92,8 +92,8 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
         this(map.size() < 6 ? 11 : map.size() * 2);
         putAllImpl(map);
         addTaint(map.getTaint());
-        // ---------- Original Method ----------
-        //putAllImpl(map);
+        
+        
     }
 
     
@@ -112,8 +112,8 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.920 -0400", hash_original_method = "85D93BA99AF40F5CDC3F42570A89C9FC", hash_generated_method = "BE619D13CAF85822181B65989DC845A9")
     private void computeMaxSize() {
         threshold = (int) ((long) elementData.length * loadFactor / 10000);
-        // ---------- Original Method ----------
-        //threshold = (int) ((long) elementData.length * loadFactor / 10000);
+        
+        
     }
 
     
@@ -124,15 +124,15 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
         addTaint(key.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_867557275 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_867557275;
-        // ---------- Original Method ----------
-        //return getEntry(key) != null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.921 -0400", hash_original_method = "115108C1B40A91216FE420487FA7990C", hash_generated_method = "C5AD7FA7092E160FE4150B0E35A78612")
     @Override
     public Set<Map.Entry<K, V>> entrySet() {
-        Set<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_98932952 = null; //Variable for return #1
+        Set<Map.Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_98932952 = null; 
         poll();
         varB4EAC82CA7396A68D541C85D26508E83_98932952 = new AbstractSet<Map.Entry<K, V>>() {
             @Override
@@ -176,17 +176,17 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                         });
             }
         };
-        varB4EAC82CA7396A68D541C85D26508E83_98932952.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_98932952.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_98932952;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.927 -0400", hash_original_method = "058A25F673776D4338089073DA213D4E", hash_generated_method = "E14C14AEAC62ECDFA09A9D9B8442644C")
     @Override
     public Set<K> keySet() {
-        Set<K> varB4EAC82CA7396A68D541C85D26508E83_1386098864 = null; //Variable for return #1
+        Set<K> varB4EAC82CA7396A68D541C85D26508E83_1386098864 = null; 
         poll();
         {
             keySet = new AbstractSet<K>() {                
@@ -197,8 +197,8 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     addTaint(object.getTaint());
                     boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1467861519 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1467861519;
-                    // ---------- Original Method ----------
-                    //return containsKey(object);
+                    
+                    
                 }
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.924 -0400", hash_original_method = "997773928D6A4FA2A905BEE282A68997", hash_generated_method = "71F8C37510C95CD83230ED91788B2D2E")
                 @Override
@@ -206,15 +206,15 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     int varEB466AC21988954CC038D6EAFB4E7FEA_274505826 = (WeakHashMap.this.size());
                     int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1450734434 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1450734434;
-                    // ---------- Original Method ----------
-                    //return WeakHashMap.this.size();
+                    
+                    
                 }
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.924 -0400", hash_original_method = "0820DD19F55EBD9E05BEDEF72AA76B85", hash_generated_method = "216199AA5B7C7589486AA111C1364167")
                 @Override
                 public void clear() {
                     WeakHashMap.this.clear();
-                    // ---------- Original Method ----------
-                    //WeakHashMap.this.clear();
+                    
+                    
                 }
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.924 -0400", hash_original_method = "2EBC57A89CF751265ACE297F532371F8", hash_generated_method = "BA1CA6121A0FE4131E02F5C77A578BFE")
                 @Override
@@ -223,95 +223,95 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                         boolean varD4D10245FFFD9692A4F42EDF884E815E_1729739351 = (containsKey(key));
                         {
                             WeakHashMap.this.remove(key);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     addTaint(key.getTaint());
                     boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1340165722 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1340165722;
-                    // ---------- Original Method ----------
-                    //if (containsKey(key)) {
-                        //WeakHashMap.this.remove(key);
-                        //return true;
-                    //}
-                    //return false;
+                    
+                    
+                        
+                        
+                    
+                    
                 }
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.925 -0400", hash_original_method = "AE3D91420CF50F34AE4E77081237432D", hash_generated_method = "F5354D6315A968CF60C5AFE8BF2C4071")
                 @Override
                 public Iterator<K> iterator() {
-                    Iterator<K> varB4EAC82CA7396A68D541C85D26508E83_487032211 = null; //Variable for return #1
+                    Iterator<K> varB4EAC82CA7396A68D541C85D26508E83_487032211 = null; 
                     varB4EAC82CA7396A68D541C85D26508E83_487032211 = new HashIterator<K>(new Entry.Type<K, K, V>() {
                         public K get(Map.Entry<K, V> entry) {
                             return entry.getKey();
                         }
                     });
-                    varB4EAC82CA7396A68D541C85D26508E83_487032211.addTaint(getTaint()); //Add taint from parent
+                    varB4EAC82CA7396A68D541C85D26508E83_487032211.addTaint(getTaint()); 
                     return varB4EAC82CA7396A68D541C85D26508E83_487032211;
-                    // ---------- Original Method ----------
-                    //return new HashIterator<K>(new Entry.Type<K, K, V>() {
-                        //public K get(Map.Entry<K, V> entry) {
-                            //return entry.getKey();
-                        //}
-                    //});
+                    
+                    
+                        
+                            
+                        
+                    
                 }
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.926 -0400", hash_original_method = "8D1ED5FEE11EEA3682A2E2ECF5DE32C3", hash_generated_method = "0B9EF1FA436FA69655641C4E35E19365")
                 @Override
                 public Object[] toArray() {
-                    Object[] varB4EAC82CA7396A68D541C85D26508E83_93372940 = null; //Variable for return #1
+                    Object[] varB4EAC82CA7396A68D541C85D26508E83_93372940 = null; 
                     Collection<K> coll = new ArrayList<K>(size());
                     {
                         Iterator<K> iter = iterator();
                         boolean var0719F6DF13666099B3F99B9DD393E1F6_1435081465 = (iter.hasNext());
                         {
                             coll.add(iter.next());
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_93372940 = coll.toArray();
-                    varB4EAC82CA7396A68D541C85D26508E83_93372940.addTaint(getTaint()); //Add taint from parent
+                    varB4EAC82CA7396A68D541C85D26508E83_93372940.addTaint(getTaint()); 
                     return varB4EAC82CA7396A68D541C85D26508E83_93372940;
-                    // ---------- Original Method ----------
-                    //Collection<K> coll = new ArrayList<K>(size());
-                    //for (Iterator<K> iter = iterator(); iter.hasNext();) {
-                        //coll.add(iter.next());
-                    //}
-                    //return coll.toArray();
+                    
+                    
+                    
+                        
+                    
+                    
                 }
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.926 -0400", hash_original_method = "50B72C5F86BB9252B582673D59AA848C", hash_generated_method = "716C9E75B2A794658E71EC95BB5CF301")
                 @Override
                 public <T> T[] toArray(T[] contents) {
-                    T[] varB4EAC82CA7396A68D541C85D26508E83_72250237 = null; //Variable for return #1
+                    T[] varB4EAC82CA7396A68D541C85D26508E83_72250237 = null; 
                     Collection<K> coll = new ArrayList<K>(size());
                     {
                         Iterator<K> iter = iterator();
                         boolean var0719F6DF13666099B3F99B9DD393E1F6_1859066674 = (iter.hasNext());
                         {
                             coll.add(iter.next());
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_72250237 = coll.toArray(contents);
                     addTaint(contents[0].getTaint());
-                    varB4EAC82CA7396A68D541C85D26508E83_72250237.addTaint(getTaint()); //Add taint from parent
+                    varB4EAC82CA7396A68D541C85D26508E83_72250237.addTaint(getTaint()); 
                     return varB4EAC82CA7396A68D541C85D26508E83_72250237;
-                    // ---------- Original Method ----------
-                    //Collection<K> coll = new ArrayList<K>(size());
-                    //for (Iterator<K> iter = iterator(); iter.hasNext();) {
-                        //coll.add(iter.next());
-                    //}
-                    //return coll.toArray(contents);
+                    
+                    
+                    
+                        
+                    
+                    
                 }
 };
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1386098864 = keySet;
-        varB4EAC82CA7396A68D541C85D26508E83_1386098864.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1386098864.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1386098864;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.930 -0400", hash_original_method = "1BF87F9B8C3D58711D484B01D41C9F2F", hash_generated_method = "4853B9E63DA1F3A3E6C45C237E7D80B3")
     @Override
     public Collection<V> values() {
-        Collection<V> varB4EAC82CA7396A68D541C85D26508E83_170669218 = null; //Variable for return #1
+        Collection<V> varB4EAC82CA7396A68D541C85D26508E83_170669218 = null; 
         poll();
         {
             valuesCollection = new AbstractCollection<V>() {                
@@ -321,15 +321,15 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     int varEB466AC21988954CC038D6EAFB4E7FEA_1933907739 = (WeakHashMap.this.size());
                     int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1781987521 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1781987521;
-                    // ---------- Original Method ----------
-                    //return WeakHashMap.this.size();
+                    
+                    
                 }
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.928 -0400", hash_original_method = "0820DD19F55EBD9E05BEDEF72AA76B85", hash_generated_method = "216199AA5B7C7589486AA111C1364167")
                 @Override
                 public void clear() {
                     WeakHashMap.this.clear();
-                    // ---------- Original Method ----------
-                    //WeakHashMap.this.clear();
+                    
+                    
                 }
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.929 -0400", hash_original_method = "7679F4183F803D10EFCD1172E399C7C3", hash_generated_method = "6018E801CD55C62B9F26E6FB03595183")
                 @Override
@@ -338,44 +338,44 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     addTaint(object.getTaint());
                     boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2007387013 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_2007387013;
-                    // ---------- Original Method ----------
-                    //return containsValue(object);
+                    
+                    
                 }
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.929 -0400", hash_original_method = "D1021921C3018EF53317EBCD6C577AB9", hash_generated_method = "FAA9C2ED358D961FA192F4DC02F19CCF")
                 @Override
                 public Iterator<V> iterator() {
-                    Iterator<V> varB4EAC82CA7396A68D541C85D26508E83_1951861708 = null; //Variable for return #1
+                    Iterator<V> varB4EAC82CA7396A68D541C85D26508E83_1951861708 = null; 
                     varB4EAC82CA7396A68D541C85D26508E83_1951861708 = new HashIterator<V>(new Entry.Type<V, K, V>() {
                         public V get(Map.Entry<K, V> entry) {
                             return entry.getValue();
                         }
                     });
-                    varB4EAC82CA7396A68D541C85D26508E83_1951861708.addTaint(getTaint()); //Add taint from parent
+                    varB4EAC82CA7396A68D541C85D26508E83_1951861708.addTaint(getTaint()); 
                     return varB4EAC82CA7396A68D541C85D26508E83_1951861708;
-                    // ---------- Original Method ----------
-                    //return new HashIterator<V>(new Entry.Type<V, K, V>() {
-                        //public V get(Map.Entry<K, V> entry) {
-                            //return entry.getValue();
-                        //}
-                    //});
+                    
+                    
+                        
+                            
+                        
+                    
                 }
 };
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_170669218 = valuesCollection;
-        varB4EAC82CA7396A68D541C85D26508E83_170669218.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_170669218.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_170669218;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.932 -0400", hash_original_method = "7498B4140ED8DA87371F31164D271C1D", hash_generated_method = "971048B2F3853F2BCD1763BA189EF6B1")
     @Override
     public V get(Object key) {
-        V varB4EAC82CA7396A68D541C85D26508E83_1028067375 = null; //Variable for return #1
-        V varB4EAC82CA7396A68D541C85D26508E83_1140285321 = null; //Variable for return #2
-        V varB4EAC82CA7396A68D541C85D26508E83_653389084 = null; //Variable for return #3
-        V varB4EAC82CA7396A68D541C85D26508E83_1255410908 = null; //Variable for return #4
+        V varB4EAC82CA7396A68D541C85D26508E83_1028067375 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_1140285321 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_653389084 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_1255410908 = null; 
         poll();
         {
             int index = (key.hashCode() & 0x7FFFFFFF) % elementData.length;
@@ -385,68 +385,68 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     boolean var34A40B722D871D6DB92AB2E02C0D49BB_102543137 = (key.equals(entry.get()));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1028067375 = entry.value;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 entry = entry.next;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1140285321 = null;
-        } //End block
+        } 
         Entry<K, V> entry = elementData[0];
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_653389084 = entry.value;
-            } //End block
+            } 
             entry = entry.next;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1255410908 = null;
         addTaint(key.getTaint());
-        V varA7E53CE21691AB073D9660D615818899_954991256; //Final return value
+        V varA7E53CE21691AB073D9660D615818899_954991256; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_954991256 = varB4EAC82CA7396A68D541C85D26508E83_1028067375;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_954991256 = varB4EAC82CA7396A68D541C85D26508E83_1140285321;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_954991256 = varB4EAC82CA7396A68D541C85D26508E83_653389084;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_954991256 = varB4EAC82CA7396A68D541C85D26508E83_1255410908;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_954991256.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_954991256.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_954991256;
-        // ---------- Original Method ----------
-        //poll();
-        //if (key != null) {
-            //int index = (key.hashCode() & 0x7FFFFFFF) % elementData.length;
-            //Entry<K, V> entry = elementData[index];
-            //while (entry != null) {
-                //if (key.equals(entry.get())) {
-                    //return entry.value;
-                //}
-                //entry = entry.next;
-            //}
-            //return null;
-        //}
-        //Entry<K, V> entry = elementData[0];
-        //while (entry != null) {
-            //if (entry.isNull) {
-                //return entry.value;
-            //}
-            //entry = entry.next;
-        //}
-        //return null;
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+            
+            
+        
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.933 -0400", hash_original_method = "545F7F0FB84E7EA33FCF99594092AF0D", hash_generated_method = "55437209904A9C9F2BB3FABD426AC348")
      Entry<K, V> getEntry(Object key) {
-        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_565961578 = null; //Variable for return #1
-        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1014180182 = null; //Variable for return #2
-        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_24690420 = null; //Variable for return #3
-        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_429142921 = null; //Variable for return #4
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_565961578 = null; 
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1014180182 = null; 
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_24690420 = null; 
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_429142921 = null; 
         poll();
         {
             int index = (key.hashCode() & 0x7FFFFFFF) % elementData.length;
@@ -456,59 +456,59 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     boolean var34A40B722D871D6DB92AB2E02C0D49BB_538248748 = (key.equals(entry.get()));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_565961578 = entry;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 entry = entry.next;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1014180182 = null;
-        } //End block
+        } 
         Entry<K, V> entry = elementData[0];
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_24690420 = entry;
-            } //End block
+            } 
             entry = entry.next;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_429142921 = null;
         addTaint(key.getTaint());
-        Entry<K, V> varA7E53CE21691AB073D9660D615818899_1610447452; //Final return value
+        Entry<K, V> varA7E53CE21691AB073D9660D615818899_1610447452; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1610447452 = varB4EAC82CA7396A68D541C85D26508E83_565961578;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1610447452 = varB4EAC82CA7396A68D541C85D26508E83_1014180182;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1610447452 = varB4EAC82CA7396A68D541C85D26508E83_24690420;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1610447452 = varB4EAC82CA7396A68D541C85D26508E83_429142921;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1610447452.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1610447452.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1610447452;
-        // ---------- Original Method ----------
-        //poll();
-        //if (key != null) {
-            //int index = (key.hashCode() & 0x7FFFFFFF) % elementData.length;
-            //Entry<K, V> entry = elementData[index];
-            //while (entry != null) {
-                //if (key.equals(entry.get())) {
-                    //return entry;
-                //}
-                //entry = entry.next;
-            //}
-            //return null;
-        //}
-        //Entry<K, V> entry = elementData[0];
-        //while (entry != null) {
-            //if (entry.isNull) {
-                //return entry;
-            //}
-            //entry = entry.next;
-        //}
-        //return null;
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+            
+            
+        
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -526,12 +526,12 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                         {
                             boolean var18A512D740DE406E77259979D1000436_2071688502 = ((key != null || entry.isNull)
                             && value.equals(entry.value));
-                        } //End collapsed parenthetic
+                        } 
                         entry = entry.next;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         {
             {
                 int i = elementData.length;
@@ -540,15 +540,15 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     {
                         K key = entry.get();
                         entry = entry.next;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(value.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1683452846 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1683452846;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -558,8 +558,8 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
         boolean var5E7C4FBBEC9A5754B20CB85881048CD5_197651256 = (size() == 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_436025841 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_436025841;
-        // ---------- Original Method ----------
-        //return size() == 0;
+        
+        
     }
 
     
@@ -571,13 +571,13 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
             boolean varAF179C89B87910BBBA6E45758D4FD0E7_1580483693 = ((toRemove = (Entry<K, V>) referenceQueue.poll()) != null);
             {
                 removeEntry(toRemove);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //Entry<K, V> toRemove;
-        //while ((toRemove = (Entry<K, V>) referenceQueue.poll()) != null) {
-            //removeEntry(toRemove);
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -591,41 +591,41 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
             {
                 {
                     elementData[index] = entry.next;
-                } //End block
+                } 
                 {
                     last.next = entry.next;
-                } //End block
-            } //End block
+                } 
+            } 
             last = entry;
             entry = entry.next;
-        } //End block
+        } 
         addTaint(toRemove.getTaint());
-        // ---------- Original Method ----------
-        //Entry<K, V> entry, last = null;
-        //int index = (toRemove.hash & 0x7FFFFFFF) % elementData.length;
-        //entry = elementData[index];
-        //while (entry != null) {
-            //if (toRemove == entry) {
-                //modCount++;
-                //if (last == null) {
-                    //elementData[index] = entry.next;
-                //} else {
-                    //last.next = entry.next;
-                //}
-                //elementCount--;
-                //break;
-            //}
-            //last = entry;
-            //entry = entry.next;
-        //}
+        
+        
+        
+        
+        
+            
+                
+                
+                    
+                
+                    
+                
+                
+                
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.942 -0400", hash_original_method = "E298E65486168CC370356B38BEF7AC1C", hash_generated_method = "16175F5333CAE44AA098C690EE0F2F85")
     @Override
     public V put(K key, V value) {
-        V varB4EAC82CA7396A68D541C85D26508E83_1824345564 = null; //Variable for return #1
-        V varB4EAC82CA7396A68D541C85D26508E83_593252786 = null; //Variable for return #2
+        V varB4EAC82CA7396A68D541C85D26508E83_1824345564 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_593252786 = null; 
         poll();
         int index = 0;
         Entry<K, V> entry;
@@ -636,44 +636,44 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                 boolean var11C456750D82E660592E03F3DAA89A38_955527719 = (entry != null && !key.equals(entry.get()));
                 {
                     entry = entry.next;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             entry = elementData[0];
             {
                 entry = entry.next;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 rehash();
                 index = key == null ? 0 : (key.hashCode() & 0x7FFFFFFF)
                         % elementData.length;
-            } //End block
+            } 
             entry = new Entry<K, V>(key, value, referenceQueue);
             entry.next = elementData[index];
             elementData[index] = entry;
             varB4EAC82CA7396A68D541C85D26508E83_1824345564 = null;
-        } //End block
+        } 
         V result = entry.value;
         entry.value = value;
         varB4EAC82CA7396A68D541C85D26508E83_593252786 = result;
         addTaint(key.getTaint());
         addTaint(value.getTaint());
-        V varA7E53CE21691AB073D9660D615818899_1601004739; //Final return value
+        V varA7E53CE21691AB073D9660D615818899_1601004739; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1601004739 = varB4EAC82CA7396A68D541C85D26508E83_1824345564;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1601004739 = varB4EAC82CA7396A68D541C85D26508E83_593252786;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1601004739.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1601004739.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1601004739;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -682,7 +682,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
         int length = elementData.length * 2;
         {
             length = 1;
-        } //End block
+        } 
         Entry<K, V>[] newData = newEntryArray(length);
         {
             int i = 0;
@@ -697,30 +697,30 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     entry.next = newData[index];
                     newData[index] = entry;
                     entry = next;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         elementData = newData;
         computeMaxSize();
-        // ---------- Original Method ----------
-        //int length = elementData.length * 2;
-        //if (length == 0) {
-            //length = 1;
-        //}
-        //Entry<K, V>[] newData = newEntryArray(length);
-        //for (int i = 0; i < elementData.length; i++) {
-            //Entry<K, V> entry = elementData[i];
-            //while (entry != null) {
-                //int index = entry.isNull ? 0 : (entry.hash & 0x7FFFFFFF)
-                        //% length;
-                //Entry<K, V> next = entry.next;
-                //entry.next = newData[index];
-                //newData[index] = entry;
-                //entry = next;
-            //}
-        //}
-        //elementData = newData;
-        //computeMaxSize();
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+                        
+                
+                
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -729,16 +729,16 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     public void putAll(Map<? extends K, ? extends V> map) {
         putAllImpl(map);
         addTaint(map.getTaint());
-        // ---------- Original Method ----------
-        //putAllImpl(map);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.947 -0400", hash_original_method = "FE1A1739C961B2012661CB8735C428AE", hash_generated_method = "A72B6BBE07E3351B6F087EDE7BCE5395")
     @Override
     public V remove(Object key) {
-        V varB4EAC82CA7396A68D541C85D26508E83_1833628987 = null; //Variable for return #1
-        V varB4EAC82CA7396A68D541C85D26508E83_1432058719 = null; //Variable for return #2
+        V varB4EAC82CA7396A68D541C85D26508E83_1833628987 = null; 
+        V varB4EAC82CA7396A68D541C85D26508E83_1432058719 = null; 
         poll();
         int index = 0;
         Entry<K, V> entry;
@@ -751,40 +751,40 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                 {
                     last = entry;
                     entry = entry.next;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             entry = elementData[0];
             {
                 last = entry;
                 entry = entry.next;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 elementData[index] = entry.next;
-            } //End block
+            } 
             {
                 last.next = entry.next;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1833628987 = entry.value;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1432058719 = null;
         addTaint(key.getTaint());
-        V varA7E53CE21691AB073D9660D615818899_283254731; //Final return value
+        V varA7E53CE21691AB073D9660D615818899_283254731; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_283254731 = varB4EAC82CA7396A68D541C85D26508E83_1833628987;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_283254731 = varB4EAC82CA7396A68D541C85D26508E83_1432058719;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_283254731.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_283254731.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_283254731;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -794,9 +794,9 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
         poll();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1471654366 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1471654366;
-        // ---------- Original Method ----------
-        //poll();
-        //return elementCount;
+        
+        
+        
     }
 
     
@@ -806,13 +806,13 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
             boolean var6889E31DD8EB0136BAB9D60DD7EEE838_40688037 = (map.entrySet() != null);
             {
                 super.putAll(map);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(map.getTaint());
-        // ---------- Original Method ----------
-        //if (map.entrySet() != null) {
-            //super.putAll(map);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -837,47 +837,47 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
             hash = isNull ? 0 : key.hashCode();
             value = object;
             addTaint(queue.getTaint());
-            // ---------- Original Method ----------
-            //isNull = key == null;
-            //hash = isNull ? 0 : key.hashCode();
-            //value = object;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.949 -0400", hash_original_method = "1761F5110CA075C2A7975CB6F7D505A7", hash_generated_method = "CE58E35C46E36FAF897EB14ECFFF2D8C")
         public K getKey() {
-            K varB4EAC82CA7396A68D541C85D26508E83_1336484505 = null; //Variable for return #1
+            K varB4EAC82CA7396A68D541C85D26508E83_1336484505 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1336484505 = super.get();
-            varB4EAC82CA7396A68D541C85D26508E83_1336484505.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1336484505.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1336484505;
-            // ---------- Original Method ----------
-            //return super.get();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.950 -0400", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "D7E9D392E61101BEA3924EB483A394FC")
         public V getValue() {
-            V varB4EAC82CA7396A68D541C85D26508E83_1215338180 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_1215338180 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1215338180 = value;
-            varB4EAC82CA7396A68D541C85D26508E83_1215338180.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1215338180.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1215338180;
-            // ---------- Original Method ----------
-            //return value;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.951 -0400", hash_original_method = "123DAF07FFBE76C8EE5BD5879EB92827", hash_generated_method = "D82C94043916B48A0652403C4DFAC0A6")
         public V setValue(V object) {
-            V varB4EAC82CA7396A68D541C85D26508E83_1124564000 = null; //Variable for return #1
+            V varB4EAC82CA7396A68D541C85D26508E83_1124564000 = null; 
             V result = value;
             value = object;
             varB4EAC82CA7396A68D541C85D26508E83_1124564000 = result;
-            varB4EAC82CA7396A68D541C85D26508E83_1124564000.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1124564000.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1124564000;
-            // ---------- Original Method ----------
-            //V result = value;
-            //value = object;
-            //return result;
+            
+            
+            
+            
         }
 
         
@@ -889,43 +889,43 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
             boolean var715794E66FEAD2DA8E249FD5488C80A4_1125234442 = ((key == null ? key == entry.getKey() : key.equals(entry
                     .getKey()))
                     && (value == null ? value == entry.getValue() : value
-                            .equals(entry.getValue()))); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                            .equals(entry.getValue()))); 
             addTaint(other.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_673331875 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_673331875;
-            // ---------- Original Method ----------
-            //if (!(other instanceof Map.Entry)) {
-                //return false;
-            //}
-            //Map.Entry<?, ?> entry = (Map.Entry<?, ?>) other;
-            //Object key = super.get();
-            //return (key == null ? key == entry.getKey() : key.equals(entry
-                    //.getKey()))
-                    //&& (value == null ? value == entry.getValue() : value
-                            //.equals(entry.getValue()));
+            
+            
+                
+            
+            
+            
+            
+                    
+                    
+                            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.951 -0400", hash_original_method = "D08C41096A06FEDF3165E76D8A8BDE22", hash_generated_method = "8503345BE839F57E9B159B61A072EEA7")
         @Override
         public int hashCode() {
-            int varBFAA27FDBD65002EF874070ACA9FDE01_866855197 = (hash + (value == null ? 0 : value.hashCode())); //DSFIXME:  CODE0008: Nested ternary operator in expression
+            int varBFAA27FDBD65002EF874070ACA9FDE01_866855197 = (hash + (value == null ? 0 : value.hashCode())); 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_676200053 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_676200053;
-            // ---------- Original Method ----------
-            //return hash + (value == null ? 0 : value.hashCode());
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.952 -0400", hash_original_method = "1EE8DCD6F434B8EBFF147EFC16429262", hash_generated_method = "56FC7C35A5D8F944BE54F61661131EE6")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_175254921 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_175254921 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_175254921 = super.get() + "=" + value;
-            varB4EAC82CA7396A68D541C85D26508E83_175254921.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_175254921.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_175254921;
-            // ---------- Original Method ----------
-            //return super.get() + "=" + value;
+            
+            
         }
 
         
@@ -961,9 +961,9 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
           HashIterator(Entry.Type<R, K, V> type) {
             this.type = type;
             expectedModCount = modCount;
-            // ---------- Original Method ----------
-            //this.type = type;
-            //expectedModCount = modCount;
+            
+            
+            
         }
 
         
@@ -974,41 +974,41 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     {
                         {
                             boolean var153DD30E336FC14C6728E2427043F36D_747726535 = ((nextEntry = elementData[position++]) != null);
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 nextKey = nextEntry.get();
                 nextEntry = nextEntry.next;
-            } //End block
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1808056516 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1808056516;
-            // ---------- Original Method ----------
-            //if (nextEntry != null && (nextKey != null || nextEntry.isNull)) {
-                //return true;
-            //}
-            //while (true) {
-                //if (nextEntry == null) {
-                    //while (position < elementData.length) {
-                        //if ((nextEntry = elementData[position++]) != null) {
-                            //break;
-                        //}
-                    //}
-                    //if (nextEntry == null) {
-                        //return false;
-                    //}
-                //}
-                //nextKey = nextEntry.get();
-                //if (nextKey != null || nextEntry.isNull) {
-                    //return true;
-                //}
-                //nextEntry = nextEntry.next;
-            //}
+            
+            
+                
+            
+            
+                
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                
+                
+                    
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.956 -0400", hash_original_method = "F6AE8405A941E9948A6F966D8D2D9924", hash_generated_method = "F94BA051D3FD04288FB885918947DBDF")
         public R next() {
-            R varB4EAC82CA7396A68D541C85D26508E83_894473139 = null; //Variable for return #1
+            R varB4EAC82CA7396A68D541C85D26508E83_894473139 = null; 
             {
                 {
                     boolean var384B0C75E2EB52B4939B27A6F15C2DC1_2079019842 = (hasNext());
@@ -1018,25 +1018,25 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                         R result = type.get(currentEntry);
                         nextKey = null;
                         varB4EAC82CA7396A68D541C85D26508E83_894473139 = result;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-            } //End block
+            } 
             if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
-            varB4EAC82CA7396A68D541C85D26508E83_894473139.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_894473139.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_894473139;
-            // ---------- Original Method ----------
-            //if (expectedModCount == modCount) {
-                //if (hasNext()) {
-                    //currentEntry = nextEntry;
-                    //nextEntry = currentEntry.next;
-                    //R result = type.get(currentEntry);
-                    //nextKey = null;
-                    //return result;
-                //}
-                //throw new NoSuchElementException();
-            //}
-            //throw new ConcurrentModificationException();
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                
+                
+            
+            
         }
 
         
@@ -1046,26 +1046,26 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                 {
                     removeEntry(currentEntry);
                     currentEntry = null;
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
-            } //End block
-            // ---------- Original Method ----------
-            //if (expectedModCount == modCount) {
-                //if (currentEntry != null) {
-                    //removeEntry(currentEntry);
-                    //currentEntry = null;
-                    //expectedModCount++;
-                //} else {
-                    //throw new IllegalStateException();
-                //}
-            //} else {
-                //throw new ConcurrentModificationException();
-            //}
+            } 
+            
+            
+                
+                    
+                    
+                    
+                
+                    
+                
+            
+                
+            
         }
 
         

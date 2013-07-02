@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.InputStream;
 import java.io.FileInputStream;
@@ -19,13 +19,13 @@ public class Movie {
     private  Movie(int nativeMovie) {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("native movie creation failed");
-        } //End block
+        } 
         mNativeMovie = nativeMovie;
-        // ---------- Original Method ----------
-        //if (nativeMovie == 0) {
-            //throw new RuntimeException("native movie creation failed");
-        //}
-        //mNativeMovie = nativeMovie;
+        
+        
+            
+        
+        
     }
 
     
@@ -75,8 +75,8 @@ public class Movie {
         addTaint(canvas.getTaint());
         addTaint(x);
         addTaint(y);
-        // ---------- Original Method ----------
-        //draw(canvas, x, y, null);
+        
+        
     }
 
     
@@ -113,17 +113,17 @@ public class Movie {
         try 
         {
             nativeDestructor(mNativeMovie);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //nativeDestructor(mNativeMovie);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 
@@ -15,7 +15,7 @@ public class ASN1Integer extends DERInteger {
       ASN1Integer(byte[] bytes) {
         super(bytes);
         addTaint(bytes[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,7 +23,7 @@ public class ASN1Integer extends DERInteger {
     public  ASN1Integer(BigInteger value) {
         super(value);
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,7 +31,7 @@ public class ASN1Integer extends DERInteger {
     public  ASN1Integer(int value) {
         super(value);
         addTaint(value);
-        // ---------- Original Method ----------
+        
     }
 
     

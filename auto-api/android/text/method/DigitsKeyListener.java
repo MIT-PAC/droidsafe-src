@@ -1,11 +1,11 @@
 package android.text.method;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.text.InputType;
 import android.text.Spanned;
@@ -26,7 +26,7 @@ public class DigitsKeyListener extends NumberKeyListener {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.121 -0400", hash_original_method = "6BE6AAF45437494799568EB9C567DA33", hash_generated_method = "96F31F59DAF98D6C6BCAE9A71EA0B101")
     public  DigitsKeyListener() {
         this(false, false);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,13 +34,13 @@ public class DigitsKeyListener extends NumberKeyListener {
     public  DigitsKeyListener(boolean sign, boolean decimal) {
         mSign = sign;
         mDecimal = decimal;
-        int kind = (sign ? SIGN : 0) | (decimal ? DECIMAL : 0);//DSFIXME:  CODE0008: Nested ternary operator in expression
+        int kind = (sign ? SIGN : 0) | (decimal ? DECIMAL : 0);
         mAccepted = CHARACTERS[kind];
-        // ---------- Original Method ----------
-        //mSign = sign;
-        //mDecimal = decimal;
-        //int kind = (sign ? SIGN : 0) | (decimal ? DECIMAL : 0);
-        //mAccepted = CHARACTERS[kind];
+        
+        
+        
+        
+        
     }
 
     
@@ -49,16 +49,18 @@ public class DigitsKeyListener extends NumberKeyListener {
     protected char[] getAcceptedChars() {
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1620102293 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1620102293;
-        // ---------- Original Method ----------
-        //return mAccepted;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DigitsKeyListener getInstance() {
         return getInstance(false, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DigitsKeyListener getInstance(boolean sign, boolean decimal) {
         int kind = (sign ? SIGN : 0) | (decimal ? DECIMAL : 0);
         if (sInstance[kind] != null)
@@ -68,6 +70,7 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DigitsKeyListener getInstance(String accepted) {
         DigitsKeyListener dim = new DigitsKeyListener();
         dim.mAccepted = new char[accepted.length()];
@@ -81,43 +84,44 @@ public class DigitsKeyListener extends NumberKeyListener {
         int contentType = InputType.TYPE_CLASS_NUMBER;
         {
             contentType |= InputType.TYPE_NUMBER_FLAG_SIGNED;
-        } //End block
+        } 
         {
             contentType |= InputType.TYPE_NUMBER_FLAG_DECIMAL;
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372891366 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372891366;
-        // ---------- Original Method ----------
-        //int contentType = InputType.TYPE_CLASS_NUMBER;
-        //if (mSign) {
-            //contentType |= InputType.TYPE_NUMBER_FLAG_SIGNED;
-        //}
-        //if (mDecimal) {
-            //contentType |= InputType.TYPE_NUMBER_FLAG_DECIMAL;
-        //}
-        //return contentType;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.124 -0400", hash_original_method = "A15A4B8B8366C48B770873BA3926F314", hash_generated_method = "CFEB1D8BCAD8E5DF8F961CC6AC650F7A")
     @Override
     public CharSequence filter(CharSequence source, int start, int end,
                                Spanned dest, int dstart, int dend) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_412987272 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_231291940 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_618366587 = null; //Variable for return #3
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_585459587 = null; //Variable for return #4
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1526086954 = null; //Variable for return #5
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_622881977 = null; //Variable for return #6
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_412987272 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_231291940 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_618366587 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_585459587 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1526086954 = null; 
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_622881977 = null; 
         CharSequence out = super.filter(source, start, end, dest, dstart, dend);
         {
             varB4EAC82CA7396A68D541C85D26508E83_412987272 = out;
-        } //End block
+        } 
         {
             source = out;
             start = 0;
             end = out.length();
-        } //End block
+        } 
         int sign = -1;
         int decimal = -1;
         int dlen = dest.length();
@@ -127,24 +131,24 @@ public class DigitsKeyListener extends NumberKeyListener {
                 char c = dest.charAt(i);
                 {
                     sign = i;
-                } //End block
+                } 
                 {
                     decimal = i;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             int i = dend;
             {
                 char c = dest.charAt(i);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_231291940 = "";
-                } //End block
+                } 
                 {
                     decimal = i;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         SpannableStringBuilder stripped = null;
         {
             int i = end - 1;
@@ -154,73 +158,73 @@ public class DigitsKeyListener extends NumberKeyListener {
                 {
                     {
                         strip = true;
-                    } //End block
+                    } 
                     {
                         strip = true;
-                    } //End block
+                    } 
                     {
                         sign = i;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     {
                         strip = true;
-                    } //End block
+                    } 
                     {
                         decimal = i;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_618366587 = "";
-                    } //End block
+                    } 
                     {
                         stripped = new SpannableStringBuilder(source, start, end);
-                    } //End block
+                    } 
                     stripped.delete(i - start, i + 1 - start);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_585459587 = stripped;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1526086954 = out;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_622881977 = null;
-        } //End block
+        } 
         addTaint(source.getTaint());
         addTaint(start);
         addTaint(end);
         addTaint(dest.getTaint());
         addTaint(dstart);
         addTaint(dend);
-        CharSequence varA7E53CE21691AB073D9660D615818899_502554603; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_502554603; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_502554603 = varB4EAC82CA7396A68D541C85D26508E83_412987272;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_502554603 = varB4EAC82CA7396A68D541C85D26508E83_231291940;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_502554603 = varB4EAC82CA7396A68D541C85D26508E83_618366587;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_502554603 = varB4EAC82CA7396A68D541C85D26508E83_585459587;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_502554603 = varB4EAC82CA7396A68D541C85D26508E83_1526086954;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_502554603 = varB4EAC82CA7396A68D541C85D26508E83_622881977;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_502554603.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_502554603.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_502554603;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

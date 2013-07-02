@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
@@ -16,7 +16,7 @@ public class EasyEditSpan implements ParcelableSpan {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.738 -0400", hash_original_method = "A230929293AFFCA631493D5E514D429F", hash_generated_method = "30C43FC9D033188B5BCE7C639844F2F1")
     public  EasyEditSpan() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,8 +25,8 @@ public class EasyEditSpan implements ParcelableSpan {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_600556086 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_600556086;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -35,7 +35,7 @@ public class EasyEditSpan implements ParcelableSpan {
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -44,8 +44,8 @@ public class EasyEditSpan implements ParcelableSpan {
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144083654 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144083654;
-        // ---------- Original Method ----------
-        //return TextUtils.EASY_EDIT_SPAN;
+        
+        
     }
 
     

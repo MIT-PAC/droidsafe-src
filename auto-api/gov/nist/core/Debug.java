@@ -1,11 +1,11 @@
 package gov.nist.core;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class Debug {
@@ -13,7 +13,7 @@ public class Debug {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:36.169 -0400", hash_original_method = "D5DA96BAC7993F1698C6F83B8D04956A", hash_generated_method = "D5DA96BAC7993F1698C6F83B8D04956A")
     public Debug ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -22,12 +22,14 @@ public class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void println(String s) {
         if ((parserDebug || debug )&& stackLogger != null )
             stackLogger.logDebug(s + "\n");
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void printStackTrace(Exception ex) {
         if ((parserDebug || debug ) && stackLogger != null) {
             stackLogger.logError("Stack Trace",ex);
@@ -35,6 +37,7 @@ public class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void logError(String message, Exception ex) {
         if ((parserDebug || debug) &&  stackLogger != null ) {
           stackLogger.logError(message,ex);

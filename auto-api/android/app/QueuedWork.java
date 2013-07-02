@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
@@ -16,10 +16,11 @@ public class QueuedWork {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.974 -0400", hash_original_method = "94C2F41E1F3AD149B563D9E976EAD755", hash_generated_method = "94C2F41E1F3AD149B563D9E976EAD755")
     public QueuedWork ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static ExecutorService singleThreadExecutor() {
         synchronized (QueuedWork.class) {
             if (sSingleThreadExecutor == null) {
@@ -30,16 +31,19 @@ public class QueuedWork {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void add(Runnable finisher) {
         sPendingWorkFinishers.add(finisher);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void remove(Runnable finisher) {
         sPendingWorkFinishers.remove(finisher);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void waitToFinish() {
         Runnable toFinish;
         while ((toFinish = sPendingWorkFinishers.poll()) != null) {
@@ -48,6 +52,7 @@ public class QueuedWork {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean hasPendingWork() {
         return !sPendingWorkFinishers.isEmpty();
     }

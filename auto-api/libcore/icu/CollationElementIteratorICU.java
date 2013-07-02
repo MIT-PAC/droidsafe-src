@@ -1,11 +1,11 @@
 package libcore.icu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.CharacterIterator;
 
@@ -17,84 +17,92 @@ public final class CollationElementIteratorICU {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.126 -0400", hash_original_method = "650A589CB2D4F7C3E63293AEFAAA9A77", hash_generated_method = "9F96A6BEB757984005D7DA3929E5AC60")
     private  CollationElementIteratorICU(int address) {
         this.address = address;
-        // ---------- Original Method ----------
-        //this.address = address;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.126 -0400", hash_original_method = "71B44ACA4CC3DD57553E99908AFF2FC7", hash_generated_method = "F0D2C833BB8D0379FDD92C770F5BEBD6")
     public void reset() {
         NativeCollation.reset(address);
-        // ---------- Original Method ----------
-        //NativeCollation.reset(address);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.126 -0400", hash_original_method = "D76B0B21507A74EBC38ECF8BA836254A", hash_generated_method = "6E8132F291C55AFB31DF8EF27F4C409E")
     public int next() {
         int var3E37E7CEF4D43D48A85E18820F7DC35C_1813897528 = (NativeCollation.next(address));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1315828284 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1315828284;
-        // ---------- Original Method ----------
-        //return NativeCollation.next(address);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.126 -0400", hash_original_method = "EA54CCD4F91FD8A9A4140D3CDE5AE34D", hash_generated_method = "558356776AF4CBA4DB4B12F54F8CA3ED")
     public int previous() {
         int var23CD4C87E20FD46EC60BB987A629A37F_494729226 = (NativeCollation.previous(address));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_793944977 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_793944977;
-        // ---------- Original Method ----------
-        //return NativeCollation.previous(address);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.126 -0400", hash_original_method = "8640B8389DB00731AE9D5E817F73B27B", hash_generated_method = "41464ABA2CAFB83530CD05C654E0B0D4")
     public int getMaxExpansion(int order) {
         int var8602979FCA2FA4011AFB12D2C298A86E_1062854314 = (NativeCollation.getMaxExpansion(address, order));
         addTaint(order);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2117427482 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2117427482;
-        // ---------- Original Method ----------
-        //return NativeCollation.getMaxExpansion(address, order);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.127 -0400", hash_original_method = "603C380ACC11CC522426235C8A41DEB0", hash_generated_method = "D00F802972132FCA3853BC2432CCF175")
     public void setText(String source) {
         NativeCollation.setText(address, source);
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
-        //NativeCollation.setText(address, source);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.127 -0400", hash_original_method = "1B43DCD00444559B9B02AC0B455E987E", hash_generated_method = "D948653692DF874F9BDCB16646CEF49C")
     public void setText(CharacterIterator source) {
         NativeCollation.setText(address, source.toString());
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
-        //NativeCollation.setText(address, source.toString());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.127 -0400", hash_original_method = "1F41E721FB3FAE28539A76645F583C29", hash_generated_method = "82C0AD8604AB4B11DE0FF26CE3F9C220")
     public int getOffset() {
         int var24660AAAE875D6199DF5A3BA3B1DCD75_1862724957 = (NativeCollation.getOffset(address));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2078093652 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2078093652;
-        // ---------- Original Method ----------
-        //return NativeCollation.getOffset(address);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.127 -0400", hash_original_method = "452F12B7AA1A7AC5FD41D10DD72719C4", hash_generated_method = "F16B957715C080EC6A7C646B91CF9CE4")
     public void setOffset(int offset) {
         NativeCollation.setOffset(address, offset);
         addTaint(offset);
-        // ---------- Original Method ----------
-        //NativeCollation.setOffset(address, offset);
+        
+        
     }
 
     
@@ -114,29 +122,31 @@ public final class CollationElementIteratorICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CollationElementIteratorICU getInstance(int collatorAddress, String source) {
         int iteratorAddress = NativeCollation.getCollationElementIterator(collatorAddress, source);
         return new CollationElementIteratorICU(iteratorAddress);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:19.128 -0400", hash_original_method = "286B49C8E8E4DF34140969B2D7F609E6", hash_generated_method = "0D60DF47C60AB4D85F6C195166DE8F59")
     @Override
     protected void finalize() throws Throwable {
         try 
         {
             NativeCollation.closeElements(address);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //NativeCollation.closeElements(address);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     

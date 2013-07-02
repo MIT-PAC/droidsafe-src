@@ -1,40 +1,40 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class Object {
-	//do not create DSTaintObject, allocations of DSTaintObject are added to the code by 
-    //the DroidSafe tool when needed.
+	
+    
 	public DSTaintObject taint;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 13:18:45.585 -0400", hash_original_method = "1035BC9FD37C3D2AC57825226BBB0539", hash_generated_method = "5CDBD442E1AC1C77BDFC3434B00402E2")
     @DSModeled(DSC.SAFE)
     public  Object() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 13:18:45.619 -0400", hash_original_method = "6E1D6DBADCF2AAA505FF9A52A4C04C6C", hash_generated_method = "D871942827E31CAADC6A7F02CE1EB315")
     @DSModeled(DSC.SAFE)
     protected Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_708426382 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_708426382 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException("Class doesn't implement Cloneable");
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_708426382 = internalClone((Cloneable) this);
-        varB4EAC82CA7396A68D541C85D26508E83_708426382.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_708426382.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_708426382;
-        // ---------- Original Method ----------
-        //if (!(this instanceof Cloneable)) {
-            //throw new CloneNotSupportedException("Class doesn't implement Cloneable");
-        //}
-        //return internalClone((Cloneable) this);
+        
+        
+            
+        
+        
     }
 
     
@@ -53,8 +53,8 @@ public class Object {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_910900821 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_910900821;
-        // ---------- Original Method ----------
-        //return this == o;
+        
+        
     }
 
     
@@ -62,7 +62,7 @@ public class Object {
     @DSModeled(DSC.SAFE)
     @FindBugsSuppressWarnings("FI_EMPTY")
     protected void finalize() throws Throwable {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -94,12 +94,12 @@ public class Object {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 13:18:45.742 -0400", hash_original_method = "7905F5E0624643BB59BB03B2872919E1", hash_generated_method = "20877D866004FCA741A131E577B08A44")
     @DSModeled(DSC.SAFE)
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1074373299 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1074373299 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1074373299 = getClass().getName() + '@' + Integer.toHexString(hashCode());
-        varB4EAC82CA7396A68D541C85D26508E83_1074373299.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1074373299.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1074373299;
-        // ---------- Original Method ----------
-        //return getClass().getName() + '@' + Integer.toHexString(hashCode());
+        
+        
     }
 
     
@@ -107,8 +107,8 @@ public class Object {
     @DSModeled(DSC.SAFE)
     public final void wait() throws InterruptedException {
         wait(0 ,0);
-        // ---------- Original Method ----------
-        //wait(0 ,0);
+        
+        
     }
 
     
@@ -117,8 +117,8 @@ public class Object {
     public final void wait(long millis) throws InterruptedException {
         wait(millis, 0);
         addTaint(millis);
-        // ---------- Original Method ----------
-        //wait(millis, 0);
+        
+        
     }
 
     
@@ -129,74 +129,74 @@ public class Object {
 
     @DSModeled(DSC.BAN)
     public void addTaint(double taint) {
-        //this.taint = taint
+        
     }
 
     @DSModeled(DSC.BAN)
     public void addTaint(boolean taint) {
-      //this.taint = taint
+      
     }
 
     @DSModeled(DSC.BAN)
     public void addTaint(DSTaintObject taint) {
-        //this.taint = taint
+        
     }
 
     @DSModeled(DSC.BAN)
     public byte getTaintByte() {
-        //return this.taint
+        
         return 0;
     }
 
     @DSModeled(DSC.BAN)
     public short getTaintShort() {
-        //return this.taint
+        
         return 0;
     }
 
     @DSModeled(DSC.BAN)
     public int getTaintInt() {
-        //return this.taint
+        
         return 0;
     }
 
 
     @DSModeled(DSC.BAN)
     public long getTaintLong() {
-        //return this.taint
+        
         return 0;
     }
 
 
     @DSModeled(DSC.BAN)
     public float getTaintFloat() {
-        //return this.taint
+        
         return 0;
     }
 
 
     @DSModeled(DSC.BAN)
     public double getTaintDouble() {
-        //return this.taint
+        
         return 0;
     }
 
 
     @DSModeled(DSC.BAN)
     public boolean getTaintBoolean() {
-        //return this.taint
+        
         return true;
     }
 
     @DSModeled(DSC.BAN)
     public char getTaintChar() {
-        //return this.taint
+        
         return 0;
     }
 
     @DSModeled(DSC.BAN)
     public DSTaintObject getTaint() {
-        //return this.taint
+        
         return taint;
     }
 }

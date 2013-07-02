@@ -1,11 +1,11 @@
 package java.security.cert;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayInputStream;
 import java.io.NotSerializableException;
@@ -23,22 +23,23 @@ public abstract class CertPath implements Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.931 -0400", hash_original_method = "302897E6BB0E40528F36909A6049B176", hash_generated_method = "32FAE556A05A6016667B95DE68F07950")
     protected  CertPath(String type) {
         this.type = type;
-        // ---------- Original Method ----------
-        //this.type = type;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.932 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "14E52E951FCDCF195AD444E9BEF3B81F")
     public String getType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1859497746 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1859497746 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1859497746 = type;
-        varB4EAC82CA7396A68D541C85D26508E83_1859497746.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1859497746.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1859497746;
-        // ---------- Original Method ----------
-        //return type;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.932 -0400", hash_original_method = "8F841F69BEA866198CC0B2087E3E8CE8", hash_generated_method = "570EC309722D943E74D629DEC50E90B7")
     public boolean equals(Object other) {
         {
@@ -48,45 +49,47 @@ public abstract class CertPath implements Serializable {
                 {
                     {
                         boolean varA9774916D2CD7B74DA51CC6C2F434D32_37452503 = (getCertificates().equals(o.getCertificates()));
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(other.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_231471544 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_231471544;
-        // ---------- Original Method ----------
-        //if (this == other) {
-            //return true;
-        //}
-        //if (other instanceof CertPath) {
-            //CertPath o = (CertPath)other;
-            //if (getType().equals(o.getType())) {
-                //if (getCertificates().equals(o.getCertificates())) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.933 -0400", hash_original_method = "E8BB667E09C60EB11FBFEAA1F9E519B1", hash_generated_method = "B7FA1700773B4AF5289C16C125619031")
     public int hashCode() {
         int hash = getType().hashCode();
         hash = hash*31 + getCertificates().hashCode();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2055252263 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2055252263;
-        // ---------- Original Method ----------
-        //int hash = getType().hashCode();
-        //hash = hash*31 + getCertificates().hashCode();
-        //return hash;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.933 -0400", hash_original_method = "476AF39C272D39EAE140D33789265072", hash_generated_method = "709C06EC1C19287F31C4E5AC4568605E")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_535775254 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_535775254 = null; 
         StringBuilder sb = new StringBuilder(getType());
         sb.append(" Cert Path, len=");
         sb.append(getCertificates().size());
@@ -100,26 +103,26 @@ public abstract class CertPath implements Serializable {
                 sb.append(n);
                 sb.append("---------------\n");
                 sb.append(((Certificate)i.next()).toString());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         sb.append("\n]");
         varB4EAC82CA7396A68D541C85D26508E83_535775254 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_535775254.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_535775254.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_535775254;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(getType());
-        //sb.append(" Cert Path, len=");
-        //sb.append(getCertificates().size());
-        //sb.append(": [\n");
-        //int n=1;
-        //for (Iterator<? extends Certificate> i=getCertificates().iterator(); i.hasNext(); n++) {
-            //sb.append("---------------certificate ");
-            //sb.append(n);
-            //sb.append("---------------\n");
-            //sb.append(((Certificate)i.next()).toString());
-        //}
-        //sb.append("\n]");
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+        
+        
+        
     }
 
     
@@ -137,25 +140,26 @@ public abstract class CertPath implements Serializable {
     public abstract Iterator<String> getEncodings();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.935 -0400", hash_original_method = "52819054EFF055A3D86733F1F32E0BA5", hash_generated_method = "1B8B88EB281B9BAF2B56165F969EB907")
     protected Object writeReplace() throws ObjectStreamException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_707694917 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_707694917 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_707694917 = new CertPathRep(getType(), getEncoded());
-        } //End block
+        } 
         catch (CertificateEncodingException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new NotSerializableException("Could not create serialization object: " + e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_707694917.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_707694917.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_707694917;
-        // ---------- Original Method ----------
-        //try {
-            //return new CertPathRep(getType(), getEncoded());
-        //} catch (CertificateEncodingException e) {
-            //throw new NotSerializableException("Could not create serialization object: " + e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -171,33 +175,33 @@ public abstract class CertPath implements Serializable {
         protected  CertPathRep(String type, byte[] data) {
             this.type = type;
             this.data = data;
-            // ---------- Original Method ----------
-            //this.type = type;
-            //this.data = data;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:57.935 -0400", hash_original_method = "901613A0C14C6295CBB5D8B0F4F8E8BD", hash_generated_method = "EA67C13153CD68B4E44FF041C090C57E")
         protected Object readResolve() throws ObjectStreamException {
-            Object varB4EAC82CA7396A68D541C85D26508E83_196295507 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_196295507 = null; 
             try 
             {
                 CertificateFactory cf = CertificateFactory.getInstance(type);
                 varB4EAC82CA7396A68D541C85D26508E83_196295507 = cf.generateCertPath(new ByteArrayInputStream(data));
-            } //End block
+            } 
             catch (Throwable t)
             {
                 if (DroidSafeAndroidRuntime.control) throw new NotSerializableException("Could not resolve cert path: " + t);
-            } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_196295507.addTaint(getTaint()); //Add taint from parent
+            } 
+            varB4EAC82CA7396A68D541C85D26508E83_196295507.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_196295507;
-            // ---------- Original Method ----------
-            //try {
-                //CertificateFactory cf = CertificateFactory.getInstance(type);
-                //return cf.generateCertPath(new ByteArrayInputStream(data));
-            //} catch (Throwable t) {
-                //throw new NotSerializableException("Could not resolve cert path: " + t);
-            //}
+            
+            
+                
+                
+            
+                
+            
         }
 
         

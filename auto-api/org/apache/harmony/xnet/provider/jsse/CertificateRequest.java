@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.security.cert.X509Certificate;
@@ -33,7 +33,7 @@ public class CertificateRequest extends Message {
         {
             fatalAlert(AlertProtocol.INTERNAL_ERROR,
                     "CertificateRequest: array of certificate authority certificates is null");
-        } //End block
+        } 
         this.certificate_types = certificate_types;
         int totalPrincipalsLength = 0;
         certificate_authorities = new X500Principal[accepted.length];
@@ -44,24 +44,24 @@ public class CertificateRequest extends Message {
                 certificate_authorities[i] = accepted[i].getIssuerX500Principal();
                 encoded_principals[i] = certificate_authorities[i].getEncoded();
                 totalPrincipalsLength += encoded_principals[i].length + 2;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         length = 3 + certificate_types.length + totalPrincipalsLength;
-        // ---------- Original Method ----------
-        //if (accepted == null) {
-            //fatalAlert(AlertProtocol.INTERNAL_ERROR,
-                    //"CertificateRequest: array of certificate authority certificates is null");
-        //}
-        //this.certificate_types = certificate_types;
-        //int totalPrincipalsLength = 0;
-        //certificate_authorities = new X500Principal[accepted.length];
-        //encoded_principals = new byte[accepted.length][];
-        //for (int i = 0; i < accepted.length; i++) {
-            //certificate_authorities[i] = accepted[i].getIssuerX500Principal();
-            //encoded_principals[i] = certificate_authorities[i].getEncoded();
-            //totalPrincipalsLength += encoded_principals[i].length + 2;
-        //}
-        //length = 3 + certificate_types.length + totalPrincipalsLength;
+        
+        
+            
+                    
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -79,19 +79,20 @@ public class CertificateRequest extends Message {
             principals.add(new X500Principal(in));
             totalPrincipalsLength += 2;
             totalPrincipalsLength += principalLength;
-        } //End block
+        } 
         certificate_authorities = principals.toArray(new X500Principal[principals.size()]);
         this.length = 3 + certificate_types.length + totalPrincipalsLength;
         {
             fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect CertificateRequest");
-        } //End block
+        } 
         addTaint(in.getTaint());
         addTaint(length);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.687 -0400", hash_original_method = "B75D6FC2C98C385FE0F3914F9044B1F0", hash_generated_method = "BEEC4C05D20B7D4C18D0F0662BFF6347")
     @Override
     public void send(HandshakeIODataStream out) {
@@ -100,38 +101,38 @@ public class CertificateRequest extends Message {
             int i = 0;
             {
                 out.write(certificate_types[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int authoritiesLength = 0;
         {
             int i = 0;
             {
                 authoritiesLength += encoded_principals[i].length +2;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         out.writeUint16(authoritiesLength);
         {
             int i = 0;
             {
                 out.writeUint16(encoded_principals[i].length);
                 out.write(encoded_principals[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.writeUint8(certificate_types.length);
-        //for (int i = 0; i < certificate_types.length; i++) {
-            //out.write(certificate_types[i]);
-        //}
-        //int authoritiesLength = 0;
-        //for (int i = 0; i < certificate_authorities.length; i++) {
-            //authoritiesLength += encoded_principals[i].length +2;
-        //}
-        //out.writeUint16(authoritiesLength);
-        //for (int i = 0; i < certificate_authorities.length; i++) {
-            //out.writeUint16(encoded_principals[i].length);
-            //out.write(encoded_principals[i]);
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -140,14 +141,15 @@ public class CertificateRequest extends Message {
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_82311652 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_82311652;
-        // ---------- Original Method ----------
-        //return Handshake.CERTIFICATE_REQUEST;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.689 -0400", hash_original_method = "9259963BD630FBE5E6BDCDC2C1D8D491", hash_generated_method = "C0CB551440C153BC5B0D9FDF6B5FED8A")
     public String[] getTypesAsString() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_11877252 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_11877252 = null; 
         {
             types = new String[certificate_types.length];
             {
@@ -157,27 +159,27 @@ public class CertificateRequest extends Message {
                     {
                         fatalAlert(AlertProtocol.DECODE_ERROR,
                             "DECODE ERROR: incorrect CertificateRequest");
-                    } //End block
+                    } 
                     types[i] = type;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_11877252 = types;
-        varB4EAC82CA7396A68D541C85D26508E83_11877252.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_11877252.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_11877252;
-        // ---------- Original Method ----------
-        //if (types == null) {
-            //types = new String[certificate_types.length];
-            //for (int i = 0; i < types.length; i++) {
-                //String type = CipherSuite.getClientKeyType(certificate_types[i]);
-                //if (type == null) {
-                    //fatalAlert(AlertProtocol.DECODE_ERROR,
-                            //"DECODE ERROR: incorrect CertificateRequest");
-                //}
-                //types[i] = type;
-            //}
-        //}
-        //return types;
+        
+        
+            
+            
+                
+                
+                    
+                            
+                
+                
+            
+        
+        
     }
 
     

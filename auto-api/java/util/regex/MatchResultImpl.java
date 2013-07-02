@@ -1,11 +1,11 @@
 package java.util.regex;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 class MatchResultImpl implements MatchResult {
@@ -20,19 +20,20 @@ class MatchResultImpl implements MatchResult {
       MatchResultImpl(String text, int[] offsets) {
         this.text = text;
         this.offsets = offsets.clone();
-        // ---------- Original Method ----------
-        //this.text = text;
-        //this.offsets = offsets.clone();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.566 -0400", hash_original_method = "57032B96B3878CEC3CD253F707148B38", hash_generated_method = "6BDB39CC5F76F195808BBDBC86F08CC3")
     public int end() {
         int varD085614B73328778F16C47DE2FECFC57_621277751 = (end(0));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1084751371 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1084751371;
-        // ---------- Original Method ----------
-        //return end(0);
+        
+        
     }
 
     
@@ -41,54 +42,56 @@ class MatchResultImpl implements MatchResult {
         addTaint(group);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1090265919 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1090265919;
-        // ---------- Original Method ----------
-        //return offsets[2 * group + 1];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.567 -0400", hash_original_method = "6ED812525C326D14A5EB91FA01A3208C", hash_generated_method = "C20F98A58B0BBE491675984329024BA6")
     public String group() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2057509647 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2057509647 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2057509647 = text.substring(start(), end());
-        varB4EAC82CA7396A68D541C85D26508E83_2057509647.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2057509647.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2057509647;
-        // ---------- Original Method ----------
-        //return text.substring(start(), end());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.568 -0400", hash_original_method = "018F540DDE0C3C1C686E1EDB2CD0CDCF", hash_generated_method = "BC94EFECC235881232F3ED487F459E5E")
     public String group(int group) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1766831498 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_711762738 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1766831498 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_711762738 = null; 
         int from = offsets[group * 2];
         int to = offsets[(group * 2) + 1];
         {
             varB4EAC82CA7396A68D541C85D26508E83_1766831498 = null;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_711762738 = text.substring(from, to);
-        } //End block
+        } 
         addTaint(group);
-        String varA7E53CE21691AB073D9660D615818899_1802553499; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1802553499; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1802553499 = varB4EAC82CA7396A68D541C85D26508E83_1766831498;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1802553499 = varB4EAC82CA7396A68D541C85D26508E83_711762738;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1802553499.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1802553499.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1802553499;
-        // ---------- Original Method ----------
-        //int from = offsets[group * 2];
-        //int to = offsets[(group * 2) + 1];
-        //if (from == -1 || to == -1) {
-            //return null;
-        //} else {
-            //return text.substring(from, to);
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -96,18 +99,19 @@ class MatchResultImpl implements MatchResult {
     public int groupCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895524672 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895524672;
-        // ---------- Original Method ----------
-        //return (offsets.length / 2) - 1;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.568 -0400", hash_original_method = "B8A7B4640F8CA15D86AD2B2DA38E6CD3", hash_generated_method = "08AEFFC36E684DFD460704D75120FA2A")
     public int start() {
         int var2FA5FC50CE2538BDC8E886B2AA7A2178_345139991 = (start(0));
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_638671419 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_638671419;
-        // ---------- Original Method ----------
-        //return start(0);
+        
+        
     }
 
     
@@ -116,8 +120,8 @@ class MatchResultImpl implements MatchResult {
         addTaint(group);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1445034846 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1445034846;
-        // ---------- Original Method ----------
-        //return offsets[2 * group];
+        
+        
     }
 
     

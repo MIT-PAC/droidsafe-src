@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.view.Gravity;
@@ -34,7 +34,7 @@ class PluginFullScreenHolder {
     private final WebChromeClient.CustomViewCallback mCallback = new WebChromeClient.CustomViewCallback() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.362 -0400", hash_original_method = "7559615123D16B3285B6BD8B271A29E1", hash_generated_method = "BD33C753C20DB6DE78D6B94FE6CCA305")
         public void onCustomViewHidden() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mWebView.mPrivateHandler.obtainMessage(WebView.HIDE_FULLSCREEN)
                     .sendToTarget();
             mWebView.getWebViewCore().sendMessage(
@@ -42,14 +42,14 @@ class PluginFullScreenHolder {
             mLayout.removeView(mContentView);
             mLayout = null;
             mWebView.getViewManager().showAll();
-            // ---------- Original Method ----------
-            //mWebView.mPrivateHandler.obtainMessage(WebView.HIDE_FULLSCREEN)
-                    //.sendToTarget();
-            //mWebView.getWebViewCore().sendMessage(
-                        //WebViewCore.EventHub.HIDE_FULLSCREEN, mNpp, 0);
-            //mLayout.removeView(mContentView);
-            //mLayout = null;
-            //mWebView.getViewManager().showAll();
+            
+            
+                    
+            
+                        
+            
+            
+            
         }
 
         
@@ -60,13 +60,14 @@ class PluginFullScreenHolder {
         mWebView = webView;
         mNpp = npp;
         mOrientation = orientation;
-        // ---------- Original Method ----------
-        //mWebView = webView;
-        //mNpp = npp;
-        //mOrientation = orientation;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.363 -0400", hash_original_method = "66123030FC4915555385B1DD2D68510F", hash_generated_method = "2550F2BD1E1CC497ECEE312B36A3CB78")
     public void setContentView(View contentView) {
         mLayout = new CustomFrameLayout(mWebView.getContext());
@@ -82,41 +83,42 @@ class PluginFullScreenHolder {
                 boolean varE2C4F2EB269067CF4E0B76F41CEE7559_1725093553 = (sView.isFixedSize());
                 {
                     sView.getHolder().setSizeFromLayout();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mContentView = contentView;
-        // ---------- Original Method ----------
-        //mLayout = new CustomFrameLayout(mWebView.getContext());
-        //FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
-                            //ViewGroup.LayoutParams.MATCH_PARENT,
-                            //ViewGroup.LayoutParams.MATCH_PARENT,
-                            //Gravity.CENTER);
-        //mLayout.addView(contentView, layoutParams);
-        //mLayout.setVisibility(View.VISIBLE);
-        //if (contentView instanceof SurfaceView) {
-            //final SurfaceView sView = (SurfaceView) contentView;
-            //if (sView.isFixedSize()) {
-                //sView.getHolder().setSizeFromLayout();
-            //}
-        //}
-        //mContentView = contentView;
+        
+        
+        
+                            
+                            
+                            
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.363 -0400", hash_original_method = "DD5335755EAD0F04B1B63E259CD22224", hash_generated_method = "BEC743EBE7EA0AB0FBAFB18C564B296A")
     public void show() {
         {
             boolean var8F9A4F4E45A150AF60443AFA0485F441_739267057 = (mWebView.getViewManager() != null);
             mWebView.getViewManager().hideAll();
-        } //End collapsed parenthetic
+        } 
         WebChromeClient client = mWebView.getWebChromeClient();
         client.onShowCustomView(mLayout, mOrientation, mCallback);
-        // ---------- Original Method ----------
-        //if (mWebView.getViewManager() != null)
-            //mWebView.getViewManager().hideAll();
-        //WebChromeClient client = mWebView.getWebChromeClient();
-        //client.onShowCustomView(mLayout, mOrientation, mCallback);
+        
+        
+            
+        
+        
     }
 
     
@@ -124,9 +126,9 @@ class PluginFullScreenHolder {
     public void hide() {
         WebChromeClient client = mWebView.getWebChromeClient();
         client.onHideCustomView();
-        // ---------- Original Method ----------
-        //WebChromeClient client = mWebView.getWebChromeClient();
-        //client.onHideCustomView();
+        
+        
+        
     }
 
     
@@ -136,81 +138,81 @@ class PluginFullScreenHolder {
           CustomFrameLayout(Context context) {
             super(context);
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.364 -0400", hash_original_method = "2FA80045A66041D881611423B2D72BE2", hash_generated_method = "A70DB35D5B54B451BEF0FE135FAAF726")
         @Override
         public boolean onKeyDown(int keyCode, KeyEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean var3584FC0EA6BD89B05E5C4D0F5C4BD973_573600854 = (event.isSystem());
                 {
                     boolean varABBF72580FD6F37810B0532CA15BD464_1075938581 = (super.onKeyDown(keyCode, event));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mWebView.onKeyDown(keyCode, event);
             addTaint(keyCode);
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_965174583 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_965174583;
-            // ---------- Original Method ----------
-            //if (event.isSystem()) {
-                //return super.onKeyDown(keyCode, event);
-            //}
-            //mWebView.onKeyDown(keyCode, event);
-            //return true;
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.365 -0400", hash_original_method = "5F021E74A22E2DE8FA3FAB6B663A24D2", hash_generated_method = "8AFE3547B82160624095F72043893520")
         @Override
         public boolean onKeyUp(int keyCode, KeyEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean var3584FC0EA6BD89B05E5C4D0F5C4BD973_2089908116 = (event.isSystem());
                 {
                     boolean varFDF73E3D78BD161F73E44D257986774F_2026763741 = (super.onKeyUp(keyCode, event));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mWebView.onKeyUp(keyCode, event);
             addTaint(keyCode);
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_6545909 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_6545909;
-            // ---------- Original Method ----------
-            //if (event.isSystem()) {
-                //return super.onKeyUp(keyCode, event);
-            //}
-            //mWebView.onKeyUp(keyCode, event);
-            //return true;
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.365 -0400", hash_original_method = "D87B32C51AD302A4F9341AA86337AE33", hash_generated_method = "9D8D7437BC0FCB38C4F6F3A613D11AE6")
         @Override
         public boolean onTouchEvent(MotionEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_54364446 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_54364446;
-            // ---------- Original Method ----------
-            //return true;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.365 -0400", hash_original_method = "B00867DA6E98462A97CBDDC40208DF51", hash_generated_method = "CE96A19E86806C8974874D5BD9830D82")
         @Override
         public boolean onTrackballEvent(MotionEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mWebView.onTrackballEvent(event);
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_526542471 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_526542471;
-            // ---------- Original Method ----------
-            //mWebView.onTrackballEvent(event);
-            //return true;
+            
+            
+            
         }
 
         

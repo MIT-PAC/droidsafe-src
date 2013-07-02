@@ -1,18 +1,18 @@
 package libcore.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class EmptyArray {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.007 -0400", hash_original_method = "22DFB1C541C2464C033363DDDF2AB621", hash_generated_method = "4DC025C911879B3556E1D7F67743E4B9")
     private  EmptyArray() {
-        // ---------- Original Method ----------
+        
     }
 
     

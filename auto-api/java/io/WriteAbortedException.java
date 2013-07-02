@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class WriteAbortedException extends ObjectStreamException {
@@ -19,41 +19,42 @@ public class WriteAbortedException extends ObjectStreamException {
         detail = rootCause;
         initCause(rootCause);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-        //detail = rootCause;
-        //initCause(rootCause);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.166 -0400", hash_original_method = "F8C8FA3813C752D5C72108208FEF04C6", hash_generated_method = "7E40324224DF69D2A1A4B70676A12ECF")
     @Override
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1156957196 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1156957196 = null; 
         String msg = super.getMessage();
         {
             msg = msg + "; " + detail.toString();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1156957196 = msg;
-        varB4EAC82CA7396A68D541C85D26508E83_1156957196.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1156957196.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1156957196;
-        // ---------- Original Method ----------
-        //String msg = super.getMessage();
-        //if (detail != null) {
-            //msg = msg + "; " + detail.toString();
-        //}
-        //return msg;
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.167 -0400", hash_original_method = "CA6C7AF43E4792C258E5E6922F45606C", hash_generated_method = "1517EB7C680E499E7695516D4CC0136C")
     @Override
     public Throwable getCause() {
-        Throwable varB4EAC82CA7396A68D541C85D26508E83_1450202729 = null; //Variable for return #1
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_1450202729 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1450202729 = detail;
-        varB4EAC82CA7396A68D541C85D26508E83_1450202729.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1450202729.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1450202729;
-        // ---------- Original Method ----------
-        //return detail;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -33,10 +33,10 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
         mGapWidth = STANDARD_GAP_WIDTH;
         mWantColor = false;
         mColor = 0;
-        // ---------- Original Method ----------
-        //mGapWidth = STANDARD_GAP_WIDTH;
-        //mWantColor = false;
-        //mColor = 0;
+        
+        
+        
+        
     }
 
     
@@ -45,10 +45,10 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
         mGapWidth = gapWidth;
         mWantColor = false;
         mColor = 0;
-        // ---------- Original Method ----------
-        //mGapWidth = gapWidth;
-        //mWantColor = false;
-        //mColor = 0;
+        
+        
+        
+        
     }
 
     
@@ -57,10 +57,10 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
         mGapWidth = gapWidth;
         mWantColor = true;
         mColor = color;
-        // ---------- Original Method ----------
-        //mGapWidth = gapWidth;
-        //mWantColor = true;
-        //mColor = color;
+        
+        
+        
+        
     }
 
     
@@ -69,10 +69,10 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
         mGapWidth = src.readInt();
         mWantColor = src.readInt() != 0;
         mColor = src.readInt();
-        // ---------- Original Method ----------
-        //mGapWidth = src.readInt();
-        //mWantColor = src.readInt() != 0;
-        //mColor = src.readInt();
+        
+        
+        
+        
     }
 
     
@@ -80,8 +80,8 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
     public int getSpanTypeId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_213519245 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_213519245;
-        // ---------- Original Method ----------
-        //return TextUtils.BULLET_SPAN;
+        
+        
     }
 
     
@@ -89,8 +89,8 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_453217591 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_453217591;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -101,10 +101,10 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
         dest.writeInt(mColor);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mGapWidth);
-        //dest.writeInt(mWantColor ? 1 : 0);
-        //dest.writeInt(mColor);
+        
+        
+        
+        
     }
 
     
@@ -113,11 +113,12 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
         addTaint(first);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567450331 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567450331;
-        // ---------- Original Method ----------
-        //return 2 * BULLET_RADIUS + mGapWidth;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.711 -0400", hash_original_method = "BA5CC5CF550A22429CB3793943786FE7", hash_generated_method = "8C84D18DEC9B655D19188633D4D728BB")
     public void drawLeadingMargin(Canvas c, Paint p, int x, int dir,
                                   int top, int baseline, int bottom,
@@ -131,7 +132,7 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
                 {
                     oldcolor = p.getColor();
                     p.setColor(mColor);
-                } //End block
+                } 
                 p.setStyle(Paint.Style.FILL);
                 {
                     boolean var51BCA5F22E99A00EFCAD3A10FC8AFDC7_797440737 = (c.isHardwareAccelerated());
@@ -139,22 +140,22 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
                         {
                             sBulletPath = new Path();
                             sBulletPath.addCircle(0.0f, 0.0f, 1.2f * BULLET_RADIUS, Direction.CW);
-                        } //End block
+                        } 
                         c.save();
                         c.translate(x + dir * BULLET_RADIUS, (top + bottom) / 2.0f);
                         c.drawPath(sBulletPath, p);
                         c.restore();
-                    } //End block
+                    } 
                     {
                         c.drawCircle(x + dir * BULLET_RADIUS, (top + bottom) / 2.0f, BULLET_RADIUS, p);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     p.setColor(oldcolor);
-                } //End block
+                } 
                 p.setStyle(style);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(c.getTaint());
         addTaint(p.getTaint());
         addTaint(x);
@@ -167,8 +168,8 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
         addTaint(end);
         addTaint(first);
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -147,14 +147,15 @@ class ZoomManager {
         mCallbackProxy = callbackProxy;
         setZoomOverviewWidth(WebView.DEFAULT_VIEWPORT_WIDTH);
         mFocusMovementQueue = new FocusMovementQueue();
-        // ---------- Original Method ----------
-        //mWebView = webView;
-        //mCallbackProxy = callbackProxy;
-        //setZoomOverviewWidth(WebView.DEFAULT_VIEWPORT_WIDTH);
-        //mFocusMovementQueue = new FocusMovementQueue();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.258 -0400", hash_original_method = "93CFAAB8556EE96135ADFFE4D2689C29", hash_generated_method = "BAE942C36681C49C4BCAA7C766AB89E9")
     public void init(float density) {
         mDisplayDensity = density;
@@ -162,16 +163,17 @@ class ZoomManager {
         mActualScale = density;
         mInvActualScale = 1 / density;
         mTextWrapScale = getReadingLevelScale();
-        // ---------- Original Method ----------
-        //assert density > 0;
-        //mDisplayDensity = density;
-        //setDefaultZoomScale(density);
-        //mActualScale = density;
-        //mInvActualScale = 1 / density;
-        //mTextWrapScale = getReadingLevelScale();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.258 -0400", hash_original_method = "2EFEEBFBDE6ACF8543350ABFFB008A8F", hash_generated_method = "EE0014DE728835F3C077DA6EAEA43A1A")
     public void updateDefaultZoomDensity(float density) {
         {
@@ -183,20 +185,21 @@ class ZoomManager {
                 scaleChange = density / originalDefault;
                 scaleChange = 1.0f;
                 setZoomScale(mActualScale * scaleChange, true);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(density);
-        // ---------- Original Method ----------
-        //assert density > 0;
-        //if (Math.abs(density - mDefaultScale) > MINIMUM_SCALE_INCREMENT) {
-            //final float originalDefault = mDefaultScale;
-            //setDefaultZoomScale(density);
-            //float scaleChange = (originalDefault > 0.0) ? density / originalDefault: 1.0f;
-            //setZoomScale(mActualScale * scaleChange, true);
-        //}
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.259 -0400", hash_original_method = "E8BCC867B6D8CCFABF539A9D95032C95", hash_generated_method = "02E6A5884AF0011D067C180464E46F59")
     private void setDefaultZoomScale(float defaultScale) {
         final float originalDefault = mDefaultScale;
@@ -206,24 +209,24 @@ class ZoomManager {
         mDefaultMinZoomScale = defaultScale * DEFAULT_MIN_ZOOM_SCALE_FACTOR;
         {
             mMaxZoomScale = defaultScale / originalDefault * mMaxZoomScale;
-        } //End block
+        } 
         {
             mMaxZoomScale = mDefaultMaxZoomScale;
-        } //End block
+        } 
         {
             mMinZoomScale = defaultScale / originalDefault * mMinZoomScale;
-        } //End block
+        } 
         {
             mMinZoomScale = mDefaultMinZoomScale;
-        } //End block
+        } 
         {
             boolean varD4A51976EA74EEAE11BCC79328DC7589_532919382 = (!exceedsMinScaleIncrement(mMinZoomScale, mMaxZoomScale));
             {
                 mMaxZoomScale = mMinZoomScale;
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -231,8 +234,8 @@ class ZoomManager {
     public final float getScale() {
         float var546ADE640B6EDFBC8A086EF31347E768_441616645 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_441616645;
-        // ---------- Original Method ----------
-        //return mActualScale;
+        
+        
     }
 
     
@@ -240,8 +243,8 @@ class ZoomManager {
     public final float getInvScale() {
         float var546ADE640B6EDFBC8A086EF31347E768_378375291 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_378375291;
-        // ---------- Original Method ----------
-        //return mInvActualScale;
+        
+        
     }
 
     
@@ -249,8 +252,8 @@ class ZoomManager {
     public final float getTextWrapScale() {
         float var546ADE640B6EDFBC8A086EF31347E768_1796501863 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1796501863;
-        // ---------- Original Method ----------
-        //return mTextWrapScale;
+        
+        
     }
 
     
@@ -258,8 +261,8 @@ class ZoomManager {
     public final float getMaxZoomScale() {
         float var546ADE640B6EDFBC8A086EF31347E768_398220159 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_398220159;
-        // ---------- Original Method ----------
-        //return mMaxZoomScale;
+        
+        
     }
 
     
@@ -267,8 +270,8 @@ class ZoomManager {
     public final float getMinZoomScale() {
         float var546ADE640B6EDFBC8A086EF31347E768_324240166 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_324240166;
-        // ---------- Original Method ----------
-        //return mMinZoomScale;
+        
+        
     }
 
     
@@ -276,8 +279,8 @@ class ZoomManager {
     public final float getDefaultScale() {
         float var546ADE640B6EDFBC8A086EF31347E768_1518316941 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1518316941;
-        // ---------- Original Method ----------
-        //return mDefaultScale;
+        
+        
     }
 
     
@@ -285,8 +288,8 @@ class ZoomManager {
     public final float getReadingLevelScale() {
         float var546ADE640B6EDFBC8A086EF31347E768_1493834507 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1493834507;
-        // ---------- Original Method ----------
-        //return mDisplayDensity * mDoubleTapZoomFactor;
+        
+        
     }
 
     
@@ -294,8 +297,8 @@ class ZoomManager {
     public final float getInvDefaultScale() {
         float var546ADE640B6EDFBC8A086EF31347E768_1090054713 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1090054713;
-        // ---------- Original Method ----------
-        //return mInvDefaultScale;
+        
+        
     }
 
     
@@ -303,8 +306,8 @@ class ZoomManager {
     public final float getDefaultMaxZoomScale() {
         float var546ADE640B6EDFBC8A086EF31347E768_168056370 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_168056370;
-        // ---------- Original Method ----------
-        //return mDefaultMaxZoomScale;
+        
+        
     }
 
     
@@ -312,8 +315,8 @@ class ZoomManager {
     public final float getDefaultMinZoomScale() {
         float var546ADE640B6EDFBC8A086EF31347E768_1836529632 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1836529632;
-        // ---------- Original Method ----------
-        //return mDefaultMinZoomScale;
+        
+        
     }
 
     
@@ -321,8 +324,8 @@ class ZoomManager {
     public final int getDocumentAnchorX() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_794601295 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_794601295;
-        // ---------- Original Method ----------
-        //return mAnchorX;
+        
+        
     }
 
     
@@ -330,16 +333,16 @@ class ZoomManager {
     public final int getDocumentAnchorY() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_202649500 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_202649500;
-        // ---------- Original Method ----------
-        //return mAnchorY;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.263 -0400", hash_original_method = "37EC19EE8D577B9FFE8E8612EB136E0D", hash_generated_method = "0979E863D08CE670AE5057D10C3B3325")
     public final void clearDocumentAnchor() {
         mAnchorX = mAnchorY = 0;
-        // ---------- Original Method ----------
-        //mAnchorX = mAnchorY = 0;
+        
+        
     }
 
     
@@ -347,17 +350,17 @@ class ZoomManager {
     public final void setZoomCenter(float x, float y) {
         mZoomCenterX = x;
         mZoomCenterY = y;
-        // ---------- Original Method ----------
-        //mZoomCenterX = x;
-        //mZoomCenterY = y;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.264 -0400", hash_original_method = "E17C2AED3C2D9DCFE2D098E038948EA1", hash_generated_method = "C3C51A8EAC82BA7545BE75E4A35DC3DA")
     public final void setInitialScaleInPercent(int scaleInPercent) {
         mInitialScale = scaleInPercent * 0.01f;
-        // ---------- Original Method ----------
-        //mInitialScale = scaleInPercent * 0.01f;
+        
+        
     }
 
     
@@ -365,20 +368,20 @@ class ZoomManager {
     public final float computeScaleWithLimits(float scale) {
         {
             scale = mMinZoomScale;
-        } //End block
+        } 
         {
             scale = mMaxZoomScale;
-        } //End block
+        } 
         addTaint(scale);
         float var546ADE640B6EDFBC8A086EF31347E768_13222031 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_13222031;
-        // ---------- Original Method ----------
-        //if (scale < mMinZoomScale) {
-            //scale = mMinZoomScale;
-        //} else if (scale > mMaxZoomScale) {
-            //scale = mMaxZoomScale;
-        //}
-        //return scale;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -387,8 +390,8 @@ class ZoomManager {
         addTaint(scale);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_824524245 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_824524245;
-        // ---------- Original Method ----------
-        //return scale <= mMinZoomScale || scale >= mMaxZoomScale;
+        
+        
     }
 
     
@@ -396,8 +399,8 @@ class ZoomManager {
     public final boolean isZoomScaleFixed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1635522009 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1635522009;
-        // ---------- Original Method ----------
-        //return mMinZoomScale >= mMaxZoomScale;
+        
+        
     }
 
     
@@ -406,14 +409,15 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.269 -0400", hash_original_method = "73353D5825B74E55208D73C06ED7146E", hash_generated_method = "638A9E227CD3BEDEF3A5540CB9A7105E")
     public boolean willScaleTriggerZoom(float scale) {
         boolean var6A4063C36BF43452312B6B8657DF0783_806436459 = (exceedsMinScaleIncrement(scale, mActualScale));
         addTaint(scale);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_97106194 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_97106194;
-        // ---------- Original Method ----------
-        //return exceedsMinScaleIncrement(scale, mActualScale);
+        
+        
     }
 
     
@@ -421,8 +425,8 @@ class ZoomManager {
     public final boolean canZoomIn() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1799408054 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1799408054;
-        // ---------- Original Method ----------
-        //return mMaxZoomScale - mActualScale > MINIMUM_SCALE_INCREMENT;
+        
+        
     }
 
     
@@ -430,31 +434,34 @@ class ZoomManager {
     public final boolean canZoomOut() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_833378509 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_833378509;
-        // ---------- Original Method ----------
-        //return mActualScale - mMinZoomScale > MINIMUM_SCALE_INCREMENT;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.270 -0400", hash_original_method = "1087ACA9FDE3F82506A02D8DB9B3B812", hash_generated_method = "407CD295574A61787CE2D169FA8D5926")
     public boolean zoomIn() {
         boolean var1D72A61B00F4DC9B0382B92DAC1773A6_637968721 = (zoom(1.25f));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2030939059 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2030939059;
-        // ---------- Original Method ----------
-        //return zoom(1.25f);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.270 -0400", hash_original_method = "AF303514C2CE6EE62014ED1CD988BE8F", hash_generated_method = "6D092BB2C2AE22E0A396726A75535D0F")
     public boolean zoomOut() {
         boolean var3CF167EA70562DB2BA335E1A998DD456_1922140006 = (zoom(0.8f));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1556008052 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1556008052;
-        // ---------- Original Method ----------
-        //return zoom(0.8f);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.271 -0400", hash_original_method = "0D06D835317E38A4890F08EB962517B9", hash_generated_method = "5591EADBF5ACCA276A0D541E0E334C71")
     private boolean zoom(float zoomMultiplier) {
         mInitialZoomOverview = false;
@@ -468,18 +475,19 @@ class ZoomManager {
         addTaint(zoomMultiplier);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_466577508 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_466577508;
-        // ---------- Original Method ----------
-        //mInitialZoomOverview = false;
-        //mWebView.switchOutDrawHistory();
-        //mZoomCenterX = mWebView.getViewWidth() * .5f;
-        //mZoomCenterY = mWebView.getViewHeight() * .5f;
-        //mAnchorX = mWebView.viewToContentX((int) mZoomCenterX + mWebView.getScrollX());
-        //mAnchorY = mWebView.viewToContentY((int) mZoomCenterY + mWebView.getScrollY());
-        //return startZoomAnimation(mActualScale * zoomMultiplier, 
-            //!mWebView.getSettings().getUseFixedViewport());
+        
+        
+        
+        
+        
+        
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.271 -0400", hash_original_method = "ABA8C6E97A9C369182835D6347EB12CF", hash_generated_method = "6164BDCE746563A58F17F3C3B9869F11")
     public boolean startZoomAnimation(float scale, boolean reflowText) {
         mInitialZoomOverview = false;
@@ -490,11 +498,11 @@ class ZoomManager {
             boolean var654B16B46C4BC96AA00B68D2DF42FCA3_636512783 = (!exceedsMinScaleIncrement(scale, getReadingLevelScale()));
             {
                 scale = getReadingLevelScale();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             mInHWAcceleratedZoom = true;
-        } //End block
+        } 
         setZoomScale(scale, reflowText);
         {
             mZoomStart = SystemClock.uptimeMillis();
@@ -503,16 +511,17 @@ class ZoomManager {
             mZoomScale = mActualScale;
             mWebView.onFixedLengthZoomAnimationStart();
             mWebView.invalidate();
-        } //End block
+        } 
         addTaint(scale);
         addTaint(reflowText);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_938089675 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_938089675;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.274 -0400", hash_original_method = "4B2E3C5C63E13C95ACA7AA346AD0833D", hash_generated_method = "DF9E8B44995C083F228601E87A17BB27")
     public void animateZoom(Canvas canvas) {
         mInitialZoomOverview = false;
@@ -523,12 +532,12 @@ class ZoomManager {
             zoomScale = 1.0f / (mInvInitialZoomScale
                     + (mInvFinalZoomScale - mInvInitialZoomScale) * ratio);
             mWebView.invalidate();
-        } //End block
+        } 
         {
             zoomScale = mZoomScale;
             mZoomScale = 0;
             mWebView.onFixedLengthZoomAnimationEnd();
-        } //End block
+        } 
         float scale = zoomScale * mInvInitialZoomScale;
         int tx = Math.round(scale * (mInitialScrollX + mZoomCenterX) - mZoomCenterX);
         tx = -WebView.pinLoc(tx, mWebView.getViewWidth(), Math.round(mWebView.getContentWidth()
@@ -547,25 +556,26 @@ class ZoomManager {
             {
                 mInHWAcceleratedZoom = false;
                 mWebView.sendViewSizeZoom(false);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             canvas.translate(tx, ty);
             canvas.scale(zoomScale, zoomScale);
-        } //End block
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.275 -0400", hash_original_method = "E0C5EE754D896EBEA19BF99FCF86359E", hash_generated_method = "77D2D84961198B900539BA8D1CED2935")
     public boolean isZoomAnimating() {
         boolean var68B3C139DA5F66F80A809EBC4526A9C7_592387138 = (isFixedLengthAnimationInProgress() || mPinchToZoomAnimating);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1314934320 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1314934320;
-        // ---------- Original Method ----------
-        //return isFixedLengthAnimationInProgress() || mPinchToZoomAnimating;
+        
+        
     }
 
     
@@ -573,11 +583,12 @@ class ZoomManager {
     public boolean isFixedLengthAnimationInProgress() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1075137011 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1075137011;
-        // ---------- Original Method ----------
-        //return mZoomScale != 0 || mInHWAcceleratedZoom;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.276 -0400", hash_original_method = "38BADAFCA13DD410DF65C206538CBBC7", hash_generated_method = "C671DFAEE149ACC997BA94DDACE078F2")
     public void updateDoubleTapZoom(int doubleTapZoom) {
         boolean zoomIn = (mTextWrapScale - mActualScale) < .1f;
@@ -587,57 +598,60 @@ class ZoomManager {
         newScale = mTextWrapScale;
         newScale = Math.min(mTextWrapScale, mActualScale);
         setZoomScale(newScale, true, true);
-        // ---------- Original Method ----------
-        //boolean zoomIn = (mTextWrapScale - mActualScale) < .1f;
-        //mDoubleTapZoomFactor = doubleTapZoom / 100.0f;
-        //mTextWrapScale = getReadingLevelScale();
-        //float newScale = zoomIn ? mTextWrapScale
-                //: Math.min(mTextWrapScale, mActualScale);
-        //setZoomScale(newScale, true, true);
+        
+        
+        
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.276 -0400", hash_original_method = "D0144FE074B01386F16EF11E861F0A7A", hash_generated_method = "3ED3B3EF59DDA41A05F70209A28E5415")
     public void refreshZoomScale(boolean reflowText) {
         setZoomScale(mActualScale, reflowText, true);
         addTaint(reflowText);
-        // ---------- Original Method ----------
-        //setZoomScale(mActualScale, reflowText, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.276 -0400", hash_original_method = "0CAC496E58068B9E4E1CC3313C83A17E", hash_generated_method = "ABBD1C09825DB3293B64FAE66D5319DD")
     public void setZoomScale(float scale, boolean reflowText) {
         setZoomScale(scale, reflowText, false);
         addTaint(scale);
         addTaint(reflowText);
-        // ---------- Original Method ----------
-        //setZoomScale(scale, reflowText, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.277 -0400", hash_original_method = "3A85AAAB95D1CDF586170EB3BBF2667E", hash_generated_method = "0ABB9AEC59C088EDCF8A49785A9AB802")
     private void setZoomScale(float scale, boolean reflowText, boolean force) {
         final boolean isScaleLessThanMinZoom = scale < mMinZoomScale;
         scale = computeScaleWithLimits(scale);
         {
             mInZoomOverview = true;
-        } //End block
+        } 
         {
             mInZoomOverview = !exceedsMinScaleIncrement(scale, getZoomOverviewScale());
-        } //End block
+        } 
         {
             boolean var859A3BA800EA204466595DBA45E17C4C_134379979 = (reflowText && !mWebView.getSettings().getUseFixedViewport());
             {
                 mTextWrapScale = scale;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             float oldScale = mActualScale;
             float oldInvScale = mInvActualScale;
             {
                 mCallbackProxy.onScaleChanged(mActualScale, scale);
-            } //End block
+            } 
             mActualScale = scale;
             mInvActualScale = 1 / scale;
             {
@@ -656,38 +670,40 @@ class ZoomManager {
                         boolean var7404FC6FD99FB1C9740DD855B950B383_1974175427 = (!mWebView.updateScrollCoordinates(scrollX, scrollY));
                         {
                             mWebView.sendOurVisibleRect();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             mWebView.sendViewSizeZoom(reflowText);
-        } //End block
+        } 
         addTaint(reflowText);
         addTaint(force);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.278 -0400", hash_original_method = "6C9BE8F81CD8D5D51E25813EE62B3846", hash_generated_method = "5A975B38A923D611674F0A1971C171AA")
     public boolean isDoubleTapEnabled() {
         WebSettings settings = mWebView.getSettings();
         boolean var0E4816D8885F200857E0CD3978D0DEC6_1210181980 = (settings != null && settings.getUseWideViewPort());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_995827656 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_995827656;
-        // ---------- Original Method ----------
-        //WebSettings settings = mWebView.getSettings();
-        //return settings != null && settings.getUseWideViewPort();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.278 -0400", hash_original_method = "4C79B03AF1323FEB3700FE89F15D8B06", hash_generated_method = "B7617285749A6636360EEE51397AE7DC")
     public void handleDoubleTap(float lastTouchX, float lastTouchY) {
         mInitialZoomOverview = false;
         WebSettings settings = mWebView.getSettings();
         {
             boolean var39CBEA45FB0B576C23AA565BDB2049CF_626179252 = (!isDoubleTapEnabled());
-        } //End collapsed parenthetic
+        } 
         setZoomCenter(lastTouchX, lastTouchY);
         mAnchorX = mWebView.viewToContentX((int) lastTouchX + mWebView.getScrollX());
         mAnchorY = mWebView.viewToContentY((int) lastTouchY + mWebView.getScrollY());
@@ -699,26 +715,26 @@ class ZoomManager {
                 boolean var2DE6C60989B3AB3DFD602BE4B0F3FAF8_1279124024 = (mWebView.isRectFitOnScreen(pluginBounds));
                 {
                     zoomToOverview();
-                } //End block
+                } 
                 {
                     mWebView.centerFitRect(pluginBounds);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         float newTextWrapScale;
         {
             boolean varE234C0D200CB3A9FD7D0051550B809BC_663077183 = (settings.getUseFixedViewport());
             {
                 newTextWrapScale = Math.max(mActualScale, getReadingLevelScale());
-            } //End block
+            } 
             {
                 newTextWrapScale = mActualScale;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final boolean firstTimeReflow = !exceedsMinScaleIncrement(mActualScale, mTextWrapScale);
         {
             mTextWrapScale = newTextWrapScale;
-        } //End block
+        } 
         {
             boolean varE776BBB08B55EA07333E779A20E76DF6_103380116 = (settings.isNarrowColumnLayout()
                 && exceedsMinScaleIncrement(mTextWrapScale, newTextWrapScale)
@@ -727,7 +743,7 @@ class ZoomManager {
             {
                 mTextWrapScale = newTextWrapScale;
                 refreshZoomScale(true);
-            } //End block
+            } 
             {
                 boolean var12B421A3A3971D1660F0A5E98DF868FE_1667015783 = (!mInZoomOverview && willScaleTriggerZoom(getZoomOverviewScale()));
                 {
@@ -736,17 +752,17 @@ class ZoomManager {
                         {
                             mTextWrapScale = getReadingLevelScale();
                             refreshZoomScale(true);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     zoomToOverview();
-                } //End block
+                } 
                 {
                     zoomToReadingLevelOrMore();
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -754,18 +770,18 @@ class ZoomManager {
     private void setZoomOverviewWidth(int width) {
         {
             mZoomOverviewWidth = WebView.DEFAULT_VIEWPORT_WIDTH;
-        } //End block
+        } 
         {
             mZoomOverviewWidth = width;
-        } //End block
+        } 
         mInvZoomOverviewWidth = 1.0f / width;
-        // ---------- Original Method ----------
-        //if (width == 0) {
-            //mZoomOverviewWidth = WebView.DEFAULT_VIEWPORT_WIDTH;
-        //} else {
-            //mZoomOverviewWidth = width;
-        //}
-        //mInvZoomOverviewWidth = 1.0f / width;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -774,8 +790,8 @@ class ZoomManager {
         float varC68098F3B3A8CF52938B6BE93874939F_2003744699 = (mWebView.getViewWidth() * mInvZoomOverviewWidth);
         float var546ADE640B6EDFBC8A086EF31347E768_923322534 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_923322534;
-        // ---------- Original Method ----------
-        //return mWebView.getViewWidth() * mInvZoomOverviewWidth;
+        
+        
     }
 
     
@@ -783,11 +799,12 @@ class ZoomManager {
     public boolean isInZoomOverview() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1898966063 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1898966063;
-        // ---------- Original Method ----------
-        //return mInZoomOverview;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.279 -0400", hash_original_method = "C0C0965039A172A5A5AAF6C9C4472D2A", hash_generated_method = "88A8E4FA67AF23F655FDC22FB821B3A2")
     private void zoomToOverview() {
         int scrollY = mWebView.getScrollY();
@@ -795,20 +812,21 @@ class ZoomManager {
             boolean varA858D0DF98219C81D8899CE9E1439021_571582625 = (scrollY < mWebView.getTitleHeight());
             {
                 mWebView.updateScrollCoordinates(mWebView.getScrollX(), 0);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         startZoomAnimation(getZoomOverviewScale(), 
             !mWebView.getSettings().getUseFixedViewport());
-        // ---------- Original Method ----------
-        //int scrollY = mWebView.getScrollY();
-        //if (scrollY < mWebView.getTitleHeight()) {
-            //mWebView.updateScrollCoordinates(mWebView.getScrollX(), 0);
-        //}
-        //startZoomAnimation(getZoomOverviewScale(), 
-            //!mWebView.getSettings().getUseFixedViewport());
+        
+        
+        
+            
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.280 -0400", hash_original_method = "6051F287C8BD349D628462D7AA7CF8A8", hash_generated_method = "057F9997985C19E22B45ECD7E3AA87F8")
     private void zoomToReadingLevelOrMore() {
         final float zoomScale = Math.max(getReadingLevelScale(),
@@ -816,36 +834,37 @@ class ZoomManager {
         int left = mWebView.nativeGetBlockLeftEdge(mAnchorX, mAnchorY, mActualScale);
         {
             int viewLeft = mWebView.contentToViewX(left < 5 ? 0 : (left - 5))
-                    - mWebView.getScrollX();//DSFIXME:  CODE0008: Nested ternary operator in expression
+                    - mWebView.getScrollX();
             {
                 mZoomCenterX = viewLeft * zoomScale / (zoomScale - mActualScale);
-            } //End block
+            } 
             {
                 mWebView.scrollBy(viewLeft, 0);
                 mZoomCenterX = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         startZoomAnimation(zoomScale,
             !mWebView.getSettings().getUseFixedViewport());
-        // ---------- Original Method ----------
-        //final float zoomScale = Math.max(getReadingLevelScale(),
-                //mActualScale + MIN_DOUBLE_TAP_SCALE_INCREMENT);
-        //int left = mWebView.nativeGetBlockLeftEdge(mAnchorX, mAnchorY, mActualScale);
-        //if (left != WebView.NO_LEFTEDGE) {
-            //int viewLeft = mWebView.contentToViewX(left < 5 ? 0 : (left - 5))
-                    //- mWebView.getScrollX();
-            //if (viewLeft > 0) {
-                //mZoomCenterX = viewLeft * zoomScale / (zoomScale - mActualScale);
-            //} else {
-                //mWebView.scrollBy(viewLeft, 0);
-                //mZoomCenterX = 0;
-            //}
-        //}
-        //startZoomAnimation(zoomScale,
-            //!mWebView.getSettings().getUseFixedViewport());
+        
+        
+                
+        
+        
+            
+                    
+            
+                
+            
+                
+                
+            
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.281 -0400", hash_original_method = "77E44A3E983371F616079D37D03C3B6C", hash_generated_method = "FE05CD1212981E7C01AA218DC99943D9")
     public void updateMultiTouchSupport(Context context) {
         final WebSettings settings = mWebView.getSettings();
@@ -859,12 +878,12 @@ class ZoomManager {
                 || pm.hasSystemFeature(PackageManager.FEATURE_FAKETOUCH_MULTITOUCH_DISTINCT);
         {
             mScaleDetector = new ScaleGestureDetector(context, new ScaleDetectorListener());
-        } //End block
+        } 
         {
             mScaleDetector = null;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -872,8 +891,8 @@ class ZoomManager {
     public boolean supportsMultiTouchZoom() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_803494184 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_803494184;
-        // ---------- Original Method ----------
-        //return mSupportMultiTouch;
+        
+        
     }
 
     
@@ -881,35 +900,37 @@ class ZoomManager {
     public boolean supportsPanDuringZoom() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_537150634 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_537150634;
-        // ---------- Original Method ----------
-        //return mAllowPanAndScale;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.282 -0400", hash_original_method = "DB3FE2513664456015F767E0971235E8", hash_generated_method = "021843F3AF968BB847C3DA47BB0A2FB0")
     public boolean isPreventingWebkitUpdates() {
         boolean var539C6BCA16155491BB47B574D6ADAA7D_118970138 = (isZoomAnimating());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1464776547 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1464776547;
-        // ---------- Original Method ----------
-        //return isZoomAnimating();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.283 -0400", hash_original_method = "D6F4E788215219485BF912038215831B", hash_generated_method = "139AA1DE6924D4D2F8B830B680B120EE")
     public ScaleGestureDetector getMultiTouchGestureDetector() {
-        ScaleGestureDetector varB4EAC82CA7396A68D541C85D26508E83_1799685815 = null; //Variable for return #1
+        ScaleGestureDetector varB4EAC82CA7396A68D541C85D26508E83_1799685815 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1799685815 = mScaleDetector;
-        varB4EAC82CA7396A68D541C85D26508E83_1799685815.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1799685815.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1799685815;
-        // ---------- Original Method ----------
-        //return mScaleDetector;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.285 -0400", hash_original_method = "CAC2F3D27B1973D4CF70D4BE09DB9479", hash_generated_method = "781D85A74C589AC42619FDD3061C813E")
     public void onSizeChanged(int w, int h, int ow, int oh) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varC6631ED5D3F259446C8414A3C535806A_2047062612 = (!isFixedLengthAnimationInProgress());
             {
@@ -918,16 +939,16 @@ class ZoomManager {
                 mZoomCenterY = visibleTitleHeight;
                 mAnchorX = mWebView.viewToContentX(mWebView.getScrollX());
                 mAnchorY = mWebView.viewToContentY(visibleTitleHeight + mWebView.getScrollY());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             mMinZoomScale = Math.min(1.0f, (float) mWebView.getViewWidth()
                     / (mWebView.drawHistory() ? mWebView.getHistoryPictureWidth()
                             : mZoomOverviewWidth));
             {
                 mMinZoomScale = mInitialScale;
-            } //End block
-        } //End block
+            } 
+        } 
         dismissZoomPicker();
         mWebView.post(new PostScale(w != ow &&
             !mWebView.getSettings().getUseFixedViewport(), mInZoomOverview, w < ow));
@@ -935,8 +956,8 @@ class ZoomManager {
         addTaint(h);
         addTaint(ow);
         addTaint(oh);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -950,36 +971,36 @@ class ZoomManager {
                     {
                         mMinZoomScale = (float) viewWidth / minPrefWidth;
                         mMinZoomScaleFixed = false;
-                    } //End block
+                    } 
                     {
                         mMinZoomScale = viewState.mDefaultScale;
                         mMinZoomScaleFixed = true;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 mMinZoomScale = mDefaultMinZoomScale;
                 mMinZoomScaleFixed = false;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mMinZoomScale = viewState.mMinScale;
             mMinZoomScaleFixed = true;
-        } //End block
+        } 
         {
             mMaxZoomScale = mDefaultMaxZoomScale;
-        } //End block
+        } 
         {
             mMaxZoomScale = viewState.mMaxScale;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.286 -0400", hash_original_method = "30705697D50ADB9D51B01BF1D1A7F736", hash_generated_method = "3227DBA6C070C929511C47B632748D71")
     public void onNewPicture(WebViewCore.DrawData drawData) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int viewWidth = mWebView.getViewWidth();
         final boolean zoomOverviewWidthChanged = setupZoomOverviewWidth(drawData, viewWidth);
         final float newZoomOverviewScale = getZoomOverviewScale();
@@ -994,20 +1015,20 @@ class ZoomManager {
                     exceedsMinScaleIncrement(newZoomOverviewScale, mDefaultScale));
                     {
                         mTextWrapScale = getReadingLevelScale();
-                    } //End block
+                    } 
                     {
                         mTextWrapScale = newZoomOverviewScale;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             boolean varEDDADBFDAB93A3ADFCA53123BBF6AB92_1793985515 = (!mMinZoomScaleFixed || settings.getUseWideViewPort());
             {
                 mMinZoomScale = newZoomOverviewScale;
                 mMaxZoomScale = Math.max(mMaxZoomScale, mMinZoomScale);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean scaleHasDiff = exceedsMinScaleIncrement(newZoomOverviewScale, mActualScale);
         boolean scaleLessThanOverview = (newZoomOverviewScale - mActualScale) >= MINIMUM_SCALE_INCREMENT;
         boolean mobileSiteInOverview = mInZoomOverview &&
@@ -1021,20 +1042,20 @@ class ZoomManager {
                 mInitialZoomOverview = false;
                 setZoomScale(newZoomOverviewScale, !willScaleTriggerZoom(mTextWrapScale) &&
                 !mWebView.getSettings().getUseFixedViewport());
-            } //End block
+            } 
             {
                 mInZoomOverview = !scaleHasDiff;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varBAB1EB72F6CEBD20753D79FB108C2220_1132814221 = (drawData.mFirstLayoutForNonStandardLoad && settings.getLoadWithOverviewMode());
             {
                 mInitialZoomOverview = mInZoomOverview;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(drawData.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1048,41 +1069,41 @@ class ZoomManager {
                 {
                     newZoomOverviewWidth = Math.min(WebView.sMaxViewportWidth,
                     drawData.mContentSize.x);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 newZoomOverviewWidth = Math.round(viewWidth / mDefaultScale);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             setZoomOverviewWidth(newZoomOverviewWidth);
-        } //End block
+        } 
         addTaint(drawData.getTaint());
         addTaint(viewWidth);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1389849756 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1389849756;
-        // ---------- Original Method ----------
-        //WebSettings settings = mWebView.getSettings();
-        //int newZoomOverviewWidth = mZoomOverviewWidth;
-        //if (settings.getUseWideViewPort()) {
-            //if (drawData.mContentSize.x > 0) {
-                //newZoomOverviewWidth = Math.min(WebView.sMaxViewportWidth,
-                    //drawData.mContentSize.x);
-            //}
-        //} else {
-            //newZoomOverviewWidth = Math.round(viewWidth / mDefaultScale);
-        //}
-        //if (newZoomOverviewWidth != mZoomOverviewWidth) {
-            //setZoomOverviewWidth(newZoomOverviewWidth);
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+        
+            
+                
+                    
+            
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.288 -0400", hash_original_method = "49A97AD028E7397E6545CF950CBFEBF3", hash_generated_method = "4E94B6E9E84CB05DB836AC8F736F8B9F")
     public void onFirstLayout(WebViewCore.DrawData drawData) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         WebViewCore.ViewState viewState = drawData.mViewState;
         final Point viewSize = drawData.mViewSize;
         updateZoomRange(viewState, viewSize.x, drawData.mMinPrefWidth);
@@ -1095,21 +1116,21 @@ class ZoomManager {
                 mMinZoomScale = (mInitialScale > 0) ?
                     Math.min(mInitialScale, overviewScale) : overviewScale;
                 mMaxZoomScale = Math.max(mMaxZoomScale, mMinZoomScale);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var72CDC5681BBA9EF2F7C0725FEF71FE87_1277200189 = (!mWebView.drawHistory());
             {
                 float scale;
                 {
                     scale = mInitialScale;
-                } //End block
+                } 
                 {
                     scale = (viewState.mViewScale > 0)
                     ? viewState.mViewScale : overviewScale;
                     mTextWrapScale = (viewState.mTextWrapScale > 0)
                     ? viewState.mTextWrapScale : getReadingLevelScale();
-                } //End block
+                } 
                 {
                     scale = overviewScale;
                     {
@@ -1117,16 +1138,16 @@ class ZoomManager {
                     || !settings.getLoadWithOverviewMode());
                         {
                             scale = Math.max(mDefaultScale, scale);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         boolean var8AAAF8A664E23A6D3AFCADC2A850C15A_1540676255 = (settings.isNarrowColumnLayout() &&
                     settings.getUseFixedViewport());
                         {
                             mTextWrapScale = getReadingLevelScale();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 boolean reflowText = false;
                 {
                     {
@@ -1134,54 +1155,57 @@ class ZoomManager {
                         {
                             scale = Math.max(scale, overviewScale);
                             mTextWrapScale = Math.max(mTextWrapScale, overviewScale);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     reflowText = exceedsMinScaleIncrement(mTextWrapScale, scale);
-                } //End block
+                } 
                 mInitialZoomOverview = settings.getLoadWithOverviewMode() &&
                     !exceedsMinScaleIncrement(scale, overviewScale);
                 setZoomScale(scale, reflowText);
                 updateZoomPicker();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(drawData.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.288 -0400", hash_original_method = "E88F50435C2D2101D935E91DFBA371A3", hash_generated_method = "A042A7A5C53948E2AFB8A24A55152711")
     public void saveZoomState(Bundle b) {
         b.putFloat("scale", mActualScale);
         b.putFloat("textwrapScale", mTextWrapScale);
         b.putBoolean("overview", mInZoomOverview);
         addTaint(b.getTaint());
-        // ---------- Original Method ----------
-        //b.putFloat("scale", mActualScale);
-        //b.putFloat("textwrapScale", mTextWrapScale);
-        //b.putBoolean("overview", mInZoomOverview);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.288 -0400", hash_original_method = "CEABBB6E3216B8D1034C16D61ED63443", hash_generated_method = "EBABD371F461EB1D455CA9348748325C")
     public void restoreZoomState(Bundle b) {
         mActualScale = b.getFloat("scale", 1.0f);
         mInvActualScale = 1 / mActualScale;
         mTextWrapScale = b.getFloat("textwrapScale", mActualScale);
         mInZoomOverview = b.getBoolean("overview");
-        // ---------- Original Method ----------
-        //mActualScale = b.getFloat("scale", 1.0f);
-        //mInvActualScale = 1 / mActualScale;
-        //mTextWrapScale = b.getFloat("textwrapScale", mActualScale);
-        //mInZoomOverview = b.getBoolean("overview");
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.289 -0400", hash_original_method = "03F547EF9A141661565AD38656124362", hash_generated_method = "AD3895C75740B7E40C8FC7479C1C03E1")
     private ZoomControlBase getCurrentZoomControl() {
-        ZoomControlBase varB4EAC82CA7396A68D541C85D26508E83_1750642035 = null; //Variable for return #1
-        ZoomControlBase varB4EAC82CA7396A68D541C85D26508E83_1200952115 = null; //Variable for return #2
-        ZoomControlBase varB4EAC82CA7396A68D541C85D26508E83_1636412634 = null; //Variable for return #3
+        ZoomControlBase varB4EAC82CA7396A68D541C85D26508E83_1750642035 = null; 
+        ZoomControlBase varB4EAC82CA7396A68D541C85D26508E83_1200952115 = null; 
+        ZoomControlBase varB4EAC82CA7396A68D541C85D26508E83_1636412634 = null; 
         {
             boolean var83F1D2F4A6B5EE964613A457830A6BDF_497286807 = (mWebView.getSettings() != null && mWebView.getSettings().supportZoom());
             {
@@ -1193,170 +1217,176 @@ class ZoomManager {
                         && mWebView.getSettings().getDisplayZoomControls());
                             {
                                 mEmbeddedZoomControl = new ZoomControlEmbedded(this, mWebView);
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         varB4EAC82CA7396A68D541C85D26508E83_1750642035 = mEmbeddedZoomControl;
-                    } //End block
+                    } 
                     {
                         {
                             mExternalZoomControl = new ZoomControlExternal(mWebView);
-                        } //End block
+                        } 
                         varB4EAC82CA7396A68D541C85D26508E83_1200952115 = mExternalZoomControl;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1636412634 = null;
-        ZoomControlBase varA7E53CE21691AB073D9660D615818899_148705879; //Final return value
+        ZoomControlBase varA7E53CE21691AB073D9660D615818899_148705879; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_148705879 = varB4EAC82CA7396A68D541C85D26508E83_1750642035;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_148705879 = varB4EAC82CA7396A68D541C85D26508E83_1200952115;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_148705879 = varB4EAC82CA7396A68D541C85D26508E83_1636412634;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_148705879.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_148705879.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_148705879;
-        // ---------- Original Method ----------
-        //if (mWebView.getSettings() != null && mWebView.getSettings().supportZoom()) {
-            //if (mWebView.getSettings().getBuiltInZoomControls()) {
-                //if ((mEmbeddedZoomControl == null)
-                        //&& mWebView.getSettings().getDisplayZoomControls()) {
-                    //mEmbeddedZoomControl = new ZoomControlEmbedded(this, mWebView);
-                //}
-                //return mEmbeddedZoomControl;
-            //} else {
-                //if (mExternalZoomControl == null) {
-                    //mExternalZoomControl = new ZoomControlExternal(mWebView);
-                //}
-                //return mExternalZoomControl;
-            //}
-        //}
-        //return null;
+        
+        
+            
+                
+                        
+                    
+                
+                
+            
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.289 -0400", hash_original_method = "BF64B2CEB07538AA62EA00039BB48680", hash_generated_method = "EA945F604E2F1235971877E664A9BDEE")
     public void invokeZoomPicker() {
         ZoomControlBase control = getCurrentZoomControl();
         {
             control.show();
-        } //End block
-        // ---------- Original Method ----------
-        //ZoomControlBase control = getCurrentZoomControl();
-        //if (control != null) {
-            //control.show();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.290 -0400", hash_original_method = "0CAEEFDB341BFD4D4CACBFA479A18F98", hash_generated_method = "49C2B103C58CDEF4D53F9FBA09FFB779")
     public void dismissZoomPicker() {
         ZoomControlBase control = getCurrentZoomControl();
         {
             control.hide();
-        } //End block
-        // ---------- Original Method ----------
-        //ZoomControlBase control = getCurrentZoomControl();
-        //if (control != null) {
-            //control.hide();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.290 -0400", hash_original_method = "DA055704D86885A7F9C5B74974CF851B", hash_generated_method = "12A768C3BE5BFE4204B2C939C31C5C87")
     public boolean isZoomPickerVisible() {
         ZoomControlBase control = getCurrentZoomControl();
         {
             Object var90D3359E5D07B295D570F6A9F5B367E9_1013396186 = (control.isVisible());
-        } //End flattened ternary
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_259422659 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_259422659;
-        // ---------- Original Method ----------
-        //ZoomControlBase control = getCurrentZoomControl();
-        //return (control != null) ? control.isVisible() : false;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.291 -0400", hash_original_method = "A8AE3510E280FF5955731B404A0A66EC", hash_generated_method = "8EB996D9DEF03D764011B98A7288C33E")
     public void updateZoomPicker() {
         ZoomControlBase control = getCurrentZoomControl();
         {
             control.update();
-        } //End block
-        // ---------- Original Method ----------
-        //ZoomControlBase control = getCurrentZoomControl();
-        //if (control != null) {
-            //control.update();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.291 -0400", hash_original_method = "65E0B786CE90103F5573BC67CE254CE7", hash_generated_method = "A3E49AB0E3F06864E48F7E913D96D070")
     public void keepZoomPickerVisible() {
         ZoomControlBase control = getCurrentZoomControl();
         {
             control.show();
-        } //End block
-        // ---------- Original Method ----------
-        //ZoomControlBase control = getCurrentZoomControl();
-        //if (control != null && control == mExternalZoomControl) {
-            //control.show();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.292 -0400", hash_original_method = "295B8076F41B8CC3FCA3F323BF66F29B", hash_generated_method = "B76190968617F96C4B7C44A7CC379F22")
     public View getExternalZoomPicker() {
-        View varB4EAC82CA7396A68D541C85D26508E83_180251543 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_539931920 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_180251543 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_539931920 = null; 
         ZoomControlBase control = getCurrentZoomControl();
         {
             varB4EAC82CA7396A68D541C85D26508E83_180251543 = mExternalZoomControl.getControls();
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_539931920 = null;
-        } //End block
-        View varA7E53CE21691AB073D9660D615818899_1789284822; //Final return value
+        } 
+        View varA7E53CE21691AB073D9660D615818899_1789284822; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1789284822 = varB4EAC82CA7396A68D541C85D26508E83_180251543;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1789284822 = varB4EAC82CA7396A68D541C85D26508E83_539931920;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1789284822.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1789284822.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1789284822;
-        // ---------- Original Method ----------
-        //ZoomControlBase control = getCurrentZoomControl();
-        //if (control != null && control == mExternalZoomControl) {
-            //return mExternalZoomControl.getControls();
-        //} else {
-            //return null;
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.292 -0400", hash_original_method = "8D458CBEFE5B6426DEF9072097FF3245", hash_generated_method = "9ADC4F4CBEDBCA89924A04F25DE685B9")
     public void setHardwareAccelerated() {
         mHardwareAccelerated = true;
-        // ---------- Original Method ----------
-        //mHardwareAccelerated = true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.292 -0400", hash_original_method = "35BF52CFA65A672FC707BA33DDD071E9", hash_generated_method = "900BB4A97EADB0A4DEA6EBCB26A097C3")
      void onPageFinished(String url) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mInitialZoomOverview = false;
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
-        //mInitialZoomOverview = false;
+        
+        
     }
 
     
@@ -1380,11 +1410,11 @@ class ZoomManager {
             mSize = 0;
             mSum = 0;
             mIndex = 0;
-            // ---------- Original Method ----------
-            //mQueue = new float[QUEUE_CAPACITY];
-            //mSize = 0;
-            //mSum = 0;
-            //mIndex = 0;
+            
+            
+            
+            
+            
         }
 
         
@@ -1397,15 +1427,15 @@ class ZoomManager {
                 int i = 0;
                 {
                     mQueue[i] = 0;
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //mSize = 0;
-            //mSum = 0;
-            //mIndex = 0;
-            //for (int i = 0; i < QUEUE_CAPACITY; ++i) {
-                //mQueue[i] = 0;
-            //}
+                } 
+            } 
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -1414,18 +1444,18 @@ class ZoomManager {
             mSum += focusDelta;
             {
                 mSum -= mQueue[mIndex];
-            } //End block
+            } 
             mQueue[mIndex] = focusDelta;
             mIndex = (mIndex + 1) % QUEUE_CAPACITY;
-            // ---------- Original Method ----------
-            //mSum += focusDelta;
-            //if (mSize < QUEUE_CAPACITY) {  
-                //mSize++;
-            //} else {  
-                //mSum -= mQueue[mIndex];
-            //}
-            //mQueue[mIndex] = focusDelta;
-            //mIndex = (mIndex + 1) % QUEUE_CAPACITY;
+            
+            
+            
+                
+            
+                
+            
+            
+            
         }
 
         
@@ -1433,8 +1463,8 @@ class ZoomManager {
         private float getSum() {
             float var546ADE640B6EDFBC8A086EF31347E768_198797366 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_198797366;
-            // ---------- Original Method ----------
-            //return mSum;
+            
+            
         }
 
         
@@ -1453,13 +1483,13 @@ class ZoomManager {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.295 -0400", hash_original_method = "BA46F3652F41E17982BE025D7A95EDE2", hash_generated_method = "BA46F3652F41E17982BE025D7A95EDE2")
         public ScaleDetectorListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.296 -0400", hash_original_method = "9075B37C27A1752EF4C1C0179D09116C", hash_generated_method = "32A78566D952487EEF6E6C85590E4299")
         public boolean onScaleBegin(ScaleGestureDetector detector) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mInitialZoomOverview = false;
             dismissZoomPicker();
             mFocusMovementQueue.clear();
@@ -1471,16 +1501,16 @@ class ZoomManager {
             addTaint(detector.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1617673751 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1617673751;
-            // ---------- Original Method ----------
-            //mInitialZoomOverview = false;
-            //dismissZoomPicker();
-            //mFocusMovementQueue.clear();
-            //mFocusX = detector.getFocusX();
-            //mFocusY = detector.getFocusY();
-            //mWebView.mViewManager.startZoom();
-            //mWebView.onPinchToZoomAnimationStart();
-            //mAccumulatedSpan = 0;
-            //return true;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1500,15 +1530,15 @@ class ZoomManager {
             final boolean result = mFocusMovementQueue.getSum() > Math.abs(deltaSpan);
             {
                 mAccumulatedSpan += deltaSpan;
-            } //End block
+            } 
             {
                 mAccumulatedSpan = 0;
-            } //End block
+            } 
             addTaint(detector.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1811741714 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1811741714;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1523,51 +1553,51 @@ class ZoomManager {
                     mPinchToZoomAnimating = true;
                     {
                         scale = Math.min(scale, mActualScale * 1.25f);
-                    } //End block
+                    } 
                     {
                         scale = Math.max(scale, mActualScale * 0.8f);
-                    } //End block
+                    } 
                     scale = computeScaleWithLimits(scale);
                     {
                         boolean varC4DEEA06E814A1944DC8A9A5323D1750_1872542293 = (Math.abs(scale - mActualScale) < MINIMUM_SCALE_WITHOUT_JITTER);
-                    } //End collapsed parenthetic
+                    } 
                     setZoomCenter(detector.getFocusX(), detector.getFocusY());
                     setZoomScale(scale, false);
                     mWebView.invalidate();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(detector.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1569116833 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1569116833;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.297 -0400", hash_original_method = "ED0E7724FBEBB5F90A0828B68DD48F69", hash_generated_method = "D93DA175A7E7F462F036863ACB337915")
         public boolean onScale(ScaleGestureDetector detector) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean varD3734ED0B6DF1B041CFFE69F64B7AFEF_725709373 = (isPanningOnly(detector) || handleScale(detector));
                 {
                     mFocusMovementQueue.clear();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(detector.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1098901185 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1098901185;
-            // ---------- Original Method ----------
-            //if (isPanningOnly(detector) || handleScale(detector)) {
-                //mFocusMovementQueue.clear();
-                //return true;
-            //}
-            //return false;
+            
+            
+                
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:08.298 -0400", hash_original_method = "8B2C3B6F263B86181A105DF4C3A0ECE1", hash_generated_method = "493D6050AB7F6182D4CF5E9690AB85CB")
         public void onScaleEnd(ScaleGestureDetector detector) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 mPinchToZoomAnimating = false;
                 mAnchorX = mWebView.viewToContentX((int) mZoomCenterX + mWebView.getScrollX());
@@ -1576,22 +1606,22 @@ class ZoomManager {
                 refreshZoomScale(reflowNow &&
                     !mWebView.getSettings().getUseFixedViewport());
                 mWebView.invalidate();
-            } //End block
+            } 
             mWebView.mViewManager.endZoom();
             mWebView.onPinchToZoomAnimationEnd(detector);
             addTaint(detector.getTaint());
-            // ---------- Original Method ----------
-            //if (mPinchToZoomAnimating) {
-                //mPinchToZoomAnimating = false;
-                //mAnchorX = mWebView.viewToContentX((int) mZoomCenterX + mWebView.getScrollX());
-                //mAnchorY = mWebView.viewToContentY((int) mZoomCenterY + mWebView.getScrollY());
-                //boolean reflowNow = !canZoomOut() || (mActualScale <= 0.8 * mTextWrapScale);
-                //refreshZoomScale(reflowNow &&
-                    //!mWebView.getSettings().getUseFixedViewport());
-                //mWebView.invalidate();
-            //}
-            //mWebView.mViewManager.endZoom();
-            //mWebView.onPinchToZoomAnimationEnd(detector);
+            
+            
+                
+                
+                
+                
+                
+                    
+                
+            
+            
+            
         }
 
         
@@ -1617,10 +1647,10 @@ class ZoomManager {
             mUpdateTextWrap = updateTextWrap;
             mInZoomOverviewBeforeSizeChange = inZoomOverview;
             mInPortraitMode = inPortraitMode;
-            // ---------- Original Method ----------
-            //mUpdateTextWrap = updateTextWrap;
-            //mInZoomOverviewBeforeSizeChange = inZoomOverview;
-            //mInPortraitMode = inPortraitMode;
+            
+            
+            
+            
         }
 
         
@@ -1636,23 +1666,23 @@ class ZoomManager {
                     mInZoomOverviewBeforeSizeChange);
                         {
                             newScale = getZoomOverviewScale();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     setZoomScale(newScale, mUpdateTextWrap, true);
                     updateZoomPicker();
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (mWebView.getWebViewCore() != null) {
-                //float newScale = mActualScale;
-                //if (mWebView.getSettings().getUseWideViewPort() &&
-                    //mInPortraitMode &&
-                    //mInZoomOverviewBeforeSizeChange) {
-                    //newScale = getZoomOverviewScale();
-                //}
-                //setZoomScale(newScale, mUpdateTextWrap, true);
-                //updateZoomPicker();
-            //}
+                } 
+            } 
+            
+            
+                
+                
+                    
+                    
+                    
+                
+                
+                
+            
         }
 
         

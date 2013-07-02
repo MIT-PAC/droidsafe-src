@@ -1,11 +1,11 @@
 package android.accounts;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcelable;
 import android.os.Parcel;
@@ -45,16 +45,16 @@ public class AuthenticatorDescription implements Parcelable {
         this.smallIconId = smallIconId;
         this.accountPreferencesId = prefId;
         this.customTokens = customTokens;
-        // ---------- Original Method ----------
-        //if (type == null) throw new IllegalArgumentException("type cannot be null");
-        //if (packageName == null) throw new IllegalArgumentException("packageName cannot be null");
-        //this.type = type;
-        //this.packageName = packageName;
-        //this.labelId = labelId;
-        //this.iconId = iconId;
-        //this.smallIconId = smallIconId;
-        //this.accountPreferencesId = prefId;
-        //this.customTokens = customTokens;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -68,7 +68,7 @@ public class AuthenticatorDescription implements Parcelable {
         addTaint(iconId);
         addTaint(smallIconId);
         addTaint(prefId);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -81,14 +81,14 @@ public class AuthenticatorDescription implements Parcelable {
         this.smallIconId = 0;
         this.accountPreferencesId = 0;
         this.customTokens = false;
-        // ---------- Original Method ----------
-        //this.type = type;
-        //this.packageName = null;
-        //this.labelId = 0;
-        //this.iconId = 0;
-        //this.smallIconId = 0;
-        //this.accountPreferencesId = 0;
-        //this.customTokens = false;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -101,17 +101,18 @@ public class AuthenticatorDescription implements Parcelable {
         this.smallIconId = source.readInt();
         this.accountPreferencesId = source.readInt();
         this.customTokens = source.readByte() == 1;
-        // ---------- Original Method ----------
-        //this.type = source.readString();
-        //this.packageName = source.readString();
-        //this.labelId = source.readInt();
-        //this.iconId = source.readInt();
-        //this.smallIconId = source.readInt();
-        //this.accountPreferencesId = source.readInt();
-        //this.customTokens = source.readByte() == 1;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AuthenticatorDescription newKey(String type) {
         if (type == null) throw new IllegalArgumentException("type cannot be null");
         return new AuthenticatorDescription(type);
@@ -122,50 +123,54 @@ public class AuthenticatorDescription implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1149206173 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1149206173;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.503 -0400", hash_original_method = "6BF731200C51E86131E751F42FA1CCF7", hash_generated_method = "DA40101C0FA9A883E5F4EE45E55F8D86")
     public int hashCode() {
         int var5445C9C24EEBE23FF02D6BECCF921AED_329932945 = (type.hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1690747653 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1690747653;
-        // ---------- Original Method ----------
-        //return type.hashCode();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.504 -0400", hash_original_method = "56302D274B0C35098461E26F41A371FE", hash_generated_method = "76A47C7529D65FF4DFA493D7CAD3106B")
     public boolean equals(Object o) {
         {
             boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_143963407 = (o == this);
-        } //End collapsed parenthetic
+        } 
         final AuthenticatorDescription other = (AuthenticatorDescription) o;
         boolean varE9C3F01EF71A53EF70D5F9E4EF6F3FE9_1386226709 = (type.equals(other.type));
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_854211709 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_854211709;
-        // ---------- Original Method ----------
-        //if (o == this) return true;
-        //if (!(o instanceof AuthenticatorDescription)) return false;
-        //final AuthenticatorDescription other = (AuthenticatorDescription) o;
-        //return type.equals(other.type);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.506 -0400", hash_original_method = "E530FC0646EA4443AB0B477A8261002A", hash_generated_method = "C6B5E4BC9E9C40DAAAFC57CCCA7BD9C0")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1734167954 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1734167954 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1734167954 = "AuthenticatorDescription {type=" + type + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_1734167954.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1734167954.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1734167954;
-        // ---------- Original Method ----------
-        //return "AuthenticatorDescription {type=" + type + "}";
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.508 -0400", hash_original_method = "72F90E851087733BFC5D935FAA58D7A0", hash_generated_method = "4051D34850B60282DB772F1FB1293821")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(type);
@@ -177,14 +182,14 @@ public class AuthenticatorDescription implements Parcelable {
         dest.writeByte((byte) (customTokens ? 1 : 0));
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(type);
-        //dest.writeString(packageName);
-        //dest.writeInt(labelId);
-        //dest.writeInt(iconId);
-        //dest.writeInt(smallIconId);
-        //dest.writeInt(accountPreferencesId);
-        //dest.writeByte((byte) (customTokens ? 1 : 0));
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -202,12 +207,12 @@ public class AuthenticatorDescription implements Parcelable {
             return new AuthenticatorDescription[size];
         }
     };
-    // orphaned legacy method
+    
     public AuthenticatorDescription createFromParcel(Parcel source) {
             return new AuthenticatorDescription(source);
         }
     
-    // orphaned legacy method
+    
     public AuthenticatorDescription[] newArray(int size) {
             return new AuthenticatorDescription[size];
         }

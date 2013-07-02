@@ -1,11 +1,11 @@
 package java.beans;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.EventListenerProxy;
 
@@ -20,30 +20,31 @@ public class PropertyChangeListenerProxy extends EventListenerProxy implements P
         super(listener);
         this.propertyName = propertyName;
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //this.propertyName = propertyName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.302 -0400", hash_original_method = "F855330D0A49F166D335D3D735B1EC12", hash_generated_method = "5F90A3C19958D97076B1622BE789F7CE")
     public String getPropertyName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1726047180 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1726047180 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1726047180 = propertyName;
-        varB4EAC82CA7396A68D541C85D26508E83_1726047180.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1726047180.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1726047180;
-        // ---------- Original Method ----------
-        //return propertyName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.302 -0400", hash_original_method = "BBFB0B3B3DD9FEC3EABA35E8C67A978E", hash_generated_method = "32A75A0826FBE276DBA5726942E69CF3")
     public void propertyChange(PropertyChangeEvent event) {
         PropertyChangeListener listener = (PropertyChangeListener) getListener();
         listener.propertyChange(event);
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //PropertyChangeListener listener = (PropertyChangeListener) getListener();
-        //listener.propertyChange(event);
+        
+        
+        
     }
 
     

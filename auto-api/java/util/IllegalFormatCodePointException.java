@@ -1,11 +1,11 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 
@@ -17,8 +17,8 @@ public class IllegalFormatCodePointException extends IllegalFormatException impl
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.477 -0400", hash_original_method = "EC5D1DD50821B22662FE61EFD96C533A", hash_generated_method = "B0BCC925AF8D66DD3A3ED68FAEE6F46E")
     public  IllegalFormatCodePointException(int c) {
         this.c = c;
-        // ---------- Original Method ----------
-        //this.c = c;
+        
+        
     }
 
     
@@ -26,20 +26,21 @@ public class IllegalFormatCodePointException extends IllegalFormatException impl
     public int getCodePoint() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_621590837 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_621590837;
-        // ---------- Original Method ----------
-        //return c;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:09.478 -0400", hash_original_method = "D74EDE3BF1A0D3C4B575CB0DB2BFF88F", hash_generated_method = "BBBA0874372E17D47310C5AD1CB5B169")
     @Override
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1235966260 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1235966260 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1235966260 = Integer.toHexString(c);
-        varB4EAC82CA7396A68D541C85D26508E83_1235966260.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1235966260.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1235966260;
-        // ---------- Original Method ----------
-        //return Integer.toHexString(c);
+        
+        
     }
 
     

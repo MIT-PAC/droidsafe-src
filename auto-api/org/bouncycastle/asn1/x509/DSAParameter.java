@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.math.BigInteger;
 import java.util.Enumeration;
@@ -36,10 +36,10 @@ public class DSAParameter extends ASN1Encodable {
         this.p = new DERInteger(p);
         this.q = new DERInteger(q);
         this.g = new DERInteger(g);
-        // ---------- Original Method ----------
-        //this.p = new DERInteger(p);
-        //this.q = new DERInteger(q);
-        //this.g = new DERInteger(g);
+        
+        
+        
+        
     }
 
     
@@ -50,22 +50,22 @@ public class DSAParameter extends ASN1Encodable {
             boolean var01335131BE2224430AFFE0AC95254DF2_1835831108 = (seq.size() != 3);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad sequence size: " + seq.size());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Enumeration e = seq.getObjects();
         p = DERInteger.getInstance(e.nextElement());
         q = DERInteger.getInstance(e.nextElement());
         g = DERInteger.getInstance(e.nextElement());
         addTaint(seq.getTaint());
-        // ---------- Original Method ----------
-        //if (seq.size() != 3)
-        //{
-            //throw new IllegalArgumentException("Bad sequence size: " + seq.size());
-        //}
-        //Enumeration     e = seq.getObjects();
-        //p = DERInteger.getInstance(e.nextElement());
-        //q = DERInteger.getInstance(e.nextElement());
-        //g = DERInteger.getInstance(e.nextElement());
+        
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -92,53 +92,53 @@ public class DSAParameter extends ASN1Encodable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.726 -0400", hash_original_method = "AD374264AA86AF8C15D476F74BF4E38F", hash_generated_method = "A0C5038EBCFA814D0FBC748956E899F9")
     public BigInteger getP() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_191845811 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_191845811 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_191845811 = p.getPositiveValue();
-        varB4EAC82CA7396A68D541C85D26508E83_191845811.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_191845811.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_191845811;
-        // ---------- Original Method ----------
-        //return p.getPositiveValue();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.727 -0400", hash_original_method = "37C66EC3EBD32781416A0E32DB299F24", hash_generated_method = "81510D2E94F1A97F442B455994B9A3BD")
     public BigInteger getQ() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_559181990 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_559181990 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_559181990 = q.getPositiveValue();
-        varB4EAC82CA7396A68D541C85D26508E83_559181990.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_559181990.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_559181990;
-        // ---------- Original Method ----------
-        //return q.getPositiveValue();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.727 -0400", hash_original_method = "76F261BBDCDDE10636E0B2FE4E543575", hash_generated_method = "5111A68C4FABCF7540FFB70CCF2FE662")
     public BigInteger getG() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1479807156 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1479807156 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1479807156 = g.getPositiveValue();
-        varB4EAC82CA7396A68D541C85D26508E83_1479807156.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1479807156.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1479807156;
-        // ---------- Original Method ----------
-        //return g.getPositiveValue();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.727 -0400", hash_original_method = "07D924177C8A847E61F30C74ABF9090B", hash_generated_method = "A9454ACB2602592F5CCD76CC6783E4DF")
     public DERObject toASN1Object() {
-        DERObject varB4EAC82CA7396A68D541C85D26508E83_915033914 = null; //Variable for return #1
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_915033914 = null; 
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(p);
         v.add(q);
         v.add(g);
         varB4EAC82CA7396A68D541C85D26508E83_915033914 = new DERSequence(v);
-        varB4EAC82CA7396A68D541C85D26508E83_915033914.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_915033914.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_915033914;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(p);
-        //v.add(q);
-        //v.add(g);
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
+        
     }
 
     

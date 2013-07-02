@@ -1,11 +1,11 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import libcore.io.ErrnoException;
 import libcore.io.Libcore;
@@ -18,30 +18,31 @@ public final class FileDescriptor {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.912 -0400", hash_original_method = "8A46F9D63ACB608022037D6ACF8ADC11", hash_generated_method = "85C5A980A68C0ECABEB30B9F109CBB75")
     public  FileDescriptor() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.912 -0400", hash_original_method = "84EEC9A137856593BBF0A90E4A96E319", hash_generated_method = "EE61933B5F9A9EFBEFEB6AB62DB17D97")
     public void sync() throws SyncFailedException {
         try 
         {
             Libcore.os.fsync(this);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             SyncFailedException sfe = new SyncFailedException(errnoException.getMessage());
             sfe.initCause(errnoException);
             if (DroidSafeAndroidRuntime.control) throw sfe;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Libcore.os.fsync(this);
-        //} catch (ErrnoException errnoException) {
-            //SyncFailedException sfe = new SyncFailedException(errnoException.getMessage());
-            //sfe.initCause(errnoException);
-            //throw sfe;
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+            
+        
     }
 
     
@@ -49,8 +50,8 @@ public final class FileDescriptor {
     public boolean valid() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_678729832 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_678729832;
-        // ---------- Original Method ----------
-        //return descriptor != -1;
+        
+        
     }
 
     
@@ -58,28 +59,29 @@ public final class FileDescriptor {
     public final int getInt$() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1317538111 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1317538111;
-        // ---------- Original Method ----------
-        //return descriptor;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.913 -0400", hash_original_method = "AED03175AA9315DC6552DD5B6FFA10D4", hash_generated_method = "9CD3F8ACD13BA5BC1DEAE478056B0187")
     public final void setInt$(int fd) {
         this.descriptor = fd;
-        // ---------- Original Method ----------
-        //this.descriptor = fd;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:47.913 -0400", hash_original_method = "EF72FD893497B2D08C59E275939FAD05", hash_generated_method = "154CB08BE15BF827C1BE0067E0773498")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_572449225 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_572449225 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_572449225 = "FileDescriptor[" + descriptor + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_572449225.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_572449225.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_572449225;
-        // ---------- Original Method ----------
-        //return "FileDescriptor[" + descriptor + "]";
+        
+        
     }
 
     

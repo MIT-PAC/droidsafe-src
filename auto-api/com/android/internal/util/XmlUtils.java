@@ -1,11 +1,11 @@
 package com.android.internal.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -27,10 +27,11 @@ public class XmlUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.067 -0400", hash_original_method = "76C216707CDD38D546F63E977F5F31C4", hash_generated_method = "76C216707CDD38D546F63E977F5F31C4")
     public XmlUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SPEC)
     public static void skipCurrentTag(XmlPullParser parser) throws XmlPullParserException, IOException {
         int outerDepth = parser.getDepth();
         int type;

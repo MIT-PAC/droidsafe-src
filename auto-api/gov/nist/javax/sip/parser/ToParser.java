@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.javax.sip.address.*;
@@ -18,7 +18,7 @@ public class ToParser extends AddressParametersParser {
     public  ToParser(String to) {
         super(to);
         addTaint(to.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,26 +26,27 @@ public class ToParser extends AddressParametersParser {
     protected  ToParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.727 -0400", hash_original_method = "9D8B9A06C15E6D7FEEEC143ED65417C6", hash_generated_method = "9735DF0A5617F30CB3A43A7B81B4212D")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1943159521 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1943159521 = null; 
         headerName(TokenTypes.TO);
         To to = new To();
         super.parse(to);
         this.lexer.match('\n');
         varB4EAC82CA7396A68D541C85D26508E83_1943159521 = to;
-        varB4EAC82CA7396A68D541C85D26508E83_1943159521.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1943159521.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1943159521;
-        // ---------- Original Method ----------
-        //headerName(TokenTypes.TO);
-        //To to = new To();
-        //super.parse(to);
-        //this.lexer.match('\n');
-        //return to;
+        
+        
+        
+        
+        
+        
     }
 
     

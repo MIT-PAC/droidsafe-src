@@ -1,11 +1,11 @@
 package android.view.inputmethod;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -27,10 +27,10 @@ public final class CorrectionInfo implements Parcelable {
         mOffset = offset;
         mOldText = oldText;
         mNewText = newText;
-        // ---------- Original Method ----------
-        //mOffset = offset;
-        //mOldText = oldText;
-        //mNewText = newText;
+        
+        
+        
+        
     }
 
     
@@ -39,10 +39,10 @@ public final class CorrectionInfo implements Parcelable {
         mOffset = source.readInt();
         mOldText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
         mNewText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        // ---------- Original Method ----------
-        //mOffset = source.readInt();
-        //mOldText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        //mNewText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
+        
+        
+        
+        
     }
 
     
@@ -50,45 +50,47 @@ public final class CorrectionInfo implements Parcelable {
     public int getOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1733526352 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1733526352;
-        // ---------- Original Method ----------
-        //return mOffset;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.920 -0400", hash_original_method = "B5F6375A5B3C1F7513E2C762D0A387DE", hash_generated_method = "0898CFB659FE71E1B16A3F19FBF2D950")
     public CharSequence getOldText() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1677416625 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1677416625 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1677416625 = mOldText;
-        varB4EAC82CA7396A68D541C85D26508E83_1677416625.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1677416625.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1677416625;
-        // ---------- Original Method ----------
-        //return mOldText;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.921 -0400", hash_original_method = "A44877BB52BDCF0EDD87983832FB9E30", hash_generated_method = "126F4259E2E8E235338145A5360D33EF")
     public CharSequence getNewText() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_151021876 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_151021876 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_151021876 = mNewText;
-        varB4EAC82CA7396A68D541C85D26508E83_151021876.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_151021876.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_151021876;
-        // ---------- Original Method ----------
-        //return mNewText;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.921 -0400", hash_original_method = "7D587C528DCE451F3ED32B059F93B063", hash_generated_method = "525285AA8CFED9B7EF1BF3DB4EB72F1E")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1876562773 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1876562773 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1876562773 = "CorrectionInfo{#" + mOffset + " \"" + mOldText + "\" -> \"" + mNewText + "\"}";
-        varB4EAC82CA7396A68D541C85D26508E83_1876562773.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1876562773.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1876562773;
-        // ---------- Original Method ----------
-        //return "CorrectionInfo{#" + mOffset + " \"" + mOldText + "\" -> \"" + mNewText + "\"}";
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.922 -0400", hash_original_method = "4D2AAA8E4AD44FCBAED8BA48A77A4AE0", hash_generated_method = "671231449B77525163AD7B2EC53AAFEC")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mOffset);
@@ -96,10 +98,10 @@ public final class CorrectionInfo implements Parcelable {
         TextUtils.writeToParcel(mNewText, dest, flags);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mOffset);
-        //TextUtils.writeToParcel(mOldText, dest, flags);
-        //TextUtils.writeToParcel(mNewText, dest, flags);
+        
+        
+        
+        
     }
 
     
@@ -107,8 +109,8 @@ public final class CorrectionInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_569039665 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_569039665;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -124,12 +126,12 @@ public final class CorrectionInfo implements Parcelable {
             return new CorrectionInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public CorrectionInfo createFromParcel(Parcel source) {
             return new CorrectionInfo(source);
         }
     
-    // orphaned legacy method
+    
     public CorrectionInfo[] newArray(int size) {
             return new CorrectionInfo[size];
         }

@@ -1,21 +1,22 @@
 package java.math;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 class Conversion {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:52.690 -0400", hash_original_method = "A600C72BC77DD5DD4F1CBED3B2E3D2F0", hash_generated_method = "80546BF6DE416F93FA5C3272886F6955")
     private  Conversion() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String bigInteger2String(BigInteger val, int radix) {
         val.prepareJavaRepresentation();
         int sign = val.sign;
@@ -88,6 +89,7 @@ class Conversion {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String toDecimalScaledString(BigInteger val, int scale) {
         val.prepareJavaRepresentation();
         int sign = val.sign;
@@ -234,6 +236,7 @@ class Conversion {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String toDecimalScaledString(long value, int scale) {
         int resLengthInChars;
         int currentChar;
@@ -340,6 +343,7 @@ class Conversion {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static double bigInteger2Double(BigInteger val) {
         val.prepareJavaRepresentation();
         if ((val.numberLength < 2)

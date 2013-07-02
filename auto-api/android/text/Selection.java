@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.BreakIterator;
 
@@ -13,7 +13,7 @@ public class Selection {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.175 -0400", hash_original_method = "B8D298D1C681D859448C141B901530AF", hash_generated_method = "43EBC81447082EA8B9876FF117E2ADA5")
     private  Selection() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,6 +33,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setSelection(Spannable text, int start, int stop) {
         int ostart = getSelectionStart(text);
         int oend = getSelectionEnd(text);
@@ -67,6 +68,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean moveUp(Spannable text, Layout layout) {
         int start = getSelectionStart(text);
         int end = getSelectionEnd(text);
@@ -97,6 +99,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean moveDown(Spannable text, Layout layout) {
         int start = getSelectionStart(text);
         int end = getSelectionEnd(text);
@@ -127,6 +130,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean moveLeft(Spannable text, Layout layout) {
         int start = getSelectionStart(text);
         int end = getSelectionEnd(text);
@@ -144,6 +148,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean moveRight(Spannable text, Layout layout) {
         int start = getSelectionStart(text);
         int end = getSelectionEnd(text);
@@ -161,6 +166,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean extendUp(Spannable text, Layout layout) {
         int end = getSelectionEnd(text);
         int line = layout.getLineForOffset(end);
@@ -183,6 +189,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean extendDown(Spannable text, Layout layout) {
         int end = getSelectionEnd(text);
         int line = layout.getLineForOffset(end);
@@ -205,6 +212,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean extendLeft(Spannable text, Layout layout) {
         int end = getSelectionEnd(text);
         int to = layout.getOffsetToLeftOf(end);
@@ -216,6 +224,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean extendRight(Spannable text, Layout layout) {
         int end = getSelectionEnd(text);
         int to = layout.getOffsetToRightOf(end);
@@ -227,6 +236,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean extendToLeftEdge(Spannable text, Layout layout) {
         int where = findEdge(text, layout, -1);
         extendSelection(text, where);
@@ -234,6 +244,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean extendToRightEdge(Spannable text, Layout layout) {
         int where = findEdge(text, layout, 1);
         extendSelection(text, where);
@@ -241,6 +252,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean moveToLeftEdge(Spannable text, Layout layout) {
         int where = findEdge(text, layout, -1);
         setSelection(text, where);
@@ -248,6 +260,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean moveToRightEdge(Spannable text, Layout layout) {
         int where = findEdge(text, layout, 1);
         setSelection(text, where);
@@ -333,7 +346,7 @@ public class Selection {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.180 -0400", hash_original_method = "BDCC342EB9C4EC0E36898772F96B3376", hash_generated_method = "BDCC342EB9C4EC0E36898772F96B3376")
         public START ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -346,7 +359,7 @@ public class Selection {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.180 -0400", hash_original_method = "6839406E8175B705075FBD95CC87C416", hash_generated_method = "6839406E8175B705075FBD95CC87C416")
         public END ()
         {
-            //Synthesized constructor
+            
         }
 
 

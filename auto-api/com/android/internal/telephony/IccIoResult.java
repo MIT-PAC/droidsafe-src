@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class IccIoResult {
@@ -24,10 +24,10 @@ public class IccIoResult {
         this.sw1 = sw1;
         this.sw2 = sw2;
         this.payload = payload;
-        // ---------- Original Method ----------
-        //this.sw1 = sw1;
-        //this.sw2 = sw2;
-        //this.payload = payload;
+        
+        
+        
+        
     }
 
     
@@ -37,20 +37,21 @@ public class IccIoResult {
         addTaint(sw1);
         addTaint(sw2);
         addTaint(hexString.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.949 -0400", hash_original_method = "C2E2D21A49FBAEB09CAD48E279230B17", hash_generated_method = "D2A56E5DFA3402E4A3518259094DC55C")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_136408690 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_136408690 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_136408690 = "IccIoResponse sw1:0x" + Integer.toHexString(sw1) + " sw2:0x"
                 + Integer.toHexString(sw2);
-        varB4EAC82CA7396A68D541C85D26508E83_136408690.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_136408690.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_136408690;
-        // ---------- Original Method ----------
-        //return "IccIoResponse sw1:0x" + Integer.toHexString(sw1) + " sw2:0x"
-                //+ Integer.toHexString(sw2);
+        
+        
+                
     }
 
     
@@ -58,61 +59,62 @@ public class IccIoResult {
     public boolean success() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2146224837 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2146224837;
-        // ---------- Original Method ----------
-        //return sw1 == 0x90 || sw1 == 0x91 || sw1 == 0x9e || sw1 == 0x9f;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.950 -0400", hash_original_method = "6314A49369EA2E2C83A84515E57327FB", hash_generated_method = "60CF3B67E31099E559666997623F4E57")
     public IccException getException() {
-        IccException varB4EAC82CA7396A68D541C85D26508E83_946242827 = null; //Variable for return #1
-        IccException varB4EAC82CA7396A68D541C85D26508E83_2098074679 = null; //Variable for return #2
-        IccException varB4EAC82CA7396A68D541C85D26508E83_1482467305 = null; //Variable for return #3
-        IccException varB4EAC82CA7396A68D541C85D26508E83_1314502772 = null; //Variable for return #4
+        IccException varB4EAC82CA7396A68D541C85D26508E83_946242827 = null; 
+        IccException varB4EAC82CA7396A68D541C85D26508E83_2098074679 = null; 
+        IccException varB4EAC82CA7396A68D541C85D26508E83_1482467305 = null; 
+        IccException varB4EAC82CA7396A68D541C85D26508E83_1314502772 = null; 
         {
             boolean var18DA1CA4961A92F50E39298FDC380586_1308339048 = (success());
             varB4EAC82CA7396A68D541C85D26508E83_946242827 = null;
-        } //End collapsed parenthetic
-        //Begin case 0x94 
+        } 
+        
         {
             varB4EAC82CA7396A68D541C85D26508E83_2098074679 = new IccFileTypeMismatch();
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1482467305 = new IccFileNotFound();
-        } //End block
-        //End case 0x94 
-        //Begin case default 
+        } 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1314502772 = new IccException("sw1:" + sw1 + " sw2:" + sw2);
-        //End case default 
-        IccException varA7E53CE21691AB073D9660D615818899_751909310; //Final return value
+        
+        IccException varA7E53CE21691AB073D9660D615818899_751909310; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_751909310 = varB4EAC82CA7396A68D541C85D26508E83_946242827;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_751909310 = varB4EAC82CA7396A68D541C85D26508E83_2098074679;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_751909310 = varB4EAC82CA7396A68D541C85D26508E83_1482467305;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_751909310 = varB4EAC82CA7396A68D541C85D26508E83_1314502772;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_751909310.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_751909310.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_751909310;
-        // ---------- Original Method ----------
-        //if (success()) return null;
-        //switch (sw1) {
-            //case 0x94:
-                //if (sw2 == 0x08) {
-                    //return new IccFileTypeMismatch();
-                //} else {
-                    //return new IccFileNotFound();
-                //}
-            //default:
-                //return new IccException("sw1:" + sw1 + " sw2:" + sw2);
-        //}
+        
+        
+        
+            
+                
+                    
+                
+                    
+                
+            
+                
+        
     }
 
     

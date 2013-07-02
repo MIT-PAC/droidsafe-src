@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ClipData;
 import android.content.Context;
@@ -358,15 +358,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         mUserPaddingStart = -1;
         mUserPaddingEnd = -1;
         mUserPaddingRelative = false;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mResources = context != null ? context.getResources() : null;
-        //mViewFlags = SOUND_EFFECTS_ENABLED | HAPTIC_FEEDBACK_ENABLED | LAYOUT_DIRECTION_INHERIT;
-        //mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
-        //setOverScrollMode(OVER_SCROLL_IF_CONTENT_SCROLLS);
-        //mUserPaddingStart = -1;
-        //mUserPaddingEnd = -1;
-        //mUserPaddingRelative = false;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -375,7 +375,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         this(context, attrs, 0);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -412,321 +412,321 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             int i = 0;
             {
                 int attr = a.getIndex(i);
-                //Begin case com.android.internal.R.styleable.View_background 
+                
                 background = a.getDrawable(attr);
-                //End case com.android.internal.R.styleable.View_background 
-                //Begin case com.android.internal.R.styleable.View_padding 
+                
+                
                 padding = a.getDimensionPixelSize(attr, -1);
-                //End case com.android.internal.R.styleable.View_padding 
-                //Begin case com.android.internal.R.styleable.View_paddingLeft 
+                
+                
                 leftPadding = a.getDimensionPixelSize(attr, -1);
-                //End case com.android.internal.R.styleable.View_paddingLeft 
-                //Begin case com.android.internal.R.styleable.View_paddingTop 
+                
+                
                 topPadding = a.getDimensionPixelSize(attr, -1);
-                //End case com.android.internal.R.styleable.View_paddingTop 
-                //Begin case com.android.internal.R.styleable.View_paddingRight 
+                
+                
                 rightPadding = a.getDimensionPixelSize(attr, -1);
-                //End case com.android.internal.R.styleable.View_paddingRight 
-                //Begin case com.android.internal.R.styleable.View_paddingBottom 
+                
+                
                 bottomPadding = a.getDimensionPixelSize(attr, -1);
-                //End case com.android.internal.R.styleable.View_paddingBottom 
-                //Begin case com.android.internal.R.styleable.View_paddingStart 
+                
+                
                 startPadding = a.getDimensionPixelSize(attr, -1);
-                //End case com.android.internal.R.styleable.View_paddingStart 
-                //Begin case com.android.internal.R.styleable.View_paddingEnd 
+                
+                
                 endPadding = a.getDimensionPixelSize(attr, -1);
-                //End case com.android.internal.R.styleable.View_paddingEnd 
-                //Begin case com.android.internal.R.styleable.View_scrollX 
+                
+                
                 x = a.getDimensionPixelOffset(attr, 0);
-                //End case com.android.internal.R.styleable.View_scrollX 
-                //Begin case com.android.internal.R.styleable.View_scrollY 
+                
+                
                 y = a.getDimensionPixelOffset(attr, 0);
-                //End case com.android.internal.R.styleable.View_scrollY 
-                //Begin case com.android.internal.R.styleable.View_alpha 
+                
+                
                 setAlpha(a.getFloat(attr, 1f));
-                //End case com.android.internal.R.styleable.View_alpha 
-                //Begin case com.android.internal.R.styleable.View_transformPivotX 
+                
+                
                 setPivotX(a.getDimensionPixelOffset(attr, 0));
-                //End case com.android.internal.R.styleable.View_transformPivotX 
-                //Begin case com.android.internal.R.styleable.View_transformPivotY 
+                
+                
                 setPivotY(a.getDimensionPixelOffset(attr, 0));
-                //End case com.android.internal.R.styleable.View_transformPivotY 
-                //Begin case com.android.internal.R.styleable.View_translationX 
+                
+                
                 tx = a.getDimensionPixelOffset(attr, 0);
-                //End case com.android.internal.R.styleable.View_translationX 
-                //Begin case com.android.internal.R.styleable.View_translationX 
+                
+                
                 transformSet = true;
-                //End case com.android.internal.R.styleable.View_translationX 
-                //Begin case com.android.internal.R.styleable.View_translationY 
+                
+                
                 ty = a.getDimensionPixelOffset(attr, 0);
-                //End case com.android.internal.R.styleable.View_translationY 
-                //Begin case com.android.internal.R.styleable.View_translationY 
+                
+                
                 transformSet = true;
-                //End case com.android.internal.R.styleable.View_translationY 
-                //Begin case com.android.internal.R.styleable.View_rotation 
+                
+                
                 rotation = a.getFloat(attr, 0);
-                //End case com.android.internal.R.styleable.View_rotation 
-                //Begin case com.android.internal.R.styleable.View_rotation 
+                
+                
                 transformSet = true;
-                //End case com.android.internal.R.styleable.View_rotation 
-                //Begin case com.android.internal.R.styleable.View_rotationX 
+                
+                
                 rotationX = a.getFloat(attr, 0);
-                //End case com.android.internal.R.styleable.View_rotationX 
-                //Begin case com.android.internal.R.styleable.View_rotationX 
+                
+                
                 transformSet = true;
-                //End case com.android.internal.R.styleable.View_rotationX 
-                //Begin case com.android.internal.R.styleable.View_rotationY 
+                
+                
                 rotationY = a.getFloat(attr, 0);
-                //End case com.android.internal.R.styleable.View_rotationY 
-                //Begin case com.android.internal.R.styleable.View_rotationY 
+                
+                
                 transformSet = true;
-                //End case com.android.internal.R.styleable.View_rotationY 
-                //Begin case com.android.internal.R.styleable.View_scaleX 
+                
+                
                 sx = a.getFloat(attr, 1f);
-                //End case com.android.internal.R.styleable.View_scaleX 
-                //Begin case com.android.internal.R.styleable.View_scaleX 
+                
+                
                 transformSet = true;
-                //End case com.android.internal.R.styleable.View_scaleX 
-                //Begin case com.android.internal.R.styleable.View_scaleY 
+                
+                
                 sy = a.getFloat(attr, 1f);
-                //End case com.android.internal.R.styleable.View_scaleY 
-                //Begin case com.android.internal.R.styleable.View_scaleY 
+                
+                
                 transformSet = true;
-                //End case com.android.internal.R.styleable.View_scaleY 
-                //Begin case com.android.internal.R.styleable.View_id 
+                
+                
                 mID = a.getResourceId(attr, NO_ID);
-                //End case com.android.internal.R.styleable.View_id 
-                //Begin case com.android.internal.R.styleable.View_tag 
+                
+                
                 mTag = a.getText(attr);
-                //End case com.android.internal.R.styleable.View_tag 
-                //Begin case com.android.internal.R.styleable.View_fitsSystemWindows 
+                
+                
                 {
                     boolean var45591D90FC7AE21A8CB6FE28079E45A9_279772812 = (a.getBoolean(attr, false));
                     {
                         viewFlagValues |= FITS_SYSTEM_WINDOWS;
                         viewFlagMasks |= FITS_SYSTEM_WINDOWS;
-                    } //End block
-                } //End collapsed parenthetic
-                //End case com.android.internal.R.styleable.View_fitsSystemWindows 
-                //Begin case com.android.internal.R.styleable.View_focusable 
+                    } 
+                } 
+                
+                
                 {
                     boolean var45591D90FC7AE21A8CB6FE28079E45A9_274859969 = (a.getBoolean(attr, false));
                     {
                         viewFlagValues |= FOCUSABLE;
                         viewFlagMasks |= FOCUSABLE_MASK;
-                    } //End block
-                } //End collapsed parenthetic
-                //End case com.android.internal.R.styleable.View_focusable 
-                //Begin case com.android.internal.R.styleable.View_focusableInTouchMode 
+                    } 
+                } 
+                
+                
                 {
                     boolean var45591D90FC7AE21A8CB6FE28079E45A9_1764695657 = (a.getBoolean(attr, false));
                     {
                         viewFlagValues |= FOCUSABLE_IN_TOUCH_MODE | FOCUSABLE;
                         viewFlagMasks |= FOCUSABLE_IN_TOUCH_MODE | FOCUSABLE_MASK;
-                    } //End block
-                } //End collapsed parenthetic
-                //End case com.android.internal.R.styleable.View_focusableInTouchMode 
-                //Begin case com.android.internal.R.styleable.View_clickable 
+                    } 
+                } 
+                
+                
                 {
                     boolean var45591D90FC7AE21A8CB6FE28079E45A9_1308169927 = (a.getBoolean(attr, false));
                     {
                         viewFlagValues |= CLICKABLE;
                         viewFlagMasks |= CLICKABLE;
-                    } //End block
-                } //End collapsed parenthetic
-                //End case com.android.internal.R.styleable.View_clickable 
-                //Begin case com.android.internal.R.styleable.View_longClickable 
+                    } 
+                } 
+                
+                
                 {
                     boolean var45591D90FC7AE21A8CB6FE28079E45A9_846595932 = (a.getBoolean(attr, false));
                     {
                         viewFlagValues |= LONG_CLICKABLE;
                         viewFlagMasks |= LONG_CLICKABLE;
-                    } //End block
-                } //End collapsed parenthetic
-                //End case com.android.internal.R.styleable.View_longClickable 
-                //Begin case com.android.internal.R.styleable.View_saveEnabled 
+                    } 
+                } 
+                
+                
                 {
                     boolean varE83A5B5DD6F1EFE4CE2BCD602A46684B_344607049 = (!a.getBoolean(attr, true));
                     {
                         viewFlagValues |= SAVE_DISABLED;
                         viewFlagMasks |= SAVE_DISABLED_MASK;
-                    } //End block
-                } //End collapsed parenthetic
-                //End case com.android.internal.R.styleable.View_saveEnabled 
-                //Begin case com.android.internal.R.styleable.View_duplicateParentState 
+                    } 
+                } 
+                
+                
                 {
                     boolean var45591D90FC7AE21A8CB6FE28079E45A9_1789097241 = (a.getBoolean(attr, false));
                     {
                         viewFlagValues |= DUPLICATE_PARENT_STATE;
                         viewFlagMasks |= DUPLICATE_PARENT_STATE;
-                    } //End block
-                } //End collapsed parenthetic
-                //End case com.android.internal.R.styleable.View_duplicateParentState 
-                //Begin case com.android.internal.R.styleable.View_visibility 
+                    } 
+                } 
+                
+                
                 final int visibility = a.getInt(attr, 0);
-                //End case com.android.internal.R.styleable.View_visibility 
-                //Begin case com.android.internal.R.styleable.View_visibility 
+                
+                
                 {
                     viewFlagValues |= VISIBILITY_FLAGS[visibility];
                     viewFlagMasks |= VISIBILITY_MASK;
-                } //End block
-                //End case com.android.internal.R.styleable.View_visibility 
-                //Begin case com.android.internal.R.styleable.View_layoutDirection 
+                } 
+                
+                
                 viewFlagValues &= ~LAYOUT_DIRECTION_MASK;
-                //End case com.android.internal.R.styleable.View_layoutDirection 
-                //Begin case com.android.internal.R.styleable.View_layoutDirection 
+                
+                
                 final int layoutDirection = a.getInt(attr, -1);
-                //End case com.android.internal.R.styleable.View_layoutDirection 
-                //Begin case com.android.internal.R.styleable.View_layoutDirection 
+                
+                
                 {
                     viewFlagValues |= LAYOUT_DIRECTION_FLAGS[layoutDirection];
-                } //End block
+                } 
                 {
                     viewFlagValues |= LAYOUT_DIRECTION_DEFAULT;
-                } //End block
-                //End case com.android.internal.R.styleable.View_layoutDirection 
-                //Begin case com.android.internal.R.styleable.View_layoutDirection 
+                } 
+                
+                
                 viewFlagMasks |= LAYOUT_DIRECTION_MASK;
-                //End case com.android.internal.R.styleable.View_layoutDirection 
-                //Begin case com.android.internal.R.styleable.View_drawingCacheQuality 
+                
+                
                 final int cacheQuality = a.getInt(attr, 0);
-                //End case com.android.internal.R.styleable.View_drawingCacheQuality 
-                //Begin case com.android.internal.R.styleable.View_drawingCacheQuality 
+                
+                
                 {
                     viewFlagValues |= DRAWING_CACHE_QUALITY_FLAGS[cacheQuality];
                     viewFlagMasks |= DRAWING_CACHE_QUALITY_MASK;
-                } //End block
-                //End case com.android.internal.R.styleable.View_drawingCacheQuality 
-                //Begin case com.android.internal.R.styleable.View_contentDescription 
+                } 
+                
+                
                 mContentDescription = a.getString(attr);
-                //End case com.android.internal.R.styleable.View_contentDescription 
-                //Begin case com.android.internal.R.styleable.View_soundEffectsEnabled 
+                
+                
                 {
                     boolean varE83A5B5DD6F1EFE4CE2BCD602A46684B_237934094 = (!a.getBoolean(attr, true));
                     {
                         viewFlagValues &= ~SOUND_EFFECTS_ENABLED;
                         viewFlagMasks |= SOUND_EFFECTS_ENABLED;
-                    } //End block
-                } //End collapsed parenthetic
-                //End case com.android.internal.R.styleable.View_soundEffectsEnabled 
-                //Begin case com.android.internal.R.styleable.View_hapticFeedbackEnabled 
+                    } 
+                } 
+                
+                
                 {
                     boolean varE83A5B5DD6F1EFE4CE2BCD602A46684B_970155553 = (!a.getBoolean(attr, true));
                     {
                         viewFlagValues &= ~HAPTIC_FEEDBACK_ENABLED;
                         viewFlagMasks |= HAPTIC_FEEDBACK_ENABLED;
-                    } //End block
-                } //End collapsed parenthetic
-                //End case com.android.internal.R.styleable.View_hapticFeedbackEnabled 
-                //Begin case R.styleable.View_scrollbars 
+                    } 
+                } 
+                
+                
                 final int scrollbars = a.getInt(attr, SCROLLBARS_NONE);
-                //End case R.styleable.View_scrollbars 
-                //Begin case R.styleable.View_scrollbars 
+                
+                
                 {
                     viewFlagValues |= scrollbars;
                     viewFlagMasks |= SCROLLBARS_MASK;
                     initializeScrollbars(a);
-                } //End block
-                //End case R.styleable.View_scrollbars 
-                //Begin case R.styleable.View_fadingEdge 
+                } 
+                
+                
                 {
                     boolean varC070C09F5C0916551B09381C0852B394_58307377 = (context.getApplicationInfo().targetSdkVersion >= ICE_CREAM_SANDWICH);
-                } //End collapsed parenthetic
-                //End case R.styleable.View_fadingEdge 
-                //Begin case R.styleable.View_requiresFadingEdge 
+                } 
+                
+                
                 final int fadingEdge = a.getInt(attr, FADING_EDGE_NONE);
-                //End case R.styleable.View_requiresFadingEdge 
-                //Begin case R.styleable.View_requiresFadingEdge 
+                
+                
                 {
                     viewFlagValues |= fadingEdge;
                     viewFlagMasks |= FADING_EDGE_MASK;
                     initializeFadingEdge(a);
-                } //End block
-                //End case R.styleable.View_requiresFadingEdge 
-                //Begin case R.styleable.View_scrollbarStyle 
+                } 
+                
+                
                 scrollbarStyle = a.getInt(attr, SCROLLBARS_INSIDE_OVERLAY);
-                //End case R.styleable.View_scrollbarStyle 
-                //Begin case R.styleable.View_scrollbarStyle 
+                
+                
                 {
                     viewFlagValues |= scrollbarStyle & SCROLLBARS_STYLE_MASK;
                     viewFlagMasks |= SCROLLBARS_STYLE_MASK;
-                } //End block
-                //End case R.styleable.View_scrollbarStyle 
-                //Begin case R.styleable.View_isScrollContainer 
+                } 
+                
+                
                 setScrollContainer = true;
-                //End case R.styleable.View_isScrollContainer 
-                //Begin case R.styleable.View_isScrollContainer 
+                
+                
                 {
                     boolean var45591D90FC7AE21A8CB6FE28079E45A9_961967928 = (a.getBoolean(attr, false));
                     {
                         setScrollContainer(true);
-                    } //End block
-                } //End collapsed parenthetic
-                //End case R.styleable.View_isScrollContainer 
-                //Begin case com.android.internal.R.styleable.View_keepScreenOn 
+                    } 
+                } 
+                
+                
                 {
                     boolean var45591D90FC7AE21A8CB6FE28079E45A9_542865133 = (a.getBoolean(attr, false));
                     {
                         viewFlagValues |= KEEP_SCREEN_ON;
                         viewFlagMasks |= KEEP_SCREEN_ON;
-                    } //End block
-                } //End collapsed parenthetic
-                //End case com.android.internal.R.styleable.View_keepScreenOn 
-                //Begin case R.styleable.View_filterTouchesWhenObscured 
+                    } 
+                } 
+                
+                
                 {
                     boolean var45591D90FC7AE21A8CB6FE28079E45A9_1113795497 = (a.getBoolean(attr, false));
                     {
                         viewFlagValues |= FILTER_TOUCHES_WHEN_OBSCURED;
                         viewFlagMasks |= FILTER_TOUCHES_WHEN_OBSCURED;
-                    } //End block
-                } //End collapsed parenthetic
-                //End case R.styleable.View_filterTouchesWhenObscured 
-                //Begin case R.styleable.View_nextFocusLeft 
+                    } 
+                } 
+                
+                
                 mNextFocusLeftId = a.getResourceId(attr, View.NO_ID);
-                //End case R.styleable.View_nextFocusLeft 
-                //Begin case R.styleable.View_nextFocusRight 
+                
+                
                 mNextFocusRightId = a.getResourceId(attr, View.NO_ID);
-                //End case R.styleable.View_nextFocusRight 
-                //Begin case R.styleable.View_nextFocusUp 
+                
+                
                 mNextFocusUpId = a.getResourceId(attr, View.NO_ID);
-                //End case R.styleable.View_nextFocusUp 
-                //Begin case R.styleable.View_nextFocusDown 
+                
+                
                 mNextFocusDownId = a.getResourceId(attr, View.NO_ID);
-                //End case R.styleable.View_nextFocusDown 
-                //Begin case R.styleable.View_nextFocusForward 
+                
+                
                 mNextFocusForwardId = a.getResourceId(attr, View.NO_ID);
-                //End case R.styleable.View_nextFocusForward 
-                //Begin case R.styleable.View_minWidth 
+                
+                
                 mMinWidth = a.getDimensionPixelSize(attr, 0);
-                //End case R.styleable.View_minWidth 
-                //Begin case R.styleable.View_minHeight 
+                
+                
                 mMinHeight = a.getDimensionPixelSize(attr, 0);
-                //End case R.styleable.View_minHeight 
-                //Begin case R.styleable.View_onClick 
+                
+                
                 {
                     boolean var493A86E51AC82FCCEFBD5D9BA92432B0_2030471368 = (context.isRestricted());
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("The android:onClick attribute cannot "
                                 + "be used within a restricted context");
-                    } //End block
-                } //End collapsed parenthetic
-                //End case R.styleable.View_onClick 
-                //Begin case R.styleable.View_onClick 
+                    } 
+                } 
+                
+                
                 final String handlerName = a.getString(attr);
-                //End case R.styleable.View_onClick 
-                //Begin case R.styleable.View_onClick 
+                
+                
                 {
                     setOnClickListener(new OnClickListener() {                        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.437 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "DD76E21366B40D00A372B0BC0CE30131")
                         private Method mHandler;
                         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.438 -0400", hash_original_method = "E9EFDD10534D1BAF541333BA74E853ED", hash_generated_method = "FBC50A1D0ADCA4625792E0F0AFC6C78E")
                         public void onClick(View v) {
-                            //DSFIXME:  CODE0009: Possible callback target function detected
+                            
                             {
                                 try 
                                 {
                                     mHandler = getContext().getClass().getMethod(handlerName,
                                                 View.class);
-                                } //End block
+                                } 
                                 catch (NoSuchMethodException e)
                                 {
                                     int id = getId();
@@ -739,48 +739,48 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                                                 handlerName + "(View) in the activity "
                                                 + getContext().getClass() + " for onClick handler"
                                                 + " on view " + View.this.getClass() + idText, e);
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             try 
                             {
                                 mHandler.invoke(getContext(), View.this);
-                            } //End block
+                            } 
                             catch (IllegalAccessException e)
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Could not execute non "
                                             + "public method of the activity", e);
-                            } //End block
+                            } 
                             catch (InvocationTargetException e)
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Could not execute "
                                             + "method of the activity", e);
-                            } //End block
+                            } 
                             addTaint(v.getTaint());
-                            // ---------- Original Method ----------
-                            // Original Method Too Long, Refer to Original Implementation
+                            
+                            
                         }
 });
-                } //End block
-                //End case R.styleable.View_onClick 
-                //Begin case R.styleable.View_overScrollMode 
+                } 
+                
+                
                 overScrollMode = a.getInt(attr, OVER_SCROLL_IF_CONTENT_SCROLLS);
-                //End case R.styleable.View_overScrollMode 
-                //Begin case R.styleable.View_verticalScrollbarPosition 
+                
+                
                 mVerticalScrollbarPosition = a.getInt(attr, SCROLLBAR_POSITION_DEFAULT);
-                //End case R.styleable.View_verticalScrollbarPosition 
-                //Begin case R.styleable.View_layerType 
+                
+                
                 setLayerType(a.getInt(attr, LAYER_TYPE_NONE), null);
-                //End case R.styleable.View_layerType 
-                //Begin case R.styleable.View_textDirection 
+                
+                
                 mTextDirection = a.getInt(attr, DEFAULT_TEXT_DIRECTION);
-                //End case R.styleable.View_textDirection 
-            } //End block
-        } //End collapsed parenthetic
+                
+            } 
+        } 
         a.recycle();
         setOverScrollMode(overScrollMode);
         {
             setBackgroundDrawable(background);
-        } //End block
+        } 
         mUserPaddingRelative = (startPadding >= 0 || endPadding >= 0);
         mUserPaddingStart = startPadding;
         mUserPaddingEnd = endPadding;
@@ -789,20 +789,20 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             topPadding = padding;
             rightPadding = padding;
             bottomPadding = padding;
-        } //End block
+        } 
         setPadding(leftPadding >= 0 ? leftPadding : mPaddingLeft,
                 topPadding >= 0 ? topPadding : mPaddingTop,
                 rightPadding >= 0 ? rightPadding : mPaddingRight,
                 bottomPadding >= 0 ? bottomPadding : mPaddingBottom);
         {
             setFlags(viewFlagValues, viewFlagMasks);
-        } //End block
+        } 
         {
             recomputePadding();
-        } //End block
+        } 
         {
             scrollTo(x, y);
-        } //End block
+        } 
         {
             setTranslationX(tx);
             setTranslationY(ty);
@@ -811,93 +811,98 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             setRotationY(rotationY);
             setScaleX(sx);
             setScaleY(sy);
-        } //End block
+        } 
         {
             setScrollContainer(true);
-        } //End block
+        } 
         computeOpaqueFlags();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.440 -0400", hash_original_method = "5C3A364FECC6F7D07E7A546170C25E98", hash_generated_method = "32A2A5FFE588BE14FBF7F5D017C5A252")
       View() {
         mResources = null;
-        // ---------- Original Method ----------
-        //mResources = null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.440 -0400", hash_original_method = "F39CEBF0E5E47A818635618D8F975382", hash_generated_method = "D576B5DC26D7FBDAD21E367A9288C3E9")
     protected void initializeFadingEdge(TypedArray a) {
         initScrollCache();
         mScrollCache.fadingEdgeLength = a.getDimensionPixelSize(
                 R.styleable.View_fadingEdgeLength,
                 ViewConfiguration.get(mContext).getScaledFadingEdgeLength());
-        // ---------- Original Method ----------
-        //initScrollCache();
-        //mScrollCache.fadingEdgeLength = a.getDimensionPixelSize(
-                //R.styleable.View_fadingEdgeLength,
-                //ViewConfiguration.get(mContext).getScaledFadingEdgeLength());
+        
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.440 -0400", hash_original_method = "48BE981E65F7E857DD7A9FF8EF5006FF", hash_generated_method = "21BF2BCFD1179613956139A58184DF98")
     public int getVerticalFadingEdgeLength() {
         {
             boolean var50B16E908CD6883BB4A53F1CCAB8FFC0_612575903 = (isVerticalFadingEdgeEnabled());
             {
                 ScrollabilityCache cache = mScrollCache;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_360691162 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_360691162;
-        // ---------- Original Method ----------
-        //if (isVerticalFadingEdgeEnabled()) {
-            //ScrollabilityCache cache = mScrollCache;
-            //if (cache != null) {
-                //return cache.fadingEdgeLength;
-            //}
-        //}
-        //return 0;
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.440 -0400", hash_original_method = "F316E2F78DFC9160954B8650C58C0898", hash_generated_method = "09B2620993C628341922180F596184D1")
     public void setFadingEdgeLength(int length) {
         initScrollCache();
         mScrollCache.fadingEdgeLength = length;
-        // ---------- Original Method ----------
-        //initScrollCache();
-        //mScrollCache.fadingEdgeLength = length;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.441 -0400", hash_original_method = "A8651530AFA26393AFB5F6425B22CDCD", hash_generated_method = "434DAABA8F408AACDE45D603C8FED9AD")
     public int getHorizontalFadingEdgeLength() {
         {
             boolean var5D77CA7D5D90FF39CB3E108D33083F4D_98553482 = (isHorizontalFadingEdgeEnabled());
             {
                 ScrollabilityCache cache = mScrollCache;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_201068757 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_201068757;
-        // ---------- Original Method ----------
-        //if (isHorizontalFadingEdgeEnabled()) {
-            //ScrollabilityCache cache = mScrollCache;
-            //if (cache != null) {
-                //return cache.fadingEdgeLength;
-            //}
-        //}
-        //return 0;
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.441 -0400", hash_original_method = "9E8BEE4EA7290E77910774FBF44231C2", hash_generated_method = "454FB4770305F85829A74061DBCDEB04")
     public int getVerticalScrollbarWidth() {
         ScrollabilityCache cache = mScrollCache;
@@ -907,28 +912,29 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 int size = scrollBar.getSize(true);
                 {
                     size = cache.scrollBarSize;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1908784457 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1908784457;
-        // ---------- Original Method ----------
-        //ScrollabilityCache cache = mScrollCache;
-        //if (cache != null) {
-            //ScrollBarDrawable scrollBar = cache.scrollBar;
-            //if (scrollBar != null) {
-                //int size = scrollBar.getSize(true);
-                //if (size <= 0) {
-                    //size = cache.scrollBarSize;
-                //}
-                //return size;
-            //}
-            //return 0;
-        //}
-        //return 0;
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.441 -0400", hash_original_method = "6872C13C59C68BCC5CF5DE777A5D5AA0", hash_generated_method = "3098D645566B60B7B6488F883DE55E0D")
     protected int getHorizontalScrollbarHeight() {
         ScrollabilityCache cache = mScrollCache;
@@ -938,39 +944,40 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 int size = scrollBar.getSize(false);
                 {
                     size = cache.scrollBarSize;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_682013115 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_682013115;
-        // ---------- Original Method ----------
-        //ScrollabilityCache cache = mScrollCache;
-        //if (cache != null) {
-            //ScrollBarDrawable scrollBar = cache.scrollBar;
-            //if (scrollBar != null) {
-                //int size = scrollBar.getSize(false);
-                //if (size <= 0) {
-                    //size = cache.scrollBarSize;
-                //}
-                //return size;
-            //}
-            //return 0;
-        //}
-        //return 0;
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.442 -0400", hash_original_method = "92AEC3F31170B251C0CC405CA4D3250A", hash_generated_method = "C2CB8B5B06C1BDF8AEEDB05E4C833F2D")
     protected void initializeScrollbars(TypedArray a) {
         initScrollCache();
         final ScrollabilityCache scrollabilityCache = mScrollCache;
         {
             scrollabilityCache.scrollBar = new ScrollBarDrawable();
-        } //End block
+        } 
         final boolean fadeScrollbars = a.getBoolean(R.styleable.View_fadeScrollbars, true);
         {
             scrollabilityCache.state = ScrollabilityCache.ON;
-        } //End block
+        } 
         scrollabilityCache.fadeScrollBars = fadeScrollbars;
         scrollabilityCache.scrollBarFadeDuration = a.getInt(
                 R.styleable.View_scrollbarFadeDuration, ViewConfiguration
@@ -986,55 +993,57 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         Drawable thumb = a.getDrawable(R.styleable.View_scrollbarThumbHorizontal);
         {
             scrollabilityCache.scrollBar.setHorizontalThumbDrawable(thumb);
-        } //End block
+        } 
         boolean alwaysDraw = a.getBoolean(R.styleable.View_scrollbarAlwaysDrawHorizontalTrack,
                 false);
         {
             scrollabilityCache.scrollBar.setAlwaysDrawHorizontalTrack(true);
-        } //End block
+        } 
         track = a.getDrawable(R.styleable.View_scrollbarTrackVertical);
         scrollabilityCache.scrollBar.setVerticalTrackDrawable(track);
         thumb = a.getDrawable(R.styleable.View_scrollbarThumbVertical);
         {
             scrollabilityCache.scrollBar.setVerticalThumbDrawable(thumb);
-        } //End block
+        } 
         alwaysDraw = a.getBoolean(R.styleable.View_scrollbarAlwaysDrawVerticalTrack,
                 false);
         {
             scrollabilityCache.scrollBar.setAlwaysDrawVerticalTrack(true);
-        } //End block
+        } 
         resolvePadding();
         addTaint(a.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.443 -0400", hash_original_method = "E049E8AF463EFBD39046D8F102EAF6B1", hash_generated_method = "006228A8170D06675B7944AFD610FE31")
     private void initScrollCache() {
         {
             mScrollCache = new ScrollabilityCache(ViewConfiguration.get(mContext), this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mScrollCache == null) {
-            //mScrollCache = new ScrollabilityCache(ViewConfiguration.get(mContext), this);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.443 -0400", hash_original_method = "6A347D034BA88A40E4761231BE70B8AA", hash_generated_method = "CBC9F0E4CC2229FC5210E4575370C152")
     public void setVerticalScrollbarPosition(int position) {
         {
             mVerticalScrollbarPosition = position;
             computeOpaqueFlags();
             resolvePadding();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mVerticalScrollbarPosition != position) {
-            //mVerticalScrollbarPosition = position;
-            //computeOpaqueFlags();
-            //resolvePadding();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -1042,148 +1051,154 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getVerticalScrollbarPosition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2058949693 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2058949693;
-        // ---------- Original Method ----------
-        //return mVerticalScrollbarPosition;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.444 -0400", hash_original_method = "3F6307E0FF2B24CF42D639D72702E7A3", hash_generated_method = "4CCBE0467AB7CCA0B0E7408BF5552FC9")
      ListenerInfo getListenerInfo() {
-        ListenerInfo varB4EAC82CA7396A68D541C85D26508E83_1125890995 = null; //Variable for return #1
-        ListenerInfo varB4EAC82CA7396A68D541C85D26508E83_1766434432 = null; //Variable for return #2
+        ListenerInfo varB4EAC82CA7396A68D541C85D26508E83_1125890995 = null; 
+        ListenerInfo varB4EAC82CA7396A68D541C85D26508E83_1766434432 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1125890995 = mListenerInfo;
-        } //End block
+        } 
         mListenerInfo = new ListenerInfo();
         varB4EAC82CA7396A68D541C85D26508E83_1766434432 = mListenerInfo;
-        ListenerInfo varA7E53CE21691AB073D9660D615818899_1778262044; //Final return value
+        ListenerInfo varA7E53CE21691AB073D9660D615818899_1778262044; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1778262044 = varB4EAC82CA7396A68D541C85D26508E83_1125890995;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1778262044 = varB4EAC82CA7396A68D541C85D26508E83_1766434432;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1778262044.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1778262044.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1778262044;
-        // ---------- Original Method ----------
-        //if (mListenerInfo != null) {
-            //return mListenerInfo;
-        //}
-        //mListenerInfo = new ListenerInfo();
-        //return mListenerInfo;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.444 -0400", hash_original_method = "D8AB5E19AA18F69BACA6EC368D2591FE", hash_generated_method = "B562B80D34F4061A6A11FD4C9AB8BEF1")
     public void setOnFocusChangeListener(OnFocusChangeListener l) {
         getListenerInfo().mOnFocusChangeListener = l;
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //getListenerInfo().mOnFocusChangeListener = l;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.445 -0400", hash_original_method = "E2DB3817E7DB5D233E4A7D6EADE958A3", hash_generated_method = "E526A0C55FF3EE8CA2AEB14A6ED5BE8C")
     public void addOnLayoutChangeListener(OnLayoutChangeListener listener) {
         ListenerInfo li = getListenerInfo();
         {
             li.mOnLayoutChangeListeners = new ArrayList<OnLayoutChangeListener>();
-        } //End block
+        } 
         {
             boolean var5BC5FBAFE932C29989D14499066114E0_2041538616 = (!li.mOnLayoutChangeListeners.contains(listener));
             {
                 li.mOnLayoutChangeListeners.add(listener);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //ListenerInfo li = getListenerInfo();
-        //if (li.mOnLayoutChangeListeners == null) {
-            //li.mOnLayoutChangeListeners = new ArrayList<OnLayoutChangeListener>();
-        //}
-        //if (!li.mOnLayoutChangeListeners.contains(listener)) {
-            //li.mOnLayoutChangeListeners.add(listener);
-        //}
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.445 -0400", hash_original_method = "98A56C49B0A9E0F5D269641F74288A13", hash_generated_method = "9624010A065730F99107E26669EE4AF2")
     public void removeOnLayoutChangeListener(OnLayoutChangeListener listener) {
         ListenerInfo li = mListenerInfo;
         li.mOnLayoutChangeListeners.remove(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //ListenerInfo li = mListenerInfo;
-        //if (li == null || li.mOnLayoutChangeListeners == null) {
-            //return;
-        //}
-        //li.mOnLayoutChangeListeners.remove(listener);
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.446 -0400", hash_original_method = "BCC986125DE454FD64FA8CF6FF7B3375", hash_generated_method = "81186FA28122BCF0147951A5ED9CE99E")
     public void addOnAttachStateChangeListener(OnAttachStateChangeListener listener) {
         ListenerInfo li = getListenerInfo();
         {
             li.mOnAttachStateChangeListeners
                     = new CopyOnWriteArrayList<OnAttachStateChangeListener>();
-        } //End block
+        } 
         li.mOnAttachStateChangeListeners.add(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //ListenerInfo li = getListenerInfo();
-        //if (li.mOnAttachStateChangeListeners == null) {
-            //li.mOnAttachStateChangeListeners
-                    //= new CopyOnWriteArrayList<OnAttachStateChangeListener>();
-        //}
-        //li.mOnAttachStateChangeListeners.add(listener);
+        
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.448 -0400", hash_original_method = "BB59F05E95A495FA9A30543444FC5E76", hash_generated_method = "C68DCDF4677E30AB7E74ECEC5CD9A7E7")
     public void removeOnAttachStateChangeListener(OnAttachStateChangeListener listener) {
         ListenerInfo li = mListenerInfo;
         li.mOnAttachStateChangeListeners.remove(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //ListenerInfo li = mListenerInfo;
-        //if (li == null || li.mOnAttachStateChangeListeners == null) {
-            //return;
-        //}
-        //li.mOnAttachStateChangeListeners.remove(listener);
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.449 -0400", hash_original_method = "A3D291AC9D619397F7033ECE59D11B86", hash_generated_method = "D5E949F28B882FCA3C661F26CB317764")
     public OnFocusChangeListener getOnFocusChangeListener() {
-        OnFocusChangeListener varB4EAC82CA7396A68D541C85D26508E83_1112207619 = null; //Variable for return #1
+        OnFocusChangeListener varB4EAC82CA7396A68D541C85D26508E83_1112207619 = null; 
         ListenerInfo li = mListenerInfo;
         varB4EAC82CA7396A68D541C85D26508E83_1112207619 = li != null ? li.mOnFocusChangeListener : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1112207619.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1112207619.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1112207619;
-        // ---------- Original Method ----------
-        //ListenerInfo li = mListenerInfo;
-        //return li != null ? li.mOnFocusChangeListener : null;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.449 -0400", hash_original_method = "45F4C058CBC73D55564FBEB6E17C2099", hash_generated_method = "391EC80CF055DD320791878CE461B6A4")
     public void setOnClickListener(OnClickListener l) {
         {
             boolean var04EA38E4DA3FCC73953331C5213AFF9F_2040204452 = (!isClickable());
             {
                 setClickable(true);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         getListenerInfo().mOnClickListener = l;
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //if (!isClickable()) {
-            //setClickable(true);
-        //}
-        //getListenerInfo().mOnClickListener = l;
+        
+        
+            
+        
+        
     }
 
     
@@ -1192,48 +1207,51 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         ListenerInfo li = mListenerInfo;
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1520754959 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1520754959;
-        // ---------- Original Method ----------
-        //ListenerInfo li = mListenerInfo;
-        //return (li != null && li.mOnClickListener != null);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.450 -0400", hash_original_method = "C88CD920669EF9D2067A739196536F5A", hash_generated_method = "B5256616E36C19DDC1C5E3FD06DEC054")
     public void setOnLongClickListener(OnLongClickListener l) {
         {
             boolean var4E9822764F29F607F332912995A375BC_1521695652 = (!isLongClickable());
             {
                 setLongClickable(true);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         getListenerInfo().mOnLongClickListener = l;
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //if (!isLongClickable()) {
-            //setLongClickable(true);
-        //}
-        //getListenerInfo().mOnLongClickListener = l;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.451 -0400", hash_original_method = "3B1D28314D3140C1C25951340EB50400", hash_generated_method = "5D700876A1AC01405A0A92B0B10F8469")
     public void setOnCreateContextMenuListener(OnCreateContextMenuListener l) {
         {
             boolean var4E9822764F29F607F332912995A375BC_1409290655 = (!isLongClickable());
             {
                 setLongClickable(true);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         getListenerInfo().mOnCreateContextMenuListener = l;
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //if (!isLongClickable()) {
-            //setLongClickable(true);
-        //}
-        //getListenerInfo().mOnCreateContextMenuListener = l;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.451 -0400", hash_original_method = "F0CE5BDD9B8548BAC9D7A1A1FC9F10B8", hash_generated_method = "A77D500413CED8647BE0B6614FC9F64E")
     public boolean performClick() {
         sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_CLICKED);
@@ -1241,39 +1259,41 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             playSoundEffect(SoundEffectConstants.CLICK);
             li.mOnClickListener.onClick(this);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_707279671 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_707279671;
-        // ---------- Original Method ----------
-        //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_CLICKED);
-        //ListenerInfo li = mListenerInfo;
-        //if (li != null && li.mOnClickListener != null) {
-            //playSoundEffect(SoundEffectConstants.CLICK);
-            //li.mOnClickListener.onClick(this);
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.451 -0400", hash_original_method = "102D936797B9C1FC40617DF92F54CFE2", hash_generated_method = "C54265E7AE52B01C9139F02A4825354C")
     public boolean callOnClick() {
         ListenerInfo li = mListenerInfo;
         {
             li.mOnClickListener.onClick(this);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_326011002 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_326011002;
-        // ---------- Original Method ----------
-        //ListenerInfo li = mListenerInfo;
-        //if (li != null && li.mOnClickListener != null) {
-            //li.mOnClickListener.onClick(this);
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.452 -0400", hash_original_method = "00035430EA6437DC8BB5C07835F45B65", hash_generated_method = "781FD84A6A6DE2921FBA6D83FF438E8D")
     public boolean performLongClick() {
         sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_LONG_CLICKED);
@@ -1281,32 +1301,33 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         ListenerInfo li = mListenerInfo;
         {
             handled = li.mOnLongClickListener.onLongClick(View.this);
-        } //End block
+        } 
         {
             handled = showContextMenu();
-        } //End block
+        } 
         {
             performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1013744090 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1013744090;
-        // ---------- Original Method ----------
-        //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_LONG_CLICKED);
-        //boolean handled = false;
-        //ListenerInfo li = mListenerInfo;
-        //if (li != null && li.mOnLongClickListener != null) {
-            //handled = li.mOnLongClickListener.onLongClick(View.this);
-        //}
-        //if (!handled) {
-            //handled = showContextMenu();
-        //}
-        //if (handled) {
-            //performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-        //}
-        //return handled;
+        
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.452 -0400", hash_original_method = "0AFC4304DA44E934FA35FDC29342C80F", hash_generated_method = "C8C73268E6635B620B7378F4B7D50F4A")
     protected boolean performButtonActionOnTouchDown(MotionEvent event) {
         {
@@ -1314,32 +1335,34 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 {
                     boolean var1A9C8D31FBEACF9594778DB5C5D1B4C1_244366810 = (showContextMenu(event.getX(), event.getY(), event.getMetaState()));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_718432389 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_718432389;
-        // ---------- Original Method ----------
-        //if ((event.getButtonState() & MotionEvent.BUTTON_SECONDARY) != 0) {
-            //if (showContextMenu(event.getX(), event.getY(), event.getMetaState())) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.453 -0400", hash_original_method = "3A1C6F51C14FB3CA1856280BB08BDD78", hash_generated_method = "808F3BDAB51EBC31A4094E5A8D9946C1")
     public boolean showContextMenu() {
         boolean var57558D56D4CFDCF7F086DB96E3562251_1483057156 = (getParent().showContextMenuForChild(this));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1460318998 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1460318998;
-        // ---------- Original Method ----------
-        //return getParent().showContextMenuForChild(this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.453 -0400", hash_original_method = "B2C2D020E619A9A69ACCD76F29CBF0A8", hash_generated_method = "138341150B5C1247783C6B7EF86E3426")
     public boolean showContextMenu(float x, float y, int metaState) {
         boolean varA4958949E9E0853BF05BBEE347C0FF81_1373846361 = (showContextMenu());
@@ -1348,65 +1371,70 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(metaState);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1038521872 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1038521872;
-        // ---------- Original Method ----------
-        //return showContextMenu();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.454 -0400", hash_original_method = "554809A43858BFBD98E9D476D5975BC9", hash_generated_method = "6BA8F209897222D3C2149F6D080E46FD")
     public ActionMode startActionMode(ActionMode.Callback callback) {
-        ActionMode varB4EAC82CA7396A68D541C85D26508E83_1351465819 = null; //Variable for return #1
+        ActionMode varB4EAC82CA7396A68D541C85D26508E83_1351465819 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1351465819 = getParent().startActionModeForChild(this, callback);
         addTaint(callback.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1351465819.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1351465819.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1351465819;
-        // ---------- Original Method ----------
-        //return getParent().startActionModeForChild(this, callback);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.454 -0400", hash_original_method = "31C7524DA5B5B98F54BA6C8BE0DEBF7E", hash_generated_method = "294CB2950201588ED4A5114BA97E3763")
     public void setOnKeyListener(OnKeyListener l) {
         getListenerInfo().mOnKeyListener = l;
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //getListenerInfo().mOnKeyListener = l;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.454 -0400", hash_original_method = "D8E89DFA5C4F927FE4D243F514232285", hash_generated_method = "41A94930ECBAC1A7614AFF7CE35AA6E6")
     public void setOnTouchListener(OnTouchListener l) {
         getListenerInfo().mOnTouchListener = l;
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //getListenerInfo().mOnTouchListener = l;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.454 -0400", hash_original_method = "A6ED4A9DC8C6B322504EFE7525CB31A1", hash_generated_method = "CB031BE34EEF52F9B8F48225C8DBA900")
     public void setOnGenericMotionListener(OnGenericMotionListener l) {
         getListenerInfo().mOnGenericMotionListener = l;
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //getListenerInfo().mOnGenericMotionListener = l;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.455 -0400", hash_original_method = "A231A17C6E4AE608F5CD4B1132C585A7", hash_generated_method = "5D22CC0CB48D300F64F3712B52B69F0F")
     public void setOnHoverListener(OnHoverListener l) {
         getListenerInfo().mOnHoverListener = l;
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //getListenerInfo().mOnHoverListener = l;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.455 -0400", hash_original_method = "8FD55843B8D7F3FEDE7B7D516A1E3E35", hash_generated_method = "A9968561BDC0011E33B09237CF6CFF77")
     public void setOnDragListener(OnDragListener l) {
         getListenerInfo().mOnDragListener = l;
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //getListenerInfo().mOnDragListener = l;
+        
+        
     }
 
     
@@ -1414,43 +1442,45 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
      void handleFocusGainInternal(int direction, Rect previouslyFocusedRect) {
         {
             System.out.println(this + " requestFocus()");
-        } //End block
+        } 
         {
             mPrivateFlags |= FOCUSED;
             {
                 mParent.requestChildFocus(this, this);
-            } //End block
+            } 
             onFocusChanged(true, direction, previouslyFocusedRect);
             refreshDrawableState();
-        } //End block
+        } 
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //System.out.println(this + " requestFocus()");
-        //}
-        //if ((mPrivateFlags & FOCUSED) == 0) {
-            //mPrivateFlags |= FOCUSED;
-            //if (mParent != null) {
-                //mParent.requestChildFocus(this, this);
-            //}
-            //onFocusChanged(true, direction, previouslyFocusedRect);
-            //refreshDrawableState();
-        //}
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.457 -0400", hash_original_method = "2192BF4A933C90A79FE0C71F9C0B2F3D", hash_generated_method = "AFA442E6DBEB4946E768E5071EAE9E85")
     public boolean requestRectangleOnScreen(Rect rectangle) {
         boolean varB53A64F27CEF8B117CF782EC0F44B212_570259134 = (requestRectangleOnScreen(rectangle, false));
         addTaint(rectangle.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_585796746 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_585796746;
-        // ---------- Original Method ----------
-        //return requestRectangleOnScreen(rectangle, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.458 -0400", hash_original_method = "BDB750CCBE647F1CD5444CDF496F66A3", hash_generated_method = "D1373A0F6379B4F77F676FD44AEABC7C")
     public boolean requestRectangleOnScreen(Rect rectangle, boolean immediate) {
         View child = this;
@@ -1463,55 +1493,56 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             rectangle.offset(-child.getScrollX(), -child.getScrollY());
             child = (View) parent;
             parent = child.getParent();
-        } //End block
+        } 
         addTaint(rectangle.getTaint());
         addTaint(immediate);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1054132643 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1054132643;
-        // ---------- Original Method ----------
-        //View child = this;
-        //ViewParent parent = mParent;
-        //boolean scrolled = false;
-        //while (parent != null) {
-            //scrolled |= parent.requestChildRectangleOnScreen(child,
-                    //rectangle, immediate);
-            //rectangle.offset(child.getLeft(), child.getTop());
-            //rectangle.offset(-child.getScrollX(), -child.getScrollY());
-            //if (!(parent instanceof View)) {
-                //break;
-            //}
-            //child = (View) parent;
-            //parent = child.getParent();
-        //}
-        //return scrolled;
+        
+        
+        
+        
+        
+            
+                    
+            
+            
+            
+                
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.459 -0400", hash_original_method = "A6F69BAD809415BD5537E3FD153C267F", hash_generated_method = "E804AFE297232281A3D184C897B2A3B3")
     public void clearFocus() {
         {
             System.out.println(this + " clearFocus()");
-        } //End block
+        } 
         {
             mPrivateFlags &= ~FOCUSED;
             {
                 mParent.clearChildFocus(this);
-            } //End block
+            } 
             onFocusChanged(false, 0, null);
             refreshDrawableState();
-        } //End block
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //System.out.println(this + " clearFocus()");
-        //}
-        //if ((mPrivateFlags & FOCUSED) != 0) {
-            //mPrivateFlags &= ~FOCUSED;
-            //if (mParent != null) {
-                //mParent.clearChildFocus(this);
-            //}
-            //onFocusChanged(false, 0, null);
-            //refreshDrawableState();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -1521,13 +1552,13 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             mPrivateFlags &= ~FOCUSED;
             onFocusChanged(false, 0, null);
             refreshDrawableState();
-        } //End block
-        // ---------- Original Method ----------
-        //if ((mPrivateFlags & FOCUSED) != 0) {
-            //mPrivateFlags &= ~FOCUSED;
-            //onFocusChanged(false, 0, null);
-            //refreshDrawableState();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -1535,21 +1566,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
      void unFocus() {
         {
             System.out.println(this + " unFocus()");
-        } //End block
+        } 
         {
             mPrivateFlags &= ~FOCUSED;
             onFocusChanged(false, 0, null);
             refreshDrawableState();
-        } //End block
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //System.out.println(this + " unFocus()");
-        //}
-        //if ((mPrivateFlags & FOCUSED) != 0) {
-            //mPrivateFlags &= ~FOCUSED;
-            //onFocusChanged(false, 0, null);
-            //refreshDrawableState();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -1558,74 +1589,77 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean hasFocus() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1652315989 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1652315989;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags & FOCUSED) != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.460 -0400", hash_original_method = "B2402A510BB29E4C255854E18659AE1B", hash_generated_method = "50EB82FF6CEC80132B117AA63BF5F92C")
     public boolean hasFocusable() {
         boolean var45438BF76A2F167C289F26830B3A9B93_1977874261 = ((mViewFlags & VISIBILITY_MASK) == VISIBLE && isFocusable());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_981434270 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_981434270;
-        // ---------- Original Method ----------
-        //return (mViewFlags & VISIBILITY_MASK) == VISIBLE && isFocusable();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.461 -0400", hash_original_method = "5A1E14083BB718E6700BA53BA3884697", hash_generated_method = "6357CC758C9F82F7527EB0298B82B8E5")
     protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED);
-        } //End block
+        } 
         InputMethodManager imm = InputMethodManager.peekInstance();
         {
             {
                 boolean varF27F491A5EAB0B2989FBEF44657192A7_1832759669 = (isPressed());
                 {
                     setPressed(false);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 imm.focusOut(this);
-            } //End block
+            } 
             onFocusLost();
-        } //End block
+        } 
         {
             imm.focusIn(this);
-        } //End block
+        } 
         invalidate(true);
         ListenerInfo li = mListenerInfo;
         {
             li.mOnFocusChangeListener.onFocusChange(this, gainFocus);
-        } //End block
+        } 
         {
             mAttachInfo.mKeyDispatchState.reset(this);
-        } //End block
+        } 
         addTaint(gainFocus);
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.461 -0400", hash_original_method = "67C8279330D12E8D41FE4F9795D7EB79", hash_generated_method = "443DCFE8D319517E5CCCF7FDF2380E1F")
     public void sendAccessibilityEvent(int eventType) {
         {
             mAccessibilityDelegate.sendAccessibilityEvent(this, eventType);
-        } //End block
+        } 
         {
             sendAccessibilityEventInternal(eventType);
-        } //End block
+        } 
         addTaint(eventType);
-        // ---------- Original Method ----------
-        //if (mAccessibilityDelegate != null) {
-            //mAccessibilityDelegate.sendAccessibilityEvent(this, eventType);
-        //} else {
-            //sendAccessibilityEventInternal(eventType);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1635,31 +1669,32 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             boolean varFEF5E81D9E4B252970529F0E4C094F45_2084593557 = (AccessibilityManager.getInstance(mContext).isEnabled());
             {
                 sendAccessibilityEventUnchecked(AccessibilityEvent.obtain(eventType));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(eventType);
-        // ---------- Original Method ----------
-        //if (AccessibilityManager.getInstance(mContext).isEnabled()) {
-            //sendAccessibilityEventUnchecked(AccessibilityEvent.obtain(eventType));
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.462 -0400", hash_original_method = "B790306D0C64AC6AB0D8747A1C899258", hash_generated_method = "E7C7A44253D65A405CDA02739031BA76")
     public void sendAccessibilityEventUnchecked(AccessibilityEvent event) {
         {
             mAccessibilityDelegate.sendAccessibilityEventUnchecked(this, event);
-        } //End block
+        } 
         {
             sendAccessibilityEventUncheckedInternal(event);
-        } //End block
+        } 
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //if (mAccessibilityDelegate != null) {
-           //mAccessibilityDelegate.sendAccessibilityEventUnchecked(this, event);
-        //} else {
-            //sendAccessibilityEventUncheckedInternal(event);
-        //}
+        
+        
+           
+        
+            
+        
     }
 
     
@@ -1667,45 +1702,46 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
      void sendAccessibilityEventUncheckedInternal(AccessibilityEvent event) {
         {
             boolean var2E2E2221860B3DCAB8C5D4F0DAD9AC26_1846641383 = (!isShown());
-        } //End collapsed parenthetic
+        } 
         onInitializeAccessibilityEvent(event);
         {
             boolean var9D05604FB3FF39F2704B15C63CA7D337_1845895778 = ((event.getEventType() & POPULATING_ACCESSIBILITY_EVENT_TYPES) != 0);
             {
                 dispatchPopulateAccessibilityEvent(event);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         getParent().requestSendAccessibilityEvent(this, event);
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //if (!isShown()) {
-            //return;
-        //}
-        //onInitializeAccessibilityEvent(event);
-        //if ((event.getEventType() & POPULATING_ACCESSIBILITY_EVENT_TYPES) != 0) {
-            //dispatchPopulateAccessibilityEvent(event);
-        //}
-        //getParent().requestSendAccessibilityEvent(this, event);
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.462 -0400", hash_original_method = "927EED19E22DB3C930EC71946191C691", hash_generated_method = "7EC728B9154A5F22873B3B51FAFBACE8")
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
         {
             boolean varC130CACCC03E1AF22AC94D08B8319DCD_1368274868 = (mAccessibilityDelegate.dispatchPopulateAccessibilityEvent(this, event));
-        } //End block
+        } 
         {
             boolean var372DEE9301D724A2D11E91D3D5BF5A44_2106225482 = (dispatchPopulateAccessibilityEventInternal(event));
-        } //End block
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_817278144 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_817278144;
-        // ---------- Original Method ----------
-        //if (mAccessibilityDelegate != null) {
-            //return mAccessibilityDelegate.dispatchPopulateAccessibilityEvent(this, event);
-        //} else {
-            //return dispatchPopulateAccessibilityEventInternal(event);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1715,61 +1751,63 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_158138130 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_158138130;
-        // ---------- Original Method ----------
-        //onPopulateAccessibilityEvent(event);
-        //return false;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.463 -0400", hash_original_method = "A0DF1F515FF193F86B7E130DE16E38CE", hash_generated_method = "810EF0AFD12B38CDE493EEDFECC93832")
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mAccessibilityDelegate.onPopulateAccessibilityEvent(this, event);
-        } //End block
+        } 
         {
             onPopulateAccessibilityEventInternal(event);
-        } //End block
+        } 
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //if (mAccessibilityDelegate != null) {
-            //mAccessibilityDelegate.onPopulateAccessibilityEvent(this, event);
-        //} else {
-            //onPopulateAccessibilityEventInternal(event);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.463 -0400", hash_original_method = "CF40AA9C4C55BD5A22FC0E76716C7875", hash_generated_method = "C1E3420DDE9B8190E6B3E3D06A3CF139")
      void onPopulateAccessibilityEventInternal(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.464 -0400", hash_original_method = "28310CBBAED9E8F097DF5C90DBA9CD0F", hash_generated_method = "EF501DEAFC1D2AF86576632784174A7B")
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mAccessibilityDelegate.onInitializeAccessibilityEvent(this, event);
-        } //End block
+        } 
         {
             onInitializeAccessibilityEventInternal(event);
-        } //End block
+        } 
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //if (mAccessibilityDelegate != null) {
-            //mAccessibilityDelegate.onInitializeAccessibilityEvent(this, event);
-        //} else {
-            //onInitializeAccessibilityEventInternal(event);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.464 -0400", hash_original_method = "43B5B6E634D7CF960BF74CE0E1DDA2CD", hash_generated_method = "A6BAE42A863676C68738E0D6D531536B")
      void onInitializeAccessibilityEventInternal(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         event.setSource(this);
         event.setClassName(getClass().getName());
         event.setPackageName(getContext().getPackageName());
@@ -1784,63 +1822,65 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 event.setItemCount(focusablesTempList.size());
                 event.setCurrentItemIndex(focusablesTempList.indexOf(this));
                 focusablesTempList.clear();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
-        //event.setSource(this);
-        //event.setClassName(getClass().getName());
-        //event.setPackageName(getContext().getPackageName());
-        //event.setEnabled(isEnabled());
-        //event.setContentDescription(mContentDescription);
-        //if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_FOCUSED && mAttachInfo != null) {
-            //ArrayList<View> focusablesTempList = mAttachInfo.mFocusablesTempList;
-            //getRootView().addFocusables(focusablesTempList, View.FOCUS_FORWARD,
-                    //FOCUSABLES_ALL);
-            //event.setItemCount(focusablesTempList.size());
-            //event.setCurrentItemIndex(focusablesTempList.indexOf(this));
-            //focusablesTempList.clear();
-        //}
+        
+        
+        
+        
+        
+        
+        
+            
+            
+                    
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.465 -0400", hash_original_method = "53F1596AC086DF0FD9B166B1443D793C", hash_generated_method = "87E3413A56DC73690AF5990C3D0C7DA3")
     public AccessibilityNodeInfo createAccessibilityNodeInfo() {
-        AccessibilityNodeInfo varB4EAC82CA7396A68D541C85D26508E83_289614069 = null; //Variable for return #1
+        AccessibilityNodeInfo varB4EAC82CA7396A68D541C85D26508E83_289614069 = null; 
         AccessibilityNodeInfo info = AccessibilityNodeInfo.obtain(this);
         onInitializeAccessibilityNodeInfo(info);
         varB4EAC82CA7396A68D541C85D26508E83_289614069 = info;
-        varB4EAC82CA7396A68D541C85D26508E83_289614069.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_289614069.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_289614069;
-        // ---------- Original Method ----------
-        //AccessibilityNodeInfo info = AccessibilityNodeInfo.obtain(this);
-        //onInitializeAccessibilityNodeInfo(info);
-        //return info;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.466 -0400", hash_original_method = "BE2067901E907368432A8D9CCB431457", hash_generated_method = "B1DD873D32B686B6B0284A470F90D597")
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mAccessibilityDelegate.onInitializeAccessibilityNodeInfo(this, info);
-        } //End block
+        } 
         {
             onInitializeAccessibilityNodeInfoInternal(info);
-        } //End block
+        } 
         addTaint(info.getTaint());
-        // ---------- Original Method ----------
-        //if (mAccessibilityDelegate != null) {
-            //mAccessibilityDelegate.onInitializeAccessibilityNodeInfo(this, info);
-        //} else {
-            //onInitializeAccessibilityNodeInfoInternal(info);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.466 -0400", hash_original_method = "8753AD1110C37F0E73AF31B4448B5211", hash_generated_method = "6E66DE85B2FD549BAABD6A4C45E16B5B")
      void onInitializeAccessibilityNodeInfoInternal(AccessibilityNodeInfo info) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         Rect bounds = mAttachInfo.mTmpInvalRect;
         getDrawingRect(bounds);
         info.setBoundsInParent(bounds);
@@ -1854,8 +1894,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 View parentView = (View) parent;
                 info.setParent(parentView);
-            } //End block
-        } //End block
+            } 
+        } 
         info.setPackageName(mContext.getPackageName());
         info.setClassName(getClass().getName());
         info.setContentDescription(getContentDescription());
@@ -1874,24 +1914,24 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     boolean var807A689000786E69147E7D957AAAFB6F_1451286731 = (isFocused());
                     {
                         info.addAction(AccessibilityNodeInfo.ACTION_CLEAR_FOCUS);
-                    } //End block
+                    } 
                     {
                         info.addAction(AccessibilityNodeInfo.ACTION_FOCUS);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(info.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.467 -0400", hash_original_method = "32F138BD45B7179C5519FF8B12AC5296", hash_generated_method = "54FEEF3A1A1C934FEB709560757E0564")
     public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         mAccessibilityDelegate = delegate;
-        // ---------- Original Method ----------
-        //mAccessibilityDelegate = delegate;
+        
+        
     }
 
     
@@ -1899,14 +1939,14 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getAccessibilityViewId() {
         {
             mAccessibilityViewId = sNextAccessibilityViewId++;
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1413166208 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1413166208;
-        // ---------- Original Method ----------
-        //if (mAccessibilityViewId == NO_ID) {
-            //mAccessibilityViewId = sNextAccessibilityViewId++;
-        //}
-        //return mAccessibilityViewId;
+        
+        
+            
+        
+        
     }
 
     
@@ -1914,19 +1954,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getAccessibilityWindowId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_948985251 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_948985251;
-        // ---------- Original Method ----------
-        //return mAttachInfo != null ? mAttachInfo.mAccessibilityWindowId : NO_ID;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.469 -0400", hash_original_method = "6DAFF86A43A6BABA543C66C7DDAE7D00", hash_generated_method = "43DD34E8AB2C406B38CF4B56C291B250")
     public CharSequence getContentDescription() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1540221403 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1540221403 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1540221403 = mContentDescription;
-        varB4EAC82CA7396A68D541C85D26508E83_1540221403.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1540221403.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1540221403;
-        // ---------- Original Method ----------
-        //return mContentDescription;
+        
+        
     }
 
     
@@ -1934,20 +1974,22 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @RemotableViewMethod
     public void setContentDescription(CharSequence contentDescription) {
         mContentDescription = contentDescription;
-        // ---------- Original Method ----------
-        //mContentDescription = contentDescription;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.470 -0400", hash_original_method = "5C1A3C599F20DF55DE3C4471944CAAB7", hash_generated_method = "38E1F736D1D0CE663B8F46A26D06B1FF")
     protected void onFocusLost() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         resetPressedState();
-        // ---------- Original Method ----------
-        //resetPressedState();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.470 -0400", hash_original_method = "81136F7A8F96E00E1C77CED95B4F9DA3", hash_generated_method = "D4EAD1E150EA8661ABEA3BAF9A0DE525")
     private void resetPressedState() {
         {
@@ -1956,19 +1998,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 setPressed(false);
                 {
                     removeLongPressCallback();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if ((mViewFlags & ENABLED_MASK) == DISABLED) {
-            //return;
-        //}
-        //if (isPressed()) {
-            //setPressed(false);
-            //if (!mHasPerformedLongPress) {
-                //removeLongPressCallback();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -1977,51 +2019,52 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isFocused() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_187354001 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_187354001;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags & FOCUSED) != 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.471 -0400", hash_original_method = "DDD0B2B4CCE06873AEE74BD63DE5A294", hash_generated_method = "0225324234BB923E466B94F33E53FCB6")
     public View findFocus() {
-        View varB4EAC82CA7396A68D541C85D26508E83_1369267933 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1369267933 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1369267933 = (mPrivateFlags & FOCUSED) != 0 ? this : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1369267933.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1369267933.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1369267933;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags & FOCUSED) != 0 ? this : null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.472 -0400", hash_original_method = "1D4A87A45389821BFC7421CA2D7AD61B", hash_generated_method = "935832AC3930E39C59A3AD0B36B2D958")
     public void setScrollContainer(boolean isScrollContainer) {
         {
             {
                 mAttachInfo.mScrollContainers.add(this);
                 mPrivateFlags |= SCROLL_CONTAINER_ADDED;
-            } //End block
+            } 
             mPrivateFlags |= SCROLL_CONTAINER;
-        } //End block
+        } 
         {
             {
                 mAttachInfo.mScrollContainers.remove(this);
-            } //End block
+            } 
             mPrivateFlags &= ~(SCROLL_CONTAINER|SCROLL_CONTAINER_ADDED);
-        } //End block
+        } 
         addTaint(isScrollContainer);
-        // ---------- Original Method ----------
-        //if (isScrollContainer) {
-            //if (mAttachInfo != null && (mPrivateFlags&SCROLL_CONTAINER_ADDED) == 0) {
-                //mAttachInfo.mScrollContainers.add(this);
-                //mPrivateFlags |= SCROLL_CONTAINER_ADDED;
-            //}
-            //mPrivateFlags |= SCROLL_CONTAINER;
-        //} else {
-            //if ((mPrivateFlags&SCROLL_CONTAINER_ADDED) != 0) {
-                //mAttachInfo.mScrollContainers.remove(this);
-            //}
-            //mPrivateFlags &= ~(SCROLL_CONTAINER|SCROLL_CONTAINER_ADDED);
-        //}
+        
+        
+            
+                
+                
+            
+            
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -2029,17 +2072,18 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getDrawingCacheQuality() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1519593159 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1519593159;
-        // ---------- Original Method ----------
-        //return mViewFlags & DRAWING_CACHE_QUALITY_MASK;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.472 -0400", hash_original_method = "9D6669AC39CE9592E8D8B20B25494E51", hash_generated_method = "36A7C0E9E645CBC81EE5C481686480FA")
     public void setDrawingCacheQuality(int quality) {
         setFlags(quality, DRAWING_CACHE_QUALITY_MASK);
         addTaint(quality);
-        // ---------- Original Method ----------
-        //setFlags(quality, DRAWING_CACHE_QUALITY_MASK);
+        
+        
     }
 
     
@@ -2047,17 +2091,18 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean getKeepScreenOn() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1146011431 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1146011431;
-        // ---------- Original Method ----------
-        //return (mViewFlags & KEEP_SCREEN_ON) != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.473 -0400", hash_original_method = "99FBDDFD33142E06617327BD1E6B4E35", hash_generated_method = "00AAF5587B8D93F79AA78116E2D71D7D")
     public void setKeepScreenOn(boolean keepScreenOn) {
         setFlags(keepScreenOn ? KEEP_SCREEN_ON : 0, KEEP_SCREEN_ON);
         addTaint(keepScreenOn);
-        // ---------- Original Method ----------
-        //setFlags(keepScreenOn ? KEEP_SCREEN_ON : 0, KEEP_SCREEN_ON);
+        
+        
     }
 
     
@@ -2065,16 +2110,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getNextFocusLeftId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_930148317 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_930148317;
-        // ---------- Original Method ----------
-        //return mNextFocusLeftId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.473 -0400", hash_original_method = "38A879027311496175629221AC818202", hash_generated_method = "9E7B7FD166466BC7306079F36AA2B43B")
     public void setNextFocusLeftId(int nextFocusLeftId) {
         mNextFocusLeftId = nextFocusLeftId;
-        // ---------- Original Method ----------
-        //mNextFocusLeftId = nextFocusLeftId;
+        
+        
     }
 
     
@@ -2082,16 +2127,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getNextFocusRightId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_783433675 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_783433675;
-        // ---------- Original Method ----------
-        //return mNextFocusRightId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.474 -0400", hash_original_method = "2FF4A363CCED3B1F6EFFEC35EA0E0480", hash_generated_method = "5996750AB6CEE625E7FEB111E630C7C3")
     public void setNextFocusRightId(int nextFocusRightId) {
         mNextFocusRightId = nextFocusRightId;
-        // ---------- Original Method ----------
-        //mNextFocusRightId = nextFocusRightId;
+        
+        
     }
 
     
@@ -2099,16 +2144,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getNextFocusUpId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1726786770 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1726786770;
-        // ---------- Original Method ----------
-        //return mNextFocusUpId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.475 -0400", hash_original_method = "EB6C60D159C1D76D120BCAB59C29C293", hash_generated_method = "ABE6A764A0F99D568CE282D19BD22817")
     public void setNextFocusUpId(int nextFocusUpId) {
         mNextFocusUpId = nextFocusUpId;
-        // ---------- Original Method ----------
-        //mNextFocusUpId = nextFocusUpId;
+        
+        
     }
 
     
@@ -2116,16 +2161,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getNextFocusDownId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_559042097 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_559042097;
-        // ---------- Original Method ----------
-        //return mNextFocusDownId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.476 -0400", hash_original_method = "3F02629850152C987A67C858A1F48B49", hash_generated_method = "DDFE9F521C426810DDF7E2178663902C")
     public void setNextFocusDownId(int nextFocusDownId) {
         mNextFocusDownId = nextFocusDownId;
-        // ---------- Original Method ----------
-        //mNextFocusDownId = nextFocusDownId;
+        
+        
     }
 
     
@@ -2133,16 +2178,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getNextFocusForwardId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620170478 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620170478;
-        // ---------- Original Method ----------
-        //return mNextFocusForwardId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.476 -0400", hash_original_method = "E9ABC127C8FB8F8FC934426D38CB5040", hash_generated_method = "41F6E7361641184AD5AE6B06157A5559")
     public void setNextFocusForwardId(int nextFocusForwardId) {
         mNextFocusForwardId = nextFocusForwardId;
-        // ---------- Original Method ----------
-        //mNextFocusForwardId = nextFocusForwardId;
+        
+        
     }
 
     
@@ -2152,28 +2197,29 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             ViewParent parent = current.mParent;
             current = (View) parent;
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_773477585 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_773477585;
-        // ---------- Original Method ----------
-        //View current = this;
-        //do {
-            //if ((current.mViewFlags & VISIBILITY_MASK) != VISIBLE) {
-                //return false;
-            //}
-            //ViewParent parent = current.mParent;
-            //if (parent == null) {
-                //return false; 
-            //}
-            //if (!(parent instanceof View)) {
-                //return true;
-            //}
-            //current = (View) parent;
-        //} while (current != null);
-        //return false;
+        
+        
+        
+            
+                
+            
+            
+            
+                
+            
+            
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.478 -0400", hash_original_method = "A39140C8CB73A931FE842774091348D2", hash_generated_method = "69C430A467D1E27A028C24410BF178E5")
     protected boolean fitSystemWindows(Rect insets) {
         {
@@ -2182,28 +2228,29 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             mPaddingRight = insets.right;
             mPaddingBottom = insets.bottom;
             requestLayout();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_173505039 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_173505039;
-        // ---------- Original Method ----------
-        //if ((mViewFlags & FITS_SYSTEM_WINDOWS) == FITS_SYSTEM_WINDOWS) {
-            //mPaddingLeft = insets.left;
-            //mPaddingTop = insets.top;
-            //mPaddingRight = insets.right;
-            //mPaddingBottom = insets.bottom;
-            //requestLayout();
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.478 -0400", hash_original_method = "E3CDF7FA6CDC2881F199FFB75CF3D7D5", hash_generated_method = "FF5A6377EA2F89F12F7A12CEEF188149")
     public void setFitsSystemWindows(boolean fitSystemWindows) {
         setFlags(fitSystemWindows ? FITS_SYSTEM_WINDOWS : 0, FITS_SYSTEM_WINDOWS);
         addTaint(fitSystemWindows);
-        // ---------- Original Method ----------
-        //setFlags(fitSystemWindows ? FITS_SYSTEM_WINDOWS : 0, FITS_SYSTEM_WINDOWS);
+        
+        
     }
 
     
@@ -2211,8 +2258,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean fitsSystemWindows() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_285996289 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_285996289;
-        // ---------- Original Method ----------
-        //return (mViewFlags & FITS_SYSTEM_WINDOWS) == FITS_SYSTEM_WINDOWS;
+        
+        
     }
 
     
@@ -2225,20 +2272,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getVisibility() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_271740125 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_271740125;
-        // ---------- Original Method ----------
-        //return mViewFlags & VISIBILITY_MASK;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.479 -0400", hash_original_method = "02AF8E28E646A9214DED62901D5A05AB", hash_generated_method = "2C0C53FFB22650D6FE393221DEFB4B76")
     @RemotableViewMethod
     public void setVisibility(int visibility) {
         setFlags(visibility, VISIBILITY_MASK);
         mBGDrawable.setVisible(visibility == VISIBLE, false);
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //setFlags(visibility, VISIBILITY_MASK);
-        //if (mBGDrawable != null) mBGDrawable.setVisible(visibility == VISIBLE, false);
+        
+        
+        
     }
 
     
@@ -2247,65 +2295,69 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1876309839 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1876309839;
-        // ---------- Original Method ----------
-        //return (mViewFlags & ENABLED_MASK) == ENABLED;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.480 -0400", hash_original_method = "82122684EF3D7563FCC0B376DF0849B5", hash_generated_method = "D5538EC8B66CBD116F69CFE31CCD7461")
     @RemotableViewMethod
     public void setEnabled(boolean enabled) {
         {
             boolean var7DA8DB0EDBF2B3C1E618EFC1F33534DC_1626469134 = (enabled == isEnabled());
-        } //End collapsed parenthetic
+        } 
         setFlags(enabled ? ENABLED : DISABLED, ENABLED_MASK);
         refreshDrawableState();
         invalidate(true);
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //if (enabled == isEnabled()) return;
-        //setFlags(enabled ? ENABLED : DISABLED, ENABLED_MASK);
-        //refreshDrawableState();
-        //invalidate(true);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.480 -0400", hash_original_method = "C9881A9860604453F19A8665970456AB", hash_generated_method = "664333A1EA25CC82A0F4439E4CD26AEB")
     public void setFocusable(boolean focusable) {
         {
             setFlags(0, FOCUSABLE_IN_TOUCH_MODE);
-        } //End block
+        } 
         setFlags(focusable ? FOCUSABLE : NOT_FOCUSABLE, FOCUSABLE_MASK);
         addTaint(focusable);
-        // ---------- Original Method ----------
-        //if (!focusable) {
-            //setFlags(0, FOCUSABLE_IN_TOUCH_MODE);
-        //}
-        //setFlags(focusable ? FOCUSABLE : NOT_FOCUSABLE, FOCUSABLE_MASK);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.481 -0400", hash_original_method = "2EADF8D169DEE1EA3C577B22372A4F29", hash_generated_method = "F4404B47505B58A113C56AFA417794D7")
     public void setFocusableInTouchMode(boolean focusableInTouchMode) {
         setFlags(focusableInTouchMode ? FOCUSABLE_IN_TOUCH_MODE : 0, FOCUSABLE_IN_TOUCH_MODE);
         {
             setFlags(FOCUSABLE, FOCUSABLE_MASK);
-        } //End block
+        } 
         addTaint(focusableInTouchMode);
-        // ---------- Original Method ----------
-        //setFlags(focusableInTouchMode ? FOCUSABLE_IN_TOUCH_MODE : 0, FOCUSABLE_IN_TOUCH_MODE);
-        //if (focusableInTouchMode) {
-            //setFlags(FOCUSABLE, FOCUSABLE_MASK);
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.481 -0400", hash_original_method = "0616009511F2186FBF13D4B2BAEA6B3A", hash_generated_method = "F636D38F57C66EBB9793043D928DA120")
     public void setSoundEffectsEnabled(boolean soundEffectsEnabled) {
         setFlags(soundEffectsEnabled ? SOUND_EFFECTS_ENABLED: 0, SOUND_EFFECTS_ENABLED);
         addTaint(soundEffectsEnabled);
-        // ---------- Original Method ----------
-        //setFlags(soundEffectsEnabled ? SOUND_EFFECTS_ENABLED: 0, SOUND_EFFECTS_ENABLED);
+        
+        
     }
 
     
@@ -2314,17 +2366,18 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isSoundEffectsEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1806051114 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1806051114;
-        // ---------- Original Method ----------
-        //return SOUND_EFFECTS_ENABLED == (mViewFlags & SOUND_EFFECTS_ENABLED);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.482 -0400", hash_original_method = "665412B4BA3D450566C79B734C683A80", hash_generated_method = "D1B39588408E385BC53837E77F2E736F")
     public void setHapticFeedbackEnabled(boolean hapticFeedbackEnabled) {
         setFlags(hapticFeedbackEnabled ? HAPTIC_FEEDBACK_ENABLED: 0, HAPTIC_FEEDBACK_ENABLED);
         addTaint(hapticFeedbackEnabled);
-        // ---------- Original Method ----------
-        //setFlags(hapticFeedbackEnabled ? HAPTIC_FEEDBACK_ENABLED: 0, HAPTIC_FEEDBACK_ENABLED);
+        
+        
     }
 
     
@@ -2333,8 +2386,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isHapticFeedbackEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_436405757 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_436405757;
-        // ---------- Original Method ----------
-        //return HAPTIC_FEEDBACK_ENABLED == (mViewFlags & HAPTIC_FEEDBACK_ENABLED);
+        
+        
     }
 
     
@@ -2348,11 +2401,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getLayoutDirection() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1612090149 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1612090149;
-        // ---------- Original Method ----------
-        //return mViewFlags & LAYOUT_DIRECTION_MASK;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.483 -0400", hash_original_method = "72BED775868D43D3C5AF7895C4FF8A44", hash_generated_method = "88F9408EA9B667B1F334D333041A33D4")
     @RemotableViewMethod
     public void setLayoutDirection(int layoutDirection) {
@@ -2361,17 +2415,18 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 resetResolvedLayoutDirection();
                 setFlags(layoutDirection, LAYOUT_DIRECTION_MASK);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(layoutDirection);
-        // ---------- Original Method ----------
-        //if (getLayoutDirection() != layoutDirection) {
-            //resetResolvedLayoutDirection();
-            //setFlags(layoutDirection, LAYOUT_DIRECTION_MASK);
-        //}
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.483 -0400", hash_original_method = "9F5111100CE328994E06DFE63B825110", hash_generated_method = "237DE14F0F33395234F631030BE03977")
     @ViewDebug.ExportedProperty(category = "layout", mapping = {
         @ViewDebug.IntToString(from = LAYOUT_DIRECTION_LTR,     to = "RESOLVED_DIRECTION_LTR"),
@@ -2381,30 +2436,32 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         resolveLayoutDirectionIfNeeded();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_638886542 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_638886542;
-        // ---------- Original Method ----------
-        //resolveLayoutDirectionIfNeeded();
-        //return ((mPrivateFlags2 & LAYOUT_DIRECTION_RESOLVED_RTL) == LAYOUT_DIRECTION_RESOLVED_RTL) ?
-                //LAYOUT_DIRECTION_RTL : LAYOUT_DIRECTION_LTR;
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.483 -0400", hash_original_method = "F4E28248D2C3D2566E14BBF2219E2BCD", hash_generated_method = "6EC398D349CA9934E0899AA8C85FB469")
     @ViewDebug.ExportedProperty(category = "layout")
     public boolean isLayoutRtl() {
         boolean varA36BF340EF5BBC5D48962FD8A0BF863A_1775997520 = ((getResolvedLayoutDirection() == LAYOUT_DIRECTION_RTL));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1812229247 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1812229247;
-        // ---------- Original Method ----------
-        //return (getResolvedLayoutDirection() == LAYOUT_DIRECTION_RTL);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.483 -0400", hash_original_method = "F9FAF3BB929B9847B181A3D88FABD842", hash_generated_method = "913A20B99E96CE03CF598425BC83F2C3")
     public void setWillNotDraw(boolean willNotDraw) {
         setFlags(willNotDraw ? WILL_NOT_DRAW : 0, DRAW_MASK);
         addTaint(willNotDraw);
-        // ---------- Original Method ----------
-        //setFlags(willNotDraw ? WILL_NOT_DRAW : 0, DRAW_MASK);
+        
+        
     }
 
     
@@ -2413,17 +2470,18 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean willNotDraw() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1318896979 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1318896979;
-        // ---------- Original Method ----------
-        //return (mViewFlags & DRAW_MASK) == WILL_NOT_DRAW;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.484 -0400", hash_original_method = "60A2EABB5E8AA4648C06B0E0E4A2AF9C", hash_generated_method = "F94A42F4837B35CD7A18E49F6F7F2A5A")
     public void setWillNotCacheDrawing(boolean willNotCacheDrawing) {
         setFlags(willNotCacheDrawing ? WILL_NOT_CACHE_DRAWING : 0, WILL_NOT_CACHE_DRAWING);
         addTaint(willNotCacheDrawing);
-        // ---------- Original Method ----------
-        //setFlags(willNotCacheDrawing ? WILL_NOT_CACHE_DRAWING : 0, WILL_NOT_CACHE_DRAWING);
+        
+        
     }
 
     
@@ -2432,8 +2490,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean willNotCacheDrawing() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2014299591 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2014299591;
-        // ---------- Original Method ----------
-        //return (mViewFlags & WILL_NOT_CACHE_DRAWING) == WILL_NOT_CACHE_DRAWING;
+        
+        
     }
 
     
@@ -2442,17 +2500,18 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isClickable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1026855538 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1026855538;
-        // ---------- Original Method ----------
-        //return (mViewFlags & CLICKABLE) == CLICKABLE;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.485 -0400", hash_original_method = "12111EA4E19255C8C0AB24AED3DDA51C", hash_generated_method = "4374D08E261D36E6FE00E0AF9F065003")
     public void setClickable(boolean clickable) {
         setFlags(clickable ? CLICKABLE : 0, CLICKABLE);
         addTaint(clickable);
-        // ---------- Original Method ----------
-        //setFlags(clickable ? CLICKABLE : 0, CLICKABLE);
+        
+        
     }
 
     
@@ -2460,46 +2519,48 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isLongClickable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_713417482 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_713417482;
-        // ---------- Original Method ----------
-        //return (mViewFlags & LONG_CLICKABLE) == LONG_CLICKABLE;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.486 -0400", hash_original_method = "43536DF18C7BAF4AF88A04663CE8F089", hash_generated_method = "E1B74B95D9F2AD6E13CC75A43B18D3C5")
     public void setLongClickable(boolean longClickable) {
         setFlags(longClickable ? LONG_CLICKABLE : 0, LONG_CLICKABLE);
         addTaint(longClickable);
-        // ---------- Original Method ----------
-        //setFlags(longClickable ? LONG_CLICKABLE : 0, LONG_CLICKABLE);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.486 -0400", hash_original_method = "EED851B5F13351F1D2A34CF3C577E6B2", hash_generated_method = "C4057CF4BACA15652385B8746442BE91")
     public void setPressed(boolean pressed) {
         {
             mPrivateFlags |= PRESSED;
-        } //End block
+        } 
         {
             mPrivateFlags &= ~PRESSED;
-        } //End block
+        } 
         refreshDrawableState();
         dispatchSetPressed(pressed);
         addTaint(pressed);
-        // ---------- Original Method ----------
-        //if (pressed) {
-            //mPrivateFlags |= PRESSED;
-        //} else {
-            //mPrivateFlags &= ~PRESSED;
-        //}
-        //refreshDrawableState();
-        //dispatchSetPressed(pressed);
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.486 -0400", hash_original_method = "AF011537E523E131D566F09FD5E6C732", hash_generated_method = "482399F15DBB51C97D7E5C81A9573A96")
     protected void dispatchSetPressed(boolean pressed) {
         addTaint(pressed);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -2507,8 +2568,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isPressed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1501204748 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1501204748;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags & PRESSED) == PRESSED;
+        
+        
     }
 
     
@@ -2516,17 +2577,18 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isSaveEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1530660431 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1530660431;
-        // ---------- Original Method ----------
-        //return (mViewFlags & SAVE_DISABLED_MASK) != SAVE_DISABLED;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.488 -0400", hash_original_method = "245457DBE539B6534978F5D496F585EA", hash_generated_method = "3884A300598E0D18BAFFD2FE7E71BDEC")
     public void setSaveEnabled(boolean enabled) {
         setFlags(enabled ? 0 : SAVE_DISABLED, SAVE_DISABLED_MASK);
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //setFlags(enabled ? 0 : SAVE_DISABLED, SAVE_DISABLED_MASK);
+        
+        
     }
 
     
@@ -2535,19 +2597,20 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean getFilterTouchesWhenObscured() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_346869404 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_346869404;
-        // ---------- Original Method ----------
-        //return (mViewFlags & FILTER_TOUCHES_WHEN_OBSCURED) != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.489 -0400", hash_original_method = "EDB53D9F0799F64121B32D1526967A47", hash_generated_method = "566C41DA00E1F9BE3A83B4E671DBAD1F")
     public void setFilterTouchesWhenObscured(boolean enabled) {
         setFlags(enabled ? 0 : FILTER_TOUCHES_WHEN_OBSCURED,
                 FILTER_TOUCHES_WHEN_OBSCURED);
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //setFlags(enabled ? 0 : FILTER_TOUCHES_WHEN_OBSCURED,
-                //FILTER_TOUCHES_WHEN_OBSCURED);
+        
+        
+                
     }
 
     
@@ -2555,17 +2618,18 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isSaveFromParentEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2040779974 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2040779974;
-        // ---------- Original Method ----------
-        //return (mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.489 -0400", hash_original_method = "72C3E4C29A0B231006D33E493310EA89", hash_generated_method = "E4484042BE0E5564A91AC960C81FCAF8")
     public void setSaveFromParentEnabled(boolean enabled) {
         setFlags(enabled ? 0 : PARENT_SAVE_DISABLED, PARENT_SAVE_DISABLED_MASK);
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //setFlags(enabled ? 0 : PARENT_SAVE_DISABLED, PARENT_SAVE_DISABLED_MASK);
+        
+        
     }
 
     
@@ -2574,8 +2638,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final boolean isFocusable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1622734491 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1622734491;
-        // ---------- Original Method ----------
-        //return FOCUSABLE == (mViewFlags & FOCUSABLE_MASK);
+        
+        
     }
 
     
@@ -2584,39 +2648,40 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final boolean isFocusableInTouchMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_903227061 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_903227061;
-        // ---------- Original Method ----------
-        //return FOCUSABLE_IN_TOUCH_MODE == (mViewFlags & FOCUSABLE_IN_TOUCH_MODE);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.492 -0400", hash_original_method = "0DA4F7FC608C37A46918AF583285CEAA", hash_generated_method = "25E02413F1B243AF1B92436D0F32BA52")
     public View focusSearch(int direction) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1365364019 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1729935140 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_1365364019 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1729935140 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1365364019 = mParent.focusSearch(this, direction);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1729935140 = null;
-        } //End block
+        } 
         addTaint(direction);
-        View varA7E53CE21691AB073D9660D615818899_776909240; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_776909240; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_776909240 = varB4EAC82CA7396A68D541C85D26508E83_1365364019;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_776909240 = varB4EAC82CA7396A68D541C85D26508E83_1729935140;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_776909240.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_776909240.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_776909240;
-        // ---------- Original Method ----------
-        //if (mParent != null) {
-            //return mParent.focusSearch(this, direction);
-        //} else {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -2626,56 +2691,56 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(direction);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1681750913 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1681750913;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.493 -0400", hash_original_method = "402D36B98ACE611B6285D11A0B7474BF", hash_generated_method = "C150BD674BE49C7CCA54DEEF2C466641")
      View findUserSetNextFocus(View root, int direction) {
-        View varB4EAC82CA7396A68D541C85D26508E83_97664805 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1014604080 = null; //Variable for return #2
-        View varB4EAC82CA7396A68D541C85D26508E83_144962035 = null; //Variable for return #3
-        View varB4EAC82CA7396A68D541C85D26508E83_1987624477 = null; //Variable for return #4
-        View varB4EAC82CA7396A68D541C85D26508E83_709255075 = null; //Variable for return #5
-        View varB4EAC82CA7396A68D541C85D26508E83_2087578100 = null; //Variable for return #6
-        View varB4EAC82CA7396A68D541C85D26508E83_86177965 = null; //Variable for return #7
-        View varB4EAC82CA7396A68D541C85D26508E83_146462140 = null; //Variable for return #8
-        View varB4EAC82CA7396A68D541C85D26508E83_548273316 = null; //Variable for return #9
-        View varB4EAC82CA7396A68D541C85D26508E83_445311459 = null; //Variable for return #10
-        View varB4EAC82CA7396A68D541C85D26508E83_2002206954 = null; //Variable for return #11
-        View varB4EAC82CA7396A68D541C85D26508E83_731931235 = null; //Variable for return #12
-        //Begin case FOCUS_LEFT 
+        View varB4EAC82CA7396A68D541C85D26508E83_97664805 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1014604080 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_144962035 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1987624477 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_709255075 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_2087578100 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_86177965 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_146462140 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_548273316 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_445311459 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_2002206954 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_731931235 = null; 
+        
         varB4EAC82CA7396A68D541C85D26508E83_97664805 = null;
-        //End case FOCUS_LEFT 
-        //Begin case FOCUS_LEFT 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1014604080 = findViewInsideOutShouldExist(root, mNextFocusLeftId);
-        //End case FOCUS_LEFT 
-        //Begin case FOCUS_RIGHT 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_144962035 = null;
-        //End case FOCUS_RIGHT 
-        //Begin case FOCUS_RIGHT 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_1987624477 = findViewInsideOutShouldExist(root, mNextFocusRightId);
-        //End case FOCUS_RIGHT 
-        //Begin case FOCUS_UP 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_709255075 = null;
-        //End case FOCUS_UP 
-        //Begin case FOCUS_UP 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_2087578100 = findViewInsideOutShouldExist(root, mNextFocusUpId);
-        //End case FOCUS_UP 
-        //Begin case FOCUS_DOWN 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_86177965 = null;
-        //End case FOCUS_DOWN 
-        //Begin case FOCUS_DOWN 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_146462140 = findViewInsideOutShouldExist(root, mNextFocusDownId);
-        //End case FOCUS_DOWN 
-        //Begin case FOCUS_FORWARD 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_548273316 = null;
-        //End case FOCUS_FORWARD 
-        //Begin case FOCUS_FORWARD 
+        
+        
         varB4EAC82CA7396A68D541C85D26508E83_445311459 = findViewInsideOutShouldExist(root, mNextFocusForwardId);
-        //End case FOCUS_FORWARD 
-        //Begin case FOCUS_BACKWARD 
+        
+        
         {
             final int id = mID;
             varB4EAC82CA7396A68D541C85D26508E83_2002206954 = root.findViewByPredicateInsideOut(this, new Predicate<View>() {
@@ -2684,60 +2749,60 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                         return t.mNextFocusForwardId == id;
                     }
                 });
-        } //End block
-        //End case FOCUS_BACKWARD 
+        } 
+        
         varB4EAC82CA7396A68D541C85D26508E83_731931235 = null;
         addTaint(root.getTaint());
         addTaint(direction);
-        View varA7E53CE21691AB073D9660D615818899_1222655541; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1222655541; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1222655541 = varB4EAC82CA7396A68D541C85D26508E83_97664805;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1222655541 = varB4EAC82CA7396A68D541C85D26508E83_1014604080;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1222655541 = varB4EAC82CA7396A68D541C85D26508E83_144962035;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1222655541 = varB4EAC82CA7396A68D541C85D26508E83_1987624477;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_1222655541 = varB4EAC82CA7396A68D541C85D26508E83_709255075;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_1222655541 = varB4EAC82CA7396A68D541C85D26508E83_2087578100;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_1222655541 = varB4EAC82CA7396A68D541C85D26508E83_86177965;
                 break;
-            case 8: //Assign result for return ordinal #8
+            case 8: 
                 varA7E53CE21691AB073D9660D615818899_1222655541 = varB4EAC82CA7396A68D541C85D26508E83_146462140;
                 break;
-            case 9: //Assign result for return ordinal #9
+            case 9: 
                 varA7E53CE21691AB073D9660D615818899_1222655541 = varB4EAC82CA7396A68D541C85D26508E83_548273316;
                 break;
-            case 10: //Assign result for return ordinal #10
+            case 10: 
                 varA7E53CE21691AB073D9660D615818899_1222655541 = varB4EAC82CA7396A68D541C85D26508E83_445311459;
                 break;
-            case 11: //Assign result for return ordinal #11
+            case 11: 
                 varA7E53CE21691AB073D9660D615818899_1222655541 = varB4EAC82CA7396A68D541C85D26508E83_2002206954;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1222655541 = varB4EAC82CA7396A68D541C85D26508E83_731931235;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1222655541.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1222655541.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1222655541;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.494 -0400", hash_original_method = "B3DFEFAC3DA8B2AFE30A5DD5BC4E600A", hash_generated_method = "0BE001AF849368AA2EC7E90C2FDC21CF")
     private View findViewInsideOutShouldExist(View root, final int childViewId) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1040108750 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1040108750 = null; 
         View result = root.findViewByPredicateInsideOut(this, new Predicate<View>() {
             @Override
             public boolean apply(View t) {
@@ -2747,78 +2812,82 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         varB4EAC82CA7396A68D541C85D26508E83_1040108750 = result;
         addTaint(root.getTaint());
         addTaint(childViewId);
-        varB4EAC82CA7396A68D541C85D26508E83_1040108750.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1040108750.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1040108750;
-        // ---------- Original Method ----------
-        //View result = root.findViewByPredicateInsideOut(this, new Predicate<View>() {
-            //@Override
-            //public boolean apply(View t) {
-                //return t.mID == childViewId;
-            //}
-        //});
-        //if (result == null) {
-            //Log.w(VIEW_LOG_TAG, "couldn't find next focus view specified "
-                    //+ "by user for id " + childViewId);
-        //}
-        //return result;
+        
+        
+            
+            
+                
+            
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.495 -0400", hash_original_method = "464AB183F4A2042C34DE93C717198DDB", hash_generated_method = "CCB92318176829018EBAEC60DE73E778")
     public ArrayList<View> getFocusables(int direction) {
-        ArrayList<View> varB4EAC82CA7396A68D541C85D26508E83_673833548 = null; //Variable for return #1
+        ArrayList<View> varB4EAC82CA7396A68D541C85D26508E83_673833548 = null; 
         ArrayList<View> result = new ArrayList<View>(24);
         addFocusables(result, direction);
         varB4EAC82CA7396A68D541C85D26508E83_673833548 = result;
         addTaint(direction);
-        varB4EAC82CA7396A68D541C85D26508E83_673833548.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_673833548.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_673833548;
-        // ---------- Original Method ----------
-        //ArrayList<View> result = new ArrayList<View>(24);
-        //addFocusables(result, direction);
-        //return result;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.495 -0400", hash_original_method = "2428CCD79B4CEE814D080BAF1161F8B9", hash_generated_method = "5094D6BB39AFC12E74B6D1EB7B6739A8")
     public void addFocusables(ArrayList<View> views, int direction) {
         addFocusables(views, direction, FOCUSABLES_TOUCH_MODE);
         addTaint(views.getTaint());
         addTaint(direction);
-        // ---------- Original Method ----------
-        //addFocusables(views, direction, FOCUSABLES_TOUCH_MODE);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.496 -0400", hash_original_method = "C71740B3CD39B4D243A828C918021CDE", hash_generated_method = "D5C9BBDCC3A9B414060C1AD7437D2125")
     public void addFocusables(ArrayList<View> views, int direction, int focusableMode) {
         {
             boolean var8DB70F00D9A309F787FE648FEF017045_1202102480 = (!isFocusable());
-        } //End collapsed parenthetic
+        } 
         {
             boolean var2850B2A852F5A5DCF1E2CF378227B555_821518967 = ((focusableMode & FOCUSABLES_TOUCH_MODE) == FOCUSABLES_TOUCH_MODE &&
                 isInTouchMode() && !isFocusableInTouchMode());
-        } //End collapsed parenthetic
+        } 
         {
             views.add(this);
-        } //End block
+        } 
         addTaint(views.getTaint());
         addTaint(direction);
         addTaint(focusableMode);
-        // ---------- Original Method ----------
-        //if (!isFocusable()) {
-            //return;
-        //}
-        //if ((focusableMode & FOCUSABLES_TOUCH_MODE) == FOCUSABLES_TOUCH_MODE &&
-                //isInTouchMode() && !isFocusableInTouchMode()) {
-            //return;
-        //}
-        //if (views != null) {
-            //views.add(this);
-        //}
+        
+        
+            
+        
+        
+                
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.496 -0400", hash_original_method = "DD343D81D813CE2B90520525DB465FA4", hash_generated_method = "30DED5C28206D484A1797FBC264E76C6")
     public void findViewsWithText(ArrayList<View> outViews, CharSequence searched, int flags) {
         {
@@ -2831,53 +2900,55 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     boolean var5F42F50A6B3B93A57712332F7515E0D4_1522445819 = (contentDescriptionLowerCase.contains(searchedLowerCase));
                     {
                         outViews.add(this);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(outViews.getTaint());
         addTaint(searched.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if ((flags & FIND_VIEWS_WITH_CONTENT_DESCRIPTION) != 0 && !TextUtils.isEmpty(searched)
-                //&& !TextUtils.isEmpty(mContentDescription)) {
-            //String searchedLowerCase = searched.toString().toLowerCase();
-            //String contentDescriptionLowerCase = mContentDescription.toString().toLowerCase();
-            //if (contentDescriptionLowerCase.contains(searchedLowerCase)) {
-                //outViews.add(this);
-            //}
-        //}
+        
+        
+                
+            
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.497 -0400", hash_original_method = "FFA271D2293E365BAC2553CB237E7BDA", hash_generated_method = "5749D9523ECAD08857F6ED3F85BBDAB5")
     public ArrayList<View> getTouchables() {
-        ArrayList<View> varB4EAC82CA7396A68D541C85D26508E83_1397852273 = null; //Variable for return #1
+        ArrayList<View> varB4EAC82CA7396A68D541C85D26508E83_1397852273 = null; 
         ArrayList<View> result = new ArrayList<View>();
         addTouchables(result);
         varB4EAC82CA7396A68D541C85D26508E83_1397852273 = result;
-        varB4EAC82CA7396A68D541C85D26508E83_1397852273.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1397852273.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1397852273;
-        // ---------- Original Method ----------
-        //ArrayList<View> result = new ArrayList<View>();
-        //addTouchables(result);
-        //return result;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.498 -0400", hash_original_method = "4A9E887CF81CB13B9475E90E8F7B101A", hash_generated_method = "CF6D2B08EDAEAC62D43777EE9D8BE606")
     public void addTouchables(ArrayList<View> views) {
         final int viewFlags = mViewFlags;
         {
             views.add(this);
-        } //End block
+        } 
         addTaint(views.getTaint());
-        // ---------- Original Method ----------
-        //final int viewFlags = mViewFlags;
-        //if (((viewFlags & CLICKABLE) == CLICKABLE || (viewFlags & LONG_CLICKABLE) == LONG_CLICKABLE)
-                //&& (viewFlags & ENABLED_MASK) == ENABLED) {
-            //views.add(this);
-        //}
+        
+        
+        
+                
+            
+        
     }
 
     
@@ -2886,8 +2957,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         boolean varB33B1AB5B273EC528C5AE67F69172D01_1315789724 = (requestFocus(View.FOCUS_DOWN));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_115130005 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_115130005;
-        // ---------- Original Method ----------
-        //return requestFocus(View.FOCUS_DOWN);
+        
+        
     }
 
     
@@ -2897,52 +2968,53 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(direction);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_693978818 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_693978818;
-        // ---------- Original Method ----------
-        //return requestFocus(direction, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.499 -0400", hash_original_method = "4D4D948013EFF9FDAFD5232E182C7F46", hash_generated_method = "4C83FC4359345CAFDB3016F0C8D4F99A")
     public boolean requestFocus(int direction, Rect previouslyFocusedRect) {
         {
             boolean varD02361A86C03997E5AE6B9686A81F1C2_1928776347 = (isInTouchMode() &&
             (FOCUSABLE_IN_TOUCH_MODE != (mViewFlags & FOCUSABLE_IN_TOUCH_MODE)));
-        } //End collapsed parenthetic
+        } 
         {
             boolean varFCFFB1819C9B89AC39385EED17BA34F3_1719655569 = (hasAncestorThatBlocksDescendantFocus());
-        } //End collapsed parenthetic
+        } 
         handleFocusGainInternal(direction, previouslyFocusedRect);
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_115478758 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_115478758;
-        // ---------- Original Method ----------
-        //if ((mViewFlags & FOCUSABLE_MASK) != FOCUSABLE ||
-                //(mViewFlags & VISIBILITY_MASK) != VISIBLE) {
-            //return false;
-        //}
-        //if (isInTouchMode() &&
-            //(FOCUSABLE_IN_TOUCH_MODE != (mViewFlags & FOCUSABLE_IN_TOUCH_MODE))) {
-               //return false;
-        //}
-        //if (hasAncestorThatBlocksDescendantFocus()) {
-            //return false;
-        //}
-        //handleFocusGainInternal(direction, previouslyFocusedRect);
-        //return true;
+        
+        
+                
+            
+        
+        
+            
+               
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.500 -0400", hash_original_method = "7FA91653ABFF57A00EB7068CB83E321B", hash_generated_method = "7208556ED126126DE94D56E296C2957E")
      ViewRootImpl getViewRootImpl() {
-        ViewRootImpl varB4EAC82CA7396A68D541C85D26508E83_685110027 = null; //Variable for return #1
+        ViewRootImpl varB4EAC82CA7396A68D541C85D26508E83_685110027 = null; 
         View root = getRootView();
         varB4EAC82CA7396A68D541C85D26508E83_685110027 = root != null ? (ViewRootImpl)root.getParent() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_685110027.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_685110027.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_685110027;
-        // ---------- Original Method ----------
-        //View root = getRootView();
-        //return root != null ? (ViewRootImpl)root.getParent() : null;
+        
+        
+        
     }
 
     
@@ -2954,23 +3026,24 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 ViewRootImpl viewRoot = getViewRootImpl();
                 {
                     viewRoot.ensureTouchMode(false);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         boolean varB33B1AB5B273EC528C5AE67F69172D01_278797656 = (requestFocus(View.FOCUS_DOWN));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1759635070 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1759635070;
-        // ---------- Original Method ----------
-        //if (isInTouchMode()) {
-            //ViewRootImpl viewRoot = getViewRootImpl();
-            //if (viewRoot != null) {
-                //viewRoot.ensureTouchMode(false);
-            //}
-        //}
-        //return requestFocus(View.FOCUS_DOWN);
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.501 -0400", hash_original_method = "AF1FEBD7D3DF68D5685D255FEFA73D33", hash_generated_method = "3FAFF27A0B6AE85CB927AECEEFD23AB4")
     private boolean hasAncestorThatBlocksDescendantFocus() {
         ViewParent ancestor = mParent;
@@ -2980,137 +3053,144 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 boolean var6A93B533F786283E71D28D2D3BB8654E_144518684 = (vgAncestor.getDescendantFocusability() == ViewGroup.FOCUS_BLOCK_DESCENDANTS);
                 {
                     ancestor = vgAncestor.getParent();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_316615139 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_316615139;
-        // ---------- Original Method ----------
-        //ViewParent ancestor = mParent;
-        //while (ancestor instanceof ViewGroup) {
-            //final ViewGroup vgAncestor = (ViewGroup) ancestor;
-            //if (vgAncestor.getDescendantFocusability() == ViewGroup.FOCUS_BLOCK_DESCENDANTS) {
-                //return true;
-            //} else {
-                //ancestor = vgAncestor.getParent();
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.501 -0400", hash_original_method = "9E8D01E3E35914BE1B580652C44B6D92", hash_generated_method = "4068A66B11C8A715D0155C9B0F768AA3")
     public void dispatchStartTemporaryDetach() {
         onStartTemporaryDetach();
-        // ---------- Original Method ----------
-        //onStartTemporaryDetach();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.501 -0400", hash_original_method = "7B585748E6C2A3CE6D3BA7FDB91AA5A9", hash_generated_method = "835E4082F4217105CFFD467CF28422B0")
     public void onStartTemporaryDetach() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         removeUnsetPressCallback();
         mPrivateFlags |= CANCEL_NEXT_UP_EVENT;
-        // ---------- Original Method ----------
-        //removeUnsetPressCallback();
-        //mPrivateFlags |= CANCEL_NEXT_UP_EVENT;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.502 -0400", hash_original_method = "07C22BEB43BC8453BE2AEA4BC85C2345", hash_generated_method = "3223FB93CB255E66A3AC95410D228D51")
     public void dispatchFinishTemporaryDetach() {
         onFinishTemporaryDetach();
-        // ---------- Original Method ----------
-        //onFinishTemporaryDetach();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.502 -0400", hash_original_method = "B87297DA0096F2C31AB92D13B4246B81", hash_generated_method = "25EA709CBA250441F08254F97B05DEE6")
     public void onFinishTemporaryDetach() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.502 -0400", hash_original_method = "5346C33A691675BA7E77EC00779EE7C7", hash_generated_method = "E772769092D21CCD5AF2C6E581672CAC")
     public KeyEvent.DispatcherState getKeyDispatcherState() {
-        KeyEvent.DispatcherState varB4EAC82CA7396A68D541C85D26508E83_1470689260 = null; //Variable for return #1
+        KeyEvent.DispatcherState varB4EAC82CA7396A68D541C85D26508E83_1470689260 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1470689260 = mAttachInfo != null ? mAttachInfo.mKeyDispatchState : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1470689260.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1470689260.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1470689260;
-        // ---------- Original Method ----------
-        //return mAttachInfo != null ? mAttachInfo.mKeyDispatchState : null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.503 -0400", hash_original_method = "6BC846EF16EEF6AFE683BBB51F853755", hash_generated_method = "16597CD97266BD5C1DE1F300122F0D66")
     public boolean dispatchKeyEventPreIme(KeyEvent event) {
         boolean varA1D1F09794689B9E696354A29B1E7AC6_559969411 = (onKeyPreIme(event.getKeyCode(), event));
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_179120382 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_179120382;
-        // ---------- Original Method ----------
-        //return onKeyPreIme(event.getKeyCode(), event);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.503 -0400", hash_original_method = "E10762B11C67C141BFF5425226FAC8FB", hash_generated_method = "9C3BDE8F143D26094DD5B82FD1190EB7")
     public boolean dispatchKeyEvent(KeyEvent event) {
         {
             mInputEventConsistencyVerifier.onKeyEvent(event, 0);
-        } //End block
+        } 
         ListenerInfo li = mListenerInfo;
         {
             boolean var1AD81DB769C1B29F43EBC2BE5F7D22DB_602378551 = (li != null && li.mOnKeyListener != null && (mViewFlags & ENABLED_MASK) == ENABLED
                 && li.mOnKeyListener.onKey(this, event.getKeyCode(), event));
-        } //End collapsed parenthetic
+        } 
         {
             boolean varE1E9B80914776D83D3B032515F60B979_866269186 = (event.dispatch(this, mAttachInfo != null
-                ? mAttachInfo.mKeyDispatchState : null, this)); //DSFIXME:  CODE0008: Nested ternary operator in expression
-        } //End collapsed parenthetic
+                ? mAttachInfo.mKeyDispatchState : null, this)); 
+        } 
         {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
-        } //End block
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2047146645 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2047146645;
-        // ---------- Original Method ----------
-        //if (mInputEventConsistencyVerifier != null) {
-            //mInputEventConsistencyVerifier.onKeyEvent(event, 0);
-        //}
-        //ListenerInfo li = mListenerInfo;
-        //if (li != null && li.mOnKeyListener != null && (mViewFlags & ENABLED_MASK) == ENABLED
-                //&& li.mOnKeyListener.onKey(this, event.getKeyCode(), event)) {
-            //return true;
-        //}
-        //if (event.dispatch(this, mAttachInfo != null
-                //? mAttachInfo.mKeyDispatchState : null, this)) {
-            //return true;
-        //}
-        //if (mInputEventConsistencyVerifier != null) {
-            //mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
-        //}
-        //return false;
+        
+        
+            
+        
+        
+        
+                
+            
+        
+        
+                
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.503 -0400", hash_original_method = "24CC3891BCF06B080FB3833309F877D3", hash_generated_method = "44D80C6B76BC418B923C4299920F424B")
     public boolean dispatchKeyShortcutEvent(KeyEvent event) {
         boolean varB65319FC5255424F872A964CBDE1432E_103055252 = (onKeyShortcut(event.getKeyCode(), event));
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_63980521 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_63980521;
-        // ---------- Original Method ----------
-        //return onKeyShortcut(event.getKeyCode(), event);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.504 -0400", hash_original_method = "600B8A393DB97B903182B7AB1891AC3E", hash_generated_method = "CBD7D0C3BE4EA390FF94FB5FD7D65DC8")
     public boolean dispatchTouchEvent(MotionEvent event) {
         {
             mInputEventConsistencyVerifier.onTouchEvent(event, 0);
-        } //End block
+        } 
         {
             boolean var6607193D9DAC59E34045E90E7ECB0599_1039048296 = (onFilterTouchEventForSecurity(event));
             {
@@ -3118,109 +3198,113 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     boolean var710CB5FED0ECEB52EC22DD1CD141A5D7_2019375306 = (li != null && li.mOnTouchListener != null && (mViewFlags & ENABLED_MASK) == ENABLED
                     && li.mOnTouchListener.onTouch(this, event));
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean var430E552CCD38EECE5F1A81AADC330527_865820817 = (onTouchEvent(event));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
-        } //End block
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_776536300 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_776536300;
-        // ---------- Original Method ----------
-        //if (mInputEventConsistencyVerifier != null) {
-            //mInputEventConsistencyVerifier.onTouchEvent(event, 0);
-        //}
-        //if (onFilterTouchEventForSecurity(event)) {
-            //ListenerInfo li = mListenerInfo;
-            //if (li != null && li.mOnTouchListener != null && (mViewFlags & ENABLED_MASK) == ENABLED
-                    //&& li.mOnTouchListener.onTouch(this, event)) {
-                //return true;
-            //}
-            //if (onTouchEvent(event)) {
-                //return true;
-            //}
-        //}
-        //if (mInputEventConsistencyVerifier != null) {
-            //mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+            
+                    
+                
+            
+            
+                
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.504 -0400", hash_original_method = "D22D4E22492930B2B9E3C8840958D4D7", hash_generated_method = "44A531B304D4A5449C29401E102F85CD")
     public boolean onFilterTouchEventForSecurity(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var702D316B06A93F4CCE85A9302F846D5C_1909895480 = ((mViewFlags & FILTER_TOUCHES_WHEN_OBSCURED) != 0
                 && (event.getFlags() & MotionEvent.FLAG_WINDOW_IS_OBSCURED) != 0);
-        } //End collapsed parenthetic
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_217977519 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_217977519;
-        // ---------- Original Method ----------
-        //if ((mViewFlags & FILTER_TOUCHES_WHEN_OBSCURED) != 0
-                //&& (event.getFlags() & MotionEvent.FLAG_WINDOW_IS_OBSCURED) != 0) {
-            //return false;
-        //}
-        //return true;
+        
+        
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.505 -0400", hash_original_method = "7D8730AF428F1F83C6EA34686735DEE9", hash_generated_method = "13CDBBAEDC570CF1278BDFD5FEBBE197")
     public boolean dispatchTrackballEvent(MotionEvent event) {
         {
             mInputEventConsistencyVerifier.onTrackballEvent(event, 0);
-        } //End block
+        } 
         boolean var138C9D0D373C5EB915EF41E377253C34_342545053 = (onTrackballEvent(event));
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1005332689 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1005332689;
-        // ---------- Original Method ----------
-        //if (mInputEventConsistencyVerifier != null) {
-            //mInputEventConsistencyVerifier.onTrackballEvent(event, 0);
-        //}
-        //return onTrackballEvent(event);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.505 -0400", hash_original_method = "4D54FFDFE0E351BCF8C37A3BD601042A", hash_generated_method = "4B32C48930B92B9C1CE965393B6A625D")
     public boolean dispatchGenericMotionEvent(MotionEvent event) {
         {
             mInputEventConsistencyVerifier.onGenericMotionEvent(event, 0);
-        } //End block
+        } 
         final int source = event.getSource();
         {
             final int action = event.getAction();
             {
                 {
                     boolean varB883F6E8D34F34A7AC9A1C8473B6C6B6_1580182381 = (dispatchHoverEvent(event));
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             {
                 boolean var2FA64A05C793C37BF00E4ECBCAD6D479_409723570 = (dispatchGenericPointerEvent(event));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             boolean var1E07621182DE67A8830891F3EE4A3942_1652576170 = (dispatchGenericFocusedEvent(event));
-        } //End collapsed parenthetic
+        } 
         {
             boolean varB9448C36962D13B58BD66CC5B67304A5_1885430393 = (dispatchGenericMotionEventInternal(event));
-        } //End collapsed parenthetic
+        } 
         {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
-        } //End block
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2026400728 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2026400728;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.506 -0400", hash_original_method = "C7F259FDC1DD0446D3E9FDACCE813628", hash_generated_method = "AA50C20515D97E9AD37E21A1C010C19C")
     private boolean dispatchGenericMotionEventInternal(MotionEvent event) {
         ListenerInfo li = mListenerInfo;
@@ -3228,33 +3312,34 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             boolean varF5508584668781871F7A8EEF6203DF63_2071429342 = (li != null && li.mOnGenericMotionListener != null
                 && (mViewFlags & ENABLED_MASK) == ENABLED
                 && li.mOnGenericMotionListener.onGenericMotion(this, event));
-        } //End collapsed parenthetic
+        } 
         {
             boolean varB02F8946AC0F1C42DF139AA516995E2E_284857691 = (onGenericMotionEvent(event));
-        } //End collapsed parenthetic
+        } 
         {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
-        } //End block
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_982064053 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_982064053;
-        // ---------- Original Method ----------
-        //ListenerInfo li = mListenerInfo;
-        //if (li != null && li.mOnGenericMotionListener != null
-                //&& (mViewFlags & ENABLED_MASK) == ENABLED
-                //&& li.mOnGenericMotionListener.onGenericMotion(this, event)) {
-            //return true;
-        //}
-        //if (onGenericMotionEvent(event)) {
-            //return true;
-        //}
-        //if (mInputEventConsistencyVerifier != null) {
-            //mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
-        //}
-        //return false;
+        
+        
+        
+                
+                
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.506 -0400", hash_original_method = "648EC8AE542E2EA418563108E4E24BE8", hash_generated_method = "3F23E9C3941348424F0072008EA0DF15")
     protected boolean dispatchHoverEvent(MotionEvent event) {
         ListenerInfo li = mListenerInfo;
@@ -3262,19 +3347,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             boolean varE708EAD4945B3336974BCEC5E5692CEB_177480241 = (li != null && li.mOnHoverListener != null
                 && (mViewFlags & ENABLED_MASK) == ENABLED
                 && li.mOnHoverListener.onHover(this, event));
-        } //End collapsed parenthetic
+        } 
         boolean var20FA514C60FFF8C5D29FC4243A17D964_801950268 = (onHoverEvent(event));
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_532226 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_532226;
-        // ---------- Original Method ----------
-        //ListenerInfo li = mListenerInfo;
-        //if (li != null && li.mOnHoverListener != null
-                //&& (mViewFlags & ENABLED_MASK) == ENABLED
-                //&& li.mOnHoverListener.onHover(this, event)) {
-            //return true;
-        //}
-        //return onHoverEvent(event);
+        
+        
+        
+                
+                
+            
+        
+        
     }
 
     
@@ -3282,8 +3367,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected boolean hasHoveredChild() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_459140697 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_459140697;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -3292,8 +3377,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_412850209 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_412850209;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -3302,8 +3387,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_889932559 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_889932559;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -3313,71 +3398,73 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             boolean var15DC5053D55881959B9A5AB5DA0AE67E_1598217759 = (event.isTouchEvent());
             {
                 boolean varB6BDA87406308A510ABCADF589E94032_850654837 = (dispatchTouchEvent(event));
-            } //End block
+            } 
             {
                 boolean var34A3B038B9117B3BA5FBBDB0BBF251D9_207148555 = (dispatchGenericMotionEvent(event));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1318832775 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1318832775;
-        // ---------- Original Method ----------
-        //if (event.isTouchEvent()) {
-            //return dispatchTouchEvent(event);
-        //} else {
-            //return dispatchGenericMotionEvent(event);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.509 -0400", hash_original_method = "F6C86F5501B65BFAFB8121E3F717BD02", hash_generated_method = "9EE6786DF4A3CDC7D219D109C602A1E2")
     public void dispatchWindowFocusChanged(boolean hasFocus) {
         onWindowFocusChanged(hasFocus);
         addTaint(hasFocus);
-        // ---------- Original Method ----------
-        //onWindowFocusChanged(hasFocus);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.509 -0400", hash_original_method = "F57E7738E41C9719BB0FA37E2B51EE61", hash_generated_method = "1B0291007DFE33125949AA247376AD82")
     public void onWindowFocusChanged(boolean hasWindowFocus) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         InputMethodManager imm = InputMethodManager.peekInstance();
         {
             {
                 boolean varF27F491A5EAB0B2989FBEF44657192A7_351307641 = (isPressed());
                 {
                     setPressed(false);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 imm.focusOut(this);
-            } //End block
+            } 
             removeLongPressCallback();
             removeTapCallback();
             onFocusLost();
-        } //End block
+        } 
         {
             imm.focusIn(this);
-        } //End block
+        } 
         refreshDrawableState();
         addTaint(hasWindowFocus);
-        // ---------- Original Method ----------
-        //InputMethodManager imm = InputMethodManager.peekInstance();
-        //if (!hasWindowFocus) {
-            //if (isPressed()) {
-                //setPressed(false);
-            //}
-            //if (imm != null && (mPrivateFlags & FOCUSED) != 0) {
-                //imm.focusOut(this);
-            //}
-            //removeLongPressCallback();
-            //removeTapCallback();
-            //onFocusLost();
-        //} else if (imm != null && (mPrivateFlags & FOCUSED) != 0) {
-            //imm.focusIn(this);
-        //}
-        //refreshDrawableState();
+        
+        
+        
+            
+                
+            
+            
+                
+            
+            
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -3385,82 +3472,87 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean hasWindowFocus() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1011690262 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1011690262;
-        // ---------- Original Method ----------
-        //return mAttachInfo != null && mAttachInfo.mHasWindowFocus;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.510 -0400", hash_original_method = "5A92DDE8F02B8EC7BB05F90066C877DB", hash_generated_method = "3243E710BCE99C464D873F2CD3F3B3CF")
     protected void dispatchVisibilityChanged(View changedView, int visibility) {
         onVisibilityChanged(changedView, visibility);
         addTaint(changedView.getTaint());
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //onVisibilityChanged(changedView, visibility);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.510 -0400", hash_original_method = "96367A8B641E87C53B477CCACD2EFDC5", hash_generated_method = "BE002024D6470FC82F23EA0B55EDBD9C")
     protected void onVisibilityChanged(View changedView, int visibility) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             {
                 initialAwakenScrollBars();
-            } //End block
+            } 
             {
                 mPrivateFlags |= AWAKEN_SCROLL_BARS_ON_ATTACH;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(changedView.getTaint());
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //if (visibility == VISIBLE) {
-            //if (mAttachInfo != null) {
-                //initialAwakenScrollBars();
-            //} else {
-                //mPrivateFlags |= AWAKEN_SCROLL_BARS_ON_ATTACH;
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.510 -0400", hash_original_method = "5C1461045BB49CF5D091FC620162B930", hash_generated_method = "60D369FD538ED62F4DBE65FF896401D5")
     public void dispatchDisplayHint(int hint) {
         onDisplayHint(hint);
         addTaint(hint);
-        // ---------- Original Method ----------
-        //onDisplayHint(hint);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.511 -0400", hash_original_method = "5A8656B423BEB4FF4CA5CD6E6B7C0CE2", hash_generated_method = "7AFA45852F4248855F8AF6C17DF3F6DF")
     protected void onDisplayHint(int hint) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(hint);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.511 -0400", hash_original_method = "3D097367CCB5A92F4CA94066B4093669", hash_generated_method = "D2986C6E5C42F87CC2951A63F2E58CF5")
     public void dispatchWindowVisibilityChanged(int visibility) {
         onWindowVisibilityChanged(visibility);
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //onWindowVisibilityChanged(visibility);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.511 -0400", hash_original_method = "B52A85A1B1D14AC974ADC7B2B6CB318A", hash_generated_method = "63A3183908E1FB7A83B4B299FE6A9E1D")
     protected void onWindowVisibilityChanged(int visibility) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             initialAwakenScrollBars();
-        } //End block
+        } 
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //if (visibility == VISIBLE) {
-            //initialAwakenScrollBars();
-        //}
+        
+        
+            
+        
     }
 
     
@@ -3468,18 +3560,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getWindowVisibility() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_983735886 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_983735886;
-        // ---------- Original Method ----------
-        //return mAttachInfo != null ? mAttachInfo.mWindowVisibility : GONE;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.512 -0400", hash_original_method = "D236207A35AB4B4964A2350C5EB42480", hash_generated_method = "BB201B2B5167F72093B3AAEC8917C9F5")
     public void getWindowVisibleDisplayFrame(Rect outRect) {
         {
             try 
             {
                 mAttachInfo.mSession.getDisplayFrame(mAttachInfo.mWindow, outRect);
-            } //End block
+            } 
             catch (RemoteException e)
             { }
             final Rect insets = mAttachInfo.mVisibleInsets;
@@ -3487,43 +3580,44 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             outRect.top += insets.top;
             outRect.right -= insets.right;
             outRect.bottom -= insets.bottom;
-        } //End block
+        } 
         Display d = WindowManagerImpl.getDefault().getDefaultDisplay();
         d.getRectSize(outRect);
         addTaint(outRect.getTaint());
-        // ---------- Original Method ----------
-        //if (mAttachInfo != null) {
-            //try {
-                //mAttachInfo.mSession.getDisplayFrame(mAttachInfo.mWindow, outRect);
-            //} catch (RemoteException e) {
-                //return;
-            //}
-            //final Rect insets = mAttachInfo.mVisibleInsets;
-            //outRect.left += insets.left;
-            //outRect.top += insets.top;
-            //outRect.right -= insets.right;
-            //outRect.bottom -= insets.bottom;
-            //return;
-        //}
-        //Display d = WindowManagerImpl.getDefault().getDefaultDisplay();
-        //d.getRectSize(outRect);
+        
+        
+            
+                
+            
+                
+            
+            
+            
+            
+            
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.512 -0400", hash_original_method = "54CB795C069B52CC42B32E2AD26066B2", hash_generated_method = "2E26EAE6FBBFDA96B514A4920ABDB823")
     public void dispatchConfigurationChanged(Configuration newConfig) {
         onConfigurationChanged(newConfig);
         addTaint(newConfig.getTaint());
-        // ---------- Original Method ----------
-        //onConfigurationChanged(newConfig);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.512 -0400", hash_original_method = "8287235C28E9D1E310027A2DDEB95FCD", hash_generated_method = "466D77C1E8E53A4547ADE90D240CE428")
     protected void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(newConfig.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -3531,8 +3625,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
      void dispatchCollectViewAttributes(int visibility) {
         performCollectViewAttributes(visibility);
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //performCollectViewAttributes(visibility);
+        
+        
     }
 
     
@@ -3541,25 +3635,25 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             {
                 mAttachInfo.mKeepScreenOn = true;
-            } //End block
+            } 
             mAttachInfo.mSystemUiVisibility |= mSystemUiVisibility;
             ListenerInfo li = mListenerInfo;
             {
                 mAttachInfo.mHasSystemUiListeners = true;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //if ((visibility & VISIBILITY_MASK) == VISIBLE && mAttachInfo != null) {
-            //if ((mViewFlags & KEEP_SCREEN_ON) == KEEP_SCREEN_ON) {
-                //mAttachInfo.mKeepScreenOn = true;
-            //}
-            //mAttachInfo.mSystemUiVisibility |= mSystemUiVisibility;
-            //ListenerInfo li = mListenerInfo;
-            //if (li != null && li.mOnSystemUiVisibilityChangeListener != null) {
-                //mAttachInfo.mHasSystemUiListeners = true;
-            //}
-        //}
+        
+        
+            
+                
+            
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -3569,66 +3663,68 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             {
                 ai.mRecomputeGlobalAttributes = true;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(force);
-        // ---------- Original Method ----------
-        //final AttachInfo ai = mAttachInfo;
-        //if (ai != null) {
-            //if (force || ai.mKeepScreenOn || (ai.mSystemUiVisibility != 0)
-                    //|| ai.mHasSystemUiListeners) {
-                //ai.mRecomputeGlobalAttributes = true;
-            //}
-        //}
+        
+        
+        
+            
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.513 -0400", hash_original_method = "ED47CAF0B3847455A70DC2CFF6AB9C90", hash_generated_method = "93584102931B58B1791465BDC528B266")
     @ViewDebug.ExportedProperty
     public boolean isInTouchMode() {
         {
             boolean varFF1875034CF47A81AA6602BEECB01842_1407029566 = (ViewRootImpl.isInTouchMode());
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1803012207 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1803012207;
-        // ---------- Original Method ----------
-        //if (mAttachInfo != null) {
-            //return mAttachInfo.mInTouchMode;
-        //} else {
-            //return ViewRootImpl.isInTouchMode();
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.514 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "4EB4C3233B3F5821D02CBAF2CD541BC2")
     @ViewDebug.CapturedViewProperty
     public final Context getContext() {
-        Context varB4EAC82CA7396A68D541C85D26508E83_1120985883 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_1120985883 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1120985883 = mContext;
-        varB4EAC82CA7396A68D541C85D26508E83_1120985883.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1120985883.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1120985883;
-        // ---------- Original Method ----------
-        //return mContext;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.514 -0400", hash_original_method = "3F070CAC61386FAD746F2003533AED25", hash_generated_method = "49068B8D21420F3C9E3218F404BC2552")
     public boolean onKeyPreIme(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_366521450 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_366521450;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.515 -0400", hash_original_method = "30943D321BC4BC956C4D9D744FC13942", hash_generated_method = "805F8D753AE16F42F5512B738FD3B1D8")
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean result = false;
-        //Begin case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
+        
         {
             {
                 boolean var213035B3AC0E21AB8BF383FF63EBF5BC_433141483 = (((mViewFlags & CLICKABLE) == CLICKABLE ||
@@ -3637,53 +3733,54 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     setPressed(true);
                     checkForLongClick(0);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        //End case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
+                } 
+            } 
+        } 
+        
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1416652388 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1416652388;
-        // ---------- Original Method ----------
-        //boolean result = false;
-        //switch (keyCode) {
-            //case KeyEvent.KEYCODE_DPAD_CENTER:
-            //case KeyEvent.KEYCODE_ENTER: {
-                //if ((mViewFlags & ENABLED_MASK) == DISABLED) {
-                    //return true;
-                //}
-                //if (((mViewFlags & CLICKABLE) == CLICKABLE ||
-                        //(mViewFlags & LONG_CLICKABLE) == LONG_CLICKABLE) &&
-                        //(event.getRepeatCount() == 0)) {
-                    //setPressed(true);
-                    //checkForLongClick(0);
-                    //return true;
-                //}
-                //break;
-            //}
-        //}
-        //return result;
+        
+        
+        
+            
+            
+                
+                    
+                
+                
+                        
+                        
+                    
+                    
+                    
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.515 -0400", hash_original_method = "2A75FF2C44C4D96068DDAFC2643F0C8B", hash_generated_method = "E89E7A3A17CD47C41482A894CFECB6FB")
     public boolean onKeyLongPress(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_751539160 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_751539160;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.516 -0400", hash_original_method = "5AB62313644D9CD032AD8CDBAB33BB4C", hash_generated_method = "89DCD3B9109ECE156525BF4FECBB74EC")
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean result = false;
-        //Begin case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
+        
         {
             {
                 boolean var22CDF6A8C6A4F6AF8C611FA66D791C64_1556560138 = ((mViewFlags & CLICKABLE) == CLICKABLE && isPressed());
@@ -3692,82 +3789,82 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     {
                         removeLongPressCallback();
                         result = performClick();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        //End case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
+                    } 
+                } 
+            } 
+        } 
+        
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1558199917 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1558199917;
-        // ---------- Original Method ----------
-        //boolean result = false;
-        //switch (keyCode) {
-            //case KeyEvent.KEYCODE_DPAD_CENTER:
-            //case KeyEvent.KEYCODE_ENTER: {
-                //if ((mViewFlags & ENABLED_MASK) == DISABLED) {
-                    //return true;
-                //}
-                //if ((mViewFlags & CLICKABLE) == CLICKABLE && isPressed()) {
-                    //setPressed(false);
-                    //if (!mHasPerformedLongPress) {
-                        //removeLongPressCallback();
-                        //result = performClick();
-                    //}
-                //}
-                //break;
-            //}
-        //}
-        //return result;
+        
+        
+        
+            
+            
+                
+                    
+                
+                
+                    
+                    
+                        
+                        
+                    
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.516 -0400", hash_original_method = "E364C67ED15F0AA31C6DCFFA6137C8C0", hash_generated_method = "D47B34D867BD1E87F239C06A446DCE74")
     public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(keyCode);
         addTaint(repeatCount);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1735469037 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1735469037;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.517 -0400", hash_original_method = "2ECF3E4914B4B3BE2238F799B7435A51", hash_generated_method = "E37455054429511CA987D77936E58D65")
     public boolean onKeyShortcut(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_602876026 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_602876026;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.517 -0400", hash_original_method = "47FC099EDD591711C69A21361EB96357", hash_generated_method = "0DDB86094E012128C6E8352932A455EE")
     public boolean onCheckIsTextEditor() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1589794241 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1589794241;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.518 -0400", hash_original_method = "0601401EB37355AF70FCC37B4ABEB0DF", hash_generated_method = "EBAA40F7E3135A5EE08BCA0BCC5599F4")
     public InputConnection onCreateInputConnection(EditorInfo outAttrs) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        InputConnection varB4EAC82CA7396A68D541C85D26508E83_1661387920 = null; //Variable for return #1
+        
+        InputConnection varB4EAC82CA7396A68D541C85D26508E83_1661387920 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1661387920 = null;
         addTaint(outAttrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1661387920.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1661387920.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1661387920;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -3776,11 +3873,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(view.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_556697378 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_556697378;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.519 -0400", hash_original_method = "3CE367A3F7143B170AAF00E81005E914", hash_generated_method = "3D5836A5243E78E06C468D3C9BCEF478")
     public void createContextMenu(ContextMenu menu) {
         ContextMenuInfo menuInfo = getContextMenuInfo();
@@ -3789,71 +3887,72 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         ListenerInfo li = mListenerInfo;
         {
             li.mOnCreateContextMenuListener.onCreateContextMenu(menu, this, menuInfo);
-        } //End block
+        } 
         ((MenuBuilder)menu).setCurrentMenuInfo(null);
         {
             mParent.createContextMenu(menu);
-        } //End block
+        } 
         addTaint(menu.getTaint());
-        // ---------- Original Method ----------
-        //ContextMenuInfo menuInfo = getContextMenuInfo();
-        //((MenuBuilder)menu).setCurrentMenuInfo(menuInfo);
-        //onCreateContextMenu(menu);
-        //ListenerInfo li = mListenerInfo;
-        //if (li != null && li.mOnCreateContextMenuListener != null) {
-            //li.mOnCreateContextMenuListener.onCreateContextMenu(menu, this, menuInfo);
-        //}
-        //((MenuBuilder)menu).setCurrentMenuInfo(null);
-        //if (mParent != null) {
-            //mParent.createContextMenu(menu);
-        //}
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.520 -0400", hash_original_method = "5F63695E16A345A992F87C295B6530DF", hash_generated_method = "DD6C66809DDC07D94C8C7BDB7E1BEBC7")
     protected ContextMenuInfo getContextMenuInfo() {
-        ContextMenuInfo varB4EAC82CA7396A68D541C85D26508E83_903111251 = null; //Variable for return #1
+        ContextMenuInfo varB4EAC82CA7396A68D541C85D26508E83_903111251 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_903111251 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_903111251.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_903111251.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_903111251;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.520 -0400", hash_original_method = "6522DD22D3C6D7A95FA248A3D5D95901", hash_generated_method = "015D5DE2243E972B4786C923AF15F92B")
     protected void onCreateContextMenu(ContextMenu menu) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(menu.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.520 -0400", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "D56119724BFF386056E057FACA0F8937")
     public boolean onTrackballEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_393138167 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_393138167;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.521 -0400", hash_original_method = "0E59A005881F30C798F764BCF32D89A3", hash_generated_method = "4EC2EFC7E0C315E45441EC0FD51DDB62")
     public boolean onGenericMotionEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1593336696 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1593336696;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.521 -0400", hash_original_method = "5922A88C022E21B0C70489BC0DBE35EF", hash_generated_method = "6239189AF39F453BE9FDCB1B2483D89B")
     public boolean onHoverEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int action = event.getAction();
         {
             {
@@ -3864,9 +3963,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     mSendingHoverAccessibilityEvents = true;
                     sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_HOVER_ENTER);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 boolean var96DFD226589477FD552DD4E5C844A258_1636080162 = (action == MotionEvent.ACTION_HOVER_EXIT
@@ -3875,26 +3974,26 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     mSendingHoverAccessibilityEvents = false;
                     sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_HOVER_EXIT);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             boolean var25FE040CDD1CBE5B8AA6184119AEA24C_21090077 = (isHoverable());
             {
-                //Begin case MotionEvent.ACTION_HOVER_ENTER 
+                
                 setHovered(true);
-                //End case MotionEvent.ACTION_HOVER_ENTER 
-                //Begin case MotionEvent.ACTION_HOVER_EXIT 
+                
+                
                 setHovered(false);
-                //End case MotionEvent.ACTION_HOVER_EXIT 
+                
                 dispatchGenericMotionEventInternal(event);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_197232191 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_197232191;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3903,13 +4002,13 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         final int viewFlags = mViewFlags;
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1520165774 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1520165774;
-        // ---------- Original Method ----------
-        //final int viewFlags = mViewFlags;
-        //if ((viewFlags & ENABLED_MASK) == DISABLED) {
-            //return false;
-        //}
-        //return (viewFlags & CLICKABLE) == CLICKABLE
-                //|| (viewFlags & LONG_CLICKABLE) == LONG_CLICKABLE;
+        
+        
+        
+            
+        
+        
+                
     }
 
     
@@ -3918,11 +4017,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isHovered() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_722271636 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_722271636;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags & HOVERED) != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.522 -0400", hash_original_method = "6A44BB0DB1E9547ADB3859B33BB1BB33", hash_generated_method = "F4C348D2D76DF2801A8E28E86F01E51D")
     public void setHovered(boolean hovered) {
         {
@@ -3930,44 +4030,45 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 mPrivateFlags |= HOVERED;
                 refreshDrawableState();
                 onHoverChanged(true);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mPrivateFlags &= ~HOVERED;
                 refreshDrawableState();
                 onHoverChanged(false);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(hovered);
-        // ---------- Original Method ----------
-        //if (hovered) {
-            //if ((mPrivateFlags & HOVERED) == 0) {
-                //mPrivateFlags |= HOVERED;
-                //refreshDrawableState();
-                //onHoverChanged(true);
-            //}
-        //} else {
-            //if ((mPrivateFlags & HOVERED) != 0) {
-                //mPrivateFlags &= ~HOVERED;
-                //refreshDrawableState();
-                //onHoverChanged(false);
-            //}
-        //}
+        
+        
+            
+                
+                
+                
+            
+        
+            
+                
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.523 -0400", hash_original_method = "E702D19B1B952DDC0E28AFCA7C53007F", hash_generated_method = "AE8841589F9FD221B263AD22F6BB1DA2")
     public void onHoverChanged(boolean hovered) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(hovered);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.524 -0400", hash_original_method = "F0667DD3F99E763B1BFE85806FBAFB16", hash_generated_method = "2109CB450282F757704B93F0A737D596")
     public boolean onTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final int viewFlags = mViewFlags;
         {
             {
@@ -3975,104 +4076,104 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     mPrivateFlags &= ~PRESSED;
                     refreshDrawableState();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         {
             {
                 boolean var2FD9894A0B8D17E7D63035FBAFAC4F4A_1962074920 = (mTouchDelegate.onTouchEvent(event));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         {
             {
                 Object var96ADA7CB150D39A55358E742474108F2_567003721 = (event.getAction());
-                //Begin case MotionEvent.ACTION_UP 
+                
                 boolean prepressed = (mPrivateFlags & PREPRESSED) != 0;
-                //End case MotionEvent.ACTION_UP 
-                //Begin case MotionEvent.ACTION_UP 
+                
+                
                 {
                     boolean focusTaken = false;
                     {
                         boolean var4010B45C9110D5523B114A445C2F69F9_2109026873 = (isFocusable() && isFocusableInTouchMode() && !isFocused());
                         {
                             focusTaken = requestFocus();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         mPrivateFlags |= PRESSED;
                         refreshDrawableState();
-                    } //End block
+                    } 
                     {
                         removeLongPressCallback();
                         {
                             {
                                 mPerformClick = new PerformClick();
-                            } //End block
+                            } 
                             {
                                 boolean var7529B8C360AE15DA8B22EFD2F54DEBE4_619352005 = (!post(mPerformClick));
                                 {
                                     performClick();
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End block
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         mUnsetPressedState = new UnsetPressedState();
-                    } //End block
+                    } 
                     {
                         postDelayed(mUnsetPressedState,
                                     ViewConfiguration.getPressedStateDuration());
-                    } //End block
+                    } 
                     {
                         boolean var78C79A084528017AFFB727F82C6C54F8_1615122934 = (!post(mUnsetPressedState));
                         {
                             mUnsetPressedState.run();
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     removeTapCallback();
-                } //End block
-                //End case MotionEvent.ACTION_UP 
-                //Begin case MotionEvent.ACTION_DOWN 
+                } 
+                
+                
                 mHasPerformedLongPress = false;
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                
+                
                 {
                     boolean var05FA8261FD36A1DB58AD7618577A33AB_441128423 = (performButtonActionOnTouchDown(event));
-                } //End collapsed parenthetic
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                } 
+                
+                
                 boolean isInScrollingContainer = isInScrollingContainer();
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_DOWN 
+                
+                
                 {
                     mPrivateFlags |= PREPRESSED;
                     {
                         mPendingCheckForTap = new CheckForTap();
-                    } //End block
+                    } 
                     postDelayed(mPendingCheckForTap, ViewConfiguration.getTapTimeout());
-                } //End block
+                } 
                 {
                     mPrivateFlags |= PRESSED;
                     refreshDrawableState();
                     checkForLongClick(0);
-                } //End block
-                //End case MotionEvent.ACTION_DOWN 
-                //Begin case MotionEvent.ACTION_CANCEL 
+                } 
+                
+                
                 mPrivateFlags &= ~PRESSED;
-                //End case MotionEvent.ACTION_CANCEL 
-                //Begin case MotionEvent.ACTION_CANCEL 
+                
+                
                 refreshDrawableState();
-                //End case MotionEvent.ACTION_CANCEL 
-                //Begin case MotionEvent.ACTION_CANCEL 
+                
+                
                 removeTapCallback();
-                //End case MotionEvent.ACTION_CANCEL 
-                //Begin case MotionEvent.ACTION_MOVE 
+                
+                
                 final int x = (int) event.getX();
-                //End case MotionEvent.ACTION_MOVE 
-                //Begin case MotionEvent.ACTION_MOVE 
+                
+                
                 final int y = (int) event.getY();
-                //End case MotionEvent.ACTION_MOVE 
-                //Begin case MotionEvent.ACTION_MOVE 
+                
+                
                 {
                     boolean var08A986E19E681C372CEFA5E47F3A6BEE_1558481084 = (!pointInView(x, y, mTouchSlop));
                     {
@@ -4081,133 +4182,140 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                             removeLongPressCallback();
                             mPrivateFlags &= ~PRESSED;
                             refreshDrawableState();
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-                //End case MotionEvent.ACTION_MOVE 
-            } //End collapsed parenthetic
-        } //End block
+                        } 
+                    } 
+                } 
+                
+            } 
+        } 
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1571864742 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1571864742;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.524 -0400", hash_original_method = "7808B21D2BE87077131F031A801646DE", hash_generated_method = "7F2F18327A5E05BEEC1913930D658780")
     public boolean isInScrollingContainer() {
         ViewParent p = getParent();
         {
             {
                 boolean var4881E0F2577352AD9B4EFF88E10A0FFC_1259006496 = (((ViewGroup) p).shouldDelayChildPressedState());
-            } //End collapsed parenthetic
+            } 
             p = p.getParent();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_555844662 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_555844662;
-        // ---------- Original Method ----------
-        //ViewParent p = getParent();
-        //while (p != null && p instanceof ViewGroup) {
-            //if (((ViewGroup) p).shouldDelayChildPressedState()) {
-                //return true;
-            //}
-            //p = p.getParent();
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.525 -0400", hash_original_method = "A93CC85053AADAF4A404AD13182B9757", hash_generated_method = "4E0E89E0095C87865BEDCEA23B30D854")
     private void removeLongPressCallback() {
         {
             removeCallbacks(mPendingCheckForLongPress);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPendingCheckForLongPress != null) {
-          //removeCallbacks(mPendingCheckForLongPress);
-        //}
+        } 
+        
+        
+          
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.525 -0400", hash_original_method = "E1C00ACE8BB8560C240B3C5D040006A3", hash_generated_method = "2A0B9175108CA8E4055A6F572B30050D")
     private void removePerformClickCallback() {
         {
             removeCallbacks(mPerformClick);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPerformClick != null) {
-            //removeCallbacks(mPerformClick);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.525 -0400", hash_original_method = "6062C7F52024ACE8958D902CC4268271", hash_generated_method = "D17473916BA8EEE9CD65D95E79C2DB43")
     private void removeUnsetPressCallback() {
         {
             setPressed(false);
             removeCallbacks(mUnsetPressedState);
-        } //End block
-        // ---------- Original Method ----------
-        //if ((mPrivateFlags & PRESSED) != 0 && mUnsetPressedState != null) {
-            //setPressed(false);
-            //removeCallbacks(mUnsetPressedState);
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.526 -0400", hash_original_method = "B67FA3EAF595424C7D0F48DB4ECBF54E", hash_generated_method = "29D4BD3D693368C16CBA0386A785A065")
     private void removeTapCallback() {
         {
             mPrivateFlags &= ~PREPRESSED;
             removeCallbacks(mPendingCheckForTap);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPendingCheckForTap != null) {
-            //mPrivateFlags &= ~PREPRESSED;
-            //removeCallbacks(mPendingCheckForTap);
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.526 -0400", hash_original_method = "B45EC6A62A5C3981A23AB3F41840A566", hash_generated_method = "B4CC4E5CE3C81DAAFE2FEB90BADA5B6E")
     public void cancelLongPress() {
         removeLongPressCallback();
         removeTapCallback();
-        // ---------- Original Method ----------
-        //removeLongPressCallback();
-        //removeTapCallback();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.526 -0400", hash_original_method = "8D4D94E2FFA3D8907911FEF22F0F072D", hash_generated_method = "15573115AF3E86DFF34CBB843D8CC1D8")
     private void removeSendViewScrolledAccessibilityEventCallback() {
         {
             removeCallbacks(mSendViewScrolledAccessibilityEvent);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSendViewScrolledAccessibilityEvent != null) {
-            //removeCallbacks(mSendViewScrolledAccessibilityEvent);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.527 -0400", hash_original_method = "61F54D1D0A5A4D0B5C8BE62B3B180D19", hash_generated_method = "E776BADE28CB148BB0B06BC8200B2011")
     public void setTouchDelegate(TouchDelegate delegate) {
         mTouchDelegate = delegate;
-        // ---------- Original Method ----------
-        //mTouchDelegate = delegate;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.527 -0400", hash_original_method = "C13C756E7E3DD9AFF35525DE74B6A0AE", hash_generated_method = "0964CB563AB5E124C37511C486BBF0F1")
     public TouchDelegate getTouchDelegate() {
-        TouchDelegate varB4EAC82CA7396A68D541C85D26508E83_103931345 = null; //Variable for return #1
+        TouchDelegate varB4EAC82CA7396A68D541C85D26508E83_103931345 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_103931345 = mTouchDelegate;
-        varB4EAC82CA7396A68D541C85D26508E83_103931345.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_103931345.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_103931345;
-        // ---------- Original Method ----------
-        //return mTouchDelegate;
+        
+        
     }
 
     
@@ -4220,11 +4328,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             {
                 clearFocus();
-            } //End block
+            } 
             {
                 mParent.focusableViewAvailable(this);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 mPrivateFlags |= DRAWN;
@@ -4232,9 +4340,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 needGlobalAttributesUpdate(true);
                 {
                     mParent.focusableViewAvailable(this);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         {
             needGlobalAttributesUpdate(false);
             requestLayout();
@@ -4242,17 +4350,17 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     boolean var045EBE37E9FC6E3EB86868C8822165CE_835514865 = (hasFocus());
                     clearFocus();
-                } //End collapsed parenthetic
+                } 
                 destroyDrawingCache();
                 {
                     ((View) mParent).invalidate(true);
-                } //End block
+                } 
                 mPrivateFlags |= DRAWN;
-            } //End block
+            } 
             {
                 mAttachInfo.mViewVisibilityChanged = true;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             needGlobalAttributesUpdate(false);
             mPrivateFlags |= DRAWN;
@@ -4263,133 +4371,135 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                         boolean var7EE5FF448100B409C00AA55A4D5A2579_645865046 = (getRootView() != this);
                         {
                             clearFocus();
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             {
                 mAttachInfo.mViewVisibilityChanged = true;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 ((ViewGroup) mParent).onChildVisibilityChanged(this, (flags & VISIBILITY_MASK));
                 ((View) mParent).invalidate(true);
-            } //End block
+            } 
             {
                 mParent.invalidateChild(this, null);
-            } //End block
+            } 
             dispatchVisibilityChanged(this, (flags & VISIBILITY_MASK));
-        } //End block
+        } 
         {
             destroyDrawingCache();
-        } //End block
+        } 
         {
             destroyDrawingCache();
             mPrivateFlags &= ~DRAWING_CACHE_VALID;
             invalidateParentCaches();
-        } //End block
+        } 
         {
             destroyDrawingCache();
             mPrivateFlags &= ~DRAWING_CACHE_VALID;
-        } //End block
+        } 
         {
             {
                 {
                     mPrivateFlags &= ~SKIP_DRAW;
                     mPrivateFlags |= ONLY_DRAWS_BACKGROUND;
-                } //End block
+                } 
                 {
                     mPrivateFlags |= SKIP_DRAW;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 mPrivateFlags &= ~SKIP_DRAW;
-            } //End block
+            } 
             requestLayout();
             invalidate(true);
-        } //End block
+        } 
         {
             {
                 mParent.recomputeViewAttributes(this);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.530 -0400", hash_original_method = "D3A1B9777480096EBBD21F82F884FF88", hash_generated_method = "B3254F2076864AE69DB273BC05B806B7")
     public void bringToFront() {
         {
             mParent.bringChildToFront(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mParent != null) {
-            //mParent.bringChildToFront(this);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.530 -0400", hash_original_method = "EDEAEC3E48D287D80E86A711CB6F1FA1", hash_generated_method = "EA80BAA3B36FA061DDD2AB369A18B47B")
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean varFEF5E81D9E4B252970529F0E4C094F45_958170958 = (AccessibilityManager.getInstance(mContext).isEnabled());
             {
                 postSendViewScrolledAccessibilityEventCallback();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mBackgroundSizeChanged = true;
         final AttachInfo ai = mAttachInfo;
         {
             ai.mViewScrollChanged = true;
-        } //End block
+        } 
         addTaint(l);
         addTaint(t);
         addTaint(oldl);
         addTaint(oldt);
-        // ---------- Original Method ----------
-        //if (AccessibilityManager.getInstance(mContext).isEnabled()) {
-            //postSendViewScrolledAccessibilityEventCallback();
-        //}
-        //mBackgroundSizeChanged = true;
-        //final AttachInfo ai = mAttachInfo;
-        //if (ai != null) {
-            //ai.mViewScrollChanged = true;
-        //}
+        
+        
+            
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.531 -0400", hash_original_method = "B552DCA4F8335CB071F137C97CB4545F", hash_generated_method = "581C6460081BA9AED29EF85B1284ED4B")
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(w);
         addTaint(h);
         addTaint(oldw);
         addTaint(oldh);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.531 -0400", hash_original_method = "0296ECFD4FBB578ABFB3DEE9D2F54084", hash_generated_method = "3BF445E04BA2666375DFCD58601723DA")
     protected void dispatchDraw(Canvas canvas) {
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.532 -0400", hash_original_method = "23990FCA043695388FDF30165FAB53F8", hash_generated_method = "31AB78B66B5E2C0BC415361769C58098")
     public final ViewParent getParent() {
-        ViewParent varB4EAC82CA7396A68D541C85D26508E83_1410259182 = null; //Variable for return #1
+        ViewParent varB4EAC82CA7396A68D541C85D26508E83_1410259182 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1410259182 = mParent;
-        varB4EAC82CA7396A68D541C85D26508E83_1410259182.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1410259182.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1410259182;
-        // ---------- Original Method ----------
-        //return mParent;
+        
+        
     }
 
     
@@ -4397,8 +4507,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void setScrollX(int value) {
         scrollTo(value, mScrollY);
         addTaint(value);
-        // ---------- Original Method ----------
-        //scrollTo(value, mScrollY);
+        
+        
     }
 
     
@@ -4406,8 +4516,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void setScrollY(int value) {
         scrollTo(mScrollX, value);
         addTaint(value);
-        // ---------- Original Method ----------
-        //scrollTo(mScrollX, value);
+        
+        
     }
 
     
@@ -4415,8 +4525,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final int getScrollX() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1915385216 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1915385216;
-        // ---------- Original Method ----------
-        //return mScrollX;
+        
+        
     }
 
     
@@ -4424,8 +4534,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final int getScrollY() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1799353911 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1799353911;
-        // ---------- Original Method ----------
-        //return mScrollY;
+        
+        
     }
 
     
@@ -4434,8 +4544,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1100052130 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1100052130;
-        // ---------- Original Method ----------
-        //return mRight - mLeft;
+        
+        
     }
 
     
@@ -4444,8 +4554,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final int getHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_587132222 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_587132222;
-        // ---------- Original Method ----------
-        //return mBottom - mTop;
+        
+        
     }
 
     
@@ -4456,11 +4566,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         outRect.right = mScrollX + (mRight - mLeft);
         outRect.bottom = mScrollY + (mBottom - mTop);
         addTaint(outRect.getTaint());
-        // ---------- Original Method ----------
-        //outRect.left = mScrollX;
-        //outRect.top = mScrollY;
-        //outRect.right = mScrollX + (mRight - mLeft);
-        //outRect.bottom = mScrollY + (mBottom - mTop);
+        
+        
+        
+        
+        
     }
 
     
@@ -4468,8 +4578,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final int getMeasuredWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_375460821 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_375460821;
-        // ---------- Original Method ----------
-        //return mMeasuredWidth & MEASURED_SIZE_MASK;
+        
+        
     }
 
     
@@ -4477,8 +4587,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final int getMeasuredWidthAndState() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_453505391 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_453505391;
-        // ---------- Original Method ----------
-        //return mMeasuredWidth;
+        
+        
     }
 
     
@@ -4486,8 +4596,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final int getMeasuredHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_263281264 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_263281264;
-        // ---------- Original Method ----------
-        //return mMeasuredHeight & MEASURED_SIZE_MASK;
+        
+        
     }
 
     
@@ -4495,8 +4605,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final int getMeasuredHeightAndState() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_790638736 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_790638736;
-        // ---------- Original Method ----------
-        //return mMeasuredHeight;
+        
+        
     }
 
     
@@ -4504,39 +4614,39 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final int getMeasuredState() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1049048252 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1049048252;
-        // ---------- Original Method ----------
-        //return (mMeasuredWidth&MEASURED_STATE_MASK)
-                //| ((mMeasuredHeight>>MEASURED_HEIGHT_STATE_SHIFT)
-                        //& (MEASURED_STATE_MASK>>MEASURED_HEIGHT_STATE_SHIFT));
+        
+        
+                
+                        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.536 -0400", hash_original_method = "B4B4CEBFEE2F615BED379C4D0CB9432E", hash_generated_method = "D37FA532C5304D8B82B2254A85AF1F6C")
     public Matrix getMatrix() {
-        Matrix varB4EAC82CA7396A68D541C85D26508E83_884810014 = null; //Variable for return #1
-        Matrix varB4EAC82CA7396A68D541C85D26508E83_617440742 = null; //Variable for return #2
+        Matrix varB4EAC82CA7396A68D541C85D26508E83_884810014 = null; 
+        Matrix varB4EAC82CA7396A68D541C85D26508E83_617440742 = null; 
         {
             updateMatrix();
             varB4EAC82CA7396A68D541C85D26508E83_884810014 = mTransformationInfo.mMatrix;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_617440742 = Matrix.IDENTITY_MATRIX;
-        Matrix varA7E53CE21691AB073D9660D615818899_562133853; //Final return value
+        Matrix varA7E53CE21691AB073D9660D615818899_562133853; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_562133853 = varB4EAC82CA7396A68D541C85D26508E83_884810014;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_562133853 = varB4EAC82CA7396A68D541C85D26508E83_617440742;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_562133853.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_562133853.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_562133853;
-        // ---------- Original Method ----------
-        //if (mTransformationInfo != null) {
-            //updateMatrix();
-            //return mTransformationInfo.mMatrix;
-        //}
-        //return Matrix.IDENTITY_MATRIX;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -4549,15 +4659,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     final boolean hasIdentityMatrix() {
         {
             updateMatrix();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_506414940 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_506414940;
-        // ---------- Original Method ----------
-        //if (mTransformationInfo != null) {
-            //updateMatrix();
-            //return mTransformationInfo.mMatrixIsIdentity;
-        //}
-        //return true;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -4565,11 +4675,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
      void ensureTransformationInfo() {
         {
             mTransformationInfo = new TransformationInfo();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mTransformationInfo == null) {
-            //mTransformationInfo = new TransformationInfo();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -4583,8 +4693,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     info.mPrevHeight = mBottom - mTop;
                     info.mPivotX = info.mPrevWidth / 2f;
                     info.mPivotY = info.mPrevHeight / 2f;
-                } //End block
-            } //End block
+                } 
+            } 
             info.mMatrix.reset();
             {
                 boolean varAB848ECD95BE565B20450DBD0CDBCCC2_1866370851 = (!nonzero(info.mRotationX) && !nonzero(info.mRotationY));
@@ -4592,12 +4702,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     info.mMatrix.setTranslate(info.mTranslationX, info.mTranslationY);
                     info.mMatrix.preRotate(info.mRotation, info.mPivotX, info.mPivotY);
                     info.mMatrix.preScale(info.mScaleX, info.mScaleY, info.mPivotX, info.mPivotY);
-                } //End block
+                } 
                 {
                     {
                         info.mCamera = new Camera();
                         info.matrix3D = new Matrix();
-                    } //End block
+                    } 
                     info.mCamera.save();
                     info.mMatrix.preScale(info.mScaleX, info.mScaleY, info.mPivotX, info.mPivotY);
                     info.mCamera.rotate(info.mRotationX, info.mRotationY, -info.mRotation);
@@ -4607,59 +4717,59 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                         info.mPivotY + info.mTranslationY);
                     info.mMatrix.postConcat(info.matrix3D);
                     info.mCamera.restore();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             info.mMatrixDirty = false;
             info.mMatrixIsIdentity = info.mMatrix.isIdentity();
             info.mInverseMatrixDirty = true;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.540 -0400", hash_original_method = "9D52A0CAB8326A9AD998EDD411D2DD92", hash_generated_method = "E03C5CD20FAFC2A146291FCDA348DE8E")
     final Matrix getInverseMatrix() {
-        Matrix varB4EAC82CA7396A68D541C85D26508E83_1456886474 = null; //Variable for return #1
-        Matrix varB4EAC82CA7396A68D541C85D26508E83_512698898 = null; //Variable for return #2
+        Matrix varB4EAC82CA7396A68D541C85D26508E83_1456886474 = null; 
+        Matrix varB4EAC82CA7396A68D541C85D26508E83_512698898 = null; 
         final TransformationInfo info = mTransformationInfo;
         {
             updateMatrix();
             {
                 {
                     info.mInverseMatrix = new Matrix();
-                } //End block
+                } 
                 info.mMatrix.invert(info.mInverseMatrix);
                 info.mInverseMatrixDirty = false;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1456886474 = info.mInverseMatrix;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_512698898 = Matrix.IDENTITY_MATRIX;
-        Matrix varA7E53CE21691AB073D9660D615818899_492765524; //Final return value
+        Matrix varA7E53CE21691AB073D9660D615818899_492765524; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_492765524 = varB4EAC82CA7396A68D541C85D26508E83_1456886474;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_492765524 = varB4EAC82CA7396A68D541C85D26508E83_512698898;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_492765524.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_492765524.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_492765524;
-        // ---------- Original Method ----------
-        //final TransformationInfo info = mTransformationInfo;
-        //if (info != null) {
-            //updateMatrix();
-            //if (info.mInverseMatrixDirty) {
-                //if (info.mInverseMatrix == null) {
-                    //info.mInverseMatrix = new Matrix();
-                //}
-                //info.mMatrix.invert(info.mInverseMatrix);
-                //info.mInverseMatrixDirty = false;
-            //}
-            //return info.mInverseMatrix;
-        //}
-        //return Matrix.IDENTITY_MATRIX;
+        
+        
+        
+            
+            
+                
+                    
+                
+                
+                
+            
+            
+        
+        
     }
 
     
@@ -4673,24 +4783,24 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             info.mCamera = new Camera();
             info.matrix3D = new Matrix();
-        } //End block
+        } 
         info.mCamera.setLocation(0.0f, 0.0f, -Math.abs(distance) / dpi);
         info.mMatrixDirty = true;
         invalidate(false);
         addTaint(distance);
-        // ---------- Original Method ----------
-        //invalidateParentCaches();
-        //invalidate(false);
-        //ensureTransformationInfo();
-        //final float dpi = mResources.getDisplayMetrics().densityDpi;
-        //final TransformationInfo info = mTransformationInfo;
-        //if (info.mCamera == null) {
-            //info.mCamera = new Camera();
-            //info.matrix3D = new Matrix();
-        //}
-        //info.mCamera.setLocation(0.0f, 0.0f, -Math.abs(distance) / dpi);
-        //info.mMatrixDirty = true;
-        //invalidate(false);
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -4698,8 +4808,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public float getRotation() {
         float var546ADE640B6EDFBC8A086EF31347E768_1950014598 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1950014598;
-        // ---------- Original Method ----------
-        //return mTransformationInfo != null ? mTransformationInfo.mRotation : 0;
+        
+        
     }
 
     
@@ -4714,19 +4824,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             info.mMatrixDirty = true;
             mPrivateFlags |= DRAWN;
             invalidate(false);
-        } //End block
+        } 
         addTaint(rotation);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //final TransformationInfo info = mTransformationInfo;
-        //if (info.mRotation != rotation) {
-            //invalidateParentCaches();
-            //invalidate(false);
-            //info.mRotation = rotation;
-            //info.mMatrixDirty = true;
-            //mPrivateFlags |= DRAWN; 
-            //invalidate(false);
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -4734,8 +4844,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public float getRotationY() {
         float var546ADE640B6EDFBC8A086EF31347E768_578923758 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_578923758;
-        // ---------- Original Method ----------
-        //return mTransformationInfo != null ? mTransformationInfo.mRotationY : 0;
+        
+        
     }
 
     
@@ -4750,19 +4860,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             info.mMatrixDirty = true;
             mPrivateFlags |= DRAWN;
             invalidate(false);
-        } //End block
+        } 
         addTaint(rotationY);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //final TransformationInfo info = mTransformationInfo;
-        //if (info.mRotationY != rotationY) {
-            //invalidateParentCaches();
-            //invalidate(false);
-            //info.mRotationY = rotationY;
-            //info.mMatrixDirty = true;
-            //mPrivateFlags |= DRAWN; 
-            //invalidate(false);
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -4770,8 +4880,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public float getRotationX() {
         float var546ADE640B6EDFBC8A086EF31347E768_36769741 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_36769741;
-        // ---------- Original Method ----------
-        //return mTransformationInfo != null ? mTransformationInfo.mRotationX : 0;
+        
+        
     }
 
     
@@ -4786,19 +4896,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             info.mMatrixDirty = true;
             mPrivateFlags |= DRAWN;
             invalidate(false);
-        } //End block
+        } 
         addTaint(rotationX);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //final TransformationInfo info = mTransformationInfo;
-        //if (info.mRotationX != rotationX) {
-            //invalidateParentCaches();
-            //invalidate(false);
-            //info.mRotationX = rotationX;
-            //info.mMatrixDirty = true;
-            //mPrivateFlags |= DRAWN; 
-            //invalidate(false);
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -4806,8 +4916,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public float getScaleX() {
         float var546ADE640B6EDFBC8A086EF31347E768_927892206 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_927892206;
-        // ---------- Original Method ----------
-        //return mTransformationInfo != null ? mTransformationInfo.mScaleX : 1;
+        
+        
     }
 
     
@@ -4822,19 +4932,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             info.mMatrixDirty = true;
             mPrivateFlags |= DRAWN;
             invalidate(false);
-        } //End block
+        } 
         addTaint(scaleX);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //final TransformationInfo info = mTransformationInfo;
-        //if (info.mScaleX != scaleX) {
-            //invalidateParentCaches();
-            //invalidate(false);
-            //info.mScaleX = scaleX;
-            //info.mMatrixDirty = true;
-            //mPrivateFlags |= DRAWN; 
-            //invalidate(false);
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -4842,8 +4952,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public float getScaleY() {
         float var546ADE640B6EDFBC8A086EF31347E768_161725060 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_161725060;
-        // ---------- Original Method ----------
-        //return mTransformationInfo != null ? mTransformationInfo.mScaleY : 1;
+        
+        
     }
 
     
@@ -4858,19 +4968,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             info.mMatrixDirty = true;
             mPrivateFlags |= DRAWN;
             invalidate(false);
-        } //End block
+        } 
         addTaint(scaleY);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //final TransformationInfo info = mTransformationInfo;
-        //if (info.mScaleY != scaleY) {
-            //invalidateParentCaches();
-            //invalidate(false);
-            //info.mScaleY = scaleY;
-            //info.mMatrixDirty = true;
-            //mPrivateFlags |= DRAWN; 
-            //invalidate(false);
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -4878,8 +4988,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public float getPivotX() {
         float var546ADE640B6EDFBC8A086EF31347E768_499518967 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_499518967;
-        // ---------- Original Method ----------
-        //return mTransformationInfo != null ? mTransformationInfo.mPivotX : 0;
+        
+        
     }
 
     
@@ -4895,20 +5005,20 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             info.mMatrixDirty = true;
             mPrivateFlags |= DRAWN;
             invalidate(false);
-        } //End block
+        } 
         addTaint(pivotX);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //mPrivateFlags |= PIVOT_EXPLICITLY_SET;
-        //final TransformationInfo info = mTransformationInfo;
-        //if (info.mPivotX != pivotX) {
-            //invalidateParentCaches();
-            //invalidate(false);
-            //info.mPivotX = pivotX;
-            //info.mMatrixDirty = true;
-            //mPrivateFlags |= DRAWN; 
-            //invalidate(false);
-        //}
+        
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -4916,8 +5026,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public float getPivotY() {
         float var546ADE640B6EDFBC8A086EF31347E768_158512468 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_158512468;
-        // ---------- Original Method ----------
-        //return mTransformationInfo != null ? mTransformationInfo.mPivotY : 0;
+        
+        
     }
 
     
@@ -4933,20 +5043,20 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             info.mMatrixDirty = true;
             mPrivateFlags |= DRAWN;
             invalidate(false);
-        } //End block
+        } 
         addTaint(pivotY);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //mPrivateFlags |= PIVOT_EXPLICITLY_SET;
-        //final TransformationInfo info = mTransformationInfo;
-        //if (info.mPivotY != pivotY) {
-            //invalidateParentCaches();
-            //invalidate(false);
-            //info.mPivotY = pivotY;
-            //info.mMatrixDirty = true;
-            //mPrivateFlags |= DRAWN; 
-            //invalidate(false);
-        //}
+        
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -4954,8 +5064,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public float getAlpha() {
         float var546ADE640B6EDFBC8A086EF31347E768_1789349556 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1789349556;
-        // ---------- Original Method ----------
-        //return mTransformationInfo != null ? mTransformationInfo.mAlpha : 1;
+        
+        
     }
 
     
@@ -4969,23 +5079,23 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 mPrivateFlags |= ALPHA_SET;
                 invalidate(true);
-            } //End block
+            } 
             {
                 mPrivateFlags &= ~ALPHA_SET;
                 invalidate(false);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //mTransformationInfo.mAlpha = alpha;
-        //invalidateParentCaches();
-        //if (onSetAlpha((int) (alpha * 255))) {
-            //mPrivateFlags |= ALPHA_SET;
-            //invalidate(true);
-        //} else {
-            //mPrivateFlags &= ~ALPHA_SET;
-            //invalidate(false);
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -4996,22 +5106,22 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         boolean subclassHandlesAlpha = onSetAlpha((int) (alpha * 255));
         {
             mPrivateFlags |= ALPHA_SET;
-        } //End block
+        } 
         {
             mPrivateFlags &= ~ALPHA_SET;
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1618958563 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1618958563;
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //mTransformationInfo.mAlpha = alpha;
-        //boolean subclassHandlesAlpha = onSetAlpha((int) (alpha * 255));
-        //if (subclassHandlesAlpha) {
-            //mPrivateFlags |= ALPHA_SET;
-        //} else {
-            //mPrivateFlags &= ~ALPHA_SET;
-        //}
-        //return subclassHandlesAlpha;
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -5020,8 +5130,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final int getTop() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_159911553 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_159911553;
-        // ---------- Original Method ----------
-        //return mTop;
+        
+        
     }
 
     
@@ -5038,17 +5148,17 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     {
                         minTop = top;
                         yLoc = top - mTop;
-                    } //End block
+                    } 
                     {
                         minTop = mTop;
                         yLoc = 0;
-                    } //End block
+                    } 
                     invalidate(0, yLoc, mRight - mLeft, mBottom - minTop);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 invalidate(true);
-            } //End block
+            } 
             int width = mRight - mLeft;
             int oldHeight = mBottom - mTop;
             mTop = top;
@@ -5056,15 +5166,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 {
                     mTransformationInfo.mMatrixDirty = true;
-                } //End block
+                } 
                 mPrivateFlags |= DRAWN;
                 invalidate(true);
-            } //End block
+            } 
             mBackgroundSizeChanged = true;
             invalidateParentIfNeeded();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -5073,8 +5183,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final int getBottom() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_129688173 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_129688173;
-        // ---------- Original Method ----------
-        //return mBottom;
+        
+        
     }
 
     
@@ -5082,8 +5192,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isDirty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1770033063 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1770033063;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags & DIRTY_MASK) != 0;
+        
+        
     }
 
     
@@ -5098,16 +5208,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     int maxBottom;
                     {
                         maxBottom = mBottom;
-                    } //End block
+                    } 
                     {
                         maxBottom = bottom;
-                    } //End block
+                    } 
                     invalidate(0, 0, mRight - mLeft, maxBottom - mTop);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 invalidate(true);
-            } //End block
+            } 
             int width = mRight - mLeft;
             int oldHeight = mBottom - mTop;
             mBottom = bottom;
@@ -5115,15 +5225,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 {
                     mTransformationInfo.mMatrixDirty = true;
-                } //End block
+                } 
                 mPrivateFlags |= DRAWN;
                 invalidate(true);
-            } //End block
+            } 
             mBackgroundSizeChanged = true;
             invalidateParentIfNeeded();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -5132,8 +5242,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final int getLeft() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1438159566 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1438159566;
-        // ---------- Original Method ----------
-        //return mLeft;
+        
+        
     }
 
     
@@ -5150,17 +5260,17 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     {
                         minLeft = left;
                         xLoc = left - mLeft;
-                    } //End block
+                    } 
                     {
                         minLeft = mLeft;
                         xLoc = 0;
-                    } //End block
+                    } 
                     invalidate(xLoc, 0, mRight - minLeft, mBottom - mTop);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 invalidate(true);
-            } //End block
+            } 
             int oldWidth = mRight - mLeft;
             int height = mBottom - mTop;
             mLeft = left;
@@ -5168,15 +5278,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 {
                     mTransformationInfo.mMatrixDirty = true;
-                } //End block
+                } 
                 mPrivateFlags |= DRAWN;
                 invalidate(true);
-            } //End block
+            } 
             mBackgroundSizeChanged = true;
             invalidateParentIfNeeded();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -5185,8 +5295,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public final int getRight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1127515766 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1127515766;
-        // ---------- Original Method ----------
-        //return mRight;
+        
+        
     }
 
     
@@ -5201,16 +5311,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     int maxRight;
                     {
                         maxRight = mRight;
-                    } //End block
+                    } 
                     {
                         maxRight = right;
-                    } //End block
+                    } 
                     invalidate(0, 0, maxRight - mLeft, mBottom - mTop);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 invalidate(true);
-            } //End block
+            } 
             int oldWidth = mRight - mLeft;
             int height = mBottom - mTop;
             mRight = right;
@@ -5218,15 +5328,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 {
                     mTransformationInfo.mMatrixDirty = true;
-                } //End block
+                } 
                 mPrivateFlags |= DRAWN;
                 invalidate(true);
-            } //End block
+            } 
             mBackgroundSizeChanged = true;
             invalidateParentIfNeeded();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -5234,8 +5344,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public float getX() {
         float var546ADE640B6EDFBC8A086EF31347E768_457020163 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_457020163;
-        // ---------- Original Method ----------
-        //return mLeft + (mTransformationInfo != null ? mTransformationInfo.mTranslationX : 0);
+        
+        
     }
 
     
@@ -5243,8 +5353,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void setX(float x) {
         setTranslationX(x - mLeft);
         addTaint(x);
-        // ---------- Original Method ----------
-        //setTranslationX(x - mLeft);
+        
+        
     }
 
     
@@ -5252,8 +5362,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public float getY() {
         float var546ADE640B6EDFBC8A086EF31347E768_477905044 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_477905044;
-        // ---------- Original Method ----------
-        //return mTop + (mTransformationInfo != null ? mTransformationInfo.mTranslationY : 0);
+        
+        
     }
 
     
@@ -5261,8 +5371,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void setY(float y) {
         setTranslationY(y - mTop);
         addTaint(y);
-        // ---------- Original Method ----------
-        //setTranslationY(y - mTop);
+        
+        
     }
 
     
@@ -5270,8 +5380,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public float getTranslationX() {
         float var546ADE640B6EDFBC8A086EF31347E768_1708875041 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1708875041;
-        // ---------- Original Method ----------
-        //return mTransformationInfo != null ? mTransformationInfo.mTranslationX : 0;
+        
+        
     }
 
     
@@ -5286,19 +5396,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             info.mMatrixDirty = true;
             mPrivateFlags |= DRAWN;
             invalidate(false);
-        } //End block
+        } 
         addTaint(translationX);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //final TransformationInfo info = mTransformationInfo;
-        //if (info.mTranslationX != translationX) {
-            //invalidateParentCaches();
-            //invalidate(false);
-            //info.mTranslationX = translationX;
-            //info.mMatrixDirty = true;
-            //mPrivateFlags |= DRAWN; 
-            //invalidate(false);
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -5306,8 +5416,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public float getTranslationY() {
         float var546ADE640B6EDFBC8A086EF31347E768_742857168 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_742857168;
-        // ---------- Original Method ----------
-        //return mTransformationInfo != null ? mTransformationInfo.mTranslationY : 0;
+        
+        
     }
 
     
@@ -5322,19 +5432,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             info.mMatrixDirty = true;
             mPrivateFlags |= DRAWN;
             invalidate(false);
-        } //End block
+        } 
         addTaint(translationY);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //final TransformationInfo info = mTransformationInfo;
-        //if (info.mTranslationY != translationY) {
-            //invalidateParentCaches();
-            //invalidate(false);
-            //info.mTranslationY = translationY;
-            //info.mMatrixDirty = true;
-            //mPrivateFlags |= DRAWN; 
-            //invalidate(false);
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -5345,11 +5455,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         info.mTranslationX = x;
         info.mMatrixDirty = true;
         addTaint(x);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //final TransformationInfo info = mTransformationInfo;
-        //info.mTranslationX = x;
-        //info.mMatrixDirty = true;
+        
+        
+        
+        
+        
     }
 
     
@@ -5360,11 +5470,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         info.mTranslationY = y;
         info.mMatrixDirty = true;
         addTaint(y);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //final TransformationInfo info = mTransformationInfo;
-        //info.mTranslationY = y;
-        //info.mMatrixDirty = true;
+        
+        
+        
+        
+        
     }
 
     
@@ -5375,11 +5485,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         info.mTranslationX = x - mLeft;
         info.mMatrixDirty = true;
         addTaint(x);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //final TransformationInfo info = mTransformationInfo;
-        //info.mTranslationX = x - mLeft;
-        //info.mMatrixDirty = true;
+        
+        
+        
+        
+        
     }
 
     
@@ -5390,11 +5500,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         info.mTranslationY = y - mTop;
         info.mMatrixDirty = true;
         addTaint(y);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //final TransformationInfo info = mTransformationInfo;
-        //info.mTranslationY = y - mTop;
-        //info.mMatrixDirty = true;
+        
+        
+        
+        
+        
     }
 
     
@@ -5405,11 +5515,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         info.mScaleX = x;
         info.mMatrixDirty = true;
         addTaint(x);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //final TransformationInfo info = mTransformationInfo;
-        //info.mScaleX = x;
-        //info.mMatrixDirty = true;
+        
+        
+        
+        
+        
     }
 
     
@@ -5420,11 +5530,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         info.mScaleY = y;
         info.mMatrixDirty = true;
         addTaint(y);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //final TransformationInfo info = mTransformationInfo;
-        //info.mScaleY = y;
-        //info.mMatrixDirty = true;
+        
+        
+        
+        
+        
     }
 
     
@@ -5432,9 +5542,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void setFastAlpha(float alpha) {
         ensureTransformationInfo();
         mTransformationInfo.mAlpha = alpha;
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //mTransformationInfo.mAlpha = alpha;
+        
+        
+        
     }
 
     
@@ -5445,11 +5555,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         info.mRotationY = y;
         info.mMatrixDirty = true;
         addTaint(y);
-        // ---------- Original Method ----------
-        //ensureTransformationInfo();
-        //final TransformationInfo info = mTransformationInfo;
-        //info.mRotationY = y;
-        //info.mMatrixDirty = true;
+        
+        
+        
+        
+        
     }
 
     
@@ -5459,7 +5569,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         final TransformationInfo info = mTransformationInfo;
         {
             outRect.set(mLeft, mTop, mRight, mBottom);
-        } //End block
+        } 
         {
             final RectF tmpRect = mAttachInfo.mTmpTransformRect;
             tmpRect.set(-info.mPivotX, -info.mPivotY,
@@ -5467,21 +5577,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             info.mMatrix.mapRect(tmpRect);
             outRect.set((int) tmpRect.left + mLeft, (int) tmpRect.top + mTop,
                     (int) tmpRect.right + mLeft, (int) tmpRect.bottom + mTop);
-        } //End block
+        } 
         addTaint(outRect.getTaint());
-        // ---------- Original Method ----------
-        //updateMatrix();
-        //final TransformationInfo info = mTransformationInfo;
-        //if (info == null || info.mMatrixIsIdentity || mAttachInfo == null) {
-            //outRect.set(mLeft, mTop, mRight, mBottom);
-        //} else {
-            //final RectF tmpRect = mAttachInfo.mTmpTransformRect;
-            //tmpRect.set(-info.mPivotX, -info.mPivotY,
-                    //getWidth() - info.mPivotX, getHeight() - info.mPivotY);
-            //info.mMatrix.mapRect(tmpRect);
-            //outRect.set((int) tmpRect.left + mLeft, (int) tmpRect.top + mTop,
-                    //(int) tmpRect.right + mLeft, (int) tmpRect.bottom + mTop);
-        //}
+        
+        
+        
+        
+            
+        
+            
+            
+                    
+            
+            
+                    
+        
     }
 
     
@@ -5491,9 +5601,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(localY);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_866745122 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_866745122;
-        // ---------- Original Method ----------
-        //return localX >= 0 && localX < (mRight - mLeft)
-                //&& localY >= 0 && localY < (mBottom - mTop);
+        
+        
+                
     }
 
     
@@ -5504,9 +5614,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(slop);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1628963469 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1628963469;
-        // ---------- Original Method ----------
-        //return localX >= -slop && localY >= -slop && localX < ((mRight - mLeft) + slop) &&
-                //localY < ((mBottom - mTop) + slop);
+        
+        
+                
     }
 
     
@@ -5514,8 +5624,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void getFocusedRect(Rect r) {
         getDrawingRect(r);
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
-        //getDrawingRect(r);
+        
+        
     }
 
     
@@ -5527,24 +5637,24 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             r.set(0, 0, width, height);
             {
                 globalOffset.set(-mScrollX, -mScrollY);
-            } //End block
+            } 
             boolean varD0C4A40C45EF46AFF22F080E1528CE15_1711050266 = (mParent == null || mParent.getChildVisibleRect(this, r, globalOffset));
-        } //End block
+        } 
         addTaint(r.getTaint());
         addTaint(globalOffset.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_968802285 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_968802285;
-        // ---------- Original Method ----------
-        //int width = mRight - mLeft;
-        //int height = mBottom - mTop;
-        //if (width > 0 && height > 0) {
-            //r.set(0, 0, width, height);
-            //if (globalOffset != null) {
-                //globalOffset.set(-mScrollX, -mScrollY);
-            //}
-            //return mParent == null || mParent.getChildVisibleRect(this, r, globalOffset);
-        //}
-        //return false;
+        
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -5554,8 +5664,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(r.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_990667748 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_990667748;
-        // ---------- Original Method ----------
-        //return getGlobalVisibleRect(r, null);
+        
+        
     }
 
     
@@ -5566,18 +5676,18 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             boolean varBBF18CCA515610662C9382F2D4C23619_569568212 = (getGlobalVisibleRect(r, offset));
             {
                 r.offset(-offset.x, -offset.y);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(r.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_643561847 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_643561847;
-        // ---------- Original Method ----------
-        //Point offset = new Point();
-        //if (getGlobalVisibleRect(r, offset)) {
-            //r.offset(-offset.x, -offset.y); 
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -5598,29 +5708,29 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                         minTop = mTop + offset;
                         maxBottom = mBottom;
                         yLoc = offset;
-                    } //End block
+                    } 
                     {
                         minTop = mTop;
                         maxBottom = mBottom + offset;
                         yLoc = 0;
-                    } //End block
+                    } 
                     r.set(0, yLoc, mRight - mLeft, maxBottom - minTop);
                     p.invalidateChild(this, r);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 invalidate(false);
-            } //End block
+            } 
             mTop += offset;
             mBottom += offset;
             {
                 mPrivateFlags |= DRAWN;
                 invalidate(false);
-            } //End block
+            } 
             invalidateParentIfNeeded();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -5639,40 +5749,40 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     {
                         minLeft = mLeft + offset;
                         maxRight = mRight;
-                    } //End block
+                    } 
                     {
                         minLeft = mLeft;
                         maxRight = mRight + offset;
-                    } //End block
+                    } 
                     r.set(0, 0, maxRight - minLeft, mBottom - mTop);
                     p.invalidateChild(this, r);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 invalidate(false);
-            } //End block
+            } 
             mLeft += offset;
             mRight += offset;
             {
                 mPrivateFlags |= DRAWN;
                 invalidate(false);
-            } //End block
+            } 
             invalidateParentIfNeeded();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.571 -0400", hash_original_method = "5EB740A9A129A62709C940CDC3C1FA90", hash_generated_method = "C3DB29BAAC789913308CFB2E03B95F5E")
     @ViewDebug.ExportedProperty(deepExport = true, prefix = "layout_")
     public ViewGroup.LayoutParams getLayoutParams() {
-        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1559371226 = null; //Variable for return #1
+        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1559371226 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1559371226 = mLayoutParams;
-        varB4EAC82CA7396A68D541C85D26508E83_1559371226.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1559371226.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1559371226;
-        // ---------- Original Method ----------
-        //return mLayoutParams;
+        
+        
     }
 
     
@@ -5680,15 +5790,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void setLayoutParams(ViewGroup.LayoutParams params) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Layout parameters cannot be null");
-        } //End block
+        } 
         mLayoutParams = params;
         requestLayout();
-        // ---------- Original Method ----------
-        //if (params == null) {
-            //throw new NullPointerException("Layout parameters cannot be null");
-        //}
-        //mLayoutParams = params;
-        //requestLayout();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -5705,21 +5815,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 boolean varC828E793AFDA5CD988FA9008B6EB3B30_494482396 = (!awakenScrollBars());
                 {
                     invalidate(true);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //if (mScrollX != x || mScrollY != y) {
-            //int oldX = mScrollX;
-            //int oldY = mScrollY;
-            //mScrollX = x;
-            //mScrollY = y;
-            //invalidateParentCaches();
-            //onScrollChanged(mScrollX, mScrollY, oldX, oldY);
-            //if (!awakenScrollBars()) {
-                //invalidate(true);
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -5728,8 +5838,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         scrollTo(mScrollX + x, mScrollY + y);
         addTaint(x);
         addTaint(y);
-        // ---------- Original Method ----------
-        //scrollTo(mScrollX + x, mScrollY + y);
+        
+        
     }
 
     
@@ -5739,9 +5849,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 awakenScrollBars(mScrollCache.scrollBarDefaultDelayBeforeFade, true));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1861456522 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1861456522;
-        // ---------- Original Method ----------
-        //return mScrollCache != null &&
-                //awakenScrollBars(mScrollCache.scrollBarDefaultDelayBeforeFade, true);
+        
+        
+                
     }
 
     
@@ -5751,9 +5861,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 awakenScrollBars(mScrollCache.scrollBarDefaultDelayBeforeFade * 4, true));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1945821897 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1945821897;
-        // ---------- Original Method ----------
-        //return mScrollCache != null &&
-                //awakenScrollBars(mScrollCache.scrollBarDefaultDelayBeforeFade * 4, true);
+        
+        
+                
     }
 
     
@@ -5763,8 +5873,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(startDelay);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_659003881 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_659003881;
-        // ---------- Original Method ----------
-        //return awakenScrollBars(startDelay, true);
+        
+        
     }
 
     
@@ -5773,32 +5883,32 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         final ScrollabilityCache scrollCache = mScrollCache;
         {
             scrollCache.scrollBar = new ScrollBarDrawable();
-        } //End block
+        } 
         {
             boolean var5422F660D44B0D1544FC157071290861_1302411687 = (isHorizontalScrollBarEnabled() || isVerticalScrollBarEnabled());
             {
                 {
                     invalidate(true);
-                } //End block
+                } 
                 {
                     final int KEY_REPEAT_FIRST_DELAY = 750;
                     startDelay = Math.max(KEY_REPEAT_FIRST_DELAY, startDelay);
-                } //End block
+                } 
                 long fadeStartTime = AnimationUtils.currentAnimationTimeMillis() + startDelay;
                 scrollCache.fadeStartTime = fadeStartTime;
                 scrollCache.state = ScrollabilityCache.ON;
                 {
                     mAttachInfo.mHandler.removeCallbacks(scrollCache);
                     mAttachInfo.mHandler.postAtTime(scrollCache, fadeStartTime);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(startDelay);
         addTaint(invalidate);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_872549432 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_872549432;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5809,10 +5919,10 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                         !((ViewGroup) mParent).isViewTransitioning(this)));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_646165495 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_646165495;
-        // ---------- Original Method ----------
-        //return (mViewFlags & VISIBILITY_MASK) != VISIBLE && mCurrentAnimation == null &&
-                //(!(mParent instanceof ViewGroup) ||
-                        //!((ViewGroup) mParent).isViewTransitioning(this));
+        
+        
+                
+                        
     }
 
     
@@ -5820,10 +5930,10 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void invalidate(Rect dirty) {
         {
             ViewDebug.trace(this, ViewDebug.HierarchyTraceType.INVALIDATE);
-        } //End block
+        } 
         {
             boolean varD5DC22E7E87E4B26C6AA34C5FC18E1F5_214377585 = (skipInvalidate());
-        } //End collapsed parenthetic
+        } 
         {
             mPrivateFlags &= ~DRAWING_CACHE_VALID;
             mPrivateFlags |= INVALIDATED;
@@ -5833,8 +5943,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 {
                     p.invalidateChild(this, null);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 final int scrollX = mScrollX;
                 final int scrollY = mScrollY;
@@ -5842,11 +5952,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 r.set(dirty.left - scrollX, dirty.top - scrollY,
                         dirty.right - scrollX, dirty.bottom - scrollY);
                 mParent.invalidateChild(this, r);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(dirty.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5854,10 +5964,10 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void invalidate(int l, int t, int r, int b) {
         {
             ViewDebug.trace(this, ViewDebug.HierarchyTraceType.INVALIDATE);
-        } //End block
+        } 
         {
             boolean varD5DC22E7E87E4B26C6AA34C5FC18E1F5_863631323 = (skipInvalidate());
-        } //End collapsed parenthetic
+        } 
         {
             mPrivateFlags &= ~DRAWING_CACHE_VALID;
             mPrivateFlags |= INVALIDATED;
@@ -5867,30 +5977,30 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 {
                     p.invalidateChild(this, null);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 final int scrollX = mScrollX;
                 final int scrollY = mScrollY;
                 final Rect tmpr = ai.mTmpInvalRect;
                 tmpr.set(l - scrollX, t - scrollY, r - scrollX, b - scrollY);
                 p.invalidateChild(this, tmpr);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(l);
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.580 -0400", hash_original_method = "DD9880156AB041E4BB31F756D1AB2189", hash_generated_method = "BF85BB9D7AA11B7869ED1AB59ACA8EDC")
     public void invalidate() {
         invalidate(true);
-        // ---------- Original Method ----------
-        //invalidate(true);
+        
+        
     }
 
     
@@ -5898,10 +6008,10 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
      void invalidate(boolean invalidateCache) {
         {
             ViewDebug.trace(this, ViewDebug.HierarchyTraceType.INVALIDATE);
-        } //End block
+        } 
         {
             boolean varD5DC22E7E87E4B26C6AA34C5FC18E1F5_143926188 = (skipInvalidate());
-        } //End collapsed parenthetic
+        } 
         {
             boolean var5D4EC7C3849E23BFDACCE7FE932C2ED1_1311000348 = ((mPrivateFlags & (DRAWN | HAS_BOUNDS)) == (DRAWN | HAS_BOUNDS) ||
                 (invalidateCache && (mPrivateFlags & DRAWING_CACHE_VALID) == DRAWING_CACHE_VALID) ||
@@ -5913,24 +6023,24 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     mPrivateFlags |= INVALIDATED;
                     mPrivateFlags &= ~DRAWING_CACHE_VALID;
-                } //End block
+                } 
                 final AttachInfo ai = mAttachInfo;
                 final ViewParent p = mParent;
                 {
                     {
                         p.invalidateChild(this, null);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     final Rect r = ai.mTmpInvalRect;
                     r.set(0, 0, mRight - mLeft, mBottom - mTop);
                     p.invalidateChild(this, r);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(invalidateCache);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -5938,11 +6048,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void fastInvalidate() {
         {
             boolean varD5DC22E7E87E4B26C6AA34C5FC18E1F5_263900203 = (skipInvalidate());
-        } //End collapsed parenthetic
+        } 
         {
             {
                 ((View) mParent).mPrivateFlags |= INVALIDATED;
-            } //End block
+            } 
             mPrivateFlags &= ~DRAWN;
             mPrivateFlags |= DIRTY;
             mPrivateFlags |= INVALIDATED;
@@ -5950,16 +6060,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 {
                     mParent.invalidateChild(this, null);
-                } //End block
+                } 
                 {
                     final Rect r = mAttachInfo.mTmpInvalRect;
                     r.set(0, 0, mRight - mLeft, mBottom - mTop);
                     mParent.invalidateChild(this, r);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -5967,11 +6077,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected void invalidateParentCaches() {
         {
             ((View) mParent).mPrivateFlags |= INVALIDATED;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mParent instanceof View) {
-            //((View) mParent).mPrivateFlags |= INVALIDATED;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -5981,12 +6091,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             boolean var0CFA59CC9046639DFA3FC76B3FAFF415_1874936517 = (isHardwareAccelerated() && mParent instanceof View);
             {
                 ((View) mParent).invalidate(true);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (isHardwareAccelerated() && mParent instanceof View) {
-            //((View) mParent).invalidate(true);
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
@@ -5995,10 +6105,10 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isOpaque() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2050452240 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2050452240;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags & OPAQUE_MASK) == OPAQUE_MASK &&
-                //((mTransformationInfo != null ? mTransformationInfo.mAlpha : 1)
-                        //>= 1.0f - ViewConfiguration.ALPHA_THRESHOLD);
+        
+        
+                
+                        
     }
 
     
@@ -6008,31 +6118,31 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             boolean var4EAF945C1787CBA8CB4548E7AF4BB4B5_725321849 = (mBGDrawable != null && mBGDrawable.getOpacity() == PixelFormat.OPAQUE);
             {
                 mPrivateFlags |= OPAQUE_BACKGROUND;
-            } //End block
+            } 
             {
                 mPrivateFlags &= ~OPAQUE_BACKGROUND;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final int flags = mViewFlags;
         {
             mPrivateFlags |= OPAQUE_SCROLLBARS;
-        } //End block
+        } 
         {
             mPrivateFlags &= ~OPAQUE_SCROLLBARS;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mBGDrawable != null && mBGDrawable.getOpacity() == PixelFormat.OPAQUE) {
-            //mPrivateFlags |= OPAQUE_BACKGROUND;
-        //} else {
-            //mPrivateFlags &= ~OPAQUE_BACKGROUND;
-        //}
-        //final int flags = mViewFlags;
-        //if (((flags & SCROLLBARS_VERTICAL) == 0 && (flags & SCROLLBARS_HORIZONTAL) == 0) ||
-                //(flags & SCROLLBARS_STYLE_MASK) == SCROLLBARS_INSIDE_OVERLAY) {
-            //mPrivateFlags |= OPAQUE_SCROLLBARS;
-        //} else {
-            //mPrivateFlags &= ~OPAQUE_SCROLLBARS;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+        
+        
+                
+            
+        
+            
+        
     }
 
     
@@ -6040,35 +6150,35 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected boolean hasOpaqueScrollbars() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_770165906 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_770165906;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags & OPAQUE_SCROLLBARS) == OPAQUE_SCROLLBARS;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.583 -0400", hash_original_method = "DDF5EC42ADE793605447903B93381C32", hash_generated_method = "D49A3E8DA9E878A1787F2F082786A3D5")
     public Handler getHandler() {
-        Handler varB4EAC82CA7396A68D541C85D26508E83_2076341788 = null; //Variable for return #1
-        Handler varB4EAC82CA7396A68D541C85D26508E83_909347433 = null; //Variable for return #2
+        Handler varB4EAC82CA7396A68D541C85D26508E83_2076341788 = null; 
+        Handler varB4EAC82CA7396A68D541C85D26508E83_909347433 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2076341788 = mAttachInfo.mHandler;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_909347433 = null;
-        Handler varA7E53CE21691AB073D9660D615818899_1955610688; //Final return value
+        Handler varA7E53CE21691AB073D9660D615818899_1955610688; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1955610688 = varB4EAC82CA7396A68D541C85D26508E83_2076341788;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1955610688 = varB4EAC82CA7396A68D541C85D26508E83_909347433;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1955610688.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1955610688.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1955610688;
-        // ---------- Original Method ----------
-        //if (mAttachInfo != null) {
-            //return mAttachInfo.mHandler;
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
@@ -6078,24 +6188,24 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         AttachInfo attachInfo = mAttachInfo;
         {
             handler = attachInfo.mHandler;
-        } //End block
+        } 
         {
             ViewRootImpl.getRunQueue().post(action);
-        } //End block
+        } 
         boolean var4B5FBEF08D1252F680BD85D523D3F99E_2017922689 = (handler.post(action));
         addTaint(action.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_313807953 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_313807953;
-        // ---------- Original Method ----------
-        //Handler handler;
-        //AttachInfo attachInfo = mAttachInfo;
-        //if (attachInfo != null) {
-            //handler = attachInfo.mHandler;
-        //} else {
-            //ViewRootImpl.getRunQueue().post(action);
-            //return true;
-        //}
-        //return handler.post(action);
+        
+        
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -6105,25 +6215,25 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         AttachInfo attachInfo = mAttachInfo;
         {
             handler = attachInfo.mHandler;
-        } //End block
+        } 
         {
             ViewRootImpl.getRunQueue().postDelayed(action, delayMillis);
-        } //End block
+        } 
         boolean varA94056EFF6A774C97C990690CB98EF64_298157208 = (handler.postDelayed(action, delayMillis));
         addTaint(action.getTaint());
         addTaint(delayMillis);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_678237420 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_678237420;
-        // ---------- Original Method ----------
-        //Handler handler;
-        //AttachInfo attachInfo = mAttachInfo;
-        //if (attachInfo != null) {
-            //handler = attachInfo.mHandler;
-        //} else {
-            //ViewRootImpl.getRunQueue().postDelayed(action, delayMillis);
-            //return true;
-        //}
-        //return handler.postDelayed(action, delayMillis);
+        
+        
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -6133,33 +6243,33 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         AttachInfo attachInfo = mAttachInfo;
         {
             handler = attachInfo.mHandler;
-        } //End block
+        } 
         {
             ViewRootImpl.getRunQueue().removeCallbacks(action);
-        } //End block
+        } 
         handler.removeCallbacks(action);
         addTaint(action.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_316841757 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_316841757;
-        // ---------- Original Method ----------
-        //Handler handler;
-        //AttachInfo attachInfo = mAttachInfo;
-        //if (attachInfo != null) {
-            //handler = attachInfo.mHandler;
-        //} else {
-            //ViewRootImpl.getRunQueue().removeCallbacks(action);
-            //return true;
-        //}
-        //handler.removeCallbacks(action);
-        //return true;
+        
+        
+        
+        
+            
+        
+            
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.702 -0400", hash_original_method = "B784E31CF9F406A65D385399252675E5", hash_generated_method = "E1CD8F02A4425412097D3886A78B39EF")
     public void postInvalidate() {
         postInvalidateDelayed(0);
-        // ---------- Original Method ----------
-        //postInvalidateDelayed(0);
+        
+        
     }
 
     
@@ -6170,8 +6280,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        //postInvalidateDelayed(0, left, top, right, bottom);
+        
+        
     }
 
     
@@ -6183,16 +6293,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             msg.what = AttachInfo.INVALIDATE_MSG;
             msg.obj = this;
             attachInfo.mHandler.sendMessageDelayed(msg, delayMilliseconds);
-        } //End block
+        } 
         addTaint(delayMilliseconds);
-        // ---------- Original Method ----------
-        //AttachInfo attachInfo = mAttachInfo;
-        //if (attachInfo != null) {
-            //Message msg = Message.obtain();
-            //msg.what = AttachInfo.INVALIDATE_MSG;
-            //msg.obj = this;
-            //attachInfo.mHandler.sendMessageDelayed(msg, delayMilliseconds);
-        //}
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -6211,26 +6321,26 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             msg.what = AttachInfo.INVALIDATE_RECT_MSG;
             msg.obj = info;
             attachInfo.mHandler.sendMessageDelayed(msg, delayMilliseconds);
-        } //End block
+        } 
         addTaint(delayMilliseconds);
         addTaint(left);
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        //AttachInfo attachInfo = mAttachInfo;
-        //if (attachInfo != null) {
-            //final AttachInfo.InvalidateInfo info = AttachInfo.InvalidateInfo.acquire();
-            //info.target = this;
-            //info.left = left;
-            //info.top = top;
-            //info.right = right;
-            //info.bottom = bottom;
-            //final Message msg = Message.obtain();
-            //msg.what = AttachInfo.INVALIDATE_RECT_MSG;
-            //msg.obj = info;
-            //attachInfo.mHandler.sendMessageDelayed(msg, delayMilliseconds);
-        //}
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -6238,27 +6348,27 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     private void postSendViewScrolledAccessibilityEventCallback() {
         {
             mSendViewScrolledAccessibilityEvent = new SendViewScrolledAccessibilityEvent();
-        } //End block
+        } 
         {
             mSendViewScrolledAccessibilityEvent.mIsPending = true;
             postDelayed(mSendViewScrolledAccessibilityEvent,
                     ViewConfiguration.getSendRecurringAccessibilityEventsInterval());
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSendViewScrolledAccessibilityEvent == null) {
-            //mSendViewScrolledAccessibilityEvent = new SendViewScrolledAccessibilityEvent();
-        //}
-        //if (!mSendViewScrolledAccessibilityEvent.mIsPending) {
-            //mSendViewScrolledAccessibilityEvent.mIsPending = true;
-            //postDelayed(mSendViewScrolledAccessibilityEvent,
-                    //ViewConfiguration.getSendRecurringAccessibilityEventsInterval());
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.706 -0400", hash_original_method = "7821AAE99E52242CE62352C839CCDCC3", hash_generated_method = "DC60F051596188244856202A1C5C2CDD")
     public void computeScroll() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -6266,8 +6376,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isHorizontalFadingEdgeEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_634525062 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_634525062;
-        // ---------- Original Method ----------
-        //return (mViewFlags & FADING_EDGE_HORIZONTAL) == FADING_EDGE_HORIZONTAL;
+        
+        
     }
 
     
@@ -6278,18 +6388,18 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 {
                     initScrollCache();
-                } //End block
+                } 
                 mViewFlags ^= FADING_EDGE_HORIZONTAL;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(horizontalFadingEdgeEnabled);
-        // ---------- Original Method ----------
-        //if (isHorizontalFadingEdgeEnabled() != horizontalFadingEdgeEnabled) {
-            //if (horizontalFadingEdgeEnabled) {
-                //initScrollCache();
-            //}
-            //mViewFlags ^= FADING_EDGE_HORIZONTAL;
-        //}
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -6297,8 +6407,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isVerticalFadingEdgeEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_974941962 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_974941962;
-        // ---------- Original Method ----------
-        //return (mViewFlags & FADING_EDGE_VERTICAL) == FADING_EDGE_VERTICAL;
+        
+        
     }
 
     
@@ -6309,18 +6419,18 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 {
                     initScrollCache();
-                } //End block
+                } 
                 mViewFlags ^= FADING_EDGE_VERTICAL;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(verticalFadingEdgeEnabled);
-        // ---------- Original Method ----------
-        //if (isVerticalFadingEdgeEnabled() != verticalFadingEdgeEnabled) {
-            //if (verticalFadingEdgeEnabled) {
-                //initScrollCache();
-            //}
-            //mViewFlags ^= FADING_EDGE_VERTICAL;
-        //}
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -6328,11 +6438,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected float getTopFadingEdgeStrength() {
         {
             boolean var95C748EB7173291A5F92BA7AE0D550D8_285223175 = (computeVerticalScrollOffset() > 0);
-        } //End flattened ternary
+        } 
         float var546ADE640B6EDFBC8A086EF31347E768_103095308 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_103095308;
-        // ---------- Original Method ----------
-        //return computeVerticalScrollOffset() > 0 ? 1.0f : 0.0f;
+        
+        
     }
 
     
@@ -6341,12 +6451,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             boolean varD919087A08EBAF1D1A5831A04C61CDFE_196824522 = (computeVerticalScrollOffset() + computeVerticalScrollExtent() <
                 computeVerticalScrollRange());
-        } //End flattened ternary
+        } 
         float var546ADE640B6EDFBC8A086EF31347E768_1540630457 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1540630457;
-        // ---------- Original Method ----------
-        //return computeVerticalScrollOffset() + computeVerticalScrollExtent() <
-                //computeVerticalScrollRange() ? 1.0f : 0.0f;
+        
+        
+                
     }
 
     
@@ -6354,11 +6464,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected float getLeftFadingEdgeStrength() {
         {
             boolean var7654C1BFABAF507D7C3E35D81F9F8DFD_1847366321 = (computeHorizontalScrollOffset() > 0);
-        } //End flattened ternary
+        } 
         float var546ADE640B6EDFBC8A086EF31347E768_1352277900 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1352277900;
-        // ---------- Original Method ----------
-        //return computeHorizontalScrollOffset() > 0 ? 1.0f : 0.0f;
+        
+        
     }
 
     
@@ -6367,12 +6477,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             boolean var769CCFA152889A66107FC92852AF7E99_1579767881 = (computeHorizontalScrollOffset() + computeHorizontalScrollExtent() <
                 computeHorizontalScrollRange());
-        } //End flattened ternary
+        } 
         float var546ADE640B6EDFBC8A086EF31347E768_662604242 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_662604242;
-        // ---------- Original Method ----------
-        //return computeHorizontalScrollOffset() + computeHorizontalScrollExtent() <
-                //computeHorizontalScrollRange() ? 1.0f : 0.0f;
+        
+        
+                
     }
 
     
@@ -6380,8 +6490,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isHorizontalScrollBarEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1160174821 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1160174821;
-        // ---------- Original Method ----------
-        //return (mViewFlags & SCROLLBARS_HORIZONTAL) == SCROLLBARS_HORIZONTAL;
+        
+        
     }
 
     
@@ -6393,15 +6503,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 mViewFlags ^= SCROLLBARS_HORIZONTAL;
                 computeOpaqueFlags();
                 resolvePadding();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(horizontalScrollBarEnabled);
-        // ---------- Original Method ----------
-        //if (isHorizontalScrollBarEnabled() != horizontalScrollBarEnabled) {
-            //mViewFlags ^= SCROLLBARS_HORIZONTAL;
-            //computeOpaqueFlags();
-            //resolvePadding();
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -6409,8 +6519,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isVerticalScrollBarEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1552599141 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1552599141;
-        // ---------- Original Method ----------
-        //return (mViewFlags & SCROLLBARS_VERTICAL) == SCROLLBARS_VERTICAL;
+        
+        
     }
 
     
@@ -6422,23 +6532,23 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 mViewFlags ^= SCROLLBARS_VERTICAL;
                 computeOpaqueFlags();
                 resolvePadding();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(verticalScrollBarEnabled);
-        // ---------- Original Method ----------
-        //if (isVerticalScrollBarEnabled() != verticalScrollBarEnabled) {
-            //mViewFlags ^= SCROLLBARS_VERTICAL;
-            //computeOpaqueFlags();
-            //resolvePadding();
-        //}
+        
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.713 -0400", hash_original_method = "DC71A98728014C366336C5BC467178FD", hash_generated_method = "796EA4F4D2AC58DE61356F54ACDA4918")
     protected void recomputePadding() {
         setPadding(mUserPaddingLeft, mPaddingTop, mUserPaddingRight, mUserPaddingBottom);
-        // ---------- Original Method ----------
-        //setPadding(mUserPaddingLeft, mPaddingTop, mUserPaddingRight, mUserPaddingBottom);
+        
+        
     }
 
     
@@ -6449,20 +6559,20 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         scrollabilityCache.fadeScrollBars = fadeScrollbars;
         {
             scrollabilityCache.state = ScrollabilityCache.OFF;
-        } //End block
+        } 
         {
             scrollabilityCache.state = ScrollabilityCache.ON;
-        } //End block
+        } 
         addTaint(fadeScrollbars);
-        // ---------- Original Method ----------
-        //initScrollCache();
-        //final ScrollabilityCache scrollabilityCache = mScrollCache;
-        //scrollabilityCache.fadeScrollBars = fadeScrollbars;
-        //if (fadeScrollbars) {
-            //scrollabilityCache.state = ScrollabilityCache.OFF;
-        //} else {
-            //scrollabilityCache.state = ScrollabilityCache.ON;
-        //}
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -6470,8 +6580,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isScrollbarFadingEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_968696803 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_968696803;
-        // ---------- Original Method ----------
-        //return mScrollCache != null && mScrollCache.fadeScrollBars;
+        
+        
     }
 
     
@@ -6481,13 +6591,13 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             mViewFlags = (mViewFlags & ~SCROLLBARS_STYLE_MASK) | (style & SCROLLBARS_STYLE_MASK);
             computeOpaqueFlags();
             resolvePadding();
-        } //End block
-        // ---------- Original Method ----------
-        //if (style != (mViewFlags & SCROLLBARS_STYLE_MASK)) {
-            //mViewFlags = (mViewFlags & ~SCROLLBARS_STYLE_MASK) | (style & SCROLLBARS_STYLE_MASK);
-            //computeOpaqueFlags();
-            //resolvePadding();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -6501,8 +6611,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getScrollBarStyle() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_798543267 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_798543267;
-        // ---------- Original Method ----------
-        //return mViewFlags & SCROLLBARS_STYLE_MASK;
+        
+        
     }
 
     
@@ -6511,8 +6621,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         int varF667BBC2F2CB62FFC46148012DBF7327_1148648037 = (getWidth());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_580715727 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_580715727;
-        // ---------- Original Method ----------
-        //return getWidth();
+        
+        
     }
 
     
@@ -6520,8 +6630,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected int computeHorizontalScrollOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1060512107 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1060512107;
-        // ---------- Original Method ----------
-        //return mScrollX;
+        
+        
     }
 
     
@@ -6530,8 +6640,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         int varF667BBC2F2CB62FFC46148012DBF7327_657807356 = (getWidth());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1472945267 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1472945267;
-        // ---------- Original Method ----------
-        //return getWidth();
+        
+        
     }
 
     
@@ -6540,8 +6650,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         int var9D46C65F317DA6DFB2EFABEBB82BEC5F_2136510263 = (getHeight());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_640912921 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_640912921;
-        // ---------- Original Method ----------
-        //return getHeight();
+        
+        
     }
 
     
@@ -6549,8 +6659,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected int computeVerticalScrollOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_970458743 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_970458743;
-        // ---------- Original Method ----------
-        //return mScrollY;
+        
+        
     }
 
     
@@ -6559,8 +6669,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         int var9D46C65F317DA6DFB2EFABEBB82BEC5F_497439467 = (getHeight());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1042515450 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1042515450;
-        // ---------- Original Method ----------
-        //return getHeight();
+        
+        
     }
 
     
@@ -6571,15 +6681,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(direction);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1369932146 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1369932146;
-        // ---------- Original Method ----------
-        //final int offset = computeHorizontalScrollOffset();
-        //final int range = computeHorizontalScrollRange() - computeHorizontalScrollExtent();
-        //if (range == 0) return false;
-        //if (direction < 0) {
-            //return offset > 0;
-        //} else {
-            //return offset < range - 1;
-        //}
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -6590,21 +6700,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(direction);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1206318799 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1206318799;
-        // ---------- Original Method ----------
-        //final int offset = computeVerticalScrollOffset();
-        //final int range = computeVerticalScrollRange() - computeVerticalScrollExtent();
-        //if (range == 0) return false;
-        //if (direction < 0) {
-            //return offset > 0;
-        //} else {
-            //return offset < range - 1;
-        //}
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.723 -0400", hash_original_method = "BC6A073022E6E75A0ACBB97281459E6B", hash_generated_method = "87917F130E9CB7C9C8B68C885B05BBDE")
     protected final void onDrawScrollBars(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final ScrollabilityCache cache = mScrollCache;
         {
             int state = cache.state;
@@ -6612,23 +6722,23 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 {
                     cache.interpolatorValues = new float[1];
-                } //End block
+                } 
                 float[] values = cache.interpolatorValues;
                 {
                     boolean var34F9F3B00BE1502DFF6FE96B14D049B7_1171361423 = (cache.scrollBarInterpolator.timeToValues(values) ==
                         Interpolator.Result.FREEZE_END);
                     {
                         cache.state = ScrollabilityCache.OFF;
-                    } //End block
+                    } 
                     {
                         cache.scrollBar.setAlpha(Math.round(values[0]));
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 invalidate = true;
-            } //End block
+            } 
             {
                 cache.scrollBar.setAlpha(255);
-            } //End block
+            } 
             final int viewFlags = mViewFlags;
             final boolean drawHorizontalScrollBar = (viewFlags & SCROLLBARS_HORIZONTAL) == SCROLLBARS_HORIZONTAL;
             final boolean drawVerticalScrollBar = (viewFlags & SCROLLBARS_VERTICAL) == SCROLLBARS_VERTICAL
@@ -6650,7 +6760,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     int size = scrollBar.getSize(false);
                     {
                         size = cache.scrollBarSize;
-                    } //End block
+                    } 
                     scrollBar.setParameters(computeHorizontalScrollRange(),
                                             computeHorizontalScrollOffset(),
                                             computeHorizontalScrollExtent(), false);
@@ -6664,35 +6774,35 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     onDrawHorizontalScrollBar(canvas, scrollBar, left, top, right, bottom);
                     {
                         invalidate(left, top, right, bottom);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     int size = scrollBar.getSize(true);
                     {
                         size = cache.scrollBarSize;
-                    } //End block
+                    } 
                     scrollBar.setParameters(computeVerticalScrollRange(),
                                             computeVerticalScrollOffset(),
                                             computeVerticalScrollExtent(), true);
-                    //Begin case default SCROLLBAR_POSITION_DEFAULT SCROLLBAR_POSITION_RIGHT 
+                    
                     left = scrollX + width - size - (mUserPaddingRight & inside);
-                    //End case default SCROLLBAR_POSITION_DEFAULT SCROLLBAR_POSITION_RIGHT 
-                    //Begin case SCROLLBAR_POSITION_LEFT 
+                    
+                    
                     left = scrollX + (mUserPaddingLeft & inside);
-                    //End case SCROLLBAR_POSITION_LEFT 
+                    
                     top = scrollY + (mPaddingTop & inside);
                     right = left + size;
                     bottom = scrollY + height - (mUserPaddingBottom & inside);
                     onDrawVerticalScrollBar(canvas, scrollBar, left, top, right, bottom);
                     {
                         invalidate(left, top, right, bottom);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -6700,15 +6810,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected boolean isVerticalScrollBarHidden() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_151744999 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_151744999;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.724 -0400", hash_original_method = "2196C3E195A3664813647CA1F4571C34", hash_generated_method = "07E1C0FFD1A8985E1AF22CBEA90959AD")
     protected void onDrawHorizontalScrollBar(Canvas canvas, Drawable scrollBar,
             int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         scrollBar.setBounds(l, t, r, b);
         scrollBar.draw(canvas);
         addTaint(canvas.getTaint());
@@ -6717,16 +6827,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        //scrollBar.setBounds(l, t, r, b);
-        //scrollBar.draw(canvas);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.724 -0400", hash_original_method = "4DC59479DF5AED0094F453B5C8C1A8B1", hash_generated_method = "F0D29B608DF77C2213FE35532E3D924D")
     protected void onDrawVerticalScrollBar(Canvas canvas, Drawable scrollBar,
             int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         scrollBar.setBounds(l, t, r, b);
         scrollBar.draw(canvas);
         addTaint(canvas.getTaint());
@@ -6735,17 +6845,17 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        //scrollBar.setBounds(l, t, r, b);
-        //scrollBar.draw(canvas);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.725 -0400", hash_original_method = "88C9EEC1EB66ECE8EDFB3E744FAAD32C", hash_generated_method = "8DE2AC8CD08D4DCB5B0CCD9E40E1637E")
     protected void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -6753,36 +6863,36 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
      void assignParent(ViewParent parent) {
         {
             mParent = parent;
-        } //End block
+        } 
         {
             mParent = null;
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("view " + this + " being added, but"
                     + " it already has a parent");
-        } //End block
-        // ---------- Original Method ----------
-        //if (mParent == null) {
-            //mParent = parent;
-        //} else if (parent == null) {
-            //mParent = null;
-        //} else {
-            //throw new RuntimeException("view " + this + " being added, but"
-                    //+ " it already has a parent");
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+            
+                    
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.725 -0400", hash_original_method = "6BE89DDC01776115240A35D213D194B1", hash_generated_method = "EC58119A15B64F6201CCDEADFE7DED79")
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mParent.requestTransparentRegion(this);
-        } //End block
+        } 
         {
             initialAwakenScrollBars();
             mPrivateFlags &= ~AWAKEN_SCROLL_BARS_ON_ATTACH;
-        } //End block
+        } 
         jumpDrawablesToCurrentState();
         resolveLayoutDirectionIfNeeded();
         resolvePadding();
@@ -6792,24 +6902,24 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 InputMethodManager imm = InputMethodManager.peekInstance();
                 imm.focusIn(this);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if ((mPrivateFlags & REQUEST_TRANSPARENT_REGIONS) != 0) {
-            //mParent.requestTransparentRegion(this);
-        //}
-        //if ((mPrivateFlags & AWAKEN_SCROLL_BARS_ON_ATTACH) != 0) {
-            //initialAwakenScrollBars();
-            //mPrivateFlags &= ~AWAKEN_SCROLL_BARS_ON_ATTACH;
-        //}
-        //jumpDrawablesToCurrentState();
-        //resolveLayoutDirectionIfNeeded();
-        //resolvePadding();
-        //resolveTextDirection();
-        //if (isFocused()) {
-            //InputMethodManager imm = InputMethodManager.peekInstance();
-            //imm.focusIn(this);
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -6819,35 +6929,35 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         resetResolvedTextDirection();
         {
             Object varEB32B57BDD0405313F1A009DC7D6D94F_1210986867 = (getLayoutDirection());
-            //Begin case LAYOUT_DIRECTION_INHERIT 
+            
             {
                 ViewGroup viewGroup = ((ViewGroup) mParent);
                 {
                     boolean varD7173ED74EF8FD4D8C167811281857D6_684168212 = (! viewGroup.canResolveLayoutDirection());
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean var8E862BF7D39882400271E2867FE65A16_1012595931 = (viewGroup.getResolvedLayoutDirection() == LAYOUT_DIRECTION_RTL);
                     {
                         mPrivateFlags2 |= LAYOUT_DIRECTION_RESOLVED_RTL;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            //End case LAYOUT_DIRECTION_INHERIT 
-            //Begin case LAYOUT_DIRECTION_RTL 
+                    } 
+                } 
+            } 
+            
+            
             mPrivateFlags2 |= LAYOUT_DIRECTION_RESOLVED_RTL;
-            //End case LAYOUT_DIRECTION_RTL 
-            //Begin case LAYOUT_DIRECTION_LOCALE 
+            
+            
             {
                 boolean var9876FCC9113762996D6F4DE738D751FA_237813750 = (isLayoutDirectionRtl(Locale.getDefault()));
                 {
                     mPrivateFlags2 |= LAYOUT_DIRECTION_RESOLVED_RTL;
-                } //End block
-            } //End collapsed parenthetic
-            //End case LAYOUT_DIRECTION_LOCALE 
-        } //End collapsed parenthetic
+                } 
+            } 
+            
+        } 
         mPrivateFlags2 |= LAYOUT_DIRECTION_RESOLVED;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -6855,43 +6965,43 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected void resolvePadding() {
         {
             Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_962071384 = (getResolvedLayoutDirection());
-            //Begin case LAYOUT_DIRECTION_RTL 
+            
             {
                 mUserPaddingRight = mUserPaddingStart;
-            } //End block
+            } 
             {
                 mUserPaddingRight = mPaddingRight;
-            } //End block
-            //End case LAYOUT_DIRECTION_RTL 
-            //Begin case LAYOUT_DIRECTION_RTL 
+            } 
+            
+            
             {
                 mUserPaddingLeft = mUserPaddingEnd;
-            } //End block
+            } 
             {
                 mUserPaddingLeft = mPaddingLeft;
-            } //End block
-            //End case LAYOUT_DIRECTION_RTL 
-            //Begin case LAYOUT_DIRECTION_LTR default 
+            } 
+            
+            
             {
                 mUserPaddingLeft = mUserPaddingStart;
-            } //End block
+            } 
             {
                 mUserPaddingLeft = mPaddingLeft;
-            } //End block
-            //End case LAYOUT_DIRECTION_LTR default 
-            //Begin case LAYOUT_DIRECTION_LTR default 
+            } 
+            
+            
             {
                 mUserPaddingRight = mUserPaddingEnd;
-            } //End block
+            } 
             {
                 mUserPaddingRight = mPaddingRight;
-            } //End block
-            //End case LAYOUT_DIRECTION_LTR default 
-        } //End collapsed parenthetic
+            } 
+            
+        } 
         mUserPaddingBottom = (mUserPaddingBottom >= 0) ? mUserPaddingBottom : mPaddingBottom;
         recomputePadding();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -6899,24 +7009,24 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected boolean canResolveLayoutDirection() {
         {
             Object varEB32B57BDD0405313F1A009DC7D6D94F_885861441 = (getLayoutDirection());
-        } //End collapsed parenthetic
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1491254190 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1491254190;
-        // ---------- Original Method ----------
-        //switch (getLayoutDirection()) {
-            //case LAYOUT_DIRECTION_INHERIT:
-                //return (mParent != null);
-            //default:
-                //return true;
-        //}
+        
+        
+            
+                
+            
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.728 -0400", hash_original_method = "A8A20BDA6F309AE6FE3C70FD4EB76C3B", hash_generated_method = "146E092F23602F5144B45F38ADE2CB14")
     protected void resetResolvedLayoutDirection() {
         mPrivateFlags2 &= ~LAYOUT_DIRECTION_RESOLVED;
-        // ---------- Original Method ----------
-        //mPrivateFlags2 &= ~LAYOUT_DIRECTION_RESOLVED;
+        
+        
     }
 
     
@@ -6928,7 +7038,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.730 -0400", hash_original_method = "C1067653123E460806048F14F4245D8D", hash_generated_method = "82C2297B1CF23C48EAF943AEB85EF44C")
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mPrivateFlags &= ~CANCEL_NEXT_UP_EVENT;
         removeUnsetPressCallback();
         removeLongPressCallback();
@@ -6938,30 +7048,30 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         destroyLayer();
         {
             mDisplayList.invalidate();
-        } //End block
+        } 
         {
             mAttachInfo.mHandler.removeMessages(AttachInfo.INVALIDATE_MSG, this);
-        } //End block
+        } 
         mCurrentAnimation = null;
         resetResolvedLayoutDirection();
         resetResolvedTextDirection();
-        // ---------- Original Method ----------
-        //mPrivateFlags &= ~CANCEL_NEXT_UP_EVENT;
-        //removeUnsetPressCallback();
-        //removeLongPressCallback();
-        //removePerformClickCallback();
-        //removeSendViewScrolledAccessibilityEventCallback();
-        //destroyDrawingCache();
-        //destroyLayer();
-        //if (mDisplayList != null) {
-            //mDisplayList.invalidate();
-        //}
-        //if (mAttachInfo != null) {
-            //mAttachInfo.mHandler.removeMessages(AttachInfo.INVALIDATE_MSG, this);
-        //}
-        //mCurrentAnimation = null;
-        //resetResolvedLayoutDirection();
-        //resetResolvedTextDirection();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -6969,67 +7079,67 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected int getWindowAttachCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_524653604 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_524653604;
-        // ---------- Original Method ----------
-        //return mWindowAttachCount;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.731 -0400", hash_original_method = "B5E940E178CF821C1ABFCBA8A2963390", hash_generated_method = "832D3C7DB151FF4B13787634A1692BDF")
     public IBinder getWindowToken() {
-        IBinder varB4EAC82CA7396A68D541C85D26508E83_1880693498 = null; //Variable for return #1
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_1880693498 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1880693498 = mAttachInfo != null ? mAttachInfo.mWindowToken : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1880693498.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1880693498.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1880693498;
-        // ---------- Original Method ----------
-        //return mAttachInfo != null ? mAttachInfo.mWindowToken : null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.731 -0400", hash_original_method = "2166F0BF16D53373B488A496114897F8", hash_generated_method = "1BFB292A3980C6A02B063103DB8458C2")
     public IBinder getApplicationWindowToken() {
-        IBinder varB4EAC82CA7396A68D541C85D26508E83_1306032545 = null; //Variable for return #1
-        IBinder varB4EAC82CA7396A68D541C85D26508E83_1639004059 = null; //Variable for return #2
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_1306032545 = null; 
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_1639004059 = null; 
         AttachInfo ai = mAttachInfo;
         {
             IBinder appWindowToken = ai.mPanelParentWindowToken;
             {
                 appWindowToken = ai.mWindowToken;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1306032545 = appWindowToken;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1639004059 = null;
-        IBinder varA7E53CE21691AB073D9660D615818899_541687267; //Final return value
+        IBinder varA7E53CE21691AB073D9660D615818899_541687267; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_541687267 = varB4EAC82CA7396A68D541C85D26508E83_1306032545;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_541687267 = varB4EAC82CA7396A68D541C85D26508E83_1639004059;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_541687267.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_541687267.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_541687267;
-        // ---------- Original Method ----------
-        //AttachInfo ai = mAttachInfo;
-        //if (ai != null) {
-            //IBinder appWindowToken = ai.mPanelParentWindowToken;
-            //if (appWindowToken == null) {
-                //appWindowToken = ai.mWindowToken;
-            //}
-            //return appWindowToken;
-        //}
-        //return null;
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.732 -0400", hash_original_method = "502E0CC6497F900AADF2990690A51539", hash_generated_method = "FFAC1057BB7ACDC9EAED62075FCD4FED")
      IWindowSession getWindowSession() {
-        IWindowSession varB4EAC82CA7396A68D541C85D26508E83_1673179417 = null; //Variable for return #1
+        IWindowSession varB4EAC82CA7396A68D541C85D26508E83_1673179417 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1673179417 = mAttachInfo != null ? mAttachInfo.mSession : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1673179417.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1673179417.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1673179417;
-        // ---------- Original Method ----------
-        //return mAttachInfo != null ? mAttachInfo.mSession : null;
+        
+        
     }
 
     
@@ -7040,11 +7150,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             info.mTreeObserver.merge(mFloatingTreeObserver);
             mFloatingTreeObserver = null;
-        } //End block
+        } 
         {
             mAttachInfo.mScrollContainers.add(this);
             mPrivateFlags |= SCROLL_CONTAINER_ADDED;
-        } //End block
+        } 
         performCollectViewAttributes(visibility);
         onAttachedToWindow();
         ListenerInfo li = mListenerInfo;
@@ -7060,20 +7170,20 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     OnAttachStateChangeListener listener = varE0997CFEC81DEDF84B9808E9E6718DCA_164018872.next();
                     {
                         listener.onViewAttachedToWindow(this);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         int vis = info.mWindowVisibility;
         {
             onWindowVisibilityChanged(vis);
-        } //End block
+        } 
         {
             refreshDrawableState();
-        } //End block
+        } 
         addTaint(visibility);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7084,8 +7194,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             int vis = info.mWindowVisibility;
             {
                 onWindowVisibilityChanged(GONE);
-            } //End block
-        } //End block
+            } 
+        } 
         onDetachedFromWindow();
         ListenerInfo li = mListenerInfo;
         CopyOnWriteArrayList<OnAttachStateChangeListener> listeners;
@@ -7100,17 +7210,17 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     OnAttachStateChangeListener listener = varE0997CFEC81DEDF84B9808E9E6718DCA_898981580.next();
                     {
                         listener.onViewDetachedFromWindow(this);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             mAttachInfo.mScrollContainers.remove(this);
             mPrivateFlags &= ~SCROLL_CONTAINER_ADDED;
-        } //End block
+        } 
         mAttachInfo = null;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7118,8 +7228,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void saveHierarchyState(SparseArray<Parcelable> container) {
         dispatchSaveInstanceState(container);
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //dispatchSaveInstanceState(container);
+        
+        
     }
 
     
@@ -7131,38 +7241,38 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                         "Derived class did not call super.onSaveInstanceState()");
-            } //End block
+            } 
             {
                 container.put(mID, state);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //if (mID != NO_ID && (mViewFlags & SAVE_DISABLED_MASK) == 0) {
-            //mPrivateFlags &= ~SAVE_STATE_CALLED;
-            //Parcelable state = onSaveInstanceState();
-            //if ((mPrivateFlags & SAVE_STATE_CALLED) == 0) {
-                //throw new IllegalStateException(
-                        //"Derived class did not call super.onSaveInstanceState()");
-            //}
-            //if (state != null) {
-                //container.put(mID, state);
-            //}
-        //}
+        
+        
+            
+            
+            
+                
+                        
+            
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.793 -0400", hash_original_method = "071A0CD98D5CB5717BF4FD06D9363A03", hash_generated_method = "09D4021B1C891B6284824760631969A8")
     protected Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_2104524841 = null; //Variable for return #1
+        
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_2104524841 = null; 
         mPrivateFlags |= SAVE_STATE_CALLED;
         varB4EAC82CA7396A68D541C85D26508E83_2104524841 = BaseSavedState.EMPTY_STATE;
-        varB4EAC82CA7396A68D541C85D26508E83_2104524841.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2104524841.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2104524841;
-        // ---------- Original Method ----------
-        //mPrivateFlags |= SAVE_STATE_CALLED;
-        //return BaseSavedState.EMPTY_STATE;
+        
+        
+        
     }
 
     
@@ -7170,8 +7280,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void restoreHierarchyState(SparseArray<Parcelable> container) {
         dispatchRestoreInstanceState(container);
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //dispatchRestoreInstanceState(container);
+        
+        
     }
 
     
@@ -7185,28 +7295,28 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                             "Derived class did not call super.onRestoreInstanceState()");
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
-        //if (mID != NO_ID) {
-            //Parcelable state = container.get(mID);
-            //if (state != null) {
-                //mPrivateFlags &= ~SAVE_STATE_CALLED;
-                //onRestoreInstanceState(state);
-                //if ((mPrivateFlags & SAVE_STATE_CALLED) == 0) {
-                    //throw new IllegalStateException(
-                            //"Derived class did not call super.onRestoreInstanceState()");
-                //}
-            //}
-        //}
+        
+        
+            
+            
+                
+                
+                
+                    
+                            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.796 -0400", hash_original_method = "CCFCBEB3529A8F3F9E941DB1236D802B", hash_generated_method = "E15824D701CB7571D33BBB1CE5800874")
     protected void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mPrivateFlags |= SAVE_STATE_CALLED;
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Wrong state class, expecting View State but "
@@ -7214,17 +7324,17 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     + "when two views of different type have the same id in the same hierarchy. "
                     + "This view's id is " + ViewDebug.resolveId(mContext, getId()) + ". Make sure "
                     + "other views do not use the same id.");
-        } //End block
+        } 
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //mPrivateFlags |= SAVE_STATE_CALLED;
-        //if (state != BaseSavedState.EMPTY_STATE && state != null) {
-            //throw new IllegalArgumentException("Wrong state class, expecting View State but "
-                    //+ "received " + state.getClass().toString() + " instead. This usually happens "
-                    //+ "when two views of different type have the same id in the same hierarchy. "
-                    //+ "This view's id is " + ViewDebug.resolveId(mContext, getId()) + ". Make sure "
-                    //+ "other views do not use the same id.");
-        //}
+        
+        
+        
+            
+                    
+                    
+                    
+                    
+        
     }
 
     
@@ -7232,8 +7342,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public long getDrawingTime() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1454337144 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1454337144;
-        // ---------- Original Method ----------
-        //return mAttachInfo != null ? mAttachInfo.mDrawingTime : 0;
+        
+        
     }
 
     
@@ -7241,8 +7351,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void setDuplicateParentStateEnabled(boolean enabled) {
         setFlags(enabled ? DUPLICATE_PARENT_STATE : 0, DUPLICATE_PARENT_STATE);
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //setFlags(enabled ? DUPLICATE_PARENT_STATE : 0, DUPLICATE_PARENT_STATE);
+        
+        
     }
 
     
@@ -7250,8 +7360,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isDuplicateParentStateEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1101899266 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1101899266;
-        // ---------- Original Method ----------
-        //return (mViewFlags & DUPLICATE_PARENT_STATE) == DUPLICATE_PARENT_STATE;
+        
+        
     }
 
     
@@ -7260,28 +7370,28 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Layer type can only be one of: LAYER_TYPE_NONE, "
                     + "LAYER_TYPE_SOFTWARE or LAYER_TYPE_HARDWARE");
-        } //End block
+        } 
         {
             {
                 mLayerPaint = paint == null ? new Paint() : paint;
                 invalidateParentCaches();
                 invalidate(true);
-            } //End block
-        } //End block
-        //Begin case LAYER_TYPE_HARDWARE 
+            } 
+        } 
+        
         destroyLayer();
-        //End case LAYER_TYPE_HARDWARE 
-        //Begin case LAYER_TYPE_SOFTWARE 
+        
+        
         destroyDrawingCache();
-        //End case LAYER_TYPE_SOFTWARE 
+        
         mLayerType = layerType;
         final boolean layerDisabled = mLayerType == LAYER_TYPE_NONE;
         mLayerPaint = layerDisabled ? null : (paint == null ? new Paint() : paint);
         mLocalDirtyRect = layerDisabled ? null : new Rect();
         invalidateParentCaches();
         invalidate(true);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7289,8 +7399,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
      boolean hasStaticLayer() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_792565190 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_792565190;
-        // ---------- Original Method ----------
-        //return mLayerType == LAYER_TYPE_NONE;
+        
+        
     }
 
     
@@ -7298,8 +7408,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getLayerType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1265352125 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1265352125;
-        // ---------- Original Method ----------
-        //return mLayerType;
+        
+        
     }
 
     
@@ -7307,84 +7417,84 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void buildLayer() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("This view must be attached to a window first");
-        } //End block
-        //Begin case LAYER_TYPE_HARDWARE 
+        } 
+        
         {
             boolean var938BC3BB177101C2D5D80B665B48EFE4_1371899175 = (mAttachInfo.mHardwareRenderer != null &&
                         mAttachInfo.mHardwareRenderer.isEnabled() &&
                         mAttachInfo.mHardwareRenderer.validate());
             {
                 getHardwareLayer();
-            } //End block
-        } //End collapsed parenthetic
-        //End case LAYER_TYPE_HARDWARE 
-        //Begin case LAYER_TYPE_SOFTWARE 
+            } 
+        } 
+        
+        
         buildDrawingCache(true);
-        //End case LAYER_TYPE_SOFTWARE 
-        // ---------- Original Method ----------
-        //if (mLayerType == LAYER_TYPE_NONE) return;
-        //if (mAttachInfo == null) {
-            //throw new IllegalStateException("This view must be attached to a window first");
-        //}
-        //switch (mLayerType) {
-            //case LAYER_TYPE_HARDWARE:
-                //if (mAttachInfo.mHardwareRenderer != null &&
-                        //mAttachInfo.mHardwareRenderer.isEnabled() &&
-                        //mAttachInfo.mHardwareRenderer.validate()) {
-                    //getHardwareLayer();
-                //}
-                //break;
-            //case LAYER_TYPE_SOFTWARE:
-                //buildDrawingCache(true);
-                //break;
-        //}
+        
+        
+        
+        
+            
+        
+        
+            
+                
+                        
+                        
+                    
+                
+                
+            
+                
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.804 -0400", hash_original_method = "1C756BC3105DE982313252676EF7BEA5", hash_generated_method = "EFF7EA73FD9950CF82547860142E5404")
      HardwareLayer getHardwareLayer() {
-        HardwareLayer varB4EAC82CA7396A68D541C85D26508E83_781679372 = null; //Variable for return #1
-        HardwareLayer varB4EAC82CA7396A68D541C85D26508E83_602467395 = null; //Variable for return #2
-        HardwareLayer varB4EAC82CA7396A68D541C85D26508E83_1278372519 = null; //Variable for return #3
-        HardwareLayer varB4EAC82CA7396A68D541C85D26508E83_976405099 = null; //Variable for return #4
-        HardwareLayer varB4EAC82CA7396A68D541C85D26508E83_2039618499 = null; //Variable for return #5
+        HardwareLayer varB4EAC82CA7396A68D541C85D26508E83_781679372 = null; 
+        HardwareLayer varB4EAC82CA7396A68D541C85D26508E83_602467395 = null; 
+        HardwareLayer varB4EAC82CA7396A68D541C85D26508E83_1278372519 = null; 
+        HardwareLayer varB4EAC82CA7396A68D541C85D26508E83_976405099 = null; 
+        HardwareLayer varB4EAC82CA7396A68D541C85D26508E83_2039618499 = null; 
         {
             boolean var1795335A66B1FC7BB4C3B32BDFD3180D_2047661265 = (mAttachInfo == null || mAttachInfo.mHardwareRenderer == null ||
                 !mAttachInfo.mHardwareRenderer.isEnabled());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_781679372 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final int width = mRight - mLeft;
         final int height = mBottom - mTop;
         {
             varB4EAC82CA7396A68D541C85D26508E83_602467395 = null;
-        } //End block
+        } 
         {
             {
                 mHardwareLayer = mAttachInfo.mHardwareRenderer.createHardwareLayer(
                         width, height, isOpaque());
                 mLocalDirtyRect.setEmpty();
-            } //End block
+            } 
             {
                 boolean var5013B1CC39A5DD383313D5E39F51669C_1477977084 = (mHardwareLayer.getWidth() != width || mHardwareLayer.getHeight() != height);
                 {
                     mHardwareLayer.resize(width, height);
                     mLocalDirtyRect.setEmpty();
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var08F8E6CAF5391532E58CACD43013438A_31721067 = (!mHardwareLayer.isValid());
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1278372519 = null;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             HardwareCanvas currentCanvas = mAttachInfo.mHardwareCanvas;
             final HardwareCanvas canvas = mHardwareLayer.start(currentCanvas);
             {
                 mHardwareLayer.end(currentCanvas);
                 varB4EAC82CA7396A68D541C85D26508E83_976405099 = null;
-            } //End block
+            } 
             mAttachInfo.mHardwareCanvas = canvas;
             try 
             {
@@ -7398,42 +7508,42 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     mPrivateFlags &= ~DIRTY_MASK;
                     dispatchDraw(canvas);
-                } //End block
+                } 
                 {
                     draw(canvas);
-                } //End block
+                } 
                 canvas.restoreToCount(restoreCount);
-            } //End block
+            } 
             finally 
             {
                 canvas.onPostDraw();
                 mHardwareLayer.end(currentCanvas);
                 mAttachInfo.mHardwareCanvas = currentCanvas;
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2039618499 = mHardwareLayer;
-        HardwareLayer varA7E53CE21691AB073D9660D615818899_1800321160; //Final return value
+        HardwareLayer varA7E53CE21691AB073D9660D615818899_1800321160; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1800321160 = varB4EAC82CA7396A68D541C85D26508E83_781679372;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1800321160 = varB4EAC82CA7396A68D541C85D26508E83_602467395;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1800321160 = varB4EAC82CA7396A68D541C85D26508E83_1278372519;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1800321160 = varB4EAC82CA7396A68D541C85D26508E83_976405099;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1800321160 = varB4EAC82CA7396A68D541C85D26508E83_2039618499;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1800321160.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1800321160.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1800321160;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7444,26 +7554,26 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             mHardwareLayer = null;
             invalidate(true);
             invalidateParentCaches();
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1798779334 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1798779334;
-        // ---------- Original Method ----------
-        //if (mHardwareLayer != null) {
-            //mHardwareLayer.destroy();
-            //mHardwareLayer = null;
-            //invalidate(true);
-            //invalidateParentCaches();
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+            
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.806 -0400", hash_original_method = "2A28B7876CAFDC07E0FAFA28070957E8", hash_generated_method = "40E2B8629BC48C8FF763F010A3364CFD")
     protected void destroyHardwareResources() {
         destroyLayer();
-        // ---------- Original Method ----------
-        //destroyLayer();
+        
+        
     }
 
     
@@ -7472,9 +7582,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         mCachingFailed = false;
         setFlags(enabled ? DRAWING_CACHE_ENABLED : 0, DRAWING_CACHE_ENABLED);
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //mCachingFailed = false;
-        //setFlags(enabled ? DRAWING_CACHE_ENABLED : 0, DRAWING_CACHE_ENABLED);
+        
+        
+        
     }
 
     
@@ -7483,8 +7593,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isDrawingCacheEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2099399671 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2099399671;
-        // ---------- Original Method ----------
-        //return (mViewFlags & DRAWING_CACHE_ENABLED) == DRAWING_CACHE_ENABLED;
+        
+        
     }
 
     
@@ -7497,7 +7607,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 ") INVALIDATED(" + (mPrivateFlags & INVALIDATED) + ")");
         {
             mPrivateFlags &= clearMask;
-        } //End block
+        } 
         {
             ViewGroup parent = (ViewGroup) this;
             final int count = parent.getChildCount();
@@ -7506,33 +7616,33 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     final View child = parent.getChildAt(i);
                     child.outputDirtyFlags(indent + "  ", clear, clearMask);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(indent.getTaint());
         addTaint(clear);
-        // ---------- Original Method ----------
-        //Log.d("View", indent + this + "             DIRTY(" + (mPrivateFlags & View.DIRTY_MASK) +
-                //") DRAWN(" + (mPrivateFlags & DRAWN) + ")" + " CACHE_VALID(" +
-                //(mPrivateFlags & View.DRAWING_CACHE_VALID) +
-                //") INVALIDATED(" + (mPrivateFlags & INVALIDATED) + ")");
-        //if (clear) {
-            //mPrivateFlags &= clearMask;
-        //}
-        //if (this instanceof ViewGroup) {
-            //ViewGroup parent = (ViewGroup) this;
-            //final int count = parent.getChildCount();
-            //for (int i = 0; i < count; i++) {
-                //final View child = parent.getChildAt(i);
-                //child.outputDirtyFlags(indent + "  ", clear, clearMask);
-            //}
-        //}
+        
+        
+                
+                
+                
+        
+            
+        
+        
+            
+            
+            
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.809 -0400", hash_original_method = "F520ED30BD4141F0E67AE80815EDDC89", hash_generated_method = "7D5447D36AD4507DE6BB8070E0DEAF7B")
     protected void dispatchGetDisplayList() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -7540,22 +7650,22 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean canHaveDisplayList() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1526070569 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1526070569;
-        // ---------- Original Method ----------
-        //return !(mAttachInfo == null || mAttachInfo.mHardwareRenderer == null);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.813 -0400", hash_original_method = "A79479675DF460DA0EF507C879CE4B27", hash_generated_method = "411CCE6E9F3F8B57106C88E864B65FB7")
     public DisplayList getDisplayList() {
-        DisplayList varB4EAC82CA7396A68D541C85D26508E83_595399744 = null; //Variable for return #1
-        DisplayList varB4EAC82CA7396A68D541C85D26508E83_1599304422 = null; //Variable for return #2
-        DisplayList varB4EAC82CA7396A68D541C85D26508E83_604981811 = null; //Variable for return #3
+        DisplayList varB4EAC82CA7396A68D541C85D26508E83_595399744 = null; 
+        DisplayList varB4EAC82CA7396A68D541C85D26508E83_1599304422 = null; 
+        DisplayList varB4EAC82CA7396A68D541C85D26508E83_604981811 = null; 
         {
             boolean var1B563759F0FD29B833433E2C0DB5143B_308122536 = (!canHaveDisplayList());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_595399744 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varCB7B81962DE3C7E60B368CFD3080CE5F_1155437664 = (((mPrivateFlags & DRAWING_CACHE_VALID) == 0 ||
                 mDisplayList == null || !mDisplayList.isValid() ||
@@ -7569,13 +7679,13 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                         mPrivateFlags &= ~DIRTY_MASK;
                         dispatchGetDisplayList();
                         varB4EAC82CA7396A68D541C85D26508E83_1599304422 = mDisplayList;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mRecreateDisplayList = true;
                 {
                     mDisplayList = mAttachInfo.mHardwareRenderer.createDisplayList();
                     invalidateParentCaches();
-                } //End block
+                } 
                 final HardwareCanvas canvas = mDisplayList.start();
                 int restoreCount = 0;
                 try 
@@ -7591,85 +7701,85 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     mPrivateFlags &= ~DIRTY_MASK;
                     {
                         dispatchDraw(canvas);
-                    } //End block
+                    } 
                     {
                         draw(canvas);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 finally 
                 {
                     canvas.restoreToCount(restoreCount);
                     canvas.onPostDraw();
                     mDisplayList.end();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 mPrivateFlags |= DRAWN | DRAWING_CACHE_VALID;
                 mPrivateFlags &= ~DIRTY_MASK;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_604981811 = mDisplayList;
-        DisplayList varA7E53CE21691AB073D9660D615818899_1966683912; //Final return value
+        DisplayList varA7E53CE21691AB073D9660D615818899_1966683912; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1966683912 = varB4EAC82CA7396A68D541C85D26508E83_595399744;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1966683912 = varB4EAC82CA7396A68D541C85D26508E83_1599304422;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1966683912 = varB4EAC82CA7396A68D541C85D26508E83_604981811;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1966683912.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1966683912.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1966683912;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.814 -0400", hash_original_method = "16C485E3429312C7E841D79823374233", hash_generated_method = "92B3D63F4D871F538AEF5E3AB359916B")
     public Bitmap getDrawingCache() {
-        Bitmap varB4EAC82CA7396A68D541C85D26508E83_817279241 = null; //Variable for return #1
+        Bitmap varB4EAC82CA7396A68D541C85D26508E83_817279241 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_817279241 = getDrawingCache(false);
-        varB4EAC82CA7396A68D541C85D26508E83_817279241.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_817279241.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_817279241;
-        // ---------- Original Method ----------
-        //return getDrawingCache(false);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.815 -0400", hash_original_method = "CA92F18E14EB0519BF84A3C226CE3F4A", hash_generated_method = "3D06C1113056B985DFA4610A78F846CD")
     public Bitmap getDrawingCache(boolean autoScale) {
-        Bitmap varB4EAC82CA7396A68D541C85D26508E83_1710361994 = null; //Variable for return #1
-        Bitmap varB4EAC82CA7396A68D541C85D26508E83_597739886 = null; //Variable for return #2
+        Bitmap varB4EAC82CA7396A68D541C85D26508E83_1710361994 = null; 
+        Bitmap varB4EAC82CA7396A68D541C85D26508E83_597739886 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1710361994 = null;
-        } //End block
+        } 
         {
             buildDrawingCache(autoScale);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_597739886 = autoScale ? mDrawingCache : mUnscaledDrawingCache;
         addTaint(autoScale);
-        Bitmap varA7E53CE21691AB073D9660D615818899_1771895623; //Final return value
+        Bitmap varA7E53CE21691AB073D9660D615818899_1771895623; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1771895623 = varB4EAC82CA7396A68D541C85D26508E83_1710361994;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1771895623 = varB4EAC82CA7396A68D541C85D26508E83_597739886;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1771895623.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1771895623.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1771895623;
-        // ---------- Original Method ----------
-        //if ((mViewFlags & WILL_NOT_CACHE_DRAWING) == WILL_NOT_CACHE_DRAWING) {
-            //return null;
-        //}
-        //if ((mViewFlags & DRAWING_CACHE_ENABLED) == DRAWING_CACHE_ENABLED) {
-            //buildDrawingCache(autoScale);
-        //}
-        //return autoScale ? mDrawingCache : mUnscaledDrawingCache;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -7678,20 +7788,20 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             mDrawingCache.recycle();
             mDrawingCache = null;
-        } //End block
+        } 
         {
             mUnscaledDrawingCache.recycle();
             mUnscaledDrawingCache = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mDrawingCache != null) {
-            //mDrawingCache.recycle();
-            //mDrawingCache = null;
-        //}
-        //if (mUnscaledDrawingCache != null) {
-            //mUnscaledDrawingCache.recycle();
-            //mUnscaledDrawingCache = null;
-        //}
+        } 
+        
+        
+            
+            
+        
+        
+            
+            
+        
     }
 
     
@@ -7700,12 +7810,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             mDrawingCacheBackgroundColor = color;
             mPrivateFlags &= ~DRAWING_CACHE_VALID;
-        } //End block
-        // ---------- Original Method ----------
-        //if (color != mDrawingCacheBackgroundColor) {
-            //mDrawingCacheBackgroundColor = color;
-            //mPrivateFlags &= ~DRAWING_CACHE_VALID;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -7713,16 +7823,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getDrawingCacheBackgroundColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_591075502 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_591075502;
-        // ---------- Original Method ----------
-        //return mDrawingCacheBackgroundColor;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.817 -0400", hash_original_method = "8A1B171D557613DB7E4B9E775A2E64AA", hash_generated_method = "7863622F5BA5FABAB7E5B62D4108044D")
     public void buildDrawingCache() {
         buildDrawingCache(false);
-        // ---------- Original Method ----------
-        //buildDrawingCache(false);
+        
+        
     }
 
     
@@ -7732,7 +7842,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             mCachingFailed = false;
             {
                 ViewDebug.trace(this, ViewDebug.HierarchyTraceType.BUILD_CACHE);
-            } //End block
+            } 
             int width = mRight - mLeft;
             int height = mBottom - mTop;
             final AttachInfo attachInfo = mAttachInfo;
@@ -7740,19 +7850,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 width = (int) ((width * attachInfo.mApplicationScale) + 0.5f);
                 height = (int) ((height * attachInfo.mApplicationScale) + 0.5f);
-            } //End block
+            } 
             final int drawingCacheBackgroundColor = mDrawingCacheBackgroundColor;
             final boolean opaque = drawingCacheBackgroundColor != 0 || isOpaque();
             final boolean use32BitCache = attachInfo != null && attachInfo.mUse32BitDrawingCache;
             {
                 boolean var555C1BA5A9771D8E1776E57A9469E7A6_1684448360 = (width <= 0 || height <= 0 ||
                     (width * height * (opaque && !use32BitCache ? 2 : 4) >
-                            ViewConfiguration.get(mContext).getScaledMaximumDrawingCacheSize())); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                            ViewConfiguration.get(mContext).getScaledMaximumDrawingCacheSize())); 
                 {
                     destroyDrawingCache();
                     mCachingFailed = true;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             boolean clear = true;
             Bitmap bitmap;
             bitmap = mDrawingCache;
@@ -7762,22 +7872,22 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     Bitmap.Config quality;
                     {
-                        //Begin case DRAWING_CACHE_QUALITY_AUTO 
+                        
                         quality = Bitmap.Config.ARGB_8888;
-                        //End case DRAWING_CACHE_QUALITY_AUTO 
-                        //Begin case DRAWING_CACHE_QUALITY_LOW 
+                        
+                        
                         quality = Bitmap.Config.ARGB_8888;
-                        //End case DRAWING_CACHE_QUALITY_LOW 
-                        //Begin case DRAWING_CACHE_QUALITY_HIGH 
+                        
+                        
                         quality = Bitmap.Config.ARGB_8888;
-                        //End case DRAWING_CACHE_QUALITY_HIGH 
-                        //Begin case default 
+                        
+                        
                         quality = Bitmap.Config.ARGB_8888;
-                        //End case default 
-                    } //End block
+                        
+                    } 
                     {
                         quality = use32BitCache ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565;
-                    } //End block
+                    } 
                     bitmap.recycle();
                     try 
                     {
@@ -7785,76 +7895,76 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                         bitmap.setDensity(getResources().getDisplayMetrics().densityDpi);
                         {
                             mDrawingCache = bitmap;
-                        } //End block
+                        } 
                         {
                             mUnscaledDrawingCache = bitmap;
-                        } //End block
+                        } 
                         bitmap.setHasAlpha(false);
-                    } //End block
+                    } 
                     catch (OutOfMemoryError e)
                     {
                         {
                             mDrawingCache = null;
-                        } //End block
+                        } 
                         {
                             mUnscaledDrawingCache = null;
-                        } //End block
+                        } 
                         mCachingFailed = true;
-                    } //End block
+                    } 
                     clear = drawingCacheBackgroundColor != 0;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             Canvas canvas;
             {
                 canvas = attachInfo.mCanvas;
                 {
                     canvas = new Canvas();
-                } //End block
+                } 
                 canvas.setBitmap(bitmap);
                 attachInfo.mCanvas = null;
-            } //End block
+            } 
             {
                 canvas = new Canvas(bitmap);
-            } //End block
+            } 
             {
                 bitmap.eraseColor(drawingCacheBackgroundColor);
-            } //End block
+            } 
             computeScroll();
             final int restoreCount = canvas.save();
             {
                 final float scale = attachInfo.mApplicationScale;
                 canvas.scale(scale, scale);
-            } //End block
+            } 
             canvas.translate(-mScrollX, -mScrollY);
             mPrivateFlags |= DRAWN;
             {
                 mPrivateFlags |= DRAWING_CACHE_VALID;
-            } //End block
+            } 
             {
                 {
                     ViewDebug.trace(this, ViewDebug.HierarchyTraceType.DRAW);
-                } //End block
+                } 
                 mPrivateFlags &= ~DIRTY_MASK;
                 dispatchDraw(canvas);
-            } //End block
+            } 
             {
                 draw(canvas);
-            } //End block
+            } 
             canvas.restoreToCount(restoreCount);
             canvas.setBitmap(null);
             {
                 attachInfo.mCanvas = canvas;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(autoScale);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.823 -0400", hash_original_method = "9EC32975405209F06A6AEBC988E2ADFA", hash_generated_method = "E1E591E2A7DFC80579171E5D961E907B")
      Bitmap createSnapshot(Bitmap.Config quality, int backgroundColor, boolean skipChildren) {
-        Bitmap varB4EAC82CA7396A68D541C85D26508E83_2116503641 = null; //Variable for return #1
+        Bitmap varB4EAC82CA7396A68D541C85D26508E83_2116503641 = null; 
         int width = mRight - mLeft;
         int height = mBottom - mTop;
         final AttachInfo attachInfo = mAttachInfo;
@@ -7863,29 +7973,29 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         scale = 1.0f;
         width = (int) ((width * scale) + 0.5f);
         height = (int) ((height * scale) + 0.5f);
-        Bitmap bitmap = Bitmap.createBitmap(width > 0 ? width : 1, height > 0 ? height : 1, quality);//DSFIXME:  CODE0008: Nested ternary operator in expression
+        Bitmap bitmap = Bitmap.createBitmap(width > 0 ? width : 1, height > 0 ? height : 1, quality);
         {
             if (DroidSafeAndroidRuntime.control) throw new OutOfMemoryError();
-        } //End block
+        } 
         Resources resources = getResources();
         {
             bitmap.setDensity(resources.getDisplayMetrics().densityDpi);
-        } //End block
+        } 
         Canvas canvas;
         {
             canvas = attachInfo.mCanvas;
             {
                 canvas = new Canvas();
-            } //End block
+            } 
             canvas.setBitmap(bitmap);
             attachInfo.mCanvas = null;
-        } //End block
+        } 
         {
             canvas = new Canvas(bitmap);
-        } //End block
+        } 
         {
             bitmap.eraseColor(backgroundColor);
-        } //End block
+        } 
         computeScroll();
         final int restoreCount = canvas.save();
         canvas.scale(scale, scale);
@@ -7894,24 +8004,24 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         mPrivateFlags &= ~DIRTY_MASK;
         {
             dispatchDraw(canvas);
-        } //End block
+        } 
         {
             draw(canvas);
-        } //End block
+        } 
         mPrivateFlags = flags;
         canvas.restoreToCount(restoreCount);
         canvas.setBitmap(null);
         {
             attachInfo.mCanvas = canvas;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2116503641 = bitmap;
         addTaint(quality.getTaint());
         addTaint(backgroundColor);
         addTaint(skipChildren);
-        varB4EAC82CA7396A68D541C85D26508E83_2116503641.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2116503641.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2116503641;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -7919,8 +8029,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isInEditMode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_252315401 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_252315401;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -7928,8 +8038,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected boolean isPaddingOffsetRequired() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1275830000 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1275830000;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -7937,8 +8047,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected int getLeftPaddingOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1254104562 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1254104562;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -7946,8 +8056,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected int getRightPaddingOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1201468333 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1201468333;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -7955,8 +8065,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected int getTopPaddingOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1751816503 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1751816503;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -7964,8 +8074,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected int getBottomPaddingOffset() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_74824540 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_74824540;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -7976,10 +8086,10 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(offsetRequired);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1009257731 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1009257731;
-        // ---------- Original Method ----------
-        //int top = mPaddingTop;
-        //if (offsetRequired) top += getTopPaddingOffset();
-        //return top;
+        
+        
+        
+        
     }
 
     
@@ -7990,10 +8100,10 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(offsetRequired);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_525528142 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_525528142;
-        // ---------- Original Method ----------
-        //int padding = mPaddingTop;
-        //if (offsetRequired) padding += getTopPaddingOffset();
-        //return mBottom - mTop - mPaddingBottom - padding;
+        
+        
+        
+        
     }
 
     
@@ -8001,8 +8111,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isHardwareAccelerated() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_966341977 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_966341977;
-        // ---------- Original Method ----------
-        //return mAttachInfo != null && mAttachInfo.mHardwareAccelerated;
+        
+        
     }
 
     
@@ -8010,7 +8120,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void draw(Canvas canvas) {
         {
             ViewDebug.trace(this, ViewDebug.HierarchyTraceType.DRAW);
-        } //End block
+        } 
         final int privateFlags = mPrivateFlags;
         final boolean dirtyOpaque = (privateFlags & DIRTY_MASK) == DIRTY_OPAQUE &&
                 (mAttachInfo == null || !mAttachInfo.mIgnoreDirtyState);
@@ -8024,17 +8134,17 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     background.setBounds(0, 0,  mRight - mLeft, mBottom - mTop);
                     mBackgroundSizeChanged = false;
-                } //End block
+                } 
                 {
                     background.draw(canvas);
-                } //End block
+                } 
                 {
                     canvas.translate(scrollX, scrollY);
                     background.draw(canvas);
                     canvas.translate(-scrollX, -scrollY);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         final int viewFlags = mViewFlags;
         boolean horizontalEdges = (viewFlags & FADING_EDGE_HORIZONTAL) != 0;
         boolean verticalEdges = (viewFlags & FADING_EDGE_VERTICAL) != 0;
@@ -8042,7 +8152,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             onDraw(canvas);
             dispatchDraw(canvas);
             onDrawScrollBars(canvas);
-        } //End block
+        } 
         boolean drawTop = false;
         boolean drawBottom = false;
         boolean drawLeft = false;
@@ -8055,7 +8165,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         final boolean offsetRequired = isPaddingOffsetRequired();
         {
             paddingLeft += getLeftPaddingOffset();
-        } //End block
+        } 
         int left = mScrollX + paddingLeft;
         int right = left + mRight - mLeft - mPaddingRight - paddingLeft;
         int top = mScrollY + getFadeTop(offsetRequired);
@@ -8063,48 +8173,48 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             right += getRightPaddingOffset();
             bottom += getBottomPaddingOffset();
-        } //End block
+        } 
         final ScrollabilityCache scrollabilityCache = mScrollCache;
         final float fadeHeight = scrollabilityCache.fadingEdgeLength;
         int length = (int) fadeHeight;
         {
             length = (bottom - top) / 2;
-        } //End block
+        } 
         {
             length = (right - left) / 2;
-        } //End block
+        } 
         {
             topFadeStrength = Math.max(0.0f, Math.min(1.0f, getTopFadingEdgeStrength()));
             drawTop = topFadeStrength * fadeHeight > 1.0f;
             bottomFadeStrength = Math.max(0.0f, Math.min(1.0f, getBottomFadingEdgeStrength()));
             drawBottom = bottomFadeStrength * fadeHeight > 1.0f;
-        } //End block
+        } 
         {
             leftFadeStrength = Math.max(0.0f, Math.min(1.0f, getLeftFadingEdgeStrength()));
             drawLeft = leftFadeStrength * fadeHeight > 1.0f;
             rightFadeStrength = Math.max(0.0f, Math.min(1.0f, getRightFadingEdgeStrength()));
             drawRight = rightFadeStrength * fadeHeight > 1.0f;
-        } //End block
+        } 
         saveCount = canvas.getSaveCount();
         int solidColor = getSolidColor();
         {
             final int flags = Canvas.HAS_ALPHA_LAYER_SAVE_FLAG;
             {
                 canvas.saveLayer(left, top, right, top + length, null, flags);
-            } //End block
+            } 
             {
                 canvas.saveLayer(left, bottom - length, right, bottom, null, flags);
-            } //End block
+            } 
             {
                 canvas.saveLayer(left, top, left + length, bottom, null, flags);
-            } //End block
+            } 
             {
                 canvas.saveLayer(right - length, top, right, bottom, null, flags);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             scrollabilityCache.setFadeColor(solidColor);
-        } //End block
+        } 
         onDraw(canvas);
         dispatchDraw(canvas);
         final Paint p = scrollabilityCache.paint;
@@ -8115,33 +8225,33 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             matrix.postTranslate(left, top);
             fade.setLocalMatrix(matrix);
             canvas.drawRect(left, top, right, top + length, p);
-        } //End block
+        } 
         {
             matrix.setScale(1, fadeHeight * bottomFadeStrength);
             matrix.postRotate(180);
             matrix.postTranslate(left, bottom);
             fade.setLocalMatrix(matrix);
             canvas.drawRect(left, bottom - length, right, bottom, p);
-        } //End block
+        } 
         {
             matrix.setScale(1, fadeHeight * leftFadeStrength);
             matrix.postRotate(-90);
             matrix.postTranslate(left, top);
             fade.setLocalMatrix(matrix);
             canvas.drawRect(left, top, left + length, bottom, p);
-        } //End block
+        } 
         {
             matrix.setScale(1, fadeHeight * rightFadeStrength);
             matrix.postRotate(90);
             matrix.postTranslate(right, top);
             fade.setLocalMatrix(matrix);
             canvas.drawRect(right - length, top, right, bottom, p);
-        } //End block
+        } 
         canvas.restoreToCount(saveCount);
         onDrawScrollBars(canvas);
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -8150,8 +8260,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getSolidColor() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_211791898 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_211791898;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -8231,8 +8341,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isLayoutRequested() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_852410919 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_852410919;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags & FORCE_LAYOUT) == FORCE_LAYOUT;
+        
+        
     }
 
     
@@ -8247,7 +8357,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             {
                 ViewDebug.trace(this, ViewDebug.HierarchyTraceType.ON_LAYOUT);
-            } //End block
+            } 
             onLayout(changed, l, t, r, b);
             mPrivateFlags &= ~LAYOUT_REQUIRED;
             ListenerInfo li = mListenerInfo;
@@ -8258,29 +8368,29 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     int i = 0;
                     {
                         listenersCopy.get(i).onLayoutChange(this, l, t, r, b, oldL, oldT, oldR, oldB);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         mPrivateFlags &= ~FORCE_LAYOUT;
         addTaint(l);
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.834 -0400", hash_original_method = "E68A871B23A3BFC32DE9705D7524956B", hash_generated_method = "1B89AD1313654EB103FF1DC413353CED")
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(changed);
         addTaint(left);
         addTaint(top);
         addTaint(right);
         addTaint(bottom);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -8290,7 +8400,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             Log.d("View", this + " View.setFrame(" + left + "," + top + ","
                     + right + "," + bottom + ")");
-        } //End block
+        } 
         {
             changed = true;
             int drawn = mPrivateFlags & DRAWN;
@@ -8309,40 +8419,40 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     {
                         mTransformationInfo.mMatrixDirty = true;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 onSizeChanged(newWidth, newHeight, oldWidth, oldHeight);
-            } //End block
+            } 
             {
                 mPrivateFlags |= DRAWN;
                 invalidate(sizeChanged);
                 invalidateParentCaches();
-            } //End block
+            } 
             mPrivateFlags |= drawn;
             mBackgroundSizeChanged = true;
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_398132964 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_398132964;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.836 -0400", hash_original_method = "BECA18BF96D1F48EBBDC02908C938AE4", hash_generated_method = "A5AD1675E772B469DDBDD7D413837A2E")
     protected void onFinishInflate() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.837 -0400", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "8178C084D739EB426CCA47CBC9A703D8")
     public Resources getResources() {
-        Resources varB4EAC82CA7396A68D541C85D26508E83_531173259 = null; //Variable for return #1
+        Resources varB4EAC82CA7396A68D541C85D26508E83_531173259 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_531173259 = mResources;
-        varB4EAC82CA7396A68D541C85D26508E83_531173259.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_531173259.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_531173259;
-        // ---------- Original Method ----------
-        //return mResources;
+        
+        
     }
 
     
@@ -8356,17 +8466,17 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 final int scrollY = mScrollY;
                 invalidate(dirty.left + scrollX, dirty.top + scrollY,
                     dirty.right + scrollX, dirty.bottom + scrollY);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(drawable.getTaint());
-        // ---------- Original Method ----------
-        //if (verifyDrawable(drawable)) {
-            //final Rect dirty = drawable.getBounds();
-            //final int scrollX = mScrollX;
-            //final int scrollY = mScrollY;
-            //invalidate(dirty.left + scrollX, dirty.top + scrollY,
-                    //dirty.right + scrollX, dirty.bottom + scrollY);
-        //}
+        
+        
+            
+            
+            
+            
+                    
+        
     }
 
     
@@ -8377,23 +8487,23 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 {
                     mAttachInfo.mHandler.postAtTime(what, who, when);
-                } //End block
+                } 
                 {
                     ViewRootImpl.getRunQueue().postDelayed(what, when - SystemClock.uptimeMillis());
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(who.getTaint());
         addTaint(what.getTaint());
         addTaint(when);
-        // ---------- Original Method ----------
-        //if (verifyDrawable(who) && what != null) {
-            //if (mAttachInfo != null) {
-                //mAttachInfo.mHandler.postAtTime(what, who, when);
-            //} else {
-                //ViewRootImpl.getRunQueue().postDelayed(what, when - SystemClock.uptimeMillis());
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -8404,22 +8514,22 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             {
                 {
                     mAttachInfo.mHandler.removeCallbacks(what, who);
-                } //End block
+                } 
                 {
                     ViewRootImpl.getRunQueue().removeCallbacks(what);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(who.getTaint());
         addTaint(what.getTaint());
-        // ---------- Original Method ----------
-        //if (verifyDrawable(who) && what != null) {
-            //if (mAttachInfo != null) {
-                //mAttachInfo.mHandler.removeCallbacks(what, who);
-            //} else {
-                //ViewRootImpl.getRunQueue().removeCallbacks(what);
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -8427,12 +8537,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void unscheduleDrawable(Drawable who) {
         {
             mAttachInfo.mHandler.removeCallbacksAndMessages(who);
-        } //End block
+        } 
         addTaint(who.getTaint());
-        // ---------- Original Method ----------
-        //if (mAttachInfo != null) {
-            //mAttachInfo.mHandler.removeCallbacksAndMessages(who);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -8440,12 +8550,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getResolvedLayoutDirection(Drawable who) {
         {
             Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_1517219487 = (getResolvedLayoutDirection());
-        } //End flattened ternary
+        } 
         addTaint(who.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_195236482 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_195236482;
-        // ---------- Original Method ----------
-        //return (who == mBGDrawable) ? getResolvedLayoutDirection() : LAYOUT_DIRECTION_DEFAULT;
+        
+        
     }
 
     
@@ -8454,8 +8564,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(who.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1507613099 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1507613099;
-        // ---------- Original Method ----------
-        //return who == mBGDrawable;
+        
+        
     }
 
     
@@ -8466,13 +8576,13 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             boolean var9E4512E9555DA1255DDDA9AE20837176_813533960 = (d != null && d.isStateful());
             {
                 d.setState(getDrawableState());
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //Drawable d = mBGDrawable;
-        //if (d != null && d.isStateful()) {
-            //d.setState(getDrawableState());
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -8483,14 +8593,14 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         ViewParent parent = mParent;
         {
             parent.childDrawableStateChanged(this);
-        } //End block
-        // ---------- Original Method ----------
-        //mPrivateFlags |= DRAWABLE_STATE_DIRTY;
-        //drawableStateChanged();
-        //ViewParent parent = mParent;
-        //if (parent != null) {
-            //parent.childDrawableStateChanged(this);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -8499,26 +8609,26 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             mDrawableState = onCreateDrawableState(0);
             mPrivateFlags &= ~DRAWABLE_STATE_DIRTY;
-        } //End block
+        } 
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_460267859 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_460267859;
-        // ---------- Original Method ----------
-        //if ((mDrawableState != null) && ((mPrivateFlags & DRAWABLE_STATE_DIRTY) == 0)) {
-            //return mDrawableState;
-        //} else {
-            //mDrawableState = onCreateDrawableState(0);
-            //mPrivateFlags &= ~DRAWABLE_STATE_DIRTY;
-            //return mDrawableState;
-        //}
+        
+        
+            
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.845 -0400", hash_original_method = "65DFC58C78CED9A3B9AF9F7EEF9C3470", hash_generated_method = "B69AD84F7025ADDC7F6D2F3F8CC14FD2")
     protected int[] onCreateDrawableState(int extraSpace) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             int[] varCE673B688BFA7856C9D2543AAE971FB2_771221734 = (((View) mParent).onCreateDrawableState(extraSpace));
-        } //End block
+        } 
         int[] drawableState;
         int privateFlags = mPrivateFlags;
         int viewStateIndex = 0;
@@ -8527,20 +8637,20 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             boolean var1C23F183BE3EEE2A8667855A22865324_1956468681 = (isFocused());
             viewStateIndex |= VIEW_STATE_FOCUSED;
-        } //End collapsed parenthetic
+        } 
         viewStateIndex |= VIEW_STATE_SELECTED;
         {
             boolean var34B5A1F13735F7DF66C5DC4570B68E80_363491035 = (hasWindowFocus());
             viewStateIndex |= VIEW_STATE_WINDOW_FOCUSED;
-        } //End collapsed parenthetic
+        } 
         viewStateIndex |= VIEW_STATE_ACTIVATED;
         {
             boolean varFEAE3CEA2D5FFAE7121F7CB82052FEED_29624357 = (mAttachInfo != null && mAttachInfo.mHardwareAccelerationRequested &&
                 HardwareRenderer.isAvailable());
             {
                 viewStateIndex |= VIEW_STATE_ACCELERATED;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         viewStateIndex |= VIEW_STATE_HOVERED;
         final int privateFlags2 = mPrivateFlags2;
         viewStateIndex |= VIEW_STATE_DRAG_CAN_ACCEPT;
@@ -8550,15 +8660,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             fullState = new int[drawableState.length + extraSpace];
             System.arraycopy(drawableState, 0, fullState, 0, drawableState.length);
-        } //End block
+        } 
         {
             fullState = new int[extraSpace];
-        } //End block
+        } 
         addTaint(extraSpace);
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1224650616 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1224650616;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -8577,11 +8687,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void jumpDrawablesToCurrentState() {
         {
             mBGDrawable.jumpToCurrentState();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mBGDrawable != null) {
-            //mBGDrawable.jumpToCurrentState();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -8590,17 +8700,17 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void setBackgroundColor(int color) {
         {
             ((ColorDrawable) mBGDrawable).setColor(color);
-        } //End block
+        } 
         {
             setBackgroundDrawable(new ColorDrawable(color));
-        } //End block
+        } 
         addTaint(color);
-        // ---------- Original Method ----------
-        //if (mBGDrawable instanceof ColorDrawable) {
-            //((ColorDrawable) mBGDrawable).setColor(color);
-        //} else {
-            //setBackgroundDrawable(new ColorDrawable(color));
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -8610,19 +8720,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         Drawable d = null;
         {
             d = mResources.getDrawable(resid);
-        } //End block
+        } 
         setBackgroundDrawable(d);
         mBackgroundResource = resid;
-        // ---------- Original Method ----------
-        //if (resid != 0 && resid == mBackgroundResource) {
-            //return;
-        //}
-        //Drawable d= null;
-        //if (resid != 0) {
-            //d = mResources.getDrawable(resid);
-        //}
-        //setBackgroundDrawable(d);
-        //mBackgroundResource = resid;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -8633,76 +8743,76 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             mBGDrawable.setCallback(null);
             unscheduleDrawable(mBGDrawable);
-        } //End block
+        } 
         {
             Rect padding = sThreadLocal.get();
             {
                 padding = new Rect();
                 sThreadLocal.set(padding);
-            } //End block
+            } 
             {
                 boolean var77F8DEC95ED142E00E9340D4E6309A49_1790038541 = (d.getPadding(padding));
                 {
                     {
                         Object var539EB19FF2B3A749E138242972103033_453873665 = (d.getResolvedLayoutDirectionSelf());
-                        //Begin case LAYOUT_DIRECTION_RTL 
+                        
                         setPadding(padding.right, padding.top, padding.left, padding.bottom);
-                        //End case LAYOUT_DIRECTION_RTL 
-                        //Begin case LAYOUT_DIRECTION_LTR default 
+                        
+                        
                         setPadding(padding.left, padding.top, padding.right, padding.bottom);
-                        //End case LAYOUT_DIRECTION_LTR default 
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        
+                    } 
+                } 
+            } 
             {
                 boolean varD26CE81CD77ABD9AB1A61C65E203B0B1_1111316379 = (mBGDrawable == null || mBGDrawable.getMinimumHeight() != d.getMinimumHeight() ||
                     mBGDrawable.getMinimumWidth() != d.getMinimumWidth());
                 {
                     requestLayout = true;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             d.setCallback(this);
             {
                 boolean var732D4E5C808363BC9BF454DD27943961_777489130 = (d.isStateful());
                 {
                     d.setState(getDrawableState());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             d.setVisible(getVisibility() == VISIBLE, false);
             mBGDrawable = d;
             {
                 mPrivateFlags &= ~SKIP_DRAW;
                 mPrivateFlags |= ONLY_DRAWS_BACKGROUND;
                 requestLayout = true;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mBGDrawable = null;
             {
                 mPrivateFlags &= ~ONLY_DRAWS_BACKGROUND;
                 mPrivateFlags |= SKIP_DRAW;
-            } //End block
+            } 
             requestLayout = true;
-        } //End block
+        } 
         computeOpaqueFlags();
         {
             requestLayout();
-        } //End block
+        } 
         mBackgroundSizeChanged = true;
         invalidate(true);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.850 -0400", hash_original_method = "80971671F36DCDE8D8060A8575F1E0DF", hash_generated_method = "517330D680E77FA88B4EB5093FB1C0FE")
     public Drawable getBackground() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_2102243793 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_2102243793 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2102243793 = mBGDrawable;
-        varB4EAC82CA7396A68D541C85D26508E83_2102243793.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2102243793.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2102243793;
-        // ---------- Original Method ----------
-        //return mBGDrawable;
+        
+        
     }
 
     
@@ -8719,50 +8829,50 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 int offset;
                 offset = 0;
                 offset = getVerticalScrollbarWidth();
-                //Begin case SCROLLBAR_POSITION_DEFAULT 
+                
                 {
                     boolean varDD88345AFC6B206805F2994C7FB7F6F7_1583121693 = (getResolvedLayoutDirection() == LAYOUT_DIRECTION_RTL);
                     {
                         left += offset;
-                    } //End block
+                    } 
                     {
                         right += offset;
-                    } //End block
-                } //End collapsed parenthetic
-                //End case SCROLLBAR_POSITION_DEFAULT 
-                //Begin case SCROLLBAR_POSITION_RIGHT 
+                    } 
+                } 
+                
+                
                 right += offset;
-                //End case SCROLLBAR_POSITION_RIGHT 
-                //Begin case SCROLLBAR_POSITION_LEFT 
+                
+                
                 left += offset;
-                //End case SCROLLBAR_POSITION_LEFT 
-            } //End block
+                
+            } 
             {
                 bottom += (viewFlags & SCROLLBARS_INSET_MASK) == 0
                         ? 0 : getHorizontalScrollbarHeight();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             changed = true;
             mPaddingLeft = left;
-        } //End block
+        } 
         {
             changed = true;
             mPaddingTop = top;
-        } //End block
+        } 
         {
             changed = true;
             mPaddingRight = right;
-        } //End block
+        } 
         {
             changed = true;
             mPaddingBottom = bottom;
-        } //End block
+        } 
         {
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -8773,27 +8883,27 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         mUserPaddingEnd = end;
         {
             Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_251942311 = (getResolvedLayoutDirection());
-            //Begin case LAYOUT_DIRECTION_RTL 
+            
             setPadding(end, top, start, bottom);
-            //End case LAYOUT_DIRECTION_RTL 
-            //Begin case LAYOUT_DIRECTION_LTR default 
+            
+            
             setPadding(start, top, end, bottom);
-            //End case LAYOUT_DIRECTION_LTR default 
-        } //End collapsed parenthetic
+            
+        } 
         addTaint(top);
         addTaint(bottom);
-        // ---------- Original Method ----------
-        //mUserPaddingRelative = true;
-        //mUserPaddingStart = start;
-        //mUserPaddingEnd = end;
-        //switch(getResolvedLayoutDirection()) {
-            //case LAYOUT_DIRECTION_RTL:
-                //setPadding(end, top, start, bottom);
-                //break;
-            //case LAYOUT_DIRECTION_LTR:
-            //default:
-                //setPadding(start, top, end, bottom);
-        //}
+        
+        
+        
+        
+        
+            
+                
+                
+            
+            
+                
+        
     }
 
     
@@ -8801,8 +8911,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getPaddingTop() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1753010528 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1753010528;
-        // ---------- Original Method ----------
-        //return mPaddingTop;
+        
+        
     }
 
     
@@ -8810,8 +8920,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getPaddingBottom() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_927102612 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_927102612;
-        // ---------- Original Method ----------
-        //return mPaddingBottom;
+        
+        
     }
 
     
@@ -8819,8 +8929,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getPaddingLeft() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_804400739 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_804400739;
-        // ---------- Original Method ----------
-        //return mPaddingLeft;
+        
+        
     }
 
     
@@ -8828,12 +8938,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getPaddingStart() {
         {
             boolean varCF77AC373D50E68CC74CEB17E0D05088_2082840703 = ((getResolvedLayoutDirection() == LAYOUT_DIRECTION_RTL));
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_949677510 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_949677510;
-        // ---------- Original Method ----------
-        //return (getResolvedLayoutDirection() == LAYOUT_DIRECTION_RTL) ?
-                //mPaddingRight : mPaddingLeft;
+        
+        
+                
     }
 
     
@@ -8841,8 +8951,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getPaddingRight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1334823439 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1334823439;
-        // ---------- Original Method ----------
-        //return mPaddingRight;
+        
+        
     }
 
     
@@ -8850,12 +8960,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getPaddingEnd() {
         {
             boolean varCF77AC373D50E68CC74CEB17E0D05088_1899071671 = ((getResolvedLayoutDirection() == LAYOUT_DIRECTION_RTL));
-        } //End flattened ternary
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372960946 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372960946;
-        // ---------- Original Method ----------
-        //return (getResolvedLayoutDirection() == LAYOUT_DIRECTION_RTL) ?
-                //mPaddingLeft : mPaddingRight;
+        
+        
+                
     }
 
     
@@ -8863,8 +8973,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isPaddingRelative() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1757746063 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1757746063;
-        // ---------- Original Method ----------
-        //return mUserPaddingRelative;
+        
+        
     }
 
     
@@ -8876,22 +8986,22 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             invalidate(true);
             refreshDrawableState();
             dispatchSetSelected(selected);
-        } //End block
-        // ---------- Original Method ----------
-        //if (((mPrivateFlags & SELECTED) != 0) != selected) {
-            //mPrivateFlags = (mPrivateFlags & ~SELECTED) | (selected ? SELECTED : 0);
-            //if (!selected) resetPressedState();
-            //invalidate(true);
-            //refreshDrawableState();
-            //dispatchSetSelected(selected);
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.858 -0400", hash_original_method = "64CD219059FB9E526665FE8867E1D4B8", hash_generated_method = "D0F40E63E0975CE8FE5A4FA8E00A2A22")
     protected void dispatchSetSelected(boolean selected) {
         addTaint(selected);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -8900,8 +9010,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isSelected() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_42195063 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_42195063;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags & SELECTED) != 0;
+        
+        
     }
 
     
@@ -8912,21 +9022,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             invalidate(true);
             refreshDrawableState();
             dispatchSetActivated(activated);
-        } //End block
-        // ---------- Original Method ----------
-        //if (((mPrivateFlags & ACTIVATED) != 0) != activated) {
-            //mPrivateFlags = (mPrivateFlags & ~ACTIVATED) | (activated ? ACTIVATED : 0);
-            //invalidate(true);
-            //refreshDrawableState();
-            //dispatchSetActivated(activated);
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.860 -0400", hash_original_method = "857B49EDB2F7375261DD6F1ED2F34094", hash_generated_method = "51446F3DB68DBD70CEFE789714FC4FCB")
     protected void dispatchSetActivated(boolean activated) {
         addTaint(activated);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -8935,82 +9045,82 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isActivated() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1147404158 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1147404158;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags & ACTIVATED) != 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.862 -0400", hash_original_method = "99F6A92222C13DFFEF0BA3B363A5F1C1", hash_generated_method = "4974B6608AC46EE376CA6A456B8147C6")
     public ViewTreeObserver getViewTreeObserver() {
-        ViewTreeObserver varB4EAC82CA7396A68D541C85D26508E83_854379759 = null; //Variable for return #1
-        ViewTreeObserver varB4EAC82CA7396A68D541C85D26508E83_770668762 = null; //Variable for return #2
+        ViewTreeObserver varB4EAC82CA7396A68D541C85D26508E83_854379759 = null; 
+        ViewTreeObserver varB4EAC82CA7396A68D541C85D26508E83_770668762 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_854379759 = mAttachInfo.mTreeObserver;
-        } //End block
+        } 
         {
             mFloatingTreeObserver = new ViewTreeObserver();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_770668762 = mFloatingTreeObserver;
-        ViewTreeObserver varA7E53CE21691AB073D9660D615818899_1680518798; //Final return value
+        ViewTreeObserver varA7E53CE21691AB073D9660D615818899_1680518798; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1680518798 = varB4EAC82CA7396A68D541C85D26508E83_854379759;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1680518798 = varB4EAC82CA7396A68D541C85D26508E83_770668762;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1680518798.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1680518798.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1680518798;
-        // ---------- Original Method ----------
-        //if (mAttachInfo != null) {
-            //return mAttachInfo.mTreeObserver;
-        //}
-        //if (mFloatingTreeObserver == null) {
-            //mFloatingTreeObserver = new ViewTreeObserver();
-        //}
-        //return mFloatingTreeObserver;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.863 -0400", hash_original_method = "399BB6B1CB98987E45F7FD1BEC4104A8", hash_generated_method = "D172175AC50F7B839974707AAF7C7E5B")
     public View getRootView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_2065506533 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1434133190 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_2065506533 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1434133190 = null; 
         {
             final View v = mAttachInfo.mRootView;
             {
                 varB4EAC82CA7396A68D541C85D26508E83_2065506533 = v;
-            } //End block
-        } //End block
+            } 
+        } 
         View parent = this;
         {
             parent = (View) parent.mParent;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1434133190 = parent;
-        View varA7E53CE21691AB073D9660D615818899_43270328; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_43270328; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_43270328 = varB4EAC82CA7396A68D541C85D26508E83_2065506533;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_43270328 = varB4EAC82CA7396A68D541C85D26508E83_1434133190;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_43270328.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_43270328.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_43270328;
-        // ---------- Original Method ----------
-        //if (mAttachInfo != null) {
-            //final View v = mAttachInfo.mRootView;
-            //if (v != null) {
-                //return v;
-            //}
-        //}
-        //View parent = this;
-        //while (parent.mParent != null && parent.mParent instanceof View) {
-            //parent = (View) parent.mParent;
-        //}
-        //return parent;
+        
+        
+            
+            
+                
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -9021,15 +9131,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             location[0] += info.mWindowLeft;
             location[1] += info.mWindowTop;
-        } //End block
+        } 
         addTaint(location[0]);
-        // ---------- Original Method ----------
-        //getLocationInWindow(location);
-        //final AttachInfo info = mAttachInfo;
-        //if (info != null) {
-            //location[0] += info.mWindowLeft;
-            //location[1] += info.mWindowTop;
-        //}
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -9037,15 +9147,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void getLocationInWindow(int[] location) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("location must be an array of two integers");
-        } //End block
+        } 
         float[] position = mAttachInfo.mTmpTransformLocation;
         position[0] = position[1] = 0.0f;
         {
             boolean var72C5EB038B47497B7FA123412E9ED288_1079546529 = (!hasIdentityMatrix());
             {
                 getMatrix().mapPoints(position);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         position[0] += mLeft;
         position[1] += mTop;
         ViewParent viewParent = mParent;
@@ -9057,246 +9167,246 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 boolean varA98FC0C227FABB5530C6DB9897E9E044_938408472 = (!view.hasIdentityMatrix());
                 {
                     view.getMatrix().mapPoints(position);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             position[0] += view.mLeft;
             position[1] += view.mTop;
             viewParent = view.mParent;
-        } //End block
+        } 
         {
             final ViewRootImpl vr = (ViewRootImpl) viewParent;
             position[1] -= vr.mCurScrollY;
-        } //End block
+        } 
         location[0] = (int) (position[0] + 0.5f);
         location[1] = (int) (position[1] + 0.5f);
         addTaint(location[0]);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.865 -0400", hash_original_method = "0641E50E124E0C6CE4C02F73E2175BDE", hash_generated_method = "7C3EF89CCBBF0D20FD47F250427EEA29")
     protected View findViewTraversal(int id) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1129728202 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1084346005 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_1129728202 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1084346005 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1129728202 = this;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1084346005 = null;
         addTaint(id);
-        View varA7E53CE21691AB073D9660D615818899_1724943230; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1724943230; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1724943230 = varB4EAC82CA7396A68D541C85D26508E83_1129728202;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1724943230 = varB4EAC82CA7396A68D541C85D26508E83_1084346005;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1724943230.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1724943230.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1724943230;
-        // ---------- Original Method ----------
-        //if (id == mID) {
-            //return this;
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.866 -0400", hash_original_method = "B50CD4B4D228C210BD89E9DF598807C7", hash_generated_method = "2E5D9274D0F06BDEF6C53AC92F2D1185")
     protected View findViewWithTagTraversal(Object tag) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1180461312 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_57144054 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_1180461312 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_57144054 = null; 
         {
             boolean var400CEDD09F5544D49C9E372D9C42B91E_1826745069 = (tag != null && tag.equals(mTag));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1180461312 = this;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_57144054 = null;
         addTaint(tag.getTaint());
-        View varA7E53CE21691AB073D9660D615818899_706602336; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_706602336; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_706602336 = varB4EAC82CA7396A68D541C85D26508E83_1180461312;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_706602336 = varB4EAC82CA7396A68D541C85D26508E83_57144054;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_706602336.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_706602336.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_706602336;
-        // ---------- Original Method ----------
-        //if (tag != null && tag.equals(mTag)) {
-            //return this;
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.867 -0400", hash_original_method = "65DA32C16954A521B825F7D31B571CEF", hash_generated_method = "D5A94C95C39778772197D6BF25FD006C")
     protected View findViewByPredicateTraversal(Predicate<View> predicate, View childToSkip) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1817367320 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1966376455 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_1817367320 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1966376455 = null; 
         {
             boolean var9DB3C1E357F4608DF2A7064AE311774F_1458034560 = (predicate.apply(this));
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1817367320 = this;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1966376455 = null;
         addTaint(predicate.getTaint());
         addTaint(childToSkip.getTaint());
-        View varA7E53CE21691AB073D9660D615818899_1955167037; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1955167037; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1955167037 = varB4EAC82CA7396A68D541C85D26508E83_1817367320;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1955167037 = varB4EAC82CA7396A68D541C85D26508E83_1966376455;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1955167037.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1955167037.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1955167037;
-        // ---------- Original Method ----------
-        //if (predicate.apply(this)) {
-            //return this;
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.867 -0400", hash_original_method = "C8E06C0ED5E3D035BF7CE8B77FB6FB02", hash_generated_method = "05A5FCBCFB9FFEF3784A50AEA0180868")
     public final View findViewById(int id) {
-        View varB4EAC82CA7396A68D541C85D26508E83_761109661 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_969010305 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_761109661 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_969010305 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_761109661 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_969010305 = findViewTraversal(id);
         addTaint(id);
-        View varA7E53CE21691AB073D9660D615818899_539964553; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_539964553; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_539964553 = varB4EAC82CA7396A68D541C85D26508E83_761109661;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_539964553 = varB4EAC82CA7396A68D541C85D26508E83_969010305;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_539964553.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_539964553.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_539964553;
-        // ---------- Original Method ----------
-        //if (id < 0) {
-            //return null;
-        //}
-        //return findViewTraversal(id);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.868 -0400", hash_original_method = "DAB2723BE4C5F25FDBDAA56D4A941A95", hash_generated_method = "3356551D28225C730FC92B0FB06DBC62")
     final View findViewByAccessibilityId(int accessibilityId) {
-        View varB4EAC82CA7396A68D541C85D26508E83_465926415 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_13743844 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_465926415 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_13743844 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_465926415 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_13743844 = findViewByAccessibilityIdTraversal(accessibilityId);
         addTaint(accessibilityId);
-        View varA7E53CE21691AB073D9660D615818899_68291961; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_68291961; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_68291961 = varB4EAC82CA7396A68D541C85D26508E83_465926415;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_68291961 = varB4EAC82CA7396A68D541C85D26508E83_13743844;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_68291961.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_68291961.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_68291961;
-        // ---------- Original Method ----------
-        //if (accessibilityId < 0) {
-            //return null;
-        //}
-        //return findViewByAccessibilityIdTraversal(accessibilityId);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.869 -0400", hash_original_method = "0033D4DC027C6D84BC9CA79DB06FA7C7", hash_generated_method = "C06F0A34FD94AF934D81CADB548E9383")
      View findViewByAccessibilityIdTraversal(int accessibilityId) {
-        View varB4EAC82CA7396A68D541C85D26508E83_864747125 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_521981885 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_864747125 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_521981885 = null; 
         {
             boolean varA0F894C9F7ECB9E8C9290E6F95BA5394_1701233478 = (getAccessibilityViewId() == accessibilityId);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_864747125 = this;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_521981885 = null;
         addTaint(accessibilityId);
-        View varA7E53CE21691AB073D9660D615818899_1100552573; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1100552573; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1100552573 = varB4EAC82CA7396A68D541C85D26508E83_864747125;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1100552573 = varB4EAC82CA7396A68D541C85D26508E83_521981885;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1100552573.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1100552573.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1100552573;
-        // ---------- Original Method ----------
-        //if (getAccessibilityViewId() == accessibilityId) {
-            //return this;
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.870 -0400", hash_original_method = "DB0D3478EC5FC406F90807706EB086DC", hash_generated_method = "C46E7A06C92A6651C6598C098B81DDAD")
     public final View findViewWithTag(Object tag) {
-        View varB4EAC82CA7396A68D541C85D26508E83_471692459 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1671375279 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_471692459 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1671375279 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_471692459 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1671375279 = findViewWithTagTraversal(tag);
         addTaint(tag.getTaint());
-        View varA7E53CE21691AB073D9660D615818899_1512702764; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1512702764; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1512702764 = varB4EAC82CA7396A68D541C85D26508E83_471692459;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1512702764 = varB4EAC82CA7396A68D541C85D26508E83_1671375279;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1512702764.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1512702764.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1512702764;
-        // ---------- Original Method ----------
-        //if (tag == null) {
-            //return null;
-        //}
-        //return findViewWithTagTraversal(tag);
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.871 -0400", hash_original_method = "1599799F36C9F7803A0B97DCCA829DED", hash_generated_method = "DF83B1DEE2E9746CD50BC215A4B302E6")
     public final View findViewByPredicate(Predicate<View> predicate) {
-        View varB4EAC82CA7396A68D541C85D26508E83_801603089 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_801603089 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_801603089 = findViewByPredicateTraversal(predicate, null);
         addTaint(predicate.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_801603089.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_801603089.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_801603089;
-        // ---------- Original Method ----------
-        //return findViewByPredicateTraversal(predicate, null);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.873 -0400", hash_original_method = "485BA369E24687F2D5FF0693ABF816B2", hash_generated_method = "7062F5937A86478BF3FD36B75AB10B35")
     public final View findViewByPredicateInsideOut(View start, Predicate<View> predicate) {
-        View varB4EAC82CA7396A68D541C85D26508E83_848952811 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1220272269 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_848952811 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1220272269 = null; 
         View childToSkip = null;
         {
             View view = start.findViewByPredicateTraversal(predicate, childToSkip);
@@ -9304,50 +9414,50 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 boolean var7558536A6954E6545716F82725118232_955725448 = (view != null || start == this);
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_848952811 = view;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             ViewParent parent = start.getParent();
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1220272269 = null;
-            } //End block
+            } 
             childToSkip = start;
             start = (View) parent;
-        } //End block
+        } 
         addTaint(start.getTaint());
         addTaint(predicate.getTaint());
-        View varA7E53CE21691AB073D9660D615818899_1350430800; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1350430800; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1350430800 = varB4EAC82CA7396A68D541C85D26508E83_848952811;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1350430800 = varB4EAC82CA7396A68D541C85D26508E83_1220272269;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1350430800.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1350430800.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1350430800;
-        // ---------- Original Method ----------
-        //View childToSkip = null;
-        //for (;;) {
-            //View view = start.findViewByPredicateTraversal(predicate, childToSkip);
-            //if (view != null || start == this) {
-                //return view;
-            //}
-            //ViewParent parent = start.getParent();
-            //if (parent == null || !(parent instanceof View)) {
-                //return null;
-            //}
-            //childToSkip = start;
-            //start = (View) parent;
-        //}
+        
+        
+        
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.874 -0400", hash_original_method = "125195EB8F3EB02BBD72A4003F2E03BD", hash_generated_method = "491B6D8B484C16297DCBDA4E3A5ECCE1")
     public void setId(int id) {
         mID = id;
-        // ---------- Original Method ----------
-        //mID = id;
+        
+        
     }
 
     
@@ -9355,17 +9465,17 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void setIsRootNamespace(boolean isRoot) {
         {
             mPrivateFlags |= IS_ROOT_NAMESPACE;
-        } //End block
+        } 
         {
             mPrivateFlags &= ~IS_ROOT_NAMESPACE;
-        } //End block
+        } 
         addTaint(isRoot);
-        // ---------- Original Method ----------
-        //if (isRoot) {
-            //mPrivateFlags |= IS_ROOT_NAMESPACE;
-        //} else {
-            //mPrivateFlags &= ~IS_ROOT_NAMESPACE;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -9373,8 +9483,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public boolean isRootNamespace() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1942137142 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1942137142;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags&IS_ROOT_NAMESPACE) != 0;
+        
+        
     }
 
     
@@ -9383,52 +9493,52 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_904672325 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_904672325;
-        // ---------- Original Method ----------
-        //return mID;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.876 -0400", hash_original_method = "15C9157ADF1B79E512CAFF71050D7BD7", hash_generated_method = "92130E4877EAB42F402E7595D9E5B46E")
     @ViewDebug.ExportedProperty
     public Object getTag() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1991974308 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1991974308 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1991974308 = mTag;
-        varB4EAC82CA7396A68D541C85D26508E83_1991974308.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1991974308.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1991974308;
-        // ---------- Original Method ----------
-        //return mTag;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.877 -0400", hash_original_method = "8D2B18A079B1EE90519A06D435C647B9", hash_generated_method = "A88DBE9CF3CA0D1CB8F5AC3014136EA5")
     public void setTag(final Object tag) {
         mTag = tag;
-        // ---------- Original Method ----------
-        //mTag = tag;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.878 -0400", hash_original_method = "8295DF3154C0458AF2AF3A51D79A598B", hash_generated_method = "2B03259EB59BC72A2EE48EB61D04F60D")
     public Object getTag(int key) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_712256582 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_60464022 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_712256582 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_60464022 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_712256582 = mKeyedTags.get(key);
         varB4EAC82CA7396A68D541C85D26508E83_60464022 = null;
         addTaint(key);
-        Object varA7E53CE21691AB073D9660D615818899_1979729340; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_1979729340; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1979729340 = varB4EAC82CA7396A68D541C85D26508E83_712256582;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1979729340 = varB4EAC82CA7396A68D541C85D26508E83_60464022;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1979729340.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1979729340.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1979729340;
-        // ---------- Original Method ----------
-        //if (mKeyedTags != null) return mKeyedTags.get(key);
-        //return null;
+        
+        
+        
     }
 
     
@@ -9437,16 +9547,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The key must be an application-specific "
                     + "resource id.");
-        } //End block
+        } 
         setKeyedTag(key, tag);
         addTaint(key);
         addTaint(tag.getTaint());
-        // ---------- Original Method ----------
-        //if ((key >>> 24) < 2) {
-            //throw new IllegalArgumentException("The key must be an application-specific "
-                    //+ "resource id.");
-        //}
-        //setKeyedTag(key, tag);
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -9455,16 +9565,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The key must be a framework-specific "
                     + "resource id.");
-        } //End block
+        } 
         setKeyedTag(key, tag);
         addTaint(key);
         addTaint(tag.getTaint());
-        // ---------- Original Method ----------
-        //if ((key >>> 24) != 0x1) {
-            //throw new IllegalArgumentException("The key must be a framework-specific "
-                    //+ "resource id.");
-        //}
-        //setKeyedTag(key, tag);
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -9472,15 +9582,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     private void setKeyedTag(int key, Object tag) {
         {
             mKeyedTags = new SparseArray<Object>();
-        } //End block
+        } 
         mKeyedTags.put(key, tag);
         addTaint(key);
         addTaint(tag.getTaint());
-        // ---------- Original Method ----------
-        //if (mKeyedTags == null) {
-            //mKeyedTags = new SparseArray<Object>();
-        //}
-        //mKeyedTags.put(key, tag);
+        
+        
+            
+        
+        
     }
 
     
@@ -9490,14 +9600,14 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(consistency);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1490236539 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1490236539;
-        // ---------- Original Method ----------
-        //return onConsistencyCheck(consistency);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.882 -0400", hash_original_method = "2064C42F46AA0108673BA11B037AF3A0", hash_generated_method = "DB76E7DA190CFEAA089D1DFEDAE7475C")
     protected boolean onConsistencyCheck(int consistency) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         boolean result = true;
         final boolean checkLayout = (consistency & ViewDebug.CONSISTENCY_LAYOUT) != 0;
         final boolean checkDrawing = (consistency & ViewDebug.CONSISTENCY_DRAWING) != 0;
@@ -9508,34 +9618,34 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                     result = false;
                     android.util.Log.d(ViewDebug.CONSISTENCY_LOG_TAG,
                         "View " + this + " does not have a parent.");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 result = false;
                 android.util.Log.d(ViewDebug.CONSISTENCY_LOG_TAG,
                         "View " + this + " is not attached to a window.");
-            } //End block
-        } //End block
+            } 
+        } 
         {
             {
                 result = false;
                 android.util.Log.d(ViewDebug.CONSISTENCY_LOG_TAG,
                         "View " + this + " was invalidated but its drawing cache is valid.");
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(consistency);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2050182547 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2050182547;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.882 -0400", hash_original_method = "6F90E3DC82B178E80E1C9DDC98738197", hash_generated_method = "D147ED463C0B27338F948465FB673FC2")
     public void debug() {
         debug(0);
-        // ---------- Original Method ----------
-        //debug(0);
+        
+        
     }
 
     
@@ -9546,16 +9656,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         int id = getId();
         {
             output += " (id=" + id + ")";
-        } //End block
+        } 
         Object tag = getTag();
         {
             output += " (tag=" + tag + ")";
-        } //End block
+        } 
         Log.d(VIEW_LOG_TAG, output);
         {
             output = debugIndent(depth) + " FOCUSED";
             Log.d(VIEW_LOG_TAG, output);
-        } //End block
+        } 
         output = debugIndent(depth);
         output += "frame={" + mLeft + ", " + mTop + ", " + mRight
                 + ", " + mBottom + "} scroll={" + mScrollX + ", " + mScrollY
@@ -9566,7 +9676,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             output += "padding={" + mPaddingLeft + ", " + mPaddingTop
                     + ", " + mPaddingRight + ", " + mPaddingBottom + "}";
             Log.d(VIEW_LOG_TAG, output);
-        } //End block
+        } 
         output = debugIndent(depth);
         output += "mMeasureWidth=" + mMeasuredWidth +
                 " mMeasureHeight=" + mMeasuredHeight;
@@ -9574,10 +9684,10 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         output = debugIndent(depth);
         {
             output += "BAD! no layout params";
-        } //End block
+        } 
         {
             output = mLayoutParams.debug(output);
-        } //End block
+        } 
         Log.d(VIEW_LOG_TAG, output);
         output = debugIndent(depth);
         output += "flags={";
@@ -9590,8 +9700,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         output += "}";
         Log.d(VIEW_LOG_TAG, output);
         addTaint(depth);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -9609,8 +9719,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getBaseline() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1605262570 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1605262570;
-        // ---------- Original Method ----------
-        //return -1;
+        
+        
     }
 
     
@@ -9618,34 +9728,34 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void requestLayout() {
         {
             ViewDebug.trace(this, ViewDebug.HierarchyTraceType.REQUEST_LAYOUT);
-        } //End block
+        } 
         mPrivateFlags |= FORCE_LAYOUT;
         mPrivateFlags |= INVALIDATED;
         {
             {
                 mLayoutParams.resolveWithDirection(getResolvedLayoutDirection());
-            } //End block
+            } 
             {
                 boolean var3A2DB0BB7B6E5FB8768388F8E364ED16_820406663 = (!mParent.isLayoutRequested());
                 {
                     mParent.requestLayout();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //if (ViewDebug.TRACE_HIERARCHY) {
-            //ViewDebug.trace(this, ViewDebug.HierarchyTraceType.REQUEST_LAYOUT);
-        //}
-        //mPrivateFlags |= FORCE_LAYOUT;
-        //mPrivateFlags |= INVALIDATED;
-        //if (mParent != null) {
-            //if (mLayoutParams != null) {
-                //mLayoutParams.resolveWithDirection(getResolvedLayoutDirection());
-            //}
-            //if (!mParent.isLayoutRequested()) {
-                //mParent.requestLayout();
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+        
+            
+                
+            
+            
+                
+            
+        
     }
 
     
@@ -9653,9 +9763,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void forceLayout() {
         mPrivateFlags |= FORCE_LAYOUT;
         mPrivateFlags |= INVALIDATED;
-        // ---------- Original Method ----------
-        //mPrivateFlags |= FORCE_LAYOUT;
-        //mPrivateFlags |= INVALIDATED;
+        
+        
+        
     }
 
     
@@ -9665,32 +9775,32 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             mPrivateFlags &= ~MEASURED_DIMENSION_SET;
             {
                 ViewDebug.trace(this, ViewDebug.HierarchyTraceType.ON_MEASURE);
-            } //End block
+            } 
             onMeasure(widthMeasureSpec, heightMeasureSpec);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("onMeasure() did not set the"
                         + " measured dimension by calling"
                         + " setMeasuredDimension()");
-            } //End block
+            } 
             mPrivateFlags |= LAYOUT_REQUIRED;
-        } //End block
+        } 
         mOldWidthMeasureSpec = widthMeasureSpec;
         mOldHeightMeasureSpec = heightMeasureSpec;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.886 -0400", hash_original_method = "2024EA7D99B2D61F149E7A5A9BB7EB8E", hash_generated_method = "A1685498757267B70C369301E6769581")
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec),
                 getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        //setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec),
-                //getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));
+        
+        
+                
     }
 
     
@@ -9699,10 +9809,10 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         mMeasuredWidth = measuredWidth;
         mMeasuredHeight = measuredHeight;
         mPrivateFlags |= MEASURED_DIMENSION_SET;
-        // ---------- Original Method ----------
-        //mMeasuredWidth = measuredWidth;
-        //mMeasuredHeight = measuredHeight;
-        //mPrivateFlags |= MEASURED_DIMENSION_SET;
+        
+        
+        
+        
     }
 
     
@@ -9763,19 +9873,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             final int bgMinHeight = mBGDrawable.getMinimumHeight();
             {
                 suggestedMinHeight = bgMinHeight;
-            } //End block
-        } //End block
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1327540289 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1327540289;
-        // ---------- Original Method ----------
-        //int suggestedMinHeight = mMinHeight;
-        //if (mBGDrawable != null) {
-            //final int bgMinHeight = mBGDrawable.getMinimumHeight();
-            //if (suggestedMinHeight < bgMinHeight) {
-                //suggestedMinHeight = bgMinHeight;
-            //}
-        //}
-        //return suggestedMinHeight;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -9786,46 +9896,46 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             final int bgMinWidth = mBGDrawable.getMinimumWidth();
             {
                 suggestedMinWidth = bgMinWidth;
-            } //End block
-        } //End block
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_232864507 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_232864507;
-        // ---------- Original Method ----------
-        //int suggestedMinWidth = mMinWidth;
-        //if (mBGDrawable != null) {
-            //final int bgMinWidth = mBGDrawable.getMinimumWidth();
-            //if (suggestedMinWidth < bgMinWidth) {
-                //suggestedMinWidth = bgMinWidth;
-            //}
-        //}
-        //return suggestedMinWidth;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.889 -0400", hash_original_method = "879BFA5FA0241047CB6974ED67682297", hash_generated_method = "A39DF7CE68D27AD1F832F37EFF38AC83")
     public void setMinimumHeight(int minHeight) {
         mMinHeight = minHeight;
-        // ---------- Original Method ----------
-        //mMinHeight = minHeight;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.889 -0400", hash_original_method = "CE129FBEAB6CCA0889899FF1E8E78A67", hash_generated_method = "94906ED9E91744BCBB1BA063108152BC")
     public void setMinimumWidth(int minWidth) {
         mMinWidth = minWidth;
-        // ---------- Original Method ----------
-        //mMinWidth = minWidth;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.889 -0400", hash_original_method = "CDBB00D26F9C60D5F3E6B97847853936", hash_generated_method = "F39FB7F9AAB9CBB8C30FA485CA17213D")
     public Animation getAnimation() {
-        Animation varB4EAC82CA7396A68D541C85D26508E83_802281216 = null; //Variable for return #1
+        Animation varB4EAC82CA7396A68D541C85D26508E83_802281216 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_802281216 = mCurrentAnimation;
-        varB4EAC82CA7396A68D541C85D26508E83_802281216.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_802281216.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_802281216;
-        // ---------- Original Method ----------
-        //return mCurrentAnimation;
+        
+        
     }
 
     
@@ -9836,11 +9946,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         invalidateParentCaches();
         invalidate(true);
         addTaint(animation.getTaint());
-        // ---------- Original Method ----------
-        //animation.setStartTime(Animation.START_ON_FIRST_FRAME);
-        //setAnimation(animation);
-        //invalidateParentCaches();
-        //invalidate(true);
+        
+        
+        
+        
+        
     }
 
     
@@ -9848,15 +9958,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void clearAnimation() {
         {
             mCurrentAnimation.detach();
-        } //End block
+        } 
         mCurrentAnimation = null;
         invalidateParentIfNeeded();
-        // ---------- Original Method ----------
-        //if (mCurrentAnimation != null) {
-            //mCurrentAnimation.detach();
-        //}
-        //mCurrentAnimation = null;
-        //invalidateParentIfNeeded();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -9865,41 +9975,41 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         mCurrentAnimation = animation;
         {
             animation.reset();
-        } //End block
-        // ---------- Original Method ----------
-        //mCurrentAnimation = animation;
-        //if (animation != null) {
-            //animation.reset();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.891 -0400", hash_original_method = "AAD5AA561778224F71E3AF6921CD4105", hash_generated_method = "06D6C8F61FFE52559A40E6B98F790853")
     protected void onAnimationStart() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mPrivateFlags |= ANIMATION_STARTED;
-        // ---------- Original Method ----------
-        //mPrivateFlags |= ANIMATION_STARTED;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.891 -0400", hash_original_method = "F4AD81FC3499666E7AC93E3735AFEF8E", hash_generated_method = "05026BAADDDB17252B779F88E55782F5")
     protected void onAnimationEnd() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mPrivateFlags &= ~ANIMATION_STARTED;
-        // ---------- Original Method ----------
-        //mPrivateFlags &= ~ANIMATION_STARTED;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.891 -0400", hash_original_method = "DC47911C20E58BC47F643D76AAAF3E73", hash_generated_method = "320936FCA55A9C1B35727028D248FE8A")
     protected boolean onSetAlpha(int alpha) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(alpha);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1967480969 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1967480969;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -9913,28 +10023,28 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 getLocationInWindow(location);
                 region.op(location[0], location[1], location[0] + mRight - mLeft,
                         location[1] + mBottom - mTop, Region.Op.DIFFERENCE);
-            } //End block
+            } 
             {
                 applyDrawableToTransparentRegion(mBGDrawable, region);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(region.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_645152735 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_645152735;
-        // ---------- Original Method ----------
-        //final AttachInfo attachInfo = mAttachInfo;
-        //if (region != null && attachInfo != null) {
-            //final int pflags = mPrivateFlags;
-            //if ((pflags & SKIP_DRAW) == 0) {
-                //final int[] location = attachInfo.mTransparentLocation;
-                //getLocationInWindow(location);
-                //region.op(location[0], location[1], location[0] + mRight - mLeft,
-                        //location[1] + mBottom - mTop, Region.Op.DIFFERENCE);
-            //} else if ((pflags & ONLY_DRAWS_BACKGROUND) != 0 && mBGDrawable != null) {
-                //applyDrawableToTransparentRegion(mBGDrawable, region);
-            //}
-        //}
-        //return true;
+        
+        
+        
+            
+            
+                
+                
+                
+                        
+            
+                
+            
+        
+        
     }
 
     
@@ -9942,14 +10052,14 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void playSoundEffect(int soundConstant) {
         {
             boolean var1E4326663BC68D529F79DE6FC2643778_665209657 = (mAttachInfo == null || mAttachInfo.mRootCallbacks == null || !isSoundEffectsEnabled());
-        } //End collapsed parenthetic
+        } 
         mAttachInfo.mRootCallbacks.playSoundEffect(soundConstant);
         addTaint(soundConstant);
-        // ---------- Original Method ----------
-        //if (mAttachInfo == null || mAttachInfo.mRootCallbacks == null || !isSoundEffectsEnabled()) {
-            //return;
-        //}
-        //mAttachInfo.mRootCallbacks.playSoundEffect(soundConstant);
+        
+        
+            
+        
+        
     }
 
     
@@ -9959,8 +10069,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(feedbackConstant);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2116373208 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2116373208;
-        // ---------- Original Method ----------
-        //return performHapticFeedback(feedbackConstant, 0);
+        
+        
     }
 
     
@@ -9969,23 +10079,23 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             boolean varA5539A907B715B189715B7DC683584E6_262108939 = ((flags & HapticFeedbackConstants.FLAG_IGNORE_VIEW_SETTING) == 0
                 && !isHapticFeedbackEnabled());
-        } //End collapsed parenthetic
+        } 
         boolean var504ECB78099BB3639952FEB46DA1CEC5_1528283443 = (mAttachInfo.mRootCallbacks.performHapticFeedback(feedbackConstant,
                 (flags & HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING) != 0));
         addTaint(feedbackConstant);
         addTaint(flags);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1181986513 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1181986513;
-        // ---------- Original Method ----------
-        //if (mAttachInfo == null) {
-            //return false;
-        //}
-        //if ((flags & HapticFeedbackConstants.FLAG_IGNORE_VIEW_SETTING) == 0
-                //&& !isHapticFeedbackEnabled()) {
-            //return false;
-        //}
-        //return mAttachInfo.mRootCallbacks.performHapticFeedback(feedbackConstant,
-                //(flags & HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING) != 0);
+        
+        
+            
+        
+        
+                
+            
+        
+        
+                
     }
 
     
@@ -9995,15 +10105,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             mSystemUiVisibility = visibility;
             {
                 mParent.recomputeViewAttributes(this);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (visibility != mSystemUiVisibility) {
-            //mSystemUiVisibility = visibility;
-            //if (mParent != null && mAttachInfo != null && !mAttachInfo.mRecomputeGlobalAttributes) {
-                //mParent.recomputeViewAttributes(this);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -10011,8 +10121,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getSystemUiVisibility() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_175490578 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_175490578;
-        // ---------- Original Method ----------
-        //return mSystemUiVisibility;
+        
+        
     }
 
     
@@ -10021,13 +10131,13 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         getListenerInfo().mOnSystemUiVisibilityChangeListener = l;
         {
             mParent.recomputeViewAttributes(this);
-        } //End block
+        } 
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
-        //getListenerInfo().mOnSystemUiVisibilityChangeListener = l;
-        //if (mParent != null && mAttachInfo != null && !mAttachInfo.mRecomputeGlobalAttributes) {
-            //mParent.recomputeViewAttributes(this);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -10037,14 +10147,14 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             li.mOnSystemUiVisibilityChangeListener.onSystemUiVisibilityChange(
                     visibility & PUBLIC_STATUS_BAR_VISIBILITY_MASK);
-        } //End block
+        } 
         addTaint(visibility);
-        // ---------- Original Method ----------
-        //ListenerInfo li = mListenerInfo;
-        //if (li != null && li.mOnSystemUiVisibilityChangeListener != null) {
-            //li.mOnSystemUiVisibilityChangeListener.onSystemUiVisibilityChange(
-                    //visibility & PUBLIC_STATUS_BAR_VISIBILITY_MASK);
-        //}
+        
+        
+        
+            
+                    
+        
     }
 
     
@@ -10053,14 +10163,14 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         int val = (mSystemUiVisibility&~localChanges) | (localValue&localChanges);
         {
             setSystemUiVisibility(val);
-        } //End block
+        } 
         addTaint(localValue);
         addTaint(localChanges);
-        // ---------- Original Method ----------
-        //int val = (mSystemUiVisibility&~localChanges) | (localValue&localChanges);
-        //if (val != mSystemUiVisibility) {
-            //setSystemUiVisibility(val);
-        //}
+        
+        
+        
+            
+        
     }
 
     
@@ -10069,18 +10179,18 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             Object myLocalState, int flags) {
         {
             Log.d(VIEW_LOG_TAG, "startDrag: data=" + data + " flags=" + flags);
-        } //End block
+        } 
         boolean okay = false;
         Point shadowSize = new Point();
         Point shadowTouchPoint = new Point();
         shadowBuilder.onProvideShadowMetrics(shadowSize, shadowTouchPoint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Drag shadow dimensions must not be negative");
-        } //End block
+        } 
         {
             Log.d(VIEW_LOG_TAG, "drag shadow: width=" + shadowSize.x + " height=" + shadowSize.y
                     + " shadowX=" + shadowTouchPoint.x + " shadowY=" + shadowTouchPoint.y);
-        } //End block
+        } 
         Surface surface = new Surface();
         try 
         {
@@ -10094,11 +10204,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     canvas.drawColor(0, PorterDuff.Mode.CLEAR);
                     shadowBuilder.onDrawShadow(canvas);
-                } //End block
+                } 
                 finally 
                 {
                     surface.unlockCanvasAndPost(canvas);
-                } //End block
+                } 
                 final ViewRootImpl root = getViewRootImpl();
                 root.setLocalDragState(myLocalState);
                 root.getLastTouchPoint(shadowSize);
@@ -10107,31 +10217,31 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                         shadowTouchPoint.x, shadowTouchPoint.y, data);
                 Log.d(VIEW_LOG_TAG, "performDrag returned " + okay);
                 surface.release();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (Exception e)
         {
             surface.destroy();
-        } //End block
+        } 
         addTaint(data.getTaint());
         addTaint(shadowBuilder.getTaint());
         addTaint(myLocalState.getTaint());
         addTaint(flags);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_75429935 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_75429935;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.896 -0400", hash_original_method = "7E645D896E88F7A2CE991A302B5729A7", hash_generated_method = "3F8946C43CA2F817F10E7C05CBCD1603")
     public boolean onDragEvent(DragEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1391810223 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1391810223;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -10141,18 +10251,18 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             boolean var335DF3A408D4F144DA69CF42853FDB1A_1212936900 = (li != null && li.mOnDragListener != null && (mViewFlags & ENABLED_MASK) == ENABLED
                 && li.mOnDragListener.onDrag(this, event));
-        } //End collapsed parenthetic
+        } 
         boolean var0587795787D505B85471C0D6F567FE89_1837006441 = (onDragEvent(event));
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1352630110 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1352630110;
-        // ---------- Original Method ----------
-        //ListenerInfo li = mListenerInfo;
-        //if (li != null && li.mOnDragListener != null && (mViewFlags & ENABLED_MASK) == ENABLED
-                //&& li.mOnDragListener.onDrag(this, event)) {
-            //return true;
-        //}
-        //return onDragEvent(event);
+        
+        
+        
+                
+            
+        
+        
     }
 
     
@@ -10160,16 +10270,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
      boolean canAcceptDrag() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2036587614 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2036587614;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags2 & DRAG_CAN_ACCEPT) != 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.898 -0400", hash_original_method = "059265693C3FBF9CA8D6100876A0DA7C", hash_generated_method = "4027BFE56A9421810369202A60B7D2BD")
     public void onCloseSystemDialogs(String reason) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(reason.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -10183,28 +10293,28 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             final int h = getBottom()-getTop();
             {
                 r.op(0, 0, db.left, h, Region.Op.UNION);
-            } //End block
+            } 
             {
                 r.op(db.right, 0, w, h, Region.Op.UNION);
-            } //End block
+            } 
             {
                 r.op(0, 0, w, db.top, Region.Op.UNION);
-            } //End block
+            } 
             {
                 r.op(0, db.bottom, w, h, Region.Op.UNION);
-            } //End block
+            } 
             final int[] location = attachInfo.mTransparentLocation;
             getLocationInWindow(location);
             r.translate(location[0], location[1]);
             region.op(r, Region.Op.INTERSECT);
-        } //End block
+        } 
         {
             region.op(db, Region.Op.DIFFERENCE);
-        } //End block
+        } 
         addTaint(dr.getTaint());
         addTaint(region.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -10214,22 +10324,22 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             mHasPerformedLongPress = false;
             {
                 mPendingCheckForLongPress = new CheckForLongPress();
-            } //End block
+            } 
             mPendingCheckForLongPress.rememberWindowAttachCount();
             postDelayed(mPendingCheckForLongPress,
                     ViewConfiguration.getLongPressTimeout() - delayOffset);
-        } //End block
+        } 
         addTaint(delayOffset);
-        // ---------- Original Method ----------
-        //if ((mViewFlags & LONG_CLICKABLE) == LONG_CLICKABLE) {
-            //mHasPerformedLongPress = false;
-            //if (mPendingCheckForLongPress == null) {
-                //mPendingCheckForLongPress = new CheckForLongPress();
-            //}
-            //mPendingCheckForLongPress.rememberWindowAttachCount();
-            //postDelayed(mPendingCheckForLongPress,
-                    //ViewConfiguration.getLongPressTimeout() - delayOffset);
-        //}
+        
+        
+            
+            
+                
+            
+            
+            
+                    
+        
     }
 
     
@@ -10256,11 +10366,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         int newScrollX = scrollX + deltaX;
         {
             maxOverScrollX = 0;
-        } //End block
+        } 
         int newScrollY = scrollY + deltaY;
         {
             maxOverScrollY = 0;
-        } //End block
+        } 
         final int left = -maxOverScrollX;
         final int right = maxOverScrollX + scrollRangeX;
         final int top = -maxOverScrollY;
@@ -10269,20 +10379,20 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             newScrollX = right;
             clampedX = true;
-        } //End block
+        } 
         {
             newScrollX = left;
             clampedX = true;
-        } //End block
+        } 
         boolean clampedY = false;
         {
             newScrollY = bottom;
             clampedY = true;
-        } //End block
+        } 
         {
             newScrollY = top;
             clampedY = true;
-        } //End block
+        } 
         onOverScrolled(newScrollX, newScrollY, clampedX, clampedY);
         addTaint(deltaX);
         addTaint(deltaY);
@@ -10295,20 +10405,20 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         addTaint(isTouchEvent);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1490830188 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1490830188;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.901 -0400", hash_original_method = "4CE95B84751ED417CECEABF7E9F1BBA1", hash_generated_method = "F8EFF254F7D42120039BE2F323D4218D")
     protected void onOverScrolled(int scrollX, int scrollY,
             boolean clampedX, boolean clampedY) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(scrollX);
         addTaint(scrollY);
         addTaint(clampedX);
         addTaint(clampedY);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -10316,8 +10426,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getOverScrollMode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1614408459 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1614408459;
-        // ---------- Original Method ----------
-        //return mOverScrollMode;
+        
+        
     }
 
     
@@ -10325,15 +10435,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void setOverScrollMode(int overScrollMode) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid overscroll mode " + overScrollMode);
-        } //End block
+        } 
         mOverScrollMode = overScrollMode;
-        // ---------- Original Method ----------
-        //if (overScrollMode != OVER_SCROLL_ALWAYS &&
-                //overScrollMode != OVER_SCROLL_IF_CONTENT_SCROLLS &&
-                //overScrollMode != OVER_SCROLL_NEVER) {
-            //throw new IllegalArgumentException("Invalid overscroll mode " + overScrollMode);
-        //}
-        //mOverScrollMode = overScrollMode;
+        
+        
+                
+                
+            
+        
+        
     }
 
     
@@ -10347,25 +10457,25 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                         "Expected theme to define listPreferredItemHeight.");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mVerticalScrollFactor = outValue.getDimension(
                     mContext.getResources().getDisplayMetrics());
-        } //End block
+        } 
         float var546ADE640B6EDFBC8A086EF31347E768_1010695903 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1010695903;
-        // ---------- Original Method ----------
-        //if (mVerticalScrollFactor == 0) {
-            //TypedValue outValue = new TypedValue();
-            //if (!mContext.getTheme().resolveAttribute(
-                    //com.android.internal.R.attr.listPreferredItemHeight, outValue, true)) {
-                //throw new IllegalStateException(
-                        //"Expected theme to define listPreferredItemHeight.");
-            //}
-            //mVerticalScrollFactor = outValue.getDimension(
-                    //mContext.getResources().getDisplayMetrics());
-        //}
-        //return mVerticalScrollFactor;
+        
+        
+            
+            
+                    
+                
+                        
+            
+            
+                    
+        
+        
     }
 
     
@@ -10374,8 +10484,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         float varB4E039AD370F52FF248539199AD3C0AB_604144725 = (getVerticalScrollFactor());
         float var546ADE640B6EDFBC8A086EF31347E768_1129285298 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1129285298;
-        // ---------- Original Method ----------
-        //return getVerticalScrollFactor();
+        
+        
     }
 
     
@@ -10383,8 +10493,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getTextDirection() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_137403697 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_137403697;
-        // ---------- Original Method ----------
-        //return mTextDirection;
+        
+        
     }
 
     
@@ -10394,13 +10504,13 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             mTextDirection = textDirection;
             resetResolvedTextDirection();
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (textDirection != mTextDirection) {
-            //mTextDirection = textDirection;
-            //resetResolvedTextDirection();
-            //requestLayout();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -10408,14 +10518,14 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public int getResolvedTextDirection() {
         {
             resolveTextDirection();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1992143185 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1992143185;
-        // ---------- Original Method ----------
-        //if (mResolvedTextDirection == TEXT_DIRECTION_INHERIT) {
-            //resolveTextDirection();
-        //}
-        //return mResolvedTextDirection;
+        
+        
+            
+        
+        
     }
 
     
@@ -10423,54 +10533,54 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected void resolveTextDirection() {
         {
             mResolvedTextDirection = mTextDirection;
-        } //End block
+        } 
         {
             mResolvedTextDirection = ((ViewGroup) mParent).getResolvedTextDirection();
-        } //End block
+        } 
         mResolvedTextDirection = TEXT_DIRECTION_FIRST_STRONG;
-        // ---------- Original Method ----------
-        //if (mTextDirection != TEXT_DIRECTION_INHERIT) {
-            //mResolvedTextDirection = mTextDirection;
-            //return;
-        //}
-        //if (mParent != null && mParent instanceof ViewGroup) {
-            //mResolvedTextDirection = ((ViewGroup) mParent).getResolvedTextDirection();
-            //return;
-        //}
-        //mResolvedTextDirection = TEXT_DIRECTION_FIRST_STRONG;
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.906 -0400", hash_original_method = "BB79EF6AB24983F71C49AA466BBC15FC", hash_generated_method = "7309B27E3B8E0EA585A6CF1593E51E30")
     protected void resetResolvedTextDirection() {
         mResolvedTextDirection = TEXT_DIRECTION_INHERIT;
-        // ---------- Original Method ----------
-        //mResolvedTextDirection = TEXT_DIRECTION_INHERIT;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.906 -0400", hash_original_method = "AF21ED671E180E70DBE0B7255059F75E", hash_generated_method = "9A6BA26B98FE57B58A6B05E019D06035")
     public void hackTurnOffWindowResizeAnim(boolean off) {
         mAttachInfo.mTurnOffWindowResizeAnim = off;
-        // ---------- Original Method ----------
-        //mAttachInfo.mTurnOffWindowResizeAnim = off;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.906 -0400", hash_original_method = "E195CA02B57C3CA07D3D00B98A2A4177", hash_generated_method = "AE723DC79AD9CD9148072DE28571D395")
     public ViewPropertyAnimator animate() {
-        ViewPropertyAnimator varB4EAC82CA7396A68D541C85D26508E83_1291575520 = null; //Variable for return #1
+        ViewPropertyAnimator varB4EAC82CA7396A68D541C85D26508E83_1291575520 = null; 
         {
             mAnimator = new ViewPropertyAnimator(this);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1291575520 = mAnimator;
-        varB4EAC82CA7396A68D541C85D26508E83_1291575520.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1291575520.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1291575520;
-        // ---------- Original Method ----------
-        //if (mAnimator == null) {
-            //mAnimator = new ViewPropertyAnimator(this);
-        //}
-        //return mAnimator;
+        
+        
+            
+        
+        
     }
 
     
@@ -10536,7 +10646,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.907 -0400", hash_original_method = "047CC1B263AEE84E056E34E366D57D72", hash_generated_method = "047CC1B263AEE84E056E34E366D57D72")
         public TransformationInfo ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -10585,7 +10695,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.907 -0400", hash_original_method = "30D31F497118E5B2F2D60734B7298038", hash_generated_method = "30D31F497118E5B2F2D60734B7298038")
         public ListenerInfo ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -10601,67 +10711,67 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.908 -0400", hash_original_method = "0B0DC4A9FB3A9C12A7904682E22ADAD8", hash_generated_method = "1DC795717C9F5A625AFA7215FE485718")
         public  DragShadowBuilder(View view) {
             mView = new WeakReference<View>(view);
-            // ---------- Original Method ----------
-            //mView = new WeakReference<View>(view);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.908 -0400", hash_original_method = "39157EB374747DFD28056DCE3D5D84EC", hash_generated_method = "1653C54FAA06D8A2D8309AF09F1D8648")
         public  DragShadowBuilder() {
             mView = new WeakReference<View>(null);
-            // ---------- Original Method ----------
-            //mView = new WeakReference<View>(null);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.909 -0400", hash_original_method = "12EFA38B650211F3F0DA583E081C360F", hash_generated_method = "47A851C86C1E0367F5BB64490814DD10")
         @SuppressWarnings({"JavadocReference"})
         final public View getView() {
-            View varB4EAC82CA7396A68D541C85D26508E83_1673883687 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_1673883687 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1673883687 = mView.get();
-            varB4EAC82CA7396A68D541C85D26508E83_1673883687.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1673883687.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1673883687;
-            // ---------- Original Method ----------
-            //return mView.get();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.910 -0400", hash_original_method = "7C575AFDC5B7223F530AD0DF57B52E75", hash_generated_method = "D6A565C09A3ED59B188D99E4B0AF9DFC")
         public void onProvideShadowMetrics(Point shadowSize, Point shadowTouchPoint) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             final View view = mView.get();
             {
                 shadowSize.set(view.getWidth(), view.getHeight());
                 shadowTouchPoint.set(shadowSize.x / 2, shadowSize.y / 2);
-            } //End block
+            } 
             addTaint(shadowSize.getTaint());
             addTaint(shadowTouchPoint.getTaint());
-            // ---------- Original Method ----------
-            //final View view = mView.get();
-            //if (view != null) {
-                //shadowSize.set(view.getWidth(), view.getHeight());
-                //shadowTouchPoint.set(shadowSize.x / 2, shadowSize.y / 2);
-            //} else {
-                //Log.e(View.VIEW_LOG_TAG, "Asked for drag thumb metrics but no view");
-            //}
+            
+            
+            
+                
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.910 -0400", hash_original_method = "F5A2B90321F064D0A4C62262ED411079", hash_generated_method = "5324124C3D622B8B69D2598EE93A2BE0")
         public void onDrawShadow(Canvas canvas) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             final View view = mView.get();
             {
                 view.draw(canvas);
-            } //End block
+            } 
             addTaint(canvas.getTaint());
-            // ---------- Original Method ----------
-            //final View view = mView.get();
-            //if (view != null) {
-                //view.draw(canvas);
-            //} else {
-                //Log.e(View.VIEW_LOG_TAG, "Asked to draw drag shadow but no view");
-            //}
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -10674,7 +10784,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.910 -0400", hash_original_method = "2EA619F0F89BA048B9092F3C9EFB9775", hash_generated_method = "2EA619F0F89BA048B9092F3C9EFB9775")
         public MeasureSpec ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -10737,7 +10847,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.912 -0400", hash_original_method = "C4F936F21A8F70C0274337932B924B19", hash_generated_method = "C4F936F21A8F70C0274337932B924B19")
         public CheckForLongPress ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -10751,25 +10861,25 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                         boolean var9620ED46504D3117149539056E35032D_1577522130 = (performLongClick());
                         {
                             mHasPerformedLongPress = true;
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (isPressed() && (mParent != null)
-                    //&& mOriginalWindowAttachCount == mWindowAttachCount) {
-                //if (performLongClick()) {
-                    //mHasPerformedLongPress = true;
-                //}
-            //}
+                        } 
+                    } 
+                } 
+            } 
+            
+            
+                    
+                
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.914 -0400", hash_original_method = "52714AB9B90C75C7141A8D07DDC0C4CA", hash_generated_method = "AB01C47E8931054C927C8BF677A5865E")
         public void rememberWindowAttachCount() {
             mOriginalWindowAttachCount = mWindowAttachCount;
-            // ---------- Original Method ----------
-            //mOriginalWindowAttachCount = mWindowAttachCount;
+            
+            
         }
 
         
@@ -10782,7 +10892,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.914 -0400", hash_original_method = "AB5DEBF7CC7D6BE3A48A21837827B410", hash_generated_method = "AB5DEBF7CC7D6BE3A48A21837827B410")
         public CheckForTap ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -10792,11 +10902,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             mPrivateFlags |= PRESSED;
             refreshDrawableState();
             checkForLongClick(ViewConfiguration.getTapTimeout());
-            // ---------- Original Method ----------
-            //mPrivateFlags &= ~PREPRESSED;
-            //mPrivateFlags |= PRESSED;
-            //refreshDrawableState();
-            //checkForLongClick(ViewConfiguration.getTapTimeout());
+            
+            
+            
+            
+            
         }
 
         
@@ -10809,15 +10919,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.915 -0400", hash_original_method = "88B4BB962521E66182F1BC580E9EB222", hash_generated_method = "88B4BB962521E66182F1BC580E9EB222")
         public PerformClick ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.915 -0400", hash_original_method = "566460B544C528A9D4CEF77A7D21BD20", hash_generated_method = "6E0C9FA1A1110473D753CE2E91D91FD7")
         public void run() {
             performClick();
-            // ---------- Original Method ----------
-            //performClick();
+            
+            
         }
 
         
@@ -10830,15 +10940,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.915 -0400", hash_original_method = "6C14B43BA30389F098070D93AD09F5B4", hash_generated_method = "6C14B43BA30389F098070D93AD09F5B4")
         public UnsetPressedState ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.915 -0400", hash_original_method = "8ADFD7FB5655235FFF1C14FE5EF3EDC3", hash_generated_method = "51E5C56E0FC59533122E120E30019564")
         public void run() {
             setPressed(false);
-            // ---------- Original Method ----------
-            //setPressed(false);
+            
+            
         }
 
         
@@ -10852,7 +10962,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         public  BaseSavedState(Parcel source) {
             super(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -10860,7 +10970,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         public  BaseSavedState(Parcelable superState) {
             super(superState);
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -11025,12 +11135,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             mWindowToken = window.asBinder();
             mHandler = handler;
             mRootCallbacks = effectPlayer;
-            // ---------- Original Method ----------
-            //mSession = session;
-            //mWindow = window;
-            //mWindowToken = window.asBinder();
-            //mHandler = handler;
-            //mRootCallbacks = effectPlayer;
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -11060,26 +11170,26 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.918 -0400", hash_original_method = "7F8409C46E15AE6EC7087A7F4E97E2BF", hash_generated_method = "7F8409C46E15AE6EC7087A7F4E97E2BF")
             public InvalidateInfo ()
             {
-                //Synthesized constructor
+                
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.919 -0400", hash_original_method = "AAFC70DDA5FB82CEF5E58C1F01C303B7", hash_generated_method = "F6E2001C60EDD672A67B8BFFD0EA80B4")
             public void setNextPoolable(InvalidateInfo element) {
                 mNext = element;
-                // ---------- Original Method ----------
-                //mNext = element;
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.920 -0400", hash_original_method = "8D8571C3CBC87318B5EA7A031BC44388", hash_generated_method = "7C9A6C181B169C7D8772CB09725CC47A")
             public InvalidateInfo getNextPoolable() {
-                InvalidateInfo varB4EAC82CA7396A68D541C85D26508E83_1961906637 = null; //Variable for return #1
+                InvalidateInfo varB4EAC82CA7396A68D541C85D26508E83_1961906637 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_1961906637 = mNext;
-                varB4EAC82CA7396A68D541C85D26508E83_1961906637.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1961906637.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1961906637;
-                // ---------- Original Method ----------
-                //return mNext;
+                
+                
             }
 
             
@@ -11091,8 +11201,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.921 -0400", hash_original_method = "8830525D8149BF52E4AE797FF2AC88D3", hash_generated_method = "E9DF48B1A3244CDF3D09900CA1C3DD95")
              void release() {
                 sPool.release(this);
-                // ---------- Original Method ----------
-                //sPool.release(this);
+                
+                
             }
 
             
@@ -11100,16 +11210,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             public boolean isPooled() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_708403066 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_708403066;
-                // ---------- Original Method ----------
-                //return mIsPooled;
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.922 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
             public void setPooled(boolean isPooled) {
                 mIsPooled = isPooled;
-                // ---------- Original Method ----------
-                //mIsPooled = isPooled;
+                
+                
             }
 
             
@@ -11210,17 +11320,17 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             paint.setShader(shader);
             paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
             this.host = host;
-            // ---------- Original Method ----------
-            //fadingEdgeLength = configuration.getScaledFadingEdgeLength();
-            //scrollBarSize = configuration.getScaledScrollBarSize();
-            //scrollBarDefaultDelayBeforeFade = ViewConfiguration.getScrollDefaultDelay();
-            //scrollBarFadeDuration = ViewConfiguration.getScrollBarFadeDuration();
-            //paint = new Paint();
-            //matrix = new Matrix();
-            //shader = new LinearGradient(0, 0, 0, 1, 0xFF000000, 0, Shader.TileMode.CLAMP);
-            //paint.setShader(shader);
-            //paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-            //this.host = host;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -11233,16 +11343,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                         color & 0x00FFFFFF, Shader.TileMode.CLAMP);
                 paint.setShader(shader);
                 paint.setXfermode(null);
-            } //End block
-            // ---------- Original Method ----------
-            //if (color != 0 && color != mLastColor) {
-                //mLastColor = color;
-                //color |= 0xFF000000;
-                //shader = new LinearGradient(0, 0, 0, 1, color | 0xFF000000,
-                        //color & 0x00FFFFFF, Shader.TileMode.CLAMP);
-                //paint.setShader(shader);
-                //paint.setXfermode(null);
-            //}
+            } 
+            
+            
+                
+                
+                
+                        
+                
+                
+            
         }
 
         
@@ -11258,19 +11368,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 interpolator.setKeyFrame(framesCount, nextFrame, TRANSPARENT);
                 state = FADING;
                 host.invalidate(true);
-            } //End block
-            // ---------- Original Method ----------
-            //long now = AnimationUtils.currentAnimationTimeMillis();
-            //if (now >= fadeStartTime) {
-                //int nextFrame = (int) now;
-                //int framesCount = 0;
-                //Interpolator interpolator = scrollBarInterpolator;
-                //interpolator.setKeyFrame(framesCount++, nextFrame, OPAQUE);
-                //nextFrame += scrollBarFadeDuration;
-                //interpolator.setKeyFrame(framesCount, nextFrame, TRANSPARENT);
-                //state = FADING;
-                //host.invalidate(true);
-            //}
+            } 
+            
+            
+            
+                
+                
+                
+                
+                
+                
+                
+                
+            
         }
 
         
@@ -11301,7 +11411,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.927 -0400", hash_original_method = "67D827D7B507D3EF133C26B0E057ECB2", hash_generated_method = "67D827D7B507D3EF133C26B0E057ECB2")
         public SendViewScrolledAccessibilityEvent ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -11309,9 +11419,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         public void run() {
             sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SCROLLED);
             mIsPending = false;
-            // ---------- Original Method ----------
-            //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SCROLLED);
-            //mIsPending = false;
+            
+            
+            
         }
 
         
@@ -11324,7 +11434,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.927 -0400", hash_original_method = "B81C1E38B66B1195ED1D00E194D402D3", hash_generated_method = "B81C1E38B66B1195ED1D00E194D402D3")
         public AccessibilityDelegate ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -11333,8 +11443,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             host.sendAccessibilityEventInternal(eventType);
             addTaint(host.getTaint());
             addTaint(eventType);
-            // ---------- Original Method ----------
-            //host.sendAccessibilityEventInternal(eventType);
+            
+            
         }
 
         
@@ -11343,8 +11453,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             host.sendAccessibilityEventUncheckedInternal(event);
             addTaint(host.getTaint());
             addTaint(event.getTaint());
-            // ---------- Original Method ----------
-            //host.sendAccessibilityEventUncheckedInternal(event);
+            
+            
         }
 
         
@@ -11355,56 +11465,56 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_432390447 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_432390447;
-            // ---------- Original Method ----------
-            //return host.dispatchPopulateAccessibilityEventInternal(event);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.929 -0400", hash_original_method = "D41C8BE91A25AAE323FB25E37AFB61F0", hash_generated_method = "8BD8A02C2629352DFDDE1159CA67BC87")
         public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             host.onPopulateAccessibilityEventInternal(event);
             addTaint(host.getTaint());
             addTaint(event.getTaint());
-            // ---------- Original Method ----------
-            //host.onPopulateAccessibilityEventInternal(event);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.929 -0400", hash_original_method = "D490954174BD599BC02D1199D955E569", hash_generated_method = "3B81173127E6A60F360915F54C4470BC")
         public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             host.onInitializeAccessibilityEventInternal(event);
             addTaint(host.getTaint());
             addTaint(event.getTaint());
-            // ---------- Original Method ----------
-            //host.onInitializeAccessibilityEventInternal(event);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.929 -0400", hash_original_method = "E392CA582CA236DC9AD11007B17CF1A9", hash_generated_method = "6019E578184B08E640FCA5EA063DDEF4")
         public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfo info) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             host.onInitializeAccessibilityNodeInfoInternal(info);
             addTaint(host.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
-            //host.onInitializeAccessibilityNodeInfoInternal(info);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.930 -0400", hash_original_method = "4AE2346D08FE5ECB588C47045A997DF1", hash_generated_method = "8C9DB4F03F6EB840E12C44A7030D30AC")
         public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
                 AccessibilityEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             boolean var9559FB15F4F4402574377E5F8741F1FA_1018296432 = (host.onRequestSendAccessibilityEventInternal(child, event));
             addTaint(host.getTaint());
             addTaint(child.getTaint());
             addTaint(event.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1113801352 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1113801352;
-            // ---------- Original Method ----------
-            //return host.onRequestSendAccessibilityEventInternal(child, event);
+            
+            
         }
 
         
@@ -12190,21 +12300,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             object.setAlpha(value);
             addTaint(object.getTaint());
             addTaint(value);
-            // ---------- Original Method ----------
-            //object.setAlpha(value);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.936 -0400", hash_original_method = "0828A056C08A4787018BC5ECB849DDAD", hash_generated_method = "DE1EB7DBB6E310B0AFAEB58AB78581BF")
         @Override
         public Float get(View object) {
-            Float varB4EAC82CA7396A68D541C85D26508E83_1695897025 = null; //Variable for return #1
+            Float varB4EAC82CA7396A68D541C85D26508E83_1695897025 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1695897025 = object.getAlpha();
             addTaint(object.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1695897025.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1695897025.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1695897025;
-            // ---------- Original Method ----------
-            //return object.getAlpha();
+            
+            
         }
 
         
@@ -12218,21 +12328,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             object.setTranslationX(value);
             addTaint(object.getTaint());
             addTaint(value);
-            // ---------- Original Method ----------
-            //object.setTranslationX(value);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.937 -0400", hash_original_method = "AE4ED8B1A0B86A64F67E6D55304484F8", hash_generated_method = "EF6A5963C1ED79B08D13E56BCB07CE97")
         @Override
         public Float get(View object) {
-            Float varB4EAC82CA7396A68D541C85D26508E83_2123527479 = null; //Variable for return #1
+            Float varB4EAC82CA7396A68D541C85D26508E83_2123527479 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2123527479 = object.getTranslationX();
             addTaint(object.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_2123527479.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2123527479.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2123527479;
-            // ---------- Original Method ----------
-            //return object.getTranslationX();
+            
+            
         }
 
         
@@ -12246,21 +12356,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             object.setTranslationY(value);
             addTaint(object.getTaint());
             addTaint(value);
-            // ---------- Original Method ----------
-            //object.setTranslationY(value);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.939 -0400", hash_original_method = "602B4C29E3FDDB39DD10FBFA4C1D4EAD", hash_generated_method = "FF4A35C0EA29DC7F31ECDECC03D60CBE")
         @Override
         public Float get(View object) {
-            Float varB4EAC82CA7396A68D541C85D26508E83_1881485096 = null; //Variable for return #1
+            Float varB4EAC82CA7396A68D541C85D26508E83_1881485096 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1881485096 = object.getTranslationY();
             addTaint(object.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1881485096.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1881485096.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1881485096;
-            // ---------- Original Method ----------
-            //return object.getTranslationY();
+            
+            
         }
 
         
@@ -12274,21 +12384,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             object.setX(value);
             addTaint(object.getTaint());
             addTaint(value);
-            // ---------- Original Method ----------
-            //object.setX(value);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.941 -0400", hash_original_method = "87F550DC0E1D4FED879AF17D796C775D", hash_generated_method = "D095DD87E4223ADD802923E40E611854")
         @Override
         public Float get(View object) {
-            Float varB4EAC82CA7396A68D541C85D26508E83_1503250681 = null; //Variable for return #1
+            Float varB4EAC82CA7396A68D541C85D26508E83_1503250681 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1503250681 = object.getX();
             addTaint(object.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1503250681.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1503250681.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1503250681;
-            // ---------- Original Method ----------
-            //return object.getX();
+            
+            
         }
 
         
@@ -12302,21 +12412,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             object.setY(value);
             addTaint(object.getTaint());
             addTaint(value);
-            // ---------- Original Method ----------
-            //object.setY(value);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.942 -0400", hash_original_method = "107F13AA20F45AE0A7AF10B2A89B1B3D", hash_generated_method = "839E3912C2E8E9146BDB9AA8C47F9C13")
         @Override
         public Float get(View object) {
-            Float varB4EAC82CA7396A68D541C85D26508E83_626871970 = null; //Variable for return #1
+            Float varB4EAC82CA7396A68D541C85D26508E83_626871970 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_626871970 = object.getY();
             addTaint(object.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_626871970.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_626871970.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_626871970;
-            // ---------- Original Method ----------
-            //return object.getY();
+            
+            
         }
 
         
@@ -12330,21 +12440,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             object.setRotation(value);
             addTaint(object.getTaint());
             addTaint(value);
-            // ---------- Original Method ----------
-            //object.setRotation(value);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.944 -0400", hash_original_method = "6F0DC1763312BEA34F1272E5458BA30D", hash_generated_method = "922530A3FB6416251576E0357B8C4C69")
         @Override
         public Float get(View object) {
-            Float varB4EAC82CA7396A68D541C85D26508E83_71805431 = null; //Variable for return #1
+            Float varB4EAC82CA7396A68D541C85D26508E83_71805431 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_71805431 = object.getRotation();
             addTaint(object.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_71805431.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_71805431.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_71805431;
-            // ---------- Original Method ----------
-            //return object.getRotation();
+            
+            
         }
 
         
@@ -12358,21 +12468,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             object.setRotationX(value);
             addTaint(object.getTaint());
             addTaint(value);
-            // ---------- Original Method ----------
-            //object.setRotationX(value);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.946 -0400", hash_original_method = "3FE8B70962F32AF948528D0D6E8ED1AF", hash_generated_method = "D5B5C4E91B950AFF30E17F5954C40A12")
         @Override
         public Float get(View object) {
-            Float varB4EAC82CA7396A68D541C85D26508E83_86353170 = null; //Variable for return #1
+            Float varB4EAC82CA7396A68D541C85D26508E83_86353170 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_86353170 = object.getRotationX();
             addTaint(object.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_86353170.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_86353170.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_86353170;
-            // ---------- Original Method ----------
-            //return object.getRotationX();
+            
+            
         }
 
         
@@ -12386,21 +12496,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             object.setRotationY(value);
             addTaint(object.getTaint());
             addTaint(value);
-            // ---------- Original Method ----------
-            //object.setRotationY(value);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.947 -0400", hash_original_method = "EE835584282672E99083546AE5304355", hash_generated_method = "79705676E50FDCB272E3CA453652BF3F")
         @Override
         public Float get(View object) {
-            Float varB4EAC82CA7396A68D541C85D26508E83_363068760 = null; //Variable for return #1
+            Float varB4EAC82CA7396A68D541C85D26508E83_363068760 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_363068760 = object.getRotationY();
             addTaint(object.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_363068760.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_363068760.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_363068760;
-            // ---------- Original Method ----------
-            //return object.getRotationY();
+            
+            
         }
 
         
@@ -12414,21 +12524,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             object.setScaleX(value);
             addTaint(object.getTaint());
             addTaint(value);
-            // ---------- Original Method ----------
-            //object.setScaleX(value);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.948 -0400", hash_original_method = "A2F336BAC519262505475338F6D5EC55", hash_generated_method = "FD72E4D0834310FB6ABC65B4538C40D0")
         @Override
         public Float get(View object) {
-            Float varB4EAC82CA7396A68D541C85D26508E83_577436261 = null; //Variable for return #1
+            Float varB4EAC82CA7396A68D541C85D26508E83_577436261 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_577436261 = object.getScaleX();
             addTaint(object.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_577436261.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_577436261.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_577436261;
-            // ---------- Original Method ----------
-            //return object.getScaleX();
+            
+            
         }
 
         
@@ -12442,21 +12552,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             object.setScaleY(value);
             addTaint(object.getTaint());
             addTaint(value);
-            // ---------- Original Method ----------
-            //object.setScaleY(value);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.949 -0400", hash_original_method = "CDBF0205ED6FCB3C37D74DE97C039D1E", hash_generated_method = "421C6105718F928B8583D864D18A3DBF")
         @Override
         public Float get(View object) {
-            Float varB4EAC82CA7396A68D541C85D26508E83_1092074713 = null; //Variable for return #1
+            Float varB4EAC82CA7396A68D541C85D26508E83_1092074713 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1092074713 = object.getScaleY();
             addTaint(object.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1092074713.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1092074713.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1092074713;
-            // ---------- Original Method ----------
-            //return object.getScaleY();
+            
+            
         }
 
         

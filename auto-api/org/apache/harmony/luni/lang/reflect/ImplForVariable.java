@@ -1,11 +1,11 @@
 package org.apache.harmony.luni.lang.reflect;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.GenericDeclaration;
@@ -37,12 +37,12 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
         this.bounds = bounds;
         this.formalVar = this;
         this.declOfVarUser = null;
-        // ---------- Original Method ----------
-        //this.genericDeclaration = genericDecl;
-        //this.name = name;
-        //this.bounds = bounds;
-        //this.formalVar = this;
-        //this.declOfVarUser = null;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -50,9 +50,9 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
       ImplForVariable(D genericDecl, String name) {
         this.name = name;
         this.declOfVarUser = genericDecl;
-        // ---------- Original Method ----------
-        //this.name = name;
-        //this.declOfVarUser = genericDecl;
+        
+        
+        
     }
 
     
@@ -65,13 +65,13 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1870527338 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1870527338;
-        // ---------- Original Method ----------
-        //if(!(o instanceof TypeVariable)) {
-            //return false;
-        //}
-        //TypeVariable<?> that = (TypeVariable<?>) o;
-        //return getName().equals(that.getName()) &&
-                //getGenericDeclaration().equals(that.getGenericDeclaration());
+        
+        
+            
+        
+        
+        
+                
     }
 
     
@@ -81,11 +81,12 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
         int var81743D2FAB9555FFF19EA3830889F54F_647926477 = (31 * getName().hashCode() + getGenericDeclaration().hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2000221701 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2000221701;
-        // ---------- Original Method ----------
-        //return 31 * getName().hashCode() + getGenericDeclaration().hashCode();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static TypeVariable findFormalVar(GenericDeclaration layer, String name) {
         TypeVariable[] formalVars = layer.getTypeParameters();
         for (TypeVariable var : formalVars) {
@@ -97,6 +98,7 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static GenericDeclaration nextLayer(GenericDeclaration decl) {
         if (decl instanceof Class) {
             Class cl = (Class)decl;
@@ -129,76 +131,78 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
                 curLayer = nextLayer(curLayer);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new AssertionError("illegal type variable reference");
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         formalVar = (ImplForVariable<D>) var;
         this.genericDeclaration = formalVar.genericDeclaration;
         this.bounds = formalVar.bounds;
-        // ---------- Original Method ----------
-        //if (formalVar != null) {
-            //return;
-        //}
-        //GenericDeclaration curLayer = declOfVarUser;
-        //TypeVariable var;
-        //while ((var = findFormalVar(curLayer, name)) == null) {
-            //curLayer = nextLayer(curLayer);
-            //if (curLayer == null) {
-                //throw new AssertionError("illegal type variable reference");
-            //}
-        //}
-        //formalVar = (ImplForVariable<D>) var;
-        //this.genericDeclaration = formalVar.genericDeclaration;
-        //this.bounds = formalVar.bounds;
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.169 -0400", hash_original_method = "234813F4553928C427D0DF90A4217999", hash_generated_method = "23A414A90F354FF9A97232028706C1F8")
     public Type[] getBounds() {
-        Type[] varB4EAC82CA7396A68D541C85D26508E83_150111885 = null; //Variable for return #1
+        Type[] varB4EAC82CA7396A68D541C85D26508E83_150111885 = null; 
         resolve();
         varB4EAC82CA7396A68D541C85D26508E83_150111885 = bounds.getResolvedTypes().clone();
-        varB4EAC82CA7396A68D541C85D26508E83_150111885.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_150111885.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_150111885;
-        // ---------- Original Method ----------
-        //resolve();
-        //return bounds.getResolvedTypes().clone();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.170 -0400", hash_original_method = "DFDCD7E6E682AFE4AA9958AFD14EDF45", hash_generated_method = "0E621F17F1707D8B76814F565FC75728")
     public D getGenericDeclaration() {
-        D varB4EAC82CA7396A68D541C85D26508E83_981913467 = null; //Variable for return #1
+        D varB4EAC82CA7396A68D541C85D26508E83_981913467 = null; 
         resolve();
         varB4EAC82CA7396A68D541C85D26508E83_981913467 = genericDeclaration;
-        varB4EAC82CA7396A68D541C85D26508E83_981913467.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_981913467.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_981913467;
-        // ---------- Original Method ----------
-        //resolve();
-        //return genericDeclaration;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.170 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "32BBC2BA615788101AC337D9FBCCB292")
     public String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_97609835 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_97609835 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_97609835 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_97609835.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_97609835.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_97609835;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.171 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "C450A33555409845C55811118FE09975")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1603325812 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1603325812 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1603325812 = name;
-        varB4EAC82CA7396A68D541C85D26508E83_1603325812.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1603325812.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1603325812;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     

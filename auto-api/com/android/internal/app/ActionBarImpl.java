@@ -1,11 +1,11 @@
 package com.android.internal.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.view.menu.MenuBuilder;
 import com.android.internal.view.menu.MenuPopupHelper;
@@ -128,31 +128,31 @@ public class ActionBarImpl extends ActionBar {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.715 -0400", hash_original_method = "F963BB61325C11416F39E483670ED211", hash_generated_method = "B390DFB722C7C46D4BDE52128B843793")
         @Override
         public void onAnimationEnd(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 mContentView.setTranslationY(0);
                 mContainerView.setTranslationY(0);
-            } //End block
+            } 
             {
                 mSplitView.setVisibility(View.GONE);
-            } //End block
+            } 
             mContainerView.setVisibility(View.GONE);
             mContainerView.setTransitioning(false);
             mCurrentShowAnim = null;
             completeDeferredDestroyActionMode();
             addTaint(animation.getTaint());
-            // ---------- Original Method ----------
-            //if (mContentView != null) {
-                //mContentView.setTranslationY(0);
-                //mContainerView.setTranslationY(0);
-            //}
-            //if (mSplitView != null && mContextDisplayMode == CONTEXT_DISPLAY_SPLIT) {
-                //mSplitView.setVisibility(View.GONE);
-            //}
-            //mContainerView.setVisibility(View.GONE);
-            //mContainerView.setTransitioning(false);
-            //mCurrentShowAnim = null;
-            //completeDeferredDestroyActionMode();
+            
+            
+                
+                
+            
+            
+                
+            
+            
+            
+            
+            
         }
 
         
@@ -163,13 +163,13 @@ public class ActionBarImpl extends ActionBar {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.716 -0400", hash_original_method = "CA861A0A44A2878B5B0D20FC92104D63", hash_generated_method = "EF2053B78441E1DD818B82BE72053BC0")
         @Override
         public void onAnimationEnd(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mCurrentShowAnim = null;
             mContainerView.requestLayout();
             addTaint(animation.getTaint());
-            // ---------- Original Method ----------
-            //mCurrentShowAnim = null;
-            //mContainerView.requestLayout();
+            
+            
+            
         }
 
         
@@ -185,16 +185,16 @@ public class ActionBarImpl extends ActionBar {
             boolean var95A05EC5BBC3BEEE196E68366EEE801B_1953409483 = (!mActivity.getWindow().hasFeature(Window.FEATURE_ACTION_BAR_OVERLAY));
             {
                 mContentView = decor.findViewById(android.R.id.content);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //mActivity = activity;
-        //Window window = activity.getWindow();
-        //View decor = window.getDecorView();
-        //init(decor);
-        //if (!mActivity.getWindow().hasFeature(Window.FEATURE_ACTION_BAR_OVERLAY)) {
-            //mContentView = decor.findViewById(android.R.id.content);
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -202,12 +202,13 @@ public class ActionBarImpl extends ActionBar {
     public  ActionBarImpl(Dialog dialog) {
         mDialog = dialog;
         init(dialog.getWindow().getDecorView());
-        // ---------- Original Method ----------
-        //mDialog = dialog;
-        //init(dialog.getWindow().getDecorView());
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.717 -0400", hash_original_method = "CD1B24EA492A78A5E57A77E5FDC89AEF", hash_generated_method = "7621594127F3B6153EAC7EF4B58820FC")
     private void init(View decor) {
         mContext = decor.getContext();
@@ -221,7 +222,7 @@ public class ActionBarImpl extends ActionBar {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(getClass().getSimpleName() + " can only be used " +
                     "with a compatible window decor layout");
-        } //End block
+        } 
         mActionView.setContextView(mContextView);
         mContextDisplayMode = mActionView.isSplitActionBar() ?
                 CONTEXT_DISPLAY_SPLIT : CONTEXT_DISPLAY_NORMAL;
@@ -229,83 +230,86 @@ public class ActionBarImpl extends ActionBar {
                 Build.VERSION_CODES.ICE_CREAM_SANDWICH);
         setHasEmbeddedTabs(mContext.getResources().getBoolean(
                 com.android.internal.R.bool.action_bar_embed_tabs));
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.717 -0400", hash_original_method = "988D25E4BF24BB800BD6556DCD183591", hash_generated_method = "6157D10E87FCD72FD6A9C3BDDBEF785A")
     public void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         setHasEmbeddedTabs(mContext.getResources().getBoolean(
                 com.android.internal.R.bool.action_bar_embed_tabs));
         addTaint(newConfig.getTaint());
-        // ---------- Original Method ----------
-        //setHasEmbeddedTabs(mContext.getResources().getBoolean(
-                //com.android.internal.R.bool.action_bar_embed_tabs));
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.718 -0400", hash_original_method = "05911004B37CFCA0E1E3075964BC3E46", hash_generated_method = "53080835DD35ADB1F8F9B60308508FA7")
     private void setHasEmbeddedTabs(boolean hasEmbeddedTabs) {
         mHasEmbeddedTabs = hasEmbeddedTabs;
         {
             mActionView.setEmbeddedTabView(null);
             mContainerView.setTabContainer(mTabScrollView);
-        } //End block
+        } 
         {
             mContainerView.setTabContainer(null);
             mActionView.setEmbeddedTabView(mTabScrollView);
-        } //End block
+        } 
         final boolean isInTabMode = getNavigationMode() == NAVIGATION_MODE_TABS;
         {
             mTabScrollView.setVisibility(isInTabMode ? View.VISIBLE : View.GONE);
-        } //End block
+        } 
         mActionView.setCollapsable(!mHasEmbeddedTabs && isInTabMode);
-        // ---------- Original Method ----------
-        //mHasEmbeddedTabs = hasEmbeddedTabs;
-        //if (!mHasEmbeddedTabs) {
-            //mActionView.setEmbeddedTabView(null);
-            //mContainerView.setTabContainer(mTabScrollView);
-        //} else {
-            //mContainerView.setTabContainer(null);
-            //mActionView.setEmbeddedTabView(mTabScrollView);
-        //}
-        //final boolean isInTabMode = getNavigationMode() == NAVIGATION_MODE_TABS;
-        //if (mTabScrollView != null) {
-            //mTabScrollView.setVisibility(isInTabMode ? View.VISIBLE : View.GONE);
-        //}
-        //mActionView.setCollapsable(!mHasEmbeddedTabs && isInTabMode);
+        
+        
+        
+            
+            
+        
+            
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.718 -0400", hash_original_method = "04F31515B176FCA9797E5A3B1AE2D925", hash_generated_method = "5BB6134CCE0BDC7DA38969DA89604043")
     private void ensureTabsExist() {
         ScrollingTabContainerView tabScroller = new ScrollingTabContainerView(mContext);
         {
             tabScroller.setVisibility(View.VISIBLE);
             mActionView.setEmbeddedTabView(tabScroller);
-        } //End block
+        } 
         {
             tabScroller.setVisibility(getNavigationMode() == NAVIGATION_MODE_TABS ?
                     View.VISIBLE : View.GONE);
             mContainerView.setTabContainer(tabScroller);
-        } //End block
+        } 
         mTabScrollView = tabScroller;
-        // ---------- Original Method ----------
-        //if (mTabScrollView != null) {
-            //return;
-        //}
-        //ScrollingTabContainerView tabScroller = new ScrollingTabContainerView(mContext);
-        //if (mHasEmbeddedTabs) {
-            //tabScroller.setVisibility(View.VISIBLE);
-            //mActionView.setEmbeddedTabView(tabScroller);
-        //} else {
-            //tabScroller.setVisibility(getNavigationMode() == NAVIGATION_MODE_TABS ?
-                    //View.VISIBLE : View.GONE);
-            //mContainerView.setTabContainer(tabScroller);
-        //}
-        //mTabScrollView = tabScroller;
+        
+        
+            
+        
+        
+        
+            
+            
+        
+            
+                    
+            
+        
+        
     }
 
     
@@ -315,48 +319,52 @@ public class ActionBarImpl extends ActionBar {
             mDeferredModeDestroyCallback.onDestroyActionMode(mDeferredDestroyActionMode);
             mDeferredDestroyActionMode = null;
             mDeferredModeDestroyCallback = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mDeferredModeDestroyCallback != null) {
-            //mDeferredModeDestroyCallback.onDestroyActionMode(mDeferredDestroyActionMode);
-            //mDeferredDestroyActionMode = null;
-            //mDeferredModeDestroyCallback = null;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.720 -0400", hash_original_method = "F176835B5C4C66FE158A96087EB7976E", hash_generated_method = "F01BABF4974F0DC1B997F072C6F5EEFA")
     public void setShowHideAnimationEnabled(boolean enabled) {
         mShowHideAnimationEnabled = enabled;
         {
             mCurrentShowAnim.end();
-        } //End block
-        // ---------- Original Method ----------
-        //mShowHideAnimationEnabled = enabled;
-        //if (!enabled && mCurrentShowAnim != null) {
-            //mCurrentShowAnim.end();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.720 -0400", hash_original_method = "432643F5D3E1C75318DA649F07995AE5", hash_generated_method = "2913F3F7BCA46568007835BE8190ED78")
     public void addOnMenuVisibilityListener(OnMenuVisibilityListener listener) {
         mMenuVisibilityListeners.add(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //mMenuVisibilityListeners.add(listener);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.720 -0400", hash_original_method = "602CC871D8636269B09601DAE53B0892", hash_generated_method = "CB121F845C04220FCA2A6F9B3FAB6B01")
     public void removeOnMenuVisibilityListener(OnMenuVisibilityListener listener) {
         mMenuVisibilityListeners.remove(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //mMenuVisibilityListeners.remove(listener);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.721 -0400", hash_original_method = "459C6E3BA33A1A612E205065B1C3E1DC", hash_generated_method = "145F14D30C936D988A784D2855BE44EA")
     public void dispatchMenuVisibilityChanged(boolean isVisible) {
         mLastMenuVisibility = isVisible;
@@ -365,303 +373,327 @@ public class ActionBarImpl extends ActionBar {
             int i = 0;
             {
                 mMenuVisibilityListeners.get(i).onMenuVisibilityChanged(isVisible);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (isVisible == mLastMenuVisibility) {
-            //return;
-        //}
-        //mLastMenuVisibility = isVisible;
-        //final int count = mMenuVisibilityListeners.size();
-        //for (int i = 0; i < count; i++) {
-            //mMenuVisibilityListeners.get(i).onMenuVisibilityChanged(isVisible);
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.721 -0400", hash_original_method = "B07E8854D08E9349BCA465572774AD05", hash_generated_method = "91DD3F56E013E72FAB7452FAA6E20095")
     @Override
     public void setCustomView(int resId) {
         setCustomView(LayoutInflater.from(getThemedContext()).inflate(resId, mActionView, false));
         addTaint(resId);
-        // ---------- Original Method ----------
-        //setCustomView(LayoutInflater.from(getThemedContext()).inflate(resId, mActionView, false));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.721 -0400", hash_original_method = "7B32C43910C34545BE6AF1945BAD78C2", hash_generated_method = "45162C8E0F12FA3379E248A48E315EC5")
     @Override
     public void setDisplayUseLogoEnabled(boolean useLogo) {
         setDisplayOptions(useLogo ? DISPLAY_USE_LOGO : 0, DISPLAY_USE_LOGO);
         addTaint(useLogo);
-        // ---------- Original Method ----------
-        //setDisplayOptions(useLogo ? DISPLAY_USE_LOGO : 0, DISPLAY_USE_LOGO);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.722 -0400", hash_original_method = "7F0843FA34DCBF9EB20E04642D9BA553", hash_generated_method = "77AF66A4081B57D19A0162C83A8A2947")
     @Override
     public void setDisplayShowHomeEnabled(boolean showHome) {
         setDisplayOptions(showHome ? DISPLAY_SHOW_HOME : 0, DISPLAY_SHOW_HOME);
         addTaint(showHome);
-        // ---------- Original Method ----------
-        //setDisplayOptions(showHome ? DISPLAY_SHOW_HOME : 0, DISPLAY_SHOW_HOME);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.722 -0400", hash_original_method = "F859D1EA93554E58B56470BC246367BB", hash_generated_method = "A14E2B162ED5F9F1194A39DEE855239C")
     @Override
     public void setDisplayHomeAsUpEnabled(boolean showHomeAsUp) {
         setDisplayOptions(showHomeAsUp ? DISPLAY_HOME_AS_UP : 0, DISPLAY_HOME_AS_UP);
         addTaint(showHomeAsUp);
-        // ---------- Original Method ----------
-        //setDisplayOptions(showHomeAsUp ? DISPLAY_HOME_AS_UP : 0, DISPLAY_HOME_AS_UP);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.722 -0400", hash_original_method = "6C96766F23C0B7039876B0F0E23B9AFF", hash_generated_method = "345384BA3C6D5BBB3359229F0517D195")
     @Override
     public void setDisplayShowTitleEnabled(boolean showTitle) {
         setDisplayOptions(showTitle ? DISPLAY_SHOW_TITLE : 0, DISPLAY_SHOW_TITLE);
         addTaint(showTitle);
-        // ---------- Original Method ----------
-        //setDisplayOptions(showTitle ? DISPLAY_SHOW_TITLE : 0, DISPLAY_SHOW_TITLE);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.722 -0400", hash_original_method = "C60EF70FF87399C557FC41651D29083C", hash_generated_method = "BBAC1A647A0E1E51BB945477DD02AA1E")
     @Override
     public void setDisplayShowCustomEnabled(boolean showCustom) {
         setDisplayOptions(showCustom ? DISPLAY_SHOW_CUSTOM : 0, DISPLAY_SHOW_CUSTOM);
         addTaint(showCustom);
-        // ---------- Original Method ----------
-        //setDisplayOptions(showCustom ? DISPLAY_SHOW_CUSTOM : 0, DISPLAY_SHOW_CUSTOM);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.723 -0400", hash_original_method = "4D222159BA92CC275B5D5CB9ADE89E45", hash_generated_method = "20CE5649E5AF3952E376BADF5E9867B3")
     @Override
     public void setHomeButtonEnabled(boolean enable) {
         mActionView.setHomeButtonEnabled(enable);
         addTaint(enable);
-        // ---------- Original Method ----------
-        //mActionView.setHomeButtonEnabled(enable);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.723 -0400", hash_original_method = "93A6ED10F8DC44A47D2A5E40CE348C6E", hash_generated_method = "E4970BD8AF05390D270B4130B9DF8834")
     @Override
     public void setTitle(int resId) {
         setTitle(mContext.getString(resId));
         addTaint(resId);
-        // ---------- Original Method ----------
-        //setTitle(mContext.getString(resId));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.723 -0400", hash_original_method = "28BA950963DD65E7A01A305F037657F9", hash_generated_method = "F78BB9C2EEBDCF78AEFE9DD35A852241")
     @Override
     public void setSubtitle(int resId) {
         setSubtitle(mContext.getString(resId));
         addTaint(resId);
-        // ---------- Original Method ----------
-        //setSubtitle(mContext.getString(resId));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.723 -0400", hash_original_method = "11EA30EC8C9A94D19D07ED1EA15B77B1", hash_generated_method = "381FA9DD0051A7B0BEC892278CD655E0")
     public void setSelectedNavigationItem(int position) {
         {
             Object var89E2E10FCA0BD2AE4927F6837981B59A_330755339 = (mActionView.getNavigationMode());
-            //Begin case NAVIGATION_MODE_TABS 
+            
             selectTab(mTabs.get(position));
-            //End case NAVIGATION_MODE_TABS 
-            //Begin case NAVIGATION_MODE_LIST 
+            
+            
             mActionView.setDropdownSelectedPosition(position);
-            //End case NAVIGATION_MODE_LIST 
-            //Begin case default 
+            
+            
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "setSelectedNavigationIndex not valid for current navigation mode");
-            //End case default 
-        } //End collapsed parenthetic
+            
+        } 
         addTaint(position);
-        // ---------- Original Method ----------
-        //switch (mActionView.getNavigationMode()) {
-        //case NAVIGATION_MODE_TABS:
-            //selectTab(mTabs.get(position));
-            //break;
-        //case NAVIGATION_MODE_LIST:
-            //mActionView.setDropdownSelectedPosition(position);
-            //break;
-        //default:
-            //throw new IllegalStateException(
-                    //"setSelectedNavigationIndex not valid for current navigation mode");
-        //}
+        
+        
+        
+            
+            
+        
+            
+            
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.724 -0400", hash_original_method = "B97B28074DE5FCD367C21E021091BD45", hash_generated_method = "18F3DD1B438293814EC931E00EFDC066")
     public void removeAllTabs() {
         cleanupTabs();
-        // ---------- Original Method ----------
-        //cleanupTabs();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.724 -0400", hash_original_method = "62AE76DE88CDD8F4A1D9D70F05364203", hash_generated_method = "2876F52F172304588585ECF93C6BA287")
     private void cleanupTabs() {
         {
             selectTab(null);
-        } //End block
+        } 
         mTabs.clear();
         {
             mTabScrollView.removeAllTabs();
-        } //End block
+        } 
         mSavedTabPosition = INVALID_POSITION;
-        // ---------- Original Method ----------
-        //if (mSelectedTab != null) {
-            //selectTab(null);
-        //}
-        //mTabs.clear();
-        //if (mTabScrollView != null) {
-            //mTabScrollView.removeAllTabs();
-        //}
-        //mSavedTabPosition = INVALID_POSITION;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.724 -0400", hash_original_method = "2496AA6E0C686AA709C048B4D9A978B1", hash_generated_method = "E78EF245AE6B7472B7951F58BC812630")
     public void setTitle(CharSequence title) {
         mActionView.setTitle(title);
         addTaint(title.getTaint());
-        // ---------- Original Method ----------
-        //mActionView.setTitle(title);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.724 -0400", hash_original_method = "51EFE4022329006F8B97012193639D8C", hash_generated_method = "8EC4E0C37E994FBE03A720F03567FDDA")
     public void setSubtitle(CharSequence subtitle) {
         mActionView.setSubtitle(subtitle);
         addTaint(subtitle.getTaint());
-        // ---------- Original Method ----------
-        //mActionView.setSubtitle(subtitle);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.725 -0400", hash_original_method = "3F11889B61BC98E428CD1B2A494BFC53", hash_generated_method = "E3E153D08C74571AFD2B7407C364343E")
     public void setDisplayOptions(int options) {
         mActionView.setDisplayOptions(options);
         addTaint(options);
-        // ---------- Original Method ----------
-        //mActionView.setDisplayOptions(options);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.725 -0400", hash_original_method = "728BC8FE52686E77081ACD4BE860295D", hash_generated_method = "BD84881AD1F7EAFD834131E18A9FA86E")
     public void setDisplayOptions(int options, int mask) {
         final int current = mActionView.getDisplayOptions();
         mActionView.setDisplayOptions((options & mask) | (current & ~mask));
         addTaint(options);
         addTaint(mask);
-        // ---------- Original Method ----------
-        //final int current = mActionView.getDisplayOptions();
-        //mActionView.setDisplayOptions((options & mask) | (current & ~mask));
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.725 -0400", hash_original_method = "61B3599899498272F50206755C75E2FF", hash_generated_method = "4C48377B1AAE181071764FCB21AD1B54")
     public void setBackgroundDrawable(Drawable d) {
         mContainerView.setPrimaryBackground(d);
         addTaint(d.getTaint());
-        // ---------- Original Method ----------
-        //mContainerView.setPrimaryBackground(d);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.725 -0400", hash_original_method = "71E64D08C4AF72E9E040B3394527D26B", hash_generated_method = "018B3C1CFF34E23A23B1734B25D3016A")
     public void setStackedBackgroundDrawable(Drawable d) {
         mContainerView.setStackedBackground(d);
         addTaint(d.getTaint());
-        // ---------- Original Method ----------
-        //mContainerView.setStackedBackground(d);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.725 -0400", hash_original_method = "228BA16930C30CB95A53923FA275FB3B", hash_generated_method = "DF8A2EBDFAFD41174C0D511EB0828866")
     public void setSplitBackgroundDrawable(Drawable d) {
         {
             mSplitView.setSplitBackground(d);
-        } //End block
+        } 
         addTaint(d.getTaint());
-        // ---------- Original Method ----------
-        //if (mSplitView != null) {
-            //mSplitView.setSplitBackground(d);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.726 -0400", hash_original_method = "1D010261269A6D78FBB7E8684C141376", hash_generated_method = "7C077E05CD1949D06E1107221A64D83E")
     public View getCustomView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_471472857 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_471472857 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_471472857 = mActionView.getCustomNavigationView();
-        varB4EAC82CA7396A68D541C85D26508E83_471472857.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_471472857.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_471472857;
-        // ---------- Original Method ----------
-        //return mActionView.getCustomNavigationView();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.726 -0400", hash_original_method = "2440C8680C5986DA6B98061A5444C3DF", hash_generated_method = "2F5840B3C136C19D93DE4F507856D065")
     public CharSequence getTitle() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1475823057 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1475823057 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1475823057 = mActionView.getTitle();
-        varB4EAC82CA7396A68D541C85D26508E83_1475823057.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1475823057.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1475823057;
-        // ---------- Original Method ----------
-        //return mActionView.getTitle();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.727 -0400", hash_original_method = "7C309AA3715DBCB025C148B6DD4FF98A", hash_generated_method = "C942148B1BC4E7DC16380AC33C4535F4")
     public CharSequence getSubtitle() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1444258170 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1444258170 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1444258170 = mActionView.getSubtitle();
-        varB4EAC82CA7396A68D541C85D26508E83_1444258170.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1444258170.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1444258170;
-        // ---------- Original Method ----------
-        //return mActionView.getSubtitle();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.727 -0400", hash_original_method = "3CF23CB733C1A66BA695174D1D5C90F5", hash_generated_method = "85B9974C2A034D28D216EED778BA26FA")
     public int getNavigationMode() {
         int varEAA142AE97CC923611CFEB4857969BEA_268614099 = (mActionView.getNavigationMode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103322209 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103322209;
-        // ---------- Original Method ----------
-        //return mActionView.getNavigationMode();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.727 -0400", hash_original_method = "FB6F75E61CAD1294F319FE9A20EDC0AA", hash_generated_method = "30E7DD60CCF396EC4A908C0600102E64")
     public int getDisplayOptions() {
         int var0A196B6A925A1050E71EDF1CA21BAA1C_167500146 = (mActionView.getDisplayOptions());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1810514048 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1810514048;
-        // ---------- Original Method ----------
-        //return mActionView.getDisplayOptions();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.729 -0400", hash_original_method = "6F680EB91F7327296F43077A9CFCB9CD", hash_generated_method = "51CB8A440D7DEAFB43096B75779BC9B0")
     public ActionMode startActionMode(ActionMode.Callback callback) {
-        ActionMode varB4EAC82CA7396A68D541C85D26508E83_584223451 = null; //Variable for return #1
-        ActionMode varB4EAC82CA7396A68D541C85D26508E83_994594876 = null; //Variable for return #2
+        ActionMode varB4EAC82CA7396A68D541C85D26508E83_584223451 = null; 
+        ActionMode varB4EAC82CA7396A68D541C85D26508E83_994594876 = null; 
         boolean wasHidden = false;
         {
             wasHidden = mWasHiddenBeforeMode;
             mActionMode.finish();
-        } //End block
+        } 
         mContextView.killMode();
         ActionModeImpl mode = new ActionModeImpl(callback);
         {
@@ -673,56 +705,57 @@ public class ActionBarImpl extends ActionBar {
                 animateToMode(true);
                 {
                     mSplitView.setVisibility(View.VISIBLE);
-                } //End block
+                } 
                 mContextView.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
                 mActionMode = mode;
                 varB4EAC82CA7396A68D541C85D26508E83_584223451 = mode;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_994594876 = null;
         addTaint(callback.getTaint());
-        ActionMode varA7E53CE21691AB073D9660D615818899_1654299744; //Final return value
+        ActionMode varA7E53CE21691AB073D9660D615818899_1654299744; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1654299744 = varB4EAC82CA7396A68D541C85D26508E83_584223451;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1654299744 = varB4EAC82CA7396A68D541C85D26508E83_994594876;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1654299744.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1654299744.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1654299744;
-        // ---------- Original Method ----------
-        //boolean wasHidden = false;
-        //if (mActionMode != null) {
-            //wasHidden = mWasHiddenBeforeMode;
-            //mActionMode.finish();
-        //}
-        //mContextView.killMode();
-        //ActionModeImpl mode = new ActionModeImpl(callback);
-        //if (mode.dispatchOnCreate()) {
-            //mWasHiddenBeforeMode = !isShowing() || wasHidden;
-            //mode.invalidate();
-            //mContextView.initForMode(mode);
-            //animateToMode(true);
-            //if (mSplitView != null && mContextDisplayMode == CONTEXT_DISPLAY_SPLIT) {
-                //mSplitView.setVisibility(View.VISIBLE);
-            //}
-            //mContextView.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
-            //mActionMode = mode;
-            //return mode;
-        //}
-        //return null;
+        
+        
+        
+            
+            
+        
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.730 -0400", hash_original_method = "4981E6F1136ACFE06B622EFDD1F32611", hash_generated_method = "832A8F67104638CD652156646393B107")
     private void configureTab(Tab tab, int position) {
         final TabImpl tabi = (TabImpl) tab;
         final ActionBar.TabListener callback = tabi.getCallback();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Action Bar Tab must have a Callback");
-        } //End block
+        } 
         tabi.setPosition(position);
         mTabs.add(position, tabi);
         final int count = mTabs.size();
@@ -730,46 +763,49 @@ public class ActionBarImpl extends ActionBar {
             int i = position + 1;
             {
                 mTabs.get(i).setPosition(i);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(tab.getTaint());
         addTaint(position);
-        // ---------- Original Method ----------
-        //final TabImpl tabi = (TabImpl) tab;
-        //final ActionBar.TabListener callback = tabi.getCallback();
-        //if (callback == null) {
-            //throw new IllegalStateException("Action Bar Tab must have a Callback");
-        //}
-        //tabi.setPosition(position);
-        //mTabs.add(position, tabi);
-        //final int count = mTabs.size();
-        //for (int i = position + 1; i < count; i++) {
-            //mTabs.get(i).setPosition(i);
-        //}
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.731 -0400", hash_original_method = "1EECF05398B0BE8AB00F4615B5278612", hash_generated_method = "DF854CE8649E1DA2F3E8FD271CADD779")
     @Override
     public void addTab(Tab tab) {
         addTab(tab, mTabs.isEmpty());
         addTaint(tab.getTaint());
-        // ---------- Original Method ----------
-        //addTab(tab, mTabs.isEmpty());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.732 -0400", hash_original_method = "654B3E709639F944F902BA5D9B821C89", hash_generated_method = "24FFC59B29B2791554A8C8337235B53E")
     @Override
     public void addTab(Tab tab, int position) {
         addTab(tab, position, mTabs.isEmpty());
         addTaint(tab.getTaint());
         addTaint(position);
-        // ---------- Original Method ----------
-        //addTab(tab, position, mTabs.isEmpty());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.732 -0400", hash_original_method = "89408631A5DFBB8696DA15288AA15329", hash_generated_method = "6894FE0DA72315361E2E4321D8BE02D3")
     @Override
     public void addTab(Tab tab, boolean setSelected) {
@@ -778,19 +814,20 @@ public class ActionBarImpl extends ActionBar {
         configureTab(tab, mTabs.size());
         {
             selectTab(tab);
-        } //End block
+        } 
         addTaint(tab.getTaint());
         addTaint(setSelected);
-        // ---------- Original Method ----------
-        //ensureTabsExist();
-        //mTabScrollView.addTab(tab, setSelected);
-        //configureTab(tab, mTabs.size());
-        //if (setSelected) {
-            //selectTab(tab);
-        //}
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.733 -0400", hash_original_method = "041C4C5A1F00C6CFE52123DF1D5CFA62", hash_generated_method = "1E61C3A9F584BCEDF75A485129FFA3C4")
     @Override
     public void addTab(Tab tab, int position, boolean setSelected) {
@@ -799,42 +836,45 @@ public class ActionBarImpl extends ActionBar {
         configureTab(tab, position);
         {
             selectTab(tab);
-        } //End block
+        } 
         addTaint(tab.getTaint());
         addTaint(position);
         addTaint(setSelected);
-        // ---------- Original Method ----------
-        //ensureTabsExist();
-        //mTabScrollView.addTab(tab, position, setSelected);
-        //configureTab(tab, position);
-        //if (setSelected) {
-            //selectTab(tab);
-        //}
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.734 -0400", hash_original_method = "086373AB3E22E85AEE50C2F735BD106D", hash_generated_method = "8C96A0D19EE9497079D086C75AF976A5")
     @Override
     public Tab newTab() {
-        Tab varB4EAC82CA7396A68D541C85D26508E83_538225043 = null; //Variable for return #1
+        Tab varB4EAC82CA7396A68D541C85D26508E83_538225043 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_538225043 = new TabImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_538225043.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_538225043.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_538225043;
-        // ---------- Original Method ----------
-        //return new TabImpl();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.734 -0400", hash_original_method = "D97BFE7F24375737332EF4EB210BF330", hash_generated_method = "D768F8C8B25606A13B01D9177D9D5ED5")
     @Override
     public void removeTab(Tab tab) {
         removeTabAt(tab.getPosition());
         addTaint(tab.getTaint());
-        // ---------- Original Method ----------
-        //removeTabAt(tab.getPosition());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.735 -0400", hash_original_method = "B3645E4F4AB7E9BBDE0315AEF0157D54", hash_generated_method = "19ADE862689EF9E4F6F52A9A9E1240F8")
     @Override
     public void removeTabAt(int position) {
@@ -845,39 +885,40 @@ public class ActionBarImpl extends ActionBar {
         TabImpl removedTab = mTabs.remove(position);
         {
             removedTab.setPosition(-1);
-        } //End block
+        } 
         final int newTabCount = mTabs.size();
         {
             int i = position;
             {
                 mTabs.get(i).setPosition(i);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             selectTab(mTabs.isEmpty() ? null : mTabs.get(Math.max(0, position - 1)));
-        } //End block
+        } 
         addTaint(position);
-        // ---------- Original Method ----------
-        //if (mTabScrollView == null) {
-            //return;
-        //}
-        //int selectedTabPosition = mSelectedTab != null
-                //? mSelectedTab.getPosition() : mSavedTabPosition;
-        //mTabScrollView.removeTabAt(position);
-        //TabImpl removedTab = mTabs.remove(position);
-        //if (removedTab != null) {
-            //removedTab.setPosition(-1);
-        //}
-        //final int newTabCount = mTabs.size();
-        //for (int i = position; i < newTabCount; i++) {
-            //mTabs.get(i).setPosition(i);
-        //}
-        //if (selectedTabPosition == position) {
-            //selectTab(mTabs.isEmpty() ? null : mTabs.get(Math.max(0, position - 1)));
-        //}
+        
+        
+            
+        
+        
+                
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.736 -0400", hash_original_method = "08E647315276EA6EFD361EFCDF66D68C", hash_generated_method = "6C1F032138A594CA8258383F5664C877")
     @Override
     public void selectTab(Tab tab) {
@@ -885,66 +926,68 @@ public class ActionBarImpl extends ActionBar {
             boolean var0D865F05ACCA97EEC09A4D554FCE6944_1285629828 = (getNavigationMode() != NAVIGATION_MODE_TABS);
             {
                 mSavedTabPosition = tab != null ? tab.getPosition() : INVALID_POSITION;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final FragmentTransaction trans = mActivity.getFragmentManager().beginTransaction()
                 .disallowAddToBackStack();
         {
             {
                 mSelectedTab.getCallback().onTabReselected(mSelectedTab, trans);
                 mTabScrollView.animateToTab(tab.getPosition());
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mTabScrollView.setTabSelected(tab != null ? tab.getPosition() : Tab.INVALID_POSITION);
             {
                 mSelectedTab.getCallback().onTabUnselected(mSelectedTab, trans);
-            } //End block
+            } 
             mSelectedTab = (TabImpl) tab;
             {
                 mSelectedTab.getCallback().onTabSelected(mSelectedTab, trans);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean var0609B2E91FA97D998D43ECA1A4058103_1168438188 = (!trans.isEmpty());
             {
                 trans.commit();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.736 -0400", hash_original_method = "2AD2D5B38A8D730799170A69D020CCD7", hash_generated_method = "3DDDAFFE94EBD8101823D57E30B4B1C3")
     @Override
     public Tab getSelectedTab() {
-        Tab varB4EAC82CA7396A68D541C85D26508E83_350693679 = null; //Variable for return #1
+        Tab varB4EAC82CA7396A68D541C85D26508E83_350693679 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_350693679 = mSelectedTab;
-        varB4EAC82CA7396A68D541C85D26508E83_350693679.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_350693679.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_350693679;
-        // ---------- Original Method ----------
-        //return mSelectedTab;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.736 -0400", hash_original_method = "7329EA59D7EBE41DA23E0A3E55EEA1A2", hash_generated_method = "EF0DD92F5692AAC1DB6FAC412DC3D1E2")
     @Override
     public int getHeight() {
         int varB6E80F54C86C59EC88E3A5A42628443F_698023762 = (mContainerView.getHeight());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1066379584 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1066379584;
-        // ---------- Original Method ----------
-        //return mContainerView.getHeight();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.737 -0400", hash_original_method = "546A4715540EEE6F49A6EAAEA56C241C", hash_generated_method = "9B6F5E1BBF9ED1EA79DF35779E1A9F3A")
     @Override
     public void show() {
         show(true);
-        // ---------- Original Method ----------
-        //show(true);
+        
+        
     }
 
     
@@ -952,13 +995,13 @@ public class ActionBarImpl extends ActionBar {
      void show(boolean markHiddenBeforeMode) {
         {
             mCurrentShowAnim.end();
-        } //End block
+        } 
         {
             boolean varA04FE79F70596AEDDC366BB1F9C953E0_799828874 = (mContainerView.getVisibility() == View.VISIBLE);
             {
                 mWasHiddenBeforeMode = false;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mContainerView.setVisibility(View.VISIBLE);
         {
             mContainerView.setAlpha(0);
@@ -969,36 +1012,37 @@ public class ActionBarImpl extends ActionBar {
                         -mContainerView.getHeight(), 0));
                 mContainerView.setTranslationY(-mContainerView.getHeight());
                 b.with(ObjectAnimator.ofFloat(mContainerView, "translationY", 0));
-            } //End block
+            } 
             {
                 mSplitView.setAlpha(0);
                 mSplitView.setVisibility(View.VISIBLE);
                 b.with(ObjectAnimator.ofFloat(mSplitView, "alpha", 1));
-            } //End block
+            } 
             anim.addListener(mShowListener);
             mCurrentShowAnim = anim;
             anim.start();
-        } //End block
+        } 
         {
             mContainerView.setAlpha(1);
             mContainerView.setTranslationY(0);
             mShowListener.onAnimationEnd(null);
-        } //End block
+        } 
         addTaint(markHiddenBeforeMode);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.738 -0400", hash_original_method = "F98E692B5353704914249A64080F4E16", hash_generated_method = "4E3DF77C05D640017D8BDDE87617FCE5")
     @Override
     public void hide() {
         {
             mCurrentShowAnim.end();
-        } //End block
+        } 
         {
             boolean varADDBB77A9CB269D2E537C6D87A9B8737_723068219 = (mContainerView.getVisibility() == View.GONE);
-        } //End collapsed parenthetic
+        } 
         {
             mContainerView.setAlpha(1);
             mContainerView.setTransitioning(true);
@@ -1009,33 +1053,34 @@ public class ActionBarImpl extends ActionBar {
                         0, -mContainerView.getHeight()));
                 b.with(ObjectAnimator.ofFloat(mContainerView, "translationY",
                         -mContainerView.getHeight()));
-            } //End block
+            } 
             {
                 boolean varF225B1267295DB8E06979CA78868E507_482027276 = (mSplitView != null && mSplitView.getVisibility() == View.VISIBLE);
                 {
                     mSplitView.setAlpha(1);
                     b.with(ObjectAnimator.ofFloat(mSplitView, "alpha", 0));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             anim.addListener(mHideListener);
             mCurrentShowAnim = anim;
             anim.start();
-        } //End block
+        } 
         {
             mHideListener.onAnimationEnd(null);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.738 -0400", hash_original_method = "02F75CA35AA01FBE52A717B38FA758F7", hash_generated_method = "AD57F3E814264BFB3A20A78B67D2AAF7")
     public boolean isShowing() {
         boolean varFABAF10FC87FB52E607ED88B31859D35_745604342 = (mContainerView.getVisibility() == View.VISIBLE);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_727966253 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_727966253;
-        // ---------- Original Method ----------
-        //return mContainerView.getVisibility() == View.VISIBLE;
+        
+        
     }
 
     
@@ -1043,37 +1088,38 @@ public class ActionBarImpl extends ActionBar {
      void animateToMode(boolean toActionMode) {
         {
             show(false);
-        } //End block
+        } 
         {
             mCurrentModeAnim.end();
-        } //End block
+        } 
         mActionView.animateToVisibility(toActionMode ? View.GONE : View.VISIBLE);
         mContextView.animateToVisibility(toActionMode ? View.VISIBLE : View.GONE);
         {
             boolean varFBD93DC9D1D6299B253C2D05796D3D2B_434934950 = (mTabScrollView != null && !mActionView.hasEmbeddedTabs() && mActionView.isCollapsed());
             {
                 mTabScrollView.animateToVisibility(toActionMode ? View.GONE : View.VISIBLE);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(toActionMode);
-        // ---------- Original Method ----------
-        //if (toActionMode) {
-            //show(false);
-        //}
-        //if (mCurrentModeAnim != null) {
-            //mCurrentModeAnim.end();
-        //}
-        //mActionView.animateToVisibility(toActionMode ? View.GONE : View.VISIBLE);
-        //mContextView.animateToVisibility(toActionMode ? View.VISIBLE : View.GONE);
-        //if (mTabScrollView != null && !mActionView.hasEmbeddedTabs() && mActionView.isCollapsed()) {
-            //mTabScrollView.animateToVisibility(toActionMode ? View.GONE : View.VISIBLE);
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.741 -0400", hash_original_method = "3EA212821B302B1822414F8223429D93", hash_generated_method = "A8CB681D3AA71FB49CF3C749BD3D1BD4")
     public Context getThemedContext() {
-        Context varB4EAC82CA7396A68D541C85D26508E83_933482904 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_933482904 = null; 
         {
             TypedValue outValue = new TypedValue();
             Resources.Theme currentTheme = mContext.getTheme();
@@ -1084,42 +1130,44 @@ public class ActionBarImpl extends ActionBar {
                 boolean varDD6A9FFA4382518FE4FB51366D933575_530264079 = (targetThemeRes != 0 && mContext.getThemeResId() != targetThemeRes);
                 {
                     mThemedContext = new ContextThemeWrapper(mContext, targetThemeRes);
-                } //End block
+                } 
                 {
                     mThemedContext = mContext;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_933482904 = mThemedContext;
-        varB4EAC82CA7396A68D541C85D26508E83_933482904.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_933482904.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_933482904;
-        // ---------- Original Method ----------
-        //if (mThemedContext == null) {
-            //TypedValue outValue = new TypedValue();
-            //Resources.Theme currentTheme = mContext.getTheme();
-            //currentTheme.resolveAttribute(com.android.internal.R.attr.actionBarWidgetTheme,
-                    //outValue, true);
-            //final int targetThemeRes = outValue.resourceId;
-            //if (targetThemeRes != 0 && mContext.getThemeResId() != targetThemeRes) {
-                //mThemedContext = new ContextThemeWrapper(mContext, targetThemeRes);
-            //} else {
-                //mThemedContext = mContext;
-            //}
-        //}
-        //return mThemedContext;
+        
+        
+            
+            
+            
+                    
+            
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.742 -0400", hash_original_method = "82CB01F3A317C5518DAD7B810C7481F9", hash_generated_method = "F19D492ACDDC38876E3FA77CC4A23850")
     @Override
     public void setCustomView(View view) {
         mActionView.setCustomNavigationView(view);
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
-        //mActionView.setCustomNavigationView(view);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.742 -0400", hash_original_method = "D405B9340EEDF523A821CB828A77247A", hash_generated_method = "838105C427C6D87EA1B82E3C5023CBD6")
     @Override
     public void setCustomView(View view, LayoutParams layoutParams) {
@@ -1127,12 +1175,13 @@ public class ActionBarImpl extends ActionBar {
         mActionView.setCustomNavigationView(view);
         addTaint(view.getTaint());
         addTaint(layoutParams.getTaint());
-        // ---------- Original Method ----------
-        //view.setLayoutParams(layoutParams);
-        //mActionView.setCustomNavigationView(view);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.743 -0400", hash_original_method = "DE3A042A48DE08AEC88EC1C0AD695D6F", hash_generated_method = "1EF6672E48BAC8935F7834BAB430F750")
     @Override
     public void setListNavigationCallbacks(SpinnerAdapter adapter, OnNavigationListener callback) {
@@ -1140,166 +1189,175 @@ public class ActionBarImpl extends ActionBar {
         mActionView.setCallback(callback);
         addTaint(adapter.getTaint());
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //mActionView.setDropdownAdapter(adapter);
-        //mActionView.setCallback(callback);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.744 -0400", hash_original_method = "DA5FE7663B58F3C2464F93A06566CD8E", hash_generated_method = "4ABA0D1E7C2680822DF13B3B18A5E9D8")
     @Override
     public int getSelectedNavigationIndex() {
         {
             Object var89E2E10FCA0BD2AE4927F6837981B59A_518669407 = (mActionView.getNavigationMode());
-            //Begin case NAVIGATION_MODE_TABS 
+            
             {
                 Object var9E0D618A4EE8CC879C5AC350775986E3_981166878 = (mSelectedTab.getPosition());
-            } //End flattened ternary
-            //End case NAVIGATION_MODE_TABS 
-            //Begin case NAVIGATION_MODE_LIST 
+            } 
+            
+            
             int var0DAE3350C64D0906A58D53288479EA2D_648767644 = (mActionView.getDropdownSelectedPosition());
-            //End case NAVIGATION_MODE_LIST 
-        } //End collapsed parenthetic
+            
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923341920 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923341920;
-        // ---------- Original Method ----------
-        //switch (mActionView.getNavigationMode()) {
-            //case NAVIGATION_MODE_TABS:
-                //return mSelectedTab != null ? mSelectedTab.getPosition() : -1;
-            //case NAVIGATION_MODE_LIST:
-                //return mActionView.getDropdownSelectedPosition();
-            //default:
-                //return -1;
-        //}
+        
+        
+            
+                
+            
+                
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.745 -0400", hash_original_method = "29C3EDF1B0696DD606C19CEF5DFCB27A", hash_generated_method = "A9A3AF836198678692C47A3F2A2AC7E5")
     @Override
     public int getNavigationItemCount() {
         {
             Object var89E2E10FCA0BD2AE4927F6837981B59A_780820965 = (mActionView.getNavigationMode());
-            //Begin case NAVIGATION_MODE_TABS 
+            
             int var81340BC1C620E3820A05E23DEE8223AF_1538431063 = (mTabs.size());
-            //End case NAVIGATION_MODE_TABS 
-            //Begin case NAVIGATION_MODE_LIST 
+            
+            
             SpinnerAdapter adapter = mActionView.getDropdownAdapter();
-            //End case NAVIGATION_MODE_LIST 
-            //Begin case NAVIGATION_MODE_LIST 
+            
+            
             {
                 Object varF7742EA74032E62C939C320B7B8C4E62_1262920908 = (adapter.getCount());
-            } //End flattened ternary
-            //End case NAVIGATION_MODE_LIST 
-        } //End collapsed parenthetic
+            } 
+            
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1427101631 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1427101631;
-        // ---------- Original Method ----------
-        //switch (mActionView.getNavigationMode()) {
-            //case NAVIGATION_MODE_TABS:
-                //return mTabs.size();
-            //case NAVIGATION_MODE_LIST:
-                //SpinnerAdapter adapter = mActionView.getDropdownAdapter();
-                //return adapter != null ? adapter.getCount() : 0;
-            //default:
-                //return 0;
-        //}
+        
+        
+            
+                
+            
+                
+                
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.745 -0400", hash_original_method = "44E873137D601CC44196E7945B5F3744", hash_generated_method = "27E2B770AB021D0B5FD9D7023DF60F9C")
     @Override
     public int getTabCount() {
         int varA0AA69837201731921DCB8C161D1B5BD_309947666 = (mTabs.size());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_766368523 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_766368523;
-        // ---------- Original Method ----------
-        //return mTabs.size();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.746 -0400", hash_original_method = "2CF769A940AAC419EB99620655E4C93A", hash_generated_method = "765CC85C4B7DB0D4B059BEAD798D761B")
     @Override
     public void setNavigationMode(int mode) {
         final int oldMode = mActionView.getNavigationMode();
-        //Begin case NAVIGATION_MODE_TABS 
+        
         mSavedTabPosition = getSelectedNavigationIndex();
-        //End case NAVIGATION_MODE_TABS 
-        //Begin case NAVIGATION_MODE_TABS 
+        
+        
         selectTab(null);
-        //End case NAVIGATION_MODE_TABS 
-        //Begin case NAVIGATION_MODE_TABS 
+        
+        
         mTabScrollView.setVisibility(View.GONE);
-        //End case NAVIGATION_MODE_TABS 
+        
         mActionView.setNavigationMode(mode);
-        //Begin case NAVIGATION_MODE_TABS 
+        
         ensureTabsExist();
-        //End case NAVIGATION_MODE_TABS 
-        //Begin case NAVIGATION_MODE_TABS 
+        
+        
         mTabScrollView.setVisibility(View.VISIBLE);
-        //End case NAVIGATION_MODE_TABS 
-        //Begin case NAVIGATION_MODE_TABS 
+        
+        
         {
             setSelectedNavigationItem(mSavedTabPosition);
             mSavedTabPosition = INVALID_POSITION;
-        } //End block
-        //End case NAVIGATION_MODE_TABS 
+        } 
+        
         mActionView.setCollapsable(mode == NAVIGATION_MODE_TABS && !mHasEmbeddedTabs);
         addTaint(mode);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.746 -0400", hash_original_method = "389BF0B1EF97627FAF399E95ED0D1079", hash_generated_method = "B763BD036A8710FB48BF16068F5F23C9")
     @Override
     public Tab getTabAt(int index) {
-        Tab varB4EAC82CA7396A68D541C85D26508E83_786646104 = null; //Variable for return #1
+        Tab varB4EAC82CA7396A68D541C85D26508E83_786646104 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_786646104 = mTabs.get(index);
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_786646104.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_786646104.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_786646104;
-        // ---------- Original Method ----------
-        //return mTabs.get(index);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.747 -0400", hash_original_method = "246181C3E410F19AA68D711311C45E89", hash_generated_method = "5C44AB310152040AFE34D4DAE8CC2099")
     @Override
     public void setIcon(int resId) {
         mActionView.setIcon(resId);
         addTaint(resId);
-        // ---------- Original Method ----------
-        //mActionView.setIcon(resId);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.747 -0400", hash_original_method = "976AFC7A654132AA465D788A8B684BD0", hash_generated_method = "EB250D01167AF2BC68BAB1DADC9103F7")
     @Override
     public void setIcon(Drawable icon) {
         mActionView.setIcon(icon);
         addTaint(icon.getTaint());
-        // ---------- Original Method ----------
-        //mActionView.setIcon(icon);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.748 -0400", hash_original_method = "629A6907FC2030BF835EC3846EE4C4B9", hash_generated_method = "218A843EBF7FEA3D733E5F202EC45E25")
     @Override
     public void setLogo(int resId) {
         mActionView.setLogo(resId);
         addTaint(resId);
-        // ---------- Original Method ----------
-        //mActionView.setLogo(resId);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.748 -0400", hash_original_method = "563E995ECF1A81A300841064D1D1EC89", hash_generated_method = "437A2B058E64ACC79A4ECDC1B4F7E300")
     @Override
     public void setLogo(Drawable logo) {
         mActionView.setLogo(logo);
         addTaint(logo.getTaint());
-        // ---------- Original Method ----------
-        //mActionView.setLogo(logo);
+        
+        
     }
 
     
@@ -1320,35 +1378,35 @@ public class ActionBarImpl extends ActionBar {
             mMenu = new MenuBuilder(getThemedContext())
                     .setDefaultShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
             mMenu.setCallback(this);
-            // ---------- Original Method ----------
-            //mCallback = callback;
-            //mMenu = new MenuBuilder(getThemedContext())
-                    //.setDefaultShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
-            //mMenu.setCallback(this);
+            
+            
+            
+                    
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.751 -0400", hash_original_method = "51A0980A38EB9FD2F0CEA8B2697D7721", hash_generated_method = "AF407D6976EEE8BE7BEE9FF635994A60")
         @Override
         public MenuInflater getMenuInflater() {
-            MenuInflater varB4EAC82CA7396A68D541C85D26508E83_1154612840 = null; //Variable for return #1
+            MenuInflater varB4EAC82CA7396A68D541C85D26508E83_1154612840 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1154612840 = new MenuInflater(getThemedContext());
-            varB4EAC82CA7396A68D541C85D26508E83_1154612840.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1154612840.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1154612840;
-            // ---------- Original Method ----------
-            //return new MenuInflater(getThemedContext());
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.754 -0400", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "B1C3A3D7E86E51314F5B0A503FD9D1F5")
         @Override
         public Menu getMenu() {
-            Menu varB4EAC82CA7396A68D541C85D26508E83_708863589 = null; //Variable for return #1
+            Menu varB4EAC82CA7396A68D541C85D26508E83_708863589 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_708863589 = mMenu;
-            varB4EAC82CA7396A68D541C85D26508E83_708863589.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_708863589.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_708863589;
-            // ---------- Original Method ----------
-            //return mMenu;
+            
+            
         }
 
         
@@ -1357,14 +1415,14 @@ public class ActionBarImpl extends ActionBar {
         public void finish() {
             {
                 boolean var830761C64F0699CF4AD2D4B7B4D7E08E_706904886 = (mActionMode != this);
-            } //End collapsed parenthetic
+            } 
             {
                 mDeferredDestroyActionMode = this;
                 mDeferredModeDestroyCallback = mCallback;
-            } //End block
+            } 
             {
                 mCallback.onDestroyActionMode(this);
-            } //End block
+            } 
             mCallback = null;
             animateToMode(false);
             mContextView.closeMode();
@@ -1372,25 +1430,25 @@ public class ActionBarImpl extends ActionBar {
             mActionMode = null;
             {
                 hide();
-            } //End block
-            // ---------- Original Method ----------
-            //if (mActionMode != this) {
-                //return;
-            //}
-            //if (mWasHiddenBeforeMode) {
-                //mDeferredDestroyActionMode = this;
-                //mDeferredModeDestroyCallback = mCallback;
-            //} else {
-                //mCallback.onDestroyActionMode(this);
-            //}
-            //mCallback = null;
-            //animateToMode(false);
-            //mContextView.closeMode();
-            //mActionView.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
-            //mActionMode = null;
-            //if (mWasHiddenBeforeMode) {
-                //hide();
-            //}
+            } 
+            
+            
+                
+            
+            
+                
+                
+            
+                
+            
+            
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -1401,18 +1459,18 @@ public class ActionBarImpl extends ActionBar {
             try 
             {
                 mCallback.onPrepareActionMode(this, mMenu);
-            } //End block
+            } 
             finally 
             {
                 mMenu.startDispatchingItemsChanged();
-            } //End block
-            // ---------- Original Method ----------
-            //mMenu.stopDispatchingItemsChanged();
-            //try {
-                //mCallback.onPrepareActionMode(this, mMenu);
-            //} finally {
-                //mMenu.startDispatchingItemsChanged();
-            //}
+            } 
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -1422,20 +1480,20 @@ public class ActionBarImpl extends ActionBar {
             try 
             {
                 boolean var8B33BA39C48AC4211B5B4A48DBAC6104_1606216172 = (mCallback.onCreateActionMode(this, mMenu));
-            } //End block
+            } 
             finally 
             {
                 mMenu.startDispatchingItemsChanged();
-            } //End block
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_184384003 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_184384003;
-            // ---------- Original Method ----------
-            //mMenu.stopDispatchingItemsChanged();
-            //try {
-                //return mCallback.onCreateActionMode(this, mMenu);
-            //} finally {
-                //mMenu.startDispatchingItemsChanged();
-            //}
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -1444,9 +1502,9 @@ public class ActionBarImpl extends ActionBar {
         public void setCustomView(View view) {
             mContextView.setCustomView(view);
             mCustomView = new WeakReference<View>(view);
-            // ---------- Original Method ----------
-            //mContextView.setCustomView(view);
-            //mCustomView = new WeakReference<View>(view);
+            
+            
+            
         }
 
         
@@ -1455,8 +1513,8 @@ public class ActionBarImpl extends ActionBar {
         public void setSubtitle(CharSequence subtitle) {
             mContextView.setSubtitle(subtitle);
             addTaint(subtitle.getTaint());
-            // ---------- Original Method ----------
-            //mContextView.setSubtitle(subtitle);
+            
+            
         }
 
         
@@ -1465,8 +1523,8 @@ public class ActionBarImpl extends ActionBar {
         public void setTitle(CharSequence title) {
             mContextView.setTitle(title);
             addTaint(title.getTaint());
-            // ---------- Original Method ----------
-            //mContextView.setTitle(title);
+            
+            
         }
 
         
@@ -1475,8 +1533,8 @@ public class ActionBarImpl extends ActionBar {
         public void setTitle(int resId) {
             setTitle(mContext.getResources().getString(resId));
             addTaint(resId);
-            // ---------- Original Method ----------
-            //setTitle(mContext.getResources().getString(resId));
+            
+            
         }
 
         
@@ -1485,117 +1543,117 @@ public class ActionBarImpl extends ActionBar {
         public void setSubtitle(int resId) {
             setSubtitle(mContext.getResources().getString(resId));
             addTaint(resId);
-            // ---------- Original Method ----------
-            //setSubtitle(mContext.getResources().getString(resId));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.760 -0400", hash_original_method = "B7C7D06E8A777BBCD952F14E250A3EF1", hash_generated_method = "9ACABA55CFC4B50E90224EBD3F985D0C")
         @Override
         public CharSequence getTitle() {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_741382580 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_741382580 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_741382580 = mContextView.getTitle();
-            varB4EAC82CA7396A68D541C85D26508E83_741382580.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_741382580.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_741382580;
-            // ---------- Original Method ----------
-            //return mContextView.getTitle();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.761 -0400", hash_original_method = "117FD7BAEF9CDB7B98041D8B7F2D9548", hash_generated_method = "831C73F0714C442EF9C14E7D76559EB2")
         @Override
         public CharSequence getSubtitle() {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1891287998 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1891287998 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1891287998 = mContextView.getSubtitle();
-            varB4EAC82CA7396A68D541C85D26508E83_1891287998.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1891287998.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1891287998;
-            // ---------- Original Method ----------
-            //return mContextView.getSubtitle();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.762 -0400", hash_original_method = "6445ACEDBE83E3C2D5AD83B96CDE83BC", hash_generated_method = "F24D8841057923C1980049366BC2733A")
         @Override
         public View getCustomView() {
-            View varB4EAC82CA7396A68D541C85D26508E83_1978961221 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_1978961221 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1978961221 = mCustomView != null ? mCustomView.get() : null;
-            varB4EAC82CA7396A68D541C85D26508E83_1978961221.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1978961221.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1978961221;
-            // ---------- Original Method ----------
-            //return mCustomView != null ? mCustomView.get() : null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.763 -0400", hash_original_method = "811C79E6E9EF223E39B6355E1D511C3E", hash_generated_method = "522DA21DF4672C63E48197E6632AECC7")
         public boolean onMenuItemSelected(MenuBuilder menu, MenuItem item) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean varEDF93C5517A51BAAA6230A19AB6D2347_920490647 = (mCallback.onActionItemClicked(this, item));
-            } //End block
+            } 
             addTaint(menu.getTaint());
             addTaint(item.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1297481216 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1297481216;
-            // ---------- Original Method ----------
-            //if (mCallback != null) {
-                //return mCallback.onActionItemClicked(this, item);
-            //} else {
-                //return false;
-            //}
+            
+            
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.763 -0400", hash_original_method = "FBD72BA67A5E56379A29D442239E7ED0", hash_generated_method = "A2CF4D0437BFEF81F64A913714948494")
         public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(menu.getTaint());
             addTaint(allMenusAreClosing);
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.764 -0400", hash_original_method = "7D886846B59E57EE3CE79C98862AC926", hash_generated_method = "CD03B5D893169AC312975A9A916E047E")
         public boolean onSubMenuSelected(SubMenuBuilder subMenu) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             {
                 boolean varF5ECE34C03DAB72F995F7F65544DBA24_735888316 = (!subMenu.hasVisibleItems());
-            } //End collapsed parenthetic
+            } 
             new MenuPopupHelper(getThemedContext(), subMenu).show();
             addTaint(subMenu.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1363771331 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1363771331;
-            // ---------- Original Method ----------
-            //if (mCallback == null) {
-                //return false;
-            //}
-            //if (!subMenu.hasVisibleItems()) {
-                //return true;
-            //}
-            //new MenuPopupHelper(getThemedContext(), subMenu).show();
-            //return true;
+            
+            
+                
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.764 -0400", hash_original_method = "6B692B27380EC4C10CDFFF60DC2D0482", hash_generated_method = "2074465CD9A30183B1E5202C403E062E")
         public void onCloseSubMenu(SubMenuBuilder menu) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(menu.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.764 -0400", hash_original_method = "5641671D684852B976991F51D9F0AB3E", hash_generated_method = "E3A317673E8B22EAA6643922166D5730")
         public void onMenuModeChange(MenuBuilder menu) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             invalidate();
             mContextView.showOverflowMenu();
             addTaint(menu.getTaint());
-            // ---------- Original Method ----------
-            //if (mCallback == null) {
-                //return;
-            //}
-            //invalidate();
-            //mContextView.showOverflowMenu();
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -1629,117 +1687,117 @@ public class ActionBarImpl extends ActionBar {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.765 -0400", hash_original_method = "6BCFC14B7595CFA31D582BF6176C023E", hash_generated_method = "6BCFC14B7595CFA31D582BF6176C023E")
         public TabImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.765 -0400", hash_original_method = "15C9157ADF1B79E512CAFF71050D7BD7", hash_generated_method = "DFCE86AB4BF6984E63FDA9E966D6AD9A")
         @Override
         public Object getTag() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_1954490981 = null; //Variable for return #1
+            Object varB4EAC82CA7396A68D541C85D26508E83_1954490981 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1954490981 = mTag;
-            varB4EAC82CA7396A68D541C85D26508E83_1954490981.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1954490981.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1954490981;
-            // ---------- Original Method ----------
-            //return mTag;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.766 -0400", hash_original_method = "BB14A4918D906598A88E3D6A8128EA77", hash_generated_method = "29A08838DEC34598E9BA33A1D0A26894")
         @Override
         public Tab setTag(Object tag) {
-            Tab varB4EAC82CA7396A68D541C85D26508E83_129943850 = null; //Variable for return #1
+            Tab varB4EAC82CA7396A68D541C85D26508E83_129943850 = null; 
             mTag = tag;
             varB4EAC82CA7396A68D541C85D26508E83_129943850 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_129943850.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_129943850.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_129943850;
-            // ---------- Original Method ----------
-            //mTag = tag;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.766 -0400", hash_original_method = "E24F48568604237F2413A93282202AA0", hash_generated_method = "03B046CB2562F20032542297066EC0A0")
         public ActionBar.TabListener getCallback() {
-            ActionBar.TabListener varB4EAC82CA7396A68D541C85D26508E83_2103814908 = null; //Variable for return #1
+            ActionBar.TabListener varB4EAC82CA7396A68D541C85D26508E83_2103814908 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2103814908 = mCallback;
-            varB4EAC82CA7396A68D541C85D26508E83_2103814908.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2103814908.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2103814908;
-            // ---------- Original Method ----------
-            //return mCallback;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.767 -0400", hash_original_method = "464280ABF8AEC5C77A1E9FBBDE9C172D", hash_generated_method = "C67F7584EEAA100C52244B421D11BC40")
         @Override
         public Tab setTabListener(ActionBar.TabListener callback) {
-            Tab varB4EAC82CA7396A68D541C85D26508E83_1222464077 = null; //Variable for return #1
+            Tab varB4EAC82CA7396A68D541C85D26508E83_1222464077 = null; 
             mCallback = callback;
             varB4EAC82CA7396A68D541C85D26508E83_1222464077 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1222464077.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1222464077.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1222464077;
-            // ---------- Original Method ----------
-            //mCallback = callback;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.767 -0400", hash_original_method = "564891C70D3FD9FDA6B8DDF54A8A1C12", hash_generated_method = "40EBFAA4A8D9A669C75870FC1961DB60")
         @Override
         public View getCustomView() {
-            View varB4EAC82CA7396A68D541C85D26508E83_172260307 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_172260307 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_172260307 = mCustomView;
-            varB4EAC82CA7396A68D541C85D26508E83_172260307.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_172260307.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_172260307;
-            // ---------- Original Method ----------
-            //return mCustomView;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.768 -0400", hash_original_method = "0927DBCB7C9D04ABD72A572D4EBE85DC", hash_generated_method = "3AB7F9C04762AF2CFDD1DD7B0EDCADD0")
         @Override
         public Tab setCustomView(View view) {
-            Tab varB4EAC82CA7396A68D541C85D26508E83_1048039924 = null; //Variable for return #1
+            Tab varB4EAC82CA7396A68D541C85D26508E83_1048039924 = null; 
             mCustomView = view;
             {
                 mTabScrollView.updateTab(mPosition);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1048039924 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1048039924.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1048039924.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1048039924;
-            // ---------- Original Method ----------
-            //mCustomView = view;
-            //if (mPosition >= 0) {
-                //mTabScrollView.updateTab(mPosition);
-            //}
-            //return this;
+            
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.769 -0400", hash_original_method = "AB0A301D41389C31F697384DEDEE9E45", hash_generated_method = "41C7848E0E1B4919C87D6181A88098E3")
         @Override
         public Tab setCustomView(int layoutResId) {
-            Tab varB4EAC82CA7396A68D541C85D26508E83_1731003253 = null; //Variable for return #1
+            Tab varB4EAC82CA7396A68D541C85D26508E83_1731003253 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1731003253 = setCustomView(LayoutInflater.from(getThemedContext())
                     .inflate(layoutResId, null));
             addTaint(layoutResId);
-            varB4EAC82CA7396A68D541C85D26508E83_1731003253.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1731003253.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1731003253;
-            // ---------- Original Method ----------
-            //return setCustomView(LayoutInflater.from(getThemedContext())
-                    //.inflate(layoutResId, null));
+            
+            
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.770 -0400", hash_original_method = "ED78DC4ED6B2C6A65EDA3016CC1C1C4D", hash_generated_method = "1E597D99B39A91AA05C13CAF7B590BF5")
         @Override
         public Drawable getIcon() {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_847828902 = null; //Variable for return #1
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_847828902 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_847828902 = mIcon;
-            varB4EAC82CA7396A68D541C85D26508E83_847828902.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_847828902.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_847828902;
-            // ---------- Original Method ----------
-            //return mIcon;
+            
+            
         }
 
         
@@ -1748,94 +1806,94 @@ public class ActionBarImpl extends ActionBar {
         public int getPosition() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_554829715 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_554829715;
-            // ---------- Original Method ----------
-            //return mPosition;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.770 -0400", hash_original_method = "3F4169F86E913801B39145F8B5F1CF4A", hash_generated_method = "9BE30D60DD8D509C2095B8721378C660")
         public void setPosition(int position) {
             mPosition = position;
-            // ---------- Original Method ----------
-            //mPosition = position;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.771 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "172BD60DAC835EE3FA82B90BDDE2DD18")
         @Override
         public CharSequence getText() {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_973698162 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_973698162 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_973698162 = mText;
-            varB4EAC82CA7396A68D541C85D26508E83_973698162.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_973698162.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_973698162;
-            // ---------- Original Method ----------
-            //return mText;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.772 -0400", hash_original_method = "E054EF134439DF27250AEE851BCF79C2", hash_generated_method = "B28820A39920CD4BD040B98C478EF934")
         @Override
         public Tab setIcon(Drawable icon) {
-            Tab varB4EAC82CA7396A68D541C85D26508E83_303973390 = null; //Variable for return #1
+            Tab varB4EAC82CA7396A68D541C85D26508E83_303973390 = null; 
             mIcon = icon;
             {
                 mTabScrollView.updateTab(mPosition);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_303973390 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_303973390.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_303973390.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_303973390;
-            // ---------- Original Method ----------
-            //mIcon = icon;
-            //if (mPosition >= 0) {
-                //mTabScrollView.updateTab(mPosition);
-            //}
-            //return this;
+            
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.772 -0400", hash_original_method = "95CB6D2B1B424F33C131278F8466F7F6", hash_generated_method = "07D314BFAD1206D7F8AC54F443A85C71")
         @Override
         public Tab setIcon(int resId) {
-            Tab varB4EAC82CA7396A68D541C85D26508E83_578173759 = null; //Variable for return #1
+            Tab varB4EAC82CA7396A68D541C85D26508E83_578173759 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_578173759 = setIcon(mContext.getResources().getDrawable(resId));
             addTaint(resId);
-            varB4EAC82CA7396A68D541C85D26508E83_578173759.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_578173759.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_578173759;
-            // ---------- Original Method ----------
-            //return setIcon(mContext.getResources().getDrawable(resId));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.774 -0400", hash_original_method = "7912BF664F58A4FFF0C4F40EE3B2F065", hash_generated_method = "98349C4CA36848133502DFE59B904607")
         @Override
         public Tab setText(CharSequence text) {
-            Tab varB4EAC82CA7396A68D541C85D26508E83_642309598 = null; //Variable for return #1
+            Tab varB4EAC82CA7396A68D541C85D26508E83_642309598 = null; 
             mText = text;
             {
                 mTabScrollView.updateTab(mPosition);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_642309598 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_642309598.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_642309598.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_642309598;
-            // ---------- Original Method ----------
-            //mText = text;
-            //if (mPosition >= 0) {
-                //mTabScrollView.updateTab(mPosition);
-            //}
-            //return this;
+            
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.776 -0400", hash_original_method = "593BCE41C6DE3623B8717D7BF5F8858F", hash_generated_method = "9C257641BA275C7E50FC71726DFE4E3D")
         @Override
         public Tab setText(int resId) {
-            Tab varB4EAC82CA7396A68D541C85D26508E83_1629151062 = null; //Variable for return #1
+            Tab varB4EAC82CA7396A68D541C85D26508E83_1629151062 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1629151062 = setText(mContext.getResources().getText(resId));
             addTaint(resId);
-            varB4EAC82CA7396A68D541C85D26508E83_1629151062.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1629151062.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1629151062;
-            // ---------- Original Method ----------
-            //return setText(mContext.getResources().getText(resId));
+            
+            
         }
 
         
@@ -1843,53 +1901,53 @@ public class ActionBarImpl extends ActionBar {
         @Override
         public void select() {
             selectTab(this);
-            // ---------- Original Method ----------
-            //selectTab(this);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.780 -0400", hash_original_method = "64BDEA3E085EE551443B27403AA215D4", hash_generated_method = "28C0561ECB6B4AF092CD8F4BEFB61493")
         @Override
         public Tab setContentDescription(int resId) {
-            Tab varB4EAC82CA7396A68D541C85D26508E83_569114958 = null; //Variable for return #1
+            Tab varB4EAC82CA7396A68D541C85D26508E83_569114958 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_569114958 = setContentDescription(mContext.getResources().getText(resId));
             addTaint(resId);
-            varB4EAC82CA7396A68D541C85D26508E83_569114958.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_569114958.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_569114958;
-            // ---------- Original Method ----------
-            //return setContentDescription(mContext.getResources().getText(resId));
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.782 -0400", hash_original_method = "DB5D720F6039044C737BC09541B22E5C", hash_generated_method = "252B33C458492007EDED9E3A84E7BD38")
         @Override
         public Tab setContentDescription(CharSequence contentDesc) {
-            Tab varB4EAC82CA7396A68D541C85D26508E83_22829891 = null; //Variable for return #1
+            Tab varB4EAC82CA7396A68D541C85D26508E83_22829891 = null; 
             mContentDesc = contentDesc;
             {
                 mTabScrollView.updateTab(mPosition);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_22829891 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_22829891.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_22829891.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_22829891;
-            // ---------- Original Method ----------
-            //mContentDesc = contentDesc;
-            //if (mPosition >= 0) {
-                //mTabScrollView.updateTab(mPosition);
-            //}
-            //return this;
+            
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.783 -0400", hash_original_method = "637498C982C6D53C6EA2D802031901B7", hash_generated_method = "7796C09CBD63124890A85714DA7621D2")
         @Override
         public CharSequence getContentDescription() {
-            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1348514939 = null; //Variable for return #1
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1348514939 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1348514939 = mContentDesc;
-            varB4EAC82CA7396A68D541C85D26508E83_1348514939.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1348514939.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1348514939;
-            // ---------- Original Method ----------
-            //return mContentDesc;
+            
+            
         }
 
         

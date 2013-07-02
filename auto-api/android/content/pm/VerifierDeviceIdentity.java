@@ -1,11 +1,11 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -25,9 +25,9 @@ public class VerifierDeviceIdentity implements Parcelable {
     public  VerifierDeviceIdentity(long identity) {
         mIdentity = identity;
         mIdentityString = encodeBase32(identity);
-        // ---------- Original Method ----------
-        //mIdentity = identity;
-        //mIdentityString = encodeBase32(identity);
+        
+        
+        
     }
 
     
@@ -37,19 +37,21 @@ public class VerifierDeviceIdentity implements Parcelable {
         mIdentity = identity;
         mIdentityString = encodeBase32(identity);
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
-        //final long identity = source.readLong();
-        //mIdentity = identity;
-        //mIdentityString = encodeBase32(identity);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static VerifierDeviceIdentity generate() {
         final SecureRandom sr = new SecureRandom();
         return generate(sr);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static VerifierDeviceIdentity generate(Random rng) {
         long identity = rng.nextLong();
         return new VerifierDeviceIdentity(identity);
@@ -116,8 +118,8 @@ public class VerifierDeviceIdentity implements Parcelable {
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2127309038 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2127309038;
-        // ---------- Original Method ----------
-        //return (int) mIdentity;
+        
+        
     }
 
     
@@ -128,27 +130,28 @@ public class VerifierDeviceIdentity implements Parcelable {
         addTaint(other.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_299139788 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_299139788;
-        // ---------- Original Method ----------
-        //if (!(other instanceof VerifierDeviceIdentity)) {
-            //return false;
-        //}
-        //final VerifierDeviceIdentity o = (VerifierDeviceIdentity) other;
-        //return mIdentity == o.mIdentity;
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.285 -0400", hash_original_method = "515E509B017A25F880CBE7C878F2607B", hash_generated_method = "D5DF4C20B16ED870F6311078FBD90BC7")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1253187146 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1253187146 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1253187146 = mIdentityString;
-        varB4EAC82CA7396A68D541C85D26508E83_1253187146.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1253187146.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1253187146;
-        // ---------- Original Method ----------
-        //return mIdentityString;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static VerifierDeviceIdentity parse(String deviceIdentity) throws IllegalArgumentException {
         final byte[] input;
         try {
@@ -165,19 +168,20 @@ public class VerifierDeviceIdentity implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1027383932 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1027383932;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.287 -0400", hash_original_method = "74CC0770FB4A8F3105F468C0A6751DF9", hash_generated_method = "0BB03E06E4B5A233260C88A5B9CB1211")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(mIdentity);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeLong(mIdentity);
+        
+        
     }
 
     
@@ -210,12 +214,12 @@ public class VerifierDeviceIdentity implements Parcelable {
             return new VerifierDeviceIdentity[size];
         }
     };
-    // orphaned legacy method
+    
     public VerifierDeviceIdentity createFromParcel(Parcel source) {
             return new VerifierDeviceIdentity(source);
         }
     
-    // orphaned legacy method
+    
     public VerifierDeviceIdentity[] newArray(int size) {
             return new VerifierDeviceIdentity[size];
         }

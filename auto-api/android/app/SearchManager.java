@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
@@ -52,14 +52,15 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
         mHandler = handler;
         mService = ISearchManager.Stub.asInterface(
                 ServiceManager.getService(Context.SEARCH_SERVICE));
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mHandler = handler;
-        //mService = ISearchManager.Stub.asInterface(
-                //ServiceManager.getService(Context.SEARCH_SERVICE));
+        
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.135 -0400", hash_original_method = "A99B2740D078AE52E51C31205C7D1808", hash_generated_method = "73E690470D69F427AD033F1FD4559E39")
     public void startSearch(String initialQuery,
                             boolean selectInitialQuery,
@@ -73,12 +74,13 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
         addTaint(launchActivity.getTaint());
         addTaint(appSearchData.getTaint());
         addTaint(globalSearch);
-        // ---------- Original Method ----------
-        //startSearch(initialQuery, selectInitialQuery, launchActivity,
-                //appSearchData, globalSearch, null);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.135 -0400", hash_original_method = "DA3F20917B57D7E33A815871BCDB23BC", hash_generated_method = "497D8A3940547C6D0073FC252205D9E9")
     public void startSearch(String initialQuery,
                             boolean selectInitialQuery,
@@ -88,7 +90,7 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
                             Rect sourceBounds) {
         {
             startGlobalSearch(initialQuery, selectInitialQuery, appSearchData, sourceBounds);
-        } //End block
+        } 
         ensureSearchDialog();
         mSearchDialog.show(initialQuery, selectInitialQuery, launchActivity, appSearchData);
         addTaint(initialQuery.getTaint());
@@ -97,29 +99,30 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
         addTaint(appSearchData.getTaint());
         addTaint(globalSearch);
         addTaint(sourceBounds.getTaint());
-        // ---------- Original Method ----------
-        //if (globalSearch) {
-            //startGlobalSearch(initialQuery, selectInitialQuery, appSearchData, sourceBounds);
-            //return;
-        //}
-        //ensureSearchDialog();
-        //mSearchDialog.show(initialQuery, selectInitialQuery, launchActivity, appSearchData);
+        
+        
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.136 -0400", hash_original_method = "69AA3000988676CA7D95377F664F088F", hash_generated_method = "F6A09244588EDDD1D04D8EC011310F75")
     private void ensureSearchDialog() {
         {
             mSearchDialog = new SearchDialog(mContext, this);
             mSearchDialog.setOnCancelListener(this);
             mSearchDialog.setOnDismissListener(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSearchDialog == null) {
-            //mSearchDialog = new SearchDialog(mContext, this);
-            //mSearchDialog.setOnCancelListener(this);
-            //mSearchDialog.setOnDismissListener(this);
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -132,142 +135,146 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
         intent.setComponent(globalSearchActivity);
         {
             appSearchData = new Bundle();
-        } //End block
+        } 
         {
             appSearchData = new Bundle(appSearchData);
-        } //End block
+        } 
         {
             boolean var10A0DC8AF7B837921F2947865537DC8D_2003774009 = (!appSearchData.containsKey("source"));
             {
                 appSearchData.putString("source", mContext.getPackageName());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         intent.putExtra(APP_DATA, appSearchData);
         {
             boolean varE3CA76AADF92382138D264810F53FC4F_2144749985 = (!TextUtils.isEmpty(initialQuery));
             {
                 intent.putExtra(QUERY, initialQuery);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             intent.putExtra(EXTRA_SELECT_QUERY, selectInitialQuery);
-        } //End block
+        } 
         intent.setSourceBounds(sourceBounds);
         try 
         {
             Log.d(TAG, "Starting global search: " + intent.toUri(0));
             mContext.startActivity(intent);
-        } //End block
+        } 
         catch (ActivityNotFoundException ex)
         { }
         addTaint(initialQuery.getTaint());
         addTaint(selectInitialQuery);
         addTaint(appSearchData.getTaint());
         addTaint(sourceBounds.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.138 -0400", hash_original_method = "C1495B155CB6927BC4386A7FC3D8EFF9", hash_generated_method = "91894FA5B986F407F19859CBF0E40C71")
     public List<ResolveInfo> getGlobalSearchActivities() {
-        List<ResolveInfo> varB4EAC82CA7396A68D541C85D26508E83_679685628 = null; //Variable for return #1
-        List<ResolveInfo> varB4EAC82CA7396A68D541C85D26508E83_1858455511 = null; //Variable for return #2
+        List<ResolveInfo> varB4EAC82CA7396A68D541C85D26508E83_679685628 = null; 
+        List<ResolveInfo> varB4EAC82CA7396A68D541C85D26508E83_1858455511 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_679685628 = mService.getGlobalSearchActivities();
-        } //End block
+        } 
         catch (RemoteException ex)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1858455511 = null;
-        } //End block
-        List<ResolveInfo> varA7E53CE21691AB073D9660D615818899_301109812; //Final return value
+        } 
+        List<ResolveInfo> varA7E53CE21691AB073D9660D615818899_301109812; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_301109812 = varB4EAC82CA7396A68D541C85D26508E83_679685628;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_301109812 = varB4EAC82CA7396A68D541C85D26508E83_1858455511;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_301109812.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_301109812.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_301109812;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getGlobalSearchActivities();
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "getGlobalSearchActivities() failed: " + ex);
-            //return null;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.139 -0400", hash_original_method = "375B46C6B18E608C61AB732BC7ABBFF0", hash_generated_method = "E4BB49E3E933613674ACAAA7B044F82D")
     public ComponentName getGlobalSearchActivity() {
-        ComponentName varB4EAC82CA7396A68D541C85D26508E83_531646116 = null; //Variable for return #1
-        ComponentName varB4EAC82CA7396A68D541C85D26508E83_153747680 = null; //Variable for return #2
+        ComponentName varB4EAC82CA7396A68D541C85D26508E83_531646116 = null; 
+        ComponentName varB4EAC82CA7396A68D541C85D26508E83_153747680 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_531646116 = mService.getGlobalSearchActivity();
-        } //End block
+        } 
         catch (RemoteException ex)
         {
             varB4EAC82CA7396A68D541C85D26508E83_153747680 = null;
-        } //End block
-        ComponentName varA7E53CE21691AB073D9660D615818899_2002661143; //Final return value
+        } 
+        ComponentName varA7E53CE21691AB073D9660D615818899_2002661143; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2002661143 = varB4EAC82CA7396A68D541C85D26508E83_531646116;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2002661143 = varB4EAC82CA7396A68D541C85D26508E83_153747680;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2002661143.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2002661143.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2002661143;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getGlobalSearchActivity();
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "getGlobalSearchActivity() failed: " + ex);
-            //return null;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.140 -0400", hash_original_method = "B76C058C1256501309C0E936D28D0087", hash_generated_method = "5973C9B194E62DB22EA158DC94E175E6")
     public ComponentName getWebSearchActivity() {
-        ComponentName varB4EAC82CA7396A68D541C85D26508E83_1749099991 = null; //Variable for return #1
-        ComponentName varB4EAC82CA7396A68D541C85D26508E83_307044222 = null; //Variable for return #2
+        ComponentName varB4EAC82CA7396A68D541C85D26508E83_1749099991 = null; 
+        ComponentName varB4EAC82CA7396A68D541C85D26508E83_307044222 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1749099991 = mService.getWebSearchActivity();
-        } //End block
+        } 
         catch (RemoteException ex)
         {
             varB4EAC82CA7396A68D541C85D26508E83_307044222 = null;
-        } //End block
-        ComponentName varA7E53CE21691AB073D9660D615818899_868164164; //Final return value
+        } 
+        ComponentName varA7E53CE21691AB073D9660D615818899_868164164; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_868164164 = varB4EAC82CA7396A68D541C85D26508E83_1749099991;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_868164164 = varB4EAC82CA7396A68D541C85D26508E83_307044222;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_868164164.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_868164164.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_868164164;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getWebSearchActivity();
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "getWebSearchActivity() failed: " + ex);
-            //return null;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.141 -0400", hash_original_method = "DFA0F52B0EB2C924C24B76A319C2D2A5", hash_generated_method = "700FD834DF708DA83EEE439E79F72AC7")
     public void triggerSearch(String query,
                               ComponentName launchActivity,
@@ -277,159 +284,161 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("invoking app search on a different package " +
                     "not associated with this search manager");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varD89BCBA31628E825208427C7DCE18216_1762641920 = (query == null || TextUtils.getTrimmedLength(query) == 0);
-        } //End collapsed parenthetic
+        } 
         startSearch(query, false, launchActivity, appSearchData, false);
         mSearchDialog.launchQuerySearch();
         addTaint(query.getTaint());
         addTaint(launchActivity.getTaint());
         addTaint(appSearchData.getTaint());
-        // ---------- Original Method ----------
-        //if (!mAssociatedPackage.equals(launchActivity.getPackageName())) {
-            //throw new IllegalArgumentException("invoking app search on a different package " +
-                    //"not associated with this search manager");
-        //}
-        //if (query == null || TextUtils.getTrimmedLength(query) == 0) {
-            //Log.w(TAG, "triggerSearch called with empty query, ignoring.");
-            //return;
-        //}
-        //startSearch(query, false, launchActivity, appSearchData, false);
-        //mSearchDialog.launchQuerySearch();
+        
+        
+            
+                    
+        
+        
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.141 -0400", hash_original_method = "2F7F67ABA80342A48040CFA5F163FF23", hash_generated_method = "AF18F420EDDF294FE45AD621A014B9D3")
     public void stopSearch() {
         {
             mSearchDialog.cancel();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSearchDialog != null) {
-            //mSearchDialog.cancel();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.142 -0400", hash_original_method = "DBEBE34FE7AB0A40BB7E886EA7BCCC44", hash_generated_method = "35CA90B58D0BBBE0B343D9828DC6B67D")
     public boolean isVisible() {
         {
             Object var34EE0F15CA6D20FF3CF863C5B2F3C28B_389378059 = (mSearchDialog.isShowing());
-        } //End flattened ternary
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_137325262 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_137325262;
-        // ---------- Original Method ----------
-        //return mSearchDialog == null? false : mSearchDialog.isShowing();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.143 -0400", hash_original_method = "168ADC282E12956DAABD30E8715DF8C4", hash_generated_method = "79E8DA41ECA9F62975CE1CB5E8F87DDC")
     public void setOnDismissListener(final OnDismissListener listener) {
         mDismissListener = listener;
-        // ---------- Original Method ----------
-        //mDismissListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.143 -0400", hash_original_method = "E54B891234FF1D09C5FE1330F548AE5B", hash_generated_method = "66950EACE6D061F936B065FB53D5C0FB")
     public void setOnCancelListener(OnCancelListener listener) {
         mCancelListener = listener;
-        // ---------- Original Method ----------
-        //mCancelListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.143 -0400", hash_original_method = "FD32FDBC83426B134794541111A0C683", hash_generated_method = "B76D7D7D67448C545F6D0013959BEB4F")
     @Deprecated
     public void onCancel(DialogInterface dialog) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mCancelListener.onCancel();
-        } //End block
+        } 
         addTaint(dialog.getTaint());
-        // ---------- Original Method ----------
-        //if (mCancelListener != null) {
-            //mCancelListener.onCancel();
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.144 -0400", hash_original_method = "832CAC02C422B9B1DA3F12954DC922BF", hash_generated_method = "B28234E04B581E36EBC90EACCA9F1854")
     @Deprecated
     public void onDismiss(DialogInterface dialog) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mDismissListener.onDismiss();
-        } //End block
+        } 
         addTaint(dialog.getTaint());
-        // ---------- Original Method ----------
-        //if (mDismissListener != null) {
-            //mDismissListener.onDismiss();
-        //}
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.145 -0400", hash_original_method = "BECD96EDDDF4DA2CCA14D2ABA4ED0EE3", hash_generated_method = "5214AF3C8E52478D5548533E81F6B47E")
     public SearchableInfo getSearchableInfo(ComponentName componentName) {
-        SearchableInfo varB4EAC82CA7396A68D541C85D26508E83_2078206593 = null; //Variable for return #1
-        SearchableInfo varB4EAC82CA7396A68D541C85D26508E83_579430872 = null; //Variable for return #2
+        SearchableInfo varB4EAC82CA7396A68D541C85D26508E83_2078206593 = null; 
+        SearchableInfo varB4EAC82CA7396A68D541C85D26508E83_579430872 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_2078206593 = mService.getSearchableInfo(componentName);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
             varB4EAC82CA7396A68D541C85D26508E83_579430872 = null;
-        } //End block
+        } 
         addTaint(componentName.getTaint());
-        SearchableInfo varA7E53CE21691AB073D9660D615818899_523586368; //Final return value
+        SearchableInfo varA7E53CE21691AB073D9660D615818899_523586368; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_523586368 = varB4EAC82CA7396A68D541C85D26508E83_2078206593;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_523586368 = varB4EAC82CA7396A68D541C85D26508E83_579430872;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_523586368.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_523586368.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_523586368;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getSearchableInfo(componentName);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "getSearchableInfo() failed: " + ex);
-            //return null;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.145 -0400", hash_original_method = "8998A0F3078F1A486029D8083CC723D6", hash_generated_method = "FFE6DDC2AE7558FC36046C976F7325DC")
     public Cursor getSuggestions(SearchableInfo searchable, String query) {
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_1543283752 = null; //Variable for return #1
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_1543283752 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1543283752 = getSuggestions(searchable, query, -1);
         addTaint(searchable.getTaint());
         addTaint(query.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1543283752.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1543283752.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1543283752;
-        // ---------- Original Method ----------
-        //return getSuggestions(searchable, query, -1);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.147 -0400", hash_original_method = "E15CCFC152F5A7E151DA9EBD5A00EC08", hash_generated_method = "AD038C00A5DDF8E22D62BBADC1948866")
     public Cursor getSuggestions(SearchableInfo searchable, String query, int limit) {
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_1092712548 = null; //Variable for return #1
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_2049332144 = null; //Variable for return #2
-        Cursor varB4EAC82CA7396A68D541C85D26508E83_521101059 = null; //Variable for return #3
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_1092712548 = null; 
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_2049332144 = null; 
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_521101059 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1092712548 = null;
-        } //End block
+        } 
         String authority = searchable.getSuggestAuthority();
         {
             varB4EAC82CA7396A68D541C85D26508E83_2049332144 = null;
-        } //End block
+        } 
         Uri.Builder uriBuilder = new Uri.Builder()
                 .scheme(ContentResolver.SCHEME_CONTENT)
                 .authority(authority)
@@ -438,73 +447,73 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
         final String contentPath = searchable.getSuggestPath();
         {
             uriBuilder.appendEncodedPath(contentPath);
-        } //End block
+        } 
         uriBuilder.appendPath(SearchManager.SUGGEST_URI_PATH_QUERY);
         String selection = searchable.getSuggestSelection();
         String[] selArgs = null;
         {
             selArgs = new String[] { query };
-        } //End block
+        } 
         {
             uriBuilder.appendPath(query);
-        } //End block
+        } 
         {
             uriBuilder.appendQueryParameter(SUGGEST_PARAMETER_LIMIT, String.valueOf(limit));
-        } //End block
+        } 
         Uri uri = uriBuilder.build();
         varB4EAC82CA7396A68D541C85D26508E83_521101059 = mContext.getContentResolver().query(uri, null, selection, selArgs, null);
         addTaint(searchable.getTaint());
         addTaint(query.getTaint());
         addTaint(limit);
-        Cursor varA7E53CE21691AB073D9660D615818899_470608085; //Final return value
+        Cursor varA7E53CE21691AB073D9660D615818899_470608085; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_470608085 = varB4EAC82CA7396A68D541C85D26508E83_1092712548;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_470608085 = varB4EAC82CA7396A68D541C85D26508E83_2049332144;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_470608085 = varB4EAC82CA7396A68D541C85D26508E83_521101059;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_470608085.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_470608085.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_470608085;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.149 -0400", hash_original_method = "1D69522720A8D25D6502045F710E48DA", hash_generated_method = "50CB124D9FC3E1519B75600CCC86AA8C")
     public List<SearchableInfo> getSearchablesInGlobalSearch() {
-        List<SearchableInfo> varB4EAC82CA7396A68D541C85D26508E83_1202077770 = null; //Variable for return #1
-        List<SearchableInfo> varB4EAC82CA7396A68D541C85D26508E83_1591334293 = null; //Variable for return #2
+        List<SearchableInfo> varB4EAC82CA7396A68D541C85D26508E83_1202077770 = null; 
+        List<SearchableInfo> varB4EAC82CA7396A68D541C85D26508E83_1591334293 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1202077770 = mService.getSearchablesInGlobalSearch();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1591334293 = null;
-        } //End block
-        List<SearchableInfo> varA7E53CE21691AB073D9660D615818899_831989109; //Final return value
+        } 
+        List<SearchableInfo> varA7E53CE21691AB073D9660D615818899_831989109; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_831989109 = varB4EAC82CA7396A68D541C85D26508E83_1202077770;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_831989109 = varB4EAC82CA7396A68D541C85D26508E83_1591334293;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_831989109.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_831989109.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_831989109;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getSearchablesInGlobalSearch();
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "getSearchablesInGlobalSearch() failed: " + e);
-            //return null;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     

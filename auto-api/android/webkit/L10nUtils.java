@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import java.lang.ref.SoftReference;
@@ -17,15 +17,17 @@ public class L10nUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.015 -0400", hash_original_method = "E0BD4E5359B29F1B1ED75AB21E0F35C1", hash_generated_method = "E0BD4E5359B29F1B1ED75AB21E0F35C1")
     public L10nUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SPEC)
     public static void setApplicationContext(Context applicationContext) {
         mApplicationContext = applicationContext.getApplicationContext();
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static String loadString(int id) {
         if (mStrings == null) {
             mStrings = new HashMap<Integer, SoftReference<String> >(mIdsArray.length);
@@ -36,6 +38,7 @@ public class L10nUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getLocalisedString(int id) {
         if (mStrings == null) {
             return loadString(id);

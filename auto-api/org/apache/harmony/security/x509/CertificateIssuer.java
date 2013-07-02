@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import javax.security.auth.x500.X500Principal;
@@ -23,27 +23,29 @@ public final class CertificateIssuer extends ExtensionValue {
     public  CertificateIssuer(byte[] encoding) {
         super(encoding);
         addTaint(encoding[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.716 -0400", hash_original_method = "A624F7DB93A0D045C3602F26988D09C5", hash_generated_method = "3AB899224B2E9AD81C68A2A2DB13BA87")
     public X500Principal getIssuer() throws IOException {
-        X500Principal varB4EAC82CA7396A68D541C85D26508E83_239137413 = null; //Variable for return #1
+        X500Principal varB4EAC82CA7396A68D541C85D26508E83_239137413 = null; 
         {
             issuer = (X500Principal) ASN1.decode(getEncoded());
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_239137413 = issuer;
-        varB4EAC82CA7396A68D541C85D26508E83_239137413.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_239137413.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_239137413;
-        // ---------- Original Method ----------
-        //if (issuer == null) {
-            //issuer = (X500Principal) ASN1.decode(getEncoded());
-        //}
-        //return issuer;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.717 -0400", hash_original_method = "50826A9F4B6111EEE8495EBA7ED178B7", hash_generated_method = "E4759D7A5C40065FD80574D86B7EEF98")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
@@ -52,27 +54,27 @@ public final class CertificateIssuer extends ExtensionValue {
             try 
             {
                 issuer = getIssuer();
-            } //End block
+            } 
             catch (IOException e)
             {
                 sb.append("Unparseable (incorrect!) extension value:\n");
                 super.dumpValue(sb);
-            } //End block
-        } //End block
+            } 
+        } 
         sb.append(issuer).append('\n');
         addTaint(sb.getTaint());
         addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
-        //sb.append(prefix).append("Certificate Issuer: ");
-        //if (issuer == null) {
-            //try {
-                //issuer = getIssuer();
-            //} catch (IOException e) {
-                //sb.append("Unparseable (incorrect!) extension value:\n");
-                //super.dumpValue(sb);
-            //}
-        //}
-        //sb.append(issuer).append('\n');
+        
+        
+        
+            
+                
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -88,18 +90,7 @@ public final class CertificateIssuer extends ExtensionValue {
             values[0] = object;
         }
     };
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            values[0] = object;
-        }
     
-    // orphaned legacy method
-    @Override public Object getDecodedObject(BerInputStream in) {
-            return ((Name) ((GeneralName) ((Object[]) in.content)[0])
-                    .getName()).getX500Principal();
-        }
-    */
     
 }
 

@@ -1,11 +1,11 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -50,13 +50,13 @@ final class HexStringParser {
         this.MAX_EXPONENT = ~(-1L << exponentWidth);
         this.MIN_EXPONENT = -(MANTISSA_WIDTH + 1);
         this.MANTISSA_MASK = ~(-1L << mantissaWidth);
-        // ---------- Original Method ----------
-        //this.EXPONENT_WIDTH = exponentWidth;
-        //this.MANTISSA_WIDTH = mantissaWidth;
-        //this.EXPONENT_BASE = ~(-1L << (exponentWidth - 1));
-        //this.MAX_EXPONENT = ~(-1L << exponentWidth);
-        //this.MIN_EXPONENT = -(MANTISSA_WIDTH + 1);
-        //this.MANTISSA_MASK = ~(-1L << mantissaWidth);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -82,8 +82,8 @@ final class HexStringParser {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NumberFormatException("Invalid hex " + (isDouble ? "double" : "float")+ ":" +
                     hexString);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String signStr = matcher.group(1);
         String significantStr = matcher.group(2);
         String exponentStr = matcher.group(3);
@@ -96,63 +96,63 @@ final class HexStringParser {
         addTaint(isDouble);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_347173513 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_347173513;
-        // ---------- Original Method ----------
-        //Matcher matcher = PATTERN.matcher(hexString);
-        //if (!matcher.matches()) {
-            //throw new NumberFormatException("Invalid hex " + (isDouble ? "double" : "float")+ ":" +
-                    //hexString);
-        //}
-        //String signStr = matcher.group(1);
-        //String significantStr = matcher.group(2);
-        //String exponentStr = matcher.group(3);
-        //parseHexSign(signStr);
-        //parseExponent(exponentStr);
-        //parseMantissa(significantStr);
-        //sign <<= (MANTISSA_WIDTH + EXPONENT_WIDTH);
-        //exponent <<= MANTISSA_WIDTH;
-        //return sign | exponent | mantissa;
+        
+        
+        
+            
+                    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.063 -0400", hash_original_method = "974D688FE86E3244D16C6508E4669FC6", hash_generated_method = "13BFEC942BAEF96FE6E364B15622A4E9")
     private void parseHexSign(String signStr) {
         this.sign = signStr.equals("-") ? 1 : 0;
-        // ---------- Original Method ----------
-        //this.sign = signStr.equals("-") ? 1 : 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.063 -0400", hash_original_method = "F54ED53D7D015179F6121F71E1763DC9", hash_generated_method = "12F59FEC1FB88FC6F5CD350947E804E9")
     private void parseExponent(String exponentStr) {
         char leadingChar = exponentStr.charAt(0);
-        int expSign = (leadingChar == '-' ? -1 : 1);//DSFIXME:  CODE0008: Nested ternary operator in expression
+        int expSign = (leadingChar == '-' ? -1 : 1);
         {
             boolean var12918441ABCBAE31E5F02154106075A8_1872030426 = (!Character.isDigit(leadingChar));
             {
                 exponentStr = exponentStr.substring(1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         try 
         {
             exponent = expSign * Long.parseLong(exponentStr);
             checkedAddExponent(EXPONENT_BASE);
-        } //End block
+        } 
         catch (NumberFormatException e)
         {
             exponent = expSign * Long.MAX_VALUE;
-        } //End block
-        // ---------- Original Method ----------
-        //char leadingChar = exponentStr.charAt(0);
-        //int expSign = (leadingChar == '-' ? -1 : 1);
-        //if (!Character.isDigit(leadingChar)) {
-            //exponentStr = exponentStr.substring(1);
-        //}
-        //try {
-            //exponent = expSign * Long.parseLong(exponentStr);
-            //checkedAddExponent(EXPONENT_BASE);
-        //} catch (NumberFormatException e) {
-            //exponent = expSign * Long.MAX_VALUE;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -168,33 +168,33 @@ final class HexStringParser {
             boolean var33E818A7CFC583690A348CAC6377C380_1386175585 = (significand.equals("0"));
             {
                 setZero();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int offset = getOffset(strIntegerPart, strDecimalPart);
         checkedAddExponent(offset);
         {
             setInfinite();
-        } //End block
+        } 
         {
             setZero();
-        } //End block
+        } 
         {
             boolean varE202BC62D51C45F8F24333A3E462DF98_669453113 = (significand.length() > MAX_SIGNIFICANT_LENGTH);
             {
                 abandonedNumber = significand.substring(MAX_SIGNIFICANT_LENGTH);
                 significand = significand.substring(0, MAX_SIGNIFICANT_LENGTH);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mantissa = Long.parseLong(significand, HEX_RADIX);
         {
             processNormalNumber();
-        } //End block
+        } 
         {
             processSubNormalNumber();
-        } //End block
+        } 
         addTaint(significantStr.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -202,9 +202,9 @@ final class HexStringParser {
     private void setInfinite() {
         exponent = MAX_EXPONENT;
         mantissa = 0;
-        // ---------- Original Method ----------
-        //exponent = MAX_EXPONENT;
-        //mantissa = 0;
+        
+        
+        
     }
 
     
@@ -212,9 +212,9 @@ final class HexStringParser {
     private void setZero() {
         exponent = 0;
         mantissa = 0;
-        // ---------- Original Method ----------
-        //exponent = 0;
-        //mantissa = 0;
+        
+        
+        
     }
 
     
@@ -226,20 +226,20 @@ final class HexStringParser {
             boolean var4023E4EFC04C969892416657FDC87896_681688681 = (expSign * Long.signum(offset) > 0 && expSign * Long.signum(result) < 0);
             {
                 exponent = expSign * Long.MAX_VALUE;
-            } //End block
+            } 
             {
                 exponent = result;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(offset);
-        // ---------- Original Method ----------
-        //long result = exponent + offset;
-        //int expSign = Long.signum(exponent);
-        //if (expSign * Long.signum(offset) > 0 && expSign * Long.signum(result) < 0) {
-            //exponent = expSign * Long.MAX_VALUE;
-        //} else {
-            //exponent = result;
-        //}
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -249,14 +249,15 @@ final class HexStringParser {
         fitMantissaInDesiredWidth(desiredWidth);
         round();
         mantissa = mantissa & MANTISSA_MASK;
-        // ---------- Original Method ----------
-        //int desiredWidth = MANTISSA_WIDTH + 2;
-        //fitMantissaInDesiredWidth(desiredWidth);
-        //round();
-        //mantissa = mantissa & MANTISSA_MASK;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.067 -0400", hash_original_method = "C617BA86E331FAE3F2D53918109E2E13", hash_generated_method = "22ECB6F94BDF27D309EAC69063F53844")
     private void processSubNormalNumber() {
         int desiredWidth = MANTISSA_WIDTH + 1;
@@ -265,13 +266,13 @@ final class HexStringParser {
         fitMantissaInDesiredWidth(desiredWidth);
         round();
         mantissa = mantissa & MANTISSA_MASK;
-        // ---------- Original Method ----------
-        //int desiredWidth = MANTISSA_WIDTH + 1;
-        //desiredWidth += (int)exponent;
-        //exponent = 0;
-        //fitMantissaInDesiredWidth(desiredWidth);
-        //round();
-        //mantissa = mantissa & MANTISSA_MASK;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -280,17 +281,17 @@ final class HexStringParser {
         int bitLength = countBitsLength(mantissa);
         {
             discardTrailingBits(bitLength - desiredWidth);
-        } //End block
+        } 
         {
             mantissa <<= (desiredWidth - bitLength);
-        } //End block
-        // ---------- Original Method ----------
-        //int bitLength = countBitsLength(mantissa);
-        //if (bitLength > desiredWidth) {
-            //discardTrailingBits(bitLength - desiredWidth);
-        //} else {
-            //mantissa <<= (desiredWidth - bitLength);
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -299,17 +300,18 @@ final class HexStringParser {
         long mask = ~(-1L << num);
         abandonedNumber += (mantissa & mask);
         mantissa >>= num;
-        // ---------- Original Method ----------
-        //long mask = ~(-1L << num);
-        //abandonedNumber += (mantissa & mask);
-        //mantissa >>= num;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.068 -0400", hash_original_method = "BE1368BC0340B1F1D2FFF04FBC3A9E13", hash_generated_method = "0EB829377CC7ED7DA21C2111FB23A650")
     private void round() {
         String result = abandonedNumber.replaceAll("0+", "");
-        boolean moreThanZero = (result.length() > 0 ? true : false);//DSFIXME:  CODE0008: Nested ternary operator in expression
+        boolean moreThanZero = (result.length() > 0 ? true : false);
         int lastDiscardedBit = (int) (mantissa & 1L);
         mantissa >>= 1;
         int tailBitInMantissa = (int) (mantissa & 1L);
@@ -319,51 +321,52 @@ final class HexStringParser {
             int newLength = countBitsLength(mantissa);
             {
                 checkedAddExponent(1);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //String result = abandonedNumber.replaceAll("0+", "");
-        //boolean moreThanZero = (result.length() > 0 ? true : false);
-        //int lastDiscardedBit = (int) (mantissa & 1L);
-        //mantissa >>= 1;
-        //int tailBitInMantissa = (int) (mantissa & 1L);
-        //if (lastDiscardedBit == 1 && (moreThanZero || tailBitInMantissa == 1)) {
-            //int oldLength = countBitsLength(mantissa);
-            //mantissa += 1L;
-            //int newLength = countBitsLength(mantissa);
-            //if (oldLength >= MANTISSA_WIDTH && newLength > oldLength) {
-                //checkedAddExponent(1);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.068 -0400", hash_original_method = "D2C62D141CD2F22FD7386D5422E8C46E", hash_generated_method = "975C4F0FCB054BF23A568ED6C4FB7828")
     private String getNormalizedSignificand(String strIntegerPart, String strDecimalPart) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1893493678 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1893493678 = null; 
         String significand = strIntegerPart + strDecimalPart;
         significand = significand.replaceFirst("^0+", "");
         {
             boolean varCB56E8C1B765A44EE13A3876ED8AFD68_441282040 = (significand.length() == 0);
             {
                 significand = "0";
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1893493678 = significand;
         addTaint(strIntegerPart.getTaint());
         addTaint(strDecimalPart.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1893493678.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1893493678.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1893493678;
-        // ---------- Original Method ----------
-        //String significand = strIntegerPart + strDecimalPart;
-        //significand = significand.replaceFirst("^0+", "");
-        //if (significand.length() == 0) {
-            //significand = "0";
-        //}
-        //return significand;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.070 -0400", hash_original_method = "08762480F158FA197B11D4959C7DC334", hash_generated_method = "588C2F9DBD91193DA14FDB877FC3D1BE")
     private int getOffset(String strIntegerPart, String strDecimalPart) {
         strIntegerPart = strIntegerPart.replaceFirst("^0+", "");
@@ -372,36 +375,36 @@ final class HexStringParser {
             {
                 String leadingNumber = strIntegerPart.substring(0, 1);
                 int var0F5F88D92968EEF0EEA83651B2C4EAF9_1725695434 = ((strIntegerPart.length() - 1) * 4 + countBitsLength(Long.parseLong(leadingNumber,HEX_RADIX)) - 1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int i;
         {
             i = 0;
             boolean varE884A9B658B796521F6D7CFBE1EED16D_1993556708 = (i < strDecimalPart.length() && strDecimalPart.charAt(i) == '0');
             ;
-        } //End collapsed parenthetic
+        } 
         {
             boolean varEFA2529895BBE26403532BB3B6E39EFC_1558571083 = (i == strDecimalPart.length());
-        } //End collapsed parenthetic
+        } 
         String leadingNumber = strDecimalPart.substring(i,i + 1);
         int varF22829AC0DE8799BD6C5C24AE662D7AF_1245233229 = ((-i - 1) * 4 + countBitsLength(Long.parseLong(leadingNumber, HEX_RADIX)) - 1);
         addTaint(strIntegerPart.getTaint());
         addTaint(strDecimalPart.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2106933189 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2106933189;
-        // ---------- Original Method ----------
-        //strIntegerPart = strIntegerPart.replaceFirst("^0+", "");
-        //if (strIntegerPart.length() != 0) {
-            //String leadingNumber = strIntegerPart.substring(0, 1);
-            //return (strIntegerPart.length() - 1) * 4 + countBitsLength(Long.parseLong(leadingNumber,HEX_RADIX)) - 1;
-        //}
-        //int i;
-        //for (i = 0; i < strDecimalPart.length() && strDecimalPart.charAt(i) == '0'; i++);
-        //if (i == strDecimalPart.length()) {
-            //return 0;
-        //}
-        //String leadingNumber=strDecimalPart.substring(i,i + 1);
-        //return (-i - 1) * 4 + countBitsLength(Long.parseLong(leadingNumber, HEX_RADIX)) - 1;
+        
+        
+        
+            
+            
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -411,9 +414,9 @@ final class HexStringParser {
         addTaint(value);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_882997836 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_882997836;
-        // ---------- Original Method ----------
-        //int leadingZeros = Long.numberOfLeadingZeros(value);
-        //return Long.SIZE - leadingZeros;
+        
+        
+        
     }
 
     

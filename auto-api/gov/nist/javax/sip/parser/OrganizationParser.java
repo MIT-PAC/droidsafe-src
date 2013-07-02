@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import java.text.ParseException;
@@ -16,7 +16,7 @@ public class OrganizationParser extends HeaderParser {
     public  OrganizationParser(String organization) {
         super(organization);
         addTaint(organization.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,13 +24,14 @@ public class OrganizationParser extends HeaderParser {
     protected  OrganizationParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.100 -0400", hash_original_method = "FCDFEF7484AB928FBE1CF6D95D3DCFBA", hash_generated_method = "2F413528002133A095D8F051F5514CDE")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_2091239093 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_2091239093 = null; 
         dbg_enter("OrganizationParser.parse");
         Organization organization = new Organization();
         try 
@@ -41,28 +42,28 @@ public class OrganizationParser extends HeaderParser {
             String value = this.lexer.getRest();
             organization.setOrganization(value.trim());
             varB4EAC82CA7396A68D541C85D26508E83_2091239093 = organization;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("OrganizationParser.parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2091239093.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_2091239093.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2091239093;
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("OrganizationParser.parse");
-        //Organization organization = new Organization();
-        //try {
-            //headerName(TokenTypes.ORGANIZATION);
-            //organization.setHeaderName(SIPHeaderNames.ORGANIZATION);
-            //this.lexer.SPorHT();
-            //String value = this.lexer.getRest();
-            //organization.setOrganization(value.trim());
-            //return organization;
-        //} finally {
-            //if (debug)
-                //dbg_leave("OrganizationParser.parse");
-        //}
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+            
+        
+            
+                
+        
     }
 
     

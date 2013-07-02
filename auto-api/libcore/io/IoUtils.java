@@ -1,11 +1,11 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.FileDescriptor;
@@ -19,10 +19,11 @@ public final class IoUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.229 -0400", hash_original_method = "79E9471925B005378EBE1BC903B5DD58", hash_generated_method = "23C96EFBE22D08DF5FBBE8620DF9E369")
     private  IoUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void close(FileDescriptor fd) throws IOException {
         try {
             if (fd != null && fd.valid()) {
@@ -34,6 +35,7 @@ public final class IoUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeQuietly(AutoCloseable closeable) {
         if (closeable != null) {
             try {
@@ -46,6 +48,7 @@ public final class IoUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeQuietly(FileDescriptor fd) {
         try {
             IoUtils.close(fd);
@@ -64,6 +67,7 @@ public final class IoUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setBlocking(FileDescriptor fd, boolean blocking) throws IOException {
         try {
             int flags = Libcore.os.fcntlVoid(fd, F_GETFL);
@@ -79,16 +83,19 @@ public final class IoUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] readFileAsByteArray(String path) throws IOException {
         return readFileAsBytes(path).toByteArray();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String readFileAsString(String path) throws IOException {
         return readFileAsBytes(path).toString(Charsets.UTF_8);
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static UnsafeByteSequence readFileAsBytes(String path) throws IOException {
         RandomAccessFile f = null;
         try {
@@ -108,6 +115,7 @@ public final class IoUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void deleteContents(File dir) throws IOException {
         File[] files = dir.listFiles();
         if (files == null) {

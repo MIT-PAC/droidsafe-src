@@ -1,11 +1,11 @@
 package java.util.concurrent.atomic;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import sun.misc.Unsafe;
 import java.util.*;
@@ -18,19 +18,20 @@ public class AtomicLongArray implements java.io.Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.451 -0400", hash_original_method = "8B4DC9506BFF677670C5FDC2A32AE870", hash_generated_method = "728AE7633383F3FB5CC7E87BD3B58149")
     public  AtomicLongArray(int length) {
         array = new long[length];
-        // ---------- Original Method ----------
-        //array = new long[length];
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.452 -0400", hash_original_method = "3050E53F51A7E140FB04DB0A1747CE30", hash_generated_method = "B03A0B34F857D2E3D84824AA6149C991")
     public  AtomicLongArray(long[] array) {
         this.array = array.clone();
-        // ---------- Original Method ----------
-        //this.array = array.clone();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.452 -0400", hash_original_method = "362098406DB6EC351C04D37BE5D9828B", hash_generated_method = "B875EFD058A93EA4B1DE419137BA7EE4")
     private long checkedByteOffset(int i) {
         if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("index " + i);
@@ -38,10 +39,10 @@ public class AtomicLongArray implements java.io.Serializable {
         addTaint(i);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2144125809 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2144125809;
-        // ---------- Original Method ----------
-        //if (i < 0 || i >= array.length)
-            //throw new IndexOutOfBoundsException("index " + i);
-        //return byteOffset(i);
+        
+        
+            
+        
     }
 
     
@@ -54,8 +55,8 @@ public class AtomicLongArray implements java.io.Serializable {
     public final int length() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1839749149 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1839749149;
-        // ---------- Original Method ----------
-        //return array.length;
+        
+        
     }
 
     
@@ -65,19 +66,20 @@ public class AtomicLongArray implements java.io.Serializable {
         addTaint(i);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1659514936 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1659514936;
-        // ---------- Original Method ----------
-        //return getRaw(checkedByteOffset(i));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.454 -0400", hash_original_method = "3BC3287D9A4267A89B05E2A24AB18A2F", hash_generated_method = "D0894B49E2173DB6CD6429AFCA785C5A")
     private long getRaw(long offset) {
         long var119D7574C7133C9795B2E397A6495724_586355312 = (unsafe.getLongVolatile(array, offset));
         addTaint(offset);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1182523513 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1182523513;
-        // ---------- Original Method ----------
-        //return unsafe.getLongVolatile(array, offset);
+        
+        
     }
 
     
@@ -86,8 +88,8 @@ public class AtomicLongArray implements java.io.Serializable {
         unsafe.putLongVolatile(array, checkedByteOffset(i), newValue);
         addTaint(i);
         addTaint(newValue);
-        // ---------- Original Method ----------
-        //unsafe.putLongVolatile(array, checkedByteOffset(i), newValue);
+        
+        
     }
 
     
@@ -96,8 +98,8 @@ public class AtomicLongArray implements java.io.Serializable {
         unsafe.putOrderedLong(array, checkedByteOffset(i), newValue);
         addTaint(i);
         addTaint(newValue);
-        // ---------- Original Method ----------
-        //unsafe.putOrderedLong(array, checkedByteOffset(i), newValue);
+        
+        
     }
 
     
@@ -108,19 +110,19 @@ public class AtomicLongArray implements java.io.Serializable {
             long current = getRaw(offset);
             {
                 boolean var05742DE3E307187CDC22816DD73B63B6_1433096145 = (compareAndSetRaw(offset, current, newValue));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(i);
         addTaint(newValue);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1270430466 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1270430466;
-        // ---------- Original Method ----------
-        //long offset = checkedByteOffset(i);
-        //while (true) {
-            //long current = getRaw(offset);
-            //if (compareAndSetRaw(offset, current, newValue))
-                //return current;
-        //}
+        
+        
+        
+            
+            
+                
+        
     }
 
     
@@ -132,11 +134,12 @@ public class AtomicLongArray implements java.io.Serializable {
         addTaint(update);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1350478771 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1350478771;
-        // ---------- Original Method ----------
-        //return compareAndSetRaw(checkedByteOffset(i), expect, update);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.455 -0400", hash_original_method = "6CBE85C613A52AE19528F7E5DBB1A254", hash_generated_method = "496E769BD8B0EC668AE669F9B591AF73")
     private boolean compareAndSetRaw(long offset, long expect, long update) {
         boolean var65EFB0056CFA960A8E75E6E3F02DE612_599517985 = (unsafe.compareAndSwapLong(array, offset, expect, update));
@@ -145,8 +148,8 @@ public class AtomicLongArray implements java.io.Serializable {
         addTaint(update);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_800302170 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_800302170;
-        // ---------- Original Method ----------
-        //return unsafe.compareAndSwapLong(array, offset, expect, update);
+        
+        
     }
 
     
@@ -158,8 +161,8 @@ public class AtomicLongArray implements java.io.Serializable {
         addTaint(update);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_465894442 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_465894442;
-        // ---------- Original Method ----------
-        //return compareAndSet(i, expect, update);
+        
+        
     }
 
     
@@ -169,8 +172,8 @@ public class AtomicLongArray implements java.io.Serializable {
         addTaint(i);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_2059902984 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2059902984;
-        // ---------- Original Method ----------
-        //return getAndAdd(i, 1);
+        
+        
     }
 
     
@@ -180,8 +183,8 @@ public class AtomicLongArray implements java.io.Serializable {
         addTaint(i);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_155025810 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_155025810;
-        // ---------- Original Method ----------
-        //return getAndAdd(i, -1);
+        
+        
     }
 
     
@@ -192,19 +195,19 @@ public class AtomicLongArray implements java.io.Serializable {
             long current = getRaw(offset);
             {
                 boolean var8DEC129351396D795A39C504D7822862_2123431113 = (compareAndSetRaw(offset, current, current + delta));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(i);
         addTaint(delta);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_668186346 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_668186346;
-        // ---------- Original Method ----------
-        //long offset = checkedByteOffset(i);
-        //while (true) {
-            //long current = getRaw(offset);
-            //if (compareAndSetRaw(offset, current, current + delta))
-                //return current;
-        //}
+        
+        
+        
+            
+            
+                
+        
     }
 
     
@@ -214,8 +217,8 @@ public class AtomicLongArray implements java.io.Serializable {
         addTaint(i);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1285808958 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1285808958;
-        // ---------- Original Method ----------
-        //return addAndGet(i, 1);
+        
+        
     }
 
     
@@ -225,11 +228,12 @@ public class AtomicLongArray implements java.io.Serializable {
         addTaint(i);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1365739584 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1365739584;
-        // ---------- Original Method ----------
-        //return addAndGet(i, -1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.457 -0400", hash_original_method = "5A2B115B9C214021381979C4071AE18E", hash_generated_method = "741915A8CEA670A19C45676738F14E8D")
     public long addAndGet(int i, long delta) {
         long offset = checkedByteOffset(i);
@@ -238,27 +242,28 @@ public class AtomicLongArray implements java.io.Serializable {
             long next = current + delta;
             {
                 boolean var845A43A37F048E746BD150866EB7710B_1827724781 = (compareAndSetRaw(offset, current, next));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(i);
         addTaint(delta);
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1134906415 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1134906415;
-        // ---------- Original Method ----------
-        //long offset = checkedByteOffset(i);
-        //while (true) {
-            //long current = getRaw(offset);
-            //long next = current + delta;
-            //if (compareAndSetRaw(offset, current, next))
-                //return next;
-        //}
+        
+        
+        
+            
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.458 -0400", hash_original_method = "3492963B9799FA768D7650AC10A0F976", hash_generated_method = "DEDCEC4833D88B6E34DC86A0E05EB2EA")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2092145409 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1834978074 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_2092145409 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1834978074 = null; 
         int iMax = array.length - 1;
         varB4EAC82CA7396A68D541C85D26508E83_2092145409 = "[]";
         StringBuilder b = new StringBuilder();
@@ -269,31 +274,31 @@ public class AtomicLongArray implements java.io.Serializable {
                 b.append(getRaw(byteOffset(i)));
                 varB4EAC82CA7396A68D541C85D26508E83_1834978074 = b.append(']').toString();
                 b.append(',').append(' ');
-            } //End block
-        } //End collapsed parenthetic
-        String varA7E53CE21691AB073D9660D615818899_781445737; //Final return value
+            } 
+        } 
+        String varA7E53CE21691AB073D9660D615818899_781445737; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_781445737 = varB4EAC82CA7396A68D541C85D26508E83_2092145409;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_781445737 = varB4EAC82CA7396A68D541C85D26508E83_1834978074;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_781445737.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_781445737.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_781445737;
-        // ---------- Original Method ----------
-        //int iMax = array.length - 1;
-        //if (iMax == -1)
-            //return "[]";
-        //StringBuilder b = new StringBuilder();
-        //b.append('[');
-        //for (int i = 0; ; i++) {
-            //b.append(getRaw(byteOffset(i)));
-            //if (i == iMax)
-                //return b.append(']').toString();
-            //b.append(',').append(' ');
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     

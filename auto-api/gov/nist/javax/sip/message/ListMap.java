@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.javax.sip.header.ims.*;
@@ -16,10 +16,11 @@ class ListMap {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.646 -0400", hash_original_method = "3B4FA022548893E6C8E65FE681D24699", hash_generated_method = "3B4FA022548893E6C8E65FE681D24699")
     public ListMap ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     static private void initializeListMap() {
         headerListTable = new Hashtable<Class<?>, Class<?>>();
         headerListTable.put(ExtensionHeaderImpl.class, ExtensionHeaderList.class);
@@ -60,6 +61,7 @@ class ListMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static protected boolean hasList(SIPHeader sipHeader) {
         if (sipHeader instanceof SIPHeaderList)
             return false;
@@ -70,6 +72,7 @@ class ListMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static protected boolean hasList(Class<?> sipHdrClass) {
         if (!initialized)
             initializeListMap();
@@ -77,6 +80,7 @@ class ListMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static protected Class<?> getListClass(Class<?> sipHdrClass) {
         if (!initialized)
             initializeListMap();
@@ -84,6 +88,7 @@ class ListMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     static protected SIPHeaderList<SIPHeader> getList(SIPHeader sipHeader) {
         if (!initialized)

@@ -1,11 +1,11 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.security.SecureRandom;
@@ -46,19 +46,19 @@ public class ClientHello extends Message {
         length = 38 + session_id.length + (this.cipher_suites.length << 1)
                 + compression_methods.length;
         addTaint(sr.getTaint());
-        // ---------- Original Method ----------
-        //client_version = version;
-        //long gmt_unix_time = System.currentTimeMillis()/1000;
-        //sr.nextBytes(random);
-        //random[0] = (byte) (gmt_unix_time & 0xFF000000 >>> 24);
-        //random[1] = (byte) (gmt_unix_time & 0xFF0000 >>> 16);
-        //random[2] = (byte) (gmt_unix_time & 0xFF00 >>> 8);
-        //random[3] = (byte) (gmt_unix_time & 0xFF);
-        //session_id = ses_id;
-        //this.cipher_suites = cipher_suite;
-        //compression_methods = new byte[] { 0 };
-        //length = 38 + session_id.length + (this.cipher_suites.length << 1)
-                //+ compression_methods.length;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                
     }
 
     
@@ -75,7 +75,7 @@ public class ClientHello extends Message {
         {
             fatalAlert(AlertProtocol.DECODE_ERROR,
                     "DECODE ERROR: incorrect ClientHello");
-        } //End block
+        } 
         size = l >> 1;
         cipher_suites = new CipherSuite[size];
         {
@@ -84,8 +84,8 @@ public class ClientHello extends Message {
                 byte b0 = (byte) in.read();
                 byte b1 = (byte) in.read();
                 cipher_suites[i] = CipherSuite.getByCode(b0, b1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         size = in.read();
         compression_methods = new byte[size];
         in.read(compression_methods, 0, size);
@@ -93,14 +93,14 @@ public class ClientHello extends Message {
                 + compression_methods.length;
         {
             fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect ClientHello");
-        } //End block
+        } 
         {
             in.skip(length - this.length);
             this.length = length;
-        } //End block
+        } 
         addTaint(length);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -110,8 +110,8 @@ public class ClientHello extends Message {
             boolean var022F181FCD3ECCEDD53D5E77DDFAF49D_2009087539 = (in.readUint8() != 1);
             {
                 fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect V2ClientHello");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         client_version = new byte[2];
         client_version[0] = (byte) in.readUint8();
         client_version[1] = (byte) in.readUint8();
@@ -121,12 +121,12 @@ public class ClientHello extends Message {
             {
                 fatalAlert(AlertProtocol.DECODE_ERROR,
                     "DECODE ERROR: incorrect V2ClientHello, cannot be used for resuming");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int challenge_length = in.readUint16();
         {
             fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect V2ClientHello, short challenge data");
-        } //End block
+        } 
         session_id = EmptyArray.BYTE;
         cipher_suites = new CipherSuite[cipher_spec_length/3];
         {
@@ -136,32 +136,33 @@ public class ClientHello extends Message {
                 byte b1 = (byte) in.read();
                 byte b2 = (byte) in.read();
                 cipher_suites[i] = CipherSuite.getByCode(b0, b1, b2);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         compression_methods = new byte[] { 0 };
         {
             Arrays.fill(random, 0, 32 - challenge_length, (byte)0);
             System.arraycopy(in.read(challenge_length), 0, random, 32 - challenge_length, challenge_length);
-        } //End block
+        } 
         {
             System.arraycopy(in.read(32), 0, random, 0, 32);
-        } //End block
+        } 
         {
             System.arraycopy(in.read(challenge_length), challenge_length - 32, random, 0, 32);
-        } //End block
+        } 
         {
             boolean varE684FF4D92AACF44A45D4FF9CA23ABC5_1144675224 = (in.available() > 0);
             {
                 fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect V2ClientHello, extra data");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.length = 38 + session_id.length + (cipher_suites.length << 1)
                 + compression_methods.length;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.884 -0400", hash_original_method = "89F344582D255D48D3BC56CB8686027C", hash_generated_method = "CE6AB30DE3BD6FCC627925BD87406F79")
     @Override
     public void send(HandshakeIODataStream out) {
@@ -175,30 +176,30 @@ public class ClientHello extends Message {
             int i = 0;
             {
                 out.write(cipher_suites[i].toBytes());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         out.writeUint8(compression_methods.length);
         {
             int i = 0;
             {
                 out.write(compression_methods[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.write(client_version);
-        //out.write(random);
-        //out.writeUint8(session_id.length);
-        //out.write(session_id);
-        //int size = cipher_suites.length << 1;
-        //out.writeUint16(size);
-        //for (int i = 0; i < cipher_suites.length; i++) {
-            //out.write(cipher_suites[i].toBytes());
-        //}
-        //out.writeUint8(compression_methods.length);
-        //for (int i = 0; i < compression_methods.length; i++) {
-            //out.write(compression_methods[i]);
-        //}
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -206,8 +207,8 @@ public class ClientHello extends Message {
     public byte[] getRandom() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1740665797 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1740665797;
-        // ---------- Original Method ----------
-        //return random;
+        
+        
     }
 
     
@@ -216,8 +217,8 @@ public class ClientHello extends Message {
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_354222949 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_354222949;
-        // ---------- Original Method ----------
-        //return Handshake.CLIENT_HELLO;
+        
+        
     }
 
     

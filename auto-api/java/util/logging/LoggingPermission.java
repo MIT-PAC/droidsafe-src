@@ -1,11 +1,11 @@
 package java.util.logging;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 import java.security.BasicPermission;
@@ -19,19 +19,19 @@ public final class LoggingPermission extends BasicPermission implements Guard, S
         super("", "");
         addTaint(name.getTaint());
         addTaint(actions.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.550 -0400", hash_original_method = "1D3A92DE09AD9A3275C68C126C1F0E4E", hash_generated_method = "9F031A5201F92DCE4A0AF9867DF8F9D3")
     @Override
     public String getActions() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1675733310 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1675733310 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1675733310 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1675733310.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1675733310.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1675733310;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -41,8 +41,8 @@ public final class LoggingPermission extends BasicPermission implements Guard, S
         addTaint(permission.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_642417869 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_642417869;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     

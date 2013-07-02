@@ -1,11 +1,11 @@
 package android.net.wifi;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.net.LinkProperties;
 import android.os.Parcelable;
@@ -114,37 +114,37 @@ public class WifiConfiguration implements Parcelable {
         {
             int i = 0;
             wepKeys[i] = null;
-        } //End collapsed parenthetic
+        } 
         {
             EnterpriseField field = enterpriseFields[0];
             {
                 field.setValue(null);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         ipAssignment = IpAssignment.UNASSIGNED;
         proxySettings = ProxySettings.UNASSIGNED;
         linkProperties = new LinkProperties();
-        // ---------- Original Method ----------
-        //networkId = INVALID_NETWORK_ID;
-        //SSID = null;
-        //BSSID = null;
-        //priority = 0;
-        //hiddenSSID = false;
-        //disableReason = DISABLED_UNKNOWN_REASON;
-        //allowedKeyManagement = new BitSet();
-        //allowedProtocols = new BitSet();
-        //allowedAuthAlgorithms = new BitSet();
-        //allowedPairwiseCiphers = new BitSet();
-        //allowedGroupCiphers = new BitSet();
-        //wepKeys = new String[4];
-        //for (int i = 0; i < wepKeys.length; i++)
-            //wepKeys[i] = null;
-        //for (EnterpriseField field : enterpriseFields) {
-            //field.setValue(null);
-        //}
-        //ipAssignment = IpAssignment.UNASSIGNED;
-        //proxySettings = ProxySettings.UNASSIGNED;
-        //linkProperties = new LinkProperties();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -161,7 +161,7 @@ public class WifiConfiguration implements Parcelable {
             {
                 int i = 0;
                 wepKeys[i] = source.wepKeys[i];
-            } //End collapsed parenthetic
+            } 
             wepTxKeyIndex = source.wepTxKeyIndex;
             priority = source.priority;
             hiddenSSID = source.hiddenSSID;
@@ -174,28 +174,29 @@ public class WifiConfiguration implements Parcelable {
                 int i = 0;
                 {
                     enterpriseFields[i].setValue(source.enterpriseFields[i].value());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             ipAssignment = source.ipAssignment;
             proxySettings = source.proxySettings;
             linkProperties = new LinkProperties(source.linkProperties);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.493 -0400", hash_original_method = "97D3C3FCC664C1BBD8134CCAC12AD4F6", hash_generated_method = "E7EB6C8B9E3835C85AC7A7777F2EEB5A")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1582832719 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1582832719 = null; 
         StringBuilder sbuf = new StringBuilder();
         {
             sbuf.append("* ");
-        } //End block
+        } 
         {
             sbuf.append("- DSBLE: ").append(this.disableReason).append(" ");
-        } //End block
+        } 
         sbuf.append("ID: ").append(this.networkId).append(" SSID: ").append(this.SSID).
                 append(" BSSID: ").append(this.BSSID).append(" PRIO: ").append(this.priority).
                 append('\n');
@@ -210,14 +211,14 @@ public class WifiConfiguration implements Parcelable {
                         sbuf.append(" ");
                         {
                             sbuf.append(KeyMgmt.strings[k]);
-                        } //End block
+                        } 
                         {
                             sbuf.append("??");
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         sbuf.append(" Protocols:");
         {
             int p = 0;
@@ -229,14 +230,14 @@ public class WifiConfiguration implements Parcelable {
                         sbuf.append(" ");
                         {
                             sbuf.append(Protocol.strings[p]);
-                        } //End block
+                        } 
                         {
                             sbuf.append("??");
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         sbuf.append('\n');
         sbuf.append(" AuthAlgorithms:");
         {
@@ -249,14 +250,14 @@ public class WifiConfiguration implements Parcelable {
                         sbuf.append(" ");
                         {
                             sbuf.append(AuthAlgorithm.strings[a]);
-                        } //End block
+                        } 
                         {
                             sbuf.append("??");
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         sbuf.append('\n');
         sbuf.append(" PairwiseCiphers:");
         {
@@ -269,14 +270,14 @@ public class WifiConfiguration implements Parcelable {
                         sbuf.append(" ");
                         {
                             sbuf.append(PairwiseCipher.strings[pc]);
-                        } //End block
+                        } 
                         {
                             sbuf.append("??");
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         sbuf.append('\n');
         sbuf.append(" GroupCiphers:");
         {
@@ -289,26 +290,26 @@ public class WifiConfiguration implements Parcelable {
                         sbuf.append(" ");
                         {
                             sbuf.append(GroupCipher.strings[gc]);
-                        } //End block
+                        } 
                         {
                             sbuf.append("??");
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         sbuf.append('\n').append(" PSK: ");
         {
             sbuf.append('*');
-        } //End block
+        } 
         {
             EnterpriseField field = enterpriseFields[0];
             {
                 sbuf.append('\n').append(" " + field.varName() + ": ");
                 String value = field.value();
                 sbuf.append(value);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         sbuf.append('\n');
         sbuf.append("IP assignment: " + ipAssignment.toString());
         sbuf.append("\n");
@@ -317,13 +318,14 @@ public class WifiConfiguration implements Parcelable {
         sbuf.append(linkProperties.toString());
         sbuf.append("\n");
         varB4EAC82CA7396A68D541C85D26508E83_1582832719 = sbuf.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1582832719.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1582832719.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1582832719;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static BitSet readBitSet(Parcel src) {
         int cardinality = src.readInt();
         BitSet set = new BitSet();
@@ -333,6 +335,7 @@ public class WifiConfiguration implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void writeBitSet(Parcel dest, BitSet set) {
         int nextSetBit = -1;
         dest.writeInt(set.cardinality());
@@ -341,6 +344,7 @@ public class WifiConfiguration implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.495 -0400", hash_original_method = "9AFA2ED3E118B7190C0E7E9D5FFF2220", hash_generated_method = "598BF03B66A4B66526FF6B84DFA8D291")
     public int getAuthType() {
         {
@@ -351,23 +355,23 @@ public class WifiConfiguration implements Parcelable {
                     boolean var4487495D93A95B2C963D38511EB68D01_942618481 = (allowedKeyManagement.get(KeyMgmt.WPA_EAP));
                     {
                         boolean var4D4EA5960C97B479E7F35032E5647B64_630706981 = (allowedKeyManagement.get(KeyMgmt.IEEE8021X));
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_426197509 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_426197509;
-        // ---------- Original Method ----------
-        //if (allowedKeyManagement.get(KeyMgmt.WPA_PSK)) {
-            //return KeyMgmt.WPA_PSK;
-        //} else if (allowedKeyManagement.get(KeyMgmt.WPA2_PSK)) {
-            //return KeyMgmt.WPA2_PSK;
-        //} else if (allowedKeyManagement.get(KeyMgmt.WPA_EAP)) {
-            //return KeyMgmt.WPA_EAP;
-        //} else if (allowedKeyManagement.get(KeyMgmt.IEEE8021X)) {
-            //return KeyMgmt.IEEE8021X;
-        //}
-        //return KeyMgmt.NONE;
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -375,11 +379,12 @@ public class WifiConfiguration implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1606844388 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1606844388;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.503 -0400", hash_original_method = "AEDB33EEF5EAFBB380DF78B8CF162994", hash_generated_method = "E7AA7BB6FC5DD050037A73E63ECCF683")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(networkId);
@@ -391,7 +396,7 @@ public class WifiConfiguration implements Parcelable {
         {
             String wepKey = wepKeys[0];
             dest.writeString(wepKey);
-        } //End collapsed parenthetic
+        } 
         dest.writeInt(wepTxKeyIndex);
         dest.writeInt(priority);
         dest.writeInt(hiddenSSID ? 1 : 0);
@@ -404,15 +409,15 @@ public class WifiConfiguration implements Parcelable {
             EnterpriseField field = enterpriseFields[0];
             {
                 dest.writeString(field.value());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         dest.writeString(ipAssignment.name());
         dest.writeString(proxySettings.name());
         dest.writeParcelable(linkProperties, flags);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -428,39 +433,39 @@ public class WifiConfiguration implements Parcelable {
         private  EnterpriseField(String varName) {
             this.varName = varName;
             this.value = null;
-            // ---------- Original Method ----------
-            //this.varName = varName;
-            //this.value = null;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.504 -0400", hash_original_method = "54A096BDAB783365763903A518BE6C1A", hash_generated_method = "811C079A212601355D5034023F0D4C0B")
         public void setValue(String value) {
             this.value = value;
-            // ---------- Original Method ----------
-            //this.value = value;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.504 -0400", hash_original_method = "1FBB233886BBDFBC3AF13BD83F42443E", hash_generated_method = "5B7490DBB978F9FD28FF5DD1F7352D1A")
         public String varName() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1341369200 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1341369200 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1341369200 = varName;
-            varB4EAC82CA7396A68D541C85D26508E83_1341369200.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1341369200.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1341369200;
-            // ---------- Original Method ----------
-            //return varName;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.505 -0400", hash_original_method = "75F20E3AB28F2448BFFE64E6D18AFDB6", hash_generated_method = "8959E41B46489187B357D4CE436EEE0C")
         public String value() {
-            String varB4EAC82CA7396A68D541C85D26508E83_809834224 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_809834224 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_809834224 = value;
-            varB4EAC82CA7396A68D541C85D26508E83_809834224.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_809834224.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_809834224;
-            // ---------- Original Method ----------
-            //return value;
+            
+            
         }
 
         
@@ -472,7 +477,7 @@ public class WifiConfiguration implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.505 -0400", hash_original_method = "3C24C7AE0F0A09BE18E455DF08BF91AE", hash_generated_method = "84233618D069A8DDF728C3B1AD79C9CD")
         private  KeyMgmt() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -506,7 +511,7 @@ public class WifiConfiguration implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.506 -0400", hash_original_method = "FEC0085CF7FD0AE9B8536A4264422A72", hash_generated_method = "BDFBDD91E12BC6AB0AC098F24E528B8C")
         private  Protocol() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -530,7 +535,7 @@ public class WifiConfiguration implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.507 -0400", hash_original_method = "02B498F2C9B084569031A4C2852FE733", hash_generated_method = "0DC3E2E4C06E7A517A353243CDD6C6F7")
         private  AuthAlgorithm() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -557,7 +562,7 @@ public class WifiConfiguration implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.508 -0400", hash_original_method = "D49801CF041AD620DA06D49E02E3EE50", hash_generated_method = "80B019872D8101A5104B248737E04786")
         private  PairwiseCipher() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -584,7 +589,7 @@ public class WifiConfiguration implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.511 -0400", hash_original_method = "A10BFAF56809802940D7EFFA4240EAB0", hash_generated_method = "65BD6B7E2641A28A143BE5DB0E9B6215")
         private  GroupCipher() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -614,7 +619,7 @@ public class WifiConfiguration implements Parcelable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:40.511 -0400", hash_original_method = "FE406DC4CFD00C0AE0BFBAA724FB9F50", hash_generated_method = "7E294D2CADE3312347600003F64067B6")
         private  Status() {
-            // ---------- Original Method ----------
+            
         }
 
         

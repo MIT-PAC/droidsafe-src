@@ -1,11 +1,11 @@
 package com.android.internal.view.menu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.view.menu.MenuView.ItemView;
 import android.content.ActivityNotFoundException;
@@ -102,7 +102,7 @@ public final class MenuItemImpl implements MenuItem {
                     com.android.internal.R.string.menu_delete_shortcut_label);
             sSpaceShortcutLabel = menu.getContext().getResources().getString(
                     com.android.internal.R.string.menu_space_shortcut_label);
-        } //End block
+        } 
         mMenu = menu;
         mId = id;
         mGroup = group;
@@ -110,60 +110,61 @@ public final class MenuItemImpl implements MenuItem {
         mOrdering = ordering;
         mTitle = title;
         mShowAsAction = showAsAction;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.471 -0400", hash_original_method = "DCB176B376623FC7561DCD073EB66D0A", hash_generated_method = "AE9C058BC1D7721E02FC6192E3A3CCFC")
     public boolean invoke() {
         {
             boolean var88913A92E58559334515FB7FBA94C39B_793151056 = (mClickListener != null &&
             mClickListener.onMenuItemClick(this));
-        } //End collapsed parenthetic
+        } 
         {
             boolean varFE751BCD088421286FAC3C070DC91E76_578440766 = (mMenu.dispatchMenuItemSelected(mMenu.getRootMenu(), this));
-        } //End collapsed parenthetic
+        } 
         {
             mItemCallback.run();
-        } //End block
+        } 
         {
             try 
             {
                 mMenu.getContext().startActivity(mIntent);
-            } //End block
+            } 
             catch (ActivityNotFoundException e)
             { }
-        } //End block
+        } 
         {
             boolean varB61D100D9A52D650CE9068160A94F50D_1383658373 = (mActionProvider != null && mActionProvider.onPerformDefaultAction());
-        } //End collapsed parenthetic
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1994679179 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1994679179;
-        // ---------- Original Method ----------
-        //if (mClickListener != null &&
-            //mClickListener.onMenuItemClick(this)) {
-            //return true;
-        //}
-        //if (mMenu.dispatchMenuItemSelected(mMenu.getRootMenu(), this)) {
-            //return true;
-        //}
-        //if (mItemCallback != null) {
-            //mItemCallback.run();
-            //return true;
-        //}
-        //if (mIntent != null) {
-            //try {
-                //mMenu.getContext().startActivity(mIntent);
-                //return true;
-            //} catch (ActivityNotFoundException e) {
-                //Log.e(TAG, "Can't find activity to handle intent; ignoring", e);
-            //}
-        //}
-        //if (mActionProvider != null && mActionProvider.onPerformDefaultAction()) {
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
+            
+        
+        
+            
+            
+        
+        
+            
+                
+                
+            
+                
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -171,33 +172,34 @@ public final class MenuItemImpl implements MenuItem {
     public boolean isEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1662586885 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1662586885;
-        // ---------- Original Method ----------
-        //return (mFlags & ENABLED) != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.473 -0400", hash_original_method = "D7CDC1A4A52E7AA2B30AF0AEE42BB489", hash_generated_method = "5E8913F38FD4B86793B686E40BB65EA5")
     public MenuItem setEnabled(boolean enabled) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1672303408 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1672303408 = null; 
         {
             mFlags |= ENABLED;
-        } //End block
+        } 
         {
             mFlags &= ~ENABLED;
-        } //End block
+        } 
         mMenu.onItemsChanged(false);
         varB4EAC82CA7396A68D541C85D26508E83_1672303408 = this;
         addTaint(enabled);
-        varB4EAC82CA7396A68D541C85D26508E83_1672303408.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1672303408.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1672303408;
-        // ---------- Original Method ----------
-        //if (enabled) {
-            //mFlags |= ENABLED;
-        //} else {
-            //mFlags &= ~ENABLED;
-        //}
-        //mMenu.onItemsChanged(false);
-        //return this;
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -205,8 +207,8 @@ public final class MenuItemImpl implements MenuItem {
     public int getGroupId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1360206553 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1360206553;
-        // ---------- Original Method ----------
-        //return mGroup;
+        
+        
     }
 
     
@@ -215,8 +217,8 @@ public final class MenuItemImpl implements MenuItem {
     public int getItemId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_557126641 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_557126641;
-        // ---------- Original Method ----------
-        //return mId;
+        
+        
     }
 
     
@@ -224,8 +226,8 @@ public final class MenuItemImpl implements MenuItem {
     public int getOrder() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_601265814 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_601265814;
-        // ---------- Original Method ----------
-        //return mCategoryOrder;
+        
+        
     }
 
     
@@ -233,56 +235,56 @@ public final class MenuItemImpl implements MenuItem {
     public int getOrdering() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_399354756 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_399354756;
-        // ---------- Original Method ----------
-        //return mOrdering;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.477 -0400", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "197C45F5A936B818DA3D309B7C02570C")
     public Intent getIntent() {
-        Intent varB4EAC82CA7396A68D541C85D26508E83_625572688 = null; //Variable for return #1
+        Intent varB4EAC82CA7396A68D541C85D26508E83_625572688 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_625572688 = mIntent;
-        varB4EAC82CA7396A68D541C85D26508E83_625572688.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_625572688.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_625572688;
-        // ---------- Original Method ----------
-        //return mIntent;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.479 -0400", hash_original_method = "17F59D8B490C99308235DB62C5632C43", hash_generated_method = "81A2D2BD8170F0E53E10D9B36310C79C")
     public MenuItem setIntent(Intent intent) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1002396801 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1002396801 = null; 
         mIntent = intent;
         varB4EAC82CA7396A68D541C85D26508E83_1002396801 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1002396801.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1002396801.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1002396801;
-        // ---------- Original Method ----------
-        //mIntent = intent;
-        //return this;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.481 -0400", hash_original_method = "C32C9CAC3047604A3F615D0E2B0A3D92", hash_generated_method = "1BD1E5543F183D6B9269206F540E9A56")
      Runnable getCallback() {
-        Runnable varB4EAC82CA7396A68D541C85D26508E83_435460220 = null; //Variable for return #1
+        Runnable varB4EAC82CA7396A68D541C85D26508E83_435460220 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_435460220 = mItemCallback;
-        varB4EAC82CA7396A68D541C85D26508E83_435460220.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_435460220.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_435460220;
-        // ---------- Original Method ----------
-        //return mItemCallback;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.482 -0400", hash_original_method = "CAD9375B57D68888676D597787CB9AA1", hash_generated_method = "68E63B8834859FCC07F3FA24EDA44FF4")
     public MenuItem setCallback(Runnable callback) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1167744111 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1167744111 = null; 
         mItemCallback = callback;
         varB4EAC82CA7396A68D541C85D26508E83_1167744111 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1167744111.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1167744111.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1167744111;
-        // ---------- Original Method ----------
-        //mItemCallback = callback;
-        //return this;
+        
+        
+        
     }
 
     
@@ -290,35 +292,36 @@ public final class MenuItemImpl implements MenuItem {
     public char getAlphabeticShortcut() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_1166755220 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1166755220;
-        // ---------- Original Method ----------
-        //return mShortcutAlphabeticChar;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.484 -0400", hash_original_method = "88D9907A20D6B14742A0B31CE890DEE4", hash_generated_method = "ECE4685C4D3491080D493403E770F7DF")
     public MenuItem setAlphabeticShortcut(char alphaChar) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1524562853 = null; //Variable for return #1
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1618318648 = null; //Variable for return #2
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1524562853 = null; 
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1618318648 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1524562853 = this;
         mShortcutAlphabeticChar = Character.toLowerCase(alphaChar);
         mMenu.onItemsChanged(false);
         varB4EAC82CA7396A68D541C85D26508E83_1618318648 = this;
-        MenuItem varA7E53CE21691AB073D9660D615818899_1397128295; //Final return value
+        MenuItem varA7E53CE21691AB073D9660D615818899_1397128295; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1397128295 = varB4EAC82CA7396A68D541C85D26508E83_1524562853;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1397128295 = varB4EAC82CA7396A68D541C85D26508E83_1618318648;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1397128295.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1397128295.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1397128295;
-        // ---------- Original Method ----------
-        //if (mShortcutAlphabeticChar == alphaChar) return this;
-        //mShortcutAlphabeticChar = Character.toLowerCase(alphaChar);
-        //mMenu.onItemsChanged(false);
-        //return this;
+        
+        
+        
+        
+        
     }
 
     
@@ -326,119 +329,121 @@ public final class MenuItemImpl implements MenuItem {
     public char getNumericShortcut() {
         char varA87DEB01C5F539E6BDA34829C8EF2368_1609901257 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1609901257;
-        // ---------- Original Method ----------
-        //return mShortcutNumericChar;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.487 -0400", hash_original_method = "C979D44A5E5C9CB1A686CC5CF090F436", hash_generated_method = "9CD5320CD5B61ADDE5721D9D309A0A6E")
     public MenuItem setNumericShortcut(char numericChar) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_2125518396 = null; //Variable for return #1
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_793605357 = null; //Variable for return #2
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_2125518396 = null; 
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_793605357 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2125518396 = this;
         mShortcutNumericChar = numericChar;
         mMenu.onItemsChanged(false);
         varB4EAC82CA7396A68D541C85D26508E83_793605357 = this;
-        MenuItem varA7E53CE21691AB073D9660D615818899_1711046477; //Final return value
+        MenuItem varA7E53CE21691AB073D9660D615818899_1711046477; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1711046477 = varB4EAC82CA7396A68D541C85D26508E83_2125518396;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1711046477 = varB4EAC82CA7396A68D541C85D26508E83_793605357;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1711046477.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1711046477.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1711046477;
-        // ---------- Original Method ----------
-        //if (mShortcutNumericChar == numericChar) return this;
-        //mShortcutNumericChar = numericChar;
-        //mMenu.onItemsChanged(false);
-        //return this;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.488 -0400", hash_original_method = "0C4A5B3F8F292031B8A33F43134542C3", hash_generated_method = "9196E2C0DAA659BC73394693E0A61824")
     public MenuItem setShortcut(char numericChar, char alphaChar) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_21065924 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_21065924 = null; 
         mShortcutNumericChar = numericChar;
         mShortcutAlphabeticChar = Character.toLowerCase(alphaChar);
         mMenu.onItemsChanged(false);
         varB4EAC82CA7396A68D541C85D26508E83_21065924 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_21065924.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_21065924.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_21065924;
-        // ---------- Original Method ----------
-        //mShortcutNumericChar = numericChar;
-        //mShortcutAlphabeticChar = Character.toLowerCase(alphaChar);
-        //mMenu.onItemsChanged(false);
-        //return this;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.489 -0400", hash_original_method = "D96803BF052A5945B7D152CA36FE6B7E", hash_generated_method = "5F80A2D663887C4E3950D7EE74EBEFBC")
      char getShortcut() {
-        char var657EE3268E63EFD9A824FD06F69F72DE_1541051115 = ((mMenu.isQwertyMode() ? mShortcutAlphabeticChar : mShortcutNumericChar)); //DSFIXME:  CODE0008: Nested ternary operator in expression
+        char var657EE3268E63EFD9A824FD06F69F72DE_1541051115 = ((mMenu.isQwertyMode() ? mShortcutAlphabeticChar : mShortcutNumericChar)); 
         char varA87DEB01C5F539E6BDA34829C8EF2368_462387693 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_462387693;
-        // ---------- Original Method ----------
-        //return (mMenu.isQwertyMode() ? mShortcutAlphabeticChar : mShortcutNumericChar);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.490 -0400", hash_original_method = "BC454AC179D3698A29B0357FA131C3B2", hash_generated_method = "2BD430F9C5A8F406FD142DCD09A8E4DF")
      String getShortcutLabel() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1453248131 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_388247692 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1453248131 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_388247692 = null; 
         char shortcut = getShortcut();
         {
             varB4EAC82CA7396A68D541C85D26508E83_1453248131 = "";
-        } //End block
+        } 
         StringBuilder sb = new StringBuilder(sPrependShortcutLabel);
-        //Begin case '\n' 
+        
         sb.append(sEnterShortcutLabel);
-        //End case '\n' 
-        //Begin case '\b' 
+        
+        
         sb.append(sDeleteShortcutLabel);
-        //End case '\b' 
-        //Begin case ' ' 
+        
+        
         sb.append(sSpaceShortcutLabel);
-        //End case ' ' 
-        //Begin case default 
+        
+        
         sb.append(shortcut);
-        //End case default 
+        
         varB4EAC82CA7396A68D541C85D26508E83_388247692 = sb.toString();
-        String varA7E53CE21691AB073D9660D615818899_1445017943; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1445017943; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1445017943 = varB4EAC82CA7396A68D541C85D26508E83_1453248131;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1445017943 = varB4EAC82CA7396A68D541C85D26508E83_388247692;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1445017943.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1445017943.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1445017943;
-        // ---------- Original Method ----------
-        //char shortcut = getShortcut();
-        //if (shortcut == 0) {
-            //return "";
-        //}
-        //StringBuilder sb = new StringBuilder(sPrependShortcutLabel);
-        //switch (shortcut) {
-            //case '\n':
-                //sb.append(sEnterShortcutLabel);
-                //break;
-            //case '\b':
-                //sb.append(sDeleteShortcutLabel);
-                //break;
-            //case ' ':
-                //sb.append(sSpaceShortcutLabel);
-                //break;
-            //default:
-                //sb.append(shortcut);
-                //break;
-        //}
-        //return sb.toString();
+        
+        
+        
+            
+        
+        
+        
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+        
+        
     }
 
     
@@ -447,19 +452,19 @@ public final class MenuItemImpl implements MenuItem {
         boolean varE0C4140F2C4952AC2F09D9F0558D1D66_1042866000 = (mMenu.isShortcutsVisible() && (getShortcut() != 0));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1043101790 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1043101790;
-        // ---------- Original Method ----------
-        //return mMenu.isShortcutsVisible() && (getShortcut() != 0);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.491 -0400", hash_original_method = "4569B511D747F82913D0DE9D1EF62E55", hash_generated_method = "71F86A6BCFCEBC7C2ED98B5576FD501C")
     public SubMenu getSubMenu() {
-        SubMenu varB4EAC82CA7396A68D541C85D26508E83_103638821 = null; //Variable for return #1
+        SubMenu varB4EAC82CA7396A68D541C85D26508E83_103638821 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_103638821 = mSubMenu;
-        varB4EAC82CA7396A68D541C85D26508E83_103638821.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_103638821.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_103638821;
-        // ---------- Original Method ----------
-        //return mSubMenu;
+        
+        
     }
 
     
@@ -467,8 +472,8 @@ public final class MenuItemImpl implements MenuItem {
     public boolean hasSubMenu() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_733758009 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_733758009;
-        // ---------- Original Method ----------
-        //return mSubMenu != null;
+        
+        
     }
 
     
@@ -476,173 +481,179 @@ public final class MenuItemImpl implements MenuItem {
      void setSubMenu(SubMenuBuilder subMenu) {
         mSubMenu = subMenu;
         subMenu.setHeaderTitle(getTitle());
-        // ---------- Original Method ----------
-        //mSubMenu = subMenu;
-        //subMenu.setHeaderTitle(getTitle());
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.492 -0400", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "C632648514A3B10FE0C86EB7D4E1E71F")
     @ViewDebug.CapturedViewProperty
     public CharSequence getTitle() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1104437186 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1104437186 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1104437186 = mTitle;
-        varB4EAC82CA7396A68D541C85D26508E83_1104437186.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1104437186.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1104437186;
-        // ---------- Original Method ----------
-        //return mTitle;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.493 -0400", hash_original_method = "6C0965535A50DC1B1EFB814EBEDF6248", hash_generated_method = "ABFC8C1854A11EFE8F5AE6FDFFE9B9DE")
      CharSequence getTitleForItemView(MenuView.ItemView itemView) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_144812782 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_144812782 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_144812782 = ((itemView != null) && itemView.prefersCondensedTitle())
                 ? getTitleCondensed()
                 : getTitle();
         addTaint(itemView.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_144812782.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_144812782.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_144812782;
-        // ---------- Original Method ----------
-        //return ((itemView != null) && itemView.prefersCondensedTitle())
-                //? getTitleCondensed()
-                //: getTitle();
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.494 -0400", hash_original_method = "1E48645B8578DDF9EFFB5676592C549A", hash_generated_method = "33F3C02995F09A5F1804086A14255D19")
     public MenuItem setTitle(CharSequence title) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_102958936 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_102958936 = null; 
         mTitle = title;
         mMenu.onItemsChanged(false);
         {
             mSubMenu.setHeaderTitle(title);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_102958936 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_102958936.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_102958936.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_102958936;
-        // ---------- Original Method ----------
-        //mTitle = title;
-        //mMenu.onItemsChanged(false);
-        //if (mSubMenu != null) {
-            //mSubMenu.setHeaderTitle(title);
-        //}
-        //return this;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.496 -0400", hash_original_method = "504EB589769814F693A853F99C8002C5", hash_generated_method = "9844B5F25B88D13A1DE021B6C5E35579")
     public MenuItem setTitle(int title) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_2042988314 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_2042988314 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2042988314 = setTitle(mMenu.getContext().getString(title));
         addTaint(title);
-        varB4EAC82CA7396A68D541C85D26508E83_2042988314.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2042988314.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2042988314;
-        // ---------- Original Method ----------
-        //return setTitle(mMenu.getContext().getString(title));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.497 -0400", hash_original_method = "2F32534D1148FE277B46E47FA445D759", hash_generated_method = "BBD0C8F6F91339C20487895576957B66")
     public CharSequence getTitleCondensed() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1634873690 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1634873690 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1634873690 = mTitleCondensed != null ? mTitleCondensed : mTitle;
-        varB4EAC82CA7396A68D541C85D26508E83_1634873690.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1634873690.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1634873690;
-        // ---------- Original Method ----------
-        //return mTitleCondensed != null ? mTitleCondensed : mTitle;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.497 -0400", hash_original_method = "A10897990E671CAED83F82CF9B7ADDEE", hash_generated_method = "01CB9AFB750DC7D1D9CDEEA1CB69FCC0")
     public MenuItem setTitleCondensed(CharSequence title) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1814236469 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1814236469 = null; 
         mTitleCondensed = title;
         {
             title = mTitle;
-        } //End block
+        } 
         mMenu.onItemsChanged(false);
         varB4EAC82CA7396A68D541C85D26508E83_1814236469 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1814236469.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1814236469.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1814236469;
-        // ---------- Original Method ----------
-        //mTitleCondensed = title;
-        //if (title == null) {
-            //title = mTitle;
-        //}
-        //mMenu.onItemsChanged(false);
-        //return this;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.498 -0400", hash_original_method = "77C51DB63A44599458883D3753A34CC1", hash_generated_method = "B37325B2211150AA4ED5C028296A2C82")
     public Drawable getIcon() {
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1388820064 = null; //Variable for return #1
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_1752792747 = null; //Variable for return #2
-        Drawable varB4EAC82CA7396A68D541C85D26508E83_674096235 = null; //Variable for return #3
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1388820064 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1752792747 = null; 
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_674096235 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1388820064 = mIconDrawable;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1752792747 = mMenu.getResources().getDrawable(mIconResId);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_674096235 = null;
-        Drawable varA7E53CE21691AB073D9660D615818899_1800283601; //Final return value
+        Drawable varA7E53CE21691AB073D9660D615818899_1800283601; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1800283601 = varB4EAC82CA7396A68D541C85D26508E83_1388820064;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1800283601 = varB4EAC82CA7396A68D541C85D26508E83_1752792747;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1800283601 = varB4EAC82CA7396A68D541C85D26508E83_674096235;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1800283601.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1800283601.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1800283601;
-        // ---------- Original Method ----------
-        //if (mIconDrawable != null) {
-            //return mIconDrawable;
-        //}
-        //if (mIconResId != NO_ICON) {
-            //return mMenu.getResources().getDrawable(mIconResId);
-        //}
-        //return null;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.499 -0400", hash_original_method = "BD8BE6A7204F93A97A4B1462396F9006", hash_generated_method = "7E911BB425B6D5088EF8183E4C117BD0")
     public MenuItem setIcon(Drawable icon) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_816044141 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_816044141 = null; 
         mIconResId = NO_ICON;
         mIconDrawable = icon;
         mMenu.onItemsChanged(false);
         varB4EAC82CA7396A68D541C85D26508E83_816044141 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_816044141.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_816044141.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_816044141;
-        // ---------- Original Method ----------
-        //mIconResId = NO_ICON;
-        //mIconDrawable = icon;
-        //mMenu.onItemsChanged(false);
-        //return this;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.499 -0400", hash_original_method = "6CA4716E877DA09BBA89FF884DD9F3E1", hash_generated_method = "0DA01DEC1165E840527E3D3D0DCA8A50")
     public MenuItem setIcon(int iconResId) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1333868825 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1333868825 = null; 
         mIconDrawable = null;
         mIconResId = iconResId;
         mMenu.onItemsChanged(false);
         varB4EAC82CA7396A68D541C85D26508E83_1333868825 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1333868825.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1333868825.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1333868825;
-        // ---------- Original Method ----------
-        //mIconDrawable = null;
-        //mIconResId = iconResId;
-        //mMenu.onItemsChanged(false);
-        //return this;
+        
+        
+        
+        
+        
     }
 
     
@@ -650,37 +661,38 @@ public final class MenuItemImpl implements MenuItem {
     public boolean isCheckable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1815601047 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1815601047;
-        // ---------- Original Method ----------
-        //return (mFlags & CHECKABLE) == CHECKABLE;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.501 -0400", hash_original_method = "97D03B8420DC0405BDED5AEBB6194B4D", hash_generated_method = "15A55A4E1903315B16513C4B7A558A12")
     public MenuItem setCheckable(boolean checkable) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_933408639 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_933408639 = null; 
         final int oldFlags = mFlags;
         mFlags = (mFlags & ~CHECKABLE) | (checkable ? CHECKABLE : 0);
         {
             mMenu.onItemsChanged(false);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_933408639 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_933408639.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_933408639.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_933408639;
-        // ---------- Original Method ----------
-        //final int oldFlags = mFlags;
-        //mFlags = (mFlags & ~CHECKABLE) | (checkable ? CHECKABLE : 0);
-        //if (oldFlags != mFlags) {
-            //mMenu.onItemsChanged(false);
-        //}
-        //return this;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.501 -0400", hash_original_method = "D48B0A4B4830ACC112B29145FA304FB9", hash_generated_method = "72956FA378A284989864C014D06C7B79")
     public void setExclusiveCheckable(boolean exclusive) {
         mFlags = (mFlags & ~EXCLUSIVE) | (exclusive ? EXCLUSIVE : 0);
-        // ---------- Original Method ----------
-        //mFlags = (mFlags & ~EXCLUSIVE) | (exclusive ? EXCLUSIVE : 0);
+        
+        
     }
 
     
@@ -688,8 +700,8 @@ public final class MenuItemImpl implements MenuItem {
     public boolean isExclusiveCheckable() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_521623605 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_521623605;
-        // ---------- Original Method ----------
-        //return (mFlags & EXCLUSIVE) != 0;
+        
+        
     }
 
     
@@ -697,31 +709,32 @@ public final class MenuItemImpl implements MenuItem {
     public boolean isChecked() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_152582781 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_152582781;
-        // ---------- Original Method ----------
-        //return (mFlags & CHECKED) == CHECKED;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.506 -0400", hash_original_method = "9107E25FB1CB75DAB92AC94A4D8833A7", hash_generated_method = "7297E2AB1A7D2EE186DDAC94747F5C88")
     public MenuItem setChecked(boolean checked) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_867836570 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_867836570 = null; 
         {
             mMenu.setExclusiveItemChecked(this);
-        } //End block
+        } 
         {
             setCheckedInt(checked);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_867836570 = this;
         addTaint(checked);
-        varB4EAC82CA7396A68D541C85D26508E83_867836570.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_867836570.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_867836570;
-        // ---------- Original Method ----------
-        //if ((mFlags & EXCLUSIVE) != 0) {
-            //mMenu.setExclusiveItemChecked(this);
-        //} else {
-            //setCheckedInt(checked);
-        //}
-        //return this;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -731,13 +744,13 @@ public final class MenuItemImpl implements MenuItem {
         mFlags = (mFlags & ~CHECKED) | (checked ? CHECKED : 0);
         {
             mMenu.onItemsChanged(false);
-        } //End block
-        // ---------- Original Method ----------
-        //final int oldFlags = mFlags;
-        //mFlags = (mFlags & ~CHECKED) | (checked ? CHECKED : 0);
-        //if (oldFlags != mFlags) {
-            //mMenu.onItemsChanged(false);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -745,8 +758,8 @@ public final class MenuItemImpl implements MenuItem {
     public boolean isVisible() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1856567321 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1856567321;
-        // ---------- Original Method ----------
-        //return (mFlags & HIDDEN) == 0;
+        
+        
     }
 
     
@@ -756,89 +769,93 @@ public final class MenuItemImpl implements MenuItem {
         mFlags = (mFlags & ~HIDDEN) | (shown ? 0 : HIDDEN);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_250128097 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_250128097;
-        // ---------- Original Method ----------
-        //final int oldFlags = mFlags;
-        //mFlags = (mFlags & ~HIDDEN) | (shown ? 0 : HIDDEN);
-        //return oldFlags != mFlags;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.512 -0400", hash_original_method = "C575291A3325EE507AB9F55E92185E54", hash_generated_method = "B63BA738070F1BE9A094A7FB125E4A8F")
     public MenuItem setVisible(boolean shown) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_2054509759 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_2054509759 = null; 
         {
             boolean var888A88BADDB15852039C5C93445B7B9E_315548339 = (setVisibleInt(shown));
             mMenu.onItemVisibleChanged(this);
-        } //End collapsed parenthetic
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2054509759 = this;
         addTaint(shown);
-        varB4EAC82CA7396A68D541C85D26508E83_2054509759.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2054509759.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2054509759;
-        // ---------- Original Method ----------
-        //if (setVisibleInt(shown)) mMenu.onItemVisibleChanged(this);
-        //return this;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.513 -0400", hash_original_method = "1DDD55F9AC5A73432BCD73A94619FD45", hash_generated_method = "1B9386801E94D9C675C07F633C72EA3A")
     public MenuItem setOnMenuItemClickListener(MenuItem.OnMenuItemClickListener clickListener) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_985561201 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_985561201 = null; 
         mClickListener = clickListener;
         varB4EAC82CA7396A68D541C85D26508E83_985561201 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_985561201.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_985561201.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_985561201;
-        // ---------- Original Method ----------
-        //mClickListener = clickListener;
-        //return this;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.513 -0400", hash_original_method = "233A3AFEB21203525FBA5B1CF441183E", hash_generated_method = "45F9B780CB579C3C2A070B418581884E")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1533659890 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1533659890 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1533659890 = mTitle.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1533659890.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1533659890.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1533659890;
-        // ---------- Original Method ----------
-        //return mTitle.toString();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.514 -0400", hash_original_method = "B6421912A15ECCB29CB28DC744FEB4DF", hash_generated_method = "48D720FE3E7BA870AFBD08C536357B9E")
      void setMenuInfo(ContextMenuInfo menuInfo) {
         mMenuInfo = menuInfo;
-        // ---------- Original Method ----------
-        //mMenuInfo = menuInfo;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.515 -0400", hash_original_method = "A0E326FAE2703231717DF34591A2C639", hash_generated_method = "8E9C9BFBA3459084DB45899FE103266B")
     public ContextMenuInfo getMenuInfo() {
-        ContextMenuInfo varB4EAC82CA7396A68D541C85D26508E83_799794578 = null; //Variable for return #1
+        ContextMenuInfo varB4EAC82CA7396A68D541C85D26508E83_799794578 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_799794578 = mMenuInfo;
-        varB4EAC82CA7396A68D541C85D26508E83_799794578.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_799794578.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_799794578;
-        // ---------- Original Method ----------
-        //return mMenuInfo;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.515 -0400", hash_original_method = "221F1892BBAF0D6C0448BF9B80F29C7C", hash_generated_method = "AA105CD9041C087568465B6F262D8004")
     public void actionFormatChanged() {
         mMenu.onItemActionRequestChanged(this);
-        // ---------- Original Method ----------
-        //mMenu.onItemActionRequestChanged(this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.516 -0400", hash_original_method = "B7358CCF217D02273B220AA1E4900E11", hash_generated_method = "E46DDD362CFF0707AFAF1C4872FEA830")
     public boolean shouldShowIcon() {
         boolean var70F98333FA0948733960A5795635FA78_713933018 = (mMenu.getOptionalIconsVisible());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_710937136 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_710937136;
-        // ---------- Original Method ----------
-        //return mMenu.getOptionalIconsVisible();
+        
+        
     }
 
     
@@ -846,8 +863,8 @@ public final class MenuItemImpl implements MenuItem {
     public boolean isActionButton() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1856371505 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1856371505;
-        // ---------- Original Method ----------
-        //return (mFlags & IS_ACTION) == IS_ACTION;
+        
+        
     }
 
     
@@ -855,8 +872,8 @@ public final class MenuItemImpl implements MenuItem {
     public boolean requestsActionButton() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1508091715 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1508091715;
-        // ---------- Original Method ----------
-        //return (mShowAsAction & SHOW_AS_ACTION_IF_ROOM) == SHOW_AS_ACTION_IF_ROOM;
+        
+        
     }
 
     
@@ -864,8 +881,8 @@ public final class MenuItemImpl implements MenuItem {
     public boolean requiresActionButton() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1968600858 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1968600858;
-        // ---------- Original Method ----------
-        //return (mShowAsAction & SHOW_AS_ACTION_ALWAYS) == SHOW_AS_ACTION_ALWAYS;
+        
+        
     }
 
     
@@ -873,17 +890,17 @@ public final class MenuItemImpl implements MenuItem {
     public void setIsActionButton(boolean isActionButton) {
         {
             mFlags |= IS_ACTION;
-        } //End block
+        } 
         {
             mFlags &= ~IS_ACTION;
-        } //End block
+        } 
         addTaint(isActionButton);
-        // ---------- Original Method ----------
-        //if (isActionButton) {
-            //mFlags |= IS_ACTION;
-        //} else {
-            //mFlags &= ~IS_ACTION;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -891,162 +908,169 @@ public final class MenuItemImpl implements MenuItem {
     public boolean showsTextAsAction() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1844500432 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1844500432;
-        // ---------- Original Method ----------
-        //return (mShowAsAction & SHOW_AS_ACTION_WITH_TEXT) == SHOW_AS_ACTION_WITH_TEXT;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.518 -0400", hash_original_method = "6034AD3E3F15BF95CED1827A99F9830A", hash_generated_method = "E8D8563084B1CC50260BAE003759E5BE")
     public void setShowAsAction(int actionEnum) {
-        //Begin case default 
+        
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("SHOW_AS_ACTION_ALWAYS, SHOW_AS_ACTION_IF_ROOM,"
                         + " and SHOW_AS_ACTION_NEVER are mutually exclusive.");
-        //End case default 
+        
         mShowAsAction = actionEnum;
         mMenu.onItemActionRequestChanged(this);
-        // ---------- Original Method ----------
-        //switch (actionEnum & SHOW_AS_ACTION_MASK) {
-            //case SHOW_AS_ACTION_ALWAYS:
-            //case SHOW_AS_ACTION_IF_ROOM:
-            //case SHOW_AS_ACTION_NEVER:
-                //break;
-            //default:
-                //throw new IllegalArgumentException("SHOW_AS_ACTION_ALWAYS, SHOW_AS_ACTION_IF_ROOM,"
-                        //+ " and SHOW_AS_ACTION_NEVER are mutually exclusive.");
-        //}
-        //mShowAsAction = actionEnum;
-        //mMenu.onItemActionRequestChanged(this);
+        
+        
+            
+            
+            
+                
+            
+                
+                        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.520 -0400", hash_original_method = "9511E068798AA5E04A674F02DC2F7567", hash_generated_method = "937B8AF134F439AC36C83D289520B721")
     public MenuItem setActionView(View view) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1071146143 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1071146143 = null; 
         mActionView = view;
         mActionProvider = null;
         {
             boolean var9383E447CCD31AC0A55E5ECF75C1C296_255722000 = (view != null && view.getId() == View.NO_ID && mId > 0);
             {
                 view.setId(mId);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mMenu.onItemActionRequestChanged(this);
         varB4EAC82CA7396A68D541C85D26508E83_1071146143 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1071146143.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1071146143.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1071146143;
-        // ---------- Original Method ----------
-        //mActionView = view;
-        //mActionProvider = null;
-        //if (view != null && view.getId() == View.NO_ID && mId > 0) {
-            //view.setId(mId);
-        //}
-        //mMenu.onItemActionRequestChanged(this);
-        //return this;
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.521 -0400", hash_original_method = "B057E2C488C14BC05DF25DD2F229F8B2", hash_generated_method = "F0041BE805D07F2A604E1AF8AECEF4EC")
     public MenuItem setActionView(int resId) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1188388945 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1188388945 = null; 
         final Context context = mMenu.getContext();
         final LayoutInflater inflater = LayoutInflater.from(context);
         setActionView(inflater.inflate(resId, new LinearLayout(context), false));
         varB4EAC82CA7396A68D541C85D26508E83_1188388945 = this;
         addTaint(resId);
-        varB4EAC82CA7396A68D541C85D26508E83_1188388945.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1188388945.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1188388945;
-        // ---------- Original Method ----------
-        //final Context context = mMenu.getContext();
-        //final LayoutInflater inflater = LayoutInflater.from(context);
-        //setActionView(inflater.inflate(resId, new LinearLayout(context), false));
-        //return this;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.522 -0400", hash_original_method = "404D78F2C7005B21FAAA5C37E608175C", hash_generated_method = "2287AD5E9A141E5DFCAEAD360DE10F7A")
     public View getActionView() {
-        View varB4EAC82CA7396A68D541C85D26508E83_1138091411 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1607460434 = null; //Variable for return #2
-        View varB4EAC82CA7396A68D541C85D26508E83_1918676634 = null; //Variable for return #3
+        View varB4EAC82CA7396A68D541C85D26508E83_1138091411 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1607460434 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_1918676634 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1138091411 = mActionView;
-        } //End block
+        } 
         {
             mActionView = mActionProvider.onCreateActionView();
             varB4EAC82CA7396A68D541C85D26508E83_1607460434 = mActionView;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1918676634 = null;
-        } //End block
-        View varA7E53CE21691AB073D9660D615818899_199369385; //Final return value
+        } 
+        View varA7E53CE21691AB073D9660D615818899_199369385; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_199369385 = varB4EAC82CA7396A68D541C85D26508E83_1138091411;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_199369385 = varB4EAC82CA7396A68D541C85D26508E83_1607460434;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_199369385 = varB4EAC82CA7396A68D541C85D26508E83_1918676634;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_199369385.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_199369385.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_199369385;
-        // ---------- Original Method ----------
-        //if (mActionView != null) {
-            //return mActionView;
-        //} else if (mActionProvider != null) {
-            //mActionView = mActionProvider.onCreateActionView();
-            //return mActionView;
-        //} else {
-            //return null;
-        //}
+        
+        
+            
+        
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.522 -0400", hash_original_method = "F6993BB94930E20BEF3D6DE6883E2D9B", hash_generated_method = "1FBCAE670730215312FD975B8F1201E2")
     public ActionProvider getActionProvider() {
-        ActionProvider varB4EAC82CA7396A68D541C85D26508E83_1707416262 = null; //Variable for return #1
+        ActionProvider varB4EAC82CA7396A68D541C85D26508E83_1707416262 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1707416262 = mActionProvider;
-        varB4EAC82CA7396A68D541C85D26508E83_1707416262.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1707416262.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1707416262;
-        // ---------- Original Method ----------
-        //return mActionProvider;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.523 -0400", hash_original_method = "C59B6F24EC844FBD609E594809339FFA", hash_generated_method = "0D5A884D7AD91C7AD8F7B834E3410838")
     public MenuItem setActionProvider(ActionProvider actionProvider) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_887482624 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_887482624 = null; 
         mActionView = null;
         mActionProvider = actionProvider;
         mMenu.onItemsChanged(true);
         varB4EAC82CA7396A68D541C85D26508E83_887482624 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_887482624.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_887482624.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_887482624;
-        // ---------- Original Method ----------
-        //mActionView = null;
-        //mActionProvider = actionProvider;
-        //mMenu.onItemsChanged(true);
-        //return this;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.524 -0400", hash_original_method = "90E2ACB3CB5E470B67823CDF97986260", hash_generated_method = "10C2E5D47CAC77E33FAA3244B5B15B7D")
     @Override
     public MenuItem setShowAsActionFlags(int actionEnum) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_660590526 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_660590526 = null; 
         setShowAsAction(actionEnum);
         varB4EAC82CA7396A68D541C85D26508E83_660590526 = this;
         addTaint(actionEnum);
-        varB4EAC82CA7396A68D541C85D26508E83_660590526.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_660590526.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_660590526;
-        // ---------- Original Method ----------
-        //setShowAsAction(actionEnum);
-        //return this;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.525 -0400", hash_original_method = "9242B1434B9CD0ACB88D22E492AB3A81", hash_generated_method = "FF72BB34EBB361D4727EBE44C4BDA1FC")
     @Override
     public boolean expandActionView() {
@@ -1055,22 +1079,23 @@ public final class MenuItemImpl implements MenuItem {
                 mOnActionExpandListener.onMenuItemActionExpand(this));
             {
                 boolean var38AC753AE765E96CBE659CBBA5A8A723_430723161 = (mMenu.expandItemActionView(this));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_976458352 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_976458352;
-        // ---------- Original Method ----------
-        //if ((mShowAsAction & SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW) == 0 || mActionView == null) {
-            //return false;
-        //}
-        //if (mOnActionExpandListener == null ||
-                //mOnActionExpandListener.onMenuItemActionExpand(this)) {
-            //return mMenu.expandItemActionView(this);
-        //}
-        //return false;
+        
+        
+            
+        
+        
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.525 -0400", hash_original_method = "DB0EB37C3626C85F2C23377923AB6063", hash_generated_method = "C84A0F12DDE4A361D30D3846F108632C")
     @Override
     public boolean collapseActionView() {
@@ -1079,36 +1104,36 @@ public final class MenuItemImpl implements MenuItem {
                 mOnActionExpandListener.onMenuItemActionCollapse(this));
             {
                 boolean var690A803F41D0DAB576A6FB2B9FAC7EC4_2014460126 = (mMenu.collapseItemActionView(this));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1787808517 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1787808517;
-        // ---------- Original Method ----------
-        //if ((mShowAsAction & SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW) == 0) {
-            //return false;
-        //}
-        //if (mActionView == null) {
-            //return true;
-        //}
-        //if (mOnActionExpandListener == null ||
-                //mOnActionExpandListener.onMenuItemActionCollapse(this)) {
-            //return mMenu.collapseItemActionView(this);
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+        
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.529 -0400", hash_original_method = "B1FCAF7D5B88EED4E84E6E84EBEC9EE4", hash_generated_method = "F887F8A8BA472EA41E778F3C502D8D3B")
     @Override
     public MenuItem setOnActionExpandListener(OnActionExpandListener listener) {
-        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1696237698 = null; //Variable for return #1
+        MenuItem varB4EAC82CA7396A68D541C85D26508E83_1696237698 = null; 
         mOnActionExpandListener = listener;
         varB4EAC82CA7396A68D541C85D26508E83_1696237698 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1696237698.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1696237698.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1696237698;
-        // ---------- Original Method ----------
-        //mOnActionExpandListener = listener;
-        //return this;
+        
+        
+        
     }
 
     
@@ -1116,18 +1141,19 @@ public final class MenuItemImpl implements MenuItem {
     public boolean hasCollapsibleActionView() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_520746924 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_520746924;
-        // ---------- Original Method ----------
-        //return (mShowAsAction & SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW) != 0 && mActionView != null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:34.531 -0400", hash_original_method = "A7B0C8C0A6B0446C22F6521CC0C60064", hash_generated_method = "407D942D4124D9AF1A9CE9B210935DCE")
     public void setActionViewExpanded(boolean isExpanded) {
         mIsActionViewExpanded = isExpanded;
         mMenu.onItemsChanged(false);
-        // ---------- Original Method ----------
-        //mIsActionViewExpanded = isExpanded;
-        //mMenu.onItemsChanged(false);
+        
+        
+        
     }
 
     
@@ -1135,8 +1161,8 @@ public final class MenuItemImpl implements MenuItem {
     public boolean isActionViewExpanded() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_587076051 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_587076051;
-        // ---------- Original Method ----------
-        //return mIsActionViewExpanded;
+        
+        
     }
 
     

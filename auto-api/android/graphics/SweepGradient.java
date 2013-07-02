@@ -1,11 +1,11 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class SweepGradient extends Shader {
@@ -15,27 +15,27 @@ public class SweepGradient extends Shader {
                          int colors[], float positions[]) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("needs >= 2 number of colors");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                         "color and position arrays must be of equal length");
-        } //End block
+        } 
         native_instance = nativeCreate1(cx, cy, colors, positions);
         native_shader = nativePostCreate1(native_instance, cx, cy, colors, positions);
         addTaint(cx);
         addTaint(cy);
         addTaint(colors[0]);
         addTaint(positions[0]);
-        // ---------- Original Method ----------
-        //if (colors.length < 2) {
-            //throw new IllegalArgumentException("needs >= 2 number of colors");
-        //}
-        //if (positions != null && colors.length != positions.length) {
-            //throw new IllegalArgumentException(
-                        //"color and position arrays must be of equal length");
-        //}
-        //native_instance = nativeCreate1(cx, cy, colors, positions);
-        //native_shader = nativePostCreate1(native_instance, cx, cy, colors, positions);
+        
+        
+            
+        
+        
+            
+                        
+        
+        
+        
     }
 
     
@@ -47,12 +47,13 @@ public class SweepGradient extends Shader {
         addTaint(cy);
         addTaint(color0);
         addTaint(color1);
-        // ---------- Original Method ----------
-        //native_instance = nativeCreate2(cx, cy, color0, color1);
-        //native_shader = nativePostCreate2(native_instance, cx, cy, color0, color1);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static int nativeCreate1(float x, float y, int colors[], float positions[]) {
         return DSUtils.UNKNOWN_INT;
     }

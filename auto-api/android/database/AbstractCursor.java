@@ -1,11 +1,11 @@
 package android.database;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ContentResolver;
 import android.net.Uri;
@@ -62,11 +62,11 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         mRowIdColumnIndex = -1;
         mCurrentRowID = null;
         mUpdatedRows = new HashMap<Long, Map<String, Object>>();
-        // ---------- Original Method ----------
-        //mPos = -1;
-        //mRowIdColumnIndex = -1;
-        //mCurrentRowID = null;
-        //mUpdatedRows = new HashMap<Long, Map<String, Object>>();
+        
+        
+        
+        
+        
     }
 
     
@@ -102,84 +102,89 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         addTaint(column);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461143234 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461143234;
-        // ---------- Original Method ----------
-        //return FIELD_TYPE_STRING;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.524 -0400", hash_original_method = "5BC3F93BAD50F14F34AFA39612F89CC6", hash_generated_method = "ACCD7EF624436EB59A39189DD02A2281")
     public byte[] getBlob(int column) {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("getBlob is not supported");
         addTaint(column);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_988034211 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_988034211;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException("getBlob is not supported");
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.525 -0400", hash_original_method = "DD0E28415E6C930BA9DBA04095F3A7EA", hash_generated_method = "0029F0F0E1123928D21EAF9DDC845DF3")
     public CursorWindow getWindow() {
-        CursorWindow varB4EAC82CA7396A68D541C85D26508E83_2144457490 = null; //Variable for return #1
+        CursorWindow varB4EAC82CA7396A68D541C85D26508E83_2144457490 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2144457490 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_2144457490.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2144457490.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2144457490;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.525 -0400", hash_original_method = "97CA757ED7462ACFFD2DF70EB3327BE9", hash_generated_method = "A4AE50FCF2902150AF2CED1E30D6E94B")
     public int getColumnCount() {
         int varE598DA0DE038A65D9C059A044E9E4C36_335498766 = (getColumnNames().length);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1548575106 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1548575106;
-        // ---------- Original Method ----------
-        //return getColumnNames().length;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.526 -0400", hash_original_method = "FE85B15F7B4AB77AD59F907B33A4DE11", hash_generated_method = "17FE726C99E84E75E28F21C8A3D0BF8F")
     public void deactivate() {
         onDeactivateOrClose();
-        // ---------- Original Method ----------
-        //onDeactivateOrClose();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.526 -0400", hash_original_method = "5696E4CEEE521AD3C05FDA1D1F1B30F5", hash_generated_method = "1A88E5AE7EDDB03D758D160469F2BE50")
     protected void onDeactivateOrClose() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mContentResolver.unregisterContentObserver(mSelfObserver);
             mSelfObserverRegistered = false;
-        } //End block
+        } 
         mDataSetObservable.notifyInvalidated();
-        // ---------- Original Method ----------
-        //if (mSelfObserver != null) {
-            //mContentResolver.unregisterContentObserver(mSelfObserver);
-            //mSelfObserverRegistered = false;
-        //}
-        //mDataSetObservable.notifyInvalidated();
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.526 -0400", hash_original_method = "6C342ADEDDD7EC7E0C1CE765BD80D8D1", hash_generated_method = "E7CDC3E741E20E7FF78A160C2AA9FF7A")
     public boolean requery() {
         {
             mContentResolver.registerContentObserver(mNotifyUri, true, mSelfObserver);
             mSelfObserverRegistered = true;
-        } //End block
+        } 
         mDataSetObservable.notifyChanged();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_246784834 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_246784834;
-        // ---------- Original Method ----------
-        //if (mSelfObserver != null && mSelfObserverRegistered == false) {
-            //mContentResolver.registerContentObserver(mNotifyUri, true, mSelfObserver);
-            //mSelfObserverRegistered = true;
-        //}
-        //mDataSetObservable.notifyChanged();
-        //return true;
+        
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -187,35 +192,37 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     public boolean isClosed() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_194471006 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_194471006;
-        // ---------- Original Method ----------
-        //return mClosed;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.527 -0400", hash_original_method = "75E7685835D22353FA19EABDEF4435E7", hash_generated_method = "2BF4E0E42FFFCB99FDCE632E9C0D4D96")
     public void close() {
         mClosed = true;
         mContentObservable.unregisterAll();
         onDeactivateOrClose();
-        // ---------- Original Method ----------
-        //mClosed = true;
-        //mContentObservable.unregisterAll();
-        //onDeactivateOrClose();
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.528 -0400", hash_original_method = "316C43B210EB72CE31C6D4E542FB15C5", hash_generated_method = "540E7B9EE06F399D3ABDB057B294BCBB")
     public boolean onMove(int oldPosition, int newPosition) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(oldPosition);
         addTaint(newPosition);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_562385171 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_562385171;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.528 -0400", hash_original_method = "8CF2CB9941A08AAA09DBF5869325E31C", hash_generated_method = "3E9A472639D9F9D9A1BB57E9327CCE2C")
     public void copyStringToBuffer(int columnIndex, CharArrayBuffer buffer) {
         String result = getString(columnIndex);
@@ -225,31 +232,31 @@ public abstract class AbstractCursor implements CrossProcessCursor {
                 boolean varB3C493CCA0A5FEEBFBA4E5B6E1AC0832_308335083 = (data == null || data.length < result.length());
                 {
                     buffer.data = result.toCharArray();
-                } //End block
+                } 
                 {
                     result.getChars(0, result.length(), data, 0);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             buffer.sizeCopied = result.length();
-        } //End block
+        } 
         {
             buffer.sizeCopied = 0;
-        } //End block
+        } 
         addTaint(columnIndex);
         addTaint(buffer.getTaint());
-        // ---------- Original Method ----------
-        //String result = getString(columnIndex);
-        //if (result != null) {
-            //char[] data = buffer.data;
-            //if (data == null || data.length < result.length()) {
-                //buffer.data = result.toCharArray();
-            //} else {
-                //result.getChars(0, result.length(), data, 0);
-            //}
-            //buffer.sizeCopied = result.length();
-        //} else {
-            //buffer.sizeCopied = 0;
-        //}
+        
+        
+        
+            
+            
+                
+            
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -257,8 +264,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     public final int getPosition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067460837 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067460837;
-        // ---------- Original Method ----------
-        //return mPos;
+        
+        
     }
 
     
@@ -267,56 +274,57 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         final int count = getCount();
         {
             mPos = count;
-        } //End block
+        } 
         {
             mPos = -1;
-        } //End block
+        } 
         boolean result = onMove(mPos, position);
         {
             mPos = -1;
-        } //End block
+        } 
         {
             mPos = position;
             {
                 mCurrentRowID = Long.valueOf(getLong(mRowIdColumnIndex));
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1437541915 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1437541915;
-        // ---------- Original Method ----------
-        //final int count = getCount();
-        //if (position >= count) {
-            //mPos = count;
-            //return false;
-        //}
-        //if (position < 0) {
-            //mPos = -1;
-            //return false;
-        //}
-        //if (position == mPos) {
-            //return true;
-        //}
-        //boolean result = onMove(mPos, position);
-        //if (result == false) {
-            //mPos = -1;
-        //} else {
-            //mPos = position;
-            //if (mRowIdColumnIndex != -1) {
-                //mCurrentRowID = Long.valueOf(getLong(mRowIdColumnIndex));
-            //}
-        //}
-        //return result;
+        
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+            
+        
+        
+        
+            
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.529 -0400", hash_original_method = "6FC66EDC6A2293E690F6FEA8028519D4", hash_generated_method = "F3F1A8E4F0039670932F69218A3019CF")
     @Override
     public void fillWindow(int position, CursorWindow window) {
         DatabaseUtils.cursorFillWindow(this, position, window);
         addTaint(position);
         addTaint(window.getTaint());
-        // ---------- Original Method ----------
-        //DatabaseUtils.cursorFillWindow(this, position, window);
+        
+        
     }
 
     
@@ -326,8 +334,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         addTaint(offset);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_626499277 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_626499277;
-        // ---------- Original Method ----------
-        //return moveToPosition(mPos + offset);
+        
+        
     }
 
     
@@ -336,8 +344,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         boolean var7169217BA523AE68C1F7B0C7563B6D2F_232431613 = (moveToPosition(0));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_382688873 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_382688873;
-        // ---------- Original Method ----------
-        //return moveToPosition(0);
+        
+        
     }
 
     
@@ -346,8 +354,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         boolean var883322E63C74EFF5BA3E9BBFA1EB0817_1933743639 = (moveToPosition(getCount() - 1));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1558467374 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1558467374;
-        // ---------- Original Method ----------
-        //return moveToPosition(getCount() - 1);
+        
+        
     }
 
     
@@ -356,8 +364,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         boolean var6557A178A7D0E5B123127618582893AA_1131403106 = (moveToPosition(mPos + 1));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_244859947 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_244859947;
-        // ---------- Original Method ----------
-        //return moveToPosition(mPos + 1);
+        
+        
     }
 
     
@@ -366,8 +374,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         boolean var62DFA72D2B670D9088C02CC6B3B7A7B4_819719835 = (moveToPosition(mPos - 1));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_670696892 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_670696892;
-        // ---------- Original Method ----------
-        //return moveToPosition(mPos - 1);
+        
+        
     }
 
     
@@ -376,8 +384,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         boolean varADB2B3DA6A35A98BE1B5E66B40FE6B61_1947428708 = (mPos == 0 && getCount() != 0);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1939890895 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1939890895;
-        // ---------- Original Method ----------
-        //return mPos == 0 && getCount() != 0;
+        
+        
     }
 
     
@@ -386,9 +394,9 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         int cnt = getCount();
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1764831979 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1764831979;
-        // ---------- Original Method ----------
-        //int cnt = getCount();
-        //return mPos == (cnt - 1) && cnt != 0;
+        
+        
+        
     }
 
     
@@ -396,14 +404,14 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     public final boolean isBeforeFirst() {
         {
             boolean var1E308F1B2924DF35832B0C6653D5399D_1607916210 = (getCount() == 0);
-        } //End collapsed parenthetic
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_14207149 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_14207149;
-        // ---------- Original Method ----------
-        //if (getCount() == 0) {
-            //return true;
-        //}
-        //return mPos == -1;
+        
+        
+            
+        
+        
     }
 
     
@@ -411,25 +419,26 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     public final boolean isAfterLast() {
         {
             boolean var1E308F1B2924DF35832B0C6653D5399D_23749991 = (getCount() == 0);
-        } //End collapsed parenthetic
+        } 
         boolean var0FABA7953C222ACDE339B5487276FBD9_1212909233 = (mPos == getCount());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1324209790 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1324209790;
-        // ---------- Original Method ----------
-        //if (getCount() == 0) {
-            //return true;
-        //}
-        //return mPos == getCount();
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.534 -0400", hash_original_method = "1BC2DDCF2F027B280B5593E829676223", hash_generated_method = "B69FE47005E2E09DA63FB6D579713FC3")
     public int getColumnIndex(String columnName) {
         final int periodIndex = columnName.lastIndexOf('.');
         {
             Exception e = new Exception();
             columnName = columnName.substring(periodIndex + 1);
-        } //End block
+        } 
         String columnNames[] = getColumnNames();
         int length = columnNames.length;
         {
@@ -437,148 +446,156 @@ public abstract class AbstractCursor implements CrossProcessCursor {
             {
                 {
                     boolean var8A92D03C059C3C4A74106A947683F96E_1454553795 = (columnNames[i].equalsIgnoreCase(columnName));
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             {
                 boolean varFC53D64D8090E12EDE66C4B1525878D8_1131452274 = (getCount() > 0);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(columnName.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1860836977 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1860836977;
-        // ---------- Original Method ----------
-        //final int periodIndex = columnName.lastIndexOf('.');
-        //if (periodIndex != -1) {
-            //Exception e = new Exception();
-            //Log.e(TAG, "requesting column name with table name -- " + columnName, e);
-            //columnName = columnName.substring(periodIndex + 1);
-        //}
-        //String columnNames[] = getColumnNames();
-        //int length = columnNames.length;
-        //for (int i = 0; i < length; i++) {
-            //if (columnNames[i].equalsIgnoreCase(columnName)) {
-                //return i;
-            //}
-        //}
-        //if (false) {
-            //if (getCount() > 0) {
-                //Log.w("AbstractCursor", "Unknown column " + columnName);
-            //}
-        //}
-        //return -1;
+        
+        
+        
+            
+            
+            
+        
+        
+        
+        
+            
+                
+            
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.534 -0400", hash_original_method = "7BAA81DCDF7699C82AB2A31918E9C0C1", hash_generated_method = "AE3A9EBDB7403320CFD7A9B20F6EDD02")
     public int getColumnIndexOrThrow(String columnName) {
         final int index = getColumnIndex(columnName);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("column '" + columnName + "' does not exist");
-        } //End block
+        } 
         addTaint(columnName.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_491753246 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_491753246;
-        // ---------- Original Method ----------
-        //final int index = getColumnIndex(columnName);
-        //if (index < 0) {
-            //throw new IllegalArgumentException("column '" + columnName + "' does not exist");
-        //}
-        //return index;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.536 -0400", hash_original_method = "2C8B9F57D7BABEC67595057D4A416343", hash_generated_method = "E8DE333B065FB2BEC6E522662398DC1F")
     public String getColumnName(int columnIndex) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1349733038 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1349733038 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1349733038 = getColumnNames()[columnIndex];
         addTaint(columnIndex);
-        varB4EAC82CA7396A68D541C85D26508E83_1349733038.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1349733038.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1349733038;
-        // ---------- Original Method ----------
-        //return getColumnNames()[columnIndex];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.537 -0400", hash_original_method = "969C8D7FAD299958455EEA8274658457", hash_generated_method = "AEFA561A03BB5A433531253EF2321E96")
     public void registerContentObserver(ContentObserver observer) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         mContentObservable.registerObserver(observer);
         addTaint(observer.getTaint());
-        // ---------- Original Method ----------
-        //mContentObservable.registerObserver(observer);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.537 -0400", hash_original_method = "0986E51B80B8DF6AE5336EB6410DC9C5", hash_generated_method = "81BB786F388406F395DE8392F002749E")
     public void unregisterContentObserver(ContentObserver observer) {
         {
             mContentObservable.unregisterObserver(observer);
-        } //End block
+        } 
         addTaint(observer.getTaint());
-        // ---------- Original Method ----------
-        //if (!mClosed) {
-            //mContentObservable.unregisterObserver(observer);
-        //}
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.538 -0400", hash_original_method = "C09BE1AB0F1EB5BF63EC2A314B1EC0E8", hash_generated_method = "362A8921CADC3161CC20FD83BD5E4602")
     protected void notifyDataSetChange() {
         mDataSetObservable.notifyChanged();
-        // ---------- Original Method ----------
-        //mDataSetObservable.notifyChanged();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.539 -0400", hash_original_method = "9CE71984FA039D61518575C1361CCA79", hash_generated_method = "7FA1F01B6B8C82295C0802EA56CC00F7")
     protected DataSetObservable getDataSetObservable() {
-        DataSetObservable varB4EAC82CA7396A68D541C85D26508E83_1069310559 = null; //Variable for return #1
+        DataSetObservable varB4EAC82CA7396A68D541C85D26508E83_1069310559 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1069310559 = mDataSetObservable;
-        varB4EAC82CA7396A68D541C85D26508E83_1069310559.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1069310559.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1069310559;
-        // ---------- Original Method ----------
-        //return mDataSetObservable;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.539 -0400", hash_original_method = "5BE178AB760CC925EF7E1111F1B4915D", hash_generated_method = "D80BACDB53770E495497918A52F212CE")
     public void registerDataSetObserver(DataSetObserver observer) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         mDataSetObservable.registerObserver(observer);
         addTaint(observer.getTaint());
-        // ---------- Original Method ----------
-        //mDataSetObservable.registerObserver(observer);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.539 -0400", hash_original_method = "8548074F279CEB9C75C60995B3E76B4B", hash_generated_method = "18957645919BC1B25C95D955828DA072")
     public void unregisterDataSetObserver(DataSetObserver observer) {
         mDataSetObservable.unregisterObserver(observer);
         addTaint(observer.getTaint());
-        // ---------- Original Method ----------
-        //mDataSetObservable.unregisterObserver(observer);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.540 -0400", hash_original_method = "46E00F9025A0D5563AEDF0BD12648840", hash_generated_method = "C9F66A0A4C719B0A7060BD7592750D7C")
     protected void onChange(boolean selfChange) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             mContentObservable.dispatchChange(selfChange);
             {
                 mContentResolver.notifyChange(mNotifyUri, mSelfObserver);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(selfChange);
-        // ---------- Original Method ----------
-        //synchronized (mSelfObserverLock) {
-            //mContentObservable.dispatchChange(selfChange);
-            //if (mNotifyUri != null && selfChange) {
-                //mContentResolver.notifyChange(mNotifyUri, mSelfObserver);
-            //}
-        //}
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -589,33 +606,33 @@ public abstract class AbstractCursor implements CrossProcessCursor {
             mContentResolver = cr;
             {
                 mContentResolver.unregisterContentObserver(mSelfObserver);
-            } //End block
+            } 
             mSelfObserver = new SelfContentObserver(this);
             mContentResolver.registerContentObserver(mNotifyUri, true, mSelfObserver);
             mSelfObserverRegistered = true;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mSelfObserverLock) {
-            //mNotifyUri = notifyUri;
-            //mContentResolver = cr;
-            //if (mSelfObserver != null) {
-                //mContentResolver.unregisterContentObserver(mSelfObserver);
-            //}
-            //mSelfObserver = new SelfContentObserver(this);
-            //mContentResolver.registerContentObserver(mNotifyUri, true, mSelfObserver);
-            //mSelfObserverRegistered = true;
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.541 -0400", hash_original_method = "DDB9421669E815EA51C0F68469B23471", hash_generated_method = "CA0058844C2468EAFED73F3EBCC11E94")
     public Uri getNotificationUri() {
-        Uri varB4EAC82CA7396A68D541C85D26508E83_1181710834 = null; //Variable for return #1
+        Uri varB4EAC82CA7396A68D541C85D26508E83_1181710834 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1181710834 = mNotifyUri;
-        varB4EAC82CA7396A68D541C85D26508E83_1181710834.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1181710834.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1181710834;
-        // ---------- Original Method ----------
-        //return mNotifyUri;
+        
+        
     }
 
     
@@ -623,39 +640,39 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     public boolean getWantsAllOnMoveCalls() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1287267999 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1287267999;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.542 -0400", hash_original_method = "FFD927D835EC033CA0D5789154520D3B", hash_generated_method = "598746C945848452E29BDC82DB3737FA")
     public void setExtras(Bundle extras) {
         mExtras = (extras == null) ? Bundle.EMPTY : extras;
-        // ---------- Original Method ----------
-        //mExtras = (extras == null) ? Bundle.EMPTY : extras;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.543 -0400", hash_original_method = "CF33C86C13BFD55DE499066ECC955562", hash_generated_method = "859F1D4A65D1757E58CBAD4911110C77")
     public Bundle getExtras() {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_1118957285 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_1118957285 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1118957285 = mExtras;
-        varB4EAC82CA7396A68D541C85D26508E83_1118957285.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1118957285.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1118957285;
-        // ---------- Original Method ----------
-        //return mExtras;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.544 -0400", hash_original_method = "0DCA3EA5579BB07DA7E61D916C230104", hash_generated_method = "738D94E5FA67E7280E53B5131DF36FDD")
     public Bundle respond(Bundle extras) {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_591538936 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_591538936 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_591538936 = Bundle.EMPTY;
         addTaint(extras.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_591538936.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_591538936.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_591538936;
-        // ---------- Original Method ----------
-        //return Bundle.EMPTY;
+        
+        
     }
 
     
@@ -665,49 +682,51 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         addTaint(columnIndex);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2122364848 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2122364848;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.546 -0400", hash_original_method = "C12342D6451FF7A0A51B2EFC9932FDFD", hash_generated_method = "588AD344A56845C38727697D6B56F797")
     @Deprecated
     protected Object getUpdatedField(int columnIndex) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_2090095006 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_2090095006 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2090095006 = null;
         addTaint(columnIndex);
-        varB4EAC82CA7396A68D541C85D26508E83_2090095006.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2090095006.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2090095006;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.547 -0400", hash_original_method = "D69CAFAFBC9C61DD3802AD1DC7C32FD3", hash_generated_method = "C53E38A1C3EB6F46ED9BB660901CA248")
     protected void checkPosition() {
         {
             boolean var63B4E4AC12944E47003AF0905D5ED5FF_1386939175 = (-1 == mPos || getCount() == mPos);
             {
                 if (DroidSafeAndroidRuntime.control) throw new CursorIndexOutOfBoundsException(mPos, getCount());
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (-1 == mPos || getCount() == mPos) {
-            //throw new CursorIndexOutOfBoundsException(mPos, getCount());
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.547 -0400", hash_original_method = "F26D041066C4F03E188153BABFEE500A", hash_generated_method = "527FAC0CAA846B70BB6AE3177A20EE40")
     @Override
     protected void finalize() {
         {
             mContentResolver.unregisterContentObserver(mSelfObserver);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSelfObserver != null && mSelfObserverRegistered == true) {
-            //mContentResolver.unregisterContentObserver(mSelfObserver);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -720,8 +739,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         public  SelfContentObserver(AbstractCursor cursor) {
             super(null);
             mCursor = new WeakReference<AbstractCursor>(cursor);
-            // ---------- Original Method ----------
-            //mCursor = new WeakReference<AbstractCursor>(cursor);
+            
+            
         }
 
         
@@ -730,25 +749,25 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         public boolean deliverSelfNotifications() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1836105500 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1836105500;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.548 -0400", hash_original_method = "DA6E4383047955D7231484890E1F062B", hash_generated_method = "94FD59BEE507E9F39D5C73388FF51137")
         @Override
         public void onChange(boolean selfChange) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             AbstractCursor cursor = mCursor.get();
             {
                 cursor.onChange(false);
-            } //End block
+            } 
             addTaint(selfChange);
-            // ---------- Original Method ----------
-            //AbstractCursor cursor = mCursor.get();
-            //if (cursor != null) {
-                //cursor.onChange(false);
-            //}
+            
+            
+            
+                
+            
         }
 
         

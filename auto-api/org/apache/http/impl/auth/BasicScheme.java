@@ -1,11 +1,11 @@
 package org.apache.http.impl.auth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.Header;
@@ -28,19 +28,19 @@ public class BasicScheme extends RFC2617Scheme {
     public  BasicScheme() {
         super();
         this.complete = false;
-        // ---------- Original Method ----------
-        //this.complete = false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.779 -0400", hash_original_method = "456652B0A19A82DBC909302CFB2200F1", hash_generated_method = "EFDB29AD9C5D4A9E1818DC99826B363E")
     public String getSchemeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_512928584 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_512928584 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_512928584 = "basic";
-        varB4EAC82CA7396A68D541C85D26508E83_512928584.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_512928584.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_512928584;
-        // ---------- Original Method ----------
-        //return "basic";
+        
+        
     }
 
     
@@ -51,9 +51,9 @@ public class BasicScheme extends RFC2617Scheme {
         super.processChallenge(header);
         this.complete = true;
         addTaint(header.getTaint());
-        // ---------- Original Method ----------
-        //super.processChallenge(header);
-        //this.complete = true;
+        
+        
+        
     }
 
     
@@ -61,8 +61,8 @@ public class BasicScheme extends RFC2617Scheme {
     public boolean isComplete() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2140833588 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2140833588;
-        // ---------- Original Method ----------
-        //return this.complete;
+        
+        
     }
 
     
@@ -70,8 +70,8 @@ public class BasicScheme extends RFC2617Scheme {
     public boolean isConnectionBased() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1961880810 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1961880810;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -79,28 +79,28 @@ public class BasicScheme extends RFC2617Scheme {
     public Header authenticate(
             final Credentials credentials, 
             final HttpRequest request) throws AuthenticationException {
-        Header varB4EAC82CA7396A68D541C85D26508E83_106641564 = null; //Variable for return #1
+        Header varB4EAC82CA7396A68D541C85D26508E83_106641564 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Credentials may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
-        } //End block
+        } 
         String charset = AuthParams.getCredentialCharset(request.getParams());
         varB4EAC82CA7396A68D541C85D26508E83_106641564 = authenticate(credentials, charset, isProxy());
         addTaint(credentials.getTaint());
         addTaint(request.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_106641564.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_106641564.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_106641564;
-        // ---------- Original Method ----------
-        //if (credentials == null) {
-            //throw new IllegalArgumentException("Credentials may not be null");
-        //}
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //String charset = AuthParams.getCredentialCharset(request.getParams());
-        //return authenticate(credentials, charset, isProxy());
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     

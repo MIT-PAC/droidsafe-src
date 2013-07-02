@@ -1,11 +1,11 @@
 package android.database;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class CharArrayBuffer {
@@ -19,16 +19,16 @@ public final class CharArrayBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.648 -0400", hash_original_method = "BF91F70D5F13CEDD7E0CBBE1EFC98D70", hash_generated_method = "4C2787E6751E26394D8D41AC561B9988")
     public  CharArrayBuffer(int size) {
         data = new char[size];
-        // ---------- Original Method ----------
-        //data = new char[size];
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.648 -0400", hash_original_method = "40679B6E17B0E065ADE0664E6257B1BF", hash_generated_method = "E397297280709518057C19FD579B0BA7")
     public  CharArrayBuffer(char[] buf) {
         data = buf;
-        // ---------- Original Method ----------
-        //data = buf;
+        
+        
     }
 
     

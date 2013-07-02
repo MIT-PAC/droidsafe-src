@@ -1,11 +1,11 @@
 package javax.crypto.spec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.spec.KeySpec;
 import java.util.Arrays;
@@ -29,24 +29,24 @@ public class PBEKeySpec implements KeySpec {
     public  PBEKeySpec(char[] password) {
         {
             this.password = EmptyArray.CHAR;
-        } //End block
+        } 
         {
             this.password = new char[password.length];
             System.arraycopy(password, 0, this.password, 0, password.length);
-        } //End block
+        } 
         salt = null;
         iterationCount = 0;
         keyLength = 0;
-        // ---------- Original Method ----------
-        //if (password == null) {
-            //this.password = EmptyArray.CHAR;
-        //} else {
-            //this.password = new char[password.length];
-            //System.arraycopy(password, 0, this.password, 0, password.length);
-        //}
-        //salt = null;
-        //iterationCount = 0;
-        //keyLength = 0;
+        
+        
+            
+        
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -55,29 +55,29 @@ public class PBEKeySpec implements KeySpec {
                       int keyLength) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("salt == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("salt.length == 0");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("iterationCount <= 0");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("keyLength <= 0");
-        } //End block
+        } 
         {
             this.password = EmptyArray.CHAR;
-        } //End block
+        } 
         {
             this.password = new char[password.length];
             System.arraycopy(password, 0, this.password, 0, password.length);
-        } //End block
+        } 
         this.salt = new byte[salt.length];
         System.arraycopy(salt, 0, this.salt, 0, salt.length);
         this.iterationCount = iterationCount;
         this.keyLength = keyLength;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -85,44 +85,44 @@ public class PBEKeySpec implements KeySpec {
     public  PBEKeySpec(char[] password, byte[] salt, int iterationCount) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("salt == null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("salt.length == 0");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("iterationCount <= 0");
-        } //End block
+        } 
         {
             this.password = EmptyArray.CHAR;
-        } //End block
+        } 
         {
             this.password = new char[password.length];
             System.arraycopy(password, 0, this.password, 0, password.length);
-        } //End block
+        } 
         this.salt = new byte[salt.length];
         System.arraycopy(salt, 0, this.salt, 0, salt.length);
         this.iterationCount = iterationCount;
         this.keyLength = 0;
-        // ---------- Original Method ----------
-        //if (salt == null) {
-            //throw new NullPointerException("salt == null");
-        //}
-        //if (salt.length == 0) {
-            //throw new IllegalArgumentException("salt.length == 0");
-        //}
-        //if (iterationCount <= 0) {
-            //throw new IllegalArgumentException("iterationCount <= 0");
-        //}
-        //if (password == null) {
-            //this.password = EmptyArray.CHAR;
-        //} else {
-            //this.password = new char[password.length];
-            //System.arraycopy(password, 0, this.password, 0, password.length);
-        //}
-        //this.salt = new byte[salt.length];
-        //System.arraycopy(salt, 0, this.salt, 0, salt.length);
-        //this.iterationCount = iterationCount;
-        //this.keyLength = 0;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -130,9 +130,9 @@ public class PBEKeySpec implements KeySpec {
     public final void clearPassword() {
         Arrays.fill(password, '?');
         password = null;
-        // ---------- Original Method ----------
-        //Arrays.fill(password, '?');
-        //password = null;
+        
+        
+        
     }
 
     
@@ -140,18 +140,18 @@ public class PBEKeySpec implements KeySpec {
     public final char[] getPassword() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("The password has been cleared");
-        } //End block
+        } 
         char[] result = new char[password.length];
         System.arraycopy(password, 0, result, 0, password.length);
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1106156273 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1106156273;
-        // ---------- Original Method ----------
-        //if (password == null) {
-            //throw new IllegalStateException("The password has been cleared");
-        //}
-        //char[] result = new char[password.length];
-        //System.arraycopy(password, 0, result, 0, password.length);
-        //return result;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -161,13 +161,13 @@ public class PBEKeySpec implements KeySpec {
         System.arraycopy(salt, 0, result, 0, salt.length);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_506254553 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_506254553;
-        // ---------- Original Method ----------
-        //if (salt == null) {
-            //return null;
-        //}
-        //byte[] result = new byte[salt.length];
-        //System.arraycopy(salt, 0, result, 0, salt.length);
-        //return result;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -175,8 +175,8 @@ public class PBEKeySpec implements KeySpec {
     public final int getIterationCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_837992590 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_837992590;
-        // ---------- Original Method ----------
-        //return iterationCount;
+        
+        
     }
 
     
@@ -184,8 +184,8 @@ public class PBEKeySpec implements KeySpec {
     public final int getKeyLength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_501323705 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_501323705;
-        // ---------- Original Method ----------
-        //return keyLength;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -47,29 +47,29 @@ public class LayoutAnimationController {
         int resource = a.getResourceId(com.android.internal.R.styleable.LayoutAnimation_animation, 0);
         {
             setAnimation(context, resource);
-        } //End block
+        } 
         resource = a.getResourceId(com.android.internal.R.styleable.LayoutAnimation_interpolator, 0);
         {
             setInterpolator(context, resource);
-        } //End block
+        } 
         a.recycle();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.LayoutAnimation);
-        //Animation.Description d = Animation.Description.parseValue(
-                //a.peekValue(com.android.internal.R.styleable.LayoutAnimation_delay));
-        //mDelay = d.value;
-        //mOrder = a.getInt(com.android.internal.R.styleable.LayoutAnimation_animationOrder, ORDER_NORMAL);
-        //int resource = a.getResourceId(com.android.internal.R.styleable.LayoutAnimation_animation, 0);
-        //if (resource > 0) {
-            //setAnimation(context, resource);
-        //}
-        //resource = a.getResourceId(com.android.internal.R.styleable.LayoutAnimation_interpolator, 0);
-        //if (resource > 0) {
-            //setInterpolator(context, resource);
-        //}
-        //a.recycle();
+        
+        
+        
+                
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -77,7 +77,7 @@ public class LayoutAnimationController {
     public  LayoutAnimationController(Animation animation) {
         this(animation, 0.5f);
         addTaint(animation.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -86,9 +86,9 @@ public class LayoutAnimationController {
         mDelay = delay;
         setAnimation(animation);
         addTaint(animation.getTaint());
-        // ---------- Original Method ----------
-        //mDelay = delay;
-        //setAnimation(animation);
+        
+        
+        
     }
 
     
@@ -96,76 +96,79 @@ public class LayoutAnimationController {
     public int getOrder() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723658095 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723658095;
-        // ---------- Original Method ----------
-        //return mOrder;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.684 -0400", hash_original_method = "648C96BEF511A58A69E168C40D059B54", hash_generated_method = "23B5E85A7019C72C38679E0BA3B78B0E")
     public void setOrder(int order) {
         mOrder = order;
-        // ---------- Original Method ----------
-        //mOrder = order;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.684 -0400", hash_original_method = "DA137DCBF1E5E58EF4425067063E3D6F", hash_generated_method = "F06DC297E669BBFCA88B74AFA475E604")
     public void setAnimation(Context context, int resourceID) {
         setAnimation(AnimationUtils.loadAnimation(context, resourceID));
         addTaint(context.getTaint());
         addTaint(resourceID);
-        // ---------- Original Method ----------
-        //setAnimation(AnimationUtils.loadAnimation(context, resourceID));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.685 -0400", hash_original_method = "B4A74FA6048B5852F1E265E64E11FC0D", hash_generated_method = "650036FF6A01BD934E9A839927003C94")
     public void setAnimation(Animation animation) {
         mAnimation = animation;
         mAnimation.setFillBefore(true);
-        // ---------- Original Method ----------
-        //mAnimation = animation;
-        //mAnimation.setFillBefore(true);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.686 -0400", hash_original_method = "DAC4606AD5070B4B7D220BEE34A17978", hash_generated_method = "6E06DDB8C30A80C4D4AE6B85B357977D")
     public Animation getAnimation() {
-        Animation varB4EAC82CA7396A68D541C85D26508E83_213047271 = null; //Variable for return #1
+        Animation varB4EAC82CA7396A68D541C85D26508E83_213047271 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_213047271 = mAnimation;
-        varB4EAC82CA7396A68D541C85D26508E83_213047271.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_213047271.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_213047271;
-        // ---------- Original Method ----------
-        //return mAnimation;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.686 -0400", hash_original_method = "66DF0F8C4443D43AC8C0B59FD3C0EE80", hash_generated_method = "DEC31EE6B52828DF0B8A5AA00C52AB87")
     public void setInterpolator(Context context, int resourceID) {
         setInterpolator(AnimationUtils.loadInterpolator(context, resourceID));
         addTaint(context.getTaint());
         addTaint(resourceID);
-        // ---------- Original Method ----------
-        //setInterpolator(AnimationUtils.loadInterpolator(context, resourceID));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.687 -0400", hash_original_method = "7D5A9A852D608ADF508B994526BF9EAC", hash_generated_method = "305B3174980281AD6A6C4213980CE615")
     public void setInterpolator(Interpolator interpolator) {
         mInterpolator = interpolator;
-        // ---------- Original Method ----------
-        //mInterpolator = interpolator;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.687 -0400", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "FCC7A361535FC5D8808FF3863C73B0B7")
     public Interpolator getInterpolator() {
-        Interpolator varB4EAC82CA7396A68D541C85D26508E83_784614011 = null; //Variable for return #1
+        Interpolator varB4EAC82CA7396A68D541C85D26508E83_784614011 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_784614011 = mInterpolator;
-        varB4EAC82CA7396A68D541C85D26508E83_784614011.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_784614011.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_784614011;
-        // ---------- Original Method ----------
-        //return mInterpolator;
+        
+        
     }
 
     
@@ -173,16 +176,16 @@ public class LayoutAnimationController {
     public float getDelay() {
         float var546ADE640B6EDFBC8A086EF31347E768_2024505097 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2024505097;
-        // ---------- Original Method ----------
-        //return mDelay;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.688 -0400", hash_original_method = "66A46BCEB9C76B70A4A3D1129198A613", hash_generated_method = "68B321DC0C555672B92725ED9120FBBD")
     public void setDelay(float delay) {
         mDelay = delay;
-        // ---------- Original Method ----------
-        //mDelay = delay;
+        
+        
     }
 
     
@@ -190,27 +193,28 @@ public class LayoutAnimationController {
     public boolean willOverlap() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_102638593 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_102638593;
-        // ---------- Original Method ----------
-        //return mDelay < 1.0f;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.688 -0400", hash_original_method = "78D31C459A561793AE549A78D34651C2", hash_generated_method = "28ED2DD3D8DE8D02B2A83588A15C5A4B")
     public void start() {
         mDuration = mAnimation.getDuration();
         mMaxDelay = Long.MIN_VALUE;
         mAnimation.setStartTime(-1);
-        // ---------- Original Method ----------
-        //mDuration = mAnimation.getDuration();
-        //mMaxDelay = Long.MIN_VALUE;
-        //mAnimation.setStartTime(-1);
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.689 -0400", hash_original_method = "96F3EFCD32C49E23FCBCF1FC0105A7B0", hash_generated_method = "D3A38F776C5DEC8D8AC1A37F11F797FE")
     public final Animation getAnimationForView(View view) {
-        Animation varB4EAC82CA7396A68D541C85D26508E83_493457188 = null; //Variable for return #1
-        Animation varB4EAC82CA7396A68D541C85D26508E83_1480606883 = null; //Variable for return #2
+        Animation varB4EAC82CA7396A68D541C85D26508E83_493457188 = null; 
+        Animation varB4EAC82CA7396A68D541C85D26508E83_1480606883 = null; 
         final long delay = getDelayForView(view) + mAnimation.getStartOffset();
         mMaxDelay = Math.max(mMaxDelay, delay);
         try 
@@ -218,48 +222,50 @@ public class LayoutAnimationController {
             final Animation animation = mAnimation.clone();
             animation.setStartOffset(delay);
             varB4EAC82CA7396A68D541C85D26508E83_493457188 = animation;
-        } //End block
+        } 
         catch (CloneNotSupportedException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1480606883 = null;
-        } //End block
+        } 
         addTaint(view.getTaint());
-        Animation varA7E53CE21691AB073D9660D615818899_940355455; //Final return value
+        Animation varA7E53CE21691AB073D9660D615818899_940355455; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_940355455 = varB4EAC82CA7396A68D541C85D26508E83_493457188;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_940355455 = varB4EAC82CA7396A68D541C85D26508E83_1480606883;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_940355455.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_940355455.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_940355455;
-        // ---------- Original Method ----------
-        //final long delay = getDelayForView(view) + mAnimation.getStartOffset();
-        //mMaxDelay = Math.max(mMaxDelay, delay);
-        //try {
-            //final Animation animation = mAnimation.clone();
-            //animation.setStartOffset(delay);
-            //return animation;
-        //} catch (CloneNotSupportedException e) {
-            //return null;
-        //}
+        
+        
+        
+        
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.689 -0400", hash_original_method = "F6685E165800CF46F16D582CC6341EDA", hash_generated_method = "45F0EAF014A78D9B6FA532DE450D0CC1")
     public boolean isDone() {
         boolean varAA996CFF263FCCB06A70FF5712A8C20D_1119385454 = (AnimationUtils.currentAnimationTimeMillis() >
                 mAnimation.getStartTime() + mMaxDelay + mDuration);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_608552555 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_608552555;
-        // ---------- Original Method ----------
-        //return AnimationUtils.currentAnimationTimeMillis() >
-                //mAnimation.getStartTime() + mMaxDelay + mDuration;
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.690 -0400", hash_original_method = "C5014C66E1BA1577E6F39C7457247B02", hash_generated_method = "DB2050C95034753670B4F9EF1A338649")
     protected long getDelayForView(View view) {
         ViewGroup.LayoutParams lp = view.getLayoutParams();
@@ -269,59 +275,60 @@ public class LayoutAnimationController {
         final float totalDelay = delay * params.count;
         {
             mInterpolator = new LinearInterpolator();
-        } //End block
+        } 
         float normalizedDelay = viewDelay / totalDelay;
         normalizedDelay = mInterpolator.getInterpolation(normalizedDelay);
         addTaint(view.getTaint());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1416064781 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1416064781;
-        // ---------- Original Method ----------
-        //ViewGroup.LayoutParams lp = view.getLayoutParams();
-        //AnimationParameters params = lp.layoutAnimationParameters;
-        //if (params == null) {
-            //return 0;
-        //}
-        //final float delay = mDelay * mAnimation.getDuration();
-        //final long viewDelay = (long) (getTransformedIndex(params) * delay);
-        //final float totalDelay = delay * params.count;
-        //if (mInterpolator == null) {
-            //mInterpolator = new LinearInterpolator();
-        //}
-        //float normalizedDelay = viewDelay / totalDelay;
-        //normalizedDelay = mInterpolator.getInterpolation(normalizedDelay);
-        //return (long) (normalizedDelay * totalDelay);
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.690 -0400", hash_original_method = "305795D5C2AE9556CA8D226C9088184E", hash_generated_method = "D5765B8378E55EEFE0C3085B6FCB472F")
     protected int getTransformedIndex(AnimationParameters params) {
         {
             Object var998A9FCD617ED3F225652B49EC9B64C8_63175081 = (getOrder());
-            //Begin case ORDER_RANDOM 
+            
             {
                 mRandomizer = new Random();
-            } //End block
-            //End case ORDER_RANDOM 
-            //Begin case ORDER_RANDOM 
+            } 
+            
+            
             int var35A3E0E3BF8465C06EAD60D9C202EAD6_299415539 = ((int) (params.count * mRandomizer.nextFloat()));
-            //End case ORDER_RANDOM 
-        } //End collapsed parenthetic
+            
+        } 
         addTaint(params.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_860657757 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_860657757;
-        // ---------- Original Method ----------
-        //switch (getOrder()) {
-            //case ORDER_REVERSE:
-                //return params.count - 1 - params.index;
-            //case ORDER_RANDOM:
-                //if (mRandomizer == null) {
-                    //mRandomizer = new Random();
-                //}
-                //return (int) (params.count * mRandomizer.nextFloat());
-            //case ORDER_NORMAL:
-            //default:
-                //return params.index;
-        //}
+        
+        
+            
+                
+            
+                
+                    
+                
+                
+            
+            
+                
+        
     }
 
     
@@ -336,7 +343,7 @@ public class LayoutAnimationController {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.691 -0400", hash_original_method = "838D907A76D7295751639A8A84C023C1", hash_generated_method = "838D907A76D7295751639A8A84C023C1")
         public AnimationParameters ()
         {
-            //Synthesized constructor
+            
         }
 
 

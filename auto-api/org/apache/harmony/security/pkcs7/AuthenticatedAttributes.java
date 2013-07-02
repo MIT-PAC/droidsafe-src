@@ -1,11 +1,11 @@
 package org.apache.harmony.security.pkcs7;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.List;
 import org.apache.harmony.security.asn1.ASN1SetOf;
@@ -25,35 +25,37 @@ final class AuthenticatedAttributes {
             List<AttributeTypeAndValue> authenticatedAttributes) {
         this.encoding = encoding;
         this.authenticatedAttributes = authenticatedAttributes;
-        // ---------- Original Method ----------
-        //this.encoding = encoding;
-        //this.authenticatedAttributes = authenticatedAttributes;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.983 -0400", hash_original_method = "17512B9B260049DCE667B4C278AB32BC", hash_generated_method = "91EF700E10EA141985620F5DF9DF92BB")
     public List<AttributeTypeAndValue> getAttributes() {
-        List<AttributeTypeAndValue> varB4EAC82CA7396A68D541C85D26508E83_1890461961 = null; //Variable for return #1
+        List<AttributeTypeAndValue> varB4EAC82CA7396A68D541C85D26508E83_1890461961 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1890461961 = authenticatedAttributes;
-        varB4EAC82CA7396A68D541C85D26508E83_1890461961.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1890461961.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1890461961;
-        // ---------- Original Method ----------
-        //return authenticatedAttributes;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.983 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "9030EF28730F18079A17C4E64FB5F964")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1894730166 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1894730166;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
@@ -66,14 +68,8 @@ final class AuthenticatedAttributes {
                     (List<AttributeTypeAndValue>) in.content);
         }
     };
-    // orphaned legacy method
-    /*
-    @Override 
-    public Object getDecodedObject(BerInputStream in) {
-            return new AuthenticatedAttributes(in.getEncoded(),
-                    (List<AttributeTypeAndValue>) in.content);
-        }
-    */
+    
+    
     
 }
 

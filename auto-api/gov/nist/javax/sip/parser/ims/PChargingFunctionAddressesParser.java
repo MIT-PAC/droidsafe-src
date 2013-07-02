@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.core.NameValue;
 import gov.nist.javax.sip.header.SIPHeader;
@@ -21,7 +21,7 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
     public  PChargingFunctionAddressesParser(String charging) {
         super(charging);
         addTaint(charging.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,13 +29,14 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
     protected  PChargingFunctionAddressesParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.120 -0400", hash_original_method = "5C436260248E496F94134402F46D8C6D", hash_generated_method = "01FC0C1E38D58F5430C8574271475B5E")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1581434307 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1581434307 = null; 
         dbg_enter("parse");
         try 
         {
@@ -51,27 +52,28 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
                         char la = lexer.lookAhead(0);
                         this.lexer.match(';');
                         this.lexer.SPorHT();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             catch (ParseException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw ex;
-            } //End block
+            } 
             super.parse(chargingFunctionAddresses);
             varB4EAC82CA7396A68D541C85D26508E83_1581434307 = chargingFunctionAddresses;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1581434307.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1581434307.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1581434307;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.121 -0400", hash_original_method = "E7DC882A60F6AF0A0416E9B2C1439960", hash_generated_method = "6ADFC1626BA5C41D0E8341729BB381F2")
     protected void parseParameter(PChargingFunctionAddresses chargingFunctionAddresses) throws ParseException {
         dbg_enter("parseParameter");
@@ -79,25 +81,26 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
         {
             NameValue nv = this.nameValue('=');
             chargingFunctionAddresses.setMultiParameter(nv);
-        } //End block
+        } 
         finally 
         {
             dbg_leave("parseParameter");
-        } //End block
+        } 
         addTaint(chargingFunctionAddresses.getTaint());
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("parseParameter");
-        //try {
-            //NameValue nv = this.nameValue('=');
-            //chargingFunctionAddresses.setMultiParameter(nv);
-        //} finally {
-            //if (debug)
-                //dbg_leave("parseParameter");
-        //}
+        
+        
+            
+        
+            
+            
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void main(String args[]) throws ParseException {
         String r[] = {
                 "P-Charging-Function-Addresses: ccf=\"test str\"; ecf=token\n",

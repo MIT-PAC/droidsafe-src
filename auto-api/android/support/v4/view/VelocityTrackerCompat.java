@@ -1,11 +1,11 @@
 package android.support.v4.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.view.VelocityTracker;
 
@@ -14,7 +14,7 @@ public class VelocityTrackerCompat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.031 -0400", hash_original_method = "ACE59A9EBE302FC1E1A244DA6E2DCF51", hash_generated_method = "ACE59A9EBE302FC1E1A244DA6E2DCF51")
     public VelocityTrackerCompat ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -33,7 +33,7 @@ public class VelocityTrackerCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.032 -0400", hash_original_method = "E207FC5896FAF2D7F355008464495FF2", hash_generated_method = "E207FC5896FAF2D7F355008464495FF2")
         public BaseVelocityTrackerVersionImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -45,8 +45,8 @@ public class VelocityTrackerCompat {
             addTaint(pointerId);
             float var546ADE640B6EDFBC8A086EF31347E768_1227700224 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1227700224;
-            // ---------- Original Method ----------
-            //return tracker.getXVelocity();
+            
+            
         }
 
         
@@ -58,8 +58,8 @@ public class VelocityTrackerCompat {
             addTaint(pointerId);
             float var546ADE640B6EDFBC8A086EF31347E768_1695174357 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1695174357;
-            // ---------- Original Method ----------
-            //return tracker.getYVelocity();
+            
+            
         }
 
         
@@ -72,7 +72,7 @@ public class VelocityTrackerCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:04.036 -0400", hash_original_method = "C45D4DE867C130E838448AE2BF37BBAC", hash_generated_method = "C45D4DE867C130E838448AE2BF37BBAC")
         public HoneycombVelocityTrackerVersionImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -84,8 +84,8 @@ public class VelocityTrackerCompat {
             addTaint(pointerId);
             float var546ADE640B6EDFBC8A086EF31347E768_474249069 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_474249069;
-            // ---------- Original Method ----------
-            //return VelocityTrackerCompatHoneycomb.getXVelocity(tracker, pointerId);
+            
+            
         }
 
         
@@ -97,8 +97,8 @@ public class VelocityTrackerCompat {
             addTaint(pointerId);
             float var546ADE640B6EDFBC8A086EF31347E768_1506337204 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1506337204;
-            // ---------- Original Method ----------
-            //return VelocityTrackerCompatHoneycomb.getYVelocity(tracker, pointerId);
+            
+            
         }
 
         

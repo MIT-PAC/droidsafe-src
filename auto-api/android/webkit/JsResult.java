@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class JsResult {
@@ -29,9 +29,9 @@ public class JsResult {
       JsResult(CallbackProxy proxy, boolean defaultVal) {
         mProxy = proxy;
         mDefaultValue = defaultVal;
-        // ---------- Original Method ----------
-        //mProxy = proxy;
-        //mDefaultValue = defaultVal;
+        
+        
+        
     }
 
     
@@ -39,9 +39,9 @@ public class JsResult {
     public final void cancel() {
         mResult = false;
         wakeUp();
-        // ---------- Original Method ----------
-        //mResult = false;
-        //wakeUp();
+        
+        
+        
     }
 
     
@@ -49,9 +49,9 @@ public class JsResult {
     public final void confirm() {
         mResult = true;
         wakeUp();
-        // ---------- Original Method ----------
-        //mResult = true;
-        //wakeUp();
+        
+        
+        
     }
 
     
@@ -59,8 +59,8 @@ public class JsResult {
     final boolean getResult() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_29133899 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_29133899;
-        // ---------- Original Method ----------
-        //return mResult;
+        
+        
     }
 
     
@@ -69,12 +69,12 @@ public class JsResult {
         mReady = true;
         {
             wakeUp();
-        } //End block
-        // ---------- Original Method ----------
-        //mReady = true;
-        //if (mTriedToNotifyBeforeReady) {
-            //wakeUp();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -83,10 +83,10 @@ public class JsResult {
         setReady();
         mResult = mDefaultValue;
         wakeUp();
-        // ---------- Original Method ----------
-        //setReady();
-        //mResult = mDefaultValue;
-        //wakeUp();
+        
+        
+        
+        
     }
 
     
@@ -95,19 +95,19 @@ public class JsResult {
         {
             {
                 mProxy.notify();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mTriedToNotifyBeforeReady = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mReady) {
-            //synchronized (mProxy) {
-                //mProxy.notify();
-            //}
-        //} else {
-            //mTriedToNotifyBeforeReady = true;
-        //}
+        } 
+        
+        
+            
+                
+            
+        
+            
+        
     }
 
     

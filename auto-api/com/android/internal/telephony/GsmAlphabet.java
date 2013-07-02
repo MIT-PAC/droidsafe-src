@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.Resources;
 import android.text.TextUtils;
@@ -24,10 +24,11 @@ public class GsmAlphabet {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.229 -0400", hash_original_method = "ACEB66A7A5EB57C667A16876F7FFD7A1", hash_generated_method = "9D914C4804B753FB0D925E0024275993")
     private  GsmAlphabet() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int charToGsm(char c) {
         try {
             return charToGsm(c, false);
@@ -37,6 +38,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int charToGsm(char c, boolean throwException) throws EncodeException {
         int ret;
         ret = sCharsToGsmTables[0].get(c, -1);
@@ -56,6 +58,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int charToGsmExtended(char c) {
         int ret;
         ret = sCharsToShiftTables[0].get(c, -1);
@@ -66,6 +69,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static char gsmToChar(int gsmChar) {
         if (gsmChar >= 0 && gsmChar < 128) {
             return sLanguageTables[0].charAt(gsmChar);
@@ -75,6 +79,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static char gsmExtendedToChar(int gsmChar) {
         if (gsmChar == GSM_EXTENDED_ESCAPE) {
             return ' ';
@@ -91,11 +96,13 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header) throws EncodeException {
         return stringToGsm7BitPackedWithHeader(data, header, 0, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header,
             int languageTable, int languageShiftTable) throws EncodeException {
         if (header == null || header.length == 0) {
@@ -111,17 +118,20 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] stringToGsm7BitPacked(String data) throws EncodeException {
         return stringToGsm7BitPacked(data, 0, true, 0, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] stringToGsm7BitPacked(String data, int languageTable,
             int languageShiftTable) throws EncodeException {
         return stringToGsm7BitPacked(data, 0, true, languageTable, languageShiftTable);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] stringToGsm7BitPacked(String data, int startingSeptetOffset,
             boolean throwException, int languageTable, int languageShiftTable) throws EncodeException {
         int dataLen = data.length();
@@ -175,12 +185,14 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String gsm7BitPackedToString(byte[] pdu, int offset,
             int lengthSeptets) {
         return gsm7BitPackedToString(pdu, offset, lengthSeptets, 0, 0, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String gsm7BitPackedToString(byte[] pdu, int offset,
             int lengthSeptets, int numPaddingBits, int languageTable, int shiftTable) {
         StringBuilder ret = new StringBuilder(lengthSeptets);
@@ -240,11 +252,13 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String gsm8BitUnpackedToString(byte[] data, int offset, int length) {
         return gsm8BitUnpackedToString(data, offset, length, "");
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String gsm8BitUnpackedToString(byte[] data, int offset, int length, String characterset) {
         boolean isMbcs = false;
         Charset charset = null;
@@ -296,6 +310,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] stringToGsm8BitPacked(String s) {
         byte[] ret;
         int septets = countGsmSeptetsUsingTables(s, true, 0, 0);
@@ -305,6 +320,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void stringToGsm8BitUnpackedField(String s, byte dest[], int offset, int length) {
         int outByteIndex = offset;
         SparseIntArray charToLanguageTable = sCharsToGsmTables[0];
@@ -334,6 +350,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int countGsmSeptets(char c) {
         try {
             return countGsmSeptets(c, false);
@@ -343,6 +360,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int countGsmSeptets(char c, boolean throwsException) throws EncodeException {
         if (sCharsToGsmTables[0].get(c, -1) != -1) {
             return 1;
@@ -358,6 +376,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int countGsmSeptetsUsingTables(CharSequence s, boolean use7bitOnly,
             int languageTable, int languageShiftTable) {
         int count = 0;
@@ -503,6 +522,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int findGsmSeptetLimitIndex(String s, int start, int limit, int langTable, int langShiftTable) {
         int accumulator = 0;
         int size = s.length();
@@ -576,32 +596,32 @@ public class GsmAlphabet {
                 {
                     {
                         septetCounts[i] = -1;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 septetCounts[1] = -1;
-            } //End block
+            } 
             {
                 septetCounts[2] = -1;
-            } //End block
-            // ---------- Original Method ----------
-            //this.languageCode = code;
-            //int maxSingleShiftCode = sHighestEnabledSingleShiftCode;
-            //septetCounts = new int[maxSingleShiftCode + 1];
-            //unencodableCounts = new int[maxSingleShiftCode + 1];
-            //for (int i = 1, tableOffset = 0; i <= maxSingleShiftCode; i++) {
-                //if (sEnabledSingleShiftTables[tableOffset] == i) {
-                    //tableOffset++;
-                //} else {
-                    //septetCounts[i] = -1;   
-                //}
-            //}
-            //if (code == 1 && maxSingleShiftCode >= 1) {
-                //septetCounts[1] = -1;   
-            //} else if (code == 3 && maxSingleShiftCode >= 2) {
-                //septetCounts[2] = -1;   
-            //}
+            } 
+            
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+            
+                
+            
+                
+            
         }
 
         

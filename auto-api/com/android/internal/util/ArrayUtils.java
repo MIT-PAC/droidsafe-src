@@ -1,11 +1,11 @@
 package com.android.internal.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.reflect.Array;
 import java.util.Collection;
@@ -14,7 +14,7 @@ public class ArrayUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.533 -0400", hash_original_method = "43AFEF6A809467B8D7C7F671BE94BA32", hash_generated_method = "C31BA8013CD1B4E5DD8E143F798814CA")
     private  ArrayUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,36 +26,43 @@ public class ArrayUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealBooleanArraySize(int need) {
         return idealByteArraySize(need);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealShortArraySize(int need) {
         return idealByteArraySize(need * 2) / 2;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealCharArraySize(int need) {
         return idealByteArraySize(need * 2) / 2;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealIntArraySize(int need) {
         return idealByteArraySize(need * 4) / 4;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealFloatArraySize(int need) {
         return idealByteArraySize(need * 4) / 4;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealObjectArraySize(int need) {
         return idealByteArraySize(need * 4) / 4;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealLongArraySize(int need) {
         return idealByteArraySize(need * 8) / 8;
     }
@@ -77,6 +84,7 @@ public class ArrayUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> T[] emptyArray(Class<T> kind) {
         if (kind == Object.class) {
             return (T[]) EMPTY;
@@ -91,6 +99,7 @@ public class ArrayUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> boolean contains(T[] array, T value) {
         for (T element : array) {
             if (element == null) {

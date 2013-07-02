@@ -1,11 +1,11 @@
 package android.speech.tts;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public abstract class UtteranceProgressListener {
@@ -13,7 +13,7 @@ public abstract class UtteranceProgressListener {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.464 -0400", hash_original_method = "D96B1FA74926A4581FA2AC04698293D6", hash_generated_method = "D96B1FA74926A4581FA2AC04698293D6")
     public UtteranceProgressListener ()
     {
-        //Synthesized constructor
+        
     }
 
             public abstract void onStart(String utteranceId);

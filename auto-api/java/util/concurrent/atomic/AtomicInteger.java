@@ -1,11 +1,11 @@
 package java.util.concurrent.atomic;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import sun.misc.Unsafe;
 
@@ -17,14 +17,14 @@ public class AtomicInteger extends Number implements java.io.Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.378 -0400", hash_original_method = "A3EEEE607FBEBD432F4111F47BB23345", hash_generated_method = "C1B1444E172E49708F3A7562ABBF445D")
     public  AtomicInteger(int initialValue) {
         value = initialValue;
-        // ---------- Original Method ----------
-        //value = initialValue;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.379 -0400", hash_original_method = "3B74ED36698F9901BA50127D104C26DE", hash_generated_method = "3FC2676712951E4C0961989AC4A65B09")
     public  AtomicInteger() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,16 +32,16 @@ public class AtomicInteger extends Number implements java.io.Serializable {
     public final int get() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_630117056 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_630117056;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.379 -0400", hash_original_method = "E51FD8A91C159D9D3ED3BF52073569AD", hash_generated_method = "046E83718895B73384C8E1C3323B55FE")
     public final void set(int newValue) {
         value = newValue;
-        // ---------- Original Method ----------
-        //value = newValue;
+        
+        
     }
 
     
@@ -49,8 +49,8 @@ public class AtomicInteger extends Number implements java.io.Serializable {
     public final void lazySet(int newValue) {
         unsafe.putOrderedInt(this, valueOffset, newValue);
         addTaint(newValue);
-        // ---------- Original Method ----------
-        //unsafe.putOrderedInt(this, valueOffset, newValue);
+        
+        
     }
 
     
@@ -60,17 +60,17 @@ public class AtomicInteger extends Number implements java.io.Serializable {
             int current = get();
             {
                 boolean var1BF0B39916F57DCB46753C3922743628_1239188176 = (compareAndSet(current, newValue));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(newValue);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_141719831 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_141719831;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int current = get();
-            //if (compareAndSet(current, newValue))
-                //return current;
-        //}
+        
+        
+            
+            
+                
+        
     }
 
     
@@ -81,8 +81,8 @@ public class AtomicInteger extends Number implements java.io.Serializable {
         addTaint(update);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1944813809 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1944813809;
-        // ---------- Original Method ----------
-        //return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
+        
+        
     }
 
     
@@ -93,8 +93,8 @@ public class AtomicInteger extends Number implements java.io.Serializable {
         addTaint(update);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_556923473 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_556923473;
-        // ---------- Original Method ----------
-        //return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
+        
+        
     }
 
     
@@ -105,17 +105,17 @@ public class AtomicInteger extends Number implements java.io.Serializable {
             int next = current + 1;
             {
                 boolean var510DE07D8218F2470E372FDE313DC536_943211075 = (compareAndSet(current, next));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2133222215 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2133222215;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int current = get();
-            //int next = current + 1;
-            //if (compareAndSet(current, next))
-                //return current;
-        //}
+        
+        
+            
+            
+            
+                
+        
     }
 
     
@@ -126,17 +126,17 @@ public class AtomicInteger extends Number implements java.io.Serializable {
             int next = current - 1;
             {
                 boolean var510DE07D8218F2470E372FDE313DC536_647111174 = (compareAndSet(current, next));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1276445976 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1276445976;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int current = get();
-            //int next = current - 1;
-            //if (compareAndSet(current, next))
-                //return current;
-        //}
+        
+        
+            
+            
+            
+                
+        
     }
 
     
@@ -147,18 +147,18 @@ public class AtomicInteger extends Number implements java.io.Serializable {
             int next = current + delta;
             {
                 boolean var510DE07D8218F2470E372FDE313DC536_1770341228 = (compareAndSet(current, next));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(delta);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1805807208 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1805807208;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int current = get();
-            //int next = current + delta;
-            //if (compareAndSet(current, next))
-                //return current;
-        //}
+        
+        
+            
+            
+            
+                
+        
     }
 
     
@@ -169,17 +169,17 @@ public class AtomicInteger extends Number implements java.io.Serializable {
             int next = current + 1;
             {
                 boolean var510DE07D8218F2470E372FDE313DC536_49937641 = (compareAndSet(current, next));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1595598057 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1595598057;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int current = get();
-            //int next = current + 1;
-            //if (compareAndSet(current, next))
-                //return next;
-        //}
+        
+        
+            
+            
+            
+                
+        
     }
 
     
@@ -190,17 +190,17 @@ public class AtomicInteger extends Number implements java.io.Serializable {
             int next = current - 1;
             {
                 boolean var510DE07D8218F2470E372FDE313DC536_1219841959 = (compareAndSet(current, next));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_659394156 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_659394156;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int current = get();
-            //int next = current - 1;
-            //if (compareAndSet(current, next))
-                //return next;
-        //}
+        
+        
+            
+            
+            
+                
+        
     }
 
     
@@ -211,69 +211,74 @@ public class AtomicInteger extends Number implements java.io.Serializable {
             int next = current + delta;
             {
                 boolean var510DE07D8218F2470E372FDE313DC536_363874159 = (compareAndSet(current, next));
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         addTaint(delta);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1465873048 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1465873048;
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int current = get();
-            //int next = current + delta;
-            //if (compareAndSet(current, next))
-                //return next;
-        //}
+        
+        
+            
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.384 -0400", hash_original_method = "0CBFF056CB46F189F8DC45AFB469D5F9", hash_generated_method = "8B63E2B6BB841A0E34D1EA3B2976722A")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1851293522 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1851293522 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1851293522 = Integer.toString(get());
-        varB4EAC82CA7396A68D541C85D26508E83_1851293522.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1851293522.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1851293522;
-        // ---------- Original Method ----------
-        //return Integer.toString(get());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.385 -0400", hash_original_method = "B90EC926C8275C97256DF1E0AD9FC076", hash_generated_method = "279F306BA6E4016C20ED136A84175BE5")
     public int intValue() {
         int varA3899375788C01929C876C11142E44FF_66875884 = (get());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1409949291 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1409949291;
-        // ---------- Original Method ----------
-        //return get();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.385 -0400", hash_original_method = "41D936CCD9A9D16949AE3FD60738B8AD", hash_generated_method = "20427D6821725BAB70B8DDEA144869DF")
     public long longValue() {
         long var3647B297BC29A3BA088BCA1543A8629B_765265941 = ((long)get());
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1529222957 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1529222957;
-        // ---------- Original Method ----------
-        //return (long)get();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.385 -0400", hash_original_method = "F8181329F165428C51D2197BB97797EF", hash_generated_method = "700A1EBC9A51CF5D6951672185C1B44D")
     public float floatValue() {
         float varACA887607DBB4E1678238A769AA68C60_361326755 = ((float)get());
         float var546ADE640B6EDFBC8A086EF31347E768_1504348261 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1504348261;
-        // ---------- Original Method ----------
-        //return (float)get();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:15.386 -0400", hash_original_method = "486C42E34E3619D90E05BCBEDA3844AE", hash_generated_method = "572806EB7C188DADD6AF28DDEB00256F")
     public double doubleValue() {
         double var1116C2BD9A20FF0A436A87C6D78A46AB_46281465 = ((double)get());
         double varE8CD7DA078A86726031AD64F35F5A6C0_1859597676 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1859597676;
-        // ---------- Original Method ----------
-        //return (double)get();
+        
+        
     }
 
     

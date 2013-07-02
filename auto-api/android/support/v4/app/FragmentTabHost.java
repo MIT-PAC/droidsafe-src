@@ -1,11 +1,11 @@
 package android.support.v4.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import android.content.Context;
@@ -52,8 +52,8 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
         super(context, null);
         initFragmentTabHost(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //initFragmentTabHost(context, null);
+        
+        
     }
 
     
@@ -63,11 +63,12 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
         initFragmentTabHost(context, attrs);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //initFragmentTabHost(context, attrs);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.021 -0400", hash_original_method = "42AAEEAE9FF86FE2BEA81AB882DE4711", hash_generated_method = "2D4BF433C2714FF22252FF90DB36248F")
     private void initFragmentTabHost(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs,
@@ -96,40 +97,43 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
                 mRealTabContent.setId(mContainerId);
                 ll.addView(fl, new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.FILL_PARENT, 0, 1));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.022 -0400", hash_original_method = "05C9957A4DCEFF7C41A9BE35BEB9A8D6", hash_generated_method = "445F17DD46555957AEB90B59504F4A9E")
     @Override
     @Deprecated
     public void setup() {
         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                 "Must call setup() that takes a Context and FragmentManager");
-        // ---------- Original Method ----------
-        //throw new IllegalStateException(
-                //"Must call setup() that takes a Context and FragmentManager");
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.023 -0400", hash_original_method = "BEA87448A8F620CF25486462EAD40656", hash_generated_method = "867E471760B39FCAFE99803532DEECB5")
     public void setup(Context context, FragmentManager manager) {
         super.setup();
         mContext = context;
         mFragmentManager = manager;
         ensureContent();
-        // ---------- Original Method ----------
-        //super.setup();
-        //mContext = context;
-        //mFragmentManager = manager;
-        //ensureContent();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.023 -0400", hash_original_method = "8C2E5B314060B3DAC2CC3B33FD147996", hash_generated_method = "CDF30E3F1AE2DCDFB22156EA73E0473A")
     public void setup(Context context, FragmentManager manager, int containerId) {
         super.setup();
@@ -142,21 +146,22 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
             boolean var94DE255413D29EB51E9F5A05501C98E8_1100685457 = (getId() == View.NO_ID);
             {
                 setId(android.R.id.tabhost);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //super.setup();
-        //mContext = context;
-        //mFragmentManager = manager;
-        //mContainerId = containerId;
-        //ensureContent();
-        //mRealTabContent.setId(containerId);
-        //if (getId() == View.NO_ID) {
-            //setId(android.R.id.tabhost);
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.024 -0400", hash_original_method = "E573AA9E8A82A5687D7AD5397977D367", hash_generated_method = "2D4D4658C57B4EAF37D6AD5170A10A6A")
     private void ensureContent() {
         {
@@ -164,25 +169,26 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                         "No tab content FrameLayout found for id " + mContainerId);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mRealTabContent == null) {
-            //mRealTabContent = (FrameLayout)findViewById(mContainerId);
-            //if (mRealTabContent == null) {
-                //throw new IllegalStateException(
-                        //"No tab content FrameLayout found for id " + mContainerId);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.024 -0400", hash_original_method = "CAD2636558BA92FD3B25434077F437FA", hash_generated_method = "0D1D8D97A2BD8ED256400C3F2341E4A8")
     @Override
     public void setOnTabChangedListener(OnTabChangeListener l) {
         mOnTabChangeListener = l;
-        // ---------- Original Method ----------
-        //mOnTabChangeListener = l;
+        
+        
     }
 
     
@@ -199,35 +205,36 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
                     FragmentTransaction ft = mFragmentManager.beginTransaction();
                     ft.detach(info.fragment);
                     ft.commit();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mTabs.add(info);
         addTab(tabSpec);
         addTaint(tabSpec.getTaint());
         addTaint(clss.getTaint());
         addTaint(args.getTaint());
-        // ---------- Original Method ----------
-        //tabSpec.setContent(new DummyTabFactory(mContext));
-        //String tag = tabSpec.getTag();
-        //TabInfo info = new TabInfo(tag, clss, args);
-        //if (mAttached) {
-            //info.fragment = mFragmentManager.findFragmentByTag(tag);
-            //if (info.fragment != null && !info.fragment.isDetached()) {
-                //FragmentTransaction ft = mFragmentManager.beginTransaction();
-                //ft.detach(info.fragment);
-                //ft.commit();
-            //}
-        //}
-        //mTabs.add(info);
-        //addTab(tabSpec);
+        
+        
+        
+        
+        
+            
+            
+                
+                
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.025 -0400", hash_original_method = "BB44C588C184374268714C6329B57A58", hash_generated_method = "670FF4FF0ABC9A51067CBAC62414D427")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
         String currentTab = getCurrentTabTag();
         FragmentTransaction ft = null;
@@ -244,105 +251,110 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
                             boolean var4081D120129D480E59E50DEC260EC533_540524413 = (tab.tag.equals(currentTab));
                             {
                                 mLastTab = tab;
-                            } //End block
+                            } 
                             {
                                 {
                                     ft = mFragmentManager.beginTransaction();
-                                } //End block
+                                } 
                                 ft.detach(tab.fragment);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         mAttached = true;
         ft = doTabChanged(currentTab, ft);
         {
             ft.commit();
             mFragmentManager.executePendingTransactions();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.026 -0400", hash_original_method = "BB933237265996C32F40DAFA02CC0974", hash_generated_method = "B5F139BD8B0657B98B5C88139B35CEDD")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDetachedFromWindow();
         mAttached = false;
-        // ---------- Original Method ----------
-        //super.onDetachedFromWindow();
-        //mAttached = false;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.026 -0400", hash_original_method = "BC9DBC504CA8982190C3F187F9B9C6DC", hash_generated_method = "F26C94A1216AC57C0E3FDD7C56176D9E")
     @Override
     protected Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_361854794 = null; //Variable for return #1
+        
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_361854794 = null; 
         Parcelable superState = super.onSaveInstanceState();
         SavedState ss = new SavedState(superState);
         ss.curTab = getCurrentTabTag();
         varB4EAC82CA7396A68D541C85D26508E83_361854794 = ss;
-        varB4EAC82CA7396A68D541C85D26508E83_361854794.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_361854794.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_361854794;
-        // ---------- Original Method ----------
-        //Parcelable superState = super.onSaveInstanceState();
-        //SavedState ss = new SavedState(superState);
-        //ss.curTab = getCurrentTabTag();
-        //return ss;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.027 -0400", hash_original_method = "B613B42AC24307866CE220AE6075D90A", hash_generated_method = "80D63F11E174E6163F4BC4F10E067A28")
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         SavedState ss = (SavedState)state;
         super.onRestoreInstanceState(ss.getSuperState());
         setCurrentTabByTag(ss.curTab);
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //SavedState ss = (SavedState)state;
-        //super.onRestoreInstanceState(ss.getSuperState());
-        //setCurrentTabByTag(ss.curTab);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.027 -0400", hash_original_method = "797307ED4EF363D106B23877320FB5E5", hash_generated_method = "49FE009143C5CC97B355C06A0AA6E267")
     @Override
     public void onTabChanged(String tabId) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             FragmentTransaction ft = doTabChanged(tabId, null);
             {
                 ft.commit();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mOnTabChangeListener.onTabChanged(tabId);
-        } //End block
+        } 
         addTaint(tabId.getTaint());
-        // ---------- Original Method ----------
-        //if (mAttached) {
-            //FragmentTransaction ft = doTabChanged(tabId, null);
-            //if (ft != null) {
-                //ft.commit();
-            //}
-        //}
-        //if (mOnTabChangeListener != null) {
-            //mOnTabChangeListener.onTabChanged(tabId);
-        //}
+        
+        
+            
+            
+                
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.028 -0400", hash_original_method = "F57C18B3BB396717773B7D7B14EB3F45", hash_generated_method = "F342FCD305F7E2470D63833D9FD9445B")
     private FragmentTransaction doTabChanged(String tabId, FragmentTransaction ft) {
-        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1502206607 = null; //Variable for return #1
+        FragmentTransaction varB4EAC82CA7396A68D541C85D26508E83_1502206607 = null; 
         TabInfo newTab = null;
         {
             int i = 0;
@@ -353,41 +365,41 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
                     boolean var42B6B5C6CF7E136D3626D6532F3A2D64_1738600627 = (tab.tag.equals(tabId));
                     {
                         newTab = tab;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No tab known for tag " + tabId);
-        } //End block
+        } 
         {
             {
                 ft = mFragmentManager.beginTransaction();
-            } //End block
+            } 
             {
                 {
                     ft.detach(mLastTab.fragment);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 {
                     newTab.fragment = Fragment.instantiate(mContext,
                             newTab.clss.getName(), newTab.args);
                     ft.add(mContainerId, newTab.fragment, newTab.tag);
-                } //End block
+                } 
                 {
                     ft.attach(newTab.fragment);
-                } //End block
-            } //End block
+                } 
+            } 
             mLastTab = newTab;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1502206607 = ft;
         addTaint(tabId.getTaint());
         addTaint(ft.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1502206607.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1502206607.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1502206607;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -410,10 +422,10 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
             tag = _tag;
             clss = _class;
             args = _args;
-            // ---------- Original Method ----------
-            //tag = _tag;
-            //clss = _class;
-            //args = _args;
+            
+            
+            
+            
         }
 
         
@@ -429,27 +441,27 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.029 -0400", hash_original_method = "503EF87C7A3D1E177868D071C049B588", hash_generated_method = "9C4D885266140A7C5A9D8DE6C49C82A5")
         public  DummyTabFactory(Context context) {
             mContext = context;
-            // ---------- Original Method ----------
-            //mContext = context;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.029 -0400", hash_original_method = "970A9F84247A90102A17C68ED6E09878", hash_generated_method = "3A69E819D36635B8B443C3A88BBD7930")
         @Override
         public View createTabContent(String tag) {
-            View varB4EAC82CA7396A68D541C85D26508E83_444341096 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_444341096 = null; 
             View v = new View(mContext);
             v.setMinimumWidth(0);
             v.setMinimumHeight(0);
             varB4EAC82CA7396A68D541C85D26508E83_444341096 = v;
             addTaint(tag.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_444341096.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_444341096.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_444341096;
-            // ---------- Original Method ----------
-            //View v = new View(mContext);
-            //v.setMinimumWidth(0);
-            //v.setMinimumHeight(0);
-            //return v;
+            
+            
+            
+            
+            
         }
 
         
@@ -466,7 +478,7 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
           SavedState(Parcelable superState) {
             super(superState);
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -474,8 +486,8 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
         private  SavedState(Parcel in) {
             super(in);
             curTab = in.readString();
-            // ---------- Original Method ----------
-            //curTab = in.readString();
+            
+            
         }
 
         
@@ -486,25 +498,25 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
             out.writeString(curTab);
             addTaint(out.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //super.writeToParcel(out, flags);
-            //out.writeString(curTab);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.031 -0400", hash_original_method = "60AEE9C632C71CE84A075D97F6C8EE8D", hash_generated_method = "244EB36792C42A2230446FBBF83E9F91")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_939436994 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_939436994 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_939436994 = "FragmentTabHost.SavedState{"
                     + Integer.toHexString(System.identityHashCode(this))
                     + " curTab=" + curTab + "}";
-            varB4EAC82CA7396A68D541C85D26508E83_939436994.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_939436994.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_939436994;
-            // ---------- Original Method ----------
-            //return "FragmentTabHost.SavedState{"
-                    //+ Integer.toHexString(System.identityHashCode(this))
-                    //+ " curTab=" + curTab + "}";
+            
+            
+                    
+                    
         }
 
         

@@ -1,11 +1,11 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.Property;
 
@@ -15,7 +15,7 @@ public abstract class IntProperty<T> extends Property<T, Integer> {
     public  IntProperty(String name) {
         super(Integer.class, name);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,8 +28,8 @@ public abstract class IntProperty<T> extends Property<T, Integer> {
         set(object, value.intValue());
         addTaint(object.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //set(object, value.intValue());
+        
+        
     }
 
     

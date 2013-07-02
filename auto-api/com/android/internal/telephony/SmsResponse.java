@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class SmsResponse {
@@ -24,29 +24,30 @@ public class SmsResponse {
         this.messageRef = messageRef;
         this.ackPdu = ackPdu;
         this.errorCode = errorCode;
-        // ---------- Original Method ----------
-        //this.messageRef = messageRef;
-        //this.ackPdu = ackPdu;
-        //this.errorCode = errorCode;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.992 -0400", hash_original_method = "713734C16C162CC185BDF9249475CA58", hash_generated_method = "B0038458F770BACB143959ACF157068F")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1318335534 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1318335534 = null; 
         String ret = "{ messageRef = " + messageRef
                         + ", errorCode = " + errorCode
                         + ", ackPdu = " + ackPdu
                         + "}";
         varB4EAC82CA7396A68D541C85D26508E83_1318335534 = ret;
-        varB4EAC82CA7396A68D541C85D26508E83_1318335534.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1318335534.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1318335534;
-        // ---------- Original Method ----------
-        //String ret = "{ messageRef = " + messageRef
-                        //+ ", errorCode = " + errorCode
-                        //+ ", ackPdu = " + ackPdu
-                        //+ "}";
-        //return ret;
+        
+        
+                        
+                        
+                        
+        
     }
 
     

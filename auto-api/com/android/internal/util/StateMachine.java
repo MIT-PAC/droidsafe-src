@@ -1,11 +1,11 @@
 package com.android.internal.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -33,11 +33,11 @@ public class StateMachine {
         mSmThread.start();
         Looper looper = mSmThread.getLooper();
         initStateMachine(name, looper);
-        // ---------- Original Method ----------
-        //mSmThread = new HandlerThread(name);
-        //mSmThread.start();
-        //Looper looper = mSmThread.getLooper();
-        //initStateMachine(name, looper);
+        
+        
+        
+        
+        
     }
 
     
@@ -46,18 +46,19 @@ public class StateMachine {
         initStateMachine(name, looper);
         addTaint(name.getTaint());
         addTaint(looper.getTaint());
-        // ---------- Original Method ----------
-        //initStateMachine(name, looper);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.883 -0400", hash_original_method = "DAD3CAAA263F09CC114EE283728F2037", hash_generated_method = "D21F8B22AE9EC63CB714D28752378E7F")
     private void initStateMachine(String name, Looper looper) {
         mName = name;
         mSmHandler = new SmHandler(looper, this);
-        // ---------- Original Method ----------
-        //mName = name;
-        //mSmHandler = new SmHandler(looper, this);
+        
+        
+        
     }
 
     
@@ -66,30 +67,30 @@ public class StateMachine {
         mSmHandler.addState(state, parent);
         addTaint(state.getTaint());
         addTaint(parent.getTaint());
-        // ---------- Original Method ----------
-        //mSmHandler.addState(state, parent);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.883 -0400", hash_original_method = "E9B863EE3D8BE2542840411248513D5A", hash_generated_method = "B8C0E37A1004F07A145B44CE120597A4")
     protected final Message getCurrentMessage() {
-        Message varB4EAC82CA7396A68D541C85D26508E83_299557772 = null; //Variable for return #1
+        Message varB4EAC82CA7396A68D541C85D26508E83_299557772 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_299557772 = mSmHandler.getCurrentMessage();
-        varB4EAC82CA7396A68D541C85D26508E83_299557772.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_299557772.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_299557772;
-        // ---------- Original Method ----------
-        //return mSmHandler.getCurrentMessage();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.884 -0400", hash_original_method = "D598BDB56AFF58F966F9A8594C83023E", hash_generated_method = "2E3F3A5D6392DC8A2C848738770E9280")
     protected final IState getCurrentState() {
-        IState varB4EAC82CA7396A68D541C85D26508E83_472001041 = null; //Variable for return #1
+        IState varB4EAC82CA7396A68D541C85D26508E83_472001041 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_472001041 = mSmHandler.getCurrentState();
-        varB4EAC82CA7396A68D541C85D26508E83_472001041.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_472001041.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_472001041;
-        // ---------- Original Method ----------
-        //return mSmHandler.getCurrentState();
+        
+        
     }
 
     
@@ -97,8 +98,8 @@ public class StateMachine {
     protected final void addState(State state) {
         mSmHandler.addState(state, null);
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
-        //mSmHandler.addState(state, null);
+        
+        
     }
 
     
@@ -106,8 +107,8 @@ public class StateMachine {
     protected final void setInitialState(State initialState) {
         mSmHandler.setInitialState(initialState);
         addTaint(initialState.getTaint());
-        // ---------- Original Method ----------
-        //mSmHandler.setInitialState(initialState);
+        
+        
     }
 
     
@@ -115,16 +116,16 @@ public class StateMachine {
     protected final void transitionTo(IState destState) {
         mSmHandler.transitionTo(destState);
         addTaint(destState.getTaint());
-        // ---------- Original Method ----------
-        //mSmHandler.transitionTo(destState);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.885 -0400", hash_original_method = "42225DFCDD57D6590F4D09D0862811E2", hash_generated_method = "3678DC5016DC80DE1E1F3AFEA8AEDDF7")
     protected final void transitionToHaltingState() {
         mSmHandler.transitionTo(mSmHandler.mHaltingState);
-        // ---------- Original Method ----------
-        //mSmHandler.transitionTo(mSmHandler.mHaltingState);
+        
+        
     }
 
     
@@ -132,46 +133,47 @@ public class StateMachine {
     protected final void deferMessage(Message msg) {
         mSmHandler.deferMessage(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //mSmHandler.deferMessage(msg);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.885 -0400", hash_original_method = "7997D0B28C80AB12F09EF0050700F72A", hash_generated_method = "427E0A845BE3FD9FE8E2D4B9B7F211E1")
     protected void unhandledMessage(Message msg) {
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //if (mSmHandler.mDbg) Log.e(TAG, mName + " - unhandledMessage: msg.what=" + msg.what);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.885 -0400", hash_original_method = "056AA616A824F08818D1B78343E1C249", hash_generated_method = "426AFD9B07DC3D2547D5ACCC0F320026")
     protected void haltedProcessMessage(Message msg) {
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.885 -0400", hash_original_method = "4C387498336ED4C08F04A3A81289F626", hash_generated_method = "EA73277B96710E0F4513520F578025C0")
     protected void halting() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.886 -0400", hash_original_method = "B35375ECAB57B816953617EBE5B4DD2F", hash_generated_method = "5DFECD953D2CD9C7B3894A937D26E233")
     protected void quitting() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.886 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "E6538620B6E9FB6EBE28BC6C5D6F8549")
     public final String getName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1659459207 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1659459207 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1659459207 = mName;
-        varB4EAC82CA7396A68D541C85D26508E83_1659459207.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1659459207.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1659459207;
-        // ---------- Original Method ----------
-        //return mName;
+        
+        
     }
 
     
@@ -179,8 +181,8 @@ public class StateMachine {
     public final void setProcessedMessagesSize(int maxSize) {
         mSmHandler.setProcessedMessagesSize(maxSize);
         addTaint(maxSize);
-        // ---------- Original Method ----------
-        //mSmHandler.setProcessedMessagesSize(maxSize);
+        
+        
     }
 
     
@@ -189,8 +191,8 @@ public class StateMachine {
         int varADB516616D44D9188EDE23425BBA855F_469043896 = (mSmHandler.getProcessedMessagesSize());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2019323246 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2019323246;
-        // ---------- Original Method ----------
-        //return mSmHandler.getProcessedMessagesSize();
+        
+        
     }
 
     
@@ -199,156 +201,156 @@ public class StateMachine {
         int var8079425B963FA8795091F5002B0F237A_206591774 = (mSmHandler.getProcessedMessagesCount());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1784434973 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1784434973;
-        // ---------- Original Method ----------
-        //return mSmHandler.getProcessedMessagesCount();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.887 -0400", hash_original_method = "C801EF2BEB9E095EF75CD2E078DF8F4D", hash_generated_method = "3102AC09E977D6A6186FA765A97D028C")
     public final ProcessedMessageInfo getProcessedMessageInfo(int index) {
-        ProcessedMessageInfo varB4EAC82CA7396A68D541C85D26508E83_1400414193 = null; //Variable for return #1
+        ProcessedMessageInfo varB4EAC82CA7396A68D541C85D26508E83_1400414193 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1400414193 = mSmHandler.getProcessedMessageInfo(index);
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_1400414193.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1400414193.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1400414193;
-        // ---------- Original Method ----------
-        //return mSmHandler.getProcessedMessageInfo(index);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.888 -0400", hash_original_method = "467C85CDF2FD06F7E6D6E1A3F89DC6AE", hash_generated_method = "EA2440F37FBD507A4D44805DB1C37523")
     public final Handler getHandler() {
-        Handler varB4EAC82CA7396A68D541C85D26508E83_2076663705 = null; //Variable for return #1
+        Handler varB4EAC82CA7396A68D541C85D26508E83_2076663705 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2076663705 = mSmHandler;
-        varB4EAC82CA7396A68D541C85D26508E83_2076663705.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2076663705.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2076663705;
-        // ---------- Original Method ----------
-        //return mSmHandler;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.888 -0400", hash_original_method = "ECC92B44317075FA349076F0B0608CC3", hash_generated_method = "F46CE3FB0CC0D30D1820CE85CAADEA22")
     public final Message obtainMessage() {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1806057272 = null; //Variable for return #1
-        Message varB4EAC82CA7396A68D541C85D26508E83_353662259 = null; //Variable for return #2
+        Message varB4EAC82CA7396A68D541C85D26508E83_1806057272 = null; 
+        Message varB4EAC82CA7396A68D541C85D26508E83_353662259 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1806057272 = null;
         varB4EAC82CA7396A68D541C85D26508E83_353662259 = Message.obtain(mSmHandler);
-        Message varA7E53CE21691AB073D9660D615818899_1631398958; //Final return value
+        Message varA7E53CE21691AB073D9660D615818899_1631398958; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1631398958 = varB4EAC82CA7396A68D541C85D26508E83_1806057272;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1631398958 = varB4EAC82CA7396A68D541C85D26508E83_353662259;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1631398958.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1631398958.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1631398958;
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return null;
-        //return Message.obtain(mSmHandler);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.889 -0400", hash_original_method = "F3ABD31C8A8A675CAB7BDC7D39B74873", hash_generated_method = "2775A671CA15CD02FAC281C3B5CC0CD0")
     public final Message obtainMessage(int what) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_215005979 = null; //Variable for return #1
-        Message varB4EAC82CA7396A68D541C85D26508E83_347535217 = null; //Variable for return #2
+        Message varB4EAC82CA7396A68D541C85D26508E83_215005979 = null; 
+        Message varB4EAC82CA7396A68D541C85D26508E83_347535217 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_215005979 = null;
         varB4EAC82CA7396A68D541C85D26508E83_347535217 = Message.obtain(mSmHandler, what);
         addTaint(what);
-        Message varA7E53CE21691AB073D9660D615818899_1177639146; //Final return value
+        Message varA7E53CE21691AB073D9660D615818899_1177639146; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1177639146 = varB4EAC82CA7396A68D541C85D26508E83_215005979;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1177639146 = varB4EAC82CA7396A68D541C85D26508E83_347535217;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1177639146.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1177639146.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1177639146;
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return null;
-        //return Message.obtain(mSmHandler, what);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.889 -0400", hash_original_method = "2782AA628D17C295F1631BCDEC3DEA27", hash_generated_method = "803694677470D94A70B4E738977D8041")
     public final Message obtainMessage(int what, Object obj) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1865137966 = null; //Variable for return #1
-        Message varB4EAC82CA7396A68D541C85D26508E83_558297440 = null; //Variable for return #2
+        Message varB4EAC82CA7396A68D541C85D26508E83_1865137966 = null; 
+        Message varB4EAC82CA7396A68D541C85D26508E83_558297440 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1865137966 = null;
         varB4EAC82CA7396A68D541C85D26508E83_558297440 = Message.obtain(mSmHandler, what, obj);
         addTaint(what);
         addTaint(obj.getTaint());
-        Message varA7E53CE21691AB073D9660D615818899_1293875778; //Final return value
+        Message varA7E53CE21691AB073D9660D615818899_1293875778; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1293875778 = varB4EAC82CA7396A68D541C85D26508E83_1865137966;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1293875778 = varB4EAC82CA7396A68D541C85D26508E83_558297440;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1293875778.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1293875778.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1293875778;
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return null;
-        //return Message.obtain(mSmHandler, what, obj);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.890 -0400", hash_original_method = "90FE3D951CADE6238FC04DAF938292E8", hash_generated_method = "6971C822587A3442300CA5CBB6697240")
     public final Message obtainMessage(int what, int arg1, int arg2) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_1517834979 = null; //Variable for return #1
-        Message varB4EAC82CA7396A68D541C85D26508E83_1604396785 = null; //Variable for return #2
+        Message varB4EAC82CA7396A68D541C85D26508E83_1517834979 = null; 
+        Message varB4EAC82CA7396A68D541C85D26508E83_1604396785 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1517834979 = null;
         varB4EAC82CA7396A68D541C85D26508E83_1604396785 = Message.obtain(mSmHandler, what, arg1, arg2);
         addTaint(what);
         addTaint(arg1);
         addTaint(arg2);
-        Message varA7E53CE21691AB073D9660D615818899_1054021733; //Final return value
+        Message varA7E53CE21691AB073D9660D615818899_1054021733; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1054021733 = varB4EAC82CA7396A68D541C85D26508E83_1517834979;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1054021733 = varB4EAC82CA7396A68D541C85D26508E83_1604396785;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1054021733.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1054021733.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1054021733;
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return null;
-        //return Message.obtain(mSmHandler, what, arg1, arg2);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.890 -0400", hash_original_method = "9FA101C66AEE3272C97FB43923C2AC9F", hash_generated_method = "67754618B6E93CD17AFEC8D094A163F3")
     public final Message obtainMessage(int what, int arg1, int arg2, Object obj) {
-        Message varB4EAC82CA7396A68D541C85D26508E83_623837621 = null; //Variable for return #1
-        Message varB4EAC82CA7396A68D541C85D26508E83_502022316 = null; //Variable for return #2
+        Message varB4EAC82CA7396A68D541C85D26508E83_623837621 = null; 
+        Message varB4EAC82CA7396A68D541C85D26508E83_502022316 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_623837621 = null;
         varB4EAC82CA7396A68D541C85D26508E83_502022316 = Message.obtain(mSmHandler, what, arg1, arg2, obj);
         addTaint(what);
         addTaint(arg1);
         addTaint(arg2);
         addTaint(obj.getTaint());
-        Message varA7E53CE21691AB073D9660D615818899_1708190153; //Final return value
+        Message varA7E53CE21691AB073D9660D615818899_1708190153; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1708190153 = varB4EAC82CA7396A68D541C85D26508E83_623837621;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1708190153 = varB4EAC82CA7396A68D541C85D26508E83_502022316;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1708190153.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1708190153.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1708190153;
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return null;
-        //return Message.obtain(mSmHandler, what, arg1, arg2, obj);
+        
+        
+        
     }
 
     
@@ -356,9 +358,9 @@ public class StateMachine {
     public final void sendMessage(int what) {
         mSmHandler.sendMessage(obtainMessage(what));
         addTaint(what);
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.sendMessage(obtainMessage(what));
+        
+        
+        
     }
 
     
@@ -367,9 +369,9 @@ public class StateMachine {
         mSmHandler.sendMessage(obtainMessage(what,obj));
         addTaint(what);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.sendMessage(obtainMessage(what,obj));
+        
+        
+        
     }
 
     
@@ -377,9 +379,9 @@ public class StateMachine {
     public final void sendMessage(Message msg) {
         mSmHandler.sendMessage(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.sendMessage(msg);
+        
+        
+        
     }
 
     
@@ -388,9 +390,9 @@ public class StateMachine {
         mSmHandler.sendMessageDelayed(obtainMessage(what), delayMillis);
         addTaint(what);
         addTaint(delayMillis);
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.sendMessageDelayed(obtainMessage(what), delayMillis);
+        
+        
+        
     }
 
     
@@ -400,9 +402,9 @@ public class StateMachine {
         addTaint(what);
         addTaint(obj.getTaint());
         addTaint(delayMillis);
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.sendMessageDelayed(obtainMessage(what, obj), delayMillis);
+        
+        
+        
     }
 
     
@@ -411,9 +413,9 @@ public class StateMachine {
         mSmHandler.sendMessageDelayed(msg, delayMillis);
         addTaint(msg.getTaint());
         addTaint(delayMillis);
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.sendMessageDelayed(msg, delayMillis);
+        
+        
+        
     }
 
     
@@ -422,8 +424,8 @@ public class StateMachine {
         mSmHandler.sendMessageAtFrontOfQueue(obtainMessage(what, obj));
         addTaint(what);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //mSmHandler.sendMessageAtFrontOfQueue(obtainMessage(what, obj));
+        
+        
     }
 
     
@@ -431,8 +433,8 @@ public class StateMachine {
     protected final void sendMessageAtFrontOfQueue(int what) {
         mSmHandler.sendMessageAtFrontOfQueue(obtainMessage(what));
         addTaint(what);
-        // ---------- Original Method ----------
-        //mSmHandler.sendMessageAtFrontOfQueue(obtainMessage(what));
+        
+        
     }
 
     
@@ -440,8 +442,8 @@ public class StateMachine {
     protected final void sendMessageAtFrontOfQueue(Message msg) {
         mSmHandler.sendMessageAtFrontOfQueue(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //mSmHandler.sendMessageAtFrontOfQueue(msg);
+        
+        
     }
 
     
@@ -449,17 +451,17 @@ public class StateMachine {
     protected final void removeMessages(int what) {
         mSmHandler.removeMessages(what);
         addTaint(what);
-        // ---------- Original Method ----------
-        //mSmHandler.removeMessages(what);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.892 -0400", hash_original_method = "13321C8CCD65EA0BFC64015C162CADFF", hash_generated_method = "BF8AFCA18B8F8723A014C656B4331DB0")
     public final void quit() {
         mSmHandler.quit();
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.quit();
+        
+        
+        
     }
 
     
@@ -469,38 +471,41 @@ public class StateMachine {
         addTaint(msg.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1043332295 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1043332295;
-        // ---------- Original Method ----------
-        //return mSmHandler.isQuit(msg);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.893 -0400", hash_original_method = "60458C30D1CF7065D8253B7B3CE713BC", hash_generated_method = "F12DD5D082097CFC79DD0CC4B848FCCD")
     public boolean isDbg() {
         boolean var1D9817B269DC7C83256BA20D04F9F774_477240582 = (mSmHandler.isDbg());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_116314187 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_116314187;
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return false;
-        //return mSmHandler.isDbg();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.893 -0400", hash_original_method = "DD47B988861B3BEC7B551FD48507E8F0", hash_generated_method = "69C7843AA4EBB38D5B3E8BC86F01C33A")
     public void setDbg(boolean dbg) {
         mSmHandler.setDbg(dbg);
         addTaint(dbg);
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.setDbg(dbg);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.893 -0400", hash_original_method = "25624AE7DCD0D0ACD27C83DB1C9CEB1E", hash_generated_method = "94BD4AC6F97EBCF1EE9DD94260E9F311")
     public void start() {
         mSmHandler.completeConstruction();
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.completeConstruction();
+        
+        
+        
     }
 
     
@@ -521,8 +526,8 @@ public class StateMachine {
             addTaint(message.getTaint());
             addTaint(state.getTaint());
             addTaint(orgState.getTaint());
-            // ---------- Original Method ----------
-            //update(message, state, orgState);
+            
+            
         }
 
         
@@ -531,10 +536,10 @@ public class StateMachine {
             this.what = message.what;
             this.state = state;
             this.orgState = orgState;
-            // ---------- Original Method ----------
-            //this.what = message.what;
-            //this.state = state;
-            //this.orgState = orgState;
+            
+            
+            
+            
         }
 
         
@@ -542,37 +547,37 @@ public class StateMachine {
         public int getWhat() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_569309065 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_569309065;
-            // ---------- Original Method ----------
-            //return what;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.895 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "3F4ADE28C7113F038D248E7DB68D7E32")
         public State getState() {
-            State varB4EAC82CA7396A68D541C85D26508E83_142498864 = null; //Variable for return #1
+            State varB4EAC82CA7396A68D541C85D26508E83_142498864 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_142498864 = state;
-            varB4EAC82CA7396A68D541C85D26508E83_142498864.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_142498864.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_142498864;
-            // ---------- Original Method ----------
-            //return state;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.895 -0400", hash_original_method = "6453845FB279EEE2A3A97B4923853CA9", hash_generated_method = "9B3DF60FCD897ED6F48AB6B9ABD64928")
         public State getOriginalState() {
-            State varB4EAC82CA7396A68D541C85D26508E83_459998359 = null; //Variable for return #1
+            State varB4EAC82CA7396A68D541C85D26508E83_459998359 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_459998359 = orgState;
-            varB4EAC82CA7396A68D541C85D26508E83_459998359.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_459998359.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_459998359;
-            // ---------- Original Method ----------
-            //return orgState;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.896 -0400", hash_original_method = "1BEC9C7E840A94CA1F6D8F0CAE4CCE3D", hash_generated_method = "FD9A45450B2FD7C8E1E0EC8737002312")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1498372125 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1498372125 = null; 
             StringBuilder sb = new StringBuilder();
             sb.append("what=");
             sb.append(what);
@@ -581,52 +586,52 @@ public class StateMachine {
             sb.append(" orgState=");
             sb.append(cn(orgState));
             varB4EAC82CA7396A68D541C85D26508E83_1498372125 = sb.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1498372125.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1498372125.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1498372125;
-            // ---------- Original Method ----------
-            //StringBuilder sb = new StringBuilder();
-            //sb.append("what=");
-            //sb.append(what);
-            //sb.append(" state=");
-            //sb.append(cn(state));
-            //sb.append(" orgState=");
-            //sb.append(cn(orgState));
-            //return sb.toString();
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.897 -0400", hash_original_method = "BFE06EA51077266A4C3CDDB9CF5A61E9", hash_generated_method = "8E547D8BEB10CE607E698B06078D4FA9")
         private String cn(Object n) {
-            String varB4EAC82CA7396A68D541C85D26508E83_967133516 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_574369880 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_967133516 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_574369880 = null; 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_967133516 = "null";
-            } //End block
+            } 
             {
                 String name = n.getClass().getName();
                 int lastDollar = name.lastIndexOf('$');
                 varB4EAC82CA7396A68D541C85D26508E83_574369880 = name.substring(lastDollar + 1);
-            } //End block
+            } 
             addTaint(n.getTaint());
-            String varA7E53CE21691AB073D9660D615818899_463453284; //Final return value
+            String varA7E53CE21691AB073D9660D615818899_463453284; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_463453284 = varB4EAC82CA7396A68D541C85D26508E83_967133516;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_463453284 = varB4EAC82CA7396A68D541C85D26508E83_574369880;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_463453284.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_463453284.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_463453284;
-            // ---------- Original Method ----------
-            //if (n == null) {
-                //return "null";
-            //} else {
-                //String name = n.getClass().getName();
-                //int lastDollar = name.lastIndexOf('$');
-                //return name.substring(lastDollar + 1);
-            //}
+            
+            
+                
+            
+                
+                
+                
+            
         }
 
         
@@ -650,7 +655,7 @@ public class StateMachine {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.898 -0400", hash_original_method = "8C2E4982B56D335A57BD25CE5A99A95E", hash_generated_method = "7FF397A4DBE391D9CE0F14D5D355725E")
           ProcessedMessages() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -659,10 +664,10 @@ public class StateMachine {
             mMaxSize = maxSize;
             mCount = 0;
             mMessages.clear();
-            // ---------- Original Method ----------
-            //mMaxSize = maxSize;
-            //mCount = 0;
-            //mMessages.clear();
+            
+            
+            
+            
         }
 
         
@@ -671,8 +676,8 @@ public class StateMachine {
             int var74A32522226B505A2B9E801F7AC22358_1750628382 = (mMessages.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_110435414 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_110435414;
-            // ---------- Original Method ----------
-            //return mMessages.size();
+            
+            
         }
 
         
@@ -680,58 +685,58 @@ public class StateMachine {
          int count() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1147562979 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1147562979;
-            // ---------- Original Method ----------
-            //return mCount;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.900 -0400", hash_original_method = "7C55F1E05538CA172591209F0EED6056", hash_generated_method = "CFD4D7A4E005D0B113E95B968C008CBA")
          void cleanup() {
             mMessages.clear();
-            // ---------- Original Method ----------
-            //mMessages.clear();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.900 -0400", hash_original_method = "9D508AC508F62C2D8A912ED09416EAAB", hash_generated_method = "3A965D69E7FBE076E8A99DC1473A2E11")
          ProcessedMessageInfo get(int index) {
-            ProcessedMessageInfo varB4EAC82CA7396A68D541C85D26508E83_731471145 = null; //Variable for return #1
-            ProcessedMessageInfo varB4EAC82CA7396A68D541C85D26508E83_926226815 = null; //Variable for return #2
+            ProcessedMessageInfo varB4EAC82CA7396A68D541C85D26508E83_731471145 = null; 
+            ProcessedMessageInfo varB4EAC82CA7396A68D541C85D26508E83_926226815 = null; 
             int nextIndex = mOldestIndex + index;
             {
                 nextIndex -= mMaxSize;
-            } //End block
+            } 
             {
                 boolean var7A7E76C00B0E5411DCE1739E06AE8795_363658720 = (nextIndex >= size());
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_731471145 = null;
-                } //End block
+                } 
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_926226815 = mMessages.get(nextIndex);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(index);
-            ProcessedMessageInfo varA7E53CE21691AB073D9660D615818899_1284486651; //Final return value
+            ProcessedMessageInfo varA7E53CE21691AB073D9660D615818899_1284486651; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1284486651 = varB4EAC82CA7396A68D541C85D26508E83_731471145;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1284486651 = varB4EAC82CA7396A68D541C85D26508E83_926226815;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1284486651.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1284486651.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1284486651;
-            // ---------- Original Method ----------
-            //int nextIndex = mOldestIndex + index;
-            //if (nextIndex >= mMaxSize) {
-                //nextIndex -= mMaxSize;
-            //}
-            //if (nextIndex >= size()) {
-                //return null;
-            //} else {
-                //return mMessages.get(nextIndex);
-            //}
+            
+            
+            
+                
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -742,31 +747,31 @@ public class StateMachine {
                 boolean varB4226A5C9FBC4A9560CE67F9F9C6A507_139713133 = (mMessages.size() < mMaxSize);
                 {
                     mMessages.add(new ProcessedMessageInfo(message, state, orgState));
-                } //End block
+                } 
                 {
                     ProcessedMessageInfo pmi = mMessages.get(mOldestIndex);
                     mOldestIndex += 1;
                     {
                         mOldestIndex = 0;
-                    } //End block
+                    } 
                     pmi.update(message, state, orgState);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(message.getTaint());
             addTaint(state.getTaint());
             addTaint(orgState.getTaint());
-            // ---------- Original Method ----------
-            //mCount += 1;
-            //if (mMessages.size() < mMaxSize) {
-                //mMessages.add(new ProcessedMessageInfo(message, state, orgState));
-            //} else {
-                //ProcessedMessageInfo pmi = mMessages.get(mOldestIndex);
-                //mOldestIndex += 1;
-                //if (mOldestIndex >= mMaxSize) {
-                    //mOldestIndex = 0;
-                //}
-                //pmi.update(message, state, orgState);
-            //}
+            
+            
+            
+                
+            
+                
+                
+                
+                    
+                
+                
+            
         }
 
         
@@ -831,10 +836,10 @@ public class StateMachine {
             addState(mHaltingState, null);
             addState(mQuittingState, null);
             addTaint(looper.getTaint());
-            // ---------- Original Method ----------
-            //mSm = sm;
-            //addState(mHaltingState, null);
-            //addState(mQuittingState, null);
+            
+            
+            
+            
         }
 
         
@@ -846,16 +851,16 @@ public class StateMachine {
             processMsg(msg);
             performTransitions();
             Log.d(TAG, "handleMessage: X");
-            // ---------- Original Method ----------
-            //if (mDbg) Log.d(TAG, "handleMessage: E msg.what=" + msg.what);
-            //mMsg = msg;
-            //if (!mIsConstructionCompleted) {
-                //Log.e(TAG, "The start method not called, ignore msg: " + msg);
-                //return;
-            //}
-            //processMsg(msg);
-            //performTransitions();
-            //if (mDbg) Log.d(TAG, "handleMessage: X");
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
         }
 
         
@@ -871,17 +876,17 @@ public class StateMachine {
                 int stateStackEnteringIndex = moveTempStateStackToStateStack();
                 invokeEnterMethods(stateStackEnteringIndex);
                 moveDeferredMessageAtFrontOfQueue();
-            } //End block
+            } 
             {
                 {
                     cleanupAfterQuitting();
-                } //End block
+                } 
                 {
                     mSm.halting();
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -891,7 +896,7 @@ public class StateMachine {
             {
                 getLooper().quit();
                 mSm.mSmThread = null;
-            } //End block
+            } 
             mSm.mSmHandler = null;
             mSm = null;
             mMsg = null;
@@ -902,22 +907,22 @@ public class StateMachine {
             mInitialState = null;
             mDestState = null;
             mDeferredMessages.clear();
-            // ---------- Original Method ----------
-            //mSm.quitting();
-            //if (mSm.mSmThread != null) {
-                //getLooper().quit();
-                //mSm.mSmThread = null;
-            //}
-            //mSm.mSmHandler = null;
-            //mSm = null;
-            //mMsg = null;
-            //mProcessedMessages.cleanup();
-            //mStateStack = null;
-            //mTempStateStack = null;
-            //mStateInfo.clear();
-            //mInitialState = null;
-            //mDestState = null;
-            //mDeferredMessages.clear();
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -935,13 +940,13 @@ public class StateMachine {
                         StateInfo i = si;
                         {
                             i = i.parentStateInfo;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         maxDepth = depth;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             Log.d(TAG, "completeConstruction: maxDepth=" + maxDepth);
             mStateStack = new StateInfo[maxDepth];
             mTempStateStack = new StateInfo[maxDepth];
@@ -951,8 +956,8 @@ public class StateMachine {
             invokeEnterMethods(0);
             performTransitions();
             Log.d(TAG, "completeConstruction: X");
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -961,7 +966,7 @@ public class StateMachine {
             StateInfo curStateInfo = mStateStack[mStateStackTopIndex];
             {
                 Log.d(TAG, "processMsg: " + curStateInfo.state.getName());
-            } //End block
+            } 
             {
                 boolean var5B75882492BC3F42AA5580C4F10745A9_2064699650 = (!curStateInfo.state.processMessage(msg));
                 {
@@ -972,24 +977,24 @@ public class StateMachine {
                             boolean var980CF6578C138F02008BF1FB10188C29_1582719391 = (isQuit(msg));
                             {
                                 transitionTo(mQuittingState);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         Log.d(TAG, "processMsg: " + curStateInfo.state.getName());
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 State orgState = mStateStack[mStateStackTopIndex].state;
                 mProcessedMessages.add(msg, curStateInfo.state, orgState);
-            } //End block
+            } 
             {
                 mProcessedMessages.add(msg, null, null);
-            } //End block
+            } 
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1001,17 +1006,17 @@ public class StateMachine {
                 curState.exit();
                 mStateStack[mStateStackTopIndex].active = false;
                 mStateStackTopIndex -= 1;
-            } //End block
+            } 
             addTaint(commonStateInfo.getTaint());
-            // ---------- Original Method ----------
-            //while ((mStateStackTopIndex >= 0) &&
-                    //(mStateStack[mStateStackTopIndex] != commonStateInfo)) {
-                //State curState = mStateStack[mStateStackTopIndex].state;
-                //if (mDbg) Log.d(TAG, "invokeExitMethods: " + curState.getName());
-                //curState.exit();
-                //mStateStack[mStateStackTopIndex].active = false;
-                //mStateStackTopIndex -= 1;
-            //}
+            
+            
+                    
+                
+                
+                
+                
+                
+            
         }
 
         
@@ -1023,15 +1028,15 @@ public class StateMachine {
                     Log.d(TAG, "invokeEnterMethods: " + mStateStack[i].state.getName());
                     mStateStack[i].state.enter();
                     mStateStack[i].active = true;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(stateStackEnteringIndex);
-            // ---------- Original Method ----------
-            //for (int i = stateStackEnteringIndex; i <= mStateStackTopIndex; i++) {
-                //if (mDbg) Log.d(TAG, "invokeEnterMethods: " + mStateStack[i].state.getName());
-                //mStateStack[i].state.enter();
-                //mStateStack[i].active = true;
-            //}
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -1043,16 +1048,16 @@ public class StateMachine {
                     Message curMsg = mDeferredMessages.get(i);
                     Log.d(TAG, "moveDeferredMessageAtFrontOfQueue; what=" + curMsg.what);
                     sendMessageAtFrontOfQueue(curMsg);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mDeferredMessages.clear();
-            // ---------- Original Method ----------
-            //for (int i = mDeferredMessages.size() - 1; i >= 0; i-- ) {
-                //Message curMsg = mDeferredMessages.get(i);
-                //if (mDbg) Log.d(TAG, "moveDeferredMessageAtFrontOfQueue; what=" + curMsg.what);
-                //sendMessageAtFrontOfQueue(curMsg);
-            //}
-            //mDeferredMessages.clear();
+            
+            
+                
+                
+                
+            
+            
         }
 
         
@@ -1066,64 +1071,64 @@ public class StateMachine {
                 mStateStack[j] = mTempStateStack[i];
                 j += 1;
                 i -= 1;
-            } //End block
+            } 
             mStateStackTopIndex = j - 1;
             {
                 Log.d(TAG, "moveTempStackToStateStack: X mStateStackTop="
                       + mStateStackTopIndex + ",startingIndex=" + startingIndex
                       + ",Top=" + mStateStack[mStateStackTopIndex].state.getName());
-            } //End block
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_313964552 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_313964552;
-            // ---------- Original Method ----------
-            //int startingIndex = mStateStackTopIndex + 1;
-            //int i = mTempStateStackCount - 1;
-            //int j = startingIndex;
-            //while (i >= 0) {
-                //if (mDbg) Log.d(TAG, "moveTempStackToStateStack: i=" + i + ",j=" + j);
-                //mStateStack[j] = mTempStateStack[i];
-                //j += 1;
-                //i -= 1;
-            //}
-            //mStateStackTopIndex = j - 1;
-            //if (mDbg) {
-                //Log.d(TAG, "moveTempStackToStateStack: X mStateStackTop="
-                      //+ mStateStackTopIndex + ",startingIndex=" + startingIndex
-                      //+ ",Top=" + mStateStack[mStateStackTopIndex].state.getName());
-            //}
-            //return startingIndex;
+            
+            
+            
+            
+            
+                
+                
+                
+                
+            
+            
+            
+                
+                      
+                      
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.914 -0400", hash_original_method = "47EF66F8DA6A53298BD1106F4D1229BB", hash_generated_method = "BBFCA1FC09D39B9BEA3A1EBB00C06D40")
         private final StateInfo setupTempStateStackWithStatesToEnter(State destState) {
-            StateInfo varB4EAC82CA7396A68D541C85D26508E83_462975226 = null; //Variable for return #1
+            StateInfo varB4EAC82CA7396A68D541C85D26508E83_462975226 = null; 
             mTempStateStackCount = 0;
             StateInfo curStateInfo = mStateInfo.get(destState);
             {
                 mTempStateStack[mTempStateStackCount++] = curStateInfo;
                 curStateInfo = curStateInfo.parentStateInfo;
-            } //End block
+            } 
             {
                 Log.d(TAG, "setupTempStateStackWithStatesToEnter: X mTempStateStackCount="
                       + mTempStateStackCount + ",curStateInfo: " + curStateInfo);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_462975226 = curStateInfo;
             addTaint(destState.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_462975226.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_462975226.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_462975226;
-            // ---------- Original Method ----------
-            //mTempStateStackCount = 0;
-            //StateInfo curStateInfo = mStateInfo.get(destState);
-            //do {
-                //mTempStateStack[mTempStateStackCount++] = curStateInfo;
-                //curStateInfo = curStateInfo.parentStateInfo;
-            //} while ((curStateInfo != null) && !curStateInfo.active);
-            //if (mDbg) {
-                //Log.d(TAG, "setupTempStateStackWithStatesToEnter: X mTempStateStackCount="
-                      //+ mTempStateStackCount + ",curStateInfo: " + curStateInfo);
-            //}
-            //return curStateInfo;
+            
+            
+            
+            
+                
+                
+            
+            
+                
+                      
+            
+            
         }
 
         
@@ -1132,76 +1137,76 @@ public class StateMachine {
             {
                 Log.d(TAG, "setupInitialStateStack: E mInitialState="
                     + mInitialState.getName());
-            } //End block
+            } 
             StateInfo curStateInfo = mStateInfo.get(mInitialState);
             {
                 mTempStateStackCount = 0;
                 {
                     mTempStateStack[mTempStateStackCount] = curStateInfo;
                     curStateInfo = curStateInfo.parentStateInfo;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             mStateStackTopIndex = -1;
             moveTempStateStackToStateStack();
-            // ---------- Original Method ----------
-            //if (mDbg) {
-                //Log.d(TAG, "setupInitialStateStack: E mInitialState="
-                    //+ mInitialState.getName());
-            //}
-            //StateInfo curStateInfo = mStateInfo.get(mInitialState);
-            //for (mTempStateStackCount = 0; curStateInfo != null; mTempStateStackCount++) {
-                //mTempStateStack[mTempStateStackCount] = curStateInfo;
-                //curStateInfo = curStateInfo.parentStateInfo;
-            //}
-            //mStateStackTopIndex = -1;
-            //moveTempStateStackToStateStack();
+            
+            
+                
+                    
+            
+            
+            
+                
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.916 -0400", hash_original_method = "38EC5F2FF9273B7F113CC175A6D6CA55", hash_generated_method = "49B68F066C34C253DB76A6B129C56914")
         private final Message getCurrentMessage() {
-            Message varB4EAC82CA7396A68D541C85D26508E83_416088779 = null; //Variable for return #1
+            Message varB4EAC82CA7396A68D541C85D26508E83_416088779 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_416088779 = mMsg;
-            varB4EAC82CA7396A68D541C85D26508E83_416088779.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_416088779.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_416088779;
-            // ---------- Original Method ----------
-            //return mMsg;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.917 -0400", hash_original_method = "4DAC448F0AE857FB37AA7C8477011F21", hash_generated_method = "F74BE37129F9F70B6B9AF5A3760E3D7A")
         private final IState getCurrentState() {
-            IState varB4EAC82CA7396A68D541C85D26508E83_508181977 = null; //Variable for return #1
+            IState varB4EAC82CA7396A68D541C85D26508E83_508181977 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_508181977 = mStateStack[mStateStackTopIndex].state;
-            varB4EAC82CA7396A68D541C85D26508E83_508181977.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_508181977.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_508181977;
-            // ---------- Original Method ----------
-            //return mStateStack[mStateStackTopIndex].state;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.919 -0400", hash_original_method = "D4FAF1FE6F5065E5FE32CF44151438D5", hash_generated_method = "D86A43418867174D49C70F0F24704D98")
         private final StateInfo addState(State state, State parent) {
-            StateInfo varB4EAC82CA7396A68D541C85D26508E83_1816099211 = null; //Variable for return #1
+            StateInfo varB4EAC82CA7396A68D541C85D26508E83_1816099211 = null; 
             {
                 Log.d(TAG, "addStateInternal: E state=" + state.getName()
                         + ",parent=" + ((parent == null) ? "" : parent.getName()));
-            } //End block
+            } 
             StateInfo parentStateInfo = null;
             {
                 parentStateInfo = mStateInfo.get(parent);
                 {
                     parentStateInfo = addState(parent, null);
-                } //End block
-            } //End block
+                } 
+            } 
             StateInfo stateInfo = mStateInfo.get(state);
             {
                 stateInfo = new StateInfo();
                 mStateInfo.put(state, stateInfo);
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("state already added");
-            } //End block
+            } 
             stateInfo.state = state;
             stateInfo.parentStateInfo = parentStateInfo;
             stateInfo.active = false;
@@ -1209,10 +1214,10 @@ public class StateMachine {
             varB4EAC82CA7396A68D541C85D26508E83_1816099211 = stateInfo;
             addTaint(state.getTaint());
             addTaint(parent.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1816099211.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1816099211.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1816099211;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1220,9 +1225,9 @@ public class StateMachine {
         private final void setInitialState(State initialState) {
             Log.d(TAG, "setInitialState: initialState" + initialState.getName());
             mInitialState = initialState;
-            // ---------- Original Method ----------
-            //if (mDbg) Log.d(TAG, "setInitialState: initialState" + initialState.getName());
-            //mInitialState = initialState;
+            
+            
+            
         }
 
         
@@ -1230,9 +1235,9 @@ public class StateMachine {
         private final void transitionTo(IState destState) {
             mDestState = (State) destState;
             Log.d(TAG, "StateMachine.transitionTo EX destState" + mDestState.getName());
-            // ---------- Original Method ----------
-            //mDestState = (State) destState;
-            //if (mDbg) Log.d(TAG, "StateMachine.transitionTo EX destState" + mDestState.getName());
+            
+            
+            
         }
 
         
@@ -1243,11 +1248,11 @@ public class StateMachine {
             newMsg.copyFrom(msg);
             mDeferredMessages.add(newMsg);
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-            //if (mDbg) Log.d(TAG, "deferMessage: msg=" + msg.what);
-            //Message newMsg = obtainMessage();
-            //newMsg.copyFrom(msg);
-            //mDeferredMessages.add(newMsg);
+            
+            
+            
+            
+            
         }
 
         
@@ -1255,9 +1260,9 @@ public class StateMachine {
         private final void quit() {
             Log.d(TAG, "quit:");
             sendMessage(obtainMessage(SM_QUIT_CMD, mQuitObj));
-            // ---------- Original Method ----------
-            //if (mDbg) Log.d(TAG, "quit:");
-            //sendMessage(obtainMessage(SM_QUIT_CMD, mQuitObj));
+            
+            
+            
         }
 
         
@@ -1266,8 +1271,8 @@ public class StateMachine {
             addTaint(msg.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2136419169 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2136419169;
-            // ---------- Original Method ----------
-            //return (msg.what == SM_QUIT_CMD) && (msg.obj == mQuitObj);
+            
+            
         }
 
         
@@ -1275,16 +1280,16 @@ public class StateMachine {
         private final boolean isDbg() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_692752464 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_692752464;
-            // ---------- Original Method ----------
-            //return mDbg;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.925 -0400", hash_original_method = "2FBE0CE6F45608217065DCE46294BFD1", hash_generated_method = "BA70DD150B20B15D1FA853B35448103D")
         private final void setDbg(boolean dbg) {
             mDbg = dbg;
-            // ---------- Original Method ----------
-            //mDbg = dbg;
+            
+            
         }
 
         
@@ -1292,8 +1297,8 @@ public class StateMachine {
         private final void setProcessedMessagesSize(int maxSize) {
             mProcessedMessages.setSize(maxSize);
             addTaint(maxSize);
-            // ---------- Original Method ----------
-            //mProcessedMessages.setSize(maxSize);
+            
+            
         }
 
         
@@ -1302,8 +1307,8 @@ public class StateMachine {
             int var7094F3E812A5A7B9807ACDF8F0A83A82_1757592866 = (mProcessedMessages.size());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1976425840 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1976425840;
-            // ---------- Original Method ----------
-            //return mProcessedMessages.size();
+            
+            
         }
 
         
@@ -1312,20 +1317,20 @@ public class StateMachine {
             int var35155D08ADED50853B800820545DA8A4_811119043 = (mProcessedMessages.count());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1118355085 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1118355085;
-            // ---------- Original Method ----------
-            //return mProcessedMessages.count();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.928 -0400", hash_original_method = "1E4BC1F21BF61852DF075DACE8E37071", hash_generated_method = "29A3687FC1DCAB906E7DD1B39B210D7F")
         private final ProcessedMessageInfo getProcessedMessageInfo(int index) {
-            ProcessedMessageInfo varB4EAC82CA7396A68D541C85D26508E83_1615569498 = null; //Variable for return #1
+            ProcessedMessageInfo varB4EAC82CA7396A68D541C85D26508E83_1615569498 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1615569498 = mProcessedMessages.get(index);
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_1615569498.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1615569498.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1615569498;
-            // ---------- Original Method ----------
-            //return mProcessedMessages.get(index);
+            
+            
         }
 
         
@@ -1343,23 +1348,23 @@ public class StateMachine {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.928 -0400", hash_original_method = "87ADFE3F226D3DC74DE0940453A6AE41", hash_generated_method = "87ADFE3F226D3DC74DE0940453A6AE41")
             public StateInfo ()
             {
-                //Synthesized constructor
+                
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.930 -0400", hash_original_method = "ABB8BC4D82891CF5369714A62A1A931C", hash_generated_method = "0266250EE0A9E6C979E0FE48DB51021C")
             @Override
             public String toString() {
-                String varB4EAC82CA7396A68D541C85D26508E83_1742578614 = null; //Variable for return #1
+                String varB4EAC82CA7396A68D541C85D26508E83_1742578614 = null; 
                 varB4EAC82CA7396A68D541C85D26508E83_1742578614 = "state=" + state.getName() + ",active=" + active
                         + ",parent=" + ((parentStateInfo == null) ?
                                         "null" : parentStateInfo.state.getName());
-                varB4EAC82CA7396A68D541C85D26508E83_1742578614.addTaint(getTaint()); //Add taint from parent
+                varB4EAC82CA7396A68D541C85D26508E83_1742578614.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_1742578614;
-                // ---------- Original Method ----------
-                //return "state=" + state.getName() + ",active=" + active
-                        //+ ",parent=" + ((parentStateInfo == null) ?
-                                        //"null" : parentStateInfo.state.getName());
+                
+                
+                        
+                                        
             }
 
             
@@ -1372,7 +1377,7 @@ public class StateMachine {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.930 -0400", hash_original_method = "F9537758E4D6CCA48E760EA40D22DF18", hash_generated_method = "F9537758E4D6CCA48E760EA40D22DF18")
             public HaltingState ()
             {
-                //Synthesized constructor
+                
             }
 
 
@@ -1383,9 +1388,9 @@ public class StateMachine {
                 addTaint(msg.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_795643904 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_795643904;
-                // ---------- Original Method ----------
-                //mSm.haltedProcessMessage(msg);
-                //return true;
+                
+                
+                
             }
 
             
@@ -1398,7 +1403,7 @@ public class StateMachine {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.930 -0400", hash_original_method = "769C07BAAE1E710E9D1020720F6EA4CE", hash_generated_method = "769C07BAAE1E710E9D1020720F6EA4CE")
             public QuittingState ()
             {
-                //Synthesized constructor
+                
             }
 
 
@@ -1408,8 +1413,8 @@ public class StateMachine {
                 addTaint(msg.getTaint());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_186896240 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_186896240;
-                // ---------- Original Method ----------
-                //return NOT_HANDLED;
+                
+                
             }
 
             

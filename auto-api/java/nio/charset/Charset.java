@@ -1,11 +1,11 @@
 package java.nio.charset;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
@@ -42,23 +42,24 @@ public abstract class Charset implements Comparable<Charset> {
                 {
                     checkCharsetName(alias);
                     this.aliasesSet.add(alias);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(aliases[0].getTaint());
-        // ---------- Original Method ----------
-        //checkCharsetName(canonicalName);
-        //this.canonicalName = canonicalName;
-        //this.aliasesSet = new HashSet<String>();
-        //if (aliases != null) {
-            //for (String alias : aliases) {
-                //checkCharsetName(alias);
-                //this.aliasesSet.add(alias);
-            //}
-        //}
+        
+        
+        
+        
+        
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void checkCharsetName(String name) {
         if (name.isEmpty()) {
             throw new IllegalCharsetNameException(name);
@@ -97,6 +98,7 @@ public abstract class Charset implements Comparable<Charset> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Charset cacheCharset(String charsetName, Charset cs) {
         synchronized (CACHED_CHARSETS) {
             String canonicalName = cs.name();
@@ -114,6 +116,7 @@ public abstract class Charset implements Comparable<Charset> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Charset forName(String charsetName) {
         Charset cs;
         synchronized (CACHED_CHARSETS) {
@@ -140,6 +143,7 @@ public abstract class Charset implements Comparable<Charset> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Charset forNameUEE(String charsetName) throws UnsupportedEncodingException {
         try {
             return Charset.forName(charsetName);
@@ -151,6 +155,7 @@ public abstract class Charset implements Comparable<Charset> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isSupported(String charsetName) {
         try {
             forName(charsetName);
@@ -172,46 +177,46 @@ public abstract class Charset implements Comparable<Charset> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.844 -0400", hash_original_method = "C591AF6945C669FCF4033528E86B2077", hash_generated_method = "BFE5084F8A4A44DFA7B8EC188B4B400E")
     public final String name() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1231166206 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1231166206 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1231166206 = this.canonicalName;
-        varB4EAC82CA7396A68D541C85D26508E83_1231166206.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1231166206.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1231166206;
-        // ---------- Original Method ----------
-        //return this.canonicalName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.844 -0400", hash_original_method = "9500673A94BC6D8C4BDA9785EBDB1148", hash_generated_method = "AABCA9C07AED2DE43959349317513D60")
     public final Set<String> aliases() {
-        Set<String> varB4EAC82CA7396A68D541C85D26508E83_1803397372 = null; //Variable for return #1
+        Set<String> varB4EAC82CA7396A68D541C85D26508E83_1803397372 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1803397372 = Collections.unmodifiableSet(this.aliasesSet);
-        varB4EAC82CA7396A68D541C85D26508E83_1803397372.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1803397372.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1803397372;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableSet(this.aliasesSet);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.845 -0400", hash_original_method = "73ACF950C7885C6BB8F7DA98628525CE", hash_generated_method = "804B468028CD523465EF13FED3903C4E")
     public String displayName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_674483081 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_674483081 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_674483081 = this.canonicalName;
-        varB4EAC82CA7396A68D541C85D26508E83_674483081.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_674483081.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_674483081;
-        // ---------- Original Method ----------
-        //return this.canonicalName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.845 -0400", hash_original_method = "E11EA2F6EB7DD1956A05FA3724D0F65C", hash_generated_method = "97872ECBA6CDE3EA8238A8B83DD0D6B4")
     public String displayName(Locale l) {
-        String varB4EAC82CA7396A68D541C85D26508E83_110197489 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_110197489 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_110197489 = this.canonicalName;
         addTaint(l.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_110197489.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_110197489.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_110197489;
-        // ---------- Original Method ----------
-        //return this.canonicalName;
+        
+        
     }
 
     
@@ -220,8 +225,8 @@ public abstract class Charset implements Comparable<Charset> {
         boolean var3B73AEDD09B4861B9A3C141DEEE06E96_1328306446 = (!canonicalName.startsWith("x-") && !canonicalName.startsWith("X-"));
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1206892345 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1206892345;
-        // ---------- Original Method ----------
-        //return !canonicalName.startsWith("x-") && !canonicalName.startsWith("X-");
+        
+        
     }
 
     
@@ -229,76 +234,76 @@ public abstract class Charset implements Comparable<Charset> {
     public boolean canEncode() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1932623913 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1932623913;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.846 -0400", hash_original_method = "0107CD00701D9024191BE26A03E59733", hash_generated_method = "632D44E5497C1B21D06EF60CA451F899")
     public final ByteBuffer encode(CharBuffer buffer) {
-        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_658585941 = null; //Variable for return #1
+        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_658585941 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_658585941 = newEncoder()
                     .onMalformedInput(CodingErrorAction.REPLACE)
                     .onUnmappableCharacter(CodingErrorAction.REPLACE).encode(
                             buffer);
-        } //End block
+        } 
         catch (CharacterCodingException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new Error(ex.getMessage(), ex);
-        } //End block
+        } 
         addTaint(buffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_658585941.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_658585941.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_658585941;
-        // ---------- Original Method ----------
-        //try {
-            //return newEncoder()
-                    //.onMalformedInput(CodingErrorAction.REPLACE)
-                    //.onUnmappableCharacter(CodingErrorAction.REPLACE).encode(
-                            //buffer);
-        //} catch (CharacterCodingException ex) {
-            //throw new Error(ex.getMessage(), ex);
-        //}
+        
+        
+            
+                    
+                    
+                            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.847 -0400", hash_original_method = "50936E0BD61264091679E7D1BE4B4220", hash_generated_method = "7CBC1C5EDFD273F4385C00C38EB32839")
     public final ByteBuffer encode(String s) {
-        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1998632889 = null; //Variable for return #1
+        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1998632889 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1998632889 = encode(CharBuffer.wrap(s));
         addTaint(s.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1998632889.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1998632889.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1998632889;
-        // ---------- Original Method ----------
-        //return encode(CharBuffer.wrap(s));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.848 -0400", hash_original_method = "126EFF7550A1ED9E8429CF707F327D0E", hash_generated_method = "3638C7D729D0A4E6B84DD3A2BD5618D4")
     public final CharBuffer decode(ByteBuffer buffer) {
-        CharBuffer varB4EAC82CA7396A68D541C85D26508E83_1399107097 = null; //Variable for return #1
+        CharBuffer varB4EAC82CA7396A68D541C85D26508E83_1399107097 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1399107097 = newDecoder()
                     .onMalformedInput(CodingErrorAction.REPLACE)
                     .onUnmappableCharacter(CodingErrorAction.REPLACE).decode(buffer);
-        } //End block
+        } 
         catch (CharacterCodingException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new Error(ex.getMessage(), ex);
-        } //End block
+        } 
         addTaint(buffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1399107097.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1399107097.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1399107097;
-        // ---------- Original Method ----------
-        //try {
-            //return newDecoder()
-                    //.onMalformedInput(CodingErrorAction.REPLACE)
-                    //.onUnmappableCharacter(CodingErrorAction.REPLACE).decode(buffer);
-        //} catch (CharacterCodingException ex) {
-            //throw new Error(ex.getMessage(), ex);
-        //}
+        
+        
+            
+                    
+                    
+        
+            
+        
     }
 
     
@@ -308,8 +313,8 @@ public abstract class Charset implements Comparable<Charset> {
         addTaint(charset.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1430278034 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1430278034;
-        // ---------- Original Method ----------
-        //return this.canonicalName.compareToIgnoreCase(charset.canonicalName);
+        
+        
     }
 
     
@@ -319,16 +324,16 @@ public abstract class Charset implements Comparable<Charset> {
         {
             Charset that = (Charset) obj;
             boolean var3A9E52C18FAB21FC4EE49D12300F7231_1373328289 = (this.canonicalName.equals(that.canonicalName));
-        } //End block
+        } 
         addTaint(obj.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_478513465 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_478513465;
-        // ---------- Original Method ----------
-        //if (obj instanceof Charset) {
-            //Charset that = (Charset) obj;
-            //return this.canonicalName.equals(that.canonicalName);
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -338,20 +343,20 @@ public abstract class Charset implements Comparable<Charset> {
         int var89A35454DD807C2B21DDBF4CE1F01CBB_749996865 = (this.canonicalName.hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1389163987 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1389163987;
-        // ---------- Original Method ----------
-        //return this.canonicalName.hashCode();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.849 -0400", hash_original_method = "D15E03733F40849FC8BB6457075A7CA1", hash_generated_method = "A8510A5EB6FEB5EE39D0A1343EDC4C5F")
     @Override
     public final String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1803673373 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1803673373 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1803673373 = getClass().getName() + "[" + this.canonicalName + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_1803673373.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1803673373.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1803673373;
-        // ---------- Original Method ----------
-        //return getClass().getName() + "[" + this.canonicalName + "]";
+        
+        
     }
 
     
@@ -360,6 +365,7 @@ public abstract class Charset implements Comparable<Charset> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Charset getDefaultCharset() {
         String encoding = System.getProperty("file.encoding", "UTF-8");
         try {

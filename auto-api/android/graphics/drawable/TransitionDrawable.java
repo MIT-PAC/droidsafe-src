@@ -1,11 +1,11 @@
 package android.graphics.drawable;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -44,14 +44,14 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
     public  TransitionDrawable(Drawable[] layers) {
         this(new TransitionState(null, null, null), layers);
         addTaint(layers[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.655 -0400", hash_original_method = "F9A92C9D3CD4AD3DBA18C1A12C406B85", hash_generated_method = "DD0146F709A79835F04688F1C0174458")
       TransitionDrawable() {
         this(new TransitionState(null, null, null), (Resources)null);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -60,7 +60,7 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
         super(state, res);
         addTaint(state.getTaint());
         addTaint(res.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -69,24 +69,25 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
         super(layers, state);
         addTaint(state.getTaint());
         addTaint(layers[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.656 -0400", hash_original_method = "7DD647D65429090EAAF6E9E0252444A1", hash_generated_method = "799231BF8E25D2CEF7381417135D0014")
     @Override
      LayerState createConstantState(LayerState state, Resources res) {
-        LayerState varB4EAC82CA7396A68D541C85D26508E83_499332179 = null; //Variable for return #1
+        LayerState varB4EAC82CA7396A68D541C85D26508E83_499332179 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_499332179 = new TransitionState((TransitionState) state, this, res);
         addTaint(state.getTaint());
         addTaint(res.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_499332179.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_499332179.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_499332179;
-        // ---------- Original Method ----------
-        //return new TransitionState((TransitionState) state, this, res);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.657 -0400", hash_original_method = "97CEB1054BCE489E9912047DDD2569CF", hash_generated_method = "F9D2E61B8448C0EE75387020F1EB758E")
     public void startTransition(int durationMillis) {
         mFrom = 0;
@@ -96,29 +97,31 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
         mReverse = false;
         mTransitionState = TRANSITION_STARTING;
         invalidateSelf();
-        // ---------- Original Method ----------
-        //mFrom = 0;
-        //mTo = 255;
-        //mAlpha = 0;
-        //mDuration = mOriginalDuration = durationMillis;
-        //mReverse = false;
-        //mTransitionState = TRANSITION_STARTING;
-        //invalidateSelf();
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.657 -0400", hash_original_method = "08F42BFD1EBF12CF3276DCDF0956FF23", hash_generated_method = "01E2910E8D9B446F13286E8FD4E61ED2")
     public void resetTransition() {
         mAlpha = 0;
         mTransitionState = TRANSITION_NONE;
         invalidateSelf();
-        // ---------- Original Method ----------
-        //mAlpha = 0;
-        //mTransitionState = TRANSITION_NONE;
-        //invalidateSelf();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.658 -0400", hash_original_method = "46AFBEEBA20F3F34CF5FEC703E9F1E57", hash_generated_method = "957D1BEA3D9731AFBA31F220B9001617")
     public void reverseTransition(int duration) {
         final long time = SystemClock.uptimeMillis();
@@ -128,90 +131,91 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
                 mTo = 255;
                 mAlpha = 0;
                 mReverse = false;
-            } //End block
+            } 
             {
                 mFrom = 255;
                 mTo = 0;
                 mAlpha = 255;
                 mReverse = true;
-            } //End block
+            } 
             mDuration = mOriginalDuration = duration;
             mTransitionState = TRANSITION_STARTING;
             invalidateSelf();
-        } //End block
+        } 
         mReverse = !mReverse;
         mFrom = mAlpha;
         mTo = mReverse ? 0 : 255;
         mDuration = (int) (mReverse ? time - mStartTimeMillis :
                 mOriginalDuration - (time - mStartTimeMillis));
         mTransitionState = TRANSITION_STARTING;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.659 -0400", hash_original_method = "1FBAB3689755625C733FF3C6D865C65F", hash_generated_method = "858AFE4FDB0715E567B88174960E78B1")
     @Override
     public void draw(Canvas canvas) {
         boolean done = true;
-        //Begin case TRANSITION_STARTING 
+        
         mStartTimeMillis = SystemClock.uptimeMillis();
-        //End case TRANSITION_STARTING 
-        //Begin case TRANSITION_STARTING 
+        
+        
         done = false;
-        //End case TRANSITION_STARTING 
-        //Begin case TRANSITION_STARTING 
+        
+        
         mTransitionState = TRANSITION_RUNNING;
-        //End case TRANSITION_STARTING 
-        //Begin case TRANSITION_RUNNING 
+        
+        
         {
             float normalized = (float)
                             (SystemClock.uptimeMillis() - mStartTimeMillis) / mDuration;
             done = normalized >= 1.0f;
             normalized = Math.min(normalized, 1.0f);
             mAlpha = (int) (mFrom  + (mTo - mFrom) * normalized);
-        } //End block
-        //End case TRANSITION_RUNNING 
+        } 
+        
         final int alpha = mAlpha;
         final boolean crossFade = mCrossFade;
         final ChildDrawable[] array = mLayerState.mChildren;
         {
             {
                 array[0].mDrawable.draw(canvas);
-            } //End block
+            } 
             {
                 array[1].mDrawable.draw(canvas);
-            } //End block
-        } //End block
+            } 
+        } 
         Drawable d;
         d = array[0].mDrawable;
         {
             d.setAlpha(255 - alpha);
-        } //End block
+        } 
         d.draw(canvas);
         {
             d.setAlpha(0xFF);
-        } //End block
+        } 
         {
             d = array[1].mDrawable;
             d.setAlpha(alpha);
             d.draw(canvas);
             d.setAlpha(0xFF);
-        } //End block
+        } 
         {
             invalidateSelf();
-        } //End block
+        } 
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.660 -0400", hash_original_method = "2CD6D3E73358D8CBD280E6EE92F2D07C", hash_generated_method = "2A0623106A5089E5FAC47F6638E31C5E")
     public void setCrossFadeEnabled(boolean enabled) {
         mCrossFade = enabled;
-        // ---------- Original Method ----------
-        //mCrossFade = enabled;
+        
+        
     }
 
     
@@ -219,8 +223,8 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
     public boolean isCrossFadeEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_50661179 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_50661179;
-        // ---------- Original Method ----------
-        //return mCrossFade;
+        
+        
     }
 
     
@@ -233,32 +237,32 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
             addTaint(orig.getTaint());
             addTaint(owner.getTaint());
             addTaint(res.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.661 -0400", hash_original_method = "74F5798AEA04A77B6E31B76C53519B4C", hash_generated_method = "C4CC5FF8C1E7FB99C3F7A4D854135421")
         @Override
         public Drawable newDrawable() {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_532230157 = null; //Variable for return #1
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_532230157 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_532230157 = new TransitionDrawable(this, (Resources)null);
-            varB4EAC82CA7396A68D541C85D26508E83_532230157.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_532230157.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_532230157;
-            // ---------- Original Method ----------
-            //return new TransitionDrawable(this, (Resources)null);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:33.662 -0400", hash_original_method = "2864DA5070788F66F2135B6D59FADE5D", hash_generated_method = "8C952E0AF1D04164F8FC45E8789DF5E4")
         @Override
         public Drawable newDrawable(Resources res) {
-            Drawable varB4EAC82CA7396A68D541C85D26508E83_1163146591 = null; //Variable for return #1
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_1163146591 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1163146591 = new TransitionDrawable(this, res);
             addTaint(res.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1163146591.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1163146591.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1163146591;
-            // ---------- Original Method ----------
-            //return new TransitionDrawable(this, res);
+            
+            
         }
 
         
@@ -267,8 +271,8 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
         public int getChangingConfigurations() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_581507943 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_581507943;
-            // ---------- Original Method ----------
-            //return mChangingConfigurations;
+            
+            
         }
 
         

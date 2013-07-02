@@ -1,11 +1,11 @@
 package java.util.regex;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Arrays;
 
@@ -25,40 +25,41 @@ public class PatternSyntaxException extends IllegalArgumentException {
         this.desc = description;
         this.pattern = pattern;
         this.index = index;
-        // ---------- Original Method ----------
-        //this.desc = description;
-        //this.pattern = pattern;
-        //this.index = index;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.654 -0400", hash_original_method = "7A292BCA91A2C0FA8C2558D08D8D09A0", hash_generated_method = "CDB17C3980499A9C3F82A5278743DAA5")
     public String getPattern() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1075641747 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1075641747 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1075641747 = pattern;
-        varB4EAC82CA7396A68D541C85D26508E83_1075641747.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1075641747.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1075641747;
-        // ---------- Original Method ----------
-        //return pattern;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.655 -0400", hash_original_method = "103F1174601A04B5B5C014BF3A77F551", hash_generated_method = "923A10C7C4555587EB1832CE6C974488")
     @Override
     public String getMessage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_970660982 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_970660982 = null; 
         StringBuilder sb = new StringBuilder();
         {
             sb.append(desc);
-        } //End block
+        } 
         {
             {
                 sb.append(' ');
-            } //End block
+            } 
             sb.append("near index ");
             sb.append(index);
             sb.append(':');
-        } //End block
+        } 
         {
             sb.append('\n');
             sb.append(pattern);
@@ -68,47 +69,47 @@ public class PatternSyntaxException extends IllegalArgumentException {
                 sb.append('\n');
                 sb.append(spaces);
                 sb.append('^');
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_970660982 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_970660982.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_970660982.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_970660982;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder();
-        //if (desc != null) {
-            //sb.append(desc);
-        //}
-        //if (index >= 0) {
-            //if (desc != null) {
-                //sb.append(' ');
-            //}
-            //sb.append("near index ");
-            //sb.append(index);
-            //sb.append(':');
-        //}
-        //if (pattern != null) {
-            //sb.append('\n');
-            //sb.append(pattern);
-            //if (index >= 0) {
-                //char[] spaces = new char[index];
-                //Arrays.fill(spaces, ' ');
-                //sb.append('\n');
-                //sb.append(spaces);
-                //sb.append('^');
-            //}
-        //}
-        //return sb.toString();
+        
+        
+        
+            
+        
+        
+            
+                
+            
+            
+            
+            
+        
+        
+            
+            
+            
+                
+                
+                
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.657 -0400", hash_original_method = "B876CD4C2F9B0449C0BFBE53447962F9", hash_generated_method = "F3FEA594CD19CE9D467ED689F8653F54")
     public String getDescription() {
-        String varB4EAC82CA7396A68D541C85D26508E83_524255940 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_524255940 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_524255940 = desc;
-        varB4EAC82CA7396A68D541C85D26508E83_524255940.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_524255940.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_524255940;
-        // ---------- Original Method ----------
-        //return desc;
+        
+        
     }
 
     
@@ -116,8 +117,8 @@ public class PatternSyntaxException extends IllegalArgumentException {
     public int getIndex() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995668320 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995668320;
-        // ---------- Original Method ----------
-        //return index;
+        
+        
     }
 
     

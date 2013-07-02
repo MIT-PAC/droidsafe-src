@@ -1,11 +1,11 @@
 package com.google.android.gles_jni;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import javax.microedition.khronos.egl.*;
 import android.graphics.SurfaceTexture;
@@ -27,7 +27,7 @@ public class EGLImpl implements EGL10 {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.385 -0400", hash_original_method = "1F432E8932AB5EEB87E85C95C31E8080", hash_generated_method = "1F432E8932AB5EEB87E85C95C31E8080")
     public EGLImpl ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -59,6 +59,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.387 -0400", hash_original_method = "597806537D1EB9D066DEDBB0F5CABF82", hash_generated_method = "CA8E60B9F9A0A9200CE8E32B7ACAB15A")
     public boolean eglChooseConfig(EGLDisplay display, int[] attrib_list, EGLConfig[] configs, int config_size, int[] num_config) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_950449160 = getTaintBoolean();
@@ -73,6 +74,7 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.387 -0400", hash_original_method = "1FF43B35756785946FBC969447AE4429", hash_generated_method = "65F2B89865BCFC3373119699769EBC32")
     public boolean eglGetConfigs(EGLDisplay display, EGLConfig[] configs, int config_size, int[] num_config) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_380875338 = getTaintBoolean();
@@ -115,7 +117,7 @@ public class EGLImpl implements EGL10 {
     	String s = new String();
     	s.addTaint(taint);
     	return s;
-    	//DSFIXME: source
+    	
     }
 
     
@@ -160,284 +162,292 @@ public class EGLImpl implements EGL10 {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.390 -0400", hash_original_method = "CAD561FB9C34D7001DB982C1B864CD0D", hash_generated_method = "4642949BA7694EFB30720E0B52DED01D")
     public EGLContext eglCreateContext(EGLDisplay display, EGLConfig config, EGLContext share_context, int[] attrib_list) {
-        EGLContext varB4EAC82CA7396A68D541C85D26508E83_2066146964 = null; //Variable for return #1
-        EGLContext varB4EAC82CA7396A68D541C85D26508E83_1518076539 = null; //Variable for return #2
+        EGLContext varB4EAC82CA7396A68D541C85D26508E83_2066146964 = null; 
+        EGLContext varB4EAC82CA7396A68D541C85D26508E83_1518076539 = null; 
         int eglContextId = _eglCreateContext(display, config, share_context, attrib_list);
         {
             varB4EAC82CA7396A68D541C85D26508E83_2066146964 = EGL10.EGL_NO_CONTEXT;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1518076539 = new EGLContextImpl( eglContextId );
         addTaint(display.getTaint());
         addTaint(config.getTaint());
         addTaint(share_context.getTaint());
         addTaint(attrib_list[0]);
-        EGLContext varA7E53CE21691AB073D9660D615818899_519194204; //Final return value
+        EGLContext varA7E53CE21691AB073D9660D615818899_519194204; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_519194204 = varB4EAC82CA7396A68D541C85D26508E83_2066146964;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_519194204 = varB4EAC82CA7396A68D541C85D26508E83_1518076539;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_519194204.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_519194204.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_519194204;
-        // ---------- Original Method ----------
-        //int eglContextId = _eglCreateContext(display, config, share_context, attrib_list);
-        //if (eglContextId == 0) {
-            //return EGL10.EGL_NO_CONTEXT;
-        //}
-        //return new EGLContextImpl( eglContextId );
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.391 -0400", hash_original_method = "E59A00AD2A74A21C0F4005F77A95ED7D", hash_generated_method = "9C1AB63C58CD3A8C9ED15C9F6EFF6BC3")
     public EGLSurface eglCreatePbufferSurface(EGLDisplay display, EGLConfig config, int[] attrib_list) {
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_208735326 = null; //Variable for return #1
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_740510547 = null; //Variable for return #2
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_208735326 = null; 
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_740510547 = null; 
         int eglSurfaceId = _eglCreatePbufferSurface(display, config, attrib_list);
         {
             varB4EAC82CA7396A68D541C85D26508E83_208735326 = EGL10.EGL_NO_SURFACE;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_740510547 = new EGLSurfaceImpl( eglSurfaceId );
         addTaint(display.getTaint());
         addTaint(config.getTaint());
         addTaint(attrib_list[0]);
-        EGLSurface varA7E53CE21691AB073D9660D615818899_1324474817; //Final return value
+        EGLSurface varA7E53CE21691AB073D9660D615818899_1324474817; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1324474817 = varB4EAC82CA7396A68D541C85D26508E83_208735326;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1324474817 = varB4EAC82CA7396A68D541C85D26508E83_740510547;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1324474817.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1324474817.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1324474817;
-        // ---------- Original Method ----------
-        //int eglSurfaceId = _eglCreatePbufferSurface(display, config, attrib_list);
-        //if (eglSurfaceId == 0) {
-            //return EGL10.EGL_NO_SURFACE;
-        //}
-        //return new EGLSurfaceImpl( eglSurfaceId );
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.392 -0400", hash_original_method = "1913DE6E1812314106CFABA8D0690133", hash_generated_method = "340586A1878B3D10B04E55C0B46B540E")
     public EGLSurface eglCreatePixmapSurface(EGLDisplay display, EGLConfig config, Object native_pixmap, int[] attrib_list) {
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1380947791 = null; //Variable for return #1
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1436403230 = null; //Variable for return #2
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1380947791 = null; 
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1436403230 = null; 
         EGLSurfaceImpl sur = new EGLSurfaceImpl();
         _eglCreatePixmapSurface(sur, display, config, native_pixmap, attrib_list);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1380947791 = EGL10.EGL_NO_SURFACE;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1436403230 = sur;
         addTaint(display.getTaint());
         addTaint(config.getTaint());
         addTaint(native_pixmap.getTaint());
         addTaint(attrib_list[0]);
-        EGLSurface varA7E53CE21691AB073D9660D615818899_924826853; //Final return value
+        EGLSurface varA7E53CE21691AB073D9660D615818899_924826853; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_924826853 = varB4EAC82CA7396A68D541C85D26508E83_1380947791;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_924826853 = varB4EAC82CA7396A68D541C85D26508E83_1436403230;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_924826853.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_924826853.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_924826853;
-        // ---------- Original Method ----------
-        //EGLSurfaceImpl sur = new EGLSurfaceImpl();
-        //_eglCreatePixmapSurface(sur, display, config, native_pixmap, attrib_list);
-        //if (sur.mEGLSurface == 0) {
-            //return EGL10.EGL_NO_SURFACE;
-        //}
-        //return sur;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.394 -0400", hash_original_method = "A3C23A2D0F372302CCCB5BF8EDDCD71A", hash_generated_method = "0AC3D8C0DD57B4B12D712AFAB11961BB")
     public EGLSurface eglCreateWindowSurface(EGLDisplay display, EGLConfig config, Object native_window, int[] attrib_list) {
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1906463715 = null; //Variable for return #1
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1384160120 = null; //Variable for return #2
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1906463715 = null; 
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1384160120 = null; 
         Surface sur = null;
         {
             SurfaceView surfaceView = (SurfaceView)native_window;
             sur = surfaceView.getHolder().getSurface();
-        } //End block
+        } 
         {
             SurfaceHolder holder = (SurfaceHolder)native_window;
             sur = holder.getSurface();
-        } //End block
+        } 
         int eglSurfaceId;
         {
             eglSurfaceId = _eglCreateWindowSurface(display, config, sur, attrib_list);
-        } //End block
+        } 
         {
             eglSurfaceId = _eglCreateWindowSurfaceTexture(display, config,
                     native_window, attrib_list);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new java.lang.UnsupportedOperationException(
                 "eglCreateWindowSurface() can only be called with an instance of " +
                 "SurfaceView, SurfaceHolder or SurfaceTexture at the moment, " + 
                 "this will be fixed later.");
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1906463715 = EGL10.EGL_NO_SURFACE;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1384160120 = new EGLSurfaceImpl( eglSurfaceId );
         addTaint(display.getTaint());
         addTaint(config.getTaint());
         addTaint(native_window.getTaint());
         addTaint(attrib_list[0]);
-        EGLSurface varA7E53CE21691AB073D9660D615818899_1583245670; //Final return value
+        EGLSurface varA7E53CE21691AB073D9660D615818899_1583245670; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1583245670 = varB4EAC82CA7396A68D541C85D26508E83_1906463715;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1583245670 = varB4EAC82CA7396A68D541C85D26508E83_1384160120;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1583245670.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1583245670.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1583245670;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.395 -0400", hash_original_method = "BEC2EA85C18256200276555D8D849688", hash_generated_method = "387EF7F0D5381FC08BD585F6E04796E4")
     public synchronized EGLDisplay eglGetDisplay(Object native_display) {
-        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_1104650714 = null; //Variable for return #1
-        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_1107209266 = null; //Variable for return #2
+        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_1104650714 = null; 
+        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_1107209266 = null; 
         int value = _eglGetDisplay(native_display);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1104650714 = EGL10.EGL_NO_DISPLAY;
-        } //End block
+        } 
         mDisplay = new EGLDisplayImpl(value);
         varB4EAC82CA7396A68D541C85D26508E83_1107209266 = mDisplay;
         addTaint(native_display.getTaint());
-        EGLDisplay varA7E53CE21691AB073D9660D615818899_1884758373; //Final return value
+        EGLDisplay varA7E53CE21691AB073D9660D615818899_1884758373; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1884758373 = varB4EAC82CA7396A68D541C85D26508E83_1104650714;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1884758373 = varB4EAC82CA7396A68D541C85D26508E83_1107209266;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1884758373.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1884758373.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1884758373;
-        // ---------- Original Method ----------
-        //int value = _eglGetDisplay(native_display);
-        //if (value == 0) {
-            //return EGL10.EGL_NO_DISPLAY;
-        //}
-        //if (mDisplay.mEGLDisplay != value)
-            //mDisplay = new EGLDisplayImpl(value);
-        //return mDisplay;
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.396 -0400", hash_original_method = "36FE38451D664CBAEEF58B0CA2F2C184", hash_generated_method = "AC3DDCC977925B14971A607286CC064A")
     public synchronized EGLContext eglGetCurrentContext() {
-        EGLContext varB4EAC82CA7396A68D541C85D26508E83_663094778 = null; //Variable for return #1
-        EGLContext varB4EAC82CA7396A68D541C85D26508E83_1635427122 = null; //Variable for return #2
+        EGLContext varB4EAC82CA7396A68D541C85D26508E83_663094778 = null; 
+        EGLContext varB4EAC82CA7396A68D541C85D26508E83_1635427122 = null; 
         int value = _eglGetCurrentContext();
         {
             varB4EAC82CA7396A68D541C85D26508E83_663094778 = EGL10.EGL_NO_CONTEXT;
-        } //End block
+        } 
         mContext = new EGLContextImpl(value);
         varB4EAC82CA7396A68D541C85D26508E83_1635427122 = mContext;
-        EGLContext varA7E53CE21691AB073D9660D615818899_1758890619; //Final return value
+        EGLContext varA7E53CE21691AB073D9660D615818899_1758890619; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1758890619 = varB4EAC82CA7396A68D541C85D26508E83_663094778;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1758890619 = varB4EAC82CA7396A68D541C85D26508E83_1635427122;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1758890619.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1758890619.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1758890619;
-        // ---------- Original Method ----------
-        //int value = _eglGetCurrentContext();
-        //if (value == 0) {
-            //return EGL10.EGL_NO_CONTEXT;
-        //}
-        //if (mContext.mEGLContext != value)
-            //mContext = new EGLContextImpl(value);
-        //return mContext;
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.397 -0400", hash_original_method = "2AD52C4EA481E23FFE9D610E551D647C", hash_generated_method = "68208ED853F739A52DF1330CCFDB5C04")
     public synchronized EGLDisplay eglGetCurrentDisplay() {
-        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_959751300 = null; //Variable for return #1
-        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_1357428348 = null; //Variable for return #2
+        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_959751300 = null; 
+        EGLDisplay varB4EAC82CA7396A68D541C85D26508E83_1357428348 = null; 
         int value = _eglGetCurrentDisplay();
         {
             varB4EAC82CA7396A68D541C85D26508E83_959751300 = EGL10.EGL_NO_DISPLAY;
-        } //End block
+        } 
         mDisplay = new EGLDisplayImpl(value);
         varB4EAC82CA7396A68D541C85D26508E83_1357428348 = mDisplay;
-        EGLDisplay varA7E53CE21691AB073D9660D615818899_51644405; //Final return value
+        EGLDisplay varA7E53CE21691AB073D9660D615818899_51644405; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_51644405 = varB4EAC82CA7396A68D541C85D26508E83_959751300;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_51644405 = varB4EAC82CA7396A68D541C85D26508E83_1357428348;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_51644405.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_51644405.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_51644405;
-        // ---------- Original Method ----------
-        //int value = _eglGetCurrentDisplay();
-        //if (value == 0) {
-            //return EGL10.EGL_NO_DISPLAY;
-        //}
-        //if (mDisplay.mEGLDisplay != value)
-            //mDisplay = new EGLDisplayImpl(value);
-        //return mDisplay;
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.397 -0400", hash_original_method = "1056D87FF6AF8A6633AE7A0382D42E2B", hash_generated_method = "2FD5493BFD9AD25EA2B30B4B69ED0874")
     public synchronized EGLSurface eglGetCurrentSurface(int readdraw) {
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1649067813 = null; //Variable for return #1
-        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_345424726 = null; //Variable for return #2
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_1649067813 = null; 
+        EGLSurface varB4EAC82CA7396A68D541C85D26508E83_345424726 = null; 
         int value = _eglGetCurrentSurface(readdraw);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1649067813 = EGL10.EGL_NO_SURFACE;
-        } //End block
+        } 
         mSurface = new EGLSurfaceImpl(value);
         varB4EAC82CA7396A68D541C85D26508E83_345424726 = mSurface;
         addTaint(readdraw);
-        EGLSurface varA7E53CE21691AB073D9660D615818899_36656572; //Final return value
+        EGLSurface varA7E53CE21691AB073D9660D615818899_36656572; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_36656572 = varB4EAC82CA7396A68D541C85D26508E83_1649067813;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_36656572 = varB4EAC82CA7396A68D541C85D26508E83_345424726;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_36656572.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_36656572.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_36656572;
-        // ---------- Original Method ----------
-        //int value = _eglGetCurrentSurface(readdraw);
-        //if (value == 0) {
-            //return EGL10.EGL_NO_SURFACE;
-        //}
-        //if (mSurface.mEGLSurface != value)
-            //mSurface = new EGLSurfaceImpl(value);
-        //return mSurface;
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     

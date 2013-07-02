@@ -1,11 +1,11 @@
 package android.database;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.database.CrossProcessCursor;
 import android.database.Cursor;
@@ -18,78 +18,81 @@ public class CrossProcessCursorWrapper extends CursorWrapper implements CrossPro
     public  CrossProcessCursorWrapper(Cursor cursor) {
         super(cursor);
         addTaint(cursor.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.691 -0400", hash_original_method = "8AFBAB5134F9C202EA9293756DDD55DE", hash_generated_method = "9DC79D44322A223CA44380DEC861C8CE")
     @Override
     public void fillWindow(int position, CursorWindow window) {
         {
             final CrossProcessCursor crossProcessCursor = (CrossProcessCursor)mCursor;
             crossProcessCursor.fillWindow(position, window);
-        } //End block
+        } 
         DatabaseUtils.cursorFillWindow(mCursor, position, window);
         addTaint(position);
         addTaint(window.getTaint());
-        // ---------- Original Method ----------
-        //if (mCursor instanceof CrossProcessCursor) {
-            //final CrossProcessCursor crossProcessCursor = (CrossProcessCursor)mCursor;
-            //crossProcessCursor.fillWindow(position, window);
-            //return;
-        //}
-        //DatabaseUtils.cursorFillWindow(mCursor, position, window);
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.692 -0400", hash_original_method = "D510FEC99A9AF46DE1EA010D6828DD6E", hash_generated_method = "2599C3BC05920E423B0F803E31862040")
     @Override
     public CursorWindow getWindow() {
-        CursorWindow varB4EAC82CA7396A68D541C85D26508E83_1953608110 = null; //Variable for return #1
-        CursorWindow varB4EAC82CA7396A68D541C85D26508E83_903737023 = null; //Variable for return #2
+        CursorWindow varB4EAC82CA7396A68D541C85D26508E83_1953608110 = null; 
+        CursorWindow varB4EAC82CA7396A68D541C85D26508E83_903737023 = null; 
         {
             final CrossProcessCursor crossProcessCursor = (CrossProcessCursor)mCursor;
             varB4EAC82CA7396A68D541C85D26508E83_1953608110 = crossProcessCursor.getWindow();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_903737023 = null;
-        CursorWindow varA7E53CE21691AB073D9660D615818899_1353289662; //Final return value
+        CursorWindow varA7E53CE21691AB073D9660D615818899_1353289662; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1353289662 = varB4EAC82CA7396A68D541C85D26508E83_1953608110;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1353289662 = varB4EAC82CA7396A68D541C85D26508E83_903737023;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1353289662.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1353289662.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1353289662;
-        // ---------- Original Method ----------
-        //if (mCursor instanceof CrossProcessCursor) {
-            //final CrossProcessCursor crossProcessCursor = (CrossProcessCursor)mCursor;
-            //return crossProcessCursor.getWindow();
-        //}
-        //return null;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:29.693 -0400", hash_original_method = "1B4D2A02F9F1E4FEB130E32B375A1C19", hash_generated_method = "4E54B0346514D41432A4E963243FB6E8")
     @Override
     public boolean onMove(int oldPosition, int newPosition) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             final CrossProcessCursor crossProcessCursor = (CrossProcessCursor)mCursor;
             boolean varD68ED0BE77919A2B3EEA3DA50DCFE388_1606972566 = (crossProcessCursor.onMove(oldPosition, newPosition));
-        } //End block
+        } 
         addTaint(oldPosition);
         addTaint(newPosition);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_279402790 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_279402790;
-        // ---------- Original Method ----------
-        //if (mCursor instanceof CrossProcessCursor) {
-            //final CrossProcessCursor crossProcessCursor = (CrossProcessCursor)mCursor;
-            //return crossProcessCursor.onMove(oldPosition, newPosition);
-        //}
-        //return true;
+        
+        
+            
+            
+        
+        
     }
 
     

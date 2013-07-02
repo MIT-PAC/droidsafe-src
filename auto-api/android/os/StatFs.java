@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class StatFs {
@@ -17,26 +17,28 @@ public class StatFs {
     public  StatFs(String path) {
         native_setup(path);
         addTaint(path.getTaint());
-        // ---------- Original Method ----------
-        //native_setup(path);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.157 -0400", hash_original_method = "8AF6434E2BA3E41CBFFC05A34FB3A23C", hash_generated_method = "3CDF015B411E46EB8DD262ECE1A1C7F2")
     public void restat(String path) {
         native_restat(path);
         addTaint(path.getTaint());
-        // ---------- Original Method ----------
-        //native_restat(path);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.158 -0400", hash_original_method = "3228EA20CE4FEF9678E1F1862B5AB446", hash_generated_method = "50625AE6DF481AE64B3EB15F7175DFBD")
     @Override
     protected void finalize() {
         native_finalize();
-        // ---------- Original Method ----------
-        //native_finalize();
+        
+        
     }
 
     

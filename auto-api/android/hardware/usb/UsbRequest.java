@@ -1,11 +1,11 @@
 package android.hardware.usb;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.Log;
 import java.nio.ByteBuffer;
@@ -29,10 +29,11 @@ public class UsbRequest {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.479 -0400", hash_original_method = "1841EBA816AAD9B3CFCC9CFB82F138AB", hash_generated_method = "D0281338E705050B353DF71FF516D9F0")
     public  UsbRequest() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.479 -0400", hash_original_method = "5DC7CF12AEC4C5E9E1FB850AF7C3FB90", hash_generated_method = "1A0956B58482170AC73DA700B835BDFD")
     public boolean initialize(UsbDeviceConnection connection, UsbEndpoint endpoint) {
         mEndpoint = endpoint;
@@ -41,23 +42,25 @@ public class UsbRequest {
         addTaint(connection.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_331877198 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_331877198;
-        // ---------- Original Method ----------
-        //mEndpoint = endpoint;
-        //return native_init(connection, endpoint.getAddress(), endpoint.getAttributes(),
-                //endpoint.getMaxPacketSize(), endpoint.getInterval());
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.480 -0400", hash_original_method = "66833AAE0F898EE53D028F2100A5AAE5", hash_generated_method = "7AFE15C4DD8CC5F0F835F29A1858B4BC")
     public void close() {
         mEndpoint = null;
         native_close();
-        // ---------- Original Method ----------
-        //mEndpoint = null;
-        //native_close();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.480 -0400", hash_original_method = "7540A3E8E0E84BC6100A5A4AAC882F22", hash_generated_method = "470FC8AAD68305EC1F727CC92B922A1B")
     @Override
     protected void finalize() throws Throwable {
@@ -65,54 +68,55 @@ public class UsbRequest {
         {
             {
                 close();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (mEndpoint != null) {
-                //Log.v(TAG, "endpoint still open in finalize(): " + this);
-                //close();
-            //}
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.481 -0400", hash_original_method = "11B9FE3CCFCADE645E006FF088DA13C2", hash_generated_method = "923419CC33A9029F6F745FAD31BACE72")
     public UsbEndpoint getEndpoint() {
-        UsbEndpoint varB4EAC82CA7396A68D541C85D26508E83_2095759459 = null; //Variable for return #1
+        UsbEndpoint varB4EAC82CA7396A68D541C85D26508E83_2095759459 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2095759459 = mEndpoint;
-        varB4EAC82CA7396A68D541C85D26508E83_2095759459.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2095759459.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2095759459;
-        // ---------- Original Method ----------
-        //return mEndpoint;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.481 -0400", hash_original_method = "B71E58093DB1269AF1945AD07DDB8F74", hash_generated_method = "24FBECC66116DE48794529119C3ABF73")
     public Object getClientData() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_580689915 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_580689915 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_580689915 = mClientData;
-        varB4EAC82CA7396A68D541C85D26508E83_580689915.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_580689915.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_580689915;
-        // ---------- Original Method ----------
-        //return mClientData;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.482 -0400", hash_original_method = "D9B34A9E5333EFBBF13F29A3015D9990", hash_generated_method = "886F50FCD9BFB9352373280B6BF2CFC1")
     public void setClientData(Object data) {
         mClientData = data;
-        // ---------- Original Method ----------
-        //mClientData = data;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.482 -0400", hash_original_method = "0AB508D5F9E406998904FC2F468636F7", hash_generated_method = "12B44F83C8268AD20973E79FE35516F6")
     public boolean queue(ByteBuffer buffer, int length) {
         boolean out = (mEndpoint.getDirection() == UsbConstants.USB_DIR_OUT);
@@ -121,38 +125,38 @@ public class UsbRequest {
             boolean var21D6A43A19BB11FD75F2555CEDDC72D3_852516887 = (buffer.isDirect());
             {
                 result = native_queue_direct(buffer, length, out);
-            } //End block
+            } 
             {
                 boolean var163A4D58CA20E6744A144EA330661A7B_1710166205 = (buffer.hasArray());
                 {
                     result = native_queue_array(buffer.array(), length, out);
-                } //End block
+                } 
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("buffer is not direct and has no array");
-                } //End block
-            } //End collapsed parenthetic
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             mBuffer = buffer;
             mLength = length;
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_562989307 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_562989307;
-        // ---------- Original Method ----------
-        //boolean out = (mEndpoint.getDirection() == UsbConstants.USB_DIR_OUT);
-        //boolean result;
-        //if (buffer.isDirect()) {
-            //result = native_queue_direct(buffer, length, out);
-        //} else if (buffer.hasArray()) {
-            //result = native_queue_array(buffer.array(), length, out);
-        //} else {
-            //throw new IllegalArgumentException("buffer is not direct and has no array");
-        //}
-        //if (result) {
-            //mBuffer = buffer;
-            //mLength = length;
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -163,32 +167,33 @@ public class UsbRequest {
             boolean varEDE9E6DCD8AA8DD7B4BE6ED592B57F83_1384026586 = (mBuffer.isDirect());
             {
                 native_dequeue_direct();
-            } //End block
+            } 
             {
                 native_dequeue_array(mBuffer.array(), mLength, out);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mBuffer = null;
         mLength = 0;
-        // ---------- Original Method ----------
-        //boolean out = (mEndpoint.getDirection() == UsbConstants.USB_DIR_OUT);
-        //if (mBuffer.isDirect()) {
-            //native_dequeue_direct();
-        //} else {
-            //native_dequeue_array(mBuffer.array(), mLength, out);
-        //}
-        //mBuffer = null;
-        //mLength = 0;
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.483 -0400", hash_original_method = "C6E3D4490B2BE3A7CABB292DA8889494", hash_generated_method = "56849B4946EF74D20B3B4004661ED051")
     public boolean cancel() {
         boolean var3CB2EB0BAF88869139A9E40C84501A1E_214589845 = (native_cancel());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_931490212 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_931490212;
-        // ---------- Original Method ----------
-        //return native_cancel();
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.commons.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -21,21 +21,24 @@ public class CopyUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:30.217 -0400", hash_original_method = "1212272BD01F83C868E797A5AC3981E4", hash_generated_method = "84A2CF188DB904FA9BBABD4289B541CA")
     public  CopyUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copy(byte[] input, OutputStream output) throws IOException {
         output.write(input);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copy(byte[] input, Writer output) throws IOException {
         ByteArrayInputStream in = new ByteArrayInputStream(input);
         copy(in, output);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copy(
             byte[] input,
             Writer output,
@@ -45,6 +48,7 @@ public class CopyUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int copy(
             InputStream input,
             OutputStream output) throws IOException {
@@ -59,6 +63,7 @@ public class CopyUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int copy(
             Reader input,
             Writer output) throws IOException {
@@ -73,6 +78,7 @@ public class CopyUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copy(
             InputStream input,
             Writer output) throws IOException {
@@ -81,6 +87,7 @@ public class CopyUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copy(
             InputStream input,
             Writer output,
@@ -90,6 +97,7 @@ public class CopyUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copy(
             Reader input,
             OutputStream output) throws IOException {
@@ -99,6 +107,7 @@ public class CopyUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copy(
             String input,
             OutputStream output) throws IOException {
@@ -109,6 +118,7 @@ public class CopyUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void copy(String input, Writer output) throws IOException {
         output.write(input);
     }

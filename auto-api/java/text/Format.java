@@ -1,11 +1,11 @@
 package java.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.Serializable;
 
@@ -13,44 +13,45 @@ public abstract class Format implements Serializable, Cloneable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.615 -0400", hash_original_method = "6FBA04B2B44BD6140150C63C748AD62A", hash_generated_method = "8A4387ADC0046A91B4EE8D219103BC9A")
     protected  Format() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.616 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "CF3C344FBAAEB1A0A2D9FB5B2B6E35AE")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_413092231 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_413092231 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_413092231 = super.clone();
-        } //End block
+        } 
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_413092231.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_413092231.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_413092231;
-        // ---------- Original Method ----------
-        //try {
-            //return super.clone();
-        //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError(e);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.616 -0400", hash_original_method = "37693C41F5C0477FFE14A538377AD1D2", hash_generated_method = "B9861996B97298BE5C3C5C617995C155")
     public final String format(Object object) {
-        String varB4EAC82CA7396A68D541C85D26508E83_851981071 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_851981071 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_851981071 = format(object, new StringBuffer(), new FieldPosition(0))
                 .toString();
         addTaint(object.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_851981071.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_851981071.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_851981071;
-        // ---------- Original Method ----------
-        //return format(object, new StringBuffer(), new FieldPosition(0))
-                //.toString();
+        
+        
+                
     }
 
     
@@ -58,46 +59,49 @@ public abstract class Format implements Serializable, Cloneable {
             FieldPosition field);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.617 -0400", hash_original_method = "29C223BA8E4C1B7CC40F40C2878521D9", hash_generated_method = "2E573A9B6D6F0EC48FFC520E7534F4FE")
     public AttributedCharacterIterator formatToCharacterIterator(Object object) {
-        AttributedCharacterIterator varB4EAC82CA7396A68D541C85D26508E83_279750239 = null; //Variable for return #1
+        AttributedCharacterIterator varB4EAC82CA7396A68D541C85D26508E83_279750239 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_279750239 = new AttributedString(format(object)).getIterator();
         addTaint(object.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_279750239.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_279750239.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_279750239;
-        // ---------- Original Method ----------
-        //return new AttributedString(format(object)).getIterator();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.617 -0400", hash_original_method = "6F2C2FABFB0232DE8BE4D0269373F5D5", hash_generated_method = "158080E8DE9AE68032F39B7DED57BCE7")
     public Object parseObject(String string) throws ParseException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_32902287 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_32902287 = null; 
         ParsePosition position = new ParsePosition(0);
         Object result = parseObject(string, position);
         {
             boolean varA01BF4F3DE22A214F5C7EB004E28484E_1863327859 = (position.getIndex() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new ParseException("Parse failure", position.getErrorIndex());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_32902287 = result;
         addTaint(string.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_32902287.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_32902287.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_32902287;
-        // ---------- Original Method ----------
-        //ParsePosition position = new ParsePosition(0);
-        //Object result = parseObject(string, position);
-        //if (position.getIndex() == 0) {
-            //throw new ParseException("Parse failure", position.getErrorIndex());
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
     public abstract Object parseObject(String string, ParsePosition position);
 
     
+    @DSModeled(DSC.SAFE)
     static boolean upTo(String string, ParsePosition position,
             StringBuffer buffer, char stop) {
         int index = position.getIndex(), length = string.length();
@@ -123,6 +127,7 @@ public abstract class Format implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean upToWithQuotes(String string, ParsePosition position,
             StringBuffer buffer, char stop, char start) {
         int index = position.getIndex(), length = string.length(), count = 1;
@@ -156,7 +161,7 @@ public abstract class Format implements Serializable, Cloneable {
         protected  Field(String fieldName) {
             super(fieldName);
             addTaint(fieldName.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

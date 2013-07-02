@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser.extensions;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.javax.sip.header.*;
 import gov.nist.javax.sip.header.extensions.*;
@@ -19,7 +19,7 @@ public class MinSEParser extends ParametersParser {
     public  MinSEParser(String text) {
         super(text);
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,13 +27,14 @@ public class MinSEParser extends ParametersParser {
     protected  MinSEParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:44.011 -0400", hash_original_method = "528678E8CA90A52E25DB45830845A36C", hash_generated_method = "D4730D92823315985117411470A6FEB8")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_811158541 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_811158541 = null; 
         MinSE minse = new MinSE();
         dbg_enter("parse");
         try 
@@ -44,50 +45,51 @@ public class MinSEParser extends ParametersParser {
             {
                 int delta = Integer.parseInt(nextId);
                 minse.setExpires(delta);
-            } //End block
+            } 
             catch (NumberFormatException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw createParseException("bad integer format");
-            } //End block
+            } 
             catch (InvalidArgumentException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
-            } //End block
+            } 
             this.lexer.SPorHT();
             super.parse(minse);
             varB4EAC82CA7396A68D541C85D26508E83_811158541 = minse;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_811158541.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_811158541.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_811158541;
-        // ---------- Original Method ----------
-        //MinSE minse = new MinSE();
-        //if (debug)
-            //dbg_enter("parse");
-        //try {
-            //headerName(TokenTypes.MINSE_TO);
-            //String nextId = lexer.getNextId();
-            //try {
-                //int delta = Integer.parseInt(nextId);
-                //minse.setExpires(delta);
-            //} catch (NumberFormatException ex) {
-                //throw createParseException("bad integer format");
-            //} catch (InvalidArgumentException ex) {
-                //throw createParseException(ex.getMessage());
-            //}
-            //this.lexer.SPorHT();
-            //super.parse(minse);
-            //return minse;
-        //} finally {
-            //if (debug)
-                //dbg_leave("parse");
-        //}
+        
+        
+        
+            
+        
+            
+            
+            
+                
+                
+            
+                
+            
+                
+            
+            
+            
+            
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void main(String args[]) throws ParseException {
         String to[] =
             {   "Min-SE: 30\n",

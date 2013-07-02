@@ -1,11 +1,11 @@
 package android.accessibilityservice;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ComponentName;
 import android.content.Context;
@@ -59,7 +59,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.078 -0400", hash_original_method = "32AC306673DA52F864FB7CE370FDF901", hash_generated_method = "96C87DCFF62BE612814976BB93D4DE38")
     public  AccessibilityServiceInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -77,15 +77,15 @@ public class AccessibilityServiceInfo implements Parcelable {
             int type = 0;
             {
                 type = parser.next();
-            } //End block
+            } 
             String nodeName = parser.getName();
             {
                 boolean varEA4A996B829F560398797296F3090D5F_1517819893 = (!TAG_ACCESSIBILITY_SERVICE.equals(nodeName));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException( "Meta-data does not start with"
                         + TAG_ACCESSIBILITY_SERVICE + " tag");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             AttributeSet allAttributes = Xml.asAttributeSet(parser);
             Resources resources = packageManager.getResourcesForApplication(
                     serviceInfo.applicationInfo);
@@ -98,7 +98,7 @@ public class AccessibilityServiceInfo implements Parcelable {
                     com.android.internal.R.styleable.AccessibilityService_packageNames);
             {
                 packageNames = packageNamez.split("(\\s)*,(\\s)*");
-            } //End block
+            } 
             feedbackType = asAttributes.getInt(
                     com.android.internal.R.styleable.AccessibilityService_accessibilityFeedbackType,
                     0);
@@ -115,21 +115,21 @@ public class AccessibilityServiceInfo implements Parcelable {
             mDescription = asAttributes.getString(
                     com.android.internal.R.styleable.AccessibilityService_description);
             asAttributes.recycle();
-        } //End block
+        } 
         catch (NameNotFoundException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException( "Unable to create context for: "
                     + serviceInfo.packageName);
-        } //End block
+        } 
         finally 
         {
             {
                 parser.close();
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -140,45 +140,45 @@ public class AccessibilityServiceInfo implements Parcelable {
         feedbackType = other.feedbackType;
         notificationTimeout = other.notificationTimeout;
         flags = other.flags;
-        // ---------- Original Method ----------
-        //eventTypes = other.eventTypes;
-        //packageNames = other.packageNames;
-        //feedbackType = other.feedbackType;
-        //notificationTimeout = other.notificationTimeout;
-        //flags = other.flags;
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.112 -0400", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "3EED6C249AA90791338F588D56003678")
     public String getId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1776555801 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1776555801 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1776555801 = mId;
-        varB4EAC82CA7396A68D541C85D26508E83_1776555801.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1776555801.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1776555801;
-        // ---------- Original Method ----------
-        //return mId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.124 -0400", hash_original_method = "CD70F9B024F94168959F7F67ECCC2D46", hash_generated_method = "7BC30821D7251AB6CE5640B4EC930763")
     public ResolveInfo getResolveInfo() {
-        ResolveInfo varB4EAC82CA7396A68D541C85D26508E83_1461984509 = null; //Variable for return #1
+        ResolveInfo varB4EAC82CA7396A68D541C85D26508E83_1461984509 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1461984509 = mResolveInfo;
-        varB4EAC82CA7396A68D541C85D26508E83_1461984509.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1461984509.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1461984509;
-        // ---------- Original Method ----------
-        //return mResolveInfo;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.128 -0400", hash_original_method = "193585B262D581003491A72A585CC7AB", hash_generated_method = "FDA7B7F7A54188BEDF911E9586FB18AF")
     public String getSettingsActivityName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_711015350 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_711015350 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_711015350 = mSettingsActivityName;
-        varB4EAC82CA7396A68D541C85D26508E83_711015350.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_711015350.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_711015350;
-        // ---------- Original Method ----------
-        //return mSettingsActivityName;
+        
+        
     }
 
     
@@ -186,19 +186,19 @@ public class AccessibilityServiceInfo implements Parcelable {
     public boolean getCanRetrieveWindowContent() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_734356769 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_734356769;
-        // ---------- Original Method ----------
-        //return mCanRetrieveWindowContent;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.134 -0400", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "4ADCFA177F1CCD7352D3E519B32D92D6")
     public String getDescription() {
-        String varB4EAC82CA7396A68D541C85D26508E83_297514688 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_297514688 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_297514688 = mDescription;
-        varB4EAC82CA7396A68D541C85D26508E83_297514688.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_297514688.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_297514688;
-        // ---------- Original Method ----------
-        //return mDescription;
+        
+        
     }
 
     
@@ -206,11 +206,12 @@ public class AccessibilityServiceInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_574229752 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_574229752;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.147 -0400", hash_original_method = "D1D2BA1A1EB65F368E7D0CDDBF151C6C", hash_generated_method = "245132751A155B09EA1FBF6405106F93")
     public void writeToParcel(Parcel parcel, int flagz) {
         parcel.writeInt(eventTypes);
@@ -225,20 +226,21 @@ public class AccessibilityServiceInfo implements Parcelable {
         parcel.writeString(mDescription);
         addTaint(parcel.getTaint());
         addTaint(flagz);
-        // ---------- Original Method ----------
-        //parcel.writeInt(eventTypes);
-        //parcel.writeStringArray(packageNames);
-        //parcel.writeInt(feedbackType);
-        //parcel.writeLong(notificationTimeout);
-        //parcel.writeInt(flags);
-        //parcel.writeString(mId);
-        //parcel.writeParcelable(mResolveInfo, 0);
-        //parcel.writeString(mSettingsActivityName);
-        //parcel.writeInt(mCanRetrieveWindowContent ? 1 : 0);
-        //parcel.writeString(mDescription);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.155 -0400", hash_original_method = "7D575AC4AF313C6A4D2D5091D77147E2", hash_generated_method = "A72BDE444FE7201E107DC7271F0D928A")
     private void initFromParcel(Parcel parcel) {
         eventTypes = parcel.readInt();
@@ -251,24 +253,25 @@ public class AccessibilityServiceInfo implements Parcelable {
         mSettingsActivityName = parcel.readString();
         mCanRetrieveWindowContent = (parcel.readInt() == 1);
         mDescription = parcel.readString();
-        // ---------- Original Method ----------
-        //eventTypes = parcel.readInt();
-        //packageNames = parcel.readStringArray();
-        //feedbackType = parcel.readInt();
-        //notificationTimeout = parcel.readLong();
-        //flags = parcel.readInt();
-        //mId = parcel.readString();
-        //mResolveInfo = parcel.readParcelable(null);
-        //mSettingsActivityName = parcel.readString();
-        //mCanRetrieveWindowContent = (parcel.readInt() == 1);
-        //mDescription = parcel.readString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.180 -0400", hash_original_method = "854D12839280F599645F8CCCA5C3093D", hash_generated_method = "4A4597A367FEB725B4B1FC1A0AEB6CD9")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2008600812 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2008600812 = null; 
         StringBuilder stringBuilder = new StringBuilder();
         appendEventTypes(stringBuilder, eventTypes);
         stringBuilder.append(", ");
@@ -288,13 +291,14 @@ public class AccessibilityServiceInfo implements Parcelable {
         stringBuilder.append(", ");
         stringBuilder.append("retrieveScreenContent: ").append(mCanRetrieveWindowContent);
         varB4EAC82CA7396A68D541C85D26508E83_2008600812 = stringBuilder.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_2008600812.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2008600812.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2008600812;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void appendFeedbackTypes(StringBuilder stringBuilder, int feedbackTypes) {
         stringBuilder.append("feedbackTypes:");
         stringBuilder.append("[");
@@ -310,6 +314,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void appendPackageNames(StringBuilder stringBuilder, String[] packageNames) {
         stringBuilder.append("packageNames:");
         stringBuilder.append("[");
@@ -326,6 +331,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void appendEventTypes(StringBuilder stringBuilder, int eventTypes) {
         stringBuilder.append("eventTypes:");
         stringBuilder.append("[");
@@ -341,6 +347,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void appendFlags(StringBuilder stringBuilder, int flags) {
         stringBuilder.append("flags:");
         stringBuilder.append("[");
@@ -356,6 +363,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String feedbackTypeToString(int feedbackType) {
         StringBuilder builder = new StringBuilder();
         builder.append("[");
@@ -436,14 +444,14 @@ public class AccessibilityServiceInfo implements Parcelable {
             return new AccessibilityServiceInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public AccessibilityServiceInfo createFromParcel(Parcel parcel) {
             AccessibilityServiceInfo info = new AccessibilityServiceInfo();
             info.initFromParcel(parcel);
             return info;
         }
     
-    // orphaned legacy method
+    
     public AccessibilityServiceInfo[] newArray(int size) {
             return new AccessibilityServiceInfo[size];
         }

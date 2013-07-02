@@ -1,11 +1,11 @@
 package android.text.method;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.graphics.Rect;
 import android.text.Editable;
@@ -21,7 +21,7 @@ public class SingleLineTransformationMethod extends ReplacementTransformationMet
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:51.544 -0400", hash_original_method = "D4568A7EAB6F00728EAF3C3E423FA0FE", hash_generated_method = "D4568A7EAB6F00728EAF3C3E423FA0FE")
     public SingleLineTransformationMethod ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -29,8 +29,8 @@ public class SingleLineTransformationMethod extends ReplacementTransformationMet
     protected char[] getOriginal() {
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_317488994 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_317488994;
-        // ---------- Original Method ----------
-        //return ORIGINAL;
+        
+        
     }
 
     
@@ -38,11 +38,12 @@ public class SingleLineTransformationMethod extends ReplacementTransformationMet
     protected char[] getReplacement() {
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1057465448 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1057465448;
-        // ---------- Original Method ----------
-        //return REPLACEMENT;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SingleLineTransformationMethod getInstance() {
         if (sInstance != null)
             return sInstance;

@@ -1,11 +1,11 @@
 package org.apache.harmony.security.x501;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.nio.charset.Charsets;
@@ -35,16 +35,16 @@ public final class AttributeTypeAndValue {
         ObjectIdentifier thisOid = getOID(oid);
         {
             thisOid = new ObjectIdentifier(oid);
-        } //End block
+        } 
         this.oid = thisOid;
         this.value = value;
-        // ---------- Original Method ----------
-        //ObjectIdentifier thisOid = getOID(oid);
-        //if (thisOid == null) {
-            //thisOid = new ObjectIdentifier(oid);
-        //}
-        //this.oid = thisOid;
-        //this.value = value;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -57,35 +57,36 @@ public final class AttributeTypeAndValue {
                 ObjectIdentifier thisOid = getOID(array);
                 {
                     thisOid = new ObjectIdentifier(array);
-                } //End block
+                } 
                 this.oid = thisOid;
-            } //End block
+            } 
             {
                 this.oid = KNOWN_NAMES.get(sOid.toUpperCase(Locale.US));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("Unrecognizable attribute name: " + sOid);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         this.value = value;
-        // ---------- Original Method ----------
-        //if (sOid.charAt(0) >= '0' && sOid.charAt(0) <= '9') {
-            //int[] array = org.apache.harmony.security.asn1.ObjectIdentifier.toIntArray(sOid);
-            //ObjectIdentifier thisOid = getOID(array);
-            //if (thisOid == null) {
-                //thisOid = new ObjectIdentifier(array);
-            //}
-            //this.oid = thisOid;
-        //} else {
-            //this.oid = KNOWN_NAMES.get(sOid.toUpperCase(Locale.US));
-            //if (this.oid == null) {
-                //throw new IOException("Unrecognizable attribute name: " + sOid);
-            //}
-        //}
-        //this.value = value;
+        
+        
+            
+            
+            
+                
+            
+            
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.426 -0400", hash_original_method = "296A7913293032A81F372D58309D975C", hash_generated_method = "BDAF464A83F2CE6C86E8A64762219048")
     public void appendName(String attrFormat, StringBuilder sb) {
         boolean hexFormat = false;
@@ -96,28 +97,28 @@ public final class AttributeTypeAndValue {
                     boolean var226FF93F9DDEB8508CA47FD5E240643C_1755591224 = (RFC1779_NAMES == oid.getGroup());
                     {
                         sb.append(oid.getName());
-                    } //End block
+                    } 
                     {
                         sb.append(oid.toOIDString());
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 sb.append('=');
                 {
                     boolean varEF16AD10E9E898EE73AC67F4A2D222E5_747376136 = (value.escapedString == value.getHexString());
                     {
                         sb.append(value.getHexString().toUpperCase(Locale.US));
-                    } //End block
+                    } 
                     {
                         boolean varC66608B564A0349649E67963FFB6F626_1732088501 = (value.escapedString.length() != value.rawString.length());
                         {
                             value.appendQEString(sb);
-                        } //End block
+                        } 
                         {
                             sb.append(value.escapedString);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             {
                 Object group = oid.getGroup();
                 {
@@ -132,50 +133,51 @@ public final class AttributeTypeAndValue {
                             && !ASN1StringType.TELETEXSTRING.checkTag(tag));
                                 {
                                     hexFormat = true;
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     sb.append(oid.toString());
                     hexFormat = true;
-                } //End block
+                } 
                 sb.append('=');
                 {
                     sb.append(value.getHexString());
-                } //End block
+                } 
                 {
                     {
                         boolean varD6B997AF692A4DD4D9B3E5F589E91E4F_1130373417 = (X500Principal.CANONICAL.equals(attrFormat));
                         {
                             sb.append(value.makeCanonical());
-                        } //End block
+                        } 
                         {
                             sb.append(value.escapedString);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(attrFormat.getTaint());
         addTaint(sb.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:34.427 -0400", hash_original_method = "FA85FF96313B2EEDB4486C871DCE0458", hash_generated_method = "E71F61440821969A96EF0C2112770DF8")
     public ObjectIdentifier getType() {
-        ObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1748245164 = null; //Variable for return #1
+        ObjectIdentifier varB4EAC82CA7396A68D541C85D26508E83_1748245164 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1748245164 = oid;
-        varB4EAC82CA7396A68D541C85D26508E83_1748245164.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1748245164.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1748245164;
-        // ---------- Original Method ----------
-        //return oid;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static ObjectIdentifier getOID(int[] oid) {
         int index = hashIntArray(oid) % CAPACITY;
         ObjectIdentifier[] list = KNOWN_OIDS[index];
@@ -188,6 +190,7 @@ public final class AttributeTypeAndValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void addOID(ObjectIdentifier oid) {
         int[] newOid = oid.getOid();
         int index = hashIntArray(newOid) % CAPACITY;
@@ -421,7 +424,7 @@ public final class AttributeTypeAndValue {
             values[1] = atav.value;
         }
     };
-    // orphaned legacy method
+    
     public void setEncodingContent(BerOutputStream out) {
             AttributeValue av = (AttributeValue) out.content;
 
@@ -440,53 +443,15 @@ public final class AttributeTypeAndValue {
             }
         }
     
-    /*
-    // orphaned legacy method
-    @Override protected void getValues(Object object, Object[] values) {
-            AttributeTypeAndValue atav = (AttributeTypeAndValue) object;
-            values[0] = atav.oid.getOid();
-            values[1] = atav.value;
-        }
     
-    // orphaned legacy method
-    @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
-            Object[] values = (Object[]) in.content;
-            return new AttributeTypeAndValue((int[]) values[0], (AttributeValue) values[1]);
-        }
     
-    */
-    // orphaned legacy method
     public boolean checkTag(int tag) {
             return true;
         }
     
-    /*
-    // orphaned legacy method
-    @Override public int getEncodedLength(BerOutputStream out) { 
-            AttributeValue av = (AttributeValue) out.content;
-            if (av.encoded != null) {
-                return out.length;
-            } else {
-                return super.getEncodedLength(out);
-            }
-        }
     
-    // orphaned legacy method
-    public void encodeASN(BerOutputStream out) {
-            AttributeValue av = (AttributeValue) out.content;
-
-            if (av.encoded != null) {
-                out.content = av.encoded;
-                out.encodeANY();
-            } else {
-                out.encodeTag(av.getTag());
-                out.content = av.bytes;
-                out.encodeString();
-            }
-        }
-    */
     
-    // orphaned legacy method
+    
     public Object decode(BerInputStream in) throws IOException {
             
             String str = null;
@@ -505,7 +470,7 @@ public final class AttributeTypeAndValue {
             return new AttributeValue(str, bytesEncoded, in.tag);
         }
     
-    // orphaned legacy method
+    
     public void encodeContent(BerOutputStream out) {
             
             throw new RuntimeException("AttributeValue encodeContent MUST NOT be invoked");

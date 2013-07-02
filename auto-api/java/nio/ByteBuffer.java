@@ -1,11 +1,11 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.Arrays;
 import libcore.io.Memory;
@@ -20,10 +20,11 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
         super(0, capacity, block);
         addTaint(capacity);
         addTaint(block.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ByteBuffer allocate(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException();
@@ -32,6 +33,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ByteBuffer allocateDirect(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException();
@@ -40,11 +42,13 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ByteBuffer wrap(byte[] array) {
         return new ReadWriteHeapByteBuffer(array);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ByteBuffer wrap(byte[] array, int start, int byteCount) {
         Arrays.checkOffsetAndCount(array.length, start, byteCount);
         ByteBuffer buf = new ReadWriteHeapByteBuffer(array);
@@ -59,8 +63,8 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
         byte[] varEA57FBC16B997AC0E679F048893AC79C_1914817549 = (protectedArray());
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1873817506 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1873817506;
-        // ---------- Original Method ----------
-        //return protectedArray();
+        
+        
     }
 
     
@@ -69,8 +73,8 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
         int var457EDFAA982472962568D68CBF588B38_766517203 = (protectedArrayOffset());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_916012046 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_916012046;
-        // ---------- Original Method ----------
-        //return protectedArrayOffset();
+        
+        
     }
 
     
@@ -98,6 +102,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     public abstract ByteBuffer compact();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.789 -0400", hash_original_method = "278C7A58B0643B88C9704D6A9846EFB3", hash_generated_method = "25254FECAAA9E8EAF7E43901C3A38B2A")
     public int compareTo(ByteBuffer otherBuffer) {
         int compareRemaining;
@@ -111,114 +116,117 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
         {
             thisByte = get(thisPos);
             otherByte = otherBuffer.get(otherPos);
-        } //End block
+        } 
         int var51CE6C8A0A6AF44D4BCA06BE06554AF8_1781773502 = (remaining() - otherBuffer.remaining());
         addTaint(otherBuffer.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_301587248 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_301587248;
-        // ---------- Original Method ----------
-        //int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
-                //: otherBuffer.remaining();
-        //int thisPos = position;
-        //int otherPos = otherBuffer.position;
-        //byte thisByte, otherByte;
-        //while (compareRemaining > 0) {
-            //thisByte = get(thisPos);
-            //otherByte = otherBuffer.get(otherPos);
-            //if (thisByte != otherByte) {
-                //return thisByte < otherByte ? -1 : 1;
-            //}
-            //thisPos++;
-            //otherPos++;
-            //compareRemaining--;
-        //}
-        //return remaining() - otherBuffer.remaining();
+        
+        
+                
+        
+        
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            
+        
+        
     }
 
     
     public abstract ByteBuffer duplicate();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.790 -0400", hash_original_method = "D3C1AD6F8182660C2A5A272A59569D9E", hash_generated_method = "A5891DA7110C94CA5D168303E0B31E0F")
     @Override
     public boolean equals(Object other) {
         ByteBuffer otherBuffer = (ByteBuffer) other;
         {
             boolean var0A43D7921CE313B818348D8F01F0C8D5_160896260 = (remaining() != otherBuffer.remaining());
-        } //End collapsed parenthetic
+        } 
         int myPosition = position;
         int otherPosition = otherBuffer.position;
         boolean equalSoFar = true;
         {
             equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        } //End block
+        } 
         addTaint(other.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_773887617 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_773887617;
-        // ---------- Original Method ----------
-        //if (!(other instanceof ByteBuffer)) {
-            //return false;
-        //}
-        //ByteBuffer otherBuffer = (ByteBuffer) other;
-        //if (remaining() != otherBuffer.remaining()) {
-            //return false;
-        //}
-        //int myPosition = position;
-        //int otherPosition = otherBuffer.position;
-        //boolean equalSoFar = true;
-        //while (equalSoFar && (myPosition < limit)) {
-            //equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        //}
-        //return equalSoFar;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
     public abstract byte get();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.791 -0400", hash_original_method = "9A475FF9B92E938C1B69F2A1BC2AE724", hash_generated_method = "A5BE59FAA3A72F2A31A07CDE6FF194D6")
     public ByteBuffer get(byte[] dst) {
-        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1244202492 = null; //Variable for return #1
+        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1244202492 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1244202492 = get(dst, 0, dst.length);
         addTaint(dst[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_1244202492.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1244202492.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1244202492;
-        // ---------- Original Method ----------
-        //return get(dst, 0, dst.length);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.791 -0400", hash_original_method = "1D8E1FFC265A4E71218B8D81ECBD99D1", hash_generated_method = "F23476A24CB3E38095B67C2E3D6253BA")
     public ByteBuffer get(byte[] dst, int dstOffset, int byteCount) {
-        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1393876820 = null; //Variable for return #1
+        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1393876820 = null; 
         Arrays.checkOffsetAndCount(dst.length, dstOffset, byteCount);
         {
             boolean varB9787195162C3B0FEC3FB85BC4A74CE2_1027311214 = (byteCount > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int i = dstOffset;
             {
                 dst[i] = get();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1393876820 = this;
         addTaint(dst[0]);
         addTaint(dstOffset);
         addTaint(byteCount);
-        varB4EAC82CA7396A68D541C85D26508E83_1393876820.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1393876820.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1393876820;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(dst.length, dstOffset, byteCount);
-        //if (byteCount > remaining()) {
-            //throw new BufferUnderflowException();
-        //}
-        //for (int i = dstOffset; i < dstOffset + byteCount; ++i) {
-            //dst[i] = get();
-        //}
-        //return this;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -266,11 +274,12 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
         boolean varADF219B8DAB0ACF2FCC593A6A216A7F8_20936160 = (protectedHasArray());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_510278839 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_510278839;
-        // ---------- Original Method ----------
-        //return protectedHasArray();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.794 -0400", hash_original_method = "371FAD0CF0C9AC8E78075F4EA52336BD", hash_generated_method = "5155D341AD8DA15E519A4661A712B8E9")
     @Override
     public int hashCode() {
@@ -278,16 +287,16 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
         int hash = 0;
         {
             hash = hash + get(myPosition++);
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1371235901 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1371235901;
-        // ---------- Original Method ----------
-        //int myPosition = position;
-        //int hash = 0;
-        //while (myPosition < limit) {
-            //hash = hash + get(myPosition++);
-        //}
-        //return hash;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -296,26 +305,26 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.795 -0400", hash_original_method = "65B1A3EBEA253AF86057FAE15F6D4DB5", hash_generated_method = "D74B187560F74E206C60A109B5499B90")
     public final ByteOrder order() {
-        ByteOrder varB4EAC82CA7396A68D541C85D26508E83_1232732291 = null; //Variable for return #1
+        ByteOrder varB4EAC82CA7396A68D541C85D26508E83_1232732291 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1232732291 = order;
-        varB4EAC82CA7396A68D541C85D26508E83_1232732291.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1232732291.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1232732291;
-        // ---------- Original Method ----------
-        //return order;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.796 -0400", hash_original_method = "56B1D3E8961AB315D57FF8A49B63D4AB", hash_generated_method = "C4021993BB208F73F6CDFB02122CAFD2")
     public final ByteBuffer order(ByteOrder byteOrder) {
-        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_875444205 = null; //Variable for return #1
+        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_875444205 = null; 
         orderImpl(byteOrder);
         varB4EAC82CA7396A68D541C85D26508E83_875444205 = this;
         addTaint(byteOrder.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_875444205.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_875444205.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_875444205;
-        // ---------- Original Method ----------
-        //orderImpl(byteOrder);
-        //return this;
+        
+        
+        
     }
 
     
@@ -323,13 +332,13 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
      void orderImpl(ByteOrder byteOrder) {
         {
             byteOrder = ByteOrder.LITTLE_ENDIAN;
-        } //End block
+        } 
         order = byteOrder;
-        // ---------- Original Method ----------
-        //if (byteOrder == null) {
-            //byteOrder = ByteOrder.LITTLE_ENDIAN;
-        //}
-        //order = byteOrder;
+        
+        
+            
+        
+        
     }
 
     
@@ -347,66 +356,68 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.798 -0400", hash_original_method = "D20A20C1C5EFB26E81C8757F39019CA4", hash_generated_method = "8F87291653800CB3F2A2372AC1FF08CA")
     public final ByteBuffer put(byte[] src) {
-        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_2099506689 = null; //Variable for return #1
+        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_2099506689 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2099506689 = put(src, 0, src.length);
         addTaint(src[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_2099506689.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2099506689.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2099506689;
-        // ---------- Original Method ----------
-        //return put(src, 0, src.length);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.800 -0400", hash_original_method = "D0316A3A41AD4E9576A2DF2983507374", hash_generated_method = "94CD4F49E1DDFDB44FB5E76B329F4FC4")
     public ByteBuffer put(byte[] src, int srcOffset, int byteCount) {
-        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_214422281 = null; //Variable for return #1
+        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_214422281 = null; 
         Arrays.checkOffsetAndCount(src.length, srcOffset, byteCount);
         {
             boolean varB9787195162C3B0FEC3FB85BC4A74CE2_1186455737 = (byteCount > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferOverflowException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int i = srcOffset;
             {
                 put(src[i]);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_214422281 = this;
         addTaint(src[0]);
         addTaint(srcOffset);
         addTaint(byteCount);
-        varB4EAC82CA7396A68D541C85D26508E83_214422281.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_214422281.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_214422281;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(src.length, srcOffset, byteCount);
-        //if (byteCount > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //for (int i = srcOffset; i < srcOffset + byteCount; ++i) {
-            //put(src[i]);
-        //}
-        //return this;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.805 -0400", hash_original_method = "9C697C4B592697CC08FD298666C0BB54", hash_generated_method = "4A5AF04B94FCD1F7C6339E402F400EB2")
     public ByteBuffer put(ByteBuffer src) {
-        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_219260352 = null; //Variable for return #1
+        ByteBuffer varB4EAC82CA7396A68D541C85D26508E83_219260352 = null; 
         {
             boolean var9C07FD71E9483B067CE073F58225A0C4_1592404848 = (src == this);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("src == this");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         int srcByteCount = src.remaining();
         {
             boolean varCE4A021E07A97089C6014AA3511B8F36_1229932995 = (srcByteCount > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferOverflowException();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Object srcObject;
         boolean varD7E9FB3A2DECCDB62F76A615253FB1A1_664656656 = (src.isDirect());
         srcObject = src;
@@ -416,8 +427,8 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
             boolean var1DFA7AB241497C396502EC557F1030A3_478694324 = (!src.isDirect());
             {
                 srcOffset += NioUtils.unsafeArrayOffset(src);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         ByteBuffer dst = this;
         Object dstObject;
         boolean varFB248104C4AFD3B4F5EE7FB8E52A3F44_18295700 = (dst.isDirect());
@@ -428,17 +439,17 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
             boolean var9F26322EFA2F4B8EF5FF17D9F6511613_2084524707 = (!dst.isDirect());
             {
                 dstOffset += NioUtils.unsafeArrayOffset(dst);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         Memory.memmove(dstObject, dstOffset, srcObject, srcOffset, srcByteCount);
         src.position(src.limit());
         dst.position(dst.position() + srcByteCount);
         varB4EAC82CA7396A68D541C85D26508E83_219260352 = this;
         addTaint(src.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_219260352.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_219260352.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_219260352;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

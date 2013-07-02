@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.javax.sip.stack.SIPStackTimerTask;
@@ -41,37 +41,40 @@ public class Pipeline extends InputStream {
         this.pipe = pipe;
         buffList = new LinkedList();
         this.readTimeout = readTimeout;
-        // ---------- Original Method ----------
-        //this.timer = timer;
-        //this.pipe = pipe;
-        //buffList = new LinkedList();
-        //this.readTimeout = readTimeout;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.377 -0400", hash_original_method = "2B544F7E796D3D68CE94D6BF6C677E04", hash_generated_method = "DDC95ADC070313150C821BF878D93632")
     public void startTimer() {
         this.myTimerTask = new MyTimer(this);
         this.timer.schedule(this.myTimerTask, this.readTimeout);
-        // ---------- Original Method ----------
-        //if (this.readTimeout == -1)
-            //return;
-        //this.myTimerTask = new MyTimer(this);
-        //this.timer.schedule(this.myTimerTask, this.readTimeout);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.377 -0400", hash_original_method = "37F409FD7F01F3081F8A12D9761B8422", hash_generated_method = "12BEF41184C2C7B905B236B9F62E82E5")
     public void stopTimer() {
         this.myTimerTask.cancel();
-        // ---------- Original Method ----------
-        //if (this.readTimeout == -1)
-            //return;
-        //if (this.myTimerTask != null)
-            //this.myTimerTask.cancel();
+        
+        
+            
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.378 -0400", hash_original_method = "B005CBAD4698DC28B9A1B35993572349", hash_generated_method = "80159D2D982BE12D86CAB3F190A7FF73")
     public void write(byte[] bytes, int start, int length) throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new IOException("Closed!!");
@@ -80,22 +83,23 @@ public class Pipeline extends InputStream {
         {
             buffList.add(buff);
             buffList.notifyAll();
-        } //End block
+        } 
         addTaint(bytes[0]);
         addTaint(start);
         addTaint(length);
-        // ---------- Original Method ----------
-        //if (this.isClosed)
-            //throw new IOException("Closed!!");
-        //Buffer buff = new Buffer(bytes, length);
-        //buff.ptr = start;
-        //synchronized (this.buffList) {
-            //buffList.add(buff);
-            //buffList.notifyAll();
-        //}
+        
+        
+            
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.378 -0400", hash_original_method = "C06546AC352C387D8ACC673056FAD350", hash_generated_method = "7ED439E7BCEB86D169D02182987C17EF")
     public void write(byte[] bytes) throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new IOException("Closed!!");
@@ -103,71 +107,73 @@ public class Pipeline extends InputStream {
         {
             buffList.add(buff);
             buffList.notifyAll();
-        } //End block
+        } 
         addTaint(bytes[0]);
-        // ---------- Original Method ----------
-        //if (this.isClosed)
-            //throw new IOException("Closed!!");
-        //Buffer buff = new Buffer(bytes, bytes.length);
-        //synchronized (this.buffList) {
-            //buffList.add(buff);
-            //buffList.notifyAll();
-        //}
+        
+        
+            
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.379 -0400", hash_original_method = "9D61CBBC55A04932A86EE90F3831850B", hash_generated_method = "9A17ABCE2088D9237267B0C1150FA666")
     public void close() throws IOException {
         this.isClosed = true;
         {
             this.buffList.notifyAll();
-        } //End block
+        } 
         this.pipe.close();
-        // ---------- Original Method ----------
-        //this.isClosed = true;
-        //synchronized (this.buffList) {
-            //this.buffList.notifyAll();
-        //}
-        //this.pipe.close();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.379 -0400", hash_original_method = "F2F79F1D43766E909F353C0CFC9043D6", hash_generated_method = "ECA000C03CA15CAD88EAE2313003297B")
     public int read() throws IOException {
         {
             {
                 int retval = currentBuffer.getNextByte();
                 this.currentBuffer = null;
-            } //End block
+            } 
             {
                 boolean var702A97E9FFAB272C43CE3C8CADFE6348_2096255616 = (this.isClosed && this.buffList.isEmpty());
-            } //End collapsed parenthetic
+            } 
             try 
             {
                 {
                     boolean varC73B6569C0DBCE872A63D294569E0B26_207950460 = (this.buffList.isEmpty());
                     {
                         this.buffList.wait();
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 currentBuffer = (Buffer) this.buffList.removeFirst();
                 int retval = currentBuffer.getNextByte();
                 this.currentBuffer = null;
-            } //End block
+            } 
             catch (InterruptedException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException(ex.getMessage());
-            } //End block
+            } 
             catch (NoSuchElementException ex)
             {
                 ex.printStackTrace();
                 if (DroidSafeAndroidRuntime.control) throw new IOException(ex.getMessage());
-            } //End block
-        } //End block
+            } 
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_154480148 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_154480148;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -182,8 +188,8 @@ public class Pipeline extends InputStream {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.380 -0400", hash_original_method = "469A54409CE651B527E545FCC2B571E7", hash_generated_method = "1427EA2EBB4B5AD7315253D0FC644C17")
         protected  MyTimer(Pipeline pipeline) {
             this.pipeline = pipeline;
-            // ---------- Original Method ----------
-            //this.pipeline = pipeline;
+            
+            
         }
 
         
@@ -192,19 +198,19 @@ public class Pipeline extends InputStream {
             try 
             {
                 pipeline.close();
-            } //End block
+            } 
             catch (IOException ex)
             {
                 InternalErrorHandler.handleException(ex);
-            } //End block
-            // ---------- Original Method ----------
-            //if (this.isCancelled)
-                //return;
-            //try {
-                //pipeline.close();
-            //} catch (IOException ex) {
-                //InternalErrorHandler.handleException(ex);
-            //}
+            } 
+            
+            
+                
+            
+                
+            
+                
+            
         }
 
         
@@ -214,10 +220,10 @@ public class Pipeline extends InputStream {
             this.isCancelled = true;
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_658039700 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_658039700;
-            // ---------- Original Method ----------
-            //boolean retval = super.cancel();
-            //this.isCancelled = true;
-            //return retval;
+            
+            
+            
+            
         }
 
         
@@ -241,10 +247,10 @@ public class Pipeline extends InputStream {
             ptr = 0;
             this.length = length;
             this.bytes = bytes;
-            // ---------- Original Method ----------
-            //ptr = 0;
-            //this.length = length;
-            //this.bytes = bytes;
+            
+            
+            
+            
         }
 
         
@@ -253,9 +259,9 @@ public class Pipeline extends InputStream {
             int retval = bytes[ptr++] & 0xFF;
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1285123116 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1285123116;
-            // ---------- Original Method ----------
-            //int retval = bytes[ptr++] & 0xFF;
-            //return retval;
+            
+            
+            
         }
 
         

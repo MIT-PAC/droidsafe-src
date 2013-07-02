@@ -1,11 +1,11 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.ComponentCallbacks2;
 import android.graphics.Paint;
@@ -40,7 +40,7 @@ public abstract class HardwareRenderer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.509 -0400", hash_original_method = "E06114671092584077A71408305BD1AB", hash_generated_method = "E06114671092584077A71408305BD1AB")
     public HardwareRenderer ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -52,6 +52,7 @@ public abstract class HardwareRenderer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isAvailable() {
         return GLES20Canvas.isAvailable();
     }
@@ -90,6 +91,7 @@ public abstract class HardwareRenderer {
     abstract HardwareCanvas getCanvas();
 
     
+    @DSModeled(DSC.SAFE)
     public static void setupDiskCache(File cacheDir) {
         nSetupShadersDiskCache(new File(cacheDir, CACHE_PATH_SHADERS).getAbsolutePath());
     }
@@ -128,24 +130,24 @@ public abstract class HardwareRenderer {
                             boolean varF368F5F27839403AFE572C1398FD8488_171714375 = (initialize(holder));
                             {
                                 setup(width, height);
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         addTaint(width);
         addTaint(height);
         addTaint(attachInfo.getTaint());
         addTaint(holder.getTaint());
-        // ---------- Original Method ----------
-        //if (isRequested()) {
-            //if (!isEnabled()) {
-                //if (initialize(holder)) {
-                    //setup(width, height);
-                //}
-            //}
-        //}
+        
+        
+            
+                
+                    
+                
+            
+        
     }
 
     
@@ -167,16 +169,16 @@ public abstract class HardwareRenderer {
      boolean isEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2135924010 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2135924010;
-        // ---------- Original Method ----------
-        //return mEnabled;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.515 -0400", hash_original_method = "E431274334564F99DE06BE0647F24670", hash_generated_method = "C2CE1DB1D0D5E01CA74F489F1351598B")
      void setEnabled(boolean enabled) {
         mEnabled = enabled;
-        // ---------- Original Method ----------
-        //mEnabled = enabled;
+        
+        
     }
 
     
@@ -184,16 +186,16 @@ public abstract class HardwareRenderer {
      boolean isRequested() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1945318717 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1945318717;
-        // ---------- Original Method ----------
-        //return mRequested;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.516 -0400", hash_original_method = "5489F62162525BB08E1A950602557C7B", hash_generated_method = "6C5945B8EA5D67FB5159E094E21FF9C0")
      void setRequested(boolean requested) {
         mRequested = requested;
-        // ---------- Original Method ----------
-        //mRequested = requested;
+        
+        
     }
 
     
@@ -252,15 +254,15 @@ public abstract class HardwareRenderer {
             mVsyncDisabled = "true".equalsIgnoreCase(vsyncProperty);
             {
                 Log.d(LOG_TAG, "Disabling v-sync");
-            } //End block
-            // ---------- Original Method ----------
-            //mGlVersion = glVersion;
-            //mTranslucent = translucent;
-            //final String vsyncProperty = SystemProperties.get(DISABLE_VSYNC_PROPERTY, "false");
-            //mVsyncDisabled = "true".equalsIgnoreCase(vsyncProperty);
-            //if (mVsyncDisabled) {
-                //Log.d(LOG_TAG, "Disabling v-sync");
-            //}
+            } 
+            
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -268,8 +270,8 @@ public abstract class HardwareRenderer {
          boolean hasDirtyRegions() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_726782828 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_726782828;
-            // ---------- Original Method ----------
-            //return mDirtyRegionsEnabled;
+            
+            
         }
 
         
@@ -281,17 +283,17 @@ public abstract class HardwareRenderer {
                     int error = sEgl.eglGetError();
                     {
                         fallback(error != EGL11.EGL_CONTEXT_LOST);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (isEnabled()) {
-                //int error = sEgl.eglGetError();
-                //if (error != EGL_SUCCESS) {
-                    //Log.w(LOG_TAG, "EGL error: " + GLUtils.getEGLErrorString(error));
-                    //fallback(error != EGL11.EGL_CONTEXT_LOST);
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+                
+                
+                    
+                    
+                
+            
         }
 
         
@@ -300,15 +302,15 @@ public abstract class HardwareRenderer {
             destroy(true);
             {
                 setRequested(false);
-            } //End block
+            } 
             addTaint(fallback);
-            // ---------- Original Method ----------
-            //destroy(true);
-            //if (fallback) {
-                //setRequested(false);
-                //Log.w(LOG_TAG, "Mountain View, we've had a problem here. " 
-                        //+ "Switching back to software rendering.");
-            //}
+            
+            
+            
+                
+                
+                        
+            
         }
 
         
@@ -326,22 +328,22 @@ public abstract class HardwareRenderer {
                         {
                             destroy(true);
                             setRequested(false);
-                        } //End block
+                        } 
                         {
                             {
                                 mCanvas = createCanvas();
-                            } //End block
+                            } 
                             {
                                 setEnabled(true);
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1789408576 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1789408576;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -352,13 +354,13 @@ public abstract class HardwareRenderer {
                 boolean var50F3BA8A55559ACD41E86FE1D11F765A_1512206159 = (isRequested() && isEnabled());
                 {
                     createEglSurface(holder);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(holder.getTaint());
-            // ---------- Original Method ----------
-            //if (isRequested() && isEnabled()) {
-                //createEglSurface(holder);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -377,15 +379,15 @@ public abstract class HardwareRenderer {
                     {
                         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglGetDisplay failed "
                                 + GLUtils.getEGLErrorString(sEgl.eglGetError()));
-                    } //End block
+                    } 
                     int[] version = new int[2];
                     {
                         boolean varD6156887E7BE0E650F0700155892DF35_646905287 = (!sEgl.eglInitialize(sEglDisplay, version));
                         {
                             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglInitialize failed " +
                                 GLUtils.getEGLErrorString(sEgl.eglGetError()));
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     sEglConfig = chooseEglConfig();
                     {
                         {
@@ -393,30 +395,30 @@ public abstract class HardwareRenderer {
                             sEglConfig = chooseEglConfig();
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglConfig not initialized");
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglConfig not initialized");
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             Gl20Renderer.Gl20RendererEglContext managedContext = sEglContextStorage.get();
             mEglContext = managedContext != null ? managedContext.getContext() : null;
             mEglThread = Thread.currentThread();
             {
                 mEglContext = createContext(sEgl, sEglDisplay, sEglConfig);
                 sEglContextStorage.set(new Gl20Renderer.Gl20RendererEglContext(mEglContext));
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.534 -0400", hash_original_method = "7EBBB0609098A0727E2316EE23892E6C", hash_generated_method = "F4D8E79B291E859D45B2A7B1DF7CCF2E")
         private EGLConfig chooseEglConfig() {
-            EGLConfig varB4EAC82CA7396A68D541C85D26508E83_1120089756 = null; //Variable for return #1
-            EGLConfig varB4EAC82CA7396A68D541C85D26508E83_1127852702 = null; //Variable for return #2
+            EGLConfig varB4EAC82CA7396A68D541C85D26508E83_1120089756 = null; 
+            EGLConfig varB4EAC82CA7396A68D541C85D26508E83_1127852702 = null; 
             EGLConfig[] configs = new EGLConfig[1];
             int[] configsCount = new int[1];
             int[] configSpec = getConfig(sDirtyRegions);
@@ -432,40 +434,40 @@ public abstract class HardwareRenderer {
                         EGLConfig config = debugConfigs[0];
                         {
                             printConfig(config);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             {
                 boolean var291CF98780E894F321CE39735F052BBA_1994457276 = (!sEgl.eglChooseConfig(sEglDisplay, configSpec, configs, 1, configsCount));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("eglChooseConfig failed " +
                         GLUtils.getEGLErrorString(sEgl.eglGetError()));
-                } //End block
+                } 
                 {
                     {
                         boolean var1F4F220B1BF202484B8610575B52EA82_925676833 = ("choice".equalsIgnoreCase(debug));
                         {
                             printConfig(configs[0]);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_1120089756 = configs[0];
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1127852702 = null;
-            EGLConfig varA7E53CE21691AB073D9660D615818899_1453383803; //Final return value
+            EGLConfig varA7E53CE21691AB073D9660D615818899_1453383803; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1453383803 = varB4EAC82CA7396A68D541C85D26508E83_1120089756;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1453383803 = varB4EAC82CA7396A68D541C85D26508E83_1127852702;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1453383803.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1453383803.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1453383803;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -488,69 +490,69 @@ public abstract class HardwareRenderer {
             sEgl.eglGetConfigAttrib(sEglDisplay, config, EGL_SURFACE_TYPE, value);
             Log.d(LOG_TAG, "  SURFACE_TYPE = 0x" + Integer.toHexString(value[0]));
             addTaint(config.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.536 -0400", hash_original_method = "CE78C152F3B6BB29B0F51267B059EC85", hash_generated_method = "EFD48E0330FD6EE9EDE0B22EAD03353F")
          GL createEglSurface(SurfaceHolder holder) throws Surface.OutOfResourcesException {
-            GL varB4EAC82CA7396A68D541C85D26508E83_1414060863 = null; //Variable for return #1
-            GL varB4EAC82CA7396A68D541C85D26508E83_1687144342 = null; //Variable for return #2
+            GL varB4EAC82CA7396A68D541C85D26508E83_1414060863 = null; 
+            GL varB4EAC82CA7396A68D541C85D26508E83_1687144342 = null; 
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("egl not initialized");
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglDisplay not initialized");
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglConfig not initialized");
-            } //End block
+            } 
             {
                 boolean varE1A0062923CC8D105E1D641BD84ED7EC_1402181151 = (Thread.currentThread() != mEglThread);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("HardwareRenderer cannot be used " 
                         + "from multiple threads");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             destroySurface();
             {
                 boolean var3C9C186337E0EEDBC330EDFE5EA34947_649997097 = (!createSurface(holder));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1414060863 = null;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var3C1887F134AFD0772B92DDFACA365517_1584714763 = (!sEgl.eglMakeCurrent(sEglDisplay, mEglSurface, mEglSurface, mEglContext));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new Surface.OutOfResourcesException("eglMakeCurrent failed "
                         + GLUtils.getEGLErrorString(sEgl.eglGetError()));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             initCaches();
             {
                 {
                     boolean varFC05E1FC19D1A0180D13CF66EEE4B0BE_1616259433 = (!(mDirtyRegionsEnabled = GLES20Canvas.preserveBackBuffer()));
-                } //End collapsed parenthetic
-            } //End block
+                } 
+            } 
             {
                 mDirtyRegionsEnabled = GLES20Canvas.isBackBufferPreserved();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1687144342 = mEglContext.getGL();
             addTaint(holder.getTaint());
-            GL varA7E53CE21691AB073D9660D615818899_6462972; //Final return value
+            GL varA7E53CE21691AB073D9660D615818899_6462972; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_6462972 = varB4EAC82CA7396A68D541C85D26508E83_1414060863;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_6462972 = varB4EAC82CA7396A68D541C85D26508E83_1687144342;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_6462972.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_6462972.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_6462972;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -559,19 +561,19 @@ public abstract class HardwareRenderer {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.537 -0400", hash_original_method = "25878E68191E1BEA8EFD58CC92DB697F", hash_generated_method = "527C45D20E1BEACC8B25FAEB8168B8CC")
          EGLContext createContext(EGL10 egl, EGLDisplay eglDisplay, EGLConfig eglConfig) {
-            EGLContext varB4EAC82CA7396A68D541C85D26508E83_323933389 = null; //Variable for return #1
+            EGLContext varB4EAC82CA7396A68D541C85D26508E83_323933389 = null; 
             int[] attribs = { EGL_CONTEXT_CLIENT_VERSION, mGlVersion, EGL_NONE };
             varB4EAC82CA7396A68D541C85D26508E83_323933389 = egl.eglCreateContext(eglDisplay, eglConfig, EGL_NO_CONTEXT,
                     mGlVersion != 0 ? attribs : null);
             addTaint(egl.getTaint());
             addTaint(eglDisplay.getTaint());
             addTaint(eglConfig.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_323933389.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_323933389.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_323933389;
-            // ---------- Original Method ----------
-            //int[] attribs = { EGL_CONTEXT_CLIENT_VERSION, mGlVersion, EGL_NONE };
-            //return egl.eglCreateContext(eglDisplay, eglConfig, EGL_NO_CONTEXT,
-                    //mGlVersion != 0 ? attribs : null);
+            
+            
+            
+                    
         }
 
         
@@ -580,30 +582,30 @@ public abstract class HardwareRenderer {
          void destroy(boolean full) {
             {
                 mCanvas = null;
-            } //End block
+            } 
             {
                 boolean var7FD2B2AC2F812E9E15F51250DF65D54F_1243129317 = (!isEnabled() || mDestroyed);
                 {
                     setEnabled(false);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             destroySurface();
             setEnabled(false);
             mDestroyed = true;
             mGl = null;
             addTaint(full);
-            // ---------- Original Method ----------
-            //if (full && mCanvas != null) {
-                //mCanvas = null;
-            //}
-            //if (!isEnabled() || mDestroyed) {
-                //setEnabled(false);
-                //return;
-            //}
-            //destroySurface();
-            //setEnabled(false);
-            //mDestroyed = true;
-            //mGl = null;
+            
+            
+                
+            
+            
+                
+                
+            
+            
+            
+            
+            
         }
 
         
@@ -613,13 +615,13 @@ public abstract class HardwareRenderer {
                 sEgl.eglMakeCurrent(sEglDisplay, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
                 sEgl.eglDestroySurface(sEglDisplay, mEglSurface);
                 mEglSurface = null;
-            } //End block
-            // ---------- Original Method ----------
-            //if (mEglSurface != null && mEglSurface != EGL_NO_SURFACE) {
-                //sEgl.eglMakeCurrent(sEglDisplay, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
-                //sEgl.eglDestroySurface(sEglDisplay, mEglSurface);
-                //mEglSurface = null;
-            //}
+            } 
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -631,34 +633,34 @@ public abstract class HardwareRenderer {
                 sEgl.eglDestroySurface(sEglDisplay, mEglSurface);
                 mEglSurface = null;
                 setEnabled(false);
-            } //End block
+            } 
             {
                 boolean varCBFBE03196001F4D16583BA378EC3188_1754425727 = (holder.getSurface().isValid());
                 {
                     {
                         boolean varD9304243F22C6F34FB847EA974654D54_1193377157 = (!createSurface(holder));
-                    } //End collapsed parenthetic
+                    } 
                     {
                         setEnabled(true);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             addTaint(holder.getTaint());
-            // ---------- Original Method ----------
-            //sEgl.eglMakeCurrent(sEglDisplay, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
-            //if (mEglSurface != null && mEglSurface != EGL_NO_SURFACE) {
-                //sEgl.eglDestroySurface(sEglDisplay, mEglSurface);
-                //mEglSurface = null;
-                //setEnabled(false);
-            //}
-            //if (holder.getSurface().isValid()) {
-                //if (!createSurface(holder)) {
-                    //return;
-                //}
-                //if (mCanvas != null) {
-                    //setEnabled(true);
-                //}
-            //}
+            
+            
+            
+                
+                
+                
+            
+            
+                
+                    
+                
+                
+                    
+                
+            
         }
 
         
@@ -669,21 +671,21 @@ public abstract class HardwareRenderer {
                 int error = sEgl.eglGetError();
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("createWindowSurface failed "
                         + GLUtils.getEGLErrorString(error));
-            } //End block
+            } 
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_526624392 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_526624392;
-            // ---------- Original Method ----------
-            //mEglSurface = sEgl.eglCreateWindowSurface(sEglDisplay, sEglConfig, holder, null);
-            //if (mEglSurface == null || mEglSurface == EGL_NO_SURFACE) {
-                //int error = sEgl.eglGetError();
-                //if (error == EGL_BAD_NATIVE_WINDOW) {
-                    //Log.e(LOG_TAG, "createWindowSurface returned EGL_BAD_NATIVE_WINDOW.");
-                    //return false;
-                //}
-                //throw new RuntimeException("createWindowSurface failed "
-                        //+ GLUtils.getEGLErrorString(error));
-            //}
-            //return true;
+            
+            
+            
+                
+                
+                    
+                    
+                
+                
+                        
+            
+            
         }
 
         
@@ -693,8 +695,8 @@ public abstract class HardwareRenderer {
             boolean varD9475434482CCC29748C80263F853577_1575532238 = (checkCurrent() != SURFACE_STATE_ERROR);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_252411294 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_252411294;
-            // ---------- Original Method ----------
-            //return checkCurrent() != SURFACE_STATE_ERROR;
+            
+            
         }
 
         
@@ -707,14 +709,14 @@ public abstract class HardwareRenderer {
                     mCanvas.setViewport(width, height);
                     mWidth = width;
                     mHeight = height;
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (validate()) {
-                //mCanvas.setViewport(width, height);
-                //mWidth = width;
-                //mHeight = height;
-            //}
+                } 
+            } 
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -723,8 +725,8 @@ public abstract class HardwareRenderer {
          int getWidth() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_929995629 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_929995629;
-            // ---------- Original Method ----------
-            //return mWidth;
+            
+            
         }
 
         
@@ -733,20 +735,20 @@ public abstract class HardwareRenderer {
          int getHeight() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917433453 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917433453;
-            // ---------- Original Method ----------
-            //return mHeight;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.543 -0400", hash_original_method = "03525402B3DC937D128A720724E320B3", hash_generated_method = "63A266BD443E0D8EB43E5E728CC4A180")
         @Override
          HardwareCanvas getCanvas() {
-            HardwareCanvas varB4EAC82CA7396A68D541C85D26508E83_188955710 = null; //Variable for return #1
+            HardwareCanvas varB4EAC82CA7396A68D541C85D26508E83_188955710 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_188955710 = mCanvas;
-            varB4EAC82CA7396A68D541C85D26508E83_188955710.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_188955710.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_188955710;
-            // ---------- Original Method ----------
-            //return mCanvas;
+            
+            
         }
 
         
@@ -754,23 +756,23 @@ public abstract class HardwareRenderer {
          boolean canDraw() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_964526446 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_964526446;
-            // ---------- Original Method ----------
-            //return mGl != null && mCanvas != null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.544 -0400", hash_original_method = "5270AAD77A1E26F7563AFAAC446C8262", hash_generated_method = "D1D1BF3A49F969C9AFF6B64380268E6B")
          void onPreDraw(Rect dirty) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(dirty.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.544 -0400", hash_original_method = "600776A2676C628EF453DCB2EAD62BCF", hash_generated_method = "CE44E4A0F53F45960A85861D50074AD3")
          void onPostDraw() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            // ---------- Original Method ----------
+            
+            
         }
 
         
@@ -785,8 +787,8 @@ public abstract class HardwareRenderer {
                         boolean varC3BDE9FC350118928E1C88FC962287F4_1929000437 = (!hasDirtyRegions());
                         {
                             dirty = null;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     attachInfo.mIgnoreDirtyState = true;
                     attachInfo.mDrawingTime = SystemClock.uptimeMillis();
                     view.mPrivateFlags |= View.DRAWN;
@@ -794,7 +796,7 @@ public abstract class HardwareRenderer {
                     {
                         {
                             dirty = null;
-                        } //End block
+                        } 
                         onPreDraw(dirty);
                         HardwareCanvas canvas = mCanvas;
                         attachInfo.mHardwareCanvas = canvas;
@@ -815,49 +817,49 @@ public abstract class HardwareRenderer {
                                             boolean varD7B1D0D428000B522C58B6351FDB129E_616116226 = (mRedrawClip.isEmpty() || view.getParent() == null);
                                             {
                                                 view.invalidate();
-                                            } //End block
+                                            } 
                                             {
                                                 view.getParent().invalidateChild(view, mRedrawClip);
-                                            } //End block
-                                        } //End collapsed parenthetic
+                                            } 
+                                        } 
                                         mRedrawClip.setEmpty();
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             {
                                 view.draw(canvas);
-                            } //End block
+                            } 
                             {
                                 {
                                     mDebugPaint = new Paint();
                                     mDebugPaint.setColor(0x7fff0000);
-                                } //End block
+                                } 
                                 {
                                     canvas.drawRect(dirty, mDebugPaint);
-                                } //End block
-                            } //End block
-                        } //End block
+                                } 
+                            } 
+                        } 
                         finally 
                         {
                             callbacks.onHardwarePostDraw(canvas);
                             canvas.restoreToCount(saveCount);
                             view.mRecreateDisplayList = false;
-                        } //End block
+                        } 
                         onPostDraw();
                         attachInfo.mIgnoreDirtyState = false;
                         sEgl.eglSwapBuffers(sEglDisplay, mEglSurface);
                         checkEglErrors();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             addTaint(view.getTaint());
             addTaint(attachInfo.getTaint());
             addTaint(callbacks.getTaint());
             addTaint(dirty.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_164770254 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_164770254;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -869,8 +871,8 @@ public abstract class HardwareRenderer {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Hardware acceleration can only be used with a " +
                         "single UI thread.\nOriginal thread: " + mEglThread + "\n" +
                         "Current thread: " + Thread.currentThread());
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var383C1CBFF0E87A815F96650DC2FDC9F7_1357385344 = (!mEglContext.equals(sEgl.eglGetCurrentContext()) ||
                     !mEglSurface.equals(sEgl.eglGetCurrentSurface(EGL_DRAW)));
@@ -879,14 +881,14 @@ public abstract class HardwareRenderer {
                         boolean varAE201570A32AF474310E703D42CF4FE4_1733980421 = (!sEgl.eglMakeCurrent(sEglDisplay, mEglSurface, mEglSurface, mEglContext));
                         {
                             fallback(true);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1838488530 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1838488530;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -951,19 +953,19 @@ public abstract class HardwareRenderer {
           Gl20Renderer(boolean translucent) {
             super(2, translucent);
             addTaint(translucent);
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.550 -0400", hash_original_method = "F74985FDFA2E9230D4C8D7E9B7CADFBD", hash_generated_method = "1CEC7A81941114380E1AFFF4B0DB5687")
         @Override
          GLES20Canvas createCanvas() {
-            GLES20Canvas varB4EAC82CA7396A68D541C85D26508E83_942699811 = null; //Variable for return #1
+            GLES20Canvas varB4EAC82CA7396A68D541C85D26508E83_942699811 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_942699811 = mGlCanvas = new GLES20Canvas(mTranslucent);
-            varB4EAC82CA7396A68D541C85D26508E83_942699811.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_942699811.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_942699811;
-            // ---------- Original Method ----------
-            //return mGlCanvas = new GLES20Canvas(mTranslucent);
+            
+            
         }
 
         
@@ -985,19 +987,19 @@ public abstract class HardwareRenderer {
             addTaint(dirtyRegions);
             int[] varB4CCCA26F9DB9189C32F33E82D425CFB_548035336 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_548035336;
-            // ---------- Original Method ----------
-            //return new int[] {
-                    //EGL_RENDERABLE_TYPE, EGL_OPENGL_ES2_BIT,
-                    //EGL_RED_SIZE, 8,
-                    //EGL_GREEN_SIZE, 8,
-                    //EGL_BLUE_SIZE, 8,
-                    //EGL_ALPHA_SIZE, 8,
-                    //EGL_DEPTH_SIZE, 0,
-                    //EGL_STENCIL_SIZE, 0,
-                    //EGL_SURFACE_TYPE, EGL_WINDOW_BIT |
-                            //(dirtyRegions ? EGL_SWAP_BEHAVIOR_PRESERVED_BIT : 0),
-                    //EGL_NONE
-            //};
+            
+            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                            
+                    
+            
         }
 
         
@@ -1005,8 +1007,8 @@ public abstract class HardwareRenderer {
         @Override
          void initCaches() {
             GLES20Canvas.initCaches();
-            // ---------- Original Method ----------
-            //GLES20Canvas.initCaches();
+            
+            
         }
 
         
@@ -1016,29 +1018,29 @@ public abstract class HardwareRenderer {
             boolean var035A8626DACD2769091177CDE818C3DB_807128673 = (super.canDraw() && mGlCanvas != null);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_12345059 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_12345059;
-            // ---------- Original Method ----------
-            //return super.canDraw() && mGlCanvas != null;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.551 -0400", hash_original_method = "0022B5A5096431CE2C7606DC3316BE73", hash_generated_method = "3FE2A9FF54B12B84B27310EBEDC340B7")
         @Override
          void onPreDraw(Rect dirty) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mGlCanvas.onPreDraw(dirty);
             addTaint(dirty.getTaint());
-            // ---------- Original Method ----------
-            //mGlCanvas.onPreDraw(dirty);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.552 -0400", hash_original_method = "7433D62E540EA68CB724AA636E5E1121", hash_generated_method = "927CC0A07657DA1C5F4A57B52A17F932")
         @Override
          void onPostDraw() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mGlCanvas.onPostDraw();
-            // ---------- Original Method ----------
-            //mGlCanvas.onPostDraw();
+            
+            
         }
 
         
@@ -1048,22 +1050,22 @@ public abstract class HardwareRenderer {
             try 
             {
                 super.destroy(full);
-            } //End block
+            } 
             finally 
             {
                 {
                     mGlCanvas = null;
-                } //End block
-            } //End block
+                } 
+            } 
             addTaint(full);
-            // ---------- Original Method ----------
-            //try {
-                //super.destroy(full);
-            //} finally {
-                //if (full && mGlCanvas != null) {
-                    //mGlCanvas = null;
-                //}
-            //}
+            
+            
+                
+            
+                
+                    
+                
+            
         }
 
         
@@ -1073,67 +1075,67 @@ public abstract class HardwareRenderer {
             super.setup(width, height);
             {
                 GLES20Canvas.disableVsync();
-            } //End block
+            } 
             addTaint(width);
             addTaint(height);
-            // ---------- Original Method ----------
-            //super.setup(width, height);
-            //if (mVsyncDisabled) {
-                //GLES20Canvas.disableVsync();
-            //}
+            
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.553 -0400", hash_original_method = "91DF561E8BF11B235EB0CF61AE2449D1", hash_generated_method = "F22DD3545EF0B3911FEBBE5B3526A83A")
         @Override
          DisplayList createDisplayList() {
-            DisplayList varB4EAC82CA7396A68D541C85D26508E83_1672496051 = null; //Variable for return #1
+            DisplayList varB4EAC82CA7396A68D541C85D26508E83_1672496051 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1672496051 = new GLES20DisplayList();
-            varB4EAC82CA7396A68D541C85D26508E83_1672496051.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1672496051.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1672496051;
-            // ---------- Original Method ----------
-            //return new GLES20DisplayList();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.554 -0400", hash_original_method = "9926A5C358BE0969CD82CBEFEE88B0C5", hash_generated_method = "5894576C4FB2E9DCFCC9236EFE5F72EB")
         @Override
          HardwareLayer createHardwareLayer(boolean isOpaque) {
-            HardwareLayer varB4EAC82CA7396A68D541C85D26508E83_873045943 = null; //Variable for return #1
+            HardwareLayer varB4EAC82CA7396A68D541C85D26508E83_873045943 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_873045943 = new GLES20TextureLayer(isOpaque);
             addTaint(isOpaque);
-            varB4EAC82CA7396A68D541C85D26508E83_873045943.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_873045943.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_873045943;
-            // ---------- Original Method ----------
-            //return new GLES20TextureLayer(isOpaque);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.555 -0400", hash_original_method = "4877A9BF76918321656F296A4083E728", hash_generated_method = "12D7B7ECD61F279CB228BF4280C40245")
         @Override
          HardwareLayer createHardwareLayer(int width, int height, boolean isOpaque) {
-            HardwareLayer varB4EAC82CA7396A68D541C85D26508E83_804765335 = null; //Variable for return #1
+            HardwareLayer varB4EAC82CA7396A68D541C85D26508E83_804765335 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_804765335 = new GLES20RenderLayer(width, height, isOpaque);
             addTaint(width);
             addTaint(height);
             addTaint(isOpaque);
-            varB4EAC82CA7396A68D541C85D26508E83_804765335.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_804765335.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_804765335;
-            // ---------- Original Method ----------
-            //return new GLES20RenderLayer(width, height, isOpaque);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.555 -0400", hash_original_method = "2626CBE8666291C6CAEC91C70C04EEE5", hash_generated_method = "C0B1267488DAB065FDBDC85AF3701144")
         @Override
          SurfaceTexture createSurfaceTexture(HardwareLayer layer) {
-            SurfaceTexture varB4EAC82CA7396A68D541C85D26508E83_1232220298 = null; //Variable for return #1
+            SurfaceTexture varB4EAC82CA7396A68D541C85D26508E83_1232220298 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1232220298 = ((GLES20TextureLayer) layer).getSurfaceTexture();
             addTaint(layer.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1232220298.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1232220298.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1232220298;
-            // ---------- Original Method ----------
-            //return ((GLES20TextureLayer) layer).getSurfaceTexture();
+            
+            
         }
 
         
@@ -1145,14 +1147,14 @@ public abstract class HardwareRenderer {
                 {
                     destroyHardwareLayer(view);
                     GLES20Canvas.flushCaches(GLES20Canvas.FLUSH_CACHES_LAYERS);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(view.getTaint());
-            // ---------- Original Method ----------
-            //if (view != null && isEnabled() && checkCurrent() != SURFACE_STATE_ERROR) {
-                //destroyHardwareLayer(view);
-                //GLES20Canvas.flushCaches(GLES20Canvas.FLUSH_CACHES_LAYERS);
-            //}
+            
+            
+                
+                
+            
         }
 
         
@@ -1176,27 +1178,27 @@ public abstract class HardwareRenderer {
                 {
                     boolean var50ED5639F05964E73DC32579A230672A_192980 = (isEnabled() && checkCurrent() != SURFACE_STATE_ERROR);
                     needsContext = false;
-                } //End collapsed parenthetic
+                } 
                 {
                     Gl20RendererEglContext managedContext = sEglContextStorage.get();
                     usePbufferSurface(managedContext.getContext());
-                } //End block
+                } 
                 destroyResources(view);
                 GLES20Canvas.flushCaches(GLES20Canvas.FLUSH_CACHES_LAYERS);
-            } //End block
+            } 
             addTaint(view.getTaint());
-            // ---------- Original Method ----------
-            //if (view != null) {
-                //boolean needsContext = true;
-                //if (isEnabled() && checkCurrent() != SURFACE_STATE_ERROR) needsContext = false;
-                //if (needsContext) {
-                    //Gl20RendererEglContext managedContext = sEglContextStorage.get();
-                    //if (managedContext == null) return;
-                    //usePbufferSurface(managedContext.getContext());
-                //}
-                //destroyResources(view);
-                //GLES20Canvas.flushCaches(GLES20Canvas.FLUSH_CACHES_LAYERS);
-            //}
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                
+                
+                
+            
         }
 
         
@@ -1262,14 +1264,14 @@ public abstract class HardwareRenderer {
             public  Gl20RendererEglContext(EGLContext context) {
                 super(context);
                 addTaint(context.getTaint());
-                // ---------- Original Method ----------
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.561 -0400", hash_original_method = "022CE21F17BE8021C39A7EA65E477736", hash_generated_method = "22785257085BD67DD37B17017B5508A4")
             @Override
             public void onTerminate(final EGLContext eglContext) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 {
                     boolean var72DF4570FAAFD5BF41841B28E36357E7_471709145 = (mHandler.getLooper() != Looper.myLooper());
                     {
@@ -1278,12 +1280,12 @@ public abstract class HardwareRenderer {
                             @Override
                             public void run() {
                                 onTerminate(eglContext);
-                                // ---------- Original Method ----------
-                                //onTerminate(eglContext);
+                                
+                                
                             }
 });
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     {
                         boolean var582F742B3D76F186D18ABD8532921AC2_326466904 = (EGLImpl.getInitCount(sEglDisplay) == 1);
@@ -1302,12 +1304,12 @@ public abstract class HardwareRenderer {
                             sEglConfig = null;
                             sPbuffer = null;
                             sEglContextStorage.set(null);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 addTaint(eglContext.getTaint());
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 
             

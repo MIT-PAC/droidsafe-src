@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.net.Uri;
 import java.util.ArrayList;
@@ -32,11 +32,11 @@ public class UriMatcher {
         mWhich = -1;
         mChildren = new ArrayList<UriMatcher>();
         mText = null;
-        // ---------- Original Method ----------
-        //mCode = code;
-        //mWhich = -1;
-        //mChildren = new ArrayList<UriMatcher>();
-        //mText = null;
+        
+        
+        
+        
+        
     }
 
     
@@ -46,19 +46,20 @@ public class UriMatcher {
         mWhich = -1;
         mChildren = new ArrayList<UriMatcher>();
         mText = null;
-        // ---------- Original Method ----------
-        //mCode = NO_MATCH;
-        //mWhich = -1;
-        //mChildren = new ArrayList<UriMatcher>();
-        //mText = null;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:25.912 -0400", hash_original_method = "2E3898492678127443A40FFAA44913F1", hash_generated_method = "DB6F7935329213F2ACEB0E844A99C033")
     public void addURI(String authority, String path, int code) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("code " + code + " is invalid: it must be positive");
-        } //End block
+        } 
         String[] tokens;
         tokens = PATH_SPLIT_PATTERN.split(path);
         tokens = null;
@@ -84,38 +85,38 @@ public class UriMatcher {
                             boolean varAF69555A47401354DB698CF192B24B8D_1896232397 = (token.equals(child.mText));
                             {
                                 node = child;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     child = new UriMatcher();
                     {
                         boolean varDF8BE0FB621795E83272C57320469194_1631031564 = (token.equals("#"));
                         {
                             child.mWhich = NUMBER;
-                        } //End block
+                        } 
                         {
                             boolean var3128E3E855036724C83E0031F6A280BF_854332878 = (token.equals("*"));
                             {
                                 child.mWhich = TEXT;
-                            } //End block
+                            } 
                             {
                                 child.mWhich = EXACT;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
                     child.mText = token;
                     node.mChildren.add(child);
                     node = child;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         node.mCode = code;
         addTaint(authority.getTaint());
         addTaint(path.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -126,7 +127,7 @@ public class UriMatcher {
         UriMatcher node = this;
         {
             boolean var6CFBCB60140A82718A01256C3BAC9FED_220548620 = (li == 0 && uri.getAuthority() == null);
-        } //End collapsed parenthetic
+        } 
         {
             int i = -1;
             {
@@ -140,40 +141,40 @@ public class UriMatcher {
                     int j = 0;
                     {
                         UriMatcher n = list.get(j);
-                        //Begin case EXACT 
+                        
                         {
                             boolean varF3943A9C2F70AEA6806D132200507AF3_954412933 = (n.mText.equals(u));
                             {
                                 node = n;
-                            } //End block
-                        } //End collapsed parenthetic
-                        //End case EXACT 
-                        //Begin case NUMBER 
+                            } 
+                        } 
+                        
+                        
                         int lk = u.length();
-                        //End case NUMBER 
-                        //Begin case NUMBER 
+                        
+                        
                         {
                             int k = 0;
                             {
                                 char c = u.charAt(k);
-                            } //End block
-                        } //End collapsed parenthetic
-                        //End case NUMBER 
-                        //Begin case NUMBER 
+                            } 
+                        } 
+                        
+                        
                         node = n;
-                        //End case NUMBER 
-                        //Begin case TEXT 
+                        
+                        
                         node = n;
-                        //End case TEXT 
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        
+                    } 
+                } 
+            } 
+        } 
         addTaint(uri.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_242587319 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_242587319;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

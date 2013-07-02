@@ -1,11 +1,11 @@
 package org.apache.commons.io.output;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.File;
 import java.io.FileInputStream;
@@ -42,7 +42,7 @@ public class DeferredFileOutputStream extends ThresholdingOutputStream {
         this(threshold,  outputFile, null, null, null);
         addTaint(threshold);
         addTaint(outputFile.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -51,15 +51,15 @@ public class DeferredFileOutputStream extends ThresholdingOutputStream {
         this(threshold, null, prefix, suffix, directory);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Temporary file prefix is missing");
-        } //End block
+        } 
         addTaint(threshold);
         addTaint(prefix.getTaint());
         addTaint(suffix.getTaint());
         addTaint(directory.getTaint());
-        // ---------- Original Method ----------
-        //if (prefix == null) {
-            //throw new IllegalArgumentException("Temporary file prefix is missing");
-        //}
+        
+        
+            
+        
     }
 
     
@@ -73,138 +73,143 @@ public class DeferredFileOutputStream extends ThresholdingOutputStream {
         this.suffix = suffix;
         this.directory = directory;
         addTaint(threshold);
-        // ---------- Original Method ----------
-        //this.outputFile = outputFile;
-        //memoryOutputStream = new ByteArrayOutputStream();
-        //currentOutputStream = memoryOutputStream;
-        //this.prefix = prefix;
-        //this.suffix = suffix;
-        //this.directory = directory;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.669 -0400", hash_original_method = "F995E868509776850AFF6498E755EFC4", hash_generated_method = "FF8B9E0479D1D8CE7C9D382D97BDE5C9")
     @Override
     protected OutputStream getStream() throws IOException {
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_2063728765 = null; //Variable for return #1
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_2063728765 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2063728765 = currentOutputStream;
-        varB4EAC82CA7396A68D541C85D26508E83_2063728765.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2063728765.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2063728765;
-        // ---------- Original Method ----------
-        //return currentOutputStream;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.670 -0400", hash_original_method = "90F9D8BE12A4409DA41E0CA93662D129", hash_generated_method = "858E5648A77B78616DA767663201D7C5")
     @Override
     protected void thresholdReached() throws IOException {
         {
             outputFile = File.createTempFile(prefix, suffix, directory);
-        } //End block
+        } 
         FileOutputStream fos = new FileOutputStream(outputFile);
         memoryOutputStream.writeTo(fos);
         currentOutputStream = fos;
         memoryOutputStream = null;
-        // ---------- Original Method ----------
-        //if (prefix != null) {
-            //outputFile = File.createTempFile(prefix, suffix, directory);
-        //}
-        //FileOutputStream fos = new FileOutputStream(outputFile);
-        //memoryOutputStream.writeTo(fos);
-        //currentOutputStream = fos;
-        //memoryOutputStream = null;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.670 -0400", hash_original_method = "02F113772DEC1618BE4A7F2BC7B846DE", hash_generated_method = "40684F90586F003F3875F90453343C49")
     public boolean isInMemory() {
         boolean var79A530CFC245235708C67CC30D6574AD_1145081684 = (!isThresholdExceeded());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_172326851 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_172326851;
-        // ---------- Original Method ----------
-        //return !isThresholdExceeded();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.670 -0400", hash_original_method = "CEBBD6265454356FCC4FE657D9359767", hash_generated_method = "6DBC22D0801F8236A0CD1AC9C7B1292D")
     public byte[] getData() {
         {
             byte[] var09DAD4E7AF301F104761D7FD07F9EB60_831798590 = (memoryOutputStream.toByteArray());
-        } //End block
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1531935852 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1531935852;
-        // ---------- Original Method ----------
-        //if (memoryOutputStream != null)
-        //{
-            //return memoryOutputStream.toByteArray();
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.670 -0400", hash_original_method = "2FAEE05DD81B3DF9BBBB7355A430983C", hash_generated_method = "89312090196F7C3EED4A85765765F0E8")
     public File getFile() {
-        File varB4EAC82CA7396A68D541C85D26508E83_1776663472 = null; //Variable for return #1
+        File varB4EAC82CA7396A68D541C85D26508E83_1776663472 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1776663472 = outputFile;
-        varB4EAC82CA7396A68D541C85D26508E83_1776663472.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1776663472.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1776663472;
-        // ---------- Original Method ----------
-        //return outputFile;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.671 -0400", hash_original_method = "C7FCBD344022D72FF18766A4DFEA8EE1", hash_generated_method = "DCC0D06E7F79ED3EAE0E8D99DD76C5B5")
     @Override
     public void close() throws IOException {
         super.close();
         closed = true;
-        // ---------- Original Method ----------
-        //super.close();
-        //closed = true;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.671 -0400", hash_original_method = "EDA7487DCECD411B0E9FBCE942C20A22", hash_generated_method = "0721CBF58F787AE255730C892EC8FE8E")
     public void writeTo(OutputStream out) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Stream not closed");
-        } //End block
+        } 
         {
             boolean varBCECD79AA34B2E7F7193471A45415FDC_1665149498 = (isInMemory());
             {
                 memoryOutputStream.writeTo(out);
-            } //End block
+            } 
             {
                 FileInputStream fis = new FileInputStream(outputFile);
                 try 
                 {
                     IOUtils.copy(fis, out);
-                } //End block
+                } 
                 finally 
                 {
                     IOUtils.closeQuietly(fis);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //if (!closed)
-        //{
-            //throw new IOException("Stream not closed");
-        //}
-        //if(isInMemory())
-        //{
-            //memoryOutputStream.writeTo(out);
-        //}
-        //else
-        //{
-            //FileInputStream fis = new FileInputStream(outputFile);
-            //try {
-                //IOUtils.copy(fis, out);
-            //} finally {
-                //IOUtils.closeQuietly(fis);
-            //}
-        //}
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.apache.http.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.protocol.HTTP;
 
@@ -22,26 +22,27 @@ public final class CharArrayBuffer {
         super();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Buffer capacity may not be negative");
-        } //End block
+        } 
         this.buffer = new char[capacity];
-        // ---------- Original Method ----------
-        //if (capacity < 0) {
-            //throw new IllegalArgumentException("Buffer capacity may not be negative");
-        //}
-        //this.buffer = new char[capacity];
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.697 -0400", hash_original_method = "2F17603B23741271B90038A790622089", hash_generated_method = "D0A52042B186D1AF52210470981D1CF7")
     private void expand(int newlen) {
         char newbuffer[] = new char[Math.max(this.buffer.length << 1, newlen)];
         System.arraycopy(this.buffer, 0, newbuffer, 0, this.len);
         this.buffer = newbuffer;
         addTaint(newlen);
-        // ---------- Original Method ----------
-        //char newbuffer[] = new char[Math.max(this.buffer.length << 1, newlen)];
-        //System.arraycopy(this.buffer, 0, newbuffer, 0, this.len);
-        //this.buffer = newbuffer;
+        
+        
+        
+        
     }
 
     
@@ -49,59 +50,60 @@ public final class CharArrayBuffer {
     public void append(final char[] b, int off, int len) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         int newlen = this.len + len;
         {
             expand(newlen);
-        } //End block
+        } 
         System.arraycopy(b, off, this.buffer, this.len, len);
         this.len = newlen;
         addTaint(b[0]);
         addTaint(off);
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //return;
-        //}
-        //if ((off < 0) || (off > b.length) || (len < 0) ||
-                //((off + len) < 0) || ((off + len) > b.length)) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (len == 0) {
-            //return;
-        //}
-        //int newlen = this.len + len;
-        //if (newlen > this.buffer.length) {
-            //expand(newlen);
-        //}
-        //System.arraycopy(b, off, this.buffer, this.len, len);
-        //this.len = newlen;
+        
+        
+            
+        
+        
+                
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.698 -0400", hash_original_method = "ACAF2F249BA22D0DF6BBB3AD4537636F", hash_generated_method = "52414FDDCEA096E735DB2758ECAC9BC4")
     public void append(String str) {
         {
             str = "null";
-        } //End block
+        } 
         int strlen = str.length();
         int newlen = this.len + strlen;
         {
             expand(newlen);
-        } //End block
+        } 
         str.getChars(0, strlen, this.buffer, this.len);
         this.len = newlen;
         addTaint(str.getTaint());
-        // ---------- Original Method ----------
-        //if (str == null) {
-            //str = "null";
-        //}
-        //int strlen = str.length();
-        //int newlen = this.len + strlen;
-        //if (newlen > this.buffer.length) {
-            //expand(newlen);
-        //}
-        //str.getChars(0, strlen, this.buffer, this.len);
-        //this.len = newlen;
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -111,11 +113,11 @@ public final class CharArrayBuffer {
         addTaint(b.getTaint());
         addTaint(off);
         addTaint(len);
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //return;
-        //}
-        //append(b.buffer, off, len);
+        
+        
+            
+        
+        
     }
 
     
@@ -123,29 +125,30 @@ public final class CharArrayBuffer {
     public void append(final CharArrayBuffer b) {
         append(b.buffer,0, b.len);
         addTaint(b.getTaint());
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //return;
-        //}
-        //append(b.buffer,0, b.len);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.701 -0400", hash_original_method = "D5C788E90F40398FB3614446E45BD8A0", hash_generated_method = "C42EB6C9DAFD7C97CDC72CCFDB502BD1")
     public void append(char ch) {
         int newlen = this.len + 1;
         {
             expand(newlen);
-        } //End block
+        } 
         this.buffer[this.len] = ch;
         this.len = newlen;
-        // ---------- Original Method ----------
-        //int newlen = this.len + 1;
-        //if (newlen > this.buffer.length) {
-            //expand(newlen);
-        //}
-        //this.buffer[this.len] = ch;
-        //this.len = newlen;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -153,12 +156,12 @@ public final class CharArrayBuffer {
     public void append(final byte[] b, int off, int len) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         int oldlen = this.len;
         int newlen = oldlen + len;
         {
             expand(newlen);
-        } //End block
+        } 
         {
             int i1 = off;
             int i2 = oldlen;
@@ -166,37 +169,37 @@ public final class CharArrayBuffer {
                 int ch = b[i1];
                 {
                     ch = 256 + ch;
-                } //End block
+                } 
                 this.buffer[i2] = (char) ch;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.len = newlen;
         addTaint(b[0]);
         addTaint(off);
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //return;
-        //}
-        //if ((off < 0) || (off > b.length) || (len < 0) ||
-                //((off + len) < 0) || ((off + len) > b.length)) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (len == 0) {
-            //return;
-        //}
-        //int oldlen = this.len;
-        //int newlen = oldlen + len;
-        //if (newlen > this.buffer.length) {
-            //expand(newlen);
-        //}
-        //for (int i1 = off, i2 = oldlen; i2 < newlen; i1++, i2++) {
-            //int ch = b[i1]; 
-            //if (ch < 0) {
-                //ch = 256 + ch;
-            //}
-            //this.buffer[i2] = (char) ch;
-        //}
-        //this.len = newlen;
+        
+        
+            
+        
+        
+                
+            
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -206,11 +209,11 @@ public final class CharArrayBuffer {
         addTaint(b.getTaint());
         addTaint(off);
         addTaint(len);
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //return;
-        //}
-        //append(b.buffer(), off, len);
+        
+        
+            
+        
+        
     }
 
     
@@ -218,33 +221,34 @@ public final class CharArrayBuffer {
     public void append(final Object obj) {
         append(String.valueOf(obj));
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //append(String.valueOf(obj));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.703 -0400", hash_original_method = "A450C39265F5D0A0BD0BDC87E4C74433", hash_generated_method = "337424E6F35DDD475218DC5AB9D00E92")
     public void clear() {
         this.len = 0;
-        // ---------- Original Method ----------
-        //this.len = 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.703 -0400", hash_original_method = "4AFFE01BAE7027051F1E9CC8F13AAD3C", hash_generated_method = "BFB81900DEF88CE510591C4F28C91E72")
     public char[] toCharArray() {
         char[] b = new char[this.len];
         {
             System.arraycopy(this.buffer, 0, b, 0, this.len);
-        } //End block
+        } 
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_538149695 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_538149695;
-        // ---------- Original Method ----------
-        //char[] b = new char[this.len];
-        //if (this.len > 0) {
-            //System.arraycopy(this.buffer, 0, b, 0, this.len);
-        //}
-        //return b;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -253,8 +257,8 @@ public final class CharArrayBuffer {
         addTaint(i);
         char varA87DEB01C5F539E6BDA34829C8EF2368_985083121 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_985083121;
-        // ---------- Original Method ----------
-        //return this.buffer[i];
+        
+        
     }
 
     
@@ -262,8 +266,8 @@ public final class CharArrayBuffer {
     public char[] buffer() {
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_667372521 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_667372521;
-        // ---------- Original Method ----------
-        //return this.buffer;
+        
+        
     }
 
     
@@ -271,8 +275,8 @@ public final class CharArrayBuffer {
     public int capacity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1504723043 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1504723043;
-        // ---------- Original Method ----------
-        //return this.buffer.length;
+        
+        
     }
 
     
@@ -280,37 +284,39 @@ public final class CharArrayBuffer {
     public int length() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_226467195 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_226467195;
-        // ---------- Original Method ----------
-        //return this.len;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.705 -0400", hash_original_method = "D7CBA679433EAE08760B1427F02A5D97", hash_generated_method = "D17DE96DA3972502312B04EE9B6D97E9")
     public void ensureCapacity(int required) {
         int available = this.buffer.length - this.len;
         {
             expand(this.len + required);
-        } //End block
+        } 
         addTaint(required);
-        // ---------- Original Method ----------
-        //int available = this.buffer.length - this.len;
-        //if (required > available) {
-            //expand(this.len + required);
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.706 -0400", hash_original_method = "91BC3CAF824730CA70DA03BDE47FFB38", hash_generated_method = "88308711C78C4406ECDB2D627E5D6C99")
     public void setLength(int len) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         this.len = len;
-        // ---------- Original Method ----------
-        //if (len < 0 || len > this.buffer.length) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //this.len = len;
+        
+        
+            
+        
+        
     }
 
     
@@ -318,8 +324,8 @@ public final class CharArrayBuffer {
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1904506485 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1904506485;
-        // ---------- Original Method ----------
-        //return this.len == 0;
+        
+        
     }
 
     
@@ -327,8 +333,8 @@ public final class CharArrayBuffer {
     public boolean isFull() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2063674070 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2063674070;
-        // ---------- Original Method ----------
-        //return this.len == this.buffer.length;
+        
+        
     }
 
     
@@ -336,130 +342,134 @@ public final class CharArrayBuffer {
     public int indexOf(int ch, int beginIndex, int endIndex) {
         {
             beginIndex = 0;
-        } //End block
+        } 
         {
             endIndex = this.len;
-        } //End block
+        } 
         {
             int i = beginIndex;
-        } //End collapsed parenthetic
+        } 
         addTaint(ch);
         addTaint(beginIndex);
         addTaint(endIndex);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_503158763 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_503158763;
-        // ---------- Original Method ----------
-        //if (beginIndex < 0) {
-            //beginIndex = 0;
-        //}
-        //if (endIndex > this.len) {
-            //endIndex = this.len;
-        //}
-        //if (beginIndex > endIndex) {
-            //return -1;
-        //}
-        //for (int i = beginIndex; i < endIndex; i++) {
-            //if (this.buffer[i] == ch) {
-                //return i;
-            //}
-        //}
-        //return -1;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.709 -0400", hash_original_method = "10D27E663D7DA2320707DA538278DAF0", hash_generated_method = "2D70EB436A34B7BE20732EF305BFE867")
     public int indexOf(int ch) {
         int var3F00C3A83A66DA6E813696977BC642E4_1792348705 = (indexOf(ch, 0, this.len));
         addTaint(ch);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_320847445 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_320847445;
-        // ---------- Original Method ----------
-        //return indexOf(ch, 0, this.len);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.711 -0400", hash_original_method = "22CCCAF5D720409DDBF6F0B0B6357B54", hash_generated_method = "A4D9F682A6E7BC34CF750E6F4EDB9632")
     public String substring(int beginIndex, int endIndex) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1258135346 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1258135346 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1258135346 = new String(this.buffer, beginIndex, endIndex - beginIndex);
         addTaint(beginIndex);
         addTaint(endIndex);
-        varB4EAC82CA7396A68D541C85D26508E83_1258135346.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1258135346.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1258135346;
-        // ---------- Original Method ----------
-        //if (beginIndex < 0) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (endIndex > this.len) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (beginIndex > endIndex) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //return new String(this.buffer, beginIndex, endIndex - beginIndex);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.713 -0400", hash_original_method = "4246CE00C89336C6483535517E901EA8", hash_generated_method = "BCB20B25CB345F1C6BE1113DB0059F7E")
     public String substringTrimmed(int beginIndex, int endIndex) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1224605458 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1224605458 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
-        } //End block
+        } 
         {
             boolean var61922099945D4AFC92E67DC8172246E3_464314387 = (beginIndex < endIndex && HTTP.isWhitespace(this.buffer[beginIndex]));
-        } //End collapsed parenthetic
+        } 
         {
             boolean var154623A58B224AC98D3E71F92000C6F5_1399821876 = (endIndex > beginIndex && HTTP.isWhitespace(this.buffer[endIndex - 1]));
-        } //End collapsed parenthetic
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1224605458 = new String(this.buffer, beginIndex, endIndex - beginIndex);
         addTaint(beginIndex);
         addTaint(endIndex);
-        varB4EAC82CA7396A68D541C85D26508E83_1224605458.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1224605458.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1224605458;
-        // ---------- Original Method ----------
-        //if (beginIndex < 0) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (endIndex > this.len) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (beginIndex > endIndex) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //while (beginIndex < endIndex && HTTP.isWhitespace(this.buffer[beginIndex])) {
-            //beginIndex++;
-        //}
-        //while (endIndex > beginIndex && HTTP.isWhitespace(this.buffer[endIndex - 1])) {
-            //endIndex--;
-        //}
-        //return new String(this.buffer, beginIndex, endIndex - beginIndex);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.714 -0400", hash_original_method = "37A881D5A8D6182DF31C9932D86CB3D7", hash_generated_method = "F5A0097194471BBA1F88511A3C8E5772")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1656802447 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1656802447 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1656802447 = new String(this.buffer, 0, this.len);
-        varB4EAC82CA7396A68D541C85D26508E83_1656802447.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1656802447.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1656802447;
-        // ---------- Original Method ----------
-        //return new String(this.buffer, 0, this.len);
+        
+        
     }
 
     

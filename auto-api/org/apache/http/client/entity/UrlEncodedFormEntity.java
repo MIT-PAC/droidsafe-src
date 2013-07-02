@@ -1,11 +1,11 @@
 package org.apache.http.client.entity;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
@@ -25,8 +25,8 @@ public class UrlEncodedFormEntity extends StringEntity {
         setContentType(URLEncodedUtils.CONTENT_TYPE);
         addTaint(parameters.getTaint());
         addTaint(encoding.getTaint());
-        // ---------- Original Method ----------
-        //setContentType(URLEncodedUtils.CONTENT_TYPE);
+        
+        
     }
 
     
@@ -37,8 +37,8 @@ public class UrlEncodedFormEntity extends StringEntity {
             HTTP.DEFAULT_CONTENT_CHARSET);
         setContentType(URLEncodedUtils.CONTENT_TYPE);
         addTaint(parameters.getTaint());
-        // ---------- Original Method ----------
-        //setContentType(URLEncodedUtils.CONTENT_TYPE);
+        
+        
     }
 
     

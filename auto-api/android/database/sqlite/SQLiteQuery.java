@@ -1,11 +1,11 @@
 package android.database.sqlite;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.database.CursorWindow;
 import android.os.SystemClock;
@@ -28,9 +28,9 @@ public class SQLiteQuery extends SQLiteProgram {
         addTaint(db.getTaint());
         addTaint(query.getTaint());
         addTaint(bindArgs[0].getTaint());
-        // ---------- Original Method ----------
-        //mOffsetIndex = offsetIndex;
-        //bindAllArgsAsStrings(bindArgs);
+        
+        
+        
     }
 
     
@@ -40,9 +40,9 @@ public class SQLiteQuery extends SQLiteProgram {
         this.mBindArgs = query.mBindArgs;
         this.mOffsetIndex = query.mOffsetIndex;
         addTaint(db.getTaint());
-        // ---------- Original Method ----------
-        //this.mBindArgs = query.mBindArgs;
-        //this.mOffsetIndex = query.mOffsetIndex;
+        
+        
+        
     }
 
     
@@ -90,37 +90,37 @@ public class SQLiteQuery extends SQLiteProgram {
                                 + ", args=[" + (mBindArgs != null ?
                                         TextUtils.join(", ", mBindArgs.values()) : "")
                                 + "]");
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 mDatabase.logTimeStat(mSql, timeStart);
-            } //End block
+            } 
             catch (IllegalStateException e)
             { }
             catch (SQLiteDatabaseCorruptException e)
             {
                 mDatabase.onCorruption();
                 if (DroidSafeAndroidRuntime.control) throw e;
-            } //End block
+            } 
             catch (SQLiteException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw e;
-            } //End block
+            } 
             finally 
             {
                 window.releaseReference();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             releaseReference();
             mDatabase.unlock();
-        } //End block
+        } 
         addTaint(window.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_794893076 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_794893076;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -130,68 +130,70 @@ public class SQLiteQuery extends SQLiteProgram {
         try 
         {
             int var4CE791ADD9DE7633E946332B2B15C816_1843245498 = (nativeColumnCount(nStatement));
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2067284946 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2067284946;
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativeColumnCount(nStatement);
-        //} finally {
-            //releaseReference();
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.814 -0400", hash_original_method = "B5AB077B4013E218660670FE95A73F4B", hash_generated_method = "C2227A014F70DCB932C3004573DB9567")
      String columnNameLocked(int columnIndex) {
-        String varB4EAC82CA7396A68D541C85D26508E83_485933085 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_485933085 = null; 
         acquireReference();
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_485933085 = nativeColumnName(nStatement, columnIndex);
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
+        } 
         addTaint(columnIndex);
-        varB4EAC82CA7396A68D541C85D26508E83_485933085.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_485933085.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_485933085;
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativeColumnName(nStatement, columnIndex);
-        //} finally {
-            //releaseReference();
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.815 -0400", hash_original_method = "818F0EC4250B389213C92FDEA7A7A5CE", hash_generated_method = "C6E0A84D09B490BB663985B158C21716")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_669638678 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_669638678 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_669638678 = "SQLiteQuery: " + mSql;
-        varB4EAC82CA7396A68D541C85D26508E83_669638678.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_669638678.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_669638678;
-        // ---------- Original Method ----------
-        //return "SQLiteQuery: " + mSql;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.815 -0400", hash_original_method = "C1F8301470323E9B4CE9B1F32DF8E225", hash_generated_method = "6C73A8E1493172E7E20CAF1DBE3B5224")
     @Override
     public void close() {
         super.close();
         mClosed = true;
-        // ---------- Original Method ----------
-        //super.close();
-        //mClosed = true;
+        
+        
+        
     }
 
     
@@ -199,13 +201,13 @@ public class SQLiteQuery extends SQLiteProgram {
      void requery() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("requerying a closed cursor");
-        } //End block
+        } 
         compileAndbindAllArgs();
-        // ---------- Original Method ----------
-        //if (mClosed) {
-            //throw new IllegalStateException("requerying a closed cursor");
-        //}
-        //compileAndbindAllArgs();
+        
+        
+            
+        
+        
     }
 
     

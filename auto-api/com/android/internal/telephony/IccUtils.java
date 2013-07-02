@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.res.Resources;
 import android.content.res.Resources.NotFoundException;
@@ -22,10 +22,11 @@ public class IccUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:23.175 -0400", hash_original_method = "7497E316CBF08BC6A4E1097E009E4B82", hash_generated_method = "7497E316CBF08BC6A4E1097E009E4B82")
     public IccUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String bcdToString(byte[] data, int offset, int length) {
         StringBuilder ret = new StringBuilder(length*2);
         for (int i = offset ; i < offset + length ; i++) {
@@ -43,6 +44,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String cdmaBcdToString(byte[] data, int offset, int length) {
         StringBuilder ret = new StringBuilder(length);
         int count = 0;
@@ -85,6 +87,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String adnStringFieldToString(byte[] data, int offset, int length) {
         if (length == 0) {
             return "";
@@ -155,6 +158,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int hexCharToInt(char c) {
         if (c >= '0' && c <= '9') return (c - '0');
         if (c >= 'A' && c <= 'F') return (c - 'A' + 10);
@@ -163,6 +167,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] hexStringToBytes(String s) {
         byte[] ret;
         if (s == null) return null;
@@ -176,6 +181,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String bytesToHexString(byte[] bytes) {
         if (bytes == null) return null;
         StringBuilder ret = new StringBuilder(2*bytes.length);
@@ -190,6 +196,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String networkNameToString(byte[] data, int offset, int length) {
         String ret;
         if ((data[offset] & 0x80) != 0x80 || length < 1) {
@@ -221,6 +228,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap parseToBnW(byte[] data, int length) {
         int valueIndex = 0;
         int width = data[valueIndex++] & 0xFF;
@@ -254,6 +262,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap parseToRGB(byte[] data, int length,
             boolean transparency) {
         int valueIndex = 0;
@@ -280,6 +289,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int[] mapTo2OrderBitColor(byte[] data, int valueIndex,
             int length, int[] colorArray, int bits) {
         if (0 != (8 % bits)) {
@@ -317,6 +327,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int[] mapToNon2OrderBitColor(byte[] data, int valueIndex,
             int length, int[] colorArray, int bits) {
         if (0 == (8 % bits)) {

@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.net.ParseException;
 import android.net.WebAddress;
@@ -36,18 +36,20 @@ public final class CookieManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.327 -0400", hash_original_method = "D1B429C0ADFDAAD2AA9A34491D464202", hash_generated_method = "7E9E6C54D01E5F13F7A4CCB58B878A0F")
     private  CookieManager() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.327 -0400", hash_original_method = "192983167FE22E48CC26A3CAFDDD8D6B", hash_generated_method = "485516C5E5A309F67F3624B095CDFF25")
     protected Object clone() throws CloneNotSupportedException {
     	throw new CloneNotSupportedException("doesn't implement Cloneable");
-        // ---------- Original Method ----------
-        //throw new CloneNotSupportedException("doesn't implement Cloneable");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized CookieManager getInstance() {
         if (sRef == null) {
             sRef = new CookieManager();
@@ -56,122 +58,127 @@ public final class CookieManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.328 -0400", hash_original_method = "0044CC48946D988BAC3F9C31DC5ECF6E", hash_generated_method = "76D823D5CA8360461CDF5C8015802AA8")
     public synchronized void setAcceptCookie(boolean accept) {
         {
             boolean var9ACB1B3B30D2C0CED704DA8C8B3FC1B9_1818593435 = (JniUtil.useChromiumHttpStack());
             {
                 nativeSetAcceptCookie(accept);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mAcceptCookie = accept;
-        // ---------- Original Method ----------
-        //if (JniUtil.useChromiumHttpStack()) {
-            //nativeSetAcceptCookie(accept);
-            //return;
-        //}
-        //mAcceptCookie = accept;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.328 -0400", hash_original_method = "EAEA6182C3DE8E7E3FA46C84A2197DA5", hash_generated_method = "C9CC0B6433DE95497D691B2726D89E4D")
     public synchronized boolean acceptCookie() {
         {
             boolean var9ACB1B3B30D2C0CED704DA8C8B3FC1B9_1589689784 = (JniUtil.useChromiumHttpStack());
             {
                 boolean var7A32826552223CCBC1277BE3318866F8_1218323380 = (nativeAcceptCookie());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_501663062 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_501663062;
-        // ---------- Original Method ----------
-        //if (JniUtil.useChromiumHttpStack()) {
-            //return nativeAcceptCookie();
-        //}
-        //return mAcceptCookie;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.328 -0400", hash_original_method = "3C733C3F28B1C91BBFDBB065F4DCBFE1", hash_generated_method = "C393BA430BA76EA586202A104F33ABBB")
     public void setCookie(String url, String value) {
         {
             boolean var9ACB1B3B30D2C0CED704DA8C8B3FC1B9_1774041081 = (JniUtil.useChromiumHttpStack());
             {
                 setCookie(url, value, false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         WebAddress uri = null;
         try 
         {
             uri = new WebAddress(url);
-        } //End block
+        } 
         catch (ParseException ex)
         { }
         setCookie(uri, value);
         addTaint(url.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //if (JniUtil.useChromiumHttpStack()) {
-            //setCookie(url, value, false);
-            //return;
-        //}
-        //WebAddress uri;
-        //try {
-            //uri = new WebAddress(url);
-        //} catch (ParseException ex) {
-            //Log.e(LOGTAG, "Bad address: " + url);
-            //return;
-        //}
-        //setCookie(uri, value);
+        
+        
+            
+            
+        
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.329 -0400", hash_original_method = "FD6DC9D8EE462ADB809067B2E36820B1", hash_generated_method = "EA7AB975A2C8211500BF3856CD90576D")
     public void setCookie(String url, String value, boolean privateBrowsing) {
         {
             boolean var0C0A67311072ACF9A11F251AEC847BBE_1940015526 = (!JniUtil.useChromiumHttpStack());
             {
                 setCookie(url, value);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         WebAddress uri;
         try 
         {
             uri = new WebAddress(url);
-        } //End block
+        } 
         catch (ParseException ex)
         { return; }
         nativeSetCookie(uri.toString(), value, privateBrowsing);
         addTaint(url.getTaint());
         addTaint(value.getTaint());
         addTaint(privateBrowsing);
-        // ---------- Original Method ----------
-        //if (!JniUtil.useChromiumHttpStack()) {
-            //setCookie(url, value);
-            //return;
-        //}
-        //WebAddress uri;
-        //try {
-            //uri = new WebAddress(url);
-        //} catch (ParseException ex) {
-            //Log.e(LOGTAG, "Bad address: " + url);
-            //return;
-        //}
-        //nativeSetCookie(uri.toString(), value, privateBrowsing);
+        
+        
+            
+            
+        
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.331 -0400", hash_original_method = "8AF5CC468B90A5A42A5116E5B0AA2987", hash_generated_method = "2D6F427F6B24154FB9910AF2C8BB0CF8")
     public synchronized void setCookie(WebAddress uri, String value) {
         {
             boolean var9ACB1B3B30D2C0CED704DA8C8B3FC1B9_1579583878 = (JniUtil.useChromiumHttpStack());
             {
                 nativeSetCookie(uri.toString(), value, false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varF464C5570B08564435F758B79DFFB796_549183055 = (value != null && value.length() > MAX_COOKIE_LENGTH);
-        } //End collapsed parenthetic
+        } 
         String[] hostAndPath = getHostAndPath(uri);
         {
             boolean var4CD0D0571ACF6B1371CB0FD67E9488E5_420607116 = (hostAndPath[1].length() > 1);
@@ -179,25 +186,25 @@ public final class CookieManager {
                 int index = hostAndPath[1].lastIndexOf(PATH_DELIM);
                 hostAndPath[1] = hostAndPath[1].substring(0, 
                     index > 0 ? index : index + 1);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         ArrayList<Cookie> cookies = null;
         try 
         {
             cookies = parseCookie(hostAndPath[0], hostAndPath[1], value);
-        } //End block
+        } 
         catch (RuntimeException ex)
         { }
         {
             boolean var639B145A70887FECCC495043A3AE58E5_2109920704 = (cookies == null || cookies.size() == 0);
-        } //End collapsed parenthetic
+        } 
         String baseDomain = getBaseDomain(hostAndPath[0]);
         ArrayList<Cookie> cookieList = mCookieMap.get(baseDomain);
         {
             cookieList = CookieSyncManager.getInstance()
                     .getCookiesForDomain(baseDomain);
             mCookieMap.put(baseDomain, cookieList);
-        } //End block
+        } 
         long now = System.currentTimeMillis();
         int size = cookies.size();
         {
@@ -223,18 +230,18 @@ public final class CookieManager {
                                             cookieEntry.lastAcessTime = now;
                                             cookieEntry.lastUpdateTime = now;
                                             cookieEntry.mode = Cookie.MODE_REPLACED;
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
+                                        } 
+                                    } 
+                                } 
                                 {
                                     cookieEntry.lastUpdateTime = now;
                                     cookieEntry.mode = Cookie.MODE_DELETED;
-                                } //End block
+                                } 
                                 done = true;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     cookie.lastAcessTime = now;
                     cookie.lastUpdateTime = now;
@@ -251,153 +258,156 @@ public final class CookieManager {
                                     Cookie cookieEntry2 = iter2.next();
                                     {
                                         toDelete = cookieEntry2;
-                                    } //End block
-                                } //End block
-                            } //End collapsed parenthetic
+                                    } 
+                                } 
+                            } 
                             toDelete.mode = Cookie.MODE_DELETED;
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     cookieList.add(cookie);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(uri.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.332 -0400", hash_original_method = "CFFC2606C8B97641601C2B54714068BC", hash_generated_method = "2A4A387CCC655F27EB6F944CF8C1156E")
     public String getCookie(String url) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1489391904 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1831573257 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1388646436 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1489391904 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1831573257 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1388646436 = null; 
         {
             boolean var9ACB1B3B30D2C0CED704DA8C8B3FC1B9_962686201 = (JniUtil.useChromiumHttpStack());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1489391904 = getCookie(url, false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         WebAddress uri = null;
         try 
         {
             uri = new WebAddress(url);
-        } //End block
+        } 
         catch (ParseException ex)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1831573257 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1388646436 = getCookie(uri);
         addTaint(url.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1992456544; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1992456544; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1992456544 = varB4EAC82CA7396A68D541C85D26508E83_1489391904;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1992456544 = varB4EAC82CA7396A68D541C85D26508E83_1831573257;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1992456544 = varB4EAC82CA7396A68D541C85D26508E83_1388646436;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1992456544.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1992456544.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1992456544;
-        // ---------- Original Method ----------
-        //if (JniUtil.useChromiumHttpStack()) {
-            //return getCookie(url, false);
-        //}
-        //WebAddress uri;
-        //try {
-            //uri = new WebAddress(url);
-        //} catch (ParseException ex) {
-            //Log.e(LOGTAG, "Bad address: " + url);
-            //return null;
-        //}
-        //return getCookie(uri);
+        
+        
+            
+        
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.332 -0400", hash_original_method = "5ACC35EE5D78B03ACC91967E6F456E58", hash_generated_method = "60331A4C503BC7AD6BB8B060FC5DB4FB")
     public String getCookie(String url, boolean privateBrowsing) {
-        String varB4EAC82CA7396A68D541C85D26508E83_410582073 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1931050294 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_95345666 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_410582073 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1931050294 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_95345666 = null; 
         {
             boolean var0C0A67311072ACF9A11F251AEC847BBE_493522644 = (!JniUtil.useChromiumHttpStack());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_410582073 = getCookie(url);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         WebAddress uri = null;
         try 
         {
             uri = new WebAddress(url);
-        } //End block
+        } 
         catch (ParseException ex)
         {
             varB4EAC82CA7396A68D541C85D26508E83_1931050294 = null;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_95345666 = nativeGetCookie(uri.toString(), privateBrowsing);
         addTaint(url.getTaint());
         addTaint(privateBrowsing);
-        String varA7E53CE21691AB073D9660D615818899_1687302162; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1687302162; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1687302162 = varB4EAC82CA7396A68D541C85D26508E83_410582073;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1687302162 = varB4EAC82CA7396A68D541C85D26508E83_1931050294;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1687302162 = varB4EAC82CA7396A68D541C85D26508E83_95345666;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1687302162.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1687302162.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1687302162;
-        // ---------- Original Method ----------
-        //if (!JniUtil.useChromiumHttpStack()) {
-            //return getCookie(url);
-        //}
-        //WebAddress uri;
-        //try {
-            //uri = new WebAddress(url);
-        //} catch (ParseException ex) {
-            //Log.e(LOGTAG, "Bad address: " + url);
-            //return null;
-        //}
-        //return nativeGetCookie(uri.toString(), privateBrowsing);
+        
+        
+            
+        
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.334 -0400", hash_original_method = "BE3F143473537E9CE993D89B685428CF", hash_generated_method = "2919582E026D50B8B6D00EBAC46D7FD0")
     public synchronized String getCookie(WebAddress uri) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1310710554 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_482470672 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_994632699 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_1105672333 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_1042643477 = null; //Variable for return #5
+        String varB4EAC82CA7396A68D541C85D26508E83_1310710554 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_482470672 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_994632699 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1105672333 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1042643477 = null; 
         {
             boolean var9ACB1B3B30D2C0CED704DA8C8B3FC1B9_963683872 = (JniUtil.useChromiumHttpStack());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1310710554 = nativeGetCookie(uri.toString(), false);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_482470672 = null;
-        } //End block
+        } 
         String[] hostAndPath = getHostAndPath(uri);
         {
             varB4EAC82CA7396A68D541C85D26508E83_994632699 = null;
-        } //End block
+        } 
         String baseDomain = getBaseDomain(hostAndPath[0]);
         ArrayList<Cookie> cookieList = mCookieMap.get(baseDomain);
         {
             cookieList = CookieSyncManager.getInstance()
                     .getCookiesForDomain(baseDomain);
             mCookieMap.put(baseDomain, cookieList);
-        } //End block
+        } 
         long now = System.currentTimeMillis();
         boolean secure = HTTPS.equals(uri.getScheme());
         Iterator<Cookie> iter = cookieList.iterator();
@@ -415,10 +425,10 @@ public final class CookieManager {
                     {
                         cookie.lastAcessTime = now;
                         cookieSet.add(cookie);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         StringBuilder ret = new StringBuilder(256);
         Iterator<Cookie> setIter = cookieSet.iterator();
         {
@@ -430,50 +440,51 @@ public final class CookieManager {
                     {
                         ret.append(SEMICOLON);
                         ret.append(WHITE_SPACE);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 ret.append(cookie.name);
                 {
                     ret.append(EQUAL);
                     ret.append(cookie.value);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             boolean var5CF789B206995BB451A167ACD3C23235_1405722750 = (ret.length() > 0);
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1105672333 = ret.toString();
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1042643477 = null;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(uri.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1392702392; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1392702392; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1392702392 = varB4EAC82CA7396A68D541C85D26508E83_1310710554;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1392702392 = varB4EAC82CA7396A68D541C85D26508E83_482470672;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1392702392 = varB4EAC82CA7396A68D541C85D26508E83_994632699;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_1392702392 = varB4EAC82CA7396A68D541C85D26508E83_1105672333;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1392702392 = varB4EAC82CA7396A68D541C85D26508E83_1042643477;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1392702392.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1392702392.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1392702392;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.334 -0400", hash_original_method = "E5896ED24A303B704C1A851D6E9894DE", hash_generated_method = "7B98E0CEF2ED0C681B8B18F98E262D5E")
     public void waitForCookieOperationsToComplete() {
         {
@@ -481,39 +492,41 @@ public final class CookieManager {
                 try 
                 {
                     wait();
-                } //End block
+                } 
                 catch (InterruptedException e)
                 { }
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //while (pendingCookieOperations > 0) {
-                //try {
-                    //wait();
-                //} catch (InterruptedException e) { }
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.335 -0400", hash_original_method = "65B0411E3AAD9BA729084C50D7485B13", hash_generated_method = "B7CAADA5C52530BA6D97746E1DE452FA")
     private synchronized void signalCookieOperationsComplete() {
         notify();
-        // ---------- Original Method ----------
-        //pendingCookieOperations--;
-        //assert pendingCookieOperations > -1;
-        //notify();
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.335 -0400", hash_original_method = "3D00699F37AF6D5720F5926DFEED864B", hash_generated_method = "48E8F9DDFD7E31FC7FD0C53F18A2E40C")
     private synchronized void signalCookieOperationsStart() {
-        // ---------- Original Method ----------
-        //pendingCookieOperations++;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.336 -0400", hash_original_method = "E9CA847999E57130D19A4C553707D595", hash_generated_method = "3075E0E17540D1D09AEA10BAA0EA8239")
     public void removeSessionCookie() {
         signalCookieOperationsStart();
@@ -523,21 +536,21 @@ public final class CookieManager {
                 new AsyncTask<Void, Void, Void>() {                    
                     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.336 -0400", hash_original_method = "DF560F823BF7C351EEB240AF10E95817", hash_generated_method = "5831163CAECB214436390548D0A80F67")
                     protected Void doInBackground(Void... none) {
-                        Void varB4EAC82CA7396A68D541C85D26508E83_817561305 = null; //Variable for return #1
+                        Void varB4EAC82CA7396A68D541C85D26508E83_817561305 = null; 
                         nativeRemoveSessionCookie();
                         signalCookieOperationsComplete();
                         varB4EAC82CA7396A68D541C85D26508E83_817561305 = null;
                         addTaint(none[0].getTaint());
-                        varB4EAC82CA7396A68D541C85D26508E83_817561305.addTaint(getTaint()); //Add taint from parent
+                        varB4EAC82CA7396A68D541C85D26508E83_817561305.addTaint(getTaint()); 
                         return varB4EAC82CA7396A68D541C85D26508E83_817561305;
-                        // ---------- Original Method ----------
-                        //nativeRemoveSessionCookie();
-                        //signalCookieOperationsComplete();
-                        //return null;
+                        
+                        
+                        
+                        
                     }
 }.execute();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final Runnable clearCache = new Runnable() {
             public void run() {
                 synchronized(CookieManager.this) {
@@ -559,19 +572,20 @@ public final class CookieManager {
             }
         };
         new Thread(clearCache).start();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.337 -0400", hash_original_method = "E6726E6A7287E971302CDEBC56D91ADA", hash_generated_method = "DF1A3D3BAA8DAB51A2C505A423006254")
     public void removeAllCookie() {
         {
             boolean var9ACB1B3B30D2C0CED704DA8C8B3FC1B9_18080270 = (JniUtil.useChromiumHttpStack());
             {
                 nativeRemoveAllCookie();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final Runnable clearCache = new Runnable() {
             public void run() {
                 synchronized(CookieManager.this) {
@@ -582,71 +596,74 @@ public final class CookieManager {
             }
         };
         new Thread(clearCache).start();
-        // ---------- Original Method ----------
-        //if (JniUtil.useChromiumHttpStack()) {
-            //nativeRemoveAllCookie();
-            //return;
-        //}
-        //final Runnable clearCache = new Runnable() {
-            //public void run() {
-                //synchronized(CookieManager.this) {
-                    //mCookieMap = new LinkedHashMap<String, ArrayList<Cookie>>(
-                            //MAX_DOMAIN_COUNT, 0.75f, true);
-                    //CookieSyncManager.getInstance().clearAllCookies();
-                //}
-            //}
-        //};
-        //new Thread(clearCache).start();
+        
+        
+            
+            
+        
+        
+            
+                
+                    
+                            
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.337 -0400", hash_original_method = "2201D105B8AC0DA82BEBC1DB9FB29AE8", hash_generated_method = "644C8D6A4BE90D5182DF5AD4C58638E7")
     public synchronized boolean hasCookies() {
         {
             boolean var9ACB1B3B30D2C0CED704DA8C8B3FC1B9_1015674747 = (JniUtil.useChromiumHttpStack());
             {
                 boolean var8A47D9F563B217F231C778B81E4E893A_1439996718 = (hasCookies(false));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean varA1156B6EC3BF3B16EC8E0EFFFE74477E_510328400 = (CookieSyncManager.getInstance().hasCookies());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_620106917 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_620106917;
-        // ---------- Original Method ----------
-        //if (JniUtil.useChromiumHttpStack()) {
-            //return hasCookies(false);
-        //}
-        //return CookieSyncManager.getInstance().hasCookies();
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.338 -0400", hash_original_method = "6C96B3E47AB792BE3053A98B747C02B0", hash_generated_method = "34BFD6B7D66DD70A8BCA4FAF6D873E90")
     public synchronized boolean hasCookies(boolean privateBrowsing) {
         {
             boolean var0C0A67311072ACF9A11F251AEC847BBE_2066198322 = (!JniUtil.useChromiumHttpStack());
             {
                 boolean var0675649B9D327117801A509BA1416818_64491194 = (hasCookies());
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var08F9F6B298BF2816AC0F7C70944E7CDA_1085587478 = (nativeHasCookies(privateBrowsing));
         addTaint(privateBrowsing);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_613353394 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_613353394;
-        // ---------- Original Method ----------
-        //if (!JniUtil.useChromiumHttpStack()) {
-            //return hasCookies();
-        //}
-        //return nativeHasCookies(privateBrowsing);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.338 -0400", hash_original_method = "EBBBDCC80F6ABDA541004A954FD75C00", hash_generated_method = "09405D5A8F32F92BCEABF6265E5BE0A9")
     public void removeExpiredCookie() {
         {
             boolean var9ACB1B3B30D2C0CED704DA8C8B3FC1B9_567896982 = (JniUtil.useChromiumHttpStack());
             {
                 nativeRemoveExpiredCookie();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         final Runnable clearCache = new Runnable() {
             public void run() {
                 synchronized(CookieManager.this) {
@@ -668,8 +685,8 @@ public final class CookieManager {
             }
         };
         new Thread(clearCache).start();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -679,16 +696,17 @@ public final class CookieManager {
             boolean var9ACB1B3B30D2C0CED704DA8C8B3FC1B9_3653846 = (JniUtil.useChromiumHttpStack());
             {
                 nativeFlushCookieStore();
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (JniUtil.useChromiumHttpStack()) {
-            //nativeFlushCookieStore();
-        //}
+            } 
+        } 
+        
+        
+            
+        
     }
 
     
-        public static boolean allowFileSchemeCookies() {
+        @DSModeled(DSC.SAFE)
+    public static boolean allowFileSchemeCookies() {
         if (JniUtil.useChromiumHttpStack()) {
             return nativeAcceptFileSchemeCookies();
         } else {
@@ -697,16 +715,18 @@ public final class CookieManager {
     }
 
     
-        public static void setAcceptFileSchemeCookies(boolean accept) {
+        @DSModeled(DSC.SAFE)
+    public static void setAcceptFileSchemeCookies(boolean accept) {
         if (JniUtil.useChromiumHttpStack()) {
             nativeSetAcceptFileSchemeCookies(accept);
         }
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.340 -0400", hash_original_method = "F607692A589F63FF1216167E4F5DA44E", hash_generated_method = "8A8295E1D83B98365F4D2B64C34DA7F6")
     synchronized ArrayList<Cookie> getUpdatedCookiesSince(long last) {
-        ArrayList<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1778794560 = null; //Variable for return #1
+        ArrayList<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1778794560 = null; 
         ArrayList<Cookie> cookies = new ArrayList<Cookie>();
         Collection<ArrayList<Cookie>> cookieList = mCookieMap.values();
         Iterator<ArrayList<Cookie>> listIter = cookieList.iterator();
@@ -721,33 +741,34 @@ public final class CookieManager {
                         Cookie cookie = iter.next();
                         {
                             cookies.add(cookie);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1778794560 = cookies;
         addTaint(last);
-        varB4EAC82CA7396A68D541C85D26508E83_1778794560.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1778794560.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1778794560;
-        // ---------- Original Method ----------
-        //ArrayList<Cookie> cookies = new ArrayList<Cookie>();
-        //Collection<ArrayList<Cookie>> cookieList = mCookieMap.values();
-        //Iterator<ArrayList<Cookie>> listIter = cookieList.iterator();
-        //while (listIter.hasNext()) {
-            //ArrayList<Cookie> list = listIter.next();
-            //Iterator<Cookie> iter = list.iterator();
-            //while (iter.hasNext()) {
-                //Cookie cookie = iter.next();
-                //if (cookie.lastUpdateTime > last) {
-                    //cookies.add(cookie);
-                //}
-            //}
-        //}
-        //return cookies;
+        
+        
+        
+        
+        
+            
+            
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.340 -0400", hash_original_method = "EBDE0BAE6A65E045698E84F7289F4664", hash_generated_method = "90112C4BD91C519ABB92E794C896A0EB")
     synchronized void deleteACookie(Cookie cookie) {
         {
@@ -759,22 +780,22 @@ public final class CookieManager {
                     boolean varB40BC97479C649DE73A4798204316F84_125077289 = (cookieList.isEmpty());
                     {
                         mCookieMap.remove(baseDomain);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         addTaint(cookie.getTaint());
-        // ---------- Original Method ----------
-        //if (cookie.mode == Cookie.MODE_DELETED) {
-            //String baseDomain = getBaseDomain(cookie.domain);
-            //ArrayList<Cookie> cookieList = mCookieMap.get(baseDomain);
-            //if (cookieList != null) {
-                //cookieList.remove(cookie);
-                //if (cookieList.isEmpty()) {
-                    //mCookieMap.remove(baseDomain);
-                //}
-            //}
-        //}
+        
+        
+            
+            
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
@@ -782,14 +803,15 @@ public final class CookieManager {
     synchronized void syncedACookie(Cookie cookie) {
         cookie.mode = Cookie.MODE_NORMAL;
         addTaint(cookie.getTaint());
-        // ---------- Original Method ----------
-        //cookie.mode = Cookie.MODE_NORMAL;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.343 -0400", hash_original_method = "37E656A6EDF347445C1655B2E42F538E", hash_generated_method = "D0D0202CD46F987DAC46665B4998BD84")
     synchronized ArrayList<Cookie> deleteLRUDomain() {
-        ArrayList<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1735604353 = null; //Variable for return #1
+        ArrayList<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1735604353 = null; 
         int count = 0;
         int byteCount = 0;
         int mapSize = mCookieMap.size();
@@ -813,15 +835,15 @@ public final class CookieManager {
                                         ? cookie.value.length()
                                         : 0)
                                 + 14;
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                            } 
+                        } 
+                    } 
                     {
                         count += list.size();
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         ArrayList<Cookie> retlist = new ArrayList<Cookie>();
         {
             Object[] domains = mCookieMap.keySet().toArray();
@@ -830,21 +852,22 @@ public final class CookieManager {
                 String domain = domains[toGo].toString();
                 retlist.addAll(mCookieMap.get(domain));
                 mCookieMap.remove(domain);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1735604353 = retlist;
-        varB4EAC82CA7396A68D541C85D26508E83_1735604353.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1735604353.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1735604353;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.344 -0400", hash_original_method = "5193D0EACEE146C23C2F9C98185BC9CF", hash_generated_method = "5FA356BA0EEF6AA35F07FDFD4383C6F9")
     private String[] getHostAndPath(WebAddress uri) {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1066740513 = null; //Variable for return #1
-        String[] varB4EAC82CA7396A68D541C85D26508E83_584433328 = null; //Variable for return #2
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1375888019 = null; //Variable for return #3
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1066740513 = null; 
+        String[] varB4EAC82CA7396A68D541C85D26508E83_584433328 = null; 
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1375888019 = null; 
         {
             boolean varB5FF893C44F641B4F7CF23797BB4095A_1524654262 = (uri.getHost() != null && uri.getPath() != null);
             {
@@ -857,98 +880,100 @@ public final class CookieManager {
                         boolean var7AFAB69A16A288F76D0E2FCFA532519E_258303902 = (uri.getScheme().equalsIgnoreCase("file"));
                         {
                             ret[0] = "localhost";
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     boolean varB791FB78F104615FDEB847DBBFA3AAC1_484913411 = (index == ret[0].lastIndexOf(PERIOD));
                     {
                         ret[0] = PERIOD + ret[0];
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varBF520D714B28C887CB3153C5B5D328FA_1175557709 = (ret[1].charAt(0) != PATH_DELIM);
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1066740513 = null;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 index = ret[1].indexOf(QUESTION_MARK);
                 {
                     ret[1] = ret[1].substring(0, index);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_584433328 = ret;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1375888019 = null;
-        } //End collapsed parenthetic
+        } 
         addTaint(uri.getTaint());
-        String[] varA7E53CE21691AB073D9660D615818899_1554538235; //Final return value
+        String[] varA7E53CE21691AB073D9660D615818899_1554538235; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1554538235 = varB4EAC82CA7396A68D541C85D26508E83_1066740513;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1554538235 = varB4EAC82CA7396A68D541C85D26508E83_584433328;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1554538235 = varB4EAC82CA7396A68D541C85D26508E83_1375888019;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1554538235.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1554538235.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1554538235;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.345 -0400", hash_original_method = "0BC29AC3055E44155EBF14855C5D487F", hash_generated_method = "4F01DF92278297380F5D8D87B67DC966")
     private String getBaseDomain(String host) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1465357665 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_523780621 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1465357665 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_523780621 = null; 
         int startIndex = 0;
         int nextIndex = host.indexOf(PERIOD);
         int lastIndex = host.lastIndexOf(PERIOD);
         {
             startIndex = nextIndex + 1;
             nextIndex = host.indexOf(PERIOD, startIndex);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1465357665 = host.substring(startIndex);
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_523780621 = host;
-        } //End block
+        } 
         addTaint(host.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_612917063; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_612917063; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_612917063 = varB4EAC82CA7396A68D541C85D26508E83_1465357665;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_612917063 = varB4EAC82CA7396A68D541C85D26508E83_523780621;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_612917063.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_612917063.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_612917063;
-        // ---------- Original Method ----------
-        //int startIndex = 0;
-        //int nextIndex = host.indexOf(PERIOD);
-        //int lastIndex = host.lastIndexOf(PERIOD);
-        //while (nextIndex < lastIndex) {
-            //startIndex = nextIndex + 1;
-            //nextIndex = host.indexOf(PERIOD, startIndex);
-        //}
-        //if (startIndex > 0) {
-            //return host.substring(startIndex);
-        //} else {
-            //return host;
-        //}
+        
+        
+        
+        
+        
+            
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.348 -0400", hash_original_method = "686D7BF75F67F22DBAC0E1E36B7A58EB", hash_generated_method = "39B74C769B7865DB328AE63D768F5393")
     private ArrayList<Cookie> parseCookie(String host, String path,
             String cookieString) {
-        ArrayList<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1975461344 = null; //Variable for return #1
+        ArrayList<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1975461344 = null; 
         ArrayList<Cookie> ret = new ArrayList<Cookie>();
         int index = 0;
         int length = cookieString.length();
@@ -956,17 +981,17 @@ public final class CookieManager {
             Cookie cookie = null;
             {
                 boolean varE8871F9653319A259571D06172D1AEE8_837995981 = (cookieString.charAt(index) == WHITE_SPACE);
-            } //End collapsed parenthetic
+            } 
             int semicolonIndex = cookieString.indexOf(SEMICOLON, index);
             int equalIndex = cookieString.indexOf(EQUAL, index);
             cookie = new Cookie(host, path);
             {
                 {
                     semicolonIndex = length;
-                } //End block
+                } 
                 cookie.name = cookieString.substring(index, semicolonIndex);
                 cookie.value = null;
-            } //End block
+            } 
             {
                 cookie.name = cookieString.substring(index, equalIndex);
                 {
@@ -974,33 +999,33 @@ public final class CookieManager {
                         (cookieString.charAt(equalIndex + 1) == QUOTATION));
                     {
                         index = cookieString.indexOf(QUOTATION, equalIndex + 2);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 semicolonIndex = cookieString.indexOf(SEMICOLON, index);
                 {
                     semicolonIndex = length;
-                } //End block
+                } 
                 {
                     cookie.value = cookieString.substring(equalIndex + 1,
                             equalIndex + 1 + MAX_COOKIE_LENGTH);
-                } //End block
+                } 
                 {
                     cookie.value = "";
-                } //End block
+                } 
                 {
                     cookie.value = cookieString.substring(equalIndex + 1,
                             semicolonIndex);
-                } //End block
-            } //End block
+                } 
+            } 
             index = semicolonIndex;
             {
                 {
                     boolean varBE5EE8D37CFA74C6E90C8AC330A66127_1065024182 = (cookieString.charAt(index) == WHITE_SPACE
                         || cookieString.charAt(index) == SEMICOLON);
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean var59917C993945A4C5AE1ABFE72D45B028_1224530173 = (cookieString.charAt(index) == COMMA);
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean varF3A4A21C55D7FF52C4292FA83141D706_2132881109 = (length - index >= SECURE_LENGTH
                         && cookieString.substring(index, index + SECURE_LENGTH).
@@ -1010,9 +1035,9 @@ public final class CookieManager {
                         cookie.secure = true;
                         {
                             boolean varC88233FC4DC8EC934257FE2094942F69_1893931561 = (cookieString.charAt(index) == EQUAL);
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 {
                     boolean var1D7438053E6770C42AF1477FD3B63C7B_1487708226 = (length - index >= HTTP_ONLY_LENGTH
                         && cookieString.substring(index,
@@ -1022,39 +1047,39 @@ public final class CookieManager {
                         index += HTTP_ONLY_LENGTH;
                         {
                             boolean varC88233FC4DC8EC934257FE2094942F69_350648450 = (cookieString.charAt(index) == EQUAL);
-                        } //End collapsed parenthetic
-                    } //End block
-                } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
                 equalIndex = cookieString.indexOf(EQUAL, index);
                 {
                     String name = cookieString.substring(index, equalIndex).toLowerCase();
                     int valueIndex = equalIndex + 1;
                     {
                         boolean varD1FB05D7CF4103A1B6A2928ACA880533_1645326251 = (valueIndex < length && cookieString.charAt(valueIndex) == WHITE_SPACE);
-                    } //End collapsed parenthetic
+                    } 
                     {
                         boolean var7368C0CDE5A76B546A13F21527AC9C2B_1274814444 = (name.equals(EXPIRES));
                         {
                             int comaIndex = cookieString.indexOf(COMMA, equalIndex);
                             {
                                 index = comaIndex + 1;
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
                     semicolonIndex = cookieString.indexOf(SEMICOLON, index);
                     int commaIndex = cookieString.indexOf(COMMA, index);
                     {
                         index = length;
-                    } //End block
+                    } 
                     {
                         index = commaIndex;
-                    } //End block
+                    } 
                     {
                         index = semicolonIndex;
-                    } //End block
+                    } 
                     {
                         index = Math.min(semicolonIndex, commaIndex);
-                    } //End block
+                    } 
                     String value = cookieString.substring(valueIndex, index);
                     {
                         boolean varF3B26F622B3BA344243C3452C5EAD85F_979108272 = (value.length() > 2 && value.charAt(0) == QUOTATION);
@@ -1062,19 +1087,19 @@ public final class CookieManager {
                             int endQuote = value.indexOf(QUOTATION, 1);
                             {
                                 value = value.substring(1, endQuote);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
+                            } 
+                        } 
+                    } 
                     {
                         boolean var7368C0CDE5A76B546A13F21527AC9C2B_1007744649 = (name.equals(EXPIRES));
                         {
                             try 
                             {
                                 cookie.expires = AndroidHttpClient.parseDate(value);
-                            } //End block
+                            } 
                             catch (IllegalArgumentException ex)
                             { }
-                        } //End block
+                        } 
                         {
                             boolean var6564460B5C30271EE1EFF78DDBB789FB_802532391 = (name.equals(MAX_AGE));
                             {
@@ -1082,10 +1107,10 @@ public final class CookieManager {
                                 {
                                     cookie.expires = System.currentTimeMillis() + 1000
                                     * Long.parseLong(value);
-                                } //End block
+                                } 
                                 catch (NumberFormatException ex)
                                 { }
-                            } //End block
+                            } 
                             {
                                 boolean var0A9AF45F54D476ACC0274E0E6DAC2FA0_1735046441 = (name.equals(PATH));
                                 {
@@ -1093,16 +1118,16 @@ public final class CookieManager {
                                         boolean var0E83E73D0EFF9C33CBD153EB762D02A2_1150459580 = (value.length() > 0);
                                         {
                                             cookie.path = value;
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
+                                        } 
+                                    } 
+                                } 
                                 {
                                     boolean varF74E07688049599069565E410921F574_1640526725 = (name.equals(DOMAIN));
                                     {
                                         int lastPeriod = value.lastIndexOf(PERIOD);
                                         {
                                             cookie.domain = null;
-                                        } //End block
+                                        } 
                                         try 
                                         {
                                             Integer.parseInt(value.substring(lastPeriod + 1));
@@ -1110,9 +1135,9 @@ public final class CookieManager {
                                                 boolean varE1CD484A077BCDA29486EAC1AD09FE74_1299867402 = (!value.equals(host));
                                                 {
                                                     cookie.domain = null;
-                                                } //End block
-                                            } //End collapsed parenthetic
-                                        } //End block
+                                                } 
+                                            } 
+                                        } 
                                         catch (NumberFormatException ex)
                                         { }
                                         value = value.toLowerCase();
@@ -1120,8 +1145,8 @@ public final class CookieManager {
                                             boolean varE2B53F95599A2D49216C544D11EF4ECC_2121431251 = (value.charAt(0) != PERIOD);
                                             {
                                                 value = PERIOD + value;
-                                            } //End block
-                                        } //End collapsed parenthetic
+                                            } 
+                                        } 
                                         {
                                             boolean var10024EBAA7EEAAC0A256BE84E1366563_117349691 = (host.endsWith(value.substring(1)));
                                             {
@@ -1132,45 +1157,45 @@ public final class CookieManager {
                                     && host.charAt(hostLen - len) != PERIOD);
                                                     {
                                                         cookie.domain = null;
-                                                    } //End block
-                                                } //End collapsed parenthetic
+                                                    } 
+                                                } 
                                                 {
                                                     String s = value.substring(1, lastPeriod);
                                                     {
                                                         boolean var6C41572AF3F94E5C989F9F99887AAEBD_1514473709 = (Arrays.binarySearch(BAD_COUNTRY_2LDS, s) >= 0);
                                                         {
                                                             cookie.domain = null;
-                                                        } //End block
-                                                    } //End collapsed parenthetic
-                                                } //End block
+                                                        } 
+                                                    } 
+                                                } 
                                                 cookie.domain = value;
-                                            } //End block
+                                            } 
                                             {
                                                 cookie.domain = null;
-                                            } //End block
-                                        } //End collapsed parenthetic
-                                    } //End block
-                                } //End collapsed parenthetic
-                            } //End collapsed parenthetic
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End block
+                                            } 
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     index = length;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 ret.add(cookie);
-            } //End block
-        } //End block
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1975461344 = ret;
         addTaint(host.getTaint());
         addTaint(path.getTaint());
         addTaint(cookieString.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1975461344.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1975461344.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1975461344;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1258,7 +1283,7 @@ public final class CookieManager {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.354 -0400", hash_original_method = "91108A58846CEDD8DA5905902DEE69F4", hash_generated_method = "0337FD9DF266AE2D58305A9F66087523")
           Cookie() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1267,10 +1292,10 @@ public final class CookieManager {
             domain = defaultDomain;
             path = defaultPath;
             expires = -1;
-            // ---------- Original Method ----------
-            //domain = defaultDomain;
-            //path = defaultPath;
-            //expires = -1;
+            
+            
+            
+            
         }
 
         
@@ -1282,10 +1307,10 @@ public final class CookieManager {
             addTaint(in.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_879266888 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_879266888;
-            // ---------- Original Method ----------
-            //boolean valuesMatch = !((value == null) ^ (in.value == null));
-            //return domain.equals(in.domain) && path.equals(in.path) &&
-                    //name.equals(in.name) && valuesMatch;
+            
+            
+            
+                    
         }
 
         
@@ -1301,31 +1326,31 @@ public final class CookieManager {
                             int urlLen = urlHost.length();
                             {
                                 boolean var0474A224C63EE86B2A0F82273C401629_119736022 = (urlHost.charAt(urlLen - len) == PERIOD);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 {
                     boolean var92CC2FDDED6B31734455343B1116D0F1_2000141609 = (urlHost.equals(domain));
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(urlHost.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_740734510 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_740734510;
-            // ---------- Original Method ----------
-            //if (domain.startsWith(".")) {
-                //if (urlHost.endsWith(domain.substring(1))) {
-                    //int len = domain.length();
-                    //int urlLen = urlHost.length();
-                    //if (urlLen > len - 1) {
-                        //return urlHost.charAt(urlLen - len) == PERIOD;
-                    //}
-                    //return true;
-                //}
-                //return false;
-            //} else {
-                //return urlHost.equals(domain);
-            //}
+            
+            
+                
+                    
+                    
+                    
+                        
+                    
+                    
+                
+                
+            
+                
+            
         }
 
         
@@ -1340,40 +1365,40 @@ public final class CookieManager {
                         boolean var652449ECDCA9F03141F3688013BBBCE1_1556679846 = (path.charAt(len-1) != PATH_DELIM && urlLen > len);
                         {
                             boolean var0556DC25417548B062FF41011508D659_1822417620 = (urlPath.charAt(len) == PATH_DELIM);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             addTaint(urlPath.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_254132644 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_254132644;
-            // ---------- Original Method ----------
-            //if (urlPath.startsWith(path)) {
-                //int len = path.length();
-                //if (len == 0) {
-                    //Log.w(LOGTAG, "Empty cookie path");
-                    //return false;
-                //}
-                //int urlLen = urlPath.length();
-                //if (path.charAt(len-1) != PATH_DELIM && urlLen > len) {
-                    //return urlPath.charAt(len) == PATH_DELIM;
-                //}
-                //return true;
-            //}
-            //return false;
+            
+            
+                
+                
+                    
+                    
+                
+                
+                
+                    
+                
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.359 -0400", hash_original_method = "08415E5687C0C693DFF8536ADAD3E2AA", hash_generated_method = "4B079B01994B961C935F884FB0A83EE0")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1754047897 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1754047897 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1754047897 = "domain: " + domain + "; path: " + path + "; name: " + name
                     + "; value: " + value;
-            varB4EAC82CA7396A68D541C85D26508E83_1754047897.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1754047897.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1754047897;
-            // ---------- Original Method ----------
-            //return "domain: " + domain + "; path: " + path + "; name: " + name
-                    //+ "; value: " + value;
+            
+            
+                    
         }
 
         
@@ -1398,7 +1423,7 @@ public final class CookieManager {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.359 -0400", hash_original_method = "EA07F3AA36DD3B1C5469CE7D110356B0", hash_generated_method = "EA07F3AA36DD3B1C5469CE7D110356B0")
         public CookieComparator ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1411,19 +1436,19 @@ public final class CookieManager {
             addTaint(cookie2.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_814568922 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_814568922;
-            // ---------- Original Method ----------
-            //int diff = cookie2.path.length() - cookie1.path.length();
-            //if (diff != 0) return diff;
-            //diff = cookie2.domain.length() - cookie1.domain.length();
-            //if (diff != 0) return diff;
-            //if (cookie2.value == null) {
-                //if (cookie1.value != null) {
-                    //return -1;
-                //}
-            //} else if (cookie1.value == null) {
-                //return 1;
-            //}
-            //return cookie1.name.compareTo(cookie2.name);
+            
+            
+            
+            
+            
+            
+                
+                    
+                
+            
+                
+            
+            
         }
 
         

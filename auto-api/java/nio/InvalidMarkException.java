@@ -1,18 +1,18 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class InvalidMarkException extends IllegalStateException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.569 -0400", hash_original_method = "B1EE027FE89EEC127536AB7DEF53C391", hash_generated_method = "02636A3D0215C600F7C165854E4FB0DC")
     public  InvalidMarkException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class InvalidMarkException extends IllegalStateException {
     public  InvalidMarkException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

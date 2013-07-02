@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Handler;
 import android.os.Message;
@@ -31,7 +31,7 @@ public final class WebStorage {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.023 -0400", hash_original_method = "45EE8E569EE103CF8A5587A04223DD11", hash_generated_method = "45EE8E569EE103CF8A5587A04223DD11")
     public WebStorage ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -42,36 +42,36 @@ public final class WebStorage {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.024 -0400", hash_original_method = "E046AB9893C69470BF91F70EA6B66946", hash_generated_method = "53BDF39D8E599B75604BB42E25DF48B6")
                 @Override
                 public void handleMessage(Message msg) {
-                    //Begin case RETURN_ORIGINS 
+                    
                     {
                         Map values = (Map) msg.obj;
                         Map origins = (Map) values.get(ORIGINS);
                         ValueCallback<Map> callback = (ValueCallback<Map>) values.get(CALLBACK);
                         callback.onReceiveValue(origins);
-                    } //End block
-                    //End case RETURN_ORIGINS 
-                    //Begin case RETURN_USAGE_ORIGIN 
+                    } 
+                    
+                    
                     {
                         Map values = (Map) msg.obj;
                         ValueCallback<Long> callback = (ValueCallback<Long>) values.get(CALLBACK);
                         callback.onReceiveValue((Long)values.get(USAGE));
-                    } //End block
-                    //End case RETURN_USAGE_ORIGIN 
-                    //Begin case RETURN_QUOTA_ORIGIN 
+                    } 
+                    
+                    
                     {
                         Map values = (Map) msg.obj;
                         ValueCallback<Long> callback = (ValueCallback<Long>) values.get(CALLBACK);
                         callback.onReceiveValue((Long)values.get(QUOTA));
-                    } //End block
-                    //End case RETURN_QUOTA_ORIGIN 
+                    } 
+                    
                     addTaint(msg.getTaint());
-                    // ---------- Original Method ----------
-                    // Original Method Too Long, Refer to Original Implementation
+                    
+                    
                 }
 };
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -82,23 +82,23 @@ public final class WebStorage {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.027 -0400", hash_original_method = "9AB12BF7A5C5C253376F63645993E150", hash_generated_method = "EB0BBE874A902EDBE9512205D4DFD10D")
                 @Override
                 public void handleMessage(Message msg) {
-                    //Begin case SET_QUOTA_ORIGIN 
+                    
                     {
                         Origin website = (Origin) msg.obj;
                         nativeSetQuotaForOrigin(website.getOrigin(),
                                                     website.getQuota());
-                    } //End block
-                    //End case SET_QUOTA_ORIGIN 
-                    //Begin case DELETE_ORIGIN 
+                    } 
+                    
+                    
                     {
                         Origin website = (Origin) msg.obj;
                         nativeDeleteOrigin(website.getOrigin());
-                    } //End block
-                    //End case DELETE_ORIGIN 
-                    //Begin case DELETE_ALL 
+                    } 
+                    
+                    
                     nativeDeleteAllData();
-                    //End case DELETE_ALL 
-                    //Begin case GET_ORIGINS 
+                    
+                    
                     {
                         syncValues();
                         ValueCallback callback = (ValueCallback) msg.obj;
@@ -107,9 +107,9 @@ public final class WebStorage {
                         values.put(CALLBACK, callback);
                         values.put(ORIGINS, origins);
                         postUIMessage(Message.obtain(null, RETURN_ORIGINS, values));
-                    } //End block
-                    //End case GET_ORIGINS 
-                    //Begin case GET_USAGE_ORIGIN 
+                    } 
+                    
+                    
                     {
                         syncValues();
                         Map values = (Map) msg.obj;
@@ -121,11 +121,11 @@ public final class WebStorage {
                         {
                             long usage = website.getUsage();
                             retValues.put(USAGE, new Long(usage));
-                        } //End block
+                        } 
                         postUIMessage(Message.obtain(null, RETURN_USAGE_ORIGIN, retValues));
-                    } //End block
-                    //End case GET_USAGE_ORIGIN 
-                    //Begin case GET_QUOTA_ORIGIN 
+                    } 
+                    
+                    
                     {
                         syncValues();
                         Map values = (Map) msg.obj;
@@ -137,21 +137,21 @@ public final class WebStorage {
                         {
                             long quota = website.getQuota();
                             retValues.put(QUOTA, new Long(quota));
-                        } //End block
+                        } 
                         postUIMessage(Message.obtain(null, RETURN_QUOTA_ORIGIN, retValues));
-                    } //End block
-                    //End case GET_QUOTA_ORIGIN 
-                    //Begin case UPDATE 
+                    } 
+                    
+                    
                     syncValues();
-                    //End case UPDATE 
+                    
                     addTaint(msg.getTaint());
-                    // ---------- Original Method ----------
-                    // Original Method Too Long, Refer to Original Implementation
+                    
+                    
                 }
 };
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -163,54 +163,54 @@ public final class WebStorage {
                 {
                     syncValues();
                     callback.onReceiveValue(mOrigins);
-                } //End block
+                } 
                 {
                     postMessage(Message.obtain(null, GET_ORIGINS, callback));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //if (callback != null) {
-            //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
-                //syncValues();
-                //callback.onReceiveValue(mOrigins);
-            //} else {
-                //postMessage(Message.obtain(null, GET_ORIGINS, callback));
-            //}
-        //}
+        
+        
+            
+                
+                
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.028 -0400", hash_original_method = "20875F7A30B9C28B41BC562F884EFBD9", hash_generated_method = "037DA8ED5BD79AD148D1B9086C586971")
      Collection<Origin> getOriginsSync() {
-        Collection<Origin> varB4EAC82CA7396A68D541C85D26508E83_452940126 = null; //Variable for return #1
-        Collection<Origin> varB4EAC82CA7396A68D541C85D26508E83_503852233 = null; //Variable for return #2
+        Collection<Origin> varB4EAC82CA7396A68D541C85D26508E83_452940126 = null; 
+        Collection<Origin> varB4EAC82CA7396A68D541C85D26508E83_503852233 = null; 
         {
             boolean var1F2F1B674DC9185D7C933584E9557068_1930799637 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
             {
                 update();
                 varB4EAC82CA7396A68D541C85D26508E83_452940126 = mOrigins.values();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_503852233 = null;
-        Collection<Origin> varA7E53CE21691AB073D9660D615818899_1349869295; //Final return value
+        Collection<Origin> varA7E53CE21691AB073D9660D615818899_1349869295; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1349869295 = varB4EAC82CA7396A68D541C85D26508E83_452940126;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1349869295 = varB4EAC82CA7396A68D541C85D26508E83_503852233;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1349869295.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1349869295.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1349869295;
-        // ---------- Original Method ----------
-        //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
-            //update();
-            //return mOrigins.values();
-        //}
-        //return null;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -218,41 +218,41 @@ public final class WebStorage {
     public void getUsageForOrigin(String origin, ValueCallback<Long> callback) {
         {
             callback.onReceiveValue(null);
-        } //End block
+        } 
         {
             boolean var1F2F1B674DC9185D7C933584E9557068_1085533532 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
             {
                 syncValues();
                 Origin website = mOrigins.get(origin);
                 callback.onReceiveValue(new Long(website.getUsage()));
-            } //End block
+            } 
             {
                 HashMap values = new HashMap<String, Object>();
                 values.put(ORIGIN, origin);
                 values.put(CALLBACK, callback);
                 postMessage(Message.obtain(null, GET_USAGE_ORIGIN, values));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(origin.getTaint());
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //if (callback == null) {
-            //return;
-        //}
-        //if (origin == null) {
-            //callback.onReceiveValue(null);
-            //return;
-        //}
-        //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
-            //syncValues();
-            //Origin website = mOrigins.get(origin);
-            //callback.onReceiveValue(new Long(website.getUsage()));
-        //} else {
-            //HashMap values = new HashMap<String, Object>();
-            //values.put(ORIGIN, origin);
-            //values.put(CALLBACK, callback);
-            //postMessage(Message.obtain(null, GET_USAGE_ORIGIN, values));
-        //}
+        
+        
+            
+        
+        
+            
+            
+        
+        
+            
+            
+            
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -260,41 +260,41 @@ public final class WebStorage {
     public void getQuotaForOrigin(String origin, ValueCallback<Long> callback) {
         {
             callback.onReceiveValue(null);
-        } //End block
+        } 
         {
             boolean var1F2F1B674DC9185D7C933584E9557068_455560817 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
             {
                 syncValues();
                 Origin website = mOrigins.get(origin);
                 callback.onReceiveValue(new Long(website.getUsage()));
-            } //End block
+            } 
             {
                 HashMap values = new HashMap<String, Object>();
                 values.put(ORIGIN, origin);
                 values.put(CALLBACK, callback);
                 postMessage(Message.obtain(null, GET_QUOTA_ORIGIN, values));
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(origin.getTaint());
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //if (callback == null) {
-            //return;
-        //}
-        //if (origin == null) {
-            //callback.onReceiveValue(null);
-            //return;
-        //}
-        //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
-            //syncValues();
-            //Origin website = mOrigins.get(origin);
-            //callback.onReceiveValue(new Long(website.getUsage()));
-        //} else {
-            //HashMap values = new HashMap<String, Object>();
-            //values.put(ORIGIN, origin);
-            //values.put(CALLBACK, callback);
-            //postMessage(Message.obtain(null, GET_QUOTA_ORIGIN, values));
-        //}
+        
+        
+            
+        
+        
+            
+            
+        
+        
+            
+            
+            
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -305,24 +305,24 @@ public final class WebStorage {
                 boolean var1D1539BC3F985EF6F27916DFF0F70DCB_1093694120 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
                 {
                     nativeSetQuotaForOrigin(origin, quota);
-                } //End block
+                } 
                 {
                     postMessage(Message.obtain(null, SET_QUOTA_ORIGIN,
                     new Origin(origin, quota)));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(origin.getTaint());
         addTaint(quota);
-        // ---------- Original Method ----------
-        //if (origin != null) {
-            //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
-                //nativeSetQuotaForOrigin(origin, quota);
-            //} else {
-                //postMessage(Message.obtain(null, SET_QUOTA_ORIGIN,
-                    //new Origin(origin, quota)));
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+                    
+            
+        
     }
 
     
@@ -333,23 +333,23 @@ public final class WebStorage {
                 boolean var1D1539BC3F985EF6F27916DFF0F70DCB_1490949633 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
                 {
                     nativeDeleteOrigin(origin);
-                } //End block
+                } 
                 {
                     postMessage(Message.obtain(null, DELETE_ORIGIN,
                     new Origin(origin)));
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         addTaint(origin.getTaint());
-        // ---------- Original Method ----------
-        //if (origin != null) {
-            //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
-                //nativeDeleteOrigin(origin);
-            //} else {
-                //postMessage(Message.obtain(null, DELETE_ORIGIN,
-                    //new Origin(origin)));
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+                    
+            
+        
     }
 
     
@@ -359,17 +359,17 @@ public final class WebStorage {
             boolean var1F2F1B674DC9185D7C933584E9557068_161373450 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
             {
                 nativeDeleteAllData();
-            } //End block
+            } 
             {
                 postMessage(Message.obtain(null, DELETE_ALL));
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
-            //nativeDeleteAllData();
-        //} else {
-            //postMessage(Message.obtain(null, DELETE_ALL));
-        //}
+            } 
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -377,8 +377,8 @@ public final class WebStorage {
     public void setAppCacheMaximumSize(long size) {
         nativeSetAppCacheMaximumSize(size);
         addTaint(size);
-        // ---------- Original Method ----------
-        //nativeSetAppCacheMaximumSize(size);
+        
+        
     }
 
     
@@ -386,12 +386,12 @@ public final class WebStorage {
     private synchronized void postMessage(Message msg) {
         {
             mHandler.sendMessage(msg);
-        } //End block
+        } 
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //if (mHandler != null) {
-            //mHandler.sendMessage(msg);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -399,12 +399,12 @@ public final class WebStorage {
     private void postUIMessage(Message msg) {
         {
             mUIHandler.sendMessage(msg);
-        } //End block
+        } 
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //if (mUIHandler != null) {
-            //mUIHandler.sendMessage(msg);
-        //}
+        
+        
+            
+        
     }
 
     
@@ -422,17 +422,17 @@ public final class WebStorage {
             boolean var1F2F1B674DC9185D7C933584E9557068_1879428302 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
             {
                 syncValues();
-            } //End block
+            } 
             {
                 postMessage(Message.obtain(null, UPDATE));
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
-            //syncValues();
-        //} else {
-            //postMessage(Message.obtain(null, UPDATE));
-        //}
+            } 
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -449,17 +449,17 @@ public final class WebStorage {
                                  nativeGetQuotaForOrigin(origin),
                                  nativeGetUsageForOrigin(origin));
                 mOrigins.put(origin, website);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //Set<String> tmp = nativeGetOrigins();
-        //mOrigins = new HashMap<String, Origin>();
-        //for (String origin : tmp) {
-            //Origin website = new Origin(origin,
-                                 //nativeGetQuotaForOrigin(origin),
-                                 //nativeGetUsageForOrigin(origin));
-            //mOrigins.put(origin, website);
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+                                 
+                                 
+            
+        
     }
 
     
@@ -513,10 +513,10 @@ public final class WebStorage {
             mOrigin = origin;
             mQuota = quota;
             mUsage = usage;
-            // ---------- Original Method ----------
-            //mOrigin = origin;
-            //mQuota = quota;
-            //mUsage = usage;
+            
+            
+            
+            
         }
 
         
@@ -524,28 +524,28 @@ public final class WebStorage {
         private  Origin(String origin, long quota) {
             mOrigin = origin;
             mQuota = quota;
-            // ---------- Original Method ----------
-            //mOrigin = origin;
-            //mQuota = quota;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.041 -0400", hash_original_method = "EABE3A839C363BB6725AAE2908A0D269", hash_generated_method = "231D896CFDCFAA5D10466EAE91ED23CC")
         private  Origin(String origin) {
             mOrigin = origin;
-            // ---------- Original Method ----------
-            //mOrigin = origin;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:06.041 -0400", hash_original_method = "1C35B3C80693DCFAD3BBB071D3FEEF91", hash_generated_method = "77D52D0B4F9DA9B3F7ED8FCE4DFEE654")
         public String getOrigin() {
-            String varB4EAC82CA7396A68D541C85D26508E83_865759349 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_865759349 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_865759349 = mOrigin;
-            varB4EAC82CA7396A68D541C85D26508E83_865759349.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_865759349.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_865759349;
-            // ---------- Original Method ----------
-            //return mOrigin;
+            
+            
         }
 
         
@@ -553,8 +553,8 @@ public final class WebStorage {
         public long getQuota() {
             long var0F5264038205EDFB1AC05FBB0E8C5E94_679957732 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_679957732;
-            // ---------- Original Method ----------
-            //return mQuota;
+            
+            
         }
 
         
@@ -562,8 +562,8 @@ public final class WebStorage {
         public long getUsage() {
             long var0F5264038205EDFB1AC05FBB0E8C5E94_335402996 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_335402996;
-            // ---------- Original Method ----------
-            //return mUsage;
+            
+            
         }
 
         

@@ -1,11 +1,11 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -31,46 +31,48 @@ public class BasicListHeaderIterator implements HeaderIterator {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Header list must not be null.");
-        } //End block
+        } 
         this.allHeaders = headers;
         this.headerName = name;
         this.currentIndex = findNext(-1);
         this.lastIndex = -1;
-        // ---------- Original Method ----------
-        //if (headers == null) {
-            //throw new IllegalArgumentException
-                //("Header list must not be null.");
-        //}
-        //this.allHeaders = headers;
-        //this.headerName = name;
-        //this.currentIndex = findNext(-1);
-        //this.lastIndex = -1;
+        
+        
+            
+                
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.202 -0400", hash_original_method = "AE89C08F08BB3F2E2361D882A86E08E6", hash_generated_method = "8D407EEEB8926F6EB65A4907EC7B85D9")
     protected int findNext(int from) {
         final int to = this.allHeaders.size()-1;
         boolean found = false;
         {
             found = filterHeader(from);
-        } //End block
+        } 
         addTaint(from);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1212261913 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1212261913;
-        // ---------- Original Method ----------
-        //if (from < -1)
-            //return -1;
-        //final int to = this.allHeaders.size()-1;
-        //boolean found = false;
-        //while (!found && (from < to)) {
-            //from++;
-            //found = filterHeader(from);
-        //}
-        //return found ? from : -1;
+        
+        
+            
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.202 -0400", hash_original_method = "DC309B64F8D7236BD3D5DA9945B2E659", hash_generated_method = "A9017B1684C25139524C3321AB7338F0")
     protected boolean filterHeader(int index) {
         final String name = ((Header)this.allHeaders.get(index)).getName();
@@ -78,11 +80,11 @@ public class BasicListHeaderIterator implements HeaderIterator {
         addTaint(index);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1979903186 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1979903186;
-        // ---------- Original Method ----------
-        //if (this.headerName == null)
-            //return true;
-        //final String name = ((Header)this.allHeaders.get(index)).getName();
-        //return this.headerName.equalsIgnoreCase(name);
+        
+        
+            
+        
+        
     }
 
     
@@ -90,59 +92,61 @@ public class BasicListHeaderIterator implements HeaderIterator {
     public boolean hasNext() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_859206183 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_859206183;
-        // ---------- Original Method ----------
-        //return (this.currentIndex >= 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.203 -0400", hash_original_method = "8B480335A0C8328D28D73B9B4CAA13A8", hash_generated_method = "44DD39B385DD683D7B633FF0D0CE7F09")
     public Header nextHeader() throws NoSuchElementException {
-        Header varB4EAC82CA7396A68D541C85D26508E83_674337216 = null; //Variable for return #1
+        Header varB4EAC82CA7396A68D541C85D26508E83_674337216 = null; 
         final int current = this.currentIndex;
         {
             if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException("Iteration already finished.");
-        } //End block
+        } 
         this.lastIndex    = current;
         this.currentIndex = findNext(current);
         varB4EAC82CA7396A68D541C85D26508E83_674337216 = (Header) this.allHeaders.get(current);
-        varB4EAC82CA7396A68D541C85D26508E83_674337216.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_674337216.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_674337216;
-        // ---------- Original Method ----------
-        //final int current = this.currentIndex;
-        //if (current < 0) {
-            //throw new NoSuchElementException("Iteration already finished.");
-        //}
-        //this.lastIndex    = current;
-        //this.currentIndex = findNext(current);
-        //return (Header) this.allHeaders.get(current);
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.204 -0400", hash_original_method = "52795801AD2FF0B406EF0189CBA87E8B", hash_generated_method = "78FAF49DB99761AAE04135F4B83E6944")
     public final Object next() throws NoSuchElementException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1309103054 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1309103054 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1309103054 = nextHeader();
-        varB4EAC82CA7396A68D541C85D26508E83_1309103054.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1309103054.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1309103054;
-        // ---------- Original Method ----------
-        //return nextHeader();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.204 -0400", hash_original_method = "38E9BF9964D831A9048EA81D99CFEC10", hash_generated_method = "D11EF3EEB5C33AF27D17E21AD8CB25BA")
     public void remove() throws UnsupportedOperationException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No header to remove.");
-        } //End block
+        } 
         this.allHeaders.remove(this.lastIndex);
         this.lastIndex = -1;
-        // ---------- Original Method ----------
-        //if (this.lastIndex < 0) {
-            //throw new IllegalStateException("No header to remove.");
-        //}
-        //this.allHeaders.remove(this.lastIndex);
-        //this.lastIndex = -1;
-        //this.currentIndex--;
+        
+        
+            
+        
+        
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 
@@ -21,24 +21,24 @@ public class DERGeneralString extends ASN1Object implements DERString {
             int i = 0;
             {
                 cs[i] = (char)(string[i] & 0xff);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.string = new String(cs);
-        // ---------- Original Method ----------
-        //char[] cs = new char[string.length];
-        //for (int i = 0; i != cs.length; i++)
-        //{
-            //cs[i] = (char)(string[i] & 0xff);
-        //}
-        //this.string = new String(cs);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.421 -0400", hash_original_method = "3F7BE61BE73D3159504C79D758BB363A", hash_generated_method = "F86DDB26CE3D7779080C2999FF08166A")
     public  DERGeneralString(String string) {
         this.string = string;
-        // ---------- Original Method ----------
-        //this.string = string;
+        
+        
     }
 
     
@@ -70,23 +70,23 @@ public class DERGeneralString extends ASN1Object implements DERString {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.422 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "F0FE7BE8BD3A0FE38AB74087E00A6B2C")
     public String getString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1988421204 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1988421204 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1988421204 = string;
-        varB4EAC82CA7396A68D541C85D26508E83_1988421204.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1988421204.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1988421204;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:43.422 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "D028C31C49A99CEA77DBF52683BE0442")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1989182209 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1989182209 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1989182209 = string;
-        varB4EAC82CA7396A68D541C85D26508E83_1989182209.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1989182209.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1989182209;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     
@@ -98,18 +98,18 @@ public class DERGeneralString extends ASN1Object implements DERString {
             int i = 0;
             {
                 bs[i] = (byte) cs[i];
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_122919672 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_122919672;
-        // ---------- Original Method ----------
-        //char[] cs = string.toCharArray();
-        //byte[] bs = new byte[cs.length];
-        //for (int i = 0; i != cs.length; i++) 
-        //{
-            //bs[i] = (byte) cs[i];
-        //}
-        //return bs;
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -117,8 +117,8 @@ public class DERGeneralString extends ASN1Object implements DERString {
      void encode(DEROutputStream out) throws IOException {
         out.writeEncoded(GENERAL_STRING, this.getOctets());
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
-        //out.writeEncoded(GENERAL_STRING, this.getOctets());
+        
+        
     }
 
     
@@ -127,8 +127,8 @@ public class DERGeneralString extends ASN1Object implements DERString {
         int var21276083EDE53370F5E1E00F33D2C218_590301094 = (this.getString().hashCode());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_20722147 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_20722147;
-        // ---------- Original Method ----------
-        //return this.getString().hashCode();
+        
+        
     }
 
     
@@ -139,13 +139,13 @@ public class DERGeneralString extends ASN1Object implements DERString {
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2057402425 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2057402425;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERGeneralString)) 
-        //{
-            //return false;
-        //}
-        //DERGeneralString s = (DERGeneralString) o;
-        //return this.getString().equals(s.getString());
+        
+        
+        
+            
+        
+        
+        
     }
 
     

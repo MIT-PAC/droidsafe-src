@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.net.LocalSocketAddress;
 import android.net.LocalSocket;
@@ -21,7 +21,7 @@ class ZygoteStartFailedEx extends Exception {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.015 -0400", hash_original_method = "ED275066D7155C9928305EEFEFCB430D", hash_generated_method = "A0C03F4A220FDB5103694A2C296AF519")
       ZygoteStartFailedEx() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ class ZygoteStartFailedEx extends Exception {
       ZygoteStartFailedEx(String s) {
         super(s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,7 +37,7 @@ class ZygoteStartFailedEx extends Exception {
       ZygoteStartFailedEx(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -48,7 +48,7 @@ public class Process {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.016 -0400", hash_original_method = "F1A8A517686D0631650544C6E6120854", hash_generated_method = "F1A8A517686D0631650544C6E6120854")
     public Process ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -69,6 +69,7 @@ public class Process {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void openZygoteSocketIfNeeded() throws ZygoteStartFailedEx {
         int retryCount;
         if (sPreviousZygoteOpenFailed) {
@@ -119,6 +120,7 @@ public class Process {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static ProcessStartResult zygoteSendArgsAndGetResult(ArrayList<String> args) throws ZygoteStartFailedEx {
         openZygoteSocketIfNeeded();
         try {
@@ -369,7 +371,7 @@ public class Process {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.021 -0400", hash_original_method = "50DF3C9BB6E8E9D5935D1DE367FC9E29", hash_generated_method = "50DF3C9BB6E8E9D5935D1DE367FC9E29")
         public ProcessStartResult ()
         {
-            //Synthesized constructor
+            
         }
 
 

@@ -1,11 +1,11 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
@@ -16,10 +16,11 @@ final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
         addTaint(capacity);
         addTaint(backingArray[0]);
         addTaint(arrayOffset);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ReadOnlyCharArrayBuffer copy(CharArrayBuffer other, int markOfOther) {
         ReadOnlyCharArrayBuffer buf =
                 new ReadOnlyCharArrayBuffer(other.capacity(), other.backingArray, other.offset);
@@ -30,36 +31,39 @@ final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.867 -0400", hash_original_method = "6272265C933D4E168CAF2033C47ED968", hash_generated_method = "7A8C1ADAD62390E9B7B6CC5583541348")
     @Override
     public CharBuffer asReadOnlyBuffer() {
-        CharBuffer varB4EAC82CA7396A68D541C85D26508E83_1430558264 = null; //Variable for return #1
+        CharBuffer varB4EAC82CA7396A68D541C85D26508E83_1430558264 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1430558264 = duplicate();
-        varB4EAC82CA7396A68D541C85D26508E83_1430558264.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1430558264.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1430558264;
-        // ---------- Original Method ----------
-        //return duplicate();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.868 -0400", hash_original_method = "B36182A594E1794791B93E3BECF5B149", hash_generated_method = "FDB048D4EFBE0B834B0B887336BCFF0E")
     @Override
     public CharBuffer compact() {
         throw new ReadOnlyBufferException();
-        // ---------- Original Method ----------
-        //throw new ReadOnlyBufferException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.868 -0400", hash_original_method = "CC31CA0A52E7075216F6C304954E7B50", hash_generated_method = "34AEA3AE25C42B1417DEA145326F234D")
     @Override
     public CharBuffer duplicate() {
-        CharBuffer varB4EAC82CA7396A68D541C85D26508E83_1920131339 = null; //Variable for return #1
+        CharBuffer varB4EAC82CA7396A68D541C85D26508E83_1920131339 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1920131339 = copy(this, mark);
-        varB4EAC82CA7396A68D541C85D26508E83_1920131339.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1920131339.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1920131339;
-        // ---------- Original Method ----------
-        //return copy(this, mark);
+        
+        
     }
 
     
@@ -68,30 +72,32 @@ final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
     public boolean isReadOnly() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_620378973 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_620378973;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.868 -0400", hash_original_method = "0F9E5668E984B4901FBF78711C9DAE7C", hash_generated_method = "6CAEA782B8A8740CEF7D3716C97041A0")
     @Override
     protected char[] protectedArray() {
         if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1635852788 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1635852788;
-        // ---------- Original Method ----------
-        //throw new ReadOnlyBufferException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.869 -0400", hash_original_method = "0ABFB09F32C9F0D211E0D26315A037E6", hash_generated_method = "0770F2C5D22D63920E837787EDA9A37C")
     @Override
     protected int protectedArrayOffset() {
         if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1436404730 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1436404730;
-        // ---------- Original Method ----------
-        //throw new ReadOnlyBufferException();
+        
+        
     }
 
     
@@ -100,27 +106,29 @@ final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
     protected boolean protectedHasArray() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_297094779 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_297094779;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.869 -0400", hash_original_method = "AA890865E828C97A020097D7CDA5EE73", hash_generated_method = "3A85A20458CD46C3155C147F6F048806")
     @Override
     public CharBuffer put(char c) {
          throw new ReadOnlyBufferException();
         
-        // ---------- Original Method ----------
-        //throw new ReadOnlyBufferException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.870 -0400", hash_original_method = "4BB5828CEE96E76B6DAC9C0855ABDDFD", hash_generated_method = "E150AA8DCB8978B57C618C5428A755CD")
     @Override
     public CharBuffer put(int index, char c) {
         throw new ReadOnlyBufferException();
-        // ---------- Original Method ----------
-        //throw new ReadOnlyBufferException();
+        
+        
     }
 
     
@@ -128,8 +136,8 @@ final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
     @Override
     public final CharBuffer put(char[] src, int srcOffset, int charCount) {
         throw new ReadOnlyBufferException();
-        // ---------- Original Method ----------
-        //throw new ReadOnlyBufferException();
+        
+        
     }
 
     
@@ -138,29 +146,31 @@ final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
     public final CharBuffer put(CharBuffer src) {
         throw new ReadOnlyBufferException();
 
-        // ---------- Original Method ----------
-        //throw new ReadOnlyBufferException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.871 -0400", hash_original_method = "4A99CE8F005D81D8D8D69EFF935B4E86", hash_generated_method = "29F4042A72DFAB1AB12EB8C658A3318C")
     @Override
     public CharBuffer put(String src, int start, int end) {
         throw new ReadOnlyBufferException();
-        // ---------- Original Method ----------
-        //throw new ReadOnlyBufferException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.871 -0400", hash_original_method = "B45CBDD156981DE98E6537855A7A214E", hash_generated_method = "52E5937BA69016053CCAA5E699232508")
     @Override
     public CharBuffer slice() {
-        CharBuffer varB4EAC82CA7396A68D541C85D26508E83_337196231 = null; //Variable for return #1
+        CharBuffer varB4EAC82CA7396A68D541C85D26508E83_337196231 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_337196231 = new ReadOnlyCharArrayBuffer(remaining(), backingArray, offset + position);
-        varB4EAC82CA7396A68D541C85D26508E83_337196231.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_337196231.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_337196231;
-        // ---------- Original Method ----------
-        //return new ReadOnlyCharArrayBuffer(remaining(), backingArray, offset + position);
+        
+        
     }
 
     

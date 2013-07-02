@@ -1,11 +1,11 @@
 package org.bouncycastle.crypto.params;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.bouncycastle.crypto.CipherParameters;
 
@@ -19,7 +19,7 @@ public class KeyParameter implements CipherParameters {
         byte[]  key) {
         this(key, 0, key.length);
         addTaint(key[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,9 +31,9 @@ public class KeyParameter implements CipherParameters {
         this.key = new byte[keyLen];
         System.arraycopy(key, keyOff, this.key, 0, keyLen);
         addTaint(keyOff);
-        // ---------- Original Method ----------
-        //this.key = new byte[keyLen];
-        //System.arraycopy(key, keyOff, this.key, 0, keyLen);
+        
+        
+        
     }
 
     
@@ -41,8 +41,8 @@ public class KeyParameter implements CipherParameters {
     public byte[] getKey() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1848153888 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1848153888;
-        // ---------- Original Method ----------
-        //return key;
+        
+        
     }
 
     

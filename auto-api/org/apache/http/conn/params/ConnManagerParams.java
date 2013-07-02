@@ -1,11 +1,11 @@
 package org.apache.http.conn.params;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.params.HttpParams;
@@ -15,7 +15,7 @@ public final class ConnManagerParams implements ConnManagerPNames {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.066 -0400", hash_original_method = "8D73F0F63C95FBB6C86DB2075286A73B", hash_generated_method = "8D73F0F63C95FBB6C86DB2075286A73B")
     public ConnManagerParams ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -90,8 +90,8 @@ public final class ConnManagerParams implements ConnManagerPNames {
             addTaint(route.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1631977428 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1631977428;
-            // ---------- Original Method ----------
-            //return ConnPerRouteBean.DEFAULT_MAX_CONNECTIONS_PER_ROUTE;
+            
+            
         }
 
         

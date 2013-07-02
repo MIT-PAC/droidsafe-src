@@ -1,11 +1,11 @@
 package android.content.res;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.pm.ApplicationInfo;
 import android.graphics.Canvas;
@@ -43,30 +43,30 @@ public class CompatibilityInfo implements Parcelable {
             required = appInfo.compatibleWidthLimitDp;
             {
                 required = appInfo.largestWidthLimitDp;
-            } //End block
+            } 
             int compat;
             compat = appInfo.compatibleWidthLimitDp;
             compat = required;
             {
                 compat = required;
-            } //End block
+            } 
             int largest = appInfo.largestWidthLimitDp;
             {
                 compatFlags |= NEVER_NEEDS_COMPAT;
-            } //End block
+            } 
             {
                 compatFlags |= NEEDS_SCREEN_COMPAT | ALWAYS_NEEDS_COMPAT;
-            } //End block
+            } 
             {
                 compatFlags |= NEVER_NEEDS_COMPAT;
-            } //End block
+            } 
             {
                 compatFlags |= NEEDS_SCREEN_COMPAT;
-            } //End block
+            } 
             applicationDensity = DisplayMetrics.DENSITY_DEVICE;
             applicationScale = 1.0f;
             applicationInvertedScale = 1.0f;
-        } //End block
+        } 
         {
             final int EXPANDABLE = 2;
             final int LARGE_SCREENS = 8;
@@ -78,74 +78,74 @@ public class CompatibilityInfo implements Parcelable {
                 anyResizeable = true;
                 {
                     sizeInfo |= XLARGE_SCREENS | EXPANDABLE;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 anyResizeable = true;
                 {
                     sizeInfo |= XLARGE_SCREENS | EXPANDABLE;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 anyResizeable = true;
                 sizeInfo |= EXPANDABLE;
-            } //End block
+            } 
             {
                 sizeInfo &= ~EXPANDABLE;
-            } //End block
+            } 
             compatFlags |= NEEDS_SCREEN_COMPAT;
-            //Begin case Configuration.SCREENLAYOUT_SIZE_XLARGE 
+            
             {
                 compatFlags &= ~NEEDS_SCREEN_COMPAT;
-            } //End block
-            //End case Configuration.SCREENLAYOUT_SIZE_XLARGE 
-            //Begin case Configuration.SCREENLAYOUT_SIZE_XLARGE 
+            } 
+            
+            
             {
                 compatFlags |= NEVER_NEEDS_COMPAT;
-            } //End block
-            //End case Configuration.SCREENLAYOUT_SIZE_XLARGE 
-            //Begin case Configuration.SCREENLAYOUT_SIZE_LARGE 
+            } 
+            
+            
             {
                 compatFlags &= ~NEEDS_SCREEN_COMPAT;
-            } //End block
-            //End case Configuration.SCREENLAYOUT_SIZE_LARGE 
-            //Begin case Configuration.SCREENLAYOUT_SIZE_LARGE 
+            } 
+            
+            
             {
                 compatFlags |= NEVER_NEEDS_COMPAT;
-            } //End block
-            //End case Configuration.SCREENLAYOUT_SIZE_LARGE 
+            } 
+            
             {
                 {
                     compatFlags &= ~NEEDS_SCREEN_COMPAT;
-                } //End block
+                } 
                 {
                     compatFlags |= ALWAYS_NEEDS_COMPAT;
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 compatFlags &= ~NEEDS_SCREEN_COMPAT;
                 compatFlags |= NEVER_NEEDS_COMPAT;
-            } //End block
+            } 
             {
                 applicationDensity = DisplayMetrics.DENSITY_DEVICE;
                 applicationScale = 1.0f;
                 applicationInvertedScale = 1.0f;
-            } //End block
+            } 
             {
                 applicationDensity = DisplayMetrics.DENSITY_DEFAULT;
                 applicationScale = DisplayMetrics.DENSITY_DEVICE
                         / (float) DisplayMetrics.DENSITY_DEFAULT;
                 applicationInvertedScale = 1.0f / applicationScale;
                 compatFlags |= SCALING_REQUIRED;
-            } //End block
-        } //End block
+            } 
+        } 
         mCompatibilityFlags = compatFlags;
         addTaint(appInfo.getTaint());
         addTaint(screenLayout);
         addTaint(sw);
         addTaint(forceCompat);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -156,11 +156,11 @@ public class CompatibilityInfo implements Parcelable {
         applicationDensity = dens;
         applicationScale = scale;
         applicationInvertedScale = invertedScale;
-        // ---------- Original Method ----------
-        //mCompatibilityFlags = compFlags;
-        //applicationDensity = dens;
-        //applicationScale = scale;
-        //applicationInvertedScale = invertedScale;
+        
+        
+        
+        
+        
     }
 
     
@@ -169,7 +169,7 @@ public class CompatibilityInfo implements Parcelable {
         this(NEVER_NEEDS_COMPAT, DisplayMetrics.DENSITY_DEVICE,
                 1.0f,
                 1.0f);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -179,11 +179,11 @@ public class CompatibilityInfo implements Parcelable {
         applicationDensity = source.readInt();
         applicationScale = source.readFloat();
         applicationInvertedScale = source.readFloat();
-        // ---------- Original Method ----------
-        //mCompatibilityFlags = source.readInt();
-        //applicationDensity = source.readInt();
-        //applicationScale = source.readFloat();
-        //applicationInvertedScale = source.readFloat();
+        
+        
+        
+        
+        
     }
 
     
@@ -191,8 +191,8 @@ public class CompatibilityInfo implements Parcelable {
     public boolean isScalingRequired() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1845227384 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1845227384;
-        // ---------- Original Method ----------
-        //return (mCompatibilityFlags&SCALING_REQUIRED) != 0;
+        
+        
     }
 
     
@@ -200,8 +200,8 @@ public class CompatibilityInfo implements Parcelable {
     public boolean supportsScreen() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1543645364 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1543645364;
-        // ---------- Original Method ----------
-        //return (mCompatibilityFlags&NEEDS_SCREEN_COMPAT) == 0;
+        
+        
     }
 
     
@@ -209,8 +209,8 @@ public class CompatibilityInfo implements Parcelable {
     public boolean neverSupportsScreen() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1869638235 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1869638235;
-        // ---------- Original Method ----------
-        //return (mCompatibilityFlags&ALWAYS_NEEDS_COMPAT) != 0;
+        
+        
     }
 
     
@@ -218,34 +218,36 @@ public class CompatibilityInfo implements Parcelable {
     public boolean alwaysSupportsScreen() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1529164691 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1529164691;
-        // ---------- Original Method ----------
-        //return (mCompatibilityFlags&NEVER_NEEDS_COMPAT) != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.596 -0400", hash_original_method = "93ABC602B8C8A6238860B5CA46099876", hash_generated_method = "02A47A6060397B693AD61532D30B8BC3")
     public Translator getTranslator() {
-        Translator varB4EAC82CA7396A68D541C85D26508E83_1674455502 = null; //Variable for return #1
+        Translator varB4EAC82CA7396A68D541C85D26508E83_1674455502 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1674455502 = isScalingRequired() ? new Translator() : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1674455502.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1674455502.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1674455502;
-        // ---------- Original Method ----------
-        //return isScalingRequired() ? new Translator() : null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.597 -0400", hash_original_method = "F5DFBBE3DCF906040672C2B4A4880712", hash_generated_method = "0CDB511ACD99B96C0D604C78156E3D7C")
     public void applyToDisplayMetrics(DisplayMetrics inoutDm) {
         {
             boolean varE7167D48931C006010D8B5CB5972BC1F_2035723236 = (!supportsScreen());
             {
                 CompatibilityInfo.computeCompatibleScaling(inoutDm, inoutDm);
-            } //End block
+            } 
             {
                 inoutDm.widthPixels = inoutDm.noncompatWidthPixels;
                 inoutDm.heightPixels = inoutDm.noncompatHeightPixels;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var99116A7FA4A89F4892D46EF5C786E5AD_1499802570 = (isScalingRequired());
             {
@@ -257,14 +259,15 @@ public class CompatibilityInfo implements Parcelable {
                 inoutDm.ydpi = inoutDm.noncompatYdpi * invertedRatio;
                 inoutDm.widthPixels = (int) (inoutDm.widthPixels * invertedRatio + 0.5f);
                 inoutDm.heightPixels = (int) (inoutDm.heightPixels * invertedRatio + 0.5f);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(inoutDm.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.598 -0400", hash_original_method = "D1D0A6DB2934A6F26FB8AACA9CE38F1E", hash_generated_method = "2845E939AF9A229103E7150E762DD5C7")
     public void applyToConfiguration(Configuration inoutConfig) {
         {
@@ -276,18 +279,18 @@ public class CompatibilityInfo implements Parcelable {
                 inoutConfig.screenWidthDp = inoutConfig.compatScreenWidthDp;
                 inoutConfig.screenHeightDp = inoutConfig.compatScreenHeightDp;
                 inoutConfig.smallestScreenWidthDp = inoutConfig.compatSmallestScreenWidthDp;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(inoutConfig.getTaint());
-        // ---------- Original Method ----------
-        //if (!supportsScreen()) {
-            //inoutConfig.screenLayout =
-                    //(inoutConfig.screenLayout&~Configuration.SCREENLAYOUT_SIZE_MASK)
-                    //| Configuration.SCREENLAYOUT_SIZE_NORMAL;
-            //inoutConfig.screenWidthDp = inoutConfig.compatScreenWidthDp;
-            //inoutConfig.screenHeightDp = inoutConfig.compatScreenHeightDp;
-            //inoutConfig.smallestScreenWidthDp = inoutConfig.compatSmallestScreenWidthDp;
-        //}
+        
+        
+            
+                    
+                    
+            
+            
+            
+        
     }
 
     
@@ -336,30 +339,31 @@ public class CompatibilityInfo implements Parcelable {
         try 
         {
             CompatibilityInfo oc = (CompatibilityInfo)o;
-        } //End block
+        } 
         catch (ClassCastException e)
         { }
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_356751627 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_356751627;
-        // ---------- Original Method ----------
-        //try {
-            //CompatibilityInfo oc = (CompatibilityInfo)o;
-            //if (mCompatibilityFlags != oc.mCompatibilityFlags) return false;
-            //if (applicationDensity != oc.applicationDensity) return false;
-            //if (applicationScale != oc.applicationScale) return false;
-            //if (applicationInvertedScale != oc.applicationInvertedScale) return false;
-            //return true;
-        //} catch (ClassCastException e) {
-            //return false;
-        //}
+        
+        
+            
+            
+            
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.600 -0400", hash_original_method = "8391774F9F4D17C2A23793FA4442739E", hash_generated_method = "A3554F162D8CAABD2E522FCB996C64BE")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_236314581 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_236314581 = null; 
         StringBuilder sb = new StringBuilder(128);
         sb.append("{");
         sb.append(applicationDensity);
@@ -370,54 +374,55 @@ public class CompatibilityInfo implements Parcelable {
                 sb.append(" ");
                 sb.append(applicationScale);
                 sb.append("x");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varE7167D48931C006010D8B5CB5972BC1F_1311130032 = (!supportsScreen());
             {
                 sb.append(" resizing");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varCA1EFE893AA8EA68DFD50ADCAC7E67DF_2142377609 = (neverSupportsScreen());
             {
                 sb.append(" never-compat");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var8FD3A043FAF334062C55758AA955AB0F_2084795143 = (alwaysSupportsScreen());
             {
                 sb.append(" always-compat");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         sb.append("}");
         varB4EAC82CA7396A68D541C85D26508E83_236314581 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_236314581.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_236314581.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_236314581;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(128);
-        //sb.append("{");
-        //sb.append(applicationDensity);
-        //sb.append("dpi");
-        //if (isScalingRequired()) {
-            //sb.append(" ");
-            //sb.append(applicationScale);
-            //sb.append("x");
-        //}
-        //if (!supportsScreen()) {
-            //sb.append(" resizing");
-        //}
-        //if (neverSupportsScreen()) {
-            //sb.append(" never-compat");
-        //}
-        //if (alwaysSupportsScreen()) {
-            //sb.append(" always-compat");
-        //}
-        //sb.append("}");
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.600 -0400", hash_original_method = "8473CF5A5DF2B74B5499D26C5398575D", hash_generated_method = "A3A67A34577FD326EF7FF09C1369BD65")
     @Override
     public int hashCode() {
@@ -428,13 +433,13 @@ public class CompatibilityInfo implements Parcelable {
         result = 31 * result + Float.floatToIntBits(applicationInvertedScale);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1782533594 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1782533594;
-        // ---------- Original Method ----------
-        //int result = 17;
-        //result = 31 * result + mCompatibilityFlags;
-        //result = 31 * result + applicationDensity;
-        //result = 31 * result + Float.floatToIntBits(applicationScale);
-        //result = 31 * result + Float.floatToIntBits(applicationInvertedScale);
-        //return result;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -443,11 +448,12 @@ public class CompatibilityInfo implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1954851725 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1954851725;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.602 -0400", hash_original_method = "FEB528FDE7329032F7938F1739557EEE", hash_generated_method = "44F0311BA66B4F20FAADDBCFA4181B07")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -457,11 +463,11 @@ public class CompatibilityInfo implements Parcelable {
         dest.writeFloat(applicationInvertedScale);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mCompatibilityFlags);
-        //dest.writeInt(applicationDensity);
-        //dest.writeFloat(applicationScale);
-        //dest.writeFloat(applicationInvertedScale);
+        
+        
+        
+        
+        
     }
 
     
@@ -486,9 +492,9 @@ public class CompatibilityInfo implements Parcelable {
           Translator(float applicationScale, float applicationInvertedScale) {
             this.applicationScale = applicationScale;
             this.applicationInvertedScale = applicationInvertedScale;
-            // ---------- Original Method ----------
-            //this.applicationScale = applicationScale;
-            //this.applicationInvertedScale = applicationInvertedScale;
+            
+            
+            
         }
 
         
@@ -496,7 +502,7 @@ public class CompatibilityInfo implements Parcelable {
           Translator() {
             this(CompatibilityInfo.this.applicationScale,
                     CompatibilityInfo.this.applicationInvertedScale);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -504,8 +510,8 @@ public class CompatibilityInfo implements Parcelable {
         public void translateRectInScreenToAppWinFrame(Rect rect) {
             rect.scale(applicationInvertedScale);
             addTaint(rect.getTaint());
-            // ---------- Original Method ----------
-            //rect.scale(applicationInvertedScale);
+            
+            
         }
 
         
@@ -513,8 +519,8 @@ public class CompatibilityInfo implements Parcelable {
         public void translateRegionInWindowToScreen(Region transparentRegion) {
             transparentRegion.scale(applicationScale);
             addTaint(transparentRegion.getTaint());
-            // ---------- Original Method ----------
-            //transparentRegion.scale(applicationScale);
+            
+            
         }
 
         
@@ -523,15 +529,15 @@ public class CompatibilityInfo implements Parcelable {
             {
                 final float tinyOffset = 2.0f / (3 * 255);
                 canvas.translate(tinyOffset, tinyOffset);
-            } //End block
+            } 
             canvas.scale(applicationScale, applicationScale);
             addTaint(canvas.getTaint());
-            // ---------- Original Method ----------
-            //if (applicationScale == 1.5f) {
-                //final float tinyOffset = 2.0f / (3 * 255);
-                //canvas.translate(tinyOffset, tinyOffset);
-            //}
-            //canvas.scale(applicationScale, applicationScale);
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -539,8 +545,8 @@ public class CompatibilityInfo implements Parcelable {
         public void translateEventInScreenToAppWindow(MotionEvent event) {
             event.scale(applicationInvertedScale);
             addTaint(event.getTaint());
-            // ---------- Original Method ----------
-            //event.scale(applicationInvertedScale);
+            
+            
         }
 
         
@@ -548,8 +554,8 @@ public class CompatibilityInfo implements Parcelable {
         public void translateWindowLayout(WindowManager.LayoutParams params) {
             params.scale(applicationScale);
             addTaint(params.getTaint());
-            // ---------- Original Method ----------
-            //params.scale(applicationScale);
+            
+            
         }
 
         
@@ -557,8 +563,8 @@ public class CompatibilityInfo implements Parcelable {
         public void translateRectInAppWindowToScreen(Rect rect) {
             rect.scale(applicationScale);
             addTaint(rect.getTaint());
-            // ---------- Original Method ----------
-            //rect.scale(applicationScale);
+            
+            
         }
 
         
@@ -566,8 +572,8 @@ public class CompatibilityInfo implements Parcelable {
         public void translateRectInScreenToAppWindow(Rect rect) {
             rect.scale(applicationInvertedScale);
             addTaint(rect.getTaint());
-            // ---------- Original Method ----------
-            //rect.scale(applicationInvertedScale);
+            
+            
         }
 
         
@@ -577,14 +583,14 @@ public class CompatibilityInfo implements Parcelable {
             {
                 point.x *= scale;
                 point.y *= scale;
-            } //End block
+            } 
             addTaint(point.getTaint());
-            // ---------- Original Method ----------
-            //final float scale = applicationInvertedScale;
-            //if (scale != 1.0f) {
-                //point.x *= scale;
-                //point.y *= scale;
-            //}
+            
+            
+            
+                
+                
+            
         }
 
         
@@ -592,62 +598,62 @@ public class CompatibilityInfo implements Parcelable {
         public void translateLayoutParamsInAppWindowToScreen(LayoutParams params) {
             params.scale(applicationScale);
             addTaint(params.getTaint());
-            // ---------- Original Method ----------
-            //params.scale(applicationScale);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.611 -0400", hash_original_method = "43D8C9F45845A6C6CC10427CCFCFAF3D", hash_generated_method = "9FDD1CAEED339ACD61088CF451E4786B")
         public Rect getTranslatedContentInsets(Rect contentInsets) {
-            Rect varB4EAC82CA7396A68D541C85D26508E83_648497983 = null; //Variable for return #1
+            Rect varB4EAC82CA7396A68D541C85D26508E83_648497983 = null; 
             mContentInsetsBuffer = new Rect();
             mContentInsetsBuffer.set(contentInsets);
             translateRectInAppWindowToScreen(mContentInsetsBuffer);
             varB4EAC82CA7396A68D541C85D26508E83_648497983 = mContentInsetsBuffer;
             addTaint(contentInsets.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_648497983.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_648497983.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_648497983;
-            // ---------- Original Method ----------
-            //if (mContentInsetsBuffer == null) mContentInsetsBuffer = new Rect();
-            //mContentInsetsBuffer.set(contentInsets);
-            //translateRectInAppWindowToScreen(mContentInsetsBuffer);
-            //return mContentInsetsBuffer;
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.612 -0400", hash_original_method = "DB46A5AF3015676AE668EB7338A074FC", hash_generated_method = "AD6F77A606835D6469E64A3B875A562B")
         public Rect getTranslatedVisibleInsets(Rect visibleInsets) {
-            Rect varB4EAC82CA7396A68D541C85D26508E83_1994812217 = null; //Variable for return #1
+            Rect varB4EAC82CA7396A68D541C85D26508E83_1994812217 = null; 
             mVisibleInsetsBuffer = new Rect();
             mVisibleInsetsBuffer.set(visibleInsets);
             translateRectInAppWindowToScreen(mVisibleInsetsBuffer);
             varB4EAC82CA7396A68D541C85D26508E83_1994812217 = mVisibleInsetsBuffer;
             addTaint(visibleInsets.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1994812217.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1994812217.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1994812217;
-            // ---------- Original Method ----------
-            //if (mVisibleInsetsBuffer == null) mVisibleInsetsBuffer = new Rect();
-            //mVisibleInsetsBuffer.set(visibleInsets);
-            //translateRectInAppWindowToScreen(mVisibleInsetsBuffer);
-            //return mVisibleInsetsBuffer;
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:28.614 -0400", hash_original_method = "25CFF327B78CA768A3AFCA299ED2CC8E", hash_generated_method = "EC5D2DFDF7138B2365E661DDDB4CFB85")
         public Region getTranslatedTouchableArea(Region touchableArea) {
-            Region varB4EAC82CA7396A68D541C85D26508E83_1455694077 = null; //Variable for return #1
+            Region varB4EAC82CA7396A68D541C85D26508E83_1455694077 = null; 
             mTouchableAreaBuffer = new Region();
             mTouchableAreaBuffer.set(touchableArea);
             mTouchableAreaBuffer.scale(applicationScale);
             varB4EAC82CA7396A68D541C85D26508E83_1455694077 = mTouchableAreaBuffer;
             addTaint(touchableArea.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1455694077.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1455694077.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1455694077;
-            // ---------- Original Method ----------
-            //if (mTouchableAreaBuffer == null) mTouchableAreaBuffer = new Region();
-            //mTouchableAreaBuffer.set(touchableArea);
-            //mTouchableAreaBuffer.scale(applicationScale);
-            //return mTouchableAreaBuffer;
+            
+            
+            
+            
+            
         }
 
         
@@ -689,12 +695,12 @@ public class CompatibilityInfo implements Parcelable {
             return new CompatibilityInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public CompatibilityInfo createFromParcel(Parcel source) {
             return new CompatibilityInfo(source);
         }
     
-    // orphaned legacy method
+    
     public CompatibilityInfo[] newArray(int size) {
             return new CompatibilityInfo[size];
         }

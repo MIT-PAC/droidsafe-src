@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
@@ -43,7 +43,7 @@ public final class Proxy {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.882 -0400", hash_original_method = "9B17734F1ACD31FFE2C2D0AFEC291967", hash_generated_method = "9B17734F1ACD31FFE2C2D0AFEC291967")
     public Proxy ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -140,6 +140,7 @@ public final class Proxy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void validate(String hostname, String port, String exclList) {
         Matcher match = HOSTNAME_PATTERN.matcher(hostname);
         Matcher listMatch = EXCLLIST_PATTERN.matcher(exclList);
@@ -228,8 +229,8 @@ public final class Proxy {
             mContext = context;
             addTaint(schreg.getTaint());
             addTaint(prosel.getTaint());
-            // ---------- Original Method ----------
-            //mContext = context;
+            
+            
         }
 
         
@@ -237,16 +238,16 @@ public final class Proxy {
         @Override
         protected java.net.Proxy chooseProxy(List<java.net.Proxy> proxies, HttpHost target,
                 HttpRequest request, HttpContext context) {
-            java.net.Proxy varB4EAC82CA7396A68D541C85D26508E83_1005756613 = null; //Variable for return #1
+            java.net.Proxy varB4EAC82CA7396A68D541C85D26508E83_1005756613 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1005756613 = getProxy(mContext, target.getHostName());
             addTaint(proxies.getTaint());
             addTaint(target.getTaint());
             addTaint(request.getTaint());
             addTaint(context.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1005756613.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1005756613.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1005756613;
-            // ---------- Original Method ----------
-            //return getProxy(mContext, target.getHostName());
+            
+            
         }
 
         
@@ -254,15 +255,15 @@ public final class Proxy {
         @Override
         protected HttpHost determineProxy(HttpHost target, HttpRequest request,
                 HttpContext context) {
-            HttpHost varB4EAC82CA7396A68D541C85D26508E83_542198150 = null; //Variable for return #1
+            HttpHost varB4EAC82CA7396A68D541C85D26508E83_542198150 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_542198150 = getPreferredHttpHost(mContext, target.getHostName());
             addTaint(target.getTaint());
             addTaint(request.getTaint());
             addTaint(context.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_542198150.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_542198150.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_542198150;
-            // ---------- Original Method ----------
-            //return getPreferredHttpHost(mContext, target.getHostName());
+            
+            
         }
 
         
@@ -270,36 +271,36 @@ public final class Proxy {
         @Override
         public HttpRoute determineRoute(HttpHost target, HttpRequest request,
                 HttpContext context) {
-            HttpRoute varB4EAC82CA7396A68D541C85D26508E83_517306764 = null; //Variable for return #1
-            HttpRoute varB4EAC82CA7396A68D541C85D26508E83_1576212167 = null; //Variable for return #2
+            HttpRoute varB4EAC82CA7396A68D541C85D26508E83_517306764 = null; 
+            HttpRoute varB4EAC82CA7396A68D541C85D26508E83_1576212167 = null; 
             HttpHost proxy = getPreferredHttpHost(mContext, target.getHostName());
             {
                 varB4EAC82CA7396A68D541C85D26508E83_517306764 = new HttpRoute(target);
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1576212167 = new HttpRoute(target, null, proxy, false);
-            } //End block
+            } 
             addTaint(target.getTaint());
             addTaint(request.getTaint());
             addTaint(context.getTaint());
-            HttpRoute varA7E53CE21691AB073D9660D615818899_343435757; //Final return value
+            HttpRoute varA7E53CE21691AB073D9660D615818899_343435757; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_343435757 = varB4EAC82CA7396A68D541C85D26508E83_517306764;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_343435757 = varB4EAC82CA7396A68D541C85D26508E83_1576212167;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_343435757.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_343435757.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_343435757;
-            // ---------- Original Method ----------
-            //HttpHost proxy = getPreferredHttpHost(mContext, target.getHostName());
-            //if (proxy == null) {
-                //return new HttpRoute(target);
-            //} else {
-                //return new HttpRoute(target, null, proxy, false);
-            //}
+            
+            
+            
+                
+            
+                
+            
         }
 
         

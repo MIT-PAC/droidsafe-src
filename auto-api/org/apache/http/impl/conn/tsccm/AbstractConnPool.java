@@ -1,11 +1,11 @@
 package org.apache.http.impl.conn.tsccm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.lang.ref.Reference;
@@ -55,54 +55,55 @@ public abstract class AbstractConnPool implements RefQueueHandler {
         idleConnHandler = new IdleConnectionHandler();
         boolean fair = false;
         poolLock = new ReentrantLock(fair);
-        // ---------- Original Method ----------
-        //issuedConnections = new HashSet<BasicPoolEntryRef>();
-        //idleConnHandler = new IdleConnectionHandler();
-        //boolean fair = false;
-        //poolLock = new ReentrantLock(fair);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.634 -0400", hash_original_method = "68FD2DF4471AB38D5F7B2F768AE2EB0E", hash_generated_method = "643E9869AB57F8BE7174AED9206655DC")
     public void enableConnectionGC() throws IllegalStateException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Connection GC already enabled.");
-        } //End block
+        } 
         poolLock.lock();
         try 
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Pool already in use.");
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
+        } 
         refQueue  = new ReferenceQueue<Object>();
         refWorker = new RefQueueWorker(refQueue, this);
         Thread t = new Thread(refWorker);
         t.setDaemon(true);
         t.setName("RefQueueWorker@" + this);
         t.start();
-        // ---------- Original Method ----------
-        //if (refQueue != null) {
-            //throw new IllegalStateException("Connection GC already enabled.");
-        //}
-        //poolLock.lock();
-        //try {
-            //if (numConnections > 0) { 
-                //throw new IllegalStateException("Pool already in use.");
-            //}
-        //} finally {
-            //poolLock.unlock();
-        //}
-        //refQueue  = new ReferenceQueue<Object>();
-        //refWorker = new RefQueueWorker(refQueue, this);
-        //Thread t = new Thread(refWorker);
-        //t.setDaemon(true);
-        //t.setName("RefQueueWorker@" + this);
-        //t.start();
+        
+        
+            
+        
+        
+        
+            
+                
+            
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -112,16 +113,16 @@ public abstract class AbstractConnPool implements RefQueueHandler {
                 Object state,
                 long timeout, 
                 TimeUnit tunit) throws ConnectionPoolTimeoutException, InterruptedException {
-        BasicPoolEntry varB4EAC82CA7396A68D541C85D26508E83_1515558790 = null; //Variable for return #1
+        BasicPoolEntry varB4EAC82CA7396A68D541C85D26508E83_1515558790 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1515558790 = requestPoolEntry(route, state).getPoolEntry(timeout, tunit);
         addTaint(route.getTaint());
         addTaint(state.getTaint());
         addTaint(timeout);
         addTaint(tunit.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1515558790.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1515558790.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1515558790;
-        // ---------- Original Method ----------
-        //return requestPoolEntry(route, state).getPoolEntry(timeout, tunit);
+        
+        
     }
 
     
@@ -132,6 +133,7 @@ public abstract class AbstractConnPool implements RefQueueHandler {
         ;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.635 -0400", hash_original_method = "005D09627953355817D3D23BD1B8063B", hash_generated_method = "96931C78C7A876332AF9A13E0FB9422E")
     public void handleReference(Reference ref) {
         poolLock.lock();
@@ -145,34 +147,34 @@ public abstract class AbstractConnPool implements RefQueueHandler {
                         boolean varB5EA13E236059479AA556C9226E19405_1729735778 = (log.isDebugEnabled());
                         {
                             log.debug("Connection garbage collected. " + route);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     handleLostEntry(route);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
+        } 
         addTaint(ref.getTaint());
-        // ---------- Original Method ----------
-        //poolLock.lock();
-        //try {
-            //if (ref instanceof BasicPoolEntryRef) {
-                //final boolean lost = issuedConnections.remove(ref);
-                //if (lost) {
-                    //final HttpRoute route =
-                        //((BasicPoolEntryRef)ref).getRoute();
-                    //if (log.isDebugEnabled()) {
-                        //log.debug("Connection garbage collected. " + route);
-                    //}
-                    //handleLostEntry(route);
-                //}
-            //}
-        //} finally {
-            //poolLock.unlock();
-        //}
+        
+        
+        
+            
+                
+                
+                    
+                        
+                    
+                        
+                    
+                    
+                
+            
+        
+            
+        
     }
 
     
@@ -180,53 +182,55 @@ public abstract class AbstractConnPool implements RefQueueHandler {
         ;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.637 -0400", hash_original_method = "B6A3F225A0D4D9B69A4C0D73B6FA8390", hash_generated_method = "CA13B903E92F9B1DADF8BA0FB1859811")
     public void closeIdleConnections(long idletime, TimeUnit tunit) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Time unit must not be null.");
-        } //End block
+        } 
         poolLock.lock();
         try 
         {
             idleConnHandler.closeIdleConnections(tunit.toMillis(idletime));
-        } //End block
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
+        } 
         addTaint(idletime);
         addTaint(tunit.getTaint());
-        // ---------- Original Method ----------
-        //if (tunit == null) {
-            //throw new IllegalArgumentException("Time unit must not be null.");
-        //}
-        //poolLock.lock();
-        //try {
-            //idleConnHandler.closeIdleConnections(tunit.toMillis(idletime));
-        //} finally {
-            //poolLock.unlock();
-        //}
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.638 -0400", hash_original_method = "9DA7FEECE19DD407DF46C6AFBD499B72", hash_generated_method = "F7BA16EF71C26C6BD53A5B22944401AE")
     public void closeExpiredConnections() {
         poolLock.lock();
         try 
         {
             idleConnHandler.closeExpiredConnections();
-        } //End block
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //poolLock.lock();
-        //try {
-            //idleConnHandler.closeExpiredConnections();
-        //} finally {
-            //poolLock.unlock();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -234,6 +238,7 @@ public abstract class AbstractConnPool implements RefQueueHandler {
         ;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:40.638 -0400", hash_original_method = "74B1E1F35A0ABEB335D073A37540DF82", hash_generated_method = "F21558A6E63295D5F32C8529BDDB4161")
     public void shutdown() {
         poolLock.lock();
@@ -249,37 +254,37 @@ public abstract class AbstractConnPool implements RefQueueHandler {
                     BasicPoolEntry entry = per.get();
                     {
                         closeConnection(entry.getConnection());
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             idleConnHandler.removeAll();
             isShutDown = true;
-        } //End block
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //poolLock.lock();
-        //try {
-            //if (isShutDown)
-                //return;
-            //if (refWorker != null)
-                //refWorker.shutdown();
-            //Iterator<BasicPoolEntryRef> iter = issuedConnections.iterator();
-            //while (iter.hasNext()) {
-                //BasicPoolEntryRef per = iter.next();
-                //iter.remove();
-                //BasicPoolEntry entry = per.get();
-                //if (entry != null) {
-                    //closeConnection(entry.getConnection());
-                //}
-            //}
-            //idleConnHandler.removeAll();
-            //isShutDown = true;
-        //} finally {
-            //poolLock.unlock();
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+                
+            
+            
+                
+                
+                
+                
+                    
+                
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -289,21 +294,21 @@ public abstract class AbstractConnPool implements RefQueueHandler {
             try 
             {
                 conn.close();
-            } //End block
+            } 
             catch (IOException ex)
             {
                 log.debug("I/O error closing connection", ex);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(conn.getTaint());
-        // ---------- Original Method ----------
-        //if (conn != null) {
-            //try {
-                //conn.close();
-            //} catch (IOException ex) {
-                //log.debug("I/O error closing connection", ex);
-            //}
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     

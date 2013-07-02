@@ -1,11 +1,11 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -18,10 +18,11 @@ public abstract class ServerSocketChannel extends AbstractSelectableChannel {
     protected  ServerSocketChannel(SelectorProvider selectorProvider) {
         super(selectorProvider);
         addTaint(selectorProvider.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ServerSocketChannel open() throws IOException {
         return SelectorProvider.provider().openServerSocketChannel();
     }
@@ -32,8 +33,8 @@ public abstract class ServerSocketChannel extends AbstractSelectableChannel {
     public final int validOps() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1389903521 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1389903521;
-        // ---------- Original Method ----------
-        //return SelectionKey.OP_ACCEPT;
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package com.android.internal.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public class HexDump {
@@ -13,7 +13,7 @@ public class HexDump {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.721 -0400", hash_original_method = "41D5EB93F66EEE1C2A5191C2288E5263", hash_generated_method = "41D5EB93F66EEE1C2A5191C2288E5263")
     public HexDump ()
     {
-        //Synthesized constructor
+        
     }
 
 

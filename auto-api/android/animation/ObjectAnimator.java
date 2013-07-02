@@ -1,11 +1,11 @@
 package android.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.Log;
 import android.util.Property;
@@ -25,7 +25,7 @@ public final class ObjectAnimator extends ValueAnimator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.621 -0400", hash_original_method = "C409E7B2E0E9411E53B94F67FBBD17CB", hash_generated_method = "3F67C7C40A1D89645B17D105E342199D")
     public  ObjectAnimator() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,9 +34,9 @@ public final class ObjectAnimator extends ValueAnimator {
         mTarget = target;
         setPropertyName(propertyName);
         addTaint(propertyName.getTaint());
-        // ---------- Original Method ----------
-        //mTarget = target;
-        //setPropertyName(propertyName);
+        
+        
+        
     }
 
     
@@ -45,12 +45,13 @@ public final class ObjectAnimator extends ValueAnimator {
         mTarget = target;
         setProperty(property);
         addTaint(property.getTaint());
-        // ---------- Original Method ----------
-        //mTarget = target;
-        //setProperty(property);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.625 -0400", hash_original_method = "9BD9C177E2BB2F7D9011362061D59F72", hash_generated_method = "6EE4C5E62C1F9F9FE790555DB66A6541")
     public void setPropertyName(String propertyName) {
         {
@@ -59,22 +60,23 @@ public final class ObjectAnimator extends ValueAnimator {
             valuesHolder.setPropertyName(propertyName);
             mValuesMap.remove(oldName);
             mValuesMap.put(propertyName, valuesHolder);
-        } //End block
+        } 
         mPropertyName = propertyName;
         mInitialized = false;
-        // ---------- Original Method ----------
-        //if (mValues != null) {
-            //PropertyValuesHolder valuesHolder = mValues[0];
-            //String oldName = valuesHolder.getPropertyName();
-            //valuesHolder.setPropertyName(propertyName);
-            //mValuesMap.remove(oldName);
-            //mValuesMap.put(propertyName, valuesHolder);
-        //}
-        //mPropertyName = propertyName;
-        //mInitialized = false;
+        
+        
+            
+            
+            
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.626 -0400", hash_original_method = "B6C27508DB7D8F3AB8749306282F7776", hash_generated_method = "46DA46ECA8149E528E26A3D896630030")
     public void setProperty(Property property) {
         {
@@ -83,36 +85,36 @@ public final class ObjectAnimator extends ValueAnimator {
             valuesHolder.setProperty(property);
             mValuesMap.remove(oldName);
             mValuesMap.put(mPropertyName, valuesHolder);
-        } //End block
+        } 
         {
             mPropertyName = property.getName();
-        } //End block
+        } 
         mProperty = property;
         mInitialized = false;
-        // ---------- Original Method ----------
-        //if (mValues != null) {
-            //PropertyValuesHolder valuesHolder = mValues[0];
-            //String oldName = valuesHolder.getPropertyName();
-            //valuesHolder.setProperty(property);
-            //mValuesMap.remove(oldName);
-            //mValuesMap.put(mPropertyName, valuesHolder);
-        //}
-        //if (mProperty != null) {
-            //mPropertyName = property.getName();
-        //}
-        //mProperty = property;
-        //mInitialized = false;
+        
+        
+            
+            
+            
+            
+            
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.627 -0400", hash_original_method = "53B20749B4CEAC5C134A85897865D0FE", hash_generated_method = "BFDDCC1C64B103212D4FFDBA9CAF450F")
     public String getPropertyName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_901590770 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_901590770 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_901590770 = mPropertyName;
-        varB4EAC82CA7396A68D541C85D26508E83_901590770.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_901590770.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_901590770;
-        // ---------- Original Method ----------
-        //return mPropertyName;
+        
+        
     }
 
     
@@ -178,25 +180,25 @@ public final class ObjectAnimator extends ValueAnimator {
         {
             {
                 setValues(PropertyValuesHolder.ofInt(mProperty, values));
-            } //End block
+            } 
             {
                 setValues(PropertyValuesHolder.ofInt(mPropertyName, values));
-            } //End block
-        } //End block
+            } 
+        } 
         {
             super.setIntValues(values);
-        } //End block
+        } 
         addTaint(values[0]);
-        // ---------- Original Method ----------
-        //if (mValues == null || mValues.length == 0) {
-            //if (mProperty != null) {
-                //setValues(PropertyValuesHolder.ofInt(mProperty, values));
-            //} else {
-                //setValues(PropertyValuesHolder.ofInt(mPropertyName, values));
-            //}
-        //} else {
-            //super.setIntValues(values);
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -206,25 +208,25 @@ public final class ObjectAnimator extends ValueAnimator {
         {
             {
                 setValues(PropertyValuesHolder.ofFloat(mProperty, values));
-            } //End block
+            } 
             {
                 setValues(PropertyValuesHolder.ofFloat(mPropertyName, values));
-            } //End block
-        } //End block
+            } 
+        } 
         {
             super.setFloatValues(values);
-        } //End block
+        } 
         addTaint(values[0]);
-        // ---------- Original Method ----------
-        //if (mValues == null || mValues.length == 0) {
-            //if (mProperty != null) {
-                //setValues(PropertyValuesHolder.ofFloat(mProperty, values));
-            //} else {
-                //setValues(PropertyValuesHolder.ofFloat(mPropertyName, values));
-            //}
-        //} else {
-            //super.setFloatValues(values);
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -234,28 +236,29 @@ public final class ObjectAnimator extends ValueAnimator {
         {
             {
                 setValues(PropertyValuesHolder.ofObject(mProperty, (TypeEvaluator)null, values));
-            } //End block
+            } 
             {
                 setValues(PropertyValuesHolder.ofObject(mPropertyName, (TypeEvaluator)null, values));
-            } //End block
-        } //End block
+            } 
+        } 
         {
             super.setObjectValues(values);
-        } //End block
+        } 
         addTaint(values[0].getTaint());
-        // ---------- Original Method ----------
-        //if (mValues == null || mValues.length == 0) {
-            //if (mProperty != null) {
-                //setValues(PropertyValuesHolder.ofObject(mProperty, (TypeEvaluator)null, values));
-            //} else {
-                //setValues(PropertyValuesHolder.ofObject(mPropertyName, (TypeEvaluator)null, values));
-            //}
-        //} else {
-            //super.setObjectValues(values);
-        //}
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.635 -0400", hash_original_method = "56CCF5D2849A2C2A18C16A03F4D35824", hash_generated_method = "E60024947773E65864A50476AB2FC5C5")
     @Override
     public void start() {
@@ -269,22 +272,22 @@ public final class ObjectAnimator extends ValueAnimator {
                     Log.d("ObjectAnimator", "   Values[" + i + "]: " +
                     pvh.getPropertyName() + ", " + keyframes.get(0).getValue() + ", " +
                     keyframes.get(pvh.mKeyframeSet.mNumKeyframes - 1).getValue());
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         super.start();
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //Log.d("ObjectAnimator", "Anim target, duration: " + mTarget + ", " + getDuration());
-            //for (int i = 0; i < mValues.length; ++i) {
-                //PropertyValuesHolder pvh = mValues[i];
-                //ArrayList<Keyframe> keyframes = pvh.mKeyframeSet.mKeyframes;
-                //Log.d("ObjectAnimator", "   Values[" + i + "]: " +
-                    //pvh.getPropertyName() + ", " + keyframes.get(0).getValue() + ", " +
-                    //keyframes.get(pvh.mKeyframeSet.mNumKeyframes - 1).getValue());
-            //}
-        //}
-        //super.start();
+        
+        
+            
+            
+                
+                
+                
+                    
+                    
+            
+        
+        
     }
 
     
@@ -297,47 +300,49 @@ public final class ObjectAnimator extends ValueAnimator {
                 int i = 0;
                 {
                     mValues[i].setupSetterAndGetter(mTarget);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             super.initAnimation();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mInitialized) {
-            //int numValues = mValues.length;
-            //for (int i = 0; i < numValues; ++i) {
-                //mValues[i].setupSetterAndGetter(mTarget);
-            //}
-            //super.initAnimation();
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.639 -0400", hash_original_method = "954A06F8CA33C0A594F77D3B920078B4", hash_generated_method = "4390EF41D9CEBA38E6E4081B3B078249")
     @Override
     public ObjectAnimator setDuration(long duration) {
-        ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_565726242 = null; //Variable for return #1
+        ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_565726242 = null; 
         super.setDuration(duration);
         varB4EAC82CA7396A68D541C85D26508E83_565726242 = this;
         addTaint(duration);
-        varB4EAC82CA7396A68D541C85D26508E83_565726242.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_565726242.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_565726242;
-        // ---------- Original Method ----------
-        //super.setDuration(duration);
-        //return this;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.641 -0400", hash_original_method = "AF1F3CF2C666AC410BA38EDE7AFA44BA", hash_generated_method = "80BA8A52854B7B5BFCE048C5288512FD")
     public Object getTarget() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_487936247 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_487936247 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_487936247 = mTarget;
-        varB4EAC82CA7396A68D541C85D26508E83_487936247.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_487936247.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_487936247;
-        // ---------- Original Method ----------
-        //return mTarget;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.643 -0400", hash_original_method = "08B359BFA7826C6DC05DFFE8229162D4", hash_generated_method = "1DF6189AA9FB7E5536F6E046F0C7E440")
     @Override
     public void setTarget(Object target) {
@@ -346,21 +351,22 @@ public final class ObjectAnimator extends ValueAnimator {
             mTarget = target;
             {
                 boolean var2C98E48E4B4F691EA736E0E5C65FA038_184075610 = (oldTarget != null && target != null && oldTarget.getClass() == target.getClass());
-            } //End collapsed parenthetic
+            } 
             mInitialized = false;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mTarget != target) {
-            //final Object oldTarget = mTarget;
-            //mTarget = target;
-            //if (oldTarget != null && target != null && oldTarget.getClass() == target.getClass()) {
-                //return;
-            //}
-            //mInitialized = false;
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.645 -0400", hash_original_method = "E0694B6EB6C164E3B15E1A0481C3ED42", hash_generated_method = "845B263D0D325D058621240BBCAF7E66")
     @Override
     public void setupStartValues() {
@@ -370,17 +376,18 @@ public final class ObjectAnimator extends ValueAnimator {
             int i = 0;
             {
                 mValues[i].setupStartValue(mTarget);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //initAnimation();
-        //int numValues = mValues.length;
-        //for (int i = 0; i < numValues; ++i) {
-            //mValues[i].setupStartValue(mTarget);
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.647 -0400", hash_original_method = "92466FCD37C3DD1F8AE0CEC84015AF5E", hash_generated_method = "7768C55949F452D76BCA537EED4C568C")
     @Override
     public void setupEndValues() {
@@ -390,14 +397,14 @@ public final class ObjectAnimator extends ValueAnimator {
             int i = 0;
             {
                 mValues[i].setupEndValue(mTarget);
-            } //End block
-        } //End collapsed parenthetic
-        // ---------- Original Method ----------
-        //initAnimation();
-        //int numValues = mValues.length;
-        //for (int i = 0; i < numValues; ++i) {
-            //mValues[i].setupEndValue(mTarget);
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -410,36 +417,38 @@ public final class ObjectAnimator extends ValueAnimator {
             int i = 0;
             {
                 mValues[i].setAnimatedValue(mTarget);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(fraction);
-        // ---------- Original Method ----------
-        //super.animateValue(fraction);
-        //int numValues = mValues.length;
-        //for (int i = 0; i < numValues; ++i) {
-            //mValues[i].setAnimatedValue(mTarget);
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.650 -0400", hash_original_method = "90D327822AEC361513F70606A9AC65F7", hash_generated_method = "44BE608EF9F871653BB1190247987DF3")
     @Override
     public ObjectAnimator clone() {
-        ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_296615539 = null; //Variable for return #1
+        ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_296615539 = null; 
         final ObjectAnimator anim = (ObjectAnimator) super.clone();
         varB4EAC82CA7396A68D541C85D26508E83_296615539 = anim;
-        varB4EAC82CA7396A68D541C85D26508E83_296615539.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_296615539.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_296615539;
-        // ---------- Original Method ----------
-        //final ObjectAnimator anim = (ObjectAnimator) super.clone();
-        //return anim;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:12.652 -0400", hash_original_method = "0AD6D5BD218B220E887BD38666E44260", hash_generated_method = "D86A40819E32E41C974F25FF33C29EBF")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_424631953 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_424631953 = null; 
         String returnVal = "ObjectAnimator@" + Integer.toHexString(hashCode()) + ", target " +
             mTarget;
         {
@@ -447,21 +456,21 @@ public final class ObjectAnimator extends ValueAnimator {
                 int i = 0;
                 {
                     returnVal += "\n    " + mValues[i].toString();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_424631953 = returnVal;
-        varB4EAC82CA7396A68D541C85D26508E83_424631953.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_424631953.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_424631953;
-        // ---------- Original Method ----------
-        //String returnVal = "ObjectAnimator@" + Integer.toHexString(hashCode()) + ", target " +
-            //mTarget;
-        //if (mValues != null) {
-            //for (int i = 0; i < mValues.length; ++i) {
-                //returnVal += "\n    " + mValues[i].toString();
-            //}
-        //}
-        //return returnVal;
+        
+        
+            
+        
+            
+                
+            
+        
+        
     }
 
     

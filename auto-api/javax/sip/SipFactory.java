@@ -1,11 +1,11 @@
 package javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
@@ -22,7 +22,7 @@ public class SipFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.089 -0400", hash_original_method = "310FD6F79BE3873A4CC6341AA537481F", hash_generated_method = "8EE8B7CE3FF369FB663AE49D47AA71E3")
     private  SipFactory() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -35,22 +35,23 @@ public class SipFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.090 -0400", hash_original_method = "4674ABC43EF2CEE4F0AE8B5BE63244D8", hash_generated_method = "1563E944C31091A298AF7AA59469E4FE")
     public synchronized void resetFactory() {
         mNameSipStackMap.clear();
-        // ---------- Original Method ----------
-        //mNameSipStackMap.clear();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.091 -0400", hash_original_method = "46ABB390CF7D9D4CDAF3E704A7985B1B", hash_generated_method = "8026EE57CEEBBED3140ECB10BA0C37D7")
     public synchronized SipStack createSipStack(Properties properties) throws PeerUnavailableException {
-        SipStack varB4EAC82CA7396A68D541C85D26508E83_732974557 = null; //Variable for return #1
+        SipStack varB4EAC82CA7396A68D541C85D26508E83_732974557 = null; 
         String name = properties.getProperty(IP_ADDRESS_PROP);
         {
             name = properties.getProperty(STACK_NAME_PROP);
             {
                 if (DroidSafeAndroidRuntime.control) throw new PeerUnavailableException(
                         STACK_NAME_PROP + " property not found");
-            } //End block
-        } //End block
+            } 
+        } 
         SipStack sipStack = mNameSipStackMap.get(name);
         {
             String implClassName = "gov.nist."
@@ -61,119 +62,119 @@ public class SipFactory {
                         .asSubclass(SipStack.class)
                         .getConstructor(new Class[] {Properties.class})
                         .newInstance(new Object[] {properties});
-            } //End block
+            } 
             catch (Exception e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new PeerUnavailableException(
                         "Failed to initiate " + implClassName, e);
-            } //End block
+            } 
             mNameSipStackMap.put(name, sipStack);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_732974557 = sipStack;
         addTaint(properties.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_732974557.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_732974557.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_732974557;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.092 -0400", hash_original_method = "131499B33C0579C2805DA9334AD4F6E4", hash_generated_method = "F722D449EF7A4C85E981BFB2EAC46FB9")
     public AddressFactory createAddressFactory() throws PeerUnavailableException {
-        AddressFactory varB4EAC82CA7396A68D541C85D26508E83_1359382278 = null; //Variable for return #1
+        AddressFactory varB4EAC82CA7396A68D541C85D26508E83_1359382278 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1359382278 = new gov.nist.javax.sip.address.AddressFactoryImpl();
-        } //End block
+        } 
         catch (Exception e)
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw (PeerUnavailableException) e;
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new PeerUnavailableException(
                         "Failed to create AddressFactory", e);
-            } //End block
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1359382278.addTaint(getTaint()); //Add taint from parent
+            } 
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1359382278.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1359382278;
-        // ---------- Original Method ----------
-        //try {
-            //return new gov.nist.javax.sip.address.AddressFactoryImpl();
-        //} catch (Exception e) {
-            //if (e instanceof PeerUnavailableException) {
-                //throw (PeerUnavailableException) e;
-            //} else {
-                //throw new PeerUnavailableException(
-                        //"Failed to create AddressFactory", e);
-            //}
-        //}
+        
+        
+            
+        
+            
+                
+            
+                
+                        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.092 -0400", hash_original_method = "0FA4F64CC80ADFAB389758154B5AE216", hash_generated_method = "9B3D8A8E92F671181AFD5486AB3DF822")
     public HeaderFactory createHeaderFactory() throws PeerUnavailableException {
-        HeaderFactory varB4EAC82CA7396A68D541C85D26508E83_1367458765 = null; //Variable for return #1
+        HeaderFactory varB4EAC82CA7396A68D541C85D26508E83_1367458765 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1367458765 = new gov.nist.javax.sip.header.HeaderFactoryImpl();
-        } //End block
+        } 
         catch (Exception e)
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw (PeerUnavailableException) e;
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new PeerUnavailableException(
                         "Failed to create HeaderFactory", e);
-            } //End block
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1367458765.addTaint(getTaint()); //Add taint from parent
+            } 
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1367458765.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1367458765;
-        // ---------- Original Method ----------
-        //try {
-            //return new gov.nist.javax.sip.header.HeaderFactoryImpl();
-        //} catch (Exception e) {
-            //if (e instanceof PeerUnavailableException) {
-                //throw (PeerUnavailableException) e;
-            //} else {
-                //throw new PeerUnavailableException(
-                        //"Failed to create HeaderFactory", e);
-            //}
-        //}
+        
+        
+            
+        
+            
+                
+            
+                
+                        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:18.094 -0400", hash_original_method = "633D2CDB57C82E2B47B87FEFEA967AF9", hash_generated_method = "37DB8B4DC633F9F680450CA27ACA7F2A")
     public MessageFactory createMessageFactory() throws PeerUnavailableException {
-        MessageFactory varB4EAC82CA7396A68D541C85D26508E83_138701568 = null; //Variable for return #1
+        MessageFactory varB4EAC82CA7396A68D541C85D26508E83_138701568 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_138701568 = new gov.nist.javax.sip.message.MessageFactoryImpl();
-        } //End block
+        } 
         catch (Exception e)
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw (PeerUnavailableException) e;
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new PeerUnavailableException(
                         "Failed to create MessageFactory", e);
-            } //End block
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_138701568.addTaint(getTaint()); //Add taint from parent
+            } 
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_138701568.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_138701568;
-        // ---------- Original Method ----------
-        //try {
-            //return new gov.nist.javax.sip.message.MessageFactoryImpl();
-        //} catch (Exception e) {
-            //if (e instanceof PeerUnavailableException) {
-                //throw (PeerUnavailableException) e;
-            //} else {
-                //throw new PeerUnavailableException(
-                        //"Failed to create MessageFactory", e);
-            //}
-        //}
+        
+        
+            
+        
+            
+                
+            
+                
+                        
+            
+        
     }
 
     

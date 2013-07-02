@@ -1,11 +1,11 @@
 package org.apache.http.impl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.util.HashMap;
 import org.apache.http.HttpConnectionMetrics;
@@ -35,41 +35,43 @@ public class HttpConnectionMetricsImpl implements HttpConnectionMetrics {
         super();
         this.inTransportMetric = inTransportMetric;
         this.outTransportMetric = outTransportMetric;
-        // ---------- Original Method ----------
-        //this.inTransportMetric = inTransportMetric;
-        //this.outTransportMetric = outTransportMetric;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.724 -0400", hash_original_method = "1EBAB3737DE9FB9DF9CC42BB4FE509FE", hash_generated_method = "4D9C9C21BBACBAC4DF276A5D5E517212")
     public long getReceivedBytesCount() {
         {
             long varA283B784B7FE9BFC0569F40A60B46342_1849541468 = (this.inTransportMetric.getBytesTransferred());
-        } //End block
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1475313798 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1475313798;
-        // ---------- Original Method ----------
-        //if (this.inTransportMetric != null) {
-            //return this.inTransportMetric.getBytesTransferred();
-        //} else {
-            //return -1;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.724 -0400", hash_original_method = "F08F23EEAF6902947D0550EC2D19F62A", hash_generated_method = "804F2C94F55D346C3F9365AD6B532138")
     public long getSentBytesCount() {
         {
             long var90735343CB9DA2D0369C240F6C47331E_265952300 = (this.outTransportMetric.getBytesTransferred());
-        } //End block
+        } 
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1523867014 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1523867014;
-        // ---------- Original Method ----------
-        //if (this.outTransportMetric != null) {
-            //return this.outTransportMetric.getBytesTransferred();
-        //} else {
-            //return -1;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -77,15 +79,15 @@ public class HttpConnectionMetricsImpl implements HttpConnectionMetrics {
     public long getRequestCount() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1090015363 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1090015363;
-        // ---------- Original Method ----------
-        //return this.requestCount;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.724 -0400", hash_original_method = "6C45A6D8B86DB0070BDE4B1C1CEA64D7", hash_generated_method = "4BCF63E7C4DD947BD3DAA974233584E9")
     public void incrementRequestCount() {
-        // ---------- Original Method ----------
-        //this.requestCount++;
+        
+        
     }
 
     
@@ -93,89 +95,89 @@ public class HttpConnectionMetricsImpl implements HttpConnectionMetrics {
     public long getResponseCount() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_364164760 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_364164760;
-        // ---------- Original Method ----------
-        //return this.responseCount;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.725 -0400", hash_original_method = "6B43C475A149C70A7E71BE6915C4E68E", hash_generated_method = "486B4FDA9D1AED4176A5CF3EA04DF9FE")
     public void incrementResponseCount() {
-        // ---------- Original Method ----------
-        //this.responseCount++;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.726 -0400", hash_original_method = "6C49AD7310EA65AFC750C659BF89235C", hash_generated_method = "29DF78FF1D6BE48E53EFD7F07CD7207B")
     public Object getMetric(final String metricName) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_285249122 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_255061120 = null; //Variable for return #2
-        Object varB4EAC82CA7396A68D541C85D26508E83_1726844002 = null; //Variable for return #3
-        Object varB4EAC82CA7396A68D541C85D26508E83_1306160527 = null; //Variable for return #4
-        Object varB4EAC82CA7396A68D541C85D26508E83_1442667317 = null; //Variable for return #5
+        Object varB4EAC82CA7396A68D541C85D26508E83_285249122 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_255061120 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_1726844002 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_1306160527 = null; 
+        Object varB4EAC82CA7396A68D541C85D26508E83_1442667317 = null; 
         Object value = null;
         {
             value = this.metricsCache.get(metricName);
-        } //End block
+        } 
         {
             {
                 boolean var721E85E55F36049DF388518E19C906EB_1746966068 = (REQUEST_COUNT.equals(metricName));
                 {
                     value = new Long(requestCount);
-                } //End block
+                } 
                 {
                     boolean var45256D08B5E5B6B974A64AB355A357C9_1619764545 = (RESPONSE_COUNT.equals(metricName));
                     {
                         value = new Long(responseCount);
-                    } //End block
+                    } 
                     {
                         boolean varBA0B5171C62B543B1C7290A6E41E9B56_61210257 = (RECEIVED_BYTES_COUNT.equals(metricName));
                         {
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_285249122 = new Long(this.inTransportMetric.getBytesTransferred());
-                            } //End block
+                            } 
                             {
                                 varB4EAC82CA7396A68D541C85D26508E83_255061120 = null;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         {
                             boolean var49C09C5820A124542F071CB2D3F2AD07_739554877 = (SENT_BYTES_COUNT.equals(metricName));
                             {
                                 {
                                     varB4EAC82CA7396A68D541C85D26508E83_1726844002 = new Long(this.outTransportMetric.getBytesTransferred());
-                                } //End block
+                                } 
                                 {
                                     varB4EAC82CA7396A68D541C85D26508E83_1306160527 = null;
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End collapsed parenthetic
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-        } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1442667317 = value;
         addTaint(metricName.getTaint());
-        Object varA7E53CE21691AB073D9660D615818899_843111538; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_843111538; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_843111538 = varB4EAC82CA7396A68D541C85D26508E83_285249122;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_843111538 = varB4EAC82CA7396A68D541C85D26508E83_255061120;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_843111538 = varB4EAC82CA7396A68D541C85D26508E83_1726844002;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_843111538 = varB4EAC82CA7396A68D541C85D26508E83_1306160527;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_843111538 = varB4EAC82CA7396A68D541C85D26508E83_1442667317;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_843111538.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_843111538.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_843111538;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -183,39 +185,40 @@ public class HttpConnectionMetricsImpl implements HttpConnectionMetrics {
     public void setMetric(final String metricName, Object obj) {
         {
             this.metricsCache = new HashMap();
-        } //End block
+        } 
         this.metricsCache.put(metricName, obj);
         addTaint(metricName.getTaint());
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
-        //if (this.metricsCache == null) {
-            //this.metricsCache = new HashMap();
-        //}
-        //this.metricsCache.put(metricName, obj);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.728 -0400", hash_original_method = "547EC11D83367AF05AC108A4083E6A6D", hash_generated_method = "AE06DD6F24E693566367F909278FD230")
     public void reset() {
         {
             this.outTransportMetric.reset();
-        } //End block
+        } 
         {
             this.inTransportMetric.reset();
-        } //End block
+        } 
         this.requestCount = 0;
         this.responseCount = 0;
         this.metricsCache = null;
-        // ---------- Original Method ----------
-        //if (this.outTransportMetric != null) {
-            //this.outTransportMetric.reset();
-        //}
-        //if (this.inTransportMetric != null) {
-            //this.inTransportMetric.reset();
-        //}
-        //this.requestCount = 0;
-        //this.responseCount = 0;
-        //this.metricsCache = null;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     

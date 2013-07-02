@@ -1,11 +1,11 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.app.ActivityManagerNative;
 import android.app.ActivityThread;
@@ -27,7 +27,7 @@ public abstract class BroadcastReceiver {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.009 -0400", hash_original_method = "2900F07960080430406180ADD3872CDD", hash_generated_method = "4949473B0E069ABC52AE38A1EB5EC2B1")
     public  BroadcastReceiver() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -36,22 +36,22 @@ public abstract class BroadcastReceiver {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.010 -0400", hash_original_method = "A694EC135053AF2FEB071A12D3EE4319", hash_generated_method = "48716E623D1A6E97EAC750FAAA0655BA")
     public final PendingResult goAsync() {
-        PendingResult varB4EAC82CA7396A68D541C85D26508E83_41189274 = null; //Variable for return #1
+        PendingResult varB4EAC82CA7396A68D541C85D26508E83_41189274 = null; 
         PendingResult res = mPendingResult;
         mPendingResult = null;
         varB4EAC82CA7396A68D541C85D26508E83_41189274 = res;
-        varB4EAC82CA7396A68D541C85D26508E83_41189274.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_41189274.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_41189274;
-        // ---------- Original Method ----------
-        //PendingResult res = mPendingResult;
-        //mPendingResult = null;
-        //return res;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.011 -0400", hash_original_method = "891D062EE6B5DF300B0D5F817EBA802C", hash_generated_method = "E6DDDB9EA9707758BCE4FA30A552C688")
     public IBinder peekService(Context myContext, Intent service) {
-        IBinder varB4EAC82CA7396A68D541C85D26508E83_1972393225 = null; //Variable for return #1
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_1972393225 = null; 
         IActivityManager am = ActivityManagerNative.getDefault();
         IBinder binder = null;
         try 
@@ -59,24 +59,24 @@ public abstract class BroadcastReceiver {
             service.setAllowFds(false);
             binder = am.peekService(service, service.resolveTypeIfNeeded(
                     myContext.getContentResolver()));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         varB4EAC82CA7396A68D541C85D26508E83_1972393225 = binder;
         addTaint(myContext.getTaint());
         addTaint(service.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1972393225.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1972393225.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1972393225;
-        // ---------- Original Method ----------
-        //IActivityManager am = ActivityManagerNative.getDefault();
-        //IBinder binder = null;
-        //try {
-            //service.setAllowFds(false);
-            //binder = am.peekService(service, service.resolveTypeIfNeeded(
-                    //myContext.getContentResolver()));
-        //} catch (RemoteException e) {
-        //}
-        //return binder;
+        
+        
+        
+        
+            
+            
+                    
+        
+        
+        
     }
 
     
@@ -84,9 +84,9 @@ public abstract class BroadcastReceiver {
     public final void setResultCode(int code) {
         checkSynchronousHint();
         mPendingResult.mResultCode = code;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mResultCode = code;
+        
+        
+        
     }
 
     
@@ -94,8 +94,8 @@ public abstract class BroadcastReceiver {
     public final int getResultCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_73493056 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_73493056;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mResultCode : 0;
+        
+        
     }
 
     
@@ -103,20 +103,20 @@ public abstract class BroadcastReceiver {
     public final void setResultData(String data) {
         checkSynchronousHint();
         mPendingResult.mResultData = data;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mResultData = data;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.013 -0400", hash_original_method = "4500B5844C9E31997AA4128C2B631832", hash_generated_method = "FC02991FA9F9CCF13007335C8D596BA0")
     public final String getResultData() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1953526040 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1953526040 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1953526040 = mPendingResult != null ? mPendingResult.mResultData : null;
-        varB4EAC82CA7396A68D541C85D26508E83_1953526040.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1953526040.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1953526040;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mResultData : null;
+        
+        
     }
 
     
@@ -124,47 +124,47 @@ public abstract class BroadcastReceiver {
     public final void setResultExtras(Bundle extras) {
         checkSynchronousHint();
         mPendingResult.mResultExtras = extras;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mResultExtras = extras;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.015 -0400", hash_original_method = "4CB90710C7A856F1CF5FAF169A56650C", hash_generated_method = "8B787EA9F097AD34F44C525B7A59CB8B")
     public final Bundle getResultExtras(boolean makeMap) {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_494050489 = null; //Variable for return #1
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_710475023 = null; //Variable for return #2
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_2083233303 = null; //Variable for return #3
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_494050489 = null; 
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_710475023 = null; 
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_2083233303 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_494050489 = null;
-        } //End block
+        } 
         Bundle e = mPendingResult.mResultExtras;
         varB4EAC82CA7396A68D541C85D26508E83_710475023 = e;
         mPendingResult.mResultExtras = e = new Bundle();
         varB4EAC82CA7396A68D541C85D26508E83_2083233303 = e;
         addTaint(makeMap);
-        Bundle varA7E53CE21691AB073D9660D615818899_594267294; //Final return value
+        Bundle varA7E53CE21691AB073D9660D615818899_594267294; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_594267294 = varB4EAC82CA7396A68D541C85D26508E83_494050489;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_594267294 = varB4EAC82CA7396A68D541C85D26508E83_710475023;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_594267294 = varB4EAC82CA7396A68D541C85D26508E83_2083233303;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_594267294.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_594267294.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_594267294;
-        // ---------- Original Method ----------
-        //if (mPendingResult == null) {
-            //return null;
-        //}
-        //Bundle e = mPendingResult.mResultExtras;
-        //if (!makeMap) return e;
-        //if (e == null) mPendingResult.mResultExtras = e = new Bundle();
-        //return e;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -174,11 +174,11 @@ public abstract class BroadcastReceiver {
         mPendingResult.mResultCode = code;
         mPendingResult.mResultData = data;
         mPendingResult.mResultExtras = extras;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mResultCode = code;
-        //mPendingResult.mResultData = data;
-        //mPendingResult.mResultExtras = extras;
+        
+        
+        
+        
+        
     }
 
     
@@ -186,8 +186,8 @@ public abstract class BroadcastReceiver {
     public final boolean getAbortBroadcast() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1666147234 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1666147234;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mAbortBroadcast : false;
+        
+        
     }
 
     
@@ -195,9 +195,9 @@ public abstract class BroadcastReceiver {
     public final void abortBroadcast() {
         checkSynchronousHint();
         mPendingResult.mAbortBroadcast = true;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mAbortBroadcast = true;
+        
+        
+        
     }
 
     
@@ -205,11 +205,11 @@ public abstract class BroadcastReceiver {
     public final void clearAbortBroadcast() {
         {
             mPendingResult.mAbortBroadcast = false;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPendingResult != null) {
-            //mPendingResult.mAbortBroadcast = false;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -217,8 +217,8 @@ public abstract class BroadcastReceiver {
     public final boolean isOrderedBroadcast() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1120965026 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1120965026;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mOrderedHint : false;
+        
+        
     }
 
     
@@ -226,42 +226,42 @@ public abstract class BroadcastReceiver {
     public final boolean isInitialStickyBroadcast() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_149878579 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_149878579;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mInitialStickyHint : false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.020 -0400", hash_original_method = "68B6314C0DA1E37C298D89B55CAE3400", hash_generated_method = "69D814F3B32F84B57634F91799811317")
     public final void setOrderedHint(boolean isOrdered) {
         addTaint(isOrdered);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.020 -0400", hash_original_method = "D4C333B718143025A27C15902000FB77", hash_generated_method = "D9AD103DE2626E233CF20E2D5E772BFB")
     public final void setPendingResult(PendingResult result) {
         mPendingResult = result;
-        // ---------- Original Method ----------
-        //mPendingResult = result;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.021 -0400", hash_original_method = "DB63B22B6D1F06710FF3BD6349434467", hash_generated_method = "507438F14BB0C35E23998C69D292C03A")
     public final PendingResult getPendingResult() {
-        PendingResult varB4EAC82CA7396A68D541C85D26508E83_1695252611 = null; //Variable for return #1
+        PendingResult varB4EAC82CA7396A68D541C85D26508E83_1695252611 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1695252611 = mPendingResult;
-        varB4EAC82CA7396A68D541C85D26508E83_1695252611.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1695252611.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1695252611;
-        // ---------- Original Method ----------
-        //return mPendingResult;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.021 -0400", hash_original_method = "A942596201048EAFD951F2DD414301FD", hash_generated_method = "AE10474DE2420C2D522388046B0DF067")
     public final void setDebugUnregister(boolean debug) {
         mDebugUnregister = debug;
-        // ---------- Original Method ----------
-        //mDebugUnregister = debug;
+        
+        
     }
 
     
@@ -269,8 +269,8 @@ public abstract class BroadcastReceiver {
     public final boolean getDebugUnregister() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2119939352 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2119939352;
-        // ---------- Original Method ----------
-        //return mDebugUnregister;
+        
+        
     }
 
     
@@ -278,21 +278,21 @@ public abstract class BroadcastReceiver {
      void checkSynchronousHint() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Call while result is not pending");
-        } //End block
+        } 
         RuntimeException e = new RuntimeException(
                 "BroadcastReceiver trying to return result during a non-ordered broadcast");
         e.fillInStackTrace();
-        // ---------- Original Method ----------
-        //if (mPendingResult == null) {
-            //throw new IllegalStateException("Call while result is not pending");
-        //}
-        //if (mPendingResult.mOrderedHint || mPendingResult.mInitialStickyHint) {
-            //return;
-        //}
-        //RuntimeException e = new RuntimeException(
-                //"BroadcastReceiver trying to return result during a non-ordered broadcast");
-        //e.fillInStackTrace();
-        //Log.e("BroadcastReceiver", e.getMessage(), e);
+        
+        
+            
+        
+        
+            
+        
+        
+                
+        
+        
     }
 
     
@@ -335,14 +335,14 @@ public abstract class BroadcastReceiver {
             mOrderedHint = ordered;
             mInitialStickyHint = sticky;
             mToken = token;
-            // ---------- Original Method ----------
-            //mResultCode = resultCode;
-            //mResultData = resultData;
-            //mResultExtras = resultExtras;
-            //mType = type;
-            //mOrderedHint = ordered;
-            //mInitialStickyHint = sticky;
-            //mToken = token;
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -350,9 +350,9 @@ public abstract class BroadcastReceiver {
         public final void setResultCode(int code) {
             checkSynchronousHint();
             mResultCode = code;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mResultCode = code;
+            
+            
+            
         }
 
         
@@ -360,8 +360,8 @@ public abstract class BroadcastReceiver {
         public final int getResultCode() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2086037141 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2086037141;
-            // ---------- Original Method ----------
-            //return mResultCode;
+            
+            
         }
 
         
@@ -369,20 +369,20 @@ public abstract class BroadcastReceiver {
         public final void setResultData(String data) {
             checkSynchronousHint();
             mResultData = data;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mResultData = data;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.027 -0400", hash_original_method = "AF28EEAF3BA9B8705C009D1FCC834AB4", hash_generated_method = "98DEF0E59B663649E40F7040B0F6BFEC")
         public final String getResultData() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1559401284 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1559401284 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1559401284 = mResultData;
-            varB4EAC82CA7396A68D541C85D26508E83_1559401284.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1559401284.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1559401284;
-            // ---------- Original Method ----------
-            //return mResultData;
+            
+            
         }
 
         
@@ -390,37 +390,37 @@ public abstract class BroadcastReceiver {
         public final void setResultExtras(Bundle extras) {
             checkSynchronousHint();
             mResultExtras = extras;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mResultExtras = extras;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.030 -0400", hash_original_method = "48408ADF0828FD95531740A7B634349C", hash_generated_method = "ACB34243B95F29E869E8B11003B6755B")
         public final Bundle getResultExtras(boolean makeMap) {
-            Bundle varB4EAC82CA7396A68D541C85D26508E83_1476119556 = null; //Variable for return #1
-            Bundle varB4EAC82CA7396A68D541C85D26508E83_78918429 = null; //Variable for return #2
+            Bundle varB4EAC82CA7396A68D541C85D26508E83_1476119556 = null; 
+            Bundle varB4EAC82CA7396A68D541C85D26508E83_78918429 = null; 
             Bundle e = mResultExtras;
             varB4EAC82CA7396A68D541C85D26508E83_1476119556 = e;
             mResultExtras = e = new Bundle();
             varB4EAC82CA7396A68D541C85D26508E83_78918429 = e;
             addTaint(makeMap);
-            Bundle varA7E53CE21691AB073D9660D615818899_1099867735; //Final return value
+            Bundle varA7E53CE21691AB073D9660D615818899_1099867735; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_1099867735 = varB4EAC82CA7396A68D541C85D26508E83_1476119556;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_1099867735 = varB4EAC82CA7396A68D541C85D26508E83_78918429;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1099867735.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_1099867735.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1099867735;
-            // ---------- Original Method ----------
-            //Bundle e = mResultExtras;
-            //if (!makeMap) return e;
-            //if (e == null) mResultExtras = e = new Bundle();
-            //return e;
+            
+            
+            
+            
+            
         }
 
         
@@ -430,11 +430,11 @@ public abstract class BroadcastReceiver {
             mResultCode = code;
             mResultData = data;
             mResultExtras = extras;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mResultCode = code;
-            //mResultData = data;
-            //mResultExtras = extras;
+            
+            
+            
+            
+            
         }
 
         
@@ -442,8 +442,8 @@ public abstract class BroadcastReceiver {
         public final boolean getAbortBroadcast() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_715873216 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_715873216;
-            // ---------- Original Method ----------
-            //return mAbortBroadcast;
+            
+            
         }
 
         
@@ -451,17 +451,17 @@ public abstract class BroadcastReceiver {
         public final void abortBroadcast() {
             checkSynchronousHint();
             mAbortBroadcast = true;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mAbortBroadcast = true;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.033 -0400", hash_original_method = "D4C82CDA8EB6714DAE416B0884FCBC85", hash_generated_method = "6C1AABD9192E1E0A43D3F6EB36BA7FB9")
         public final void clearAbortBroadcast() {
             mAbortBroadcast = false;
-            // ---------- Original Method ----------
-            //mAbortBroadcast = false;
+            
+            
         }
 
         
@@ -478,25 +478,25 @@ public abstract class BroadcastReceiver {
                             @Override
                             public void run() {
                                 sendFinished(mgr);
-                                // ---------- Original Method ----------
-                                //if (ActivityThread.DEBUG_BROADCAST) Slog.i(ActivityThread.TAG,
-                                    //"Finishing broadcast after work to component " + mToken);
-                                //sendFinished(mgr);
+                                
+                                
+                                    
+                                
                             }
 });
-                    } //End block
+                    } 
                     {
                         sendFinished(mgr);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
+                    } 
+                } 
+            } 
             {
                 IActivityManager mgr;
                 mgr = ActivityManagerNative.getDefault();
                 sendFinished(mgr);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -504,12 +504,12 @@ public abstract class BroadcastReceiver {
         public void setExtrasClassLoader(ClassLoader cl) {
             {
                 mResultExtras.setClassLoader(cl);
-            } //End block
+            } 
             addTaint(cl.getTaint());
-            // ---------- Original Method ----------
-            //if (mResultExtras != null) {
-                //mResultExtras.setClassLoader(cl);
-            //}
+            
+            
+                
+            
         }
 
         
@@ -518,44 +518,44 @@ public abstract class BroadcastReceiver {
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Broadcast already finished");
-                } //End block
+                } 
                 mFinished = true;
                 try 
                 {
                     {
                         mResultExtras.setAllowFds(false);
-                    } //End block
+                    } 
                     {
                         am.finishReceiver(mToken, mResultCode, mResultData, mResultExtras,
                                 mAbortBroadcast);
-                    } //End block
+                    } 
                     {
                         am.finishReceiver(mToken, 0, null, null, false);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (RemoteException ex)
                 { }
-            } //End block
+            } 
             addTaint(am.getTaint());
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //if (mFinished) {
-                    //throw new IllegalStateException("Broadcast already finished");
-                //}
-                //mFinished = true;
-                //try {
-                    //if (mResultExtras != null) {
-                        //mResultExtras.setAllowFds(false);
-                    //}
-                    //if (mOrderedHint) {
-                        //am.finishReceiver(mToken, mResultCode, mResultData, mResultExtras,
-                                //mAbortBroadcast);
-                    //} else {
-                        //am.finishReceiver(mToken, 0, null, null, false);
-                    //}
-                //} catch (RemoteException ex) {
-                //}
-            //}
+            
+            
+                
+                    
+                
+                
+                
+                    
+                        
+                    
+                    
+                        
+                                
+                    
+                        
+                    
+                
+                
+            
         }
 
         
@@ -564,14 +564,14 @@ public abstract class BroadcastReceiver {
             RuntimeException e = new RuntimeException(
                     "BroadcastReceiver trying to return result during a non-ordered broadcast");
             e.fillInStackTrace();
-            // ---------- Original Method ----------
-            //if (mOrderedHint || mInitialStickyHint) {
-                //return;
-            //}
-            //RuntimeException e = new RuntimeException(
-                    //"BroadcastReceiver trying to return result during a non-ordered broadcast");
-            //e.fillInStackTrace();
-            //Log.e("BroadcastReceiver", e.getMessage(), e);
+            
+            
+                
+            
+            
+                    
+            
+            
         }
 
         

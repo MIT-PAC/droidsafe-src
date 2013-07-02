@@ -1,11 +1,11 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.harmony.xnet.provider.jsse.FileClientSessionCache;
 import org.apache.harmony.xnet.provider.jsse.SSLClientSessionCache;
@@ -22,8 +22,8 @@ public final class SSLSessionCache {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:38.025 -0400", hash_original_method = "6BE9C825DC583F0CB57790078D9D850C", hash_generated_method = "BFF2023672F9B3C3573F503758C24A48")
     public  SSLSessionCache(File dir) throws IOException {
         mSessionCache = FileClientSessionCache.usingDirectory(dir);
-        // ---------- Original Method ----------
-        //mSessionCache = FileClientSessionCache.usingDirectory(dir);
+        
+        
     }
 
     
@@ -34,20 +34,20 @@ public final class SSLSessionCache {
         try 
         {
             cache = FileClientSessionCache.usingDirectory(dir);
-        } //End block
+        } 
         catch (IOException e)
         { }
         mSessionCache = cache;
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //File dir = context.getDir("sslcache", Context.MODE_PRIVATE);
-        //SSLClientSessionCache cache = null;
-        //try {
-            //cache = FileClientSessionCache.usingDirectory(dir);
-        //} catch (IOException e) {
-            //Log.w(TAG, "Unable to create SSL session cache in " + dir, e);
-        //}
-        //mSessionCache = cache;
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     

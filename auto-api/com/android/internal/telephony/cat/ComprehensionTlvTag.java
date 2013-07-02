@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public enum ComprehensionTlvTag {
@@ -40,6 +40,7 @@ public enum ComprehensionTlvTag {
     public int value() {
         return mValue;
     }
+    @DSModeled(DSC.SAFE)
     public static ComprehensionTlvTag fromInt(int value) {
         for (ComprehensionTlvTag e : ComprehensionTlvTag.values()) {
             if (e.mValue == value) {

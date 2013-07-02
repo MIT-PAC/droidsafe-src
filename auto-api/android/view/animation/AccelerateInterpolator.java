@@ -1,11 +1,11 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -23,9 +23,9 @@ public class AccelerateInterpolator implements Interpolator {
     public  AccelerateInterpolator() {
         mFactor = 1.0f;
         mDoubleFactor = 2.0;
-        // ---------- Original Method ----------
-        //mFactor = 1.0f;
-        //mDoubleFactor = 2.0;
+        
+        
+        
     }
 
     
@@ -33,9 +33,9 @@ public class AccelerateInterpolator implements Interpolator {
     public  AccelerateInterpolator(float factor) {
         mFactor = factor;
         mDoubleFactor = 2 * mFactor;
-        // ---------- Original Method ----------
-        //mFactor = factor;
-        //mDoubleFactor = 2 * mFactor;
+        
+        
+        
     }
 
     
@@ -47,29 +47,30 @@ public class AccelerateInterpolator implements Interpolator {
         a.recycle();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //TypedArray a =
-            //context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.AccelerateInterpolator);
-        //mFactor = a.getFloat(com.android.internal.R.styleable.AccelerateInterpolator_factor, 1.0f);
-        //mDoubleFactor = 2 * mFactor;
-        //a.recycle();
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:02.234 -0400", hash_original_method = "8D8C7C748A85E1C7007F595C7B08B241", hash_generated_method = "7E92BBFB97B1989226503AD63BC71734")
     public float getInterpolation(float input) {
         {
             float var73859B2992F46FC4B2E8AC506AD29932_673776222 = ((float)Math.pow(input, mDoubleFactor));
-        } //End block
+        } 
         addTaint(input);
         float var546ADE640B6EDFBC8A086EF31347E768_2028689576 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2028689576;
-        // ---------- Original Method ----------
-        //if (mFactor == 1.0f) {
-            //return input * input;
-        //} else {
-            //return (float)Math.pow(input, mDoubleFactor);
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     

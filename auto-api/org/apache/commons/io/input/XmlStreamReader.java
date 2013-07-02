@@ -1,11 +1,11 @@
 package org.apache.commons.io.input;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -40,7 +40,7 @@ public class XmlStreamReader extends Reader {
     public  XmlStreamReader(File file) throws IOException {
         this(new FileInputStream(file));
         addTaint(file.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -48,7 +48,7 @@ public class XmlStreamReader extends Reader {
     public  XmlStreamReader(InputStream is) throws IOException {
         this(is, true);
         addTaint(is.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -57,7 +57,7 @@ public class XmlStreamReader extends Reader {
         this(is, lenient, null);
         addTaint(is.getTaint());
         addTaint(lenient);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -69,12 +69,12 @@ public class XmlStreamReader extends Reader {
         this.encoding = doRawStream(bom, pis, lenient);
         this.reader = new InputStreamReader(pis, encoding);
         addTaint(is.getTaint());
-        // ---------- Original Method ----------
-        //this.defaultEncoding = defaultEncoding;
-        //BOMInputStream bom = new BOMInputStream(new BufferedInputStream(is, BUFFER_SIZE), false, BOMS);
-        //BOMInputStream pis = new BOMInputStream(bom, true, XML_GUESS_BYTES);
-        //this.encoding = doRawStream(bom, pis, lenient);
-        //this.reader = new InputStreamReader(pis, encoding);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -82,7 +82,7 @@ public class XmlStreamReader extends Reader {
     public  XmlStreamReader(URL url) throws IOException {
         this(url.openConnection(), null);
         addTaint(url.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -96,25 +96,25 @@ public class XmlStreamReader extends Reader {
         BOMInputStream pis = new BOMInputStream(bom, true, XML_GUESS_BYTES);
         {
             this.encoding = doHttpStream(bom, pis, contentType, lenient);
-        } //End block
+        } 
         {
             this.encoding = doRawStream(bom, pis, lenient);
-        } //End block
+        } 
         this.reader = new InputStreamReader(pis, encoding);
         addTaint(conn.getTaint());
-        // ---------- Original Method ----------
-        //this.defaultEncoding = defaultEncoding;
-        //boolean lenient = true;
-        //String contentType = conn.getContentType();
-        //InputStream is = conn.getInputStream();
-        //BOMInputStream bom = new BOMInputStream(new BufferedInputStream(is, BUFFER_SIZE), false, BOMS);
-        //BOMInputStream pis = new BOMInputStream(bom, true, XML_GUESS_BYTES);
-        //if (conn instanceof HttpURLConnection || contentType != null) {
-            //this.encoding = doHttpStream(bom, pis, contentType, lenient);
-        //} else {
-            //this.encoding = doRawStream(bom, pis, lenient);
-        //}
-        //this.reader = new InputStreamReader(pis, encoding);
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -123,7 +123,7 @@ public class XmlStreamReader extends Reader {
         this(is, httpContentType, true);
         addTaint(is.getTaint());
         addTaint(httpContentType.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -136,12 +136,12 @@ public class XmlStreamReader extends Reader {
         this.encoding = doHttpStream(bom, pis, httpContentType, lenient);
         this.reader = new InputStreamReader(pis, encoding);
         addTaint(is.getTaint());
-        // ---------- Original Method ----------
-        //this.defaultEncoding = defaultEncoding;
-        //BOMInputStream bom = new BOMInputStream(new BufferedInputStream(is, BUFFER_SIZE), false, BOMS);
-        //BOMInputStream pis = new BOMInputStream(bom, true, XML_GUESS_BYTES);
-        //this.encoding = doHttpStream(bom, pis, httpContentType, lenient);
-        //this.reader = new InputStreamReader(pis, encoding);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -152,32 +152,35 @@ public class XmlStreamReader extends Reader {
         addTaint(is.getTaint());
         addTaint(httpContentType.getTaint());
         addTaint(lenient);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.439 -0400", hash_original_method = "F443D1F05E85BC7B1454291BD7671BD0", hash_generated_method = "2D42FA2D03182FDF9036B4B88049D3B8")
     public String getDefaultEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1296131386 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1296131386 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1296131386 = defaultEncoding;
-        varB4EAC82CA7396A68D541C85D26508E83_1296131386.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1296131386.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1296131386;
-        // ---------- Original Method ----------
-        //return defaultEncoding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.439 -0400", hash_original_method = "ECC6E581C26F132636CDCE9C9A5E5807", hash_generated_method = "3873AF688284E81BB4CF28453BE4BF2F")
     public String getEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1310510683 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1310510683 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1310510683 = encoding;
-        varB4EAC82CA7396A68D541C85D26508E83_1310510683.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1310510683.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1310510683;
-        // ---------- Original Method ----------
-        //return encoding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.440 -0400", hash_original_method = "36C1E95AD8A6DF443D7A292EAE48D897", hash_generated_method = "0FB5F3C2F9BAB4688F9A31A5FA93172A")
     @Override
     public int read(char[] buf, int offset, int len) throws IOException {
@@ -187,75 +190,78 @@ public class XmlStreamReader extends Reader {
         addTaint(len);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_709338127 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_709338127;
-        // ---------- Original Method ----------
-        //return reader.read(buf, offset, len);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.440 -0400", hash_original_method = "A1FFC9B80BA56A6C1B0EFB45497D16D1", hash_generated_method = "B3E1029E376B5E0CFBFF8FD738B892BD")
     @Override
     public void close() throws IOException {
         reader.close();
-        // ---------- Original Method ----------
-        //reader.close();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.441 -0400", hash_original_method = "2A9E440FCF0AAE6B2EF64361426B6DDA", hash_generated_method = "5044E512D948F9F6C77FD6B1655915CC")
     private String doRawStream(BOMInputStream bom, BOMInputStream pis, boolean lenient) throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1205871776 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1038356510 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1205871776 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1038356510 = null; 
         String bomEnc = bom.getBOMCharsetName();
         String xmlGuessEnc = pis.getBOMCharsetName();
         String xmlEnc = getXmlProlog(pis, xmlGuessEnc);
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1205871776 = calculateRawEncoding(bomEnc, xmlGuessEnc, xmlEnc);
-        } //End block
+        } 
         catch (XmlStreamReaderException ex)
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1038356510 = doLenientDetection(null, ex);
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw ex;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(bom.getTaint());
         addTaint(pis.getTaint());
         addTaint(lenient);
-        String varA7E53CE21691AB073D9660D615818899_1448159960; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1448159960; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1448159960 = varB4EAC82CA7396A68D541C85D26508E83_1205871776;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1448159960 = varB4EAC82CA7396A68D541C85D26508E83_1038356510;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1448159960.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1448159960.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1448159960;
-        // ---------- Original Method ----------
-        //String bomEnc      = bom.getBOMCharsetName();
-        //String xmlGuessEnc = pis.getBOMCharsetName();
-        //String xmlEnc = getXmlProlog(pis, xmlGuessEnc);
-        //try {
-            //return calculateRawEncoding(bomEnc, xmlGuessEnc, xmlEnc);
-        //} catch (XmlStreamReaderException ex) {
-            //if (lenient) {
-                //return doLenientDetection(null, ex);
-            //} else {
-                //throw ex;
-            //}
-        //}
+        
+        
+        
+        
+        
+            
+        
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.441 -0400", hash_original_method = "58151B4DA62D82E62869FF632AE48FF5", hash_generated_method = "074E731C7D1599DBAE7AAC30A344BF3F")
     private String doHttpStream(BOMInputStream bom, BOMInputStream pis, String httpContentType,
             boolean lenient) throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_233425179 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1732768436 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_233425179 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1732768436 = null; 
         String bomEnc = bom.getBOMCharsetName();
         String xmlGuessEnc = pis.getBOMCharsetName();
         String xmlEnc = getXmlProlog(pis, xmlGuessEnc);
@@ -263,53 +269,54 @@ public class XmlStreamReader extends Reader {
         {
             varB4EAC82CA7396A68D541C85D26508E83_233425179 = calculateHttpEncoding(httpContentType, bomEnc,
                     xmlGuessEnc, xmlEnc, lenient);
-        } //End block
+        } 
         catch (XmlStreamReaderException ex)
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1732768436 = doLenientDetection(httpContentType, ex);
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw ex;
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(bom.getTaint());
         addTaint(pis.getTaint());
         addTaint(httpContentType.getTaint());
         addTaint(lenient);
-        String varA7E53CE21691AB073D9660D615818899_1487119754; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1487119754; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1487119754 = varB4EAC82CA7396A68D541C85D26508E83_233425179;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1487119754 = varB4EAC82CA7396A68D541C85D26508E83_1732768436;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1487119754.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1487119754.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1487119754;
-        // ---------- Original Method ----------
-        //String bomEnc      = bom.getBOMCharsetName();
-        //String xmlGuessEnc = pis.getBOMCharsetName();
-        //String xmlEnc = getXmlProlog(pis, xmlGuessEnc);
-        //try {
-            //return calculateHttpEncoding(httpContentType, bomEnc,
-                    //xmlGuessEnc, xmlEnc, lenient);
-        //} catch (XmlStreamReaderException ex) {
-            //if (lenient) {
-                //return doLenientDetection(httpContentType, ex);
-            //} else {
-                //throw ex;
-            //}
-        //}
+        
+        
+        
+        
+        
+            
+                    
+        
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.442 -0400", hash_original_method = "68E74736656E5A93054BE7DF7FDFC9F5", hash_generated_method = "5E89BF90D08C28CAB0DEEC87060D60A7")
     private String doLenientDetection(String httpContentType,
             XmlStreamReaderException ex) throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1693643197 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1738404103 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1693643197 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1738404103 = null; 
         {
             boolean varADC12483E48F090449D7F503883EB5FD_1000353939 = (httpContentType != null && httpContentType.startsWith("text/html"));
             {
@@ -319,77 +326,77 @@ public class XmlStreamReader extends Reader {
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_1693643197 = calculateHttpEncoding(httpContentType, ex.getBomEncoding(),
                         ex.getXmlGuessEncoding(), ex.getXmlEncoding(), true);
-                } //End block
+                } 
                 catch (XmlStreamReaderException ex2)
                 {
                     ex = ex2;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         String encoding = ex.getXmlEncoding();
         {
             encoding = ex.getContentTypeEncoding();
-        } //End block
+        } 
         {
             encoding = defaultEncoding == null ? UTF_8 : defaultEncoding;
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1738404103 = encoding;
         addTaint(httpContentType.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1583537920; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1583537920; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1583537920 = varB4EAC82CA7396A68D541C85D26508E83_1693643197;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1583537920 = varB4EAC82CA7396A68D541C85D26508E83_1738404103;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1583537920.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1583537920.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1583537920;
-        // ---------- Original Method ----------
-        //if (httpContentType != null && httpContentType.startsWith("text/html")) {
-            //httpContentType = httpContentType.substring("text/html".length());
-            //httpContentType = "text/xml" + httpContentType;
-            //try {
-                //return calculateHttpEncoding(httpContentType, ex.getBomEncoding(),
-                        //ex.getXmlGuessEncoding(), ex.getXmlEncoding(), true);
-            //} catch (XmlStreamReaderException ex2) {
-                //ex = ex2;
-            //}
-        //}
-        //String encoding = ex.getXmlEncoding();
-        //if (encoding == null) {
-            //encoding = ex.getContentTypeEncoding();
-        //}
-        //if (encoding == null) {
-            //encoding = defaultEncoding == null ? UTF_8 : defaultEncoding;
-        //}
-        //return encoding;
+        
+        
+            
+            
+            
+                
+                        
+            
+                
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:32.444 -0400", hash_original_method = "598A080C11FF68E733FEC8702F091B2A", hash_generated_method = "5F55A06B0A1FEB85E43D7AB714B0BB21")
      String calculateRawEncoding(String bomEnc, String xmlGuessEnc,
             String xmlEnc) throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1160970339 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_164904718 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_577798875 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_166929682 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_729748047 = null; //Variable for return #5
-        String varB4EAC82CA7396A68D541C85D26508E83_1756546362 = null; //Variable for return #6
+        String varB4EAC82CA7396A68D541C85D26508E83_1160970339 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_164904718 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_577798875 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_166929682 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_729748047 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1756546362 = null; 
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1160970339 = defaultEncoding == null ? UTF_8 : defaultEncoding;
-            } //End block
+            } 
             {
                 boolean varD72E639AC4AA6EF933351F21134C75F3_169981857 = (xmlEnc.equals(UTF_16) &&
                (xmlGuessEnc.equals(UTF_16BE) || xmlGuessEnc.equals(UTF_16LE)));
                 {
                     varB4EAC82CA7396A68D541C85D26508E83_164904718 = xmlGuessEnc;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_577798875 = xmlEnc;
-        } //End block
+        } 
         {
             boolean var05D4235A5AAB64E1B9E697B33C4708A3_369627692 = (bomEnc.equals(UTF_8));
             {
@@ -398,18 +405,18 @@ public class XmlStreamReader extends Reader {
                     {
                         String msg = MessageFormat.format(RAW_EX_1, new Object[] { bomEnc, xmlGuessEnc, xmlEnc });
                         if (DroidSafeAndroidRuntime.control) throw new XmlStreamReaderException(msg, bomEnc, xmlGuessEnc, xmlEnc);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean var337070B8C81CC48CA52092D74E98A2BA_1358762787 = (xmlEnc != null && !xmlEnc.equals(UTF_8));
                     {
                         String msg = MessageFormat.format(RAW_EX_1, new Object[] { bomEnc, xmlGuessEnc, xmlEnc });
                         if (DroidSafeAndroidRuntime.control) throw new XmlStreamReaderException(msg, bomEnc, xmlGuessEnc, xmlEnc);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_166929682 = bomEnc;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var95C6B3606E306A883C5DAD27B2011DC1_1416414553 = (bomEnc.equals(UTF_16BE) || bomEnc.equals(UTF_16LE));
             {
@@ -418,18 +425,18 @@ public class XmlStreamReader extends Reader {
                     {
                         String msg = MessageFormat.format(RAW_EX_1, new Object[] { bomEnc, xmlGuessEnc, xmlEnc });
                         if (DroidSafeAndroidRuntime.control) throw new XmlStreamReaderException(msg, bomEnc, xmlGuessEnc, xmlEnc);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varE205CCAAD1CE92A671F2E030AFBF9C4B_876302473 = (xmlEnc != null && !xmlEnc.equals(UTF_16) && !xmlEnc.equals(bomEnc));
                     {
                         String msg = MessageFormat.format(RAW_EX_1, new Object[] { bomEnc, xmlGuessEnc, xmlEnc });
                         if (DroidSafeAndroidRuntime.control) throw new XmlStreamReaderException(msg, bomEnc, xmlGuessEnc, xmlEnc);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_729748047 = bomEnc;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean var5B4EFAC3FCA3ADDEFE671851D965B899_135296297 = (bomEnc.equals(UTF_32BE) || bomEnc.equals(UTF_32LE));
             {
@@ -438,48 +445,48 @@ public class XmlStreamReader extends Reader {
                     {
                         String msg = MessageFormat.format(RAW_EX_1, new Object[] { bomEnc, xmlGuessEnc, xmlEnc });
                         if (DroidSafeAndroidRuntime.control) throw new XmlStreamReaderException(msg, bomEnc, xmlGuessEnc, xmlEnc);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 {
                     boolean varE4672F12009CFFB765D33593ECEA1058_415773054 = (xmlEnc != null && !xmlEnc.equals(UTF_32) && !xmlEnc.equals(bomEnc));
                     {
                         String msg = MessageFormat.format(RAW_EX_1, new Object[] { bomEnc, xmlGuessEnc, xmlEnc });
                         if (DroidSafeAndroidRuntime.control) throw new XmlStreamReaderException(msg, bomEnc, xmlGuessEnc, xmlEnc);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_1756546362 = bomEnc;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         String msg = MessageFormat.format(RAW_EX_2, new Object[] { bomEnc, xmlGuessEnc, xmlEnc });
         if (DroidSafeAndroidRuntime.control) throw new XmlStreamReaderException(msg, bomEnc, xmlGuessEnc, xmlEnc);
         addTaint(bomEnc.getTaint());
         addTaint(xmlGuessEnc.getTaint());
         addTaint(xmlEnc.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_2051776113; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_2051776113; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_2051776113 = varB4EAC82CA7396A68D541C85D26508E83_1160970339;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_2051776113 = varB4EAC82CA7396A68D541C85D26508E83_164904718;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_2051776113 = varB4EAC82CA7396A68D541C85D26508E83_577798875;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_2051776113 = varB4EAC82CA7396A68D541C85D26508E83_166929682;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_2051776113 = varB4EAC82CA7396A68D541C85D26508E83_729748047;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_2051776113 = varB4EAC82CA7396A68D541C85D26508E83_1756546362;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2051776113.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_2051776113.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_2051776113;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -487,17 +494,17 @@ public class XmlStreamReader extends Reader {
      String calculateHttpEncoding(String httpContentType,
             String bomEnc, String xmlGuessEnc, String xmlEnc,
             boolean lenient) throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1445836206 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1110478457 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_117853990 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_550856604 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_908510384 = null; //Variable for return #5
-        String varB4EAC82CA7396A68D541C85D26508E83_296496625 = null; //Variable for return #6
-        String varB4EAC82CA7396A68D541C85D26508E83_1705908471 = null; //Variable for return #7
-        String varB4EAC82CA7396A68D541C85D26508E83_666329513 = null; //Variable for return #8
+        String varB4EAC82CA7396A68D541C85D26508E83_1445836206 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1110478457 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_117853990 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_550856604 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_908510384 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_296496625 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_1705908471 = null; 
+        String varB4EAC82CA7396A68D541C85D26508E83_666329513 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1445836206 = xmlEnc;
-        } //End block
+        } 
         String cTMime = getContentTypeMime(httpContentType);
         String cTEnc = getContentTypeEncoding(httpContentType);
         boolean appXml = isAppXml(cTMime);
@@ -505,25 +512,25 @@ public class XmlStreamReader extends Reader {
         {
             String msg = MessageFormat.format(HTTP_EX_3, cTMime, cTEnc, bomEnc, xmlGuessEnc, xmlEnc);
             if (DroidSafeAndroidRuntime.control) throw new XmlStreamReaderException(msg, cTMime, cTEnc, bomEnc, xmlGuessEnc, xmlEnc);
-        } //End block
+        } 
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1110478457 = calculateRawEncoding(bomEnc, xmlGuessEnc, xmlEnc);
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_117853990 = defaultEncoding == null ? US_ASCII : defaultEncoding;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             boolean varA66ED870F91B3E206532F611AC081DC4_1679127383 = (cTEnc.equals(UTF_16BE) || cTEnc.equals(UTF_16LE));
             {
                 {
                     String msg = MessageFormat.format(HTTP_EX_1, cTMime, cTEnc, bomEnc, xmlGuessEnc, xmlEnc);
                     if (DroidSafeAndroidRuntime.control) throw new XmlStreamReaderException(msg, cTMime, cTEnc, bomEnc, xmlGuessEnc, xmlEnc);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_550856604 = cTEnc;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varAD0794C12B61186D2901F9D6CE6CDBA0_1284070874 = (cTEnc.equals(UTF_16));
             {
@@ -531,22 +538,22 @@ public class XmlStreamReader extends Reader {
                     boolean var206F7FB41A85C55720A99BCA525A0222_1360810885 = (bomEnc != null && bomEnc.startsWith(UTF_16));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_908510384 = bomEnc;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 String msg = MessageFormat.format(HTTP_EX_2, cTMime, cTEnc, bomEnc, xmlGuessEnc, xmlEnc);
                 if (DroidSafeAndroidRuntime.control) throw new XmlStreamReaderException(msg, cTMime, cTEnc, bomEnc, xmlGuessEnc, xmlEnc);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varA1FB0DF7C2C4A3058B94A15EEAC2F5BD_272644916 = (cTEnc.equals(UTF_32BE) || cTEnc.equals(UTF_32LE));
             {
                 {
                     String msg = MessageFormat.format(HTTP_EX_1, cTMime, cTEnc, bomEnc, xmlGuessEnc, xmlEnc);
                     if (DroidSafeAndroidRuntime.control) throw new XmlStreamReaderException(msg, cTMime, cTEnc, bomEnc, xmlGuessEnc, xmlEnc);
-                } //End block
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_296496625 = cTEnc;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varDA94B5F3AFAF374AF5D7C303065796A9_388705640 = (cTEnc.equals(UTF_32));
             {
@@ -554,52 +561,53 @@ public class XmlStreamReader extends Reader {
                     boolean var1928AC4E0FFCF8A4AF1F5570C0051B8D_2022056509 = (bomEnc != null && bomEnc.startsWith(UTF_32));
                     {
                         varB4EAC82CA7396A68D541C85D26508E83_1705908471 = bomEnc;
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 String msg = MessageFormat.format(HTTP_EX_2, cTMime, cTEnc, bomEnc, xmlGuessEnc, xmlEnc);
                 if (DroidSafeAndroidRuntime.control) throw new XmlStreamReaderException(msg, cTMime, cTEnc, bomEnc, xmlGuessEnc, xmlEnc);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_666329513 = cTEnc;
         addTaint(httpContentType.getTaint());
         addTaint(bomEnc.getTaint());
         addTaint(xmlGuessEnc.getTaint());
         addTaint(xmlEnc.getTaint());
         addTaint(lenient);
-        String varA7E53CE21691AB073D9660D615818899_712770196; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_712770196; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_712770196 = varB4EAC82CA7396A68D541C85D26508E83_1445836206;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_712770196 = varB4EAC82CA7396A68D541C85D26508E83_1110478457;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_712770196 = varB4EAC82CA7396A68D541C85D26508E83_117853990;
                 break;
-            case 4: //Assign result for return ordinal #4
+            case 4: 
                 varA7E53CE21691AB073D9660D615818899_712770196 = varB4EAC82CA7396A68D541C85D26508E83_550856604;
                 break;
-            case 5: //Assign result for return ordinal #5
+            case 5: 
                 varA7E53CE21691AB073D9660D615818899_712770196 = varB4EAC82CA7396A68D541C85D26508E83_908510384;
                 break;
-            case 6: //Assign result for return ordinal #6
+            case 6: 
                 varA7E53CE21691AB073D9660D615818899_712770196 = varB4EAC82CA7396A68D541C85D26508E83_296496625;
                 break;
-            case 7: //Assign result for return ordinal #7
+            case 7: 
                 varA7E53CE21691AB073D9660D615818899_712770196 = varB4EAC82CA7396A68D541C85D26508E83_1705908471;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_712770196 = varB4EAC82CA7396A68D541C85D26508E83_666329513;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_712770196.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_712770196.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_712770196;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String getContentTypeMime(String httpContentType) {
         String mime = null;
         if (httpContentType != null) {
@@ -615,6 +623,7 @@ public class XmlStreamReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String getContentTypeEncoding(String httpContentType) {
         String encoding = null;
         if (httpContentType != null) {
@@ -630,6 +639,7 @@ public class XmlStreamReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String getXmlProlog(InputStream is, String guessedEnc) throws IOException {
         String encoding = null;
         if (guessedEnc != null) {
@@ -678,6 +688,7 @@ public class XmlStreamReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isAppXml(String mime) {
         return mime != null &&
                (mime.equals("application/xml") || 
@@ -687,6 +698,7 @@ public class XmlStreamReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isTextXml(String mime) {
         return mime != null &&
               (mime.equals("text/xml") ||

@@ -1,11 +1,11 @@
 package libcore.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -69,36 +69,36 @@ final class HttpConnection {
                 {
                     socketCandidate.connect(
                         new InetSocketAddress(addresses[i], config.socketPort), connectTimeout);
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     {
                         if (DroidSafeAndroidRuntime.control) throw e;
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         this.socket = socketCandidate;
         addTaint(connectTimeout);
-        // ---------- Original Method ----------
-        //this.address = config;
-        //Socket socketCandidate = null;
-        //InetAddress[] addresses = InetAddress.getAllByName(config.socketHost);
-        //for (int i = 0; i < addresses.length; i++) {
-            //socketCandidate = (config.proxy != null && config.proxy.type() != Proxy.Type.HTTP)
-                    //? new Socket(config.proxy)
-                    //: new Socket();
-            //try {
-                //socketCandidate.connect(
-                        //new InetSocketAddress(addresses[i], config.socketPort), connectTimeout);
-                //break;
-            //} catch (IOException e) {
-                //if (i == addresses.length - 1) {
-                    //throw e;
-                //}
-            //}
-        //}
-        //this.socket = socketCandidate;
+        
+        
+        
+        
+        
+            
+                    
+                    
+            
+                
+                        
+                
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -129,6 +129,7 @@ final class HttpConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.749 -0400", hash_original_method = "50D4F2062BD74B4850A586FC88599309", hash_generated_method = "B63879B3617FE401C7B93A2945C0011E")
     public void closeSocketAndStreams() {
         IoUtils.closeQuietly(sslOutputStream);
@@ -137,129 +138,133 @@ final class HttpConnection {
         IoUtils.closeQuietly(outputStream);
         IoUtils.closeQuietly(inputStream);
         IoUtils.closeQuietly(socket);
-        // ---------- Original Method ----------
-        //IoUtils.closeQuietly(sslOutputStream);
-        //IoUtils.closeQuietly(sslInputStream);
-        //IoUtils.closeQuietly(sslSocket);
-        //IoUtils.closeQuietly(outputStream);
-        //IoUtils.closeQuietly(inputStream);
-        //IoUtils.closeQuietly(socket);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.749 -0400", hash_original_method = "8353DEF033DB8B4F652D08F1BE7D5FB2", hash_generated_method = "3222FA7BE8872A3008DD55002BF382F5")
     public void setSoTimeout(int readTimeout) throws SocketException {
         socket.setSoTimeout(readTimeout);
         addTaint(readTimeout);
-        // ---------- Original Method ----------
-        //socket.setSoTimeout(readTimeout);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.750 -0400", hash_original_method = "97D9B93978E46D1095C2BFB6FD92F6AE", hash_generated_method = "EF8BA228E6CD5A2F7E7DC7EA246BD962")
     public OutputStream getOutputStream() throws IOException {
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_837450453 = null; //Variable for return #1
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_1872855585 = null; //Variable for return #2
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_837450453 = null; 
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_1872855585 = null; 
         {
             {
                 sslOutputStream = sslSocket.getOutputStream();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_837450453 = sslOutputStream;
-        } //End block
+        } 
         {
             outputStream = socket.getOutputStream();
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1872855585 = outputStream;
-        OutputStream varA7E53CE21691AB073D9660D615818899_1319093045; //Final return value
+        OutputStream varA7E53CE21691AB073D9660D615818899_1319093045; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1319093045 = varB4EAC82CA7396A68D541C85D26508E83_837450453;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1319093045 = varB4EAC82CA7396A68D541C85D26508E83_1872855585;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1319093045.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1319093045.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1319093045;
-        // ---------- Original Method ----------
-        //if (sslSocket != null) {
-            //if (sslOutputStream == null) {
-                //sslOutputStream = sslSocket.getOutputStream();
-            //}
-            //return sslOutputStream;
-        //} else if(outputStream == null) {
-            //outputStream = socket.getOutputStream();
-        //}
-        //return outputStream;
+        
+        
+            
+                
+            
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.750 -0400", hash_original_method = "1360CB9715FEE0D075363C3EF21DD92C", hash_generated_method = "33E11705751170BC7EDE469E10B57885")
     public InputStream getInputStream() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_897155673 = null; //Variable for return #1
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1879896022 = null; //Variable for return #2
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_897155673 = null; 
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1879896022 = null; 
         {
             {
                 sslInputStream = sslSocket.getInputStream();
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_897155673 = sslInputStream;
-        } //End block
+        } 
         {
             int bufferSize = 128;
             inputStream = address.requiresTunnel
                     ? socket.getInputStream()
                     : new BufferedInputStream(socket.getInputStream(), bufferSize);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1879896022 = inputStream;
-        InputStream varA7E53CE21691AB073D9660D615818899_1368190583; //Final return value
+        InputStream varA7E53CE21691AB073D9660D615818899_1368190583; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1368190583 = varB4EAC82CA7396A68D541C85D26508E83_897155673;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1368190583 = varB4EAC82CA7396A68D541C85D26508E83_1879896022;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1368190583.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1368190583.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1368190583;
-        // ---------- Original Method ----------
-        //if (sslSocket != null) {
-            //if (sslInputStream == null) {
-                //sslInputStream = sslSocket.getInputStream();
-            //}
-            //return sslInputStream;
-        //} else if (inputStream == null) {
-            //int bufferSize = 128;
-            //inputStream = address.requiresTunnel
-                    //? socket.getInputStream()
-                    //: new BufferedInputStream(socket.getInputStream(), bufferSize);
-        //}
-        //return inputStream;
+        
+        
+            
+                
+            
+            
+        
+            
+            
+                    
+                    
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.752 -0400", hash_original_method = "EA9CBC15CAAA468AF10BBF1CD02918CF", hash_generated_method = "EAE6F8E0BC100F7D81EEFD29DB066B91")
     protected Socket getSocket() {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1735774312 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1735774312 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1735774312 = sslSocket != null ? sslSocket : socket;
-        varB4EAC82CA7396A68D541C85D26508E83_1735774312.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1735774312.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1735774312;
-        // ---------- Original Method ----------
-        //return sslSocket != null ? sslSocket : socket;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.753 -0400", hash_original_method = "9472CD13980FF331A1EC2B82F4638C6F", hash_generated_method = "788D749080DE44C543F79BFF29EF7750")
     public Address getAddress() {
-        Address varB4EAC82CA7396A68D541C85D26508E83_1632602147 = null; //Variable for return #1
+        Address varB4EAC82CA7396A68D541C85D26508E83_1632602147 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1632602147 = address;
-        varB4EAC82CA7396A68D541C85D26508E83_1632602147.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1632602147.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1632602147;
-        // ---------- Original Method ----------
-        //return address;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.753 -0400", hash_original_method = "15C1B21595200C1DF5857AC28380107D", hash_generated_method = "48FF9329A932256F21C5A37931DC329D")
     public void setupSecureSocket(SSLSocketFactory sslSocketFactory, boolean tlsTolerant) throws IOException {
         unverifiedSocket = (SSLSocket) sslSocketFactory.createSocket(socket,
@@ -269,58 +274,58 @@ final class HttpConnection {
             openSslSocket.setEnabledCompressionMethods(new String[] { "ZLIB"});
             openSslSocket.setUseSessionTickets(true);
             openSslSocket.setHostname(address.socketHost);
-        } //End block
+        } 
         {
             unverifiedSocket.setEnabledProtocols(new String [] { "SSLv3" });
-        } //End block
+        } 
         unverifiedSocket.startHandshake();
         addTaint(tlsTolerant);
-        // ---------- Original Method ----------
-        //unverifiedSocket = (SSLSocket) sslSocketFactory.createSocket(socket,
-                //address.uriHost, address.uriPort, true );
-        //if (tlsTolerant && unverifiedSocket instanceof OpenSSLSocketImpl) {
-            //OpenSSLSocketImpl openSslSocket = (OpenSSLSocketImpl) unverifiedSocket;
-            //openSslSocket.setEnabledCompressionMethods(new String[] { "ZLIB"});
-            //openSslSocket.setUseSessionTickets(true);
-            //openSslSocket.setHostname(address.socketHost);
-        //} else {
-            //unverifiedSocket.setEnabledProtocols(new String [] { "SSLv3" });
-        //}
-        //unverifiedSocket.startHandshake();
+        
+        
+                
+        
+            
+            
+            
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.754 -0400", hash_original_method = "E313A7AB78F75EDB07568DFA09A3BF60", hash_generated_method = "DD3402DC3B7F2293FE7263CC45C40463")
     public SSLSocket verifySecureSocketHostname(HostnameVerifier hostnameVerifier) throws IOException {
-        SSLSocket varB4EAC82CA7396A68D541C85D26508E83_7221574 = null; //Variable for return #1
+        SSLSocket varB4EAC82CA7396A68D541C85D26508E83_7221574 = null; 
         {
             boolean varCDF545EAAED9B38C453E5D9476E6ADD6_562363257 = (!hostnameVerifier.verify(address.uriHost, unverifiedSocket.getSession()));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("Hostname '" + address.uriHost + "' was not verified");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         sslSocket = unverifiedSocket;
         varB4EAC82CA7396A68D541C85D26508E83_7221574 = sslSocket;
         addTaint(hostnameVerifier.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_7221574.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_7221574.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_7221574;
-        // ---------- Original Method ----------
-        //if (!hostnameVerifier.verify(address.uriHost, unverifiedSocket.getSession())) {
-            //throw new IOException("Hostname '" + address.uriHost + "' was not verified");
-        //}
-        //sslSocket = unverifiedSocket;
-        //return sslSocket;
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.754 -0400", hash_original_method = "0390CC00C23D2289E08AFB9047DDDB88", hash_generated_method = "A7DD2692D206724AD558D2E64CE37894")
     public SSLSocket getSecureSocketIfConnected() {
-        SSLSocket varB4EAC82CA7396A68D541C85D26508E83_1329045118 = null; //Variable for return #1
+        SSLSocket varB4EAC82CA7396A68D541C85D26508E83_1329045118 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1329045118 = sslSocket;
-        varB4EAC82CA7396A68D541C85D26508E83_1329045118.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1329045118.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1329045118;
-        // ---------- Original Method ----------
-        //return sslSocket;
+        
+        
     }
 
     
@@ -328,11 +333,11 @@ final class HttpConnection {
      boolean isStale() throws IOException {
         {
             boolean var2BDB1C5DA0DBD4955C884B844F21F17B_1872801364 = (!isEligibleForRecycling());
-        } //End collapsed parenthetic
+        } 
         InputStream in = getInputStream();
         {
             boolean varE684FF4D92AACF44A45D4FF9CA23ABC5_1500183851 = (in.available() > 0);
-        } //End collapsed parenthetic
+        } 
         Socket socket = getSocket();
         int soTimeout = socket.getSoTimeout();
         try 
@@ -342,8 +347,8 @@ final class HttpConnection {
             int byteRead = in.read();
             {
                 in.reset();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (SocketTimeoutException e)
         { }
         catch (IOException e)
@@ -351,38 +356,39 @@ final class HttpConnection {
         finally 
         {
             socket.setSoTimeout(soTimeout);
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2121427203 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2121427203;
-        // ---------- Original Method ----------
-        //if (!isEligibleForRecycling()) {
-            //return true;
-        //}
-        //InputStream in = getInputStream();
-        //if (in.available() > 0) {
-            //return false;
-        //}
-        //Socket socket = getSocket();
-        //int soTimeout = socket.getSoTimeout();
-        //try {
-            //socket.setSoTimeout(1);
-            //in.mark(1);
-            //int byteRead = in.read();
-            //if (byteRead != -1) {
-                //in.reset();
-                //return false;
-            //}
-            //return true; 
-        //} catch (SocketTimeoutException e) {
-            //return false; 
-        //} catch (IOException e) {
-            //return true; 
-        //} finally {
-            //socket.setSoTimeout(soTimeout);
-        //}
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+            
+            
+            
+            
+                
+                
+            
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.755 -0400", hash_original_method = "10486D7D4909022462833E73661236C1", hash_generated_method = "C722BBB7BD464AE2CC1F564120C438A8")
     protected boolean isEligibleForRecycling() {
         boolean varAABC120FA4E0F230A6E6A152DA4E58E8_174098721 = (!socket.isClosed()
@@ -390,10 +396,10 @@ final class HttpConnection {
                 && !socket.isOutputShutdown());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_188777892 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_188777892;
-        // ---------- Original Method ----------
-        //return !socket.isClosed()
-                //&& !socket.isInputShutdown()
-                //&& !socket.isOutputShutdown();
+        
+        
+                
+                
     }
 
     
@@ -425,13 +431,13 @@ final class HttpConnection {
             this.uriPort = uri.getEffectivePort();
             this.socketHost = uriHost;
             this.socketPort = uriPort;
-            // ---------- Original Method ----------
-            //this.proxy = null;
-            //this.requiresTunnel = false;
-            //this.uriHost = uri.getHost();
-            //this.uriPort = uri.getEffectivePort();
-            //this.socketHost = uriHost;
-            //this.socketPort = uriPort;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -445,34 +451,34 @@ final class HttpConnection {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Proxy.address() is not an InetSocketAddress: "
                         + proxyAddress.getClass());
-            } //End block
+            } 
             InetSocketAddress proxySocketAddress = (InetSocketAddress) proxyAddress;
             this.socketHost = proxySocketAddress.getHostName();
             this.socketPort = proxySocketAddress.getPort();
-            // ---------- Original Method ----------
-            //this.proxy = proxy;
-            //this.requiresTunnel = requiresTunnel;
-            //this.uriHost = uri.getHost();
-            //this.uriPort = uri.getEffectivePort();
-            //SocketAddress proxyAddress = proxy.address();
-            //if (!(proxyAddress instanceof InetSocketAddress)) {
-                //throw new IllegalArgumentException("Proxy.address() is not an InetSocketAddress: "
-                        //+ proxyAddress.getClass());
-            //}
-            //InetSocketAddress proxySocketAddress = (InetSocketAddress) proxyAddress;
-            //this.socketHost = proxySocketAddress.getHostName();
-            //this.socketPort = proxySocketAddress.getPort();
+            
+            
+            
+            
+            
+            
+            
+                
+                        
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.757 -0400", hash_original_method = "19AE87D83FEEE8E799F844F8A7A84495", hash_generated_method = "980D6F9F4F0BD1B8828495FFA711217E")
         public Proxy getProxy() {
-            Proxy varB4EAC82CA7396A68D541C85D26508E83_1138909235 = null; //Variable for return #1
+            Proxy varB4EAC82CA7396A68D541C85D26508E83_1138909235 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1138909235 = proxy;
-            varB4EAC82CA7396A68D541C85D26508E83_1138909235.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1138909235.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1138909235;
-            // ---------- Original Method ----------
-            //return proxy;
+            
+            
         }
 
         
@@ -485,19 +491,19 @@ final class HttpConnection {
                         && this.uriHost.equals(that.uriHost)
                         && this.uriPort == that.uriPort
                         && this.requiresTunnel == that.requiresTunnel);
-            } //End block
+            } 
             addTaint(other.getTaint());
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1411120394 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1411120394;
-            // ---------- Original Method ----------
-            //if (other instanceof Address) {
-                //Address that = (Address) other;
-                //return Objects.equal(this.proxy, that.proxy)
-                        //&& this.uriHost.equals(that.uriHost)
-                        //&& this.uriPort == that.uriPort
-                        //&& this.requiresTunnel == that.requiresTunnel;
-            //}
-            //return false;
+            
+            
+                
+                
+                        
+                        
+                        
+            
+            
         }
 
         
@@ -511,25 +517,25 @@ final class HttpConnection {
             result = 31 * result + (requiresTunnel ? 1 : 0);
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1443203641 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1443203641;
-            // ---------- Original Method ----------
-            //int result = 17;
-            //result = 31 * result + uriHost.hashCode();
-            //result = 31 * result + uriPort;
-            //result = 31 * result + (proxy != null ? proxy.hashCode() : 0);
-            //result = 31 * result + (requiresTunnel ? 1 : 0);
-            //return result;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.759 -0400", hash_original_method = "D7960E9C2008885C55D097BA1D2C0C2A", hash_generated_method = "FB1ED9899482476DCF99FE8982E39042")
         public HttpConnection connect(int connectTimeout) throws IOException {
-            HttpConnection varB4EAC82CA7396A68D541C85D26508E83_623272396 = null; //Variable for return #1
+            HttpConnection varB4EAC82CA7396A68D541C85D26508E83_623272396 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_623272396 = new HttpConnection(this, connectTimeout);
             addTaint(connectTimeout);
-            varB4EAC82CA7396A68D541C85D26508E83_623272396.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_623272396.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_623272396;
-            // ---------- Original Method ----------
-            //return new HttpConnection(this, connectTimeout);
+            
+            
         }
 
         

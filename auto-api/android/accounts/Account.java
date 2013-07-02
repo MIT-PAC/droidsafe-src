@@ -1,11 +1,11 @@
 package android.accounts;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Parcelable;
 import android.os.Parcel;
@@ -25,25 +25,25 @@ public class Account implements Parcelable {
             boolean var20958AB9F43FCE73F57B67FEC400CD27_2053296140 = (TextUtils.isEmpty(name));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("the name must not be empty: " + name);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             boolean varB05F7C75ECFE46FC60698365AAC00CA6_1531146736 = (TextUtils.isEmpty(type));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("the type must not be empty: " + type);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         this.name = name;
         this.type = type;
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(name)) {
-            //throw new IllegalArgumentException("the name must not be empty: " + name);
-        //}
-        //if (TextUtils.isEmpty(type)) {
-            //throw new IllegalArgumentException("the type must not be empty: " + type);
-        //}
-        //this.name = name;
-        //this.type = type;
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -51,30 +51,32 @@ public class Account implements Parcelable {
     public  Account(Parcel in) {
         this.name = in.readString();
         this.type = in.readString();
-        // ---------- Original Method ----------
-        //this.name = in.readString();
-        //this.type = in.readString();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.500 -0400", hash_original_method = "8952178E80D6EF68D44FC6803A31AC53", hash_generated_method = "913BF5B7F1740E802E47D82D7614E889")
     public boolean equals(Object o) {
         {
             boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_1829317292 = (o == this);
-        } //End collapsed parenthetic
+        } 
         final Account other = (Account)o;
         boolean varA627E7149C202EA55E7DC204D03D4078_2031403587 = (name.equals(other.name) && type.equals(other.type));
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1695045207 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1695045207;
-        // ---------- Original Method ----------
-        //if (o == this) return true;
-        //if (!(o instanceof Account)) return false;
-        //final Account other = (Account)o;
-        //return name.equals(other.name) && type.equals(other.type);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.502 -0400", hash_original_method = "2D8E3835F41EEE5A0134485B603913A1", hash_generated_method = "6969A16F28CCC4E79A0E7EF3D6DF5E29")
     public int hashCode() {
         int result = 17;
@@ -82,11 +84,11 @@ public class Account implements Parcelable {
         result = 31 * result + type.hashCode();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1505919523 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1505919523;
-        // ---------- Original Method ----------
-        //int result = 17;
-        //result = 31 * result + name.hashCode();
-        //result = 31 * result + type.hashCode();
-        //return result;
+        
+        
+        
+        
+        
     }
 
     
@@ -94,31 +96,33 @@ public class Account implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_640455830 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_640455830;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.507 -0400", hash_original_method = "5E35BE18734E956B072A3A591EB1639E", hash_generated_method = "E24DB261C0D94B6DA031A4CC560D320B")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeString(type);
         addTaint(dest.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(name);
-        //dest.writeString(type);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:12:54.511 -0400", hash_original_method = "E40D22A387A231E7FC5FB70BCBB60906", hash_generated_method = "3DF465C7E2D2FADB55007A4D795B72A2")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_410468294 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_410468294 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_410468294 = "Account {name=" + name + ", type=" + type + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_410468294.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_410468294.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_410468294;
-        // ---------- Original Method ----------
-        //return "Account {name=" + name + ", type=" + type + "}";
+        
+        
     }
 
     
@@ -133,12 +137,12 @@ public class Account implements Parcelable {
             return new Account[size];
         }
     };
-    // orphaned legacy method
+    
     public Account createFromParcel(Parcel source) {
             return new Account(source);
         }
     
-    // orphaned legacy method
+    
     public Account[] newArray(int size) {
             return new Account[size];
         }

@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.Binder;
@@ -23,21 +23,21 @@ public class KeyguardManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.055 -0400", hash_original_method = "5B69E23112A7A32F8407EC1FFE36B34D", hash_generated_method = "3C92E03D678C4B924547CF2813CCA769")
       KeyguardManager() {
         mWM = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
-        // ---------- Original Method ----------
-        //mWM = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.056 -0400", hash_original_method = "5C652CD18FFB9FB973F397E439BEDA7E", hash_generated_method = "6FA16155776950201A2A276D76014A60")
     @Deprecated
     public KeyguardLock newKeyguardLock(String tag) {
-        KeyguardLock varB4EAC82CA7396A68D541C85D26508E83_375075936 = null; //Variable for return #1
+        KeyguardLock varB4EAC82CA7396A68D541C85D26508E83_375075936 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_375075936 = new KeyguardLock(tag);
         addTaint(tag.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_375075936.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_375075936.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_375075936;
-        // ---------- Original Method ----------
-        //return new KeyguardLock(tag);
+        
+        
     }
 
     
@@ -46,17 +46,17 @@ public class KeyguardManager {
         try 
         {
             boolean var48B9435D4B101DE12A3DCD069D2F7A58_1097544758 = (mWM.isKeyguardLocked());
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_546546730 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_546546730;
-        // ---------- Original Method ----------
-        //try {
-            //return mWM.isKeyguardLocked();
-        //} catch (RemoteException ex) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -65,17 +65,17 @@ public class KeyguardManager {
         try 
         {
             boolean var72AFE6D50FD40100A4042D4D858724FD_631645136 = (mWM.isKeyguardSecure());
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1384048314 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1384048314;
-        // ---------- Original Method ----------
-        //try {
-            //return mWM.isKeyguardSecure();
-        //} catch (RemoteException ex) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -84,17 +84,17 @@ public class KeyguardManager {
         try 
         {
             boolean var4688DD4A673F3F9603D7BAE9FE98157D_565714761 = (mWM.inKeyguardRestrictedInputMode());
-        } //End block
+        } 
         catch (RemoteException ex)
         { }
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1547840713 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1547840713;
-        // ---------- Original Method ----------
-        //try {
-            //return mWM.inKeyguardRestrictedInputMode();
-        //} catch (RemoteException ex) {
-            //return false;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -106,26 +106,26 @@ public class KeyguardManager {
             mWM.exitKeyguardSecurely(new IOnKeyguardExitResult.Stub() {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.061 -0400", hash_original_method = "3EC2E5FCC08061EF9551EB1CD521B8A8", hash_generated_method = "293D6E5DA72FF6628E8321001BDE171C")
                 public void onKeyguardExitResult(boolean success) throws RemoteException {
-                    //DSFIXME:  CODE0009: Possible callback target function detected
+                    
                     callback.onKeyguardExitResult(success);
                     addTaint(success);
-                    // ---------- Original Method ----------
-                    //callback.onKeyguardExitResult(success);
+                    
+                    
                 }
 });
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(callback.getTaint());
-        // ---------- Original Method ----------
-        //try {
-            //mWM.exitKeyguardSecurely(new IOnKeyguardExitResult.Stub() {
-                //public void onKeyguardExitResult(boolean success) throws RemoteException {
-                    //callback.onKeyguardExitResult(success);
-                //}
-            //});
-        //} catch (RemoteException e) {
-        //}
+        
+        
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -140,8 +140,8 @@ public class KeyguardManager {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.063 -0400", hash_original_method = "4D032B51654914D2B6BB0DA8DB46B141", hash_generated_method = "C4956F8D2CA9FF0EA9184C6E2220865C")
           KeyguardLock(String tag) {
             mTag = tag;
-            // ---------- Original Method ----------
-            //mTag = tag;
+            
+            
         }
 
         
@@ -150,14 +150,14 @@ public class KeyguardManager {
             try 
             {
                 mWM.disableKeyguard(mToken, mTag);
-            } //End block
+            } 
             catch (RemoteException ex)
             { }
-            // ---------- Original Method ----------
-            //try {
-                //mWM.disableKeyguard(mToken, mTag);
-            //} catch (RemoteException ex) {
-            //}
+            
+            
+                
+            
+            
         }
 
         
@@ -166,14 +166,14 @@ public class KeyguardManager {
             try 
             {
                 mWM.reenableKeyguard(mToken);
-            } //End block
+            } 
             catch (RemoteException ex)
             { }
-            // ---------- Original Method ----------
-            //try {
-                //mWM.reenableKeyguard(mToken);
-            //} catch (RemoteException ex) {
-            //}
+            
+            
+                
+            
+            
         }
 
         

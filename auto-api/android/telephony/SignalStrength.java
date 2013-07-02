@@ -1,11 +1,11 @@
 package android.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -68,20 +68,20 @@ public class SignalStrength implements Parcelable {
         mLteRssnr = -1;
         mLteCqi = -1;
         isGsm = true;
-        // ---------- Original Method ----------
-        //mGsmSignalStrength = 99;
-        //mGsmBitErrorRate = -1;
-        //mCdmaDbm = -1;
-        //mCdmaEcio = -1;
-        //mEvdoDbm = -1;
-        //mEvdoEcio = -1;
-        //mEvdoSnr = -1;
-        //mLteSignalStrength = -1;
-        //mLteRsrp = -1;
-        //mLteRsrq = -1;
-        //mLteRssnr = -1;
-        //mLteCqi = -1;
-        //isGsm = true;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -104,20 +104,20 @@ public class SignalStrength implements Parcelable {
         mLteRssnr = lteRssnr;
         mLteCqi = lteCqi;
         isGsm = gsm;
-        // ---------- Original Method ----------
-        //mGsmSignalStrength = gsmSignalStrength;
-        //mGsmBitErrorRate = gsmBitErrorRate;
-        //mCdmaDbm = cdmaDbm;
-        //mCdmaEcio = cdmaEcio;
-        //mEvdoDbm = evdoDbm;
-        //mEvdoEcio = evdoEcio;
-        //mEvdoSnr = evdoSnr;
-        //mLteSignalStrength = lteSignalStrength;
-        //mLteRsrp = lteRsrp;
-        //mLteRsrq = lteRsrq;
-        //mLteRssnr = lteRssnr;
-        //mLteCqi = lteCqi;
-        //isGsm = gsm;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -136,7 +136,7 @@ public class SignalStrength implements Parcelable {
         addTaint(evdoEcio);
         addTaint(evdoSnr);
         addTaint(gsm);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -144,8 +144,8 @@ public class SignalStrength implements Parcelable {
     public  SignalStrength(SignalStrength s) {
         copyFrom(s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //copyFrom(s);
+        
+        
     }
 
     
@@ -164,23 +164,24 @@ public class SignalStrength implements Parcelable {
         mLteRssnr = in.readInt();
         mLteCqi = in.readInt();
         isGsm = (in.readInt() != 0);
-        // ---------- Original Method ----------
-        //mGsmSignalStrength = in.readInt();
-        //mGsmBitErrorRate = in.readInt();
-        //mCdmaDbm = in.readInt();
-        //mCdmaEcio = in.readInt();
-        //mEvdoDbm = in.readInt();
-        //mEvdoEcio = in.readInt();
-        //mEvdoSnr = in.readInt();
-        //mLteSignalStrength = in.readInt();
-        //mLteRsrp = in.readInt();
-        //mLteRsrq = in.readInt();
-        //mLteRssnr = in.readInt();
-        //mLteCqi = in.readInt();
-        //isGsm = (in.readInt() != 0);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SignalStrength newFromBundle(Bundle m) {
         SignalStrength ret;
         ret = new SignalStrength();
@@ -204,23 +205,24 @@ public class SignalStrength implements Parcelable {
         mLteRssnr = s.mLteRssnr;
         mLteCqi = s.mLteCqi;
         isGsm = s.isGsm;
-        // ---------- Original Method ----------
-        //mGsmSignalStrength = s.mGsmSignalStrength;
-        //mGsmBitErrorRate = s.mGsmBitErrorRate;
-        //mCdmaDbm = s.mCdmaDbm;
-        //mCdmaEcio = s.mCdmaEcio;
-        //mEvdoDbm = s.mEvdoDbm;
-        //mEvdoEcio = s.mEvdoEcio;
-        //mEvdoSnr = s.mEvdoSnr;
-        //mLteSignalStrength = s.mLteSignalStrength;
-        //mLteRsrp = s.mLteRsrp;
-        //mLteRsrq = s.mLteRsrq;
-        //mLteRssnr = s.mLteRssnr;
-        //mLteCqi = s.mLteCqi;
-        //isGsm = s.isGsm;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.035 -0400", hash_original_method = "85E260BC5044CD4D9894DB51C4B27CA0", hash_generated_method = "D1D433DE5256A23888C63D49CE539E2A")
     public void writeToParcel(Parcel out, int flags) {
         out.writeInt(mGsmSignalStrength);
@@ -238,20 +240,20 @@ public class SignalStrength implements Parcelable {
         out.writeInt(isGsm ? 1 : 0);
         addTaint(out.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //out.writeInt(mGsmSignalStrength);
-        //out.writeInt(mGsmBitErrorRate);
-        //out.writeInt(mCdmaDbm);
-        //out.writeInt(mCdmaEcio);
-        //out.writeInt(mEvdoDbm);
-        //out.writeInt(mEvdoEcio);
-        //out.writeInt(mEvdoSnr);
-        //out.writeInt(mLteSignalStrength);
-        //out.writeInt(mLteRsrp);
-        //out.writeInt(mLteRsrq);
-        //out.writeInt(mLteRssnr);
-        //out.writeInt(mLteCqi);
-        //out.writeInt(isGsm ? 1 : 0);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -259,8 +261,8 @@ public class SignalStrength implements Parcelable {
     public int describeContents() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1036651598 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1036651598;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -268,8 +270,8 @@ public class SignalStrength implements Parcelable {
     public int getGsmSignalStrength() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2027489918 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2027489918;
-        // ---------- Original Method ----------
-        //return this.mGsmSignalStrength;
+        
+        
     }
 
     
@@ -277,8 +279,8 @@ public class SignalStrength implements Parcelable {
     public int getGsmBitErrorRate() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_41590201 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_41590201;
-        // ---------- Original Method ----------
-        //return this.mGsmBitErrorRate;
+        
+        
     }
 
     
@@ -286,8 +288,8 @@ public class SignalStrength implements Parcelable {
     public int getCdmaDbm() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1112732178 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1112732178;
-        // ---------- Original Method ----------
-        //return this.mCdmaDbm;
+        
+        
     }
 
     
@@ -295,8 +297,8 @@ public class SignalStrength implements Parcelable {
     public int getCdmaEcio() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1066464230 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1066464230;
-        // ---------- Original Method ----------
-        //return this.mCdmaEcio;
+        
+        
     }
 
     
@@ -304,8 +306,8 @@ public class SignalStrength implements Parcelable {
     public int getEvdoDbm() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1463735768 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1463735768;
-        // ---------- Original Method ----------
-        //return this.mEvdoDbm;
+        
+        
     }
 
     
@@ -313,8 +315,8 @@ public class SignalStrength implements Parcelable {
     public int getEvdoEcio() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1281653369 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1281653369;
-        // ---------- Original Method ----------
-        //return this.mEvdoEcio;
+        
+        
     }
 
     
@@ -322,75 +324,78 @@ public class SignalStrength implements Parcelable {
     public int getEvdoSnr() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_482893455 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_482893455;
-        // ---------- Original Method ----------
-        //return this.mEvdoSnr;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.038 -0400", hash_original_method = "7504E540028056CDE39219F81B4E1E59", hash_generated_method = "C007C78A38FABE66A3B61D4AFFB3FA5F")
     public int getLevel() {
         int level;
         {
             {
                 level = getGsmLevel();
-            } //End block
+            } 
             {
                 level = getLteLevel();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             int cdmaLevel = getCdmaLevel();
             int evdoLevel = getEvdoLevel();
             {
                 level = getCdmaLevel();
-            } //End block
+            } 
             {
                 level = getEvdoLevel();
-            } //End block
+            } 
             {
                 level = cdmaLevel < evdoLevel ? cdmaLevel : evdoLevel;
-            } //End block
-        } //End block
+            } 
+        } 
         log("getLevel=" + level);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865125519 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865125519;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.039 -0400", hash_original_method = "6887E245B7148208FA71118C76512694", hash_generated_method = "FAB347043AAE2E134965AD6718995F7F")
     public int getAsuLevel() {
         int asuLevel;
         {
             {
                 asuLevel = getGsmAsuLevel();
-            } //End block
+            } 
             {
                 asuLevel = getLteAsuLevel();
-            } //End block
-        } //End block
+            } 
+        } 
         {
             int cdmaAsuLevel = getCdmaAsuLevel();
             int evdoAsuLevel = getEvdoAsuLevel();
             {
                 asuLevel = cdmaAsuLevel;
-            } //End block
+            } 
             {
                 asuLevel = evdoAsuLevel;
-            } //End block
+            } 
             {
                 asuLevel = cdmaAsuLevel < evdoAsuLevel ? cdmaAsuLevel : evdoAsuLevel;
-            } //End block
-        } //End block
+            } 
+        } 
         log("getAsuLevel=" + asuLevel);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_462316283 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_462316283;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.040 -0400", hash_original_method = "91A92262F8869E8CA480E3922C8E164F", hash_generated_method = "BE4EF98B65E9C00F8685350985438EF3")
     public int getDbm() {
         int dBm;
@@ -399,66 +404,68 @@ public class SignalStrength implements Parcelable {
             {
                 {
                     dBm = getGsmDbm();
-                } //End block
+                } 
                 {
                     dBm = getLteDbm();
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 dBm = getCdmaDbm();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         log("getDbm=" + dBm);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1431155539 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1431155539;
-        // ---------- Original Method ----------
-        //int dBm;
-        //if(isGsm()) {
-            //if ((mLteSignalStrength == -1)
-                    //&& (mLteRsrp == -1)
-                    //&& (mLteRsrq == -1)
-                    //&& (mLteRssnr == -1)
-                    //&& (mLteCqi == -1)) {
-                //dBm = getGsmDbm();
-            //} else {
-                //dBm = getLteDbm();
-            //}
-        //} else {
-            //dBm = getCdmaDbm();
-        //}
-        //if (DBG) log("getDbm=" + dBm);
-        //return dBm;
+        
+        
+        
+            
+                    
+                    
+                    
+                    
+                
+            
+                
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.040 -0400", hash_original_method = "EDC72A768CC18025065D104AFB382B7A", hash_generated_method = "FCD8E02F51E35E33C99F0FD506A10F15")
     public int getGsmDbm() {
         int dBm;
         int gsmSignalStrength = getGsmSignalStrength();
-        int asu = (gsmSignalStrength == 99 ? -1 : gsmSignalStrength);//DSFIXME:  CODE0008: Nested ternary operator in expression
+        int asu = (gsmSignalStrength == 99 ? -1 : gsmSignalStrength);
         {
             dBm = -113 + (2 * asu);
-        } //End block
+        } 
         {
             dBm = -1;
-        } //End block
+        } 
         log("getGsmDbm=" + dBm);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_916506860 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_916506860;
-        // ---------- Original Method ----------
-        //int dBm;
-        //int gsmSignalStrength = getGsmSignalStrength();
-        //int asu = (gsmSignalStrength == 99 ? -1 : gsmSignalStrength);
-        //if (asu != -1) {
-            //dBm = -113 + (2 * asu);
-        //} else {
-            //dBm = -1;
-        //}
-        //if (DBG) log("getGsmDbm=" + dBm);
-        //return dBm;
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.041 -0400", hash_original_method = "B3F3D7206F2B752B03A36760D7E06194", hash_generated_method = "F0D88783B70BF660952187D622BF229E")
     public int getGsmLevel() {
         int level;
@@ -471,32 +478,34 @@ public class SignalStrength implements Parcelable {
         log("getGsmLevel=" + level);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1172872340 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1172872340;
-        // ---------- Original Method ----------
-        //int level;
-        //int asu = getGsmSignalStrength();
-        //if (asu <= 2 || asu == 99) level = SIGNAL_STRENGTH_NONE_OR_UNKNOWN;
-        //else if (asu >= 12) level = SIGNAL_STRENGTH_GREAT;
-        //else if (asu >= 8)  level = SIGNAL_STRENGTH_GOOD;
-        //else if (asu >= 5)  level = SIGNAL_STRENGTH_MODERATE;
-        //else level = SIGNAL_STRENGTH_POOR;
-        //if (DBG) log("getGsmLevel=" + level);
-        //return level;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.041 -0400", hash_original_method = "F4862B9CE73023A8FAAD3B95D31594BE", hash_generated_method = "0EDC066CD33E0EB351C51A34AE5490BB")
     public int getGsmAsuLevel() {
         int level = getGsmSignalStrength();
         log("getGsmAsuLevel=" + level);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_512474861 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_512474861;
-        // ---------- Original Method ----------
-        //int level = getGsmSignalStrength();
-        //if (DBG) log("getGsmAsuLevel=" + level);
-        //return level;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.041 -0400", hash_original_method = "CB4649EF15F9DF295DD79289916B6CB5", hash_generated_method = "85BBD86C169A549795DBB2E2C49B5498")
     public int getCdmaLevel() {
         final int cdmaDbm = getCdmaDbm();
@@ -519,11 +528,12 @@ public class SignalStrength implements Parcelable {
         log("getCdmaLevel=" + level);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2016214458 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2016214458;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.042 -0400", hash_original_method = "EE526C4AB692E407ACE78BB15D53BCB0", hash_generated_method = "500F1C20F0A354874467DC6F119D0E48")
     public int getCdmaAsuLevel() {
         final int cdmaDbm = getCdmaDbm();
@@ -548,11 +558,12 @@ public class SignalStrength implements Parcelable {
         log("getCdmaAsuLevel=" + level);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_802008675 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_802008675;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.043 -0400", hash_original_method = "0AB26F5835CA97F0ED2A069B69FE7D82", hash_generated_method = "2ACE0414054C169BA455CBD5B278705C")
     public int getEvdoLevel() {
         int evdoDbm = getEvdoDbm();
@@ -575,11 +586,12 @@ public class SignalStrength implements Parcelable {
         log("getEvdoLevel=" + level);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_136921311 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_136921311;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.043 -0400", hash_original_method = "B3D272849081E8A85734C2EAD9030507", hash_generated_method = "DEBB2222439E71E42BB502217ABF5A06")
     public int getEvdoAsuLevel() {
         int evdoDbm = getEvdoDbm();
@@ -604,8 +616,8 @@ public class SignalStrength implements Parcelable {
         log("getEvdoAsuLevel=" + level);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_122905324 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_122905324;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -613,8 +625,8 @@ public class SignalStrength implements Parcelable {
     public int getLteDbm() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1885705280 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1885705280;
-        // ---------- Original Method ----------
-        //return mLteRsrp;
+        
+        
     }
 
     
@@ -630,19 +642,20 @@ public class SignalStrength implements Parcelable {
         log("Lte level: "+levelLteRsrp);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1062585460 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1062585460;
-        // ---------- Original Method ----------
-        //int levelLteRsrp = 0;
-        //if (mLteRsrp == -1) levelLteRsrp = 0;
-        //else if (mLteRsrp >= -85) levelLteRsrp = SIGNAL_STRENGTH_GREAT;
-        //else if (mLteRsrp >= -95) levelLteRsrp = SIGNAL_STRENGTH_GOOD;
-        //else if (mLteRsrp >= -105) levelLteRsrp = SIGNAL_STRENGTH_MODERATE;
-        //else if (mLteRsrp >= -115) levelLteRsrp = SIGNAL_STRENGTH_POOR;
-        //else levelLteRsrp = 0;
-        //if (DBG) log("Lte level: "+levelLteRsrp);
-        //return levelLteRsrp;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.045 -0400", hash_original_method = "8F8EC9A4414474C4302B52EA8F689AB4", hash_generated_method = "8791367FB46088AB564AE83358F69A88")
     public int getLteAsuLevel() {
         int lteAsuLevel = 99;
@@ -653,14 +666,14 @@ public class SignalStrength implements Parcelable {
         log("Lte Asu level: "+lteAsuLevel);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1449019683 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1449019683;
-        // ---------- Original Method ----------
-        //int lteAsuLevel = 99;
-        //int lteDbm = getLteDbm();
-        //if (lteDbm <= -140) lteAsuLevel = 0;
-        //else if (lteDbm >= -43) lteAsuLevel = 97;
-        //else lteAsuLevel = lteDbm + 140;
-        //if (DBG) log("Lte Asu level: "+lteAsuLevel);
-        //return lteAsuLevel;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -668,8 +681,8 @@ public class SignalStrength implements Parcelable {
     public boolean isGsm() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_551845528 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_551845528;
-        // ---------- Original Method ----------
-        //return this.isGsm;
+        
+        
     }
 
     
@@ -679,15 +692,15 @@ public class SignalStrength implements Parcelable {
         int primeNum = 31;
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1761751583 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1761751583;
-        // ---------- Original Method ----------
-        //int primeNum = 31;
-        //return ((mGsmSignalStrength * primeNum)
-                //+ (mGsmBitErrorRate * primeNum)
-                //+ (mCdmaDbm * primeNum) + (mCdmaEcio * primeNum)
-                //+ (mEvdoDbm * primeNum) + (mEvdoEcio * primeNum) + (mEvdoSnr * primeNum)
-                //+ (mLteSignalStrength * primeNum) + (mLteRsrp * primeNum)
-                //+ (mLteRsrq * primeNum) + (mLteRssnr * primeNum) + (mLteCqi * primeNum)
-                //+ (isGsm ? 1 : 0));
+        
+        
+        
+                
+                
+                
+                
+                
+                
     }
 
     
@@ -698,42 +711,43 @@ public class SignalStrength implements Parcelable {
         try 
         {
             s = (SignalStrength) o;
-        } //End block
+        } 
         catch (ClassCastException ex)
         { }
         addTaint(o.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1931894223 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1931894223;
-        // ---------- Original Method ----------
-        //SignalStrength s;
-        //try {
-            //s = (SignalStrength) o;
-        //} catch (ClassCastException ex) {
-            //return false;
-        //}
-        //if (o == null) {
-            //return false;
-        //}
-        //return (mGsmSignalStrength == s.mGsmSignalStrength
-                //&& mGsmBitErrorRate == s.mGsmBitErrorRate
-                //&& mCdmaDbm == s.mCdmaDbm
-                //&& mCdmaEcio == s.mCdmaEcio
-                //&& mEvdoDbm == s.mEvdoDbm
-                //&& mEvdoEcio == s.mEvdoEcio
-                //&& mEvdoSnr == s.mEvdoSnr
-                //&& mLteSignalStrength == s.mLteSignalStrength
-                //&& mLteRsrp == s.mLteRsrp
-                //&& mLteRsrq == s.mLteRsrq
-                //&& mLteRssnr == s.mLteRssnr
-                //&& mLteCqi == s.mLteCqi
-                //&& isGsm == s.isGsm);
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.048 -0400", hash_original_method = "4C867D664E694B283CE0DE88ADFC0BF6", hash_generated_method = "922A31A6F996B65B706E090E0A809E9E")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_128714472 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_128714472 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_128714472 = ("SignalStrength:"
                 + " " + mGsmSignalStrength
                 + " " + mGsmBitErrorRate
@@ -748,26 +762,27 @@ public class SignalStrength implements Parcelable {
                 + " " + mLteRssnr
                 + " " + mLteCqi
                 + " " + (isGsm ? "gsm|lte" : "cdma"));
-        varB4EAC82CA7396A68D541C85D26508E83_128714472.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_128714472.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_128714472;
-        // ---------- Original Method ----------
-        //return ("SignalStrength:"
-                //+ " " + mGsmSignalStrength
-                //+ " " + mGsmBitErrorRate
-                //+ " " + mCdmaDbm
-                //+ " " + mCdmaEcio
-                //+ " " + mEvdoDbm
-                //+ " " + mEvdoEcio
-                //+ " " + mEvdoSnr
-                //+ " " + mLteSignalStrength
-                //+ " " + mLteRsrp
-                //+ " " + mLteRsrq
-                //+ " " + mLteRssnr
-                //+ " " + mLteCqi
-                //+ " " + (isGsm ? "gsm|lte" : "cdma"));
+        
+        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.049 -0400", hash_original_method = "3660E1E14B95E0E07C3D11C71AA6DC38", hash_generated_method = "57872D825CCE8069EA73912FC049646A")
     private void setFromNotifierBundle(Bundle m) {
         mGsmSignalStrength = m.getInt("GsmSignalStrength");
@@ -783,23 +798,24 @@ public class SignalStrength implements Parcelable {
         mLteRssnr = m.getInt("LteRssnr");
         mLteCqi = m.getInt("LteCqi");
         isGsm = m.getBoolean("isGsm");
-        // ---------- Original Method ----------
-        //mGsmSignalStrength = m.getInt("GsmSignalStrength");
-        //mGsmBitErrorRate = m.getInt("GsmBitErrorRate");
-        //mCdmaDbm = m.getInt("CdmaDbm");
-        //mCdmaEcio = m.getInt("CdmaEcio");
-        //mEvdoDbm = m.getInt("EvdoDbm");
-        //mEvdoEcio = m.getInt("EvdoEcio");
-        //mEvdoSnr = m.getInt("EvdoSnr");
-        //mLteSignalStrength = m.getInt("LteSignalStrength");
-        //mLteRsrp = m.getInt("LteRsrp");
-        //mLteRsrq = m.getInt("LteRsrq");
-        //mLteRssnr = m.getInt("LteRssnr");
-        //mLteCqi = m.getInt("LteCqi");
-        //isGsm = m.getBoolean("isGsm");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:48.050 -0400", hash_original_method = "936283CC8EFD34F7D7362628995C0399", hash_generated_method = "DE945727E8B0559D1DC7CB4C231BFCCD")
     public void fillInNotifierBundle(Bundle m) {
         m.putInt("GsmSignalStrength", mGsmSignalStrength);
@@ -816,23 +832,24 @@ public class SignalStrength implements Parcelable {
         m.putInt("LteCqi", mLteCqi);
         m.putBoolean("isGsm", Boolean.valueOf(isGsm));
         addTaint(m.getTaint());
-        // ---------- Original Method ----------
-        //m.putInt("GsmSignalStrength", mGsmSignalStrength);
-        //m.putInt("GsmBitErrorRate", mGsmBitErrorRate);
-        //m.putInt("CdmaDbm", mCdmaDbm);
-        //m.putInt("CdmaEcio", mCdmaEcio);
-        //m.putInt("EvdoDbm", mEvdoDbm);
-        //m.putInt("EvdoEcio", mEvdoEcio);
-        //m.putInt("EvdoSnr", mEvdoSnr);
-        //m.putInt("LteSignalStrength", mLteSignalStrength);
-        //m.putInt("LteRsrp", mLteRsrp);
-        //m.putInt("LteRsrq", mLteRsrq);
-        //m.putInt("LteRssnr", mLteRssnr);
-        //m.putInt("LteCqi", mLteCqi);
-        //m.putBoolean("isGsm", Boolean.valueOf(isGsm));
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void log(String s) {
         Log.w(LOG_TAG, s);
     }
@@ -878,12 +895,12 @@ public class SignalStrength implements Parcelable {
             return new SignalStrength[size];
         }
     };
-    // orphaned legacy method
+    
     public SignalStrength createFromParcel(Parcel in) {
             return new SignalStrength(in);
         }
     
-    // orphaned legacy method
+    
     public SignalStrength[] newArray(int size) {
             return new SignalStrength[size];
         }

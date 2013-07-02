@@ -1,11 +1,11 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
@@ -19,13 +19,13 @@ public class BasicExpiresHandler extends AbstractCookieAttributeHandler {
     public  BasicExpiresHandler(final String[] datepatterns) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Array of date patterns may not be null");
-        } //End block
+        } 
         this.datepatterns = datepatterns;
-        // ---------- Original Method ----------
-        //if (datepatterns == null) {
-            //throw new IllegalArgumentException("Array of date patterns may not be null");
-        //}
-        //this.datepatterns = datepatterns;
+        
+        
+            
+        
+        
     }
 
     
@@ -33,34 +33,34 @@ public class BasicExpiresHandler extends AbstractCookieAttributeHandler {
     public void parse(final SetCookie cookie, final String value) throws MalformedCookieException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Missing value for expires attribute");
-        } //End block
+        } 
         try 
         {
             cookie.setExpiryDate(DateUtils.parseDate(value, this.datepatterns));
-        } //End block
+        } 
         catch (DateParseException dpe)
         {
             if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Unable to parse expires attribute: " 
                 + value);
-        } //End block
+        } 
         addTaint(cookie.getTaint());
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //if (value == null) {
-            //throw new MalformedCookieException("Missing value for expires attribute");
-        //}
-        //try {
-            //cookie.setExpiryDate(DateUtils.parseDate(value, this.datepatterns));
-        //} catch (DateParseException dpe) {
-            //throw new MalformedCookieException("Unable to parse expires attribute: " 
-                //+ value);
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+            
+                
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.nfc.tech;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.nfc.ErrorCodes;
 import android.nfc.Tag;
@@ -34,77 +34,78 @@ public final class MifareClassic extends BasicTagTechnology {
         mIsEmulated = false;
         {
             Object var93ACA3F0B48D9F602F8D7CF917D09E5E_762637701 = (a.getSak());
-            //Begin case 0x08 
+            
             mType = TYPE_CLASSIC;
-            //End case 0x08 
-            //Begin case 0x08 
+            
+            
             mSize = SIZE_1K;
-            //End case 0x08 
-            //Begin case 0x09 
+            
+            
             mType = TYPE_CLASSIC;
-            //End case 0x09 
-            //Begin case 0x09 
+            
+            
             mSize = SIZE_MINI;
-            //End case 0x09 
-            //Begin case 0x10 
+            
+            
             mType = TYPE_PLUS;
-            //End case 0x10 
-            //Begin case 0x10 
+            
+            
             mSize = SIZE_2K;
-            //End case 0x10 
-            //Begin case 0x11 
+            
+            
             mType = TYPE_PLUS;
-            //End case 0x11 
-            //Begin case 0x11 
+            
+            
             mSize = SIZE_4K;
-            //End case 0x11 
-            //Begin case 0x18 
+            
+            
             mType = TYPE_CLASSIC;
-            //End case 0x18 
-            //Begin case 0x18 
+            
+            
             mSize = SIZE_4K;
-            //End case 0x18 
-            //Begin case 0x28 
+            
+            
             mType = TYPE_CLASSIC;
-            //End case 0x28 
-            //Begin case 0x28 
+            
+            
             mSize = SIZE_1K;
-            //End case 0x28 
-            //Begin case 0x28 
+            
+            
             mIsEmulated = true;
-            //End case 0x28 
-            //Begin case 0x38 
+            
+            
             mType = TYPE_CLASSIC;
-            //End case 0x38 
-            //Begin case 0x38 
+            
+            
             mSize = SIZE_4K;
-            //End case 0x38 
-            //Begin case 0x38 
+            
+            
             mIsEmulated = true;
-            //End case 0x38 
-            //Begin case 0x88 
+            
+            
             mType = TYPE_CLASSIC;
-            //End case 0x88 
-            //Begin case 0x88 
+            
+            
             mSize = SIZE_1K;
-            //End case 0x88 
-            //Begin case 0x98 0xB8 
+            
+            
             mType = TYPE_PRO;
-            //End case 0x98 0xB8 
-            //Begin case 0x98 0xB8 
+            
+            
             mSize = SIZE_4K;
-            //End case 0x98 0xB8 
-            //Begin case default 
+            
+            
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Tag incorrectly enumerated as MIFARE Classic, SAK = " + a.getSak());
-            //End case default 
-        } //End collapsed parenthetic
+            
+        } 
         addTaint(tag.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MifareClassic get(Tag tag) {
         if (!tag.hasTech(TagTechnology.MIFARE_CLASSIC)) return null;
         try {
@@ -119,8 +120,8 @@ public final class MifareClassic extends BasicTagTechnology {
     public int getType() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2098602812 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2098602812;
-        // ---------- Original Method ----------
-        //return mType;
+        
+        
     }
 
     
@@ -128,8 +129,8 @@ public final class MifareClassic extends BasicTagTechnology {
     public int getSize() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_635843969 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_635843969;
-        // ---------- Original Method ----------
-        //return mSize;
+        
+        
     }
 
     
@@ -137,8 +138,8 @@ public final class MifareClassic extends BasicTagTechnology {
     public boolean isEmulated() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2032536494 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2032536494;
-        // ---------- Original Method ----------
-        //return mIsEmulated;
+        
+        
     }
 
     
@@ -146,19 +147,19 @@ public final class MifareClassic extends BasicTagTechnology {
     public int getSectorCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_512979136 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_512979136;
-        // ---------- Original Method ----------
-        //switch (mSize) {
-        //case SIZE_1K:
-            //return 16;
-        //case SIZE_2K:
-            //return 32;
-        //case SIZE_4K:
-            //return 40;
-        //case SIZE_MINI:
-            //return 5;
-        //default:
-            //return 0;
-        //}
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -166,40 +167,42 @@ public final class MifareClassic extends BasicTagTechnology {
     public int getBlockCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1131783781 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1131783781;
-        // ---------- Original Method ----------
-        //return mSize / BLOCK_SIZE;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.343 -0400", hash_original_method = "4046C9F5F79A621BBA2F7BE2C9D1103D", hash_generated_method = "C7DBEB9C17D62485DDBCE90E43D3D130")
     public int getBlockCountInSector(int sectorIndex) {
         validateSector(sectorIndex);
         addTaint(sectorIndex);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450771876 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450771876;
-        // ---------- Original Method ----------
-        //validateSector(sectorIndex);
-        //if (sectorIndex < 32) {
-            //return 4;
-        //} else {
-            //return 16;
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.344 -0400", hash_original_method = "54173D46B73CE605A7C420967C72CF9C", hash_generated_method = "71E4E757BFD2375E88911827DA031DDA")
     public int blockToSector(int blockIndex) {
         validateBlock(blockIndex);
         addTaint(blockIndex);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_412607408 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_412607408;
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //if (blockIndex < 32 * 4) {
-            //return blockIndex / 4;
-        //} else {
-            //return 32 + (blockIndex - 32 * 4) / 16;
-        //}
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -208,15 +211,16 @@ public final class MifareClassic extends BasicTagTechnology {
         addTaint(sectorIndex);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1147348582 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1147348582;
-        // ---------- Original Method ----------
-        //if (sectorIndex < 32) {
-            //return sectorIndex * 4;
-        //} else {
-            //return 32 * 4 + (sectorIndex - 32) * 16;
-        //}
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.345 -0400", hash_original_method = "88C199BE0D888C3B911ED6B5CDCE45B3", hash_generated_method = "50DAE6B7D8ACF81C7C5F48E73DBE2D55")
     public boolean authenticateSectorWithKeyA(int sectorIndex, byte[] key) throws IOException {
         boolean var67D2AC1426E5D4EAA35E8B99318A4DB5_1875281920 = (authenticate(sectorIndex, key, true));
@@ -224,11 +228,12 @@ public final class MifareClassic extends BasicTagTechnology {
         addTaint(key[0]);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1240278284 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1240278284;
-        // ---------- Original Method ----------
-        //return authenticate(sectorIndex, key, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.346 -0400", hash_original_method = "18C51006B4E85BDBA44E7C237EA48ACA", hash_generated_method = "1475E67958AAB7A06C8FD7668FBA0BA9")
     public boolean authenticateSectorWithKeyB(int sectorIndex, byte[] key) throws IOException {
         boolean varDB5EB89BC26E94298B5CAAB9335E343E_640488746 = (authenticate(sectorIndex, key, false));
@@ -236,11 +241,12 @@ public final class MifareClassic extends BasicTagTechnology {
         addTaint(key[0]);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1755530108 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1755530108;
-        // ---------- Original Method ----------
-        //return authenticate(sectorIndex, key, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.347 -0400", hash_original_method = "A4BE9C6E30E6595D3E1AAF1825AE0C43", hash_generated_method = "9C7B94B91917ECF59BB58B3C26D0DE10")
     private boolean authenticate(int sector, byte[] key, boolean keyA) throws IOException {
         validateSector(sector);
@@ -248,10 +254,10 @@ public final class MifareClassic extends BasicTagTechnology {
         byte[] cmd = new byte[12];
         {
             cmd[0] = 0x60;
-        } //End block
+        } 
         {
             cmd[0] = 0x61;
-        } //End block
+        } 
         cmd[1] = (byte) sectorToBlock(sector);
         byte[] uid = getTag().getId();
         System.arraycopy(uid, uid.length - 4, cmd, 2, 4);
@@ -260,12 +266,12 @@ public final class MifareClassic extends BasicTagTechnology {
         {
             {
                 boolean var5370808FB2F9D1ED4068896E6CB2FBD7_1359364057 = (transceive(cmd, false) != null);
-            } //End collapsed parenthetic
-        } //End block
+            } 
+        } 
         catch (TagLostException e)
         {
             if (DroidSafeAndroidRuntime.control) throw e;
-        } //End block
+        } 
         catch (IOException e)
         { }
         addTaint(sector);
@@ -273,31 +279,32 @@ public final class MifareClassic extends BasicTagTechnology {
         addTaint(keyA);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_689743297 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_689743297;
-        // ---------- Original Method ----------
-        //validateSector(sector);
-        //checkConnected();
-        //byte[] cmd = new byte[12];
-        //if (keyA) {
-            //cmd[0] = 0x60; 
-        //} else {
-            //cmd[0] = 0x61; 
-        //}
-        //cmd[1] = (byte) sectorToBlock(sector);
-        //byte[] uid = getTag().getId();
-        //System.arraycopy(uid, uid.length - 4, cmd, 2, 4);
-        //System.arraycopy(key, 0, cmd, 6, 6);
-        //try {
-            //if (transceive(cmd, false) != null) {
-                //return true;
-            //}
-        //} catch (TagLostException e) {
-            //throw e;
-        //} catch (IOException e) {
-        //}
-        //return false;
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.349 -0400", hash_original_method = "540E686F2680F6F111FB5FE029F249C7", hash_generated_method = "3851AC54C628598D05C9597F011A61CC")
     public byte[] readBlock(int blockIndex) throws IOException {
         validateBlock(blockIndex);
@@ -307,21 +314,22 @@ public final class MifareClassic extends BasicTagTechnology {
         addTaint(blockIndex);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1182182023 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1182182023;
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //checkConnected();
-        //byte[] cmd = { 0x30, (byte) blockIndex };
-        //return transceive(cmd, false);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.350 -0400", hash_original_method = "6EB213EA4DA32B7A4304947C71CED66E", hash_generated_method = "508A389F5973ADB28F0A8AD29C49ED17")
     public void writeBlock(int blockIndex, byte[] data) throws IOException {
         validateBlock(blockIndex);
         checkConnected();
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("must write 16-bytes");
-        } //End block
+        } 
         byte[] cmd = new byte[data.length + 2];
         cmd[0] = (byte) 0xA0;
         cmd[1] = (byte) blockIndex;
@@ -329,20 +337,21 @@ public final class MifareClassic extends BasicTagTechnology {
         transceive(cmd, false);
         addTaint(blockIndex);
         addTaint(data[0]);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //checkConnected();
-        //if (data.length != 16) {
-            //throw new IllegalArgumentException("must write 16-bytes");
-        //}
-        //byte[] cmd = new byte[data.length + 2];
-        //cmd[0] = (byte) 0xA0;
-        //cmd[1] = (byte) blockIndex;
-        //System.arraycopy(data, 0, cmd, 2, data.length);
-        //transceive(cmd, false);
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.350 -0400", hash_original_method = "B8563CE393F659B55E0B9D3772EFE7A6", hash_generated_method = "D2564A3D328AFC5CC8E3126DE3EC76B1")
     public void increment(int blockIndex, int value) throws IOException {
         validateBlock(blockIndex);
@@ -356,19 +365,20 @@ public final class MifareClassic extends BasicTagTechnology {
         transceive(cmd.array(), false);
         addTaint(blockIndex);
         addTaint(value);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //validateValueOperand(value);
-        //checkConnected();
-        //ByteBuffer cmd = ByteBuffer.allocate(6);
-        //cmd.order(ByteOrder.LITTLE_ENDIAN);
-        //cmd.put( (byte) 0xC1 );
-        //cmd.put( (byte) blockIndex );
-        //cmd.putInt(value);
-        //transceive(cmd.array(), false);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.351 -0400", hash_original_method = "FAA38C9F5E4C186E0FA530C9A1909DAD", hash_generated_method = "9C4EBAF2FFF33BB8D6C7839850D2F41E")
     public void decrement(int blockIndex, int value) throws IOException {
         validateBlock(blockIndex);
@@ -382,19 +392,20 @@ public final class MifareClassic extends BasicTagTechnology {
         transceive(cmd.array(), false);
         addTaint(blockIndex);
         addTaint(value);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //validateValueOperand(value);
-        //checkConnected();
-        //ByteBuffer cmd = ByteBuffer.allocate(6);
-        //cmd.order(ByteOrder.LITTLE_ENDIAN);
-        //cmd.put( (byte) 0xC0 );
-        //cmd.put( (byte) blockIndex );
-        //cmd.putInt(value);
-        //transceive(cmd.array(), false);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.351 -0400", hash_original_method = "25F048093BEC30F816A6E356A5759AAE", hash_generated_method = "B26CD4B98E4E2E136B2C8B9B5E51298D")
     public void transfer(int blockIndex) throws IOException {
         validateBlock(blockIndex);
@@ -402,14 +413,15 @@ public final class MifareClassic extends BasicTagTechnology {
         byte[] cmd = { (byte) 0xB0, (byte) blockIndex };
         transceive(cmd, false);
         addTaint(blockIndex);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //checkConnected();
-        //byte[] cmd = { (byte) 0xB0, (byte) blockIndex };
-        //transceive(cmd, false);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.352 -0400", hash_original_method = "CA1FBC952F4C8F3DF96DFF31BC2893A2", hash_generated_method = "7311BA73D95EBED861418641A0847578")
     public void restore(int blockIndex) throws IOException {
         validateBlock(blockIndex);
@@ -417,35 +429,38 @@ public final class MifareClassic extends BasicTagTechnology {
         byte[] cmd = { (byte) 0xC2, (byte) blockIndex };
         transceive(cmd, false);
         addTaint(blockIndex);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //checkConnected();
-        //byte[] cmd = { (byte) 0xC2, (byte) blockIndex };
-        //transceive(cmd, false);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.353 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "3A260EBF1298ABEF33B0FA1A7274D222")
     public byte[] transceive(byte[] data) throws IOException {
         byte[] var457CAD28AA5A950818B34ED801FB2565_1820108442 = (transceive(data, true));
         addTaint(data[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1344240693 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1344240693;
-        // ---------- Original Method ----------
-        //return transceive(data, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.361 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "14C956BA5B5FAE67EE16861F947F072A")
     public int getMaxTransceiveLength() {
         int varAD50EB2A6987338433A93D587AD15277_365908756 = (getMaxTransceiveLengthInternal());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1409209627 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1409209627;
-        // ---------- Original Method ----------
-        //return getMaxTransceiveLengthInternal();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.361 -0400", hash_original_method = "F9EC6D04AED06B3DFE22DC9A2A8AC0C3", hash_generated_method = "FDB7CDBC54F694EA96998465D6B95D72")
     public void setTimeout(int timeout) {
         try 
@@ -453,43 +468,45 @@ public final class MifareClassic extends BasicTagTechnology {
             int err = mTag.getTagService().setTimeout(TagTechnology.MIFARE_CLASSIC, timeout);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The supplied timeout is not valid");
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         { }
         addTaint(timeout);
-        // ---------- Original Method ----------
-        //try {
-            //int err = mTag.getTagService().setTimeout(TagTechnology.MIFARE_CLASSIC, timeout);
-            //if (err != ErrorCodes.SUCCESS) {
-                //throw new IllegalArgumentException("The supplied timeout is not valid");
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-        //}
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.363 -0400", hash_original_method = "59718E6CF1FABD433F7C060A44E5C453", hash_generated_method = "1023955AC675AB67472BEABAAEAAD27D")
     public int getTimeout() {
         try 
         {
             int var5DDA3B385C812217F69F954990357FF1_1748198744 = (mTag.getTagService().getTimeout(TagTechnology.MIFARE_CLASSIC));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_86092937 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_86092937;
-        // ---------- Original Method ----------
-        //try {
-            //return mTag.getTagService().getTimeout(TagTechnology.MIFARE_CLASSIC);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-            //return 0;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void validateSector(int sector) {
         if (sector < 0 || sector >= MAX_SECTOR_COUNT) {
             throw new IndexOutOfBoundsException("sector out of bounds: " + sector);
@@ -497,6 +514,7 @@ public final class MifareClassic extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void validateBlock(int block) {
         if (block < 0 || block >= MAX_BLOCK_COUNT) {
             throw new IndexOutOfBoundsException("block out of bounds: " + block);
@@ -504,6 +522,7 @@ public final class MifareClassic extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void validateValueOperand(int value) {
         if (value < 0) {
             throw new IllegalArgumentException("value operand negative");

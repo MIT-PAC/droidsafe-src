@@ -1,11 +1,11 @@
 package android.app.backup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.ParcelFileDescriptor;
@@ -29,13 +29,14 @@ public class FileBackupHelper extends FileBackupHelperBase implements BackupHelp
         mContext = context;
         mFilesDir = context.getFilesDir();
         mFiles = files;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mFilesDir = context.getFilesDir();
-        //mFiles = files;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.538 -0400", hash_original_method = "4D62E84034BBC9E292FAA30B93C18D79", hash_generated_method = "3761DD46A5B290D8BA8A0F951CF9C767")
     public void performBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
             ParcelFileDescriptor newState) {
@@ -47,24 +48,25 @@ public class FileBackupHelper extends FileBackupHelperBase implements BackupHelp
             int i = 0;
             {
                 fullPaths[i] = (new File(base, files[i])).getAbsolutePath();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         performBackup_checked(oldState, data, newState, fullPaths, files);
         addTaint(oldState.getTaint());
         addTaint(data.getTaint());
         addTaint(newState.getTaint());
-        // ---------- Original Method ----------
-        //String[] files = mFiles;
-        //File base = mContext.getFilesDir();
-        //final int N = files.length;
-        //String[] fullPaths = new String[N];
-        //for (int i=0; i<N; i++) {
-            //fullPaths[i] = (new File(base, files[i])).getAbsolutePath();
-        //}
-        //performBackup_checked(oldState, data, newState, fullPaths, files);
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.539 -0400", hash_original_method = "F9437E8B6CBF659BF2444D9A1AC4A769", hash_generated_method = "D118A794099017D34E65143D1169B455")
     public void restoreEntity(BackupDataInputStream data) {
         Log.d(TAG, "got entity '" + data.getKey() + "' size=" + data.size());
@@ -74,16 +76,16 @@ public class FileBackupHelper extends FileBackupHelperBase implements BackupHelp
             {
                 File f = new File(mFilesDir, key);
                 writeFile(f, data);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.d(TAG, "got entity '" + data.getKey() + "' size=" + data.size());
-        //String key = data.getKey();
-        //if (isKeyInList(key, mFiles)) {
-            //File f = new File(mFilesDir, key);
-            //writeFile(f, data);
-        //}
+        
+        
+        
+        
+            
+            
+        
     }
 
     

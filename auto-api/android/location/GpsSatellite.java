@@ -1,11 +1,11 @@
 package android.location;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 
 public final class GpsSatellite {
@@ -37,8 +37,8 @@ public final class GpsSatellite {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.253 -0400", hash_original_method = "8573EDE4D6155BE2F87E9990A729AEDD", hash_generated_method = "26007B6C3D73BE506F995952BD6015AF")
       GpsSatellite(int prn) {
         mPrn = prn;
-        // ---------- Original Method ----------
-        //mPrn = prn;
+        
+        
     }
 
     
@@ -51,14 +51,14 @@ public final class GpsSatellite {
         mSnr = satellite.mSnr;
         mElevation = satellite.mElevation;
         mAzimuth = satellite.mAzimuth;
-        // ---------- Original Method ----------
-        //mValid = satellite.mValid;
-        //mHasEphemeris = satellite.mHasEphemeris;
-        //mHasAlmanac = satellite.mHasAlmanac;
-        //mUsedInFix = satellite.mUsedInFix;
-        //mSnr = satellite.mSnr;
-        //mElevation = satellite.mElevation;
-        //mAzimuth = satellite.mAzimuth;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -66,8 +66,8 @@ public final class GpsSatellite {
     public int getPrn() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_609737374 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_609737374;
-        // ---------- Original Method ----------
-        //return mPrn;
+        
+        
     }
 
     
@@ -75,8 +75,8 @@ public final class GpsSatellite {
     public float getSnr() {
         float var546ADE640B6EDFBC8A086EF31347E768_1524838675 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1524838675;
-        // ---------- Original Method ----------
-        //return mSnr;
+        
+        
     }
 
     
@@ -84,8 +84,8 @@ public final class GpsSatellite {
     public float getElevation() {
         float var546ADE640B6EDFBC8A086EF31347E768_709576137 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_709576137;
-        // ---------- Original Method ----------
-        //return mElevation;
+        
+        
     }
 
     
@@ -93,8 +93,8 @@ public final class GpsSatellite {
     public float getAzimuth() {
         float var546ADE640B6EDFBC8A086EF31347E768_1596124085 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1596124085;
-        // ---------- Original Method ----------
-        //return mAzimuth;
+        
+        
     }
 
     
@@ -102,8 +102,8 @@ public final class GpsSatellite {
     public boolean hasEphemeris() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1475935359 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1475935359;
-        // ---------- Original Method ----------
-        //return mHasEphemeris;
+        
+        
     }
 
     
@@ -111,8 +111,8 @@ public final class GpsSatellite {
     public boolean hasAlmanac() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_165639675 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_165639675;
-        // ---------- Original Method ----------
-        //return mHasAlmanac;
+        
+        
     }
 
     
@@ -120,8 +120,8 @@ public final class GpsSatellite {
     public boolean usedInFix() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1595053299 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1595053299;
-        // ---------- Original Method ----------
-        //return mUsedInFix;
+        
+        
     }
 
     

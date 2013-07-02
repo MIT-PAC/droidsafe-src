@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.R;
 import android.content.Context;
@@ -84,8 +84,8 @@ public class ProgressDialog extends AlertDialog {
         super(context);
         initFormats();
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //initFormats();
+        
+        
     }
 
     
@@ -95,41 +95,46 @@ public class ProgressDialog extends AlertDialog {
         initFormats();
         addTaint(context.getTaint());
         addTaint(theme);
-        // ---------- Original Method ----------
-        //initFormats();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.932 -0400", hash_original_method = "FE2AC98467F95F1FDF5E365DE947BD3D", hash_generated_method = "EB60C8DF224A339DC28B96F8E67BA73A")
     private void initFormats() {
         mProgressNumberFormat = "%1d/%2d";
         mProgressPercentFormat = NumberFormat.getPercentInstance();
         mProgressPercentFormat.setMaximumFractionDigits(0);
-        // ---------- Original Method ----------
-        //mProgressNumberFormat = "%1d/%2d";
-        //mProgressPercentFormat = NumberFormat.getPercentInstance();
-        //mProgressPercentFormat.setMaximumFractionDigits(0);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ProgressDialog show(Context context, CharSequence title,
             CharSequence message) {
         return show(context, title, message, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ProgressDialog show(Context context, CharSequence title,
             CharSequence message, boolean indeterminate) {
         return show(context, title, message, indeterminate, false, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ProgressDialog show(Context context, CharSequence title,
             CharSequence message, boolean indeterminate, boolean cancelable) {
         return show(context, title, message, indeterminate, cancelable, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ProgressDialog show(Context context, CharSequence title,
             CharSequence message, boolean indeterminate,
             boolean cancelable, OnCancelListener cancelListener) {
@@ -144,10 +149,11 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.935 -0400", hash_original_method = "3C62C073499C0C1AB7CB80CDA6A00701", hash_generated_method = "3D307DCA01B98C41E5FE08FB80C9684C")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         LayoutInflater inflater = LayoutInflater.from(mContext);
         TypedArray a = mContext.obtainStyledAttributes(null,
                 com.android.internal.R.styleable.AlertDialog,
@@ -163,23 +169,23 @@ public class ProgressDialog extends AlertDialog {
                     {
                         String format = mProgressNumberFormat;
                         mProgressNumber.setText(String.format(format, progress, max));
-                    } //End block
+                    } 
                     {
                         mProgressNumber.setText("");
-                    } //End block
+                    } 
                     {
                         double percent = (double) progress / (double) max;
                         SpannableString tmp = new SpannableString(mProgressPercentFormat.format(percent));
                         tmp.setSpan(new StyleSpan(android.graphics.Typeface.BOLD),
                                 0, tmp.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                         mProgressPercent.setText(tmp);
-                    } //End block
+                    } 
                     {
                         mProgressPercent.setText("");
-                    } //End block
+                    } 
                     addTaint(msg.getTaint());
-                    // ---------- Original Method ----------
-                    // Original Method Too Long, Refer to Original Implementation
+                    
+                    
                 }
 };
             View view = inflater.inflate(a.getResourceId(
@@ -189,7 +195,7 @@ public class ProgressDialog extends AlertDialog {
             mProgressNumber = (TextView) view.findViewById(R.id.progress_number);
             mProgressPercent = (TextView) view.findViewById(R.id.progress_percent);
             setView(view);
-        } //End block
+        } 
         {
             View view = inflater.inflate(a.getResourceId(
                     com.android.internal.R.styleable.AlertDialog_progressLayout,
@@ -197,326 +203,344 @@ public class ProgressDialog extends AlertDialog {
             mProgress = (ProgressBar) view.findViewById(R.id.progress);
             mMessageView = (TextView) view.findViewById(R.id.message);
             setView(view);
-        } //End block
+        } 
         a.recycle();
         {
             setMax(mMax);
-        } //End block
+        } 
         {
             setProgress(mProgressVal);
-        } //End block
+        } 
         {
             setSecondaryProgress(mSecondaryProgressVal);
-        } //End block
+        } 
         {
             incrementProgressBy(mIncrementBy);
-        } //End block
+        } 
         {
             incrementSecondaryProgressBy(mIncrementSecondaryBy);
-        } //End block
+        } 
         {
             setProgressDrawable(mProgressDrawable);
-        } //End block
+        } 
         {
             setIndeterminateDrawable(mIndeterminateDrawable);
-        } //End block
+        } 
         {
             setMessage(mMessage);
-        } //End block
+        } 
         setIndeterminate(mIndeterminate);
         onProgressChanged();
         super.onCreate(savedInstanceState);
         addTaint(savedInstanceState.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.936 -0400", hash_original_method = "E4C380672C091716BA880A9F39495F13", hash_generated_method = "D96DD738669DD0F97C550EA7D446DAAF")
     @Override
     public void onStart() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onStart();
         mHasStarted = true;
-        // ---------- Original Method ----------
-        //super.onStart();
-        //mHasStarted = true;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.936 -0400", hash_original_method = "167333ED7F36A78C04285C2EEC5DCE22", hash_generated_method = "CA0145CDF0F773E726BCE8702522BE73")
     @Override
     protected void onStop() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onStop();
         mHasStarted = false;
-        // ---------- Original Method ----------
-        //super.onStop();
-        //mHasStarted = false;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.937 -0400", hash_original_method = "23FC1AAA73A8AF68F967E7C4900FBF4D", hash_generated_method = "BB42C57544548132E30EC1734345E853")
     public void setProgress(int value) {
         {
             mProgress.setProgress(value);
             onProgressChanged();
-        } //End block
+        } 
         {
             mProgressVal = value;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mHasStarted) {
-            //mProgress.setProgress(value);
-            //onProgressChanged();
-        //} else {
-            //mProgressVal = value;
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.937 -0400", hash_original_method = "6E4750DDBC0AC16C300E83EC6E6DBC1D", hash_generated_method = "0EE242042DDB35C7EABBF558918F9225")
     public void setSecondaryProgress(int secondaryProgress) {
         {
             mProgress.setSecondaryProgress(secondaryProgress);
             onProgressChanged();
-        } //End block
+        } 
         {
             mSecondaryProgressVal = secondaryProgress;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mProgress != null) {
-            //mProgress.setSecondaryProgress(secondaryProgress);
-            //onProgressChanged();
-        //} else {
-            //mSecondaryProgressVal = secondaryProgress;
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.938 -0400", hash_original_method = "4D0AEB75C79AE0306A009E89E85077BB", hash_generated_method = "0F5761C1CED21D08E06B5F737C8E1E7D")
     public int getProgress() {
         {
             int varC3FCEABAA482DDE04BD57D3E33B890B4_878827539 = (mProgress.getProgress());
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_799706768 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_799706768;
-        // ---------- Original Method ----------
-        //if (mProgress != null) {
-            //return mProgress.getProgress();
-        //}
-        //return mProgressVal;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.939 -0400", hash_original_method = "58FB68124F7103A7657A430EF8D5C27D", hash_generated_method = "730D1C8271E640A5A780E06D1D24F073")
     public int getSecondaryProgress() {
         {
             int var44A0564C0ED141CA0E9A06C34FFA054C_1836915648 = (mProgress.getSecondaryProgress());
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1270576940 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1270576940;
-        // ---------- Original Method ----------
-        //if (mProgress != null) {
-            //return mProgress.getSecondaryProgress();
-        //}
-        //return mSecondaryProgressVal;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.939 -0400", hash_original_method = "B2C91689E392BFA0100BFE7CD7CBCF9A", hash_generated_method = "4F90A4CEFECCAA37A5C6E99383DD2A8B")
     public int getMax() {
         {
             int var4949B217EA884167BD50B357099ED859_538704282 = (mProgress.getMax());
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479450171 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479450171;
-        // ---------- Original Method ----------
-        //if (mProgress != null) {
-            //return mProgress.getMax();
-        //}
-        //return mMax;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.940 -0400", hash_original_method = "823B39538AFD9A862BBB0CFD9EF1E653", hash_generated_method = "F638B4D3E9F6838BB8C0BF979EA9329F")
     public void setMax(int max) {
         {
             mProgress.setMax(max);
             onProgressChanged();
-        } //End block
+        } 
         {
             mMax = max;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mProgress != null) {
-            //mProgress.setMax(max);
-            //onProgressChanged();
-        //} else {
-            //mMax = max;
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.940 -0400", hash_original_method = "445D81214DF2B063E62A55D5F8A17F23", hash_generated_method = "57379F8B73C5869FB43E31275DE8EA50")
     public void incrementProgressBy(int diff) {
         {
             mProgress.incrementProgressBy(diff);
             onProgressChanged();
-        } //End block
+        } 
         {
             mIncrementBy += diff;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mProgress != null) {
-            //mProgress.incrementProgressBy(diff);
-            //onProgressChanged();
-        //} else {
-            //mIncrementBy += diff;
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.941 -0400", hash_original_method = "ACDD0F5A55036B735620D3E49831AA1C", hash_generated_method = "90B9B31A7CA6C58F812AAE7F8CFE280C")
     public void incrementSecondaryProgressBy(int diff) {
         {
             mProgress.incrementSecondaryProgressBy(diff);
             onProgressChanged();
-        } //End block
+        } 
         {
             mIncrementSecondaryBy += diff;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mProgress != null) {
-            //mProgress.incrementSecondaryProgressBy(diff);
-            //onProgressChanged();
-        //} else {
-            //mIncrementSecondaryBy += diff;
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.941 -0400", hash_original_method = "BF189ED691A8CB1AA1828F7DFAB16E61", hash_generated_method = "7F2317240E17C54B8808B22072CF61FD")
     public void setProgressDrawable(Drawable d) {
         {
             mProgress.setProgressDrawable(d);
-        } //End block
+        } 
         {
             mProgressDrawable = d;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mProgress != null) {
-            //mProgress.setProgressDrawable(d);
-        //} else {
-            //mProgressDrawable = d;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.942 -0400", hash_original_method = "55A3C3032B86D6D77860B6605EF0B7F9", hash_generated_method = "E380E3CEA365635C07622D1AC65D074F")
     public void setIndeterminateDrawable(Drawable d) {
         {
             mProgress.setIndeterminateDrawable(d);
-        } //End block
+        } 
         {
             mIndeterminateDrawable = d;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mProgress != null) {
-            //mProgress.setIndeterminateDrawable(d);
-        //} else {
-            //mIndeterminateDrawable = d;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.942 -0400", hash_original_method = "87844978D06A223987B222FFA166DFBA", hash_generated_method = "EEA54B82C34006BCD4248E462DEB99B2")
     public void setIndeterminate(boolean indeterminate) {
         {
             mProgress.setIndeterminate(indeterminate);
-        } //End block
+        } 
         {
             mIndeterminate = indeterminate;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mProgress != null) {
-            //mProgress.setIndeterminate(indeterminate);
-        //} else {
-            //mIndeterminate = indeterminate;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.943 -0400", hash_original_method = "91BE21C4F81E2907389C6C7DE0F7DEB9", hash_generated_method = "C6D4D43B40C01B344BFA7AB63E9F2134")
     public boolean isIndeterminate() {
         {
             boolean var909255BB0BE06BA49690588123C2581F_510134473 = (mProgress.isIndeterminate());
-        } //End block
+        } 
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1887703950 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1887703950;
-        // ---------- Original Method ----------
-        //if (mProgress != null) {
-            //return mProgress.isIndeterminate();
-        //}
-        //return mIndeterminate;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.944 -0400", hash_original_method = "AFD34C008702B9F6492C001F2A71B115", hash_generated_method = "8615547F9FCEDB23F0C423FE70B5B6C5")
     @Override
     public void setMessage(CharSequence message) {
         {
             {
                 super.setMessage(message);
-            } //End block
+            } 
             {
                 mMessageView.setText(message);
-            } //End block
-        } //End block
+            } 
+        } 
         {
             mMessage = message;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mProgress != null) {
-            //if (mProgressStyle == STYLE_HORIZONTAL) {
-                //super.setMessage(message);
-            //} else {
-                //mMessageView.setText(message);
-            //}
-        //} else {
-            //mMessage = message;
-        //}
+        } 
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.944 -0400", hash_original_method = "85F4612555E33B447C725C49965B14D6", hash_generated_method = "4273143CCA6E95A2C8596BE20934D03B")
     public void setProgressStyle(int style) {
         mProgressStyle = style;
-        // ---------- Original Method ----------
-        //mProgressStyle = style;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.946 -0400", hash_original_method = "B0BFAE800A15CED2E9D1DC398253EB1C", hash_generated_method = "F482EA4B05B7D51B24E03A24216110BC")
     public void setProgressNumberFormat(String format) {
         mProgressNumberFormat = format;
         onProgressChanged();
-        // ---------- Original Method ----------
-        //mProgressNumberFormat = format;
-        //onProgressChanged();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.947 -0400", hash_original_method = "4324E732D77BC0648AC0ECF3DB6A3F8F", hash_generated_method = "9C8F46C8F794E97CBBAB7656535BB4DC")
     public void setProgressPercentFormat(NumberFormat format) {
         mProgressPercentFormat = format;
         onProgressChanged();
-        // ---------- Original Method ----------
-        //mProgressPercentFormat = format;
-        //onProgressChanged();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.947 -0400", hash_original_method = "28A5BA5A84A47E224F80ADB1F1423669", hash_generated_method = "1C5E585E4F2FA169AEF4E64184178FD8")
     private void onProgressChanged() {
         {
@@ -524,15 +548,15 @@ public class ProgressDialog extends AlertDialog {
                 boolean var0882FC0F145234A3AFDA3C6B71E116E7_974229711 = (mViewUpdateHandler != null && !mViewUpdateHandler.hasMessages(0));
                 {
                     mViewUpdateHandler.sendEmptyMessage(0);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        //if (mProgressStyle == STYLE_HORIZONTAL) {
-            //if (mViewUpdateHandler != null && !mViewUpdateHandler.hasMessages(0)) {
-                //mViewUpdateHandler.sendEmptyMessage(0);
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+                
+            
+        
     }
 
     

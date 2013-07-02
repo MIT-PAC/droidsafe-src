@@ -1,11 +1,11 @@
 package android.nfc.tech;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.nfc.ErrorCodes;
 import android.nfc.Tag;
@@ -29,13 +29,14 @@ public final class NfcA extends BasicTagTechnology {
         mSak = extras.getShort(EXTRA_SAK);
         mAtqa = extras.getByteArray(EXTRA_ATQA);
         addTaint(tag.getTaint());
-        // ---------- Original Method ----------
-        //Bundle extras = tag.getTechExtras(TagTechnology.NFC_A);
-        //mSak = extras.getShort(EXTRA_SAK);
-        //mAtqa = extras.getByteArray(EXTRA_ATQA);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NfcA get(Tag tag) {
         if (!tag.hasTech(TagTechnology.NFC_A)) return null;
         try {
@@ -50,8 +51,8 @@ public final class NfcA extends BasicTagTechnology {
     public byte[] getAtqa() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1604952536 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1604952536;
-        // ---------- Original Method ----------
-        //return mAtqa;
+        
+        
     }
 
     
@@ -59,32 +60,35 @@ public final class NfcA extends BasicTagTechnology {
     public short getSak() {
         short var4F09DAA9D95BCB166A302407A0E0BABE_156220279 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_156220279;
-        // ---------- Original Method ----------
-        //return mSak;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.465 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "3C8B24D4CF4C35D8B552A4EE9F542145")
     public byte[] transceive(byte[] data) throws IOException {
         byte[] var457CAD28AA5A950818B34ED801FB2565_945972596 = (transceive(data, true));
         addTaint(data[0]);
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1880412596 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1880412596;
-        // ---------- Original Method ----------
-        //return transceive(data, true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.465 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "FEEE4FB9E08521251D5E2BF1E24CDAF5")
     public int getMaxTransceiveLength() {
         int varAD50EB2A6987338433A93D587AD15277_409818519 = (getMaxTransceiveLengthInternal());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1494691365 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1494691365;
-        // ---------- Original Method ----------
-        //return getMaxTransceiveLengthInternal();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.466 -0400", hash_original_method = "63D5F2163C0B5751BB93B998E089091B", hash_generated_method = "4C28E97EC1E6BF82A8BF8F24BD9C5CB2")
     public void setTimeout(int timeout) {
         try 
@@ -92,40 +96,41 @@ public final class NfcA extends BasicTagTechnology {
             int err = mTag.getTagService().setTimeout(TagTechnology.NFC_A, timeout);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The supplied timeout is not valid");
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         { }
         addTaint(timeout);
-        // ---------- Original Method ----------
-        //try {
-            //int err = mTag.getTagService().setTimeout(TagTechnology.NFC_A, timeout);
-            //if (err != ErrorCodes.SUCCESS) {
-                //throw new IllegalArgumentException("The supplied timeout is not valid");
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-        //}
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.467 -0400", hash_original_method = "BA38E23E1F1B427D7366A44F0802731B", hash_generated_method = "EA5643546FC4380F4B1F0972BAC03F51")
     public int getTimeout() {
         try 
         {
             int var813639331A2D794D17159D8A9F2E1640_2147102525 = (mTag.getTagService().getTimeout(TagTechnology.NFC_A));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_550615422 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_550615422;
-        // ---------- Original Method ----------
-        //try {
-            //return mTag.getTagService().getTimeout(TagTechnology.NFC_A);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-            //return 0;
-        //}
+        
+        
+            
+        
+            
+            
+        
     }
 
     

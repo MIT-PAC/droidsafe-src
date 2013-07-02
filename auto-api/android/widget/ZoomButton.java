@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.os.Handler;
@@ -29,13 +29,13 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
                 {
                     callOnClick();
                     mHandler.postDelayed(this, mZoomSpeed);
-                } //End block
-            } //End collapsed parenthetic
-            // ---------- Original Method ----------
-            //if (hasOnClickListeners() && mIsInLongpress && isEnabled()) {
-                //callOnClick();
-                //mHandler.postDelayed(this, mZoomSpeed);
-            //}
+                } 
+            } 
+            
+            
+                
+                
+            
         }
 
         
@@ -51,7 +51,7 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
     public  ZoomButton(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -60,7 +60,7 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
         this(context, attrs, 0);
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -72,72 +72,72 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
         addTaint(defStyle);
-        // ---------- Original Method ----------
-        //mHandler = new Handler();
-        //setOnLongClickListener(this);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.263 -0400", hash_original_method = "6BCA096FD56C8C78BA7791883B013378", hash_generated_method = "56A5618410F3D7658B1CAB6168AFD4FE")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         {
             boolean var20894F4854ED8A9DE007EB6B4F2C907D_670649291 = ((event.getAction() == MotionEvent.ACTION_CANCEL)
                 || (event.getAction() == MotionEvent.ACTION_UP));
             {
                 mIsInLongpress = false;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         boolean var5D1E90CB51451ACDF0A3114FBC92AA76_1271340350 = (super.onTouchEvent(event));
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1960111454 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1960111454;
-        // ---------- Original Method ----------
-        //if ((event.getAction() == MotionEvent.ACTION_CANCEL)
-                //|| (event.getAction() == MotionEvent.ACTION_UP)) {
-            //mIsInLongpress = false;
-        //}
-        //return super.onTouchEvent(event);
+        
+        
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.264 -0400", hash_original_method = "DEDF5C76C1376B1670A66754E8A8EB41", hash_generated_method = "D68C36E9625129F28B8BB01C9B1C450E")
     public void setZoomSpeed(long speed) {
         mZoomSpeed = speed;
-        // ---------- Original Method ----------
-        //mZoomSpeed = speed;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.264 -0400", hash_original_method = "26BCB5A69421DEBA679FF4C8B6DA9672", hash_generated_method = "947995048C54E67EE0988572AC50BAEB")
     public boolean onLongClick(View v) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mIsInLongpress = true;
         mHandler.post(mRunnable);
         addTaint(v.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_604209366 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_604209366;
-        // ---------- Original Method ----------
-        //mIsInLongpress = true;
-        //mHandler.post(mRunnable);
-        //return true;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.264 -0400", hash_original_method = "BFA7CE14F9602D57E8995DEC9C69E7C5", hash_generated_method = "DC60342C1CE9A4E421ADFDEE8CB0563D")
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mIsInLongpress = false;
         boolean varEDD771EBF66425AD21882AB08CD0EE48_640930792 = (super.onKeyUp(keyCode, event));
         addTaint(keyCode);
         addTaint(event.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1686884829 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1686884829;
-        // ---------- Original Method ----------
-        //mIsInLongpress = false;
-        //return super.onKeyUp(keyCode, event);
+        
+        
+        
     }
 
     
@@ -146,14 +146,14 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
     public void setEnabled(boolean enabled) {
         {
             setPressed(false);
-        } //End block
+        } 
         super.setEnabled(enabled);
         addTaint(enabled);
-        // ---------- Original Method ----------
-        //if (!enabled) {
-            //setPressed(false);
-        //}
-        //super.setEnabled(enabled);
+        
+        
+            
+        
+        
     }
 
     
@@ -166,9 +166,9 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
         addTaint(direction);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1641145939 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1641145939;
-        // ---------- Original Method ----------
-        //clearFocus();
-        //return super.dispatchUnhandledMove(focused, direction);
+        
+        
+        
     }
 
     

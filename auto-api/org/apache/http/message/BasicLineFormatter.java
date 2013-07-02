@@ -1,11 +1,11 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.RequestLine;
@@ -19,30 +19,31 @@ public class BasicLineFormatter implements LineFormatter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.126 -0400", hash_original_method = "8022E7B2B110A3478739271765EA4718", hash_generated_method = "8022E7B2B110A3478739271765EA4718")
     public BasicLineFormatter ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.127 -0400", hash_original_method = "88607DBCC47E4B4D98332640E6FF147F", hash_generated_method = "2E9859DA3B54989FFBF37F7942A69E76")
     protected CharArrayBuffer initBuffer(CharArrayBuffer buffer) {
-        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_382142851 = null; //Variable for return #1
+        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_382142851 = null; 
         {
             buffer.clear();
-        } //End block
+        } 
         {
             buffer = new CharArrayBuffer(64);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_382142851 = buffer;
         addTaint(buffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_382142851.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_382142851.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_382142851;
-        // ---------- Original Method ----------
-        //if (buffer != null) {
-            //buffer.clear();
-        //} else {
-            //buffer = new CharArrayBuffer(64);
-        //}
-        //return buffer;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -57,19 +58,19 @@ public class BasicLineFormatter implements LineFormatter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.129 -0400", hash_original_method = "A0F2D5AC053D278723790680878C18C6", hash_generated_method = "512CC1615A71031D0388DEC0C591925C")
     public CharArrayBuffer appendProtocolVersion(final CharArrayBuffer buffer,
                                                  final ProtocolVersion version) {
-        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_1168634317 = null; //Variable for return #1
+        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_1168634317 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Protocol version may not be null");
-        } //End block
+        } 
         CharArrayBuffer result = buffer;
         final int len = estimateProtocolVersionLen(version);
         {
             result = new CharArrayBuffer(len);
-        } //End block
+        } 
         {
             result.ensureCapacity(len);
-        } //End block
+        } 
         result.append(version.getProtocol());
         result.append('/');
         result.append(Integer.toString(version.getMajor()));
@@ -78,26 +79,26 @@ public class BasicLineFormatter implements LineFormatter {
         varB4EAC82CA7396A68D541C85D26508E83_1168634317 = result;
         addTaint(buffer.getTaint());
         addTaint(version.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1168634317.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1168634317.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1168634317;
-        // ---------- Original Method ----------
-        //if (version == null) {
-            //throw new IllegalArgumentException
-                //("Protocol version may not be null");
-        //}
-        //CharArrayBuffer result = buffer;
-        //final int len = estimateProtocolVersionLen(version);
-        //if (result == null) {
-            //result = new CharArrayBuffer(len);
-        //} else {
-            //result.ensureCapacity(len);
-        //}
-        //result.append(version.getProtocol());
-        //result.append('/');
-        //result.append(Integer.toString(version.getMajor()));
-        //result.append('.');
-        //result.append(Integer.toString(version.getMinor()));
-        //return result;
+        
+        
+            
+                
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -107,8 +108,8 @@ public class BasicLineFormatter implements LineFormatter {
         addTaint(version.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1963180239 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1963180239;
-        // ---------- Original Method ----------
-        //return version.getProtocol().length() + 4;
+        
+        
     }
 
     
@@ -120,29 +121,30 @@ public class BasicLineFormatter implements LineFormatter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.134 -0400", hash_original_method = "19984FDC599EEB66F432BF4C8D33EB13", hash_generated_method = "FFC1D76061ECB0345974F831FED3BCB4")
     public CharArrayBuffer formatRequestLine(CharArrayBuffer buffer,
                                              RequestLine reqline) {
-        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_628056953 = null; //Variable for return #1
+        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_628056953 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Request line may not be null");
-        } //End block
+        } 
         CharArrayBuffer result = initBuffer(buffer);
         doFormatRequestLine(result, reqline);
         varB4EAC82CA7396A68D541C85D26508E83_628056953 = result;
         addTaint(buffer.getTaint());
         addTaint(reqline.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_628056953.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_628056953.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_628056953;
-        // ---------- Original Method ----------
-        //if (reqline == null) {
-            //throw new IllegalArgumentException
-                //("Request line may not be null");
-        //}
-        //CharArrayBuffer result = initBuffer(buffer);
-        //doFormatRequestLine(result, reqline);
-        //return result;
+        
+        
+            
+                
+        
+        
+        
+        
     }
 
     
@@ -161,17 +163,17 @@ public class BasicLineFormatter implements LineFormatter {
         appendProtocolVersion(buffer, reqline.getProtocolVersion());
         addTaint(buffer.getTaint());
         addTaint(reqline.getTaint());
-        // ---------- Original Method ----------
-        //final String method = reqline.getMethod();
-        //final String uri    = reqline.getUri();
-        //int len = method.length() + 1 + uri.length() + 1 + 
-            //estimateProtocolVersionLen(reqline.getProtocolVersion());
-        //buffer.ensureCapacity(len);
-        //buffer.append(method);
-        //buffer.append(' ');
-        //buffer.append(uri);
-        //buffer.append(' ');
-        //appendProtocolVersion(buffer, reqline.getProtocolVersion());
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -186,26 +188,26 @@ public class BasicLineFormatter implements LineFormatter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.136 -0400", hash_original_method = "48A800039F857A6F8C24EAA9095C9D1B", hash_generated_method = "83CF66B97F7E5AB928DB6B47DEBBEFA2")
     public CharArrayBuffer formatStatusLine(final CharArrayBuffer buffer,
                                             final StatusLine statline) {
-        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_723208454 = null; //Variable for return #1
+        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_723208454 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Status line may not be null");
-        } //End block
+        } 
         CharArrayBuffer result = initBuffer(buffer);
         doFormatStatusLine(result, statline);
         varB4EAC82CA7396A68D541C85D26508E83_723208454 = result;
         addTaint(buffer.getTaint());
         addTaint(statline.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_723208454.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_723208454.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_723208454;
-        // ---------- Original Method ----------
-        //if (statline == null) {
-            //throw new IllegalArgumentException
-                //("Status line may not be null");
-        //}
-        //CharArrayBuffer result = initBuffer(buffer);
-        //doFormatStatusLine(result, statline);
-        //return result;
+        
+        
+            
+                
+        
+        
+        
+        
     }
 
     
@@ -217,7 +219,7 @@ public class BasicLineFormatter implements LineFormatter {
         final String reason = statline.getReasonPhrase();
         {
             len += reason.length();
-        } //End block
+        } 
         buffer.ensureCapacity(len);
         appendProtocolVersion(buffer, statline.getProtocolVersion());
         buffer.append(' ');
@@ -225,24 +227,24 @@ public class BasicLineFormatter implements LineFormatter {
         buffer.append(' ');
         {
             buffer.append(reason);
-        } //End block
+        } 
         addTaint(buffer.getTaint());
         addTaint(statline.getTaint());
-        // ---------- Original Method ----------
-        //int len = estimateProtocolVersionLen(statline.getProtocolVersion())
-            //+ 1 + 3 + 1;
-        //final String reason = statline.getReasonPhrase();
-        //if (reason != null) {
-            //len += reason.length();
-        //}
-        //buffer.ensureCapacity(len);
-        //appendProtocolVersion(buffer, statline.getProtocolVersion());
-        //buffer.append(' ');
-        //buffer.append(Integer.toString(statline.getStatusCode()));
-        //buffer.append(' ');
-        //if (reason != null) {
-            //buffer.append(reason);
-        //}
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -254,40 +256,41 @@ public class BasicLineFormatter implements LineFormatter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:42.137 -0400", hash_original_method = "D1D568624BAE5D479E93207457DBA769", hash_generated_method = "D0902EFC03E24BD1EC7398DC5FD9259D")
     public CharArrayBuffer formatHeader(CharArrayBuffer buffer,
                                         Header header) {
-        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_908086631 = null; //Variable for return #1
+        CharArrayBuffer varB4EAC82CA7396A68D541C85D26508E83_908086631 = null; 
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Header may not be null");
-        } //End block
+        } 
         CharArrayBuffer result = null;
         {
             result = ((FormattedHeader)header).getBuffer();
-        } //End block
+        } 
         {
             result = initBuffer(buffer);
             doFormatHeader(result, header);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_908086631 = result;
         addTaint(buffer.getTaint());
         addTaint(header.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_908086631.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_908086631.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_908086631;
-        // ---------- Original Method ----------
-        //if (header == null) {
-            //throw new IllegalArgumentException
-                //("Header may not be null");
-        //}
-        //CharArrayBuffer result = null;
-        //if (header instanceof FormattedHeader) {
-            //result = ((FormattedHeader)header).getBuffer();
-        //} else {
-            //result = initBuffer(buffer);
-            //doFormatHeader(result, header);
-        //}
-        //return result;
+        
+        
+            
+                
+        
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -299,28 +302,28 @@ public class BasicLineFormatter implements LineFormatter {
         int len = name.length() + 2;
         {
             len += value.length();
-        } //End block
+        } 
         buffer.ensureCapacity(len);
         buffer.append(name);
         buffer.append(": ");
         {
             buffer.append(value);
-        } //End block
+        } 
         addTaint(buffer.getTaint());
         addTaint(header.getTaint());
-        // ---------- Original Method ----------
-        //final String name = header.getName();
-        //final String value = header.getValue();
-        //int len = name.length() + 2;
-        //if (value != null) {
-            //len += value.length();
-        //}
-        //buffer.ensureCapacity(len);
-        //buffer.append(name);
-        //buffer.append(": ");
-        //if (value != null) {
-            //buffer.append(value);
-        //}
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
     }
 
     

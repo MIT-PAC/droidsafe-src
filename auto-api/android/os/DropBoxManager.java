@@ -1,11 +1,11 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.util.Log;
 import com.android.internal.os.IDropBoxManagerService;
@@ -25,52 +25,55 @@ public class DropBoxManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.161 -0400", hash_original_method = "04B0A4DBB2EAE135AA112A8CAA9647B1", hash_generated_method = "56807A840D421C3846696C198899DDB8")
     public  DropBoxManager(IDropBoxManagerService service) {
         mService = service;
-        // ---------- Original Method ----------
-        //mService = service;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.161 -0400", hash_original_method = "E688A3A6CCC118BEDB51FAABD6872F4D", hash_generated_method = "1D2825C63C164429C45D67692FE8B561")
     protected  DropBoxManager() {
         mService = null;
-        // ---------- Original Method ----------
-        //mService = null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.161 -0400", hash_original_method = "B6329499D071F8AC982F0B19B7FB97DF", hash_generated_method = "782CDBD3C41808A2B4A52AD4975D1EB7")
     public void addText(String tag, String data) {
         try 
         {
             mService.add(new Entry(tag, 0, data));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(tag.getTaint());
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
-        //try { mService.add(new Entry(tag, 0, data)); } catch (RemoteException e) {}
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.162 -0400", hash_original_method = "7BD48A32860AA6BD88FDC639FDB6D7D8", hash_generated_method = "6E2821E95A42E6BD91F574136C7E0224")
     public void addData(String tag, byte[] data, int flags) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("data == null");
         try 
         {
             mService.add(new Entry(tag, 0, data, flags));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(tag.getTaint());
         addTaint(data[0]);
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (data == null) throw new NullPointerException("data == null");
-        //try { mService.add(new Entry(tag, 0, data, flags)); } catch (RemoteException e) {}
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.162 -0400", hash_original_method = "BF97B72EB64F4DB129C9C48237659777", hash_generated_method = "D9E7E7F8CD8E93FD369BB5EA9C94AA19")
     public void addFile(String tag, File file, int flags) throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("file == null");
@@ -78,71 +81,73 @@ public class DropBoxManager {
         try 
         {
             mService.add(entry);
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         finally 
         {
             entry.close();
-        } //End block
+        } 
         addTaint(tag.getTaint());
         addTaint(file.getTaint());
         addTaint(flags);
-        // ---------- Original Method ----------
-        //if (file == null) throw new NullPointerException("file == null");
-        //Entry entry = new Entry(tag, 0, file, flags);
-        //try {
-            //mService.add(entry);
-        //} catch (RemoteException e) {
-        //} finally {
-            //entry.close();
-        //}
+        
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.162 -0400", hash_original_method = "0FE06F2CE6966672337D3755F0FF0CD0", hash_generated_method = "282827FE93B3C22EBB634679A9C5A268")
     public boolean isTagEnabled(String tag) {
         try 
         {
             boolean var175D0364BFB4A88762C5ABCE62C258F0_1694311151 = (mService.isTagEnabled(tag));
-        } //End block
+        } 
         catch (RemoteException e)
         { }
         addTaint(tag.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_228955727 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_228955727;
-        // ---------- Original Method ----------
-        //try { return mService.isTagEnabled(tag); } catch (RemoteException e) { return false; }
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.163 -0400", hash_original_method = "A691D94F864449A091C30E093C0F46CD", hash_generated_method = "844A233CE3AE98E74BCFF0D84C38BD95")
     public Entry getNextEntry(String tag, long msec) {
-        Entry varB4EAC82CA7396A68D541C85D26508E83_1240694501 = null; //Variable for return #1
-        Entry varB4EAC82CA7396A68D541C85D26508E83_204730454 = null; //Variable for return #2
+        Entry varB4EAC82CA7396A68D541C85D26508E83_1240694501 = null; 
+        Entry varB4EAC82CA7396A68D541C85D26508E83_204730454 = null; 
         try 
         {
             varB4EAC82CA7396A68D541C85D26508E83_1240694501 = mService.getNextEntry(tag, msec);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             varB4EAC82CA7396A68D541C85D26508E83_204730454 = null;
-        } //End block
+        } 
         addTaint(tag.getTaint());
         addTaint(msec);
-        Entry varA7E53CE21691AB073D9660D615818899_1824303457; //Final return value
+        Entry varA7E53CE21691AB073D9660D615818899_1824303457; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1824303457 = varB4EAC82CA7396A68D541C85D26508E83_1240694501;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1824303457 = varB4EAC82CA7396A68D541C85D26508E83_204730454;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1824303457.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1824303457.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1824303457;
-        // ---------- Original Method ----------
-        //try { return mService.getNextEntry(tag, msec); } catch (RemoteException e) { return null; }
+        
+        
     }
 
     
@@ -171,13 +176,13 @@ public class DropBoxManager {
             mData = null;
             mFileDescriptor = null;
             mFlags = IS_EMPTY;
-            // ---------- Original Method ----------
-            //if (tag == null) throw new NullPointerException("tag == null");
-            //mTag = tag;
-            //mTimeMillis = millis;
-            //mData = null;
-            //mFileDescriptor = null;
-            //mFlags = IS_EMPTY;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -190,14 +195,14 @@ public class DropBoxManager {
             mData = text.getBytes();
             mFileDescriptor = null;
             mFlags = IS_TEXT;
-            // ---------- Original Method ----------
-            //if (tag == null) throw new NullPointerException("tag == null");
-            //if (text == null) throw new NullPointerException("text == null");
-            //mTag = tag;
-            //mTimeMillis = millis;
-            //mData = text.getBytes();
-            //mFileDescriptor = null;
-            //mFlags = IS_TEXT;
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -206,22 +211,22 @@ public class DropBoxManager {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("tag == null");
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad flags: " + flags);
-            } //End block
+            } 
             mTag = tag;
             mTimeMillis = millis;
             mData = data;
             mFileDescriptor = null;
             mFlags = flags;
-            // ---------- Original Method ----------
-            //if (tag == null) throw new NullPointerException("tag == null");
-            //if (((flags & IS_EMPTY) != 0) != (data == null)) {
-                //throw new IllegalArgumentException("Bad flags: " + flags);
-            //}
-            //mTag = tag;
-            //mTimeMillis = millis;
-            //mData = data;
-            //mFileDescriptor = null;
-            //mFlags = flags;
+            
+            
+            
+                
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -230,22 +235,22 @@ public class DropBoxManager {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("tag == null");
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad flags: " + flags);
-            } //End block
+            } 
             mTag = tag;
             mTimeMillis = millis;
             mData = null;
             mFileDescriptor = data;
             mFlags = flags;
-            // ---------- Original Method ----------
-            //if (tag == null) throw new NullPointerException("tag == null");
-            //if (((flags & IS_EMPTY) != 0) != (data == null)) {
-                //throw new IllegalArgumentException("Bad flags: " + flags);
-            //}
-            //mTag = tag;
-            //mTimeMillis = millis;
-            //mData = null;
-            //mFileDescriptor = data;
-            //mFlags = flags;
+            
+            
+            
+                
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -258,14 +263,14 @@ public class DropBoxManager {
             mData = null;
             mFileDescriptor = ParcelFileDescriptor.open(data, ParcelFileDescriptor.MODE_READ_ONLY);
             mFlags = flags;
-            // ---------- Original Method ----------
-            //if (tag == null) throw new NullPointerException("tag == null");
-            //if ((flags & IS_EMPTY) != 0) throw new IllegalArgumentException("Bad flags: " + flags);
-            //mTag = tag;
-            //mTimeMillis = millis;
-            //mData = null;
-            //mFileDescriptor = ParcelFileDescriptor.open(data, ParcelFileDescriptor.MODE_READ_ONLY);
-            //mFlags = flags;
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -274,22 +279,22 @@ public class DropBoxManager {
             try 
             {
                 mFileDescriptor.close();
-            } //End block
+            } 
             catch (IOException e)
             { }
-            // ---------- Original Method ----------
-            //try { if (mFileDescriptor != null) mFileDescriptor.close(); } catch (IOException e) { }
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.167 -0400", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "9CEEFE2FA4A4ACEB5A737783377192D2")
         public String getTag() {
-            String varB4EAC82CA7396A68D541C85D26508E83_2097104175 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_2097104175 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2097104175 = mTag;
-            varB4EAC82CA7396A68D541C85D26508E83_2097104175.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2097104175.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2097104175;
-            // ---------- Original Method ----------
-            //return mTag;
+            
+            
         }
 
         
@@ -297,8 +302,8 @@ public class DropBoxManager {
         public long getTimeMillis() {
             long var0F5264038205EDFB1AC05FBB0E8C5E94_1786575087 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1786575087;
-            // ---------- Original Method ----------
-            //return mTimeMillis;
+            
+            
         }
 
         
@@ -306,18 +311,18 @@ public class DropBoxManager {
         public int getFlags() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1750414391 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1750414391;
-            // ---------- Original Method ----------
-            //return mFlags & ~IS_GZIPPED;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.169 -0400", hash_original_method = "5115D4296A1E9A49B9B7627B57AD3F2E", hash_generated_method = "C65C4F709977953EB1599FBFEFB94AAB")
         public String getText(int maxBytes) {
-            String varB4EAC82CA7396A68D541C85D26508E83_2100074328 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_1714232405 = null; //Variable for return #2
-            String varB4EAC82CA7396A68D541C85D26508E83_2056910921 = null; //Variable for return #3
-            String varB4EAC82CA7396A68D541C85D26508E83_609108068 = null; //Variable for return #4
-            String varB4EAC82CA7396A68D541C85D26508E83_325772333 = null; //Variable for return #5
+            String varB4EAC82CA7396A68D541C85D26508E83_2100074328 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_1714232405 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_2056910921 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_609108068 = null; 
+            String varB4EAC82CA7396A68D541C85D26508E83_325772333 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2100074328 = null;
             varB4EAC82CA7396A68D541C85D26508E83_1714232405 = new String(mData, 0, Math.min(maxBytes, mData.length));
             InputStream is = null;
@@ -332,102 +337,102 @@ public class DropBoxManager {
                     boolean varF9720F5057F50303867139DD98C6B9EC_806209604 = (n >= 0 && (readBytes += n) < maxBytes);
                     {
                         n = is.read(buf, readBytes, maxBytes - readBytes);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 varB4EAC82CA7396A68D541C85D26508E83_609108068 = new String(buf, 0, readBytes);
-            } //End block
+            } 
             catch (IOException e)
             {
                 varB4EAC82CA7396A68D541C85D26508E83_325772333 = null;
-            } //End block
+            } 
             finally 
             {
                 try 
                 {
                     is.close();
-                } //End block
+                } 
                 catch (IOException e)
                 { }
-            } //End block
+            } 
             addTaint(maxBytes);
-            String varA7E53CE21691AB073D9660D615818899_305764308; //Final return value
+            String varA7E53CE21691AB073D9660D615818899_305764308; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_305764308 = varB4EAC82CA7396A68D541C85D26508E83_2100074328;
                     break;
-                case 2: //Assign result for return ordinal #2
+                case 2: 
                     varA7E53CE21691AB073D9660D615818899_305764308 = varB4EAC82CA7396A68D541C85D26508E83_1714232405;
                     break;
-                case 3: //Assign result for return ordinal #3
+                case 3: 
                     varA7E53CE21691AB073D9660D615818899_305764308 = varB4EAC82CA7396A68D541C85D26508E83_2056910921;
                     break;
-                case 4: //Assign result for return ordinal #4
+                case 4: 
                     varA7E53CE21691AB073D9660D615818899_305764308 = varB4EAC82CA7396A68D541C85D26508E83_609108068;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_305764308 = varB4EAC82CA7396A68D541C85D26508E83_325772333;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_305764308.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_305764308.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_305764308;
-            // ---------- Original Method ----------
-            //if ((mFlags & IS_TEXT) == 0) return null;
-            //if (mData != null) return new String(mData, 0, Math.min(maxBytes, mData.length));
-            //InputStream is = null;
-            //try {
-                //is = getInputStream();
-                //if (is == null) return null;
-                //byte[] buf = new byte[maxBytes];
-                //int readBytes = 0;
-                //int n = 0;
-                //while (n >= 0 && (readBytes += n) < maxBytes) {
-                    //n = is.read(buf, readBytes, maxBytes - readBytes);
-                //}
-                //return new String(buf, 0, readBytes);
-            //} catch (IOException e) {
-                //return null;
-            //} finally {
-                //try { if (is != null) is.close(); } catch (IOException e) {}
-            //}
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                
+                
+                    
+                
+                
+            
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.170 -0400", hash_original_method = "1138A2AC2CDA63F5FD2C1DAD635BB1B0", hash_generated_method = "A4B676BEDD96F929E22E6BCC15216096")
         public InputStream getInputStream() throws IOException {
-            InputStream varB4EAC82CA7396A68D541C85D26508E83_476842329 = null; //Variable for return #1
-            InputStream varB4EAC82CA7396A68D541C85D26508E83_698808722 = null; //Variable for return #2
+            InputStream varB4EAC82CA7396A68D541C85D26508E83_476842329 = null; 
+            InputStream varB4EAC82CA7396A68D541C85D26508E83_698808722 = null; 
             InputStream is;
             {
                 is = new ByteArrayInputStream(mData);
-            } //End block
+            } 
             {
                 is = new ParcelFileDescriptor.AutoCloseInputStream(mFileDescriptor);
-            } //End block
+            } 
             {
                 varB4EAC82CA7396A68D541C85D26508E83_476842329 = null;
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_698808722 = (mFlags & IS_GZIPPED) != 0 ? new GZIPInputStream(is) : is;
-            InputStream varA7E53CE21691AB073D9660D615818899_859443915; //Final return value
+            InputStream varA7E53CE21691AB073D9660D615818899_859443915; 
             switch (DroidSafeAndroidRuntime.switchControl) {
-                case 1: //Assign result for return ordinal #1
+                case 1: 
                     varA7E53CE21691AB073D9660D615818899_859443915 = varB4EAC82CA7396A68D541C85D26508E83_476842329;
                     break;
                 default:
                     varA7E53CE21691AB073D9660D615818899_859443915 = varB4EAC82CA7396A68D541C85D26508E83_698808722;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_859443915.addTaint(getTaint()); //Add taint from parent
+            varA7E53CE21691AB073D9660D615818899_859443915.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_859443915;
-            // ---------- Original Method ----------
-            //InputStream is;
-            //if (mData != null) {
-                //is = new ByteArrayInputStream(mData);
-            //} else if (mFileDescriptor != null) {
-                //is = new ParcelFileDescriptor.AutoCloseInputStream(mFileDescriptor);
-            //} else {
-                //return null;
-            //}
-            //return (mFlags & IS_GZIPPED) != 0 ? new GZIPInputStream(is) : is;
+            
+            
+            
+                
+            
+                
+            
+                
+            
+            
         }
 
         
@@ -435,8 +440,8 @@ public class DropBoxManager {
         public int describeContents() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_359436360 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_359436360;
-            // ---------- Original Method ----------
-            //return mFileDescriptor != null ? Parcelable.CONTENTS_FILE_DESCRIPTOR : 0;
+            
+            
         }
 
         
@@ -447,23 +452,23 @@ public class DropBoxManager {
             {
                 out.writeInt(mFlags & ~HAS_BYTE_ARRAY);
                 mFileDescriptor.writeToParcel(out, flags);
-            } //End block
+            } 
             {
                 out.writeInt(mFlags | HAS_BYTE_ARRAY);
                 out.writeByteArray(mData);
-            } //End block
+            } 
             addTaint(out.getTaint());
             addTaint(flags);
-            // ---------- Original Method ----------
-            //out.writeString(mTag);
-            //out.writeLong(mTimeMillis);
-            //if (mFileDescriptor != null) {
-                //out.writeInt(mFlags & ~HAS_BYTE_ARRAY);  
-                //mFileDescriptor.writeToParcel(out, flags);
-            //} else {
-                //out.writeInt(mFlags | HAS_BYTE_ARRAY);
-                //out.writeByteArray(mData);
-            //}
+            
+            
+            
+            
+                
+                
+            
+                
+                
+            
         }
 
         
@@ -482,7 +487,7 @@ public class DropBoxManager {
                 }
             }
         };
-        // orphaned legacy method
+        
         public Entry createFromParcel(Parcel in) {
                 String tag = in.readString();
                 long millis = in.readLong();
@@ -494,7 +499,7 @@ public class DropBoxManager {
                 }
             }
         
-        // orphaned legacy method
+        
         public Entry[] newArray(int size) { return new Entry[size]; }
         
     }

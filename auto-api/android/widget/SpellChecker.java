@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.text.Editable;
@@ -70,16 +70,17 @@ public class SpellChecker implements SpellCheckerSessionListener {
         mSpellCheckSpans = new SpellCheckSpan[size];
         setLocale(mTextView.getTextServicesLocale());
         mCookie = hashCode();
-        // ---------- Original Method ----------
-        //mTextView = textView;
-        //final int size = ArrayUtils.idealObjectArraySize(1);
-        //mIds = new int[size];
-        //mSpellCheckSpans = new SpellCheckSpan[size];
-        //setLocale(mTextView.getTextServicesLocale());
-        //mCookie = hashCode();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.924 -0400", hash_original_method = "132221852F8DDF087B45024FD49A8E7F", hash_generated_method = "6C43DFD324501EEE21B0F208381FBF79")
     private void resetSession() {
         closeSession();
@@ -89,57 +90,58 @@ public class SpellChecker implements SpellCheckerSessionListener {
             boolean varC2A9336C71425F40818F6B08D3000A2D_1229819344 = (!mTextServicesManager.isSpellCheckerEnabled());
             {
                 mSpellCheckerSession = null;
-            } //End block
+            } 
             {
                 mSpellCheckerSession = mTextServicesManager.newSpellCheckerSession(
                     null ,
                     mCurrentLocale, this,
                     false );
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             int i = 0;
             {
                 mSpellCheckSpans[i].setSpellCheckInProgress(false);
                 mIds[i] = -1;
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mLength = 0;
         mTextView.removeMisspelledSpans((Editable) mTextView.getText());
         mTextView.onLocaleChanged();
-        // ---------- Original Method ----------
-        //closeSession();
-        //mTextServicesManager = (TextServicesManager) mTextView.getContext().
-                //getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE);
-        //if (!mTextServicesManager.isSpellCheckerEnabled()) {
-            //mSpellCheckerSession = null;
-        //} else {
-            //mSpellCheckerSession = mTextServicesManager.newSpellCheckerSession(
-                    //null ,
-                    //mCurrentLocale, this,
-                    //false );
-        //}
-        //for (int i = 0; i < mLength; i++) {
-            //mSpellCheckSpans[i].setSpellCheckInProgress(false);
-            //mIds[i] = -1;
-        //}
-        //mLength = 0;
-        //mTextView.removeMisspelledSpans((Editable) mTextView.getText());
-        //mTextView.onLocaleChanged();
+        
+        
+        
+                
+        
+            
+        
+            
+                    
+                    
+                    
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.925 -0400", hash_original_method = "A16726E56767CB6AA7867DE749E54AF0", hash_generated_method = "AD73757F5DEB354F3D13B9B46E22B6D0")
     private void setLocale(Locale locale) {
         mCurrentLocale = locale;
         resetSession();
         mWordIterator = new WordIterator(locale);
         mTextView.onLocaleChanged();
-        // ---------- Original Method ----------
-        //mCurrentLocale = locale;
-        //resetSession();
-        //mWordIterator = new WordIterator(locale);
-        //mTextView.onLocaleChanged();
+        
+        
+        
+        
+        
     }
 
     
@@ -147,45 +149,47 @@ public class SpellChecker implements SpellCheckerSessionListener {
     private boolean isSessionActive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1410476229 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1410476229;
-        // ---------- Original Method ----------
-        //return mSpellCheckerSession != null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.926 -0400", hash_original_method = "AAA52197918C65A359451CD46304BE67", hash_generated_method = "F7E30CC4A85879898F1C90003ACAC975")
     public void closeSession() {
         {
             mSpellCheckerSession.close();
-        } //End block
+        } 
         final int length = mSpellParsers.length;
         {
             int i = 0;
             {
                 mSpellParsers[i].finish();
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         {
             mTextView.removeCallbacks(mSpellRunnable);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSpellCheckerSession != null) {
-            //mSpellCheckerSession.close();
-        //}
-        //final int length = mSpellParsers.length;
-        //for (int i = 0; i < length; i++) {
-            //mSpellParsers[i].finish();
-        //}
-        //if (mSpellRunnable != null) {
-            //mTextView.removeCallbacks(mSpellRunnable);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.927 -0400", hash_original_method = "5D19DB78B5A2119B2E660E625690F49E", hash_generated_method = "ED344F1A6836392EA2FCBFC7C978B35C")
     private int nextSpellCheckSpanIndex() {
         {
             int i = 0;
-        } //End collapsed parenthetic
+        } 
         {
             final int newSize = mLength * 2;
             int[] newIds = new int[newSize];
@@ -194,29 +198,30 @@ public class SpellChecker implements SpellCheckerSessionListener {
             System.arraycopy(mSpellCheckSpans, 0, newSpellCheckSpans, 0, mLength);
             mIds = newIds;
             mSpellCheckSpans = newSpellCheckSpans;
-        } //End block
+        } 
         mSpellCheckSpans[mLength] = new SpellCheckSpan();
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_546028531 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_546028531;
-        // ---------- Original Method ----------
-        //for (int i = 0; i < mLength; i++) {
-            //if (mIds[i] < 0) return i;
-        //}
-        //if (mLength == mSpellCheckSpans.length) {
-            //final int newSize = mLength * 2;
-            //int[] newIds = new int[newSize];
-            //SpellCheckSpan[] newSpellCheckSpans = new SpellCheckSpan[newSize];
-            //System.arraycopy(mIds, 0, newIds, 0, mLength);
-            //System.arraycopy(mSpellCheckSpans, 0, newSpellCheckSpans, 0, mLength);
-            //mIds = newIds;
-            //mSpellCheckSpans = newSpellCheckSpans;
-        //}
-        //mSpellCheckSpans[mLength] = new SpellCheckSpan();
-        //mLength++;
-        //return mLength - 1;
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.927 -0400", hash_original_method = "A1EABCB0A317A13B5BB9A67E3EDF2F7D", hash_generated_method = "790462279705707937983750CDE0B364")
     private void addSpellCheckSpan(Editable editable, int start, int end) {
         final int index = nextSpellCheckSpanIndex();
@@ -225,13 +230,14 @@ public class SpellChecker implements SpellCheckerSessionListener {
         addTaint(editable.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //final int index = nextSpellCheckSpanIndex();
-        //editable.setSpan(mSpellCheckSpans[index], start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //mIds[index] = mSpanSequenceCounter++;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.928 -0400", hash_original_method = "E45444ACDA725CE9A6A26FFAD79AE5C6", hash_generated_method = "FA2E36D3E9C5283EB5726CF3239FA5D2")
     public void removeSpellCheckSpan(SpellCheckSpan spellCheckSpan) {
         {
@@ -240,30 +246,32 @@ public class SpellChecker implements SpellCheckerSessionListener {
                 {
                     mSpellCheckSpans[i].setSpellCheckInProgress(false);
                     mIds[i] = -1;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(spellCheckSpan.getTaint());
-        // ---------- Original Method ----------
-        //for (int i = 0; i < mLength; i++) {
-            //if (mSpellCheckSpans[i] == spellCheckSpan) {
-                //mSpellCheckSpans[i].setSpellCheckInProgress(false);
-                //mIds[i] = -1;
-                //return;
-            //}
-        //}
+        
+        
+            
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.928 -0400", hash_original_method = "91E9278A0058E0FC6383B30785A8CFA9", hash_generated_method = "D00D41525B8D7A6F78ACFD7BB33C5992")
     public void onSelectionChanged() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         spellCheck();
-        // ---------- Original Method ----------
-        //spellCheck();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.929 -0400", hash_original_method = "6CA87C3B81B676351D5CE260A5491025", hash_generated_method = "73AB3E9283B5617CE91F79F4D69F3C9D")
     public void spellCheck(int start, int end) {
         final Locale locale = mTextView.getTextServicesLocale();
@@ -273,20 +281,20 @@ public class SpellChecker implements SpellCheckerSessionListener {
                 setLocale(locale);
                 start = 0;
                 end = mTextView.getText().length();
-            } //End block
+            } 
             {
                 final boolean spellCheckerActivated = mTextServicesManager.isSpellCheckerEnabled();
                 {
                     boolean var80C3218921ED99D2ADFEA4E3A2E45C2E_627891817 = (isSessionActive() != spellCheckerActivated);
                     {
                         resetSession();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             boolean var9433F5A259C3ED6B89B6B6398D504A0A_2063922914 = (!isSessionActive());
-        } //End collapsed parenthetic
+        } 
         final int length = mSpellParsers.length;
         {
             int i = 0;
@@ -297,10 +305,10 @@ public class SpellChecker implements SpellCheckerSessionListener {
                     {
                         spellParser.init(start, end);
                         spellParser.parse();
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         SpellParser[] newSpellParsers = new SpellParser[length + 1];
         System.arraycopy(mSpellParsers, 0, newSpellParsers, 0, length);
         mSpellParsers = newSpellParsers;
@@ -310,11 +318,12 @@ public class SpellChecker implements SpellCheckerSessionListener {
         spellParser.parse();
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.930 -0400", hash_original_method = "BA5B8BA52678A659BE9D822C4132A8EA", hash_generated_method = "43D8C06933101C0FB2B0825077A5DD9C")
     private void spellCheck() {
         Editable editable = (Editable) mTextView.getText();
@@ -328,7 +337,7 @@ public class SpellChecker implements SpellCheckerSessionListener {
                 final SpellCheckSpan spellCheckSpan = mSpellCheckSpans[i];
                 {
                     boolean var8EFC4F507046E540E16E2602424A567A_976868566 = (spellCheckSpan.isSpellCheckInProgress());
-                } //End collapsed parenthetic
+                } 
                 final int start = editable.getSpanStart(spellCheckSpan);
                 final int end = editable.getSpanEnd(spellCheckSpan);
                 {
@@ -337,27 +346,28 @@ public class SpellChecker implements SpellCheckerSessionListener {
                     word = editable.subSequence(start, end).toString();
                     spellCheckSpan.setSpellCheckInProgress(true);
                     textInfos[textInfosCount++] = new TextInfo(word, mCookie, mIds[i]);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             {
                 TextInfo[] textInfosCopy = new TextInfo[textInfosCount];
                 System.arraycopy(textInfos, 0, textInfosCopy, 0, textInfosCount);
                 textInfos = textInfosCopy;
-            } //End block
+            } 
             mSpellCheckerSession.getSuggestions(textInfos, SuggestionSpan.SUGGESTIONS_MAX_SIZE,
                     false );
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.930 -0400", hash_original_method = "A75E28D7E7AFF4B0223DAD7BAD9E1275", hash_generated_method = "13F5EF54BBA0E4BEFC823A5986A7E523")
     @Override
     public void onGetSuggestions(SuggestionsInfo[] results) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         Editable editable = (Editable) mTextView.getText();
         {
             int i = 0;
@@ -365,7 +375,7 @@ public class SpellChecker implements SpellCheckerSessionListener {
                 SuggestionsInfo suggestionsInfo = results[i];
                 {
                     boolean var9B514A225DEF4154DD4352971E947BA9_5449215 = (suggestionsInfo.getCookie() != mCookie);
-                } //End collapsed parenthetic
+                } 
                 final int sequenceNumber = suggestionsInfo.getSequence();
                 {
                     int j = 0;
@@ -377,20 +387,21 @@ public class SpellChecker implements SpellCheckerSessionListener {
                             SpellCheckSpan spellCheckSpan = mSpellCheckSpans[j];
                             {
                                 createMisspelledSuggestionSpan(editable, suggestionsInfo, spellCheckSpan);
-                            } //End block
+                            } 
                             editable.removeSpan(spellCheckSpan);
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
+        } 
         scheduleNewSpellCheck();
         addTaint(results[0].getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.931 -0400", hash_original_method = "57E44CFBFBBC7EE198958F01316D8781", hash_generated_method = "DFCFFC8615D57D752D0CBC87B3FC2FC4")
     private void scheduleNewSpellCheck() {
         {
@@ -407,48 +418,49 @@ public class SpellChecker implements SpellCheckerSessionListener {
                                 boolean varAFFEFD3A7D11AB4DF09303DDD35E86D6_166303356 = (!spellParser.isFinished());
                                 {
                                     spellParser.parse();
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                    // ---------- Original Method ----------
-                    //final int length = mSpellParsers.length;
-                    //for (int i = 0; i < length; i++) {
-                        //final SpellParser spellParser = mSpellParsers[i];
-                        //if (!spellParser.isFinished()) {
-                            //spellParser.parse();
-                            //break; 
-                        //}
-                    //}
+                                } 
+                            } 
+                        } 
+                    } 
+                    
+                    
+                    
+                        
+                        
+                            
+                            
+                        
+                    
                 }
 };
-        } //End block
+        } 
         {
             mTextView.removeCallbacks(mSpellRunnable);
-        } //End block
+        } 
         mTextView.postDelayed(mSpellRunnable, SPELL_PAUSE_DURATION);
-        // ---------- Original Method ----------
-        //if (mSpellRunnable == null) {
-            //mSpellRunnable = new Runnable() {
-                //@Override
-                //public void run() {
-                    //final int length = mSpellParsers.length;
-                    //for (int i = 0; i < length; i++) {
-                        //final SpellParser spellParser = mSpellParsers[i];
-                        //if (!spellParser.isFinished()) {
-                            //spellParser.parse();
-                            //break; 
-                        //}
-                    //}
-                //}
-            //};
-        //} else {
-            //mTextView.removeCallbacks(mSpellRunnable);
-        //}
-        //mTextView.postDelayed(mSpellRunnable, SPELL_PAUSE_DURATION);
+        
+        
+            
+                
+                
+                    
+                    
+                        
+                        
+                            
+                            
+                        
+                    
+                
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.932 -0400", hash_original_method = "7C6C5A03DA2C9F5FF814A532005DE2A2", hash_generated_method = "9BE9DF137937FF2AA0D000E58C036918")
     private void createMisspelledSuggestionSpan(Editable editable, SuggestionsInfo suggestionsInfo,
             SpellCheckSpan spellCheckSpan) {
@@ -463,14 +475,14 @@ public class SpellChecker implements SpellCheckerSessionListener {
                 final int spanEnd = editable.getSpanEnd(suggestionSpans[i]);
                 {
                     suggestionSpans[i] = null;
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         final int suggestionsCount = suggestionsInfo.getSuggestionsCount();
         String[] suggestions;
         {
             suggestions = ArrayUtils.emptyArray(String.class);
-        } //End block
+        } 
         {
             int numberOfSuggestions = 0;
             suggestions = new String[suggestionsCount];
@@ -490,23 +502,23 @@ public class SpellChecker implements SpellCheckerSessionListener {
                                         boolean var679E4D2EFFB38ED1AC184217089AEF33_1632792335 = (spellSuggestion.equals(suggests[k]));
                                         {
                                             suggestionFound = true;
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         suggestions[numberOfSuggestions++] = spellSuggestion;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             {
                 String[] newSuggestions = new String[numberOfSuggestions];
                 System.arraycopy(suggestions, 0, newSuggestions, 0, numberOfSuggestions);
                 suggestions = newSuggestions;
-            } //End block
-        } //End block
+            } 
+        } 
         SuggestionSpan suggestionSpan = new SuggestionSpan(mTextView.getContext(), suggestions,
                 SuggestionSpan.FLAG_EASY_CORRECT | SuggestionSpan.FLAG_MISSPELLED);
         editable.setSpan(suggestionSpan, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -514,8 +526,8 @@ public class SpellChecker implements SpellCheckerSessionListener {
         addTaint(editable.getTaint());
         addTaint(suggestionsInfo.getTaint());
         addTaint(spellCheckSpan.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -527,7 +539,7 @@ public class SpellChecker implements SpellCheckerSessionListener {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.932 -0400", hash_original_method = "A0F09AC113A054694810A2E52D3EE82C", hash_generated_method = "A0F09AC113A054694810A2E52D3EE82C")
         public SpellParser ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -537,17 +549,17 @@ public class SpellChecker implements SpellCheckerSessionListener {
                     Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             addTaint(start);
             addTaint(end);
-            // ---------- Original Method ----------
-            //((Editable) mTextView.getText()).setSpan(mRange, start, end,
-                    //Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            
+            
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.933 -0400", hash_original_method = "86B0D995E6C3BF5225FAD4AECF9F58F6", hash_generated_method = "45B8F4A922A98FCBE98DADDE73470229")
         public void finish() {
             ((Editable) mTextView.getText()).removeSpan(mRange);
-            // ---------- Original Method ----------
-            //((Editable) mTextView.getText()).removeSpan(mRange);
+            
+            
         }
 
         
@@ -556,8 +568,8 @@ public class SpellChecker implements SpellCheckerSessionListener {
             boolean varF8782931D05D05EFA9FB95C9E3E04ED2_1624035864 = (((Editable) mTextView.getText()).getSpanStart(mRange) < 0);
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1167525552 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1167525552;
-            // ---------- Original Method ----------
-            //return ((Editable) mTextView.getText()).getSpanStart(mRange) < 0;
+            
+            
         }
 
         
@@ -574,14 +586,14 @@ public class SpellChecker implements SpellCheckerSessionListener {
                 wordEnd = mWordIterator.following(start);
                 {
                     wordStart = mWordIterator.getBeginning(wordEnd);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 wordEnd = mWordIterator.getEnd(wordStart);
-            } //End block
+            } 
             {
                 editable.removeSpan(mRange);
-            } //End block
+            } 
             SpellCheckSpan[] spellCheckSpans = editable.getSpans(start - 1, end + 1,
                     SpellCheckSpan.class);
             SuggestionSpan[] suggestionSpans = editable.getSpans(start - 1, end + 1,
@@ -592,15 +604,15 @@ public class SpellChecker implements SpellCheckerSessionListener {
                 {
                     {
                         scheduleOtherSpellCheck = true;
-                    } //End block
+                    } 
                     {
                         removeSpansAt(editable, start, spellCheckSpans);
                         removeSpansAt(editable, start, suggestionSpans);
-                    } //End block
+                    } 
                     {
                         removeSpansAt(editable, end, spellCheckSpans);
                         removeSpansAt(editable, end, suggestionSpans);
-                    } //End block
+                    } 
                     boolean createSpellCheckSpan = true;
                     {
                         {
@@ -609,10 +621,10 @@ public class SpellChecker implements SpellCheckerSessionListener {
                                 final int spanEnd = editable.getSpanEnd(spellCheckSpans[i]);
                                 {
                                     createSpellCheckSpan = false;
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         {
                             int i = 0;
@@ -620,32 +632,32 @@ public class SpellChecker implements SpellCheckerSessionListener {
                                 final int spanStart = editable.getSpanStart(spellCheckSpans[i]);
                                 {
                                     createSpellCheckSpan = false;
-                                } //End block
-                            } //End block
-                        } //End collapsed parenthetic
-                    } //End block
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         addSpellCheckSpan(editable, wordStart, wordEnd);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 int originalWordEnd = wordEnd;
                 wordEnd = mWordIterator.following(wordEnd);
                 {
                     wordIteratorWindowEnd = Math.min(end, originalWordEnd + WORD_ITERATOR_INTERVAL);
                     mWordIterator.setCharSequence(editable, originalWordEnd, wordIteratorWindowEnd);
                     wordEnd = mWordIterator.following(originalWordEnd);
-                } //End block
+                } 
                 wordStart = mWordIterator.getBeginning(wordEnd);
-            } //End block
+            } 
             {
                 editable.setSpan(mRange, wordStart, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } //End block
+            } 
             {
                 editable.removeSpan(mRange);
-            } //End block
+            } 
             spellCheck();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -659,21 +671,21 @@ public class SpellChecker implements SpellCheckerSessionListener {
                     final int start = editable.getSpanStart(span);
                     final int end = editable.getSpanEnd(span);
                     editable.removeSpan(span);
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(editable.getTaint());
             addTaint(offset);
             addTaint(spans[0].getTaint());
-            // ---------- Original Method ----------
-            //final int length = spans.length;
-            //for (int i = 0; i < length; i++) {
-                //final T span = spans[i];
-                //final int start = editable.getSpanStart(span);
-                //if (start > offset) continue;
-                //final int end = editable.getSpanEnd(span);
-                //if (end < offset) continue;
-                //editable.removeSpan(span);
-            //}
+            
+            
+            
+                
+                
+                
+                
+                
+                
+            
         }
 
         

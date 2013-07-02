@@ -1,11 +1,11 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -38,8 +38,8 @@ public class TableRow extends LinearLayout {
         super(context);
         initTableRow();
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
-        //initTableRow();
+        
+        
     }
 
     
@@ -49,36 +49,38 @@ public class TableRow extends LinearLayout {
         initTableRow();
         addTaint(context.getTaint());
         addTaint(attrs.getTaint());
-        // ---------- Original Method ----------
-        //initTableRow();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.436 -0400", hash_original_method = "B661864F11557636EAA2570C7969C441", hash_generated_method = "C164A8619AC96454B49C2E92F11F4086")
     private void initTableRow() {
         OnHierarchyChangeListener oldListener = mOnHierarchyChangeListener;
         mChildrenTracker = new ChildrenTracker();
         {
             mChildrenTracker.setOnHierarchyChangeListener(oldListener);
-        } //End block
+        } 
         super.setOnHierarchyChangeListener(mChildrenTracker);
-        // ---------- Original Method ----------
-        //OnHierarchyChangeListener oldListener = mOnHierarchyChangeListener;
-        //mChildrenTracker = new ChildrenTracker();
-        //if (oldListener != null) {
-            //mChildrenTracker.setOnHierarchyChangeListener(oldListener);
-        //}
-        //super.setOnHierarchyChangeListener(mChildrenTracker);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.437 -0400", hash_original_method = "F95EB07610207091F5D59E2132ED055F", hash_generated_method = "241146C1D639C463AD50B8CB99058477")
     @Override
     public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
         mChildrenTracker.setOnHierarchyChangeListener(listener);
         addTaint(listener.getTaint());
-        // ---------- Original Method ----------
-        //mChildrenTracker.setOnHierarchyChangeListener(listener);
+        
+        
     }
 
     
@@ -87,97 +89,102 @@ public class TableRow extends LinearLayout {
         View child = getVirtualChildAt(columnIndex);
         {
             child.setVisibility(collapsed ? GONE : VISIBLE);
-        } //End block
+        } 
         addTaint(columnIndex);
         addTaint(collapsed);
-        // ---------- Original Method ----------
-        //View child = getVirtualChildAt(columnIndex);
-        //if (child != null) {
-            //child.setVisibility(collapsed ? GONE : VISIBLE);
-        //}
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.437 -0400", hash_original_method = "F6BA9F18146785AE4528780F68777354", hash_generated_method = "22918DA7F5C6F9F2F139598D0714E54F")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         measureHorizontal(widthMeasureSpec, heightMeasureSpec);
         addTaint(widthMeasureSpec);
         addTaint(heightMeasureSpec);
-        // ---------- Original Method ----------
-        //measureHorizontal(widthMeasureSpec, heightMeasureSpec);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.437 -0400", hash_original_method = "614377E7AFFD7D8A3CEA03D0F029C6C2", hash_generated_method = "DF8535F106BA934EDCDB9ABB1CD83F01")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         layoutHorizontal();
         addTaint(changed);
         addTaint(l);
         addTaint(t);
         addTaint(r);
         addTaint(b);
-        // ---------- Original Method ----------
-        //layoutHorizontal();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.438 -0400", hash_original_method = "76BF09C7D97AC336E0857E346F87F26E", hash_generated_method = "C89A6A207D44F76E77C9C2F976A772EF")
     @Override
     public View getVirtualChildAt(int i) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1272299388 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_462533775 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_1272299388 = null; 
+        View varB4EAC82CA7396A68D541C85D26508E83_462533775 = null; 
         {
             mapIndexAndColumns();
-        } //End block
+        } 
         final int deflectedIndex = mColumnToChildIndex.get(i, -1);
         {
             varB4EAC82CA7396A68D541C85D26508E83_1272299388 = getChildAt(deflectedIndex);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_462533775 = null;
         addTaint(i);
-        View varA7E53CE21691AB073D9660D615818899_962503687; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_962503687; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_962503687 = varB4EAC82CA7396A68D541C85D26508E83_1272299388;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_962503687 = varB4EAC82CA7396A68D541C85D26508E83_462533775;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_962503687.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_962503687.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_962503687;
-        // ---------- Original Method ----------
-        //if (mColumnToChildIndex == null) {
-            //mapIndexAndColumns();
-        //}
-        //final int deflectedIndex = mColumnToChildIndex.get(i, -1);
-        //if (deflectedIndex != -1) {
-            //return getChildAt(deflectedIndex);
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.439 -0400", hash_original_method = "C68DDC21BA155D9A2863642050B804BE", hash_generated_method = "5F31F7540CE35EC094DE10493B0F6AEA")
     @Override
     public int getVirtualChildCount() {
         {
             mapIndexAndColumns();
-        } //End block
+        } 
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_573462342 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_573462342;
-        // ---------- Original Method ----------
-        //if (mColumnToChildIndex == null) {
-            //mapIndexAndColumns();
-        //}
-        //return mNumColumns;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.439 -0400", hash_original_method = "4E55577CF2059CB35F704B8E869B19CD", hash_generated_method = "202E4820D710A782452CE540CF028ACA")
     private void mapIndexAndColumns() {
         {
@@ -192,35 +199,35 @@ public class TableRow extends LinearLayout {
                     final LayoutParams layoutParams = (LayoutParams) child.getLayoutParams();
                     {
                         virtualCount = layoutParams.column;
-                    } //End block
+                    } 
                     {
                         int j = 0;
                         {
                             columnToChild.put(virtualCount++, i);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
+                        } 
+                    } 
+                } 
+            } 
             mNumColumns = virtualCount;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mColumnToChildIndex == null) {
-            //int virtualCount = 0;
-            //final int count = getChildCount();
-            //mColumnToChildIndex = new SparseIntArray();
-            //final SparseIntArray columnToChild = mColumnToChildIndex;
-            //for (int i = 0; i < count; i++) {
-                //final View child = getChildAt(i);
-                //final LayoutParams layoutParams = (LayoutParams) child.getLayoutParams();
-                //if (layoutParams.column >= virtualCount) {
-                    //virtualCount = layoutParams.column;
-                //}
-                //for (int j = 0; j < layoutParams.span; j++) {
-                    //columnToChild.put(virtualCount++, i);
-                //}
-            //}
-            //mNumColumns = virtualCount;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                    
+                
+            
+            
+        
     }
 
     
@@ -230,8 +237,8 @@ public class TableRow extends LinearLayout {
         addTaint(childIndex);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_799000596 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_799000596;
-        // ---------- Original Method ----------
-        //return mConstrainedColumnWidths[childIndex];
+        
+        
     }
 
     
@@ -250,13 +257,13 @@ public class TableRow extends LinearLayout {
                 int i = 0;
                 {
                     columnWidth += constrainedColumnWidths[childIndex + i];
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             final int gravity = lp.gravity;
             final boolean isHorizontalGravity = Gravity.isHorizontal(gravity);
             {
                 measureMode = MeasureSpec.AT_MOST;
-            } //End block
+            } 
             int childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(
                     Math.max(0, columnWidth - lp.leftMargin - lp.rightMargin), measureMode
             );
@@ -269,29 +276,29 @@ public class TableRow extends LinearLayout {
                 lp.mOffset[LayoutParams.LOCATION_NEXT] = columnWidth - childWidth;
                 final int layoutDirection = getResolvedLayoutDirection();
                 final int absoluteGravity = Gravity.getAbsoluteGravity(gravity, layoutDirection);
-                //Begin case Gravity.RIGHT 
+                
                 lp.mOffset[LayoutParams.LOCATION] = lp.mOffset[LayoutParams.LOCATION_NEXT];
-                //End case Gravity.RIGHT 
-                //Begin case Gravity.CENTER_HORIZONTAL 
+                
+                
                 lp.mOffset[LayoutParams.LOCATION] = lp.mOffset[LayoutParams.LOCATION_NEXT] / 2;
-                //End case Gravity.CENTER_HORIZONTAL 
-            } //End block
+                
+            } 
             {
                 lp.mOffset[LayoutParams.LOCATION] = lp.mOffset[LayoutParams.LOCATION_NEXT] = 0;
-            } //End block
-        } //End block
+            } 
+        } 
         {
             super.measureChildBeforeLayout(child, childIndex, widthMeasureSpec,
                     totalWidth, heightMeasureSpec, totalHeight);
-        } //End block
+        } 
         addTaint(child.getTaint());
         addTaint(childIndex);
         addTaint(widthMeasureSpec);
         addTaint(totalWidth);
         addTaint(heightMeasureSpec);
         addTaint(totalHeight);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -303,9 +310,9 @@ public class TableRow extends LinearLayout {
         addTaint(index);
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1047917516 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1047917516;
-        // ---------- Original Method ----------
-        //LayoutParams layoutParams = (LayoutParams) child.getLayoutParams();
-        //return layoutParams.span - 1;
+        
+        
+        
     }
 
     
@@ -316,8 +323,8 @@ public class TableRow extends LinearLayout {
         addTaint(child.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_112185846 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_112185846;
-        // ---------- Original Method ----------
-        //return ((TableRow.LayoutParams) child.getLayoutParams()).mOffset[LayoutParams.LOCATION];
+        
+        
     }
 
     
@@ -328,8 +335,8 @@ public class TableRow extends LinearLayout {
         addTaint(child.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_428987659 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_428987659;
-        // ---------- Original Method ----------
-        //return ((TableRow.LayoutParams) child.getLayoutParams()).mOffset[LayoutParams.LOCATION_NEXT];
+        
+        
     }
 
     
@@ -338,7 +345,7 @@ public class TableRow extends LinearLayout {
         final int numColumns = getVirtualChildCount();
         {
             mColumnWidths = new int[numColumns];
-        } //End block
+        } 
         final int[] columnWidths = mColumnWidths;
         {
             int i = 0;
@@ -350,35 +357,35 @@ public class TableRow extends LinearLayout {
                         final LayoutParams layoutParams = (LayoutParams) child.getLayoutParams();
                         {
                             int spec;
-                            //Begin case LayoutParams.WRAP_CONTENT 
+                            
                             spec = getChildMeasureSpec(widthMeasureSpec, 0, LayoutParams.WRAP_CONTENT);
-                            //End case LayoutParams.WRAP_CONTENT 
-                            //Begin case LayoutParams.MATCH_PARENT 
+                            
+                            
                             spec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
-                            //End case LayoutParams.MATCH_PARENT 
-                            //Begin case default 
+                            
+                            
                             spec = MeasureSpec.makeMeasureSpec(layoutParams.width, MeasureSpec.EXACTLY);
-                            //End case default 
+                            
                             child.measure(spec, spec);
                             final int width = child.getMeasuredWidth() + layoutParams.leftMargin +
                             layoutParams.rightMargin;
                             columnWidths[i] = width;
-                        } //End block
+                        } 
                         {
                             columnWidths[i] = 0;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     {
                         columnWidths[i] = 0;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         addTaint(widthMeasureSpec);
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1298223449 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1298223449;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -389,40 +396,41 @@ public class TableRow extends LinearLayout {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "columnWidths should be >= getVirtualChildCount()");
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         mConstrainedColumnWidths = columnWidths;
-        // ---------- Original Method ----------
-        //if (columnWidths == null || columnWidths.length < getVirtualChildCount()) {
-            //throw new IllegalArgumentException(
-                    //"columnWidths should be >= getVirtualChildCount()");
-        //}
-        //mConstrainedColumnWidths = columnWidths;
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.443 -0400", hash_original_method = "52AE7360396A37641601CBCD86366395", hash_generated_method = "4A71D93B00CB966EADDE87EB0B66BB8F")
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1852666186 = null; //Variable for return #1
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1852666186 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1852666186 = new TableRow.LayoutParams(getContext(), attrs);
         addTaint(attrs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1852666186.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1852666186.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1852666186;
-        // ---------- Original Method ----------
-        //return new TableRow.LayoutParams(getContext(), attrs);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.444 -0400", hash_original_method = "CBDF0BDAD2221E25AE8470C9AB157031", hash_generated_method = "7219E60309209AE0B759388647994247")
     @Override
     protected LinearLayout.LayoutParams generateDefaultLayoutParams() {
-        LinearLayout.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_2047647473 = null; //Variable for return #1
+        LinearLayout.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_2047647473 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_2047647473 = new LayoutParams();
-        varB4EAC82CA7396A68D541C85D26508E83_2047647473.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_2047647473.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_2047647473;
-        // ---------- Original Method ----------
-        //return new LayoutParams();
+        
+        
     }
 
     
@@ -432,21 +440,21 @@ public class TableRow extends LinearLayout {
         addTaint(p.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_870826631 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_870826631;
-        // ---------- Original Method ----------
-        //return p instanceof TableRow.LayoutParams;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.444 -0400", hash_original_method = "BBEB2ACD1EFF73877451077ABC9022BA", hash_generated_method = "FF0B104789A0EAC270AFC44E8F698637")
     @Override
     protected LinearLayout.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
-        LinearLayout.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_762880795 = null; //Variable for return #1
+        LinearLayout.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_762880795 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_762880795 = new LayoutParams(p);
         addTaint(p.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_762880795.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_762880795.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_762880795;
-        // ---------- Original Method ----------
-        //return new LayoutParams(p);
+        
+        
     }
 
     
@@ -470,20 +478,20 @@ public class TableRow extends LinearLayout {
             span = a.getInt(com.android.internal.R.styleable.TableRow_Cell_layout_span, 1);
             {
                 span = 1;
-            } //End block
+            } 
             a.recycle();
             addTaint(c.getTaint());
             addTaint(attrs.getTaint());
-            // ---------- Original Method ----------
-            //TypedArray a =
-                    //c.obtainStyledAttributes(attrs,
-                            //com.android.internal.R.styleable.TableRow_Cell);
-            //column = a.getInt(com.android.internal.R.styleable.TableRow_Cell_layout_column, -1);
-            //span = a.getInt(com.android.internal.R.styleable.TableRow_Cell_layout_span, 1);
-            //if (span <= 1) {
-                //span = 1;
-            //}
-            //a.recycle();
+            
+            
+                    
+                            
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -494,9 +502,9 @@ public class TableRow extends LinearLayout {
             span = 1;
             addTaint(w);
             addTaint(h);
-            // ---------- Original Method ----------
-            //column = -1;
-            //span = 1;
+            
+            
+            
         }
 
         
@@ -508,9 +516,9 @@ public class TableRow extends LinearLayout {
             addTaint(w);
             addTaint(h);
             addTaint(initWeight);
-            // ---------- Original Method ----------
-            //column = -1;
-            //span = 1;
+            
+            
+            
         }
 
         
@@ -519,9 +527,9 @@ public class TableRow extends LinearLayout {
             super(MATCH_PARENT, WRAP_CONTENT);
             column = -1;
             span = 1;
-            // ---------- Original Method ----------
-            //column = -1;
-            //span = 1;
+            
+            
+            
         }
 
         
@@ -529,8 +537,8 @@ public class TableRow extends LinearLayout {
         public  LayoutParams(int column) {
             this();
             this.column = column;
-            // ---------- Original Method ----------
-            //this.column = column;
+            
+            
         }
 
         
@@ -538,7 +546,7 @@ public class TableRow extends LinearLayout {
         public  LayoutParams(ViewGroup.LayoutParams p) {
             super(p);
             addTaint(p.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -546,7 +554,7 @@ public class TableRow extends LinearLayout {
         public  LayoutParams(MarginLayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -557,34 +565,34 @@ public class TableRow extends LinearLayout {
                 boolean varD888BD0D4A06953AD18C20BAB6D44F4C_313814470 = (a.hasValue(widthAttr));
                 {
                     width = a.getLayoutDimension(widthAttr, "layout_width");
-                } //End block
+                } 
                 {
                     width = MATCH_PARENT;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var85D47280CE4096165FCC5973CDFD8001_836751717 = (a.hasValue(heightAttr));
                 {
                     height = a.getLayoutDimension(heightAttr, "layout_height");
-                } //End block
+                } 
                 {
                     height = WRAP_CONTENT;
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             addTaint(a.getTaint());
             addTaint(widthAttr);
             addTaint(heightAttr);
-            // ---------- Original Method ----------
-            //if (a.hasValue(widthAttr)) {
-                //width = a.getLayoutDimension(widthAttr, "layout_width");
-            //} else {
-                //width = MATCH_PARENT;
-            //}
-            //if (a.hasValue(heightAttr)) {
-                //height = a.getLayoutDimension(heightAttr, "layout_height");
-            //} else {
-                //height = WRAP_CONTENT;
-            //}
+            
+            
+                
+            
+                
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -606,49 +614,49 @@ public class TableRow extends LinearLayout {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.447 -0400", hash_original_method = "8BC9074DC1C8352428B8EEF8AE4154F0", hash_generated_method = "8BC9074DC1C8352428B8EEF8AE4154F0")
         public ChildrenTracker ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.447 -0400", hash_original_method = "366CDDD217CE23168243D85764F583BC", hash_generated_method = "DDC70C8E2E013ACEDF81D1F8C000792F")
         private void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
             this.listener = listener;
-            // ---------- Original Method ----------
-            //this.listener = listener;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.448 -0400", hash_original_method = "0A8BC7BCBC1B19A4EC6087AEE2DC9AC1", hash_generated_method = "A9057AE0BAD779E62A4D64B8250E8423")
         public void onChildViewAdded(View parent, View child) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mColumnToChildIndex = null;
             {
                 this.listener.onChildViewAdded(parent, child);
-            } //End block
+            } 
             addTaint(parent.getTaint());
             addTaint(child.getTaint());
-            // ---------- Original Method ----------
-            //mColumnToChildIndex = null;
-            //if (this.listener != null) {
-                //this.listener.onChildViewAdded(parent, child);
-            //}
+            
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:15.449 -0400", hash_original_method = "BAF37826E19FE7806EA8737E4B16ECFB", hash_generated_method = "464CD24340089F54B5D4A8AE9134C11E")
         public void onChildViewRemoved(View parent, View child) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mColumnToChildIndex = null;
             {
                 this.listener.onChildViewRemoved(parent, child);
-            } //End block
+            } 
             addTaint(parent.getTaint());
             addTaint(child.getTaint());
-            // ---------- Original Method ----------
-            //mColumnToChildIndex = null;
-            //if (this.listener != null) {
-                //this.listener.onChildViewRemoved(parent, child);
-            //}
+            
+            
+            
+                
+            
         }
 
         

@@ -1,11 +1,11 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.util.ArrayUtils;
 import android.content.BroadcastReceiver;
@@ -44,7 +44,7 @@ final class IntentReceiverLeaked extends AndroidRuntimeException {
     public  IntentReceiverLeaked(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -56,7 +56,7 @@ final class ServiceConnectionLeaked extends AndroidRuntimeException {
     public  ServiceConnectionLeaked(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -154,14 +154,14 @@ public final class LoadedApk {
                          mainThread.getConfiguration(),
                          mainThread.getDisplayMetricsLocked(compatInfo, false),
                          compatInfo);
-            } //End block
+            } 
             mClassLoader = ActivityThread.mSystemContext.getClassLoader();
             mResources = ActivityThread.mSystemContext.getResources();
-        } //End block
+        } 
         addTaint(compatInfo.getTaint());
         addTaint(mainThread.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -185,56 +185,56 @@ public final class LoadedApk {
         mResources = systemContext.getResources();
         mCompatibilityInfo.set(compatInfo);
         addTaint(compatInfo.getTaint());
-        // ---------- Original Method ----------
-        //mActivityThread = activityThread;
-        //mApplicationInfo = info != null ? info : new ApplicationInfo();
-        //mApplicationInfo.packageName = name;
-        //mPackageName = name;
-        //mAppDir = null;
-        //mResDir = null;
-        //mSharedLibraries = null;
-        //mDataDir = null;
-        //mDataDirFile = null;
-        //mLibDir = null;
-        //mBaseClassLoader = null;
-        //mSecurityViolation = false;
-        //mIncludeCode = true;
-        //mClassLoader = systemContext.getClassLoader();
-        //mResources = systemContext.getResources();
-        //mCompatibilityInfo.set(compatInfo);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.243 -0400", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "1C75351472D06FD2D3A957BA5BFD2C2A")
      Application getApplication() {
-        Application varB4EAC82CA7396A68D541C85D26508E83_1209050606 = null; //Variable for return #1
+        Application varB4EAC82CA7396A68D541C85D26508E83_1209050606 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1209050606 = mApplication;
-        varB4EAC82CA7396A68D541C85D26508E83_1209050606.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1209050606.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1209050606;
-        // ---------- Original Method ----------
-        //return mApplication;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.245 -0400", hash_original_method = "B3E128BBA0564CAE955B890D71B1CE7C", hash_generated_method = "3922CF01D131ABD1F15B9B2C8FD1AD1F")
     public String getPackageName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1346707764 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1346707764 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1346707764 = mPackageName;
-        varB4EAC82CA7396A68D541C85D26508E83_1346707764.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1346707764.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1346707764;
-        // ---------- Original Method ----------
-        //return mPackageName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.245 -0400", hash_original_method = "69D4795DAE5563DBA773DE992713BBC9", hash_generated_method = "7EFCE06F3B338DFDAE07A1E4AD5E1926")
     public ApplicationInfo getApplicationInfo() {
-        ApplicationInfo varB4EAC82CA7396A68D541C85D26508E83_1856727724 = null; //Variable for return #1
+        ApplicationInfo varB4EAC82CA7396A68D541C85D26508E83_1856727724 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1856727724 = mApplicationInfo;
-        varB4EAC82CA7396A68D541C85D26508E83_1856727724.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1856727724.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1856727724;
-        // ---------- Original Method ----------
-        //return mApplicationInfo;
+        
+        
     }
 
     
@@ -242,11 +242,12 @@ public final class LoadedApk {
     public boolean isSecurityViolation() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1862550088 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1862550088;
-        // ---------- Original Method ----------
-        //return mSecurityViolation;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] getLibrariesFor(String packageName) {
         ApplicationInfo ai = null;
         try {
@@ -262,6 +263,7 @@ public final class LoadedApk {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String combineLibs(String[] list1, String[] list2) {
         StringBuilder result = new StringBuilder(300);
         boolean first = true;
@@ -295,12 +297,12 @@ public final class LoadedApk {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.248 -0400", hash_original_method = "98BA13F46ABDF03C557DAF40D6E3FC88", hash_generated_method = "E994287469F9B943ECFDD9A370D7D34D")
     public ClassLoader getClassLoader() {
-        ClassLoader varB4EAC82CA7396A68D541C85D26508E83_1649068289 = null; //Variable for return #1
-        ClassLoader varB4EAC82CA7396A68D541C85D26508E83_555312385 = null; //Variable for return #2
+        ClassLoader varB4EAC82CA7396A68D541C85D26508E83_1649068289 = null; 
+        ClassLoader varB4EAC82CA7396A68D541C85D26508E83_555312385 = null; 
         {
             {
                 varB4EAC82CA7396A68D541C85D26508E83_1649068289 = mClassLoader;
-            } //End block
+            } 
             {
                 boolean var296F17ADADF287FF92E97433DB7DF634_690511920 = (mIncludeCode && !mPackageName.equals("android"));
                 {
@@ -319,49 +321,50 @@ public final class LoadedApk {
                                 {
                                     instrumentationLibs =
                             getLibrariesFor(instrumentationAppPackage);
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
+                                } 
+                            } 
+                        } 
+                    } 
                     {
                         zip =
                         combineLibs(mSharedLibraries, instrumentationLibs)
                         + ':' + zip;
-                    } //End block
+                    } 
                     StrictMode.ThreadPolicy oldPolicy = StrictMode.allowThreadDiskReads();
                     mClassLoader =
                     ApplicationLoaders.getDefault().getClassLoader(
                         zip, mLibDir, mBaseClassLoader);
                     initializeJavaContextClassLoader();
                     StrictMode.setThreadPolicy(oldPolicy);
-                } //End block
+                } 
                 {
                     {
                         mClassLoader = ClassLoader.getSystemClassLoader();
-                    } //End block
+                    } 
                     {
                         mClassLoader = mBaseClassLoader;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_555312385 = mClassLoader;
-        } //End block
-        ClassLoader varA7E53CE21691AB073D9660D615818899_907198720; //Final return value
+        } 
+        ClassLoader varA7E53CE21691AB073D9660D615818899_907198720; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_907198720 = varB4EAC82CA7396A68D541C85D26508E83_1649068289;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_907198720 = varB4EAC82CA7396A68D541C85D26508E83_555312385;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_907198720.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_907198720.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_907198720;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.463 -0400", hash_original_method = "56AE7DDBC8B1739A2C59C89AA12BEB96", hash_generated_method = "4FA25BCD10D37ADCB3BC7441D0518273")
     private void initializeJavaContextClassLoader() {
         IPackageManager pm;
@@ -370,11 +373,11 @@ public final class LoadedApk {
         try 
         {
             pi = pm.getPackageInfo(mPackageName, 0);
-        } //End block
+        } 
         catch (RemoteException e)
         {
         	throw new AssertionError(e);
-        } //End block
+        } 
         boolean sharedUserIdSet;
         sharedUserIdSet = (pi.sharedUserId != null);
         boolean processNameNotDefault;
@@ -386,113 +389,116 @@ public final class LoadedApk {
         contextClassLoader = new WarningContextClassLoader();
         contextClassLoader = mClassLoader;
         Thread.currentThread().setContextClassLoader(contextClassLoader);
-        // ---------- Original Method ----------
-        //IPackageManager pm = ActivityThread.getPackageManager();
-        //android.content.pm.PackageInfo pi;
-        //try {
-            //pi = pm.getPackageInfo(mPackageName, 0);
-        //} catch (RemoteException e) {
-            //throw new AssertionError(e);
-        //}
-        //boolean sharedUserIdSet = (pi.sharedUserId != null);
-        //boolean processNameNotDefault =
-            //(pi.applicationInfo != null &&
-             //!mPackageName.equals(pi.applicationInfo.processName));
-        //boolean sharable = (sharedUserIdSet || processNameNotDefault);
-        //ClassLoader contextClassLoader =
-            //(sharable)
-            //? new WarningContextClassLoader()
-            //: mClassLoader;
-        //Thread.currentThread().setContextClassLoader(contextClassLoader);
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+            
+             
+        
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.250 -0400", hash_original_method = "DDE558C6C52D26591497F8CCA19E2D11", hash_generated_method = "719E717183EB4CEA394F18ED4D0F53F1")
     public String getAppDir() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1277895520 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1277895520 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1277895520 = mAppDir;
-        varB4EAC82CA7396A68D541C85D26508E83_1277895520.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1277895520.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1277895520;
-        // ---------- Original Method ----------
-        //return mAppDir;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.252 -0400", hash_original_method = "1158BD50BBC4E4D9C9B8EC24E43A83EF", hash_generated_method = "FEC9A1A53CE932A0A215ECF26FE097FE")
     public String getResDir() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1798899831 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1798899831 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1798899831 = mResDir;
-        varB4EAC82CA7396A68D541C85D26508E83_1798899831.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1798899831.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1798899831;
-        // ---------- Original Method ----------
-        //return mResDir;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.254 -0400", hash_original_method = "5486D8CB07A0A494A33FE28373C3B14E", hash_generated_method = "C1D42C5BE7E8C86F9FA6BD084E3632DB")
     public String getDataDir() {
-        String varB4EAC82CA7396A68D541C85D26508E83_899661439 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_899661439 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_899661439 = mDataDir;
-        varB4EAC82CA7396A68D541C85D26508E83_899661439.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_899661439.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_899661439;
-        // ---------- Original Method ----------
-        //return mDataDir;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.255 -0400", hash_original_method = "6FB19B7083E51C6FD4891C3DDE1600A5", hash_generated_method = "7B2BEE0626EAAC8B4F5D47CFE9D83E20")
     public File getDataDirFile() {
-        File varB4EAC82CA7396A68D541C85D26508E83_1158039098 = null; //Variable for return #1
+        File varB4EAC82CA7396A68D541C85D26508E83_1158039098 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_1158039098 = mDataDirFile;
-        varB4EAC82CA7396A68D541C85D26508E83_1158039098.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1158039098.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1158039098;
-        // ---------- Original Method ----------
-        //return mDataDirFile;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.257 -0400", hash_original_method = "57B8CB1A3B484849D2245AC420407E2C", hash_generated_method = "6A4247E70046532F3E53AF2716EF0A7E")
     public AssetManager getAssets(ActivityThread mainThread) {
-        AssetManager varB4EAC82CA7396A68D541C85D26508E83_15371365 = null; //Variable for return #1
+        AssetManager varB4EAC82CA7396A68D541C85D26508E83_15371365 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_15371365 = getResources(mainThread).getAssets();
         addTaint(mainThread.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_15371365.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_15371365.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_15371365;
-        // ---------- Original Method ----------
-        //return getResources(mainThread).getAssets();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.258 -0400", hash_original_method = "5E7B55611C44695241E7EB924E051C95", hash_generated_method = "0A21833127C537D73713DC44C2618897")
     public Resources getResources(ActivityThread mainThread) {
-        Resources varB4EAC82CA7396A68D541C85D26508E83_1755284709 = null; //Variable for return #1
+        Resources varB4EAC82CA7396A68D541C85D26508E83_1755284709 = null; 
         {
             mResources = mainThread.getTopLevelResources(mResDir, this);
-        } //End block
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_1755284709 = mResources;
-        varB4EAC82CA7396A68D541C85D26508E83_1755284709.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1755284709.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1755284709;
-        // ---------- Original Method ----------
-        //if (mResources == null) {
-            //mResources = mainThread.getTopLevelResources(mResDir, this);
-        //}
-        //return mResources;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.260 -0400", hash_original_method = "F09CA6154241A46EB02B7FA7F64D8F80", hash_generated_method = "66206786261E8991EDF0094EB1D11421")
     public Application makeApplication(boolean forceDefaultAppClass,
             Instrumentation instrumentation) {
-        Application varB4EAC82CA7396A68D541C85D26508E83_34024971 = null; //Variable for return #1
-        Application varB4EAC82CA7396A68D541C85D26508E83_2076628872 = null; //Variable for return #2
+        Application varB4EAC82CA7396A68D541C85D26508E83_34024971 = null; 
+        Application varB4EAC82CA7396A68D541C85D26508E83_2076628872 = null; 
         {
             varB4EAC82CA7396A68D541C85D26508E83_34024971 = mApplication;
-        } //End block
+        } 
         Application app = null;
         String appClass = mApplicationInfo.className;
         {
             appClass = "android.app.Application";
-        } //End block
+        } 
         try 
         {
             java.lang.ClassLoader cl = getClassLoader();
@@ -501,7 +507,7 @@ public final class LoadedApk {
             app = mActivityThread.mInstrumentation.newApplication(
                     cl, appClass, appContext);
             appContext.setOuterContext(app);
-        } //End block
+        } 
         catch (Exception e)
         {
             {
@@ -510,16 +516,16 @@ public final class LoadedApk {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Unable to instantiate application " + appClass
                     + ": " + e.toString(), e);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mActivityThread.mAllApplications.add(app);
         mApplication = app;
         {
             try 
             {
                 instrumentation.callApplicationOnCreate(app);
-            } //End block
+            } 
             catch (Exception e)
             {
                 {
@@ -528,29 +534,30 @@ public final class LoadedApk {
                         if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                         "Unable to create application " + app.getClass().getName()
                         + ": " + e.toString(), e);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         varB4EAC82CA7396A68D541C85D26508E83_2076628872 = app;
         addTaint(forceDefaultAppClass);
         addTaint(instrumentation.getTaint());
-        Application varA7E53CE21691AB073D9660D615818899_49866187; //Final return value
+        Application varA7E53CE21691AB073D9660D615818899_49866187; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_49866187 = varB4EAC82CA7396A68D541C85D26508E83_34024971;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_49866187 = varB4EAC82CA7396A68D541C85D26508E83_2076628872;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_49866187.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_49866187.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_49866187;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.263 -0400", hash_original_method = "B6291AD2FF4D11DEB13067F1AF687A9F", hash_generated_method = "086524DB37A28D0AA35225CF705ABAE1")
     public void removeContextRegistrations(Context context,
             String who, String what) {
@@ -571,12 +578,12 @@ public final class LoadedApk {
                     {
                         ActivityManagerNative.getDefault().unregisterReceiver(
                             rd.getIIntentReceiver());
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     { }
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mUnregisteredReceivers.remove(context);
         HashMap<ServiceConnection, LoadedApk.ServiceDispatcher> smap = mServices.remove(context);
         {
@@ -593,27 +600,28 @@ public final class LoadedApk {
                     {
                         ActivityManagerNative.getDefault().unbindService(
                             sd.getIServiceConnection());
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     { }
                     sd.doForget();
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         mUnboundServices.remove(context);
         addTaint(context.getTaint());
         addTaint(who.getTaint());
         addTaint(what.getTaint());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.265 -0400", hash_original_method = "5954CD85EE6D69CD6AA4DB5D230A9DEB", hash_generated_method = "43B1A9137EF765AFF323E0371684D149")
     public IIntentReceiver getReceiverDispatcher(BroadcastReceiver r,
             Context context, Handler handler,
             Instrumentation instrumentation, boolean registered) {
-        IIntentReceiver varB4EAC82CA7396A68D541C85D26508E83_927082617 = null; //Variable for return #1
+        IIntentReceiver varB4EAC82CA7396A68D541C85D26508E83_927082617 = null; 
         {
             LoadedApk.ReceiverDispatcher rd = null;
             HashMap<BroadcastReceiver, LoadedApk.ReceiverDispatcher> map = null;
@@ -621,8 +629,8 @@ public final class LoadedApk {
                 map = mReceivers.get(context);
                 {
                     rd = map.get(r);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 rd = new ReceiverDispatcher(r, context, handler,
                         instrumentation, registered);
@@ -630,32 +638,33 @@ public final class LoadedApk {
                     {
                         map = new HashMap<BroadcastReceiver, LoadedApk.ReceiverDispatcher>();
                         mReceivers.put(context, map);
-                    } //End block
+                    } 
                     map.put(r, rd);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 rd.validate(context, handler);
-            } //End block
+            } 
             rd.mForgotten = false;
             varB4EAC82CA7396A68D541C85D26508E83_927082617 = rd.getIIntentReceiver();
-        } //End block
+        } 
         addTaint(r.getTaint());
         addTaint(context.getTaint());
         addTaint(handler.getTaint());
         addTaint(instrumentation.getTaint());
         addTaint(registered);
-        varB4EAC82CA7396A68D541C85D26508E83_927082617.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_927082617.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_927082617;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.266 -0400", hash_original_method = "56318BD0308680C3BFA3A8E4B0CE4CF3", hash_generated_method = "BA80244A8D5A284010FE96F7C117300B")
     public IIntentReceiver forgetReceiverDispatcher(Context context,
             BroadcastReceiver r) {
-        IIntentReceiver varB4EAC82CA7396A68D541C85D26508E83_1781242874 = null; //Variable for return #1
+        IIntentReceiver varB4EAC82CA7396A68D541C85D26508E83_1781242874 = null; 
         {
             HashMap<BroadcastReceiver, LoadedApk.ReceiverDispatcher> map = mReceivers.get(context);
             LoadedApk.ReceiverDispatcher rd = null;
@@ -667,8 +676,8 @@ public final class LoadedApk {
                         boolean varF8AAF8C97EFC31F920EA8522BEF55B94_193413734 = (map.size() == 0);
                         {
                             mReceivers.remove(context);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         boolean var3D8D85BD23AAFEAEB048FA5B5CD89650_516923250 = (r.getDebugUnregister());
                         {
@@ -676,18 +685,18 @@ public final class LoadedApk {
                             {
                                 holder = new HashMap<BroadcastReceiver, LoadedApk.ReceiverDispatcher>();
                                 mUnregisteredReceivers.put(context, holder);
-                            } //End block
+                            } 
                             RuntimeException ex = new IllegalArgumentException(
                                 "Originally unregistered here:");
                             ex.fillInStackTrace();
                             rd.setUnregisterLocation(ex);
                             holder.put(r, rd);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     rd.mForgotten = true;
                     varB4EAC82CA7396A68D541C85D26508E83_1781242874 = rd.getIIntentReceiver();
-                } //End block
-            } //End block
+                } 
+            } 
             HashMap<BroadcastReceiver, LoadedApk.ReceiverDispatcher> holder = mUnregisteredReceivers.get(context);
             {
                 rd = holder.get(r);
@@ -696,80 +705,80 @@ public final class LoadedApk {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                             "Unregistering Receiver " + r
                             + " that was already unregistered", ex);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Unbinding Receiver " + r
                         + " from Context that is no longer in use: " + context);
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Receiver not registered: " + r);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(context.getTaint());
         addTaint(r.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1781242874.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1781242874.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1781242874;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.268 -0400", hash_original_method = "D12EDE6D51B318B0614D5C86220B1198", hash_generated_method = "0DBEEBBEE12038F402C1601569D21ABD")
     public final IServiceConnection getServiceDispatcher(ServiceConnection c,
             Context context, Handler handler, int flags) {
-        IServiceConnection varB4EAC82CA7396A68D541C85D26508E83_1959900485 = null; //Variable for return #1
+        IServiceConnection varB4EAC82CA7396A68D541C85D26508E83_1959900485 = null; 
         {
             LoadedApk.ServiceDispatcher sd = null;
             HashMap<ServiceConnection, LoadedApk.ServiceDispatcher> map = mServices.get(context);
             {
                 sd = map.get(c);
-            } //End block
+            } 
             {
                 sd = new ServiceDispatcher(c, context, handler, flags);
                 {
                     map = new HashMap<ServiceConnection, LoadedApk.ServiceDispatcher>();
                     mServices.put(context, map);
-                } //End block
+                } 
                 map.put(c, sd);
-            } //End block
+            } 
             {
                 sd.validate(context, handler);
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1959900485 = sd.getIServiceConnection();
-        } //End block
+        } 
         addTaint(c.getTaint());
         addTaint(context.getTaint());
         addTaint(handler.getTaint());
         addTaint(flags);
-        varB4EAC82CA7396A68D541C85D26508E83_1959900485.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_1959900485.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1959900485;
-        // ---------- Original Method ----------
-        //synchronized (mServices) {
-            //LoadedApk.ServiceDispatcher sd = null;
-            //HashMap<ServiceConnection, LoadedApk.ServiceDispatcher> map = mServices.get(context);
-            //if (map != null) {
-                //sd = map.get(c);
-            //}
-            //if (sd == null) {
-                //sd = new ServiceDispatcher(c, context, handler, flags);
-                //if (map == null) {
-                    //map = new HashMap<ServiceConnection, LoadedApk.ServiceDispatcher>();
-                    //mServices.put(context, map);
-                //}
-                //map.put(c, sd);
-            //} else {
-                //sd.validate(context, handler);
-            //}
-            //return sd.getIServiceConnection();
-        //}
+        
+        
+            
+            
+            
+                
+            
+            
+                
+                
+                    
+                    
+                
+                
+            
+                
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.285 -0400", hash_original_method = "6B7C147E189191AFA124ECB6DFD3C546", hash_generated_method = "77E71D50DEECC386E540BF9CB3F70518")
     public final IServiceConnection forgetServiceDispatcher(Context context,
             ServiceConnection c) {
-        IServiceConnection varB4EAC82CA7396A68D541C85D26508E83_345857160 = null; //Variable for return #1
+        IServiceConnection varB4EAC82CA7396A68D541C85D26508E83_345857160 = null; 
         {
             HashMap<ServiceConnection, LoadedApk.ServiceDispatcher> map = mServices.get(context);
             LoadedApk.ServiceDispatcher sd = null;
@@ -782,8 +791,8 @@ public final class LoadedApk {
                         boolean varF8AAF8C97EFC31F920EA8522BEF55B94_1773050523 = (map.size() == 0);
                         {
                             mServices.remove(context);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     {
                         boolean var07CAAA82623DD8F9BB6F63C5327EC905_1931754487 = ((sd.getFlags()&Context.BIND_DEBUG_UNBIND) != 0);
                         {
@@ -791,17 +800,17 @@ public final class LoadedApk {
                             {
                                 holder = new HashMap<ServiceConnection, LoadedApk.ServiceDispatcher>();
                                 mUnboundServices.put(context, holder);
-                            } //End block
+                            } 
                             RuntimeException ex = new IllegalArgumentException(
                                 "Originally unbound here:");
                             ex.fillInStackTrace();
                             sd.setUnbindLocation(ex);
                             holder.put(c, sd);
-                        } //End block
-                    } //End collapsed parenthetic
+                        } 
+                    } 
                     varB4EAC82CA7396A68D541C85D26508E83_345857160 = sd.getIServiceConnection();
-                } //End block
-            } //End block
+                } 
+            } 
             HashMap<ServiceConnection, LoadedApk.ServiceDispatcher> holder = mUnboundServices.get(context);
             {
                 sd = holder.get(c);
@@ -810,22 +819,22 @@ public final class LoadedApk {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                             "Unbinding Service " + c
                             + " that was already unbound", ex);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Unbinding Service " + c
                         + " from Context that is no longer in use: " + context);
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Service not registered: " + c);
-            } //End block
-        } //End block
+            } 
+        } 
         addTaint(context.getTaint());
         addTaint(c.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_345857160.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_345857160.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_345857160;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -834,7 +843,7 @@ public final class LoadedApk {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.286 -0400", hash_original_method = "97527CB182747C5C8FA8F44BB3951504", hash_generated_method = "97527CB182747C5C8FA8F44BB3951504")
         public WarningContextClassLoader ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -843,78 +852,78 @@ public final class LoadedApk {
             warned = true;
             Thread.currentThread().setContextClassLoader(getParent());
             addTaint(methodName.getTaint());
-            // ---------- Original Method ----------
-            //if (warned) {
-                //return;
-            //}
-            //warned = true;
-            //Thread.currentThread().setContextClassLoader(getParent());
-            //Slog.w(ActivityThread.TAG, "ClassLoader." + methodName + ": " +
-                  //"The class loader returned by " +
-                  //"Thread.getContextClassLoader() may fail for processes " +
-                  //"that host multiple applications. You should explicitly " +
-                  //"specify a context class loader. For example: " +
-                  //"Thread.setContextClassLoader(getClass().getClassLoader());");
+            
+            
+                
+            
+            
+            
+            
+                  
+                  
+                  
+                  
+                  
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.288 -0400", hash_original_method = "55A2C8B568742F6DD554B2AE8E06F675", hash_generated_method = "B15CB909B82A8053ED5B4B475FD4053B")
         @Override
         public URL getResource(String resName) {
-            URL varB4EAC82CA7396A68D541C85D26508E83_52416317 = null; //Variable for return #1
+            URL varB4EAC82CA7396A68D541C85D26508E83_52416317 = null; 
             warn("getResource");
             varB4EAC82CA7396A68D541C85D26508E83_52416317 = getParent().getResource(resName);
             addTaint(resName.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_52416317.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_52416317.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_52416317;
-            // ---------- Original Method ----------
-            //warn("getResource");
-            //return getParent().getResource(resName);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.289 -0400", hash_original_method = "7DF26E5478EB621EA7136B5331588545", hash_generated_method = "0E7682212C394A5605387BA57900B0B8")
         @Override
         public Enumeration<URL> getResources(String resName) throws IOException {
-            Enumeration<URL> varB4EAC82CA7396A68D541C85D26508E83_116654595 = null; //Variable for return #1
+            Enumeration<URL> varB4EAC82CA7396A68D541C85D26508E83_116654595 = null; 
             warn("getResources");
             varB4EAC82CA7396A68D541C85D26508E83_116654595 = getParent().getResources(resName);
             addTaint(resName.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_116654595.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_116654595.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_116654595;
-            // ---------- Original Method ----------
-            //warn("getResources");
-            //return getParent().getResources(resName);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.290 -0400", hash_original_method = "43C39FB9AB0F69E37F9176951B93B129", hash_generated_method = "5554CFB6A8C55C4B7EE6550CDA4CD2FF")
         @Override
         public InputStream getResourceAsStream(String resName) {
-            InputStream varB4EAC82CA7396A68D541C85D26508E83_345655898 = null; //Variable for return #1
+            InputStream varB4EAC82CA7396A68D541C85D26508E83_345655898 = null; 
             warn("getResourceAsStream");
             varB4EAC82CA7396A68D541C85D26508E83_345655898 = getParent().getResourceAsStream(resName);
             addTaint(resName.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_345655898.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_345655898.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_345655898;
-            // ---------- Original Method ----------
-            //warn("getResourceAsStream");
-            //return getParent().getResourceAsStream(resName);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.290 -0400", hash_original_method = "8B4C21AC14EA436FB72A6381E557B850", hash_generated_method = "7D8FD21BAA6BC128D0EED93378E7895B")
         @Override
         public Class<?> loadClass(String className) throws ClassNotFoundException {
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_322557524 = null; //Variable for return #1
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_322557524 = null; 
             warn("loadClass");
             varB4EAC82CA7396A68D541C85D26508E83_322557524 = getParent().loadClass(className);
             addTaint(className.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_322557524.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_322557524.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_322557524;
-            // ---------- Original Method ----------
-            //warn("loadClass");
-            //return getParent().loadClass(className);
+            
+            
+            
         }
 
         
@@ -925,9 +934,9 @@ public final class LoadedApk {
             getParent().setClassAssertionStatus(cname, enable);
             addTaint(cname.getTaint());
             addTaint(enable);
-            // ---------- Original Method ----------
-            //warn("setClassAssertionStatus");
-            //getParent().setClassAssertionStatus(cname, enable);
+            
+            
+            
         }
 
         
@@ -938,9 +947,9 @@ public final class LoadedApk {
             getParent().setPackageAssertionStatus(pname, enable);
             addTaint(pname.getTaint());
             addTaint(enable);
-            // ---------- Original Method ----------
-            //warn("setPackageAssertionStatus");
-            //getParent().setPackageAssertionStatus(pname, enable);
+            
+            
+            
         }
 
         
@@ -950,9 +959,9 @@ public final class LoadedApk {
             warn("setDefaultAssertionStatus");
             getParent().setDefaultAssertionStatus(enable);
             addTaint(enable);
-            // ---------- Original Method ----------
-            //warn("setDefaultAssertionStatus");
-            //getParent().setDefaultAssertionStatus(enable);
+            
+            
+            
         }
 
         
@@ -961,9 +970,9 @@ public final class LoadedApk {
         public void clearAssertionStatus() {
             warn("clearAssertionStatus");
             getParent().clearAssertionStatus();
-            // ---------- Original Method ----------
-            //warn("clearAssertionStatus");
-            //getParent().clearAssertionStatus();
+            
+            
+            
         }
 
         
@@ -1009,7 +1018,7 @@ public final class LoadedApk {
                 boolean registered) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Handler must not be null");
-            } //End block
+            } 
             mIIntentReceiver = new InnerReceiver(this, !registered);
             mReceiver = receiver;
             mContext = context;
@@ -1018,18 +1027,18 @@ public final class LoadedApk {
             mRegistered = registered;
             mLocation = new IntentReceiverLeaked(null);
             mLocation.fillInStackTrace();
-            // ---------- Original Method ----------
-            //if (activityThread == null) {
-                //throw new NullPointerException("Handler must not be null");
-            //}
-            //mIIntentReceiver = new InnerReceiver(this, !registered);
-            //mReceiver = receiver;
-            //mContext = context;
-            //mActivityThread = activityThread;
-            //mInstrumentation = instrumentation;
-            //mRegistered = registered;
-            //mLocation = new IntentReceiverLeaked(null);
-            //mLocation.fillInStackTrace();
+            
+            
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1040,80 +1049,80 @@ public final class LoadedApk {
                     "Receiver " + mReceiver +
                     " registered with differing Context (was " +
                     mContext + " now " + context + ")");
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "Receiver " + mReceiver +
                     " registered with differing handler (was " +
                     mActivityThread + " now " + activityThread + ")");
-            } //End block
+            } 
             addTaint(context.getTaint());
             addTaint(activityThread.getTaint());
-            // ---------- Original Method ----------
-            //if (mContext != context) {
-                //throw new IllegalStateException(
-                    //"Receiver " + mReceiver +
-                    //" registered with differing Context (was " +
-                    //mContext + " now " + context + ")");
-            //}
-            //if (mActivityThread != activityThread) {
-                //throw new IllegalStateException(
-                    //"Receiver " + mReceiver +
-                    //" registered with differing handler (was " +
-                    //mActivityThread + " now " + activityThread + ")");
-            //}
+            
+            
+                
+                    
+                    
+                    
+            
+            
+                
+                    
+                    
+                    
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.295 -0400", hash_original_method = "7C4E5EC981022D2A84B36FB6D93F7965", hash_generated_method = "1C0247503C5FF7B63D3D487A9DA4DD91")
          IntentReceiverLeaked getLocation() {
-            IntentReceiverLeaked varB4EAC82CA7396A68D541C85D26508E83_192238615 = null; //Variable for return #1
+            IntentReceiverLeaked varB4EAC82CA7396A68D541C85D26508E83_192238615 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_192238615 = mLocation;
-            varB4EAC82CA7396A68D541C85D26508E83_192238615.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_192238615.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_192238615;
-            // ---------- Original Method ----------
-            //return mLocation;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.296 -0400", hash_original_method = "3C5B1FBD8D9CF893CD5AE57A3692C218", hash_generated_method = "6D3014B91AFAB02974D28FF3B08A70DF")
          BroadcastReceiver getIntentReceiver() {
-            BroadcastReceiver varB4EAC82CA7396A68D541C85D26508E83_2043926043 = null; //Variable for return #1
+            BroadcastReceiver varB4EAC82CA7396A68D541C85D26508E83_2043926043 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2043926043 = mReceiver;
-            varB4EAC82CA7396A68D541C85D26508E83_2043926043.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2043926043.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2043926043;
-            // ---------- Original Method ----------
-            //return mReceiver;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.296 -0400", hash_original_method = "03FF6A1CE859C16292BB870D48D4B619", hash_generated_method = "1CD5242C49560C036486CA1D88DCA835")
          IIntentReceiver getIIntentReceiver() {
-            IIntentReceiver varB4EAC82CA7396A68D541C85D26508E83_957357723 = null; //Variable for return #1
+            IIntentReceiver varB4EAC82CA7396A68D541C85D26508E83_957357723 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_957357723 = mIIntentReceiver;
-            varB4EAC82CA7396A68D541C85D26508E83_957357723.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_957357723.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_957357723;
-            // ---------- Original Method ----------
-            //return mIIntentReceiver;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.297 -0400", hash_original_method = "10021177327079B574AB9A39568AB468", hash_generated_method = "EA685C5A5E8161DEED20B24280A81655")
          void setUnregisterLocation(RuntimeException ex) {
             mUnregisterLocation = ex;
-            // ---------- Original Method ----------
-            //mUnregisterLocation = ex;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.300 -0400", hash_original_method = "BEFB4AE86DE2CF8202227FDF4968A841", hash_generated_method = "FA69F76097107F55A987E79468983DD7")
          RuntimeException getUnregisterLocation() {
-            RuntimeException varB4EAC82CA7396A68D541C85D26508E83_2135346931 = null; //Variable for return #1
+            RuntimeException varB4EAC82CA7396A68D541C85D26508E83_2135346931 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_2135346931 = mUnregisterLocation;
-            varB4EAC82CA7396A68D541C85D26508E83_2135346931.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_2135346931.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2135346931;
-            // ---------- Original Method ----------
-            //return mUnregisterLocation;
+            
+            
         }
 
         
@@ -1122,7 +1131,7 @@ public final class LoadedApk {
                 String data, Bundle extras, boolean ordered, boolean sticky) {
             {
                 int seq = intent.getIntExtra("seq", -1);
-            } //End block
+            } 
             Args args = new Args(intent, resultCode, data, extras, ordered, sticky);
             {
                 boolean var136D2EEA834070DC62C9F4EB9B7F3CE1_1747445720 = (!mActivityThread.post(args));
@@ -1130,30 +1139,30 @@ public final class LoadedApk {
                     {
                         IActivityManager mgr = ActivityManagerNative.getDefault();
                         args.sendFinished(mgr);
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
+                    } 
+                } 
+            } 
             addTaint(intent.getTaint());
             addTaint(resultCode);
             addTaint(data.getTaint());
             addTaint(extras.getTaint());
             addTaint(ordered);
             addTaint(sticky);
-            // ---------- Original Method ----------
-            //if (ActivityThread.DEBUG_BROADCAST) {
-                //int seq = intent.getIntExtra("seq", -1);
-                //Slog.i(ActivityThread.TAG, "Enqueueing broadcast " + intent.getAction() + " seq=" + seq
-                        //+ " to " + mReceiver);
-            //}
-            //Args args = new Args(intent, resultCode, data, extras, ordered, sticky);
-            //if (!mActivityThread.post(args)) {
-                //if (mRegistered && ordered) {
-                    //IActivityManager mgr = ActivityManagerNative.getDefault();
-                    //if (ActivityThread.DEBUG_BROADCAST) Slog.i(ActivityThread.TAG,
-                            //"Finishing sync broadcast to " + mReceiver);
-                    //args.sendFinished(mgr);
-                //}
-            //}
+            
+            
+                
+                
+                        
+            
+            
+            
+                
+                    
+                    
+                            
+                    
+                
+            
         }
 
         
@@ -1169,9 +1178,9 @@ public final class LoadedApk {
               InnerReceiver(LoadedApk.ReceiverDispatcher rd, boolean strong) {
                 mDispatcher = new WeakReference<LoadedApk.ReceiverDispatcher>(rd);
                 mStrongRef = strong ? rd : null;
-                // ---------- Original Method ----------
-                //mDispatcher = new WeakReference<LoadedApk.ReceiverDispatcher>(rd);
-                //mStrongRef = strong ? rd : null;
+                
+                
+                
             }
 
             
@@ -1181,31 +1190,31 @@ public final class LoadedApk {
                 LoadedApk.ReceiverDispatcher rd = mDispatcher.get();
                 {
                     int seq = intent.getIntExtra("seq", -1);
-                } //End block
+                } 
                 {
                     rd.performReceive(intent, resultCode, data, extras,
                             ordered, sticky);
-                } //End block
+                } 
                 {
                     IActivityManager mgr = ActivityManagerNative.getDefault();
                     try 
                     {
                         {
                             extras.setAllowFds(false);
-                        } //End block
+                        } 
                         mgr.finishReceiver(this, resultCode, data, extras, false);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     { }
-                } //End block
+                } 
                 addTaint(intent.getTaint());
                 addTaint(resultCode);
                 addTaint(data.getTaint());
                 addTaint(extras.getTaint());
                 addTaint(ordered);
                 addTaint(sticky);
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 
             
@@ -1233,9 +1242,9 @@ public final class LoadedApk {
                 addTaint(resultData.getTaint());
                 addTaint(resultExtras.getTaint());
                 addTaint(sticky);
-                // ---------- Original Method ----------
-                //mCurIntent = intent;
-                //mOrdered = ordered;
+                
+                
+                
             }
 
             
@@ -1245,15 +1254,15 @@ public final class LoadedApk {
                 final boolean ordered = mOrdered;
                 {
                     int seq = mCurIntent.getIntExtra("seq", -1);
-                } //End block
+                } 
                 final IActivityManager mgr = ActivityManagerNative.getDefault();
                 final Intent intent = mCurIntent;
                 mCurIntent = null;
                 {
                     {
                         sendFinished(mgr);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 try 
                 {
                     ClassLoader cl = mReceiver.getClass().getClassLoader();
@@ -1261,12 +1270,12 @@ public final class LoadedApk {
                     setExtrasClassLoader(cl);
                     receiver.setPendingResult(this);
                     receiver.onReceive(mContext, intent);
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     {
                         sendFinished(mgr);
-                    } //End block
+                    } 
                     {
                         boolean varC6CBB185D8FC33400F94A19454A84101_1392239371 = (mInstrumentation == null ||
                             !mInstrumentation.onException(mReceiver, e));
@@ -1274,17 +1283,17 @@ public final class LoadedApk {
                             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "Error receiving broadcast " + intent
                             + " in " + mReceiver, e);
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
+                        } 
+                    } 
+                } 
                 {
                     boolean var35461069F001822CDD45AC759932345D_968548278 = (receiver.getPendingResult() != null);
                     {
                         finish();
-                    } //End block
-                } //End collapsed parenthetic
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+                
+                
             }
 
             
@@ -1338,14 +1347,14 @@ public final class LoadedApk {
             mLocation = new ServiceConnectionLeaked(null);
             mLocation.fillInStackTrace();
             mFlags = flags;
-            // ---------- Original Method ----------
-            //mIServiceConnection = new InnerConnection(this);
-            //mConnection = conn;
-            //mContext = context;
-            //mActivityThread = activityThread;
-            //mLocation = new ServiceConnectionLeaked(null);
-            //mLocation.fillInStackTrace();
-            //mFlags = flags;
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1356,28 +1365,28 @@ public final class LoadedApk {
                     "ServiceConnection " + mConnection +
                     " registered with differing Context (was " +
                     mContext + " now " + context + ")");
-            } //End block
+            } 
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "ServiceConnection " + mConnection +
                     " registered with differing handler (was " +
                     mActivityThread + " now " + activityThread + ")");
-            } //End block
+            } 
             addTaint(context.getTaint());
             addTaint(activityThread.getTaint());
-            // ---------- Original Method ----------
-            //if (mContext != context) {
-                //throw new RuntimeException(
-                    //"ServiceConnection " + mConnection +
-                    //" registered with differing Context (was " +
-                    //mContext + " now " + context + ")");
-            //}
-            //if (mActivityThread != activityThread) {
-                //throw new RuntimeException(
-                    //"ServiceConnection " + mConnection +
-                    //" registered with differing handler (was " +
-                    //mActivityThread + " now " + activityThread + ")");
-            //}
+            
+            
+                
+                    
+                    
+                    
+            
+            
+                
+                    
+                    
+                    
+            
         }
 
         
@@ -1390,54 +1399,54 @@ public final class LoadedApk {
                     {
                         ServiceDispatcher.ConnectionInfo ci = it.next();
                         ci.binder.unlinkToDeath(ci.deathMonitor, 0);
-                    } //End block
-                } //End collapsed parenthetic
+                    } 
+                } 
                 mActiveConnections.clear();
                 mForgotten = true;
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized(this) {
-                //Iterator<ServiceDispatcher.ConnectionInfo> it = mActiveConnections.values().iterator();
-                //while (it.hasNext()) {
-                    //ServiceDispatcher.ConnectionInfo ci = it.next();
-                    //ci.binder.unlinkToDeath(ci.deathMonitor, 0);
-                //}
-                //mActiveConnections.clear();
-                //mForgotten = true;
-            //}
+            } 
+            
+            
+                
+                
+                    
+                    
+                
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.307 -0400", hash_original_method = "DB6C3DBDD9CEB1EED1EE508C536B0201", hash_generated_method = "2C26613CA5A0F2C99BC250C2EABAD520")
          ServiceConnectionLeaked getLocation() {
-            ServiceConnectionLeaked varB4EAC82CA7396A68D541C85D26508E83_1827368043 = null; //Variable for return #1
+            ServiceConnectionLeaked varB4EAC82CA7396A68D541C85D26508E83_1827368043 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1827368043 = mLocation;
-            varB4EAC82CA7396A68D541C85D26508E83_1827368043.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1827368043.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1827368043;
-            // ---------- Original Method ----------
-            //return mLocation;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.307 -0400", hash_original_method = "14318317B55D028C50F4E970D5AD5F89", hash_generated_method = "FDC793FDE52875EB9BB5554F01A4C036")
          ServiceConnection getServiceConnection() {
-            ServiceConnection varB4EAC82CA7396A68D541C85D26508E83_1354155969 = null; //Variable for return #1
+            ServiceConnection varB4EAC82CA7396A68D541C85D26508E83_1354155969 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1354155969 = mConnection;
-            varB4EAC82CA7396A68D541C85D26508E83_1354155969.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1354155969.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1354155969;
-            // ---------- Original Method ----------
-            //return mConnection;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.309 -0400", hash_original_method = "A871391E91E358F0260A3C41C2649BF6", hash_generated_method = "C0AF1886301B9E80E997890C073EF90F")
          IServiceConnection getIServiceConnection() {
-            IServiceConnection varB4EAC82CA7396A68D541C85D26508E83_1440705643 = null; //Variable for return #1
+            IServiceConnection varB4EAC82CA7396A68D541C85D26508E83_1440705643 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1440705643 = mIServiceConnection;
-            varB4EAC82CA7396A68D541C85D26508E83_1440705643.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1440705643.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1440705643;
-            // ---------- Original Method ----------
-            //return mIServiceConnection;
+            
+            
         }
 
         
@@ -1445,27 +1454,27 @@ public final class LoadedApk {
          int getFlags() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_494894955 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_494894955;
-            // ---------- Original Method ----------
-            //return mFlags;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.310 -0400", hash_original_method = "CDEAAE2662154511545AF7B43E43329E", hash_generated_method = "460ACB65161A9381766EBD8AD8F65A14")
          void setUnbindLocation(RuntimeException ex) {
             mUnbindLocation = ex;
-            // ---------- Original Method ----------
-            //mUnbindLocation = ex;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.311 -0400", hash_original_method = "8CFC5DB6BE83E965DCFCD58443A1D896", hash_generated_method = "1E98B30901D018DA056CB0FF59C4E531")
          RuntimeException getUnbindLocation() {
-            RuntimeException varB4EAC82CA7396A68D541C85D26508E83_1351348805 = null; //Variable for return #1
+            RuntimeException varB4EAC82CA7396A68D541C85D26508E83_1351348805 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1351348805 = mUnbindLocation;
-            varB4EAC82CA7396A68D541C85D26508E83_1351348805.addTaint(getTaint()); //Add taint from parent
+            varB4EAC82CA7396A68D541C85D26508E83_1351348805.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1351348805;
-            // ---------- Original Method ----------
-            //return mUnbindLocation;
+            
+            
         }
 
         
@@ -1473,18 +1482,18 @@ public final class LoadedApk {
         public void connected(ComponentName name, IBinder service) {
             {
                 mActivityThread.post(new RunConnection(name, service, 0));
-            } //End block
+            } 
             {
                 doConnected(name, service);
-            } //End block
+            } 
             addTaint(name.getTaint());
             addTaint(service.getTaint());
-            // ---------- Original Method ----------
-            //if (mActivityThread != null) {
-                //mActivityThread.post(new RunConnection(name, service, 0));
-            //} else {
-                //doConnected(name, service);
-            //}
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -1495,30 +1504,30 @@ public final class LoadedApk {
                 mDied = true;
                 old = mActiveConnections.remove(name);
                 old.binder.unlinkToDeath(old.deathMonitor, 0);
-            } //End block
+            } 
             {
                 mActivityThread.post(new RunConnection(name, service, 1));
-            } //End block
+            } 
             {
                 doDeath(name, service);
-            } //End block
+            } 
             addTaint(name.getTaint());
             addTaint(service.getTaint());
-            // ---------- Original Method ----------
-            //ServiceDispatcher.ConnectionInfo old;
-            //synchronized (this) {
-                //mDied = true;
-                //old = mActiveConnections.remove(name);
-                //if (old == null || old.binder != service) {
-                    //return;
-                //}
-                //old.binder.unlinkToDeath(old.deathMonitor, 0);
-            //}
-            //if (mActivityThread != null) {
-                //mActivityThread.post(new RunConnection(name, service, 1));
-            //} else {
-                //doDeath(name, service);
-            //}
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -1537,29 +1546,29 @@ public final class LoadedApk {
                     {
                         service.linkToDeath(info.deathMonitor, 0);
                         mActiveConnections.put(name, info);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     {
                         mActiveConnections.remove(name);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 {
                     mActiveConnections.remove(name);
-                } //End block
+                } 
                 {
                     old.binder.unlinkToDeath(old.deathMonitor, 0);
-                } //End block
-            } //End block
+                } 
+            } 
             {
                 mConnection.onServiceDisconnected(name);
-            } //End block
+            } 
             {
                 mConnection.onServiceConnected(name, service);
-            } //End block
+            } 
             addTaint(name.getTaint());
             addTaint(service.getTaint());
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1568,8 +1577,8 @@ public final class LoadedApk {
             mConnection.onServiceDisconnected(name);
             addTaint(name.getTaint());
             addTaint(service.getTaint());
-            // ---------- Original Method ----------
-            //mConnection.onServiceDisconnected(name);
+            
+            
         }
 
         
@@ -1584,7 +1593,7 @@ public final class LoadedApk {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.313 -0400", hash_original_method = "1536CD23A1F6D2B518F8B5E1999BC949", hash_generated_method = "1536CD23A1F6D2B518F8B5E1999BC949")
             public ConnectionInfo ()
             {
-                //Synthesized constructor
+                
             }
 
 
@@ -1600,8 +1609,8 @@ public final class LoadedApk {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.314 -0400", hash_original_method = "A6B1961EAEFDBCFE8AB6AA462A76FB1E", hash_generated_method = "18D7336D44D6BB53573B2D2262A5B4C9")
               InnerConnection(LoadedApk.ServiceDispatcher sd) {
                 mDispatcher = new WeakReference<LoadedApk.ServiceDispatcher>(sd);
-                // ---------- Original Method ----------
-                //mDispatcher = new WeakReference<LoadedApk.ServiceDispatcher>(sd);
+                
+                
             }
 
             
@@ -1610,14 +1619,14 @@ public final class LoadedApk {
                 LoadedApk.ServiceDispatcher sd = mDispatcher.get();
                 {
                     sd.connected(name, service);
-                } //End block
+                } 
                 addTaint(name.getTaint());
                 addTaint(service.getTaint());
-                // ---------- Original Method ----------
-                //LoadedApk.ServiceDispatcher sd = mDispatcher.get();
-                //if (sd != null) {
-                    //sd.connected(name, service);
-                //}
+                
+                
+                
+                    
+                
             }
 
             
@@ -1641,10 +1650,10 @@ public final class LoadedApk {
                 mName = name;
                 mService = service;
                 mCommand = command;
-                // ---------- Original Method ----------
-                //mName = name;
-                //mService = service;
-                //mCommand = command;
+                
+                
+                
+                
             }
 
             
@@ -1652,16 +1661,16 @@ public final class LoadedApk {
             public void run() {
                 {
                     doConnected(mName, mService);
-                } //End block
+                } 
                 {
                     doDeath(mName, mService);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mCommand == 0) {
-                    //doConnected(mName, mService);
-                //} else if (mCommand == 1) {
-                    //doDeath(mName, mService);
-                //}
+                } 
+                
+                
+                    
+                
+                    
+                
             }
 
             
@@ -1681,17 +1690,17 @@ public final class LoadedApk {
               DeathMonitor(ComponentName name, IBinder service) {
                 mName = name;
                 mService = service;
-                // ---------- Original Method ----------
-                //mName = name;
-                //mService = service;
+                
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.316 -0400", hash_original_method = "C3027F39FC9400E0CBA13CC2A85E99EF", hash_generated_method = "D2777A8801A10D11246301F62E6436C0")
             public void binderDied() {
                 death(mName, mService);
-                // ---------- Original Method ----------
-                //death(mName, mService);
+                
+                
             }
 
             

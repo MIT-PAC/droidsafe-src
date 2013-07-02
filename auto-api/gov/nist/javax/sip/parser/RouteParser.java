@@ -1,11 +1,11 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.text.ParseException;
 import gov.nist.javax.sip.header.*;
@@ -16,7 +16,7 @@ public class RouteParser extends AddressParametersParser {
     public  RouteParser(String route) {
         super(route);
         addTaint(route.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,13 +24,14 @@ public class RouteParser extends AddressParametersParser {
     protected  RouteParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:43.527 -0400", hash_original_method = "E0D86A54342F3A96677BD3492DB07E61", hash_generated_method = "0161C39C63386C2F665191B0D4110F86")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1246339642 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1246339642 = null; 
         RouteList routeList = new RouteList();
         dbg_enter("parse");
         try 
@@ -48,19 +49,19 @@ public class RouteParser extends AddressParametersParser {
                 {
                     this.lexer.match(',');
                     this.lexer.SPorHT();
-                } //End block
+                } 
                 if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected char");
-            } //End block
+            } 
             varB4EAC82CA7396A68D541C85D26508E83_1246339642 = routeList;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("parse");
-        } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1246339642.addTaint(getTaint()); //Add taint from parent
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1246339642.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_1246339642;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

@@ -1,11 +1,11 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import com.android.internal.util.ArrayUtils;
 import java.lang.reflect.Array;
@@ -31,7 +31,7 @@ abstract class SpannableStringInternal {
             boolean var4E1087633C042E83FE4F92861C5B2DA8_174601993 = (start == 0 && end == source.length());
             mText = source.toString();
             mText = source.toString().substring(start, end);
-        } //End collapsed parenthetic
+        } 
         int initial = ArrayUtils.idealIntArraySize(0);
         mSpans = new Object[initial];
         mSpanData = new int[initial * 3];
@@ -47,11 +47,11 @@ abstract class SpannableStringInternal {
                     st = start;
                     en = end;
                     setSpan(spans[i], st - start, en - start, fl);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -60,8 +60,8 @@ abstract class SpannableStringInternal {
         int var32A6F8CD5764B26A2339FAB65BD4098F_466736999 = (mText.length());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_713291172 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_713291172;
-        // ---------- Original Method ----------
-        //return mText.length();
+        
+        
     }
 
     
@@ -71,19 +71,19 @@ abstract class SpannableStringInternal {
         addTaint(i);
         char varA87DEB01C5F539E6BDA34829C8EF2368_1211900409 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1211900409;
-        // ---------- Original Method ----------
-        //return mText.charAt(i);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.511 -0400", hash_original_method = "F8827D354B3A7F2AC0C2613E8BEFB45B", hash_generated_method = "00C1E48C35F6D58A058D22132ED32B15")
     public final String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_547022905 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_547022905 = null; 
         varB4EAC82CA7396A68D541C85D26508E83_547022905 = mText;
-        varB4EAC82CA7396A68D541C85D26508E83_547022905.addTaint(getTaint()); //Add taint from parent
+        varB4EAC82CA7396A68D541C85D26508E83_547022905.addTaint(getTaint()); 
         return varB4EAC82CA7396A68D541C85D26508E83_547022905;
-        // ---------- Original Method ----------
-        //return mText;
+        
+        
     }
 
     
@@ -94,8 +94,8 @@ abstract class SpannableStringInternal {
         addTaint(end);
         addTaint(dest[0]);
         addTaint(off);
-        // ---------- Original Method ----------
-        //mText.getChars(start, end, dest, off);
+        
+        
     }
 
     
@@ -112,8 +112,8 @@ abstract class SpannableStringInternal {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "PARAGRAPH span must start at paragraph boundary" +
                             " (" + start + " follows " + c + ")");
-                } //End block
-            } //End collapsed parenthetic
+                } 
+            } 
             {
                 boolean var5B6CF9C5E41E159F793AF4E9C33451FF_234532523 = (end != 0 && end != length());
                 {
@@ -121,9 +121,9 @@ abstract class SpannableStringInternal {
                     if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "PARAGRAPH span must end at paragraph boundary" +
                             " (" + end + " follows " + c + ")");
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+                } 
+            } 
+        } 
         int count = mSpanCount;
         Object[] spans = mSpans;
         int[] data = mSpanData;
@@ -137,9 +137,9 @@ abstract class SpannableStringInternal {
                     data[i * COLUMNS + END] = end;
                     data[i * COLUMNS + FLAGS] = flags;
                     sendSpanChanged(what, ostart, oend, nstart, nend);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         {
             int newsize = ArrayUtils.idealIntArraySize(mSpanCount + 1);
             Object[] newtags = new Object[newsize];
@@ -148,14 +148,14 @@ abstract class SpannableStringInternal {
             System.arraycopy(mSpanData, 0, newdata, 0, mSpanCount * 3);
             mSpans = newtags;
             mSpanData = newdata;
-        } //End block
+        } 
         mSpans[mSpanCount] = what;
         mSpanData[mSpanCount * COLUMNS + START] = start;
         mSpanData[mSpanCount * COLUMNS + END] = end;
         mSpanData[mSpanCount * COLUMNS + FLAGS] = flags;
         sendSpanAdded(what, nstart, nend);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -175,27 +175,27 @@ abstract class SpannableStringInternal {
                     System.arraycopy(data, (i + 1) * COLUMNS,
                                  data, i * COLUMNS, c * COLUMNS);
                     sendSpanRemoved(what, ostart, oend);
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(what.getTaint());
-        // ---------- Original Method ----------
-        //int count = mSpanCount;
-        //Object[] spans = mSpans;
-        //int[] data = mSpanData;
-        //for (int i = count - 1; i >= 0; i--) {
-            //if (spans[i] == what) {
-                //int ostart = data[i * COLUMNS + START];
-                //int oend = data[i * COLUMNS + END];
-                //int c = count - (i + 1);
-                //System.arraycopy(spans, i + 1, spans, i, c);
-                //System.arraycopy(data, (i + 1) * COLUMNS,
-                                 //data, i * COLUMNS, c * COLUMNS);
-                //mSpanCount--;
-                //sendSpanRemoved(what, ostart, oend);
-                //return;
-            //}
-        //}
+        
+        
+        
+        
+        
+            
+                
+                
+                
+                
+                
+                                 
+                
+                
+                
+            
+        
     }
 
     
@@ -206,20 +206,20 @@ abstract class SpannableStringInternal {
         int[] data = mSpanData;
         {
             int i = count - 1;
-        } //End collapsed parenthetic
+        } 
         addTaint(what.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_753914111 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_753914111;
-        // ---------- Original Method ----------
-        //int count = mSpanCount;
-        //Object[] spans = mSpans;
-        //int[] data = mSpanData;
-        //for (int i = count - 1; i >= 0; i--) {
-            //if (spans[i] == what) {
-                //return data[i * COLUMNS + START];
-            //}
-        //}
-        //return -1;
+        
+        
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -230,20 +230,20 @@ abstract class SpannableStringInternal {
         int[] data = mSpanData;
         {
             int i = count - 1;
-        } //End collapsed parenthetic
+        } 
         addTaint(what.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1449645464 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1449645464;
-        // ---------- Original Method ----------
-        //int count = mSpanCount;
-        //Object[] spans = mSpans;
-        //int[] data = mSpanData;
-        //for (int i = count - 1; i >= 0; i--) {
-            //if (spans[i] == what) {
-                //return data[i * COLUMNS + END];
-            //}
-        //}
-        //return -1;
+        
+        
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -254,29 +254,29 @@ abstract class SpannableStringInternal {
         int[] data = mSpanData;
         {
             int i = count - 1;
-        } //End collapsed parenthetic
+        } 
         addTaint(what.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_215839108 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_215839108;
-        // ---------- Original Method ----------
-        //int count = mSpanCount;
-        //Object[] spans = mSpans;
-        //int[] data = mSpanData;
-        //for (int i = count - 1; i >= 0; i--) {
-            //if (spans[i] == what) {
-                //return data[i * COLUMNS + FLAGS];
-            //}
-        //}
-        //return 0;
+        
+        
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:49.516 -0400", hash_original_method = "A79E5C3938B902091EA5DB757C342E2D", hash_generated_method = "B2E71AD9802CCB43E7C69A8FC2F60B40")
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
-        T[] varB4EAC82CA7396A68D541C85D26508E83_953826290 = null; //Variable for return #1
-        T[] varB4EAC82CA7396A68D541C85D26508E83_1359601484 = null; //Variable for return #2
-        T[] varB4EAC82CA7396A68D541C85D26508E83_434528738 = null; //Variable for return #3
-        T[] varB4EAC82CA7396A68D541C85D26508E83_1737076893 = null; //Variable for return #4
+        T[] varB4EAC82CA7396A68D541C85D26508E83_953826290 = null; 
+        T[] varB4EAC82CA7396A68D541C85D26508E83_1359601484 = null; 
+        T[] varB4EAC82CA7396A68D541C85D26508E83_434528738 = null; 
+        T[] varB4EAC82CA7396A68D541C85D26508E83_1737076893 = null; 
         int count = 0;
         int spanCount = mSpanCount;
         Object[] spans = mSpans;
@@ -288,17 +288,17 @@ abstract class SpannableStringInternal {
             {
                 {
                     boolean var5A4064A3325AEA774EE2C4EF95F67A65_1004371108 = (kind != null && !kind.isInstance(spans[i]));
-                } //End collapsed parenthetic
+                } 
                 int spanStart = data[i * COLUMNS + START];
                 int spanEnd = data[i * COLUMNS + END];
                 {
                     ret1 = spans[i];
-                } //End block
+                } 
                 {
                     {
                         ret = (Object[]) Array.newInstance(kind, spanCount - i + 1);
                         ret[0] = ret1;
-                    } //End block
+                    } 
                     int prio = data[i * COLUMNS + FLAGS] & Spanned.SPAN_PRIORITY;
                     {
                         int j;
@@ -306,53 +306,53 @@ abstract class SpannableStringInternal {
                             j = 0;
                             {
                                 int p = getSpanFlags(ret[j]) & Spanned.SPAN_PRIORITY;
-                            } //End block
-                        } //End collapsed parenthetic
+                            } 
+                        } 
                         System.arraycopy(ret, j, ret, j + 1, count - j);
                         ret[j] = spans[i];
-                    } //End block
+                    } 
                     {
                         ret[count++] = spans[i];
-                    } //End block
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
+                    } 
+                } 
+            } 
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_953826290 = (T[]) ArrayUtils.emptyArray(kind);
-        } //End block
+        } 
         {
             ret = (Object[]) Array.newInstance(kind, 1);
             ret[0] = ret1;
             varB4EAC82CA7396A68D541C85D26508E83_1359601484 = (T[]) ret;
-        } //End block
+        } 
         {
             varB4EAC82CA7396A68D541C85D26508E83_434528738 = (T[]) ret;
-        } //End block
+        } 
         Object[] nret = (Object[]) Array.newInstance(kind, count);
         System.arraycopy(ret, 0, nret, 0, count);
         varB4EAC82CA7396A68D541C85D26508E83_1737076893 = (T[]) nret;
         addTaint(queryStart);
         addTaint(queryEnd);
         addTaint(kind.getTaint());
-        T[] varA7E53CE21691AB073D9660D615818899_1007545045; //Final return value
+        T[] varA7E53CE21691AB073D9660D615818899_1007545045; 
         switch (DroidSafeAndroidRuntime.switchControl) {
-            case 1: //Assign result for return ordinal #1
+            case 1: 
                 varA7E53CE21691AB073D9660D615818899_1007545045 = varB4EAC82CA7396A68D541C85D26508E83_953826290;
                 break;
-            case 2: //Assign result for return ordinal #2
+            case 2: 
                 varA7E53CE21691AB073D9660D615818899_1007545045 = varB4EAC82CA7396A68D541C85D26508E83_1359601484;
                 break;
-            case 3: //Assign result for return ordinal #3
+            case 3: 
                 varA7E53CE21691AB073D9660D615818899_1007545045 = varB4EAC82CA7396A68D541C85D26508E83_434528738;
                 break;
             default:
                 varA7E53CE21691AB073D9660D615818899_1007545045 = varB4EAC82CA7396A68D541C85D26508E83_1737076893;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1007545045.addTaint(getTaint()); //Add taint from parent
+        varA7E53CE21691AB073D9660D615818899_1007545045.addTaint(getTaint()); 
         return varA7E53CE21691AB073D9660D615818899_1007545045;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -363,7 +363,7 @@ abstract class SpannableStringInternal {
         int[] data = mSpanData;
         {
             kind = Object.class;
-        } //End block
+        } 
         {
             int i = 0;
             {
@@ -372,34 +372,34 @@ abstract class SpannableStringInternal {
                 {
                     boolean varF6D66FD5D17035475727187422C2B841_1608884658 = (st > start && st < limit && kind.isInstance(spans[i]));
                     limit = st;
-                } //End collapsed parenthetic
+                } 
                 {
                     boolean varDD4114CCD8FA698F5DA31E38C7560428_690123121 = (en > start && en < limit && kind.isInstance(spans[i]));
                     limit = en;
-                } //End collapsed parenthetic
-            } //End block
-        } //End collapsed parenthetic
+                } 
+            } 
+        } 
         addTaint(start);
         addTaint(limit);
         addTaint(kind.getTaint());
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1696379156 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1696379156;
-        // ---------- Original Method ----------
-        //int count = mSpanCount;
-        //Object[] spans = mSpans;
-        //int[] data = mSpanData;
-        //if (kind == null) {
-            //kind = Object.class;
-        //}
-        //for (int i = 0; i < count; i++) {
-            //int st = data[i * COLUMNS + START];
-            //int en = data[i * COLUMNS + END];
-            //if (st > start && st < limit && kind.isInstance(spans[i]))
-                //limit = st;
-            //if (en > start && en < limit && kind.isInstance(spans[i]))
-                //limit = en;
-        //}
-        //return limit;
+        
+        
+        
+        
+        
+            
+        
+        
+            
+            
+            
+                
+            
+                
+        
+        
     }
 
     
@@ -411,17 +411,17 @@ abstract class SpannableStringInternal {
             int i = 0;
             {
                 recip[i].onSpanAdded((Spannable) this, what, start, end);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(what.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //SpanWatcher[] recip = getSpans(start, end, SpanWatcher.class);
-        //int n = recip.length;
-        //for (int i = 0; i < n; i++) {
-            //recip[i].onSpanAdded((Spannable) this, what, start, end);
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -433,17 +433,17 @@ abstract class SpannableStringInternal {
             int i = 0;
             {
                 recip[i].onSpanRemoved((Spannable) this, what, start, end);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(what.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //SpanWatcher[] recip = getSpans(start, end, SpanWatcher.class);
-        //int n = recip.length;
-        //for (int i = 0; i < n; i++) {
-            //recip[i].onSpanRemoved((Spannable) this, what, start, end);
-        //}
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -456,20 +456,20 @@ abstract class SpannableStringInternal {
             int i = 0;
             {
                 recip[i].onSpanChanged((Spannable) this, what, s, e, st, en);
-            } //End block
-        } //End collapsed parenthetic
+            } 
+        } 
         addTaint(what.getTaint());
         addTaint(s);
         addTaint(e);
         addTaint(st);
         addTaint(en);
-        // ---------- Original Method ----------
-        //SpanWatcher[] recip = getSpans(Math.min(s, st), Math.max(e, en),
-                                       //SpanWatcher.class);
-        //int n = recip.length;
-        //for (int i = 0; i < n; i++) {
-            //recip[i].onSpanChanged((Spannable) this, what, s, e, st, en);
-        //}
+        
+        
+                                       
+        
+        
+            
+        
     }
 
     
@@ -484,38 +484,38 @@ abstract class SpannableStringInternal {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(operation + " " +
                                                 region(start, end) +
                                                 " has end before start");
-        } //End block
+        } 
         int len = length();
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(operation + " " +
                                                 region(start, end) +
                                                 " ends beyond length " + len);
-        } //End block
+        } 
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(operation + " " +
                                                 region(start, end) +
                                                 " starts before 0");
-        } //End block
+        } 
         addTaint(operation.getTaint());
         addTaint(start);
         addTaint(end);
-        // ---------- Original Method ----------
-        //if (end < start) {
-            //throw new IndexOutOfBoundsException(operation + " " +
-                                                //region(start, end) +
-                                                //" has end before start");
-        //}
-        //int len = length();
-        //if (start > len || end > len) {
-            //throw new IndexOutOfBoundsException(operation + " " +
-                                                //region(start, end) +
-                                                //" ends beyond length " + len);
-        //}
-        //if (start < 0 || end < 0) {
-            //throw new IndexOutOfBoundsException(operation + " " +
-                                                //region(start, end) +
-                                                //" starts before 0");
-        //}
+        
+        
+            
+                                                
+                                                
+        
+        
+        
+            
+                                                
+                                                
+        
+        
+            
+                                                
+                                                
+        
     }
 
     

@@ -1,11 +1,11 @@
 package libcore.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -18,7 +18,7 @@ abstract class AbstractHttpOutputStream extends OutputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.605 -0400", hash_original_method = "2835FA09B3F183CC926451AC7D6D78D7", hash_generated_method = "2835FA09B3F183CC926451AC7D6D78D7")
     public AbstractHttpOutputStream ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -27,8 +27,8 @@ abstract class AbstractHttpOutputStream extends OutputStream {
     public final void write(int data) throws IOException {
         write(new byte[] { (byte) data });
         addTaint(data);
-        // ---------- Original Method ----------
-        //write(new byte[] { (byte) data });
+        
+        
     }
 
     
@@ -36,11 +36,11 @@ abstract class AbstractHttpOutputStream extends OutputStream {
     protected final void checkNotClosed() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("stream closed");
-        } //End block
-        // ---------- Original Method ----------
-        //if (closed) {
-            //throw new IOException("stream closed");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     

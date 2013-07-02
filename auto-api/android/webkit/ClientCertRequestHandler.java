@@ -1,11 +1,11 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.security.PrivateKey;
 import java.security.cert.CertificateEncodingException;
@@ -35,14 +35,15 @@ public final class ClientCertRequestHandler {
         mHandle = handle;
         mHostAndPort = host_and_port;
         mTable = table;
-        // ---------- Original Method ----------
-        //mBrowserFrame = browserFrame;
-        //mHandle = handle;
-        //mHostAndPort = host_and_port;
-        //mTable = table;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.138 -0400", hash_original_method = "FD9D9C54290793DEF25EE96780FA43D9", hash_generated_method = "0D292DEF9BDED2CA79C3229684E920DB")
     public void proceed(PrivateKey privateKey, X509Certificate[] chain) {
         byte[] privateKeyBytes = privateKey.getEncoded();
@@ -50,45 +51,47 @@ public final class ClientCertRequestHandler {
         try 
         {
             chainBytes = NativeCrypto.encodeCertificates(chain);
-        } //End block
+        } 
         catch (CertificateEncodingException e)
         {
             mBrowserFrame.nativeSslClientCert(mHandle, null, null);
             return;
-        } //End block
+        } 
         mTable.Allow(mHostAndPort, privateKeyBytes, chainBytes);
         mBrowserFrame.nativeSslClientCert(mHandle, privateKeyBytes, chainBytes);
         addTaint(privateKey.getTaint());
         addTaint(chain[0].getTaint());
-        // ---------- Original Method ----------
-        //byte[] privateKeyBytes = privateKey.getEncoded();
-        //byte[][] chainBytes;
-        //try {
-            //chainBytes = NativeCrypto.encodeCertificates(chain);
-        //} catch (CertificateEncodingException e) {
-            //mBrowserFrame.nativeSslClientCert(mHandle, null, null);
-            //return;
-        //}
-        //mTable.Allow(mHostAndPort, privateKeyBytes, chainBytes);
-        //mBrowserFrame.nativeSslClientCert(mHandle, privateKeyBytes, chainBytes);
+        
+        
+        
+        
+            
+        
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.138 -0400", hash_original_method = "FA404A4E1A97322F22CB23ECA9545548", hash_generated_method = "6C467D92C3B4D0C786BB58115DA32A26")
     public void ignore() {
         mBrowserFrame.nativeSslClientCert(mHandle, null, null);
-        // ---------- Original Method ----------
-        //mBrowserFrame.nativeSslClientCert(mHandle, null, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.138 -0400", hash_original_method = "E250E51CEC55FC558312A1D8553D2784", hash_generated_method = "990D36A655D7C75AC901D12157190C1E")
     public void cancel() {
         mTable.Deny(mHostAndPort);
         mBrowserFrame.nativeSslClientCert(mHandle, null, null);
-        // ---------- Original Method ----------
-        //mTable.Deny(mHostAndPort);
-        //mBrowserFrame.nativeSslClientCert(mHandle, null, null);
+        
+        
+        
     }
 
     

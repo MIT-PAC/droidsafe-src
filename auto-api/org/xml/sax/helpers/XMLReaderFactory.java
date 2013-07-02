@@ -1,11 +1,11 @@
 package org.xml.sax.helpers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// needed for enhanced for control translations
+
 import java.util.Iterator;
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -18,10 +18,11 @@ final public class XMLReaderFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.092 -0400", hash_original_method = "8D0EAA86B78920589D202D1252E83CCD", hash_generated_method = "B01B84B33B0F242545E564D5500CACD5")
     private  XMLReaderFactory() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static XMLReader createXMLReader() throws SAXException {
         String        className = null;
         ClassLoader    loader = NewInstance.getClassLoader ();
@@ -57,6 +58,7 @@ final public class XMLReaderFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static XMLReader createXMLReader(String className) throws SAXException {
         return loadClass (NewInstance.getClassLoader (), className);
     }
